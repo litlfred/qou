@@ -1046,7 +1046,439 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "b9cec94d31c7",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Statement is the quadratic-well-shift theta_min = theta_0 - b/2a with the lone-pair sign; minimal interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b9cec94d31c7",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Water bond-angle shift in §6b H2O — correct."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "b9cec94d31c7",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Harmonic bending energy over R; archimedean note honest and correct (energy is archimedean)."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "b9cec94d31c7",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Lean proof is nlinarith on a perfect-square inequality over R — appropriate archimedean machinery for an archimedean claim."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "b9cec94d31c7",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Lean bond_angle_shift proves the energy at theta_0-s is <= energy at any theta (minimizer), with b=2as, matching the .md theta_min=theta_0-b/2a claim."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "b9cec94d31c7",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Lean signature is the genuine minimizer inequality with ha : 0 < a."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "b9cec94d31c7",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Proved by nlinarith with sq_nonneg hints; no projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "b9cec94d31c7",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Goal is a real ordering between two energy expressions, not a tautology."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "b9cec94d31c7",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "ha : 0 < a satisfiable and used."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "b9cec94d31c7",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "ha (0<a) feeds the mul_nonneg hint in nlinarith; used."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "b9cec94d31c7",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "nlinarith with explicit square hints; no decide."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b9cec94d31c7",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "argmin of a(theta-theta_0)^2 + b*theta = theta_0 - b/2a is correct calculus; sign b>0 gives theta_min<theta_0."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b9cec94d31c7",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Genuine minimizer result, formalized non-vacuously."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b9cec94d31c7",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Sign of shift derived from b>0; magnitude explicitly left as compute/experimental input — not back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b9cec94d31c7",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Block is explicit: sign structural, magnitude b/2a is the lone-pair-strength input — honestly scoped (109.5->104.5 is the sign, not a derived magnitude)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b9cec94d31c7",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "b/2a is openly declared the lone-pair-repulsion magnitude input, not hidden."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b9cec94d31c7",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Linear perturbation -> linear shift of quadratic minimum is correct."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b9cec94d31c7",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Lean minimizer inequality matches the .md theta_min claim."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b9cec94d31c7",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No external citation."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b9cec94d31c7",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Stiffness a, perturbation b, theta_0 all defined; b=2as substitution explained in Lean."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b9cec94d31c7",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Only the SIGN is claimed structural; magnitude is an acknowledged input, so no fragile numerical match is asserted."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b9cec94d31c7",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Lone-pair repulsion narrowing the H-O-H angle below tetrahedral is correct VSEPR physics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b9cec94d31c7",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Lean-proved minimizer; no witness number to drift."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b9cec94d31c7",
+          "ts": "2ab14ac046e2",
+          "lean": "d7bdaf1b6fbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Clean structural result (sign of the angle shift) with matching sorry-free Lean and an honest 'magnitude is input' disclaimer. No substantive objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:09:19.136Z"
 }

@@ -30,6 +30,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Block placement and kind 'definition' match validated structurally for 'Carbon dioxide $CO_2$ as a molecular braid' within chapter 'molecular-construction'.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "c0926139acad",
+          "ts": "83487f4f5e01",
+          "lean": "dff8287d516b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "CO2 braid definition in §5 CO2 — correct."
       }
     ],
     "wall-side-statement": [
@@ -50,6 +66,22 @@
         "notes": "The Lean theorem statement in content/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean matches the mathematical statement in content/quantum-observable-universe/molecular-construction/co2-molecular-braid.md.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean:1 — Lean file exists"
+      },
+      {
+        "field_hash": {
+          "md": "c0926139acad",
+          "ts": "83487f4f5e01",
+          "lean": "dff8287d516b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Combinatorial braid definition; archimedean note honest; generic core."
       }
     ],
     "da-false-claim": [
@@ -70,6 +102,22 @@
         "notes": "The claim in 'Carbon dioxide $CO_2$ as a molecular braid' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "c0926139acad",
+          "ts": "83487f4f5e01",
+          "lean": "dff8287d516b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Strand count 18+24+24=66 correct; two double bonds consuming C's 4 and each O's 2 valence electrons is consistent."
       }
     ],
     "da-vacuous": [
@@ -89,6 +137,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Carbon dioxide $CO_2$ as a molecular braid' presents substantial mathematical content: $C(6, 6)$ and two oxygen atoms $O_1(8, 8)$, $O_2(8, 8)$, with two double bonds (...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "c0926139acad",
+          "ts": "83487f4f5e01",
+          "lean": "dff8287d516b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Substantive 3-stage construction."
       }
     ],
     "da-circular": [
@@ -109,6 +173,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Carbon dioxide $CO_2$ as a molecular braid'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/co2-molecular-braid.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c0926139acad",
+          "ts": "83487f4f5e01",
+          "lean": "dff8287d516b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Definitional, no circularity."
       }
     ],
     "da-overclaim": [
@@ -128,6 +208,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Carbon dioxide $CO_2$ as a molecular braid' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "c0926139acad",
+          "ts": "83487f4f5e01",
+          "lean": "dff8287d516b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Definition; no claim of accuracy."
       }
     ],
     "da-hidden-dof": [
@@ -148,6 +244,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Carbon dioxide $CO_2$ as a molecular braid'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/co2-molecular-braid.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c0926139acad",
+          "ts": "83487f4f5e01",
+          "lean": "dff8287d516b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Strand counts fixed by atomic structure."
       }
     ],
     "da-non-sequitur": [
@@ -168,6 +280,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "c0926139acad",
+          "ts": "83487f4f5e01",
+          "lean": "dff8287d516b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Stages follow; sigma+pi decomposition per double bond consistent."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -187,6 +315,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "c0926139acad",
+          "ts": "83487f4f5e01",
+          "lean": "dff8287d516b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No sibling .lean."
       }
     ],
     "da-citation-misuse": [
@@ -207,6 +351,22 @@
         "notes": "No citations are present in 'Carbon dioxide $CO_2$ as a molecular braid', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/co2-molecular-braid.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c0926139acad",
+          "ts": "83487f4f5e01",
+          "lean": "dff8287d516b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No citations."
       }
     ],
     "da-definitional-ambiguity": [
@@ -227,6 +387,22 @@
         "notes": "Key terms and symbols in 'Carbon dioxide $CO_2$ as a molecular braid' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/co2-molecular-braid.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c0926139acad",
+          "ts": "83487f4f5e01",
+          "lean": "dff8287d516b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Atom Hecke-algebra sizes, bond decomposition specified."
       }
     ],
     "da-empirical-fragility": [
@@ -247,6 +423,22 @@
         "notes": "The algebraic and logical relations in 'Carbon dioxide $CO_2$ as a molecular braid' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/co2-molecular-braid.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c0926139acad",
+          "ts": "83487f4f5e01",
+          "lean": "dff8287d516b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No numerics."
       }
     ],
     "da-physical-implausibility": [
@@ -267,6 +459,22 @@
         "notes": "The physical concepts described in 'Carbon dioxide $CO_2$ as a molecular braid' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/co2-molecular-braid.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c0926139acad",
+          "ts": "83487f4f5e01",
+          "lean": "dff8287d516b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "O=C=O with no carbon lone pairs is correct."
       }
     ],
     "da-reproducibility": [
@@ -287,6 +495,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean:1 — content/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean:21:46: error: unknown tactic"
+      },
+      {
+        "field_hash": {
+          "md": "c0926139acad",
+          "ts": "83487f4f5e01",
+          "lean": "dff8287d516b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No witness."
       }
     ],
     "da-referee-verdict": [
@@ -308,6 +532,22 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean contains compilation errors: content/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean:21:46: error: unknown tactic, invalidating the claimed formalization.",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "c0926139acad",
+          "ts": "83487f4f5e01",
+          "lean": "dff8287d516b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Well-formed CO2 braid definition; no substantive objection."
       }
     ],
     "voice-status-leak": [
@@ -1174,5 +1414,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:09:19.136Z"
 }

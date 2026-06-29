@@ -64,3 +64,7 @@ updated_at: 2026-06-29T20:07:58Z
 
 ## More instances (batch 42)
 - wenzl-qmn-synergy.lean (markovTrace=0, chi_qMN=0; main theorem 0=0; cross-validation self-assuming projection; disclosed 3b-cond but no real content)
+
+## More instances (batch 45, molecular-construction)
+- shell-filling-rule.lean:91 (projects ctx fields gated on aufbau_active; docstring admits : ctx.holds := sorry; critical)
+- ilp-covalent-bond.lean:22-23 (theorem covalent_bond_is_ilp_optimal: length=3 := rfl; real binding in axiom h2_binding_energy; "zero fitted" vs -10.9% C-C miss)

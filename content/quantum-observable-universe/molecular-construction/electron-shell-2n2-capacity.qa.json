@@ -855,7 +855,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "398a5a135e7e",
+          "ts": "3734ff38bf57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "2n^2 shell capacity conjecture in §2 electron shells — correct."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "398a5a135e7e",
+          "ts": "3734ff38bf57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "2n^2 = 2 sum_{l=0}^{n-1}(2l+1) is a true identity; SO(4)-type degeneracy framing is standard."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "398a5a135e7e",
+          "ts": "3734ff38bf57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Conjecture states a real open derivation gap (2-fold vs 2n^2)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "398a5a135e7e",
+          "ts": "3734ff38bf57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Conjecture is forward-looking, not back-fitted."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "398a5a135e7e",
+          "ts": "3734ff38bf57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Honestly labels it an 'open shell-capacity derivation' — kind conjecture, no proof claimed."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "398a5a135e7e",
+          "ts": "3734ff38bf57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "398a5a135e7e",
+          "ts": "3734ff38bf57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "2x2 transfer matrix gives 2-fold but not n^2 multiplicity — argument is correct about what is missing."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "398a5a135e7e",
+          "ts": "3734ff38bf57"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Conjecture; no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "398a5a135e7e",
+          "ts": "3734ff38bf57"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No citations."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "398a5a135e7e",
+          "ts": "3734ff38bf57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Subshell/capacity table makes the count concrete."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "398a5a135e7e",
+          "ts": "3734ff38bf57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Capacities 2,8,18 are exact integers."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "398a5a135e7e",
+          "ts": "3734ff38bf57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "SO(4) accidental degeneracy (hydrogen) is the correct physics reference."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "398a5a135e7e",
+          "ts": "3734ff38bf57"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "398a5a135e7e",
+          "ts": "3734ff38bf57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Honest conjecture flagging the SO(4)-degeneracy gap the 2x2 transfer matrix cannot supply. Properly scoped."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:09:19.136Z"
 }

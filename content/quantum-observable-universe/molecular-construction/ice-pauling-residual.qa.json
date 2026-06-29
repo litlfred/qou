@@ -1046,7 +1046,439 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "a7dcb6b85c3a",
+          "ts": "1f46e793f619",
+          "lean": "3593d80571e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Statement is the W_1=3/2 multiplicity + S=R ln(3/2); minimal interpretation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a7dcb6b85c3a",
+          "ts": "1f46e793f619",
+          "lean": "3593d80571e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Ice Pauling residual entropy in §6b water — correct (uses H2O braid 4 directions)."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a7dcb6b85c3a",
+          "ts": "1f46e793f619",
+          "lean": "3593d80571e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Combinatorial core exact over Q; entropy step flagged archimedean (line 1) — correct wall handling."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "a7dcb6b85c3a",
+          "ts": "1f46e793f619",
+          "lean": "3593d80571e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Lean proves combinatorial W_1 over Q; S=R ln W_1 is the explicit archimedean evaluation. Wall respected."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "a7dcb6b85c3a",
+          "ts": "1f46e793f619",
+          "lean": "3593d80571e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Lean ice_orientations (C(4,2)=6) + pauling_multiplicity (C(4,2)(1/2)^2=3/2) match the .md combinatorial core; entropy is acknowledged as the archimedean eval, not claimed in Lean."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "a7dcb6b85c3a",
+          "ts": "1f46e793f619",
+          "lean": "3593d80571e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Lean signatures are the genuine choose/multiplicity equalities."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "a7dcb6b85c3a",
+          "ts": "1f46e793f619",
+          "lean": "3593d80571e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Proved by decide/norm_num on concrete arithmetic; no projection."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "a7dcb6b85c3a",
+          "ts": "1f46e793f619",
+          "lean": "3593d80571e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Goals are concrete numeric equalities (6, 3/2), genuinely true and non-tautological."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "a7dcb6b85c3a",
+          "ts": "1f46e793f619",
+          "lean": "3593d80571e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No premise; closed-form facts."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "a7dcb6b85c3a",
+          "ts": "1f46e793f619",
+          "lean": "3593d80571e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No hypotheses to leave unused."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "a7dcb6b85c3a",
+          "ts": "1f46e793f619",
+          "lean": "3593d80571e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "decide on Nat.choose 4 2 = 6 is a justified finite computation, not masking a structural gap."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a7dcb6b85c3a",
+          "ts": "1f46e793f619",
+          "lean": "3593d80571e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "W_1=C(4,2)(1/2)^2=3/2, S=R ln(3/2)≈3.37 J/mol/K is exactly Pauling 1935, agreeing with measured ice entropy."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a7dcb6b85c3a",
+          "ts": "1f46e793f619",
+          "lean": "3593d80571e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Genuine combinatorial result, formalized non-vacuously."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a7dcb6b85c3a",
+          "ts": "1f46e793f619",
+          "lean": "3593d80571e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Standard Pauling derivation; no back-fitting."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a7dcb6b85c3a",
+          "ts": "1f46e793f619",
+          "lean": "3593d80571e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "'close agreement' with calorimetry is appropriately hedged (Pauling's estimate is known approximate)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a7dcb6b85c3a",
+          "ts": "1f46e793f619",
+          "lean": "3593d80571e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No parameter; the 1/2 is the independent-estimate probability."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a7dcb6b85c3a",
+          "ts": "1f46e793f619",
+          "lean": "3593d80571e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Ice rule -> C(4,2) orientations -> (1/2)^2 shared-bond factor is the standard chain."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a7dcb6b85c3a",
+          "ts": "1f46e793f619",
+          "lean": "3593d80571e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Lean proves the exact combinatorial content the .md headlines; entropy step honestly outside Lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a7dcb6b85c3a",
+          "ts": "1f46e793f619",
+          "lean": "3593d80571e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Pauling 1935 correctly attributed for the residual-entropy estimate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a7dcb6b85c3a",
+          "ts": "1f46e793f619",
+          "lean": "3593d80571e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Donor/acceptor, ice rule, W_1 all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a7dcb6b85c3a",
+          "ts": "1f46e793f619",
+          "lean": "3593d80571e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "3.37 J/mol/K is the textbook Pauling value; not a tuned match."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a7dcb6b85c3a",
+          "ts": "1f46e793f619",
+          "lean": "3593d80571e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Tetrahedral H-bonding (2 donor, 2 acceptor) is correct ice I_h structure."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a7dcb6b85c3a",
+          "ts": "1f46e793f619",
+          "lean": "3593d80571e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Exact over Q in Lean; entropy value reproducible from R ln(3/2)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a7dcb6b85c3a",
+          "ts": "1f46e793f619",
+          "lean": "3593d80571e2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Exemplary: a classical exact result (Pauling) tied to the H2O braid's 4 directions, formalized sorry-free. No objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:09:19.136Z"
 }

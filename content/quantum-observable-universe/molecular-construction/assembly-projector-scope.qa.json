@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "77d53f674799",
+          "ts": "e7249773ba79"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Scope remark for assembly projector in §1b — correct."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "77d53f674799",
+          "ts": "e7249773ba79"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Existence-necessary-not-sufficient and irreducibility-of-ring-projector claims are sound."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "77d53f674799",
+          "ts": "e7249773ba79"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Substantive disclaimer separating algebra from energetics."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "77d53f674799",
+          "ts": "e7249773ba79"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Explicitly avoids circularity by keeping existence/optimality/energetics distinct."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "77d53f674799",
+          "ts": "e7249773ba79"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "This block UNDER-claims deliberately ('says nothing about energy'); no overclaim."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "77d53f674799",
+          "ts": "e7249773ba79"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "77d53f674799",
+          "ts": "e7249773ba79"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Necessary-not-sufficient logic correct."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "77d53f674799",
+          "ts": "e7249773ba79"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Remark, no Lean."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "77d53f674799",
+          "ts": "e7249773ba79"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No citations."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "77d53f674799",
+          "ts": "e7249773ba79"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Irreducibility, selection, gap all defined relative to linked blocks."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "77d53f674799",
+          "ts": "e7249773ba79"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No numerics in this scope remark."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "77d53f674799",
+          "ts": "e7249773ba79"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Aromatic stability from irreducible global projector is a reasonable picture."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "77d53f674799",
+          "ts": "e7249773ba79"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "77d53f674799",
+          "ts": "e7249773ba79"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Exemplary scope-limiting remark; strengthens the surrounding propositions rather than overreaching."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:09:19.136Z"
 }

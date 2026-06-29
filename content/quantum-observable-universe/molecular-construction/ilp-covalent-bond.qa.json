@@ -1052,7 +1052,461 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "06b05df79504",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "minor",
+        "evidence": "ilp-covalent-bond.md:30: \"### Knots, not links\" and \"### Consistency across levels\" interpretive sections",
+        "notes": "The proposition statement is short (LP selects the bond operator) but the block carries extensive interpretive prose (knots-not-links, quark-confinement analogy) that would normally sit in a linked remark."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "06b05df79504",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "ILP covalent bond in §1 molecular Hecke algebra — correct."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "06b05df79504",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Applied chapter; eV binding and ILP claims archimedean-appropriate."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "06b05df79504",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No narrative **Proof.** body; the Lean is a length-triviality + an axiom."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "06b05df79504",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "major",
+        "evidence": "ilp-covalent-bond.lean:22: \"theorem covalent_bond_is_ilp_optimal : inverse_trefoil.length = 3 := by rfl\"",
+        "notes": "The .md proposition claims the LP SELECTS the inverse trefoil as the unique minimum-crossing knot with Frobenius positivity + non-increasing trace; the Lean theorem of the same name proves only inverse_trefoil.length = 3 (a list-length triviality), and the binding energy is an unproved `axiom`. Lean proves far less than the stated claim."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "06b05df79504",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "major",
+        "evidence": "ilp-covalent-bond.lean:31: \"axiom h2_binding_energy (q : ℝ) (hq : q > 1) : ∃ E, E > 0 ∧ E < 5.0\"",
+        "notes": "The resolving theorem's name (covalent_bond_is_ilp_optimal) asserts ILP-optimality but its type is a length equality; the substantive binding-energy claim is introduced as an axiom. The named declaration does not carry the proposition's claim."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "06b05df79504",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Not a projection; it is a length triviality plus a separate axiom."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "06b05df79504",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "major",
+        "evidence": "ilp-covalent-bond.lean:23: \"inverse_trefoil.length = 3 := by rfl\"",
+        "notes": "The theorem named 'covalent_bond_is_ilp_optimal' proves a triviality (length=3 by rfl) while its docstring/name assert ILP optimality — the q_gl_obstruction_calc failure mode (docstring asserts a provable claim the Lean does not carry)."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "06b05df79504",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No false premise; the axiom is consistent (E in (0,5))."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "06b05df79504",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "The length theorem has no hypotheses; axiom uses q>1."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "06b05df79504",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "minor",
+        "evidence": "ilp-covalent-bond.lean:31: \"axiom h2_binding_energy\"",
+        "notes": "Not decide-masking per se, but the binding-energy content is masked behind an `axiom` rather than proved/sorried-with-Ref; equivalent concern of asserting unproved content as established."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "06b05df79504",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Inverse trefoil T(2,3)^-1 = sigma0^-1 sigma1^-1 sigma0^-1 has 3 crossings; D0(H2)=4.4834 eV vs 4.478 (+0.1%) plausible; E_mol = E_hartree/[2]_q^2 dimensionally consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "06b05df79504",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "major",
+        "evidence": "ilp-covalent-bond.lean:22: \"covalent_bond_is_ilp_optimal : inverse_trefoil.length = 3\"",
+        "notes": "The formal sibling for an ILP-optimality proposition is content-free: a length=3 rfl plus an axiom. The substantive LP-selection and binding claims are not formalized."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "06b05df79504",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Same LP/Gram as confinement; not back-fitted (the witness table shows the trace decrease)."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "06b05df79504",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "major",
+        "evidence": "ilp-covalent-bond.md:75: \"Zero fitted parameters\" with D0(H2)=4.4834 eV (+0.1%) but D0(C-C)=3.21 eV (-10.9%)",
+        "notes": "'Zero fitted parameters' headline alongside a -10.9% C-C miss and a +0.1% H2 hit; the proposition is marked computation status 'experimental' in .ts yet stated as a proposition. The unique-LP-solution claim is asserted, not Lean-verified (Lean only proves length=3)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "06b05df79504",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Binding scale E_mol = m_e alpha^2/(q+q^-1)^2 derived from q0; no off-menu constant."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "06b05df79504",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "minor",
+        "evidence": "ilp-covalent-bond.md:21: trace table Unknot 0.182, inverse trefoil 0.062 -> 4.48 eV",
+        "notes": "The jump from 'tr_M drops 0.182->0.062' to a specific 4.48 eV binding relies on the vertex-volume model + E_mol scale; the 'unique LP solution' uniqueness over all knots is asserted from a 4-row table, not shown to exclude all other minimum-crossing candidates."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "06b05df79504",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "major",
+        "evidence": "ilp-covalent-bond.lean:22-23: \"theorem covalent_bond_is_ilp_optimal : inverse_trefoil.length = 3 := by rfl\"",
+        "notes": "Lean proves a list-length triviality and offloads the real content to an axiom; the .md asserts LP-selection uniqueness + a derived binding energy. Severe divergence — Lean is vacuously weaker than the proposition."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "06b05df79504",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "kock2004 (Frobenius algebras) cited in the axiom Ref is topical for the trace structure."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "06b05df79504",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Inverse trefoil, knot vs link, vertex-volume model, E_mol all defined."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "06b05df79504",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "major",
+        "evidence": "ilp-covalent-bond.md:71: \"D_0(C-C) = 3.21 eV (observed ..., -10.9%)\"",
+        "notes": "A -10.9% miss on C-C alongside a +0.1% hit on H2 (the calibration prototype) suggests the agreement is method/model-sensitive; with 'experimental' compute status and two different methods (vertex-volume vs NF-multiplication) quoted, the 'zero fitted parameters' claim is fragile across systems."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "06b05df79504",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Inseparability-of-bonded-system as a knot (vs separable link) is a reasonable physical analogy; H2 bond ~4.5 eV is correct order of magnitude."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "06b05df79504",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "D0 observed values pinned via :val to molecular-experimental-refs.witness.json; predicted 4.4834/3.21 are model outputs (compute status experimental)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "06b05df79504",
+          "ts": "1ee12ac77830",
+          "lean": "27d1009625de"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "major",
+        "evidence": "ilp-covalent-bond.lean:22: \"covalent_bond_is_ilp_optimal : inverse_trefoil.length = 3 := by rfl\"",
+        "notes": "Physically appealing ILP-as-universal-selector proposition, but the Lean sibling proves only inverse_trefoil.length=3 (rfl) with the binding energy as an axiom, the .ts marks it 'experimental', and the headline 'zero fitted parameters' sits next to a -10.9% C-C miss. Strongest objection: the formalization is vacuous relative to the stated LP-uniqueness + binding claims."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:09:19.136Z"
 }

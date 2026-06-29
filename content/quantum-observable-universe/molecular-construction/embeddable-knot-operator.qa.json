@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:56:25.765Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "df2cc2a9c318",
+          "ts": "16ae9dc70c7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Embeddable knot operator in §4 CO bonding — correct (axial/transverse channels feed bond-order bound)."
       }
     ],
     "wall-side-statement": [
@@ -47,6 +62,21 @@
         "reviewed_at": "2026-06-22T02:56:26.110Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "df2cc2a9c318",
+          "ts": "16ae9dc70c7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Definition over an ordered field (overlap weight w); archimedean note honest and appropriate (overlap ratio is a real number)."
       }
     ],
     "da-false-claim": [
@@ -66,6 +96,21 @@
         "notes": "No false claims identified in 'Embeddable knot operator with geometric overlap weight': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/embeddable-knot-operator.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "df2cc2a9c318",
+          "ts": "16ae9dc70c7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Overlap-weighted binding E_0*w and composite sum; order-k bond = 1 axial + (k-1) transverse giving E_0(1+(k-1)w_perp) — internally consistent."
       }
     ],
     "da-vacuous": [
@@ -84,6 +129,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Embeddable knot operator with geometric overlap weight' presents substantial mathematical content: embedding of its braid into the ambient $3$-manifold, carrying an...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "df2cc2a9c318",
+          "ts": "16ae9dc70c7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Real definition with composite-binding rule."
       }
     ],
     "da-circular": [
@@ -103,6 +163,21 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Embeddable knot operator with geometric overlap weight'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/embeddable-knot-operator.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "df2cc2a9c318",
+          "ts": "16ae9dc70c7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No circularity."
       }
     ],
     "da-overclaim": [
@@ -121,6 +196,23 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Embeddable knot operator with geometric overlap weight' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "df2cc2a9c318",
+          "ts": "16ae9dc70c7b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "minor",
+        "evidence": "embeddable-knot-operator.md:26: \"The weight w_perp ... fixed per system; it is not a fitted constant.\"",
+        "notes": "Calling w_perp 'not a fitted constant' is asserted via 'orbital-overlap integral for the embedding', but no computation deriving w_perp is given in this definition block; the sibling remark brackets it empirically in [0.3,0.7]. The non-fitted claim is plausible but not demonstrated here."
       }
     ],
     "da-hidden-dof": [
@@ -140,6 +232,23 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Embeddable knot operator with geometric overlap weight'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/embeddable-knot-operator.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "df2cc2a9c318",
+          "ts": "16ae9dc70c7b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "major",
+        "evidence": "embeddable-knot-operator.md:26: \"w_perp is the transverse/axial overlap ratio ... fixed per system\"",
+        "notes": "w_perp is a per-system continuous weight that directly scales binding energy; the companion block notes the equal-channel model overbinds by 1.42x and w_perp in [0.3,0.7] brackets N2. A per-system overlap ratio with a ~2x range is effectively a tunable DOF for energetics, even though the bond-ORDER (cardinality) result is weight-independent."
       }
     ],
     "da-non-sequitur": [
@@ -159,6 +268,21 @@
         "notes": "The argument flow in 'Embeddable knot operator with geometric overlap weight' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/embeddable-knot-operator.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "df2cc2a9c318",
+          "ts": "16ae9dc70c7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Overlap weighting -> weighted sum follows."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -177,6 +301,21 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The referenced Lean file content/quantum-observable-universe/molecular-construction/embeddable-knot-operator.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "df2cc2a9c318",
+          "ts": "16ae9dc70c7b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No sibling .lean for this definition (multipleBond_binding lives in library EmbeddableKnotOperator.lean, referenced from downstream props)."
       }
     ],
     "da-citation-misuse": [
@@ -196,6 +335,21 @@
         "notes": "No citations are present in 'Embeddable knot operator with geometric overlap weight', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/embeddable-knot-operator.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "df2cc2a9c318",
+          "ts": "16ae9dc70c7b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No citations."
       }
     ],
     "da-definitional-ambiguity": [
@@ -215,6 +369,23 @@
         "notes": "Key terms and symbols in 'Embeddable knot operator with geometric overlap weight' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/embeddable-knot-operator.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "df2cc2a9c318",
+          "ts": "16ae9dc70c7b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "minor",
+        "evidence": "embeddable-knot-operator.md:26: \"the orbital-overlap integral for the embedding, fixed per system\"",
+        "notes": "w_perp is defined as 'the transverse/axial overlap ratio ... fixed per system' but the system-to-value map is not specified here; 'fixed per system' without a stated rule leaves the value implicit."
       }
     ],
     "da-empirical-fragility": [
@@ -234,6 +405,21 @@
         "notes": "The algebraic and logical relations in 'Embeddable knot operator with geometric overlap weight' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/embeddable-knot-operator.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "df2cc2a9c318",
+          "ts": "16ae9dc70c7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Definition itself states no experimental match; the bracketing is in the linked remark."
       }
     ],
     "da-physical-implausibility": [
@@ -253,6 +439,21 @@
         "notes": "The physical concepts described in 'Embeddable knot operator with geometric overlap weight' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/embeddable-knot-operator.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "df2cc2a9c318",
+          "ts": "16ae9dc70c7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Axial sigma (w=1) vs transverse pi (w<1) overlap is the standard sigma/pi overlap picture."
       }
     ],
     "da-reproducibility": [
@@ -272,6 +473,21 @@
         "notes": "The derivation steps and formal definitions in 'Embeddable knot operator with geometric overlap weight' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/embeddable-knot-operator.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "df2cc2a9c318",
+          "ts": "16ae9dc70c7b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "References multipleBond_binding Lean; no contradicted witness value in-block."
       }
     ],
     "da-referee-verdict": [
@@ -292,6 +508,23 @@
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/molecular-construction/embeddable-knot-operator.lean is missing, preventing formal verification of the claims in 'Embeddable knot operator with geometric overlap weight'.",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "df2cc2a9c318",
+          "ts": "16ae9dc70c7b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "major",
+        "evidence": "embeddable-knot-operator.md:26: \"fixed per system; it is not a fitted constant\"",
+        "notes": "Clean axial/transverse definition, but the transverse weight w_perp is a per-system continuous parameter (~[0.3,0.7]) governing energetics; the 'not a fitted constant' claim is asserted, not derived in-block. The cardinality result is robust to it; the energy is not."
       }
     ],
     "voice-status-leak": [
@@ -1125,5 +1358,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:09:19.136Z"
 }

@@ -820,7 +820,255 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7cf4a61e29d3",
+          "ts": "90f2563094a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "VSEPR angle table in §6b water/geometry — correct placement."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "7cf4a61e29d3",
+          "ts": "90f2563094a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Steric-number sp/sp2/sp3 bases (180/120/109.47) and pure-p 90 for H2S are standard; predicted vs observed within stated tolerance."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "7cf4a61e29d3",
+          "ts": "90f2563094a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Substantive one-rule angle account."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "7cf4a61e29d3",
+          "ts": "90f2563094a3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "minor",
+        "evidence": "domain-weight-vsepr-angles.md:9: \"the hybridisation base theta_0 — set by whether the central atom's self-dual s-channel is in the bonding active set\"",
+        "notes": "The hybridisation base theta_0 (sp/sp2/sp3/pure-p) is selected per-molecule by steric number/s-p gap; this base does most of the angular work, so 'no angle is fitted' is partly true (the q^3 shift is derived) but the choice of base is a discrete per-system input rather than a single derivation."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "7cf4a61e29d3",
+          "ts": "90f2563094a3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "major",
+        "evidence": "domain-weight-vsepr-angles.md:25: \"reproduces CH4/NH3/H2O/C2H4/CO2 within 0.6 deg ... no fit\"",
+        "notes": "The 'no fit' / within-0.6deg claim leans on choosing the correct hybridisation base theta_0 (180/120/109.47/90) per molecule from steric number; the derived part is only the q^3/q^2 shift off that base. Calling the whole angle 'derived with no fit' overclaims relative to what the q-weight alone supplies."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "7cf4a61e29d3",
+          "ts": "90f2563094a3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "minor",
+        "evidence": "domain-weight-vsepr-angles.md:10: \"the hybridisation base theta_0 — set by ... the atom's size (its s-p promotion gap)\"",
+        "notes": "theta_0 functions as a per-molecule discrete selector (sp/sp2/sp3/pure-p). It is justified by steric number + s-p gap, but is effectively a structural input the q-weight does not itself produce; should be flagged as the geometric anchor rather than wholly derived."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "7cf4a61e29d3",
+          "ts": "90f2563094a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "s-p gap -> hybridise-or-not -> base angle is a coherent chain; H2S pure-p flip argued from group-16 trend."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "7cf4a61e29d3",
+          "ts": "90f2563094a3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Remark, no Lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "7cf4a61e29d3",
+          "ts": "90f2563094a3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No citations."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "7cf4a61e29d3",
+          "ts": "90f2563094a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "AX_nE_m counts, weights, base theta_0 all specified."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "7cf4a61e29d3",
+          "ts": "90f2563094a3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "minor",
+        "evidence": "domain-weight-vsepr-angles.md:25: \"within 0.6 deg\"",
+        "notes": "Agreement within ~0.6deg across 6 molecules is decent but the dominant predictor is the discretely-chosen hybridisation base; the residual q-weight shift is the only continuous degree being tested, so the headline accuracy is partly carried by the base choice."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "7cf4a61e29d3",
+          "ts": "90f2563094a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "VSEPR hybridisation picture is physically standard."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "7cf4a61e29d3",
+          "ts": "90f2563094a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Predicted angles pinned to molecular-angle-master-table.witness.json."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "7cf4a61e29d3",
+          "ts": "90f2563094a3"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "major",
+        "evidence": "domain-weight-vsepr-angles.md:25: \"within 0.6 deg ... with no fit\"",
+        "notes": "Useful unifying remark, but the strongest objection is that the per-molecule hybridisation base theta_0 (sp/sp2/sp3/pure-p) is the dominant angular determinant and is a discrete structural input; the 'no fit, all derived' framing overstates how much the q^l weight alone explains."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:09:19.136Z"
 }

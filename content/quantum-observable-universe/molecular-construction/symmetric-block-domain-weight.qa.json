@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:56:25.675Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "0979519b9c12",
+          "ts": "857d289a856c",
+          "lean": "6509d84003b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Statement is the weight law q^l and ratio q^2; physical VSEPR interpretation kept to a final derived-not-fitted note."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:56:26.042Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "0979519b9c12",
+          "ts": "857d289a856c",
+          "lean": "6509d84003b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Symmetric-block domain weight feeds H2O bond angle in §6b — correct."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:56:26.452Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "0979519b9c12",
+          "ts": "857d289a856c",
+          "lean": "6509d84003b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Weight law q^l is generic-ring algebra; Lean uses CommMonoid R, no premature R-specialisation."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:56:26.922Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "0979519b9c12",
+          "ts": "857d289a856c",
+          "lean": "6509d84003b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Lean proof is induction + pow_succ (generic ring); no archimedean machinery on the algebraic core."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +175,22 @@
         "reviewed_at": "2026-06-22T02:56:27.284Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "0979519b9c12",
+          "ts": "857d289a856c",
+          "lean": "6509d84003b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Lean symmetric_block_domain_weight (q^l) and lone_bond_ratio_q_squared (q^3=q^2*q) match the .md statement's provable core."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -203,6 +283,22 @@
         "reviewed_at": "2026-06-22T02:56:28.763Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "0979519b9c12",
+          "ts": "857d289a856c",
+          "lean": "6509d84003b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Lean signatures are the genuine weight-law/ratio claims."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -223,6 +319,22 @@
         "reviewed_at": "2026-06-22T02:56:29.210Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "0979519b9c12",
+          "ts": "857d289a856c",
+          "lean": "6509d84003b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Proved by induction and rw[pow_succ]; no field projection."
       }
     ],
     "proof-no-trivial-true": [
@@ -243,6 +355,22 @@
         "reviewed_at": "2026-06-22T02:56:29.609Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "0979519b9c12",
+          "ts": "857d289a856c",
+          "lean": "6509d84003b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Goals are real equalities (q^l, q^3=q^2*q)."
       }
     ],
     "proof-no-false-premise": [
@@ -263,6 +391,22 @@
         "reviewed_at": "2026-06-22T02:56:29.987Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "0979519b9c12",
+          "ts": "857d289a856c",
+          "lean": "6509d84003b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No false premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -283,6 +427,22 @@
         "reviewed_at": "2026-06-22T02:56:30.344Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "0979519b9c12",
+          "ts": "857d289a856c",
+          "lean": "6509d84003b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "q and w used; replicate-based lemmas use their args."
       }
     ],
     "proof-no-decide-masking": [
@@ -303,6 +463,22 @@
         "reviewed_at": "2026-06-22T02:56:30.719Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "0979519b9c12",
+          "ts": "857d289a856c",
+          "lean": "6509d84003b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "simp/rw, no decide masking."
       }
     ],
     "da-false-claim": [
@@ -323,6 +499,22 @@
         "notes": "The claim in 'Symmetric-block domain weight: lone/bond $= q^2$' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "0979519b9c12",
+          "ts": "857d289a856c",
+          "lean": "6509d84003b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "On trivial rep every generator acts as scalar q (eigenvalue q of the Hecke relation), so word weight q^l is correct."
       }
     ],
     "da-vacuous": [
@@ -342,6 +534,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Symmetric-block domain weight: lone/bond $= q^2$' presents substantial mathematical content: monoid — the one-dimensional Wedderburn block that a molecule's $C_{nv}$ assembl...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0979519b9c12",
+          "ts": "857d289a856c",
+          "lean": "6509d84003b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Weight law is a genuine (if elementary) algebraic fact, formalized non-vacuously."
       }
     ],
     "da-circular": [
@@ -362,6 +570,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Symmetric-block domain weight: lone/bond $= q^2$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0979519b9c12",
+          "ts": "857d289a856c",
+          "lean": "6509d84003b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Ratio q^2 derived from word lengths, not back-fitted to angles."
       }
     ],
     "da-overclaim": [
@@ -381,6 +605,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Symmetric-block domain weight: lone/bond $= q^2$' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0979519b9c12",
+          "ts": "857d289a856c",
+          "lean": "6509d84003b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Claims only the provable weight core sorry-free; angle reproduction is in the linked remark."
       }
     ],
     "da-hidden-dof": [
@@ -401,6 +641,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Symmetric-block domain weight: lone/bond $= q^2$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0979519b9c12",
+          "ts": "857d289a856c",
+          "lean": "6509d84003b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "lone pair length 3 and bond length 1 are structural; no free parameter."
       }
     ],
     "da-non-sequitur": [
@@ -421,6 +677,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "0979519b9c12",
+          "ts": "857d289a856c",
+          "lean": "6509d84003b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Scalar action -> q^l weight -> q^2 ratio is a clean chain."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -440,6 +712,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0979519b9c12",
+          "ts": "857d289a856c",
+          "lean": "6509d84003b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Lean theorems named in .md match formal content."
       }
     ],
     "da-citation-misuse": [
@@ -460,6 +748,22 @@
         "notes": "No citations are present in 'Symmetric-block domain weight: lone/bond $= q^2$', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0979519b9c12",
+          "ts": "857d289a856c",
+          "lean": "6509d84003b8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No external citation invoked."
       }
     ],
     "da-definitional-ambiguity": [
@@ -480,6 +784,22 @@
         "notes": "Key terms and symbols in 'Symmetric-block domain weight: lone/bond $= q^2$' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0979519b9c12",
+          "ts": "857d289a856c",
+          "lean": "6509d84003b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "lone pair = sigma0 sigma1 sigma0 (length 3) explicit; symmetric block defined."
       }
     ],
     "da-empirical-fragility": [
@@ -500,6 +820,22 @@
         "notes": "The algebraic and logical relations in 'Symmetric-block domain weight: lone/bond $= q^2$' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0979519b9c12",
+          "ts": "857d289a856c",
+          "lean": "6509d84003b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Ratio is exact q^2; angle table lives in linked remark, not here."
       }
     ],
     "da-physical-implausibility": [
@@ -520,6 +856,22 @@
         "notes": "The physical concepts described in 'Symmetric-block domain weight: lone/bond $= q^2$' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "0979519b9c12",
+          "ts": "857d289a856c",
+          "lean": "6509d84003b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Domain-weight VSEPR mapping is plausible."
       }
     ],
     "da-reproducibility": [
@@ -540,6 +892,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean:1 — content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Group/List.olean' of module Mathlib.Algebra.BigOperators.Group.List does not exist"
+      },
+      {
+        "field_hash": {
+          "md": "0979519b9c12",
+          "ts": "857d289a856c",
+          "lean": "6509d84003b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Witnesses listed in .ts; provable core is Lean-checked."
       }
     ],
     "da-referee-verdict": [
@@ -561,6 +929,22 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean contains compilation errors: content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Group/List.olean' of module Mathlib.Algebra.BigOperators.Group.List does not exist, invalidating the claimed formalization.",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "0979519b9c12",
+          "ts": "857d289a856c",
+          "lean": "6509d84003b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Clean, honestly-scoped proposition with matching sorry-free Lean. No substantive objection."
       }
     ],
     "voice-status-leak": [
@@ -1600,5 +1984,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:09:19.136Z"
 }

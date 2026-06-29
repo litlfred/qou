@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:56:25.692Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "9760e939c084",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Statement is the bare existence+idempotency claim; the cite line is sourcing, not interpretation."
       }
     ],
     "fit-section-chapter": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:56:26.062Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "9760e939c084",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Assembly projector existence in §1b assembly projectors — correct."
       }
     ],
     "wall-side-statement": [
@@ -71,6 +103,22 @@
         "reviewed_at": "2026-06-22T02:56:26.453Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "9760e939c084",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Generic-q algebraic existence claim; correctly stated for generic q, no premature R."
       }
     ],
     "wall-side-proof": [
@@ -91,6 +139,22 @@
         "reviewed_at": "2026-06-22T02:56:26.852Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "9760e939c084",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No narrative proof body beyond citation; algebraic content."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -111,6 +175,24 @@
         "reviewed_at": "2026-06-22T02:56:27.220Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "9760e939c084",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "major",
+        "evidence": "assembly-projector-exists.lean:36: \"∃ d : AssemblyProjectorData, d.parts = parts ∧ d.block = [parts.sum]\"",
+        "notes": "The .md asserts existence of an idempotent (e^2=e) q-Young symmetriser in H_N(q); the Lean proves only existence of combinatorial partition data and explicitly defers idempotency to the cited literature. Lean is strictly weaker than the stated proposition."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -203,6 +285,22 @@
         "reviewed_at": "2026-06-22T02:56:28.715Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "field_hash": {
+          "md": "9760e939c084",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Lean signature is the documented combinatorial-existence stub; docstring is candid about scope, so no covert weakening to pass a stronger claim."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -223,6 +321,22 @@
         "reviewed_at": "2026-06-22T02:56:29.090Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "field_hash": {
+          "md": "9760e939c084",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Existence proved by exhibiting the witness data, not projecting a conclusion field."
       }
     ],
     "proof-no-trivial-true": [
@@ -243,6 +357,22 @@
         "reviewed_at": "2026-06-22T02:56:29.448Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "field_hash": {
+          "md": "9760e939c084",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Goal is a genuine existence statement, not True; witness construction is real."
       }
     ],
     "proof-no-false-premise": [
@@ -263,6 +393,22 @@
         "reviewed_at": "2026-06-22T02:56:29.781Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "field_hash": {
+          "md": "9760e939c084",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No false premise."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -283,6 +429,22 @@
         "reviewed_at": "2026-06-22T02:56:30.236Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "field_hash": {
+          "md": "9760e939c084",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Single argument parts is used."
       }
     ],
     "proof-no-decide-masking": [
@@ -303,6 +465,22 @@
         "reviewed_at": "2026-06-22T02:56:30.605Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "field_hash": {
+          "md": "9760e939c084",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Proof is a term-mode witness with simp on block_total; no decide masking."
       }
     ],
     "da-false-claim": [
@@ -323,6 +501,22 @@
         "notes": "No false claims identified in 'Existence of the symmetric-block assembly projector': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/assembly-projector-exists.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9760e939c084",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Wenzl projector / q-Young symmetriser idempotency for generic q is a true literature result."
       }
     ],
     "da-vacuous": [
@@ -342,6 +536,24 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Existence of the symmetric-block assembly projector' presents substantial mathematical content: of $N$ there exists a symmetric-block [assembly projector](#def:molecular-assemb...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "9760e939c084",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "minor",
+        "evidence": "assembly-projector-exists.lean:38: \"⟨{ parts := parts, block := [parts.sum], block_total := by simp }, rfl, rfl⟩\"",
+        "notes": "Lean content (existence of a partition + one-row block) is trivially true and carries none of the mathematically substantive idempotency the .md proposition headlines; the formal object is near-vacuous relative to the stated claim."
       }
     ],
     "da-circular": [
@@ -362,6 +574,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Existence of the symmetric-block assembly projector'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/assembly-projector-exists.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9760e939c084",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No circularity."
       }
     ],
     "da-overclaim": [
@@ -381,6 +609,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Existence of the symmetric-block assembly projector' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "9760e939c084",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Companion block (assembly-projector-scope) explicitly disclaims energy/stability; existence not overclaimed."
       }
     ],
     "da-hidden-dof": [
@@ -401,6 +645,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Existence of the symmetric-block assembly projector'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/assembly-projector-exists.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9760e939c084",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No parameter."
       }
     ],
     "da-non-sequitur": [
@@ -421,6 +681,22 @@
         "notes": "The argument flow in 'Existence of the symmetric-block assembly projector' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/assembly-projector-exists.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9760e939c084",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Existence -> idempotency follows from Wenzl, cited."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -440,6 +716,24 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Lean formalization and narrative for 'Existence of the symmetric-block assembly projector' are in complete agreement.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "9760e939c084",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "major",
+        "evidence": "assembly-projector-exists.lean:33: \"This deliberately proves only the combinatorial existence\"",
+        "notes": "Lean proves combinatorial data existence; .md claims idempotent e^2=e projector exists. Divergence is disclosed in the docstring but the proposition statement is broader than the Lean."
       }
     ],
     "da-citation-misuse": [
@@ -460,6 +754,22 @@
         "notes": "Citations to wenzl1988, kassel1995 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/assembly-projector-exists.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9760e939c084",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "wenzl1988 and kassel1995 correctly support q-Young symmetriser idempotency."
       }
     ],
     "da-definitional-ambiguity": [
@@ -480,6 +790,22 @@
         "notes": "Key terms and symbols in 'Existence of the symmetric-block assembly projector' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/assembly-projector-exists.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9760e939c084",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "e_{lambda,(N)} and one-row block mu=(N) well-defined."
       }
     ],
     "da-empirical-fragility": [
@@ -500,6 +826,22 @@
         "notes": "The algebraic and logical relations in 'Existence of the symmetric-block assembly projector' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/assembly-projector-exists.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9760e939c084",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Pure algebra, no numerics."
       }
     ],
     "da-physical-implausibility": [
@@ -520,6 +862,22 @@
         "notes": "The physical concepts described in 'Existence of the symmetric-block assembly projector' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/assembly-projector-exists.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9760e939c084",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Algebraic existence; no physical claim."
       }
     ],
     "da-reproducibility": [
@@ -540,6 +898,22 @@
         "notes": "The derivation steps and formal definitions in 'Existence of the symmetric-block assembly projector' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/assembly-projector-exists.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9760e939c084",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No witness."
       }
     ],
     "da-referee-verdict": [
@@ -561,6 +935,24 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Existence of the symmetric-block assembly projector' are consistent.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "9760e939c084",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "major",
+        "evidence": "assembly-projector-exists.lean:36: proves only ∃ partition data, idempotency deferred to literature",
+        "notes": "Mathematically true proposition (Wenzl), but the Lean sibling formalizes only the combinatorial precondition, not the idempotency the statement headlines; referee would ask that either the statement be narrowed to data-existence or the idempotency be formalized/clearly marked cited."
       }
     ],
     "voice-status-leak": [
@@ -1600,5 +1992,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:09:19.136Z"
 }

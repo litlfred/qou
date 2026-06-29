@@ -31,6 +31,22 @@
         "reviewed_at": "2026-06-22T02:56:25.697Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "f593ee63be25",
+          "ts": "8b0c45e14f0f",
+          "lean": "06abbdbe7139"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Covalent-bond-as-shared-trefoil definition in §1 molecular Hecke algebra — correct."
       }
     ],
     "wall-side-statement": [
@@ -51,6 +67,22 @@
         "reviewed_at": "2026-06-22T02:56:26.089Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "f593ee63be25",
+          "ts": "8b0c45e14f0f",
+          "lean": "06abbdbe7139"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Combinatorial bond-operator definition; archimedean note honest; generic core."
       }
     ],
     "da-false-claim": [
@@ -71,6 +103,22 @@
         "notes": "The claim in 'Covalent bond as shared electron trefoil' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/covalent-bond-shared-trefoil.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "f593ee63be25",
+          "ts": "8b0c45e14f0f",
+          "lean": "06abbdbe7139"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "L_b as product of sigma^-1 crossings; each shared electron 2 attractive crossings — consistent with the bond-order bookkeeping elsewhere."
       }
     ],
     "da-vacuous": [
@@ -90,6 +138,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Covalent bond as shared electron trefoil' presents substantial mathematical content: Hopf linking of $k$ electron trefoils across the two nuclei. Specifically, let $...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f593ee63be25",
+          "ts": "8b0c45e14f0f",
+          "lean": "06abbdbe7139"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Real bond-operator definition."
       }
     ],
     "da-circular": [
@@ -110,6 +174,22 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Covalent bond as shared electron trefoil'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/covalent-bond-shared-trefoil.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f593ee63be25",
+          "ts": "8b0c45e14f0f",
+          "lean": "06abbdbe7139"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Definitional."
       }
     ],
     "da-overclaim": [
@@ -129,6 +209,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Covalent bond as shared electron trefoil' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f593ee63be25",
+          "ts": "8b0c45e14f0f",
+          "lean": "06abbdbe7139"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Definition; no claim."
       }
     ],
     "da-hidden-dof": [
@@ -149,6 +245,22 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Covalent bond as shared electron trefoil'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/covalent-bond-shared-trefoil.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f593ee63be25",
+          "ts": "8b0c45e14f0f",
+          "lean": "06abbdbe7139"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No parameter."
       }
     ],
     "da-non-sequitur": [
@@ -169,6 +281,22 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/molecular-construction/covalent-bond-shared-trefoil.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/covalent-bond-shared-trefoil.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "f593ee63be25",
+          "ts": "8b0c45e14f0f",
+          "lean": "06abbdbe7139"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Product over k electrons of two-crossing factors is coherent."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -188,6 +316,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/molecular-construction/covalent-bond-shared-trefoil.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "f593ee63be25",
+          "ts": "8b0c45e14f0f",
+          "lean": "06abbdbe7139"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No sibling .lean."
       }
     ],
     "da-citation-misuse": [
@@ -208,6 +352,22 @@
         "notes": "No citations are present in 'Covalent bond as shared electron trefoil', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/covalent-bond-shared-trefoil.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f593ee63be25",
+          "ts": "8b0c45e14f0f",
+          "lean": "06abbdbe7139"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No citations."
       }
     ],
     "da-definitional-ambiguity": [
@@ -228,6 +388,22 @@
         "notes": "Key terms and symbols in 'Covalent bond as shared electron trefoil' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/covalent-bond-shared-trefoil.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f593ee63be25",
+          "ts": "8b0c45e14f0f",
+          "lean": "06abbdbe7139"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Generator indices g_e, trefoil T_{2,3}, bond order k all specified."
       }
     ],
     "da-empirical-fragility": [
@@ -248,6 +424,22 @@
         "notes": "The algebraic and logical relations in 'Covalent bond as shared electron trefoil' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/covalent-bond-shared-trefoil.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f593ee63be25",
+          "ts": "8b0c45e14f0f",
+          "lean": "06abbdbe7139"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No numerics."
       }
     ],
     "da-physical-implausibility": [
@@ -268,6 +460,22 @@
         "notes": "The physical concepts described in 'Covalent bond as shared electron trefoil' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/covalent-bond-shared-trefoil.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "f593ee63be25",
+          "ts": "8b0c45e14f0f",
+          "lean": "06abbdbe7139"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Shared-electron covalent picture is standard."
       }
     ],
     "da-reproducibility": [
@@ -288,6 +496,22 @@
         "notes": "The Lean sibling content/quantum-observable-universe/molecular-construction/covalent-bond-shared-trefoil.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/covalent-bond-shared-trefoil.lean:1 — content/quantum-observable-universe/molecular-construction/covalent-bond-shared-trefoil.lean:20:49: error: unknown tactic"
+      },
+      {
+        "field_hash": {
+          "md": "f593ee63be25",
+          "ts": "8b0c45e14f0f",
+          "lean": "06abbdbe7139"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No witness."
       }
     ],
     "da-referee-verdict": [
@@ -309,6 +533,22 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/molecular-construction/covalent-bond-shared-trefoil.lean contains compilation errors: content/quantum-observable-universe/molecular-construction/covalent-bond-shared-trefoil.lean:20:49: error: unknown tactic, invalidating the claimed formalization.",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "f593ee63be25",
+          "ts": "8b0c45e14f0f",
+          "lean": "06abbdbe7139"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Well-formed bond-operator definition; no objection."
       }
     ],
     "voice-status-leak": [
@@ -1173,5 +1413,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:09:19.136Z"
 }

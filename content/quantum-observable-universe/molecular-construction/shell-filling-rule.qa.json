@@ -28,6 +28,21 @@
         "reviewed_at": "2026-06-22T02:56:25.686Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "2f0e2faa129c",
+          "ts": "910053cb3da7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Statement is the aufbau/Phi_1-minimization claim plus its LP dual; mostly bare."
       }
     ],
     "fit-section-chapter": [
@@ -47,6 +62,21 @@
         "reviewed_at": "2026-06-22T02:56:26.059Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "2f0e2faa129c",
+          "ts": "910053cb3da7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Shell-filling rule in §2 electron shells — correct."
       }
     ],
     "wall-side-statement": [
@@ -66,6 +96,21 @@
         "reviewed_at": "2026-06-22T02:56:26.525Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "2f0e2faa129c",
+          "ts": "910053cb3da7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Applied chapter; Phi_1-minimization / LP dual claims archimedean-appropriate."
       }
     ],
     "wall-side-proof": [
@@ -85,6 +130,21 @@
         "reviewed_at": "2026-06-22T02:56:26.903Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "2f0e2faa129c",
+          "ts": "910053cb3da7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No narrative proof body; Lean is a placeholder projection."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -104,6 +164,23 @@
         "reviewed_at": "2026-06-22T02:56:27.326Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative claims completed proof but Lean uses a sorry stub."
+      },
+      {
+        "field_hash": {
+          "md": "2f0e2faa129c",
+          "ts": "910053cb3da7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "major",
+        "evidence": "shell_filling_rule.lean:87: \"theorem shell_filling_rule [ctx : ShellFillingRuleContext] : ... := ⟨ctx.impl_inner_shells_fill ctx.aufbau_active, ...⟩\"",
+        "notes": "The .md asserts aufbau is DERIVED from Phi_1 minimization; the Lean assumes the three aufbau conclusions as context hypotheses (impl_inner_shells_fill / impl_hunds_rule_max / impl_lp_dual_objective) and projects them. Lean proves nothing the .md claims."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -340,6 +417,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2f0e2faa129c",
+          "ts": "910053cb3da7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "critical",
+        "evidence": "shell_filling_rule.lean:39-48: \"aufbau_holds : Prop ... impl_inner_shells_fill : aufbau_holds → ∀ n, n < n_val → occupancy n = capacity n\"",
+        "notes": "The provable goal is carried as context fields handed back verbatim; the statement is satisfied by assumption, not derivation — the integrity guard against weakening-by-injection is violated. Docstring admits a 'theorem … : ctx.holds := by sorry placeholder'."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -376,6 +470,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2f0e2faa129c",
+          "ts": "910053cb3da7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "critical",
+        "evidence": "shell_filling_rule.lean:91: \"⟨ctx.impl_inner_shells_fill ctx.aufbau_active, ctx.impl_hunds_rule_max ctx.aufbau_active, ctx.impl_lp_dual_objective ctx.aufbau_active⟩\"",
+        "notes": "Textbook self-assuming projection: the conclusion conjuncts are projected out of context fields whose types ARE the conclusion (gated by aufbau_active : aufbau_holds). AGENTS.md §3b-cond item 5 anti-pattern."
       }
     ],
     "proof-no-trivial-true": [
@@ -412,6 +523,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2f0e2faa129c",
+          "ts": "910053cb3da7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "major",
+        "evidence": "shell_filling_rule.lean:46: \"impl_hunds_rule_max : aufbau_holds → ∀ other : ℕ, other ≤ singly_occupied\"",
+        "notes": "The Hund's-rule conjunct ∀ other:ℕ, other ≤ singly_occupied is FALSE for arbitrary other unless singly_occupied is unbounded — as a context-field hypothesis it is near-vacuous/ill-typed as a maximization claim; combined with the projection this is effectively content-free."
       }
     ],
     "proof-no-false-premise": [
@@ -465,6 +593,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2f0e2faa129c",
+          "ts": "910053cb3da7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "minor",
+        "evidence": "shell_filling_rule.lean:46: \"∀ other : ℕ, other ≤ singly_occupied\"",
+        "notes": "impl_hunds_rule_max returns ∀ other:ℕ, other ≤ singly_occupied, which is only satisfiable if singly_occupied is not a fixed ℕ; as written it is an unsatisfiable obligation for any concrete instance, so a real instance would carry a false-ish premise. Flagged minor as it lives in the hypothesis layer, not a False.elim."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -518,6 +663,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2f0e2faa129c",
+          "ts": "910053cb3da7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "minor",
+        "evidence": "shell_filling_rule.lean:21-38: context carries Z, N, n_val, occupancy, capacity, y_0, primal_obj, Gram penalty references",
+        "notes": "Several context fields (N, y_0 beyond the primal_obj identity) are decorative; the proof only invokes the three impl_ fields, so most of the context is unused scaffolding around a projection."
       }
     ],
     "proof-no-decide-masking": [
@@ -554,6 +716,21 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "2f0e2faa129c",
+          "ts": "910053cb3da7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No decide/trivial; the issue is projection, not reflection masking."
       }
     ],
     "da-false-claim": [
@@ -573,6 +750,21 @@
         "notes": "No false claims identified in 'Shell filling minimises $\\\\Phi_1$ (aufbau from LP dual)': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-filling-rule.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2f0e2faa129c",
+          "ts": "910053cb3da7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "The narrative aufbau/Hund's-rule physics is correct chemistry; the defect is formalization, not a false math claim."
       }
     ],
     "da-vacuous": [
@@ -591,6 +783,23 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Shell filling minimises $\\\\Phi_1$ (aufbau from LP dual)' presents substantial mathematical content: assignment of $Z$ electron trefoils to bonding sites that minimises the total $\\...",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "2f0e2faa129c",
+          "ts": "910053cb3da7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "major",
+        "evidence": "shell_filling_rule.lean:82: \"The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder\"",
+        "notes": "The formal sibling is a self-assuming projection that proves the aufbau conclusion by assuming it as context fields — true-but-content-free relative to the .md's 'derives the aufbau principle' claim."
       }
     ],
     "da-circular": [
@@ -610,6 +819,23 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Shell filling minimises $\\\\Phi_1$ (aufbau from LP dual)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-filling-rule.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2f0e2faa129c",
+          "ts": "910053cb3da7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "major",
+        "evidence": "shell_filling_rule.lean:41-48: \"aufbau_active : aufbau_holds\" feeding the impl_ fields",
+        "notes": "The Lean derivation is circular: it concludes 'aufbau holds' from a context that already supplies 'aufbau_holds' and implications gated on it. The narrative 'reproduces the aufbau principle' is thus unsupported by the formalization."
       }
     ],
     "da-overclaim": [
@@ -628,6 +854,23 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Shell filling minimises $\\\\Phi_1$ (aufbau from LP dual)' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "2f0e2faa129c",
+          "ts": "910053cb3da7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "major",
+        "evidence": "shell-filling-rule.md:4: \"This reproduces the aufbau principle\"",
+        "notes": "Stating the rule 'reproduces the aufbau principle' as a proposition overclaims given the Lean assumes rather than derives it; should be a conjecture or carry an explicit author note that the formalization is a placeholder."
       }
     ],
     "da-hidden-dof": [
@@ -647,6 +890,21 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Shell filling minimises $\\\\Phi_1$ (aufbau from LP dual)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-filling-rule.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2f0e2faa129c",
+          "ts": "910053cb3da7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No fitted numerical parameter; Phi_1/Gram are structural."
       }
     ],
     "da-non-sequitur": [
@@ -666,6 +924,21 @@
         "notes": "The argument flow in 'Shell filling minimises $\\\\Phi_1$ (aufbau from LP dual)' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-filling-rule.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2f0e2faa129c",
+          "ts": "910053cb3da7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Narrative steps (inner-shell fill, Hund's rule, LP dual) each individually follow; the gap is the missing derivation, not a logical jump in prose."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -684,6 +957,23 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The referenced Lean file content/quantum-observable-universe/molecular-construction/shell-filling-rule.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "2f0e2faa129c",
+          "ts": "910053cb3da7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "major",
+        "evidence": "shell_filling_rule.lean:88-90: conjuncts are exactly impl_ fields of the context",
+        "notes": "Lean proves a vacuous projection of assumed fields; the .md claims an aufbau DERIVATION from Phi_1 minimization. Clear divergence — Lean strictly weaker (assumes the conclusion)."
       }
     ],
     "da-citation-misuse": [
@@ -703,6 +993,21 @@
         "notes": "No citations are present in 'Shell filling minimises $\\\\Phi_1$ (aufbau from LP dual)', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-filling-rule.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2f0e2faa129c",
+          "ts": "910053cb3da7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No external citation."
       }
     ],
     "da-definitional-ambiguity": [
@@ -722,6 +1027,21 @@
         "notes": "Key terms and symbols in 'Shell filling minimises $\\\\Phi_1$ (aufbau from LP dual)' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-filling-rule.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2f0e2faa129c",
+          "ts": "910053cb3da7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Phi_1, sites, Gram penalty defined relative to the framework."
       }
     ],
     "da-empirical-fragility": [
@@ -741,6 +1061,21 @@
         "notes": "The algebraic and logical relations in 'Shell filling minimises $\\\\Phi_1$ (aufbau from LP dual)' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-filling-rule.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2f0e2faa129c",
+          "ts": "910053cb3da7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No numerical experimental comparison in this block."
       }
     ],
     "da-physical-implausibility": [
@@ -760,6 +1095,21 @@
         "notes": "The physical concepts described in 'Shell filling minimises $\\\\Phi_1$ (aufbau from LP dual)' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-filling-rule.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2f0e2faa129c",
+          "ts": "910053cb3da7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "Aufbau + Hund's rule physics is standard and correct."
       }
     ],
     "da-reproducibility": [
@@ -779,6 +1129,21 @@
         "notes": "The derivation steps and formal definitions in 'Shell filling minimises $\\\\Phi_1$ (aufbau from LP dual)' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-filling-rule.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "2f0e2faa129c",
+          "ts": "910053cb3da7"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "notes": "No witness for this proposition."
       }
     ],
     "da-referee-verdict": [
@@ -799,6 +1164,23 @@
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/molecular-construction/shell-filling-rule.lean is missing, preventing formal verification of the claims in 'Shell filling minimises $\\\\Phi_1$ (aufbau from LP dual)'.",
         "severity": "critical"
+      },
+      {
+        "field_hash": {
+          "md": "2f0e2faa129c",
+          "ts": "910053cb3da7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:09:19.136Z",
+        "reviewed_sha": "b5fd42c1de10733e8ad3cf74e0098f5761a56506",
+        "severity": "major",
+        "evidence": "shell_filling_rule.lean:87-93: theorem proves the conclusion by projecting assumed context fields",
+        "notes": "Strongest objection: the Lean sibling is a self-assuming projection (proves aufbau by assuming aufbau_holds + impl_ fields), so the proposition's 'derives the aufbau principle from Phi_1 minimization' is not formally supported. Either demote to conjecture or replace the placeholder with a genuine derivation."
       }
     ],
     "voice-status-leak": [
@@ -1801,5 +2183,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:09:19.136Z"
 }
