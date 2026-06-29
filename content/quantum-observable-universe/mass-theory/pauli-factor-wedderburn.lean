@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.BraidKnot.pauli_factor_wedderburn
 

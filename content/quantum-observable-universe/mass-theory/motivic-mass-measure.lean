@@ -5,6 +5,8 @@
 -- Canonical declaration lives in: lean/QOU/MotivesArchimedean.lean
 -- This sibling is a documentation-mirror of the QOU library declaration.
 
+import Mathlib.Tactic
+
 namespace QOU.BraidsKnots
 
 /-- Abstract Grothendieck ring of varieties K_0(Var_k).
