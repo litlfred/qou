@@ -1,12 +1,14 @@
 ---
 # me3r
 title: 'Data-integrity: reconcile three m_e CODATA registries (two truncated)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-23T16:10:00Z
-updated_at: 2026-06-24T18:40:00Z
+updated_at: 2026-06-29T20:30:00Z
 ---
+
+> **CLOSED 2026-06-29 (owner-directed)** — verified resolved on `main`: both package m_e copies now `0.51099895069` (`qou-substrate/.../constants.py:283`, `qou-mass/.../codata_constants.py:99`; PR #2725). Audit: `docs/audits/2026-06-29-bean-hygiene-data-integrity-verified-resolved.md`.
 
 ## Progress 2026-06-24 (PR #2735) — finding documented; fix REVERTED per owner (owner to apply)
 
