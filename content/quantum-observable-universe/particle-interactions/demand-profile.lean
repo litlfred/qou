@@ -24,7 +24,7 @@ abbrev NormalForm := List (ℕ × ℝ)
 /-- The **demand profile** of a derived atom: the sublist of NF entries
     whose coefficient is strictly negative. -/
 -- Ref: [manuscript] §4/demand-profile
-def demandProfile (a : NormalForm) : NormalForm :=
+noncomputable def demandProfile (a : NormalForm) : NormalForm :=
   a.filter (fun wc => wc.2 < 0)
 
 /-- The **demand magnitude** `|dem|`: the sum of absolute values of the
