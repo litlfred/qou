@@ -167,4 +167,35 @@ theorem betaFactProd_ratio_middle (l : List ℕ) (c : ℕ)
     unfold betaNat betaNatVal; push_cast; ring
   rw [hbN, hfac]; push_cast; ring
 
+/-! ## `betaProdGap` in standard Fin-k Vandermonde form (foundation for the Vandermonde-side ratio)
+
+`betaProdGap_cast` gives the nested `range`/`betaNat` form `∏_{i<k} ∏_{m<k−1−i}(βᵢ − β_{i+1+m})`.  The
+lemma below reindexes the inner range (`m ↦ i+1+m`) onto `Finset.filter (i < ·)`, giving the standard
+Vandermonde double product `∏_p ∏_{q>p}(βₚ − β_q)` over `Fin k` with `β = betaVec l` — the form on which
+`wall_split` operates for the per-corner Vandermonde-side ratio. -/
+theorem betaProdGapFin (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) :
+    ((QOU.Mathlib.SYTEnum.betaProdGap l : ℕ) : ℚ)
+      = ∏ p : Fin l.length, ∏ q ∈ univ.filter (p < ·), (betaVec l p - betaVec l q) := by
+  rw [betaProdGap_cast l hl,
+      ← Fin.prod_univ_eq_prod_range
+        (fun i => ∏ m ∈ range (l.length - 1 - i), (betaNat l i - betaNat l (i + 1 + m))) l.length]
+  apply Finset.prod_congr rfl
+  intro p _
+  rw [betaVec_eq_betaNat]
+  apply Finset.prod_bij (fun m (hm : m ∈ range (l.length - 1 - (p:ℕ))) =>
+      (⟨(p : ℕ) + 1 + m, by rw [mem_range] at hm; have := p.2; omega⟩ : Fin l.length))
+  · intro m hm
+    rw [mem_filter]
+    refine ⟨mem_univ _, ?_⟩
+    rw [Fin.lt_def]; simp; omega
+  · intro a ha b hb hab
+    rw [Fin.mk.injEq] at hab; omega
+  · intro q hq
+    rw [mem_filter, Fin.lt_def] at hq
+    refine ⟨(q : ℕ) - (p : ℕ) - 1, ?_, ?_⟩
+    · rw [mem_range]; have := q.2; omega
+    · rw [Fin.mk.injEq]; omega
+  · intro m hm
+    rw [betaVec_eq_betaNat]
+
 end QOU.Mathlib.SYTBetaLagrange
