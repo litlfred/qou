@@ -27,8 +27,11 @@ irreducible combinatorial heart as a single, `LinearOrder`-free, `support`-free,
 **relation-level** core:
 
 > `dominance_colStab_lemma` — under the concrete dominance order `domRel` (a
-> proved partial order on `Tabloid μ`), **column permutations weakly decrease the
-> tabloid** (`π ∈ C_t ⟹ domRel {π•t} {t}`). This is Sagan's §2.4 dominance lemma.
+> proved partial order on `Tabloid μ`), for a **standard** tableau `T` every
+> column permutation weakly decreases the tabloid
+> (`π ∈ C_t`, `T` standard `⟹ domRel {π•t} {t}`). This is Sagan's §2.4 dominance
+> lemma. (Restricted to standard `T`: over *all* tableaux it contradicts
+> antisymmetry — see the lemma's doc.)
 
 The dominance order itself is no longer opaque: `dominance_relation_exists` is now
 **`sorry`-free**, built from the explicit partial-sum order `domRel` whose three
@@ -454,10 +457,12 @@ become "concrete dominance order, fully a partial order, reduced to exactly
 Sagan's dominance lemma." -/
 
 /-- **The core's bundled data (Sagan 2.5.2's dominance content).** A reflexive,
-transitive, antisymmetric relation `dom` on tabloids of shape `μ` such that every
-column permutation `π ∈ C_t` sends `{t}` to a weakly-dominated tabloid
-`dom {π•t} {t}`. From it (plus the lever + Layer 1) the brick-4 target follows
-`sorry`-free. -/
+transitive, antisymmetric relation `dom` on tabloids of shape `μ` such that for
+every **standard** tableau `T`, each column permutation `π ∈ C_t` of its filling
+`t = sytToTableau T` sends `{t}` to a weakly-dominated tabloid `dom {π•t} {t}`.
+(The `dom_colStab` field is restricted to standard `T`: over *all* tableaux it
+would contradict `dom_antisymm` — see that field's doc.) From it (plus the lever
++ Layer 1) the brick-4 target follows `sorry`-free. -/
 structure DominanceData (μ : YoungDiagram) where
   /-- the dominance relation on tabloids -/
   dom : Specht.Tabloid μ → Specht.Tabloid μ → Prop
@@ -469,31 +474,49 @@ structure DominanceData (μ : YoungDiagram) where
   dom_trans : ∀ a b c, dom a b → dom b c → dom a c
   /-- antisymmetry: dominance data refines equality of tabloids -/
   dom_antisymm : ∀ a b, dom a b → dom b a → a = b
-  /-- **the dominance lemma**: a column permutation weakly decreases the tabloid -/
-  dom_colStab : ∀ (t : Specht.Tableau μ) (π : Specht.colStab t),
-    dom (Specht.Tabloid.mk ((π : Equiv.Perm (Fin (Specht.nOf μ))) • t)) (Specht.Tabloid.mk t)
+  /-- **the dominance lemma** (Sagan §2.4): for a **standard** tableau `T`, every
+  column permutation `π ∈ C_t` of `t = sytToTableau T` weakly decreases the
+  tabloid. **Restricted to standard `T` on purpose** — over *all* tableaux this
+  field is inconsistent with `dom_antisymm`: applying it at both `t` and
+  `t' = π•t` (note `colStab t' = colStab t ∋ π⁻¹`, `π⁻¹•t' = t`) forces
+  `{π•t} = {t}`, i.e. `colStab t ⊆ rowStab t`; with `colStab t ∩ rowStab t = {1}`
+  that gives `colStab t = {1}`, false once `μ` has a column of length ≥ 2.
+  Standard `T` is exactly what the downstream support bound needs
+  (`exists_order_colStab_decreasing` only applies it at `sytToTableau T`). -/
+  dom_colStab : ∀ (T : StandardYoungTableau μ) (π : Specht.colStab (sytToTableau T)),
+    dom (Specht.Tabloid.mk ((π : Equiv.Perm (Fin (Specht.nOf μ))) • sytToTableau T))
+      (Specht.Tabloid.mk (sytToTableau T))
 
-/-- **STUB — Sagan's dominance lemma (the single combinatorial core).** A column
-permutation `π ∈ C_t` sends `{t}` to a tabloid `{π•t}` that is weakly **dominated
-by** `{t}` in the concrete dominance order `domRel`
-(`domCount {π•t} i m ≤ domCount {t} i m` for all `i, m`).  This is the irreducible
+/-- **STUB — Sagan's dominance lemma (the single combinatorial core).** For a
+**standard** tableau `T` with filling `t = sytToTableau T`, every column
+permutation `π ∈ C_t` sends `{t}` to a tabloid `{π•t}` weakly **dominated by**
+`{t}` in the concrete dominance order `domRel`
+(`domCount {π•t} i m ≤ domCount {t} i m` for all `i, m`). This is the irreducible
 combinatorial heart of the standard-basis independence proof — Sagan §2.4's
-dominance lemma — now stated against the concrete `domRel` built above, with no
+dominance lemma — against the concrete `domRel` built above, with no
 `LinearOrder`/`Finsupp` plumbing and **all order axioms already discharged**: only
 this single inequality remains.
 
-The concrete content (verified TRUE on the `n = 2` single-column case: with
-`t = id` the swap `π` moves label `0` from row `0` down to row `1`, dropping
-`domCount` at `(i = 0, m = 1)` from `1` to `0`, so `{π•t}` is strictly below
-`{t}`; the converse `domRel {t} {π•t}` fails there) is the column-by-column
-domination of Sagan's lemma — left as the one cited `sorry`. -/
-theorem dominance_colStab_lemma (t : Specht.Tableau μ) (π : Specht.colStab t) :
-    domRel (Specht.Tabloid.mk ((π : Equiv.Perm (Fin (Specht.nOf μ))) • t))
-      (Specht.Tabloid.mk t) := by
-  -- Ref: [sagan2001] §2.4 the dominance lemma (a column permutation π ∈ C_t sends
-  -- {t} to a tabloid {π•t} weakly dominated by {t}, so {T} is the maximum of
-  -- supp(e_T)); cf. Thm 2.5.2 and [james1984representation] §8. The single
-  -- irreducible core of brick 4 — the order axioms are all proved above.
+**Why standard `T` (not all tableaux).** The statement is true precisely *because*
+`T` is standard: columns increase downward (`col_strict`), so each column already
+holds its smallest label at the top — `{t}` is the dominance-**maximum** of its
+column orbit, and any `π ∈ C_t` weakly decreases it. Over *arbitrary* `t` the
+claim is **false** and is even inconsistent with `dom_antisymm`: applying it at
+both `t` and `t' = π•t` (note `colStab t' = colStab t ∋ π⁻¹`) forces `{π•t} = {t}`,
+i.e. `colStab t ⊆ rowStab t`; with `colStab t ∩ rowStab t = {1}` that gives
+`colStab t = {1}`, false once `μ` has a column of length ≥ 2. (n=2 single column:
+with standard `t = id`, the swap `π` moves label `0` down from row `0` to row `1`,
+dropping `domCount` at `(i=0,m=1)` from `1` to `0` — `{π•t}` strictly below `{t}`,
+consistent.) -/
+theorem dominance_colStab_lemma (T : StandardYoungTableau μ)
+    (π : Specht.colStab (sytToTableau T)) :
+    domRel (Specht.Tabloid.mk ((π : Equiv.Perm (Fin (Specht.nOf μ))) • sytToTableau T))
+      (Specht.Tabloid.mk (sytToTableau T)) := by
+  -- Ref: [sagan2001] §2.4 the dominance lemma (for STANDARD t, a column permutation
+  -- π ∈ C_t sends {t} to a tabloid {π•t} weakly dominated by {t}, so {T} is the
+  -- maximum of supp(e_T)); cf. Thm 2.5.2 and [james1984representation] §8. The
+  -- single irreducible core of brick 4 — the order axioms are all proved above.
+  -- (Standard t is essential: over all t the claim is false — see the docstring.)
   sorry
 
 /-- **The single combinatorial core, reduced (sorry-free modulo
@@ -528,8 +551,9 @@ theorem exists_order_colStab_decreasing :
     exists_linearOrder_of_partialOrder D.dom D.dom_refl D.dom_trans D.dom_antisymm
   refine ⟨ord, ?_⟩
   intro T π
-  -- leadTab T = mk (sytToTableau T); the core gives dom {π•t} {t}, lever lifts to ≤
-  have hdom := D.dom_colStab (sytToTableau T) π
+  -- leadTab T = mk (sytToTableau T); the core gives dom {π•t} {t} for standard T,
+  -- lever lifts to ≤
+  have hdom := D.dom_colStab T π
   rw [leadTab]
   exact hle _ _ hdom
 
