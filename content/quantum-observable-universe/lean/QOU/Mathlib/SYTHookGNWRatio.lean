@@ -100,4 +100,21 @@ theorem betaProdGap_cast_sigma (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) :
           (betaNat l p.1 - betaNat l p.2) := by
   rw [betaProdGap_cast_pairs l hl, Finset.prod_sigma']
 
+/-- `betaNat` is strictly antitone on indices `< length`: `i < j < k ⟹ βⱼ < βᵢ`. -/
+theorem betaNat_lt (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) {i j : ℕ}
+    (hij : i < j) (hj : j < l.length) : betaNat l j < betaNat l i := by
+  rw [betaNat_eq, betaNat_eq]
+  have hlen : l.getD j 0 ≤ l.getD i 0 := QOU.BraidKnot.IdentityI.getD_antitone l hl (le_of_lt hij)
+  unfold betaNatVal
+  have hsh : l.length - 1 - j < l.length - 1 - i := by omega
+  have h2 : ((l.length - 1 - j : ℕ) : ℚ) < ((l.length - 1 - i : ℕ) : ℚ) := by exact_mod_cast hsh
+  have h1 : ((l.getD j 0 : ℕ) : ℚ) ≤ ((l.getD i 0 : ℕ) : ℚ) := by exact_mod_cast hlen
+  push_cast at h1 h2 ⊢
+  linarith
+
+/-- The gap factor `βᵢ − βⱼ` is nonzero for `i < j < k` (strict antitonicity). -/
+theorem betaNat_ne (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) {i j : ℕ}
+    (hij : i < j) (hj : j < l.length) : betaNat l i - betaNat l j ≠ 0 := by
+  have := betaNat_lt l hl hij hj; intro h; linarith [sub_eq_zero.mp h]
+
 end QOU.Mathlib.SYTBetaLagrange
