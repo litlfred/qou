@@ -1,55 +1,8 @@
-**Notation.** The prefactor previously written
-$\rho$ in this block is the **SDP-solution multiplicity** in the
-Wedderburn decomposition, an integer $\in \mathbb{Z}_{>0}$. To
-disambiguate from the distinct **categorical density** $\rho_K \in
-\mathbb{R}_{>0}$ used in
-[`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md) (CODATA-fit
-scalar, e.g. $\rho_K^{\mathfrak{p}} \approx 1723.6$), this block
-uses **$\nu_{\mathrm{SDP}} \in \mathbb{Z}_{>0}$** throughout. The
-old symbol $\rho$ is reserved (i) for the Hoefsmit irrep
-representation $\rho_\lambda \colon H_n(q) \to \mathrm{GL}_{d_\lambda}$
-and (ii) for $\rho_K$ in `prop:atomic-mass-gb-nf`. See
-[`docs/audits/-rho-notation-fix-recommendation.md`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/docs/audits/-rho-notation-fix-recommendation.md)
-for the full notation audit.
-
-**Caveat (structural form).** The multi-term formula below is the
-**first-principles structural form** of the mass invariant. At the
-substrate value $q_0$ it predicts $m_{\mathfrak{p}} \approx 5\,\mathrm{MeV}$
-(off CODATA $938\,\mathrm{MeV}$ by $\approx 173\times$). The remaining
-factor is the **categorical density $\rho_K$** of
-[`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md), whose
-substrate-only derivation is an **open problem** ("Open question:
-categorical derivation of $\rho_K$",
-[`atomic-mass-gb-nf.md` §Open](atomic-mass-gb-nf.md)). This block
-formalises what the brane-tower contributes; closure of the nucleon-
-mass anchors requires the additional categorical content in
-$\rho_K$.
-
-**Class-A discipline status.** The 173$\times$ shortfall is captured by
-$\rho_K$ in [`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md), which
-admits a **graded substrate expansion**
-([`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md)) — the
-LO piece $Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e$ is
-**proved** (Wenzl 1988 Markov multiplicativity); the single-gen
-piece $\tfrac{\alpha}{2} \sum_i \ln(\hat V_i^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}}})$ closes
-empirically to $0.18\%$; the pair-gen piece is open. On the
-nucleon-anchor side, $m_{\mathfrak{p}}$ has a **conjectural
-substrate form**
-([`prop:lambda-scale-substrate-form`](lambda-scale-substrate-form.md))
-at $\lambda_{\mathrm{scale}} \approx 5/2 - h^2 G$ matching CODATA
-to ~5.4 ppm; ${}^1\mathrm{H}$ lifts to `derived` once the Borromean
-tower wiring lands. Per
-[`docs/audits/-lambda-scale-derivation-search.md`](../../../docs/audits/-lambda-scale-derivation-search.md)
-§13, the current state is **justification** (5.4 ppm structural match)
-rather than full derivation. This proposition is therefore a Class-A
-opt-out (conditional on the substrate forms above) per the
-[three-calibration discipline](three-calibration-inputs.md); the
-structural form (this block) is correct and independent of the open
-pieces. Tracked under
-[Workplan 0b](../../../docs/audits/-workplan-0b-formalism-rewire-handoff.md)
-and the [m_p chain closure gap](../../../docs/audits/-m-p-chain-closure-gap-analysis.md).
-$\rho_K$ closure; only its canonical instantiation is currently
-empirical.
+The prefactor $\nu_{\mathrm{SDP}} \in \mathbb{Z}_{>0}$ used throughout
+this block is the **SDP-solution multiplicity** in the Wedderburn
+decomposition; it is distinct from the categorical density $\rho_K \in
+\mathbb{R}_{>0}$ of
+[`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md).
 
 **Statement (categorical, pre-Archimedean form).** Let
 $\mathcal{U} = (\mathbf{C}, \varTheta, G, \mathcal{S})$ be a quantum
@@ -101,22 +54,6 @@ multiplicity of $T_w$'s SDP solution in the Wedderburn
 decomposition (see algorithm step below). This expression is
 **finite, exact, and entirely pre-Archimedean** — every quantity
 on the right-hand side lives in $\mathbb{Q}(q)$.
-
-**Historical note — single-term shorthand retired.** An earlier
-wording wrote $M(\mathfrak{H}) = \nu_{\mathrm{SDP}} \cdot \mathrm{tr}_M(T_w)$
-(single term, dropping the tower and Frobenius co-Casimir). That
-single-term form is **shorthand** for the multi-term sum above
-and is structurally inadequate as a mass formula on its own,
-verified empirically in
-[`canonical evaluation-sdp-canonical-paper-formula.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/computations/canonical evaluation-sdp-canonical-paper-formula.witness.json):
-single-term fails by 87--100% on $D$, $T$, ${}^3\mathrm{He}$ under
-both Plancherel and Wenzl-Schur conventions; multi-term without
-the brane tower reduces error to 36--63%; the multi-term form
-with the canonical Li_2^q brane tower (above) reaches $\approx 5\,
-\mathrm{MeV}$ for $\mathfrak{p}$ at $q_0$, with the remaining
-$\sim 170 \times$ shortfall captured by $\rho_K$. **This block uses
-the multi-term form throughout; the single-term shorthand should
-not appear elsewhere in the paper.**
 
 **Mass identity (structural form).** After applying the
 Archimedean realization functor

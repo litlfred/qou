@@ -80,19 +80,6 @@ commute through the symbol map; deviations between
 $\mathrm{tr}_{\mathrm{gr}}$ and the regular-value expansion are
 absorbed into $\mathrm{Res}_{\mathrm{GB}}$.*
 
-**Physical interpretation of each piece.**
-*The split mirrors Strutinsky's macroscopic-plus-shell
-decomposition $E = \tilde E + \delta E_{\mathrm{shell}}$: the
-graded trace is the categorical analogue of the liquid-drop
-(macroscopic) energy, and the residue sum is the shell
-correction. This is not only a formal analogy: the Strutinsky
-smoothing procedure (Gaussian convolution of the single-particle
-spectrum) is the physics shadow of the symbol map $\sigma$ on
-$\mathrm{gr}\,H_n(R, q)$, and the oscillating $\delta E_{\mathrm{shell}}$
-is the residue contribution from filtration strata that the
-smoothing collapses. The precise identification is made in
-([Strutinsky from graded trace](#rem:strutinsky-from-graded-trace)).*
-
 **Cohomological form.**
 *In the spectral-sequence formulation of
 ([GB residue spectral sum](#prop:gb-residue-spectral-sum)),
