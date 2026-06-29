@@ -90,34 +90,30 @@ def cornerCell (l : List ℕ) (i : ℕ) : ℕ × ℕ := (i, l.getD i 0 - 1)
 
 /-- **List corner ⇔ diagram corner.** Row index `i` is a removable corner of `λ` iff the cell
 `(i, λ_i − 1)` is a removable corner of the diagram of `λ`. -/
-theorem isCornerCell_ofRowLens_iff (l : List ℕ) (i : ℕ) (hl : List.Sorted (· ≥ ·) l)
-    (hpos : ∀ a ∈ l, 0 < a) :
+theorem isCornerCell_ofRowLens_iff (l : List ℕ) (i : ℕ) (hl : List.Sorted (· ≥ ·) l) :
     IsCornerCell (ofRowLens l hl) (cornerCell l i) ↔ IsCorner l i := by
   unfold IsCornerCell IsCorner cornerCell
   simp only [mem_ofRowLens_iff]
   constructor
   · rintro ⟨_hin, _hright, hdown⟩
-    -- hdown : ¬ (l.getD i 0 - 1 < l.getD (i+1) 0); _hin : l.getD i 0 - 1 < l.getD i 0
+    -- _hin : l.getD i 0 − 1 < l.getD i 0 already forces `l.getD i 0 ≥ 1` (a corner row is positive)
+    have hpi : 1 ≤ l.getD i 0 := by omega
     have hilen : i < l.length := by
       by_contra h
       rw [getD_ge l (by omega)] at _hin; omega
-    have hpi : 1 ≤ l.getD i 0 := by
-      rw [getD_lt l hilen]; exact hpos _ (List.getElem_mem hilen)
     exact ⟨hilen, by omega⟩
   · rintro ⟨hilen, hnext⟩
-    have hpi : 1 ≤ l.getD i 0 := by
-      rw [getD_lt l hilen]; exact hpos _ (List.getElem_mem hilen)
+    -- a corner row strictly exceeds the row below, hence is positive
+    have hpi : 1 ≤ l.getD i 0 := by omega
     refine ⟨by omega, by omega, by omega⟩
 
 /-- **The geometric heart.** Deleting the corner cell `(i, λ_i − 1)` from the diagram of `λ` gives the
 diagram of `removeCorner λ i`. -/
-theorem eraseCorner_ofRowLens (l : List ℕ) (i : ℕ) (hl : List.Sorted (· ≥ ·) l)
-    (hpos : ∀ a ∈ l, 0 < a) (hci : IsCorner l i)
+theorem eraseCorner_ofRowLens (l : List ℕ) (i : ℕ) (hl : List.Sorted (· ≥ ·) l) (hci : IsCorner l i)
     (hcc : IsCornerCell (ofRowLens l hl) (cornerCell l i)) :
     eraseCorner (ofRowLens l hl) (cornerCell l i) hcc
       = ofRowLens (removeCorner l i) (sorted_removeCorner l i hl hci) := by
-  have hpi : 1 ≤ l.getD i 0 := by
-    rw [getD_lt l hci.1]; exact hpos _ (List.getElem_mem hci.1)
+  have hpi : 1 ≤ l.getD i 0 := by have := hci.2; omega
   apply YoungDiagram.ext
   ext x
   obtain ⟨r, c⟩ := x
@@ -147,12 +143,11 @@ theorem eq_cornerCell_of_isCornerCell (l : List ℕ) (hl : List.Sorted (· ≥ �
 
 /-- **Per-corner summand equality.** The structural count of the corner-deleted diagram equals the
 brute-force count of the list-level `removeCorner`. -/
-theorem num_eraseCorner_eq (l : List ℕ) (i : ℕ) (hl : List.Sorted (· ≥ ·) l)
-    (hpos : ∀ a ∈ l, 0 < a) (hci : IsCorner l i)
+theorem num_eraseCorner_eq (l : List ℕ) (i : ℕ) (hl : List.Sorted (· ≥ ·) l) (hci : IsCorner l i)
     (hcc : IsCornerCell (ofRowLens l hl) (cornerCell l i)) :
     numStandardYoungTableaux (eraseCorner (ofRowLens l hl) (cornerCell l i) hcc)
       = numSYTenum (removeCorner l i) := by
-  rw [eraseCorner_ofRowLens l i hl hpos hci hcc,
+  rw [eraseCorner_ofRowLens l i hl hci hcc,
     ← numSYTenum_eq_numStandardYoungTableaux (removeCorner l i) (sorted_removeCorner l i hl hci)]
 
 /-- Corner removal depends only on the cell: equal corner cells give the same diagram. -/
@@ -168,14 +163,10 @@ theorem mem_corners_of {l : List ℕ} {i : ℕ} (h : IsCorner l i) : i ∈ corne
 
 /-- **`cornerRecursion`, discharged.** `#SYT(λ) = ∑_{removable corners i} #SYT(removeCorner λ i)`,
 proved through the structural branching rule and the diagram↔list corner correspondence. -/
-theorem cornerRecursion_proof (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (hpos : ∀ a ∈ l, 0 < a)
-    (hne : l ≠ []) :
+theorem cornerRecursion_proof (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (hsz : 0 < sz l) :
     numSYTenum l = ((corners l).map (fun i => numSYTenum (removeCorner l i))).sum := by
   have hszpos : 0 < (ofRowLens l hl).cells.card := by
-    rw [card_cells_ofRowLens l hl]
-    cases l with
-    | nil => exact absurd rfl hne
-    | cons a t => have := hpos a (List.mem_cons_self ..); simp only [List.sum_cons]; omega
+    rw [card_cells_ofRowLens l hl]; exact hsz
   rw [numSYTenum_eq_numStandardYoungTableaux l hl, numStandardYoungTableaux_branching hszpos]
   -- replace each structural summand by its list-level count
   have hsummand : ∀ cc : {cell : ℕ × ℕ // IsCornerCell (ofRowLens l hl) cell},
@@ -184,8 +175,8 @@ theorem cornerRecursion_proof (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (h
     intro cc
     have hcell : cc.1 = cornerCell l cc.1.1 := eq_cornerCell_of_isCornerCell l hl cc.1 cc.2
     have hcc' : IsCornerCell (ofRowLens l hl) (cornerCell l cc.1.1) := hcell ▸ cc.2
-    have hci : IsCorner l cc.1.1 := (isCornerCell_ofRowLens_iff l cc.1.1 hl hpos).mp hcc'
-    rw [eraseCorner_congr cc.2 hcc' hcell, num_eraseCorner_eq l cc.1.1 hl hpos hci hcc']
+    have hci : IsCorner l cc.1.1 := (isCornerCell_ofRowLens_iff l cc.1.1 hl).mp hcc'
+    rw [eraseCorner_congr cc.2 hcc' hcell, num_eraseCorner_eq l cc.1.1 hl hci hcc']
   rw [Finset.sum_congr rfl (fun cc _ => hsummand cc)]
   -- reindex the corner subtype onto `corners l`
   have hnodup : (corners l).Nodup := List.Nodup.filter _ (List.nodup_range)
@@ -194,7 +185,7 @@ theorem cornerRecursion_proof (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (h
   · -- hi : the row index is a corner
     intro cc _
     rw [List.mem_toFinset]
-    exact mem_corners_of ((isCornerCell_ofRowLens_iff l cc.1.1 hl hpos).mp
+    exact mem_corners_of ((isCornerCell_ofRowLens_iff l cc.1.1 hl).mp
       (eq_cornerCell_of_isCornerCell l hl cc.1 cc.2 ▸ cc.2))
   · -- i_inj
     intro cc1 _ cc2 _ heq
@@ -205,10 +196,30 @@ theorem cornerRecursion_proof (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (h
     intro b hb
     rw [List.mem_toFinset] at hb
     have hci : IsCorner l b := mem_corners hb
-    exact ⟨⟨cornerCell l b, (isCornerCell_ofRowLens_iff l b hl hpos).mpr hci⟩,
+    exact ⟨⟨cornerCell l b, (isCornerCell_ofRowLens_iff l b hl).mpr hci⟩,
       Finset.mem_univ _, rfl⟩
   · -- summand equality
     intro cc _
     rfl
+
+/-- Filtering trailing zeros from a sorted shape leaves its Young diagram unchanged (a `0`-length row
+contributes no cells). -/
+theorem ofRowLens_filter_eq (x : List ℕ) (hx : List.Sorted (· ≥ ·) x)
+    (hxf : List.Sorted (· ≥ ·) (x.filter (· != 0))) :
+    ofRowLens x hx = ofRowLens (x.filter (· != 0)) hxf := by
+  apply YoungDiagram.ext
+  ext cell
+  obtain ⟨r, c⟩ := cell
+  rw [mem_cells, mem_cells, mem_ofRowLens_iff, mem_ofRowLens_iff, filter_ne_zero_getD x hx r]
+
+/-- **`numSYTenum` is invariant under removing trailing zeros** from a sorted shape — both count
+standard fillings of the same Young diagram. -/
+theorem numSYTenum_filter_eq (x : List ℕ) (hx : List.Sorted (· ≥ ·) x) :
+    numSYTenum x = numSYTenum (x.filter (· != 0)) := by
+  have hxf : List.Sorted (· ≥ ·) (x.filter (· != 0)) :=
+    List.Pairwise.sublist List.filter_sublist hx
+  rw [numSYTenum_eq_numStandardYoungTableaux x hx,
+    numSYTenum_eq_numStandardYoungTableaux (x.filter (· != 0)) hxf,
+    ofRowLens_filter_eq x hx hxf]
 
 end QOU.Mathlib.SYTEnum
