@@ -1052,7 +1052,449 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "6acf2ffa47c0",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "f05c034a9f89"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/categorical-coordinate-ring.md:41: \"**Mathematical Novelty.** While the construction ... is routine commutative algebra, its mathematical novelty here is ...\"",
+        "notes": "The proposition .md ends with a 'Mathematical Novelty' paragraph (interpretive/motivational prose) inside the statement block rather than in a linked remark."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "6acf2ffa47c0",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "f05c034a9f89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "In 'Braiding conventions' section; the i,q chart-transition coordinate ring fits the braiding/orientation scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "6acf2ffa47c0",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "f05c034a9f89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Statement is generic-ring (R[i,q^{±1}] over commutative R); no archimedean construct in the statement. Correct for a substrate chapter."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "6acf2ffa47c0",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "f05c034a9f89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": ".lean proofs use AdjoinRoot/LaurentPolynomial algebra (linear_combination, isUnit_T) over generic CommRing R; no linarith/Real.* archimedean machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "6acf2ffa47c0",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "f05c034a9f89"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/categorical-coordinate-ring.lean:111: \"sorry\" (categorical_coordinate_ring_universal)",
+        "notes": "The .md asserts the universal property ('characterised by the universal property', 'smallest R-algebra extension'); the corresponding Lean theorem categorical_coordinate_ring_universal is a `sorry` (cited). Lean proves only i^2=-1 and q a unit, not the universality the statement centers on."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "6acf2ffa47c0",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "f05c034a9f89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Lean signatures match the claims; the universal-property theorem states the correct ∃! and is honestly left `sorry` with a -- Ref:. No weakening/axiom-injection."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "6acf2ffa47c0",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "f05c034a9f89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Proofs of i_coord_sq_eq_neg_one and q_coord_isUnit are genuine derivations from AdjoinRoot.isRoot_root / isUnit_T, not field projections of the conclusion."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "6acf2ffa47c0",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "f05c034a9f89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Goals are i^2=-1, IsUnit q, and a non-trivial ∃! universal property; none is True/x=x."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "6acf2ffa47c0",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "f05c034a9f89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "No False/contradictory hypotheses; CommRing R is the only premise on the proved theorems."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "6acf2ffa47c0",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "f05c034a9f89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "i_coord_sq and q_coord_isUnit use R/[CommRing R]; the universal-property theorem's qS,iS,hiS are the intended data (and the proof is deferred via sorry)."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "6acf2ffa47c0",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "f05c034a9f89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "No decide/trivial masking; proofs use linear_combination and a direct map lemma."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "6acf2ffa47c0",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "f05c034a9f89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "R[q,q^{-1}][i]/(i^2+1) being the smallest extension with q invertible and a sqrt of -1 is a correct (routine) universal-algebra statement; i_coord_sq and q_coord_isUnit verify the two defining properties."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "6acf2ffa47c0",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "f05c034a9f89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Substantive ring-theoretic content; proved facts are non-trivial."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "6acf2ffa47c0",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "f05c034a9f89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Constructs the ring then verifies its properties; no assumption of the conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "6acf2ffa47c0",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "f05c034a9f89"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/categorical-coordinate-ring.md:41: \"this specific elementary ring is proven to universally parameterise the chart-transition data\"",
+        "notes": "'this specific elementary ring is proven to universally parameterise the chart-transition data' overstates the Lean state, where the universal-property direction is still `sorry`."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "6acf2ffa47c0",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "f05c034a9f89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "i and q are derived as the two coordinates; no extra free parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "6acf2ffa47c0",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "f05c034a9f89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Aut factoring as ⟨q⟩⋊⟨iota⟩ with Z_2 acting by q->q^{-1} follows from the chart-swap involution; coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "6acf2ffa47c0",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "f05c034a9f89"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/categorical-coordinate-ring.lean:105-111: \"theorem categorical_coordinate_ring_universal ... := by ... sorry\"",
+        "notes": "The headline universal-property claim of the .md is not yet established in Lean (categorical_coordinate_ring_universal := sorry); Lean currently proves only the two component facts."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "6acf2ffa47c0",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "f05c034a9f89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "kassel1995 §IV (quantum plane) is the right reference for the chart-transition / quantum-plane derivation; cited on the sorry."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "6acf2ffa47c0",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "f05c034a9f89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "T_p (tangent at fixed point of iota), rho_p(iota)=-1, and the chart data are defined; the universal property pins 'smallest extension' precisely."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "6acf2ffa47c0",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "f05c034a9f89"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "6acf2ffa47c0",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "f05c034a9f89"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Pure algebra."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "6acf2ffa47c0",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "f05c034a9f89"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "No compute witness (formal Lean only)."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "6acf2ffa47c0",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "f05c034a9f89"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/categorical-coordinate-ring.md:41: \"is proven to universally parameterise the chart-transition data\"",
+        "notes": "Statement is correct and the two component lemmas are sorry-free, but the central universal-property claim (the proposition's substance) remains a cited `sorry` while the .md prose says 'is proven to universally parameterise'. The prose overstates the current formalization."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:41:10.738Z"
 }

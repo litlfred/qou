@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1a19801909bf",
+          "ts": "7f1e69e78155"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "In 'Linear q-transforms' section interpreting def:categorical-laplace; base-ring-independence on-scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "1a19801909bf",
+          "ts": "7f1e69e78155"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Recovers integral Laplace as q->1, R=C, Haar-on-R_{>=0} realisation of the abstract grouplike pairing; correct."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "1a19801909bf",
+          "ts": "7f1e69e78155"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Real content: abstractness of exp_q grouplike => base-ring independence."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "1a19801909bf",
+          "ts": "7f1e69e78155"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "No calibration."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "1a19801909bf",
+          "ts": "7f1e69e78155"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "'L makes sense over any base ring where H_q has the grouplike, i.e. anywhere q!=1 and s algebraic' is properly conditioned."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "1a19801909bf",
+          "ts": "7f1e69e78155"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "No parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "1a19801909bf",
+          "ts": "7f1e69e78155"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Abstract-grouplike => realisation-independence is coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "1a19801909bf",
+          "ts": "7f1e69e78155"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Remark block, no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "1a19801909bf",
+          "ts": "7f1e69e78155"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "No cites/Ref."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "1a19801909bf",
+          "ts": "7f1e69e78155"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Frobenius-orbit sum over F_p/Q_p referenced as replacement for the integral; clear enough at remark level."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "1a19801909bf",
+          "ts": "7f1e69e78155"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "1a19801909bf",
+          "ts": "7f1e69e78155"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Pure algebra."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "1a19801909bf",
+          "ts": "7f1e69e78155"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "1a19801909bf",
+          "ts": "7f1e69e78155"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Sound base-ring-independence remark; no objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:41:10.738Z"
 }

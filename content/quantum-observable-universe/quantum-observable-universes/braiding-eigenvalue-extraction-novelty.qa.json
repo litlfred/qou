@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "d3e6f6e92bca",
+          "ts": "14b52341f6f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "In 'Substrate parameter and deformation' section; q-extraction-from-braiding is the section topic."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "d3e6f6e92bca",
+          "ts": "14b52341f6f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "q as eigenvalue of c_{V,V} on the symmetric summand, with SU_q(2) recovered as End^otimes(tau): correct Tannaka-Krein statement."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "d3e6f6e92bca",
+          "ts": "14b52341f6f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Makes a real conceptual claim (q extracted not posited); not a tautology."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "d3e6f6e92bca",
+          "ts": "14b52341f6f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Argues q is determined by the category, not back-fitted; this is the anti-circularity claim itself and is correctly scoped to the categorical datum."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "d3e6f6e92bca",
+          "ts": "14b52341f6f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "'precisely and completely constrained' is the content of prop:braiding-eigenvalue-extraction it interprets; appropriately attributed as novelty-of-framing not new theorem."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "d3e6f6e92bca",
+          "ts": "14b52341f6f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "No hidden parameter; the point is q has a categorical origin."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "d3e6f6e92bca",
+          "ts": "14b52341f6f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Hecke relation -> eigenvalue -> Tannaka recovery chain is coherent."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "d3e6f6e92bca",
+          "ts": "14b52341f6f0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Remark block, no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "d3e6f6e92bca",
+          "ts": "14b52341f6f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "kassel1995 correctly cited for the standard Hecke/determinant manipulation ('following Kassel')."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "d3e6f6e92bca",
+          "ts": "14b52341f6f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Refers to prop:braiding-eigenvalue-extraction and prop:tannaka-krein-reconstruction for the technical content."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d3e6f6e92bca",
+          "ts": "14b52341f6f0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "d3e6f6e92bca",
+          "ts": "14b52341f6f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Mention of 'fluid PDE' substrate parameter is consistent with the framework's macroscopic-q usage."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "d3e6f6e92bca",
+          "ts": "14b52341f6f0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d3e6f6e92bca",
+          "ts": "14b52341f6f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Sound novelty remark; q-extraction framing is well-grounded in the cited proposition. No substantive objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:41:10.738Z"
 }

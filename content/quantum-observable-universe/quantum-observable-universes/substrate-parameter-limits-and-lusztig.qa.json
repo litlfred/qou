@@ -816,7 +816,245 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "47390d024c03",
+          "ts": "0b520ffd2688"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "In 'Substrate parameter and deformation' section; limits of d_q and Lusztig form on-scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "47390d024c03",
+          "ts": "0b520ffd2688"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "q=1 => d_q=d, q->infty => d_q projects to pi_V∘d: consistent with d_q=q^{-1} d + (1-q^{-1}) pi_V∘d limits. Lusztig integral form over Z[q,q^{-1}] correctly described."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "47390d024c03",
+          "ts": "0b520ffd2688"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Real content (limit regimes + algebraic-categorical agreement)."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "47390d024c03",
+          "ts": "0b520ffd2688"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "No back-fit."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "47390d024c03",
+          "ts": "0b520ffd2688"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "'categorical and algebraic viewpoints agree' is supported by the base-change construction described."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "47390d024c03",
+          "ts": "0b520ffd2688"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "q_0 is the specialisation target, not a hidden parameter."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "47390d024c03",
+          "ts": "0b520ffd2688"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Base-change via iota: Z[q,q^{-1}]->k coherently links the two viewpoints."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "47390d024c03",
+          "ts": "0b520ffd2688"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Remark block, no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "47390d024c03",
+          "ts": "0b520ffd2688"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "lusztig1993 correctly cited for the integral form U^Z_q with divided powers E^(n),F^(n),K^{±1}."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "47390d024c03",
+          "ts": "0b520ffd2688"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Substrate field q:M->k^x and the End(1)-element interpretation are clear."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "47390d024c03",
+          "ts": "0b520ffd2688"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "47390d024c03",
+          "ts": "0b520ffd2688"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Classicality (q=1) vs deep-quantum (q->infty) reading is consistent."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "47390d024c03",
+          "ts": "0b520ffd2688"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "47390d024c03",
+          "ts": "0b520ffd2688"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Accurate description of d_q limits and the Lusztig integral form; no objection."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:41:10.738Z"
 }

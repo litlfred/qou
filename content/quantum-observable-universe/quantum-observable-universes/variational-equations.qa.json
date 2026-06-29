@@ -1046,7 +1046,455 @@
         "reviewed_at": "2026-06-29T19:17:01.630Z",
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647"
       }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "cbf214e23b90",
+          "ts": "3774a39bf209",
+          "lean": "3677e9cf227e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Statement lists the three Euler-Lagrange equations with brief naming; the 'Physics' column appears only in the proof block, not here. Interpretation is minimal."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "cbf214e23b90",
+          "ts": "3774a39bf209",
+          "lean": "3677e9cf227e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "In 'Variational equations and wavefronts' section; exactly on-topic."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "cbf214e23b90",
+          "ts": "3774a39bf209",
+          "lean": "3677e9cf227e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Statement is over the substrate (q-deformed EL equations); commutator term q[F,⋆F] is algebraic, not archimedean. Fits the substrate-chapter regime."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "cbf214e23b90",
+          "ts": "3774a39bf209",
+          "lean": "3677e9cf227e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": ".lean is over R_q = LaurentPolynomial ℤ (generic), the archimedean q>0 hypotheses are deliberately commented out as 'not meaningful over R_q'. No archimedean leak."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "cbf214e23b90",
+          "ts": "3774a39bf209",
+          "lean": "3677e9cf227e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/variational-equations.lean:46-58: \"structure VariationalEquation where ... equation : kinematic = source\"",
+        "notes": "The .md states three substantive PDE-type equations derived from delta S_q=0; the .lean does NOT derive them — it defines record structures carrying each equation as a field (`equation : kinematic = source`) and proves only the trivial helper matter_eq_zero_source. The Lean axiomatizes rather than formalizes the claim."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "cbf214e23b90",
+          "ts": "3774a39bf209",
+          "lean": "3677e9cf227e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/variational-equations.ts:5: \"ref: 'qou:QOU.variational_equations'\"",
+        "notes": "The Lean does not state the three EL equations as theorems; they are structure fields. lean.ref points to namespace QOU.variational_equations, not a theorem matching the .md derivation claim."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "cbf214e23b90",
+          "ts": "3774a39bf209",
+          "lean": "3677e9cf227e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/variational-equations.lean:93-95: \"theorem matter_eq_zero_source (m : MatterEquation) : m.kinematic = 0 := by rw [m.equation, m.source_zero]\"",
+        "notes": "matter_eq_zero_source derives m.kinematic=0 by rewriting m.equation then m.source_zero — both are structure fields assumed at construction; the 'theorem' projects assumed equalities rather than deriving the physics."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "cbf214e23b90",
+          "ts": "3774a39bf209",
+          "lean": "3677e9cf227e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Goal m.kinematic=0 is not literally True/x=x; it is a (weak) genuine equality, even if it follows trivially from the assumed fields."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "cbf214e23b90",
+          "ts": "3774a39bf209",
+          "lean": "3677e9cf227e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "No False/contradictory premise; structures are inhabitable."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "cbf214e23b90",
+          "ts": "3774a39bf209",
+          "lean": "3677e9cf227e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "matter_eq_zero_source uses both m.equation and m.source_zero."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "cbf214e23b90",
+          "ts": "3774a39bf209",
+          "lean": "3677e9cf227e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Uses rw, no decide/trivial masking."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "cbf214e23b90",
+          "ts": "3774a39bf209",
+          "lean": "3677e9cf227e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "The three equations (q-Einstein, q-Yang-Mills with q[F,⋆F], transport D_∇ψ=0) are stated consistently; q[F,⋆F]->0 at q=1 recovering the abelian limit is correct. No false math."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "cbf214e23b90",
+          "ts": "3774a39bf209",
+          "lean": "3677e9cf227e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/variational-equations.lean:56-58: \"/-- The equation holds: LHS = RHS. -/ equation : kinematic = source\"",
+        "notes": "The Lean formalization is structurally vacuous w.r.t. the derivation: equations are posited as fields, and the only theorem is a one-line rewrite of assumed data. The substantive 'emerge from delta S_q=0' content is not captured in Lean."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "cbf214e23b90",
+          "ts": "3774a39bf209",
+          "lean": "3677e9cf227e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Narrative derivation (in the proof block) varies S_q; not circular. The Lean's field-axiomatization is a vacuity issue, not circularity."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "cbf214e23b90",
+          "ts": "3774a39bf209",
+          "lean": "3677e9cf227e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/variational-equations.md:17-19: \"$\\delta\\mathfrak{S}_q / \\delta\\nabla = 0$ yields the *categorical Yang--Mills equation*\"",
+        "notes": "The .md says each variation 'yields' the named equation (a derivation claim), but the formalization only packages the equations as data; presenting them as Lean-backed 'propositions' over-claims the formal support."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "cbf214e23b90",
+          "ts": "3774a39bf209",
+          "lean": "3677e9cf227e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "q is the substrate parameter; no extra calibration constant."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "cbf214e23b90",
+          "ts": "3774a39bf209",
+          "lean": "3677e9cf227e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Narrative steps cohere (and the proof block sketches each variation); the gap is formalization depth, not logical non-sequitur."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "cbf214e23b90",
+          "ts": "3774a39bf209",
+          "lean": "3677e9cf227e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/variational-equations.lean:35-58: \"structure VariationalEquation where ... equation : kinematic = source\"",
+        "notes": "Clear divergence: .md claims three PDE equations DERIVED by variation; .lean only defines structures holding them as equalities and proves a trivial helper. Lean is weaker than the narrative."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "cbf214e23b90",
+          "ts": "3774a39bf209",
+          "lean": "3677e9cf227e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Only -- Ref: [manuscript] §1 used; appropriate self-reference."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "cbf214e23b90",
+          "ts": "3774a39bf209",
+          "lean": "3677e9cf227e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/variational-equations.md:13-15: \"where $T_q$ is the stress-energy endomorphism constructed from the gauge and matter terms.\"",
+        "notes": "T_q (stress-energy endomorphism), R_∫ (Frobenius-Ricci), ⋆_q, J_ψ are introduced inline without precise categorical definitions in this block; the equations' meaning depends on these undefined-here objects."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "cbf214e23b90",
+          "ts": "3774a39bf209",
+          "lean": "3677e9cf227e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "cbf214e23b90",
+          "ts": "3774a39bf209",
+          "lean": "3677e9cf227e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "q-Einstein/Yang-Mills/transport triple with q=1 abelian limit is structurally analogous to standard field theory; no broken conservation flagged (contracted Bianchi noted in proof)."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "cbf214e23b90",
+          "ts": "3774a39bf209",
+          "lean": "3677e9cf227e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "No compute witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "cbf214e23b90",
+          "ts": "3774a39bf209",
+          "lean": "3677e9cf227e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/variational-equations.lean:46-58: \"structure VariationalEquation where ... equation : kinematic = source\"",
+        "notes": "The narrative variational-equations triple is coherent physics-as-category, but the Lean formalization only axiomatizes the equations as structure fields and proves a trivial projection — it does NOT formalize the delta S_q=0 derivation the .md claims. The proposition is narrative-strong / formally-weak; strongest objection is the Lean-narrative divergence."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:41:10.738Z"
 }

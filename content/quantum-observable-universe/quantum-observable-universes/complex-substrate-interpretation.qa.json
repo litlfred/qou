@@ -816,7 +816,249 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f0e72635dc0e",
+          "ts": "9e6dee1d1418"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "In 'Particle types and observation' section; the electron/positron-chirality and observability interpretation of complex q fits particle discussion."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f0e72635dc0e",
+          "ts": "9e6dee1d1418"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Dagger/self-adjointness forces conj(q^{-1})=q^{-1} <=> q real, combined with |q|>=1; the hbar_q=1-q^{-1} and Im(hbar_q)=|q|^{-1} sin Theta arithmetic checks out."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f0e72635dc0e",
+          "ts": "9e6dee1d1418"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Substantive: derives observability => Theta=0 and gives 3 interpretations of the relaxed sector."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f0e72635dc0e",
+          "ts": "9e6dee1d1418"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Observability constraint derived from the positivity axiom, not assumed at the conclusion."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f0e72635dc0e",
+          "ts": "9e6dee1d1418"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/complex-substrate-interpretation.md:62: \"the electron/positron distinction is a $\\pi$-rotation rather than a discontinuous mirror.\"",
+        "notes": "The 'continuous chirality' / electron-positron-as-pi-rotation reading (items 1-2) is heuristic interpretation presented in the relaxed 'pre-observable' sector; flagged as speculative but stated fairly assertively."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f0e72635dc0e",
+          "ts": "9e6dee1d1418"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Theta is the genuine extra DOF of complex q and is explicitly discussed, then constrained to 0 by observability; not hidden."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f0e72635dc0e",
+          "ts": "9e6dee1d1418"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Hermiticity-of-inner-product => d_q^dagger adjoint => conj(q^{-1})=q^{-1} chain is valid."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f0e72635dc0e",
+          "ts": "9e6dee1d1418"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Remark block, no .lean sibling (references Lean constraint field_ge_one in an upstream def)."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f0e72635dc0e",
+          "ts": "9e6dee1d1418"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "lusztig1993 cited for root-of-unity / modular-tensor-category context; appropriate."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f0e72635dc0e",
+          "ts": "9e6dee1d1418"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Root-of-unity q_0=e^{pi i/kappa} with quantum trace tr_q is correctly distinguished from the positive-definite Haar sector."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f0e72635dc0e",
+          "ts": "9e6dee1d1418"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "No fitted numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f0e72635dc0e",
+          "ts": "9e6dee1d1418"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/complex-substrate-interpretation.md:69: \"the imaginary part generates a *probability current* along the Reeb fibre\"",
+        "notes": "The 'probability current along the Reeb fibre' from non-Hermitian Delta_q (item 3) is a physically suggestive but unverified claim about a non-observable sector."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f0e72635dc0e",
+          "ts": "9e6dee1d1418"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f0e72635dc0e",
+          "ts": "9e6dee1d1418"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Mathematically careful (observability => q real is correctly derived). Strongest objection: the relaxed-sector physical readings (continuous chirality, Reeb probability current) are speculative interpretation, but explicitly scoped as 'pre-observable' so not over-claimed as established physics."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:41:10.738Z"
 }

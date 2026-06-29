@@ -816,7 +816,251 @@
         "reviewed_sha": "85d04c3444c34b6e9335598628ae25aab79f6647",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "09129d81e13a",
+          "ts": "e437276e07af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "In 'q-Dilogarithm' section interpreting def:q-dilogarithm; heat-partition-function reading on-scope."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "09129d81e13a",
+          "ts": "e437276e07af"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/q-dilog-heat-partition.md:7: \"produces a generating function that is precisely the $q$-dilogarithm of $\\exp(-s t_P(q))$\"",
+        "notes": "The identification 'Li_2^q is the partition function of the q-heat flow' is asserted via a resolvent log-branch sketch but no derivation/witness is given; plausible but unproven as stated."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "09129d81e13a",
+          "ts": "e437276e07af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Non-trivial structural claim linking Li_2^q to heat-kernel resolvent logs."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "09129d81e13a",
+          "ts": "e437276e07af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "No calibration loop."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "09129d81e13a",
+          "ts": "e437276e07af"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/q-dilog-heat-partition.md:9: \"$\\mathrm{Li}_2^q$ is the *partition function* of the $q$-heat flow\"",
+        "notes": "'precisely the q-dilogarithm' and 'Li_2^q is the partition function' are strong identifications for a remark that only sketches the contour/log-branch mechanism."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "09129d81e13a",
+          "ts": "e437276e07af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "t_P(q) referenced from upstream; no off-menu constant."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "09129d81e13a",
+          "ts": "e437276e07af"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/q-dilog-heat-partition.md:6: \"Summing these logarithms over $j \\in \\widehat{G}$ produces a generating function that is precisely the $q$-dilogarithm\"",
+        "notes": "'Summing logarithms ... produces ... precisely the q-dilogarithm' skips the step showing the sum equals sum x^n/(n[n]_q); the 'precisely' is not demonstrated."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "09129d81e13a",
+          "ts": "e437276e07af"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Remark block, no .lean sibling."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "09129d81e13a",
+          "ts": "e437276e07af"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "No cites/Ref."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "09129d81e13a",
+          "ts": "e437276e07af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Refers to def:categorical-laplace and prop:q-heat-kernel-peter-weyl for the technical objects."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "09129d81e13a",
+          "ts": "e437276e07af"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "No numerics."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "09129d81e13a",
+          "ts": "e437276e07af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Partition-function-as-generating-function framing is physically standard."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "09129d81e13a",
+          "ts": "e437276e07af"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "No witness."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "09129d81e13a",
+          "ts": "e437276e07af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-06-29T23:41:10.738Z",
+        "reviewed_sha": "e279a2a14897e198a5ed963336c1c52307ad6218",
+        "notes": "Suggestive and likely-correct heat-partition-function reading of Li_2^q, but the 'precisely' identification is sketched, not established. Strongest objection: the log-sum -> sum x^n/(n[n]_q) step is asserted without the intermediate computation."
+      }
     ]
   },
-  "updated_at": "2026-06-29T19:17:01.630Z"
+  "updated_at": "2026-06-29T23:41:10.738Z"
 }
