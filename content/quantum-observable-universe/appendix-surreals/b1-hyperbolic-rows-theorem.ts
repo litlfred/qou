@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:b1-hyperbolic-rows-theorem",
   title:
-    "B1 at additional hyperbolic-knot rows (Borromean, Whitehead, twist knots) is theorem-level",
+    "B1 conditionally reduces to Volume Conjecture at Borromean rings, Whitehead link, and twist knots",
   lean: {
     ref: "qou:QOU.AppendixSurreals.B1HyperbolicRowsTheorem.b1_hyperbolic_rows",
     validation: "not_checked",
@@ -22,7 +22,6 @@ export default proposition({
     "twist-knots",
     "volume-conjecture-discharged",
     "van-der-veen",
-    "theorem-level",
     "graded-mikusinski",
   ],
 });

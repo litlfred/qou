@@ -13,7 +13,7 @@ The algebraic refactor analytically bypasses this barrier. The
 homological-condensation conjecture
 ([`prop:homological-shell-condensation`](../lifting-and-descent/homological-shell-condensation.md))
 and the LR-fusion-rigidity conjecture
-([`prop:diagrammatic-double-magic-lr-fusion`](#conj:diagrammatic-double-magic-lr-fusion))
+(`prop:diagrammatic-double-magic-lr-fusion`)
 predict the saturated-shell pattern by *structural* arguments
 about the Białynicki-Birula stratification and the LR-content-sum
 arithmetic on Young's lattice — both of which are *partition-size

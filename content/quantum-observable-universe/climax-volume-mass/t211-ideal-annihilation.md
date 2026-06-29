@@ -88,7 +88,7 @@ $$
   — flat, no energy separation, no sub-shells.
 * **No shell-transition levels**: zero effective crossings on $\Sigma_4$,
   so it cannot push a spin-orbit level across a gap
-  ([shell-transition knot](#prop:shell-transition-knot)).
+  (shell-transition knot).
 * **Null force operator**: the $(2,11)$ channel contributes the
   identity factor to the spectral decomposition — a
   multiplicative ghost.

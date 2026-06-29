@@ -295,7 +295,7 @@ Yekutieli's picture:
   (word, grade, jet-position) triples per term.
 
 The jet-convergence result
-([conj:jet-convergence-classical-limit](#prop:jet-convergence-classical-limit))
+(conj:jet-convergence-classical-limit)
 shows that the jet tower converges to the classical limit as
 $q \to 1$, confirming the finite-slice picture is algebraically
 consistent with the semiclassical approximation.
@@ -398,7 +398,7 @@ canonical-atom Markov trace to a single closed form:
    from Wenzl's disjoint Markov-trace multiplicativity ([wenzl1988] §1.7);
    the per-Z step on the constit side then reduces to
    $\rho_Z^{\mathrm{constit}}(q) = \mathrm{tr}_M^3(\mathcal{B}_p, q)$
-   ([`prop:constit-factor-tau-M-proton-identity`](#prop:constit-factor-tau-M-proton-identity)).
+   (`prop:constit-factor-tau-M-proton-identity`).
 
 Combining the two:
 
@@ -413,7 +413,7 @@ at a p-$\ast$ boundary, with no residuals.  This is the substrate-derived
 "per-Z step factor" at the full $\mathrm{tr}_M$ level, complementing
 the $|\Delta_\lambda^*|$-level conjecture
 $\alpha \approx [3]_q^2 \cdot \cosh(h)$ of
-[`conj:alpha-cosh-h-z-step-correction`](#conj:alpha-cosh-h-z-step-correction).
+`conj:alpha-cosh-h-z-step-correction`.
 
 ***
 

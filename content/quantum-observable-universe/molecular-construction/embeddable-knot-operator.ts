@@ -6,10 +6,10 @@ import { definition } from "../../schema/builders";
  */
 export default definition({
   label: "def:embeddable-knot-operator",
-  lean: {
-    ref: "qou:QOU.Molecular.EmbeddableKnotOperator",
-    validation: "not_checked",
-  },
+//   lean: {
+//     ref: "qou:QOU.Molecular.EmbeddableKnotOperator",
+//     validation: "not_checked",
+//   },
   title: "Embeddable knot operator with geometric overlap weight",
   computation: {
     engine: "python",

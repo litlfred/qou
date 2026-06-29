@@ -89,7 +89,7 @@ $n^* = 2$ — the blowup occurs at the second level of the
 [brane tower](#def:recursive-brane-tower).
 
 *Reason:* From the
-[Yekutieli analysis](#conj:blowup-yekutieli), $n^*$ is
+Yekutieli analysis, $n^*$ is
 determined by the Sobolev regularity at blowup.  Anti-parallel
 vortex collision produces a velocity field with bounded
 $L^2$ norm but unbounded vorticity, placing it in $H^s$ with

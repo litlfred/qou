@@ -47,7 +47,7 @@ Diophantine uniqueness that fixes the force-carrier set), and $q^2$
 is the substrate's squared coupling. The denominator $2 q^2$
 contributes the standard EM-self-energy halving (Casimir) and puts
 the correction on the substrate-natural scale. Per
-[`prop:cosh-sinh-q-bridge`](#prop:cosh-sinh-q-bridge) (#1417, $[n]_q
+`prop:cosh-sinh-q-bridge` (#1417, $[n]_q
 = \sinh(n\lambda)/\sinh(\lambda)$ with $\sinh$ = Coulomb channel),
 this is the sinh-side categorical-action correction on the qq̄ pair,
 modulo a rigorous first-principles derivation of the

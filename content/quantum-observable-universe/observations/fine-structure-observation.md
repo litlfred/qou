@@ -46,7 +46,7 @@ $$
 
 This is consistent with the substrate parameter determined
 independently from mass ratios
-([mass predictions](#sec:mass-predictions)) and half-life
+(mass predictions) and half-life
 calculations ([half-life as $q$-probe](#rem:half-life-as-q-probe)),
 providing a cross-check between the electromagnetic and strong
 sectors.
