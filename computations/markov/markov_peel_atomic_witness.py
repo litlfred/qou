@@ -206,10 +206,23 @@ def main() -> int:
                 diff = abs(got - bridge_val)
                 row["bridge_witness_value"] = bridge[label]
                 row["abs_diff_vs_bridge"] = mpmath.nstr(diff, 6)
-                # Tolerance scales with the precision floor — at 50 dps
-                # we expect agreement to ~10^{-(dps − 5)}.
+                # The bridge (`atomic-tr-m-mpfr-50dps`, Hoefsmit) is
+                # COLOR-BLIND. This producer's trace is the canonical
+                # COLOR-WEIGHTED (bring_color_weighted) one. They are equal
+                # only for A=1 (no inter-nucleon crossing); for A≥2 they
+                # differ by the color-weighting amount (δ·h/4 ~ 1e-5), which
+                # is EXPECTED, not an error. Only A=1 gets the tight 1 ppQ
+                # bridge gate; A≥2 reports the gap informationally as the
+                # color-weighting magnitude. (Same color-blind-vs-weighted
+                # split as cross_check_trM_1ppb.py; see
+                # docs/audits/2026-06-23-trM-crosscheck-colorweighting-split-at-C.md.)
                 tol = mpmath.mpf(10) ** -(mpmath.mp.dps - 5)
-                tag = "OK" if diff < tol else "MISMATCH"
+                if row["A"] == 1:
+                    tag = "OK" if diff < tol else "MISMATCH"
+                else:
+                    tag = ("color-weighting Δ (expected; bridge is "
+                           "color-blind)")
+                row["bridge_is_color_blind"] = bool(row["A"] >= 2)
                 print(
                     f"    bridge = {bridge[label]}  "
                     f"|diff| = {mpmath.nstr(diff, 3)}  {tag}",
