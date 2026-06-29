@@ -54,7 +54,7 @@ structure Partition where
   deriving Repr, DecidableEq
 
 /-- The size `|λ| = Σ λ_i`. -/
-def Partition.size (λ : Partition) : ℕ := λ.parts.foldr (· + ·) 0
+def Partition.size (lam : Partition) : ℕ := lam.parts.foldr (· + ·) 0
 
 /-- Littlewood–Richardson coefficient `c^ν_{λ μ}`. Concrete model:
     encodes two structurally-required identities
@@ -66,9 +66,9 @@ def Partition.size (λ : Partition) : ℕ := λ.parts.foldr (· + ·) 0
     cases. The genuine combinatorial value is
     `#LR-tableaux(ν / λ; weight μ)`; the stub captures the two
     cleanest invariants that any concrete realisation must respect. -/
-def lrCoefficient (ν λ μ : Partition) : ℕ :=
-  if ν.size = λ.size + μ.size then
-    if μ.parts = [] then (if ν = λ then 1 else 0) else 0
+def lrCoefficient (ν lam μ : Partition) : ℕ :=
+  if ν.size = lam.size + μ.size then
+    if μ.parts = [] then (if ν = lam then 1 else 0) else 0
   else 0
 
 /-- Iterated LR coefficient
@@ -76,8 +76,8 @@ def lrCoefficient (ν λ μ : Partition) : ℕ :=
     two-factor coefficients. -/
 def iteratedLR : Partition → List Partition → ℕ
   | _ν, []        => 0
-  | ν, [λ]        => if ν = λ then 1 else 0
-  | ν, (λ :: μs)  => iteratedLR ν μs  -- structural stub
+  | ν, [lam]      => if ν = lam then 1 else 0
+  | ν, (_lam :: μs) => iteratedLR ν μs  -- structural stub
 
 /-- A Hecke character index — partition-indexed scalar function on
     the algebra.  Concrete model: an opaque `ℝ`-valued function on
