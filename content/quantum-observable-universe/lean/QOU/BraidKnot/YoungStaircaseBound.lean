@@ -234,4 +234,52 @@ theorem young_staircase_bound (s t : Tableau μ)
   rw [YoungDiagram.mem_iff_lt_rowLen]
   exact Finset.mem_range.1 hmem
 
+/-! ## 4. Assembly: from the bound to a column permutation
+
+If `(rowPattern s, colPattern t)` is jointly injective, then a column permutation
+of `t` is row-equivalent to `s`. (The contrapositive of the SDR core.) -/
+
+/-- `nOf μ = #μ.cells`. -/
+theorem nOf_eq_card_cells (μ : YoungDiagram) : nOf μ = μ.cells.card := rfl
+
+/-- **The column-permutation assembly.** Joint injectivity ⟹ some `σ ∈ C_t` has
+`σ • ⟦t⟧ = ⟦s⟧`. -/
+theorem exists_colStab_smul (s t : Tableau μ)
+    (Hinj : Function.Injective (fun m : Fin (nOf μ) => (rowPattern s m, colPattern t m))) :
+    ∃ σ : Equiv.Perm (Fin (nOf μ)), σ ∈ colStab t ∧ σ • (Tabloid.mk t) = Tabloid.mk s := by
+  classical
+  have bound := young_staircase_bound s t Hinj
+  -- the bound packages a cell for each label
+  let G : Fin (nOf μ) → μ.cells :=
+    fun m => ⟨(rowPattern s m, colPattern t m), by rw [YoungDiagram.mem_cells]; exact bound m⟩
+  have hGinj : Function.Injective G := fun a b h => Hinj (Subtype.ext_iff.1 h)
+  have hGbij : Function.Bijective G := by
+    rw [Fintype.bijective_iff_injective_and_card]
+    refine ⟨hGinj, ?_⟩
+    rw [Fintype.card_fin, Fintype.card_coe]
+  let eG : Fin (nOf μ) ≃ μ.cells := Equiv.ofBijective G hGbij
+  let ρ : Equiv.Perm (Fin (nOf μ)) := eG.trans t.symm
+  -- `t (ρ l) = G l`
+  have hkey : ∀ l, (t (ρ l) : μ.cells) = G l := by
+    intro l
+    have hρ : ρ l = t.symm (G l) := by
+      show (eG.trans t.symm) l = t.symm (G l)
+      rw [Equiv.trans_apply]
+      congr 1
+    rw [hρ, Equiv.apply_symm_apply]
+  refine ⟨ρ.symm, ?_, ?_⟩
+  · -- σ ∈ C_t
+    rw [mem_colStab]
+    funext l
+    rw [arrow_smul_apply, Equiv.symm_symm]
+    show (t (ρ l) : ℕ × ℕ).2 = colPattern t l
+    rw [hkey l]
+  · -- σ • ⟦t⟧ = ⟦s⟧
+    rw [Tabloid.smul_mk, Tabloid.mk, Tabloid.mk, Quotient.eq, rowEquiv_iff]
+    funext l
+    show ((ρ.symm • t) l : ℕ × ℕ).1 = rowPattern s l
+    rw [Tableau.smul_apply, Equiv.symm_symm]
+    show (t (ρ l) : ℕ × ℕ).1 = rowPattern s l
+    rw [hkey l]
+
 end QOU.BraidKnot.YoungStaircaseBound
