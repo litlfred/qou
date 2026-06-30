@@ -12,6 +12,7 @@ import QOU.BraidKnot.SpechtClassification
 import QOU.BraidKnot.RegularRepBlockTrace
 import QOU.BraidKnot.RegularRepTrace
 import QOU.BraidKnot.JucysMurphy
+import Mathlib.Algebra.Algebra.Bilinear
 
 /-!
 # QOU.BraidKnot.SnWedderburnPartitionBridge — the partition-indexed isotypic projection family
@@ -101,6 +102,7 @@ open QOU.BraidKnot
 -- declaration; keep them (they match the shared `variable` blocks and the capstone interface) and
 -- silence the unused-section-variable linter for the file rather than fragmenting the binders.
 set_option linter.unusedSectionVars false
+set_option linter.unusedSimpArgs false
 
 /-! ## 1. Mechanical extraction: projections from an algebra `∏ Matrix` decomposition
 
@@ -161,20 +163,14 @@ theorem transProj_idem (e : A ≃ₗ[R] (∀ j, B j)) (i : ι) :
   ext x
   simp only [transProj, LinearMap.comp_apply, LinearEquiv.coe_coe, LinearEquiv.apply_symm_apply]
   congr 1
-  have hidem : (coordProj (R := R) (B := B) i) ∘ₗ (coordProj (R := R) (B := B) i)
-      = coordProj (R := R) (B := B) i := coordProj_idem i
-  have : (coordProj (R := R) (B := B) i ∘ₗ coordProj (R := R) (B := B) i) (e x)
-      = coordProj (R := R) (B := B) i (e x) := by rw [hidem]
-  simpa [LinearMap.comp_apply] using this
+  rw [← LinearMap.comp_apply, coordProj_idem]
 
 /-- The pulled-back idempotent is a **projection** onto its range. -/
 theorem transProj_isProj (e : A ≃ₗ[R] (∀ j, B j)) (i : ι) :
     LinearMap.IsProj (LinearMap.range (transProj e i)) (transProj e i) := by
   refine ⟨fun x => ⟨x, rfl⟩, ?_⟩
-  intro x hx
-  obtain ⟨y, rfl⟩ := hx
-  have h2 : (transProj e i ∘ₗ transProj e i) y = transProj e i y := by rw [transProj_idem e i]
-  simpa using h2
+  rintro x ⟨y, rfl⟩
+  rw [← LinearMap.comp_apply, transProj_idem]
 
 /-- The pulled-back projections **sum to the identity** (the blocks exhaust `A`). -/
 theorem transProj_sum (e : A ≃ₗ[R] (∀ j, B j)) :
@@ -305,21 +301,20 @@ strictly stronger than size-alignment (distinct partitions can share `dim S^λ`,
 split need not be isotypic-aligned).  The decomp therefore **cannot** be layered on top of `snBridge`'s
 size-aligned `proj`; the projection family and the eigen-decomposition must be produced together. -/
 
-/-- The free-`proj` form of the capstone's old `decomp` field (`OVTopAssembly.c2_eigen_on_blocks`), as
-a predicate on `n` / base field: `mulLeft C₂ = ∑ i, contentSqSum λ_i • proj i` for an **unconstrained**
-`proj`. -/
+/-- The free-`proj` decomposition predicate: `mulLeft C₂ = ∑ i, contentSqSum λ_i • proj i` for an
+**unconstrained** `proj`.  (The `decomp` field of `SnWedderburnSpectralData` is this equation for a
+*specific aligned* `proj` — never a free one; see `freeProjClaim_false`.) -/
 abbrev FreeProjClaim (K : Type) [Field K] [CharZero K] (n : ℕ) : Prop :=
   ∀ (proj : SpechtClassification.PartitionIndex n →
         Module.End K (MonoidAlgebra K (Equiv.Perm (Fin n)))),
     LinearMap.mulLeft K (RegularRepTrace.centralC2 n)
       = ∑ i, ((JucysMurphy.contentSqSum i.diagram : ℤ) : K) • proj i
 
-/-- **The free-`proj` decomp is FALSE** (machine-proved, no `sorry`).  At `n = 2` over `ℚ`,
+/-- **The free-`proj` decomposition is FALSE** (machine-proved, no `sorry`).  At `n = 2` over `ℚ`,
 instantiating at `proj ≡ 0` forces `mulLeft C₂ = 0`, hence (apply to `1`) `C₂ = 0`, contradicting
-`C₂(1) = binom(2,2) = 1`.  This is the evidence that the capstone's old `c2_eigen_on_blocks`
-(unconstrained `proj`) was an **over-general / false-at-generality** statement — so the honest
-disposition is the *aligned* existential `snBlocks_c2_aligned` below, not a cited `sorry` at the
-free-`proj` signature.  Axioms `[propext, Classical.choice, Quot.sound]`. -/
+`C₂(1) = binom(2,2) = 1`.  Hence the `decomp` block-diagonalisation holds only for the *aligned*
+isotypic family of `snBlocks_c2_aligned` below, not for an arbitrary `proj`.  Axioms
+`[propext, Classical.choice, Quot.sound]`. -/
 theorem freeProjClaim_false : ¬ FreeProjClaim ℚ 2 := by
   intro h
   have h0 := h (fun _ => 0)
@@ -331,19 +326,117 @@ theorem freeProjClaim_false : ¬ FreeProjClaim ℚ 2 := by
   rw [happ] at hc
   simp at hc
 
-/-- **The aligned isotypic projection family + `C₂` eigen-decomposition (the capstone core).** Over a
-characteristic-zero field `R`, there is a partition-indexed family `proj i` onto blocks `p i` that is
-the `snBlocks` bundle (`IsProj`, ranks `(dim S^{λ_i})²`, `∑ proj = id`) **and** block-diagonalises the
-central Jucys–Murphy element: `mulLeft C₂ = ∑ i, contentSqSum λ_i • proj i`.
+/-! ### The C₂-decomposition machinery (sorry-free, pure linear algebra)
 
-This single existential folds the *isotypic* alignment together with the eigen-decomposition (the two
-are inseparable — see §5 header), paralleling `sn_rational_specht_split`'s one-existential treatment of
-size-alignment.  It is the strict strengthening of `snBridge` that the capstone consumes for **all**
-its projection-data fields (including `decomp`).  The content folded in (absent from pinned Mathlib):
-the char-0 rational Wedderburn split with block `i` the `S^{λ_i}`-**isotypic** component
-(`sn_rational_specht_split` strengthened to isotypic alignment), and that `C₂` acts on that block by
-the Jucys–Murphy scalar `contentSqSum λ_i` (`JucysMurphy.centralC2_acts_by_contentSqSum`, Schur per
-isotypic component). -/
+`mulLeft_blockScalar` + `mulLeft_eq_sum_transProj` discharge the entire passage from an isotypic
+algebra iso to the `C₂` block-decomposition, so `snBlocks_c2_aligned` reduces to the single isotypic
+split core `sn_isotypic_specht_split` below.  No "center of a product of matrix algebras" lemma is
+needed: the block-scalar shape is supplied as a hypothesis (exactly the content the isotypic
+alignment provides). -/
+
+section C2Decomp
+variable {R : Type} [CommRing R] {ι : Type} [Fintype ι] [DecidableEq ι]
+  {B : ι → Type} [∀ i, Ring (B i)] [∀ i, Algebra R (B i)]
+
+/-- On the product algebra `∏ⱼ Bⱼ`, left-multiplication by a **block-scalar** element
+`fun i => γ i • 1` equals `∑ᵢ γ i • coordProj i`: on coordinate `i` it scales by `γ i`. Sorry-free. -/
+theorem mulLeft_blockScalar (γ : ι → R) :
+    LinearMap.mulLeft R (fun i => (γ i) • (1 : B i)) =
+      ∑ i, (γ i) • (coordProj (R := R) (B := B) i) := by
+  apply LinearMap.ext; intro v; funext k
+  have hL : (LinearMap.mulLeft R (fun i => (γ i) • (1 : B i)) v) k = γ k • v k := by
+    simp [LinearMap.mulLeft_apply, Pi.mul_apply]
+  have hR : (∑ i, (γ i) • (coordProj (R := R) (B := B) i)) v k = γ k • v k := by
+    rw [LinearMap.coeFn_sum, Finset.sum_apply, Finset.sum_apply]
+    simp only [LinearMap.smul_apply, Pi.smul_apply, coordProj, LinearMap.comp_apply,
+      LinearMap.single_apply, LinearMap.proj_apply]
+    rw [Finset.sum_eq_single k]
+    · simp
+    · intro b _ hb; simp [Ne.symm hb]
+    · intro hk; exact absurd (Finset.mem_univ k) hk
+  rw [hL, hR]
+
+end C2Decomp
+
+section C2DecompField
+variable {R : Type} [Field R] {ι : Type} [Fintype ι] [DecidableEq ι]
+  {B : ι → Type} [∀ i, Ring (B i)] [∀ i, Algebra R (B i)]
+  {A : Type} [Ring A] [Algebra R A]
+
+/-- **The `mulLeft`-conjugation payoff (sorry-free).** If an algebra iso `e : A ≃ₐ ∏ⱼ Bⱼ` carries a
+central element `z` to a block-scalar `fun i => γ i • 1`, then `mulLeft z` block-diagonalises:
+`mulLeft z = ∑ᵢ γ i • transProj e.toLinearEquiv i`.  Conjugate `mulLeft` by `e` (algebra-hom
+property), apply `mulLeft_blockScalar`, push the composition through the finite sum/scalar.  No
+center-of-product lemma is required — the block-scalar shape is the hypothesis. -/
+theorem mulLeft_eq_sum_transProj
+    (e : A ≃ₐ[R] (∀ i, B i)) (z : A) (γ : ι → R)
+    (hz : e z = fun i => (γ i) • (1 : B i)) :
+    LinearMap.mulLeft R z = ∑ i, (γ i) • (transProj (e.toLinearEquiv) i) := by
+  have hconj : LinearMap.mulLeft R z =
+      (e.symm.toLinearMap) ∘ₗ (LinearMap.mulLeft R (e z)) ∘ₗ (e.toLinearMap) := by
+    ext a
+    simp only [LinearMap.comp_apply, AlgEquiv.toLinearMap_apply, LinearMap.mulLeft_apply]
+    rw [← map_mul, AlgEquiv.symm_apply_apply]
+  rw [hconj, hz, mulLeft_blockScalar]
+  ext a
+  simp only [LinearMap.comp_apply, LinearMap.coeFn_sum, Finset.sum_apply, LinearMap.smul_apply,
+    AlgEquiv.toLinearMap_apply]
+  rw [map_sum]
+  apply Finset.sum_congr rfl
+  intro i _
+  rw [map_smul]
+  simp only [transProj, LinearMap.comp_apply, LinearEquiv.coe_coe]
+  rfl
+
+end C2DecompField
+
+/-- **Named core (the genuine isotypic-aligned `S_n`-rep-theory gap).** Over a characteristic-zero
+field `R`, a *rational, OV-labelled* Wedderburn algebra isomorphism
+`R[S_n] ≃ₐ[R] ∏_{i:PartitionIndex n} Matrix(Fin (dim S^{λ_i})) R` with block `i` the
+`S^{λ_i}`-**isotypic** component, **carrying** the central Jucys–Murphy element `C₂ = ∑_k X_k²` to the
+block-scalar family `fun i => contentSqSum λ_i • 1`.
+
+The carried-`C₂` clause *is* the isotypic alignment, made operational: by
+`JucysMurphy.centralC2_acts_by_contentSqSum`, `C₂` acts on the `S^{λ_i}`-isotypic block by
+`contentSqSum λ_i` (Schur per isotypic component), so an `e` whose block `i` *is* that component sends
+`C₂` to `contentSqSum λ_i • 1` there.  Conversely the clause **forces** the alignment (a size-aligned
+split need not be isotypic; `freeProjClaim_false` shows an unconstrained `proj` cannot satisfy the
+decomposition), so bundling it into the existential is the honest, non-over-general disposition — the
+isotypic strengthening of `sn_rational_specht_split`.  Mathlib (pinned v4.24.0) lacks every piece this
+folds in: ℚ-rationality (collapsing division rings to `R`; it has the matrix product only over an
+algebraically closed base), the partition labelling, the OV identification block `i` ↔ `S^{λ_i}` of
+size `dim_R S^{λ_i}`, and the isotypic / `C₂`-eigenvalue alignment.
+`-- Ref: [vershik-kerov1977], [sagan2001], [james1984representation]`. -/
+theorem sn_isotypic_specht_split (n : ℕ) :
+    ∃ e : MonoidAlgebra R (Equiv.Perm (Fin n)) ≃ₐ[R]
+      (∀ i : SpechtClassification.PartitionIndex n,
+        Matrix (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram)))
+               (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram))) R),
+      e (RegularRepTrace.centralC2 n)
+        = fun i : SpechtClassification.PartitionIndex n =>
+            ((JucysMurphy.contentSqSum i.diagram : ℤ) : R) •
+            (1 : Matrix (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram)))
+                        (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram))) R) := by
+  -- Ref: [vershik-kerov1977] (the central JM element C₂ = ∑_k X_k² acts on the S^{λ}-isotypic block
+  --   by contentSqSum λ = ∑_{c∈λ} c² — Schur on each isotypic component, eigenvalue from
+  --   JucysMurphy.centralC2_acts_by_contentSqSum) + [sagan2001] §2.4 / [james1984representation]
+  --   (the char-0 rational, OV-labelled Wedderburn split of R[S_n] indexed by partitions, block i the
+  --   S^{λ_i}-ISOTYPIC component of dimension (dim S^{λ_i})² — the isotypic strengthening of
+  --   sn_rational_specht_split, which Mathlib does not package; the isotypic alignment is precisely
+  --   what makes e send C₂ to the block-scalar family).
+  sorry
+
+/-- **The aligned isotypic projection family + `C₂` eigen-decomposition (the capstone core), now
+sorry-free modulo the single isotypic split `sn_isotypic_specht_split`.** Over a characteristic-zero
+field `R`, a partition-indexed family `proj i` onto blocks `p i` that is the `snBlocks` bundle
+(`IsProj`, ranks `(dim S^{λ_i})²`, `∑ proj = id`) **and** block-diagonalises the central JM element:
+`mulLeft C₂ = ∑ i, contentSqSum λ_i • proj i`.
+
+The projection family is `transProj e i` for the isotypic `e` from `sn_isotypic_specht_split`;
+conjuncts 1–3 reuse the sorry-free `transProj_isProj` / `finrank_range_transProj` / `transProj_sum`,
+and conjunct 4 (the `C₂` block-diagonalisation) is the sorry-free `mulLeft_eq_sum_transProj` applied to
+the core's carried-`C₂` clause.  The entire `C₂`-decomposition machinery is thus discharged sorry-free;
+only the isotypic split itself remains cited. -/
 theorem snBlocks_c2_aligned (n : ℕ) :
     ∃ (p : SpechtClassification.PartitionIndex n →
           Submodule R (MonoidAlgebra R (Equiv.Perm (Fin n))))
@@ -355,13 +448,20 @@ theorem snBlocks_c2_aligned (n : ℕ) :
       (∑ i, proj i = LinearMap.id) ∧
       LinearMap.mulLeft R (RegularRepTrace.centralC2 n)
         = ∑ i, ((JucysMurphy.contentSqSum i.diagram : ℤ) : R) • proj i := by
-  -- Ref: [vershik-kerov1977] (the central JM element C₂ = ∑_k X_k² acts on the S^{λ}-isotypic block
-  --   of R[S_n] by contentSqSum λ = ∑_{c∈λ} c² — Schur on each isotypic component, eigenvalue from
-  --   JucysMurphy.centralC2_acts_by_contentSqSum; the isotypic projection family simultaneously
-  --   block-diagonalises mulLeft C₂) + [sagan2001] §2.4 / [james1984representation] (the char-0
-  --   rational, OV-labelled Wedderburn split of R[S_n] indexed by partitions, block i the
-  --   S^{λ_i}-ISOTYPIC component of dimension (dim S^{λ_i})² — the isotypic strengthening of
-  --   sn_rational_specht_split, which Mathlib does not package).
-  sorry
+  classical
+  obtain ⟨e, he⟩ := sn_isotypic_specht_split (R := R) n
+  set Bi := fun i : SpechtClassification.PartitionIndex n =>
+    Matrix (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram)))
+           (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram))) R with hBi
+  let eL := e.toLinearEquiv
+  refine ⟨fun i => LinearMap.range (transProj (B := Bi) eL i),
+          fun i => transProj (B := Bi) eL i, ?_, ?_, ?_, ?_⟩
+  · intro i; exact transProj_isProj eL i
+  · intro i
+    rw [finrank_range_transProj eL i]
+    rw [Module.finrank_matrix, Module.finrank_self, mul_one, Fintype.card_fin, sq]
+  · exact transProj_sum eL
+  · exact mulLeft_eq_sum_transProj e (RegularRepTrace.centralC2 n)
+      (fun i => ((JucysMurphy.contentSqSum i.diagram : ℤ) : R)) he
 
 end QOU.BraidKnot.SnWedderburnPartitionBridge
