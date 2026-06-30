@@ -60,11 +60,13 @@ The JM / content layer is **purely algebraic**: `variable {k : Type} [CommRing k
 land in `ℤ` (integer arithmetic — algebraic, not archimedean-`ℝ`).  The finite filter `j.val < i.val`
 is an order on the *index type* `Fin n`, not on the ring `k`, and is necessary (it is the very
 "strands below `k`" defining `X_k`).  Most of the layer is stated over generic `[CommRing k]`.  The
-two **completeness** results — `seminormalVectors_span` and the punchline
-`centralC2_acts_by_contentSqSum` — are stated over `[Field k] [CharZero k]` instead, because the
-completeness `S^λ ⊆ span {seminormal vectors}` is *false over `ℤ`* (Young's seminormal vectors carry
-denominators; see those lemmas' docstrings).  That is a correctness restriction, not an archimedean
-`ℝ` leak: a characteristic-zero field, no ordering on `k`, no `Real.*`.
+four **seminormal-form** results — `seminormalVector_data_exists`, `jucysMurphy_eigenvalue`,
+`seminormalVectors_span`, and the punchline `centralC2_acts_by_contentSqSum` — are stated over
+`[Field k] [CharZero k]` instead.  This is a correctness restriction (not an archimedean `ℝ` leak —
+char-0 field, no ordering, no `Real.*`): the seminormal/GZ eigenbasis is genuinely a char-0 fact, and
+over a general commutative ring the relevant claims are *false* — completeness `S^λ ⊆ span` fails over
+`ℤ` (denominators), and simultaneous-eigenvector existence fails over `ℤ/pℤ` (cell-contents collide
+modulo `p`).  See those lemmas' docstrings.
 
 ## References
 - [vershik-kerov1977] Vershik–Okounkov, "A new approach to the representation theory of the
@@ -408,8 +410,16 @@ it is Young's seminormal form (the construction of the GZ/seminormal eigenbasis)
 Okounkov–Vershik paper.  Note what has been **factored out** of it (and is therefore *not* cited):
 the indexing bijection `cellOf` is pinned to the explicitly-constructed `tableauCellEquiv μ T`
 (brick 4's sorry-free `sytToTableau`), so this lemma asserts only the existence of the eigenvector,
-not of its cell-labelling.  `-- Ref: [vershik-kerov1977]`. -/
-theorem seminormalVector_data_exists (μ : YoungDiagram)
+not of its cell-labelling.
+
+**Base ring `[Field k] [CharZero k]` (§7c over-generality fix).** Stated over a char-0 field, NOT
+the file-wide `[CommRing k]`: over a general commutative ring the integer cell-contents can collide
+modulo the characteristic (e.g. `ℤ/pℤ` with `c_i ≡ c_j` but `c_i ≠ c_j`), so the cast JM eigenvalues
+`↑c_s` stop being distinct, the eigenspaces merge, and a simultaneous eigenvector with the
+*prescribed* content tuple need not exist in `S^λ` — the `[CommRing k]` form is over-general (false at
+`ℤ/pℤ`).  Young's seminormal form is genuinely a char-0 fact (it inverts the content differences
+`c_i − c_j`).  `-- Ref: [vershik-kerov1977]`. -/
+theorem seminormalVector_data_exists {k : Type} [Field k] [CharZero k] (μ : YoungDiagram)
     (T : QOU.BraidKnot.StandardYoungTableau μ) :
     ∃ v : Specht.Mtab (k := k) μ,
       v ∈ Specht.SpechtSubmodule (k := k) μ ∧ v ≠ 0 ∧
@@ -438,8 +448,12 @@ bijection `tableauCellEquiv μ T` (= `sytToTableau T`), and the eigenvector data
 is supplied by `seminormalVector_data_exists` — the single cited core that isolates exactly Young's
 seminormal-vector existence.  `sv.T = T` then holds by `rfl`.  So the genuine OV debt is now named
 precisely (`seminormalVector_data_exists`) and the *bijection* part — historically bundled into the
-same `sorry` — is genuinely closed. -/
-theorem jucysMurphy_eigenvalue (μ : YoungDiagram) (T : QOU.BraidKnot.StandardYoungTableau μ) :
+same `sorry` — is genuinely closed.
+
+**Base ring `[Field k] [CharZero k]`** — inherited from `seminormalVector_data_exists` (the
+seminormal eigenvector is a char-0 fact; the `[CommRing k]` form is over-general, false at `ℤ/pℤ`). -/
+theorem jucysMurphy_eigenvalue {k : Type} [Field k] [CharZero k] (μ : YoungDiagram)
+    (T : QOU.BraidKnot.StandardYoungTableau μ) :
     ∃ sv : SeminormalVector (k := k) μ, sv.T = T := by
   obtain ⟨v, hmem, hnz, hisEig⟩ := seminormalVector_data_exists (k := k) μ T
   exact ⟨{ T := T
