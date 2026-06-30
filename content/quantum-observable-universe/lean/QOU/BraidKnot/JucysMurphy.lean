@@ -6,6 +6,12 @@ import Mathlib.Order.Interval.Finset.Fin
 import QOU.BraidKnot.Specht
 import QOU.BraidKnot.SpechtStandardBasis
 import QOU.BraidKnot.RegularRepTrace
+import QOU.BraidKnot.SpechtFinrankWired
+import Mathlib.LinearAlgebra.Dimension.Finrank
+import Mathlib.LinearAlgebra.Dimension.Finite
+import Mathlib.LinearAlgebra.Dimension.Constructions
+import Mathlib.LinearAlgebra.Dimension.Free
+import Mathlib.LinearAlgebra.LinearIndependent.Basic
 
 /-!
 # QOU.BraidKnot.JucysMurphy — brick 5 of the Okounkov–Vershik tower
@@ -60,9 +66,10 @@ The JM / content layer is **purely algebraic**: `variable {k : Type} [CommRing k
 land in `ℤ` (integer arithmetic — algebraic, not archimedean-`ℝ`).  The finite filter `j.val < i.val`
 is an order on the *index type* `Fin n`, not on the ring `k`, and is necessary (it is the very
 "strands below `k`" defining `X_k`).  Most of the layer is stated over generic `[CommRing k]`.  The
-four **seminormal-form** results — `seminormalVector_data_exists`, `jucysMurphy_eigenvalue`,
-`seminormalVectors_span`, and the punchline `centralC2_acts_by_contentSqSum` — are stated over
-`[Field k] [CharZero k]` instead.  This is a correctness restriction (not an archimedean `ℝ` leak —
+**seminormal-form** results — `seminormalVector_data_exists`, `jucysMurphy_eigenvalue`, the
+`seminormalVectors_span` completeness chain (`exists_indep_seminormal_family` + `seminormalSpan_le` +
+`numSYT_le_finrank_seminormalSpan`), and the punchline `centralC2_acts_by_contentSqSum` — are stated
+over `[Field k] [CharZero k]` instead.  This is a correctness restriction (not an archimedean `ℝ` leak —
 char-0 field, no ordering, no `Real.*`): the seminormal/GZ eigenbasis is genuinely a char-0 fact, and
 over a general commutative ring the relevant claims are *false* — completeness `S^λ ⊆ span` fails over
 `ℤ` (denominators), and simultaneous-eigenvector existence fails over `ℤ/pℤ` (cell-contents collide
@@ -463,40 +470,86 @@ theorem jucysMurphy_eigenvalue {k : Type} [Field k] [CharZero k] (μ : YoungDiag
            cellOf := tableauCellEquiv μ T
            isEig := hisEig }, rfl⟩
 
-/-- **Seminormal vectors span the Specht module (Okounkov–Vershik).** The Specht submodule
-`S^λ ≤ M^λ` is spanned by the seminormal (Gelfand–Zetlin) vectors `{sv.v}`.  Equivalently, the GZ
-basis is a basis of `S^λ`.
+/-- The span of the seminormal vectors, as a submodule of `M^λ` (local abbreviation; the public
+`seminormalVectors_span` below uses the inline `Submodule.span …` form for splice-compatibility). -/
+noncomputable abbrev seminormalSpan {k : Type} [Field k] (μ : YoungDiagram) :
+    Submodule k (Specht.Mtab (k := k) μ) :=
+  Submodule.span k (Set.range (fun sv : SeminormalVector (k := k) μ => sv.v))
 
-This is the second irreducible OV input (alongside `seminormalVector_data_exists`): it is *exactly*
-the statement that the simultaneous JM-eigenvectors exhaust `S^λ`, i.e. that the GZ basis is
-complete.  It is isolated here as a single cited `sorry` so that the punchline
-`centralC2_acts_by_contentSqSum` is then **sorry-free** (the scalar action on each spanning vector is
-the sorry-free `centralC2_smul_seminormal`, and a `Submodule.span_induction` propagates it to all of
-`S^λ`).
+/-- **Easy direction (sorry-free).** The seminormal span sits inside `S^λ` — every seminormal vector
+lies in `S^λ` (the `mem` field of `SeminormalVector`). -/
+theorem seminormalSpan_le {k : Type} [Field k] (μ : YoungDiagram) :
+    seminormalSpan (k := k) μ ≤ Specht.SpechtSubmodule (k := k) μ := by
+  rw [seminormalSpan, Submodule.span_le]
+  rintro _ ⟨sv, rfl⟩
+  exact sv.mem
 
-The inclusion `span ⊆ S^λ` is automatic (each `sv.v ∈ S^λ` by the `mem` field); the content is the
-reverse inclusion `S^λ ⊆ span`, stated below.
+/-- **The atomic OV completeness core (Young's seminormal form, independence half).** The seminormal
+(Gelfand–Zetlin) vectors form a **linearly independent** family indexed by **all** standard Young
+tableaux of shape `μ` — i.e. `#SYT(μ) = dim S^λ`-many independent simultaneous JM-eigenvectors
+(distinct tableaux carry distinct content-tuples, hence distinct joint spectra).
 
-**Base ring — a characteristic-zero field (the §7c over-generality fix).** Unlike the rest of this
-file (`variable [CommRing k]`), this completeness statement and the punchline below are stated over
-`[Field k] [CharZero k]`.  This is a *correctness* restriction, not laziness: over `ℤ` the statement
-is **false**.  Young's seminormal vectors carry denominators — their construction inverts the content
-differences `c_i − c_j` — so over `ℤ` the integral seminormal vectors span only a proper
-finite-index sublattice of the integral Specht module, and `S^λ ⊆ span` fails.  Over a
-characteristic-zero field the content differences are invertible, the GZ/seminormal basis genuinely
-exists, and completeness holds.  Stating it over the file-wide `[CommRing k]` would be an
-**over-general cited `sorry`** (a claim false at the stated generality) — the same anti-pattern caught
-in `DominanceData.dom_colStab`; the honest disposition is to narrow the base ring, not the
-conclusion.  The capstone consumes the punchline at `k := R` with `[Field R] [CharZero R]`, so the
-restriction costs nothing downstream.  No `native_decide`, no vacuity, no weakening of the
-conclusion — `-- Ref:`. -/
+This is strictly more atomic than the old `seminormalVectors_span` cited `sorry`: that cited the whole
+inclusion `S^λ ⊆ span`; here the *spanning* becomes a sorry-free dimension corollary
+(`seminormalVectors_span` below) and only this **independence** is cited.
+
+**Base ring `[Field k] [CharZero k]`** (not over-general): in positive characteristic the cell
+contents collide mod `p`, merging eigenspaces and breaking distinctness, so the `[CommRing k]` form
+would be false at its generality. -/
+theorem exists_indep_seminormal_family {k : Type} [Field k] [CharZero k] (μ : YoungDiagram) :
+    ∃ b : QOU.BraidKnot.StandardYoungTableau μ → SeminormalVector (k := k) μ,
+      LinearIndependent k (fun T => (b T).v) := by
+  -- Ref: [vershik-kerov1977] (Young's seminormal form: the GZ eigenbasis of S^λ is indexed by SYT(μ)
+  -- and is linearly independent — distinct content-tuples ⇒ independent simultaneous JM-eigenvectors).
+  -- Brick-5 OV independence core.
+  sorry
+
+/-- **Plumbing (sorry-free): `#SYT(μ) ≤ dim_k(span)`.** The span of the independent `#SYT(μ)`-family
+already has dimension `#SYT(μ)` (`finrank_span_eq_card`), and it is contained in `seminormalSpan`
+(`Submodule.finrank_mono`). -/
+theorem numSYT_le_finrank_seminormalSpan {k : Type} [Field k] [CharZero k] (μ : YoungDiagram) :
+    numSYT μ ≤ Module.finrank k (seminormalSpan (k := k) μ) := by
+  obtain ⟨b, hb⟩ := exists_indep_seminormal_family (k := k) μ
+  have hsub : Submodule.span k (Set.range (fun T => (b T).v)) ≤ seminormalSpan (k := k) μ := by
+    rw [seminormalSpan]
+    apply Submodule.span_mono
+    rintro _ ⟨T, rfl⟩
+    exact ⟨b T, rfl⟩
+  have hcard : Module.finrank k (Submodule.span k (Set.range (fun T => (b T).v)))
+      = Fintype.card (QOU.BraidKnot.StandardYoungTableau μ) := finrank_span_eq_card hb
+  have hnum : numSYT μ = Fintype.card (QOU.BraidKnot.StandardYoungTableau μ) := by
+    rw [numSYT, Nat.card_eq_fintype_card]
+  rw [hnum, ← hcard]
+  exact Submodule.finrank_mono hsub
+
+/-- **Seminormal vectors span the Specht module (Okounkov–Vershik) — sorry-free modulo the single
+independence core `exists_indep_seminormal_family`.** The Specht submodule `S^λ ≤ M^λ` is contained in
+the span of the seminormal (Gelfand–Zetlin) vectors; with the automatic reverse inclusion
+`seminormalSpan_le`, the GZ vectors span `S^λ`.  This is the OV completeness consumed by the punchline
+`centralC2_acts_by_contentSqSum` (the scalar action propagates from the spanning vectors by
+`Submodule.span_induction`).
+
+**De-abstraction.** `span ≤ S^λ` (`seminormalSpan_le`) plus `dim S^λ = #SYT(μ) ≤ dim(span)` (the
+counting plumbing over the independence core) force `span = S^λ` on the finite-dimensional `M^λ`
+(`Submodule.eq_of_le_of_finrank_le`); take `.ge`.  So the cited debt is now *independence of the
+seminormal family* only — strictly more atomic than the old whole-inclusion `sorry`.
+
+**Base ring — `[Field k] [CharZero k]` (§7c over-generality fix).** Completeness is false over `ℤ`
+(seminormal vectors carry denominators ⇒ the integral vectors span only a proper finite-index
+sublattice) and the independence is false in positive characteristic (contents collide mod `p`), so
+the char-0 field is the honest generality.  The `[CommRing k]` form would be an over-general cited
+claim — the same anti-pattern as `DominanceData.dom_colStab`; the capstone consumes the punchline at a
+char-0 field `R`, so the restriction costs nothing downstream. -/
 theorem seminormalVectors_span {k : Type} [Field k] [CharZero k] (μ : YoungDiagram) :
     Specht.SpechtSubmodule (k := k) μ
       ≤ Submodule.span k (Set.range (fun sv : SeminormalVector (k := k) μ => sv.v)) := by
-  -- Ref: [vershik-kerov1977] (the GZ/seminormal eigenvectors form a basis of S^λ; the simultaneous
-  -- JM-eigenbasis is complete); brick-5 OV completeness core.  Stated over a char-0 field because the
-  -- completeness `S^λ ⊆ span` is false over ℤ (seminormal vectors carry denominators) — see docstring.
-  sorry
+  have hle : seminormalSpan (k := k) μ ≤ Specht.SpechtSubmodule (k := k) μ :=
+    seminormalSpan_le μ
+  have hfr : Module.finrank k (Specht.SpechtSubmodule (k := k) μ)
+      ≤ Module.finrank k (seminormalSpan (k := k) μ) := by
+    rw [SpechtFinrankWired.specht_finrank_eq_numSYT_wired]
+    exact numSYT_le_finrank_seminormalSpan μ
+  exact (Submodule.eq_of_le_of_finrank_le hle hfr).ge
 
 /-- **Punchline — `C₂` acts by `Σ_{c∈λ} c(c)²` on `S^λ`.** The Jucys–Murphy central element
 `C₂ = ∑_k X_k²` acts on the Specht module `S^λ ≤ M^λ` (via `Specht.Mtab.rep` extended to the group
