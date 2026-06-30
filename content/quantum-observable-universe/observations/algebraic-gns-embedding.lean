@@ -1,4 +1,4 @@
-import Mathlib.Topology.ContinuousMap.Basic
+import Mathlib.Topology.ContinuousFunction.Basic
 import Mathlib.Algebra.Algebra.Basic
 
 /-!

@@ -1,5 +1,5 @@
 import Mathlib.Algebra.Algebra.Basic
-import Mathlib.LinearAlgebra.LinearIndependent.Basic
+import Mathlib.LinearAlgebra.LinearIndependent
 
 /-!
 # Atomic mass as Markov trace of the Gröbner–Shirshov normal form

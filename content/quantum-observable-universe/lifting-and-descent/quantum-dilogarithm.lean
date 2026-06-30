@@ -1,6 +1,6 @@
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
-import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset
 
 
 /-!

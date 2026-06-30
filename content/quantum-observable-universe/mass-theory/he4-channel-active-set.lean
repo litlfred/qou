@@ -25,7 +25,7 @@ witness-verified primal+dual+active-set triple.
 Ref: [manuscript] §F1 ⁴He compositional probe (audit doc)
 -/
 
-import Mathlib.Data.Rat.Defs
+import Mathlib.Data.Rat.Basic
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Linarith
 

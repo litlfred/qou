@@ -9,7 +9,7 @@
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -/
 
-import Mathlib.Tactic
+import Mathlib.Tactic.Omega
 
 namespace QOU.BraidsAndKnots
 

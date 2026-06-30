@@ -2,7 +2,7 @@ import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 import Mathlib.Algebra.Ring.Basic
 import Mathlib.RingTheory.Polynomial.Basic
-import Mathlib.Algebra.Polynomial.Basic
+import Mathlib.Data.Polynomial.Basic
 
 
 /-!

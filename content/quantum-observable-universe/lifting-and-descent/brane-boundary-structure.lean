@@ -1,6 +1,6 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.Group.Basic
-import Mathlib.LinearAlgebra.Span.Basic
+import Mathlib.LinearAlgebra.Basic
 import Mathlib.Order.Basic
 
 

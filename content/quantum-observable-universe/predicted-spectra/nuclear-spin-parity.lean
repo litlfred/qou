@@ -1,5 +1,5 @@
 import Mathlib.Data.Nat.Basic
-import Mathlib.Algebra.Order.Group.Nat
+import Mathlib.Data.Nat.Parity
 
 
 /-!

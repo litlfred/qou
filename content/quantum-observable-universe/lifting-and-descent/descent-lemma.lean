@@ -1,5 +1,5 @@
 import Mathlib.Algebra.Module.Basic
-import Mathlib.LinearAlgebra.Span.Basic
+import Mathlib.LinearAlgebra.Basic
 
 
 /-!
