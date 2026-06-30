@@ -63,10 +63,13 @@ route and the GNW route bottleneck on the *same* identity (A′); closing (A′)
 
 ## Remaining work (the multi-session piece)
 
-1. **Prove (A′)** for general `m` from the `SYTBetaLagrange` machinery: identify the
-   numerator polynomial `p(x) = x · ∏_{j}(x − 1 − β_j)/(x − β_j)`-style decomposition, apply
-   `sum_eval_div_eq_of_decomp` / `bigPoly_decomp`, and reconcile `vWeight` with the
-   Vandermonde denominator. This is the genuine combinatorics-of-`ℚ` core.
+1. **Prove (A′)** for general `m` from the `SYTBetaLagrange` machinery: identify the genuine
+   numerator **polynomial** `p(x) = x · ∏_j (x − 1 − β_j)` (degree `k+1`), and apply
+   `sum_eval_div_eq_of_decomp` / `bigPoly_decomp` to its `p(x) / ∏_j (x − β_j)` Lagrange
+   decomposition — minding the excluded `j=i` factor `(β_i − 1 − β_i) = −1`, which turns the
+   summand's `∏_{j≠i}(β_i − 1 − β_j)` into the full `∏_j` (so `p(β_i) = −β_i · ∏_{j≠i}(β_i − 1 − β_j)`),
+   and reconciling `vWeight` with the Vandermonde denominator. This is the genuine
+   combinatorics-of-`ℚ` core.
 2. **Bridge (A′) → (A)** `dimHLF_branching` over `ℕ`: the `dimHLF` are `ℕ`-valued
    factorial/`prodHooks` quotients, so the `ℚ`-identity (A′) must be transported through the
    integrality infra (`dimHLF_pair`-style, `SYTDimHLFPair`) — clearing denominators exactly,
