@@ -208,6 +208,14 @@ witness = {
 }
 witness["allPassed"] = all(a["passed"] for a in witness["assertions"])
 
+from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+# This payload carries a flat `assertions` list, which WitnessBuilder.wrap_legacy
+# drops (it routes reserved keys to structured slots and recomputes from an empty
+# builder). stamp_staleness_metadata preserves every existing key and adds the
+# provenance/staleness fields in place; we set scriptFile explicitly (stamp omits it).
+WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="mpmath")
+witness["scriptFile"] = Path(__file__).name
 with open(HERE / "meson-vol-density.witness.json", "w") as f:
-    json.dump(witness, f, indent=2, default=str)
+    json.dump(witness, f, indent=2, default=str, ensure_ascii=False)
+    f.write("\n")
 print(f"Witness: meson-vol-density.witness.json")

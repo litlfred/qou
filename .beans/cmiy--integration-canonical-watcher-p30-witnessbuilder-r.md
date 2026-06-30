@@ -30,3 +30,14 @@ acceptable Class-B/C/D (`docs/audits/2026-06-25-session-bean-triage.md`).
 The ~133-script WitnessBuilder big-bang regen remains a high-collision sweep
 to be done in small per-cluster batches once main is quiet — explicitly not a
 late-session big-bang. No work taken here. Duplicate 1j39 still open (owner-close).
+
+## 2026-06-30 — batch 1 (1 script) + migration gotchas documented
+Routed meson_vol_density.py off raw json.dump onto WitnessBuilder provenance
+(PROV_MISSING 280 → 279). Stays OPEN (multi-batch). Surfaced 3 non-mechanical
+gotchas that gate a bigger sweep — full recipe in
+docs/audits/2026-06-30-cmiy-witnessbuilder-rollup-batch1.md:
+  1. wrap_legacy DROPS flat assertions/allPassed (data loss) → use
+     stamp_staleness_metadata for assertion-bearing payloads.
+  2. regen refreshes stale data (q0 drift) → full regen, not provenance-only;
+     pyhecke_native producers need the canonical env (skip in ad-hoc env).
+  3. some raw-emit scripts pre-crash (magic_A_formula mpf-format) → separate fix.
