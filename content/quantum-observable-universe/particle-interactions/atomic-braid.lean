@@ -23,13 +23,14 @@ structure NeutralAtom where
   Z : Nat
   /-- Neutron number. -/
   N : Nat
-  /-- Mass number A = Z + N. -/
-  A : Nat := Z + N
-  /-- Total strand count = A + Z (nucleons + electrons). -/
-  totalStrands : Nat := A + Z
 
-/-- The number of crossings in an atomic braid grows polynomially. -/
+/-- Mass number A = Z + N (a derived quantity, not independent data). -/
+def NeutralAtom.A (atom : NeutralAtom) : Nat := atom.Z + atom.N
+
+/-- Total strand count = A + Z (nucleons + electrons). -/
+def NeutralAtom.totalStrands (atom : NeutralAtom) : Nat := atom.A + atom.Z
+
+/-- The total strand count of an atomic braid is `A + Z = Z + N + Z`. -/
 theorem atomic_braid_crossing_count (atom : NeutralAtom) :
     atom.totalStrands = atom.Z + atom.N + atom.Z := by
   simp [NeutralAtom.totalStrands, NeutralAtom.A]
-  omega
