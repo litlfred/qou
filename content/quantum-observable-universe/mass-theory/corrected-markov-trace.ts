@@ -17,4 +17,8 @@ export default proposition({
   uses: [
     "thm:jones-markov-trace",
   ],
+  computation: {
+    script: "computations/corrected_markov_trace.py",
+    witness: "computations/corrected-markov-trace.witness.json",
+  },
 });

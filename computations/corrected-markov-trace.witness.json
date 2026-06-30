@@ -1,0 +1,14 @@
+{
+  "description": "Canonical Markov trace tr_M(sigma0 sigma1 sigma0) in H_3(q)",
+  "engine": "pyhecke.trace_formal (formal Markov-Ocneanu-Wenzl, q = s^2)",
+  "z_eq_tr_sigma": "s/(s**2 + 1)",
+  "tr_sigma_squared": "s + 1 - 1/s",
+  "tr_trefoil": "(s**2 + s - 1)/(s**2 + 1)",
+  "candidate_hz2_plus_z": "(s**2 + s - 1)/(s**2 + 1)",
+  "candidate_z3": "s**3/(s**2 + 1)**3",
+  "trefoil_equals_hz2_plus_z": true,
+  "trefoil_equals_z3": false,
+  "trefoil_equals_z_times_tr_sigma_squared": true,
+  "hecke_relation_g2_eq_hg_plus_1": true,
+  "verdict": "tr_M(sigma0 sigma1 sigma0) = h z^2 + z  (z^3 is the invalid naive product)"
+}

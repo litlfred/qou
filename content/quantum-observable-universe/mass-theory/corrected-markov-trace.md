@@ -1,19 +1,25 @@
 The Markov trace of the trefoil braid
-$\sigma_0 \sigma_1 \sigma_0$ is $z^3$, **not** $hz^2 + z$
-as would be obtained from the vertex volume product formula.
-The product factorization
-([Markov trace product](#thm:markov-trace-product))
-is invalid when generators are **adjacent**.
+$\sigma_0 \sigma_1 \sigma_0$ is $hz^2 + z$, **not** the naive
+multiplicative product $z^3$.  Multiplicativity
+$\mathrm{tr}_M(\sigma_0)\,\mathrm{tr}_M(\sigma_1)\,\mathrm{tr}_M(\sigma_0) = z^3$
+fails for **adjacent** generators: $\sigma_0$ and $\sigma_1$ satisfy the
+braid relation $\sigma_0 \sigma_1 \sigma_0 = \sigma_1 \sigma_0 \sigma_1$
+rather than commuting, so the Markov recursion must be applied to the
+top generator $\sigma_1$ (see the proof).
 
 ## Statement
 
 **Proposition.**
 
 $$
-  \mathrm{tr}_M(\sigma_0 \sigma_1 \sigma_0) = z^3
+  \mathrm{tr}_M(\sigma_0 \sigma_1 \sigma_0) = h z^2 + z
 $$
 
-*where $z = (1 + h\delta)^{-1}$ is the Markov parameter
-and $h = q - q^{-1}$.  The vertex volume product
-$\hat{V}_0 \cdot \hat{V}_1 \cdot \hat{V}_0 = hz^2 + z \neq z^3$
-does not apply here.*
+*where $z = \mathrm{tr}_M(\sigma_i)$ is the Markov parameter and
+$h = q - q^{-1}$.  In the canonical $\mathbf{H}_3(q)$ normalisation
+($q = s^2$, $z = s/(s^2+1)$) this equals $(s^2 + s - 1)/(s^2 + 1)$ —
+the value returned by the canonical `pyhecke` Markov-trace engine
+(witness `computations/corrected-markov-trace.witness.json`).  It
+coincides with the canonical coefficient $\alpha_3 = hz^2 + z$ derived
+in the explicit-$\alpha_k$ proof for $H_3$.  The naive product $z^3$
+does **not** apply.*
