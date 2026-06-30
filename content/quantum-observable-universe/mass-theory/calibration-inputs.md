@@ -1,16 +1,36 @@
 The QOU framework requires exactly **three** calibration inputs
-from experiment: two leptonic (fixing the shape and size of the
-universe) and one hadronic (fixing the interaction energy scale).
-All other masses, binding energies, Q-values, and coupling
-constants are predictions.
+from experiment — three **weak-sector observables**: the leptonic
+mass scale $m_e$ (CAL-1), the neutron $\beta$-decay width
+$\mathfrak{D}_\beta$ (CAL-2), and the pion decay width
+$\mathfrak{D}_\pi$ (CAL-3). Their numerical proxies are the masses
+$m_e$, the ratio $m_\mu/m_e$ (which pins $q_0$), and $m_\pi$. These
+are the three real degrees of freedom of the single Bring Hodge
+structure $H^1(\mathrm{Bring}) = 2W$ ($W$-plane scale + modulus + one
+orthogonal $\mathrm{Vol}(\mathrm{Hopf})=0$ meson class). All other
+masses, binding energies, Q-values, and coupling constants — including
+the $\beta$-decay Q-value $\mathfrak{Q}_\beta = \hbar/\mathfrak{D}_\beta$
+itself — are predictions or cross-checks. (Per the 2026-06-26
+decay-width ruling, $\mathfrak{Q}_\beta$ is the **CAL-2 proxy /
+cross-check**, *not* a separate input; the hadronic energy scale
+$\mathfrak{E}_0$ is framework-derived from $(m_e, q_0)$ and
+$\mathfrak{Q}_\beta$ validates it. See the three-calibration discipline
+in [`epistemic-status-of-calibrations`](#rem:epistemic-status-of-calibrations).)
 
 ## The three inputs
 
-| Input | What it fixes | CODATA 2022 | Rel. precision |
-|-------|--------------|-------------|:-:|
-| $m_\mu / m_e = 206.7682830 \pm 0.0000045$ | Substrate parameter $q_0$ | Dimensionless ratio | $2.2 \times 10^{-8}$ |
-| $m_e = 0.51099895000 \pm 0.00000000015$ MeV | Leptonic mass scale | Electron mass | $2.9 \times 10^{-10}$ |
-| $\mathfrak{Q}_\beta(n) = 0.78233341 \pm 0.00000061$ MeV | Hadronic energy scale $E_0$ | Free neutron decay | $7.8 \times 10^{-7}$ |
+| Input (proxy) | CAL | Canonical observable | What it fixes | Rel. precision |
+|-------|:--:|-------|--------------|:-:|
+| $m_e = 0.51099895000 \pm 0.00000000015$ MeV | CAL-1 | $m_e$ (leptonic mass scale) | the MeV unit + cohomological period | $2.9 \times 10^{-10}$ |
+| $m_\mu / m_e = 206.7682830 \pm 0.0000045$ | CAL-2 | $\mathfrak{D}_\beta$ ($n$ $\beta$-decay width) | substrate $q_0$ ($W$-plane modulus) | $2.2 \times 10^{-8}$ |
+| $m_\pi = 139.57039 \pm 0.00018$ MeV | CAL-3 | $\mathfrak{D}_\pi$ (pion decay width) | orthogonal meson scale ($\mathrm{Vol}(\mathrm{Hopf})=0$) | $1.3 \times 10^{-6}$ |
+
+> **CAL-2 cross-check (not a separate input).** The free-neutron
+> $\beta$-decay Q-value $\mathfrak{Q}_\beta(n) = \hbar/\mathfrak{D}_\beta
+> = 0.78233341 \pm 0.00000061$ MeV is the **proxy for CAL-2**. The
+> hadronic energy scale $\mathfrak{E}_0$ is framework-derived from
+> $(m_e, q_0)$; $\mathfrak{Q}_\beta$ reproduced from $q_0$ then validates
+> it to $0.17\%$ (subject to the net-ansatz caveat below). It is a
+> cross-check, not a fourth calibration.
 
 The first input is a **dimensionless ratio** — it fixes $q_0$
 via the **leading-order substrate-truncation** of the canonical
@@ -61,9 +81,10 @@ where $\mathrm{Li}_2(q^{-2}) = \sum_{n=1}^{\infty} q^{-2n}/n^2$
 converges in $\sim 20$ terms.  The conversion factor is then
 $m_e(\text{MeV}) / m_e(\text{natural}) \approx 4.57 \times 10^{-3}$ MeV.
 
-The third input sets the **hadronic energy scale**.
-The leptonic inputs ($m_e$, $q_0$) give a framework-derived
-hadronic scale in two forms — the single-Planck-tick value
+**CAL-2 realization — the hadronic energy scale $\mathfrak{E}_0$ and
+the $\mathfrak{Q}_\beta$ cross-check.** (CAL-3 proper is the meson scale
+$m_\pi$; see below.) The leptonic inputs ($m_e$, $q_0$) give a
+framework-derived hadronic scale in two forms — the single-Planck-tick value
 $\mathfrak{E}_0^{(N=0)} = m_e/(q_0(q_0-1)) \approx 4.186$ MeV
 ([energy scale](#rem:energy-scale-planck)) and the tower-summed
 $\mathfrak{E}_0^{\text{full}} = \mathfrak{E}_0^{(N=0)}/(1-\hbar_q^2)
@@ -91,16 +112,16 @@ crossing change ($\mathfrak{d} \to \mathfrak{u}$) inside
 one nucleon, no nuclear environment. Once $\mathfrak{E}_0$ is fixed,
 **all other Q-values are predictions**.
 
-**CAL-3 gap — explicit tower-correction direction.**
+**$\mathfrak{Q}_\beta$ cross-check gap — explicit tower-correction direction.**
 With the tower form $\mathfrak{E}_0^{\text{full}}$ now wired into
 production compute (the canonical formalism),
 the framework-derived value overshoots the calibrated value by
 **$+1.75\%$** (was $+0.75\%$ with the single-tick form). The
 geometric series direction therefore does *not* close the
-CAL-3 residual — it widens it. This is recorded as an open
+$\mathfrak{Q}_\beta$ residual — it widens it. This is recorded as an open
 finding in the [tower-MeV calibration audit](https://github.com/litlfred/qou/blob/main/docs/audits/-tower-mev-calibration-finding.md)
 (which independently flags $\Phi_q$ $\to$ $\mathrm{Li}_2^q$ as the
-likely correct tower function). CAL-3 thereby ceases to be a
+likely correct tower function). The $\mathfrak{Q}_\beta$ cross-check thereby ceases to be a
 silent absorber of the tower correction; the residual is
 explicit and the direction puzzle is on the books for the
 categorical-derivation review (Workplan 2 Phase 2).
@@ -116,9 +137,13 @@ from the Markov-trace weighted sums of the mass tower. The +0.17%
 match (single-tick form) could be (a) genuine truncation residual
 or (b) an artefact of $q_0 \approx 1.110$ arising from a
 wrong leading-order operator. Until this is resolved by direct
-per-braid computation or a theoretical derivation, **CAL-3 must
-remain an input** and claims of "$\mathfrak{Q}_\beta$ derivable from CAL-1 + CAL-2"
-are conditional on the unproved ansatz. Full audit:
+per-braid computation or a theoretical derivation, the
+$\mathfrak{Q}_\beta$-from-$q_0$ reproduction remains an **unclosed
+cross-check** (not yet a parameter-free derivation), and claims of
+"$\mathfrak{Q}_\beta$ derivable from CAL-1 + CAL-2" are conditional on
+the unproved ansatz. (This does not add a fourth calibration: CAL-2 is
+pinned by $m_\mu/m_e$ at $q_0$, and $\mathfrak{Q}_\beta$ is its proxy
+cross-check.) Full audit:
 [`docs/audits/-q-beta-net-ansatz-fitting-finding.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-q-beta-net-ansatz-fitting-finding.md).
 
 ## Necessity of exactly three inputs
@@ -153,15 +178,17 @@ all but three real parameters:
    scale, analogous to the speed of light $c$ and Planck's
    constant $\hbar$ in the Standard Model.
 
-3. **The hadronic energy scale.**  The brane tower converts
-   the single-level Hecke algebra to full particle masses.  The
-   leptonic sector is fully computable ($\mathrm{Li}_2/\hbar_q^2$),
-   but the hadronic sector's tower correction introduces a
-   $0.17\%$ shift in the energy scale $E_0$ that is not captured
-   by the algebraic expression $m_e/(q(q-1))$.  The free neutron
-   $\mathfrak{Q}_\beta$ calibrates this exactly.  The three inputs correspond
-   to the three physical sectors: shape ($q$), leptonic size
-   ($m_e$), hadronic interaction strength ($\mathfrak{Q}_\beta$).
+3. **The orthogonal meson scale (CAL-3 = $\mathfrak{D}_\pi$, proxy
+   $m_\pi$).**  The brane tower converts the single-level Hecke
+   algebra to full particle masses, but the meson sector carries an
+   orthogonal class ($\mathrm{Vol}(\mathrm{Hopf})=0$) genuinely
+   independent of $(m_e, q_0)$ — the charged-pion mass $m_\pi$ fixes
+   it (SDP-validated). The hadronic $\beta$-decay scale $\mathfrak{E}_0$
+   is *derived* from $(m_e, q_0)$ and merely cross-checked by
+   $\mathfrak{Q}_\beta$ (the CAL-2 proxy), so it is not the third
+   independent input. The three inputs correspond to the three
+   physical sectors: shape ($q$, via $\mathfrak{D}_\beta$/CAL-2),
+   leptonic size ($m_e$/CAL-1), meson scale ($m_\pi$/CAL-3).
 
 No further parameters exist because:
 - The knot-particle dictionary is **determined by $\chi = -6$**:
