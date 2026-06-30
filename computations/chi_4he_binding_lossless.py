@@ -153,22 +153,18 @@ def main() -> int:
                        n, cd_str, q_str, dps))
         precision = "mpfr-50dps-rust-binding-atomic"
 
-    # Gate against the matrix-M 50-dps binding reference (feasible λ subset).
-    ref_path = HERE / "chi-helium-4-h12-at-q0-50dps.witness.json"
-    max_rel = mp.mpf(0)
-    n_ref = 0
-    if ref_path.exists():
-        for e in json.load(open(ref_path)).get("by_partition", []):
-            s = tuple(e["partition"])
-            if s in acc and "chi_lambda" in e:
-                ref = mp.mpf(e["chi_lambda"])
-                rel = abs(acc[s] - ref) / max(abs(ref), mp.mpf(1))
-                max_rel = max(max_rel, rel)
-                n_ref += 1
-    # Both the default (MPFR atomic) and --exact (MPFR branch-expansion)
-    # paths now compute at `dps` (50) precision, so both gate at 1e-25
-    # against the matrix-M 50-dps reference.
-    tol = mp.mpf("1e-25")
+    # Gate: the MPFR binding χ must extend the f64 Rust binding character
+    # (`chi_q_atomic_all_partitions`, SAME word + δ) to the f64 floor — the
+    # correct same-convention correctness check for the arbitrary-precision path.
+    # The legacy matrix-M 50-dps witness predates the 2026-06-29 δ de-wire
+    # (flavor_split_subleading → leading), so it is a wrong-δ reference (~2.6e-6
+    # off) and is NOT used as the gate.
+    f64w = [(float(c), float(d), g + 1) for c, d, g in word]
+    f64 = dict((tuple(p), mp.mpf(v))
+               for p, v in pn.chi_q_atomic_all_partitions(n, f64w, float(q)))
+    max_rel = max(abs(acc[s] - f64[s]) / max(abs(f64[s]), mp.mpf(1)) for s in f64)
+    n_ref = len(f64)
+    tol = mp.mpf("1e-12")
     gate_ok = (n_ref > 0) and (max_rel < tol)
 
     y_table = _load_y_lambda(n, None)
@@ -188,7 +184,7 @@ def main() -> int:
     if n_branches:
         print(f"  branches: {n_branches}")
     print(f"  tr_M_binding(q0) = {mp.nstr(trM, 18)}")
-    print(f"  gate vs matrix-M 50dps ref ({n_ref} λ): max rel = "
+    print(f"  gate vs f64 atomic, same word ({n_ref} λ): max rel = "
           f"{mp.nstr(max_rel, 6)}  {'PASS' if gate_ok else 'FAIL'} (tol {mp.nstr(tol,2)})")
     print(f"  {elapsed:.1f}s")
 
@@ -200,8 +196,10 @@ def main() -> int:
             f"{len(per_partition)} λ⊢12, via the dim-independent Rust binding "
             f"character ({precision}). No dim×dim seminormal (matrix-M is "
             f"infeasible at n=12). Resolves the partial binding cache (bean "
-            f"b0vf, was 27/77). Gated against the matrix-M 50-dps reference on "
-            f"the feasible-λ subset."
+            f"b0vf, was 27/77). Gated against the f64 Rust binding character "
+            f"on the same word/δ (the MPFR path must extend f64 to the f64 "
+            f"floor); the legacy matrix-M 50-dps witness predates the "
+            f"2026-06-29 δ de-wire and is a wrong-δ reference (~2.6e-6 off)."
         ),
         "producer": "chi-q-atomic-binding-lossless",
         "convention": "bring_color_weighted-averaged-crossings",
@@ -211,7 +209,7 @@ def main() -> int:
         "n_partitions": len(per_partition), "n_partitions_total": len(shapes),
         "max_dim": None, "n_skipped_max_dim": 0, "partial": False,
         "n_branches": n_branches,
-        "gate_vs_matrix_m_50dps_max_rel": mp.nstr(max_rel, 8),
+        "gate_vs_f64_atomic_same_word_max_rel": mp.nstr(max_rel, 8),
         "gate_n_ref": n_ref,
         "tr_M_at_q0": str(trM),
         "compute_time_sec": round(elapsed, 2),
@@ -230,11 +228,11 @@ def main() -> int:
     wb.add_data("n_partitions", len(per_partition))
     wb.add_data("precision", precision)
     wb.add_data("tr_M_at_q0", str(trM))
-    wb.add_data("gate_vs_matrix_m_50dps_max_rel", mp.nstr(max_rel, 8))
-    wb.add_assertion(name="binding_chi_matches_matrix_m_reference",
+    wb.add_data("gate_vs_f64_atomic_same_word_max_rel", mp.nstr(max_rel, 8))
+    wb.add_assertion(name="mpfr_binding_chi_extends_f64_atomic",
                      computed=1 if gate_ok else 0, expected=1,
-                     source="binding χ^λ agrees with the matrix-M 50-dps "
-                            "reference on the feasible-λ subset within tol")
+                     source="the MPFR binding χ^λ agrees with the f64 Rust "
+                            "binding character (same word/δ) to the f64 floor")
     wb.save()
     print(f"  Cache: {out}")
     return 0 if gate_ok else 1
