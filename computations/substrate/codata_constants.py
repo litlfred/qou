@@ -108,7 +108,23 @@ def _load_mpf(witness_path: Path, dotted_key: str) -> mp.mpf:
 # 2026-05-23 precision-pipeline audit (docs/audits/2026-05-23-
 # codata-precision-audit.md), 4+ scripts were already redefining
 # M_E_MEV at the full precision — this import unifies them.
-from codata_2022_source import M_E_MEV, M_E_MEV_ERR  # noqa: E402
+from codata_2022_source import (  # noqa: E402
+    M_E_MEV,
+    M_E_MEV_ERR,
+    U_MEV as _U_MEV_CODATA2022,
+    U_MEV_ERR as _U_MEV_CODATA2022_ERR,
+)
+
+
+# ── Precision-safe parser for in-module literals (bean me3r) ────
+# Bare `mp.mpf("...")` at module import time parses at the caller's
+# current mp.dps (often the 15-dps default), silently truncating the
+# constant's binary representation. `_mpf50` forces ≥50 dps parsing
+# (mirrors `_load_mpf` and `codata_2022_source._load_mpf`) so a routed
+# import is bit-identical at any consumer precision ≤ 50 dps.
+def _mpf50(literal: str) -> mp.mpf:
+    with mp.workdps(max(50, mp.mp.dps)):
+        return +mp.mpf(literal)
 
 # ── Q_β: DERIVED from CAL-1 + CAL-2 (cross-check, NOT independent) ─
 # Q_β = m_e·|q₀²−2q₀−1|·(q₀+1)/(2q₀³) ≈ 0.784 MeV (0.17% miss).
@@ -143,8 +159,8 @@ M_HE4_MEV_VALIDATION = _load_mpf(_VALIDATION_WITNESS, "data.m_4He_MeV")
 # `hydrogen_step_by_step`, and `hydrogen_qshuffle_compound`.
 # These are pure validation/comparison targets, never CAL inputs.
 # Source: CODATA 2018 / PDG 2022 atomic-mass tables.
-M_H1_MEV_VALIDATION = mp.mpf("938.7830731")
-RYDBERG_eV_VALIDATION = mp.mpf("13.605693")
+M_H1_MEV_VALIDATION = _mpf50("938.7830731")
+RYDBERG_eV_VALIDATION = _mpf50("13.605693")
 
 # ── AME 2020 atomic binding energies (validation-only) ──────────
 # Added 2026-05-24 per the canonical-iw P31 follow-up: scripts like
@@ -185,28 +201,32 @@ def _ame_entry(Z: int, A: int) -> dict:
     return _ame2020()["_index"][(Z, A)]
 
 
-# u→MeV is itself documented once, in the data file's own metadata
-# ("...1u = 931.49410242 MeV"); parsed rather than re-typed here.
-import re as _re  # noqa: E402
-_U_MEV = mp.mpf(_re.search(
-    r"1u\s*=\s*([\d.]+)\s*MeV",
-    _ame2020()["_metadata"]["units"]["atomic_mass_micro_u"]).group(1))
-del _re
+# u→MeV conversion (bean me3r, 2026-06-30): sourced from the CODATA-2022
+# module rather than scraped from the vendored AME2020 metadata note.
+# The AME2020 metadata carries the CODATA-**2018** value 931.49410242;
+# this registry now uses the CODATA-**2022** value 931.49410372(29) so the
+# conversion matches the codata_2022_source edition (M_E/M_P/M_N etc.).
+# The two differ by ~1.4 ppb (within mutual σ) and feed only the
+# `*_ATOMIC_*_VALIDATION` comparison masses; AME binding energies come
+# from `binding_energy_total_keV` directly and are unaffected. Verify:
+#   assert "931.49410242" in _ame2020()["_metadata"]["units"]["atomic_mass_micro_u"]
+_U_MEV = _U_MEV_CODATA2022
 
-# Public alias for the atomic-mass-unit → MeV conversion (CODATA, via the
-# vendored AME2020 metadata).  Consumers that need the u→MeV factor import
-# this rather than re-typing the 931.494… literal (bean 46ke).
+# Public alias for the atomic-mass-unit → MeV conversion (CODATA-2022).
+# Consumers import this rather than re-typing the 931.494… literal
+# (beans 46ke / me3r / ce18).
 U_MEV = _U_MEV
+U_MEV_ERR = _U_MEV_CODATA2022_ERR
 
 
 def _ame_binding_mev(Z: int, A: int) -> mp.mpf:
     """Total nuclear binding energy (MeV) read from vendored AME2020."""
-    return mp.mpf(str(_ame_entry(Z, A)["binding_energy_total_keV"])) / 1000
+    return _mpf50(str(_ame_entry(Z, A)["binding_energy_total_keV"])) / 1000
 
 
 def _ame_atomic_mev(Z: int, A: int) -> mp.mpf:
     """Neutral-atom mass (MeV) read from vendored AME2020 (atomic_mass_micro_u·u)."""
-    return mp.mpf(str(_ame_entry(Z, A)["atomic_mass_micro_u"])) * mp.mpf("1e-6") * _U_MEV
+    return _mpf50(str(_ame_entry(Z, A)["atomic_mass_micro_u"])) * _mpf50("1e-6") * _U_MEV
 
 
 AME_B_DEUTERON_MEV_VALIDATION = _ame_binding_mev(1, 2)
@@ -221,11 +241,11 @@ AME_B_LI7_MEV_VALIDATION = _ame_binding_mev(3, 7)
 # Added 2026-05-26 per meson knot-dictionary probe (PR #1292).
 # These are comparison targets for meson-sector predictions, NOT
 # calibration inputs. Source: PDG 2024 Review of Particle Physics.
-M_PI_PM_MEV_VALIDATION = mp.mpf("139.57039")     # ± 0.00018 MeV (1.3 ppb)
-M_PI_0_MEV_VALIDATION  = mp.mpf("134.9768")      # ± 0.0005 MeV (3.7 ppm)
-M_K_PM_MEV_VALIDATION  = mp.mpf("493.677")       # ± 0.013 MeV (26 ppm)
-M_K_0_MEV_VALIDATION   = mp.mpf("497.611")       # ± 0.013 MeV (26 ppm)
-M_MU_MEV_VALIDATION    = mp.mpf("105.6583755")   # ± 0.0000023 MeV (22 ppb)
+M_PI_PM_MEV_VALIDATION = _mpf50("139.57039")     # ± 0.00018 MeV (1.3 ppb)
+M_PI_0_MEV_VALIDATION  = _mpf50("134.9768")      # ± 0.0005 MeV (3.7 ppm)
+M_K_PM_MEV_VALIDATION  = _mpf50("493.677")       # ± 0.013 MeV (26 ppm)
+M_K_0_MEV_VALIDATION   = _mpf50("497.611")       # ± 0.013 MeV (26 ppm)
+M_MU_MEV_VALIDATION    = _mpf50("105.6583755")   # ± 0.0000023 MeV (22 ppb)
 
 # ── Neutral-atom atomic masses (validation-only) ──────────────
 # Added 2026-06-21 (bean fvxq class-4): single canonical source for
@@ -307,7 +327,7 @@ def __getattr__(name: str):
 __all__ = [
     # Legitimate calibration inputs (CAL-1) + derived cross-check (Q_β)
     "M_E_MEV", "M_E_MEV_ERR",
-    "U_MEV",  # atomic-mass-unit → MeV conversion (from AME2020 metadata)
+    "U_MEV", "U_MEV_ERR",  # atomic-mass-unit → MeV (CODATA-2022, from codata_2022_source)
     "Q_BETA_MEV", "Q_BETA_MEV_ERR",  # derived from CAL-1+CAL-2; kept for cross-check
     # Validation-only experimental values (loaded from witness)
     "M_P_MEV_VALIDATION", "M_P_MEV_VALIDATION_ERR",
