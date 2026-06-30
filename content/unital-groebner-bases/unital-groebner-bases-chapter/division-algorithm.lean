@@ -1,4 +1,5 @@
 import Mathlib.Data.List.Basic
+import Mathlib.Algebra.Ring.Defs
 
 
 /-!
@@ -51,6 +52,6 @@ theorem division_algorithm_exists
       IsNormalForm nf generators ∧
       InIdeal remainder generators := by
   -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90116-0
-  exact ⟨f, 0, by ring, trivial, trivial⟩
+  exact ⟨f, 0, (add_zero f).symm, trivial, trivial⟩
 
 end QOU.GrobnerShirshov.ContentBlock
