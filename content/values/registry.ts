@@ -388,11 +388,12 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       units: "%",
     }),
 
-    // ── van der Waals = Hopf symmetric block (operator-selection SDP) ──
+    // ── Hopf symmetric block e₊ (the retained cosh CARRIER; NOT van der Waals —
+    //    vdW is the bar-odd residual, prop:vdw-pskew-isolation; operator-selection SDP) ──
     vdw_sigma1sq_pct_symmetric: Object.freeze({
       name: "vdw_sigma1sq_pct_symmetric",
       description:
-        "Symmetric-block fraction q²/(q²+q⁻²) of the Hopf link σ₁² (vdW-dominated).",
+        "Symmetric-block fraction q²/(q²+q⁻²) of the Hopf link σ₁² (~60/40, carrier-dominated).",
       symbol: "q^2/(q^2+q^{-2})",
       witnessFile:
         "computations/hbond-vdw-sdp.witness.json",
@@ -403,11 +404,11 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
     vdw_e_plus_qdim: Object.freeze({
       name: "vdw_e_plus_qdim",
       description:
-        "Markov q-dimension of the symmetric block e₊ (the van der Waals channel).",
+        "Markov q-dimension of the symmetric block e₊ (the retained Hopf cosh carrier; NOT van der Waals — vdW is the bar-odd residual, prop:vdw-pskew-isolation).",
       symbol: "\\mathrm{tr}_M(e_+)",
       witnessFile:
         "computations/hbond-vdw-sdp.witness.json",
-      witnessPath: "data.tr_M_e_plus_symmetric_vdw",
+      witnessPath: "data.tr_M_e_plus_symmetric",
       defaultPrecision: 3,
       units: null,
     }),
