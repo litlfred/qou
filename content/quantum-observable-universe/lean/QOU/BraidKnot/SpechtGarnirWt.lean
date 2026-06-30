@@ -292,4 +292,29 @@ theorem patRel_comp_perm_two_column (c : Fin (Specht.nOf μ) → ℕ)
     · simp [hx]
     · simp [hsupp l hx]
 
+/-- **`colWt` strictly drops under a two-column shuffle (piece A capstone).** For a
+permutation `σ` supported on the two columns `X = colPattern t ⁻¹ {j, j+1}`, with
+the threshold-`j` bottom-heaviness and a genuine column change
+(`colPattern (σ·t) ≠ colPattern t`), the column-dominance measure strictly
+decreases: `colWt (σ·t) < colWt t`. This is exactly the per-shuffle input
+`polytabloid_mem_span_colWt_of_decrease` consumes; piece B (the `A∪B`-from-
+violation construction) is left only to supply `hsupp`/`hstab`/`hbh`/`hne`. -/
+theorem colWt_lt_of_two_column {t : Tableau μ}
+    {σ : Equiv.Perm (Fin (Specht.nOf μ))} {j : ℕ}
+    (hsupp : ∀ l, ¬ (Specht.colPattern t l = j ∨ Specht.colPattern t l = j + 1) → σ l = l)
+    (hstab : ∀ l, (Specht.colPattern t (σ l) = j ∨ Specht.colPattern t (σ l) = j + 1)
+                ↔ (Specht.colPattern t l = j ∨ Specht.colPattern t l = j + 1))
+    (hbh : ∀ m, (Finset.univ.filter
+            (fun l => Specht.colPattern t l = j ∧ (l : ℕ) < m)).card
+          ≤ (Finset.univ.filter
+            (fun l => Specht.colPattern t l = j ∧ ((σ l : Fin (Specht.nOf μ)) : ℕ) < m)).card)
+    (hne : Specht.colPattern (σ • t) ≠ Specht.colPattern t) :
+    colWt (σ • t) < colWt t := by
+  apply colWt_lt_of_patRel (s := t) (t := σ • t)
+  · have hp := patRel_comp_perm_two_column (Specht.colPattern t) σ j hsupp hstab hbh
+    have heq : Specht.colPattern (σ • t) = fun l => Specht.colPattern t (σ⁻¹ l) := by
+      rw [Specht.colPattern_smul]; rfl
+    rw [heq]; exact hp
+  · exact fun h => hne h.symm
+
 end QOU.BraidKnot.SpechtGarnirWt
