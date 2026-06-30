@@ -1,23 +1,23 @@
-import QOU.Basic
+import QOU.BraidKnot.ConfinementLevel
 
 
 /-!
-# QOU.BraidKnot.ConfinementLevel.exists — existence of confinement level
+# confinement-level-exists — sibling stub
 
-The set { ℓ : T_w ∈ J^ℓ(q) } is finite, upward-closed, and nonempty,
-so its minimum exists.
+The canonical Lean source for `prop:confinement-level-exists` lives at
+`content/quantum-observable-universe/lean/QOU/BraidKnot/ConfinementLevel.lean`,
+which is Lake-built under the `qou` package and declares the structure
+`QOU.BraidKnot.ConfinementLevel` together with the theorem
+`QOU.BraidKnot.ConfinementLevel.exists`.
 
-LaTeX: `\label{prop:confinement-level-exists}`
+This sibling re-exports that module (via `import`) so the content-block
+manifest's `lean.ref` (`qou:QOU.BraidKnot.ConfinementLevel.exists`)
+resolves cleanly against the Lake tree, without shadowing the real
+declaration with a duplicate stub (per AGENTS.md §"No shadowing stubs").
+
+The theorem itself: the set `{ ℓ : T_w ∈ J^ℓ(q) }` is finite,
+upward-closed, and nonempty (since `T_w ∈ J^0(q) = H_n(R, q)`
+trivially), so its minimum exists.
+
+Ref: [manuscript] braids-and-knots/confinement-level
 -/
-
-namespace QOU.BraidKnot
-
-universe u
-
-/-- **Existence of the confinement level.** -/
--- Ref: [manuscript] braids-and-knots/confinement-level
-theorem ConfinementLevel.exists (R : Type u) [CommRing R] :
-    Nonempty (ConfinementLevel R) := by
-  exact ⟨{ braidIndex := 0, nStrands := 1, q := 0, level := 0 }⟩
-
-end QOU.BraidKnot
