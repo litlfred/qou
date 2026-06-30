@@ -1,6 +1,7 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Int.Basic
-import Mathlib.Data.Nat.Basic
+import Mathlib.Data.Nat.Prime.Basic
+import Mathlib.Tactic
 import Mathlib.RingTheory.Ideal.Basic
 
 
@@ -70,14 +71,16 @@ structure GrobnerShirshovBasis where
     structure on Dist(G) arises by p-adic completion of the
     Gröbner-Shirshov deformation of Dist(H).
 
-    For a prime p ≥ 5 (i.e., p does not divide 30), the integration
-    is compatible with the Descartes braid structure. -/
+    For a prime `p ≥ 7` (the smallest prime not dividing `30 = 2·3·5`),
+    the integration is compatible with the Descartes braid structure.
+    Note `p = 5` does divide `30`, so the good-prime bound is `7 ≤ p`,
+    not `5 ≤ p`. -/
 -- Ref: [hazewinkel1978] Hazewinkel, "Formal Groups and Applications," Academic Press 1978
 theorem integration_requires_good_prime (p : ℕ) (hp : Nat.Prime p)
-    (h5 : 5 ≤ p) : ¬(p ∣ 30) := by
+    (h7 : 7 ≤ p) : ¬(p ∣ 30) := by
   intro hdvd
-  have hp2 := hp.two_le
-  interval_cases p <;> simp_all (config := { decide := true }) <;> omega
+  have hle : p ≤ 30 := Nat.le_of_dvd (by norm_num) hdvd
+  interval_cases p <;> simp_all (config := { decide := true })
 
 /-- The Frobenius relation (strong multiplicativity) is an identity
     of natural transformations:
