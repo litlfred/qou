@@ -26,9 +26,10 @@ numerical evaluation.
 
 namespace QOU
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -49,5 +50,7 @@ structure YekutieliTripleMapping (M : Type*) where
   deformations : M → R_q
   /-- The 2-morphisms are invertible (in 𝒪_M×). -/
   deformations_ne_zero : ∀ p : M, deformations p ≠ 0
+
+end
 
 end QOU

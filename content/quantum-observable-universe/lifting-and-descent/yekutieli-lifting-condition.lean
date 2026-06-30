@@ -45,6 +45,8 @@ structure YekutieliLiftingCondition where
   /-- Non-zero obstruction prevents lifting. -/
   no_lift_of_nonzero : ∀ n, obstruction n ≠ 0 → IsEmpty (LiftType n)
 
+attribute [instance] YekutieliLiftingCondition.addCommGroup
+
 /-- An object lifts iff its obstruction is zero (the iff formulation).
     Combines lift_of_zero and no_lift_of_nonzero. -/
 theorem YekutieliLiftingCondition.lift_iff
