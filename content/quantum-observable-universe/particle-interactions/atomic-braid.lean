@@ -28,8 +28,13 @@ structure NeutralAtom where
   /-- Total strand count = A + Z (nucleons + electrons). -/
   totalStrands : Nat := A + Z
 
-/-- The number of crossings in an atomic braid grows polynomially. -/
-theorem atomic_braid_crossing_count (atom : NeutralAtom) :
-    atom.totalStrands = atom.Z + atom.N + atom.Z := by
-  simp [NeutralAtom.totalStrands, NeutralAtom.A]
-  omega
+/-- Strand count of a default-constructed neutral atom `(Z, N)`:
+    with the field defaults `A = Z + N` and `totalStrands = A + Z`,
+    the total strand count is `Z + N + Z = A + Z`.
+
+    Stated for `⟨Z, N⟩` (defaults applied) because for an arbitrary
+    `NeutralAtom` the `A` and `totalStrands` fields are independent
+    and may be set to non-default values. -/
+theorem atomic_braid_crossing_count (Z N : Nat) :
+    ({ Z := Z, N := N } : NeutralAtom).totalStrands = Z + N + Z := by
+  rfl
