@@ -65,6 +65,29 @@ the `archimedean-chirality` Reeb involution carry. This is precisely the bosonic
 decisive obstruction (`W_λ = W_{λ′}`) being *supplied* by the colored construction rather than
 violated.
 
+## Sharper icosahedral identity + the value-step screen (update)
+
+**The bare support is the H₄ exponent set.** `{1,11,19,29}` are *exactly* the exponents of **H₄** —
+the 4D icosahedral / 600-cell Coxeter group (degrees `{2,12,20,30}`, Coxeter number `h = 30`). The
+colored complement `{7,13,17,23}` is the rest of E₈, so the colour split `α=1 / α=2` is precisely the
+**H₄ ⊂ E₈ folding**. The icosahedral structure carried by Σ(2,3,5) is therefore concretely **H₄**
+(the 600-cell), sharpening the generic "icosahedral / E₈" label.
+
+**Value-step screen — the naive exponent quantum dimension is refuted.** Assigning each `bwS0`
+conjugation class its dual-pair exponent and comparing to `[e]_q`:
+
+| exponent e | λ | target d_q | [e]_q | d_q / [e]_q |
+|--:|---|--:|--:|--:|
+| 1 | (5) | 1.0000 | 1.0000 | 1.0000 |
+| 7 | (4,1) | 4.1097 | 7.6253 | 0.5390 |
+| 11 | (3,2) | 5.2204 | 13.5546 | 0.3851 |
+| 13 | (3,1,1) | 6.2204 | 17.3382 | 0.3588 |
+
+The ratio `d_q/[e]_q` is non-constant, so **no global normalization makes the exponent-label quantum
+dimension equal `d_q`** — the value map is *not* `[e]_q`. This (a)-prunes the naive value hypothesis
+and locates the open step precisely: the realization needs the **genuine colored Lawrence–Rozansky
+S-matrix amplitude** for Σ(2,3,5), not the exponent's quantum dimension.
+
 ## Scope / discipline ((a) structural advance, value step remaining)
 
 - **No fit.** The colour formula `1/5 → α/5` is the standard fibre-coloring of the surgery
