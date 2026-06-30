@@ -1,6 +1,10 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.Order.Field.Basic
-import Mathlib.Tactic
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Positivity
+import Mathlib.Tactic.FieldSimp
 
 
 /-!

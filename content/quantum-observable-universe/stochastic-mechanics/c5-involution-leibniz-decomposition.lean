@@ -218,9 +218,7 @@ noncomputable def c5OfHSquared (h_sq : ℝ) : ℝ := -3/2 + 1 / (h_sq + 4)
     `IsBarSymmetric.of_mul_antisym`), this expresses c_5 as
     bar-symmetric-projection-followed-by-rational-function. -/
 theorem c5RationalMap_factor (h : ℝ) :
-    c5RationalMap h = c5OfHSquared (h^2) := by
-  unfold c5RationalMap c5OfHSquared
-  rfl
+    c5RationalMap h = c5OfHSquared (h^2) := rfl
 
 /-- **Sign signature of c_5 over ℝ**: `c5RationalMap` is strictly
     negative everywhere on ℝ. Categorical content: the precision-

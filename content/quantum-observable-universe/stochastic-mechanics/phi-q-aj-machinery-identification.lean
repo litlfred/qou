@@ -1,4 +1,4 @@
-import Mathlib.Tactic
+import Mathlib.Data.Rat.Defs
 
 /-!
 # QOU.BraidKnot.PhiQAJMachineryIdentification
