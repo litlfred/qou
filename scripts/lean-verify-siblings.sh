@@ -10,14 +10,24 @@
 #     `object file '…/X.olean' of module X does not exist`. This is a runner
 #     limitation, NOT a defect in the PR's file → NEUTRAL-SKIP (warning).
 #
+#   - CROSS-PAPER cache miss — a content sibling under paper A imports a
+#     sibling-paper package root B (`import UGB.…` from a QOU sibling). When
+#     B's oleans are not on the verification path (e.g. CI restores only the
+#     mathlib + QOU cones, never builds UGB) Lean cannot even open the prefix
+#     and reports `unknown module prefix 'UGB'`. This is the same class as the
+#     missing-object-file miss — a cache-cone limitation, NOT a defect — so it
+#     is NEUTRAL-SKIPPED, but ONLY for the known paper-package roots
+#     (QOU / UGB / Fred2005). A typo'd prefix (`Mathlibb`, `Qou`) still FAILs.
+#
 #   - GENUINE — a real parse / elaboration / type error (`unexpected token`,
 #     `unsolved goals`, `unknown identifier`, IR check, …) that surfaces only
 #     AFTER imports resolve. This is the "never compiled standalone" breakage
 #     the gate exists to catch → FAIL.
 #
 # A file is FAIL iff its `lean` output contains an `error:` line that is NOT a
-# missing-object-file error. Files whose ONLY errors are missing-object-file
-# are skipped with a warning so a cache-subset miss never false-blocks a PR.
+# missing-object-file error and NOT a known-paper-package `unknown module
+# prefix`. Files whose ONLY errors are those cache-cone misses are skipped with
+# a warning so a cache-subset miss never false-blocks a PR.
 #
 # Usage:  scripts/lean-verify-siblings.sh <file.lean> [more.lean ...]
 # Exit:   0 = all files pass or neutral-skip; 1 = ≥1 genuine error;
@@ -40,8 +50,13 @@ LP="$(lean_leanpath)"
 fail=0; pass=0; skip=0
 for f in "$@"; do
   out=$(env LEAN_PATH="$LP" ELAN_NO_OVERRIDE_NOTICE=1 lean "$f" 2>&1)
-  # Genuine = any error: line that is not a missing-object-file error.
-  genuine=$(echo "$out" | grep 'error:' | grep -v "object file '.*' of module .* does not exist" || true)
+  # Genuine = any error: line that is neither a missing-object-file error nor a
+  # cross-paper `unknown module prefix '<paper-pkg>'` cache-cone miss. The
+  # prefix exclusion is scoped to the known paper-package roots so a genuinely
+  # typo'd import prefix is still caught as a fail.
+  genuine=$(echo "$out" | grep 'error:' \
+    | grep -v "object file '.*' of module .* does not exist" \
+    | grep -vE "unknown module prefix '(QOU|UGB|Fred2005)'" || true)
   if [ -z "$(echo "$out" | grep 'error:')" ]; then
     pass=$((pass+1)); echo "✓ $f"
   elif [ -z "$genuine" ]; then
