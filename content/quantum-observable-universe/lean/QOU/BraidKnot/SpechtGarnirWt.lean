@@ -412,4 +412,68 @@ theorem hbh_of_top_subset (c : Fin (Specht.nOf μ) → ℕ)
   exact bottomHeavy_of_top_subset S A (A.image σ) himg
     (Finset.card_image_of_injective _ σ.injective) htop m
 
+/-- **`hbh` from a moved top-subset (the production bridge).** The Garnir set uses
+*partial* columns: `σ` moves only the column-`j` cells `A` of the Garnir region
+and **fixes** the other `{c = j}` labels (`hfix`). With `σ(A) ⊆ A ∪ B` and `A` the
+top of `A ∪ B` (all `B`-labels smaller), the full-column bottom-heaviness `hbh`
+holds: the σ-fixed `{c=j} ∖ A` part cancels and the moved `A`-part is bottom-heavy
+by `bottomHeavy_of_top_subset`. This is the `hbh` `colWt_lt_of_two_column` needs
+(with `P = (c · = j)`). -/
+theorem hbh_of_moved_top {n : ℕ} (P : Fin n → Prop) [DecidablePred P]
+    (σ : Equiv.Perm (Fin n)) (A B : Finset (Fin n))
+    (hPA : ∀ l ∈ A, P l)
+    (hfix : ∀ l, P l → l ∉ A → σ l = l)
+    (himg : A.image σ ⊆ A ∪ B)
+    (htop : ∀ a ∈ A, ∀ s ∈ A ∪ B, s ∉ A → (s : ℕ) < (a : ℕ)) (m : ℕ) :
+    (Finset.univ.filter (fun l => P l ∧ (l : ℕ) < m)).card
+      ≤ (Finset.univ.filter (fun l => P l ∧ ((σ l : Fin n) : ℕ) < m)).card := by
+  classical
+  have hA : (A.filter (fun l : Fin n => (l : ℕ) < m)).card
+      ≤ (A.filter (fun l : Fin n => ((σ l : Fin n) : ℕ) < m)).card := by
+    have hreidx : (A.filter (fun l : Fin n => ((σ l : Fin n) : ℕ) < m)).card
+        = ((A.image σ).filter (fun l : Fin n => (l : ℕ) < m)).card := by
+      refine Finset.card_bij' (fun l _ => σ l) (fun l _ => σ⁻¹ l) ?_ ?_ ?_ ?_
+      · intro l hl; rw [Finset.mem_filter] at hl ⊢
+        exact ⟨Finset.mem_image_of_mem σ hl.1, hl.2⟩
+      · intro l hl
+        rw [Finset.mem_filter, Finset.mem_image] at hl
+        obtain ⟨⟨a, haA, haσ⟩, hlm⟩ := hl
+        have hinv : σ⁻¹ l = a := by rw [← haσ]; exact Equiv.Perm.inv_apply_self σ a
+        show σ⁻¹ l ∈ A.filter (fun l : Fin n => ((σ l : Fin n) : ℕ) < m)
+        rw [Finset.mem_filter]
+        refine ⟨by rw [hinv]; exact haA, ?_⟩
+        show ((σ (σ⁻¹ l) : Fin n) : ℕ) < m
+        rw [Equiv.Perm.apply_inv_self]; exact hlm
+      · intro l _; exact Equiv.Perm.inv_apply_self σ l
+      · intro l _; exact Equiv.Perm.apply_inv_self σ l
+    rw [hreidx]
+    exact bottomHeavy_of_top_subset (A ∪ B) A (A.image σ) himg
+      (Finset.card_image_of_injective _ σ.injective) htop m
+  have split : ∀ (q : Fin n → Prop) [DecidablePred q],
+      (Finset.univ.filter (fun l => P l ∧ q l)).card
+        = (A.filter q).card + (Finset.univ.filter (fun l => P l ∧ l ∉ A ∧ q l)).card := by
+    intro q _
+    rw [← Finset.filter_card_add_filter_neg_card_eq_card
+        (s := Finset.univ.filter (fun l => P l ∧ q l)) (p := (· ∈ A))]
+    congr 1
+    · apply congrArg Finset.card; ext l
+      simp only [Finset.mem_filter, Finset.mem_univ, true_and]
+      constructor
+      · rintro ⟨⟨_, hq⟩, hA⟩; exact ⟨hA, hq⟩
+      · rintro ⟨hA, hq⟩; exact ⟨⟨hPA l hA, hq⟩, hA⟩
+    · apply congrArg Finset.card; ext l
+      simp only [Finset.mem_filter, Finset.mem_univ, true_and]
+      tauto
+  have eZ : (Finset.univ.filter (fun l => P l ∧ l ∉ A ∧ (l : ℕ) < m)).card
+          = (Finset.univ.filter (fun l => P l ∧ l ∉ A ∧ ((σ l : Fin n) : ℕ) < m)).card := by
+    apply congrArg Finset.card; apply Finset.filter_congr
+    intro l _
+    by_cases hP : P l
+    · by_cases hAm : l ∈ A
+      · simp [hAm]
+      · rw [hfix l hP hAm]
+    · simp [hP]
+  rw [split (fun l => (l : ℕ) < m), split (fun l => ((σ l : Fin n) : ℕ) < m), eZ]
+  exact Nat.add_le_add_right hA _
+
 end QOU.BraidKnot.SpechtGarnirWt
