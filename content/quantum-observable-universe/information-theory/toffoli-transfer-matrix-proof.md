@@ -26,14 +26,23 @@ $$
   = z - (q - q^{-1})
 $$
 
-All three equal $z$.  (Algebraically:
-$z \cdot c + d = z$ holds for each $(c, d)$ because the
-crossing coefficients satisfy
-$c \cdot z + d = z$ identically — the Markov parameter
-$z$ is a fixed point of every single-crossing transfer.)
+These three values are **not** equal — they differ in the
+$d$ coefficient, so a single crossing *does* carry type
+information: $\hat{V}_1^{(\mathrm{mix})} - \hat{V}_1^{(pp)} =
+-\tfrac{q - q^{-1}}{2}$ and $\hat{V}_1^{(nn)} - \hat{V}_1^{(pp)} =
+-(q - q^{-1})$. What vanishes is the *target-flip* difference, not
+the type dependence: generator $\sigma_1$ is the
+**control–control crossing** (strands $1$–$2$), which a target-flip
+(acting on the target strand $3$) leaves unchanged. Parent and
+daughter therefore carry the **same** $\sigma_1$ crossing type, hence
+the same $\hat{V}_1$, and
 
-Therefore $\Delta_1 = \hat{V}_1^{(\mathrm{par})} - \hat{V}_1^{(\mathrm{dau})} = z - z = 0$ for every
-transition.
+$$
+  \Delta_1 = \hat{V}_1^{(\mathrm{par})} - \hat{V}_1^{(\mathrm{dau})} = 0
+$$
+
+for every target-flip transition — because the control crossing is
+fixed, not because $\hat{V}_1$ is type-independent.
 
 **Target-flip amplitude.**  Since $\Delta_1 = 0$, the
 $1$-jet formula reduces to:
