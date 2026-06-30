@@ -2,7 +2,7 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:van-der-waals-hopf-channel",
-  title: "The van der Waals channel — the Hopf symmetric block",
+  title: "The Hopf symmetric block $e_+$ — retained cosh carrier (not van der Waals)",
   lean: {
     ref: "qou:QOU.VanDerWaals.vdwSymmetricBlock",
     validation: "not_checked",
