@@ -422,15 +422,18 @@ def _group_words(ngen: int) -> list:
     return words
 
 
-def _col0_matrix_unit_preimages(rgens: list, d: int, mu, tol: "mp.mpf"):
+def _col0_matrix_unit_preimages(rgens: list, d: int, mu, tol: "mp.mpf",
+                                q_str: str, dps: int):
     """Words T_w and coeffs so that Σ_w coeffs[a][w]·ρ(T_w) = E_{a0}=|e_a⟩⟨e_0|
     (column-0 matrix units), for the small seminormal rep `rgens` (d×d each) of
-    partition `mu`. Depends only on μ (cached). Row-major vec convention."""
-    if mu in _COL0_PREIMAGE_CACHE:
-        return _COL0_PREIMAGE_CACHE[mu]
+    partition `mu`. The coeffs depend on `rgens` (hence on `q_str`, `dps`), so
+    the cache key carries (μ, q_str, dps). Row-major vec convention."""
+    key = (mu, q_str, dps)
+    if key in _COL0_PREIMAGE_CACHE:
+        return _COL0_PREIMAGE_CACHE[key]
     if d == 1:
         res = ([()], [[mp.mpf(1)]])
-        _COL0_PREIMAGE_CACHE[mu] = res
+        _COL0_PREIMAGE_CACHE[key] = res
         return res
     ngen = len(rgens)
     eye = mp.eye(d)
@@ -476,7 +479,7 @@ def _col0_matrix_unit_preimages(rgens: list, d: int, mu, tol: "mp.mpf"):
     Vinv = V ** -1
     coeffs = [[Vinv[j, a * d] for j in range(d * d)] for a in range(d)]
     res = (sel_words, coeffs)
-    _COL0_PREIMAGE_CACHE[mu] = res
+    _COL0_PREIMAGE_CACHE[key] = res
     return res
 
 
@@ -505,12 +508,12 @@ def _restricted_col0_units(ggens: list, words: list, coeffs: list, r: int):
 
 def _cyclic_intertwiner(g_in: list, g_bl: list, rmu: list, rnu: list,
                         r: int, d_mu: int, d_nu: int, c: int,
-                        mu, nu, tol: "mp.mpf") -> "mp.matrix":
+                        mu, nu, tol: "mp.mpf", q_str: str, dps: int) -> "mp.matrix":
     """Intertwiner U (r×r), r = c·d_mu·d_nu, with g̃_in U = U(ρ_μ⊗I⊗I) and
     g̃_bl U = U(I⊗ρ_ν⊗I), via the handover §5 cyclic-vector construction.
     Column (a,b,k) ordering a·d_nu·c + b·c + k matches the partial-trace code."""
-    w_mu, c_mu = _col0_matrix_unit_preimages(rmu, d_mu, mu, tol)
-    w_nu, c_nu = _col0_matrix_unit_preimages(rnu, d_nu, nu, tol)
+    w_mu, c_mu = _col0_matrix_unit_preimages(rmu, d_mu, mu, tol, q_str, dps)
+    w_nu, c_nu = _col0_matrix_unit_preimages(rnu, d_nu, nu, tol, q_str, dps)
     Hmu = _restricted_col0_units(g_in, w_mu, c_mu, r)   # H^μ_{a0}|range, a=0..d_mu-1
     Hnu = _restricted_col0_units(g_bl, w_nu, c_nu, r)   # H^ν_{b0}|range, b=0..d_nu-1
     # Reference subspace = range(E^μ_00 · E^ν_00)|range, dim c (idempotent).
@@ -568,7 +571,7 @@ def gauge_aligned_A_combiner_general_cyclic(lam: tuple[int, ...], n_inner: int,
             g_in = [Q.T * mats[a] * Q for a in range(n_inner - 1)]
             g_bl = [Q.T * mats[n_inner + b] * Q for b in range(n_block - 1)]
             U = _cyclic_intertwiner(g_in, g_bl, rmu, rnu, r, d_mu, d_nu, c,
-                                    mu, nu, tol)
+                                    mu, nu, tol, q_str, dps)
             Atil = U ** -1 * Itil * U
             dd = d_mu * d_nu
             A = mp.zeros(dd, dd)
@@ -576,10 +579,9 @@ def gauge_aligned_A_combiner_general_cyclic(lam: tuple[int, ...], n_inner: int,
                 for b in range(d_nu):
                     for ap in range(d_mu):
                         for bp in range(d_nu):
-                            s = mp.mpf(0)
-                            for t in range(c):
-                                s += Atil[a * d_nu * c + b * c + t,
-                                          ap * d_nu * c + bp * c + t]
+                            s = mp.fsum(Atil[a * d_nu * c + b * c + t,
+                                             ap * d_nu * c + bp * c + t]
+                                        for t in range(c))
                             A[a * d_nu + b, ap * d_nu + bp] = s
             out[(mu, nu)] = {"A": A, "c": c, "d_mu": d_mu, "d_nu": d_nu}
     return out
