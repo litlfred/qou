@@ -27,5 +27,13 @@
     "B_excluded_from_topological_SL2Z": true
   },
   "allPassed": true,
-  "verdict": "COLOR E_q CONFIRMED (j(q0)=129.86~129.9), but tr B = 2.6424 is NON-INTEGER so B is NOT the integral topological Gauss-Manin monodromy of E_q (which is SL2(Z), integer trace). B is the abelianised lambda_SW Cartan-connection holonomy (real/hyperbolic, tau=2cosh theta_binding, theta=0.7815). This REFRAMES option 2: a genus-1 Picard-Fuchs topological-monodromy computation would yield the WRONG (integer-trace) object. The decisive open step is the holonomy of the abelianised lambda_SW connection at q0, not the topological monodromy -- consistent with the M-workplan abelianisation (Cartan reduction) and the keystone non-compact (real-holonomy, q0 not a root of unity) arena. Curve identified; the explicit abelianised-connection holonomy = theta_binding stays the open keystone step. No fit; nothing wired."
+  "verdict": "COLOR E_q CONFIRMED (j(q0)=129.86~129.9), but tr B = 2.6424 is NON-INTEGER so B is NOT the integral topological Gauss-Manin monodromy of E_q (which is SL2(Z), integer trace). B is the abelianised lambda_SW Cartan-connection holonomy (real/hyperbolic, tau=2cosh theta_binding, theta=0.7815). This REFRAMES option 2: a genus-1 Picard-Fuchs topological-monodromy computation would yield the WRONG (integer-trace) object. The decisive open step is the holonomy of the abelianised lambda_SW connection at q0, not the topological monodromy -- consistent with the M-workplan abelianisation (Cartan reduction) and the keystone non-compact (real-holonomy, q0 not a root of unity) arena. Curve identified; the explicit abelianised-connection holonomy = theta_binding stays the open keystone step. No fit; nothing wired.",
+  "scriptHash": "b97c9c0180da",
+  "scriptCommitSha": "f6ddd9350192668fe1fb6c2498f8d5b91bb70331",
+  "commitSha": "0220fdf924b1bb13b50fc87488a49b858e67ae23",
+  "engine": "sympy",
+  "computedAt": "2026-06-30T23:52:56.382301+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "lever1_color_eq_monodromy_integrality.py"
 }
