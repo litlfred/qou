@@ -1,6 +1,7 @@
 import Mathlib.Data.Nat.Basic
 import Mathlib.Data.Finset.Basic
-import Mathlib.Tactic
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.IntervalCases
 
 
 /-!
@@ -29,18 +30,21 @@ theorem torus_knot_generators_finite
           seifertGenus m n ≤ g → (m, n) ∈ S := by
   -- Ref: [manuscript] Ch. 5, §torus-knot-generators
   -- Any finite set containing the 6 solutions suffices as a witness.
-  -- The constraint (m-1)(n-1) ≤ 9 (Seifert genus ≤ 4) with m ≥ 2, n > m and
-  -- gcd = 1 has exactly six solutions; any finite set containing them is a
-  -- witness.
   subst hg
-  refine ⟨{(2, 3), (2, 5), (2, 7), (2, 9), (3, 4), (3, 5)},
-    fun m n hm hmn hcop hgen => ?_⟩
-  unfold seifertGenus at hgen
-  have hk9 : (m - 1) * (n - 1) ≤ 9 := by omega
-  have hmle : m - 1 ≤ (m - 1) * (n - 1) := Nat.le_mul_of_pos_right _ (by omega)
-  have hnle : n - 1 ≤ (m - 1) * (n - 1) := Nat.le_mul_of_pos_left _ (by omega)
-  have hm10 : m ≤ 10 := by omega
-  have hn10 : n ≤ 10 := by omega
-  interval_cases m <;> interval_cases n <;> simp_all [Nat.Coprime] <;> omega
+  exact ⟨{(2,3), (2,5), (2,7), (2,9), (3,4), (3,5)}, fun m n hm hmn hcop hg => by
+    simp only [Finset.mem_insert, Prod.mk.injEq, Finset.mem_singleton]
+    unfold seifertGenus at hg
+    -- (m-1)(n-1)/2 ≤ 4 ⟹ (m-1)(n-1) ≤ 9 (Nat division by 2 rounds down).
+    have hprod : (m - 1) * (n - 1) ≤ 9 := by omega
+    -- With m ≥ 2 (so m-1 ≥ 1) and n > m (so n-1 ≥ 1), each factor is bounded
+    -- by the product, giving m ≤ 10, n ≤ 10.
+    have hm1 : 0 < m - 1 := by omega
+    have hn1 : 0 < n - 1 := by omega
+    -- Each factor is ≤ the product (the other factor is positive).
+    have hmf : m - 1 ≤ (m - 1) * (n - 1) := Nat.le_mul_of_pos_right _ hn1
+    have hnf : n - 1 ≤ (m - 1) * (n - 1) := Nat.le_mul_of_pos_left _ hm1
+    have hm_le : m ≤ 10 := by omega
+    have hn_le : n ≤ 10 := by omega
+    interval_cases m <;> interval_cases n <;> simp_all [Nat.Coprime] <;> omega⟩
 
 end QOU.Torsion

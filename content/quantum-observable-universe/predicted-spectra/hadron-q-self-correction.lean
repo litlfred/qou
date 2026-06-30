@@ -1,4 +1,5 @@
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Tactic
 
 
@@ -22,12 +23,12 @@ LaTeX label: `prop:hadron-q-self-correction`
 ## References
 - [manuscript] §6/hadron-q-self-correction
 
-**Ground ring.** This is the **archimedean realisation** (namespace
-`QOU.Archimedean`): the deformation uses the reciprocal `q₀⁻¹`,
-division by `A²`, and order comparisons (`≤ 0`, `< 0.01`), none of
-which live on the formal ground ring `R_q = ℤ[q, q⁻¹]`. The quantities
-hold over `ℝ` at the substrate image `ι : R_q → ℝ, q ↦ q₀` (§7c). The
-integer crossing count `ℓ_net` stays over `ℤ`.
+**Ground ring**: `ℝ` (archimedean realisation). The self-deformation
+`δq` uses the field inverse `q₀⁻¹` and division by `A²`, and the
+positivity / smallness theorems use the strict order, so these
+statements live past the substrate→archimedean wall (§7c) and are
+stated over `ℝ` at the evaluation `q ↦ q₀`. The net signed crossing
+count stays an integer (`ℤ`).
 -/
 
 namespace QOU.Archimedean
@@ -50,21 +51,27 @@ noncomputable def deltaQ (q₀ : ℝ) (p n : ℕ) : ℝ :=
 noncomputable def qEff (q₀ : ℝ) (p n : ℕ) : ℝ :=
   q₀ + deltaQ q₀ p n
 
+/-- The net signed crossing count is non-positive for neutron-rich
+    nuclei (`p < n`): the triangular number `C(n,2)` dominates `C(p,2)`. -/
+-- Ref: [manuscript] §6/hadron-q-self-correction
+theorem netSignedCrossing_nonpos (p n : ℕ) (hn : p < n) :
+    netSignedCrossing p n ≤ 0 := by
+  unfold netSignedCrossing
+  have hpn : (p : ℤ) ≤ n := by exact_mod_cast Nat.le_of_lt hn
+  have hp1 : ((p : ℤ) * (p - 1)) ≤ (n * (n - 1)) := by
+    nlinarith [Int.natCast_nonneg p, Int.natCast_nonneg n]
+  omega
+
 /-- For neutron-rich nuclei (n > p), the self-deformation is negative:
     the excess of negative crossings slightly reduces q. -/
 -- Ref: [manuscript] §6/hadron-q-self-correction
 theorem deltaQ_neg_neutron_rich (q₀ : ℝ) (p n : ℕ) (hn : p < n) :
     deltaQ q₀ p n ≤ 0 := by
-  have hpn : (p : ℤ) < (n : ℤ) := by exact_mod_cast hn
-  have hle : (p : ℤ) * ((p : ℤ) - 1) ≤ (n : ℤ) * ((n : ℤ) - 1) := by nlinarith
-  have hdiv := Int.ediv_le_ediv (by norm_num : (0 : ℤ) < 2) hle
-  unfold deltaQ netSignedCrossing
+  unfold deltaQ
   simp only
   apply mul_nonpos_of_nonpos_of_nonneg
   · apply div_nonpos_of_nonpos_of_nonneg
-    · push_cast
-      have : ((p : ℤ) * ((p : ℤ) - 1)) / 2 - ((n : ℤ) * ((n : ℤ) - 1)) / 2 ≤ 0 := by
-        linarith
+    · have : netSignedCrossing p n ≤ 0 := netSignedCrossing_nonpos p n hn
       exact_mod_cast this
     · positivity
   · exact sq_nonneg _
@@ -104,8 +111,7 @@ theorem differentialShift_nonneg (q₀ : ℝ) (A : ℕ) (hA : 1 ≤ A) :
 theorem differentialShift_small (A : ℕ) (hA : 1 ≤ A) :
     differentialShift 1.1097 A < 0.01 := by
   unfold differentialShift
-  have hA1 : (1 : ℝ) ≤ (A : ℝ) := by exact_mod_cast hA
-  have hA_pos : (0 : ℝ) < (A : ℝ) := by linarith
+  have hA_pos : (0 : ℝ) < (A : ℝ) := by exact_mod_cast Nat.lt_of_lt_of_le Nat.zero_lt_one hA
   have hA2_pos : (0 : ℝ) < (A : ℝ) ^ 2 := by positivity
   have h1 : ((A : ℝ) - 1) / (A : ℝ) ^ 2 ≤ 1 := by
     rw [div_le_one hA2_pos]
@@ -122,20 +128,19 @@ theorem differentialShift_small (A : ℕ) (hA : 1 ≤ A) :
 /-- q_eff > 1 when q₀ > 1: the effective parameter stays in the
     non-classical regime (self-deformation is too small to change this). -/
 -- Ref: [manuscript] §6/hadron-q-self-correction
-theorem qEff_gt_one (q₀ : ℝ) (p n : ℕ)
+theorem qEff_gt_one (q₀ : ℝ) (hq : 1 < q₀) (p n : ℕ)
     (hsmall : |deltaQ q₀ p n| < q₀ - 1) :
     1 < qEff q₀ p n := by
   unfold qEff
   have := abs_lt.mp hsmall
   linarith [this.1]
 
-/-- Top-level alias matching the manifest declaration. -/
+/-- Top-level alias matching the manifest declaration: the
+    self-deformation is the net signed crossing count over `A²`,
+    weighted by `ℏ_q² = (1 - q₀⁻¹)²`. -/
 -- Ref: [manuscript] §6/hadron-q-self-correction
 theorem hadron_q_self_correction (q₀ : ℝ) (p n : ℕ) :
     deltaQ q₀ p n
-      = (netSignedCrossing p n : ℝ) / ((p : ℝ) + n) ^ 2 * (1 - q₀⁻¹) ^ 2 := by
-  unfold deltaQ
-  push_cast
-  rfl
+      = (netSignedCrossing p n : ℝ) / (p + n : ℝ) ^ 2 * (1 - q₀⁻¹) ^ 2 := rfl
 
 end QOU.Archimedean

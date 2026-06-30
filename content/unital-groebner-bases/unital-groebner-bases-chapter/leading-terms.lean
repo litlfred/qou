@@ -1,6 +1,7 @@
 import Mathlib.Order.WellFounded
 import Mathlib.Algebra.Ring.Basic
 import Mathlib.Algebra.Module.Basic
+import Mathlib.Algebra.Algebra.Defs
 
 
 /-!
@@ -46,8 +47,8 @@ structure LeadingTerm where
   /-- The leading coefficient is nonzero. -/
   leadingCoeff_ne_zero : leadingCoeff ≠ 0
 
-/-- Divisibility: β divides f if there exist u, v ∈ B and λ ∈ R*
-    such that λ · LT(u · β · v) = LT(f). -/
+/-- Divisibility: β divides f if there exist u, v ∈ B and scalar ∈ R*
+    such that scalar · LT(u · β · v) = LT(f). -/
 -- Ref: [manuscript] §1/leading-terms
 structure Divides (β : B) (lt_f : LeadingTerm R B) where
   /-- Left multiplier in B. -/
@@ -55,8 +56,8 @@ structure Divides (β : B) (lt_f : LeadingTerm R B) where
   /-- Right multiplier in B. -/
   v : B
   /-- Scalar factor in R*. -/
-  λ : R
+  scalar : R
   /-- The scalar is nonzero. -/
-  λ_ne_zero : λ ≠ 0
+  scalar_ne_zero : scalar ≠ 0
 
 end QOU.UnitalGroebner

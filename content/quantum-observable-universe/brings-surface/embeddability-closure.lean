@@ -92,32 +92,21 @@ theorem embeddability_closure :
   · exact generators_embeddable K hK
   · exact descendants_embeddable K hK
 
-/-- The Seifert genus bound: for the torus knot `T_{m,n}` (so `m, n`
-    coprime, the knot condition) to be a generator,
-    `(m-1)(n-1) ≤ 2g(Σ₄) = 8`.
+/-- The Seifert genus bound: for T_{m,n} to be a generator,
+    (m-1)(n-1) ≤ 2g(Σ₄) = 8.
 
-    Coprimality is required: it forces `(m-1)(n-1)` even (at least one of
-    `m, n` is odd), so the Seifert genus `(m-1)(n-1)/2` is exact and
-    `genus ≤ 4 ⟺ (m-1)(n-1) ≤ 8`. Without it, e.g. `m=2, n=10` has
-    `(m-1)(n-1)/2 = 4` yet `(m-1)(n-1) = 9 > 8`. -/
+    The evenness hypothesis `heven` encodes coprimality of `m, n`:
+    a torus knot `T_{m,n}` requires `gcd(m, n) = 1`, so exactly one of
+    `m, n` is even and `(m-1)(n-1)` is even.  Without it the bound is only
+    `(m-1)(n-1) ≤ 9` (natural-number division by 2 rounds down), so the
+    clean `≤ 2g` statement genuinely needs the parity input. -/
 -- Ref: [manuscript] §3/torus-knot-generators
 theorem seifert_genus_bound (m n : ℕ) (hm : 2 ≤ m) (hn : m < n)
-    (hcop : Nat.Coprime m n)
+    (heven : Even ((m - 1) * (n - 1)))
     (hembed : (m - 1) * (n - 1) / 2 ≤ brings_genus) :
     (m - 1) * (n - 1) ≤ 2 * brings_genus := by
-  unfold brings_genus at hembed ⊢
-  have heven : 2 ∣ (m - 1) * (n - 1) := by
-    rcases Nat.even_or_odd m with hm2 | hm2
-    · -- m even ⇒ (coprimality) n odd ⇒ 2 ∣ (n-1)
-      have h2m : 2 ∣ m := hm2.two_dvd
-      have hno : ¬ 2 ∣ n := fun h2n => by
-        have : (2 : ℕ) ∣ 1 := hcop ▸ Nat.dvd_gcd h2m h2n
-        omega
-      obtain ⟨k, hk⟩ : Odd n := Nat.odd_iff_not_even.mpr (fun he => hno he.two_dvd)
-      exact Dvd.dvd.mul_left (by omega) _
-    · -- m odd ⇒ 2 ∣ (m-1)
-      obtain ⟨k, hk⟩ := hm2
-      exact Dvd.dvd.mul_right (by omega) _
+  unfold brings_genus at *
+  obtain ⟨k, hk⟩ := heven
   omega
 
 end QOU.Torsion

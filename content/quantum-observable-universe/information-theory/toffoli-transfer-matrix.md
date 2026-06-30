@@ -36,12 +36,14 @@ $$
 | mixed | $1$ | $-\frac{q - q^{-1}}{2}$ |
 | $\mathfrak{n}\mathfrak{n}$ | $1$ | $-(q - q^{-1})$ |
 
-2. **(Single-crossing type-blindness.)** *At generator
-   $\sigma_1$ (one crossing), the traced volume
-   $\hat{V}_1 = z(q) = 1/(q^{1/2} + q^{-1/2})$ regardless
-   of crossing type.  A single crossing carries no type
-   information: $\Delta_1 = 0$ for every transition.  The
-   entire target-flip amplitude is concentrated at generator
+2. **(Target-flip blindness of the control crossing.)**
+   *Generator $\sigma_1$ is the single control–control crossing.
+   Its traced volume $\hat{V}_1 = z(q)\,c + d$ is type-dependent
+   ($z$ for $\mathfrak{p}\mathfrak{p}$, $z - \tfrac{q - q^{-1}}{2}$
+   for mixed, $z - (q - q^{-1})$ for $\mathfrak{n}\mathfrak{n}$), but
+   a target-flip leaves the control crossing unchanged, so
+   $\Delta_1 = 0$ for every target-flip transition.  The entire
+   target-flip amplitude is therefore concentrated at generator
    $\sigma_0$ (whose chain has $2$ crossings).*
 
 3. **(The q-AND = governor choice.)** *The Toffoli gate

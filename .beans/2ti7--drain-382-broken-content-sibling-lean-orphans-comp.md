@@ -255,37 +255,39 @@ PR #3142 (waves 5+6+7) MERGED to main (merge-commit 13cd2974) — included a pos
 fix to categorical-higgs-mechanism (a bad earlier merge had declared the inlined
 classes twice; dropped the leftover opaque markers, kept the faithful inlines, fail=0).
 
-## 2026-06-30 wave-8 (predicted-spectra + brings-surface + information-theory + observations)
+## 2026-06-30 wave-8 (PR #3167; 6-agent chapter swarm — non-overlapping chapters)
 
-Next four chapters. genuine.txt lists 95 orphans (26 + 24 + 23 + 22). Per the
-re-derive-first lesson, running a fresh `lean-verify-siblings.sh` sweep over all 95
-on current main FIRST to find the actually-live-broken set before any fix (prior
-waves found 70-95% already drained by siblings). Branch
-`claude/2ti7-orphan-drain-wave8-2026-06-30`.
+Re-derived FIRST against the post-#3142 `main`: of the 382 `genuine.txt`
+paths only **52** were still live-broken (330 drained by prior waves).
+Excluding the 9 `quantum-observable-universes` files (owned by #3142
+wave-5, now merged) and the 9 `particle-interactions` files (#3142
+wave-7, now merged — taken from main on rebase, my redundant versions
+dropped), this PR drains the remaining **34** across:
+- quantum-universes 10, stochastic-mechanics 6, q-geometric-langlands 4,
+  predicted-spectra 3, brings-surface 3, climax-volume-mass 3 (incl. 2
+  cross-paper `import UGB.*` siblings), unital-groebner-bases 5.
 
-**Re-derive result:** of the 95 listed, **89 already green, 6 live-broken** —
-information-theory (23) + observations (22) fully clean already; breakage was 3
-in predicted-spectra + 3 in brings-surface. 6 ⇒ fixed directly (no swarm), each
-re-verified `fail=0`, quality-gated (no `: True`/native_decide/sorry; descartes
-axiom REMOVED, count 1→0).
+All re-verified `fail=0`; quality-gated (no vacuity / native_decide /
+fabricated axiom; 1 cited `sorry` in positive-definite-dagger). Fixed
+5 genuinely-false/inconsistent statements (seifert_genus_bound,
+hodge-su2 involutivity, R_q-vs-ℝ typing in topological-mass-formula /
+quantum-gap-collapse, vacuous ∃p,True in positive-definite-dagger).
 
-The 6 + fix:
-- predicted-spectra/stable-nucleus — §7c archimedean ℝ restatement (beta-stability
-  line: division, rpow A^{2/3}, ordering); dropped unused R_q scaffolding + stranded
-  docstring.
-- predicted-spectra/parity-violation-skein — §7c ℝ; 3 theorems had only headers
-  commented out (dangling `:= by`) → restored; `div_lt_iff`→`div_lt_iff₀`.
-- predicted-spectra/hadron-q-self-correction — §7c ℝ; 3 commented theorem headers
-  restored; netSignedCrossing≤0 reworked (omega can't do nonlinear p(p-1)/2 →
-  nlinarith + `Int.ediv_le_ediv`).
-- brings-surface/torus-knot-generators — `import Mathlib.Tactic` (interval_cases
-  unknown) + robust omega/interval_cases bound proof replacing fragile nlinarith.
-- brings-surface/embeddability-closure — `seifert_genus_bound` was FALSE as stated
-  (m=2,n=10 counterexample); added the missing `Nat.Coprime m n` hypothesis +
-  proof that coprimality ⇒ (m-1)(n-1) even.
-- brings-surface/descartes-knot-eigenbasis — §7c ℝ (q_pos/q⁻¹/eigenvalue ordering);
-  restored 3 referenced commented fields + dangling bodies + free-variable ∀-binders;
-  REMOVED fabricated `descartes_knot_eigenbasis_axiom` (existence is constructive).
+Plus two **infra fixes** so cross-paper content siblings verify
+correctly: `lean_leanpath` now includes the QOU/UGB/Fred2005
+paper-package build dirs, and `lean-verify-siblings.sh` neutral-skips
+`unknown module prefix '<paper-pkg>'` (cache-cone miss, scoped so a
+typo'd prefix still fails).
 
-**Four more chapters effectively drained** (predicted-spectra, brings-surface live
-sets fixed; information-theory + observations were already clean). PR #3172.
+## 2026-06-30 wave-8b (PR #3172 — parallel session; 5/6 superseded by #3167)
+
+A parallel session independently re-derived predicted-spectra + brings-surface and
+fixed the same 6 live-broken orphans before #3167 landed. On rebase, 5 of 6
+(stable-nucleus, parity-violation-skein, hadron-q-self-correction,
+torus-knot-generators, embeddability-closure) were taken from main (#3167's
+equivalent versions — e.g. #3167 used an `Even ((m-1)(n-1))` hypothesis for
+`seifert_genus_bound` where this session derived evenness from `Nat.Coprime`; both
+correct). Net contribution retained: **descartes-knot-eigenbasis removes the
+fabricated `descartes_knot_eigenbasis_axiom`** that #3167's version still carries —
+the existence claim is trivially constructive (exhibit a valid Markov-trace
+inhabitant), re-verified `fail=0`, 0 axioms.

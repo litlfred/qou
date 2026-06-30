@@ -52,10 +52,17 @@ lean_toolchain_slug() {
 #    All dependency olean dirs under .lake/packages, plus the workspace
 #    and QOU-package build dirs (so files importing `QOU.*` resolve).
 lean_leanpath() {
-  local lp full
+  local lp papers full
   lp=$(find "$REPO_ROOT/.lake/packages" "$LEAN_DIR/.lake/packages" -maxdepth 5 -type d \
          -path '*/.lake/build/lib/lean' 2>/dev/null | tr '\n' ':')
-  full="${lp}${REPO_ROOT}/.lake/build/lib/lean:${LEAN_DIR}/.lake/build/lib/lean"
+  # Sibling paper-package build dirs (QOU / UGB / Fred2005). Without these
+  # a cross-paper content-sibling import (e.g. a climax-volume-mass file
+  # doing `import UGB.GrobnerShirshov.HeckeGS`) raises `unknown module
+  # prefix 'UGB'` even though the olean is built in-tree. Additive: a
+  # missing dir contributes nothing, distinct module roots so no clash.
+  papers=$(find "$REPO_ROOT/content" -maxdepth 6 -type d \
+         -path '*/lean/.lake/build/lib/lean' 2>/dev/null | tr '\n' ':')
+  full="${lp}${papers}${REPO_ROOT}/.lake/build/lib/lean:${LEAN_DIR}/.lake/build/lib/lean"
   # Strip leading/trailing/duplicate colons: an empty LEAN_PATH segment
   # makes Lean also search the cwd (module-resolution conflicts).
   printf '%s' "$full" | sed -e 's/^:*//' -e 's/:*$//' -e 's/::*/:/g'

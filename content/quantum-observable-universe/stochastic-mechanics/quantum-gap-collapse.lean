@@ -1,6 +1,5 @@
-import Mathlib.Order.Filter.Basic
-import Mathlib.Topology.Order.Basic
-import Mathlib.Topology.Algebra.Order.Field
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
 /-!
 # QOU.AlgebraicSubstrate.quantum_gap_collapse
@@ -25,31 +24,37 @@ open Filter Topology
 
 namespace QOU.AlgebraicSubstrate
 
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Archimedean.GroundRing` for the compiled definition. The
+    algebraic indeterminate lives here; the analytic degenerations
+    below are stated after the archimedean specialisation `ι : R_q → ℝ`,
+    `q ↦ q₀`, since `nhdsWithin`/`atTop`/ordering require an ordered
+    topological field (§7c: archimedean constructs ⇒ `ℝ`). -/
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
-/-- The Planck constant as a plain function: ℏ(q) = 1 - q⁻¹. -/
-noncomputable def planck (q : R_q) : R_q := 1 - q⁻¹
+/-- The Planck constant as a plain real function: ℏ(q) = 1 - q⁻¹.
+    Archimedean specialisation of the formal `1 - q⁻¹` to real `q`. -/
+noncomputable def planck (q : ℝ) : ℝ := 1 - q⁻¹
 
-/-- The Reeb period as a plain function: Ω(q) = (1 - q⁻¹)⁻¹. -/
-noncomputable def reebPeriod (q : R_q) : R_q := (planck q)⁻¹
+/-- The Reeb period as a plain real function: Ω(q) = (1 - q⁻¹)⁻¹. -/
+noncomputable def reebPeriod (q : ℝ) : ℝ := (planck q)⁻¹
 
 /-- ℏ(1) = 0. -/
 @[simp] theorem planck_one : planck 1 = 0 := by
   simp [planck, inv_one]
 
 /-- For q > 1, ℏ(q) > 0. -/
--- theorem planck_pos {q : R_q} (hq : 1 < q) : 0 < planck q := by  -- (archimedean; not meaningful over R_q)
+theorem planck_pos {q : ℝ} (hq : 1 < q) : 0 < planck q := by
   simp only [planck]
-  have : q⁻¹ < 1 := inv_lt_one_of_one_lt hq
+  have : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
   linarith
 
 /-- For q > 1, ℏ(q) ≠ 0. -/
--- theorem planck_ne_zero {q : R_q} (hq : 1 < q) : planck q ≠ 0 :=  -- (archimedean; not meaningful over R_q)
+theorem planck_ne_zero {q : ℝ} (hq : 1 < q) : planck q ≠ 0 :=
   ne_of_gt (planck_pos hq)
 
 /-- **Quantum gap collapse (part 1)**: ℏ_q → 0 as q → 1⁺.
@@ -60,8 +65,8 @@ noncomputable def reebPeriod (q : R_q) : R_q := (planck q)⁻¹
 theorem planck_tendsto_zero :
     Tendsto planck (nhdsWithin 1 (Set.Ioi 1)) (nhds 0) := by
   rw [← planck_one]
-  exact ((continuous_const.sub continuous_inv₀).tendsto 1).mono_left
-    nhdsWithin_le_nhds
+  exact (Tendsto.const_sub _
+    (continuousAt_inv₀ (by norm_num : (1:ℝ) ≠ 0))).mono_left nhdsWithin_le_nhds
 
 /-- **Quantum gap collapse (part 2)**: |Ω_q| → ∞ as q → 1⁺.
 
@@ -73,11 +78,16 @@ theorem reeb_period_tendsto_atTop :
       (nhdsWithin 1 (Set.Ioi 1)) atTop := by
   -- planck q → 0⁺ as q → 1⁺ (planck_tendsto_zero), and planck q > 0
   -- for q > 1 (planck_pos). The inverse of a positive function tending
-  -- to 0 tends to +∞.
+  -- to 0⁺ tends to +∞; the absolute value then also tends to +∞.
   -- Ref: [manuscript] Chapter 8, Section 5
-  simp only [reebPeriod]
-  apply Filter.Tendsto.abs_atTop_atTop
-  exact Filter.Tendsto.inv_tendsto_zero planck_tendsto_zero
+  have hgt : Tendsto planck (nhdsWithin 1 (Set.Ioi 1)) (𝓝[>] 0) := by
+    apply tendsto_nhdsWithin_of_tendsto_nhds_of_eventually_within _
+      planck_tendsto_zero
+    filter_upwards [self_mem_nhdsWithin] with q hq
+    exact planck_pos hq
+  have h : Tendsto reebPeriod (nhdsWithin 1 (Set.Ioi 1)) atTop :=
+    hgt.inv_tendsto_nhdsGT_zero
+  exact tendsto_abs_atTop_atTop.comp h
 
 /-- **Quantum gap collapse (combined)**: Under the classical limit
     q → 1, the Planck constant vanishes and the Reeb period diverges.
@@ -90,5 +100,7 @@ theorem quantum_gap_collapse :
     ∧ Tendsto (fun q => |reebPeriod q|)
         (nhdsWithin 1 (Set.Ioi 1)) atTop :=
   ⟨planck_tendsto_zero, reeb_period_tendsto_atTop⟩
+
+end
 
 end QOU.AlgebraicSubstrate

@@ -1,3 +1,4 @@
+import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 
@@ -12,12 +13,13 @@ LaTeX label: `def:stable-nucleus`
 ## References
 - [manuscript] §3/stable-nucleus
 
-**Ground ring.** The combinatorial data (p, n, A) is integer; the
-beta-stability condition is the **archimedean realisation** (§7c) over
-`ℝ` — it uses division, the real power `A^{2/3}` (`Real.rpow`), and the
-ordering `< 2`, none of which live on the formal ground ring
-`R_q = ℤ[q, q⁻¹]`. The coefficients `a_C, a_A` are the real evaluations
-`ι : R_q → ℝ, q ↦ q₀` of the Coulomb / Pauli-asymmetry scales.
+**Ground ring**: `ℝ` (archimedean realisation). The beta-stability
+condition is genuinely archimedean — it uses the strict order
+(`a_A > 0`, the `|…| < 2` band) and the real power `A^{2/3}` (the
+Coulomb-term scaling), neither of which is meaningful over the
+Laurent `R_q` layer. So the structure lives past the
+substrate→archimedean wall (§7c) and is stated over `ℝ` at the
+evaluation `q ↦ q₀`.
 -/
 
 namespace QOU.Torsion
@@ -29,14 +31,16 @@ structure StableNucleus where
   p : ℕ
   /-- Number of neutrons. -/
   n : ℕ
-  /-- Coulomb coefficient a_C = (q - q⁻¹) · λ_C (real evaluation). -/
+  /-- Coulomb coefficient a_C = (q - q⁻¹) · λ_C (archimedean value). -/
   a_C : ℝ
-  /-- Pauli asymmetry coefficient (real evaluation). -/
+  /-- Pauli asymmetry coefficient (archimedean value). -/
   a_A : ℝ
+  /-- a_A is positive. -/
+  a_A_pos : 0 < a_A
   /-- Mass number. -/
   A : ℕ := p + n
   /-- Beta-stability condition: p ≈ A / (2 + a_C·A^{2/3}/(2·a_A)). -/
   stability :
-    |((p : ℝ) - (A : ℝ) / (2 + a_C * (A : ℝ) ^ ((2 : ℝ) / 3) / (2 * a_A)))| < 2
+    |((p : ℝ) - (A : ℝ) / (2 + a_C * (A : ℝ) ^ (2 / 3 : ℝ) / (2 * a_A)))| < 2
 
 end QOU.Torsion
