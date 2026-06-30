@@ -2,8 +2,59 @@
 
 **Branch**: `claude/formula-for-q-bzym14` · **PR**: [#3183](https://github.com/litlfred/qou/pull/3183)
 **Supersedes the verdict of**: [`2026-05-24-muon-knot-id-conflict.md`](2026-05-24-muon-knot-id-conflict.md)
-**Status**: **owner ruling required** — the earlier "likely a typo, muon = 4₁"
-conclusion is no longer tenable.
+**Status**: **resolved on the identity question** (four-layer trace below) —
+**muon = T(2,5); 4₁ = Higgs**, never the muon. The earlier "likely a typo,
+muon = 4₁" conclusion is overturned. Two owner-gated *corpus fixes* and one
+*open physics question* remain (see Determination + Recommendation).
+
+## Determination (four-layer trace, 2026-06-30)
+
+A layer-by-layer trace through the canonical chain
+(categorical → algebraic → geometric → archimedean) resolves the
+**identity** question. Every layer except one low-authority script agrees:
+
+| Layer | Muon identity | 4₁'s role | Source (authority) |
+|---|---|---|---|
+| Categorical | **T(2,5)** ($\mathbb{Z}_5\!\hookrightarrow\!S_5$) | — | `prop:s5-equivariant-torus-knots` (theorem) |
+| Algebraic | **T(2,5)** $=\sigma_1^5\in H_2$ | — | `lepton-meson-torus-knot-dictionary` (.lean + proof) |
+| Geometric | T(2,5), $\mathrm{Vol}_{\mathrm{hyp}}=0$ | **Higgs**, $\mathrm{Vol}=2.03$ | `KnotRegistry.lean` (Lean primary source) |
+| Archimedean | — | **Higgs**; $\mathrm{Vol}(4_1)$ = mass *scale* | `skein-mass-relation-proof` (says "$4_1$ = Higgs") |
+
+**The verdict.** The muon's *identity* knot is **T(2,5)** at every layer that
+assigns one. The figure-eight **$4_1$ is the Higgs** (mass mechanism) —
+asserted by the Lean `KnotRegistry`, the `knot-particle-dictionary`, and the
+Skein *proof* itself ("The Higgs field is identified with the figure-eight
+knot $4_1$"). The "muon = $4_1$" reading was a **category error**: it confused
+the muon's *identity* knot (T(2,5)) with the *Higgs* knot ($4_1$) whose volume
+**gives** the muon its mass. The lone dissenter is
+`computations/knot-volumes.py`, which labels $4_1$ `particle:"muon"` (while
+self-noting "also Higgs") and $T(2,5)$ `particle:"w_boson"` — a low-authority
+script, and the source of the whole conflict.
+
+**Reinterpreting the Skein formula.** $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$
+is therefore the **Higgs-coupling mass scale**, *not* the muon's own knot
+volume. This is forced: the muon is a torus knot, so its algebraic quantum
+volume $\mathrm{Vol}_q(T(2,5)) = 0$ (like the electron $3_1$); a torus-knot
+lepton has **no intrinsic volume-mass** and acquires mass only by coupling to
+the Higgs ($4_1$), the simplest hyperbolic knot.
+
+**Consequence for the ξ_ℓ probes (Phase 4/5).** Those probes computed the
+*leptons' own* per-braid towers and correctly found $O(1)$ — but that $O(1)$
+is the lepton's **intrinsic** (non-Higgs) contribution, not its mass. The
+$\sim10^2$ mass scale lives in the **Higgs ($4_1$) coupling**, a different
+object. The Phase-4 two-constraint obstruction was predicated on the muon
+mass being the muon's own $\mathrm{Vol}_q^{\mathrm{tower}}$; under this
+resolution that premise is wrong, which **dissolves the obstruction** (it was
+measuring the wrong quantity, not a real barrier).
+
+**Still open (physics, not identity).** *Why* coupling to the Higgs ($4_1$)
+yields exactly $\mathrm{Vol}(4_1)/\hbar_q^2$ for the muon, and how the
+generation index $T(2,3)/T(2,5)/T(2,7)$ modulates that common coupling so that
+$m_\tau \neq m_\mu$ (CODATA $m_\tau/m_e = 3477$, not $206.77$), is **not
+derived**. The lepton-tower framing factor $q^{n}$ (writhe $n = 3,5,7$,
+monotone in generation; `2026-06-02-lepton-t2n-torus-tower.md` §4) is the
+natural candidate modulator but is unproven. This is the genuine forward
+target, distinct from the now-resolved identity question.
 
 ## The standing conflict (recap)
 
