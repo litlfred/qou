@@ -49,12 +49,12 @@ structure PawLeiInnerProduct where
   normSq : Fin num_basis → ℝ
   /-- All basis norm-squares are positive — the orthogonal PawLei basis has
       strictly positive norms, computed from hook lengths. -/
-  -- Ref: [leitnerpawloski2004] PL inner product / SU(2) intertwiner basis (arXiv:math/0409565, Unital Gröbner Bases)
+  -- Ref: [manuscript] §1 — positivity of the adjoint-trace PawLei inner product (framework's own construction; the Gröbner paper [leitnerpawloski2004] supplies only the PBW basis, not the inner product)
   normSq_pos : ∀ i, normSq i > 0
 
 /-- Positive-definiteness: the PL inner product `⟨φ, φ⟩ > 0`
     for any nonzero intertwiner `φ` (follows from `normSq_pos`). -/
--- Ref: [leitnerpawloski2004] Leitner & Pawloski, "Unital Gröbner Bases over Arbitrary Commutative Ground Rings," arXiv:math/0409565
+-- Ref: [manuscript] §1, Proposition: positive-definiteness of the adjoint-trace PawLei inner product (framework's own; not in the Gröbner paper [leitnerpawloski2004])
 theorem pawLei_pos_def (ip : PawLeiInnerProduct)
     (i : Fin ip.num_basis) : ip.normSq i > 0 :=
   ip.normSq_pos i
