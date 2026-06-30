@@ -91,6 +91,15 @@ $$
   \cdot \lambda_{\mathrm{scale}}
 $$
 
+Here $\lambda_{\mathrm{scale}}$ is the conjectural common Borromean
+scale of [`conj:borromean-baryon-mass-formula`](#conj:borromean-baryon-mass-formula),
+recorded as an acknowledged-CAL-4 near-form rather than a derived
+quantity: the canonical production mass shape absorbs it into the
+per-block density, $m = m_e\,\mathrm{Vol}(K)\,\varrho(K)/\hbar_q^2$
+(no standalone $\lambda_{\mathrm{scale}}$ factor). This heuristic
+$\sim 125$ GeV estimate is therefore exploratory, conditional on that
+open closure.
+
 The Higgs mass is set by the genus-$3$ Seifert surface volume,
 which in turn is set by the three color tube volumes of the
 Bring's surface.
