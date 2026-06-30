@@ -121,8 +121,9 @@ of `2` are `[2]` (trivial) and `[1,1]` (sign), both of q-dimension `d_q = 1` at 
 one-cell hook products cancel), so `D² = 2`, the Plancherel measure is `loc ≡ 1/2`, and transpose
 swaps the two blocks. Both class fields check by `decide` / `norm_num`. This confirms the
 conditional theorems above are **not** conditional-on-`False`: there is a genuine model where the
-matching holds against the actual `n=2` block combinatorics. (A stronger `n=4` witness with the
-genuine non-trivial `d_q` values is future work, mirroring `PlancherelSnData`.) -/
+matching holds against the actual `n=2` block combinatorics. (Stronger `n=4` and `n=5` witnesses
+with the genuine non-trivial `d_q` values — the physical electron/muon blocks — are supplied in
+[`KeystoneWLambdaPhysicalBlocks.lean`](KeystoneWLambdaPhysicalBlocks.lean).) -/
 instance localization_two : BeasleyWittenLocalization ℚ where
   Part := Bool
   parts := {false, true}
