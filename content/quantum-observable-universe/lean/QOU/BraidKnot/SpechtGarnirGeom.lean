@@ -69,4 +69,30 @@ theorem all_B_lt_all_A {t : Tableau μ} (h : ColMono t) {j r : ℕ}
     colMono_le h (by rw [har, haj]) (by rw [harr]; exact har_ge)
   omega
 
+/-- The **Garnir column-`j` cells** `A`: labels in column `j`, rows `≥ r`. -/
+def garnirA (t : Tableau μ) (j r : ℕ) : Finset (Fin (Specht.nOf μ)) :=
+  Finset.univ.filter (fun l => Specht.colPattern t l = j ∧ r ≤ Specht.rowPattern t l)
+
+/-- The **Garnir column-`(j+1)` cells** `B`: labels in column `j+1`, rows `≤ r`. -/
+def garnirB (t : Tableau μ) (j r : ℕ) : Finset (Fin (Specht.nOf μ)) :=
+  Finset.univ.filter (fun l => Specht.colPattern t l = j + 1 ∧ Specht.rowPattern t l ≤ r)
+
+/-- **The `htop` hypothesis for the Garnir set.** Every element of `garnirA ∪ garnirB`
+outside `garnirA` (i.e. in `garnirB`) is `<` every element of `garnirA`. Exactly the
+shape `SpechtGarnirWt.hbh_of_moved_top` / `colWt_lt_of_two_column` require. -/
+theorem garnir_htop {t : Tableau μ} (h : ColMono t) {j r : ℕ}
+    {ar br : Fin (Specht.nOf μ)}
+    (har : Specht.colPattern t ar = j) (harr : Specht.rowPattern t ar = r)
+    (hbr : Specht.colPattern t br = j + 1) (hbrr : Specht.rowPattern t br = r)
+    (hviol : (br : ℕ) < (ar : ℕ)) :
+    ∀ a ∈ garnirA t j r, ∀ s ∈ garnirA t j r ∪ garnirB t j r,
+      s ∉ garnirA t j r → (s : ℕ) < (a : ℕ) := by
+  intro a ha s hs hsA
+  rw [garnirA, Finset.mem_filter] at ha
+  rw [Finset.mem_union] at hs
+  rcases hs with hsA' | hsB
+  · exact absurd hsA' hsA
+  · rw [garnirB, Finset.mem_filter] at hsB
+    exact all_B_lt_all_A h har harr hbr hbrr hviol ha.2.1 ha.2.2 hsB.2.1 hsB.2.2
+
 end QOU.BraidKnot.SpechtGarnirGeom
