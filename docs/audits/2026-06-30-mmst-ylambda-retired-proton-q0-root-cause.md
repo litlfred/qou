@@ -57,17 +57,28 @@ y_λ floating-point precision (f64 truncation is ~1e-14, six orders too small).
   this q₀ mismatch**, not an intrinsic two-implementation gap. (The per-λ χ table
   itself is unaffected — it is pure muon-q₀ character data.)
 
-## Recommended fix (coordinated, owner-gated)
+## Fix APPLIED (2026-06-30, PR #3174)
 
-Regenerate `y-lambda-mpfr-witness.json` at the **muon** q₀ (re-run
-`regenerate_y_lambda_mpfr.py`; `q_parameter.Q` now returns the muon value, so a
-fresh run produces the corrected table). Then re-run the downstream producers that
-store a `Σ y_λ χ_λ` tr_M so their stored scalars pick up the ~5e-8 correction and
-collapse onto markov-peel.
+`y-lambda-mpfr-witness.json` regenerated at the **muon** q₀ via
+`regenerate_y_lambda_mpfr.py` (`q_parameter.Q_MP` is muon). Verified: the deuteron
+**and** He-4 Wenzl `Σ y_λ χ_λ` now collapse onto markov-peel to **9.1e-20** (from
+4.8e-8 / 1.3e-7). The He-4 χ witness (PR #3150) was re-run — its `tr_M_at_q0` now
+equals the canonical markov-peel scalar and its dual-path annotation drops to
+9.1e-20. This aligns the one stray retired-proton witness **to** the canonical muon
+layer (it does not migrate the muon layer — not the AGENTS.md §"q₀ anchor convention"
+gated direction).
 
-This is a **multi-witness coordinated regeneration** in q₀-convention-sensitive
-territory (cf. AGENTS.md §"q₀ anchor convention", which gates the ~840-witness muon
-layer). It aligns the one stray retired-proton witness **to** the canonical muon
-layer (it does not migrate the muon layer), but because it cascades into committed
-downstream tr_M scalars it should be done as one tracked sweep with owner sign-off,
-not piecemeal. Filed under `mmst`.
+**No regressions:** `cross_check_trM_1ppb.py --strict`, `compute_audit_scan.py`,
+`derivation_chain_validator.py`, and `y_lambda_symbolic_validate.py` all exit 0 with
+the corrected witness (0 divergent atoms; 5/6 still certified 1 ppQ).
+
+### Bounded downstream follow-up (within tolerance, non-breaking)
+
+~34 scripts consume `_load_y_lambda`; several committed witnesses store a
+`Σ y_λ χ_λ` tr_M computed with the old proton-q₀ y_λ and are now ~5e-8 stale against
+the corrected source. This is **below every framework tolerance** (1e-6
+cross-validation, ~780 ppb CAL-2 floor) and **no validator flags it** (witness
+staleness keys on `scriptHash`, not on upstream numeric drift), so it is not
+urgent and is intentionally **not** swept here — a blind 34-producer re-run (several
+slow / pyhecke-gated) would add churn without changing any verdict. The witnesses
+refresh naturally on their next producer run; tracked under `mmst`.
