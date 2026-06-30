@@ -144,4 +144,54 @@ theorem colWt_smul_colStab {t : Tableau μ} {κ : Equiv.Perm (Fin (Specht.nOf μ
     rw [Specht.colPattern_smul]; exact Specht.mem_colStab.mp hκ
   unfold colWt; rw [hpat]
 
+/-! ## Toward the column-dominance Garnir lemma (piece A: the reindexing)
+
+`colWt (σ·t) < colWt t` reduces (via `colWt_lt_of_patRel`) to
+`patRel (colPattern t) (colPattern (σ·t))` strict, and
+`colPattern (σ·t) = colPattern t ∘ σ⁻¹`. The twisted count
+`domCount (c ∘ σ⁻¹) i m` reindexes to a σ-image count over the *untwisted*
+down-set `{l : c l ≤ i}` — the first concrete step of the dominance comparison
+(only the threshold separating the two Garnir columns will matter). -/
+
+/-- **Reindexing the σ-twisted dominance count.** `domCount (c ∘ σ⁻¹) i m` counts
+the labels `l < m` with `c (σ⁻¹ l) ≤ i`; substituting `l = σ l'` rewrites it as
+the count of `l'` with `σ l' < m` and `c l' ≤ i`. -/
+theorem domCount_comp_perm (c : Fin (Specht.nOf μ) → ℕ)
+    (σ : Equiv.Perm (Fin (Specht.nOf μ))) (i m : ℕ) :
+    domCount (fun l => c (σ⁻¹ l)) i m
+      = (Finset.univ.filter
+          (fun l : Fin (Specht.nOf μ) => ((σ l : Fin (Specht.nOf μ)) : ℕ) < m ∧ c l ≤ i)).card := by
+  classical
+  unfold domCount
+  refine Finset.card_bij' (fun l _ => σ⁻¹ l) (fun l _ => σ l) ?_ ?_ ?_ ?_
+  · intro l hl
+    rw [Finset.mem_filter] at hl ⊢
+    refine ⟨Finset.mem_univ _, ?_, hl.2.2⟩
+    rw [Equiv.Perm.apply_inv_self]; exact hl.2.1
+  · intro l hl
+    rw [Finset.mem_filter] at hl ⊢
+    refine ⟨Finset.mem_univ _, ?_, ?_⟩
+    · exact hl.2.1
+    · show c (σ⁻¹ (σ l)) ≤ i
+      rw [Equiv.Perm.inv_apply_self]; exact hl.2.2
+  · intro l _; exact Equiv.Perm.apply_inv_self σ l
+  · intro l _; exact Equiv.Perm.inv_apply_self σ l
+
+/-- **Bottom-heaviness ⟹ column dominance (piece A).** If, for every threshold
+`i`, applying `σ` to the down-set `{l : c l ≤ i}` is bottom-heavy — every initial
+segment `[0, m)` captures at least as many `σ`-images as originals — then
+`patRel c (c ∘ σ⁻¹)`, i.e. the relabelled pattern `c ∘ σ⁻¹` weakly dominates `c`.
+Immediate from `domCount_comp_perm`: the hypothesis *is* the count inequality
+`domCount c i m ≤ domCount (c ∘ σ⁻¹) i m`. -/
+theorem patRel_comp_perm_of_bottomHeavy (c : Fin (Specht.nOf μ) → ℕ)
+    (σ : Equiv.Perm (Fin (Specht.nOf μ)))
+    (h : ∀ i m, (Finset.univ.filter
+            (fun l : Fin (Specht.nOf μ) => (l : ℕ) < m ∧ c l ≤ i)).card
+          ≤ (Finset.univ.filter
+            (fun l : Fin (Specht.nOf μ) => ((σ l : Fin (Specht.nOf μ)) : ℕ) < m ∧ c l ≤ i)).card) :
+    patRel c (fun l => c (σ⁻¹ l)) := by
+  intro i m
+  rw [domCount_comp_perm]
+  exact h i m
+
 end QOU.BraidKnot.SpechtGarnirWt
