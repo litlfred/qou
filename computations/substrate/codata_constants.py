@@ -220,13 +220,22 @@ U_MEV_ERR = _U_MEV_CODATA2022_ERR
 
 
 def _ame_binding_mev(Z: int, A: int) -> mp.mpf:
-    """Total nuclear binding energy (MeV) read from vendored AME2020."""
-    return _mpf50(str(_ame_entry(Z, A)["binding_energy_total_keV"])) / 1000
+    """Total nuclear binding energy (MeV) read from vendored AME2020.
+
+    The whole expression (parse + division) runs inside `workdps(≥50)` so the
+    arithmetic, not just the string parse, is high-precision (Gemini review)."""
+    with mp.workdps(max(50, mp.mp.dps)):
+        return +(mp.mpf(str(_ame_entry(Z, A)["binding_energy_total_keV"])) / 1000)
 
 
 def _ame_atomic_mev(Z: int, A: int) -> mp.mpf:
-    """Neutral-atom mass (MeV) read from vendored AME2020 (atomic_mass_micro_u·u)."""
-    return _mpf50(str(_ame_entry(Z, A)["atomic_mass_micro_u"])) * _mpf50("1e-6") * _U_MEV
+    """Neutral-atom mass (MeV) read from vendored AME2020 (atomic_mass_micro_u·u).
+
+    Whole expression in `workdps(≥50)` so the multiplications are high-precision
+    (Gemini review), not just the literal parse."""
+    with mp.workdps(max(50, mp.mp.dps)):
+        return +(mp.mpf(str(_ame_entry(Z, A)["atomic_mass_micro_u"]))
+                 * mp.mpf("1e-6") * _U_MEV)
 
 
 AME_B_DEUTERON_MEV_VALIDATION = _ame_binding_mev(1, 2)
