@@ -230,4 +230,41 @@ theorem antisym_polytabloid (H : Subgroup (Perm (Fin (nOf μ)))) [Fintype ↥H]
   unfold antisym
   exact Finset.sum_congr rfl (fun σ _ => by rw [rep_polytabloid])
 
+/-! ## 5. Tableau-geometry bricks (toward the Garnir pigeonhole)
+
+The Garnir vanishing `b_{S_X} e_t = 0` is fed, per column-permutation `π ∈ C_t`,
+by a **row transposition** in `S_X` fixing the tabloid `{π·t}`. The existence of
+such a transposition is the pigeonhole (`|X|` exceeds the column length). These
+two bricks supply its *consequence* sorry-free: a transposition of two
+same-row labels fixes the tabloid, hence kills `⟦s⟧` under any antisymmetriser
+whose group contains it.
+-/
+
+/-- **A same-row transposition fixes the tabloid.** If labels `a, b` lie in the
+same row of `s` (`rowPattern s a = rowPattern s b`), then `{(a b)·s} = {s}`. -/
+theorem tabloid_swap_sameRow {s : Tableau μ} {a b : Fin (nOf μ)}
+    (h : rowPattern s a = rowPattern s b) :
+    Tabloid.mk (Equiv.swap a b • s) = Tabloid.mk s := by
+  apply Quotient.sound
+  show rowPattern (Equiv.swap a b • s) = rowPattern s
+  rw [rowPattern_smul]
+  funext l
+  rw [arrow_smul_apply, Equiv.symm_swap]
+  rcases eq_or_ne l a with rfl | hla
+  · rw [Equiv.swap_apply_left]; exact h.symm
+  · rcases eq_or_ne l b with rfl | hlb
+    · rw [Equiv.swap_apply_right]; exact h
+    · rw [Equiv.swap_apply_of_ne_of_ne hla hlb]
+
+/-- **Concrete row-transposition vanishing.** A same-row transposition `(a b)`
+(`a ≠ b`) lying in `H` kills the basis tabloid: `b_H ⟦s⟧ = 0`. This is the
+per-`π` input to the Garnir vanishing — the pigeonhole produces exactly such a
+transposition in `S_X` for the tableau `π·t`. -/
+theorem antisym_swap_eq_zero (H : Subgroup (Perm (Fin (nOf μ)))) [Fintype ↥H]
+    {a b : Fin (nOf μ)} (hab : a ≠ b) (hmem : Equiv.swap a b ∈ H)
+    (s : Tableau μ) (hrow : rowPattern s a = rowPattern s b) :
+    antisym (k := k) H (Mtab.of (k := k) s) = 0 :=
+  antisym_of_eq_zero (k := k) H hmem (Equiv.swap_mul_self a b)
+    (Equiv.Perm.sign_swap hab) s (tabloid_swap_sameRow hrow)
+
 end QOU.BraidKnot.SpechtGarnirCore
