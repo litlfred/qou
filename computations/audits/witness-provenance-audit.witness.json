@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-30T23:38:25.531988+00:00",
-  "commitSha": "d51eb324680e1a9c3ed3359a6648c468e98ca663",
+  "computedAt": "2026-06-30T23:45:21.022993+00:00",
+  "commitSha": "0220fdf924b1bb13b50fc87488a49b858e67ae23",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -47,12 +47,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 1538,
-      "prov_ok": 1207,
+      "total_scanned": 1539,
+      "prov_ok": 1208,
       "prov_audit_exempt": 55,
       "prov_missing": 275,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.8205461638491548
+      "completeness_ratio": 0.8206627680311891
     },
     "by_verdict": {
       "PROV_OK": [
@@ -3697,6 +3697,10 @@
           "missing_fields": []
         },
         {
+          "witness": "q-beta-complex-q-test1-phasea-v2.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "q-beta-consistency-gap-diagnostic.witness.json",
           "missing_fields": []
         },
@@ -5812,6 +5816,14 @@
           ]
         },
         {
+          "witness": "knot-operator-table.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
           "witness": "lepton-tower-probe-1-cinquefoil-muon.witness.json",
           "missing_fields": [
             "engine",
@@ -6277,14 +6289,6 @@
         },
         {
           "witness": "q-beta-c3-wenzl-decomposition.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "q-beta-complex-q-test1-phasea-v2.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",

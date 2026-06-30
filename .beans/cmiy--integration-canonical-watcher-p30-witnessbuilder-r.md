@@ -53,3 +53,12 @@ delta_lambda_borromean_ascaling, crystal_yekutieli_probes_abcd — pure-Python,
 zero content-consumers, no flat assertions. crystal lacked a sys.path entry
 for substrate/ (witness_base home); added it inline before the import.
 Both: exit 0, PROV_OK, original keys preserved.
+
+## 2026-06-30 — batch 4 (1 script) + easy-tail exhausted note
+q_beta_complex_q_test1_phaseA_v2 migrated via wrap_legacy (0 consumers, no
+assertions, exit 0, PROV_OK). NOTE: the clean single-output / zero-consumer /
+no-assertion / fast tail is now EXHAUSTED — ~1 in 12 triaged this round.
+Remaining raw-emit scripts need per-script handling: multi-emit (≥3 witnesses),
+flat-assertions (→ stamp), many-consumer (restructure risk), slow/Hecke regen
+(canonical-env), or NOFILE (would add a witness, not fix one). Future batches
+are the harder tail the bean's deferral anticipated.
