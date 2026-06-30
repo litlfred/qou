@@ -403,6 +403,13 @@ Before committing any .md content, verify:
 9. [ ] **Cross-chapter**: Terms introduced in earlier chapters are
        referenced, not re-defined
 10. [ ] **Chapter voice**: Content matches the chapter context snippet
+11. [ ] **Render-QA (math-bearing `.md`)**: Ran `local/markdown-render-check`
+        — delimiter balance, no `\operatorname`, no `+`/`-`/`*` line-starts in
+        `$$`, align-family fenced as ` ```tex `, **and** the expository pass
+        (every symbol glossed before use; no notation collisions). MANDATORY
+        before commit per AGENTS.md §"Render-QA gate for math-bearing `.md`";
+        if the pipeline render can't run, state the change was not
+        machine-validated.
 
 ## Procedure
 

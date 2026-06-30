@@ -428,6 +428,31 @@ GATE](.claude/skills/local/formalizer.md). History: added 2026-06-25 after
 a gratuitous `(q : ℝ)` / `SL₂(ℝ)` landed on a purely-algebraic τ-kernel
 lemma in a library file (no sidecar ⇒ unswept); the owner caught it by eye.
 
+**Render-QA gate for math-bearing `.md` (STRICT, 2026-06-30).** Any commit
+that creates or edits a `.md` content block containing math (`$…$`,
+`$$…$$`, or fenced ` ```tex ` blocks) **must** be render-QA'd before commit
+— do **not** rely on CI or the author's eyes to catch a broken equation.
+Run the full markdown render check
+([`local/markdown-render-check`](.claude/skills/local/markdown-render-check.md)):
+the pipeline render where available
+(`bun run content/pipeline/render-latex.ts …` after
+[`scripts/setup-folio-assistant.sh`](scripts/setup-folio-assistant.sh)),
+**and always** the preflight grep battery — balanced `$`/`$$`/`{}`/
+`\bigl`-`\bigr`/`\begin`-`\end`; no `\operatorname{}` (KaTeX rejects → use
+`\mathrm{}`); no line starting with `+`/`-`/`*` inside `$$…$$` (markdown
+list-parser hijack); align-family environments (`aligned`, `align`) fenced as
+` ```tex `, not inline `$$`. Then run the **expository pass**: every symbol
+and term is introduced before first use, and no symbol is silently reused for
+two meanings (e.g. `λ = ln q` vs the partition `λ ⊢ n`; rename one). When the
+pipeline render cannot run (e.g. the `folio-assistant` clone is firewalled in
+a sandbox), run the grep battery + expository pass by hand and **state
+explicitly in the commit/PR that the change was not machine-validated** — never
+report a math edit as render-checked when only CI (which may be billing-flaky)
+would have caught it. History: added 2026-06-30 after a mass-derivation survey
+rewrite shipped with `\operatorname` (KaTeX-breaking), a `B`-vs-`𝔪` mislabel, a
+wrong `dim_q = [n]_q`, and a `λ` notation collision — none machine-caught
+because the pipeline was unavailable and the agent skipped the manual battery.
+
 ## CI billing failures — distinguish from real failures (STRICT)
 
 GitHub Actions workflows may fail in **2-3 seconds across multiple
