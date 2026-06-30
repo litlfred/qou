@@ -220,9 +220,25 @@ the **same** proper Plancherel-weighted Wedderburn $\hat V_i$
 > the correct *argument normalization* (the near-singular $4_1$ behaviour
 > says $\Phi_q$ should act on a rescaled argument, not bare $\hat V$), the
 > *jet-level geometric sum* not implemented in this leading-order probe,
-> and the *muon knot resolution*. Indicated next steps, in order:
-> (i) settle $4_1$ vs $T(2,5)$; (ii) implement the level-$N$ jet sum;
-> (iii) test $\Phi_q$ on the rescaled argument $\hat V/q_0$.
+> and the *muon knot resolution*.
+
+**Rescaled-argument test (done — also negative).** The near-singular
+$4_1$ behaviour in (b) motivated testing $\Phi_q$ on the normalised
+argument $\hat V/q_0$. Result: rescaling tames the tau overshoot
+($526.8\!\to\!209.9$) but the muon $4_1$ **still blows up**
+($13{,}042\times$), because $\hat V(4_1)/q_0 \approx 0.91$ stays too close
+to the radius. Neither $\hat V$ nor $\hat V/q_0$ closes. The durable
+finding is the qualitative split: under *every* $\Phi_q$ normalization the
+two muon candidates behave **oppositely** — $4_1$ overshoots, $T(2,5)$
+undershoots — so the **muon knot identity is the decisive lever**, not the
+dilog normalization.
+
+> **Next steps, reordered by the probe outcome:** (i) **settle $4_1$ vs
+> $T(2,5)$** — now the gating item (see
+> [`docs/audits/2026-06-30-muon-knot-id-phi-q-evidence.md`](../../../docs/audits/2026-06-30-muon-knot-id-phi-q-evidence.md));
+> (ii) implement the level-$N$ jet geometric sum (the only structural
+> ingredient untested); (iii) the bare/rescaled single-level $\Phi_q$
+> tower is **closed as a scope-limited negative**.
 
 ## Properties of the conjectural formula
 
