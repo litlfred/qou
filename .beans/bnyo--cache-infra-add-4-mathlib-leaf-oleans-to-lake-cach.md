@@ -78,3 +78,23 @@ The orphan-drain swarm session confirmed the single highest-value cache leaf:
   ```
 - **Recommendation unchanged:** prioritise `Exponential` (above `Trigonometric.Complex`)
   for the next full cache refresh; still NOT a piecemeal 852 MB reseed.
+
+## Update (2026-06-30, PR #3167 finding) — add NormCast + Omega to the refresh leaf-set
+
+The orphan-drain PR #3167 surfaced two MORE missing-from-cone leaves while
+addressing a Gemini import-narrowing review:
+
+- **`Mathlib.Tactic.NormCast`** — needed by `polynomial-bar-involution` if it
+  narrows off the `Mathlib.Tactic` umbrella (uses `push_cast`).
+- **`Mathlib.Tactic.Omega`** — needed by `predicted-spectra/hadron-q-self-correction`
+  if narrowed (uses `omega`).
+
+Both leaf oleans are absent from the restored `lake-cache/qou-v4-24-0` cone
+(the umbrella `Mathlib/Tactic.olean` IS present, but these leaves are not
+separately resolvable). Consequence: narrowing those two files from
+`import Mathlib.Tactic` to the specific tactics turned a fully-compiled
+`pass` into an unverifiable `neutral-skip` — so PR #3167 KEPT the umbrella
+import there (coverage > import hygiene for orphan siblings outside the
+lake build). Fold `Tactic.NormCast` + `Tactic.Omega` into the same next
+full cache refresh as `Data.Complex.Exponential` / `Trigonometric.Complex`
+so future narrowings stay fully verifiable. Still NOT a piecemeal reseed.
