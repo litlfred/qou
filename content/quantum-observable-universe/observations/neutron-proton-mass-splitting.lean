@@ -1,4 +1,5 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
 
 
 /-!
@@ -28,7 +29,7 @@ noncomputable def massSplitting (α : ℝ) : ℝ :=
 theorem splitting_value :
     abs (massSplitting 3.7445 - 1.302) < 0.001 := by
   unfold massSplitting quarkPhi
-  norm_num
+  norm_num [show ("udd" = "uud") = False by decide, show ("udd" = "udd") = True by decide]
 
 /-- The same binding scale α appears at quark (confinement)
     and nuclear (binding) levels. -/

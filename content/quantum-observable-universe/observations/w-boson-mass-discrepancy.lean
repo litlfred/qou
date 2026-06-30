@@ -2,6 +2,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 
 
 /-!
@@ -54,7 +55,7 @@ theorem q₀_pos : (0 : ℝ) < q₀ := by linarith [q₀_gt_one]
 noncomputable def q₀_minus_one : ℝ := q₀ - 1
 
 theorem q₀_minus_one_val : q₀_minus_one = 0.10998 := by
-  unfold q₀_minus_one q₀; ring
+  unfold q₀_minus_one q₀; norm_num
 
 theorem q₀_minus_one_pos : (0 : ℝ) < q₀_minus_one := by
   rw [q₀_minus_one_val]; norm_num
@@ -80,7 +81,7 @@ theorem abs_chi_bring : Int.natAbs chi_bring = 6 := by
 noncomputable def kappa : ℝ := 1 / (Int.natAbs chi_bring : ℝ)
 
 theorem kappa_val : kappa = 1 / 6 := by
-  unfold kappa; rw [abs_chi_bring]
+  unfold kappa; rw [abs_chi_bring]; norm_num
 
 theorem kappa_pos : (0 : ℝ) < kappa := by
   rw [kappa_val]; norm_num
@@ -166,14 +167,17 @@ noncomputable def w_z_ratio : ℝ :=
 theorem higgs_w_ratio_exact :
     delta_q_H / delta_q_W_CDF = α_s / α_W := by
   unfold delta_q_H delta_q_W_CDF delta_q
+  have hqm : q₀_minus_one ≠ 0 := ne_of_gt q₀_minus_one_pos
+  have hk : kappa ≠ 0 := ne_of_gt kappa_pos
+  have hW : α_W ≠ 0 := ne_of_gt α_W_pos
   field_simp
 
-/-- The forward-predicted CDF shift and the observed shift (76.5 MeV)
-    agree to within a factor of 2 (0.9σ).
+/- The forward-predicted CDF shift and the observed shift (76.5 MeV)
+   agree to within a factor of 2 (0.9σ).
 
-    The predicted δm involves Real.pi in the denominator, which prevents
-    direct norm_num evaluation. We bound π ∈ (3.14, 3.15) to reduce
-    the comparison to rational arithmetic. -/
+   The predicted δm involves Real.pi in the denominator, which prevents
+   direct norm_num evaluation. We bound π ∈ (3.14, 3.15) to reduce
+   the comparison to rational arithmetic. -/
 /-- **External axiom (manuscript Ch. 7, §Vertex δq formula):
     predicted W-boson mass shift agrees with CDF observation within
     factor of 2** (full proof requires `Real.pi` bounds). -/
@@ -212,9 +216,9 @@ theorem sensitivity_range :
   have hden_pos : (0 : ℝ) < q₀ ^ 2 - 1 := by linarith
   unfold sensitivity
   constructor
-  · rw [lt_div_iff hden_pos]
+  · rw [lt_div_iff₀ hden_pos]
     nlinarith
-  · rw [div_lt_iff hden_pos]
+  · rw [div_lt_iff₀ hden_pos]
     nlinarith
 
 /-- The geometric factor κ is exactly 1/6, derived from the Euler
