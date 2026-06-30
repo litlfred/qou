@@ -15,18 +15,7 @@ name: pyhecke-native-wheel
 # §"Clarabel (litlfred fork)".
 
 on:
-  push:
-    branches: [ main ]
-    paths:
-      - 'tools/pyhecke-native/**'
-      - 'tools/hecke-engine/**'
-      - '.github/workflows/pyhecke-native-wheel.yml'
-  pull_request:
-    branches: [ main ]
-    paths:
-      - 'tools/pyhecke-native/**'
-      - 'tools/hecke-engine/**'
-      - '.github/workflows/pyhecke-native-wheel.yml'
+  # CI auto-triggers disabled (owner directive 2026-06-30): Actions billing.
   workflow_dispatch:
 
 jobs:

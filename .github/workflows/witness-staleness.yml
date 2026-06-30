@@ -11,12 +11,7 @@
 name: witness-staleness
 
 on:
-  pull_request:
-    paths:
-      - "**/*.witness.json"
-      - "computations/**/*.py"
-      - "tools/**/*.py"
-      - ".github/workflows/witness-staleness.yml"
+  # CI auto-triggers disabled (owner directive 2026-06-30): Actions billing.
   workflow_dispatch: {}
 
 jobs:
