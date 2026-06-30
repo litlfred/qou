@@ -66,4 +66,68 @@ theorem tabWt_lt_of_domRel {s t : Tableau μ}
     tabWt t < tabWt s :=
   domWt_lt_of_domRel h hne
 
+/-! ## Column-pattern dominance — the measure that actually plugs into straightening
+
+The row-tabloid measure `tabWt` above is correct but **does not** strictly
+decrease under a Garnir rewrite: a straightening term can be *row-equivalent* to
+`t` (e.g. for `μ = (2,1)`, `t = [[2,1],[3]]` straightens to `e_{[[1,2],[3]]} −
+e_{[[1,3],[2]]}`, and `[[1,2],[3]]` has the same row tabloid as `t`). The correct
+order is on the **column** pattern: there `[[1,2],[3]]` (colpat `[0,1,0]`) and
+`[[1,3],[2]]` (`[0,0,1]`) are both **strictly more dominant** than `t` (`[1,0,0]`).
+
+The `domCount` engine of `SpechtDominanceCore` is generic over the pattern
+function, so we reuse it on `colPattern`. `patRel` is the resulting partial order
+on patterns (antisymmetry is `domCount_inj`), and `colWt` its order-reversing
+up-set rank on tableaux. The strict-decrease law `colWt_lt_of_patRel` is exactly
+what `polytabloid_garnir_core` needs — the remaining input being the
+column-dominance Garnir lemma (`patRel (colPattern t) (colPattern (σ·t))` strict
+for the Garnir transversal reps `σ`). -/
+
+/-- **Pattern dominance** (generic, reusing `domCount`): `f ⊴ g` iff every
+dominance count of `f` is `≤` that of `g`. A partial order on `Fin n → ℕ`. -/
+def patRel (f g : Fin (Specht.nOf μ) → ℕ) : Prop :=
+  ∀ i m : ℕ, domCount f i m ≤ domCount g i m
+
+theorem patRel_refl (f : Fin (Specht.nOf μ) → ℕ) : patRel f f := fun _ _ => le_refl _
+
+theorem patRel_trans (f g h : Fin (Specht.nOf μ) → ℕ) :
+    patRel f g → patRel g h → patRel f h :=
+  fun hfg hgh i m => le_trans (hfg i m) (hgh i m)
+
+theorem patRel_antisymm (f g : Fin (Specht.nOf μ) → ℕ) :
+    patRel f g → patRel g f → f = g :=
+  fun hfg hgf => domCount_inj f g (fun i m => le_antisymm (hfg i m) (hgf i m))
+
+open Classical in
+/-- **The column-dominance measure.** `colWt t` is the up-set cardinality of `t`'s
+**column** pattern under `patRel` — an order-reversing `ℕ`-rank: a strictly more
+column-dominant tableau has strictly smaller `colWt`. -/
+noncomputable def colWt (t : Tableau μ) : ℕ :=
+  (Finset.univ.filter
+    (fun T : Tableau μ => patRel (Specht.colPattern t) (Specht.colPattern T))).card
+
+open Classical in
+/-- **Strict decrease (the straightening measure law).** If `t`'s column pattern
+strictly dominates `s`'s (`patRel (colPattern s) (colPattern t)`, patterns
+distinct), then `colWt t < colWt s`. Unlike the row measure, this *does* strictly
+decrease on Garnir rewrites. -/
+theorem colWt_lt_of_patRel {s t : Tableau μ}
+    (h : patRel (Specht.colPattern s) (Specht.colPattern t))
+    (hne : Specht.colPattern s ≠ Specht.colPattern t) :
+    colWt t < colWt s := by
+  unfold colWt
+  have hsub :
+      (Finset.univ.filter (fun T : Tableau μ => patRel (Specht.colPattern t) (Specht.colPattern T)))
+        ⊆ (Finset.univ.filter
+            (fun T : Tableau μ => patRel (Specht.colPattern s) (Specht.colPattern T))) := by
+    intro T hT
+    rw [Finset.mem_filter] at hT ⊢
+    exact ⟨Finset.mem_univ _, patRel_trans _ _ _ h hT.2⟩
+  apply Finset.card_lt_card
+  rw [Finset.ssubset_iff_of_subset hsub]
+  refine ⟨s, ?_, ?_⟩
+  · rw [Finset.mem_filter]; exact ⟨Finset.mem_univ _, patRel_refl _⟩
+  · rw [Finset.mem_filter]; push_neg; intro _ hts
+    exact hne (patRel_antisymm _ _ hts h).symm
+
 end QOU.BraidKnot.SpechtGarnirWt
