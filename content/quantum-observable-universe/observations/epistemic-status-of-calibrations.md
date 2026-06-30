@@ -6,10 +6,15 @@ Bring Hodge structure $H^1 = 2W$ ($W$-plane scale, $W$-plane modulus,
 and the orthogonal $\mathrm{Vol}(\mathrm{Hopf})=0$ meson class). This
 remark unpacks the *epistemic status* of each input — distinguishing
 what is genuinely calibrated from what is structurally derived from
-canonical cohomology but recorded *as if* calibrated. ($\mathfrak{Q}_\beta$ is
-**derived** from CAL-1 + CAL-2, not a calibration; the §"CAL-3"
-section below treats it as the *derived* hadronic observable, the
-bar-odd $\sinh$ partner of the meson scale $m_\pi$.)
+canonical cohomology but recorded *as if* calibrated.
+($\mathfrak{Q}_\beta = \hbar/\mathfrak{D}_\beta$ is the **proxy for CAL-2**
+— the neutron $\beta$-decay width $\mathfrak{D}_\beta$ — per the
+2026-06-26 decay-width ruling, **not** a fourth calibration and **not**
+"derived, not a calibration": the CAL-2 modulus is overdetermined and
+pinned most precisely by $m_\mu/m_e$, so $\mathfrak{Q}_\beta$ reproduced
+from $q_0$ is a $0.17\%$ cross-check. The §"CAL-3" section below treats
+it accordingly — the bar-odd $\sinh$ partner of the meson scale $m_\pi$;
+CAL-3 proper is the pion decay width $\mathfrak{D}_\pi$, proxy $m_\pi$.)
 
 The remark **does not** propose a 4th calibration input, a fit, or
 a numerological substitution. The forbidden clauses of
