@@ -250,3 +250,15 @@ resume:
 **Three chapters now fully drained** (quantum-observable-universes 63, mass-theory 72,
 particle-interactions 37 stale-listed / 13 live). CI billing persists across all
 SHAs (2-4s, runner_id 0, no logs) — documented; hourly self-check-in armed for recovery.
+
+PR #3142 (waves 5+6+7) MERGED to main (merge-commit 13cd2974) — included a post-merge
+fix to categorical-higgs-mechanism (a bad earlier merge had declared the inlined
+classes twice; dropped the leftover opaque markers, kept the faithful inlines, fail=0).
+
+## 2026-06-30 wave-8 (predicted-spectra + brings-surface + information-theory + observations)
+
+Next four chapters. genuine.txt lists 95 orphans (26 + 24 + 23 + 22). Per the
+re-derive-first lesson, running a fresh `lean-verify-siblings.sh` sweep over all 95
+on current main FIRST to find the actually-live-broken set before any fix (prior
+waves found 70-95% already drained by siblings). Branch
+`claude/2ti7-orphan-drain-wave8-2026-06-30`.
