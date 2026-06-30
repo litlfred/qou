@@ -13,4 +13,10 @@ export default proposition({
     "magic-numbers",
   ],
   uses: ["def:derived-atom", "def:demand-profile"],
+  computation: {
+    engine: "python",
+    script: "computations/all_nuclides_sdp_admissibility.py",
+    witness: "computations/all-nuclides-sdp-admissibility.witness.json",
+    status: "verified",
+  },
 });
