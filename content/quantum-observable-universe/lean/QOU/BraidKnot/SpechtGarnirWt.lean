@@ -367,4 +367,49 @@ theorem bottomHeavy_of_top_subset {n : ℕ} (S A A' : Finset (Fin n))
     Finset.filter_card_add_filter_neg_card_eq_card _
   omega
 
+/-- **`hbh` from the top-subset hypothesis (piece B bridge).** Specialises
+`bottomHeavy_of_top_subset` to `A = {c = j}` and `A' = σ(A)`: the threshold-`j`
+bottom-heaviness `#{c l = j ∧ l < m} ≤ #{c l = j ∧ σ l < m}` follows once `σ(A)`
+lands in `S`, the `A`-labels are the top of `S`, and `S` contains them. This is
+exactly `colWt_lt_of_two_column`'s `hbh`. -/
+theorem hbh_of_top_subset (c : Fin (Specht.nOf μ) → ℕ)
+    (σ : Equiv.Perm (Fin (Specht.nOf μ))) (j : ℕ) (S : Finset (Fin (Specht.nOf μ)))
+    (himg : (Finset.univ.filter (fun l => c l = j)).image σ ⊆ S)
+    (htop : ∀ a ∈ Finset.univ.filter (fun l => c l = j), ∀ s ∈ S,
+        s ∉ Finset.univ.filter (fun l => c l = j) → (s : ℕ) < (a : ℕ)) (m : ℕ) :
+    (Finset.univ.filter (fun l => c l = j ∧ (l : ℕ) < m)).card
+      ≤ (Finset.univ.filter
+          (fun l => c l = j ∧ ((σ l : Fin (Specht.nOf μ)) : ℕ) < m)).card := by
+  classical
+  set A := Finset.univ.filter (fun l => c l = j) with hA
+  have hLHS : (Finset.univ.filter (fun l => c l = j ∧ (l : ℕ) < m))
+      = A.filter (fun l : Fin (Specht.nOf μ) => (l : ℕ) < m) := by
+    rw [hA, Finset.filter_filter]
+  have hRHS : (Finset.univ.filter
+        (fun l => c l = j ∧ ((σ l : Fin (Specht.nOf μ)) : ℕ) < m)).card
+      = ((A.image σ).filter (fun l : Fin (Specht.nOf μ) => (l : ℕ) < m)).card := by
+    refine Finset.card_bij' (fun l _ => σ l) (fun l _ => σ⁻¹ l) ?_ ?_ ?_ ?_
+    · intro l hl
+      rw [Finset.mem_filter] at hl ⊢
+      obtain ⟨_, hcj, hσm⟩ := hl
+      refine ⟨?_, hσm⟩
+      rw [Finset.mem_image]
+      exact ⟨l, by rw [hA, Finset.mem_filter]; exact ⟨Finset.mem_univ _, hcj⟩, rfl⟩
+    · intro l hl
+      rw [Finset.mem_filter, Finset.mem_image] at hl
+      obtain ⟨⟨a, haA, haσ⟩, hlm⟩ := hl
+      rw [hA, Finset.mem_filter] at haA
+      have hinv : σ⁻¹ l = a := by rw [← haσ]; exact Equiv.Perm.inv_apply_self σ a
+      rw [Finset.mem_filter]
+      refine ⟨Finset.mem_univ _, ?_, ?_⟩
+      · show c (σ⁻¹ l) = j
+        rw [hinv]; exact haA.2
+      · show ((σ (σ⁻¹ l) : Fin (Specht.nOf μ)) : ℕ) < m
+        rw [Equiv.Perm.apply_inv_self]; exact hlm
+    · intro l _; exact Equiv.Perm.inv_apply_self σ l
+    · intro l _; exact Equiv.Perm.apply_inv_self σ l
+  rw [hLHS, hRHS]
+  exact bottomHeavy_of_top_subset S A (A.image σ) himg
+    (Finset.card_image_of_injective _ σ.injective) htop m
+
 end QOU.BraidKnot.SpechtGarnirWt
