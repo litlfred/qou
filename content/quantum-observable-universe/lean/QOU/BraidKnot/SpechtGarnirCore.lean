@@ -49,6 +49,58 @@ theorem polytabloid_rep_colStab (t : Tableau μ) {σ : Perm (Fin (nOf μ))}
       (Mtab.of (k := k) (((⟨σ, hσ⟩ * π : colStab t) : Perm (Fin (nOf μ))) • t)),
     hco, map_mul, Units.val_mul, ← mul_assoc, hsq, one_mul, mul_smul]
 
+/-! ## 1b. Equivariance `rep σ (e_t) = e_{σ·t}`
+
+The permutation action carries one polytabloid to another: `σ · e_t = e_{σ·t}`
+for **every** `σ` (not just `σ ∈ C_t`). The proof reindexes the column-stabiliser
+sum of `e_{σt}` by conjugation `π ↦ σπσ⁻¹`, which is a bijection
+`C_t ≃ C_{σ·t}` because `colStab` is the stabiliser of the (equivariant) column
+pattern. Together with §1's column-alternating law this is what lets a Garnir
+element `Σ_σ sgn(σ)·σ` act on `e_t` as a combination of polytabloids `e_{σt}`.
+-/
+
+/-- Conjugation sends the column stabiliser of `t` into that of `σ · t`:
+`π ∈ C_t ⟹ σπσ⁻¹ ∈ C_{σ·t}`. -/
+theorem conj_mem_colStab_smul {σ π : Perm (Fin (nOf μ))} (t : Tableau μ)
+    (hπ : π ∈ colStab t) : σ * π * σ⁻¹ ∈ colStab (σ • t) := by
+  rw [mem_colStab] at hπ
+  rw [mem_colStab, colPattern_smul, mul_smul, mul_smul,
+    ← mul_smul σ⁻¹ σ (colPattern t), inv_mul_cancel, one_smul, hπ]
+
+/-- **Conjugation bijection** `C_t ≃ C_{σ·t}`, `π ↦ σπσ⁻¹`. -/
+def conjStab (σ : Perm (Fin (nOf μ))) (t : Tableau μ) :
+    colStab t ≃ colStab (σ • t) where
+  toFun π := ⟨σ * (π : Perm (Fin (nOf μ))) * σ⁻¹, conj_mem_colStab_smul t π.2⟩
+  invFun ρ := ⟨σ⁻¹ * (ρ : Perm (Fin (nOf μ))) * σ, by
+    have h := conj_mem_colStab_smul (σ := σ⁻¹) (σ • t) ρ.2
+    rwa [inv_inv, ← mul_smul, inv_mul_cancel, one_smul] at h⟩
+  left_inv π := by
+    ext1
+    show σ⁻¹ * (σ * (π : Perm (Fin (nOf μ))) * σ⁻¹) * σ = (π : Perm (Fin (nOf μ)))
+    rw [mul_assoc σ (π : Perm (Fin (nOf μ))) σ⁻¹, inv_mul_cancel_left, inv_mul_cancel_right]
+  right_inv ρ := by
+    ext1
+    show σ * (σ⁻¹ * (ρ : Perm (Fin (nOf μ))) * σ) * σ⁻¹ = (ρ : Perm (Fin (nOf μ)))
+    rw [mul_assoc σ⁻¹ (ρ : Perm (Fin (nOf μ))) σ, mul_inv_cancel_left, mul_inv_cancel_right]
+
+/-- **Equivariance of the polytabloid.** `rep σ (e_t) = e_{σ·t}` for every `σ`. -/
+theorem rep_polytabloid (σ : Perm (Fin (nOf μ))) (t : Tableau μ) :
+    Mtab.rep μ σ (polytabloid (k := k) t) = polytabloid (k := k) (σ • t) := by
+  unfold polytabloid
+  rw [map_sum]
+  refine Fintype.sum_bijective (conjStab σ t) (conjStab σ t).bijective _ _ (fun π => ?_)
+  have hsgn : Equiv.Perm.sign ((conjStab σ t π : Perm (Fin (nOf μ))))
+      = Equiv.Perm.sign (π : Perm (Fin (nOf μ))) := by
+    show Equiv.Perm.sign (σ * (π : Perm (Fin (nOf μ))) * σ⁻¹)
+      = Equiv.Perm.sign (π : Perm (Fin (nOf μ)))
+    rw [map_mul, map_mul, map_inv, mul_comm (Equiv.Perm.sign σ),
+      mul_assoc, mul_inv_cancel, mul_one]
+  have harg : ((conjStab σ t π : Perm (Fin (nOf μ))) • (σ • t))
+      = σ • ((π : Perm (Fin (nOf μ))) • t) := by
+    show (σ * (π : Perm (Fin (nOf μ))) * σ⁻¹) • (σ • t) = σ • ((π : Perm (Fin (nOf μ))) • t)
+    rw [mul_smul, mul_smul, ← mul_smul σ⁻¹ σ t, inv_mul_cancel, one_smul]
+  rw [map_zsmul, Mtab.rep_of, hsgn, harg]
+
 /-! ## 2. The abstract antisymmetriser
 
 For a finite group `H ≤ S_n`, the antisymmetriser `b_H x = Σ_{σ∈H} sgn(σ)·(σ·x)`.
