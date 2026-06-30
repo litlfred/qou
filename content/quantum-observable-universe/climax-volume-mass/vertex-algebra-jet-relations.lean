@@ -44,7 +44,7 @@ open UGB.GrobnerShirshov.Hecke
 -- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
 --      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
 --      DOI: 10.1007/978-1-4612-0783-2
-noncomputable def levelHecke (hp : HeckeParams) (strands : ℕ) (level : ℕ) :
+noncomputable def levelHecke (hp : HeckeParams) (strands : ℕ) (_level : ℕ) :
     RewritingSystem (HeckeGen strands) ℝ :=
   heckeRewritingSystem strands hp
 
