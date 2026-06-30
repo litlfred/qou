@@ -48,8 +48,9 @@ mandatory.
 
 **Three primaries, three trefoils, three $S_3$ subgroups.**
 
-The automorphism group $S_5$ of Bring's surface contains exactly three
-copies of $S_3$, each the quotient of the trefoil knot group
+The automorphism group $S_5$ of Bring's surface contains a distinguished
+triple of $S_3$ subgroups (one per color sector; $S_5$ has ten $S_3$
+subgroups in all), each the quotient of the trefoil knot group
 $\langle x, y \mid x^2 = y^3 \rangle$ restricted to one color
 sector.  These three $S_3$ subgroups are the "primaries" of the
 categorical color space:

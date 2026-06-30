@@ -4,8 +4,10 @@ and $-q^{-1}$ on $V_{(2,1)}$, with product
 $q \cdot (-q^{-1}) = -1$. For a product of $n$ generators,
 $\det\bigl(\rho_{(2,1)}(\beta)\bigr) = (-1)^n$. When $n$ is
 even, $\det = 1$, so the eigenvalues satisfy $\lambda_1\lambda_2 = 1$.
-Combined with $|\mathrm{tr}| \le 2$ (which holds for real traces
-of $2 \times 2$ matrices with unit determinant), both eigenvalues
+Combined with $|\mathrm{tr}| \le 2$ — which is **not** automatic for
+unit-determinant $2 \times 2$ matrices (e.g. $\mathrm{diag}(2, \tfrac12)$
+has $\det = 1$ but $\mathrm{tr} = \tfrac52$), and is instead established for
+the braids at hand by the explicit closed-form trace below — both eigenvalues
 lie on the unit circle.
 
 For the Borromean braid ($n = 6$ generators):

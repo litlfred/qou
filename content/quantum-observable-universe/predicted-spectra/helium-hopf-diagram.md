@@ -32,7 +32,7 @@ $$
   L =  \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}.
 $$
 
-This matrix has rank $1$.  Adding a third component $e_3$
+This matrix has rank $2$ (linking number $1$).  Adding a third component $e_3$
 requires $\mathrm{lk}(e_3, e_1) \geq 1$ and
 $\mathrm{lk}(e_3, e_2) \geq 1$, increasing the total linking
 number from $1$ to at least $3$.  The crossing energy cost

@@ -42,8 +42,10 @@ outermost crossing energy in two independent ways:
 
 Together these give francium:
 
-- The **lowest ionization energy** of any element
-  ($E_{\mathrm{ion}} \approx 4.07 \mathrm{eV}$).
+- A **very low ionization energy**
+  ($E_{\mathrm{ion}} \approx 4.07 \mathrm{eV}$) — relativistic stabilization
+  of the $7s$ curl keeps it slightly *above* caesium's $3.89\ \mathrm{eV}$,
+  so francium is not the absolute minimum.
 - The **highest electropositive character** — it donates its
   lone curl more readily than any other atom.
 - The **strongest metallic bonding tendency** — its single

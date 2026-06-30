@@ -11,8 +11,8 @@ $\leq 8$**.
 
 **Hoste–Thistlethwaite–Weeks knot enumeration (1998)** classified
 all prime knots up to crossing number 16 and verified that
-**every prime knot of crossing $\leq 11$ has a unique Jones
-polynomial** — i.e., no two distinct prime knots up to 11 crossings
+**every prime knot of crossing $\leq 10$ has a unique Jones
+polynomial** — i.e., no two distinct prime knots up to 10 crossings
 share their Jones polynomial.
 
 The first known examples of distinct prime knots with the same

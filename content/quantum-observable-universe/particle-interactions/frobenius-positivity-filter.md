@@ -20,7 +20,7 @@ $$
 $$
 
 *The sign of each configuration product is determined by the
-spectator factor.  Exactly half the configurations —
+spectator factor.  A fraction $2^{-(A+1)}$ of the configurations —
 $2^{A-1}$ out of $4^A$ — are excluded.*
 
 ## Connection to the confinement LP
