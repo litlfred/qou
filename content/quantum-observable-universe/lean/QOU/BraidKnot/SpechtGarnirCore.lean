@@ -355,4 +355,21 @@ theorem antisym_supp_polytabloid_eq_zero {X : Finset (Fin (nOf μ))} {t : Tablea
   intro π _
   rw [antisym_zsmul, antisym_supp_eq_zero_of_card_lt (hbound π) hcard, smul_zero]
 
+/-- **The Garnir relation** (textbook form). Modulo the two-column row-index
+bound, the signed sum of polytabloids over the Garnir subgroup `S_X` vanishes:
+`Σ_{σ ∈ S_X} sgn(σ) · e_{σ·t} = 0`. Combines `antisym_polytabloid` (the
+antisymmetriser as a polytabloid sum) with the Garnir vanishing
+`antisym_supp_polytabloid_eq_zero`. Splitting `S_X` into its `S_A × S_B` part
+(which collapses to `|A|!·|B|!·e_t`) and the rest (more-dominant polytabloids)
+turns this into the straightening rewrite `e_t = Σ (more dominant)`. -/
+theorem garnir_relation {X : Finset (Fin (nOf μ))} {t : Tableau μ} {m : ℕ}
+    (hcard : m < X.card)
+    (hbound : ∀ π : colStab t, ∀ l ∈ X,
+      rowPattern ((π : Perm (Fin (nOf μ))) • t) l < m) :
+    ∑ σ : suppSubgroup (μ := μ) X,
+        (Equiv.Perm.sign (σ : Perm (Fin (nOf μ))) : ℤ) •
+          polytabloid (k := k) ((σ : Perm (Fin (nOf μ))) • t) = 0 := by
+  rw [← antisym_polytabloid (k := k) (suppSubgroup X) t,
+    antisym_supp_polytabloid_eq_zero (k := k) hcard hbound]
+
 end QOU.BraidKnot.SpechtGarnirCore
