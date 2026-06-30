@@ -4,6 +4,14 @@
 """
 The even-power h-ladder of interaction energies, and where van der Waals sits.
 
+NOTE (2026-06-30, per prop:vdw-pskew-isolation): the "bare symmetric-block e₊ →
+vdW energy" framing below is SUPERSEDED at the channel level. Van der Waals is
+the DISCARDED bar-odd residual sinh(2λ)(e₊−e₋), not the e₊ carrier itself; the
+e₊ block is the retained cosh carrier (see hbond_vdw_sdp.py). The h⁴ SMALLNESS
+of the vdW rung is consistent with that residual being h-suppressed, so this
+ladder remains a valid energy-SCALE estimate — only the "vdW = bare e₊" object
+label is corrected.
+
 Owner option 2: work out the energy scale that takes the bare symmetric-block
 e₊ (categorical, ℏ_q-scale) down to the ~kJ/mol molecular van der Waals energy.
 
