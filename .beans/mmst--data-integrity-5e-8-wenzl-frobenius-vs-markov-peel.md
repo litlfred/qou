@@ -55,3 +55,11 @@ re-run downstream producers that store a `Σ y_λ χ_λ` tr_M (incl. the PR #315
 witness, whose `tr_M_dual_path_rel_gap = 1.32e-7` IS this mismatch). Below all
 tolerances, so non-urgent. Full audit:
 `docs/audits/2026-06-30-mmst-ylambda-retired-proton-q0-root-cause.md`.
+
+## FIX APPLIED 2026-06-30 (PR #3174)
+
+Regenerated `y-lambda-mpfr-witness.json` at muon q₀. Deuteron + He-4 Wenzl tr_M
+now collapse onto markov-peel to 9.1e-20 (from 4.8e-8 / 1.3e-7); He-4 χ witness
+re-run. No regressions (cross_check_trM --strict / compute_audit_scan /
+derivation_chain all exit 0). Bounded downstream follow-up (~34 within-tolerance
+stale Σy_λχ_λ witnesses) documented — refresh naturally, not swept here.
