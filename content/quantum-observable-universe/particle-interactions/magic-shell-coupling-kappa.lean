@@ -12,9 +12,11 @@ correction admits the closed categorical form
 
 where E₀ = m_e/(q(q-1)), h = q − q⁻¹, and [n]_q is the q-bracket.
 
-Verified numerically at q₀ in
-`computations/probe_kappa_categorical_h7a_closed.py`
-to match the empirical PR #656 v6 fit within 0.035 %.
+At q₀ the closed form matches the empirical PR #656 v6 fit within
+0.035 % at the single-magic anchors; the `E₀·log(1/h)` form was
+identified against the (2,2) doubly-magic anchor (acknowledged CAL-4).
+The original verifier `computations/probe_kappa_categorical_h7a_closed.py`
+is no longer in the tree — a fresh witness is pending.
 
 LaTeX: `\label{prop:magic-shell-coupling-kappa}`
 
@@ -53,10 +55,11 @@ noncomputable def kappaClosed (q m_e : ℝ) : ℝ :=
 
     An instance asserts that the empirical magic-shell coupling slope
     `κ` at the substrate parameter `q` equals the categorical closed
-    form `kappaClosed q m_e`.  Together with the categorical
-    derivation in `probe_kappa_categorical_h7a_closed.py` and the
-    empirical PR #656 v6 fit, this closes the κ derivation
-    work-list item (#4) with no empirical free parameters. -/
+    form `kappaClosed q m_e`.  The closed-form *shape* was identified
+    against the (2,2) doubly-magic anchor (acknowledged CAL-4); the
+    equality is a class hypothesis (§3b-cond) and `kappa_empirical` is
+    an explicit input, so this is a conditional closure of κ derivation
+    work-list item (#4), not a zero-parameter derivation. -/
 class HasMagicShellCouplingKappaClosedForm where
   /-- Substrate parameter `q₀`. -/
   q : ℝ
@@ -71,9 +74,10 @@ class HasMagicShellCouplingKappaClosedForm where
 
     Under the categorical discipline, κ is a function of the
     substrate parameter q and the electron mass m_e via the
-    closed form `−E₀·log(1/h) / ([2]_q · [3]_q)`.  No further
-    independent calibration enters; the framework is single-
-    calibration in m_e and q after the closed-form. -/
+    closed form `−E₀·log(1/h) / ([2]_q · [3]_q)`, under the §3b-cond
+    class hypothesis.  The form's magic-shell quantum was anchor-
+    identified at (2,2) (acknowledged CAL-4), so this is a conditional,
+    not parameter-free, statement. -/
 -- Ref: [manuscript] prop:magic-shell-coupling-kappa
 theorem kappa_closed_form_is_categorical
     [c : HasMagicShellCouplingKappaClosedForm] :
