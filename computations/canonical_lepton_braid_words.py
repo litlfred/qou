@@ -13,8 +13,13 @@ Per `mass-endomorphism-tower.md` §Application:
   electron = σ_1³ in H_2 (1 generator, 3 crossings = trefoil 3_1)
   proton   = [u,u,d] in H_3 (2 generators, 11 crossings via gluon)
 
-Per `skein-mass-relation.md` (canonical paper):
-  muon = figure-eight 4_1 = (σ_1 σ_2⁻¹)² in H_3 (2 generators)
+Muon IDENTITY knot = T(2,5) cinquefoil = σ_1⁵ in H_2 (per
+prop:s5-equivariant-torus-knots + lepton-meson-torus-knot-dictionary;
+owner-ruled 2026-06-30, docs/audits/2026-06-30-muon-knot-id-phi-q-evidence.md).
+The figure-eight 4_1 = (σ_1 σ_2⁻¹)² in H_3 is the HIGGS, not the muon;
+its volume is the Higgs-coupling mass scale in m_μ/m_e = Vol(4_1)/ℏ_q².
+Both braids are computed below only to PROBE the historical "muon=4_1"
+candidate against T(2,5) — NOT to assert muon = 4_1.
 
 Per `knot-volumes.py:84-91` (after PR #1127 fix):
   tau = septafoil 7_1 = σ_1⁷ in H_2 (1 generator)
