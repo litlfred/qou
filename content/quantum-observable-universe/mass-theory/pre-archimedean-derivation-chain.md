@@ -349,6 +349,29 @@ with $m_\mu = m_e\,\mathrm{Vol}(4_1)/\hbar_q^2$ (the figure-eight knot
 volume) and $F_\mathrm{Bor}$ the dimensionless Borromean Hecke factor: the
 single dimensionful factor $1/\hbar_q^2$ enters only through the muon anchor.
 
+The trace identity has a **geometric face**.  Because the Markov trace grows
+like the exponential of a hyperbolic volume — $\mathrm{tr}_M \sim
+\exp(\mathrm{Vol})$, the volume conjecture in its $q$-deformed form — the same
+mass is read directly off the knot's hyperbolic geometry.  For a hyperbolic
+knot $K$ the mass is a volume times a density,
+
+$$
+  \mathfrak{m}(K) \;=\; m_e \cdot \mathrm{Vol}(K) \cdot \varrho(K) \,/\, \hbar_q^2,
+$$
+
+the electron scale times the hyperbolic volume $\mathrm{Vol}(K)$ times the
+per-knot density $\varrho(K)$ — the same multiplicity $\varrho$ of the box
+above, now read off the knot
+([*$q$-Hyperbolic Geometry*](#chap:climax-volume-mass)).  The two faces — the
+trace $|\mathrm{tr}_M(T_w)|$ and the volume–density product
+$\mathrm{Vol}(K)\,\varrho(K)/\hbar_q^2$ — are the same quantity, exchanged by
+the archimedean functor: the trace is its algebraic computation, the
+volume–density product its geometric reading.  For the absolute nucleon mass
+the muon-anchored form above stays canonical — applying $1/\hbar_q^2$ to the
+Borromean volume directly mis-scales by a few percent — so the
+volume–density product gives the per-knot *shape*, not the route to the
+nucleon's absolute value.
+
 The two parts of the trace carry the two physical observables of a nucleus
 at once, packaged as a single **complex volume** $\mathfrak{V}$: its real
 part is the binding energy, $\mathrm{Re}\,\mathfrak{V} =
