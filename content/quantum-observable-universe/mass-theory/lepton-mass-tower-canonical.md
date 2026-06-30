@@ -169,6 +169,61 @@ the lepton sector is where the choice is decisive rather than cosmetic.
 > remains Subgoal-2-blocked (q₀-repin out of scope, owner directive
 > 2026-05-08).
 
+## Faddeev $\Phi_q$ probe (Phase 5 finding)
+
+The Phase-4 resolution was tested directly: swap the symmetric
+$\mathrm{Li}_2^q$ for the Faddeev (q-Pochhammer) quantum dilogarithm
+$\Phi_q(z) = \prod_{k\ge1}(1-q^{-k}z)^{-1}$ in the per-braid tower, with
+the **same** proper Plancherel-weighted Wedderburn $\hat V_i$
+(`xi-ell-faddeev-phi-q-probe.witness.json`):
+
+| ratio to $\mathfrak{e}$ | CODATA | (a) $\mathrm{Li}_2^q$ | (b) $\Phi_q$ direct | (c) $\log\Phi_q$ |
+|---|---:|---:|---:|---:|
+| $\mu$ $T(2,5)$ | $206.77$ | $1.64$ | $13.99$ | $1.85$ |
+| $\mu$ $4_1$ | $206.77$ | $6.34$ | $116{,}611$ | $10.06$ |
+| $\tau$ $T(2,7)$ | $3477.23$ | $2.29$ | $526.8$ | $3.01$ |
+
+**The $1/\hbar$ enhancement is real, but neither bare variant closes.**
+
+1. **Enhancement confirmed.** $\log\Phi_q$ raises *every* ratio above the
+   symmetric $\mathrm{Li}_2^q$ ($\mu\,T(2,5)$: $1.64\!\to\!1.85$; $\tau$:
+   $2.29\!\to\!3.01$); $\Phi_q$-direct far more. The Phase-4 claim — that
+   the missing $\sim10^2$ is a Kashaev $1/\hbar$ effect absent in the
+   symmetric (Rogers) dilog — is borne out: the Faddeev form *does* inject
+   it.
+
+2. **But it does not reproduce CODATA.** $\Phi_q$-direct **overshoots
+   catastrophically and knot-sensitively**: the muon $4_1$ has
+   $\hat V \approx 1.009$, sitting essentially *on* the $\Phi_q$
+   convergence radius $q_0 = 1.110$, so $\Phi_q(\hat V)$ is near-singular
+   and the ratio explodes to $116{,}611$; the $T(2,5)$ muon
+   ($\hat V \approx 0.543$) gives only $13.99$. $\log\Phi_q$ under-reaches
+   at $O(10)$.
+
+3. **The muon knot-ID is now decisive, not a footnote.** The
+   $4_1$-vs-$T(2,5)$ muon ambiguity widens from a $\sim 8.5\times$ spread
+   under $\mathrm{Li}_2^q$ to $\sim 8000\times$ under $\Phi_q$-direct.
+   Resolving the muon knot identity (`docs/audits/-muon-knot-id-conflict.md`)
+   is therefore a **gating prerequisite** for any $\Phi_q$ closure.
+
+4. **A structural tell.** That the hyperbolic muon $4_1$ — the *unique*
+   hyperbolic lepton (C1) — is the one whose $\hat V$ sits at the $\Phi_q$
+   radius is consistent with the Kashaev volume conjecture: $\Phi_q$
+   growth at the radius is exactly where $\mathrm{Vol}_{\mathrm{hyp}}(4_1)$
+   is encoded. The torus leptons ($T(2,3)$, $T(2,5)$, $T(2,7)$) stay away
+   from the radius, matching $\mathrm{Vol}_{\mathrm{hyp}}=0$.
+
+> **Scope (refuted-claim discipline).** A **scope-limited negative**:
+> neither *bare* $\Phi_q$ variant, as stated, reproduces the lepton
+> ratios. It is **not** an exclusion of the Faddeev-$\Phi_q$ direction —
+> the $1/\hbar$ enhancement it supplies is validated. The missing piece is
+> the correct *argument normalization* (the near-singular $4_1$ behaviour
+> says $\Phi_q$ should act on a rescaled argument, not bare $\hat V$), the
+> *jet-level geometric sum* not implemented in this leading-order probe,
+> and the *muon knot resolution*. Indicated next steps, in order:
+> (i) settle $4_1$ vs $T(2,5)$; (ii) implement the level-$N$ jet sum;
+> (iii) test $\Phi_q$ on the rescaled argument $\hat V/q_0$.
+
 ## Properties of the conjectural formula
 
 1. **Im(q) robustness.** By the modulus-projection argument
