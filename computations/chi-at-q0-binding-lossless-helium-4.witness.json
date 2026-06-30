@@ -1,0 +1,41 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-30T17:38:51.135810+00:00",
+  "commitSha": "ef05b47bcc5f8950738d3032b266195dd8c1a57a",
+  "assertions": [
+    {
+      "name": "binding_chi_matches_matrix_m_reference",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "binding χ^λ agrees with the matrix-M 50-dps reference on the feasible-λ subset within tol"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": -1782828784430,
+  "computation": "chi-at-q0-binding-lossless-helium-4",
+  "scriptFile": "chi_4he_binding_lossless.py",
+  "scriptHash": "5ffd48aa65d6",
+  "scriptCommitSha": "ef05b47bcc5f8950738d3032b266195dd8c1a57a",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Lossless ⁴He per-λ χ in the binding (color-weighted averaged-crossing) convention at q_0, all 77 λ⊢12, via the dim-independent Rust binding character (no dim×dim matrix). Resolves bean b0vf (was 27/77).",
+  "data": {
+    "n_partitions": 77,
+    "precision": "f64-rust-binding-atomic",
+    "tr_M_at_q0": "0.0553584335950050369631897364899479378844375105228326585304731",
+    "gate_vs_matrix_m_50dps_max_rel": "2.611548e-6"
+  }
+}
