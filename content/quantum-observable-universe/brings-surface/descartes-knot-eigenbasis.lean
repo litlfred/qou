@@ -94,10 +94,8 @@ structure DescartesHeckeAlgebra (D : DescartesData) where
 /-- For q > 0, the eigenvalues q and -q⁻¹ are distinct. -/
 theorem eigenvalues_distinct_of_descartes (D : DescartesData) :
     D.q ≠ -(D.q⁻¹) := by
-  intro h
   have hq := D.q_pos
   have hqi : 0 < D.q⁻¹ := inv_pos.mpr hq
-  rw [h] at hq
   linarith
 
 /-! ## Schur-Weyl Decomposition for Rep(SU_q(2)) -/
@@ -255,23 +253,16 @@ theorem descartes_n3_both_detected (D : DescartesData) :
   -- The mixed (spin-1/2) sector has Jones value J(trefoil) = -q⁻⁴(1 - q² + q⁴)
   -- Both are nonzero for q > 0, q ≠ 1.
   refine ⟨-(D.q + D.q⁻¹), -(D.q⁻¹ ^ 4 * (1 - D.q ^ 2 + D.q ^ 4)), ?_, ?_⟩
-  · -- j_sym ≠ 0: -(q + q⁻¹) ≠ 0 for q > 0
-    intro h
+  · -- j_sym ≠ 0: -(q + q⁻¹) < 0 for q > 0
     have hq := D.q_pos
     have hqi : 0 < D.q⁻¹ := inv_pos.mpr hq
-    have := neg_eq_zero.mp h
     linarith
-  · -- j_mix ≠ 0: the trefoil Jones polynomial is nonzero
-    intro h
+  · -- j_mix ≠ 0: -q⁻⁴(1 - q² + q⁴) < 0 for q > 0 (both factors positive)
     have hq := D.q_pos
-    -- -q⁻⁴(1 - q² + q⁴) = 0 implies 1 - q² + q⁴ = 0 (since q⁻⁴ ≠ 0)
-    have hqi4 : D.q⁻¹ ^ 4 ≠ 0 := pow_ne_zero 4 (inv_ne_zero hq.ne')
-    have hmul_zero := neg_eq_zero.mp h
-    rcases mul_eq_zero.mp hmul_zero with h_qi4 | h_poly
-    · exact hqi4 h_qi4
-    · -- 1 - q² + q⁴ = (q² - 1/2)² + 3/4 > 0 for all real q.
-      have : 0 < 1 - D.q ^ 2 + D.q ^ 4 := by nlinarith [sq_nonneg (D.q ^ 2 - 1 / 2)]
-      linarith
+    have hqi : 0 < D.q⁻¹ := inv_pos.mpr hq
+    have hqi4 : 0 < D.q⁻¹ ^ 4 := pow_pos hqi 4
+    have h_poly : 0 < 1 - D.q ^ 2 + D.q ^ 4 := by nlinarith [sq_nonneg (D.q ^ 2 - 1 / 2)]
+    linarith [mul_pos hqi4 h_poly]
 
 /-- **Corollary**: the eigenvalues q and -q⁻¹ of the R-matrix braiding
     are always distinct in a Descartes universe, ensuring the Hecke

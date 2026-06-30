@@ -133,6 +133,9 @@ theorem qEff_gt_one (q₀ : ℝ) (p n : ℕ)
 -- Ref: [manuscript] §6/hadron-q-self-correction
 theorem hadron_q_self_correction (q₀ : ℝ) (p n : ℕ) :
     deltaQ q₀ p n
-      = (netSignedCrossing p n : ℝ) / ((p : ℝ) + n) ^ 2 * (1 - q₀⁻¹) ^ 2 := rfl
+      = (netSignedCrossing p n : ℝ) / ((p : ℝ) + n) ^ 2 * (1 - q₀⁻¹) ^ 2 := by
+  unfold deltaQ
+  push_cast
+  rfl
 
 end QOU.Archimedean
