@@ -69,19 +69,15 @@ theorem unique_q_solution (c : ℝ) (hc_pos : 0 < c) (hc_lt : c < 1) :
   · constructor
     · have hsqrt_pos : 0 < Real.sqrt c := Real.sqrt_pos.mpr hc_pos
       have hsqrt_lt : Real.sqrt c < 1 := by
-        rw [Real.sqrt_lt_one hc_pos.le]
-        exact hc_lt
+        rw [show (1:ℝ) = Real.sqrt 1 by simp]
+        exact Real.sqrt_lt_sqrt hc_pos.le hc_lt
       have h1 : 0 < 1 - Real.sqrt c := by linarith
-      rw [lt_inv_comm₀ h1 one_pos]
-      simp
-      linarith
-    · have hsqrt_pos : 0 < Real.sqrt c := Real.sqrt_pos.mpr hc_pos
-      have h1 : 1 - Real.sqrt c ≠ 0 := by linarith
-      rw [inv_inv]
+      rw [one_lt_inv_iff₀]
+      exact ⟨h1, by linarith⟩
+    · rw [inv_inv]
       rw [sub_sq, one_pow, mul_one]
       ring_nf
       rw [Real.sq_sqrt hc_pos.le]
-      ring
   · intro q' ⟨hq'_gt, hq'_eq⟩
     have hq'_pos : 0 < q' := by linarith
     have h_hbar : 0 < 1 - q'⁻¹ := by
@@ -92,7 +88,6 @@ theorem unique_q_solution (c : ℝ) (hc_pos : 0 < c) (hc_lt : c < 1) :
     have : q'⁻¹ = 1 - Real.sqrt c := by linarith
     rw [← inv_inv q']
     congr 1
-    linarith
 
 /-- The CODATA ratio Vol(4₁)/(m_μ/m_e) is in (0,1), ensuring
     a unique q > 1 solution exists. -/
