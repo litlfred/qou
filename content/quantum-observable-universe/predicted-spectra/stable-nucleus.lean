@@ -1,5 +1,4 @@
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 
 /-!
@@ -13,20 +12,15 @@ LaTeX label: `def:stable-nucleus`
 ## References
 - [manuscript] §3/stable-nucleus
 
-**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-Part of the formal proof chain. The parameter `q` is the canonical
-indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
-numerical evaluation.
+**Ground ring.** The combinatorial data (p, n, A) is integer; the
+beta-stability condition is the **archimedean realisation** (§7c) over
+`ℝ` — it uses division, the real power `A^{2/3}` (`Real.rpow`), and the
+ordering `< 2`, none of which live on the formal ground ring
+`R_q = ℤ[q, q⁻¹]`. The coefficients `a_C, a_A` are the real evaluations
+`ι : R_q → ℝ, q ↦ q₀` of the Coulomb / Pauli-asymmetry scales.
 -/
 
 namespace QOU.Torsion
-
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
-abbrev R_q := LaurentPolynomial ℤ
-def q_param : R_q := LaurentPolynomial.T 1
-def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- A stable nucleus: multi-nucleon Hopf link on the beta-stability line. -/
 -- Ref: [manuscript] §3/stable-nucleus
@@ -35,15 +29,14 @@ structure StableNucleus where
   p : ℕ
   /-- Number of neutrons. -/
   n : ℕ
-  /-- Coulomb coefficient a_C = (q - q⁻¹) · λ_C. -/
-  a_C : R_q
-  /-- Pauli asymmetry coefficient. -/
-  a_A : R_q
-  /-- a_A is positive. -/
-  -- a_A_pos : 0 < a_A  -- (archimedean; not meaningful over R_q)
+  /-- Coulomb coefficient a_C = (q - q⁻¹) · λ_C (real evaluation). -/
+  a_C : ℝ
+  /-- Pauli asymmetry coefficient (real evaluation). -/
+  a_A : ℝ
   /-- Mass number. -/
   A : ℕ := p + n
   /-- Beta-stability condition: p ≈ A / (2 + a_C·A^{2/3}/(2·a_A)). -/
-  stability : |((p : R_q) - (A : R_q) / (2 + a_C * (A : R_q)^(2/3 : R_q) / (2 * a_A)))| < 2
+  stability :
+    |((p : ℝ) - (A : ℝ) / (2 + a_C * (A : ℝ) ^ ((2 : ℝ) / 3) / (2 * a_A)))| < 2
 
 end QOU.Torsion
