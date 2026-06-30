@@ -1,0 +1,131 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-30T01:12:06.318477+00:00",
+  "commitSha": "28ea745e7573cd26e283a0b7a21d1dccd4bf3c12",
+  "assertions": [
+    {
+      "name": "he4_requires_super_pairwise_enhancement",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "⁴He's AME binding ratio exceeds the best pairwise-assembly ceiling by >1.5× — a genuine ≥3-body cooperative term is needed"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "interface-operator-pairwise-ceiling",
+  "scriptFile": "interface_operator_pairwise_ceiling_probe.py",
+  "scriptHash": "248755dd39ad",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Interface-operator pairwise-assembly ceiling: the binding A-scaling ratio B(X)/B(D) reachable by ANY 2-body bond assembly — {multiplicative 1−∏f, additive Σ(−log f)} × {chain, complete graph} — using the categorically-forced zero-fit per-bond factors (p-p→z, n-n→z−h, p-n→z−h(½−δ/4), δ=flavor_split_leading). Scale-free (E₀ cancels in the ratio). Measures the super-pairwise enhancement R_AME/ceiling per isotope — the ≥3-body cooperative factor (⁴He α-shell closure) that no pairwise bond model supplies. Assembly-side mirror of the term-side ℓ¹ ceiling. Measurement, not a fit (anti-flip-flop).",
+  "data": {
+    "m_e_MeV": "0.51099895069",
+    "measurement": {
+      "q0": "1.1099785955573347198997632204832250266562084087802",
+      "z": "0.4993203340335612717689663862757371401611757978999",
+      "h": "0.20906032199559367898186263646596735026162330164756",
+      "f_pn": "0.39486207469498770007169049990492520125408020672095",
+      "rows": [
+        {
+          "atom": "D",
+          "Z": 1,
+          "N": 1,
+          "A": 2,
+          "B_AME_MeV": 2.224566,
+          "ame_ratio_over_D": "1.0",
+          "pairwise_ratios_over_D": {
+            "mult_chain": "1.0",
+            "mult_complete": "1.0",
+            "add_chain": "1.0",
+            "add_complete": "1.0"
+          },
+          "pairwise_ceiling_over_D": "1.0",
+          "ceiling_model": "mult_chain",
+          "super_pairwise_enhancement": "1.0"
+        },
+        {
+          "atom": "T",
+          "Z": 1,
+          "N": 2,
+          "A": 3,
+          "B_AME_MeV": 8.481798,
+          "ame_ratio_over_D": "3.8127877527571670994413177846406494615212529365967",
+          "pairwise_ratios_over_D": {
+            "mult_chain": "1.4631165762737932172830597873868588039628314107617",
+            "mult_complete": "1.5777292468280972059048113098409789368889861409",
+            "add_chain": "2.3312023249779145747699336917550482314737304324773",
+            "add_complete": "3.3312023249779145747699336917550482314737304324773"
+          },
+          "pairwise_ceiling_over_D": "3.3312023249779145747699336917550482314737304324773",
+          "ceiling_model": "add_complete",
+          "super_pairwise_enhancement": "1.1445680510511907653503248486985712002300310332222"
+        },
+        {
+          "atom": "3He",
+          "Z": 2,
+          "N": 1,
+          "A": 3,
+          "B_AME_MeV": 7.718043,
+          "ame_ratio_over_D": "3.4694601104215385763921357673703808631994026299608",
+          "pairwise_ratios_over_D": {
+            "mult_chain": "1.3267014070576612308498656581434903238186952721184",
+            "mult_complete": "1.5238640700915475107756503696999621511224187640398",
+            "add_chain": "1.7474100527422138607545873936757255257865454382481",
+            "add_complete": "2.7474100527422138607545873936757255257865454382481"
+          },
+          "pairwise_ceiling_over_D": "2.7474100527422138607545873936757255257865454382481",
+          "ceiling_model": "add_complete",
+          "super_pairwise_enhancement": "1.2628111726382599041842135287990474208872599789413"
+        },
+        {
+          "atom": "4He",
+          "Z": 2,
+          "N": 2,
+          "A": 4,
+          "B_AME_MeV": 28.295673,
+          "ame_ratio_over_D": "12.71963744838319160394474440075975399025465354739",
+          "pairwise_ratios_over_D": {
+            "mult_chain": "1.5579449306191709168276156681683148593663875319996",
+            "mult_complete": "1.646693539204660341308472180336009627575339511054",
+            "add_chain": "3.0786123777201284355245210854307737572602758707255",
+            "add_complete": "6.0786123777201284355245210854307737572602758707255"
+          },
+          "pairwise_ceiling_over_D": "6.0786123777201284355245210854307737572602758707255",
+          "ceiling_model": "add_complete",
+          "super_pairwise_enhancement": "2.0925232039806222608169148238995386276527653217445"
+        },
+        {
+          "atom": "6Li",
+          "Z": 3,
+          "N": 3,
+          "A": 6,
+          "B_AME_MeV": 31.994564,
+          "ame_ratio_over_D": "14.382384698858115703309352068917771515568730941344",
+          "pairwise_ratios_over_D": {
+            "mult_chain": "1.638809410465078997754662105674039754697869006948",
+            "mult_complete": "1.6525146545515111197319091570102853798296042443201",
+            "add_chain": "5.1572247554402568710490421708615475145205517414509",
+            "add_complete": "15.235837133160385306573563256292321271780827612176"
+          },
+          "pairwise_ceiling_over_D": "15.235837133160385306573563256292321271780827612176",
+          "ceiling_model": "add_complete",
+          "super_pairwise_enhancement": "0.94398388307494088508919708627781226415997834360558"
+        }
+      ]
+    }
+  }
+}

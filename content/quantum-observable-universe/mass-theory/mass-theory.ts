@@ -332,6 +332,7 @@ export default chapter({
         "q-beta-c-k-recursion-from-habiro-q-difference-interpretation",
         "q-bessel-c-k-recurrence-cfinite",
         "q-bessel-second-order-qdifference",
+        "jackson-q-bessel-contiguity-recurrence",
         "jackson-q-bessel-contiguity",
         "qbeta-c4-from-c3-c8-product-identity",
         "qbeta-z-recursion-to-ck-recursion-bridge",
