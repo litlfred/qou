@@ -17,7 +17,6 @@ after a finite number of terms.
 
 ## Construction (three steps)
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 2. **Compatibility verification.** Two finite-place coherence
    checks pass on every $(p, \text{atom})$ cell:

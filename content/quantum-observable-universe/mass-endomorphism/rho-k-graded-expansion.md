@@ -81,7 +81,6 @@ $$
   \alpha \cdot z^2 \cdot \sum_{i<j} \ln\bigl|\hat V_i^{\mathrm{full}} \hat V_j^{\mathrm{full}}\bigr|_{\mathrm{Wedderburn}}.
 $$
 
-- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
 $$
   \bigl|\hat V_i \hat V_j\bigr|_{\mathrm{Wedderburn}}
@@ -98,7 +97,6 @@ pair coupling uses the Markov-traced $2 \times 2$ matrix product
 $M_i M_j$ — genuinely capturing braid non-commutativity — rather
 than the naive $V_i^{\mathrm{std}} \cdot V_j^{\mathrm{std}}$.
 
-- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
 See [Table 1](#tbl:rho-k-graded-expansion-table1-data).
 
@@ -144,9 +142,7 @@ interface), the bound atomic case is fully covered: the LO and
 single-gen pieces give $\rho_K$ to $0.18\%$; the higher pieces and
 the interface contribution close the residual.
 
-## Witnesses
 
-- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
 ## References
 

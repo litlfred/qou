@@ -15,7 +15,6 @@ sorry-free.
 
 **Limitations of this proposition.**
 
-- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
 **Structural insight from the vanishing-at-1 theorem.** All three
 blocks have a $(q^2 - 1)$ factor, so each contributes at order $w$

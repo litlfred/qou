@@ -67,7 +67,6 @@ The character $\chi_{(2,1)}(\beta) = \mathrm{Tr}\bigl(\prod_{c \in \beta} M_c\bi
 where $M_c$ is the matrix for each crossing in the canonical word order
 from `atomic_braid_to_crossings`.
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 ## Literature pointers
 
@@ -79,6 +78,4 @@ All proved by `field_simp + ring` after unfolding (sorry-free):
 
 See [Table 2](#tbl:chi-per-irrep-cyclotomic-closed-forms-table2-data).
 
-## Compute wiring
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.

@@ -2,7 +2,6 @@
 
 **Formal proof of the $V_{(3)}$ per-irrep character difference closed form.**
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 $$
   \boxed{
@@ -69,7 +68,6 @@ $$
    \;=\; \frac{(-1)^k}{4}.
 $$
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 ## Lean theorems exported
 

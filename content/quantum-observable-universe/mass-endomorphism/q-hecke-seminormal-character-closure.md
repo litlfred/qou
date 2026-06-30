@@ -1,5 +1,3 @@
-- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
-
 $$
   \mathrm{tr}_M^{\mathrm{partition\text{-}sum}}(\mathcal{B}_K)
   \;:=\;
@@ -46,7 +44,6 @@ Both are now fixed:
 
 ## Numerical verification
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 | Atom | $|\mathrm{tr}_M|$ canonical | partition-sum (q-Hecke) | rel err |
 |---|---:|---:|---:|
@@ -56,7 +53,6 @@ The result follows by direct, exact algebraic evaluation of the canonical trace 
 | tritium | 0.10405211868 | 0.10405211868 | $1.07 \times 10^{-14}$ |
 | ${}^3$He | 0.20654085856 | 0.20654085856 | $1.03 \times 10^{-14}$ |
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 ## Three production paths
 

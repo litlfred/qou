@@ -41,7 +41,6 @@ has eigenvalue $c(T(k); q)$. Together with
 [`prop:jucys-murphy-central-elements-qou`](#prop:jucys-murphy-central-elements-qou)
 this gives a complete explicit construction of $Z(H_n(q))$.*
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 ### Cross-checks
 

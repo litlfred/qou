@@ -9,7 +9,6 @@ non-disjoint clusters (e.g. neutron $\sigma_1^6 \sigma_2^4 \sigma_1^{-1}$
 with mixed signatures), the same recurrence applies after using
 $\sigma_i^{-1} = \sigma_i - h$ from the Hecke quadratic.
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 ## Categorical interpretation
 

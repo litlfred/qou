@@ -49,7 +49,6 @@ $$
    \;=\; a_7 a_4 \cdot z^2 \;+\; a_7 b_4 \cdot z \;+\; b_7 a_4 \cdot z \;+\; b_7 b_4 \cdot 1.
 $$
 
-- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
 The methodology of Steps 1-5 is fully axiomatic — only the Hecke
 quadratic, Markov axioms, cyclicity, and braid relations are
@@ -58,7 +57,6 @@ construction, no character tables. $\square$
 
 ## Numerical witness
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 $$
   \operatorname{tr}_M(\sigma_1^7\sigma_2^4)(q_0) \;\approx\; 1.63315\,357\ldots
@@ -79,9 +77,7 @@ $$
   \rho_p^{\mathrm{CODATA}} \;=\; \frac{1836.15}{|\operatorname{tr}_M(\mathcal{B}_p)|(q_0)} \;\approx\; \frac{1836.15}{1.63315} \;\approx\; 1124.3.
 $$
 
-## Witness scripts
 
-- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
 ## References
 

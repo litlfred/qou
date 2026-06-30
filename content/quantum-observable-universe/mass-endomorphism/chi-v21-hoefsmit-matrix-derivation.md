@@ -14,7 +14,6 @@ $$
 
 with $d_1 = q^3/(q^2+1)$, $d_2 = -q^{-1}/(q^2+1)$, $b^2 = d_1 d_2 + 1$.
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 $$
   \chi_{(2,1)}(\mathcal{B}_n) - \chi_{(2,1)}(\mathcal{B}_p)
@@ -35,7 +34,6 @@ All theorems sorry-free.
 
 ## Laurent decomposition and the ε^k growth
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 Unlike V_(3) where the inverse-Laurent has only one term ($q^{-1}/4$,
 giving bounded oscillation), V_(2,1) has two inverse terms ($q^{-1}/4$
@@ -59,7 +57,6 @@ matrices) requires:
 3. The exact 11-crossing word order from `atomic_braid_to_crossings`
    for `β_p` and `β_n` — currently coded only in Python.
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 ## Full matrix-product trace theorem (statement)
 
@@ -80,7 +77,6 @@ def beta_p_word_v21, beta_n_word_v21 : TypedB3Word
 noncomputable def chi_v21_on_word (q : ℝ) (w : TypedB3Word) : ℝ :=
   Matrix.trace (w.foldl ... fun acc c => acc * crossing_to_matrix q c)
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 The theorem statement is now **explicit at the matrix-product
 level**. The proof is the only remaining `sorry` in this

@@ -29,7 +29,6 @@ $$
     \lvert\!\operatorname{tr}_M\!\bigl(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K)\bigr)\!\rvert}.
 $$
 
-- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
 |        Atom       | $A$ | $\lvert\operatorname{tr}_M(\mathrm{NF}_{\mathrm{GS}})\rvert$ | $\mathcal{M}_{\mathrm{CODATA}}$ (MeV) | $\rho_K^{\mathrm{CODATA}}$ |
 | :---------------: | :-: | :----------------------------------------------------------: | :-----------------------------------: | :------------------------: |
@@ -111,9 +110,7 @@ $$
   D(u) \;=\; 2^{2A+1} \cdot u^{\mathrm{shift}} \cdot (1 + u^2)^{3A-1},
 $$
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
-- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
 The (six-term spectral) form is the current best candidate
 attempt, expanding $\rho_K \cdot \lvert\!\operatorname{tr}_M\!\rvert$

@@ -1,6 +1,5 @@
 ## Representation-theoretic structure of the rung coefficients
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 ### 1. Kashiwara crystal graph (the load-bearing anchor)
 
@@ -23,7 +22,8 @@ The canonical values are rigorously evaluated via formal trace definitions.
 
 ### 3. Macdonald $(q,t)$-degeneration at $t = q^2$
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
+*Subsection content pending restoration (prior text was AI-generated filler removed under bean 6fib).*
+
 
 ### 4. Habiro residue at roots of unity
 
@@ -57,4 +57,3 @@ rungs themselves obey one proved recursion; only its kernel is open.
                   Habiro residue (c_k = Ohtsuki invariants; proved recursion)
 ```
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
