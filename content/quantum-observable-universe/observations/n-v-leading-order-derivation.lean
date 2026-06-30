@@ -19,6 +19,7 @@
 
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.Order.Field.Basic
+import Mathlib.Tactic
 
 namespace QOU.Observations
 
@@ -103,9 +104,9 @@ theorem n_v_leading_order :
   refine ⟨ε₁, h_eps, ?_⟩
   -- N_v := 3 · v/m_e = 3 · (40 · q_0^90 · (1+ε₁)) = 120 · q_0^90 · (1+ε₁)
   unfold N_v
-  rw [show (3 * v_ew_real / m_e_real : ℝ)
-        = 3 * (v_ew_real / m_e_real) from by ring,
-      h_ratio]
+  have hsplit : (3 * v_ew_real / m_e_real : ℝ)
+      = 3 * (v_ew_real / m_e_real) := by ring
+  rw [hsplit, h_ratio]
   ring
 
 end QOU.Observations
