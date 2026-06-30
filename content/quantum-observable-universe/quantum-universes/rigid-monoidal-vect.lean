@@ -1,5 +1,7 @@
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Category.Basic
+import Mathlib.Data.Nat.Basic
+import Mathlib.Order.Basic
 
 
 /-!

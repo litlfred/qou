@@ -1,4 +1,4 @@
-import QOU.Basic
+import QOU.QuantumObservableUniverse.Structures
 
 
 /-!
@@ -15,7 +15,11 @@ LaTeX: `\label{prop:categorical-hodge-star-exists}`
 - [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
 -/
 
+open CategoryTheory MonoidalCategory
+
 namespace QOU
+
+universe u v
 
 /-- **Existence of the categorical Hodge star.**
 

@@ -54,7 +54,10 @@ def su2FormDims : SU2FormDimensions where
   rank_one := rfl
   rank_two := rfl
   rank_three := rfl
-  rank_high := by intro k hk; omega
+  rank_high := by
+    intro k hk
+    obtain ⟨n, rfl⟩ : ∃ n, k = n + 4 := ⟨k - 4, by omega⟩
+    rfl
 
 /-- Total dimension: Σ rank(Ωᵏ) = 1 + 3 + 3 + 1 = 8 = 2³. -/
 theorem su2_total_form_dim :
