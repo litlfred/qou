@@ -5,7 +5,7 @@ At low curvature-rank k ≤ 3, the Wedderburn weight ~w_λ pulls
 back through the distinguished hyperbolic-knot ideal e_{K_k*}
 via the center inclusion Z(H_3) ↪ Z(H_n).
 
-At k = 3: K_3* = 6_1 (chirality channel, named in
+At k = 3: K_3* = 4_1 (chirality channel, named in
 prop:plancherel-term-7-formulation).
 At k = 1, k = 2: K_1*, K_2* are OPEN structural questions.
 
@@ -36,19 +36,19 @@ namespace QOU.BraidKnot
     - `central_projector_value`: real-valued amplitude of the
       central projector e_K at a partition (proxy for the full
       Hecke-algebra projector in the abstract setting).
-    - `knot_label`: the name of the distinguished knot ("6_1"
+    - `knot_label`: the name of the distinguished knot ("4_1"
       at k = 3; pending for k = 1, k = 2). -/
 structure DistinguishedKnotIdeal (k : ℕ) where
   central_projector_value : ℝ
   knot_label : String
 
 /-- The distinguished chirality-channel ideal at k = 3:
-    6_1 (Stevedore knot), named in
+    4_1 (figure-eight knot), named in
     prop:plancherel-term-7-formulation. -/
-noncomputable def chirality_ideal_6_1 : DistinguishedKnotIdeal 3 :=
+noncomputable def chirality_ideal_4_1 : DistinguishedKnotIdeal 3 :=
   { central_projector_value := 1, -- placeholder for the
                                   -- abstract projector value
-    knot_label := "6_1" }
+    knot_label := "4_1" }
 
 /-- The classical (uniform) Wedderburn weight at depth k:
     dim_q²(λ) / [n]_q!.  Defined unconditionally as a closed-form
@@ -120,7 +120,7 @@ class DepthStratifiedFrobeniusReciprocity where
     and discharging the q = 1 case for all k. -/
 noncomputable instance : DepthStratifiedFrobeniusReciprocity where
   knot_ideal_at_k k _h := match k with
-    | 3 => chirality_ideal_6_1
+    | 3 => chirality_ideal_4_1
     | _ => { central_projector_value := 0,
               knot_label := "?" }
   fr_pullback_at_low_k q _k := q = 1
@@ -143,16 +143,16 @@ theorem fr_simpler_forms_variance_records :
 
 /-! ## Properties of the chirality ideal at k = 3 -/
 
-/-- The chirality ideal at k = 3 is labelled "6_1". -/
-theorem chirality_ideal_6_1_label :
-    chirality_ideal_6_1.knot_label = "6_1" := by
+/-- The chirality ideal at k = 3 is labelled "4_1". -/
+theorem chirality_ideal_4_1_label :
+    chirality_ideal_4_1.knot_label = "4_1" := by
   rfl
 
 /-- The chirality ideal at k = 3 has central projector value 1
     (placeholder; the full Hecke-algebra projector requires the
     q-Hecke representation infrastructure). -/
-theorem chirality_ideal_6_1_value :
-    chirality_ideal_6_1.central_projector_value = 1 := by
+theorem chirality_ideal_4_1_value :
+    chirality_ideal_4_1.central_projector_value = 1 := by
   rfl
 
 /-! ## FR-weight algebraic properties -/
