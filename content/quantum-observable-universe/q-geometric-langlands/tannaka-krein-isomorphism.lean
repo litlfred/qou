@@ -30,7 +30,7 @@ axiom RepLoc : Type (u + 1)
 -- Ref: [deligne1990] Catégories tannakiennes, in The Grothendieck Festschrift II, 111-195 (comodule category over reconstructed Hopf algebra)
 axiom ComodH : Type (u + 1)
 
-/-- **Tannaka–Krein duality for the substrate.**
+/- **Tannaka–Krein duality for the substrate.**
 
     The category of localized representations Rep_loc(A) is equivalent
     to the category of comodules Comod(H_ξ) over the Hopf algebra
