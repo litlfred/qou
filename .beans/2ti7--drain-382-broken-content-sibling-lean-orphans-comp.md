@@ -306,3 +306,17 @@ The 2026-06-28 compile-sweep backlog is therefore **complete**. The
 this list does not need re-running unless a future audit widens the scope
 (e.g. sweeping content siblings created after 2026-06-28, which are not in
 `genuine.txt`).
+
+## 2026-06-30 — full-corpus widen-sweep confirms 0 broken (beyond the snapshot)
+
+To check for breakage the 2026-06-28 snapshot could not cover (siblings
+green-at-audit that later regressed, or files created since), swept the
+**579** content-sibling `.lean` files NOT in `genuine.txt` (the full
+current set is 960; the 381 genuine paths were already re-verified above).
+Result: **0 genuine fails** (441 pass + 138 neutral-skip for cache-cone
+misses — files importing library modules outside the restored olean
+subset, not defects).
+
+So the **entire 960-file content-sibling corpus compiles standalone**
+on current `main`. No latent breakage outside the audit list. 2ti7 is
+complete in the strong sense (whole corpus, not just the snapshot).
