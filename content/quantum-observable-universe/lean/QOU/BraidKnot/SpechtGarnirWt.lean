@@ -317,4 +317,54 @@ theorem colWt_lt_of_two_column {t : Tableau μ}
     rw [heq]; exact hp
   · exact fun h => hne h.symm
 
+/-! ## Piece B (geometric): the all-`B`<all-`A` bottom-heaviness
+
+The mathematical heart of the Garnir `hbh` hypothesis. At a row-violation in a
+column-standard tableau, the column-`j` Garnir cells `A` hold the `|A|` *largest*
+labels of `X = A ∪ B` (every `B`-label `<` every `A`-label). Abstractly: if `A`
+is the "top" subset of `S` — every element of `S` outside `A` is smaller than
+every element of `A` — then any equal-size subset `A' ⊆ S` is **more
+bottom-heavy** (`#(A ∩ [0,m)) ≤ #(A' ∩ [0,m))` for all `m`). This is the
+combinatorial core; the Garnir reindex turns `hbh` into exactly this with
+`A' = σ(A)`. -/
+
+/-- **A "top" subset is the least bottom-heavy.** If every element of `S` outside
+`A` is `<` every element of `A`, then any equal-cardinality subset `A' ⊆ S`
+captures at least as many elements below each threshold `m`. -/
+theorem bottomHeavy_of_top_subset {n : ℕ} (S A A' : Finset (Fin n))
+    (hA'S : A' ⊆ S) (hcard : A'.card = A.card)
+    (htop : ∀ a ∈ A, ∀ s ∈ S, s ∉ A → (s : ℕ) < (a : ℕ)) (m : ℕ) :
+    (A.filter (fun l : Fin n => (l : ℕ) < m)).card ≤ (A'.filter (fun l : Fin n => (l : ℕ) < m)).card := by
+  classical
+  have key : (A'.filter (fun l : Fin n => ¬ (l : ℕ) < m)).card
+      ≤ (A.filter (fun l : Fin n => ¬ (l : ℕ) < m)).card := by
+    rcases A.eq_empty_or_nonempty with hAe | hAne
+    · have hA' : A' = ∅ := Finset.card_eq_zero.mp (by rw [hcard, hAe]; rfl)
+      rw [hA', hAe]
+    · rcases le_or_gt m (A.min' hAne : ℕ) with hmt | hmt
+      · have hAfull : A.filter (fun l : Fin n => ¬ (l : ℕ) < m) = A := by
+          apply Finset.filter_true_of_mem
+          intro a ha
+          have : (A.min' hAne : ℕ) ≤ (a : ℕ) := A.min'_le a ha
+          omega
+        rw [hAfull]
+        calc (A'.filter (fun l : Fin n => ¬ (l : ℕ) < m)).card ≤ A'.card := Finset.card_filter_le _ _
+          _ = A.card := hcard
+      · apply Finset.card_le_card
+        intro s hs
+        rw [Finset.mem_filter] at hs ⊢
+        obtain ⟨hsA', hsm⟩ := hs
+        refine ⟨?_, hsm⟩
+        by_contra hsnA
+        have hlt := htop (A.min' hAne) (A.min'_mem hAne) s (hA'S hsA') hsnA
+        have hsm' : m ≤ (s : ℕ) := not_lt.mp hsm
+        omega
+  have eA : (A.filter (fun l : Fin n => (l : ℕ) < m)).card
+      + (A.filter (fun l : Fin n => ¬ (l : ℕ) < m)).card = A.card :=
+    Finset.filter_card_add_filter_neg_card_eq_card _
+  have eA' : (A'.filter (fun l : Fin n => (l : ℕ) < m)).card
+      + (A'.filter (fun l : Fin n => ¬ (l : ℕ) < m)).card = A'.card :=
+    Finset.filter_card_add_filter_neg_card_eq_card _
+  omega
+
 end QOU.BraidKnot.SpechtGarnirWt
