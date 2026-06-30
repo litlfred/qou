@@ -250,3 +250,26 @@ resume:
 **Three chapters now fully drained** (quantum-observable-universes 63, mass-theory 72,
 particle-interactions 37 stale-listed / 13 live). CI billing persists across all
 SHAs (2-4s, runner_id 0, no logs) — documented; hourly self-check-in armed for recovery.
+## 2026-06-30 wave-8 (PR #3167; 6-agent chapter swarm — non-overlapping chapters)
+
+Re-derived FIRST against the post-#3142 `main`: of the 382 `genuine.txt`
+paths only **52** were still live-broken (330 drained by prior waves).
+Excluding the 9 `quantum-observable-universes` files (owned by #3142
+wave-5, now merged) and the 9 `particle-interactions` files (#3142
+wave-7, now merged — taken from main on rebase, my redundant versions
+dropped), this PR drains the remaining **34** across:
+- quantum-universes 10, stochastic-mechanics 6, q-geometric-langlands 4,
+  predicted-spectra 3, brings-surface 3, climax-volume-mass 3 (incl. 2
+  cross-paper `import UGB.*` siblings), unital-groebner-bases 5.
+
+All re-verified `fail=0`; quality-gated (no vacuity / native_decide /
+fabricated axiom; 1 cited `sorry` in positive-definite-dagger). Fixed
+5 genuinely-false/inconsistent statements (seifert_genus_bound,
+hodge-su2 involutivity, R_q-vs-ℝ typing in topological-mass-formula /
+quantum-gap-collapse, vacuous ∃p,True in positive-definite-dagger).
+
+Plus two **infra fixes** so cross-paper content siblings verify
+correctly: `lean_leanpath` now includes the QOU/UGB/Fred2005
+paper-package build dirs, and `lean-verify-siblings.sh` neutral-skips
+`unknown module prefix '<paper-pkg>'` (cache-cone miss, scoped so a
+typo'd prefix still fails).
