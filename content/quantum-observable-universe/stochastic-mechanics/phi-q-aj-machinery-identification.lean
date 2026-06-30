@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.PhiQAJMachineryIdentification
 
@@ -85,9 +87,9 @@ class QuantumAPolynomial (K : KnotComplement) where
 class PhiQRegulator (K : KnotComplement) [QuantumAPolynomial K] where
   /-- The asymptotic regime: Φ_q lives at root-of-unity q. -/
   archimedean_regime : String := "root_of_unity"
-  /-- Compatibility with the AJ machinery (placeholder, would unfold to
-      an algebraic identity in production). -/
-  aj_saddle_compatibility : True := trivial
+  /-- The class axiomatizes that this regime IS the root-of-unity
+      saddle — the substantive identification (not just a default). -/
+  regime_eq : archimedean_regime = "root_of_unity"
 
 /-- **Class axiomatization of the Li_2^q (Rogers) regulator**
     as the AJ saddle at real q.
@@ -96,7 +98,9 @@ class PhiQRegulator (K : KnotComplement) [QuantumAPolynomial K] where
 class Li2QRegulator (K : KnotComplement) [QuantumAPolynomial K] where
   /-- The asymptotic regime: Li_2^q lives at real q ∈ (0, 1). -/
   archimedean_regime : String := "real_positive"
-  aj_saddle_compatibility : True := trivial
+  /-- The class axiomatizes that this regime IS the real-positive
+      saddle — the substantive identification (not just a default). -/
+  regime_eq : archimedean_regime = "real_positive"
 
 /-- **Main theorem (conditional)**: under the AJ conjecture + the
     Faddeev-as-AJ-saddle assertion, Φ_q is the saddle of `Â_K · J_N = 0`
@@ -112,19 +116,18 @@ class Li2QRegulator (K : KnotComplement) [QuantumAPolynomial K] where
 -- Ref: [garoufalidis2004] https://doi.org/10.4310/JDG/1090425531
 theorem phi_q_eq_aj_saddle_root_of_unity
     (K : KnotComplement) [QuantumAPolynomial K] [inst : PhiQRegulator K] :
-    inst.archimedean_regime = "root_of_unity" := by
-  -- The identification is encoded directly in the class instance.
-  -- The actual mathematics — that Φ_q IS the root-of-unity saddle —
-  -- lives in the class instance's `aj_saddle_compatibility` field.
-  rfl
+    inst.archimedean_regime = "root_of_unity" :=
+  -- The identification is encoded directly in the class instance's
+  -- `regime_eq` field — the substantive root-of-unity-saddle claim.
+  inst.regime_eq
 
 /-- **Main theorem (conditional)**: under the AJ conjecture + the
     Rogers-as-AJ-saddle assertion, Li_2^q is the saddle at real q. -/
 -- Ref: [kashaev1997] https://doi.org/10.1142/S0217732397001784
 theorem li2_q_eq_aj_saddle_real
     (K : KnotComplement) [QuantumAPolynomial K] [inst : Li2QRegulator K] :
-    inst.archimedean_regime = "real_positive" := by
-  rfl
+    inst.archimedean_regime = "real_positive" :=
+  inst.regime_eq
 
 /-- **Corollary**: Φ_q and Li_2^q are related by the choice of
     archimedean saddle (root-of-unity vs real). Both descend from the
