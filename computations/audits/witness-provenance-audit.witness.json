@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-30T23:48:13.167541+00:00",
-  "commitSha": "95208e059760377d7ea9ffb24c34b9b630eccfa2",
+  "computedAt": "2026-06-30T23:59:13.930979+00:00",
+  "commitSha": "452abd7e44f5e87f0702064abb1ee04424dbc6dd",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 274,
+      "computed": 276,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 12,
+  "durationMs": 13,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
@@ -47,12 +47,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 1538,
-      "prov_ok": 1208,
+      "total_scanned": 1544,
+      "prov_ok": 1212,
       "prov_audit_exempt": 55,
-      "prov_missing": 274,
+      "prov_missing": 276,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.8211963589076723
+      "completeness_ratio": 0.8205958549222798
     },
     "by_verdict": {
       "PROV_OK": [
@@ -3409,6 +3409,10 @@
           "missing_fields": []
         },
         {
+          "witness": "keystone-colored-sigma235-wrt.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "khovanov-at-q0-probe.witness.json",
           "missing_fields": []
         },
@@ -4553,11 +4557,23 @@
           "missing_fields": []
         },
         {
+          "witness": "lever1-binding-monodromy-hyperbolicity.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "lever1-color-eq-monodromy-integrality.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "lever1-color-sigma-geometry-probe.witness.json",
           "missing_fields": []
         },
         {
           "witness": "lever1-descartes-eq-qfamily-geometry.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "lever1-lambda-sw-no-shortcut.witness.json",
           "missing_fields": []
         },
         {
@@ -4939,6 +4955,14 @@
         },
         {
           "witness": "binding-alpha-shift-witness.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "binding-bar-even-odd-probe.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
@@ -5473,6 +5497,22 @@
           ]
         },
         {
+          "witness": "figure-eight-aj-operator.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "figure-eight-kashaev-volume.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
           "witness": "forward-ref-classification.witness.json",
           "missing_fields": [
             "engine",
@@ -5849,6 +5889,14 @@
         },
         {
           "witness": "mass-formula-6term.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "meson-gen3-eta-phi.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
@@ -6641,14 +6689,6 @@
           ]
         },
         {
-          "witness": "lever1-binding-monodromy-hyperbolicity.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "lever1-bring-period-trB.witness.json",
           "missing_fields": [
             "engine",
@@ -6673,23 +6713,7 @@
           ]
         },
         {
-          "witness": "lever1-color-eq-monodromy-integrality.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "lever1-habiro-element-fit.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "lever1-lambda-sw-no-shortcut.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
@@ -6906,6 +6930,14 @@
         },
         {
           "witness": "wlambda-ladder-higher-rungs.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "xi-ell-faddeev-phi-q-probe.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",

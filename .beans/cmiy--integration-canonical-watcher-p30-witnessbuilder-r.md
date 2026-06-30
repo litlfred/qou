@@ -62,3 +62,10 @@ Remaining raw-emit scripts need per-script handling: multi-emit (≥3 witnesses)
 flat-assertions (→ stamp), many-consumer (restructure risk), slow/Hecke regen
 (canonical-env), or NOFILE (would add a witness, not fix one). Future batches
 are the harder tail the bean's deferral anticipated.
+## 2026-06-30 — batch 5 (3 scripts, stamp — the assertion-bearing case)
+First "harder tail" batch: 3 assertion-bearing substrate/ probes migrated via
+stamp_staleness_metadata (NOT wrap_legacy, which drops flat assertions):
+lever1_lambda_sw_no_shortcut, lever1_color_eq_monodromy_integrality,
+lever1_binding_monodromy_hyperbolicity. Each: exit 0, PROV_OK, assertions
+preserved, original keys kept. (lambda_sw also: fixed a fragile cwd-relative
+output path → os.path.dirname(__file__).)

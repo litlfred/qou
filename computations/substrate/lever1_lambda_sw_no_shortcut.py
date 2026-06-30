@@ -95,8 +95,14 @@ witness = {
         "to recover the real-holonomy 2x2 B with tr=2.6424. No fit; nothing wired."
     ),
 }
-out = os.path.join("computations", "substrate", "lever1-lambda-sw-no-shortcut.witness.json")
-with open(out, "w") as f: json.dump(witness, f, indent=2)
+from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+# Payload carries a flat `assertions` list → stamp (not wrap_legacy) preserves it.
+WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="sympy")
+witness["scriptFile"] = os.path.basename(__file__)
+out = os.path.join(os.path.dirname(__file__), "lever1-lambda-sw-no-shortcut.witness.json")
+with open(out, "w", encoding="utf-8") as f:
+    json.dump(witness, f, indent=2)
+    f.write("\n")
 
 print(f"tau_seed (forced by wired anchors) = {results['tau_seed_forced_by_wired_anchors']}")
 print(f"  integer? {results['tau_seed_is_integer']}   nearest {results['nearest_integer']}   golden tau(phi^2)={results['golden_tau_phi2']}")
