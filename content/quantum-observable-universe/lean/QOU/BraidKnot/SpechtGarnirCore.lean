@@ -171,6 +171,22 @@ theorem antisym_eq_zero (H : Subgroup (Perm (Fin (nOf μ)))) [Fintype ↥H]
     show (σ : Perm (Fin (nOf μ))) * τ * τ = (σ : Perm (Fin (nOf μ)))
     rw [mul_assoc, hτ2, mul_one]
 
+/-- **Per-tabloid Garnir vanishing.** If a sign-`(−1)` involution `τ ∈ H` carries
+the tableau `s` to a *row-equivalent* one (`{τ·s} = {s}` as tabloids), the
+antisymmetriser kills the basis tabloid: `b_H ⟦s⟧ = 0`. This is `antisym_eq_zero`
+specialised to a basis vector `⟦s⟧`, with the fixing hypothesis supplied by a row
+transposition. It reduces the full Garnir vanishing `b_{S_X} e_t = 0` to the
+pigeonhole "for every `π ∈ C_t` there is a row transposition in `S_X` fixing the
+tabloid `{π·t}`" (because `|X|` exceeds the relevant column length). -/
+theorem antisym_of_eq_zero (H : Subgroup (Perm (Fin (nOf μ)))) [Fintype ↥H]
+    {τ : Perm (Fin (nOf μ))} (hτ : τ ∈ H) (hτ2 : τ * τ = 1)
+    (hsgn : Equiv.Perm.sign τ = -1) (s : Tableau μ)
+    (hrow : Tabloid.mk (τ • s) = Tabloid.mk s) :
+    antisym (k := k) H (Mtab.of (k := k) s) = 0 := by
+  apply antisym_eq_zero (k := k) H hτ hτ2 hsgn
+  rw [Mtab.rep_of]
+  simp only [Mtab.of, hrow]
+
 /-! ## 3. The column collapse `b_K e_t = |K| · e_t`
 
 The bridge from the abstract antisymmetriser to a *Garnir element*: when the
