@@ -174,12 +174,25 @@ def main() -> int:
         chi_at_q0[p] = mp.mpf(chi)
         print(f"    χ^{p}(β_D) = {chi:+.10f}")
 
-    # Cross-validate Σ_λ y_λ · χ^λ(β_D) ≈ 0.3883
+    # Cross-validate Σ_λ y_λ · χ^λ(β_D) against the canonical deuteron
+    # Markov trace |tr_M(β_D)| loaded from markov-peel-atomic-tr-m.witness.json
+    # (leading-δ canonical value).  The prior reference was a hardcoded
+    # 0.3882864715477132 sourced from wenzl_n6_closed_form.witness.json — now
+    # DEPRECATED (computations/_deprecated/); it disagreed with the canonical
+    # value by ~1.8e-4, which spuriously failed this assertion.  Load from the
+    # canonical witness so the reference cannot go stale again.
     tr_M_check = sum(y_at_q0[p] * chi_at_q0[p] for p in parts_6)
+    _peel_path = here / "markov" / "markov-peel-atomic-tr-m.witness.json"
+    with open(_peel_path) as _pf:
+        _peel = json.load(_pf)
+    canon_tr_M_D = mp.mpf(str(next(
+        r["tr_M_at_q0"] for r in _peel["data"]["results"]
+        if r["atom"] == "deuteron"
+    )))
     print(f"\n  Cross-validation:")
-    print(f"    Σ_λ y_λ · χ^λ(β_D) = {mp.nstr(tr_M_check, 12)}")
-    print(f"    Closed-form ref    = 0.3882864715477132")
-    err_rel = abs(tr_M_check - mp.mpf("0.3882864715477132")) / mp.mpf("0.3882864715477132")
+    print(f"    Σ_λ y_λ · χ^λ(β_D)               = {mp.nstr(tr_M_check, 12)}")
+    print(f"    canonical |tr_M(β_D)| (markov-peel) = {mp.nstr(canon_tr_M_D, 12)}")
+    err_rel = abs(tr_M_check - canon_tr_M_D) / canon_tr_M_D
     print(f"    rel error          = {float(err_rel):.2e}")
 
     # c_ℓ(λ) per partition × level ℓ ∈ {0..6}
@@ -254,8 +267,8 @@ def main() -> int:
         "and χ^λ(β_D) computed numerically by applying the deuteron's "
         "atom_braid_word_3A(1,1) (23 crossings) to Hoefsmit seminormal "
         "matrices for each partition.  Cross-validates Σ_λ y_λ·χ^λ(β_D) "
-        "against the closed-form |tr_M(β_D)| = 0.388 from "
-        "wenzl_n6_closed_form.witness.json.  Reports Σ_ℓ u^{(ℓ)*}(β_D) "
+        "against the canonical |tr_M(β_D)| from "
+        "markov-peel-atomic-tr-m.witness.json (leading δ).  Reports Σ_ℓ u^{(ℓ)*}(β_D) "
         "and compares to CODATA M_D, Z·m_p+N·m_n, AME B(D)."
     )
     w.set_content_block("prop:mass-formula-iterative-lp-dual")
