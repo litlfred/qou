@@ -57,10 +57,6 @@ def main() -> int:
     m_n_derived_3input = M_P_MEV + M_E_MEV + mp.mpf(repr(_ec.Q_NEUTRON_MEV))
     # Deuteron CODATA from the codata_constants registry (no inline literal).
     from codata_constants import M_D_MEV_VALIDATION
-# --- injected by 3-input anomaly fixer ---
-import experimental_constants as _ec_local_3in
-m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
-# -----------------------------------------
     M_D_MEV = M_D_MEV_VALIDATION
     B_d = M_P_MEV + m_n_derived_3input - M_D_MEV
     print(f"[CODATA]")

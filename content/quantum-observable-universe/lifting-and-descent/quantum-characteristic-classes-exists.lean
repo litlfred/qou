@@ -1,4 +1,5 @@
 import QOU.Basic
+import QOU.LiftingDescent.QuantumCharacteristicClassDisplay
 
 
 /-!
@@ -23,7 +24,7 @@ namespace QOU
     recursive brane tower, arising as the obstruction class of a
     central gerbe extension (Giraud's classification). -/
 -- Ref: [yekutieli2010]
-theorem QuantumCharClasses.exists : Nonempty QuantumCharacteristicClass :=
+theorem QuantumCharClasses.exists : Nonempty QuantumCharacteristicClass.{0} :=
   -- Trivial witness with ObstructionSpace = ℤ (AddCommGroup auto-synth)
   -- and zero obstruction class. The intended Giraud / Čech 2-cocycle
   -- witness is sharper but requires gerbe infrastructure not yet in

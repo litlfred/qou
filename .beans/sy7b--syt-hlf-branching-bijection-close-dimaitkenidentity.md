@@ -85,6 +85,25 @@ dimAitkenIdentity_le4/_5/_6) — all axiom-free kernel decide.
 
 Origin: PR #2984, branch claude/lean-proof-sorries-lyxk3h.
 
+## (A) CLOSED — gnwHookIdentity sorry-free (2026-06-29, PR #3115)
+
+`claude/gnw-hookid-removecorner-2026-06-29` (#3115) discharges the **sole remaining
+GNW gap** `SYTHookGNW.gnwHookIdentity` SORRY-FREE (lean-direct exit 0), closing
+obligation (A) on the GNW route. The per-corner hook ratio + assembly:
+- R1 `betaProdGap_ratio`, R2 `prodHooks_ratio` (per-corner hook ratio, non-row-drop),
+  R3 `prodHooks_removeCorner` (filter-zero invariance ⇒ row-drop corner), all in
+  `SYTHookGNWRatio.lean`.
+- R4 assembly `gnwHookIdentity_proof`: sum over corners (non-corners vanish via
+  `β_c−1=β_{c+1}`) ⇒ `betaLagrange_range` ⇒ `sz l`, bridging the corner list-sum to
+  the `det_vandermonde`-keystone β-Lagrange identity.
+
+So the GNW route is fully sorry-free end-to-end: `cornerRecursion` +
+`gnwHookIdentity` ⟹ `numSYTenum_eq_dimHLF_gnw` (general Frame–Robinson–Thrall HLF)
+⟹ `dimAitkenIdentity_of_gnw` — discharging the Mathlib-blocked `dimAitkenIdentity`
+with no Specht/RSK/determinant infra. Remaining to fully retire the
+`SYTHookFormulaGeneral.dimAitkenIdentity` sorry itself: route it through
+`dimAitkenIdentity_of_gnw` (a follow-up wiring edit).
+
 ## PR #2986 status (2026-06-29, rebased + keystone-swapped)
 
 Honoring the owner determinant ruling: SYTBetaLagrange now rests on

@@ -37,6 +37,7 @@ from mpmath import mp
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0, Q_INV as qi, HA as h, q_int
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
+from experimental_constants import m_n_derived_3input  # noqa: E402
 from witness_base import WitnessBuilder
 
 z = 1.0/(q0**0.5+qi**0.5)
@@ -50,10 +51,6 @@ w_a = q2 / denom_w
 
 # Molecular energy scale
 from hecke_core import alpha_em, E_HARTREE_EV as E_hartree_eV, E_MOL as E_mol
-# --- injected by 3-input anomaly fixer ---
-import experimental_constants as _ec_local_3in
-m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
-# -----------------------------------------
 TWO_Q = q0 + qi
 
 

@@ -45,6 +45,7 @@ from mpmath import mp
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q, Q_INV, HA, q_int, HBAR_Q, Q_ERR
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
+from experimental_constants import m_n_derived_3input  # noqa: E402
 from witness_base import WitnessBuilder
 
 # ══════════════════════════════════════════════════════════════
@@ -58,10 +59,6 @@ me = M_E_MEV
 # Knot volumes from canonical knot_volumes module (mpmath 50dps).
 # See PR #781 knot-vol propagation.
 from knot_volumes import CATALAN_G, VOL_BORROMEAN  # noqa: E402
-# --- injected by 3-input anomaly fixer ---
-import experimental_constants as _ec_local_3in
-m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
-# -----------------------------------------
 ALPHA = me * VOL_BORROMEAN  # binding scale ≈ 3.744 MeV
 
 # Per-nucleon channel sums from the T_{2,3} eigendecomposition

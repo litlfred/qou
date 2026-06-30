@@ -59,14 +59,14 @@ def ColorTubeCoordinates.colorVector {R : Type*} [Ring R]
 /-- The color tube coordinates recover the resolvents from z:
     wₖ = cₖ + z for each color coordinate. -/
 -- Ref: [manuscript] Chapter 5, §Color tube coordinates
-theorem color_recovers_resolvent {R : Type*} [Ring R]
+theorem color_recovers_resolvent {R : Type*} [CommRing R]
     (c : ColorTubeCoordinates R) :
     c.r + c.z = c.w₂ ∧ c.g + c.z = c.w₃ ∧ c.b + c.z = c.w₄ := by
   refine ⟨?_, ?_, ?_⟩ <;> simp [c.r_eq, c.g_eq, c.b_eq] <;> ring
 
 /-- The sum of all four shifted coordinates equals (w₁ + w₂ + w₃ + w₄) − 4z. -/
 -- Ref: [manuscript] Chapter 5, §Color tube coordinates
-theorem shifted_sum {R : Type*} [Ring R] (c : ColorTubeCoordinates R) :
+theorem shifted_sum {R : Type*} [CommRing R] (c : ColorTubeCoordinates R) :
     c.σ + c.r + c.g + c.b = (c.w₁ + c.w₂ + c.w₃ + c.w₄) - 4 * c.z := by
   rw [c.σ_eq, c.r_eq, c.g_eq, c.b_eq]
   ring

@@ -27,6 +27,7 @@
 # both halves are polynomial identities in q over a Field.
 -/
 
+import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring

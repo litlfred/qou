@@ -5,15 +5,15 @@
   In QOU units, temperature T_q = ℏ_q already has units of energy,
   so k_B = 1 (no conversion needed).
 
-**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-Part of the formal proof chain. The parameter `q` is the canonical
-indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
-numerical evaluation.
+  Ground ring: this is the archimedean specialisation over `ℝ`
+  (AGENTS.md §7c). The thermal quantities below specialise the
+  generic combinatorial content to `q : M → ℝ`, since the positivity
+  and reciprocal identities used here are archimedean. Specialise the
+  substrate field to `q₀ ≈ 1.1097` for numerical evaluation.
 -/
 import QOU.QuantumObservableUniverse
 import QOU.MathConstants
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
+import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
@@ -21,12 +21,7 @@ import Mathlib.Tactic.Positivity
 
 namespace QOU.Information
 
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
-abbrev R_q := LaurentPolynomial ℤ
-def q_param : R_q := LaurentPolynomial.T 1
-def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **Thermal energy** at a point p ∈ M.
     The product k_B · T_phys in classical physics corresponds to ℏ_q
@@ -34,7 +29,7 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
     the quantum temperature: thermalEnergy = T_q = ℏ_q.
     Label: prop:boltzmann-constant -/
 noncomputable def thermalEnergy {M : Type*} (sp : SubstrateParameter M)
-    (p : M) : R_q :=
+    (p : M) : ℝ :=
   quantumPlanckConstant sp p
 
 /-- The canonical ensemble identity: β · T = 1.
@@ -50,7 +45,6 @@ theorem beta_times_thermalEnergy {M : Type*} (sp : SubstrateParameter M)
   have hq_ne : sp.field p ≠ 0 := by linarith
   have hq1_ne : sp.field p - 1 ≠ 0 := by linarith
   field_simp
-  ring
 
 /-- Inverse temperature is the reciprocal of the thermal energy. -/
 theorem inverse_temperature_eq {M : Type*} (sp : SubstrateParameter M)
@@ -66,30 +60,30 @@ theorem inverse_temperature_eq {M : Type*} (sp : SubstrateParameter M)
     This is the equation PV = N k_B T with k_B = 1. -/
 theorem ideal_gas_thermal {M : Type*} (sp : SubstrateParameter M)
     (p : M) (N : ℕ) :
-    (N : R_q) * thermalEnergy sp p =
-    (N : R_q) * quantumPlanckConstant sp p := by
-  unfold thermalEnergy
+    (N : ℝ) * thermalEnergy sp p =
+    (N : ℝ) * quantumPlanckConstant sp p := by
+  rfl
 
 /-- The thermal energy is positive when q > 1. -/
 theorem thermalEnergy_pos {M : Type*} (sp : SubstrateParameter M)
     (p : M) (hq : sp.field p > 1) :
     0 < thermalEnergy sp p := by
   unfold thermalEnergy quantumPlanckConstant
-  have hq_pos : (0 : R_q) < sp.field p := by linarith
+  have hq_pos : (0 : ℝ) < sp.field p := by linarith
   have hinv_lt : (sp.field p)⁻¹ < 1 := by
-    rw [inv_lt_one_iff_of_pos hq_pos]; linarith
-  linarith [inv_pos.mpr hq_pos]
+    rw [inv_lt_one₀ hq_pos]; exact hq
+  linarith
 
 /-- **Gas constant** (leading order).
     R_q ≈ ℏ_q³ / Vol(B₃) where Vol(B₃) is the Borromean volume.
     Since k_B = 1, R = N_A where N_A = ℏ_q² / Vol(B₃). -/
 noncomputable def gasConstant {M : Type*} (sp : SubstrateParameter M)
-    (p : M) (borromeanVolume : R_q) : R_q :=
+    (p : M) (borromeanVolume : ℝ) : ℝ :=
   (quantumPlanckConstant sp p) ^ 3 / borromeanVolume
 
 /-- The gas constant is positive when q > 1 and Borromean volume is positive. -/
 theorem gasConstant_pos {M : Type*} (sp : SubstrateParameter M)
-    -- (p : M) (V_B : R_q) (hq : sp.field p > 1) (hV : 0 < V_B) :  -- (archimedean; not meaningful over R_q)
+    (p : M) (V_B : ℝ) (hq : sp.field p > 1) (hV : 0 < V_B) :
     0 < gasConstant sp p V_B := by
   unfold gasConstant
   apply div_pos
@@ -99,19 +93,20 @@ theorem gasConstant_pos {M : Type*} (sp : SubstrateParameter M)
 
 /-- The gas constant vanishes at classicality. -/
 theorem gasConstant_classical {M : Type*} (sp : SubstrateParameter M)
-    (p : M) (V_B : R_q) (hq : sp.field p = 1) :
+    (p : M) (V_B : ℝ) (hq : sp.field p = 1) :
     gasConstant sp p V_B = 0 := by
   unfold gasConstant quantumPlanckConstant
   rw [hq]; simp
 
 /-- The gas constant factors as N_A · ℏ_q where N_A = ℏ_q² / Vol(B₃). -/
 theorem gasConstant_factored {M : Type*} (sp : SubstrateParameter M)
-    (p : M) (V_B : R_q) (hV : V_B ≠ 0) :
+    (p : M) (V_B : ℝ) (hV : V_B ≠ 0) :
     gasConstant sp p V_B =
     ((quantumPlanckConstant sp p) ^ 2 / V_B) *
       thermalEnergy sp p := by
   unfold gasConstant thermalEnergy
   field_simp
-  ring
+
+end
 
 end QOU.Information

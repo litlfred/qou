@@ -1,4 +1,5 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 
 /-!
@@ -55,7 +56,7 @@ noncomputable def weierstrass_discriminant (p r : ℝ) : ℝ :=
 noncomputable def j_invariant (p r : ℝ) : ℝ :=
   -1728 * (4 * p) ^ 3 / weierstrass_discriminant p r
 
-/-- **Descartes elliptic curve** (Proposition):
+/- **Descartes elliptic curve** (Proposition):
 
     The color elliptic fiber of Bring's surface at spacetime ratio
     z = s - s⁻¹ (s = √q) is the elliptic curve E_q with Weierstrass
@@ -93,9 +94,8 @@ theorem classical_limit_p : weierstrass_p 1 = 2/3 := by
   -- Ref: [manuscript] §5/descartes-elliptic-curve
   -- At q = 1: first term = 2·(1-1+1)/(3·1) = 2/3, second term = 0/(3·1) = 0.
   simp [one_rpow]
-  ring
 
-/-- The golden ratio degeneration: r(q) has factor (s² + s - 1)
+/- The golden ratio degeneration: r(q) has factor (s² + s - 1)
     which vanishes at s = 1/φ, i.e. q = 1/φ² = (3 - √5)/2. -/
 -- Ref: [manuscript] §5/descartes-elliptic-curve
 /-- **External axiom (manuscript §5): golden-ratio degeneration of

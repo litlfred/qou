@@ -82,6 +82,7 @@ from pyhecke.gram import (  # noqa: E402
     _Q_FRAC, _QI_FRAC,
 )
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
+from experimental_constants import m_n_derived_3input  # noqa: E402
 
 # Module-level cache for `_partition_table` — was at hecke_core.py
 # line 560 in the original; the carve-out missed it because the
@@ -2180,10 +2181,6 @@ def sdp_cross_channel_contribution(Z, N, k_cap=None, jet_max=None):
         k_cap = K_PARTITION_MAX
     try:
         from sdp_cross_channel import sdp_with_atom_observables
-# --- injected by 3-input anomaly fixer ---
-import experimental_constants as _ec_local_3in
-m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
-# -----------------------------------------
     except ImportError:
         return 0.0, []
 

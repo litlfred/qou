@@ -2,10 +2,10 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:q-reeb-flow-on-color-coords",
-//   lean: {
-//     ref: "qou:QOU.CategoricalReeb.QReebFlowOnColorCoords",
-//     validation: "not_checked",
-//   },
+  lean: {
+    ref: "qou:QOU.CategoricalReeb.QReebFlowOnColorCoords",
+    validation: "not_checked",
+  },
   title: "The $q$-Reeb flow in color-sector coordinates",
   tags: [
     "reeb-flow",

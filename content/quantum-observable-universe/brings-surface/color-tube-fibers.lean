@@ -20,9 +20,10 @@ numerical evaluation.
 
 namespace QOU.Brings
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -69,11 +70,15 @@ theorem color_tube_at_z_zero (c : R_q) :
   unfold colorTubeCubic
   ring
 
-/-- The constant term of the color tube cubic factors as
-    (4z+1)(z²+1) − z(z+1). More directly: 4z³+3z²+2z+1 = (2z+1)²(z) + 1,
-    but the cleanest identity is that it equals (z+1)⁴ − z⁴. -/
+/-- The constant term of the color tube cubic is the `X = z` evaluation
+    of the color cubic, written in its shifted-cubic form:
+    `4z³+3z²+2z+1 = z³ + (z+1)z² + (z²+z+1)z + (z³+z²+z+1)`. -/
 -- Ref: [manuscript] §5, Color fibration
 theorem constant_term_identity (z : R_q) :
-    4 * z ^ 3 + 3 * z ^ 2 + 2 * z + 1 = (z + 1) ^ 4 - z ^ 4 := by ring
+    4 * z ^ 3 + 3 * z ^ 2 + 2 * z + 1 =
+      z ^ 3 + (z + 1) * z ^ 2 + (z ^ 2 + z + 1) * z + (z ^ 3 + z ^ 2 + z + 1) := by
+  ring
+
+end
 
 end QOU.Brings

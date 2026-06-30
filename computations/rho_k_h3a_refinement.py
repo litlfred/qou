@@ -178,6 +178,7 @@ def _per_partition_symbolic(args):
 
 # ── Calibration anchors (CODATA) — centralised in codata_constants ──
 from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV, M_D_MEV  # noqa: E402
+from experimental_constants import m_n_derived_3input  # noqa: E402
 
 # ── Deuteron braid word (3A=6 strands) ─────────────────────────
 # Canonical convention (matches atomic-tr-m-mpfr-50dps.witness.json):
@@ -205,10 +206,6 @@ def deuteron_canonical_crossings():
     `mass_at_3A_proper.atom_braid_word_3A(Z=1, N=1)`.
     """
     from canonical_braid_crossings import atom_canonical_crossings
-# --- injected by 3-input anomaly fixer ---
-import experimental_constants as _ec_local_3in
-m_n_derived_3input = _ec_local_3in.M_P_MEV + _ec_local_3in.Q_NEUTRON_MEV + _ec_local_3in.M_E_MEV
-# -----------------------------------------
     return atom_canonical_crossings(1, 1)
 
 

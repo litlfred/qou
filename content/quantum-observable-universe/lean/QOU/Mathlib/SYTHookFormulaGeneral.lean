@@ -33,18 +33,18 @@ The classical beta-number proof factors HLF as **two** identities (`β_i = l[i] 
 
       numSYTenum l · betaFactProd l = (sz l)! · betaProdGap l.        (`dimAitkenIdentity`)
 
-  This is the **residual gap**: it is the Aitken/Frobenius determinant evaluation of the number of
-  standard tableaux, for which the pinned Mathlib has **no** infrastructure (no `Combinatorics.RSK`,
-  no Specht/Frobenius determinant).  It is stated here with a cited `sorry` (the honest "queued, not
-  yet proved" marker — §1a), exactly as `IdentityIHLFBridge.dimSYT_eq_dimHLF` carries the same gap.
+  Once the **residual gap** — the Aitken/Frobenius determinant evaluation, for which the pinned Mathlib
+  has no `Combinatorics.RSK`/Specht/Frobenius-determinant infrastructure — it is now **proved sorry-free**
+  via the Greene–Nijenhuis–Wilf **corner recursion** (no determinant infrastructure at all).
 
-## The conditional composition (sorry-free *given* (ii))
+## Where the closed (ii) and the general HLF live
 
-`numSYTenum_eq_dimHLF_of_aitken` derives the full HLF from (i) + (ii) **with no further sorry**:
-substitute (i) `betaFactProd = prodHooks · betaProdGap` into (ii), cancel the positive Vandermonde
-`betaProdGap` (`betaProdGap_pos`), obtaining the divisor-free HLF `numSYTenum l · prodHooks l = (sz l)!`,
-then divide.  So the general-`n` HLF is now **isolated to the single determinant identity (ii)** — the
-hook side and the entire composition are machine-checked.
+The corner-recursion infrastructure (`SYTListCorner`/`SYTCornerListConnection`) and the β-Lagrange
+Vandermonde keystone (`SYTHookGNWRatio`/`SYTBetaLagrange`) sit **downstream** of this file, so the
+canonical sorry-free statements live in `SYTHookGNW`: `SYTHookGNW.dimAitkenIdentity` (ii) and the
+general HLF `SYTHookGNW.numSYTenum_eq_dimHLF` (`= #SYT(λ) = dimHLF λ`).  The upstream inputs they consume
+— hook side (i) `prodHooks_mul_betaProdGap` and positivity `betaProdGap_pos` — are below, both
+sorry-free.  The `decide`-verified `dimAitkenIdentity_le4`/`_5`/`_6` remain as finite cross-checks.
 
 Pure combinatorics on `ℕ`; nothing archimedean; no fit.
 -/
@@ -82,28 +82,22 @@ theorem betaProdGap_pos (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) : 0 < be
   rw [Finset.mem_range] at hi
   exact betaGapProd_pos (l.getD i 0) (l.drop (i + 1)) (drop_le_getD l hl i hi)
 
-/-- **(ii) dimension side — the residual Aitken/Frobenius determinant identity (cited `sorry`).**
-`numSYTenum l · betaFactProd l = (sz l)! · betaProdGap l`, i.e. `#SYT(λ) = n!·∏(β_i−β_j)/∏β_i!`.
+/-! ## (ii) dimension side — the Aitken/Frobenius determinant identity (CLOSED, sorry-free, downstream)
 
-This is the only remaining gap of the general-`n` hook-length formula in this corpus.  It is the
-Aitken / Frobenius determinant evaluation `det(1/(β_i − k + j)!)` of the number of standard tableaux,
-equal by `Matrix.det_vandermonde` to `∏_{i<j}(β_i − β_j)/∏β_i!` times `n!`.  The pinned Mathlib carries
-no `Combinatorics.RSK` / Specht / Frobenius-determinant infrastructure, so this combinatorial identity
-is queued, not yet proved (mirrors `IdentityIHLFBridge.dimSYT_eq_dimHLF`). -/
-theorem dimAitkenIdentity (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (hpos : ∀ a ∈ l, 0 < a) :
-    numSYTenum l * betaFactProd l = (sz l).factorial * betaProdGap l := by
-  -- Ref: [macdonald1995] https://doi.org/10.1093/oso/9780198534891.001.0001 (Aitken/Frobenius
-  -- determinant for #SYT; §I.1, Ex. 1 and §I.5; HLF as Vandermonde / ∏β_i!).  Residual general-n gap.
-  --
-  -- The remaining obligation is exactly the SYT corner-removal *branching recursion*
-  -- `numSYTenum λ = Σ_{k removable corner} numSYTenum (λ⁻ᵏ)` for the brute-force enumerator, paired
-  -- with the β-number Lagrange identity for the closed form (a pure-algebraic strong induction on
-  -- `sz`).  The pinned Mathlib supplies neither the branching bijection nor any `#SYT` cardinality
-  -- lemma (no `Combinatorics.RSK`, no Specht/Frobenius determinant), so this is a from-scratch
-  -- formalization, deliberately not rushed.  The *exact* statement is `decide`-verified sorry-free for
-  -- every shape with `sz ≤ 6` immediately below (`dimAitkenIdentity_le4`/`_5`/`_6`): finite evidence
-  -- for the general identity, not a substitute for it.
-  sorry
+The dimension-side identity `numSYTenum l · betaFactProd l = (sz l)! · betaProdGap l`
+(`#SYT(λ) = n!·∏(β_i−β_j)/∏β_i!`) — once the residual general-`n` gap, the Aitken/Frobenius
+determinant `det(1/(β_i − k + j)!)` blocked by the pinned Mathlib's missing
+`Combinatorics.RSK`/Specht/Frobenius-determinant infrastructure — is now **proved sorry-free** via the
+Greene–Nijenhuis–Wilf **corner recursion**, with no determinant infrastructure at all.
+
+Because the corner-recursion infrastructure (`SYTListCorner`/`SYTCornerListConnection`) and the
+β-Lagrange Vandermonde keystone (`SYTHookGNWRatio`/`SYTBetaLagrange`) sit **downstream** of this file
+(they import it), the canonical sorry-free statement lives in `SYTHookGNW`:
+`SYTHookGNW.dimAitkenIdentity` (= `dimAitkenIdentity_of_gnw`) and the general HLF
+`SYTHookGNW.numSYTenum_eq_dimHLF` (= `numSYTenum_eq_dimHLF_gnw`).  The hook side (i)
+`prodHooks_mul_betaProdGap` and the positivity `betaProdGap_pos` above are the upstream inputs that
+identity consumes; the `decide`-verified `dimAitkenIdentity_le4`/`_5`/`_6` below are finite
+cross-checks of the same equation. -/
 
 /-- **Aitken identity, `decide`-verified for every shape of `sz ≤ 4` (sorry-free).**  The exact
 `dimAitkenIdentity` equation on a closed shape is a decidable `ℕ` computation; this discharges it for
@@ -121,43 +115,9 @@ set_option maxRecDepth 20000 in
 theorem dimAitkenIdentity_6 :
     ∀ l ∈ shapes6, numSYTenum l * betaFactProd l = (sz l).factorial * betaProdGap l := by decide
 
-/-- **Divisor-free HLF, conditional on the Aitken identity (ii) (sorry-free given (ii)).**
-`numSYTenum l · prodHooks l = (sz l)!`.  Substitutes (i) `betaFactProd = prodHooks · betaProdGap` into
-(ii) and cancels the positive Vandermonde `betaProdGap`. -/
-theorem numSYTenum_mul_prodHooks_of_aitken (l : List ℕ) (hl : List.Sorted (· ≥ ·) l)
-    (hpos : ∀ a ∈ l, 0 < a) :
-    numSYTenum l * prodHooks l = (sz l).factorial := by
-  have hi := prodHooks_mul_betaProdGap l hl
-  have hii := dimAitkenIdentity l hl hpos
-  have hpgpos := betaProdGap_pos l hl
-  -- numSYTenum * (prodHooks * betaProdGap) = (sz)! * betaProdGap
-  rw [← hi] at hii
-  -- hii : numSYTenum l * (prodHooks l * betaProdGap l) = (sz l)! * betaProdGap l
-  have : numSYTenum l * prodHooks l * betaProdGap l = (sz l).factorial * betaProdGap l := by
-    rw [mul_assoc]; exact hii
-  exact Nat.eq_of_mul_eq_mul_right hpgpos this
-
-/-- **General Frame–Robinson–Thrall hook-length formula, conditional on the Aitken identity (ii).**
-`numSYTenum l = dimHLF l = (∑l)! / ∏h_c`.  Sorry-free **given** `dimAitkenIdentity`; divides the
-divisor-free form by the positive hook product. -/
-theorem numSYTenum_eq_dimHLF_of_aitken (l : List ℕ) (hl : List.Sorted (· ≥ ·) l)
-    (hpos : ∀ a ∈ l, 0 < a) :
-    numSYTenum l = dimHLF l := by
-  have hkey := numSYTenum_mul_prodHooks_of_aitken l hl hpos
-  unfold dimHLF
-  -- prodHooks l > 0 (else (sz l)! = 0, impossible)
-  have hph : 0 < prodHooks l := by
-    rcases Nat.eq_zero_or_pos (prodHooks l) with h0 | hpos'
-    · rw [h0, Nat.mul_zero] at hkey; exact absurd hkey.symm (Nat.factorial_ne_zero _)
-    · exact hpos'
-  rw [← hkey, Nat.mul_div_cancel _ hph]
-
-/-- **General Frame–Robinson–Thrall hook-length formula (target).** `numSYTenum l = dimHLF l`.
-Currently delegates to `numSYTenum_eq_dimHLF_of_aitken`, hence isolates the *entire* general-`n` gap to
-the single Aitken/Frobenius determinant identity `dimAitkenIdentity` (ii); the hook side (i) and the
-whole composition are sorry-free. -/
-theorem numSYTenum_eq_dimHLF (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (hpos : ∀ a ∈ l, 0 < a) :
-    numSYTenum l = dimHLF l :=
-  numSYTenum_eq_dimHLF_of_aitken l hl hpos
+/-! The divisor-free HLF `#SYT(λ)·∏h_λ = n!` and the general HLF `numSYTenum l = dimHLF l` are proved
+sorry-free downstream from the corner recursion: `SYTHookGNW.numSYTenum_mul_prodHooks` and
+`SYTHookGNW.numSYTenum_eq_dimHLF` (the former `numSYTenum_eq_dimHLF_of_aitken`-style wrappers, which were
+conditional on the now-discharged Aitken gap, are retired in favour of those unconditional proofs). -/
 
 end QOU.Mathlib.SYTEnum

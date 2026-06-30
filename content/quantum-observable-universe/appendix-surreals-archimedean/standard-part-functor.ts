@@ -3,7 +3,7 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:standard-part-functor",
   lean: {
-    ref: "qou:QOU.AppendixSurreals.StandardPart",
+    ref: "qou:QOU.AppendixSurreals.standardPart",
     validation: "not_checked",
   },
   title: "Standard-part functor $\\mathrm{st} : \\mathbf{No}_{\\mathrm{fin}} \\to \\mathbb{R}$",
