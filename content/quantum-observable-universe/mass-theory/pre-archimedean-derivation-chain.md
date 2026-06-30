@@ -1,6 +1,5 @@
 This section is a self-contained survey of how the framework derives a
-mass.  We assume only that the reader knows linear algebra and a little
-knot theory; no prior chapter is required.  The aim is to follow a single
+mass.  The aim is to follow a single
 thread — from the categorical action of a quantum observable universe to a
 number in MeV — and to name, at each step, the algorithm that makes the
 step computable.  Every quantity along the way lives in the field
