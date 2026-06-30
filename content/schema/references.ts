@@ -138,6 +138,53 @@ export const references: CSLData[] = [
     URL: "https://doi.org/10.4310/JDG/1090425531",
   }),
 
+  // ── Nguyen–Tran 2021 — strong AJ conjecture proved for the figure-eight ──
+  ref({
+    id: "nguyen-tran-2021",
+    type: "article-journal",
+    title: "The Strong AJ Conjecture for the Figure 8 Knot",
+    author: [
+      { family: "Nguyen", given: "Hoang-An" },
+      { family: "Tran", given: "Anh T." },
+    ],
+    "container-title": "Acta Mathematica Vietnamica",
+    issued: { "date-parts": [[2021]] },
+    volume: "46",
+    DOI: "10.1007/s40306-020-00401-2",
+    URL: "https://doi.org/10.1007/s40306-020-00401-2",
+    note: "Proves the strong AJ conjecture (Sikora) — the recurrence ideal equals the A-ideal — for the figure-eight knot $4_1$. In QOU $4_1$ is the Higgs (the simplest hyperbolic knot); this is the literature anchor that the AJ operator $\\hat A_{4_1}$ is explicit and the colored-Jones $q$-difference recurrence is known, underwriting the AJ-saddle identification ($\\Phi_q$ at root-of-unity vs $\\mathrm{Li}_2^q$ at real $q$) in phi-q-aj-machinery-identification.md. arXiv:2006.02042.",
+  }),
+
+  // ── Koelink–Stokman 2003 — Askey-Wilson functions & quantum groups ──
+  ref({
+    id: "koelink-stokman-2003",
+    type: "article",
+    title: "Askey-Wilson functions and quantum groups",
+    author: [
+      { family: "Koelink", given: "Erik" },
+      { family: "Stokman", given: "Jasper V." },
+    ],
+    issued: { "date-parts": [[2003]] },
+    URL: "https://arxiv.org/abs/math/0301330",
+    note: "The non-compact ($|q|=1$ / modular-double) face of the $q$-Askey scheme: Askey-Wilson functions as matrix coefficients of the modular double of $U_q(\\mathfrak{sl}_2)$, with the Faddeev quantum dilogarithm / Ruijsenaars hyperbolic gamma as kernel. In QOU this is the HYPERBOLIC-knot side of the Askey dictionary (torus $\\to$ Rogers $q$-ultraspherical / real-$q$ saddle; hyperbolic $\\to$ non-compact Askey-Wilson / root-of-unity $\\Phi_q$ saddle); the $q \\leftrightarrow \\tilde q$ modular S-transform is the two-saddle structure of one $\\hat A_K$.",
+  }),
+
+  // ── Avrin 2012 — knots-on-a-torus elementary-particle model ──
+  ref({
+    id: "avrin-2012",
+    type: "article-journal",
+    title: "Knots on a Torus: A Model of the Elementary Particles",
+    author: [{ family: "Avrin", given: "Jack S." }],
+    "container-title": "Symmetry",
+    issued: { "date-parts": [[2012]] },
+    volume: "4",
+    issue: "1",
+    page: "39-115",
+    DOI: "10.3390/sym4010039",
+    URL: "https://doi.org/10.3390/sym4010039",
+    note: "Independent prior art for the QOU torus-knot particle skeleton: $(2,n)$ torus knots model fermions and bosons, leptons and hadrons, with spin/isospin/charge/CPT, and — notably — the conjecture that the knot HYPERBOLIC-VOLUME hierarchy controls the physical mass hierarchy (the QOU Higgs$=4_1$ / $\\mathrm{Vol}(4_1)$ mass mechanism). QOU's Hecke / Markov-trace + complex-volume ($\\mathfrak{V}$) + Askey-scheme formalization is the novel content; the torus-knot generational skeleton has precedent here.",
+  }),
+
   // ── Zagier 2010 — Quantum modular forms ───────────────────────
   ref({
     id: "zagier2010",
