@@ -959,7 +959,7 @@ export default chapter({
     }),
 
     section({
-      title: "Pre-Archimedean Derivation Chain and Audit",
+      title: "Mass and Binding Derivation",
       label: "sec:derivation-audit",
       blocks: [
         "derivation-audit-intro",
