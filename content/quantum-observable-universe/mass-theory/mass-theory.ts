@@ -1073,6 +1073,9 @@ export default chapter({
         // + Seifert volumes (structured near-match, ~290 ppm vs PDG).
         "meson-kaon-pion-hecke-seifert",
         "meson-kaon-pion-hecke-seifert-proof",
+        // Gen-3 extension: φ(1020) = T(2,7), m_φ/m_π ≈ 7.320 (2167 ppm vs
+        // PDG); the torus tower tracks the strange-vector line, not the η.
+        "gen3-meson-phi-hecke-seifert",
         "tower-binding-energy",
         "tower-binding-energy-table-data",
         "mass-table-z1-20",

@@ -322,3 +322,21 @@ sorry-free): the §3b-cond class `WLambdaChiralBinding` carries the identificati
 (the achiral part already works for light nuclei). A candidate chiral derivation
 that leaves `b ≈ −1.7` is wrong. **No fit; CAL-1/2/3 only; the test is `b→0`,
 never `b=−√3` (that reproduces the error). Not wired.**
+
+## λ-colored Σ(2,3,5) → E₈-exponent family, 4↔4 to bwS0 (2026-06-30)
+
+The residual frontier's "λ-colored insertions" step (bare probe pinpointed it; only
+the closed-manifold number `Ψ(1/q₀)=2.3296` existed) is **taken**. Coloring the
+order-5 icosahedral/A₅ fibre of Σ(2,3,5) by SU(2) colour α shifts the Lawrence–Zagier
+false-theta support `30(1±1/2±1/3±1/5)→30(1±1/2±1/3±α/5)`: α=1 reproduces the bare
+`{1,11,19,29}`; α=2 gives the complementary E₈ exponents `{7,13,17,23}`; together the
+two lowest colours generate **all 8 E₈ exponents** (P=30=h(E₈)). The 8 exponents pair
+under the Coxeter involution `e↔30−e` into 4 dual pairs, matching the 4 conjugation
+classes of `bwS0` at n=5 **monotone in magnitude** (wall `{1,29}`↔(5)/(1⁵) smallest;
+center `{13,17}`↔self-conj (3,1,1) largest). The Coxeter ℤ₂ mirrors the transpose/
+chirality ℤ₂ `λ↔λ′` of `S_{0λ}=S_{0λ′}` — supplying the very `W_λ=W_{λ′}` symmetry the
+bosonic-colour foreclosure showed `m_d` violates. (a) structural advance, no fit; the
+exact pair→class normalization (the `D` realizing `bwS0=d_q/D`) is the remaining value
+step, now on an explicit colored family. Audit:
+[`docs/audits/2026-06-30-keystone-colored-sigma235-e8-family.md`](../audits/2026-06-30-keystone-colored-sigma235-e8-family.md);
+probe `computations/probes/keystone_colored_sigma235_wrt.py`.

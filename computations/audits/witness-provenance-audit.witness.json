@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-30T23:17:56.102477+00:00",
-  "commitSha": "434f71ec38716a4d7fd54b47eb84b428bb579dde",
+  "computedAt": "2026-06-30T23:48:13.167541+00:00",
+  "commitSha": "95208e059760377d7ea9ffb24c34b9b630eccfa2",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 277,
+      "computed": 274,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 232,
+  "durationMs": 12,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
@@ -48,11 +48,11 @@
   "data": {
     "counts": {
       "total_scanned": 1538,
-      "prov_ok": 1205,
+      "prov_ok": 1208,
       "prov_audit_exempt": 55,
-      "prov_missing": 277,
+      "prov_missing": 274,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.8192457737321196
+      "completeness_ratio": 0.8211963589076723
     },
     "by_verdict": {
       "PROV_OK": [
@@ -1429,6 +1429,10 @@
           "missing_fields": []
         },
         {
+          "witness": "crystal-yekutieli-probes-abcd.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "cyclotomic-depth3-dimension-pslq.witness.json",
           "missing_fields": []
         },
@@ -1454,6 +1458,10 @@
         },
         {
           "witness": "delta-lambda-2row-stratum.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "delta-lambda-borromean-ascaling.witness.json",
           "missing_fields": []
         },
         {
@@ -3689,6 +3697,10 @@
           "missing_fields": []
         },
         {
+          "witness": "q-beta-complex-q-test1-phasea-v2.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "q-beta-consistency-gap-diagnostic.witness.json",
           "missing_fields": []
         },
@@ -5323,24 +5335,8 @@
           ]
         },
         {
-          "witness": "crystal-yekutieli-probes-abcd.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "delta-lambda-binding-full-evaluation.witness.json",
           "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "delta-lambda-borromean-ascaling.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
             "commitSha"
           ]
         },
@@ -6285,14 +6281,6 @@
         },
         {
           "witness": "q-beta-c3-wenzl-decomposition.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "q-beta-complex-q-test1-phasea-v2.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",

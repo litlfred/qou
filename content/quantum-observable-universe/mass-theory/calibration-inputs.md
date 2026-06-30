@@ -47,21 +47,31 @@ $\hbar_q = (q-1)/q$.  No units are involved.  The precision
 is limited by the muon mass ($2.2 \times 10^{-8}$), not
 the electron ($2.9 \times 10^{-10}$).
 
-> **SUPERSEDED-$\rho_q$ caveat .**
+> **SUPERSEDED-$\rho_q$ caveat.**
 > The dimensional factor $1/\hbar_q^2$ in the formula above is the
 > SUPERSEDED scalar substrate density (see
 > [`mass-endomorphism-tower.md` §SUPERSEDED](mass-endomorphism-tower.md)
 > and [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md)).
 > The canonical operator-valued form replaces it with the
 > Wedderburn-graded expansion (LO + single-gen + pair-gen + ...).
-> canonical the Skein formula closes $m_\mu/m_e = 206.77$ at
-> lepton level because operator-valued corrections are small for
-> leptons; the +0.17% $\mathfrak{Q}_\beta$ residual flagged in
+> The Skein form closes $m_\mu/m_e = 206.77$ **not** because the
+> operator corrections are small at $q_0$ — the direct Markov-trace
+> ratio $|\mathrm{tr}_M((\sigma_1\sigma_2^{-1})^2)| /
+> |\mathrm{tr}_M(\sigma_1^3)| \approx 0.27$ is three orders of
+> magnitude below CODATA — but because it is a **Kashaev $q \to 1$-limit
+> identity**: it evaluates the hyperbolic volume $\mathrm{Vol}(4_1)$
+> (the $q \to 1$ limit of $|\mathrm{tr}_M|$), dressed by the SUPERSEDED
+> scalar $1/\hbar_q^2$, rather than the operator-level ratio at the
+> substrate $q_0$ (see
+> [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md)
+> §"Phase 3 finding"). The lepton-sector factor $\xi_\ell(q)$ that
+> should replace $1/\hbar_q^2$ — bar-symmetric, with its Kashaev
+> $q \to 1$ limit recovering the scalar — is **OPEN** (Path A of
+> [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md)).
+> The separate $+0.17\%$ $\mathfrak{Q}_\beta$ residual flagged in
 > [`-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/-q-beta-net-ansatz-fitting-finding.md)
-> is consistent with operator corrections becoming non-negligible
-> for hadronic observables. Re-derivation of $m_\mu/m_e$ from
-> the canonical (graded-expansion) form is queued in
-> [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md).
+> is the hadronic-correction question, distinct from the lepton
+> $\xi_\ell$ derivation.
 
 The second input sets the **leptonic mass scale** — the
 conversion from dimensionless natural units to MeV.  The
