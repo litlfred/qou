@@ -1,10 +1,5 @@
 **Proposition (conditional on
-[`conj:q-aubin-lions`](#conj:q-aubin-lions),
-[`conj:ns-counterexample`](#conj:ns-counterexample),
-[`conj:critical-exponent`](#conj:critical-exponent),
-[`prop:blowup-yekutieli`](#prop:blowup-yekutieli),
-and
-[`conj:regularity-breakdown`](#conj:regularity-breakdown);
+[`conj:q-collatz`](#conj:q-collatz);
 "$[2]_q$-contact boundary").**
 Let $\mathcal{R}_p = (S^3 \xrightarrow{\pi_H} S^2, \xi_q)$
 be the Reeb bundle
