@@ -1,13 +1,14 @@
 ---
 # 5e79
 title: 'T1: Cl3Zeta5GeometricRealization → wire to existing Cl3Zeta5OrbitSum / BringTrilogDepth3Witness'
-status: todo
+status: in-progress
 type: task
+priority: normal
 tags:
     - keystone-infra
     - tier1
 created_at: 2026-06-25T17:06:53Z
-updated_at: 2026-06-25T17:06:53Z
+updated_at: 2026-06-30T23:21:24Z
 parent: 08a2
 ---
 
