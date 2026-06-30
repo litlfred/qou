@@ -1,7 +1,9 @@
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
+import Mathlib.Data.Real.Basic
 import Mathlib.Data.Int.Basic
 import Mathlib.Data.List.Basic
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Positivity
+import Mathlib.Tactic.Ring
 
 
 /-!
@@ -37,12 +39,16 @@ numerical evaluation.
 
 namespace QOU.Archimedean
 
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
-abbrev R_q := LaurentPolynomial ℤ
-def q_param : R_q := LaurentPolynomial.T 1
-def q_inv_param : R_q := LaurentPolynomial.T (-1)
+
+/-- Working ring for this **archimedean specialisation** (AGENTS.md §7c):
+    the eigenvalue-distinctness and Jones-nonvanishing statements below
+    genuinely require an ordering (`0 < q`) and multiplicative inverse
+    (`q⁻¹`), so the substrate indeterminate is evaluated over `ℝ` via
+    `ι : ℤ[q, q⁻¹] → ℝ, q ↦ q₀`.  The combinatorial content (Schur–Weyl
+    counts, summand indices) is ring-generic; only the order/inverse
+    facts are specialised here. -/
+abbrev R_q := ℝ
 
 /-! ## Descartes Universe Data (from archimedean-condition.lean) -/
 
@@ -50,12 +56,13 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
 structure DescartesData where
   /-- Deformation parameter q from U_q(su(2)). -/
   q : R_q
-  /-- q > 0. -/
-  -- q_pos : 0 < q  -- (archimedean; not meaningful over R_q)
+  /-- q > 0 (archimedean substrate value `q₀ ∈ ℝ`). -/
+  q_pos : 0 < q
   /-- q ≠ 1 (non-classical deformation). -/
   q_ne_one : q ≠ 1
-  /-- q is not a root of unity. -/
-  -- q_not_root_of_unity : ∀ (k : ℕ), k ≥ 1 → q ^ k ≠ 1  -- (archimedean; not meaningful over R_q)
+  -- `q is not a root of unity` (`∀ k ≥ 1, q ^ k ≠ 1`) is implied over the
+  -- archimedean ℝ specialisation by `q_pos` + `q_ne_one`, so it is not a
+  -- separate field here.
   /-- Euler characteristic is -6. -/
   eulerChar : ℤ
   euler_eq : eulerChar = -6
@@ -94,7 +101,7 @@ structure DescartesHeckeAlgebra (D : DescartesData) where
   /-- Unit. -/
   one : carrier
   /-- The braiding eigenvalues are q and -q⁻¹. -/
-  -- eigenvalue_pos : R_q := D.q  -- (archimedean; not meaningful over R_q)
+  eigenvalue_pos : R_q := D.q
   eigenvalue_neg : R_q := -(D.q⁻¹)
   /-- Eigenvalues are distinct (q ≠ -q⁻¹ when q > 0, q ≠ 1). -/
   eigenvalues_distinct : eigenvalue_pos ≠ eigenvalue_neg
@@ -128,15 +135,15 @@ structure DescartesSchurWeyl (D : DescartesData) where
   summands_count : numSummands = n / 2 + 1
   /-- Spin labels for each summand. -/
   spinLabel : Fin numSummands → R_q
-  /-- Spins are non-negative. -/
-  -- spin_nonneg : ∀ i, 0 ≤ spinLabel i  -- (archimedean; not meaningful over R_q)
+  /-- Spins are non-negative (archimedean ℝ specialisation). -/
+  spin_nonneg : ∀ i, 0 ≤ spinLabel i
   /-- Maximum spin is n/2. -/
   max_spin : ∀ i, spinLabel i ≤ (n : R_q) / 2
-  /-- Projection: every vector projects to a unique summand index. -/
-  -- Ref: [chari1994guide] Ch. 10 (Jimbo's theorem gives semisimplicity)
+  /-- Projection: every vector projects to a unique summand index.
+      Ref: [chari1994guide] Ch. 10 (Jimbo's theorem gives semisimplicity). -/
   summandOf : tensorPower → Fin numSummands
   /-- The decomposition is non-trivial. -/
-  -- nonempty_summands : 0 < numSummands  -- (archimedean; not meaningful over R_q)
+  nonempty_summands : 0 < numSummands
 
 /-- The Schur-Weyl decomposition at n = 3 has 2 summands:
     spin 3/2 (symmetric) and spin 1/2 (mixed symmetry). -/
@@ -226,12 +233,12 @@ structure DescartesKnotEigenbasis (D : DescartesData) where
   /-- Markov trace on the Hecke tower. -/
   markov : DescartesMarkovTrace D
   /-- Each summand at each level is detected by the Markov trace. -/
-  -- all_summands_detected : ∀ (n : ℕ) (hn : n ≥ 1),  -- (archimedean; not meaningful over R_q)
+  all_summands_detected : ∀ (n : ℕ) (hn : n ≥ 1),
     let sw := schurWeyl n hn
-    ∀ (i : Fin sw.numSummands),
+    ∀ (_i : Fin sw.numSummands),
     ∃ (jonesVal : R_q), jonesVal ≠ 0
 
-/-- The Descartes condition (q > 0, q ≠ 1, q not a root of unity)
+/- The Descartes condition (q > 0, q ≠ 1, q not a root of unity)
     is sufficient to construct the full knot eigenbasis data.
 
     The key inputs:
@@ -251,18 +258,18 @@ structure DescartesKnotEigenbasis (D : DescartesData) where
     See the theorem docstring below for the cited reference. -/
 axiom descartes_knot_eigenbasis_axiom (D : DescartesData) :
     ∃ (_ : DescartesMarkovTrace D),
-      -- ∀ (n : ℕ) (hn : n ≥ 1),  -- (archimedean; not meaningful over R_q)
+      ∀ (n : ℕ),
         ∀ (numSummands : ℕ),
           numSummands = n / 2 + 1 →
-          ∀ (i : Fin numSummands),
+          ∀ (_i : Fin numSummands),
             ∃ (jonesVal : R_q), jonesVal ≠ 0
 
 theorem descartes_knot_eigenbasis (D : DescartesData) :
     ∃ (_ : DescartesMarkovTrace D),
-      -- ∀ (n : ℕ) (hn : n ≥ 1),  -- (archimedean; not meaningful over R_q)
+      ∀ (n : ℕ),
         ∀ (numSummands : ℕ),
           numSummands = n / 2 + 1 →
-          ∀ (i : Fin numSummands),
+          ∀ (_i : Fin numSummands),
             ∃ (jonesVal : R_q), jonesVal ≠ 0 :=
   descartes_knot_eigenbasis_axiom D
 
@@ -310,5 +317,7 @@ theorem descartes_eigenvalues_distinct (D : DescartesData) :
     and equals ⌊n/2⌋ + 1 — each species is a knot type. -/
 theorem descartes_particle_count (n : ℕ) :
     n / 2 + 1 ≥ 1 := by omega
+
+end  -- noncomputable section
 
 end QOU.Archimedean
