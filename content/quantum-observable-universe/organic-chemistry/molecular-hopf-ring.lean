@@ -1,4 +1,6 @@
-import Mathlib.Data.Nat.Basic
+import Mathlib.Data.Nat.GCD.Basic
+import Mathlib.Algebra.Ring.Parity
+import Mathlib.Algebra.Order.Group.Nat
 
 
 /-!
@@ -15,6 +17,25 @@ carries half the weight of the pairwise construction.
 -/
 
 namespace QOU.Organic
+
+/-- Honest mirror of the threading link T(2,N) from the sibling
+    content-extract file `threading-link.lean` (not a cached library
+    module, so inlined here for single-file `lean`-direct checking).
+    Fields match the canonical declaration's structure. -/
+-- canonical decl: QOU.Organic.ThreadingLink
+-- Ref: [manuscript] Ch. 10, Definition: Threading link T(2,N)
+structure ThreadingLink where
+  /-- Number of atoms threaded. -/
+  atoms : ℕ
+  /-- At least 3 atoms for a ring. -/
+  atoms_ge : 3 ≤ atoms
+
+/-- Alexander weight of T(2,2m) at q=1 is m = N/2 (mirror of the
+    canonical `QOU.Organic.ThreadingLink.alexanderWeightAtOne`). -/
+-- canonical decl: QOU.Organic.ThreadingLink.alexanderWeightAtOne
+-- Ref: [manuscript] Ch. 10, Definition: Threading link T(2,N)
+def ThreadingLink.alexanderWeightAtOne (t : ThreadingLink) : ℕ :=
+  t.atoms / 2
 
 /-- A molecular Hopf ring: N atoms bound by a threading link T(2,N). -/
 -- Ref: [manuscript] Ch. 10, Definition: Molecular Hopf ring (closed)

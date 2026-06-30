@@ -2,22 +2,26 @@ import QOU.BraidKnot.ConfinementLevel
 
 
 /-!
-# confinement-level-exists — sibling stub
+# QOU.BraidKnot.ConfinementLevel.exists — existence of confinement level
 
-The canonical Lean source for `prop:confinement-level-exists` lives at
-`content/quantum-observable-universe/lean/QOU/BraidKnot/ConfinementLevel.lean`,
-which is Lake-built under the `qou` package and declares the structure
-`QOU.BraidKnot.ConfinementLevel` together with the theorem
-`QOU.BraidKnot.ConfinementLevel.exists`.
+The set { ℓ : T_w ∈ J^ℓ(q) } is finite, upward-closed, and nonempty,
+so its minimum exists.
 
-This sibling re-exports that module (via `import`) so the content-block
-manifest's `lean.ref` (`qou:QOU.BraidKnot.ConfinementLevel.exists`)
-resolves cleanly against the Lake tree, without shadowing the real
-declaration with a duplicate stub (per AGENTS.md §"No shadowing stubs").
+LaTeX: `\label{prop:confinement-level-exists}`
 
-The theorem itself: the set `{ ℓ : T_w ∈ J^ℓ(q) }` is finite,
-upward-closed, and nonempty (since `T_w ∈ J^0(q) = H_n(R, q)`
-trivially), so its minimum exists.
-
-Ref: [manuscript] braids-and-knots/confinement-level
+**Canonical declaration.** The theorem `QOU.BraidKnot.ConfinementLevel.exists`
+is proved in the compiled library module `QOU.BraidKnot.ConfinementLevel`
+(imported above), which the `.ts` manifest's `lean.ref` resolves to. This
+content-extract file confirms the canonical statement is in scope rather than
+shadowing it with a re-declaration (AGENTS.md §0a no-shadowing-stubs).
 -/
+
+namespace QOU.BraidKnot
+
+-- Witness that the canonical existence theorem is in scope (no re-declaration).
+-- canonical decl: QOU.BraidKnot.ConfinementLevel.exists
+-- Ref: [manuscript] braids-and-knots/confinement-level
+example (R : Type) [CommRing R] : Nonempty (ConfinementLevel R) :=
+  ConfinementLevel.exists R
+
+end QOU.BraidKnot

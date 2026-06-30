@@ -60,10 +60,7 @@ theorem bring_weight_match : zeta5 ^ (4 : ℕ) = zeta5⁻¹ := by
   -- zeta5^4 * zeta5 = zeta5^5 = 1, so zeta5^4 = zeta5⁻¹
   have h5 : zeta5 ^ 5 = 1 := zeta5_pow_five
   have h4 : zeta5 ^ 4 * zeta5 = 1 := by
-    rw [show (4 : ℕ) + 1 = 5 from rfl] at *
-    calc zeta5 ^ 4 * zeta5 = zeta5 ^ (4 + 1) := by rw [pow_succ]
-      _ = zeta5 ^ 5 := by norm_num
-      _ = 1 := h5
+    rw [← pow_succ]; exact h5
   field_simp
   linear_combination h4
 

@@ -34,9 +34,9 @@ numerical evaluation.
 
 namespace QOU.Archimedean
 
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
+/- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -137,6 +137,7 @@ axiom chebyshev_degree_eq_genus :
 -- Ref: [manuscript] §6/genus-filtration-ideal
 theorem seifert_genus_le_iff (p g : ℕ) (hp : Odd p) :
     (p - 1) / 2 ≤ g ↔ (p - 1) ≤ 2 * g := by
+  obtain ⟨m, rfl⟩ := hp
   omega
 
 /-- At the completeness-determined genus g = 4:
@@ -144,6 +145,7 @@ theorem seifert_genus_le_iff (p g : ℕ) (hp : Odd p) :
 -- Ref: [manuscript] §6/genus-filtration-ideal
 theorem genus4_cutoff (p : ℕ) (hp : Odd p) (hp2 : 3 ≤ p) :
     (p - 1) / 2 ≤ 4 ↔ p ≤ 9 := by
+  obtain ⟨m, rfl⟩ := hp
   omega
 
 -- ═══════════════════════════════════════════════════════════════════
@@ -174,5 +176,7 @@ theorem all_large_primes_obstructed (p : ℕ) (hp : 11 ≤ p) :
 -- Ref: [manuscript] §6/genus-filtration-ideal
 example : ¬ ((11 - 1) / 2 ≤ 4) := all_large_primes_obstructed 11 (by omega)
 example : ¬ ((13 - 1) / 2 ≤ 4) := all_large_primes_obstructed 13 (by omega)
+
+end
 
 end QOU.Archimedean

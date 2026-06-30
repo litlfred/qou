@@ -25,9 +25,9 @@ numerical evaluation.
 
 namespace QOU
 
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
+/- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+   See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -46,7 +46,7 @@ inductive ResolventType
 structure QuaternionicResolvent where
   /-- The deformation parameter q. -/
   q : R_q
-  /-- q > 0. -/
+  -- q > 0.
   -- q_pos : 0 < q  -- (archimedean; not meaningful over R_q)
   /-- The radial parameter r = -ln|q|. -/
   r : R_q
@@ -69,5 +69,7 @@ theorem uncertainty_vanishes (qr : QuaternionicResolvent) :
 theorem three_resolvents_embed (qr : QuaternionicResolvent) :
     qr.omega 0 = 0 → (qr.omega 1 ≠ 0 ∨ qr.omega 2 ≠ 0 ∨ qr.omega 3 ≠ 0) :=
   fun _ => qr.nontrivial
+
+end
 
 end QOU

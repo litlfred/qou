@@ -383,6 +383,210 @@ def gauge_aligned_A_combiner_general(lam: tuple[int, ...], n_inner: int,
     return out
 
 
+# ──────────────────────────────────────────────────────────────────────
+# Cyclic-vector intertwiner (Task B, handover §5): O(r³) replacement for the
+# O(r⁴)-memory / O(r⁶)-time vectorised null-space U above. Never forms an
+# r²×r² matrix, so it clears the 4 large-r (r=64) λ⊢9 that OOM the null-space
+# path AND speeds up every block. Correctness is gated by the same combiner
+# identity at 1e-25.
+# ──────────────────────────────────────────────────────────────────────
+
+_GROUP_WORDS_CACHE: dict = {}
+_COL0_PREIMAGE_CACHE: dict = {}
+
+
+def _group_words(ngen: int) -> list:
+    """One generator-index word per element of S_{ngen+1}, via BFS over the
+    Cayley graph with adjacent-transposition generators (g swaps positions
+    g, g+1). The Hecke basis {T_w : w ∈ S_n} spans H_n, so {ρ(T_w)} spans
+    End(V_μ) — enough to recover any matrix unit. Bounded by n! (≤720 for n≤6)."""
+    if ngen in _GROUP_WORDS_CACHE:
+        return _GROUP_WORDS_CACHE[ngen]
+    from collections import deque
+    n = ngen + 1
+    start = tuple(range(n))
+    seen = {start: ()}
+    queue = deque([start])
+    while queue:
+        perm = queue.popleft()
+        word = seen[perm]
+        for g in range(ngen):
+            nl = list(perm)
+            nl[g], nl[g + 1] = nl[g + 1], nl[g]
+            nt = tuple(nl)
+            if nt not in seen:
+                seen[nt] = word + (g,)
+                queue.append(nt)
+    words = list(seen.values())
+    _GROUP_WORDS_CACHE[ngen] = words
+    return words
+
+
+def _col0_matrix_unit_preimages(rgens: list, d: int, mu, tol: "mp.mpf",
+                                q_str: str, dps: int):
+    """Words T_w and coeffs so that Σ_w coeffs[a][w]·ρ(T_w) = E_{a0}=|e_a⟩⟨e_0|
+    (column-0 matrix units), for the small seminormal rep `rgens` (d×d each) of
+    partition `mu`. The coeffs depend on `rgens` (hence on `q_str`, `dps`), so
+    the cache key carries (μ, q_str, dps). Row-major vec convention."""
+    key = (mu, q_str, dps)
+    if key in _COL0_PREIMAGE_CACHE:
+        return _COL0_PREIMAGE_CACHE[key]
+    if d == 1:
+        res = ([()], [[mp.mpf(1)]])
+        _COL0_PREIMAGE_CACHE[key] = res
+        return res
+    ngen = len(rgens)
+    eye = mp.eye(d)
+
+    def flat(M):
+        return [M[i, j] for i in range(d) for j in range(d)]
+
+    sel_words, sel_vecs, onb = [], [], []
+
+    def try_add(word, M):
+        v = flat(M)
+        w = list(v)
+        for u in onb:
+            proj = mp.fsum(mp.conj(u[t]) * v[t] for t in range(d * d))
+            for t in range(d * d):
+                w[t] -= proj * u[t]
+        nrm = mp.sqrt(mp.fsum(abs(w[t]) ** 2 for t in range(d * d)))
+        if nrm > tol:
+            onb.append([w[t] / nrm for t in range(d * d)])
+            sel_words.append(word)
+            sel_vecs.append(v)
+            return True
+        return False
+
+    target = d * d
+    # ρ(word) over all reduced words of S_{ngen+1}; greedily keep independent.
+    cache = {(): eye}
+    for word in _group_words(ngen):
+        if len(sel_words) >= target:
+            break
+        if word in cache:
+            M = cache[word]
+        else:
+            M = cache[word[:-1]] * rgens[word[-1]]
+            cache[word] = M
+        try_add(word, M)
+    if len(sel_words) < target:
+        raise RuntimeError(f"word span failed: {len(sel_words)}/{target} (μ={mu})")
+    V = mp.zeros(d * d, d * d)
+    for j, v in enumerate(sel_vecs):
+        for i in range(d * d):
+            V[i, j] = v[i]
+    Vinv = V ** -1
+    coeffs = [[Vinv[j, a * d] for j in range(d * d)] for a in range(d)]
+    res = (sel_words, coeffs)
+    _COL0_PREIMAGE_CACHE[key] = res
+    return res
+
+
+def _restricted_col0_units(ggens: list, words: list, coeffs: list, r: int):
+    """Restricted matrix-unit operators H_{a0}|_range (r×r) for a=0..d-1:
+    H_{a0} = Σ_w coeffs[a][w]·(product of restricted gens ggens over word w).
+    Realises E_{a0}⊗I⊗I on range(Π) (conjugated by the unknown intertwiner)."""
+    cache = {(): mp.eye(r)}
+
+    def prod(word):
+        m = cache.get(word)
+        if m is None:
+            m = prod(word[:-1]) * ggens[word[-1]]
+            cache[word] = m
+        return m
+
+    H = []
+    for ca in coeffs:
+        M = mp.zeros(r, r)
+        for cw, word in zip(ca, words):
+            if cw != 0:
+                M += cw * prod(word)
+        H.append(M)
+    return H
+
+
+def _cyclic_intertwiner(g_in: list, g_bl: list, rmu: list, rnu: list,
+                        r: int, d_mu: int, d_nu: int, c: int,
+                        mu, nu, tol: "mp.mpf", q_str: str, dps: int) -> "mp.matrix":
+    """Intertwiner U (r×r), r = c·d_mu·d_nu, with g̃_in U = U(ρ_μ⊗I⊗I) and
+    g̃_bl U = U(I⊗ρ_ν⊗I), via the handover §5 cyclic-vector construction.
+    Column (a,b,k) ordering a·d_nu·c + b·c + k matches the partial-trace code."""
+    w_mu, c_mu = _col0_matrix_unit_preimages(rmu, d_mu, mu, tol, q_str, dps)
+    w_nu, c_nu = _col0_matrix_unit_preimages(rnu, d_nu, nu, tol, q_str, dps)
+    Hmu = _restricted_col0_units(g_in, w_mu, c_mu, r)   # H^μ_{a0}|range, a=0..d_mu-1
+    Hnu = _restricted_col0_units(g_bl, w_nu, c_nu, r)   # H^ν_{b0}|range, b=0..d_nu-1
+    # Reference subspace = range(E^μ_00 · E^ν_00)|range, dim c (idempotent).
+    ref = Hmu[0] * Hnu[0]
+    W = _orthonormal_range_basis(ref, c)                # r×c, columns w_k
+    U = mp.zeros(r, r)
+    for a in range(d_mu):
+        for b in range(d_nu):
+            col_op = Hmu[a] * Hnu[b]                     # E^μ_a0 ⊗ E^ν_b0 on range
+            for k in range(c):
+                wk = mp.matrix([W[i, k] for i in range(r)])
+                colv = col_op * wk
+                col = a * d_nu * c + b * c + k
+                for i in range(r):
+                    U[i, col] = colv[i]
+    return U
+
+
+def gauge_aligned_A_combiner_general_cyclic(lam: tuple[int, ...], n_inner: int,
+                                            n_block: int, q_str: str,
+                                            dps: int) -> dict:
+    """O(r³) cyclic-vector variant of `gauge_aligned_A_combiner_general` — same
+    return format and same pn interface, but builds the intertwiner U via the
+    handover §5 matrix-unit / cyclic-vector construction instead of the O(r⁴)
+    vectorised null space. Clears the 4 large-r (r=64) λ⊢9 the null-space path
+    OOMs on. Internal consistency gated by the combiner identity at 1e-25."""
+    q = mp.mpf(q_str)
+    h = q - 1 / q
+    n = n_inner + n_block
+    mats, dim = aoa.exact_seminormal_matrices(lam, q_str, dps)
+    if dim == 0:
+        return {}
+    ev_in = _classsum_eigenvalues(n_inner, q_str, dps)
+    ev_bl = _classsum_eigenvalues(n_block, q_str, dps)
+    C_in = _transposition_class_sum(mats, 0, n_inner - 1)
+    C_bl = _transposition_class_sum(mats, n_inner, n - 1)
+    P_in = aoa._lagrange_projectors(C_in, ev_in, dim)
+    P_bl = aoa._lagrange_projectors(C_bl, ev_bl, dim)
+    I_iface = mats[n_inner - 1] - (h / 2) * mp.eye(dim)
+    tol = mp.mpf("1e-30")
+    out = {}
+    for mu in ev_in:
+        d_mu = aoa.partition_dim(mu)
+        rmu, _ = aoa.exact_seminormal_matrices(mu, q_str, dps)
+        for nu in ev_bl:
+            Pi = P_in[mu] * P_bl[nu]
+            r = int(mp.nint(aoa._trace(Pi)).real)
+            if r == 0:
+                continue
+            d_nu = aoa.partition_dim(nu)
+            rnu, _ = aoa.exact_seminormal_matrices(nu, q_str, dps)
+            c = r // (d_mu * d_nu)
+            Q = _orthonormal_range_basis(Pi, r)
+            Itil = Q.T * I_iface * Q
+            g_in = [Q.T * mats[a] * Q for a in range(n_inner - 1)]
+            g_bl = [Q.T * mats[n_inner + b] * Q for b in range(n_block - 1)]
+            U = _cyclic_intertwiner(g_in, g_bl, rmu, rnu, r, d_mu, d_nu, c,
+                                    mu, nu, tol, q_str, dps)
+            Atil = U ** -1 * Itil * U
+            dd = d_mu * d_nu
+            A = mp.zeros(dd, dd)
+            for a in range(d_mu):
+                for b in range(d_nu):
+                    for ap in range(d_mu):
+                        for bp in range(d_nu):
+                            s = mp.fsum(Atil[a * d_nu * c + b * c + t,
+                                             ap * d_nu * c + bp * c + t]
+                                        for t in range(c))
+                            A[a * d_nu + b, ap * d_nu + bp] = s
+            out[(mu, nu)] = {"A": A, "c": c, "d_mu": d_mu, "d_nu": d_nu}
+    return out
+
+
 def gauge_aligned_A_combiner_general_rust(lam: tuple[int, ...], n_inner: int,
                                           n_block: int, q_str: str, dps: int = 50):
     """Rust-backed drop-in for `gauge_aligned_A_combiner_general` — delegates each

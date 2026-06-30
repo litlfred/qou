@@ -1,5 +1,6 @@
-import Mathlib.Data.Nat.Basic
 import Mathlib.Data.Nat.GCD.Basic
+import Mathlib.Algebra.Ring.Parity
+import Mathlib.Algebra.Order.Group.Nat
 
 
 /-!
@@ -35,17 +36,16 @@ def ThreadingLink.numComponents (t : ThreadingLink) : ℕ :=
 /-- T(2,N) is a 2-component link when N is even. -/
 theorem ThreadingLink.two_components_of_even (t : ThreadingLink)
     (h : Even t.atoms) : t.numComponents = 2 := by
-  simp [numComponents]
-  obtain ⟨k, hk⟩ := h
-  rw [hk]
-  omega
+  simp only [numComponents]
+  have he : t.atoms % 2 = 0 := Nat.even_iff.mp h
+  rw [Nat.gcd_rec, he]; decide
 
 /-- T(2,N) is a knot (1 component) when N is odd. -/
 theorem ThreadingLink.one_component_of_odd (t : ThreadingLink)
     (h : ¬Even t.atoms) : t.numComponents = 1 := by
-  simp [numComponents]
-  rw [Nat.gcd_comm]
-  exact Nat.Coprime.gcd_eq_one (Nat.coprime_two_right.mpr (Nat.odd_iff.mpr (Nat.not_even_iff_odd.mp h)))
+  simp only [numComponents]
+  have ho : t.atoms % 2 = 1 := Nat.odd_iff.mp (Nat.not_even_iff_odd.mp h)
+  rw [Nat.gcd_rec, ho]; decide
 
 /-- Number of crossings in the standard braid representation
     (σ₁σ₂⋯σ_{N-1})²: always 2(N-1). -/

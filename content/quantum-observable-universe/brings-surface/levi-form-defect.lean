@@ -1,5 +1,6 @@
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.Algebra.Module.Basic
+import Mathlib.Algebra.Module.LinearMap.Defs
 
 
 /-!
@@ -33,6 +34,8 @@ variable {C : Type u} [CategoryTheory.Category C]
 structure LeviFormDefect (R : Type*) [CommRing R] where
   /-- The ambient algebra (spectral fiber). -/
   carrier : Type*
+  /-- Additive structure on the carrier (presupposed by the module structure). -/
+  [addCommInst : AddCommMonoid carrier]
   /-- Module structure on the carrier. -/
   [modulInst : Module R carrier]
   /-- The Levi form as a bilinear map (abstracting T^{1,0} × T^{0,1} → k). -/
@@ -41,7 +44,7 @@ structure LeviFormDefect (R : Type*) [CommRing R] where
   -- Ref: [manuscript] Ch 8 §2
   nondeg : ∃ (x y : carrier), leviForm x y ≠ 0
 
-attribute [instance] LeviFormDefect.modulInst
+attribute [instance] LeviFormDefect.addCommInst LeviFormDefect.modulInst
 
 /-- The matter locus is nonempty when the Levi form defect exists. -/
 -- Ref: [manuscript] Ch 8 §2

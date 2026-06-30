@@ -43,6 +43,8 @@ See the 2026-06-22 update banner below.
 >
 > **Owner-decisions to confirm (some now addressed by the open PRs):** (1) `W_λ` normalization — `d_q²/[n]_q!` (Σ ≈ 0.982) vs `d_q²/D²` (Σ = 1); **#2524 proposes `d_q²/D²`**. (2) **Gate status — CONFIRMED REVERSED (2026-06-22, owner).** The owner reversed the subgoal-2 geometric-derivation gate (2026-06-19; #2503/#2524) **for the keystone geometric `W_λ` DG construction** — now recorded in [`AGENTS.md §Precision-goals`](../../AGENTS.md) + [`docs/precision-goals.md`](../precision-goals.md). The reversal is **narrow**: it does not reopen fit-based q_0 derivation, and the Δ_λ "no seventh fit-based ansatz" rule stands. (3) Identity-I Mathlib infra fill scope. Outside-view (critical-distance): a Beasley–Witten/RT *reduction* gives `W_λ` a categorical *name*, not a new mass prediction — watch the tautology risk that the "geometric origin" is the harmonic analysis of the same `SU_q(2)` the framework already postulates.
 
+> **Update (2026-06-30) — the localization obligation's necessary conditions are now pinned at the *physical* blocks.** [`WLambdaMTCLocalizationObligation.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/WLambdaMTCLocalizationObligation.lean) derives the keystone's C1 (normalization `Σ W_λ = 1`), C2 (chirality-blindness `W_{λ′} = W_λ`), C6 (full support `W_λ > 0`) as falsifiable necessary conditions any `S³/2I` gauge datum must satisfy, but its only worked model was the trivial `n = 2` (all `d_q = 1`). [`KeystoneWLambdaPhysicalBlocks.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneWLambdaPhysicalBlocks.lean) ([#3155](https://github.com/litlfred/qou/pull/3155)) supplies the named `n = 4`/`n = 5` witnesses via `heckeLocalizationOfPos`: at **n = 5** (the keystone `S₅`) C1/C2/C6 hold for the seven blocks `λ ⊢ 5`, including the **electron** `(3,1,1)` (self-conjugate) and **muon** `(3,2)` — `keystone_muon_transpose_eq` gives `W_{(3,2)} = W_{(2,2,1)}` (a genuine non-self-conjugate C2 pair), `keystone_{electron,muon}_pos` give `W_λ > 0`. lean-direct EXIT 0, sorry-free, axioms `[propext, Classical.choice, Quot.sound]`. So the geometric `W_λ` realization is now bound, at the physical electron/muon blocks, by three Lean-proved consistency obligations (C1/C2/C6) on top of the defect-cubic (`144·C(n)`) and `f_pn`-bracket gates. No fit; formalize-first.
+
 ## Current state
 
 | Layer | Status |
@@ -294,3 +296,29 @@ named but never computed):
   rapidity is the rep-theoretic `tr B`, whose geometric face is the `W_λ` index, not an elliptic period.
 Probes `lever1_color_eq_lambda_sw_rapidity.py` + `lever1_color_eq_intrinsic_tau_rapidity.py`; audit
 [`docs/audits/2026-06-25-lever1-color-eq-lambda-sw-rapidity.md`](../audits/2026-06-25-lever1-color-eq-lambda-sw-rapidity.md).
+
+---
+
+## Binding-side test routed in (2026-06-29, #3128)
+
+The Δ_λ binding residual's **isovector** coefficient (`b ≈ −1.747` constant,
+`κ = b/4`, #3114) is the **chiral residue** of the categorical mass
+(`QOU.WedderburnMass.chirality_residue_mass_term`'s `mass_chiral`), homed on the
+Bring surface via the Reeb involution `ξ↦−ξ` (`archimedean-chirality`) and the
+A₅ Galois `√5↦−√5` twist. **The framing-exponent route for `κ` is refuted**
+(audit `2026-06-29-kappa-framing-route-refuted.md`): the canonical `tr_M`
+captures the writhe exactly (`σ⁻¹ = σ−h`), so there is no normalization DOF.
+
+**Routing.** `κ` is the chiral weight of the `W_λ` Plancherel measure
+`μ(λ)=d_q²/D²`, so its value is the content of **the same single open keystone
+conjecture `BWVacuumRowIsHecke`** (#3106). Lean (`BindingIsovectorChiralResidue.lean`,
+sorry-free): the §3b-cond class `WLambdaChiralBinding` carries the identification;
+`binding_isovector_mirror_from_chiral` derives `b = 4κ` from it. Paper:
+`prop:isovector-chiral-residue` (conditional).
+
+**Gift to the keystone program — a binding-side falsification test.** When
+`BWVacuumRowIsHecke` is derived and its chiral weight supplied to the binding
+`mass_chiral` residue, the isovector residual must vanish: **`residual b → 0`**
+(the achiral part already works for light nuclei). A candidate chiral derivation
+that leaves `b ≈ −1.7` is wrong. **No fit; CAL-1/2/3 only; the test is `b→0`,
+never `b=−√3` (that reproduces the error). Not wired.**

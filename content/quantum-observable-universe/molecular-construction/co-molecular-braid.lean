@@ -17,4 +17,4 @@ structure COBraid where
 /-- CO strand count: carbon(18) + oxygen(24). -/
 -- Carbon: Z=6, N=6, so 6+6+6 = 18
 -- Oxygen: Z=8, N=8, so 8+8+8 = 24
-theorem co_strands : 18 + 24 = 42 := by norm_num
+theorem co_strands : 18 + 24 = 42 := by decide

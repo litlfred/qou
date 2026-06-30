@@ -19,13 +19,7 @@ LaTeX: `\label{prop:magic-numbers-from-q}`
 
 -- Ref: [manuscript] observations/magic-numbers-from-q
 -- Ref: [chenier2026] manuscript
-example : True := trivial
-
-namespace QOU.AtomicMass
-
-/-- **PROPOSITION.** Magic numbers emerge from per-partition nuclear character at $q_0$ -/
-theorem magic_numbers_from_q : True := by
-  -- Ref: [manuscript] prop:magic-numbers-from-q
-  trivial
-
-end QOU.AtomicMass
+-- The canonical declaration `QOU.AtomicMass.magic_numbers_from_q` is
+-- re-exported via the import above; this sibling file deliberately adds
+-- no declarations of its own (a re-declaration would shadow/conflict).
+#check @QOU.AtomicMass.magic_numbers_from_q

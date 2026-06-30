@@ -331,6 +331,17 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
         c_lam = (bame / E_gate) if bame else None
     else:
         lam, w_lam, E_gate, c_lam = None, None, None, None
+    # ---- B_vol: the ALL-KNOTS entanglement binding = the liquid-drop VOLUME term.
+    #   Entanglement is a property of EVERY knot/particle, not one selected partition
+    #   (the single-partition E_gate is ⁴He-local and breaks for A≳24). Summing the
+    #   per-knot occupancy surprisal over all A nucleon knots gives a_V·A with the
+    #   coefficient DERIVED parameter-free: a_V = E₀·ln(1/W_free), W_free = the free
+    #   nucleon's (1,1,1) Plancherel weight. a_V ≈ 7.584 MeV/nucleon ≈ empirical net
+    #   B/A. Valid for ALL A (no W_λ≥1 breakdown); tracks ¹²C/¹⁶O to ~1–5%. The
+    #   residual (light over-binding, magic dips) is the surface/Coulomb/shell
+    #   structure — the open part. Probe: probes/su4_occupancy_binding_probe.py.
+    a_V = alpha * math.log(1.0 / W_lambda_float(q0, (1, 1, 1)))   # parameter-free volume coeff
+    B_vol = A * a_V
 
     if n <= max_strands:
         from tr_m_atom_via_transfer import tr_m_atom_zn
@@ -363,7 +374,8 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
             "E_retained": E_retained, "E_emitted": E_emitted,
             "E_multilink": E_multilink, "B_sym_ent": B_sym_ent,
             "m_sym_atom": m_sym_atom, "m_sym_free": m_sym_free,
-            "su4_partition": lam, "W_lam": w_lam, "E_gate": E_gate, "c_lam": c_lam}
+            "su4_partition": lam, "W_lam": w_lam, "E_gate": E_gate, "c_lam": c_lam,
+            "a_V": a_V, "B_vol": B_vol}
 
 
 def _fmt(v, w=8, p=2):
@@ -398,7 +410,8 @@ def _print_legend() -> None:
 | `B_sym` | EXACT log-ratio binding α·ln(tr_free/tr_atom) = α[(Z−1)L_pp + L_pn + (N−1)L_nn] — the archimedean realization, already bond-type (p↔n) resolved (no separate `_fac` needed) |
 | `B_qCLT_fac` | p↔n colour-weighted q-CLT α·(A−1)·⟨bond-type L⟩ (the q-CLT approximation to the colour weighting B_sym does exactly; replaces the uniform `B_qCLT` in the headline — the uniform/isospin-symmetric baseline α·(A−1)·ℓ̄(D) is shown in the Colour-weighting table) |
 | `B_gate` | SU(4) occupancy (entanglement-surprisal) binding E₀·ln(1/W_λ) — the "energy lost to vacuum/entanglement" when the operator-selection SDP collapses the full Hecke q-Plancherel distribution onto the bound cluster's partition λ. Parameter-free (E₀ × Plancherel weight, no fit). DOMINANT at the magic/closed-shell config — fixes ⁴He (err 2.36→0.94, the worst B_sym failure) — but OVER-binds the loosely-bound light nuclei (²H err 0.24); on aggregate worse than B_sym. Cluster surprisal ≈ A·free surprisal ⇒ B_gate ≈ A·E₀·ln(1/W_free) = 7.58 MeV/nucleon, the parameter-free nuclear SATURATION scale (cf. empirical ~8 MeV/A). c_λ = B_AME/E_gate is the shell-filling fraction (the open Δ_λ residual). Probe: `probes/su4_occupancy_binding_probe.py`. |
-| `err sym` / `err qCLT_fac` / `err gate` | B_AME / B_model for the production + occupancy forms (1.00 = perfect, >1 under-binds, <1 over-binds) |
+| `B_vol` | ALL-KNOTS entanglement binding = the liquid-drop **volume term** `a_V·A`, with `a_V = E₀·ln(1/W_free)` ≈ **7.584 MeV/nucleon DERIVED parameter-free** (W_free = the free nucleon's (1,1,1) Plancherel weight; ≈ empirical net B/A). Entanglement is a property of EVERY knot, not one selected partition — so the per-knot occupancy energy is summed over all A nucleons. Valid for ALL A (no W_λ≥1 breakdown, unlike `B_gate`); tracks ¹²C/¹⁶O to ~1–5% where B_sym misses by 2.1×. Over-binds the lightest (²H, ⁶Li) — the residual is the **surface/Coulomb/shell** structure (the SEMF corrections, open). Probe + audit: `probes/su4_occupancy_binding_probe.py`. |
+| `err sym` / `err qCLT_fac` / `err gate` / `err vol` | B_AME / B_model for the production + occupancy + volume forms (1.00 = perfect, >1 under-binds, <1 over-binds) |
 
 **Table 2 — Mass M + error** (values and error in one table; m_X = m_unbnd,can − B_X)
 
@@ -616,9 +629,9 @@ def main(argv=None) -> int:
     # 2. BINDING + error  (B_AME ± exp 1σ from AME2020; err X = B_AME/B_X)
     print("### Binding  B + error (MeV)   "
           "[σ_exp = AME2020 1σ; err X = B_AME/B_X (1.00 = perfect, >1 under-binds)]")
-    print("| iso | A | B_AME | σ_exp (ppb) | B_can⁰ | B_sym | B_qCLT_fac | B_gate "
-          "| err can⁰ | err sym | err qCLT_fac | err gate |")
-    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
+    print("| iso | A | B_AME | σ_exp (ppb) | B_can⁰ | B_sym | B_qCLT_fac | B_gate | B_vol "
+          "| err can⁰ | err sym | err qCLT_fac | err gate | err vol |")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         s = r["sigma_AME"]
         s_ppb = (s / r["B_AME"] * 1e9) if (s and r["B_AME"]) else None
@@ -633,11 +646,13 @@ def main(argv=None) -> int:
         eg = r.get("E_gate")
         eg = eg if (eg is not None and math.isfinite(eg) and eg > 0) else None
         e_gate = _err(r["B_AME"], eg)
+        # B_vol = A·a_V (all-knots volume term) — valid for ALL A.
+        e_vol = _err(r["B_AME"], r.get("B_vol"))
         print(f"| {r['name']} | {r['A']} | {_fmt(r['B_AME'])} | {_sci(s_ppb,11,2)} "
               f"| {_fmt(r['B_can0'])} | {_fmt(r['B_sym'])} | {_fmt(r['B_qCLT_fac'])} "
-              f"| {_fmt(eg)} "
+              f"| {_fmt(eg)} | {_fmt(r.get('B_vol'))} "
               f"| {_fmt(e_can0,6)} | {_fmt(e_sym,6)} | {_fmt(e_qclt_fac,6)} "
-              f"| {_fmt(e_gate,6)} |")
+              f"| {_fmt(e_gate,6)} | {_fmt(e_vol,6)} |")
 
     # chain ≡ exact-trace validation (rows where the p(3A) trace is feasible)
     val = [(r["name"], r["chain_resid"]) for r in rows

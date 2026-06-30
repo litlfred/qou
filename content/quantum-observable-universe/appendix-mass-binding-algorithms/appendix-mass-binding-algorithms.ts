@@ -63,6 +63,7 @@ export default chapter({
       blocks: [
         "mba-sidecar-delta-lambda-closure",
         "mba-sidecar-mirror-cancellation",
+        "mba-sidecar-isovector-chiral-residue",
         "mba-sidecar-ck-truncation-ladder",
         "mba-sidecar-lp-sdp-dual-emission",
         "mba-sidecar-witness-json-pipeline",

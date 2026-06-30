@@ -23,14 +23,18 @@ structure NeutralAtom where
   Z : Nat
   /-- Neutron number. -/
   N : Nat
+  /-- Mass number A = Z + N. -/
+  A : Nat := Z + N
+  /-- Total strand count = A + Z (nucleons + electrons). -/
+  totalStrands : Nat := A + Z
 
-/-- Mass number A = Z + N (a derived quantity, not independent data). -/
-def NeutralAtom.A (atom : NeutralAtom) : Nat := atom.Z + atom.N
+/-- Strand count of a default-constructed neutral atom `(Z, N)`:
+    with the field defaults `A = Z + N` and `totalStrands = A + Z`,
+    the total strand count is `Z + N + Z = A + Z`.
 
-/-- Total strand count = A + Z (nucleons + electrons). -/
-def NeutralAtom.totalStrands (atom : NeutralAtom) : Nat := atom.A + atom.Z
-
-/-- The total strand count of an atomic braid is `A + Z = Z + N + Z`. -/
-theorem atomic_braid_crossing_count (atom : NeutralAtom) :
-    atom.totalStrands = atom.Z + atom.N + atom.Z := by
-  simp [NeutralAtom.totalStrands, NeutralAtom.A]
+    Stated for `⟨Z, N⟩` (defaults applied) because for an arbitrary
+    `NeutralAtom` the `A` and `totalStrands` fields are independent
+    and may be set to non-default values. -/
+theorem atomic_braid_crossing_count (Z N : Nat) :
+    ({ Z := Z, N := N } : NeutralAtom).totalStrands = Z + N + Z := by
+  rfl
