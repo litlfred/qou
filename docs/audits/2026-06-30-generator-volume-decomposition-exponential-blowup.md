@@ -2,7 +2,7 @@
 
 **Bean:** `gm4q` (Author input needed).
 **Block:** [`particle-interactions/generator-volume-decomposition`](../../content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.md)
-(+ `-proof`, + [`audit/generator-volume-decomposition-probe.md`](../../content/quantum-observable-universe/particle-interactions/audit/generator-volume-decomposition-probe.md)).
+(+ [`-proof`](../../content/quantum-observable-universe/particle-interactions/generator-volume-decomposition-proof.md), + [`audit/generator-volume-decomposition-probe.md`](../../content/quantum-observable-universe/particle-interactions/audit/generator-volume-decomposition-probe.md)).
 **Date:** 2026-06-30.
 
 ## The symptom
@@ -45,7 +45,7 @@ ratio, not the trace itself:
     B_sym = α · ln( tr_free / tr_atom ),     α = E₀ = m_e / (q₀(q₀−1)),
 
 (the production form, [`mass_binding_dashboard.py`](../../computations/mass_binding_dashboard.py);
-audit `2026-06-16-b-sym-linear-chain-closed-form.md`). Under the log,
+audit [`2026-06-16-b-sym-linear-chain-closed-form.md`](2026-06-16-b-sym-linear-chain-closed-form.md)). Under the log,
 `ln(V_i) ~ k_i·ln λ` is **linear** in the crossing count, removing the
 exponential: `Σ_i ln V_i ~ Σ_i k_i`, a *polynomial*.
 
