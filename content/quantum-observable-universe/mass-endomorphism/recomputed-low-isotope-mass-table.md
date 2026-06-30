@@ -4,7 +4,6 @@ closure ([`prop:q-hecke-seminormal-character-closure`](#prop:q-hecke-seminormal-
 and the* $\rho_K$ *refinement infrastructure, **three independent production paths** to* $\mathrm{tr}_M(\mathcal{B}_K)$
 *at* $q = q_0$ *now agree to machine epsilon across* $\{p, n, D, T, ^{3}\mathrm{He}\}$:
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 ## Cross-check (machine epsilon for all 5 atoms)
 
@@ -19,7 +18,6 @@ $$
   \mathrm{Binding}(K) \;=\; m_e \cdot \sum_{\lambda \vdash 3A} y_\lambda(q)\,\chi^\lambda(\mathcal{B}_K)\,\Delta_\lambda(K),
 $$
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 This direct form supersedes the equivalent but cosmetically
 tautological factorisation
@@ -33,7 +31,6 @@ into a single symbol $\rho_K$, but the only physical content is
 the $\Delta_\lambda$ correction; we therefore write the formula
 with constituent sum and binding side by side.
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 ### Calibrated form (LO ρ_K with CODATA $m_p$, $m_n$ inputs)
 
@@ -84,7 +81,6 @@ $\gamma + \sigma_0 + \sigma_1$ channels:
 
 See [Table 3](#tbl:recomputed-low-isotope-mass-table-table3-data).
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 #### Advantage of "single-wrap symbolic" over the typed-crossings 6-term form
 
@@ -111,13 +107,11 @@ a contradiction: the typed-crossings basis is finer, and the
 observable share reflects multi-wrap / finite-size structure
 absent from the single-wrap closed form.
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 ### Atomic-mass FULL chain — not yet wired
 
 The canonical values are rigorously evaluated via formal trace definitions.
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 ## Two structural notes
 
@@ -138,19 +132,15 @@ The canonical values are rigorously evaluated via formal trace definitions.
 
 See [Table 4](#tbl:recomputed-low-isotope-mass-table-table4-data).
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 ## Path A categorical verification of `18` (proton)
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 $$
   \mathrm{ord}_{u=0}\bigl(\mathrm{tr}_M(\mathcal{B}_p)\bigr) \;=\; 19 \;=\; 18 \cdot Z + 21 \cdot N + 1 \quad \text{at } (Z, N) = (1, 0).
 $$
 
-- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
-- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
 $$
   \mathrm{ord}_{u=0}\bigl(\mathrm{tr}_M(\beta_D)\bigr) \;=\; 40 \;=\; 18 \cdot 1 + 21 \cdot 1 + 1

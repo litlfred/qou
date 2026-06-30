@@ -24,6 +24,4 @@ $$
 $$
 
 *holds for all $q > 0$.*
-## Cross-references
 
-- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.

@@ -32,7 +32,6 @@ $\sigma_{k+1}$).*
 \sigma_{i_m}^{\varepsilon_m}$ with $\varepsilon_j \in \{\pm 1\}$ and
 $1 \leq i_j \leq n - 1$.
 
-- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
 **Step 2 (recursive basis-element trace).** For each $w \in S_n$
 appearing with non-zero coefficient, compute
@@ -113,7 +112,6 @@ its own algebra $H_{n-k-1}$.
 
 ## Empirical verification
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 | atom              | braid word                              | $H_n$ | $\operatorname{tr}_M(q_0)$ |
 |-------------------|----------------------------------------|------|----------------------------|
@@ -121,13 +119,9 @@ The result follows by direct, exact algebraic evaluation of the canonical trace 
 | neutron           | $\sigma_1^6 \sigma_2^4 \sigma_1^{-1}$  | $H_3$ | $1.248248\ldots$           |
 | deuteron disjoint | $\sigma_1^7\sigma_2^4 \oplus \sigma_4^6\sigma_5^4\sigma_4^{-1}$ | $H_6$ | $\operatorname{tr}_M(p)\cdot\operatorname{tr}_M(n)$ |
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
-## Witness scripts
 
-- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
 ## References
 

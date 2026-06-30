@@ -1,6 +1,5 @@
 **Closed-form conjectures for the $\mathfrak{Q}_\beta$ precision-ladder coefficients $c_4, c_5, c_6, c_7$.**
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 This block formalises them as **conjectures** so downstream
 provable claims that depend on them can use the §3b-cond
@@ -71,7 +70,6 @@ c_6 extracted = +3.4976   (matches empirical sweep EXACTLY)
 c_7 extracted = +57.149   (matches empirical sweep EXACTLY)
 ```
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 The "empirical c_k from `binding_q_target_sweep`" are NOT arbitrary
 fits — they are TAUTOLOGICALLY determined by the precision-ladder

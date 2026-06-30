@@ -243,7 +243,6 @@ sit at* $|\hat{V}_i| \in [0.85, 1.0]$ *— at the boundary of the
 *Two partial mitigations are documented but neither universally
 closes the gap:*
 
-The result follows by direct, exact algebraic evaluation of the canonical trace and does not rely on numerical approximations.
 
 2. *The [$z$-Habiro completion](#def:z-habiro-ring) — analogous to the
  $q$-Habiro one above but in the $z$-variable. The cyclotomic
@@ -266,9 +265,7 @@ The result follows by direct, exact algebraic evaluation of the canonical trace 
  level-selection rule $n_\star(\mathfrak{H})$ derivable from
  substrate data.*
 
-- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
-- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
 1. **Algebraic Cauchy-limit (claim a) without `n_\star`:** prove
  convergence in the $z$-Habiro topology and use the cyclotomic

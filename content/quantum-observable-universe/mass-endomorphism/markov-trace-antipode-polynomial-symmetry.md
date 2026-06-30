@@ -74,9 +74,7 @@ $A \geq 2$ extension and via the polynomial structure of the
 neutron's closed form
 $\operatorname{tr}_M(\mathcal{B}_n) = (\dots) / (12 q^8 \cdot (q^4 + q^2 + 1))$.
 
-## Witness
 
-- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
 ## References
 

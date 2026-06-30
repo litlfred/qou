@@ -15,7 +15,6 @@ $w = q - 1$, to order 7:*
 | 6 | $111/4$ | catalogued from witness; formal proof deferred |
 | 7 | $-3665/81$ | catalogued from witness; formal proof deferred |
 
-- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
 ## Honest scope
 
@@ -38,7 +37,6 @@ $w = q - 1$, to order 7:*
   function is a degree-11/degree-7 quotient, so a finite-order
   linear recursion on $c_n$ exists, but extracting it is open work).
 
-- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
 
 $$
   \Delta\tau_M^{\text{surr}}(q) = \frac{-q^{11} + q^{10} - 2q^9 + q^8 + q^6 - q^5 - q^3 + 2q^2 - q + 1}{4 q^5 (q^2 + q + 1)}

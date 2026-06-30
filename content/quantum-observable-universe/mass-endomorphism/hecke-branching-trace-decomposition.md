@@ -42,6 +42,4 @@ is the standard scalar-vs-traceless decomposition of an operator
 under the Hilbert–Schmidt inner product — no further hypothesis is
 needed.
 
-## Remarks
 
-- The evaluation proceeds canonically, yielding the exact theoretical results without numerical approximations.
