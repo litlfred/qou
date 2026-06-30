@@ -262,3 +262,30 @@ re-derive-first lesson, running a fresh `lean-verify-siblings.sh` sweep over all
 on current main FIRST to find the actually-live-broken set before any fix (prior
 waves found 70-95% already drained by siblings). Branch
 `claude/2ti7-orphan-drain-wave8-2026-06-30`.
+
+**Re-derive result:** of the 95 listed, **89 already green, 6 live-broken** —
+information-theory (23) + observations (22) fully clean already; breakage was 3
+in predicted-spectra + 3 in brings-surface. 6 ⇒ fixed directly (no swarm), each
+re-verified `fail=0`, quality-gated (no `: True`/native_decide/sorry; descartes
+axiom REMOVED, count 1→0).
+
+The 6 + fix:
+- predicted-spectra/stable-nucleus — §7c archimedean ℝ restatement (beta-stability
+  line: division, rpow A^{2/3}, ordering); dropped unused R_q scaffolding + stranded
+  docstring.
+- predicted-spectra/parity-violation-skein — §7c ℝ; 3 theorems had only headers
+  commented out (dangling `:= by`) → restored; `div_lt_iff`→`div_lt_iff₀`.
+- predicted-spectra/hadron-q-self-correction — §7c ℝ; 3 commented theorem headers
+  restored; netSignedCrossing≤0 reworked (omega can't do nonlinear p(p-1)/2 →
+  nlinarith + `Int.ediv_le_ediv`).
+- brings-surface/torus-knot-generators — `import Mathlib.Tactic` (interval_cases
+  unknown) + robust omega/interval_cases bound proof replacing fragile nlinarith.
+- brings-surface/embeddability-closure — `seifert_genus_bound` was FALSE as stated
+  (m=2,n=10 counterexample); added the missing `Nat.Coprime m n` hypothesis +
+  proof that coprimality ⇒ (m-1)(n-1) even.
+- brings-surface/descartes-knot-eigenbasis — §7c ℝ (q_pos/q⁻¹/eigenvalue ordering);
+  restored 3 referenced commented fields + dangling bodies + free-variable ∀-binders;
+  REMOVED fabricated `descartes_knot_eigenbasis_axiom` (existence is constructive).
+
+**Four more chapters effectively drained** (predicted-spectra, brings-surface live
+sets fixed; information-theory + observations were already clean). PR #3172.
