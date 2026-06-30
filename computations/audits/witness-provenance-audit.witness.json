@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-30T23:17:56.102477+00:00",
-  "commitSha": "434f71ec38716a4d7fd54b47eb84b428bb579dde",
+  "computedAt": "2026-06-30T23:35:08.712160+00:00",
+  "commitSha": "bfae789b2d953067d95542aabcb8e49de34ee040",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 232,
+  "durationMs": 12,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
@@ -382,10 +382,6 @@
         },
         {
           "witness": "beta-ew-delta-I-conjugate-pairing.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "beta-ew-delta-I-eigenvalues.witness.json",
           "missing_fields": []
         },
         {
@@ -1429,6 +1425,10 @@
           "missing_fields": []
         },
         {
+          "witness": "crystal-yekutieli-probes-abcd.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "cyclotomic-depth3-dimension-pslq.witness.json",
           "missing_fields": []
         },
@@ -1454,6 +1454,10 @@
         },
         {
           "witness": "delta-lambda-2row-stratum.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "delta-lambda-borromean-ascaling.witness.json",
           "missing_fields": []
         },
         {
@@ -4413,10 +4417,6 @@
           "missing_fields": []
         },
         {
-          "witness": "shadow-price-c-321-q0.witness.json",
-          "missing_fields": []
-        },
-        {
           "witness": "shell-binding-transfer-matrix.witness.json",
           "missing_fields": []
         },
@@ -4926,6 +4926,14 @@
           ]
         },
         {
+          "witness": "beta-ew-delta-I-eigenvalues.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
           "witness": "binding-alpha-shift-witness.witness.json",
           "missing_fields": [
             "engine",
@@ -5323,24 +5331,8 @@
           ]
         },
         {
-          "witness": "crystal-yekutieli-probes-abcd.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "delta-lambda-binding-full-evaluation.witness.json",
           "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "delta-lambda-borromean-ascaling.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
             "commitSha"
           ]
         },
@@ -6520,6 +6512,14 @@
         },
         {
           "witness": "rt-w-sqrt2-jet-order-validation.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "shadow-price-c-321-q0.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",

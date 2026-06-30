@@ -47,3 +47,9 @@ docs/audits/2026-06-30-cmiy-witnessbuilder-rollup-batch1.md:
 carries flat assertions, so wrap_legacy is safe per batch-1 gotcha #1):
 rt_route_cross_particle_ratio_quantum_dim, bw_chirality_isotopes,
 canonical_lepton_braid_words. Each: exit 0, PROV_OK, original keys preserved.
+
+## 2026-06-30 — batch 3 (2 scripts, wrap_legacy)
+delta_lambda_borromean_ascaling, crystal_yekutieli_probes_abcd — pure-Python,
+zero content-consumers, no flat assertions. crystal lacked a sys.path entry
+for substrate/ (witness_base home); added it inline before the import.
+Both: exit 0, PROV_OK, original keys preserved.
