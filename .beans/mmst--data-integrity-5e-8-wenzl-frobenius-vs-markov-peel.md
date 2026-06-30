@@ -37,3 +37,21 @@ Refs: `docs/audits/2026-06-30-b0vf-he4-chi-completion-dual-path-gate.md`,
 
 Priority: low (8th digit, pre-existing, not blocking any L1/L2 leg). Worth
 pinning the root cause so the two trace paths agree to machine precision.
+
+## ROOT-CAUSED 2026-06-30 — it's a q₀ mismatch, NOT a two-implementation gap
+
+`y-lambda-mpfr-witness.json` (the `_load_y_lambda` default) was evaluated at the
+**retired-proton** q₀ `1.1099785827513808…` (…827513808), while markov-peel + the
+χ witnesses use the canonical **muon** q₀ `1.1099785955573347…` — diverging at digit
+8 (rel 1.15e-8). Every `Σ y_λ χ_λ` mixes muon-q₀ χ with retired-proton-q₀ y_λ.
+
+**Confirmation:** re-evaluating the symbolic y_λ at the muon q₀ collapses the
+deuteron gap from 4.8e-8 → **9.1e-20** vs markov-peel. The two trace implementations
+agree to 1e-19 at a consistent q₀.
+
+**Fix (owner-gated coordinated sweep):** regenerate `y-lambda-mpfr-witness.json` at
+the muon q₀ (`regenerate_y_lambda_mpfr.py`; `q_parameter.Q` is already muon), then
+re-run downstream producers that store a `Σ y_λ χ_λ` tr_M (incl. the PR #3150 He-4
+witness, whose `tr_M_dual_path_rel_gap = 1.32e-7` IS this mismatch). Below all
+tolerances, so non-urgent. Full audit:
+`docs/audits/2026-06-30-mmst-ylambda-retired-proton-q0-root-cause.md`.
