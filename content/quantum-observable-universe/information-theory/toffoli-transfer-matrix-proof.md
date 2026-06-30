@@ -11,7 +11,7 @@ $\hat{V}_1 = z \cdot c + d$ where $(c, d)$ depends on the
 crossing type.  Direct computation:
 
 $$
-  \hat{V}_1^{(pp)} = z \cdot 1 + 0 = z
+  \hat{V}_1^{(\mathrm{pp})} = z \cdot 1 + 0 = z
 $$
 
 $$
@@ -21,15 +21,15 @@ $$
 $$
 
 $$
-  \hat{V}_1^{(nn)}
+  \hat{V}_1^{(\mathrm{nn})}
   = z \cdot 1 - (q - q^{-1})
   = z - (q - q^{-1})
 $$
 
 These three values are **not** equal — they differ in the
 $d$ coefficient, so a single crossing *does* carry type
-information: $\hat{V}_1^{(\mathrm{mix})} - \hat{V}_1^{(pp)} =
--\tfrac{q - q^{-1}}{2}$ and $\hat{V}_1^{(nn)} - \hat{V}_1^{(pp)} =
+information: $\hat{V}_1^{(\mathrm{mix})} - \hat{V}_1^{(\mathrm{pp})} =
+-\tfrac{q - q^{-1}}{2}$ and $\hat{V}_1^{(\mathrm{nn})} - \hat{V}_1^{(\mathrm{pp})} =
 -(q - q^{-1})$. What vanishes is the *target-flip* difference, not
 the type dependence: generator $\sigma_1$ is the
 **control–control crossing** (strands $1$–$2$), which a target-flip
