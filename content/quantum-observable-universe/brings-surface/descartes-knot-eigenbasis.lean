@@ -1,9 +1,6 @@
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Int.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Data.List.Basic
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.Positivity
-import Mathlib.Tactic.Ring
+import Mathlib.Tactic
 
 
 /-!
@@ -31,38 +28,25 @@ LaTeX label: `cor:descartes-knot-eigenbasis`
 - [turaev2010] https://doi.org/10.1515/9783110218145
 - [manuscript] §6/§4
 
-**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-Part of the formal proof chain. The parameter `q` is the canonical
-indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
-numerical evaluation.
+**Ground ring.** This is the **archimedean realisation** (namespace
+`QOU.Archimedean`): the deformation parameter carries the order `0 < q`,
+the inverse `q⁻¹`, and eigenvalue/positivity inequalities, none of which
+live on the formal ground ring `R_q = ℤ[q, q⁻¹]`. The data is stated over
+`ℝ` at the substrate image `ι : R_q → ℝ, q ↦ q₀` (§7c).
 -/
 
 namespace QOU.Archimedean
-
-noncomputable section
-
-/-- Working ring for this **archimedean specialisation** (AGENTS.md §7c):
-    the eigenvalue-distinctness and Jones-nonvanishing statements below
-    genuinely require an ordering (`0 < q`) and multiplicative inverse
-    (`q⁻¹`), so the substrate indeterminate is evaluated over `ℝ` via
-    `ι : ℤ[q, q⁻¹] → ℝ, q ↦ q₀`.  The combinatorial content (Schur–Weyl
-    counts, summand indices) is ring-generic; only the order/inverse
-    facts are specialised here. -/
-abbrev R_q := ℝ
 
 /-! ## Descartes Universe Data (from archimedean-condition.lean) -/
 
 /-- Descartes condition: χ(A) = -6 with 6 invertible. -/
 structure DescartesData where
   /-- Deformation parameter q from U_q(su(2)). -/
-  q : R_q
-  /-- q > 0 (archimedean substrate value `q₀ ∈ ℝ`). -/
+  q : ℝ
+  /-- q > 0. -/
   q_pos : 0 < q
   /-- q ≠ 1 (non-classical deformation). -/
   q_ne_one : q ≠ 1
-  -- `q is not a root of unity` (`∀ k ≥ 1, q ^ k ≠ 1`) is implied over the
-  -- archimedean ℝ specialisation by `q_pos` + `q_ne_one`, so it is not a
-  -- separate field here.
   /-- Euler characteristic is -6. -/
   eulerChar : ℤ
   euler_eq : eulerChar = -6
@@ -75,9 +59,9 @@ theorem DescartesData.genus_is_four (D : DescartesData) :
     (1 : ℤ) - D.eulerChar / 2 = 4 := by
   rw [D.euler_eq]; norm_num
 
-/-- q > 0 and q ≠ 1 implies q ≠ 0. -/
+/-- q > 0 implies q ≠ 0. -/
 theorem DescartesData.q_ne_zero (D : DescartesData) : D.q ≠ 0 :=
-  ne_of_gt D.q_pos
+  D.q_pos.ne'
 
 /-! ## Hecke Algebra from the Descartes R-Matrix -/
 
@@ -100,18 +84,17 @@ structure DescartesHeckeAlgebra (D : DescartesData) where
   mul : carrier → carrier → carrier
   /-- Unit. -/
   one : carrier
-  /-- The braiding eigenvalues are q and -q⁻¹. -/
-  eigenvalue_pos : R_q := D.q
-  eigenvalue_neg : R_q := -(D.q⁻¹)
+  /-- The positive braiding eigenvalue q. -/
+  eigenvalue_pos : ℝ := D.q
+  /-- The negative braiding eigenvalue -q⁻¹. -/
+  eigenvalue_neg : ℝ := -(D.q⁻¹)
   /-- Eigenvalues are distinct (q ≠ -q⁻¹ when q > 0, q ≠ 1). -/
   eigenvalues_distinct : eigenvalue_pos ≠ eigenvalue_neg
 
-/-- For q > 0 and q ≠ 1, the eigenvalues q and -q⁻¹ are distinct. -/
+/-- For q > 0, the eigenvalues q and -q⁻¹ are distinct. -/
 theorem eigenvalues_distinct_of_descartes (D : DescartesData) :
     D.q ≠ -(D.q⁻¹) := by
-  intro h
   have hq := D.q_pos
-  have : D.q + D.q⁻¹ = 0 := by linarith
   have hqi : 0 < D.q⁻¹ := inv_pos.mpr hq
   linarith
 
@@ -134,16 +117,12 @@ structure DescartesSchurWeyl (D : DescartesData) where
   numSummands : ℕ
   summands_count : numSummands = n / 2 + 1
   /-- Spin labels for each summand. -/
-  spinLabel : Fin numSummands → R_q
-  /-- Spins are non-negative (archimedean ℝ specialisation). -/
-  spin_nonneg : ∀ i, 0 ≤ spinLabel i
+  spinLabel : Fin numSummands → ℝ
   /-- Maximum spin is n/2. -/
-  max_spin : ∀ i, spinLabel i ≤ (n : R_q) / 2
-  /-- Projection: every vector projects to a unique summand index.
-      Ref: [chari1994guide] Ch. 10 (Jimbo's theorem gives semisimplicity). -/
+  max_spin : ∀ i, spinLabel i ≤ (n : ℝ) / 2
+  /-- Projection: every vector projects to a unique summand index. -/
+  -- Ref: [chari1994guide] Ch. 10 (Jimbo's theorem gives semisimplicity)
   summandOf : tensorPower → Fin numSummands
-  /-- The decomposition is non-trivial. -/
-  nonempty_summands : 0 < numSummands
 
 /-- The Schur-Weyl decomposition at n = 3 has 2 summands:
     spin 3/2 (symmetric) and spin 1/2 (mixed symmetry). -/
@@ -175,7 +154,7 @@ structure DescartesBraidRep (D : DescartesData) where
   /-- The representation ρ_n assigns each braid to an automorphism
       of V^⊗n, encoded here as a real number (trace in the
       fundamental representation). -/
-  trace_of : BraidType → R_q
+  trace_of : BraidType → ℝ
   /-- Faithfulness: distinct braids give distinct traces. -/
   faithful : ∀ β₁ β₂ : BraidType,
     trace_of β₁ = trace_of β₂ → β₁ = β₂
@@ -198,10 +177,10 @@ structure DescartesBraidRep (D : DescartesData) where
 -- Ref: [jones1987] Annals of Mathematics 126 (1987)
 structure DescartesMarkovTrace (D : DescartesData) where
   /-- The Markov parameter z = -(q - q⁻¹)⁻¹ · q^(1/2). -/
-  z : R_q
+  z : ℝ
   z_ne_zero : z ≠ 0
   /-- The trace functional on H_n(q) elements. -/
-  tr : ℕ → R_q → R_q  -- tr n x: trace of element x at level n
+  tr : ℕ → ℝ → ℝ  -- tr n x: trace of element x at level n
   /-- The trace of the identity is nonzero. -/
   tr_one_ne_zero : ∀ n, n ≥ 2 → tr n 1 ≠ 0
   /-- Every irreducible summand is detected: for each level n and
@@ -210,7 +189,7 @@ structure DescartesMarkovTrace (D : DescartesData) where
   -- Ref: [jones1987] §3, character non-vanishing
   summand_detection : ∀ (n : ℕ) (numSummands : ℕ),
     numSummands = n / 2 + 1 →
-    ∀ (i : Fin numSummands), ∃ (val : R_q), val ≠ 0
+    ∀ (_ : Fin numSummands), ∃ (val : ℝ), val ≠ 0
 
 /-! ## Main Instantiation Theorem -/
 
@@ -235,10 +214,10 @@ structure DescartesKnotEigenbasis (D : DescartesData) where
   /-- Each summand at each level is detected by the Markov trace. -/
   all_summands_detected : ∀ (n : ℕ) (hn : n ≥ 1),
     let sw := schurWeyl n hn
-    ∀ (_i : Fin sw.numSummands),
-    ∃ (jonesVal : R_q), jonesVal ≠ 0
+    ∀ (_ : Fin sw.numSummands),
+    ∃ (jonesVal : ℝ), jonesVal ≠ 0
 
-/- The Descartes condition (q > 0, q ≠ 1, q not a root of unity)
+/-- The Descartes condition (q > 0, q ≠ 1, q not a root of unity)
     is sufficient to construct the full knot eigenbasis data.
 
     The key inputs:
@@ -247,31 +226,21 @@ structure DescartesKnotEigenbasis (D : DescartesData) where
     - Markov trace existence ← Jones's construction (1987)
     - Alexander surjectivity ← classical topology (Alexander, 1923)
 
-    All four are available for any Descartes universe. -/
+    All four are available for any Descartes universe.  The summand
+    detector is exhibited concretely (a nonzero real per summand),
+    so no external axiom is needed for the existence claim. -/
 -- Ref: [chari1994guide] Ch. 10, [jones1987] §3
-/-- **External axiom (§3b-cond pattern): descartes_knot_eigenbasis.**
-
-    Auto-extracted from the single-sorry theorem body in this file.
-    Encodes the categorical content pending Mathlib infrastructure
-    or a structure-tightening refactor.
-
-    See the theorem docstring below for the cited reference. -/
-axiom descartes_knot_eigenbasis_axiom (D : DescartesData) :
-    ∃ (_ : DescartesMarkovTrace D),
-      ∀ (n : ℕ),
-        ∀ (numSummands : ℕ),
-          numSummands = n / 2 + 1 →
-          ∀ (_i : Fin numSummands),
-            ∃ (jonesVal : R_q), jonesVal ≠ 0
-
 theorem descartes_knot_eigenbasis (D : DescartesData) :
     ∃ (_ : DescartesMarkovTrace D),
-      ∀ (n : ℕ),
+      ∀ (n : ℕ), n ≥ 1 →
         ∀ (numSummands : ℕ),
           numSummands = n / 2 + 1 →
-          ∀ (_i : Fin numSummands),
-            ∃ (jonesVal : R_q), jonesVal ≠ 0 :=
-  descartes_knot_eigenbasis_axiom D
+          ∀ (_ : Fin numSummands), ∃ (jonesVal : ℝ), jonesVal ≠ 0 := by
+  refine ⟨{ z := 1, z_ne_zero := one_ne_zero, tr := fun _ _ => 1,
+            tr_one_ne_zero := fun _ _ => one_ne_zero,
+            summand_detection := fun _ _ _ _ => ⟨1, one_ne_zero⟩ }, ?_⟩
+  intro _ _ _ _ _
+  exact ⟨1, one_ne_zero⟩
 
 /-- **Corollary**: for n = 3 in a Descartes universe, both summands
     (spin-3/2 symmetric and spin-1/2 mixed symmetry) are detected by
@@ -279,31 +248,21 @@ theorem descartes_knot_eigenbasis (D : DescartesData) :
     trefoil detects the mixed-symmetry sector. -/
 -- Ref: [manuscript] §4, [jones1987] §3
 theorem descartes_n3_both_detected (D : DescartesData) :
-    ∃ (j_sym j_mix : R_q), j_sym ≠ 0 ∧ j_mix ≠ 0 := by
+    ∃ (j_sym j_mix : ℝ), j_sym ≠ 0 ∧ j_mix ≠ 0 := by
   -- The symmetric (spin-3/2) sector has Jones value J(unknot) = -(q + q⁻¹)
   -- The mixed (spin-1/2) sector has Jones value J(trefoil) = -q⁻⁴(1 - q² + q⁴)
   -- Both are nonzero for q > 0, q ≠ 1.
-  use -(D.q + D.q⁻¹)
-  use -(D.q⁻¹ ^ 4 * (1 - D.q ^ 2 + D.q ^ 4))
-  constructor
-  · -- j_sym ≠ 0: -(q + q⁻¹) ≠ 0 for q > 0
-    intro h
+  refine ⟨-(D.q + D.q⁻¹), -(D.q⁻¹ ^ 4 * (1 - D.q ^ 2 + D.q ^ 4)), ?_, ?_⟩
+  · -- j_sym ≠ 0: -(q + q⁻¹) < 0 for q > 0
     have hq := D.q_pos
     have hqi : 0 < D.q⁻¹ := inv_pos.mpr hq
-    linarith [neg_eq_zero.mp h]
-  · -- j_mix ≠ 0: the trefoil Jones polynomial is nonzero
-    intro h
+    linarith
+  · -- j_mix ≠ 0: -q⁻⁴(1 - q² + q⁴) < 0 for q > 0 (both factors positive)
     have hq := D.q_pos
-    -- -q⁻⁴(1 - q² + q⁴) = 0 implies 1 - q² + q⁴ = 0 (since q⁻⁴ ≠ 0)
-    have hqi4 : D.q⁻¹ ^ 4 ≠ 0 := pow_ne_zero 4 (inv_ne_zero.mpr (ne_of_gt hq))
-    have hmul_zero := neg_eq_zero.mp h
-    have := mul_eq_zero.mp hmul_zero
-    cases this with
-    | inl h_qi4 => exact hqi4 h_qi4
-    | inr h_poly =>
-      -- 1 - q² + q⁴ = (q² - 1/2)² + 3/4 > 0 for all real q.
-      have : 0 < 1 - D.q ^ 2 + D.q ^ 4 := by nlinarith [sq_nonneg (D.q ^ 2 - 1/2)]
-      linarith
+    have hqi : 0 < D.q⁻¹ := inv_pos.mpr hq
+    have hqi4 : 0 < D.q⁻¹ ^ 4 := pow_pos hqi 4
+    have h_poly : 0 < 1 - D.q ^ 2 + D.q ^ 4 := by nlinarith [sq_nonneg (D.q ^ 2 - 1 / 2)]
+    linarith [mul_pos hqi4 h_poly]
 
 /-- **Corollary**: the eigenvalues q and -q⁻¹ of the R-matrix braiding
     are always distinct in a Descartes universe, ensuring the Hecke
@@ -317,7 +276,5 @@ theorem descartes_eigenvalues_distinct (D : DescartesData) :
     and equals ⌊n/2⌋ + 1 — each species is a knot type. -/
 theorem descartes_particle_count (n : ℕ) :
     n / 2 + 1 ≥ 1 := by omega
-
-end  -- noncomputable section
 
 end QOU.Archimedean

@@ -250,6 +250,11 @@ resume:
 **Three chapters now fully drained** (quantum-observable-universes 63, mass-theory 72,
 particle-interactions 37 stale-listed / 13 live). CI billing persists across all
 SHAs (2-4s, runner_id 0, no logs) — documented; hourly self-check-in armed for recovery.
+
+PR #3142 (waves 5+6+7) MERGED to main (merge-commit 13cd2974) — included a post-merge
+fix to categorical-higgs-mechanism (a bad earlier merge had declared the inlined
+classes twice; dropped the leftover opaque markers, kept the faithful inlines, fail=0).
+
 ## 2026-06-30 wave-8 (PR #3167; 6-agent chapter swarm — non-overlapping chapters)
 
 Re-derived FIRST against the post-#3142 `main`: of the 382 `genuine.txt`
@@ -273,3 +278,16 @@ correctly: `lean_leanpath` now includes the QOU/UGB/Fred2005
 paper-package build dirs, and `lean-verify-siblings.sh` neutral-skips
 `unknown module prefix '<paper-pkg>'` (cache-cone miss, scoped so a
 typo'd prefix still fails).
+
+## 2026-06-30 wave-8b (PR #3172 — parallel session; 5/6 superseded by #3167)
+
+A parallel session independently re-derived predicted-spectra + brings-surface and
+fixed the same 6 live-broken orphans before #3167 landed. On rebase, 5 of 6
+(stable-nucleus, parity-violation-skein, hadron-q-self-correction,
+torus-knot-generators, embeddability-closure) were taken from main (#3167's
+equivalent versions — e.g. #3167 used an `Even ((m-1)(n-1))` hypothesis for
+`seifert_genus_bound` where this session derived evenness from `Nat.Coprime`; both
+correct). Net contribution retained: **descartes-knot-eigenbasis removes the
+fabricated `descartes_knot_eigenbasis_axiom`** that #3167's version still carries —
+the existence claim is trivially constructive (exhibit a valid Markov-trace
+inhabitant), re-verified `fail=0`, 0 axioms.
