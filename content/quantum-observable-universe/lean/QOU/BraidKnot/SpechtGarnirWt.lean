@@ -194,4 +194,102 @@ theorem patRel_comp_perm_of_bottomHeavy (c : Fin (Specht.nOf μ) → ℕ)
   rw [domCount_comp_perm]
   exact h i m
 
+/-- **Two-column bottom-heaviness ⟹ column dominance (piece A3).** Let `c` be a
+pattern, `σ` a permutation supported on the two-value set `X = c⁻¹{j, j+1}` (it
+fixes everything outside and preserves `X`), and suppose the threshold-`j`
+bottom-heaviness `#{c l = j ∧ l < m} ≤ #{c l = j ∧ σ l < m}` holds for all `m`.
+Then `patRel c (c ∘ σ⁻¹)`: the relabelled pattern weakly dominates `c`.
+
+For the Garnir set at a column-standard row-violation, `σ ∈ S_X ∖ C_t` satisfies
+all three hypotheses — `hbh` because every `B`-label `< ` every `A`-label, so
+`A = {c = j}` holds the largest labels and any `σ(A) ≠ A` is more bottom-heavy. -/
+theorem patRel_comp_perm_two_column (c : Fin (Specht.nOf μ) → ℕ)
+    (σ : Equiv.Perm (Fin (Specht.nOf μ))) (j : ℕ)
+    (hsupp : ∀ l, ¬ (c l = j ∨ c l = j + 1) → σ l = l)
+    (hstab : ∀ l, (c (σ l) = j ∨ c (σ l) = j + 1) ↔ (c l = j ∨ c l = j + 1))
+    (hbh : ∀ m, (Finset.univ.filter (fun l => c l = j ∧ (l : ℕ) < m)).card
+              ≤ (Finset.univ.filter
+                  (fun l => c l = j ∧ ((σ l : Fin (Specht.nOf μ)) : ℕ) < m)).card) :
+    patRel c (fun l => c (σ⁻¹ l)) := by
+  apply patRel_comp_perm_of_bottomHeavy
+  intro i m
+  have split : ∀ (P : Fin (Specht.nOf μ) → Prop) [DecidablePred P],
+      (Finset.univ.filter P).card
+        = (Finset.univ.filter (fun l => P l ∧ (c l = j ∨ c l = j + 1))).card
+          + (Finset.univ.filter (fun l => P l ∧ ¬ (c l = j ∨ c l = j + 1))).card := by
+    intro P _
+    rw [← Finset.filter_filter, ← Finset.filter_filter]
+    exact (Finset.filter_card_add_filter_neg_card_eq_card _).symm
+  rw [split (fun l => (l : ℕ) < m ∧ c l ≤ i),
+      split (fun l => ((σ l : Fin (Specht.nOf μ)) : ℕ) < m ∧ c l ≤ i)]
+  apply Nat.add_le_add
+  · -- in-`X` part
+    rcases lt_trichotomy i j with hlt | heq | hgt
+    · -- i < j: left filter empty
+      have he : (Finset.univ.filter
+          (fun l : Fin (Specht.nOf μ) => ((l : ℕ) < m ∧ c l ≤ i) ∧ (c l = j ∨ c l = j + 1))) = ∅ := by
+        rw [Finset.filter_eq_empty_iff]
+        rintro l _ ⟨⟨_, hci⟩, hx⟩
+        rcases hx with h | h <;> omega
+      rw [he]; exact Nat.zero_le _
+    · -- i = j: hbh
+      subst heq
+      have hL : (Finset.univ.filter
+            (fun l : Fin (Specht.nOf μ) => ((l : ℕ) < m ∧ c l ≤ i) ∧ (c l = i ∨ c l = i + 1)))
+          = (Finset.univ.filter (fun l => c l = i ∧ (l : ℕ) < m)) := by
+        apply Finset.filter_congr; intro l _
+        constructor
+        · rintro ⟨⟨hlm, hci⟩, hx⟩; rcases hx with h | h
+          · exact ⟨h, hlm⟩
+          · omega
+        · rintro ⟨hcj, hlm⟩; exact ⟨⟨hlm, le_of_eq hcj⟩, Or.inl hcj⟩
+      have hR : (Finset.univ.filter
+            (fun l => (((σ l : Fin (Specht.nOf μ)) : ℕ) < m ∧ c l ≤ i) ∧ (c l = i ∨ c l = i + 1)))
+          = (Finset.univ.filter (fun l => c l = i ∧ ((σ l : Fin (Specht.nOf μ)) : ℕ) < m)) := by
+        apply Finset.filter_congr; intro l _
+        constructor
+        · rintro ⟨⟨hlm, hci⟩, hx⟩; rcases hx with h | h
+          · exact ⟨h, hlm⟩
+          · omega
+        · rintro ⟨hcj, hlm⟩; exact ⟨⟨hlm, le_of_eq hcj⟩, Or.inl hcj⟩
+      rw [hL, hR]; exact hbh m
+    · -- i > j: c l ≤ i holds on `X`; reindex by σ
+      have hL : (Finset.univ.filter
+            (fun l : Fin (Specht.nOf μ) => ((l : ℕ) < m ∧ c l ≤ i) ∧ (c l = j ∨ c l = j + 1)))
+          = (Finset.univ.filter (fun l : Fin (Specht.nOf μ) => (l : ℕ) < m ∧ (c l = j ∨ c l = j + 1))) := by
+        apply Finset.filter_congr; intro l _
+        constructor
+        · rintro ⟨⟨hlm, _⟩, hx⟩; exact ⟨hlm, hx⟩
+        · rintro ⟨hlm, hx⟩; refine ⟨⟨hlm, ?_⟩, hx⟩; rcases hx with h | h <;> omega
+      have hR : (Finset.univ.filter
+            (fun l => (((σ l : Fin (Specht.nOf μ)) : ℕ) < m ∧ c l ≤ i) ∧ (c l = j ∨ c l = j + 1)))
+          = (Finset.univ.filter
+              (fun l => ((σ l : Fin (Specht.nOf μ)) : ℕ) < m ∧ (c l = j ∨ c l = j + 1))) := by
+        apply Finset.filter_congr; intro l _
+        constructor
+        · rintro ⟨⟨hlm, _⟩, hx⟩; exact ⟨hlm, hx⟩
+        · rintro ⟨hlm, hx⟩; refine ⟨⟨hlm, ?_⟩, hx⟩; rcases hx with h | h <;> omega
+      rw [hL, hR]
+      apply le_of_eq
+      refine Finset.card_bij' (fun l _ => σ⁻¹ l) (fun l _ => σ l) ?_ ?_ ?_ ?_
+      · intro l hl
+        rw [Finset.mem_filter] at hl ⊢
+        refine ⟨Finset.mem_univ _, ?_, ?_⟩
+        · show ((σ (σ⁻¹ l) : Fin (Specht.nOf μ)) : ℕ) < m
+          rw [Equiv.Perm.apply_inv_self]; exact hl.2.1
+        · have hh := hstab (σ⁻¹ l); rw [Equiv.Perm.apply_inv_self] at hh; exact hh.mp hl.2.2
+      · intro l hl
+        rw [Finset.mem_filter] at hl ⊢
+        exact ⟨Finset.mem_univ _, hl.2.1, (hstab l).mpr hl.2.2⟩
+      · intro l _; exact Equiv.Perm.apply_inv_self σ l
+      · intro l _; exact Equiv.Perm.inv_apply_self σ l
+  · -- out-of-`X` part: σ fixes these, so the two filters coincide
+    apply le_of_eq
+    apply congrArg Finset.card
+    apply Finset.filter_congr
+    intro l _
+    by_cases hx : c l = j ∨ c l = j + 1
+    · simp [hx]
+    · simp [hsupp l hx]
+
 end QOU.BraidKnot.SpechtGarnirWt
