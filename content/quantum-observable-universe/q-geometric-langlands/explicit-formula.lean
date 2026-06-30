@@ -37,8 +37,10 @@ structure ReebEigenvalue where
 noncomputable def qInteger (q : ℝ) (hq : 1 < q) (ρ : ℝ) : ℝ :=
   (q ^ ρ - q ^ (-ρ)) / (q - q⁻¹)
 
-/-- The q-logarithm ln_q(x) = ln(x) / ln(q). -/
-noncomputable def qLog (q : ℝ) (hq : 1 < q) (x : ℝ) : ℝ :=
+/-- The q-logarithm ln_q(x) = ln(x) / ln(q). Well-defined for `q > 1`
+    (so `Real.log q ≠ 0`); the positivity hypothesis is carried by the
+    consumers rather than baked into the definition. -/
+noncomputable def qLog (q : ℝ) (x : ℝ) : ℝ :=
   Real.log x / Real.log q
 
 /-- The spectral side of the explicit formula: the oscillatory sum
@@ -47,8 +49,8 @@ noncomputable def spectralSide
     (q : ℝ) (hq : 1 < q) (spectrum : List ReebEigenvalue)
     (Omega_q : ℝ) (X : ℝ) : ℝ :=
   X - (spectrum.map fun ρ => X ^ ρ.val / qInteger q hq ρ.val).sum
-    - qLog q hq (2 * Real.pi * Omega_q)
-    - (1 / 2) * qLog q hq (1 - X ^ (-2 : ℝ))
+    - qLog q (2 * Real.pi * Omega_q)
+    - (1 / 2) * qLog q (1 - X ^ (-2 : ℝ))
 
 /-- For q > 1, the q-integer [n]_q is positive for positive n. -/
 theorem qInteger_pos (q : ℝ) (hq : 1 < q) (ρ : ℝ) (hρ : 0 < ρ) :
@@ -59,7 +61,8 @@ theorem qInteger_pos (q : ℝ) (hq : 1 < q) (ρ : ℝ) (hρ : 0 < ρ) :
     have hq_pos : (0 : ℝ) < q := by linarith
     exact sub_pos.mpr (Real.rpow_lt_rpow_of_exponent_lt hq (by linarith : -ρ < ρ))
   · -- q - q⁻¹ > 0 when q > 1
-    have : q⁻¹ < 1 := inv_lt_one_of_one_lt hq
+    have hq_pos : (0 : ℝ) < q := by linarith
+    have : q⁻¹ < 1 := by rw [inv_lt_one₀ hq_pos]; exact hq
     linarith
 
 /-- **External axiom (L'Hôpital, renormalised q-log limit):**
@@ -67,18 +70,45 @@ theorem qInteger_pos (q : ℝ) (hq : 1 < q) (ρ : ℝ) (hρ : 0 < ρ) :
 -- Ref: [manuscript] Ch. 8 §explicit-formula
 axiom qLog_tendsto_log_axiom :
     ∀ (x : ℝ), 0 < x →
-      Filter.Tendsto (fun q => qLog q (by linarith : 1 < q) x)
-        (Filter.nhdsWithin 1 (Set.Ioi 1))
-        (Filter.nhds (Real.log x))
+      Filter.Tendsto (fun q => qLog q x)
+        (nhdsWithin 1 (Set.Ioi 1))
+        (nhds (Real.log x))
 
 /-- The q-logarithm converges to the ordinary logarithm as q → 1. -/
 theorem qLog_tendsto_log (x : ℝ) (hx : 0 < x) :
-    Filter.Tendsto (fun q => qLog q (by linarith : 1 < q) x)
-      (Filter.nhdsWithin 1 (Set.Ioi 1))
-      (Filter.nhds (Real.log x)) :=
+    Filter.Tendsto (fun q => qLog q x)
+      (nhdsWithin 1 (Set.Ioi 1))
+      (nhds (Real.log x)) :=
   qLog_tendsto_log_axiom x hx
 
-/-- **Explicit formula as a spectral–geometric trace identity.**
+/-- A maximal ideal of the coordinate ring in the geometric (ℝ)
+    realisation: it carries a real norm N(𝔪) (residue-field
+    cardinality) and a flag marking fundamental defects. The Laurent
+    `R_q` form lives in the sibling `q-von-mangoldt-function`; here we
+    work over ℝ for the analytic explicit-formula side. -/
+structure MaxIdeal where
+  /-- The norm N(𝔪) — cardinality of the residue field. -/
+  norm : ℝ
+  /-- Whether this ideal corresponds to a fundamental defect. -/
+  isFundamental : Bool
+
+/-- The q-von Mangoldt weight of a maximal ideal: for a fundamental
+    defect with norm N(𝔪), `(N(𝔪)^ℏ_q − 1)/ℏ_q`; otherwise `0`. -/
+noncomputable def QVonMangoldtFunction (hbar_q : ℝ) (_hbar_pos : 0 < hbar_q)
+    (m : MaxIdeal) : ℝ :=
+  if m.isFundamental then (m.norm ^ hbar_q - 1) / hbar_q else 0
+
+open Classical in
+/-- The q-Chebyshev function ψ_q(X): the sum of the q-von Mangoldt
+    weights over all maximal ideals with norm `N(𝔪) ≤ X`. The norm
+    cutoff `N(𝔪) ≤ X` is a real comparison, decided classically. -/
+noncomputable def QChebyshevFunction
+    (hbar_q : ℝ) (hbar_pos : 0 < hbar_q)
+    (ideals : List MaxIdeal) (X : ℝ) : ℝ :=
+  (ideals.map
+    (fun m => if m.norm ≤ X then QVonMangoldtFunction hbar_q hbar_pos m else 0)).sum
+
+/- **Explicit formula as a spectral–geometric trace identity.**
 
     The q-Chebyshev function ψ_q(X), which sums the q-von Mangoldt
     weights over defects with norm ≤ X, equals the spectral expansion:
