@@ -136,15 +136,10 @@ OVER_COUNT_MN_NOT_INPUT = {
     'qbeta_h4_sign_block_proof_search.py',
     'reeb_rotation_pn_test.py',
     'sigma_shell_from_beta_chain.py',
-    # 2026-06-30 (bean j1hg, disposition B): the remaining 12 flagged scripts
-    # are regex false-positives on rigorous inspection. The genuine
-    # m_n-derivation refactor was already done by sibling work — these compute
-    # with `m_n_derived_3input` (= m_p + Q_β + m_e) and carry only a VESTIGIAL
-    # `M_N_MEV` import (0 non-import uses, verified by grep), or use M_N_MEV as a
-    # CODATA comparison reference, never as a prediction input. See
-    # docs/audits/2026-06-30-j1hg-overcount-final-drain.md. (Vestigial-import
-    # cleanup is a cosmetic canonical-env follow-up — removing them needs a
-    # witness regen for the Hecke producers.)
+    # bean j1hg final drain — 12 regex false-positives (vestigial M_N_MEV import
+    # or comparison-only); full per-script evidence in
+    # docs/audits/2026-06-30-j1hg-overcount-final-drain.md. Kept grouped (shared
+    # provenance) with one-line rationale rather than alpha-interleaved.
     'atomic_mass_via_rho_k.py',          # vestigial import; computes via derived m_n
     'channel_product_mass.py',           # vestigial import; uses m_n_derived_3input (L105/124/184)
     'hecke_core_legacy.py',              # vestigial import
