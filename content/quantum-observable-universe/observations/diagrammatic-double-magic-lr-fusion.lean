@@ -76,6 +76,7 @@ class DoubleMagicConjecture (Z N : ℕ) extends LRFusionData Z N where
   /-- LR-rigidity off the fused partition: multiplicity zero. -/
   lr_vanishes_off : ∀ ν : Partition (Z + N), ν ≠ nuZN → lr lambdaZ muN ν = 0
 
+open scoped Classical in
 /-- Conditional theorem: under the double-magic conjecture, the LR
     product is concentrated at the unique fused self-conjugate
     partition. -/
@@ -112,6 +113,7 @@ theorem nu_iff_lr_nonzero
   rw [h, c.lr_unique_at_nu]
   exact one_ne_zero
 
+open scoped Classical in
 /-- Stronger biconditional: under the conjecture, the LR
     coefficient at any `ν` is exactly `1` if `ν = ν_{ZN}` and `0`
     otherwise. The two cases together fully characterise the LR
