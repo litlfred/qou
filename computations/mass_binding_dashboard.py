@@ -344,6 +344,15 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
     #   structure — the open part. Probe: probes/su4_occupancy_binding_probe.py.
     a_V = alpha * math.log(1.0 / W_lambda_float(q0, (1, 1, 1)))   # parameter-free volume coeff
     B_vol = A * a_V
+    # ---- E_C: the EM-sector Coulomb energy (bean 754x). Standard uniform-sphere
+    #   E_C = (3/5)Z(Z−1)·α_EM·ℏc/(r₀·A^1/3); the strong B-forms above carry NO EM
+    #   term. Reported alongside them (additive), NOT subtracted — B_sym etc. are
+    #   calibrated against Coulomb-inclusive AME, so a global subtraction would
+    #   double-count; E_C is cleanly separable only in the mirror-pair DIFFERENCE
+    #   (probes/coulomb_mirror_killswitch_probe.py). Strong-core charge symmetrising
+    #   is keystone-gated (conj:s5-so3-fiber-action); this column does not touch it.
+    from coulomb_energy import coulomb_energy_mev
+    E_C = coulomb_energy_mev(Z, A)
 
     if n <= max_strands:
         from tr_m_atom_via_transfer import tr_m_atom_zn
@@ -377,7 +386,7 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
             "E_multilink": E_multilink, "B_sym_ent": B_sym_ent,
             "m_sym_atom": m_sym_atom, "m_sym_free": m_sym_free,
             "su4_partition": lam, "W_lam": w_lam, "E_gate": E_gate, "c_lam": c_lam,
-            "a_V": a_V, "B_vol": B_vol}
+            "a_V": a_V, "B_vol": B_vol, "E_C": E_C}
 
 
 def _fmt(v, w=8, p=2):
@@ -413,6 +422,7 @@ def _print_legend() -> None:
 | `B_qCLT_fac` | p↔n colour-weighted q-CLT α·(A−1)·⟨bond-type L⟩ (the q-CLT approximation to the colour weighting B_sym does exactly; replaces the uniform `B_qCLT` in the headline — the uniform/isospin-symmetric baseline α·(A−1)·ℓ̄(D) is shown in the Colour-weighting table) |
 | `B_gate` | SU(4) occupancy (entanglement-surprisal) binding E₀·ln(1/W_λ) — the "energy lost to vacuum/entanglement" when the operator-selection SDP collapses the full Hecke q-Plancherel distribution onto the bound cluster's partition λ. Parameter-free (E₀ × Plancherel weight, no fit). DOMINANT at the magic/closed-shell config — fixes ⁴He (err 2.36→0.94, the worst B_sym failure) — but OVER-binds the loosely-bound light nuclei (²H err 0.24); on aggregate worse than B_sym. Cluster surprisal ≈ A·free surprisal ⇒ B_gate ≈ A·E₀·ln(1/W_free) = 7.58 MeV/nucleon, the parameter-free nuclear SATURATION scale (cf. empirical ~8 MeV/A). c_λ = B_AME/E_gate is the shell-filling fraction (the open Δ_λ residual). Probe: `probes/su4_occupancy_binding_probe.py`. |
 | `B_vol` | ALL-KNOTS entanglement binding = the liquid-drop **volume term** `a_V·A`, with `a_V = E₀·ln(1/W_free)` ≈ **7.584 MeV/nucleon DERIVED parameter-free** (W_free = the free nucleon's (1,1,1) Plancherel weight; ≈ empirical net B/A). Entanglement is a property of EVERY knot, not one selected partition — so the per-knot occupancy energy is summed over all A nucleons. Valid for ALL A (no W_λ≥1 breakdown, unlike `B_gate`); tracks ¹²C/¹⁶O to ~1–5% where B_sym misses by 2.1×. Over-binds the lightest (²H, ⁶Li) — the residual is the **surface/Coulomb/shell** structure (the SEMF corrections, open). Probe + audit: `probes/su4_occupancy_binding_probe.py`. |
+| `E_C` | EM-sector **Coulomb energy** `E_C = (3/5)Z(Z−1)·α_EM·ℏc/(r₀·A^1/3)` MeV (standard uniform-sphere; r₀=1.2 fm, α_EM·ℏc=1.43996 MeV·fm — not fit). The strong B-forms carry NO EM term; E_C is the repulsion that REDUCES net binding for proton-rich nuclei. Reported additively, **not** subtracted from the B-columns (they are calibrated against Coulomb-inclusive AME, so a global subtraction would double-count). E_C is cleanly separable only in the mirror-pair DIFFERENCE, where the strong core cancels: CS-core + E_C reproduces the ³H/³He, ⁷Li/⁷Be, ¹³C/¹³N splits to ~20–40% vs the production σ/σ⁻¹ bond's ~200–350% (bean 754x). Module: `coulomb_energy.py`; probe: `probes/coulomb_mirror_killswitch_probe.py`. |
 | `err sym` / `err qCLT_fac` / `err gate` / `err vol` | B_AME / B_model for the production + occupancy + volume forms (1.00 = perfect, >1 under-binds, <1 over-binds) |
 
 **Table 2 — Mass M + error** (values and error in one table; m_X = m_unbnd,can − B_X)
@@ -632,8 +642,8 @@ def main(argv=None) -> int:
     print("### Binding  B + error (MeV)   "
           "[σ_exp = AME2020 1σ; err X = B_AME/B_X (1.00 = perfect, >1 under-binds)]")
     print("| iso | A | B_AME | σ_exp (ppb) | B_can⁰ | B_sym | B_qCLT_fac | B_gate | B_vol "
-          "| err can⁰ | err sym | err qCLT_fac | err gate | err vol |")
-    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
+          "| E_C | err can⁰ | err sym | err qCLT_fac | err gate | err vol |")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         s = r["sigma_AME"]
         s_ppb = (s / r["B_AME"] * 1e9) if (s and r["B_AME"]) else None
@@ -652,7 +662,7 @@ def main(argv=None) -> int:
         e_vol = _err(r["B_AME"], r.get("B_vol"))
         print(f"| {r['name']} | {r['A']} | {_fmt(r['B_AME'])} | {_sci(s_ppb,11,2)} "
               f"| {_fmt(r['B_can0'])} | {_fmt(r['B_sym'])} | {_fmt(r['B_qCLT_fac'])} "
-              f"| {_fmt(eg)} | {_fmt(r.get('B_vol'))} "
+              f"| {_fmt(eg)} | {_fmt(r.get('B_vol'))} | {_fmt(r.get('E_C'))} "
               f"| {_fmt(e_can0,6)} | {_fmt(e_sym,6)} | {_fmt(e_qclt_fac,6)} "
               f"| {_fmt(e_gate,6)} | {_fmt(e_vol,6)} |")
 

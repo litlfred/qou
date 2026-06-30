@@ -1,8 +1,7 @@
 name: Build Lean Documentation (doc-gen4)
 
 on:
-  push:
-    branches: [ main ]
+  # CI auto-triggers disabled (owner directive 2026-06-30): Actions billing.
   workflow_dispatch:
 
 concurrency:

@@ -32,8 +32,8 @@ name: lean-content-siblings
 #     cold runner never false-blocks; only a genuine `lean` type error fails.
 
 on:
-  pull_request:
-    branches: [ main ]
+  # CI auto-triggers disabled (owner directive 2026-06-30): Actions billing.
+  workflow_dispatch:
 
 jobs:
   gate:
