@@ -72,3 +72,52 @@ n-n/p-p asymmetry that experiment forbids — the ³H/³He case exposes it.
 Owner-gated where it touches canonical compute (re-scoping B_sym bond types is a
 production change). Exploratory probe steps (1–4) first; production rewire only
 after owner sign-off.
+
+## Progress — 2026-06-30 (steps 1, 3, 4 done; PR follow-up)
+
+**Step 1 (quantify) — DONE.** `computations/probes/charge_symmetry_bond_probe.py`.
+`L_pp=0.6945, L_pn=0.9292, L_nn=1.2370` → `L_nn/L_pp−1 ≈ 78%`. The bonds are
+the bare crossing σ (p-p, eigenvalues `{q,−q⁻¹}`) and its inverse σ⁻¹ (n-n,
+`{q⁻¹,−q}`). The 78% is ~570× the derived 0.14% p/n split and ~78× the ~1%
+experimental CSB bound; drives a 3–4.5× over-split of the mirror pairs.
+
+**Step 2 (provenance) — answered.** `atom_braid_word_3A` (mass_at_3A_proper.py:271)
+documents p-p↦σ, n-n↦σ⁻¹ as "isospin-distinct"; the deprecated
+`integer-lp-gluon.witness.json` shows the SDP (Gram-positivity feasibility)
+*derived* p-optimum = σ, n-optimum = σ₀σ₁σ₁σ₀ (σ⁻¹-like) as the per-nucleon
+STABILITY optima — so the sign split is SDP-grounded but coarse. The content
+block `inter-nucleon-channel-color-tube.md` labels it the **flavor-only
+majority-sign projection** of the 9-channel color-tube (gg) assignment, gated
+on `conj:s5-so3-fiber-action` (the s5-so3 keystone). Not arbitrary; not yet
+canonical.
+
+**Step 3 (charge-symmetric-core / gg test) — DONE.**
+`computations/probes/gg_production_bond_probe.py` (owner directive "build p and
+n through gg production"). Gluons are flavor-blind, so the leading gg bond is the
+single color-average σ_avg for every bond type: forcing it makes
+`L_pp=L_pn=L_nn=0.9294` EXACTLY → the 78% collapses to 0 and all three mirror
+ΔB_sym collapse to 0. The whole gap was the σ-vs-σ⁻¹ inter-crossing sign (intra
+uud/udd chains cancel in the L ratio). Documented in the paper
+(inter-nucleon-channel-color-tube.md, fourth-line evidence). PR #3175 (merged).
+
+**Step 4 (wire Coulomb / kill-switch) — DONE.**
+`computations/probes/coulomb_mirror_killswitch_probe.py`. Uniform-sphere
+`E_C=(3/5)Z(Z−1)·α_EM·ℏc/(r0·A^1/3)` (r0=1.2fm, α·ℏc=1.43996 MeV·fm — standard,
+not fit):
+
+| pair | ΔE_Coul | CS-core+Coulomb | ΔB_AME | prod σ/σ⁻¹ | resid CS+C | resid prod |
+|---|--:|--:|--:|--:|--:|--:|
+| 3H-3He | +0.998 | +0.998 | +0.764 | +2.271 | +0.235 | +1.507 (6.4×) |
+| 7Li-7Be | +2.258 | +2.258 | +1.644 | +6.812 | +0.614 | +5.168 (8.4×) |
+| 13C-13N | +3.674 | +3.674 | +3.003 | +13.625 | +0.672 | +10.622 (15.8×) |
+
+CS-core+Coulomb matches ΔB_AME to 22–37% (within the known uniform-sphere /
+Nolen–Schiffer over-estimate for light nuclei — Coulomb runs slightly high),
+vs production's 197–354% over-split. **Kill-switch PASSES**: the mirror split is
+Coulomb on a charge-symmetric core, not strong CSB.
+
+**Step 5 (disposition) — OWNER-GATED.** The probes confirm B_sym's σ/σ⁻¹ bond
+split is a (a) scope-limited flavor-only-projection artifact; the canonical fix
+is (gg charge-symmetric core via the color-tube W-matrix, keystone-gated) + a
+wired Coulomb term. Re-scoping production `B_sym` is a canonical-compute change
+requiring owner sign-off. Recorded; not applied.
