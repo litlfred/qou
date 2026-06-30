@@ -34,7 +34,7 @@ it is the imaginary part of the complex fibre observable
 $\mathfrak{V}$ (the QOU Neumann–Zagier volume,
 $\mathfrak{V} = \mathfrak{E}_{\mathrm{bind}} + i\,\mathfrak{Q}_\beta$),
 and equals the $\beta$-decay $Q$-value
-$\mathfrak{Q}_\beta = \operatorname{Im}\mathfrak{V}$. Mass and
+$\mathfrak{Q}_\beta = \mathrm{Im}\,\mathfrak{V}$. Mass and
 $\mathfrak{Q}_\beta$ are the two parities of one object
 ([`conj:binding-qbeta-complex-volume`](binding-qbeta-complex-volume.md)).
 **Discipline:** taking $|\cdot|$ here is correct only when the mass
@@ -42,5 +42,5 @@ $\mathfrak{Q}_\beta$ are the two parities of one object
 $\mathfrak{Q}_\beta$, or that ties binding to decay, must keep the
 **bar-odd shadow** (the root-of-unity evaluation), not collapse to the
 modulus. This is *not* a complex $q_0$: at the observable level
-$\operatorname{Im}(q_0) = 0$; the imaginary part is the *fibre-level*
+$\mathrm{Im}(q_0) = 0$; the imaginary part is the *fibre-level*
 ($\sinh$/root-of-unity) shadow, a separate real observable.
