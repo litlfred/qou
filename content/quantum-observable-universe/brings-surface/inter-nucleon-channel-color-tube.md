@@ -107,6 +107,38 @@ than the uniform-flavor projection's ${\sim}305\,\mathrm{ppm}$ flavor
 split ratio. This is third-line evidence that the categorical structure
 exists and resolves residuals the uniform-flavor form does not.
 
+The **gg-production collapse** is fourth-line evidence and quantifies the
+*cost* of the projection directly. Decomposing the production binding
+$B_{\mathrm{sym}} = \alpha\,\ln(\mathrm{tr}_{\mathrm{free}}/\mathrm{tr}_{\mathrm{atom}})$
+into its per-bond log-suppressions
+$L_{\mathrm{pp}}, L_{\mathrm{pn}}, L_{\mathrm{nn}}$ at $q_0$ gives
+$L_{\mathrm{nn}}/L_{\mathrm{pp}} - 1 \approx 78\%$
+([`charge-symmetry-bond-probe.witness.json`](../../computations/probes/charge-symmetry-bond-probe.witness.json)) —
+roughly $570\times$ the substrate-derived $p/n$ flavor split
+$\delta_{\mathrm{lead}} = $ `flavor_split_leading`$(q_0) \approx 0.14\%$ and
+$78\times$ the experimental charge-symmetry-breaking bound (${\sim}1\%$,
+nn vs pp scattering lengths). This over-break is *entirely* the
+$\sigma$-vs-$\sigma^{-1}$ inter-crossing sign of the flavor-only projection:
+gluons couple color, not flavor, so the leading gg interface is the single
+flavor-blind color-average $\sigma_{\mathrm{avg}} = \sigma - (h/2)\cdot 1$
+for every bond type. Forcing all inter-nucleon crossings to
+$\sigma_{\mathrm{avg}}$ makes
+$L_{\mathrm{pp}} = L_{\mathrm{pn}} = L_{\mathrm{nn}} = 0.9294$ **exactly**
+(the intra-nucleon $uud$ / $udd$ chains cancel in the
+$L = \ln(\mathrm{tr}_{\mathrm{free}}/\mathrm{tr}_{\mathrm{atom}})$ ratio), so
+the $78\%$ asymmetry collapses to $0$ and the spurious mirror-nucleus splits
+$\Delta B_{\mathrm{sym}}({}^{3}\mathrm{H}/{}^{3}\mathrm{He},
+{}^{7}\mathrm{Li}/{}^{7}\mathrm{Be}, {}^{13}\mathrm{C}/{}^{13}\mathrm{N})$
+collapse to $0$, leaving the genuine mirror split to the (unwired) Coulomb
+energy
+([`gg-production-bond-probe.witness.json`](../../computations/probes/gg-production-bond-probe.witness.json)).
+The leading flavor-blind term is exactly charge-symmetric; the sub-leading
+flavor weighting $W_{c_1 c_2}$ is what reintroduces the correct
+$\delta_{\mathrm{lead}}$-scale split. This isolates the load-bearing role of
+$W_{c_1 c_2}$: the uniform-flavor projection does not under-resolve a small
+correction — it *manufactures* an $O(1)$ charge asymmetry the color-tube
+average removes.
+
 ## Conditional structure
 
 This conjecture is conditional on
@@ -145,6 +177,12 @@ then the instance carries an explicit `sorry` per AGENTS.md §3b
 
 ## Consumers
 
+- [`probes/charge_symmetry_bond_probe.py`](../../computations/probes/charge_symmetry_bond_probe.py)
+  — quantifies the flavor-only projection's $78\%$ charge-symmetry over-break
+  vs the derived ($0.14\%$) and experimental (${\sim}1\%$) scales
+- [`probes/gg_production_bond_probe.py`](../../computations/probes/gg_production_bond_probe.py)
+  — flavor-blind gg leading term collapses the $78\%$ to $0$ exactly;
+  isolates $W_{c_1 c_2}$ as the load-bearing sub-leading structure
 - [`isotope_record_schema.py`](../../computations/isotope_record_schema.py)
   — current uniform-flavor rule lives in
   `build_knot_operator_catalogue` lines 190-262
