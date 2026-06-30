@@ -25,7 +25,7 @@ commuting generators (via far-commutativity $\sigma_i \sigma_j =
 $(\sigma_1, \sigma_3, \sigma_5)$ sym/alt eigenvalue patterns
 identify eight pairwise-orthogonal projectors in
 $\mathrm{End}_R(V^{\otimes 6})$ with pure-eigenspace tableaux
-multiplicities $(4, 3, 1, 2, 2, 1, 3, 4)$ (for the eight pure
+multiplicities $(4, 2, 1, 3, 3, 1, 2, 4)$ (for the eight pure
 patterns enumerated in lexicographic order, total dim $= 20$).*
 
 ### Statement (formal)
@@ -201,7 +201,7 @@ $$
   \sum_{(X_W, X_Z, X_H)} m(X_W, X_Z, X_H) \cdot \varepsilon(X_W, X_Z, X_H).
 $$
 
-Substituting the multiplicities $(4, 3, 1, 2, 2, 1, 3, 4)$ and
+Substituting the multiplicities $(4, 2, 1, 3, 3, 1, 2, 4)$ and
 collecting powers:
 
 $$
