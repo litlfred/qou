@@ -8,6 +8,7 @@
 -/
 
 import Mathlib.Algebra.Order.Ring.Defs
+import Mathlib.Data.Real.Basic
 
 namespace QOU.Molecular
 
