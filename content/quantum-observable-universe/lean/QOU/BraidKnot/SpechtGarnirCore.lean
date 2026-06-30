@@ -117,6 +117,23 @@ noncomputable def antisym (H : Subgroup (Perm (Fin (nOf μ)))) [Fintype ↥H]
     (x : Mtab (k := k) μ) : Mtab (k := k) μ :=
   ∑ σ : H, (Equiv.Perm.sign (σ : Perm (Fin (nOf μ))) : ℤ) • Mtab.rep μ (σ : Perm (Fin (nOf μ))) x
 
+/-- `b_H` distributes over finite sums (it is additive: `rep` is linear). -/
+theorem antisym_sum (H : Subgroup (Perm (Fin (nOf μ)))) [Fintype ↥H]
+    {ι : Type*} (s : Finset ι) (f : ι → Mtab (k := k) μ) :
+    antisym (k := k) H (∑ i ∈ s, f i) = ∑ i ∈ s, antisym (k := k) H (f i) := by
+  unfold antisym
+  simp_rw [map_sum, Finset.smul_sum]
+  rw [Finset.sum_comm]
+
+/-- `b_H` commutes with `ℤ`-scaling. -/
+theorem antisym_zsmul (H : Subgroup (Perm (Fin (nOf μ)))) [Fintype ↥H]
+    (c : ℤ) (x : Mtab (k := k) μ) :
+    antisym (k := k) H (c • x) = c • antisym (k := k) H x := by
+  unfold antisym
+  rw [Finset.smul_sum]
+  refine Finset.sum_congr rfl (fun σ _ => ?_)
+  rw [map_zsmul, smul_comm]
+
 /-- **Alternating property.** `τ · (b_H x) = sgn(τ) · b_H x` for `τ ∈ H`. -/
 theorem antisym_rep (H : Subgroup (Perm (Fin (nOf μ)))) [Fintype ↥H]
     {τ : Perm (Fin (nOf μ))} (hτ : τ ∈ H) (x : Mtab (k := k) μ) :
@@ -308,5 +325,34 @@ theorem swap_mem_suppSubgroup {X : Finset (Fin (nOf μ))} {a b : Fin (nOf μ)}
   apply Equiv.swap_apply_of_ne_of_ne
   · rintro rfl; exact hi ha
   · rintro rfl; exact hi hb
+
+/-! ## 7. The Garnir vanishing `b_{S_X} e_t = 0` (modulo the row-index bound)
+
+Assembling §5–§6: if every label of `X` lies in fewer than `|X|` rows of `s`
+(the pigeonhole hypothesis), then `b_{S_X} ⟦s⟧ = 0`; lifting over the
+column-stabiliser sum gives `b_{S_X} e_t = 0` whenever the bound holds for every
+`π · t` (`π ∈ C_t`). This is the **entire** Garnir vanishing reduced to a single
+geometric input — the row-count bound for the two-column Garnir set `X = A ∪ B`,
+which holds with `m = μ'_j` (the longer column length) once `|X| > μ'_j`. -/
+
+/-- **Per-tabloid Garnir vanishing from the row bound.** -/
+theorem antisym_supp_eq_zero_of_card_lt {X : Finset (Fin (nOf μ))} {s : Tableau μ}
+    {m : ℕ} (hbound : ∀ l ∈ X, rowPattern s l < m) (hcard : m < X.card) :
+    antisym (k := k) (suppSubgroup (μ := μ) X) (Mtab.of (k := k) s) = 0 := by
+  obtain ⟨a, ha, b, hb, hne, heq⟩ := exists_sameRow_of_card_lt hbound hcard
+  exact antisym_swap_eq_zero (suppSubgroup X) hne (swap_mem_suppSubgroup ha hb) s heq
+
+/-- **Garnir vanishing.** `b_{S_X} e_t = 0` whenever the row-index bound
+`rowPattern (π·t) l < m` holds for every `π ∈ C_t` and `l ∈ X`, with `m < |X|`. -/
+theorem antisym_supp_polytabloid_eq_zero {X : Finset (Fin (nOf μ))} {t : Tableau μ}
+    {m : ℕ} (hcard : m < X.card)
+    (hbound : ∀ π : colStab t, ∀ l ∈ X,
+      rowPattern ((π : Perm (Fin (nOf μ))) • t) l < m) :
+    antisym (k := k) (suppSubgroup (μ := μ) X) (polytabloid (k := k) t) = 0 := by
+  unfold polytabloid
+  rw [antisym_sum]
+  apply Finset.sum_eq_zero
+  intro π _
+  rw [antisym_zsmul, antisym_supp_eq_zero_of_card_lt (hbound π) hcard, smul_zero]
 
 end QOU.BraidKnot.SpechtGarnirCore
