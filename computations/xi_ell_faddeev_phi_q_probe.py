@@ -119,6 +119,36 @@ def tower_log_phi(V: list[mp.mpf], q: mp.mpf, z: mp.mpf) -> mp.mpf:
     return s
 
 
+def tower_phi_rescaled(V: list[mp.mpf], q: mp.mpf, z: mp.mpf) -> mp.mpf:
+    """(d) Φ_q-direct on the RESCALED argument V̂/q_0. Motivation: the
+    near-singular muon-4_1 behaviour in (b) (V̂≈1.009 sitting ON the
+    radius q_0) says Φ_q should act on a normalised argument bounded
+    well inside the disk. V̂/q_0 ∈ [0,1) for all leptons here."""
+    n = len(V)
+    Vr = [mp.fabs(v) / q for v in V]
+    prod = mp.mpf(1)
+    for v in Vr:
+        prod *= v
+    s = prod
+    for v in Vr:
+        s += phi_q(v, q)
+    for i in range(n):
+        for j in range(i + 1, n):
+            s += z * z * phi_q(Vr[i] * Vr[j], q)
+    return s
+
+
+def tower_log_phi_rescaled(V: list[mp.mpf], q: mp.mpf, z: mp.mpf) -> mp.mpf:
+    """(e) log-Φ_q on the rescaled argument V̂/q_0 (descended-dropped)."""
+    n = len(V)
+    Vr = [mp.fabs(v) / q for v in V]
+    s = sum(log_phi_q(v, q) for v in Vr)
+    for i in range(n):
+        for j in range(i + 1, n):
+            s += z * z * log_phi_q(Vr[i] * Vr[j], q)
+    return s
+
+
 def main() -> int:
     mp.mp.dps = 50
 
@@ -153,39 +183,41 @@ def main() -> int:
         b["m_li2q"] = tower_li2q(b["V"], q0, z)
         b["m_phi"] = tower_phi_direct(b["V"], q0, z)
         b["m_logphi"] = tower_log_phi(b["V"], q0, z)
-
-    print(f"{'lepton':24s} {'max|V̂|':>8s} {'(a)Li2q':>10s} {'(b)Φq':>11s} {'(c)logΦq':>11s}")
-    print("-" * 70)
-    for name, b in leptons.items():
-        print(f"{name:24s} {b['maxV']:8.4f} {float(b['m_li2q']):10.4f} "
-              f"{float(b['m_phi']):11.4f} {float(b['m_logphi']):11.4f}")
-    print()
+        b["m_phi_rs"] = tower_phi_rescaled(b["V"], q0, z)
+        b["m_logphi_rs"] = tower_log_phi_rescaled(b["V"], q0, z)
 
     e = leptons["electron σ_1³ T(2,3)"]
-    print(f"{'ratio to electron':24s} {'CODATA':>10s} {'(a)Li2q':>10s} "
-          f"{'(b)Φq':>11s} {'(c)logΦq':>11s}")
-    print("-" * 78)
+    print(f"{'ratio to electron':24s} {'CODATA':>9s} {'(a)Li2q':>8s} "
+          f"{'(b)Φq':>10s} {'(c)logΦq':>9s} {'(d)Φq/q0':>10s} {'(e)logΦq/q0':>11s}")
+    print("-" * 86)
     out_ratios = {}
     for name in ["muon T(2,5) σ_1⁵", "muon 4_1 (σ_1σ_2⁻¹)²", "tau T(2,7) σ_1⁷"]:
         b = leptons[name]
         cod = cal2 if "muon" in name else cal_tau
-        r_li2q = b["m_li2q"] / e["m_li2q"]
-        r_phi = b["m_phi"] / e["m_phi"]
-        r_logphi = b["m_logphi"] / e["m_logphi"]
-        print(f"{name:24s} {float(cod):10.2f} {float(r_li2q):10.4f} "
-              f"{float(r_phi):11.4f} {float(r_logphi):11.4f}")
+        r = {
+            "li2q": b["m_li2q"] / e["m_li2q"],
+            "phi": b["m_phi"] / e["m_phi"],
+            "logphi": b["m_logphi"] / e["m_logphi"],
+            "phi_rs": b["m_phi_rs"] / e["m_phi_rs"],
+            "logphi_rs": b["m_logphi_rs"] / e["m_logphi_rs"],
+        }
+        print(f"{name:24s} {float(cod):9.2f} {float(r['li2q']):8.3f} "
+              f"{float(r['phi']):10.3f} {float(r['logphi']):9.3f} "
+              f"{float(r['phi_rs']):10.3f} {float(r['logphi_rs']):11.3f}")
         out_ratios[name] = {
             "codata": str(cod),
-            "ratio_li2q_sym": str(r_li2q),
-            "ratio_phi_direct": str(r_phi),
-            "ratio_log_phi": str(r_logphi),
+            "ratio_li2q_sym": str(r["li2q"]),
+            "ratio_phi_direct": str(r["phi"]),
+            "ratio_log_phi": str(r["logphi"]),
+            "ratio_phi_rescaled": str(r["phi_rs"]),
+            "ratio_log_phi_rescaled": str(r["logphi_rs"]),
         }
     print()
     print("=== Reading ===")
     print("(a) symmetric Li_2^q: O(1) ratios — reproduces the Phase-4 obstruction.")
-    print("(b)/(c) Faddeev Φ_q: 1/ℏ enhancement near the convergence radius |V̂|→q_0.")
-    print("    If (b) or (c) ratios approach CODATA → Faddeev Φ_q is the C2 fix;")
-    print("    if still far → the missing structure is elsewhere (honest negative).")
+    print("(b)/(c) Faddeev Φ_q bare arg: 1/ℏ enhancement; (b) overshoots knot-sensitively.")
+    print("(d)/(e) Φ_q on rescaled arg V̂/q_0: tames the near-radius singularity.")
+    print("    Closest-to-CODATA column = the candidate normalization (honest report).")
 
     witness = {
         "description": "ξ_ℓ Faddeev Φ_q vs symmetric Li_2^q per-braid tower probe (proper Wedderburn V̂_i)",
