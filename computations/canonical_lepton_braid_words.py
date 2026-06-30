@@ -336,9 +336,11 @@ def main() -> int:
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
 
-    here = Path(__file__).resolve().parent
-    out = here / "canonical-lepton-braid-words.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+    out = WitnessBuilder.wrap_legacy(
+        "canonical-lepton-braid-words", witness,
+        script_path=__file__, engine="mpmath",
+    ).save()
     print(f"\nWitness: {out}")
     return 0
 

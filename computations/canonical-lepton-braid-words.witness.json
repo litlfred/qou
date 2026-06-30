@@ -1,6 +1,28 @@
 {
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-30T23:17:24.709531+00:00",
+  "commitSha": "434f71ec38716a4d7fd54b47eb84b428bb579dde",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "canonical-lepton-braid-words",
+  "scriptFile": "canonical_lepton_braid_words.py",
+  "scriptHash": "8a8361b90667",
+  "scriptCommitSha": "f6ddd9350192668fe1fb6c2498f8d5b91bb70331",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
   "description": "Canonical lepton braid words + per-braid mass tower probe (T6 followup)",
-  "computation": "canonical_lepton_braid_words",
   "audit_only": true,
   "precision_dps": 50,
   "context": {
@@ -17,7 +39,7 @@
     "cal_tau_codata": "3477.23"
   },
   "leptons": {
-    "electron (\u03c3_1\u00b3 T(2,3))": {
+    "electron (σ_1³ T(2,3))": {
       "knot": "T(2, 3) trefoil",
       "H_n": 2,
       "n_generators": 1,
@@ -30,7 +52,7 @@
       "single_sum": "0.62831749490324504522401364823371910198968121694483",
       "pair_sum": "0.0"
     },
-    "muon_T25 (\u03c3_1\u2075 T(2,5))": {
+    "muon_T25 (σ_1⁵ T(2,5))": {
       "knot": "T(2, 5) cinquefoil",
       "H_n": 2,
       "n_generators": 1,
@@ -57,7 +79,7 @@
       "single_sum": "0.80977691189467130339511837370237111293629001479807",
       "pair_sum": "0.047462120093640609426141400960922978993004020870832"
     },
-    "tau (\u03c3_1\u2077 T(2,7))": {
+    "tau (σ_1⁷ T(2,7))": {
       "knot": "T(2, 7) septafoil",
       "H_n": 2,
       "n_generators": 1,
@@ -71,13 +93,13 @@
       "pair_sum": "0.0"
     }
   },
-  "verdict": "Crude per-generator V\u0302 = |tr_M|^(1/n_gens) placeholder does NOT close lepton mass ratios. T6 requires extending mass_at_3A_proper.per_generator_V_hat_3A to general H_n with proper Plancherel-weighted character sum for lepton braid words. Compute infrastructure gap identified; closes via chi_lambda_braid integration.",
+  "verdict": "Crude per-generator V̂ = |tr_M|^(1/n_gens) placeholder does NOT close lepton mass ratios. T6 requires extending mass_at_3A_proper.per_generator_V_hat_3A to general H_n with proper Plancherel-weighted character sum for lepton braid words. Compute infrastructure gap identified; closes via chi_lambda_braid integration.",
   "follow_up_required": [
     "Generalise per_generator_V_hat_3A to per_generator_V_hat_general(n_strands, word)",
-    "Apply to electron \u03c3_1\u00b3 at H_2; verify against mass-endomorphism-tower.md V\u0302_e \u2248 0.594",
-    "Apply to muon 4_1 at H_3; obtain V\u0302_0, V\u0302_1 (currently unpublished in framework)",
-    "Apply Li_2^q canonical mass tower; check m_\u03bc/m_e against CODATA 206.77",
-    "Same for tau; check m_\u03c4/m_e against CODATA 3477.23"
+    "Apply to electron σ_1³ at H_2; verify against mass-endomorphism-tower.md V̂_e ≈ 0.594",
+    "Apply to muon 4_1 at H_3; obtain V̂_0, V̂_1 (currently unpublished in framework)",
+    "Apply Li_2^q canonical mass tower; check m_μ/m_e against CODATA 206.77",
+    "Same for tau; check m_τ/m_e against CODATA 3477.23"
   ],
-  "timestamp": "2026-05-25T03:11:42+00:00"
+  "timestamp": "2026-06-30T23:17:24+00:00"
 }
