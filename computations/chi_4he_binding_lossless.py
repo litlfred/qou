@@ -2,16 +2,13 @@
 """Lossless ⁴He per-λ χ in the **binding** (color-weighted averaged-crossing)
 convention at q₀, 50 dps, all 77 λ⊢12.
 
-The sign-only (Jones) lossless cache (`chi_4he_via_rust_lossless.py`) uses the
-dim-independent Rust `chi_q_via_gp` path — but that path only takes *braid*
-words `(sign, gen)`, so it cannot evaluate the **binding** convention, whose
-inter-nucleon crossings are Hecke elements `c·σ + d·1` (p-n →
-`σ − h·(½ − δ/4)`, n-n → `σ − h`, δ = flavor_split_leading(q₀)). The MPFR
-binding χ was therefore stuck on the pure-Python matrix-M producer, which
-builds the full dim×dim seminormal per λ and is **infeasible** for n = 12
-(dims to 7700) — leaving the binding cache dim-capped / partial (bean `b0vf`).
+In the binding convention the inter-nucleon crossings are Hecke elements
+`c·σ + d·1` (p-n → `σ − h·(½ − δ/4)`, n-n → `σ − h`, δ = flavor_split_leading(q₀)),
+not braid generators, so the dim-independent Rust `chi_q_via_gp` path — which
+only takes braid words `(sign, gen)` — cannot evaluate them directly, and a
+dim×dim seminormal is infeasible at n = 12 (dims to 7700).
 
-This producer makes the binding χ **lossless** without any dim×dim matrix:
+This producer computes the binding χ **losslessly** with no dim×dim matrix:
 
 1. **Reconstruct** the binding word `Π_k (c_k·σ_{g_k} + d_k·1)` at full MPFR
    precision (`atom_braid_word_3A` floats its coefficients; we rebuild the
@@ -128,7 +125,7 @@ def main() -> int:
           f"{nb} binomials → {2 ** nb} branches", flush=True)
 
     shapes = [tuple(s) for s in parts_of(n)]
-    acc = {s: mp.mpf(0) for s in shapes}
+    acc_terms = {s: [] for s in shapes}
 
     # Enumerate the 2^nb branches; build each sign-only word + scalar coeff.
     for choice in product((0, 1), repeat=nb):  # 0 = identity (b), 1 = σ (a)
@@ -151,7 +148,10 @@ def main() -> int:
             continue
         out = pn.chi_lambda_all_partitions_mpfr(n, signed, q_str, DPS)
         for part, chi_str in out:
-            acc[tuple(part)] += coeff * mp.mpf(chi_str)
+            acc_terms[tuple(part)].append(coeff * mp.mpf(chi_str))
+
+    # fsum the per-branch contributions per λ (avoid sequential-+= rounding).
+    acc = {s: mp.fsum(terms) for s, terms in acc_terms.items()}
 
     # Assemble tr_M = Σ_λ y_λ χ^λ and the per-λ records.
     y_table = _load_y_lambda(n, None)
