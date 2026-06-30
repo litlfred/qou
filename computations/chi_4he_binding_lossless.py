@@ -39,11 +39,19 @@ sys.path.insert(0, str(HERE / "substrate"))
 
 import pyhecke_native as pn  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-from tr_m_wenzl_bridge_mpfr import _load_y_lambda  # noqa: E402
 from per_irrep_pole_atom import parts_of  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 GATE_F64 = mp.mpf("1e-5")   # f64 char vs the 50-dps matrix-M reference (rel·|χ|)
+
+
+def _load_y_lambda_canonical(n: int):
+    """Canonical y_λ for H_n from the pinned `y-lambda-at-q0.witness.json`
+    (50-dps), keyed by partition tuple. This is the framework reference; the
+    closed-form `_load_y_lambda` recompute was ~8e-7 off at n=12."""
+    w = json.load(open(HERE / "y-lambda-at-q0.witness.json"))
+    rows = w["data"]["by_n"][str(n)]
+    return {tuple(e["partition"]): mp.mpf(e["y_at_q0_50dps"]) for e in rows}
 
 
 def _hp_binding_word(Z: int, N: int, q):
@@ -167,7 +175,9 @@ def main() -> int:
     tol = mp.mpf("1e-12")
     gate_ok = (n_ref > 0) and (max_rel < tol)
 
-    y_table = _load_y_lambda(n, None)
+    # Canonical y_λ from the pinned 50-dps witness (the framework reference;
+    # `_load_y_lambda` recomputes via the closed form and was ~8e-7 off at n=12).
+    y_table = _load_y_lambda_canonical(n)
     per_partition, trM = [], mp.mpf(0)
     for s in shapes:
         y = y_table.get(s)
