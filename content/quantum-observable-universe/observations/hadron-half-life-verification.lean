@@ -1,4 +1,5 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
 
 
 /-!
@@ -44,6 +45,12 @@ noncomputable def sec_per_yr : ℝ := 31557600
 
 /-- Seconds per day. -/
 noncomputable def sec_per_day : ℝ := 86400
+
+theorem sec_per_yr_pos : (0 : ℝ) < sec_per_yr := by
+  unfold sec_per_yr; norm_num
+
+theorem sec_per_day_pos : (0 : ℝ) < sec_per_day := by
+  unfold sec_per_day; norm_num
 
 -- ═══════════════════════════════════════════════════════════════════
 -- NNDC/ENSDF observed half-lives (seconds)
@@ -268,16 +275,6 @@ structure HalfLifePrediction where
   ratio_lower : observed / predicted < tolerance
 
 -- ═══════════════════════════════════════════════════════════════════
--- Positivity lemmas (sec_per_yr > 0, sec_per_day > 0)
--- ═══════════════════════════════════════════════════════════════════
-
-theorem sec_per_yr_pos : (0 : ℝ) < sec_per_yr := by
-  unfold sec_per_yr; norm_num
-
-theorem sec_per_day_pos : (0 : ℝ) < sec_per_day := by
-  unfold sec_per_day; norm_num
-
--- ═══════════════════════════════════════════════════════════════════
 -- Individual agreement proofs
 -- ═══════════════════════════════════════════════════════════════════
 
@@ -377,8 +374,8 @@ noncomputable def tritium_prediction : HalfLifePrediction where
   abs_delta_p := 1
   predicted := pred_tritium
   observed := obs_tritium
-  pred_pos := by unfold pred_tritium; positivity
-  obs_pos := by unfold obs_tritium; positivity
+  pred_pos := by unfold pred_tritium sec_per_yr; positivity
+  obs_pos := by unfold obs_tritium sec_per_yr; positivity
   tolerance := 1.25
   tol_gt_one := by norm_num
   ratio_upper := tritium_ratio_upper
@@ -392,8 +389,8 @@ noncomputable def carbon14_prediction : HalfLifePrediction where
   abs_delta_p := 1
   predicted := pred_carbon14
   observed := obs_carbon14
-  pred_pos := by unfold pred_carbon14; positivity
-  obs_pos := by unfold obs_carbon14; positivity
+  pred_pos := by unfold pred_carbon14 sec_per_yr; positivity
+  obs_pos := by unfold obs_carbon14 sec_per_yr; positivity
   tolerance := 1.25
   tol_gt_one := by norm_num
   ratio_upper := carbon14_ratio_upper
@@ -407,8 +404,8 @@ noncomputable def cobalt60_prediction : HalfLifePrediction where
   abs_delta_p := 1
   predicted := pred_cobalt60
   observed := obs_cobalt60
-  pred_pos := by unfold pred_cobalt60; positivity
-  obs_pos := by unfold obs_cobalt60; positivity
+  pred_pos := by unfold pred_cobalt60 sec_per_yr; positivity
+  obs_pos := by unfold obs_cobalt60 sec_per_yr; positivity
   tolerance := 1.25
   tol_gt_one := by norm_num
   ratio_upper := cobalt60_ratio_upper
@@ -422,8 +419,8 @@ noncomputable def strontium90_prediction : HalfLifePrediction where
   abs_delta_p := 1
   predicted := pred_strontium90
   observed := obs_strontium90
-  pred_pos := by unfold pred_strontium90; positivity
-  obs_pos := by unfold obs_strontium90; positivity
+  pred_pos := by unfold pred_strontium90 sec_per_yr; positivity
+  obs_pos := by unfold obs_strontium90 sec_per_yr; positivity
   tolerance := 1.25
   tol_gt_one := by norm_num
   ratio_upper := strontium90_ratio_upper
@@ -437,8 +434,8 @@ noncomputable def cesium137_prediction : HalfLifePrediction where
   abs_delta_p := 1
   predicted := pred_cesium137
   observed := obs_cesium137
-  pred_pos := by unfold pred_cesium137; positivity
-  obs_pos := by unfold obs_cesium137; positivity
+  pred_pos := by unfold pred_cesium137 sec_per_yr; positivity
+  obs_pos := by unfold obs_cesium137 sec_per_yr; positivity
   tolerance := 1.25
   tol_gt_one := by norm_num
   ratio_upper := cesium137_ratio_upper
@@ -452,8 +449,8 @@ noncomputable def bismuth210_prediction : HalfLifePrediction where
   abs_delta_p := 1
   predicted := pred_bismuth210
   observed := obs_bismuth210
-  pred_pos := by unfold pred_bismuth210; positivity
-  obs_pos := by unfold obs_bismuth210; positivity
+  pred_pos := by unfold pred_bismuth210 sec_per_day; positivity
+  obs_pos := by unfold obs_bismuth210 sec_per_day; positivity
   tolerance := 1.25
   tol_gt_one := by norm_num
   ratio_upper := bismuth210_ratio_upper
