@@ -31,6 +31,31 @@ Identity-I rep-theory, reducing each deep `sorry` to a single cited classical co
 
 - #3106 (W_λ Plancherel residual-i) explicitly leans on two **Mathlib-Specht axioms**: `Σ dim² = n!` and the **JM content-square mean**. The OV tower formalizes exactly these — independence (merged) + JM (next) give an in-corpus path to discharge them. (Informational; not a collision.)
 
+## Update 2026-06-30 — capstone tranche landed (PR #3132)
+
+**PR #3132** (`claude/ov-capstone-reroute-brick3-2026-06-29`) — three reductions, all
+lean-direct EXIT 0, `identityB_general` axioms `[propext, sorryAx, Classical.choice, Quot.sound]`:
+
+| Commit | What | Result |
+|---|---|---|
+| `191ceb0f` | **headline wiring (no longer deferred)** — new `SpechtFinrankWired` sources independence from the proved `triangular'`; `OVTopAssembly.rank` re-routed to it | rank sorry-path = spanning stub only |
+| `5b04c28a` | brick-5 JM: `tableauCellEquiv` (cellOf bijection) sorry-free; `jucysMurphy_eigenvalue` **proved**; core sharpened to `seminormalVector_data_exists` | + over-generality fix (below) |
+| `21018634` | `snBlocks` de-abstracted → new `SnWedderburnPartitionBridge` (sorry-free LA + 1 honest core `sn_rational_specht_split`) | capstone direct sorries 2 → 1 |
+
+**Over-generality fixes (this tranche)** — two cited cores were false at their stated generality and were narrowed:
+- `JucysMurphy.seminormalVectors_span` (+ punchline `centralC2_acts_by_contentSqSum`): false over ℤ (seminormal vectors carry denominators) → restricted `[CommRing k]` → `[Field k] [CharZero k]`.
+- snBlocks bridge: rejected a 2-core split where `d i = dim S^{λᵢ}` over arbitrary splits is false (block sizes fixed only up to permutation) → collapsed to one aligned-split existential.
+
+**Remaining honest OV debt (named cores):** `OVTopAssembly.c2_eigen_on_blocks` (last *direct* capstone sorry) · `SnWedderburnPartitionBridge.sn_rational_specht_split` (ℚ-rationality of Sₙ) · `JucysMurphy.seminormalVector_data_exists` + `seminormalVectors_span` (Young's seminormal form) · brick-4 spanning + B1 (PR #3110).
+
+**Coordination posted (2026-06-30):**
+- **#3110** ([comment](https://github.com/litlfred/qou/pull/3110#issuecomment-4842686871)) — dependency/cherry-pick: my `specht_finrank_eq_numSYT_wired` spanning stub = their `standardPolytabloid_straightening'`; will re-route once it lands. Heads-up on the over-ℤ over-generality trap for their char-0-ℂ Gram item.
+- **#3006** ([comment](https://github.com/litlfred/qou/pull/3006#issuecomment-4842687333)) — #3132 *proves* Identity (B) via C[Sₙ]; complementary to #3006's HLF-dim *statement*.
+
+**Updated division of labour:** headline wiring is **done** (#3132, not deferred). #3110 still owns spanning + B1. The four remaining named OV cores are deep classical rep-theory (Young's seminormal form, Sₙ ℚ-rationality) — genuinely irreducible at pinned Mathlib; tracked as honest cited sorries.
+
+**Note (2026-06-30):** a 3-way background swarm on `c2_eigen_on_blocks` / `sn_rational_specht_split` / `seminormalVector_data_exists` was rate-limited by infra (not usage) and produced no deliverables; to re-run when the limit clears.
+
 ## Next concrete task
 
-Brick-5 JM eigenvalue core (`JucysMurphy.lean`) — non-overlapping with #3110; then headline wiring once #3110's spanning lands.
+Re-run the deep-core swarm (the four remaining named cores above) once infra rate-limiting clears; re-route the spanning stub to #3110's `standardPolytabloid_straightening'` once it lands. Merge of #3132 gated on explicit owner authorization + `/prepare-merge` (rebase: branch ~45 commits behind main).
