@@ -198,3 +198,25 @@ pushed (billing doesn't clear on retry).
 **Lesson reconfirmed:** re-derive-first is essential — the genuine.txt list is
 now badly stale (mass-theory's "72" and the other chapter counts must be
 re-swept before any wave-6, not trusted).
+
+## 2026-06-30 wave-6 (mass-theory; re-derive → 1 live-broken, fixed directly)
+
+Re-derived FIRST: of mass-theory's 72 genuine.txt orphans, a fresh parallel
+`lean-verify-siblings.sh` sweep found **71 already green** (siblings) — only
+**1 still broken**: `categorical-higgs-mechanism.lean`, the exact file wave-1
+deliberately left broken (earlier swarm repair reverted for §3b-tax
+proof-claims-unencoded trivial carriers). 1 file ⇒ fixed directly, no swarm.
+
+Root cause: the two sibling-class field types (`CategoricalLinkingOperation`,
+`WeinbergAngleCategorical`) had their imports commented out (out-of-Lake-tree
+siblings can't be imported standalone) → auto-bound implicit → "Function
+expected". Fix = wave-3 inline-faithful-copy precedent: inlined both sibling
+classes verbatim-faithful (instances renamed to dodge the same-namespace
+`canonical` clash); the 3 genuinely-proved linking properties keep real proofs
+(ring distributivity / `pow_zero` / `neg_neg`), the open markers stay honest
+`True` conjecture-skeleton placeholders (§3b-tax conjecture-block carve-out) —
+NOT fabricated content. fail=0, 0 sorries, 0 new axioms. Committed `f4fae7a0`.
+
+**Two chapters now fully drained** (quantum-observable-universes 63/63 + mass-theory
+72/72). The genuine.txt list (382) is wildly stale — re-derive-first remains the
+single most important lesson; do NOT trust the per-chapter counts.
