@@ -113,13 +113,13 @@ Do not re-litigate per-knot production flips against this gate.
 ## 1. The chain in one diagram
 
 ```
-            ┌─────────────────────────────────────────┐
-            │  3 calibration inputs (only)            │
-            │   m_e ─── leptonic scale (CAL-1)        │
-            │   m_μ/m_e ─── fixes q_0 (CAL-2)        │
-            │   m_π ─── chiral/Goldstone scale (CAL-3)│
-            │   [Q_β derived from CAL-1+CAL-2]       │
-            └─────────────────────────────────────────┘
+            ┌──────────────────────────────────────────────┐
+            │  3 weak-sector calibration inputs (only)     │
+            │   m_e ──── leptonic mass scale (CAL-1, h⁰)   │
+            │   𝔇_β ──── neutron β-decay width (CAL-2, h²)  │
+            │   𝔇_π ──── pion decay width (CAL-3, h³)       │
+            │   proxies: m_e, m_μ/m_e (Q_β=ℏ/𝔇_β), m_π     │
+            └──────────────────────────────────────────────┘
             (phys-obs precision anchor: q_0 on m_p/m_e, re-pin 2026-05-28)
                             │
    step 1. Cat action  ↓  ρ_n : B_n → Aut_𝐂(V^⊗n) via R-matrix
@@ -371,7 +371,7 @@ The forward work has shifted from §5 mechanics to scientific closure:
 
 ## 8. The "everything is derivation, not fit" discipline (CLAUDE-facing)
 
-**The 3-calibration rule** is strict: the canonical mathematical calibration triple is $m_e$, $m_\mu/m_e$, $m_\pi$. CAL-2 fixes $q_0$ from the lepton ratio $m_\mu/m_e$ (it dimensionalises to $\mathrm{Vol}(4_1)$). In the **Physical-Observations** layer one may anchor $q_0$ on a derived quantity of smaller experimental error — the proton ratio $m_p/m_e$ (0.06 ppb vs the muon ratio's 22 ppb; re-pin 2026-05-28, live solver `constants.py::q_at`), making $m_\mu/m_e$ a $9.5\sigma$ cross-check prediction (the μ–p tension — see `docs/audits/2026-05-28-mu-p-tension-substrate-floor.md`); this is a precision substitution, not a fourth calibration. $Q_\beta$ is **derived** from CAL-1 + CAL-2 via $Q_\beta = m_e |q_0^2 - 2q_0 - 1|(q_0+1)/(2q_0^3)$ (0.17% miss) — the bar-odd $\sinh$ partner of the bar-even $\cosh$ meson scale $m_\pi$. Everything else MUST derive from these three via the chain above.
+**The 3-calibration rule** is strict: the canonical mathematical calibration triple is the **decay-width triple** $(m_e, \mathfrak{D}_\beta, \mathfrak{D}_\pi)$ — a leptonic mass scale and two decay widths, entering at orders $h^0$, $h^2$, $h^3$ (owner ruling 2026-06-26; the masses are the numerical *proxies*, not the canonical inputs). CAL-2 is the neutron $\beta$-decay width $\mathfrak{D}_\beta$; it fixes $q_0$ through its most precise proxy, the lepton ratio $m_\mu/m_e$ (which dimensionalises to $\mathrm{Vol}(4_1)$). In the **Physical-Observations** layer one may anchor $q_0$ on a derived quantity of smaller experimental error — the proton ratio $m_p/m_e$ (0.06 ppb vs the muon ratio's 22 ppb; re-pin 2026-05-28, live solver `constants.py::q_at`), making $m_\mu/m_e$ a $9.5\sigma$ cross-check prediction (the μ–p tension — see `docs/audits/2026-05-28-mu-p-tension-substrate-floor.md`); this is a precision substitution, not a fourth calibration. $Q_\beta = \hbar/\mathfrak{D}_\beta$ is the **CAL-2 proxy** — not a fourth input and not "derived from CAL-1+CAL-2": the symbolic form $Q_\beta = m_e |q_0^2 - 2q_0 - 1|(q_0+1)/(2q_0^3)$ reproduces it from $q_0$ to 0.17% as a cross-check, the bar-odd $\sinh$ partner of the bar-even $\cosh$ meson scale $m_\pi$. Everything else MUST derive from these three via the chain above.
 
 **Common pitfalls** (look for these in code review):
 - Hardcoded literal values where a categorical derivation exists → **discipline violation**. Example: `LAMBDA_PROTON_DOC = 2.4599527869` should derive from `prop:lambda-scale-bring-bloch-identity`.
