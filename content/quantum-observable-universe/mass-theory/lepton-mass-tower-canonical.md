@@ -1,3 +1,20 @@
+> **⚠ Resolution update (2026-06-30, owner-ruled) — read first.** The
+> muon knot-ID is settled
+> ([`docs/audits/2026-06-30-muon-knot-id-phi-q-evidence.md`](../../../docs/audits/2026-06-30-muon-knot-id-phi-q-evidence.md)):
+> **the muon is the torus knot $T(2,5)$, and $4_1$ is the Higgs**, not the
+> muon. Torus-knot leptons have $\mathrm{Vol}_q = 0$, so a charged lepton
+> has **no intrinsic volume-mass**; its mass comes from coupling to the
+> **Higgs ($4_1$)**. This **reframes the premise below**: the $\xi_\ell$ /
+> $\mathrm{Vol}_q^{\mathrm{tower}}$ obstruction (Phases 4–5) measured the
+> *lepton's own* per-braid tower (correctly $O(1)$) — but that is the
+> lepton's *intrinsic* (non-Higgs) part, **not** its mass. The mass scale
+> $\sim10^2$ lives in the Higgs coupling $\mathrm{Vol}(4_1)/\hbar_q^2$, a
+> *different* object. The genuine open question is therefore **not** "find
+> $\xi_\ell$ for the lepton's own tower" but "**derive the Higgs ($4_1$)
+> coupling and its generation modulation** ($T(2,3)/T(2,5)/T(2,7)$, framing
+> $q^{n}$) so $m_\tau \neq m_\mu$." The Phase 4–5 material below is retained
+> as a correct *scope-limited negative* on the own-tower object, not deleted.
+
 **Conjecture (canonical lepton-mass tower).**
 *Let $\ell \in \{\mathfrak{e}, \mu, \tau\}$ be a charged lepton with
 canonical braid representative $K_\ell$ (electron $K_\mathfrak{e} = \sigma_1^3$

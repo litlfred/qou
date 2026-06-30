@@ -56,34 +56,46 @@ KNOT_REGISTRY = [
         "particle": "electron",
     },
     {
-        # Canonical paper identification: muon = figure-eight 4_1 per
-        # prop:skein-mass-relation (m_μ/m_e = Vol(4_1)/ℏ_q²). The
-        # "Higgs field" label is informational — knot-volumes does
-        # NOT determine particle dictionary; see audit
-        # docs/audits/2026-05-24-muon-knot-id-conflict.md for the
-        # full reconciliation (resolved 2026-05-24, PR #1127).
-        "name": "Vol(4_1) — figure-eight (muon; also Higgs field / mass mechanism)",
+        # 4_1 = the HIGGS field (mass mechanism), NOT the muon.
+        # Determined by the four-layer trace in
+        # docs/audits/2026-06-30-muon-knot-id-phi-q-evidence.md
+        # (owner-ruled 2026-06-30), confirmed by KnotRegistry.lean,
+        # the knot-particle-dictionary, and the skein-mass-relation
+        # PROOF itself ("The Higgs field is identified with the
+        # figure-eight knot 4_1"). The Skein formula
+        # m_μ/m_e = Vol(4_1)/ℏ_q² is the Higgs-COUPLING mass scale —
+        # the figure-eight volume that *gives* the muon its mass —
+        # NOT the muon's own knot volume. The muon is the torus knot
+        # T(2,5) (next entry; Vol_hyp = 0, no intrinsic volume mass).
+        # The old "muon = 4_1" label was a category error: it confused
+        # the muon's identity with the Higgs that gives it mass.
+        "name": "Vol(4_1) — figure-eight (Higgs field / mass mechanism)",
         "manifold": "4_1",
         "expected": 2.02988321281931,
         "tolerance": 1e-10,
         "source": "OEIS A091518, 3·Cl₂(π/3)",
         "unit": "volume",
-        "particle": "muon",
+        "particle": "higgs",
     },
     {
-        # Cinquefoil 5_1 = T(2,5) was previously labeled "muon" here;
-        # corrected 2026-05-24 (PR #1127) per
-        # docs/audits/2026-05-24-muon-knot-id-conflict.md. The
-        # canonical muon is figure-eight 4_1 per prop:skein-mass-
-        # relation; T(2,5) is referenced in sibling PR #1153 as the
-        # W boson torus knot (m=2 in P_m/Q_m family).
-        "name": "Vol(5_1) — cinquefoil T_{2,5} (W boson per PR #1153 P_m/Q_m torus family)",
+        # 5_1 = T(2,5) cinquefoil = the MUON (its identity knot), per
+        # prop:s5-equivariant-torus-knots (ℤ_5 ↪ S_5, group-theoretic
+        # theorem) and the lepton-meson-torus-knot-dictionary content
+        # proposition. The charged leptons are the odd torus tower
+        # e = T(2,3), μ = T(2,5), τ = T(2,7). As a torus knot it is
+        # non-hyperbolic (Vol_hyp = 0): the muon has no intrinsic
+        # volume-mass and acquires mass via the Higgs (4_1) coupling
+        # above. (Exploratory PR #1153 floated a W-boson label for
+        # T(2,5); the canonical lepton dictionary assigns the muon, and
+        # the W-boson knot is a separate, unresolved question.)
+        # Determination: docs/audits/2026-06-30-muon-knot-id-phi-q-evidence.md.
+        "name": "Vol(5_1) — cinquefoil T(2,5) (muon; torus knot, Vol_hyp=0)",
         "manifold": "5_1",
         "expected": 0.0,
         "tolerance": 1e-10,
         "source": "Torus knot (non-hyperbolic)",
         "unit": "volume",
-        "particle": "w_boson",
+        "particle": "muon",
     },
     {
         "name": "Vol(5_2) — three-twist (strange quark)",
