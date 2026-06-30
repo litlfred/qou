@@ -215,7 +215,7 @@ from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
 # provenance/staleness fields in place; we set scriptFile explicitly (stamp omits it).
 WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="mpmath")
 witness["scriptFile"] = Path(__file__).name
-with open(HERE / "meson-vol-density.witness.json", "w") as f:
+with open(HERE / "meson-vol-density.witness.json", "w", encoding="utf-8") as f:
     json.dump(witness, f, indent=2, default=str, ensure_ascii=False)
     f.write("\n")
 print(f"Witness: meson-vol-density.witness.json")
