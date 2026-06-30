@@ -60,15 +60,20 @@ together).
 
 Let $\mathcal{U} = (\mathbf{C}, \varTheta, G, \mathcal{S})$ be a quantum
 observable universe
-([def:quantum-observable-universe](#def:quantum-observable-universe)).  The
+([def:quantum-observable-universe](#def:quantum-observable-universe)): a
+braided category $\mathbf{C}$, a twist endomorphism $\varTheta$, the internal
+gauge group $G$, and the state bundle $\mathcal{S}$ that carries the physical
+states.  The
 :refterm[braided monoidal category]{#braided-monoidal-category} $\mathbf{C}$
 has strands for objects and braid generators $\sigma_i$ for morphisms; the
 braiding $c_{X,Y}\colon X \otimes Y \to Y \otimes X$ satisfies the
 Yang–Baxter equation by the axioms of a
 :refterm[braided monoidal category]{#braided-monoidal-category}.
 
-Acting on the state bundle $\mathcal{S}$ through the fibre functor $\tau$,
-the category gives a representation of the braid group,
+Acting on the state bundle $\mathcal{S}$ through the fibre functor $\tau$ —
+which sends an object to its underlying vector space, written $V$ for the
+fundamental object — the category gives a representation of the braid group
+on $n$ strands,
 
 $$
   \rho_n \colon B_n \;\longrightarrow\; \mathrm{Aut}_\mathbf{C}(V^{\otimes n}),
@@ -109,19 +114,18 @@ $$
   \sigma_i^2 \;=\; (q - q^{-1})\,\sigma_i + 1 ,
 $$
 
-forced by the $R$-matrix eigenvalues $(\lambda_+, \lambda_-) = (q, -q^{-1})$
+forced by the $R$-matrix eigenvalues $q$ and $-q^{-1}$
 ([prop:hecke-spectral-sequence](#prop:hecke-spectral-sequence)).  The
 quadratic relation is not an extra axiom; it is the curvature of the
 substrate.  The dictionary between the 2-categorical datum and its
 finite-slice avatar in $H_{n_0}(q)$ is recorded in
 [Table 2](#tbl:pre-archimedean-derivation-chain-table2-data).
 
-Writing $h = q - q^{-1}$ and $\lambda = \ln q$, the two eigenvalues split as
-$(\lambda_+, \lambda_-) = (\cosh\lambda + \sinh\lambda,\ \cosh\lambda -
-\sinh\lambda)$
+Writing $h = q - q^{-1}$ and $\eta = \ln q$, the eigenvalue $q$ splits as
+$\cosh\eta + \sinh\eta$ and $q^{-1}$ as $\cosh\eta - \sinh\eta$
 ([prop:crossing-energy-decomposition](#prop:crossing-energy-decomposition)):
-the symmetric $\cosh\lambda$ part is the curvature-free transport, the
-antisymmetric $\sinh\lambda$ part is the curvature defect.  This split
+the symmetric $\cosh\eta$ part is the curvature-free transport, the
+antisymmetric $\sinh\eta$ part is the curvature defect.  This split
 returns at every later step — it is the difference between the strong
 channel and the Coulomb channel, between binding and decay.
 
@@ -185,9 +189,10 @@ $$
 $$
 
 with $d_\lambda$ the number of standard Young tableaux of shape $\lambda$
-(the hook-length formula) and quantum dimensions
-$\dim_q(\lambda) = [n]_q$.  This block decomposition is what makes the trace
-a finite sum.  Two algorithms supply its ingredients explicitly:
+(the hook-length formula); the quantum dimensions $\dim_q(\lambda)$ are its
+$q$-analogue, given by the $q$-hook-length formula.  This block decomposition
+is what makes the trace a finite sum.  Two algorithms supply its ingredients
+explicitly:
 
 - **Hoefsmit's seminormal representations** give the matrices of each
   generator $\sigma_i$ inside each block $\lambda$ in closed form, so the
@@ -203,8 +208,10 @@ $$
 $$
 
 The weights are not fitted: they are forced, since the linear system
-$\sum_\lambda \chi_\lambda(w_\mu)\,y_\lambda = z^{\,n-\ell(\mu)}$ is
-invertible at generic $q$ by Schur–Weyl–Hecke duality
+$\sum_\lambda \chi_\lambda(w_\mu)\,y_\lambda = z^{\,n-\ell(\mu)}$ — with $z$
+the Markov parameter set by the stabilisation move and $\ell(\mu)$ the Coxeter
+word length (Step 7) — is invertible at generic $q$ by Schur–Weyl–Hecke
+duality
 ([prop:alpha-k-derivation-procedure](#prop:alpha-k-derivation-procedure)).
 For a composite of several nucleons the trace multiplies block by block,
 through Wenzl's disjoint-product property, so a multi-atom invariant is
@@ -265,7 +272,7 @@ $E_2$**
 ([prop:spectral-sequence-collapse](#prop:spectral-sequence-collapse)) and
 its limit recovers the Wedderburn decomposition
 ([prop:e-infinity-page-identifications](#prop:e-infinity-page-identifications)).
-The consequence is decisive for computation: a finite slice suffices.  At
+The consequence for computation is that a finite slice suffices: at
 every finite grade the surviving classes already account for all of
 $\mathrm{tr}_M(T_w)$, so no infinite tower of corrections contributes to the
 mass invariant.
@@ -316,16 +323,17 @@ $$
 and the same scale read from the $\beta$-decay $Q$-value through the
 symbolic normal-form difference, $\mathfrak{E}_0 = \mathfrak{Q}_\beta /
 |h(h-2)/2|$, agrees to within the brane-tower correction
-([prop:atom-knot-mass-derivation](#prop:atom-knot-mass-derivation)).  The
-mass of a confined particle is then
+([prop:atom-knot-mass-derivation](#prop:atom-knot-mass-derivation)); here
+$c_q = 1/(q-1)$ and $\hbar_q = 1 - q^{-1}$.  The categorical mass identity is
+then
 
 $$
   \boxed{\;
-    B(\mathfrak{H})
+    \mathfrak{m}(\mathfrak{H})
     \;=\;
     m_e \cdot \varrho \cdot
-    \bigl[\,|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w)
-         + \mathrm{tr}_M(C_{\dim_q})\,\bigr]\big|_{q = q_0}
+    \bigl[\,|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w) +
+         \mathrm{tr}_M(C_{\dim_q})\,\bigr]\big|_{q = q_0}
   \;}
 $$
 
@@ -334,18 +342,18 @@ solution selected in Step 10, $\mathrm{tower}(T_w)$ is the brane-tower
 correction
 ([conj:brane-tower-z-habiro](#conj:brane-tower-z-habiro)), and
 $\mathrm{tr}_M(C_{\dim_q})$ is the Frobenius co-Casimir trace
-([thm:frobenius-codim-universal](#thm:frobenius-codim-universal)).  The
-absolute nucleon masses come out of this construction in the muon-anchored
-form $\mathfrak{m}_{\mathfrak{p}} = 2(m_\mu F_\mathrm{Bor} - 6\,m_e)$, with
-the single dimensionful factor $1/\hbar_q^2$ entering only through the muon
-anchor and the Borromean structure contributing the dimensionless
-$F_\mathrm{Bor}$.
+([thm:frobenius-codim-universal](#thm:frobenius-codim-universal)).  For the
+absolute nucleon mass the canonical realization is the muon-anchored Hecke
+energy, $\mathfrak{m}_{\mathfrak{p}} = 2\,(m_\mu F_\mathrm{Bor} - 6\,m_e)$
+with $m_\mu = m_e\,\mathrm{Vol}(4_1)/\hbar_q^2$ (the figure-eight knot
+volume) and $F_\mathrm{Bor}$ the dimensionless Borromean Hecke factor: the
+single dimensionful factor $1/\hbar_q^2$ enters only through the muon anchor.
 
 The two parts of the trace carry the two physical observables of a nucleus
 at once, packaged as a single **complex volume** $\mathfrak{V}$: its real
-part is the binding energy, $\operatorname{Re}\mathfrak{V} =
+part is the binding energy, $\mathrm{Re}\,\mathfrak{V} =
 \mathfrak{E}_\mathrm{bind}$, and its imaginary part is the $\beta$-decay
-$Q$-value, $\operatorname{Im}\mathfrak{V} = \mathfrak{Q}_\beta$ — the
+$Q$-value, $\mathrm{Im}\,\mathfrak{V} = \mathfrak{Q}_\beta$ — the
 bar-even and bar-odd halves of the one geometric quantity, in the same
 $\cosh$/$\sinh$ split that the crossing eigenvalues showed in Step 2.
 
@@ -364,7 +372,7 @@ $$
     \mathrm{tr}_M(T_w)\cdot\mathfrak{E}_0 - B_\mathrm{target}
   \bigr\|^2
   \quad\text{subject to}\quad
-  T_w \in H_{n_0}(q_0)^{\mathrm{GB\text{-}NF}}, \;\; \|T_w\| \leq \Delta_{\max},
+  T_w \in H_{n_0}(q_0)^{\text{GB-NF}}, \;\; \|T_w\| \leq \Delta_{\max},
 $$
 
 over Gröbner–Shirshov normal forms.  Its **dual** is the load-bearing
@@ -417,11 +425,12 @@ $\mathfrak{E}_0$ is fixed.
 
 The same trace difference, evaluated on a free pair against a bound atom,
 gives the binding energy.  At full $\mathrm{tr}_M$ level the per-$Z$ step
-closes in one line: combining the exact interface factor
+closes in one line.  The exact interface factor is
 $\mathrm{tr}_M(\mathcal{B}_K)/\mathrm{tr}_M(\mathcal{B}_K^{\mathrm{vac}}) =
-z^{p_+(K)}(z-h)^{p_-(K)}$
-([prop:interface-knot-markov-z](#prop:interface-knot-markov-z)) with the
-vacuum factor from Wenzl multiplicativity gives
+z^{p_+(K)}(z-h)^{p_-(K)}$, where $p_+(K)$ and $p_-(K)$ count the positive and
+negative inter-nucleon interfaces
+([prop:interface-knot-markov-z](#prop:interface-knot-markov-z)); combined
+with the vacuum factor from Wenzl multiplicativity it gives
 
 $$
   \frac{\mathrm{tr}_M(\mathcal{B}_K^{Z+1, N})}{\mathrm{tr}_M(\mathcal{B}_K^{Z, N})}
@@ -440,16 +449,16 @@ construction.
 
 ## Summary
 
-$$
+```tex
 \begin{aligned}
 \text{categorical action } \rho_n
-  &\;\xrightarrow{\ \text{Yekutieli}\ }\; H_{n_0}(q),\quad \sigma_i^2 = (q-q^{-1})\sigma_i + 1 \\
-  &\;\xrightarrow{\ \text{SDP} + \text{GB-NF}\ }\; T_w \in H_{n_0}(q_0) \\
-  &\;\xrightarrow{\ \text{Wedderburn}\ }\; \textstyle\bigoplus_\lambda M_{d_\lambda}(\mathbb{Q}(q)) \\
-  &\;\xrightarrow{\ \text{Hoefsmit} + \text{Wenzl}\ }\; \mathrm{tr}_M(T_w) = \textstyle\sum_\lambda y_\lambda \chi_\lambda(T_w) \\
-  &\;\xrightarrow{\ \Phi_\mathrm{arch}\,\times\, m_e\ }\; B(\mathfrak{H}) \ \text{in MeV.}
+  &\xrightarrow{\ \text{Yekutieli}\ } H_{n_0}(q),\quad \sigma_i^2 = (q-q^{-1})\sigma_i + 1 \\
+  &\xrightarrow{\ \text{SDP} + \text{GB-NF}\ } T_w \in H_{n_0}(q_0) \\
+  &\xrightarrow{\ \text{Wedderburn}\ } \bigoplus_\lambda M_{d_\lambda}(\mathbb{Q}(q)) \\
+  &\xrightarrow{\ \text{Hoefsmit} + \text{Wenzl}\ } \mathrm{tr}_M(T_w) = \sum_\lambda y_\lambda\,\chi_\lambda(T_w) \\
+  &\xrightarrow{\ \Phi_\mathrm{arch}\,\times\, m_e\ } \mathfrak{m}(\mathfrak{H}) \quad \text{in MeV.}
 \end{aligned}
-$$
+```
 
 Each arrow is algebraic, living in $\mathbb{Q}(q)$ until the Archimedean
 functor; the eleven steps together carry three measured proxies into the
