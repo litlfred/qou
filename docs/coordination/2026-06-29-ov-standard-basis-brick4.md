@@ -56,6 +56,32 @@ lean-direct EXIT 0, `identityB_general` axioms `[propext, sorryAx, Classical.cho
 
 **Note (2026-06-30):** a 3-way background swarm on `c2_eigen_on_blocks` / `sn_rational_specht_split` / `seminormalVector_data_exists` was rate-limited by infra (not usage) and produced no deliverables; to re-run when the limit clears.
 
+## Update 2026-06-30 (afternoon) — swarm correctness audit found + fixed TWO bugs
+
+A 3-probe adversarial swarm on the remaining cores (`c2_eigen_on_blocks`,
+`sn_rational_specht_split`, `seminormalVector_data_exists`) did more than attempt them —
+it **audited the committed reductions and caught two correctness bugs**:
+
+| Probe | Finding | Fix | Commit |
+|---|---|---|---|
+| `sn_rational_specht_split` | irreducible at pinned Mathlib; the #26 reduction was already optimal (one aligned existential, no over-general ∀-over-splits) | validated, no change | — |
+| `seminormalVector_data_exists` | **over-general** — false over `ℤ/pℤ` (cell contents collide mod p ⇒ prescribed simultaneous eigenvector need not exist) | restricted `seminormalVector_data_exists` + `jucysMurphy_eigenvalue` to `[Field k] [CharZero k]` | `bc103ca2` |
+| `c2_eigen_on_blocks` | **provably FALSE** — took `proj` free, so `proj ≡ 0 ⇒ C₂ = 0` contra `C₂(1)=binom(n,2)`; machine-proved `freeProjClaim_false` (sorry-free) | replaced with the aligned isotypic core `snBlocks_c2_aligned` (isotypic split + C₂ decomp together — the two are inseparable; `mulLeft C₂` is diagonal only in the isotypic frame, strictly stronger than `snBridge`'s size-aligned frame) | `05631152` |
+
+**`OVTopAssembly` now has ZERO direct `sorry`s** — `identityB_general` resolves through named,
+true-at-generality cores only. Remaining OV debt (all honest cited cores):
+`snBlocks_c2_aligned` + `sn_rational_specht_split` (bridge) · `seminormalVector_data_exists` +
+`seminormalVectors_span` (JM) · `standardPolytabloid_straightening` (spanning, ceded to #3110).
+Plus the sorry-free evidence lemma `freeProjClaim_false`.
+
+This is the §"refuted / over-general" discipline working as intended: the swarm enforced it on
+*my own* commits. A second swarm round (de-abstract `seminormalVectors_span` /
+`snBlocks_c2_aligned` further) is in flight.
+
 ## Next concrete task
 
-Re-run the deep-core swarm (the four remaining named cores above) once infra rate-limiting clears; re-route the spanning stub to #3110's `standardPolytabloid_straightening'` once it lands. Merge of #3132 gated on explicit owner authorization + `/prepare-merge` (rebase: branch ~45 commits behind main).
+`/prepare-merge` #3132 (rebase onto main — clean: main touched none of the 4 OV files since
+divergence — + Gemini/Copilot reviews; CI `gate`/`content-sibling-compile` is billing-flaking, so
+reviews run on the green local lean-direct). Integrate the second swarm round if it yields cleaner
+cores. Re-route the spanning stub to #3110's `standardPolytabloid_straightening'` once it lands.
+Merge gated on explicit owner authorization.
