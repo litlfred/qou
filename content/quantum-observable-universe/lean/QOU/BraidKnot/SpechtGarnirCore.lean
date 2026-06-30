@@ -256,6 +256,19 @@ theorem tabloid_swap_sameRow {s : Tableau μ} {a b : Fin (nOf μ)}
     · rw [Equiv.swap_apply_right]; exact h
     · rw [Equiv.swap_apply_of_ne_of_ne hla hlb]
 
+/-- **Row pigeonhole.** If every label of a set `X` lies in one of fewer than
+`|X|` rows of `s` (`rowPattern s l < m` with `m < |X|`), two distinct labels of
+`X` share a row. In the Garnir setup `X = A ∪ B` lives in two adjacent columns,
+so all its row indices are `< μ'_j` (the longer column length); choosing
+`|X| > μ'_j` forces the collision that produces the killing transposition. -/
+theorem exists_sameRow_of_card_lt {X : Finset (Fin (nOf μ))} {s : Tableau μ} {m : ℕ}
+    (hbound : ∀ l ∈ X, rowPattern s l < m) (hcard : m < X.card) :
+    ∃ a ∈ X, ∃ b ∈ X, a ≠ b ∧ rowPattern s a = rowPattern s b := by
+  have hmaps : ∀ l ∈ X, rowPattern s l ∈ Finset.range m :=
+    fun l hl => Finset.mem_range.mpr (hbound l hl)
+  have hlt : (Finset.range m).card < X.card := by rwa [Finset.card_range]
+  exact Finset.exists_ne_map_eq_of_card_lt_of_maps_to hlt hmaps
+
 /-- **Concrete row-transposition vanishing.** A same-row transposition `(a b)`
 (`a ≠ b`) lying in `H` kills the basis tabloid: `b_H ⟦s⟧ = 0`. This is the
 per-`π` input to the Garnir vanishing — the pigeonhole produces exactly such a
