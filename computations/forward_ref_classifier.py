@@ -158,6 +158,16 @@ SUBJECT_MATCHED_DEFS = {
     "mass-endomorphism::def:mass-identity",           # mass identity
     "measurement-observation::def:bundle-isotopy-equivalence",
     "particle-interactions::def:knot-particle-generation",
+    # q-flat-connection — subject is the flat connection / local system, the
+    # core object of geometric Langlands, so it genuinely belongs in its
+    # q-geometric-langlands home chapter.  The two early edges
+    # (Ch3 conj:q-harmonic-flow, prop:germ-commutator-q-curvature) are
+    # deliberate narrative couplings: germ-commutator-q-curvature's authorNote
+    # records that its identity [δq₁,δq₂]=F_q is verified *independently* over an
+    # abstract ring and that the F_q ↔ q-flat-connection identification is
+    # "narrative" (the def-cone is conjecture-free, def↔def with q-local-system).
+    # Subject-matched waive, not a mis-home (2026-06-29 detangler triage, e5tn).
+    "q-geometric-langlands::def:q-flat-connection",
     # classical-limit functor 𝓛:𝐂_q→𝐂_1 — subject is the classical limit
     # (7 consumers across stochastic-mechanics + appendix-surreals); the
     # adelic-substrate forward reference is the archimedean-projection
