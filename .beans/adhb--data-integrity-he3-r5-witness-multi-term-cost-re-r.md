@@ -4,8 +4,24 @@ title: 'Data-integrity: He3 R5 witness multi-term-cost re-run (regen winner dive
 status: todo
 type: task
 created_at: 2026-06-26T03:39:52Z
-updated_at: 2026-06-28T23:30:00Z
+updated_at: 2026-06-30T01:30:00Z
 ---
+
+## 2026-06-30 — "wire Term-5 into R5" is a FIT; DO NOT do it. Stays research-grade.
+
+A no-fit provenance check (gating a proposed Term-5 wiring) returned **FITTED**:
+`Term 5 = a_K·B_bulk`, and `B_bulk` (`bw_chirality_isotopes.py:100-109`) is the literal
+Bethe–Weizsäcker liquid-drop formula whose coefficients (λ_V,λ_S,a_asym,δ_P) are q-integer
+products **matched to the historically AME-fitted BW values** (0.2–2.1%; source block
+`conj:q-integer-mass-formula` has a column literally labeled "Fitted (MeV)", Lean not_checked).
+**Do NOT add `a_K·B_bulk` to `cost_for_candidate` in `r5_full_canonical_knot_solver.py`** — it
+would make the canonical solver's binding a BW fit dressed as a derivation.
+
+The fit-free chirality is a DIFFERENT object — the dashboard `B_qCLT_fac`
+(`mass_binding_dashboard.py:269`, `B_chir = α·(A−1)·(L̄−L_pn)`, only q₀+m_e+Markov trace) — but
+even it doesn't close adhb: under-binds ⁴He ~2.4×, and the deuteron stays blocked (`6₂`
+PSD-infeasible, `tr_M(β_D)≡0`; needs the H₆ binding-operator search, `conj:canonical-knot-id-sdp`
+leg b). adhb remains research-grade. Audit: `docs/audits/2026-06-30-adhb-term5-bw-fit-do-not-wire.md`.
 
 ## Empirical diagnosis (2026-06-28) — "re-run with multi-term cost recovers canonical" is REFUTED
 
