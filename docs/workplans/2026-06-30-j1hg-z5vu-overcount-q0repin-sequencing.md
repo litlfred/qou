@@ -1,8 +1,11 @@
 # Sequencing plan — over-count refactor (`j1hg`) + muon→proton q₀ witness migration (`z5vu`)
 
-**Status:** PLAN ONLY — owner-gated, awaiting execution sign-off.
+**Status:** RESOLVED — owner chose **disposition B** (2026-06-30). `z5vu` closed
+will-not-migrate-by-design (computations/ stays muon-q₀ canonical; proton anchor
+enforced at the reporting layer per AGENTS.md rule 4). `j1hg` decoupled and now
+proceeds independently in small per-batch PRs (§"Proposed order" step 4).
 **Date:** 2026-06-30
-**Beans:** `j1hg` (12 over-count scripts), `z5vu` (~840 muon-q₀ witnesses → proton), `tnjb` (closed — root).
+**Beans:** `j1hg` (12 over-count scripts — proceeding), `z5vu` (closed will-not-migrate), `tnjb` (closed — root).
 
 ## Why these two are one job
 

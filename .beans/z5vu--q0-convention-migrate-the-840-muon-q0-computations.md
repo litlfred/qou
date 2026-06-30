@@ -1,10 +1,10 @@
 ---
 # z5vu
 title: 'q0-convention: migrate the ~840 muon-q0 computations witnesses to proton (owner-gated; tnjb root)'
-status: todo
+status: completed
 type: task
 created_at: 2026-06-24T18:25:20Z
-updated_at: 2026-06-24T18:25:20Z
+updated_at: 2026-06-30T16:27:00Z
 ---
 
 
@@ -52,3 +52,16 @@ can't recompute proton-q₀ cleanly. RECOMMENDED disposition (B): keep the
 computations/ layer muon-q₀ canonical (per AGENTS.md rule 4 — the proton anchor
 is enforced at the reporting layer, not by rewriting derivation witnesses), and
 close z5vu as will-not-migrate-by-design. Owner decision required (A pin vs B keep).
+
+## 2026-06-30 — CLOSED will-not-migrate-by-design (owner ruling: disposition B)
+
+Owner chose **disposition B** (sequencing plan
+docs/workplans/2026-06-30-j1hg-z5vu-overcount-q0repin-sequencing.md): the
+`computations/` witness layer stays **muon-q₀ canonical** (the canonical 3-CAL
+derivation), and the proton anchor is enforced only at the **reporting layer**
+(per AGENTS.md §"q₀ anchor convention" rule 4 — "enforced at the
+reporting/precision layer, not by rewriting the canonical derivation
+witnesses"). No 840-witness migration. This also avoids re-importing the purged
+Habiro fit embedded in the proton-q₀ solver `_solve_q_proton_f64`.
+Consequence: `j1hg`'s m_n-derivation refactor decouples (m_n = m_p + Q_β + m_e
+is same-anchor regardless), and proceeds independently.
