@@ -219,7 +219,13 @@ finite-dimensional.
 [*Mass Analysis*](#chap:mass-theory) assembles these inputs into the
 mass theory proper — geometric face, archimedean face, and the
 compute pipeline behind the physical predictions — consuming the
-particle and $q$-hyperbolic chapters.  A single **complex volume**
+particle and $q$-hyperbolic chapters.  A step-by-step
+[pre-Archimedean derivation chain](#sec:derivation-audit) records how
+every mass, $\beta$-decay, and binding-energy prediction traces back
+through the categorical pipeline — each arrow living in
+$\mathbb{Q}(q)$ — to the three calibration inputs, with no fitting or
+empirical nuclear-physics constants entering until the Archimedean
+realization functor at the very end.  A single **complex volume**
 $\mathfrak{V}$ organises the nuclear observables: its real part is
 the binding energy, $\operatorname{Re}\mathfrak{V} = \mathfrak{E}_{\mathrm{bind}}$,
 and its imaginary part is the $\beta$-decay $Q$-value,
