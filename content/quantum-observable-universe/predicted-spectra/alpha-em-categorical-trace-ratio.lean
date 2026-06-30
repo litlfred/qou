@@ -8,7 +8,7 @@ Computational verification (10⁻¹² precision at q_0):
 -/
 
 import Mathlib.RingTheory.Polynomial.Basic
-import Mathlib.Algebra.GroupPower.Basic
+import Mathlib.Algebra.Group.Defs
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 

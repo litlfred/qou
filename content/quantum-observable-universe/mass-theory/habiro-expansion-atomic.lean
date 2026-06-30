@@ -1,7 +1,7 @@
 import Mathlib.Algebra.Polynomial.Basic
 import Mathlib.Algebra.Polynomial.Degree.Definitions
 import Mathlib.Algebra.Polynomial.Div
-import Mathlib.Algebra.Polynomial.EuclideanDomain
+import Mathlib.Algebra.Polynomial.Div
 import Mathlib.Data.Int.Basic
 
 /-!

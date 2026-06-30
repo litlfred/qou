@@ -1,5 +1,5 @@
 import Mathlib.Algebra.Algebra.Basic
-import Mathlib.LinearAlgebra.LinearIndependent
+import Mathlib.LinearAlgebra.LinearIndependent.Basic
 
 /-!
 # Term 1 of the unified mass formula: descended Markov trace

@@ -1,6 +1,6 @@
 import Mathlib.Algebra.Group.Basic
 import Mathlib.Algebra.Ring.Basic
-import Mathlib.GroupTheory.Subgroup.Basic
+import Mathlib.Algebra.Group.Subgroup.Basic
 
 /-!
 # QOU.ReebGaugeGroup — The Reeb gauge group U₁(R)
