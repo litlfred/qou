@@ -220,3 +220,33 @@ NOT fabricated content. fail=0, 0 sorries, 0 new axioms. Committed `f4fae7a0`.
 **Two chapters now fully drained** (quantum-observable-universes 63/63 + mass-theory
 72/72). The genuine.txt list (382) is wildly stale — re-derive-first remains the
 single most important lesson; do NOT trust the per-chapter counts.
+
+## 2026-06-30 wave-7 (particle-interactions; 5-agent swarm + 2 direct)
+
+Re-derived FIRST: of particle-interactions' 37 genuine.txt orphans, 24 already
+green — **13 live-broken**. 5-agent swarm (3+3+3+2+2) + merged 9 new main commits
+(r13f sibling drains) mid-wave. Outcome: **13/13 repaired, all re-verified fail=0**,
+quality-gated (no vacuity/native_decide/fabricated axioms; 0 new sorries except none).
+
+Dominant fixes: docstring-above-`noncomputable section` (quark/hadron/beta cluster);
+import-only honest stubs collapsing shadowing duplicates → real library decls
+(confinement-level-exists → QOU.BraidKnot.ConfinementLevel, nuclear-groebner-reduction
+→ QOU.Archimedean.NuclearGroebnerReduction; dropped Lean-4-removed `constant`);
+faithful inline copies of out-of-scope sibling structures (AtomKnot/StableAtom/
+LocalizedKnot/isIsotope); §7c archimedean restatement to ℝ where genuinely
+archimedean (beta-stability/skein A^{2/3} rpow + ordering, hadron masses).
+
+Two finished directly after the swarm's 5th agent was interrupted by a session
+resume:
+- atomic-braid: theorem unprovable because A/totalStrands were default-valued
+  FIELDS (independent data) → made them `def`s (derived) ⇒ identity definitional.
+- per-nucleon-channel-decomposition: agent's in-flight transcription asserted a
+  FALSE protonChannelSum=-h/2 (coded factors sum ≈15.9 at q=2, not -0.75). Rewrote
+  per the .md table — explicit rational sym/alt; std channels (quadratic Δ₃ eigendata
+  from def:typed-crossing-operator, not elementary) → channel-sum identities stated
+  §3b-cond CONDITIONAL on the cited std closed form, verified non-vacuously by
+  field_simp;ring; added a real branchingFactorizationSigns positivity proof.
+
+**Three chapters now fully drained** (quantum-observable-universes 63, mass-theory 72,
+particle-interactions 37 stale-listed / 13 live). CI billing persists across all
+SHAs (2-4s, runner_id 0, no logs) — documented; hourly self-check-in armed for recovery.
