@@ -16,12 +16,25 @@ before the user sees them in the browser.
 
 ## When to use
 
+**MANDATORY before every commit that creates or edits a math-bearing
+`.md`** (per AGENTS.md §"Render-QA gate for math-bearing `.md`"). This is
+an agent-owned gate — do **not** defer it to CI (which may be billing-flaky)
+or to the author's eyes.
+
 - After editing any `.md` file that contains math (`$...$`, `$$...$$`,
   or fenced ```tex blocks).
 - As a final pass when running `prepare-merge` or any review skill on
   content blocks.
 - After authoring a new `.md` with multi-line display math, tables,
   or lists adjacent to math.
+
+Run the pipeline render where available
+(`bun run content/pipeline/render-latex.ts <paper>` after
+`scripts/setup-folio-assistant.sh`). **When it cannot run** (e.g. the
+`folio-assistant` clone is firewalled in a sandbox), run the grep battery
+(§2) + the expository pass (§2a) by hand, and **say in the commit/PR that
+the change was not machine-validated** — never report a math edit as
+render-checked when only CI would have caught a break.
 
 ## Method
 
@@ -48,6 +61,33 @@ changed files; any hit is a likely failure.
 | `\cite{` in non-paper context | `grep -n '\\\\cite{' file.md` | OK in this repo (handled by both pipelines), but verify the key exists in `references.ts`. |
 | Tab characters in math | `grep -nP '\t' file.md` | Inconsistent rendering; replace with spaces. |
 | Bare `_` outside math | `grep -nE '[^$\\][_][^$]' file.md` | LaTeX subscript trigger; wrap identifier in backticks or `$...$`. |
+| Unbalanced delimiters | `python3 -c "import re,sys;s=open(sys.argv[1]).read();b=re.sub(r'\x60\x60\x60.*?\x60\x60\x60','',s,flags=re.S);print('fences',s.count('\x60\x60\x60'),'\$\$',b.count('\$\$'),'lone\$',re.sub(r'\$\$','',b).count('\$'),'{}',s.count('{'),s.count('}'))" file.md` | Each count must be even / equal. An odd `$` or `$$`, or `{`≠`}`, breaks the whole block (and often the rest of the file). Also check `\bigl`=`\bigr`, `\Bigl`=`\Bigr`, `\left`=`\right`, `\begin{`=`\end{`. |
+| `aligned`/`align` inside `$$` | `awk '/^\$\$/{m=!m} m && /\\begin\{align/' file.md` | Align-family environments belong in a fenced ` ```tex ` block (AGENTS.md §"TeX authoring patterns" item 5), not inline `$$…$$` — the unified-latex AST validator and KaTeX both choke on some forms. |
+
+### 2a. Expository pass — notation introduced before use
+
+A block that compiles can still read as gibberish to someone who has not
+read the rest of the paper. For survey / overview / self-contained blocks
+especially, after the render greps pass, walk the prose once more and check:
+
+1. **Every symbol is glossed at or before first use.** Read top to bottom;
+   the first time a symbol appears it must be named (e.g. `$z$`, the Markov
+   parameter; `$\hbar_q = 1-q^{-1}$; `$\ell(w)$`, the Coxeter length). A
+   symbol pulled from another chapter without a one-clause gloss is a gap.
+2. **No symbol carries two meanings.** Reuse of one letter for two distinct
+   objects (the classic: `$\lambda = \ln q$` *and* the partition
+   `$\lambda \vdash n$`) is a coherence defect — rename one (here `$\eta=\ln q$`).
+   Check against the notation register (`notation/notation-collisions.md`).
+3. **Each named observable uses its canonical register** — fraktur for
+   physical observables (`$\mathfrak{m}, \mathfrak{E}, \mathfrak{Q}_\beta,
+   \mathfrak{V}$`), and the *right* one (mass `$\mathfrak{m}$` is not binding
+   `$B$`; a box labelled "the mass" must not be tagged `$B(\cdot)$`).
+4. **The story has no forward-dependency gaps** — a term used in step *k*
+   whose only definition is in step *k+3* should get a parenthetical gloss
+   at *k* ("…the Coxeter length (Step 7)…").
+
+Report each undefined-on-first-use symbol, collision, and register
+mismatch with its line number, the same way as the grep checks.
 
 ### 3. Manual GitHub verification
 
