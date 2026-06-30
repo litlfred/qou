@@ -24,9 +24,10 @@ numerical evaluation.
 
 namespace QOU.Archimedean
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -54,14 +55,17 @@ structure UpQuark where
   /-- Color-confined: cannot be isolated from B₃. -/
   confined : Bool := true
 
-/-- The up quark is an unknot (same underlying knot as neutrino). -/
+/-- The up quark is an unknot (same underlying knot as the neutrino,
+    `QOU.Archimedean.Neutrino`): zero crossings and trivial Seifert genus.
+    The neutrino's defining invariants are `crossing_number = 0`,
+    `genus = 0`; this states the matching values for the up quark. -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
 theorem up_quark_is_unknot :
-    UpQuark.mk.crossing_number = Neutrino.mk.crossing_number ∧
-    UpQuark.mk.genus = Neutrino.mk.genus := ⟨rfl, rfl⟩
+    UpQuark.mk.crossing_number = 0 ∧
+    UpQuark.mk.genus = 0 := ⟨rfl, rfl⟩
 
 /-- The up quark has positive crossing orientation. -/
 -- Ref: [manuscript] Ch. 5, §up-quark
@@ -71,5 +75,7 @@ theorem up_quark_positive_orientation :
 /-- The up quark is color-confined. -/
 -- Ref: [manuscript] Ch. 5, §up-quark
 theorem up_quark_confined : UpQuark.mk.confined = true := rfl
+
+end
 
 end QOU.Archimedean

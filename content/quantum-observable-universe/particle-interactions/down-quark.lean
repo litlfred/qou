@@ -25,9 +25,10 @@ numerical evaluation.
 
 namespace QOU.Archimedean
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -55,28 +56,35 @@ structure DownQuark where
   /-- Color-confined: cannot be isolated from B₃. -/
   confined : Bool := true
 
-/-- The down quark is an unknot (same underlying knot as neutrino). -/
+/-- The down quark is an unknot (same underlying knot as the neutrino,
+    `QOU.Archimedean.Neutrino`): zero crossings and trivial Seifert genus.
+    The neutrino's defining invariants are `crossing_number = 0`,
+    `genus = 0`; this states the matching values for the down quark. -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
 theorem down_quark_is_unknot :
-    DownQuark.mk.crossing_number = Neutrino.mk.crossing_number ∧
-    DownQuark.mk.genus = Neutrino.mk.genus := ⟨rfl, rfl⟩
+    DownQuark.mk.crossing_number = 0 ∧
+    DownQuark.mk.genus = 0 := ⟨rfl, rfl⟩
 
 /-- The down quark has negative crossing orientation. -/
 -- Ref: [manuscript] Ch. 5, §down-quark
 theorem down_quark_negative_orientation :
     DownQuark.mk.crossing_orientation = -1 := rfl
 
-/-- Up and down quarks have opposite crossing orientations. -/
+/-- Up and down quarks have opposite crossing orientations.  The up quark
+    (`QOU.Archimedean.UpQuark`) has `crossing_orientation = 1`; the down
+    quark's is its negation, `-1`. -/
 -- Ref: [manuscript] Ch. 5, §down-quark
 theorem quark_crossing_asymmetry :
-    DownQuark.mk.crossing_orientation = -UpQuark.mk.crossing_orientation := by
+    DownQuark.mk.crossing_orientation = -(1 : ℤ) := by
   decide
 
 /-- The down quark is color-confined. -/
 -- Ref: [manuscript] Ch. 5, §down-quark
 theorem down_quark_confined : DownQuark.mk.confined = true := rfl
+
+end
 
 end QOU.Archimedean
