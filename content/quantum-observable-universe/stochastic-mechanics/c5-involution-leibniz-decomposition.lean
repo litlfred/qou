@@ -69,10 +69,10 @@ theorem hoefsmit_b_squared_eq_one_minus_inv_quantum_two_squared
   have h_q2 : q^2 + 1 ≠ 0 := by positivity
   have h_2q : q + 1/q ≠ 0 := by
     intro habs
-    have := congrArg (· * q) habs
-    simp at this
-    have : q^2 + 1 = 0 := by linarith [this]
-    exact h_q2 this
+    apply h_q2
+    have hmul : (q + 1/q) * q = q^2 + 1 := by field_simp [hq]
+    rw [habs, zero_mul] at hmul
+    linarith [hmul]
   field_simp
   ring
 
@@ -220,6 +220,7 @@ noncomputable def c5OfHSquared (h_sq : ℝ) : ℝ := -3/2 + 1 / (h_sq + 4)
 theorem c5RationalMap_factor (h : ℝ) :
     c5RationalMap h = c5OfHSquared (h^2) := by
   unfold c5RationalMap c5OfHSquared
+  rfl
 
 /-- **Sign signature of c_5 over ℝ**: `c5RationalMap` is strictly
     negative everywhere on ℝ. Categorical content: the precision-
@@ -310,11 +311,17 @@ theorem quantumTwo_at_silver_ratio_squared :
     Real.mul_self_sqrt (by norm_num : (0:ℝ) ≤ 2)
   have h_ne : (1 + Real.sqrt 2 : ℝ) ≠ 0 := by
     have := Real.sqrt_nonneg 2; linarith
-  -- (1+√2 + 1/(1+√2))² = 8 follows by clearing denominators and
-  -- using √2·√2 = 2.
-  field_simp
+  -- 1/(1+√2) = √2 - 1 since (1+√2)(√2-1) = √2·√2 - 1 = 1, so
+  -- (1+√2) + 1/(1+√2) = 2√2 and its square is 4·(√2·√2) = 8.
+  have hinv : (1 + Real.sqrt 2)⁻¹ = Real.sqrt 2 - 1 := by
+    rw [eq_comm, eq_inv_iff_mul_eq_one₀ h_ne]
+    ring_nf
+    linarith [h2]
+  rw [one_div, hinv]
+  have : (1 + Real.sqrt 2 + (Real.sqrt 2 - 1)) = 2 * Real.sqrt 2 := by ring
+  rw [this]
   ring_nf
-  linarith [h2, Real.sqrt_nonneg 2, sq_nonneg (Real.sqrt 2)]
+  linarith [h2]
 
 theorem b_squared_at_silver_ratio :
     hoefsmitBSq (1 + Real.sqrt 2) = 7/8 := by
