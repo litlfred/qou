@@ -1,14 +1,14 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-30T15:28:53.731596+00:00",
-  "commitSha": "15711c0d751c5583c24a60b5b363639aa302352d",
+  "computedAt": "2026-06-30T16:38:13.411889+00:00",
+  "commitSha": "5eac181e5cdf4950cd86b0bf465685eca296bd48",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 148,
   "computation": "canonical-script-input-audit",
   "scriptFile": "canonical_script_input_audit.py",
-  "scriptHash": "1b6fbdcb043b",
+  "scriptHash": "c08fb5f0fa24",
   "scriptCommitSha": "f6ddd9350192668fe1fb6c2498f8d5b91bb70331",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -25,14 +25,13 @@
   "description": "Audit of every Python computation script under computations/ for alignment with the paper's 3-input canonical scheme (calibration-inputs.md): q_0 from m_μ/m_e, m_e, and Q_β(n). Flags scripts that use both m_p AND m_n from CODATA (over-counts hadronic input), use Vol_hyp (fitted under option B), or omit canonical input modules entirely.",
   "contentBlock": "calibration-inputs.md",
   "parameters": {
-    "total_scripts_audited": 1587
+    "total_scripts_audited": 1588
   },
   "data": {
     "by_scheme": {
-      "no-hadronic-input (substrate-only or pure dimensionless)": 1276,
+      "no-hadronic-input (substrate-only or pure dimensionless)": 1277,
       "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)": 163,
-      "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)": 35,
-      "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)": 12,
+      "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)": 47,
       "Q_β-only-hadronic": 47,
       "m_p-only (no Q_β; m_n derivation TBD)": 31,
       "3-input-canonical (m_p + Q_β; per calibration-inputs.md)": 22,
@@ -1635,7 +1634,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": false
       },
@@ -4575,7 +4574,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": true
       },
@@ -10555,7 +10554,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": true
       },
@@ -11095,7 +11094,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": true
       },
@@ -15975,7 +15974,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": true
       },
@@ -18177,6 +18176,26 @@
         },
         "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
         "uses_canonical_q0_source": true,
+        "uses_canonical_consts_source": false
+      },
+      {
+        "script": "clambda_shape_invariant_probe.py",
+        "found": {
+          "M_E_MEV": false,
+          "M_P_MEV": false,
+          "M_N_MEV": false,
+          "Q_NEUTRON": false,
+          "Q_TRITIUM": false,
+          "Q_C14": false,
+          "Vol_hyp": false,
+          "q_parameter": false,
+          "experimental_constants": false,
+          "MASS_RATIO_MU_E": false,
+          "calibration_skein_pair": false,
+          "substrate_splitting_witness": false
+        },
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "uses_canonical_q0_source": false,
         "uses_canonical_consts_source": false
       },
       {
@@ -27115,7 +27134,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": true
       },
@@ -27135,7 +27154,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": true
       },
@@ -27195,7 +27214,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": true
       },
@@ -27215,7 +27234,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": true
       },
@@ -27235,7 +27254,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": true
       },
@@ -30795,7 +30814,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": true
       },
@@ -31075,7 +31094,7 @@
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)",
+        "scheme": "m_n-not-an-input (registry-source or m_n comparison-only; triaged 2026-06-22, not a 4th calibration input)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": true
       },
@@ -31782,7 +31801,7 @@
     ],
     "canonical_3input_count": 70,
     "substrate_splitting_count": 1,
-    "over_count_count": 12,
+    "over_count_count": 0,
     "vol_hyp_fitted_count": 163
   },
   "caveats": [
