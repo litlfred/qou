@@ -101,6 +101,74 @@ recovering the Skein formula's hyperbolic volume. The OPEN question is
 the explicit form of $\xi_\ell(q)$ at substrate $q_0$, and how it
 differs from the SUPERSEDED $1/\hbar_q^2$.
 
+## Two-constraint obstruction (Phase 4 finding)
+
+Any working $\mathcal{F}_\ell(q) = \xi_\ell(q)\cdot\mathrm{Vol}_q^{\mathrm{tower}}(K_\ell)$
+must satisfy **two constraints simultaneously**. The two candidate
+families explored so far each satisfy only one — they are
+*complementary* failures, which sharpens the open problem:
+
+**C1 — nonzero on torus knots.** The electron $K_\mathfrak{e} = T(2,3)$
+(trefoil) and tau $K_\tau = T(2,7)$ (septafoil) are **torus** knots,
+hence non-hyperbolic: $\mathrm{Vol}_{\mathrm{hyp}} = 0$. Only the muon
+$4_1$ is hyperbolic. So a hyperbolic-volume object gives
+$\mathfrak{m}(\mathfrak{e}) \propto 0$ and $\mathfrak{m}(\tau) \propto 0$.
+The production Skein form $\mathrm{Vol}(4_1)/\hbar_q^2$ therefore "works"
+for the muon **only by CAL-2 calibration** (with $m_e$ set to the unit),
+and **cannot predict $m_\tau/m_e$** — it would require
+$\mathrm{Vol}_{\mathrm{hyp}}(T(2,7)) = (m_\tau/m_e)\,\hbar_q^2 \approx 34.1$,
+but a torus knot has $\mathrm{Vol}_{\mathrm{hyp}} = 0$. $\mathrm{Vol}_{\mathrm{hyp}}$
+**fails C1**.
+
+**C2 — $O(10^2)$ mass ratios.** CODATA $m_\mu/m_e = 206.77$,
+$m_\tau/m_e = 3477.23$. If $\xi_\ell(q)$ is lepton-**independent** (a
+universal dimensional scalar, as the reading "$1/\hbar_q^2$" suggests), it
+**cancels in every ratio**, leaving
+$m_\mu/m_e = \mathrm{Vol}_q^{\mathrm{tower}}(K_\mu)/\mathrm{Vol}_q^{\mathrm{tower}}(K_\mathfrak{e})$.
+The descended-dropped per-braid $\mathrm{Li}_2^q$ tower with **proper
+Plancherel-weighted Wedderburn $\hat V_i$** (not the earlier crude
+$|\mathrm{tr}_M|^{1/n}$ placeholder;
+`per-generator-V-hat-general.witness.json`) gives
+
+| $K_\ell$ | $\mathrm{Vol}_q^{\mathrm{tower}}$ | ratio to $\mathfrak{e}$ | CODATA |
+|---|---:|---:|---:|
+| $\mathfrak{e}$ $T(2,3)$ | $0.2945$ | $1$ | $1$ |
+| $\mu$ $T(2,5)$ | $0.4830$ | $1.64$ | $206.77$ |
+| $\mu$ $4_1$ | $1.8669$ | $6.34$ | $206.77$ |
+| $\tau$ $T(2,7)$ | $0.6749$ | $2.29$ | $3477.23$ |
+
+— all $O(1)$, missing CODATA by $\sim 30$–$130\times$. The universal-scalar
+$\times\,\mathrm{Li}_2^q$-tower family **fails C2**: the scalar supplies no
+ratio structure and the symmetric $\mathrm{Li}_2^q$ tower supplies the
+wrong magnitude.
+
+**Synthesis — the missing $\sim 10^2$ is a Kashaev $1/\hbar$ enhancement.**
+The two failures are complementary: $\mathrm{Vol}_{\mathrm{hyp}}$ is nonzero
+only for the hyperbolic muon (fails C1); the symmetric-$\mathrm{Li}_2^q$
+tower is nonzero everywhere but $O(1)$ (fails C2). The structural reason
+the $\mathrm{Li}_2^q$ tower stays $O(1)$ is that the **symmetric** (Rogers)
+$\mathrm{Li}_2^q(z) = \sum z^n/(n[n]_q) \to \mathrm{Li}_2(z)$ as $q\to1$ —
+no $1/\hbar$ blow-up — whereas the **Faddeev** quantum dilogarithm
+$\Phi_q$ has $\log\Phi_q \sim \mathrm{Li}_2/\hbar$, an $O(1/\hbar)$
+enhancement (two such factors give the $1/\hbar_q^2 \approx 102$ that the
+SUPERSEDED scalar carries). The concrete next direction is therefore to
+test the tower with the **Faddeev $\Phi_q$** in place of the symmetric
+$\mathrm{Li}_2^q$: $\Phi_q$ is nonzero on torus knots (preserving C1) and
+its $1/\hbar$ asymptotic can supply the $O(10^2)$ ratio magnitude
+(targeting C2). This is the $\Phi_q$ (Faddeev) vs $\mathrm{Li}_2^q$
+(Rogers) context-sorting flagged in the canonical-derivation cheat sheet —
+the lepton sector is where the choice is decisive rather than cosmetic.
+
+> **Scope (per the refuted-claim discipline).** This is a
+> **scope-limited negative**: the *hyperbolic-volume* and the
+> *universal-scalar $\times$ symmetric-$\mathrm{Li}_2^q$-tower* candidate
+> families, **as stated**, do not reproduce the lepton ratios. It is
+> **not** a structural exclusion of $\mathrm{Vol}_q^{\mathrm{tower}}$ or of
+> a categorical $\xi_\ell$ — the Faddeev-$\Phi_q$ tower is untested and is
+> the indicated next probe. The muon *accuracy* (not the structural form)
+> remains Subgoal-2-blocked (q₀-repin out of scope, owner directive
+> 2026-05-08).
+
 ## Properties of the conjectural formula
 
 1. **Im(q) robustness.** By the modulus-projection argument
