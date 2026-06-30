@@ -44,3 +44,11 @@ verification: confirm in the FULL env that q_at(50) returns the TRUE
 proton q₀ (m_μ → ~210 ppb). In a minimal sandbox q_at returned a
 muon-behaving value (m_μ → 0.05 ppb), which—if real—would invert the
 963.6× framing (and the merged AGENTS.md rule). Resolve Step 0 first.
+
+## 2026-06-30 — coupled with j1hg; sequencing plan + recommended disposition
+See docs/workplans/2026-06-30-j1hg-z5vu-overcount-q0repin-sequencing.md. The
+proton-q₀ solver embeds a purged Habiro fit, so a literal 840-witness migration
+can't recompute proton-q₀ cleanly. RECOMMENDED disposition (B): keep the
+computations/ layer muon-q₀ canonical (per AGENTS.md rule 4 — the proton anchor
+is enforced at the reporting layer, not by rewriting derivation witnesses), and
+close z5vu as will-not-migrate-by-design. Owner decision required (A pin vs B keep).
