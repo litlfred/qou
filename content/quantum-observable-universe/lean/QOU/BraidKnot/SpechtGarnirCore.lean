@@ -203,4 +203,15 @@ theorem antisym_colStab (t : Tableau μ) (H : Subgroup (Perm (Fin (nOf μ)))) [F
       hsq, one_zsmul]
   rw [Finset.sum_congr rfl (fun σ _ => hterm σ), Finset.sum_const, Finset.card_univ]
 
+/-- **Antisymmetriser as a polytabloid combination.** `b_H(e_t)` is the signed
+sum of polytabloids `e_{σ·t}` over `H` — the left-hand side of a Garnir relation.
+Immediate from polytabloid equivariance `rep σ (e_t) = e_{σ·t}` (§1b). -/
+theorem antisym_polytabloid (H : Subgroup (Perm (Fin (nOf μ)))) [Fintype ↥H]
+    (t : Tableau μ) :
+    antisym (k := k) H (polytabloid (k := k) t)
+      = ∑ σ : H, (Equiv.Perm.sign (σ : Perm (Fin (nOf μ))) : ℤ) •
+          polytabloid (k := k) ((σ : Perm (Fin (nOf μ))) • t) := by
+  unfold antisym
+  exact Finset.sum_congr rfl (fun σ _ => by rw [rep_polytabloid])
+
 end QOU.BraidKnot.SpechtGarnirCore
