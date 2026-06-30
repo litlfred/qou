@@ -280,4 +280,33 @@ theorem antisym_swap_eq_zero (H : Subgroup (Perm (Fin (nOf μ)))) [Fintype ↥H]
   antisym_of_eq_zero (k := k) H hmem (Equiv.swap_mul_self a b)
     (Equiv.Perm.sign_swap hab) s (tabloid_swap_sameRow hrow)
 
+/-! ## 6. The Garnir subgroup `S_X` (perms supported on a label set)
+
+The Garnir element is the antisymmetriser over the symmetric group `S_X` on the
+two-column Garnir set `X = A ∪ B`. We realise `S_X` as the subgroup of
+`Perm (Fin n)` fixing every label **outside** `X`; the killing transposition
+`(a b)` (`a,b ∈ X`) lives in it. -/
+
+/-- `S_X`: the permutations supported on `X` (fixing the complement of `X`). -/
+def suppSubgroup (X : Finset (Fin (nOf μ))) : Subgroup (Perm (Fin (nOf μ))) where
+  carrier := {σ | ∀ i, i ∉ X → σ i = i}
+  one_mem' := fun _ _ => rfl
+  mul_mem' {a b} ha hb := fun i hi => by
+    simp only [Equiv.Perm.coe_mul, Function.comp_apply, hb i hi, ha i hi]
+  inv_mem' {a} ha := fun i hi => by
+    have h := ha i hi
+    nth_rewrite 1 [← h]
+    exact a.symm_apply_apply i
+
+noncomputable instance instFintypeSuppSubgroup (X : Finset (Fin (nOf μ))) :
+    Fintype (suppSubgroup (μ := μ) X) := Fintype.ofFinite _
+
+/-- The transposition of two labels of `X` is supported on `X`. -/
+theorem swap_mem_suppSubgroup {X : Finset (Fin (nOf μ))} {a b : Fin (nOf μ)}
+    (ha : a ∈ X) (hb : b ∈ X) : Equiv.swap a b ∈ suppSubgroup (μ := μ) X := by
+  intro i hi
+  apply Equiv.swap_apply_of_ne_of_ne
+  · rintro rfl; exact hi ha
+  · rintro rfl; exact hi hb
+
 end QOU.BraidKnot.SpechtGarnirCore
