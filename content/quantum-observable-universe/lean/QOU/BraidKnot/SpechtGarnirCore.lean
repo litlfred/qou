@@ -389,6 +389,24 @@ theorem garnir_relation {X : Finset (Fin (nOf μ))} {t : Tableau μ} {m : ℕ}
   rw [← antisym_polytabloid (k := k) (suppSubgroup X) t,
     antisym_supp_polytabloid_eq_zero (k := k) hcard hbound]
 
+/-- **Coset-invariance of the signed polytabloid.** Right-multiplying `σ` by a
+column permutation `κ ∈ C_t` leaves the signed polytabloid `sgn(σ)·e_{σ·t}`
+unchanged: `sgn(σκ)·e_{(σκ)·t} = sgn(σ)·e_{σ·t}` (the `sgn(κ)² = 1` cancellation,
+using `e_{κ·t} = sgn(κ)·e_t`). This is what makes the Garnir relation descend to a
+sum over the cosets `S_X ⧸ (S_A × S_B)` — and lets one pick, per coset, the rep
+that maximises column dominance (the transversal form of straightening). -/
+theorem signed_polytabloid_mul_colStab_eq {σ κ : Perm (Fin (nOf μ))} (t : Tableau μ)
+    (hκ : κ ∈ colStab t) :
+    (Equiv.Perm.sign (σ * κ) : ℤ) • polytabloid (k := k) ((σ * κ) • t)
+      = (Equiv.Perm.sign σ : ℤ) • polytabloid (k := k) (σ • t) := by
+  have hsq : (Equiv.Perm.sign κ : ℤ) * (Equiv.Perm.sign κ : ℤ) = 1 := by
+    simp [← Units.val_mul, Int.units_mul_self]
+  have h1 : polytabloid (k := k) ((σ * κ) • t)
+      = (Equiv.Perm.sign κ : ℤ) • polytabloid (k := k) (σ • t) := by
+    rw [mul_smul, ← rep_polytabloid σ (κ • t), ← rep_polytabloid κ t,
+      polytabloid_rep_colStab t hκ, map_zsmul, rep_polytabloid σ t]
+  rw [h1, ← mul_smul, map_mul, Units.val_mul, mul_assoc, hsq, mul_one]
+
 /-- **The straightening split.** Partitioning the Garnir relation by membership
 in `C_t`: the `C_t`-part of `S_X` collapses (each `e_{σ·t} = sgn(σ)·e_t`) to
 `N·e_t` with `N = |{σ ∈ S_X : σ ∈ C_t}| ≥ 1`, leaving
