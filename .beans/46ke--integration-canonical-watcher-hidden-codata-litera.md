@@ -30,3 +30,31 @@ literals"). To avoid double-routing:
   exploratory scripts (low value — diminishing returns).
 Handing the remaining production sweep to the sibling; not picking up
 further 46ke work from this branch to prevent collisions.
+
+## 2026-06-30 — PR (branch claude/46ke-codata-literals-rollup-2026-06-30)
+Audit + safe down-payment, NOT a blanket sweep. Key finding: the registry
+`codata_constants.py` stores values at a FIXED 50-dps snapshot (plain
+validation constants M_MU/U_MEV/M_K/M_PI at default ~15 dps). Routing is:
+- raw-bit-identical ONLY for M_E_MEV / M_P_MEV_VALIDATION at <=50 dps
+  (set_compute_dps() DEFAULT is 65 → many `_50dps` scripts actually run 65,
+   witness-identical but not raw-identical);
+- precision-LOSING for M_MU/U_MEV/M_K0 (registry made at default dps) → would
+  change numbers even at 50 dps. Needs a registry fix first (= me3r scope).
+Routed (proven bit-identical at dps=50): yekutieli_volume_join.py:456 (m_e).
+Data-integrity handoff (do NOT silently route — changes numbers):
+- WRONG u→MeV `931.49410372` (vs 931.49410242) in mass_binding_dashboard.py:178
+  + m_sym_error_budget.py:50 → ce18 (genuine bug, production scripts).
+- proton/neutron variant edition `938.27208943/939.56542194` in
+  probes/hecke_channel_binding_probe + probes/deuteron_fpn_wlambda_wiring → me3r.
+- truncated 8-fig m_e `0.51099895` across many scripts → me3r truncation class.
+Deferred (low value per prior drains): probes/qbeta/phase5/ocneanu/mmu/_deprecated.
+Full partition: docs/audits/2026-06-30-codata-literals-rollup-precision-partition.md
+
+## 2026-06-30 — CORRECTION (u→MeV direction was backwards)
+NIST-verified: m_u c² = 931.49410372(29) MeV is CODATA-2022; 931.49410242(28)
+is CODATA-2018. The registry U_MEV (931.49410242, from AME2020 metadata) is the
+2018 edition → STALE. The scripts mass_binding_dashboard/m_sym_error_budget
+using 931.49410372 are CORRECT (2022). So this is an edition inconsistency, NOT
+a bug in those scripts. Fix = bump the registry + AME2020-derived constants to
+CODATA 2022 (value-changing for AME binding witnesses → owner-gated, me3r/ce18).
+Do NOT route those scripts down to the stale registry value.

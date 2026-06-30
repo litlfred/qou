@@ -43,6 +43,8 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 
+import codata_constants as _codata  # noqa: E402 — registry (CODATA-2022 u→MeV); bean me3r
+
 # (name, Z, N) grouped by mass band. The sweep is a curated spread low→high so
 # the trend (and the breakdown past the light nuclei) is visible in one view.
 GROUPS = {
@@ -175,7 +177,7 @@ def _ame_table():
     """(Z, A) → (total binding MeV, σ_B MeV, atomic mass MeV, σ_atom MeV) from the
     vendored AME2020 table. σ_B = binding_energy_per_A_unc_keV × A; atomic mass =
     atomic_mass_micro_u × 1e-6 × u — the RAW neutral-atom mass (electrons included)."""
-    U_MEV = 931.49410372                                # CODATA atomic mass unit u
+    U_MEV = float(_codata.U_MEV)                        # CODATA-2022 u→MeV via registry (bean me3r; float-preserving)
     d = json.loads((HERE / "data" / "ame2020.json").read_text())
     entries = d["entries"] if isinstance(d, dict) and "entries" in d else d
     rows = entries.values() if isinstance(entries, dict) else entries

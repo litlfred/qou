@@ -25,3 +25,8 @@ them. Per `/coordinate` (2026-06-28): **defer the big-bang** until the
 compute-PR storm settles, then do it in small per-cluster batches (or one
 sweep once `main` is quiet). Prior triage also classes much of the rollup as
 acceptable Class-B/C/D (`docs/audits/2026-06-25-session-bean-triage.md`).
+
+## 2026-06-30 — re-confirmed DEFERRED (not started)
+The ~133-script WitnessBuilder big-bang regen remains a high-collision sweep
+to be done in small per-cluster batches once main is quiet — explicitly not a
+late-session big-bang. No work taken here. Duplicate 1j39 still open (owner-close).
