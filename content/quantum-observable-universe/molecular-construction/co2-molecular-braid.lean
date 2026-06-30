@@ -18,4 +18,4 @@ structure CO2Braid where
   sharedElectrons : Nat := 8
 
 /-- CO₂ strand count: carbon(18) + 2 × oxygen(24). -/
-theorem co2_strands : 18 + 2 * 24 = 66 := by norm_num
+theorem co2_strands : 18 + 2 * 24 = 66 := by decide
