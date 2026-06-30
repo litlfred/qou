@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-30T17:58:54.842405+00:00",
-  "commitSha": "b0b12134680883bb882558ded5a3c11b54a2e50f",
+  "computedAt": "2026-06-30T20:01:45.754447+00:00",
+  "commitSha": "58cedf66aa6f0e572dc112af9141066e9a1aaa6e",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 279,
+      "computed": 280,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 10,
+  "durationMs": 11,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
@@ -47,12 +47,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 1533,
-      "prov_ok": 1198,
+      "total_scanned": 1538,
+      "prov_ok": 1202,
       "prov_audit_exempt": 55,
-      "prov_missing": 279,
+      "prov_missing": 280,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.817351598173516
+      "completeness_ratio": 0.817295188556567
     },
     "by_verdict": {
       "PROV_OK": [
@@ -1230,6 +1230,10 @@
         },
         {
           "witness": "charge-slambda-reeb-phase-crack.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "chi-at-q0-binding-lossless-helium-4.witness.json",
           "missing_fields": []
         },
         {
@@ -3097,11 +3101,19 @@
           "missing_fields": []
         },
         {
+          "witness": "charge-symmetry-bond-probe.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "clambda-shape-invariant-probe.witness.json",
           "missing_fields": []
         },
         {
           "witness": "commutative-chirality-vanishes-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "coulomb-mirror-killswitch-probe.witness.json",
           "missing_fields": []
         },
         {
@@ -3294,6 +3306,10 @@
         },
         {
           "witness": "gauge-coupling-uniqueness-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "gg-production-bond-probe.witness.json",
           "missing_fields": []
         },
         {
@@ -5146,6 +5162,14 @@
         },
         {
           "witness": "chi-helium-4-free-h12-at-qinv-50dps.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "chi-helium-4-h12-at-q0-50dps-binding.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
