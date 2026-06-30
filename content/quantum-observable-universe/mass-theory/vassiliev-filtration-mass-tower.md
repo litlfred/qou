@@ -47,6 +47,11 @@ by type gives a **canonical filtration by complexity**:
    mass-discriminating term. This is exactly the term that the
    CAL-4 $\lambda_{\mathrm{scale}}$ investigation (PRs #888–#969)
    was trying to derive — it is a **type-2 Vassiliev invariant**.
+   (In the canonical production formula this $h^2$ term is absorbed
+   into the per-block density $\varrho(K)$; $\lambda_{\mathrm{scale}}$
+   survives only as the acknowledged-CAL-4 near-form of
+   [`conj:borromean-baryon-mass-formula`](#conj:borromean-baryon-mass-formula),
+   not as a standalone derived factor.)
 
 3. **Higher corrections** $c_k \cdot h^k$ for $k \geq 3$
    give the precision refinements. The mass tower's convergence
