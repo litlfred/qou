@@ -119,4 +119,36 @@ theorem antisym_eq_zero (H : Subgroup (Perm (Fin (nOf μ)))) [Fintype ↥H]
     show (σ : Perm (Fin (nOf μ))) * τ * τ = (σ : Perm (Fin (nOf μ)))
     rw [mul_assoc, hτ2, mul_one]
 
+/-! ## 3. The column collapse `b_K e_t = |K| · e_t`
+
+The bridge from the abstract antisymmetriser to a *Garnir element*: when the
+subgroup `K` sits **inside the column stabiliser** `C_t`, the antisymmetriser
+acts on `e_t` by the scalar `|K|` (each term `sgn(σ)·(σ·e_t) = sgn(σ)²·e_t = e_t`
+collapses by the column-alternating property). Concretely, for the Garnir
+element `b_{S_X} = G · b_{S_A × S_B}` with `A,B` single-column cell sets, this is
+the `b_{S_A × S_B} e_t = |A|!·|B|!·e_t` step.
+-/
+
+/-- **Column collapse.** For a subgroup `H ≤ C_t`, the antisymmetriser acts on the
+polytabloid `e_t` by the scalar `|H|`: `b_H e_t = |H| · e_t`. Each summand
+`sgn(σ)·(σ·e_t)` equals `sgn(σ)²·e_t = e_t` by the column-alternating property. -/
+theorem antisym_colStab (t : Tableau μ) (H : Subgroup (Perm (Fin (nOf μ)))) [Fintype ↥H]
+    (hle : H ≤ colStab t) :
+    antisym (k := k) H (polytabloid (k := k) t)
+      = Fintype.card ↥H • polytabloid (k := k) t := by
+  unfold antisym
+  have hterm : ∀ σ : H,
+      (Equiv.Perm.sign (σ : Perm (Fin (nOf μ))) : ℤ) •
+          Mtab.rep μ (σ : Perm (Fin (nOf μ))) (polytabloid (k := k) t)
+        = polytabloid (k := k) t := by
+    intro σ
+    have hsq : (Equiv.Perm.sign (σ : Perm (Fin (nOf μ))) : ℤ)
+        * (Equiv.Perm.sign (σ : Perm (Fin (nOf μ))) : ℤ) = 1 := by
+      simp [← Units.val_mul, Int.units_mul_self]
+    rw [polytabloid_rep_colStab t (hle σ.2),
+      ← mul_smul (Equiv.Perm.sign (σ : Perm (Fin (nOf μ))) : ℤ)
+        (Equiv.Perm.sign (σ : Perm (Fin (nOf μ))) : ℤ) (polytabloid (k := k) t),
+      hsq, one_zsmul]
+  rw [Finset.sum_congr rfl (fun σ _ => hterm σ), Finset.sum_const, Finset.card_univ]
+
 end QOU.BraidKnot.SpechtGarnirCore
