@@ -130,4 +130,18 @@ theorem colWt_lt_of_patRel {s t : Tableau μ}
   · rw [Finset.mem_filter]; push_neg; intro _ hts
     exact hne (patRel_antisymm _ _ hts h).symm
 
+/-- **`colWt` is invariant under column permutations.** A column permutation
+`κ ∈ C_t` does not change the column pattern (`colPattern (κ·t) = colPattern t`),
+hence not `colWt`. Consequence (the measure wrinkle): column-standardisation does
+**not** strictly decrease `colWt` — only a Garnir row-shuffle does. So closing
+`polytabloid_garnir_core` over *non-column-standard* `t` needs `colWt` paired with
+a column-inversion tie-breaker (column-standardise first, same `colWt`; then
+Garnir strictly drops `colWt`). -/
+theorem colWt_smul_colStab {t : Tableau μ} {κ : Equiv.Perm (Fin (Specht.nOf μ))}
+    (hκ : κ ∈ Specht.colStab t) :
+    colWt (κ • t) = colWt t := by
+  have hpat : Specht.colPattern (κ • t) = Specht.colPattern t := by
+    rw [Specht.colPattern_smul]; exact Specht.mem_colStab.mp hκ
+  unfold colWt; rw [hpat]
+
 end QOU.BraidKnot.SpechtGarnirWt
