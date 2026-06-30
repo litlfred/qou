@@ -44,27 +44,45 @@ intrinsic **bar-odd (Goldstone) component**
 ([`c-equals-bar-iff-all-1dim-proof.md`](../../content/quantum-observable-universe/particle-interactions/c-equals-bar-iff-all-1dim-proof.md)),
 and a decay width is a bar-odd observable.
 
-### The sharp statement (CAL-2)
+### The sharp statement (CAL-2) — corrected by 4₁ self-duality
 
-The two CAL-2 handles — the **mass ratio** $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$
-and the **decay width** $\mathfrak{D}_\beta$ — are **not a conflict and not two
-calibrations**: they are the **real and imaginary parts of the figure-eight's
-complex volume**, the Neumann–Zagier $\mathbb{V}(4_1) = \mathrm{Vol}(4_1) +
-i\,\mathrm{CS}(4_1)$:
+A first pass conjectured that the **mass ratio**
+$m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ and the **decay width**
+$\mathfrak{D}_\beta$ are the real and imaginary parts of the *bare* figure-eight
+Neumann–Zagier volume $\mathbb{V}(4_1) = \mathrm{Vol}(4_1) + i\,\mathrm{CS}(4_1)$.
+**The keystone compute (part a) refutes the imaginary half of that:**
 
-$$\underbrace{\mathrm{Re}\,\mathbb{V}(4_1) = \mathrm{Vol}(4_1)}_{\to\ m_\mu/m_e\ \text{(mass proxy)}}, \qquad \underbrace{\mathrm{Im}\,\mathbb{V}(4_1) = \mathrm{CS}(4_1)}_{\to\ \mathfrak{D}_\beta\ \text{(decay width, conjectural)}}.$$
+$$\underbrace{\mathrm{Re}\,\mathbb{V}(4_1) = \mathrm{Vol}(4_1) \approx 2.0299}_{\to\ m_\mu/m_e\ \text{(mass proxy) — CONFIRMED}}, \qquad \underbrace{\mathrm{Im}\,\mathbb{V}(4_1) = \mathrm{CS}(4_1) = 0}_{\text{by amphichirality / self-duality — so NOT }\mathfrak{D}_\beta}.$$
 
-Since $4_1$ is the **Higgs** (this PR's muon-knot ruling), **CAL-2 is the Higgs
-knot's complex volume**, read two ways. Mass-ratio vs decay-width is the
-real-$q$ ($\mathrm{Li}_2^q$) saddle vs the root-of-unity ($\Phi_q$) saddle of
-the **same** AJ operator $\hat A_{4_1}$. *That* is the unification the keystone
-$\hat A_{4_1}$ computation (bean `2s1i`/`a6vp`) tests: one operator, both faces.
+**The figure-eight is amphichiral** (self-mirror, $4_1 = \overline{4_1}$), which
+forces its Chern–Simons invariant $\mathrm{CS}(4_1) = 0$. The Kashaev
+verification confirms it: $\langle 4_1\rangle_N$ is **real-positive with no
+oscillating phase** ([`figure-eight-kashaev-volume.witness.json`](../../computations/figure-eight-kashaev-volume.witness.json)),
+the signature of $\mathrm{CS}=0$ (a chiral knot would carry a phase
+$e^{iN\,\mathrm{CS}/2\pi}$). So the **bare** $4_1$ contributes **only the real
+(mass) face**; its imaginary face vanishes. This is exactly the
+**self-duality** the owner asked to exploit, and it is decisive here.
 
-> **Scope.** $\mathrm{Re}\,\mathbb{V}(4_1)=\mathrm{Vol}(4_1)\to m_\mu/m_e$ is
-> established (the Skein/Kashaev route). $\mathrm{Im}\,\mathbb{V}(4_1)=\mathrm{CS}(4_1)\to\mathfrak{D}_\beta$
-> is **conjectural** — it is precisely the root-of-unity-saddle check in the
-> keystone compute, not yet verified. The "no conflict" claim is established;
-> the "$\mathfrak{D}_\beta = \mathrm{CS}(4_1)$" identification is the open test.
+**Therefore $\mathfrak{D}_\beta$ is *not* the figure-eight's $\mathrm{CS}$.** It
+is the imaginary part of a *different* complex volume — the QOU **binding
+defect** $\mathfrak{V} = E_0\,\mathrm{tr}_M((\Pi_{\text{free}}-\mathbf{1})\circ\mathcal{M})$
+(free-minus-linked; $\mathrm{Im}\,\mathfrak{V} = \mathfrak{Q}_\beta = \hbar/\mathfrak{D}_\beta$,
+per [`conj:binding-qbeta-complex-volume`](../../content/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.md)).
+The bare-knot $\mathbb{V}(K)$ and the binding-defect $\mathfrak{V}$ are distinct
+objects: the former's Im vanishes for an amphichiral knot, the latter's Im is
+the decay width. **The "no conflict" result stands** (CAL-1 = real scale; CAL-2,3
+= decay widths = bar-odd/Im faces); only the *over-unification* "one bare
+$\mathbb{V}(4_1)$, both CAL-2 faces" was wrong — the mass face is $\mathbb{V}(4_1)$,
+the decay face is the binding defect $\mathfrak{V}$.
+
+> **Scope (corrected).** $\mathrm{Re}\,\mathbb{V}(4_1)=\mathrm{Vol}(4_1)\to m_\mu/m_e$
+> is **established** (Skein/Kashaev; verified part a, err 2.9e-4).
+> $\mathrm{Im}\,\mathbb{V}(4_1)=\mathrm{CS}(4_1)=0$ is **established** (amphichirality;
+> real Kashaev sum). $\mathfrak{D}_\beta = \mathrm{Im}\,\mathfrak{V}_{\text{binding}}$
+> (the free-minus-linked defect, *not* the bare $4_1$) remains the open
+> identification — and it is a many-body/binding object, consistent with
+> $\mathfrak{D}_\beta$ being a *nuclear* (neutron) decay width, not a property of
+> the lone Higgs knot.
 
 ## 3. Can we use the literature? Yes — but generalize ℂ → $(R,\sigma)$
 
