@@ -37,18 +37,25 @@ $$
   \lVert \alpha - \hat{\tau}_n(\alpha) \rVert^2,
 $$
 
-and by the linearity of the categorical trace:
+The categorical trace is linear, so
+$\mathrm{tr}(\alpha) = \mathrm{tr}(\hat{\tau}_n(\alpha)) +
+\mathrm{tr}(\alpha - \hat{\tau}_n(\alpha))$, and the same
+$*$-compatibility carries the descended/transient orthogonality through
+the trace: $\mathrm{tr}(\hat{\tau}_n(\alpha)) \perp
+\mathrm{tr}(\alpha - \hat{\tau}_n(\alpha))$. Orthogonal vectors add in
+**quadrature**, not linearly (additivity would require alignment, not
+orthogonality), so the Pythagorean identity gives
 
 $$
-  \mathfrak{m}(\varrho)
+  \mathfrak{m}(\varrho)^2
   = 
   \bigl\lVert
   \mathrm{tr}(\hat{\tau}_n(\alpha))
-  \bigr\rVert
+  \bigr\rVert^2
   + 
   \bigl\lVert
   \mathrm{tr}(\alpha - \hat{\tau}_n(\alpha))
-  \bigr\rVert.
+  \bigr\rVert^2.
 $$
 
 $\square$
