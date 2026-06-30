@@ -389,4 +389,43 @@ theorem garnir_relation {X : Finset (Fin (nOf μ))} {t : Tableau μ} {m : ℕ}
   rw [← antisym_polytabloid (k := k) (suppSubgroup X) t,
     antisym_supp_polytabloid_eq_zero (k := k) hcard hbound]
 
+/-- **The straightening split.** Partitioning the Garnir relation by membership
+in `C_t`: the `C_t`-part of `S_X` collapses (each `e_{σ·t} = sgn(σ)·e_t`) to
+`N·e_t` with `N = |{σ ∈ S_X : σ ∈ C_t}| ≥ 1`, leaving
+`N · e_t = − Σ_{σ ∈ S_X, σ ∉ C_t} sgn(σ)·e_{σ·t}`. Over a characteristic-zero
+field `N` is invertible, so this exhibits `e_t` in the span of the
+strictly-shuffled polytabloids `{e_{σ·t} : σ ∈ S_X, σ ∉ C_t}` — and the
+straightening core is then exactly the dominance claim that each such `σ·t` is
+**more dominant** than `t`. This split is characteristic-free. -/
+theorem polytabloid_nsmul_eq_garnir_tail {X : Finset (Fin (nOf μ))} {t : Tableau μ}
+    {m : ℕ} (hcard : m < X.card)
+    (hbound : ∀ π : colStab t, ∀ l ∈ X,
+      rowPattern ((π : Perm (Fin (nOf μ))) • t) l < m) :
+    (Finset.univ.filter
+        (fun σ : suppSubgroup (μ := μ) X => (σ : Perm (Fin (nOf μ))) ∈ colStab t)).card
+        • polytabloid (k := k) t
+      = - ∑ σ ∈ Finset.univ.filter
+            (fun σ : suppSubgroup (μ := μ) X => (σ : Perm (Fin (nOf μ))) ∉ colStab t),
+          (Equiv.Perm.sign (σ : Perm (Fin (nOf μ))) : ℤ) •
+            polytabloid (k := k) ((σ : Perm (Fin (nOf μ))) • t) := by
+  classical
+  have hrel := garnir_relation (k := k) (X := X) (t := t) hcard hbound
+  rw [← Finset.sum_filter_add_sum_filter_not Finset.univ
+      (fun σ : suppSubgroup (μ := μ) X => (σ : Perm (Fin (nOf μ))) ∈ colStab t)] at hrel
+  have hterm : ∀ σ ∈ Finset.univ.filter
+      (fun σ : suppSubgroup (μ := μ) X => (σ : Perm (Fin (nOf μ))) ∈ colStab t),
+      (Equiv.Perm.sign (σ : Perm (Fin (nOf μ))) : ℤ) •
+          polytabloid (k := k) ((σ : Perm (Fin (nOf μ))) • t) = polytabloid (k := k) t := by
+    intro σ hσ
+    have hmem : (σ : Perm (Fin (nOf μ))) ∈ colStab t := (Finset.mem_filter.mp hσ).2
+    have hsq : (Equiv.Perm.sign (σ : Perm (Fin (nOf μ))) : ℤ)
+        * (Equiv.Perm.sign (σ : Perm (Fin (nOf μ))) : ℤ) = 1 := by
+      simp [← Units.val_mul, Int.units_mul_self]
+    rw [← rep_polytabloid, polytabloid_rep_colStab t hmem,
+      ← mul_smul (Equiv.Perm.sign (σ : Perm (Fin (nOf μ))) : ℤ)
+        (Equiv.Perm.sign (σ : Perm (Fin (nOf μ))) : ℤ) (polytabloid (k := k) t),
+      hsq, one_zsmul]
+  rw [Finset.sum_congr rfl hterm, Finset.sum_const] at hrel
+  exact eq_neg_of_add_eq_zero_left hrel
+
 end QOU.BraidKnot.SpechtGarnirCore
