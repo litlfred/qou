@@ -67,3 +67,9 @@ reflect), then a consistent regen of `per-observable-100x-status.witness.json`
 + an AGENTS.md precision-table refresh. Do NOT auto-flip either; this is a
 canonical-framing decision, not a regen backlog item. Cross-ref: eff38052
 (addressed a different 1e-12 substrate-drift axis, not this anchor flip).
+
+## 2026-06-30 — verified resolved on main (ready for owner close)
+Confirmed the committed `per-observable-100x-status.witness.json` carries the
+resolved values: m_μ 209.8 ppb / 963.6× (PINNED, #2897), Q_β 1248 / 160.1×,
+m_n 1.040 / 181.0×, Δ_pn 755.6 / 159.4×, summary 3/7. Both halves shipped
+(#2897 + 2026-06-28 regen). Nothing further to do — §4a owner-close only.
