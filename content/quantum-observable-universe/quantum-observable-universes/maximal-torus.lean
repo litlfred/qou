@@ -1,7 +1,7 @@
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Category.Basic
 import Mathlib.CategoryTheory.NatTrans
-import Mathlib.CategoryTheory.Types
+import Mathlib.CategoryTheory.Types.Basic
 import Mathlib.Algebra.Group.Defs
 
 
