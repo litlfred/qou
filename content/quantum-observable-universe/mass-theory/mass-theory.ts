@@ -968,6 +968,7 @@ export default chapter({
         "pre-archimedean-derivation-chain-table1-data",
         "conj-canonical-knot-id-sdp",
         "conj-rho-prefactor-structural",
+        "frobenius-cocasimir-refuted-deuteron",
       ],
     }),
 
