@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-30T23:35:08.712160+00:00",
-  "commitSha": "bfae789b2d953067d95542aabcb8e49de34ee040",
+  "computedAt": "2026-06-30T23:38:25.531988+00:00",
+  "commitSha": "d51eb324680e1a9c3ed3359a6648c468e98ca663",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 277,
+      "computed": 275,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 12,
+  "durationMs": 13,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
@@ -48,11 +48,11 @@
   "data": {
     "counts": {
       "total_scanned": 1538,
-      "prov_ok": 1205,
+      "prov_ok": 1207,
       "prov_audit_exempt": 55,
-      "prov_missing": 277,
+      "prov_missing": 275,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.8192457737321196
+      "completeness_ratio": 0.8205461638491548
     },
     "by_verdict": {
       "PROV_OK": [
@@ -382,6 +382,10 @@
         },
         {
           "witness": "beta-ew-delta-I-conjugate-pairing.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "beta-ew-delta-I-eigenvalues.witness.json",
           "missing_fields": []
         },
         {
@@ -4417,6 +4421,10 @@
           "missing_fields": []
         },
         {
+          "witness": "shadow-price-c-321-q0.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "shell-binding-transfer-matrix.witness.json",
           "missing_fields": []
         },
@@ -4919,14 +4927,6 @@
         },
         {
           "witness": "bar-pairing-binding-observable-extension.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "beta-ew-delta-I-eigenvalues.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
@@ -6512,14 +6512,6 @@
         },
         {
           "witness": "rt-w-sqrt2-jet-order-validation.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "shadow-price-c-321-q0.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
