@@ -1,0 +1,84 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-30T17:42:15.886776+00:00",
+  "commitSha": "3ed477bde879dda49fe334503e0d401ea3a2b932",
+  "assertions": [
+    {
+      "name": "nn_bond_is_crossing_inverse_of_pp",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 1e-09,
+      "source": "The n-n bond is σ⁻¹ and the p-p bond is σ, so their symmetric-channel Hecke eigenvalues (q for σ, q⁻¹ for σ⁻¹) multiply to exactly 1 — the n-n interface is the crossing-inverse of p-p, not a small isospin perturbation. This structural inverse is the mechanism of the ~78% L_nn/L_pp gap (~570x the derived p/n split, ~78x the experimental CSB bound)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 20,
+  "computation": "charge-symmetry-bond-probe",
+  "scriptFile": "charge_symmetry_bond_probe.py",
+  "scriptHash": "9662552c340c",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Quantifies the strong-charge-symmetry breaking in the production B_sym bond assignment (bean 754x step 1). The p-p bond is the bare crossing sigma (c,d)=(1,0) and the n-n bond is its inverse sigma^-1 (1,-h) — inverse Hecke eigenvalue spectra {q,-1/q} vs {1/q,-q}. The resulting per-bond gap L_nn/L_pp - 1 ~ 78% at q0 exceeds the substrate-DERIVED p/n flavor split flavor_split_leading(q0) ~ 0.14% by ~570x and the EXPERIMENTAL CSB bound (~1%, nn vs pp scattering lengths) by ~78x. It drives a spurious ~3-4.5x over-split of mirror-nucleus binding differences (3H/3He, 7Li/7Be, 13C/13N) whose true origin is the unwired Coulomb energy. Scope-limited diagnostic (a): measures the tension, does not rewire B_sym. No fit.",
+  "data": {
+    "q0": 1.1099785955573347,
+    "E0_MeV": 4.185980827582892,
+    "h": 0.20906032199559366,
+    "L_pp": 0.6945074372225792,
+    "L_pn": 0.9292187530452164,
+    "L_nn": 1.236978164466871,
+    "L_nn_over_L_pp": 1.781086995142484,
+    "bond_charge_asymmetry": 0.7810869951424839,
+    "delta_flavor_leading_derived": 0.001375711249976611,
+    "experimental_csb_bound": 0.01,
+    "crossing_eigs": {
+      "sigma_pp": [
+        1.1099785955573347,
+        -0.900918273561741
+      ],
+      "sigma_inv_nn": [
+        0.900918273561741,
+        -1.1099785955573347
+      ]
+    },
+    "mirror_pairs": [
+      {
+        "pair": "3H-3He",
+        "hi": "3H",
+        "lo": "3He",
+        "dB_sym": 2.270772063769554,
+        "dB_AME": 0.7637548800000014,
+        "over_split_ratio": 2.973168647733616
+      },
+      {
+        "pair": "7Li-7Be",
+        "hi": "7Li",
+        "lo": "7Be",
+        "dB_sym": 6.812316191308653,
+        "dB_AME": 1.644239799999994,
+        "over_split_ratio": 4.143140307945762
+      },
+      {
+        "pair": "13C-13N",
+        "hi": "13C",
+        "lo": "13N",
+        "dB_sym": 13.624632382617278,
+        "dB_AME": 3.0028192999999987,
+        "over_split_ratio": 4.537280142903465
+      }
+    ]
+  }
+}
