@@ -1,4 +1,3 @@
-import Mathlib.Data.Nat.Basic
 import Mathlib.Data.Matrix.Basic
 
 
@@ -15,6 +14,20 @@ Crossing energy is (N-1) · E_bond(k).
 -/
 
 namespace QOU.Organic
+
+/-- Honest mirror of the covalent bond from the sibling content-extract
+    file `covalent-bond-types.lean` (not a cached library module, so
+    inlined here for single-file `lean`-direct checking).  Fields match
+    the canonical declaration's structure. -/
+-- canonical decl: QOU.Organic.CovalentBond
+-- Ref: [manuscript] Ch. 10, Definition: Covalent bond (shared Hopf links)
+structure CovalentBond where
+  /-- Bond order: number of shared Hopf links (1 = single, 2 = double, 3 = triple). -/
+  order : ℕ
+  /-- Bond order is at least 1. -/
+  order_pos : 0 < order
+  /-- Bond order is at most 3 (limited by linking sites). -/
+  order_le : order ≤ 3
 
 /-- A molecular Hopf chain: N atoms bonded pairwise in a line. -/
 -- Ref: [manuscript] Ch. 10, Definition: Molecular Hopf chain (open)
