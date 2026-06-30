@@ -8,9 +8,8 @@ $$
 \qquad\text{misses the empirical target}\qquad
 \Sigma_{\mathrm{target}} \;=\; -4.35337\ \mathfrak{m}_e ,
 $$
-*by $|\Sigma_{\mathrm{coCas}} - \Sigma_{\mathrm{target}}| = 4.49833\ \mathfrak{m}_e
-> \text{tol} = 1$, and with the opposite sign
-($\Sigma_{\mathrm{coCas}} > 0 > \Sigma_{\mathrm{target}}$).*
+*by $|\Sigma_{\mathrm{coCas}} - \Sigma_{\mathrm{target}}| = 4.49833\ \mathfrak{m}_e > \text{tol} = 1$,
+and with the opposite sign ($\Sigma_{\mathrm{coCas}} > 0 > \Sigma_{\mathrm{target}}$).*
 
 The co-Casimir ansatz is theorem-forced (no free parameters), so the miss
 cannot be absorbed by a fit: it is a **magnitude** refutation (gap $\approx 4.5$
