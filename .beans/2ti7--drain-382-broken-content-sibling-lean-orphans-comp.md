@@ -1,11 +1,11 @@
 ---
 # 2ti7
 title: Drain 382 broken content-sibling .lean orphans (compile sweep 2026-06-28)
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-28T16:49:39Z
-updated_at: 2026-06-29T22:20:45Z
+updated_at: 2026-06-30T17:42:33Z
 ---
 
 
@@ -291,3 +291,18 @@ correct). Net contribution retained: **descartes-knot-eigenbasis removes the
 fabricated `descartes_knot_eigenbasis_axiom`** that #3167's version still carries —
 the existence claim is trivially constructive (exhibit a valid Markov-trace
 inhabitant), re-verified `fail=0`, 0 axioms.
+
+## 2026-06-30 — 382 audit-list FULLY DRAINED (0 live-broken)
+
+After PR #3167 (33 orphans: quantum-universes/stochastic-mechanics/q-GL/
+predicted-spectra/brings-surface/climax-volume-mass/UGB + 2 verify-infra
+fixes) merged alongside the prior waves (#3142 etc.), a full re-derivation
+sweep of all 381 still-present `genuine.txt` paths on post-merge `main`
+returns **0 live-broken** (`fail=0`; remainder pass or neutral-skip for
+cache-cone misses; 1 path deleted by a sibling vacuity-dodge removal).
+
+The 2026-06-28 compile-sweep backlog is therefore **complete**. The
+`lean-content-siblings.yml` CI gate (diff-scoped) prevents NEW drift, so
+this list does not need re-running unless a future audit widens the scope
+(e.g. sweeping content siblings created after 2026-06-28, which are not in
+`genuine.txt`).
