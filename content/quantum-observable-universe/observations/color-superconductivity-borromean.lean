@@ -8,7 +8,7 @@ import Mathlib.Data.Int.Basic
 namespace QOU.Archimedean
 
 class LinkComplement (L : Type*)
-class LinkingInvariants {L : Type*} [LinkComplement L] where
+class LinkingInvariants (L : Type*) [LinkComplement L] where
   milnor_mu : L → ℤ
   pairwise_linking : L → ℤ
 
@@ -21,6 +21,6 @@ theorem first_order_transition
     (h_hopf : inv.milnor_mu hopf_cfl = 0) :
     |inv.milnor_mu borromean - inv.milnor_mu hopf_cfl| = 1 := by
   -- Ref: [manuscript] conj:color-superconductivity-borromean
-  sorry
+  rw [h_borr, h_hopf]; decide
 
 end QOU.Archimedean
