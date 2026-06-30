@@ -10,6 +10,8 @@ import Mathlib.Algebra.Algebra.Pi
 import QOU.BraidKnot.WedderburnSn
 import QOU.BraidKnot.SpechtClassification
 import QOU.BraidKnot.RegularRepBlockTrace
+import QOU.BraidKnot.RegularRepTrace
+import QOU.BraidKnot.JucysMurphy
 
 /-!
 # QOU.BraidKnot.SnWedderburnPartitionBridge — the partition-indexed isotypic projection family
@@ -289,5 +291,77 @@ theorem snBridge (n : ℕ) :
   obtain ⟨e⟩ := sn_rational_specht_split (R := R) n
   exact snBlocks_of_algEquiv (R := R) n
     (fun i => Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram)) e
+
+/-! ## 5. The aligned bundle — isotypic projections + the `C₂` block-decomposition
+
+`snBridge` above gives the `snBlocks` bundle from a **size-aligned** split (block `i` has the right
+dimension `(dim S^{λ_i})²`).  The capstone's `decomp` field needs strictly more: the central
+Jucys–Murphy element `C₂ = ∑_k X_k²` must be **block-diagonal** with eigenvalues `contentSqSum λ_i`,
+
+  `mulLeft C₂ = ∑ i, contentSqSum λ_i • proj i`,
+
+and that holds only when block `i` is the **`S^{λ_i}`-isotypic component** — an *isotypic*-alignment,
+strictly stronger than size-alignment (distinct partitions can share `dim S^λ`, so a size-aligned
+split need not be isotypic-aligned).  The decomp therefore **cannot** be layered on top of `snBridge`'s
+size-aligned `proj`; the projection family and the eigen-decomposition must be produced together. -/
+
+/-- The free-`proj` form of the capstone's old `decomp` field (`OVTopAssembly.c2_eigen_on_blocks`), as
+a predicate on `n` / base field: `mulLeft C₂ = ∑ i, contentSqSum λ_i • proj i` for an **unconstrained**
+`proj`. -/
+abbrev FreeProjClaim (K : Type) [Field K] [CharZero K] (n : ℕ) : Prop :=
+  ∀ (proj : SpechtClassification.PartitionIndex n →
+        Module.End K (MonoidAlgebra K (Equiv.Perm (Fin n)))),
+    LinearMap.mulLeft K (RegularRepTrace.centralC2 n)
+      = ∑ i, ((JucysMurphy.contentSqSum i.diagram : ℤ) : K) • proj i
+
+/-- **The free-`proj` decomp is FALSE** (machine-proved, no `sorry`).  At `n = 2` over `ℚ`,
+instantiating at `proj ≡ 0` forces `mulLeft C₂ = 0`, hence (apply to `1`) `C₂ = 0`, contradicting
+`C₂(1) = binom(2,2) = 1`.  This is the evidence that the capstone's old `c2_eigen_on_blocks`
+(unconstrained `proj`) was an **over-general / false-at-generality** statement — so the honest
+disposition is the *aligned* existential `snBlocks_c2_aligned` below, not a cited `sorry` at the
+free-`proj` signature.  Axioms `[propext, Classical.choice, Quot.sound]`. -/
+theorem freeProjClaim_false : ¬ FreeProjClaim ℚ 2 := by
+  intro h
+  have h0 := h (fun _ => 0)
+  simp only [smul_zero, Finset.sum_const_zero] at h0
+  have happ := congrArg
+    (fun (f : Module.End ℚ (MonoidAlgebra ℚ (Equiv.Perm (Fin 2)))) => f 1) h0
+  simp only [LinearMap.mulLeft_apply, mul_one, LinearMap.zero_apply] at happ
+  have hc := RegularRepTrace.centralC2_coeff_one (R := ℚ) 2
+  rw [happ] at hc
+  simp at hc
+
+/-- **The aligned isotypic projection family + `C₂` eigen-decomposition (the capstone core).** Over a
+characteristic-zero field `R`, there is a partition-indexed family `proj i` onto blocks `p i` that is
+the `snBlocks` bundle (`IsProj`, ranks `(dim S^{λ_i})²`, `∑ proj = id`) **and** block-diagonalises the
+central Jucys–Murphy element: `mulLeft C₂ = ∑ i, contentSqSum λ_i • proj i`.
+
+This single existential folds the *isotypic* alignment together with the eigen-decomposition (the two
+are inseparable — see §5 header), paralleling `sn_rational_specht_split`'s one-existential treatment of
+size-alignment.  It is the strict strengthening of `snBridge` that the capstone consumes for **all**
+its projection-data fields (including `decomp`).  The content folded in (absent from pinned Mathlib):
+the char-0 rational Wedderburn split with block `i` the `S^{λ_i}`-**isotypic** component
+(`sn_rational_specht_split` strengthened to isotypic alignment), and that `C₂` acts on that block by
+the Jucys–Murphy scalar `contentSqSum λ_i` (`JucysMurphy.centralC2_acts_by_contentSqSum`, Schur per
+isotypic component). -/
+theorem snBlocks_c2_aligned (n : ℕ) :
+    ∃ (p : SpechtClassification.PartitionIndex n →
+          Submodule R (MonoidAlgebra R (Equiv.Perm (Fin n))))
+      (proj : SpechtClassification.PartitionIndex n →
+          Module.End R (MonoidAlgebra R (Equiv.Perm (Fin n)))),
+      (∀ i, LinearMap.IsProj (p i) (proj i)) ∧
+      (∀ i, Module.finrank R (p i)
+          = (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram)) ^ 2) ∧
+      (∑ i, proj i = LinearMap.id) ∧
+      LinearMap.mulLeft R (RegularRepTrace.centralC2 n)
+        = ∑ i, ((JucysMurphy.contentSqSum i.diagram : ℤ) : R) • proj i := by
+  -- Ref: [vershik-kerov1977] (the central JM element C₂ = ∑_k X_k² acts on the S^{λ}-isotypic block
+  --   of R[S_n] by contentSqSum λ = ∑_{c∈λ} c² — Schur on each isotypic component, eigenvalue from
+  --   JucysMurphy.centralC2_acts_by_contentSqSum; the isotypic projection family simultaneously
+  --   block-diagonalises mulLeft C₂) + [sagan2001] §2.4 / [james1984representation] (the char-0
+  --   rational, OV-labelled Wedderburn split of R[S_n] indexed by partitions, block i the
+  --   S^{λ_i}-ISOTYPIC component of dimension (dim S^{λ_i})² — the isotypic strengthening of
+  --   sn_rational_specht_split, which Mathlib does not package).
+  sorry
 
 end QOU.BraidKnot.SnWedderburnPartitionBridge

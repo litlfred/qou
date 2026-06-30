@@ -109,59 +109,24 @@ open QOU.BraidKnot
 
 variable {R : Type} [Field R] [CharZero R]
 
-/-! ## The OV-reindexing residual — now delegated to `SnWedderburnPartitionBridge`
+/-! ## The OV-reindexing residual + `C₂` decomposition — from `SnWedderburnPartitionBridge`
 
-`snBlocks` is the explicit `λ`-isotypic projection family of the regular representation `R[S_n]`,
-**re-indexed by partitions** (`SpechtClassification.PartitionIndex n`).  It bundles exactly the four
-things a `SnWedderburnSpectralData` needs about that family — the projections, that they *are*
-projections, that the `i`-th block has `R`-dimension `(dim Sᵘⁱ)²`, and that the blocks sum to the
-identity.  Each of the six structure fields is then wired to a projection of this bundle (with two of
-them additionally consuming their own named brick on top; see `snSpectralData`).
+The keystone's `SnWedderburnSpectralData` needs a partition-indexed isotypic projection family of
+`R[S_n]` that is simultaneously the `snBlocks` bundle (projections, ranks `(dim Sᵘⁱ)²`, completeness)
+**and** block-diagonalises the central Jucys–Murphy element `mulLeft C₂` with eigenvalues
+`contentSqSum λ_i`.  These two halves are **inseparable**: `mulLeft C₂` is block-diagonal only in the
+*isotypic* frame, which is strictly stronger than the size-aligned frame of `snBridge` (distinct
+partitions can share `dim Sᵘ`, so a size-aligned split need not be isotypic-aligned; see
+`SnWedderburnPartitionBridge` §5).  Both are therefore supplied together by the single aligned core
+`SnWedderburnPartitionBridge.snBlocks_c2_aligned`.
 
-**No longer a direct `sorry`.** This residual is now discharged by
-`SnWedderburnPartitionBridge.snBridge`, which de-abstracts it: the entire passage from a Wedderburn
-`∏ Matrix` algebra-equivalence to the projection bundle (projections, ranks `(dim Sᵘⁱ)²`, completeness)
-is **sorry-free linear algebra** there (`transProj_*` + `snBlocks_of_algEquiv`), and the genuine
-`S_n`-rep-theory gap is isolated in that file's **single** named core
-`SnWedderburnPartitionBridge.sn_rational_specht_split` (the rational, OV-labelled Wedderburn split
-`R[S_n] ≃ₐ ∏ᵢ Matrix(Fin (dim S^{λ_i})) R` — the `ℚ`-rationality of `S_n` + the partition labelling,
-absent from the pinned Mathlib).  So the capstone's `snBlocks` carries no `sorry` of its own; its
-sorry-path is exactly that one bridge core. -/
-private theorem snBlocks (n : ℕ) :
-    ∃ (p : SpechtClassification.PartitionIndex n →
-          Submodule R (MonoidAlgebra R (Equiv.Perm (Fin n))))
-      (proj : SpechtClassification.PartitionIndex n →
-          Module.End R (MonoidAlgebra R (Equiv.Perm (Fin n)))),
-      (∀ i, LinearMap.IsProj (p i) (proj i)) ∧
-      (∀ i, Module.finrank R (p i)
-          = (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram)) ^ 2) ∧
-      (∑ i, proj i = LinearMap.id) :=
-  SnWedderburnPartitionBridge.snBridge (R := R) n
-
-/-! ## The per-block central-element eigenvalue (consumes brick 5)
-
-`c2_eigen_on_blocks` carries the `decomp` content for the projection family produced by `snBlocks`:
-on each block `proj i`, the keystone's central element `mulLeft C₂` acts by the Jucys–Murphy scalar
-`ω_i = contentSqSum λ_i`.  It is a genuine consumer of brick 5: the rfl bridge
-`JucysMurphy.centralC2_eq_sum_jucysMurphy_sq` (the keystone `C₂` *is* brick-5's `C₂`) is used
-sorry-free, and the eigenvalue punchline `JucysMurphy.centralC2_acts_by_contentSqSum` (`C₂` acts by
-`Σ_{c∈λ} c²` on `Sᵘ`) is the cited source of the scalar; the residual is the OV transport of that
-Specht-space eigen-action onto the regular-representation block `proj i`. -/
-private theorem c2_eigen_on_blocks (n : ℕ)
-    (proj : SpechtClassification.PartitionIndex n →
-        Module.End R (MonoidAlgebra R (Equiv.Perm (Fin n)))) :
-    LinearMap.mulLeft R (RegularRepTrace.centralC2 n)
-      = ∑ i, ((JucysMurphy.contentSqSum i.diagram : ℤ) : R) • proj i := by
-  -- Align the keystone's central element with brick-5's `C₂` (sorry-free, definitional).
-  rw [← JucysMurphy.centralC2_eq_sum_jucysMurphy_sq (k := R) n]
-  -- The per-block scalar `contentSqSum λ_i` is the Jucys–Murphy eigenvalue supplied by the brick:
-  -- `C₂` acts on `S^{λ_i}` by `contentSqSum λ_i` (`centralC2_acts_by_contentSqSum`).  Transporting
-  -- that eigen-action from the Specht space onto the regular-representation block `proj i` and
-  -- summing over blocks is the residual OV content.
-  -- Ref: [vershik-kerov1977] via JucysMurphy.centralC2_acts_by_contentSqSum
-  --   (C₂ acts by Σ_{c∈λ} c² on Sᵘ) + WedderburnSn.sn_wedderburnArtin_algClosed
-  --   (block-diagonalisation of mulLeft C₂ on R[S_n] into the isotypic blocks).
-  sorry
+**History / correction.** Earlier revisions split this into a `snBlocks` (delegating to the
+size-aligned `snBridge`) plus a separate `c2_eigen_on_blocks` that took the projection family as a
+*free* argument.  That free-`proj` `decomp` statement is **false**, machine-proved as
+`SnWedderburnPartitionBridge.freeProjClaim_false` (instantiate `proj ≡ 0` ⇒ `mulLeft C₂ = 0` ⇒
+`C₂ = 0`, contradicting `C₂(1) = binom(n,2) ≠ 0`) — because `mulLeft C₂` is block-diagonal only for the
+*specific isotypic* projections, not an arbitrary `snBlocks`/`snBridge` family.  The over-general
+`c2_eigen_on_blocks` is removed in favour of the aligned core. -/
 
 /-! ## The capstone construction -/
 
@@ -173,21 +138,20 @@ We construct the keystone's `SnWedderburnSpectralData R n` by wiring each field 
 * `d i := numSYT i.diagram` (bricks 1/2, `dim Sᵘ = #SYT`) — sorry-free *definition*.
 * `ω i := ((contentSqSum i.diagram : ℤ) : R)` (brick 5, the JM content-square eigenvalue) —
   sorry-free *definition*.
-* the projection data `p` / `proj` / `isProj` / `complete` are obtained from the single OV-reindexing
-  residual `snBlocks` (Ref `WedderburnSn.sn_wedderburnArtin_algClosed` +
-  `SpechtClassification.card_irreducibles_eq_card_partitions`).
+* `p` / `proj` / `isProj` / `complete` / `decomp` are all drawn from the single aligned core
+  `SnWedderburnPartitionBridge.snBlocks_c2_aligned` (the isotypic projection family **and** the `C₂`
+  block-decomposition, produced together; Ref `sn_rational_specht_split` strengthened to isotypic
+  alignment + `JucysMurphy.centralC2_acts_by_contentSqSum`).
 * `rank i` additionally consumes the brick-4 **wired** finrank
-  `SpechtFinrankWired.specht_finrank_eq_numSYT_wired` load-bearingly (a `rw` turning `snBlocks`'
+  `SpechtFinrankWired.specht_finrank_eq_numSYT_wired` load-bearingly (a `rw` turning the aligned core's
   block-size `(dim Sᵘⁱ)²` into the field's `(numSYT λ_i)²`).  This wired finrank sources independence
   from the **proved** core `SpechtTriangularCore.standardPolytabloid_triangular'`, so the `rank`
   sorry-path is the **spanning / straightening stub only** — not the independence stub and not the
-  opaque brick-2 finrank stub `Specht.specht_finrank_eq_numSYT`.
-* `decomp` is `c2_eigen_on_blocks` for the `snBlocks` projection family — a genuine consumer of
-  brick 5 (`centralC2_eq_sum_jucysMurphy_sq` sorry-free + `centralC2_acts_by_contentSqSum` cited). -/
+  opaque brick-2 finrank stub `Specht.specht_finrank_eq_numSYT`. -/
 noncomputable def snSpectralData (n : ℕ) :
     RegularRepBlockTrace.SnWedderburnSpectralData R n :=
-  -- Destructure the OV-reindexing residual once and wire every projection-data field to it.
-  let pf := (snBlocks (R := R) n).choose_spec.choose_spec
+  -- Destructure the single aligned core once and wire every projection-data field to it.
+  let pf := (SnWedderburnPartitionBridge.snBlocks_c2_aligned (R := R) n).choose_spec.choose_spec
   { -- sorry-free: the index type is the partitions of `n` (brick 3).
     Idx := SpechtClassification.PartitionIndex n
     -- sorry-free: brick 3 supplies the `Fintype` instance.
@@ -197,22 +161,21 @@ noncomputable def snSpectralData (n : ℕ) :
     -- sorry-free: `ω i = Σ_{c∈λ_i} c(c)²`, the JM eigenvalue (brick 5), cast `ℤ → R`.  The
     -- action-identity is carried by `decomp`.
     ω := fun i => ((JucysMurphy.contentSqSum i.diagram : ℤ) : R)
-    -- The `λ_i`-isotypic block / its projection, from the single OV-reindexing residual `snBlocks`.
-    p := (snBlocks (R := R) n).choose
-    proj := (snBlocks (R := R) n).choose_spec.choose
-    -- `proj i` is the projection onto `p i` (from `snBlocks`).
+    -- The `λ_i`-isotypic block / its projection, from the single aligned core.
+    p := (SnWedderburnPartitionBridge.snBlocks_c2_aligned (R := R) n).choose
+    proj := (SnWedderburnPartitionBridge.snBlocks_c2_aligned (R := R) n).choose_spec.choose
+    -- `proj i` is the projection onto `p i` (1st conjunct of the aligned core).
     isProj := pf.1
-    -- `dim_R (p i) = (dim Sᵘⁱ)² = numSYT(λ_i)²`: `snBlocks` gives the block size `(dim Sᵘⁱ)²`, and
-    -- the brick-4 **wired** finrank `specht_finrank_eq_numSYT_wired` (`dim Sᵘ = #SYT`, sourced from
-    -- the *proved* independence core `triangular'`) rewrites `dim Sᵘⁱ → numSYT λ_i`.  Its sorry-path
-    -- is the spanning/straightening stub only — no independence sorry, no opaque brick-2 finrank stub.
+    -- `dim_R (p i) = (dim Sᵘⁱ)² = numSYT(λ_i)²`: the aligned core gives the block size `(dim Sᵘⁱ)²`
+    -- (2nd conjunct), and the brick-4 **wired** finrank rewrites `dim Sᵘⁱ → numSYT λ_i`.  Its
+    -- sorry-path is the spanning/straightening stub only.
     rank := fun i => by
       rw [pf.2.1 i, SpechtFinrankWired.specht_finrank_eq_numSYT_wired (k := R) i.diagram]
-    -- **Block spectral decomposition** `mulLeft C₂ = Σ_i ω_i · proj_i` — `c2_eigen_on_blocks` for
-    -- the `snBlocks` projection family (consumes brick 5; see that lemma).
-    decomp := c2_eigen_on_blocks (R := R) n (snBlocks (R := R) n).choose_spec.choose
-    -- The blocks exhaust `R[S_n]`: `Σ_i proj_i = id` (from `snBlocks`).
-    complete := pf.2.2 }
+    -- **Block spectral decomposition** `mulLeft C₂ = Σ_i ω_i · proj_i` — the 4th conjunct of the
+    -- aligned core (replaces the over-general, false `c2_eigen_on_blocks`).
+    decomp := pf.2.2.2
+    -- The blocks exhaust `R[S_n]`: `Σ_i proj_i = id` (3rd conjunct of the aligned core).
+    complete := pf.2.2.1 }
 
 /-- **The Wedderburn / JM block spectral decomposition of `R[S_n]` is inhabited** — the capstone
 existence statement that discharges the side-2 hypothesis of Identity (B).  Constructed by
