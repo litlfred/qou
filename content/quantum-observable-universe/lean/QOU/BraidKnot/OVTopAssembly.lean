@@ -5,6 +5,7 @@ import QOU.BraidKnot.WedderburnSn
 import QOU.BraidKnot.RegularRepBlockTrace
 import QOU.BraidKnot.RegularRepTrace
 import QOU.BraidKnot.SpechtFinrankWired
+import QOU.BraidKnot.SnWedderburnPartitionBridge
 
 /-!
 # QOU.BraidKnot.OVTopAssembly — the TOP / capstone of the Okounkov–Vershik tower
@@ -22,8 +23,9 @@ the **unconditional** general-`n` Identity (B) (modulo the bricks' own honest st
 `sn_spectralData_exists n : Nonempty (SnWedderburnSpectralData R n)` constructs the structure,
 **wiring each field to the brick that supplies it**.  The construction is de-abstracted: the six
 projection-data fields no longer carry bare opaque `sorry`s — each is wired to the **named brick
-theorem** it cites, via the file-scope glue lemma `snBlocks` (the single, honest, OV-reindexing
-residual) and per-field consumption of the proved/stubbed bricks.
+theorem** it cites, via the glue lemma `snBlocks` (the OV-reindexing residual, itself now discharged
+by `SnWedderburnPartitionBridge.snBridge` — no direct `sorry`) and per-field consumption of the
+proved/stubbed bricks.
 
 | field | source brick | status here |
 |-------|--------------|-------------|
@@ -31,19 +33,22 @@ residual) and per-field consumption of the proved/stubbed bricks.
 | `fintypeIdx` | brick 3 `instFintypePartitionIndex` | **sorry-free** |
 | `d i` | brick 1/2 `numSYT i.diagram` (`dim Sᵘ = #SYT`) | **sorry-free** (the *definition*; `rank` carries the dim-identity) |
 | `ω i` | brick 5 `((contentSqSum i.diagram : ℤ) : R)` (the JM eigenvalue `Σ_{c∈λ} c²`) | **sorry-free** (the *definition*; `decomp` carries the action-identity) |
-| `p i`, `proj i` | the `λ`-isotypic projections (Wedderburn `∏ Matrix` blocks, brick `WedderburnSn`) re-indexed by partition (brick 3), via `snBlocks` | `sorryAx`-via-`snBlocks` (Ref `WedderburnSn.sn_wedderburnArtin_algClosed`) |
-| `isProj i` | `LinearMap.IsProj` of the isotypic projection, via `snBlocks` | `sorryAx`-via-`snBlocks` (Ref `WedderburnSn.sn_wedderburnArtin_algClosed`) |
+| `p i`, `proj i` | the `λ`-isotypic projections (Wedderburn `∏ Matrix` blocks, brick `WedderburnSn`) re-indexed by partition (brick 3), via `snBlocks` | `sorryAx`-via-`snBlocks` → `snBridge` (Ref `SnWedderburnPartitionBridge.sn_rational_specht_split`) |
+| `isProj i` | `LinearMap.IsProj` of the isotypic projection, via `snBlocks` | `sorryAx`-via-`snBlocks` → `snBridge` (Ref `SnWedderburnPartitionBridge.sn_rational_specht_split`) |
 | `rank i` | brick 4 `SpechtFinrankWired.specht_finrank_eq_numSYT_wired` (`dim Sᵘ = #SYT`, sourced from the **proved** independence core `SpechtTriangularCore.standardPolytabloid_triangular'`) + `WedderburnSn.sn_block_finrank_sq` (`dim block = dim(λ)²`) | `sorryAx`-via-`SpechtFinrankWired.specht_finrank_eq_numSYT_wired` (load-bearing `rw`; sorry-path = **spanning/straightening only**) + `snBlocks` block-size |
 | `decomp` | brick 5 `centralC2_acts_by_contentSqSum` + `centralC2_eq_sum_jucysMurphy_sq` (`C₂` acts by `ω_λ` on `Sᵘ`) | `sorryAx`-via-`JucysMurphy.centralC2_acts_by_contentSqSum`; the rfl bridge `centralC2_eq_sum_jucysMurphy_sq` is consumed sorry-free |
-| `complete` | `WedderburnSn.sn_wedderburnArtin_algClosed` `Σ proj = id` + brick 3 `card_irreducibles_eq_card_partitions` | `sorryAx`-via-`snBlocks` (Ref `WedderburnSn.sn_wedderburnArtin_algClosed`) |
+| `complete` | `WedderburnSn.sn_wedderburnArtin_algClosed` `Σ proj = id` + brick 3 `card_irreducibles_eq_card_partitions` | `sorryAx`-via-`snBlocks` → `snBridge` (Ref `SnWedderburnPartitionBridge.sn_rational_specht_split`) |
 
 The genuinely hard, irreducibly-OV content (which Mathlib does not provide at the pinned `f897ebcf`)
-is exactly the explicit isotypic-projection family **re-indexed by partitions** — i.e. matching the
-abstract Wedderburn block count `N` of `WedderburnSn.sn_wedderburnArtin_algClosed` against
-`SpechtClassification.PartitionIndex n`, and identifying each block's `R`-dimension with the squared
-SYT count and its `C₂` eigenvalue with `contentSqSum`.  That residual is **isolated in the single
-named glue lemma `snBlocks`** (the only data-producing `sorry`), whose `-- Ref:` cites the precise
-bricks.  Two further fields then *consume their named bricks load-bearingly* on top of `snBlocks`:
+is exactly the explicit isotypic-projection family **re-indexed by partitions** — i.e. the rational,
+OV-labelled Wedderburn split of `R[S_n]` over a char-0 field, matching the blocks against
+`SpechtClassification.PartitionIndex n` with each block's `R`-dimension the squared SYT count.  That
+residual is **de-abstracted in `SnWedderburnPartitionBridge`**: the passage from a `∏ Matrix` algebra
+split to the projection bundle (`snBlocks`-shaped `snBridge`) is sorry-free linear algebra there, and
+the irreducible gap is isolated in that file's **single** named core
+`SnWedderburnPartitionBridge.sn_rational_specht_split` (the `ℚ`-rationality + partition labelling).
+So `snBlocks` here carries no `sorry` of its own.  Two further fields then *consume their named bricks
+load-bearingly* on top of `snBlocks`:
 `rank` rewrites with the brick-4 **wired** finrank
 `SpechtFinrankWired.specht_finrank_eq_numSYT_wired`, and `decomp` aligns the central element with
 the rfl-proved `JucysMurphy.centralC2_eq_sum_jucysMurphy_sq` and cites the eigenvalue punchline
@@ -104,20 +109,24 @@ open QOU.BraidKnot
 
 variable {R : Type} [Field R] [CharZero R]
 
-/-! ## The single OV-reindexing residual (the genuine Mathlib gap)
+/-! ## The OV-reindexing residual — now delegated to `SnWedderburnPartitionBridge`
 
-`snBlocks` is the **one** data-producing `sorry` of the capstone: the explicit `λ`-isotypic
-projection family of the regular representation `R[S_n]`, **re-indexed by partitions**
-(`SpechtClassification.PartitionIndex n`).  It bundles exactly the four things a
-`SnWedderburnSpectralData` needs about that family — the projections, that they *are* projections,
-that the `i`-th block has `R`-dimension `(dim Sᵘⁱ)²`, and that the blocks sum to the identity — and
-nothing more.  Each of the six structure fields is then wired to a projection of this bundle (with
-two of them additionally consuming their own named brick on top; see `snSpectralData`).
+`snBlocks` is the explicit `λ`-isotypic projection family of the regular representation `R[S_n]`,
+**re-indexed by partitions** (`SpechtClassification.PartitionIndex n`).  It bundles exactly the four
+things a `SnWedderburnSpectralData` needs about that family — the projections, that they *are*
+projections, that the `i`-th block has `R`-dimension `(dim Sᵘⁱ)²`, and that the blocks sum to the
+identity.  Each of the six structure fields is then wired to a projection of this bundle (with two of
+them additionally consuming their own named brick on top; see `snSpectralData`).
 
-The residual is genuine OV mathematics absent from the pinned Mathlib: `WedderburnSn.sn_*` produce
-the abstract `Fin N`-indexed `∏ Matrix` decomposition (over an algebraically closed field), and brick
-3 supplies the count `#{blocks} = #{partitions}`, but the **identification of block `i` with the
-partition `λ_i`** — the Okounkov–Vershik labelling — is not packaged by any brick. -/
+**No longer a direct `sorry`.** This residual is now discharged by
+`SnWedderburnPartitionBridge.snBridge`, which de-abstracts it: the entire passage from a Wedderburn
+`∏ Matrix` algebra-equivalence to the projection bundle (projections, ranks `(dim Sᵘⁱ)²`, completeness)
+is **sorry-free linear algebra** there (`transProj_*` + `snBlocks_of_algEquiv`), and the genuine
+`S_n`-rep-theory gap is isolated in that file's **single** named core
+`SnWedderburnPartitionBridge.sn_rational_specht_split` (the rational, OV-labelled Wedderburn split
+`R[S_n] ≃ₐ ∏ᵢ Matrix(Fin (dim S^{λ_i})) R` — the `ℚ`-rationality of `S_n` + the partition labelling,
+absent from the pinned Mathlib).  So the capstone's `snBlocks` carries no `sorry` of its own; its
+sorry-path is exactly that one bridge core. -/
 private theorem snBlocks (n : ℕ) :
     ∃ (p : SpechtClassification.PartitionIndex n →
           Submodule R (MonoidAlgebra R (Equiv.Perm (Fin n))))
@@ -126,14 +135,8 @@ private theorem snBlocks (n : ℕ) :
       (∀ i, LinearMap.IsProj (p i) (proj i)) ∧
       (∀ i, Module.finrank R (p i)
           = (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram)) ^ 2) ∧
-      (∑ i, proj i = LinearMap.id) := by
-  -- Ref: [sagan2001] via SpechtClassification.card_irreducibles_eq_card_partitions
-  --   (#{Wedderburn blocks} = #{partitions of n}) + WedderburnSn.sn_wedderburnArtin_algClosed
-  --   (R[S_n] ≃ ∏ᵢ Matrix(𝔫ᵢ); block i has R-dimension 𝔫ᵢ², so the block idempotents are
-  --   projections onto the isotypic blocks and sum to id) + WedderburnSn.sn_block_finrank_sq
-  --   (per-block square dimension).  The residual is the OV identification of block i with the
-  --   partition λ_i (the Okounkov–Vershik labelling), absent from the pinned Mathlib.
-  sorry
+      (∑ i, proj i = LinearMap.id) :=
+  SnWedderburnPartitionBridge.snBridge (R := R) n
 
 /-! ## The per-block central-element eigenvalue (consumes brick 5)
 
