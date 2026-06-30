@@ -48,13 +48,18 @@ weighted by powers of $(q - q^{-1})$. The weight function $W(\cdot;
 q)$ is Blitvić's $(q, t)$-Gaussian moment kernel at parameter $t = 1$,
 $q = $ the QOU substrate.
 
-**Corollary: the q-CLT input is verified.** With this proposition
-established, Blitvić's CLT
-[`blitvic2012`, Theorem 1.1] applies directly: the rescaled centred
+**Corollary: the q-CLT input (partially established).** Only the
+*odd-length* face of the proposition is proved (odd-word moments
+vanish — Lean `sorry`-free); the full even-length pair-partition
+decomposition with the crossing-weighted $W(\pi; q)$ kernel remains
+open, carried as an honest `sorry` (it needs non-commutative-probability
+pair-partition machinery absent from Mathlib). *Conditional on* that
+full decomposition, Blitvić's CLT
+[`blitvic2012`, Theorem 1.1] applies: the rescaled centred
 sum $S_n = n^{-1/2} \sum_i \tilde\sigma_i$ has joint moments
 converging to a $(q, t)$-Gaussian process at parameter $(q, 1)$.
 The QOU q-CLT
 (`conj:q-clt-non-commutative`)
-is therefore conditional only on the *parameter-identification*
-step (Blitvić's $q$ $\leftrightarrow$ QOU's $q$ $\leftrightarrow$ Tsallis's $q$), not on the
-underlying CLT.
+is therefore conditional on **both** the full pair-partition
+decomposition **and** the *parameter-identification*
+step (Blitvić's $q$ $\leftrightarrow$ QOU's $q$ $\leftrightarrow$ Tsallis's $q$).
