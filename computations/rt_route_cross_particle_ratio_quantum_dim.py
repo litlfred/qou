@@ -295,8 +295,11 @@ def main():
             .decode().strip()
         ),
     }
-    out_path = Path(__file__).parent / "rt-route-cross-particle-ratio-quantum-dim.witness.json"
-    out_path.write_text(json.dumps(witness, indent=2, sort_keys=True) + "\n")
+    from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+    out_path = WitnessBuilder.wrap_legacy(
+        "rt-route-cross-particle-ratio-quantum-dim", witness,
+        script_path=__file__, engine="mpmath",
+    ).save()
     print(f"\nWitness: {out_path.relative_to(Path.cwd())}")
 
 

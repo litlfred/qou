@@ -41,3 +41,9 @@ docs/audits/2026-06-30-cmiy-witnessbuilder-rollup-batch1.md:
   2. regen refreshes stale data (q0 drift) → full regen, not provenance-only;
      pyhecke_native producers need the canonical env (skip in ad-hoc env).
   3. some raw-emit scripts pre-crash (magic_A_formula mpf-format) → separate fix.
+
+## 2026-06-30 — batch 2 (3 scripts, wrap_legacy)
+3 pure-Python zero-consumer raw-emit scripts migrated via wrap_legacy (none
+carries flat assertions, so wrap_legacy is safe per batch-1 gotcha #1):
+rt_route_cross_particle_ratio_quantum_dim, bw_chirality_isotopes,
+canonical_lepton_braid_words. Each: exit 0, PROV_OK, original keys preserved.

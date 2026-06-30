@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-30T20:01:45.754447+00:00",
-  "commitSha": "58cedf66aa6f0e572dc112af9141066e9a1aaa6e",
+  "computedAt": "2026-06-30T23:17:56.102477+00:00",
+  "commitSha": "434f71ec38716a4d7fd54b47eb84b428bb579dde",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 280,
+      "computed": 277,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 232,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
@@ -48,11 +48,11 @@
   "data": {
     "counts": {
       "total_scanned": 1538,
-      "prov_ok": 1202,
+      "prov_ok": 1205,
       "prov_audit_exempt": 55,
-      "prov_missing": 280,
+      "prov_missing": 277,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.817295188556567
+      "completeness_ratio": 0.8192457737321196
     },
     "by_verdict": {
       "PROV_OK": [
@@ -649,6 +649,10 @@
           "missing_fields": []
         },
         {
+          "witness": "bw-chirality-isotopes.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "c-3-categorical-derivation-attempt.witness.json",
           "missing_fields": []
         },
@@ -1166,6 +1170,10 @@
         },
         {
           "witness": "canonical-isotope-witness-index.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "canonical-lepton-braid-words.witness.json",
           "missing_fields": []
         },
         {
@@ -4389,6 +4397,10 @@
           "missing_fields": []
         },
         {
+          "witness": "rt-route-cross-particle-ratio-quantum-dim.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "s5-so3-su2-u1-fiber-action.witness.json",
           "missing_fields": []
         },
@@ -5002,22 +5014,6 @@
         },
         {
           "witness": "bring-coordinate-linking-weight-probe.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "bw-chirality-isotopes.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "canonical-lepton-braid-words.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
@@ -6500,14 +6496,6 @@
         },
         {
           "witness": "rt-habiro-borromean-cross-validation.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "rt-route-cross-particle-ratio-quantum-dim.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
