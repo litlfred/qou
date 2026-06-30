@@ -121,3 +121,26 @@ split is a (a) scope-limited flavor-only-projection artifact; the canonical fix
 is (gg charge-symmetric core via the color-tube W-matrix, keystone-gated) + a
 wired Coulomb term. Re-scoping production `B_sym` is a canonical-compute change
 requiring owner sign-off. Recorded; not applied.
+
+## Step 5 disposition — DONE (scope A: Coulomb wired; strong core keystone-gated)
+
+Owner approved the re-scope (option A — Coulomb now, defer strong core).
+
+- **Coulomb wired (additive):** new canonical `computations/coulomb_energy.py`
+  (`coulomb_energy_mev`, `mirror_displacement_mev`) + an `E_C` column in the
+  mass-binding dashboard. Reported alongside the strong B-forms, NOT subtracted
+  (they are calibrated against Coulomb-inclusive AME ⇒ global subtraction would
+  double-count); E_C is cleanly separable only in the mirror-pair difference.
+  Mirror visibility now first-class: ³H `E_C=0.00` vs ³He `E_C=1.00` MeV.
+  **No strong-binding number changed; no witness migration.**
+- **Strong-core charge-symmetrising DEFERRED (keystone-gated).** Replacing the
+  flavor-only σ/σ⁻¹ bond with the flavor-blind gg core must use the full
+  9-channel color-tube weight `W_{c₁c₂}` (gated on `conj:s5-so3-fiber-action`,
+  the s5-so3 keystone — reduced this session to `bwS0 = d_q/D`). The bare-σ_avg
+  stopgap is rejected because it zeroes the **derived 0.14% p/n flavor split**
+  the owner directed be kept; the full W preserves it. So the strong-core rewire
+  rides with the keystone, done once, not as an 840-witness stopgap migration.
+
+Bean 754x is functionally complete: the σ/σ⁻¹ over-break is diagnosed (artifact),
+the mechanism is confirmed (Coulomb on a charge-symmetric core), the EM term is
+wired, and the strong-core fix is correctly gated on the keystone.
