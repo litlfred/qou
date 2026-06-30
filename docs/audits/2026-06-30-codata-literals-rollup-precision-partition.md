@@ -77,15 +77,24 @@ reconciled deliberately (which edition is canonical?), not silently routed:
 
 | File / line | Literal | Registry | Note |
 |-------------|---------|----------|------|
-| `mass_binding_dashboard.py:178` | `U_MEV = 931.49410372` | `931.49410242` | wrong u→MeV (…372 vs …242) |
-| `m_sym_error_budget.py:50` | `U_TO_MEV = 931.49410372` | `931.49410242` | same wrong u→MeV |
+| `mass_binding_dashboard.py:178` | `U_MEV = 931.49410372` | `931.49410242` | **edition split — `…372` is CODATA-2022; registry `…242` is the STALE 2018/AME2020 value** |
+| `m_sym_error_budget.py:50` | `U_TO_MEV = 931.49410372` | `931.49410242` | same — script is CODATA-2022, registry is 2018 |
 | `probes/hecke_channel_binding_probe.py:130-131` | `938.27208943` / `939.56542194` | `…816` / `…052` | proton/neutron variant edition |
 | `probes/deuteron_fpn_wlambda_wiring.py:129-130` | `938.27208943` / `939.56542194` | `…816` / `…052` | same variant |
 | many (`0.51099895`, `0.510998950`, `0.51099895000`) | 8–11 fig m_e | `0.51099895069` | truncated/stale m_e (the `me3r` truncation class) |
 
-The `931.49410372` u-conversion in two **production** scripts
-(`mass_binding_dashboard`, `m_sym_error_budget`) is the highest-value item here —
-it is a genuinely wrong constant, not just a truncation. Flagged to `ce18`.
+⚠ **CORRECTION (2026-06-30, verified against NIST):** the atomic-mass-unit
+energy equivalent is `m_u c² = 931.49410372(29) MeV` in **CODATA 2022** and
+`931.49410242(28) MeV` in **CODATA 2018**. The registry `U_MEV = 931.49410242`
+is sourced from the **AME2020 metadata** (`"1u = 931.49410242 MeV"`), which is
+the **2018 edition**, so it is **stale relative to CODATA 2022**. The two
+production scripts (`mass_binding_dashboard`, `m_sym_error_budget`) carrying
+`…372` are therefore **correct (CODATA-2022)** — an *edition inconsistency*, not
+a bug in those scripts. The direction is the opposite of an earlier draft of this
+audit. Resolving it means **updating the registry (and the AME2020-derived
+constants) to the 2022 edition** — which is **value-changing** for every AME
+binding witness `U_MEV` feeds, hence **owner-gated** (`me3r`/`ce18`), not a
+silent edit.
 
 ### C. Exploratory tail — deferred per bean (low value)
 
@@ -113,10 +122,13 @@ text, not a live assignment.
    import is bit-identical at *any* precision, and lift `M_MU`/`U_MEV`/`M_K`/
    `M_PI` off default-dps parsing. Until then, routing onto those symbols is a
    precision regression.
-3. **The `931.49410372` u-conversion in two production scripts is a concrete
-   bug** (`ce18`): it disagrees with CODATA-2022 `931.49410242` at the 7th
-   figure. Owner should confirm before a fix lands (it will change those scripts'
-   numbers).
+3. **The registry `U_MEV = 931.49410242` is the STALE constant** (`ce18`), not
+   the two scripts: it is the CODATA-2018/AME2020 edition, whereas
+   `mass_binding_dashboard` + `m_sym_error_budget` correctly use the CODATA-2022
+   value `931.49410372`. The fix is to **bump the registry (and the AME2020
+   metadata-derived constants) to CODATA 2022** — value-changing for every AME
+   binding witness `U_MEV` feeds, so owner-gated. Do **not** "fix" the scripts
+   down to the registry.
 
 This audit is the durable deliverable; the single safe routing below is a
 down-payment that demonstrates the value-preserving pattern.

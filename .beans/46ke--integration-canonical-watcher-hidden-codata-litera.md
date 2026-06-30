@@ -49,3 +49,12 @@ Data-integrity handoff (do NOT silently route — changes numbers):
 - truncated 8-fig m_e `0.51099895` across many scripts → me3r truncation class.
 Deferred (low value per prior drains): probes/qbeta/phase5/ocneanu/mmu/_deprecated.
 Full partition: docs/audits/2026-06-30-codata-literals-rollup-precision-partition.md
+
+## 2026-06-30 — CORRECTION (u→MeV direction was backwards)
+NIST-verified: m_u c² = 931.49410372(29) MeV is CODATA-2022; 931.49410242(28)
+is CODATA-2018. The registry U_MEV (931.49410242, from AME2020 metadata) is the
+2018 edition → STALE. The scripts mass_binding_dashboard/m_sym_error_budget
+using 931.49410372 are CORRECT (2022). So this is an edition inconsistency, NOT
+a bug in those scripts. Fix = bump the registry + AME2020-derived constants to
+CODATA 2022 (value-changing for AME binding witnesses → owner-gated, me3r/ce18).
+Do NOT route those scripts down to the stale registry value.
