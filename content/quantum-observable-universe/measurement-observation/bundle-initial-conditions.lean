@@ -26,12 +26,35 @@ numerical evaluation.
 
 namespace QOU
 
+open scoped Classical
+
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
+
+/-- A knot type: combinatorial knot data carrying a crossing count and a
+    name (the combinatorial proxy for ambient-isotopy class).
+    Honest in-file mirror of the knot carrier used by the localized-knot
+    sheaf; the canonical knot data lives in `QOU.KnotTheory`
+    (`BraidWord.crossingCount` etc.). -/
+structure Knot where
+  /-- Number of crossings of the knot diagram. -/
+  crossingCount : ℕ
+  /-- The knot name (ambient-isotopy combinatorial proxy). -/
+  name : String
+
+/-- A localized knot: a knot type placed at a base point on `P(V)`
+    (an affine-chart coordinate pair over `R_q`).
+    Honest in-file mirror; `def:localized-hadron` is the narrative source. -/
+structure LocalizedKnot where
+  /-- The knot type sitting at this position. -/
+  knot : Knot
+  /-- The base point on `P(V)` (affine-chart coordinate pair). -/
+  basePoint : R_q × R_q
 
 /-- A bundle initial condition: a finite set of localized knots on CP¹.
     Equivalently, a section of the free commutative monoid on the knot
@@ -71,22 +94,22 @@ hadrons distributed across P(V). -/
 /-- Particles at a given base point. -/
 def BundleInitialConditions.particlesAt (b : BundleInitialConditions)
     (p : R_q × R_q) : List LocalizedKnot :=
-  b.particles.filter (fun k => k.basePoint = p)
+  b.particles.filter (fun k => decide (k.basePoint = p))
 
 /-- Every particle is in the cluster at its own base point. -/
 theorem BundleInitialConditions.particle_in_own_cluster
     (b : BundleInitialConditions) (k : LocalizedKnot) (hk : k ∈ b.particles) :
     k ∈ b.particlesAt k.basePoint := by
   unfold particlesAt
-  simp [List.mem_filter]
-  exact ⟨hk, rfl⟩
+  simp only [List.mem_filter, decide_eq_true_eq]
+  exact ⟨hk, trivial⟩
 
 /-- The cluster at a point p contains only particles with base point p. -/
 theorem BundleInitialConditions.cluster_basePoint_eq
     (b : BundleInitialConditions) (p : R_q × R_q) (k : LocalizedKnot)
     (hk : k ∈ b.particlesAt p) : k.basePoint = p := by
   unfold particlesAt at hk
-  simp [List.mem_filter] at hk
+  simp only [List.mem_filter, decide_eq_true_eq] at hk
   exact hk.2
 
 /-- Total crossing number equals the sum of crossing numbers of
@@ -130,5 +153,7 @@ theorem BundleInitialConditions.equiv_preserves_size
   have := h.length_eq
   simp [List.length_map] at this
   exact this
+
+end
 
 end QOU
