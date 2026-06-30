@@ -1,4 +1,6 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Ring
 
 
 /-!
@@ -72,8 +74,8 @@ noncomputable def vol_borromean : ℝ := 7.32772475341775
 -- Ref: [turaev2010], Thurston hyperbolization
 theorem torus_knots_nonhyperbolic :
     vol_unknot = 0 ∧ vol_trefoil = 0 ∧ vol_cinquefoil = 0 ∧
-    vol_septafoil = 0 ∧ vol_T34 = 0 := by
-  constructor <;> rfl
+    vol_septafoil = 0 ∧ vol_T34 = 0 :=
+  ⟨rfl, rfl, rfl, rfl, rfl⟩
 
 -- ═══════════════════════════════════════════════════════════════════
 -- Crossing numbers
@@ -141,8 +143,7 @@ theorem jones_unknot_eq_one (q : ℝ) : jones_unknot q = 1 := rfl
 theorem figure_eight_amphichiral (q : ℝ) (hq : q ≠ 0) :
     jones_figure_eight q = jones_figure_eight (q⁻¹) := by
   unfold jones_figure_eight
-  have hq' : q⁻¹ ≠ 0 := inv_ne_zero.mpr hq
-  field_simp
+  rw [inv_inv]
   ring
 
 /-- The unknot is amphichiral: J(q) = J(q⁻¹) = 1. -/
@@ -198,7 +199,7 @@ theorem muon_electron_ratio_from_substrate :
   -- = 2.02988321281931 / (1 - 1/1.10998)²
   -- Clearing denominators yields rational arithmetic that norm_num resolves.
   simp only [muon_electron_ratio, vol_figure_eight, hbar_q, q₀, abs_lt]
-  constructor <;> { field_simp; norm_num }
+  constructor <;> norm_num
 
 /-- The crossing energy at q₀: E_×(q₀) ≈ 0.1045. -/
 -- Ref: [manuscript] Ch. 7, §Building block knots
@@ -210,6 +211,6 @@ theorem crossing_energy_at_substrate :
   -- = 580139001 / 5549900000 ≈ 0.10453
   -- |0.10453 - 0.1045| = 0.00003 < 0.001  ✓
   simp only [crossing_energy, q₀, abs_lt]
-  constructor <;> { field_simp; norm_num }
+  constructor <;> norm_num
 
 end QOU.Archimedean.BuildingBlockKnots

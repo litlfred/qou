@@ -1,5 +1,7 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Finset.Basic
+import Mathlib.Data.Fin.VecNotation
+import Mathlib.Algebra.BigOperators.Fin
 
 
 /-!

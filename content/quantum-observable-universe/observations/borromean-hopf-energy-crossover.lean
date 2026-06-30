@@ -7,7 +7,7 @@ import Mathlib.Data.Real.Basic
 namespace QOU.Archimedean
 
 class EnergyFunctional (E : Type*)
-class CrossoverDynamics {E : Type*} [EnergyFunctional E] where
+class CrossoverDynamics (E : Type*) [EnergyFunctional E] where
   borromean_energy : ℝ → E
   hopf_energy : ℝ → E
 
@@ -15,7 +15,7 @@ class CrossoverDynamics {E : Type*} [EnergyFunctional E] where
     There exists a critical density where the Borromean binding energy is superseded
     by the Hopf-diquark condensate energy. -/
 theorem borromean_hopf_energy_crossover
-    {E : Type*} [EnergyFunctional E] [dyn : CrossoverDynamics E] :
+    {E : Type*} [LT E] [EnergyFunctional E] [dyn : CrossoverDynamics E] :
     ∃ (rho_c : ℝ), rho_c > 0 ∧
       ∀ rho > rho_c, dyn.hopf_energy rho < dyn.borromean_energy rho := by
   -- Ref: [manuscript] prop:borromean-hopf-energy-crossover
