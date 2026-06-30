@@ -5,18 +5,35 @@ import QOU.BraidKnot.Specht
 
 The spanning half of the standard-basis theorem (`polytabloid_garnir_core` in
 `SpechtSpanningCore`) is the straightening algorithm: every polytabloid is a
-combination of *standard* polytabloids. The first, easy ingredient — peeling off
-**column standardisation** — is the *column-alternating property* of polytabloids,
-proved here sorry-free:
+combination of *standard* polytabloids, via the **Garnir relations**. This module
+builds the full algebraic machinery of the Garnir relation **sorry-free**,
+reducing the straightening core to a single geometric input (a two-column
+row-index bound) plus the dominance termination measure.
 
-> `polytabloid_rep_colStab` — for a column permutation `σ ∈ C_t`,
-> `rep σ (e_t) = sgn(σ) · e_t`. Equivalently (`rep_polytabloid`)
-> `e_{σ·t} = sgn(σ) · e_t`: sorting the columns of `t` only changes `e_t` by a sign.
+## Landed (all sorry-free)
 
-This reduces the straightening obligation to **column-standard** tableaux (the
-genuine Garnir-relation residual). The proof reindexes the column-stabiliser sum
-by left-multiplication by `σ` (legitimate since `σ ∈ C_t` makes `C_t` invariant)
-and uses `sgn(σ)² = 1`.
+| § | Declaration | Statement |
+|---|---|---|
+| 1 | `polytabloid_rep_colStab` | column-alternating: `σ·e_t = sgn(σ)·e_t` for `σ ∈ C_t` |
+| 1b | `conjStab`, `rep_polytabloid` | equivariance `rep σ (e_t) = e_{σ·t}` (every `σ`) |
+| 2 | `antisym`, `antisym_sum`, `antisym_zsmul` | the antisymmetriser `b_H` and its linearity |
+| 2 | `antisym_rep`, `antisym_eq_zero` | alternating + involution-vanishing of `b_H` |
+| 2 | `antisym_of_eq_zero` | per-tabloid vanishing `b_H ⟦s⟧ = 0` from a row-fixing involution |
+| 3 | `antisym_colStab` | column collapse `b_H e_t = |H|·e_t` for `H ≤ C_t` |
+| 3 | `antisym_polytabloid` | `b_H(e_t) = Σ_{σ∈H} sgn(σ)·e_{σ·t}` |
+| 5 | `tabloid_swap_sameRow`, `antisym_swap_eq_zero` | a same-row transposition fixes `⟦s⟧`, hence kills it |
+| 5 | `exists_sameRow_of_card_lt` | row pigeonhole: `|X| > #rows ⟹ two labels collide` |
+| 6 | `suppSubgroup`, `swap_mem_suppSubgroup` | the Garnir subgroup `S_X` (supported on `X`) |
+| 7 | `antisym_supp_polytabloid_eq_zero` | the Garnir vanishing `b_{S_X} e_t = 0` (modulo the bound) |
+| 7 | `garnir_relation` | **the Garnir relation** `Σ_{σ∈S_X} sgn(σ)·e_{σ·t} = 0` (modulo the bound) |
+
+## Residual for `polytabloid_garnir_core` (not in this file)
+
+Two geometric inputs remain: (a) the `A ∪ B` Garnir-set construction from a
+non-standard violation, supplying the row-index bound `rowPattern (π·t) l < μ'_j`
+for all `π ∈ C_t` with `|X| > μ'_j`; and (b) the **dominance** termination
+measure under which the straightening rewrite `e_t = Σ (more dominant)` strictly
+decreases. Both depend on the dominance order on tabloids, which Mathlib lacks.
 -/
 
 open scoped BigOperators
