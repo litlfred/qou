@@ -16,4 +16,10 @@ export default proposition({
     "quark",
   ],
   uses: ["rem:confinement-nucleon-unit", "def:lp-stable", "def:lp-confined"],
+  computation: {
+    engine: "python",
+    script: "computations/confinement-operator-selection.py",
+    witness: "computations/confinement-operator-selection.witness.json",
+    status: "verified",
+  },
 });
