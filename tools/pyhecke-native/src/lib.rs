@@ -445,6 +445,44 @@ fn chi_q_atomic_all_partitions(
     seminormal::chi_q_atomic_all_partitions(n_strands, &factors, q)
 }
 
+/// **High-precision (MPFR) `chi_q_atomic`.**
+///
+/// MPFR analogue of `chi_q_atomic`: computes
+/// `χ_λ(Π_i (c_i · σ_{g_i} + d_i · I))` for partition `λ ⊢ n` at `dps`
+/// decimal precision. `factors` is a list of `(c_str, d_str, gen_1based)`
+/// triples where `c_str`/`d_str` are decimal strings (avoids the lossy
+/// f64 boundary), `q_str` is the substrate parameter as a decimal string.
+/// Returns `χ_λ` as a decimal string (parse via `mpmath.mpf`). Slower than
+/// the f64 path but exact at the requested precision.
+#[pyfunction]
+#[pyo3(signature = (shape, factors, q_str, dps=50))]
+fn chi_q_atomic_mpfr(
+    shape: Vec<usize>,
+    factors: Vec<(String, String, u32)>,
+    q_str: String,
+    dps: u32,
+) -> String {
+    seminormal_mpfr::chi_q_atomic_mpfr(&shape, &factors, &q_str, dps)
+}
+
+/// **Batch MPFR `chi_q_atomic` across all partitions of `n_strands`.**
+///
+/// MPFR analogue of `chi_q_atomic_all_partitions`: returns
+/// `List[(partition, chi_decimal_string)]` for every λ ⊢ n_strands,
+/// rayon-parallel on the Rust side. Same string-in/string-out contract
+/// as `chi_q_atomic_mpfr`; collapses the Python `for shape in
+/// partitions_of(n)` loop to a single PyO3 crossing.
+#[pyfunction]
+#[pyo3(signature = (n_strands, factors, q_str, dps=50))]
+fn chi_q_atomic_all_partitions_mpfr(
+    n_strands: usize,
+    factors: Vec<(String, String, u32)>,
+    q_str: String,
+    dps: u32,
+) -> Vec<(Vec<usize>, String)> {
+    seminormal_mpfr::chi_q_atomic_all_partitions_mpfr(n_strands, &factors, &q_str, dps)
+}
+
 /// **Classical Murnaghan-Nakayama character** `χ^λ(μ)`.
 ///
 /// Computes the irreducible character of the symmetric group `S_n`
@@ -1752,6 +1790,8 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(nf_tr_n, m)?)?;
     m.add_function(wrap_pyfunction!(kl_betti_sum_rust, m)?)?;
     m.add_function(wrap_pyfunction!(chi_q_atomic_all_partitions, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_q_atomic_mpfr, m)?)?;
+    m.add_function(wrap_pyfunction!(chi_q_atomic_all_partitions_mpfr, m)?)?;
     m.add_function(wrap_pyfunction!(mn_chi, m)?)?;
     m.add_function(wrap_pyfunction!(mn_chi_q, m)?)?;
     m.add_function(wrap_pyfunction!(chi_q_word, m)?)?;

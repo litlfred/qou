@@ -141,10 +141,17 @@ def main() -> int:
         acc, n_branches = _chi_binding_mpfr_exact(word, n, q, q_str, dps)
         precision = f"mpfr-{dps}dps-branch-expansion"
     else:
-        f64w = [(float(c), float(d), g + 1) for c, d, g in word]   # 1-based gens
+        # Default path: dim-independent MPFR binding character. The factors
+        # (c, d) and q are passed as decimal strings to avoid the lossy f64
+        # boundary; the Rust kernel reduces the Hecke word once per λ and
+        # traces at `dps` precision (parallel over basis vectors per λ,
+        # serial over partitions so the huge-dim λ⊢12 get all cores).
+        cd_str = [(mp.nstr(c, dps), mp.nstr(d, dps), g + 1)
+                  for c, d, g in word]   # 1-based gens, decimal strings
         acc = dict((tuple(p), mp.mpf(v))
-                   for p, v in pn.chi_q_atomic_all_partitions(n, f64w, float(q)))
-        precision = "f64-rust-binding-atomic"
+                   for p, v in pn.chi_q_atomic_all_partitions_mpfr(
+                       n, cd_str, q_str, dps))
+        precision = "mpfr-50dps-rust-binding-atomic"
 
     # Gate against the matrix-M 50-dps binding reference (feasible λ subset).
     ref_path = HERE / "chi-helium-4-h12-at-q0-50dps.witness.json"
@@ -158,7 +165,10 @@ def main() -> int:
                 rel = abs(acc[s] - ref) / max(abs(ref), mp.mpf(1))
                 max_rel = max(max_rel, rel)
                 n_ref += 1
-    tol = mp.mpf("1e-25") if args.exact else GATE_F64
+    # Both the default (MPFR atomic) and --exact (MPFR branch-expansion)
+    # paths now compute at `dps` (50) precision, so both gate at 1e-25
+    # against the matrix-M 50-dps reference.
+    tol = mp.mpf("1e-25")
     gate_ok = (n_ref > 0) and (max_rel < tol)
 
     y_table = _load_y_lambda(n, None)
