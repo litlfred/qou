@@ -207,6 +207,12 @@ the obstruction as ruling the canonical-embedding q-Bessel tower out. Bean
 1. **(this doc)** synthesis + re-verified magnitudes.
 2. **Formalize-first** the isospin-blindness of the R-side form as a structural
    (b)-lemma (depends only on $n=3A$ ⇒ zero mirror-split) — prunes the search.
+   **DONE (2026-06-29, sorry-free):**
+   [`QOU/Mass/BraneTowerIsospinBlind.lean`](../../content/quantum-observable-universe/lean/QOU/Mass/BraneTowerIsospinBlind.lean)
+   — `braneTowerW_isospin_blind` (Markov word-independence ⇒ identical tower on same-$A$
+   isobars ⇒ zero mirror split) + `braneTowerR_eq_binom_sum` (the word-independent tower
+   collapses to $\sum_k \binom{n-1}{k}z^k f_k$, a function of $(n,z,f)$ only). Audit:
+   [`2026-06-29-brane-tower-isospin-blindness-formalized.md`](2026-06-29-brane-tower-isospin-blindness-formalized.md).
 3. **Derive Path-3 (Habiro)** from the categorical identity — close the
    empirical → derived gap.
 4. **Push the q-Bessel tower gate** (`2026-06-19`) — construct $H_6/H_9$
