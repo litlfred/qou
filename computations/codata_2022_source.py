@@ -151,6 +151,28 @@ Role: **CAL-2 anchor** — second framework calibration input.
 M_MU_OVER_M_E_ERR = _load_mpf("0.0000046")
 
 
+# ── Atomic mass unit → MeV conversion ──────────────────────────────
+
+U_MEV = _load_mpf("931.49410372")
+"""Atomic mass constant energy equivalent m_u·c² (MeV).
+
+CODATA-2022: **931.49410372(29) MeV** — σ ≈ 0.31 ppb.
+
+Role: **VALIDATION** conversion (u → MeV) for AME atomic-mass tables.
+
+⚠ **Edition note (2026-06-30).** This is the CODATA-**2022** value. The
+prior registry value `931.49410242` (scraped from the vendored AME2020
+metadata note) is the CODATA-**2018** edition; the two differ by
+`1.30 × 10⁻⁶ MeV` (~1.4 ppb), within mutual σ. `codata_constants.U_MEV`
+now sources from here so the conversion matches this module's edition.
+Used only to convert AME `atomic_mass_micro_u` → MeV for validation
+comparison; binding energies come from AME `binding_energy_total_keV`
+directly and are unaffected.
+"""
+U_MEV_ERR = _load_mpf("0.00000029")
+"""1σ uncertainty on U_MEV.  σ ≈ 0.31 ppb."""
+
+
 # ── Neutron decay Q-value ──────────────────────────────────────────
 
 Q_BETA_MEV_AME = _load_mpf("0.78233341")
@@ -209,6 +231,7 @@ def summary() -> dict:
             "M_N_MEV (default = AME)": str(M_N_MEV),
             "M_MU_MEV": str(M_MU_MEV),
             "M_MU_OVER_M_E": str(M_MU_OVER_M_E),
+            "U_MEV": str(U_MEV),
             "Q_BETA_MEV_AME": str(Q_BETA_MEV_AME),
             "Q_BETA_MEV_DERIVED_FROM_CODATA_DIRECT":
                 str(Q_BETA_MEV_DERIVED_FROM_CODATA_DIRECT),
@@ -246,6 +269,7 @@ __all__ = [
     "M_N_MEV_AME_DERIVED", "M_N_MEV_AME_DERIVED_ERR",
     "M_MU_MEV", "M_MU_MEV_ERR",
     "M_MU_OVER_M_E", "M_MU_OVER_M_E_ERR",
+    "U_MEV", "U_MEV_ERR",
     "Q_BETA_MEV_AME", "Q_BETA_MEV_AME_ERR",
     "Q_BETA_MEV_DERIVED_FROM_CODATA_DIRECT",
     "Q_BETA_MEV_DERIVED_FROM_AME",
