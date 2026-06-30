@@ -23,9 +23,10 @@ numerical evaluation.
 
 namespace QOU
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -56,6 +57,7 @@ def Hadron.isMeson (h : Hadron) : Prop := h.constituents.length = 2
 theorem Hadron.meson_or_baryon_or_exotic (h : Hadron) :
     h.isMeson ∨ h.isBaryon ∨ h.constituents.length ≥ 4 := by
   unfold isMeson isBaryon
+  have h2 := h.constituents_nonempty
   omega
 
 /-! ## Base point and constituent accessors -/
@@ -80,30 +82,50 @@ where Q(q) encodes the q-deformed Skein polynomial of the binding link. -/
 /-- Binding structure: the Hopf link and its Skein polynomial contribution. -/
 -- Ref: [manuscript] §3, Definition: Hadron mass
 structure HadronBinding where
-  /-- The q-deformation parameter. -/
+  /-- The q-deformation parameter (formal indeterminate of `R_q`). -/
   q : R_q
   /-- The binding link (Hopf link braid word). -/
   bindingLink : KnotTheory.BraidWord
-  /-- The Skein polynomial evaluation Q(q) · M(L_Hopf). -/
-  bindingMass : R_q
-  /-- Binding mass is non-negative. -/
+  /-- The Skein polynomial evaluation Q(q) · M(L_Hopf), as an archimedean
+      mass value in `ℝ` (post-wall numerical evaluation). -/
+  bindingMass : ℝ
+  -- Binding mass is non-negative (archimedean):
+  --   bindingMass_nonneg : 0 ≤ bindingMass
+  -- omitted here; the ordering lives in the archimedean evaluation layer.
   -- Ref: [manuscript] §3
-  -- bindingMass_nonneg : 0 ≤ bindingMass  -- (archimedean; not meaningful over R_q)
 
 /-- Mass of a single constituent knot, given by its hyperbolic volume
     in the QOU framework.  Returns the volume value. -/
 noncomputable def constituentMass (k : KnotTheory.BraidWord)
-    (vol : KnotTheory.HyperbolicVolume) : R_q :=
+    (vol : KnotTheory.HyperbolicVolume) : ℝ :=
   vol.value
 
 /-- The total mass of a hadron given a binding structure and constituent volumes.
     m_H = bindingMass + Σᵢ vol(Kᵢ) -/
 -- Ref: [manuscript] §3, Proposition: Terminal resolution
 noncomputable def Hadron.mass (h : Hadron) (binding : HadronBinding)
-    (volumes : List KnotTheory.HyperbolicVolume) : R_q :=
+    (volumes : List KnotTheory.HyperbolicVolume) : ℝ :=
   binding.bindingMass + volumes.foldl (fun acc v => acc + v.value) 0
 
 /-! ## Hadron from localized knots -/
+
+/-- A localized knot: a knot type placed at a point `(θ, φ)` on the base
+    manifold `CP¹ ≅ S²`.  This mirrors `QOU.LocalizedKnot` (defined in
+    `lifting-and-descent/localized-knot.lean`); it is restated locally
+    because this standalone content sibling imports only `QOU.KnotTheory`
+    and the `localized-knot` sibling is not part of that import closure. -/
+-- Ref: [manuscript] §3, Definition: Localized knot
+structure LocalizedKnot where
+  /-- Spherical coordinate θ ∈ [0, π] on CP¹ ≅ S². -/
+  theta : R_q
+  /-- Spherical coordinate φ ∈ [0, 2π) on CP¹ ≅ S². -/
+  phi : R_q
+  /-- The knot type at this point (given by its braid word). -/
+  knot : KnotTheory.BraidWord
+
+/-- The base point of a localized knot as a pair `(θ, φ)` on S². -/
+def LocalizedKnot.basePoint (k : LocalizedKnot) : R_q × R_q :=
+  (k.theta, k.phi)
 
 /-- Construct a hadron from a list of co-located localized knots. -/
 def Hadron.fromLocalizedKnots (knots : List LocalizedKnot)
@@ -124,5 +146,7 @@ theorem Hadron.baryon_ge_two (h : Hadron) (hb : h.isBaryon) :
 /-- A meson has exactly the minimum number of constituents. -/
 theorem Hadron.meson_is_minimal (h : Hadron) (hm : h.isMeson) :
     h.valence = 2 := hm
+
+end
 
 end QOU

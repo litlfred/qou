@@ -1,5 +1,8 @@
 import Mathlib.Algebra.Field.Basic
 import Mathlib.Algebra.Order.Field.Basic
+import Mathlib.Tactic.LinearCombination
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
 
 
 /-!
@@ -48,11 +51,13 @@ noncomputable section
     is the natural setting since braiding eigenvalues land in
     `End(𝟙) ≅ k`, which is a field by simplicity of the unit. -/
 structure SCBraidingEigenvalueData (K : Type*) [Field K] where
-  λ_sym : K
-  λ_anti : K
-  λ_sym_ne_zero : λ_sym ≠ 0
-  λ_anti_ne_zero : λ_anti ≠ 0
-  det_constraint : λ_sym * λ_anti = -1
+  /-- Symmetric eigenvalue `λ_sym` (on `S²V`). -/
+  lam_sym : K
+  /-- Antisymmetric eigenvalue `λ_anti` (on `Λ²V ≅ 𝟙`). -/
+  lam_anti : K
+  lam_sym_ne_zero : lam_sym ≠ 0
+  lam_anti_ne_zero : lam_anti ≠ 0
+  det_constraint : lam_sym * lam_anti = -1
 
 variable {K : Type*} [Field K]
 
@@ -60,9 +65,9 @@ variable {K : Type*} [Field K]
     by the Hecke determinant constraint. -/
 theorem SCBraidingEigenvalueData.anti_eq_neg_inv
     (bed : SCBraidingEigenvalueData K) :
-    bed.λ_anti = -(bed.λ_sym)⁻¹ := by
+    bed.lam_anti = -(bed.lam_sym)⁻¹ := by
   have h := bed.det_constraint
-  have hne := bed.λ_sym_ne_zero
+  have hne := bed.lam_sym_ne_zero
   field_simp
   linear_combination h
 
@@ -71,15 +76,15 @@ theorem SCBraidingEigenvalueData.anti_eq_neg_inv
     candidate chart-glue coefficient. -/
 theorem glue_eq_inv_sym
     (bed : SCBraidingEigenvalueData K) :
-    bed.λ_sym⁻¹ = -bed.λ_anti := by
+    bed.lam_sym⁻¹ = -bed.lam_anti := by
   rw [bed.anti_eq_neg_inv]; ring
 
 /-- Classical limit: at $\lambda_{\mathrm{sym}} = 1$, the candidate
     chart-glue degenerates to $1$ (classical inversion $z\cdot w = 1$). -/
 theorem glue_classical_limit
     (bed : SCBraidingEigenvalueData K)
-    (hsym : bed.λ_sym = 1) :
-    bed.λ_sym⁻¹ = 1 := by
+    (hsym : bed.lam_sym = 1) :
+    bed.lam_sym⁻¹ = 1 := by
   rw [hsym]; simp
 
 /-- Categorical interpretation: on $\mathbb{P}_q(V)$, the chart-transition
@@ -89,7 +94,7 @@ theorem glue_classical_limit
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2  §IV.5
 axiom chart_glue_from_spectrum
     (bed : SCBraidingEigenvalueData K) :
-    ∃ κ : K, κ = bed.λ_sym⁻¹
+    ∃ κ : K, κ = bed.lam_sym⁻¹
 
 /-- The full spectral–chart correspondence: the chart-glue
     coefficient $\kappa$ of $\mathbb{P}_q(V)$ equals
@@ -98,7 +103,7 @@ axiom chart_glue_from_spectrum
     interpretation (`chart_glue_from_spectrum`). -/
 theorem spectral_chart_correspondence
     (bed : SCBraidingEigenvalueData K) :
-    ∃ κ : K, κ = bed.λ_sym⁻¹ ∧ κ = -bed.λ_anti := by
+    ∃ κ : K, κ = bed.lam_sym⁻¹ ∧ κ = -bed.lam_anti := by
   obtain ⟨κ, hκ⟩ := chart_glue_from_spectrum bed
   refine ⟨κ, hκ, ?_⟩
   rw [hκ, glue_eq_inv_sym bed]

@@ -1,10 +1,11 @@
 ---
 # 2ti7
 title: Drain 382 broken content-sibling .lean orphans (compile sweep 2026-06-28)
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-06-28T16:49:39Z
-updated_at: 2026-06-29T13:00:00Z
+updated_at: 2026-06-29T22:20:45Z
 ---
 
 
@@ -159,3 +160,93 @@ but consumed ℝ-valued `SubstrateParameter.field` / used `q⁻¹`/order on `R_q
 rewired to ℝ (archimedean realisation per §7c) or generic `[Field R]` where appropriate, importing the
 canonical library module. Also `q-logarithm-exists` replaced a vacuous `∃…,True` with honest
 `Nonempty`. **45/63 of the chapter drained across waves 2+3+4 (18 remain).**
+
+## 2026-06-29 wave-5 swarm (5 agents, quantum-observable-universes remainder)
+
+Re-derived the live-broken set FIRST (wave-1 lesson #1): of the chapter's 63
+genuine.txt orphans, a fresh parallel `lean-verify-siblings.sh` sweep found
+**54 already green** (siblings + the recent `fix(pre-existing)` main commits had
+drained far more than the stale "45 done / 18 remain" count implied) — only **9
+still broken**. Swarmed those 9 across **5 agents** grouped by root-cause family.
+Outcome: **9/9 genuinely repaired, all independently re-verified `fail=0`**, 0
+flagged. Committed in 2 commits (`8592abd3` = 7 files, `7b6545bb` = final 2).
+
+The 9 + dominant fix:
+- su2-emergence, variational-equations — stranded-docstring-above-`noncomputable
+  section`; missing `import QOU.QuantumObservableUniverse.Structures` (universe
+  params); inlined cross-sibling `SpinDecomposition`; section balance.
+- substrate-parameter-planck, substrate-radial-coordinate — `unknown tactic`.
+- weight-decomposition-exists, weight-decomposition — `Function expected` /
+  `invalid binder annotation` (instance-bracket on a non-class).
+- spectral-chart-correspondence, substrate-self-duality — top-level `λ` /
+  stranded `/--` parse breakage from a malformed preceding declaration.
+- u1-equivariant-reduction — `failed to synthesize` (§7c R_q-vs-ℝ base-ring trap).
+
+Quality gate (orchestrator): vacuity scan clean (no `: True`/`native_decide`/
+fabricated-axiom/trivial-field); 0 new sorries this wave; pre-existing cited
+axiom `su2_emergence` (`[lusztig1993]`/`[deligne2007]`) left intact; §7c base
+ring kept (`R_q = LaurentPolynomial ℤ`, no gratuitous ℝ cast). The
+`quantum-observable-universes` chapter is now **fully drained** (all 63 genuine
+orphans green on this branch).
+
+**CI note:** PR #3142 `gate` + `content-sibling-compile` failed with the Actions
+**billing signature** (≤4s, `runner_id: 0` no runner, 404 logs, empty output) on
+both pushed SHAs — NOT a code defect (local lean-verify exit 0 on all 9).
+Documented `[skip-ci: billing; local verify exit 0]` on the PR; no retrigger
+pushed (billing doesn't clear on retry).
+
+**Lesson reconfirmed:** re-derive-first is essential — the genuine.txt list is
+now badly stale (mass-theory's "72" and the other chapter counts must be
+re-swept before any wave-6, not trusted).
+
+## 2026-06-30 wave-6 (mass-theory; re-derive → 1 live-broken, fixed directly)
+
+Re-derived FIRST: of mass-theory's 72 genuine.txt orphans, a fresh parallel
+`lean-verify-siblings.sh` sweep found **71 already green** (siblings) — only
+**1 still broken**: `categorical-higgs-mechanism.lean`, the exact file wave-1
+deliberately left broken (earlier swarm repair reverted for §3b-tax
+proof-claims-unencoded trivial carriers). 1 file ⇒ fixed directly, no swarm.
+
+Root cause: the two sibling-class field types (`CategoricalLinkingOperation`,
+`WeinbergAngleCategorical`) had their imports commented out (out-of-Lake-tree
+siblings can't be imported standalone) → auto-bound implicit → "Function
+expected". Fix = wave-3 inline-faithful-copy precedent: inlined both sibling
+classes verbatim-faithful (instances renamed to dodge the same-namespace
+`canonical` clash); the 3 genuinely-proved linking properties keep real proofs
+(ring distributivity / `pow_zero` / `neg_neg`), the open markers stay honest
+`True` conjecture-skeleton placeholders (§3b-tax conjecture-block carve-out) —
+NOT fabricated content. fail=0, 0 sorries, 0 new axioms. Committed `f4fae7a0`.
+
+**Two chapters now fully drained** (quantum-observable-universes 63/63 + mass-theory
+72/72). The genuine.txt list (382) is wildly stale — re-derive-first remains the
+single most important lesson; do NOT trust the per-chapter counts.
+
+## 2026-06-30 wave-7 (particle-interactions; 5-agent swarm + 2 direct)
+
+Re-derived FIRST: of particle-interactions' 37 genuine.txt orphans, 24 already
+green — **13 live-broken**. 5-agent swarm (3+3+3+2+2) + merged 9 new main commits
+(r13f sibling drains) mid-wave. Outcome: **13/13 repaired, all re-verified fail=0**,
+quality-gated (no vacuity/native_decide/fabricated axioms; 0 new sorries except none).
+
+Dominant fixes: docstring-above-`noncomputable section` (quark/hadron/beta cluster);
+import-only honest stubs collapsing shadowing duplicates → real library decls
+(confinement-level-exists → QOU.BraidKnot.ConfinementLevel, nuclear-groebner-reduction
+→ QOU.Archimedean.NuclearGroebnerReduction; dropped Lean-4-removed `constant`);
+faithful inline copies of out-of-scope sibling structures (AtomKnot/StableAtom/
+LocalizedKnot/isIsotope); §7c archimedean restatement to ℝ where genuinely
+archimedean (beta-stability/skein A^{2/3} rpow + ordering, hadron masses).
+
+Two finished directly after the swarm's 5th agent was interrupted by a session
+resume:
+- atomic-braid: theorem unprovable because A/totalStrands were default-valued
+  FIELDS (independent data) → made them `def`s (derived) ⇒ identity definitional.
+- per-nucleon-channel-decomposition: agent's in-flight transcription asserted a
+  FALSE protonChannelSum=-h/2 (coded factors sum ≈15.9 at q=2, not -0.75). Rewrote
+  per the .md table — explicit rational sym/alt; std channels (quadratic Δ₃ eigendata
+  from def:typed-crossing-operator, not elementary) → channel-sum identities stated
+  §3b-cond CONDITIONAL on the cited std closed form, verified non-vacuously by
+  field_simp;ring; added a real branchingFactorizationSigns positivity proof.
+
+**Three chapters now fully drained** (quantum-observable-universes 63, mass-theory 72,
+particle-interactions 37 stale-listed / 13 live). CI billing persists across all
+SHAs (2-4s, runner_id 0, no logs) — documented; hourly self-check-in armed for recovery.

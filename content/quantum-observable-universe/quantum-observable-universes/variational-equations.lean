@@ -25,11 +25,16 @@ numerical evaluation.
 
 namespace QOU
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
+
+/-- The canonical indeterminate `q` of `R_q`. -/
 def q_param : R_q := LaurentPolynomial.T 1
+
+/-- The inverse indeterminate `q⁻¹` of `R_q`. -/
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **Variational equations**: the three Euler–Lagrange equations
@@ -46,10 +51,10 @@ inductive VariationalEquationType
 structure VariationalEquation where
   /-- The type of variational equation. -/
   eqType : VariationalEquationType
-  /-- The substrate parameter q. -/
+  /-- The substrate parameter q. (Positivity `0 < q` is archimedean and
+      not meaningful over `R_q`; it is imposed after the
+      substrate→archimedean specialisation `R_q → ℝ`.) -/
   q : R_q
-  /-- q > 0. -/
-  -- q_pos : 0 < q  -- (archimedean; not meaningful over R_q)
   /-- The kinematic side (LHS). -/
   kinematic : R_q
   /-- The source side (RHS). -/
@@ -97,15 +102,16 @@ theorem matter_eq_zero_source (m : MatterEquation) :
 /-- All three equations emerge from a single variational principle. -/
 -- Ref: [manuscript] §1
 structure UnifiedAction where
-  /-- The substrate parameter. -/
+  /-- The substrate parameter. (Positivity `0 < q` is archimedean and
+      not meaningful over `R_q`; imposed after `R_q → ℝ`.) -/
   q : R_q
-  /-- q > 0. -/
-  -- q_pos : 0 < q  -- (archimedean; not meaningful over R_q)
   /-- The three equations. -/
   gravity : GravitationalEquation
   gauge : GaugeEquation
   matter : MatterEquation
   /-- All share the same q. -/
   shared_q : gravity.q = q ∧ gauge.q = q ∧ matter.q = q
+
+end
 
 end QOU
