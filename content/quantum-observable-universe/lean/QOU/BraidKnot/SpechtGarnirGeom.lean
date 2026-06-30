@@ -95,4 +95,36 @@ theorem garnir_htop {t : Tableau μ} (h : ColMono t) {j r : ℕ}
   · rw [garnirB, Finset.mem_filter] at hsB
     exact all_B_lt_all_A h har harr hbr hbrr hviol ha.2.1 ha.2.2 hsB.2.1 hsB.2.2
 
+/-! ## The pigeonhole row bound (item 2, `hbound` half) -/
+
+/-- The row of any label is `< ` the length of its column: the cell holding label
+`l` lies in `μ`, so `(rowPattern, colPattern)` satisfies `mem_iff_lt_colLen`. -/
+theorem rowPattern_lt_colLen (t : Tableau μ) (l : Fin (Specht.nOf μ)) :
+    Specht.rowPattern t l < μ.colLen (Specht.colPattern t l) := by
+  have hmem : ((t l : ℕ × ℕ).1, (t l : ℕ × ℕ).2) ∈ μ := (t l).2
+  rw [YoungDiagram.mem_iff_lt_colLen] at hmem
+  exact hmem
+
+/-- **The Garnir row bound** (`hbound` with `m = μ.colLen j`). For any column
+permutation `π ∈ C_t` and any Garnir label `l ∈ garnirA ∪ garnirB` (column `j` or
+`j+1`), the row of `l` in `π·t` is `< μ.colLen j` — column permutations keep `l`
+in its column, whose length is `≤ μ.colLen j` by antitonicity. -/
+theorem garnir_rowBound (t : Tableau μ) (j r : ℕ) (π : Specht.colStab t)
+    {l : Fin (Specht.nOf μ)} (hl : l ∈ garnirA t j r ∪ garnirB t j r) :
+    Specht.rowPattern ((π : Equiv.Perm (Fin (Specht.nOf μ))) • t) l < μ.colLen j := by
+  have hcol : Specht.colPattern ((π : Equiv.Perm (Fin (Specht.nOf μ))) • t) l
+      = Specht.colPattern t l := by
+    rw [Specht.colPattern_smul]; exact congrFun (Specht.mem_colStab.mp π.2) l
+  have hlt := rowPattern_lt_colLen ((π : Equiv.Perm (Fin (Specht.nOf μ))) • t) l
+  rw [hcol] at hlt
+  have hcj : Specht.colPattern t l = j ∨ Specht.colPattern t l = j + 1 := by
+    rw [Finset.mem_union, garnirA, garnirB, Finset.mem_filter, Finset.mem_filter] at hl
+    rcases hl with ⟨_, h, _⟩ | ⟨_, h, _⟩
+    · exact Or.inl h
+    · exact Or.inr h
+  rcases hcj with h | h
+  · rw [h] at hlt; exact hlt
+  · rw [h] at hlt
+    exact lt_of_lt_of_le hlt (μ.colLen_anti j (j + 1) (Nat.le_succ j))
+
 end QOU.BraidKnot.SpechtGarnirGeom
