@@ -4,6 +4,7 @@ import Mathlib.Algebra.MonoidAlgebra.Basic
 import Mathlib.RepresentationTheory.Basic
 import Mathlib.Order.Interval.Finset.Fin
 import QOU.BraidKnot.Specht
+import QOU.BraidKnot.SpechtStandardBasis
 import QOU.BraidKnot.RegularRepTrace
 
 /-!
@@ -58,9 +59,12 @@ The JM / content layer is **purely algebraic**: `variable {k : Type} [CommRing k
 `Real.*`, no ordering on `k`, no `linarith`/`positivity`/`norm_num`.  `cellContent`/`contentSqSum`
 land in `ℤ` (integer arithmetic — algebraic, not archimedean-`ℝ`).  The finite filter `j.val < i.val`
 is an order on the *index type* `Fin n`, not on the ring `k`, and is necessary (it is the very
-"strands below `k`" defining `X_k`).  The eigenvalue / scalar-action theorems are stated over a
-generic `[CommRing k]`; the *proofs* (out of scope) would specialise to a field of characteristic
-0 where the seminormal basis exists, but the **statements** need no field, so none is imposed.
+"strands below `k`" defining `X_k`).  Most of the layer is stated over generic `[CommRing k]`.  The
+two **completeness** results — `seminormalVectors_span` and the punchline
+`centralC2_acts_by_contentSqSum` — are stated over `[Field k] [CharZero k]` instead, because the
+completeness `S^λ ⊆ span {seminormal vectors}` is *false over `ℤ`* (Young's seminormal vectors carry
+denominators; see those lemmas' docstrings).  That is a correctness restriction, not an archimedean
+`ℝ` leak: a characteristic-zero field, no ordering on `k`, no `Real.*`.
 
 ## References
 - [vershik-kerov1977] Vershik–Okounkov, "A new approach to the representation theory of the
@@ -382,6 +386,42 @@ theorem centralC2_smul_seminormal (μ : YoungDiagram) (sv : SeminormalVector (k 
   -- factor the common vector out of the sum, then collapse the content-square sum over labels
   rw [← Finset.sum_smul, contentSqSum_eq_sum_over_labels μ sv.cellOf]
 
+/-- **The cell-bijection of a standard tableau (constructed sorry-free).** For a standard Young
+tableau `T` of shape `μ`, the bijection `Fin (nOf μ) ≃ μ.cells` reading label `k` to the unique
+cell of `μ` holding `k`.  This is **brick 4's** `SpechtStandardBasis.sytToTableau`: the inverse of
+the cell→label map `cellLabel T` (an injection between two finite types of equal cardinality
+`μ.cells.card = μ.card = nOf μ`, hence a bijection — `cellLabel_bijective`).  Carrying it here lets
+us *construct* the `cellOf` field of a `SeminormalVector` explicitly, so the only OV input that
+remains in `jucysMurphy_eigenvalue` is the seminormal eigenvector itself (not its indexing
+bijection).  No `sorry`, no `ℝ`, no `k`-dependence (it is tableau data only). -/
+noncomputable def tableauCellEquiv (μ : YoungDiagram) (T : QOU.BraidKnot.StandardYoungTableau μ) :
+    Fin (Specht.nOf μ) ≃ μ.cells :=
+  QOU.BraidKnot.SpechtStandardBasis.sytToTableau T
+
+/-- **The genuine Okounkov–Vershik existence core (Young's seminormal vector).** For every standard
+Young tableau `T` of shape `μ`, there exists a nonzero vector `v` in the Specht submodule `S^λ` on
+which **each** Jucys–Murphy element `X_s` acts diagonally with eigenvalue `cellContent (c)`, where
+`c = tableauCellEquiv μ T s` is the cell of `μ` holding label `s` in `T`.
+
+This is the *irreducible* content of `jucysMurphy_eigenvalue` and remains a single cited `sorry`:
+it is Young's seminormal form (the construction of the GZ/seminormal eigenbasis), the content of the
+Okounkov–Vershik paper.  Note what has been **factored out** of it (and is therefore *not* cited):
+the indexing bijection `cellOf` is pinned to the explicitly-constructed `tableauCellEquiv μ T`
+(brick 4's sorry-free `sytToTableau`), so this lemma asserts only the existence of the eigenvector,
+not of its cell-labelling.  `-- Ref: [vershik-kerov1977]`. -/
+theorem seminormalVector_data_exists (μ : YoungDiagram)
+    (T : QOU.BraidKnot.StandardYoungTableau μ) :
+    ∃ v : Specht.Mtab (k := k) μ,
+      v ∈ Specht.SpechtSubmodule (k := k) μ ∧ v ≠ 0 ∧
+        ∀ s : Fin (Specht.nOf μ),
+          (Specht.Mtab.rep μ).asAlgebraHom (jucysMurphy (k := k) (Specht.nOf μ) s) v
+            = (cellContent ((tableauCellEquiv μ T s : ℕ × ℕ))) • v := by
+  -- Ref: [vershik-kerov1977] (Young's seminormal form: the GZ/seminormal eigenvector of S^λ for the
+  -- tableau T, on which each JM element X_s acts by the content of s's cell).  The indexing
+  -- bijection has already been constructed (`tableauCellEquiv`); this is the eigenvector existence
+  -- only — the brick-5 OV existence core.
+  sorry
+
 /-- **Jucys–Murphy eigenvalue theorem (Okounkov–Vershik).** The Specht module `S^λ` admits a
 Gelfand–Zetlin / seminormal basis indexed by the standard Young tableaux of shape `μ`, on which
 every JM element `X_k` acts **diagonally** with eigenvalue `cellContent (cell of k in T)`.
@@ -392,36 +432,56 @@ We state this as: for every standard tableau `T` of shape `μ`, there is a semin
 the **existence** of such vectors for every `T`, i.e. that the GZ basis exists and diagonalises the
 JM elements.  Together with `jucysMurphy_commute`, this is the heart of the OV approach.
 
-(The cleanest faithful formulation found: package the seminormal datum as `SeminormalVector` with
-the eigenproperty built in, then assert existence indexed by the SYT.  This avoids hand-rolling a
-basis API while keeping the statement honest — the only `sorry` is the genuine OV existence claim,
-and the eigenvalue *equation* `X_k · v = c(cell) • v` is literally present in the bundle.)
-
-This is the **deep OV core** — the existence of the GZ/seminormal eigenbasis — and remains a single
-cited `sorry`; it is the content of the Okounkov–Vershik paper and out of scope for one brick. -/
+**Reduction (sorry-free here, modulo the named eigenvector core).** This theorem no longer carries
+the `sorry` directly.  Its `cellOf` field is *constructed* from `T` by the sorry-free brick-4
+bijection `tableauCellEquiv μ T` (= `sytToTableau T`), and the eigenvector data `(v, mem, nz, isEig)`
+is supplied by `seminormalVector_data_exists` — the single cited core that isolates exactly Young's
+seminormal-vector existence.  `sv.T = T` then holds by `rfl`.  So the genuine OV debt is now named
+precisely (`seminormalVector_data_exists`) and the *bijection* part — historically bundled into the
+same `sorry` — is genuinely closed. -/
 theorem jucysMurphy_eigenvalue (μ : YoungDiagram) (T : QOU.BraidKnot.StandardYoungTableau μ) :
     ∃ sv : SeminormalVector (k := k) μ, sv.T = T := by
-  -- Ref: [vershik-kerov1977] (the GZ/seminormal basis of S^λ diagonalises the JM elements with
-  -- eigenvalues equal to the cell contents); brick-5 OV existence core.
-  sorry
+  obtain ⟨v, hmem, hnz, hisEig⟩ := seminormalVector_data_exists (k := k) μ T
+  exact ⟨{ T := T
+           v := v
+           mem := hmem
+           nz := hnz
+           cellOf := tableauCellEquiv μ T
+           isEig := hisEig }, rfl⟩
 
 /-- **Seminormal vectors span the Specht module (Okounkov–Vershik).** The Specht submodule
 `S^λ ≤ M^λ` is spanned by the seminormal (Gelfand–Zetlin) vectors `{sv.v}`.  Equivalently, the GZ
 basis is a basis of `S^λ`.
 
-This is the second irreducible OV input (alongside `jucysMurphy_eigenvalue`): it is *exactly* the
-statement that the simultaneous JM-eigenvectors exhaust `S^λ`, i.e. that the GZ basis is complete.
-It is isolated here as a single cited `sorry` so that the punchline `centralC2_acts_by_contentSqSum`
-is then **sorry-free** (the scalar action on each spanning vector is the sorry-free
-`centralC2_smul_seminormal`, and a `Submodule.span_induction` propagates it to all of `S^λ`).
+This is the second irreducible OV input (alongside `seminormalVector_data_exists`): it is *exactly*
+the statement that the simultaneous JM-eigenvectors exhaust `S^λ`, i.e. that the GZ basis is
+complete.  It is isolated here as a single cited `sorry` so that the punchline
+`centralC2_acts_by_contentSqSum` is then **sorry-free** (the scalar action on each spanning vector is
+the sorry-free `centralC2_smul_seminormal`, and a `Submodule.span_induction` propagates it to all of
+`S^λ`).
 
 The inclusion `span ⊆ S^λ` is automatic (each `sv.v ∈ S^λ` by the `mem` field); the content is the
-reverse inclusion `S^λ ⊆ span`, stated below. -/
-theorem seminormalVectors_span (μ : YoungDiagram) :
+reverse inclusion `S^λ ⊆ span`, stated below.
+
+**Base ring — a characteristic-zero field (the §7c over-generality fix).** Unlike the rest of this
+file (`variable [CommRing k]`), this completeness statement and the punchline below are stated over
+`[Field k] [CharZero k]`.  This is a *correctness* restriction, not laziness: over `ℤ` the statement
+is **false**.  Young's seminormal vectors carry denominators — their construction inverts the content
+differences `c_i − c_j` — so over `ℤ` the integral seminormal vectors span only a proper
+finite-index sublattice of the integral Specht module, and `S^λ ⊆ span` fails.  Over a
+characteristic-zero field the content differences are invertible, the GZ/seminormal basis genuinely
+exists, and completeness holds.  Stating it over the file-wide `[CommRing k]` would be an
+**over-general cited `sorry`** (a claim false at the stated generality) — the same anti-pattern caught
+in `DominanceData.dom_colStab`; the honest disposition is to narrow the base ring, not the
+conclusion.  The capstone consumes the punchline at `k := R` with `[Field R] [CharZero R]`, so the
+restriction costs nothing downstream.  No `native_decide`, no vacuity, no weakening of the
+conclusion — `-- Ref:`. -/
+theorem seminormalVectors_span {k : Type} [Field k] [CharZero k] (μ : YoungDiagram) :
     Specht.SpechtSubmodule (k := k) μ
       ≤ Submodule.span k (Set.range (fun sv : SeminormalVector (k := k) μ => sv.v)) := by
   -- Ref: [vershik-kerov1977] (the GZ/seminormal eigenvectors form a basis of S^λ; the simultaneous
-  -- JM-eigenbasis is complete); brick-5 OV completeness core.
+  -- JM-eigenbasis is complete); brick-5 OV completeness core.  Stated over a char-0 field because the
+  -- completeness `S^λ ⊆ span` is false over ℤ (seminormal vectors carry denominators) — see docstring.
   sorry
 
 /-- **Punchline — `C₂` acts by `Σ_{c∈λ} c(c)²` on `S^λ`.** The Jucys–Murphy central element
@@ -440,8 +500,12 @@ this theorem discharges that field's content for the Specht-module block.
 the seminormal vectors span `S^λ` (`seminormalVectors_span`), `C₂` acts on each by `contentSqSum μ`
 (the sorry-free `centralC2_smul_seminormal`), and the scalar action extends through `+`, `0`, and
 `k`-scaling because both `ρ(C₂)` and `(contentSqSum μ) • ·` are `k`-linear.  No `sorry`, no `ℝ`,
-no `native_decide`. -/
-theorem centralC2_acts_by_contentSqSum (μ : YoungDiagram) :
+no `native_decide`.
+
+**Base ring `[Field k] [CharZero k]`** — inherited from `seminormalVectors_span` (the completeness it
+consumes is false over `ℤ`; see that lemma).  The capstone uses this at `k := R` with
+`[Field R] [CharZero R]`. -/
+theorem centralC2_acts_by_contentSqSum {k : Type} [Field k] [CharZero k] (μ : YoungDiagram) :
     ∀ x ∈ Specht.SpechtSubmodule (k := k) μ,
       (Specht.Mtab.rep μ).asAlgebraHom (centralC2 (k := k) (Specht.nOf μ)) x
         = (contentSqSum μ) • x := by
