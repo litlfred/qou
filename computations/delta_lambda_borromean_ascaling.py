@@ -163,8 +163,11 @@ def main() -> int:
                           "extensive-bulk comparison (no fit, no closure).",
            "tower_net_over_target_spread": spread_t, "rows": rows,
            "edge_set_test": edge, "extensive_bulk": extensive}
-    p = HERE / "delta-lambda-borromean-ascaling.witness.json"
-    p.write_text(json.dumps(out, indent=2))
+    from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+    p = WitnessBuilder.wrap_legacy(
+        "delta-lambda-borromean-ascaling", out,
+        script_path=__file__, engine="mpmath",
+    ).save()
     print(f"\n  witness → {p.name}")
     return 0
 
