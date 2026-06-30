@@ -27,7 +27,7 @@ open scoped CategoryTheory CategoryTheory.MonoidalCategory
 
 namespace QOU
 
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+/- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
@@ -57,5 +57,7 @@ structure ReebDecomposition (M : Type*) where
 def ReebDecomposition.isPurelyHorizontal {M : Type*}
     (rd : ReebDecomposition M) : Prop :=
   ∀ (p : M), rd.vertical p = 0
+
+end
 
 end QOU
