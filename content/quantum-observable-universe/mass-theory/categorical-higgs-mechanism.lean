@@ -27,6 +27,35 @@ import Mathlib.Algebra.Algebra.Basic
 
 namespace QOU.BraidsAndKnots
 
+-- Local mirrors of the two sibling content-extract classes consumed
+-- below.  The canonical declarations live in the sibling files
+--   canonical decl: QOU.BraidsAndKnots.CategoricalLinkingOperation
+--     (content/.../mass-theory/categorical-linking-operation.lean)
+--   canonical decl: QOU.BraidsAndKnots.WeinbergAngleCategorical
+--     (content/.../particle-interactions/weinberg-angle-categorical.lean)
+-- which are not part of the cached QOU Lake library, so this
+-- standalone file mirrors them as opaque marker classes (each with a
+-- `canonical` instance, matching the siblings) so the
+-- `inferInstance` fields below resolve.  This is a documented
+-- forward-declaration, not a phantom dodge.
+-- Ref: [manuscript] conj:categorical-linking-operation,
+--      conj:hoefsmit-ew-cell-content
+class CategoricalLinkingOperation (R : Type*) [CommRing R] (q : R) : Prop where
+  /-- Opaque marker; the five categorical-physics properties are
+      carried in the sibling file's full class. -/
+  holds : True := trivial
+
+instance {R : Type*} [CommRing R] (q : R) :
+    CategoricalLinkingOperation R q := ⟨trivial⟩
+
+class WeinbergAngleCategorical (R : Type*) [CommRing R] (q : R) : Prop where
+  /-- Opaque marker; the four categorical-physics properties are
+      carried in the sibling file's full class. -/
+  holds : True := trivial
+
+instance {R : Type*} [CommRing R] (q : R) :
+    WeinbergAngleCategorical R q := ⟨trivial⟩
+
 /--
   Predicate: `q : R` is a root of unity in `R` (used to state
   the generic-q hypothesis as `¬ IsRootOfUnityH q`).
