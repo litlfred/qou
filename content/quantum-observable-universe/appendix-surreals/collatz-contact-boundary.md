@@ -49,9 +49,9 @@ The contraction ratio is
 $$
   \frac{[3]_q}{[2]_q^3}
   = 
-  \frac{[2]_q^2 - q}{[2]_q^3}
+  \frac{[2]_q^2 - 1}{[2]_q^3}
   = 
-  \frac{1}{[2]_q} - \frac{q}{[2]_q^3},
+  \frac{1}{[2]_q} - \frac{1}{[2]_q^3},
 $$
 
 so the orbit shrinks by slightly more than $1/[2]_q$
@@ -59,10 +59,10 @@ per cycle.  The **margin** — the gap between two halvings
 and the minimum needed — is
 
 $$
-  [2]_q^2 - [3]_q =  q,
+  [2]_q^2 - [3]_q =  1,
 $$
 
-the substrate parameter itself, which is positive; hence the
+a positive constant (independent of $q$); hence the
 per-cycle factor is strictly contractive and the threshold
 $\langle v_{[2]} \rangle \geq 2$ is sufficient for convergence.
 

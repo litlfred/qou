@@ -29,13 +29,15 @@ By excision:
 $$
   H^2_{\{p\}}(\Sigma_4, \mathbb{Z})
    \cong 
-  H^2(D^4, S^3; \mathbb{Z})
+  H^2(D^2, S^1; \mathbb{Z})
    \cong 
   \mathbb{Z},
 $$
 
-where $D^4$ is a small ball around $p$ and $S^3$ its boundary
-(Bring's surface has real dimension 4 as a complex surface).
+where $D^2$ is a small disk around $p$ and $S^1$ its boundary
+(Bring's surface is a real-$2$ surface — a complex curve of complex
+dimension $1$; the relative group $H^2(D^2, S^1) \cong \tilde H^2(S^2)
+\cong \mathbb{Z}$).
 The Euler class restricts to the **local degree** at $p$:
 
 $$

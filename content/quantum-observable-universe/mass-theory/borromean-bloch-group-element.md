@@ -45,23 +45,27 @@ Per
 [`def:quantum-bloch-group`](#def:quantum-bloch-group) and the
 classical Bloch-Suslin construction:
 
-- The Borromean complement decomposes into 8 ideal octahedra, each
-  with cross-ratio $\zeta = e^{i\pi/3}$ (the regular ideal
-  octahedron, $\theta = \pi/3$).
-- Each octahedron contributes Bloch-group element $8 \cdot
-  [\zeta]_2 + \ldots$ via the Lobachevsky decomposition.
+- The Borromean complement decomposes into **2 regular ideal
+  octahedra**, each of hyperbolic volume $V_{\mathrm{oct}} =
+  8\Lambda(\pi/4)$.  (The regular ideal octahedron has dihedral
+  angle $\pi/2$; its Lobachevsky decomposition carries the angle
+  $\pi/4$, and $\Lambda(\pi/4) = G/2$.)
+- Each octahedron contributes the Bloch-group class
+  $[\mathrm{oct}]$ of the regular ideal octahedron via that
+  decomposition.
 - The total Bloch-group element is
 
 $$
   [\mathcal{B}_3]_{B(\mathbb{C})}
   \;=\;
-  8 \cdot [e^{i\pi/3}]
+  2 \cdot [\mathrm{oct}]
   \;\in\;
   B(\mathbb{C}),
 $$
 
-with regulator $r_2[\mathcal{B}_3] = 8 \cdot \Lambda(\pi/3) =
-8G$ (Catalan's constant; see
+with regulator $r_2[\mathcal{B}_3] = 2 \cdot V_{\mathrm{oct}} =
+16\,\Lambda(\pi/4) = 8G$ (Catalan's constant, using
+$\Lambda(\pi/4) = G/2$; see
 [`prop:binding-scale-catalan`](#prop:binding-scale-catalan)).
 
 ## The conjectural content — $h^4$ as the next-order regulator term
@@ -137,9 +141,9 @@ class BorromeanBlochGroupElement
     (M : Type*) [BrCategory M] [QuantumDilogarithm M] where
   /-- The Bloch-group element of the Borromean complement. -/
   borromean_bloch_class : BlochGroup (Complex)
-  /-- It equals 8 · [e^(iπ/3)]. -/
-  borromean_bloch_eq_eight_xi :
-    borromean_bloch_class = 8 • bloch_symbol (Complex.exp (Complex.I * π / 3))
+  /-- It equals 2 · [regular ideal octahedron]. -/
+  borromean_bloch_eq_two_oct :
+    borromean_bloch_class = 2 • octahedron_bloch_class
   /-- The Beilinson regulator of the class equals 8G. -/
   regulator_eq_eight_G : r_2 borromean_bloch_class = 8 * catalan_G
   /-- The order-h² regulator correction equals -6G. -/
