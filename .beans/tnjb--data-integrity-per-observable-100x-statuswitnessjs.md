@@ -1,10 +1,10 @@
 ---
 # tnjb
 title: 'Data-integrity: per-observable-100x-status.witness.json stale on main (m_mu/Q_beta/m_n)'
-status: in-progress
+status: completed
 type: task
 created_at: 2026-06-24T17:42:41Z
-updated_at: 2026-06-27T00:00:00Z
+updated_at: 2026-06-30T16:05:00Z
 ---
 
 ## RESOLUTION 2026-06-27 (owner ruling) — m_μ pinned; Q_β/m_n remainder open

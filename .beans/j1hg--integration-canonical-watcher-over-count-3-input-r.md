@@ -23,12 +23,20 @@ refinement,wenzl_bridge}, …) are the OWNER-GATED value-changing refactor
 (rewrite to m_n = m_p + Q_β + m_e, sequenced with the q₀-repin sweep z5vu) —
 NOT a mechanical pass per docs/audits/2026-06-22-overcount-3input-triage.md.
 
+## 2026-06-30 — sequencing plan written (owner-gated execution)
+The remaining 12 over-count scripts + the coupled z5vu q₀-migration are
+sequenced in docs/workplans/2026-06-30-j1hg-z5vu-overcount-q0repin-sequencing.md.
+Key blocker surfaced: the proton-q₀ solver embeds a purged Habiro fit, so z5vu
+needs an owner decision — (A) pin a clean proton-q₀ constant, or (B) keep the
+computations/ layer muon-canonical and enforce the proton anchor only at the
+reporting layer (recommended; matches AGENTS.md rule 4). Awaiting owner sign-off.
+
 ## 2026-06-30 — DRAINED to over_count_count 0 (disposition B execution)
-Rigorous inspection of the 12 remaining flagged scripts: ALL are regex
-false-positives. 11 carry a vestigial M_N_MEV import (0 non-import uses;
+Owner chose B. Rigorous inspection of the 12 remaining flagged scripts: ALL are
+regex false-positives. 11 carry a vestigial M_N_MEV import (0 non-import uses;
 compute with m_n_derived_3input = m_p+Q_β+m_e); per_knot_density uses M_N_MEV
 as a CODATA comparison reference only. Allowlisted in
 canonical_script_input_audit.py with per-script rationale; over_count_count
-12 → 0. Audit: docs/audits/2026-06-30-j1hg-overcount-final-drain.md.
+12 → 0 (PR #3171, merged). Audit: docs/audits/2026-06-30-j1hg-overcount-final-drain.md.
 Vestigial-import cosmetic cleanup deferred to a canonical-env session
 (Hecke producers need pyhecke_native to regen witnesses).
