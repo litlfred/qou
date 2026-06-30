@@ -48,8 +48,12 @@ mp.dps = 50
 Q0 = mpf("1.1099785955541805")
 INV = 1 / Q0  # bar image, inside the unit disk where Ψ converges
 
-P = 30  # = p1*p2*p3 = 2*3*5 = Coxeter number of E8
+P = 30  # = p1*p2*p3 = 2*3*5 = Coxeter number of E8 AND of H4 (600-cell)
 E8_EXPONENTS = (1, 7, 11, 13, 17, 19, 23, 29)
+# H4 = the 4D icosahedral / 600-cell Coxeter group: degrees {2,12,20,30}, exponents = degrees-1.
+# The bare Sigma(2,3,5) false-theta support {1,11,19,29} IS exactly the H4 exponent set; the
+# colored complement {7,13,17,23} is the rest of E8, so the colored split = the H4 <- E8 folding.
+H4_EXPONENTS = (1, 11, 19, 29)
 
 
 def colored_support(alpha):
@@ -131,6 +135,19 @@ def run():
     e8_generated = sorted(union) == sorted(E8_EXPONENTS)
     # the two lowest colours cover the E8 exponents?
     two_color_union = sorted(set(colored_support(1)) | set(colored_support(2)))
+    bare_is_H4 = sorted(colored_support(1)) == sorted(H4_EXPONENTS)
+
+    # Value-screen: is the naive exponent quantum dimension [e]_q the value map d_q?
+    # Assign each conjugation class its dual-pair smallest exponent (monotone order) and compare.
+    def qint_local(m):
+        return float((Q0 ** m - Q0 ** (-m)) / (Q0 - Q0 ** (-1)))
+    value_screen = []
+    for e, lam in zip((1, 7, 11, 13), [(5,), (4, 1), (3, 2), (3, 1, 1)]):
+        tgt = float(d_q(lam))
+        value_screen.append({"exponent": e, "lambda": list(lam), "d_q": tgt,
+                             "qint_e": qint_local(e), "ratio_target_over_qint": tgt / qint_local(e)})
+    qint_refuted = not all(abs(v["ratio_target_over_qint"] - value_screen[0]["ratio_target_over_qint"])
+                           < 1e-6 for v in value_screen)
 
     D2 = mp.fsum(d_q(l) ** 2 for l in PARTS5)
     bwS0 = {repr(l): float(d_q(l) / mp.sqrt(D2)) for l in PARTS5}
@@ -159,6 +176,10 @@ def run():
         "e8_dual_pairs": [list(p) for p in e8_pairs],
         "bwS0_conjugation_classes": bw_classes,
         "count_match_4_to_4": len(e8_pairs) == len(bw_classes),
+        "H4_exponents": list(H4_EXPONENTS),
+        "bare_support_is_H4": bare_is_H4,
+        "value_screen_qint": value_screen,
+        "qint_value_map_refuted": qint_refuted,
     }
 
 
@@ -212,6 +233,24 @@ def report(res):
     print("  The table aligns classes by bwS0 magnitude order — the assignment itself (which pair ↔")
     print("  which class) + its numerical realization is the remaining value step.\n")
 
+    print("\n## Sharper icosahedral identity + value-step screen\n")
+    print(f"- **Bare support {{1,11,19,29}} = the H₄ exponents** (the 4D icosahedral / 600-cell "
+          f"Coxeter group; degrees {{2,12,20,30}}, h=30): {res['bare_support_is_H4']}. The colored "
+          f"complement {{7,13,17,23}} is the rest of E₈, so the colour split is exactly the "
+          f"**H₄ ⊂ E₈ folding** — the icosahedral structure is concretely H₄, not bare 'E₈'.")
+    print(f"- **Value-step screen — the naive exponent q-dimension [e]_q is REFUTED as the value map** "
+          f"({'refuted' if res['qint_value_map_refuted'] else 'not refuted'}):")
+    print("  | exponent e | λ | target d_q | [e]_q | d_q/[e]_q |")
+    print("  |--:|---|--:|--:|--:|")
+    for v in res["value_screen_qint"]:
+        print(f"  | {v['exponent']} | {tuple(v['lambda'])} | {v['d_q']:.4f} | {v['qint_e']:.4f} "
+              f"| {v['ratio_target_over_qint']:.4f} |")
+    print("  The ratio d_q/[e]_q is non-constant (1.000, 0.539, 0.385, 0.359), so NO global")
+    print("  normalisation makes the colored exponent's quantum dimension equal d_q. The value map")
+    print("  is therefore NOT the exponent-label q-dimension; it needs the genuine colored")
+    print("  Lawrence–Rozansky S-matrix amplitude (the real remaining derivation). This (a)-prunes")
+    print("  the naive value hypothesis and locates the open step precisely.\n")
+
     print("## Discipline / scope\n")
     print("- No fit. A direct Ψ^{(α)} = W_λ numerical equality is NOT asserted (the colored")
     print("  invariants are q-series scalars; bwS0 is the S-matrix row — the type-correct comparison")
@@ -248,6 +287,10 @@ def main(argv=None):
     w.add_data("d_q_n5", res["d_q_n5"])
     w.add_data("e8_dual_pairs", res["e8_dual_pairs"])
     w.add_data("bwS0_conjugation_classes", res["bwS0_conjugation_classes"])
+    w.add_data("H4_exponents", res["H4_exponents"])
+    w.add_data("bare_support_is_H4", res["bare_support_is_H4"])
+    w.add_data("value_screen_qint", res["value_screen_qint"])
+    w.add_data("qint_value_map_refuted", res["qint_value_map_refuted"])
     w.add_assertion(
         "two_lowest_colors_generate_E8_exponents",
         computed=1 if res["e8_exponents_generated"] else 0,

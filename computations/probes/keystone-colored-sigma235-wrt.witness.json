@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-30T23:36:29.092009+00:00",
-  "commitSha": "e4a8d404ae65b6bf72ced86cb4e17ce0ef2b32ff",
+  "computedAt": "2026-06-30T23:46:07.672527+00:00",
+  "commitSha": "4f739bf4099c0a23f07babcb6686db801712f193",
   "assertions": [
     {
       "name": "two_lowest_colors_generate_E8_exponents",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 14,
   "computation": "keystone-colored-sigma235-wrt",
   "scriptFile": "keystone_colored_sigma235_wrt.py",
-  "scriptHash": "6923d1619f5e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b0003ee85786",
+  "scriptCommitSha": "4dcd53349744dcaa0ec2d13c431ccca65f19ab00",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -191,6 +191,56 @@
         ],
         "bwS0": 0.5477241484506502
       }
-    ]
+    ],
+    "H4_exponents": [
+      1,
+      11,
+      19,
+      29
+    ],
+    "bare_support_is_H4": true,
+    "value_screen_qint": [
+      {
+        "exponent": 1,
+        "lambda": [
+          5
+        ],
+        "d_q": 1.0,
+        "qint_e": 1.0,
+        "ratio_target_over_qint": 1.0
+      },
+      {
+        "exponent": 7,
+        "lambda": [
+          4,
+          1
+        ],
+        "d_q": 4.109682435637709,
+        "qint_e": 7.625342178894008,
+        "ratio_target_over_qint": 0.5389505597549177
+      },
+      {
+        "exponent": 11,
+        "lambda": [
+          3,
+          2
+        ],
+        "d_q": 5.220441324664574,
+        "qint_e": 13.554643801140472,
+        "ratio_target_over_qint": 0.3851404287160487
+      },
+      {
+        "exponent": 13,
+        "lambda": [
+          3,
+          1,
+          1
+        ],
+        "d_q": 6.220441324664574,
+        "qint_e": 17.338191919813934,
+        "ratio_target_over_qint": 0.3587710502590474
+      }
+    ],
+    "qint_value_map_refuted": true
   }
 }
