@@ -48,3 +48,18 @@ it reproduces `bwS0(λ) = d_q(λ)/D` for n=5 (the lepton block), then general n.
 - Bare probe: `docs/audits/scripts/keystone_habiro_wrt_s3_2i_probe.py`
 - Modular-cat id: `docs/audits/2026-06-22-keystone-modular-category-identification.md`
 - Ledger: `docs/coordination/s5-so3-keystone.md`
+
+## First-pass result (2026-07-01, PR pending): compact candidates pruned
+
+`keystone_valuemap_screen_s013.py` screened the natural closed-form value maps
+against the 4 target d_q at q₀ (each class assigned its E₈ dual-pair exponent):
+- **C1 [e]_q, C2 sin(πe/30), C3 sinh(ηe) — ALL REFUTED.** d_q=(1,4.11,5.22,6.22)
+  vs [e]_q=(1,7.63,13.55,17.34); the E₈ exponents are NOT the value-map labels.
+- **Sharp positive:** 3 of 4 d_q are single balanced q-integers with HECKE labels
+  {1,4,5} (d_q(5)=[1], d_q(4,1)=[4], d_q(3,2)=[5]); only the self-conjugate ≥3-row
+  d_q(3,1,1)=[4][3]/[2] is a product. **Difficulty is concentrated at the
+  self-conjugate block** (where the SU(2) gate failed).
+- **Narrowed target:** since compact maps fail and the arena is non-compact E_q(2)
+  (2026-06-22 id), the value map is the **Hahn–Exton q-Bessel vacuum row**. Next:
+  use the corpus q-Bessel infra (reeb-phase-qbessel) to compute the q-Bessel
+  amplitude reproducing [1],[4],[5] on near-standard blocks + [4][3]/[2] on (3,1,1).
