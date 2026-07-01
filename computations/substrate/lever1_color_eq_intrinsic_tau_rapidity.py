@@ -144,8 +144,12 @@ witness["verdict"] = (
      "side Plancherel/MTC localization (keystone residual i, the already-open frontier).")
     + " No fit; nothing wired."
 )
+from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+# Flat `assertions` payload → stamp (not wrap_legacy) preserves it.
+WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="mpmath")
+witness["scriptFile"] = os.path.basename(__file__)
 out = os.path.join(os.path.dirname(__file__), "lever1-color-eq-intrinsic-tau-rapidity.witness.json")
-with open(out, "w") as f:
+with open(out, "w", encoding="utf-8") as f:
     json.dump(witness, f, indent=2, default=str)
 
 for r in (r1, r0):

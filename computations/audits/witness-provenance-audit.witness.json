@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-30T23:59:13.930979+00:00",
-  "commitSha": "452abd7e44f5e87f0702064abb1ee04424dbc6dd",
+  "computedAt": "2026-07-01T00:04:31.604174+00:00",
+  "commitSha": "c55d0aba20843d6a357f525bd6c635b717875e6d",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 276,
+      "computed": 273,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 13,
+  "durationMs": 12,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
@@ -48,11 +48,11 @@
   "data": {
     "counts": {
       "total_scanned": 1544,
-      "prov_ok": 1212,
+      "prov_ok": 1215,
       "prov_audit_exempt": 55,
-      "prov_missing": 276,
+      "prov_missing": 273,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.8205958549222798
+      "completeness_ratio": 0.822538860103627
     },
     "by_verdict": {
       "PROV_OK": [
@@ -4561,6 +4561,14 @@
           "missing_fields": []
         },
         {
+          "witness": "lever1-color-eq-intrinsic-tau-rapidity.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "lever1-color-eq-lambda-sw-rapidity.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "lever1-color-eq-monodromy-integrality.witness.json",
           "missing_fields": []
         },
@@ -4598,6 +4606,10 @@
         },
         {
           "witness": "unified-tau-odd-partner-solve.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "zeta4-complex-volume-moderator-probe.witness.json",
           "missing_fields": []
         },
         {
@@ -6697,22 +6709,6 @@
           ]
         },
         {
-          "witness": "lever1-color-eq-intrinsic-tau-rapidity.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "lever1-color-eq-lambda-sw-rapidity.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "lever1-habiro-element-fit.witness.json",
           "missing_fields": [
             "engine",
@@ -6794,14 +6790,6 @@
         },
         {
           "witness": "z2bn-tau-derivation-probe.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "zeta4-complex-volume-moderator-probe.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",

@@ -91,8 +91,12 @@ witness = {
     "allPassed": all_passed,
     "verdict": verdict,
 }
-out = os.path.join("computations", "substrate", "zeta4-complex-volume-moderator-probe.witness.json")
-with open(out, "w") as f:
+from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+# Flat `assertions` payload → stamp (not wrap_legacy) preserves it.
+WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="sympy")
+witness["scriptFile"] = os.path.basename(__file__)
+out = os.path.join(os.path.dirname(__file__), "zeta4-complex-volume-moderator-probe.witness.json")
+with open(out, "w", encoding="utf-8") as f:
     json.dump(witness, f, indent=2)
 
 print(f"(1) cosh(η+iπ/2)−i·sinh(η) = {mod_cosh}   sinh(η+iπ/2)−i·cosh(η) = {mod_sinh}")

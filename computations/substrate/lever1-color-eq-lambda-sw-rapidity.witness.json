@@ -31,5 +31,13 @@
     "theta_spec_x2_matches_binding_1pct": false
   },
   "allPassed": true,
-  "verdict": "NO 1% MATCH: the derived Gauss-Manin connection N(q) is SOLID (trace-free sl_2, period-validated <1e-5), but theta_spec = int sqrt(-det N) dq differs from theta_binding under the natural (half/full-period) conventions. N(q) is delivered as the concrete Picard-Fuchs input the prior sessions punted on; the residual is the precise abelianisation frame/normalisation. No fit; nothing wired."
+  "verdict": "NO 1% MATCH: the derived Gauss-Manin connection N(q) is SOLID (trace-free sl_2, period-validated <1e-5), but theta_spec = int sqrt(-det N) dq differs from theta_binding under the natural (half/full-period) conventions. N(q) is delivered as the concrete Picard-Fuchs input the prior sessions punted on; the residual is the precise abelianisation frame/normalisation. No fit; nothing wired.",
+  "scriptHash": "d60d268b8346",
+  "scriptCommitSha": "f6ddd9350192668fe1fb6c2498f8d5b91bb70331",
+  "commitSha": "c55d0aba20843d6a357f525bd6c635b717875e6d",
+  "engine": "sympy",
+  "computedAt": "2026-07-01T00:04:00.328642+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "lever1_color_eq_lambda_sw_rapidity.py"
 }
