@@ -1,5 +1,5 @@
 import Mathlib.Data.Real.Basic
-import Mathlib.Data.Nat.Defs
+import Mathlib.Data.Nat.Basic
 
 /-!
 # Chirality as continuous phase rotation (conjectural)

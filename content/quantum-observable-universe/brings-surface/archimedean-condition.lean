@@ -1,7 +1,7 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Int.Basic
 import Mathlib.Algebra.Ring.Basic
-import Mathlib.Algebra.Order.Ring.Lemmas
+import Mathlib.Algebra.Order.Ring.Defs
 
 
 /-!

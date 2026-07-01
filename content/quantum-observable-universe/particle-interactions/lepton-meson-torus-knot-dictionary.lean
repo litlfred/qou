@@ -10,7 +10,7 @@
 -/
 
 import Mathlib.Tactic.FinCases
-import Mathlib.Tactic.Omega
+import Mathlib.Tactic
 
 namespace QOU.ParticleInteractions
 

@@ -1,4 +1,4 @@
-import Mathlib.Algebra.Hopf.Basic
+import Mathlib.RingTheory.HopfAlgebra.Basic
 import Mathlib.NumberTheory.NumberField.Basic
 
 
