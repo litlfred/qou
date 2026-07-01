@@ -26,7 +26,7 @@
 -/
 
 import Mathlib.Data.Real.Basic
-import Mathlib.Algebra.GroupPower.Basic
+import Mathlib.Algebra.Group.Defs
 import Mathlib.Algebra.Order.Field.Basic
 
 namespace QOU.ParticleInteractions

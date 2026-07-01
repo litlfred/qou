@@ -23,7 +23,7 @@
 -/
 
 import Mathlib.Data.Real.Basic
-import Mathlib.Order.Defs
+import Mathlib.Order.Basic
 
 namespace QOU.BraidsAndKnots
 
