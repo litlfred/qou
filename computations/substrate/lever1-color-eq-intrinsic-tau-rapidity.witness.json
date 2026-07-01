@@ -40,5 +40,13 @@
     "theta_cand_tracks_binding_q_dependence": false
   },
   "allPassed": true,
-  "verdict": "INTRINSIC MISS (scope-(a) on the principled candidate): tau_E is validated (kleinj*1728=j to <1e-6), but the torus-calibrated candidate theta_cand = 2 pi Im(tau_E) = 5.846981568 misses theta_binding = 0.781453946 at q0 (6.5x), and its q-slope (1.76e-03) is ~6x flatter than theta_binding's (1.01e-02). Reason: Im(tau_E)~0.93 -> the color E_q is GENERIC, not near the Tate/cusp regime where the torus calibration (theta_torus=2 pi Im tau_torus, Im~0.03) lives. Scope (a): rules out THIS principled candidate, not every intrinsic invariant (a j-tuned one would be fishing). With the monodromy (integer-trace) and transport (too-small) negatives, the geometric origin of theta_binding is NOT a color-E_q period -- it points to the W_lambda-side Plancherel/MTC localization (keystone residual i, the already-open frontier). No fit; nothing wired."
+  "verdict": "INTRINSIC MISS (scope-(a) on the principled candidate): tau_E is validated (kleinj*1728=j to <1e-6), but the torus-calibrated candidate theta_cand = 2 pi Im(tau_E) = 5.846981568 misses theta_binding = 0.781453946 at q0 (6.5x), and its q-slope (1.76e-03) is ~6x flatter than theta_binding's (1.01e-02). Reason: Im(tau_E)~0.93 -> the color E_q is GENERIC, not near the Tate/cusp regime where the torus calibration (theta_torus=2 pi Im tau_torus, Im~0.03) lives. Scope (a): rules out THIS principled candidate, not every intrinsic invariant (a j-tuned one would be fishing). With the monodromy (integer-trace) and transport (too-small) negatives, the geometric origin of theta_binding is NOT a color-E_q period -- it points to the W_lambda-side Plancherel/MTC localization (keystone residual i, the already-open frontier). No fit; nothing wired.",
+  "scriptHash": "9c9393c47bd4",
+  "scriptCommitSha": "f6ddd9350192668fe1fb6c2498f8d5b91bb70331",
+  "commitSha": "c55d0aba20843d6a357f525bd6c635b717875e6d",
+  "engine": "mpmath",
+  "computedAt": "2026-07-01T00:03:58.443462+00:00",
+  "durationMs": 0,
+  "engineVersion": "mpmath 1.3.0",
+  "scriptFile": "lever1_color_eq_intrinsic_tau_rapidity.py"
 }

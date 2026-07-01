@@ -69,3 +69,9 @@ lever1_lambda_sw_no_shortcut, lever1_color_eq_monodromy_integrality,
 lever1_binding_monodromy_hyperbolicity. Each: exit 0, PROV_OK, assertions
 preserved, original keys kept. (lambda_sw also: fixed a fragile cwd-relative
 output path → os.path.dirname(__file__).)
+
+## 2026-07-01 — batch 6 (3 scripts, stamp)
+3 more assertion-bearing substrate/ probes via stamp_staleness_metadata:
+lever1_color_eq_intrinsic_tau_rapidity, zeta4_complex_volume_moderator_probe,
+lever1_color_eq_lambda_sw_rapidity. Each: exit 0, PROV_OK, assertions preserved,
+keys kept. (zeta4 also: fixed cwd-relative output path → dirname(__file__).)

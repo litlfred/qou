@@ -171,8 +171,12 @@ witness["verdict"] = (
      "Picard-Fuchs input the prior sessions punted on; the residual is the precise "
      "abelianisation frame/normalisation.") + " No fit; nothing wired."
 )
+from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+# Flat `assertions` payload → stamp (not wrap_legacy) preserves it.
+WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="sympy")
+witness["scriptFile"] = os.path.basename(__file__)
 out = os.path.join(os.path.dirname(__file__), "lever1-color-eq-lambda-sw-rapidity.witness.json")
-with open(out, "w") as f:
+with open(out, "w", encoding="utf-8") as f:
     json.dump(witness, f, indent=2, default=str)
 
 print("trace-free:", trace_free, "| N validated (PF 2nd-order ODE on omega):", N_validated,

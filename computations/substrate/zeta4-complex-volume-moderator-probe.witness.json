@@ -26,5 +26,13 @@
     "barOdd_imaginary_at_zeta4": true
   },
   "allPassed": true,
-  "verdict": "\u03b6\u2084 = i IS THE MODERATOR of Re \ud835\udd19 (binding, cosh) and Im \ud835\udd19 (Q_\u03b2, sinh). VERIFIED (sorry-free Lean): the \u03b6\u2084 rotation \u03b7 \u21a6 \u03b7+i\u03c0/2 sends cosh \u21a6 i\u00b7sinh and sinh \u21a6 i\u00b7cosh \u2014 i.e. rotates Re \ud835\udd19 \u2194 i\u00b7Im \ud835\udd19, the complex-volume coupling of \ud835\udd19 = Vol + i\u00b7CS. The cyclotomic factor \u03a6\u2084 = q\u00b2+1 SHARED by the binding side (L\u2082 denom = 2\u00b7\u03a6\u2084) and the Q_\u03b2 c_k kernel (a\u2081 \u03b6\u2084 residue) is exactly the locus q = \u03b6\u2084 = i, where the bar-even [2]_q vanishes and the bar-odd h \u2192 2i. So the shared \u03a6\u2084 is not coincidental common cyclotomy \u2014 it is the algebraic locus of the i = \u03b6\u2084 rotation that interchanges the binding (Re) and Q_\u03b2 (Im) channels of the single complex-volume object \ud835\udd19. Scope (a): generator-level; the full-observable \u03b6\u2084-rotation claim is value-gated, not asserted."
+  "verdict": "\u03b6\u2084 = i IS THE MODERATOR of Re \ud835\udd19 (binding, cosh) and Im \ud835\udd19 (Q_\u03b2, sinh). VERIFIED (sorry-free Lean): the \u03b6\u2084 rotation \u03b7 \u21a6 \u03b7+i\u03c0/2 sends cosh \u21a6 i\u00b7sinh and sinh \u21a6 i\u00b7cosh \u2014 i.e. rotates Re \ud835\udd19 \u2194 i\u00b7Im \ud835\udd19, the complex-volume coupling of \ud835\udd19 = Vol + i\u00b7CS. The cyclotomic factor \u03a6\u2084 = q\u00b2+1 SHARED by the binding side (L\u2082 denom = 2\u00b7\u03a6\u2084) and the Q_\u03b2 c_k kernel (a\u2081 \u03b6\u2084 residue) is exactly the locus q = \u03b6\u2084 = i, where the bar-even [2]_q vanishes and the bar-odd h \u2192 2i. So the shared \u03a6\u2084 is not coincidental common cyclotomy \u2014 it is the algebraic locus of the i = \u03b6\u2084 rotation that interchanges the binding (Re) and Q_\u03b2 (Im) channels of the single complex-volume object \ud835\udd19. Scope (a): generator-level; the full-observable \u03b6\u2084-rotation claim is value-gated, not asserted.",
+  "scriptHash": "ab0b4276eef4",
+  "scriptCommitSha": "f6ddd9350192668fe1fb6c2498f8d5b91bb70331",
+  "commitSha": "c55d0aba20843d6a357f525bd6c635b717875e6d",
+  "engine": "sympy",
+  "computedAt": "2026-07-01T00:03:59.204820+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "zeta4_complex_volume_moderator_probe.py"
 }
