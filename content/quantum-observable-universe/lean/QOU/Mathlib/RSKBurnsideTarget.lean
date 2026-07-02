@@ -30,9 +30,10 @@ paths (status):
   `SYTEnum.dimSYT_eq_numSYTenum` ∘ the GNW general HLF `SYTEnum.numSYTenum_eq_dimHLF`), making
   `RSKBurnsideHolds n` equivalent to a computable `dimHLF` sum
   (`IdentityIHLFBridge.rskBurnsideHolds_iff_dimHLF`).
-* a proof of `RSKBurnsideHolds n` itself: via the equivalence above, what remains is the
-  `Nat.Partition n ↔ partitionsOf n` enumeration bridge to the `decide`-verified `n ≤ 12` data
-  (`dim_validated_le12`), or general RSK.  Deferred.
+* a proof of `RSKBurnsideHolds n`: **done for `n ≤ 12`**
+  (`PartitionsOfBridge.rskBurnsideHolds_le12` — the `Nat.Partition n ↔ partitionsOf n`
+  enumeration bridge feeding the `decide`-verified `dim_validated_le12` through the
+  equivalence above).  General `n` still awaits RSK.
 
 Pure combinatorics on `ℕ`; nothing archimedean; no fit.
 -/
