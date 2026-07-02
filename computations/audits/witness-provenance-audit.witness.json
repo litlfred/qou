@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-02T12:03:05.882020+00:00",
-  "commitSha": "f8277023a2b4a62768c447a2ee793246cb8710d2",
+  "computedAt": "2026-07-02T12:10:02.070109+00:00",
+  "commitSha": "3643c51f7c72d61278d2c27d19b68ec35126dffb",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 270,
+      "computed": 266,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -47,11 +47,11 @@
   "data": {
     "counts": {
       "total_scanned": 1545,
-      "prov_ok": 1219,
+      "prov_ok": 1223,
       "prov_audit_exempt": 55,
-      "prov_missing": 270,
+      "prov_missing": 266,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.8245954692556634
+      "completeness_ratio": 0.8271844660194175
     },
     "by_verdict": {
       "PROV_OK": [
@@ -4556,6 +4556,14 @@
           "missing_fields": []
         },
         {
+          "witness": "frakV-descent-zeta4-partner-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "frakV-zeta4-fibre-vs-observable-probe.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "knot-volumes.witness.json",
           "missing_fields": []
         },
@@ -4597,6 +4605,14 @@
         },
         {
           "witness": "lever1-qinvolution-kernel-test.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "lever1-trB-geometric-target.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "lever1-trB-quantum-integer-form.witness.json",
           "missing_fields": []
         },
         {
@@ -6660,22 +6676,6 @@
           ]
         },
         {
-          "witness": "frakV-descent-zeta4-partner-probe.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "frakV-zeta4-fibre-vs-observable-probe.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "lever1-binding-core-characterization.witness.json",
           "missing_fields": [
             "engine",
@@ -6733,22 +6733,6 @@
         },
         {
           "witness": "lever1-qholonomic-order3-fit.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "lever1-trB-geometric-target.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "lever1-trB-quantum-integer-form.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",

@@ -83,3 +83,15 @@ lever1_qinvolution_kernel_test, lever1_binding_habiro_qexponential. Each:
 exit 0, PROV_OK, assertions preserved, original keys kept; all three also fix
 the fragile cwd-relative output path → dirname(__file__). PROV_MISSING 276→273
 pre-rebase (batch 6 #3198 merged first; post-rebase audit refresh → 270).
+
+## 2026-07-02 — batch 8 (4 scripts, stamp) — substrate stamp-tail EXHAUSTED
+The last 4 assertion-bearing substrate/ raw-emit probes migrated via
+stamp_staleness_metadata: frakV_descent_zeta4_partner_probe,
+frakV_zeta4_fibre_vs_observable_probe, lever1_trB_geometric_target,
+lever1_trB_quantum_integer_form. Each: exit 0, PROV_OK, assertions preserved,
+original keys kept; the two frakV also fix cwd-relative output paths →
+dirname(__file__). PROV_MISSING 270→266. The trB-geometric "consumer" hit is
+a docstring mention of an audit doc, not a file read — all 4 are 0-consumer.
+Remaining substrate/ raw-emit tail (~14) is all assertion-FREE (wrap_legacy
+path) but includes input-witness chains (lever1_binding_core_* read the
+cyclotomic witness) — next batch.

@@ -102,9 +102,14 @@ witness = {
     "allPassed": bool(all(assertions.values())),
     "verdict": verdict,
 }
-out = os.path.join("computations", "substrate", "frakV-zeta4-fibre-vs-observable-probe.witness.json")
-with open(out, "w") as f:
+from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+# Payload carries a top-level `assertions` mapping → stamp (not wrap_legacy) preserves it.
+WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="sympy")
+witness["scriptFile"] = os.path.basename(__file__)
+out = os.path.join(os.path.dirname(__file__), "frakV-zeta4-fibre-vs-observable-probe.witness.json")
+with open(out, "w", encoding="utf-8") as f:
     json.dump(witness, f, indent=2)
+    f.write("\n")
 
 print(f"(1) observable-level Re(ζ₄-rotate) = {re_part_real_eta}  (degenerate: {observable_real_part_zero})")
 print(f"    numeric Re at q₀ = {results['observable_level']['Re(zeta4_rotate)_numeric_at_q0']}")
