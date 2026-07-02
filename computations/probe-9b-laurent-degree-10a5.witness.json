@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-02T17:04:45.180674+00:00",
-  "commitSha": "0620220b1d0bef6028ccae7618a394745e9f2f4b",
+  "computedAt": "2026-07-02T17:26:12.465502+00:00",
+  "commitSha": "ba99d5562ceaebbbdfcc11f239d757b25f476788",
   "assertions": [
     {
       "name": "closed_form_exact_identity_D",
@@ -94,11 +94,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 261619,
+  "durationMs": 257465,
   "computation": "probe-9b-laurent-degree-10a5",
   "scriptFile": "probe_9b_laurent_degree_10a5.py",
   "scriptHash": "ed66027ddebc",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "0e3c35074964f09a0f7cd90e076ae168db1939a9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -194,7 +194,7 @@
           "3/2",
           "7/5"
         ],
-        "wall_sec": 2.51
+        "wall_sec": 2.42
       },
       {
         "atom": "T",
@@ -203,7 +203,7 @@
           "3/2",
           "7/5"
         ],
-        "wall_sec": 26.08
+        "wall_sec": 25.34
       }
     ],
     "per_nucleon_increments": [
