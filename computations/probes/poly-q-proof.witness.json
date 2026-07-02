@@ -1,0 +1,64 @@
+{
+  "computation": "poly-q-proof",
+  "contentBlock": "prop:markov-trace-antipode-polynomial-symmetry",
+  "description": "Independent verification of PR #546's claimed closed form tr_M(proton) = (q^20 + q^18 + 2q^12 - 2q^8 - q^2 - 1) / (12 q^10) via numerical Plancherel-weight Markov trace at multiple q values, plus structural proofs: anti-self-reciprocity q^20\u00b7p(1/q) = -p(q) (Frobenius/antipode symmetry), pole order 10 with leading coefficient -1/12.",
+  "reference_blocks": [
+    "prop:atomic-mass-gb-nf",
+    "prop:rho-k-graded-expansion",
+    "prop:hecke-branching-trace-decomposition"
+  ],
+  "computedAt": "2026-07-02T17:08:05.487334+00:00",
+  "claimed_polynomial": "q^20 + q^18 + 2*q^12 - 2*q^8 - q^2 - 1",
+  "claimed_denominator": "12 * q^10",
+  "numerical_verification": [
+    {
+      "q": 1.05,
+      "tr_M_numeric": 1.6342972686783337,
+      "tr_M_pr546_closed_form": 0.18387820817341327,
+      "rel_diff": 7.887933403924885
+    },
+    {
+      "q": 1.1,
+      "tr_M_numeric": 1.6333957780640742,
+      "tr_M_pr546_closed_form": 0.387699003206439,
+      "rel_diff": 3.213051270586672
+    },
+    {
+      "q": 1.1099785955573347,
+      "tr_M_numeric": 1.6331535640939834,
+      "tr_M_pr546_closed_form": 0.4331339528521708,
+      "rel_diff": 2.7705507807451446
+    },
+    {
+      "q": 1.15,
+      "tr_M_numeric": 1.631993435544239,
+      "tr_M_pr546_closed_form": 0.6386005653071135,
+      "rel_diff": 1.555577812179647
+    },
+    {
+      "q": 1.2,
+      "tr_M_numeric": 1.6301591168782366,
+      "tr_M_pr546_closed_form": 0.9657159059383237,
+      "rel_diff": 0.688031756393529
+    },
+    {
+      "q": 1.5,
+      "tr_M_numeric": 1.6129069919761567,
+      "tr_M_pr546_closed_form": 7.237391370948721,
+      "rel_diff": 0.7771424938479281
+    },
+    {
+      "q": 2.0,
+      "tr_M_numeric": 1.5734493487923227,
+      "tr_M_pr546_closed_form": 107.291259765625,
+      "rel_diff": 0.9853347854034944
+    }
+  ],
+  "max_relative_diff_across_q": 7.887933403924885,
+  "anti_self_reciprocal_proved": true,
+  "pole_order_at_zero": 10,
+  "leading_coefficient_at_zero": "-1/12",
+  "polynomial_value_at_zero": "-1",
+  "roots_real_count": 1,
+  "roots_complex_count": 0
+}
