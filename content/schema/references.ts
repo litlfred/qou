@@ -2080,6 +2080,73 @@ export const references: CSLData[] = [
     note: "arXiv:1405.1548. Proposes that QM emerges from a deterministic Planck-scale cellular automaton via information loss; the reversible (Toffoli-based) CA tick is the direct precursor of the QOU Planck step and q-Game of Life construction.",
   }),
 
+  // ── Amelino-Camelia 2001: doubly special relativity ────────────
+  ref({
+    id: "amelinocamelia2001",
+    type: "article-journal",
+    title: "Testable scenario for relativity with minimum length",
+    author: [{ family: "Amelino-Camelia", given: "Giovanni" }],
+    "container-title": "Physics Letters B",
+    volume: "510",
+    issue: "1-4",
+    page: "255-263",
+    issued: { "date-parts": [[2001]] },
+    DOI: "10.1016/S0370-2693(01)00506-8",
+    note: "arXiv:hep-th/0012238. Founding paper of doubly special relativity (DSR): a second observer-independent (Planckian) scale deforms the photon dispersion relation while preserving a relativity principle, realised through quantum-group (kappa-Poincare) symmetry — the structural parallel to the QOU substrate's q-deformation with derived light speed c_q.",
+  }),
+
+  // ── Amelino-Camelia et al. 1998: GRB tests of quantum gravity ──
+  ref({
+    id: "amelinocamelia1998",
+    type: "article-journal",
+    title: "Tests of quantum gravity from observations of gamma-ray bursts",
+    author: [
+      { family: "Amelino-Camelia", given: "Giovanni" },
+      { family: "Ellis", given: "John" },
+      { family: "Mavromatos", given: "Nick E." },
+      { family: "Nanopoulos", given: "Dimitri V." },
+      { family: "Sarkar", given: "Subir" },
+    ],
+    "container-title": "Nature",
+    volume: "393",
+    page: "763-765",
+    issued: { "date-parts": [[1998]] },
+    DOI: "10.1038/31647",
+    note: "arXiv:astro-ph/9712103. Proposes gamma-ray-burst time-of-flight measurements as a probe of Planck-scale-induced, energy-dependent photon dispersion — the observational channel constraining any archimedean residue of the QOU q-deformed dispersion.",
+  }),
+
+  // ── Fermi collaborations 2009: GRB 090510 dispersion bound ─────
+  ref({
+    id: "abdo2009",
+    type: "article-journal",
+    title:
+      "A limit on the variation of the speed of light arising from quantum gravity effects",
+    author: [
+      { family: "Abdo", given: "Aous A." },
+      { literal: "Fermi LAT and Fermi GBM collaborations, and others" },
+    ],
+    "container-title": "Nature",
+    volume: "462",
+    page: "331-334",
+    issued: { "date-parts": [[2009]] },
+    DOI: "10.1038/nature08574",
+    note: "GRB 090510 time-of-flight bound: linear-in-energy photon dispersion is excluded up to roughly 1.2 times the Planck energy — the sharpest experimental constraint any surviving archimedean q-dispersion must satisfy.",
+  }),
+
+  // ── Amelino-Camelia 2013: quantum-spacetime phenomenology ──────
+  ref({
+    id: "amelinocamelia2013",
+    type: "article-journal",
+    title: "Quantum-Spacetime Phenomenology",
+    author: [{ family: "Amelino-Camelia", given: "Giovanni" }],
+    "container-title": "Living Reviews in Relativity",
+    volume: "16",
+    page: "5",
+    issued: { "date-parts": [[2013]] },
+    DOI: "10.12942/lrr-2013-5",
+    note: "arXiv:0806.0339. Authoritative survey of Planck-scale phenomenology: Lorentz-invariance-violation vs DSR-deformation scenarios, in-vacuo dispersion, and the observational bounds relevant to the QOU dispersive predictions.",
+  }),
+
   // ── Cook 1971: NP-completeness ─────────────────────────────────
   ref({
     id: "cook1971",
