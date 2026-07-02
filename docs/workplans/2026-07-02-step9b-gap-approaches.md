@@ -157,3 +157,25 @@ and formalize-first:
    against the U-shaped residual; Lean the true convergence bound.
    This is the one move that attacks the actual Δ_λ frontier with a
    *structural* (projector, not fitted) candidate.
+
+## Executed 2026-07-02
+
+- **Item 2 (derived-α_k probe): DONE — scope-limited negative.**
+  `computations/probes/binding_depth_stratified_derived_alpha_probe.py`
+  (+ witness). Same LR Φ_k pipeline, ⁴He chi now 77/77. Production
+  baseline reproduced exactly (ratios 0.2728 / 0.3310 / 0.3437 / 0.4970,
+  max/min 1.822). Derived assignment (α_1=0, α_3=h·z²+z) degrades every
+  atom: ratios 0.1402 / 0.2535 / 0.2676 / 0.4608, max/min 3.286 — the
+  depth-1 stratum that α_1=0 removes carries ~half of the deuteron's
+  predicted binding. Scope (a): constrains the
+  derived-α_k-in-additive-tower combination only; does not exclude the
+  derived α_k as an ingredient of a multiplicative / A-scaled assembly.
+  The documented contradiction (tower overrides derived values) is real
+  but is not the undershoot's cause — further support for the
+  "no additive assignment closes" structural diagnosis.
+- **Item 1 (doc currency): DONE.** Cheat-sheet §0 9b row refreshed —
+  `10A−5` marked resolved (refuted-as-global / derived-as-bookkeeping),
+  probe result recorded, owner-gap column now points at the per-λ
+  weight, κ, IMME checks, and bean `ovud`.
+- Items 3 (IMME checks) and 4 (per-λ FR-projector weight) remain queued
+  pending owner direction.
