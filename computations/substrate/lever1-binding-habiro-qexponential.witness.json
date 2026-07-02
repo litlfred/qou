@@ -43,5 +43,13 @@
     "L1_L2_reduce_to_1_and_half": true,
     "higher_corrections_vanish_at_q1": true
   },
-  "verdict": "q-GAUSSIAN SKELETON + CYCLOTOMIC HABIRO DRESSING. The binding q-EGF \u015c(z)=\u03a3 S(m)z^m/[m]_q! has log \u015c = L_1 z + L_2 z\u00b2 + \u03a3_{m\u22653} L_m z^m with L_1,L_2 \u2192 1,1/2 at q=1 (the classical exp(x+x\u00b2/2) skeleton) and the higher L_{\u22653} ALL carrying a (q-1) factor (vanish at q=1) \u2014 a pure fibre/q-deformation correction in the Habiro ring. So the explicit binding-side object is a q-Gaussian dressed by a higher Habiro correction (the log-coefficient tower L_{\u22653}), constructed here in closed symbolic form. This is the binding analog of the gated Q_\u03b2 element F(q); it is NOT that element (the Q_\u03b2 F is gated on the SW-residue keystone, fitting \u03a6\u2082 forbidden), but it exhibits the SAME Habiro-ring habitat from exact, non-floor-limited data. (a)-scoped."
+  "verdict": "q-GAUSSIAN SKELETON + CYCLOTOMIC HABIRO DRESSING. The binding q-EGF \u015c(z)=\u03a3 S(m)z^m/[m]_q! has log \u015c = L_1 z + L_2 z\u00b2 + \u03a3_{m\u22653} L_m z^m with L_1,L_2 \u2192 1,1/2 at q=1 (the classical exp(x+x\u00b2/2) skeleton) and the higher L_{\u22653} ALL carrying a (q-1) factor (vanish at q=1) \u2014 a pure fibre/q-deformation correction in the Habiro ring. So the explicit binding-side object is a q-Gaussian dressed by a higher Habiro correction (the log-coefficient tower L_{\u22653}), constructed here in closed symbolic form. This is the binding analog of the gated Q_\u03b2 element F(q); it is NOT that element (the Q_\u03b2 F is gated on the SW-residue keystone, fitting \u03a6\u2082 forbidden), but it exhibits the SAME Habiro-ring habitat from exact, non-floor-limited data. (a)-scoped.",
+  "scriptHash": "b43478c979b5",
+  "scriptCommitSha": "e98f1c4d93dc84abe7967a14a22e8b73bca3c31a",
+  "commitSha": "e98f1c4d93dc84abe7967a14a22e8b73bca3c31a",
+  "engine": "sympy",
+  "computedAt": "2026-07-02T12:04:59.283969+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "lever1_binding_habiro_qexponential.py"
 }
