@@ -164,8 +164,9 @@ out = {
              "facts (positive); 'not a finite cyclotomic object' is a bounded-MMAX observation, not a "
              "proved (b)-exclusion. Nothing wired; no fit; binding side (exact data).",
 }
-witness_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                            "lever1-binding-correction-cyclotomic-structure.witness.json")
-with open(witness_path, "w") as f:
-    json.dump(out, f, indent=2)
+from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+witness_path = WitnessBuilder.wrap_legacy(
+    "lever1-binding-correction-cyclotomic-structure", out,
+    script_path=__file__, engine="sympy",
+).save()
 print("witness ->", os.path.relpath(witness_path, os.getcwd()), flush=True)

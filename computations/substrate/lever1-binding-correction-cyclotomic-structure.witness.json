@@ -1,10 +1,29 @@
 {
-  "$schema": "https://litlfred.github.io/qou/witness-schema/v1.json",
-  "description": "Lever-1 binding correction tower D(m): exact cyclotomic (Habiro) factorization \u2014 \u03a6_d root-of-unity vanishing rule + non-cyclotomic core growth.",
-  "bean": "z2bn",
-  "computation": {
-    "script": "computations/substrate/lever1_binding_correction_cyclotomic_structure.py"
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-02T12:18:13.344356+00:00",
+  "commitSha": "03675bd4a98d04219715fbdc1a0d56fbd9f88100",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "lever1-binding-correction-cyclotomic-structure",
+  "scriptFile": "lever1_binding_correction_cyclotomic_structure.py",
+  "scriptHash": "eef210a00155",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Lever-1 binding correction tower D(m): exact cyclotomic (Habiro) factorization — Φ_d root-of-unity vanishing rule + non-cyclotomic core growth.",
+  "$schema": "https://litlfred.github.io/qou/witness-schema/v1.json",
+  "bean": "z2bn",
   "params": {
     "MMAX": 11,
     "DMAX": 60
@@ -127,6 +146,6 @@
   },
   "noncyclotomic_core_first_m": 6,
   "noncyclotomic_core_grows": true,
-  "verdict": "GENUINE CYCLOTOMIC-COMPLETION (Habiro) object: D(m) carries a universal (q\u22121)\u00b2 \u00d7 \u03a6_d cyclotomic tower (root-of-unity vanishing rule below) PLUS a non-cyclotomic core R_m whose degree GROWS with m (first nontrivial at m=6, deg 8 \u2192 46 at m=11). The binding correction is therefore not a finite cyclotomic object; its essential core is the genuine Habiro-ring content \u2014 consistent with Stages 3-6 (no finite low-order operator). The \u03a6_d tower is the derived, parameter-free constraint; the growing core is what any candidate Habiro element must reproduce.",
-  "scope": "(a)/(b) per AGENTS.md: the \u03a6_d vanishing rule + (q\u22121)\u00b2 prefactor are derived structural facts (positive); 'not a finite cyclotomic object' is a bounded-MMAX observation, not a proved (b)-exclusion. Nothing wired; no fit; binding side (exact data)."
+  "verdict": "GENUINE CYCLOTOMIC-COMPLETION (Habiro) object: D(m) carries a universal (q−1)² × Φ_d cyclotomic tower (root-of-unity vanishing rule below) PLUS a non-cyclotomic core R_m whose degree GROWS with m (first nontrivial at m=6, deg 8 → 46 at m=11). The binding correction is therefore not a finite cyclotomic object; its essential core is the genuine Habiro-ring content — consistent with Stages 3-6 (no finite low-order operator). The Φ_d tower is the derived, parameter-free constraint; the growing core is what any candidate Habiro element must reproduce.",
+  "scope": "(a)/(b) per AGENTS.md: the Φ_d vanishing rule + (q−1)² prefactor are derived structural facts (positive); 'not a finite cyclotomic object' is a bounded-MMAX observation, not a proved (b)-exclusion. Nothing wired; no fit; binding side (exact data)."
 }

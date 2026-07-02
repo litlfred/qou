@@ -221,8 +221,9 @@ out = {
              "q-difference class is NOT excluded (no proved invariant forbids a higher-order/cyclotomic "
              "element). Constrains the kernel order/shape; nothing wired; no fit.",
 }
-witness_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                            "lever1-binding-habiro-single-element-test.witness.json")
-with open(witness_path, "w") as f:
-    json.dump(out, f, indent=2)
+from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+witness_path = WitnessBuilder.wrap_legacy(
+    "lever1-binding-habiro-single-element-test", out,
+    script_path=__file__, engine="sympy",
+).save()
 print("witness ->", os.path.relpath(witness_path, os.getcwd()), flush=True)

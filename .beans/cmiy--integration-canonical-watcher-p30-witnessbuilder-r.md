@@ -112,3 +112,16 @@ scriptCommitSha/computedAt/durationMs as ephemeral, so a witness missing ONLY
 those never gets them added in place ("substantively identical" → preserved).
 Fix: delete the stale witness first, then run (save writes fresh).
 PROV_MISSING → 258.
+## 2026-07-02 — batch 9b (4 scripts, wrap_legacy) — cyclotomic chain cluster
+(Numbered 9b: a sibling batch 9 landed on main concurrently — no script overlap.)
+lever1_binding_correction_cyclotomic_structure plus its two witness-readers
+lever1_binding_core_characterization / lever1_binding_core_root_distribution
+(regenerated in dependency order), and standalone
+lever1_binding_habiro_single_element_test. All assertion-free → wrap_legacy
+safe. Each: exit 0, PROV_OK, original keys kept; `computation` normalized
+{script:…} → name-string per the batch-2 precedent (path preserved in
+scriptFile). Copilot review fix: chain-readers now record the upstream via
+builder.add_upstream → data.upstream_witness_hashes; plus sibling-first path
+resolution in witness_dependency_drift.py (substrate upstreams were false
+upstream_missing). PROV_MISSING 258→254 post-rebase. Remaining substrate tail
+~9 (qaskey, qholonomic ×2, z2bn ×3, + non-substrate).
