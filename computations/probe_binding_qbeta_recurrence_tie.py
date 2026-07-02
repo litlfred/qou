@@ -38,16 +38,15 @@ Audit-only; no production wiring. E₀ = m_e/(q₀(q₀−1)) (CAL-1 + CAL-2).
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402
-import json
 import sys
-from datetime import datetime, timezone
 from pathlib import Path
 
 import mpmath as mp
 
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from codata_constants import M_E_MEV as _ME  # noqa: E402
 from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 # Neutron chains: (Z, [N ...]); A = Z+N kept ≤ 6 (transfer path, ~0.2 s each)
 CHAINS = [(1, [1, 2, 3, 4]), (2, [1, 2, 3, 4])]
@@ -58,8 +57,14 @@ MU_P_RESIDUAL_PPB = 242.0
 M_P_MEV_CODATA = 938.27208816
 
 
-def ladder_values(Z: int, N: int, q0, qi):
-    """(D(q0), D(qi), L(q0), L(qi)) for one (Z, N)."""
+def ladder_values(Z: int, N: int, qi):
+    """(D(q0), D(qi), L(q0), L(qi)) for one (Z, N).
+
+    The q₀ leg deliberately uses `tr_m_atom_zn`'s DEFAULT q — the canonical
+    substrate q₀ at full 50-digit precision (Q_50_DIGIT_STR internally);
+    passing an explicit q would re-lift the word instead. Only the q₀⁻¹
+    leg needs the explicit `q=` argument.
+    """
     ta0, tf0, _, _ = tr_m_atom_zn(Z, N, dps=50)
     tai, tfi, _, _ = tr_m_atom_zn(Z, N, q=qi, dps=50)
     ta0, tf0, tai, tfi = (mp.mpf(str(x)) for x in (ta0, tf0, tai, tfi))
@@ -76,7 +81,7 @@ def implied_c(seq):
 
 def main() -> int:
     mp.mp.dps = 50
-    q0 = mp.mpf(str(Q0))
+    q0 = mp.mpf(Q_50_DIGIT_STR)  # canonical 50-digit substrate q₀
     qi = mp.mpf(1) / q0
     E0 = mp.mpf(str(_ME)) / (q0 * (q0 - 1))
 
@@ -87,7 +92,7 @@ def main() -> int:
     for Z, Ns in CHAINS:
         rows = {"D0": [], "Di": [], "L0": [], "Li": []}
         for N in Ns:
-            d0, di, l0, li = ladder_values(Z, N, q0, qi)
+            d0, di, l0, li = ladder_values(Z, N, qi)
             rows["D0"].append(d0)
             rows["Di"].append(di)
             rows["L0"].append(l0)
@@ -165,32 +170,30 @@ def main() -> int:
     for k, v in verdict.items():
         print(f"    {k}: {v}")
 
-    witness = {
-        "description": (
-            "Holomorphic-tie probe (bean 1jrh): do the binding (bar-even) and "
-            "Q_beta (bar-odd) trace ladders over neutron chains satisfy ONE "
-            "3-term recurrence with a bar-even multiplier "
-            "(QOU.Knot.SelfDuality.recurrence_descent)?"),
-        "computation": "probe_binding_qbeta_recurrence_tie",
-        "audit_only": True,
-        "precision_dps": 50,
-        "context": {
-            "tests": "conj:binding-qbeta-complex-volume via the proved recurrence_descent",
-            "prior_probe": "binding_bar_even_odd_probe.py (parity projection refuted as binding fix)",
-            "tnjb_link": "if the tie holds, Re-face m_p correction is determined by the Q_beta face — the mu-p tension becomes computable",
-        },
-        "constants": {"q_0": str(q0), "q_inv": str(qi), "E0_MeV": str(E0)},
-        "chains": witness_chains,
-        "verdict_gaps": verdict,
-        "scope_note": (
-            "Scope-limited: tests the (Z,N) neutron-chain trace ladder in the "
-            "linear-defect and log forms only; a failure here does not exclude "
-            "the tie in a different ladder variable (e.g. the u = b*hbar_q^2 "
-            "c_k rungs)."),
-        "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-    }
-    out = Path(__file__).resolve().parent / "binding-qbeta-recurrence-tie-probe.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    wb = WitnessBuilder("binding-qbeta-recurrence-tie-probe", engine="mpmath")
+    wb.set_description(
+        "Holomorphic-tie probe (bean 1jrh): do the binding (bar-even) and "
+        "Q_beta (bar-odd) trace ladders over neutron chains satisfy ONE "
+        "3-term recurrence with a bar-even multiplier "
+        "(QOU.Knot.SelfDuality.recurrence_descent)?")
+    wb.set_audit_only("docs/audits/2026-07-02-binding-qbeta-recurrence-tie-probe.md")
+    wb.add_parameter("precision_dps", 50)
+    wb.add_parameter("q_0", str(q0))
+    wb.add_parameter("q_inv", str(qi))
+    wb.add_parameter("E0_MeV", str(E0))
+    wb.add_data("chains", witness_chains)
+    wb.add_data("verdict_gaps", verdict)
+    wb.add_data("context", {
+        "tests": "conj:binding-qbeta-complex-volume via the proved recurrence_descent",
+        "prior_probe": "binding_bar_even_odd_probe.py (parity projection refuted as binding fix)",
+        "tnjb_link": "if the tie holds, Re-face m_p correction is determined by the Q_beta face — the mu-p tension becomes computable",
+    })
+    wb.add_caveat(
+        "Scope-limited: tests the (Z,N) neutron-chain trace ladder in the "
+        "linear-defect and log forms only; a failure here does not exclude "
+        "the tie in a different ladder variable (e.g. the u = b*hbar_q^2 "
+        "c_k rungs).")
+    out = wb.save()
     print(f"\n  Witness: {out}")
     return 0
 
