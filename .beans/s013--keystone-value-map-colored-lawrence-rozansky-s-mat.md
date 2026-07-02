@@ -63,3 +63,13 @@ against the 4 target d_q at q₀ (each class assigned its E₈ dual-pair exponen
   (2026-06-22 id), the value map is the **Hahn–Exton q-Bessel vacuum row**. Next:
   use the corpus q-Bessel infra (reeb-phase-qbessel) to compute the q-Bessel
   amplitude reproducing [1],[4],[5] on near-standard blocks + [4][3]/[2] on (3,1,1).
+
+## Sharpened step-(a) target recorded (2026-07-01)
+
+`docs/scope/2026-07-01-s013-qbessel-radial-part-target.md` records the falsifiable
+q-Bessel radial-part target for the DG session: the 2nd-kind measure at the four λ⊢5
+points must return {[1], [4], [5], [4][3]/[2]} (up to 1/D + the Z(5) normalisation).
+The **discriminating test** is the self-conjugate (3,1,1) = [4][3]/[2] — the sole
+non-single-q-integer block, and the ≥3-row block where the compact SU(2) gate failed.
+Missing ingredient (⇒ owner-gated DG, not numerics): the partition-λ → q-Bessel-lattice
+map, which is the open construction (inventing it = fabrication). Handoff to #2503.
