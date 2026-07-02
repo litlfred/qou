@@ -1081,26 +1081,6 @@
         }
       }
     ],
-    "proof-no-placeholder-stub": [
-      {
-        "field_hash": {
-          "lean": "3ae0d6c649b9"
-        },
-        "result": "fail",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/ArchimedeanUniverse/brings_euler_characteristic.lean:1 [placeholder-stub-file] # QOU... — placeholder stub",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
-          "version": "v1",
-          "script_hash": "bad2c01f7b40",
-          "script_commit_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd"
-        },
-        "reviewed_at": "2026-06-22T02:50:55.754Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
-      }
-    ],
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
@@ -1845,6 +1825,23 @@
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file is missing, preventing formal verification of the claims.",
         "severity": "critical"
+      }
+    ],
+    "proof-no-placeholder-stub": [
+      {
+        "field_hash": {
+          "lean": "296b8d7ccd0f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-proof-vacuity-audit",
+          "agent_date": "2026-07-02",
+          "agent_skill": "local/lean-proof-vacuity-audit"
+        },
+        "reviewed_at": "2026-07-02T17:07:15.000Z",
+        "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
+        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest — real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass."
       }
     ]
   },
