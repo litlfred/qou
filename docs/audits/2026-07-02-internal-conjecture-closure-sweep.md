@@ -26,7 +26,7 @@ below as they are verified.
   conditional class.
 - `b1bb7482` — C=bar (H₂ leptons) vs C≠bar (H₃ mesons) → 3-calibration
   origin, sorry-free.
-- `3b3093da` + `0b3716…` — OV Identity (B) via Artin–Wedderburn; C₂
+- `3b3093da` + `0b7e3716` — OV Identity (B) via Artin–Wedderburn; C₂
   centrality de-abstracted to an elementary combinatorial core.
 - `a9c2d917` — keystone prop: self-dual Higgs (4₁) has real complex
   volume.

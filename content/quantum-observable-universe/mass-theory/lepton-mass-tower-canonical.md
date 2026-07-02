@@ -319,9 +319,9 @@ end QOU.BraidKnot.LeptonMassTowerCanonical
 
 ## Cross-references
 
-- [`docs/audits/-m-mu-over-m-e-operator-rederivation.md`](../../../docs/audits/-m-mu-over-m-e-operator-rederivation.md) — Phase 3 finding (the audit this conjecture answers)
-- [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md) — the SUPERSEDED ρ_q purge that motivates the lepton re-derivation
-- [`docs/audits/-muon-knot-id-conflict.md`](../../../docs/audits/-muon-knot-id-conflict.md) — muon = $4_1$ canonical
+- [`docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md`](../../../docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md) — Phase 3 finding (the audit this conjecture answers)
+- [`docs/audits/2026-05-24-superseded-rho-q-purge.md`](../../../docs/audits/2026-05-24-superseded-rho-q-purge.md) — the SUPERSEDED ρ_q purge that motivates the lepton re-derivation
+- [`docs/audits/2026-05-24-muon-knot-id-conflict.md`](../../../docs/audits/2026-05-24-muon-knot-id-conflict.md) — muon = $4_1$ canonical **(SUPERSEDED 2026-06-30: muon = $T(2,5)$, $4_1$ = Higgs — see the resolution banner above and [`2026-06-30-muon-knot-id-phi-q-evidence.md`](../../../docs/audits/2026-06-30-muon-knot-id-phi-q-evidence.md))**
 - [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md) — atomic canonical form (parallel structure)
 - [`prop:per-braid-mass-tower`](per-braid-mass-tower.md) — operator-level mass formula
 - [`prop:categorical-mass-markov`](categorical-mass-markov.md) — $\|\cdot\|$ modulus projection
