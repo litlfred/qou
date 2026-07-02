@@ -55,6 +55,7 @@ theorem yekutieli_leading_coefficient (q : ℝ) (p : ℕ) (hp_odd : Odd p)
   -- Needs: Yekutieli non-abelian multiplicative integration on surfaces;
   -- the obstruction is the curvature-2-form class of the descent, and its
   -- genus-filtration leading coefficient is the top Chebyshev coefficient = 1.
+  -- Ref: [yekutieli2015] https://doi.org/10.1142/9537
   sorry
 
 /-- **Non-vanishing at `q ≠ 1`.**  Derived sorry-free from the main

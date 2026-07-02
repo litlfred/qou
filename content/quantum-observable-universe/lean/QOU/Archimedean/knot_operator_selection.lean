@@ -81,6 +81,7 @@ theorem knot_operator_selection [ctx : KnotOperatorSelectionContext] :
   -- Schur orthogonality with weight d_λ(q), QUO-1 non-degeneracy of
   -- the Frobenius pairing, and the on-shell min-action variational
   -- principle. Not yet formalised in QOU/Mathlib.
+  -- Ref: [wenzl1990] https://doi.org/10.1007/BF02097372
   sorry
 
 end QOU.Archimedean

@@ -50,6 +50,7 @@ theorem compound_beta_y_target_extraction
     ∃ y_target : Float,
       y_target = (chain.chain_Q_MeV.sum - non_magic_Q_sum) /
                  (chain.reference_E_0_MeV * chain.A_magic.toFloat) := by
+  -- Ref: [manuscript] prop:compound-beta-shell-calibration
   sorry
 
 /-- **Single-calibration framework invariant.**

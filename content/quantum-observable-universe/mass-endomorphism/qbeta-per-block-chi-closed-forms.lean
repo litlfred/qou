@@ -326,6 +326,7 @@ theorem delta_tau_M_surrogate_taylor_coeff_2 :
   --   sorry-free; a full second-derivative proof is bulky (n-th derivative
   --   of a rational function), so it is queued as a cited sorry per
   --   AGENTS.md §1 rather than hidden behind a `: True` conclusion.
+  -- Ref: [manuscript] qbeta-c3-multiblock-recursion-attack.witness.json (order-2)
   sorry
 
 /-! The order-2..7 Taylor coefficients (`5/6`, `-41/9`, `149/18`,

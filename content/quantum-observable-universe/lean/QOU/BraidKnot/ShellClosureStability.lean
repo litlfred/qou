@@ -94,6 +94,7 @@ instance shellClosureMonotone_refl
     (D : DressedParticle) [HasFrobeniusStability D]
     (q : R_q) (h : isOneStepDressing D D) :
     ShellClosureMonotone D D q h :=
+  -- Ref: [manuscript] braids-and-knots/shell-closure-stability
   sorry
 
 /-- **Shell-closure stability, claim (1) — monotone non-decrease.**
