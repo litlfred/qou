@@ -2,29 +2,27 @@
 """
 Meson VolDensity: the meson-sector analog of vol_density_borromean.
 
-For baryons:  m(B)     = m_e × VolDensity(𝓑₃, q₀)
-              VolDensity = Vol(𝓑₃)/ℏ_q² × linking_weight(q)
+For baryons:  m_p = 2·(m_μ·F_Bor − 6·m_e) — the canonical muon-anchored
+              Hecke energy (canonical_mass facade; the former
+              Vol(𝓑₃)/ℏ_q²·λ_A path is the excised 966-MeV fit)
 
 For mesons:   m(meson) = m_π × Geom_meson(braid, q₀)
               Geom_meson = NF-weighted Frobenius evaluation in H_3(q)
 
-The key structural difference: baryons use the Vol/ℏ_q² hyperbolic-
-volume formula (works because 𝓑₃ is hyperbolic). Mesons are built
-from torus knots (Vol=0), so the mass formula uses the H_3 Frobenius
-pairing directly, with m_π (CAL-3) as the dimensional anchor instead
-of m_e alone.
+The key structural difference: baryons are anchored through the muon
+(hyperbolic 4₁ volume in the anchor, dressed by the dimensionless
+F_Bor). Mesons are built from torus knots (Vol=0), so the mass formula
+uses the H_3 Frobenius pairing directly, with m_π (CAL-3) as the
+dimensional anchor instead of m_e alone.
 
 GENERIC PATTERN (two instances):
-  Baryon sector: m = m_e × (knot_volume / ℏ_q²) × linking_weight
+  Baryon sector: m_p = 2·(m_μ·F_Bor − 6·m_e)  (canonical_mass facade)
   Meson sector:  m = m_π × (NF_ratio)
-
-Both are single-Geom-call mass formulas. The baryon Geom involves
-a hyperbolic volume; the meson Geom involves H_3 NF ratios.
 
 This script derives:
   - Absolute m_π (as CAL-3 input, not predicted)
   - m_K from m_π × Geom_meson(K_braid / π_braid)
-  - m_p/m_π ratio from VolDensity(𝓑₃) / Geom_meson
+  - m_p/m_π ratio from the canonical baryon reference / Geom_meson
   - Q_β from CAL-1 + CAL-2 (cross-check)
 """
 
@@ -32,7 +30,7 @@ import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules mo
 import json, time
 from q_parameter import Q_50_DIGIT_STR
 from pathlib import Path
-from mpmath import mp, mpf, fabs, catalan
+from mpmath import mp, mpf, fabs
 
 mp.dps = 50
 HERE = Path(__file__).resolve().parent
@@ -60,14 +58,17 @@ M_P  = M_P_MEV_VALIDATION
 M_N  = M_N_MEV_VALIDATION
 
 # ══════════════════════════════════════════════════════════════════
-#  BARYON GEOM (existing, for reference)
+#  BARYON REFERENCE — canonical muon-anchored Hecke energy
 # ══════════════════════════════════════════════════════════════════
+# λ_A excision (owner ruling 2026-06-24): the former inline baryon
+# reference linking_weight_A = 5/2 + 3h²/4 on Vol(𝓑₃)/ℏ_q² is the
+# fitted 966-MeV path. The canonical absolute nucleon mass is the
+# muon-anchored Hecke energy m_p = 2·(m_μ·F_Bor − 6·m_e), routed
+# through the canonical_mass facade.
+from canonical_mass import proton_mass_mev  # noqa: E402
 
-VOL_B3 = 8 * catalan
-linking_weight_A = mpf(5)/2 + mpf(3)*h_q**2/4
-
-geom_baryon = VOL_B3 / hbar_q**2 * linking_weight_A
-m_p_pred = m_e * geom_baryon
+m_p_pred = mpf(str(proton_mass_mev()))
+geom_baryon = m_p_pred / m_e  # dimensionless factor m_p/m_e (was Vol/ℏ_q²·λ_A)
 err_mp = float(fabs(m_p_pred - M_P) / M_P * 1e6)
 
 # ══════════════════════════════════════════════════════════════════
@@ -152,11 +153,9 @@ print("=" * 70)
 print("MESON VolDensity: mass predictions from (m_e, q₀, m_π)")
 print("=" * 70)
 print()
-print("─── BARYON (reference) ───")
-print(f"  VolDensity(𝓑₃) = Vol(𝓑₃)/ℏ_q² × linking_weight")
-print(f"                 = {float(VOL_B3):.4f}/{float(hbar_q**2):.6f} × {float(linking_weight_A):.6f}")
-print(f"                 = {float(geom_baryon):.4f}")
-print(f"  m_p = m_e × {float(geom_baryon):.4f} = {float(m_p_pred):.3f} MeV  (err {err_mp:.0f} ppm)")
+print("─── BARYON (reference — canonical muon-anchored facade) ───")
+print(f"  m_p = 2·(m_μ·F_Bor − 6·m_e)   [canonical_mass.proton_mass_mev()]")
+print(f"  m_p = m_e × {float(geom_baryon):.4f} = {float(m_p_pred):.3f} MeV  (err {err_mp:.3g} ppm)")
 print()
 print("─── MESON (this work) ───")
 print(f"  m_π = {float(M_PI):.5f} MeV  (CAL-3 input)")
@@ -185,13 +184,14 @@ witness = {
     "computation": "meson-vol-density",
     "scriptFile": "meson_vol_density.py",
     "description": (
-        "Meson-sector VolDensity analog. Baryons use m=m_e×Vol/ℏ_q²×linking_weight; "
+        "Meson-sector mass ratios. Baryon reference routes through the canonical "
+        "muon-anchored facade (canonical_mass.proton_mass_mev; λ_A excised 2026-06-24); "
         "mesons use m=m_π×Geom_meson where m_π is CAL-3. Tests three m_K candidates. "
         "Also cross-checks Q_β as derived from CAL-1+CAL-2."
     ),
     "parameters": {"q0": str(q0), "m_e": str(m_e), "m_pi": str(M_PI)},
     "data": {
-        "baryon_geom": {"vol_density": float(geom_baryon), "m_p_pred": float(m_p_pred), "err_ppm": err_mp},
+        "baryon_geom": {"route": "canonical_mass.proton_mass_mev", "m_p_over_m_e": float(geom_baryon), "m_p_pred": float(m_p_pred), "err_ppm": err_mp},
         "meson_geom_candidates": {
             "A_nf_ratio": {"geom": float(geom_meson_K), "m_K_pred": float(m_K_pred_nf), "err_ppm": err_mK_nf},
             "B_two_q_sq": {"geom": float(geom_meson_K_twoq), "m_K_pred": float(m_K_pred_twoq), "err_ppm": err_mK_twoq},
@@ -201,7 +201,7 @@ witness = {
         "proton_pion_ratio": {"pdg": mp_over_mpi, "geom": geom_ratio},
     },
     "assertions": [
-        {"label": "m_p within 30,000 ppm (known 2.89% gap)", "passed": err_mp < 30000},
+        {"label": "m_p (canonical facade) within 1 ppm", "passed": err_mp < 1},
         {"label": "Q_β within 2000 ppm", "passed": err_Qbeta < 2000},
     ],
     "allPassed": True,

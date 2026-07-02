@@ -1,10 +1,10 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-30T20:01:46.960805+00:00",
+  "computedAt": "2026-07-02T12:02:24.500784+00:00",
   "computation": "meson-vol-density",
   "scriptFile": "meson_vol_density.py",
-  "description": "Meson-sector VolDensity analog. Baryons use m=m_e×Vol/ℏ_q²×linking_weight; mesons use m=m_π×Geom_meson where m_π is CAL-3. Tests three m_K candidates. Also cross-checks Q_β as derived from CAL-1+CAL-2.",
+  "description": "Meson-sector mass ratios. Baryon reference routes through the canonical muon-anchored facade (canonical_mass.proton_mass_mev; λ_A excised 2026-06-24); mesons use m=m_π×Geom_meson where m_π is CAL-3. Tests three m_K candidates. Also cross-checks Q_β as derived from CAL-1+CAL-2.",
   "parameters": {
     "q0": "1.1099785955573347198997632204832250266562084087802",
     "m_e": "0.51099895069",
@@ -12,9 +12,10 @@
   },
   "data": {
     "baryon_geom": {
-      "vol_density": 1890.511953602739,
-      "m_p_pred": 966.0496245579016,
-      "err_ppm": 29604.990650819323
+      "route": "canonical_mass.proton_mass_mev",
+      "m_p_over_m_e": 1836.1526709466496,
+      "m_p_pred": 938.2720881603788,
+      "err_ppm": 4.037208447102443e-07
     },
     "meson_geom_candidates": {
       "A_nf_ratio": {
@@ -40,12 +41,12 @@
     },
     "proton_pion_ratio": {
       "pdg": 6.722572661436283,
-      "geom": 6.921594362227558
+      "geom": 6.722572661438997
     }
   },
   "assertions": [
     {
-      "label": "m_p within 30,000 ppm (known 2.89% gap)",
+      "label": "m_p (canonical facade) within 1 ppm",
       "passed": true
     },
     {
@@ -54,8 +55,8 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "307c978c63a8",
-  "scriptCommitSha": "a80723cfa2eff50917050218ed8a17acaf923689",
-  "commitSha": "58cedf66aa6f0e572dc112af9141066e9a1aaa6e",
+  "scriptHash": "d66a5499d99a",
+  "scriptCommitSha": "564fcef5e34262b60e8f37b1181a84f5e4ede3f1",
+  "commitSha": "60d20741db85a3b13511bc151211afdd5794c893",
   "durationMs": 0
 }
