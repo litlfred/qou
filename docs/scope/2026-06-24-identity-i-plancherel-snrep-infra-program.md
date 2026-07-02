@@ -60,6 +60,28 @@
 > - **`dimSYT = dimHLF` n≤12 "closure" — corrected, NOT done:** the swarm suggested transporting the `decide`-verified `n≤12` `dimHLF` Plancherel instances onto `dimSYT` via `sum_image_toList`. This is **not** a `decide`-closure — `dimSYT` is a *noncomputable* `Nat.card`, so `dimSYT = dimHLF(toList p)` is exactly the hook-length formula (a real theorem), not a bounded computation. Stated as an open target in `RSKBurnsideTarget`'s docstring; deferred.
 > - **`RSKBridge.lean` vacuity (CONFIRMED defect, DEFERRED — gated):** `CohortRSKWitness.matches_partition_count : syt_counts.length ≥ 0` is provably vacuous, and `RSK_substrate_axiom`'s `∃ dimFn, ∑ dimFn² = n!` is trivially satisfiable (weaker than the RSK identity). Fixing the field cascades to **7 consumer instances in `WenzlBridgeConcrete.lean`**, which imports `QOU.GaugeFieldFluidDynamics` (not buildable in this sandbox), and the natural replacement `= Fintype.card (Nat.Partition n)` **does not reduce by `decide`**. So a safe fix needs an environment where `WenzlBridgeConcrete` builds — recorded as a follow-up, not blind-edited here.
 
+> **Update (2026-07-02) — the ABSTRACT (unlabelled) form of (i)+(ii) is PROVED sorry-free on
+> `main` ([#3193](https://github.com/litlfred/qou/pull/3193) +
+> [#3220](https://github.com/litlfred/qou/pull/3220), merged).** Contrary to the earlier "axiom
+> (ii) needs representation theory, un-verifiable in this sandbox" bound, the *trace-identity
+> half* of (ii) — and the sum-of-squares half of (i) — went through **in this sandbox** via
+> Mathlib's semisimple-ring cone (which IS in the restored olean cache, unlike
+> `RepresentationTheory.*`): `IdentityBWedderburn.identityB_via_wedderburn_unconditional` proves
+> for `ℂ[Sₙ]` the existence of Wedderburn block data `(N, d, ω)` with `∑ dᵢ² = n!` **and**
+> `∑ dᵢ²·ωᵢ = n!·binom(n,2)` (Artin–Wedderburn `exists_algEquiv_pi_matrix_of_isAlgClosed` +
+> `Matrix.center_eq_range` Schur + a Pi-trace decomposition, evaluated on
+> `trace(mulLeft C₂) = n!·binom(n,2)`), with the one classical input — **Jucys centrality
+> `C₂ = ∑ₖ Xₖ² ∈ Z(ℂ[Sₙ])` — machine-checked** in `IdentityBCentrality` (the coefficient of `C₂`
+> is a class function: `binom(n,2)` at `1`, exactly `1` at each 3-cycle by the
+> `k = max(supp σ)` unique-triple count, `0` elsewhere; plus general `MonoidAlgebra`
+> class-function ⇒ center helpers). `#print axioms` = `[propext, Classical.choice, Quot.sound]`
+> end-to-end. **Program impact:** the residual content of `PlancherelSnData`'s two axioms is now
+> precisely the **partition labelling** of the abstract blocks (blocks ↔ `λ ⊢ n`, `d = #SYT`,
+> `ω = Σ_c c²`) — i.e. P1 (Specht completeness) + P3's eigenvalue labelling
+> (`seminormalVector_data_exists` / `exists_indep_seminormal_family` in
+> `QOU.BraidKnot.JucysMurphy`) — **not** the trace identity or the block/center machinery, which
+> are done. P4's arithmetic core was already proved; its trace side is subsumed.
+
 ## Goal
 
 Fully close **Identity I** `M(n) = (1/n!)·Σ_{λ⊢n} dim(λ)²·Σ_{c∈λ} h_c² = n(3n−1)/2` in Lean,
