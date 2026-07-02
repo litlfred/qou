@@ -36,6 +36,20 @@ dimensions, and the two standard sums); the theorem **derives** Identity I from 
 assumes its own conclusion — non-degenerate.  Both axioms are textbook-true (regular-rep
 decomposition; Okounkov–Vershik), merely absent from the pinned Mathlib.  Base ring `ℤ`; nothing
 archimedean (no `q₀`, no 210 ppb); no fit.
+
+**Abstract (unlabelled) form of (i)+(ii): PROVED on main (2026-07-02).**
+`QOU.BraidKnot.IdentityBWedderburn.identityB_via_wedderburn_unconditional` proves, fully
+sorry-free (axioms `[propext, Classical.choice, Quot.sound]`), that for `ℂ[Sₙ]` there exist block
+data `(N, d, ω)` with `∑ dᵢ² = n!` **and** `∑ dᵢ²·ωᵢ = n!·binom(n,2)` — the Artin–Wedderburn
+block decomposition plus the regular-representation trace of `C₂ = ∑ₖ Xₖ²`, whose centrality
+(Jucys' theorem) is machine-checked in `QOU.BraidKnot.IdentityBCentrality.centralC2_mem_center`
+(coefficient of `C₂` is a class function: `binom(n,2)` at `1`, `1` at each 3-cycle, `0`
+elsewhere).  What this class still adds over that abstract statement is exactly the
+**partition labelling** of the blocks: that the Wedderburn blocks are indexed by `parts` (the
+partitions of `n`), with `d = dim` (the SYT dimension) and `ω = sumSqContents` (the
+Okounkov–Vershik content-square scalar).  That labelling — blocks ↔ partitions, `dim = #SYT`,
+JM-eigenvalue = contents — is the residual OV content, carried by the brick-5 cores in
+`QOU.BraidKnot.JucysMurphy` (`seminormalVector_data_exists`, `exists_indep_seminormal_family`).
 -/
 
 open Finset
@@ -48,7 +62,13 @@ Carries the partitions of `n` (weakly-decreasing `List ℕ`), their SYT dimensio
 the two standard representation-theoretic identities (i) `Σ dim² = n!` and (ii) the cleared
 content-square Plancherel mean.  These axiomatise exactly what is **not** in the pinned Mathlib;
 the per-partition (A) is proved separately and used in the theorems below, so this class is the
-*only* unproved input to a conditional Identity I (§3b-cond). -/
+*only* unproved input to a conditional Identity I (§3b-cond).
+
+The **unlabelled** form of (i)+(ii) is proved sorry-free on main
+(`IdentityBWedderburn.identityB_via_wedderburn_unconditional`: abstract Wedderburn block data
+with `∑ d² = n!` and `∑ d²·ω = n!·binom(n,2)`, Jucys centrality machine-checked in
+`IdentityBCentrality`); the residual content of these two fields is the **partition labelling**
+of the blocks (`parts`/`dim`/`sumSqContents` naming the abstract `(N, d, ω)`). -/
 class PlancherelSnData (n : ℕ) where
   /-- The partitions of `n`, as weakly-decreasing `List ℕ`. -/
   parts : Finset (List ℕ)
