@@ -132,7 +132,13 @@ def check_witness(witness_path: Path) -> tuple[list[dict], bool]:
         ups_name = entry.get("path")
         if not ups_name:
             continue
-        ups_path = HERE / ups_name
+        # load_and_hash_upstream records the bare filename; resolve it
+        # against the downstream witness's own directory first (upstreams
+        # are typically siblings, e.g. substrate/), then fall back to the
+        # computations/ root for the pre-existing flat-layout witnesses.
+        ups_path = witness_path.parent / ups_name
+        if not ups_path.exists():
+            ups_path = HERE / ups_name
         recorded_sha = entry.get("sha256")
         current_sha = _sha256_of(ups_path)
         if current_sha is None:
