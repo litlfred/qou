@@ -8,6 +8,24 @@ created_at: 2026-06-28T17:05:00Z
 updated_at: 2026-06-29T14:32:00Z
 ---
 
+## FINAL WIRING DONE (2026-07-02, PR #3219)
+
+The last sorry in the SYT hook-length cone is closed:
+`IdentityIHLFBridge.dimSYT_eq_dimHLF` (`#SYT(λ) = n!/∏h_c` on the genuine
+`Nat.card` count) proved by composing `SYTEnum.dimSYT_eq_numSYTenum`
+(counting bridge) with `SYTEnum.numSYTenum_eq_dimHLF` (GNW general HLF).
+Adds `rskBurnsideHolds_iff_dimHLF`: `RSKBurnsideHolds n` is now equivalent
+to a computable `dimHLF` sum. Verified lean-direct exit 0 (24-module dep
+cone, no errors, no sorry warnings). Stale "open/deferred" doc comments in
+`RSKBurnsideTarget`/`SYTEnumerationBridge`/`SYTHookFormula` refreshed.
+
+Remaining follow-up (separate bean-able item, not sy7b scope): discharge
+`RSKBurnsideHolds n` for `n ≤ 12` via the `Nat.Partition n ↔ partitionsOf n`
+enumeration bridge (completeness + nodup of `partsFuel`), feeding
+`dim_validated_le12` through `rskBurnsideHolds_iff_dimHLF`.
+
+Bean is CLOSEABLE once PR #3219 merges.
+
 ## Progress (2026-06-29)
 
 Merged to main — steps 1 + the 2-row half of step 2 complete, all sorry-free:
