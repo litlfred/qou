@@ -1,15 +1,8 @@
 #!/usr/bin/env python3
 """c3^even via EXACT-rational s-series of the net-route ladder (bean 1jrh).
 
-The Stage-B s-series probe (qbeta_ck_sseries_operator_match_probe.py) found
-the net-route (bar-even / binding-side) ladder has c_2 ~= -8.006 != -1, i.e.
-the Re/Im split of one complex ladder ("two c_2"). Its c_3+ were NOT trusted:
-mp.taylor (finite differences) blew up at odd orders (~1e4 noise). The
-Stage-B verdict prescribes the fix verbatim: "an exact-rational Taylor is
-needed for those."
-
-This probe IS that exact-rational Taylor, to the c_3 order only (s^6; the
-prior sympy timeout was at s^19):
+Computes the exact-rational Taylor series of the net-route (bar-even /
+binding-side) ladder through the c_3 rung (s^6):
 
   R(q)   = Qb_over_me(q) / [QA_over_me(q) * cos(alpha_eff(q))]
   Qb/me  = sgn * [Delta(net)(q)/(q-1)] / q      (regularised; finite at q=1)
@@ -19,10 +12,9 @@ prior sympy timeout was at s^19):
   ladder:  log R(s) = sum_{k>=2} log(1 + c_k u(s)^k),  s = q-1
 
 All series coefficients are EXACT sympy expressions (rationals + surds); the
-triangular solve for c_2 (gate: reproduce ~-8.006) and c_3^even is exact,
-then evaluated at 50 dps. The exact odd-order [s^odd] log R coefficients are
-also reported — the prior 1e4 "blowup" is shown to be mp.taylor noise or a
-genuine bar-odd remainder, decisively.
+triangular solve for c_2 (gate: reproduce the established rung ~-8.006) and
+c_3^even is exact, then evaluated at 50 dps. The exact odd-order [s^odd]
+log R coefficients (the bar-odd remainder) are also reported.
 
 Casoratian follow-up (bean 1jrh, docs/audits/2026-07-02-1jrh-aw-one-
 recurrence-formalize-first-prune.md): with c_3^even measured, report
@@ -77,7 +69,8 @@ def main() -> int:
 
     # numeric validation at q0 against the witness
     d_wit = json.loads((ROOT / "free-neutron-decay.witness.json").read_text())
-    q0 = mp.mpf(str(d_wit["parameters"]["q"])) if "parameters" in d_wit and "q" in d_wit.get("parameters", {}) else None
+    params = d_wit.get("parameters")
+    q0 = mp.mpf(str(params["q"])) if params and "q" in params else None
     dn_wit = mp.mpf(str(d_wit["transition"]["delta_net"]))
     dnet_f = sp.lambdify(q, dnet, "mpmath")
     if q0 is None:
@@ -203,6 +196,8 @@ def main() -> int:
     WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="sympy")
     import os
     witness["scriptFile"] = os.path.basename(__file__)
+    # stamp sets durationMs=0; record the real wall time (Copilot review)
+    witness["durationMs"] = int((time.monotonic() - t0) * 1000)
     out = HERE / "qbeta-c3even-exact-sseries.witness.json"
     with open(out, "w", encoding="utf-8") as f:
         json.dump(witness, f, indent=2, ensure_ascii=False, default=str)
