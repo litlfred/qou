@@ -89,7 +89,7 @@ def main() -> int:
 
     witness = {
         "description": "Gen-3 meson (T(2,7)) mass ratio via Hecke χ^(2,1)·Seifert², parallel to the proved kaon; honest comparison to all light gen-3 mesons",
-        "computation": "meson_gen3_eta_phi",
+        # "computation" is derived by wrap_legacy from the name argument (Copilot review)
         "audit_only": True,
         "precision_dps": 50,
         "context": {

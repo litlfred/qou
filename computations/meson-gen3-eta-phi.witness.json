@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-02T14:07:28.038277+00:00",
-  "commitSha": "a06da51ddc7bdab3536224caad1e4c67a2325997",
+  "computedAt": "2026-07-02T14:19:04.878224+00:00",
+  "commitSha": "a4010ee1282ee6ba19113bd652b1acb6078f9510",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "meson-gen3-eta-phi",
   "scriptFile": "meson_gen3_eta_phi.py",
-  "scriptHash": "f4e9d0f1b027",
-  "scriptCommitSha": "29251e1b2c63d1118e72e09ba1224c7eba9804c6",
+  "scriptHash": "6b4bf9dc7c7b",
+  "scriptCommitSha": "a4010ee1282ee6ba19113bd652b1acb6078f9510",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -75,5 +75,5 @@
     "meson": "φ",
     "residual": 0.0021669258076224187
   },
-  "timestamp": "2026-07-02T14:07:28+00:00"
+  "timestamp": "2026-07-02T14:19:04+00:00"
 }
