@@ -1,0 +1,212 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-02T15:06:29.716894+00:00",
+  "commitSha": "ae0e464220f6ad38147cc071ec38018384cb5a90",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "sigma-shell-characterization",
+  "scriptFile": "sigma_shell_characterization.py",
+  "scriptHash": "6c3c952cc7b3",
+  "scriptCommitSha": "f6ddd9350192668fe1fb6c2498f8d5b91bb70331",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "σ_shell characterization attempting 3 approaches to identify the shell partition: (1) (A-1, 1), (3) maximal-weight argmax, and enumeration. Target y_shell ~ 10⁻³ to 10⁻¹ for physical binding.",
+  "timestamp": "2026-07-02T15:06:29.538224+00:00",
+  "parameters": {
+    "q_0": "1.1099785955573347",
+    "mpmath_dps": 50
+  },
+  "sigma_shell_parameters": {
+    "c": 1,
+    "d": 0,
+    "eigenvalues": "(q, -q⁻¹) in the (A-1, 1) standard rep",
+    "comment": "σ_shell has the same Hecke parameters as any σ. The shell structure is encoded via POSITION (shell-boundary generator) and LP-dual WEIGHT (shell_shadow_price at the shell partition)."
+  },
+  "approach_1_shadow_prices": [
+    {
+      "A_magic": 2,
+      "hecke_level": 6,
+      "shell_partition": [
+        5,
+        1
+      ],
+      "classical_dim": 5,
+      "q_dim": "5.2204413246767284693322524372848149193839138197147",
+      "wedderburn_weight": "0.032488946179641444672845695994041466726623872109135",
+      "shadow_price_y": "0.0053056659067379151764613817713188606480112386623911",
+      "shadow_price_abs": "0.0053056659067379151764613817713188606480112386623911",
+      "q_factorial_hecke_level": "838.83938474649798072780616466933923493674182703199"
+    },
+    {
+      "A_magic": 8,
+      "hecke_level": 24,
+      "shell_partition": [
+        23,
+        1
+      ],
+      "classical_dim": 23,
+      "q_dim": "52.284647055138814491456880404906336199720733500212",
+      "wedderburn_weight": "1.5724210050898097087860973418034613643739880142115e-24",
+      "shadow_price_y": "6.7790928539682146069224945917517434894653429898186e-26",
+      "shadow_price_abs": "6.7790928539682146069224945917517434894653429898186e-26",
+      "q_factorial_hecke_level": "1738519333455673336895070158.9447559209074863659348"
+    },
+    {
+      "A_magic": 20,
+      "hecke_level": 60,
+      "shell_partition": [
+        59,
+        1
+      ],
+      "classical_dim": 59,
+      "q_dim": "2255.7349740641367071384626831621111185937578134148",
+      "wedderburn_weight": "4.7571608535572452527371507066004246072008095210645e-115",
+      "shadow_price_y": "8.0628910061488482555877500694216495504080055265839e-117",
+      "shadow_price_abs": "8.0628910061488482555877500694216495504080055265839e-117",
+      "q_factorial_hecke_level": "1.0696170320604655176372842841140639376716104513493e+121"
+    },
+    {
+      "A_magic": 28,
+      "hecke_level": 84,
+      "shell_partition": [
+        83,
+        1
+      ],
+      "classical_dim": 83,
+      "q_dim": "27595.642553032951321700773745870648215167758544842",
+      "wedderburn_weight": "4.9154937841956257423892773961264923324789717119808e-208",
+      "shadow_price_y": "5.9222810222206102635432323824019498055525343396433e-210",
+      "shadow_price_abs": "5.9222810222206102635432323824019498055525343396433e-210",
+      "q_factorial_hecke_level": "1.5492227665167894721865979362336338286010940552495e+216"
+    },
+    {
+      "A_magic": 50,
+      "hecke_level": 150,
+      "shell_partition": [
+        149,
+        1
+      ],
+      "classical_dim": 149,
+      "q_dim": "27014964.01741629542045182952730450147244806775883",
+      "wedderburn_weight": "2.4903872554001220891689926587586385247266913456748e-598",
+      "shadow_price_y": "1.6714008425500762709511689290178936222170535400574e-600",
+      "shadow_price_abs": "1.6714008425500762709511689290178936222170535400574e-600",
+      "q_factorial_hecke_level": "2.9305011872341972861655742341586638312321991686476e+612"
+    },
+    {
+      "A_magic": 82,
+      "hecke_level": 246,
+      "shell_partition": [
+        245,
+        1
+      ],
+      "classical_dim": 245,
+      "q_dim": "605071065398.96838381287114046352803363911608280853",
+      "wedderburn_weight": "2.1264270991223434505424316161184128497341734793146e-1518",
+      "shadow_price_y": "8.6792942821320140838408515089146964200112537499991e-1521",
+      "shadow_price_abs": "8.6792942821320140838408515089146964200112537499991e-1521",
+      "q_factorial_hecke_level": "1.7217190014844641076431901065496802348387508475858e+1541"
+    },
+    {
+      "A_magic": 126,
+      "hecke_level": 378,
+      "shell_partition": [
+        377,
+        1
+      ],
+      "classical_dim": 377,
+      "q_dim": "579874651287564574.38143662158075176229216072432877",
+      "wedderburn_weight": "2.1834372943271568385597393689070528616824134539134e-3465",
+      "shadow_price_y": "5.7916108602842356460470540289311682060180833401275e-3468",
+      "shadow_price_abs": "5.7916108602842356460470540289311682060180833401275e-3468",
+      "q_factorial_hecke_level": "1.5400241265435290904531059555402800876285223166503e+3500"
+    }
+  ],
+  "approach_3_maximal_weight": [
+    {
+      "A_magic": 2,
+      "hecke_level": 6,
+      "partition": "(3, 2, 1)",
+      "w_max": "0.35863564248469450053616958617580786447428515528085",
+      "y_abs": "0.021222604326103032525402841708498558832329286445617"
+    },
+    {
+      "A_magic": 8,
+      "hecke_level": 24,
+      "partition": "(7, 6, 4, 3, 2, 1, 1)",
+      "w_max": "3.7425896500124587817715801061576802037757574077333",
+      "y_abs": "0.000000000032968563569014140869872892604030296484795071689656"
+    }
+  ],
+  "enumeration_top_by_magnitude": {
+    "2": [
+      {
+        "partition": "(3, 2, 1)",
+        "y_abs": 0.021222604326103033,
+        "w_lam": 0.3586356424846945
+      },
+      {
+        "partition": "(4, 1, 1)",
+        "y_abs": 0.012377648878796874,
+        "w_lam": 0.1356977220798725
+      },
+      {
+        "partition": "(3, 1, 1, 1)",
+        "y_abs": 0.012377648878796874,
+        "w_lam": 0.1356977220798725
+      },
+      {
+        "partition": "(4, 2)",
+        "y_abs": 0.011191454717479324,
+        "w_lam": 0.11145220242002728
+      },
+      {
+        "partition": "(2, 2, 1, 1)",
+        "y_abs": 0.011191454717479324,
+        "w_lam": 0.11145220242002728
+      },
+      {
+        "partition": "(3, 3)",
+        "y_abs": 0.005886065790245499,
+        "w_lam": 0.03539094559717936
+      },
+      {
+        "partition": "(2, 2, 2)",
+        "y_abs": 0.005886065790245499,
+        "w_lam": 0.03539094559717936
+      },
+      {
+        "partition": "(5, 1)",
+        "y_abs": 0.005305665906737915,
+        "w_lam": 0.032488946179641445
+      },
+      {
+        "partition": "(2, 1, 1, 1, 1)",
+        "y_abs": 0.005305665906737915,
+        "w_lam": 0.032488946179641445
+      }
+    ],
+    "8": []
+  },
+  "magic_numbers": [
+    2,
+    8,
+    20,
+    28,
+    50,
+    82,
+    126
+  ]
+}

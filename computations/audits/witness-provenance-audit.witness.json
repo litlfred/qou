@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-02T14:10:09.101088+00:00",
-  "commitSha": "a06da51ddc7bdab3536224caad1e4c67a2325997",
+  "computedAt": "2026-07-02T15:08:40.809985+00:00",
+  "commitSha": "ae0e464220f6ad38147cc071ec38018384cb5a90",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 262,
+      "computed": 258,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 10,
+  "durationMs": 12,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
@@ -47,12 +47,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 1545,
-      "prov_ok": 1227,
+      "total_scanned": 1546,
+      "prov_ok": 1232,
       "prov_audit_exempt": 55,
-      "prov_missing": 262,
+      "prov_missing": 258,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.8297734627831715
+      "completeness_ratio": 0.8324708926261319
     },
     "by_verdict": {
       "PROV_OK": [
@@ -2217,6 +2217,10 @@
           "missing_fields": []
         },
         {
+          "witness": "knot-factor-skein-verification.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "knot-operator-census-group-actions.witness.json",
           "missing_fields": []
         },
@@ -2566,6 +2570,10 @@
         },
         {
           "witness": "meson-vol-density.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "metallic-q-symbolic-galois-proofs.witness.json",
           "missing_fields": []
         },
         {
@@ -4421,6 +4429,10 @@
           "missing_fields": []
         },
         {
+          "witness": "rt-habiro-borromean-cross-validation.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "rt-identity-chain-consolidation.witness.json",
           "missing_fields": []
         },
@@ -4465,11 +4477,19 @@
           "missing_fields": []
         },
         {
+          "witness": "sigma-shell-characterization.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "sigma-shell-from-beta-chain.witness.json",
           "missing_fields": []
         },
         {
           "witness": "sinh-bar-antisymmetric-partner.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "six-fifths-categorical-proof-attempt.witness.json",
           "missing_fields": []
         },
         {
@@ -5900,14 +5920,6 @@
           ]
         },
         {
-          "witness": "knot-factor-skein-verification.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "lepton-tower-probe-1-cinquefoil-muon.witness.json",
           "missing_fields": [
             "engine",
@@ -5992,14 +6004,6 @@
         },
         {
           "witness": "metallic-q-quark-bifurcation.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "metallic-q-symbolic-galois-proofs.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
@@ -6575,14 +6579,6 @@
           ]
         },
         {
-          "witness": "rt-habiro-borromean-cross-validation.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "rt-route-w-specific-correction-probe.witness.json",
           "missing_fields": [
             "engine",
@@ -6616,14 +6612,6 @@
         {
           "witness": "signed-crossing-feasibility.witness.json",
           "missing_fields": [
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "six-fifths-categorical-proof-attempt.witness.json",
-          "missing_fields": [
-            "engine",
             "scriptFile",
             "commitSha"
           ]

@@ -127,9 +127,12 @@ def main():
             "content/quantum-observable-universe/mass-theory/nuclear-knot-classification.md",
         ],
     }
-    out = os.path.join(os.path.dirname(script_path),
-                       "knot-factor-skein-verification.witness.json")
-    json.dump(witness, open(out, "w"), indent=2)
+    import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+    _sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
+    out = WitnessBuilder.wrap_legacy(
+        "knot-factor-skein-verification", witness, script_path=__file__, engine="sympy",
+    ).save()
     print(f"all_ok = {all_ok}")
     for c in checks:
         print(f"  [{c.get('equals_target')}] {c['check']}")

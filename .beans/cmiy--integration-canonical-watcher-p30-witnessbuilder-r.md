@@ -101,3 +101,14 @@ Post-substrate-vein: 4 no-assertion single-output probes via wrap_legacy —
 meson_gen3_eta_phi, binding_bar_even_odd_probe, rt_w_sqrt2_jet_order_validation,
 substrate/wlambda_identity_i_structure_probe. Each: exit 0, PROV_OK, keys kept.
 (Confirms the clean vein extends beyond the lever1/zeta4/frakV substrate family.)
+
+## 2026-07-02 — batch 9 (5 scripts, wrap_legacy) + gotcha #5
+5 root-computations probes: knot_factor_skein_verification,
+metallic_q_symbolic_galois_proofs, sigma_shell_characterization,
+six_fifths_categorical_proof_attempt, rt_habiro_borromean_cross_validation.
+Each: exit 0, PROV_OK, keys kept. Two needed the substrate/ path insert
+(gotcha #4). NEW GOTCHA #5: save()'s drift-protection treats commitSha/
+scriptCommitSha/computedAt/durationMs as ephemeral, so a witness missing ONLY
+those never gets them added in place ("substantively identical" → preserved).
+Fix: delete the stale witness first, then run (save writes fresh).
+PROV_MISSING → 258.

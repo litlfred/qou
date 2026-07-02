@@ -1,14 +1,30 @@
 {
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-02T15:08:36.655709+00:00",
+  "commitSha": "ae0e464220f6ad38147cc071ec38018384cb5a90",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "knot-factor-skein-verification",
+  "scriptFile": "knot_factor_skein_verification.py",
+  "scriptHash": "622cc7de0cdc",
+  "scriptCommitSha": "f6ddd9350192668fe1fb6c2498f8d5b91bb70331",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Bounded verification of Step 4 of conj:knot-factor-frobenius-pairing: the Skein product prod(1+sign(c)h) reproduces the canonical a_K column (1+h, 1-h^2, (1-h^2)^2) of nuclear-knot-classification; 1-h^2=4-[3]_q; and a_K is the h-content reduction, not the literal figure-8 Jones invariant.",
   "schema": "qou-witness/v1",
   "name": "knot-factor-skein-verification",
-  "description": "Bounded verification of Step 4 of conj:knot-factor-frobenius-pairing: the Skein product prod(1+sign(c)h) reproduces the canonical a_K column (1+h, 1-h^2, (1-h^2)^2) of nuclear-knot-classification; 1-h^2=4-[3]_q; and a_K is the h-content reduction, not the literal figure-8 Jones invariant.",
-  "computation": {
-    "engine": "python+sympy",
-    "script": "computations/knot_factor_skein_verification.py"
-  },
-  "scriptCommitSha": "",
-  "scriptHash": "7c04d6b35dfb",
-  "computedAt": "2026-06-07T05:55:15.475744+00:00",
   "result": {
     "all_ok": true,
     "checks": [
