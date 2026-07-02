@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-06-30T20:35:58Z
-updated_at: 2026-07-02T17:45:00Z
+updated_at: 2026-07-02T18:20:00Z
 ---
 
 
@@ -70,3 +70,15 @@ Constraint ledger (L1–L7) + three categorical routes assembled in
   γ — color-tube W-coupling (s5-so3 keystone-gated).
 Either α-outcome advances 1jrh: stable ⇒ W₃ test runs; unstable ⇒ α refuted
 scope-(a) and the defect coupling is proven non-trivial (β/γ survive).
+
+## 2026-07-02 — Route α DECIDED: trace-transparent (c₄-content ≡ 0 exactly)
+Λ_α = ι(ΔT)·e₃ evaluated via the merged #3228 infra at BOTH anchors (proton
+q_at, muon q_muon_at). P1: Markov property on the third strand holds —
+ζ_w word-independent to 1e-50 across 6 NF words × 5 q-points. P2: level-4
+content tr_M^(H₄)(Λ_α) − τ(e₃)·tr_M^(H₃)(ΔT) ≈ ±8e-53 at both anchors —
+EXACT ZERO by the Markov factorization tr_M(ι(x)e₃) = τ(e₃)tr_M(x).
+Scope-(a): the basic-construction lift alone contributes no c₄ rung; W₃ is
+NOT fed by α. Consequence: a nonzero c₄ requires non-trivial defect
+coupling ⇒ routes β/γ (keystone-gated) are the sole live c₄ suppliers.
+Zero parameters, no fit, prediction outcome.
+Audit: ../docs/audits/2026-07-02-1jrh-route-alpha-trace-transparency.md
