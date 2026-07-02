@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-06-30T20:35:58Z
-updated_at: 2026-07-02T17:10:00Z
+updated_at: 2026-07-02T17:45:00Z
 ---
 
 
@@ -57,3 +57,16 @@ directly as tr_M^{H₄}(Λ) − tr_M^{H₃}(shadow). NO Λ candidate enumerated 
 evaluated (scope no-fit rule). Sole remaining open item: the categorical
 σ₃-lift Λ specification (research, not infra).
 Audit: ../docs/audits/2026-07-02-1jrh-h4-stagec-markov-infra.md
+
+## 2026-07-02 — Λ derivation routes pinned (no evaluation; α is forced + ready)
+Constraint ledger (L1–L7) + three categorical routes assembled in
+../docs/scope/2026-07-02-1jrh-lambda-derivation-routes.md:
+  α — Markov basic-construction lift Λ_α = ι(ΔT)·e₃ (Jones projector on the
+      new strand): FULLY FORCED, zero free parameters, L5 by construction.
+      Next session: evaluate c₄(Λ_α) at proton+muon q₀ (one call each via the
+      merged #3228 infra) — anchor-stability is the decisive gate; then the
+      Casoratian W₃ sign test. A prediction test, not a search.
+  β — brane-tower q-difference kernel R(q,ξ) (keystone-gated).
+  γ — color-tube W-coupling (s5-so3 keystone-gated).
+Either α-outcome advances 1jrh: stable ⇒ W₃ test runs; unstable ⇒ α refuted
+scope-(a) and the defect coupling is proven non-trivial (β/γ survive).
