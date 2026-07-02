@@ -5999,7 +5999,8 @@ export const references: CSLData[] = [
     volume: "346",
     page: "63-116",
     issued: { "date-parts": [[1994]] },
-    DOI: "10.2307/2154944",
+    DOI: "10.1090/S0002-9947-1994-1264148-6",
+    URL: "https://doi.org/10.1090/S0002-9947-1994-1264148-6",
     note: "h_n(x|q) = i^{-n} H_n(ix|q^{-1}): same eigenfunctions after the 90-degree variable rotation composed with the bar involution; the odd-channel (non-compact) orthogonality is an indeterminate moment problem.",
   }),
 
