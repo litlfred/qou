@@ -11,8 +11,12 @@ comparison strengthens the paper, where it exposes referee-facing
 obligations, and what is genuinely different in QOU.
 
 This is a review/assessment document (critical-distance license
-applies). It changes no content blocks. Per docs/ convention, math
-is written in Unicode (greppable), not render-pipeline LaTeX.
+applies). It changes no content blocks. Math is written in Unicode
+for greppability against sibling audit docs (the working practice in
+recent `docs/audits/` files, e.g.
+`2026-06-28-calibration-canon-decay-width-ruling.md`); strict LaTeX
+conventions apply only to `content/**/*.md` that flows through the
+render pipeline.
 
 ---
 
@@ -30,8 +34,8 @@ is written in Unicode (greppable), not render-pipeline LaTeX.
   design constraints are causality, gauge invariance, and
   compatibility with the weak equivalence principle (Eötvös-type
   bounds are the binding constraint Bekenstein himself computes).
-- The modern cosmological embedding is **BSBM** (Sandvik–Barrow–
-  Magueijo, Phys. Rev. Lett. **88**, 031302 (2002),
+- The modern cosmological embedding is **BSBM**
+  (Sandvik–Barrow–Magueijo, Phys. Rev. Lett. **88**, 031302 (2002),
   DOI: [10.1103/PhysRevLett.88.031302](https://doi.org/10.1103/PhysRevLett.88.031302)):
   Bekenstein's ε-field coupled to cosmology, driving a
   slow logarithmic drift of α during matter domination.
