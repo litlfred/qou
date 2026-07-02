@@ -1,0 +1,10 @@
+---
+# 0e63
+title: 'Session: askey channel-rotation — categorical-R recurrences, Leonard pair, 1jrh probe, lit-tie'
+status: completed
+type: milestone
+priority: normal
+created_at: 2026-07-02T15:31:23Z
+updated_at: 2026-07-02T16:47:17Z
+---
+
