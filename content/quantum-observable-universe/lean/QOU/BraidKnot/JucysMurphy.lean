@@ -604,7 +604,6 @@ private lemma entry_lt_of_diag_row_lt {μ : YoungDiagram}
       subst hy2
       exact entry_lt_diag_succ T hy
     · -- step through z = (r, y2 − 1)
-      have hy2pos : 1 ≤ y2 := by omega
       have hzmem : (r, y2 - 1) ∈ μ :=
         μ.up_left_mem (Nat.le_succ r) (Nat.sub_le y2 1) hy
       have hstep : T.entry r (y2 - 1) < T.entry (r + 1) y2 := by
@@ -654,7 +653,7 @@ private lemma row_eq_offset_add_count {μ : YoungDiagram}
   classical
   set x : ℕ × ℕ := ((tableauCellEquiv μ T s : ℕ × ℕ)) with hxdef
   have hxmem : x ∈ μ := tableauCellEquiv_mem T s
-  set d : ℤ := cellContent x with hddef
+  set d : ℤ := cellContent x
   have hd : d = (x.2 : ℤ) - (x.1 : ℤ) := rfl
   -- the count is the size of the row range [(−d)⁺, x.1)
   have hcard : (Finset.univ.filter (fun s' : Fin (Specht.nOf μ) =>
@@ -799,7 +798,7 @@ theorem syt_content_tuple_injective (μ : YoungDiagram)
   ext i j
   by_cases hij : (i, j) ∈ μ
   · have hc : ((i, j) : ℕ × ℕ) ∈ μ.cells := (YoungDiagram.mem_cells _).mpr hij
-    set c : μ.cells := ⟨(i, j), hc⟩ with hcdef
+    set c : μ.cells := ⟨(i, j), hc⟩
     set s : Fin (Specht.nOf μ) := QOU.BraidKnot.SpechtStandardBasis.cellLabel T c with hsdef
     have h1 : (tableauCellEquiv μ T s : ℕ × ℕ) = ((i, j) : ℕ × ℕ) := by
       rw [hsdef, tableauCellEquiv_cellLabel]
