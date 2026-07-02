@@ -179,3 +179,44 @@ and formalize-first:
   weight, κ, IMME checks, and bean `ovud`.
 - Items 3 (IMME checks) and 4 (per-λ FR-projector weight) remain queued
   pending owner direction.
+
+## Executed 2026-07-02 (round 2 — owner approved legs 1+3+4)
+
+- **IMME Δ³=0 quartet check: PASSES.**
+  `computations/delta_lambda_imme_quartet.py` (+ witness). A=9 T=3/2
+  quartet ⁹Li/⁹Be/⁹B/⁹C, inner members IAS-corrected (14.3925 / 14.6550
+  MeV): same-T third difference Δ³ = −0.012 (cubic d = −0.002,
+  |d/b| = 0.001) vs ground-state Δ³ = −0.50 (pure T-contamination,
+  collapses 42× under IAS). First falsifiable test of the degree-2 IMME
+  truncation — it survives, matching Lean `imme_third_diff_zero`.
+  b(9) = −1.84, same-T c(9) = −0.071, consistent with the triplet trends.
+- **Per-λ FR-projector, H₃ proxy: scope-limited negative.**
+  `computations/probes/borromean_per_lambda_fr_probe.py` (+ witness).
+  Wedderburn re-lift of τ (1.96e-4 convention mismatch vs the Lean
+  closed form flagged), (2,1)-channel reweight by 4 structural 4₁
+  Fricke candidates × 2 placements: all 8 are monotone rescales of the
+  U-shaped residual (baseline spread 6.166 reproduced); none flatten it.
+  Sharpened spec: a per-nucleon scalar factor structurally cannot bend
+  the U — the FR weight must act per-partition at H_{3A} (fr_pullback
+  machinery over Borromean atom words), which is the remaining open test.
+- **κ location decomposition: FRAMEWORK-side (inverts the H1 pattern).**
+  `computations/probes/kappa_writhe_side_decomposition_probe.py`
+  (+ witness). Exact split b_total = b_AME − b_pred from the IMME
+  witnesses: b_pred (interface asymmetry z vs z−h) is A-constant ≈ +1.37
+  and carries ~78% of |b|; b_AME ≈ −0.40. So κ = −0.437 ≈ −0.343
+  (framework) − 0.094 (AME): unlike the bar-even leading term (H1
+  refutation), **κ is derivable from the canonical trace**. Near-match
+  flag (not asserted): log_q₀(z/(z−h))/4 = 1.2998 within 5% of b_pred/4.
+
+### Follow-up queue (next session / follow-up branch)
+
+1. Derive b_pred's A→∞ closed form from the tower's interface algebra
+   (the 1.2998 near-match is the natural first candidate to
+   prove-or-refute symbolically).
+2. H_{3A} per-partition FR test: run `fr_pullback_k3_test.py` machinery
+   over Borromean atom words (needs `compute_atom_chi_rust.py`
+   regeneration for the Borromean representation; A ≤ 4 cheap, A ≥ 5
+   hours).
+3. Lean the true convergence bound `|tr_M(β_Bor)| < 1 ⇒ pair traces < q₀`
+   (brane-tower plan §5 step 3).
+4. Resolve the 1.96e-4 y-lambda-vs-closed-form τ convention mismatch.
