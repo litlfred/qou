@@ -1,8 +1,9 @@
 ---
 # 1jrh
 title: 'Complex-volume holomorphic tie: test (binding,Q_beta) satisfy one Askey-Wilson 3-term recurrence (recurrence_invol_descent)'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-06-30T20:35:58Z
 updated_at: 2026-07-02T16:20:00Z
 ---
