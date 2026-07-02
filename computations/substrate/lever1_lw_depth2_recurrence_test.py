@@ -99,7 +99,7 @@ WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="s
 witness["scriptFile"] = os.path.basename(__file__)
 out = os.path.join(os.path.dirname(__file__), "lever1-lw-depth2-recurrence-test.witness.json")
 with open(out, "w", encoding="utf-8") as f:
-    json.dump(witness, f, indent=2)
+    json.dump(witness, f, indent=2, ensure_ascii=False)
 
 for c in range(1, 7): print(f"  lw({c}) = {results['lw'][c]}")
 print(f"\n  tau_seed = {results['tau_seed_n234']}  (closed form {results['tau_closed_form']})")

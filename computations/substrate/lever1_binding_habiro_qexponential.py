@@ -139,7 +139,7 @@ WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="s
 witness["scriptFile"] = os.path.basename(__file__)
 out = os.path.join(os.path.dirname(__file__), "lever1-binding-habiro-qexponential.witness.json")
 with open(out, "w", encoding="utf-8") as f:
-    json.dump(witness, f, indent=2)
+    json.dump(witness, f, indent=2, ensure_ascii=False)
 
 print(f"\n  classical limit exp(x+x²/2)? {classical_ok}   log truncates at z²? {truncates_at_2}")
 print(f"  higher L_(≥3) all vanish at q=1 (carry q-1)? {higher_all_vanish_at_q1}")

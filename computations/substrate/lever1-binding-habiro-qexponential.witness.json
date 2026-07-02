@@ -1,7 +1,7 @@
 {
   "computation": "lever1_binding_habiro_qexponential",
-  "description": "Stage 5: constructs the explicit q-exponential (Habiro) generating-function form of the binding period S(m)=\u03a3_{\u03bb\u22a2m} dim_q(\u03bb). Tests whether log of the q-EGF \u03a3 S(m)z^m/[m]_q! truncates at degree 2 (pure q-Gaussian = clean q-analog of the classical involution EGF exp(x+x\u00b2/2)) or carries a higher cyclotomic/(q-1) Habiro correction. Exact data, no fit.",
-  "discipline": "no fit; sympy symbolic exact in q; classical q=1 sanity (L1=1,L2=1/2,L>=3=0); the Q_\u03b2 element F(q) is a different gated object (SW-residue keystone; \u03a6\u2082 fit forbidden) \u2014 this is the unguarded binding-side construction. (a)/(b)-scoped per AGENTS.md.",
+  "description": "Stage 5: constructs the explicit q-exponential (Habiro) generating-function form of the binding period S(m)=Σ_{λ⊢m} dim_q(λ). Tests whether log of the q-EGF Σ S(m)z^m/[m]_q! truncates at degree 2 (pure q-Gaussian = clean q-analog of the classical involution EGF exp(x+x²/2)) or carries a higher cyclotomic/(q-1) Habiro correction. Exact data, no fit.",
+  "discipline": "no fit; sympy symbolic exact in q; classical q=1 sanity (L1=1,L2=1/2,L>=3=0); the Q_β element F(q) is a different gated object (SW-residue keystone; Φ₂ fit forbidden) — this is the unguarded binding-side construction. (a)/(b)-scoped per AGENTS.md.",
   "auditOnly": "docs/audits/2026-06-27-lever1-qinvolution-cyclotomic-kernel.md",
   "results": {
     "L_factored": {
@@ -43,12 +43,12 @@
     "L1_L2_reduce_to_1_and_half": true,
     "higher_corrections_vanish_at_q1": true
   },
-  "verdict": "q-GAUSSIAN SKELETON + CYCLOTOMIC HABIRO DRESSING. The binding q-EGF \u015c(z)=\u03a3 S(m)z^m/[m]_q! has log \u015c = L_1 z + L_2 z\u00b2 + \u03a3_{m\u22653} L_m z^m with L_1,L_2 \u2192 1,1/2 at q=1 (the classical exp(x+x\u00b2/2) skeleton) and the higher L_{\u22653} ALL carrying a (q-1) factor (vanish at q=1) \u2014 a pure fibre/q-deformation correction in the Habiro ring. So the explicit binding-side object is a q-Gaussian dressed by a higher Habiro correction (the log-coefficient tower L_{\u22653}), constructed here in closed symbolic form. This is the binding analog of the gated Q_\u03b2 element F(q); it is NOT that element (the Q_\u03b2 F is gated on the SW-residue keystone, fitting \u03a6\u2082 forbidden), but it exhibits the SAME Habiro-ring habitat from exact, non-floor-limited data. (a)-scoped.",
-  "scriptHash": "cb78e2fcf7ff",
-  "scriptCommitSha": "f6ddd9350192668fe1fb6c2498f8d5b91bb70331",
-  "commitSha": "f8277023a2b4a62768c447a2ee793246cb8710d2",
+  "verdict": "q-GAUSSIAN SKELETON + CYCLOTOMIC HABIRO DRESSING. The binding q-EGF Ŝ(z)=Σ S(m)z^m/[m]_q! has log Ŝ = L_1 z + L_2 z² + Σ_{m≥3} L_m z^m with L_1,L_2 → 1,1/2 at q=1 (the classical exp(x+x²/2) skeleton) and the higher L_{≥3} ALL carrying a (q-1) factor (vanish at q=1) — a pure fibre/q-deformation correction in the Habiro ring. So the explicit binding-side object is a q-Gaussian dressed by a higher Habiro correction (the log-coefficient tower L_{≥3}), constructed here in closed symbolic form. This is the binding analog of the gated Q_β element F(q); it is NOT that element (the Q_β F is gated on the SW-residue keystone, fitting Φ₂ forbidden), but it exhibits the SAME Habiro-ring habitat from exact, non-floor-limited data. (a)-scoped.",
+  "scriptHash": "8137a086c2a7",
+  "scriptCommitSha": "842de2cce16503ed663d7a0b9e4ece5ea9beff66",
+  "commitSha": "842de2cce16503ed663d7a0b9e4ece5ea9beff66",
   "engine": "sympy",
-  "computedAt": "2026-07-02T12:07:49.000670+00:00",
+  "computedAt": "2026-07-02T12:13:19.371087+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
   "scriptFile": "lever1_binding_habiro_qexponential.py"
