@@ -33,8 +33,12 @@ Data: canonical binding transfer path (`binding_canonical` fast path =
 (`chi_monotone_transfer.word_to_mpfr: unrecognised crossing`) falls back to the
 committed predecessor witness `computations/binding-bar-even-odd-probe.witness.json`.
 
-Discipline: mpmath 65-dps compute / 50-dps serialization; NO FIT (measure-and-
-compare); verdict TIERED with (a)/(b) scope per AGENTS.md. Audit-only.
+Discipline: precision from the shared `qou_substrate.precision` defaults
+(via `computations/substrate/_precision` — COMPUTE_DPS compute, OUTPUT_DPS
+serialization; the same constants WitnessBuilder stamps into
+`precisionMetadata`, so the witness carries one consistent claim); NO FIT
+(measure-and-compare); verdict TIERED with (a)/(b) scope per AGENTS.md.
+Audit-only.
 Predecessor: docs/audits/2026-06-30-complex-volume-bar-parity-binding-probe.md.
 """
 from __future__ import annotations
@@ -53,9 +57,10 @@ import mpmath as mp  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402 — canonical q₀ source (same as predecessor)
 from codata_constants import M_E_MEV as _ME  # noqa: E402
 from experimental_constants import Q_NEUTRON_MEV  # noqa: E402
-
-COMPUTE_DPS = 65   # compute precision (compute-author discipline)
-OUT_DPS = 50       # serialization precision (significant digits, as strings)
+# Shared precision source (qou_substrate.precision via the _precision shim) —
+# the same constants WitnessBuilder stamps into precisionMetadata, so the
+# witness carries ONE consistent precision claim.
+from _precision import COMPUTE_DPS, OUTPUT_DPS, set_compute_dps  # noqa: E402
 
 # Base tower (always) + extension (feasibility-gated, ~10 min budget)
 ISOTOPES_BASE = [("2H", 1, 1), ("3H", 1, 2), ("3He", 2, 1), ("4He", 2, 2)]
@@ -72,8 +77,8 @@ FALLBACK_WITNESS = _HERE.parent / "binding-bar-even-odd-probe.witness.json"
 
 
 def s(x) -> str:
-    """Serialize an mpf/mpc to OUT_DPS significant digits as a string."""
-    return mp.nstr(x, OUT_DPS)
+    """Serialize an mpf/mpc to OUTPUT_DPS significant digits as a string."""
+    return mp.nstr(x, OUTPUT_DPS)
 
 
 def acquire(q0: mp.mpf, qi: mp.mpf, E0: mp.mpf):
@@ -155,7 +160,7 @@ def acquire(q0: mp.mpf, qi: mp.mpf, E0: mp.mpf):
 
 
 def main() -> int:
-    mp.mp.dps = COMPUTE_DPS
+    set_compute_dps()
     q0 = mp.mpf(str(Q0))
     qi = mp.mpf(1) / q0
     eta0 = mp.log(q0)
@@ -334,7 +339,7 @@ def main() -> int:
         "data_source": data_source,
         "traces_available": traces_available,
         "acquisition_errors": errors,
-        "precision": {"compute_dps": COMPUTE_DPS, "output_sig_digits": OUT_DPS},
+        "precision": {"compute_dps": COMPUTE_DPS, "output_sig_digits": OUTPUT_DPS},
         "constants": {
             "q_0": s(q0), "q_inv": s(qi), "eta_0": s(eta0), "E0_MeV": s(E0),
             "Q_beta_codata_MeV": str(float(Q_NEUTRON_MEV)),
