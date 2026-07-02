@@ -1,0 +1,68 @@
+{
+  "id": "black-hole-complementarity-batch",
+  "title": "Black hole complementarity / information problem batch (5 papers)",
+  "source": {
+    "type": "arxiv-batch",
+    "requestedAt": "2026-07-02T00:00:00Z",
+    "fetchedAt": null
+  },
+  "format": "pdf",
+  "pipeline": {
+    "stage": "uploaded",
+    "extractedAt": null,
+    "structuredAt": null,
+    "generatedAt": null,
+    "errors": [
+      "2026-07-02: session network policy is github-only (arxiv.org CONNECT 403 via agent proxy for paper-search-mcp, curl, and WebFetch). PDF fetch queued for a normal-network machine per bib-qa.md §Batch intake pipeline (scripts/gen-bib-papers-list.py picks the four registered refs up from references.ts arxiv URLs)."
+    ]
+  },
+  "classification": {
+    "type": "paper",
+    "domain": "physics",
+    "normativeLevel": null
+  },
+  "papers": [
+    {
+      "arxivId": "hep-th/9306069",
+      "refId": "susskind1993",
+      "title": "The Stretched Horizon and Black Hole Complementarity",
+      "authors": "Susskind, Thorlacius, Uglum",
+      "pdf": null,
+      "status": "queued-for-fetch"
+    },
+    {
+      "arxivId": "hep-th/9308100",
+      "refId": "susskindthorlacius1994",
+      "title": "Gedanken Experiments Involving Black Holes",
+      "authors": "Susskind, Thorlacius",
+      "pdf": null,
+      "status": "queued-for-fetch"
+    },
+    {
+      "arxivId": "1512.04993",
+      "refId": "marolf2017",
+      "title": "The Black Hole information problem: past, present, and future",
+      "authors": "Marolf",
+      "pdf": null,
+      "status": "queued-for-fetch"
+    },
+    {
+      "arxivId": "1301.4504",
+      "refId": "harlowhayden2013",
+      "title": "Quantum Computation vs. Firewalls",
+      "authors": "Harlow, Hayden",
+      "pdf": null,
+      "status": "queued-for-fetch"
+    },
+    {
+      "arxivId": "1810.11563",
+      "refId": null,
+      "title": "UNIDENTIFIED — metadata could not be verified from this sandbox (arxiv.org firewalled); do NOT guess. Identify title/authors on a normal-network machine, then add the references.ts entry.",
+      "authors": null,
+      "pdf": null,
+      "status": "queued-for-identification"
+    }
+  ],
+  "blockCount": 0,
+  "targetPaper": "content/quantum-observable-universe/"
+}
