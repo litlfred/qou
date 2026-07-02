@@ -7,26 +7,26 @@ $$
   \mathfrak{V}(K)\;=\;E_0\,\mathrm{tr}_M\big((\Pi_{\text{free}} - \mathbf{1})\circ\mathcal{M}\big)
   \;\in\;\mathbb{C},
   \qquad
-  \mathfrak{E}_{\mathrm{bind}}(K) = \operatorname{Re}\mathfrak{V}(K),
+  \mathfrak{E}_{\mathrm{bind}}(K) = \mathrm{Re}\mathfrak{V}(K),
   \quad
-  \mathfrak{Q}_\beta(K) = \operatorname{Im}\mathfrak{V}(K),
+  \mathfrak{Q}_\beta(K) = \mathrm{Im}\mathfrak{V}(K),
 $$
 
 *the QOU analogue of the Neumann–Zagier complex volume
-$\mathbb{V}(K) = \operatorname{Vol}(K) + i\,\mathrm{CS}(K)$.*
+$\mathbb{V}(K) = \mathrm{Vol}(K) + i\,\mathrm{CS}(K)$.*
 
 ## The one object
 
 Categorically — **no braid words**. For a confined knot $K$:
 
-- $\mathcal{M} = \mathcal{M}(K) \in \operatorname{End}_{\mathbf{C}}(X_K)$
+- $\mathcal{M} = \mathcal{M}(K) \in \mathrm{End}_{\mathbf{C}}(X_K)$
   is the **mass endomorphism** of the object $X_K$ representing $K$ in
   the rigid monoidal category $\mathbf{C}$;
-- $\mathrm{tr}_M : \operatorname{End}_{\mathbf{C}}(X_K) \to k$ is the
+- $\mathrm{tr}_M : \mathrm{End}_{\mathbf{C}}(X_K) \to k$ is the
   categorical **Markov trace** (the closed/categorical trace; AGENTS.md
   §7a — the fibre functor $\tau$ is a *different* object, never
   $\tau_M$);
-- $\Pi_{\text{free}} \in \operatorname{End}_{\mathbf{C}}(X_K)$ is the
+- $\Pi_{\text{free}} \in \mathrm{End}_{\mathbf{C}}(X_K)$ is the
   **idempotent projector** ($\Pi_{\text{free}}^2 = \Pi_{\text{free}}$)
   onto the **factorized sub-object**
   $X_K \twoheadrightarrow X_1 \otimes \cdots \otimes X_c$ — the
@@ -77,7 +77,7 @@ That is exactly the structure of the complex volume:
 
 | | real part (bar-even, $\cosh$, real $q$) | imaginary part (bar-odd, $\sinh$, root-of-unity $q$) |
 |---|---|---|
-| **Neumann–Zagier** | $\operatorname{Vol}(K)$ (hyperbolic) | $\mathrm{CS}(K)$ (Chern–Simons) |
+| **Neumann–Zagier** | $\mathrm{Vol}(K)$ (hyperbolic) | $\mathrm{CS}(K)$ (Chern–Simons) |
 | **QOU** | $\mathfrak{E}_{\mathrm{bind}}(K)$ — **binding / mass** | $\mathfrak{Q}_\beta(K)$ — **$\beta$-decay** |
 
 The mass/binding channel is the **volume** (real, $\cosh$) part; the
@@ -101,7 +101,7 @@ decay channel is the **Chern–Simons** (imaginary, $\sinh$) part of the
   and $\mathfrak{Q}_\beta$ are the Re/Im of the **same** $\mathfrak{V}$
   at a single normalization.
 - **Fibre-level caveat (STRICT).** At the **archimedean / observable**
-  level $\operatorname{Im}(q_0)=0$
+  level $\mathrm{Im}(q_0)=0$
   (`lusztig_q_0_imaginary_part_zero`): binding and $\mathfrak{Q}_\beta$ are both
   *real* measured numbers. The complex structure is therefore
   **fibre-level** (pre-$\tau$): $\mathfrak{V}(q)$ is a complex object in
@@ -109,7 +109,7 @@ decay channel is the **Chern–Simons** (imaginary, $\sinh$) part of the
   **shadows under different archimedean evaluations** (real-$q$ vs
   root-of-unity). There is no "complex mass" — there is one complex
   *fibre* object with two real observable shadows, exactly as
-  $\operatorname{Vol}$ and $\mathrm{CS}$ are separately real.
+  $\mathrm{Vol}$ and $\mathrm{CS}$ are separately real.
 
 ## Computational corroboration (this PR)
 
@@ -145,3 +145,39 @@ a bar-even multiplier $c$, $\sigma c = c$, yields the binding and
 $\mathfrak{Q}_\beta$ recurrences at once — the `c_k`-ladder mechanism). The
 $\mathbb{C}$/Re–Im picture is the archimedean instance ($\sigma=$ complex
 conjugation).
+
+## Channel recurrences over categorical $R$, and the rotation between them
+
+The two channels carry explicit three-term recurrences, stated in the same
+generic setting (commutative ring $R$ with bar involution $\sigma$, never
+$\mathbb{R}$ or $\mathbb{C}$; division-free via $\sigma q \cdot q = 1$):
+
+- **even channel** (compact / binding / continuous $q$-Hermite):
+  $H_{n+2} = 2x\,H_{n+1} - (1 - q^{n+1})\,H_n$ (`evenStep`);
+- **odd channel** (non-compact / $\mathfrak{Q}_\beta$ / $q^{-1}$-Hermite),
+  multiplied through by $q^{n+1}$:
+  $q^{n+1}\,h_{n+2} = 2x\,q^{n+1}\,h_{n+1} + (q^{n+1} - 1)\,h_n$ (`oddStep`).
+
+The **channel rotation** is proved sorry-free (`rotation_step`): with a
+*formal* rotation element $\iota \in R$, $\iota^2 = -1$ (the fibre-level
+stand-in for $i$; `Complex.I` is only the archimedean instance downstream
+of $\tau$), a sequence satisfies the odd step at $(q, x)$ **iff** its
+$\iota$-rotation $n \mapsto \iota^n h_n$ satisfies the even step at the
+bar-conjugated data $(\sigma q, \iota x)$ — the categorical form of the
+Askey/Ismail–Masson identity $h_n(x \mid q) = i^{-n} H_n(ix \mid q^{-1})$
+\cite{askey1989qhermite,ismail-masson1994}. Same eigenfunctions, rotated;
+one recurrence, two channels.
+
+The operator ("rotation matrix") statement is split by provability:
+`eigencolumn_eq_overlap` proves generically that any eigencolumn of the
+channel tridiagonal operator has orthogonal-polynomial entries, while the
+Leonard self-duality that would force those entries into the Askey–Wilson
+family \cite{zhedanov1991,terwilliger2001} is carried as the conjecture
+class `ChannelLeonardDuality`, and the bound $\leftrightarrow$ free
+deformation-path reading (endpoints of one Askey–Wilson family, with the
+$\mathfrak{V}$-ladder riding one bar-even three-term multiplier) as the
+conjecture class `AWDeformationPath`, whose two-channel descent
+`channel_ladders` is *derived* from `recurrence_invol_descent`. See the
+companion remarks
+[`rem:channel-rotation-askey-lit`](#rem:channel-rotation-askey-lit) and
+[`rem:complex-volume-character-variety-path`](#rem:complex-volume-character-variety-path).

@@ -1,7 +1,5 @@
 import Mathlib.Data.Complex.Basic
 import Mathlib.Data.Real.Basic
-import Mathlib.Algebra.Field.Basic
-import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.LinearCombination
 
@@ -402,8 +400,10 @@ variable {R : Type*} [CommRing R]
     whose multiplier is **bar-even**.  All fields are inputs; the
     two-channel (binding + `𝔔_β`) descent is derived below. -/
 class AWDeformationPath (σ : R →+* R) where
-  /-- deformation family: super-diagonal at parameter `t`. -/
-  a : R → ℕ → R
+  /-- deformation family: super-diagonal at parameter `t` (units, matching
+      `overlapColumn`/`IsEigencolumn`, so each `t`-slice plugs into the
+      overlap machinery without extra plumbing). -/
+  a : R → ℕ → Rˣ
   /-- deformation family: diagonal at parameter `t`. -/
   b : R → ℕ → R
   /-- deformation family: sub-diagonal at parameter `t`. -/
