@@ -1,0 +1,87 @@
+{
+  "description": "Stage-C instrumented base (bean 1jrh / Q_beta c_4): the H4(q) Markov trace wired from validated pieces (seminormal characters x Wenzl weights) into a callable accepting any H4 word incl. sigma_3, gated by four exact no-fit laws (Hecke, Markov generator-uniformity, C12 stabilization ratio constancy at 5 q-points, branching cross-check). NO sigma_3-lift candidate is enumerated or evaluated — the categorical Lambda stays the sole open item per the Stage-C scope. auditOnly.",
+  "audit_only": true,
+  "parameters": {
+    "q0": "1.1099785955573347198997632204832250266562084087802",
+    "dps": 50,
+    "q_points": [
+      "1.1099785955573347198997632204832250266562084087802",
+      "1.05",
+      "1.2",
+      "1.37",
+      "0.93"
+    ],
+    "words": [
+      [],
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ]
+  },
+  "data": {
+    "trM_H4_generator": "0.499320334033561271768966386276",
+    "c12_ratio_at_q0": "1.0",
+    "worst_dev": {
+      "A": "5.34553e-51",
+      "B": "0.0",
+      "C": "1.06911e-50",
+      "D": "0.0"
+    }
+  },
+  "assertions": [
+    {
+      "label": "A: Hecke relation on H4 characters (<1e-40)",
+      "passed": true
+    },
+    {
+      "label": "B: Markov generator-uniformity incl. sigma_3 (<1e-40)",
+      "passed": true
+    },
+    {
+      "label": "C: C12 stabilization ratio word-independent at 5 q-points (<1e-40)",
+      "passed": true
+    },
+    {
+      "label": "D: branching cross-check on decay words (<1e-40)",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "28f3b2f68138",
+  "scriptCommitSha": "unknown",
+  "commitSha": "c3a94315a20f96e6d27ffadef68de6be173c20f1",
+  "engine": "mpmath",
+  "computedAt": "2026-07-02T16:52:25.545583+00:00",
+  "durationMs": 655,
+  "engineVersion": "mpmath 1.3.0",
+  "scriptFile": "qbeta_h4_stagec_markov_infra.py"
+}
