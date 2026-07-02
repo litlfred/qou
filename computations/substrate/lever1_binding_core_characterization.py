@@ -151,8 +151,12 @@ out = {
              "no fit; binding side (exact data).",
 }
 from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
-witness_path = WitnessBuilder.wrap_legacy(
+_wb = WitnessBuilder.wrap_legacy(
     "lever1-binding-core-characterization", out,
     script_path=__file__, engine="sympy",
-).save()
+)
+# Record the consumed upstream witness so witness_dependency_drift.py can
+# machine-check drift (emitted under data.upstream_witness_hashes).
+_wb.add_upstream(WIT)
+witness_path = _wb.save()
 print("witness ->", os.path.relpath(witness_path, os.getcwd()), flush=True)
