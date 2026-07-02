@@ -76,7 +76,7 @@ lever1_color_eq_intrinsic_tau_rapidity, zeta4_complex_volume_moderator_probe,
 lever1_color_eq_lambda_sw_rapidity. Each: exit 0, PROV_OK, assertions preserved,
 keys kept. (zeta4 also: fixed cwd-relative output path → dirname(__file__).)
 
-## 2026-07-01 — batch 7 (4 scripts, stamp)
+## 2026-07-02 — batch 7 (4 scripts, stamp)
 4 more assertion-bearing substrate/ probes via stamp_staleness_metadata:
 lever1_lw_depth2_recurrence_test, lever1_binding_habiro_qexponential,
 lever1_trB_quantum_integer_form, frakV_descent_zeta4_partner_probe. Each: exit 0,
