@@ -98,3 +98,13 @@ import there (coverage > import hygiene for orphan siblings outside the
 lake build). Fold `Tactic.NormCast` + `Tactic.Omega` into the same next
 full cache refresh as `Data.Complex.Exponential` / `Trigonometric.Complex`
 so future narrowings stay fully verifiable. Still NOT a piecemeal reseed.
+
+## Folded into the base by the 2026-07-02 reseed
+
+The 2026-07-02 reseed of `lake-cache/qou-v4-24-0` (859 QOU / 19 UGB / 1 Fred2005 /
+2962 mathlib oleans, restore-checked) packed `.lake/packages/mathlib/.lake/build`
+AFTER restoring the repthy-wedderburn addon — so the 11 addon oleans are now IN the
+base branch (mathlib count 2962 = 2951 + 11, verified in the restore-check). The
+separate `lake-cache/qou-v4-24-0-repthy-wedderburn` addon branch is redundant for
+restores from this seed onward (kept per the never-delete-branches directive).
+Skill note updated. Bean goal achieved; closing is the owner's call.
