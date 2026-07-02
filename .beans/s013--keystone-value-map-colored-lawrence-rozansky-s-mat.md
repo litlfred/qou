@@ -1,10 +1,10 @@
 ---
 # s013
 title: 'Keystone value-map: colored Lawrence-Rozansky S-matrix for Σ(2,3,5) → bwS0=d_q/D'
-status: todo
+status: in-progress
 type: task
 created_at: 2026-06-30T23:50:37Z
-updated_at: 2026-06-30T23:50:37Z
+updated_at: 2026-07-02T12:40:00Z
 ---
 
 
@@ -89,3 +89,28 @@ generic `[Field R]` per §7c) makes the step-(a) target machine-checked:
   `realization_discriminating_block` — the self-conjugate kill-test
   `w·D·[2] = [4][3]` derived, machine-checked.
 The open `latticePt` construction remains the owner-gated DG object (#2503).
+
+## Second-pass result (2026-07-02): residue character DERIVED; channels + q-Bessel rows pruned
+
+`keystone_valuemap_qbessel_gate_s013.py` + audit
+`docs/audits/2026-07-02-keystone-valuemap-qbessel-gate.md`. Primary sources firewalled
+in sandbox (arXiv 403 on all routes) — round restricted to derivable/machine-verifiable:
+
+- **POSITIVE (derived, sympy-exact + 50 dps):** the colored LR residue character from the
+  sinh-product rational identity. α=1 reproduces bare {1,11,19,29}; α=1∪α=2 = E₈; supports
+  5-periodic in colour (α=4≡α=1, α=3≡α=2). **All residue weights are ±1 (pure sign)** —
+  the value map cannot live in the residue data.
+- **POSITIVE (validated):** per-exponent channel decomposition Ψ^{(α)} = Σ_e Ψ̃^{(e)};
+  α=1 channel sum = 2.329577 = bare invariant. The 8 channel values at 1/q₀ computed.
+- **PRUNE (a):** channel/pair-sum/pair-diff amplitudes ≠ value map; analytic q→1 gate:
+  channel ratios → L(0,χ_e) ∝ (30−e) — DECREASING in e at every anchor while d_q INCREASES.
+- **PRUNE (a):** single-argument (q-)Bessel vacuum rows (ordinary J_e(x) vs classical dims;
+  Hahn–Exton J_e(x;q₀⁻²) vs d_q; pair-symmetrized variants) all fail the 1-dof
+  overdetermined gate (best 13% off vs 1e-6 bar).
+
+### Remaining open step (literature-gated)
+The genuine E_q(2) q-Hankel/Plancherel pairing with per-channel arguments
+(Koelink–Swarttouw kernel) / the true colored LR-Hikami amplitude at the modular-transform
+level. **Needs the primary sources:** run from a network-open environment, or owner drops
+into `uploads/`: Hikami arXiv:1811.05376; Andersen–Mistegård arXiv:2205.01282;
+Lawrence–Rozansky CMP 205 (1999).
