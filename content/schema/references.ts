@@ -5971,6 +5971,102 @@ export const references: CSLData[] = [
     URL: "https://doi.org/10.1002/prop.201900037",
   }),
 
+  // ── Askey 1989 (continuous q-Hermite at q > 1 — the odd/non-compact channel) ──
+  ref({
+    id: "askey1989qhermite",
+    type: "chapter",
+    title: "Continuous q-Hermite polynomials when q > 1",
+    author: [{ family: "Askey", given: "Richard" }],
+    "container-title":
+      "q-Series and Partitions (IMA Volumes in Mathematics and Its Applications 18)",
+    publisher: "Springer",
+    page: "151-158",
+    issued: { "date-parts": [[1989]] },
+    note: "The q > 1 continuation of continuous q-Hermite: orthogonality moves off the compact locus; the channel-rotation lit-home together with Ismail-Masson 1994.",
+  }),
+
+  // ── Ismail–Masson 1994 (q⁻¹-Hermite: the x ↦ ix, q ↦ q⁻¹ rotation identity) ──
+  ref({
+    id: "ismail-masson1994",
+    type: "article-journal",
+    title:
+      "q-Hermite polynomials, biorthogonal rational functions, and q-beta integrals",
+    author: [
+      { family: "Ismail", given: "Mourad E. H." },
+      { family: "Masson", given: "David R." },
+    ],
+    "container-title": "Transactions of the American Mathematical Society",
+    volume: "346",
+    page: "63-116",
+    issued: { "date-parts": [[1994]] },
+    DOI: "10.2307/2154944",
+    note: "h_n(x|q) = i^{-n} H_n(ix|q^{-1}): same eigenfunctions after the 90-degree variable rotation composed with the bar involution; the odd-channel (non-compact) orthogonality is an indeterminate moment problem.",
+  }),
+
+  // ── Zhedanov 1991 (AW(3): hidden symmetry of Askey–Wilson polynomials) ──
+  ref({
+    id: "zhedanov1991",
+    type: "article-journal",
+    title: "'Hidden symmetry' of Askey-Wilson polynomials",
+    author: [{ family: "Zhedanov", given: "Alexei S." }],
+    "container-title": "Theoretical and Mathematical Physics",
+    volume: "89",
+    page: "1146-1157",
+    issued: { "date-parts": [[1991]] },
+    DOI: "10.1007/BF01015906",
+  }),
+
+  // ── Terwilliger 2001 (Leonard pairs: classification via two tridiagonal ops) ──
+  ref({
+    id: "terwilliger2001",
+    type: "article-journal",
+    title:
+      "Two linear transformations each tridiagonal with respect to an eigenbasis of the other",
+    author: [{ family: "Terwilliger", given: "Paul" }],
+    "container-title": "Linear Algebra and its Applications",
+    volume: "330",
+    page: "149-203",
+    issued: { "date-parts": [[2001]] },
+    DOI: "10.1016/S0024-3795(01)00242-7",
+    note: "Leonard-pair classification: overlap coefficients of a self-dual tridiagonal pair are forced into the terminating Askey-Wilson (q-Racah) family.",
+  }),
+
+  // ── Ponsot–Teschner 2001 (non-compact 6j / modular double: b ↔ 1/b) ──
+  ref({
+    id: "ponsot-teschner2001",
+    type: "article-journal",
+    title:
+      "Clebsch-Gordan and Racah-Wigner coefficients for a continuous series of representations of U_q(sl(2,R))",
+    author: [
+      { family: "Ponsot", given: "Bénédicte" },
+      { family: "Teschner", given: "Jörg" },
+    ],
+    "container-title": "Communications in Mathematical Physics",
+    volume: "224",
+    page: "613-655",
+    issued: { "date-parts": [[2001]] },
+    DOI: "10.1007/PL00005590",
+    URL: "https://arxiv.org/abs/math/0007097",
+    note: "Non-compact Askey-Wilson/Racah level of the modular double (q = e^{i pi b^2}, q~ = e^{-i pi/b^2}); the b <-> 1/b duality is the 6j-level form of the channel rotation.",
+  }),
+
+  // ── Creutzig–Milas 2014 (false theta functions: the log-VOA character side) ──
+  ref({
+    id: "creutzig-milas2014",
+    type: "article-journal",
+    title: "False theta functions and the Verlinde formula",
+    author: [
+      { family: "Creutzig", given: "Thomas" },
+      { family: "Milas", given: "Antun" },
+    ],
+    "container-title": "Advances in Mathematics",
+    volume: "262",
+    page: "520-545",
+    issued: { "date-parts": [[2014]] },
+    DOI: "10.1016/j.aim.2014.05.018",
+    note: "False theta functions as (1,p) singlet log-VOA characters; their quantum modularity is the disk-interior vs root-of-unity rotation (the Lawrence-Zagier Psi already used at the keystone).",
+  }),
+
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

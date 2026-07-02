@@ -96,6 +96,8 @@ export default chapter({
       blocks: [
         "complex-volume-intro",
         "binding-qbeta-complex-volume",
+        "channel-rotation-askey-lit",
+        "complex-volume-character-variety-path",
         "color-spacetime-s5-factorization",
         "mass-modulus-em-phase-color-grading",
       ],
