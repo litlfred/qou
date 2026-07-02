@@ -193,7 +193,7 @@ else:
     )
 
 witness = {
-    "computation": "wlambda_identity_i_structure_probe",
+    # "computation" is derived by wrap_legacy from the name argument (Copilot review)
     "description": (
         "Scopes the Lean infra for Identity I (the one RT input of the W_λ 144·C(n) defect "
         "sub-target): verifies M(n)=n(3n−1)/2 (n=2..14) and tests whether the proof reduces to "

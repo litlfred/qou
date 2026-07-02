@@ -103,7 +103,7 @@ def main() -> int:
 
     witness = {
         "description": "Bar-even/bar-odd binding probe: split B into cosh (P_avg) + sinh (P_skew) by keeping q₀ AND q₀⁻¹; test bar-even vs AME and bar-odd vs Q_β",
-        "computation": "binding_bar_even_odd_probe",
+        # "computation" is derived by wrap_legacy from the name argument (Copilot review)
         "audit_only": True,
         "precision_dps": 50,
         "context": {
