@@ -38,6 +38,20 @@ The Bring-Bloch identity
 for closing the residual gap categorically (Tier0-5 PSLQ negative
 to date).
 
+═══════════════════════════════════════════════════════════════════
+λ_A EXCISION UPDATE (2026-06-24 owner ruling, applied 2026-07-02):
+
+λ_A is a CODATA-implied FIT, excised as a mass density (see
+docs/coordination/2026-06-24-lambda-a-fit-excised-per-knot-density.md).
+This script is retained as the AUDIT-VERIFICATION of that excised
+path: the ~2.9 % numbers below document the fit's honest residual,
+they are NOT the framework's absolute-mass prediction. The canonical
+absolute nucleon mass is the muon-anchored Hecke energy
+m_p = 2·(m_μ·F_Bor − 6·m_e) via computations/canonical_mass.py
+(≈938.27 / 939.57 MeV); a comparison column against it is emitted in
+the witness (`canonical_mass_reference`).
+═══════════════════════════════════════════════════════════════════
+
 The falsified literals `2.4599527869` / `2.4633436333` are
 retained as audit-only references (`*_AUDIT_ONLY`) so the
 Phase 5q ppm-coincidence comparison column in the witness keeps
@@ -192,8 +206,15 @@ M_MU_CODATA_MEV = _M_MU_MEV_VALIDATION  # CODATA muon (validation; codata_consta
 # substrate-q₀ coincidence, no categorical backing.  The ~2.89 %
 # residual is now framed as a VolDensity(𝓑₃) categorical-exactness
 # refinement gap (per PR #1063), not as a separate λ_scale closure.
+# λ_A path retained here INTENTIONALLY as the audited subject
+# (excision ruling 2026-06-24) — the DeprecationWarning is suppressed
+# because this is the documented audit-verification use, not a
+# production consumer.
+import warnings as _warnings
 from _li_2_q_util import vol_density_borromean as _vol_density_borromean
-GEOM_FULL_BORROMEAN = _vol_density_borromean(Q)
+with _warnings.catch_warnings():
+    _warnings.simplefilter("ignore", DeprecationWarning)
+    GEOM_FULL_BORROMEAN = _vol_density_borromean(Q)
 
 # Falsified-fit literals retained as audit-only references for the
 # Phase 5q ppm-coincidence comparison column in the witness.
@@ -207,13 +228,18 @@ LINKING_WEIGHT_NEUTRON_FITTED_FROM_CODATA_AUDIT_ONLY = mp.mpf("2.4633436333")
 def main() -> int:
     w = WitnessBuilder("m-p-borromean-verification-50dps", engine="mpmath")
     w.set_description(
-        "Numerical verification at MPFR 50 dps of "
-        "`conj:borromean-baryon-mass-formula` against CODATA m_p, m_n. "
-        "Canonical formula post-PR #1080: m(K) = m_e × VolDensity(K, q₀), "
-        "a single per-knot Geom call.  VolDensity = (Vol(𝓑₃)/ℏ_q²) × "
-        "linking_weight, where linking_weight is the PROVED Family A "
-        "categorical identity (3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h² "
-        "(terminates exactly at h²; Lean: `lambda-scale-substrate-form.lean`).  "
+        "AUDIT-VERIFICATION at MPFR 50 dps of the EXCISED λ_A "
+        "Borromean-VolDensity path (`conj:borromean-baryon-mass-formula`) "
+        "against CODATA m_p, m_n. λ_A was ruled a CODATA-implied FIT and "
+        "excised as a mass density (owner ruling 2026-06-24); the canonical "
+        "absolute nucleon mass is the muon-anchored Hecke energy via "
+        "computations/canonical_mass.py — see `canonical_mass_reference` in "
+        "this witness. The audited form: m(K) = m_e × VolDensity(K, q₀), "
+        "VolDensity = (Vol(𝓑₃)/ℏ_q²) × linking_weight, where linking_weight "
+        "is the Family A Wedderburn sum (3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h² "
+        "(the algebraic identity is proved — Lean: "
+        "`lambda-scale-substrate-form.lean` — its role as mass density is "
+        "the excised fit).  "
         "Family A applies to the baryon class uniformly, giving "
         "m_avg^pred = m_e × VolDensity(𝓑₃, q₀) ≈ 966 MeV at q_0 — "
         "about 2.89 % above the CODATA mean (m_p + m_n)/2 ≈ 938.92 MeV. "
@@ -235,16 +261,22 @@ def main() -> int:
         "order, NOT as a separate λ_scale closure."
     )
     w.set_content_block("conj:borromean-baryon-mass-formula")
-    # Discipline markers — canonical formula post-PR #1080:
-    #     m(K) = m_e × VolDensity(K, q₀)
-    # Single Geom call per knot; no separate λ_scale constant.
-    w.add_parameter("derivation_status", "CANONICAL_GEOM_FULL_PR_1080")
+    # Discipline markers — λ_A excised as mass density 2026-06-24;
+    # this witness audits the excised path, it is not the production
+    # absolute-mass route (that is canonical_mass.py).
+    w.add_parameter("derivation_status", "EXCISED_FIT_AUDIT_LAMBDA_A_2026_06_24")
     w.add_parameter("cal_class", "CAL-1 m_e only")
-    w.add_parameter("canonical_formula", "m(K) = m_e × VolDensity(K, q₀)")
+    w.add_parameter("audited_formula", "m(K) = m_e × VolDensity(K, q₀)  [EXCISED λ_A path]")
+    w.add_parameter(
+        "production_mass_route",
+        "canonical_mass.proton_neutron_mass_mev() — muon-anchored Hecke "
+        "energy m_p = 2·(m_μ·F_Bor − 6·m_e) (owner ruling 2026-06-24)",
+    )
     w.add_parameter("vol_density_decomposition",
                     "VolDensity = (Vol(𝓑₃)/ℏ_q²) × linking_weight; "
                     "linking_weight = (3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h² "
-                    "(PROVED Family A categorical identity)")
+                    "(algebraic Family A identity proved; its role as "
+                    "mass density is the fit excised 2026-06-24)")
     w.add_parameter("linking_weight_lean_ref",
                     "lambda-scale-substrate-form.lean")
     w.add_parameter("linking_weight_proof_script",
@@ -327,6 +359,22 @@ def main() -> int:
             "(PROVED canonical Wedderburn — Family A)"
         ),
     })
+    # ── Canonical-mass comparison column (production route) ───────
+    # The production absolute nucleon mass, for side-by-side contrast
+    # with the audited (excised) λ_A path above.
+    from canonical_mass import proton_neutron_mass_mev as _canonical_pn
+    _mp_canon, _mn_canon = _canonical_pn()
+    w.add_data("canonical_mass_reference", {
+        "route": "canonical_mass.proton_neutron_mass_mev (muon-anchored Hecke energy)",
+        "m_p_MeV": _mp_canon,
+        "m_n_MeV": _mn_canon,
+        "note": (
+            "Production absolute-mass route (owner ruling 2026-06-24). "
+            "The λ_A-path m_avg_pred above overshoots this by ~2.9 % — "
+            "that gap is what the excised fit was absorbing."
+        ),
+    })
+
     dm_codata_ratio = (M_N_CODATA_MEV - M_P_CODATA_MEV) / M_AVG_CODATA
     dm_ratio_ppm = (dm_over_Mn / dm_codata_ratio - 1) * mp.mpf("1e6")
     w.add_data("substrate_flavor_split", {
@@ -448,10 +496,18 @@ def main() -> int:
         ),
     })
 
+    w.add_caveat(
+        "λ_A EXCISION (owner ruling 2026-06-24): this witness AUDITS the "
+        "excised λ_A Borromean-VolDensity path; it is NOT the production "
+        "absolute-mass route. Production route: canonical_mass.py "
+        "(muon-anchored Hecke energy, see canonical_mass_reference). "
+        "Ledger: docs/coordination/2026-06-24-lambda-a-fit-excised-per-"
+        "knot-density.md."
+    )
     # Open R&D: closing the m_avg ~2.89 % residual categorically
     w.add_caveat(
-        "Canonical formula post-PR #1080: m(K) = m_e × VolDensity(K, q₀), "
-        "a single Geom call per knot.  VolDensity decomposes as "
+        "Audited formula framing (pre-excision, PR #1080): m(K) = m_e × "
+        "VolDensity(K, q₀), a single Geom call per knot.  VolDensity decomposes as "
         "(Vol(𝓑₃)/ℏ_q²) × linking_weight, with linking_weight = "
         "(3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h² (PROVED Family A "
         "categorical Wedderburn identity, Lean: "
