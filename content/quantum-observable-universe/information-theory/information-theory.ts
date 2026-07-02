@@ -70,6 +70,7 @@ section({
         "information-speed-of-light",
         "information-bandwidth",
         "speed-of-light-regimes-lieb-robinson",
+        "dsr-planck-scale-phenomenology",
         "mass-energy-equivalence",
         "mass-energy-equivalence-proof",
         "mass-energy-equivalence-interpretation",
