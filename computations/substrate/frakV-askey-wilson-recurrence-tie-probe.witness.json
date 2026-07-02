@@ -33,11 +33,11 @@
   },
   "allPassed": true,
   "verdict": "HOLOMORPHIC TIE CONFIRMED at the H₂/Hopf (deuteron-bond) level: the Hopf-power tower and BOTH its parity channels (binding bar-even, Q_β bar-odd) ride ONE Askey-Wilson (continuous q-ultraspherical/Chebyshev) 3-term recurrence with the bar-even multiplier c = q²+q⁻² — exactly recurrence_invol_descent. The bar-even hypothesis is NECESSARY: the full ladder's bar-odd multiplier q−q⁻¹ cross-couples the channels (E_{m+1} = c·O_m + E_{m−1}), so channel-wise descent fails. Scope-limited: 2-strand instance only; the full nuclear 𝔙 assembly stays OPEN/GATED.",
-  "scriptHash": "ca42c2831bb3",
-  "scriptCommitSha": "unknown",
-  "commitSha": "2ccc0f99a77df3b5c5c8891d37220058d78ab864",
+  "scriptHash": "8d5c042535ad",
+  "scriptCommitSha": "3c6a86ff89eb2746fb6a04e7762780331ca6e418",
+  "commitSha": "3c6a86ff89eb2746fb6a04e7762780331ca6e418",
   "engine": "sympy+mpmath",
-  "computedAt": "2026-07-02T15:18:18.431333+00:00",
+  "computedAt": "2026-07-02T15:34:42.613010+00:00",
   "durationMs": 0,
   "scriptFile": "frakV_askey_wilson_recurrence_tie_probe.py"
 }
