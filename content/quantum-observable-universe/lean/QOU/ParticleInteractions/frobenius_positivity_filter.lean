@@ -117,6 +117,8 @@ theorem frobenius_positivity_filter
   -- Requires the spectator-factor sign structure of the G-products
   -- (Hoefsmit seminormal G-function) + the confinement-LP `Gx ≥ 0`
   -- feasibility argument; not available in this file.
+  -- Ref: [hoefsmit1974] Representations of Hecke algebras of finite groups
+  --      with BN-pairs of classical type (PhD thesis, UBC)
   sorry
 
 end QOU.ParticleInteractions

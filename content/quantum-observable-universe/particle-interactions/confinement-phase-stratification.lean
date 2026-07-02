@@ -62,6 +62,7 @@ theorem ConfinementPhaseStratification_mu_constant
     (h_comp : IsConnected C) (h_sub : C ⊆ confinementLocus P)
     (q₁ q₂ : ℝ) (h₁ : q₁ ∈ C) (h₂ : q₂ ∈ C) :
     mu P q₁ = mu P q₂ := by
+  -- Ref: [manuscript] prop:confinement-phase-stratification
   sorry
 
 /-- **Phase stratification (headline).** -/

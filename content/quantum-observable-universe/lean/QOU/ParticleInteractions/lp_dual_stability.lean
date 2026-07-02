@@ -85,6 +85,7 @@ theorem lp_dual_stability [ctx : LpDualStabilityContext] :
   -- Missing infra: explicit 6×6 Gram entries at q₀, the LP
   -- strong-duality theorem, and the κ(G)·‖t‖ dual-perturbation bound.
   -- Not yet formalised in QOU/Mathlib.
+  -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199
   sorry
 
 end QOU.ParticleInteractions

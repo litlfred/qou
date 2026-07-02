@@ -95,6 +95,7 @@ theorem bare_is_lp_unstable [ctx : AtomicLPStabilityContext] :
   -- Missing infra: eigenvalue structure of σ₀ in the degree-2 Markov
   -- representation of H₂(q) (the (q, -q⁻¹) channel) needed to exhibit
   -- the annihilating coefficient pair. Not yet in the QOU library.
+  -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199
   sorry
 
 /-- The 𝓑₃ dressing stabilises the atom: no Markov-normalised `X*`
@@ -106,6 +107,7 @@ theorem dressed_is_lp_stable [ctx : AtomicLPStabilityContext] :
   -- Missing infra: the dressed (q⁵, -q⁻⁵) eigenvalue channel of the
   -- 𝓑₃-twisted pairing and the resulting empty kernel. Not yet in the
   -- QOU library.
+  -- Ref: [wenzl1990] https://doi.org/10.1007/BF02097372
   sorry
 
 end QOU.ParticleInteractions

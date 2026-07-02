@@ -60,6 +60,7 @@ theorem pair_skein_mass_formula :
   -- Needs: the categorical pair Skein mass (positive crossing weights
   -- species a by q, negative crossing weights species b by q⁻¹) and the
   -- Markov parameter δ = q^{1/2} + q^{-1/2} as the normalisation.
+  -- Ref: [jones1987] https://doi.org/10.2307/1971403
   sorry
 
 end QOU.HadronicMass

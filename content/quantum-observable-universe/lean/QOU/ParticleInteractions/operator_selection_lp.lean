@@ -95,6 +95,7 @@ theorem operator_selection_lp [ctx : OperatorSelectionLpContext] :
   -- Missing infra: the LP strong-duality theorem (no duality gap for
   -- feasible, bounded linear programs) and the simplex/vertex
   -- optimality argument selecting x*. Not yet formalised in QOU/Mathlib.
+  -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199
   sorry
 
 end QOU.ParticleInteractions
