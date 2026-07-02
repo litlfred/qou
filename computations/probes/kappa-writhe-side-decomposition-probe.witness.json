@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-02T15:16:09.667514+00:00",
-  "commitSha": "29fd04b9a0a92b78015c2cf6c962145eecaca8f8",
+  "computedAt": "2026-07-02T16:45:53.136152+00:00",
+  "commitSha": "dbe953a9e4005a3820a802f3c8c0c2b813687d5c",
   "assertions": [
     {
       "name": "b_total_consistent_with_synthesis_band",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 11,
   "computation": "kappa-writhe-side-decomposition-probe",
   "scriptFile": "kappa_writhe_side_decomposition_probe.py",
-  "scriptHash": "1629c587fad3",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "aa923c445740",
+  "scriptCommitSha": "1f56defc5fda3d6617c4525dff39d60610912f12",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

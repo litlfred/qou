@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-02T15:12:55.790140+00:00",
-  "commitSha": "45e333999adf746474ce8388c01052d6d46953bf",
+  "computedAt": "2026-07-02T16:45:52.945518+00:00",
+  "commitSha": "dbe953a9e4005a3820a802f3c8c0c2b813687d5c",
   "assertions": [
     {
       "name": "baseline_spread_reproduced",
@@ -23,11 +23,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 12,
   "computation": "borromean-per-lambda-fr-probe",
   "scriptFile": "borromean_per_lambda_fr_probe.py",
-  "scriptHash": "030783b1cdde",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d2084dd62ebc",
+  "scriptCommitSha": "edc01cf0cba4cf8e4ede80a7ea80fde8aed8cd9e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

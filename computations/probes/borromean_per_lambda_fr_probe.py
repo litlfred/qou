@@ -103,7 +103,7 @@ def channel_fractions(h):
     chi = {(3,): mp.mpf(1), (1, 1, 1): mp.mpf(1),
            (2, 1): 2 - 3 * h**4 - h**6}
     contrib = {lam: ys[lam] * chi[lam] for lam in chi}
-    total = sum(contrib.values())
+    total = mp.fsum(contrib.values())
     fracs = {lam: c / total for lam, c in contrib.items()}
     return fracs, contrib, total
 
@@ -111,9 +111,8 @@ def channel_fractions(h):
 def tower(Z: int, N: int, tau_free, tau_atom, E0, z, q, qi):
     """The Borromean brane tower with independent free/atom nucleon traces
     (mirror of borromean_binding_recompute.borromean_binding)."""
-    f_pp = z; f_pn = z; f_nn = z - qi * (q * q - 1) / q  # z - h
     h = q - qi
-    f_nn = z - h
+    f_pp = z; f_pn = z; f_nn = z - h
     A = Z + N
 
     def g(x):
