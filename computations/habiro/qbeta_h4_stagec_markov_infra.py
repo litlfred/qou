@@ -56,16 +56,16 @@ def chi_word(shape: tuple, word: tuple, qv) -> mp.mpf:
     for g in word:
         S = seminormal_sigma(shape, g + 1, qv)
         M = S if M is None else M * S
-    return sum(M[i, i] for i in range(d))
+    return mp.fsum(M[i, i] for i in range(d))
 
 
 def tr_M(n: int, word: tuple, qv) -> mp.mpf:
     """QOU Markov trace on H_n: sum_{lambda|-n} y_lambda chi^lambda(word)."""
-    tot = mp.mpf(0)
-    for lam in partitions_of(n):
-        y = y_lambda_wenzl_bridge_numeric(tuple(lam), qv, mp.dps)
-        tot += y * chi_word(tuple(lam), word, qv)
-    return tot
+    return mp.fsum(
+        y_lambda_wenzl_bridge_numeric(tuple(lam), qv, mp.dps)
+        * chi_word(tuple(lam), word, qv)
+        for lam in partitions_of(n)
+    )
 
 
 def removable_to(mu: tuple):
@@ -143,7 +143,7 @@ def main() -> int:
         for mu in partitions_of(4):
             mu = tuple(mu)
             y = y_lambda_wenzl_bridge_numeric(mu, q0, mp.dps)
-            via_branch += y * sum(chi_word(lam, w, q0) for lam in removable_to(mu))
+            via_branch += y * mp.fsum(chi_word(lam, w, q0) for lam in removable_to(mu))
         worstD = max(worstD, abs(direct - via_branch))
     print(f"  GATE D  direct lambda|-4 trace == branching (H3 characters) form: "
           f"worst {mp.nstr(worstD, 3)}")
