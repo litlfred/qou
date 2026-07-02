@@ -71,6 +71,7 @@ section({
         "information-bandwidth",
         "speed-of-light-regimes-lieb-robinson",
         "dsr-planck-scale-phenomenology",
+        "dispersion-suppression-scale",
         "mass-energy-equivalence",
         "mass-energy-equivalence-proof",
         "mass-energy-equivalence-interpretation",
