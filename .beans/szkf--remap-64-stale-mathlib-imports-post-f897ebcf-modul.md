@@ -68,3 +68,31 @@ TACTIC(mech) | particle-interactions/periodic-table-demand-conjecture.lean
 Classes: PARSE/TACTIC/NONCOMPUT = mechanical (no LSP); PROOF = needs LSP goal inspection
 (blocked in the web sandbox — lean-lsp MCP can't resolve the toolchain). Remap map:
 /tmp/remap.sed in-session; reproduce via the codeload mathlib source at f897ebcf.
+
+## Wave-2 progress (2026-07-02, PR #3202, branch claude/stale-mathlib-imports-9xzeul)
+
+Remap checkpoint cherry-picked from claude/stale-import-deep-drain-2026-07-01.
+**12/12 mechanical drained** (lean-direct exit 0 each): periodic-table-demand-conjecture,
+he4-channel-active-set, hyperelliptic-z5-classification, chi-sym-alt-closed-form,
+computational-horizon, skein-generation, quantum-dilogarithm, q-codifferential-formula-prop,
+bar-involution-invariance, hecke-markov-transition, confinement-grading-correspondence-conditional
+(+ skein-resolution-obstruction in flight).
+
+**Root-cause classes discovered** (recur across files — check these FIRST on any remaining file):
+1. Lean 3 `constant` keyword (never valid Lean 4) → `axiom` (bar-involution: 6, confinement-grading: 5)
+2. Archimedean-sweep orphan rot: doc comments left live above commented-out fields/theorem
+   headers; half-commented theorem bodies (computational-horizon, skein-generation, quantum-dilogarithm)
+3. Unnamed `noncomputable section` opened after a `/- Ground ring -/` comment, never closed
+   before `end <Namespace>` (5 files)
+4. Doc comment attached to `noncomputable section` (illegal) → demote to `/- -/` (5 files)
+5. Missing Mathlib.Tactic.* imports (norm_num/ring/linarith/field_simp/interval_cases/push_neg
+   used with only Data.* imports)
+6. Defaulted data fields (`mass_formula : R_q := ...`) are unconstrained → theorems about them
+   unprovable → convert to defs / add proof field (skein-generation, computational-horizon NPWitness)
+7. Division/Inv/LT over R_q = LaurentPolynomial ℤ (no instances) → generalize over [Field K] per §7c
+
+**OTHER-class finding**: sampled files fail ONLY on missing QOU/Basic.olean — the lake-cache
+branch was seeded while QOU.Basic itself had stale imports, so downstream library oleans are
+absent. QOU.Basic + QOU.Glossary oleans now build clean via
+`scripts/verify-lean-direct.sh <src> <out.olean>`; bulk re-verify of the 26 OTHER in progress.
+→ RESEED lake-cache/qou-v4-24-0 after this lands so the QOU package oleans are preserved.
