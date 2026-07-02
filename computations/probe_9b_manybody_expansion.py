@@ -80,10 +80,10 @@ from qou_substrate.precision import COMPUTE_DPS  # noqa: E402
 mp.mp.dps = COMPUTE_DPS + 15
 
 ATOMS = [
-    ("D", 1, 1, float(AME_B_DEUTERON_MEV_VALIDATION)),
-    ("T", 1, 2, float(AME_B_TRITIUM_MEV_VALIDATION)),
-    ("3He", 2, 1, float(AME_B_HE3_MEV_VALIDATION)),
-    ("4He", 2, 2, float(AME_B_HE4_MEV_VALIDATION)),
+    ("D", 1, 1, AME_B_DEUTERON_MEV_VALIDATION),
+    ("T", 1, 2, AME_B_TRITIUM_MEV_VALIDATION),
+    ("3He", 2, 1, AME_B_HE3_MEV_VALIDATION),
+    ("4He", 2, 2, AME_B_HE4_MEV_VALIDATION),
 ]
 
 
@@ -151,9 +151,9 @@ def main() -> int:
                                   "tr_n": mp.nstr(tr_n, 50)})
 
     isotope_results = []
-    for name, Z, N, B_ame_f in ATOMS:
+    for name, Z, N, B_ame_in in ATOMS:
         A = Z + N
-        B_ame = mp.mpf(str(B_ame_f))
+        B_ame = mp.mpf(B_ame_in)
         kinds = canonical_interface_kinds(Z, N)
         n_iface = len(kinds)
         f_vals = [f_by_kind[k] for k in kinds]
@@ -231,7 +231,7 @@ def main() -> int:
             "tr_free": mp.nstr(tr_free, 50),
             "B_pred_MeV_Qbeta_scale": mp.nstr(B_pred, 30),
             "B_pred_MeV_E0_scale": mp.nstr(B_pred * e0_full / qb, 30),
-            "B_AME_MeV": B_ame_f,
+            "B_AME_MeV": mp.nstr(B_ame, 30),
             "B_pred_over_B_AME_Qbeta_scale": float(B_pred / B_ame),
             "B_pred_over_B_AME_E0_scale": float(B_pred * e0_full / (qb * B_ame)),
             "orders": orders,
@@ -241,7 +241,7 @@ def main() -> int:
         print(f"\n── {name} (Z={Z}, N={N}; interfaces {kinds}) ──")
         print(f"  B_pred = {mp.nstr(B_pred, 10)} MeV (Q_β scale)  "
               f"[{mp.nstr(B_pred * e0_full / qb, 10)} MeV at E_0 scale]  "
-              f"B_AME = {B_ame_f}")
+              f"B_AME = {mp.nstr(B_ame, 12)}")
         for o in orders:
             bodies = "/".join(str(b) for b in o["nucleon_body_counts"])
             print(f"  order {o['interface_order_k']} ({bodies}-body): "

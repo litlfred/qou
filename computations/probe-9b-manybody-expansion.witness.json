@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-02T17:03:54.953342+00:00",
-  "commitSha": "07d5a5fb4f5b70ec70f1d4de638f45a39796858a",
+  "computedAt": "2026-07-02T18:04:36.703949+00:00",
+  "commitSha": "49a93a93b102c7b3f69005ab5f4756d9c9900f02",
   "assertions": [
     {
       "name": "closed_form_B_matches_transfer_D",
@@ -85,11 +85,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 148,
+  "durationMs": 243,
   "computation": "probe-9b-manybody-expansion",
   "scriptFile": "probe_9b_manybody_expansion.py",
-  "scriptHash": "c0b0cee117ee",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "fbbe2b122555",
+  "scriptCommitSha": "e78113f1ba7196978ab98f58fb4f66deff4c740c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -132,7 +132,7 @@
         "tr_free": "0.98352618195548050569232970261262953513066814133045",
         "B_pred_MeV_Qbeta_scale": "0.465620587590568996092951221898",
         "B_pred_MeV_E0_scale": "2.49136599483970546751020028112",
-        "B_AME_MeV": 2.2245662,
+        "B_AME_MeV": "2.2245662",
         "B_pred_over_B_AME_Qbeta_scale": 0.20930848791578735,
         "B_pred_over_B_AME_E0_scale": 1.1199334031235868,
         "orders": [
@@ -178,7 +178,7 @@
         "tr_free": "0.90802411983566707176671820142944112197096404749756",
         "B_pred_MeV_Qbeta_scale": "0.628959330949128138121077997812",
         "B_pred_MeV_E0_scale": "3.36533205581034457693251933554",
-        "B_AME_MeV": 8.4817962,
+        "B_AME_MeV": "8.4817962",
         "B_pred_over_B_AME_Qbeta_scale": 0.07415402541140144,
         "B_pred_over_B_AME_E0_scale": 0.39677115276718683,
         "orders": [
@@ -257,7 +257,7 @@
         "tr_free": "1.0477565676413004582450360499088079712009749821854",
         "B_pred_MeV_Qbeta_scale": "0.658081724984591998000670493734",
         "B_pred_MeV_E0_scale": "3.52115536801336129398104844093",
-        "B_AME_MeV": 7.71804132,
+        "B_AME_MeV": "7.71804132",
         "B_pred_over_B_AME_Qbeta_scale": 0.08526537986772427,
         "B_pred_over_B_AME_E0_scale": 0.4562239591655051,
         "orders": [
@@ -338,7 +338,7 @@
         "tr_free": "0.96732375059192494747999458356500059134669333837104",
         "B_pred_MeV_Qbeta_scale": "0.713460941351808337056994802679",
         "B_pred_MeV_E0_scale": "3.81746936304545676222048435921",
-        "B_AME_MeV": 28.2956624,
+        "B_AME_MeV": "28.2956624",
         "B_pred_over_B_AME_Qbeta_scale": 0.025214498648803794,
         "B_pred_over_B_AME_E0_scale": 0.13491358884199356,
         "orders": [
