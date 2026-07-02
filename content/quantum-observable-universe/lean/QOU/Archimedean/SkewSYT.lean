@@ -353,52 +353,270 @@ theorem Partition.cells_card_eq_size_proved (lam : Partition) :
     intro i _ j _ hne
     exact cells_rows_disjoint_pair lam i j hne
 
+/-! ### Partition helpers — proved theorems
+
+General partition / Young-diagram facts (parts antitone, containment
+of cell sets, skew-cell non-emptiness, corner existence via the
+lexicographically maximal cell, and containment preservation under
+corner removal). These discharge every field of the
+`PartitionHelpers` typeclass below. -/
+
+/-- The parts of a partition are antitone (weakly decreasing),
+    extended by `0` beyond the last part. -/
+theorem Partition.part_antitone (μ : Partition) {j i : ℕ} (h : j ≤ i) :
+    μ.part i ≤ μ.part j := by
+  simp only [Partition.part]
+  by_cases hi : i < μ.parts.length
+  · have hj : j < μ.parts.length := lt_of_le_of_lt h hi
+    rw [getD_eq_getElem' _ _ _ hi, getD_eq_getElem' _ _ _ hj]
+    rcases Nat.lt_or_ge j i with hlt | hge
+    · exact List.pairwise_iff_getElem.mp μ.sorted j i hj hi hlt
+    · have hji : j = i := le_antisymm h hge
+      subst hji
+      exact le_refl _
+  · push_neg at hi
+    rw [getD_eq_default' _ _ _ hi]
+    exact Nat.zero_le _
+
+/-- If a list of naturals pointwise dominates the parts of a
+    partition `μ` (through `getD` with default `0`), then so does
+    its descending insertion sort.
+
+    Proof: position `i` of the sorted list is the `(i+1)`-st largest
+    element. The first `i+1` positions of `l` each dominate
+    `μ.part i` (since `μ.part` is antitone), so at least `i+1`
+    elements of `l` are `≥ μ.part i`; if the sorted list's entry at
+    `i` were `< μ.part i`, at most `i` elements could be
+    `≥ μ.part i` — a counting contradiction (`countP` transfers
+    across the sorting permutation). -/
+private theorem part_le_insertionSort_getD (μ : Partition) (l : List ℕ)
+    (h : ∀ i, μ.part i ≤ l.getD i 0) (i : ℕ) :
+    μ.part i ≤ (l.insertionSort (· ≥ ·)).getD i 0 := by
+  set s := l.insertionSort (· ≥ ·) with hs
+  have hlen : s.length = l.length := (l.perm_insertionSort (· ≥ ·)).length_eq
+  by_cases hi : i < l.length
+  · have his : i < s.length := by omega
+    rw [getD_eq_getElem' _ _ _ his]
+    by_contra hlt
+    push_neg at hlt
+    -- hlt : s[i] < μ.part i
+    set p : ℕ → Bool := fun a => decide (μ.part i ≤ a) with hp
+    have htake_len : (l.take (i + 1)).length = i + 1 := by
+      rw [List.length_take]; omega
+    -- (1) the first i+1 entries of l all satisfy p
+    have htake : (l.take (i + 1)).countP p = i + 1 := by
+      have hall : ∀ a ∈ l.take (i + 1), p a := by
+        intro a ha
+        obtain ⟨j, hj, hja⟩ := List.mem_iff_getElem.mp ha
+        have hj' : j < i + 1 := by rw [htake_len] at hj; exact hj
+        have hjl : j < l.length := by omega
+        have hgetj : (l.take (i + 1))[j] = l[j] := List.getElem_take
+        have hax : μ.part i ≤ a :=
+          calc μ.part i ≤ μ.part j := μ.part_antitone (by omega)
+            _ ≤ l.getD j 0 := h j
+            _ = l[j] := getD_eq_getElem' _ _ _ hjl
+            _ = a := hgetj.symm.trans hja
+        simp only [hp, decide_eq_true_eq]
+        exact hax
+      rw [List.countP_eq_length.mpr hall, htake_len]
+    have hcountl : i + 1 ≤ l.countP p := by
+      calc i + 1 = (l.take (i + 1)).countP p := htake.symm
+        _ ≤ (l.take (i + 1)).countP p + (l.drop (i + 1)).countP p :=
+            Nat.le_add_right _ _
+        _ = l.countP p := by
+            rw [← List.countP_append, List.take_append_drop]
+    -- (2) in the sorted list, positions ≥ i all fail p
+    have hpair : s.Pairwise (· ≥ ·) := List.sorted_insertionSort _ _
+    have hdrop : (s.drop i).countP p = 0 := by
+      rw [List.countP_eq_zero]
+      intro a ha
+      obtain ⟨j, hj, hja⟩ := List.mem_iff_getElem.mp ha
+      have hjs : i + j < s.length := by
+        rw [List.length_drop] at hj; omega
+      have hgetj : (s.drop i)[j] = s[i + j] := List.getElem_drop
+      have hle : s[i + j] ≤ s[i] := by
+        rcases Nat.eq_zero_or_pos j with rfl | hjpos
+        · simp
+        · exact List.pairwise_iff_getElem.mp hpair i (i + j) his hjs
+            (by omega)
+      have haeq : a = s[i + j] := hja.symm.trans hgetj
+      simp only [hp, decide_eq_true_eq, not_le]
+      omega
+    have hcounts : s.countP p ≤ i := by
+      calc s.countP p = (s.take i).countP p + (s.drop i).countP p := by
+            rw [← List.countP_append, List.take_append_drop]
+        _ = (s.take i).countP p := by omega
+        _ ≤ (s.take i).length := List.countP_le_length
+        _ ≤ i := by rw [List.length_take]; omega
+    have hperm : l.countP p = s.countP p :=
+      ((l.perm_insertionSort (· ≥ ·)).countP_eq p).symm
+    omega
+  · push_neg at hi
+    have h0 : μ.part i = 0 := by
+      have hh := h i
+      rwa [getD_eq_default' _ _ _ hi, Nat.le_zero] at hh
+    rw [h0]
+    exact Nat.zero_le _
+
+/-- Containment of partitions gives containment of Young-diagram
+    cell sets. -/
+theorem cells_subset_of_contains (lam μ : Partition)
+    (h : lam.contains μ) : μ.cells ⊆ lam.cells := by
+  intro c hc
+  rw [mem_cells] at hc ⊢
+  obtain ⟨_, hcol⟩ := hc
+  have h1 : c.col < lam.part c.row := lt_of_lt_of_le hcol (h c.row)
+  refine ⟨?_, h1⟩
+  by_contra hge
+  push_neg at hge
+  have : lam.part c.row = 0 := by
+    simp only [Partition.part]
+    exact getD_eq_default' _ _ _ (by simpa [Partition.length] using hge)
+  omega
+
+/-- A strict size increase gives a non-empty skew diagram. -/
+theorem skewCells_nonempty_of_size_lt (lam μ : Partition)
+    (hcontains : lam.contains μ) (hsize : μ.size < lam.size) :
+    (skewCells lam μ).Nonempty := by
+  rw [← Finset.card_pos]
+  unfold skewCells
+  rw [Finset.card_sdiff,
+      Finset.inter_eq_left.mpr (cells_subset_of_contains lam μ hcontains),
+      Partition.cells_card_eq_size_proved,
+      Partition.cells_card_eq_size_proved]
+  omega
+
+/-- **Skew-corner non-emptiness — proved.** The lexicographically
+    maximal cell of `lam/μ` (maximal row, then maximal column within
+    that row) is a skew corner: the cell below has a strictly larger
+    row and the cell to the right a strictly larger column in the
+    maximal row, so neither lies in `lam/μ`. -/
+theorem skewCorners_nonempty_proved (lam μ : Partition)
+    (hcontains : lam.contains μ) (hsize : μ.size < lam.size) :
+    (skewCorners lam μ).Nonempty := by
+  have hSne : (skewCells lam μ).Nonempty :=
+    skewCells_nonempty_of_size_lt lam μ hcontains hsize
+  -- maximal row occurring in the skew diagram
+  have hRne : ((skewCells lam μ).image Cell.row).Nonempty := hSne.image _
+  set R := ((skewCells lam μ).image Cell.row).max' hRne with hR
+  -- maximal column among the row-R cells
+  have hTne : ((skewCells lam μ).filter fun d => d.row = R).Nonempty := by
+    obtain ⟨cR, hcR, hcRrow⟩ := Finset.mem_image.mp (Finset.max'_mem _ hRne)
+    exact ⟨cR, Finset.mem_filter.mpr ⟨hcR, hcRrow⟩⟩
+  have hCne : (((skewCells lam μ).filter fun d => d.row = R).image
+      Cell.col).Nonempty := hTne.image _
+  obtain ⟨c, hcT, hccol⟩ := Finset.mem_image.mp (Finset.max'_mem _ hCne)
+  have hcS : c ∈ skewCells lam μ := (Finset.mem_filter.mp hcT).1
+  have hcrow : c.row = R := (Finset.mem_filter.mp hcT).2
+  refine ⟨c, ?_⟩
+  unfold skewCorners
+  rw [Finset.mem_filter]
+  refine ⟨hcS, ?_, ?_⟩
+  · -- a right neighbour in lam/μ would beat the column maximum
+    intro hmem
+    have hmemT : (⟨c.row, c.col + 1⟩ : Cell) ∈
+        (skewCells lam μ).filter fun d => d.row = R :=
+      Finset.mem_filter.mpr ⟨hmem, hcrow⟩
+    have hle : c.col + 1 ≤ (((skewCells lam μ).filter
+        fun d => d.row = R).image Cell.col).max' hCne :=
+      Finset.le_max' _ _ (Finset.mem_image_of_mem Cell.col hmemT)
+    omega
+  · -- a below neighbour in lam/μ would beat the row maximum
+    intro hmem
+    have hle : c.row + 1 ≤ R :=
+      Finset.le_max' _ _ (Finset.mem_image_of_mem Cell.row hmem)
+    omega
+
+/-- **Removing the witnessed row preserves containment — proved.**
+    If `c ∈ lam/μ`, then decrementing `lam` at `c.row` (and
+    re-sorting) still contains `μ`: at `c.row` we have
+    `μ.part c.row ≤ c.col < lam.part c.row`, so the decremented
+    entry still dominates `μ.part c.row`, and re-sorting preserves
+    pointwise domination of the antitone `μ.part`
+    (`part_le_insertionSort_getD`). -/
+theorem removeCorner_preserves_containment_proved (lam μ : Partition)
+    (hcontains : lam.contains μ) {c : Cell} (hc : c ∈ skewCells lam μ) :
+    (lam.removeCorner c.row).contains μ := by
+  obtain ⟨hclam, hcμ⟩ := Finset.mem_sdiff.mp hc
+  obtain ⟨hrow, hcol⟩ := (mem_cells lam c).mp hclam
+  -- c lies outside μ, so μ.part c.row ≤ c.col
+  have hμcol : μ.part c.row ≤ c.col := by
+    by_contra hlt
+    push_neg at hlt
+    apply hcμ
+    rw [mem_cells]
+    refine ⟨?_, hlt⟩
+    by_contra hge
+    push_neg at hge
+    have : μ.part c.row = 0 := by
+      simp only [Partition.part]
+      exact getD_eq_default' _ _ _ (by simpa [Partition.length] using hge)
+    omega
+  -- the decremented (pre-sort) list pointwise dominates μ.part
+  have hdom : ∀ i, μ.part i ≤
+      (lam.parts.mapIdx fun k p => if k = c.row then p - 1 else p).getD i 0 := by
+    intro i
+    by_cases hilen : i < lam.parts.length
+    · have hlen' : i < (lam.parts.mapIdx fun k p =>
+          if k = c.row then p - 1 else p).length := by
+        simpa [List.length_mapIdx] using hilen
+      rw [getD_eq_getElem' _ _ _ hlen', List.getElem_mapIdx]
+      have hpart : lam.part i = lam.parts[i] := getD_eq_getElem' _ _ _ hilen
+      by_cases hir : i = c.row
+      · subst hir
+        rw [if_pos rfl]
+        omega
+      · rw [if_neg hir]
+        have := hcontains i
+        omega
+    · push_neg at hilen
+      have hlen' : (lam.parts.mapIdx fun k p =>
+          if k = c.row then p - 1 else p).length ≤ i := by
+        simpa [List.length_mapIdx] using hilen
+      rw [getD_eq_default' _ _ _ hlen']
+      have hcont := hcontains i
+      have hzero : lam.part i = 0 := by
+        simp only [Partition.part]
+        exact getD_eq_default' _ _ _ hilen
+      omega
+  intro i
+  exact part_le_insertionSort_getD μ _ hdom i
+
 /-! ### Partition helpers — typeclass (Pattern 4)
 
-The three Mathlib gaps below are general partition / Young-diagram
-facts (cells-count, corner non-emptiness, removal preserves
-containment). Until Mathlib's `Partition` API exposes them, the
-axioms are packaged into a single typeclass `PartitionHelpers` so
-each call site binds to a witness, and the conjectural surface is
-visible. -/
+Historically this typeclass packaged three Mathlib-gap helpers as
+class-supplied facts. All three fields are now proved theorems in
+this file, and the default instance below is unconditional; the
+typeclass is retained only as the stable API surface for the
+call sites. -/
 
 /-- **Partition combinatorics — typeclass.** Bundles three
-    Mathlib-gap helpers about Young diagrams. -/
+    partition / Young-diagram helpers; every field is backed by a
+    proved theorem in this file (see `partitionHelpers_default`). -/
 class PartitionHelpers : Prop where
   /-- `lam.cells.card = lam.size`. -/
   cells_card_eq_size : ∀ (lam : Partition), lam.cells.card = lam.size
   /-- A strict size increase yields a non-empty corner set. -/
   skewCorners_nonempty : ∀ (lam μ : Partition), lam.contains μ →
     μ.size < lam.size → (skewCorners lam μ).Nonempty
-  /-- Removing an outside-of-μ corner preserves containment. -/
-  removeCorner_preserves_containment : ∀ (lam μ : Partition) (row : ℕ),
+  /-- Removing the row of a witnessed skew cell preserves
+      containment. (Scoped to the witnessed cell's row: the earlier
+      form quantified over an arbitrary `row`, which is false when
+      `lam.part row = μ.part row`.) -/
+  removeCorner_preserves_containment : ∀ (lam μ : Partition),
     lam.contains μ → ∀ {c : Cell}, c ∈ skewCells lam μ →
-    (lam.removeCorner row).contains μ
+    (lam.removeCorner c.row).contains μ
 
-/-- **Default `PartitionHelpers` instance**: the first field is
-    proved (`Partition.cells_card_eq_size_proved`); the other two
-    are class-supplied via `Fact` hypotheses. This makes
-    `PartitionHelpers` inferrable as soon as the per-claim facts
-    are in scope.
-
-    The `cells_card_eq_size` field is now a *theorem*, not a
-    conjecture — proved earlier in this file. The remaining two
-    fields are the genuine Mathlib gaps (corner-non-emptiness
-    requires lex-order on `Cell`, and the
-    `removeCorner_preserves_containment` field has a known
-    statement-level scope issue: it's only true when `row` is the
-    row of the witnessed cell `c`, but the field universally
-    quantifies). -/
-instance partitionHelpers_default
-    [hCorners : Fact (∀ (lam μ : Partition), lam.contains μ →
-        μ.size < lam.size → (skewCorners lam μ).Nonempty)]
-    [hRem : Fact (∀ (lam μ : Partition) (row : ℕ),
-        lam.contains μ → ∀ {c : Cell}, c ∈ skewCells lam μ →
-        (lam.removeCorner row).contains μ)] :
-    PartitionHelpers where
+/-- **Default `PartitionHelpers` instance** — unconditional: all
+    three fields are proved theorems in this file
+    (`Partition.cells_card_eq_size_proved`,
+    `skewCorners_nonempty_proved`,
+    `removeCorner_preserves_containment_proved`). -/
+instance partitionHelpers_default : PartitionHelpers where
   cells_card_eq_size := Partition.cells_card_eq_size_proved
-  skewCorners_nonempty := hCorners.out
-  removeCorner_preserves_containment := hRem.out
+  skewCorners_nonempty := skewCorners_nonempty_proved
+  removeCorner_preserves_containment :=
+    removeCorner_preserves_containment_proved
 
 /-- Partition's Young-diagram cells count equals its size. Backed
     by `PartitionHelpers`. -/
@@ -413,13 +631,13 @@ theorem skewCorners_nonempty_axiom [h : PartitionHelpers]
     (hsize : μ.size < lam.size) : (skewCorners lam μ).Nonempty :=
   h.skewCorners_nonempty lam μ hcontains hsize
 
-/-- Removing a corner cell of lam that lies outside μ still leaves a
+/-- Removing the row of a skew cell of lam/μ still leaves a
     partition containing μ. Backed by `PartitionHelpers`. -/
 theorem removeCorner_preserves_containment [h : PartitionHelpers]
-    (lam μ : Partition) (row : ℕ) (hcontains : lam.contains μ)
+    (lam μ : Partition) (hcontains : lam.contains μ)
     {c : Cell} (hc : c ∈ skewCells lam μ) :
-    (lam.removeCorner row).contains μ :=
-  h.removeCorner_preserves_containment lam μ row hcontains hc
+    (lam.removeCorner c.row).contains μ :=
+  h.removeCorner_preserves_containment lam μ hcontains hc
 
 /-- Nonempty skew shape has at least one corner. Backed by
     `PartitionHelpers.skewCorners_nonempty`. -/
@@ -469,8 +687,8 @@ theorem skewSYTCount_pos [PartitionHelpers]
           omega
         · -- If μ ⊈ removeCorner, skewSYTCount = 1 in the if-branch.
           -- In fact this branch is vacuous: removing a corner from lam\μ
-          -- never drops below μ.  Discharged via the axiom below.
-          exact absurd (removeCorner_preserves_containment lam μ c.row h hc_cells) hnot
+          -- never drops below μ.  Discharged via the proved helper.
+          exact absurd (removeCorner_preserves_containment lam μ h hc_cells) hnot
   -- Ref: [fulton1997]
 
 /-! ## §5  Branching multiplicity -/
