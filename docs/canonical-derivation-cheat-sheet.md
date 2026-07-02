@@ -576,6 +576,24 @@ branch `he4-jsj-binding-link`). So the binding is a **many-body series**:
 | **3-body** | A=3 residual (the ~40 % pairwise gap) | T, ³He | **open** (whole-A link-volume — §below) |
 | **4-body** | whole-α volume `2·m_e·A·8G` (magic-A) | ⁴He | **+5.87 %, no fit** |
 
+> **PROBE 4 verdict (2026-07-02) — per-λ collapse-last tower REFUTED,
+> scope-(a); one invariant-backed exclusion; one convention finding.**
+> Normalized collapse-last per-λ towers (Jones, Wenzl, ambient-H₆ per-ν
+> via exact MN/LR branching) all converge ∀Z, preserve the shape, and
+> **reproduce the scalar tower to ≤ 6.6e-7** (¹⁶O err 2.2752 → 2.2752;
+> Jensen gap over the block spread is O(10⁻⁶)) — the missing Δ_λ weight
+> **cannot be a pure re-decomposition of the same Borromean trace**; it
+> must carry new per-block content (volume enrichment / knot-ideal
+> projector — GAP-A-3/A-4). Raw (unnormalized) per-block tower is
+> **EXCLUDED (invariant-backed)**: `χ^{(2,1)}² ≈ 3.977 > q₀` exceeds the
+> proved Li₂^q radius. **Convention finding (DERIVED, 9e-72):** the
+> pipeline's τ closed form is the **SU(2)/Temperley–Lieb (Jones)** Markov
+> decomposition (`y₃ = [4]/[2]³, y₂₁ = 1/[2]², y_{(1³)} = 0`), NOT the
+> corpus-canonical Wenzl z-trace (τ_W ≈ 0.9983666, gap 1.955e-4) — flag
+> for the convention registry.
+> [Probe audit](audits/2026-07-02-9b-probes-alphak-perlambda-tower.md),
+> `probe_9b_perlambda_brane_tower.py`.
+
 > **PROBE 3 verdict (2026-07-02) — "4-body cross-term ≈ magic-A" REFUTED,
 > scope-(a).** The exact finite inclusion–exclusion expansion of the
 > Phase-5q product form (`B = Q_β·tr_free·[Σg_i − Σg_ig_j + …]`, sums to
@@ -671,6 +689,23 @@ The default binding-energy compute IS the depth-stratified tower sum:
 - α_0 = α_1 = α_3 = 1 (trivial layers)
 - α_2 = z² = (1/(√q+1/√q))² ≈ 0.2493 (Markov braid-trace marker²)
 - α_{k≥4} = m_e · 8G ≈ 3.7445 (Vol(L6a4) Borromean plateau)
+
+> **PROBE 2 verdicts (2026-07-02) — assignment-rule structure checks**
+> ([probe audit](audits/2026-07-02-9b-probes-alphak-perlambda-tower.md),
+> `probe_9b_alphak_structure.py`):
+> - **DERIVED (exact):** the Markov-marker series `z^k` **breaks at k=3
+>   structurally** — `χ^{(2,1)}(σ₁σ₂σ₁) = 0` exactly (Δ² is the central
+>   full-twist scalar and `det ρ_{(2,1)}(Δ) = −1 < 0` forces
+>   tracelessness), so `tr_M(T_Δ) = z + h·z² = z·(1 + q^{1/2} − q^{−1/2})
+>   ≈ 0.5514 ≠ z³`. The break is forced, not assigned.
+> - **REFUTED-(a):** "because Δ is central" as literally stated (Δ is not
+>   central in H₃; Δ² is). **NEAR-MATCH (10.4%):** the value α₃ = 1 itself
+>   — the collapsed weight is `1 + q^{1/2} − q^{−1/2} ≈ 1.1044` at q₀,
+>   exactly 1 only as q → 1.
+> - **REFUTED-(a):** the plateau resummation `Σ_{k≥4} z^k·N_k = m_e·8G` —
+>   fails under all 4 layer-count readings × 4 atoms; sharpener: the tail
+>   is strongly **A-dependent** while the plateau is A-independent, which
+>   kills the whole per-atom layer-count family.
 
 Current state (per witnesses 2026-06-09 — full audit at
 [`docs/audits/2026-06-09-binding-canonical-default-depth-stratified.md`](audits/2026-06-09-binding-canonical-default-depth-stratified.md)):
