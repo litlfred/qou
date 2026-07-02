@@ -34,6 +34,22 @@ rhs_explicit = sp.simplify(-sp.cosh(eta) + I * sp.sinh(eta))
 partner_eq_negconj = bool(sp.simplify(lhs - rhs_conj) == 0)
 partner_eq_explicit = bool(sp.simplify(lhs - rhs_explicit) == 0)
 
+# (1b) The FULL ζ₄ orbit + isotypic decomposition (2026-07-02, bean 5nx8; Lean:
+#      vModel_zeta4_sq / vModel_zeta4_cube / vModel_orbit_sum_zero /
+#      vModel_sign_isotype_zero / vModel_eq_faithful_sum, sorry-free). The orbit closes
+#      (ζ₄²=−1, ζ₄³= channel conjugation), the two NON-faithful isotypes vanish, and the
+#      model is exactly the sum of the two FAITHFUL eigencomponents (1±i)/2·e^{±η}
+#      (eigenvalues ±i). Constraint on the OPEN single-𝔙 assembly: it must be ζ₄-faithful.
+R = sp.pi / 2 * I
+orbit = [sp.expand_complex(V0(eta + k * R)) for k in range(4)]
+zeta4_sq_eq_neg = bool(sp.simplify(orbit[2] + V0(eta)) == 0)
+zeta4_cube_eq_channel_conj = bool(
+    sp.simplify(orbit[3] - (sp.cosh(eta) - I * sp.sinh(eta))) == 0)
+orbit_sum_zero = bool(sp.simplify(orbit[0] + orbit[1] + orbit[2] + orbit[3]) == 0)
+sign_isotype_zero = bool(sp.simplify(orbit[0] - orbit[1] + orbit[2] - orbit[3]) == 0)
+faithful_sum_eq = bool(sp.simplify(
+    V0(eta) - ((1 + I) / 2 * sp.exp(eta) + (1 - I) / 2 * sp.exp(-eta))) == 0)
+
 results = {
     "V0(eta+i*pi/2)": str(lhs),
     "neg_conj_V0(eta)": str(rhs_conj),
@@ -48,14 +64,36 @@ results = {
         "observable_level": "DEGENERATE (Im(q₀)=0) — must NOT be used to claim closure (numerology guard, #2951).",
     },
 }
+results["zeta4_orbit_isotypic"] = {
+    "zeta4_sq_eq_neg_V0": zeta4_sq_eq_neg,
+    "zeta4_cube_eq_channel_conj": zeta4_cube_eq_channel_conj,
+    "orbit_sum_zero_trivial_isotype": orbit_sum_zero,
+    "sign_isotype_zero": sign_isotype_zero,
+    "faithful_sum_(1+i)/2*exp+(1-i)/2*exp(-)": faithful_sum_eq,
+    "lean_cert": ("QOU/Mass/ComplexVolumeZeta4Partner: vModel_zeta4_sq, vModel_zeta4_cube, "
+                  "vModel_orbit_sum_zero, vModel_sign_isotype_zero, vModel_eq_faithful_sum "
+                  "(sorry-free)"),
+    "assembly_constraint": ("the open single-𝔙 assembly must be ζ₄-FAITHFUL: a nonzero orbit "
+                            "sum (trivial isotype) or sign-isotype component falsifies a "
+                            "candidate assembly"),
+}
 assertions = {
     "zeta4_partner_eq_neg_conj": partner_eq_negconj,
     "zeta4_partner_eq_explicit_form": partner_eq_explicit,
+    "zeta4_sq_eq_neg_V0": zeta4_sq_eq_neg,
+    "zeta4_cube_eq_channel_conj": zeta4_cube_eq_channel_conj,
+    "zeta4_orbit_sum_zero": orbit_sum_zero,
+    "zeta4_sign_isotype_zero": sign_isotype_zero,
+    "zeta4_faithful_sum_eq": faithful_sum_eq,
 }
 verdict = (
     "ζ₄-PARTNER RELATION VERIFIED (Lean-certified): V₀(η+iπ/2) = −conj V₀(η) = −cosh η + i·sinh η — "
     "the ζ₄=i rotation negates the bar-even (binding/Re) channel and keeps the bar-odd (Q_β/Im) "
-    "channel, the fibre-level coupling of 𝔙 = Vol + i·CS. DESCENT STILL OPEN: closing "
+    "channel, the fibre-level coupling of 𝔙 = Vol + i·CS. ORBIT/ISOTYPIC LAYER (2026-07-02, "
+    "Lean-certified): the ζ₄ orbit closes (ζ₄²=−1, ζ₄³=channel conjugation), the trivial and sign "
+    "isotypes BOTH vanish, and V₀ = (1+i)/2·e^η + (1−i)/2·e^{−η} is exactly the sum of the two "
+    "FAITHFUL ±i eigencomponents — so any candidate single-𝔙 assembly must be ζ₄-faithful "
+    "(falsifiable structural constraint on the OPEN assembly). DESCENT STILL OPEN: closing "
     "conj:binding-qbeta-complex-volume needs (i) the binding fibre kernel (characterized, not a "
     "finite low-order operator), (ii) the Q_β fibre kernel (GATED on the SW-residue keystone; Φ₂ fit "
     "forbidden), and (iii) their assembly into one trace object 𝔙. The generator coupling + "
