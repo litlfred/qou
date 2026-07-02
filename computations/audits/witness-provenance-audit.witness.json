@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-01T00:04:31.604174+00:00",
-  "commitSha": "c55d0aba20843d6a357f525bd6c635b717875e6d",
+  "computedAt": "2026-07-02T12:08:35.794501+00:00",
+  "commitSha": "f8277023a2b4a62768c447a2ee793246cb8710d2",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 273,
+      "computed": 269,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 12,
+  "durationMs": 14,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
@@ -47,12 +47,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 1544,
-      "prov_ok": 1215,
+      "total_scanned": 1545,
+      "prov_ok": 1220,
       "prov_audit_exempt": 55,
-      "prov_missing": 273,
+      "prov_missing": 269,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.822538860103627
+      "completeness_ratio": 0.8252427184466019
     },
     "by_verdict": {
       "PROV_OK": [
@@ -3413,6 +3413,10 @@
           "missing_fields": []
         },
         {
+          "witness": "keystone-valuemap-screen-s013.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "khovanov-at-q0-probe.witness.json",
           "missing_fields": []
         },
@@ -4553,7 +4557,15 @@
           "missing_fields": []
         },
         {
+          "witness": "frakV-descent-zeta4-partner-probe.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "knot-volumes.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "lever1-binding-habiro-qexponential.witness.json",
           "missing_fields": []
         },
         {
@@ -4582,6 +4594,14 @@
         },
         {
           "witness": "lever1-lambda-sw-no-shortcut.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "lever1-lw-depth2-recurrence-test.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "lever1-trB-quantum-integer-form.witness.json",
           "missing_fields": []
         },
         {
@@ -6645,14 +6665,6 @@
           ]
         },
         {
-          "witness": "frakV-descent-zeta4-partner-probe.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "frakV-zeta4-fibre-vs-observable-probe.witness.json",
           "missing_fields": [
             "engine",
@@ -6685,14 +6697,6 @@
           ]
         },
         {
-          "witness": "lever1-binding-habiro-qexponential.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "lever1-binding-habiro-single-element-test.witness.json",
           "missing_fields": [
             "engine",
@@ -6710,14 +6714,6 @@
         },
         {
           "witness": "lever1-habiro-element-fit.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "lever1-lw-depth2-recurrence-test.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
@@ -6750,14 +6746,6 @@
         },
         {
           "witness": "lever1-trB-geometric-target.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "lever1-trB-quantum-integer-form.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",

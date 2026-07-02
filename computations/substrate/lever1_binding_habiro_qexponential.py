@@ -133,8 +133,12 @@ witness = {
     "assertions": assertions,
     "verdict": verdict,
 }
-out = os.path.join("computations", "substrate", "lever1-binding-habiro-qexponential.witness.json")
-with open(out, "w") as f:
+from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+# Flat `assertions` payload → stamp (not wrap_legacy) preserves it.
+WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="sympy")
+witness["scriptFile"] = os.path.basename(__file__)
+out = os.path.join(os.path.dirname(__file__), "lever1-binding-habiro-qexponential.witness.json")
+with open(out, "w", encoding="utf-8") as f:
     json.dump(witness, f, indent=2)
 
 print(f"\n  classical limit exp(x+x²/2)? {classical_ok}   log truncates at z²? {truncates_at_2}")

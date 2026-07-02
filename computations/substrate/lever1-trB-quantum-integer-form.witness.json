@@ -38,5 +38,13 @@
     "(C) it restricts A₅-irreducibly (W ⇒ isogeny/CM factor, not a form-subrep)": true
   },
   "allPassed": true,
-  "verdict": "TARGET SHARPENED, NO CLOSURE. The lever-1 monodromy trace is a rational function of the quantum integer [2]_q alone: with s = q+q⁻¹ = [2]_q, a_D^(2)=1, a_D^(3)=(s+2)/3, a_D^(4)=(3s²−2)/4, and tr B = 3(3s²+2)/(4(s+2)) (50-dps verified, symbolic + numeric). det B = 1 (proved) with tr B ≈ 2.6424 > 2 makes B a HYPERBOLIC SL₂(ℝ) element (λ ≈ 2.1846); the trace is non-integer, so B is NOT an SL₂(ℤ) elliptic-fibration topological monodromy but the rank-2 q-DIFFERENCE connection matrix on W. The rank-2 W is forced by A₅-irreducibility of H^{1,0}(Bring) (Sage-free char theory) to be an isogeny/CM factor of Jac(Bring), not a form-subrep. NET: 'identify E(q)' is now 'find the rank-2 q-difference system on H¹(E) whose connection trace is 3(3[2]_q²+2)/(4([2]_q+2))' — a [2]_q-rational, hyperbolic target. The fixed j(Bring/S₄) and the q-family connection itself stay Sage/Magma- and owner-gated (s5-so3 keystone). No fit."
+  "verdict": "TARGET SHARPENED, NO CLOSURE. The lever-1 monodromy trace is a rational function of the quantum integer [2]_q alone: with s = q+q⁻¹ = [2]_q, a_D^(2)=1, a_D^(3)=(s+2)/3, a_D^(4)=(3s²−2)/4, and tr B = 3(3s²+2)/(4(s+2)) (50-dps verified, symbolic + numeric). det B = 1 (proved) with tr B ≈ 2.6424 > 2 makes B a HYPERBOLIC SL₂(ℝ) element (λ ≈ 2.1846); the trace is non-integer, so B is NOT an SL₂(ℤ) elliptic-fibration topological monodromy but the rank-2 q-DIFFERENCE connection matrix on W. The rank-2 W is forced by A₅-irreducibility of H^{1,0}(Bring) (Sage-free char theory) to be an isogeny/CM factor of Jac(Bring), not a form-subrep. NET: 'identify E(q)' is now 'find the rank-2 q-difference system on H¹(E) whose connection trace is 3(3[2]_q²+2)/(4([2]_q+2))' — a [2]_q-rational, hyperbolic target. The fixed j(Bring/S₄) and the q-family connection itself stay Sage/Magma- and owner-gated (s5-so3 keystone). No fit.",
+  "scriptHash": "592229816705",
+  "scriptCommitSha": "f6ddd9350192668fe1fb6c2498f8d5b91bb70331",
+  "commitSha": "f8277023a2b4a62768c447a2ee793246cb8710d2",
+  "engine": "sympy",
+  "computedAt": "2026-07-02T12:07:50.100158+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "lever1_trB_quantum_integer_form.py"
 }

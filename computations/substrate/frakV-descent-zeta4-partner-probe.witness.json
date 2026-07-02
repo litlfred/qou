@@ -22,5 +22,13 @@
     "zeta4_partner_eq_explicit_form": true
   },
   "allPassed": true,
-  "verdict": "ζ₄-PARTNER RELATION VERIFIED (Lean-certified): V₀(η+iπ/2) = −conj V₀(η) = −cosh η + i·sinh η — the ζ₄=i rotation negates the bar-even (binding/Re) channel and keeps the bar-odd (Q_β/Im) channel, the fibre-level coupling of 𝔙 = Vol + i·CS. DESCENT STILL OPEN: closing conj:binding-qbeta-complex-volume needs (i) the binding fibre kernel (characterized, not a finite low-order operator), (ii) the Q_β fibre kernel (GATED on the SW-residue keystone; Φ₂ fit forbidden), and (iii) their assembly into one trace object 𝔙. The generator coupling + ζ₄-partner relation + bar-parity class are proved; the kernel descent is not, and the observable-level test is degenerate (must not be used to claim closure). Advanced, not closed."
+  "verdict": "ζ₄-PARTNER RELATION VERIFIED (Lean-certified): V₀(η+iπ/2) = −conj V₀(η) = −cosh η + i·sinh η — the ζ₄=i rotation negates the bar-even (binding/Re) channel and keeps the bar-odd (Q_β/Im) channel, the fibre-level coupling of 𝔙 = Vol + i·CS. DESCENT STILL OPEN: closing conj:binding-qbeta-complex-volume needs (i) the binding fibre kernel (characterized, not a finite low-order operator), (ii) the Q_β fibre kernel (GATED on the SW-residue keystone; Φ₂ fit forbidden), and (iii) their assembly into one trace object 𝔙. The generator coupling + ζ₄-partner relation + bar-parity class are proved; the kernel descent is not, and the observable-level test is degenerate (must not be used to claim closure). Advanced, not closed.",
+  "scriptHash": "beb6017f049e",
+  "scriptCommitSha": "f6ddd9350192668fe1fb6c2498f8d5b91bb70331",
+  "commitSha": "f8277023a2b4a62768c447a2ee793246cb8710d2",
+  "engine": "sympy",
+  "computedAt": "2026-07-02T12:07:51.172030+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "frakV_descent_zeta4_partner_probe.py"
 }
