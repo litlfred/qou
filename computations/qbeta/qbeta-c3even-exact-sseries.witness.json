@@ -1,0 +1,48 @@
+{
+  "description": "EXACT-rational s-series extraction of the net-route (bar-even) ladder rungs c_2^even, c_3^even — the measurement gated by the 1jrh AW one-recurrence formalize-first prune. Supersedes the mp.taylor instability that blocked c_3+ in qbeta-ck-sseries-operator-match. auditOnly; no production wiring; no fit.",
+  "audit_only": true,
+  "parameters": {
+    "q0": "1.1099785955573347198997632204832250266562084087802",
+    "series_order": 8,
+    "KC": 3
+  },
+  "exact": {
+    "delta_net_reg_q": "(q**13 + 3*q**12 - 2*q**11 - 12*q**10 - 2*q**9 + 22*q**8 + 6*q**7 - 26*q**6 - 10*q**5 + 14*q**4 + 4*q**3 - 6*q**2 - q + 1)/(4*q**7)",
+    "c2_even_exact": "-1049/144 - 5*sqrt(3)/12",
+    "c3_even_exact": "841/144 + 604739*sqrt(3)/12960",
+    "odd_order_logR": {
+      "3": "-33/8 + sqrt(3)/8",
+      "5": "-949/96 + 39*sqrt(3)/64",
+      "7": "-22013/1280 + 8317*sqrt(3)/5120"
+    }
+  },
+  "numeric_50dps": {
+    "c2_even": "-8.00641005870925442785865819785",
+    "c3_even": "86.6611630646909942600690102713",
+    "c4_even_scale_check_not_a_rung": "-1819.7406725228894676",
+    "casoratian_W2_shadow": "102.67398318210950312"
+  },
+  "assertions": [
+    {
+      "label": "Delta(net) reconstruction matches witness at q0 (<1e-6)",
+      "passed": true
+    },
+    {
+      "label": "R(q=1) == 1 exactly (ladder normalisation)",
+      "passed": true
+    },
+    {
+      "label": "c_2^even gate vs prior robust rung (-8.006 +/- 0.05)",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "62252d7b629e",
+  "scriptCommitSha": "unknown",
+  "commitSha": "ae0e464220f6ad38147cc071ec38018384cb5a90",
+  "engine": "sympy",
+  "computedAt": "2026-07-02T15:31:18.507139+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "qbeta_c3even_exact_sseries_probe.py"
+}
