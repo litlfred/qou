@@ -139,6 +139,10 @@ witness = {
     "allPassed": all_passed,
     "verdict": verdict,
 }
+from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+# Payload carries a top-level `assertions` mapping → stamp (not wrap_legacy) preserves it.
+WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="sympy")
+witness["scriptFile"] = pathlib.Path(__file__).name
 out = pathlib.Path(__file__).resolve().parent / "lever1-trB-geometric-target.witness.json"
 out.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n")
 print(f"\nwitness → {out}")

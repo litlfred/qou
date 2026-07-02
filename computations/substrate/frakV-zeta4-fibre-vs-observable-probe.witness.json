@@ -24,5 +24,13 @@
     "phi4_root_is_zeta4": true
   },
   "allPassed": true,
-  "verdict": "\u03b6\u2084 COUPLING IS FIBRE-LEVEL (generator-exact, Lean-certified); OBSERVABLE-LEVEL \u03b6\u2084-rotation is DEGENERATE (Im(q\u2080)=0 \u21d2 the rotate of a real Re-channel is pure imaginary, real part 0), so the two real observables \ud835\udd08_bind and \ud835\udd14_\u03b2 are NOT observable-level \u03b6\u2084-rotates. This GUARDS against closing conj:binding-qbeta-complex-volume by a numerical observable match (a numerology trap / fibre-vs-observable level conflation, per the AGENTS.md Im(q) banner). What IS established: the \u03b6\u2084 moderator cosh\u21a6i\u00b7sinh is the exact fibre-level form of the corpus 'Q_\u03b2 = bar-odd sinh partner of the bar-even cosh scale' assertion, with \u03a6\u2084 = q\u00b2+1 the shared \u03b6\u2084 = i residue locus. The full descent of binding (Re) and Q_\u03b2 (Im) from ONE fibre \ud835\udd19 remains the OPEN conjecture \u2014 advanced (generator-level coupling proved) but not closed; closure needs the fibre-level kernel identification, not an observable match."
+  "verdict": "\u03b6\u2084 COUPLING IS FIBRE-LEVEL (generator-exact, Lean-certified); OBSERVABLE-LEVEL \u03b6\u2084-rotation is DEGENERATE (Im(q\u2080)=0 \u21d2 the rotate of a real Re-channel is pure imaginary, real part 0), so the two real observables \ud835\udd08_bind and \ud835\udd14_\u03b2 are NOT observable-level \u03b6\u2084-rotates. This GUARDS against closing conj:binding-qbeta-complex-volume by a numerical observable match (a numerology trap / fibre-vs-observable level conflation, per the AGENTS.md Im(q) banner). What IS established: the \u03b6\u2084 moderator cosh\u21a6i\u00b7sinh is the exact fibre-level form of the corpus 'Q_\u03b2 = bar-odd sinh partner of the bar-even cosh scale' assertion, with \u03a6\u2084 = q\u00b2+1 the shared \u03b6\u2084 = i residue locus. The full descent of binding (Re) and Q_\u03b2 (Im) from ONE fibre \ud835\udd19 remains the OPEN conjecture \u2014 advanced (generator-level coupling proved) but not closed; closure needs the fibre-level kernel identification, not an observable match.",
+  "scriptHash": "38ae6ad0b3eb",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "3643c51f7c72d61278d2c27d19b68ec35126dffb",
+  "engine": "sympy",
+  "computedAt": "2026-07-02T12:09:37.075210+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "frakV_zeta4_fibre_vs_observable_probe.py"
 }
