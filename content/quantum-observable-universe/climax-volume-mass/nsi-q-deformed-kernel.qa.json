@@ -1013,21 +1013,18 @@
     "proof-no-placeholder-stub": [
       {
         "field_hash": {
-          "lean": "9ea775275d9b"
+          "lean": "cea5fb5f7381"
         },
-        "result": "fail",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/BraidsKnots/nsi_q_deformed_kernel.lean:1 [placeholder-stub-file] # QOU... — placeholder stub",
+        "result": "pass",
         "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
-          "version": "v1",
-          "script_hash": "bad2c01f7b40",
-          "script_commit_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd"
+          "kind": "agent",
+          "id": "local/lean-proof-vacuity-audit",
+          "agent_date": "2026-07-02",
+          "agent_skill": "local/lean-proof-vacuity-audit"
         },
-        "reviewed_at": "2026-06-22T02:50:55.754Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "reviewed_at": "2026-07-02T17:07:15.000Z",
+        "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
+        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): placeholder-stub marker no longer present — criterion pass. Residual self-assuming-projection / statement-scope issue tracked under proof-statement-integrity and bean qsb2; do not re-fail this criterion for it."
       }
     ],
     "voice-statement-no-interpretation": [
