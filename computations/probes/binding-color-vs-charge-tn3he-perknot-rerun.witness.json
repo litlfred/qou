@@ -1,0 +1,75 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-02T12:19:40.929778+00:00",
+  "commitSha": "f5dca72b238be8e28e8c170e72b5a98817567b13",
+  "assertions": [
+    {
+      "name": "density_base_cancels_splits_identical",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-20
+    },
+    {
+      "name": "color_too_small_under_perknot_base",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 25,
+  "computation": "binding-color-vs-charge-tn3he-perknot-rerun",
+  "scriptFile": "binding_color_vs_charge_tn3he_perknot_rerun.py",
+  "scriptHash": "0a258e67ef41",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "data": {
+    "audit": "docs/audits/2026-06-24-lambda-a-refutation-artifact-audit.md",
+    "bean": "x5az",
+    "q_0": "1.1099785955573347",
+    "delta_flavor_split": "0.00137704940979406055875427007685",
+    "lambda_A_at_q0": "2.5327796636746759713582826702",
+    "B0_bonds_MeV": {
+      "pp": "2.2860876243931455729220346596",
+      "pn": "2.30483655956357292176301454671",
+      "nn": "2.24972748482744477758808417796"
+    },
+    "needed_split_MeV": "0.7637962",
+    "lambda_A_normalized_baseline": {
+      "weights": {
+        "pp": "0.999541826314547319445094317124",
+        "pn": "1.00000094813253850708526395804",
+        "nn": "1.00045985925441002648426383051"
+      },
+      "color_split_MeV": "-0.0342781563697663315983866937436",
+      "color_fraction_of_needed": "-0.0448786683800814033879543964"
+    },
+    "per_knot_base_free": {
+      "weights": {
+        "pp": "0.999541826314547319445094317124",
+        "pn": "1.00000094813253850708526395804",
+        "nn": "1.00045985925441002648426383051"
+      },
+      "color_split_MeV": "-0.0342781563697663315983866937436",
+      "color_fraction_of_needed": "-0.0448786683800814033879543964"
+    },
+    "abs_split_difference_MeV": "0.0",
+    "max_weight_difference": "0.0",
+    "verdict": "ROBUST — the color-vs-charge T−³He refutation is NOT a λ_A density artifact. λ_A entered the pre-swap original only as the normalization of the color weight w = bw(Z,N,q0)/λ_A, and since bw = λ_A·(1+δ·asym+δ²·sym) by construction, the density base cancels algebraically — the same cancellation holds for any per-knot tr_M base. Both forms give the identical split (≈ −0.034 MeV, ≈ 4.5 % of the needed +0.764 MeV): color at the δ = flavor-split scale is ~20× too small either way; the T−³He split remains CHARGE/Coulomb (α_EM sector). Scope (a): color weighting, alone, at this scale does not supply the split — no ingredient-level exclusion claimed. (Note: the audit's step-2 'λ_A-family-bound' classification was overcautious for THIS script — the bond energies were already per-block tr_M at H_6 and the λ_A base cancels; the refutation is density-base-independent.)",
+    "refutation_scope": "scope-limited negative (a) per AGENTS.md"
+  }
+}

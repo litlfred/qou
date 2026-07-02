@@ -1,0 +1,98 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-02T12:20:01.427827+00:00",
+  "commitSha": "f5dca72b238be8e28e8c170e72b5a98817567b13",
+  "assertions": [
+    {
+      "name": "sum_density_independent_matches_parent",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0
+    },
+    {
+      "name": "closure_fails_under_all_three_densities",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0
+    },
+    {
+      "name": "codata_residual_reproduces_minus_2p30_MeV",
+      "computed": -2.298640121421399,
+      "expected": -2.2986427,
+      "passed": true,
+      "tolerance": 0.0001
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 21,
+  "computation": "rho-k-h3a-co-casimir-perknot-rerun",
+  "scriptFile": "rho_k_h3a_co_casimir_perknot_rerun.py",
+  "scriptHash": "7fb31034ccbb",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "data": {
+    "audit": "docs/audits/2026-06-24-lambda-a-refutation-artifact-audit.md",
+    "bean": "x5az",
+    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
+    "vol_B3": "7.327724753417752120436828119459072886193194994253377074131984956974104",
+    "abs_tr_M_beta_D_H6": "0.3882864715477132785110659223165687998713135876719",
+    "tr_M_proton_H3": "1.065306238075878215688040411687927620546686279347",
+    "tr_M_neutron_H3": "0.92323330514983772546573530276491123416377319107628",
+    "sum_y_chi_Delta_B_density_independent": "0.1449592241263941029130633490643178125809914949475946513858381313409698",
+    "sum_matches_parent_witness_1e_40": true,
+    "closure_by_density": {
+      "codata_baseline_parent_reproduction": {
+        "m_p_MeV": "938.27208816",
+        "m_n_MeV": "939.56542052",
+        "m_pn_MeV": "1877.8375086799999751130235381424427032470703125",
+        "target_signed": "-4.353367275991764156441458195751864249430505029203976896330718373358238",
+        "sum_y_chi_Delta_B": "0.1449592241263941029130633490643178125809914949475946513858381313409698",
+        "same_sign_sum_vs_target": false,
+        "diagnostic_closure_rescaler": "-30.03166788610801638255032278595131366389289727888464572390387726684361",
+        "M_pred_MeV": "1877.911582691421399031545517386108066842619875234558035303397619639441",
+        "residual_MeV": "-2.298640121421399031545517386108066842619875234558035303397619639441413",
+        "abs_rescaler": "30.03166788610801638255032278595131366389289727888464572390387726684361"
+      },
+      "global_lambda_A_fitted": {
+        "m_p_MeV": "966.0496245579015240493927838597200366601461839071398576107782097341319",
+        "m_n_MeV": "966.0496245579015240493927838597200366601461839071398576107782097341319",
+        "m_pn_MeV": "1932.099249115803048098785567719440073320292367814279715221556419468264",
+        "target_signed": "-110.540944300433095863478254845024784252932939842158162419839194187336",
+        "sum_y_chi_Delta_B": "0.1449592241263941029130633490643178125809914949475946513858381313409698",
+        "same_sign_sum_vs_target": false,
+        "diagnostic_closure_rescaler": "-762.5657833546989584061491974132515788319169248679030531384338517848145",
+        "M_pred_MeV": "1932.173323127224472017307546963105436915841930548837750524954039107705",
+        "residual_MeV": "-56.56038055722447201730754696310543691584193054883775052495403910770528",
+        "abs_rescaler": "762.5657833546989584061491974132515788319169248679030531384338517848145"
+      },
+      "per_knot_tr_M_canonical": {
+        "m_p_MeV": "406.3277615863630794264102233957424115185344871611975715066403877634835",
+        "m_n_MeV": "352.1384827156091585703754703181590936206475874978878650982486106159325",
+        "m_pn_MeV": "758.466244301972237996785693713901505139182074659085436604888998379416",
+        "target_signed": "2186.201550432831011109828911821279761346153235759229702372661444770968",
+        "sum_y_chi_Delta_B": "0.1449592241263941029130633490643178125809914949475946513858381313409698",
+        "same_sign_sum_vs_target": true,
+        "diagnostic_closure_rescaler": "15081.49318270784348081216571919266576281158080692937668546689643662484",
+        "M_pred_MeV": "758.5403183133936619153076729575668687347316373936434719082866180188575",
+        "residual_MeV": "1117.072624256606338084692327042433131265268362606356528091713381981143",
+        "abs_rescaler": "15081.49318270784348081216571919266576281158080692937668546689643662484"
+      }
+    },
+    "verdict": "ROBUST — the co-Casimir Δ_λ = 1/dim_q refutation is NOT a λ_A density artifact. The verdict quantity Σ y_λ χ^λ Δ_λ^B = +0.145 is density-independent (pure per-partition Hecke data). Swapping the constituent baseline changes only the target: CODATA target −4.35 (wrong sign, |rescaler| ≈ 30), global-λ_A target ≈ −110.5 (wrong sign, ≈ 763×), per-knot target ≈ +2186 (sign now agrees but ≈ 15081× too small). The closure fails by ≥ 30× under every density; the specific 'wrong sign' phrasing is baseline-dependent, the failure is not. Scope (a): this construction, alone, does not reproduce the numbers under any of the three density bases — no ingredient-level exclusion claimed.",
+    "refutation_scope": "scope-limited negative (a) per AGENTS.md"
+  }
+}
