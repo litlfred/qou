@@ -51,10 +51,10 @@
     "trM_H4_generator": "0.499320334033561271768966386276",
     "c12_ratio_at_q0": "1.0",
     "worst_dev": {
-      "A": "5.34553e-51",
+      "A": "0.0",
       "B": "0.0",
       "C": "1.06911e-50",
-      "D": "0.0"
+      "D": "1.33638e-51"
     }
   },
   "assertions": [
@@ -76,12 +76,12 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "28f3b2f68138",
-  "scriptCommitSha": "unknown",
-  "commitSha": "c3a94315a20f96e6d27ffadef68de6be173c20f1",
+  "scriptHash": "83041251a965",
+  "scriptCommitSha": "78dd216a1721290699f7003e28922bd667b242cd",
+  "commitSha": "78dd216a1721290699f7003e28922bd667b242cd",
   "engine": "mpmath",
-  "computedAt": "2026-07-02T16:52:25.545583+00:00",
-  "durationMs": 655,
+  "computedAt": "2026-07-02T16:57:17.325824+00:00",
+  "durationMs": 48,
   "engineVersion": "mpmath 1.3.0",
   "scriptFile": "qbeta_h4_stagec_markov_infra.py"
 }
