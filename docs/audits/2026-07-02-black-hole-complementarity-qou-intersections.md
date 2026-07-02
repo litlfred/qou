@@ -11,6 +11,9 @@ the fetched PDFs**. Quotations of the STU postulates are close paraphrases,
 to be checked against the PDF on intake. arXiv:1810.11563 could not be
 identified from this sandbox and is deliberately **not** reviewed or
 registered (no fabricated metadata); it is queued for identification.
+arXiv:1512.04993 was initially mis-attributed to the Marolf review and is
+corrected to Brown et al. (§1.3 note, §1.5) per the Gemini review on
+PR #3231.
 
 Corpus grounding: all QOU-side claims below were checked against the corpus
 (sweep over `content/`, `docs/`, `computations/`). **No existing block
@@ -59,7 +62,14 @@ falsifiable by any gedanken experiment of this class. This is the original
 "decoding-time censor" argument, sharpened twenty years later by
 Harlow–Hayden (1.4).
 
-### 1.3 Marolf, *The Black Hole information problem: past, present, and future* (1512.04993; `marolf2017`)
+### 1.3 Marolf, *The Black Hole information problem: past, present, and future* (1703.02143; `marolf2017`)
+
+> **Attribution correction (Gemini review, PR #3231).** The author's
+> requested URL 1512.04993 was initially mis-attributed to this review;
+> 1512.04993 is Brown et al., *Complexity, action, and black holes*
+> (§1.5). The Marolf review is arXiv:1703.02143 and remains in the batch
+> as the likely source of the quoted "standard complementarity" passage —
+> verify both title pages on fetch.
 
 A taxonomy review. The passage the author quoted defines **standard
 complementarity**: a *single* Hilbert space with exact unitary evolution;
@@ -84,7 +94,19 @@ conflict ($B$ with the interior vs $B$ with $R$) is never operationally
 exhibited. Computational complexity acts as the censor protecting
 complementarity — the modern quantitative descendant of 1.2.
 
-### 1.5 arXiv:1810.11563 — queued for identification
+### 1.5 Brown–Roberts–Susskind–Swingle–Zhao, *Complexity, action, and black holes* (1512.04993; `brown2016`)
+
+The "complexity = action" (CA) conjecture: the quantum computational
+complexity of the boundary state equals the bulk action evaluated on the
+Wheeler–DeWitt patch, $\mathcal{C} = I_{\mathrm{WDW}} / \pi \hbar$. The
+black-hole interior keeps growing (linearly in time, for exponentially
+long) *after* thermal equilibrium because complexity — not entropy — is
+what still increases; the growth rate saturates a Lloyd-type bound
+$d\mathcal{C}/dt \leq 2M/\pi\hbar$. This is the Susskind-school sequel to
+1.4: complexity promoted from censor (Harlow–Hayden) to geometry
+(interior volume/action). QOU intersection in §3.4.
+
+### 1.6 arXiv:1810.11563 — queued for identification
 
 Not reviewed: title/authors could not be verified from this sandbox and
 guessing citation metadata is worse than waiting one fetch cycle. Action
@@ -263,6 +285,22 @@ what makes P1b fail (§3.2); adopting witness completeness retreats QOU to
 the HH position, where the gedanken defense still goes through on the
 bandwidth bound alone.
 
+**Complexity = action (Brown et al., §1.5) → QOU computational time.**
+QOU already takes the CA move as *definitional*: time for an observer *is*
+computational depth (Planck-step / $R$-matrix count,
+[`computational-spacetime-observer`](../../content/quantum-observable-universe/information-theory/computational-spacetime-observer.md)),
+so "interior keeps growing = complexity keeps growing" is, in QOU, the
+statement that the braid-evaluation depth of the trapped degree-$0$
+sections keeps increasing after thermal (degree-$1$) equilibrium of the
+horizon skin. The Lloyd-type rate bound $d\mathcal{C}/dt \leq 2M/\pi\hbar$
+is the shape of the bandwidth bound: complexity accrues at most
+$\mathfrak{B}(q)$ $q$-bits per Planck step, and $\mathfrak{B}(q)$ is
+mass-linear through $E = \mathfrak{m} c_q^2$ at fixed $q_0$. A worked
+comparison (does $\mathfrak{B}(q_0) \cdot t_P^{-1}$ reproduce $2M/\pi\hbar$
+in substrate units?) is a cheap follow-up probe — formalize-first note:
+the invariant to check is a linear-in-$M$ rate ceiling, one inequality,
+before any numerics.
+
 $E = \mathfrak{m} c_q^2$ tie-in (this branch's original theme): the censor
 and the energetics share the constant — $\mathfrak{B}(q) = q\,\eta_q/(q-1)^2 = c_q^2\, q\, \eta_q$,
 so the same $c_q^2 \approx 83$ that amplifies mass into crossing energy
@@ -309,8 +347,11 @@ information leakage rate are the one constant seen twice.
 
 ## 6. Follow-ups (not in this tranche)
 
-1. Fetch the 5 PDFs on a normal-network machine (`gen-bib-papers-list.py`
-   picks up the four registered refs); identify 1810.11563 and register it.
+1. Fetch the PDFs on a normal-network machine per the bib-qa batch intake
+   workflow (`.claude/skills/local/bib-qa.md` — the batch tooling scans
+   `references.ts` arxiv URLs); identify 1810.11563 and register it;
+   verify the 1512.04993 = Brown et al. and 1703.02143 = Marolf
+   attributions and the quoted-passage provenance.
 2. Promote the §3.3 conjecture to a `conjecture` content block
    (`conj:bh-state-counting`) in `information-theory/` or
    `gravity-spacetime/`, with a §3b class axiomatisation.

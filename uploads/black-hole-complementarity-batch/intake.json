@@ -13,7 +13,7 @@
     "structuredAt": null,
     "generatedAt": null,
     "errors": [
-      "2026-07-02: session network policy is github-only (arxiv.org CONNECT 403 via agent proxy for paper-search-mcp, curl, and WebFetch). PDF fetch queued for a normal-network machine per bib-qa.md §Batch intake pipeline (scripts/gen-bib-papers-list.py picks the four registered refs up from references.ts arxiv URLs)."
+      "2026-07-02: session network policy is github-only (arxiv.org CONNECT 403 via agent proxy for paper-search-mcp, curl, and WebFetch). PDF fetch queued for a normal-network machine per .claude/skills/local/bib-qa.md §Batch intake pipeline (the batch tooling scans references.ts for arxiv URLs, so the registered refs are picked up automatically; note the pipeline scripts were relocated by the miga migration — follow the skill doc's current pointers)."
     ]
   },
   "classification": {
@@ -40,11 +40,21 @@
     },
     {
       "arxivId": "1512.04993",
+      "refId": "brown2016",
+      "title": "Complexity, action, and black holes",
+      "authors": "Brown, Roberts, Susskind, Swingle, Zhao",
+      "pdf": null,
+      "status": "queued-for-fetch",
+      "note": "Initially mis-attributed to the Marolf review; corrected per Gemini review on PR #3231 (concurring model recollection). Verify title page on fetch."
+    },
+    {
+      "arxivId": "1703.02143",
       "refId": "marolf2017",
       "title": "The Black Hole information problem: past, present, and future",
       "authors": "Marolf",
       "pdf": null,
-      "status": "queued-for-fetch"
+      "status": "queued-for-fetch",
+      "note": "Not in the author's original 5-ID list, but the likely source of the quoted 'standard complementarity' passage; verify the passage on fetch."
     },
     {
       "arxivId": "1301.4504",
