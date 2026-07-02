@@ -27,7 +27,7 @@ replacement appropriate to what it computes, and files that reference λ_A
 |------|---------|--------|
 | `INFRA` | defines / re-exports the deprecated functions | keep (deprecation warnings already in place) |
 | `AUDIT-KEEP` | audits / probes / refutations *about* λ_A or global-vs-per-knot | keep — the reference is the subject |
-| `ABS-MASS-MIGRATE` | computes an absolute mass (MeV) via the λ_A path as a live input | route through `canonical_mass.proton_mass_mev` / `neutron_mass_mev` / `nucleon_mass_mev` |
+| `ABS-MASS-MIGRATE` | computes an absolute mass (MeV) via the λ_A path as a live input | route through the `canonical_mass` functions `proton_mass_mev()` / `neutron_mass_mev()` / `nucleon_mass_mev(species)` |
 | `BINDING-OK` | density used only where scale cancels (binding / trace ratios) | `vol_density_per_block` (per-knot `tr_M(K)`) |
 | `GATED` | GAP-A-4 per-knot absolute-density frontier probes | **do not touch** (owner-gated; "no seventh fit ansatz" stands) |
 | `DOC-ONLY` | name appears only in comment / docstring / deprecation notice | no action |
