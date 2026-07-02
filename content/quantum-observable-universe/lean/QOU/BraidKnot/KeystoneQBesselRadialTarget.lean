@@ -108,7 +108,7 @@ theorem shape_311 (q : R) :
 theorem dq_311_div (q : R) (h2 : qInt q 2 ≠ 0) (h311 : hookProd311 q ≠ 0) :
     qFactorial q 5 / hookProd311 q = qInt q 4 * qInt q 3 / qInt q 2 := by
   rw [div_eq_div_iff h311 h2]
-  linear_combination shape_311 q
+  exact shape_311 q
 
 /-! ## The obligation class (OPEN — bean s013; no instance) -/
 
