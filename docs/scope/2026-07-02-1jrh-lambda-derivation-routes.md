@@ -13,7 +13,7 @@ categorically-forced forms — never an enumeration against a c₄ target
 | # | constraint | source |
 |---|---|---|
 | L1 | σ₃-involving (σ₃-free ⇒ zero new DOF) | preflight σ₃-gating (PR #2465) |
-| L2 | its level-4 content = `tr_M^{H₄}(Λ) − tr_M^{H₃}(shadow)` (stabilization constant ≡ 1) | PR #3228 gate C |
+| L2 | its level-4 content = tr_M^(H₄)(Λ) − tr_M^(H₃)(shadow) (stabilization constant ≡ 1) | PR #3228 gate C |
 | L3 | anchor-stability: c₄ swing (proton vs muon q₀) < 1% | registry §8; Stage-C scope §2 |
 | L4 | bar-parity: respects the bar-even/bar-odd split of the complex ladder; the q=1 shadow finite | refuted-class map §1; c₃ shadow → −2 |
 | L5 | reduces to ι(ΔT) under the Markov conditional expectation H₄→H₃ (the decay content is unchanged; Λ only adds the N=4 brane level) | C12 + counit N=0 (PR #2469) |
@@ -45,7 +45,7 @@ Gated on the kernel search (synthesis §3-bis, q-heat lead); not evaluable now.
 ### Route γ — color-tube W-coupling (keystone-gated: `conj:s5-so3-fiber-action`)
 
 The decay defect couples to the new strand through the 9-channel color-tube
-weight `W_{c₁c₂}` (the same object gating the 754x strong-core rewire). Λ_γ =
+weight W_c₁c₂ (the same object gating the 754x strong-core rewire). Λ_γ =
 the W-weighted σ₃-dressing. Physically the richest; blocked on the s5-so3
 keystone. Not evaluable now.
 
