@@ -81,6 +81,13 @@ the color-weighted p-n crossing handled internally). All routes are MPFR
 at the 50-dps floor; `auto` is the only setting that spans a table mixing
 free nucleons and composites in one run.*
 
+*The **graded-ρ_K atomic-mass route** ([`prop:rho-k-graded-expansion`](../mass-endomorphism/rho-k-graded-expansion.md))
+is realised by [`rho_k_graded_atomic_mass.py`](../../../computations/rho_k_graded_atomic_mass.py)
+(witness `rho-k-graded-atomic-mass.witness.json`): LO constituents from the
+canonical `canonical_mass` facade + the proved single-gen correction
+$\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$ ($0.19\%$ mean, $Z = 1..10$);
+the pair-gen tier is reported as the open residual only, never wired.*
+
 ### Witness contract
 
 *Provisional witness:
