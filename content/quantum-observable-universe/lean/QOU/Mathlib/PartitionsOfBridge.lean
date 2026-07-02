@@ -11,8 +11,8 @@ The Identity I combinatorics run `decide` over the fuel-based list enumerator
 is the **enumeration bridge**: that `partitionsOf n` lists *exactly* the image of `toList`,
 each partition once.  This file proves it and cashes it out:
 
-* `mem_partsFuel` / `partsFuel_nodup` — soundness, completeness, and duplicate-freeness of the
-  fuel-based enumerator, by induction on the fuel;
+* `mem_partsFuel_sound` / `mem_partsFuel_complete` / `partsFuel_nodup` — soundness,
+  completeness, and duplicate-freeness of the fuel-based enumerator, by induction on the fuel;
 * `mem_partitionsOf` / `partitionsOf_nodup` — the corollaries at `fuel = target = cap = n`;
 * `toFinset_partitionsOf` — `(partitionsOf n).toFinset = Finset.univ.image toList`;
 * `sum_map_partitionsOf` — sum transport: `((partitionsOf n).map g).sum = Σ_{p ⊢ n} g (toList p)`;
