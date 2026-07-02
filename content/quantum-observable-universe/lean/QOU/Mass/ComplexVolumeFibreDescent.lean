@@ -63,4 +63,58 @@ noncomputable instance : ComplexVolumeFibre vCoshSinh where
   re_bar_even := by intro η; simp [Real.cosh_neg]
   im_bar_odd := by intro η; simp [Real.sinh_neg]
 
+/-! ## The self-dual locus constraint (from `prop:self-dual-higgs-real-volume`)
+
+The keystone `QOU.Knot.SelfDuality.higgs_complex_volume_real` proves, over a generic
+`(CommRing R, σ)`, that a bar-fixed element has zero bar-odd part. Here is its **fibre-map
+instance**, wired into the descent class: an **amphichiral** source (`J_N(q) = J_N(q⁻¹)`, the Higgs
+`4₁`) gives a bar-fixed fibre object, and for a bar-fixed `ComplexVolumeFibre` the **Q_β channel
+vanishes identically** — `𝔙` is purely real (binding only, `CS = 0`).
+
+This is a **falsifiability constraint on the open descent**: any candidate assembly of the actual
+trace object `𝔙 = E₀·tr_M((Π_free−1)∘ℳ)` into a `ComplexVolumeFibre` must send amphichiral
+composites to real `𝔙` (zero Q_β). A proposed assembly producing a nonzero Q_β for a self-dual
+composite is refuted by `barFixed_qbeta_zero` below — structure narrowing the search, per
+formalize-first. -/
+
+/-- A fibre object is **bar-fixed** (self-dual / amphichiral source): `V(−η) = V(η)`. This is the
+fibre-map form of `J_N(q) = J_N(q⁻¹)` (the Higgs `4₁` self-duality). -/
+def BarFixed (V : ℝ → ℂ) : Prop := ∀ η : ℝ, V (-η) = V η
+
+/-- **Self-dual locus vanishing (the CS = 0 mechanism, fibre-map instance).** A bar-fixed
+complex-volume fibre object has identically vanishing Q_β (bar-odd / imaginary) channel. -/
+theorem barFixed_qbeta_zero (V : ℝ → ℂ) [ComplexVolumeFibre V] (h : BarFixed V) (η : ℝ) :
+    (V η).im = 0 := by
+  have hodd := ComplexVolumeFibre.im_bar_odd (V := V) η
+  rw [h η] at hodd
+  linarith
+
+/-- On the self-dual locus `𝔙` is **purely real**: the fibre object equals its binding (Re)
+channel — the bare Higgs contributes only the volume/mass face. -/
+theorem barFixed_real (V : ℝ → ℂ) [ComplexVolumeFibre V] (h : BarFixed V) (η : ℝ) :
+    V η = ((V η).re : ℂ) := by
+  apply Complex.ext
+  · simp
+  · simpa using barFixed_qbeta_zero V h η
+
+/-- At the bar fixed **point** `η = 0` (the classical point `q = 1`) the Q_β channel of *every*
+fibre object vanishes — no self-duality hypothesis needed. β-decay is a strictly `q ≠ 1`
+(deformation) phenomenon. -/
+theorem im_at_classical_point_zero (V : ℝ → ℂ) [ComplexVolumeFibre V] : (V 0).im = 0 := by
+  have hodd := ComplexVolumeFibre.im_bar_odd (V := V) 0
+  rw [neg_zero] at hodd
+  linarith
+
+/-- **The constraint is non-trivial.** The cosh/sinh model is *not* bar-fixed — its Q_β channel is
+genuinely nonzero away from `η = 0` — so self-duality is a real restriction on fibre objects, not
+an artifact of the class shape (§3b-tax non-degeneracy). -/
+theorem vCoshSinh_not_barFixed : ¬ BarFixed vCoshSinh := by
+  intro h
+  have h1 := congrArg Complex.im (h 1)
+  rw [vCoshSinh_im, vCoshSinh_im, Real.sinh_neg] at h1
+  have hz : Real.sinh 1 = 0 := by linarith
+  rw [Real.sinh_eq] at hz
+  have hexp : Real.exp (-1) < Real.exp 1 := Real.exp_lt_exp.mpr (by norm_num)
+  linarith
+
 end QOU.Mass.ComplexVolumeFibreDescent
