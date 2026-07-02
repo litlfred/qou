@@ -14,6 +14,7 @@ import Mathlib.RepresentationTheory.Maschke
 import Mathlib.Data.Complex.Basic
 import Mathlib.FieldTheory.IsAlgClosed.Basic
 import QOU.BraidKnot.RegularRepTrace
+import QOU.BraidKnot.IdentityBCentrality
 
 /-!
 # Identity (B) for `ℂ[Sₙ]` via Artin–Wedderburn, modulo only `C₂` centrality
@@ -303,20 +304,16 @@ theorem identityB_via_wedderburn (n : ℕ)
   · -- ∑ dᵢ² ωᵢ = trace (mulLeft C₂) = n!·binom(n,2)
     rw [← htrace, trace_centralC2_eq_factorial_mul_choose_two]
 
-/-- **Identity (B) for `ℂ[S_n]`, fully discharged modulo one honest `sorry`.** Same conclusion as
-`identityB_via_wedderburn`, with the residual centrality of `C₂` supplied as the *only* `sorry`.
-This isolates the entire remaining gap to a single classical fact — *symmetric functions of the
-Jucys–Murphy elements are central* (`∑_k X_k²` commutes with every group element) — which Mathlib
-does not yet have a `MonoidAlgebra`-center characterisation for. Everything else (the Wedderburn
-block decomposition, the quadratic dimension weighting, `∑ dᵢ² = n!`, and side-1 `trace = n!·binom`)
-is proved sorry-free. -/
+/-- **Identity (B) for `ℂ[S_n]`, discharged modulo one elementary combinatorial `sorry`.** Same
+conclusion as `identityB_via_wedderburn`, with the residual centrality `C₂ ∈ Set.center ℂ[Sₙ]`
+supplied by `IdentityBCentrality.centralC2_mem_center`. That module de-abstracts the centrality
+(via the class-function property of the coefficient — proved sorry-free) down to the single
+elementary combinatorial core `IdentityBCentrality.centralC2_apply_threecycle` (`C₂ σ = 1` for a
+3-cycle `σ`), which is the *only* remaining `sorry` in the Identity-(B) development. Everything else
+(the Wedderburn block decomposition, the quadratic dimension weighting, `∑ dᵢ² = n!`, side-1
+`trace = n!·binom`, and the entire center-reduction machinery) is proved sorry-free. -/
 theorem identityB_via_wedderburn_unconditional (n : ℕ) :
     ∃ (N : ℕ) (d : Fin N → ℕ) (ω : Fin N → ℂ),
       (∑ i, (d i : ℂ) ^ 2 = (n.factorial : ℂ)) ∧
       (∑ i, (d i : ℂ) ^ 2 * ω i = (n.factorial : ℂ) * (n.choose 2 : ℂ)) :=
-  identityB_via_wedderburn n (by
-    -- Ref: [vershik-kerov1977] symmetric functions of Jucys–Murphy elements are central
-    -- (∑_k X_k² ∈ Z(ℂ[S_n])); cf. QOU.BraidKnot.jucys_murphy_esymm_central (file JucysMurphyCentralElementsQOU.lean)
-    -- (stated on the abstract JucysMurphyData; the concrete MonoidAlgebra-center instance is the
-    -- residual gap — Mathlib lacks the class-function ↔ center characterisation for MonoidAlgebra).
-    sorry)
+  identityB_via_wedderburn n (QOU.BraidKnot.IdentityBCentrality.centralC2_mem_center n)
