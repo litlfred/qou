@@ -44,7 +44,7 @@ it carries no imaginary/decay content at all. The proton scale is set by a
 *many-body* trace whose imaginary (Q_β / 𝔇_β) face is real physics, folded
 through a modulus.
 
-This upgrades the anchor convention (AGENTS.md §"q₀ anchor convention";
+This upgrades the anchor convention ([AGENTS.md](../../AGENTS.md) §"$q_0$ anchor convention";
 [`epistemic-status-of-calibrations.md`](../../content/quantum-observable-universe/observations/epistemic-status-of-calibrations.md))
 from *"muon-anchor is the canonical convention"* to *"the muon is the
 structurally-cleanest, decay-free q₀ determination."* It is the same
@@ -81,11 +81,11 @@ bar-odd part *is* Q_β, a real, fully-accounted energy (the emitted γγ̄
 channel), **not** a hidden projection error. So the observable-level
 modulus-projection mechanism, **alone**, does not produce the μ–p floor.
 
-**Scope (per the "refuted/ruled-out" discipline):** this is a **(a)
-scope-limited negative** — the observable-level mechanism does not, by itself,
+**Scope (per the "refuted/ruled-out" discipline):** this is a **scope-limited negative** (case (a) of the
+refuted/ruled-out rubric) — the observable-level mechanism does not, by itself,
 explain the floor. It is **not** a structural exclusion: a **fibre-level**
 version (the c_k Taylor coefficients live in the formal-q fibre, where Im(q)
-is unconstrained — AGENTS.md §"Im(q) at fibre vs observable level") is *not*
+is unconstrained — [AGENTS.md](../../AGENTS.md) §"$\mathrm{Im}(q)$ at fibre vs observable level") is *not*
 tested here and is not ruled out. But the fibre-level route is precisely
 substrate-derivation of q₀ = **Subgoal-2**, out of scope without owner
 reversal.
