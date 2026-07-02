@@ -597,3 +597,25 @@ lemmas (exact-symbolic; Lean follow-up): **L1** order-parity = word-length parit
 - `docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`
 - `docs/audits/2026-05-30-klr-dialog-assessment.md` (recurrent re-pitch failure modes)
 - `docs/audits/2026-06-14-klr-positivity-mass-gap.md` (KLR positivity resolution and missing T2/T3 quadratic absolute mass gap)
+
+## 2026-07-02 — AW holomorphic tie: two-session split (mechanism vs identification)
+
+Two sessions worked bean `1jrh` concurrently at different levels; results are
+**complementary** (no inconsistency, verified by cross-read):
+
+- **Mechanism half (PR #3216, session 014LW6oa…):** `recurrence_invol_descent`
+  compute-confirmed at the H₂/Hopf tower, where the AW multiplier `c = q²+q⁻²`
+  is FORCED by the crossing eigenvalues (no identification, no fit): tower +
+  both parity channels ride one Chebyshev/q-ultraspherical recurrence
+  (exact + <1e-65 at muon-q₀); bar-even hypothesis proved necessary
+  (bar-odd multiplier cross-couples channels exactly). Also lands the
+  self-dual locus constraint (`barFixed_qbeta_zero`, sorry-free): any 𝔙
+  assembly must send amphichiral composites to real 𝔙.
+- **Identification half (main `ad28b5a9` + PR #3221, session 01Jceoju…):**
+  the PHYSICAL c_k-ladder AW identification is under-determined (4 params vs
+  ≤2 trusted rungs) ⇒ GATED on `c₃^even`; #3221 then measured
+  `c₃^even = +86.661` (exact s-series), W₂ > 0 consistent, W₃ still gated on
+  genuine c₄ rungs. Bean `1jrh` stays per the prune (todo/gated); the
+  mechanism note is appended, status NOT flipped.
+- **Merge-order note:** both #3216 and #3221 touch `.beans/1jrh…md` —
+  whichever merges second rebases the bean file (append-only, trivial).
