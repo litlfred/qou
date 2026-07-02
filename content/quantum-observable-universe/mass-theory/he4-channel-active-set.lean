@@ -28,6 +28,7 @@ Ref: [manuscript] §F1 ⁴He compositional probe (audit doc)
 import Mathlib.Data.Rat.Defs
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Ring
 
 namespace QOU.BraidKnot.He4ChannelActiveSet
 
