@@ -39,14 +39,14 @@ abbrev AtomBraidWord := List (FactorType × ℕ)
     For the Hecke relation σ² = H_A σ + 1 with eigenvalues {q, -q⁻¹},
     χ_sym(σ) = q, χ_alt(σ) = -q⁻¹, and char factors over the word.
     Hence χ_sym(cσ+d) · χ_alt(cσ+d) = (cq+d)(-c/q+d) = d² - c² + cd·H_A. -/
-def chiPairPerFactor (H_A : ℝ) : FactorType → ℝ
+noncomputable def chiPairPerFactor (H_A : ℝ) : FactorType → ℝ
   | .sigma    => -1                  -- 0² - 1² + 1·0·H_A = -1
   | .sigmaInv => -1                  -- H_A² - 1² + 1·(-H_A)·H_A = -1
   | .udHalf   => -(1 + H_A^2 / 4)    -- (H_A/2)² - 1 - (H_A/2)·H_A
 
 /-- χ_sym(β) · χ_alt(β) computed by multiplicativity over the word.
     Defined via list recursion for clean induction. -/
-def chiPairProduct (H_A : ℝ) : AtomBraidWord → ℝ
+noncomputable def chiPairProduct (H_A : ℝ) : AtomBraidWord → ℝ
   | [] => 1
   | (ft, _) :: rest => chiPairPerFactor H_A ft * chiPairProduct H_A rest
 
@@ -88,7 +88,7 @@ theorem chiPairProduct_eq (H_A : ℝ) (w : AtomBraidWord) :
            ((-1 : ℝ)^tl.length * (1 + H_A^2 / 4)^(nUd tl)) =
            (-1 : ℝ)^(tl.length + 1) *
            (1 + H_A^2 / 4)^((if FactorType.udHalf = .udHalf then 1 else 0) + nUd tl)
-      simp only [chiPairPerFactor, if_pos rfl, pow_succ]
+      simp only [chiPairPerFactor, reduceIte, pow_succ, pow_add]
       ring
 
 /-- Auxiliary: (-1 : ℝ)^n equals +1 iff n is even, else -1. -/
@@ -137,7 +137,9 @@ theorem n_ud_atom_braid (Z N : ℕ) :
   generalize 2 * (Z + N) + 1 = k
   induction k with
   | zero => simp [nUd]
-  | succ n ih => simp [List.replicate_succ, nUd, ih]
+  | succ n ih =>
+    simp [List.replicate_succ, nUd, ih]
+    omega
 
 /-- Existence of a word realizing the closed form.  Combines
     `chi_pair_closed_form` and `n_ud_atom_braid`: some word with
