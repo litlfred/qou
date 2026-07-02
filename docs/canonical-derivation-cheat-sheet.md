@@ -502,10 +502,18 @@ shape, with the volume entering as `exp`-linearized angle, not raw `Vol`.
 **Trace-canonical residual (2026-06-09).** On the trace-canonical path the
 whole 9b gap collapses to a near-integer q₀-power, `Δ_λ(K) ≈ q₀^(10A−5)`
 (D exact to 0.01 q₀-units, T −0.07, ⁴He +0.27; ³He −1.40, Z-dependent) —
-the open item is **derive-or-refute `10A−5`** from the canonical chain's
-crossing/jet bookkeeping, not a search over closure ansätze. Near-match
-tier, NOT wired
+near-match tier, NOT wired
 ([residual audit](audits/2026-06-09-delta-lambda-canonical-residual.md)).
+**RESOLVED 2026-06-29** (landed on main while PR #3200 was in flight):
+refuted-as-global at A≥5 (⁶Li measures 36.1 vs predicted 55) yet
+derived-as-bookkeeping `10A−5 = 5·(2A−1)` over chain units, Lean sorry-free
+(`QOU/Mass/BindingResidualExponent.lean`,
+`QOU/BraidKnot/DeltaLambdaExponentKeystone.lean`;
+[synthesis](audits/2026-06-29-delta-lambda-residual-synthesis.md)); the
+per-site "5" is a B_pred-linearization artifact. Surviving open legs: the
+bar-odd Z-correction κ = b/4 ≈ −0.437 and the IMME `Δ³=0` checks — see the
+§0 9b row. PROBE 1 below (run independently the same week) confirms the
+linearization-artifact reading from the exact-degree side.
 
 > **PROBE 1 verdict (2026-07-02) — bookkeeping route REFUTED, scope-(a).**
 > The `10A−5 = 5·[A nucleons + (A−1) interfaces]` factorization does NOT
