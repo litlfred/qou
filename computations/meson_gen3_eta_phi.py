@@ -106,8 +106,10 @@ def main() -> int:
         "closest_match": {"meson": best[0], "residual": float(best[1])},
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
-    out = Path(__file__).resolve().parent / "meson-gen3-eta-phi.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+    out = WitnessBuilder.wrap_legacy(
+        "meson-gen3-eta-phi", witness, script_path=__file__, engine="mpmath",
+    ).save()
     print(f"\n  Witness: {out}")
     return 0
 

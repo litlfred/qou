@@ -1,6 +1,28 @@
 {
-  "description": "Gen-3 meson (T(2,7)) mass ratio via Hecke \u03c7^(2,1)\u00b7Seifert\u00b2, parallel to the proved kaon; honest comparison to all light gen-3 mesons",
-  "computation": "meson_gen3_eta_phi",
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-02T14:07:28.038277+00:00",
+  "commitSha": "a06da51ddc7bdab3536224caad1e4c67a2325997",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "meson-gen3-eta-phi",
+  "scriptFile": "meson_gen3_eta_phi.py",
+  "scriptHash": "f4e9d0f1b027",
+  "scriptCommitSha": "29251e1b2c63d1118e72e09ba1224c7eba9804c6",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Gen-3 meson (T(2,7)) mass ratio via Hecke χ^(2,1)·Seifert², parallel to the proved kaon; honest comparison to all light gen-3 mesons",
   "audit_only": true,
   "precision_dps": 50,
   "context": {
@@ -20,19 +42,19 @@
   },
   "gen3_prediction_ratio": "7.3201063373883568510957471708436086315383363261436",
   "comparisons": {
-    "K\u00b1": {
+    "K±": {
       "pdg_ratio": 3.537118438946828,
       "residual": 1.0695112317380888
     },
-    "\u03b7": {
+    "η": {
       "pdg_ratio": 3.92534548337939,
       "residual": 0.8648311004427477
     },
-    "\u03c1": {
+    "ρ": {
       "pdg_ratio": 5.554616563011682,
       "residual": 0.3178418805958834
     },
-    "\u03c9": {
+    "ω": {
       "pdg_ratio": 5.6076364048277,
       "residual": 0.30538177030992336
     },
@@ -40,18 +62,18 @@
       "pdg_ratio": 6.388675993525561,
       "residual": 0.14579395555616384
     },
-    "\u03b7'": {
+    "η'": {
       "pdg_ratio": 6.862343796560287,
       "residual": 0.06670644234663974
     },
-    "\u03c6": {
+    "φ": {
       "pdg_ratio": 7.304278507783779,
       "residual": 0.0021669258076224187
     }
   },
   "closest_match": {
-    "meson": "\u03c6",
+    "meson": "φ",
     "residual": 0.0021669258076224187
   },
-  "timestamp": "2026-06-30T20:52:58+00:00"
+  "timestamp": "2026-07-02T14:07:28+00:00"
 }
