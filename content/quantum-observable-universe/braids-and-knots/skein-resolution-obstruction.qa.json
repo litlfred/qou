@@ -1343,25 +1343,6 @@
         "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/skein-resolution-obstruction.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Order/Ring/Lemmas.olean' of module Mathlib.Algebra.Order.Ring.Lemmas does not exist"
       }
     ],
-    "compute-witness-exists": [
-      {
-        "field_hash": {
-          "md": "523309dc1daf",
-          "ts": "1c3c6b612bdd",
-          "lean": "78a444cb2477"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
-        },
-        "reviewed_at": "2026-07-02T12:20:09.701Z",
-        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
-      }
-    ],
     "compute-lp-dual-present": [
       {
         "field_hash": {
@@ -1418,7 +1399,26 @@
         "reviewed_at": "2026-07-02T12:20:09.701Z",
         "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
       }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "523309dc1daf",
+          "ts": "1c3c6b612bdd",
+          "lean": "78a444cb2477"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+        },
+        "reviewed_at": "2026-07-02T16:52:58.983Z",
+        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+      }
     ]
   },
-  "updated_at": "2026-07-02T12:20:09.701Z"
+  "updated_at": "2026-07-02T16:52:58.983Z"
 }

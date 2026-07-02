@@ -1819,25 +1819,6 @@
         "referee_argument": "No significant objections; the mathematical claims in 'Non-commutative coordinate ring of Bring's curve' (concerning 'Bring's curve $\\mathcal{B} \\subset \\mathbb{P}^4$ is defined as the') are consistent and formally verified."
       }
     ],
-    "compute-witness-exists": [
-      {
-        "field_hash": {
-          "md": "98d45f0ec4fb",
-          "ts": "a9bf8993dbac",
-          "lean": "df5b3c625c43"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
-        },
-        "reviewed_at": "2026-07-02T12:20:09.701Z",
-        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
-      }
-    ],
     "compute-lp-dual-present": [
       {
         "field_hash": {
@@ -1894,7 +1875,26 @@
         "reviewed_at": "2026-07-02T12:20:09.701Z",
         "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
       }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "98d45f0ec4fb",
+          "ts": "a9bf8993dbac",
+          "lean": "df5b3c625c43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+        },
+        "reviewed_at": "2026-07-02T16:52:58.983Z",
+        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+      }
     ]
   },
-  "updated_at": "2026-07-02T12:20:09.701Z"
+  "updated_at": "2026-07-02T16:52:58.983Z"
 }

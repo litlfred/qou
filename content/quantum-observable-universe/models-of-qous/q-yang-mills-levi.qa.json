@@ -1712,25 +1712,6 @@
         "referee_argument": "The Lean sibling content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean contains compilation errors: content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist, invalidating the claimed formalization."
       }
     ],
-    "compute-witness-exists": [
-      {
-        "field_hash": {
-          "md": "b8c6f494bb6c",
-          "ts": "fd5a281d25fd",
-          "lean": "6a4cb2575c0e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
-        },
-        "reviewed_at": "2026-07-02T12:20:09.701Z",
-        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
-      }
-    ],
     "compute-lp-dual-present": [
       {
         "field_hash": {
@@ -1787,7 +1768,26 @@
         "reviewed_at": "2026-07-02T12:20:09.701Z",
         "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
       }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "b8c6f494bb6c",
+          "ts": "fd5a281d25fd",
+          "lean": "6a4cb2575c0e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+        },
+        "reviewed_at": "2026-07-02T16:52:58.983Z",
+        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+      }
     ]
   },
-  "updated_at": "2026-07-02T12:20:09.701Z"
+  "updated_at": "2026-07-02T16:52:58.983Z"
 }

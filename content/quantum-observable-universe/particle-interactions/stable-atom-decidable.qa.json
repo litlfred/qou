@@ -3102,63 +3102,6 @@
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean for 'Stability is decidable for any (Z, N) at fixed q' fails compilation with error: content/quantum-observable-universe/particle-interactions/stable-atom-decidable.lean:24:14: error: Function expected at. This invalidates the claim of formal verification."
       }
     ],
-    "compute-witness-exists": [
-      {
-        "field_hash": {
-          "md": "803cad2b2df9",
-          "ts": "a834a728b15a",
-          "lean": "1da4cdce9ac3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
-        },
-        "reviewed_at": "2026-07-02T12:20:09.701Z",
-        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
-      }
-    ],
-    "compute-prop-has-probe": [
-      {
-        "field_hash": {
-          "md": "803cad2b2df9",
-          "ts": "a834a728b15a",
-          "lean": "1da4cdce9ac3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
-        },
-        "reviewed_at": "2026-07-02T12:20:09.701Z",
-        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
-      }
-    ],
-    "compute-prop-has-consumer": [
-      {
-        "field_hash": {
-          "md": "803cad2b2df9",
-          "ts": "a834a728b15a",
-          "lean": "1da4cdce9ac3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
-        },
-        "reviewed_at": "2026-07-02T12:20:09.701Z",
-        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
-      }
-    ],
     "compute-lp-dual-present": [
       {
         "field_hash": {
@@ -3215,7 +3158,64 @@
         "reviewed_at": "2026-07-02T12:20:09.701Z",
         "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
       }
+    ],
+    "compute-prop-has-probe": [
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "1da4cdce9ac3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+        },
+        "reviewed_at": "2026-07-02T16:52:58.983Z",
+        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+      }
+    ],
+    "compute-prop-has-consumer": [
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "1da4cdce9ac3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+        },
+        "reviewed_at": "2026-07-02T16:52:58.983Z",
+        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+      }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "1da4cdce9ac3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+        },
+        "reviewed_at": "2026-07-02T16:52:58.983Z",
+        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+      }
     ]
   },
-  "updated_at": "2026-07-02T12:20:09.701Z"
+  "updated_at": "2026-07-02T16:52:58.983Z"
 }

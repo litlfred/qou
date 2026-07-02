@@ -1819,25 +1819,6 @@
         "referee_argument": "The proposed formalization for 'Categorical Reeb derivation' (asserting 'Let $A$ be a Frobenius--Hopf substrate in a rigid :refterm[monoidal category]...') fails to compile with error: content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.lean:28:33: error(lean.unknownIdentifier): Unknown identifier `FrobeniusHopfSubstrate`. A competent referee cannot accept this as a verified mathematical claim."
       }
     ],
-    "compute-witness-exists": [
-      {
-        "field_hash": {
-          "md": "16f1f294336f",
-          "ts": "697942f07da7",
-          "lean": "0eaf50514b42"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
-        },
-        "reviewed_at": "2026-07-02T12:20:09.701Z",
-        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
-      }
-    ],
     "compute-lp-dual-present": [
       {
         "field_hash": {
@@ -1894,7 +1875,26 @@
         "reviewed_at": "2026-07-02T12:20:09.701Z",
         "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
       }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "16f1f294336f",
+          "ts": "697942f07da7",
+          "lean": "0eaf50514b42"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+        },
+        "reviewed_at": "2026-07-02T16:52:58.983Z",
+        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+      }
     ]
   },
-  "updated_at": "2026-07-02T12:20:09.701Z"
+  "updated_at": "2026-07-02T16:52:58.983Z"
 }

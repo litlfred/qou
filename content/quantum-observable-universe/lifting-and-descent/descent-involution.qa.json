@@ -1431,25 +1431,6 @@
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/lifting-and-descent/descent-involution.lean fails compilation with errors (../lifting-and-descent/descent-involution.lean:29:14: error: expected token), preventing formal verification of the claims in 'Let \\elln \\colon An \\hookrightarrow A{n+1} denote the ascent embedding'."
       }
     ],
-    "compute-witness-exists": [
-      {
-        "field_hash": {
-          "md": "65ae1213f355",
-          "ts": "114867ded269",
-          "lean": "11c59457bd4b"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
-        },
-        "reviewed_at": "2026-07-02T12:20:09.701Z",
-        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
-      }
-    ],
     "compute-lp-dual-present": [
       {
         "field_hash": {
@@ -1506,7 +1487,26 @@
         "reviewed_at": "2026-07-02T12:20:09.701Z",
         "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
       }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "65ae1213f355",
+          "ts": "114867ded269",
+          "lean": "11c59457bd4b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+        },
+        "reviewed_at": "2026-07-02T16:52:58.983Z",
+        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+      }
     ]
   },
-  "updated_at": "2026-07-02T12:20:09.701Z"
+  "updated_at": "2026-07-02T16:52:58.983Z"
 }
