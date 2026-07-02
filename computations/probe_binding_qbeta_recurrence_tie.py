@@ -127,7 +127,10 @@ def main() -> int:
                 v0_even = c_ev[0] * even[form][0] - even[form][1]
                 chain_w[form]["V0_even_backextrap"] = str(v0_even)
                 if Z == 1:
-                    v0_mev = E0 * v0_even if form == "D" else E0 * v0_even
+                    # V₀ is dimensionless (trace units) in both forms; E₀
+                    # (MeV, CAL-1 + CAL-2) converts to MeV — same convention
+                    # as binding_bar_even_odd_probe.py.
+                    v0_mev = E0 * v0_even
                     resid_mev = mp.mpf(MU_P_RESIDUAL_PPB) * 1e-9 * mp.mpf(M_P_MEV_CODATA)
                     print(f"      V₀^even backextrap (bare p defect, {form}) = {float(v0_even):.6e}"
                           f"  → E₀·V₀ = {float(v0_mev):.6e} MeV  vs μ–p residual {float(resid_mev):.3e} MeV")
@@ -141,7 +144,7 @@ def main() -> int:
         vals = [v for v in vals if mp.isfinite(v)]
         if not vals:
             return None
-        m = sum(vals) / len(vals)
+        m = mp.fsum(vals) / len(vals)
         return float(max(abs(v - m) for v in vals) / abs(m)) if m != 0 else None
 
     verdict = {}
