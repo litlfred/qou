@@ -94,3 +94,20 @@ This ledger records the **ruling + dashboard excision**. Excising λ_A
 from the ~64 production scripts that still use `vol_density_borromean`
 uniformly (per `audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md`)
 is the broader follow-up — owner-sequenced, tracked here.
+
+## Doc-side currency sweep (2026-07-02, PR #3200)
+
+The READ-FIRST docs are now aligned with this ruling:
+
+- `docs/canonical-derivation-cheat-sheet.md` — step-9a rows, frontier
+  paragraph, λ_scale critical-framing block (new 🛑 CORRECTION banner),
+  §2 step-9 script/witness cells, §5 manager view. Vol-density marked
+  deprecated for absolute mass; per-knot `VolDensity(K)` re-scoped to
+  the binding-side (9b ρ/Δ_λ) leg.
+- `docs/audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md` +
+  `docs/audits/2026-06-13-step9a-flip-decision-package.md` — 🛑 currency
+  banners (findings stand, re-scoped to binding side).
+- Paper-side `mass-theory/pre-archimedean-derivation-chain.md` verified
+  already-current (muon-anchored form stated as canonical in Step 9).
+
+Compute-side consumer migration continues on PR #3199 (bean `4f2d`).
