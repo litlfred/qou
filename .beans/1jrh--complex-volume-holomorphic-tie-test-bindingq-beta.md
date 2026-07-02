@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-06-30T20:35:58Z
-updated_at: 2026-07-02T16:20:00Z
+updated_at: 2026-07-02T17:10:00Z
 ---
 
 
@@ -47,3 +47,13 @@ genuine c₄ rungs (H₄ Hoefsmit build for c₄^even; c₄^odd beyond CAL-ancho
 Bonus constraint: even rungs grow ×11,×21 ⇒ even-side u-ladder asymptotic;
 disfavors a common AW recurrence IN u (kernel R(q,ξ) search constraint).
 Audit: ../docs/audits/2026-07-02-1jrh-c3even-exact-measurement.md
+## 2026-07-02 — Stage-C instrumented base SHIPPED (H₄ Markov trace wired + gated)
+tr_M^{H₄} wired as one callable (seminormal χ × Wenzl y_λ, any word incl. σ₃);
+4 exact no-fit gates ALL PASS at 1e-50: Hecke on characters, Markov
+generator-uniformity (exercises σ₃), C12 stabilization ratio constancy at 5
+q-points, branching cross-check. FINDING: the stabilization constant is
+exactly 1 in the Wenzl normalization ⇒ a candidate Λ's level-4 content reads
+directly as tr_M^{H₄}(Λ) − tr_M^{H₃}(shadow). NO Λ candidate enumerated or
+evaluated (scope no-fit rule). Sole remaining open item: the categorical
+σ₃-lift Λ specification (research, not infra).
+Audit: ../docs/audits/2026-07-02-1jrh-h4-stagec-markov-infra.md
