@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-02T15:40:44.970728+00:00",
-  "commitSha": "a3c9387b6e731d5658f5c3c0a973469690f39a2c",
+  "computedAt": "2026-07-02T16:48:31.890886+00:00",
+  "commitSha": "f924b5fe3def9f64005d5b13200d5953ceba4504",
   "assertions": [],
   "allPassed": true,
   "durationMs": 10,
@@ -25,7 +25,7 @@
   "description": "Static scan of computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 997,
+    "files_scanned": 998,
     "patterns": [
       "P15",
       "P16",
@@ -40,7 +40,7 @@
       "P16": 287,
       "P21": 24,
       "P30": 144,
-      "P31": 23
+      "P31": 24
     },
     "top_files": [
       {
@@ -3259,6 +3259,13 @@
         "line": 1,
         "snippet": "Hoefsmit construction without BlockCache",
         "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
+      },
+      {
+        "pattern": "P31",
+        "file": "probe_binding_qbeta_recurrence_tie.py",
+        "line": 57,
+        "snippet": "CODATA literal \"938.27208816\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P30",

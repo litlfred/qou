@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-02T15:40:45.523119+00:00",
-  "commitSha": "a3c9387b6e731d5658f5c3c0a973469690f39a2c",
+  "computedAt": "2026-07-02T16:48:33.102546+00:00",
+  "commitSha": "f924b5fe3def9f64005d5b13200d5953ceba4504",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2142,6 +2142,7 @@
         "binding-per-block-magnitude-a3.witness.json",
         "binding-per-bond-decomposition.witness.json",
         "binding-perblock-bond-type-a3.witness.json",
+        "binding-qbeta-recurrence-tie-probe.witness.json",
         "binding-qhamiltonian-rotational-scale.witness.json",
         "binding-recurrence-spectral-bridge.witness.json",
         "binding-reeb-phase-decomposition.witness.json",
