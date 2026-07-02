@@ -8,6 +8,7 @@ export default remark({
   uses: [
     "prop:three-calibration-inputs",
     "prop:three-calibration-discipline",
+    "prop:self-dual-higgs-real-volume",
   ],
   tags: [
     "calibration",

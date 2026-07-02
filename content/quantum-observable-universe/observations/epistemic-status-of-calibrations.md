@@ -62,6 +62,26 @@ equation hold, so it holds. The Lean cross-check
 `figure-8-muon-mass-cross-check.lean:42` says explicitly *"equality
 by construction."*
 
+**The muon is the *structurally* preferred anchor, not merely the
+tautological one.** Among the observables that could pin $q_0$, the muon
+scale $\mathrm{Vol}(4_1)/\hbar_q^2$ is distinguished by a self-duality: the
+figure-eight knot $4_1$ is **amphichiral**, so its coloured Jones is
+bar-invariant, $J_N(4_1; q) = J_N(4_1; q^{-1})$, and its Neumann–Zagier
+complex volume is **real** — $\mathrm{CS}(4_1) = 0$
+([`prop:self-dual-higgs-real-volume`](../braids-and-knots/self-dual-higgs-real-volume.md),
+Lean-proved sorry-free). The muon therefore pins $q_0$ through a quantity
+carrying **zero imaginary (decay) content**. The Physical-Observations
+proton pin $m_p/m_e$ instead runs through $F_{\mathrm{Bor}} = \lvert
+\mathrm{tr}_M(\beta_{\mathrm{Bor}}) \rvert$ — the modulus of a many-body
+binding endomorphism whose bar-odd ($\mathfrak{Q}_\beta$) face is projected
+out. So the muon is the cleanest, decay-free $q_0$ determination: a
+*structural* reason for the canonical convention, independent of its
+experimental leverage. The residual $\mu$–$p$ tension ($\approx 11.5$ ppb
+in $q_0$) is the honest substrate floor — **not** a modulus-projection
+artefact, since the observable-level bar-odd face is $O(1)$ and is itself
+$\mathfrak{Q}_\beta$, real accounted energy (audit
+[`2026-07-02-self-dual-anchor-and-mu-p-tension-framing`](../../../docs/audits/2026-07-02-self-dual-anchor-and-mu-p-tension-framing.md)).
+
 The substrate-$q_0$ derivation was declined as out-of-scope on
  (coordination ledger) and **re-opened on** in
 response to the same owner question that produced this remark. The
@@ -138,6 +158,7 @@ redefinition of the discipline.
 - [`prop:three-calibration-inputs`](#prop:three-calibration-inputs) — proposition form with Wedderburn alignment
 - [`prop:three-calibration-discipline`](#prop:three-calibration-discipline) — the proposition this remark interprets
 - [`prop:three-parameters-wedderburn`](#prop:three-parameters-wedderburn) — categorical 3-parameter count
+- [`prop:self-dual-higgs-real-volume`](../braids-and-knots/self-dual-higgs-real-volume.md) — the $\mathrm{CS}(4_1)=0$ self-dual basis for the muon anchor being the decay-free $q_0$ pin
 - Audit
   [`-cal-2-cohomological-vs-calibration-critique`](../../../docs/audits/-cal-2-cohomological-vs-calibration-critique.md)
 - Audit
