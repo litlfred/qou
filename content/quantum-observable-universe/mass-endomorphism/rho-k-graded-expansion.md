@@ -3,13 +3,13 @@
 **Proposition (graded ρ_K expansion).**
 *Multiplying the GB-NF identity
 ([atomic mass via GB-NF](#prop:atomic-mass-gb-nf))
-$\mathcal{M}(K) = m_e \cdot \rho_K \cdot |\!\operatorname{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K))|$
-through by $m_e \cdot |\!\operatorname{tr}_M\!|$ exposes the graded
+$\mathcal{M}(K) = m_e \cdot \rho_K \cdot |\!\mathrm{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K))|$
+through by $m_e \cdot |\!\mathrm{tr}_M\!|$ exposes the graded
 expansion of the categorical density $\rho_K$:*
 
 $$
   \boxed{
-    m_e \cdot |\!\operatorname{tr}_M(\mathcal{B}_K)| \cdot \rho_K
+    m_e \cdot |\!\mathrm{tr}_M(\mathcal{B}_K)| \cdot \rho_K
     \;=\;
     \underbrace{Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e}_{\rho_K^{\mathrm{LO}}\text{-piece (Markov mult.)}}
     \;+\; \underbrace{\tfrac{\alpha}{2} \sum_i \ln\bigl(\hat V_i^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}}}\bigr)}_{\rho_K^{\text{single-gen}}\text{-piece}}
@@ -33,8 +33,8 @@ braids $\beta_1 \in H_{n_1}(q)$ and $\beta_2 \in H_{n_2}(q)$ with
 images $\beta_1 \otimes \beta_2 \in H_{n_1 + n_2}(q)$:
 
 $$
-  \operatorname{tr}_M(\beta_1 \otimes \beta_2)
-  \;=\; \operatorname{tr}_M(\beta_1) \cdot \operatorname{tr}_M(\beta_2).
+  \mathrm{tr}_M(\beta_1 \otimes \beta_2)
+  \;=\; \mathrm{tr}_M(\beta_1) \cdot \mathrm{tr}_M(\beta_2).
 $$
 
 Combined with mass additivity for free constituents, this proves
@@ -43,7 +43,7 @@ the LO piece **categorically**:
 $$
   \rho_K^{\mathrm{LO}}
   \;=\;
-  \frac{Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e}{m_e \cdot |\!\operatorname{tr}_M(\mathcal{B}_K)|}.
+  \frac{Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e}{m_e \cdot |\!\mathrm{tr}_M(\mathcal{B}_K)|}.
 $$
 
 Numerical verification: `rho-k-markov-multiplicativity.witness.json`
@@ -141,6 +141,23 @@ Combined with hecke branching trace decomp
 interface), the bound atomic case is fully covered: the LO and
 single-gen pieces give $\rho_K$ to $0.18\%$; the higher pieces and
 the interface contribution close the residual.
+
+## Production wiring
+
+The graded expansion is realised end-to-end by
+`computations/rho_k_graded_atomic_mass.py`
+(witness `rho-k-graded-atomic-mass.witness.json`): the LO constituents
+$Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e$ are taken from the
+canonical muon-anchored mass facade (`computations/canonical_mass.py` —
+no CODATA nucleon masses enter), the single-gen correction
+$\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$ is evaluated at $50$
+dps ($0.19\%$ mean, $0.30\%$ max across the published $Z = 1..10$
+table), and the pair-gen tier is **reported as the open residual only —
+never added to the mass** (its naive log-additive form degrades
+accuracy; see Table 1). Per-generator volumes carry the known
+$H_3$-weight convention of the published table; the dynamic $H_{3A}$
+re-weighting is a separate tracked fix
+(`docs/audits/2026-05-25-h3-vs-h3a-legacy-bug-audit.md` §7 Tier 2).
 
 
 
