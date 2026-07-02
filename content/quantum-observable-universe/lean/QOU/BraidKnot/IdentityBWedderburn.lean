@@ -316,7 +316,7 @@ theorem identityB_via_wedderburn_unconditional (n : ℕ) :
       (∑ i, (d i : ℂ) ^ 2 * ω i = (n.factorial : ℂ) * (n.choose 2 : ℂ)) :=
   identityB_via_wedderburn n (by
     -- Ref: [vershik-kerov1977] symmetric functions of Jucys–Murphy elements are central
-    -- (∑_k X_k² ∈ Z(ℂ[S_n])); cf. QOU.BraidKnot.JucysMurphyCentralElementsQOU.jucys_murphy_esymm_central
+    -- (∑_k X_k² ∈ Z(ℂ[S_n])); cf. QOU.BraidKnot.jucys_murphy_esymm_central (file JucysMurphyCentralElementsQOU.lean)
     -- (stated on the abstract JucysMurphyData; the concrete MonoidAlgebra-center instance is the
     -- residual gap — Mathlib lacks the class-function ↔ center characterisation for MonoidAlgebra).
     sorry)
