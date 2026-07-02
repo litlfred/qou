@@ -114,3 +114,25 @@ The genuine E_q(2) q-Hankel/Plancherel pairing with per-channel arguments
 level. **Needs the primary sources:** run from a network-open environment, or owner drops
 into `uploads/`: Hikami arXiv:1811.05376; Andersen–Mistegård arXiv:2205.01282;
 Lawrence–Rozansky CMP 205 (1999).
+
+## Third-pass result (2026-07-02, papers uploaded): value step SETTLED at the false-theta level — REFUTED
+
+Owner uploaded the sources (commit `ece271823`; the paywalled LR CMP turned out
+unnecessary). `keystone_valuemap_genuine_smatrix_s013.py` + audit
+`docs/audits/2026-07-02-keystone-valuemap-genuine-smatrix.md`:
+
+- **The genuine Σ(2,3,5) family is D=2** (Hikami 3.1/3.3): every colouring of the order-5
+  fibre spans {(1,1,1),(1,1,2)} — the colored family of #3190 is 2-dimensional as
+  functions; "4↔4" is support-level only. Hikami's χ^{(111)}/χ^{(112)} = the round-2
+  sympy-derived characters EXACTLY (eq. 5.6 = the derived identity).
+- **Transcription machine-validated end-to-end:** Theorem 10 exact (≤1e−38, N=3..11);
+  φ=181/30 from Dedekind sums; S² = 1; vacuum row = Cor 12 flat-connection weights.
+- **Vacuum row = (2/√5)(sin π/5, sin 2π/5), ratio = φ (golden)**; CS = −1/120, −49/120;
+  magnitudes = √(Reidemeister torsion) (Thm 14).
+- **VERDICT (scope (a), object = the Σ(2,3,5) false-theta S-matrix): bwS0 = d_q/D (4
+  classes, ratios 1/4.11/5.22/6.22) is NOT the vacuum row of this object — type (2≠4) +
+  value (φ) mismatch.** The geometric route cannot close on S³/2I itself.
+- Redirects: larger-D Seifert data (D(3,4,5)=6, γ=4); colored Ẑ/GPPV blocks (Murakami
+  2205.01282 in uploads/); or accept `BWVacuumRowIsHecke` as non-geometric. Owner decision
+  needed on which (if any) to pursue — the original owner-gated scope (WRT(S³/2I)) is
+  exhausted at this level.
