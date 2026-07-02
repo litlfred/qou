@@ -564,43 +564,273 @@ theorem linearIndependent_of_joint_eigenvectors {k : Type} [Field k]
       · exact h
       · exact absurd (sub_eq_zero.mp h).symm hs₀
 
-/-- **(L2) The seminormal simple-spectrum core (combinatorial): the content tuple determines the
-standard tableau.** If two standard Young tableaux of shape `μ` assign the same cell-content to
-every label (`cellContent (cell of s in T) = cellContent (cell of s in T')` for all
-`s : Fin (nOf μ)`), they are equal.
+/-! #### L2 helpers: entries strictly increase along diagonals; the row-count formula
 
-This is the classical "the GZ spectrum is simple" fact, in its purely **combinatorial** form —
-no modules, no linear algebra: downward induction on the labels; the cell holding the top label
-is a removable corner (row/column-maximality from `row_strict`/`col_strict`), distinct corners of
-a Young diagram carry pairwise-distinct contents (they lie on distinct diagonals), so the content
-pins the corner; remove it and recurse.  The induction needs diagram-minus-corner / tableau-
-restriction machinery not yet built in this development, so it is carried as the named cited
-core. -/
+The proof of L2 below avoids diagram-removal entirely.  In a standard tableau the entries
+strictly increase along each **diagonal** (`row_strict` + `col_strict` + up-left-closedness), the
+diagonal-`d` cells of `μ` form a contiguous row range starting at row `(−d)⁺`, and therefore
+
+  `row(s) = (−content s)⁺ + #{s' < s with the same content}`
+
+— the row of a label is determined by the content **tuple** alone.  Two tableaux with the same
+content tuple then agree cell-by-cell (columns follow from rows + contents), hence are equal. -/
+
+private lemma entry_lt_diag_succ {μ : YoungDiagram}
+    (T : QOU.BraidKnot.StandardYoungTableau μ) {i j : ℕ}
+    (hmem : (i + 1, j + 1) ∈ μ) : T.entry i j < T.entry (i + 1) (j + 1) :=
+  lt_trans
+    (T.row_strict i j (μ.up_left_mem (Nat.le_succ i) le_rfl hmem))
+    (T.col_strict i (j + 1) hmem)
+
+/-- Entries strictly increase along a diagonal: same content, strictly smaller row ⇒ strictly
+smaller entry.  Induction on the row of the lower cell, stepping through the diagonal
+predecessor `(y₁ − 1, y₂ − 1)` (in `μ` by up-left-closedness). -/
+private lemma entry_lt_of_diag_row_lt {μ : YoungDiagram}
+    (T : QOU.BraidKnot.StandardYoungTableau μ) :
+    ∀ (r : ℕ) {x y : ℕ × ℕ}, x ∈ μ → y ∈ μ → y.1 = r →
+      (x.2 : ℤ) - (x.1 : ℤ) = (y.2 : ℤ) - (y.1 : ℤ) → x.1 < y.1 →
+      T.entry x.1 x.2 < T.entry y.1 y.2 := by
+  intro r
+  induction r with
+  | zero => intro x y _ _ hy1 _ hlt; omega
+  | succ r IH =>
+    rintro ⟨x1, x2⟩ ⟨y1, y2⟩ hx hy hy1 hd hlt
+    simp only at hy1 hd hlt ⊢
+    subst hy1
+    rcases eq_or_lt_of_le (Nat.lt_succ_iff.mp hlt) with heq | hlt'
+    · -- x is the immediate diagonal predecessor: y = (x1+1, x2+1)
+      subst heq
+      have hy2 : y2 = x2 + 1 := by omega
+      subst hy2
+      exact entry_lt_diag_succ T hy
+    · -- step through z = (r, y2 − 1)
+      have hy2pos : 1 ≤ y2 := by omega
+      have hzmem : (r, y2 - 1) ∈ μ :=
+        μ.up_left_mem (Nat.le_succ r) (Nat.sub_le y2 1) hy
+      have hstep : T.entry r (y2 - 1) < T.entry (r + 1) y2 := by
+        have h1 : y2 - 1 + 1 = y2 := by omega
+        have := entry_lt_diag_succ T (i := r) (j := y2 - 1) (by rw [h1]; exact hy)
+        rwa [h1] at this
+      refine lt_trans (IH (x := (x1, x2)) (y := (r, y2 - 1)) hx hzmem rfl ?_ hlt') hstep
+      have : ((y2 - 1 : ℕ) : ℤ) = (y2 : ℤ) - 1 := by omega
+      simp only [this]
+      omega
+
+private lemma cellLabel_tableauCellEquiv {μ : YoungDiagram}
+    (T : QOU.BraidKnot.StandardYoungTableau μ) (s : Fin (Specht.nOf μ)) :
+    QOU.BraidKnot.SpechtStandardBasis.cellLabel T (tableauCellEquiv μ T s) = s :=
+  Equiv.apply_symm_apply
+    (Equiv.ofBijective _ (QOU.BraidKnot.SpechtStandardBasis.cellLabel_bijective T)) s
+
+private lemma tableauCellEquiv_cellLabel {μ : YoungDiagram}
+    (T : QOU.BraidKnot.StandardYoungTableau μ) (c : μ.cells) :
+    tableauCellEquiv μ T (QOU.BraidKnot.SpechtStandardBasis.cellLabel T c) = c :=
+  Equiv.symm_apply_apply
+    (Equiv.ofBijective _ (QOU.BraidKnot.SpechtStandardBasis.cellLabel_bijective T)) c
+
+/-- The entry at the cell of label `s` is `s` itself. -/
+private lemma entry_tableauCellEquiv {μ : YoungDiagram}
+    (T : QOU.BraidKnot.StandardYoungTableau μ) (s : Fin (Specht.nOf μ)) :
+    T.entry ((tableauCellEquiv μ T s : ℕ × ℕ)).1 ((tableauCellEquiv μ T s : ℕ × ℕ)).2
+      = s.val := by
+  have h := congrArg Fin.val (cellLabel_tableauCellEquiv T s)
+  simpa [QOU.BraidKnot.SpechtStandardBasis.cellLabel] using h
+
+private lemma tableauCellEquiv_mem {μ : YoungDiagram}
+    (T : QOU.BraidKnot.StandardYoungTableau μ) (s : Fin (Specht.nOf μ)) :
+    ((tableauCellEquiv μ T s : ℕ × ℕ)) ∈ μ := by
+  have := (tableauCellEquiv μ T s).2
+  rwa [YoungDiagram.mem_cells] at this
+
+/-- **The row-count formula.** The row of the cell holding label `s` equals
+`(−content)⁺ + #{s' < s with the same content}` — determined by the content tuple alone. -/
+private lemma row_eq_offset_add_count {μ : YoungDiagram}
+    (T : QOU.BraidKnot.StandardYoungTableau μ) (s : Fin (Specht.nOf μ)) :
+    ((tableauCellEquiv μ T s : ℕ × ℕ)).1
+      = (-(cellContent ((tableauCellEquiv μ T s : ℕ × ℕ)))).toNat
+        + (Finset.univ.filter (fun s' : Fin (Specht.nOf μ) =>
+            cellContent ((tableauCellEquiv μ T s' : ℕ × ℕ))
+              = cellContent ((tableauCellEquiv μ T s : ℕ × ℕ)) ∧ s' < s)).card := by
+  classical
+  set x : ℕ × ℕ := ((tableauCellEquiv μ T s : ℕ × ℕ)) with hxdef
+  have hxmem : x ∈ μ := tableauCellEquiv_mem T s
+  set d : ℤ := cellContent x with hddef
+  have hd : d = (x.2 : ℤ) - (x.1 : ℤ) := rfl
+  -- the count is the size of the row range [(−d)⁺, x.1)
+  have hcard : (Finset.univ.filter (fun s' : Fin (Specht.nOf μ) =>
+        cellContent ((tableauCellEquiv μ T s' : ℕ × ℕ)) = d ∧ s' < s)).card
+      = (Finset.Ico (-d).toNat x.1).card := by
+    refine Finset.card_bij'
+      (fun s' _ => ((tableauCellEquiv μ T s' : ℕ × ℕ)).1)
+      (fun i hi => QOU.BraidKnot.SpechtStandardBasis.cellLabel T
+        ⟨(i, ((i : ℤ) + d).toNat), by
+          rw [YoungDiagram.mem_cells]
+          rw [Finset.mem_Ico] at hi
+          have hx' : (x.1, x.2) ∈ μ := by rwa [Prod.mk.eta]
+          refine μ.up_left_mem (le_of_lt hi.2) ?_ hx'
+          rw [Int.toNat_le]
+          omega⟩)
+      ?_ ?_ ?_ ?_
+    · -- forward well-defined: row(s') ∈ Ico (−d)⁺ x.1
+      intro s' hs'
+      obtain ⟨-, hc, hlt⟩ := Finset.mem_filter.mp hs'
+      have hymem : ((tableauCellEquiv μ T s' : ℕ × ℕ)) ∈ μ := tableauCellEquiv_mem T s'
+      have hcy : ((((tableauCellEquiv μ T s' : ℕ × ℕ)).2 : ℤ))
+          - (((tableauCellEquiv μ T s' : ℕ × ℕ)).1 : ℤ) = d := by
+        simpa [cellContent] using hc
+      show ((tableauCellEquiv μ T s' : ℕ × ℕ)).1 ∈ Finset.Ico (-d).toNat x.1
+      rw [Finset.mem_Ico]
+      constructor
+      · -- (−d)⁺ ≤ row(s') since the column is a natural number
+        rw [Int.toNat_le]
+        omega
+      · -- row(s') < x.1: not equal (else same cell ⇒ s' = s), not greater (entry monotone)
+        rcases lt_trichotomy ((tableauCellEquiv μ T s' : ℕ × ℕ)).1 x.1 with h | h | h
+        · exact h
+        · -- same row + same content ⇒ same cell ⇒ s' = s, contra s' < s
+          exfalso
+          have hy2 : ((tableauCellEquiv μ T s' : ℕ × ℕ)).2 = x.2 := by omega
+          have hcell : (tableauCellEquiv μ T s') = (tableauCellEquiv μ T s) := by
+            apply Subtype.ext
+            rw [← hxdef]
+            exact Prod.ext h hy2
+          have hss := congrArg (QOU.BraidKnot.SpechtStandardBasis.cellLabel T) hcell
+          rw [cellLabel_tableauCellEquiv, cellLabel_tableauCellEquiv] at hss
+          exact absurd hss (ne_of_lt hlt)
+        · -- row(s') > x.1 ⇒ entry x < entry(s'-cell) ⇒ s < s', contra
+          exfalso
+          have hmono := entry_lt_of_diag_row_lt T ((tableauCellEquiv μ T s' : ℕ × ℕ)).1
+            hxmem hymem rfl (by omega) h
+          rw [hxdef] at hmono
+          rw [entry_tableauCellEquiv, entry_tableauCellEquiv] at hmono
+          exact absurd (Fin.lt_def.mpr hmono) (not_lt.mpr (le_of_lt hlt))
+    · -- backward well-defined: the constructed label is in the filter
+      intro i hi
+      rw [Finset.mem_Ico] at hi
+      have h0 : (0 : ℤ) ≤ (i : ℤ) + d := by
+        have h1 := hi.1
+        rw [Int.toNat_le] at h1
+        omega
+      rw [Finset.mem_filter]
+      refine ⟨Finset.mem_univ _, ?_, ?_⟩
+      · -- content of its cell = d
+        rw [tableauCellEquiv_cellLabel]
+        show ((((i : ℤ) + d).toNat : ℤ)) - (i : ℤ) = d
+        rw [Int.toNat_of_nonneg h0]
+        ring
+      · -- the constructed label < s: its entry is on the diagonal at a smaller row
+        have hcmem : ((i, ((i : ℤ) + d).toNat) : ℕ × ℕ) ∈ μ := by
+          have hx' : (x.1, x.2) ∈ μ := by rwa [Prod.mk.eta]
+          refine μ.up_left_mem (le_of_lt hi.2) ?_ hx'
+          rw [Int.toNat_le]
+          omega
+        have hmono := entry_lt_of_diag_row_lt T x.1
+          (x := (i, ((i : ℤ) + d).toNat)) (y := x) hcmem hxmem rfl
+          (by
+            show ((((i : ℤ) + d).toNat : ℤ)) - (i : ℤ) = (x.2 : ℤ) - (x.1 : ℤ)
+            rw [Int.toNat_of_nonneg h0]
+            omega) hi.2
+        rw [Fin.lt_def]
+        show T.entry i (((i : ℤ) + d).toNat) < s.val
+        rw [← entry_tableauCellEquiv T s, ← hxdef]
+        exact hmono
+    · -- left inverse: reconstructing from the row gives back s'
+      intro s' hs'
+      obtain ⟨-, hc, -⟩ := Finset.mem_filter.mp hs'
+      have hcy : ((((tableauCellEquiv μ T s' : ℕ × ℕ)).2 : ℤ))
+          - (((tableauCellEquiv μ T s' : ℕ × ℕ)).1 : ℤ) = d := by
+        simpa [cellContent] using hc
+      have key : ∀ (c : μ.cells), (c : ℕ × ℕ) = ((tableauCellEquiv μ T s' : ℕ × ℕ)) →
+          QOU.BraidKnot.SpechtStandardBasis.cellLabel T c = s' := by
+        intro c hcv
+        rw [Subtype.ext hcv, cellLabel_tableauCellEquiv]
+      apply key
+      refine Prod.ext rfl ?_
+      show (((((tableauCellEquiv μ T s' : ℕ × ℕ)).1 : ℤ) + d).toNat)
+          = ((tableauCellEquiv μ T s' : ℕ × ℕ)).2
+      omega
+    · -- right inverse: the row of the constructed cell is i
+      intro i hi
+      simp only [tableauCellEquiv_cellLabel]
+  rw [hcard, Nat.card_Ico]
+  -- x.1 ≥ (−d)⁺ since the column is a natural number
+  have hle : (-d).toNat ≤ x.1 := by
+    rw [Int.toNat_le]
+    omega
+  omega
+
+/-- **(L2) The seminormal simple-spectrum core (combinatorial): the content tuple determines the
+standard tableau — PROVED.** If two standard Young tableaux of shape `μ` assign the same
+cell-content to every label, they are equal.
+
+Proof (no diagram-removal): entries strictly increase along each diagonal
+(`entry_lt_of_diag_row_lt`), so the **row** of the cell holding label `s` is
+`(−content s)⁺ + #{s' < s with the same content}` (`row_eq_offset_add_count`) — a function of the
+content tuple alone, hence shared by `T` and `T'`.  The **column** then follows from
+row + content, so the label→cell maps coincide; inverting, the cell→label maps (`cellLabel`)
+coincide, i.e. all entries agree on `μ` (and off `μ` both are pinned to `0`), so `T = T'`. -/
 theorem syt_content_tuple_injective (μ : YoungDiagram)
     (T T' : QOU.BraidKnot.StandardYoungTableau μ)
     (h : ∀ s : Fin (Specht.nOf μ),
       cellContent ((tableauCellEquiv μ T s : ℕ × ℕ))
         = cellContent ((tableauCellEquiv μ T' s : ℕ × ℕ))) :
     T = T' := by
-  -- Ref: [vershik-kerov1977] (the Gelfand–Zetlin spectrum is simple: the content vector of a
-  -- standard tableau determines it — downward induction on labels via removable corners, whose
-  -- contents are pairwise distinct).  Elementary tableau combinatorics; the residual brick-5
-  -- spectrum core.
-  sorry
+  classical
+  -- the label→cell maps agree
+  have hcell : ∀ s : Fin (Specht.nOf μ),
+      ((tableauCellEquiv μ T s : ℕ × ℕ)) = ((tableauCellEquiv μ T' s : ℕ × ℕ)) := by
+    intro s
+    have hrow : ((tableauCellEquiv μ T s : ℕ × ℕ)).1
+        = ((tableauCellEquiv μ T' s : ℕ × ℕ)).1 := by
+      rw [row_eq_offset_add_count T s, row_eq_offset_add_count T' s, h s]
+      congr 2
+      apply Finset.filter_congr
+      intro s' _
+      rw [h s']
+    refine Prod.ext hrow ?_
+    -- columns: (col : ℤ) = row + content on both sides
+    have h1 : ((((tableauCellEquiv μ T s : ℕ × ℕ)).2 : ℤ))
+        - (((tableauCellEquiv μ T s : ℕ × ℕ)).1 : ℤ)
+        = ((((tableauCellEquiv μ T' s : ℕ × ℕ)).2 : ℤ))
+        - (((tableauCellEquiv μ T' s : ℕ × ℕ)).1 : ℤ) := by
+      simpa [cellContent] using h s
+    omega
+  -- hence the cell→label maps agree, i.e. the entries agree on μ
+  ext i j
+  by_cases hij : (i, j) ∈ μ
+  · have hc : ((i, j) : ℕ × ℕ) ∈ μ.cells := (YoungDiagram.mem_cells _).mpr hij
+    set c : μ.cells := ⟨(i, j), hc⟩ with hcdef
+    set s : Fin (Specht.nOf μ) := QOU.BraidKnot.SpechtStandardBasis.cellLabel T c with hsdef
+    have h1 : (tableauCellEquiv μ T s : ℕ × ℕ) = ((i, j) : ℕ × ℕ) := by
+      rw [hsdef, tableauCellEquiv_cellLabel]
+    have h2 : (tableauCellEquiv μ T' s : ℕ × ℕ) = ((i, j) : ℕ × ℕ) := by
+      rw [← hcell s, h1]
+    -- entries at (i,j): both equal s.val
+    have e1 : T.entry i j = s.val := by
+      have := entry_tableauCellEquiv T s
+      rw [h1] at this
+      exact this
+    have e2 : T'.entry i j = s.val := by
+      have := entry_tableauCellEquiv T' s
+      rw [h2] at this
+      exact this
+    rw [e1, e2]
+  · rw [T.zero_off i j hij, T'.zero_off i j hij]
 
 /-- **The atomic OV completeness core (Young's seminormal form, independence half) — now assembled,
 not cited.** The seminormal (Gelfand–Zetlin) vectors form a **linearly independent** family indexed
 by **all** standard Young tableaux of shape `μ` — i.e. `#SYT(μ) = dim S^λ`-many independent
 simultaneous JM-eigenvectors.
 
-**De-abstraction (this proof is sorry-free; its inputs are the two named cores).** The family is
-built by choice from `seminormalVector_data_exists` (the eigenvector existence core); independence
-is the generic joint-eigenvalue argument `linearIndependent_of_joint_eigenvectors` (L1, proved)
-applied to the operators `ρ(X_s)` with eigenvalue tuples the cast content vectors
+**De-abstraction (this proof is sorry-free; its only cited input is the existence core).** The
+family is built by choice from `seminormalVector_data_exists` (the eigenvector existence core);
+independence is the generic joint-eigenvalue argument `linearIndependent_of_joint_eigenvectors`
+(L1, proved) applied to the operators `ρ(X_s)` with eigenvalue tuples the cast content vectors
 `s ↦ ((cellContent (cell of s in T) : ℤ) : k)`, whose injectivity is `Int.cast_injective`
-(`CharZero`) + the combinatorial simple-spectrum core `syt_content_tuple_injective` (L2).  So the
-cited debt of this statement is reduced from "OV independence" to {eigenvector existence (already
-cited), content-tuple combinatorics (L2)} — the linear algebra is machine-checked.
+(`CharZero`) + the combinatorial simple-spectrum fact `syt_content_tuple_injective` (L2 —
+**proved**, via the diagonal row-count formula).  So the entire cited debt of this statement is
+`seminormalVector_data_exists` — both the linear algebra and the spectrum combinatorics are
+machine-checked.
 
 This is strictly more atomic than the old `seminormalVectors_span` cited `sorry`: that cited the
 whole inclusion `S^λ ⊆ span`; the *spanning* is a sorry-free dimension corollary
