@@ -19,12 +19,17 @@ to a computable `dimHLF` sum. Verified lean-direct exit 0 (24-module dep
 cone, no errors, no sorry warnings). Stale "open/deferred" doc comments in
 `RSKBurnsideTarget`/`SYTEnumerationBridge`/`SYTHookFormula` refreshed.
 
-Remaining follow-up (separate bean-able item, not sy7b scope): discharge
-`RSKBurnsideHolds n` for `n ≤ 12` via the `Nat.Partition n ↔ partitionsOf n`
-enumeration bridge (completeness + nodup of `partsFuel`), feeding
-`dim_validated_le12` through `rskBurnsideHolds_iff_dimHLF`.
+PR #3219 MERGED 2026-07-02 (rebase-merge, 59fc4abc).
 
-Bean is CLOSEABLE once PR #3219 merges.
+Follow-up DONE same day (PR #3225, `claude/rskburnside-partitionsof-bridge-2026-07-02`):
+`PartitionsOfBridge.lean` proves the `Nat.Partition n ↔ partitionsOf n`
+enumeration bridge (partsFuel soundness/completeness/nodup by fuel induction,
+`toFinset_partitionsOf`, `sum_map_partitionsOf`) and discharges
+**`RSKBurnsideHolds n` sorry-free for all n ≤ 12** on the genuine SYT count —
+no RSK correspondence. Direct kernel `decide` over `Fintype (Nat.Partition n)`
+probed and refuted (instance does not kernel-reduce; recorded in docstring).
+
+Bean is CLOSEABLE once PR #3225 merges.
 
 ## Progress (2026-06-29)
 
