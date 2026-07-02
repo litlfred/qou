@@ -89,7 +89,7 @@ def main() -> int:
     t3s = sorted(pts)  # [-1.5, -0.5, 0.5, 1.5]
 
     def diffs(key: str) -> dict:
-        f = [pts[t]["log_q0"[:0] + key] for t in t3s]
+        f = [pts[t][key] for t in t3s]
         # third finite difference over unit spacing in T₃
         d3 = f[3] - 3 * f[2] + 3 * f[1] - f[0]
         d_cubic = d3 / 6.0

@@ -1,8 +1,8 @@
 {
   "engine": "python+canonical-binding",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-02T15:07:34.891803+00:00",
-  "commitSha": "139f1ee5b5adaaa7e0e6f8391b30d6f972c9a475",
+  "computedAt": "2026-07-02T16:45:44.847377+00:00",
+  "commitSha": "dbe953a9e4005a3820a802f3c8c0c2b813687d5c",
   "assertions": [
     {
       "name": "third_diff_small_sameT",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 56434,
+  "durationMs": 65632,
   "computation": "delta-lambda-imme-quartet",
   "scriptFile": "delta_lambda_imme_quartet.py",
-  "scriptHash": "abe45425e763",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "36259da08bbb",
+  "scriptCommitSha": "9a36dce996508a31051bd964096af2d749a67172",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

@@ -37,7 +37,6 @@ Ref: docs/audits/2026-06-13-9b-h1-exponent-location-refuted.md
 from __future__ import annotations
 
 import json
-import math
 import sys
 from pathlib import Path
 

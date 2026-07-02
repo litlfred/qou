@@ -2,8 +2,9 @@
 
 **Branch**: `claude/canonical-derivation-gaps-vuu01v`
 **Date**: 2026-07-02
-**Status**: survey in progress (this stub will be filled with the corpus-state
-summary and the chosen approach per sub-gap).
+**Status**: COMPLETE for this tranche — survey synthesis, approach
+decision, and three executed probe rounds are recorded below; remaining
+work is in §"Follow-up queue" (round 2) and the round-3 blocked item.
 
 ## Scope
 
