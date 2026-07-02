@@ -3,6 +3,8 @@ import Mathlib.Data.Int.Basic
 import Mathlib.Algebra.Ring.Basic
 import Mathlib.RingTheory.Polynomial.Basic
 import Mathlib.Algebra.Polynomial.Basic
+import Mathlib.Algebra.Field.Defs
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 
 /-!
@@ -30,7 +32,7 @@ numerical evaluation.
 
 namespace QOU.Torsion
 
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+/- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
@@ -39,21 +41,26 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **Skein relation data**: the three resolutions of a crossing
     `L₊`, `L₋`, `L₀` related by the Skein relation
-    `q · L₊ - q⁻¹ · L₋ = (q - q⁻¹) · L₀`. -/
+    `q · L₊ - q⁻¹ · L₋ = (q - q⁻¹) · L₀`.
+
+    Stated over a generic field `K` (per §7c base-ring convention):
+    the relation involves `q⁻¹`, which `R_q = ℤ[q,q⁻¹]` does not carry
+    as a general `Inv` instance. Specialise `K := ℝ, q := q₀` (or
+    `K := Frac(R_q)`) as needed. -/
 -- Ref: [jones1985]
-structure SkeinRelation where
+structure SkeinRelation (K : Type*) [Field K] where
   /-- The substrate parameter q > 1. -/
-  q : R_q
-  /-- q is positive. -/
-  -- q_pos : 0 < q  -- (archimedean; not meaningful over R_q)
-  /-- q is greater than 1 (quantum regime). -/
-  -- q_gt_one : 1 < q  -- (archimedean; not meaningful over R_q)
+  q : K
+  -- q is positive. (archimedean; not meaningful over a generic field)
+  -- q_pos : 0 < q
+  -- q is greater than 1 (quantum regime). (archimedean; not meaningful over a generic field)
+  -- q_gt_one : 1 < q
   /-- Mass of the positive crossing resolution. -/
-  mass_plus : R_q
+  mass_plus : K
   /-- Mass of the negative crossing resolution. -/
-  mass_minus : R_q
+  mass_minus : K
   /-- Mass of the smoothed resolution. -/
-  mass_zero : R_q
+  mass_zero : K
   /-- The Skein relation: q · M(L₊) - q⁻¹ · M(L₋) = (q - q⁻¹) · M(L₀). -/
   skein : q * mass_plus - q⁻¹ * mass_minus = (q - q⁻¹) * mass_zero
 
@@ -75,41 +82,49 @@ structure FundamentalKnot where
     crossing, a composite hadron decomposes into a polynomial in
     fundamental knot classes with Laurent polynomial coefficients. -/
 -- Ref: [jones1985], [manuscript] §3
-structure SkeinResolution where
+structure SkeinResolution (K : Type*) [Field K] where
   /-- The substrate parameter q. -/
-  q : R_q
-  /-- q > 1. -/
-  -- q_gt_one : 1 < q  -- (archimedean; not meaningful over R_q)
+  q : K
+  -- q > 1. (archimedean; not meaningful over a generic field)
+  -- q_gt_one : 1 < q
   /-- Number of fundamental constituents. -/
   numConstituents : ℕ
   /-- The Skein polynomial Q(q) ∈ ℤ[q±¹] (evaluated at q). -/
-  skeinPolynomial : R_q
+  skeinPolynomial : K
   /-- Mass of the Hopf link (binding energy unit). -/
-  hopfLinkMass : R_q
+  hopfLinkMass : K
   /-- Individual constituent volumes. -/
-  constituentVolumes : Fin numConstituents → R_q
-  /-- The quantum Planck constant ℏ_q = 1 - q⁻¹. -/
-  hbar_q : R_q := 1 - q⁻¹
-  /-- **Mass formula**: M(H) = Q(q) · M(ℒ_Hopf) + Σᵢ Vol(Kᵢ)/ℏ_q². -/
-  mass_formula : R_q :=
-    skeinPolynomial * hopfLinkMass +
-    ∑ i : Fin numConstituents, constituentVolumes i / hbar_q ^ 2
+  constituentVolumes : Fin numConstituents → K
+
+/-- The quantum Planck constant ℏ_q = 1 - q⁻¹. -/
+def SkeinResolution.hbar_q {K : Type*} [Field K] (sr : SkeinResolution K) : K :=
+  1 - sr.q⁻¹
+
+/-- **Mass formula**: M(H) = Q(q) · M(ℒ_Hopf) + Σᵢ Vol(Kᵢ)/ℏ_q².
+
+    A definition (not a defaulted data field): a structure field with a
+    default value is unconstrained, so nothing about it is provable. -/
+def SkeinResolution.mass_formula {K : Type*} [Field K] (sr : SkeinResolution K) : K :=
+  sr.skeinPolynomial * sr.hopfLinkMass +
+  ∑ i : Fin sr.numConstituents, sr.constituentVolumes i / sr.hbar_q ^ 2
 
 /-- For hadrons of purely torus-knot constituents, all volumes vanish
     and mass is purely from linking topology:
     M(H) = Q(q) · M(ℒ_Hopf). -/
 -- Ref: [manuscript] §3
-theorem mass_from_linking_only
-    (sr : SkeinResolution)
+theorem mass_from_linking_only {K : Type*} [Field K]
+    (sr : SkeinResolution K)
     (h_torus : ∀ i, sr.constituentVolumes i = 0) :
     sr.mass_formula = sr.skeinPolynomial * sr.hopfLinkMass := by
   unfold SkeinResolution.mass_formula
   simp [h_torus]
 
-/-- The quantum Planck constant is positive when q > 1. -/
+-- The quantum Planck constant is positive when q > 1.
 -- Ref: [manuscript] §1
 -- theorem hbar_q_pos {q : R_q} (hq : 1 < q) : 0 < 1 - q⁻¹ := by  -- (archimedean; not meaningful over R_q)
-  have : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
-  linarith
+--   have : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
+--   linarith
+
+end
 
 end QOU.Torsion
