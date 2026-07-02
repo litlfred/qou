@@ -95,3 +95,9 @@ a docstring mention of an audit doc, not a file read — all 4 are 0-consumer.
 Remaining substrate/ raw-emit tail (~14) is all assertion-FREE (wrap_legacy
 path) but includes input-witness chains (lever1_binding_core_* read the
 cyclotomic witness) — next batch.
+
+## 2026-07-02 — batch 8b (4 scripts, wrap_legacy; non-substrate + wlambda)
+Post-substrate-vein: 4 no-assertion single-output probes via wrap_legacy —
+meson_gen3_eta_phi, binding_bar_even_odd_probe, rt_w_sqrt2_jet_order_validation,
+substrate/wlambda_identity_i_structure_probe. Each: exit 0, PROV_OK, keys kept.
+(Confirms the clean vein extends beyond the lever1/zeta4/frakV substrate family.)

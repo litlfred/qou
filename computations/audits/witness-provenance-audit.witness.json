@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-02T12:10:02.070109+00:00",
-  "commitSha": "3643c51f7c72d61278d2c27d19b68ec35126dffb",
+  "computedAt": "2026-07-02T14:10:09.101088+00:00",
+  "commitSha": "a06da51ddc7bdab3536224caad1e4c67a2325997",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 266,
+      "computed": 262,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 15,
+  "durationMs": 10,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "scriptCommitSha": "f6ddd9350192668fe1fb6c2498f8d5b91bb70331",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,6 +27,7 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
@@ -47,11 +48,11 @@
   "data": {
     "counts": {
       "total_scanned": 1545,
-      "prov_ok": 1223,
+      "prov_ok": 1227,
       "prov_audit_exempt": 55,
-      "prov_missing": 266,
+      "prov_missing": 262,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.8271844660194175
+      "completeness_ratio": 0.8297734627831715
     },
     "by_verdict": {
       "PROV_OK": [
@@ -405,6 +406,10 @@
         },
         {
           "witness": "binding-a3plus-joint-ji-combiner.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "binding-bar-even-odd-probe.witness.json",
           "missing_fields": []
         },
         {
@@ -2516,6 +2521,10 @@
           "missing_fields": []
         },
         {
+          "witness": "meson-gen3-eta-phi.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "meson-h6-typed-trace.witness.json",
           "missing_fields": []
         },
@@ -4420,6 +4429,10 @@
           "missing_fields": []
         },
         {
+          "witness": "rt-w-sqrt2-jet-order-validation.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "s5-so3-su2-u1-fiber-action.witness.json",
           "missing_fields": []
         },
@@ -4637,6 +4650,10 @@
         },
         {
           "witness": "unified-tau-odd-partner-solve.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "wlambda-identity-i-structure-probe.witness.json",
           "missing_fields": []
         },
         {
@@ -4998,14 +5015,6 @@
         },
         {
           "witness": "binding-alpha-shift-witness.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "binding-bar-even-odd-probe.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
@@ -5939,14 +5948,6 @@
           ]
         },
         {
-          "witness": "meson-gen3-eta-phi.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "meson-lepton-knot-dictionary-probe.witness.json",
           "missing_fields": [
             "scriptFile",
@@ -6598,14 +6599,6 @@
           ]
         },
         {
-          "witness": "rt-w-sqrt2-jet-order-validation.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "sigma-f-electron-shell-chain.witness.json",
           "missing_fields": [
             "scriptFile",
@@ -6733,14 +6726,6 @@
         },
         {
           "witness": "lever1-qholonomic-order3-fit.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "wlambda-identity-i-structure-probe.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",

@@ -124,8 +124,10 @@ def main() -> int:
         },
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
-    out = Path(__file__).resolve().parent / "binding-bar-even-odd-probe.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+    out = WitnessBuilder.wrap_legacy(
+        "binding-bar-even-odd-probe", witness, script_path=__file__, engine="mpmath",
+    ).save()
     print(f"\n  Witness: {out}")
     return 0
 

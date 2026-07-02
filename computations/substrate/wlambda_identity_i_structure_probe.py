@@ -206,9 +206,10 @@ witness = {
     "results": results,
     "leanInfraRouteVerdict": route,
 }
-out = os.path.join("computations", "substrate", "wlambda-identity-i-structure-probe.witness.json")
-with open(out, "w") as f:
-    json.dump(witness, f, indent=2)
+from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+out = WitnessBuilder.wrap_legacy(
+    "wlambda-identity-i-structure-probe", witness, script_path=__file__, engine="sympy",
+).save()
 
 print(f"(A) Identity I  M(n)=n(3n−1)/2  for n=2..14: {identity_I_holds}")
 print(f"(B) E[Σ content²] = C(n,2): {content2_eq_binom}")
