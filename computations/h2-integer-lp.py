@@ -318,7 +318,117 @@ print(f"  Observed D₀(H₂) = {obs} eV")
 print()
 
 # ══════════════════════════════════════════════════════════════
-# §6. Witness
+# §6. LP DUAL over strand orderings (prop:h2-lp-dual-binding .md)
+# ══════════════════════════════════════════════════════════════
+# The block's .md defines the ordering LP:
+#   primal:  min_π Φ₁(T_{π0π1}·T_{π1π2}·T_{π2π3})  over orderings π of
+#            [p₁, e₁, p₂, e₂], s.t. each strand appears once and the
+#            shared electron is Hopf-linked to BOTH protons.
+#   dual:    max y_cov  s.t.  y_cov ≤ Φ₁^sep − Φ₁^{H₂}(π)  over the
+#            competing orderings;  y_cov* = binding per shared electron.
+#
+# Per-crossing traced volumes (md "Numerical evaluation"):
+#   covalent inter-atomic p–e crossing: eigenvalues (q, −q⁻¹) = σ,
+#     traced volume V̂ = z·1 + 0 = z
+#   dressed intra-atomic pᵢ–eᵢ crossing: eigenvalues (q⁵, −q⁻⁵) = σ⁵
+#     σ⁵ = a₅σ + b₅ with a₅ = (q⁵+q⁻⁵)/(q+q⁻¹), b₅ = q⁵ − a₅q,
+#     traced volume V̂ = z·a₅ + b₅
+# Feasibility: an ordering is feasible iff strand types alternate
+# (p–p / e–e adjacencies have no transfer matrix in the .md, and a
+# non-alternating ordering leaves no electron adjacent to both
+# protons — the covalent constraint fails).
+#
+# Routing note: the ordering-min IS expressible in the canonical
+# solve_operator_selection_lp(t, G, n_target) form (lp_dual_solver):
+# put one occupancy variable x_π per feasible ordering, t_π = Φ₁(π),
+# G = I (occupancies ≥ 0 as the "Frobenius positivity" rows) and
+# n_target = 1 (exactly one ground state). Then y0* = Φ₁(π*) and the
+# y* are the per-ordering reduced costs Φ₁(π) − Φ₁(π*) ≥ 0 — exactly
+# the slacks of the .md's dual constraints. The .md-normalised dual
+# value is the constant shift  y_cov* = Φ₁^sep − y0*.  (The .md's
+# "max over π" is a trivial LP; we still route through the canonical
+# entry point per AGENTS.md §LP/SDP duals, and cross-check against
+# the direct enumeration.)
+import numpy as np
+from lp_dual_solver import solve_operator_selection_lp
+
+print()
+print("=" * 65)
+print("§6. LP DUAL OVER STRAND ORDERINGS (prop:h2-lp-dual-binding)")
+print("=" * 65)
+
+a5 = (q0**5 + qi0**5) / (q0 + qi0)
+b5 = q0**5 - a5 * q0
+V_cov = z                    # tr_M(σ) — covalent inter-atomic crossing
+V_dressed = z * a5 + b5      # tr_M(σ⁵) — dressed intra-atomic crossing
+
+# Separated reference, .md literal formula:
+#   V^H = −q⁵(q − q⁻¹) + q⁻⁵   (dressed isolated atom)
+V_H_md = -(q0**5) * (q0 - qi0) + qi0**5
+Phi_H_md = float(mp.log(abs(V_H_md)))
+Phi_sep_md = 2 * Phi_H_md
+# Markov-consistent alternative: trace the isolated dressed crossing
+# with the SAME normalisation as the molecular V̂ᵢ (tr_M(σ⁵)). The .md
+# mixes the two conventions; we emit both so the discrepancy is visible.
+Phi_sep_markov = 2 * float(mp.log(abs(V_dressed)))
+
+strands = [("p", 1), ("e", 1), ("p", 2), ("e", 2)]
+
+def ordering_phi(perm):
+    """Φ₁(π) = Σᵢ ln|V̂ᵢ| over the 3 adjacent transfer matrices,
+    or None if the ordering is infeasible (p–p / e–e adjacency)."""
+    phi = 0.0
+    for (t1, i1), (t2, i2) in zip(perm, perm[1:]):
+        if t1 == t2:
+            return None  # no p–p / e–e transfer matrix; covalent constraint fails
+        phi += float(mp.log(abs(V_dressed if i1 == i2 else V_cov)))
+    return phi
+
+orderings = []   # (name, Φ₁(π))
+for perm in itertools.permutations(strands):
+    phi = ordering_phi(perm)
+    if phi is not None:
+        name = ",".join(f"{t}{i}" for t, i in perm)
+        orderings.append((name, phi))
+
+names = [name for name, _ in orderings]
+phis = [phi for _, phi in orderings]
+n_ord = len(orderings)
+
+# Canonical LP route (occupancy simplex; see routing note above).
+t_vec = np.array(phis, dtype=float)
+lp = solve_operator_selection_lp(t_vec, np.eye(n_ord), 1.0)
+assert lp.feasible, "ordering-selection LP infeasible (should never happen)"
+
+DUAL_TOL = 1e-9
+y_cov_dual = Phi_sep_md - lp.dual_obj          # dual route (via y0* = Φ₁(π*))
+y_cov_primal = Phi_sep_md - min(phis)          # direct-enumeration primal route
+slacks = [float(s) for s in lp.y_star]         # Φ₁(π) − Φ₁(π*) ≥ 0
+# Tight constraints of the .md's dual = orderings achieving the ground
+# state (zero slack). NB the solver's own active_set is the complement
+# (indices whose x_π ≥ 0 constraint is pinned with positive price).
+active_idx = [i for i, s in enumerate(slacks) if s <= DUAL_TOL]
+active_names = [names[i] for i in active_idx]
+duality_gap = abs(y_cov_primal - y_cov_dual)
+y_cov_markov = Phi_sep_markov - min(phis)
+
+print(f"  feasible orderings: {n_ord} (of {math.factorial(4)} permutations)")
+print(f"  V̂_cov = z = {float(V_cov):.10f},  V̂_dressed = z·a₅+b₅ = {float(V_dressed):.10f}")
+print(f"  Φ₁^H (md formula)      = {Phi_H_md:.10f}   (md quotes ≈ −1.406)")
+print(f"  Φ₁^sep (md formula)    = {Phi_sep_md:.10f}   (md quotes ≈ −2.812)")
+print(f"  Φ₁^sep (Markov-consistent) = {Phi_sep_markov:.10f}")
+for i, (name, phi) in enumerate(orderings):
+    mark = " ← ground state" if i in active_idx else ""
+    print(f"    π={name:<14} Φ₁={phi:>12.8f}  slack={slacks[i]:.8f}{mark}")
+print(f"  y_cov* (md Φ_sep, dual route)   = {y_cov_dual:.10f}")
+print(f"  y_cov* (md Φ_sep, primal route) = {y_cov_primal:.10f}")
+print(f"  duality gap                     = {duality_gap:.3e}")
+print(f"  y_cov* in eV (×E_mol)           = {y_cov_dual * E_mol:.6f}")
+print(f"  y_cov* (Markov-consistent Φ_sep) = {y_cov_markov:.10f}"
+      f"  ({y_cov_markov * E_mol:.4f} eV)")
+
+# ══════════════════════════════════════════════════════════════
+# §7. Witness
 # ══════════════════════════════════════════════════════════════
 
 w = WitnessBuilder("h2-integer-lp", engine="python")
@@ -351,6 +461,61 @@ w.add_assertion(
     computed=any(b[2] > 0 for b in all_best),
     expected=True,
     source="Integer LP scan",
+)
+
+# ── LP dual fields (AGENTS.md §"LP / SDP duals — first-class infra") ──
+# Canonical six fields at data.<field>, in the .md's dual normalisation:
+# y0_star = y_cov* = Φ₁^sep − Φ₁(π*); y_star = per-ordering slacks
+# Φ₁(π) − Φ₁(π*) ≥ 0; active_set = tight (ground-state) orderings.
+# primal_obj / dual_obj are y_cov* computed via the two independent
+# routes (direct enumeration vs the canonical solve_operator_selection_lp
+# occupancy LP); strong duality ⇒ duality_gap ≈ 0.
+w.add_data("y0_star", float(y_cov_dual))
+w.add_data("y_star", slacks)
+w.add_data("active_set", active_idx)
+w.add_data("primal_obj", float(y_cov_primal))
+w.add_data("dual_obj", float(y_cov_dual))
+w.add_data("duality_gap", float(duality_gap))
+w.add_data("lp_dual_orderings", {
+    "orderings": names,
+    "phi1": [float(p) for p in phis],
+    "active_orderings": active_names,
+    "phi_H_md_formula": float(Phi_H_md),
+    "phi_sep_md_formula": float(Phi_sep_md),
+    "phi_sep_markov_consistent": float(Phi_sep_markov),
+    "y_cov_star_md_phi_sep": float(y_cov_dual),
+    "y_cov_star_md_phi_sep_eV": float(y_cov_dual * E_mol),
+    "y_cov_star_markov_consistent": float(y_cov_markov),
+    "y_cov_star_markov_consistent_eV": float(y_cov_markov * E_mol),
+    "solver_result": lp.to_dict(),
+    "note": (
+        "y0_star/primal_obj/dual_obj use the .md's literal Φ₁^sep "
+        "formula V^H = -q^5(q-q^-1)+q^-5, which mixes trace "
+        "normalisations with the molecular V̂ᵢ = z·aᵢ+bᵢ and yields "
+        "y_cov* < 0; the Markov-consistent Φ₁^sep = 2·ln|z·a₅+b₅| "
+        "yields y_cov* = -2·ln z > 0. Ordering selection (interleaved "
+        "ground state), slacks, active set and the duality gap are "
+        "independent of this constant shift."
+    ),
+})
+
+w.add_assertion(
+    "LP dual: all per-ordering slacks nonnegative",
+    computed=bool(min(slacks) >= -DUAL_TOL),
+    expected=True,
+    source="Ordering-selection LP dual (solve_operator_selection_lp)",
+)
+w.add_assertion(
+    "LP dual: strong duality gap ~ 0",
+    computed=bool(duality_gap < 1e-9 and lp.duality_gap < 1e-9),
+    expected=True,
+    source="Direct enumeration vs canonical LP solver",
+)
+w.add_assertion(
+    "LP dual selects the interleaved ordering p1,e2,p2,e1 as ground state",
+    computed=bool("p1,e2,p2,e1" in active_names),
+    expected=True,
+    source="Ordering-selection LP active set",
 )
 
 w.save()
