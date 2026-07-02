@@ -219,6 +219,8 @@ section({
         "stat-mech-computational-horizon",
         "stat-mech-computational-horizon-table-data",
         "information-paradox-incompleteness",
+        "witness-completeness",
+        "standard-complementarity",
       ],
     }),
     section({
@@ -231,6 +233,8 @@ section({
         "cmb-boundary-datum",
         "cmb-photon-color-content",
         "hawking-radiation",
+        "stretched-horizon",
+        "bh-state-counting",
         "observable-subcategory",
         "aeon",
         "aeon-boundary",
