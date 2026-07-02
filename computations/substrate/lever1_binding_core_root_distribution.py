@@ -133,8 +133,9 @@ out = {
     "scope": "(a)/(b) per AGENTS.md: the exact on/off-circle counts and R_m(1) factorizations are "
              "derived facts on m=6..11; no closed-form law is claimed. Nothing wired; no fit.",
 }
-witness_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                            "lever1-binding-core-root-distribution.witness.json")
-with open(witness_path, "w") as f:
-    json.dump(out, f, indent=2)
+from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+witness_path = WitnessBuilder.wrap_legacy(
+    "lever1-binding-core-root-distribution", out,
+    script_path=__file__, engine="sympy",
+).save()
 print("witness ->", os.path.relpath(witness_path, os.getcwd()), flush=True)

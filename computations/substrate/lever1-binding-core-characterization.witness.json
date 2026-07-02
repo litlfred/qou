@@ -1,11 +1,29 @@
 {
-  "$schema": "https://litlfred.github.io/qou/witness-schema/v1.json",
-  "description": "Lever-1 binding correction non-cyclotomic core R_m: palindromy, q=1/q0 values, irreducibility over Q, cross-m shared factors, degree law.",
-  "bean": "z2bn",
-  "computation": {
-    "script": "computations/substrate/lever1_binding_core_characterization.py",
-    "reads": "computations/substrate/lever1-binding-correction-cyclotomic-structure.witness.json"
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-02T12:18:18.444524+00:00",
+  "commitSha": "03675bd4a98d04219715fbdc1a0d56fbd9f88100",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "lever1-binding-core-characterization",
+  "scriptFile": "lever1_binding_core_characterization.py",
+  "scriptHash": "eee2bb906f19",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Lever-1 binding correction non-cyclotomic core R_m: palindromy, q=1/q0 values, irreducibility over Q, cross-m shared factors, degree law.",
+  "$schema": "https://litlfred.github.io/qou/witness-schema/v1.json",
+  "bean": "z2bn",
   "params": {
     "q0": "1.10997859555733"
   },
@@ -135,6 +153,6 @@
     6,
     12
   ],
-  "verdict": "The growing core R_m is UNIFORMLY PALINDROMIC (q\u21941/q bar-symmetric); R_m(1)\u22600 (all positive); each R_m is IRREDUCIBLE over \u211a; the cores share NO common factor across m (each order brings a genuinely new bar-symmetric core). This pins the binding correction's essential content: a (q\u22121)\u00b2 \u00d7 \u03a6_d cyclotomic tower (Stage 7) times a tower of bar-symmetric, q=1-nonvanishing cores that grow and do not nest \u2014 the genuine cyclotomic-completion (Habiro) residue, not reducible to a single finite element.",
-  "scope": "(a)/(b) per AGENTS.md: palindromy / irreducibility / no-nesting / R_m(1)\u22600 are exact derived facts on the available m=6..11; 'core grows unboundedly / not a single finite element' remains a bounded-MMAX observation, not a proved (b)-exclusion. Nothing wired; no fit; binding side (exact data)."
+  "verdict": "The growing core R_m is UNIFORMLY PALINDROMIC (q↔1/q bar-symmetric); R_m(1)≠0 (all positive); each R_m is IRREDUCIBLE over ℚ; the cores share NO common factor across m (each order brings a genuinely new bar-symmetric core). This pins the binding correction's essential content: a (q−1)² × Φ_d cyclotomic tower (Stage 7) times a tower of bar-symmetric, q=1-nonvanishing cores that grow and do not nest — the genuine cyclotomic-completion (Habiro) residue, not reducible to a single finite element.",
+  "scope": "(a)/(b) per AGENTS.md: palindromy / irreducibility / no-nesting / R_m(1)≠0 are exact derived facts on the available m=6..11; 'core grows unboundedly / not a single finite element' remains a bounded-MMAX observation, not a proved (b)-exclusion. Nothing wired; no fit; binding side (exact data)."
 }
