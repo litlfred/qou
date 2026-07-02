@@ -220,3 +220,28 @@ and formalize-first:
 3. Lean the true convergence bound `|tr_M(β_Bor)| < 1 ⇒ pair traces < q₀`
    (brane-tower plan §5 step 3).
 4. Resolve the 1.96e-4 y-lambda-vs-closed-form τ convention mismatch.
+
+## Executed 2026-07-02 (round 3 — legs 1/2/3/4)
+
+- **Leg 1 — b_pred closed form: DERIVED.**
+  `computations/probes/b_pred_mirror_slope_closed_form.py` (+ witness).
+  `b_pred(A) = log_q₀(τ_p/τ_n) + log[(1−ε(N,Z))/(1−ε(Z,N))]/((N−Z)·ln q₀)`,
+  `ε(Z,N) = z^{Z−1}(z−h/2)(z−h)^{N−1}` — matches the measured A=6..12
+  slopes to their rounding; plateau = log_q₀(τ_p/τ_n) = 1.37181; hence
+  κ_FW = −0.34295 DERIVED (the ~78% framework share of κ). The
+  interface-only candidate 1.2998 is refuted as the asymptote (scope a).
+  Discriminant recorded: the Borromean pipeline (τ_p = τ_n, GAP-A-4)
+  must show a different b_pred — a test between nucleon representations.
+- **Leg 3 — Lean convergence bound: DONE, sorry-free.**
+  `QOU/BraidsAndKnots/BorromeanTowerConvergence.lean` — trace < 1 for
+  h ≠ 0 (sharp at h = 0), |t| < 1 on h² ≤ 1, pair + dressed-pair Li₂^q
+  radius bounds, composite `borromean_pair_within_radius`. Verified
+  lean-direct exit 0. The refuted atom-word bound is not stated.
+- **Leg 2 — H_{3A} FR test: BLOCKED in this sandbox.** pyhecke_native
+  wheel unreachable; local cargo build 403s on the clarabel fork
+  (github.com/litlfred/Clarabel.rs outside session scope) even with
+  CARGO_NET_GIT_FETCH_WITH_CLI and --no-default-features (the
+  [patch.crates-io] git source resolves at metadata time). Unblock
+  paths: the stub-crate recipe (pyhecke-native README §Clarabel) or an
+  unrestricted environment. Spec is in the round-2 follow-up queue.
+- **Leg 4 — prepare-merge run on PR #3213** (see PR).
