@@ -507,6 +507,22 @@ crossing/jet bookkeeping, not a search over closure ansätze. Near-match
 tier, NOT wired
 ([residual audit](audits/2026-06-09-delta-lambda-canonical-residual.md)).
 
+> **PROBE 1 verdict (2026-07-02) — bookkeeping route REFUTED, scope-(a).**
+> The `10A−5 = 5·[A nucleons + (A−1) interfaces]` factorization does NOT
+> come from closed-form Laurent-degree bookkeeping: exact degrees and
+> writhe differences are nowhere of that form, and the closed form's
+> trace-side contribution *shrinks* with A (4.97 → 0.88 in log-q₀ units,
+> D → ⁴He) while the law grows +10/nucleon. Constrains this route only —
+> no ingredient excluded. **Observation tier (near-match, unwired):**
+> `h(q₀) = q₀^(−15.0002)` — the deuteron exponent is `−log_q₀ h` to
+> 2e-4 relative, i.e. `Δ_λ(D) ≈ 1/h(q₀)`; and the ³He −1.40 outlier
+> decomposes as p/n-trace asymmetry +1.372 (dominant) + interface-sign
+> swap −0.938 + AME mirror +0.904. Hardening byproduct: the Phase-5q
+> closed form is now verified as an **exact ℚ identity** (symbolic
+> H₆/H₉, 11/11 assertions).
+> [Probe audit](audits/2026-07-02-9b-probes-laurent-degree-manybody.md),
+> `probe_9b_laurent_degree_10a5.py`.
+
 **9a flip gate (owner ruling, 2026-06-13).** Production stays on the
 uniform shortcut until the per-A normalisation `R(K)` — the same object as
 the 9b ρ/Δ_λ leg — is derived; the flip is a *derivation milestone*, not a
@@ -559,6 +575,19 @@ branch `he4-jsj-binding-link`). So the binding is a **many-body series**:
 | **2-body** | pairwise bond-sum (per-bond `E_0·Δtr_M`, abs convention) | A≤3 | correct T/³He ordering; A=2 derived |
 | **3-body** | A=3 residual (the ~40 % pairwise gap) | T, ³He | **open** (whole-A link-volume — §below) |
 | **4-body** | whole-α volume `2·m_e·A·8G` (magic-A) | ⁴He | **+5.87 %, no fit** |
+
+> **PROBE 3 verdict (2026-07-02) — "4-body cross-term ≈ magic-A" REFUTED,
+> scope-(a).** The exact finite inclusion–exclusion expansion of the
+> Phase-5q product form (`B = Q_β·tr_free·[Σg_i − Σg_ig_j + …]`, sums to
+> B_pred at 1e-40) is **alternating and non-perturbative** (g ≈ 0.50–0.71;
+> ⁴He order-1 = +192.6% of B_pred, order-2 = −115.4%, order-3 = +22.8%),
+> and the **connected 4-body cross-term at ⁴He is 0.16 MeV (Q_β scale) /
+> 0.87 MeV (E₀ scale) — 34–184× below the magic-A 29.96 MeV**. The probe
+> measures the size of the missing higher term; no factor is excluded.
+> Consistency hook: order-1 at E₀ scale = **25.98% of B_AME**, exactly
+> reproducing the many-body-ceiling audit's 26% pairwise figure.
+> [Probe audit](audits/2026-07-02-9b-probes-laurent-degree-manybody.md),
+> `probe_9b_manybody_expansion.py`.
 
 **Common shape, per-isotope scale/assignment.** The deuteron (`m_e·Vol(6₂)`,
 +1.1 %), the deprecated census A=3 (`2·m_e·Vol`, knot 8₁₁/Borromean), and magic-A
