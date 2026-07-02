@@ -20,3 +20,15 @@ c₃^even exists): W₂ ≈ 16 + c₃^even (numeric part from near-match rungs);
 refutes one-recurrence outright. Blocking measurement: extend Hoefsmit Stage-B
 net-route one order deeper in u (the c₂^even≈−8 machinery).
 Full analysis: ../docs/audits/2026-07-02-1jrh-aw-one-recurrence-formalize-first-prune.md
+
+## 2026-07-02 — mechanism-level confirmation at H₂/Hopf (complementary, does NOT lift the gate)
+The recurrence_invol_descent MECHANISM is compute-confirmed at the 2-strand
+Hopf (deuteron-bond) tower, where no identification problem exists (the AW
+multiplier c = q²+q⁻² is FORCED by the crossing eigenvalues, not fitted):
+tower + both parity channels (binding bar-even, Q_β bar-odd) ride ONE
+Chebyshev/q-ultraspherical (AW special-case) recurrence, exact + <1e-65 at
+muon-q₀; bar-even hypothesis proved NECESSARY (bar-odd multiplier
+cross-couples channels exactly: E_{m+1} = c·O_m + E_{m−1}). Probe:
+computations/substrate/frakV_askey_wilson_recurrence_tie_probe.py (11/11,
+PR #3216). The PHYSICAL c_k-ladder identification above remains GATED on
+c₃^even — this note is the structural half only; status stays per the prune.
