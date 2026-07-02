@@ -28,7 +28,7 @@ numerical evaluation.
 
 namespace QOU.QuantumGeometry
 
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+/- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
@@ -50,8 +50,10 @@ axioms (left and right), eliminating 2 more. -/
 
 -- Ref: [manuscript] Ch. 2 — DiffForm is an R-module
 axiom DiffForm (R : Type u) [CommRing R] : Type u
-noncomputable instance : AddCommMonoid (DiffForm R) := Classical.arbitrary _
-noncomputable instance : Module R (DiffForm R) := Classical.arbitrary _
+axiom DiffForm.addCommMonoid (R : Type u) [CommRing R] : AddCommMonoid (DiffForm R)
+noncomputable instance : AddCommMonoid (DiffForm R) := DiffForm.addCommMonoid R
+axiom DiffForm.module (R : Type u) [CommRing R] : Module R (DiffForm R)
+noncomputable instance : Module R (DiffForm R) := DiffForm.module R
 
 /-- The Webster inner product ⟨·,·⟩_θ valued in R.
     Bilinear by construction: left-linear and right-linear. -/
@@ -130,8 +132,6 @@ theorem q_codifferential_exists (q : Rˣ) :
   obtain ⟨δ_q, hδ, _⟩ := adjoint_exists_unique' (d_q R q)
   exact ⟨δ_q, hδ⟩
 
-/-- **Closed formula for the q-codifferential.**
-    The formal adjoint of d_q is δ_q = q⁻¹ δ + (1 - q⁻¹) L_ξ* ∘ ι_ξ. -/
 /-- **External axiom (§3b-cond pattern): q_codifferential_formula.**
 
     Auto-extracted from the single-sorry theorem body in this file.
@@ -147,6 +147,8 @@ axiom q_codifferential_formula_axiom (q : Rˣ) :
       (∀ (β : DiffForm R), δ_q β = (↑q⁻¹ : R) • δ_classical R β +
         (1 - (↑q⁻¹ : R)) • (L_reeb_star R (ι_reeb R β)))
 
+/-- **Closed formula for the q-codifferential.**
+    The formal adjoint of d_q is δ_q = q⁻¹ δ + (1 - q⁻¹) L_ξ* ∘ ι_ξ. -/
 theorem q_codifferential_formula (q : Rˣ) :
     ∃ (δ_q : DiffForm R → DiffForm R),
       (∀ (α β : DiffForm R), websterInner R (d_q R q α) β =
@@ -154,5 +156,7 @@ theorem q_codifferential_formula (q : Rˣ) :
       (∀ (β : DiffForm R), δ_q β = (↑q⁻¹ : R) • δ_classical R β +
         (1 - (↑q⁻¹ : R)) • (L_reeb_star R (ι_reeb R β))) :=
   q_codifferential_formula_axiom q
+
+end
 
 end QOU.QuantumGeometry
