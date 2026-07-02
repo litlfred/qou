@@ -62,9 +62,10 @@ Specialising to `A = ℂ[Sₙ]` (semisimple by Maschke, alg-closed by `IsAlgClos
 
 `RegularRepBlockTrace.identityB_conditional` carries the full `SnWedderburnSpectralData` bundle
 (the *labelled* block decomposition: partition ↔ irreducible, `dim = #SYT`, JM-eigenvalue =
-contents). Here nothing Sₙ-specific is assumed at all: the block structure, the quadratic
-dimension weighting, and `∑ dᵢ² = n!` are *machine-derived* from Artin–Wedderburn, and the
-Jucys centrality of `C₂` is machine-checked in `IdentityBCentrality`.
+contents). Here the conditional form `identityB_via_wedderburn` assumes only the centrality of
+`C₂` — the block structure, the quadratic dimension weighting, and `∑ dᵢ² = n!` are
+*machine-derived* from Artin–Wedderburn — and the **unconditional** theorem carries no remaining
+Sₙ-specific hypothesis: that centrality is proved in `IdentityBCentrality`.
 
 No `native_decide`, no `: True`, no statement-weakening; the base ring is `ℂ` exactly where the
 representation theory needs alg-closedness + characteristic zero.

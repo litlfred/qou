@@ -114,20 +114,20 @@ theorem centralC2_apply_one (n : ℕ) :
 Multiplication convention: `(f * g) x = f (g x)`, so `swap(i,k)·swap(j,k)` sends
 `i ↦ k ↦ j ↦ i` and fixes everything else. -/
 
-private lemma swapProd_apply_fst {n : ℕ} (i j k : Fin n) (hij : i ≠ j) (hik : i ≠ k) :
+private lemma swap_prod_apply_fst {n : ℕ} (i j k : Fin n) (hij : i ≠ j) (hik : i ≠ k) :
     (Equiv.swap i k * Equiv.swap j k) i = k := by
   rw [Equiv.Perm.mul_apply, Equiv.swap_apply_of_ne_of_ne hij hik, Equiv.swap_apply_left]
 
-private lemma swapProd_apply_top {n : ℕ} (i j k : Fin n) (hij : i ≠ j) (hjk : j ≠ k) :
+private lemma swap_prod_apply_top {n : ℕ} (i j k : Fin n) (hij : i ≠ j) (hjk : j ≠ k) :
     (Equiv.swap i k * Equiv.swap j k) k = j := by
   rw [Equiv.Perm.mul_apply, Equiv.swap_apply_right,
     Equiv.swap_apply_of_ne_of_ne (Ne.symm hij) hjk]
 
-private lemma swapProd_apply_snd {n : ℕ} (i j k : Fin n) :
+private lemma swap_prod_apply_snd {n : ℕ} (i j k : Fin n) :
     (Equiv.swap i k * Equiv.swap j k) j = i := by
   rw [Equiv.Perm.mul_apply, Equiv.swap_apply_left, Equiv.swap_apply_right]
 
-private lemma swapProd_support {n : ℕ} (i j k : Fin n)
+private lemma swap_prod_support {n : ℕ} (i j k : Fin n)
     (hik : i ≠ k) (hjk : j ≠ k) (hij : i ≠ j) :
     (Equiv.swap i k * Equiv.swap j k).support = {i, k, j} := by
   have hnodup : [i, k, j].Nodup := by
@@ -204,9 +204,9 @@ theorem centralC2_apply_threecycle (n : ℕ) (σ : Equiv.Perm (Fin n))
     · rw [hsupp] at hx
       simp only [Finset.mem_insert, Finset.mem_singleton] at hx
       rcases hx with rfl | rfl | rfl
-      · rw [swapProd_apply_fst _ _ _ hij him, σ.apply_inv_self]
-      · rw [swapProd_apply_top _ _ _ hij hjm]
-      · rw [swapProd_apply_snd]
+      · rw [swap_prod_apply_fst _ _ _ hij him, σ.apply_inv_self]
+      · rw [swap_prod_apply_top _ _ _ hij hjm]
+      · rw [swap_prod_apply_snd]
         conv_lhs => rw [← hcube]
         rw [Equiv.Perm.inv_apply_self]
     · have hfix : σ x = x := Equiv.Perm.notMem_support.mp hx
@@ -238,7 +238,7 @@ theorem centralC2_apply_threecycle (n : ℕ) (σ : Equiv.Perm (Fin n))
         rw [hcard] at h0
         norm_num at h0
       have hsupp' : σ.support = {i', k, j'} := by
-        rw [← heq]; exact swapProd_support i' j' k hi'k hj'k hij'
+        rw [← heq]; exact swap_prod_support i' j' k hi'k hj'k hij'
       have hkm : k ≤ m := Finset.le_max' _ _ (by rw [hsupp']; simp)
       have hmk : m ≤ k := Finset.max'_le _ hne _ (fun x hx => by
         rw [hsupp'] at hx
@@ -272,8 +272,8 @@ theorem centralC2_apply_threecycle (n : ℕ) (σ : Equiv.Perm (Fin n))
             rw [← heq, Equiv.Perm.support_one, Finset.card_empty]
           rw [hcard] at h0
           norm_num at h0
-        have e1 : σ i' = m := by rw [← heq]; exact swapProd_apply_fst _ _ _ hij' hi'm
-        have e2 : σ m = j' := by rw [← heq]; exact swapProd_apply_top _ _ _ hij' hj'm
+        have e1 : σ i' = m := by rw [← heq]; exact swap_prod_apply_fst _ _ _ hij' hi'm
+        have e2 : σ m = j' := by rw [← heq]; exact swap_prod_apply_top _ _ _ hij' hj'm
         have ei : i' = σ⁻¹ m := by rw [← e1, Equiv.Perm.inv_apply_self]
         exact Prod.ext ei e2.symm
     rw [hone, Nat.cast_one]
