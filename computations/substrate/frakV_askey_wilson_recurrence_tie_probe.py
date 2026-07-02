@@ -30,6 +30,11 @@ tower — the structural mechanism. It does NOT close the descent for the full
 nuclear tr_M assembly (kernels OPEN/GATED per the 2026-06-28 gap map), and the
 observable-level match stays degenerate (Im(q₀)=0). No fit anywhere: the
 multiplier is forced by the eigenvalues, never solved from data.
+
+Complementary scope (sibling, main ad28b5a9): the PHYSICAL c_k-ladder AW
+identification is GATED on c₃^even (under-determined, 4 AW params vs ≤2
+trusted rungs — docs/audits/2026-07-02-1jrh-aw-one-recurrence-formalize-first-prune.md).
+This probe is the mechanism half at a tower where no identification exists.
 """
 import json
 import os
