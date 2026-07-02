@@ -73,3 +73,19 @@ The **discriminating test** is the self-conjugate (3,1,1) = [4][3]/[2] — the s
 non-single-q-integer block, and the ≥3-row block where the compact SU(2) gate failed.
 Missing ingredient (⇒ owner-gated DG, not numerics): the partition-λ → q-Bessel-lattice
 map, which is the open construction (inventing it = fabrication). Handoff to #2503.
+
+## Lean obligation formalized (2026-07-02): KeystoneQBesselRadialTarget.lean
+
+`QOU/BraidKnot/KeystoneQBesselRadialTarget.lean` (lean-direct exit 0, sorry-free,
+generic `[Field R]` per §7c) makes the step-(a) target machine-checked:
+- **Shape identities proved**: `d_q(5)=[1]`, `d_q(4,1)=[4]`, `d_q(3,2)=[5]`,
+  `d_q(3,1,1)·[2]=[4][3]` (multiplicative, no nonzero hypotheses) + the division
+  corollary `dq_311_div`.
+- **Obligation class** `QBesselRadialPartRealization` (OPEN, no instance): lattice map
+  + radial weight CONSTRAINED to the corpus-formalized Jackson second-kind q-Bessel
+  contiguity + transpose-equivariance + `realizes : weight(pt λ) = S0 λ`.
+- **Content theorems**: `realization_on_orbit` — any realization puts the whole vacuum
+  row on ONE q-Bessel coefficient orbit (falsifiable, not an arbitrary table);
+  `realization_discriminating_block` — the self-conjugate kill-test
+  `w·D·[2] = [4][3]` derived, machine-checked.
+The open `latticePt` construction remains the owner-gated DG object (#2503).
