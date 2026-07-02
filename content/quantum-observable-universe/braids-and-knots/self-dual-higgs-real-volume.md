@@ -11,17 +11,21 @@ $$
 $\mathbb{V}(4_1) = \mathrm{Vol}(4_1) + i\,\mathrm{CS}(4_1)$ is **real**:*
 
 $$
-  \mathrm{CS}(4_1) = \operatorname{Im}\mathbb{V}(4_1) = 0,
+  \mathrm{CS}(4_1) = \mathrm{Im}\,\mathbb{V}(4_1) = 0,
   \qquad
   \mathrm{Re}\,\mathbb{V}(4_1) = \mathrm{Vol}(4_1) \approx 2.0299.
 $$
 
 *The bare Higgs knot therefore contributes **only the real (volume / mass)
-face** — the muon mass scale $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$. The
-imaginary (decay) face $\mathfrak{Q}_\beta$ is **not** a property of the
-lone Higgs knot; it is the imaginary part of the many-body **binding
-defect** $\mathfrak{V} = E_0\,\mathrm{tr}_M((\Pi_{\text{free}}-\mathbf{1})\circ\mathcal{M})$
-([`conj:binding-qbeta-complex-volume`](../mass-endomorphism/binding-qbeta-complex-volume.md)).*
+face** — the muon mass scale $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ — and
+its imaginary (decay) face vanishes: $\mathfrak{Q}_\beta$ is **not** a
+property of the lone Higgs knot.*
+
+Where the decay face does live is conjectural: per
+[`conj:binding-qbeta-complex-volume`](../mass-endomorphism/binding-qbeta-complex-volume.md),
+$\mathfrak{Q}_\beta$ is the imaginary part of the many-body **binding
+defect** $\mathfrak{V} = E_0\,\mathrm{tr}_M((\Pi_{\text{free}}-\mathbf{1})\circ\mathcal{M})$.
+That identification is not part of this proposition's claim.
 
 ## The Askey two-saddle structure
 

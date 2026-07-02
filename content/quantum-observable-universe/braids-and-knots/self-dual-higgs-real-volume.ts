@@ -4,9 +4,6 @@ export default proposition({
   label: "prop:self-dual-higgs-real-volume",
   title:
     "The self-dual Higgs ($4_1$) has a real complex volume ($\\mathrm{CS}=0$)",
-  uses: [
-    "conj:binding-qbeta-complex-volume",
-  ],
   cites: [
     "nguyen-tran-2021",
     "koelink-stokman-2003",
