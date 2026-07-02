@@ -1,0 +1,531 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-02T15:12:55.790140+00:00",
+  "commitSha": "45e333999adf746474ce8388c01052d6d46953bf",
+  "assertions": [
+    {
+      "name": "baseline_spread_reproduced",
+      "computed": 6.165558495071314,
+      "expected": 6.17,
+      "passed": true,
+      "tolerance": 0.5,
+      "unit": "max/min |net/target|",
+      "source": "2026-06-28-delta-lambda-borromean-ascaling-diagnostic.md (6.17x)"
+    },
+    {
+      "name": "wedderburn_lift_consistent_to_2em4",
+      "computed": 0.00019582292049379708,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.0005,
+      "source": "y-lambda witness × proved chi vs Lean BorromeanMarkovTrace"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "borromean-per-lambda-fr-probe",
+  "scriptFile": "borromean_per_lambda_fr_probe.py",
+  "scriptHash": "030783b1cdde",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "H_3-level probe of the FR-restricted knot-ideal projector weight (K*=4_1, Fricke chi_{4_1}((2,1)) = 2-[3]_q) as the missing per-λ weight on the Borromean single binding pipeline, via the Wedderburn re-lift τ = Σ_λ y_λ χ^λ(β_Bor) and a candidate reweight of the (2,1) channel (56.1% of τ). 4 structural candidates × 2 placements tested against the U-shaped net/target residual (baseline spread 6.17×). No fitted parameters (Δ_λ gate honored). Audit-only.",
+  "parameters": {
+    "tau_closed_form": "0.998562163197412556751240951251923033958099346313578128164690",
+    "channel_fraction_21": "0.561142447619034023480286665258449693199599208281248462911518"
+  },
+  "data": {
+    "wedderburn_lift_mismatch_rel": 0.00019582292049379708,
+    "wedderburn_lift_note": "y-lambda-at-q0 × proved chi closed forms reproduce the Lean closed-form tau to 1.96e-4 relative only — convention gap flagged; fractions normalized so baseline tau is exact.",
+    "results": {
+      "baseline": {
+        "rows": {
+          "2H": {
+            "A": 2,
+            "B_tower": 2.480295937516178,
+            "net_over_target": 1.1149537180915967
+          },
+          "3H": {
+            "A": 3,
+            "B_tower": 4.919025491475729,
+            "net_over_target": 0.5799492221629917
+          },
+          "3He": {
+            "A": 3,
+            "B_tower": 4.300242950437091,
+            "net_over_target": 0.5571664465902033
+          },
+          "4He": {
+            "A": 4,
+            "B_tower": 6.387362312165436,
+            "net_over_target": 0.22573636301795813
+          },
+          "6Li": {
+            "A": 6,
+            "B_tower": 10.51481132572877,
+            "net_over_target": 0.3286436822745505
+          },
+          "7Li": {
+            "A": 7,
+            "B_tower": 13.43374848138595,
+            "net_over_target": 0.3423087868413659
+          },
+          "12C": {
+            "A": 12,
+            "B_tower": 32.64154831230646,
+            "net_over_target": 0.35417682611491896
+          },
+          "16O": {
+            "A": 16,
+            "B_tower": 56.092227337216826,
+            "net_over_target": 0.4395288110486434
+          },
+          "56Fe": {
+            "A": 56,
+            "B_tower": 685.1145641713874,
+            "net_over_target": 1.3917907506518736
+          }
+        },
+        "spread": 6.165558495071314
+      },
+      "w_chirality_1_minus_h2::both": {
+        "tau_weighted": "0.974072012465274519486230877519727910657568546601087372220751",
+        "rows": {
+          "2H": {
+            "A": 2,
+            "B_tower": 2.3643269986030826,
+            "net_over_target": 1.0628228422277366
+          },
+          "3H": {
+            "A": 3,
+            "B_tower": 4.611391891421787,
+            "net_over_target": 0.5436794635753086
+          },
+          "3He": {
+            "A": 3,
+            "B_tower": 4.031481075644225,
+            "net_over_target": 0.5223439724920731
+          },
+          "4He": {
+            "A": 4,
+            "B_tower": 5.926369848028297,
+            "net_over_target": 0.20944438564964674
+          },
+          "6Li": {
+            "A": 6,
+            "B_tower": 9.702695710938201,
+            "net_over_target": 0.3032607573879801
+          },
+          "7Li": {
+            "A": 7,
+            "B_tower": 12.419651756792824,
+            "net_over_target": 0.3164683283858372
+          },
+          "12C": {
+            "A": 12,
+            "B_tower": 30.495380031736737,
+            "net_over_target": 0.33088984650696585
+          },
+          "16O": {
+            "A": 16,
+            "B_tower": 52.77087232165807,
+            "net_over_target": 0.4135032583052529
+          },
+          "56Fe": {
+            "A": 56,
+            "B_tower": 656.2241573810969,
+            "net_over_target": 1.333100710976644
+          }
+        },
+        "spread": 6.364938868338162,
+        "verdict": "FAIL (monotone rescale)"
+      },
+      "w_chirality_1_minus_h2::atom_only": {
+        "tau_weighted": "0.974072012465274519486230877519727910657568546601087372220751",
+        "rows": {
+          "2H": {
+            "A": 2,
+            "B_tower": 2.601806741678122,
+            "net_over_target": 1.1695757979972434
+          },
+          "3H": {
+            "A": 3,
+            "B_tower": 5.016358167080505,
+            "net_over_target": 0.5914246677783586
+          },
+          "3He": {
+            "A": 3,
+            "B_tower": 4.4364473513029425,
+            "net_over_target": 0.5748139430026236
+          },
+          "4He": {
+            "A": 4,
+            "B_tower": 6.5314158061601795,
+            "net_over_target": 0.23082737089024813
+          },
+          "6Li": {
+            "A": 6,
+            "B_tower": 10.805955553669833,
+            "net_over_target": 0.3377434852267352
+          },
+          "7Li": {
+            "A": 7,
+            "B_tower": 13.82117889582956,
+            "net_over_target": 0.3521810004932295
+          },
+          "12C": {
+            "A": 12,
+            "B_tower": 33.88235733407254,
+            "net_over_target": 0.36764021323550417
+          },
+          "16O": {
+            "A": 16,
+            "B_tower": 58.34262778647598,
+            "net_over_target": 0.45716255249199556
+          },
+          "56Fe": {
+            "A": 56,
+            "B_tower": 713.4167086727525,
+            "net_over_target": 1.44928575221888
+          }
+        },
+        "spread": 6.27865641162622,
+        "verdict": "FAIL (monotone rescale)"
+      },
+      "w_chi_over_d::both": {
+        "tau_weighted": "0.145813663296813468503949943459979373422314586218811445972184",
+        "rows": {
+          "2H": {
+            "A": 2,
+            "B_tower": 0.05558370650432753,
+            "net_over_target": 0.024986236236944136
+          },
+          "3H": {
+            "A": 3,
+            "B_tower": 0.048784915468845884,
+            "net_over_target": 0.005751703020948672
+          },
+          "3He": {
+            "A": 3,
+            "B_tower": 0.04281047765309689,
+            "net_over_target": 0.005546793980182176
+          },
+          "4He": {
+            "A": 4,
+            "B_tower": 0.07251213575997872,
+            "net_over_target": 0.0025626581053569118
+          },
+          "6Li": {
+            "A": 6,
+            "B_tower": 0.1792416232099617,
+            "net_over_target": 0.005602252407939101
+          },
+          "7Li": {
+            "A": 7,
+            "B_tower": 0.2592039153769901,
+            "net_over_target": 0.006604841376937524
+          },
+          "12C": {
+            "A": 12,
+            "B_tower": 0.7968035024851068,
+            "net_over_target": 0.008645709230680948
+          },
+          "16O": {
+            "A": 16,
+            "B_tower": 1.4520934503294585,
+            "net_over_target": 0.011378348445995178
+          },
+          "56Fe": {
+            "A": 56,
+            "B_tower": 18.984759526951034,
+            "net_over_target": 0.03856699900244799
+          }
+        },
+        "spread": 15.049607640530967,
+        "verdict": "FAIL (monotone rescale)"
+      },
+      "w_chi_over_d::atom_only": {
+        "tau_weighted": "0.145813663296813468503949943459979373422314586218811445972184",
+        "rows": {
+          "2H": {
+            "A": 2,
+            "B_tower": 4.975358593198738,
+            "net_over_target": 2.236545437348533
+          },
+          "3H": {
+            "A": 3,
+            "B_tower": 6.708228910462856,
+            "net_over_target": 0.7908948927904581
+          },
+          "3He": {
+            "A": 3,
+            "B_tower": 6.702254472647107,
+            "net_over_target": 0.8683861241580598
+          },
+          "4He": {
+            "A": 4,
+            "B_tower": 9.241519538716531,
+            "net_over_target": 0.32660539788951237
+          },
+          "6Li": {
+            "A": 6,
+            "B_tower": 16.85155431219974,
+            "net_over_target": 0.5267005455114108
+          },
+          "7Li": {
+            "A": 7,
+            "B_tower": 21.93452598244313,
+            "net_over_target": 0.5589192762834796
+          },
+          "12C": {
+            "A": 12,
+            "B_tower": 60.00949001689567,
+            "net_over_target": 0.651132431207189
+          },
+          "16O": {
+            "A": 16,
+            "B_tower": 105.72164632257373,
+            "net_over_target": 0.8284161944739712
+          },
+          "56Fe": {
+            "A": 56,
+            "B_tower": 1308.4751332437033,
+            "net_over_target": 2.6581300167062194
+          }
+        },
+        "spread": 8.13865917061616,
+        "verdict": "FAIL (monotone rescale)"
+      },
+      "w_abs_over_d::both": {
+        "tau_weighted": "0.730639430385304885512150664476071895979858292756983071396481",
+        "rows": {
+          "2H": {
+            "A": 2,
+            "B_tower": 1.3538800403171745,
+            "net_over_target": 0.6086022082966819
+          },
+          "3H": {
+            "A": 3,
+            "B_tower": 2.206990316623337,
+            "net_over_target": 0.2602024160405339
+          },
+          "3He": {
+            "A": 3,
+            "B_tower": 1.9307899359994467,
+            "net_over_target": 0.2501652534872693
+          },
+          "4He": {
+            "A": 4,
+            "B_tower": 2.622663714706441,
+            "net_over_target": 0.09268780123047225
+          },
+          "6Li": {
+            "A": 6,
+            "B_tower": 4.473215022024145,
+            "net_over_target": 0.13981171995418173
+          },
+          "7Li": {
+            "A": 7,
+            "B_tower": 6.03455274155532,
+            "net_over_target": 0.15376798448729967
+          },
+          "12C": {
+            "A": 12,
+            "B_tower": 17.196787771259014,
+            "net_over_target": 0.18659359090206093
+          },
+          "16O": {
+            "A": 16,
+            "B_tower": 31.195276283382064,
+            "net_over_target": 0.24444068895213145
+          },
+          "56Fe": {
+            "A": 56,
+            "B_tower": 407.9880211812702,
+            "net_over_target": 0.8288160607760835
+          }
+        },
+        "spread": 8.94201879614337,
+        "verdict": "FAIL (monotone rescale)"
+      },
+      "w_abs_over_d::atom_only": {
+        "tau_weighted": "0.730639430385304885512150664476071895979858292756983071396481",
+        "rows": {
+          "2H": {
+            "A": 2,
+            "B_tower": 3.653416708197807,
+            "net_over_target": 1.6423002114103729
+          },
+          "3H": {
+            "A": 3,
+            "B_tower": 5.822850703321737,
+            "net_over_target": 0.6865095011226642
+          },
+          "3He": {
+            "A": 3,
+            "B_tower": 5.546650322697847,
+            "net_over_target": 0.7186588028617881
+          },
+          "4He": {
+            "A": 4,
+            "B_tower": 7.752926917206845,
+            "net_over_target": 0.27399690819182304
+          },
+          "6Li": {
+            "A": 6,
+            "B_tower": 13.389446494672866,
+            "net_over_target": 0.41849129416712366
+          },
+          "7Li": {
+            "A": 7,
+            "B_tower": 17.27757203556236,
+            "net_over_target": 0.44025423963032917
+          },
+          "12C": {
+            "A": 12,
+            "B_tower": 44.98766251197082,
+            "net_over_target": 0.48813822709542537
+          },
+          "16O": {
+            "A": 16,
+            "B_tower": 78.48279913935939,
+            "net_over_target": 0.614977386904453
+          },
+          "56Fe": {
+            "A": 56,
+            "B_tower": 966.5633220364703,
+            "net_over_target": 1.963545897110984
+          }
+        },
+        "spread": 7.166306766265849,
+        "verdict": "FAIL (monotone rescale)"
+      },
+      "w_chi_raw::both": {
+        "tau_weighted": "-0.146599220247432240000150417048066887856457267050274366739965",
+        "rows": {
+          "2H": {
+            "A": 2,
+            "B_tower": 0.05618328246431071,
+            "net_over_target": 0.025255760302903392
+          },
+          "3H": {
+            "A": 3,
+            "B_tower": 0.02681543158294941,
+            "net_over_target": 0.003161518214419924
+          },
+          "3He": {
+            "A": 3,
+            "B_tower": 0.023522702782352252,
+            "net_over_target": 0.0030477489003519083
+          },
+          "4He": {
+            "A": 4,
+            "B_tower": 0.07330885925457335,
+            "net_over_target": 0.002590815184165203
+          },
+          "6Li": {
+            "A": 6,
+            "B_tower": 0.18116425196615163,
+            "net_over_target": 0.005662344764759152
+          },
+          "7Li": {
+            "A": 7,
+            "B_tower": 0.26197131120119715,
+            "net_over_target": 0.006675358098953481
+          },
+          "12C": {
+            "A": 12,
+            "B_tower": 0.8053467931876235,
+            "net_over_target": 0.008738408129539665
+          },
+          "16O": {
+            "A": 16,
+            "B_tower": 1.4676628528669708,
+            "net_over_target": 0.011500347541251465
+          },
+          "56Fe": {
+            "A": 56,
+            "B_tower": 19.1883276288332,
+            "net_over_target": 0.03898054181140874
+          }
+        },
+        "spread": 15.045666726694293,
+        "verdict": "FAIL (monotone rescale)"
+      },
+      "w_chi_raw::atom_only": {
+        "tau_weighted": "-0.146599220247432240000150417048066887856457267050274366739965",
+        "rows": {
+          "2H": {
+            "A": 2,
+            "B_tower": 4.974759399034356,
+            "net_over_target": 2.236276084909039
+          },
+          "3H": {
+            "A": 3,
+            "B_tower": 6.711713692056266,
+            "net_over_target": 0.7913057457892906
+          },
+          "3He": {
+            "A": 3,
+            "B_tower": 6.708420963255669,
+            "net_over_target": 0.8691850933558246
+          },
+          "4He": {
+            "A": 4,
+            "B_tower": 9.240851826316302,
+            "net_over_target": 0.3265818002037379
+          },
+          "6Li": {
+            "A": 6,
+            "B_tower": 16.849917305708917,
+            "net_over_target": 0.5266493803668935
+          },
+          "7Li": {
+            "A": 7,
+            "B_tower": 21.93232369235131,
+            "net_over_target": 0.5588631591654132
+          },
+          "12C": {
+            "A": 12,
+            "B_tower": 60.00237671240316,
+            "net_over_target": 0.651055248360829
+          },
+          "16O": {
+            "A": 16,
+            "B_tower": 105.70874918843984,
+            "net_over_target": 0.8283151348031237
+          },
+          "56Fe": {
+            "A": 56,
+            "B_tower": 1308.313380791636,
+            "net_over_target": 2.6578014212005105
+          }
+        },
+        "spread": 8.138241076332001,
+        "verdict": "FAIL (monotone rescale)"
+      }
+    },
+    "verdicts": {
+      "w_chirality_1_minus_h2::both": "FAIL (monotone rescale)",
+      "w_chirality_1_minus_h2::atom_only": "FAIL (monotone rescale)",
+      "w_chi_over_d::both": "FAIL (monotone rescale)",
+      "w_chi_over_d::atom_only": "FAIL (monotone rescale)",
+      "w_abs_over_d::both": "FAIL (monotone rescale)",
+      "w_abs_over_d::atom_only": "FAIL (monotone rescale)",
+      "w_chi_raw::both": "FAIL (monotone rescale)",
+      "w_chi_raw::atom_only": "FAIL (monotone rescale)"
+    },
+    "overall": "SCOPE-LIMITED NEGATIVE — no H_3-per-nucleon proxy of the FR-projector weight (4 structural candidates × 2 placements) flattens the U-shaped residual. Constrains the per-NUCLEON scalar proxy only; the per-partition weight at H_{3A} (where the depth strata are non-trivial) remains the open test — this probe sharpens its spec, it does not exclude the FR-projector ingredient."
+  }
+}
