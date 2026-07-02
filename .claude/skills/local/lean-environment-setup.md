@@ -606,9 +606,17 @@ main working tree is never disturbed — do NOT `git switch --orphan` in the
 main tree (it leaves every file untracked and traps you with "untracked
 working tree files would be overwritten" on switch-back; Copilot #1857).
 
-> **Seeded 2026-06-04:** `lake-cache/qou-v4-24-0` holds a real build
-> (1838-job from-source build of `QOU.Mass.MassVolDensity`'s dep cone).
-> RESTORE from it before rebuilding.
+> **Reseeded 2026-07-02:** `lake-cache/qou-v4-24-0` now holds a near-complete
+> library build @ main `c3a94315` — **859 QOU oleans (96% of the library;
+> the ~38 misses are the known pre-existing red files + their dependents),
+> 19 UGB, 1 Fred2005, and 2962 mathlib oleans (the RepThy/Wedderburn addon
+> is folded in — the separate addon branch above is now redundant, per
+> bean `bnyo`)**. 10 chunks (~930 MB), restore-checked in a clean temp dir.
+> Built lean-direct (topological orchestrator, no lake — this sandbox's git
+> proxy 403s package grafts, so lake would have deleted the restored
+> mathlib package on the URL mismatch). RESTORE from it before rebuilding.
+> (Prior seed 2026-06-04 held only the 1838-job `QOU.Mass.MassVolDensity`
+> dep cone / ~202 QOU oleans.)
 
 **RESTORE first (before any from-source build):**
 ```bash
