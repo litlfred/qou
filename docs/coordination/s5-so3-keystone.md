@@ -341,3 +341,27 @@ exact pair→class normalization (the `D` realizing `bwS0=d_q/D`) is the remaini
 step, now on an explicit colored family. Audit:
 [`docs/audits/2026-06-30-keystone-colored-sigma235-e8-family.md`](../audits/2026-06-30-keystone-colored-sigma235-e8-family.md);
 probe `computations/probes/keystone_colored_sigma235_wrt.py`.
+
+## Value step SETTLED at the false-theta level — D=2, golden row; bwS0 identification refuted (2026-07-02)
+
+The owner uploaded the primary sources (commit `ece271823`: Hikami math-ph/0405028,
+Andersen–Mistegård 1811.05376, Murakami 2205.01282, Lawrence–Zagier 1999). The genuine
+per-block amplitude of Σ(2,3,5) is now transcribed and **machine-validated end-to-end**
+(Theorem 10 exact to 1e−38 at N=3..11; S²=1; Cor 12 weights reproduced): the
+vector-valued modular family has **D(2,3,5)=2** components — every colouring of the
+order-5 fibre lands in span{(1,1,1),(1,1,2)} (α=4≡α=1, α=3≡α=2) — and the vacuum row is
+`(2/√5)(sin π/5, sin 2π/5)`, **ratio = φ** (golden; √Reidemeister-torsion magnitudes,
+CS = −1/120, −49/120). The n=5 target `bwS0 = d_q/D` has 4 classes, ratios
+(1, 4.11, 5.22, 6.22): **type (2≠4) + value (φ∉targets) mismatch ⇒ the identification
+"bwS0 = vacuum row of the Σ(2,3,5) false-theta S-matrix" is REFUTED** (scope (a): this
+geometric object). The 2026-06-30 "4↔4" correspondence survives at SUPPORT level only.
+Hikami's χ^{(111)}/χ^{(112)} equal the 2026-07-02 sympy-derived colored characters
+exactly (eq. 5.6 = the derived identity) — the two independent validations agree.
+Consequence: the geometric route cannot close on S³/2I itself; redirects = larger-D
+Seifert data / colored Ẑ-blocks (Murakami now in uploads/) / non-geometric
+`BWVacuumRowIsHecke`. Audit:
+[`docs/audits/2026-07-02-keystone-valuemap-genuine-smatrix.md`](../audits/2026-07-02-keystone-valuemap-genuine-smatrix.md);
+probe `computations/probes/keystone_valuemap_genuine_smatrix_s013.py`; also the round-2
+prune set [`2026-07-02-keystone-valuemap-qbessel-gate.md`](../audits/2026-07-02-keystone-valuemap-qbessel-gate.md)
+(residue weights are pure signs; channel amplitudes are the L-value family; single-argument
+q-Bessel rows fail the 1-dof gate).
