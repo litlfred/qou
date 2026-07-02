@@ -1,5 +1,6 @@
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
+import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.Group.Basic
 import Mathlib.Algebra.Order.Ring.Defs
 import Mathlib.Tactic.Linarith
@@ -41,7 +42,7 @@ numerical evaluation.
 
 namespace QOU.SkeinResolutionObstruction
 
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+/- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
@@ -103,11 +104,12 @@ theorem perpetual_obstruction_top {α : Type*} [AddCommGroup α]
     (h_top_nonzero : (D.decompose v).1 ≠ 0) :
     v ≠ 0 := by
   intro h_v_zero
-  have h_sum := D.sum_eq v
-  rw [h_v_zero] at h_sum
   -- (decompose v).1 + (decompose v).2 = 0
+  have h_sum : (D.decompose v).1 + (D.decompose v).2 = 0 := by
+    rw [D.sum_eq v]; exact h_v_zero
   -- So (decompose v).1 = -(decompose v).2
-  have h_eq : (D.decompose v).1 = -(D.decompose v).2 := by linarith
+  have h_eq : (D.decompose v).1 = -(D.decompose v).2 := by
+    rw [eq_neg_iff_add_eq_zero]; exact h_sum
   -- (decompose v).1 is topological
   have h_t := D.fst_top v
   -- -(decompose v).2 is analytic (closure under negation)
@@ -116,9 +118,8 @@ theorem perpetual_obstruction_top {α : Type*} [AddCommGroup α]
   rw [h_eq] at h_t
   -- By complementarity, -(decompose v).2 = 0
   have h_neg_zero := D.complementary _ h_t h_a_neg
-  -- Therefore (decompose v).1 = 0
-  rw [h_eq, h_neg_zero]
-  exact absurd rfl h_top_nonzero
+  -- Therefore (decompose v).1 = 0, contradicting h_top_nonzero
+  exact h_top_nonzero (h_eq.trans h_neg_zero)
 
 /-- **Perpetual obstruction (analytic nonzero).**
 
@@ -130,15 +131,15 @@ theorem perpetual_obstruction_an {α : Type*} [AddCommGroup α]
     (h_an_nonzero : (D.decompose v).2 ≠ 0) :
     v ≠ 0 := by
   intro h_v_zero
-  have h_sum := D.sum_eq v
-  rw [h_v_zero] at h_sum
-  have h_eq : (D.decompose v).2 = -(D.decompose v).1 := by linarith
+  have h_sum : (D.decompose v).1 + (D.decompose v).2 = 0 := by
+    rw [D.sum_eq v]; exact h_v_zero
+  have h_eq : (D.decompose v).2 = -(D.decompose v).1 := by
+    rw [eq_neg_iff_add_eq_zero, add_comm]; exact h_sum
   have h_a := D.snd_an v
   have h_t_neg := D.top_neg (D.fst_top v)
   rw [h_eq] at h_a
   have h_neg_zero := D.complementary _ h_t_neg h_a
-  rw [h_eq, h_neg_zero]
-  exact absurd rfl h_an_nonzero
+  exact h_an_nonzero (h_eq.trans h_neg_zero)
 
 /-- **Perpetual obstruction (both nonzero).**
 
@@ -191,10 +192,7 @@ def realProductDecomposition : ComplementaryDecomposition (R_q × R_q) where
   fst_top := fun _ => rfl
   snd_an := fun _ => rfl
   sum_eq := fun p => by simp
-  complementary := fun v h1 h2 => by
-    ext
-    · exact h2
-    · exact h1
+  complementary := fun v h1 h2 => Prod.ext h2 h1
 
 /-- **Perpetual obstruction for the Skein resolution (concrete).**
 
@@ -237,13 +235,13 @@ theorem finite_decidable {α : Type*} [Fintype α] [DecidableEq α]
   use (a, f a)
   constructor
   · simp [List.mem_map]
-    exact ⟨a, h_mem, rfl⟩
+    exact h_mem
   · rfl
 
 /-- The resolution tree over a finite field has finitely many
     distinct weights, bounded by the field size. -/
 theorem finite_field_bounded_weights
-    -- (p : ℕ) (hp : p > 0) (num_paths : ℕ) :  -- (archimedean; not meaningful over R_q)
+    (p : ℕ) (hp : p > 0) (num_paths : ℕ) :
     num_paths % p < p := by
   exact Nat.mod_lt num_paths hp
 
@@ -256,41 +254,48 @@ theorem finite_field_bounded_weights
     At torsion q (root of unity), the radical is non-trivial and
     prunes the tree: this is the BQP mechanism. -/
 
-/-- The q-integer [k]_q = (q^k - q^(-k)) / (q - q^(-1)). -/
--- noncomputable def qInteger (q : R_q) (hq : q > 0) (hq1 : q ≠ 1) (k : ℕ) : R_q :=  -- (archimedean; not meaningful over R_q)
+/-- The q-integer [k]_q = (q^k - q^(-k)) / (q - q^(-1)).
+
+    Archimedean form over `ℝ` (division and the ordering hypotheses below
+    are not meaningful over `R_q`); specialise via `ι : R_q → ℝ, q ↦ q₀`. -/
+noncomputable def qInteger (q : ℝ) (k : ℕ) : ℝ :=
   (q ^ k - q⁻¹ ^ k) / (q - q⁻¹)
 
-/-- The q-integer [1]_q = 1 for all q ≠ 0. -/
--- theorem qInteger_one (q : R_q) (hq : q > 0) (hq1 : q ≠ 1) :  -- (archimedean; not meaningful over R_q)
-    qInteger q hq hq1 1 = 1 := by
+/-- The q-integer [1]_q = 1 for all q > 0 with q ≠ 1. -/
+theorem qInteger_one (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
+    qInteger q 1 = 1 := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  -- q - q⁻¹ ≠ 0: otherwise q² = 1, so q = 1 (as q > 0), contradiction
+  have hne : q - q⁻¹ ≠ 0 := by
+    intro h
+    have h' : q = q⁻¹ := by linarith
+    have h1 : q * q = 1 := by rw [← mul_inv_cancel₀ hq0, ← h']
+    have h2 : (q - 1) * (q + 1) = 0 := by nlinarith
+    rcases mul_eq_zero.mp h2 with h3 | h3
+    · exact hq1 (by linarith)
+    · linarith
   unfold qInteger
-  simp [pow_one]
-  field_simp
+  simp only [pow_one]
+  exact div_self hne
 
 /-- At non-torsion q, the q-integer [k]_q is nonzero for all k ≥ 1.
-    This is the key condition for semisimplicity of the Hecke algebra. -/
--- theorem qInteger_nonzero_of_not_root_of_unity  -- (archimedean; not meaningful over R_q)
-    -- (q : R_q) (hq : q > 1) (h_not_rou : ∀ k : ℕ, k ≥ 1 → q ^ k ≠ 1)  -- (archimedean; not meaningful over R_q)
-    -- (k : ℕ) (hk : k ≥ 1) :  -- (archimedean; not meaningful over R_q)
+    This is the key condition for semisimplicity of the Hecke algebra.
+
+    Archimedean form over `ℝ`; for real q > 1 the numerator
+    q^k - q⁻¹^k is strictly positive. -/
+theorem qInteger_nonzero_of_not_root_of_unity
+    (q : ℝ) (hq : q > 1) (h_not_rou : ∀ k : ℕ, k ≥ 1 → q ^ k ≠ 1)
+    (k : ℕ) (hk : k ≥ 1) :
     q ^ k - q⁻¹ ^ k ≠ 0 := by
   intro h_eq
   have hq_pos : q > 0 := by linarith
-  have hq_inv_pos : q⁻¹ > 0 := inv_pos_of_pos hq_pos
-  have hq_inv_lt_one : q⁻¹ < 1 := by
-    rw [inv_lt_one_iff_of_pos hq_pos]
-    exact hq
-  -- q^k = (q⁻¹)^k means q^k = 1/q^k, so (q^k)² = 1, so q^k = ±1
-  -- Since q > 1 and k ≥ 1, q^k > 1, so q^k ≠ 1 and q^k > 0
-  have hqk_gt_one : q ^ k > 1 := by
-    calc q ^ k ≥ q ^ 1 := by
-          exact pow_le_pow_right_of_le_one_or_one_le (Or.inr (le_of_lt hq)) hk
-        _ = q := by ring
-        _ > 1 := hq
-  have hqk_inv_lt_one : q⁻¹ ^ k < 1 := by
-    calc q⁻¹ ^ k ≤ q⁻¹ ^ 1 := by
-          exact pow_le_pow_of_le_one (le_of_lt hq_inv_pos) (le_of_lt hq_inv_lt_one) hk
-        _ = q⁻¹ := by ring
-        _ < 1 := hq_inv_lt_one
+  have hq_inv_pos : q⁻¹ > 0 := inv_pos.mpr hq_pos
+  have hmul : q * q⁻¹ = 1 := mul_inv_cancel₀ (ne_of_gt hq_pos)
+  have hq_inv_lt_one : q⁻¹ < 1 := by nlinarith
+  -- Since q > 1 and k ≥ 1, q^k > 1; since 0 < q⁻¹ < 1, q⁻¹^k < 1
+  have hqk_gt_one : q ^ k > 1 := one_lt_pow₀ hq (by omega)
+  have hqk_inv_lt_one : q⁻¹ ^ k < 1 :=
+    pow_lt_one₀ (le_of_lt hq_inv_pos) hq_inv_lt_one (by omega)
   -- q^k > 1 > q⁻¹^k, so q^k - q⁻¹^k > 0, contradicting = 0
   linarith
 
@@ -309,7 +314,7 @@ def kummerVanishes (skeinDegree : ℕ) (n : ℕ) : Prop :=
 
 /-- There are infinitely many levels where the obstruction persists:
     for any degree d > 0, the set {n : ¬ n | d} is infinite. -/
--- theorem infinitely_many_non_divisors (d : ℕ) (hd : d > 0) :  -- (archimedean; not meaningful over R_q)
+theorem infinitely_many_non_divisors (d : ℕ) (hd : d > 0) :
     ∀ N : ℕ, ∃ n > N, ¬ kummerVanishes d n := by
   intro N
   -- d + N + 1 does not divide d (since d + N + 1 > d > 0)
@@ -317,8 +322,9 @@ def kummerVanishes (skeinDegree : ℕ) (n : ℕ) : Prop :=
   constructor
   · omega
   · unfold kummerVanishes
-    intro ⟨k, hk⟩
-    -- d = (d + N + 1) * k, but d + N + 1 > d, so k = 0, giving d = 0
+    intro hdvd
+    -- a divisor of d > 0 is at most d, but d + N + 1 > d
+    have := Nat.le_of_dvd hd hdvd
     omega
 
 /-- For the Descartes universe (χ = -6), the obstruction persists
@@ -327,5 +333,7 @@ theorem descartes_kummer_persistence (n : ℕ) (hn : ¬ n ∣ 6) :
     ¬ kummerVanishes 6 n := by
   unfold kummerVanishes
   exact hn
+
+end
 
 end QOU.SkeinResolutionObstruction
