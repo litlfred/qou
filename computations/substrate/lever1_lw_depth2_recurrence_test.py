@@ -93,8 +93,14 @@ witness = {
         "existence -- it refutes that the lw values ARE that M's prolonged periods. No fit."
     ),
 }
-out = os.path.join("computations", "substrate", "lever1-lw-depth2-recurrence-test.witness.json")
-with open(out, "w") as f: json.dump(witness, f, indent=2)
+from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+# Payload carries a top-level `assertions` mapping → stamp (not wrap_legacy) preserves it.
+WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="sympy")
+witness["scriptFile"] = os.path.basename(__file__)
+out = os.path.join(os.path.dirname(__file__), "lever1-lw-depth2-recurrence-test.witness.json")
+with open(out, "w", encoding="utf-8") as f:
+    json.dump(witness, f, indent=2)
+    f.write("\n")
 
 for c in range(1, 7): print(f"  lw({c}) = {results['lw'][c]}")
 print(f"\n  tau_seed = {results['tau_seed_n234']}  (closed form {results['tau_closed_form']})")

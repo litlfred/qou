@@ -75,3 +75,11 @@ output path → os.path.dirname(__file__).)
 lever1_color_eq_intrinsic_tau_rapidity, zeta4_complex_volume_moderator_probe,
 lever1_color_eq_lambda_sw_rapidity. Each: exit 0, PROV_OK, assertions preserved,
 keys kept. (zeta4 also: fixed cwd-relative output path → dirname(__file__).)
+
+## 2026-07-02 — batch 7 (3 scripts, stamp)
+3 more assertion-bearing substrate/ probes migrated via stamp_staleness_metadata
+(preserves flat assertions per gotcha #1): lever1_lw_depth2_recurrence_test,
+lever1_qinvolution_kernel_test, lever1_binding_habiro_qexponential. Each:
+exit 0, PROV_OK, assertions preserved, original keys kept; all three also fix
+the fragile cwd-relative output path → dirname(__file__). PROV_MISSING 276→273
+pre-rebase (batch 6 #3198 merged first; post-rebase audit refresh → 270).
