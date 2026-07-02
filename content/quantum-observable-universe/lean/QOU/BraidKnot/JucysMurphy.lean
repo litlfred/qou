@@ -484,14 +484,128 @@ theorem seminormalSpan_le {k : Type} [Field k] (μ : YoungDiagram) :
   rintro _ ⟨sv, rfl⟩
   exact sv.mem
 
-/-- **The atomic OV completeness core (Young's seminormal form, independence half).** The seminormal
-(Gelfand–Zetlin) vectors form a **linearly independent** family indexed by **all** standard Young
-tableaux of shape `μ` — i.e. `#SYT(μ) = dim S^λ`-many independent simultaneous JM-eigenvectors
-(distinct tableaux carry distinct content-tuples, hence distinct joint spectra).
+/-- **(L1) Joint eigenvectors with pairwise-distinct eigenvalue tuples are linearly independent.**
+Generic linear algebra (no tableau/Specht content, sorry-free): a family `v : ι → V` of nonzero
+vectors, each a simultaneous eigenvector of every operator `A s` with eigenvalue tuple
+`c i : S → k`; if the tuple map `c` is injective, the family is independent.
 
-This is strictly more atomic than the old `seminormalVectors_span` cited `sorry`: that cited the whole
-inclusion `S^λ ⊆ span`; here the *spanning* becomes a sorry-free dimension corollary
-(`seminormalVectors_span` below) and only this **independence** is cited.
+Proof: `linearIndependent_iff'` + strong induction on the support `t` of a finite dependency.  For
+`j ∈ t`: if `t = {j}`, then `g j • v j = 0` forces `g j = 0` (`v j ≠ 0`); otherwise pick `i₀ ∈ t`
+with `i₀ ≠ j` and a separator `s₀` with `c i₀ s₀ ≠ c j s₀` (tuple injectivity), apply `A s₀` and
+subtract `c i₀ s₀ ·` the original relation — the `i₀` term dies, and the inductive hypothesis on
+`t.erase i₀` gives `g j · (c j s₀ − c i₀ s₀) = 0`, whence `g j = 0`.
+
+Note the operators need **not** commute and no diagonalisability is assumed — only the given
+family's eigen-structure is used.  This is the entire linear-algebra content of the OV
+"distinct content-tuples ⇒ independent" step, factored out of the citation. -/
+theorem linearIndependent_of_joint_eigenvectors {k : Type} [Field k]
+    {V : Type*} [AddCommGroup V] [Module k V] {ι S : Type*}
+    (A : S → V →ₗ[k] V) (v : ι → V) (c : ι → S → k)
+    (hnz : ∀ i, v i ≠ 0)
+    (heig : ∀ i s, A s (v i) = c i s • v i)
+    (hinj : Function.Injective c) :
+    LinearIndependent k v := by
+  classical
+  rw [linearIndependent_iff']
+  intro t
+  induction t using Finset.strongInduction with
+  | _ t IH =>
+    intro g hrel j hj
+    by_cases hcard : t.card ≤ 1
+    · -- singleton support: g j • v j = 0 with v j ≠ 0
+      have ht : t = {j} := Finset.eq_singleton_iff_unique_mem.mpr
+        ⟨hj, fun x hx => Finset.card_le_one.mp hcard x hx j hj⟩
+      rw [ht, Finset.sum_singleton] at hrel
+      exact (smul_eq_zero.mp hrel).resolve_right (hnz j)
+    · push_neg at hcard
+      -- a second support element i₀ ≠ j
+      obtain ⟨i₀, hi₀t, hi₀j⟩ : ∃ i₀ ∈ t, i₀ ≠ j := by
+        obtain ⟨a, ha, b, hb, hab⟩ := Finset.one_lt_card.mp hcard
+        rcases eq_or_ne a j with rfl | haj
+        · exact ⟨b, hb, fun h => hab h.symm⟩
+        · exact ⟨a, ha, haj⟩
+      -- a separating operator index
+      obtain ⟨s₀, hs₀⟩ := Function.ne_iff.mp (fun h : c i₀ = c j => hi₀j (hinj h))
+      -- apply A s₀ to the relation
+      have h1 : ∑ i ∈ t, (g i * c i s₀) • v i = 0 := by
+        have h := congrArg (A s₀) hrel
+        rw [map_sum, map_zero] at h
+        calc ∑ i ∈ t, (g i * c i s₀) • v i
+            = ∑ i ∈ t, A s₀ (g i • v i) := by
+              refine Finset.sum_congr rfl fun i _ => ?_
+              rw [map_smul, heig, smul_smul]
+          _ = 0 := h
+      -- scale the relation by c i₀ s₀
+      have h2 : ∑ i ∈ t, (g i * c i₀ s₀) • v i = 0 := by
+        calc ∑ i ∈ t, (g i * c i₀ s₀) • v i
+            = c i₀ s₀ • ∑ i ∈ t, g i • v i := by
+              rw [Finset.smul_sum]
+              refine Finset.sum_congr rfl fun i _ => ?_
+              rw [smul_smul, mul_comm]
+          _ = 0 := by rw [hrel, smul_zero]
+      -- subtract: the i₀ coefficient is killed
+      have hrel2 : ∑ i ∈ t, (g i * (c i s₀ - c i₀ s₀)) • v i = 0 := by
+        calc ∑ i ∈ t, (g i * (c i s₀ - c i₀ s₀)) • v i
+            = ∑ i ∈ t, ((g i * c i s₀) • v i - (g i * c i₀ s₀) • v i) := by
+              refine Finset.sum_congr rfl fun i _ => ?_
+              rw [mul_sub, sub_smul]
+          _ = (∑ i ∈ t, (g i * c i s₀) • v i) - ∑ i ∈ t, (g i * c i₀ s₀) • v i :=
+              Finset.sum_sub_distrib _ _
+          _ = 0 := by rw [h1, h2, sub_zero]
+      have hrel3 : ∑ i ∈ t.erase i₀, (g i * (c i s₀ - c i₀ s₀)) • v i = 0 := by
+        have h := Finset.add_sum_erase t (fun i => (g i * (c i s₀ - c i₀ s₀)) • v i) hi₀t
+        rw [hrel2] at h
+        simpa [sub_self] using h
+      -- inductive hypothesis on the smaller support, read off at j
+      have hIH := IH (t.erase i₀) (Finset.erase_ssubset hi₀t)
+        (fun i => g i * (c i s₀ - c i₀ s₀)) hrel3 j
+        (Finset.mem_erase.mpr ⟨Ne.symm hi₀j, hj⟩)
+      rcases mul_eq_zero.mp hIH with h | h
+      · exact h
+      · exact absurd (sub_eq_zero.mp h).symm hs₀
+
+/-- **(L2) The seminormal simple-spectrum core (combinatorial): the content tuple determines the
+standard tableau.** If two standard Young tableaux of shape `μ` assign the same cell-content to
+every label (`cellContent (cell of s in T) = cellContent (cell of s in T')` for all
+`s : Fin (nOf μ)`), they are equal.
+
+This is the classical "the GZ spectrum is simple" fact, in its purely **combinatorial** form —
+no modules, no linear algebra: downward induction on the labels; the cell holding the top label
+is a removable corner (row/column-maximality from `row_strict`/`col_strict`), distinct corners of
+a Young diagram carry pairwise-distinct contents (they lie on distinct diagonals), so the content
+pins the corner; remove it and recurse.  The induction needs diagram-minus-corner / tableau-
+restriction machinery not yet built in this development, so it is carried as the named cited
+core. -/
+theorem syt_content_tuple_injective (μ : YoungDiagram)
+    (T T' : QOU.BraidKnot.StandardYoungTableau μ)
+    (h : ∀ s : Fin (Specht.nOf μ),
+      cellContent ((tableauCellEquiv μ T s : ℕ × ℕ))
+        = cellContent ((tableauCellEquiv μ T' s : ℕ × ℕ))) :
+    T = T' := by
+  -- Ref: [vershik-kerov1977] (the Gelfand–Zetlin spectrum is simple: the content vector of a
+  -- standard tableau determines it — downward induction on labels via removable corners, whose
+  -- contents are pairwise distinct).  Elementary tableau combinatorics; the residual brick-5
+  -- spectrum core.
+  sorry
+
+/-- **The atomic OV completeness core (Young's seminormal form, independence half) — now assembled,
+not cited.** The seminormal (Gelfand–Zetlin) vectors form a **linearly independent** family indexed
+by **all** standard Young tableaux of shape `μ` — i.e. `#SYT(μ) = dim S^λ`-many independent
+simultaneous JM-eigenvectors.
+
+**De-abstraction (this proof is sorry-free; its inputs are the two named cores).** The family is
+built by choice from `seminormalVector_data_exists` (the eigenvector existence core); independence
+is the generic joint-eigenvalue argument `linearIndependent_of_joint_eigenvectors` (L1, proved)
+applied to the operators `ρ(X_s)` with eigenvalue tuples the cast content vectors
+`s ↦ ((cellContent (cell of s in T) : ℤ) : k)`, whose injectivity is `Int.cast_injective`
+(`CharZero`) + the combinatorial simple-spectrum core `syt_content_tuple_injective` (L2).  So the
+cited debt of this statement is reduced from "OV independence" to {eigenvector existence (already
+cited), content-tuple combinatorics (L2)} — the linear algebra is machine-checked.
+
+This is strictly more atomic than the old `seminormalVectors_span` cited `sorry`: that cited the
+whole inclusion `S^λ ⊆ span`; the *spanning* is a sorry-free dimension corollary
+(`seminormalVectors_span` below), and the independence is now itself assembled from more atomic
+parts.
 
 **Base ring `[Field k] [CharZero k]`** (not over-general): in positive characteristic the cell
 contents collide mod `p`, merging eigenspaces and breaking distinctness, so the `[CommRing k]` form
@@ -499,10 +613,27 @@ would be false at its generality. -/
 theorem exists_indep_seminormal_family {k : Type} [Field k] [CharZero k] (μ : YoungDiagram) :
     ∃ b : QOU.BraidKnot.StandardYoungTableau μ → SeminormalVector (k := k) μ,
       LinearIndependent k (fun T => (b T).v) := by
-  -- Ref: [vershik-kerov1977] (Young's seminormal form: the GZ eigenbasis of S^λ is indexed by SYT(μ)
-  -- and is linearly independent — distinct content-tuples ⇒ independent simultaneous JM-eigenvectors).
-  -- Brick-5 OV independence core.
-  sorry
+  -- build the family by choice from the existence core
+  choose v hmem hnz hisEig using
+    fun T : QOU.BraidKnot.StandardYoungTableau μ => seminormalVector_data_exists (k := k) μ T
+  refine ⟨fun T => { T := T, v := v T, mem := hmem T, nz := hnz T,
+                     cellOf := tableauCellEquiv μ T, isEig := hisEig T }, ?_⟩
+  -- independence via L1: operators ρ(X_s), tuples the cast content vectors
+  refine linearIndependent_of_joint_eigenvectors
+    (fun s : Fin (Specht.nOf μ) =>
+      (Specht.Mtab.rep μ).asAlgebraHom (jucysMurphy (k := k) (Specht.nOf μ) s))
+    (fun T => v T)
+    (fun T s => ((cellContent ((tableauCellEquiv μ T s : ℕ × ℕ)) : ℤ) : k))
+    hnz ?_ ?_
+  · intro T s
+    rw [hisEig T s]
+    exact (Int.cast_smul_eq_zsmul k _ _).symm
+  · intro T T' hTT'
+    apply syt_content_tuple_injective μ T T'
+    intro s
+    have hs : ((cellContent ((tableauCellEquiv μ T s : ℕ × ℕ)) : ℤ) : k)
+        = ((cellContent ((tableauCellEquiv μ T' s : ℕ × ℕ)) : ℤ) : k) := congrFun hTT' s
+    exact_mod_cast hs
 
 /-- **Plumbing (sorry-free): `#SYT(μ) ≤ dim_k(span)`.** The span of the independent `#SYT(μ)`-family
 already has dimension `#SYT(μ)` (`finrank_span_eq_card`), and it is contained in `seminormalSpan`
