@@ -39,7 +39,7 @@ otherwise chase numerically.
 
 ## What is measured today (tiered, per the c_k discipline)
 
-| rung | bar-odd (Q_β) | tier | bar-even (binding) | tier |
+| rung | bar-odd ($Q_\beta$) | tier (odd) | bar-even (binding) | tier (even) |
 |---|---|---|---|---|
 | c₁ | 0 | proved (ladder seed) | — | — |
 | c₂ | −1 | **proved Taylor-exact** | ≈ −8.0 | net-route (Hoefsmit Stage-B) |
@@ -50,7 +50,8 @@ otherwise chase numerically.
 
 - AW parameters: **4** (`a,b,c,d`; `q = q₀` fixed).
 - Usable recurrence constraints from the odd ladder (seeds `c₁=0, c₂=−1`):
-  `c₃ = A₂·c₂ ⇒ A₂ = 2`, and `c₄ = A₃·c₃ + B₃·c₂` — **2 equations**, of which
+  `c₃ = A₂·c₂ ⇒ A₂ ≈ 2` (approximate — inherits c₃'s near-match tier and its
+  cross-anchor swing), and `c₄ = A₃·c₃ + B₃·c₂` — **2 equations**, of which
   one uses the CAL-anchored (untrusted-tier) c₄.
 - Even-ladder constraints: **0** — a single rung (c₂ ≈ −8) cannot constrain a
   recurrence; the Casoratian test at k=2 requires `c₃^even`, which does not exist.
@@ -84,12 +85,17 @@ protocol (`compute-author §3.3`) exist to prevent. **Do not run the scan.**
 [`2026-06-16-hoefsmit-stage-b-attempt-verdict.md`](2026-06-16-hoefsmit-stage-b-attempt-verdict.md))
 one order deeper in `u`. Then:
 
-1. **Casoratian sign test (parameter-free):** compute
-   `W₂ = c₂^even·c₃^odd − c₃^even·c₂^odd = (−8)(−2) − c₃^even(−1) = 16 + c₃^even`
-   and `W₃` (needs c₄^even or uses the odd c₄ tier with a caveat). The AW
-   positivity forces `sign(W₃/W₂) = −sign(B₃)` with `B₃ < 0` in the compact
-   regime ⇒ **`W₃/W₂ > 0`**. A sign violation refutes the one-recurrence
-   hypothesis outright, no parameters fitted.
+1. **Casoratian sign test (parameter-free in the AW parameters):** compute
+   `W₂ = c₂^even·c₃^odd − c₃^even·c₂^odd ≈ (−8)(−2) − c₃^even(−1) ≈ 16 + c₃^even`
+   (approximate — the numeric part plugs in the near-match rungs
+   `c₂^even ≈ −8`, `c₃^odd ≈ −2`, so the threshold inherits their measurement
+   error; a sign call near `c₃^even ≈ −16` is not decisive). `W₃` requires
+   **both** `c₄^even` (a further Stage-B order) **and** `c₄^odd` — the caveat
+   is that today's `c₄^odd` is CAL-anchored tier, so a W₃ built on it is
+   conditional on that tier. The AW positivity forces
+   `sign(W₃/W₂) = −sign(B₃)` with `B₃ < 0` in the compact regime ⇒
+   **`W₃/W₂ > 0`**. A robust sign violation (outside the rung error bars)
+   refutes the one-recurrence hypothesis outright, no parameters fitted.
 2. Only if the sign test passes: the four rungs
    `(c₂,c₃)^{even,odd}` give 3 independent constraints — still one short of
    pinning `(a,b,c,d)`, so the *identification* stays gated on either a fifth
