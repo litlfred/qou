@@ -4,6 +4,19 @@
 **Branch:** `claude/m-avg-subgoal-1-operator-combiner-2026-06-02` (PR #1698)
 **Trigger:** Owner pushback on Phase B: "thought we determined this knot-dependent and should not be uniform: Production mass-table uses uniform Vol(𝓑₃)/ℏ² for ALL atoms".
 
+> **🛑 Currency banner (owner ruling 2026-06-24 — added 2026-07-02, PR #3200).**
+> This audit predates the muon-anchor ruling: **absolute** nucleon/atom masses
+> now route through the [`canonical_mass.py`](../../computations/canonical_mass.py)
+> facade ($m_p \approx 938.27$ MeV, CODATA), and every vol-density form
+> (`vol_density_borromean`, `mass_vol_density`, λ_A) is **deprecated for
+> absolute mass** — see
+> [`canonical-mass-formula-guardrail.md`](../canonical-mass-formula-guardrail.md)
+> and the [λ_A refutation audit](2026-06-24-lambda-a-refutation-artifact-audit.md).
+> The uniform-vs-per-knot **finding below stands**, re-scoped: it is the
+> **binding-side** per-knot density question (`vol_density_per_block` is valid
+> where the scale cancels), the 9b ρ/Δ_λ leg. Consumer-lane migration of the
+> 87 uniform scripts: PR #3199 (bean `4f2d`).
+
 ## TL;DR
 
 **Production compute is overwhelmingly uniform-Vol(𝓑₃).**
