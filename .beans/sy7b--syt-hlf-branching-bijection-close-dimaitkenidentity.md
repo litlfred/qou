@@ -1,11 +1,11 @@
 ---
 # sy7b
 title: 'SYT HLF: close dimAitkenIdentity via branching bijection (numSYTenum_branching + dimHLF_branching)'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-28T17:05:00Z
-updated_at: 2026-06-29T14:32:00Z
+updated_at: 2026-07-02T17:12:10Z
 ---
 
 ## FINAL WIRING DONE (2026-07-02, PR #3219)
