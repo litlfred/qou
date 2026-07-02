@@ -34,7 +34,7 @@ The tension is between two q₀ pins of the *same* H¹(Bring) datum:
 | Pin | formula | q₀ | object's bar/complex structure |
 |---|---|---|---|
 | **muon** (canonical CAL-2 proxy) | `m_μ/m_e = Vol(4₁)/ℏ_q²` | 1.10997859555… | **CS(4₁)=0**: `4₁` amphichiral ⇒ `𝕍(4₁)=Vol(4₁)+i·0` is **purely real** |
-| **proton** (experimental precision pin) | `m_p/m_e = 2·Vol(4₁)/ℏ_q²·F_Bor(q) − 12` | 1.10997858275… | many-body: `F_Bor = |tr_M(β_Bor)|`, the **modulus** of a binding endomorphism whose bar-odd (Q_β) face is projected out |
+| **proton** (experimental precision pin) | `m_p/m_e = 2·Vol(4₁)/ℏ_q²·F_Bor(q) − 12` | 1.10997858275… | many-body: `F_Bor = abs(tr_M(β_Bor))`, the **modulus** of a binding endomorphism whose bar-odd (Q_β) face is projected out |
 
 The keystone `prop:self-dual-higgs-real-volume` (`J_N(4₁;q)=J_N(4₁;q⁻¹)`,
 Lean-proved sorry-free as `QOU.Knot.SelfDuality.higgs_complex_volume_real`)
@@ -71,7 +71,7 @@ real axis via `|tr_M|`, measured against the CS=0 muon reference —
 face is not a ppb-scale rounding of the bar-even face; it is **O(1)**. From
 the `/dashboard-low` Entanglement table at q₀:
 
-| nucleon | retained `E₀·bar-even` (MeV) | emitted `E₀·|bar-odd|` (MeV) | `|bar-odd|/bar-even` |
+| nucleon | retained `E₀·bar-even` (MeV) | emitted `E₀·abs(bar-odd)` (MeV) | `abs(bar-odd)/bar-even` |
 |---|---|---|---|
 | p | 2.373 | 2.087 | **0.88** |
 | n | 2.327 | 1.538 | 0.66 |
