@@ -1,10 +1,33 @@
 {
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-02T15:08:01.757556+00:00",
+  "commitSha": "ae0e464220f6ad38147cc071ec38018384cb5a90",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "metallic-q-symbolic-galois-proofs",
+  "scriptFile": "metallic_q_symbolic_galois_proofs.py",
+  "scriptHash": "d453d1b07441",
+  "scriptCommitSha": "f6ddd9350192668fe1fb6c2498f8d5b91bb70331",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
   "description": "Symbolic verification of closed-form identities surfaced by the metallic-q probes.  Each verified identity is a candidate Lean theorem.  These are what we can PROVE from the probe findings.",
-  "computed_at": "2026-06-09T05:29:40.533863+00:00",
+  "computed_at": "2026-07-02T15:08:01.557925+00:00",
   "identities": {
     "I1_galois_pair_character_sum": {
-      "statement": "\u03c7^\u03bb(\u03c3_i) + \u03c7^{\u03bb'}(\u03c3_i) = dim(\u03bb) \u00b7 (q \u2212 q\u207b\u00b9)",
-      "scope": "all real q > 0, all partitions \u03bb of n=3, n=4",
+      "statement": "χ^λ(σ_i) + χ^{λ'}(σ_i) = dim(λ) · (q − q⁻¹)",
+      "scope": "all real q > 0, all partitions λ of n=3, n=4",
       "results": [
         {
           "lambda": [
@@ -90,11 +113,11 @@
         }
       ],
       "all_verified": false,
-      "proposed_lean": "theorem galois_pair_character_sum {q : \u211d} (hq : 0 < q) (\u03bb : Partition n) : \u03c7^\u03bb q + \u03c7^{\u03bb.transpose} q = \u03bb.dim * (q - q\u207b\u00b9)"
+      "proposed_lean": "theorem galois_pair_character_sum {q : ℝ} (hq : 0 < q) (λ : Partition n) : χ^λ q + χ^{λ.transpose} q = λ.dim * (q - q⁻¹)"
     },
     "I2_metallic_integer": {
-      "statement": "\u03c7^\u03bb(\u03c3_i) + \u03c7^{\u03bb'}(\u03c3_i) at q = \u03b4_n equals dim(\u03bb) \u00b7 n  \u2208 \u2124",
-      "scope": "n \u2208 {1, 2, 3} (golden, silver, bronze), partitions of n=3, n=4",
+      "statement": "χ^λ(σ_i) + χ^{λ'}(σ_i) at q = δ_n equals dim(λ) · n  ∈ ℤ",
+      "scope": "n ∈ {1, 2, 3} (golden, silver, bronze), partitions of n=3, n=4",
       "results": [
         {
           "n_metallic": 1,
@@ -344,11 +367,11 @@
         }
       ],
       "all_verified": false,
-      "proposed_lean": "theorem metallic_integer_specialisation (n : \u2115) (\u03bb : Partition k) : (\u03c7^\u03bb (\u03b4 n) + \u03c7^{\u03bb.transpose} (\u03b4 n)) = \u2191(\u03bb.dim * n)"
+      "proposed_lean": "theorem metallic_integer_specialisation (n : ℕ) (λ : Partition k) : (χ^λ (δ n) + χ^{λ.transpose} (δ n)) = ↑(λ.dim * n)"
     },
     "I3_algebraic_integer_landing": {
-      "statement": "\u03c7^\u03bb(\u03c3_i) at q = \u03b4_n lies in \u2124[\u03b4_n]",
-      "scope": "all partitions \u03bb, all metallic ratios \u03b4_n",
+      "statement": "χ^λ(σ_i) at q = δ_n lies in ℤ[δ_n]",
+      "scope": "all partitions λ, all metallic ratios δ_n",
       "results": [
         {
           "n_metallic": 1,
@@ -670,11 +693,11 @@
         }
       ],
       "all_verified": false,
-      "proposed_lean": "theorem character_in_Z_delta_n (n : \u2115) (\u03bb : Partition k) : \u2203 a b : \u2124, \u03c7^\u03bb (\u03b4 n) = (a : \u211d) + (b : \u211d) * (\u03b4 n)"
+      "proposed_lean": "theorem character_in_Z_delta_n (n : ℕ) (λ : Partition k) : ∃ a b : ℤ, χ^λ (δ n) = (a : ℝ) + (b : ℝ) * (δ n)"
     },
     "I5_silver_cost_coincidence": {
-      "statement": "For the n=2 LP cost vector, t_1(q) = t_2(q) \u21d4 q = \u03b4_silver",
-      "scope": "n=2 LP basis {\u03b3, \u03c3_0}",
+      "statement": "For the n=2 LP cost vector, t_1(q) = t_2(q) ⇔ q = δ_silver",
+      "scope": "n=2 LP basis {γ, σ_0}",
       "result": {
         "t1": "2*q + 2/q",
         "t2": "q**2 - 1/q**2",
@@ -682,24 +705,24 @@
         "all_solutions": [
           "1 + sqrt(2)"
         ],
-        "expected": "\u03b4_silver = 1 + \u221a2",
+        "expected": "δ_silver = 1 + √2",
         "expected_in_solutions": true,
-        "proof_step_1": "t_1 = t_2  \u21d4  2(q+q\u207b\u00b9) = (q+q\u207b\u00b9)(q\u2212q\u207b\u00b9)",
-        "proof_step_2": "  divide by (q+q\u207b\u00b9) (positive for q > 0):",
-        "proof_step_3": "  q \u2212 q\u207b\u00b9 = 2  \u21d4  q\u00b2 \u2212 2q \u2212 1 = 0  \u21d4  q = 1 + \u221a2 = \u03b4_silver"
+        "proof_step_1": "t_1 = t_2  ⇔  2(q+q⁻¹) = (q+q⁻¹)(q−q⁻¹)",
+        "proof_step_2": "  divide by (q+q⁻¹) (positive for q > 0):",
+        "proof_step_3": "  q − q⁻¹ = 2  ⇔  q² − 2q − 1 = 0  ⇔  q = 1 + √2 = δ_silver"
       },
       "verified": true,
-      "proposed_lean": "theorem silver_lp_coincidence : (2 * (q + 1/q) = q^2 - 1/q^2) \u2194 (q = 1 + Real.sqrt 2)"
+      "proposed_lean": "theorem silver_lp_coincidence : (2 * (q + 1/q) = q^2 - 1/q^2) ↔ (q = 1 + Real.sqrt 2)"
     },
     "I6_pisot_property": {
-      "statement": "\u03b4_n is a Pisot number: minimal poly x\u00b2 \u2212 nx \u2212 1, Galois conjugate -1/\u03b4_n has |\u00b7| < 1",
-      "scope": "n \u2208 {1, 2, 3, 4, 5}",
+      "statement": "δ_n is a Pisot number: minimal poly x² − nx − 1, Galois conjugate -1/δ_n has |·| < 1",
+      "scope": "n ∈ {1, 2, 3, 4, 5}",
       "results": [
         {
           "n": 1,
           "delta_n": "1/2 + sqrt(5)/2",
           "minimal_polynomial": "x**2 - x - 1",
-          "expected_minpoly": "x\u00b2 \u2212 1x \u2212 1",
+          "expected_minpoly": "x² − 1x − 1",
           "minpoly_correct": true,
           "conjugate_root": "1/2 - sqrt(5)/2",
           "conjugate_abs": "-1/2 + sqrt(5)/2",
@@ -710,7 +733,7 @@
           "n": 2,
           "delta_n": "1 + sqrt(2)",
           "minimal_polynomial": "x**2 - 2*x - 1",
-          "expected_minpoly": "x\u00b2 \u2212 2x \u2212 1",
+          "expected_minpoly": "x² − 2x − 1",
           "minpoly_correct": true,
           "conjugate_root": "1 - sqrt(2)",
           "conjugate_abs": "-1 + sqrt(2)",
@@ -721,7 +744,7 @@
           "n": 3,
           "delta_n": "3/2 + sqrt(13)/2",
           "minimal_polynomial": "x**2 - 3*x - 1",
-          "expected_minpoly": "x\u00b2 \u2212 3x \u2212 1",
+          "expected_minpoly": "x² − 3x − 1",
           "minpoly_correct": true,
           "conjugate_root": "3/2 - sqrt(13)/2",
           "conjugate_abs": "-3/2 + sqrt(13)/2",
@@ -732,7 +755,7 @@
           "n": 4,
           "delta_n": "2 + sqrt(5)",
           "minimal_polynomial": "x**2 - 4*x - 1",
-          "expected_minpoly": "x\u00b2 \u2212 4x \u2212 1",
+          "expected_minpoly": "x² − 4x − 1",
           "minpoly_correct": true,
           "conjugate_root": "2 - sqrt(5)",
           "conjugate_abs": "-2 + sqrt(5)",
@@ -743,7 +766,7 @@
           "n": 5,
           "delta_n": "5/2 + sqrt(29)/2",
           "minimal_polynomial": "x**2 - 5*x - 1",
-          "expected_minpoly": "x\u00b2 \u2212 5x \u2212 1",
+          "expected_minpoly": "x² − 5x − 1",
           "minpoly_correct": true,
           "conjugate_root": "5/2 - sqrt(29)/2",
           "conjugate_abs": "-5/2 + sqrt(29)/2",
@@ -752,12 +775,12 @@
         }
       ],
       "all_verified": true,
-      "proposed_lean": "theorem delta_n_pisot (n : \u2115) (hn : n \u2265 1) : IsPisot (delta n)",
+      "proposed_lean": "theorem delta_n_pisot (n : ℕ) (hn : n ≥ 1) : IsPisot (delta n)",
       "note": "Already proved unconditionally in Lean per PR #1999 (QOU.AlgebraicSubstrate.MetallicHierarchy); this probe re-verifies as a sanity check."
     }
   },
   "what_we_can_now_lean_formalize": [
-    "(I.1) Galois-pair character sum identity \u2014 pure algebraic",
+    "(I.1) Galois-pair character sum identity — pure algebraic",
     "(I.2) Metallic-q integer specialisation of (I.1)",
     "(I.5) Silver LP cost-coincidence as algebraic identity",
     "All three are sorry-free in Lean once the character formula is in place (via the AB_TABLE encoding)."

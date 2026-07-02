@@ -338,6 +338,8 @@ if __name__ == "__main__":
         "enumeration_top_by_magnitude": enum_data,
         "magic_numbers": MAGIC,
     }
-    out = Path(__file__).parent / "sigma-shell-characterization.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+    out = WitnessBuilder.wrap_legacy(
+        "sigma-shell-characterization", witness, script_path=__file__, engine="mpmath",
+    ).save()
     print(f"Witness: {out}")
