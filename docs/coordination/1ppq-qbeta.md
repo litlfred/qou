@@ -619,3 +619,30 @@ Two sessions worked bean `1jrh` concurrently at different levels; results are
   mechanism note is appended, status NOT flipped.
 - **Merge-order note:** both #3216 and #3221 touch `.beans/1jrh…md` —
   whichever merges second rebases the bean file (append-only, trivial).
+
+## 2026-07-02 — Stage-C σ₃-lift obligation machine-checked (Lean; no Λ candidate)
+
+Follow-up to the two-session split above (bean `pxhb` → session bean `cbzx`):
+the sole remaining Stage-C open item — the categorical σ₃-lift `Λ ∈ H₄(q)` —
+now has a machine-checked obligation file,
+`QOU/QBeta/StageCSigma3LiftObligation.lean` (lean-direct exit 0, sorry-free,
+generic `[CommRing R]` + ordered decision section per §7c), mirroring the s013
+`KeystoneQBesselRadialTarget` pattern:
+
+- **Carrier** `StageCSigma3Lift` (OPEN, no instance): C12
+  stabilization-constant-1 reading `c₄^even = tr_M^{H₄}(Λ) − tr_M^{H₃}(shadow)`,
+  σ₃-gating non-degeneracy (`c4even ≠ 0`), bar-evenness of both traces;
+  derived: the rung is bar-even (`c4even_bar_even`). The scope-§2 provenance
+  rule (derive Λ from decay content, never back-solve) and anchor-stability
+  stay meta-level selection rules — deliberately not encoded.
+- **Sign-tier robustness** `W2_pos_of_sign_tiers`: W₂ > 0 from the measured
+  TIERS alone (c₂^even < 0, c₃^even > 0, c₂^odd = −1 proved, c₃^odd < 0) —
+  the audit's W₂ ≈ +102.67 is one instance; positivity is tier-robust.
+- **Decision rule** `one_recurrence_incompatible` + composed
+  `sigma3_lift_kill_test`: any valid lift whose genuine rungs give W₃ ≤ 0
+  refutes the single-AW-recurrence identification (scope-(a), machine-checked
+  form of the gated test; converts the untrusted-input "indicative lean" into
+  a one-call decision once genuine c₄ rungs exist).
+
+No Λ enumerated or evaluated (scope no-fit rule intact). Λ specification
+remains the owner-gated research object.
