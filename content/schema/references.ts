@@ -2092,7 +2092,7 @@ export const references: CSLData[] = [
     page: "255-263",
     issued: { "date-parts": [[2001]] },
     DOI: "10.1016/S0370-2693(01)00506-8",
-    note: "arXiv:hep-th/0012238. Founding paper of doubly special relativity (DSR): a second observer-independent (Planckian) scale deforms the photon dispersion relation while preserving a relativity principle, realised through quantum-group (kappa-Poincare) symmetry — the structural parallel to the QOU substrate's q-deformation with derived light speed c_q.",
+    note: "arXiv:hep-th/0012238. Founding paper of doubly special relativity (DSR): a second observer-independent (Planckian) scale deforms the photon dispersion relation while preserving a relativity principle, realised through quantum-group (kappa-Poincare) symmetry — the structural parallel to the QOU substrate's q-deformation with derived light speed $c_q$.",
   }),
 
   // ── Amelino-Camelia et al. 1998: GRB tests of quantum gravity ──
@@ -2123,7 +2123,8 @@ export const references: CSLData[] = [
       "A limit on the variation of the speed of light arising from quantum gravity effects",
     author: [
       { family: "Abdo", given: "Aous A." },
-      { literal: "Fermi LAT and Fermi GBM collaborations, and others" },
+      { family: "Fermi LAT Collaboration" },
+      { family: "Fermi GBM Collaboration" },
     ],
     "container-title": "Nature",
     volume: "462",
