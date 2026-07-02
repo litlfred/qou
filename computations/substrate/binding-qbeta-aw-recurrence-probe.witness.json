@@ -1,0 +1,135 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-02T15:45:42.341141+00:00",
+  "commitSha": "6f18b131a7034d4d4835dc9c91c2ac496716022a",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "binding-qbeta-aw-recurrence-probe",
+  "scriptFile": "binding_qbeta_aw_recurrence_probe.py",
+  "scriptHash": "c31feba6d65f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Askey–Wilson three-term recurrence probe on the (binding, Q_beta) channel ladders: solve the multiplier c = (X(A+1)+X(A-1))/X(A) separately on the bar-even, bar-odd, and complex ladders along neutron-addition chains and test for ONE shared bar-even multiplier — the numerical counterpart of the Lean recurrence_invol_descent.",
+  "discipline": "no fit — solve-and-compare; mpmath 65-dps compute / 50-dps serialization (strings); tiered verdict with (a)/(b) scope per AGENTS.md",
+  "audit_only": true,
+  "lean_counterpart": "qou:QOU.MassEndomorphism.recurrence_invol_descent + AWDeformationPath.channel_ladders (content/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.lean)",
+  "predecessor": "docs/audits/2026-06-30-complex-volume-bar-parity-binding-probe.md",
+  "data_source": "committed witness (binding_canonical regression)",
+  "traces_available": false,
+  "acquisition_errors": [
+    "canonical binding path raised: ModuleNotFoundError: No module named 'numpy'"
+  ],
+  "precision": {
+    "compute_dps": 65,
+    "output_sig_digits": 50
+  },
+  "constants": {
+    "q_0": "1.1099785955573347",
+    "q_inv": "0.90091827356174105706961774022355964228105178355911",
+    "eta_0": "0.10434073185663745092822255425771910558348615936506",
+    "E0_MeV": "4.1859808275828917467567518454158986162983168581415",
+    "Q_beta_codata_MeV": "0.7823334093100222",
+    "ref_2cosh_10eta0": "3.1911258987346221727191707067296123787511842534227",
+    "ref_2cosh_668eta0": "2.5057918942593057179322645996802752774375191566272"
+  },
+  "results": {
+    "ladders": {
+      "2H": {
+        "B_q0_MeV": "3.8896918848777578716788349901286904168228941411387",
+        "B_qinv_MeV": "2.1109145506645124681772637059770924233355053629239",
+        "B_even_MeV": "3.0003032177711351699280493480528914200791997520313",
+        "B_odd_MeV": "0.8893886671066227017507856420757989967436943891074",
+        "V_complex_re_MeV": "3.0003032177711351699280493480528914200791997520313",
+        "V_complex_im_MeV": "0.8893886671066227017507856420757989967436943891074"
+      },
+      "3H": {
+        "B_q0_MeV": "9.0676587654747559914455993769344525091882076929292",
+        "B_qinv_MeV": "3.5541305650481460922876107377948485342216695998731",
+        "B_even_MeV": "6.3108946652614510418666050573646505217049386464011",
+        "B_odd_MeV": "2.756764100213304949578994319569801987483269046528",
+        "V_complex_re_MeV": "6.3108946652614510418666050573646505217049386464011",
+        "V_complex_im_MeV": "2.756764100213304949578994319569801987483269046528"
+      },
+      "3He": {
+        "B_q0_MeV": "6.7968867017052041269295866676666720452185610148154",
+        "B_qinv_MeV": "5.0181093674919587214721873645623982679688986714835",
+        "B_even_MeV": "5.9074980345985814242008870161145351565937298431494",
+        "B_odd_MeV": "0.88938866710662270272869965155213688862483117166595",
+        "V_complex_re_MeV": "5.9074980345985814242008870161145351565937298431494",
+        "V_complex_im_MeV": "0.88938866710662270272869965155213688862483117166595"
+      },
+      "4He": {
+        "B_q0_MeV": "11.974853582302202246696351054472434137583874566605",
+        "B_qinv_MeV": "6.4613253818755923455825343956387271745829824108215",
+        "B_even_MeV": "9.2180894820888972961394427250555806560834284887132",
+        "B_odd_MeV": "2.7567641002133049505569083294168534815004460778917",
+        "V_complex_re_MeV": "9.2180894820888972961394427250555806560834284887132",
+        "V_complex_im_MeV": "2.7567641002133049505569083294168534815004460778917"
+      }
+    },
+    "chains": {
+      "chain1_2H-3H-4He": {
+        "members": [
+          "2H",
+          "3H",
+          "4He"
+        ],
+        "c_even": "1.9360793275661244947651067617508048737036867779161",
+        "c_odd": "1.3226205198470939711560979542061896316154239080394",
+        "c_complex_re": "1.8377783852095726201045481783561358287651496351886",
+        "c_complex_im": "-0.22503444986828422330513021890589786657883538465827",
+        "decidable_a_rel_gap_even_vs_odd": "0.37650525451492498981790622558211856258800759187002",
+        "decidable_b_im_frac_c_complex": "0.1215413830188936652924513731534855033105115651164",
+        "vs_reference": {
+          "c_even_over_2cosh10eta0": "0.60670728420142822940434992640535492082889098777918",
+          "c_odd_over_2cosh10eta0": "0.41446829796704447339868979997587953809357158380192",
+          "c_even_over_2cosh668eta0": "0.77264170739861691089168224710501682221281210566988",
+          "c_odd_over_2cosh668eta0": "0.5278253644595060040058005432564161239075822721068",
+          "implied_k_even": "(0.0 + 2.4295749986739403489097732156117493592635263432782j)",
+          "implied_k_odd": "(0.0 + 8.1294441929850111339610981869887102257248546191092j)"
+        }
+      },
+      "chain2_2H-3He-4He": {
+        "members": [
+          "2H",
+          "3He",
+          "4He"
+        ],
+        "c_even": "2.0682855293899866185264224030680321092162267409534",
+        "c_odd": "4.0996168516309815126469069842796044775448752720317",
+        "c_complex_re": "2.1133073376022701020086623459532225680497224936736",
+        "c_complex_im": "0.29904388639601822585375274852643520983704020137459",
+        "decidable_a_rel_gap_even_vs_odd": "0.6586781686077042564011673271878961696296925023791",
+        "decidable_b_im_frac_c_complex": "0.14010935504878524138637036547079642540782248241468",
+        "vs_reference": {
+          "c_even_over_2cosh10eta0": "0.64813661228788382080582344853245433411752732885673",
+          "c_odd_over_2cosh10eta0": "1.2846929208454619260084348298680079103354507168713",
+          "c_even_over_2cosh668eta0": "0.82540195541711460732113472237259901098062831774459",
+          "c_odd_over_2cosh668eta0": "1.6360563943969493640321169413319747213454838153501",
+          "implied_k_even": "(2.4973675054157001225219487825932433393924355177618 + 0.0j)",
+          "implied_k_odd": "(12.89284516253646064031478270959744545564834792629 + 0.0j)"
+        }
+      }
+    },
+    "log_trace_per_neutron_increments": {},
+    "decidable_outputs": {
+      "a_max_rel_gap_even_vs_odd": "0.6586781686077042564011673271878961696296925023791",
+      "b_max_im_frac_c_complex": "0.14010935504878524138637036547079642540782248241468",
+      "c_reference_comparison": "per-chain vs_reference blocks"
+    }
+  },
+  "tier": "refuted, scope (a) — scope-limited negative",
+  "verdict": "REFUTED, SCOPE (a) (scope-limited negative per AGENTS.md): at the isotope triples (2H,3H,4He) and (2H,3He,4He), with the log-trace binding proxy B(q) = E0·ln(tr_free/tr_atom) and the ½[B(q0)±B(q0^-1)] parity split, the (binding, Q_beta) channel ladders do NOT share one Askey–Wilson three-term multiplier: max relative even/odd gap = 0.6586781686077042564011673271878961696296925023791 and max |Im c_complex|/|c_complex| = 0.14010935504878524138637036547079642540782248241468, both far from zero. This ladder, ALONE, at these isotopes and in this proxy form, does not realize the recurrence_invol_descent hypothesis (one recurrence, bar-even multiplier). NOT a structural exclusion: the Lean theorem is conditional (IF one bar-even-multiplier recurrence THEN both channels inherit it) and remains valid; the negative constrains this particular ladder construction (parity split of the log-trace proxy along A), not the ingredient — a different normalization, ladder variable (e.g. the c_k Habiro ladder), or corrected binding proxy is not excluded."
+}
