@@ -47,5 +47,3 @@ genuine c₄ rungs (H₄ Hoefsmit build for c₄^even; c₄^odd beyond CAL-ancho
 Bonus constraint: even rungs grow ×11,×21 ⇒ even-side u-ladder asymptotic;
 disfavors a common AW recurrence IN u (kernel R(q,ξ) search constraint).
 Audit: ../docs/audits/2026-07-02-1jrh-c3even-exact-measurement.md
->>>>>>> b686eb22 (compute(1jrh): measure c3^even = +86.661 via exact-rational s-series)
->>>>>>> 6f1bf4bb (compute(1jrh): measure c3^even = +86.661 via exact-rational s-series)
