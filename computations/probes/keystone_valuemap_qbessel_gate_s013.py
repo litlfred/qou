@@ -64,9 +64,10 @@ from mpmath import mp, mpf, besselj, qp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 mp.dps = 50
-Q0 = mpf("1.1099785955541805")
-INV = 1 / Q0            # bar image, |q| < 1: where the false theta converges
-QHAT = 1 / (Q0 ** 2)    # |q|<1 base for the Hahn–Exton q-Bessel (balanced [m]_{q0} image)
+with mp.workdps(50):
+    Q0 = mpf("1.1099785955541805")
+    INV = +(1 / Q0)          # bar image, |q| < 1: where the false theta converges
+    QHAT = +(1 / (Q0 ** 2))  # |q|<1 base for the Hahn–Exton q-Bessel (balanced [m]_{q0} image)
 P = 30
 E8_EXPONENTS = (1, 7, 11, 13, 17, 19, 23, 29)
 DUAL_PAIR_REPS = (1, 7, 11, 13)           # e of each Coxeter pair {e, 30-e}
@@ -79,7 +80,8 @@ def qint(m):
     return (Q0 ** m - Q0 ** (-m)) / (Q0 - Q0 ** (-1))
 
 
-D_Q_TARGETS = {1: mpf(1), 7: qint(4), 11: qint(5), 13: qint(4) * qint(3) / qint(2)}
+with mp.workdps(50):
+    D_Q_TARGETS = {1: mpf(1), 7: +qint(4), 11: +qint(5), 13: +(qint(4) * qint(3) / qint(2))}
 CLASSICAL_TARGETS = {1: mpf(1), 7: mpf(4), 11: mpf(5), 13: mpf(6)}
 
 
@@ -141,9 +143,9 @@ def verify_identity_numeric(coeffs: dict) -> mpf:
                * 2 * mp.sinh(alpha_deg * zv / 5) / (2 * mp.sinh(zv)))
         xv = mp.e ** (-zv / 30)
         nmax = int(30 * 80 / float(zv)) + 120  # x^n < 1e−34 beyond
-        rhs = mp.fsum(expansion_coeff(coeffs, n) * xv ** n
+        rhs = mp.fsum(c * xv ** n
                       for n in range(min(coeffs), nmax)
-                      if expansion_coeff(coeffs, n))
+                      if (c := expansion_coeff(coeffs, n)))
         worst = max(worst, abs(lhs - rhs))
     return worst
 
