@@ -79,7 +79,10 @@ result that motivates the brane-tower extension below.  Retained
 as `M_P_PRED_HECKE_RATIO_MEV` for the comparison line in the
 chain step output."""
 
-# ── CONJECTURAL: Borromean tower with substrate-form λ_scale ──
+# ── HISTORICAL: Borromean tower with substrate-form λ_scale ──
+# (λ_A EXCISED as headline 2026-06-24 — the quantities computed in
+# this section survive only as audit columns; the canonical headline
+# prediction is the muon-anchored Hecke energy further below.)
 #
 # Per `conj:lambda-scale-substrate-form` (formalised 2026-05-18 on
 # PR #683), the Borromean baryon mass formula
@@ -140,33 +143,56 @@ _VOL_B3_LIT = 8 * _CATALAN_G
 # did, but it is the categorical truth as established to date.
 # The Bring–Bloch path (`conj:lambda-scale-bring-bloch-identity`)
 # remains the open R&D direction for closing m_p to ppb.
-# Single source of truth: `_li_2_q_util.vol_density_borromean` (canonical
-# post-PR #1080, 2026-05-23): a single per-knot Geom call replaces the
-# manually expanded (Vol/ℏ_q²) × linking_weight form.  See
-# `docs/lambda-scale-absorbed-into-vol-density.md` for the framing.
+# λ_A-path Borromean VolDensity — EXCISED as the headline prediction
+# (owner ruling 2026-06-24, docs/coordination/2026-06-24-lambda-a-fit-
+# excised-per-knot-density.md): λ_A is a CODATA-implied fit and the
+# Vol(𝓑₃)/ℏ_q² form applies c_q² to the wrong volume (+2.96%). Both
+# quantities are retained BELOW purely as audit columns in the witness;
+# the DeprecationWarning is suppressed because this retention is the
+# intentional, documented audit use.
+import warnings as _warnings
 from _li_2_q_util import vol_density_borromean as _vol_density_borromean
-GEOM_FULL_BORROMEAN_Q0 = _vol_density_borromean(_Q_0)
+with _warnings.catch_warnings():
+    _warnings.simplefilter("ignore", DeprecationWarning)
+    GEOM_FULL_BORROMEAN_Q0 = _vol_density_borromean(_Q_0)
 
 # Empirical legacy (falsified, retained for the comparison column
-# in the audit witness).  Removing it in a follow-up commit once
-# downstream consumers stop reading the legacy form.
+# in the audit witness).
 LINKING_WEIGHT_FALSIFIED_FIT = mp.mpf(5) / 2 - _H**2 * _CATALAN_G
 
-# Borromean tower prediction (now via canonical VolDensity per PR #1080).
+# Audit columns (excised λ_A paths — NOT predictions):
 M_P_PRED_BORROMEAN_MEV = GEOM_FULL_BORROMEAN_Q0 * M_E_MEV_CODATA
 M_P_PRED_BORROMEAN_FALSIFIED_FIT_MEV = (
     _VOL_B3_LIT / _HBAR_Q**2 * LINKING_WEIGHT_FALSIFIED_FIT * M_E_MEV_CODATA
 )
 
-# Production chain prediction:
-# - Use the Borromean tower as the headline prediction (5.4 ppm conditional
-#   on conjecture), but flag CONJECTURAL_M_P_DERIVATION = True so downstream
-#   consumers can still see the legacy ratio.
-M_P_PRED_MEV = M_P_PRED_BORROMEAN_MEV
-CONJECTURAL_M_P_DERIVATION = True
-"""When True, M_P_PRED_MEV is the Borromean-tower prediction conditional
-on `conj:lambda-scale-substrate-form`. Downstream consumers MUST treat
-the resulting m_p as conjectural pending proof of that conjecture."""
+# ── CANONICAL absolute m_p: muon-anchored Hecke energy ──────────
+# m_p = (2·m_μ·F_Bor − 12·m_e)·habiro_ratio, m_μ = m_e·Vol(4₁)/ℏ_q²
+# — the production substrate identity (m_p_substrate_identity_50dps.py,
+# the same source canonical_mass.py reads; the Habiro truncation
+# ladder is part of the production value). Consumed from its witness
+# as a decimal string → mp.mpf: the canonical_mass facade returns
+# float64, which a 50-dps chain must not consume, and re-inlining the
+# identity here would duplicate its production constants (drift risk —
+# a partial re-inline missed the habiro_ratio and landed 240 ppb off).
+_SUBSTRATE_IDENTITY_WITNESS = HERE / "m-p-substrate-identity-50dps.witness.json"
+if not _SUBSTRATE_IDENTITY_WITNESS.exists():
+    raise RuntimeError(
+        "m-p-substrate-identity-50dps.witness.json missing — run "
+        "m_p_substrate_identity_50dps.py first (canonical m_p source)."
+    )
+M_P_PRED_CANONICAL_MEV = mp.mpf(
+    json.loads(_SUBSTRATE_IDENTITY_WITNESS.read_text())["data"]["predictions"]["m_p_MeV"]
+)
+
+M_P_PRED_MEV = M_P_PRED_CANONICAL_MEV
+CONJECTURAL_M_P_DERIVATION = False
+"""The headline M_P_PRED_MEV is the production muon-anchored Hecke
+energy (canonical_mass identity, λ_A excised 2026-06-24), not the
+conjectural λ_scale tower. Note: q₀ is pinned in the same H¹ datum
+that m_p informs, so the CODATA comparison below is a
+calibration-consistency cross-check, not an independent prediction
+(see AGENTS.md §q₀ anchor convention)."""
 
 GAP_REL              = abs(M_P_PRED_MEV - M_P_MEV_CODATA) / M_P_MEV_CODATA
 
@@ -306,13 +332,16 @@ def build() -> DerivationChain:
         notes="Pure arithmetic (ratio of two 50 dps values).",
     ))
 
-    # 6 — Scale by CODATA m_e to get MeV
+    # 6 — Canonical muon-anchored Hecke energy → m_p in MeV
     steps.append(DerivationStep(
-        name="Scale by CODATA m_e (MeV) → m_p in MeV",
+        name="Muon-anchored Hecke energy → m_p in MeV",
         operation=(
-            "m_p (MeV) := (m_p_Hecke / m_e_Hecke) × M_E_MEV.  "
-            f"M_E_MEV = {M_E_MEV_CODATA} MeV is the **single CODATA-"
-            "bounded constant** the framework consumes."
+            "m_p (MeV) := 2·(m_μ·F_Bor − 6·m_e), with the muon anchor "
+            "m_μ = m_e·Vol(4₁)/ℏ_q² and the dimensionless Borromean "
+            "factor F_Bor = |tr_M(β_Bor)|·[3]_q!/q³ (canonical_mass "
+            f"facade identity at 50 dps).  M_E_MEV = {M_E_MEV_CODATA} "
+            "MeV is the **single CODATA-bounded constant** the "
+            "framework consumes."
         ),
         inputs=["m_p_over_m_e"],
         output_name="m_p_pred_MeV",
@@ -323,10 +352,13 @@ def build() -> DerivationChain:
         notes=(
             f"COMPUTATIONAL leaf: m_p_pred ≈ {mp.nstr(M_P_PRED_MEV, 6)} MeV "
             f"vs CODATA m_p = {mp.nstr(M_P_MEV_CODATA, 12)} MeV.  Current relative "
-            f"error: {mp.nstr(GAP_REL, 4)} = {mp.nstr(GAP_REL * mp.mpf('1e9'), 5)} ppb (target: "
-            "1 ppb, gap of ~6 orders of magnitude).  Closing the gap "
-            "requires Phase A item completion (Terms 2-6 at full 50 "
-            "dps without f64 chokepoints) + Phase B (q_0 derivation)."
+            f"error: {mp.nstr(GAP_REL, 4)} = {mp.nstr(GAP_REL * mp.mpf('1e9'), 5)} ppb.  "
+            "λ_A excision (2026-06-24): the former headline Borromean "
+            f"VolDensity path ≈ {mp.nstr(M_P_PRED_BORROMEAN_MEV, 6)} MeV "
+            "(+2.96%, a CODATA-implied fit) is retained only as an audit "
+            "column in the codata witness.  The q₀ pin and m_p inform the "
+            "same H¹ datum, so this residual is a calibration-consistency "
+            "cross-check (AGENTS.md §q₀ anchor convention)."
         ),
     ))
 
@@ -372,20 +404,24 @@ def emit_codata_witness(chain: DerivationChain) -> None:
     w.add_parameter("M_E_MEV_CODATA", mp.nstr(M_E_MEV_CODATA, 12))
     w.add_parameter("target_precision_ppb", "1.0")
     w.add_parameter("conjectural_derivation", CONJECTURAL_M_P_DERIVATION)
-    w.add_parameter("conjecture_label", "conj:lambda-scale-substrate-form")
-    # Under the conjectural Borromean tower prediction with substrate-form
-    # λ_scale = 5/2 - h²·G, the chain closes to ~5.4 ppm. The 1 ppb
-    # target is the long-term goal but is NOT achievable until the
-    # conjecture is proved AND the higher-order corrections derived.
+    w.add_parameter(
+        "mass_route",
+        "canonical muon-anchored Hecke energy "
+        "(canonical_mass identity; λ_A excised 2026-06-24)",
+    )
+    # expected must be float-parsable: Assertion.passed does
+    # abs(float(computed) − float(expected)) ≤ tolerance and the old
+    # expected="< 10" silently fell back to string equality (always
+    # False, even at 4e-7 ppm).
     w.add_assertion(
-        "m_p_within_10_ppm_conditional_on_conjecture",
+        "m_p_within_10_ppm_canonical",
         computed=mp.nstr(GAP_REL * mp.mpf("1e6"), 8),
-        expected="< 10",
+        expected="0",
         tolerance=10.0,
         unit="ppm",
         source=(
-            "Borromean tower prediction conditional on "
-            "conj:lambda-scale-substrate-form (5.4 ppm match at q_0 50dps)"
+            "muon-anchored Hecke energy m_p = 2·(m_μ·F_Bor − 6·m_e) "
+            "(canonical_mass facade identity at 50 dps)"
         ),
     )
     w.add_assertion(
@@ -394,9 +430,10 @@ def emit_codata_witness(chain: DerivationChain) -> None:
         expected="0",
         tolerance=1e-9,
         source=(
-            "long-term 1 ppb target — REQUIRES the conjecture proof + "
-            "h^4 and Skein corrections derivation (currently failing "
-            "by ~3 orders of magnitude; 5.4 ppm vs 1 ppb)"
+            "1 ppb target via the canonical identity. NOTE: q₀ and m_p "
+            "inform the same H¹ datum, so this is a calibration-"
+            "consistency cross-check, not an independent 1-ppb "
+            "prediction (AGENTS.md §q₀ anchor convention)."
         ),
     )
     w.add_assertion(
@@ -405,6 +442,12 @@ def emit_codata_witness(chain: DerivationChain) -> None:
         expected=True,
     )
     w.add_data("m_p_pred_MeV", mp.nstr(M_P_PRED_MEV, 50))
+    # Audit columns — the excised λ_A paths (owner ruling 2026-06-24),
+    # retained so the fit's magnitude stays visible in the record:
+    w.add_data("m_p_borromean_lambdaA_excised_fit_MeV",
+               mp.nstr(M_P_PRED_BORROMEAN_MEV, 50))
+    w.add_data("m_p_borromean_falsified_fit_MeV",
+               mp.nstr(M_P_PRED_BORROMEAN_FALSIFIED_FIT_MEV, 50))
     w.add_data("m_p_codata_MeV", mp.nstr(M_P_MEV_CODATA, 12))
     w.add_data("rel_diff", mp.nstr(GAP_REL, 50))
     w.add_data("rel_diff_ppb", mp.nstr(GAP_REL * mp.mpf("1e9"), 12))
