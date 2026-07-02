@@ -32,7 +32,8 @@ type; closing `numSYTenum (toList p) = dimSYT p` needs a bijection
 This file reduces that target to a **pure finite bijection between two explicit sets** — no list /
 `countP` plumbing left in it.  That bijection (`allPerms`-side now fully characterised) is the next
 brick; it is *not* the Frame–Robinson–Thrall hook-length formula (`IdentityIHLFBridge.dimSYT_eq_dimHLF`,
-which is the separate, genuinely-open closed-form `#SYT(λ) = n!/∏h_c`).
+the separate closed-form `#SYT(λ) = n!/∏h_c` — since proved via the GNW corner recursion,
+`SYTHookGNW.numSYTenum_eq_dimHLF`, composed with this file's counting bridge).
 
 Pure combinatorics on `ℕ`; nothing archimedean; no fit.
 -/

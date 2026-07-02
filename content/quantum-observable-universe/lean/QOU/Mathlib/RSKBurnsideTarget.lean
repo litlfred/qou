@@ -22,16 +22,17 @@ count (a `Finite`-backed `Nat.card`).  So `RSKBurnsideHolds n` is a faithful, fu
 concrete `dimSYT` for the abstract `dim` field of `RSKBridge.RSKBijection`.
 
 `rskBurnside_imp_substrate` makes the connection explicit: a proof of `RSKBurnsideHolds n` discharges
-`RSKBridge.RSK_substrate_axiom n` (instantiate its existential witness with `dimSYT`).  Two further
-targets remain open (the genuine open work, stated here so the discharge paths are visible):
+`RSKBridge.RSK_substrate_axiom n` (instantiate its existential witness with `dimSYT`).  Discharge
+paths (status):
 
 * `dimSYT_eq_dimHLF` — `dimSYT p = dimHLF (toList p)`, the Frame–Robinson–Thrall hook-length formula
-  (`#SYT(λ) = n!/∏h_c`).  Combined with the already-proved `PartitionListBridge.sum_image_toList`
-  this would transport the `decide`-verified `n ≤ 12` `dimHLF` Plancherel instances
-  (`IdentityIPlancherelInstances`) onto `dimSYT`.  **Caveat:** `dimSYT` is a *noncomputable*
-  `Nat.card`, so this is NOT a `decide`-closure — it is exactly the HLF (a real theorem), not a
-  bounded computation.  Deferred.
-* a proof of `RSKBurnsideHolds n` itself (general RSK).  Deferred.
+  (`#SYT(λ) = n!/∏h_c`).  **Now proved** in `IdentityIHLFBridge` (counting bridge
+  `SYTEnum.dimSYT_eq_numSYTenum` ∘ the GNW general HLF `SYTEnum.numSYTenum_eq_dimHLF`), making
+  `RSKBurnsideHolds n` equivalent to a computable `dimHLF` sum
+  (`IdentityIHLFBridge.rskBurnsideHolds_iff_dimHLF`).
+* a proof of `RSKBurnsideHolds n` itself: via the equivalence above, what remains is the
+  `Nat.Partition n ↔ partitionsOf n` enumeration bridge to the `decide`-verified `n ≤ 12` data
+  (`dim_validated_le12`), or general RSK.  Deferred.
 
 Pure combinatorics on `ℕ`; nothing archimedean; no fit.
 -/
