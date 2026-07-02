@@ -39,7 +39,10 @@ Banned registry
 Narrow and provenance-backed. We do NOT ban:
   - the Yekutieli non-abelian Stokes functor (canonical for most of
     the paper — only the empirical `−G·h²` *correction* is purged);
-  - `linking_weight_family_a` (the PROVED Family A replacement);
+  - `linking_weight_family_a` (the Family A Wedderburn sum — the
+    algebraic identity is proved; NOTE its role as a mass DENSITY was
+    excised as a fit 2026-06-24, so it survives only in audit columns.
+    Absolute mass routes through canonical_mass.py);
   - `y_lambda_*` / `delta_lambda_*` (canonical Frobenius weights y_λ
     and the Δ_λ binding-closure gate — distinct from `lambda_scale`);
   - the module FILENAME `lambda_scale_all_c_i_family_a.py` (canonical
@@ -89,7 +92,11 @@ BANNED_SYMBOLS = [
             "correction is purged."
         ),
         "purged_by": "PR #985 (NEGATIVE) / PR #1027 (production revert)",
-        "canonical_replacement": "linking_weight_family_a (Family A, PROVED Wedderburn identity)",
+        "canonical_replacement": (
+            "canonical_mass.proton_neutron_mass_mev() for absolute mass "
+            "(λ_A excised as density 2026-06-24); vol_density_per_block "
+            "for binding/trace ratios"
+        ),
     },
     {
         "symbol": "lambda_scale_family_a",
@@ -99,7 +106,11 @@ BANNED_SYMBOLS = [
             "absorbed into the per-knot VolDensity(K) evaluation."
         ),
         "purged_by": "PR #1080 (absorb into VolDensity) / PR #1089 (alias removal)",
-        "canonical_replacement": "linking_weight_family_a / vol_density_borromean",
+        "canonical_replacement": (
+            "canonical_mass.proton_neutron_mass_mev() for absolute mass "
+            "(the former vol_density_borromean route was excised as a fit "
+            "2026-06-24); vol_density_per_block for binding/trace ratios"
+        ),
     },
 ]
 
@@ -148,11 +159,16 @@ def _symbol_banned(name: str) -> dict | None:
             "symbol": name,
             "reason": (
                 "Owner directive 2026-05-24: 'no lambda-scale ANYWHERE in "
-                "production'. Any `lambda_scale_*` symbol is banned; use "
-                "linking_weight_family_a / VolDensity(K) instead."
+                "production'. Any `lambda_scale_*` symbol is banned; for "
+                "absolute mass use canonical_mass.py (λ_A/VolDensity "
+                "excised as density 2026-06-24), for binding ratios "
+                "vol_density_per_block."
             ),
             "purged_by": "PR #1080 / #1089 (lambda-scale family)",
-            "canonical_replacement": "linking_weight_family_a / vol_density_borromean",
+            "canonical_replacement": (
+                "canonical_mass.proton_neutron_mass_mev() for absolute mass; "
+                "vol_density_per_block for binding/trace ratios"
+            ),
         }
     return None
 
