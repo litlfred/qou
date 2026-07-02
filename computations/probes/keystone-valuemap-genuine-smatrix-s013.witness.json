@@ -1,0 +1,125 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-02T16:53:00.529018+00:00",
+  "commitSha": "aabd632356982d9938b3bc54571613ba703a2b73",
+  "assertions": [
+    {
+      "name": "genuine_smatrix_validated_and_bwS0_identification_refuted",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Every transcribed formula from Hikami math-ph/0405028 machine-validates (Theorem 10 exact to ~1e-30; S^2=1; vacuum row = Cor 12 weights; round-2 derived characters = Hikami's chi^(111)/chi^(112)). The genuine Sigma(2,3,5) vacuum row is D=2-dimensional with golden-ratio ratio, refuting (scope (a)) the identification of the 4-class bwS0=d_q/D family with the vacuum row of this geometric object."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "keystone-valuemap-genuine-smatrix-s013",
+  "scriptFile": "keystone_valuemap_genuine_smatrix_s013.py",
+  "scriptHash": "9199fa6f48b5",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "s013 step 3: the GENUINE Sigma(2,3,5) S-matrix from the primary literature (Hikami math-ph/0405028, owner-uploaded commit ece271823). Transcribes chi^(l1,l2,l3) (3.1), tau_N (2.11), phi=181/30 (2.12), Eichler limit (4.2), S-matrix (3.8, normalization sqrt(32/P)), Corollary 12 (5.8) -- and machine-validates ALL of it: Theorem 10 is an EXACT finite-N identity verified to ~1e-30 at N=3,5,7,11; S^2=1; the vacuum row equals Cor 12's flat-connection weights (2/sqrt5)(sin pi/5, sin 2pi/5) with CS=-1/120,-49/120; Cor 12 asymptotic residuals decrease in N. Cross-validation: Hikami chi^(111)/chi^(112) EQUAL the round-2 sympy-derived alpha=1/alpha=2 characters (eq. 5.6 is that identity), and the colored family spans exactly D=2 components (alpha=4=alpha=1, alpha=3=alpha=2). VERDICT: the genuine vacuum row is 2-dimensional with golden-ratio phi ratio (icosahedral/Fibonacci; magnitudes = sqrt(Reidemeister torsion), Thm 14); the keystone target bwS0=d_q/D at n=5 has 4 classes with ratios (1,4.110,5.220,6.220): type mismatch (2!=4) + value mismatch (phi not in targets) REFUTE the identification 'bwS0 = vacuum row of the Sigma(2,3,5) false-theta S-matrix' -- scope (a), this specific geometric object. The 3190 4<->4 correspondence is support-level only. No fit; nothing wired.",
+  "data": {
+    "P": 30,
+    "pvec": [
+      2,
+      3,
+      5
+    ],
+    "q0": 1.1099785955541805,
+    "chi_111": {
+      "1": -1,
+      "11": -1,
+      "19": -1,
+      "29": -1,
+      "31": 1,
+      "41": 1,
+      "49": 1,
+      "59": 1
+    },
+    "chi_112": {
+      "7": -1,
+      "13": -1,
+      "17": -1,
+      "23": -1,
+      "37": 1,
+      "43": 1,
+      "47": 1,
+      "53": 1
+    },
+    "chi111_equals_round2_alpha1": true,
+    "chi112_equals_round2_alpha2": true,
+    "D_235": 2,
+    "alpha4_same_class_as_alpha1": true,
+    "alpha3_same_class_as_alpha2": true,
+    "phi_235": 6.033333333333333,
+    "phi_equals_181_over_30": true,
+    "theorem10_residuals": {
+      "3": 2.5568623508337472e-39,
+      "5": 4.2802139649491824e-39,
+      "7": 5.62899903519033e-39,
+      "11": 9.890201217143237e-39
+    },
+    "theorem10_exact": true,
+    "S_matrix": [
+      [
+        0.5257311121191336,
+        0.8506508083520399
+      ],
+      [
+        0.8506508083520399,
+        -0.5257311121191336
+      ]
+    ],
+    "S_squared_is_identity": true,
+    "vacuum_row_matches_cor12_weights": true,
+    "cor12_weights": {
+      "flat1": 0.5257311121191336,
+      "flat2": 0.8506508083520399,
+      "CS": [
+        "-1/120",
+        "-49/120"
+      ]
+    },
+    "vacuum_row_ratio": 1.618033988749895,
+    "golden_ratio": 1.618033988749895,
+    "row_ratio_is_golden": true,
+    "cor12_residuals": {
+      "25": 584.1921996848189,
+      "51": 1.850657437736543,
+      "101": 0.006794544546531051
+    },
+    "cor12_residuals_decrease": true,
+    "bwS0_class_ratios": {
+      "(5)": 1.0,
+      "(4,1)": 4.109682435637709,
+      "(3,2)": 5.220441324664574,
+      "(3,1,1)": 6.220441324664574
+    },
+    "verdict_type_mismatch": {
+      "genuine_row_dim": 2,
+      "bwS0_classes": 4
+    },
+    "verdict_value_mismatch": {
+      "genuine_row_ratio": 1.618033988749895,
+      "bwS0_ratios": [
+        1.0,
+        4.109682435637709,
+        5.220441324664574,
+        6.220441324664574
+      ]
+    }
+  }
+}
