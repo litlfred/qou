@@ -1,0 +1,76 @@
+{
+  "description": "Route-alpha prediction test (bean 1jrh / Stage C): the forced basic-construction lift Lambda_a = iota(DeltaT)*e_3 evaluated through the merged H4 Markov-trace infra at BOTH q0 anchors (proton q_at, muon q_muon_at). P1 measures the Markov property on the third strand (zeta_w word-independence); P2 measures the level-4 content tr_M^H4(Lambda_a) - tau(e_3)*tr_M^H3(DeltaT). Zero free parameters; no fit; outcome recorded scope-(a). auditOnly.",
+  "audit_only": true,
+  "parameters": {
+    "q_proton": "1.1099785955573347198997632204832250266562084087802",
+    "q_muon": "1.1099785955541805752815940796095093779932822799587",
+    "dps": 50,
+    "extra_q_points": [
+      "1.05",
+      "1.2",
+      "0.93"
+    ],
+    "nf_words": [
+      [],
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ]
+  },
+  "data": {
+    "delta_net_at_proton_q0": "-0.188290620015689313544800645167",
+    "zeta_at_anchors": {
+      "proton": "0.499320334033561271768966386276",
+      "muon": "0.499320334033598250020669084677",
+      "q=1.05": "0.49985125687607796991322139905",
+      "q=1.2": "0.497929597731969194051790711637",
+      "q=0.93": "0.499671023885645336567877256344"
+    },
+    "worst_markov_word_dev": "1.06911e-50",
+    "L4_level4_content": {
+      "proton": "8.35238971903811139418917645985e-53",
+      "muon": "-8.35238971903811139418917645985e-53"
+    },
+    "anchor_swing": null,
+    "markov_transparent": true
+  },
+  "assertions": [
+    {
+      "label": "0: DeltaT net reconstruction matches witness (<1e-6)",
+      "passed": true
+    },
+    {
+      "label": "P1: Markov property on third strand — zeta word-independent (<1e-40)",
+      "passed": true
+    },
+    {
+      "label": "P2: level-4 content of Lambda_a vanishes at BOTH anchors (<1e-40)",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "6353796e3e84",
+  "scriptCommitSha": "unknown",
+  "commitSha": "a00626bdda311c46125151c8b7167a6c2fd77da9",
+  "engine": "mpmath",
+  "computedAt": "2026-07-02T17:20:15.600588+00:00",
+  "durationMs": 1132,
+  "engineVersion": "mpmath 1.3.0",
+  "scriptFile": "qbeta_route_alpha_lift_prediction.py"
+}
