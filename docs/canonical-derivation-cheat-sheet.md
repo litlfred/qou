@@ -37,42 +37,36 @@ doc.
 |---|---|---|---|
 | 1. Cat action | `ρ_n: B_n → Aut_C(V^⊗n)` | ✅ proved | — (settled) |
 | 2. Stokes → Hecke | `σ_i²=(q−q⁻¹)σ_i+1` | ✅ proved | — (settled) |
-| 3. Alexander+Markov | unique `tr_M` | 🟢 derived (Lean `sorry=1`) | proof-watcher: discharge `markov_trace` sorry |
+| 3. Alexander+Markov | unique `tr_M` | 🟢 derived (Lean: **0 sorries**; 2 cited external-proof **axioms** — `markov_trace_unique_axiom` in `QOU/Hecke/MarkovTrace.lean`, `jones_markov_trace_exists` in `jones-markov-trace.lean`, both `-- Ref: [jones1987]`; verified 2026-07-02) | discharge needs a cross-level M3 class field + a reduced-words basis lemma for `H_n(q)` (research-grade — uniqueness is not provable from the current generator-level class) |
 | 4. Bring χ=−6 | 6 ↔ torus knots | 🟢 derived | — (settled) |
 | 5. Wedderburn / partitions | `H_n(q)≅⊕_λ M_{d_λ}`, `tr_M=Σ y_λ χ^λ` | 🟢 derived (Wenzl) | — (the per-block frame; everything downstream rides on it) |
 | 6. Frobenius pairing + self-duality | `⟨a,b⟩_F`, `Ψ=S²=id` | ✅ proved (D3/D23) | partition-respecting audit (§9 below) |
 | 7. GB filtration | `ℓ(w)`-graded, `E_2` collapse | 🟢 derived | — |
-| 8. Jet order | jet-prefix → `q→1` limit | 🟡 partial (Lean `sorry=4`) | proof-watcher: `SkewSYT` jet sorries |
+| 8. Jet order | jet-prefix → `q→1` limit | 🟡 partial (Lean: **0 sorries** — `SkewSYT.lean` restructured to typeclass fields with `rfl` instances; verified 2026-07-02) | residual in `SkewSYT.lean`: **C2** `removeCorner_preserves_containment` is a **statement-level spec bug** (over-quantified `row` ⇒ default `PartitionHelpers` instance uninhabitable — fix + prove, ~½ day); **C1** `skewCorners_nonempty` provable (~2-4 h); q-Plancherel `ConvergenceBound` research-grade |
 | 9a. Mass identity `m_p` | **absolute**: muon-anchored Hecke energy `m_p = 2·(m_μ·F_Bor − 6·m_e)` via the [`canonical_mass.py`](../computations/canonical_mass.py) facade (owner ruling 2026-06-24; [guardrail](canonical-mass-formula-guardrail.md)); per-knot `VolDensity(K, q₀)` retained for **binding ratios** only | 🟢 absolute nucleon mass settled ($m_p \approx 938.27$ MeV, $m_n \approx 939.56$ MeV — CODATA). 🟡 per-knot density wire-up still open on the **binding side**: 64 of 65 atom-touching scripts use uniform `vol_density_borromean(q)` ([`vol-usage-audit`](audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md)). The old +2.89–3.86% "absolute-mass gap" was the **λ_A fit artifact** ([refutation audit](audits/2026-06-24-lambda-a-refutation-artifact-audit.md)) | per-knot density wire-up (binding side; same object as the 9b ρ/Δ_λ leg per the [flip decision](audits/2026-06-13-step9a-flip-decision-package.md)); #1698 (m_avg combiner), `vol_density_per_block_wiring.py` testbed |
 | 9b. Per-isotope binding `B(K)` | **canonical default**: depth-stratified `Σ_k α_k Φ_k(K)` via `binding_depth_stratified_rust.py` — α_k structural (Markov z² at k=2, m_e·8G at k≥4); per-depth ASSIGNMENT empirical. **Trace-canonical baseline** (2026-06-09 reconciliation): `binding_canonical.py` = `E_0·(tr_M(W_free)−tr_M(W_atom))` on the Jones–Markov trace (`markov/markov_trace_canonical`, per `prop:categorical-mass-markov`); other session objects (abs-sum, bar product, matrix-M signed tr_M) are off-convention ([convention-split audit](audits/2026-06-09-binding-trace-convention-split.md), PR #2082) | 🟡 canonical-with-empirical-assignment ([audit](audits/2026-06-09-binding-canonical-default-depth-stratified.md)); D/T/³He undershoots 67-73%, ⁴He -50% (Rust ≡ LR post-regen 2026-06-09); flat magic-A `2·m_e·4·8G` BEATS tower on ⁴He (+5.87%). **Trace-canonical residual is structured**: `Δ_λ(K)=B_AME/B_pred ≈ q₀^(10A−5)` — D exact to 0.01 q₀-units, T −0.07, ⁴He +0.27; ³He −1.40 (Z-dep) — near-match tier, NOT wired ([residual audit](audits/2026-06-09-delta-lambda-canonical-residual.md)). **`10A−5` RESOLVED 2026-06-29**: refuted-as-global at A≥5 (⁶Li measures 36.1 vs predicted 55 — B_pred saturates while B_AME grows) yet derived-as-bookkeeping `10A−5 = 5·(2A−1)` over chain units (A nucleons + A−1 bonds), Lean sorry-free (`QOU/Mass/BindingResidualExponent.lean`, `QOU/BraidKnot/DeltaLambdaExponentKeystone.lean`; [synthesis](audits/2026-06-29-delta-lambda-residual-synthesis.md)); the per-site "5" is a B_pred-linearization artifact (collapses to ≈0–1 vs the exact Kashaev B_sym). Surviving open legs: bar-odd Z-correction coefficient κ = b/4 ≈ −0.437 (b(A) constant −1.747 ± 0.03 across A=6–12) and the IMME same-T `c ≈ −0.1` constancy / `Δ³=0` prediction checks. **Derived-α_k probe negative (2026-07-02)**: swapping the tower's empirical α_1=α_3=1 for the framework-derived H_3 values (α_1=0, α_3=h·z²+z per `prop:alpha-k-derivation-procedure`) degrades all 4 atoms (max/min 1.82→3.29; `probes/binding_depth_stratified_derived_alpha_probe.py`) — scope (a), consistent with the no-A-slot diagnosis that no additive assignment closes. **2026-07-02 probe sweep (PR #3200, 4 probes, all (a)-scoped):** Laurent-degree route to `10A−5` refuted (trace side *shrinks* with A) + observation `h(q₀) = q₀^(−15.0002)` ⇒ `Δ_λ(D) ≈ 1/h`; per-λ **collapse-last re-decomposition reproduces the scalar tower to ≤6.6e-7** ⇒ the frontier per-λ weight must carry NEW per-block content — consistent with the FR-projector candidate; raw per-block tower EXCLUDED by the proved Li₂^q radius; `z^k` break at k=3 DERIVED exact (`χ^{(2,1)}(Δ)=0`). Details §9.3/§9.5.1 + [probes audit 1](audits/2026-07-02-9b-probes-laurent-degree-manybody.md), [audit 2](audits/2026-07-02-9b-probes-alphak-perlambda-tower.md) | **per-λ weight on the Borromean single pipeline** — the Δ_λ frontier; structural candidate: FR-restricted projector `χ^λ·χ^λ(e_{K*})` per [brane-tower plan §7](audits/2026-06-28-brane-tower-formalize-first-plan.md); plus κ from the canonical-trace writhe, the IMME `Δ³=0` check, and bean `ovud` (wire the Li₂^q tower into production F_Bor) |
 | 10. Confinement SDP | canonical `T_w` | 🟢 derived | LP/SDP duals infra (`lp_dual_solver.py`) |
 | 11. β-decay `Q_β` | `\|Δ(net)\|·𝔈₀` | 🟢 derived; `c_k` truncation | `ck-dk-canonical-registry.md` (rung tiers) + `1ppq-qbeta.md` ledger |
 
 **The frontier is step 9** (everything else is settled or proof-cleanup).
-**Absolute nucleon mass is SETTLED (owner ruling 2026-06-24):** the canonical
-form is the muon-anchored Hecke energy routed through
-[`canonical_mass.py`](../computations/canonical_mass.py) ($m_p \approx 938.27$ MeV, CODATA;
-[guardrail](canonical-mass-formula-guardrail.md)); the vol-density
+**Absolute nucleon mass is SETTLED (owner ruling 2026-06-24)** via the
+muon-anchored [`canonical_mass.py`](../computations/canonical_mass.py) facade
+($m_p \approx 938.27$ MeV, CODATA;
+[guardrail](canonical-mass-formula-guardrail.md)); the old vol-density
 absolute-mass gap (+2.89–3.86%) was the λ_A fit artifact
 ([audit](audits/2026-06-24-lambda-a-refutation-artifact-audit.md)). Two gaps
-remain: **9a** = per-knot `VolDensity(K, q₀)` wire-up, now a **binding-side
-density** item (vol-density is deprecated for absolute mass; valid where the
-scale cancels) — production uses uniform `Vol(𝓑₃)` for all atoms per
-[`vol-usage-audit`](audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md);
-**9b** = the **Δ_λ**
-per-block density (the Track-A blocker). See §9 for the mass=density×volume
-framing that unifies them. **9b status sharpened (2026-06-09):** on the
-trace-canonical path the whole gap collapses to a near-integer q₀-power,
-`Δ_λ(K) ≈ q₀^(10A−5)` (D exact to 0.01) — the open item is now
-**derive-or-refute `10A−5`** from the canonical chain's crossing/jet
-bookkeeping, not a search over closure ansätze
-([residual audit](audits/2026-06-09-delta-lambda-canonical-residual.md)).
-**9a flip decision settled (owner, 2026-06-13):** production stays on the
-uniform shortcut until the per-A normalisation `R(K)` — the same object as
-the 9b ρ/Δ_λ leg — is derived; the flip is a *derivation milestone*, not a
-wiring choice, and flip+re-pin is **refuted** (`R(K)` runs 2.3→63× with A;
-[decision package](audits/2026-06-13-step9a-flip-decision-package.md)).
-Do not re-litigate per-knot production flips against this gate.
+remain, both **binding-side**: **9a** = per-knot `VolDensity(K, q₀)` wire-up
+(valid where the scale cancels; 64 of 65 atom-touching scripts still uniform
+per [`vol-usage-audit`](audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md));
+**9b** = the **Δ_λ** per-block density (the Track-A blocker).
+
+> **📌 Single narrative source for the step-9 frontier: §9.** Full detail —
+> the 9b `q₀^(10A−5)` residual (derive-or-refute), the 2026-06-13 9a flip
+> gate (`R(K)` 2.3→63×; do not re-litigate), the intensive-vs-extensive
+> reframing, and the many-body series — lives in **§9 only**. Update §9 and
+> keep this paragraph + §5 item 1 as pointers. (Restructure 2026-07-02,
+> PR #3200: three drifting copies of this narrative caused the staleness
+> that PR fixed.)
 
 > **Brane-tower convergence law + Borromean single pipeline (2026-06-28, PR
 > #3016 / bean `km42`).** The per-braid brane tower (`prop:per-braid-mass-tower`,
@@ -310,7 +304,15 @@ item). An earlier header here claimed "ALL 5 ITEMS CLOSED" — stale.
 
 The forward work has shifted from §5 mechanics to scientific closure:
 
-1. **Per-knot `VolDensity(K, q₀)` wire-up (canonical formula `m(K) = m_e · VolDensity(K, q₀)`, knot-dependent — NOT a single-knot refinement)**. **2026-06-03 reconciliation**: the prior framing "`VolDensity(𝓑₃, q₀)` refinement" collapsed the canonical knot-dependent formula to its single-knot Borromean instance, mirroring the production-compute bug. Reality (per [`vol-usage-audit 2026-06-02`](audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md)): 87 of 89 production scripts use `vol_density_borromean(q)` (uniform `Vol(𝓑₃)`) for ALL atoms; only 2 use per-knot `vol_density_per_block(vol_K, tr_M_K, q)`. 64 atom-touching scripts have the uniform-Vol bug. Error budget mirrors it: +2.89% at p,n grows to +3.73% at ¹²C — this is **the same per-knot wire-up gap, not a single research refinement target**. The PROVED categorical at the **proton** is `VolDensity(𝓑₃, q₀) = (Vol(𝓑₃)/ℏ_q²) · λ_A` (Family-A linking_weight 2.532780, gives 965 MeV); analogous per-knot evaluations for atoms A ≥ 2 use `atom_braid_word_3A(Z, N)` and need their own `Vol(K)` + `tr_M(K)` inputs. Research-grade refinement routes (Yekutieli per-cell curvature, Bring color-tube weighted averaging, Reading-A geometrised form, q-dilog tower) sit ABOVE the per-knot wire-up — refining the proton's `VolDensity(𝓑₃)` while the rest of the table still uses `vol_density_borromean(q)` uniformly is a category error. Any refinement must round-trip the muon (4₁) anchor exactly; the production code uses Family A as the current best PROVED categorical input for the **proton specifically**.
+1. **Per-knot `VolDensity(K, q₀)` wire-up — binding-side only (post
+   2026-06-24 ruling; see the 🛑 note above).** 64 of 65 atom-touching
+   scripts still use uniform `vol_density_borromean(q)`
+   ([`vol-usage-audit`](audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md));
+   consumer-lane migration is running on PR #3199 (bean `4f2d`).
+   **Single narrative source: §9** (frontier detail, flip gate,
+   many-body series) — the long per-knot narrative that lived here
+   drifted against §0/§9 and was consolidated 2026-07-02 (PR #3200);
+   pre-ruling history is preserved in the item-1 row of the table above.
 2. **Q_β refinement (research-grade, open).** **2026-06-03 reconciliation**: the prior bullet "the 2026-05-24 dashboard shows it now passes 100×" + "c_3 = -2 = J_Hopf(q=1) categorical-closure-friendly" is **STALE**. Live state per `per-observable-100x-status.witness.json` (2026-06-03): Q_β err = 1279 ppb, **miss = 164×**, `beats_100x = False`. The 2026-05-28 q₀ re-pin (per `docs/audits/2026-05-30-q0-repin-stale-witness-audit.md`) reverted the temporary 2026-05-24 pass. The `c_3 = -2 = J_Hopf(q=1)` framing is itself **flip-flop entry #4** in [`docs/coordination/1ppq-qbeta.md`](coordination/1ppq-qbeta.md) — settled as NEAR-MATCH not Taylor-exact (PR #1593 order audit: the per-block Δtr_M is O(√u) ε¹, ladder c_3 is at u³ ε⁶ — accidental 5-ε-order coincidence). Current keystone: **Q_β Habiro element identification** (the scaling map `f: Δtr_M(√u) ↦ Q_β(c_3 at u³)`). **Currency update (2026-06-10):** per-rung tiers live in [`coordination/ck-dk-canonical-registry.md`](coordination/ck-dk-canonical-registry.md); eliminated methods in the [refuted-class map](audits/2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md) (C1–C12 + 1309-candidate real-q saturation + 4 KLR composite preflights refuted at u², PRs #1914/#1924); the extraction precision floor `σ(c_k) = σ_R/u^k` (PR #1844) proves only c_2, c_3 are data-determined ⇒ c_k≥4 is framework-derivation-only. Open axis: fibre-level kernel `R(q,ξ)`/`Φ₂` (constraints: bar-odd `a_1 = √2·Φ₂`, depth ≥ 3 or non-constant, ζ₄ residue, simple pole at u_substrate). Full state of play: [2026-06-10 synthesis](audits/2026-06-10-qbeta-ck-state-of-play-synthesis.md). **Currency update (2026-07-02, per the [`1ppq-qbeta.md`](coordination/1ppq-qbeta.md) ledger tail):** discrete braid-tower probes are exhausted (single-content mode residual 480/606/186/240 %, PR #2502); the live lead is the **continuous E_q(2) contraction** (Hahn–Exton q-Bessel). The content/twist eigenbasis reframing ([2026-06-19 audit](audits/2026-06-19-content-twist-eigenbasis-reframing.md)) makes three verified facts promotable to exact-symbolic lemmas (L1 order-parity = word-length parity; L2 `χ_λ(1/q) = (−1)^L·χ_{λ'}(q)`; L3 the framing 3-pole GF) — Lean follow-up queued; does NOT close the Δ_λ gate.
 3. **Phase-1b BlochWigner Lake-wiring** (PR #956's roadmap) — Lake-wire `QOU.Archimedean.BlochWigner_unit_circle` into the module tree, then strengthen `BringZeroModeBlochClass` field from `∃ z : ℝ, z = bringZeroModeValue` to `∃ θ : ℝ, BlochWigner_unit_circle θ = bringZeroModeValue`. Closes the literal-rfl loophole. Auxiliary to the `VolDensity` refinement.
 4. **L2 100× Subgoal-1 close-out**. **2026-06-03 reconciliation**: live witness shows **3 of 7** observables pass 100× (m_p, m_e, m_K/m_π — the prior "3 of 6" predates the m_K/m_π closure landing). The remaining gaps are **(m_μ, Q_β, m_n, Δ_pn)** — the prior "(m_p, m_n, Δ_pn)" listing is wrong: m_p PASSES (substrate anchor; 0.0004 ppb), and m_μ is a separate gap (209.8 ppb, 963.6× miss — independent μ–p floor, see `docs/audits/2026-06-02-m-mu-pr1556-superseded-by-witness.md`). The (Q_β, m_n, Δ_pn) trio shares a single root cause documented in `docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`.
@@ -335,8 +337,8 @@ The forward work has shifted from §5 mechanics to scientific closure:
      | `v_framework / v_SM = log(6)` | `log(6) = 1.7918` vs measured `443/246 = 1.8008` | **−0.50%** | 6 = `gsNFBasisCardinalityB3` = `|S_3|` = `dim_ℂ H_3(q)` (PROVED) — order of the 6 GS-NF knot operators (γ, σ_0, σ_1, L_+, L_-, e^-); Chern-Simons-style `log |G|` |
      | `scalar_mass_factor / gauge_mass_factor = 6/5` | `6/5 = 1.200` vs measured 1.196 | **+0.35%** | 6 = `|S_3|` (knot-operator basis); 5 = `partitionsOfFour` = Wedderburn-block count at H_4 ((4), (3,1), (2,2), (2,1,1), (1,1,1,1)) — both PROVED |
 
-     Each hypothesis is encoded in `SubstrateEWHypotheses.lean` as a `class`-conditional `theorem` with a `sorry` marker for the empirical-match step; the structural anchors (`gsNFBasisCardinalityB3 := 6`, `partitionsOfFour := 5`) are PROVED unconditionally. **Epistemic discipline (per `production-vs-exploratory-discipline`):** these are *structurally suggestive empirical matches*, not theorems. The conversion to rigorous identities requires: (a) connection 1-form integration over the substrate loop to derive `π · h_0`, (b) knot-operator partition-function evaluation to derive `log |S_3|`, (c) cross-Wedderburn-block normalization ratio to derive `|S_3| / |Part(4)|`. Research-grade, 1-2 weeks each.
-   * Open: prove the 3 structural→empirical hypotheses above (close the `sorry` markers in `SubstrateEWHypotheses.lean`) to upgrade them from "match within < 1%" to "categorical theorem".
+     **(Currency 2026-07-02 — the Lean side is already in the honest §3b shape, 0 sorries.)** The three hypotheses live in `SubstrateEWHypotheses.lean` as a **content-bearing conjecture class `SubstrateEWDerivations`** (fields `claim_g_eq_pi_h`, `claim_v_ratio`, `claim_scalar_gauge`; `-- Ref:` cited; **no instance provided** — the open state), with honest conditional `def` accessors projecting the fields; the structural anchors (`gsNFBasisCardinalityB3 := 6`, `partitionsOfFour := 5`) are PROVED unconditionally by `rfl`/`norm_num`. Earlier text here describing "class-conditional `theorem`s with `sorry` markers" is obsolete. **Epistemic discipline (per `production-vs-exploratory-discipline`):** these are *structurally suggestive empirical matches*, not theorems. The conversion to rigorous identities requires: (a) connection 1-form integration over the substrate loop to derive `π · h_0`, (b) knot-operator partition-function evaluation to derive `log |S_3|`, (c) cross-Wedderburn-block normalization ratio to derive `|S_3| / |Part(4)|`. Research-grade, 1-2 weeks each.
+   * Open: **derive** the 3 structural→empirical hypotheses above — i.e. supply the `SubstrateEWDerivations` instance via (a) connection 1-form integration (`g = π·h₀`), (b) knot-operator partition function (`log|S_3|`), (c) cross-block normalization (`6/5`) — upgrading them from "match within < 1%" to "categorical theorem". Research-grade, 1–2 weeks each; there are **no sorries to close** (the class deliberately has no instance).
 
 ### Adjacent open work (not in §5 but cited by the cluster)
 
@@ -496,6 +498,23 @@ shape, with the volume entering as `exp`-linearized angle, not raw `Vol`.
 | Mirror-pair **differences** (³H/³He, A=3) | 🟡 **partial — signed structure real, magnitude not derived.** The bar-symmetric `(χ^λ + χ^{λᵀ})/2` isospin-mirror combination IS the signed per-block object the volume side proved necessary (#1709 T/³He obstruction), but its best *structural* result is ≈ 2.52 %. The widely-cited **0.11 % is a fitted `(1+q)/2` (CAL-4) near-match**, and is **stale** (canonical q₀ → +0.12 %). Not a derived closure. ([discipline assessment](audits/2026-05-31-isospin-mirror-v9-discipline-assessment.md)) |
 | Deuteron **absolute** binding | 🟢 derived twice: `m_e·Vol(𝓑₃)·Δtr` (+0.19 %) and `μ₀·ℏ_q·J_q²(j=1)` (−9 %), `μ₀` derived |
 | **A≥3 absolute** binding | 🔴 **the open gate** — the per-rep highest-weight `j=n/2` collapse of `θ_λ` saturates; needs the full per-rep `θ_λ` magnitude (not the linear truncation) |
+
+**Trace-canonical residual (2026-06-09).** On the trace-canonical path the
+whole 9b gap collapses to a near-integer q₀-power, `Δ_λ(K) ≈ q₀^(10A−5)`
+(D exact to 0.01 q₀-units, T −0.07, ⁴He +0.27; ³He −1.40, Z-dependent) —
+the open item is **derive-or-refute `10A−5`** from the canonical chain's
+crossing/jet bookkeeping, not a search over closure ansätze. Near-match
+tier, NOT wired
+([residual audit](audits/2026-06-09-delta-lambda-canonical-residual.md)).
+
+**9a flip gate (owner ruling, 2026-06-13).** Production stays on the
+uniform shortcut until the per-A normalisation `R(K)` — the same object as
+the 9b ρ/Δ_λ leg — is derived; the flip is a *derivation milestone*, not a
+wiring choice, and flip+re-pin is **refuted** (`R(K)` runs 2.3→63× with A;
+[decision package](audits/2026-06-13-step9a-flip-decision-package.md)).
+Do not re-litigate per-knot production flips against this gate. (Post
+2026-06-24 this gate governs the **binding-side** wire-up; absolute mass
+routes through `canonical_mass.py` regardless.)
 
 **The narrowed compute item (REFRAMED 2026-06-02 — intensive vs extensive).**
 A zero-fit derivation ([`2026-06-02-binding-intensive-vs-extensive-derivation.md`](audits/2026-06-02-binding-intensive-vs-extensive-derivation.md))
