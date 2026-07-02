@@ -1,0 +1,9 @@
+---
+# drjk
+title: '9b probe 1: Laurent-degree bookkeeping for q0^(10A-5) = 5(2A-1) factorization hypothesis (derive-or-refute)'
+status: todo
+type: task
+created_at: 2026-07-02T12:25:39Z
+updated_at: 2026-07-02T12:25:39Z
+---
+
