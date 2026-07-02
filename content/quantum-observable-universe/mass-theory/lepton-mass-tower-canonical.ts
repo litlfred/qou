@@ -17,6 +17,21 @@ export default conjecture({
   authorNotes: [
     {
       kind: "status",
+      date: "2026-06-30",
+      body:
+        "**Muon knot-ID resolved (owner-ruled): muon = T(2,5), $4_1$ = Higgs — NOT the muon.** " +
+        "Per [`docs/audits/2026-06-30-muon-knot-id-phi-q-evidence.md`](../../../docs/audits/2026-06-30-muon-knot-id-phi-q-evidence.md) " +
+        "(supersedes [`2026-05-24-muon-knot-id-conflict.md`](../../../docs/audits/2026-05-24-muon-knot-id-conflict.md)): " +
+        "torus-knot leptons have Vol_q = 0, so a charged lepton has no intrinsic volume-mass; " +
+        "the mass scale ~10² lives in the Higgs ($4_1$) coupling Vol(4_1)/ℏ_q². The open question " +
+        "is reframed from 'find ξ_ℓ for the lepton's own tower' to 'derive the Higgs (4_1) coupling " +
+        "and its generation modulation (T(2,3)/T(2,5)/T(2,7), framing q^n) so m_τ ≠ m_μ'. " +
+        "The 2026-05-24 notes below predate this ruling — read their muon = figure-eight " +
+        "identification as SUPERSEDED; the Phase 4–5 own-tower material is retained as a " +
+        "scope-limited negative (see the .md resolution banner).",
+    },
+    {
+      kind: "status",
       date: "2026-05-24",
       body:
         "**Open conjecture (PR #1127 Phase 3 finding).** Set up the formal framework " +
@@ -57,8 +72,9 @@ export default conjecture({
         "where `ξ_ℓ(q)` is a lepton-sector dimensional factor (replacing the SUPERSEDED " +
         "`1/ℏ_q²`) and `Vol_q^tower(K_ℓ)` is the per-braid q-volume of the lepton's " +
         "braid representative (electron = trefoil $\\sigma_1^3$; muon = figure-eight " +
-        "$(\\sigma_1 \\sigma_2^{-1})^2$ per canonical identification, see " +
-        "[`docs/audits/2026-05-24-muon-knot-id-conflict.md`](../../../docs/audits/2026-05-24-muon-knot-id-conflict.md)). " +
+        "$(\\sigma_1 \\sigma_2^{-1})^2$ per the then-canonical identification of " +
+        "[`docs/audits/2026-05-24-muon-knot-id-conflict.md`](../../../docs/audits/2026-05-24-muon-knot-id-conflict.md) — " +
+        "**SUPERSEDED 2026-06-30: muon = T(2,5), $4_1$ = Higgs**; see the status note above). " +
         "The Kashaev `q → 1` limit should recover `Vol_q^tower(K_ℓ) → Vol_hyp(K_ℓ)`, " +
         "giving the Skein formula as the LO substrate-truncation. The OPEN question " +
         "is the explicit form of `ξ_ℓ(q)`.",
