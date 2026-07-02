@@ -48,7 +48,7 @@ uses appear only inside comparison testbeds or the already-migrated
 | `mass_vol_density.py` | INFRA | re-exports `density_borromean` / `density_global` (+ DeprecationWarning) | self-check | |
 | `mass_per_knot_density.py` | INFRA | per-knot mirror module wrappers | self-check | |
 | `build_proton_mass_50dps_chain.py` | **ABS-MASS-MIGRATE** | `vol_density_borromean` → `M_P_PRED_BORROMEAN_MEV` | yes (`proton-mass-codata-50dps`, `option-b-proton-mass-full-chain`, `mass-formula-6term-mpfr-50dps`) | prediction routes through facade; λ_A value kept as audit column |
-| `m_p_borromean_verification_50dps.py` | **ABS-MASS-MIGRATE** | `vol_density_borromean` → `m_avg_pred`, `tower_multiplier` | yes (`m-p-borromean-verification-50dps`, `borromean-volume-propagation-to-m-p`) | headline "verification" witness carries the 966-path value as the framework prediction |
+| `m_p_borromean_verification_50dps.py` | **ABS-MASS-MIGRATE** (refined → audit-reframe, see migration log) | `vol_density_borromean` → `m_avg_pred`, `tower_multiplier` | yes (`m-p-borromean-verification-50dps`) | numbers were honest; the stale "canonical" framing was the defect — reframed as audit of the excised path |
 | `meson_vol_density.py` | **ABS-MASS-MIGRATE** | **inline** `λ_A = 5/2 + 3h²/4` → `baryon_geom.m_p_pred`, `geom_ratio` | yes (`meson-vol-density`) | inline reimplementation dodges the DeprecationWarning and function-name greps |
 | `meson_per_knot_density.py` | **ABS-MASS-MIGRATE** | **inline** λ_A → `m_p_pred` baryon reference | yes (`meson-per-knot-density`) | twin of above |
 | `audits/noncanonical_reentry_audit.py` | AUDIT-KEEP | ban-registry strings only | yes | ⚠ its `canonical_replacement` strings recommend the now-excised λ_A path — stale advice, fixed on this branch |
@@ -91,7 +91,19 @@ uses appear only inside comparison testbeds or the already-migrated
 | `probes/casimir_hoefsmit_additivity_probe.py` | DOC-ONLY | docstring cite; literal `linking_weight = 1` | yes | |
 | `substrate/z2bn_prolongation_qdifference_constraint.py` | DOC-ONLY | docstring status-note cite | yes (non-λ_A) | |
 
-## Migration log
+## Migration log (2026-07-02, all verified against the oracle
+`canonical_mass.proton_mass_mev() = 938.2721` / `neutron_mass_mev() = 939.5654`)
 
-*(one entry per migrated file: old call → new call, verified value vs oracle
-`canonical_mass.proton_mass_mev() ≈ 938.272 MeV` / `neutron_mass_mev() ≈ 939.565 MeV`)*
+| File | Change | Verified |
+|---|---|---|
+| `meson_vol_density.py` | inline `λ_A = 5/2 + 3h²/4` baryon reference → `canonical_mass.proton_mass_mev()`; witness key `baryon_geom.vol_density` → `m_p_over_m_e` + `route`; assertion 30,000 ppm → 1 ppm | m_p 938.2721 (4×10⁻⁷ ppm); m_p/m_π now matches PDG exactly |
+| `meson_per_knot_density.py` | same migration (twin) | same |
+| `build_proton_mass_50dps_chain.py` | headline `M_P_PRED_MEV` was `vol_density_borromean·m_e` (966.05, +2.96%, committed witness `allPassed:False`) → reads the production substrate-identity witness as 50-dps string→mpf (same source `canonical_mass` reads — a partial re-inline missed the Habiro ladder and landed 240 ppb off; witness-read avoids constant duplication). λ_A paths kept as explicit audit columns. Also fixed pre-existing assertion bug (`expected="< 10"` not float-parsable → could never pass) | 938.2720881603788 (0.0004 ppb, recorded as calibration-consistency cross-check per §q₀ anchor convention); witness `allPassed:True` |
+| `m_p_borromean_verification_50dps.py` | **lane refined ABS-MASS-MIGRATE → audit-reframe**: numbers were already honest (~2.9% documented, 5% ceilings), but framing still called λ_A "canonical / what the framework actually uses". Now `derivation_status: EXCISED_FIT_AUDIT_LAMBDA_A_2026_06_24`, `production_mass_route` parameter, `canonical_mass_reference` comparison column, excision caveat; verification content unchanged | witness `allPassed:True`; canonical ref column 938.2721/939.5654 |
+| `audits/noncanonical_reentry_audit.py` | flag (a): stale `canonical_replacement` strings recommending the excised path → split advice (canonical_mass for absolute mass / vol_density_per_block for ratios). Also fixed a pre-existing `SyntaxError` in `per_atom_hyperbolic_volume_witness.py` (escaped-quote docstring) that the audit was skipping as its 1 parse error | reentry audit: 0 violations, both assertions pass |
+
+**DeprecationWarning suppression convention:** the two files that
+intentionally retain λ_A calls as audit columns
+(`build_proton_mass_50dps_chain.py`, `m_p_borromean_verification_50dps.py`)
+suppress the warning locally with a comment stating the documented audit
+use — the warning stays live for undocumented consumers.
