@@ -3,6 +3,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.Field.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.LinearCombination
 
 /-!
 # QOU.MassEndomorphism.ComplexVolumeUnification
@@ -153,5 +154,296 @@ theorem measured_complex_volume {K : Type*} [c : ComplexVolumeMatch K] :
       = fibreDefect c.E0 c.trDefect := by
   rw [ComplexVolumeMatch.binding_match, ComplexVolumeMatch.qbeta_match]
   exact complex_volume_unification _ _
+
+/-! ## Channel three-term recurrences over categorical `R` (§7c — fibre level, pre-τ)
+
+The even (compact / binding / continuous q-Hermite) and odd (non-compact /
+`𝔔_β` / Askey `q > 1` a.k.a. Ismail–Masson `q⁻¹`-Hermite) channel recurrences,
+stated over a generic `[CommRing R]` — **not** `ℝ` or `ℂ`.  The "complex
+rotation" between the two channels is a *formal* rotation element `ι` with
+`ι * ι = -1` living in the fibre ring; `Complex.I` is only one archimedean
+instance, reached downstream of the archimedean functor τ.  Nothing in this
+section uses an ordering, `cosh`, a metric, or a real/complex embedding.
+
+Division-free conventions: the bar involution is carried by the hypothesis
+`σ q * q = 1` (never `q⁻¹`), and the odd recurrence is multiplied through by
+`q ^ (n+1)`.
+
+Ref: [askey1989qhermite] R. Askey, *Continuous q-Hermite polynomials when
+q > 1* (q-Series and Partitions, IMA Vol. 18, 1989) — the `q > 1` channel.
+Ref: [ismail-masson1994] DOI 10.1090/S0002-9947-1994-1264148-6 — the
+`q⁻¹`-Hermite rotation identity `h_n(x|q) = i^{-n} H_n(ix|q^{-1})`. -/
+section ChannelRecurrences
+variable {R : Type*} [CommRing R]
+
+/-- Even-channel (compact / binding / continuous q-Hermite) three-term step:
+    `H_{n+2} = 2x·H_{n+1} − (1 − q^{n+1})·H_n`. -/
+def evenStep (q x : R) (n : ℕ) (H0 H1 H2 : R) : Prop :=
+  H2 = 2 * x * H1 - (1 - q ^ (n + 1)) * H0
+
+/-- Odd-channel (non-compact / `𝔔_β` / `q⁻¹`-Hermite) three-term step,
+    division-free (multiplied through by `q^{n+1}`):
+    `h_{n+2} = 2x·h_{n+1} + (1 − q^{-(n+1)})·h_n`. -/
+def oddStep (q x : R) (n : ℕ) (h0 h1 h2 : R) : Prop :=
+  q ^ (n + 1) * h2 = 2 * x * (q ^ (n + 1) * h1) + (q ^ (n + 1) - 1) * h0
+
+/-- The bar involution transports an even step to an even step at the
+    conjugated data (`σ` a ring hom: coefficients map through). -/
+theorem evenStep_map (σ : R →+* R) {q x : R} {n : ℕ} {H0 H1 H2 : R}
+    (h : evenStep q x n H0 H1 H2) :
+    evenStep (σ q) (σ x) n (σ H0) (σ H1) (σ H2) := by
+  unfold evenStep at h ⊢
+  have := congrArg σ h
+  simpa [map_sub, map_mul, map_add, map_pow, map_one, map_ofNat] using this
+
+/-- **The channel rotation, categorical (the `x ↦ ιx`, `q ↦ q̄` rotation).**
+    A sequence `h` satisfies the odd-channel (non-compact, `𝔔_β`) step at
+    `(q, x)` **iff** its `ι`-rotation `n ↦ ι^n·h_n` satisfies the
+    even-channel (compact, binding) step at the bar-conjugated data
+    `(σq, ιx)` — where `ι` is a formal square root of `−1` in the fibre
+    ring and `σ q * q = 1` is the division-free bar involution.
+
+    This is the generic form of Askey (1989) / Ismail–Masson
+    `h_n(x|q) = i^{-n}·H_n(ix|q^{-1})`: **same eigenfunctions, rotated**;
+    the two channels of `𝔙` are one recurrence read through the rotation.
+    No `ℂ`: the archimedean instance `ι = Complex.I` is downstream of τ. -/
+theorem rotation_step (σ : R →+* R) {ι q x h0 h1 h2 : R}
+    (hι : ι * ι = -1) (hq : σ q * q = 1) (n : ℕ) :
+    evenStep (σ q) (ι * x) n (ι ^ n * h0) (ι ^ (n + 1) * h1) (ι ^ (n + 2) * h2)
+      ↔ oddStep q x n h0 h1 h2 := by
+  unfold evenStep oddStep
+  have hιu : IsUnit (ι ^ n) :=
+    (isUnit_of_mul_eq_one ι (-ι) (by rw [mul_neg, hι, neg_neg])).pow n
+  have hqu : IsUnit (q ^ (n + 1)) :=
+    (isUnit_of_mul_eq_one q (σ q) (by rw [mul_comm]; exact hq)).pow (n + 1)
+  have hqn : (σ q) ^ (n + 1) * q ^ (n + 1) = 1 := by
+    rw [← mul_pow, hq, one_pow]
+  constructor
+  · intro h
+    -- cancel the unit ι^n to un-rotate, then multiply through by q^(n+1)
+    have hh : ι ^ n * h2
+        = ι ^ n * (2 * x * h1 + (1 - (σ q) ^ (n + 1)) * h0) := by
+      linear_combination (-1 : R) * h + (ι ^ n * (h2 - 2 * x * h1)) * hι
+    have hD := hιu.mul_left_cancel hh
+    linear_combination (q ^ (n + 1)) * hD - h0 * hqn
+  · intro h
+    -- cancel the unit q^(n+1), then rotate by ι^n
+    have hh : q ^ (n + 1) * h2
+        = q ^ (n + 1) * (2 * x * h1 + (1 - (σ q) ^ (n + 1)) * h0) := by
+      linear_combination h + h0 * hqn
+    have hE := hqu.mul_left_cancel hh
+    linear_combination (-(ι ^ n)) * hE + (ι ^ n * (h2 - 2 * x * h1)) * hι
+
+end ChannelRecurrences
+
+/-! ## Leonard pair / overlap coefficients — the rotation matrix, categorical
+
+Zhedanov's AW(3) picture, in its generically provable form: for a
+tridiagonal ("channel-basis") operator, **any eigencolumn is the
+orthogonal-polynomial column evaluated at its eigenvalue** — i.e. the
+change-of-basis ("rotation") matrix between the channel basis and the
+spectral basis has entries `p_n(θ_m)`, the three-term-recurrence
+polynomials (Askey–Wilson at the top of the q-scheme).  This is
+`eigencolumn_eq_overlap`, sorry-free over any `CommRing`.
+
+What is *not* provable generically — that the QOU channel pair carries a
+second (dual) operator making the overlap matrix self-dual
+(`p_n(θ_m) = p*_m(θ*_n)`, a Leonard/tridiagonal pair, forcing AW/q-Racah
+type by Terwilliger's classification) — is carried honestly as the
+conjecture class `ChannelLeonardDuality` (§3b).
+
+Ref: [zhedanov1991] DOI 10.1007/BF01015906 — "Hidden symmetry of
+Askey–Wilson polynomials" (AW(3)).
+Ref: [terwilliger2001] DOI 10.1016/S0024-3795(01)00242-7 — Leonard-pair
+classification. -/
+section LeonardOverlap
+variable {R : Type*} [CommRing R]
+
+/-- The overlap ("rotation-matrix") column: the orthogonal-polynomial
+    sequence of the tridiagonal data `(a, b, c)` evaluated at the spectral
+    value `θ`.  Super-diagonal entries `a` are units so the recursion is
+    division-free-normalisable. -/
+def overlapColumn (a : ℕ → Rˣ) (b c : ℕ → R) (θ : R) : ℕ → R
+  | 0 => 1
+  | 1 => ((a 0)⁻¹ : Rˣ) * (θ - b 0)
+  | n + 2 =>
+      ((a (n + 1))⁻¹ : Rˣ) *
+        ((θ - b (n + 1)) * overlapColumn a b c θ (n + 1)
+          - c (n + 1) * overlapColumn a b c θ n)
+
+/-- `v` is a `θ`-eigencolumn of the tridiagonal (channel-basis) operator
+    with sub/diag/super data `(c, b, a)`: the seed row plus the generic
+    three-term row. -/
+def IsEigencolumn (a : ℕ → Rˣ) (b c : ℕ → R) (θ : R) (v : ℕ → R) : Prop :=
+  ((a 0 : R) * v 1 + b 0 * v 0 = θ * v 0) ∧
+    ∀ n, (a (n + 1) : R) * v (n + 2) + b (n + 1) * v (n + 1)
+        + c (n + 1) * v n = θ * v (n + 1)
+
+/-- **Overlap coefficients are the orthogonal polynomials (rotation-matrix
+    theorem), sorry-free.**  Any `θ`-eigencolumn of the tridiagonal channel
+    operator is `v 0 · p_n(θ)`: the intertwiner between the channel basis
+    and the spectral basis is *forced* to have orthogonal-polynomial
+    entries.  This is the provable half of "the AW polynomials are the
+    rotation between the two channels". -/
+theorem eigencolumn_eq_overlap {a : ℕ → Rˣ} {b c : ℕ → R} {θ : R}
+    {v : ℕ → R} (hv : IsEigencolumn a b c θ v) :
+    ∀ n, v n = v 0 * overlapColumn a b c θ n := by
+  have key : ∀ n, v n = v 0 * overlapColumn a b c θ n
+      ∧ v (n + 1) = v 0 * overlapColumn a b c θ (n + 1) := by
+    intro n
+    induction n with
+    | zero =>
+      refine ⟨by simp [overlapColumn], ?_⟩
+      -- seed row: a₀·v₁ = (θ − b₀)·v₀
+      have h0 := hv.1
+      have : (a 0 : R) * v 1 = (a 0 : R) * (v 0 * overlapColumn a b c θ 1) := by
+        have : (a 0 : R) * (v 0 * overlapColumn a b c θ 1)
+            = v 0 * (θ - b 0) := by
+          show (a 0 : R) * (v 0 * (((a 0)⁻¹ : Rˣ) * (θ - b 0))) = v 0 * (θ - b 0)
+          rw [show (a 0 : R) * (v 0 * (((a 0)⁻¹ : Rˣ) * (θ - b 0)))
+              = ((a 0 : R) * ((a 0)⁻¹ : Rˣ)) * (v 0 * (θ - b 0)) by ring,
+            Units.mul_inv, one_mul]
+        rw [this]
+        linear_combination h0
+      exact (Units.mul_right_inj (a 0)).mp this
+    | succ k ih =>
+      refine ⟨ih.2, ?_⟩
+      -- generic row: a_{k+1}·v_{k+2} = (θ − b_{k+1})·v_{k+1} − c_{k+1}·v_k
+      have hrow := hv.2 k
+      have hval : (a (k + 1) : R) * v (k + 2)
+          = (a (k + 1) : R) * (v 0 * overlapColumn a b c θ (k + 2)) := by
+        have hrhs : (a (k + 1) : R) * (v 0 * overlapColumn a b c θ (k + 2))
+            = v 0 * ((θ - b (k + 1)) * overlapColumn a b c θ (k + 1)
+                - c (k + 1) * overlapColumn a b c θ k) := by
+          show (a (k + 1) : R) * (v 0 * (((a (k + 1))⁻¹ : Rˣ) *
+              ((θ - b (k + 1)) * overlapColumn a b c θ (k + 1)
+                - c (k + 1) * overlapColumn a b c θ k)))
+            = v 0 * ((θ - b (k + 1)) * overlapColumn a b c θ (k + 1)
+                - c (k + 1) * overlapColumn a b c θ k)
+          rw [show ∀ u : R, (a (k + 1) : R) * (v 0 * (((a (k + 1))⁻¹ : Rˣ) * u))
+              = ((a (k + 1) : R) * ((a (k + 1))⁻¹ : Rˣ)) * (v 0 * u) from
+            fun u => by ring, Units.mul_inv, one_mul]
+        rw [hrhs]
+        linear_combination hrow + (θ - b (k + 1)) * ih.2 - c (k + 1) * ih.1
+      exact (Units.mul_right_inj (a (k + 1))).mp hval
+  exact fun n => (key n).1
+
+/-- **Leonard-duality conjecture for the channel pair (§3b class;
+    conjecture — no instance is provided).**  The overlap matrix of the
+    channel tridiagonal data is *self-dual*: there exist dual tridiagonal
+    data and dual eigenvalues with `p_n(θ_m) = p*_m(θ*_n)` — the defining
+    property of a Leonard / tridiagonal pair.  By Terwilliger's
+    classification this forces the overlap coefficients into the
+    Askey–Wilson (q-Racah) family: *the two channels are a Leonard pair
+    and the AW polynomials are the rotation between them.*  Fields carry
+    the conjecture's inputs (the dual data and the quantified duality),
+    per §3b-tax content rules. -/
+class ChannelLeonardDuality (a : ℕ → Rˣ) (b c : ℕ → R) (θ : ℕ → R) where
+  /-- dual super-diagonal (units). -/
+  dualA : ℕ → Rˣ
+  /-- dual diagonal. -/
+  dualB : ℕ → R
+  /-- dual sub-diagonal. -/
+  dualC : ℕ → R
+  /-- dual eigenvalue sequence. -/
+  θstar : ℕ → R
+  /-- Leonard self-duality of the overlap matrix: `p_n(θ_m) = p*_m(θ*_n)`. -/
+  duality : ∀ n m,
+    overlapColumn a b c (θ m) n = overlapColumn dualA dualB dualC (θstar n) m
+
+/-- Derived (proved, conditional on the class): the **rows** of the overlap
+    matrix satisfy the dual three-term recurrence — the second
+    tridiagonalisation that makes the pair "Leonard".  One proof serves
+    both channels, per `recurrence_invol_descent`. -/
+theorem ChannelLeonardDuality.row_three_term
+    {a : ℕ → Rˣ} {b c : ℕ → R} {θ : ℕ → R}
+    [L : ChannelLeonardDuality a b c θ] (n m : ℕ) :
+    (L.dualA (m + 1) : R) * overlapColumn a b c (θ (m + 2)) n
+      = (L.θstar n - L.dualB (m + 1)) * overlapColumn a b c (θ (m + 1)) n
+        - L.dualC (m + 1) * overlapColumn a b c (θ m) n := by
+  rw [L.duality n (m + 2), L.duality n (m + 1), L.duality n m]
+  show (L.dualA (m + 1) : R) * (((L.dualA (m + 1))⁻¹ : Rˣ) *
+      ((L.θstar n - L.dualB (m + 1))
+          * overlapColumn L.dualA L.dualB L.dualC (L.θstar n) (m + 1)
+        - L.dualC (m + 1)
+          * overlapColumn L.dualA L.dualB L.dualC (L.θstar n) m)) = _
+  rw [← mul_assoc, Units.mul_inv, one_mul]
+
+end LeonardOverlap
+
+/-! ## AW deformation path — bound ↔ free, the character-variety reading
+
+The free projection `Π_free` (inter-constituent crossings dropped) is the
+**abelian** representation; the bound object is the full braiding (the
+discrete-faithful side).  Neumann–Zagier reads the complex volume as the
+integral of a holomorphic 1-form along the **path in the character variety
+from the abelian to the discrete-faithful representation** — so the
+"rotation interpolating bound and free" is the deformation path itself,
+and the σ-odd (`𝔔_β` / CS) channel is the *holonomy picked up along it*.
+
+Categorically (pre-τ, §7c): the path lives in the deformation parameter
+`t : R` of ONE Askey–Wilson tridiagonal family — `t = 0` the q-Hermite
+bottom of the scheme (all AW parameters off; its orthogonality measure is
+the q-Plancherel `W_λ`, the *free* side), `t = 1` the bound channel data.
+The class below carries exactly these inputs; the two-channel descent is
+then **derived** (not assumed) via `recurrence_invol_descent`, so the
+class is non-degenerate per §3b-cond rule 5.
+
+Ref: [neumann-zagier1985] https://doi.org/10.1016/0040-9383(85)90004-7 -/
+section AWDeformation
+variable {R : Type*} [CommRing R]
+
+/-- **AW deformation-path conjecture (§3b class; conjecture — no instance
+    is provided).**  One AW tridiagonal family `(a t, b t, c t)` joins the
+    free endpoint (`t = 0`, q-Hermite bottom: diagonal off) to the bound
+    endpoint (`t = 1`); a potential `Φ` on the path has the complex-volume
+    defect `𝔙` as its endpoint difference (the categorical Neumann–Zagier
+    path integral); and the `𝔙`-ladder satisfies ONE three-term recurrence
+    whose multiplier is **bar-even**.  All fields are inputs; the
+    two-channel (binding + `𝔔_β`) descent is derived below. -/
+class AWDeformationPath (σ : R →+* R) where
+  /-- deformation family: super-diagonal at parameter `t`. -/
+  a : R → ℕ → R
+  /-- deformation family: diagonal at parameter `t`. -/
+  b : R → ℕ → R
+  /-- deformation family: sub-diagonal at parameter `t`. -/
+  c : R → ℕ → R
+  /-- the free endpoint is the q-Hermite bottom of the scheme:
+      the diagonal term vanishes at `t = 0`. -/
+  free_qHermite_bottom : ∀ n, b 0 n = 0
+  /-- Neumann–Zagier-type potential on the deformation path. -/
+  potential : R → R
+  /-- the complex-volume defect `𝔙` (the fibre object of this block). -/
+  defect : R
+  /-- `𝔙` is the potential's endpoint difference: bound (`t=1`) − free
+      (`t=0`) — the categorical path integral over the character-variety
+      path (abelian → discrete faithful). -/
+  path_integral : defect = potential 1 - potential 0
+  /-- the ladder of defects along body order, headed by `𝔙`. -/
+  ladder : ℕ → R
+  ladder_head : ladder 0 = defect
+  /-- the shared three-term multiplier (the `2cosh`-type coefficient). -/
+  multiplier : R
+  /-- the multiplier is bar-even — the load-bearing hypothesis. -/
+  multiplier_bar_even : σ multiplier = multiplier
+  /-- ONE recurrence on the full complex ladder. -/
+  ladder_recurrence : ∀ n,
+    ladder (n + 2) = multiplier * ladder (n + 1) - ladder n
+
+/-- Derived (proved, conditional on the class): the σ-even (binding) and
+    σ-odd (`𝔔_β`) ladders each satisfy the SAME three-term recurrence —
+    the two channels are the two parities of the one deformation-path
+    ladder.  Direct application of `recurrence_invol_descent`. -/
+theorem AWDeformationPath.channel_ladders (σ : R →+* R)
+    [P : AWDeformationPath σ] (n : ℕ) :
+    ((P.ladder (n + 2) + σ (P.ladder (n + 2)))
+        = P.multiplier * (P.ladder (n + 1) + σ (P.ladder (n + 1)))
+          - (P.ladder n + σ (P.ladder n)))
+      ∧ ((P.ladder (n + 2) - σ (P.ladder (n + 2)))
+        = P.multiplier * (P.ladder (n + 1) - σ (P.ladder (n + 1)))
+          - (P.ladder n - σ (P.ladder n))) :=
+  recurrence_invol_descent σ P.multiplier_bar_even (P.ladder_recurrence n)
+
+end AWDeformation
 
 end QOU.MassEndomorphism
