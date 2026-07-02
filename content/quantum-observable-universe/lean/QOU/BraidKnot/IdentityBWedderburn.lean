@@ -17,7 +17,7 @@ import QOU.BraidKnot.RegularRepTrace
 import QOU.BraidKnot.IdentityBCentrality
 
 /-!
-# Identity (B) for `ℂ[Sₙ]` via Artin–Wedderburn, modulo only `C₂` centrality
+# Identity (B) for `ℂ[Sₙ]` via Artin–Wedderburn — fully sorry-free
 
 The keystone's second carried representation-theory input — the **Plancherel content-square
 mean**
@@ -27,8 +27,10 @@ $$ \mathbb{E}_{\mathrm{Planch}}\Big[\textstyle\sum_{c\in\lambda} c(c)^2\Big]
    \sum_{\lambda\vdash n} (f^\lambda)^2 \Big(\textstyle\sum_{c\in\lambda} c(c)^2\Big)
    \;=\; n!\,\binom{n}{2}, $$
 
-is here reduced to the **single** classical fact that the second Jucys–Murphy power sum
-`C₂ = ∑ₖ Xₖ²` is central in `ℂ[Sₙ]`.
+is proved here for `ℂ[Sₙ]` **without any `sorry`**: the Wedderburn/Schur side is the generic
+semisimple trace identity below, and the one classical input — centrality of the second
+Jucys–Murphy power sum `C₂ = ∑ₖ Xₖ²` — is proved in `QOU.BraidKnot.IdentityBCentrality`
+(Jucys' theorem: at the coefficient level `C₂ = binom(n,2)·1 + class-sum of 3-cycles`).
 
 ## What is proved sorry-free here
 
@@ -50,18 +52,19 @@ Specialising to `A = ℂ[Sₙ]` (semisimple by Maschke, alg-closed by `IsAlgClos
 `z = C₂`, and reading the easy-side `trace(mulLeft C₂) = n!·binom(n,2)` off
 `RegularRepTrace.trace_centralC2_eq_factorial_mul_choose_two`, gives:
 
-* `identityB_via_wedderburn` — Identity (B), **sorry-free** modulo the hypothesis
-  `C₂ ∈ Set.center ℂ[Sₙ]`. The quadratic weighting and `∑ dᵢ² = n!` are *produced*, not assumed.
-* `identityB_via_wedderburn_unconditional` — drops that hypothesis as the **only** `sorry`.
+* `identityB_via_wedderburn` — Identity (B) given the hypothesis `C₂ ∈ Set.center ℂ[Sₙ]`.
+  The quadratic weighting and `∑ dᵢ² = n!` are *produced*, not assumed.
+* `identityB_via_wedderburn_unconditional` — **fully sorry-free**: the centrality hypothesis is
+  discharged by `IdentityBCentrality.centralC2_mem_center`. Axioms:
+  `[propext, Classical.choice, Quot.sound]`.
 
 ## Why this is more atomic than the carried OV bundle
 
 `RegularRepBlockTrace.identityB_conditional` carries the full `SnWedderburnSpectralData` bundle
 (the *labelled* block decomposition: partition ↔ irreducible, `dim = #SYT`, JM-eigenvalue =
-contents). Here ONLY the centrality of `C₂` is assumed; the block structure, the quadratic
-dimension weighting, and `∑ dᵢ² = n!` are all *machine-derived* from Artin–Wedderburn. The
-residual `sorry` is the genuine Jucys content: `C₂ = binom(n,2)·1 + (class-sum of all 3-cycles)`,
-both summands central.
+contents). Here nothing Sₙ-specific is assumed at all: the block structure, the quadratic
+dimension weighting, and `∑ dᵢ² = n!` are *machine-derived* from Artin–Wedderburn, and the
+Jucys centrality of `C₂` is machine-checked in `IdentityBCentrality`.
 
 No `native_decide`, no `: True`, no statement-weakening; the base ring is `ℂ` exactly where the
 representation theory needs alg-closedness + characteristic zero.
@@ -304,14 +307,13 @@ theorem identityB_via_wedderburn (n : ℕ)
   · -- ∑ dᵢ² ωᵢ = trace (mulLeft C₂) = n!·binom(n,2)
     rw [← htrace, trace_centralC2_eq_factorial_mul_choose_two]
 
-/-- **Identity (B) for `ℂ[S_n]`, discharged modulo one elementary combinatorial `sorry`.** Same
-conclusion as `identityB_via_wedderburn`, with the residual centrality `C₂ ∈ Set.center ℂ[Sₙ]`
-supplied by `IdentityBCentrality.centralC2_mem_center`. That module de-abstracts the centrality
-(via the class-function property of the coefficient — proved sorry-free) down to the single
-elementary combinatorial core `IdentityBCentrality.centralC2_apply_threecycle` (`C₂ σ = 1` for a
-3-cycle `σ`), which is the *only* remaining `sorry` in the Identity-(B) development. Everything else
-(the Wedderburn block decomposition, the quadratic dimension weighting, `∑ dᵢ² = n!`, side-1
-`trace = n!·binom`, and the entire center-reduction machinery) is proved sorry-free. -/
+/-- **Identity (B) for `ℂ[S_n]`, fully sorry-free.** Same conclusion as
+`identityB_via_wedderburn`, with the centrality `C₂ ∈ Set.center ℂ[Sₙ]` discharged by
+`IdentityBCentrality.centralC2_mem_center` (Jucys' theorem, machine-checked: the coefficient of
+`C₂` is a class function — `binom(n,2)` at `1`, `1` at each 3-cycle, `0` elsewhere). Every link —
+the Wedderburn block decomposition, the quadratic dimension weighting, `∑ dᵢ² = n!`, side-1
+`trace = n!·binom`, the center-reduction machinery, and the 3-cycle count — is proved; axioms:
+`[propext, Classical.choice, Quot.sound]`. -/
 theorem identityB_via_wedderburn_unconditional (n : ℕ) :
     ∃ (N : ℕ) (d : Fin N → ℕ) (ω : Fin N → ℂ),
       (∑ i, (d i : ℂ) ^ 2 = (n.factorial : ℂ)) ∧
