@@ -61,7 +61,6 @@ r2 = sp.together(r1 * r1.subs(x, q * x))
 
 def try_ansatz(deg_lo: int, deg_hi: int, den):
     """Cert = sum_{i=deg_lo}^{deg_hi} c_i(x) y^i / den(x,y); solve (*)."""
-    cs = sp.symbols(f"c{deg_lo}:{deg_hi + 1}".replace("-", "m"))
     # build symbol list manually (negative indices)
     cs = [sp.Symbol(f"c_{i}") for i in range(deg_lo, deg_hi + 1)]
     cert = sum(c * y**i for c, i in zip(cs, range(deg_lo, deg_hi + 1))) / den
