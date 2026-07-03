@@ -1,0 +1,207 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-03T19:58:15.859372+00:00",
+  "commitSha": "54ec67c6437484f9fb68afa0542994cd7b1d8cd8",
+  "assertions": [
+    {
+      "name": "chi21_garside_zero_symbolic",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "Hoefsmit (2,1) seminormal, trace of ρ(σ₁σ₂σ₁) — PROBE-2a derived-exact reproduced"
+    },
+    {
+      "name": "p3_underdetermined",
+      "computed": 10,
+      "expected": 10,
+      "passed": true,
+      "source": "11 partitions of 6 minus 1 scalar constraint"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 25,
+  "computation": "probe-d-symbolic-prospects",
+  "scriptFile": "probe_d_symbolic_prospects.py",
+  "scriptHash": "338eed379062",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Deuteron-restricted symbolic prospects for the four A≥3-binding open items: P1 Δ_λ(D)≈1/h sharpened + the Q_β/h ≈ m_e·8G cross-coincidence; P2 χ^{(2,1)}(Δ)=0 reproduced symbolically + α₃ near-match + D tower-gap exponent; P3 per-λ under-determination theorem-shape statement (1 eq, 11 unknowns) + per-λ atom vector; P4 scope statements. Exploratory; nothing wired.",
+  "auditOnly": "docs/audits/2026-07-03-deuteron-from-scratch-error-ledger.md",
+  "parameters": {
+    "q0": "1.1099785955573347198997632204832250266562084087802",
+    "compute_dps": 50
+  },
+  "data": {
+    "P1_delta_lambda": {
+      "Delta_tr": "0.595168993231699498425939649198",
+      "Q_beta_production_MeV": "0.7823343865181718847573066",
+      "Q_beta_symbolic_proxy_MeV": "0.7836458038973215495988765",
+      "Q_beta_form_spread_rel": 0.0016762875335011285,
+      "Delta_lambda_D": "4.777631145611564518803732",
+      "Delta_lambda_D_times_h_minus_1": -0.0011868943222692113,
+      "q0_exponent_of_Delta_lambda_D": "14.9888238237",
+      "exponent_gap_vs_15": -0.011176176319870083,
+      "B_candidate_Qb_dtr_over_h_MeV": "2.227209662502927851403716",
+      "B_candidate_err_vs_AME_rel": 0.001188304714387844,
+      "B_candidate_symbolicQb_err_vs_AME_rel": 0.0028665841882677015,
+      "QbOverH_MeV": "3.742146663940663902046324",
+      "plateau_me_8G_MeV": "3.744459659941610263218649",
+      "QbOverH_vs_plateau_rel": -0.0006177115554724467,
+      "E0_MeV": "4.185980827582890914289876",
+      "QbOverH_over_E0": 0.8939712860800392,
+      "tier": "ALL observation-tier NEAR-MATCHES; no invariant forces Δ_λ(D)·h = 1 — NOT wired (formalize-first: the candidate class 'B_D = Q_β·Δtr/h' needs a structural argument for the 1/h before any cross-A wiring)"
+    },
+    "P2_alpha_k": {
+      "chi21_garside_symbolic": "0",
+      "chi21_garside_is_zero": true,
+      "collapsed_weight_symbolic": "1 + q^(1/2) - q^(-1/2)",
+      "collapsed_weight_at_q0": "1.1043880698120037126",
+      "alpha3_eq_1_near_match_pct": 10.438806981200372,
+      "z_at_q0": "0.49932033403356127177",
+      "h_at_q0": "0.20906032199559367898",
+      "tower_D_B_MeV": "0.606879231048088",
+      "tower_D_gap": 3.66558301255119,
+      "tower_D_gap_q0_exponent": "12.44947563",
+      "tier": "(a) k=3 break DERIVED exact (reproduced symbolically); (b) α₃=1 NEAR-MATCH 10.4%; (c) D tower gap exponent ~12.4 NOT near-integer — no q₀-power closes the D tower"
+    },
+    "P3_per_lambda": {
+      "n_partitions_H6": 11,
+      "scalar_constraints_at_D": 1,
+      "solution_space_dim": 10,
+      "required_scalar": "0.53143248658511660976",
+      "scalar_from_trace_Delta": "0.59516899323169949843",
+      "per_lambda_atom_vector": [
+        {
+          "lambda": [
+            6
+          ],
+          "y_lambda": "0.059187716931123886279",
+          "chi_atom": "1.5598702809528043439",
+          "y_chi_contribution": "0.092325160638307271004"
+        },
+        {
+          "lambda": [
+            5,
+            1
+          ],
+          "y_lambda": "0.058960681400925408999",
+          "chi_atom": "3.2163178980816625022",
+          "y_chi_contribution": "0.1896362948728869835"
+        },
+        {
+          "lambda": [
+            4,
+            2
+          ],
+          "y_lambda": "0.040284386965704782087",
+          "chi_atom": "1.6743956650497277442",
+          "y_chi_contribution": "0.067452002904561842485"
+        },
+        {
+          "lambda": [
+            4,
+            1,
+            1
+          ],
+          "y_lambda": "0.010133463492312671883",
+          "chi_atom": "-0.46980565588682017388",
+          "y_chi_contribution": "-0.004760758462411102135"
+        },
+        {
+          "lambda": [
+            3,
+            3
+          ],
+          "y_lambda": "0.014120874004911360836",
+          "chi_atom": "4.2494029105626715717",
+          "y_chi_contribution": "0.060005283096159105397"
+        },
+        {
+          "lambda": [
+            3,
+            2,
+            1
+          ],
+          "y_lambda": "0.0073184543524818241984",
+          "chi_atom": "-1.9722727629173990803",
+          "y_chi_contribution": "-0.014433988186054192259"
+        },
+        {
+          "lambda": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "y_lambda": "-0.00068530888548463045223",
+          "chi_atom": "-0.4901260194543838045",
+          "y_chi_contribution": "0.00033588771613930206789"
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            2
+          ],
+          "y_lambda": "0.00077318673693221832328",
+          "chi_atom": "-3.4972951809875637639",
+          "y_chi_contribution": "-0.0027040622490765463329"
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "y_lambda": "-0.00034205177087146012489",
+          "chi_atom": "-0.8196552541167106717",
+          "y_chi_contribution": "0.00028036453117471754195"
+        },
+        {
+          "lambda": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_lambda": "0.000098635576102972796039",
+          "chi_atom": "2.1552556132382803583",
+          "y_chi_contribution": "0.00021258487906092370506"
+        },
+        {
+          "lambda": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_lambda": "-0.000012437986973190192054",
+          "chi_atom": "-0.67687665623458405038",
+          "y_chi_contribution": "8.4189830327022922125e-6"
+        }
+      ],
+      "conclusion": "UNDER-DETERMINED at D: one scalar equation, 11 per-λ unknowns — no unique symbolic Δ_λ is derivable from deuteron data alone, and any collapse-last candidate preserving the scalar sum is UNFALSIFIABLE at A=2 (this is the structural reason PROBE-4's per-λ towers reproduced the scalar tower to ≤6.6e-7). The FR-restricted projector χ^λ·χ^λ(e_{K*}) must be tested CROSS-A: D only pins its scalar normalization"
+    },
+    "P4_scope": {
+      "many_body_series": "D IS the 2-body base case (one bond, exact by construction); the 2-body/4-body reconciliation and the ρ·A scale rule are NOT decidable at A=2",
+      "mirror_pair": "³H/³He magnitude is an A=3 object; D is silent — no D-restricted symbolic answer exists"
+    }
+  }
+}

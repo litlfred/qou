@@ -42,4 +42,86 @@ commits on this branch; this doc is the ledger of record.
 
 ## Findings
 
-(populated by subsequent commits)
+Producers: [`computations/deuteron_from_scratch_ledger.py`](../../computations/deuteron_from_scratch_ledger.py)
+→ `deuteron-from-scratch-ledger.witness.json` (4/4 assertions) and
+[`computations/probes/probe_d_symbolic_prospects.py`](../../computations/probes/probe_d_symbolic_prospects.py)
+→ `probes/probe-d-symbolic-prospects.witness.json` (audit-only, 2/2).
+All numbers at 50 dps, q₀ solved live, CODATA/AME comparison-only.
+
+### Where each error comes from (the ledger)
+
+| Stage | Error source | Size | Notes |
+|---|---|---|---|
+| S0 anchor choice | μ–p anchor tension in q-space | **0.0028 ppb** | the live proton pin (`q_at`) solves the FULL identity `m_p/m_e = (2·(Vol(4₁)/ℏ_q²)·F_Bor − 12)·habiro`; with the s5bb Habiro factor included, the old ~11.5 ppb μ–p tension is absorbed — `q_muon_at`'s docstring ("~11.5 ppb") and the AGENTS "m_μ 963.6× FAIL" narrative are **stale against the live pin** (live m_μ error at the proton anchor: **+1.36 ppb**) |
+| S1 γγ entry | none (topological) | 0 | γγ spans the 6-operator H₃ basis (Lean `gamma_gamma_chirality_surjective`); crossing energy `𝔈_×(q₀) = ½(q−q⁻¹) > 0`. **Flags:** (i) `nucleon-from-photons-summary.md` cites `four-term-photon-to-atoms.witness.json` which does not exist anywhere in the repo (dangling citation); (ii) the absolute-mass normaliser does not yet come from this chain (bean `ovud`) |
+| S2 nucleon masses | bare F_Bor identity vs CODATA m_p | **−241 ppb** | the Habiro 4-loop ratio `(1+c₄u⁴)(1+4u⁵)(1−29u⁶)` brings it to ~+1.4 ppb; ratio-space round-trip is exact (1e-40) |
+| S2 hygiene | `canonical_mass.py::_from_formula` (facade fallback) omits the habiro factor its preferred witness includes | −241 ppb if fallback fires | producer-vs-facade mismatch, flagged |
+| S2 hygiene | c₄ convention: pin solver `46·u⁴` vs producer `(4143/90)·u⁴` | **0.18 ppb** on m_p | two coexisting c₄ values |
+| S2 CODATA-internal | m_p[MeV] vs m_e[MeV]·(m_p/m_e) | **+1.35 ppb** | MeV-conversion inconsistency inside CODATA anchors, not framework error |
+| S3 trace | transfer (fine-Bratteli) vs closed-form (colour-weighted Wenzl/χ_λ) atom/free ratio | **2.6e-1** | different canonical word families/normalizations, each exact on its own reference (Phase-5q closed form is exact-ℚ); finer Jones-vs-Wenzl convention-D spread is 1.955e-4 |
+| S4 SDP | full-space real SDP unbounded (Frobenius Gram indefinite) | structural | bounded positive-norm subspace: duality gap 0.0; canonical LR-branching encoding does not reproduce B_D — that IS the Δ_λ gate |
+| S5 binding | **the dominant error of the whole chain** | −79% … +33% route spread | see table below |
+| S6 composed m_D | binding stage ≫ nucleon stage | nucleons ±0.0000 MeV, binding −0.74…+1.76 MeV | best composed m_D: −12.9 ppm (R3) |
+
+### Binding routes at D (all non-fitted; B_AME = 2.2245662 MeV)
+
+| Route | B (MeV) | err | error source |
+|---|---:|---:|---|
+| R1 tower level-0 `E₀·Δtr` | 2.4914 | **+11.99%** | uniform E₀ where the per-λ weight belongs |
+| R1b + Li₂^q pair term | 2.9667 | +33.4% | tower adds binding — gap is not a truncation error |
+| R2 Borromean level-0 | 2.0898 | −6.06% | same missing per-λ weight on the Borromean τ |
+| R2b Borromean tower | 2.4803 | +11.5% | as R2 |
+| R3 `m_e·Vol(6₂)` | 2.2488 | **+1.09%** | Kashaev linearization + underived ρ-scale rule |
+| R4 diagnostic `Q_β·Δtr` | 0.4656 | −79.1% | scale mismatch — the Δ_λ(D) residual lives here |
+| R5 rotational `μ₀·ℏ_q·J_q²(3)` | 2.0196 | −9.21% | highest-weight collapse of the per-λ Reeb phase |
+
+### Symbolic prospects at D (probe, all near-match tier, nothing wired)
+
+1. **Δ_λ(D) vs 1/h(q₀) — sharpened.** `Δ_λ(D)·h − 1 = −1.19e-3` (0.12%);
+   q₀-exponent 14.9888 (−0.011 from 15). The candidate closed form
+   `B_D = Q_β·Δtr/h` lands **+0.119% of AME with zero fits** — the sharpest
+   D-specific target in this session. Scope (a): no invariant currently
+   forces the 1/h; formalize-first question = *what forces the binding scale
+   to be Q_β/h instead of E₀?*
+2. **NEW cross-coincidence: `Q_β/h` vs `m_e·8G` = −6.2e-4** (0.06%). The
+   "Δ_λ(D) ≈ 1/h" observation and the tower plateau constant `α_{k≥4} =
+   m_e·8G` are (to 0.06%) the *same* statement: `Q_β ≈ m_e·8G·h`. Also
+   `Q_β/h = 0.894·E₀` — exactly the R1 +11.99% overbind factor
+   (1/0.894 = 1.119), i.e. R1 and R4 differ *only* by the E₀-vs-Q_β/h scale
+   choice on the same Δtr. Observation tier; connects CAL-2 (𝔇_β), the
+   Borromean/Catalan volume 8G, and the Hecke h on one line.
+3. **α_k at A=2.** χ^{(2,1)}(σ₁σ₂σ₁) = 0 reproduced **symbolically** from
+   the repo's own Hoefsmit seminormal matrices (sympy-exact) ⇒ the z^k
+   break at k=3 is derived, not assigned. The collapsed weight is exactly
+   `1 + q^{1/2} − q^{−1/2}` (= 1.1044 at q₀ — α₃ = 1 is a 10.4%
+   near-match). The D depth-stratified tower gap 3.6656 has q₀-exponent
+   12.449 — NOT near-integer: no q₀-power bookkeeping closes the D tower.
+4. **Per-λ weight (Δ_λ / FR projector) — under-determination result.** At
+   A=2 the scalar binding gives ONE equation against ELEVEN per-λ unknowns
+   (λ ⊢ 6): the solution space is 10-dimensional, so **no unique symbolic
+   Δ_λ is derivable from D data, and no collapse-last candidate preserving
+   the scalar sum is falsifiable at A=2** — the structural reason PROBE-4's
+   per-λ towers reproduced the scalar tower to ≤6.6e-7. The FR-restricted
+   projector `χ^λ·χ^λ(e_{K*})` (brane-tower plan §7) is falsifiable only
+   cross-A; D pins its scalar normalization. The probe emits the D per-λ
+   atom vector (y_λ, χ^λ, contributions, 11 blocks) as the carrier the
+   projector must weight.
+5. **Q_β form spread.** Production Kashiwara-b² Q_β vs the symbolic CAL-2
+   proxy `m_e|q²−2q−1|(q+1)/(2q³)`: 0.17% — matches the known CAL-2
+   cross-check figure; recorded as the Q_β-form component of any
+   trace-canonical binding number.
+6. **Scope statements.** The many-body series (ρ·A rule, 2-body/4-body
+   reconciliation) and the mirror-pair magnitude are NOT decidable at A=2:
+   D is the exact 2-body base case and is silent on both.
+
+### Verdict
+
+The deuteron's from-scratch chain error is **entirely a binding-scale
+question**: nucleon masses contribute +0.0000 MeV (proton anchor) to the
+composed m_D while the binding routes span −79%…+33%. The single sharpest
+D-specific symbolic lead is the two-sided near-coincidence
+`Q_β ≈ m_e·8G·h` (0.06%) ⟺ `Δ_λ(D) ≈ 1/h` (0.12%): if the Q_β/h scale
+were *derived* (formalize-first target), the trace-canonical route would
+land at +0.12% with zero fits. Per the Δ_λ gate this is NOT wired — it is
+recorded as an observation-tier candidate with its invariant question
+stated.
