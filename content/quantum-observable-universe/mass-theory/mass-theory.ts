@@ -280,6 +280,7 @@ export default chapter({
             "bond-order-eq-jet-degree",
             "bond-order-eq-jet-degree-proof",
             "binding-manybody-jet-filtration",
+            "jet-filtration-binding-extensive",
             "binding-genfun-qdifference",
             "binding-genfun-qdifference-proof",
             "binding-closure-conditional",
