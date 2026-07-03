@@ -1,0 +1,93 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-03T19:31:01.239281+00:00",
+  "commitSha": "249c5176c8e88588037cd62a24383483543d01b1",
+  "assertions": [
+    {
+      "name": "no_silent_match_within_1pct",
+      "computed": "False",
+      "expected": "False",
+      "passed": true,
+      "source": "record-only: the match flag equals what the ratio table shows (self-consistency)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 20,
+  "computation": "probe-mup-dressing-vs-even-kernel",
+  "scriptFile": "probe_mup_dressing_vs_even_kernel.py",
+  "scriptHash": "3210e66bc320",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Derive-or-refute: transport the ORD-17 exact bar-even Q_beta kernel E(u~) (8 exact rungs, witness-loaded verbatim) to the mass channel and test whether any natural object (full kernel, single rung, tail) reproduces the mu-p dressing delta_p (+~242 ppb) or delta_mu (-~210 ppb). No fit; all documented variables and truncations reported with sign and ratio.",
+  "data": {
+    "delta_p_needed": "2.40894013968329e-7",
+    "delta_mu_needed": "-2.09995036991854e-7",
+    "u_tilde_at_q0": "0.00945395003124134624872658156706",
+    "candidates_ratio_to_delta_p": {
+      "E_full_utilde": "45188.22734",
+      "rung1_utilde": "50981.09802",
+      "rung2_utilde": "-5578.224713",
+      "rung3_utilde": "-204.8762925",
+      "rung4_utilde": "-9.170652041",
+      "rung5_utilde": "-0.5697264288",
+      "rung6_utilde": "-0.02749937025",
+      "rung7_utilde": "-0.001704066485",
+      "rung8_utilde": "-9.449853501e-5",
+      "tail_ge4_utilde": "-9.769676405",
+      "tail_ge5_utilde": "-0.5990243641",
+      "tail_ge6_utilde": "-0.02929793527",
+      "E_full_ulegacy": "41246.00828",
+      "rung1_ulegacy": "45929.80282",
+      "rung2_ulegacy": "-4527.586926",
+      "rung3_ulegacy": "-149.8124457",
+      "rung4_ulegacy": "-6.041458536",
+      "rung5_ulegacy": "-0.3381375065",
+      "rung6_ulegacy": "-0.01470398746",
+      "rung7_ulegacy": "-0.0008208887547",
+      "rung8_ulegacy": "-4.101174451e-5",
+      "tail_ge4_ulegacy": "-6.39516193",
+      "tail_ge5_ulegacy": "-0.3537033945",
+      "tail_ge6_ulegacy": "-0.01556588796"
+    },
+    "candidates_ratio_to_delta_mu": {
+      "E_full_utilde": "-51837.28923",
+      "rung1_utilde": "-58482.53138",
+      "rung2_utilde": "6399.012858",
+      "rung3_utilde": "235.0220899",
+      "rung4_utilde": "10.5200352",
+      "rung5_utilde": "0.6535568091",
+      "rung6_utilde": "0.03154566782",
+      "rung7_utilde": "0.001954805321",
+      "rung8_utilde": "0.0001084031877",
+      "tail_ge4_utilde": "11.20720088",
+      "tail_ge5_utilde": "0.6871656854",
+      "tail_ge6_utilde": "0.03360887632",
+      "E_full_ulegacy": "-47315.00629",
+      "rung1_ulegacy": "-52687.9812",
+      "rung2_ulegacy": "5193.782691",
+      "rung3_ulegacy": "171.8560682",
+      "rung4_ulegacy": "6.930407584",
+      "rung5_ulegacy": "0.387891554",
+      "rung6_ulegacy": "0.01686755369",
+      "rung7_ulegacy": "0.0009416755271",
+      "rung8_ulegacy": "4.704627259e-5",
+      "tail_ge4_ulegacy": "7.336155413",
+      "tail_ge5_ulegacy": "0.4057478295",
+      "tail_ge6_ulegacy": "0.01785627549"
+    },
+    "best_candidate_delta_p": "tail_ge5_utilde",
+    "best_candidate_delta_mu": "tail_ge5_utilde",
+    "verdict": "REFUTED-as-is (scope (a)): no witness-exact object built from the Q_beta bar-even kernel E(u~) — full kernel, single rung, or tail, in either documented ladder variable — reproduces the mu-p dressing within 1%. The mass-channel dressing is NOT the Q_beta even kernel evaluated at the same substrate argument; nearest candidates recorded with sign/ratio as the sharpener."
+  }
+}

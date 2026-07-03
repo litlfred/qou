@@ -74,3 +74,20 @@ a proof remark.
 
 Cross-refs: PR #3261 (proofs), PR #3200 (PROBE 4), `1ppq-qbeta.md`
 (convention discipline precedent), AGENTS.md §q₀ anchor convention.
+
+## Addendum (2026-07-03) — μ–p dressing vs the exact bar-even Q_β kernel: REFUTED-as-is
+
+Follow-up probe
+[`probe_mup_dressing_vs_even_kernel.py`](../../computations/probes/probe_mup_dressing_vs_even_kernel.py)
+(witness, ratio table complete) transported the ORD-17 **exact** bar-even
+kernel `E(ũ)` (8 witness-verbatim rungs, bean `08ds`) to the mass channel:
+**no natural object** (full kernel, single rung, tail; either documented
+ladder variable) reproduces the μ–p dressing within 1 % — the mass-channel
+dressing is **not** the Q_β even kernel evaluated at the same substrate
+argument. Scope (a). Sharpeners for the kernel search: (i) every kernel
+object is **negative**, matching only the **muon-leg attribution**
+(δ_μ ≈ −2.10e-7), never the proton-leg (+2.42e-7); (ii) the nearest
+candidates are the k = 5 rung (0.654×) and the k ≥ 5 tail (0.687×) of
+δ_μ — right order and sign, wrong magnitude by ~1.5×. Whatever the
+mass-channel dressing is, it lives at the u⁵-order scale of a *different*
+(mass-channel) kernel.
