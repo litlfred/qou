@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-03T17:44:24.378154+00:00",
-  "commitSha": "f06d291cc016cf4327aca925616a270a1b0a42af",
+  "computedAt": "2026-07-03T18:54:29.352823+00:00",
+  "commitSha": "24559ba9b493b943fe2f9a6161b1fb48aed2f27a",
   "assertions": [
     {
       "name": "all_isotopes_computed_finite_parity",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 31,
+  "durationMs": 22,
   "computation": "mirror-parity-linear-trace-probe",
   "scriptFile": "mirror_parity_linear_trace_probe.py",
   "scriptHash": "c74b994b507c",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "b46d407f17cb2d64f8f5574c87ea13b7fc12840e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,7 +40,8 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Bar-parity loading of the linear Markov trace under binding: N=Z controls vs the A=3 and A=7 mirror pairs (second test of the Gram-probe isospin-asymmetry pattern).",
   "auditOnly": "docs/audits/2026-07-03-qbar-norm-repitch-assessment.md",
@@ -64,7 +65,7 @@
         "tr_atom_qi": "0.0077684080354284501921",
         "tr_free_q0": "0.98352618195548024654",
         "tr_free_qi": "0.012862900036566856402",
-        "wall_sec": 0.01
+        "wall_sec": 0.09
       },
       {
         "iso": "3H",
@@ -109,7 +110,7 @@
         "tr_atom_qi": "0.00003534409525586224088",
         "tr_free_q0": "0.96732375059192443771",
         "tr_free_qi": "0.00016545419735071163577",
-        "wall_sec": 0.22
+        "wall_sec": 0.18
       },
       {
         "iso": "6Li",
@@ -124,7 +125,7 @@
         "tr_atom_qi": "1.6080580007620138953e-7",
         "tr_free_q0": "0.95138823513453074502",
         "tr_free_qi": "2.1282208011526085753e-6",
-        "wall_sec": 3.35
+        "wall_sec": 3.14
       },
       {
         "iso": "7Li",
@@ -139,7 +140,7 @@
         "tr_atom_qi": "2.1471332213576033767e-8",
         "tr_free_q0": "0.87835329722736826297",
         "tr_free_qi": "4.0115043989335233337e-7",
-        "wall_sec": 7.65
+        "wall_sec": 7.24
       },
       {
         "iso": "7Be",
@@ -154,7 +155,7 @@
         "tr_atom_qi": "5.4793528335990468429e-9",
         "tr_free_q0": "1.0135198127181038223",
         "tr_free_qi": "1.4523289320347664205e-7",
-        "wall_sec": 2.59
+        "wall_sec": 2.3
       }
     ],
     "prediction_checks": {
