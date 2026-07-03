@@ -32,9 +32,10 @@ open QOU.Mathlib.PartitionsOfBridge (rskBurnsideHolds_le12)
 
 /-- **The substrate identity is a theorem for `n ≤ 12`** — the axiom-free counterpart of
 `RSK_substrate_axiom`, via the hook-length bridge + the `partitionsOf` enumeration bridge.
-Cite this (not the axiom) for any `n ≤ 12` use. -/
-theorem RSK_substrate_proved_le12 : ∀ n ∈ List.range 13, QOU.Mathlib.RSKBurnsideHolds n :=
-  rskBurnsideHolds_le12
+Cite this (not the axiom) for any `n ≤ 12` use.  (Stated with a bare `n ≤ 12` hypothesis for
+ergonomics, per review; `rskBurnsideHolds_le12` is the `List.range`-shaped source.) -/
+theorem RSK_substrate_proved_le12 (n : ℕ) (hn : n ≤ 12) : QOU.Mathlib.RSKBurnsideHolds n :=
+  rskBurnsideHolds_le12 n (List.mem_range.mpr (Nat.lt_succ_of_le hn))
 
 /-- **Genuine `RSKBijection` construction for `n ≤ 12`** — `dim` is the real SYT count
 (`dimSYT`, a `Nat.card`) and the Burnside field is the proved `rskBurnsideHolds_le12`, not the
