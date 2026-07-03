@@ -33,3 +33,15 @@ REMAINING WORK (this bean):
 Constraint recorded by sibling: even rungs grow ×11, ×21 ⇒ even-side u-ladder
 at best asymptotic — disfavors a common AW recurrence IN u; the surviving
 object is the fibre kernel R(q,ξ).
+
+## 2026-07-03 — route B PRUNED structurally; route A gated on owner object choice
+Owner authorized B+A+C. Route B (same Delta(net), lambda|-4 re-decomposition)
+is pruned by a one-line argument BEFORE building: Markov-trace consistency
+(tau^(4)|_H3 = tau^(3)) + branching rules make every lambda|-4 reading of the
+unchanged element a linear function of known H3 data — no independent N=4
+rung possible. Scope-(a) with invariant cited. Route A (sigma_2-support
+object) is the only live H4 route; needs 2 owner design choices (4-strand
+confinement braid — no canonical B4 in corpus — and 4th-strand type/crossing).
+Stability gate: must reproduce c2^even=-8.00641, c3^even=+86.66116 exactly in
+the decoupling limit. Route C = F(q) keystone, unchanged.
+Audit: ../docs/audits/2026-07-03-8we6-h4-route-b-structural-prune.md
