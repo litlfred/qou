@@ -54,6 +54,7 @@ import QOU.Mass.BindingHyperbolicRecurrence
 import QOU.Mass.BindingQBesselKernel
 import QOU.Mass.BindingJacobiAngerBridge
 import QOU.Mass.BindingQHermiteOscillator
+import QOU.Mass.QWeberInterpolation
 import QOU.Mass.RogersSzegoInhabited
 import QOU.Mass.SelectionRuleQuantumIntegerForm
 import QOU.Calculations
@@ -156,6 +157,7 @@ import QOU.ParticleInteractions.atomic_lp_stability
 import QOU.ParticleInteractions.silver_ratio_beta_decay_null
 import QOU.ParticleInteractions.delta_pre_archimedean
 import QOU.FluidDynamics.q_bkm_criterion
+import QOU.FluidDynamics.TwoVortexChannelAlgebra
 import QOU.QBeta.RationalCoeffRecurrence
 import QOU.QBeta.SilverAnchorGrounding
 import QOU.QBeta.ReebTowerJacobiAnger
