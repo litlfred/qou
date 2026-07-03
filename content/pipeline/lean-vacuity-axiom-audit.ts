@@ -952,7 +952,10 @@ interface ConjCarrier {
 
 interface ConjGraph {
   total: number;
-  primary: string[];
+  // {name, file, line} objects (same shape as `dependent`): short carrier
+  // names are not unique across namespaces/files, so a bare string list
+  // would be ambiguous for consumers treating `primary` as a set.
+  primary: { name: string; file: string; line: number }[];
   dependent: { name: string; file: string; line: number; dependsOn: string[] }[];
 }
 
@@ -1011,7 +1014,7 @@ function classifyConjectures(files: string[]): {
   for (const c of carriers)
     for (const l of c.ownLabels) if (!labelToName.has(l)) labelToName.set(l, c.name);
 
-  const primary: string[] = [];
+  const primary: ConjGraph["primary"] = [];
   const dependent: ConjGraph["dependent"] = [];
   const hitsByFile = new Map<string, Hit[]>();
 
@@ -1019,7 +1022,7 @@ function classifyConjectures(files: string[]): {
     const edges = bindersReferencing(c.sig, names).filter((n) => n !== c.name);
     if (edges.length > 0)
       dependent.push({ name: c.name, file: c.file, line: c.line, dependsOn: edges });
-    else primary.push(c.name);
+    else primary.push({ name: c.name, file: c.file, line: c.line });
 
     // Derived defect: the doc *explicitly* claims conditionality on a
     // `conj:Y` (another carrier) yet the type binds no such class. This is
@@ -1052,7 +1055,16 @@ function classifyConjectures(files: string[]): {
       hitsByFile.set(abs, arr);
     }
   }
-  return { graph: { total: carriers.length, primary: primary.sort(), dependent }, hitsByFile };
+  return {
+    graph: {
+      total: carriers.length,
+      primary: primary.sort(
+        (a, b) => a.name.localeCompare(b.name) || a.file.localeCompare(b.file),
+      ),
+      dependent,
+    },
+    hitsByFile,
+  };
 }
 
 // ── Compile-validity detectors (guaranteed Lean errors, not heuristics) ──
