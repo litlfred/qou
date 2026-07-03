@@ -72,8 +72,19 @@ def m_p_pure_q(q, m_e, fbor_fn):
     return 2 * (m_e * VOL_4_1_MPF / hbar_q_sq * fbor_fn(q) - 6 * m_e)
 
 
+def _q_muon_explicit():
+    """Muon pin, solved explicitly from m_mu/m_e = Vol(4_1)/hbar_q^2 —
+    self-contained so this probe is INDEPENDENT of which pin the package
+    constant carries (the towered-constant incident, 592eade9, showed
+    Q_50_DIGIT_STR's pin can drift; owner ruling 2026-07-03 restored the
+    raw proton pin there)."""
+    r = mp.mpf("206.7682830")            # CODATA m_mu/m_e
+    hbar = mp.sqrt(VOL_4_1_MPF / r)
+    return 1 / (1 - hbar)
+
+
 def main() -> int:
-    q0 = mp.mpf(Q_50_DIGIT_STR)
+    q0 = _q_muon_explicit()              # muon pin, explicit (see helper)
     m_e = mp.mpf(M_E_MEV)
     m_p_codata = mp.mpf(M_P_CODATA)
     m_mu_codata = mp.mpf(M_MU_CODATA)

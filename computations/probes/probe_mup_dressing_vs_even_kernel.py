@@ -67,11 +67,22 @@ def m_mu_pred(q, m_e):
     return m_e * VOL_4_1_MPF / (((q - 1) / q) ** 2)
 
 
+def _q_muon_explicit():
+    """Muon pin, solved explicitly from m_mu/m_e = Vol(4_1)/hbar_q^2 —
+    self-contained so this probe is INDEPENDENT of which pin the package
+    constant carries (the towered-constant incident, 592eade9, showed
+    Q_50_DIGIT_STR's pin can drift; owner ruling 2026-07-03 restored the
+    raw proton pin there)."""
+    r = mp.mpf("206.7682830")            # CODATA m_mu/m_e
+    hbar = mp.sqrt(VOL_4_1_MPF / r)
+    return 1 / (1 - hbar)
+
+
 def main() -> int:
     # Q_50_DIGIT_STR provenance (verified): package proton solve WITH
     # the fitted Habiro tower inside => numerically the MUON-pin value
     # to sub-ppb (m_mu fingerprint 1.36 ppb). See the attribution probe.
-    q0 = mp.mpf(Q_50_DIGIT_STR)          # muon-valued canonical q0
+    q0 = _q_muon_explicit()              # muon pin, explicit
     m_e = mp.mpf(M_E_MEV)
 
     # Required dressings, both attributions of the tension.
