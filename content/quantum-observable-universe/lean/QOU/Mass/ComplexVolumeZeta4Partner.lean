@@ -67,7 +67,7 @@ theorem vModel_zeta4_partner (z : ℂ) :
 /-! ## The full ζ₄ orbit and its isotypic decomposition (bean 5nx8, 2026-07-02)
 
 One layer beyond the partner relation: the ζ₄ action on the model closes into an order-4 orbit
-(`ζ₄² = −1`, `ζ₄³ = ` channel-conjugation), the two **non-faithful** isotypes vanish (orbit sum =
+(`ζ₄² = −1`, `ζ₄³` = channel-conjugation), the two **non-faithful** isotypes vanish (orbit sum =
 trivial isotype = 0; alternating sum = sign isotype = 0), and the model decomposes exactly into the
 two **faithful** eigencomponents `(1 ± i)/2 · e^{±z}` (eigenvalues `±i` under the rotation). The
 binding (`cosh`, bar-even) and Q_β (`i·sinh`, bar-odd) channels are the symmetric/antisymmetric

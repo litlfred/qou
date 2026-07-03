@@ -21,7 +21,7 @@
       "zeta4_cube_eq_channel_conj": true,
       "orbit_sum_zero_trivial_isotype": true,
       "sign_isotype_zero": true,
-      "faithful_sum_(1+i)/2*exp+(1-i)/2*exp(-)": false,
+      "faithful_sum_(1+i)/2*exp+(1-i)/2*exp(-)": true,
       "lean_cert": "QOU/Mass/ComplexVolumeZeta4Partner: vModel_zeta4_sq, vModel_zeta4_cube, vModel_orbit_sum_zero, vModel_sign_isotype_zero, vModel_eq_faithful_sum (sorry-free)",
       "assembly_constraint": "the open single-𝔙 assembly must be ζ₄-FAITHFUL: a nonzero orbit sum (trivial isotype) or sign-isotype component falsifies a candidate assembly"
     }
@@ -33,15 +33,15 @@
     "zeta4_cube_eq_channel_conj": true,
     "zeta4_orbit_sum_zero": true,
     "zeta4_sign_isotype_zero": true,
-    "zeta4_faithful_sum_eq": false
+    "zeta4_faithful_sum_eq": true
   },
-  "allPassed": false,
+  "allPassed": true,
   "verdict": "ζ₄-PARTNER RELATION VERIFIED (Lean-certified): V₀(η+iπ/2) = −conj V₀(η) = −cosh η + i·sinh η — the ζ₄=i rotation negates the bar-even (binding/Re) channel and keeps the bar-odd (Q_β/Im) channel, the fibre-level coupling of 𝔙 = Vol + i·CS. ORBIT/ISOTYPIC LAYER (2026-07-02, Lean-certified): the ζ₄ orbit closes (ζ₄²=−1, ζ₄³=channel conjugation), the trivial and sign isotypes BOTH vanish, and V₀ = (1+i)/2·e^η + (1−i)/2·e^{−η} is exactly the sum of the two FAITHFUL ±i eigencomponents — so any candidate single-𝔙 assembly must be ζ₄-faithful (falsifiable structural constraint on the OPEN assembly). DESCENT STILL OPEN: closing conj:binding-qbeta-complex-volume needs (i) the binding fibre kernel (characterized, not a finite low-order operator), (ii) the Q_β fibre kernel (GATED on the SW-residue keystone; Φ₂ fit forbidden), and (iii) their assembly into one trace object 𝔙. The generator coupling + ζ₄-partner relation + bar-parity class are proved; the kernel descent is not, and the observable-level test is degenerate (must not be used to claim closure). Advanced, not closed.",
-  "scriptHash": "d62a1b91b798",
-  "scriptCommitSha": "03675bd4a98d04219715fbdc1a0d56fbd9f88100",
-  "commitSha": "47e96fd14e67f914eb0d8517437f50a627c65529",
+  "scriptHash": "18b098c71e69",
+  "scriptCommitSha": "c5992e0c400137cfceb51d7c1ec363ca366c72e5",
+  "commitSha": "c5992e0c400137cfceb51d7c1ec363ca366c72e5",
   "engine": "sympy",
-  "computedAt": "2026-07-02T17:22:39.747706+00:00",
+  "computedAt": "2026-07-03T00:19:50.465697+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
   "scriptFile": "frakV_descent_zeta4_partner_probe.py"
