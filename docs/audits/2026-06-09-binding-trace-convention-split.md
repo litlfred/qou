@@ -152,10 +152,13 @@ evaluates the canonical M1–M3 trace C on β_Bor by two independent routes
 on the signed word) — they agree on the **same rational function** in
 t = √q, and:
 
-- **C(β_Bor) ≈ 0.9983666218 at q₀ — the Wenzl-bridge value** (matches
-  PROBE 4's τ_W to its quoted 7 digits). So the naming tension above
-  resolves factually: **C and the Wenzl-bridge z-trace are the SAME
-  convention** — there is no C-vs-Wenzl split, only C/W vs D.
+- **C(β_Bor) = the Wenzl-bridge trace, EXACTLY** — probe route 3
+  computes Σ_λ y_λ^W·χ^λ(β_Bor) symbolically (Wenzl-bridge `y_λ` ×
+  Hoefsmit `χ^λ`) and the difference to C cancels to 0 as a rational
+  function (upgraded 2026-07-03 from the earlier 7-digit numeric
+  match; numerically ≈ 0.9983666218 at q₀). So the naming tension
+  above resolves factually: **C and the Wenzl-bridge z-trace are the
+  SAME convention** — there is no C-vs-Wenzl split, only C/W vs D.
 - **D − C is a nonzero rational function** (exact, not numerical), value
   **1.9554e-4 at q₀**. The Lean `BorromeanMarkovTrace` closed form
   `(4+h²−3h⁴−h⁶)/(h²+4)` is a **convention-D (TL/Jones) object**: any

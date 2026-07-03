@@ -25,9 +25,11 @@ Method (exact, no fit):
 
 ANSWER (recorded): **D ≠ C, exactly.** Both C implementations agree on
 the same rational function; D − C is a nonzero rational function with
-value 1.9554e-4 at q₀; and C reproduces the Wenzl-bridge τ_W to the
-audit's quoted precision (2.2e-8). So the registry's naming tension
-resolves factually: the corpus-canonical M1–M3 trace C IS the
+value 1.9554e-4 at q₀; and C equals the symbolic Wenzl-bridge trace
+Σ_λ y_λ^W·χ^λ(β_Bor) **exactly** (identical rational function — route
+3, upgraded 2026-07-03 from the earlier 7-digit numeric match). So the
+registry's naming tension resolves factually: the corpus-canonical
+M1–M3 trace C IS the
 Wenzl-bridge z-trace (one convention), and the Borromean single
 pipeline / Lean `BorromeanMarkovTrace` closed form is the OTHER
 convention (D, the SU(2)/TL Jones decomposition). Any consumer that
@@ -64,6 +66,10 @@ from markov_trace_canonical import (  # noqa: E402
     tr_M_word, Z_SYMB, H_SYMB, q as HECKE_Q)
 from q_parameter import Q as Q0  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+
+# hecke/ cluster subdir is on sys.path via the _path_bridge preamble.
+from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_symbolic  # noqa: E402
+from hecke_character_symbolic import q_character_on_braid_word  # noqa: E402
 
 
 def main() -> int:
@@ -108,6 +114,19 @@ def main() -> int:
 
     c1_minus_c2 = sp.cancel(sp.together(tr_c_t - tr_rec_t))
 
+    # ── Route 3 (EXACT Wenzl bridge): tr_W = Σ_λ y_λ^W · χ^λ(β_Bor),
+    # y_λ symbolic via the Wenzl bridge (witness-cached), χ^λ symbolic
+    # via Hoefsmit matrices; crossings tagged "sigma" / "sigma_inv". ──
+    qs = sp.symbols("q", positive=True)
+    bor_crossings = [(0, "sigma"), (1, "sigma_inv")] * 3
+    tr_w_sym = sp.Integer(0)
+    for lam in ((3,), (2, 1), (1, 1, 1)):
+        y_l = y_lambda_wenzl_bridge_symbolic(lam)
+        chi_l = q_character_on_braid_word(lam, bor_crossings, qs)
+        tr_w_sym += y_l * chi_l
+    tr_w_t = sp.cancel(sp.together(sp.sympify(tr_w_sym).subs(qs, t**2)))
+    c_minus_w = sp.cancel(sp.together(tr_c_t - tr_w_t))
+
     t0 = sp.sqrt(sp.Float(str(Q0), 60))
     n_c = sp.N(tr_c_t.subs(t, t0), 50)
     n_rec = sp.N(tr_rec_t.subs(t, t0), 50)
@@ -120,11 +139,13 @@ def main() -> int:
     print(f"C route1 − C route2         = {c1_minus_c2}")
     print(f"D − C (route 1)             = {d_minus_c1}")
     print(f"D − C (route 2)             = {d_minus_c2}")
+    print(f"tr_W (exact Wenzl bridge)   = {tr_w_t}")
+    print(f"C − W (exact)               = {c_minus_w}")
     print(f"numeric at q0: C (route 1)  = {n_c}")
     print(f"numeric at q0: C (route 2)  = {n_rec}")
     print(f"numeric at q0: D            = {n_pipe}")
     print(f"D − C at q0                 = {sp.N(n_pipe - n_c, 10)}")
-    print(f"C − tau_W at q0             = {sp.N(n_c - tau_w, 10)}")
+    print(f"C − tau_W(7-digit quote)    = {sp.N(n_c - tau_w, 10)}")
 
     wb = WitnessBuilder("probe-convention-d-vs-c-borromean",
                         engine="sympy", output_dir=HERE)
@@ -160,15 +181,16 @@ def main() -> int:
         source="D differs from C by the PROBE-4 gap figure — the "
                "convention split is exact, not numerical")
     wb.add_assertion(
-        "c_equals_wenzl_bridge",
-        float(sp.N(abs(n_c - tau_w), 15)), 0.0, tolerance=5e-7,
-        source="canonical C reproduces the Wenzl-bridge tau_W (quoted to "
-               "7 digits in the PROBE-4 audit) — C and the Wenzl z-trace "
-               "are the same convention")
+        "c_equals_wenzl_bridge_EXACT", str(c_minus_w), "0",
+        source="canonical C minus the symbolic Wenzl-bridge trace "
+               "(y_lambda_wenzl_bridge_symbolic x Hoefsmit chi^lambda) "
+               "cancels to 0 as a rational function — C and the Wenzl "
+               "z-trace are the SAME convention, exactly (upgraded from "
+               "the earlier 7-digit numeric match)")
     path = wb.save()
     ok = (str(c1_minus_c2) == "0") \
         and abs(float(sp.N(n_pipe - n_c, 15)) - 1.9554e-4) < 1e-6 \
-        and float(sp.N(abs(n_c - tau_w), 15)) < 5e-7 \
+        and (str(c_minus_w) == "0") \
         and d_minus_c1 != 0 and d_minus_c2 != 0
     print(f"witness: {path}")
     print("ALL ASSERTIONS PASS" if ok else "ASSERTION FAILURE")
