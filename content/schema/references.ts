@@ -6051,6 +6051,35 @@ export const references: CSLData[] = [
     DOI: "10.1007/JHEP06(2013)085",
     URL: "https://arxiv.org/abs/1301.4504",
   }),
+  ref({
+    id: "lowe1995",
+    type: "article-journal",
+    title: "Black hole complementarity versus locality",
+    author: [
+      { family: "Lowe", given: "David A." },
+      { family: "Polchinski", given: "Joseph" },
+      { family: "Susskind", given: "Leonard" },
+      { family: "Thorlacius", given: "Lárus" },
+      { family: "Uglum", given: "John" },
+    ],
+    "container-title": "Physical Review D",
+    volume: "52",
+    issue: "12",
+    page: "6997-7010",
+    issued: { "date-parts": [[1995]] },
+    DOI: "10.1103/PhysRevD.52.6997",
+    URL: "https://arxiv.org/abs/hep-th/9506138",
+  }),
+  ref({
+    id: "susskind2018",
+    type: "article-journal",
+    title: "Three Lectures on Complexity and Black Holes",
+    author: [{ family: "Susskind", given: "Leonard" }],
+    "container-title": "SpringerBriefs in Physics",
+    issued: { "date-parts": [[2018]] },
+    DOI: "10.1007/978-3-030-45109-7",
+    URL: "https://arxiv.org/abs/1810.11563",
+  }),
 
 ];
 

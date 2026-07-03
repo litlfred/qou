@@ -11,6 +11,7 @@ export default remark({
   uses: [
     "def:jet-horizon",
     "def:operational-entropy",
+    "conj:witness-completeness",
   ],
   cites: ["hawking1975", "bekenstein1973"],
 });

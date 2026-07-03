@@ -1,20 +1,19 @@
 {
   "id": "black-hole-complementarity-batch",
-  "title": "Black hole complementarity / information problem batch (5 papers)",
+  "title": "Black hole complementarity / information problem batch (6 papers)",
   "source": {
     "type": "arxiv-batch",
     "requestedAt": "2026-07-02T00:00:00Z",
-    "fetchedAt": null
+    "fetchedAt": "2026-07-03T00:24:19Z",
+    "fetchMethod": "manual owner upload via GitHub web (main commit 461e4b2f); agent-side fetch was blocked (session container predates the arxiv.org egress-policy change, proxy CONNECT 403)"
   },
   "format": "pdf",
   "pipeline": {
-    "stage": "uploaded",
-    "extractedAt": null,
+    "stage": "extracted",
+    "extractedAt": "2026-07-03T00:40:00Z",
     "structuredAt": null,
     "generatedAt": null,
-    "errors": [
-      "2026-07-02: session network policy is github-only (arxiv.org CONNECT 403 via agent proxy for paper-search-mcp, curl, and WebFetch). PDF fetch queued for a normal-network machine per .claude/skills/local/bib-qa.md §Batch intake pipeline (the batch tooling scans references.ts for arxiv URLs, so the registered refs are picked up automatically; note the pipeline scripts were relocated by the miga migration — follow the skill doc's current pointers)."
-    ]
+    "errors": []
   },
   "classification": {
     "type": "paper",
@@ -27,25 +26,53 @@
       "refId": "susskind1993",
       "title": "The Stretched Horizon and Black Hole Complementarity",
       "authors": "Susskind, Thorlacius, Uglum",
-      "pdf": null,
-      "status": "queued-for-fetch"
+      "pdf": "uploads/9306069v2.pdf",
+      "status": "verified",
+      "note": "Three postulates verified verbatim against the PDF, incl. P3's 'no infinite additive constant in the entropy' and the scope note that all three postulates refer to exterior observations."
     },
     {
       "arxivId": "hep-th/9308100",
       "refId": "susskindthorlacius1994",
       "title": "Gedanken Experiments Involving Black Holes",
       "authors": "Susskind, Thorlacius",
-      "pdf": null,
-      "status": "queued-for-fetch"
+      "pdf": "uploads/9308100v1.pdf",
+      "status": "verified"
     },
     {
       "arxivId": "1512.04993",
       "refId": "brown2016",
       "title": "Complexity, action, and black holes",
       "authors": "Brown, Roberts, Susskind, Swingle, Zhao",
-      "pdf": null,
-      "status": "queued-for-fetch",
-      "note": "Initially mis-attributed to the Marolf review; corrected per Gemini review on PR #3231 (concurring model recollection). Verify title page on fetch."
+      "pdf": "uploads/1512.04993v2.pdf",
+      "status": "verified",
+      "note": "Title page verified: Brown et al., NOT the Marolf review (Gemini catch on PR #3231 confirmed against the PDF)."
+    },
+    {
+      "arxivId": "1301.4504",
+      "refId": "harlowhayden2013",
+      "title": "Quantum Computation vs. Firewalls",
+      "authors": "Harlow, Hayden",
+      "pdf": "uploads/1301.4504v4.pdf",
+      "status": "verified",
+      "note": "Source of the 'standard complementarity' definition passage; its refs [5-7] are susskind1993, susskindthorlacius1994, lowe1995."
+    },
+    {
+      "arxivId": "1810.11563",
+      "refId": "susskind2018",
+      "title": "Three Lectures on Complexity and Black Holes",
+      "authors": "Susskind",
+      "pdf": "uploads/1810.11563v1.pdf",
+      "status": "verified",
+      "note": "Identified from the uploaded PDF title page (was queued-for-identification)."
+    },
+    {
+      "arxivId": "hep-th/9506138",
+      "refId": "lowe1995",
+      "title": "Black hole complementarity versus locality",
+      "authors": "Lowe, Polchinski, Susskind, Thorlacius, Uglum",
+      "pdf": "uploads/9506138v1.pdf",
+      "status": "verified",
+      "note": "Bonus owner upload (not in the original 5-ID request); it is ref [7] of the Harlow-Hayden standard-complementarity passage."
     },
     {
       "arxivId": "1703.02143",
@@ -54,25 +81,9 @@
       "authors": "Marolf",
       "pdf": null,
       "status": "queued-for-fetch",
-      "note": "Not in the author's original 5-ID list, but the likely source of the quoted 'standard complementarity' passage; verify the passage on fetch."
-    },
-    {
-      "arxivId": "1301.4504",
-      "refId": "harlowhayden2013",
-      "title": "Quantum Computation vs. Firewalls",
-      "authors": "Harlow, Hayden",
-      "pdf": null,
-      "status": "queued-for-fetch"
-    },
-    {
-      "arxivId": "1810.11563",
-      "refId": null,
-      "title": "UNIDENTIFIED — metadata could not be verified from this sandbox (arxiv.org firewalled); do NOT guess. Identify title/authors on a normal-network machine, then add the references.ts entry.",
-      "authors": null,
-      "pdf": null,
-      "status": "queued-for-identification"
+      "note": "Background reference (taxonomy review); no longer needed as the quote source — the quoted passage is Harlow-Hayden 1301.4504."
     }
   ],
-  "blockCount": 0,
+  "blockCount": 4,
   "targetPaper": "content/quantum-observable-universe/"
 }

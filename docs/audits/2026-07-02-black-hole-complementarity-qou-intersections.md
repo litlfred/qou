@@ -2,18 +2,19 @@
 
 **Date:** 2026-07-02
 **Branch:** `claude/expand-emc-q2-formula-e9r9oc`
-**Status of sources:** the five PDFs are queued for fetch on a normal-network
-machine (`uploads/black-hole-complementarity-batch/intake.json`); this sandbox's
-network policy is github-only (arxiv.org CONNECT 403 via `paper-search-mcp`,
-`curl`, and `WebFetch`). The per-paper reviews below are therefore from model
-knowledge of these well-known papers and are **not machine-validated against
-the fetched PDFs**. Quotations of the STU postulates are close paraphrases,
-to be checked against the PDF on intake. arXiv:1810.11563 could not be
-identified from this sandbox and is deliberately **not** reviewed or
-registered (no fabricated metadata); it is queued for identification.
-arXiv:1512.04993 was initially mis-attributed to the Marolf review and is
-corrected to Brown et al. (§1.3 note, §1.5) per the Gemini review on
-PR #3231.
+**Status of sources (updated 2026-07-03): VERIFIED.** Agent-side fetch was
+blocked (github-only container policy; the owner's later egress change does
+not reach a running container), so the owner uploaded the PDFs manually
+(`uploads/*.pdf`, main commit `461e4b2f` — six papers, including the bonus
+hep-th/9506138). All attributions and quotations below are now verified
+against the extracted PDF text: the STU postulates are verbatim (P1/P2/P3,
+including P3's "no infinite additive constant in the entropy" and the scope
+note that all three postulates refer to exterior observations);
+1512.04993 = Brown et al. (the Gemini catch on PR #3231, confirmed);
+1810.11563 = Susskind, *Three Lectures on Complexity and Black Holes*; and
+the "standard complementarity" passage the author quoted is
+**Harlow–Hayden 1301.4504**, whose refs [5–7] are precisely
+`susskind1993`, `susskindthorlacius1994`, `lowe1995`.
 
 Corpus grounding: all QOU-side claims below were checked against the corpus
 (sweep over `content/`, `docs/`, `computations/`). **No existing block
@@ -106,20 +107,39 @@ $d\mathcal{C}/dt \leq 2M/\pi\hbar$. This is the Susskind-school sequel to
 1.4: complexity promoted from censor (Harlow–Hayden) to geometry
 (interior volume/action). QOU intersection in §3.4.
 
-### 1.6 arXiv:1810.11563 — queued for identification
+### 1.6 Susskind, *Three Lectures on Complexity and Black Holes* (1810.11563; `susskind2018`)
 
-Not reviewed: title/authors could not be verified from this sandbox and
-guessing citation metadata is worse than waiting one fetch cycle. Action
-item in `uploads/black-hole-complementarity-batch/intake.json`.
+Identified from the uploaded PDF (was queued-for-identification). PiTP
+2018 lectures: (i) quantum complexity, the entropy–complexity analogy, and
+the second law of complexity; (ii) complexity and the growth of the black
+hole interior (complexity = volume / complexity = action, cf. §1.5);
+(iii) the uncomplexity resource. Pedagogical companion to §1.4–1.5: the
+complexity-censor and interior-growth themes in lecture form.
+
+### 1.7 Lowe–Polchinski–Susskind–Thorlacius–Uglum, *Black hole complementarity versus locality* (hep-th/9506138; `lowe1995`)
+
+Bonus owner upload; ref [7] of the Harlow–Hayden passage. Shows that the
+complementarity postulates require abandoning locality of low-energy
+effective field theory as seen in strongly boosted frames: commutators of
+operators that are spacelike-separated in one frame fail to vanish once
+one operator lies behind the horizon of the other's frame. QOU relevance:
+the framework has no fundamental spacetime locality to abandon — the
+Lieb–Robinson cone is emergent from braid-computation depth — so the
+"cost" LPSTU identify is not a cost in QOU; observer-relative
+inside/outside is built in at the provability level.
 
 ---
 
-## 2. Does QOU fit Marolf's "standard complementarity"? — Yes
+## 2. Does QOU fit "standard complementarity"? — Yes
 
 The author's question: does QOU instantiate the single-Hilbert-space
-picture? Point for point:
+picture? The defining passage (verified: Harlow–Hayden §2, their
+refs [5–7] = §1.1, §1.2, §1.7 above; Marolf's review presents the same
+taxonomy) — one Hilbert space, exact unitary evolution, per-observer
+per-time-slice approximately-commuting operator sets, observer-dependent
+semiclassical interpretation. Point for point:
 
-| Standard-complementarity ingredient (Marolf §"two proposals") | QOU realisation |
+| Standard-complementarity ingredient (Harlow–Hayden "the other proposal") | QOU realisation |
 |---|---|
 | One Hilbert space | Markov-trace GNS space: $H_\infty(q)$ carries a unique tracial state $\mathrm{tr}_M$ in the Wenzl-positive window, and GNS gives a single separable $\mathcal{H}$ with faithful $*$-representation — [`algebraic-gns-embedding`](../../content/quantum-observable-universe/observations/algebraic-gns-embedding.md) |
 | Exact unitary evolution | braid/R-matrix evolution in the one algebra; dagger-unitarity (the `su2-emergence-dagger-unitarity` chain in `models-of-qous/`) |
@@ -196,6 +216,31 @@ terminates") is precisely this conjecture's mechanism; the block currently
 consequences": **P2 yes; P1 only as P1a**, or in full after adopting
 witness completeness. This is a scope-limited reading of the current
 corpus text, not a structural exclusion — one conjecture block flips it.
+
+**Filtration-level refinement (owner, 2026-07-03).** The claim "the
+exterior evolution is not unitary on its own" above is correct **on the
+observables only** — it is a statement about the compression of the
+evolution to the degree-$0$ observable marginal, which is all that
+Hawking's argument ever addresses. It is *not* correct at the level of
+the $q$-gradation/filtration: the evolution on the full jet-filtered
+algebra is exactly unitary (GNS + R-matrix, P1a), and the exterior
+observer holds not just degree-$0$ observables but the entire graded
+tower $\Gamma(\mathcal{H}, A_k/A_0)$, $k \geq 1$, which crosses the
+horizon. On this reading the apparent exterior non-unitarity is an
+artifact of truncating to $A_0$; nothing forces the Hawking marginal to
+be unitary in any framework (it is thermal at intermediate times in
+unitary QFT too). What remains open is then *only* the faithfulness of
+the graded record — which is exactly what `conj:witness-completeness`
+asserts (its witness stream is already the accumulated degree-$\geq 1$
+graded data, not degree-$0$ observables). This reframing also suggests
+a proof route that would *upgrade the conjecture toward a proposition*:
+non-degeneracy of a Frobenius-type pairing between the trapped
+degree-$0$ sections and the accumulated graded tower on the horizon
+module — the same non-degeneracy that is definitional for
+$\mathrm{Bun}^{\circ}$ membership away from the horizon. If that
+pairing persists non-degenerately on the horizon graded module,
+injectivity of the witness stream follows and P1 in full is a QOU
+consequence at the filtration level, with no new axiom.
 
 ### 3.3 P3 (discrete levels; $\dim = e^{S}$) — precise QOU analogue ✓ (conjecture-ready)
 

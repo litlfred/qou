@@ -1,9 +1,11 @@
-The framework instantiates what Marolf calls *standard complementarity*
-\cite{marolf2017}: a single Hilbert space carrying exact unitary
-evolution, into which the physics of each observer is embedded by a
-set of operators — per time slice — that approximately commute, while
-the semiclassical interpretation of an operator differs from observer
-to observer \cite{susskind1993, thooft2016}.
+The framework instantiates what Harlow and Hayden call *standard
+complementarity* \cite{harlowhayden2013}: a single Hilbert space
+carrying exact unitary evolution, into which the physics of each
+observer is embedded by a set of operators — per time slice — that
+approximately commute, while the semiclassical interpretation of an
+operator differs from observer to observer; the viewpoint of
+\cite{susskind1993, lowe1995, thooft2016}, surveyed in
+\cite{marolf2017}.
 
 The dictionary is:
 

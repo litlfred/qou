@@ -59,4 +59,45 @@ class WitnessCompleteness (Interior Witness : Type*) [Zero Witness] where
 -- explicit hypothesis (§3b-cond).
 -- Ref: [susskind1993] https://doi.org/10.1103/PhysRevD.48.3743
 
+/-- Frobenius separation on the horizon graded module: the pairing
+    between trapped interior degree-0 data and exterior graded probes
+    (jet-bundle degree ≥ 1 / positive Gröbner–Shirshov filtration
+    degree) separates interior states.
+
+    This is the conjectural *input* isolated by the filtration-level
+    reframing (owner, 2026-07-03): the evolution on the full
+    jet/GS-filtered algebra is already unitary (P1a); the only open
+    content of exterior unitarity is that the Frobenius-type pairing
+    against the accumulated graded tower distinguishes interior states.
+    Away from the horizon this non-degeneracy is definitional for
+    membership in the observable subcategory; the class asserts its
+    persistence on the horizon graded module.  Generic base types per
+    §7c: separation needs no archimedean structure. -/
+class FrobeniusSeparation (Interior Probe R : Type*) where
+  /-- The Frobenius-type pairing of an interior state against an
+      exterior graded probe. -/
+  pair : Interior → Probe → R
+  /-- **Conjecture (open):** the pairing separates interior states. -/
+  separating : ∀ x y : Interior, (∀ p, pair x p = pair y p) → x = y
+
+-- No instance: the separation on the *horizon* graded module is the
+-- open conjectural input (away from the horizon it is definitional).
+-- Ref: [susskind1993] https://doi.org/10.1103/PhysRevD.48.3743
+
+/-- **Witness completeness from Frobenius separation** (sorry-free
+    reduction).  If the lifetime-total witness stream of an interior
+    state is its family of Frobenius pairings against exterior graded
+    probes, then separation of the pairing *derives* injectivity of
+    the witness stream — i.e. `conj:witness-completeness` reduces to
+    `FrobeniusSeparation` on the horizon graded module.  The
+    conjectural content is thereby isolated in the single named
+    hypothesis class, per §3b-cond (the class carries the hypothesis,
+    the theorem derives the conclusion). -/
+theorem witnessComplete_of_frobeniusSeparation
+    {Interior Probe R : Type*} [FrobeniusSeparation Interior Probe R] :
+    Function.Injective
+      (fun x : Interior => (FrobeniusSeparation.pair x : Probe → R)) := by
+  intro x y h
+  exact FrobeniusSeparation.separating x y (fun p => congrFun h p)
+
 end QOU.Information

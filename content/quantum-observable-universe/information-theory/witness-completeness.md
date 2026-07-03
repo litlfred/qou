@@ -23,3 +23,20 @@ the trichotomy of
 the refinement in which partial witnesses accumulate toward a complete
 (if never finitely derivable) determination of the interior
 \cite{marolf2017}.
+
+The statement lives at the level of the two compatible filtrations —
+the jet filtration $A_0 \subset A_1 \subset \cdots$ on the bundle side
+and the Gröbner–Shirshov leading-term filtration on the Hecke-algebra
+side — not at the level of degree-$0$ observables.  The evolution on
+the full filtered algebra is unitary; the apparent non-unitarity of the
+exterior description is the compression to the degree-$0$ observable
+marginal, which no framework requires to be unitary.  What the
+conjecture asserts is precisely faithfulness of the associated graded
+record.  It reduces to a non-degeneracy statement: if the Frobenius-type
+pairing between trapped degree-$0$ sections and accumulated exterior
+graded probes separates interior states, injectivity of the witness
+stream follows (the sorry-free reduction
+`witnessComplete_of_frobeniusSeparation` in the Lean sibling); the open
+content is the persistence, on the horizon graded module, of the
+non-degeneracy that is definitional for the observable subcategory away
+from the horizon.

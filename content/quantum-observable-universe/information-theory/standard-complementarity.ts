@@ -17,5 +17,5 @@ export default remark({
     "rem:observable-beable-correspondence",
     "rem:information-paradox-incompleteness",
   ],
-  cites: ["marolf2017", "susskind1993", "thooft2016"],
+  cites: ["harlowhayden2013", "marolf2017", "susskind1993", "lowe1995", "thooft2016"],
 });

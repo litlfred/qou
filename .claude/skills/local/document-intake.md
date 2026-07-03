@@ -102,6 +102,34 @@ Supported formats:
 - **DOCX** — Word documents (WHO often distributes as Word)
 - **Images** — scanned pages (PNG, JPG, TIFF)
 
+> **MCP fetch-failure protocol (added 2026-07-03, after PR #3231).** The
+> paper-search MCP tools, `curl`, and `WebFetch` all share the session
+> container's egress policy, fixed at **container start**. Failure mode
+> observed: arxiv.org not in the environment's allowed domains → every
+> fetch path returns proxy `CONNECT 403`; adding the domain mid-session
+> does **not** reach the running container (and restarting the MCP server
+> does not help — the whole session must be new). Protocol:
+>
+> 1. **Owner, one-time environment fix:** claude.ai/code → qou
+>    environment → network policy → allow `arxiv.org` and
+>    `export.arxiv.org` (the arXiv API host used by `search_arxiv`);
+>    optionally `api.openalex.org`, `api.semanticscholar.org`, `doi.org`
+>    for the other paper-search tools. Takes effect for **new sessions
+>    only**.
+> 2. **Agent preflight, every intake session:** before promising fetches,
+>    probe once (any `search_arxiv`/`download_arxiv` call, or
+>    `curl -sI https://arxiv.org`). On `403`, do NOT retry or wait:
+>    fall back immediately to the batch queue below, register the refs in
+>    `references.ts`, record the block in the upload's `intake.json`
+>    `pipeline.errors`, and tell the owner the one-line fix (step 1 +
+>    fresh session). The owner can also upload PDFs manually via the
+>    GitHub web UI into `uploads/` (worked example: main commit
+>    `461e4b2f`).
+> 3. **GitHub MCP token expiry** (separate transient failure): retry the
+>    call once; if it persists, continue committing/pushing via git (the
+>    git proxy is unaffected) and defer PR-API operations — do not block
+>    intake work on it.
+
 **For academic papers, prefer the MCP fetch path** (added 2026-05-22):
 when the session network allows the upstream host, use
 `paper-search-mcp` (arxiv / PubMed / bioRxiv / medRxiv) or
