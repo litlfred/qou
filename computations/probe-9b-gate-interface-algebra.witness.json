@@ -1,0 +1,215 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-03T00:40:36.255459+00:00",
+  "commitSha": "55eeb01ba76a6ab1ef39626ab676fb49fd1465b5",
+  "assertions": [
+    {
+      "name": "structural_constants_match_probe1",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-09,
+      "source": "f_pp/f_pn/f_nn and κ recomputed from exact formulas at 50 dps vs the committed PROBE 1 exponent dictionary"
+    },
+    {
+      "name": "interface_factors_in_unit_interval",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "all three interface factors lie in (0,1) at q₀ (f_pp≈0.499, f_pn≈0.395, f_nn≈0.290), so the interface product P_(Z,N) decays geometrically with A and the swap term → 0"
+    },
+    {
+      "name": "decomposition_identity_T_3He",
+      "computed": 1.2868893973670072e-85,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-30,
+      "source": "gap(T−³He) computed directly from Δ_λ equals asym + swap + mirror — algebraic identity of the closed-form Δ_λ definition, checked at 50 dps"
+    },
+    {
+      "name": "outlier_reconciliation_exact",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-30,
+      "source": "res_M0(³He) − res_M0(T) = mirror gap EXACTLY (isobars share the law value 25): the PROBE-1 '1.404 vs 1.338' 0.066 discrepancy is precisely T's own law residual — no missing δ/tr_free term"
+    },
+    {
+      "name": "gate_residual_identity",
+      "computed": 2.0107646833859488e-85,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-30,
+      "source": "res_M3(³He) − res_M3(T) = swap + mirror identically: M3 puts the whole mirror gap into the trace asymmetry, so 'gate exact' ⟺ 'swap + mirror = 0'"
+    },
+    {
+      "name": "gate_near_cancellation_A3",
+      "computed": -0.03365376809060528,
+      "expected": -0.033654,
+      "passed": true,
+      "tolerance": 0.0001,
+      "source": "A=3 swap+mirror = −0.938014 + 0.904360 = −0.033654: a near-cancellation with computable residual, NOT an identity (swap = interface algebra at q₀; mirror = AME data; no shared structure)"
+    },
+    {
+      "name": "m3_residuals_match_hpower_witness",
+      "computed": 5.821731985378165e-15,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-09,
+      "source": "M3 residuals recomputed here (T +0.0665, ³He +0.0329) vs the committed probe-9b-h-power-asymmetry witness"
+    },
+    {
+      "name": "swap_not_naive_g_ratio",
+      "computed": 2.4061465898611125,
+      "expected": 2.406147,
+      "passed": true,
+      "tolerance": 0.001,
+      "source": "candidate 'swap = log g_pp − log g_nn = −3.344 (A-independent)' REFUTED: actual A=3 swap is −0.938; 1−∏f does not factor over interfaces, so the swap term is A-dependent"
+    },
+    {
+      "name": "swap_decays_with_A",
+      "computed": 0.016673263790684838,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.02,
+      "source": "|swap| shrinks −0.938 (A=3) → −0.117 (A=5) → −0.0167 (A=7): geometric decay of the interface product, a DERIVED property of the closed form (all f ∈ (0,1) at q₀)"
+    },
+    {
+      "name": "cancellation_fails_A7",
+      "computed": 0.39351831355901845,
+      "expected": 0.3935,
+      "passed": true,
+      "tolerance": 0.005,
+      "source": "⁷Li/⁷Be (both bound, vendored AME2020): swap+mirror = −0.0167 + 0.4102 = +0.394 — an order of magnitude above the A=3 residual −0.0337; the near-cancellation behind the [Z>N] gate is A=3-specific, not generic"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "probe-9b-gate-interface-algebra",
+  "scriptFile": "probe_9b_gate_interface_algebra.py",
+  "scriptHash": "d43e04543f1a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "PROBE 1-c (9b, bean cywi): derive-or-refute the [Z>N] proton-excess gate of model M3 from the Phase-5q interface algebra. Exact mirror decomposition gap = asym + swap + mirror (identity ≤1e-30); gate exact ⟺ swap+mirror = 0. At A=3 the cancellation holds to −0.0337 (= res_M3(³He) − res_M3(T), identity), but the swap term decays geometrically with A (derived: all f ∈ (0,1) at q₀) while the AME mirror term stays O(0.4): at ⁷Li/⁷Be swap+mirror = +0.394. VERDICT: gate-as-derived-rule REFUTED scope-(a); A=3 near-match retained with stated residual. Exploratory; NOT wired; no new constants.",
+  "auditOnly": "docs/audits/2026-07-02-9b-probes-laurent-degree-manybody.md",
+  "parameters": {
+    "compute_dps": 85,
+    "q0": "1.1099785955573347198997632204832250266562084087802",
+    "Q_beta_n_MeV": 0.7823334093100222,
+    "kappa_log_q0_trn_over_trp": -1.3718095572365478,
+    "source_witnesses": [
+      "probe-9b-laurent-degree-10a5.witness.json",
+      "probe-9b-h-power-asymmetry.witness.json"
+    ],
+    "pn_convention": "bring_color_weighted (proven leading δ)"
+  },
+  "data": {
+    "mirror_decomposition_table": [
+      {
+        "pair": "T/3He",
+        "A": 3,
+        "Z_n_rich": 1,
+        "N_n_rich": 2,
+        "census_n_rich": [
+          "averaged",
+          "negative"
+        ],
+        "census_p_rich": [
+          "positive",
+          "averaged"
+        ],
+        "B_AME_n_rich_MeV": "8.4817962",
+        "B_AME_p_rich_MeV": "7.71804132",
+        "asym": 1.3718095572365478,
+        "swap": -0.9380141737821568,
+        "mirror": 0.9043604056915515,
+        "swap_plus_mirror": -0.03365376809060528,
+        "gap_log_Delta_n_rich_minus_p_rich": 1.3381557891459426,
+        "decomposition_identity_residual": 1.2868893973670072e-85,
+        "note": "both bound (anchor pair)"
+      },
+      {
+        "pair": "5He/5Li",
+        "A": 5,
+        "Z_n_rich": 2,
+        "N_n_rich": 3,
+        "census_n_rich": [
+          "positive",
+          "averaged",
+          "negative",
+          "negative"
+        ],
+        "census_p_rich": [
+          "positive",
+          "positive",
+          "averaged",
+          "negative"
+        ],
+        "B_AME_n_rich_MeV": "27.5606625",
+        "B_AME_p_rich_MeV": "26.3306625",
+        "asym": 1.3718095572365478,
+        "swap": -0.11731666221070021,
+        "mirror": 0.43756018288519166,
+        "swap_plus_mirror": 0.3202435206744914,
+        "gap_log_Delta_n_rich_minus_p_rich": 1.6920530779110392,
+        "decomposition_identity_residual": 1.9303340960505108e-85,
+        "note": "both particle-unstable (resonances) — corroborating only"
+      },
+      {
+        "pair": "7Li/7Be",
+        "A": 7,
+        "Z_n_rich": 3,
+        "N_n_rich": 4,
+        "census_n_rich": [
+          "positive",
+          "positive",
+          "averaged",
+          "negative",
+          "negative",
+          "negative"
+        ],
+        "census_p_rich": [
+          "positive",
+          "positive",
+          "positive",
+          "averaged",
+          "negative",
+          "negative"
+        ],
+        "B_AME_n_rich_MeV": "39.2450807",
+        "B_AME_p_rich_MeV": "37.6008409",
+        "asym": 1.3718095572365478,
+        "swap": -0.016673263790684838,
+        "mirror": 0.4101915773497033,
+        "swap_plus_mirror": 0.39351831355901845,
+        "gap_log_Delta_n_rich_minus_p_rich": 1.7653278707955662,
+        "decomposition_identity_residual": 1.608611746708759e-86,
+        "note": "both bound — clean AME test"
+      }
+    ],
+    "verdict": {
+      "question": "is the [Z>N] proton-excess gate of M3 a derived consequence of the Phase-5q interface algebra, or an A=3 coincidence?",
+      "gate_statement": "gate exact ⟺ swap + mirror = 0, where swap is the interface-sign-swap term (closed form) and mirror is the AME mirror-binding ratio (experimental); identically res_M3(p-rich) − res_M3(n-rich) = −(swap + mirror)",
+      "tier": "REFUTED as a generic derived rule — scope (a) ONLY; NEAR-MATCH retained at A=3 with exact stated residual",
+      "scope_a_statement": "The interface algebra, ALONE, does not derive the [Z>N] gate: the swap term it supplies decays geometrically with A (−0.938 → −0.117 → −0.0167 at A=3/5/7; derived from 0 < f < 1 at q₀), while the AME mirror term it must cancel stays O(0.4) (+0.904 / +0.438 / +0.410). The A=3 cancellation (residual −0.0337) is a numerical coincidence of that one pair; at ⁷Li/⁷Be the same combination is +0.394. This constrains the gate-as-rule reading only — it does NOT exclude the trace asymmetry κ from a larger closure, and the A=3 near-match stands with its residual stated (no proved invariant; scope-(b) NOT claimed).",
+      "A3_status": "M3 remains NEAR-MATCH at A=3: residuals D +0.011 / T +0.067 / ³He +0.033 / ⁴He −0.272; the ³He collapse works exactly because swap+mirror = −0.0337 ≈ 0 there",
+      "caveats": [
+        "A=5 pair (⁵He/⁵Li) is particle-unstable — corroborating only; A=7 (⁷Li/⁷Be) is the clean bound-pair test",
+        "A≥5 rows use the same chain interface census that defines the Δ_λ baseline (internal-consistency test; the PROBE-3 many-body ceiling does not affect the swap-term decay, which is a property of the interface factors alone)"
+      ]
+    }
+  }
+}
