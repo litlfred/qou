@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-03T14:31:39.594702+00:00",
-  "commitSha": "400f50e3741cab70c1686648dc2f717daea0f703",
+  "computedAt": "2026-07-03T19:18:07.429502+00:00",
+  "commitSha": "2d62b1c4f8211c5d2ca5175dfe2266e9fdcebcee",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "balanced-head-dominance-binding-period-probe",
   "scriptFile": "balanced_head_dominance_binding_period_probe.py",
-  "scriptHash": "7412dd57b0ba",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "53659f593de7",
+  "scriptCommitSha": "ca9ed4481c16b35fe958b4ac689372ff1edc8c59",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -18,8 +18,10 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Head-dominance of T_q(n)=sum dim_q at substrate q_0: top-K captured fraction, argmax (balanced) shape, and 99%-head width K99 vs p(n). Follow-up to the stable-range negative (audit sec 10): measures whether a balanced-head expansion is viable in principle for high-A binding-period evaluation.",
   "audit_only": true,
@@ -337,5 +339,5 @@
     "head_concentrated": false,
     "K99_fraction_of_pn_nonincreasing": true
   },
-  "timestamp": "2026-07-03T14:31:39+00:00"
+  "timestamp": "2026-07-03T19:18:07+00:00"
 }

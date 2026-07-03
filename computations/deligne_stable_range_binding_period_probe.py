@@ -139,7 +139,7 @@ def main() -> int:
     header = "    n |  " + "  ".join(f"M={M:<2d}" for M in range(M_MAX_CAPTURE + 1))
     print(header)
     for n in range(4, N_MAX + 1):
-        T = sum(dim_q_numeric(lam, q0) for lam in partitions_of(n))
+        T = mp.fsum(dim_q_numeric(lam, q0) for lam in partitions_of(n))
         row: dict[int, str] = {}
         fr_str = []
         for M in range(M_MAX_CAPTURE + 1):

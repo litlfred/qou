@@ -57,7 +57,7 @@ def main() -> int:
         parts = partitions_of(n)
         vals = sorted(((dim_q_numeric(lam, q0), lam) for lam in parts),
                       key=lambda t: t[0], reverse=True)
-        T = sum(v for v, _ in vals)
+        T = mp.fsum(v for v, _ in vals)
         cum, k99 = mp.mpf(0), None
         capture = {}
         for k, (v, _) in enumerate(vals, start=1):
