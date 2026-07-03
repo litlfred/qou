@@ -85,10 +85,11 @@ def main() -> int:
     t0 = time.monotonic()
     print("\n  4_1 creative-telescoping certificate search (bean pko4)\n")
 
+    # pole structure determined by exact orbit reconstruction at (q,x)=(3/2,7):
+    # poles at y = x and y = q*x, numerator ~ y (see session log / bean pko4)
     den_candidates = [
+        ("(y-x)(y-qx)", (y - x) * (y - q * x)),
         ("(1-y/x)(1-q y/x)", (1 - y / x) * (1 - q * y / x)),
-        ("(1-y/x)", (1 - y / x)),
-        ("(1-y/x)(1-q y/x)(1-q^2 y/x)", (1 - y / x) * (1 - q * y / x) * (1 - q**2 * y / x)),
     ]
     cert = None
     used = None

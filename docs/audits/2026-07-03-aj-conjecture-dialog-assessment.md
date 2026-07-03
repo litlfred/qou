@@ -328,6 +328,29 @@ muon-anchor knot and supplies the concrete data that would discharge the
 `StrongAJFigureEight` class fields (the Lean transcription is the
 natural follow-up).
 
+### The creative-telescoping certificate — FOUND (same day, bean `pko4`)
+
+[`computations/aj_figure_eight_certificate.py`](../../computations/aj_figure_eight_certificate.py)
+(witness `aj-figure-eight-certificate.witness.json`) computed the
+qZeilberger certificate that the one remaining Lean `sorry`
+(general-$N$ annihilation in `AJFigureEight.lean`) needs. With
+$x = q^N$, $y = q^k$ and the Habiro–Lê summand ratios $s, r_1, r_2$
+(each verified exactly against $F(N,k)$):
+
+$$\mathrm{Cert}(q,x,y) \;=\; \frac{y\,P(q,x)}{q\,x^7\,(y-x)(y-qx)},$$
+
+$P(q,x) = -q^6x^7 + q^6x^6 + q^5x^5 - q^5x^4 + q^4x^5 - q^4x^4 + q^3x^5
+- q^3x^4 - q^3x^3 + q^3x^2 - q^2x^3 + q^2x^2 - qx^3 + qx^2 + x - 1$,
+satisfying **exactly**: (i) the local telescoping identity
+$a_2 r_2 + a_1 r_1 + a_0 = \mathrm{Cert}(x,qy)\,s - \mathrm{Cert}(x,y)$,
+and (ii) the boundary identity $b(x) = -\mathrm{Cert}(x,1)$ (an
+independent cross-check of the verified operator). Poles at $y = x, qx$
+only — found by exact orbit-reconstruction after the first polynomial
+ansatz family failed. The Lean discharge is now a mechanical (if long)
+transcription: two shift lemmas on the Habiro products, the rational
+identity (i) by `field_simp`/`ring` under denominator hypotheses, and a
+`Finset.sum` telescope — queued as the follow-on tranche.
+
 ## Disposition
 
 - **No wiring, no status changes, no new conjecture blocks.** This audit
