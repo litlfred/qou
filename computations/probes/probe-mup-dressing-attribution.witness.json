@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-03T19:43:21.927297+00:00",
-  "commitSha": "11303e9b435dac80de1a986b87a2eaed998d1c42",
+  "computedAt": "2026-07-03T19:58:22.692094+00:00",
+  "commitSha": "6c45a23d96831379e5324b4181f8d1fa9fd33591",
   "assertions": [
     {
       "name": "fpin_consistency_with_amplification",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 20,
   "computation": "probe-mup-dressing-attribution",
   "scriptFile": "probe_mup_dressing_attribution.py",
-  "scriptHash": "0f8db88cc307",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ba394698973c",
+  "scriptCommitSha": "1174e5e797e37fea17de5f6576abeee4f126e388",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,10 +31,10 @@
   },
   "description": "Attribution test for the mu-p dressing under hypothesis H_mu (dressing multiplies the muon identity): the system decouples, q0 is pinned by the pure Hecke factor F_Bor from the mass ratio (the F-pin), and delta* is measured exactly. Reports where the F-pin lands relative to the muon/proton pins, the F_Bor sensitivity, delta* vs the ORD-17 kernel sharpener candidates, and the Kashaev-subleading naturality check. No fit; no wiring.",
   "data": {
-    "q0_muon_pin": "1.1099785955573347198997632204832250266562084087802",
+    "q0_muon_pin": "1.1099785955541805752815940796095093779932822799587",
     "q0_proton_pin": "1.1099785828227838307142973710427025888751629837331",
     "q0_F_pin": "1.1099784956959002803699141073906577948700483654099",
-    "F_pin_vs_muon_ppb": "-89.9669911107",
+    "F_pin_vs_muon_ppb": "-89.9641494844",
     "F_pin_vs_proton_ppb": "-78.4942024095",
     "F_pin_between_pins": "False",
     "dlnFBor_dlnq_at_Fpin": "-2.67529384924",
@@ -42,9 +42,9 @@
     "delta_star_muon_leg": "-1.63743958230711e-6",
     "delta_star_ratio_rung5": "0.08381530606",
     "delta_star_ratio_tail5": "0.088125464",
-    "eps_star_FBor_leg": "2.40894013968329e-7",
-    "fitted_habiro_tower_minus_1": "2.42244714440662e-7",
-    "eps_star_over_tower_minus_1": "0.9944242314",
+    "eps_star_FBor_leg": "2.40834348369338e-7",
+    "fitted_habiro_tower_minus_1": "2.42244714390487e-7",
+    "eps_star_over_tower_minus_1": "0.99417792861",
     "kashaev_subleading_N": "50283021.3367",
     "kashaev_N_vs_corpus_scales": {
       "1/hbar_q^2": "493637.09",

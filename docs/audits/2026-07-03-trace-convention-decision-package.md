@@ -165,10 +165,21 @@ resolves the apparent contradiction — and surfaces a discipline item:
   probe-established** (attribution geometry, ε*/(tower−1) = 0.9944) —
   the keystone's mass-sector target is confirmed to live on the
   Borromean composite factor.
-- 🟡 **Owner attention (not adjudicated here):** the floor-audit-rejected
-  tower sits in production `constants.py::q_at()` / `_solve_q_proton_f64`
-  — i.e. the package-layer q₀ pin *inherits the fit*. If the 2026-05-28
-  re-pin was authorized with the tower inside, the AGENTS §q₀-anchor
-  narrative ("precision substitution") should say so explicitly; if not,
-  the pin should be the raw proton identity (which lands 11.5 ppb away).
-  Flagged for ruling; nothing changed in production by this PR.
+- ✅ **RULED + EXECUTED (owner, 2026-07-03: "full raw-proton strip").**
+  History check first: the tower entered `constants.py` in a SINGLE
+  commit (`592eade9`, PR #3235's Copilot-fix — ~1 day before this
+  audit), silently flipping the documented raw proton pin to the
+  muon-equivalent value — the bean-`tnjb` "recurring bug" class, not
+  the 2026-05-28 re-pin. **The strip is therefore a RESTORATION**, not
+  a migration: post-strip `Q_50_DIGIT_STR = 1.10997858275138…` matches
+  AGENTS §q₀-anchor's documented proton pin exactly, and the m_μ
+  prediction returns to the documented **209.755 ppb** (dashboard:
+  209.8). Both solver paths (f64 + mpmath) stripped; docstrings now
+  state the raw identity + the visible 11.5 ppb tension + the c₄
+  keystone pointer. The three μ–p probes were made **pin-independent**
+  (explicit muon-identity solve instead of trusting the package
+  constant) and re-run — values unchanged (ε*/(tower−1) = 0.9942).
+  The tnjb witness gate is NOT triggered: the ~840 muon-q₀
+  computations-layer witnesses were never proton-migrated; only the
+  ~1-day exposure window (592eade9 → strip) needs a sweep for
+  witnesses that consumed the towered constant (beaned).
