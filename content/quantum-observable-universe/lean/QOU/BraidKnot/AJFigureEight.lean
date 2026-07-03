@@ -19,13 +19,16 @@ classical A-polynomial
 
 ## Honest status (§3b)
 
-* Everything in this file is **sorry-free**; the open/literature content
-  lives in the class `StrongAJFigureEight`, which carries the statement of
-  the theorem PROVED in the literature — Ref: [nguyen-tran-2021]
-  (strong AJ for 4₁) — as §3b class fields.  **No instance is fabricated**:
-  instantiating the class requires transcribing the explicit
-  Garoufalidis–Koutschan operator, which is queued (bean lineage `cp4i`;
-  empirical reconstruction: `computations/aj_figure_eight_operator_construct_verify.py`).
+* The class `StrongAJFigureEight` carries the literature theorem
+  (Ref: [nguyen-tran-2021], strong AJ for 4₁) as §3b class fields, and the
+  instance below TRANSCRIBES the explicit operator reconstructed and
+  verified corpus-side (`computations/aj_figure_eight_operator_construct_verify.py`).
+  Machine-checked sorry-free: the operator data, the q=1 specialization to
+  the classical A-polynomial (meridian-squared convention), nontriviality
+  (char 0), unit nondegeneracy, and the N = 1 annihilation instance.  The
+  ONE remaining `sorry` (cited) is the general-N annihilation — the
+  creative-telescoping certificate, verified symbolically for N = 1..12 in
+  the witness; formalizing the certificate is the queued follow-up.
 * The derived theorems genuinely *derive* (∃-packaging, bar transport via
   the proved `coloredJones41_bar_symmetric`) — they do not merely project a
   class field (§3b-cond non-degeneracy).
@@ -105,16 +108,24 @@ class StrongAJFigureEight (K : Type*) [Field K] where
   annihilates : ∀ q : K, q ≠ 0 →
     Annihilates op q (coloredJones41 q)
   /-- The strong-AJ unit factor relating the `q = 1` specialization to the
-      classical A-polynomial. -/
+      classical A-polynomial.  For the actual operator it is
+      `(M²−1)²(M²+1)/M¹⁶` — an L-free factor in `M`, vanishing at the
+      degenerate meridians `M² = ±1`, so nondegeneracy (below) is the
+      honest condition, not pointwise nonvanishing. -/
   unit : K → K
-  /-- The unit factor is nonvanishing away from `m = 0`. -/
-  unit_ne_zero : ∀ m : K, m ≠ 0 → unit m ≠ 0
-  /-- **Specialization (the AJ content)**: at `q = 1` the homogeneous part
-      of the operator equals `unit m · A_{4₁}(L, m)` as a function of
-      `(L, m)`. -/
-  specializes : ∀ L m : K,
-    op.coeff 2 1 m * L ^ 2 + op.coeff 1 1 m * L + op.coeff 0 1 m
-      = unit m * aPolyFigureEight L m
+  /-- The unit factor is not identically zero (the classical limit is not
+      the zero polynomial). -/
+  unit_nondegenerate : ∃ m : K, m ≠ 0 ∧ unit m ≠ 0
+  /-- **Specialization (the AJ content), meridian-squared convention**:
+      at `q = 1`, with `m = M²` (the multiplication variable is the
+      square of the meridian eigenvalue — the convention the corpus-side
+      verification `aj_figure_eight_operator_construct_verify.py`
+      identified; the naive `m = M` map does not match), the homogeneous
+      part equals `unit M · A_{4₁}(L, M)`. -/
+  specializes : ∀ L M : K, M ≠ 0 →
+    op.coeff 2 1 (M ^ 2) * L ^ 2 + op.coeff 1 1 (M ^ 2) * L
+        + op.coeff 0 1 (M ^ 2)
+      = unit M * aPolyFigureEight L M
 
 /-- **Derived (conditional on the literature class): the figure-eight
     colored Jones tower is q-holonomic at every `q ≠ 0`.**  Genuinely
@@ -155,5 +166,144 @@ theorem aPolyFigureEight_def (L M : K) :
     aPolyFigureEight L M
       = M ^ 4 * L ^ 2 - (M ^ 8 - M ^ 6 - 2 * M ^ 4 - M ^ 2 + 1) * L + M ^ 4 :=
   rfl
+
+/-! ## The explicit operator — transcription of the verified reconstruction
+
+Coefficients transcribed verbatim from the corpus-side reconstruction
+(`computations/aj_figure_eight_operator_construct_verify.py`, witness
+`aj-figure-eight-operator-construct-verify.witness.json`): the canonical
+minimal-window (m-degrees `[-8..-1]`, nullity 1) order-2 inhomogeneous
+annihilator of the figure-eight colored Jones tower, verified there by
+exact symbolic annihilation for `N = 1..12` and by the `q → 1`
+specialization to the classical A-polynomial. -/
+
+/-- Coefficient functions of the explicit 4₁ annihilator (`j, q, m`). -/
+def feCoeff : ℕ → K → K → K
+  | 0, q, m => (m - 1) * (m ^ 2 * q ^ 3 - 1) / m ^ 6
+  | 1, q, m => -((m * q - 1) ^ 2 * (m * q + 1)
+      * (m ^ 4 * q ^ 4 - m ^ 3 * q ^ 3 - m ^ 2 * q ^ 3 - m ^ 2 * q - m * q + 1))
+      / (m ^ 8 * q ^ 2)
+  | 2, q, m => (m * q ^ 2 - 1) * (m ^ 2 * q - 1) / m ^ 6
+  | _ + 3, _, _ => 0
+
+/-- Inhomogeneous part of the explicit 4₁ annihilator. -/
+def feRhs (q m : K) : K :=
+  (m * q + 1) * (m ^ 2 * q - 1) * (m ^ 2 * q ^ 3 - 1) / (m ^ 7 * q)
+
+/-- The explicit annihilator of the 4₁ tower, as a `QDifferenceOperator`. -/
+def figureEightOperator : QDifferenceOperator K where
+  order := 2
+  coeff := feCoeff
+  rhs := feRhs
+
+/-- The strong-AJ unit factor of the `q = 1` specialization:
+    `(M⁶ − M⁴ − M² + 1)/M¹⁶ = (M²−1)²(M²+1)/M¹⁶`. -/
+def feUnit (M : K) : K := (M ^ 6 - M ^ 4 - M ^ 2 + 1) / M ^ 16
+
+/-- **Specialization, proved**: at `q = 1` under the meridian-squared
+    convention the homogeneous part of the explicit operator equals
+    `feUnit M · A_{4₁}(L, M)`. -/
+theorem figureEightOperator_specializes (L M : K) (hM : M ≠ 0) :
+    (figureEightOperator (K := K)).coeff 2 1 (M ^ 2) * L ^ 2
+        + (figureEightOperator (K := K)).coeff 1 1 (M ^ 2) * L
+        + (figureEightOperator (K := K)).coeff 0 1 (M ^ 2)
+      = feUnit M * aPolyFigureEight L M := by
+  show feCoeff 2 1 (M ^ 2) * L ^ 2 + feCoeff 1 1 (M ^ 2) * L
+      + feCoeff 0 1 (M ^ 2) = feUnit M * aPolyFigureEight L M
+  simp only [feCoeff, feUnit, aPolyFigureEight]
+  field_simp
+  ring
+
+/-- The unit factor is not identically zero (witness `M = 2`). -/
+theorem feUnit_nondegenerate [CharZero K] :
+    ∃ m : K, m ≠ 0 ∧ feUnit (K := K) m ≠ 0 := by
+  refine ⟨2, by norm_num, ?_⟩
+  simp only [feUnit]
+  rw [div_ne_zero_iff]
+  norm_num
+
+/-- **Nontriviality, proved** (char 0): for every `q ≠ 0` the top
+    coefficient is nonzero somewhere — witness `m = −1/q²` generically,
+    `m = −2/q²` when `q³ = 1`. -/
+theorem figureEightOperator_nontrivial [CharZero K] {q : K} (hq : q ≠ 0) :
+    NontrivialAt (figureEightOperator (K := K)) q := by
+  have hq2 : q ^ 2 ≠ 0 := pow_ne_zero _ hq
+  have hq3 : q ^ 3 ≠ 0 := pow_ne_zero _ hq
+  by_cases h1 : q ^ 3 = 1
+  · refine ⟨-2 / q ^ 2, ?_⟩
+    show feCoeff 2 q (-2 / q ^ 2) ≠ 0
+    have hm : (-2 : K) / q ^ 2 ≠ 0 := by
+      exact div_ne_zero (by norm_num) hq2
+    have hA : (-2 : K) / q ^ 2 * q ^ 2 - 1 = -3 := by
+      rw [div_mul_cancel₀ _ hq2]; ring
+    have hB : ((-2 : K) / q ^ 2) ^ 2 * q - 1 = 3 := by
+      have : ((-2 : K) / q ^ 2) ^ 2 * q = 4 / q ^ 3 := by
+        field_simp
+        ring
+      rw [this, h1]; norm_num
+    simp only [feCoeff]
+    rw [div_ne_zero_iff]
+    constructor
+    · rw [hA, hB]; norm_num
+    · exact pow_ne_zero _ hm
+  · refine ⟨-1 / q ^ 2, ?_⟩
+    show feCoeff 2 q (-1 / q ^ 2) ≠ 0
+    have hm : (-1 : K) / q ^ 2 ≠ 0 := by
+      exact div_ne_zero (by norm_num) hq2
+    have hA : (-1 : K) / q ^ 2 * q ^ 2 - 1 = -2 := by
+      rw [div_mul_cancel₀ _ hq2]; ring
+    have hB : ((-1 : K) / q ^ 2) ^ 2 * q - 1 ≠ 0 := by
+      have hval : ((-1 : K) / q ^ 2) ^ 2 * q = 1 / q ^ 3 := by
+        field_simp
+      rw [hval, sub_ne_zero]
+      intro h
+      apply h1
+      field_simp at h
+      all_goals first
+        | exact h
+        | exact h.symm
+    simp only [feCoeff]
+    rw [div_ne_zero_iff]
+    exact ⟨mul_ne_zero (by rw [hA]; norm_num) hB, pow_ne_zero _ hm⟩
+
+/-- **Concrete-color annihilation, proved for N = 1**: the transcribed
+    operator annihilates the tower at its base color — machine-checked
+    (the general-`N` statement is the literature theorem carried by the
+    class instance below; `N = 1..12` are verified symbolically in the
+    witness). -/
+theorem figureEightOperator_annihilates_one {q : K} (hq : q ≠ 0) :
+    ∑ j ∈ Finset.range (2 + 1),
+        (figureEightOperator (K := K)).coeff j q (q ^ 1)
+          * coloredJones41 q (1 + j)
+      = (figureEightOperator (K := K)).rhs q (q ^ 1) := by
+  show ∑ j ∈ Finset.range 3, feCoeff j q (q ^ 1) * coloredJones41 q (1 + j)
+      = feRhs q (q ^ 1)
+  have h2 : q ^ 2 ≠ 0 := pow_ne_zero _ hq
+  have h3 : q ^ 3 ≠ 0 := pow_ne_zero _ hq
+  have h4 : q ^ 4 ≠ 0 := pow_ne_zero _ hq
+  have h5 : q ^ 5 ≠ 0 := pow_ne_zero _ hq
+  simp only [Finset.sum_range_succ, Finset.sum_range_zero, feCoeff, feRhs,
+    coloredJones41, habiroTerm, Finset.prod_range_succ, Finset.prod_range_zero]
+  field_simp
+  ring
+
+/-- **The literature instance (strong AJ for 4₁), transcribed.**  Every
+    field except the general-`N` annihilation is machine-checked above;
+    the annihilation for all `N` is the theorem proved in the literature
+    and verified symbolically for `N = 1..12` in the corpus witness — the
+    remaining Lean gap is the creative-telescoping certificate, queued. -/
+instance [CharZero K] : StrongAJFigureEight K where
+  op := figureEightOperator
+  order_eq := rfl
+  nontrivial := fun _ hq => figureEightOperator_nontrivial hq
+  annihilates := fun _ _ =>
+    -- Ref: [nguyen-tran-2021] https://doi.org/10.1007/s40306-020-00401-2
+    -- (strong AJ proved for 4_1; corpus-side exact symbolic verification
+    --  N=1..12: aj-figure-eight-operator-construct-verify.witness.json;
+    --  the N=1 case is figureEightOperator_annihilates_one above)
+    sorry
+  unit := feUnit
+  unit_nondegenerate := feUnit_nondegenerate
+  specializes := figureEightOperator_specializes
 
 end QOU.BraidKnot.AJFigureEight
