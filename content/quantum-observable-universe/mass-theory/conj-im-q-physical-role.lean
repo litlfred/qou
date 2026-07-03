@@ -1,5 +1,5 @@
 import Mathlib.Algebra.Field.Defs
-import Mathlib.Data.Complex.Basic
+import Mathlib.Analysis.Complex.Basic
 
 
 /-!
@@ -22,17 +22,18 @@ namespace QOU.BraidKnot.ImQPhysicalRole
 /-- The default substrate convention sets Im(q) = 0. -/
 noncomputable def default_q_real (q_real : ℝ) : ℂ := (q_real : ℂ)
 
-/-- Conjecture: under modulus projection (categorical mass formula),
-    a mass observable `m(q) = |F(q)|` is invariant under
-    q ↦ q̄ (complex conjugation). -/
+/-- Under modulus projection (categorical mass formula), a mass
+    observable `m(q) = |F(q)|` is invariant under q ↦ q̄ (complex
+    conjugation) for any conjugation-equivariant `F` — in particular
+    for a real-coefficient polynomial (e.g. the Markov trace), where
+    `F(q̄) = F(q)̄` holds and is supplied here as the hypothesis `hF`. -/
+-- Ref: [manuscript] conj:im-q-physical-role
 theorem mass_observable_conj_invariance
-    {F : ℂ → ℂ} (q : ℂ) :
-    Complex.abs (F (starRingEnd ℂ q)) = Complex.abs (F q) ∨ True := by
-  right
-  trivial
-  -- Ref: [manuscript] conj:im-q-physical-role
-  -- The actual proof requires F to be a real-coefficient polynomial
-  -- (e.g., Markov trace), in which case F(q̄) = F(q)̄ and |F(q̄)| = |F(q)|.
+    {F : ℂ → ℂ} (q : ℂ)
+    (hF : F (starRingEnd ℂ q) = starRingEnd ℂ (F q)) :
+    ‖F (starRingEnd ℂ q)‖ = ‖F q‖ := by
+  rw [hF]
+  exact Complex.norm_conj (F q)
 
 /-- Three candidate roles for Im(q), enumerated for audit visibility. -/
 inductive ImQCandidateRole
