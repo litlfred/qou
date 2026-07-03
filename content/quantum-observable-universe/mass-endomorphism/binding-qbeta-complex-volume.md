@@ -197,3 +197,25 @@ companion remarks
 [`rem:complex-volume-character-variety-path`](#rem:complex-volume-character-variety-path).
 
 **Archimedean specialisation (§7c).** The measured binding and $Q_\beta$ form the real and imaginary parts $\mathrm{Re}, \mathrm{Im}$ of the complex Bring-surface volume, valued in $\mathbb{R}$ (with $E_0 : \mathbb{R}$). This provides the archimedean readout of the generic complex-volume construction, acknowledged here.
+
+Two further pieces of the operator picture are proved sorry-free at the free
+endpoint. First, the concrete $AW(3)$ realization: splitting the channel
+tridiagonal operator into lowering, raising, and grading parts $L$, $R$, $Q$
+(the shift-split of multiplication by $2x$ at the $q$-Hermite bottom), the
+Zhedanov algebra degenerates to the $q$-oscillator relations
+
+$$
+Q R = q\,(R Q), \qquad L Q = q\,(Q L), \qquad L R - R L = (1 - q)\,Q,
+$$
+
+proved coordinatewise over generic $R$ (`chQR_rel`, `chLQ_rel`, `chLR_comm`),
+with `chM_eigencolumn_iff` identifying the eigencolumns of $L + R$ with the
+$q$-Hermite three-term rows; the odd channel satisfies the same relations at
+$\sigma q$ by instantiation. Second, the **Casoratian mechanism** of the
+$W$-sign test: two solutions of one three-term step transport their Casoratian
+by $W' = -B\,W$ (`casoratian_step`), and along a bar-even constant-multiplier
+ladder the channel Casoratian is *invariant* (`channel_casoratian_const`) — so
+a measured drift of the physical channel Casoratian reads directly as the
+$k$-dependence of the Askey–Wilson coefficient $B_k$. With $c_3^{\text{even}}$
+now measured exactly (witness `qbeta-c3even-exact-sseries`), the decisive
+$W_3$ sign test awaits only the $c_4$ rung pair.

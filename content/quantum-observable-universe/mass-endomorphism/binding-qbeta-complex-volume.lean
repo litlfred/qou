@@ -446,4 +446,165 @@ theorem AWDeformationPath.channel_ladders (σ : R →+* R)
 
 end AWDeformation
 
+/-! ## Concrete AW(3) relations at the q-Hermite bottom — the channel operators
+
+Zhedanov's AW(3) algebra, realized concretely for the channel pair.  At the
+q-Hermite bottom of the scheme (all Askey–Wilson parameters off — the *free*
+endpoint of `AWDeformationPath`) the algebra degenerates to the
+**q-oscillator relations**, and these are *provable* over generic
+`[CommRing R]`, division-free, coordinatewise on sequence space `ℕ → R`.
+
+The channel tridiagonal operator (multiplication by `2x` in the q-Hermite
+basis, transposed to coefficient columns) splits as `M = L + R`:
+
+- `chR` (raising): `(R v) 0 = 0`, `(R v) (n+1) = v n` — the sub-diagonal;
+- `chL` (lowering): `(L v) n = (1 − q^{n+1}) · v (n+1)` — the super-diagonal
+  with the even-channel coefficient;
+- `chQ` (grading): `(Q v) n = q^n · v n` — the diagonal q-power operator.
+
+The proved relations (`chQR_rel`, `chLQ_rel`, `chLR_comm`) are the
+degenerate-AW(3) presentation: the first two are the q-commutation of the
+grading with the shifts, the third — `L∘R − R∘L = (1−q)·Q` — is the
+q-oscillator commutator that generates the whole ladder.  The bar-conjugated
+(odd-channel) operators are the same definitions at `σ q`, so every relation
+descends to both channels by instantiation (`q := σ q`) — no second proof.
+
+This realizes the algebra side of `ChannelLeonardDuality` at the free
+endpoint; the four-parameter AW deformation of these relations (the bound
+endpoint) remains the conjecture class.
+
+Ref: [zhedanov1991] DOI 10.1007/BF01015906. -/
+section AW3Concrete
+variable {R : Type*} [CommRing R]
+
+/-- Raising (sub-diagonal) channel operator: `(R v) 0 = 0`, `(R v)(n+1) = v n`. -/
+def chR (v : ℕ → R) : ℕ → R
+  | 0 => 0
+  | n + 1 => v n
+
+/-- Lowering (super-diagonal) channel operator with the even-channel
+    coefficient: `(L v) n = (1 − q^{n+1}) · v (n+1)`. -/
+def chL (q : R) (v : ℕ → R) : ℕ → R :=
+  fun n => (1 - q ^ (n + 1)) * v (n + 1)
+
+/-- Grading (diagonal) operator: `(Q v) n = q^n · v n`. -/
+def chQ (q : R) (v : ℕ → R) : ℕ → R :=
+  fun n => q ^ n * v n
+
+/-- The channel tridiagonal operator at the q-Hermite bottom:
+    multiplication by `2x` in the channel basis is `M = L + R`
+    (diagonal term zero — the free endpoint of `AWDeformationPath`). -/
+def chM (q : R) (v : ℕ → R) : ℕ → R :=
+  fun n => chL q v n + chR v n
+
+/-- **q-commutation of grading with raising**: `Q ∘ R = q · (R ∘ Q)`. -/
+theorem chQR_rel (q : R) (v : ℕ → R) :
+    ∀ n, chQ q (chR v) n = q * chR (chQ q v) n := by
+  intro n
+  cases n with
+  | zero => simp [chQ, chR]
+  | succ k =>
+    show q ^ (k + 1) * v k = q * (q ^ k * v k)
+    ring
+
+/-- **q-commutation of lowering with grading**: `L ∘ Q = q · (Q ∘ L)`. -/
+theorem chLQ_rel (q : R) (v : ℕ → R) :
+    ∀ n, chL q (chQ q v) n = q * chQ q (chL q v) n := by
+  intro n
+  show (1 - q ^ (n + 1)) * (q ^ (n + 1) * v (n + 1))
+      = q * (q ^ n * ((1 - q ^ (n + 1)) * v (n + 1)))
+  ring
+
+/-- **The q-oscillator commutator (degenerate AW(3), proved):**
+    `L ∘ R − R ∘ L = (1 − q) · Q`.  This is the concrete channel-operator
+    form of Zhedanov's algebra at the q-Hermite bottom; the odd channel
+    satisfies the same relation at `σ q` by instantiation. -/
+theorem chLR_comm (q : R) (v : ℕ → R) :
+    ∀ n, chL q (chR v) n - chR (chL q v) n = (1 - q) * chQ q v n := by
+  intro n
+  cases n with
+  | zero =>
+    show (1 - q ^ (0 + 1)) * chR v (0 + 1) - 0 = (1 - q) * (q ^ 0 * v 0)
+    show (1 - q ^ (0 + 1)) * v 0 - 0 = (1 - q) * (q ^ 0 * v 0)
+    ring
+  | succ k =>
+    show (1 - q ^ (k + 2)) * chR v (k + 2) - chL q v k
+        = (1 - q) * (q ^ (k + 1) * v (k + 1))
+    show (1 - q ^ (k + 2)) * v (k + 1) - (1 - q ^ (k + 1)) * v (k + 1)
+        = (1 - q) * (q ^ (k + 1) * v (k + 1))
+    ring
+
+/-- The channel operator is the shift-split sum (definitional). -/
+theorem chM_eq_L_add_R (q : R) (v : ℕ → R) (n : ℕ) :
+    chM q v n = chL q v n + chR v n := rfl
+
+/-- **Eigencolumns of the free-endpoint channel operator are exactly the
+    q-Hermite three-term rows**: `(M v) n = θ·v n` unfolds to the seed row
+    `(1−q)·v 1 = θ·v 0` and the generic row
+    `(1−q^{n+2})·v_{n+2} + v_n = θ·v_{n+1}` — the `evenStep` shape with
+    diagonal off.  Connects `chM` to `IsEigencolumn`/`overlapColumn`
+    without a unit assumption on the super-diagonal. -/
+theorem chM_eigencolumn_iff (q θ : R) (v : ℕ → R) :
+    (∀ n, chM q v n = θ * v n)
+      ↔ ((1 - q) * v 1 = θ * v 0
+          ∧ ∀ n, (1 - q ^ (n + 2)) * v (n + 2) + v n = θ * v (n + 1)) := by
+  constructor
+  · intro h
+    refine ⟨?_, fun n => h (n + 1)⟩
+    have h0 : (1 - q ^ 1) * v 1 + 0 = θ * v 0 := h 0
+    rw [pow_one, add_zero] at h0
+    exact h0
+  · rintro ⟨h0, hrow⟩ n
+    cases n with
+    | zero =>
+      show (1 - q ^ 1) * v 1 + 0 = θ * v 0
+      rw [pow_one, add_zero]
+      exact h0
+    | succ k => exact hrow k
+
+end AW3Concrete
+
+/-! ## Casoratian descent — the mechanism of the W-sign test
+
+The 1jrh prune (docs/audits/2026-07-02-1jrh-aw-one-recurrence-formalize-first-prune.md)
+pins the decisive physical experiment: if the binding and `𝔔_β` ladders solve
+ONE three-term recurrence, they span its 2-dimensional solution space and
+their **Casoratian** (discrete Wronskian) `W_k` transports by
+`W_{k+1} = −B_{k+1}·W_k` — the AW form of `B_k` then forces a parameter-free
+sign pattern.  With the `c₃^even` rung now measured exactly
+(`qbeta-c3even-exact-sseries`, `c₃^even = 841/144 + 604739·√3/12960`), the
+remaining gate is the Stage-C `c₄` pair; the *mechanism* is proved here so
+the eventual test is one line of arithmetic on trusted rungs. -/
+section Casoratian
+variable {R : Type*} [CommRing R]
+
+/-- **Casoratian descent (proved).**  If two sequences satisfy the SAME
+    three-term step `X₂ = A·X₁ + B·X₀`, their Casoratian
+    `W = X₀·Y₁ − X₁·Y₀` transports by one step as `W' = −B·W`.
+    No hypothesis on `A` is needed — the multiplier cancels. -/
+theorem casoratian_step {A B X0 X1 X2 Y0 Y1 Y2 : R}
+    (hX : X2 = A * X1 + B * X0) (hY : Y2 = A * Y1 + B * Y0) :
+    X1 * Y2 - X2 * Y1 = -B * (X0 * Y1 - X1 * Y0) := by
+  subst hX; subst hY; ring
+
+/-- **Channel-Casoratian invariance (proved).**  Along a `recurrence_invol_descent`
+    ladder — one three-term recurrence `V₂ = c·V₁ − V₀` with a bar-even
+    multiplier — the Casoratian of the two parity channels (bar-even/binding
+    against bar-odd/`𝔔_β`) is *invariant*: constant multiplier ⇒ `B = −1` ⇒
+    `W' = W`.  A measured drift of the physical channel Casoratian therefore
+    reads directly as the `k`-dependence of the AW coefficient `B_k`. -/
+theorem channel_casoratian_const (σ : R →+* R) {c V0 V1 V2 : R}
+    (hc : σ c = c) (h : V2 = c * V1 - V0) :
+    (V1 + σ V1) * (V2 - σ V2) - (V2 + σ V2) * (V1 - σ V1)
+      = (V0 + σ V0) * (V1 - σ V1) - (V1 + σ V1) * (V0 - σ V0) := by
+  obtain ⟨hE, hO⟩ := recurrence_invol_descent σ hc h
+  have hstep := casoratian_step (A := c) (B := (-1 : R))
+      (X0 := V0 + σ V0) (X1 := V1 + σ V1) (X2 := V2 + σ V2)
+      (Y0 := V0 - σ V0) (Y1 := V1 - σ V1) (Y2 := V2 - σ V2)
+      (by linear_combination hE) (by linear_combination hO)
+  linear_combination hstep
+
+end Casoratian
+
+
 end QOU.MassEndomorphism
