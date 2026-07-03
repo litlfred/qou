@@ -73,30 +73,38 @@ Probe: [`computations/probes/gram_norm_binding_probe.py`](../../computations/pro
 transfer engine, max rel diff < 1e-8). Witness:
 `computations/probes/gram-norm-binding-probe.witness.json`.
 
-Result (A ≤ 3; α = E₀, B_gram = (α/2)·ln(G_free/G_atom)):
+Result (²H–⁴He; α = E₀, B_gram = (α/2)·ln(G_free/G_atom)):
 
 | iso | B_AME | B_sym | B_gram | B_gram/B_sym | G/tr² atom | G/tr² free |
 |---|--:|--:|--:|--:|--:|--:|
 | ²H | 2.22 | 3.890 | −0.023 | −0.0059 | 34.7 | 5.35 |
 | ³H | 8.48 | 9.068 | +0.108 | +0.0119 | 967.4 | 13.4 |
 | ³He | 7.72 | 6.797 | −0.231 | −0.0339 | 327.9 | 11.4 |
+| ⁴He | 28.30 | 11.975 | −0.100 | −0.0083 | 9152.1 | 28.6 |
 
 **Verdict — scope (a), scope-limited negative:** the Gram-norm log-ratio,
-*alone, as-is*, does not reproduce binding — B_gram is two orders of
-magnitude too small and sign-flips across isotopes. This constrains the
+*alone, as-is*, does not reproduce binding — |B_gram| ≤ 0.23 MeV across
+²H–⁴He (vs B_AME up to 28.3) with no stable sign. This constrains the
 magnitude of this construction as a standalone binding observable; it does
 **not** structurally exclude ♯-pairing ingredients from a multi-term closure
 (no invariant proved; per the (a)/(b) refutation discipline this is not a
 (b)).
 
-**Structural observation worth keeping:** the *ratio* G/tr² — the
-off-channel (non-scalar) weight of the word under the indefinite Frobenius
-pairing — is 6–70× **larger for the bound word than the free word** and
-grows steeply with n. The binding information in the operator-space norm
-sits in this cross-channel amplification, not in the log-ratio of G itself.
-Any follow-up should target the per-λ decomposition of G (which blocks
-carry the amplification, and whether the self-conjugate stratum dominates),
-not the aggregate.
+**Structural observation worth keeping — the Gram norm is (nearly)
+conserved under binding.** Across all four isotopes ln(G_atom/G_free) ≈ 0
+to within a few percent of the corresponding 2·B_sym/α. Binding suppresses
+the *linear* trace (that is B_sym) but does not change the word's total
+Frobenius length: the amplitude leaves the trace/scalar channel and
+reappears in off-diagonal (cross-channel) components. The G/tr²
+amplification column (6.5× → 320× bound-vs-free from ²H to ⁴He) is the
+mirror image of the trace suppression under this near-conservation, i.e.
+G/tr²|_atom ÷ G/tr²|_free ≈ exp(2·B_sym/α) — not an independent binding
+observable. The *independent* finding is the conservation itself (the
+≤ 0.23 MeV residual B_gram, sign-flipping under the ³H/³He mirror swap —
+the pp vs nn interface asymmetry pushes the near-zero ratio through zero).
+Any follow-up should target the per-λ decomposition of the redistribution
+(which Wedderburn blocks receive the amplitude; does the self-conjugate
+stratum dominate?), not the aggregate norm.
 
 ## 4. Cross-references
 
