@@ -47,8 +47,10 @@ zeta4_cube_eq_channel_conj = bool(
     sp.simplify(orbit[3] - (sp.cosh(eta) - I * sp.sinh(eta))) == 0)
 orbit_sum_zero = bool(sp.simplify(orbit[0] + orbit[1] + orbit[2] + orbit[3]) == 0)
 sign_isotype_zero = bool(sp.simplify(orbit[0] - orbit[1] + orbit[2] - orbit[3]) == 0)
+# rewrite(sp.exp) is required: simplify alone does not rewrite cosh/sinh into
+# exponentials, and the un-rewritten difference does not normalize to 0.
 faithful_sum_eq = bool(sp.simplify(
-    V0(eta) - ((1 + I) / 2 * sp.exp(eta) + (1 - I) / 2 * sp.exp(-eta))) == 0)
+    (V0(eta) - ((1 + I) / 2 * sp.exp(eta) + (1 - I) / 2 * sp.exp(-eta))).rewrite(sp.exp)) == 0)
 
 results = {
     "V0(eta+i*pi/2)": str(lhs),
