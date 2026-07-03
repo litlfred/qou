@@ -332,6 +332,31 @@ def build() -> DerivationChain:
         notes="Pure arithmetic (ratio of two 50 dps values).",
     ))
 
+    # 5b — Canonical substrate-identity witness (headline m_p source)
+    steps.append(DerivationStep(
+        name="Canonical substrate-identity m_p at 50 dps (witness read)",
+        operation=(
+            "Read data.predictions.m_p_MeV from "
+            "m-p-substrate-identity-50dps.witness.json as a 50-dps "
+            "decimal string → mp.mpf.  This is the production "
+            "muon-anchored Hecke-energy value the canonical_mass "
+            "facade also serves; consuming the witness (rather than "
+            "re-inlining the identity) keeps the Habiro-ladder "
+            "constants single-sourced."
+        ),
+        inputs=[FirstPrinciple.HECKE_ENERGY.value],
+        output_name="m_p_substrate_identity_MeV",
+        output_value=mp.nstr(M_P_PRED_CANONICAL_MEV, 50),
+        trust_basis=TrustBasis.SCRIPT_CITED,
+        jet_order=0,
+        notes=(
+            "script: computations/m_p_substrate_identity_50dps.py "
+            "(producer of m-p-substrate-identity-50dps.witness.json; "
+            "hash recorded in the codata witness's "
+            "upstream_witness_hashes)."
+        ),
+    ))
+
     # 6 — Canonical muon-anchored Hecke energy → m_p in MeV
     steps.append(DerivationStep(
         name="Muon-anchored Hecke energy → m_p in MeV",
@@ -341,9 +366,10 @@ def build() -> DerivationChain:
             "factor F_Bor = |tr_M(β_Bor)|·[3]_q!/q³ (canonical_mass "
             f"facade identity at 50 dps).  M_E_MEV = {M_E_MEV_CODATA} "
             "MeV is the **single CODATA-bounded constant** the "
-            "framework consumes."
+            "framework consumes.  The single-level ratio m_p_over_m_e "
+            "(step 5) remains as a comparison column only."
         ),
-        inputs=["m_p_over_m_e"],
+        inputs=["m_p_substrate_identity_MeV"],
         output_name="m_p_pred_MeV",
         output_value=mp.nstr(M_P_PRED_MEV, 50),
         trust_basis=TrustBasis.COMPUTATIONAL,
@@ -392,10 +418,13 @@ def emit_codata_witness(chain: DerivationChain) -> None:
     out = _pb.witness_path("proton-mass-codata-50dps.witness.json", HERE)
     w = WitnessBuilder("proton-mass-codata-50dps", engine="python")
     w.set_description(
-        "Cross-pipeline m_p prediction vs CODATA at the precision "
-        "achievable by the current pipeline (currently f64-bounded "
-        "via mass_endomorphism.py; will lift to 50 dps once the "
-        "Phase A tower-lift PRs land)."
+        "Cross-pipeline m_p prediction vs CODATA. Headline m_p is the "
+        "canonical muon-anchored Hecke energy read from "
+        "m-p-substrate-identity-50dps.witness.json at 50 dps (λ_A "
+        "excised 2026-06-24; the Borromean VolDensity paths survive "
+        "only as audit columns). The CODATA residual is a "
+        "calibration-consistency cross-check per the q₀ anchor "
+        "convention, since q₀ and m_p inform the same H¹ datum."
     )
     w.set_content_block("prop:full-pole-structure-mass-trace")
     # Witness values stored as 50-dps decimal strings (mp.nstr) so
@@ -468,6 +497,11 @@ def emit_codata_witness(chain: DerivationChain) -> None:
     if _option_b_path.exists():
         _, _hr = load_and_hash_upstream(_option_b_path)
         upstream_hashes.append(_hr)
+    # The headline m_p_pred_MeV is sourced from the substrate-identity
+    # witness — record its hash so witness_dependency_drift.py detects
+    # drift in the canonical mass source (Copilot review, PR #3199).
+    _, _hr_si = load_and_hash_upstream(_SUBSTRATE_IDENTITY_WITNESS)
+    upstream_hashes.append(_hr_si)
     w.add_data("upstream_witness_hashes", upstream_hashes)
     w.add_data("reference_blocks", [
         "prop:full-pole-structure-mass-trace",
