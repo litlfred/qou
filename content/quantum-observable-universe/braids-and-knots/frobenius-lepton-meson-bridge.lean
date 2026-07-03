@@ -18,18 +18,29 @@ namespace QOU.BraidsAndKnots
 -- ═══════════════════════════════════════════════════════════════
 
 /-- H₂ has dimension 2! = 2 = 1² + 1²: two 1-dim irreps. -/
-theorem h2_artin_wedderburn : 1^2 + 1^2 = Nat.factorial 2 := by omega
+theorem h2_artin_wedderburn : 1^2 + 1^2 = Nat.factorial 2 := by decide
 
 /-- H₃ has dimension 3! = 6 = 1² + 2² + 1²: dims (1,2,1). -/
-theorem h3_artin_wedderburn : 1^2 + 2^2 + 1^2 = Nat.factorial 3 := by omega
+theorem h3_artin_wedderburn : 1^2 + 2^2 + 1^2 = Nat.factorial 3 := by decide
 
 /-- H₄ has dimension 4! = 24 = 1² + 3² + 2² + 3² + 1². -/
-theorem h4_artin_wedderburn : 1^2 + 3^2 + 2^2 + 3^2 + 1^2 = Nat.factorial 4 := by omega
+theorem h4_artin_wedderburn : 1^2 + 3^2 + 2^2 + 3^2 + 1^2 = Nat.factorial 4 := by decide
 
 /-- 2 = 1² + 1² is the ONLY way to write 2 as a sum of positive
   integer squares. This forces H₂ to have only 1-dim irreps. -/
 theorem two_unique_sum_of_squares (a b : ℕ) (ha : 0 < a) (hb : 0 < b)
-    (hab : a^2 + b^2 = 2) : a = 1 ∧ b = 1 := by omega
+    (hab : a^2 + b^2 = 2) : a = 1 ∧ b = 1 := by
+  have ha1 : a ≤ 1 := by
+    by_contra h
+    have h4 : 2 ^ 2 ≤ a ^ 2 := Nat.pow_le_pow_left (by omega) 2
+    norm_num at h4
+    omega
+  have hb1 : b ≤ 1 := by
+    by_contra h
+    have h4 : 2 ^ 2 ≤ b ^ 2 := Nat.pow_le_pow_left (by omega) 2
+    norm_num at h4
+    omega
+  omega
 
 -- ═══════════════════════════════════════════════════════════════
 -- §2  BRANCHING RULE H₃ ↓ H₂
