@@ -1,0 +1,50 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-03T23:42:12.647696+00:00",
+  "commitSha": "8ceb0af0dfc1ddb520b2ce5f721bd18f3a51fa39",
+  "assertions": [
+    {
+      "name": "aDn_times_volume_does_not_close_magnitude",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "super-exp a_D^(n)·Vol worst |err| = 100% (>5%): volume is the isospin carrier but a_D^(n) ≠ the magic-shell 2·A multiplicity; closure needs (multiplicity)×Vol_n(K), Hopf-Vol=0 deuteron separate."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 185,
+  "computation": "theta-wn-jetfilt-linkvolume",
+  "scriptFile": "theta_wn_jetfilt_linkvolume.py",
+  "scriptHash": "1b07282503b8",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Closure option 1 refined: jet-filtration × hyperbolic link-volume. The volume is the correct isospin carrier (³H>³He), but a_D^(n)·Vol does not close the magnitude — ⁴He magic shell wants 2·A multiplicity ≠ a_D^(4); deuteron Hopf Vol=0 is a structural wall. Narrows w_n(K) to (multiplicity)×Vol_n(K). No fit.",
+  "data": {
+    "worst_err": {
+      "raw": 1.0,
+      "jet_super_exp": 1.0,
+      "magic_2A": 1.9953319550291027
+    },
+    "volumes": {
+      "D": 0.0,
+      "T": 8.286316817806593,
+      "3He": 7.327724753417752,
+      "4He": 7.327724753417752
+    }
+  }
+}
