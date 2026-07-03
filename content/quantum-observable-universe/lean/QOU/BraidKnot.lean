@@ -56,6 +56,7 @@ import QOU.BraidKnot.HabiroNewtonLadder
 import QOU.BraidKnot.AJFigureEight
 import QOU.BraidKnot.AJFigureEightCertificate
 import QOU.BraidKnot.AJFigureEightTelescope
+import QOU.BraidKnot.AJFigureEightAnnihilation
 import QOU.BraidKnot.AJTrefoil
 import QOU.BraidKnot.DeuteronWitness
 import QOU.BraidKnot.TritiumWitness

@@ -351,6 +351,23 @@ transcription: two shift lemmas on the Habiro products, the rational
 identity (i) by `field_simp`/`ring` under denominator hypotheses, and a
 `Finset.sum` telescope — queued as the follow-on tranche.
 
+> **CLOSED (2026-07-03, bean `udmw`, PR #3263).** The transcription
+> landed: `QOU/BraidKnot/AJFigureEightTelescope.lean` (division-free
+> split products + shift lemmas) and
+> `QOU/BraidKnot/AJFigureEightAnnihilation.lean`
+> (`figureEightOperator_annihilates` + the **sorry-free**
+> `StrongAJFigureEight` instance), both verified lean-direct exit 0.
+> The assembly is division-free (denominators only powers of `q`, `q^N`
+> and the nonvanishing clearing product), so the proved annihilation
+> holds at **every** `q ≠ 0` — roots of unity included, strictly more
+> than the generic-`q` statement the certificate route naively gives.
+> The B-side shift denominators are consumed exactly by factors the
+> operator supplies (`a₂ ∋ (xq²−1)`, `a₁ ∋ (xq−1)²`, A-shift `∋ (qx−1)`)
+> — the structural reason no genericity hypothesis is needed. For 4₁,
+> nothing in the strong-AJ statement layer carries a `sorry` any more;
+> the trefoil instance's cited sorry (its own certificate telescope) is
+> the remaining analogue, queued.
+
 ## Disposition
 
 - **No wiring, no status changes, no new conjecture blocks.** This audit
