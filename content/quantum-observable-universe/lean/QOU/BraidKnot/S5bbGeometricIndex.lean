@@ -21,7 +21,14 @@ opaque WenzlWeights : Type
 
 /-- The properties of the colour Reeb vector field on the 5-manifold. -/
 class IsColourReeb {M : Manifold5} (ξ : VectorField M) : Prop where
+  /-- `opaque marker` — Mathlib has no contact-geometry / Reeb-field
+      infrastructure, and `Manifold5` / `VectorField` are opaque hooks,
+      so the genuine Reeb condition (ξ is the Reeb field of a contact
+      form θ: θ(ξ) = 1, dθ(ξ, ·) = 0) cannot yet be stated. -/
   is_reeb : True
+  /-- `opaque marker` — the SO(3)-isotropy-avoidance locus (ξ nowhere
+      zero outside the SO(3) isotropy) is likewise unstatable over the
+      opaque `Manifold5`; tracked as open geometric content. -/
   avoids_SO3 : True
 
 /-- The equivariant index evaluated against the Ocneanu weights via Atiyah-Bott localization. -/
