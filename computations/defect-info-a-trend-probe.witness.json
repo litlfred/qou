@@ -1,0 +1,110 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-03T23:50:04.897392+00:00",
+  "commitSha": "f4c0726ee18e185025fa16e28867ab88a881b52a",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 32183,
+  "computation": "defect-info-a-trend-probe",
+  "scriptFile": "defect_info_a_trend_probe.py",
+  "scriptHash": "866b745da959",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "A-trend of the defect-weighted channel-information energy vs raw binding residual, extended to 6Li/7Li: decisive test of whether the twice-measured 4He near-match (0.904) is the onset of an asymptotic (extensive) identification or a coincidence.",
+  "audit_only": true,
+  "tier": "shape-probe (fit-free; production channel weights; nothing wired)",
+  "precision_dps": {
+    "compute": 70,
+    "serialized": 50
+  },
+  "source_witness": "ame-2020-binding-energies.witness.json",
+  "constants": {
+    "q_0": "1.1099785955573347",
+    "E0_MeV": "4.1859808275828917468"
+  },
+  "isotopes": {
+    "2H": {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "strands": 6,
+      "B_q0_MeV": "3.8896918848777578716788349901286904168228941411388",
+      "B_AME_MeV": "2.224566",
+      "residual_raw_MeV": "-1.6651258848777578716788349901286904168228941411388",
+      "E_defect_info_MeV": "4.5409704648251587018488953082931054824860148556017",
+      "ratio": "-2.727103401649735104453347579188407178674859032341466160656842491507018"
+    },
+    "3H": {
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "strands": 9,
+      "B_q0_MeV": "9.0676587654747559914455993769344525091882076929291",
+      "B_AME_MeV": "8.481798",
+      "residual_raw_MeV": "-0.5858607654747559914455993769344525091882076929291",
+      "E_defect_info_MeV": "8.8223596603106823732727088028332547902700866831134",
+      "ratio": "-15.05879925780902430230385783692001643373986822641750169041085416606123"
+    },
+    "3He": {
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "strands": 9,
+      "B_q0_MeV": "6.7968867017052041269295866676666720452185610148153",
+      "B_AME_MeV": "7.718043",
+      "residual_raw_MeV": "0.92115629829479587307041333233332795478143898518471",
+      "E_defect_info_MeV": "8.9045798608425187779926260760014385111989204055706",
+      "ratio": "9.666741547907001623335090875582102815959170463242407808194196737385509"
+    },
+    "4He": {
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "strands": 12,
+      "B_q0_MeV": "11.974853582302202246696351054472434137583874566606",
+      "B_AME_MeV": "28.295673",
+      "residual_raw_MeV": "16.320819417697797753303648945527565862416125433394",
+      "E_defect_info_MeV": "14.751424824664369366758386574266869174427664500901",
+      "ratio": "0.9038409437131799365274160724812710865910185010480466505362644939430029"
+    },
+    "6Li": {
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "strands": 18,
+      "B_q0_MeV": "20.060015279726645553086796940692946098467583458842",
+      "B_AME_MeV": "31.99405",
+      "residual_raw_MeV": "11.934034720273354446913203059307053901532416541158",
+      "E_defect_info_MeV": "31.101248777586240052350310942890935099288574484842",
+      "ratio": "2.606096723076556620241792617477277452474863808356057035491549212973283"
+    },
+    "7Li": {
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "strands": 21,
+      "B_q0_MeV": "25.237982160323643395547155389923926300940499357904",
+      "B_AME_MeV": "39.2450807",
+      "residual_raw_MeV": "14.007098539676356604452844610076073699059500642096",
+      "E_defect_info_MeV": "41.658137033176882122457175189017347743430350326947",
+      "ratio": "2.974073246873825540080863415593733125461093254159910796455549773896182"
+    }
+  },
+  "verdict": {
+    "deviation_from_1_nonincreasing_at_top3_A": false
+  },
+  "timestamp": "2026-07-03T23:50:04+00:00"
+}
