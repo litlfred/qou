@@ -63,7 +63,9 @@ out = {
                      "OPEN keystone; a_D^(4)=Family-A is a CODATA-implied near-match"),
   "verdict": verdict,
 }
-wpath = "computations/substrate/z2bn-prolongation-qdifference-constraint.witness.json"
-with open(wpath, "w") as fh:
-    json.dump(out, fh, indent=2, ensure_ascii=False)
-print("\nwitness ->", wpath)
+from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+wpath = WitnessBuilder.wrap_legacy(
+    "z2bn-prolongation-qdifference-constraint", out,
+    script_path=__file__, engine="sympy",
+).save()
+print("witness ->", wpath)

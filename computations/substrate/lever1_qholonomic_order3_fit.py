@@ -153,13 +153,15 @@ witness = {
     "certified_order3": o3_cert is not None,
     "verdict": verdict,
 }
-out = os.path.join("computations", "substrate", "lever1-qholonomic-order3-fit.witness.json")
-with open(out, "w") as f:
-    json.dump(witness, f, indent=2)
+from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+wpath = WitnessBuilder.wrap_legacy(
+    "lever1-qholonomic-order3-fit", witness,
+    script_path=__file__, engine="sympy",
+).save()
 
 print(f"\n  order-3 certified: {o3_cert is not None}")
 if o3_cert:
     for j, P in o3_cert["recurrence"].items():
         print(f"    P{j}(q,X) = {P}")
 print(f"\n  VERDICT: {verdict}")
-print(f"\nwitness -> {out}")
+print(f"\nwitness -> {wpath}")

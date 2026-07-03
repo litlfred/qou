@@ -183,13 +183,15 @@ witness = {
     "certified": certified_final is not None,
     "verdict": verdict,
 }
-out = os.path.join("computations", "substrate", "lever1-qholonomic-kernel-fit.witness.json")
-with open(out, "w") as f:
-    json.dump(witness, f, indent=2)
+from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+wpath = WitnessBuilder.wrap_legacy(
+    "lever1-qholonomic-kernel-fit", witness,
+    script_path=__file__, engine="sympy",
+).save()
 
 print(f"\n  certified order-2 q-holonomic recurrence: {certified_final is not None}")
 if certified_final:
     for i in range(3):
         print(f"    P{i}(q,X) = {certified_final['recurrences'][0][i]}")
 print(f"\n  VERDICT: {verdict}")
-print(f"\nwitness -> {out}")
+print(f"\nwitness -> {wpath}")

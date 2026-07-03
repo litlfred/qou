@@ -1,4 +1,26 @@
 {
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-03T00:25:14.254432+00:00",
+  "commitSha": "26c65d0dea159ebad9630003c8cff92e8e00729c",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "z2bn-pf-monodromy-synthesis",
+  "scriptFile": "z2bn_pf_monodromy_synthesis.py",
+  "scriptHash": "1d6e6083efe5",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
   "description": "z2bn lever-1 τ third probe (PF-monodromy SL₂ synthesis): M∈SL₂ with bar-even trace τ([2]_q)>2 (hyperbolic), excluding the SL₂(ℤ) topological monodromy; q-difference PF indicated. No fit.",
   "transfer_matrix": "!![tau,-1;1,0]",
   "det_M": 1,

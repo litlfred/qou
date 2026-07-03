@@ -73,7 +73,9 @@ out = {
   "lean": "QOU/Mass/TauQuantumIntegerForm.lean (tau_quantum_integer_form, tau_bar_even, transfer_det_one; sorry-free)",
   "no_fit": True,
 }
-wpath = "computations/substrate/z2bn-pf-monodromy-synthesis.witness.json"
-with open(wpath, "w") as fh:
-    json.dump(out, fh, indent=2, ensure_ascii=False)
+from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+wpath = WitnessBuilder.wrap_legacy(
+    "z2bn-pf-monodromy-synthesis", out,
+    script_path=__file__, engine="sympy",
+).save()
 print("witness ->", wpath)

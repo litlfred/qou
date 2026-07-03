@@ -1,4 +1,26 @@
 {
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-03T00:25:15.702306+00:00",
+  "commitSha": "26c65d0dea159ebad9630003c8cff92e8e00729c",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "z2bn-tau-derivation-probe",
+  "scriptFile": "z2bn_tau_derivation_probe.py",
+  "scriptHash": "4d90935e1f27",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
   "description": "z2bn lever-1 τ-derivation — FIRST non-fitted geometric probe. Establishes the clean anchors (τ closed form; curve j confirmation; color-cubic power-sum structure) and tests principled λ_SW-holonomy candidates ONCE (no tuning). Owner-authorized 2026-06-25.",
   "dps": 50,
   "q0": "1.1099785955573347199",
