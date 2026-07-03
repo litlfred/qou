@@ -166,6 +166,7 @@ import QOU.QBeta.QBesselContiguityRecurrence
 import QOU.QBeta.QBesselBarCovariance
 import QOU.QBeta.QBesselQuadraticActionTerm
 import QOU.QBeta.QCasoratianAbel
+import QOU.QBeta.QCasoratianBarParity
 import QOU.QBeta.QLommelOrderRecurrence
 import QOU.QBeta.HoefsmitBBarParity
 import QOU.QBeta.StageCSigma3LiftObligation

@@ -70,6 +70,16 @@ Compute: [`qbeta_pc15_casoratian_bar_parity_probe.py`](../../computations/qbeta/
 → [`qbeta-pc15-casoratian-bar-parity.witness.json`](../../computations/qbeta/qbeta-pc15-casoratian-bar-parity.witness.json)
 (sympy 1.14.0, exact symbolic).
 
+**Lean certificate (sorry-free).** The bar-parity is now a proved theorem, not only
+a symbolic witness:
+[`QOU/QBeta/QCasoratianBarParity.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/QCasoratianBarParity.lean)
+over a generic `Field K` — `casNum_bar`/`casDen_bar` (numerator and denominator each
+scale by `(q³x³)⁻¹` under `q↦q⁻¹, x↦x⁻¹`) and
+`casoratian_ratio_bar_self_reciprocal` (the ratio is invariant, twist = 1).
+lean-direct `exit 0`, sorry-free, `#print axioms` clean; wired into `QOU.lean`.
+Complements the sibling `QCasoratianAbel` (the first-order Abel–Heine recurrence
+the ratio comes from).
+
 ## Kill-criterion outcome
 
 - **Kill (→ refuted row C15)** would have required: twist not a monomial, **or** wrong
