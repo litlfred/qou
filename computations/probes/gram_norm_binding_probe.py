@@ -175,13 +175,17 @@ def main() -> int:
         rows.append({
             "iso": name, "n": n,
             "G_atom": Ga, "G_free": Gf, "tr_atom": Ta, "tr_free": Tf,
-            "gram_over_tr2_atom": Ga / (Ta * Ta) if Ta else None,
-            "gram_over_tr2_free": Gf / (Tf * Tf) if Tf else None,
+            "gram_over_tr2_atom": Ga / (Ta * Ta) if Ta != 0.0 else None,
+            "gram_over_tr2_free": Gf / (Tf * Tf) if Tf != 0.0 else None,
             "B_sym": B_sym, "B_gram": B_gram,
-            "r_gram_sym": (B_gram / B_sym) if (B_gram and B_sym) else None,
+            "r_gram_sym": (B_gram / B_sym
+                           if (B_gram is not None and B_sym != 0.0) else None),
             "B_AME": bame,
-            "err_sym": (bame / B_sym) if (bame and B_sym) else None,
-            "err_gram": (bame / B_gram) if (bame and B_gram) else None,
+            "err_sym": (bame / B_sym
+                        if (bame is not None and B_sym != 0.0) else None),
+            "err_gram": (bame / B_gram
+                         if (bame is not None and B_gram is not None
+                             and B_gram != 0.0) else None),
             "wall_sec": round(time.time() - t0, 2),
         })
         print(f"      G_atom={Ga:.6f} G_free={Gf:.6f} "
