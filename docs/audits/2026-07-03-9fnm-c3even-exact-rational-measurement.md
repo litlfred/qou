@@ -89,6 +89,25 @@ Net: to this truncation, **log R = E(ũ) + h·D(ũ) + O(s¹¹) in the odd
 sector** — the even channel is a clean ũ-ladder once the parity split and
 the ũ-normalization are done exactly. Scope (a) throughout; no wiring.
 
+### ORD-17 discrimination (same day, bean `08ds`)
+
+[`computations/qbeta/qbeta_bar_split_ord17_probe.py`](../../computations/qbeta/qbeta_bar_split_ord17_probe.py)
+(witness `qbeta-bar-split-ord17.witness.json`) raised the truncation to
+s¹⁷:
+
+- **(A) E(ũ) PERSISTS through s¹⁷ with over-determination margin 9** —
+  8 exact rungs (e₁ = 3√3/4, e₂ ≈ −15.035, …, e₈ ≈ −356734), every
+  residual order exactly zero. The even-channel ũ-series statement is now
+  strongly over-determined, not marginal.
+- **(B) the odd-sector candidate h·D(ũ) + h³·F(ũ) is exactly REFUTED**
+  (joint 17-constraint / 16-unknown solve inconsistent). Scope (a): this
+  one-variable-F form with this h; the odd sector needs different
+  structure. Formalize-first note recorded in the probe: representability
+  in the full two-variable algebra ℚ(√3)[[ũ, h²]] is asymptotically
+  unconstraining (the family adds ~2 unknowns per 2 orders), so the next
+  odd-sector candidate must come with structure — the ζ₄-residue
+  constraint of `conj:binding-qbeta-complex-volume` is the open route.
+
 ## Disposition
 
 1. **Bean `9fnm` closes**: c₃^even is measured (exactly, both conventions);
