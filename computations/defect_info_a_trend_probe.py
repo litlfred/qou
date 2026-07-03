@@ -92,8 +92,9 @@ def main() -> int:
             "E_defect_info_MeV": mp.nstr(e_def, DPS),
             "ratio": mp.nstr(ratio, mp.mp.dps) if ratio is not None else None,
         }
+        ratio_str = f"{float(ratio):8.3f}" if ratio is not None else "     n/a"
         print(f"  {iso:4s}| {z+nn:2d} | {float(b_q0):8.3f}  {float(b_ame):8.3f}  "
-              f"{float(r_raw):8.3f} |   {float(e_def):10.3f}   |  {float(ratio):8.3f}")
+              f"{float(r_raw):8.3f} |   {float(e_def):10.3f}   |  {ratio_str}")
 
     # decisive trend: |ratio - 1| at the largest three A values, non-increasing?
     tail = sorted(ratios_by_a)[-3:]
