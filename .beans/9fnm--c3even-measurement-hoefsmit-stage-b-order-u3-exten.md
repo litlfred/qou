@@ -24,3 +24,18 @@ updated_at: 2026-07-03T06:15:43Z
   AND c4^odd (CAL-anchored tier caveat). AW positivity predicts W3/W2 > 0.
 - Production guard: any c_k>=3 wiring needs owner approval + proton+muon
   cross-anchor test (registry §8).
+
+## Implementation plan (2026-07-03, post-review scoping)
+
+Predecessor read: computations/qbeta/qbeta_ck_sseries_operator_match_probe.py.
+R(q) = Qb/[Q_A cos(alpha_eff)], Qb = |Delta(net)|*E0 (rational); alpha_eff =
+(z-1)h/2 - u/2. All pieces analytic at s=q-1=0 with RATIONAL Taylor
+coefficients (rational functions + log/cos/sqrt of rational-coefficient
+series). Fix = hand-rolled truncated power-series arithmetic over Q
+(lists of Fractions; mul/div/log/cos/sqrt), order ~s^20:
+  1. reproduce c2^even (approx -8.006) exactly as gate;
+  2. extract c3^even (and c4^even if the triangle stays stable);
+  3. Casoratian sign test W2 ~ 16 + c3^even (per 2026-07-02-1jrh; sign call
+     near -16 not decisive — report with rung error bars);
+  4. tier everything; NO production wiring; owner gate for any c_k>=3 use.
+New script: computations/qbeta/qbeta_ck_sseries_exact_rational.py.
