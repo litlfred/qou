@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-03T11:20:03.513023+00:00",
-  "commitSha": "b419b853a9f74e30eb17032d1e52d6798d3ad895",
+  "computedAt": "2026-07-03T14:12:45.457294+00:00",
+  "commitSha": "d7c68e88932ba136446e70ab79e1e74cbdb0508a",
   "assertions": [
     {
       "name": "c_routes_agree_exact",
@@ -20,20 +20,19 @@
       "source": "D differs from C by the PROBE-4 gap figure — the convention split is exact, not numerical"
     },
     {
-      "name": "c_equals_wenzl_bridge",
-      "computed": 2.18383206358356e-08,
-      "expected": 0.0,
+      "name": "c_equals_wenzl_bridge_EXACT",
+      "computed": "0",
+      "expected": "0",
       "passed": true,
-      "tolerance": 5e-07,
-      "source": "canonical C reproduces the Wenzl-bridge tau_W (quoted to 7 digits in the PROBE-4 audit) — C and the Wenzl z-trace are the same convention"
+      "source": "canonical C minus the symbolic Wenzl-bridge trace (y_lambda_wenzl_bridge_symbolic x Hoefsmit chi^lambda) cancels to 0 as a rational function — C and the Wenzl z-trace are the SAME convention, exactly (upgraded from the earlier 7-digit numeric match)"
     }
   ],
   "allPassed": true,
   "durationMs": 27,
   "computation": "probe-convention-d-vs-c-borromean",
   "scriptFile": "probe_convention_d_vs_c_borromean.py",
-  "scriptHash": "f3f7b38cd3bd",
-  "scriptCommitSha": "b8c4f32ddb7ae67cab10247773784f2e5c15dee7",
+  "scriptHash": "b6b756357d91",
+  "scriptCommitSha": "d7c68e88932ba136446e70ab79e1e74cbdb0508a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
