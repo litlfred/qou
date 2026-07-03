@@ -188,7 +188,7 @@ def solve_unique_exact(rows: list[list[Fraction]]) -> list[Fraction] | None:
 
 
 def main() -> int:
-    t0 = time.time()
+    t0 = time.monotonic()
     print("\n  AJ verification for 4_1 (v2): minimal window -> exact -> verify -> q->1\n")
 
     # ---- step 1: minimal window via GF(p) ------------------------------------
@@ -236,7 +236,7 @@ def main() -> int:
             return 1
         per_q[qv] = dict(zip(us, sol))
     print(f"  [exact] solved at {len(Q_SAMPLES)} exact rational q values "
-          f"({time.time()-t0:.0f}s)")
+          f"({time.monotonic()-t0:.0f}s)")
 
     # ---- step 3: reconstruct q-rational coefficient functions ----------------
     qs = list(per_q.keys())
@@ -298,13 +298,13 @@ def main() -> int:
     for N in range(1, N_VERIFY_SYMBOLIC + 1):
         mv = q**N
         lhs = sum(a[j].subs(m, mv) * Jsym[N + j] for j in range(ORDER + 1))
-        resid = sp.simplify(sp.together(lhs - b.subs(m, mv)))
+        resid = sp.cancel(lhs - b.subs(m, mv))
         ver_ok[N] = (resid == 0)
         if not ver_ok[N]:
             print(f"  [verify] N={N}: RESIDUAL != 0")
     all_ver = all(ver_ok.values())
     print(f"\n  [verify] symbolic annihilation N=1..{N_VERIFY_SYMBOLIC}?  {all_ver}"
-          f"  ({time.time()-t0:.0f}s)")
+          f"  ({time.monotonic()-t0:.0f}s)")
     if not all_ver:
         return 1
 
@@ -339,7 +339,7 @@ def main() -> int:
 
     any_match = any(isinstance(v, dict) and v["matches_up_to_L_free_M_factor"]
                     for v in spec_results.values())
-    elapsed = time.time() - t0
+    elapsed = time.monotonic() - t0
     verdict = (
         ("AJ VERIFIED for 4_1 (corpus-side): the minimal-window order-2 "
          "inhomogeneous operator annihilates J_N(4_1) exactly (symbolic q, "

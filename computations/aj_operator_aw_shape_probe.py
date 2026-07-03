@@ -103,7 +103,7 @@ def colored_jones_lambda_form(N: int, kmax: int | None = None):
 
 
 def main() -> int:
-    t0 = time.time()
+    t0 = time.monotonic()
     print("\n  4_1 AJ machinery vs AW three-term channel shape (bean cp4i)\n")
 
     # --- anchor: J_2 = Jones polynomial of 4_1 --------------------------------
@@ -171,7 +171,7 @@ def main() -> int:
     print(f"  [contrast] q-Hermite bottom C_n = 1 - q^n != 0 for n=1..6?  {qhermite_cn_nonzero}")
     assert qhermite_cn_nonzero
 
-    elapsed = time.time() - t0
+    elapsed = time.monotonic() - t0
     verdict = (
         "DEGENERATE-AW: the proved 4_1 cyclotomic (Habiro/Newton) ladder has a "
         "bar-EVEN multiplier A_k = Lambda - lam_(k+1) (consistent with 1jrh's "
