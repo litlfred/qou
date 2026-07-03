@@ -81,17 +81,20 @@ Two exact consequences, both scope (a):
    entire order-1 F (any A·cosh(cη) + B·sinh(cη) dressing) needs
    |g_{k+1}/g_k| → 0 factorially; the exact ratios **grow**. The
    single-fibre function, if analytically continued, is not entire in η.
-2. **Finite radius of convergence ≈ 1/20.5 in η.** The ratios increase
-   toward ≈ −20 with shrinking increments (−9.2, −14.2, −16.5, −17.8,
-   −18.7, −19.4), the signature of a nearest singularity on the negative
-   η²-axis at η² ≈ −1/20.5² (alternating signs). Locating/identifying
-   that singularity (e.g. a root-of-unity locus of q(η), a natural
-   boundary, or a branch point tied to the ζ₄ rotation) is the sharpened
-   follow-up question — it is a *number* the ζ₄ route must now explain,
-   replacing the refuted functional forms.
+2. **Finite radius of convergence ≈ 1/20.5 in t = η².** The ratios
+   increase toward ≈ −20 with shrinking increments (−9.2, −14.2, −16.5,
+   −17.8, −18.7, −19.4), the signature of a nearest singularity on the
+   negative t-axis at t ≈ −1/20.5 (alternating signs), i.e.
+   **|η| ≈ 0.221** in the η-plane. Locating/identifying that singularity
+   (e.g. a root-of-unity locus of q(η), a zero of the cos α channel, or a
+   branch point tied to the ζ₄ rotation) is the sharpened follow-up
+   question — it is a *number* the ζ₄ route must now explain, replacing
+   the refuted functional forms.
 
 ## Status
 
 - Bean `0zr0` closed with this prune + datum. No wiring; audit-only.
 - Follow-up (queued, not started): identify the η-plane singularity —
-  candidate first test: does q(η) hit a root of unity at |η| ≈ 0.0488?
+  candidate first test: what sits at the s-preimage of t ≈ −1/20.5
+  (|η| ≈ 0.221): a root-of-unity q, a cos α zero, a zero of the net
+  route (log branch), or a dt/ds = 0 branch point of the descent map?

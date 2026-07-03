@@ -53,8 +53,8 @@ the arithmetic of the descent, not its existence.  Immediate exact
 consequence recorded here: the cosh/sinh (zeta4-partner V0) family is
 FALSIFIED scope (a) — an entire order-1 F would need |g_{k+1}/g_k| -> 0,
 but the exact ratios GROW toward ~ -20 (finite radius of convergence
-~ 1/20.5 in eta; a nearest-singularity location, the sharpened datum).
-All scope (a); audit-only.
+~ 1/20.5 in t = eta^2, i.e. |eta| ~ 0.221; the nearest-singularity
+location is the sharpened datum).  All scope (a); audit-only.
 """
 from __future__ import annotations
 
@@ -213,9 +213,10 @@ def main() -> int:
          "single-fibre descent as posed carries no falsifiable content. "
          "The informative output is the exact rung arithmetic: |g_{k+1}/g_k| "
          "GROWS toward ~20 (exact), so F(eta) has finite radius of "
-         "convergence ~1/20.5 in eta — the cosh/sinh (zeta4-partner V0) "
-         "entire family is falsified scope (a), and the nearest-singularity "
-         "location is the sharpened constraint replacing the refuted h-forms. "
+         "convergence ~1/20.5 in t = eta^2 (|eta| ~ 0.221) — the cosh/sinh "
+         "(zeta4-partner V0) entire family is falsified scope (a), and the "
+         "nearest-singularity location is the sharpened constraint replacing "
+         "the refuted h-forms. "
          "Scope (a): truncation order, net route.")
         if descends else
         (f"CODE/THEOREM MISMATCH at orders (i)={first_odd}, (ii)={firstE}: "
@@ -238,7 +239,8 @@ def main() -> int:
         "falsifiable content. The data is the exact rung arithmetic: growing "
         "|g_{k+1}/g_k| -> ~20 falsifies the entire cosh/sinh (zeta4-partner "
         "V0) family scope (a) and locates a finite radius of convergence "
-        "~1/20.5 in eta. v1's boundary 'failures' were zero-padding "
+        "~1/20.5 in t = eta^2 (|eta| ~ 0.221). v1's boundary 'failures' "
+        "were zero-padding "
         "truncation artifacts; v1's odd-tail check was a gauge tautology."
     )
     wb.add_data("ORD", ORD)
