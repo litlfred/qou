@@ -646,3 +646,31 @@ generic `[CommRing R]` + ordered decision section per §7c), mirroring the s013
 
 No Λ enumerated or evaluated (scope no-fit rule intact). Λ specification
 remains the owner-gated research object.
+
+---
+
+## P-C15 — 4₁ order-2 qZeilberger operator clears the bar-parity gate (2026-07-03)
+
+First **survivor** on the fibre-kernel axis: the newly-landed 4₁ order-2
+colored-Jones operator (`aj_figure_eight_certificate.py`, exact N=1..12) is a
+candidate for the recursion kernel `R(q,ξ)`. Its Casoratian ratio
+`W_{N+1}/W_N = a₀/a₂ = (q³x³−q³x²−x+1)/(q³x³−q²x−qx²+1)` (x=q^N) is **exactly
+bar-self-reciprocal** under `q→1/q, x→1/x` (twist = 1, a Laurent monomial) and its
+q→1 classical shadow is `1 > 0` (consistent with measured even-channel
+`W₂ = +102.674 > 0`). **Gate PASSED** → *not excluded*; **no anchor sweep** (per the
+formalize-first gate). Distinct from every refuted C1–C14 (C14 tested Ohtsuki
+*scalars* as c₃; cp4i tested only the degenerate first-order Newton restriction —
+this uses the full second-order operator). **Not a closure, not a c_k value, nothing
+wired.**
+
+- Probe: [`qbeta_pc15_casoratian_bar_parity_probe.py`](../../computations/qbeta/qbeta_pc15_casoratian_bar_parity_probe.py)
+  → [`qbeta-pc15-casoratian-bar-parity.witness.json`](../../computations/qbeta/qbeta-pc15-casoratian-bar-parity.witness.json)
+- Audit: [`2026-07-03-qbeta-pc15-casoratian-bar-parity.md`](../audits/2026-07-03-qbeta-pc15-casoratian-bar-parity.md)
+- **Gated next step:** the H₄ Hoefsmit `c₄^even` build (bean `8we6`) → genuine c₄ rung →
+  the sibling's machine-checked `sigma3_lift_kill_test`
+  ([`StageCSigma3LiftObligation.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/StageCSigma3LiftObligation.lean))
+  evaluates the anchor Casoratian `W₃/W₂`. P-C15 de-risks that build.
+- Part of the 2026-07-03 **path-to-1ppQ reanalysis** (main @ `746a5091`): Identity I is
+  a rigor input to a falsifiable gate, **not** the keystone unlock; the keystone's
+  geometric leg (Σ(2,3,5) WRT on S³/2I) was **refuted 2026-07-02**; Q_β (this axis) is
+  the one near-term needle-mover above the CAL-2 floor.

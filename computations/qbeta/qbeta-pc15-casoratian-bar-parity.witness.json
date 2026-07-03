@@ -1,0 +1,52 @@
+{
+  "computation": "qbeta-pc15-casoratian-bar-parity",
+  "description": "Probe P-C15: bar-parity of the 4_1 order-2 qZeilberger Casoratian ratio a_0/a_2 as a decidable structural gate on the Q_beta fibre kernel R(q,xi). Formalize-first; no anchor numerics; kill-on-invariant.",
+  "audit_only": true,
+  "tier": "structural-exact (symbolic bar-parity identity; no fit, no anchor sweep)",
+  "computedAt": "2026-07-03T19:08:45.708303+00:00",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "qbeta_pc15_casoratian_bar_parity_probe.py",
+  "scriptHash": "fe6da417400d",
+  "assertions": [
+    {
+      "name": "twist_is_laurent_monomial",
+      "passed": true
+    },
+    {
+      "name": "q_to_1_shadow_sign_positive",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "casoratian_ratio_a0_over_a2": "(q**3*x**3 - q**3*x**2 - x + 1)/(q**3*x**3 - q**2*x - q*x**2 + 1)",
+    "bar_involution": "q -> 1/q, x -> 1/x  (x = q^N)",
+    "casoratian_ratio_under_bar": "(q**3*x**3 - q**3*x**2 - x + 1)/(q**3*x**3 - q**2*x - q*x**2 + 1)",
+    "twist_R_bar_over_R": "1",
+    "twist_is_laurent_monomial": true,
+    "q_to_1_classical_shadow": "1",
+    "q_to_1_shadow_sign_positive_at_x_1p11": true,
+    "coeff_bar_ratios": {
+      "a0": "x**9/q**3",
+      "a1": "x**7*(q**2*x**2 - q**2*x + q**2 + q*x**2 - q*x - q + x**2 - x + 1)/(q**5*(q**2*x**2 - q**2*x + q**2 - q*x**2 - q*x + q + x**2 - x + 1))",
+      "a2": "x**9/q**3"
+    },
+    "a1_expected_bar_odd_upstream": "QBetaCKRecursionKernelConstraints.lean",
+    "gate_passes": true,
+    "verdict": "PASS \u2014 structural bar-parity gate cleared; the 4_1 order-2 Casoratian ratio is bar-even up to the monomial twist below, and its q->1 classical shadow is positive (consistent with the measured even-channel W_2 = +102.674 > 0). NOT excluded as the fibre kernel R(q,xi). ADVANCE is gated on a genuine c_4 rung (H_4 Hoefsmit c_4^even build, bean 8we6): only then can the anchor-level Casoratian W_3/W_2 be evaluated. A pass here de-risks that build; it is NOT a closure and NOT a c_k value.",
+    "distinct_from_refuted": {
+      "C14": "tested 4_1 Ohtsuki loop-series RATIONALS as c_3 scalars; this tests the order-2 OPERATOR/Casoratian structure \u2014 a different object.",
+      "cp4i_HabiroNewton": "tested the DEGENERATE first-order Newton restriction (Casoratian identically 0); this uses the FULL second-order operator.",
+      "C5": "constant-kernel recursion; this kernel is the non-constant q-rational a_0/a_2."
+    },
+    "next_step_if_pass": "H_4 Hoefsmit c_4^even build (bean 8we6) -> genuine c_4 rung -> evaluate anchor Casoratian W_3/W_2 vs even-channel AW-positivity."
+  },
+  "context": {
+    "axis": "Q_beta 1ppQ achievable-arm \u2014 fibre kernel F(q)/R(q,xi)",
+    "operator_source": "computations/aj_figure_eight_certificate.py",
+    "refuted_class_map": "docs/audits/2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md",
+    "ledger": "docs/coordination/1ppq-qbeta.md",
+    "kernel_constraints": "QOU/BraidKnot/QBetaCKRecursionKernelConstraints.lean"
+  }
+}
