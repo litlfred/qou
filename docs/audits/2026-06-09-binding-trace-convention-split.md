@@ -144,6 +144,21 @@ an owner ruling:
 > convention (A/B/C/D or Wenzl-bridge z-trace) produced it, with the script
 > or Lean decl cited. Convention-silent τ values are not comparable.
 
-Whether D coincides with C evaluated at β_Bor (both are "Jones" traces; the
-Wenzl bridge carries different per-λ weights) is a one-line symbolic check
-queued for the next compute session — it does not block the rule above.
+**D ≟ C: ANSWERED (2026-07-03) — D ≠ C, exactly.**
+[`probes/probe_convention_d_vs_c_borromean.py`](../../computations/probes/probe_convention_d_vs_c_borromean.py)
+(witness `probe-convention-d-vs-c-borromean.witness.json`, 3/3 assertions)
+evaluates the canonical M1–M3 trace C on β_Bor by two independent routes
+(`tr_M_word` with the Hecke σ⁻¹ = σ − h expansion; `markov_trace_recursive`
+on the signed word) — they agree on the **same rational function** in
+t = √q, and:
+
+- **C(β_Bor) ≈ 0.9983666218 at q₀ — the Wenzl-bridge value** (matches
+  PROBE 4's τ_W to its quoted 7 digits). So the naming tension above
+  resolves factually: **C and the Wenzl-bridge z-trace are the SAME
+  convention** — there is no C-vs-Wenzl split, only C/W vs D.
+- **D − C is a nonzero rational function** (exact, not numerical), value
+  **1.9554e-4 at q₀**. The Lean `BorromeanMarkovTrace` closed form
+  `(4+h²−3h⁴−h⁶)/(h²+4)` is a **convention-D (TL/Jones) object**: any
+  consumer assuming it equals the canonical `tr_M(β_Bor)` inherits the
+  1.9554e-4 discrepancy — immaterial at the current 2.3× binding scale,
+  material below 0.1 %.
