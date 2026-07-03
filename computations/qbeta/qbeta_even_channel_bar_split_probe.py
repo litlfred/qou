@@ -160,7 +160,7 @@ def main() -> int:
     two_var_form = (firstE is None) and (firstG is None)
     verdict = (
         ("TWO-VARIABLE FORM HOLDS (to s^" + str(ORD) + ", exact): "
-         "log R = E(u~) + h*D(u~), u~ = q*u bar-even with u bar-even, h = q - 1/q the companion "
+         "log R = E(u~) + h*D(u~), with u~ = q*u the bar-even variable (u itself has bar-weight 2) and h = q - 1/q the companion "
          "bar-odd variable — the even channel IS a u-series after exact "
          "removal of the h-odd component; the honest bar-even ladder data "
          "are the e_k (E) with the d_k (D) as the odd-companion series. "

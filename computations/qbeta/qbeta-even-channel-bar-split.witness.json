@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-03T11:52:22.412601+00:00",
-  "commitSha": "6497d86e99fec2e1394c7ced1f9c810e2417f65f",
+  "computedAt": "2026-07-03T15:04:52.826041+00:00",
+  "commitSha": "d94131acded9750ba61ba5fc765011a6c14180fc",
   "assertions": [
     {
       "name": "bar_involution_sanity",
@@ -12,11 +12,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": 25,
   "computation": "qbeta-even-channel-bar-split",
   "scriptFile": "qbeta_even_channel_bar_split_probe.py",
-  "scriptHash": "6edd45e5f2d9",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d9e42f92f37d",
+  "scriptCommitSha": "aaa764dae3996a20cdcd03f812c6d32995aa6bec",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

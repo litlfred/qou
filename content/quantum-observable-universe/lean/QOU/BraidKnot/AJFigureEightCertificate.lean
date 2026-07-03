@@ -28,8 +28,9 @@ The two theorems below carry the certificate's mathematical content in
 hypotheses): with `L = a₂·r₁(x)·r₁(qx) + a₁·r₁(x) + a₀ = nL/dL` and
 `R = Cert(x,qy)·s − Cert(x,y) = nR/dR` (the `together`-combined
 numerators/denominators), the identity `L = R` away from denominator
-zeros is exactly `nL·dR = nR·dL`; similarly the boundary identity
-`rhs(x) = −Cert(x,1)` is `bN·cD = cN·bD`.  What remains of the
+zeros is exactly `nL·dR = nR·dL`.  (The boundary identity `rhs = −Cert(x,1)`
+lives in `AJFigureEight.feCert_boundary` — its cleared form is a
+syntactic tautology, so only the fraction form carries content.)  What remains of the
 general-`N` `sorry` after these is bookkeeping: the shift-ratio lemmas
 for the Habiro products, the division-free reformulation across the
 termination zeros, and the `Finset.sum` telescope. -/
@@ -75,19 +76,5 @@ theorem feCert_local_identity_cleared (q x y : R) :
         q*x^2*y^2 - q*x^2*y - q*x^2 + q*x*y^2 - q*y^2 - x^2*y + x*y)
       * (q^3*x^10 - q^3*x^9*y - q^2*x^9*y + q^2*x^8*y^2) := by
   ring
-
-set_option maxHeartbeats 800000 in
-set_option maxRecDepth 8192 in
-/-- **Boundary identity, cleared form, proved**: the operator's
-    inhomogeneous part is the certificate's boundary value,
-    `rhs(q,x) = −Cert(q,x,1)`, in denominator-cleared form — an
-    independent machine check of the verified operator. -/
-theorem feCert_boundary_cleared (q x : R) :
-    (q^5*x^5 + q^4*x^4 - q^4*x^3 - q^3*x^2 - q^2*x^3 - q*x^2 + q*x + 1)
-      * (q*x^7)
-    = (q^5*x^5 + q^4*x^4 - q^4*x^3 - q^3*x^2 - q^2*x^3 - q*x^2 + q*x + 1)
-      * (q*x^7) := by
-  ring
-
 
 end QOU.BraidKnot.AJFigureEightCertificate

@@ -180,14 +180,11 @@ def main() -> int:
         Jq = sp.expand(sp.simplify(Jw.subs(w, q ** sp.Rational(1, 4))))
         return sp.expand(Jq)
     Jsym = {N: tower_q_symbolic(N) for N in range(1, N_VERIFY_SYMBOLIC + 3)}
-    laurent_ok = all(sp.simplify(sp.expand(Jsym[N] - Jsym[N].subs(sp.sqrt(q), sp.sqrt(q)))) == 0
-                     for N in (2, 3, 4))  # substitution-stable = no stray sqrt
     stray_sqrt = any(("sqrt" in str(Jsym[N])) or ("/4" in str(Jsym[N]))
                      or ("/2" in str(Jsym[N])) for N in range(1, 6))
     print(f"  [tower] J_N in Z[q^(+-1)] (no fractional q-powers), N<=5?  {not stray_sqrt}")
     if stray_sqrt:
         return 1
-    _ = laurent_ok
 
     # ---- step 1: minimal window via GF(p) (v-samples, q=v^2) ------------------
     def jones_frac(ww: Fraction, Nmax: int):

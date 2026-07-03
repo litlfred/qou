@@ -287,6 +287,31 @@ theorem figureEightOperator_annihilates_one {q : K} (hq : q ≠ 0) :
   field_simp
   ring
 
+/-- The 4₁ qZeilberger certificate, factored form (poles at `y = x, qx`):
+    `Cert(q,x,y) = −y(qx+1)(qx²−1)(q³x²−1)(1−x)(1−qx)/(q·x⁷·(y−x)(y−qx))`.
+    Computed and verified corpus-side
+    (`computations/aj_figure_eight_certificate.py`). -/
+def feCert (q x y : K) : K :=
+  -(y * (q * x + 1) * (q * x ^ 2 - 1) * (q ^ 3 * x ^ 2 - 1)
+      * (1 - x) * (1 - q * x))
+    / (q * x ^ 7 * (y - x) * (y - q * x))
+
+/-- **Boundary identity, proved (fraction form)**: the operator's
+    inhomogeneous part is the certificate's boundary value,
+    `rhs(q,x) = −Cert(q,x,1)` — the content is the cancellation of the
+    `(1−x)(1−qx)` factors, hence the hypotheses. -/
+theorem feCert_boundary (q x : K) (hq : q ≠ 0) (hx : x ≠ 0)
+    (h1x : x ≠ 1) (hqx : q * x ≠ 1) :
+    feRhs q x = -feCert q x 1 := by
+  have h1 : (1 : K) - x ≠ 0 := sub_ne_zero.mpr (Ne.symm h1x)
+  have h2 : (1 : K) - q * x ≠ 0 := sub_ne_zero.mpr (Ne.symm hqx)
+  have hd1 : x ^ 7 * q ≠ 0 := mul_ne_zero (pow_ne_zero _ hx) hq
+  have hd2 : q * x ^ 7 * ((1 : K) - x) * (1 - q * x) ≠ 0 :=
+    mul_ne_zero (mul_ne_zero (mul_ne_zero hq (pow_ne_zero _ hx)) h1) h2
+  simp only [feRhs, feCert, neg_div, neg_neg]
+  rw [div_eq_div_iff hd1 hd2]
+  ring
+
 /-- **The literature instance (strong AJ for 4₁), transcribed.**  Every
     field except the general-`N` annihilation is machine-checked above;
     the annihilation for all `N` is the theorem proved in the literature
