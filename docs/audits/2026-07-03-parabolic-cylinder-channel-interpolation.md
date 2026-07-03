@@ -2,8 +2,14 @@
 
 **Date:** 2026-07-03
 **Branch:** `claude/parabolic-cylinder-channels-fh08ia`
-**Status:** exploratory (no production wiring; no numerical claims). Three owner
-questions answered structurally; candidate identifications + follow-ups listed.
+**Status:** exploratory audit **plus its owner-approved follow-up artifacts**:
+a shape-probe with committed witness (§9 — a scope-limited *negative*), two
+Lean library modules (`QWeberInterpolation`, `TwoVortexChannelAlgebra`), and
+the `prop:two-vortex-channel-algebra` / `rem:two-vortex-scattering-channels`
+content-block pair. **No production wiring**: nothing here enters any mass /
+binding / dashboard pipeline; the probe result is a quoted negative, not a
+production number. Three owner questions answered structurally; candidate
+identifications + follow-up statuses in §7.
 
 ## Owner questions
 

@@ -4,7 +4,7 @@ export default proposition({
   label: "prop:two-vortex-channel-algebra",
   title: "Channel algebra of the two-vortex interaction",
   tags: ["vortex", "channel", "hecke", "spectral", "hopf"],
-  lean: { ref: "qou:QOU.FluidDynamics.TwoVortexChannelAlgebra.braiding_sq",
+  lean: { ref: "qou:QOU.FluidDynamics.TwoVortexChannelAlgebra.channel_algebra",
     validation: "not_checked",
   },
   uses: [
