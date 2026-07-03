@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-03T19:04:51.987363+00:00",
-  "commitSha": "3ce4d5055feefa2da836f0f14d867b735cbcfb8c",
+  "computedAt": "2026-07-03T19:30:15.918073+00:00",
+  "commitSha": "fa31938cfa0eef86db7937d48497853100c0fba0",
   "assertions": [
     {
       "name": "eta_bar_odd_in_window",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 34,
+  "durationMs": 33,
   "computation": "qbeta-zeta4-eta-descent",
   "scriptFile": "qbeta_zeta4_eta_descent_probe.py",
-  "scriptHash": "04d587f95ce9",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "7d882aa78db7",
+  "scriptCommitSha": "4760298d40dc4fedf81c2a50c562f90cc4b2f213",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,7 +34,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "0zr0 (v3): eta-descent — exact construction of the bar-odd fibre argument eta from O (cube-root gauge; O = ell*eta^3 by construction) + exact membership checks over the validity window. INTERPRETATION: the membership checks are THEOREMS (invariant ring of the order-2 bar automorphism of Q(sqrt3)[[s]] is k[[w]] on any bar-even val-2 uniformizer; cube-root uniqueness makes eta bar-odd), so passing validates the code only — the single-fibre descent as posed has no falsifiable content. The data is the exact rung arithmetic: growing |g_{k+1}/g_k| -> ~20 falsifies the entire cosh/sinh (zeta4-partner V0) family scope (a) and locates a finite radius of convergence ~1/20.5 in eta. v1's boundary 'failures' were zero-padding truncation artifacts; v1's odd-tail check was a gauge tautology.",
+  "description": "0zr0 (v3): eta-descent — exact construction of the bar-odd fibre argument eta from O (cube-root gauge; O = ell*eta^3 by construction) + exact membership checks over the validity window. INTERPRETATION: the membership checks are THEOREMS (invariant ring of the order-2 bar automorphism of Q(sqrt3)[[s]] is k[[w]] on any bar-even val-2 uniformizer; cube-root uniqueness makes eta bar-odd), so passing validates the code only — the single-fibre descent as posed has no falsifiable content. The data is the exact rung arithmetic: growing |g_{k+1}/g_k| -> ~20 falsifies the entire cosh/sinh (zeta4-partner V0) family scope (a) and locates a finite radius of convergence ~1/20.5 in t = eta^2 (|eta| ~ 0.221). v1's boundary 'failures' were zero-padding truncation artifacts; v1's odd-tail check was a gauge tautology.",
   "data": {
     "ORD": 17,
     "eta_valid_through": 15,
@@ -79,7 +79,7 @@
       "6": "-18.713618",
       "7": "-19.398206"
     },
-    "verdict": "ETA-DESCENT CONFIRMED AS A THEOREM (invariant theory: the bar-even subring of Q(sqrt3)[[s]] is k[[w]] on any bar-even valuation-2 uniformizer; cube-root uniqueness gives eta bar-odd) — the passing checks (bar-odd to s^15, E in [[eta^2]] to s^16, eta^2 in [[u~]]) validate the code, not a hypothesis: the single-fibre descent as posed carries no falsifiable content. The informative output is the exact rung arithmetic: |g_{k+1}/g_k| GROWS toward ~20 (exact), so F(eta) has finite radius of convergence ~1/20.5 in eta — the cosh/sinh (zeta4-partner V0) entire family is falsified scope (a), and the nearest-singularity location is the sharpened constraint replacing the refuted h-forms. Scope (a): truncation order, net route.",
+    "verdict": "ETA-DESCENT CONFIRMED AS A THEOREM (invariant theory: the bar-even subring of Q(sqrt3)[[s]] is k[[w]] on any bar-even valuation-2 uniformizer; cube-root uniqueness gives eta bar-odd) — the passing checks (bar-odd to s^15, E in [[eta^2]] to s^16, eta^2 in [[u~]]) validate the code, not a hypothesis: the single-fibre descent as posed carries no falsifiable content. The informative output is the exact rung arithmetic: |g_{k+1}/g_k| GROWS toward ~20 (exact), so F(eta) has finite radius of convergence ~1/20.5 in t = eta^2 (|eta| ~ 0.221) — the cosh/sinh (zeta4-partner V0) entire family is falsified scope (a), and the nearest-singularity location is the sharpened constraint replacing the refuted h-forms. Scope (a): truncation order, net route.",
     "scope": "(a); no wiring"
   }
 }

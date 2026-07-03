@@ -1,0 +1,94 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-03T19:29:55.242025+00:00",
+  "commitSha": "fa31938cfa0eef86db7937d48497853100c0fba0",
+  "assertions": [
+    {
+      "name": "rungs_grow_finite_radius",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 22,
+  "computation": "qbeta-eta-singularity",
+  "scriptFile": "qbeta_eta_singularity_probe.py",
+  "scriptHash": "375514e51f69",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "0zr0 follow-up: identify the nearest t-plane singularity of the descent function E(t). LEG 1: Domb-Sykes + Pade t_c from the exact rungs. LEG 2: closed-form net route — locate zeros of O (cbrt branch points of eta), zeros of O' (critical points of t), net-route zeros (log branch) in the s-annulus; match |t|-images against t_c; root-of-unity check on the winner.",
+  "data": {
+    "ORD": 17,
+    "rungs_g_k": {
+      "1": "1.125",
+      "2": "-17.829192979010276364",
+      "3": "163.82866006791628826",
+      "4": "-2328.7344309585472079",
+      "5": "38311.204309667655837",
+      "6": "-681444.33658007116029",
+      "7": "12752289.055930083042",
+      "8": "-247371535.69749931158"
+    },
+    "domb_sykes": {
+      "t_c": "-0.0426875567834",
+      "gamma": "-0.20356573"
+    },
+    "pade_nearest_poles": {
+      "[3/4]": "-0.0515062944867",
+      "[4/4]": "-0.0480510097356",
+      "[3/3]": "-0.0540397477963"
+    },
+    "t_c_adopted": "-0.0480510097356",
+    "candidates": [
+      {
+        "mechanism": "O-zero (cbrt branch of eta)",
+        "s": "(-0.06632721059 + 0.3581272432j)",
+        "abs_s": "0.36421755",
+        "abs_t_image": "0.0063390694",
+        "match_ratio_vs_tc": "0.131924",
+        "abs_q": "1.0",
+        "arg_q_over_2pi": "0.0582923"
+      },
+      {
+        "mechanism": "O'-zero (critical point of t)",
+        "s": "(-0.03969334102 + 0.2789464478j)",
+        "abs_s": "0.28175642",
+        "abs_t_image": "0.04164547",
+        "match_ratio_vs_tc": "0.866693",
+        "abs_q": "1.0",
+        "arg_q_over_2pi": "0.044992599"
+      }
+    ],
+    "winner": {
+      "mechanism": "O'-zero (critical point of t)",
+      "s": "(-0.03969334102 + 0.2789464478j)",
+      "abs_s": "0.28175642",
+      "abs_t_image": "0.04164547",
+      "match_ratio_vs_tc": "0.866693",
+      "abs_q": "1.0",
+      "arg_q_over_2pi": "0.044992599"
+    },
+    "root_of_unity_check": {
+      "abs_q_minus_1": "0.0",
+      "on_unit_circle_1e-3": true,
+      "arg_q_over_2pi_rational_approx": [
+        1,
+        22
+      ]
+    },
+    "verdict": "nearest-singularity mechanism candidate: O'-zero (critical point of t) at s = (-0.03969334102 + 0.2789464478j) (|t-image|/|t_c| = 0.866693); q = 1+s has |q| = 1.0 — ON the unit circle (root-of-unity locus plausible). Numeric identification at ~1% |t|-match; scope (a), audit-only.",
+    "scope": "(a); numeric identification, no wiring"
+  }
+}
