@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-03T00:19:07.666924+00:00",
-  "commitSha": "9c35d3d0942053bc70a2e44f048516d1474bd3b0",
+  "computedAt": "2026-07-03T00:27:24.889767+00:00",
+  "commitSha": "f5899b08557f7f23ae7fb7547e4734692ad4a800",
   "assertions": [
     {
       "name": "lo_routed_through_canonical_facade",
@@ -43,11 +43,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "rho-k-graded-atomic-mass",
   "scriptFile": "rho_k_graded_atomic_mass.py",
   "scriptHash": "796988d073c5",
-  "scriptCommitSha": "877cb5a3d3ff66b56114f5b597c917f393afb304",
+  "scriptCommitSha": "5543181dac83618555009fb2b42539ad424796bf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
