@@ -152,6 +152,25 @@ and ³He (p-rich, stable) gains it. Consistent with the pp↔nn sign flip
 in the per-λ table. Recorded as an observation only (no production wire,
 no mechanism claim).
 
+**§3c. Second test at the linear-trace level — generalization REFUTED
+(scope (a)).** The dense seminormal sweep caps at n = 12, so ³H/³He is
+the only Gram-reachable mirror pair. A second test via the 50-dps
+transfer engine (linear trace, feasible to n = 21) checked the predicted
+pattern on ⁷Li/⁷Be + a ⁶Li control
+([`mirror_parity_linear_trace_probe.py`](../../computations/probes/mirror_parity_linear_trace_probe.py),
+witness `mirror-parity-linear-trace-probe.witness.json`). Result: the
+sign antisymmetry does **not** transfer — both mirror pairs shift with
+the *same* sign, and the linear parity (tr(q₀)−tr(q₀⁻¹))/(tr(q₀)+tr(q₀⁻¹))
+saturates → 1 with n (tr(q₀⁻¹)/tr(q₀) → 0 exponentially), which confounds
+any cross-n class comparison. What survives at equal n: the A = 3
+**magnitude** asymmetry (|Δ(³H)| ≈ 16×|Δ(³He)|). Calibrated conclusion:
+the antisymmetric bar-parity loading is a property of the **quadratic
+(operator-space Gram) observable** and is invisible to the linear trace;
+the §3b observation stands at the Gram level for n ≤ 12 and is
+**unconfirmed beyond it** — extending it needs a scalable quadratic-trace
+method (e.g. a transfer-style evaluation of tr_M(W·W^♯)), not the dense
+sweep.
+
 ## 4. Cross-references
 
 - Critical assessment delivered in-session 2026-07-03 (chat), branch
