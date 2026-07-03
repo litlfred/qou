@@ -5,22 +5,47 @@ import Mathlib.Analysis.SpecialFunctions.Log.Basic
 /-!
 # QOU.FluidDynamics.q_turbulence_spectrum
 
-**Placeholder canonical** for content block
-[`prop:q-turbulence-spectrum`](../../../quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.md): *$q$-deformed energy cascade and modified Kolmogorov spectrum*.
+**Proposition** for content block
+[`prop:q-turbulence-spectrum`](../../../quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.md):
+*$q$-deformed energy cascade and modified Kolmogorov spectrum*.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.FluidDynamics.q_turbulence_spectrum` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per AGENTS.md §1.
+Four sub-claims: (i) the q-deformed Kolmogorov spectrum
+`E_q(k) = C_q ε^{2/3} [k]_q^{−5/3} / ([k]_q / k)`; (ii) the discrete
+cascade transfer rate
+`T_{k→k+1} = ε ([k+1]_q^{2/3} − [k]_q^{2/3}) / ([k+1]_q − [k]_q)`;
+(iii) the finite cascade depth `N_modes ≤ ¾ ln Re_q / ln q`; (iv) the
+spectral gap `ΔE_gap = C_q ε^{2/3} ([1]_q^{−5/3} − [2]_q^{−5/3}) > 0`.
+
+## Disposition (integrity)
+
+The previous encoding was a **self-assuming projection** (forbidden by
+AGENTS.md §3b-cond item 5): four `claim_*` class fields carried the
+four sub-claims verbatim and the "theorem" tupled them back.
+
+Now:
+
+- Claims (i) and (ii) are **formulas**, so `E_q` and `transferRate` are
+  honest `def`s (with the symmetric q-integer
+  `[k]_q = (q^k − q^{−k})/(q − q^{−1})` also a `def`); the theorem
+  records them as definitional equalities.
+- Claim (iv) `0 < ΔE_gap` is **derived sorry-free** from the genuine
+  inputs `1 < q`, `0 < ε`, `0 < C_q`: `[1]_q = 1 < q + q⁻¹ = [2]_q`, and
+  `x ↦ x^{−5/3}` is strictly antitone on positives, so
+  `[1]_q^{−5/3} − [2]_q^{−5/3} > 0`.
+- Claim (iii), the cascade-depth bound on the (opaque) active-mode
+  count `N_modes`, is unproved — `sorry` with manuscript citation.
+
+The class carries only **data + genuine physical inputs** (`1 < q`,
+`Re_q = 2/(q−1)`, `0 < ε`, `0 < C_q`, the opaque mode count); no field
+is any of the four conclusions.
 -/
 
 namespace QOU.FluidDynamics
 
-
-/-- Abstract context for the `q_turbulence_spectrum` claim —
-    manuscript-themed typed fields below; sub-claims encode the four
-    properties of the q-deformed Kolmogorov spectrum (spectrum closed
-    form / discrete cascade / finite mode count / spectral gap). -/
+/-- Data for the `q_turbulence_spectrum` claim.  All fields are *inputs*
+    (the substrate parameter, the Planck--Reynolds number, the physical
+    constants with their positivity, and the opaque active-mode count);
+    none is one of the four conclusions. -/
 class QTurbulenceSpectrumContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
@@ -28,64 +53,119 @@ class QTurbulenceSpectrumContext where
   /-- Planck–Reynolds number `Re_q = 2 / (q − 1)`. -/
   Re_q : ℝ
   Re_q_eq : Re_q = 2 / (q - 1)
-  /-- Number of active modes `N_modes : ℕ`. -/
+  /-- Number of active modes in the cascade (opaque physical datum;
+      claim (iii) bounds it). -/
   N_modes : ℕ
-  /-- Spectral gap `ΔE_gap : ℝ`. -/
-  ΔE_gap : ℝ
-  /-- The q-integer `[k]_q`. -/
-  q_int : ℕ → ℝ
-  /-- The energy dissipation rate `ε`. -/
+  /-- The energy dissipation rate `ε` (positive physical input). -/
   ε : ℝ
-  /-- The q-dependent Kolmogorov constant `C_q`. -/
+  ε_pos : 0 < ε
+  /-- The q-dependent Kolmogorov constant `C_q` (positive physical
+      input). -/
   C_q : ℝ
-  /-- The energy spectrum `E_q(k)`. -/
-  E_q : ℕ → ℝ
-  /-- Manuscript sub-claim (i) — q-deformed Kolmogorov spectrum:
-      `E_q(k) = C_q · ε^{2/3} · [k]_q^{−5/3} / ([k]_q / k)`. -/
-  claim_i_q_kolmogorov_spectrum : ∀ k : ℕ, 1 ≤ k →
-    E_q k = C_q * ε ^ ((2 : ℝ) / 3) *
-      (q_int k) ^ ((-5 : ℝ) / 3) / ((q_int k) / (k : ℝ))
-  /-- Mode-to-mode energy transfer rate `T_{k → k+1}`. -/
-  transfer_rate : ℕ → ℝ
-  /-- Manuscript sub-claim (ii) — Discrete cascade closed form:
-      `T_{k → k+1} = ε · ([k+1]_q^{2/3} − [k]_q^{2/3}) /
-                                  ([k+1]_q − [k]_q)`. -/
-  claim_ii_discrete_cascade : ∀ k : ℕ,
-    transfer_rate k = ε *
-      ((q_int (k + 1)) ^ ((2 : ℝ) / 3) - (q_int k) ^ ((2 : ℝ) / 3)) /
-      (q_int (k + 1) - q_int k)
-  /-- Manuscript sub-claim (iii) — Finite cascade depth: the number
-      of active modes is bounded by `⌊log_q(Re_q^{3/4})⌋`. -/
-  claim_iii_finite_cascade_depth : (N_modes : ℝ) ≤ (3 : ℝ) / 4 *
-    Real.log Re_q / Real.log q
-  /-- Manuscript sub-claim (iv) — spectral gap:
-      `ΔE_gap = C_q · ε^{2/3} · ([1]_q^{-5/3} − [2]_q^{-5/3}) > 0`. -/
-  claim_iv_spectral_gap_positive : 0 < ΔE_gap ∧
-    ΔE_gap = C_q * ε ^ ((2 : ℝ) / 3) *
-      ((q_int 1) ^ ((-5 : ℝ) / 3) - (q_int 2) ^ ((-5 : ℝ) / 3))
+  C_q_pos : 0 < C_q
 
-/-- **Content statement** (from manuscript):
+namespace QTurbulence
 
-In the brane fluid with [substrate parameter](#def:substrate-parameter)
-$q > 1$ and [Planck--Reynolds number](#rem:planck-reynolds)
-$\mathrm{Re}_q = 2/(q-1)$, the energy spectrum of a turbulent
-vortex tangle satisfies a $q$-deformed Kolmogorov law.
+variable [ctx : QTurbulenceSpectrumContext]
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
--- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts
+/-- The symmetric q-integer `[k]_q = (q^k − q^{−k})/(q − q^{−1})`
+    (the `.md`'s convention; `[k]_q → k` as `q → 1`). -/
+noncomputable def qInt (k : ℕ) : ℝ :=
+  (ctx.q ^ k - ctx.q⁻¹ ^ k) / (ctx.q - ctx.q⁻¹)
+
+/-- Claim (i) as a **definition**: the q-deformed Kolmogorov spectrum
+    `E_q(k) = C_q · ε^{2/3} · [k]_q^{−5/3} / ([k]_q / k)`. -/
+noncomputable def E_q (k : ℕ) : ℝ :=
+  ctx.C_q * ctx.ε ^ ((2 : ℝ) / 3) *
+    (qInt k) ^ ((-5 : ℝ) / 3) / ((qInt k) / (k : ℝ))
+
+/-- Claim (ii) as a **definition**: the mode-to-mode transfer rate
+    `T_{k→k+1} = ε · ([k+1]_q^{2/3} − [k]_q^{2/3}) / ([k+1]_q − [k]_q)`. -/
+noncomputable def transferRate (k : ℕ) : ℝ :=
+  ctx.ε * ((qInt (k + 1)) ^ ((2 : ℝ) / 3) - (qInt k) ^ ((2 : ℝ) / 3)) /
+    (qInt (k + 1) - qInt k)
+
+/-- The spectral gap `ΔE_gap = C_q · ε^{2/3} · ([1]_q^{−5/3} − [2]_q^{−5/3})`
+    below the fundamental mode. -/
+noncomputable def ΔE_gap : ℝ :=
+  ctx.C_q * ctx.ε ^ ((2 : ℝ) / 3) *
+    ((qInt 1) ^ ((-5 : ℝ) / 3) - (qInt 2) ^ ((-5 : ℝ) / 3))
+
+/-- `q − q⁻¹ > 0` for `q > 1` (the symmetric q-integer's denominator). -/
+theorem q_sub_inv_pos : 0 < ctx.q - ctx.q⁻¹ := by
+  have hq := ctx.q_gt_one
+  have h0 : (0 : ℝ) < ctx.q := by linarith
+  have hinv : 0 < ctx.q⁻¹ := inv_pos.mpr h0
+  have hmul : ctx.q * ctx.q⁻¹ = 1 := mul_inv_cancel₀ (ne_of_gt h0)
+  nlinarith [mul_pos (by linarith : (0 : ℝ) < ctx.q - 1) hinv]
+
+/-- `[1]_q = 1`. -/
+theorem qInt_one : qInt 1 = 1 := by
+  unfold qInt
+  simp only [pow_one]
+  exact div_self (ne_of_gt q_sub_inv_pos)
+
+/-- `[2]_q = q + q⁻¹`. -/
+theorem qInt_two : qInt 2 = ctx.q + ctx.q⁻¹ := by
+  unfold qInt
+  rw [div_eq_iff (ne_of_gt q_sub_inv_pos)]
+  ring
+
+/-- Claim (iv), **derived sorry-free**: the spectral gap is positive.
+
+    `[1]_q = 1 < q + q⁻¹ = [2]_q` (from `q > 1`), the map `x ↦ x^{−5/3}`
+    is strictly antitone on positives, and `C_q, ε^{2/3} > 0`. -/
+theorem ΔE_gap_pos : 0 < (ΔE_gap : ℝ) := by
+  have hq := ctx.q_gt_one
+  have h0 : (0 : ℝ) < ctx.q := by linarith
+  have hinv : 0 < ctx.q⁻¹ := inv_pos.mpr h0
+  have hlt : (1 : ℝ) < ctx.q + ctx.q⁻¹ := by linarith
+  have hpow : (ctx.q + ctx.q⁻¹) ^ ((-5 : ℝ) / 3) < (1 : ℝ) ^ ((-5 : ℝ) / 3) :=
+    Real.rpow_lt_rpow_of_neg one_pos hlt (by norm_num)
+  have hdiff : 0 < (qInt 1) ^ ((-5 : ℝ) / 3) - (qInt 2) ^ ((-5 : ℝ) / 3) := by
+    rw [qInt_one, qInt_two, Real.one_rpow]
+    rw [Real.one_rpow] at hpow
+    linarith
+  have hε : 0 < ctx.ε ^ ((2 : ℝ) / 3) := Real.rpow_pos_of_pos ctx.ε_pos _
+  unfold ΔE_gap
+  exact mul_pos (mul_pos ctx.C_q_pos hε) hdiff
+
+/-- Claim (iii), **unproved**: the number of active cascade modes is
+    bounded by `¾ · ln Re_q / ln q` (i.e. `N_modes ≤ ⌊log_q Re_q^{3/4}⌋`).
+    Relating the opaque physical mode count to the Planck--Reynolds
+    cutoff requires the cascade model itself — pending. -/
+-- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.md (prop:q-turbulence-spectrum, claim iii)
+theorem finite_cascade_depth :
+    (ctx.N_modes : ℝ) ≤ (3 : ℝ) / 4 * Real.log ctx.Re_q / Real.log ctx.q := by
+  sorry
+
+end QTurbulence
+
+/-- **q-deformed energy cascade and modified Kolmogorov spectrum**
+    ([`prop:q-turbulence-spectrum`]) — the resolving declaration for
+    `lean.ref` `qou:QOU.FluidDynamics.q_turbulence_spectrum`.
+
+    Conjoins the four sub-claims: (i) and (ii) hold definitionally
+    (`E_q` / `transferRate` are honest `def`s of the manuscript
+    formulas); (iii) the cascade-depth bound is unproved
+    (`QTurbulence.finite_cascade_depth`, `sorry` + manuscript Ref);
+    (iv) the spectral-gap positivity is **derived sorry-free**
+    (`QTurbulence.ΔE_gap_pos`) from `q > 1` via monotonicity of the
+    symmetric q-integer and of `x ↦ x^{−5/3}`.  No conjunct projects a
+    class field. -/
+-- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.md (prop:q-turbulence-spectrum)
 theorem q_turbulence_spectrum [ctx : QTurbulenceSpectrumContext] :
     (∀ k : ℕ, 1 ≤ k →
-      ctx.E_q k = ctx.C_q * ctx.ε ^ ((2 : ℝ) / 3) *
-        (ctx.q_int k) ^ ((-5 : ℝ) / 3) / ((ctx.q_int k) / (k : ℝ))) ∧
-    (∀ k : ℕ, ctx.transfer_rate k = ctx.ε *
-      ((ctx.q_int (k + 1)) ^ ((2 : ℝ) / 3) -
-       (ctx.q_int k) ^ ((2 : ℝ) / 3)) /
-      (ctx.q_int (k + 1) - ctx.q_int k)) ∧
-    (ctx.N_modes : ℝ) ≤ (3 : ℝ) / 4 * Real.log ctx.Re_q / Real.log ctx.q ∧
-    0 < ctx.ΔE_gap :=
-  ⟨ctx.claim_i_q_kolmogorov_spectrum, ctx.claim_ii_discrete_cascade, ctx.claim_iii_finite_cascade_depth, ctx.claim_iv_spectral_gap_positive.left⟩
+      QTurbulence.E_q k = ctx.C_q * ctx.ε ^ ((2 : ℝ) / 3) *
+        (QTurbulence.qInt k) ^ ((-5 : ℝ) / 3) /
+        ((QTurbulence.qInt k) / (k : ℝ))) ∧
+    (∀ k : ℕ, QTurbulence.transferRate k = ctx.ε *
+      ((QTurbulence.qInt (k + 1)) ^ ((2 : ℝ) / 3) -
+       (QTurbulence.qInt k) ^ ((2 : ℝ) / 3)) /
+      (QTurbulence.qInt (k + 1) - QTurbulence.qInt k)) ∧
+    ((ctx.N_modes : ℝ) ≤ (3 : ℝ) / 4 * Real.log ctx.Re_q / Real.log ctx.q) ∧
+    0 < (QTurbulence.ΔE_gap : ℝ) :=
+  ⟨fun _ _ => rfl, fun _ => rfl,
+   QTurbulence.finite_cascade_depth, QTurbulence.ΔE_gap_pos⟩
 
 end QOU.FluidDynamics
