@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-03T18:58:54.770638+00:00",
-  "commitSha": "e87569b68594f2ecb6c451d658dcced9218a749f",
+  "computedAt": "2026-07-03T19:06:14.358777+00:00",
+  "commitSha": "c339f75eea5c08ee465ebb7aae99fd65d29313c1",
   "assertions": [
     {
       "name": "rel_gap_matches_registry",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 12,
   "computation": "probe-trace-convention-production-impact",
   "scriptFile": "probe_trace_convention_production_impact.py",
-  "scriptHash": "e6cbfeca467a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "715fb843de44",
+  "scriptCommitSha": "1413f73da15105d3dd05cdc7ce07df63654f504c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
