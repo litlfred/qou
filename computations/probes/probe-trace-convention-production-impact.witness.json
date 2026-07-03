@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-03T19:06:14.358777+00:00",
-  "commitSha": "c339f75eea5c08ee465ebb7aae99fd65d29313c1",
+  "computedAt": "2026-07-03T19:10:38.568126+00:00",
+  "commitSha": "20e10a57af1a8c91da2a0739dcdfc64d936b69df",
   "assertions": [
     {
       "name": "rel_gap_matches_registry",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 14,
   "computation": "probe-trace-convention-production-impact",
   "scriptFile": "probe_trace_convention_production_impact.py",
-  "scriptHash": "715fb843de44",
-  "scriptCommitSha": "1413f73da15105d3dd05cdc7ce07df63654f504c",
+  "scriptHash": "c0dd07783fa6",
+  "scriptCommitSha": "1147afcf235f58b376a4d8b24d6d791691e3e456",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -47,8 +47,10 @@
     "S1_muon_anchor_m_p_shift_ppm": "-197.1027028",
     "S2_q0_current_muon_pinned": "1.1099785955573347198997632204832250266562084087802",
     "S2_q0_C_repin": "1.109968167398228864034669897973483565255360208327",
-    "S2_m_mu_tension_at_current_q0_ppb": "1.358273428",
-    "S2_m_mu_tension_C_repin_ppb": "170874.8147",
+    "S2_m_mu_tension_at_muon_q0_ppb": "1.358273428",
+    "S2_m_mu_tension_D_proton_repin_ppb": "209.9950811",
+    "S2_m_mu_tension_C_proton_repin_ppb": "170874.8147",
+    "S2_tension_ratio_C_over_D_same_anchor": "813.7086535",
     "S2_Q_beta_at_current_q0_MeV": "0.783645803897322",
     "S2_Q_beta_C_repin_MeV": "0.783664922242614"
   }
