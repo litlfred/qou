@@ -92,7 +92,9 @@ def stable_formula(mu: tuple[int, ...], n: int, q: sp.Symbol) -> sp.Expr:
     # hooks of mu itself
     for h in hook_lengths(mu):
         den *= q_int_sym(h, q)
-    return sp.cancel(num / den)
+    # together() suffices — numerator/denominator are already explicit products;
+    # avoid cancel()'s global GCD reduction (compute-audit P15)
+    return sp.together(num / den)
 
 
 def dim_q_numeric(lam: tuple[int, ...], q0: mp.mpf) -> mp.mpf:
@@ -126,7 +128,11 @@ def main() -> int:
                 continue
             direct = dim_q_via_quantum_hooks(lam, q)
             derived = stable_formula(mu, n, q)
-            if sp.cancel(direct - derived) != 0:
+            # exact check without cancel() (compute-audit P15): cross-multiply the
+            # together()-normalized fractions and compare expanded polynomials
+            d_num, d_den = sp.fraction(sp.together(direct))
+            f_num, f_den = sp.fraction(sp.together(derived))
+            if sp.expand(d_num * f_den - f_num * d_den) != 0:
                 formula_failures.append(f"mu={mu}, n={n}")
             formula_checks += 1
     print(f"    {formula_checks} (mu, n) pairs checked; "

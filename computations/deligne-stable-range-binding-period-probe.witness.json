@@ -1,15 +1,15 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-03T19:18:09.163193+00:00",
-  "commitSha": "2d62b1c4f8211c5d2ca5175dfe2266e9fdcebcee",
+  "computedAt": "2026-07-03T19:20:59.115544+00:00",
+  "commitSha": "46462ce70d37043bf5240c1da21eea0fb1378439",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "deligne-stable-range-binding-period-probe",
   "scriptFile": "deligne_stable_range_binding_period_probe.py",
-  "scriptHash": "d79f0e8d4ee3",
-  "scriptCommitSha": "be5a9d42d7d518bd9d82025ee09c8468af9449c8",
+  "scriptHash": "338057b25ce5",
+  "scriptCommitSha": "e9093f1b66c45ed53b7abe805fab7f2430c60492",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -125,5 +125,5 @@
     "stable_truncation_captures_T_at_q0": false,
     "capture_decreasing_in_n": true
   },
-  "timestamp": "2026-07-03T19:18:09+00:00"
+  "timestamp": "2026-07-03T19:20:59+00:00"
 }
