@@ -394,3 +394,37 @@ parity probes are negative); binding *feasibility at high $A$* — the
 Deligne/stable-range route is now measured and **refuted as-is** (scope-a),
 with the per-shape level-rationality (1) retained as the proved positive
 by-product.
+
+## 11. Head-dominance probe + Lean formalization (owner-approved 2026-07-03)
+
+**Lean (follow-up 2 of §10, landed).**
+[`QOU/Mass/PaddedShapeLevelRational.lean`](../../content/quantum-observable-universe/lean/QOU/Mass/PaddedShapeLevelRational.lean):
+the algebraic heart of the §10 identity is proved sorry-free — the
+q-factorial telescope $[n]_q! = [n{-}K]_q!\cdot\prod_{i<K}[n{-}i]_q$
+(induction), its division form at $1 < q$ (reusing the canonical
+`QPartitionCombinatorics` nonvanishing lemmas), and
+`qdim_level_rational_of_hook_split`: `qDim` has the level-rational closed
+form *given* the hook-multiset split — the 99/99 probe-verified
+combinatorial input, carried as an explicit named hypothesis (honest
+conditionality; its general combinatorial proof over
+`Partition.hookLength` is queued follow-up).
+
+**Head-dominance probe (§10's surviving direction) — NEGATIVE, decisive
+(scope (a)).**
+[`balanced_head_dominance_binding_period_probe.py`](../../computations/balanced_head_dominance_binding_period_probe.py)
+(witness `balanced-head-dominance-binding-period-probe.witness.json`,
+$n \le 20$, $p(20) = 627$, 50 dps): the balanced *head* of $T_q(n)$ at
+$q_0$ is **not concentrated** either. Top-1 capture falls $0.30$
+($n{=}4$) $\to 0.011$ ($n{=}20$); top-20 falls to $0.185$; the 99%-head
+width $K_{99}$ stays a large fraction of *all* partitions
+($K_{99}/p(n) \approx 0.65$ at $n = 20$, declining only slowly). The
+argmax shape is the expected near-staircase/Plancherel-type balanced shape,
+but the mass spreads across a broad plateau of near-balanced shapes, each
+contributing little.
+
+**Combined §10+§11 verdict:** neither tail (stable-range) nor head (top-$K$
+balanced) truncation evaluates $T_q(n)$ at $q_0$ — enumeration-avoiding
+evaluation by *truncation* is refuted as-is on both ends (scope-(a): the
+measured reorganizations; integral/saddle-point asymptotics — the q-CLT
+route the dashboard already uses for extrapolation — remains the only
+surviving fast-evaluation family, unchanged by this audit).
