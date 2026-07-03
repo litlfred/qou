@@ -91,3 +91,70 @@ candidates are the k = 5 rung (0.654×) and the k ≥ 5 tail (0.687×) of
 δ_μ — right order and sign, wrong magnitude by ~1.5×. Whatever the
 mass-channel dressing is, it lives at the u⁵-order scale of a *different*
 (mass-channel) kernel.
+
+## Addendum 2 (2026-07-03) — attribution test: the dressing most economically lives on the F_Bor (Borromean) leg
+
+[`probe_mup_dressing_attribution.py`](../../computations/probes/probe_mup_dressing_attribution.py)
+(witness) exploits a decoupling: if the dressing multiplies the **muon**
+identity (H_μ), the proton equation contains no δ and q₀ is pinned by the
+pure Hecke factor `F_Bor(q₀^F) = (m_p+12m_e)/(2m_μ)` — a **third,
+independent pin**. Result:
+
+- **The F-pin lands OUTSIDE the muon–proton bracket**: q₀^F is −90.0 ppb
+  from the muon pin and −78.5 ppb from the proton pin (same side). Because
+  F_Bor is 6.8× less q-sensitive than the muon identity
+  (dlnF/dlnq = −2.68 vs dlnA/dlnq = −18.2), H_μ forces
+  **δ* = −1.64e-6** — ~7× LARGER than the minimal tension.
+- **The F_Bor-leg attribution (H_F) is the economical one**:
+  ε* = **+2.41e-7** with q₀ staying at the muon pin. Occam prefers the
+  dressing on the **composite Borromean factor** — which is also where the
+  known exact-vs-low-order gap lives (the 6.7% `tr_M_atomic` object) and
+  physically sensible (the 3-strand composite truncates; the elementary
+  4₁ lepton anchor is clean). This *reverses* Addendum 1's tentative
+  sign-based lean toward the muon leg (consistently: the Q_β kernel was
+  refuted as the mass kernel anyway, so its sign carried no authority).
+- **Kashaev-subleading naturality: refuted-as-is** — the color N that
+  would make the volume-conjecture subleading term `(3/2)·log N·(2π/N)`
+  equal the dressing is N ≈ 5.03e7, matching no corpus scale (1/ℏ_q²,
+  1/ũ, 1/ũ², 1/ℏ_q⁴ miss by 4.5e3–4.9e5×).
+
+**Net target for the kernel program, sharpened twice:** derive a
+multiplicative correction to **F_Bor** (the Borromean composite factor)
+of **+2.41e-7 at the muon-pinned q₀** — positive sign, u⁵-order scale,
+not the Q_β even kernel, not a Kashaev subleading log.
+
+## Addendum 3 (2026-07-03) — provenance resolution: ε* IS the fitted Habiro tower; the tower is inside the production q₀ solver
+
+Following a Copilot review question about which pin `Q_50_DIGIT_STR`
+carries, direct inspection of
+[`qou_substrate/constants.py`](../../tools/qou-substrate/python/qou_substrate/constants.py)
+resolves the apparent contradiction — and surfaces a discipline item:
+
+- **`q_at()` (the "proton pin") solves the proton identity MULTIPLIED by
+  the fitted Habiro tower** `(1+46u⁴)(1+4u⁵)(1−29u⁶)` — the exact
+  integer tower the [2026-05-28 floor
+  audit](2026-05-28-mu-p-tension-substrate-floor.md) rejected as a fit
+  ("46 is 46.02, no categorical identity; do not re-introduce such fits
+  to production"). Because the tower was fitted to close the μ–p gap,
+  the towered proton solve lands on the **muon value to sub-ppb** —
+  which is why `Q_50_DIGIT_STR` fingerprints as muon-pinned (m_μ at it:
+  1.36 ppb) while its docstring says m_p-pinned. **Both descriptions
+  are true: proton data + fitted tower ≡ muon value.**
+- **The attribution probe's ε* equals the tower's value**:
+  ε*/(tower−1) = **0.9944** at the same q₀ (probe witness,
+  `eps_star_over_tower_minus_1`). The "economical F_Bor-leg dressing"
+  measured independently by the attribution geometry IS what the fit
+  supplies, dominated by the **46u⁴ rung** (2.4208e-7 of the 2.4224e-7
+  total). The 0.56% residual is the fit's own drift vs current CODATA
+  inputs.
+- **Kernel-program target, final sharpening:** derive the coefficient
+  **c₄ ≈ 46 at u⁴** (legacy-u normalization; ũ-equivalent to be
+  restated) of a mass-channel dressing on F_Bor, categorically. That
+  single rung carries 99.9% of the μ–p tension.
+- 🟡 **Owner attention (not adjudicated here):** the floor-audit-rejected
+  tower sits in production `constants.py::q_at()` / `_solve_q_proton_f64`
+  — i.e. the package-layer q₀ pin *inherits the fit*. If the 2026-05-28
+  re-pin was authorized with the tower inside, the AGENTS §q₀-anchor
+  narrative ("precision substitution") should say so explicitly; if not,
+  the pin should be the raw proton identity (which lands 11.5 ppb away).
+  Flagged for ruling; nothing changed in production by this PR.

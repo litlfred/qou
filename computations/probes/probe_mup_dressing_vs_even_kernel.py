@@ -68,7 +68,10 @@ def m_mu_pred(q, m_e):
 
 
 def main() -> int:
-    q0 = mp.mpf(Q_50_DIGIT_STR)          # muon-pinned canonical q0
+    # Q_50_DIGIT_STR provenance (verified): package proton solve WITH
+    # the fitted Habiro tower inside => numerically the MUON-pin value
+    # to sub-ppb (m_mu fingerprint 1.36 ppb). See the attribution probe.
+    q0 = mp.mpf(Q_50_DIGIT_STR)          # muon-valued canonical q0
     m_e = mp.mpf(M_E_MEV)
 
     # Required dressings, both attributions of the tension.
@@ -78,10 +81,11 @@ def main() -> int:
     delta_mu = M_MU_CODATA / m_mu_pred(q0_proton, m_e) - 1
 
     # Exact rungs from the committed ORD-17 witness (verbatim).
-    w = json.load(open(ORD17_WITNESS))
+    with open(ORD17_WITNESS, "r", encoding="utf-8") as f:
+        w = json.load(f)
     rungs = {int(k): sp.sympify(v)
              for k, v in w["data"]["E_rungs_exact"].items()}
-    e_num = {k: mp.mpf(str(sp.N(v, 60))) for k, v in rungs.items()}
+    e_num = {k: mp.mpf(str(sp.N(v, mp.mp.dps))) for k, v in rungs.items()}
 
     # The two documented ladder variables at substrate.
     hbar2 = ((q0 - 1) / q0) ** 2
@@ -119,6 +123,7 @@ def main() -> int:
 
     wb = WitnessBuilder("probe-mup-dressing-vs-even-kernel",
                         engine="mpmath+sympy", output_dir=HERE)
+    wb.add_upstream(ORD17_WITNESS)
     wb.set_description(
         "Derive-or-refute: transport the ORD-17 exact bar-even Q_beta "
         "kernel E(u~) (8 exact rungs, witness-loaded verbatim) to the "
@@ -147,9 +152,10 @@ def main() -> int:
                 "MATCH FOUND — see best_candidate fields (near-match "
                 "tier; NOT wired).")
     wb.add_assertion("no_silent_match_within_1pct", str(bool(any_match)),
-                     str(bool(any_match)),
-                     source="record-only: the match flag equals what the "
-                            "ratio table shows (self-consistency)")
+                     "False",
+                     source="refutation gate: a future rung/variable change "
+                            "producing a 1% match must FAIL this witness "
+                            "so the near-match gets re-adjudicated")
     path = wb.save()
     print(f"witness: {path}")
     print("VERDICT:", "match found (near-match tier)" if any_match
