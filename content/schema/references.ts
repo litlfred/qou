@@ -3628,6 +3628,80 @@ export const references: CSLData[] = [
     DOI: "10.1007/BF02392716",
   }),
 
+  // ── Murakami 2004 (torus-knot colored-Jones asymptotics) ──────
+  // Source PDF in-repo: uploads/0405126v1.pdf (commit 9e2c2d2a).
+  ref({
+    id: "murakami-torus-2004",
+    type: "article-journal",
+    title:
+      "Asymptotic behaviors of the colored Jones polynomials of a torus knot",
+    author: [{ family: "Murakami", given: "Hitoshi" }],
+    "container-title": "International Journal of Mathematics",
+    volume: "15",
+    issue: "6",
+    page: "547-555",
+    issued: { "date-parts": [[2004]] },
+    URL: "https://arxiv.org/abs/math/0405126",
+    note: "Theorem 1.1: for the torus knot $T(a,b)$ and $r$ near $1$, $r \\notin \\mathbb{R}$, the limit of $J_N(T(a,b); e^{2\\pi i r/N})$ is $1/\\Delta(T(a,b); e^{2\\pi i r})$ (inverse Alexander polynomial) for $\\mathrm{Im}\\,r < 0$ and grows exponentially with exponent $(1 - 1/(2abr) - abr/2)\\pi i$ for $\\mathrm{Im}\\,r > 0$ — discontinuous across real $r$, so torus-knot colored-Jones asymptotics yield NO volume / Chern-Simons extraction (contrast figure-eight). In QOU this is the citable (b)-scope invariant behind the 'no volume-route mass for torus knots' guardrail (AGENTS.md section 7b failure mode) and the theorem backing for the Alexander-polynomial substitution on Seifert-fibered strata. See docs/audits/2026-07-02-torus-knot-papers-usability-analysis.md. Journal metadata not machine-verified (doi.org unreachable from the authoring sandbox); DOI omitted.",
+  }),
+
+  // ── Kashaev-Tirkkonen 2000 (volume conjecture for torus knots) ─
+  // Bibliographic data cross-checked against ref [11] of
+  // uploads/0405126v1.pdf.
+  ref({
+    id: "kashaev-tirkkonen2000",
+    type: "article-journal",
+    title: "A proof of the volume conjecture on torus knots",
+    author: [
+      { family: "Kashaev", given: "Rinat M." },
+      { family: "Tirkkonen", given: "Olav" },
+    ],
+    "container-title":
+      "Zapiski Nauchnykh Seminarov POMI (Engl. transl. J. Math. Sci. (N.Y.) 115 (2003) 2033-2036)",
+    volume: "269",
+    page: "262-268",
+    issued: { "date-parts": [[2000]] },
+    note: "Proves the volume conjecture for torus knots: $|J_N(T(a,b); e^{2\\pi i/N})| \\sim C N^{3/2}$ (polynomial growth), so $\\lim \\log|J_N|/N = 0$ = Gromov norm of the Seifert-fibered complement. The precise citation for kashaev-volume-conjecture.md's 'proved only for ... certain torus ... knots'. DOI/URL omitted (not machine-verifiable from the authoring sandbox).",
+  }),
+
+  // ── Bar-Natan-Garoufalidis 1996 (Melvin-Morton-Rozansky) ──────
+  // Bibliographic data cross-checked against ref [1] of
+  // uploads/0405126v1.pdf.
+  ref({
+    id: "bar-natan-garoufalidis1996",
+    type: "article-journal",
+    title: "On the Melvin-Morton-Rozansky conjecture",
+    author: [
+      { family: "Bar-Natan", given: "Dror" },
+      { family: "Garoufalidis", given: "Stavros" },
+    ],
+    "container-title": "Inventiones Mathematicae",
+    volume: "125",
+    issue: "1",
+    page: "103-133",
+    issued: { "date-parts": [[1996]] },
+    DOI: "10.1007/s002220050070",
+    note: "Proof of the Melvin-Morton-Rozansky conjecture: the diagonal coefficients of the $h$-expansion $J_N(K; e^h) = \\sum b_{dl} h^d N^l$ give the inverse Alexander polynomial $1/\\Delta(K; e^{hN})$, for every knot. Supplies the previously-missing bib key for the 'MMR-like' reasoning in docs/audits/2026-05-24-torus-knot-h-expansion-pattern.md. DOI follows the standard Springer pattern but was not machine-verified from the authoring sandbox.",
+  }),
+
+  // ── Hikami-Kirillov 2003 (torus knot and minimal model) ───────
+  // Bibliographic data cross-checked against ref [7] of
+  // uploads/0405126v1.pdf.
+  ref({
+    id: "hikami-kirillov2003",
+    type: "article-journal",
+    title: "Torus knot and minimal model",
+    author: [
+      { family: "Hikami", given: "Kazuhiro" },
+      { family: "Kirillov", given: "Anatol N." },
+    ],
+    "container-title": "Physics Letters B",
+    volume: "575",
+    page: "343-348",
+    issued: { "date-parts": [[2003]] },
+    note: "Relates the phase of the Kashaev-point asymptotics of torus-knot colored Jones polynomials to SU(2) Chern-Simons invariants / minimal-model CFT characters — the candidate structure for deriving the meson Seifert surrogate $V_S(T(2,n)) = \\pi(n-2)/n$ (see V5 of docs/audits/2026-07-02-torus-knot-papers-usability-analysis.md). DOI/URL omitted (not machine-verifiable from the authoring sandbox).",
+  }),
+
   // ── Champanerkar 2003 — A-polynomial & Bloch invariants (thesis) ─
   ref({
     id: "champanerkar2003",
