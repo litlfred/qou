@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-02T16:54:15.542753+00:00",
-  "commitSha": "81f9cae0c6630c2dd1e859e5d956358e39eb7a5d",
+  "computedAt": "2026-07-03T00:16:39.877746+00:00",
+  "commitSha": "44cd40e58bfd9ad590d6eed856b996feb741f21c",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 13,
+  "durationMs": 12,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "1abb80bb6c90",
@@ -46,12 +46,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 1554,
-      "prov_ok": 1244,
+      "total_scanned": 1560,
+      "prov_ok": 1250,
       "prov_audit_exempt": 55,
       "prov_missing": 254,
       "prov_parse_error": 1,
-      "completeness_ratio": 0.8359073359073359
+      "completeness_ratio": 0.8365384615384616
     },
     "by_verdict": {
       "PROV_OK": [
@@ -1936,6 +1936,10 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-h4-stagec-markov-infra.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "qbeta-h4-tower-branching-preflight.witness.json",
           "missing_fields": []
         },
@@ -2985,6 +2989,22 @@
         },
         {
           "witness": "probe-4f-h3-sigma-avg-asymmetry.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "probe-9b-alphak-structure.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "probe-9b-laurent-degree-10a5.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "probe-9b-manybody-expansion.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "probe-9b-perlambda-brane-tower.witness.json",
           "missing_fields": []
         },
         {
@@ -4609,6 +4629,10 @@
         },
         {
           "witness": "binding-manybody-series.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "binding-qbeta-aw-recurrence-probe.witness.json",
           "missing_fields": []
         },
         {
