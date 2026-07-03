@@ -205,6 +205,31 @@ mentions.
    scope-(a) constraint on `ChannelLeonardDuality` (*this identification,
    as-is* — not a structural exclusion). Filed as bean `cp4i`; read
    1jrh §"What IS already settled" first.
+
+   **Probe result (run same day** —
+   [`computations/aj_operator_aw_shape_probe.py`](../../computations/aj_operator_aw_shape_probe.py),
+   witness `aj-operator-aw-shape-probe.witness.json`, all checks exact
+   sympy identities, no fit**).** Structural identity verified for
+   $N \le 9$:
+   $$J_N(4_1; q) \;=\; \sum_{k=0}^{N-1} \prod_{j=1}^{k} (\Lambda_N - \lambda_j),
+   \qquad \Lambda_N = q^N + q^{-N},\quad \lambda_j = q^j + q^{-j},$$
+   i.e. the proved AJ machinery's degree-index ladder (the Habiro
+   cyclotomic ladder, all coefficients $= 1$ — the $4_1$ signature) is a
+   **Newton-interpolation ladder on the bar-even variable** $\Lambda$,
+   terminating via $\Lambda_N = \lambda_N$; bar symmetry of $J_N$ becomes
+   manifest rather than empirical. Shape verdict: the multiplier
+   $A_k = \Lambda - \lambda_{k+1}$ is **bar-even** (consistent with
+   1jrh's requirement), but the lower coefficient is **identically
+   zero** — the ladder is first-order, its solution space is
+   1-dimensional, and the Casoratian of any two solutions vanishes
+   identically. It is the *degenerate Newton boundary* of the AW
+   three-term shape, and **not** the q-Hermite bottom (whose
+   $C_n = 1 - q^n \neq 0$), refuting the dialog's "q-Hermite bottom"
+   identification at the one proved-AJ knot — scope (a): this
+   identification as-is, not the AW ingredient. Consequence: the knot
+   side supplies **no Casoratian sign and no $(a,b,c,d)$
+   identification** — the 1jrh gate (measure $c_3^{\mathrm{even}}$
+   first) stands, now reinforced from the AJ side.
 3. **Anti-actions** (things this dialog must NOT trigger):
    - do not mark the AJ conjecture proved-in-QOU anywhere (its honest
      home is the `QuantumAPolynomial` class, sorry = conjecture);
@@ -232,6 +257,7 @@ mentions.
   re-narrated with its conditionality stripped and decorated with
   fabricated corpus results) now has three precedents — KLR (2026-05-30),
   hyperbolic hurdle (2026-06-16), AJ (this).
-- Follow-up beans: `cp4i` (the gated $4_1$ shape probe, above);
+- Follow-up beans: `cp4i` (the gated $4_1$ shape probe — **run same
+  day, closed**; result above);
   `5htq` (pre-existing — land the verified AW/Chern–Simons and AJ
   references).
