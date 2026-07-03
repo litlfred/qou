@@ -36,9 +36,10 @@
   expansion, (ii) `markov_trace_recursive` on the signed word, (iii) the
   symbolic Wenzl bridge `Σ_λ y_λ^W χ^λ(β_Bor)` (Hoefsmit matrices).  See
   `computations/probes/probe_convention_d_vs_c_borromean.py` and its
-  witness.  A Lean derivation of tr_C from the M1–M3 axioms themselves
-  (parallel to `BorromeanMarkovTrace`) is queued as the follow-up task;
-  THIS file's theorems are about the explicit rational functions and are
+  witness.  The Lean DERIVATION of tr_C from the Markov-forced values
+  (parallel to `BorromeanMarkovTrace`) is in
+  `BorromeanCanonicalTraceDerivation` (`trC_borromean_derived`); THIS
+  file's theorems are about the explicit rational functions and are
   fully machine-checked as such.
 
   Registry: docs/audits/2026-06-09-binding-trace-convention-split.md

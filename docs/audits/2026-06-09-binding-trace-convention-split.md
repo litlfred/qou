@@ -165,3 +165,19 @@ t = √q, and:
   consumer assuming it equals the canonical `tr_M(β_Bor)` inherits the
   1.9554e-4 discrepancy — immaterial at the current 2.3× binding scale,
   material below 0.1 %.
+
+**Lean-proved (2026-07-03, sorry-free, `lean`-direct exit 0):**
+
+- `QOU/BraidsAndKnots/BorromeanTraceConventionSplit.lean` — both
+  conventions as explicit rational functions in `t = √q`; the D t-form
+  tied to the corpus `trM_borromean`; **`conventionD_ne_conventionC`**
+  (they differ at `t = 2`, hence as functions).
+- `QOU/BraidsAndKnots/BorromeanCanonicalTraceDerivation.lean` — the
+  canonical C value **derived**: explicit rational seminormal (2,1)
+  representation (braid + Hecke relations proved), χ^(2,1)(β_Bor) =
+  2−3h⁴−h⁶ machine-checked via the Cayley–Hamilton cube identity, the
+  Markov-forced weights (unique — system determinant nonzero) proved to
+  satisfy tr(1)=1, tr(σ)=z, tr(σ₀σ₁)=z², and
+  **`trC_borromean_derived`**: their β_Bor evaluation equals the C
+  closed form. Cited (not re-proved): Wedderburn trace decomposition
+  (Mathas §3.43) + M1–M3 uniqueness ([jones1987]).
