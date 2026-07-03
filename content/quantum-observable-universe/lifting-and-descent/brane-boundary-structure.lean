@@ -70,13 +70,12 @@ theorem boundary_nontrivial {R : Type*} [CommRing R]
     (bbs : BraneBoundaryStructure R)
     (h : ¬ Function.Injective bbs.restriction) :
     bbs.boundary ≠ ⊥ := by
-  rw [Submodule.ne_bot_iff]
-  rw [Function.Injective] at h
-  push_neg at h
-  obtain ⟨x, y, hxy, hne⟩ := h
-  refine ⟨x - y, ?_, ?_⟩
-  · simp [LinearMap.mem_ker, map_sub, hxy]
-  · exact sub_ne_zero.mpr hne
+  -- `boundary` is a data field (defaulted to `ker restriction` but not
+  -- constrained to it), so nontriviality follows from the exceptional
+  -- simple subobject `S ≤ boundary`, `S ≠ ⊥`.
+  obtain ⟨S, hS, hSne⟩ := bbs.exceptional_simple
+  intro hbot
+  exact hSne (le_bot_iff.mp (hbot ▸ hS))
 
 /-- The involution restricted to the boundary is still idempotent. -/
 -- Ref: [manuscript] §3
