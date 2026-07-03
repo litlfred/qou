@@ -25,8 +25,15 @@ export default proposition({
     "1ppb-roadmap",
   ],
   computation: {
-    engine: "python+mpmath",
-    script: "computations/probe_q_beta_operator_valued_N2.py",
+    engine: "mpmath",
+    // Verifies the Hoefsmit V_(2,1) closed forms (d1, d2, b^2 =
+    // (h^2+3)/(h^2+4)), the Hecke + braid relations of the explicit
+    // matrices, and the proton trace cross-validation. The
+    // cos-symmetrized character remains conditional on
+    // prop:q-beta-cos-resummation (former probe
+    // probe_q_beta_operator_valued_N2.py was deleted).
+    script: "computations/hoefsmit_b_squared_reconciliation.py",
+    witness: "computations/hoefsmit-b-squared-reconciliation.witness.json",
     status: "experimental",
   },
   authorNotes: [

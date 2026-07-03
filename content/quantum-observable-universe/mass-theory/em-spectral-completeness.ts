@@ -9,6 +9,12 @@ export default theorem({
     validation: "not_checked",
   },
   uses: ["prop:wedderburn-trace-identity"],
+  computation: {
+    engine: "python",
+    script: "computations/rt_c23_singlet_sign_core.py",
+    witness: "computations/rt-c23-singlet-sign-core.witness.json",
+    status: "verified",
+  },
   tags: [
     "spectral-completeness",
     "wedderburn",

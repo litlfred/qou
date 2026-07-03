@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/mass-theory/six-term-mass-formula-complete.md"
   },
   "source_hashes": {
-    "md": "99d474962389",
-    "ts": "aa8bcad8c6ea"
+    "md": "e9b4b389cd1f",
+    "ts": "c071f044f297"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -1480,7 +1480,151 @@
         "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "compute-lp-dual-present": [
+      {
+        "field_hash": {
+          "md": "e9b4b389cd1f",
+          "ts": "aa8bcad8c6ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+        },
+        "reviewed_at": "2026-07-02T12:20:09.701Z",
+        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+      }
+    ],
+    "canonical-witness-pinned": [
+      {
+        "field_hash": {
+          "md": "e9b4b389cd1f",
+          "ts": "aa8bcad8c6ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+        },
+        "reviewed_at": "2026-07-02T12:20:09.701Z",
+        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+      }
+    ],
+    "canonical-script-not-deprecated": [
+      {
+        "field_hash": {
+          "md": "e9b4b389cd1f",
+          "ts": "aa8bcad8c6ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+        },
+        "reviewed_at": "2026-07-02T12:20:09.701Z",
+        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+      }
+    ],
+    "compute-prop-has-probe": [
+      {
+        "field_hash": {
+          "md": "e9b4b389cd1f",
+          "ts": "aa8bcad8c6ea"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+        },
+        "reviewed_at": "2026-07-02T16:52:58.983Z",
+        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765",
+        "severity": "major",
+        "evidence": "../../qou/content/quantum-observable-universe/mass-theory/six-term-mass-formula-complete.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+      },
+      {
+        "field_hash": {
+          "md": "e9b4b389cd1f",
+          "ts": "c071f044f297"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+        },
+        "reviewed_at": "2026-07-03T00:57:50.850Z",
+        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+      }
+    ],
+    "compute-prop-has-consumer": [
+      {
+        "field_hash": {
+          "md": "e9b4b389cd1f",
+          "ts": "aa8bcad8c6ea"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+        },
+        "reviewed_at": "2026-07-02T16:52:58.983Z",
+        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765",
+        "severity": "major",
+        "evidence": "../../qou/content/quantum-observable-universe/mass-theory/six-term-mass-formula-complete.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+      },
+      {
+        "field_hash": {
+          "md": "e9b4b389cd1f",
+          "ts": "c071f044f297"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+        },
+        "reviewed_at": "2026-07-03T00:57:50.850Z",
+        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+      }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "e9b4b389cd1f",
+          "ts": "aa8bcad8c6ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+        },
+        "reviewed_at": "2026-07-02T16:52:58.983Z",
+        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+      }
     ]
   },
-  "updated_at": "2026-07-12T02:24:13.638Z"
+  "updated_at": "2026-07-03T00:57:50.850Z"
 }

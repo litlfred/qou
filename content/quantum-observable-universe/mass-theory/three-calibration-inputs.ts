@@ -9,6 +9,20 @@ export default proposition({
     validation: "not_checked",
   },
   cites: ["codata2022"],
+  computation: {
+    engine: "python",
+    script: "computations/codata_masses.py",
+    // Second witness produced by computations/build_cal_3_q_beta_witness.py
+    // (CAL-3 Q_beta(n) source-of-truth JSON).
+    witness: [
+      "computations/codata-masses.witness.json",
+      "computations/cal-3-q-beta.witness.json",
+    ],
+    consumers: [
+      "computations/sweeps/paper_six_term_isotope_sweep.py",
+    ],
+    status: "verified",
+  },
   tags: [
     "calibration",
     "three-parameters",

@@ -8,9 +8,9 @@
     "lean": "content/quantum-observable-universe/mass-theory/chi-lambda-w0-sign-weighting.lean"
   },
   "source_hashes": {
-    "md": "cef3cde8020f",
-    "ts": "e66ff07d801d",
-    "lean": "289638dfe45a"
+    "md": "00225a800849",
+    "ts": "5a5dff3b6fcb",
+    "lean": "128a1ae2554b"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -762,9 +762,85 @@
     "compute-prop-has-probe": [
       {
         "field_hash": {
-          "md": "cef3cde8020f",
-          "ts": "e66ff07d801d",
-          "lean": "289638dfe45a"
+          "md": "00225a800849",
+          "ts": "4cb84979e273",
+          "lean": "128a1ae2554b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+        },
+        "reviewed_at": "2026-07-02T16:52:58.983Z",
+        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765",
+        "severity": "major",
+        "evidence": "../../qou/content/quantum-observable-universe/mass-theory/chi-lambda-w0-sign-weighting.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+      },
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "5a5dff3b6fcb",
+          "lean": "128a1ae2554b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+        },
+        "reviewed_at": "2026-07-03T00:57:50.850Z",
+        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+      }
+    ],
+    "compute-prop-has-consumer": [
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "4cb84979e273",
+          "lean": "128a1ae2554b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+        },
+        "reviewed_at": "2026-07-02T16:52:58.983Z",
+        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765",
+        "severity": "major",
+        "evidence": "../../qou/content/quantum-observable-universe/mass-theory/chi-lambda-w0-sign-weighting.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+      },
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "5a5dff3b6fcb",
+          "lean": "128a1ae2554b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+        },
+        "reviewed_at": "2026-07-03T00:57:50.850Z",
+        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765"
+      }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "00225a800849",
+          "ts": "4cb84979e273",
+          "lean": "128a1ae2554b"
         },
         "result": "pass",
         "reviewer": {
@@ -1523,5 +1599,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-12T02:24:13.638Z"
+  "updated_at": "2026-07-03T00:57:50.850Z"
 }

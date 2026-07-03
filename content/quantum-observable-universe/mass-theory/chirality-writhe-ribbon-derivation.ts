@@ -9,6 +9,12 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["prop:e-infinity-page-identifications"],
+  computation: {
+    engine: "mpmath",
+    script: "computations/chirality_avg_content.py",
+    witness: "computations/chirality-avg-content.witness.json",
+    status: "experimental",
+  },
   tags: [
     "chirality",
     "writhe",
