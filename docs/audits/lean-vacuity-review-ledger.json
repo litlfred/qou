@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-06-28T14:46:37.169Z",
+  "updated_at": "2026-07-03T19:37:21.136Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Archimedean/BetaDecay.lean::interaction_completeness::proof-no-false-premise": {
       "category": "proof-no-false-premise",
@@ -89,6 +89,188 @@
       "reviewed_at": "2026-06-28T02:00:00Z",
       "disposition": "no-fix",
       "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0≥1, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (§3b)."
+    },
+    "content/quantum-observable-universe/glossary/glossary-weierstrass-projection.lean::weierstrass_projection_exists::proof-no-trivial-true": {
+      "category": "proof-no-trivial-true",
+      "pattern": "exists-true-tautology",
+      "line": 29,
+      "verdict": "needs-agent",
+      "file_sha": "5b4586562bc9"
+    },
+    "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean::JonesBirthday.exists_knot::proof-no-trivial-true": {
+      "category": "proof-no-trivial-true",
+      "pattern": "exists-true-tautology",
+      "line": 650,
+      "verdict": "needs-agent",
+      "file_sha": "b501cf3b668d"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/JucysMurphy.lean::jucysMurphy_zero::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 106,
+      "verdict": "needs-agent",
+      "file_sha": "6c280bc9c88a"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/JucysMurphy.lean::row_eq_offset_add_count::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 646,
+      "verdict": "needs-agent",
+      "file_sha": "6c280bc9c88a"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/S5bbGeometricIndex.lean::IsColourReeb::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 23,
+      "verdict": "needs-agent",
+      "file_sha": "4f5257bf054b"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/SpechtClassification.lean::diagram_card::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "field-projection",
+      "line": 122,
+      "verdict": "needs-agent",
+      "file_sha": "a6cfddf99041"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/SpechtTriangularCore.lean::rowSet_card::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 315,
+      "verdict": "needs-agent",
+      "file_sha": "9cd0442e5453"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/WLambdaMTCLocalizationObligation.lean::one_le_hookLength::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 199,
+      "verdict": "needs-agent",
+      "file_sha": "9c97410a886c"
+    },
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/KeystoneCanonicalAngleMap.lean::canonical_angle_map_unique::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 145,
+      "verdict": "needs-agent",
+      "file_sha": "781d70cd16c3"
+    },
+    "content/quantum-observable-universe/lean/QOU/Mathlib/NonAbelianStokes.lean::yekutieli_finite_slice_substrate::proof-no-trivial-true": {
+      "category": "proof-no-trivial-true",
+      "pattern": "exists-true-tautology",
+      "line": 132,
+      "verdict": "needs-agent",
+      "file_sha": "a95f5c438cfa"
+    },
+    "content/quantum-observable-universe/lean/QOU/Mathlib/PartitionsOfBridge.lean::mem_partsFuel_complete::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 92,
+      "verdict": "needs-agent",
+      "file_sha": "fe585c8ddb39"
+    },
+    "content/quantum-observable-universe/lean/QOU/Mathlib/SYTDimHLFPair.lean::dimHLF_pair::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 29,
+      "verdict": "needs-agent",
+      "file_sha": "4742581abf78"
+    },
+    "content/quantum-observable-universe/lean/QOU/Mathlib/SYTHookGNW.lean::numSYTenum_eq_div_aux::proof-no-false-premise": {
+      "category": "proof-no-false-premise",
+      "pattern": "discharged-impossible-hyp",
+      "line": 84,
+      "verdict": "needs-agent",
+      "file_sha": "516f3622114b"
+    },
+    "content/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean::yekutieli_finite_slice_discharged::proof-no-trivial-true": {
+      "category": "proof-no-trivial-true",
+      "pattern": "exists-true-tautology",
+      "line": 136,
+      "verdict": "needs-agent",
+      "file_sha": "4ae416d0135d"
+    },
+    "content/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean::markov_axiom_h1_to_h2_discharged::proof-no-trivial-true": {
+      "category": "proof-no-trivial-true",
+      "pattern": "exists-true-tautology",
+      "line": 172,
+      "verdict": "needs-agent",
+      "file_sha": "4ae416d0135d"
+    },
+    "content/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean::markov_axiom_h2_to_h3_discharged::proof-no-trivial-true": {
+      "category": "proof-no-trivial-true",
+      "pattern": "exists-true-tautology",
+      "line": 178,
+      "verdict": "needs-agent",
+      "file_sha": "4ae416d0135d"
+    },
+    "content/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean::lie_valued_stokes_discharged::proof-no-trivial-true": {
+      "category": "proof-no-trivial-true",
+      "pattern": "exists-true-tautology",
+      "line": 264,
+      "verdict": "needs-agent",
+      "file_sha": "4ae416d0135d"
+    },
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/WignerSU4FromSpinIsospin.lean::WignerSU4FromSpinIsospin::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "true-class-field",
+      "line": 15,
+      "verdict": "needs-agent",
+      "file_sha": "ca1b9f68f9fc"
+    },
+    "content/quantum-observable-universe/lifting-and-descent/qu-to-qou.lean::qu_to_qou_exists::proof-no-trivial-true": {
+      "category": "proof-no-trivial-true",
+      "pattern": "exists-true-tautology",
+      "line": 94,
+      "verdict": "needs-agent",
+      "file_sha": "99a7e82b78c0"
+    },
+    "content/quantum-observable-universe/mass-theory/conj-im-q-physical-role.lean::mass_observable_conj_invariance::proof-no-trivial-true": {
+      "category": "proof-no-trivial-true",
+      "pattern": "or-true-tautology",
+      "line": 28,
+      "verdict": "needs-agent",
+      "file_sha": "463181fa3454"
+    },
+    "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean::habiro_expansion_atomic::proof-no-trivial-true": {
+      "category": "proof-no-trivial-true",
+      "pattern": "exists-true-tautology",
+      "line": 174,
+      "verdict": "needs-agent",
+      "file_sha": "36e61eceb7f8"
+    },
+    "content/quantum-observable-universe/mass-theory/knot-operator-lp-selection.lean::knot_operator_lp_selection::proof-no-trivial-true": {
+      "category": "proof-no-trivial-true",
+      "pattern": "exists-true-tautology",
+      "line": 116,
+      "verdict": "needs-agent",
+      "file_sha": "f8af9f73757a"
+    },
+    "content/quantum-observable-universe/mass-theory/universal-braid-branching.lean::pieri_skew_syt::proof-no-trivial-true": {
+      "category": "proof-no-trivial-true",
+      "pattern": "reflexive-tautology",
+      "line": 34,
+      "verdict": "needs-agent",
+      "file_sha": "a43b1ac62406"
+    },
+    "content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.lean::CategoricalReebDerivation::proof-claims-unencoded": {
+      "category": "proof-claims-unencoded",
+      "pattern": "docstring-claims-gap",
+      "line": 62,
+      "verdict": "needs-agent",
+      "file_sha": "0eaf50514b42"
+    },
+    "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean::phi_q_eq_aj_saddle_root_of_unity::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "field-projection",
+      "line": 117,
+      "verdict": "needs-agent",
+      "file_sha": "9bfe63baa895"
+    },
+    "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean::li2_q_eq_aj_saddle_real::proof-no-self-assuming-projection": {
+      "category": "proof-no-self-assuming-projection",
+      "pattern": "field-projection",
+      "line": 127,
+      "verdict": "needs-agent",
+      "file_sha": "9bfe63baa895"
     }
   }
 }
