@@ -121,8 +121,12 @@ def trM_borromean(q):
 
         tr_M(β_Bor, q) = (4 + h² - 3h⁴ - h⁶) / (h² + 4)
 
-    where h = q - q⁻¹. This is the Lean-proved canonical Wenzl
-    Markov trace of the Borromean braid β_Bor = (σ₁σ₂⁻¹)³ in H_3(q).
+    where h = q - q⁻¹ (Lean-proved: BorromeanMarkovTrace.lean). Trace
+    CONVENTION: this is the SU(2)/Temperley-Lieb (Jones) decomposition
+    — convention D in the trace-convention registry — NOT the Wenzl
+    z-trace (convention C differs exactly; gap 1.955e-4 at q0; see
+    docs/audits/2026-06-09-binding-trace-convention-split.md addendum
+    and probe_convention_d_vs_c_borromean.py).
     """
     h = q - 1 / q
     return abs((4 + h ** 2 - 3 * h ** 4 - h ** 6) / (h ** 2 + 4))
