@@ -37,8 +37,6 @@ If the derivation succeeds:
 
 Status: EXPLORATORY DERIVATION.
 """
-import json
-
 from pathlib import Path
 
 import sympy as sp
