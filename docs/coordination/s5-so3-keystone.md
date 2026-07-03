@@ -400,6 +400,26 @@ prune set [`2026-07-02-keystone-valuemap-qbessel-gate.md`](../audits/2026-07-02-
 (residue weights are pure signs; channel amplitudes are the L-value family; single-argument
 q-Bessel rows fail the 1-dof gate).
 
+## Route 1 CLOSED (constancy exclusion); route 2 scoped → bean rt2f (2026-07-03)
+
+Owner redirect after #3208: route 1 (larger-D Seifert) executed on the count-matching
+Σ(3,4,5) — D=6, γ=4 flat connections = 4 bwS0 classes; full transcription
+machine-validated on the second manifold (Theorem 9 exact ≤1.2e−38; S(6×6)²=1; flat row
+= printed Cor-11 weights). **Flat-row ratios (1, √2, φ, √2φ) ≈ (1, 1.41, 1.62, 2.29) vs
+d_q (1, 4.11, 5.22, 6.22) and classical (1,4,5,6): REFUTED — the count match does not
+extend to values.** Then the class-level **constancy exclusion** (scope (b), invariant
+cited): every Seifert/plumbed false-theta S-entry is a constant algebraic sine-product
+(no q in Hikami 3.8), while d_q(4,1)/d_q(5) = [4]_q is nonconstant in q — no constant
+geometric row can realize the fibre-level `BWVacuumRowIsHecke`; single-anchor matches are
+the fitted mode. **Route 1 closed for ALL Seifert data, any colouring.** Surviving
+type-correct class = q-FUNCTION block families: colored Ẑ / F_K(x,q) knot-complement
+blocks (GPPV radial-limit theorem: Murakami 2205.01282, uploaded; Seifert resurgence: AM
+1811.05376, uploaded) — successor bean `rt2f` (owner-gated; formalize-first: state the
+x-specialization class + invariants before numerics; instantiates-or-refutes the DG
+sibling's `QBesselRadialPartRealization` Lean obligation). Bean `s013` CLOSED. Audit:
+[`docs/audits/2026-07-03-keystone-route1-closed-route2-scoped.md`](../audits/2026-07-03-keystone-route1-closed-route2-scoped.md);
+probe `computations/probes/keystone_route1_sigma345_constancy_s013.py`.
+
 ## T1 DONE — conjecture classes de-abstracted, factor-2 anchor fixed (2026-07-04, bean 5e79)
 
 Tier-1 of the keystone de-abstraction epic (bean `08a2`) is complete on
