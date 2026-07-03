@@ -1,15 +1,15 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-03T14:13:29.098679+00:00",
-  "commitSha": "58ddae4a80a9974e02d8ba4e70d025f7139294ed",
+  "computedAt": "2026-07-03T19:18:09.163193+00:00",
+  "commitSha": "2d62b1c4f8211c5d2ca5175dfe2266e9fdcebcee",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "deligne-stable-range-binding-period-probe",
   "scriptFile": "deligne_stable_range_binding_period_probe.py",
-  "scriptHash": "df3da3b8ee82",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d79f0e8d4ee3",
+  "scriptCommitSha": "be5a9d42d7d518bd9d82025ee09c8468af9449c8",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -18,8 +18,10 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Deligne/TL stable-range probe for T_q(n)=sum dim_q: (1) per-shape padded-family closed form (rational in q, q^n — the interpolation restriction property) verified exactly; (2) captured fraction of the stable truncation at substrate q_0 — feasibility verdict for interpolated-level evaluation of the binding period.",
   "audit_only": true,
@@ -123,5 +125,5 @@
     "stable_truncation_captures_T_at_q0": false,
     "capture_decreasing_in_n": true
   },
-  "timestamp": "2026-07-03T14:13:29+00:00"
+  "timestamp": "2026-07-03T19:18:09+00:00"
 }

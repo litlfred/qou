@@ -82,7 +82,7 @@ def main() -> int:
     # B_odd is exactly N-organized; nu inherits that ONLY if B_even were too —
     # measure the spread of nu within each N class vs across classes.
     spread_within = max((max(v) - min(v)) for v in by_n.values())
-    means = {n: sum(v) / len(v) for n, v in by_n.items()}
+    means = {n: mp.fsum(v) / len(v) for n, v in by_n.items()}
     spread_across = max(means.values()) - min(means.values())
     n_organized = bool(spread_within < spread_across / 10)
 
