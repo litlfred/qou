@@ -290,8 +290,11 @@ theorem figureEightOperator_annihilates_one {q : K} (hq : q ≠ 0) :
 /-- **The literature instance (strong AJ for 4₁), transcribed.**  Every
     field except the general-`N` annihilation is machine-checked above;
     the annihilation for all `N` is the theorem proved in the literature
-    and verified symbolically for `N = 1..12` in the corpus witness — the
-    remaining Lean gap is the creative-telescoping certificate, queued. -/
+    and verified symbolically for `N = 1..12` in the corpus witness.
+    The certificate's mathematical content is Lean-proved sorry-free in
+    `QOU.BraidKnot.AJFigureEightCertificate` (`feCert_local_identity_cleared`,
+    `feCert_boundary_cleared` — denominator-cleared pure ring identities);
+    the residual gap is the shift-ratio/telescope bookkeeping. -/
 instance [CharZero K] : StrongAJFigureEight K where
   op := figureEightOperator
   order_eq := rfl
