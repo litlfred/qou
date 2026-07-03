@@ -82,6 +82,18 @@
 > `QOU.BraidKnot.JucysMurphy`) — **not** the trace identity or the block/center machinery, which
 > are done. P4's arithmetic core was already proved; its trace side is subsumed.
 
+> **Update (2026-07-03,
+> [#3229](https://github.com/litlfred/qou/pull/3229)/[#3236](https://github.com/litlfred/qou/pull/3236)
+> merged) — the labelling residual narrows to ONE core.** The independence half is now fully
+> machine-checked: L1 (`linearIndependent_of_joint_eigenvectors`, generic joint-eigenvalue
+> independence) and L2 (`syt_content_tuple_injective`, the GZ simple-spectrum fact via the
+> diagonal row-count formula) are **proved**, so `exists_indep_seminormal_family`,
+> `seminormalVectors_span`, and the punchline `centralC2_acts_by_contentSqSum` all rest on the
+> single core `seminormalVector_data_exists` (Young's seminormal eigenvector existence). Route
+> scoping for that core — generic-existence dead-end recorded, **Murphy-triangularity route
+> recommended** (generic C1 + concrete C2 adjacent to brick-4's dominance machinery):
+> [`2026-07-03-seminormal-existence-core-program.md`](2026-07-03-seminormal-existence-core-program.md).
+
 ## Goal
 
 Fully close **Identity I** `M(n) = (1/n!)·Σ_{λ⊢n} dim(λ)²·Σ_{c∈λ} h_c² = n(3n−1)/2` in Lean,

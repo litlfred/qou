@@ -43,21 +43,32 @@ eigenvalue `c(cell of k in T) = col − row`.  Hence the central element
   there is no strand below `0`; recorded as `jucysMurphy_succ_zero` for `Fin (n+2)` where the
   index `1` genuinely exists, giving `X_1 = single (swap 0 1) 1`).
 
-## What is stated with `sorry` + `-- Ref:` (the genuine OV theorems)
+## What is stated with `sorry` + `-- Ref:` (current inventory: ONE core)
 
-* `jucysMurphy_commute` — the JM elements pairwise commute (the GZ algebra is commutative).
-  `-- Ref: [vershik-kerov1977]`.
-* `jucysMurphy_eigenvalue` — on a GZ/seminormal eigenvector of `S^λ` for the tableau `T`, `X_k`
-  acts by the scalar `cellContent (T's cell of k)`.  Stated against an *abstract packaging* of
-  the seminormal eigenbasis (see the design note below).  `-- Ref: [vershik-kerov1977]`.
-* `centralC2_acts_by_contentSqSum` — the punchline: the central element `C₂ = ∑_k X_k²` acts on
-  the Specht submodule `S^λ ≤ M^λ` (via `Specht.Mtab.rep` extended to the group algebra) as the
-  scalar `contentSqSum μ`.  `-- Ref: [vershik-kerov1977]`.  This discharges the `ω = Σc²` field of
-  the keystone's `SnWedderburnSpectralData`.
+The file's **single** remaining cited `sorry` is
 
-All three are theorems of the Okounkov–Vershik / Jucys–Murphy literature; their full Lean proofs
-are the content of the OV paper and out of scope for one brick.  They are honestly stubbed per
-AGENTS.md §1 (`theorem … := by sorry  -- Ref: …`), never `: True`, never `native_decide`.
+* `seminormalVector_data_exists` — Young's seminormal form, the *eigenvector existence*: for
+  every standard tableau `T` of shape `μ` there is a nonzero `v ∈ S^λ` on which each `X_s` acts
+  by `cellContent (T's cell of s)`.  `-- Ref: [vershik-kerov1977]`.
+
+Everything else in the OV layer is **proved** (sorry-free) or **assembled** sorry-free from that
+one core:
+
+* `jucysMurphy_commute` — PROVED (Jucys's classical computation, `jm_commute_lt`).
+* `jucysMurphy_eigenvalue` — assembled: the indexing bijection is the sorry-free brick-4
+  `tableauCellEquiv`; the eigenvector data is supplied by the core.
+* `linearIndependent_of_joint_eigenvectors` (L1) — PROVED: joint eigenvectors with
+  pairwise-distinct eigenvalue tuples are independent (generic linear algebra).
+* `syt_content_tuple_injective` (L2) — PROVED: the content tuple determines the standard
+  tableau (diagonal monotonicity + the row-count formula `row_eq_offset_add_count`).
+* `exists_indep_seminormal_family`, `seminormalVectors_span` — assembled from the core via
+  L1 + L2 and the finrank counting; `sorryAx` flows only through the core.
+* `centralC2_acts_by_contentSqSum` — the punchline: `C₂ = ∑_k X_k²` acts on `S^λ` as the scalar
+  `contentSqSum μ` (discharges the `ω = Σc²` field of the keystone's
+  `SnWedderburnSpectralData`); assembled from the spanning chain, `sorryAx` only via the core.
+
+The remaining core is honestly stubbed per AGENTS.md §1 (`theorem … := by sorry  -- Ref: …`),
+never `: True`, never `native_decide`.
 
 ## Base ring (§7c)
 
