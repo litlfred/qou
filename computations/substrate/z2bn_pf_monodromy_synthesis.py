@@ -23,6 +23,8 @@ Net: `M` is a real / q-difference `SL₂(ℝ)` operator with bar-even trace `τ(
 arithmetic SL₂(ℤ) monodromy. Constructing the explicit q-difference PF operator with this trace is
 the open keystone. Lean: QOU/Mass/TauQuantumIntegerForm.lean (3 thms, sorry-free).
 """
+import time as _time  # noqa: E402 — wall-clock anchor for witness durationMs
+_T0 = _time.monotonic()
 import json
 import sympy as sp
 import mpmath as mp
@@ -76,6 +78,6 @@ out = {
 from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
 wpath = WitnessBuilder.wrap_legacy(
     "z2bn-pf-monodromy-synthesis", out,
-    script_path=__file__, engine="sympy",
+    script_path=__file__, engine="sympy", start_time=_T0,
 ).save()
 print("witness ->", wpath)

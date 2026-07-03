@@ -20,6 +20,8 @@ q-Askey q = e^η cosh/sinh grading IS the Re/Im = binding/Q_β = Vol/CS split.
 
 No fit; sympy symbolic exact in q; (a)/(b)-scoped per AGENTS.md.
 """
+import time as _time  # noqa: E402 — wall-clock anchor for witness durationMs
+_T0 = _time.monotonic()
 import json, os, sys
 
 sys.path.insert(0, os.path.join(os.getcwd(), "tools", "qou-substrate", "python"))
@@ -123,7 +125,7 @@ witness = {
 from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
 wpath = WitnessBuilder.wrap_legacy(
     "binding-qaskey-product-probe", witness,
-    script_path=__file__, engine="sympy",
+    script_path=__file__, engine="sympy", start_time=_T0,
 ).save()
 
 for label, v in product_test.items():

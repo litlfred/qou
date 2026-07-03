@@ -17,6 +17,8 @@ held-out is an overfit artifact. No fit.
 
 Order-2 is re-run first as a regression sanity check (must reproduce the Stage-3 negative).
 """
+import time as _time  # noqa: E402 — wall-clock anchor for witness durationMs
+_T0 = _time.monotonic()
 import json, os, sys
 
 sys.path.insert(0, os.path.join(os.getcwd(), "tools", "qou-substrate", "python"))
@@ -156,7 +158,7 @@ witness = {
 from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
 wpath = WitnessBuilder.wrap_legacy(
     "lever1-qholonomic-order3-fit", witness,
-    script_path=__file__, engine="sympy",
+    script_path=__file__, engine="sympy", start_time=_T0,
 ).save()
 
 print(f"\n  order-3 certified: {o3_cert is not None}")

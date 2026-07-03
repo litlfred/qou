@@ -27,6 +27,8 @@ METHOD — honest guess-and-verify with held-out falsification (q-Petkovšek-lit
 Heavily over-determined (each m gives ~20-40 q-power constraints vs ~3·(2A+1)(B+1) unknowns),
 so a held-out-verifying solution at small (A,B) is a real certificate, not a fit. No fit.
 """
+import time as _time  # noqa: E402 — wall-clock anchor for witness durationMs
+_T0 = _time.monotonic()
 import json, os, sys
 
 sys.path.insert(0, os.path.join(os.getcwd(), "tools", "qou-substrate", "python"))
@@ -186,7 +188,7 @@ witness = {
 from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
 wpath = WitnessBuilder.wrap_legacy(
     "lever1-qholonomic-kernel-fit", witness,
-    script_path=__file__, engine="sympy",
+    script_path=__file__, engine="sympy", start_time=_T0,
 ).save()
 
 print(f"\n  certified order-2 q-holonomic recurrence: {certified_final is not None}")
