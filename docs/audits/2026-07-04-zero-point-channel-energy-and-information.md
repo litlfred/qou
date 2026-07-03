@@ -8,22 +8,22 @@ wiring.
 
 ## Owner questions
 
-1. The $D_\nu$ interpolation mechanism (PR #3258) *has an energy* — a natural
+1. The $D_\nu$ (D_ν) interpolation mechanism (PR #3258) *has an energy* — a natural
    quadratic energy metric. Is it missing from mass/binding, and does it need to
-   enter $m = \mathrm{Vol}\cdot\rho$?
+   enter $m = \mathrm{Vol}\cdot\rho$ (m = Vol·ρ)?
 2. Is the kinetic oscillation energy the *amount of information* in the knot/braid
    channels — "no oscillation = no information = no energy" — and is there a way to
    make that precise?
 
 ## 1. The quadratic energy metric already has two corpus names
 
-- **Representation side:** the q-Casimir $C_q$, eigenvalue $[j]_q[j+1]_q$ — the
-  q-deformation of the quadratic $j(j+1)$
+- **Representation side:** the q-Casimir $C_q$, eigenvalue $[j]_q[j+1]_q$
+  ([j]_q[j+1]_q) — the q-deformation of the quadratic $j(j+1)$
   ([`q-casimir`](../../content/quantum-observable-universe/braids-and-knots/q-casimir-unique-proof.md));
   the geodesic-vortex ladder barrier is its increment.
 - **Channel-measure side:** the Wedderburn/Plancherel weight
-  $\tilde w_\lambda = \dim_q^2(\lambda)/[n]_q!$ — literally quadratic in the channel
-  dimension
+  $\tilde w_\lambda = \dim_q^2(\lambda)/[n]_q!$ (w̃_λ = dim_q²(λ)/[n]_q!) —
+  literally quadratic in the channel dimension
   ([`q-plancherel-asymptotic-skeleton`](../../content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.md)).
 
 The $D_\nu$ lens adds the *zero-point* reading: $E_\nu = \hbar\omega(\nu+\tfrac12)$,

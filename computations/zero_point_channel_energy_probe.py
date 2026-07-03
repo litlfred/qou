@@ -40,7 +40,6 @@ from pathlib import Path
 
 import mpmath as mp
 
-from q_parameter import Q as Q0  # noqa: E402
 from phase5_n8_dim_q_table import hook_lengths, partitions_of  # noqa: E402
 
 DPS = 50
@@ -68,10 +67,10 @@ def content_sum(lam: tuple[int, ...]) -> int:
 def channel_energies(n: int, q0: mp.mpf, e0: mp.mpf) -> tuple[mp.mpf, mp.mpf]:
     """(E_info, E_cas) at strand count n under the normalized quadratic measure."""
     parts = partitions_of(n)
-    d2 = [(lam, dim_q_numeric(lam, q0) ** 2) for lam in parts]
-    z = mp.fsum(w for _, w in d2)
-    e_info = (e0 / 2) * mp.fsum(w / z * mp.log(mp.sqrt(w)) for _, w in d2)
-    e_cas = (e0 / 2) * mp.fsum(w / z * abs(content_sum(lam)) for lam, w in d2)
+    dims = [(lam, dim_q_numeric(lam, q0)) for lam in parts]
+    z = mp.fsum(d * d for _, d in dims)
+    e_info = (e0 / 2) * mp.fsum((d * d) / z * mp.log(d) for _, d in dims)
+    e_cas = (e0 / 2) * mp.fsum((d * d) / z * abs(content_sum(lam)) for lam, d in dims)
     return e_info, e_cas
 
 
