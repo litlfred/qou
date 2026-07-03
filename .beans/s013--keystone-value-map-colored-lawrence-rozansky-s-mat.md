@@ -137,3 +137,18 @@ unnecessary). `keystone_valuemap_genuine_smatrix_s013.py` + audit
   2205.01282 in uploads/); or accept `BWVacuumRowIsHecke` as non-geometric. Owner decision
   needed on which (if any) to pursue — the original owner-gated scope (WRT(S³/2I)) is
   exhausted at this level.
+
+## CLOSED (2026-07-03): answered NEGATIVELY at every geometric level; route 2 → bean rt2f
+
+Owner redirect "4 1 2" executed: #3208 merged; route 1 (larger-D Seifert) executed on the
+count-matching Σ(3,4,5) (γ=4; Theorem 9 exact ≤1.2e−38; flat row = (1,√2,φ,√2φ) — refuted
+vs d_q and classical dims) and CLOSED as a class by the **constancy exclusion**: Seifert/
+plumbed S-matrix entries are constant algebraic sine-products (no q in Hikami 3.8), while
+d_q(4,1)/d_q(5) = [4]_q is nonconstant in q — no constant row realizes the fibre-level
+`BWVacuumRowIsHecke`; single-anchor coincidences are the fitted mode the discipline
+rejects. Probe: `keystone_route1_sigma345_constancy_s013.py`; audit:
+`docs/audits/2026-07-03-keystone-route1-closed-route2-scoped.md`. Route 2 (colored
+Ẑ/F_K(x,q) q-function blocks — the surviving type-correct class) handed to bean `rt2f`
+(owner-gated). Positives that stand: E₈/H₄ support combinatorics (#3190); the
+derived-character ↔ Hikami eq. 5.6 cross-validation; Lean shape identities + the
+`QBesselRadialPartRealization` obligation (DG sibling).
