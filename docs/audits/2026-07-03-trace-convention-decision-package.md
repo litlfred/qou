@@ -147,10 +147,24 @@ resolves the apparent contradiction — and surfaces a discipline item:
   supplies, dominated by the **46u⁴ rung** (2.4208e-7 of the 2.4224e-7
   total). The 0.56% residual is the fit's own drift vs current CODATA
   inputs.
-- **Kernel-program target, final sharpening:** derive the coefficient
-  **c₄ ≈ 46 at u⁴** (legacy-u normalization; ũ-equivalent to be
-  restated) of a mass-channel dressing on F_Bor, categorically. That
-  single rung carries 99.9% of the μ–p tension.
+- **Kernel-program target — already characterized in the corpus**
+  (corpus-grep; do not re-derive): the true coefficient is
+  **c₄ = 46.0319 ± 0.011** (proton pin; 46.0336 muon pin — cross-anchor
+  stable), NOT the integer 46 (off by 2.8× the extraction floor), per
+  [`mp_habiro_c4_keystone_probe.py`](../../computations/mp_habiro_c4_keystone_probe.py)
+  (bean `ovud`→`s5bb`; [PR #2691 audit](2026-06-24-fbor-q3-exact-habiro-ratio-fit.md)
+  also proved `/q³` is exact — the fit is ONLY the tower). Only c₄ is
+  data-determined (σ_c5 = 1.34, σ_c6 = 157 ⇒ the {4, 29} rungs are
+  cosmetic). Easy 1–2-factor categorical classes are PRUNED (best miss
+  0.6% ≫ floor). **The derivation is routed to the s5-so3 keystone**
+  ([`docs/coordination/s5-so3-keystone.md`](../coordination/s5-so3-keystone.md)):
+  the geometric `W_λ` / WRT(S³/2I) build (owner-authorized 2026-06-19,
+  live in #2524, blocked on research-level DG) with sorry-free Lean
+  gates already in place to validate any candidate. This session's
+  addition to that ledger: the tension's **F_Bor-leg attribution is now
+  probe-established** (attribution geometry, ε*/(tower−1) = 0.9944) —
+  the keystone's mass-sector target is confirmed to live on the
+  Borromean composite factor.
 - 🟡 **Owner attention (not adjudicated here):** the floor-audit-rejected
   tower sits in production `constants.py::q_at()` / `_solve_q_proton_f64`
   — i.e. the package-layer q₀ pin *inherits the fit*. If the 2026-05-28
