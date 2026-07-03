@@ -15,6 +15,8 @@ set_option autoImplicit false
 
 namespace QOU.AlgebraicSubstrate
 
+universe u v
+
 /-- **RigidDualizingComplex**: a rigid dualizing complex `ω_A•` for
     a non-commutative algebra `A`, in the sense of Yekutieli.
 
@@ -22,10 +24,13 @@ namespace QOU.AlgebraicSubstrate
     `ω_A• ≃ RHom_{A^e}(A, A^e)`, ensuring uniqueness up to
     unique isomorphism.
 
+    Universe-carrying structure (§7d U2): the carrier universe `v` is
+    pinned so use sites can tie it explicitly.
+
     LaTeX: `\label{def:rigid-dualizing-complex}` -/
-structure RigidDualizingComplex (A : Type*) [Ring A] where
+structure RigidDualizingComplex (A : Type u) [Ring A] where
   /-- The carrier type for the dualizing complex. -/
-  carrier : Type*
+  carrier : Type v
   /-- Homological dimension of `A`. -/
   homdim : ℕ
   /-- The rigidifying isomorphism exists: ω_A• ≃ RHom_{A^e}(A, A^e).
@@ -45,8 +50,8 @@ structure RigidDualizingComplex (A : Type*) [Ring A] where
     requires derived-category infrastructure beyond current Mathlib.
     See [yekutieli2015] Theorem 4.2 for the full construction. -/
 -- Ref: [yekutieli2015] https://doi.org/10.1515/9783110291230  Theorem 4.2
-theorem rigid_dualizing_exists (A : Type*) [Ring A] :
-    Nonempty (RigidDualizingComplex A) :=
+theorem rigid_dualizing_exists (A : Type u) [Ring A] :
+    Nonempty (RigidDualizingComplex.{u, u} A) :=
   -- Trivial witness: carrier = A, homdim = 0, all Prop fields = True.
   -- The structure's Prop fields are open-ended placeholders; for pure
   -- Nonempty existence the trivial inhabited witness suffices.

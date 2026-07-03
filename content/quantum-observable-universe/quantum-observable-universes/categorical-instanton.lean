@@ -1,5 +1,7 @@
 import QOU.Basic
 import QOU.Glossary
+import QOU.QuantumObservableUniverse.CategoricalFoundations
+import QOU.QuantumObservableUniverse.Structures
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
