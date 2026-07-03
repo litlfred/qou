@@ -21,35 +21,49 @@ The non-circular input is the per-disc factorisation of the
 multiplicative integral (each `Eᵢ` contributes the integral over its
 disc `Dᵢ`, and disjointness of the discs makes the contributions add),
 which rests on the non-abelian-Stokes / multiplicative-integral
-machinery that is **not in Mathlib**.  This file therefore states the
-real norm-decomposition proposition honestly with `sorry` + a
-manuscript citation, rather than the previous vacuous self-assuming
-projection (a class field `sum_of_disjoint : … → MI_norm_total = Σ …`
-that restated the conclusion and was projected by the theorem).
+machinery that is **not in Mathlib**.
+
+Following the sibling pattern of
+`QOU.TopologicalMass.cat_transient_localises_blowup`, the quantities
+are modelled as named `opaque` constants — `transientMItotal` (the
+total transient MI-norm over `Σ`), `transientMIdiv i` (the per-divisor
+MI-norm at `Eᵢ`), with `transientBlowupCount` blow-up points — so the
+theorem `transientMItotal = Σ_{i<N} transientMIdiv i` is the genuine
+unproven localisation identity between *these specific* objects (a
+prior revision universally quantified over arbitrary reals, which made
+the statement false as stated).  Discharged with `sorry` per
+AGENTS.md §1.
 
 -- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.md
 -/
 
 namespace QOU.LiftingDescent
 
+/-- Number of blow-up points `N` (centres `p₁, …, p_N`). -/
+opaque transientBlowupCount : ℕ
+
+/-- The norm of the multiplicative integral of the transient component
+    `α − τ̂ₙ(α)` over the whole surface `Σ`:
+    `‖MI∫_Σ (α − τ̂ₙ(α))‖`. -/
+opaque transientMItotal : ℝ
+
+/-- The norm of the multiplicative integral over the `i`-th exceptional
+    divisor `Eᵢ`: `‖MI∫_{Eᵢ} (∇_A q, L ∧ F⁺)‖`. -/
+opaque transientMIdiv : ℕ → ℝ
+
 /-- **Transient-term localisation (norm decomposition).**
 
-`MItotal` is the norm of the multiplicative integral of the transient
-component `α − τ̂ₙ(α)` over the whole surface `Σ`; `MIdiv i` is the
-norm of the multiplicative integral over the `i`-th exceptional divisor
-`Eᵢ`; `N` is the number of blow-up points.  The lemma asserts the total
-transient norm equals the sum of the per-divisor norms.
-
-The hypothesis `h_disjoint_factorisation` packages the analytic input
-of the manuscript proof — that the transient multiplicative integral
-factors disc-by-disc over the disjoint support `⊔ᵢ Dᵢ` so that its norm
-is additive across the divisors.  From it the conclusion is immediate;
-discharging the factorisation itself requires the multiplicative-
-integral / non-abelian-Stokes API, deferred via `sorry`. -/
+The total transient MI-norm equals the sum of the per-divisor MI-norms
+over the `transientBlowupCount` blow-up points.  The analytic input is
+the per-disc factorisation of the transient multiplicative integral
+over the disjoint support `⊔ᵢ Dᵢ` (making the norm additive across the
+divisors); discharging it requires the multiplicative-integral /
+non-abelian-Stokes API, which is not in Mathlib, so the body is
+`sorry`. -/
 -- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.md
-theorem tm_transient_localisation
-    (N : ℕ) (MItotal : ℝ) (MIdiv : ℕ → ℝ) :
-    MItotal = (Finset.range N).sum (fun i => MIdiv i) := by
+theorem tm_transient_localisation :
+    transientMItotal
+      = (Finset.range transientBlowupCount).sum (fun i => transientMIdiv i) := by
   -- Ref: [manuscript] §non-abelian-Stokes multiplicative-integral localisation
   -- on the disjoint discs Dᵢ ⊃ supp(α − τ̂ₙ(α)); Mathlib has no
   -- multiplicative-integral / Stokes API to discharge the per-disc

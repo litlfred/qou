@@ -117,14 +117,14 @@ def bar_idempotent_transposition_partition
 def failure_locus (n : ℕ) (R : Type*) [Field R] : Set R :=
   { q : R | ∃ k : ℕ, 2 ≤ k ∧ k ≤ n ∧ q ^ (2 * k) = 1 }
 
-/-- The Volume Conjecture asymptotic regime is contained in the
+/- The Volume Conjecture asymptotic regime is contained in the
     failure locus: `q = e^{2πi/N}` for `N → ∞` eventually enters
     `failure_locus n` for any fixed `n`, since `N | 2k` for some
     `k ≤ n` whenever `N ≤ 2n`.  This co-location is the structural
     content of `rem:vc-as-depth-2-instance` and
     `prop:hecke-baer-star-generic` Step "Failure locus".
-    -/
-example {n : ℕ} : True := trivial
+    (Narrative note only; a former vacuous `example : True := trivial`
+    that carried this comment was removed per AGENTS.md §1a.) -/
 
 /-! ## Main theorem (sketch) -/
 
