@@ -65,7 +65,7 @@ namespace QOU.TopologicalMass
     The `decomp` field is the conjecture itself; instances supply it
     as an axiomatic hypothesis.  All theorems below are sorry-free. -/
 -- Ref: [manuscript] conj:topological-decomposition-mass
-class TopologicalDecompositionMass (R : Type*) [OrderedAddCommMonoid R]
+class TopologicalDecompositionMass (R : Type*) [AddCommMonoid R] [PartialOrder R] [IsOrderedAddMonoid R]
     (vortex : Type*) where
   /-- Gauge-holonomy contribution ‖Hol_∇(ϱ₀; G)‖. -/
   holonomy : R
@@ -91,7 +91,7 @@ class TopologicalDecompositionMass (R : Type*) [OrderedAddCommMonoid R]
     In other words, the decomposition `decomp` has at most one solution
     for `mass` given the holonomy and dilogarithm data. -/
 -- Ref: [manuscript] conj:topological-decomposition-mass §"Proof obligations"
-theorem mass_unique {R : Type*} [OrderedAddCommMonoid R] (vortex : Type*)
+theorem mass_unique {R : Type*} [AddCommMonoid R] [PartialOrder R] [IsOrderedAddMonoid R] (vortex : Type*)
     [M : TopologicalDecompositionMass R vortex]
     (m : R) (h : m = M.holonomy + ∑ i, M.dilog i) :
     m = M.mass := by
@@ -103,7 +103,7 @@ theorem mass_unique {R : Type*} [OrderedAddCommMonoid R] (vortex : Type*)
     their sum is non-negative.  This is the physical content that
     mass ≥ 0 follows purely from the categorical structure. -/
 -- Ref: [manuscript] conj:topological-decomposition-mass
-theorem mass_nonneg {R : Type*} [OrderedAddCommMonoid R] (vortex : Type*)
+theorem mass_nonneg {R : Type*} [AddCommMonoid R] [PartialOrder R] [IsOrderedAddMonoid R] (vortex : Type*)
     [M : TopologicalDecompositionMass R vortex] :
     0 ≤ M.mass := by
   rw [M.decomp]
@@ -117,13 +117,14 @@ theorem mass_nonneg {R : Type*} [OrderedAddCommMonoid R] (vortex : Type*)
     When N = 0 the brane boundary has no exceptional divisors, so the
     transient (dilogarithm) piece vanishes and mass = holonomy. -/
 -- Ref: [manuscript] conj:topological-decomposition-mass §"Proof obligations"
-theorem mass_eq_holonomy_of_flat {R : Type*} [OrderedAddCommMonoid R]
+theorem mass_eq_holonomy_of_flat {R : Type*} [AddCommMonoid R] [PartialOrder R] [IsOrderedAddMonoid R]
     (vortex : Type*) [M : TopologicalDecompositionMass R vortex]
     (hN : M.N = 0) : M.mass = M.holonomy := by
   rw [M.decomp]
   have : ∑ i : Fin M.N, M.dilog i = 0 := by
-    subst hN
-    simp
+    apply Finset.sum_eq_zero
+    intro i _
+    exact absurd i.isLt (by omega)
   rw [this, add_zero]
 
 /-- **Blow-ups strictly increase mass above the holonomy.**
@@ -132,7 +133,7 @@ theorem mass_eq_holonomy_of_flat {R : Type*} [OrderedAddCommMonoid R]
     the mass strictly exceeds the holonomy contribution. -/
 -- Ref: [manuscript] conj:topological-decomposition-mass
 theorem mass_gt_holonomy_of_dilog_pos {R : Type*}
-    [OrderedAddCommMonoid R] [CovariantClass R R (· + ·) (· < ·)]
+    [AddCommMonoid R] [PartialOrder R] [IsOrderedCancelAddMonoid R]
     (vortex : Type*) [M : TopologicalDecompositionMass R vortex]
     (hN : 0 < M.N) (hd : ∀ i, 0 < M.dilog i) :
     M.holonomy < M.mass := by
@@ -146,7 +147,7 @@ theorem mass_gt_holonomy_of_dilog_pos {R : Type*}
     If two vortices share the same holonomy and all but one dilogarithm
     value, the one with the extra blow-up centre has mass ≥ the other. -/
 -- Ref: [manuscript] conj:topological-decomposition-mass §"Proof obligations"
-theorem mass_mono_of_extra_dilog {R : Type*} [OrderedAddCommMonoid R]
+theorem mass_mono_of_extra_dilog {R : Type*} [AddCommMonoid R] [PartialOrder R] [IsOrderedAddMonoid R]
     (vortex₁ vortex₂ : Type*)
     [M₁ : TopologicalDecompositionMass R vortex₁]
     [M₂ : TopologicalDecompositionMass R vortex₂]
@@ -159,13 +160,14 @@ theorem mass_mono_of_extra_dilog {R : Type*} [OrderedAddCommMonoid R]
   gcongr
   -- Need: Σᵢ<N₁ M₁.dilog i ≤ Σᵢ<N₁+1 M₂.dilog i
   -- Reduce to: Σᵢ<N₁ M₂.dilog i + M₂.dilog N₁ ≥ Σᵢ<N₁ M₁.dilog i
-  have hstep : ∑ i : Fin M₁.N, M₁.dilog i =
-               ∑ i : Fin M₁.N, M₂.dilog ⟨i.val, by omega⟩ := by
-    congr 1; ext i; exact hd i
-  rw [hstep, show M₂.N = M₁.N + 1 from hN]
-  rw [Fin.sum_univ_castSucc]
-  apply le_add_of_nonneg_right
-  simpa using hextra_nonneg
+  calc ∑ i : Fin M₁.N, M₁.dilog i
+      = ∑ i : Fin M₁.N, M₂.dilog (Fin.cast hN.symm i.castSucc) := by
+        refine Finset.sum_congr rfl fun i _ => ?_
+        exact hd i
+    _ ≤ ∑ i : Fin (M₁.N + 1), M₂.dilog (Fin.cast hN.symm i) := by
+        rw [Fin.sum_univ_castSucc]
+        exact le_add_of_nonneg_right hextra_nonneg
+    _ = ∑ i : Fin M₂.N, M₂.dilog i := Fin.sum_congr' _ hN.symm
 
 /-- **Trivial-vortex skeleton instance.**  The flat-vortex case
     `holonomy = 0`, `N = 0`, `mass = 0` satisfies the decomposition

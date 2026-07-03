@@ -1,5 +1,7 @@
 import Mathlib.Data.Nat.Basic
 import Mathlib.Algebra.Order.Group.Nat
+import Mathlib.Algebra.Group.Nat.Even
+import Mathlib.Algebra.Ring.Parity
 
 
 /-!
@@ -56,11 +58,13 @@ example : nuclearSpinParity 3 = SpinParity.halfInteger := by decide
 -- Ref: [manuscript] §6/nuclear-spin-parity
 example : nuclearSpinParity 4 = SpinParity.integer := by decide
 
-/-- Adding one nucleon (beta decay preserves A) preserves spin parity. -/
+/-- Adding one nucleon (beta decay preserves A) preserves spin parity.
+    Requires `1 ≤ n` (β⁻ decay consumes one neutron; with truncated
+    `ℕ`-subtraction the statement is false at `n = 0`). -/
 -- Ref: [manuscript] §6/nuclear-spin-parity
-theorem beta_decay_preserves_spin_parity (p n : ℕ) :
+theorem beta_decay_preserves_spin_parity (p n : ℕ) (hn : 1 ≤ n) :
     nuclearSpinParity (p + n) = nuclearSpinParity ((p + 1) + (n - 1)) := by
-  unfold nuclearSpinParity
-  omega
+  have h : p + n = (p + 1) + (n - 1) := by omega
+  rw [h]
 
 end QOU.Archimedean

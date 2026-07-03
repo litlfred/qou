@@ -37,7 +37,6 @@ structure M2 where
   a12 : ℝ
   a21 : ℝ
   a22 : ℝ
-  deriving Repr
 
 namespace M2
 
@@ -67,14 +66,14 @@ instance : HSMul ℝ M2 M2 := ⟨smul⟩
 
 @[simp] lemma trace_one : (1 : M2).trace = 2 := by
   show (M2.one.a11 + M2.one.a22) = 2
-  simp [M2.one]
+  norm_num [M2.one]
 
 end M2
 
 /-! ## Hoefsmit seminormal matrices for std = (2,1) at n = 3 -/
 
 /-- σ_1 on std = (2,1): diagonal `diag(q, -q⁻¹)`. -/
-def hoefsmit_σ₁ (q : ℝ) : M2 :=
+noncomputable def hoefsmit_σ₁ (q : ℝ) : M2 :=
   ⟨q, 0, 0, -q⁻¹⟩
 
 /-- σ_2 on std = (2,1): 2×2 mixing block with axial distance ρ = -2.
@@ -105,7 +104,6 @@ def neutronIndices : List ℕ := [9, 7, 5, 1]
 structure HeckeFactor where
   c : ℝ
   d : ℝ
-  deriving Repr
 
 /-- Which Hecke generator a factor acts on in H_3(q). -/
 inductive Gen | g0 | g1
@@ -138,7 +136,7 @@ noncomputable def chiStdEval (q : ℝ) (w : NucBraidWord) : ℝ :=
 
     - gen 0: six (1, 0) + one (1, -H_A/2)
     - gen 1: three (1, -H_A) + one (1, -H_A/2) -/
-def protonBraid (H_A : ℝ) : NucBraidWord :=
+noncomputable def protonBraid (H_A : ℝ) : NucBraidWord :=
   (List.replicate 6 (⟨1, 0⟩, Gen.g0) : NucBraidWord) ++
   [(⟨1, -H_A / 2⟩, Gen.g0)] ++
   (List.replicate 3 (⟨1, -H_A⟩, Gen.g1) : NucBraidWord) ++
@@ -148,7 +146,7 @@ def protonBraid (H_A : ℝ) : NucBraidWord :=
 
     - gen 0: five (1, 0) + one (1, -H_A) + one (1, -H_A/2)
     - gen 1: three (1, -H_A) + one (1, -H_A/2) -/
-def neutronBraid (H_A : ℝ) : NucBraidWord :=
+noncomputable def neutronBraid (H_A : ℝ) : NucBraidWord :=
   (List.replicate 5 (⟨1, 0⟩, Gen.g0) : NucBraidWord) ++
   [(⟨1, -H_A⟩, Gen.g0), (⟨1, -H_A / 2⟩, Gen.g0)] ++
   (List.replicate 3 (⟨1, -H_A⟩, Gen.g1) : NucBraidWord) ++
@@ -175,7 +173,7 @@ def neutronBraid (H_A : ℝ) : NucBraidWord :=
     verification.  The rest of the scaffolding (structure, index
     sets, q-number definitions, ladder shape) is fully formalised. -/
 
-/-- **Main theorem (proton)**: the per-nucleon χ_std closed form.
+/- **Main theorem (proton)**: the per-nucleon χ_std closed form.
 
     Proof structure (see `docs/chi-std-pernucleon-theorem.md` §Proof):
 
@@ -251,13 +249,13 @@ theorem chi_std_ladder_shape (q : ℝ) :
         (q - q⁻¹) / 4 *
         (qNum q 11 + qNum q 9 + qNum q 7 + qNum q 3)
     simp [protonIndices, List.map, List.sum_cons, List.sum_nil]
-    ring
+    exact Or.inl (by ring)
   · show (q - q⁻¹) / 4 *
         ((neutronIndices.map (qNum q)).sum) =
         (q - q⁻¹) / 4 *
         (qNum q 9 + qNum q 7 + qNum q 5 + qNum q 1)
     simp [neutronIndices, List.map, List.sum_cons, List.sum_nil]
-    ring
+    exact Or.inl (by ring)
 
 /-- Cardinality of each index set: 4 indices per nucleon. -/
 theorem protonIndices_length : protonIndices.length = 4 := rfl

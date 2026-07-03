@@ -1,5 +1,6 @@
 import Mathlib.Topology.ContinuousMap.Basic
 import Mathlib.Algebra.Algebra.Basic
+import Mathlib.Analysis.InnerProductSpace.Basic
 
 /-!
 # QOU.Observations.AlgebraicGnsEmbedding.HasMarkovGnsEmbedding — sibling stub
