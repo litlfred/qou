@@ -1,20 +1,48 @@
 {
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-03T00:37:43.837732+00:00",
+  "commitSha": "338abede1b2cd79fbafe55497d5d6f8c896d6b55",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "bowtie-q-channel-projection-probe",
+  "scriptFile": "bowtie_q_channel_projection_probe.py",
+  "scriptHash": "fd580f90fe7b",
+  "scriptCommitSha": "f6ddd9350192668fe1fb6c2498f8d5b91bb70331",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Investigates the bar-anti-symmetric (Q) projection of the canonical operator-valued bowtie ⋈_K = σ_g - (h/2)·𝟙 (per PR #1139 D9 closure path + isospin-from-canonical-bowtie.md). Establishes that ⋈_K is bar-symmetric, hence Q-projection of trM(K ⋈_K K') vanishes structurally; consequently Δm_{n-p} cannot come from this projection.",
   "compute": "bowtie_q_channel_projection_probe",
-  "consumes_anchors": {
-    "P_Q_m_closed_form": "PR #1185 Lean theorems P_plus_Q, P_minus_Q",
-    "Q_borromean_eq_zero": "PR #1211 Lean theorem (over \u211a)",
-    "operator_valued_bowtie_definition": "PR #1139 isospin-from-canonical-bowtie.md + lean/QOU/Archimedean/TransferMatrix.lean \u00a7VertexType"
+  "key_finding": "⋈_K = σ_g - (h/2)·𝟙 is bar-symmetric: under bar involution (q ↔ q⁻¹, h ↔ -h, σ_g ↔ σ_g⁻¹), bowtie_K(h) ↦ σ_g⁻¹ + (h/2)·𝟙 = (σ_g - h·𝟙) + (h/2)·𝟙 = σ_g - (h/2)·𝟙 = bowtie_K(h). Therefore Q(trM(closure containing ⋈_K)) = 0 structurally.",
+  "verifications": {
+    "sigma_inverse_in_2_1": "σ_g⁻¹ = σ_g - h·𝟙 verified σ_g · σ_g⁻¹ = 𝟙 for both σ_0, σ_1",
+    "bar_symmetry_of_bowtie": "bowtie_K(σ_g) − bar(bowtie_K(σ_g)) = 0 symbolically",
+    "Q_vanishing_in_pure_bowtie_closure": "trM of pure-⋈_K closure has zero (trM − bar(trM))/2 in (2,1) irrep of H_3(q)"
   },
-  "description": "Investigates the bar-anti-symmetric (Q) projection of the canonical operator-valued bowtie \u22c8_K = \u03c3_g - (h/2)\u00b7\ud835\udfd9 (per PR #1139 D9 closure path + isospin-from-canonical-bowtie.md). Establishes that \u22c8_K is bar-symmetric, hence Q-projection of trM(K \u22c8_K K') vanishes structurally; consequently \u0394m_{n-p} cannot come from this projection.",
+  "structural_implication": "The 305 ppm Δm_{n-p}/M_N flavor split CANNOT come from the bar-anti-symmetric Q-projection of the canonical bowtie. The carrier must be the ISOSPIN-anti-symmetric (u ↔ d swap, q fixed) projection — a different involution. Per PR #1139 D9 closure path: regularised crystal functional + isospin-anti-symmetric residue verification on the canonical atomic braid.",
+  "verdict": "NEGATIVE for bar-Q projection of ⋈_K as Δm_{n-p} carrier. Closes item 1 of the pending list with a structural finding: the bar-Q channel is empty by ⋈_K bar-symmetry. Redirects to the isospin-anti-symmetric closure path (PR #1139 D9).",
   "involutions_distinguished": {
-    "bar_involution": "q \u2194 q\u207b\u00b9, h \u2194 -h, \u03c3_g \u2194 \u03c3_g\u207b\u00b9",
-    "common_conflation_error": "Earlier work (per verify_isospin_bar_anomaly.py audit) conflated these two involutions. PR #1139 explicitly distinguishes them.",
-    "isospin_involution": "u \u2194 d swap on color sheets, q fixed"
+    "bar_involution": "q ↔ q⁻¹, h ↔ -h, σ_g ↔ σ_g⁻¹",
+    "isospin_involution": "u ↔ d swap on color sheets, q fixed",
+    "common_conflation_error": "Earlier work (per verify_isospin_bar_anomaly.py audit) conflated these two involutions. PR #1139 explicitly distinguishes them."
   },
-  "key_finding": "\u22c8_K = \u03c3_g - (h/2)\u00b7\ud835\udfd9 is bar-symmetric: under bar involution (q \u2194 q\u207b\u00b9, h \u2194 -h, \u03c3_g \u2194 \u03c3_g\u207b\u00b9), bowtie_K(h) \u21a6 \u03c3_g\u207b\u00b9 + (h/2)\u00b7\ud835\udfd9 = (\u03c3_g - h\u00b7\ud835\udfd9) + (h/2)\u00b7\ud835\udfd9 = \u03c3_g - (h/2)\u00b7\ud835\udfd9 = bowtie_K(h). Therefore Q(trM(closure containing \u22c8_K)) = 0 structurally.",
-  "scriptCommitSha": "50541536ca604c8bd7f770df4f7cb111d82a6112",
+  "consumes_anchors": {
+    "Q_borromean_eq_zero": "PR #1211 Lean theorem (over ℚ)",
+    "P_Q_m_closed_form": "PR #1185 Lean theorems P_plus_Q, P_minus_Q",
+    "operator_valued_bowtie_definition": "PR #1139 isospin-from-canonical-bowtie.md + lean/QOU/Archimedean/TransferMatrix.lean §VertexType"
+  },
   "status": "exploratory",
-  "structural_implication": "The 305 ppm \u0394m_{n-p}/M_N flavor split CANNOT come from the bar-anti-symmetric Q-projection of the canonical bowtie. The carrier must be the ISOSPIN-anti-symmetric (u \u2194 d swap, q fixed) projection \u2014 a different involution. Per PR #1139 D9 closure path: regularised crystal functional + isospin-anti-symmetric residue verification on the canonical atomic braid.",
   "tags": [
     "operator-valued-bowtie",
     "q-channel-projection",
@@ -22,11 +50,5 @@
     "bar-vs-isospin-involution",
     "delta-m-np-redirect",
     "item-1-closure"
-  ],
-  "verdict": "NEGATIVE for bar-Q projection of \u22c8_K as \u0394m_{n-p} carrier. Closes item 1 of the pending list with a structural finding: the bar-Q channel is empty by \u22c8_K bar-symmetry. Redirects to the isospin-anti-symmetric closure path (PR #1139 D9).",
-  "verifications": {
-    "Q_vanishing_in_pure_bowtie_closure": "trM of pure-\u22c8_K closure has zero (trM \u2212 bar(trM))/2 in (2,1) irrep of H_3(q)",
-    "bar_symmetry_of_bowtie": "bowtie_K(\u03c3_g) \u2212 bar(bowtie_K(\u03c3_g)) = 0 symbolically",
-    "sigma_inverse_in_2_1": "\u03c3_g\u207b\u00b9 = \u03c3_g - h\u00b7\ud835\udfd9 verified \u03c3_g \u00b7 \u03c3_g\u207b\u00b9 = \ud835\udfd9 for both \u03c3_0, \u03c3_1"
-  }
+  ]
 }

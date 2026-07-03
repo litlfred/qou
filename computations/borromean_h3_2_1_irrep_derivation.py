@@ -38,7 +38,7 @@ If the derivation succeeds:
 Status: EXPLORATORY DERIVATION.
 """
 import json
-import subprocess
+
 from pathlib import Path
 
 import sympy as sp
@@ -307,14 +307,15 @@ def main():
             "delta-m-np-mechanism",
             "hoefsmit",
         ],
-        "scriptCommitSha": (
-            subprocess.check_output(["git", "rev-parse", "HEAD"])
-            .decode().strip()
-        ),
     }
-    out_path = Path(__file__).parent / "borromean-h3-2-1-irrep-derivation.witness.json"
-    out_path.write_text(json.dumps(witness, indent=2, sort_keys=True) + "\n")
-    print(f"\nWitness: {out_path.relative_to(Path.cwd())}")
+    import sys
+    sys.path.insert(0, str(Path(__file__).parent / "substrate"))
+    from witness_base import WitnessBuilder
+    out_path = WitnessBuilder.wrap_legacy(
+        "borromean-h3-2-1-irrep-derivation", witness,
+        script_path=__file__, engine="sympy",
+    ).save()
+    print(f"\nWitness: {Path(out_path).name}")
 
 
 if __name__ == "__main__":
