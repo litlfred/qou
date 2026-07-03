@@ -34,19 +34,21 @@ fixed linear map. Two consequences, both proved below:
 with **σ₂-support** (route A), not from re-decomposing the unchanged H₃ element.
 Route A's object choice is owner-gated framework content, not an agent ansatz.
 
-Base ring: only addition is used, so this is stated over the weakest structure
-that types it, `[AddCommMonoid R]` (CLAUDE.md §7c — weakest honest base). The block
-readings are formal parameters with no archimedean structure. Sorry-free.
+Base ring: only addition is used — no `0`, associativity, or commutativity — so
+this is stated over the weakest structure that types `branchToH4`, `[Add R]`
+(CLAUDE.md §7c — weakest honest base). The block readings are formal parameters
+with no archimedean structure. Sorry-free.
 
-`-- Ref:` [ceccherini2010] James–Kerber branching for the symmetric group;
-the q-analogue (restriction along `H_{n} ↪ H_{n+1}`) is standard
-(Goodman–Wenzl, Ram, `docs/audits/2026-07-03-8we6-h4-route-b-structural-prune.md`).
+`-- Ref:` [sagan2001] the branching rule `Sₙ ↓ Sₙ₋₁` (remove one box) is standard
+symmetric-group representation theory; the q-analogue (restriction along
+`H_{n} ↪ H_{n+1}`) is likewise standard (Goodman–Wenzl, Ram,
+`docs/audits/2026-07-03-8we6-h4-route-b-structural-prune.md`).
 -/
 import Mathlib.Algebra.Group.Basic
 
 namespace QOU.QBeta
 
-variable {R : Type*} [AddCommMonoid R]
+variable {R : Type*} [Add R]
 
 /-- The five `λ ⊢ 4` block readings of an element of `H₃ ⊂ H₄`, as functions of its
     three `λ ⊢ 3` readings `(a, b, c) = (χ₍₃₎, χ₍₂,₁₎, χ₍₁,₁,₁₎)`, by the branching
