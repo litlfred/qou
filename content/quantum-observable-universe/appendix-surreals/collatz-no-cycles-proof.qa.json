@@ -426,6 +426,24 @@
         "reviewed_at": "2026-06-29T12:03:07.255Z",
         "reviewed_sha": "934eccf4da680fc108d1b83295ae9f64adcd2897",
         "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "2db95af76a3d",
+          "ts": "0227cdafea31"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765",
+          "deps_hash": "dc9f5d490026"
+        },
+        "reviewed_at": "2026-07-03T00:27:58.943Z",
+        "reviewed_sha": "109a4ffe24513dd0f328bfb0e48bb4e88df08765",
+        "notes": "block has no .lean sibling"
       }
     ],
     "canonical-calibration-count": [
@@ -892,5 +910,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-02T16:52:58.983Z"
+  "updated_at": "2026-07-03T00:27:58.943Z"
 }
