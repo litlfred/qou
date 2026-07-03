@@ -88,21 +88,27 @@ def main() -> int:
     d_mp = mp_C - mp_D
     d_mp_ppm = d_mp / mp_D * mp.mpf(10)**6
 
-    # S2 — proton anchor: re-pin q0 under C
+    # S2 — proton anchor: re-pin q0 under BOTH conventions so the
+    # m_mu-tension comparison is internal (same anchor on both sides).
+    q0_Dp = mp.findroot(lambda q: m_p_pure_q(q, m_e, F_Bor) - m_p_codata, q0)
     q0_C = mp.findroot(lambda q: m_p_pure_q(q, m_e, F_Bor_C) - m_p_codata, q0)
     dq0 = q0_C - q0
 
     def m_mu_pred(q):
         return m_e * VOL_4_1_MPF / (((q - 1) / q) ** 2)
 
-    # NOTE: the committed Q_50_DIGIT_STR is the MUON-pinned q0 (the
-    # computations/ layer canonical, AGENTS §q0-anchor) — so m_mu at q0
-    # is near-tautological (~1.4 ppb); the informative number is the
-    # C-re-pinned prediction.
-    mmu_D = m_mu_pred(q0)          # at current (muon-pinned) q0
-    mmu_C = m_mu_pred(q0_C)        # after re-pinning q0 on m_p with C
-    tension_D_ppb = (mmu_D - m_mu_codata) / m_mu_codata * mp.mpf(10)**9
+    # NOTE: Q_50_DIGIT_STR (identical in q_parameter AND
+    # qou_substrate.constants — checked) is the MUON-pinned canonical
+    # string: m_mu at it is near-tautological (~1.4 ppb). The proton
+    # pin lives in the q_at() SOLVER, not in this constant. Both
+    # proton-anchored baselines are therefore computed explicitly.
+    mmu_at_q0 = m_mu_pred(q0)      # at the muon-pinned canonical q0
+    mmu_Dp = m_mu_pred(q0_Dp)      # proton re-pin, convention D (status quo)
+    mmu_C = m_mu_pred(q0_C)        # proton re-pin, convention C
+    tension_D_ppb = (mmu_at_q0 - m_mu_codata) / m_mu_codata * mp.mpf(10)**9
+    tension_Dp_ppb = (mmu_Dp - m_mu_codata) / m_mu_codata * mp.mpf(10)**9
     tension_C_ppb = (mmu_C - m_mu_codata) / m_mu_codata * mp.mpf(10)**9
+    ratio_C_over_Dp = tension_C_ppb / tension_Dp_ppb
 
     def q_beta(q):
         return m_e * abs(q**2 - 2*q - 1) * (q + 1) / (2 * q**3)
@@ -115,8 +121,10 @@ def main() -> int:
     print(f"                 shift  = {mp.nstr(d_mp, 8)} MeV = {mp.nstr(d_mp_ppm, 6)} ppm")
     print(f"S2 proton-anchor re-pin: q0  = {mp.nstr(q0, 20)}")
     print(f"                         q0' = {mp.nstr(q0_C, 20)}  (dq0 = {mp.nstr(dq0, 8)})")
-    print(f"   m_mu pred:  current q0 {mp.nstr(mmu_D, 15)} ({mp.nstr(tension_D_ppb, 6)} ppb)")
-    print(f"               C re-pin   {mp.nstr(mmu_C, 15)} ({mp.nstr(tension_C_ppb, 6)} ppb)")
+    print(f"   m_mu pred:  muon q0     {mp.nstr(mmu_at_q0, 15)} ({mp.nstr(tension_D_ppb, 6)} ppb)")
+    print(f"               D proton-pin {mp.nstr(mmu_Dp, 15)} ({mp.nstr(tension_Dp_ppb, 6)} ppb)")
+    print(f"               C proton-pin {mp.nstr(mmu_C, 15)} ({mp.nstr(tension_C_ppb, 6)} ppb)")
+    print(f"               C/D same-anchor tension ratio = {mp.nstr(ratio_C_over_Dp, 6)}x")
     print(f"   Q_beta:     D-pin {mp.nstr(qb_D, 10)}  C-pin {mp.nstr(qb_C, 10)} MeV")
     print(f"S3 binding tower: per-nucleon tau ratio shift = {mp.nstr(rel, 6)} "
           f"(A=16 compound ~ {mp.nstr(16*rel, 6)}) — noise vs the 2.3x 9b gap")
@@ -136,8 +144,10 @@ def main() -> int:
     wb.add_data("S1_muon_anchor_m_p_shift_ppm", mp.nstr(d_mp_ppm, 10))
     wb.add_data("S2_q0_current_muon_pinned", mp.nstr(q0, 50))
     wb.add_data("S2_q0_C_repin", mp.nstr(q0_C, 50))
-    wb.add_data("S2_m_mu_tension_at_current_q0_ppb", mp.nstr(tension_D_ppb, 10))
-    wb.add_data("S2_m_mu_tension_C_repin_ppb", mp.nstr(tension_C_ppb, 10))
+    wb.add_data("S2_m_mu_tension_at_muon_q0_ppb", mp.nstr(tension_D_ppb, 10))
+    wb.add_data("S2_m_mu_tension_D_proton_repin_ppb", mp.nstr(tension_Dp_ppb, 10))
+    wb.add_data("S2_m_mu_tension_C_proton_repin_ppb", mp.nstr(tension_C_ppb, 10))
+    wb.add_data("S2_tension_ratio_C_over_D_same_anchor", mp.nstr(ratio_C_over_Dp, 10))
     wb.add_data("S2_Q_beta_at_current_q0_MeV", mp.nstr(qb_D, 15))
     wb.add_data("S2_Q_beta_C_repin_MeV", mp.nstr(qb_C, 15))
     wb.add_assertion(

@@ -23,7 +23,7 @@ rational functions**, gap `1.9554e-4` at q₀. Registry:
 | Scenario | Result |
 |---|---|
 | **Muon anchor (canonical 3-CAL), q₀ fixed** | m_p prediction shifts **−0.185 MeV = −197 ppm** — destroys the CODATA match |
-| **Proton anchor, q₀ re-pinned on C** | q₀ shifts −1.04e-5; the m_μ prediction then misses CODATA by **170,875 ppb (~0.017 %)** — ≈ **800× worse** than the current 209.8 ppb μ–p tension |
+| **Proton anchor, q₀ re-pinned on C** | q₀ shifts −1.04e-5; the m_μ prediction then misses CODATA by **170,875 ppb (~0.017 %)** — **813.7×** the same-anchor D baseline (the probe's D proton re-pin gives ≈210 ppb, reproducing the dashboard's 209.8 ppb μ–p tension — both baselines computed internally, same anchor convention) |
 | **Q_β** (at the re-pinned q₀) | 0.7836458 → 0.7836649 MeV (+24 ppm — negligible vs its 0.17 % scale) |
 | **Binding tower** | per-nucleon τ ratio shift 1.96e-4 (A=16 compound ~3.1e-3) — noise vs the 2.3× 9b gap |
 
