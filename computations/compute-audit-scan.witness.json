@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-03T19:08:04.452974+00:00",
-  "commitSha": "f4f3f7e814015791685df70ae5585dde470303a8",
+  "computedAt": "2026-07-03T19:50:53.832268+00:00",
+  "commitSha": "a2a8849a355e413f1990ecb7e4123003d6505f05",
   "assertions": [],
   "allPassed": true,
   "durationMs": 10,
@@ -18,13 +18,15 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Static scan of computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 1011,
+    "files_scanned": 1012,
     "patterns": [
       "P15",
       "P16",
@@ -35,7 +37,7 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 153,
+      "P15": 151,
       "P16": 340,
       "P21": 24,
       "P30": 144,
@@ -1322,20 +1324,6 @@
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
-      },
-      {
-        "pattern": "P15",
-        "file": "deligne_stable_range_binding_period_probe.py",
-        "line": 95,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "deligne_stable_range_binding_period_probe.py",
-        "line": 129,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P31",
