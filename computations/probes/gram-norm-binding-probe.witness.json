@@ -1,0 +1,113 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-03T05:56:50.575841+00:00",
+  "commitSha": "5c7c9e129026a4453ce362ae7f9483cbaa20d866",
+  "assertions": [
+    {
+      "name": "linear_trace_matches_transfer_engine",
+      "computed": 4.533870831057452e-15,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-08,
+      "unit": "max rel diff of Σ y_λ tr(ρ_λ(W)) vs 50-dps tr_m_atom_zn",
+      "source": "float64 seminormal path vs canonical transfer (validation)."
+    },
+    {
+      "name": "linear_trace_reversal_invariant",
+      "computed": 2.858767796403015e-16,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-10,
+      "unit": "max rel |tr_M(W^♯) − tr_M(W)|",
+      "source": "character symmetry χ^λ(T_{w⁻¹}) = χ^λ(T_w); the QUADRATIC Gram norm tr_M(W·W^♯) is the non-trivial diagnostic."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 26,
+  "computation": "gram-norm-binding-probe",
+  "scriptFile": "gram_norm_binding_probe.py",
+  "scriptHash": "fb94bdfc98e7",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Exploratory operator-space Gram norm G(W)=tr_M(W·W^♯) vs binding residuals (q-bar / Baer-* norm discussion, 2026-07-03).",
+  "auditOnly": "docs/audits/2026-07-03-qbar-norm-repitch-assessment.md",
+  "parameters": {
+    "q0": 1.1099785955573347,
+    "alpha_MeV": 4.185980827582892,
+    "precision": "float64 (LOSSY, exploratory)",
+    "isotopes": [
+      "2H",
+      "3H",
+      "3He"
+    ],
+    "sharp_involution": "word reversal; fixes q and each letter c·σ_g + d·1"
+  },
+  "data": {
+    "rows": [
+      {
+        "iso": "2H",
+        "n": 6,
+        "G_atom": 5.228166689049235,
+        "G_free": 5.171367839867737,
+        "tr_atom": 0.3883571887237822,
+        "tr_free": 0.9835261819554827,
+        "gram_over_tr2_atom": 34.66464272554482,
+        "gram_over_tr2_free": 5.346056929443995,
+        "B_sym": 3.889691884877754,
+        "B_gram": -0.022862682669965377,
+        "r_gram_sym": -0.005877761875908561,
+        "B_AME": 2.2245662000000004,
+        "err_sym": 0.5719132172521461,
+        "err_gram": -97.3011886711967,
+        "wall_sec": 0.01
+      },
+      {
+        "iso": "3H",
+        "n": 9,
+        "G_atom": 10.47806186964321,
+        "G_free": 11.033778204093293,
+        "tr_atom": 0.10407106930208762,
+        "tr_free": 0.9080241198356697,
+        "gram_over_tr2_atom": 967.4330608781296,
+        "gram_over_tr2_free": 13.382260513008594,
+        "B_sym": 9.06765876547475,
+        "B_gram": 0.10816069593057087,
+        "r_gram_sym": 0.011928183308175909,
+        "B_AME": 8.481796200000002,
+        "err_sym": 0.9353898750904226,
+        "err_gram": 78.41846917705233,
+        "wall_sec": 0.67
+      },
+      {
+        "iso": "3He",
+        "n": 9,
+        "G_atom": 13.994511489903996,
+        "G_free": 12.534067844083285,
+        "tr_atom": 0.20657847508740393,
+        "tr_free": 1.0477565676413043,
+        "gram_over_tr2_atom": 327.9348775395843,
+        "gram_over_tr2_free": 11.417506236818294,
+        "B_sym": 6.796886701705201,
+        "B_gram": -0.230678628111142,
+        "r_gram_sym": -0.03393886616548565,
+        "B_AME": 7.71804132,
+        "err_sym": 1.1355259633890469,
+        "err_gram": -33.457981709000855,
+        "wall_sec": 0.66
+      }
+    ]
+  }
+}
