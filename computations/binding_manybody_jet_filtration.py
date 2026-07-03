@@ -40,15 +40,23 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE / "substrate"))
 sys.path.insert(0, str(HERE))
 from q_parameter import Q as Q0  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+from codata_constants import (  # noqa: E402 — CAL-1 + validation targets, centralized
+    M_E_MEV,
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+)
 try:
     from witness_base import WitnessBuilder  # noqa: E402
     _HAVE_WB = True
 except Exception:
     _HAVE_WB = False
 
-mp.mp.dps = 40
+set_compute_dps()  # canonical precision (AGENTS.md I8; keeps witness dps metadata consistent)
 q = mp.mpf(str(Q0))
-M_E = mp.mpf("0.51099895069")  # MeV (CAL-1)
+M_E = mp.mpf(str(M_E_MEV))  # MeV (CAL-1, codata_constants)
 
 # ── mean quantum dimension lw(c) = (1/(c+1)) Σ_{λ⊢c+1} dim_q V_λ  (exact reuse of
 #    sw_period_growth_probe.py; residue sum of prop:sw-period-residue-sum) ──────
@@ -95,9 +103,11 @@ def a_D(n):
     return lw(n - 1)
 
 
-# AME binding energies (MeV), validation values
-AME_B = {"D": mp.mpf("2.224566"), "T": mp.mpf("8.481821"),
-         "3He": mp.mpf("7.718058"), "4He": mp.mpf("28.295662")}
+# AME binding energies (MeV) — centralized validation targets (codata_constants)
+AME_B = {"D": mp.mpf(str(AME_B_DEUTERON_MEV_VALIDATION)),
+         "T": mp.mpf(str(AME_B_TRITIUM_MEV_VALIDATION)),
+         "3He": mp.mpf(str(AME_B_HE3_MEV_VALIDATION)),
+         "4He": mp.mpf(str(AME_B_HE4_MEV_VALIDATION))}
 NUCLEONS = {"D": 2, "T": 3, "3He": 3, "4He": 4}
 
 
@@ -122,7 +132,7 @@ def main() -> int:
     print("  Jet-filtration binding  B(K) = Σ_{n=2}^{A} m_e·a_D^(n)  (w_n=1, NO fit):")
     Bjet = {}
     for K, A in NUCLEONS.items():
-        B = mp.fsum(M_E * a_D(n) for n in range(2, A + 1))
+        B = mp.fsum(M_E * periods[n] for n in range(2, A + 1))
         Bjet[K] = B
         err = (B - AME_B[K]) / AME_B[K]
         print(f"     {K:<4} A={A}  B_jet={float(B):8.4f}  AME={float(AME_B[K]):8.4f}"
