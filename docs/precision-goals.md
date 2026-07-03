@@ -21,7 +21,7 @@
 | Leg | Target | Status |
 |-----|--------|--------|
 | **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) on every observable at substrate q_0 | **NOT certified (2026-06-17)** — exact methods *exist* (`_precision.py` default 65 dps compute / 50 dps serialization), but the live L1 cross-check (`cross_check_trM_1ppb.py`) reports **4/6 atoms divergent / FAILURES**: the `markov_peel` atomic witness is float64-limited (~2.5e-16, stale producer) and the extended-Habiro nuclei path diverges ~1e-7. Even the two float-clean methods (Hoefsmit, chi-cache) agree only at ~2.5e-16 (float64 ε) on the atomic traces. See [`audits/2026-06-17-l1-1ppq-certification-gap.md`](audits/2026-06-17-l1-1ppq-certification-gap.md). The 3-strand closed-form χ anchor *does* hold at 4e-50. |
-| **L2. Per-observable accuracy** | for each predicted observable O with experimental uncertainty σ_O: `σ_pred(O) ≤ σ_O / 100` (i.e. **100× more precise than experimental**) | **anchors only** — 2/7 meet, both calibration anchors (m_e, m_p); **0 of 5 genuine predictions** meet (m_μ, Q_β, m_n, Δ_pn, m_K/m_π all miss). The de-fitted, post-re-pin honest state. |
+| **L2. Per-observable accuracy** | for each predicted observable O with experimental uncertainty σ_O: `σ_pred(O) ≤ σ_O / 100` (i.e. **100× more precise than experimental**) | **3/7 meet** — two calibration anchors (m_e, m_p) + **m_K/m_π**, the first genuine prediction to meet (closed via the meson EM correction `(3q²−1)/(2q²)`, PR #1442); the other 4 predictions **miss** (m_μ ~964×, m_n ~181×, Q_β ~160×, Δ_pn ~159×). The de-fitted, post-re-pin honest state — live source `per-observable-100x-status.witness.json` (`beats_100x_count=3`, computedAt 2026-06-28). |
 
 Both legs apply. Hitting L1 alone is not sufficient; hitting L2 alone is not
 the framework's working precision discipline.
@@ -307,7 +307,9 @@ When reading dashboards:
 - **L1 dashboards** (`onepb-status-dashboard`) → cross-method identity at
   fixed compounds. Currently 0.0 / 92.79 ppb (publication rounding floor).
 - **L2 dashboards** (`per-observable-100x-status`) → predicted vs CODATA.
-  Currently 1 / 6 (only m_e anchor); rest miss 100× target by 6× to 81 000×.
+  Currently **3/7** (m_e, m_p anchors + m_K/m_π prediction); the 4 remaining
+  predictions m_μ, Q_β, m_n, Δ_pn miss the 100× target by ~159× to ~964×
+  (witness `beats_100x_count=3`, computedAt 2026-06-28).
 - **Mass-table sweep** (`mass-table-ppb`) → 10/16 with zero-param rule;
   mean |err| 6.80%. This is downstream of Borromean per-isotope extension.
 
