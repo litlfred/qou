@@ -29,19 +29,31 @@ namespace QOU.BraidKnot
 --   groups with BN-pairs of classical type, PhD thesis, UBC 1974, §2.3.
 axiom skewSYTCount : List ℕ → List ℕ → ℕ
 
+/-- One-cell removals of a partition (weakly-decreasing row list): the lists
+    obtained by removing a single corner cell — row `i` loses a cell exactly
+    when the result stays weakly decreasing (`row i > row (i+1)`). A row
+    emptied by the removal is dropped. These are the partitions λ covered by
+    λ⁺ in Young's lattice. -/
+def oneCellRemovals (lam : List ℕ) : List (List ℕ) :=
+  (List.range lam.length).filterMap (fun i =>
+    let ri := lam.getD i 0
+    if ri > lam.getD (i + 1) 0 ∧ ri > 0 then
+      some (lam.take i ++ (if ri = 1 then [] else [ri - 1]) ++ lam.drop (i + 1))
+    else none)
+
 /-- Pieri rule for skew SYT counts: adding one cell decomposes.
-    f^{λ⁺/μ} = Σ_{λ: λ⁺ covers λ in Young's lattice} f^{λ/μ} -/
-theorem pieri_skew_syt (mu lambda_plus : List ℕ) :
-    -- The skew SYT count factors through one-step removal:
-    -- skewSYTCount mu lambda_plus = Σ_{lambda covered by lambda_plus} skewSYTCount mu lambda
-    -- This is the fundamental recursion of Young's lattice.
+    f^{λ⁺/μ} = Σ_{λ: λ⁺ covers λ in Young's lattice} f^{λ/μ}
+
+    The non-trivial content is that the paths μ → λ⁺ in Young's lattice
+    decompose over the intermediate λ (paths μ → λ followed by one step
+    λ → λ⁺) — the saturated-chain recursion of a graded poset. The
+    hypothesis `lambda_plus ≠ mu` excludes the base case `f^{μ/μ} = 1`,
+    where the right-hand sum is empty. -/
+theorem pieri_skew_syt (mu lambda_plus : List ℕ) (hne : lambda_plus ≠ mu) :
     skewSYTCount mu lambda_plus =
-      skewSYTCount mu lambda_plus := by
-  -- The non-trivial content is that the LHS (paths from μ to λ⁺)
-  -- decomposes as sum over intermediate λ (paths from μ to λ then one step to λ⁺).
-  -- This is the definition of saturated chains in a graded poset.
-  -- Ref: [hoefsmit1974] §2.3
-  rfl
+      ((oneCellRemovals lambda_plus).map (skewSYTCount mu)).sum := by
+  -- Ref: [hoefsmit1974] §2.3 (branching recursion for skew standard tableaux)
+  sorry
 
 /-- The universal branching formula.
 
