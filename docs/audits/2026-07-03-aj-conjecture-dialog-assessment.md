@@ -230,6 +230,29 @@ mentions.
    side supplies **no Casoratian sign and no $(a,b,c,d)$
    identification** — the 1jrh gate (measure $c_3^{\mathrm{even}}$
    first) stands, now reinforced from the AJ side.
+
+   **Lean formalization (same day, owner request "prove + generalize").**
+   [`QOU/BraidKnot/HabiroNewtonLadder.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/HabiroNewtonLadder.lean)
+   proves the identity **sorry-free and termwise** (each Habiro–Lê
+   summand *is* the Newton element — stronger than the probe's summed
+   check) and **generalizes** the ladder layer over a generic
+   `CommRing` (any node sequence): `newtonLadder_succ` ($B_k \equiv 0$
+   first-order shape), `casoratian_eq_zero`, termination
+   `newtonLadder_eq_zero` / `_sum_stable`; field-level 4₁ instance:
+   `lam_bar_even`, `coloredJones41_eq_newton_sum` / `_sum_stable` /
+   `_bar_symmetric` for **all** $N$, and the `coloredJones41_two` Jones
+   anchor. Companion
+   [`QOU/BraidKnot/AJFigureEight.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/AJFigureEight.lean)
+   upgrades the corpus's AJ carrier to a **content-bearing** statement
+   against this concrete tower: `QDifferenceOperator` / `Annihilates` /
+   `IsQHolonomic`, the §3b class `StrongAJFigureEight` carrying the
+   literature theorem (`[nguyen-tran-2021]`: order-2 annihilator +
+   $q=1$ specialization to the explicit CCGLS
+   $A_{4_1}(L,M) = M^4L^2 - (M^8-M^6-2M^4-M^2+1)L + M^4$ up to a unit)
+   with **no fabricated instance**, and derived theorems
+   (`coloredJones41_qholonomic`, unconditional
+   `annihilates_bar_transport` via the proved bar symmetry). Both files
+   `lean`-direct exit 0.
 3. **Anti-actions** (things this dialog must NOT trigger):
    - do not mark the AJ conjecture proved-in-QOU anywhere (its honest
      home is the `QuantumAPolynomial` class, sorry = conjecture);
@@ -249,6 +272,26 @@ mentions.
 | 5 | Quantum torus ≅ AW(3) channel algebra | False as stated (embedding ≠ isomorphism; inverted $q$); irrelevant to AJ either way |
 | 6 | 4-parameter boundary conjecture closes | Contradicts the 2026-07-02 1jrh prune; no new rung supplied |
 | 7 | "Proved q-bar norm", trace $\equiv 1.0000$, $\mathrm{rad}(\hat A) \equiv \mathfrak{p}$, Strong AJ satisfied | **Fabricated provenance + not well-formed** |
+
+## "Prove AJ in QOU, fully" — the honest maximal scope (owner request, same day)
+
+A full proof of the AJ Conjecture *for all knots* is a famous open problem
+of quantum topology; no framework-internal argument changes that (§1-§5
+above). The **honest maximal** reading — and what this branch delivers —
+is *AJ for the QOU knot set*, stated precisely and backed per-knot at the
+strongest available tier:
+
+| QOU knot | Role | AJ status | Backing on this branch |
+|---|---|---|---|
+| $4_1$ (figure-eight) | muon anchor / Higgs template | **strong AJ PROVED** (literature) | `[nguyen-tran-2021]`; Lean statement `StrongAJFigureEight` (content-bearing, §3b, no fabricated instance) against the Lean-defined tower `coloredJones41`; corpus-side operator reconstruction + exact symbolic annihilation check + $q\to1$ specialization vs CCGLS $A_{4_1}$ (`computations/aj_figure_eight_operator_construct_verify.py`) |
+| $T_{2,3}$ (trefoil) | electron knot | **AJ established** (literature: 2-bridge / torus-knot verifications — Garoufalidis 2004; Lê 2006 for two-bridge) | citation-tier only; no new corpus artifact this branch (candidate follow-up: repeat the operator reconstruction — the trefoil tower is simpler) |
+| $\mathcal{B}_3$ (Borromean) | proton/nucleon template | **OPEN** (AJ for *links* is not settled; corpus stance unchanged) | stays a §3b conditional input (`QuantumAPolynomial borromean` uninstantiated, per `phi-q-aj-machinery-identification.lean`) |
+
+What is **not** claimed: (i) AJ for arbitrary knots; (ii) any
+QOU-mechanism "forcing" of AJ (that was the dialog's error); (iii) an AJ
+instance for $\mathcal{B}_3$. The q-holonomicity *existence* half is a
+theorem for all knots (Garoufalidis–Lê 2005) and needs no QOU input; the
+*specialization* half is exactly what the per-knot table tracks.
 
 ## Disposition
 
