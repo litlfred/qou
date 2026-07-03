@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-03T00:18:46.933545+00:00",
-  "commitSha": "0ba8e15a516c5195021b4f56f8bdbddcea981c3c",
+  "computedAt": "2026-07-03T19:08:05.784978+00:00",
+  "commitSha": "f4f3f7e814015791685df70ae5585dde470303a8",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "scriptCommitSha": "592eade9c548e0ce537c7ff63885a554f16089d3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -1314,7 +1314,7 @@
         "issues": [],
         "trust_summary": {
           "derived": 2,
-          "script-cited": 3,
+          "script-cited": 4,
           "computational": 1
         },
         "has_script_frontier": true
@@ -2032,6 +2032,7 @@
       "derivation-fully-trusted": [],
       "derivation-backed": [
         "atomic-braid-gb-filtration-extension.witness.json",
+        "m-p-substrate-identity-50dps.witness.json",
         "mass-endomorphism.witness.json",
         "mass-formula-6term-mpfr-50dps.witness.json",
         "term7-alpha5-crystal-derivation.witness.json"
@@ -2046,6 +2047,10 @@
         "active-set-truncation-prototype.witness.json",
         "adjacent-vs-full-probe.witness.json",
         "affine-light-cone-figure.witness.json",
+        "aj-figure-eight-certificate.witness.json",
+        "aj-figure-eight-operator-construct-verify.witness.json",
+        "aj-operator-aw-shape-probe.witness.json",
+        "aj-trefoil-operator-construct-verify.witness.json",
         "all-nuclides-sdp-admissibility.witness.json",
         "all-nuclides-wedderburn-spectral-v2.witness.json",
         "alpha-basis-knot-couplings.witness.json",
@@ -2090,6 +2095,7 @@
         "b-over-a-v5-unified.witness.json",
         "b-over-a.witness.json",
         "b-over-m-order-probe.witness.json",
+        "balanced-head-dominance-binding-period-probe.witness.json",
         "bar-pairing-binding-observable-extension.witness.json",
         "bar-symmetry-three-candidates.witness.json",
         "basis-knot-tables.witness.json",
@@ -2424,6 +2430,7 @@
         "d-from-scratch.witness.json",
         "d-u-closed-form-proof.witness.json",
         "definitive-q0-shift.witness.json",
+        "deligne-stable-range-binding-period-probe.witness.json",
         "delta-S-chain-audit.witness.json",
         "delta-lambda-2row-stratum.witness.json",
         "delta-lambda-binding-full-evaluation.witness.json",
@@ -2702,7 +2709,6 @@
         "m-p-linking-weight-operator-valued-probe.witness.json",
         "m-p-m-e-li2q.witness.json",
         "m-p-spectral-corrected-50dps.witness.json",
-        "m-p-substrate-identity-50dps.witness.json",
         "m-qclt-approx.witness.json",
         "m-tau-knot-prediction.witness.json",
         "magic-a-truncation-overclaim-correction.witness.json",
@@ -2829,6 +2835,7 @@
         "p2-5-symbolic-q-audit.witness.json",
         "pairwise-magnitude-gap-decomposition.witness.json",
         "paper-modulus-audit-nonarchimedean.witness.json",
+        "parabolic-cylinder-channel-mixing-probe.witness.json",
         "path-b-evacuation.witness.json",
         "path-b-open-questions.witness.json",
         "path-c3-klr-prescreen-50dps.witness.json",
@@ -2869,6 +2876,7 @@
         "probe-4e-transpose-pair-asymmetry.witness.json",
         "probe-4f-h3-sigma-avg-asymmetry.witness.json",
         "probe-9b-alphak-structure.witness.json",
+        "probe-9b-h-power-asymmetry.witness.json",
         "probe-9b-laurent-degree-10a5.witness.json",
         "probe-9b-manybody-expansion.witness.json",
         "probe-9b-perlambda-brane-tower.witness.json",
@@ -2945,6 +2953,7 @@
         "rho-f-volume-binding-gap.witness.json",
         "rho-k-co-casimir-extended.witness.json",
         "rho-k-full-via-wenzl-lr.witness.json",
+        "rho-k-graded-atomic-mass.witness.json",
         "rho-k-h3a-co-casimir.witness.json",
         "rho-k-h3a-crystal.witness.json",
         "rho-k-h3a-frobenius-pairing.witness.json",
