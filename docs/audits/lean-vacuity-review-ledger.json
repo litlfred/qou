@@ -1,276 +1,325 @@
 {
-  "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-07-03T19:37:21.136Z",
-  "entries": {
-    "content/quantum-observable-universe/lean/QOU/Archimedean/BetaDecay.lean::interaction_completeness::proof-no-false-premise": {
-      "category": "proof-no-false-premise",
-      "pattern": "discharged-impossible-hyp",
-      "line": 267,
-      "verdict": "legit",
-      "file_sha": "5dd637d71e12",
-      "reviewer": "agent",
-      "reviewed_at": "2026-06-28T02:00:00Z",
-      "disposition": "no-fix",
-      "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0≥1, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (§3b)."
-    },
-    "content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeTranscendence.lean::HyperbolicVolumeIndependence.implies_single_irrational::proof-no-false-premise": {
-      "category": "proof-no-false-premise",
-      "pattern": "discharged-impossible-hyp",
-      "line": 499,
-      "verdict": "legit",
-      "file_sha": "79eeb4de80bb",
-      "reviewer": "agent",
-      "reviewed_at": "2026-06-28T02:00:00Z",
-      "disposition": "no-fix",
-      "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0≥1, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (§3b)."
-    },
-    "content/quantum-observable-universe/lean/QOU/Archimedean/chebyshev_degree_genus.lean::hecke_deg_monic::proof-no-false-premise": {
-      "category": "proof-no-false-premise",
-      "pattern": "discharged-impossible-hyp",
-      "line": 97,
-      "verdict": "legit",
-      "file_sha": "1ec9f4e7e360",
-      "reviewer": "agent",
-      "reviewed_at": "2026-06-28T02:00:00Z",
-      "disposition": "no-fix",
-      "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0≥1, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (§3b)."
-    },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/MassGapKeystone.lean::substrateGap_of_uniform_gapValue::proof-no-false-premise": {
-      "category": "proof-no-false-premise",
-      "pattern": "discharged-impossible-hyp",
-      "line": 204,
-      "verdict": "legit",
-      "file_sha": "aaf41243710f",
-      "reviewer": "agent",
-      "reviewed_at": "2026-06-28T02:00:00Z",
-      "disposition": "no-fix",
-      "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0≥1, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (§3b)."
-    },
-    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/ReebChiralitySeparation.lean::A5Irrep.reebCasimir_not_injective::proof-no-false-premise": {
-      "category": "proof-no-false-premise",
-      "pattern": "discharged-impossible-hyp",
-      "line": 60,
-      "verdict": "legit",
-      "file_sha": "081b2a56dbc4",
-      "reviewer": "agent",
-      "reviewed_at": "2026-06-28T02:00:00Z",
-      "disposition": "no-fix",
-      "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0≥1, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (§3b)."
-    },
-    "content/quantum-observable-universe/lean/QOU/Interactions/AlgebraicPrimality.lean::zero_not_isAlgebraicallyPrime::proof-no-false-premise": {
-      "category": "proof-no-false-premise",
-      "pattern": "discharged-impossible-hyp",
-      "line": 149,
-      "verdict": "legit",
-      "file_sha": "ff5e15bdd6e0",
-      "reviewer": "agent",
-      "reviewed_at": "2026-06-28T02:00:00Z",
-      "disposition": "no-fix",
-      "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0≥1, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (§3b)."
-    },
-    "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
-      "category": "proof-no-decide-masking",
-      "pattern": "native_decide",
-      "line": 267,
-      "verdict": "legit",
-      "file_sha": "0aa015d1bcbf",
-      "reviewer": "agent",
-      "reviewed_at": "2026-06-28T07:00:00Z",
-      "disposition": "no-fix",
-      "evidence": "Real finite computation, not decide-masking of a non-fact. The theorem enumerates all ~1365 pure 3-braid words of length <6, computing each Kauffman/TL3 bracket (Laurent-polynomial arithmetic) to confirm none is simultaneously Brunnian and nontrivial while the Borromean (length 6) is — minimal crossing number = 6. Kernel decide is infeasible: re-verified 2026-06-28 that decide times out at 590s even with maxHeartbeats 4000000 (the docstring already notes nontriviality alone took ~45s by decide). native_decide compiles the decision procedure; its Lean.ofReduceBool/trustCompiler axioms are documented in the docstring and independently cross-checked against the Python enumeration oracle (both yield 6). Cannot be cleared by decide/norm_num/omega without audit-dodging (§1a); honest disposition is native_decide + documented axioms + oracle cross-check."
-    },
-    "content/quantum-observable-universe/lean/QOU/MathlibExt/PosSemidefTraceZero.lean::Matrix.PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero::proof-no-false-premise": {
-      "category": "proof-no-false-premise",
-      "pattern": "discharged-impossible-hyp",
-      "line": 81,
-      "verdict": "legit",
-      "file_sha": "362fa5288152",
-      "reviewer": "agent",
-      "reviewed_at": "2026-06-28T02:00:00Z",
-      "disposition": "no-fix",
-      "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0≥1, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (§3b)."
-    },
-    "content/quantum-observable-universe/glossary/glossary-weierstrass-projection.lean::weierstrass_projection_exists::proof-no-trivial-true": {
-      "category": "proof-no-trivial-true",
-      "pattern": "exists-true-tautology",
-      "line": 29,
-      "verdict": "needs-agent",
-      "file_sha": "5b4586562bc9"
-    },
-    "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean::JonesBirthday.exists_knot::proof-no-trivial-true": {
-      "category": "proof-no-trivial-true",
-      "pattern": "exists-true-tautology",
-      "line": 650,
-      "verdict": "needs-agent",
-      "file_sha": "b501cf3b668d"
-    },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/JucysMurphy.lean::jucysMurphy_zero::proof-no-false-premise": {
-      "category": "proof-no-false-premise",
-      "pattern": "discharged-impossible-hyp",
-      "line": 106,
-      "verdict": "needs-agent",
-      "file_sha": "6c280bc9c88a"
-    },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/JucysMurphy.lean::row_eq_offset_add_count::proof-no-false-premise": {
-      "category": "proof-no-false-premise",
-      "pattern": "discharged-impossible-hyp",
-      "line": 646,
-      "verdict": "needs-agent",
-      "file_sha": "6c280bc9c88a"
-    },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/S5bbGeometricIndex.lean::IsColourReeb::proof-claims-unencoded": {
-      "category": "proof-claims-unencoded",
-      "pattern": "true-class-field",
-      "line": 23,
-      "verdict": "needs-agent",
-      "file_sha": "4f5257bf054b"
-    },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/SpechtClassification.lean::diagram_card::proof-no-self-assuming-projection": {
-      "category": "proof-no-self-assuming-projection",
-      "pattern": "field-projection",
-      "line": 122,
-      "verdict": "needs-agent",
-      "file_sha": "a6cfddf99041"
-    },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/SpechtTriangularCore.lean::rowSet_card::proof-no-false-premise": {
-      "category": "proof-no-false-premise",
-      "pattern": "discharged-impossible-hyp",
-      "line": 315,
-      "verdict": "needs-agent",
-      "file_sha": "9cd0442e5453"
-    },
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/WLambdaMTCLocalizationObligation.lean::one_le_hookLength::proof-no-false-premise": {
-      "category": "proof-no-false-premise",
-      "pattern": "discharged-impossible-hyp",
-      "line": 199,
-      "verdict": "needs-agent",
-      "file_sha": "9c97410a886c"
-    },
-    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/KeystoneCanonicalAngleMap.lean::canonical_angle_map_unique::proof-no-false-premise": {
-      "category": "proof-no-false-premise",
-      "pattern": "discharged-impossible-hyp",
-      "line": 145,
-      "verdict": "needs-agent",
-      "file_sha": "781d70cd16c3"
-    },
-    "content/quantum-observable-universe/lean/QOU/Mathlib/NonAbelianStokes.lean::yekutieli_finite_slice_substrate::proof-no-trivial-true": {
-      "category": "proof-no-trivial-true",
-      "pattern": "exists-true-tautology",
-      "line": 132,
-      "verdict": "needs-agent",
-      "file_sha": "a95f5c438cfa"
-    },
-    "content/quantum-observable-universe/lean/QOU/Mathlib/PartitionsOfBridge.lean::mem_partsFuel_complete::proof-no-false-premise": {
-      "category": "proof-no-false-premise",
-      "pattern": "discharged-impossible-hyp",
-      "line": 92,
-      "verdict": "needs-agent",
-      "file_sha": "fe585c8ddb39"
-    },
-    "content/quantum-observable-universe/lean/QOU/Mathlib/SYTDimHLFPair.lean::dimHLF_pair::proof-no-false-premise": {
-      "category": "proof-no-false-premise",
-      "pattern": "discharged-impossible-hyp",
-      "line": 29,
-      "verdict": "needs-agent",
-      "file_sha": "4742581abf78"
-    },
-    "content/quantum-observable-universe/lean/QOU/Mathlib/SYTHookGNW.lean::numSYTenum_eq_div_aux::proof-no-false-premise": {
-      "category": "proof-no-false-premise",
-      "pattern": "discharged-impossible-hyp",
-      "line": 84,
-      "verdict": "needs-agent",
-      "file_sha": "516f3622114b"
-    },
-    "content/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean::yekutieli_finite_slice_discharged::proof-no-trivial-true": {
-      "category": "proof-no-trivial-true",
-      "pattern": "exists-true-tautology",
-      "line": 136,
-      "verdict": "needs-agent",
-      "file_sha": "4ae416d0135d"
-    },
-    "content/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean::markov_axiom_h1_to_h2_discharged::proof-no-trivial-true": {
-      "category": "proof-no-trivial-true",
-      "pattern": "exists-true-tautology",
-      "line": 172,
-      "verdict": "needs-agent",
-      "file_sha": "4ae416d0135d"
-    },
-    "content/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean::markov_axiom_h2_to_h3_discharged::proof-no-trivial-true": {
-      "category": "proof-no-trivial-true",
-      "pattern": "exists-true-tautology",
-      "line": 178,
-      "verdict": "needs-agent",
-      "file_sha": "4ae416d0135d"
-    },
-    "content/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean::lie_valued_stokes_discharged::proof-no-trivial-true": {
-      "category": "proof-no-trivial-true",
-      "pattern": "exists-true-tautology",
-      "line": 264,
-      "verdict": "needs-agent",
-      "file_sha": "4ae416d0135d"
-    },
-    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/WignerSU4FromSpinIsospin.lean::WignerSU4FromSpinIsospin::proof-claims-unencoded": {
-      "category": "proof-claims-unencoded",
-      "pattern": "true-class-field",
-      "line": 15,
-      "verdict": "needs-agent",
-      "file_sha": "ca1b9f68f9fc"
-    },
-    "content/quantum-observable-universe/lifting-and-descent/qu-to-qou.lean::qu_to_qou_exists::proof-no-trivial-true": {
-      "category": "proof-no-trivial-true",
-      "pattern": "exists-true-tautology",
-      "line": 94,
-      "verdict": "needs-agent",
-      "file_sha": "99a7e82b78c0"
-    },
-    "content/quantum-observable-universe/mass-theory/conj-im-q-physical-role.lean::mass_observable_conj_invariance::proof-no-trivial-true": {
-      "category": "proof-no-trivial-true",
-      "pattern": "or-true-tautology",
-      "line": 28,
-      "verdict": "needs-agent",
-      "file_sha": "463181fa3454"
-    },
-    "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean::habiro_expansion_atomic::proof-no-trivial-true": {
-      "category": "proof-no-trivial-true",
-      "pattern": "exists-true-tautology",
-      "line": 174,
-      "verdict": "needs-agent",
-      "file_sha": "36e61eceb7f8"
-    },
-    "content/quantum-observable-universe/mass-theory/knot-operator-lp-selection.lean::knot_operator_lp_selection::proof-no-trivial-true": {
-      "category": "proof-no-trivial-true",
-      "pattern": "exists-true-tautology",
-      "line": 116,
-      "verdict": "needs-agent",
-      "file_sha": "f8af9f73757a"
-    },
-    "content/quantum-observable-universe/mass-theory/universal-braid-branching.lean::pieri_skew_syt::proof-no-trivial-true": {
-      "category": "proof-no-trivial-true",
-      "pattern": "reflexive-tautology",
-      "line": 34,
-      "verdict": "needs-agent",
-      "file_sha": "a43b1ac62406"
-    },
-    "content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.lean::CategoricalReebDerivation::proof-claims-unencoded": {
-      "category": "proof-claims-unencoded",
-      "pattern": "docstring-claims-gap",
-      "line": 62,
-      "verdict": "needs-agent",
-      "file_sha": "0eaf50514b42"
-    },
-    "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean::phi_q_eq_aj_saddle_root_of_unity::proof-no-self-assuming-projection": {
-      "category": "proof-no-self-assuming-projection",
-      "pattern": "field-projection",
-      "line": 117,
-      "verdict": "needs-agent",
-      "file_sha": "9bfe63baa895"
-    },
-    "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean::li2_q_eq_aj_saddle_real::proof-no-self-assuming-projection": {
-      "category": "proof-no-self-assuming-projection",
-      "pattern": "field-projection",
-      "line": 127,
-      "verdict": "needs-agent",
-      "file_sha": "9bfe63baa895"
-    }
+ "$schema": "lean-vacuity-review/v1",
+ "updated_at": "2026-07-03T19:59:05Z",
+ "entries": {
+  "content/quantum-observable-universe/lean/QOU/Archimedean/BetaDecay.lean::interaction_completeness::proof-no-false-premise": {
+   "category": "proof-no-false-premise",
+   "pattern": "discharged-impossible-hyp",
+   "line": 267,
+   "verdict": "legit",
+   "file_sha": "5dd637d71e12",
+   "reviewer": "agent",
+   "reviewed_at": "2026-06-28T02:00:00Z",
+   "disposition": "no-fix",
+   "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0≥1, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (§3b)."
+  },
+  "content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeTranscendence.lean::HyperbolicVolumeIndependence.implies_single_irrational::proof-no-false-premise": {
+   "category": "proof-no-false-premise",
+   "pattern": "discharged-impossible-hyp",
+   "line": 499,
+   "verdict": "legit",
+   "file_sha": "79eeb4de80bb",
+   "reviewer": "agent",
+   "reviewed_at": "2026-06-28T02:00:00Z",
+   "disposition": "no-fix",
+   "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0≥1, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (§3b)."
+  },
+  "content/quantum-observable-universe/lean/QOU/Archimedean/chebyshev_degree_genus.lean::hecke_deg_monic::proof-no-false-premise": {
+   "category": "proof-no-false-premise",
+   "pattern": "discharged-impossible-hyp",
+   "line": 97,
+   "verdict": "legit",
+   "file_sha": "1ec9f4e7e360",
+   "reviewer": "agent",
+   "reviewed_at": "2026-06-28T02:00:00Z",
+   "disposition": "no-fix",
+   "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0≥1, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (§3b)."
+  },
+  "content/quantum-observable-universe/lean/QOU/BraidKnot/MassGapKeystone.lean::substrateGap_of_uniform_gapValue::proof-no-false-premise": {
+   "category": "proof-no-false-premise",
+   "pattern": "discharged-impossible-hyp",
+   "line": 204,
+   "verdict": "legit",
+   "file_sha": "aaf41243710f",
+   "reviewer": "agent",
+   "reviewed_at": "2026-06-28T02:00:00Z",
+   "disposition": "no-fix",
+   "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0≥1, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (§3b)."
+  },
+  "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/ReebChiralitySeparation.lean::A5Irrep.reebCasimir_not_injective::proof-no-false-premise": {
+   "category": "proof-no-false-premise",
+   "pattern": "discharged-impossible-hyp",
+   "line": 60,
+   "verdict": "legit",
+   "file_sha": "081b2a56dbc4",
+   "reviewer": "agent",
+   "reviewed_at": "2026-06-28T02:00:00Z",
+   "disposition": "no-fix",
+   "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0≥1, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (§3b)."
+  },
+  "content/quantum-observable-universe/lean/QOU/Interactions/AlgebraicPrimality.lean::zero_not_isAlgebraicallyPrime::proof-no-false-premise": {
+   "category": "proof-no-false-premise",
+   "pattern": "discharged-impossible-hyp",
+   "line": 149,
+   "verdict": "legit",
+   "file_sha": "ff5e15bdd6e0",
+   "reviewer": "agent",
+   "reviewed_at": "2026-06-28T02:00:00Z",
+   "disposition": "no-fix",
+   "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0≥1, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (§3b)."
+  },
+  "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
+   "category": "proof-no-decide-masking",
+   "pattern": "native_decide",
+   "line": 267,
+   "verdict": "legit",
+   "file_sha": "0aa015d1bcbf",
+   "reviewer": "agent",
+   "reviewed_at": "2026-06-28T07:00:00Z",
+   "disposition": "no-fix",
+   "evidence": "Real finite computation, not decide-masking of a non-fact. The theorem enumerates all ~1365 pure 3-braid words of length <6, computing each Kauffman/TL3 bracket (Laurent-polynomial arithmetic) to confirm none is simultaneously Brunnian and nontrivial while the Borromean (length 6) is — minimal crossing number = 6. Kernel decide is infeasible: re-verified 2026-06-28 that decide times out at 590s even with maxHeartbeats 4000000 (the docstring already notes nontriviality alone took ~45s by decide). native_decide compiles the decision procedure; its Lean.ofReduceBool/trustCompiler axioms are documented in the docstring and independently cross-checked against the Python enumeration oracle (both yield 6). Cannot be cleared by decide/norm_num/omega without audit-dodging (§1a); honest disposition is native_decide + documented axioms + oracle cross-check."
+  },
+  "content/quantum-observable-universe/lean/QOU/MathlibExt/PosSemidefTraceZero.lean::Matrix.PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero::proof-no-false-premise": {
+   "category": "proof-no-false-premise",
+   "pattern": "discharged-impossible-hyp",
+   "line": 81,
+   "verdict": "legit",
+   "file_sha": "362fa5288152",
+   "reviewer": "agent",
+   "reviewed_at": "2026-06-28T02:00:00Z",
+   "disposition": "no-fix",
+   "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0≥1, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (§3b)."
+  },
+  "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean::JonesBirthday.exists_knot::proof-no-trivial-true": {
+   "category": "proof-no-trivial-true",
+   "pattern": "exists-true-tautology",
+   "line": 650,
+   "verdict": "legit",
+   "file_sha": "b501cf3b668d",
+   "disposition": "no-fix",
+   "evidence": "Conditional consequence: obtains the witness from the conjecture class field knot_inhabited and repackages as an existential; 'exists _ : Knot, True' is the Nonempty statement, trailing True is packaging, the [JonesBirthday K] instance is load-bearing.",
+   "reviewer": "agent",
+   "reviewed_at": "2026-07-03T19:59:05Z"
+  },
+  "content/quantum-observable-universe/lean/QOU/BraidKnot/JucysMurphy.lean::jucysMurphy_zero::proof-no-false-premise": {
+   "category": "proof-no-false-premise",
+   "pattern": "discharged-impossible-hyp",
+   "line": 106,
+   "verdict": "legit",
+   "file_sha": "6c280bc9c88a",
+   "disposition": "no-fix",
+   "evidence": "Premise 0<n is satisfiable (any n>=1); Nat.not_lt_zero proves the filter over j<0 is EMPTY (an empty-sum computation), not that a hypothesis is impossible. Real anchor lemma X_0 = 0 for the Jucys-Murphy definition.",
+   "reviewer": "agent",
+   "reviewed_at": "2026-07-03T19:59:05Z"
+  },
+  "content/quantum-observable-universe/lean/QOU/BraidKnot/JucysMurphy.lean::row_eq_offset_add_count::proof-no-false-premise": {
+   "category": "proof-no-false-premise",
+   "pattern": "discharged-impossible-hyp",
+   "line": 646,
+   "verdict": "legit",
+   "file_sha": "6c280bc9c88a",
+   "disposition": "no-fix",
+   "evidence": "Substantive combinatorial proof (Finset.card_bij' bijection with the row range [(-d)+, x.1)); absurd only discharges impossible sub-cases inside the bijection argument. No vacuous whole-theorem premise.",
+   "reviewer": "agent",
+   "reviewed_at": "2026-07-03T19:59:05Z"
+  },
+  "content/quantum-observable-universe/lean/QOU/BraidKnot/SpechtClassification.lean::diagram_card::proof-no-self-assuming-projection": {
+   "category": "proof-no-self-assuming-projection",
+   "pattern": "field-projection",
+   "line": 122,
+   "verdict": "legit",
+   "file_sha": "a6cfddf99041",
+   "disposition": "no-fix",
+   "evidence": "Standard subtype-projection simp lemma: PartitionIndex n := {mu // mu.card = n}, so i.property IS the defining datum, not a smuggled conclusion. Mathlib idiom, not the anti-pattern.",
+   "reviewer": "agent",
+   "reviewed_at": "2026-07-03T19:59:05Z"
+  },
+  "content/quantum-observable-universe/lean/QOU/BraidKnot/SpechtTriangularCore.lean::rowSet_card::proof-no-false-premise": {
+   "category": "proof-no-false-premise",
+   "pattern": "discharged-impossible-hyp",
+   "line": 315,
+   "verdict": "legit",
+   "file_sha": "9cd0442e5453",
+   "disposition": "no-fix",
+   "evidence": "by_contra + trichotomy: absurd eliminates the a<b / b<a sub-cases via entry_row_strictMonoOn. Genuine injectivity-cardinality proof; premises satisfiable.",
+   "reviewer": "agent",
+   "reviewed_at": "2026-07-03T19:59:05Z"
+  },
+  "content/quantum-observable-universe/lean/QOU/BraidKnot/WLambdaMTCLocalizationObligation.lean::one_le_hookLength::proof-no-false-premise": {
+   "category": "proof-no-false-premise",
+   "pattern": "discharged-impossible-hyp",
+   "line": 199,
+   "verdict": "legit",
+   "file_sha": "9c97410a886c",
+   "disposition": "no-fix",
+   "evidence": "absurd discharges only the none-branch of lam.get? i (impossible given hj); premise hj : j < (lam.get? i).getD 0 is satisfiable for genuine cells and is USED. Consumed by qDim_pos.",
+   "reviewer": "agent",
+   "reviewed_at": "2026-07-03T19:59:05Z"
+  },
+  "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/KeystoneCanonicalAngleMap.lean::canonical_angle_map_unique::proof-no-false-premise": {
+   "category": "proof-no-false-premise",
+   "pattern": "discharged-impossible-hyp",
+   "line": 145,
+   "verdict": "legit",
+   "file_sha": "781d70cd16c3",
+   "disposition": "no-fix",
+   "evidence": "Genuine uniqueness derivation on the finite enum: absurd (by decide) eliminates already-taken classes branch-by-branch; hypotheses are satisfiable (canonicalClassMap itself satisfies P1-P3+injective).",
+   "reviewer": "agent",
+   "reviewed_at": "2026-07-03T19:59:05Z"
+  },
+  "content/quantum-observable-universe/lean/QOU/Mathlib/NonAbelianStokes.lean::yekutieli_finite_slice_substrate::proof-no-trivial-true": {
+   "category": "proof-no-trivial-true",
+   "pattern": "exists-true-tautology",
+   "line": 132,
+   "verdict": "advisory",
+   "file_sha": "a95f5c438cfa",
+   "disposition": "queued",
+   "evidence": "Docstring itself concedes the existential is 'tautologically true given a default class instance' (the punit instance has stokes_holds := True). Honest self-documentation, but the theorem-titled statement carries no Stokes content — recommend restating as Nonempty of a content-bearing instance or demoting to a doc comment. Not blocking; tracked.",
+   "reviewer": "agent",
+   "reviewed_at": "2026-07-03T19:59:05Z"
+  },
+  "content/quantum-observable-universe/lean/QOU/Mathlib/PartitionsOfBridge.lean::mem_partsFuel_complete::proof-no-false-premise": {
+   "category": "proof-no-false-premise",
+   "pattern": "discharged-impossible-hyp",
+   "line": 92,
+   "verdict": "legit",
+   "file_sha": "fe585c8ddb39",
+   "disposition": "no-fix",
+   "evidence": "Completeness induction over fuel; absurd discharges the impossible sub-case (positive-entry list summing to 0). Real recursion proof, satisfiable premises.",
+   "reviewer": "agent",
+   "reviewed_at": "2026-07-03T19:59:05Z"
+  },
+  "content/quantum-observable-universe/lean/QOU/Mathlib/SYTDimHLFPair.lean::dimHLF_pair::proof-no-false-premise": {
+   "category": "proof-no-false-premise",
+   "pattern": "discharged-impossible-hyp",
+   "line": 29,
+   "verdict": "legit",
+   "file_sha": "4742581abf78",
+   "disposition": "no-fix",
+   "evidence": "Substantive Nat factorial/binomial identity via choose_mul_factorial_mul_factorial; premises b<=a, 1<=b satisfiable (all two-row partitions). No impossible hypothesis.",
+   "reviewer": "agent",
+   "reviewed_at": "2026-07-03T19:59:05Z"
+  },
+  "content/quantum-observable-universe/lean/QOU/Mathlib/SYTHookGNW.lean::numSYTenum_eq_div_aux::proof-no-false-premise": {
+   "category": "proof-no-false-premise",
+   "pattern": "discharged-impossible-hyp",
+   "line": 84,
+   "verdict": "legit",
+   "file_sha": "516f3622114b",
+   "disposition": "no-fix",
+   "evidence": "Strong induction on sz l; absurd rfl hne discharges only the nil branch inside the ne-case. Genuine HLF reduction, conditional on the two named GNW identities.",
+   "reviewer": "agent",
+   "reviewed_at": "2026-07-03T19:59:05Z"
+  },
+  "content/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean::yekutieli_finite_slice_discharged::proof-no-trivial-true": {
+   "category": "proof-no-trivial-true",
+   "pattern": "exists-true-tautology",
+   "line": 136,
+   "verdict": "legit",
+   "file_sha": "4ae416d0135d",
+   "disposition": "no-fix",
+   "evidence": "Inhabitation witness of a SUBSTANTIVE upstream instance (canonical z^n braidSurfaceMultTrace); the existential-of-instance records the axiom-discharge. Content lives in the instance, statement = Nonempty.",
+   "reviewer": "agent",
+   "reviewed_at": "2026-07-03T19:59:05Z"
+  },
+  "content/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean::markov_axiom_h1_to_h2_discharged::proof-no-trivial-true": {
+   "category": "proof-no-trivial-true",
+   "pattern": "exists-true-tautology",
+   "line": 172,
+   "verdict": "legit",
+   "file_sha": "4ae416d0135d",
+   "disposition": "no-fix",
+   "evidence": "Witness is the concrete PROVED instance MarkovTraceRecursionWithMul.h1_to_h2 (carrier-level computation), not a default/trivial instance. Discharge record; statement = Nonempty.",
+   "reviewer": "agent",
+   "reviewed_at": "2026-07-03T19:59:05Z"
+  },
+  "content/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean::markov_axiom_h2_to_h3_discharged::proof-no-trivial-true": {
+   "category": "proof-no-trivial-true",
+   "pattern": "exists-true-tautology",
+   "line": 178,
+   "verdict": "legit",
+   "file_sha": "4ae416d0135d",
+   "disposition": "no-fix",
+   "evidence": "Same as h1_to_h2: concrete proved instance h2_to_h3 witnesses the existential. Not vacuous.",
+   "reviewer": "agent",
+   "reviewed_at": "2026-07-03T19:59:05Z"
+  },
+  "content/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean::lie_valued_stokes_discharged::proof-no-trivial-true": {
+   "category": "proof-no-trivial-true",
+   "pattern": "exists-true-tautology",
+   "line": 264,
+   "verdict": "advisory",
+   "file_sha": "4ae416d0135d",
+   "disposition": "queued",
+   "evidence": "The witnessing instance LieValuedStokes_canonical sets stokes_identity := ((0:g) = 0) — a tautology despite the 'non-vacuous' framing — so this 'discharge' certifies no Stokes content. Recommend a content-bearing instance (real MI1/MI2 identity) before citing this as a discharge. Tracked.",
+   "reviewer": "agent",
+   "reviewed_at": "2026-07-03T19:59:05Z"
+  },
+  "content/quantum-observable-universe/lifting-and-descent/qu-to-qou.lean::qu_to_qou_exists::proof-no-trivial-true": {
+   "category": "proof-no-trivial-true",
+   "pattern": "exists-true-tautology",
+   "line": 94,
+   "verdict": "legit",
+   "file_sha": "99a7e82b78c0",
+   "disposition": "no-fix",
+   "evidence": "'exists q : QuToQou, True' == Nonempty QuToQou over a constrained structure (trace_map, perpetual obstruction, branch data) — a real existence claim, honestly sorry'd with -- Ref: [manuscript]. Advisory: restate as Nonempty for clarity.",
+   "reviewer": "agent",
+   "reviewed_at": "2026-07-03T19:59:05Z"
+  },
+  "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean::habiro_expansion_atomic::proof-no-trivial-true": {
+   "category": "proof-no-trivial-true",
+   "pattern": "exists-true-tautology",
+   "line": 174,
+   "verdict": "legit",
+   "file_sha": "36e61eceb7f8",
+   "disposition": "no-fix",
+   "evidence": "Derives the witness from the CITED external axiom habiro_expansion_exists (Habiro 2002) via rcases; existential-of-structure = Nonempty packaging. Resting on a cited upstream axiom is the sanctioned pattern.",
+   "reviewer": "agent",
+   "reviewed_at": "2026-07-03T19:59:05Z"
+  },
+  "content/quantum-observable-universe/mass-theory/knot-operator-lp-selection.lean::knot_operator_lp_selection::proof-no-trivial-true": {
+   "category": "proof-no-trivial-true",
+   "pattern": "exists-true-tautology",
+   "line": 116,
+   "verdict": "genuine",
+   "file_sha": "f8af9f73757a",
+   "disposition": "queued",
+   "evidence": "Theorem concludes 'exists _oStar : ops.Op, True' by projecting the class field selectionUnique whose own type IS that conclusion — and the conclusion is contentless (inhabitation of Op). Neither optimality nor uniqueness of the active set is encoded. Fix requires designing an LP-optimality predicate (Mathlib lacks LP duality); queued as follow-up, degenerate per AGENTS.md 3b-cond item 5.",
+   "reviewer": "agent",
+   "reviewed_at": "2026-07-03T19:59:05Z"
+  },
+  "content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.lean::CategoricalReebDerivation::proof-claims-unencoded": {
+   "category": "proof-claims-unencoded",
+   "pattern": "docstring-claims-gap",
+   "line": 62,
+   "verdict": "legit",
+   "file_sha": "0eaf50514b42",
+   "disposition": "no-fix",
+   "evidence": "Detector false positive: both enumerated properties ARE encoded as Prop fields (reeb_normalizes : reeb >> contact = contact; reeb_periodic : (reeb : End obj)^period = 1). The third (Leibniz) is explicitly documented as deferred to the preadditive specialisation.",
+   "reviewer": "agent",
+   "reviewed_at": "2026-07-03T19:59:05Z"
+  },
+  "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean::phi_q_eq_aj_saddle_root_of_unity::proof-no-self-assuming-projection": {
+   "category": "proof-no-self-assuming-projection",
+   "pattern": "field-projection",
+   "line": 117,
+   "verdict": "genuine",
+   "file_sha": "9bfe63baa895",
+   "disposition": "owner-signoff",
+   "evidence": "Proof is := inst.regime_eq — verbatim projection of the class field that IS the conclusion; and the 'conclusion' is a String-label equation (archimedean_regime = \"root_of_unity\") carrying no mathematics: any instance <\"root_of_unity\", rfl> satisfies it. The real identification (Phi_q is the AJ saddle at root of unity) is nowhere encoded. Block is prop:phi-q-aj-machinery-identification (provable kind) — honest fix is encoding real saddle content or demoting to conjecture; kind change needs owner sign-off.",
+   "reviewer": "agent",
+   "reviewed_at": "2026-07-03T19:59:05Z"
+  },
+  "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean::li2_q_eq_aj_saddle_real::proof-no-self-assuming-projection": {
+   "category": "proof-no-self-assuming-projection",
+   "pattern": "field-projection",
+   "line": 127,
+   "verdict": "genuine",
+   "file_sha": "9bfe63baa895",
+   "disposition": "owner-signoff",
+   "evidence": "Same as sibling: := inst.regime_eq projects a String-label equation (\"real_positive\"); trivially satisfiable class, no mathematical content. Same disposition — encode real content or demote; owner sign-off needed.",
+   "reviewer": "agent",
+   "reviewed_at": "2026-07-03T19:59:05Z"
   }
+ }
 }
