@@ -35,6 +35,7 @@ from __future__ import annotations
 import _path_bridge  # noqa: F401, E402
 import json
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -42,7 +43,8 @@ import mpmath as mp
 
 from phase5_n8_dim_q_table import hook_lengths, partitions_of  # noqa: E402
 
-DPS = 50
+COMPUTE_DPS = 70   # guard digits over the serialized precision (witness precisionMetadata)
+DPS = 50           # serialized output digits
 WITNESS_IN = Path(__file__).with_name("binding-bar-even-odd-probe.witness.json")
 ISOTOPES = {"2H": 2, "3H": 3, "3He": 3, "4He": 4}  # iso -> A
 
@@ -75,7 +77,8 @@ def channel_energies(n: int, q0: mp.mpf, e0: mp.mpf) -> tuple[mp.mpf, mp.mpf]:
 
 
 def main() -> int:
-    mp.mp.dps = DPS
+    start = time.monotonic()
+    mp.mp.dps = COMPUTE_DPS
     src = json.loads(WITNESS_IN.read_text())
     q0 = mp.mpf(src["constants"]["q_0"])
     e0 = mp.mpf(src["constants"]["E0_MeV"])
@@ -124,7 +127,7 @@ def main() -> int:
                         "residuals from the 2026-06-30 witness."),
         "audit_only": True,
         "tier": "shape-probe (parameter-free; no fit, no wiring)",
-        "precision_dps": DPS,
+        "precision_dps": {"compute": COMPUTE_DPS, "serialized": DPS},
         "source_witness": WITNESS_IN.name,
         "constants": {"q_0": mp.nstr(q0, 20), "E0_MeV": mp.nstr(e0, 20)},
         "per_strand_energies": {
@@ -140,7 +143,7 @@ def main() -> int:
     from witness_base import WitnessBuilder  # noqa: E402
     out = WitnessBuilder.wrap_legacy(
         "zero-point-channel-energy-probe", witness,
-        script_path=__file__, engine="mpmath",
+        script_path=__file__, engine="mpmath", start_time=start,
     ).save()
     print(f"\n  Witness: {out}")
     return 0
