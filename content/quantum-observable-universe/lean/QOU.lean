@@ -255,9 +255,12 @@ import QOU.Conjectures.QuantumLanglandsDual
 
 -- Identity-I / RSK infrastructure (verified library files; wired in for CI build coverage).
 import QOU.Mathlib.PartitionListBridge
+import QOU.Mathlib.PartitionsOfBridge
 import QOU.Mathlib.StandardYoungTableau
 import QOU.Mathlib.RSKBurnsideTarget
 import QOU.Mathlib.StandardYoungTableauBot
+import QOU.Mathlib.RSKSubstrateInstances
+import QOU.Mathlib.IdentityIHLFBridge
 import QOU.Mathlib.SchenstedInsertion
 import QOU.Mathlib.SchenstedTableau
 import QOU.Mathlib.SchenstedRecording

@@ -3,6 +3,7 @@
 title: 'Remap stale imports: models-of-qous (5) + lifting-and-descent (5) + braids-and-knots (5) siblings'
 status: completed
 type: task
+priority: normal
 created_at: 2026-06-30T23:32:53Z
 updated_at: 2026-07-05T05:05:00Z
 ---
