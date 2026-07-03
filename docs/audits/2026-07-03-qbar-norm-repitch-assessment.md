@@ -113,39 +113,44 @@ decomposition c_λ = y_λ·tr(ρ_λ(W)ρ_λ(W^♯)) and (ii) the genuine bar-par
 split G_± = ½(G(q₀) ± G(q₀⁻¹)) with word/weights/representation all
 evaluated through the q-parameterised path on both legs.
 
-**Per-λ decomposition (²H–³He):**
+**Per-λ decomposition (²H–⁴He):**
 
 | iso | selfconj share atom | selfconj share free | chiral-anti share atom | chiral-anti share free | top Δc_λ receivers |
 |---|--:|--:|--:|--:|:--|
 | ²H | 0.136 | 0.129 | 0.435 | 0.439 | (5,1): +0.101; (3,2,1): +0.045; (4,2): −0.039 |
 | ³H | 0.0034 | 0.0032 | 0.558 | 0.555 | (6,3): −0.224; (5,4): −0.173; (5,3,1): −0.084 |
 | ³He | 0.0026 | 0.0029 | 0.547 | 0.551 | (6,3): +0.328; (7,2): +0.301; (5,3,1): +0.210 |
+| ⁴He | 0.0107 | 0.0104 | 0.714 | 0.713 | (8,3,1): +0.229; (7,4,1): +0.191; (6,4,2): +0.189 |
 
 - **The self-conjugate stratum does NOT dominate** — its share of G is
-  small (13.6% at n = 6, ~0.3% at n = 9) and essentially unchanged by
+  small (13.6% at n = 6, ≲ 1% at n = 9, 12) and essentially unchanged by
   binding. The redistribution happens in the chiral pairs.
-- Over half of G sits in the **block-level bar-odd content** (the
-  antisymmetric ½|c_λ − c_λ′| over chiral pairs), again nearly binding-
-  invariant in aggregate.
+- Over half of G (up to 71% at n = 12) sits in the **block-level bar-odd
+  content** (the antisymmetric ½|c_λ − c_λ′| over chiral pairs), again
+  nearly binding-invariant in aggregate.
 - **Mirror antisymmetry at block level:** ³H and ³He push amplitude
   through the *same* blocks in *opposite* directions — (6,3) receives
   −0.224 under ³H binding and +0.328 under ³He binding (likewise (5,3,1)).
   The pp↔nn interface swap acts as a sign flip on the block-level
   redistribution.
 
-**Bar-parity split of G (²H–³He):**
+**Bar-parity split of G (²H–⁴He):**
 
 | iso | odd/even atom | odd/even free | Δ under binding |
 |---|--:|--:|:--|
 | ²H | 0.34031 | 0.34033 | ≈ 0 (parity-neutral to 6e−5) |
 | ³H | 0.3585 | 0.4426 | binding **suppresses** the odd channel |
 | ³He | 0.5997 | 0.5284 | binding **enhances** the odd channel |
+| ⁴He | 0.6128 | 0.6100 | ≈ 0 (parity-neutral to 3e−3) |
 
-The deuteron binds bar-parity-neutrally; the A = 3 mirror pair splits
-antisymmetrically — ³H sheds bar-odd (decay-channel) weight under binding
-while ³He gains it. Recorded as an observation (no production wire, no
-interpretation beyond the pp↔nn sign flip already visible in the per-λ
-table). ⁴He rows: pending the `--qbar --with-4he` run.
+**Pattern: bar-parity loading under binding is an isospin-asymmetry
+effect.** The N = Z isotopes (²H, ⁴He) bind bar-parity-neutrally — the
+odd/even ratio of the Gram norm is unchanged by binding to 6e−5 (²H) /
+3e−3 (⁴He) — while the N ≠ Z mirror pair splits antisymmetrically: ³H
+(n-rich, β⁻ emitter) sheds bar-odd (decay-channel) weight under binding
+and ³He (p-rich, stable) gains it. Consistent with the pp↔nn sign flip
+in the per-λ table. Recorded as an observation only (no production wire,
+no mechanism claim).
 
 ## 4. Cross-references
 
