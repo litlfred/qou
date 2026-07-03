@@ -6072,6 +6072,53 @@ export const references: CSLData[] = [
     note: "h_n(x|q) = i^{-n} H_n(ix|q^{-1}): same eigenfunctions after the 90-degree variable rotation composed with the bar involution; the odd-channel (non-compact) orthogonality is an indeterminate moment problem.",
   }),
 
+  // ── Atakishiyev–Suslov 1990 (q-oscillator: difference analogue of the harmonic oscillator) ──
+  ref({
+    id: "atakishiyev-suslov1990",
+    type: "article-journal",
+    title: "Difference analogs of the harmonic oscillator",
+    author: [
+      { family: "Atakishiyev", given: "Natig M." },
+      { family: "Suslov", given: "Sergei K." },
+    ],
+    "container-title": "Theoretical and Mathematical Physics",
+    volume: "85",
+    page: "1055-1062",
+    issued: { "date-parts": [[1990]] },
+    DOI: "10.1007/BF01017247",
+    URL: "https://doi.org/10.1007/BF01017247",
+    note: "The q-harmonic oscillator: second-order q-difference eigenproblem replacing the Schrodinger operator, with continuous q-Hermite bound states and q-integer spectrum — the QOU analogue home of the oscillator equation (parabolic-cylinder channel-interpolation audit, 2026-07-03).",
+  }),
+
+  // ── DLMF ch. 12 (parabolic cylinder functions D_nu: Weber equation, Gamma-pole parity selection) ──
+  ref({
+    id: "dlmf-ch12",
+    type: "chapter",
+    title: "Parabolic Cylinder Functions (Chapter 12)",
+    author: [{ family: "Temme", given: "Nico M." }],
+    "container-title":
+      "NIST Digital Library of Mathematical Functions (release 1.2.x)",
+    publisher: "National Institute of Standards and Technology",
+    URL: "https://dlmf.nist.gov/12",
+    issued: { "date-parts": [[2024]] },
+    note: "Canonical reference for D_nu(z): Weber equation, the even/odd solution pair, and the connection formula whose 1/Gamma((1-nu)/2), 1/Gamma(-nu/2) coefficients implement parity selection by pole-vanishing at integer nu — the classical mechanism transported to the QOU even/odd (bar-parity) channel interpolation.",
+  }),
+
+  // ── Deligne 2007 (Rep(S_t) at non-integer t: interpolated tensor categories) ──
+  ref({
+    id: "deligne2007",
+    type: "chapter",
+    title:
+      "La catégorie des représentations du groupe symétrique S_t, lorsque t n'est pas un entier naturel",
+    author: [{ family: "Deligne", given: "Pierre" }],
+    "container-title":
+      "Algebraic Groups and Homogeneous Spaces (TIFR Studies in Mathematics)",
+    publisher: "Tata Institute of Fundamental Research / Narosa",
+    page: "209-273",
+    issued: { "date-parts": [[2007]] },
+    note: "Interpolated tensor category Rep(S_t) at non-integer t; with generic-parameter Temperley-Lieb, the categorical machine for a continuous tower level nu — the categorical face of the parabolic-cylinder D_nu interpolation of the even/odd channel towers (2026-07-03 audit §8).",
+  }),
+
   // ── Zhedanov 1991 (AW(3): hidden symmetry of Askey–Wilson polynomials) ──
   ref({
     id: "zhedanov1991",
