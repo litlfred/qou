@@ -24,7 +24,12 @@ Extract the universal per-body-order weights from the four AME anchors
 | `w_2` | D (A=2, only n=2) | 4.353 |
 | `w_3` | ³H (A=3) | **9.159** |
 | `w_3` | ³He (A=3) | **8.041** |
-| `w_4` | ⁴He (A=4) | 15.309 |
+| `w_4` | ⁴He (A=4) — *conditional*† | 15.604 |
+
+†`w_4` is only defined *after* choosing the `w_3` to subtract; since universality is
+already refuted at A=3, there is no unambiguous universal `w_4`. The value shown uses
+the isospin-symmetric mirror average `w_3=(w_3^{³H}+w_3^{³He})/2` (⁴He has T₃=0), for
+completeness — it is **not** a well-defined universal weight.
 
 The **mirror pair** ³H (Z=1,N=2) and ³He (Z=2,N=1) have the same `A=3` and the same
 body orders `{2,3}`, so a *universal scalar* `w_n` forces `w_3(³H)=w_3(³He)`.
