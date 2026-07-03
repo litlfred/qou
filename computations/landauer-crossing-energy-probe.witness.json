@@ -1,0 +1,80 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-03T22:43:08.669957+00:00",
+  "commitSha": "fef8320cf455b24de06fb4aea1ad248f90c0c841",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 244,
+  "computation": "landauer-crossing-energy-probe",
+  "scriptFile": "landauer_crossing_energy_probe.py",
+  "scriptHash": "e31521e683d5",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Landauer tier-1 probe: implied per-q-bit energy kT_eff = E_H/(l*eta_q) for p/n (Borromean, 6 crossings) vs canonical substrate scales; tiered ratios, no fit.",
+  "audit_only": true,
+  "tier": "shape-probe (parameter-free; tiered ratio reporting)",
+  "precision_dps": {
+    "compute": 70,
+    "serialized": 50
+  },
+  "constants": {
+    "q_0": "1.1099785955573347",
+    "eta_q": "0.89207378903449065269",
+    "hbar_q": "0.09908172643825894293",
+    "E0_MeV": "4.1859808275828917468",
+    "crossings": 6
+  },
+  "scales_MeV": {
+    "m_e_cq2": "52.051455461205550128",
+    "m_mu_pred": "105.65837549567328006",
+    "E0": "4.1859808275828917468",
+    "m_e_over_hbar_q": "5.1573480707203877958",
+    "E0_cq2": "426.39303723457757251"
+  },
+  "hadrons": {
+    "proton": {
+      "m_H_MeV": "938.2720881603788",
+      "E_H_MeV": "95574.418971753142330579743433519507143757473686486",
+      "info_qbits": "5.3524427342069439161621260836629547467600964688742",
+      "kT_eff_MeV_per_qbit": "17856.224478768595323952017403426599699794993637568",
+      "ratio_vs_scale": {
+        "m_e_cq2": "343.049475189",
+        "m_mu_pred": "168.999612146",
+        "E0": "4265.72055971",
+        "m_e_over_hbar_q": "3462.28802747",
+        "E0_cq2": "41.8773828827"
+      }
+    },
+    "neutron": {
+      "m_H_MeV": "939.565421496897",
+      "E_H_MeV": "95706.160695432550414705143676164552725681935940388",
+      "info_qbits": "5.3524427342069439161621260836629547467600964688742",
+      "kT_eff_MeV_per_qbit": "17880.837861895043266670205541784141851933821346458",
+      "ratio_vs_scale": {
+        "m_e_cq2": "343.522341565",
+        "m_mu_pred": "169.23256465",
+        "E0": "4271.60051572",
+        "m_e_over_hbar_q": "3467.06051573",
+        "E0_cq2": "41.9351075193"
+      }
+    }
+  },
+  "near_matches_5pct": {
+    "proton": [],
+    "neutron": []
+  },
+  "timestamp": "2026-07-03T22:43:06+00:00"
+}
