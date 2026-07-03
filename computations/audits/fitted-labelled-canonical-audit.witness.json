@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-03T23:44:17.161637+00:00",
-  "commitSha": "cabcf20cf156c7f58b83958b891b1593a7f4b0a0",
+  "computedAt": "2026-07-04T00:04:55.352199+00:00",
+  "commitSha": "aa737395749c1928af72904ea603027d80ca37d4",
   "assertions": [
     {
       "name": "no_fitted_labelled_canonical",
@@ -13,7 +13,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 19,
+  "durationMs": 11,
   "computation": "fitted-labelled-canonical-audit",
   "scriptFile": "fitted_labelled_canonical_audit.py",
   "scriptHash": "34338951a64d",
@@ -26,17 +26,15 @@
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
   },
   "description": "Audits production scripts in computations/ for the CAL-4-disguised-as-canonical pattern: a hardcoded numerical literal at module level combined with a 'substrate/canonical/derived' claim in the docstring, where neither the variable name nor the surrounding context tags the literal as validation/CODATA/acknowledged. Introduced 2026-05-22 after the LAMBDA_PROTON_DOC discovery in m_p_borromean_verification_50dps.py (see docs/canonical-derivation-cheat-sheet.md §5 fix #1).",
   "contentBlock": "prop:three-calibration-inputs",
   "data": {
     "total_issues": 2,
     "flagged_script_count": 2,
-    "scripts_scanned": 1677,
+    "scripts_scanned": 1682,
     "rows": [
       {
         "path": "computations/metallic_q_n4_character_sweep.py",

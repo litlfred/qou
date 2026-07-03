@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-03T23:44:16.073657+00:00",
-  "commitSha": "cabcf20cf156c7f58b83958b891b1593a7f4b0a0",
+  "computedAt": "2026-07-04T00:04:53.903472+00:00",
+  "commitSha": "aa737395749c1928af72904ea603027d80ca37d4",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
@@ -572,10 +572,8 @@
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
   },
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
@@ -3043,6 +3041,8 @@
         "term7-chi5-basis.witness.json",
         "term7-height6-partition-enum.witness.json",
         "terms-2-3-atom-per-gen-mpfr-50dps.witness.json",
+        "theta-wn-jetfilt-linkvolume.witness.json",
+        "theta-wn-kernel-derive-or-refute.witness.json",
         "three-body-joint-trace-a3.witness.json",
         "three-quark-borromean-lp-sweep.witness.json",
         "three-term-wedderburn.witness.json",
