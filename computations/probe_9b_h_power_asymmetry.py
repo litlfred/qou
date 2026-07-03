@@ -63,10 +63,12 @@ from qou_substrate import WitnessBuilder  # noqa: E402
 HERE = Path(__file__).resolve().parent
 PROBE1_WITNESS = HERE / "probe-9b-laurent-degree-10a5.witness.json"
 
-# Residual bounds asserted below (q0-units). M3's worst atom is 4He at
-# -0.272 (inherited from the baseline law; Z=N so the asymmetry factor
-# cannot act); every asymmetry-bearing atom must sit under 0.07.
-M3_BOUND_ASYM_ATOMS = 0.07
+# Residual bounds asserted below (q0-units), matching the two assertions
+# in main(): a tight bound on 3He alone (the only atom where the [Z>N]
+# gate acts, i.e. the outlier M3 is meant to collapse) and a loose bound
+# over all four atoms (dominated by 4He at -0.272, where Z=N leaves the
+# gate inactive).
+M3_BOUND_3HE = 0.07
 M3_BOUND_ALL = 0.35
 
 
@@ -110,7 +112,7 @@ def main() -> int:
     w.add_assertion(
         name="m3_collapses_3He_outlier",
         computed=abs(res3["3He"]["M3_proton_excess_gate"]),
-        expected=0.0, tolerance=M3_BOUND_ASYM_ATOMS,
+        expected=0.0, tolerance=M3_BOUND_3HE,
         source="³He residual under M3 (was +1.40 under the bare law); "
                "κ is the derived closed-form trace asymmetry, not a fit",
     )

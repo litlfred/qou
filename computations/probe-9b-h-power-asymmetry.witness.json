@@ -1,8 +1,8 @@
 {
   "engine": "python-stdlib",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-03T00:20:17.880660+00:00",
-  "commitSha": "be90b615f45460caa2e244e9497191a63268a0f3",
+  "computedAt": "2026-07-03T00:26:32.793443+00:00",
+  "commitSha": "85be8bbe43cb9618981321a3c909e48370eb06d9",
   "assertions": [
     {
       "name": "m3_collapses_3He_outlier",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 13,
   "computation": "probe-9b-h-power-asymmetry",
   "scriptFile": "probe_9b_h_power_asymmetry.py",
-  "scriptHash": "7f539e63b742",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b5f2a9aeb948",
+  "scriptCommitSha": "85be8bbe43cb9618981321a3c909e48370eb06d9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
