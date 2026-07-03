@@ -110,12 +110,22 @@ def _word_products(word, dim, sigmas):
     return fwd, rev
 
 
-def _gram_and_trace(word, n, y):
-    """(G, T, T_rev) = (Σ y_λ tr(ρWρW^♯), Σ y_λ tr(ρW), Σ y_λ tr(ρW^♯))."""
+def _conj(lam):
+    """Conjugate partition λ′."""
+    lam = tuple(lam)
+    return tuple(sum(1 for row in lam if row > j) for j in range(lam[0]))
+
+
+def _gram_and_trace(word, n, y, q=None):
+    """(G, T, T_rev, per_lam): the aggregates Σ y_λ tr(ρWρW^♯) /
+    Σ y_λ tr(ρW) / Σ y_λ tr(ρW^♯), plus the per-λ contribution map
+    {λ: c_λ = y_λ·tr(ρ_λ(W)ρ_λ(W^♯))} for the block-decomposition
+    analysis. `q=None` uses the module-default substrate q₀."""
     G = T = Trev = 0.0
+    per_lam = {}
     t0 = time.time()
     for lam in partitions_of(n):
-        res = build_seminormal_matrices(lam)
+        res = build_seminormal_matrices(lam, q=q)
         sigmas, dim = res[0], res[1]
         if dim == 0:
             continue
@@ -127,10 +137,31 @@ def _gram_and_trace(word, n, y):
         G += yl * chi_sharp
         T += yl * chi
         Trev += yl * chi_rev
+        per_lam[tuple(lam)] = yl * chi_sharp
         if dim > 500:
             print(f"      λ={tuple(lam)} d={dim} done "
                   f"({time.time()-t0:.1f}s elapsed)", flush=True)
-    return G, T, Trev
+    return G, T, Trev, per_lam
+
+
+def _stratum_stats(per_lam, G):
+    """(self-conjugate share of G, chiral-pair antisymmetry share of G).
+
+    Bar sends e_λ ↦ e_λ′ (`prop:hecke-baer-star-generic`), so the
+    self-conjugate blocks are the bar-fixed stratum; the antisymmetric
+    combination ½|c_λ − c_λ′| over chiral pairs is the block-level
+    bar-odd content of the Gram norm at fixed q."""
+    if G == 0.0:
+        return None, None
+    sc = sum(c for lam, c in per_lam.items() if _conj(lam) == lam)
+    seen, anti = set(), 0.0
+    for lam, c in per_lam.items():
+        lc = _conj(lam)
+        if lc == lam or lam in seen:
+            continue
+        seen.add(lc)
+        anti += abs(c - per_lam.get(lc, 0.0)) / 2.0
+    return sc / G, anti / abs(G)
 
 
 def _ame_and_alpha():
@@ -143,6 +174,9 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--with-4he", action="store_true",
                     help="include ⁴He (n=12, d_max=7700; ~1 GB peak, minutes)")
+    ap.add_argument("--qbar", action="store_true",
+                    help="also evaluate G at q₀⁻¹ (q-parameterised word/y/ρ) "
+                         "and report the bar-parity even/odd split of G")
     args = ap.parse_args()
     isotopes = ISOTOPES + ([ISO_4HE] if args.with_4he else [])
 
@@ -157,8 +191,38 @@ def main() -> int:
         y = y_lambda_at(n, q_val=float(Q0))
         w_atom = atom_braid_word_3A(Z, N, include_inter=True)
         w_free = atom_braid_word_3A(Z, N, include_inter=False)
-        Ga, Ta, Ta_rev = _gram_and_trace(w_atom, n, y)
-        Gf, Tf, Tf_rev = _gram_and_trace(w_free, n, y)
+        Ga, Ta, Ta_rev, pl_a = _gram_and_trace(w_atom, n, y)
+        Gf, Tf, Tf_rev, pl_f = _gram_and_trace(w_free, n, y)
+        # per-λ redistribution: which blocks receive amplitude under binding
+        sc_a, anti_a = _stratum_stats(pl_a, Ga)
+        sc_f, anti_f = _stratum_stats(pl_f, Gf)
+        delta = {lam: pl_a[lam] - pl_f.get(lam, 0.0) for lam in pl_a}
+        top_recv = sorted(delta.items(), key=lambda kv: -abs(kv[1]))[:3]
+        # bar-parity split of G: rerun the whole pipeline at q₀⁻¹ through the
+        # q-parameterised path. NB the q-explicit word uses the proven leading
+        # flavor split (not the baked canonical δ), so both bar legs use the
+        # SAME q-explicit path for internal consistency.
+        qbar = {}
+        if args.qbar:
+            import mpmath as _mp
+            q0m = _mp.mpf(str(Q0))
+            legs = {}
+            for tag, qv in (("q0", q0m), ("qi", 1 / q0m)):
+                yq = y_lambda_at(n, q_val=float(qv))
+                wa = atom_braid_word_3A(Z, N, include_inter=True, q=qv)
+                wf = atom_braid_word_3A(Z, N, include_inter=False, q=qv)
+                Gaq = _gram_and_trace(wa, n, yq, q=float(qv))[0]
+                Gfq = _gram_and_trace(wf, n, yq, q=float(qv))[0]
+                legs[tag] = (Gaq, Gfq)
+            (Ga0, Gf0), (Gai, Gfi) = legs["q0"], legs["qi"]
+            qbar = {
+                "G_atom_even": (Ga0 + Gai) / 2, "G_atom_odd": (Ga0 - Gai) / 2,
+                "G_free_even": (Gf0 + Gfi) / 2, "G_free_odd": (Gf0 - Gfi) / 2,
+            }
+            qbar["odd_frac_atom"] = (abs(qbar["G_atom_odd"] / qbar["G_atom_even"])
+                                     if qbar["G_atom_even"] != 0.0 else None)
+            qbar["odd_frac_free"] = (abs(qbar["G_free_odd"] / qbar["G_free_even"])
+                                     if qbar["G_free_even"] != 0.0 else None)
         # cross-check the linear trace against the 50-dps transfer engine
         ta50, tf50, _, _ = tr_m_atom_zn(Z, N, dps=50)
         xa = abs(Ta - float(ta50)) / abs(float(ta50))
@@ -186,6 +250,11 @@ def main() -> int:
             "err_gram": (bame / B_gram
                          if (bame is not None and B_gram is not None
                              and B_gram != 0.0) else None),
+            "selfconj_share_atom": sc_a, "selfconj_share_free": sc_f,
+            "chiral_anti_share_atom": anti_a, "chiral_anti_share_free": anti_f,
+            "top_receivers": [{"lam": list(lam), "delta_c": dc}
+                              for lam, dc in top_recv],
+            "qbar": qbar,
             "wall_sec": round(time.time() - t0, 2),
         })
         print(f"      G_atom={Ga:.6f} G_free={Gf:.6f} "
@@ -202,6 +271,34 @@ def main() -> int:
               f"| {f(r['err_sym'],2)} | {f(r['B_gram'])} | {f(r['err_gram'],2)} "
               f"| {f(r['r_gram_sym'],4)} | {f(r['gram_over_tr2_atom'],6)} "
               f"| {f(r['gram_over_tr2_free'],6)} |")
+
+    print("\n| iso | selfconj share atom | selfconj share free "
+          "| chiral-anti share atom | chiral-anti share free | top Δc_λ receivers |")
+    print("|---|--:|--:|--:|--:|:--|")
+    for r in rows:
+        def f2(v):
+            return f"{v:.4f}" if v is not None else "—"
+        tops = "; ".join(f"{tuple(t['lam'])}: {t['delta_c']:+.4f}"
+                         for t in r["top_receivers"])
+        print(f"| {r['iso']} | {f2(r['selfconj_share_atom'])} "
+              f"| {f2(r['selfconj_share_free'])} "
+              f"| {f2(r['chiral_anti_share_atom'])} "
+              f"| {f2(r['chiral_anti_share_free'])} | {tops} |")
+
+    if args.qbar:
+        print("\n| iso | G_even atom | G_odd atom | odd/even atom "
+              "| G_even free | G_odd free | odd/even free |")
+        print("|---|--:|--:|--:|--:|--:|--:|")
+        for r in rows:
+            qb = r["qbar"]
+            if not qb:
+                continue
+            def f3(v):
+                return f"{v:.6f}" if v is not None else "—"
+            print(f"| {r['iso']} | {f3(qb['G_atom_even'])} "
+                  f"| {f3(qb['G_atom_odd'])} | {f3(qb['odd_frac_atom'])} "
+                  f"| {f3(qb['G_free_even'])} | {f3(qb['G_free_odd'])} "
+                  f"| {f3(qb['odd_frac_free'])} |")
 
     builder = WitnessBuilder("gram-norm-binding-probe", engine="python")
     builder.set_description(
