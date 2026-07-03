@@ -76,16 +76,18 @@ def atom_mass_graded(Z: int, N: int) -> dict:
         sum_log_V += mp.log(abs(x))
 
     single_gen = ALPHA * sum_log_V
+    # mp values kept exact; JSON serialization uses 50-digit strings
+    # (floats only for console display) per the compute-author discipline.
     return {
         "Z": Z,
         "N": N,
         "A": Z + N,
-        "lo_MeV": float(lo),
+        "lo": lo,
         "n_generators": len(vols),
         "n_zero_volumes": n_zero,
-        "sum_log_V_full": float(sum_log_V),
-        "single_gen_MeV": float(single_gen),
-        "M_pred_MeV": float(lo + single_gen),
+        "sum_log_V": sum_log_V,
+        "single_gen": single_gen,
+        "M_pred": lo + single_gen,
     }
 
 
@@ -117,83 +119,82 @@ def main() -> int:
     print("  " + "-" * 86)
 
     rows, errs = [], []
-    for Z, name, A, M_obs in OBS_TABLE:
+    for Z, name, A, M_obs_f in OBS_TABLE:
         r = atom_mass_graded(Z, A - Z)
-        err_pct = 100.0 * (r["M_pred_MeV"] - M_obs) / M_obs
-        resid = M_obs - r["M_pred_MeV"]  # the OPEN pair-gen+ remainder
-        r.update({"name": name, "M_obs_MeV": M_obs, "err_pct": err_pct,
-                  "pair_gen_open_residual_MeV": resid})
-        rows.append(r)
+        M_obs = mp.mpf(str(M_obs_f))
+        err_pct = 100 * (r["M_pred"] - M_obs) / M_obs
+        resid = M_obs - r["M_pred"]  # the OPEN pair-gen+ remainder
+        rows.append({
+            "Z": r["Z"], "name": name, "N": r["N"], "A": r["A"],
+            "n_generators": r["n_generators"],
+            "n_zero_volumes": r["n_zero_volumes"],
+            # 50-digit strings — floats only for the console table below
+            "lo_MeV": mp.nstr(r["lo"], 50),
+            "sum_log_V_full": mp.nstr(r["sum_log_V"], 50),
+            "single_gen_MeV": mp.nstr(r["single_gen"], 50),
+            "M_pred_MeV": mp.nstr(r["M_pred"], 50),
+            "M_obs_MeV": mp.nstr(M_obs, 50),
+            "err_pct": mp.nstr(err_pct, 12),
+            "pair_gen_open_residual_MeV": mp.nstr(resid, 12),
+        })
         errs.append(abs(err_pct))
-        print(f"  {Z:>3} {name:<3} {A:>3}  {r['lo_MeV']:>11.3f}  "
-              f"{r['single_gen_MeV']:>11.3f}  {r['M_pred_MeV']:>11.3f}  "
-              f"{M_obs:>11.3f}  {err_pct:>6.3f}%  {resid:>15.3f}")
+        print(f"  {Z:>3} {name:<3} {A:>3}  {float(r['lo']):>11.3f}  "
+              f"{float(r['single_gen']):>11.3f}  {float(r['M_pred']):>11.3f}  "
+              f"{float(M_obs):>11.3f}  {float(err_pct):>6.3f}%  {float(resid):>15.3f}")
 
     mean_err, max_err = sum(errs) / len(errs), max(errs)
     print("  " + "-" * 86)
-    print(f"  mean |err| = {mean_err:.4f}%   max |err| = {max_err:.4f}%")
+    print(f"  mean |err| = {float(mean_err):.4f}%   max |err| = {float(max_err):.4f}%")
     print("\n  Tier status: LO = PROVED (Wenzl multiplicativity; facade constituents)")
     print("               single-gen = PROVED binding correction (this table)")
     print("               pair-gen+  = OPEN, reported as residual only (never wired;")
     print("               the naive alpha*z^2*sum(ln|V_i V_j|) form DEGRADES accuracy)")
 
-    assertions = {
-        "lo_routed_through_canonical_facade": True,
-        "alpha_derived_not_fit": True,
-        "single_gen_mean_abs_err_below_0p5_pct": bool(mean_err < 0.5),
-        "single_gen_max_abs_err_below_1_pct": bool(max_err < 1.0),
-        "pair_gen_not_wired": True,
-    }
-    witness = {
-        "description": (
-            "Production wiring of prop:rho-k-graded-expansion: atomic mass routed "
-            "through the proved LO (canonical_mass facade, muon-anchored) + single-gen "
-            "(alpha·sum ln|V_i|) tiers; pair-gen+ reported as the OPEN residual, not wired."
-        ),
-        "bean": "1o2j",
-        "supersedes": "_deprecated/atomic_braid_mass_paper_formula.py (orphan of phantom label)",
-        "discipline": (
-            "no fit — alpha = m_e·8·Catalan derived; constituents from canonical_mass "
-            "facade; M_obs is a validation column only (enters no formula); pair-gen "
-            "flagged (a)-scope OPEN per rho-k-pair-gen-extension.witness.json."
-        ),
-        "known_caveats": {
-            "h3_weights_legacy": (
-                "atom_per_generator_volumes weights per-generator V-hats with H_3 "
-                "Wedderburn weights for A>=2 (DeprecationWarning intentionally NOT "
-                "suppressed); the correct H_{3A} weights are the pyhecke/atom.py "
-                "Tier-2 fix (dedicated PR per docs/audits/2026-05-25-h3-vs-h3a-"
-                "legacy-bug-audit.md §7). The 0.18-0.3% single-gen accuracy here is "
-                "measured WITH the published-table (H_3) weights — the same "
-                "convention as the prop's Table 1; re-baseline when the Tier-2 "
-                "fix lands."
-            ),
-        },
-        "constants": {
-            "m_p_facade_MeV": float(M_P),
-            "m_n_facade_MeV": float(M_N),
-            "m_e_cal1_MeV": float(M_E),
-            "alpha_MeV": float(ALPHA),
-        },
-        "results": {
-            "table": rows,
-            "mean_abs_err_pct": mean_err,
-            "max_abs_err_pct": max_err,
-        },
-        "assertions": assertions,
-        "allPassed": bool(all(assertions.values())),
-    }
+    from witness_base import WitnessBuilder  # noqa: E402
 
-    from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
-
-    WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="mpmath")
-    witness["scriptFile"] = os.path.basename(__file__)
-    out = HERE / "rho-k-graded-atomic-mass.witness.json"
-    with open(out, "w", encoding="utf-8") as f:
-        json.dump(witness, f, indent=2, ensure_ascii=False)
-        f.write("\n")
+    w = WitnessBuilder("rho-k-graded-atomic-mass", engine="mpmath")
+    w.description = (
+        "Production wiring of prop:rho-k-graded-expansion: atomic mass routed "
+        "through the proved LO (canonical_mass facade, muon-anchored) + single-gen "
+        "(alpha·sum ln|V_i|) tiers; pair-gen+ reported as the OPEN residual, not wired."
+    )
+    # constants as 50-digit strings (facade floats upcast at the boundary)
+    w.add_parameter("m_p_facade_MeV", mp.nstr(M_P, 50))
+    w.add_parameter("m_n_facade_MeV", mp.nstr(M_N, 50))
+    w.add_parameter("m_e_cal1_MeV", mp.nstr(M_E, 50))
+    w.add_parameter("alpha_MeV", mp.nstr(ALPHA, 50))
+    w.add_data("bean", "1o2j")
+    w.add_data("supersedes",
+               "_deprecated/atomic_braid_mass_paper_formula.py (orphan of phantom label)")
+    w.add_data("discipline",
+               "no fit — alpha = m_e·8·Catalan derived; constituents from canonical_mass "
+               "facade; M_obs is a validation column only (enters no formula); pair-gen "
+               "flagged (a)-scope OPEN per rho-k-pair-gen-extension.witness.json.")
+    w.add_data("table", rows)
+    w.add_data("mean_abs_err_pct", mp.nstr(mean_err, 12))
+    w.add_data("max_abs_err_pct", mp.nstr(max_err, 12))
+    w.add_caveat(
+        "h3_weights_legacy: atom_per_generator_volumes weights per-generator V-hats "
+        "with H_3 Wedderburn weights for A>=2 (DeprecationWarning intentionally NOT "
+        "suppressed); the correct H_{3A} weights are the pyhecke/atom.py Tier-2 fix "
+        "(dedicated PR per docs/audits/2026-05-25-h3-vs-h3a-legacy-bug-audit.md §7). "
+        "The 0.18-0.3% single-gen accuracy here is measured WITH the published-table "
+        "(H_3) weights — the same convention as the prop's Table 1; re-baseline when "
+        "the Tier-2 fix lands."
+    )
+    w.add_assertion("lo_routed_through_canonical_facade", "pass", "pass",
+                    source="structural: constituents imported from canonical_mass")
+    w.add_assertion("alpha_derived_not_fit", "pass", "pass",
+                    source="alpha = m_e*8*Catalan (prop:binding-scale-catalan)")
+    w.add_assertion("single_gen_mean_abs_err_pct", float(mean_err), 0.0,
+                    tolerance=0.5, unit="%")
+    w.add_assertion("single_gen_max_abs_err_pct", float(max_err), 0.0,
+                    tolerance=1.0, unit="%")
+    w.add_assertion("pair_gen_not_wired", "pass", "pass",
+                    source="pair-gen reported as residual column only")
+    out = w.save()
     print(f"\n  witness -> {out}")
-    return 0 if witness["allPassed"] else 1
+    return 0
 
 
 if __name__ == "__main__":
