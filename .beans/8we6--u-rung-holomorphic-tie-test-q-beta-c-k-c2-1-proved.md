@@ -1,10 +1,11 @@
 ---
 # 8we6
 title: 'u-rung tie decision: genuine c4 rungs — H4 Hoefsmit build for c4^even + c4^odd beyond CAL-anchor (Casoratian W3 sign test)'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-07-02T12:03:38Z
-updated_at: 2026-07-02T16:55:00Z
+updated_at: 2026-07-03T00:16:13Z
 ---
 
 ## 2026-07-02 — re-scoped after sibling 1jrh execution (supersedes original scope)
