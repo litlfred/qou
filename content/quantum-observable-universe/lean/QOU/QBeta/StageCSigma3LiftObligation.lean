@@ -51,7 +51,7 @@ Base ring: generic `[CommRing R]` for the carrier and the Casoratian algebra;
 the sign section adds `[LinearOrder R] [IsStrictOrderedRing R]` (ordering is
 genuinely required for a sign test — §7c).  Sorry-free; no fit; no Λ candidate.
 
--- Ref: [gasper-rahman2004] Basic Hypergeometric Series, 2nd ed., CUP 2004
+-- Ref: [gasper-rahman-2004] Basic Hypergeometric Series, 2nd ed., CUP 2004
 --      (three-term recurrences and Casoratian positivity for orthogonal
 --      polynomial systems, §7.7 Askey–Wilson).
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 (Markov trace weights).
