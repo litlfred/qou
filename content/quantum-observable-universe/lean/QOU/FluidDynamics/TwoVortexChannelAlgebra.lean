@@ -94,6 +94,19 @@ theorem eigenvalue_ratio {K : Type*} [Field K] (q : K) :
     (-q⁻¹) / q = -(q ^ 2)⁻¹ := by
   rw [div_eq_mul_inv, sq, mul_inv, neg_mul]
 
+/-- **The bundled channel-algebra proposition** — the Lean face of
+`prop:two-vortex-channel-algebra`: from the four channel hypotheses (partition,
+orthogonality, inverse witness, spectral form), *all* ring-level conclusions follow —
+derived idempotency of both channels, the spectral square, and the Hecke relation.
+(The eigenvalue-ratio identity is the companion field-level lemma `eigenvalue_ratio`
+above, stated separately because it needs no channel data.) -/
+theorem channel_algebra [inst : TwoVortexChannels σ e₊ e₋ q u] :
+    e₊ * e₊ = e₊ ∧ e₋ * e₋ = e₋ ∧
+    σ ^ 2 = q ^ 2 * e₊ + u ^ 2 * e₋ ∧
+    σ ^ 2 = (q - u) * σ + 1 :=
+  ⟨idem_plus σ e₊ e₋ q u, idem_minus σ e₊ e₋ q u,
+   braiding_sq σ e₊ e₋ q u, hecke_relation σ e₊ e₋ q u⟩
+
 /-- **Non-vacuity.** The one-channel degenerate model (`e₊ = 1`, `e₋ = 0`, `σ = q`)
 inhabits the class for any invertible `q`, so the axiomatisation is consistent. The
 faithful two-channel model lives in the commutant of `σ₁` in `H_2(q)`. -/

@@ -128,16 +128,19 @@ noncomputable def demoD (E O : ℕ → K) : K → ℕ → K :=
   fun ν m => demoA ν * E m + demoB ν * O m
 
 /-- **Non-vacuity.** The demo model inhabits `QWeberFamily` for any pair of towers over
-any field, so the class is consistent (not an empty axiomatisation). -/
-instance demo_family (E O : ℕ → K) :
-    QWeberFamily (demoD E O) E O (demoA (K := K)) (demoB (K := K)) where
-  combination := fun _ _ => rfl
-  A_vanishes_at_odd := fun j => by
-    simp only [demoA]
-    exact if_pos ⟨j, rfl⟩
-  B_vanishes_at_even := fun j => by
-    simp only [demoB]
-    exact if_pos ⟨j, rfl⟩
+any field, so the class is consistent (not an empty axiomatisation). Deliberately a
+`theorem`, not a global `instance`: exporting a default instance of a `Prop` class
+would pollute downstream typeclass search (use `haveI := demo_family E O` locally if
+the instance is wanted). -/
+theorem demo_family (E O : ℕ → K) :
+    QWeberFamily (demoD E O) E O (demoA (K := K)) (demoB (K := K)) :=
+  { combination := fun _ _ => rfl
+    A_vanishes_at_odd := fun j => by
+      simp only [demoA]
+      exact if_pos ⟨j, rfl⟩
+    B_vanishes_at_even := fun j => by
+      simp only [demoB]
+      exact if_pos ⟨j, rfl⟩ }
 
 end DemoModel
 
