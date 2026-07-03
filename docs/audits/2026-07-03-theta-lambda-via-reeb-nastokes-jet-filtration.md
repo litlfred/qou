@@ -73,6 +73,19 @@ and sharpened to the **residue weight `w_n(K)`** (the q-difference kernel `R(q,x
 where the next work goes. The depth-2 SL₂ `τ` (an n≤4 fit) is superseded by the
 super-exponential period for this purpose.
 
+## Lean + paper (the provable core)
+
+The *qualitative* extensivity — the property the intensive phase lacked — is now
+**formalised sorry-free** and in the paper:
+[`QOU.Mass.JetFiltrationExtensive`](../../content/quantum-observable-universe/lean/QOU/Mass/JetFiltrationExtensive.lean)
+proves `jetBinding_mono` (the body-order binding is monotone non-decreasing in the
+cutoff `A`) and `jetBinding_lt_succ` (strictly increasing when a body order
+contributes positively), over generic non-negative period/weight data. Content
+block: [`prop:jet-filtration-binding-extensive`](../../content/quantum-observable-universe/mass-theory/jet-filtration-binding-extensive.md).
+The *quantitative* inputs (super-exponential `a_D^(n)` magnitude, the na-Stokes
+`a_D^(n)=lw(n−1)` keystone, the residue weight `w_n(K)`) are carried as hypotheses,
+**not** derived — the honest scope. Verified `lean`-direct (v4.24.0 + Mathlib).
+
 ## Next (derive-or-refute w_n(K))
 
 1. Extract the empirical `w_n(K)` from the four AME anchors + the two derived anchors
