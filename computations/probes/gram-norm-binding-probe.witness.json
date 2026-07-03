@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-03T06:34:34.114291+00:00",
-  "commitSha": "b6ad63452bde231c4b63505a81b45766673c390c",
+  "computedAt": "2026-07-03T14:09:08.251528+00:00",
+  "commitSha": "91b7fdcee74b25246321212d46e883ac952c7a16",
   "assertions": [
     {
       "name": "linear_trace_matches_transfer_engine",
-      "computed": 5.7658633220803204e-15,
+      "computed": 4.533870831057452e-15,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-08,
@@ -15,7 +15,7 @@
     },
     {
       "name": "linear_trace_reversal_invariant",
-      "computed": 4.590905677425099e-16,
+      "computed": 2.858767796403015e-16,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-10,
@@ -24,10 +24,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 41,
+  "durationMs": 27,
   "computation": "gram-norm-binding-probe",
   "scriptFile": "gram_norm_binding_probe.py",
-  "scriptHash": "b9a6336a391b",
+  "scriptHash": "df8f76d95d75",
   "scriptCommitSha": "a3809ec62ded18566f0687cecc1c6e26a071b8bf",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -51,8 +51,7 @@
     "isotopes": [
       "2H",
       "3H",
-      "3He",
-      "4He"
+      "3He"
     ],
     "sharp_involution": "word reversal; fixes q and each letter c·σ_g + d·1"
   },
@@ -73,7 +72,43 @@
         "B_AME": 2.2245662000000004,
         "err_sym": 0.5719132172521461,
         "err_gram": -97.3011886711967,
-        "wall_sec": 0.26
+        "selfconj_share_atom": 0.13626116331387553,
+        "selfconj_share_free": 0.12905079355967103,
+        "chiral_anti_share_atom": 0.43463632876596325,
+        "chiral_anti_share_free": 0.43874748958832177,
+        "top_receivers": [
+          {
+            "lam": [
+              5,
+              1
+            ],
+            "delta_c": 0.10084051455897192
+          },
+          {
+            "lam": [
+              3,
+              2,
+              1
+            ],
+            "delta_c": 0.0450269515248084
+          },
+          {
+            "lam": [
+              4,
+              2
+            ],
+            "delta_c": -0.03893221415229764
+          }
+        ],
+        "qbar": {
+          "G_atom_even": 3.9007241844909784,
+          "G_atom_odd": 1.3274425045582572,
+          "G_free_even": 3.8582834709669385,
+          "G_free_odd": 1.3130843689007985,
+          "odd_frac_atom": 0.3403066819838431,
+          "odd_frac_free": 0.34032864064591956
+        },
+        "wall_sec": 0.18
       },
       {
         "iso": "3H",
@@ -90,7 +125,43 @@
         "B_AME": 8.481796200000002,
         "err_sym": 0.9353898750904226,
         "err_gram": 78.41846917705233,
-        "wall_sec": 0.76
+        "selfconj_share_atom": 0.003412739318547244,
+        "selfconj_share_free": 0.003225472686923532,
+        "chiral_anti_share_atom": 0.5579581256807027,
+        "chiral_anti_share_free": 0.5545048645326701,
+        "top_receivers": [
+          {
+            "lam": [
+              6,
+              3
+            ],
+            "delta_c": -0.22384782693746397
+          },
+          {
+            "lam": [
+              5,
+              4
+            ],
+            "delta_c": -0.17289854952004302
+          },
+          {
+            "lam": [
+              5,
+              3,
+              1
+            ],
+            "delta_c": -0.083590706562787
+          }
+        ],
+        "qbar": {
+          "G_atom_even": 7.713149098484877,
+          "G_atom_odd": 2.764912771158333,
+          "G_free_even": 7.648349728937369,
+          "G_free_odd": 3.385428475155925,
+          "odd_frac_atom": 0.3584674347474309,
+          "odd_frac_free": 0.44263515596668235
+        },
+        "wall_sec": 2.08
       },
       {
         "iso": "3He",
@@ -107,24 +178,43 @@
         "B_AME": 7.71804132,
         "err_sym": 1.1355259633890469,
         "err_gram": -33.457981709000855,
-        "wall_sec": 0.66
-      },
-      {
-        "iso": "4He",
-        "n": 12,
-        "G_atom": 28.047184787314638,
-        "G_free": 26.74304533521826,
-        "tr_atom": 0.055358426266783424,
-        "tr_free": 0.9673237505919289,
-        "gram_over_tr2_atom": 9152.122087588268,
-        "gram_over_tr2_free": 28.580324692856117,
-        "B_sym": 11.974853582302195,
-        "B_gram": -0.0996552495106085,
-        "r_gram_sym": -0.008322043257204446,
-        "B_AME": 28.2956624,
-        "err_sym": 2.362923455015647,
-        "err_gram": -283.93549300167945,
-        "wall_sec": 1159.41
+        "selfconj_share_atom": 0.0026003543313863286,
+        "selfconj_share_free": 0.0029372096550522755,
+        "chiral_anti_share_atom": 0.546739833097852,
+        "chiral_anti_share_free": 0.5509183410628311,
+        "top_receivers": [
+          {
+            "lam": [
+              6,
+              3
+            ],
+            "delta_c": 0.32813774339182933
+          },
+          {
+            "lam": [
+              7,
+              2
+            ],
+            "delta_c": 0.30090824946240646
+          },
+          {
+            "lam": [
+              5,
+              3,
+              1
+            ],
+            "delta_c": 0.20959068025952687
+          }
+        ],
+        "qbar": {
+          "G_atom_even": 8.748365691681318,
+          "G_atom_odd": 5.246145798222678,
+          "G_free_even": 8.200907047216772,
+          "G_free_odd": 4.333160796866514,
+          "odd_frac_atom": 0.5996715253011375,
+          "odd_frac_free": 0.5283757969598136
+        },
+        "wall_sec": 2.03
       }
     ]
   }
