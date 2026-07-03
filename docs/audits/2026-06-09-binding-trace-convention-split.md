@@ -109,3 +109,41 @@ useful byproduct.
    [`docs/coordination/atom-vhyp-delta-lambda.md`](../coordination/atom-vhyp-delta-lambda.md).
 4. **Do not run more abs-sums until C is pinned** — otherwise it's a fourth
    number on an unreconciled pile.
+
+## ADDENDUM (2026-07-02 / recorded 2026-07-03) — convention D registered: the Borromean single pipeline is the SU(2)/Temperley–Lieb (Jones) decomposition
+
+PROBE 4 of the step-9b probe sweep
+([`2026-07-02-9b-probes-alphak-perlambda-tower.md`](2026-07-02-9b-probes-alphak-perlambda-tower.md),
+`probe_9b_perlambda_brane_tower.py`, PR #3200) **derived exactly** (identity
+to 9.1e-72 at 50 dps) that the Borromean single-pipeline trace — the
+`borromean_binding_recompute.py` τ, whose closed form is the Lean-proved
+`BorromeanMarkovTrace` value `τ = (4+h²−3h⁴−h⁶)/(h²+4) ≈ 0.9985622` — is the
+**SU(2)/Temperley–Lieb (Jones) Markov decomposition**:
+
+    τ = ([4]/[2]³)·χ^(3) + (1/[2]²)·χ^(2,1),   y_(1³) = 0,
+    χ^(2,1)(β_Bor) = 2 − 3h⁴ − h⁶            (Hoefsmit cross-checked, exact)
+
+Register this as **convention D** alongside A/B/C above:
+
+| # | convention | where it lives | τ(β_Bor) at q₀ |
+|---|------------|----------------|----------------|
+| **D** | SU(2)/Temperley–Lieb (Jones) weights, `y_(1³) = 0` | Borromean single pipeline (`borromean_binding_recompute.py`; Lean `BorromeanMarkovTrace`; Phase-5q closed form) | ≈ 0.9985622 |
+| (contrast) | Wenzl-bridge z-trace weights `y_λ^W` (step-5 compute, `y_lambda_wenzl_bridge.py`) | Wedderburn/step-5 infra | ≈ 0.9983666 |
+
+**Gap: 1.955e-4** at β_Bor. Irrelevant at the current 2.3× normalization
+scale; **material for any future sub-0.1 % binding claim**.
+
+**Naming tension (flagged, not adjudicated).** This audit's RESOLUTION crowns
+C (`markov_trace_canonical.tr_M_element`, Jones–Markov) canonical; the PROBE-4
+audit calls the *Wenzl z-trace* "corpus-canonical". Both usages are live in
+the corpus. The registry rule that resolves the practical ambiguity without
+an owner ruling:
+
+> **Rule.** Any binding number claimed below 0.1 % precision — and any
+> cross-method comparison of τ/tr_M values — must state which trace
+> convention (A/B/C/D or Wenzl-bridge z-trace) produced it, with the script
+> or Lean decl cited. Convention-silent τ values are not comparable.
+
+Whether D coincides with C evaluated at β_Bor (both are "Jones" traces; the
+Wenzl bridge carries different per-λ weights) is a one-line symbolic check
+queued for the next compute session — it does not block the rule above.
