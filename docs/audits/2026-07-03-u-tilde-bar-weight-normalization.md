@@ -41,6 +41,12 @@ corpus-wide consequences, verified exactly on the net route (ai81/08ds):
    must be read in ũ; the h·D(ũ) + h³·F(ũ) odd-sector form is exactly
    refuted (08ds), and the surviving odd-sector search (ζ₄-residue route,
    bean `0zr0`) should be posed in (ũ, h) variables from the start.
+   **Resolution + re-scope (2026-07-03, bean 0zr0):** the single-fibre
+   descent test class turned out to be a theorem (invariant ring of the
+   bar automorphism), which also re-reads item 1 above — "E is exactly a
+   ũ-series" is structural, guaranteed for any bar-even series; the
+   empirical content of ai81 is the bar-weight of u and the rung values.
+   See [`2026-07-03-0zr0-eta-descent-invariant-theory-prune.md`](2026-07-03-0zr0-eta-descent-invariant-theory-prune.md).
 
 ## Standing rule (for c_k / ladder authors)
 
