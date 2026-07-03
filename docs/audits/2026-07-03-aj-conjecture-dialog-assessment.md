@@ -284,7 +284,7 @@ strongest available tier:
 | QOU knot | Role | AJ status | Backing on this branch |
 |---|---|---|---|
 | $4_1$ (figure-eight) | muon anchor / Higgs template | **strong AJ PROVED** (literature) | `[nguyen-tran-2021]`; Lean statement `StrongAJFigureEight` (content-bearing, §3b, no fabricated instance) against the Lean-defined tower `coloredJones41`; corpus-side operator reconstruction + exact symbolic annihilation check + $q\to1$ specialization vs CCGLS $A_{4_1}$ (`computations/aj_figure_eight_operator_construct_verify.py`) |
-| $T_{2,3}$ (trefoil) | electron knot | **AJ established** (literature: 2-bridge / torus-knot verifications — Garoufalidis 2004; Lê 2006 for two-bridge) | citation-tier only; no new corpus artifact this branch (candidate follow-up: repeat the operator reconstruction — the trefoil tower is simpler) |
+| $T_{2,3}$ (trefoil) | electron knot | **AJ established** (literature: 2-bridge — Lê 2006; Garoufalidis 2004) **+ corpus-side verification (same day, bean `3eeq`)** | Rosso–Jones tower self-anchored to $V(3_1)$; order-1 operator $a_0 = -(m-1)/m^5$, $a_1 = -q(mq-1)/m^2$, $b = -q(m^2q-1)/m^4$; exact annihilation $N \le 10$; $q\to1$ = $(1-M^2)/M^{10}\cdot(1+LM^6)$ under $m \to M^2$ (`aj_trefoil_operator_construct_verify.py`); Lean `StrongAJTrefoil` instance transcribed (`AJTrefoil.lean`, one cited sorry = general-$N$) |
 | $\mathcal{B}_3$ (Borromean) | proton/nucleon template | **OPEN** (AJ for *links* is not settled; corpus stance unchanged) | stays a §3b conditional input (`QuantumAPolynomial borromean` uninstantiated, per `phi-q-aj-machinery-identification.lean`) |
 
 What is **not** claimed: (i) AJ for arbitrary knots; (ii) any
