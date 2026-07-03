@@ -95,17 +95,31 @@ def strip_comments(src: str) -> str:
 
 
 def resolve_lean(block_ts: Path, ts_src: str):
-    """Return the block's .lean path (sibling first, then library ref)."""
+    """Return the block's .lean path: sibling first, then the lean.ref
+    library file. Prefix-path candidates only count when the file actually
+    contains the declaration's final name segment (an aggregator module
+    like lean/QOU.lean must not swallow unresolved refs); otherwise fall
+    back to a declaration-name search over the library tree (mirrors the
+    pipeline's grep fallback), else None."""
     sib = block_ts.with_suffix(".lean")
     if sib.exists():
         return sib
     m = LEAN_REF_RE.search(ts_src)
-    if m and m.group(1).startswith("qou:"):
-        parts = m.group(1)[4:].split(".")
-        for cut in range(len(parts), 0, -1):
-            cand = LEAN_ROOT.joinpath(*parts[:cut]).with_suffix(".lean")
-            if cand.exists():
-                return cand
+    if not (m and m.group(1).startswith("qou:")):
+        return None
+    parts = m.group(1)[4:].split(".")
+    decl = parts[-1]
+    decl_re = re.compile(r"\b" + re.escape(decl) + r"\b")
+    for cut in range(len(parts), 0, -1):
+        cand = LEAN_ROOT.joinpath(*parts[:cut]).with_suffix(".lean")
+        if cand.exists() and decl_re.search(cand.read_text(errors="ignore")):
+            return cand
+    decl_def_re = re.compile(
+        r"^\s*(?:noncomputable\s+)?(?:theorem|lemma|def|abbrev|structure|class|instance)\s+"
+        + re.escape(decl) + r"\b", re.M)
+    for cand in sorted(LEAN_ROOT.rglob("*.lean")):
+        if decl_def_re.search(cand.read_text(errors="ignore")):
+            return cand
     return None
 
 

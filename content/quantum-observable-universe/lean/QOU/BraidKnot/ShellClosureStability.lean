@@ -77,7 +77,7 @@ def isOneStepDressing (D_prev D : DressedParticle) : Prop :=
     which depend on Mathlib SDP infrastructure. By packaging the
     inequality as a class, the conjectural content is visible at
     every use site rather than asserted universally. -/
--- Ref: [manuscript] braids-and-knots/shell-closure-stability
+-- Ref: [manuscript] particle-interactions/shell-closure-stability
 -- Ref: [boyd-vandenberghe-2004] §5.6 (Perturbation and sensitivity
 --      analysis — value-function monotonicity under domain expansion)
 class ShellClosureMonotone
@@ -94,12 +94,12 @@ instance shellClosureMonotone_refl
     (D : DressedParticle) [HasFrobeniusStability D]
     (q : R_q) (h : isOneStepDressing D D) :
     ShellClosureMonotone D D q h :=
-  -- Ref: [manuscript] braids-and-knots/shell-closure-stability
+  -- Ref: [manuscript] particle-interactions/shell-closure-stability
   sorry
 
 /-- **Shell-closure stability, claim (1) — monotone non-decrease.**
     Per-instance form backed by `ShellClosureMonotone`. -/
--- Ref: [manuscript] braids-and-knots/shell-closure-stability
+-- Ref: [manuscript] particle-interactions/shell-closure-stability
 -- Ref: [boyd-vandenberghe-2004] §5.6 (Perturbation and sensitivity
 --      analysis — value-function monotonicity under domain expansion)
 theorem shell_closure_monotone
@@ -116,7 +116,7 @@ theorem shell_closure_monotone
 /-- **Shell-closure stability, claim (2) — noble-gas multiplicity.**
     At `Z ∈ nobleGasMagic`, the binding multiplicity satisfies
     `μ(S, q) ≥ 2`, giving the multi-operator regime. -/
--- Ref: [manuscript] braids-and-knots/shell-closure-stability
+-- Ref: [manuscript] particle-interactions/shell-closure-stability
 theorem shell_closure_noble_multiplicity
     (D : DressedParticle) [HasBindingMultiplicity D.shell] (q : R_q)
     (h : D.shell.nElectrons ∈ nobleGasMagic)
@@ -132,7 +132,7 @@ theorem shell_closure_noble_multiplicity
     `μ ≥ 2` tight dual blocks of the confinement SDP.
     Stated here as: the stability of any strict upgrade does not
     exceed that of `D` in the generic locus. -/
--- Ref: [manuscript] braids-and-knots/shell-closure-stability
+-- Ref: [manuscript] particle-interactions/shell-closure-stability
 theorem shell_closure_terminality
     (D D' : DressedParticle)
     [HasFrobeniusStability D] [HasFrobeniusStability D']
@@ -153,7 +153,7 @@ theorem shell_closure_terminality
     for a noble-gas-dressed particle, binding multiplicity ≥ 2 and
     any subsequent one-step dressing cannot reduce Frobenius
     stability. -/
--- Ref: [manuscript] braids-and-knots/shell-closure-stability
+-- Ref: [manuscript] particle-interactions/shell-closure-stability
 theorem ShellClosureStability
     (D : DressedParticle) [HasBindingMultiplicity D.shell] (q : R_q)
     (h : D.shell.nElectrons ∈ nobleGasMagic)
