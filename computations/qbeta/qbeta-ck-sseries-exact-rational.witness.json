@@ -1,0 +1,123 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-03T11:24:32.851063+00:00",
+  "commitSha": "45676495cbb013a717c12ee84569a564d61df977",
+  "assertions": [
+    {
+      "name": "validate_delta_net",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "alpha_eff_vanishes_at_q1",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "R_equals_1_at_q1",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "c2_gate_vs_predecessor",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 98,
+  "computation": "qbeta-ck-sseries-exact-rational",
+  "scriptFile": "qbeta_ck_sseries_exact_rational.py",
+  "scriptHash": "ac65a21d6684",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "9fnm: exact Q(sqrt3)[[s]] series of the net-route (bar-even) ladder R = Qb/[QA cos(alpha_eff)]; exact c_2..c_4^even (replacing the numerically unstable mp.taylor route), exact odd-order structure of log R, and the 1jrh Casoratian W2 sign test against the bar-odd rungs (c2^odd=-1 proved, c3^odd~-2 near-match).",
+  "data": {
+    "delta_net_q_symbolic": "(q**14 + 2*q**13 - 5*q**12 - 10*q**11 + 10*q**10 + 24*q**9 - 16*q**8 - 32*q**7 + 16*q**6 + 24*q**5 - 10*q**4 - 10*q**3 + 5*q**2 + 2*q - 1)/(4*q**7)",
+    "validate_delta_net_at_q0_ok": true,
+    "u_leading_coeff_exact": "sqrt(3)/2",
+    "log_R_odd_orders_nonzero": {
+      "3": true,
+      "5": true,
+      "7": true,
+      "9": true,
+      "11": true
+    },
+    "c_k_even_exact": {
+      "2": "-1049/144 - 5*sqrt(3)/12",
+      "3": "841/144 + 604739*sqrt(3)/12960",
+      "4": "-2483340421/1451520 - 120701*sqrt(3)/1920"
+    },
+    "c_k_even_numeric": {
+      "2": "-8.00641005870925442785865819785",
+      "3": "86.6611630646909942600690102713",
+      "4": "-1819.74067252288946759519576958"
+    },
+    "c2_gate_vs_predecessor_minus8": true,
+    "consistency_residual_next_order": "30807.173155551585870",
+    "casoratian_W2": "102.673983182109503115786326667",
+    "casoratian_W2_sign": 1,
+    "casoratian_W3_conditional": "-3723.54267321852919962265847911",
+    "casoratian_W3_over_W2_sign_conditional": -1,
+    "residual_logR_minus_model_by_order": {
+      "2": "1.12500000000000",
+      "3": "-3.90849364905389",
+      "4": "0",
+      "5": "-32.8491783819321",
+      "6": "0",
+      "7": "193.240207294630",
+      "8": "0",
+      "9": "-5416.01594111832",
+      "10": "30807.1731555516",
+      "11": "-115934.587327394"
+    },
+    "c1_inclusive_rungs_exact": {
+      "1": "3*sqrt(3)/4",
+      "2": "-3223/288 - 5*sqrt(3)/12",
+      "3": "841/144 + 1894783*sqrt(3)/25920",
+      "4": "-15059640919/5806080 - 4899*sqrt(3)/80"
+    },
+    "c1_inclusive_rungs_numeric": {
+      "1": "1.2990381056766579701",
+      "2": "-11.912660058709254428",
+      "3": "132.45526332244521701",
+      "4": "-2699.8372876002694054"
+    },
+    "c1_inclusive_residual_by_order": {
+      "2": "0",
+      "3": "-1.65849364905389",
+      "4": "0",
+      "5": "-42.0366783819321",
+      "6": "0",
+      "7": "305.365207294630",
+      "8": "0",
+      "9": "-7982.01594111832",
+      "10": "45907.9924365574",
+      "11": "-172830.410345786"
+    },
+    "odd_rung_tiers": {
+      "c2_odd": "-1 proved Taylor-exact",
+      "c3_odd": "~-2 near-match (cross-anchor swing <=3.47%)"
+    },
+    "caveats": [
+      "net-route = bar-even/binding channel (c2 ~ -8), NOT the brane-tower bar-odd channel (c2 = -1) — two parities of one complex V, per the 2026-06-16 reframe",
+      "W2 sign near c3^even ~ -16 is not decisive (1jrh); W3 needs c4^odd (CAL-anchored tier)",
+      "no production wiring; c_k>=3 use owner-gated (registry §8)"
+    ]
+  }
+}
