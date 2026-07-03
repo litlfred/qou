@@ -1,6 +1,8 @@
 import QOU.Basic
 import QOU.Glossary
+import QOU.QuantumObservableUniverse.CategoricalFoundations
 import Mathlib.CategoryTheory.Monoidal.Category
+import Mathlib.CategoryTheory.Limits.Shapes.ZeroMorphisms
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
 import Mathlib.Algebra.Group.Basic
@@ -35,7 +37,8 @@ universe u v
 
     LaTeX: `\label{def:higher-forms}` -/
 structure HigherForms (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C] where
+    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Limits.HasZeroMorphisms C] where
   /-- The underlying Frobenius–Hopf object `A`. -/
   frobHopf : @FrobeniusHopfData C _ _
   /-- The degree-`k` form object `Ωᵏ(A)` in `C`. -/

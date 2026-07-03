@@ -1,5 +1,6 @@
 import Mathlib.Order.WellFounded
 import Mathlib.Algebra.Ring.Basic
+import Mathlib.Algebra.Algebra.Defs
 import Mathlib.Algebra.Module.Basic
 import Mathlib.LinearAlgebra.Span.Basic
 
