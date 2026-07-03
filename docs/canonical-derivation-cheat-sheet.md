@@ -646,7 +646,7 @@ verification-debt for the proof-watcher / a Lean session (lake required).
 | # | Statement to formalize | Target Lean | Classical ref | Status |
 |---|---|---|---|---|
 | **L-1** | Schur character-orthogonality on `H_n(q)` ⇒ `y_λ` uniqueness (`Σ_λ y_λ χ^λ = z^{ℓ(w)}` invertible at generic q) | `QOU.Hecke.Wedderburn` / `wedderburn-as-noncomm-fourier.lean` | Mathas (1999) §3.43; not in Mathlib | 🔴 debt |
-| **L-2** | Central-idempotent orthogonality `π_λ π_μ = δ_{λμ} π_λ` (currently a class axiom) | `QOU.Hecke.Wedderburn` (`WedderburnDecomp`) | Mathas (1999) §3.43 | 🔴 debt |
+| **L-2** | Central-idempotent orthogonality `π_λ π_μ = δ_{λμ} π_λ` (currently a class axiom) | `QOU.Hecke.Wedderburn` (`WedderburnDecomp`) | Mathas (1999) §3.43 | 🔴 debt — **n=3 groundwork landed 2026-07-03**: explicit π_λ coefficients on the 6-word basis, exact in ℚ(q), all four class axioms + tr_C values verified (`probes/probe_h3_central_idempotents_exact.py`, 4/4); ready for Lean transcription into a concrete n=3 `WedderburnDecomp` instance |
 | **L-3** | Per-λ Frobenius block-orthogonality `⟨a,b⟩_F = ⊕_λ ⟨a,b⟩_F^λ` | module `QOU.Hecke.Wedderburn`, decls `QOU.Hecke.WedderburnDecomp.frobPairing_block_decomp` + `.frobPairing_block_orthogonal` | follows from L-2 + `def:frobenius-hopf-substrate` | 🟡 **formalized 2026-07-03** (sorry-free, `lean`-direct exit 0), conditional on the `WedderburnDecomp` class — the docstring-promised centrality of `π_λ` is now an encoded `central` field, and both L-3 statements are *derived* from `complete` + `central` + `idempotent`/`orthogonal`. Residual debt = discharging those class axioms from the Hecke structure, i.e. exactly L-1/L-2 (Mathas §3.43) |
 
 These three close the "ASSUMED" entries in the §9.1 table. They are the
