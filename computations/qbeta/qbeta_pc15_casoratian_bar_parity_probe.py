@@ -44,8 +44,20 @@ KILL (append refuted row C15) if twist is NOT a monomial, OR the q->1 shadow sig
 negative.  ADVANCE (gated on the H_4 Hoefsmit c_4^even build, bean 8we6) only if both pass.
 No anchor numerics either way.
 """
-import json, hashlib, datetime, os, sys
+import json, hashlib, datetime, os, sys, subprocess
 import sympy as sp
+
+
+def _repo_head_sha():
+    """Repo HEAD at emission time — required provenance field per the I14
+    witness_provenance_audit (REQUIRED_FIELDS = engine, scriptFile, commitSha)."""
+    try:
+        return subprocess.check_output(
+            ["git", "rev-parse", "HEAD"],
+            cwd=os.path.dirname(os.path.abspath(__file__)), text=True,
+        ).strip()
+    except Exception:
+        return None
 
 
 def main():
@@ -129,6 +141,7 @@ def main():
         "audit_only": True,
         "tier": "structural-exact (symbolic bar-parity identity; no fit, no anchor sweep)",
         "computedAt": now,
+        "commitSha": _repo_head_sha(),
         "engine": "sympy",
         "engineVersion": sp.__version__,
         "scriptFile": os.path.basename(__file__),

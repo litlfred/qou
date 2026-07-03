@@ -3,11 +3,12 @@
   "description": "Probe P-C15: bar-parity of the 4_1 order-2 qZeilberger Casoratian ratio a_0/a_2 as a decidable structural gate on the Q_beta fibre kernel R(q,xi). Formalize-first; no anchor numerics; kill-on-invariant.",
   "audit_only": true,
   "tier": "structural-exact (symbolic bar-parity identity; no fit, no anchor sweep)",
-  "computedAt": "2026-07-03T19:18:09.608167+00:00",
+  "computedAt": "2026-07-03T19:19:48.602043+00:00",
+  "commitSha": "3f91aeb6562657c7ea95d568b19d81fe8426e300",
   "engine": "sympy",
   "engineVersion": "1.14.0",
   "scriptFile": "qbeta_pc15_casoratian_bar_parity_probe.py",
-  "scriptHash": "74c847bcf1da",
+  "scriptHash": "d1dc8485101d",
   "assertions": [
     {
       "name": "twist_is_laurent_monomial",
