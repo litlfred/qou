@@ -1,0 +1,9 @@
+---
+# 5e1z
+title: 'Symbolic probe: Δ_λ(D) ≈ 1/h(q₀) — exact or near-match'
+status: todo
+type: task
+created_at: 2026-07-03T19:21:17Z
+updated_at: 2026-07-03T19:21:17Z
+---
+
