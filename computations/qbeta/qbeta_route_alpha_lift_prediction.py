@@ -147,7 +147,10 @@ def main() -> int:
     else:
         print("  VERDICT: Lambda_a carries nonzero level-4 content — see L4 + swing.")
 
-    all_ok = all(a["passed"] for a in assertions[:2])  # gates 0+P1 are laws; P2 is the finding
+    # exit code gates on the LAW assertions (0 + P1); allPassed covers ALL
+    # assertions so downstream witness tooling sees any failure (incl. P2).
+    laws_ok = all(a["passed"] for a in assertions[:2])
+    all_ok = all(a["passed"] for a in assertions)
     witness = {
         "description": (
             "Route-alpha prediction test (bean 1jrh / Stage C): the forced basic-"
@@ -187,7 +190,7 @@ def main() -> int:
         json.dump(witness, f, indent=2, ensure_ascii=False, default=str)
         f.write("\n")
     print(f"\n  Witness: {out.name}   ({time.monotonic() - t0:.1f}s wall)")
-    return 0 if all_ok else 1
+    return 0 if laws_ok else 1
 
 
 if __name__ == "__main__":
