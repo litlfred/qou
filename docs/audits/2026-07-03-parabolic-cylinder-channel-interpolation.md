@@ -404,10 +404,24 @@ q-factorial telescope $[n]_q! = [n{-}K]_q!\cdot\prod_{i<K}[n{-}i]_q$
 (induction), its division form at $1 < q$ (reusing the canonical
 `QPartitionCombinatorics` nonvanishing lemmas), and
 `qdim_level_rational_of_hook_split`: `qDim` has the level-rational closed
-form *given* the hook-multiset split — the 99/99 probe-verified
-combinatorial input, carried as an explicit named hypothesis (honest
-conditionality; its general combinatorial proof over
-`Partition.hookLength` is queued follow-up).
+form *given* the hook-multiset split.
+
+**General hook-split proof (owner-approved follow-up, landed).** The
+remaining combinatorial hypothesis is now **proved in full generality**
+(`hookProd_cons_split`): for any $\mu$ with parts $\le B$ and first row
+$B + t$, the hook product of the padded shape splits off the tail
+q-factorial $[t]_q!$ and the fixed $B$-window of row-0 brackets. Key
+structural facts: prepending a first row leaves lower-row hooks unchanged
+*definitionally* (`hookLength_cons_succ := rfl` — legs count rows below;
+`get?`/`drop` reduce structurally on a cons), and legs vanish beyond the
+column bound (`legCount_eq_zero`). The first row is parametrized as
+$B + t$ (instantiate $t = r - B$) so no ℕ-subtraction rewriting is
+needed, and **no sortedness of $\mu$ is assumed** — the bound $B$ need
+not be tight. The unconditional closed form is
+`qDim_cons_level_rational`: no conditional input remains in the
+level-rationality chain. Statement shape re-verified numerically at
+machine precision across five $(\mu, B, t)$ configurations including
+$B = 0$ and non-tight $B$.
 
 **Head-dominance probe (§10's surviving direction) — NEGATIVE, decisive
 (scope (a)).**
