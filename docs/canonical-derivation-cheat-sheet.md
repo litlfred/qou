@@ -597,8 +597,10 @@ branch `he4-jsj-binding-link`). So the binding is a **many-body series**:
 > proved Li₂^q radius. **Convention finding (DERIVED, 9e-72):** the
 > pipeline's τ closed form is the **SU(2)/Temperley–Lieb (Jones)** Markov
 > decomposition (`y₃ = [4]/[2]³, y₂₁ = 1/[2]², y_{(1³)} = 0`), NOT the
-> corpus-canonical Wenzl z-trace (τ_W ≈ 0.9983666, gap 1.955e-4) — flag
-> for the convention registry.
+> corpus-canonical Wenzl z-trace (τ_W ≈ 0.9983666, gap 1.955e-4) —
+> **registered as convention D** in the trace-convention registry
+> ([convention-split audit, 2026-07-02 addendum](audits/2026-06-09-binding-trace-convention-split.md)):
+> sub-0.1 % binding claims must state their trace convention.
 > [Probe audit](audits/2026-07-02-9b-probes-alphak-perlambda-tower.md),
 > `probe_9b_perlambda_brane_tower.py`.
 
