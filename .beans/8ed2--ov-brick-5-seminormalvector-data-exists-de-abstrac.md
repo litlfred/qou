@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-03T00:33:16Z
-updated_at: 2026-07-03T00:33:41Z
+updated_at: 2026-07-03T00:56:12Z
 ---
 
-Young seminormal eigenvector existence core in QOU/BraidKnot/JucysMurphy.lean (+ seminormalVectors_span secondary). De-abstraction per the IdentityB pattern: machine-check everything reducible, isolate minimal honest cited cores. Parent epic: 08a2. Identity (B) itself fully closed on main 2026-07-02 (#3193 + sibling centrality closure, independently re-verified). Sibling coordination: #3222 noted; #3110 owns brick-4/B1 (no overlap).
+Young seminormal eigenvector existence core in QOU/BraidKnot/JucysMurphy.lean. TRANCHE 1 DELIVERED (PR #3255): all-T existence assembled sorry-free from 2 reduced cores — seminormalVector_base_exists (one-tableau base vector) + syt_adjacentSwap_connected (SYT connectivity, recommended next: inversion-count induction vs row-superstandard, also feeds syt_content_tuple_injective). Proved sorry-free: JM conjugation recursion (generic CommRing), 2x2 seminormal block, Specht subrep invariance, full induction step. Parent epic: 08a2.
