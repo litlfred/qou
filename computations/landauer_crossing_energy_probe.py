@@ -58,11 +58,13 @@ def main() -> int:
     }
 
     rows = {}
+    near = {}
     for name, m_h in (("proton", mp.mpf(str(proton_mass_mev()))),
                       ("neutron", mp.mpf(str(neutron_mass_mev())))):
         e_h = m_h * cq2
         kt_eff = e_h / info_qbits
-        ratios = {k: mp.nstr(kt_eff / v, 12) for k, v in scales.items()}
+        ratios_raw = {k: kt_eff / v for k, v in scales.items()}
+        ratios = {k: mp.nstr(r, mp.mp.dps) for k, r in ratios_raw.items()}
         rows[name] = {
             "m_H_MeV": mp.nstr(m_h, DPS), "E_H_MeV": mp.nstr(e_h, DPS),
             "info_qbits": mp.nstr(info_qbits, DPS),
@@ -73,10 +75,9 @@ def main() -> int:
               f"q-bits, kT_eff = {mp.nstr(kt_eff, 8)} MeV/q-bit")
         for k, r in ratios.items():
             print(f"      kT_eff / {k:16s} = {r}")
+        near[name] = {k: ratios[k] for k, r in ratios_raw.items()
+                      if abs(r - 1) < mp.mpf("0.05")}
 
-    # near-match detector: any ratio within 5% of 1?
-    near = {n: {k: r for k, r in rows[n]["ratio_vs_scale"].items()
-                if abs(mp.mpf(r) - 1) < mp.mpf("0.05")} for n in rows}
     print(f"\n  near-matches (|ratio-1| < 5%): {near}")
 
     witness = {

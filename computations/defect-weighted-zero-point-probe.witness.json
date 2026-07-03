@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-03T22:44:16.326474+00:00",
-  "commitSha": "fef8320cf455b24de06fb4aea1ad248f90c0c841",
+  "computedAt": "2026-07-03T22:58:48.123987+00:00",
+  "commitSha": "a7f18cf3e4e77cdc0cf9c87cace9d54d4de97167",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 517,
+  "durationMs": 222,
   "computation": "defect-weighted-zero-point-probe",
   "scriptFile": "defect_weighted_zero_point_probe.py",
-  "scriptHash": "5e1ec2349cd8",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "374410e7d064",
+  "scriptCommitSha": "798930c851139bc2d40c4ab99bb06862130971dd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,7 +42,7 @@
       "strands": 6,
       "E_defect_info_MeV": "4.5409704648251587018488953082931054824860148556017",
       "residual_raw_MeV": "-1.6651256848777578716788349901286904168228941411387",
-      "ratio": "-2.7271037292"
+      "ratio": "-2.727103729204997318781675165190596385755405989282754406643961423259694"
     },
     "3H": {
       "Z": 1,
@@ -50,7 +50,7 @@
       "strands": 9,
       "E_defect_info_MeV": "8.8223596603106823732727088028332547902700866831133",
       "residual_raw_MeV": "-0.5858625654747559914455993769344525091882076929292",
-      "ratio": "-15.0587529913"
+      "ratio": "-15.05875299126075612455682885148045288189449252927954585368469438783808"
     },
     "3He": {
       "Z": 2,
@@ -58,7 +58,7 @@
       "strands": 9,
       "E_defect_info_MeV": "8.9045798608425187779926260760014385111989204055705",
       "residual_raw_MeV": "0.9211546182947958730704133323333279547814389851846",
-      "ratio": "9.66675917809"
+      "ratio": "9.66675917809142228750758327344213997731264505718773066215592846129214"
     },
     "4He": {
       "Z": 2,
@@ -66,11 +66,11 @@
       "strands": 12,
       "E_defect_info_MeV": "14.751424824664369366758386574266869174427664500901",
       "residual_raw_MeV": "16.320808817697797753303648945527565862416125433395",
-      "ratio": "0.903841530738"
+      "ratio": "0.90384153073764118569462252617209859918707450221409466230386596147241"
     }
   },
   "verdict": {
     "defect_weighted_info_tracks_raw_residual": false
   },
-  "timestamp": "2026-07-03T22:44:16+00:00"
+  "timestamp": "2026-07-03T22:58:48+00:00"
 }

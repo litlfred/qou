@@ -43,13 +43,15 @@ ISOTOPES = {"2H": (1, 1), "3H": (1, 2), "3He": (2, 1), "4He": (2, 2)}  # iso -> 
 
 def dim_q_numeric(lam: tuple[int, ...], q0: mp.mpf) -> mp.mpf:
     """Symmetric-convention q-hook quantum dimension at q0."""
-    def qi(h: int) -> mp.mpf:
-        return (q0**h - q0**(-h)) / (q0 - q0**(-1))
+    # unnormalized bracket b(h) = q^h - q^-h: the (q - q^-1) factors cancel
+    # exactly between the n factorial brackets and the n hooks
+    def b(h: int) -> mp.mpf:
+        return q0**h - q0**(-h)
     val = mp.mpf(1)
     for k in range(1, sum(lam) + 1):
-        val *= qi(k)
+        val *= b(k)
     for h in hook_lengths(lam):
-        val /= qi(h)
+        val /= b(h)
     return val
 
 
@@ -61,13 +63,14 @@ def main() -> int:
     e0 = mp.mpf(src["constants"]["E0_MeV"])
 
     rows = {}
+    ratios_list = []
     print("  iso |  E_defect_info  |  r_raw = B_AME-B(q0) |  ratio")
     for iso, (z, nn) in ISOTOPES.items():
         _, _, chi_atom, _ = tr_m_atom_zn(z, nn, dps=COMPUTE_DPS)
         chi_free = chi_free_lr(z, nn, dps=COMPUTE_DPS)
         n = 3 * (z + nn)
         y = {tuple(k): mp.mpf(str(v)) for k, v in y_lambda_at(n, Q0).items()}
-        w = {lam: y[lam] * (chi_free.get(lam, mp.mpf(0)) - mp.mpf(str(chi_atom.get(lam, 0))))
+        w = {lam: y[lam] * (chi_free.get(lam, mp.mpf(0)) - chi_atom.get(lam, mp.mpf(0)))
              for lam in y}
         zabs = mp.fsum(abs(v) for v in w.values())
         e_def = (e0 / 2) * mp.fsum(
@@ -75,17 +78,19 @@ def main() -> int:
         d = src["isotopes"][iso]
         r_raw = mp.mpf(d["B_AME_MeV"]) - mp.mpf(d["B_q0_MeV"])
         ratio = e_def / r_raw if r_raw != 0 else None
+        if ratio is not None:
+            ratios_list.append(ratio)
         rows[iso] = {
             "Z": z, "N": nn, "strands": n,
             "E_defect_info_MeV": mp.nstr(e_def, DPS),
             "residual_raw_MeV": mp.nstr(r_raw, DPS),
-            "ratio": mp.nstr(ratio, 12) if ratio is not None else None,
+            "ratio": mp.nstr(ratio, mp.mp.dps) if ratio is not None else None,
         }
         print(f"  {iso:4s}|  {float(e_def):10.3f}     |  {float(r_raw):10.3f}          |  "
               f"{float(ratio):8.3f}" if ratio is not None else f"  {iso}: r_raw = 0")
 
-    ratios = [mp.mpf(rows[i]["ratio"]) for i in rows if rows[i]["ratio"] is not None]
-    tracks = bool(ratios and all(mp.mpf("0.5") <= r <= mp.mpf(2) for r in ratios))
+    tracks = bool(ratios_list
+                  and all(mp.mpf("0.5") <= r <= mp.mpf(2) for r in ratios_list))
     print(f"\n  defect-weighted info candidate tracks r_raw (all in [0.5,2]): {tracks}")
 
     witness = {
