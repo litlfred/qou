@@ -1,0 +1,63 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-07-03T06:07:53.586541+00:00",
+  "commitSha": "8b60067a0954ffdeb0bc4838e25173fa11cfc57f",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "parabolic-cylinder-channel-mixing-probe",
+  "scriptFile": "parabolic_cylinder_channel_mixing_probe.py",
+  "scriptHash": "f57ab17568a0",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Weber/parabolic-cylinder channel-mixing index nu extracted from B_odd/B_even per isotope (classical Gamma and Gamma_q at substrate q_0); structural question: is nu N-organized?",
+  "audit_only": true,
+  "tier": "shape-probe (exploratory; no fit, no production wiring)",
+  "precision_dps": 50,
+  "source_witness": "binding-bar-even-odd-probe.witness.json",
+  "constants": {
+    "q_0": "1.1099785955573347"
+  },
+  "isotopes": {
+    "2H": {
+      "N": 1,
+      "mixing_ratio_rho": "0.29643292779165554772856084935827734061580561003419",
+      "nu_classical": "0.20166147923727742529147880764676412226331695831038",
+      "nu_q_deformed": "0.20779300227586007318578220251454392147893028881719"
+    },
+    "3H": {
+      "N": 2,
+      "mixing_ratio_rho": "0.436826194451955139061872843772992525825931230862",
+      "nu_classical": "0.2765628197672822089989133760523414379695082708271",
+      "nu_q_deformed": "0.28452184681227370995036829989325387858539334441084"
+    },
+    "3He": {
+      "N": 1,
+      "mixing_ratio_rho": "0.15055251172285108979599784121291584019906860764234",
+      "nu_classical": "0.11064702188608527863916325117658747212244392568939",
+      "nu_q_deformed": "0.11418661204069323725076420969018458079781574762067"
+    },
+    "4He": {
+      "N": 2,
+      "mixing_ratio_rho": "0.29906024513754218982763633635960500407534254709529",
+      "nu_classical": "0.20317068767763078022829675121569743962485446792147",
+      "nu_q_deformed": "0.20934203473518084067709495684291288574595753953082"
+    }
+  },
+  "structure": {
+    "nu_spread_within_N_classes": "0.091014457351192146652",
+    "nu_spread_across_N_classes": "0.083712503160775142648",
+    "nu_is_N_organized": false
+  },
+  "timestamp": "2026-07-03T06:07:53+00:00"
+}
