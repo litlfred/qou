@@ -1,7 +1,7 @@
 ---
 # szkf
 title: Remap 64 stale Mathlib imports (post-f897ebcf module renames/splits)
-status: todo
+status: in-progress
 type: milestone
 created_at: 2026-06-30T23:32:53Z
 updated_at: 2026-06-30T23:32:53Z
@@ -96,3 +96,27 @@ branch was seeded while QOU.Basic itself had stale imports, so downstream librar
 absent. QOU.Basic + QOU.Glossary oleans now build clean via
 `scripts/verify-lean-direct.sh <src> <out.olean>`; bulk re-verify of the 26 OTHER in progress.
 → RESEED lake-cache/qou-v4-24-0 after this lands so the QOU package oleans are preserved.
+
+## FINAL TALLY (2026-07-03) — 45/45 drained, PR #3202
+
+Every one of the 45 deep-broken siblings now compiles lean-direct exit 0, statements never
+weakened, ZERO new sorries. Additional rot classes found in the later waves:
+8. missing QOU.QuantumObservableUniverse.* imports → identifiers auto-bound as implicits
+   (misleading "Function expected ?m.1"); ~12 files
+9. auto-bound ℝ itself (no Mathlib.Data.Real.Basic import) — heavy-trio root cause
+10. deprecated [OrderedAddCommMonoid] → split [AddCommMonoid][PartialOrder][IsOrderedAddMonoid]
+11. §7d universe pins (rigid-dualizing-complex, quantum-observable-universe gaugeGroup)
+12. co-located prerequisite copies where importing the library module would collide with the
+    block's own decls (doc-flagged, drift risk; follow-up: shared QOU.BraidKnot module for
+    MarkovAlgebra, move IsIrreducible out of Propositions.lean)
+
+OWNER-ATTENTION items (flagged in commit messages):
+- nuclear-spin-parity: added (hn : 1 ≤ n) — statement was FALSE at n=0 (ℕ subtraction)
+- c-equals-bar-iff-all-1dim: toy identity restated per docstring (was reducible to -3q = q)
+- categorical-irreducible-proof + categorical-self-duality-proof: §0a shim conversions
+  (siblings carried duplicate/deprecated copies of library theorems)
+
+STILL OPEN on this bean:
+- qx79: library file H3BraneTowerScaffold (3-4 pre-existing unsolved goals in ell_0)
+- ckj6: verifier hardening (distinguish module-removed vs olean-uncached)
+- RESEED lake-cache/qou-v4-24-0 (now also carries QOU/Basic.olean + QOU/Glossary.olean)
