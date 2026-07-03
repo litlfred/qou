@@ -167,3 +167,32 @@ warnings are the durable "don't continue to use wrong" guard.
 
 This audit does **not** yet claim any refutation is an artifact — it
 localizes the 7 candidates and sets the re-run protocol.
+
+## Per-knot re-run results (2026-07-02/03, bean 3xbo — protocol executed)
+
+All 7 candidates re-run with the canonical per-knot `tr_M(K)` base
+(`vol_density_per_block`, chi-cache traces, p≠n-distinct) substituted for
+λ_A. Rerun scripts + witnesses in `computations/probes/*_perknot_rerun.py`
+/ `*-perknot-rerun.witness.json` (all EXPLORATORY, `production_wired:
+false`, no new fitted constants; every negative scoped (a)).
+
+| # | Refutation | Per-knot verdict | Key numbers |
+|---|---|---|---|
+| 1 | co-Casimir Δ_λ = 1/dim_q (#602) | **ROBUST** | density-independent sum +0.14496 unchanged; failure ≥30× under every base (CODATA −30×, λ_A −763×, per-knot +15081×) |
+| 2 | color-vs-charge T/³He | **ROBUST** — and the Step-2 "λ_A-bound" classification was overcautious: λ_A enters only as a normalization that **cancels algebraically**; the split is base-independent to 30 dps | split −0.0343 MeV = −4.5 % of needed, any base; T−³He stays CHARGE/Coulomb |
+| 3 | L1 light-series multiplicative λ(K) (#1874) | **ROBUST** | per-knot forms fail *harder* on every atom (per-knot density shrinks with A while λ_emp grows); constrains L1a/L1c multiplicative family on both bases |
+| 4 | ³He residual λ_A/2 near-match (#1882) | **ROBUST** — λ_A/2 (+3.65 %) confirmed λ_A-family numerology | per-knot analogues do worse than the λ_A-family best. Honest lead: bare p≠n product tr_M(p)²·tr_M(n) lands within 25 % of the residual target with **no** rescaler |
+| 5 | additive S(K) (#1876) | **PARTIALLY ARTIFACT** — the refutation's core evidence (S_emp sign-flip across the series) **disappears** on the per-knot base | λ_A base: sign-flip reproduced (refutation stands there). Per-knot base: S_emp > 0 for all six atoms; S/(A·m_e) uniform to ×1.73 (vs unbounded). Caveat: additive term no longer sub-leading (max \|S/m(K)\| = 99 %), so "small correction" framing dies; the live object is a per-knot-base additive family, re-scoped |
+| 6 | T2 Vol-convention (#1891) | **ROBUST** | ratio swings persist under all three Vol conventions (2610–7545 %) with the per-knot base |
+| 7 | T4 Schur–Weyl derive-λ_A | **ROBUST** (retargeted) | 0/140 parameter-free aggregates MATCH (<0.5 %) tr_M(p/n) or ρ_rt; single NEAR (2.8 % on ρ_rt(n)) is look-elsewhere noise |
+
+**Net verdict on the owner's artifact hypothesis: 1 of 7 confirmed, and
+it is the informative one.** The additive-S(K) family's sign-flip was a
+λ_A artifact — the p≠n-distinct canonical base is strictly more regular
+there — exactly the family the GAP-A-4 scoping note
+(`docs/scope/2026-07-02-gap-a4-perknot-density-rule-scoping.md` §4 step 1)
+flagged as the most plausible flip. The re-scoped per-knot additive
+S(K) family (no longer "small correction"; S is order-of-mass at A ≥ 2)
+is the priority numerical thread, gated by the scoping note's I-6
+(trace-convention pin) and I-1/I-3 invariants before any scan. The
+other six refutations extend to the per-knot base, all scope (a).
