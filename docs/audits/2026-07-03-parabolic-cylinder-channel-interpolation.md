@@ -345,3 +345,52 @@ only $\sim+3\%$ uniformly — the classical and $q$-readings agree on the
 verdict. Incidental: ²H and ⁴He extract nearly equal $\nu$ (0.2017 / 0.2032),
 but that is a direct reparametrization of their near-equal $\rho$, not new
 structure.
+
+## 10. §8 decisive probe (owner-approved 2026-07-03): can the interpolated level speed up binding compute?
+
+Owner question: *"can we use \[the $D_\nu$/interpolation work\] to improve
+compute of mass/binding?"* Probe:
+[`deligne_stable_range_binding_period_probe.py`](../../computations/deligne_stable_range_binding_period_probe.py)
+(witness `deligne-stable-range-binding-period-probe.witness.json`; canonical
+symmetric $q$-integers of `phase5_n8_dim_q_table`, 50 dps, no fit). Every
+$\lambda \vdash n$ is written as a padded shape $\mu[n] = (n-|\mu|, \mu)$ —
+the Deligne/stable-range coordinates — and two questions are separated:
+
+**(1) Restriction property — POSITIVE, exact (99/99).** For fixed $\mu$ the
+family $n \mapsto \dim_q(\mu[n])$ has the derived closed form
+
+$$
+\dim_q(\mu[n]) \;=\;
+\frac{\prod_{i=0}^{|\mu|+\mu_1-1} [n-i]_q}
+     {\prod_{j=1}^{\mu_1} [\,n - (|\mu|+j-1-\mathrm{leg}_j(\mu))\,]_q \cdot H_q(\mu)},
+$$
+
+(hooks of rows $\ge 2$ are exactly the hooks of $\mu$; row-1 hooks split into
+an explicit $q$-factorial tail and $\mu_1$ shifted $q$-integers). Verified
+symbolically for all $|\mu| \le 4$, all valid $n \le 12$. So each padded
+family **is** "rational in the level" ($q, q^n$) — depth-1 $q$-holonomic —
+which is the per-shape face of the Deligne/TL interpolation, and gives
+$O(|\mu|)$ evaluation of any *fixed-shape* family at any $n$. This also
+explains the 2026-06-26 kernel-search negative structurally: every family is
+depth-1, but the number of families needed to cover $\lambda \vdash n$ grows
+with $n$, so the *sum* $T_q(n)$ escapes any bounded-depth kernel.
+
+**(2) Feasibility — NEGATIVE, decisive (scope (a)).** The stable-range
+truncation $S_M(n) = \sum_{|\mu| \le M} \dim_q(\mu[n])$ captures a
+*collapsing* fraction of $T_q(n)$ at the substrate $q_0$: at $M = 6$,
+capture falls $1.000$ ($n{=}7$) $\to 0.954$ ($n{=}9$) $\to 0.507$
+($n{=}11$) $\to 0.276$ ($n{=}12$), monotone decreasing. Reason: at
+$q_0 > 1$, $T_q(n)$ is dominated by **balanced** shapes (maximal $\dim_q$),
+which are maximally far from the stable range (long first row). So
+interpolated-level evaluation is **not** a high-$A$ shortcut for the binding
+period *as-is*. Scope-(a): this excludes the stable-range truncation as the
+sole evaluator; the exact per-shape formula (1) stands as a permanent
+contribution (fast tail evaluation; a head-dominant reorganization — e.g.
+around the Plancherel-typical shape — is the surviving open direction).
+
+**Answer to the owner's compute question:** mass — nothing to improve
+(already exact); binding accuracy — no (Δ_λ closure is the blocker, and two
+parity probes are negative); binding *feasibility at high $A$* — the
+Deligne/stable-range route is now measured and **refuted as-is** (scope-a),
+with the per-shape level-rationality (1) retained as the proved positive
+by-product.
