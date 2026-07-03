@@ -235,3 +235,80 @@ gate is consistent with PROBE 1's mirror decomposition (interface-sign swap
 the proton-excess side only) but is an **observation, not a derived rule** —
 the open follow-up is derive-or-refute `[Z>N]` from the interface algebra,
 and the ⁴He −0.272 residual.
+
+---
+
+## Gate derivation (cywi): the [Z>N] proton-excess gate is an A=3 near-cancellation, not a derived rule
+
+Probe: [`probe_9b_gate_interface_algebra.py`](../../computations/probe_9b_gate_interface_algebra.py)
+(witness `probe-9b-gate-interface-algebra.witness.json`, 10/10 assertions;
+inputs: PROBE 1 witness traces + exact interface formulas + vendored
+AME2020 — **no new constants**).
+
+### Exact mirror decomposition (identity, ≤ 1e-30)
+
+For a mirror pair (Z,N) vs (N,Z) with Z < N and the chain census
+`(Z−1)·pp + 1·pn + (N−1)·nn`, the closed-form Δ_λ definition gives the
+algebraic identity
+
+$$
+\log_{q_0}\Delta_\lambda(\text{n-rich}) - \log_{q_0}\Delta_\lambda(\text{p-rich})
+= \underbrace{(N{-}Z)\log_{q_0}(\mathrm{tr}_p/\mathrm{tr}_n)}_{\text{asym} = -\kappa} \,+\,
+\underbrace{\log_{q_0}\frac{1-P_{(N,Z)}}{1-P_{(Z,N)}}}_{\text{swap}} \,+\,
+\underbrace{\log_{q_0}\frac{B_{\mathrm{AME}}(\text{n-rich})}{B_{\mathrm{AME}}(\text{p-rich})}}_{\text{mirror}},
+\qquad P_{(Z,N)} = f_{pp}^{Z-1} f_{pn} f_{nn}^{N-1}.
+$$
+
+**Sign reconciliation of the earlier "0.06 gap".** PROBE 1's sum
+1.372 − 0.938 + 0.904 = 1.338 is the T−³He **gap**, while the ³He
+outlier +1.404 is its residual **against the law**; since both A=3
+isobars share the law value 25, `res(³He) − res(T) = gap` exactly —
+the "missing 0.066" is precisely **T's own law residual**, not a δ or
+tr_free term (asserted to 1e-30).
+
+### What the gate IS
+
+M3 assigns the whole mirror gap to the trace asymmetry, so identically
+
+> **gate exact ⟺ swap + mirror = 0**, and
+> `res_M3(³He) − res_M3(T) = swap + mirror` (asserted ≤ 1e-30).
+
+It is a **near-cancellation with computable residual, not an identity**:
+swap is interface algebra at q₀, mirror is AME data, and nothing ties
+them. At A=3: `swap + mirror = −0.938014 + 0.904360 = −0.033654`, which
+is exactly the difference of the two M3 residuals (+0.0665 vs +0.0329).
+
+### Generality: the cancellation is A=3-specific
+
+| pair | A | asym | swap | mirror | swap+mirror | gap |
+|---|---:|---:|---:|---:|---:|---:|
+| T/³He | 3 | +1.3718 | −0.9380 | +0.9044 | **−0.0337** | 1.3382 |
+| ⁵He/⁵Li† | 5 | +1.3718 | −0.1173 | +0.4376 | +0.3202 | 1.6921 |
+| ⁷Li/⁷Be | 7 | +1.3718 | −0.0167 | +0.4102 | **+0.3935** | 1.7653 |
+
+† particle-unstable pair — corroborating only; ⁷Li/⁷Be is the clean
+bound-pair AME test.
+
+1. The candidate A-independent factorization `swap = log g_pp − log g_nn
+   = −3.344` is **false** (actual −0.938 at A=3): `1−∏f` does not factor
+   over interfaces, so the swap term is A-dependent.
+2. All three interface factors satisfy `0 < f < 1` at q₀ (f_pp ≈ 0.499,
+   f_pn ≈ 0.395, f_nn ≈ 0.290, asserted), so `P_(Z,N) → 0` geometrically
+   and **swap → 0 with A** — a *derived* property of the closed form.
+3. The AME mirror term does **not** decay (+0.904 / +0.438 / +0.410), so
+   `swap + mirror` cannot stay near 0: at ⁷Li/⁷Be it is +0.394, an order
+   of magnitude above the A=3 residual −0.0337.
+
+### Verdict (cywi)
+
+> **"[Z>N] gate is a derived generic rule of the interface algebra":
+> REFUTED — scope (a) ONLY.** The interface algebra, alone, supplies a
+> swap term that decays geometrically with A while the experimental
+> mirror term it must cancel stays O(0.4); the A=3 cancellation is a
+> numerical coincidence of that one pair. This constrains the
+> gate-as-rule reading only — it does not exclude the trace asymmetry κ
+> from a larger closure (no proved invariant; scope-(b) not claimed).
+> **M3 at A=3 remains NEAR-MATCH** with its residual now *stated
+> exactly*: `swap + mirror = −0.0337 = res_M3(³He) − res_M3(T)`.
+> Prediction for any heavier AME-testable mirror pair: the M3 gate
+> over-corrects the p-rich member by ≈ `mirror(A)` (+0.39 at A=7).
