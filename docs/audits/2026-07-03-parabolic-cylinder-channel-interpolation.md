@@ -68,8 +68,7 @@ cheat-sheet's "$Q_\beta$ is the bar-odd $\sinh$ partner of the bar-even
 $\cosh$ meson scale $m_\pi$"). The invariant statement is the bar-parity
 split of the complex volume
 [`conj:binding-qbeta-complex-volume`](../../content/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume.md):
-$\mathrm{Re}\,\mathfrak{V} = $ binding (even), $\mathrm{Im}\,\mathfrak{V} =
-\mathfrak{Q}_\beta$ (odd).
+$\mathrm{Re}\,\mathfrak{V}$ = binding (even), $\mathrm{Im}\,\mathfrak{V} = \mathfrak{Q}_\beta$ (odd).
 
 **What is genuinely new in the $D_\nu$ lens** (corpus-grep verified: no prior
 "parabolic cylinder" / Weber occurrence in `content/`, `docs/`,
@@ -240,11 +239,12 @@ with every ingredient already present in the corpus:
 
 ## 6. Discipline guards (what this does NOT claim)
 
-- **No numerical claim.** The 2026-06-30 probe already showed the bar-even
-  *projection* does not fix the ~38% binding MAE; interpolation is a
-  different mechanism, but nothing here claims it closes any numerical
-  residual. The "gap" closed in this note is structural (one family, two
-  towers), not the binding error.
+- **No new numerical result.** All quantitative figures cited here (e.g.
+  the ~38% binding MAE) are quotes from prior probes, not results of this
+  audit. The 2026-06-30 probe already showed the bar-even *projection* does
+  not fix that MAE; interpolation is a different mechanism, but nothing
+  here claims it closes any numerical residual. The "gap" closed in this
+  note is structural (one family, two towers), not the binding error.
 - **Scope-limited identifications.** The Faddeev-level identification of
   $q$-$D_\nu$ (§4 level 2) and the Deligne/TL interpolation reading (level 3)
   are candidate homes, not results. The $AW(3)$-vs-$H^1$ "3 = 3" is a
@@ -254,22 +254,88 @@ with every ingredient already present in the corpus:
   $q$-Hermite family is used as the *basis/recurrence* home, which is the
   part of that audit that stands.
 
-## 7. Follow-ups (queued, not started)
+## 7. Follow-ups (owner-approved 2026-07-03; statuses live)
 
-1. **Lean §3b class `QWeberInterpolation`** extending
-   `BindingQHermiteOscillator`: two-solution combination with continuous
-   index; parity collapse at integer $\nu$ from $\Gamma_q$-pole-vanishing
-   carried as hypothesis fields; the even/odd two-step decoupling already
-   proved becomes the integer-point boundary case.
-2. **Literature pass → `references.ts`**: Ismail–Masson $q^{-1}$-Hermite at
-   continuous degree; Koelink–Stokman Askey–Wilson function transform;
-   Atakishiyev–Suslov $q$-oscillator; classical Weber/parabolic-cylinder
-   (Whittaker–Watson / DLMF ch. 12).
-3. **Probe (cheap, decisive per formalize-first caveat):** evaluate a
-   continuous-$\nu$ channel mixture on the Hopf channel and check whether
-   the neutron-organized $B_{\mathrm{odd}}$ (2026-06-30 probe: 0.889 /
-   2.757 MeV steps) sits at an interpolating $\nu$ between the integer
-   sublattices.
-4. **Categorical note:** generic-parameter TL / Deligne interpolation of the
-   channel category as the meaning of continuous tower level (ties to the
-   $a_D^{(n)}$ $q$-involution identification at non-integer $n$).
+1. **Lean class `QWeberInterpolation`** [DONE — this branch]:
+   `QOU/Mass/QWeberInterpolation.lean`. Two-solution combination with
+   continuous index $\nu \in K$; the $\Gamma_q$-pole parity vanishing is
+   carried as hypothesis fields (the analytic content); everything
+   downstream is **proved sorry-free**: pure-even/pure-odd collapse at
+   integer points, recurrence closure (the interpolant satisfies the same
+   Rogers–Szegő recurrence as the towers, for every $\nu$ — the 2-dim
+   solution-space property of Weber's equation at the fibre level), and
+   two-step decoupling transfer at $t = -1$.
+2. **Literature pass → `references.ts`** [DONE — this branch]:
+   added `atakishiyev-suslov1990` ($q$-oscillator), `dlmf-ch12`
+   (parabolic cylinder), `deligne2007` (interpolated categories);
+   `ismail-masson1994`, `askey1989qhermite`, `koelink-stokman-2003`
+   already present.
+3. **Probe** [DONE — this branch]:
+   `computations/parabolic_cylinder_channel_mixing_probe.py` — reads the
+   2026-06-30 witness, inverts the Weber mixing ratio for $\nu$ per
+   isotope; results in §9 below.
+4. **Categorical note** [DONE — §8 below].
+
+## 8. Categorical note: continuous $\nu$ = interpolated tower level
+
+The categorical machine for a non-integer tower level already exists in the
+literature: **interpolated tensor categories** (Deligne's
+$\mathrm{Rep}(S_t)$ for $t \notin \mathbb{N}$ \cite{deligne2007}, and its
+older diagrammatic shadow, Temperley–Lieb $TL(\delta)$ at generic loop
+parameter $\delta$). The transport to QOU:
+
+- **Integer level = the channel tower.** The paper's channels at strand
+  count $n$ are the Wedderburn blocks of $H_n(q)$, indexed by partitions
+  $\lambda \vdash n$; the binding period is the level-$n$ aggregate
+  $a_D^{(n)} = \tfrac1n \sum_{\lambda\vdash n}\dim_q(\lambda)$, identified
+  (2026-06-26 audit) as a $q$-involution number = $q$-Hermite moment.
+- **Interpolated level.** In $\mathrm{Rep}(S_t)$ / generic-$\delta$ $TL$
+  the same partition combinatorics is organized so that the level parameter
+  enters *polynomially* (dimensions of interpolated objects are polynomials
+  in $t$), so "level $\nu$" is meaningful for non-integer $\nu$: the
+  categorical trace of the interpolated object continues $a_D^{(n)}$ in
+  $n$. This is the categorical face of the same continuation that
+  $D_\nu$ performs analytically on the Hermite tower index.
+- **Parity sublattices.** The even/odd sublattices of $\nu$ correspond to
+  the $\mathbb{Z}_2$-grading that survives interpolation (the bar-parity of
+  §2); the $\Gamma$-pole collapse at integer $\nu$ is the categorical
+  specialization functor $\mathrm{Rep}(S_t) \to \mathrm{Rep}(S_n)$ at
+  $t = n$ (which acquires a kernel exactly at integer points — the
+  categorical shadow of pole-vanishing: at integers the generic object
+  degenerates onto the pure tower).
+- **Status.** Candidate framing, not a result: what would promote it is a
+  computation of the interpolated categorical trace at continuous level
+  reproducing the $q$-involution generating function. Queued as the natural
+  successor to follow-up 3's probe.
+
+## 9. Probe results (follow-up 3) — negative, scope-limited
+
+Probe: [`parabolic_cylinder_channel_mixing_probe.py`](../../computations/parabolic_cylinder_channel_mixing_probe.py)
+(witness `parabolic-cylinder-channel-mixing-probe.witness.json`, 50 dps,
+shape-probe tier). Per isotope, the channel-mixing observable
+$\rho = B_{\mathrm{odd}}/B_{\mathrm{even}}$ (from the 2026-06-30 witness) was
+inverted through the Weber mixing ratio
+$R(\nu) = \sqrt2\,|\Gamma(\tfrac{1-\nu}{2})/\Gamma(-\tfrac{\nu}{2})|$ on
+$\nu \in (0,1)$, both with classical $\Gamma$ and with $\Gamma_q$ at the
+substrate $q_0$ (Jackson $q>1$ extension).
+
+| iso | $N$ | $\rho$ | $\nu$ (classical) | $\nu$ ($q$-deformed) |
+|---|---|---|---|---|
+| ²H | 1 | 0.2964 | 0.2017 | 0.2078 |
+| ³H | 2 | 0.4368 | 0.2766 | 0.2845 |
+| ³He | 1 | 0.1506 | 0.1106 | 0.1142 |
+| ⁴He | 2 | 0.2991 | 0.2032 | 0.2093 |
+
+**Finding (scope-limited negative, class (a)).** The extracted $\nu$ is
+**not** neutron-organized: spread within $N$-classes (0.091) ≈ spread across
+(0.084). The $B_{\mathrm{odd}}$ $N$-organization does not survive the
+$\rho$-ratio because $B_{\mathrm{even}}$ varies per isotope. So *this
+observable, alone* — reading $\rho$ as a Weber mixing angle — does not
+exhibit interpolation structure. This constrains the simplest reading only;
+it does not exclude the $D_\nu$ family as an ingredient (the honest
+interpolation object lives across the rotation, §4 level 2, which this
+$\rho$-inversion does not implement). The $q$-deformation shifts $\nu$ by
+only $\sim+3\%$ uniformly — the classical and $q$-readings agree on the
+verdict. Incidental: ²H and ⁴He extract nearly equal $\nu$ (0.2017 / 0.2032),
+but that is a direct reparametrization of their near-equal $\rho$, not new
+structure.
