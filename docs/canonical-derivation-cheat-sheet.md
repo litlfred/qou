@@ -442,8 +442,12 @@ track in the proof-watcher queue):
 1. **`y_λ` uniqueness rests on Schur character-orthogonality**, which is **not yet
    in Mathlib** (`wedderburn-as-noncomm-fourier.lean`); the cross-validation
    `Σ_λ y_λ χ^λ = z^{ℓ(w)}` passes numerically (n=3,4,5) but is unproved in Lean.
-   Same for `π_λ` orthogonality and the per-λ Frobenius block-orthogonality
-   `⟨a,b⟩_F = ⊕_λ ⟨a,b⟩_F^λ` (implied by §step 5+6, not formalized).
+   Same for `π_λ` orthogonality. The per-λ Frobenius block-orthogonality
+   `⟨a,b⟩_F = ⊕_λ ⟨a,b⟩_F^λ` is now **formalized** (2026-07-03,
+   `QOU.Hecke.Wedderburn.frobPairing_block_decomp` /
+   `frobPairing_block_orthogonal`, sorry-free) — conditional on the
+   `WedderburnDecomp` class axioms, whose discharge is the L-1/L-2 debt
+   (§9.4).
 2. **The per-block q-Reeb phase `θ_λ` is DERIVED at step 2 (Yekutieli boundary
    holonomy) but COLLAPSED by the scalar trace** `tr_M = Σ_λ y_λ χ^λ`. This is an
    *information loss*: the framework computes the per-λ phase, then sums it away.
@@ -643,7 +647,7 @@ verification-debt for the proof-watcher / a Lean session (lake required).
 |---|---|---|---|---|
 | **L-1** | Schur character-orthogonality on `H_n(q)` ⇒ `y_λ` uniqueness (`Σ_λ y_λ χ^λ = z^{ℓ(w)}` invertible at generic q) | `QOU.Hecke.Wedderburn` / `wedderburn-as-noncomm-fourier.lean` | Mathas (1999) §3.43; not in Mathlib | 🔴 debt |
 | **L-2** | Central-idempotent orthogonality `π_λ π_μ = δ_{λμ} π_λ` (currently a class axiom) | `QOU.Hecke.Wedderburn` (`WedderburnDecomp`) | Mathas (1999) §3.43 | 🔴 debt |
-| **L-3** | Per-λ Frobenius block-orthogonality `⟨a,b⟩_F = ⊕_λ ⟨a,b⟩_F^λ` (implied by §5+§6, not formalized) | `QOU.…FrobeniusHopfSubstrate` | follows from L-2 + `def:frobenius-hopf-substrate` | 🔴 debt |
+| **L-3** | Per-λ Frobenius block-orthogonality `⟨a,b⟩_F = ⊕_λ ⟨a,b⟩_F^λ` | `QOU.Hecke.Wedderburn` (`frobPairing_block_decomp` + `frobPairing_block_orthogonal`) | follows from L-2 + `def:frobenius-hopf-substrate` | 🟡 **formalized 2026-07-03** (sorry-free, `lean`-direct exit 0), conditional on the `WedderburnDecomp` class — the docstring-promised centrality of `π_λ` is now an encoded `central` field, and both L-3 statements are *derived* from `complete` + `central` + `idempotent`/`orthogonal`. Residual debt = discharging those class axioms from the Hecke structure, i.e. exactly L-1/L-2 (Mathas §3.43) |
 
 These three close the "ASSUMED" entries in the §9.1 table. They are the
 canonical chain's standing Lean backlog; pick them up in a lake-enabled session
