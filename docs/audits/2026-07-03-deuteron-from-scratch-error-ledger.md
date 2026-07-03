@@ -1,6 +1,6 @@
 # 2026-07-03 — Deuteron (D) canonical mass + binding from scratch: per-stage error ledger
 
-**Branch:** `claude/d-mass-binding-canonical-aj98ux` · **Bean:** `cexx` (session milestone)
+**Date:** 2026-07-03 · **Branch:** `claude/d-mass-binding-canonical-aj98ux` · **PR:** [#3266](https://github.com/litlfred/qou/pull/3266) · **Bean:** `cexx` (session milestone)
 
 ## Goal (owner request, 2026-07-03)
 
