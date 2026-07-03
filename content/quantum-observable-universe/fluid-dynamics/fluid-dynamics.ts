@@ -32,6 +32,8 @@ export default chapter({
         "q-ns-properties",
         "q-metric-contact-deformation",
         "geodesic-vortices",
+        "two-vortex-channel-algebra",
+        "two-vortex-scattering-channels",
         "braid-fluid",
         "braid-fluid-table-data",
         "planck-reynolds",
