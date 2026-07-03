@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-03T22:48:51.262857+00:00",
-  "commitSha": "a9b83c430f5c2f9e593f56570f18f369d0fb6405",
+  "computedAt": "2026-07-03T22:54:19.866768+00:00",
+  "commitSha": "7bf87a1d48e9fea88b701080d58e3712f08d9435",
   "assertions": [
     {
       "name": "universal_scalar_wn_kernel_refuted_by_mirror_split",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 82,
+  "durationMs": 9,
   "computation": "theta-wn-kernel-derive-or-refute",
   "scriptFile": "theta_wn_kernel_derive_or_refute.py",
-  "scriptHash": "449b1d81fc6e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "7f3a1501dc6d",
+  "scriptCommitSha": "7bf87a1d48e9fea88b701080d58e3712f08d9435",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,7 +44,7 @@
       "w2": 4.3533674521174195,
       "w3_T": 9.158869477830988,
       "w3_He": 8.040941695253638,
-      "w4": 15.30917569132706
+      "w4": 15.604233140615488
     },
     "mirror_split_frac": 0.12999302972892574
   }

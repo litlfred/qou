@@ -41,7 +41,8 @@ from codata_constants import (  # noqa: E402
 try:
     from witness_base import WitnessBuilder  # noqa: E402
     _HAVE_WB = True
-except Exception:
+except ImportError:
+    WitnessBuilder = None  # explicit fallback
     _HAVE_WB = False
 
 set_compute_dps()
@@ -105,7 +106,10 @@ def main() -> int:
     w2 = B["D"] / (M_E * aD[2])
     w3_T = (B["T"] / M_E - aD[2] * w2) / aD[3]
     w3_He = (B["3He"] / M_E - aD[2] * w2) / aD[3]
-    w4 = (B["4He"] / M_E - aD[2] * w2 - aD[3] * w3_T) / aD[4]
+    # ⁴He (T₃=0) uses the isospin-SYMMETRIC mirror average of w3 (not one branch),
+    # so the w4 extraction carries no ³H-vs-³He bias.
+    w3_avg = (w3_T + w3_He) / 2
+    w4 = (B["4He"] / M_E - aD[2] * w2 - aD[3] * w3_avg) / aD[4]
 
     print("  Universal-weight extraction (hypothesis: w_n is K-independent):")
     print(f"     w2 (from D)          = {float(w2):8.4f}")
@@ -120,9 +124,9 @@ def main() -> int:
     print(f"     universal-scalar w_n holds (split < 2%)?  {bool(universal)}\n")
 
     # ── Do the (nominal) weights follow a clean single recursion? ─────────────
-    print("  Weight ratios (single-kernel test, using ³H branch):")
-    r32 = w3_T / w2
-    r43 = w4 / w3_T
+    print("  Weight ratios (single-kernel test, mirror-symmetric w3):")
+    r32 = w3_avg / w2
+    r43 = w4 / w3_avg
     print(f"     w3/w2 = {float(r32):.3f}   w4/w3 = {float(r43):.3f}")
     print(f"     (a q-Bessel/geometric kernel would give a smooth ratio law;")
     print(f"      the isospin split above already breaks a single scalar kernel)\n")
