@@ -3,6 +3,7 @@ import QOU.Glossary
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
+import Mathlib.CategoryTheory.Types.Basic
 import Mathlib.Algebra.Group.Basic
 import Mathlib.Algebra.Ring.Basic
 import Mathlib.Algebra.Order.Field.Basic
@@ -26,43 +27,7 @@ open scoped Topology Manifold CategoryTheory CategoryTheory.MonoidalCategory
 
 namespace QOU
 
-universe u v
-
-/-- **Quantum Universe** over a field `k`.
-
-    A triple `(C, A, ω)` where `C` is a `k`-linear rigid monoidal
-    category, `A` is a Frobenius–Hopf object in `C`, and `ω` is a fibre
-    functor.  The deformation parameter `q` is not part of the base
-    definition; it enters via the substrate parameter
-    (Definition 1.x, `SubstrateParameter`).
-
-    LaTeX: `\label{def:quantum-universe}` -/
-structure QuantumUniverse (k : Type*) [Field k] where
-  /-- The monoidal category `C`. Represented as an opaque type with
-      `Category` and `MonoidalCategory` instances. -/
-  C : Type u
-  [catInst : CategoryTheory.Category.{v} C]
-  [monInst : CategoryTheory.MonoidalCategory C]
-  /-- The Frobenius–Hopf object `A` in `C`. -/
-  frobHopf : @FrobeniusHopfData C catInst monInst
-  /-- The fibre functor `ω : C → Type*` (abstracting `Vect_k`).
-      An exact faithful `k`-linear monoidal functor. -/
-  fibreFunctor : @CategoryTheory.Functor C catInst (Type*) inferInstance
-  /-- **Faithfulness**: `ω` reflects equality of morphisms.
-      If `ω.map f = ω.map g` then `f = g`. -/
-  fibreFunctor_faithful : @CategoryTheory.Functor.Faithful C catInst (Type*) inferInstance
-    fibreFunctor
-  /-- **Monoidality**: `ω` preserves the tensor product up to natural
-      isomorphism.  Abstractly: `ω(X ⊗ Y) ≅ ω(X) × ω(Y)` and
-      `ω(𝟙) ≅ PUnit`.  Full `MonoidalFunctor` requires
-      `Mathlib.CategoryTheory.Monoidal.Functor`; here we record the
-      constraint as a Prop witness. -/
-  /-- **Monoidality**: `ω(X ⊗ Y) ≅ ω(X) × ω(Y)` and `ω(𝟙) ≅ PUnit`.
-      Encoded as: the image of the unit is inhabited. -/
-  fibreFunctor_unit_inhabited : Nonempty (fibreFunctor.obj (𝟙_ C))
-  /-- `A` admits a differential calculus: the module of Kähler
-      differentials `Ω¹(A)` exists as an object of `C`. -/
-  differentialForms : C
+universe u v w
 
 /-- **Frobenius–Hopf data** in a monoidal category.
 
@@ -112,5 +77,40 @@ structure FrobeniusHopfData (C : Type u) [CategoryTheory.Category.{v} C]
       Frobenius object in a monoidal category. -/
   frobenius_relation :
     mul ≫ comul = (comul ▷ obj) ≫ (α_ obj obj obj).hom ≫ (obj ◁ mul)
+
+/-- **Quantum Universe** over a field `k`.
+
+    A triple `(C, A, ω)` where `C` is a `k`-linear rigid monoidal
+    category, `A` is a Frobenius–Hopf object in `C`, and `ω` is a fibre
+    functor.  The deformation parameter `q` is not part of the base
+    definition; it enters via the substrate parameter
+    (Definition 1.x, `SubstrateParameter`).
+
+    LaTeX: `\label{def:quantum-universe}` -/
+structure QuantumUniverse (k : Type*) [Field k] where
+  /-- The monoidal category `C`. Represented as an opaque type with
+      `Category` and `MonoidalCategory` instances. -/
+  C : Type u
+  [catInst : CategoryTheory.Category.{v} C]
+  [monInst : CategoryTheory.MonoidalCategory C]
+  /-- The Frobenius–Hopf object `A` in `C`. -/
+  frobHopf : @FrobeniusHopfData C catInst monInst
+  /-- The fibre functor `ω : C → Type*` (abstracting `Vect_k`).
+      An exact faithful `k`-linear monoidal functor. -/
+  fibreFunctor : @CategoryTheory.Functor C catInst (Type w) inferInstance
+  /-- **Faithfulness**: `ω` reflects equality of morphisms.
+      If `ω.map f = ω.map g` then `f = g`. -/
+  fibreFunctor_faithful : @CategoryTheory.Functor.Faithful C catInst (Type w) inferInstance
+    fibreFunctor
+  -- **Monoidality**: `ω` preserves the tensor product up to natural
+  -- isomorphism.  Full `MonoidalFunctor` requires
+  -- `Mathlib.CategoryTheory.Monoidal.Functor`; here we record the
+  -- constraint as a Prop witness.
+  /-- **Monoidality**: `ω(X ⊗ Y) ≅ ω(X) × ω(Y)` and `ω(𝟙) ≅ PUnit`.
+      Encoded as: the image of the unit is inhabited. -/
+  fibreFunctor_unit_inhabited : Nonempty (fibreFunctor.obj (𝟙_ C))
+  /-- `A` admits a differential calculus: the module of Kähler
+      differentials `Ω¹(A)` exists as an object of `C`. -/
+  differentialForms : C
 
 end QOU

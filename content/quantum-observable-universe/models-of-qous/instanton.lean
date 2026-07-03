@@ -1,5 +1,6 @@
 import QOU.Basic
 import QOU.Glossary
+import QOU.QuantumObservableUniverse.Structures
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
@@ -33,6 +34,31 @@ namespace QOU
 
 universe u v
 
+/-- **CR manifold data** for the ℂ realisation (ℝ ground ring).
+
+    Re-declared from the library module
+    `QOU.QuantumObservableUniverse.CRRealisation` so this sibling is a
+    self-contained compilation unit — importing `CRRealisation` would
+    collide with this block's own `InstantonConnection` declaration.
+    Keep field-for-field in sync with the library. -/
+structure CRManifoldData where
+  /-- The underlying smooth manifold carrier. -/
+  M : Type*
+  [topM : TopologicalSpace M]
+  /-- CR dimension `n ≥ 1`; real dimension of `M` is `2n + 1`. -/
+  n : ℕ
+  n_pos : 0 < n
+  /-- Levi form signature `(r, s)` with `r + s = n`. -/
+  r : ℕ
+  s : ℕ
+  rs_sum : r + s = n
+  /-- The contact form `θ` represented abstractly as a continuous 1-form. -/
+  contactForm : M → ℝ
+  /-- The Reeb vector field `ξ`, characterised by `ι_ξ dθ = 0` and `θ(ξ) = 1`. -/
+  reebField : M → M
+
+attribute [instance] CRManifoldData.topM
+
 /-- **Instanton connection** on a principal bundle `P` over a CR manifold.
 
     When `dim_ℝ H = 4`, the curvature restricted to `H = ker θ` is self-dual:
@@ -56,8 +82,8 @@ structure InstantonConnection (cr : CRManifoldData) where
       2-forms restricted to `H`, determined by the Webster metric `g_θ`
       and the complex structure `J`. -/
   hodgeStar : cr.n = 2 → HodgeInvolution C(cr.M, ℝ)
-  /-- Yang–Mills minimisation: the connection is a critical point of
-      `YM(A) = ∫_M ‖F_A|_H‖² θ ∧ (dθ)ⁿ`. -/
+  -- Yang–Mills minimisation: the connection is a critical point of
+  -- `YM(A) = ∫_M ‖F_A|_H‖² θ ∧ (dθ)ⁿ`.
   /-- The Yang–Mills energy functional `YM(A) = ∫_M ‖F_A|_H‖² θ ∧ (dθ)ⁿ`.
       Returns the energy evaluated on `curvature_H`. -/
   yangMillsEnergy : ℝ
