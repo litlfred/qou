@@ -55,7 +55,9 @@ def main() -> int:
     p_in_window = float(M_P_MEV) > 938.27200 and float(M_P_MEV) < 938.27220
     n_in_window = float(M_N_MEV) > 939.56500 and float(M_N_MEV) < 939.56600
 
-    w = WitnessBuilder("codata-masses", engine="codata-constants")
+    # engine must be a witness-schema enum value; the CODATA provenance
+    # lives in the "source" parameter below.
+    w = WitnessBuilder("codata-masses", engine="python")
     w.set_description(
         "CODATA 2022 / AME 2020 proton, neutron, electron masses "
         "(MeV/c^2), re-exported from "

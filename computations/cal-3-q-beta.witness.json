@@ -1,15 +1,15 @@
 {
-  "engine": "codata_2022_source",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-06-28T23:06:11.102879+00:00",
-  "commitSha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4",
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-03T01:10:37.092327+00:00",
+  "commitSha": "9455db71d5fc8f322e8f199ad62dead1427cca4b",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 180,
+  "durationMs": 9,
   "computation": "cal-3-q-beta",
   "scriptFile": "build_cal_3_q_beta_witness.py",
-  "scriptHash": "b02c594a3392",
-  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "scriptHash": "e95b7ee4209d",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,9 +17,9 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
@@ -28,6 +28,7 @@
   "contentBlock": "prop:three-calibration-inputs",
   "auditOnly": "docs/audits/2026-05-10-1ppb-workplan-update.md",
   "parameters": {
+    "source": "CODATA 2022 (Q_beta(n) primary definition)",
     "calibration_id": "CAL-3",
     "role": "Hadronic energy scale E_0 via E_0 = Q_β(n) / |Δ(net)|",
     "data_source": "PDG 2024 free-neutron β-decay Q-value (n → p + e⁻ + ν̄_e), consistent with AME 2020 mass-difference computation. Sourced from codata_2022_source.Q_BETA_MEV_AME.",

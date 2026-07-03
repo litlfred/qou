@@ -28,7 +28,10 @@ from codata_2022_source import (  # noqa: E402
 
 
 def main() -> int:
-    w = WitnessBuilder("cal-3-q-beta", engine="codata_2022_source")
+    # engine must be a witness-schema enum value; the CODATA-2022
+    # provenance is recorded as a parameter below.
+    w = WitnessBuilder("cal-3-q-beta", engine="python")
+    w.add_parameter("source", "CODATA 2022 (Q_beta(n) primary definition)")
     w.set_description(
         "CAL-3 calibration input: free-neutron β-decay Q-value Q_β(n). "
         "Per the QOU three-calibration discipline "
