@@ -85,8 +85,10 @@ no energy" becomes precise at three levels:
 ## 4. The zero-point probe — negative as sole mechanism (scope-(a)), one near-match
 
 Probe: [`zero_point_channel_energy_probe.py`](../../computations/zero_point_channel_energy_probe.py)
-(witness `zero-point-channel-energy-probe.witness.json`; 50 dps; parameter-free —
-scale $E_0$, factor $\tfrac12$, canonical channel measure). Two candidates for the
+(witness `zero-point-channel-energy-probe.witness.json`; 70 dps compute /
+50-digit serialized values, matching the witness `precisionMetadata`;
+parameter-free — scale $E_0$ (E₀), factor $\tfrac12$, canonical channel
+measure). Two candidates for the
 free-vs-bound zero-point shift $\Delta E(A) = E(3A) - A\,E(3)$ under the normalized
 quadratic measure $\hat w_\lambda \propto \dim_q^2$:
 
