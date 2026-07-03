@@ -1,0 +1,36 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:substrate-line-bundle-base-not-fibre",
+  "kind": "remark",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle-base-not-fibre.ts",
+    "md": "../qou/content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle-base-not-fibre.md"
+  },
+  "source_hashes": {
+    "md": "f385e3f0cb90",
+    "ts": "539482330be0"
+  },
+  "criteria": {
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "f385e3f0cb90",
+          "ts": "539482330be0"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:55.699Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-07-03T00:52:55.699Z"
+}

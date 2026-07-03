@@ -4,14 +4,33 @@
   "kind": "proposition",
   "paths": {
     "ts": "../qou/content/quantum-observable-universe/appendix-surreals/depth-2-identification-bloch-suslin.ts",
-    "md": "../qou/content/quantum-observable-universe/appendix-surreals/depth-2-identification-bloch-suslin.md",
-    "lean": "../qou/content/quantum-observable-universe/appendix-surreals/depth-2-identification-bloch-suslin.lean"
+    "md": "../qou/content/quantum-observable-universe/appendix-surreals/depth-2-identification-bloch-suslin.md"
   },
   "source_hashes": {
     "md": "c511f5ef64d6",
-    "ts": "c077b11cb64f",
-    "lean": "7f834ce18ac8"
+    "ts": "c077b11cb64f"
   },
-  "criteria": {},
-  "updated_at": "2026-06-28T07:05:43.329Z"
+  "criteria": {
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "c511f5ef64d6",
+          "ts": "c077b11cb64f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:55.206Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-07-03T00:52:55.206Z"
 }

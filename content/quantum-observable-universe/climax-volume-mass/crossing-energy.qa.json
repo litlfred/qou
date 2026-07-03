@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/climax-volume-mass/crossing-energy.lean"
   },
   "source_hashes": {
-    "md": "f2bd77daab5e",
+    "md": "f693c4f25d0b",
     "ts": "40ac59a3b840",
-    "lean": "317114af15d6"
+    "lean": "424a59ecb03c"
   },
   "criteria": {
     "voice-status-leak": [
@@ -734,6 +734,24 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "f693c4f25d0b",
+          "ts": "40ac59a3b840",
+          "lean": "424a59ecb03c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:55.595Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1157,5 +1175,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T07:55:41.531Z"
+  "updated_at": "2026-07-03T00:52:55.595Z"
 }

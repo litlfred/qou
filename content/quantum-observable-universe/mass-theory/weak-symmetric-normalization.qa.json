@@ -8,10 +8,31 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/weak-symmetric-normalization.lean"
   },
   "source_hashes": {
-    "md": "e74def4d3008",
-    "ts": "c73ed308b78e",
-    "lean": "8a48ec5efb20"
+    "md": "5b5554512c58",
+    "ts": "b144e2fbc67e",
+    "lean": "f022e236eb05"
   },
-  "criteria": {},
-  "updated_at": "2026-06-28T05:50:25.638Z"
+  "criteria": {
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "5b5554512c58",
+          "ts": "b144e2fbc67e",
+          "lean": "f022e236eb05"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.534Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ]
+  },
+  "updated_at": "2026-07-03T00:52:56.534Z"
 }

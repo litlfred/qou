@@ -811,28 +811,6 @@
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       }
     ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "059f7603e41c",
-          "ts": "2569152e2b22",
-          "lean": "67dcc3e2f273"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-1.md:1: \\cite{kock2004} or -- Ref: [kock2004] does not resolve in references.ts"
-      }
-    ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
@@ -1601,7 +1579,27 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Axiom 1 — Haar state gives a non-degenerate Frobenius pairing' (concerning 'The Haar state $h = \\int_{A}$ on $A = \\mathcal{O}_{q}(G)$ is faithful;') are consistent and formally verified."
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "059f7603e41c",
+          "ts": "2569152e2b22",
+          "lean": "67dcc3e2f273"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:58.083Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
     ]
   },
-  "updated_at": "2026-06-28T11:19:33.246Z"
+  "updated_at": "2026-07-03T00:52:58.083Z"
 }

@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "fb2828f43082",
     "ts": "30a9217a058c",
-    "lean": "7a4d279d9e3c"
+    "lean": "d5c35ca903f2"
   },
   "criteria": {
     "voice-status-leak": [
@@ -809,28 +809,6 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
-      }
-    ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "fb2828f43082",
-          "ts": "30a9217a058c",
-          "lean": "7a4d279d9e3c"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.md:1: \\cite{reshetikhin1991} or -- Ref: [reshetikhin1991] does not resolve in references.ts | quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.md:1: \\cite{deligne1990} or -- Ref: [deligne1990] does not resolve in references.ts | quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.md:1: \\cite{tannaka1939} or -- Ref: [tannaka1939] does not resolve in references.ts"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1859,7 +1837,27 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "fb2828f43082",
+          "ts": "30a9217a058c",
+          "lean": "d5c35ca903f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:57.994Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
     ]
   },
-  "updated_at": "2026-06-28T11:19:33.145Z"
+  "updated_at": "2026-07-03T00:52:57.994Z"
 }

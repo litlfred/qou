@@ -3,10 +3,12 @@
   "label": "proof:jackson-q-bessel-contiguity",
   "kind": "proof",
   "paths": {
-    "ts": "../qou/content/quantum-observable-universe/mass-theory/jackson-q-bessel-contiguity.ts"
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/jackson-q-bessel-contiguity.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-theory/jackson-q-bessel-contiguity.md"
   },
   "source_hashes": {
-    "ts": "7c559c2285aa"
+    "md": "e36094d17e61",
+    "ts": "601720ea2022"
   },
   "criteria": {
     "voice-status-leak": [
@@ -679,6 +681,24 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "notes": "block has no .md sibling"
+      },
+      {
+        "field_hash": {
+          "md": "e36094d17e61",
+          "ts": "601720ea2022"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.534Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -758,5 +778,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-26T15:20:59.452Z"
+  "updated_at": "2026-07-03T00:52:56.534Z"
 }

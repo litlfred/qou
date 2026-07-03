@@ -1,0 +1,38 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "def:curvature-rank",
+  "kind": "definition",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/curvature-rank.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-theory/curvature-rank.md",
+    "lean": "../qou/content/quantum-observable-universe/mass-theory/curvature-rank.lean"
+  },
+  "source_hashes": {
+    "md": "47236488e1e9",
+    "ts": "e10ae3e4e637",
+    "lean": "60a26979da95"
+  },
+  "criteria": {
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "47236488e1e9",
+          "ts": "e10ae3e4e637",
+          "lean": "60a26979da95"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.534Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ]
+  },
+  "updated_at": "2026-07-03T00:52:56.534Z"
+}

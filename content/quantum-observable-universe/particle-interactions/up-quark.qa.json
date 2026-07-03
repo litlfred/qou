@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "9e66dac63ada",
     "ts": "560fccb9f74f",
-    "lean": "87a82f8715a1"
+    "lean": "e68191e0fed1"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1617,48 +1617,6 @@
         "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30"
       }
     ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "a3ab92a9087a",
-          "ts": "560fccb9f74f",
-          "lean": "87a82f8715a1"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/particle-interactions/up-quark.md:1: \\cite{jones1987} or -- Ref: [jones1987] does not resolve in references.ts"
-      },
-      {
-        "field_hash": {
-          "md": "9e66dac63ada",
-          "ts": "560fccb9f74f",
-          "lean": "87a82f8715a1"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-28T23:06:52.243Z",
-        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/particle-interactions/up-quark.md:1: \\cite{jones1987} or -- Ref: [jones1987] does not resolve in references.ts"
-      }
-    ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
@@ -2283,7 +2241,27 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/up-quark.lean for 'Up quark' fails compilation with error: content/quantum-observable-universe/particle-interactions/up-quark.lean:29:13: error: unexpected token 'section'; expected 'lemma'. This invalidates the claim of formal verification."
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "9e66dac63ada",
+          "ts": "560fccb9f74f",
+          "lean": "e68191e0fed1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:57.492Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
     ]
   },
-  "updated_at": "2026-06-28T23:19:37.774Z"
+  "updated_at": "2026-07-03T00:52:57.492Z"
 }

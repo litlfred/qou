@@ -1723,48 +1723,6 @@
         "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30"
       }
     ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "c1629e334c47",
-          "ts": "2c35a2834a2a",
-          "lean": "eebe516e5768"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.md:1: \\cite{kashiwara1991} or -- Ref: [kashiwara1991] does not resolve in references.ts | quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.md:1: \\cite{lecouvey2007} or -- Ref: [lecouvey2007] does not resolve in references.ts | quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.md:1: \\cite{brundankleshchev2009} or -- Ref: [brundankleshchev2009] does not resolve in references.ts | quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.md:1: \\cite{khovanovlauda2009} or -- Ref: [khovanovlauda2009] does not resolve in references.ts | quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.md:1: \\cite{fulton1997} or -- Ref: [fulton1997] does not resolve in references.ts"
-      },
-      {
-        "field_hash": {
-          "md": "38fb253d77e3",
-          "ts": "2c35a2834a2a",
-          "lean": "c1a935594445"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-28T23:06:52.243Z",
-        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.md:1: \\cite{kashiwara1991} or -- Ref: [kashiwara1991] does not resolve in references.ts | content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.md:1: \\cite{lecouvey2007} or -- Ref: [lecouvey2007] does not resolve in references.ts | content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.md:1: \\cite{brundankleshchev2009} or -- Ref: [brundankleshchev2009] does not resolve in references.ts | content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.md:1: \\cite{khovanovlauda2009} or -- Ref: [khovanovlauda2009] does not resolve in references.ts | content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.md:1: \\cite{fulton1997} or -- Ref: [fulton1997] does not resolve in references.ts"
-      }
-    ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
@@ -2385,7 +2343,27 @@
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured relations in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' remain unproven and are represented only by sorry stubs in the formalization content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean."
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "38fb253d77e3",
+          "ts": "2c35a2834a2a",
+          "lean": "c1a935594445"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:57.492Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
     ]
   },
-  "updated_at": "2026-06-28T23:19:37.903Z"
+  "updated_at": "2026-07-03T00:52:57.492Z"
 }

@@ -1,0 +1,38 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "def:two-q-adic-valuation",
+  "kind": "definition",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/appendix-surreals/two-q-adic-valuation.ts",
+    "md": "../qou/content/quantum-observable-universe/appendix-surreals/two-q-adic-valuation.md",
+    "lean": "../qou/content/quantum-observable-universe/appendix-surreals/two-q-adic-valuation.lean"
+  },
+  "source_hashes": {
+    "md": "9c6cb9b92f1b",
+    "ts": "2a8e779e7a03",
+    "lean": "e11677fa89f8"
+  },
+  "criteria": {
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "9c6cb9b92f1b",
+          "ts": "2a8e779e7a03",
+          "lean": "e11677fa89f8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:55.206Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ]
+  },
+  "updated_at": "2026-07-03T00:52:55.206Z"
+}

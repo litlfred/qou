@@ -3,9 +3,9 @@
   "label": "prop:zeta8-witness-level2-su2",
   "kind": "proposition",
   "paths": {
-    "ts": "../qou/content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.ts",
-    "md": "../qou/content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.md",
-    "lean": "../qou/content/quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.lean"
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/zeta8-witness-level2-su2.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-theory/zeta8-witness-level2-su2.md",
+    "lean": "../qou/content/quantum-observable-universe/mass-theory/zeta8-witness-level2-su2.lean"
   },
   "source_hashes": {
     "md": "b228f7a7c59d",
@@ -813,28 +813,6 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
-      }
-    ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "cb0d32b3aa0f",
-          "ts": "a7c34f50136e",
-          "lean": "039419ccded8"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.md:1: \\cite{wenzl1987} or -- Ref: [wenzl1987] does not resolve in references.ts | quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.md:1: \\cite{washington1997} or -- Ref: [washington1997] does not resolve in references.ts | quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.md:1: \\cite{jones1987} or -- Ref: [jones1987] does not resolve in references.ts | quantum-observable-universe/braids-and-knots/zeta8-witness-level2-su2.md:1: \\cite{witten1989} or -- Ref: [witten1989] does not resolve in references.ts"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1867,7 +1845,27 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling contains sorry placeholders, rendering the formal proof for 'prop:zeta8-witness-level2-su2' incomplete."
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "b228f7a7c59d",
+          "ts": "a7c34f50136e",
+          "lean": "039419ccded8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.534Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
     ]
   },
-  "updated_at": "2026-06-28T22:55:43.946Z"
+  "updated_at": "2026-07-03T00:52:56.534Z"
 }

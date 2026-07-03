@@ -3,9 +3,9 @@
   "label": "prop:cyclotomic-strand-doubling",
   "kind": "proposition",
   "paths": {
-    "ts": "../qou/content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts",
-    "md": "../qou/content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.md",
-    "lean": "../qou/content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean"
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/cyclotomic-strand-doubling.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-theory/cyclotomic-strand-doubling.md",
+    "lean": "../qou/content/quantum-observable-universe/mass-theory/cyclotomic-strand-doubling.lean"
   },
   "source_hashes": {
     "md": "d157baffc37d",
@@ -847,28 +847,6 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
-      }
-    ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "2d601314ddf7",
-          "ts": "797e41f50237",
-          "lean": "4e3b1d9ee8b6"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.md:1: \\cite{habiro2000} or -- Ref: [habiro2000] does not resolve in references.ts | quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.md:1: \\cite{washington1997} or -- Ref: [washington1997] does not resolve in references.ts"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1919,7 +1897,27 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean:53:2: error: Tactic `decide` failed for proposition"
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "d157baffc37d",
+          "ts": "797e41f50237",
+          "lean": "ec39d21dbb57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.534Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
     ]
   },
-  "updated_at": "2026-06-28T22:55:43.946Z"
+  "updated_at": "2026-07-03T00:52:56.534Z"
 }

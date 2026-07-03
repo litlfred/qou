@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean"
   },
   "source_hashes": {
-    "md": "e63cba14f5f2",
+    "md": "67a6f4cd8fa7",
     "ts": "172b3ff4ecc2",
-    "lean": "65d9d9531559"
+    "lean": "1d0019603144"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1017,28 +1017,6 @@
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       }
     ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "19319a499088",
-          "ts": "172b3ff4ecc2",
-          "lean": "65d9d9531559"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/jones-markov-trace.md:1: \\cite{jones1987} or -- Ref: [jones1987] does not resolve in references.ts"
-      }
-    ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
@@ -1377,7 +1355,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Statement is over q \u2208 \u2102^\u00d7 not a root of unity (categorical/fibre level); Lean uses R_q = LaurentPolynomial \u2124 and explicitly comments out the archimedean q_pos/root-of-unity fields as 'not meaningful over R_q'. Generic-ring, matches chapter regime."
+        "notes": "Statement is over q ∈ ℂ^× not a root of unity (categorical/fibre level); Lean uses R_q = LaurentPolynomial ℤ and explicitly comments out the archimedean q_pos/root-of-unity fields as 'not meaningful over R_q'. Generic-ring, matches chapter regime."
       }
     ],
     "wall-side-proof": [
@@ -1463,7 +1441,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "md states (existence+uniqueness of tr_M with normalisation/trace/Markov properties; non-degeneracy on irreducibles; link invariance). Lean JonesMarkovTrace structure fields (tr_one, tr_comm, markov property, nondeg, markov_neg) + axiom jones_markov_trace_exists encode the three properties. md explicitly says 'we take the result as axiomatic and encode it as a Lean structure' \u2014 the axiom encoding faithfully mirrors the narrative's axiomatic stance. Consequence theorems (markov_trace_one, all_irreps_detected) match. Equivalent."
+        "notes": "md states (existence+uniqueness of tr_M with normalisation/trace/Markov properties; non-degeneracy on irreducibles; link invariance). Lean JonesMarkovTrace structure fields (tr_one, tr_comm, markov property, nondeg, markov_neg) + axiom jones_markov_trace_exists encode the three properties. md explicitly says 'we take the result as axiomatic and encode it as a Lean structure' — the axiom encoding faithfully mirrors the narrative's axiomatic stance. Consequence theorems (markov_trace_one, all_irreps_detected) match. Equivalent."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1783,7 +1761,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Structure fields carry real content (tr(1)=1, tr(ab)=tr(ba), Markov stabilisation, nondeg \u2203 a, tr a \u2260 0); the axiom asserts inhabitation of a content-bearing structure, not True."
+        "notes": "Structure fields carry real content (tr(1)=1, tr(ab)=tr(ba), Markov stabilisation, nondeg ∃ a, tr a ≠ 0); the axiom asserts inhabitation of a content-bearing structure, not True."
       }
     ],
     "proof-no-false-premise": [
@@ -2158,7 +2136,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean:38:13: error: unexpected token 'section'; expected 'lemma'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean:1 \u2014 content/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean:38:13: error: unexpected token 'section'; expected 'lemma'"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean:1 — content/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean:38:13: error: unexpected token 'section'; expected 'lemma'"
       }
     ],
     "da-referee-verdict": [
@@ -2180,7 +2158,27 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean:38:13: error: unexpected token 'section'; expected 'lemma'"
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "67a6f4cd8fa7",
+          "ts": "172b3ff4ecc2",
+          "lean": "1d0019603144"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:55.297Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
     ]
   },
-  "updated_at": "2026-06-28T05:36:08.012Z"
+  "updated_at": "2026-07-03T00:52:55.297Z"
 }

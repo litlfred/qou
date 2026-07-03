@@ -3,13 +3,34 @@
   "label": "rem:categorical-laplace-transform-properties",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-properties.ts",
-    "md": "content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-properties.md"
+    "ts": "../qou/content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-properties.ts",
+    "md": "../qou/content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-properties.md"
   },
   "source_hashes": {
-    "md": "465d03038c11",
-    "ts": "43bfbfc12620"
+    "md": "1a19801909bf",
+    "ts": "7f1e69e78155"
   },
-  "criteria": {},
-  "updated_at": "2026-06-28T11:19:33.246Z"
+  "criteria": {
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "1a19801909bf",
+          "ts": "7f1e69e78155"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:58.083Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-07-03T00:52:58.083Z"
 }

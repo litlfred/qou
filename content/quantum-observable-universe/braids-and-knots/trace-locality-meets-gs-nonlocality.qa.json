@@ -4,13 +4,11 @@
   "kind": "proposition",
   "paths": {
     "ts": "../qou/content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts",
-    "md": "../qou/content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.md",
-    "lean": "../qou/content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.lean"
+    "md": "../qou/content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.md"
   },
   "source_hashes": {
-    "md": "e5d071e43565",
-    "ts": "122f9159a9f6",
-    "lean": "bff8025c4270"
+    "md": "e9cbd92eb080",
+    "ts": "670618a85215"
   },
   "criteria": {
     "voice-status-leak": [
@@ -829,6 +827,42 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "e9cbd92eb080",
+          "ts": "670618a85215"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "c6456bf489a8"
+        },
+        "reviewed_at": "2026-07-03T00:47:15.423Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "e9cbd92eb080",
+          "ts": "670618a85215"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:55.297Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1368,7 +1402,7 @@
         },
         "reviewed_at": "2026-06-28T07:05:44.350Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Checked mathematical consistency of the claim '**Proposition (locality\u2013non-locality reconciliation).**' and found no counterexamples under the stated conditions.",
+        "notes": "Checked mathematical consistency of the claim '**Proposition (locality–non-locality reconciliation).**' and found no counterexamples under the stated conditions.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
       }
@@ -1461,7 +1495,7 @@
         },
         "reviewed_at": "2026-06-28T07:05:44.350Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Logical transitions in the derivation of '**Proposition (locality\u2013non-locality reconciliation).**' are sound; no non-sequiturs detected.",
+        "notes": "Logical transitions in the derivation of '**Proposition (locality–non-locality reconciliation).**' are sound; no non-sequiturs detected.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
       }
@@ -1600,5 +1634,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T05:36:08.012Z"
+  "updated_at": "2026-07-03T00:52:55.297Z"
 }

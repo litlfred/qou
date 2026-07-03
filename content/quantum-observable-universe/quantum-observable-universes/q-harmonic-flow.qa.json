@@ -576,7 +576,27 @@
         "verdict": "open-objection",
         "referee_argument": "The sibling Lean file q-harmonic-flow.lean contains sorry placeholders, meaning the main result of 'The substrate field $q(p)$ evolves by the $q$-harmonic-map heat flow $\\\\partial_t q = -\\\\Delta_q q$' is unproved and the formalization of 'The substrate parameter $q(p)$, promoted from a fixed modulus to a' is currently vacuous."
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "7e4ece7c1237",
+          "ts": "d8624af20881",
+          "lean": "17c662b2206f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:58.083Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
     ]
   },
-  "updated_at": "2026-06-28T11:19:33.246Z"
+  "updated_at": "2026-07-03T00:52:58.083Z"
 }

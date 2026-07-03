@@ -10,8 +10,29 @@
   "source_hashes": {
     "md": "a0f8fb6fe02d",
     "ts": "8730ba37475d",
-    "lean": "c6c6139d88b7"
+    "lean": "9fe68d6dccdb"
   },
-  "criteria": {},
-  "updated_at": "2026-06-28T11:04:36.980Z"
+  "criteria": {
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "a0f8fb6fe02d",
+          "ts": "8730ba37475d",
+          "lean": "9fe68d6dccdb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:57.226Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ]
+  },
+  "updated_at": "2026-07-03T00:52:57.226Z"
 }

@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "0c2f6eafd741",
     "ts": "e3b48a4881f5",
-    "lean": "05f23632489f"
+    "lean": "f804acd4933a"
   },
   "criteria": {
     "voice-status-leak": [
@@ -716,28 +716,6 @@
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       }
     ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "c9089609cd39",
-          "ts": "d86b2f619227",
-          "lean": "05f23632489f"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/bar-involution.md:1: \\cite{wenzl1988} or -- Ref: [wenzl1988] does not resolve in references.ts | quantum-observable-universe/braids-and-knots/bar-involution.md:1: \\cite{hoefsmit1974} or -- Ref: [hoefsmit1974] does not resolve in references.ts"
-      }
-    ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
@@ -910,7 +888,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean theorem 'qou:QOU.BraidKnot.BarInvolution' statement in content/quantum-observable-universe/braids-and-knots/bar-involution.lean structurally matches the mathematical formulation of 'def:bar-involution' in content/quantum-observable-universe/braids-and-knots/bar-involution.md.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/bar-involution.lean:1 \u2014 Lean file exists"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/bar-involution.lean:1 — Lean file exists"
       }
     ],
     "da-false-claim": [
@@ -1135,7 +1113,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/bar-involution.lean:67:3: error: unknown tactic.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/bar-involution.lean:1 \u2014 content/quantum-observable-universe/braids-and-knots/bar-involution.lean:67:3: error: unknown tactic"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/bar-involution.lean:1 — content/quantum-observable-universe/braids-and-knots/bar-involution.lean:67:3: error: unknown tactic"
       }
     ],
     "da-referee-verdict": [
@@ -1157,7 +1135,27 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/bar-involution.lean:67:3: error: unknown tactic"
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "0c2f6eafd741",
+          "ts": "e3b48a4881f5",
+          "lean": "f804acd4933a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:55.297Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
     ]
   },
-  "updated_at": "2026-06-28T05:36:08.012Z"
+  "updated_at": "2026-07-03T00:52:55.297Z"
 }

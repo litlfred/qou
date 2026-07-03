@@ -1,0 +1,36 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:knot-particle-generation-consequences",
+  "kind": "remark",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/particle-interactions/knot-particle-generation-consequences.ts",
+    "md": "../qou/content/quantum-observable-universe/particle-interactions/knot-particle-generation-consequences.md"
+  },
+  "source_hashes": {
+    "md": "9f5c7888aed8",
+    "ts": "7f9b8bf62006"
+  },
+  "criteria": {
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "9f5c7888aed8",
+          "ts": "7f9b8bf62006"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:57.492Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-07-03T00:52:57.492Z"
+}

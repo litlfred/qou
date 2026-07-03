@@ -8,10 +8,31 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-observable-universes/substrate-self-duality.lean"
   },
   "source_hashes": {
-    "md": "38bc88c79561",
+    "md": "4076b28d8643",
     "ts": "4eeca4b530ee",
-    "lean": "66ecbf13aa08"
+    "lean": "58a91639bd82"
   },
-  "criteria": {},
-  "updated_at": "2026-06-28T11:19:33.246Z"
+  "criteria": {
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "4076b28d8643",
+          "ts": "4eeca4b530ee",
+          "lean": "58a91639bd82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:58.083Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ]
+  },
+  "updated_at": "2026-07-03T00:52:58.083Z"
 }

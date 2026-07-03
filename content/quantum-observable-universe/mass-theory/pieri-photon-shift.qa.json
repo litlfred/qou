@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "1741eb414cb2",
     "ts": "80f3789fda7f",
-    "lean": "288f2faa505f"
+    "lean": "fb9cc7294f2b"
   },
   "criteria": {
     "voice-status-leak": [
@@ -809,28 +809,6 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
-      }
-    ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "af7fe1ff3844",
-          "ts": "80f3789fda7f",
-          "lean": "288f2faa505f"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/mass-theory/pieri-photon-shift.md:1: \\cite{fulton1997} or -- Ref: [fulton1997] does not resolve in references.ts | quantum-observable-universe/mass-theory/pieri-photon-shift.md:1: \\cite{kassel1995} or -- Ref: [kassel1995] does not resolve in references.ts"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1990,7 +1968,27 @@
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "1741eb414cb2",
+          "ts": "80f3789fda7f",
+          "lean": "fb9cc7294f2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.534Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
     ]
   },
-  "updated_at": "2026-06-28T22:44:56.705Z"
+  "updated_at": "2026-07-03T00:52:56.534Z"
 }

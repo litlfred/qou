@@ -1090,28 +1090,6 @@
         "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30"
       }
     ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "2c416c0e8a7e",
-          "ts": "99a6348def1c",
-          "lean": "28c5438db12f"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/particle-interactions/cemetery-group.md:1: \\cite{brundankleshchev2009} or -- Ref: [brundankleshchev2009] does not resolve in references.ts"
-      }
-    ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
@@ -1617,7 +1595,27 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Cemetery group (subcategory annihilated by $\\\\tau$)' are consistent."
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "2c416c0e8a7e",
+          "ts": "99a6348def1c",
+          "lean": "28c5438db12f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:57.492Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
     ]
   },
-  "updated_at": "2026-06-28T23:19:37.774Z"
+  "updated_at": "2026-07-03T00:52:57.492Z"
 }

@@ -29,7 +29,27 @@
         "evidence": "The proof claims 'The trace and volume map are linear on the Hecke algebra', allowing it to write $\\mathrm{Vol}(\\overline{\\gamma}) = \\mathrm{Vol}(\\overline{1}) + \\sum \\phi_i \\mathrm{Vol}(\\overline{\\sigma_i})$. This is a mathematically false claim. Hyperbolic volume is a highly non-linear geometric invariant of the link complement; it does not extend linearly across linear combinations in the Hecke algebra.",
         "notes": "Fundamental mathematical error."
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "9ada2ff2979c",
+          "ts": "a6ea6a7bf368"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.534Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-06-28T22:55:43.946Z"
+  "updated_at": "2026-07-03T00:52:56.534Z"
 }

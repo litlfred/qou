@@ -7,9 +7,30 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/vassiliev-filtration-mass-tower.md"
   },
   "source_hashes": {
-    "md": "6bfab6679951",
+    "md": "3c009eed3159",
     "ts": "da68ada341db"
   },
-  "criteria": {},
-  "updated_at": "2026-06-28T10:58:52.395Z"
+  "criteria": {
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "3c009eed3159",
+          "ts": "da68ada341db"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.534Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-07-03T00:52:56.534Z"
 }

@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "c3b0c5c09a88",
     "ts": "ab87d5e81e28",
-    "lean": "e4313eaf2e80"
+    "lean": "efc854d23ba2"
   },
   "criteria": {
     "voice-status-leak": [
@@ -833,28 +833,6 @@
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       }
     ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "c3b0c5c09a88",
-          "ts": "ab87d5e81e28",
-          "lean": "e4313eaf2e80"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/quantum-observable-universes/qou-canonical-action.md:1: \\cite{chamseddine-connes-1997} or -- Ref: [chamseddine-connes-1997] does not resolve in references.ts | quantum-observable-universe/quantum-observable-universes/qou-canonical-action.md:1: \\cite{connes1996} or -- Ref: [connes1996] does not resolve in references.ts | quantum-observable-universe/quantum-observable-universes/qou-canonical-action.md:1: \\cite{stolz-teichner-2012} or -- Ref: [stolz-teichner-2012] does not resolve in references.ts | quantum-observable-universe/quantum-observable-universes/qou-canonical-action.md:1: \\cite{kock2004} or -- Ref: [kock2004] does not resolve in references.ts"
-      }
-    ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
@@ -1641,7 +1619,27 @@
         "verdict": "open-objection",
         "referee_argument": "The proposed formalization for 'Canonical action of a quantum observable universe' (asserting 'Let $(\\mathbf{C}, A, \\tau)$ be a') fails to compile with error: content/quantum-observable-universe/quantum-observable-universes/qou-canonical-action.lean:42:10: error: Function expected at. A competent referee cannot accept this as a verified mathematical claim."
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "c3b0c5c09a88",
+          "ts": "ab87d5e81e28",
+          "lean": "efc854d23ba2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:58.083Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
     ]
   },
-  "updated_at": "2026-06-28T16:14:57.000Z"
+  "updated_at": "2026-07-03T00:52:58.083Z"
 }

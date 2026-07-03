@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "b47e9f6122be",
     "ts": "a243ee09d888",
-    "lean": "60e126a06902"
+    "lean": "a2674f06ae54"
   },
   "criteria": {
     "voice-status-leak": [
@@ -809,28 +809,6 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
-      }
-    ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "b47e9f6122be",
-          "ts": "a243ee09d888",
-          "lean": "60e126a06902"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/quantum-observable-universes/quantum-observable-universe-exists.md:1: \\cite{woronowicz1987} or -- Ref: [woronowicz1987] does not resolve in references.ts | quantum-observable-universe/quantum-observable-universes/quantum-observable-universe-exists.md:1: \\cite{woronowicz1988} or -- Ref: [woronowicz1988] does not resolve in references.ts | quantum-observable-universe/quantum-observable-universes/quantum-observable-universe-exists.md:1: \\cite{reshetikhin1991} or -- Ref: [reshetikhin1991] does not resolve in references.ts | quantum-observable-universe/quantum-observable-universes/quantum-observable-universe-exists.md:1: \\cite{kassel1995} or -- Ref: [kassel1995] does not resolve in references.ts | quantum-observable-universe/quantum-observable-universes/quantum-observable-universe-exists.md:1: \\cite{chari1994} or -- Ref: [chari1994] does not resolve in references.ts"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1859,7 +1837,27 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe-exists.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "b47e9f6122be",
+          "ts": "a243ee09d888",
+          "lean": "a2674f06ae54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:58.083Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
     ]
   },
-  "updated_at": "2026-06-28T11:19:33.145Z"
+  "updated_at": "2026-07-03T00:52:58.083Z"
 }

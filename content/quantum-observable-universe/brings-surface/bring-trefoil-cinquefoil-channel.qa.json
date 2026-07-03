@@ -815,28 +815,6 @@
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       }
     ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "faee64a6ed5c",
-          "ts": "e6fec89087e6",
-          "lean": "286f106d6c96"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/brings-surface/bring-trefoil-cinquefoil-channel.md:1: \\cite{washington1997} or -- Ref: [washington1997] does not resolve in references.ts | quantum-observable-universe/brings-surface/bring-trefoil-cinquefoil-channel.md:1: \\cite{bolza1887} or -- Ref: [bolza1887] does not resolve in references.ts"
-      }
-    ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
@@ -1843,7 +1821,27 @@
         "referee_argument": "The Lean sibling contains 'sorry' placeholders, rendering the formalization and proof incomplete.",
         "severity": "major"
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "faee64a6ed5c",
+          "ts": "e6fec89087e6",
+          "lean": "286f106d6c96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:55.404Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
     ]
   },
-  "updated_at": "2026-06-28T07:55:40.081Z"
+  "updated_at": "2026-07-03T00:52:55.404Z"
 }
