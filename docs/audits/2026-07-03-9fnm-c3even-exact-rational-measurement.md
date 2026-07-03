@@ -59,6 +59,36 @@ route, a different object.
   u-ladder at all, the "two parities of ONE recurrence *in these rungs*"
   premise is undermined on the even side independently of any sign.
 
+## Follow-up (same day, bean `ai81`) — the even-channel variable, found
+
+[`computations/qbeta/qbeta_even_channel_bar_split_probe.py`](../../computations/qbeta/qbeta_even_channel_bar_split_probe.py)
+(witness `qbeta-even-channel-bar-split.witness.json`) split log R **exactly**
+under the bar involution σ: s ↦ −s/(1+s) (series composition, no numerics)
+and tested the companion-bar-odd-variable hypothesis of
+`conj:binding-qbeta-complex-volume`. Results (all exact):
+
+1. **The ladder variable itself was mis-normalized corpus-wide**: u = b·ℏ_q²
+   is NOT bar-even — ℏ(1/q) = −q·ℏ(q) exactly, so u∘σ = q²·u (bar-weight 2).
+   The genuinely bar-even ladder variable is **ũ = q·u = q·b·ℏ_q²**
+   (agrees with u at leading order, differs at higher rungs).
+2. **(a) The bar-even part E of log R IS exactly a ũ-series** through s¹¹:
+   5 rungs (e₁ = 3√3/4 — matching 9fnm's c₁′ exactly, a cross-check —
+   e₂ ≈ −15.035, e₃ ≈ −58.409, e₄ ≈ −276.55, e₅ ≈ −1817.30), with all 6
+   over-determining residual orders **exactly zero**. The honest bar-even
+   rungs are these e_k, read from E after exact bar-projection — not the
+   mixed-parity projections of 9fnm/predecessor.
+3. **(b) The bar-odd part**: O/h (h = q − 1/q, exactly bar-odd) is a
+   ũ-series through s¹⁰ (d₁ ≈ −1.607, d₂ ≈ −16.137, …), failing exactly
+   and only at s¹¹ (residual ≈ −13000.75). The natural absorber is an
+   h³·F(ũ) term (odd powers of h); discriminating it needs a higher
+   truncation order — **flagged as the next measurement, not fitted**
+   (one failing order vs multiple new coefficients would be
+   under-determined at this ORD, the Δ_λ-gate pattern).
+
+Net: to this truncation, **log R = E(ũ) + h·D(ũ) + O(s¹¹) in the odd
+sector** — the even channel is a clean ũ-ladder once the parity split and
+the ũ-normalization are done exactly. Scope (a) throughout; no wiring.
+
 ## Disposition
 
 1. **Bean `9fnm` closes**: c₃^even is measured (exactly, both conventions);
