@@ -92,10 +92,9 @@ def _letters(word, dim, sigmas):
 
 
 def _rmul(M: np.ndarray, L) -> np.ndarray:
-    """M @ L for dense M and dense-or-sparse L."""
-    if sps.issparse(L):
-        return np.asarray(L.T.dot(M.T)).T
-    return M @ L
+    """M @ L for dense M and dense-or-sparse L (sparse dispatches via
+    __rmatmul__; np.asarray normalises the np.matrix return of spmatrix)."""
+    return np.asarray(M @ L)
 
 
 def _word_products(word, dim, sigmas):
