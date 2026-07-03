@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-03T07:38:43.169546+00:00",
-  "commitSha": "14f2da1349ca87231814f2328acd922764045c70",
+  "computedAt": "2026-07-03T11:20:03.513023+00:00",
+  "commitSha": "b419b853a9f74e30eb17032d1e52d6798d3ad895",
   "assertions": [
     {
       "name": "c_routes_agree_exact",
@@ -29,11 +29,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 27,
   "computation": "probe-convention-d-vs-c-borromean",
   "scriptFile": "probe_convention_d_vs_c_borromean.py",
-  "scriptHash": "d9dafdc71bcb",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f3f7b38cd3bd",
+  "scriptCommitSha": "b8c4f32ddb7ae67cab10247773784f2e5c15dee7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

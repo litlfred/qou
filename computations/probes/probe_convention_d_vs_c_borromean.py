@@ -54,7 +54,8 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 HERE = Path(__file__).parent
-sys.path.insert(0, str(HERE.parent))
+# computations/ itself is already on sys.path via the _path_bridge
+# preamble above; only the cluster subdirs need explicit inserts.
 sys.path.insert(0, str(HERE.parent / "markov"))
 sys.path.insert(0, str(HERE.parent / "substrate"))
 
