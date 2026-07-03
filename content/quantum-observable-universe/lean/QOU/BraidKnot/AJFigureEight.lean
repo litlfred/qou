@@ -19,16 +19,16 @@ classical A-polynomial
 
 ## Honest status (§3b)
 
-* The class `StrongAJFigureEight` carries the literature theorem
-  (Ref: [nguyen-tran-2021], strong AJ for 4₁) as §3b class fields, and the
-  instance below TRANSCRIBES the explicit operator reconstructed and
-  verified corpus-side (`computations/aj_figure_eight_operator_construct_verify.py`).
-  Machine-checked sorry-free: the operator data, the q=1 specialization to
-  the classical A-polynomial (meridian-squared convention), nontriviality
-  (char 0), unit nondegeneracy, and the N = 1 annihilation instance.  The
-  ONE remaining `sorry` (cited) is the general-N annihilation — the
-  creative-telescoping certificate, verified symbolically for N = 1..12 in
-  the witness; formalizing the certificate is the queued follow-up.
+* The class `StrongAJFigureEight` carries the strong-AJ statement
+  (Ref: [nguyen-tran-2021], strong AJ for 4₁) as content-bearing fields.
+  **Every field is now machine-checked sorry-free**: the operator data,
+  the q=1 specialization to the classical A-polynomial (meridian-squared
+  convention), nontriviality (char 0), unit nondegeneracy, and the
+  general-`N` annihilation — proved in
+  `QOU.BraidKnot.AJFigureEightAnnihilation` by the division-free
+  qZeilberger certificate telescope (valid at every `q ≠ 0`, roots of
+  unity included), which also hosts the instance.  This file holds the
+  statement layer, the explicit operator, and the pointwise results.
 * The derived theorems genuinely *derive* (∃-packaging, bar transport via
   the proved `coloredJones41_bar_symmetric`) — they do not merely project a
   class field (§3b-cond non-degeneracy).
@@ -92,10 +92,11 @@ def aPolyFigureEight (L M : K) : K :=
     explicit order-2 inhomogeneous q-difference operator annihilates the
     colored Jones tower of `4₁` for every `q ≠ 0`, and its homogeneous part
     evaluated at `q = 1` equals the classical A-polynomial up to a nonzero
-    unit factor `unit m`.  Instantiating the class = transcribing the
-    explicit Garoufalidis–Koutschan operator and discharging these fields
-    (queued; empirical reconstruction in
-    `computations/aj_figure_eight_operator_construct_verify.py`). -/
+    unit factor `unit m`.  The sorry-free instance (explicit operator, all
+    fields proved — general-`N` annihilation included) lives in
+    `QOU.BraidKnot.AJFigureEightAnnihilation`; the empirical
+    reconstruction is
+    `computations/aj_figure_eight_operator_construct_verify.py`. -/
 class StrongAJFigureEight (K : Type*) [Field K] where
   /-- The annihilating operator (explicit in the literature). -/
   op : QDifferenceOperator K
@@ -312,26 +313,13 @@ theorem feCert_boundary (q x : K) (hq : q ≠ 0) (hx : x ≠ 0)
   rw [div_eq_div_iff hd1 hd2]
   ring
 
-/-- **The literature instance (strong AJ for 4₁), transcribed.**  Every
-    field except the general-`N` annihilation is machine-checked above;
-    the annihilation for all `N` is the theorem proved in the literature
-    and verified symbolically for `N = 1..12` in the corpus witness.
-    The certificate's mathematical content is Lean-proved sorry-free in
-    `QOU.BraidKnot.AJFigureEightCertificate` (`feCert_local_identity_cleared`,
-    `feCert_boundary_cleared` — denominator-cleared pure ring identities);
-    the residual gap is the shift-ratio/telescope bookkeeping. -/
-instance [CharZero K] : StrongAJFigureEight K where
-  op := figureEightOperator
-  order_eq := rfl
-  nontrivial := fun _ hq => figureEightOperator_nontrivial hq
-  annihilates := fun _ _ =>
-    -- Ref: [nguyen-tran-2021] https://doi.org/10.1007/s40306-020-00401-2
-    -- (strong AJ proved for 4_1; corpus-side exact symbolic verification
-    --  N=1..12: aj-figure-eight-operator-construct-verify.witness.json;
-    --  the N=1 case is figureEightOperator_annihilates_one above)
-    sorry
-  unit := feUnit
-  unit_nondegenerate := feUnit_nondegenerate
-  specializes := figureEightOperator_specializes
+/-!
+The sorry-free instance `StrongAJFigureEight K` lives in
+`QOU.BraidKnot.AJFigureEightAnnihilation`, where the general-`N`
+annihilation is **proved** (`figureEightOperator_annihilates`) via the
+division-free qZeilberger certificate telescope — valid at every `q ≠ 0`,
+roots of unity included.  A cited-`sorry` instance formerly lived here;
+it is superseded.
+-/
 
 end QOU.BraidKnot.AJFigureEight
