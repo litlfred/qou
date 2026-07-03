@@ -23,7 +23,8 @@ The strong AJ conjecture is PROVED for 4_1 in the literature
   5. SPECIALIZE q -> 1 and compare the homogeneous part with the classical
      A-polynomial A_{4_1}(L, M) = M^4 L^2 - (M^8 - M^6 - 2M^4 - M^2 + 1) L + M^4
      (CCGLS tables) under the standard convention maps m -> M and m -> M^2
-     (convention sorting against a FIXED reference — not a fit).
+     (convention sorting against a FIXED reference — not a fit; the AJ
+     statement allows an L-free rational factor in M).
 
 J_N via the exact Lambda-Newton form (proved in Lean:
 QOU/BraidKnot/HabiroNewtonLadder.lean). Audit-only; no production wiring.
@@ -331,23 +332,23 @@ def main() -> int:
         spec_results[name] = {
             "classical_limit": str(op_cl),
             "ratio_to_A_classical": str(sp.cancel(ratio)),
-            "matches_up_to_M_unit": bool(unit_match),
+            "matches_up_to_L_free_M_factor": bool(unit_match),
         }
         print(f"\n  [q->1, {name}] limit = {op_cl}")
-        print(f"  [q->1, {name}] ratio to A_4_1 = {sp.cancel(ratio)} (unit: {unit_match})")
+        print(f"  [q->1, {name}] ratio to A_4_1 = {sp.cancel(ratio)} (L-free factor match: {unit_match})")
 
-    any_match = any(isinstance(v, dict) and v["matches_up_to_M_unit"]
+    any_match = any(isinstance(v, dict) and v["matches_up_to_L_free_M_factor"]
                     for v in spec_results.values())
     elapsed = time.time() - t0
     verdict = (
         ("AJ VERIFIED for 4_1 (corpus-side): the minimal-window order-2 "
          "inhomogeneous operator annihilates J_N(4_1) exactly (symbolic q, "
          f"N=1..{N_VERIFY_SYMBOLIC}) and its q->1 homogeneous part matches the "
-         "classical A-polynomial up to an M-monomial unit — independently "
+         "classical A-polynomial up to an L-free factor in M — independently "
          "reproducing [nguyen-tran-2021] at the QOU muon-anchor knot.")
         if any_match else
         ("PARTIAL: operator constructed + symbolically verified as annihilator; "
-         "q->1 unit-match did not close under standard convention maps — "
+         "q->1 L-free-factor match did not close under standard convention maps — "
          "record for convention triage; do NOT declare AJ verified.")
     )
     print(f"\n  VERDICT: {verdict}\n  ({elapsed:.1f}s)")
@@ -386,7 +387,7 @@ def main() -> int:
         },
         "specialization_q_to_1": spec_results,
         "verdict": verdict,
-        "tier": "structural-exact annihilation; convention-sorted unit-match at q=1",
+        "tier": "structural-exact annihilation; convention-sorted L-free-factor match at q=1",
     }
     from witness_base import WitnessBuilder  # noqa: E402
     out = WitnessBuilder.wrap_legacy(

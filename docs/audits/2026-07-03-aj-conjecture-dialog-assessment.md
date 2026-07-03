@@ -293,6 +293,41 @@ instance for $\mathcal{B}_3$. The q-holonomicity *existence* half is a
 theorem for all knots (Garoufalidis–Lê 2005) and needs no QOU input; the
 *specialization* half is exactly what the per-knot table tracks.
 
+### The 4₁ corpus-side verification — RESULT (same day)
+
+[`computations/aj_figure_eight_operator_construct_verify.py`](../../computations/aj_figure_eight_operator_construct_verify.py)
+(witness `aj-figure-eight-operator-construct-verify.witness.json`) ran to
+completion. The **canonical minimal-window operator** (Laurent
+$m$-degrees $[-8..-1]$, nullity 1 ⇒ unique up to scale; found mod-$p$,
+solved exactly at 22 rational $q$, reconstructed as $q$-rational
+functions):
+
+$$a_2\,J_{N+2} + a_1\,J_{N+1} + a_0\,J_N = b, \qquad m = q^N,$$
+
+$$a_0 = \frac{(m-1)(m^2q^3-1)}{m^6},\qquad
+a_2 = \frac{(mq^2-1)(m^2q-1)}{m^6},$$
+
+$$a_1 = -\frac{(mq-1)^2(mq+1)\,(m^4q^4 - m^3q^3 - m^2q^3 - m^2q - mq + 1)}{m^8q^2},$$
+
+$$b = \frac{(mq+1)(m^2q-1)(m^2q^3-1)}{m^7 q}.$$
+
+**Verification (the epistemic step, independent of the construction
+heuristics): exact symbolic annihilation at symbolic $q$ for
+$N = 1..12$ — all pass.** Specialization: at $q \to 1$ under the
+standard meridian-squared convention $m \to M^2$, the homogeneous part
+equals
+
+$$\frac{(M^6 - M^4 - M^2 + 1)}{M^{16}}\cdot A_{4_1}(L, M),\qquad
+M^6 - M^4 - M^2 + 1 = (M^2-1)^2(M^2+1),$$
+
+i.e. the classical CCGLS A-polynomial times an **$L$-free factor in
+$M$** — exactly the unit ambiguity the AJ statement allows. (The naive
+$m \to M$ map does not match — convention sorting, recorded in the
+witness.) This independently reproduces `[nguyen-tran-2021]` at the QOU
+muon-anchor knot and supplies the concrete data that would discharge the
+`StrongAJFigureEight` class fields (the Lean transcription is the
+natural follow-up).
+
 ## Disposition
 
 - **No wiring, no status changes, no new conjecture blocks.** This audit
