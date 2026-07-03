@@ -119,15 +119,35 @@ quadratic measure $\hat w_\lambda \propto \dim_q^2$:
    $\mathrm{tr}_M((\Pi_{\text{free}}-1)\circ\mathcal{M})$ weights channels by the
    actual braid, which the probe deliberately ignores to stay parameter-free.
 
-## 5. Follow-ups (queued as beans, not started)
+## 5. Follow-ups (owner-approved; all three landed)
 
-1. Landauer tier-1 identification: relate $E_{\mathfrak{H}}$ (crossing energy) to
-   $E_0\,\eta_q$ — one candidate equation, testable against the committed crossing
-   witnesses.
-2. Defect-weighted zero-point: recompute candidate (a) with the *actual* per-braid
-   Markov weights (free vs atom) instead of the bare Plancherel measure — requires
-   the production transfer-matrix decomposition; not parameter-free in compute cost
-   but still fit-free.
-3. KMS/Gibbs content block: state tier-2 (binding as free-energy difference;
-   $\mathrm{tr}_M$ as temperature state) as a `remark` with `interprets` into the
-   binding proposition, citing Jones/Ocneanu.
+1. **Landauer tier-1 — NEGATIVE, decisive (scope-(a)).**
+   [`landauer_crossing_energy_probe.py`](../../computations/landauer_crossing_energy_probe.py)
+   (witness `landauer-crossing-energy-probe.witness.json`): the corpus defines
+   crossing energy $E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} c_q^2$
+   (notation table 3) and crossing information $\ell\,\eta_q$ q-bits. The implied
+   per-q-bit energy for p/n (Borromean, $\ell = 6$) is
+   $kT_{\text{eff}} \approx 17.9$ GeV/q-bit — matching **no** canonical substrate
+   scale within 5% (nearest ratio ≈ 42×, $E_0 c_q^2$). The simple per-crossing
+   Landauer identification is refuted at tier 1; the thermodynamic tier-2 reading
+   is where the energy–information duality actually lives.
+2. **Defect-weighted zero-point — NEGATIVE overall (scope-(a)); ⁴He near-match
+   SHARPENED.**
+   [`defect_weighted_zero_point_probe.py`](../../computations/defect_weighted_zero_point_probe.py)
+   (witness `defect-weighted-zero-point-probe.witness.json`; production
+   transfer-path channel weights $w_\lambda = y_\lambda(\chi^\lambda_{\text{free}}
+   - \chi^\lambda_{\text{atom}})$, fit-free): light isotopes still sign-flip
+   (ratios −2.7, −15.1, +9.7), so the channel-information energy is *not* the
+   uniform missing term. But the ⁴He ratio moves 0.92 → **0.904**: two independent
+   measures (bare Plancherel §4; physical defect weights here) now land the
+   channel-information energy within ~10% of the dominant ⁴He residual. Recorded
+   tiered (near-match ×2, unwired); the surviving question is why the candidate
+   is order-correct exactly where the residual is large and wrong-signed where it
+   is small.
+3. **KMS/Gibbs content block — landed.**
+   [`rem:markov-trace-gibbs-free-energy`](../../content/quantum-observable-universe/mass-endomorphism/markov-trace-gibbs-free-energy.md)
+   (`interprets prop:categorical-mass-markov`, cites `jones1987`): tier 2 stated
+   in the paper — binding as free-energy difference, $\mathrm{tr}_M$ as
+   temperature state, zero-entropy ⇔ zero-information ⇔ zero binding-scale
+   energy, and the $\eta_q$ capacity bound as the linear-in-crossings information
+   ceiling.
