@@ -149,8 +149,8 @@ def main() -> int:
         source="the C-convention re-pinned q0 reproduces m_p CODATA")
     path = wb.save()
     print(f"witness: {path}")
-    ok = abs(float(rel) - 1.958e-4) < 2e-6 and \
-        abs(float(m_p_pure_q(q0_C, m_e, F_Bor_C) - m_p_codata)) < 1e-30
+    ok = abs(rel - mp.mpf("1.958e-4")) < mp.mpf("2e-6") and \
+        abs(m_p_pure_q(q0_C, m_e, F_Bor_C) - m_p_codata) < mp.mpf("1e-30")
     print("ALL ASSERTIONS PASS" if ok else "ASSERTION FAILURE")
     return 0 if ok else 1
 
