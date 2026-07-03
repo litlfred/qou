@@ -151,3 +151,40 @@ quadratic measure $\hat w_\lambda \propto \dim_q^2$:
    temperature state, zero-entropy ⇔ zero-information ⇔ zero binding-scale
    energy, and the $\eta_q$ capacity bound as the linear-in-crossings information
    ceiling.
+
+## 6. A-trend extension (owner-approved): the ⁴He near-match was a crossing, not an onset
+
+Probe: [`defect_info_a_trend_probe.py`](../../computations/defect_info_a_trend_probe.py)
+(witness `defect-info-a-trend-probe.witness.json`; extends the defect-weighted
+channel-information candidate to ⁶Li/⁷Li with $B(q_0)$ computed live from the
+production transfer path and $B_{\mathrm{AME}}$ from the vendored AME2020
+witness; fit-free).
+
+| iso | A | $B(q_0)$ | $B_{\mathrm{AME}}$ | $r_{\text{raw}}$ | $E_{\text{defect-info}}$ | ratio |
+|---|---:|---:|---:|---:|---:|---:|
+| ²H | 2 | 3.89 | 2.22 | −1.67 | 4.54 | −2.73 |
+| ³H | 3 | 9.07 | 8.48 | −0.59 | 8.82 | −15.06 |
+| ³He | 3 | 6.80 | 7.72 | 0.92 | 8.91 | 9.67 |
+| ⁴He | 4 | 11.97 | 28.30 | 16.32 | 14.75 | **0.904** |
+| ⁶Li | 6 | 20.06 | 31.99 | 11.93 | 31.10 | 2.61 |
+| ⁷Li | 7 | 25.24 | 39.25 | 14.01 | 41.66 | 2.97 |
+
+**Verdict — CLOSED, scope-(a).** The deviation from 1 *grows* past ⁴He
+(0.10 → 1.61 → 1.97): the candidate's roughly extensive growth crosses the
+non-monotone residual curve at $A = 4$, which is all the twice-measured 0.904
+ever was. The channel-information zero-point candidate is now closed as a
+binding mechanism in **all tested forms** (bare Plancherel §4, defect-weighted
+§5.2, A-trend here) — the surviving content of the energy=information thread
+is the tier-2 thermodynamic identity (`rem:markov-trace-gibbs-free-energy`),
+not a correction term.
+
+**Cross-reference (jet-filtration extensivity, landed upstream 2026-07-03).**
+[`prop:jet-filtration-binding-extensive`](../../content/quantum-observable-universe/mass-endomorphism/jet-filtration-binding-extensive.md)
+proves the *body-order* series $B(A) = \sum_n \mathfrak{m}_e\,a_D^{(n)} w_n$
+(built from the same binding period $a_D^{(n)}$ characterized in the
+2026-07-03 audit §10–§11) is monotone extensive. The two results triangulate:
+extensive growth is structurally right for binding (their side), but the
+*channel-information* extensive candidate overshoots the residual by ~3× at
+Li (this probe) — so the correct extensive term must grow more slowly than
+the defect-measure log-capacity, pointing at the $w_n$ weights (their open
+end) rather than a new energy species (this thread's closed end).
