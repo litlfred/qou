@@ -16,21 +16,23 @@ solutions obeys the first-order recurrence (Abel–Heine; see
 
     W_{N+1}/W_N = a₀/a₂ = (q³x³ − q³x² − x + 1) / (q³x³ − q²x − qx² + 1).
 
-For this operator to be a bar-covariant fibre object at all, that ratio must be
-bar-even up to a single monomial twist (cf. `QBesselBarCovariance`). This file
-proves the sharper fact P-C15 found symbolically: under the **fibre bar
-involution** `q ↦ q⁻¹, x ↦ x⁻¹` the numerator and denominator each scale by the
-*same* factor `(q³x³)⁻¹`, so the ratio is **exactly invariant** (twist = 1) —
-the 4₁ Casoratian ratio is bar-self-reciprocal, hence not excluded as `R(q,ξ)`.
+P-C15 found symbolically that under the **fibre bar involution** `q ↦ q⁻¹, x ↦ x⁻¹`
+the numerator and denominator each scale by the *same* factor `(q³x³)⁻¹`, so the
+ratio is invariant (twist = 1).
+
+**This is a `CommRing` fact, division-free.** The reciprocity is a polynomial
+identity over `ℤ[q,x]`; it needs no field and no inverses — only that `q, x` are
+units, witnessed by `q·qi = 1`, `x·xi = 1` (CLAUDE.md §7c: state over the weakest
+base ring; the earlier `Field`-only version imposed structure the mathematics does
+not use). The invariance of the *ratio* is likewise stated division-free, as the
+cross-multiplied identity `casNum qi xi · casDen q x = casNum q x · casDen qi xi`.
+A `Field` corollary in literal `a/b` form is derived at the end for convenience.
 
 **Scope (honesty).** This certifies the bar-parity *gate* P-C15 clears; it is a
 scope-(a) structural positive, **not** a closure and **not** a `c_k` value.
 Advancing to the anchor-level Casoratian `W₃/W₂` is gated on a genuine `c₄` rung
 (H₄ Hoefsmit `c₄^even`, bean `8we6`); see `StageCSigma3LiftObligation`.
 
-Base ring is a `Field` — the bar involution genuinely inverts the formal fibre
-parameters `q, x` (`q ↦ q⁻¹`), so a field is the natural, minimal setting
-(CLAUDE.md §7c: inverse-requiring construction; no archimedean structure).
 Sorry-free.
 
 `-- Ref:` [garoufalidis2005] https://doi.org/10.2140/gt.2005.9.1253
@@ -38,44 +40,75 @@ Sorry-free.
 recurrence whose Casoratian this file studies).
 -/
 import Mathlib.Algebra.Field.Basic
+import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 
 namespace QOU.QBeta
 
-variable {K : Type*} [Field K]
+variable {R : Type*} [CommRing R]
 
 /-- Numerator of the 4₁ order-2 qZeilberger Casoratian ratio `a₀/a₂`
-    (with `x = q^N`): `q³x³ − q³x² − x + 1`. -/
-def casNum (q x : K) : K := q ^ 3 * x ^ 3 - q ^ 3 * x ^ 2 - x + 1
+    (with `x = q^N`): `q³x³ − q³x² − x + 1`. Over a generic commutative ring. -/
+def casNum (q x : R) : R := q ^ 3 * x ^ 3 - q ^ 3 * x ^ 2 - x + 1
 
 /-- Denominator of the ratio: `q³x³ − q²x − qx² + 1`. -/
-def casDen (q x : K) : K := q ^ 3 * x ^ 3 - q ^ 2 * x - q * x ^ 2 + 1
+def casDen (q x : R) : R := q ^ 3 * x ^ 3 - q ^ 2 * x - q * x ^ 2 + 1
 
-/-- **Numerator reciprocity.** Under the fibre bar involution `q ↦ q⁻¹, x ↦ x⁻¹`
-    the numerator scales by the monomial factor `(q³x³)⁻¹`. -/
-theorem casNum_bar (q x : K) (hq : q ≠ 0) (hx : x ≠ 0) :
-    casNum q⁻¹ x⁻¹ = casNum q x * (q ^ 3 * x ^ 3)⁻¹ := by
-  unfold casNum
-  field_simp
-  ring
+/-- **Numerator reciprocity (division-free, over any `CommRing`).** If `q, x` are
+    units — witnessed by `q·qi = 1`, `x·xi = 1` — then the bar-involved numerator,
+    scaled by the monomial `q³x³`, returns the numerator:
 
-/-- **Denominator reciprocity.** The denominator scales by the *same* factor
-    `(q³x³)⁻¹` under `q ↦ q⁻¹, x ↦ x⁻¹` — which is why the twist cancels. -/
-theorem casDen_bar (q x : K) (hq : q ≠ 0) (hx : x ≠ 0) :
-    casDen q⁻¹ x⁻¹ = casDen q x * (q ^ 3 * x ^ 3)⁻¹ := by
-  unfold casDen
-  field_simp
-  ring
+        casNum qi xi · (q³x³) = casNum q x.
 
-/-- **P-C15 (Lean certificate).** The 4₁ order-2 Casoratian ratio
-    `a₀/a₂ = casNum/casDen` is **invariant** (twist = 1) under the fibre bar
-    involution `q ↦ q⁻¹, x ↦ x⁻¹`: numerator and denominator both scale by
-    `(q³x³)⁻¹`, which cancels. Sorry-free; the bar-parity gate P-C15 clears. -/
-theorem casoratian_ratio_bar_self_reciprocal (q x : K) (hq : q ≠ 0) (hx : x ≠ 0) :
+    (Exact `linear_combination` certificate; no field, no `field_simp`.) -/
+theorem casNum_reciprocal (q x qi xi : R) (hq : q * qi = 1) (hx : x * xi = 1) :
+    casNum qi xi * (q ^ 3 * x ^ 3) = casNum q x := by
+  simp only [casNum]
+  linear_combination
+    (q ^ 2 * qi ^ 2 * x ^ 3 * xi ^ 3 - q ^ 2 * qi ^ 2 * x ^ 3 * xi ^ 2
+      + q * qi * x ^ 3 * xi ^ 3 - q * qi * x ^ 3 * xi ^ 2
+      + x ^ 3 * xi ^ 3 - x ^ 3 * xi ^ 2) * hq
+    + (-q ^ 3 * x ^ 2 + x ^ 2 * xi ^ 2 - x ^ 2 * xi + x * xi - x + 1) * hx
+
+/-- **Denominator reciprocity.** Same monomial factor `q³x³` — which is why the
+    twist cancels in the ratio. -/
+theorem casDen_reciprocal (q x qi xi : R) (hq : q * qi = 1) (hx : x * xi = 1) :
+    casDen qi xi * (q ^ 3 * x ^ 3) = casDen q x := by
+  simp only [casDen]
+  linear_combination
+    (q ^ 2 * qi ^ 2 * x ^ 3 * xi ^ 3 - q ^ 2 * qi * x ^ 3 * xi
+      - q ^ 2 * x ^ 3 * xi ^ 2 + q * qi * x ^ 3 * xi ^ 3
+      - q * x ^ 3 * xi + x ^ 3 * xi ^ 3) * hq
+    + (-q ^ 2 * x ^ 2 * xi - q ^ 2 * x - q * x ^ 2 + x ^ 2 * xi ^ 2 + x * xi + 1) * hx
+
+/-- **P-C15 (Lean certificate, division-free `CommRing` form).** The 4₁ order-2
+    Casoratian ratio `a₀/a₂ = casNum/casDen` is **invariant** under the fibre bar
+    involution `q ↦ q⁻¹, x ↦ x⁻¹`, expressed without division as the
+    cross-multiplied identity
+
+        casNum qi xi · casDen q x = casNum q x · casDen qi xi.
+
+    Both numerator and denominator scale by the *same* monomial `q³x³` under the
+    involution (`casNum_reciprocal`, `casDen_reciprocal`), so the shared factor
+    cancels. Holds over any commutative ring with `q, x` units. Sorry-free. -/
+theorem casoratian_ratio_bar_invariant (q x qi xi : R)
+    (hq : q * qi = 1) (hx : x * xi = 1) :
+    casNum qi xi * casDen q x = casNum q x * casDen qi xi := by
+  have hN := casNum_reciprocal q x qi xi hq hx
+  have hD := casDen_reciprocal q x qi xi hq hx
+  linear_combination casDen qi xi * hN - casNum qi xi * hD
+
+/-- **`Field` corollary (literal ratio form).** Over a field, with `q, x ≠ 0`, the
+    bar-involution `q ↦ q⁻¹, x ↦ x⁻¹` fixes the ratio `casNum/casDen`. Derived from
+    the division-free `casoratian_ratio_bar_invariant` above; a convenience
+    restatement, not the primary result. -/
+theorem casoratian_ratio_bar_self_reciprocal {K : Type*} [Field K]
+    (q x : K) (hq : q ≠ 0) (hx : x ≠ 0) (hd : casDen q x ≠ 0)
+    (hd' : casDen q⁻¹ x⁻¹ ≠ 0) :
     casNum q⁻¹ x⁻¹ / casDen q⁻¹ x⁻¹ = casNum q x / casDen q x := by
-  have hs : (q ^ 3 * x ^ 3 : K) ≠ 0 := mul_ne_zero (pow_ne_zero 3 hq) (pow_ne_zero 3 hx)
-  rw [casNum_bar q x hq hx, casDen_bar q x hq hx,
-      mul_div_mul_right _ _ (inv_ne_zero hs)]
+  rw [div_eq_div_iff hd' hd]
+  linear_combination casoratian_ratio_bar_invariant q x q⁻¹ x⁻¹
+    (mul_inv_cancel₀ hq) (mul_inv_cancel₀ hx)
 
 end QOU.QBeta
