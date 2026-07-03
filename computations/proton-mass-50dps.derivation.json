@@ -74,10 +74,22 @@
       "notes": "Pure arithmetic (ratio of two 50 dps values)."
     },
     {
-      "name": "Muon-anchored Hecke energy → m_p in MeV",
-      "operation": "m_p (MeV) := 2·(m_μ·F_Bor − 6·m_e), with the muon anchor m_μ = m_e·Vol(4₁)/ℏ_q² and the dimensionless Borromean factor F_Bor = |tr_M(β_Bor)|·[3]_q!/q³ (canonical_mass facade identity at 50 dps).  M_E_MEV = 0.51099895069 MeV is the **single CODATA-bounded constant** the framework consumes.",
+      "name": "Canonical substrate-identity m_p at 50 dps (witness read)",
+      "operation": "Read data.predictions.m_p_MeV from m-p-substrate-identity-50dps.witness.json as a 50-dps decimal string → mp.mpf.  This is the production muon-anchored Hecke-energy value the canonical_mass facade also serves; consuming the witness (rather than re-inlining the identity) keeps the Habiro-ladder constants single-sourced.",
       "inputs": [
-        "m_p_over_m_e"
+        "Hecke.Energy"
+      ],
+      "output_name": "m_p_substrate_identity_MeV",
+      "output_value": "938.2720881603788142358888",
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "notes": "script: computations/m_p_substrate_identity_50dps.py (producer of m-p-substrate-identity-50dps.witness.json; hash recorded in the codata witness's upstream_witness_hashes)."
+    },
+    {
+      "name": "Muon-anchored Hecke energy → m_p in MeV",
+      "operation": "m_p (MeV) := 2·(m_μ·F_Bor − 6·m_e), with the muon anchor m_μ = m_e·Vol(4₁)/ℏ_q² and the dimensionless Borromean factor F_Bor = |tr_M(β_Bor)|·[3]_q!/q³ (canonical_mass facade identity at 50 dps).  M_E_MEV = 0.51099895069 MeV is the **single CODATA-bounded constant** the framework consumes.  The single-level ratio m_p_over_m_e (step 5) remains as a comparison column only.",
+      "inputs": [
+        "m_p_substrate_identity_MeV"
       ],
       "output_name": "m_p_pred_MeV",
       "output_value": "938.2720881603788142358888",

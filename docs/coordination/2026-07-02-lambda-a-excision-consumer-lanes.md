@@ -49,8 +49,8 @@ uses appear only inside comparison testbeds or the already-migrated
 | `mass_per_knot_density.py` | INFRA | per-knot mirror module wrappers | self-check | |
 | `build_proton_mass_50dps_chain.py` | **ABS-MASS-MIGRATE** | `vol_density_borromean` → `M_P_PRED_BORROMEAN_MEV` | yes (`proton-mass-codata-50dps`, `option-b-proton-mass-full-chain`, `mass-formula-6term-mpfr-50dps`) | prediction routes through facade; λ_A value kept as audit column |
 | `m_p_borromean_verification_50dps.py` | **ABS-MASS-MIGRATE** (refined → audit-reframe, see migration log) | `vol_density_borromean` → `m_avg_pred`, `tower_multiplier` | yes (`m-p-borromean-verification-50dps`) | numbers were honest; the stale "canonical" framing was the defect — reframed as audit of the excised path |
-| `meson_vol_density.py` | **ABS-MASS-MIGRATE** | **inline** `λ_A = 5/2 + 3h²/4` → `baryon_geom.m_p_pred`, `geom_ratio` | yes (`meson-vol-density`) | inline reimplementation dodges the DeprecationWarning and function-name greps |
-| `meson_per_knot_density.py` | **ABS-MASS-MIGRATE** | **inline** λ_A → `m_p_pred` baryon reference | yes (`meson-per-knot-density`) | twin of above |
+| `meson_vol_density.py` | **ABS-MASS-MIGRATE** (done) | **inlined** `λ_A = 5/2 + 3h²/4` (pre-migration) → now routes through `canonical_mass.proton_mass_mev()` | yes (`meson-vol-density`) | the inline reimplementation dodged the DeprecationWarning and function-name greps — why classification, not grep, was needed |
+| `meson_per_knot_density.py` | **ABS-MASS-MIGRATE** (done) | **inlined** λ_A (pre-migration) → now routes through the facade | yes (`meson-per-knot-density`) | twin of above |
 | `audits/noncanonical_reentry_audit.py` | AUDIT-KEEP | ban-registry strings only | yes | ⚠ its `canonical_replacement` strings recommend the now-excised λ_A path — stale advice, fixed on this branch |
 | `audits/per_knot_density_compute_vs_paper_audit.py` | AUDIT-KEEP | `linking_weight_family_a` | yes | compute-vs-paper cross-check of the production value |
 | `audits/vol_density_compute_vs_paper_audit.py` | AUDIT-KEEP | `linking_weight_family_a` | yes | twin of above |
