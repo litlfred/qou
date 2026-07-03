@@ -12,7 +12,11 @@ export default remark({
     "phenomenology",
     "information-theory",
   ],
-  uses: ["def:information-speed-of-light", "def:one-dim-qou-channel"],
+  uses: [
+    "def:information-speed-of-light",
+    "def:one-dim-qou-channel",
+    "rem:photon-propagation-1d",
+  ],
   cites: [
     "amelinocamelia2001",
     "amelinocamelia1998",
