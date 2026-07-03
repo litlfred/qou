@@ -39,10 +39,15 @@ Owner said: ignore collision / duplicate ok.
 
 ## Open (this tranche, queued)
 
-- [ ] **θ_λ w_n(K) derive-or-refute** — extract w_n from the 6 anchors (4 AME +
-      n=2 deuteron-bond + n=4 ⁴He magic-shell 2·A·Vol(L6a4)); test the q-difference
-      recursion G(qx)=R·G for a DERIVED R(q,x), not a per-isotope constant. Wire
-      q-Bessel contiguity (QBesselContiguityRecurrence.lean) as the a_D^(n) engine.
+- [x] **θ_λ extensive MECHANISM Lean-proved + in paper** — QOU.Mass.jetBinding_mono
+      / jetBinding_lt_succ (sorry-free, lean-direct verified); block
+      prop:jet-filtration-binding-extensive. Addressed all Gemini+Copilot review.
+- [ ] **θ_λ w_n(K) derive-or-refute (closure — options in the audit).** RECOMMENDED:
+      w_n(K) = hyperbolic link-volume of the n-body sub-cluster (literal na-Stokes;
+      merges with gap #2 3-body link-volume; non-fit). Backstop: derive-or-refute the
+      q-difference R(q,x) from the 6 anchors (per-isotope constant ⇒ fit ⇒ refute).
+      Cherry-pick OK'd (owner 2026-07-03): pull q-Bessel R from #3265, exact-ℚ from
+      #3247, per-knot VolDensity from #3205. Coordinate: intent posted #3247/#3260/#3265.
 - [ ] **Gap #2: 3-body / whole-A link-volume** — enumerate ⨝_K inter-nucleon bonds,
       compute whole-A link-volume (~40% A=3 pairwise gap). Feeds the jet w_n(K).
 - [ ] **Gap #3: A=3 mirror magnitude** (³H/³He; best structural 2.52%).

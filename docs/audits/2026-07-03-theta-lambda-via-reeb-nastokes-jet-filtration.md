@@ -86,14 +86,37 @@ The *quantitative* inputs (super-exponential `a_D^(n)` magnitude, the na-Stokes
 `a_D^(n)=lw(n−1)` keystone, the residue weight `w_n(K)`) are carried as hypotheses,
 **not** derived — the honest scope. Verified `lean`-direct (v4.24.0 + Mathlib).
 
-## Next (derive-or-refute w_n(K))
+## Options toward closure (the residue weight `w_n(K)`)
 
-1. Extract the empirical `w_n(K)` from the four AME anchors + the two derived anchors
-   (n=2 deuteron single-bond, n=4 ⁴He magic-shell `2·A·Vol(L6a4)`); check whether they solve
-   the q-difference recursion `G(qx)=R·G` for a *derived* `R(q,x)` (the open kernel) rather
-   than needing a per-isotope constant.
-2. Wire the q-Bessel contiguity recurrence (`QBesselContiguityRecurrence.lean`, already
-   Lean-formalized) as the fast engine for `a_D^(n)` — it is the named super-exp kernel.
+The *mechanism* (extensive super-exp period `a_D^(n)`) is done + Lean-proved; the open piece
+is the per-atom weight `w_n(K)`. Options, most-tractable / most-decisive first:
+
+1. **`w_n(K)` = hyperbolic link-volume of the `n`-body sub-cluster (recommended — the literal
+   "hyperbolic volumes via na-Stokes").** The `n=4` anchor is `B_4(⁴He)=2·m_e·A·Vol(L6a4)` — a
+   hyperbolic *volume*; and `a_D^(n)` is the na-Stokes surface integral over the **hyperbolic**
+   (`Vol>0`) components. So `w_n(K)` is literally the hyperbolic volume of the `n`-body sub-link
+   of `𝓑_K`. Concrete: enumerate the `n`-body inter-nucleon sub-links per atom, compute their
+   hyperbolic volumes (SnapPy / the Reeb-flow volume machinery `reeb_flow_garside…`), use as
+   `w_n(K)`. **This merges with gap #2** (3-body / whole-A link-volume) — one task closes both.
+   Non-fit (volumes are topological invariants). Decisive.
+2. **Derive-or-refute the q-difference kernel `R(q,x)`** (`G(qx;q)=R(q,x)G(x;q)`, the
+   conjecture's own prescription). Extract `w_n(K)` from the six anchors (4 AME + n=2
+   deuteron-bond + n=4 magic-shell) and test whether they solve **one** recursion with a
+   *derived* `R(q,x)`; if they need a per-isotope constant it is a **fit ⇒ refute** (STRICT).
+   Cherry-pick (owner-authorised): the q-Bessel contiguity kernel
+   (`QBesselContiguityRecurrence.lean`) is the named engine, and #3265's Casoratian/bar-parity
+   Q_β `c_k` kernel may *be* `R(q,x)` — pull it when it lands.
+3. **Wire the q-Bessel fast engine + push to A≥5.** The super-exp onset is n≥5 (`a_D^(5)=5.38`,
+   `a_D^(6)=13.56`); light nuclei sample only the slow head. Extend the jet-filtration to ⁶Li /
+   ¹²C / ¹⁶O and re-run the L2 dashboard + mass-table sweep — tests whether the mechanism closes
+   the achievable Subgoal-1 gaps where growth matters.
+4. **The na-Stokes `= lw` keystone** (`a_D^(n)=lw(n−1)`, conj #1765) — full *derivation* (not
+   just compute) is the owner-gated s5-so3 keystone. The compute path (using `lw`) does not need
+   it; the theorem does. Gated — not a self-serve step.
+
+**Recommendation:** #1 (hyperbolic link-volume `w_n`) as the primary — it is the literal
+na-Stokes realisation, non-fit, and merges with gap #2; #2 as the derive-or-refute backstop
+that catches a fit early.
 
 ## Provenance
 
