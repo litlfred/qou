@@ -94,10 +94,9 @@ noncomputable def ΔE_gap : ℝ :=
 /-- `q − q⁻¹ > 0` for `q > 1` (the symmetric q-integer's denominator). -/
 theorem q_sub_inv_pos : 0 < ctx.q - ctx.q⁻¹ := by
   have hq := ctx.q_gt_one
-  have h0 : (0 : ℝ) < ctx.q := by linarith
+  have h0 : (0 : ℝ) < ctx.q := lt_trans one_pos hq
   have hinv : 0 < ctx.q⁻¹ := inv_pos.mpr h0
-  have hmul : ctx.q * ctx.q⁻¹ = 1 := mul_inv_cancel₀ (ne_of_gt h0)
-  nlinarith [mul_pos (by linarith : (0 : ℝ) < ctx.q - 1) hinv]
+  nlinarith [mul_pos (sub_pos.mpr hq) hinv, mul_inv_cancel₀ (ne_of_gt h0)]
 
 /-- `[1]_q = 1`. -/
 theorem qInt_one : qInt 1 = 1 := by

@@ -105,6 +105,7 @@ theorem q_ns_wellposedness [ctx : QNsWellposednessContext] :
       (∀ (k : ℕ) (t : ℝ), 0 ≤ t →
         ctx.v_hat k (sol t).1
           ≤ ctx.v_hat k ctx.v₀ * Real.exp (- ctx.ν_q * (ctx.q_int k) ^ 2 * t))) := by
+  -- Ref: [manuscript] thm:q-ns-wellposedness, quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.md
   sorry
 
 end QOU.FluidDynamics
