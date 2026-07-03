@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-03T23:44:14.164041+00:00",
-  "commitSha": "cabcf20cf156c7f58b83958b891b1593a7f4b0a0",
+  "computedAt": "2026-07-04T00:04:51.796570+00:00",
+  "commitSha": "aa737395749c1928af72904ea603027d80ca37d4",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 103,
+  "durationMs": 10,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "8a602c238718",
@@ -18,15 +18,13 @@
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
   },
   "description": "Static scan of computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 1015,
+    "files_scanned": 1018,
     "patterns": [
       "P15",
       "P16",
@@ -37,8 +35,8 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 151,
-      "P16": 340,
+      "P15": 154,
+      "P16": 341,
       "P21": 24,
       "P30": 144,
       "P31": 26
@@ -335,6 +333,34 @@
         "pattern": "P16",
         "file": "aj_figure_eight_operator_construct_verify.py",
         "line": 377,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P15",
+        "file": "aj_figure_eight_telescope_assembly_check.py",
+        "line": 78,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "aj_figure_eight_telescope_assembly_check.py",
+        "line": 79,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "aj_figure_eight_telescope_assembly_check.py",
+        "line": 113,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P16",
+        "file": "aj_figure_eight_telescope_assembly_check.py",
+        "line": 49,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
