@@ -1,10 +1,11 @@
 ---
 # 9fnm
 title: 'c3^even measurement: Hoefsmit Stage-B order-u^3 extension (1jrh unblock)'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-07-03T06:15:43Z
-updated_at: 2026-07-03T06:15:43Z
+updated_at: 2026-07-03T11:15:56Z
 ---
 
 
