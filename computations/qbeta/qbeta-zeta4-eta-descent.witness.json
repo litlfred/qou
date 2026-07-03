@@ -1,0 +1,85 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-03T19:04:51.987363+00:00",
+  "commitSha": "3ce4d5055feefa2da836f0f14d867b735cbcfb8c",
+  "assertions": [
+    {
+      "name": "eta_bar_odd_in_window",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "E_descends_in_window",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 34,
+  "computation": "qbeta-zeta4-eta-descent",
+  "scriptFile": "qbeta_zeta4_eta_descent_probe.py",
+  "scriptHash": "04d587f95ce9",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "0zr0 (v3): eta-descent — exact construction of the bar-odd fibre argument eta from O (cube-root gauge; O = ell*eta^3 by construction) + exact membership checks over the validity window. INTERPRETATION: the membership checks are THEOREMS (invariant ring of the order-2 bar automorphism of Q(sqrt3)[[s]] is k[[w]] on any bar-even val-2 uniformizer; cube-root uniqueness makes eta bar-odd), so passing validates the code only — the single-fibre descent as posed has no falsifiable content. The data is the exact rung arithmetic: growing |g_{k+1}/g_k| -> ~20 falsifies the entire cosh/sinh (zeta4-partner V0) family scope (a) and locates a finite radius of convergence ~1/20.5 in eta. v1's boundary 'failures' were zero-padding truncation artifacts; v1's odd-tail check was a gauge tautology.",
+  "data": {
+    "ORD": 17,
+    "eta_valid_through": 15,
+    "t_valid_through": 16,
+    "O_leading_ell_exact": "-3 + sqrt(3)/8",
+    "eta_bar_odd_first_violation": null,
+    "E_in_eta2_rungs": {
+      "1": "9/8",
+      "2": "-638119/36672 - 189*sqrt(3)/764",
+      "3": "121659591*sqrt(3)/11673920 + 3403604157/23347840",
+      "4": "-26223201397913263/13485338818560 - 747751076263283*sqrt(3)/3371334704640",
+      "5": "864519514711251481771*sqrt(3)/185450379432837120 + 18691452173807114845033/618167931442790400",
+      "6": "-47772366600787102825909617727/93511499325213789388800 - 4604517070108143034008769237*sqrt(3)/46755749662606894694400",
+      "7": "408409856489521006632434546215951087*sqrt(3)/195038804372584904804007936000 + 3559609177460877535418291582475133127/390077608745169809608015872000",
+      "8": "-303517695794682967789296119959992333631871/1788115758487858407243144757248000 - 40071354945468983561752225006323247098113*sqrt(3)/894057879243929203621572378624000"
+    },
+    "E_in_eta2_first_residual": null,
+    "eta2_in_utilde_first_residual": null,
+    "eta_coeffs_exact": {
+      "1": "1",
+      "2": "-1/2",
+      "3": "21*sqrt(3)/191 + 14579/4584",
+      "4": "-13815/3056 - 63*sqrt(3)/382",
+      "5": "1075491089/210130560 - 2602681*sqrt(3)/26266320",
+      "6": "-449215841/84052224 + 5490601*sqrt(3)/10506528",
+      "7": "4864879549241*sqrt(3)/2528501028480 + 334931905066469/6742669409280",
+      "8": "-308895608456009/1926476974080 - 6325248951341*sqrt(3)/722428865280",
+      "9": "1531059818346809731*sqrt(3)/231812974291046400 + 625205526324150639869/1854503794328371200",
+      "10": "-234318262306829813309/412111954295193600 + 1305193040067232189*sqrt(3)/51513994286899200",
+      "11": "626045974809556091921*sqrt(3)/11688937415651723673600 + 24563884870553074303039921/13358785617887684198400",
+      "12": "-112736501483894986985919907/17002090786402507161600 - 713054466063899636160581*sqrt(3)/2125261348300313395200",
+      "13": "139692220810193527490267907581*sqrt(3)/177308003975077186185461760 + 1444264359254186950808019047260309/78015521749033961921603174400",
+      "14": "-99055086870199993942474788825953/2400477592277968059126251520 + 6225578263615095557807966131*sqrt(3)/27278154457704182490071040",
+      "15": "191745600742983541581514806264587267903/1788115758487858407243144757248000 - 269517681531075730425860101004521553*sqrt(3)/134108681886589380543235856793600"
+    },
+    "rung_ratios_gk1_over_gk": {
+      "1": "-15.848172",
+      "2": "-9.1887872",
+      "3": "-14.214451",
+      "4": "-16.451513",
+      "5": "-17.787077",
+      "6": "-18.713618",
+      "7": "-19.398206"
+    },
+    "verdict": "ETA-DESCENT CONFIRMED AS A THEOREM (invariant theory: the bar-even subring of Q(sqrt3)[[s]] is k[[w]] on any bar-even valuation-2 uniformizer; cube-root uniqueness gives eta bar-odd) — the passing checks (bar-odd to s^15, E in [[eta^2]] to s^16, eta^2 in [[u~]]) validate the code, not a hypothesis: the single-fibre descent as posed carries no falsifiable content. The informative output is the exact rung arithmetic: |g_{k+1}/g_k| GROWS toward ~20 (exact), so F(eta) has finite radius of convergence ~1/20.5 in eta — the cosh/sinh (zeta4-partner V0) entire family is falsified scope (a), and the nearest-singularity location is the sharpened constraint replacing the refuted h-forms. Scope (a): truncation order, net route.",
+    "scope": "(a); no wiring"
+  }
+}
