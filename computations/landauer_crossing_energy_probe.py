@@ -16,9 +16,9 @@ temperature scale kT_eff. This probe computes the IMPLIED per-q-bit energy
 
 for the proton and neutron (Borromean B_3 word, l = 6 crossings) and compares it —
 ratio only, tiered reporting, no fit — against the canonical candidate scales
-{m_e c_q^2, m_mu, E_0, m_e/hbar_q, E_0 c_q^2}. A ratio within a few percent of 1 (or of
-a small q-integer) is reported as a near-match; anything else refutes the simple
-identification at tier 1 (scope-a). Masses via the canonical facade (canonical_mass).
+{m_e c_q^2, m_mu, E_0, m_e/hbar_q, E_0 c_q^2}. A ratio within 5% of 1 is reported as a
+near-match; anything else refutes the simple identification at tier 1 (scope-a).
+Masses via the canonical facade (canonical_mass).
 """
 from __future__ import annotations
 
@@ -32,6 +32,7 @@ import mpmath as mp
 from q_parameter import Q as Q0  # noqa: E402
 from canonical_mass import proton_mass_mev, neutron_mass_mev  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
+from codata_2022_source import M_MU_OVER_M_E  # noqa: E402
 
 COMPUTE_DPS = 70
 DPS = 50
@@ -51,7 +52,7 @@ def main() -> int:
     info_qbits = BORROMEAN_CROSSINGS * eta_q
     scales = {
         "m_e_cq2": m_e * cq2,
-        "m_mu_pred": m_e * mp.mpf("206.7682827"),  # CODATA ratio proxy (display only)
+        "m_mu_pred": m_e * mp.mpf(str(M_MU_OVER_M_E)),  # shared CODATA ratio (provenance-central)
         "E0": e0,
         "m_e_over_hbar_q": m_e / hbar_q,
         "E0_cq2": e0 * cq2,
