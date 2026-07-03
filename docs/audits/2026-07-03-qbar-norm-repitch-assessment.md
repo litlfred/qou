@@ -106,6 +106,47 @@ Any follow-up should target the per-λ decomposition of the redistribution
 (which Wedderburn blocks receive the amplitude; does the self-conjugate
 stratum dominate?), not the aggregate norm.
 
+## 3b. Follow-ups: per-λ decomposition + bar-parity split of G (owner-requested)
+
+Probe extended (same script, `--qbar` flag) with (i) the per-block
+decomposition c_λ = y_λ·tr(ρ_λ(W)ρ_λ(W^♯)) and (ii) the genuine bar-parity
+split G_± = ½(G(q₀) ± G(q₀⁻¹)) with word/weights/representation all
+evaluated through the q-parameterised path on both legs.
+
+**Per-λ decomposition (²H–³He):**
+
+| iso | selfconj share atom | selfconj share free | chiral-anti share atom | chiral-anti share free | top Δc_λ receivers |
+|---|--:|--:|--:|--:|:--|
+| ²H | 0.136 | 0.129 | 0.435 | 0.439 | (5,1): +0.101; (3,2,1): +0.045; (4,2): −0.039 |
+| ³H | 0.0034 | 0.0032 | 0.558 | 0.555 | (6,3): −0.224; (5,4): −0.173; (5,3,1): −0.084 |
+| ³He | 0.0026 | 0.0029 | 0.547 | 0.551 | (6,3): +0.328; (7,2): +0.301; (5,3,1): +0.210 |
+
+- **The self-conjugate stratum does NOT dominate** — its share of G is
+  small (13.6% at n = 6, ~0.3% at n = 9) and essentially unchanged by
+  binding. The redistribution happens in the chiral pairs.
+- Over half of G sits in the **block-level bar-odd content** (the
+  antisymmetric ½|c_λ − c_λ′| over chiral pairs), again nearly binding-
+  invariant in aggregate.
+- **Mirror antisymmetry at block level:** ³H and ³He push amplitude
+  through the *same* blocks in *opposite* directions — (6,3) receives
+  −0.224 under ³H binding and +0.328 under ³He binding (likewise (5,3,1)).
+  The pp↔nn interface swap acts as a sign flip on the block-level
+  redistribution.
+
+**Bar-parity split of G (²H–³He):**
+
+| iso | odd/even atom | odd/even free | Δ under binding |
+|---|--:|--:|:--|
+| ²H | 0.34031 | 0.34033 | ≈ 0 (parity-neutral to 6e−5) |
+| ³H | 0.3585 | 0.4426 | binding **suppresses** the odd channel |
+| ³He | 0.5997 | 0.5284 | binding **enhances** the odd channel |
+
+The deuteron binds bar-parity-neutrally; the A = 3 mirror pair splits
+antisymmetrically — ³H sheds bar-odd (decay-channel) weight under binding
+while ³He gains it. Recorded as an observation (no production wire, no
+interpretation beyond the pp↔nn sign flip already visible in the per-λ
+table). ⁴He rows: pending the `--qbar --with-4he` run.
+
 ## 4. Cross-references
 
 - Critical assessment delivered in-session 2026-07-03 (chat), branch
