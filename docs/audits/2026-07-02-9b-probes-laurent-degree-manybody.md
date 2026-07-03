@@ -205,3 +205,33 @@ pairwise" figure — the two computations describe the same object.
 3. Both refutations are **(a)-scoped**: the closed form remains an exact,
    now ℚ-verified, permanent piece; the probes bound what it can supply,
    not what may be added to it.
+
+---
+
+## Follow-up (2026-07-03, owner request): h-power re-parametrization + p/n-asymmetry estimate
+
+Probe: [`probe_9b_h_power_asymmetry.py`](../../computations/probe_9b_h_power_asymmetry.py)
+(witness `probe-9b-h-power-asymmetry.witness.json`, 3/3 assertions; inputs read
+from the PROBE 1 witness — **no new constants**, κ = log_q₀(tr_n/tr_p) is the
+derived closed-form trace asymmetry).
+
+**Exponent correction.** The h-form of the resolved `5(2A−1)` law is
+`Δ_λ(K) ≈ h(q₀)^(−(2A−1)/3)` — the h-exponent carries the **1/3**
+(since −log_q₀ h = 15.0002 = 3·5), not the bare `−(2A−1)`.
+
+| model (log_q₀ units) | D | T | ³He | ⁴He |
+|---|---:|---:|---:|---:|
+| M0 law `10A−5` | +0.011 | +0.066 | **+1.404** | −0.272 |
+| M1 h-form `−log_q₀h·(2A−1)/3` | +0.011 | +0.066 | +1.405 | −0.272 |
+| M2 M1 + κ·(Z−N) | +0.011 | **+1.438** | +0.033 | −0.272 |
+| M3 M1 + κ·[Z>N] | +0.011 | +0.066 | **+0.033** | −0.272 |
+
+**Verdicts.** M2 (antisymmetric mirror application) **REFUTED scope-(a)** —
+breaks T. M3 (proton-excess gate) **NEAR-MATCH, unwired**: collapses the ³He
+outlier +1.40 → +0.033 with the derived κ, leaves D/T intact; ⁴He (−0.272,
+Z = N so the gate cannot act) is now the dominant residual. The one-sided
+gate is consistent with PROBE 1's mirror decomposition (interface-sign swap
+−0.938 and AME mirror +0.904 nearly cancel, leaving the trace asymmetry on
+the proton-excess side only) but is an **observation, not a derived rule** —
+the open follow-up is derive-or-refute `[Z>N]` from the interface algebra,
+and the ⁴He −0.272 residual.
