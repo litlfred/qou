@@ -48,8 +48,9 @@ eigenvalue `c(cell of k in T) = col − row`.  Hence the central element
 The file's **single** remaining cited `sorry` is
 
 * `seminormalVector_data_exists` — Young's seminormal form, the *eigenvector existence*: for
-  every standard tableau `T` of shape `μ` there is a nonzero `v ∈ S^λ` on which each `X_s` acts
-  by `cellContent (T's cell of s)`.  `-- Ref: [vershik-kerov1977]`.
+  every standard tableau `T` of shape `μ` there is a nonzero `v ∈ S^λ` (= `Specht.SpechtSubmodule
+  μ`; throughout this file `λ` is the traditional name for the partition underlying the diagram
+  `μ`) on which each `X_s` acts by `cellContent (T's cell of s)`.  `-- Ref: [vershik-kerov1977]`.
 
 Everything else in the OV layer is **proved** (sorry-free) or **assembled** sorry-free from that
 one core:

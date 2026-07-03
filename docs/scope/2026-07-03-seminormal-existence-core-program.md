@@ -10,7 +10,9 @@ independence/completeness chain in
 punchline `centralC2_acts_by_contentSqSum` — rests on **one** cited `sorry`:
 
 > `seminormalVector_data_exists` : for every standard tableau `T` of shape `μ` there is a nonzero
-> `v ∈ S^λ ≤ M^λ` with `ρ(X_s) v = cellContent(T's cell of s) • v` for every `s`
+> `v ∈ S^λ ≤ M^λ` — in Lean, `v : Specht.Mtab μ` with `v ∈ Specht.SpechtSubmodule μ` (`λ` is the
+> traditional name for the partition underlying `μ`, matching the file's `S^λ`/`M^λ` docstring
+> convention) — with `ρ(X_s) v = cellContent(T's cell of s) • v` for every `s`
 > (`[Field k] [CharZero k]`).
 
 The proved surroundings that any route may reuse: L1
