@@ -115,7 +115,8 @@ def main() -> int:
     print(f"     w2 (from D)          = {float(w2):8.4f}")
     print(f"     w3 (from ³H)         = {float(w3_T):8.4f}")
     print(f"     w3 (from ³He)        = {float(w3_He):8.4f}   ← MIRROR PARTNER")
-    print(f"     w4 (from ⁴He)        = {float(w4):8.4f}\n")
+    print(f"     w4 (⁴He, sym-avg w3) = {float(w4):8.4f}   ← CONDITIONAL "
+          f"(universality already refuted at A=3; shown for completeness)\n")
 
     # ── The decisive discriminant: the mirror split ───────────────────────────
     split = abs(w3_T - w3_He) / ((w3_T + w3_He) / 2)
@@ -151,7 +152,7 @@ def main() -> int:
             wb = WitnessBuilder("theta-wn-kernel-derive-or-refute", engine="mpmath")
             wb.set_description(
                 "Closure option 2: extract per-body-order weights w_n from the AME "
-                "anchors; the T/³He mirror split refutes a universal scalar q-difference "
+                "anchors; the ³H/³He mirror split refutes a universal scalar q-difference "
                 "kernel R(q,x) and shows w_n(K) carries isospin (T₃) structure (IMME "
                 "degree-2). Points closure to option 1 (per-sub-link hyperbolic volume). "
                 "No fit, no production wiring.")
