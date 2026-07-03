@@ -8,10 +8,31 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean"
   },
   "source_hashes": {
-    "md": "7156cc57780d",
+    "md": "b3aa587095ed",
     "ts": "2a09407349f5",
     "lean": "b1e9ba40d0bd"
   },
-  "criteria": {},
-  "updated_at": "2026-06-28T22:31:00.405Z"
+  "criteria": {
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "b3aa587095ed",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.534Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ]
+  },
+  "updated_at": "2026-07-03T00:52:56.534Z"
 }

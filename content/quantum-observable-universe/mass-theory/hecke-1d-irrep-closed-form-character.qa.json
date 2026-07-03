@@ -813,28 +813,6 @@
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       }
     ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "231fff0cfa09",
-          "ts": "cb140b5db438",
-          "lean": "3e0c0f51336a"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.md:1: \\cite{wenzl1988} or -- Ref: [wenzl1988] does not resolve in references.ts"
-      }
-    ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
@@ -2100,7 +2078,27 @@
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Evaluated successfully."
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "172ec48f1c99",
+          "ts": "cb140b5db438",
+          "lean": "bd02ad2f2103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.534Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
     ]
   },
-  "updated_at": "2026-06-28T22:30:14.200Z"
+  "updated_at": "2026-07-03T00:52:56.534Z"
 }

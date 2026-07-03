@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "ee801449874e",
-    "ts": "4123e4bea16a",
+    "ts": "51774e8758ce",
     "lean": "a62888073425"
   },
   "criteria": {
@@ -601,7 +601,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
+        "evidence": "quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -622,7 +622,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
+        "evidence": "quantum-observable-universe/climax-volume-mass/skein-crossing-asymmetry-prop.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -833,6 +833,24 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "ee801449874e",
+          "ts": "51774e8758ce",
+          "lean": "a62888073425"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:55.595Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1344,5 +1362,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T07:55:41.531Z"
+  "updated_at": "2026-07-03T00:52:55.595Z"
 }

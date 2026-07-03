@@ -811,28 +811,6 @@
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       }
     ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "898b8b2a7a29",
-          "ts": "02418d7f4d7b",
-          "lean": "649ae46d41f4"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/brings-surface/topological-charge-quantization.md:1: \\cite{yekutieli2015} or -- Ref: [yekutieli2015] does not resolve in references.ts"
-      }
-    ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
@@ -1579,7 +1557,27 @@
         "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/topological-charge-quantization.lean:35:65: error: unexpected token '/--'; expected 'lemma'",
         "severity": "critical"
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "898b8b2a7a29",
+          "ts": "02418d7f4d7b",
+          "lean": "b8fd0f21c0b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:55.404Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
     ]
   },
-  "updated_at": "2026-07-02T17:05:09.353Z"
+  "updated_at": "2026-07-03T00:52:55.404Z"
 }

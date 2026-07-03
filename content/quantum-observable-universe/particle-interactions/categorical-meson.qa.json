@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "3eab7f2a58bc",
     "ts": "56c0fb142de4",
-    "lean": "80c3e9043b0a"
+    "lean": "ea1f1437f0fb"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1277,28 +1277,6 @@
         "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30"
       }
     ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "3eab7f2a58bc",
-          "ts": "56c0fb142de4",
-          "lean": "80c3e9043b0a"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/particle-interactions/categorical-meson.md:1: \\cite{jones1985} or -- Ref: [jones1985] does not resolve in references.ts"
-      }
-    ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
@@ -1839,7 +1817,27 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/categorical-meson.lean for 'Meson (categorical)' fails compilation with error: content/quantum-observable-universe/particle-interactions/categorical-meson.lean:37:30: error: Type mismatch. This invalidates the claim of formal verification."
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "3eab7f2a58bc",
+          "ts": "56c0fb142de4",
+          "lean": "ea1f1437f0fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:57.492Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
     ]
   },
-  "updated_at": "2026-06-28T23:19:37.903Z"
+  "updated_at": "2026-07-03T00:52:57.492Z"
 }

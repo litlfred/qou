@@ -845,28 +845,6 @@
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       }
     ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "267c155c13d1",
-          "ts": "d19de80eda35",
-          "lean": "735d291e68e4"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.md:1: \\cite{vonkoch1901} or -- Ref: [vonkoch1901] does not resolve in references.ts | quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.md:1: \\cite{weil1948} or -- Ref: [weil1948] does not resolve in references.ts"
-      }
-    ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {

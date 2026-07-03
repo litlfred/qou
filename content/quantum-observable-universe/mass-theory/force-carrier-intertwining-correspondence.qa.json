@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "021309e9b8e6",
     "ts": "bdfc6dfa9089",
-    "lean": "6aa5cd41d2a4"
+    "lean": "d32bd3551968"
   },
   "criteria": {
     "voice-status-leak": [
@@ -829,6 +829,24 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "021309e9b8e6",
+          "ts": "bdfc6dfa9089",
+          "lean": "d32bd3551968"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.534Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1589,5 +1607,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T10:58:54.023Z"
+  "updated_at": "2026-07-03T00:52:56.534Z"
 }

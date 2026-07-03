@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean"
   },
   "source_hashes": {
-    "md": "d1174875f401",
+    "md": "ef73824c60df",
     "ts": "141de25a8dd3",
-    "lean": "16f25fad683e"
+    "lean": "e49602d5dd89"
   },
   "criteria": {
     "voice-status-leak": [
@@ -829,6 +829,24 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "ef73824c60df",
+          "ts": "141de25a8dd3",
+          "lean": "e49602d5dd89"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:57.421Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1616,5 +1634,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:37.262Z"
+  "updated_at": "2026-07-03T00:52:57.421Z"
 }

@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/climax-volume-mass/q-momentum.lean"
   },
   "source_hashes": {
-    "md": "1a05d6a3a7dd",
+    "md": "33793bc88b3e",
     "ts": "522476e8903e",
-    "lean": "57f2758d467f"
+    "lean": "f86deb75da4a"
   },
   "criteria": {
     "voice-status-leak": [
@@ -716,28 +716,6 @@
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       }
     ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "1a05d6a3a7dd",
-          "ts": "522476e8903e",
-          "lean": "57f2758d467f"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/climax-volume-mass/q-momentum.md:1: \\cite{jones1987} or -- Ref: [jones1987] does not resolve in references.ts"
-      }
-    ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
@@ -1160,7 +1138,27 @@
         "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/climax-volume-mass/q-momentum.lean:34:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "critical"
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "33793bc88b3e",
+          "ts": "522476e8903e",
+          "lean": "f86deb75da4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:55.595Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
     ]
   },
-  "updated_at": "2026-06-28T07:55:41.531Z"
+  "updated_at": "2026-07-03T00:52:55.595Z"
 }

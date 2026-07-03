@@ -716,28 +716,6 @@
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       }
     ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "112910e29cd1",
-          "ts": "8abcef4cfb18",
-          "lean": "d42ef20c53b9"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/braid-group.md:1: \\cite{birman1974} or -- Ref: [birman1974] does not resolve in references.ts"
-      }
-    ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
@@ -910,7 +888,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean theorem 'qou:QOU.BraidGroup' statement in content/quantum-observable-universe/braids-and-knots/braid-group.lean structurally matches the mathematical formulation of 'def:braid-group' in content/quantum-observable-universe/braids-and-knots/braid-group.md.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/braid-group.lean:1 \u2014 Lean file exists"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/braid-group.lean:1 — Lean file exists"
       }
     ],
     "da-false-claim": [
@@ -1157,7 +1135,27 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims are consistent."
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "06eb2e2480de",
+          "ts": "8abcef4cfb18",
+          "lean": "d42ef20c53b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:55.297Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
     ]
   },
-  "updated_at": "2026-06-28T05:36:08.012Z"
+  "updated_at": "2026-07-03T00:52:55.297Z"
 }

@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "39026f2b2a8f",
     "ts": "7e71ae2f47e6",
-    "lean": "b100fd02b9b2"
+    "lean": "f96cfaab2a34"
   },
   "criteria": {
     "voice-status-leak": [
@@ -716,28 +716,6 @@
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       }
     ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "39026f2b2a8f",
-          "ts": "7e71ae2f47e6",
-          "lean": "b100fd02b9b2"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/q-casimir.md:1: \\cite{kassel1995} or -- Ref: [kassel1995] does not resolve in references.ts | quantum-observable-universe/braids-and-knots/q-casimir.md:1: \\cite{lusztig1993} or -- Ref: [lusztig1993] does not resolve in references.ts"
-      }
-    ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
@@ -1138,7 +1116,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/q-casimir.lean:91:22: error: Invalid field notation: Type is not of the form `C ...` where C is a constant.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir.lean:1 \u2014 content/quantum-observable-universe/braids-and-knots/q-casimir.lean:91:22: error: Invalid field notation: Type is not of the form `C ...` where C is a constant"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir.lean:1 — content/quantum-observable-universe/braids-and-knots/q-casimir.lean:91:22: error: Invalid field notation: Type is not of the form `C ...` where C is a constant"
       }
     ],
     "da-referee-verdict": [
@@ -1160,7 +1138,27 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/q-casimir.lean:91:22: error: Invalid field notation: Type is not of the form `C ...` where C is a constant"
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "39026f2b2a8f",
+          "ts": "7e71ae2f47e6",
+          "lean": "f96cfaab2a34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:55.297Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
     ]
   },
-  "updated_at": "2026-06-28T05:36:08.012Z"
+  "updated_at": "2026-07-03T00:52:55.297Z"
 }

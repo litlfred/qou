@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "a5688e4549ce",
     "ts": "249d7fd976e4",
-    "lean": "a806d004dcbc"
+    "lean": "7a9f355aa240"
   },
   "criteria": {
     "voice-status-leak": [
@@ -811,28 +811,6 @@
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       }
     ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "a5688e4549ce",
-          "ts": "249d7fd976e4",
-          "lean": "a806d004dcbc"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/lifting-and-descent/weak-equiv-invariance.md:1: \\cite{yekutieli2010} or -- Ref: [yekutieli2010] does not resolve in references.ts"
-      }
-    ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
@@ -1587,7 +1565,27 @@
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/lifting-and-descent/weak-equiv-invariance.lean fails compilation with errors (../lifting-and-descent/weak-equiv-invariance.lean:41:29: error: expected token), preventing formal verification of the claims in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe and let'."
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "a5688e4549ce",
+          "ts": "249d7fd976e4",
+          "lean": "7a9f355aa240"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.146Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
     ]
   },
-  "updated_at": "2026-06-28T10:51:06.075Z"
+  "updated_at": "2026-07-03T00:52:56.146Z"
 }

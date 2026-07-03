@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "c5e3a9e61cf9",
     "ts": "7e9f4a62ee56",
-    "lean": "b95007fab2c2"
+    "lean": "8b187ddcd951"
   },
   "criteria": {
     "voice-status-leak": [
@@ -920,28 +920,6 @@
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       }
     ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "8c92a4bb1722",
-          "ts": "7e9f4a62ee56",
-          "lean": "b95007fab2c2"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/observations/hopf-diquark.md:1: \\cite{alford1999} or -- Ref: [alford1999] does not resolve in references.ts"
-      }
-    ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
@@ -1407,7 +1385,27 @@
         "referee_argument": "The Lean sibling content/quantum-observable-universe/observations/hopf-diquark.lean contains compilation errors: content/quantum-observable-universe/observations/hopf-diquark.lean:93:49: error: unsolved goals, invalidating the claimed formalization.",
         "severity": "critical"
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "c5e3a9e61cf9",
+          "ts": "7e9f4a62ee56",
+          "lean": "8b187ddcd951"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:57.226Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
     ]
   },
-  "updated_at": "2026-06-28T11:04:36.980Z"
+  "updated_at": "2026-07-03T00:52:57.226Z"
 }

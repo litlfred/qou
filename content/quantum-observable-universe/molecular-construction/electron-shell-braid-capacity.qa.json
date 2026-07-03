@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/molecular-construction/electron-shell-braid-capacity.lean"
   },
   "source_hashes": {
-    "md": "c095f5af454d",
+    "md": "c8faa5b68a8c",
     "ts": "fb125052fa17",
-    "lean": "1c54a2c2764f"
+    "lean": "2af2ce00cc3d"
   },
   "criteria": {
     "voice-status-leak": [
@@ -938,6 +938,24 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "c8faa5b68a8c",
+          "ts": "fb125052fa17",
+          "lean": "2af2ce00cc3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:57.117Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1377,5 +1395,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T11:04:36.634Z"
+  "updated_at": "2026-07-03T00:52:57.117Z"
 }

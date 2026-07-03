@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "631f0c0a266e",
     "ts": "ef6c0dbf9455",
-    "lean": "1e37cd51a4d3"
+    "lean": "202e8f135f1c"
   },
   "criteria": {
     "q-usage-archimedean-in-categorical-chapter": [
@@ -27,7 +27,7 @@
         },
         "reviewed_at": "2026-06-02T05:50:07Z",
         "reviewed_sha": "c0488b478cdbd79629bd6bcb88b5174c2f2375a7",
-        "notes": "Author dispensation. The `Real.sqrt 5` at line 70 is the **cyclotomic normalisation** of the 5th-root-of-unity Lagrange resolvent (`(1/\u221a5) * \u03a3 \u03b6^(k\u00b7j) * x_j` is the standard discrete Fourier kernel over \u2124/5). The \u221a5 is an algebraic-integer norm of \u211a(\u03b6_5)/\u211a \u2014 categorical content of the cyclotomic-field decomposition \u2014 NOT an archimedean evaluation at the substrate q_0. The q-usage detector regex catches `Real.sqrt` without knowing the radicand is a small concrete integer. Block remains categorical; the resolvent is a fixed Hecke-algebra construction independent of the substrate parameter."
+        "notes": "Author dispensation. The `Real.sqrt 5` at line 70 is the **cyclotomic normalisation** of the 5th-root-of-unity Lagrange resolvent (`(1/√5) * Σ ζ^(k·j) * x_j` is the standard discrete Fourier kernel over ℤ/5). The √5 is an algebraic-integer norm of ℚ(ζ_5)/ℚ — categorical content of the cyclotomic-field decomposition — NOT an archimedean evaluation at the substrate q_0. The q-usage detector regex catches `Real.sqrt` without knowing the radicand is a small concrete integer. Block remains categorical; the resolvent is a fixed Hecke-algebra construction independent of the substrate parameter."
       },
       {
         "field_hash": {
@@ -46,7 +46,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.lean:70: archimedean Real.* in categorical chapter \u2014 (1 / Complex.ofReal (Real.sqrt 5)) * \u2211 j : Fin 5, \u03b6 ^ (k.val * j.val) * x j"
+        "evidence": "quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.lean:70: archimedean Real.* in categorical chapter — (1 / Complex.ofReal (Real.sqrt 5)) * ∑ j : Fin 5, ζ ^ (k.val * j.val) * x j"
       }
     ],
     "voice-status-leak": [
@@ -828,28 +828,6 @@
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       }
     ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "631f0c0a266e",
-          "ts": "ef6c0dbf9455",
-          "lean": "1e37cd51a4d3"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.md:1: \\cite{bring1786} or -- Ref: [bring1786] does not resolve in references.ts"
-      }
-    ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
@@ -1372,7 +1350,7 @@
         },
         "reviewed_at": "2026-06-28T07:05:44.350Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Checked mathematical consistency of the claim '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and found no counterexamples under the stated conditions.",
+        "notes": "Checked mathematical consistency of the claim '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and found no counterexamples under the stated conditions.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.ts:1"
       }
@@ -1465,7 +1443,7 @@
         },
         "reviewed_at": "2026-06-28T07:05:44.350Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Logical transitions in the derivation of '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' are sound; no non-sequiturs detected.",
+        "notes": "Logical transitions in the derivation of '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' are sound; no non-sequiturs detected.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.ts:1"
       }
@@ -1580,7 +1558,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Complex/Exponential.olean' of module Mathlib.Data.Complex.Exponential does not exist.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.lean:1 \u2014 content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Complex/Exponential.olean' of module Mathlib.Data.Complex.Exponential does not exist"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.lean:1 — content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Complex/Exponential.olean' of module Mathlib.Data.Complex.Exponential does not exist"
       }
     ],
     "da-referee-verdict": [
@@ -1602,7 +1580,27 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Complex/Exponential.olean' of module Mathlib.Data.Complex.Exponential does not exist"
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "631f0c0a266e",
+          "ts": "ef6c0dbf9455",
+          "lean": "202e8f135f1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:55.297Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
     ]
   },
-  "updated_at": "2026-06-28T05:36:08.012Z"
+  "updated_at": "2026-07-03T00:52:55.297Z"
 }

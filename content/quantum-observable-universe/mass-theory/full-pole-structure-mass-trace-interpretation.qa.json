@@ -3,8 +3,8 @@
   "label": "rem:full-pole-structure-mass-trace-interpretation",
   "kind": "remark",
   "paths": {
-    "ts": "content/quantum-observable-universe/mass-theory/full-pole-structure-mass-trace-interpretation.ts",
-    "md": "content/quantum-observable-universe/mass-theory/full-pole-structure-mass-trace-interpretation.md"
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/full-pole-structure-mass-trace-interpretation.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-theory/full-pole-structure-mass-trace-interpretation.md"
   },
   "source_hashes": {
     "md": "833ce3c49ff8",
@@ -273,7 +273,27 @@
         "notes": "Block placement and kind 'remark' match validated structurally for 'The Mittag-Leffler residue sum as a heuristic shadow of the Habiro expansion' within chapter 'mass-theory'.",
         "severity": "minor"
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "833ce3c49ff8",
+          "ts": "722ab223953a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.534Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-06-28T11:04:36.634Z"
+  "updated_at": "2026-07-03T00:52:56.534Z"
 }

@@ -29,7 +29,27 @@
         "evidence": "Maps 'content sum c(lambda)' to 'volume/surface vs Coulomb/exchange', and 'hook partitions' to 'nuclear magic numbers'.",
         "notes": "Extreme overfitting/numerology. The text forces a phenomenological mapping between Hecke representation combinatorics and the empirical Bethe-Weizsäcker nuclear mass formula without any underlying physical mechanism."
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "f13a05b5e184",
+          "ts": "26f4e2fb52ee"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.534Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-06-28T22:55:43.946Z"
+  "updated_at": "2026-07-03T00:52:56.534Z"
 }

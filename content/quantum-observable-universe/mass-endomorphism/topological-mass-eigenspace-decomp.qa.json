@@ -829,6 +829,24 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "50e983de789d",
+          "ts": "933cbc46c875",
+          "lean": "f053763fcdca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.364Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1561,7 +1579,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.lean:1 \u2014 /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/LiftingDescent/JetProlongation.olean' of module QOU.LiftingDescent.JetProlongation does not exist"
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/LiftingDescent/JetProlongation.olean' of module QOU.LiftingDescent.JetProlongation does not exist"
       }
     ],
     "da-referee-verdict": [
@@ -1585,5 +1603,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T05:36:08.012Z"
+  "updated_at": "2026-07-03T00:52:56.364Z"
 }

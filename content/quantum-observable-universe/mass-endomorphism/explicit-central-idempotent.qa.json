@@ -8,10 +8,31 @@
     "lean": "../qou/content/quantum-observable-universe/mass-endomorphism/explicit-central-idempotent.lean"
   },
   "source_hashes": {
-    "md": "12a0bfb4e2d6",
+    "md": "1598f57525bc",
     "ts": "231c5a878d65",
     "lean": "a6076b68e822"
   },
-  "criteria": {},
-  "updated_at": "2026-06-28T05:36:08.012Z"
+  "criteria": {
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "1598f57525bc",
+          "ts": "231c5a878d65",
+          "lean": "a6076b68e822"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.364Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ]
+  },
+  "updated_at": "2026-07-03T00:52:56.364Z"
 }

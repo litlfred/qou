@@ -1,0 +1,38 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:shadow-price-continuity",
+  "kind": "proposition",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/climax-volume-mass/shadow-price-continuity.ts",
+    "md": "../qou/content/quantum-observable-universe/climax-volume-mass/shadow-price-continuity.md",
+    "lean": "../qou/content/quantum-observable-universe/climax-volume-mass/shadow-price-continuity.lean"
+  },
+  "source_hashes": {
+    "md": "b0d96f5cac9a",
+    "ts": "a8922c29f933",
+    "lean": "0ddafa091d92"
+  },
+  "criteria": {
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "b0d96f5cac9a",
+          "ts": "a8922c29f933",
+          "lean": "0ddafa091d92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:55.595Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ]
+  },
+  "updated_at": "2026-07-03T00:52:55.595Z"
+}

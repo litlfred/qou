@@ -995,6 +995,24 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "1a24c659c87c",
+          "ts": "899a2b7ea6f6",
+          "lean": "56557fc5b95f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.364Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1146,7 +1164,7 @@
         },
         "reviewed_at": "2026-06-28T10:51:08.364Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The block 'Iwahori-Hecke algebra $H_n(R, q)$ type scaffold (forward-reference to WIP-scaffolding audit)' presents substantial mathematical content: The Iwahori\u2013Hecke algebra $H_n(R, q)$ is the unital associative algebra with gen...",
+        "notes": "The block 'Iwahori-Hecke algebra $H_n(R, q)$ type scaffold (forward-reference to WIP-scaffolding audit)' presents substantial mathematical content: The Iwahori–Hecke algebra $H_n(R, q)$ is the unital associative algebra with gen...",
         "severity": "minor"
       }
     ],
@@ -1359,5 +1377,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T05:36:08.012Z"
+  "updated_at": "2026-07-03T00:52:56.364Z"
 }

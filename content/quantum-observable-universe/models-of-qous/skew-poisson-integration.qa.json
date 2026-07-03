@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "5f004c77e94c",
     "ts": "1bac86251e8a",
-    "lean": "2168a3f7d16b"
+    "lean": "645004a8382c"
   },
   "criteria": {
     "voice-status-leak": [
@@ -811,28 +811,6 @@
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       }
     ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "5f004c77e94c",
-          "ts": "1bac86251e8a",
-          "lean": "2168a3f7d16b"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/models-of-qous/skew-poisson-integration.md:1: \\cite{hazewinkel1978} or -- Ref: [hazewinkel1978] does not resolve in references.ts"
-      }
-    ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
@@ -1598,7 +1576,27 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/models-of-qous/skew-poisson-integration.lean contains compilation errors: content/quantum-observable-universe/models-of-qous/skew-poisson-integration.lean:38:12: error(lean.unknownIdentifier): Unknown constant `Nat.Prime`, invalidating the claimed formalization."
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "5f004c77e94c",
+          "ts": "1bac86251e8a",
+          "lean": "645004a8382c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:57.022Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
     ]
   },
-  "updated_at": "2026-06-28T10:58:59.920Z"
+  "updated_at": "2026-07-03T00:52:57.022Z"
 }

@@ -29,7 +29,27 @@
         "evidence": "file:50: The double beta decay is a fiber descent: the interaction products ... cascade through two Skein smoothings",
         "notes": "Interpreting double beta decay as a sequence of purely topological Skein smoothings from a genus-2 surface down to a genus-1 surface via a Higgs-like figure-eight knot is highly speculative. It completely ignores the established electroweak mechanism of beta decay."
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "0a1370129443",
+          "ts": "75adfeb58ffd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:57.226Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
+        "notes": "block has no .lean sibling"
+      }
     ]
   },
-  "updated_at": "2026-06-28T18:06:13.460Z"
+  "updated_at": "2026-07-03T00:52:57.226Z"
 }

@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "e22e76e2ce79",
     "ts": "7fc12ba2b073",
-    "lean": "2ce5e645356e"
+    "lean": "35517d44d4a5"
   },
   "criteria": {
     "voice-status-leak": [
@@ -2258,68 +2258,6 @@
         },
         "reviewed_at": "2026-06-28T23:19:37.903Z",
         "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30"
-      }
-    ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "9fd659699664",
-          "ts": "dd0d9de57ef0",
-          "lean": "2ce5e645356e"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.md:1: \\cite{wenzl1988} or -- Ref: [wenzl1988] does not resolve in references.ts | quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.md:1: \\cite{hoefsmit1974} or -- Ref: [hoefsmit1974] does not resolve in references.ts"
-      },
-      {
-        "field_hash": {
-          "md": "5acfddc9b3bd",
-          "ts": "dd0d9de57ef0",
-          "lean": "2ce5e645356e"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-28T23:06:52.243Z",
-        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.md:1: \\cite{wenzl1988} or -- Ref: [wenzl1988] does not resolve in references.ts | content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.md:1: \\cite{hoefsmit1974} or -- Ref: [hoefsmit1974] does not resolve in references.ts"
-      },
-      {
-        "field_hash": {
-          "md": "e22e76e2ce79",
-          "ts": "7fc12ba2b073",
-          "lean": "2ce5e645356e"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-28T23:19:37.774Z",
-        "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.md:1: \\cite{wenzl1988} or -- Ref: [wenzl1988] does not resolve in references.ts | content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.md:1: \\cite{hoefsmit1974} or -- Ref: [hoefsmit1974] does not resolve in references.ts"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -4655,7 +4593,27 @@
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "e22e76e2ce79",
+          "ts": "7fc12ba2b073",
+          "lean": "35517d44d4a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:57.492Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
     ]
   },
-  "updated_at": "2026-06-28T23:19:37.903Z"
+  "updated_at": "2026-07-03T00:52:57.492Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/climax-volume-mass/knot-operator-energy.lean"
   },
   "source_hashes": {
-    "md": "ec34940520d5",
+    "md": "601210a17aec",
     "ts": "4c095717b475",
     "lean": "75acdb531ecb"
   },
@@ -734,6 +734,24 @@
         },
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "601210a17aec",
+          "ts": "4c095717b475",
+          "lean": "75acdb531ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:55.595Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
     "bib-cited-ref-has-url": [
@@ -1160,5 +1178,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T07:55:41.531Z"
+  "updated_at": "2026-07-03T00:52:55.595Z"
 }

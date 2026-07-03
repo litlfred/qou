@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "58e4831542c6",
     "ts": "c848c199c1dd",
-    "lean": "9836e5e8a0d3"
+    "lean": "910a10f03d8f"
   },
   "criteria": {
     "voice-status-leak": [
@@ -716,28 +716,6 @@
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       }
     ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "4c9717e7ffa3",
-          "ts": "c848c199c1dd",
-          "lean": "9836e5e8a0d3"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/mass-theory/adelic-substrate.md:1: \\cite{tate1967} or -- Ref: [tate1967] does not resolve in references.ts"
-      }
-    ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
@@ -1173,7 +1151,27 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/adelic-substrate.lean contains compilation errors: content/quantum-observable-universe/mass-theory/adelic-substrate.lean:24:17: error: unexpected token '/--'; expected term, invalidating the claimed formalization."
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "58e4831542c6",
+          "ts": "c848c199c1dd",
+          "lean": "910a10f03d8f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.534Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
     ]
   },
-  "updated_at": "2026-06-28T10:58:42.716Z"
+  "updated_at": "2026-07-03T00:52:56.534Z"
 }

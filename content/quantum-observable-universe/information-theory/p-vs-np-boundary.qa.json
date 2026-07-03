@@ -8,10 +8,31 @@
     "lean": "../qou/content/quantum-observable-universe/information-theory/p-vs-np-boundary.lean"
   },
   "source_hashes": {
-    "md": "ae106fdca4d8",
-    "ts": "d4b902c48a21",
-    "lean": "e383a6d19ff3"
+    "md": "535072ba8db2",
+    "ts": "b5862e5f3d7e",
+    "lean": "396e5ee41b2f"
   },
-  "criteria": {},
-  "updated_at": "2026-06-28T10:51:03.753Z"
+  "criteria": {
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "535072ba8db2",
+          "ts": "b5862e5f3d7e",
+          "lean": "396e5ee41b2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.008Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ]
+  },
+  "updated_at": "2026-07-03T00:52:56.008Z"
 }

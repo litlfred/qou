@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "57a4323e3c36",
     "ts": "b980bb4a9ad5",
-    "lean": "69655b6f585d"
+    "lean": "14c763cf7b8c"
   },
   "criteria": {
     "voice-status-leak": [
@@ -811,28 +811,6 @@
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       }
     ],
-    "bib-cite-resolves": [
-      {
-        "field_hash": {
-          "md": "57a4323e3c36",
-          "ts": "b980bb4a9ad5",
-          "lean": "69655b6f585d"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/climax-volume-mass/non-self-intersection.md:1: \\cite{freedman1994} or -- Ref: [freedman1994] does not resolve in references.ts"
-      }
-    ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
@@ -1585,7 +1563,27 @@
         "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/climax-volume-mass/non-self-intersection.lean:29:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "critical"
       }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "57a4323e3c36",
+          "ts": "b980bb4a9ad5",
+          "lean": "14c763cf7b8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:55.595Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
     ]
   },
-  "updated_at": "2026-06-28T07:55:41.531Z"
+  "updated_at": "2026-07-03T00:52:55.595Z"
 }
