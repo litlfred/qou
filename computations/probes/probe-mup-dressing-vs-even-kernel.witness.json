@@ -1,23 +1,23 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-03T19:31:01.239281+00:00",
-  "commitSha": "249c5176c8e88588037cd62a24383483543d01b1",
+  "computedAt": "2026-07-03T19:43:20.954983+00:00",
+  "commitSha": "11303e9b435dac80de1a986b87a2eaed998d1c42",
   "assertions": [
     {
       "name": "no_silent_match_within_1pct",
       "computed": "False",
       "expected": "False",
       "passed": true,
-      "source": "record-only: the match flag equals what the ratio table shows (self-consistency)"
+      "source": "refutation gate: a future rung/variable change producing a 1% match must FAIL this witness so the near-match gets re-adjudicated"
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 21,
   "computation": "probe-mup-dressing-vs-even-kernel",
   "scriptFile": "probe_mup_dressing_vs_even_kernel.py",
-  "scriptHash": "3210e66bc320",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d3b5af77735c",
+  "scriptCommitSha": "11303e9b435dac80de1a986b87a2eaed998d1c42",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -88,6 +88,16 @@
     },
     "best_candidate_delta_p": "tail_ge5_utilde",
     "best_candidate_delta_mu": "tail_ge5_utilde",
-    "verdict": "REFUTED-as-is (scope (a)): no witness-exact object built from the Q_beta bar-even kernel E(u~) — full kernel, single rung, or tail, in either documented ladder variable — reproduces the mu-p dressing within 1%. The mass-channel dressing is NOT the Q_beta even kernel evaluated at the same substrate argument; nearest candidates recorded with sign/ratio as the sharpener."
+    "verdict": "REFUTED-as-is (scope (a)): no witness-exact object built from the Q_beta bar-even kernel E(u~) — full kernel, single rung, or tail, in either documented ladder variable — reproduces the mu-p dressing within 1%. The mass-channel dressing is NOT the Q_beta even kernel evaluated at the same substrate argument; nearest candidates recorded with sign/ratio as the sharpener.",
+    "upstream_witness_hashes": [
+      {
+        "path": "qbeta-bar-split-ord17.witness.json",
+        "sha256": "32649c28e3f5dbb41e376670d779d67653ffd57935290ea46d34142522a7e0ef",
+        "size_bytes": 1769,
+        "commitSha": "46c886077e9d67295e0580709f64fd9046a16e9b",
+        "scriptCommitSha": "unknown",
+        "computedAt": "2026-07-03T14:09:41.643638+00:00"
+      }
+    ]
   }
 }
