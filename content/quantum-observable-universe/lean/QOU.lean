@@ -141,6 +141,13 @@ import QOU.BraidsAndKnots.DeltaLambdaL1Ceiling
 -- Borromean brane-tower convergence: the TRUE Li₂^q radius bound (|tr_M(β_Bor)|<1
 -- ⇒ pair traces < q ∀q>1); sorry-free, over ℚ. Wired so CI type-checks it.
 import QOU.BraidsAndKnots.BorromeanTowerConvergence
+-- Trace-convention split: convention D (TL/Jones pipeline) ≠ convention C
+-- (canonical Wenzl z-trace) at β_Bor, exactly; sorry-free. Wired so CI
+-- type-checks it (not an orphan).
+import QOU.BraidsAndKnots.BorromeanTraceConventionSplit
+-- Canonical trC(β_Bor) derived from the Markov-forced values (rational
+-- seminormal (2,1) rep + Cayley–Hamilton + unique weights); sorry-free.
+import QOU.BraidsAndKnots.BorromeanCanonicalTraceDerivation
 -- Post-τ q-Rogers pentagon: α/β substitution algebra, the log² correction
 -- term, and the q≠1 analytic-continuation conjecture-class.
 import QOU.BraidKnot.QRogersPentagonArchimedean
