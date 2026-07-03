@@ -356,7 +356,7 @@ def main(argv=None):
         "s013 route 1 (owner redirect): larger-D Seifert executed on the count-matching "
         "Sigma(3,4,5) (D=6, gamma=4 flat connections = 4 bwS0 classes) and closed as a "
         "class. Transcription from uploads/0405028v2.pdf machine-validated: chi^(111)_120 "
-        "= printed table; Sum n*chi selection (0 for the two non-flat, 2P for the 4 flat); "
+        "= printed table; Sum n*chi selection (0 for the two non-flat, 4P for the 4 flat); "
         "CS phases from (P/2)(1+Sum l/p)^2 mod 2 = printed (119/240,-49/240,-1/60,11/60) "
         "and reproduce Sigma(2,3,5)'s -1/120,-49/120; phi(3,4,5)=49/60 from Dedekind sums; "
         "Theorem 9 EXACT to ~1e-30 at N=3,5,7; S(6x6)^2=1; flat vacuum-row entries = "
