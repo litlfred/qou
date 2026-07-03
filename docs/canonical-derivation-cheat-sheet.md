@@ -535,6 +535,23 @@ linearization-artifact reading from the exact-degree side.
 > [Probe audit](audits/2026-07-02-9b-probes-laurent-degree-manybody.md),
 > `probe_9b_laurent_degree_10a5.py`.
 
+> **Follow-ups (2026-07-03, PR #3247).** (i) h-power re-parametrization:
+> the residual law reads `Δ_λ(K) ≈ h(q₀)^(−(2A−1)/3)` (the h-exponent
+> carries the 1/3); adding the derived asymmetry κ = log_q₀(tr_n/tr_p)
+> as a proton-excess gate collapses the ³He outlier +1.40 → +0.033 at
+> A=3 (`probe_9b_h_power_asymmetry.py`). (ii) **Gate refuted as a generic
+> rule, scope-(a)** (`probe_9b_gate_interface_algebra.py`): the exact
+> mirror decomposition `gap = asym + swap + mirror` is proved as an
+> identity (≤1e-30), and the A=3 swap/mirror near-cancellation (−0.938 +
+> 0.904 = −0.034) is A-specific — swap decays geometrically with A while
+> the mirror term stays O(0.4) (⁷Li/⁷Be: +0.394) — so M3 stays a
+> near-match at A=3 only. (iii) **Interface-factor algebra Lean-proved
+> sorry-free** (22 theorems, generic field, `q = s²`, no ℝ:
+> [`QOU/Hecke/ClosedFormInterfaceFactors.lean`](../content/quantum-observable-universe/lean/QOU/Hecke/ClosedFormInterfaceFactors.lean)
+> — factor algebra, bar-involution behaviour, δ cubic factorization,
+> assembly product, Markov trace bridge); the cross-level `H_{3A}`
+> bond-word induction remains sympy-verified only (the honest boundary).
+
 **9a flip gate (owner ruling, 2026-06-13).** Production stays on the
 uniform shortcut until the per-A normalisation `R(K)` — the same object as
 the 9b ρ/Δ_λ leg — is derived; the flip is a *derivation milestone*, not a
