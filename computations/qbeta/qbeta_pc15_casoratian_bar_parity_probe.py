@@ -160,7 +160,10 @@ def main():
     print("GATE PASSES                    :", passes)
     print("VERDICT:", verdict)
     print("witness ->", out)
-    return 0 if True else 1
+    # Propagate the gate outcome via exit code, matching the nearest sibling gate probe
+    # (qbeta_bar_even_kernel_invariant_probe.py). A KILL (refutation) is a valid scientific
+    # result recorded in the witness; the non-zero exit merely signals "candidate excluded".
+    return 0 if passes else 1
 
 
 def _is_laurent_monomial(expr, *gens):
