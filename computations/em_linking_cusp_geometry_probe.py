@@ -27,8 +27,8 @@ RESULT — the length-scale is NOT a cusp-geometry ratio, for two reasons:
 (a) SCOPE-LIMITED NEGATIVE. The pp/nn distinction DOES live in the mirror
     pair (³He=Borromean vs ³H=8_11 are different links). But no natural
     cross-link geometric ratio matches 3.213 to the <1% discipline gate:
-    longitude 3.354 (4.4% off), |shape| 3.716 (16% off), vol 1.131. The
-    closest (longitude, 4.4%) is not a match; selecting it would be the
+    longitude 3.354 (4.3% off), |shape| 3.716 (15.6% off), vol 1.131. The
+    closest (longitude, 4.3%) is not a match; selecting it would be the
     PSLQ-coincidence antipattern (a CAL-4 fit).
 
 So the audit's "cusp/horoball separation" lever is closed. The magnitude gap
@@ -143,9 +143,9 @@ def main() -> int:
         "a cusp-geometry ratio of the mirror links? NO. (b) ³He=L6a4=Borromean is "
         "S₃-symmetric (3 identical cusps, shape 2i) so within-link cusp separations "
         "are all equal — no charge asymmetry; structurally cannot give 3.213. "
-        "(a) cross-link 8_11-vs-Borromean ratios miss (best longitude 3.354, 4.4%; "
-        ">1% gate). The audit's cusp/horoball lever is closed; magnitude stays "
-        "open/owner-gated. No fit.")
+        f"(a) cross-link 8_11-vs-Borromean ratios miss (best {best[0]} "
+        f"{best[2]:.3f}, {best[1]*100:.1f}%; >{GATE*100:.0f}% gate). The audit's "
+        "cusp/horoball lever is closed; magnitude stays open/owner-gated. No fit.")
     wb.add_data("target_ratio", TARGET)
     wb.add_data("borromean_symmetric", bool(sym))
     wb.add_data("cross_link_ratios", {k: float(v) for k, v in ratios.items()})
