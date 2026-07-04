@@ -1,6 +1,8 @@
 **Proposition (conditional on a formally-real pivotal structure).**
-The Frobenius pairing endows $\mathbf{C}$ with a positive-definite
-dagger, promoting it to an inner-product (involutive) category.
+With a self-adjoint pivotal antipode over a formally-real
+endomorphism ring, the Frobenius pairing endows $\mathbf{C}$ with a
+positive-definite dagger, promoting it to an inner-product
+(involutive) category.
 Let $(\mathbf{C}, A)$ be a
 [quantum universe](#def:quantum-universe) whose endomorphism ring
 $\mathrm{End}(\mathbf{1}) \cong R$ is a formally-real ordered field,
