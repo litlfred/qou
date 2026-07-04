@@ -134,12 +134,76 @@ functional `ε_vortex(β_D)=Σ_λ χ^λ(β_D)·q^{w·c(λ)}`
 defect** `B = M(bound) − ΣM(free) < 0`, so the natural functional is the *defect*
 `ε(β_D) − ε(β_D^{vac})`, which — via the exact interface factorization
 `β_K = β_K^{vac}·⋈_K` ([`interface-knot-markov-z.md`](../../content/quantum-observable-universe/mass-theory/interface-knot-markov-z.md))
-— isolates the single **bar-odd pn interface crossing** `⋈_D` (`p₊=1`), precisely
-where the sign lives. The counit probe used the *absolute* `ε(β_D)`; the defect
-form is untested (needs `χ^λ(β_D^{vac})`, the disjoint p·n vacuum character,
-obtainable from the canonical `closed_form_tau_M` formalism). This is the sharp,
-parameter-free next test of the counit+vortex direction — and the most-correct
-object surfaced by this investigation.
+— isolates the signed interface crossings `⋈_K`, precisely where the sign lives.
+
+## Defect form `ε(β_K)−ε(β_K^vac)` (bean `p7l6`) — the defect STRUCTURE fixes the sign
+
+The vacuum characters were already committed: `atom-chi-rust-{K}.witness.json`
+carries both `data.atom` (`include_inter=True` = β_K) and `data.free`
+(`include_inter=False` = β_K^vac). So the defect is directly computable,
+parameter-free ([`rho_k_counit_defect_form.py`](../../computations/rho_k_counit_defect_form.py)):
+
+| isotope | counit defect `Σ(χa−χf)` | ratio | trM defect `Σy(χa−χf)` | ratio | sign |
+|---|---|---|---|---|---|
+| D | −30.29 | 6.96 | −0.595 | 0.137 | **neg** |
+| T | −709.7 | 42.8 | −0.804 | 0.048 | **neg** |
+| ³He | −820.0 | 54.3 | −0.841 | 0.056 | **neg** |
+| ⁴He | −28488 | 514 | −0.912 | 0.017 | **neg** |
+
+**The defect structure robustly fixes the SIGN.** Every defect variant is
+**negative for all four isotopes** — the bound atom reads lower than the free
+vacuum, exactly the binding sign the *absolute* `ε(β_D)` (positive) got wrong. The
+sign is carried by the interface difference, **structurally** — no vortex-writhe
+hack needed. This is the counit hypothesis' durable contribution.
+
+**But no standard per-block weight closes the magnitude.** Deuteron defect weight
+sweep (target −4.3533, tol 1) — all negative, none within tol:
+
+| Δ_λ | defect value | `|miss|` |
+|---|---|---|
+| `1/y_λ` (counit) | −30.29 | 25.9 (explodes) |
+| `1` (trM mass defect) | −0.595 | 3.76 (collapses, A-flat) |
+| `1/dim_q` (co-Casimir) | −0.072 | 4.28 (collapses) |
+| `sgn(w₀)·f^λ` (Option-E) | **−2.404** | **1.95** (closest) |
+
+Across isotopes the counit-defect ratio *explodes* with A (7→515), the trM-defect
+*collapses* (0.14→0.017, nearly A-flat). The right Δ_λ interpolates between these
+and remains open — but the **sign is now solved by the defect structure**, which is
+the piece the six prior ansätze (all tested on absolute or interface objects, all
+positive/wrong-sign) were missing. Option-E in *defect* form (−2.40, ~2× low) is
+the closest standard weight — a lead for the magnitude, distinct from the refuted
+*absolute* Option-E.
+
+## Literature calibration (lit search, 2026-07-04)
+
+- **The vortex twist `q^{2·content(λ)}` is FULLY STANDARD** — the sl_N ribbon-twist
+  / second-Casimir eigenvalue (Reshetikhin–Turaev; Turaev, *Quantum Invariants*;
+  Casimir factor, arXiv:1407.3754). The "character is writhe-blind, framing lives
+  in a separate scalar" split is textbook. The bar-odd sinh writhe `q^w−q^{-w}` is
+  a correct synthesis of standard facts (bar = mirror = writhe-flip). The
+  disjoint-product LR character formula `χ^λ(β₁⊗β₂)=Σ c^λ_{μν}χ^μχ^ν` is standard
+  (Macdonald; Ram, IMRN 1997).
+- **Naming caveat (honest):** the *genuine* Hecke-algebra counit is a **single**
+  1-dim character (`σ_i↦q` or `↦−q⁻¹`), **not** `Σ_λ χ^λ`. The object used here
+  (`Σ_λ χ^λ` = inverse-Gram-weighted trace = Frobenius–Schur square-root count at
+  `q=1`) is a **novel repackaging of a classical object**, internally coherent as
+  "the TQFT counit against the handle element `ω=G⁻¹𝟙`", but it should be *stated*
+  that way — "counit" as written will draw referee objections. (Recorded so the
+  corpus does not overclaim standardness.)
+- **The binding-from-Hecke-trace mechanism is genuinely unclaimed** — nearest
+  precedents (Skyrme nuclei-as-solitons; Bilson-Thompson particles-as-braids)
+  compute quantum numbers, not binding via traces. No prior support, no prior
+  refutation.
+
+## Net for the counit thread
+
+Owner hypothesis (counit was missed): **confirmed and productive.** It surfaced a
+genuinely-untried functional and — via the **defect structure** — a **robust,
+parameter-free resolution of the binding SIGN** that all six prior ansätze lacked.
+The remaining open piece is the **magnitude** (the Δ_λ per-block weight), now
+sharply posed: find the weight interpolating counit-defect (explodes) and
+trM-defect (collapses), with Option-E-defect (~2×) the current best. Scope-(a)
+throughout; nothing wired; the sign mechanism is the durable win.
 
 ## Provenance
 
