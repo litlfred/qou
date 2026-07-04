@@ -1,5 +1,7 @@
 import Mathlib.Tactic
 import Mathlib.Data.Matrix.Basic
+import Mathlib.LinearAlgebra.UnitaryGroup
+import Mathlib.LinearAlgebra.Matrix.Trace
 
 /-!
 # QOU.QuantumObservableUniverse.fai_projector_coadjoint_orbit
@@ -26,12 +28,19 @@ sorry-free*:
   idempotency, so per AGENTS.md §7c it is stated over a generic
   (noncommutative) `[Ring R]`; the 2-dimensional standard-representation
   instance is the `Matrix (Fin 2) (Fin 2) ℝ` corollary below.
-- **Not formalised (narrative only)**: the second half of the `.md`
-  lemma — that `σ` identifies `ℙ(V) ≅ G/T` with a *closed coadjoint
-  orbit* in `Ad(A)` — is differential-geometric (orbit topology,
-  `G/T` identification) and remains in the narrative proof block
-  `prf:fai-projector-coadjoint-orbit`; no `sorry` is carried for it
-  here.
+- **Stated, not yet proved (honest `sorry`)**: the second half of the
+  `.md` lemma — that `σ` identifies `ℙ(V) ≅ G/T` with a *closed
+  coadjoint orbit* in `Ad(A)` — is stated at the archimedean matrix
+  level as `fai_projector_coadjoint_orbit_orbit`: the traceless
+  component `σ(ρ)` of every rank-1 projector (Hermitian idempotent of
+  trace 1) on `τ(V) = ℂ²` is unitarily conjugate to the single base
+  point `σ₀ = ½·diag(1, −1)`, so the `σ`-image of `ℙ(V)` is one
+  `U(2)`-adjoint orbit.  The proof is the spectral theorem for the
+  Hermitian idempotent `ρ` (eigenvalues `1, 0`); it is not yet
+  formalised, so the theorem carries a cited `sorry`.  The full
+  differential-geometric content (orbit topology, the `G/T`
+  identification) remains in the narrative proof block
+  `prf:fai-projector-coadjoint-orbit`.
 -/
 
 namespace QOU.QuantumObservableUniverse
@@ -61,8 +70,9 @@ theorem twice_sigma_sq_eq_one {R : Type*} [Ring R] {ρ : R}
     For any idempotent `ρ` in a ring, `(2ρ - 1)² = 1`: the doubled
     traceless component of a projector is an involution.  Proved
     sorry-free via `twice_sigma_sq_eq_one`; the coadjoint-orbit
-    identification `ℙ(V) ≅ G/T` of the `.md` statement is narrative
-    (see module docstring). -/
+    identification `ℙ(V) ≅ G/T` of the `.md` statement is stated
+    (with a cited `sorry`) as `fai_projector_coadjoint_orbit_orbit`
+    below. -/
 theorem fai_projector_coadjoint_orbit {R : Type*} [Ring R] {ρ : R}
     (hρ : ρ * ρ = ρ) : (2 * ρ - 1) ^ 2 = 1 :=
   twice_sigma_sq_eq_one hρ
@@ -75,5 +85,35 @@ theorem fai_projector_coadjoint_orbit_matrix
     (ρ : Matrix (Fin 2) (Fin 2) ℝ) (hρ : ρ * ρ = ρ) :
     (2 * ρ - 1) ^ 2 = 1 :=
   fai_projector_coadjoint_orbit hρ
+
+/-- The base point `σ₀ = ½·diag(1, −1)` of the coadjoint orbit: the
+    traceless component `σ(ρ₀) = ρ₀ − ½·id` of the base rank-1
+    projector `ρ₀ = diag(1, 0)` on `τ(V) = ℂ²`. -/
+noncomputable def sigmaBasePoint : Matrix (Fin 2) (Fin 2) ℂ :=
+  (2 : ℂ)⁻¹ • Matrix.diagonal (fun i => if i = 0 then (1 : ℂ) else -1)
+
+/-- **Lemma** ([`lem:fai-projector-coadjoint-orbit`], coadjoint-orbit
+    half) — **stated, not yet proved**.
+
+    The traceless component `σ(ρ) = ρ − ½·id_V` of every rank-1
+    projector on the categorical-dimension-2 standard representation —
+    archimedean realisation: a Hermitian idempotent of trace 1 on
+    `τ(V) = ℂ²` — is unitarily conjugate to the single base point
+    `σ₀ = ½·diag(1, −1)`.  Hence the `σ`-image of `ℙ(V)` is one
+    `U(2)`-adjoint orbit, and `σ` identifies
+    `ℙ(V) ≅ G/T = U(2)/(U(1) × U(1))` with a closed coadjoint orbit in
+    `Ad(A)` (the `.md` lemma's second half).
+
+    The proof is the spectral theorem for the Hermitian idempotent `ρ`
+    (eigenvalues `1` and `0`, unitary diagonalisation to `diag(1, 0)`),
+    which is not yet formalised here — hence the cited `sorry`. -/
+-- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/fai-projector-coadjoint-orbit.md
+theorem fai_projector_coadjoint_orbit_orbit
+    (ρ : Matrix (Fin 2) (Fin 2) ℂ) (hidem : ρ * ρ = ρ)
+    (hherm : ρ.conjTranspose = ρ) (htr : ρ.trace = 1) :
+    ∃ u ∈ Matrix.unitaryGroup (Fin 2) ℂ,
+      ρ - (2 : ℂ)⁻¹ • (1 : Matrix (Fin 2) (Fin 2) ℂ)
+        = u * sigmaBasePoint * star u := by
+  sorry
 
 end QOU.QuantumObservableUniverse
