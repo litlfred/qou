@@ -191,7 +191,6 @@ export default chapter({
         "genus-from-hecke-completeness-proof",
         "chebyshev-degree-genus",
         "chebyshev-degree-genus-proof",
-        "genus-ideal-characterisation",
       ],
     }),
     section({
@@ -199,6 +198,7 @@ export default chapter({
       label: "sec:archimedean-condition-genus-completeness-genus-ideal-characterisation",
       blocks: [
         "archimedean-condition-genus-completeness-genus-ideal-characterisation-intro",
+        "genus-ideal-characterisation",
         "genus-ideal-characterisation-proof",
         "yekutieli-leading-coefficient",
         "yekutieli-leading-coefficient-proof",
