@@ -1,40 +1,115 @@
-import Mathlib.Tactic
+import QOU.Infra.Polylogarithm
+import QOU.BraidKnot.Cl3Zeta5OrbitSum
 
 /-!
-# QOU.BraidKnot.BringTrilogDepth3Witness — conjectural class (placeholder)
+# QOU.BraidKnot.BringTrilogDepth3Witness — conjectural class (§3b), content-bearing
 
-**§3b-cond class axiomatisation** for content block
-[`conj:bring-trilog-depth-3-witness`](../../../quantum-observable-universe/braids-and-knots/bring-trilog-depth-3-witness.md): *Bring trilog at $\\zeta_5$ as depth-3 grouplike value (50-digit functional-equation cross-validated witness)*.
+**§3b class axiomatisation** for content block
+[`conj:bring-trilog-depth-3-witness`](../../../quantum-observable-universe/mass-theory/bring-trilog-depth-3-witness.md):
+*Bring trilog at $\zeta_5$ as depth-3 grouplike value (50-digit
+functional-equation cross-validated witness).*
 
-This is a **conjecture**: the class `BringTrilogDepth3Witness` carries a placeholder
-field; the `noncomputable instance` is the conjectural witness whose
-`sorry` represents the open conjecture itself (per AGENTS.md §3b),
-NOT a missing proof.  Downstream theorems may take
-`[BringTrilogDepth3Witness]` as an explicit `[Instance]` hypothesis to derive
-unconditional Lean theorems modulo this single conjectural input
-(per §3b-cond).
+**De-abstracted (bean 5e79 / T1, 2026-07-04).** The previous shape was the
+under-specified placeholder `residual : ℝ` + `residual_eq_zero` (the
+§3b-tax `proof-claims-unencoded` pattern — the file itself said "refine
+the fields").  The class now carries the conjecture's actual content:
 
-The field schema below is a structural placeholder; refine the
-fields to match the conjecture's actual content as the
-formalisation matures.
+* the four archimedean components of
+  $\tau_{\mathrm{arch}}(\mathrm{Li}_3^q(\zeta_5^k))
+  = \mathrm{Cl}_3(2\pi k/5) + i\,S_3(2\pi k/5)$ for the two
+  $\mathbb{Q}$-independent orbit representatives $k = 1, 2$
+  (Clausen `Cl₃` is even and $2\pi$-periodic, so $k = 4, 3$ repeat them);
+* the **K = 5 distribution relation, real part** — the 50-dps
+  cross-validated falsifiable content
+  (`bring-trilog-zeta5-depth-3.witness.json`, residual $5.5\times10^{-51}$):
+  $2\,(\mathrm{Cl}_3(2\pi/5) + \mathrm{Cl}_3(4\pi/5))
+  = (5^{-2} - 1)\,\zeta(3) = -(24/25)\,\zeta(3)$, tied to the PROVED
+  arithmetic core `Cl3Zeta5OrbitSum.orbit_sum_identity` via
+  `cl3OrbitSumPredicted`;
+* the witness-pinned **sign non-degeneracies**
+  ($\mathrm{Cl}_3(2\pi/5) \approx +0.18937 > 0$,
+  $S_3(2\pi/5) \approx +0.99220 > 0$) that make the depth-3 value
+  genuinely nontrivial (rule out the zero realisation).
+
+Sorry-free consequences are DERIVED below (`pair_sum_eq`,
+`cl3_4pi5_neg`): the pair sum is $-(12/25)\,\zeta(3)$ — note the factor
+2 vs the full 4-term orbit sum, the mislabel this de-abstraction also
+fixed in `Cl3Zeta5GeometricRealization` — and $\mathrm{Cl}_3(4\pi/5) < 0$.
+
+The `sorry` instance is the **open conjecture** per §3b (that the
+q-side depth-3 grouplike exists and archimedean-realises to these
+components), NOT a missing proof.
 -/
 
 namespace QOU.BraidKnot
 
-/-- Bring trilog at $\\zeta_5$ as depth-3 grouplike value (50-digit functional-equation cross-validated witness)
+open QOU.Infra.Polylogarithm
 
-    Conjectural class — see [`conj:bring-trilog-depth-3-witness`](../../../quantum-observable-universe/braids-and-knots/bring-trilog-depth-3-witness.md). -/
+/-- **Bring trilog at $\zeta_5$ as depth-3 grouplike value** — §3b conjecture
+    class carrying the archimedean components and the K = 5 distribution
+    relation (50-dps cross-validated witness).
+
+    Conjectural class — see
+    [`conj:bring-trilog-depth-3-witness`](../../../quantum-observable-universe/mass-theory/bring-trilog-depth-3-witness.md). -/
 class BringTrilogDepth3Witness where
-  -- Witness: computations/none
-  /-- Scalar residual encoding the conjecture's content (placeholder
-      shape: refine to match the actual claim). -/
-  residual : ℝ
-  /-- The residual vanishes (the conjecture is the assertion that
-      this holds). -/
-  residual_eq_zero : residual = 0
+  -- Witness: computations/bring-trilog-zeta5-depth-3.witness.json
+  /-- $\zeta(3)$ (carried; no Mathlib closed form). -/
+  zeta3 : ℝ
+  /-- $\zeta(3) > 0$ (archimedean input; $\zeta(3) \approx 1.20206$). -/
+  zeta3_pos : 0 < zeta3
+  /-- $\mathrm{Cl}_3(2\pi/5) = \mathrm{Re}\,\mathrm{Li}_3(\zeta_5)$. -/
+  cl3_2pi5 : ℝ
+  /-- $S_3(2\pi/5) = \mathrm{Im}\,\mathrm{Li}_3(\zeta_5)$. -/
+  s3_2pi5 : ℝ
+  /-- $\mathrm{Cl}_3(4\pi/5) = \mathrm{Re}\,\mathrm{Li}_3(\zeta_5^2)$. -/
+  cl3_4pi5 : ℝ
+  /-- $S_3(4\pi/5) = \mathrm{Im}\,\mathrm{Li}_3(\zeta_5^2)$. -/
+  s3_4pi5 : ℝ
+  /-- **K = 5 distribution relation, real part** (the falsifiable,
+      50-dps cross-validated content): the full 4-term orbit sum
+      $\sum_{k=1}^{4} \mathrm{Cl}_3(2\pi k/5)
+      = 2(\mathrm{Cl}_3(2\pi/5) + \mathrm{Cl}_3(4\pi/5))$ equals the
+      proved closed form $-(24/25)\,\zeta(3)$
+      (`Cl3Zeta5OrbitSum.orbit_sum_identity`). -/
+  orbit_sum_real : 2 * (cl3_2pi5 + cl3_4pi5) = cl3OrbitSumPredicted 5 zeta3
+  /-- Witness-pinned non-degeneracy: $\mathrm{Cl}_3(2\pi/5) > 0$
+      ($\approx 0.18937$). -/
+  cl3_2pi5_pos : 0 < cl3_2pi5
+  /-- Witness-pinned non-degeneracy: $S_3(2\pi/5) > 0$
+      ($\approx 0.99220$) — the imaginary (depth-partner) component is
+      genuinely present. -/
+  s3_2pi5_pos : 0 < s3_2pi5
 
--- The conjecture itself.  The `sorry` represents the **open
--- conjecture** per §3b — not a missing proof.
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/bring-trilog-depth-3-witness.ts
+namespace BringTrilogDepth3Witness
+
+variable [W : BringTrilogDepth3Witness]
+
+/-- **Derived, sorry-free: the orbit-PAIR sum.**
+    $\mathrm{Cl}_3(2\pi/5) + \mathrm{Cl}_3(4\pi/5) = -(12/25)\,\zeta(3)$
+    — half the full 4-term sum (each Clausen value appears twice in the
+    orbit, since `Cl₃` is even and $2\pi$-periodic). -/
+theorem pair_sum_eq :
+    W.cl3_2pi5 + W.cl3_4pi5 = -(12 / 25) * W.zeta3 := by
+  have h := W.orbit_sum_real
+  rw [Cl3Zeta5OrbitSum.orbit_sum_identity] at h
+  linarith
+
+/-- **Derived, sorry-free: $\mathrm{Cl}_3(4\pi/5) < 0$**
+    ($\approx -0.76636$): the pair sum is strictly negative
+    (`zeta3_pos`) while $\mathrm{Cl}_3(2\pi/5) > 0$. -/
+theorem cl3_4pi5_neg : W.cl3_4pi5 < 0 := by
+  have hp := pair_sum_eq (W := W)
+  have h3 := W.zeta3_pos
+  have h1 := W.cl3_2pi5_pos
+  nlinarith
+
+end BringTrilogDepth3Witness
+
+-- The conjecture itself: the q-side depth-3 grouplike $\mathrm{Li}_3^q(\zeta_5)$
+-- exists in $G^{(3)}(\mathcal{H}_q) \setminus G^{(2)}$ and archimedean-realises
+-- to these components.  The `sorry` represents the **open conjecture** per
+-- §3b — not a missing proof.
+-- Ref: [manuscript] quantum-observable-universe/mass-theory/bring-trilog-depth-3-witness.ts
 noncomputable instance : BringTrilogDepth3Witness := sorry
+
 end QOU.BraidKnot

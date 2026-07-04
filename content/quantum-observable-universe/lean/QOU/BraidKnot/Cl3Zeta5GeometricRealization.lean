@@ -1,46 +1,58 @@
 import QOU.BraidKnot.Cl3Zeta5OrbitSum
+import QOU.BraidKnot.BringTrilogDepth3Witness
 
 /-!
-# QOU.BraidKnot.Cl3Zeta5GeometricRealization — conjectural class (§3b), orbit-sum-anchored
+# QOU.BraidKnot.Cl3Zeta5GeometricRealization — dependent conjectural class (§3b), witness-anchored
 
 **§3b class axiomatisation** for content block
 [`conj:cl3-zeta5-geometric-realization`](../../../quantum-observable-universe/mass-theory/cl3-zeta5-geometric-realization.md):
 *Geometric realisation of the depth-3 Bring trilog
 $\mathrm{Cl}_3(2\pi/5) = \mathrm{Re}\,\mathrm{Li}_3(\zeta_5)$.*
 
-**De-vacuified (bean 5e79 / T1, 2026-06-25).** The previous shape carried a *free*
-`cl3Zeta5 : ℝ` field, which made `exists_realization : ∃ g, realize g = cl3Zeta5` trivially
-satisfiable (pick `GeomInvariant := Unit`, `realize := fun _ => cl3Zeta5`) — a §1a vacuity dodge
-hiding behind the `sorry`. The realised values are now **pinned to the PROVED `K = 5` orbit-sum
-identity** `Cl₃(2π/5) + Cl₃(4π/5) = −(24/25)·ζ(3)`
-([`Cl3Zeta5OrbitSum.orbit_sum_identity`](Cl3Zeta5OrbitSum.lean)): the class carries two invariants
-`g_2pi5`, `g_4pi5` whose realised values must reproduce that sum (`realize_orbit_sum`). The provable
-content (`realize_orbit_sum_eq`) is then sorry-free; the residual `sorry` instance is the genuinely
-**open conjecture** — that `realize` ranges over honest GEOMETRIC/topological invariants (hyperbolic
-4-manifold volume, knot Chern–Simons, $\overline{\mathcal{M}}_{0,5}$ iterated integral), not
-arbitrary reals.
+**T1 completion + factor-2 fix (bean 5e79, 2026-07-04).** Two changes over the
+2026-06-25 orbit-sum-anchored shape:
 
-**Residual Mathlib gap (flagged, not faked).** No Clausen `Cl₃` evaluation exists in Mathlib or
-`Infra.Polylogarithm` (only the *parametric* predicted closed form `cl3OrbitSumPredicted`), so
-`Cl₃(2π/5)` cannot yet be pinned to a closed number — only the orbit-sum *relation* between the two
-summands is available. The candidate-2 (torus-knot CS) sub-case was numerically refuted (PSLQ — CS
-of Bring-natural torus knots is rational), so the conjecture is the bare existence of *some*
-geometric invariant pair realising the orbit-sum-constrained values.
+1. **Dependent-conjecture wiring (§3b-tax).** The class now takes
+   `[W : BringTrilogDepth3Witness]` — the geometric-realisation conjecture
+   presupposes the depth-3 witness identification (which archimedean values
+   are to be realised), so the dependency is threaded through the TYPE (the
+   derived `conjecture_graph` edge), not restated as prose.  The previously
+   free `zeta3 : ℝ` field is gone (it is `W.zeta3`), and the two candidate
+   invariants must realise **the witnessed values** `W.cl3_2pi5` /
+   `W.cl3_4pi5` — not merely an unconstrained pair with the right sum.
+2. **Factor-2 mislabel fixed.** The previous anchor pinned the PAIR
+   $\mathrm{Cl}_3(2\pi/5) + \mathrm{Cl}_3(4\pi/5)$ to the full 4-term orbit
+   sum $-(24/25)\,\zeta(3)$ — but each Clausen value appears TWICE in the
+   $k = 1..4$ orbit (`Cl₃` even, $2\pi$-periodic), so the pair sum is
+   $-(12/25)\,\zeta(3)$ ($\approx -0.577$; the old anchor would force
+   $\mathrm{Cl}_3(4\pi/5) \approx -1.34$, outside Clausen range
+   $|{\cdot}| \le \zeta(3)$).  The corrected pair identity is now DERIVED
+   sorry-free (`realize_pair_sum`) from the witness's `pair_sum_eq`.
+
+**Residual Mathlib gap (flagged, not faked).** No Clausen `Cl₃` evaluation
+exists in Mathlib or `Infra.Polylogarithm` (only the parametric predicted
+closed form `cl3OrbitSumPredicted`), so the witnessed components live as
+class fields of `BringTrilogDepth3Witness`, not closed numbers.  The
+candidate-2 (torus-knot CS) sub-case was numerically refuted (PSLQ — CS of
+Bring-natural torus knots is rational), so the conjecture is the existence
+of *some* geometric invariant pair realising the witnessed values.
 -/
 
 namespace QOU.BraidKnot
 
 open QOU.Infra.Polylogarithm
 
-/-- **Geometric realisation of $\mathrm{Cl}_3(2\pi/5)$** — §3b conjecture class, orbit-sum-anchored.
+/-- **Geometric realisation of $\mathrm{Cl}_3(2\pi/5)$** — §3b DEPENDENT
+    conjecture class (conditional on `BringTrilogDepth3Witness`),
+    witness-anchored: the candidate geometric invariants must realise the
+    witnessed archimedean components.
 
     Conjectural class — see
     [`conj:cl3-zeta5-geometric-realization`](../../../quantum-observable-universe/mass-theory/cl3-zeta5-geometric-realization.md). -/
-class Cl3Zeta5GeometricRealization where
-  /-- $\zeta(3)$ (Mathlib has `Real.zeta` but no `Real.zeta 3` closed form, so it is carried). -/
-  zeta3 : ℝ
-  /-- Candidate geometric/topological invariants (4-manifold volume, knot Chern–Simons,
-      $\overline{\mathcal{M}}_{0,5}$ iterated integral). -/
+class Cl3Zeta5GeometricRealization [W : BringTrilogDepth3Witness] where
+  /-- Candidate geometric/topological invariants (hyperbolic 4-manifold
+      volume, knot Chern–Simons, $\overline{\mathcal{M}}_{0,5}$ iterated
+      integral). -/
   GeomInvariant : Type
   /-- Archimedean evaluation of a candidate invariant. -/
   realize : GeomInvariant → ℝ
@@ -48,34 +60,47 @@ class Cl3Zeta5GeometricRealization where
   g_2pi5 : GeomInvariant
   /-- A geometric invariant realising $\mathrm{Cl}_3(4\pi/5)$. -/
   g_4pi5 : GeomInvariant
-  /-- **The orbit-sum anchor.** The two realised values reproduce the proved $K = 5$ depth-3 trilog
-      orbit sum $-(24/25)\zeta(3)$ (`Cl3Zeta5OrbitSum.orbit_sum_identity`). This pins the realisation
-      to the proved structure — it is NOT a free pair of reals (the de-vacuification). -/
-  realize_orbit_sum : realize g_2pi5 + realize g_4pi5 = cl3OrbitSumPredicted 5 zeta3
+  /-- **The witness anchor**: the $2\pi/5$ invariant realises the witnessed
+      $\mathrm{Cl}_3(2\pi/5)$ (not an arbitrary real). -/
+  realize_2pi5 : realize g_2pi5 = W.cl3_2pi5
+  /-- **The witness anchor**: the $4\pi/5$ invariant realises the witnessed
+      $\mathrm{Cl}_3(4\pi/5)$. -/
+  realize_4pi5 : realize g_4pi5 = W.cl3_4pi5
 
 namespace Cl3Zeta5GeometricRealization
 
-/-- The depth-3 Bring trilog $\mathrm{Cl}_3(2\pi/5) = \mathrm{Re}\,\mathrm{Li}_3(\zeta_5)
-    \approx 0.18936791\ldots$, as the realised value of the $2\pi/5$ geometric invariant. -/
-noncomputable def cl3Zeta5 (self : Cl3Zeta5GeometricRealization) : ℝ :=
-  self.realize self.g_2pi5
+variable [W : BringTrilogDepth3Witness] [G : Cl3Zeta5GeometricRealization]
 
-/-- **Provable content (sorry-free): the realised values satisfy the proved orbit sum.**
-    $\mathrm{Cl}_3(2\pi/5) + \mathrm{Cl}_3(4\pi/5) = -(24/25)\,\zeta(3)$. This is the de-vacuified
-    core — discharged from the orbit-sum anchor `realize_orbit_sum` plus the proved
-    `Cl3Zeta5OrbitSum.orbit_sum_identity`; no `sorry`. -/
-theorem realize_orbit_sum_eq (self : Cl3Zeta5GeometricRealization) :
-    self.cl3Zeta5 + self.realize self.g_4pi5 = -(24 / 25) * self.zeta3 := by
-  show self.realize self.g_2pi5 + self.realize self.g_4pi5 = -(24 / 25) * self.zeta3
-  rw [self.realize_orbit_sum, Cl3Zeta5OrbitSum.orbit_sum_identity]
+/-- The depth-3 Bring trilog $\mathrm{Cl}_3(2\pi/5) \approx 0.18936791\ldots$,
+    as the realised value of the $2\pi/5$ geometric invariant. -/
+noncomputable def cl3Zeta5 : ℝ := G.realize G.g_2pi5
+
+/-- **Provable content (sorry-free): the realised PAIR satisfies the proved
+    orbit identity** $\mathrm{Cl}_3(2\pi/5) + \mathrm{Cl}_3(4\pi/5)
+    = -(12/25)\,\zeta(3)$ — the corrected (factor-2-fixed) form, derived
+    from the witness anchors + `BringTrilogDepth3Witness.pair_sum_eq`
+    (which rests on the proved `Cl3Zeta5OrbitSum.orbit_sum_identity`). -/
+theorem realize_pair_sum :
+    G.realize G.g_2pi5 + G.realize G.g_4pi5 = -(12 / 25) * W.zeta3 := by
+  rw [G.realize_2pi5, G.realize_4pi5]
+  exact BringTrilogDepth3Witness.pair_sum_eq
+
+/-- **Provable content (sorry-free): the realised $2\pi/5$ value is
+    strictly positive** — the geometric invariant cannot be the zero
+    invariant (witness non-degeneracy transported through the anchor). -/
+theorem cl3Zeta5_pos : 0 < cl3Zeta5 (W := W) (G := G) := by
+  show 0 < G.realize G.g_2pi5
+  rw [G.realize_2pi5]
+  exact W.cl3_2pi5_pos
 
 end Cl3Zeta5GeometricRealization
 
--- The conjecture: `realize` ranges over genuine GEOMETRIC invariants (not arbitrary reals), so the
--- orbit-sum-constrained pair `(g_2pi5, g_4pi5)` is realised geometrically.  The `sorry` represents
--- the **open conjecture** per §3b — not a missing proof.  Residual: a closed Clausen `Cl₃(2π/5)`
--- value (Mathlib gap).
+-- The conjecture: `realize` ranges over genuine GEOMETRIC invariants (not
+-- arbitrary reals), realising the witnessed components.  The `sorry`
+-- represents the **open conjecture** per §3b — not a missing proof.
+-- Residual: a closed Clausen `Cl₃(2π/5)` value (Mathlib gap).
 -- Ref: [manuscript] quantum-observable-universe/mass-theory/cl3-zeta5-geometric-realization.ts
-noncomputable instance : Cl3Zeta5GeometricRealization := sorry
+noncomputable instance [W : BringTrilogDepth3Witness] :
+    Cl3Zeta5GeometricRealization (W := W) := sorry
 
 end QOU.BraidKnot
