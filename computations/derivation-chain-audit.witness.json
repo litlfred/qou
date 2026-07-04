@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-04T00:04:53.903472+00:00",
-  "commitSha": "aa737395749c1928af72904ea603027d80ca37d4",
+  "computedAt": "2026-07-04T00:09:27.073969+00:00",
+  "commitSha": "a234acaf11e603f7b337a60d5b1a482feb22c184",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -153,9 +153,9 @@
     },
     {
       "name": "chain_valid[c-q-q0.derivation]",
-      "computed": true,
+      "computed": false,
       "expected": true,
-      "passed": true
+      "passed": false
     },
     {
       "name": "leaf_value[c-q-q0.derivation]",
@@ -558,8 +558,8 @@
       "tolerance": 9.9124115660574e-11
     }
   ],
-  "allPassed": true,
-  "durationMs": 4,
+  "allPassed": false,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
@@ -572,8 +572,10 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
@@ -1186,7 +1188,9 @@
         "computed_value": 9.092678397394828,
         "structural_ok": true,
         "leaf_matches": true,
-        "issues": [],
+        "issues": [
+          "c_q algebra re-eval at q_0=1.1099785827513808 gives 9.092679456150243 vs target 9.092678397394828 (rel_diff 1.16e-07, target_tolerance 1.00e-12)"
+        ],
         "trust_summary": {
           "axiom": 2,
           "derived": 2,
@@ -2430,6 +2434,7 @@
         "d-density-derivation.witness.json",
         "d-from-scratch.witness.json",
         "d-u-closed-form-proof.witness.json",
+        "defect-info-a-trend-probe.witness.json",
         "defect-weighted-zero-point-probe.witness.json",
         "definitive-q0-shift.witness.json",
         "deligne-stable-range-binding-period-probe.witness.json",
@@ -3041,6 +3046,7 @@
         "term7-chi5-basis.witness.json",
         "term7-height6-partition-enum.witness.json",
         "terms-2-3-atom-per-gen-mpfr-50dps.witness.json",
+        "theta-mn-multiplicity.witness.json",
         "theta-wn-jetfilt-linkvolume.witness.json",
         "theta-wn-kernel-derive-or-refute.witness.json",
         "three-body-joint-trace-a3.witness.json",
