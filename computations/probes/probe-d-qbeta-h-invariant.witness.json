@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-04T00:16:52.216699+00:00",
-  "commitSha": "83ceab526a50f9b3345426f174a838ee130d8308",
+  "computedAt": "2026-07-04T00:21:01.013204+00:00",
+  "commitSha": "e50ca9c6e41e2fd0dccecc3a2d8bc1180515a65d",
   "assertions": [
     {
       "name": "qbeta_proxy_identity_exact",
@@ -20,7 +20,7 @@
     },
     {
       "name": "dressed_equals_proxy_over_h",
-      "computed": 3.111507638930571e-61,
+      "computed": 1.5557538194652854e-61,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-45,
@@ -28,11 +28,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 27,
+  "durationMs": 26,
   "computation": "probe-d-qbeta-h-invariant",
   "scriptFile": "probe_d_qbeta_h_invariant.py",
   "scriptHash": "9517017dd4a2",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "e50ca9c6e41e2fd0dccecc3a2d8bc1180515a65d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,7 +49,7 @@
   "description": "Formalize-first on the deuteron 1/h scale: (i) EXACT ℚ(q) reduction Q_β_proxy = E₀·h·(2−h)/2 (sympy-proved) ⟹ Δ_λ(D)=1/h ⟺ B_D = E₀·(1−h/2)·Δtr — the 1/h is the E₀ scale dressed by the smoothed bar-averaged crossing; (ii) Q_β = m_e·8G·h REFUTED-as-exact at the precision floor (0.06% near-match survives as observation); (iii) the zero-fit candidate errors vs AME under both Q_β forms. Nothing wired (Δ_λ gate).",
   "auditOnly": "docs/audits/2026-07-03-deuteron-from-scratch-error-ledger.md",
   "parameters": {
-    "q0": "1.1099785955573347198997632204832250266562084087802",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
     "compute_dps": 50
   },
   "data": {
@@ -62,20 +62,20 @@
       "lean_target": "generic-[Field R] identity per §7c: field_simp; ring — follow-up bean"
     },
     "ii_exactness_refutation": {
-      "gap_rel_production_Qbeta": -0.0006177115554724467,
-      "gap_rel_proxy_Qbeta": 0.0010575405158489437,
+      "gap_rel_production_Qbeta": -0.0006176006514719396,
+      "gap_rel_proxy_Qbeta": 0.0010576815965129191,
       "precision_floor": 1e-45,
       "verdict": "REFUTED-as-exact, scope (b) for the EXACT claim only: with exact 50-dps inputs the gap (≈6e-4 production / ≈1e-3 proxy) is 40+ orders above the floor — Q_β = m_e·8G·h is not an identity at q₀. The 0.06% near-match survives as an observation: E₀·(2−h)/2 ≈ m_e·8G, an algebraic-vs-Catalan transcendental near-coincidence (Weinberg-cosh class)"
     },
     "iii_candidate": {
-      "Delta_tr": "0.595168993231699498425939649198",
-      "B_E0_undressed_MeV": "2.4913659948397054677",
-      "B_E0_undressed_err_rel": 0.11993340312358673,
-      "B_dressed_1_minus_h2_MeV": "2.2309431062946747651",
-      "B_dressed_err_rel": 0.0028665841882677015,
-      "B_production_Qbeta_over_h_MeV": "2.2272096625029278514",
-      "B_production_Qbeta_over_h_err_rel": 0.001188304714387844,
-      "consistency_dressed_eq_proxy_over_h": -3.111507638930571e-61,
+      "Delta_tr": "0.595168892622343486522408194084",
+      "B_E0_undressed_MeV": "2.4913658925297409255",
+      "B_E0_undressed_err_rel": 0.11993335713261351,
+      "B_dressed_1_minus_h2_MeV": "2.230943043578974793",
+      "B_dressed_err_rel": 0.0028665559959396994,
+      "B_production_Qbeta_over_h_MeV": "2.2272095331670547028",
+      "B_production_Qbeta_over_h_err_rel": 0.0011882465745702254,
+      "consistency_dressed_eq_proxy_over_h": 1.5557538194652854e-61,
       "tier": "observation-tier candidate, NOT wired (Δ_λ gate): the (1−h/2) dressing takes the E₀ route from +11.99% to +0.30% (proxy Q_β) / +0.12% (Kashiwara Q_β); wiring requires deriving the dressing from the binding functional"
     }
   }
