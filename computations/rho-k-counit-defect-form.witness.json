@@ -1,0 +1,104 @@
+{
+  "computation": "rho-k-counit-defect-form",
+  "description": "Counit defect \u03b5(\u03b2_K)\u2212\u03b5(\u03b2_K^vac) across D/T/\u00b3He/\u2074He + deuteron per-block weight sweep. The defect structure fixes the binding sign (all negative); no standard weight closes the magnitude. audit_only, parameter-free, no fit.",
+  "audit_only": true,
+  "tier": "structural-exact (committed \u03c7^\u03bb atom/free; parameter-free defect + weight sweep)",
+  "commitSha": "e75d39b6fbd7aeb456c0760f28529dbbbb40b5cc",
+  "engine": "python+mpmath",
+  "engineVersion": "mpmath",
+  "scriptFile": "rho_k_counit_defect_form.py",
+  "scriptHash": "0e7f79b9d0f1",
+  "assertions": [
+    {
+      "name": "defect_structure_fixes_sign_all_isotopes",
+      "passed": true
+    },
+    {
+      "name": "no_standard_weight_closes_magnitude",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "functional": "counit DEFECT \u03b5(\u03b2_K)\u2212\u03b5(\u03b2_K^vac) (bound minus disjoint-nucleon vacuum)",
+    "free_parameters": 0,
+    "per_isotope": [
+      {
+        "atom": "D",
+        "counit_defect_sum_dchi": "-30.2941518507",
+        "counit_defect_sign_negative": true,
+        "counit_defect_abs_ratio": "6.95893",
+        "trM_defect_sum_y_dchi": "-0.595168823835",
+        "trM_defect_sign_negative": true,
+        "trM_defect_abs_ratio": "0.136717",
+        "target_minus_B_over_me": "-4.353277047"
+      },
+      {
+        "atom": "T",
+        "counit_defect_sum_dchi": "-709.6674003",
+        "counit_defect_sign_negative": true,
+        "counit_defect_abs_ratio": "42.755",
+        "trM_defect_sum_y_dchi": "-0.803952826406",
+        "trM_defect_sign_negative": true,
+        "trM_defect_abs_ratio": "0.0484354",
+        "target_minus_B_over_me": "-16.59846855"
+      },
+      {
+        "atom": "3He",
+        "counit_defect_sum_dchi": "-819.960117887",
+        "counit_defect_sign_negative": true,
+        "counit_defect_abs_ratio": "54.2882",
+        "trM_defect_sum_y_dchi": "-0.84117784438",
+        "trM_defect_sign_negative": true,
+        "trM_defect_abs_ratio": "0.055693",
+        "target_minus_B_over_me": "-15.10382751"
+      },
+      {
+        "atom": "4He",
+        "counit_defect_sum_dchi": "-28487.622731",
+        "counit_defect_sign_negative": true,
+        "counit_defect_abs_ratio": "514.465",
+        "trM_defect_sum_y_dchi": "-0.91196500453",
+        "trM_defect_sign_negative": true,
+        "trM_defect_abs_ratio": "0.0164694",
+        "target_minus_B_over_me": "-55.3732449"
+      }
+    ],
+    "deuteron_weight_sweep": {
+      "counit \u0394=1/y (\u03a3 d\u03c7)": {
+        "value": "-30.29415185",
+        "sign_negative": true,
+        "abs_miss": "25.9409",
+        "within_tol": false
+      },
+      "trM \u0394=1 (\u03a3 y d\u03c7)": {
+        "value": "-0.5951688238",
+        "sign_negative": true,
+        "abs_miss": "3.75811",
+        "within_tol": false
+      },
+      "coCasimir \u0394=1/dim_q (\u03a3 y d\u03c7/dim_q)": {
+        "value": "-0.07223107092",
+        "sign_negative": true,
+        "abs_miss": "4.28105",
+        "within_tol": false
+      },
+      "OptionE \u0394=sgn\u00b7f^\u03bb (\u03a3 y\u00b7sgn\u00b7f d\u03c7)": {
+        "value": "-2.403917599",
+        "sign_negative": true,
+        "abs_miss": "1.94936",
+        "within_tol": false
+      }
+    },
+    "defect_structure_fixes_sign": true,
+    "any_standard_weight_closes_magnitude": false,
+    "verdict": "The DEFECT STRUCTURE (bound\u2212free) robustly fixes the binding SIGN \u2014 negative for all four isotopes and all four per-block weights \u2014 replacing the vortex-writhe hack. This is the counit hypothesis' durable structural contribution. But no standard per-block weight CLOSES the magnitude: counit-defect explodes with A (ratio 7\u2192515), trM-defect collapses (0.14\u21920.017, A-flat), Option-E-defect is closest at the deuteron (\u22122.40 vs \u22124.35, |miss|=1.95) but still misses tol=1. Magnitude closure remains the open \u0394_\u03bb weighting (GAP-A) \u2014 now with the sign solved by the defect structure. Scope-(a).",
+    "nomenclature_note": "Lit-calibrated: the genuine Hecke counit is a single 1-dim character, not \u03a3_\u03bb \u03c7^\u03bb. This object (= inverse-Gram-weighted trace = Frobenius\u2013Schur \u221a-count at q=1) is a novel repackaging of a classical object; read 'counit' as 'TQFT counit vs handle \u03c9=G\u207b\u00b9\ud835\udfd9'."
+  },
+  "context": {
+    "axis": "\u0394_\u03bb per-isotope binding closure (GAP-A) \u2014 counit defect form",
+    "chi_source": "atom-chi-rust-{d,t,3he,4he}.witness.json (data.atom + data.free)",
+    "interface_factorization": "content/quantum-observable-universe/mass-theory/interface-knot-markov-z.md",
+    "audit": "docs/audits/2026-07-04-delta-lambda-counit-canonical-integral-candidate.md"
+  }
+}
