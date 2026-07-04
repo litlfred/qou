@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "b13050e07f32",
     "ts": "04bb82ed1f52",
-    "lean": "f8af9f73757a"
+    "lean": "f1c5d1904903"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -69,8 +69,25 @@
         "reviewed_at": "2026-07-04T00:30:14.885Z",
         "reviewed_sha": "c588e48cb73bc995f7d35dc988f12a9aef882e2c",
         "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+      },
+      {
+        "field_hash": {
+          "md": "b13050e07f32",
+          "ts": "04bb82ed1f52"
+        },
+        "result": "pass",
+        "notes": "Re-encoded (owner follow-up): the vacuous selectionUnique : ∀_,∃_oStar,True and trivially-satisfiable strongDuality/lpFeasibility fields are replaced by content-bearing LP predicates (objective/supplyAction/Feasible/Optimal) and two genuine cited LP hypotheses — strongDuality (an objective-maximal feasible optimum exists) + complementarySlackness (every optimum has singleton support). knot_operator_lp_selection now DERIVES the unique-selection conclusion by composing them (not projecting a True-stub). Matches the .md's existence+uniqueness claim; generic ordered ring §7c; lean-direct exit 0.",
+        "reviewed_at": "2026-07-04T13:29:02.000Z",
+        "reviewed_sha": "f5e914bc969a3256bbd9712addcea5cc1a14d89d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-proof-vacuity-audit",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-07-04"
+        }
       }
     ]
   },
-  "updated_at": "2026-07-04T00:30:14.885Z"
+  "updated_at": "2026-07-04T13:29:02.000Z"
 }
