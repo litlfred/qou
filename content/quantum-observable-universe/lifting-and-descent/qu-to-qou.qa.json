@@ -1,75 +1,75 @@
 {
- "$schema": "block-qa/v1",
- "label": "thm:qu-to-qou",
- "kind": "theorem",
- "paths": {
-  "ts": "../qou/content/quantum-observable-universe/lifting-and-descent/qu-to-qou.ts",
-  "md": "../qou/content/quantum-observable-universe/lifting-and-descent/qu-to-qou.md",
-  "lean": "../qou/content/quantum-observable-universe/lifting-and-descent/qu-to-qou.lean"
- },
- "source_hashes": {
-  "md": "982df148e3f4",
-  "ts": "0da5f2ae76a0",
-  "lean": "99a7e82b78c0"
- },
- "criteria": {
-  "bib-cite-resolves": [
-   {
-    "field_hash": {
-     "md": "982df148e3f4",
-     "ts": "0da5f2ae76a0",
-     "lean": "99a7e82b78c0"
-    },
-    "result": "pass",
-    "reviewer": {
-     "kind": "script",
-     "id": "content/pipeline/qa-checkers-extended.ts",
-     "version": "v1",
-     "script_hash": "6a0f3410ed24",
-     "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-     "deps_hash": "2bab44ced743"
-    },
-    "reviewed_at": "2026-07-03T00:52:56.146Z",
-    "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
-   }
-  ],
-  "proof-no-trivial-true": [
-   {
-    "field_hash": {
-     "lean": "99a7e82b78c0"
-    },
-    "result": "fail",
-    "severity": "critical",
-    "evidence": "content/quantum-observable-universe/lifting-and-descent/qu-to-qou.lean:94 [exists-true-tautology] theorem qu_to_qou_exists : ∃ (q : QuToQou), True := sorry",
-    "reviewer": {
-     "kind": "script",
-     "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
-     "version": "v1",
-     "script_hash": "85d9f0223908",
-     "script_commit_sha": "33a07854edc6009b6b5ac0331a50b162498d581f"
-    },
-    "reviewed_at": "2026-07-04T00:11:46.063Z",
-    "reviewed_sha": "b3302691b06ff4207b2e72cda23501bf922042e8",
-    "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
-   },
-   {
-    "field_hash": {
-     "md": "982df148e3f4",
-     "ts": "0da5f2ae76a0",
-     "lean": "99a7e82b78c0"
-    },
-    "result": "pass",
-    "reviewer": {
-     "kind": "agent",
-     "id": "local/lean-proof-vacuity-audit",
-     "agent_date": "2026-07-04",
-     "agent_skill": "local/lean-proof-vacuity-audit"
-    },
-    "reviewed_at": "2026-07-04T00:15:23.700181Z",
-    "reviewed_sha": "b3302691b06ff4207b2e72cda23501bf922042e8",
-    "notes": "Agent verdict (ledger 2026-07-03): 'exists q : QuToQou, True' is the Nonempty claim over a constrained structure — a real existence statement, honestly sorry'd with -- Ref: [manuscript]. Trailing True is packaging, not vacuity."
-   }
-  ]
- },
- "updated_at": "2026-07-04T00:11:46.063Z"
+  "$schema": "block-qa/v1",
+  "label": "thm:qu-to-qou",
+  "kind": "theorem",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/lifting-and-descent/qu-to-qou.ts",
+    "md": "../qou/content/quantum-observable-universe/lifting-and-descent/qu-to-qou.md",
+    "lean": "../qou/content/quantum-observable-universe/lifting-and-descent/qu-to-qou.lean"
+  },
+  "source_hashes": {
+    "md": "982df148e3f4",
+    "ts": "0da5f2ae76a0",
+    "lean": "99a7e82b78c0"
+  },
+  "criteria": {
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.146Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "982df148e3f4",
+          "ts": "0da5f2ae76a0",
+          "lean": "99a7e82b78c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-proof-vacuity-audit",
+          "agent_date": "2026-07-04",
+          "agent_skill": "local/lean-proof-vacuity-audit"
+        },
+        "reviewed_at": "2026-07-04T00:15:23.700181Z",
+        "reviewed_sha": "b3302691b06ff4207b2e72cda23501bf922042e8",
+        "notes": "Agent verdict (ledger 2026-07-03): 'exists q : QuToQou, True' is the Nonempty claim over a constrained structure — a real existence statement, honestly sorry'd with -- Ref: [manuscript]. Trailing True is packaging, not vacuity."
+      },
+      {
+        "field_hash": {
+          "lean": "99a7e82b78c0"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/qu-to-qou.lean:94 [exists-true-tautology] theorem qu_to_qou_exists : ∃ (q : QuToQou), True := sorry",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
+          "version": "v1",
+          "script_hash": "85d9f0223908",
+          "script_commit_sha": "33a07854edc6009b6b5ac0331a50b162498d581f"
+        },
+        "reviewed_at": "2026-07-04T00:30:14.885Z",
+        "reviewed_sha": "c588e48cb73bc995f7d35dc988f12a9aef882e2c",
+        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+      }
+    ]
+  },
+  "updated_at": "2026-07-04T00:30:14.885Z"
 }
