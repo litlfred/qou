@@ -1954,6 +1954,20 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "1e08e9f7743e",
+          "ts": "e667f360a6e8"
+        },
+        "result": "fail",
+        "notes": "Reinstated by qa-flag-preservation-audit: the 2026-06-25T15:49:07.000Z 'invalidat' n/a entry cleared a prior 'fail' without a fresh verdict. A distrusted verdict must be re-audited, not silently cleared to n/a. Original flag note: Trivial skeleton proof stub with no stated plan.",
+        "reviewed_at": "2026-07-04T10:32:42.926Z",
+        "reviewer": {
+          "kind": "script",
+          "id": "local/qa-flag-reinstate",
+          "version": "v1"
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1993,6 +2007,20 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "1e08e9f7743e",
+          "ts": "e667f360a6e8"
+        },
+        "result": "fail",
+        "notes": "Reinstated by qa-flag-preservation-audit: the 2026-06-25T15:49:07.000Z 'invalidat' n/a entry cleared a prior 'fail' without a fresh verdict. A distrusted verdict must be re-audited, not silently cleared to n/a. Original flag note: Trivial skeleton proof stub restating the target.",
+        "reviewed_at": "2026-07-04T10:32:42.926Z",
+        "reviewer": {
+          "kind": "script",
+          "id": "local/qa-flag-reinstate",
+          "version": "v1"
         }
       }
     ],
@@ -2034,6 +2062,20 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "1e08e9f7743e",
+          "ts": "e667f360a6e8"
+        },
+        "result": "warn",
+        "notes": "Reinstated by qa-flag-preservation-audit: the 2026-06-25T15:49:07.000Z 'invalidat' n/a entry cleared a prior 'warn' without a fresh verdict. A distrusted verdict must be re-audited, not silently cleared to n/a. Original flag note: Standard proof stub structure.",
+        "reviewed_at": "2026-07-04T10:32:42.926Z",
+        "reviewer": {
+          "kind": "script",
+          "id": "local/qa-flag-reinstate",
+          "version": "v1"
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -2070,6 +2112,20 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "1e08e9f7743e",
+          "ts": "e667f360a6e8"
+        },
+        "result": "fail",
+        "notes": "Reinstated by qa-flag-preservation-audit: the 2026-06-25T15:49:07.000Z 'invalidat' n/a entry cleared a prior 'fail' without a fresh verdict. A distrusted verdict must be re-audited, not silently cleared to n/a. Original flag note: Declaration contains sorryAx or unexpected axioms.",
+        "reviewed_at": "2026-07-04T10:32:42.926Z",
+        "reviewer": {
+          "kind": "script",
+          "id": "local/qa-flag-reinstate",
+          "version": "v1"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -2105,6 +2161,20 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "1e08e9f7743e",
+          "ts": "e667f360a6e8"
+        },
+        "result": "fail",
+        "notes": "Reinstated by qa-flag-preservation-audit: the 2026-06-25T15:49:07.000Z 'invalidat' n/a entry cleared a prior 'fail' without a fresh verdict. A distrusted verdict must be re-audited, not silently cleared to n/a. Original flag note: Placeholder stub is unformalised.",
+        "reviewed_at": "2026-07-04T10:32:42.926Z",
+        "reviewer": {
+          "kind": "script",
+          "id": "local/qa-flag-reinstate",
+          "version": "v1"
         }
       }
     ],
@@ -2178,6 +2248,20 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "1e08e9f7743e",
+          "ts": "e667f360a6e8"
+        },
+        "result": "fail",
+        "notes": "Reinstated by qa-flag-preservation-audit: the 2026-06-25T15:49:07.000Z 'invalidat' n/a entry cleared a prior 'fail' without a fresh verdict. A distrusted verdict must be re-audited, not silently cleared to n/a. Original flag note: Stub proof with unresolved premise.",
+        "reviewed_at": "2026-07-04T10:32:42.926Z",
+        "reviewer": {
+          "kind": "script",
+          "id": "local/qa-flag-reinstate",
+          "version": "v1"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -2213,6 +2297,20 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "1e08e9f7743e",
+          "ts": "e667f360a6e8"
+        },
+        "result": "fail",
+        "notes": "Reinstated by qa-flag-preservation-audit: the 2026-06-25T15:49:07.000Z 'invalidat' n/a entry cleared a prior 'fail' without a fresh verdict. A distrusted verdict must be re-audited, not silently cleared to n/a. Original flag note: Stub proof with unresolved hypotheses.",
+        "reviewed_at": "2026-07-04T10:32:42.926Z",
+        "reviewer": {
+          "kind": "script",
+          "id": "local/qa-flag-reinstate",
+          "version": "v1"
         }
       }
     ],
