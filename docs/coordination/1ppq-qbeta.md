@@ -674,3 +674,32 @@ wired.**
   a rigor input to a falsifiable gate, **not** the keystone unlock; the keystone's
   geometric leg (Σ(2,3,5) WRT on S³/2I) was **refuted 2026-07-02**; Q_β (this axis) is
   the one near-term needle-mover above the CAL-2 floor.
+
+## Production/framing — m_p `c₄` dropped (fit), Q_β derived-to-c₂ confirmed (2026-07-04)
+
+Two paired audits closing the "is the precision tower derived or fitted?"
+question on both sides of the μ–p work.
+
+- **m_p (#3280, MERGED).** The `(1 + 46u⁴)…` Habiro tower was a CODATA fit:
+  the exact `c₄` is **affine in the q₀ pin** (≈0 at the proton pin, 46 at the
+  muon pin, slope 3.99/ppb) — the μ–p tension reparametrized, not a categorical
+  constant. `4143/90` had no derivation trail and cited a refuted Reeb route.
+  **Dropped** (also fixed a live +242 ppb regression — the muon-era tower was
+  being applied to the proton-pinned q₀). m_p now honest at +1.35 ppb; L2 count
+  3/7 → **2/7** (m_e, m_K/π). The one proved c_k recursion is the Habiro
+  integrality `a_m` ladder (finite, M=8), which yields the floor, not 46.
+  Audit: [`2026-07-04-c4-mu-p-tension-pin-dependence.md`](../audits/2026-07-04-c4-mu-p-tension-pin-dependence.md).
+- **Q_β (#3296).** The honest counterpoint: the production Q_β ladder is
+  **fully derived** to the **proved c₂ = −1** — `Q_A` (`prop:neutron-qvalue-symbolic`,
+  +1677 ppm) × c₁ = b Kashiwara edge (+74 ppm) × `(1−u²)` = c₂ = −1
+  (`prop:q-beta-c-2-eq-neg-one-structural`, +1.28 ppm). No fit; production
+  correctly stops at the proved c₂. The ~164× L2 miss is the honest derived
+  residual, not a stripped fit. Audit:
+  [`2026-07-04-qbeta-derived-ladder-tiers.md`](../audits/2026-07-04-qbeta-derived-ladder-tiers.md).
+- **Frontier (both sides = same keystone).** Below the proved floor — m_p's c₄,
+  Q_β's c₃ = −2 = J_Hopf — is the s5bb Habiro-element keystone. c₃ is settled
+  non-wireable (PR #1580; flip-flop table above). Sibling coordination:
+  **#3294** (ζ₄/Φ₄ refuted on the Δ_net carrier — prunes one route into the c₃
+  frontier, localizes residue to R₁₂) and **#3273** (route-A `c₄^even` H₄ build)
+  both live past this floor; flagged the pin-stability caution to #3273 so
+  `c₄^even` doesn't absorb the μ–p tension the way m_p's c₄ did.
