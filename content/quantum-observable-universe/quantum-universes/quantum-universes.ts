@@ -49,7 +49,6 @@ export default chapter({
         "frobenius-pairing",
         "frobenius-pairing-exists",
         "frobenius-pairing-exists-proof",
-        "frobenius-pairing-unique",
       ],
     }),
     section({
@@ -57,6 +56,7 @@ export default chapter({
       label: "sec:quantum-universe-frobenius-pairing-unique",
       blocks: [
         "quantum-universe-frobenius-pairing-unique-intro",
+        "frobenius-pairing-unique",
         "frobenius-pairing-unique-proof",
         "frobenius-pairing-su2",
         "frobenius-geometric-role",
