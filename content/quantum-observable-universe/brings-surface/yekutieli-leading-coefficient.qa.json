@@ -1371,6 +1371,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "091c746e9f18",
+          "ts": "775082806075"
+        },
+        "result": "pass",
+        "notes": "Lean statement now faithfully states the .md claim; previously-dropped/weakened clauses restored as real propositions (open parts carry a cited sorry per §1, not omitted). Verified lean-direct exit 0.",
+        "reviewed_at": "2026-07-04T10:41:58.000Z",
+        "reviewed_sha": "3dd36f14516a6043b87a5a6f8ad6a24bc6b16c13",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-proof-vacuity-audit",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-07-04"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1423,6 +1440,23 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "091c746e9f18",
+          "ts": "775082806075"
+        },
+        "result": "pass",
+        "notes": "Re-encoded on branch claude/lean-qa-backlog-2h3f8d: carrier fields are now genuine sub-hypotheses (never the conclusion) and the theorem DERIVES its conclusion by composing them / applying proved lemmas — no longer projects an assumed field (AGENTS.md §3b-cond item 5). Verified lean-direct exit 0.",
+        "reviewed_at": "2026-07-04T10:41:58.000Z",
+        "reviewed_sha": "3dd36f14516a6043b87a5a6f8ad6a24bc6b16c13",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-proof-vacuity-audit",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-07-04"
         }
       }
     ],
@@ -1836,5 +1870,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.404Z"
+  "updated_at": "2026-07-04T10:41:58.000Z"
 }
