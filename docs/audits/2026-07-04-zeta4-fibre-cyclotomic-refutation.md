@@ -91,6 +91,38 @@ has denominator $4q^7$) remains the open Laurent/Habiro-level question; but
 the object to identify is now the concrete cubic $C(y)$, not a degree-12
 polynomial.
 
+## Is C(y) / R₁₂ a knot invariant of the net braid? — No (T1)
+
+Probe: [`qbeta_r12_knot_invariant_probe.py`](../../computations/qbeta/qbeta_r12_knot_invariant_probe.py),
+witness `qbeta-r12-knot-invariant.witness.json`.
+
+The "net braid" is not a knot closure: `free-neutron-decay.witness.json`
+gives the net decay carrier as the signed **isospin difference**
+Δ(neutron[u,d,d]) − Δ(proton[u,u,d]) of Hecke-trace amplitudes over the
+shared H₃ normal-form basis {𝟏, σ₀, σ₁, L₊, L₋, e⁻} (knots
+unknot / virtual / Hopf / trefoil), the only n-vs-p difference being the
+u/d crossing-weight assignment (u-u = σ, d-d = q²σ−qs·𝟏,
+u-d = ½(1+q²)σ − ½qs·𝟏, all ∈ ℚ[q²]).
+
+- **(A)** R₁₂ has q-span 12; every constituent-knot Jones has span ≤ 4
+  (unknot 0, trefoil 3, Hopf 4), and R₁₂ neither equals nor divides any.
+  R₁₂ is not the Jones (nor a factor) of any constituent knot.
+- **(B)** R₁₂ is even in q ⇒ lives in ℚ[y], y = q²+q⁻² — the same even
+  sector the crossing weights inhabit. It is a Hecke **crossing-weight
+  (representation-theoretic)** object, not a topological invariant of a
+  braid closure.
+- **Galois note (does NOT separate).** C(y) = y³−4y²+3y−2 has disc
+  −152 = −2³·19 (not a square) ⇒ **S₃** Galois. Tempting to argue "knot
+  invariants are cyclotomic, C is not" — but this is **false**: the
+  trefoil's own reduced Jones cubic (q³−q²−1) is also non-cyclotomic. The
+  S₃ property is recorded as an arithmetic fingerprint of C, not as the
+  separating invariant; (A)+(B) do the separating.
+
+**Verdict (scope (a)):** R₁₂ is not a constituent-knot invariant and the
+net is not a braid closure — R₁₂ is the isospin crossing-weight difference,
+a cubic in the bar-even trace variable y = q²+q⁻². (Not claimed: that no
+braid anywhere realises R₁₂ as an invariant.)
+
 ## Cross-references
 
 - Fixed-ring vacuity (s-adic leg): [`2026-07-04-fixed-ring-vacuity-ladder-membership.md`](2026-07-04-fixed-ring-vacuity-ladder-membership.md).
