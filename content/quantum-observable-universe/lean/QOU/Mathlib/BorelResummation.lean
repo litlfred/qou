@@ -86,11 +86,12 @@ theorem borelTransform_tendsto (a : ℕ → ℝ) (z : ℝ) [h : BorelTransformCo
   h.converges.choose_spec
 
 /-- **The conditional class is genuinely inhabited** — a sorry-free witness.
-    The Borel transform of the everywhere-divergent series `Σ n! zⁿ` is the
-    geometric series `Σ zⁿ`, which converges on `|z| < 1` to `(1 − z)⁻¹`.
-    This is the concrete analytic content that pins `BorelSummable` down to a
-    real convergence statement (as opposed to an empty marker): the partial
-    Borel transforms of the factorial series tend to `(1 − z)⁻¹`. -/
+    The Borel transform of the series `Σ n! zⁿ` (radius of convergence `0`;
+    divergent for every `z ≠ 0`) is the geometric series `Σ zⁿ`, which
+    converges on `|z| < 1` to `(1 − z)⁻¹`. This is the concrete analytic
+    content that pins `BorelTransformConverges` down to a real convergence
+    statement (as opposed to an empty marker): the partial Borel transforms
+    of the factorial series tend to `(1 − z)⁻¹`. -/
 theorem borelTransform_factorial_tendsto {z : ℝ} (hz : |z| < 1) :
     Filter.Tendsto (fun N => partialBorel (fun k => (k ! : ℝ)) N z) Filter.atTop
       (nhds (1 - z)⁻¹) := by
