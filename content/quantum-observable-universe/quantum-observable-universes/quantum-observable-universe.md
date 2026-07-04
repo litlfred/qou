@@ -1,5 +1,6 @@
 A quantum universe $(\mathbf{C}, A, \tau)$ over $R$
-([quantum universe](#def:quantum-universe)) is *observable* if the
+([quantum universe](#def:quantum-universe)) is a
+**quantum observable universe** — is *observable* — if the
 forgetful functor $\tau$
 ([Example](#ex:rigid-monoidal-vect)) is faithful and the following
 conditions hold:
