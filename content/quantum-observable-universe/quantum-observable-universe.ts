@@ -49,9 +49,8 @@ export default paper({
     ordw:  { tex: "{\\mathrm{ord}_{\\omega}}",  unicode: "ord_ω" },
   },
   chapters: [
-    // ── Front matter (intro first, then notation register) ──────────
+    // ── Front matter (intro only; notation register moved to appendix) ──
     chapterRef({ dir: "introduction" }),
-    chapterRef({ dir: "notation" }),                          // Symbol register; forward refs from notation are ignored by the detangler (preview chapter).
 
     // ── Part I: Foundations ──────────────────────────────────────────
     // The `partTitle` field renders as a \part{...} banner before this
@@ -123,6 +122,7 @@ export default paper({
 
     // ── Back matter ─────────────────────────────────────────────────
     chapterRef({ dir: "glossary" }),
+    chapterRef({ dir: "notation" }),                          // Symbol register — moved out of the front matter to its own appendix (too long for the front). Forward refs ignored by the detangler (preview chapter).
     chapterRef({ dir: "appendix-knot-periodic-table" }),
     chapterRef({ dir: "appendix-knot-operations" }),
     chapterRef({ dir: "appendix-knot-operations-archimedean" }),  // Archimedean lobe (particle NF + gluon-model) — split per q-usage Policy A
