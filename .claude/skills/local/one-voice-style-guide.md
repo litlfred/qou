@@ -60,6 +60,55 @@ chapter):
 3. Formal definition or theorem
 4. Consequence or example (SU(2) running example)
 
+## The Milnor exposition standard (STRICT)
+
+The author voice above **is** the Milnor voice: the gold standard for
+clarity in this paper is John Milnor's expository writing (*Morse
+Theory*; *Characteristic Classes*; *Topology from the Differentiable
+Viewpoint*; *Lectures on the h-Cobordism Theorem*). Every narrative
+block should read as Milnor would write it. Concretely, eight
+hallmarks — each a positive authoring target, and each a scored
+dimension of the `expo-milnor-clarity` QA param (below):
+
+1. **Economy.** No wasted words. Short declarative sentences; every
+   sentence load-bearing. (Mirrors *Economical* above.)
+2. **Concrete before abstract.** A guiding example, picture, or special
+   case appears before or alongside the general statement — never
+   abstraction dumped without an anchor. (Mirrors *Pacing* step 1/4.)
+3. **The "Why" precedes the "What".** The reader is told the *purpose*
+   before the machinery; motivation is stated up front, not back-filled.
+4. **Uncluttered notation.** Notation is lightweight — the reader
+   wrestles only with concepts, never with symbols. Each symbol is
+   introduced at first use; no glyph is hoarded ahead of need or reused
+   for two meanings. (Reinforces the notation register, §7aa of AGENTS.)
+5. **Linear argument.** Each step visibly follows the previous; no
+   forward references to un-introduced ideas, no "as we will see"
+   leaning on later material.
+6. **Prose carries the argument.** Sentences explain; formulas
+   punctuate. A displayed equation never *replaces* the explanation of
+   why it holds.
+7. **Surgical cleanliness / right-tool framing.** Strip every
+   unnecessary technicality. When a heavy result is invoked (a big
+   theorem, a hard lemma — Sard, Tannaka–Krein, Wedderburn), frame it so
+   its *necessity is obvious*: the reader sees *why it is the exact tool*
+   for the problem at hand, not a fact dropped in unmotivated. No
+   "for completeness" technicality pileups.
+8. **Respect for the reader's time and intelligence.** Trust the
+   reader — no belaboring the trivial, no condescension, no ceremony;
+   and equally no *disrespectful gaps* (nothing load-bearing hand-waved
+   as "clearly"). Over-explaining the obvious and hand-waving the hard
+   part are the same defect: both waste the reader's attention.
+
+These are enforced two ways: (a) as **author guidance** here in the
+one-voice profile — write to them from the first draft; and (b) as an
+explicit **agentic-QA sidecar param**, `expo-milnor-clarity`, an
+advisory agent rater that scores each block 0–2 on H1–H8 and records the
+score + weakest dimensions in the block's `.qa.json`. The rater is
+*advisory* (`pass`/`warn`, never a blocking `fail`) — Milnor-style is
+aesthetic, so it nudges, it does not gate. Full spec (rubric, prompt,
+scoring, fixtures):
+[`docs/requirements/2026-07-04-folio-assistant-proof-narrative-checkers.md` §5A](../../../docs/requirements/2026-07-04-folio-assistant-proof-narrative-checkers.md).
+
 ## Paper-Level Voice Rules
 
 | Rule | Standard | Violation example |
