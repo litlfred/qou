@@ -14,6 +14,7 @@
 -/
 import Mathlib.Tactic
 import Mathlib.Data.Real.Basic
+import Mathlib.LinearAlgebra.Matrix.Trace
 
 namespace QOU.BraidKnot
 
@@ -63,31 +64,53 @@ theorem pieri_skew_syt (mu lambda_plus : List ℕ) (hne : lambda_plus ≠ mu) :
     Proof by induction on k:
     Base (k=3): ρ_μ↓H₃ = ρ_μ, so skewSYTCount μ μ = 1 (empty skew shape).
     Step (k→k+1): by Pieri rule + linearity of the trace. -/
-theorem universal_braid_branching (q : ℝ) (hq : q > 1)
-    (k : ℕ) (hk : k ≥ 3) (lambda : List ℕ) (hlam : lambda.sum = k)
-    (chi_sym chi_std chi_alt chi_lambda : ℝ)
-    -- The three base characters are given:
-    (h_base : chi_lambda =
-      (skewSYTCount [3] lambda : ℝ) * chi_sym +
-      (skewSYTCount [2, 1] lambda : ℝ) * chi_std +
-      (skewSYTCount [1, 1, 1] lambda : ℝ) * chi_alt) :
-    -- Then the character equals the branching decomposition
-    chi_lambda =
-      (skewSYTCount [3] lambda : ℝ) * chi_sym +
-      (skewSYTCount [2, 1] lambda : ℝ) * chi_std +
-      (skewSYTCount [1, 1, 1] lambda : ℝ) * chi_alt := by
-  exact h_base
+theorem universal_braid_branching
+    (chi : List ℕ → ℝ) (chi_sym chi_std chi_alt : ℝ)
+    -- Restriction/linearity step: above the base level the character
+    -- decomposes over the one-cell removals (branching of ρ_λ↓H_{k-1}).
+    (h_rec : ∀ lam : List ℕ, lam.sum > 3 →
+      chi lam = ((oneCellRemovals lam).map chi).sum)
+    -- Base case k = 3: the three H₃ characters.
+    (h_base : chi [3] = chi_sym ∧ chi [2, 1] = chi_std ∧ chi [1, 1, 1] = chi_alt)
+    (lam : List ℕ) (hsort : lam.Sorted (· ≥ ·)) (hpos : ∀ a ∈ lam, 0 < a)
+    (hsum : lam.sum ≥ 3) :
+    chi lam =
+      (skewSYTCount [3] lam : ℝ) * chi_sym +
+      (skewSYTCount [2, 1] lam : ℝ) * chi_std +
+      (skewSYTCount [1, 1, 1] lam : ℝ) * chi_alt := by
+  -- Strong induction on lam.sum: the step interchanges the removal sum
+  -- with the three-term decomposition and closes with pieri_skew_syt;
+  -- the base case is h_base. Discharging in this documentation-mirror
+  -- sibling requires the interface facts for the opaque skewSYTCount
+  -- (f^{μ/μ} = 1, f^{μ/λ} = 0 for λ ⊉ μ), which live with the real
+  -- definition in the QOU library (QOU.Archimedean.SkewSYT).
+  -- Ref: [hoefsmit1974] §2.3; [wenzl1988]; [manuscript] §5.12 prop:universal-braid-branching
+  sorry
 
 /-- The Chebyshev identity for traces of SL(2) powers:
     tr(M³) = t³ - 3t where t = tr(M).
-    Used to derive the Borromean character from the figure-eight. -/
-noncomputable def chebyshev_sl2_cube (t : ℝ) :
-    -- For M ∈ SL(2) with tr(M) = t:
-    -- M satisfies Cayley-Hamilton: M² = t·M - I
-    -- So M³ = t·M² - M = t(tM-I) - M = (t²-1)M - tI
-    -- tr(M³) = (t²-1)t - 2t = t³ - 3t
-    t ^ 3 - 3 * t = t ^ 3 - 3 * t := by
-  rfl
+    Used to derive the Borromean character from the figure-eight.
+
+    The hypothesis `hCH` is the 2×2 Cayley–Hamilton relation
+    `M² = t·M - det(M)·I` specialised to `det M = 1` (M ∈ SL(2)).
+    From it: M³ = t·M² - M = (t²)·M - t·I - M, and taking traces
+    (tr M = t, tr I = 2) gives tr(M³) = t³ - 3t. -/
+theorem chebyshev_sl2_cube {R : Type*} [CommRing R]
+    (M : Matrix (Fin 2) (Fin 2) R)
+    (hCH : M ^ 2 = M.trace • M - 1) :
+    (M ^ 3).trace = M.trace ^ 3 - 3 * M.trace := by
+  have h3 : M ^ 3 =
+      (M.trace ^ 2) • M - M.trace • (1 : Matrix (Fin 2) (Fin 2) R) - M := by
+    calc M ^ 3 = M ^ 2 * M := by rw [pow_succ]
+      _ = (M.trace • M - 1) * M := by rw [hCH]
+      _ = M.trace • (M * M) - M := by rw [sub_mul, smul_mul_assoc, one_mul]
+      _ = M.trace • (M.trace • M - 1) - M := by rw [← pow_two, hCH]
+      _ = (M.trace ^ 2) • M - M.trace • 1 - M := by
+            rw [smul_sub, smul_smul, ← pow_two]
+  rw [h3, Matrix.trace_sub, Matrix.trace_sub, Matrix.trace_smul,
+    Matrix.trace_smul, Matrix.trace_one]
+  simp only [smul_eq_mul, Fintype.card_fin, Nat.cast_ofNat]
+  ring
 
 /-- Convergence bound for the BW formula at Hecke level k:
     MAE(k) ≤ C₀ × [2]_q^{-2(k-3)}
