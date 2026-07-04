@@ -7,6 +7,7 @@ export default algorithm({
     "rem:term6-binding-density",
     "thm:knot-mass-formula-unified",
     "alg:markov-trace",
+    "prop:linear-chain-bond-count",
   ],
   computation: {
     engine: "python+mpmath",
