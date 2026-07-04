@@ -38,7 +38,8 @@ del _sys, _Path, _bridge
 # the canonical `qou_substrate.constants._solve_q_proton_f64` (tower-free) —
 # which can be imported directly from the canonical module if needed. This does
 # NOT change `Q` / `Q_50_DIGIT_STR` (both are public names, so they DO come
-# through the `import *` below); the owner-gated pin re-pin is bean 2i8g.
+# through the `import *` below). A separate, owner-gated q₀ re-pin of the
+# canonical value is tracked outside this file (see PR #3302).
 
 import sys
 from pathlib import Path
