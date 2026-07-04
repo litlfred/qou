@@ -1,5 +1,6 @@
 import QOU.Infra.Polylogarithm
 import QOU.BraidKnot.Cl3Zeta5OrbitSum
+import Mathlib.Tactic.Linarith
 
 /-!
 # QOU.BraidKnot.BringTrilogDepth3Witness — conjectural class (§3b), content-bearing
@@ -9,10 +10,7 @@ import QOU.BraidKnot.Cl3Zeta5OrbitSum
 *Bring trilog at $\zeta_5$ as depth-3 grouplike value (50-digit
 functional-equation cross-validated witness).*
 
-**De-abstracted (bean 5e79 / T1, 2026-07-04).** The previous shape was the
-under-specified placeholder `residual : ℝ` + `residual_eq_zero` (the
-§3b-tax `proof-claims-unencoded` pattern — the file itself said "refine
-the fields").  The class now carries the conjecture's actual content:
+The class carries the conjecture's actual content:
 
 * the four archimedean components of
   $\tau_{\mathrm{arch}}(\mathrm{Li}_3^q(\zeta_5^k))
@@ -32,13 +30,16 @@ the fields").  The class now carries the conjecture's actual content:
   genuinely nontrivial (rule out the zero realisation).
 
 Sorry-free consequences are DERIVED below (`pair_sum_eq`,
-`cl3_4pi5_neg`): the pair sum is $-(12/25)\,\zeta(3)$ — note the factor
-2 vs the full 4-term orbit sum, the mislabel this de-abstraction also
-fixed in `Cl3Zeta5GeometricRealization` — and $\mathrm{Cl}_3(4\pi/5) < 0$.
+`cl3_4pi5_neg`): the pair sum is $-(12/25)\,\zeta(3)$ — half the full
+4-term orbit sum, since each Clausen value appears twice in the orbit —
+and $\mathrm{Cl}_3(4\pi/5) < 0$.
 
 The `sorry` instance is the **open conjecture** per §3b (that the
 q-side depth-3 grouplike exists and archimedean-realises to these
 components), NOT a missing proof.
+
+History (bean 5e79 / T1): full de-abstraction record in
+`docs/coordination/s5-so3-keystone.md`.
 -/
 
 namespace QOU.BraidKnot
