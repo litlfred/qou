@@ -179,7 +179,23 @@ resolves the apparent contradiction — and surfaces a discipline item:
   keystone pointer. The three μ–p probes were made **pin-independent**
   (explicit muon-identity solve instead of trusting the package
   constant) and re-run — values unchanged (ε*/(tower−1) = 0.9942).
-  The tnjb witness gate is NOT triggered: the ~840 muon-q₀
-  computations-layer witnesses were never proton-migrated; only the
-  ~1-day exposure window (592eade9 → strip) needs a sweep for
-  witnesses that consumed the towered constant (beaned).
+  **Exposure sweep (2026-07-04, bean 3c2x — DONE).** Decisive finding:
+  the towered constant was **bit-identical to the historical
+  muon-canonical value** (`q-pinning-50-digit.witness.json` q =
+  `1.1099785955573347198997632204` = the towered output) — the tower's
+  effect in #3235 was to PRESERVE the pre-existing constant while
+  switching its derivation route to "proton + fit". Consequences:
+  (i) the ~1-day exposure window is a **numerical no-op** — 25
+  candidate witnesses scanned, 2 fingerprint hits
+  (`meson-per-knot-density`, `meson-vol-density`), both embedding the
+  historically-correct value; **nothing stale, nothing to regenerate**;
+  (ii) the honest framing of the strip: `q_at()`'s *documented function
+  contract* (raw proton identity) is restored, while the *live
+  constant* moves from the historical muon value to the raw proton pin
+  — this IS the owner-authorized tnjb direction ("full raw-proton
+  strip"), applied to fresh runs: **509 live scripts** import
+  `Q_50_DIGIT_STR`/`q_at()` and will produce proton-pinned values on
+  regeneration (witnesses migrate progressively; producers reading the
+  muon-layer `q-pinning-50-digit.witness.json` directly are
+  unaffected). The m_μ ≈ 210 ppb tension is now uniformly visible —
+  matching the canonical L2 dashboard stance (3/7, m_μ FAIL).
