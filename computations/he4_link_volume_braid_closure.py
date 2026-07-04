@@ -109,11 +109,18 @@ def main() -> int:
     live = "--live" in sys.argv
     closure = CLOSURE
     if live:
+        # Probe ONLY the optional third-party deps here; if they're missing we
+        # fall back to baked values. run_live() then does the repo imports +
+        # SnapPy work, and any error there (repo bug, assertion, runtime) is a
+        # real failure that must surface — not be masked as "SnapPy unavailable".
         try:
+            import snappy  # noqa: F401
+            import spherogram  # noqa: F401
+        except ImportError as e:
+            print(f"  [--live] SnapPy/spherogram not installed ({e}); using baked values\n")
+        else:
             closure = run_live()
             print("  [--live] recomputed with SnapPy\n")
-        except Exception as e:
-            print(f"  [--live] SnapPy unavailable ({type(e).__name__}: {e}); using baked values\n")
 
     print("Canonical atomic-braid closures vs the SDP binding links")
     print("=" * 64)
