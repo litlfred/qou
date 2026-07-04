@@ -4,7 +4,7 @@ non-commutativity of the algebraic substrate: when $q = 1$ the algebra
 is commutative and the quantum structure degenerates to its classical
 shadow.
 
-The *quantum Planck constant* associated to $q$ is
+The **quantum Planck constant** associated to $q$ is
 
 $$
 \hbar_q =  1 - q^{-1} =  \frac{q - 1}{q}.
