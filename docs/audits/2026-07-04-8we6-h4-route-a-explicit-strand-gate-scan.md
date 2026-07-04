@@ -83,11 +83,40 @@ audit already flagged:
    different object. The SDP-channel → c₄^even ladder linkage is the remaining
    modelling decision.
 
+## g→0 linear response (the salvage test) — both routes contaminate at linear order
+
+[`_h4_g_linear_response.py`](../../computations/qbeta/_h4_g_linear_response.py),
+interpolated crossing `C(g)=(1−g)I+gP` (g=0 → H₃ exactly, verified), finite
+difference at g=1/10 against the exact g=0 (H₃) rungs:
+
+| route | c₂(0.1) | dc₂/dg\|₀ | c₃(0.1) | dc₃/dg\|₀ | verdict |
+|---|---|---|---|---|---|
+| lepton | −6.37084 | **+16.356** | +76.46022 | −102.01 | contaminates at linear order |
+| brane | −6.64081 | **+13.656** | +79.67447 | −69.87 | contaminates at linear order |
+
+**Both fail even perturbatively:** `dc₂/dg|₀ ≈ +15` (large, not zero) for *both*
+couplings. The coupling-perturbative reading does **not** rescue the appended-strand
+construction. Lepton and brane are decisively out — full-coupling *and* g→0.
+
+**Structural reading (why, and where it points).** The two slopes are near-identical
+(~+15) despite different coupling *types* (u–d-averaged vs bare Hopf). The
+contamination is therefore **generic to appending a σ₂ crossing** to
+`B₃·(3-quark crossings)`: the crossing redistributes NF weight across *all* word
+lengths, including the short words that drive c₂,c₃. A clean `c₄^even` rung needs
+an H₄ object whose σ₂-support is **orthogonal to the H₃ augmentation at orders
+2,3** — i.e. a **channel-projected / symmetry-adapted** construction, not an
+appended strand. This is exactly the **bar-even singlet eigenchannel** of the n=4
+cup-diagram Gram (Brunnian/SDP route): the g-response failure of the naive routes
+*motivates* the SDP route as the structurally correct survivor.
+
 ## Kill-criterion status
 
-Nothing is refuted in scope-(b). The **appended-strand-at-full-coupling** class
-is set aside (scope-(a)); the coupling-perturbative and SDP-channel routes remain
-open and are the productive next moves.
+Nothing is refuted in scope-(b). The **appended-strand construction** (lepton and
+brane, any coupling) is set aside as scope-(a) — it moves c₂/c₃ at linear order in
+the coupling. The **channel-projected Brunnian/SDP route** is the sole surviving
+candidate; its SDP-channel → c₄^even ladder linkage is the owner-gated modelling
+decision (the SDP objective weights `t` and net target `n_target` for the n=4
+singlet selection are framework choices, not agent ansätze).
 
 ## Provenance
 
