@@ -115,7 +115,7 @@ $(m_n - m_p)/M_N$ flavor split), set in
 n-n ($\sigma^{-1}$) interfaces are isospin-distinct and carry no
 extra color weight. The color shift is at the $\Delta m_{pn}$ scale
 ($\delta/4 \approx 3.4\times10^{-4}$) — not the dominant binding
-residual, which is the inter-nucleon multiplicity (the $C(A,2)$
+residual, which is the inter-nucleon multiplicity (the $\binom{A}{2}$
 bond count) plus per-bond growth. See
 [`docs/audits/2026-06-03-color-averaging-wiring-audit.md`](../../../docs/audits/2026-06-03-color-averaging-wiring-audit.md)
 and [`docs/audits/2026-06-03-nuclear-a3-dpn-plan.md`](../../../docs/audits/2026-06-03-nuclear-a3-dpn-plan.md).*
