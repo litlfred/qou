@@ -170,9 +170,19 @@ Across isotopes the counit-defect ratio *explodes* with A (7→515), the trM-def
 *collapses* (0.14→0.017, nearly A-flat). The right Δ_λ interpolates between these
 and remains open — but the **sign is now solved by the defect structure**, which is
 the piece the six prior ansätze (all tested on absolute or interface objects, all
-positive/wrong-sign) were missing. Option-E in *defect* form (−2.40, ~2× low) is
-the closest standard weight — a lead for the magnitude, distinct from the refuted
-*absolute* Option-E.
+positive/wrong-sign) were missing.
+
+**Only sign-definite weights preserve the consistent sign.** The counit (`1/y_λ`)
+and trM (`1`) defects are negative for **all four** isotopes; the Option-E weight
+`sgn(w₀)·f^λ`, despite being closest *at the deuteron* (−2.40), carries its own
+sign structure and is **incoherent across isotopes** — ratio pred/target = 0.55
+(D), **−0.22 (T)**, **−0.24 (³He)**, 1.12 (⁴He), i.e. *wrong sign* for T and ³He.
+So Option-E-defect is **not** a magnitude lead; its deuteron closeness was
+coincidental. The magnitude closure requires a **positive** (sign-definite) weight
+whose A-scaling tracks binding — counit over-amplifies high blocks (explodes with
+A), trM/co-Casimir under-amplify (collapse, A-flat), and no standard weight lands
+between. This is the open GAP-A frontier; a fitted interpolating exponent would be
+the barred seventh ansatz and is **not** taken.
 
 ## Literature calibration (lit search, 2026-07-04)
 
