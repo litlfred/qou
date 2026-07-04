@@ -1,8 +1,8 @@
 {
   "engine": "snappy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-04T13:47:10.256924+00:00",
-  "commitSha": "24d9c8686fe5b421cdfd7bb3c072baba3edfba91",
+  "computedAt": "2026-07-04T13:52:17.571873+00:00",
+  "commitSha": "fca8424977699665df6e3058895be137b5d1505d",
   "assertions": [
     {
       "name": "3H_closure_component_count_ne_8_11",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 9,
   "computation": "he4-link-volume-braid-closure",
   "scriptFile": "he4_link_volume_braid_closure.py",
-  "scriptHash": "6cb51537ceb7",
-  "scriptCommitSha": "24d9c8686fe5b421cdfd7bb3c072baba3edfba91",
+  "scriptHash": "dc88c7c45be6",
+  "scriptCommitSha": "fca8424977699665df6e3058895be137b5d1505d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
