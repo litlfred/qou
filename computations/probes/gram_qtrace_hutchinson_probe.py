@@ -102,7 +102,7 @@ def _chi_sharp_from_letters(letters, dim, exact_dim, samples):
     done = 0
     while done < samples:
         m = min(64, samples - done)
-        Z = RNG.choice((-1.0, 1.0), size=(dim, m))
+        Z = 2.0 * RNG.integers(0, 2, size=(dim, m)) - 1.0   # Rademacher (fast)
         U = _apply_T(letters, Z)                    # Fᵀ Z (L_1ᵀ first)
         V = _apply(letters, Z)                      # R Z (L_1 first)
         ests[done:done + m] = np.einsum("im,im->m", U, V)
@@ -196,9 +196,9 @@ def main() -> int:
         import mpmath as mp
         q0 = float(mp.mpf(str(Q0)))
         y = y_lambda_at(9, q_val=q0)
-        w = atom_braid_word_3A(2, 1, include_inter=True)
-        Ge, _ = gram_qtrace(w, 9, y, q=None, exact_dim=10**9, samples=1)
-        Gs, se = gram_qtrace(w, 9, y, q=None, exact_dim=0, samples=args.samples)
+        w = atom_braid_word_3A(2, 1, include_inter=True, q=mp.mpf(str(Q0)))
+        Ge, _ = gram_qtrace(w, 9, y, q=q0, exact_dim=10**9, samples=1)
+        Gs, se = gram_qtrace(w, 9, y, q=q0, exact_dim=0, samples=args.samples)
         z = abs(Gs - Ge) / se if se > 0 else 0.0
         print(f"  validation n=9 (3He atom): exact={Ge:.6f} "
               f"stochastic={Gs:.6f} ± {se:.6f}  (z={z:.2f})")
@@ -221,10 +221,13 @@ def main() -> int:
                         samples=args.samples)]
     print("\n| iso | parity atom | parity free | Δ parity (binding) |")
     print("|---|--:|--:|--:|")
+    def _f(v):
+        return f"{v:+.6f}" if v is not None else "—"
     for r in rows:
-        print(f"| {r['iso']} | {r['parity_atom']:+.6f} "
-              f"| {r['parity_free']:+.6f} | {r['delta_parity']:+.6f} |")
-    opposite = rows[0]["delta_parity"] * rows[1]["delta_parity"] < 0
+        print(f"| {r['iso']} | {_f(r['parity_atom'])} "
+              f"| {_f(r['parity_free'])} | {_f(r['delta_parity'])} |")
+    dp0, dp1 = rows[0]["delta_parity"], rows[1]["delta_parity"]
+    opposite = (dp0 * dp1 < 0) if (dp0 is not None and dp1 is not None) else False
     print(f"\n  A=5 mirror pair Δ-parity signs: "
           f"{'OPPOSITE (antisymmetric split)' if opposite else 'same sign'}")
     builder.add_data("rows", rows)

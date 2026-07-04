@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-04T10:42:47.177024+00:00",
-  "commitSha": "ed6a30a94220a8d4b39162318782566d826e8e40",
+  "computedAt": "2026-07-04T10:53:40.403732+00:00",
+  "commitSha": "0d145241c4478a096bdff7177a16f269097c885b",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
@@ -2494,6 +2494,7 @@
         "deuteron-binding-interface-closure.witness.json",
         "deuteron-binding-plancherel-channel.witness.json",
         "deuteron-fpn-wlambda-wiring.witness.json",
+        "deuteron-from-scratch-ledger.witness.json",
         "deuteron-real-sdp.witness.json",
         "deuteron_tr_M_symbolic.witness.json",
         "dilog-archimedean-limit-partA.witness.json",
