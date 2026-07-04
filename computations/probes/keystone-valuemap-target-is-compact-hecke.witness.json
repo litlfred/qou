@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-04T13:04:40.610035+00:00",
-  "commitSha": "c6143c9c18d3469704aa51dbeea243839ed9f6b7",
+  "computedAt": "2026-07-04T14:14:56.082126+00:00",
+  "commitSha": "95cf7b962bb41d3777900cc6bc494b271c14d179",
   "assertions": [
     {
       "name": "value_target_is_compact_hecke",
@@ -27,11 +27,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "keystone-valuemap-target-is-compact-hecke",
   "scriptFile": "keystone_valuemap_target_is_compact_hecke.py",
   "scriptHash": "46b8589df21c",
-  "scriptCommitSha": "c6143c9c18d3469704aa51dbeea243839ed9f6b7",
+  "scriptCommitSha": "70dffddcc2389351723e592716b750304442d630",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
