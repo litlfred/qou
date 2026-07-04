@@ -3,7 +3,7 @@
 **Date:** 2026-07-04
 **Branch:** `claude/mu-p-tension-closure-uua4os`
 **Probe:** [`docs/audits/scripts/c4_mu_p_tension_pin_dependence_probe.py`](scripts/c4_mu_p_tension_pin_dependence_probe.py)
-+ [`c4-mu-p-tension-pin-dependence.witness.json`](scripts/c4-mu-p-tension-pin-dependence.witness.json)
+(self-contained) + result artifact [`c4-mu-p-tension-pin-dependence.json`](scripts/c4-mu-p-tension-pin-dependence.json)
 **Supersedes-sharpens:** [`2026-05-28-mu-p-tension-substrate-floor.md`](2026-05-28-mu-p-tension-substrate-floor.md)
 (quantifies its "46.02 is not a clean invariant" into a theorem)
 
@@ -27,9 +27,11 @@ calibrations:
 | **proton** (`base(q)=m_p`) | 1.10997858282 | 0 (by construction) | **−0.03 ≈ 0** |
 | **muon** (`m_μ/m_e=Vol/ℏ²`) | 1.10997859564 | −242 ppb | **46.04** |
 
-- **slope** `dc₄/d(q₀) ≈ 3.987 per ppb`, linear to `< 9e-6` across the
-  whole window (probe: `max deviation from linear = 8.9e-6`).
-- So `c₄ = 3.987 · (q₀ − q₀^proton)[ppb]`. The value **46 is precisely the
+- Affine (two-endpoint) fit `c₄ = −0.032 + 3.990·(q₀ − q₀^proton)[ppb]`,
+  matched to `< 9e-6` across the whole window (probe:
+  `max deviation from affine = 8.9e-6`). The intercept is ≈ 0 (the proton
+  pin needs no dressing).
+- So c₄ is fixed entirely by the pin offset. The value **46 is precisely the
   choice to calibrate on the muon rather than the proton** — a convention,
   not a derivation.
 

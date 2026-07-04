@@ -6,7 +6,12 @@ derivation produces 46-exactly the μ–p tension closes parameter-free."
 This probe answers it decisively, in the negative, at current substrate
 precision, and quantifies WHY.
 
-Setup (production m_p, computations/m_p_substrate_identity_50dps.py):
+SELF-CONTAINED (docs/audits/scripts convention): all constants are inlined
+with provenance below and Vol(4₁) is computed from mpmath's Clausen
+function, so this script never imports repo utilities — a future refactor
+of computations/ cannot silently alter this finding.
+
+Setup (mirrors production m_p, computations/m_p_substrate_identity_50dps.py):
 
     F_Bor(q)      = |tr_M(β_Bor)| · [3]_q! / q³            (exact closed form)
     m_μ(q)        = m_e · Vol(4₁) / ℏ_q²                    (muon anchor formula)
@@ -23,22 +28,22 @@ The probe solves for the *exact* c₄ that lands m_p on CODATA, as a
 function of the q₀ pin, and shows:
 
   1. c₄ is EXACTLY LINEAR in the q₀ pin offset.
-  2. c₄ = 0 at the proton pin (base already hits CODATA by construction).
+  2. c₄ ≈ 0 at the proton pin (base already hits CODATA by construction).
   3. c₄ = 46.04 at the muon pin.
   4. slope ≈ 3.98 per ppb of q₀ over the 11.5 ppb muon↔proton window.
 
 Conclusion: c₄ carries no categorical information. It equals
-`slope · (q₀ − q₀^proton)`; the value "46" is exactly the choice to
-calibrate on the muon rather than the proton — a convention, not a
-derivation. Deriving "46 categorically" would require deriving q₀
-itself (Subgoal-2, owner-declined) or the 11.5 ppb μ–p splitting.
+`intercept + slope·(q₀ − q₀^proton)`; the value "46" is exactly the choice
+to calibrate on the muon rather than the proton — a convention, not a
+derivation. Deriving "46 categorically" would require deriving q₀ itself
+(Subgoal-2, owner-declined) or the 11.5 ppb μ–p splitting.
 
 Scope (AGENTS.md "before declaring refuted"): this is a scope-(a)
 result — c₄, *as a fixed categorical constant*, is not derivable at
 current precision. It does NOT structurally exclude a future closure
-via a derived q₀ or a derived μ–p splitting.
+via a derived q₀ or derived μ–p splitting.
 
-Exit 0 + witness JSON.
+Exit 0 + JSON artifact.
 """
 
 from __future__ import annotations
@@ -46,25 +51,20 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from mpmath import findroot, mp, mpf, nstr
+from mpmath import clsin, findroot, mp, mpf, nstr, pi
 
 mp.dps = 60
 
 HERE = Path(__file__).resolve().parent
-COMP = HERE.parent.parent.parent / "computations"
-import sys
 
-sys.path.insert(0, str(COMP))
-sys.path.insert(0, str(COMP / "substrate"))
-import _path_bridge  # noqa: F401,E402
-
-from q_parameter import vol_4_1_at  # noqa: E402
-from experimental_constants import M_E_MEV  # noqa: E402
-from codata_constants import M_P_MEV_VALIDATION, M_MU_MEV_VALIDATION  # noqa: E402
-
-M_E = mpf(M_E_MEV)
-M_P = mpf(M_P_MEV_VALIDATION)
-M_MU = mpf(M_MU_MEV_VALIDATION)
+# ── Inlined constants (provenance) ─────────────────────────────────────
+# CODATA 2022 / repo experimental_constants + codata_constants, verbatim:
+M_E = mpf("0.51099895069")                    # m_e (MeV), experimental_constants.M_E_MEV
+M_P = mpf("938.272088160000000000000000000000000000000000000000000000000021")  # codata_constants.M_P_MEV_VALIDATION
+M_MU = mpf("105.658375500000000000000000000000000000000000000000000000000004")  # codata_constants.M_MU_MEV_VALIDATION
+# Vol(4₁) = 2·Λ(π/3) = 2·Cl₂(π/3) (figure-eight complement volume), computed
+# from mpmath's Clausen function; matches q_parameter.vol_4_1_at(60) to 55 dps.
+VOL_4_1 = 2 * clsin(2, pi / 3)
 
 # production companion coefficients (held fixed; each is ~1e2/1e4× smaller
 # than the u⁴ term so they do not affect the argument)
@@ -80,7 +80,7 @@ def base_and_u(q):
     trM = abs((4 + h ** 2 - 3 * h ** 4 - h ** 6) / (h ** 2 + 4))
     F = trM * qint(q, 3) * qint(q, 2) * qint(q, 1) / q ** 3
     hbar2 = ((q - 1) / q) ** 2
-    m_mu = M_E * vol_4_1_at(60) / hbar2
+    m_mu = M_E * VOL_4_1 / hbar2
     b = ((q ** 4 + q ** 2 + 1) / (q ** 2 + 1) ** 2) ** mpf("0.5")
     u = b * hbar2
     return 2 * m_mu * F - 12 * M_E, u
@@ -95,7 +95,7 @@ def exact_c4(q):
 def main():
     # the two legitimate q₀ pins
     q_muon = findroot(
-        lambda q: M_E * vol_4_1_at(60) / ((q - 1) / q) ** 2 - M_MU,
+        lambda q: M_E * VOL_4_1 / ((q - 1) / q) ** 2 - M_MU,
         mpf("1.10997859555733"),
     )
     q_proton = findroot(lambda q: base_and_u(q)[0] - M_P, mpf("1.109978"))
@@ -104,26 +104,26 @@ def main():
     c4_muon = exact_c4(q_muon)
     c4_proton = exact_c4(q_proton)
     q_spread_ppb = (q_muon / q_proton - 1) * mpf(10) ** 9
-    slope = c4_muon / q_spread_ppb  # per ppb
+    # two-endpoint slope dc₄/d(q₀[ppb]); intercept is c4_proton (≈0, not
+    # exactly 0), so record both — the affine map is c4 = intercept + slope·Δppb.
+    slope = (c4_muon - c4_proton) / q_spread_ppb
+    intercept = c4_proton
 
-    # linearity check: sample the pin window
+    # linearity check: sample the pin window against the affine fit
     samples = []
     max_nonlin = mpf(0)
     for k in range(11):
         t = mpf(k) / 10
         q = q_proton + (q_muon - q_proton) * t
         c4 = exact_c4(q)
-        pred_linear = c4_proton + (c4_muon - c4_proton) * t
-        nonlin = abs(c4 - pred_linear)
+        pred_affine = intercept + slope * ppb(q)
+        nonlin = abs(c4 - pred_affine)
         max_nonlin = max(max_nonlin, nonlin)
         samples.append(
             {"t": float(t), "q_offset_ppb": float(ppb(q)), "c4": float(c4)}
         )
 
-    # the candidate "closed forms" vs the exact muon-pin target.
-    # NB the committed Q_50_DIGIT_STR is offset ~0.3 ppb from the exact muon
-    # pin, so its own exact target (~45.74) is yet a THIRD value — reinforcing
-    # that c₄ tracks the pin, not a categorical constant.
+    # candidate fixed "closed forms" vs the exact muon-pin target
     candidates = {
         "46 (integer)": mpf(46),
         "4143/90 (production)": mpf(4143) / 90,
@@ -140,25 +140,25 @@ def main():
     print("exact c₄ required to land m_p on CODATA, vs q₀ pin:")
     print(f"  proton pin  → c₄ = {nstr(c4_proton, 10)}   (≈ 0: base hits CODATA)")
     print(f"  muon pin    → c₄ = {nstr(c4_muon, 10)}")
-    print(f"  slope       = {nstr(slope, 6)} per ppb of q₀")
-    print(f"  max deviation from linear across window = {nstr(max_nonlin, 4)}")
+    print(f"  affine map  → c₄ = {nstr(intercept, 6)} + {nstr(slope, 6)}·Δq₀[ppb]")
+    print(f"  max deviation from affine fit across window = {nstr(max_nonlin, 4)}")
     print()
     print("candidate fixed 'closed forms' vs the exact muon-pin target:")
     for nm, c4 in candidates.items():
-        print(f"  c₄={nm:14s} = {nstr(c4, 10):>14s}   Δ={nstr(c4 - c4_muon, 4)}")
+        print(f"  c₄={nm:22s} = {nstr(c4, 10):>14s}   Δ={nstr(c4 - c4_muon, 4)}")
     print()
     print("VERDICT (scope-a): c₄ carries no categorical information. It equals")
-    print("slope·(q₀−q₀_proton); '46' is exactly the muon-pin selection — a")
-    print("calibration convention, not a derivation. 4143/90 neither matches the")
-    print("target nor has a derivation trail; its cited 'colour Reeb index' route")
-    print("is an honest-negative (2026-06-16-s5so3-reeb-resonance-probe-negative).")
+    print("intercept + slope·(q₀−q₀_proton); '46' is exactly the muon-pin")
+    print("selection — a calibration convention, not a derivation. 4143/90")
+    print("neither matches the target nor has a derivation trail; its cited")
+    print("'colour Reeb index' route is an honest-negative (2026-06-16).")
 
-    witness = {
-        "schema": "witness/v1",
+    artifact = {
         "id": "c4-mu-p-tension-pin-dependence",
+        "kind": "audit-probe-result",
         "description": (
             "c₄ ('46 u⁴' Habiro dressing on F_Bor) is the μ–p tension in "
-            "disguise: exact c₄ is linear in the q₀ pin offset, = 0 at the "
+            "disguise: exact c₄ is affine in the q₀ pin offset, ≈ 0 at the "
             "proton pin, 46.04 at the muon pin, slope 3.98/ppb. No categorical "
             "constant; the value 46 is the muon-pin calibration choice."
         ),
@@ -173,8 +173,9 @@ def main():
             "mu_p_q0_spread_ppb": float(q_spread_ppb),
             "c4_at_proton_pin": float(c4_proton),
             "c4_at_muon_pin": float(c4_muon),
-            "slope_c4_per_ppb_q0": float(slope),
-            "max_deviation_from_linear": float(max_nonlin),
+            "affine_intercept_c4": float(intercept),
+            "affine_slope_c4_per_ppb_q0": float(slope),
+            "max_deviation_from_affine": float(max_nonlin),
             "pin_window_samples": samples,
             "production_c4_value": float(mpf(4143) / 90),
             "production_c4_source_comment": (
@@ -188,9 +189,9 @@ def main():
             ),
         },
     }
-    out = HERE / "c4-mu-p-tension-pin-dependence.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
-    print(f"\nwitness → {out.relative_to(HERE.parent.parent.parent)}")
+    out = HERE / "c4-mu-p-tension-pin-dependence.json"
+    out.write_text(json.dumps(artifact, indent=2))
+    print(f"\nartifact → {out.relative_to(HERE.parent.parent.parent)}")
 
 
 if __name__ == "__main__":
