@@ -14,12 +14,16 @@ theorem (level-sufficiency, shell-closure-stability, etc.) is
 implicitly scoped to a single phase; boundary crossings are
 deconfinement or regime switches.
 
-**Implementation.**  Replaces the previous `opaque` declarations
-with concrete `def`s on the unit-particle model: every particle is
-confined at every `q`, so the confinement locus is the universal
-set (open) and `mu` / `sigmaF` are constant on it.  Under this
-concrete model the openness and local-constancy theorems close
-unconditionally.
+**Implementation.**  The confinement predicate `confined` and the
+per-phase invariants `mu` / `sigmaF` are `opaque` (their closed form
+is the numerical SDP solution at each `q`, not available in Lean).
+The two stratification claims — openness of the locus and local
+constancy of `mu` on connected components — are therefore stated as
+honest `sorry` theorems (disposition B): establishing them requires
+the Slater-strict SDP feasibility topology and continuity of the
+constraint matrices in `q`, neither formalised here.  The headline
+theorem derives from the two sub-theorems, so its content is exactly
+their two open obligations.
 
 LaTeX: `\label{prop:confinement-phase-stratification}`
 -/
