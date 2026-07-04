@@ -75,25 +75,44 @@ def qint_balanced(n, q=Q0):
     return (q ** n - q ** (-n)) / (q - q ** (-1))
 
 
-def qfact_unbalanced(n, q=Q):
-    r = mpf(1)
-    for k in range(1, n + 1):
-        r *= qint_unbalanced(k, q)
-    return r
+_QFACT_CACHE = None
 
 
-def C0q(x, q=Q, terms=220):
-    """0th-order q-Bessel Tricomi, uploads/014-026.pdf eq. (11)."""
+def qfact_table(nmax, q=Q):
+    """Precompute [0]_q!..[nmax]_q! once (the per-eval bottleneck otherwise)."""
+    global _QFACT_CACHE
+    if _QFACT_CACHE is not None and len(_QFACT_CACHE) > nmax:
+        return _QFACT_CACHE
+    tab = [mpf(1)]
+    for k in range(1, nmax + 1):
+        tab.append(tab[-1] * qint_unbalanced(k, q))
+    _QFACT_CACHE = tab
+    return tab
+
+
+def C0q(x, q=Q, terms=140):
+    """0th-order q-Bessel Tricomi, uploads/014-026.pdf eq. (11).
+
+    ([k]_q!)² grows like ((1-q)^{-k})² ≈ 10^{2k} at q≈0.9, so the alternating
+    series converges fast; 140 terms is ample for |x| ≤ 400 at 50 dps."""
+    qf = qfact_table(terms, q)
+    x = mpf(x)
     s = mpf(0)
+    xp = mpf(1)
     for k in range(terms):
-        s += (-1) ** k * x ** k / (qfact_unbalanced(k, q)) ** 2
+        s += (-1 if k & 1 else 1) * xp / qf[k] ** 2
+        xp *= x
     return s
 
 
 def positive_zeros(n_zeros=6, q=Q):
-    """First n positive real zeros of C_{0,q} by sign-change bracketing + refine."""
+    """First n positive real zeros of C_{0,q} by sign-change bracketing + refine.
+
+    Coarse bracket scan (step 0.25) then Newton-refine each bracket — the scan
+    is the cost driver, so keep the step as large as resolves the zero spacing."""
+    qfact_table(160, q)                  # warm the cache once
     zeros = []
-    x, dx = mpf("0.05"), mpf("0.05")
+    x, dx = mpf("0.1"), mpf("0.25")
     prev = C0q(x, q)
     xmax = mpf("400")
     while len(zeros) < n_zeros and x < xmax:
@@ -122,13 +141,18 @@ def main():
     zeros = positive_zeros(6)
     z1 = zeros[0] if zeros else mpf("nan")
 
-    # Parameter-free candidate quantities (NO free reals).
+    # Parameter-free candidate quantities (NO free reals). The j=1
+    # self-normalisations ξ₁/ξ₁ and √(ξ₁/ξ₁) are identically 1 by construction
+    # (true for ANY function's first zero) — they carry no content, so they are
+    # excluded from the match gate rather than allowed to spuriously "hit" the
+    # trivial target [1]_q = 1.
     candidates = {}
     for j, z in enumerate(zeros, 1):
         candidates[f"zero_{j}"] = z
-        candidates[f"zero_{j}_over_zero1"] = z / z1
         candidates[f"sqrt_zero_{j}"] = mp.sqrt(z)
-        candidates[f"sqrt_zero_{j}_over_zero1"] = mp.sqrt(z / z1)
+        if j >= 2:
+            candidates[f"zero_{j}_over_zero1"] = z / z1
+            candidates[f"sqrt_zero_{j}_over_zero1"] = mp.sqrt(z / z1)
     for j in range(1, len(zeros)):
         candidates[f"gap_{j}"] = zeros[j] - zeros[j - 1]
     for n in range(1, 6):
