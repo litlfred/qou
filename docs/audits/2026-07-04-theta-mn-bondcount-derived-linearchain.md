@@ -29,7 +29,7 @@ with `Vol(c)` the hyperbolic volume of the sub-chain's link (the isospin carrier
 ## Result (parameter-free)
 
 Volumes are the **real** hyperbolic invariants (`Vol(8_11)=8.2863`,
-`Vol(L6a4/Borromean)=7.3277`, Hopf`=0`), not fitted.
+`Vol(L6a4/Borromean)=7.3277`, `Hopf=0`), not fitted.
 
 | K | chain | `B_pred` (MeV) | AME | err | fitted params |
 |---|---|--:|--:|--:|:--:|

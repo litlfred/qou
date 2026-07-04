@@ -1,7 +1,6 @@
 import Mathlib.Algebra.BigOperators.Intervals
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Tactic.Ring
-import Mathlib.Tactic.Linarith
 
 /-!
 # QOU.Mass.LinearChainBondCount — the θ_λ multiplicity as the linear-chain bond count
