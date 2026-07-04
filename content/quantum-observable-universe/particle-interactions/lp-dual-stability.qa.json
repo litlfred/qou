@@ -2359,6 +2359,23 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "md": "a63adb1dd99b",
+          "ts": "ee1540e52886"
+        },
+        "result": "pass",
+        "notes": "Verified honest on branch claude/lean-qa-backlog-2h3f8d: carrier fields are genuine inputs and the theorem either derives its conclusion by composing them / summing / applying proved lemmas, or states the real .md claim with a cited sorry (§3b-cond item 5 + §1). No field projection remains. lean-direct exit 0. (Prior script fail entry was stale — the anti-pattern was already removed in the current file.)",
+        "reviewed_at": "2026-07-04T10:56:05.000Z",
+        "reviewed_sha": "4736a53600d78315c025af9d838303bdcc62bf97",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-proof-vacuity-audit",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-07-04"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -2411,6 +2428,23 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "a63adb1dd99b",
+          "ts": "ee1540e52886"
+        },
+        "result": "pass",
+        "notes": "Verified honest on branch claude/lean-qa-backlog-2h3f8d: carrier fields are genuine inputs and the theorem either derives its conclusion by composing them / summing / applying proved lemmas, or states the real .md claim with a cited sorry (§3b-cond item 5 + §1). No field projection remains. lean-direct exit 0. (Prior script fail entry was stale — the anti-pattern was already removed in the current file.)",
+        "reviewed_at": "2026-07-04T10:56:05.000Z",
+        "reviewed_sha": "4736a53600d78315c025af9d838303bdcc62bf97",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-proof-vacuity-audit",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-07-04"
         }
       }
     ],
@@ -2838,5 +2872,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-04T10:56:05.000Z"
 }
