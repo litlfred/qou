@@ -365,3 +365,25 @@ probe `computations/probes/keystone_valuemap_genuine_smatrix_s013.py`; also the 
 prune set [`2026-07-02-keystone-valuemap-qbessel-gate.md`](../audits/2026-07-02-keystone-valuemap-qbessel-gate.md)
 (residue weights are pure signs; channel amplitudes are the L-value family; single-argument
 q-Bessel rows fail the 1-dof gate).
+
+## T1 DONE — conjecture classes de-abstracted, factor-2 anchor fixed (2026-07-04, bean 5e79)
+
+Tier-1 of the keystone de-abstraction epic (bean `08a2`) is complete on
+`claude/cheat-sheet-derivation-gaps-if9d38`. `BringTrilogDepth3Witness` is no
+longer the `residual : ℝ + residual_eq_zero` placeholder (§3b-tax
+`proof-claims-unencoded`): the class now carries the four archimedean
+components Cl₃/S₃ at 2π/5, 4π/5, the **K=5 distribution relation (real part)**
+tied to the PROVED `Cl3Zeta5OrbitSum.orbit_sum_identity`, and witness-pinned
+sign non-degeneracies; derived sorry-free `pair_sum_eq` and `cl3_4pi5_neg`.
+`Cl3Zeta5GeometricRealization` is now a **dependent conjecture**
+(`[W : BringTrilogDepth3Witness]` binder — the derived `conjecture_graph`
+edge) whose candidate invariants must realise the witnessed values;
+derived sorry-free `realize_pair_sum`, `cl3Zeta5_pos`.
+
+**Factor-2 bug fixed in passing:** the old `realize_orbit_sum` anchored the
+Clausen PAIR Cl₃(2π/5)+Cl₃(4π/5) to the full 4-term orbit sum −(24/25)ζ(3);
+each value appears twice in the k=1..4 orbit (Cl₃ even, 2π-periodic), so the
+pair sum is **−(12/25)ζ(3)** ≈ −0.577 (the old anchor would force
+Cl₃(4π/5) ≈ −1.34, outside Clausen range |·| ≤ ζ(3)). Both modules wired into
+the `QOU.BraidKnot` aggregator; lean-direct EXIT 0 (only the intended §3b
+open-conjecture `sorry` instances remain).
