@@ -20,7 +20,7 @@ export default chapter({
       title: "Introduction",
       label: "sec:qou-intro",
       blocks: [
-        "intro",
+        "quantum-universes-intro",
         "scheme-notation",
       ],
     }),

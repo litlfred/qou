@@ -22,7 +22,7 @@ export default chapter({
       title: "Introduction",
       label: "sec:path-integrals-intro",
       blocks: [
-        "intro",
+        "braids-and-knots-intro",
       ],
     }),
 

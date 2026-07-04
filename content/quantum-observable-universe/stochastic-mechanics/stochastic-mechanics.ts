@@ -24,7 +24,7 @@ export default chapter({
     section({
       title: "Introduction",
       label: "sec:stochastic-mechanics-intro",
-      blocks: ["intro"],
+      blocks: ["stochastic-mechanics-intro"],
     }),
     section({
       title: "Markov axioms and braid-link enumeration",
