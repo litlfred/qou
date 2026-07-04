@@ -114,6 +114,37 @@ All numbers at 50 dps, q₀ solved live, CODATA/AME comparison-only.
    reconciliation) and the mirror-pair magnitude are NOT decidable at A=2:
    D is the exact 2-body base case and is silent on both.
 
+### Follow-up (2026-07-04, owner picks 1+2) — formalize-first on the 1/h scale + facade fix
+
+Producer: [`probes/probe_d_qbeta_h_invariant.py`](../../computations/probes/probe_d_qbeta_h_invariant.py)
+→ `probes/probe-d-qbeta-h-invariant.witness.json` (audit-only, 3/3).
+
+1. **EXACT reduction (sympy-proved in ℚ(q)):** with the CAL-2 proxy
+   `Q_β = m_e·|q²−2q−1|(q+1)/(2q³)` and `E₀ = m_e/(q(q−1))`,
+   `Q_β = E₀·h·(2−h)/2` **exactly** — so the "1/h" scale is not a new
+   object: **`Δ_λ(D) = 1/h ⟺ B_D = E₀·(1−h/2)·Δtr`**, i.e. the canonical
+   E₀ route dressed by `(1−h/2)` = the bar-average of the smoothed
+   crossing pair `{1, 1−h}` (`σ⁻¹ = σ−h`; the same `−h/2` shift as the
+   averaged p-n interface `σ_avg = σ−h/2`, and D has exactly one p-n
+   interface). Numbers: undressed +11.99% → dressed **+0.29%** (proxy
+   Q_β) / **+0.12%** (Kashiwara Q_β). Lean target filed (generic
+   `[Field R]`, §7c — `field_simp; ring`).
+2. **`Q_β = m_e·8G·h` REFUTED-as-exact** (scope (b) for the exact claim
+   only; invariant = the 50-dps precision floor: gap 6.2e-4 vs required
+   ~1e-45). The 0.06% near-match survives as an observation of the
+   Weinberg-cosh class: `E₀·(2−h)/2 ≈ m_e·8G` at q₀,
+   algebraic-vs-Catalan.
+3. **Sharpened open question (the wiring gate):** derive from the
+   binding functional that the trace-canonical scale is E₀ dressed by
+   the smoothed bar-average of the single interface crossing. Until
+   derived, the +0.12% candidate stays observation-tier (Δ_λ gate).
+4. **Facade fix landed:** `canonical_mass.py::_from_formula` now applies
+   `habiro_ratio_s5bb(q)` (new module-level function + `C4_S5BB` in
+   `m_p_substrate_identity_50dps.py`; producer witness regenerated,
+   2/2) — fallback now within 1.5 ppb of the witness (was −241 ppb).
+   The c₄ 46-vs-4143/90 **pin** mismatch is a re-pin question →
+   owner-gated bean `2i8g` (NOT changed).
+
 ### Verdict
 
 The deuteron's from-scratch chain error is **entirely a binding-scale
