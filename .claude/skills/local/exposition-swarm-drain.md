@@ -115,10 +115,36 @@ Resolve agents edit `.md` prose only. They **must not**:
 - convert a "Proof (sketch)" to "Proof" unless the complete argument is
   **already present** (else leave it and set `needs_owner`).
 
-They **may**: strip Lean/sorry/apparatus sentences; tighten wordy prose;
-reorder so motivation precedes machinery; introduce a symbol at first use;
-de-duplicate a glyph. Anything requiring real math is returned as
-`needs_owner` with a reason — **never** auto-faked.
+**DO-NOT-TOUCH-DERIVATIONS rule (STRICT, added 2026-07-04 after a live
+incident).** A resolve agent must **not edit the prose of a derivation,
+computation, or proof body at all** — not even to "tighten" or "clarify"
+it. Polishing a derivation can make a *wrong* one read more cleanly and
+authoritative, which is worse than leaving it rough. (Incident: the swarm
+reworded a `frobenius-relation-su2` derivation that was mathematically
+false — it conflated the Hopf comultiplication with the Frobenius
+comultiplication — and the cleaner prose lent the error false authority;
+Gemini caught it, PR #3301.) Therefore:
+- **Only edit the *surrounding exposition*** — the intro/motivation
+  sentence, the notation-introduction, a redundant restatement *outside*
+  the derivation, the closing interpretation. Leave every derivation /
+  computation / proof step **verbatim**.
+- If a derivation itself reads poorly, **do not fix it** — set
+  `needs_owner` with a note. A resolve agent is not authorized to verify
+  or repair mathematics.
+- The audit stage **may** score H5/H6/H7 low on a muddy derivation and
+  **flag** it, but the flag routes to `needs_owner`, not to an autonomous
+  prose rewrite of the derivation.
+
+They **may**: strip Lean/sorry/apparatus sentences; tighten wordy prose
+*outside derivations*; reorder so motivation precedes machinery; introduce
+a symbol at first use; de-duplicate a glyph. Anything requiring real math —
+or any edit that would touch a derivation body — is returned as
+`needs_owner` with a reason, **never** auto-faked or auto-polished.
+
+**The review layer is the backstop, not the gate.** Every swarm PR still
+goes through `/prepare-merge-auto` (Gemini + Copilot) before merge; that
+layer caught the incident above. Do not merge a content batch on the
+swarm's self-check alone.
 
 Every resolve agent runs the render sanity battery before committing
 (balanced `$`/`$$`/`{}`, no `\operatorname` → `\mathrm`, no list-hijack
