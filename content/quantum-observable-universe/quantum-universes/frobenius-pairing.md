@@ -33,5 +33,5 @@ A \xrightarrow{\rho^{-1}} A \otimes \mathbf{1}
 $$
 
 and its mirror are both equal to $\mathrm{id}_A$. For
-$A = \mathbf{Rep}(\mathrm{SU}_q(2))$ this recovers the
+$\mathbf{C} = \mathbf{Rep}(\mathrm{SU}_q(2))$ this recovers the
 quantum-dimension pairing (see [example](#ex:frobenius-pairing-su2)).
