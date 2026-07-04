@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-04T13:10:25.416477+00:00",
-  "commitSha": "454877d7d8894284446b3b81af062a30829840c3",
+  "computedAt": "2026-07-04T13:17:01.695377+00:00",
+  "commitSha": "4ed3eb1783bf5cb78bb2dc70cd5a1fae30fcb4d4",
   "assertions": [
     {
       "name": "carrier_zeta4_odd_degree_supported",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 24,
+  "durationMs": 26,
   "computation": "qbeta-zeta4-fibre-cyclotomic",
   "scriptFile": "qbeta_zeta4_fibre_cyclotomic_probe.py",
-  "scriptHash": "3bfe47589458",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0d0a48f601a9",
+  "scriptCommitSha": "4ed3eb1783bf5cb78bb2dc70cd5a1fae30fcb4d4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
