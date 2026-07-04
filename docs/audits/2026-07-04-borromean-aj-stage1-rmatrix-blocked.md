@@ -1,5 +1,15 @@
 # Borromean AJ stage 1 — R-matrix ground truth, BLOCKED on an inverse bug at color ≥ 3
 
+> **✅ RESOLVED 2026-07-04 — see the superseding audit
+> [`2026-07-04-borromean-aj-stage1-rmatrix-fixed.md`](2026-07-04-borromean-aj-stage1-rmatrix-fixed.md)
+> (bean `1iqq`). The R-matrix is fixed and the tower is established (exactly
+> diagonal). NOTE: this doc's diagnosis was itself incomplete — it claimed the
+> *forward* action was always correct and only the inverse was wrong. In fact
+> the forward nilpotent q-power `t^{2n(n-1)}` was ALSO wrong at color ≥ 3 (YBE
+> failed on V₃⊗V₃⊗V₃); the inverse failure was a downstream symptom. Both were
+> fixed (`t^{n(n-1)}` forward + exact matrix inverse). Kept for the diagnostic
+> history; read the FIXED audit for the current state.**
+
 **Date:** 2026-07-04
 **Beans:** `moqg` (Borromean stage 1, blocked), `ds4b` (AJ-for-links
 literature), `1iqq` (R-matrix fix — the unblock), `n920` (cyclotomic
