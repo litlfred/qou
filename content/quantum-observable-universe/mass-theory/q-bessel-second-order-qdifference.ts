@@ -1,7 +1,7 @@
 import { proof } from "../../schema/builders";
 
 export default proof({
-  label: "proof:q-bessel-second-order-qdifference",
+  label: "prf:q-bessel-second-order-qdifference",
   of: "prop:q-beta-c-k-recursion-from-habiro-q-difference",
   lean: {
     ref: "qou:QOU.QBeta.qbessel_second_order_recurrence",

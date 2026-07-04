@@ -1,7 +1,7 @@
 *Lean sibling resolves to [`QOU.Mass.jetBinding_mono`](lean/QOU/Mass/JetFiltrationExtensive.lean) — sorry-free. Stated over $\mathbb{R}$ (archimedean regime); the combinatorial content is a finite non-negative sum.*
 
 **Proposition (extensivity of the body-order binding).**
-*Write the jet-filtration binding of [`conj:binding-manybody-jet-filtration`](#conj:binding-manybody-jet-filtration) as*
+*Write the jet-filtration binding of [`conj:binding-manybody-eq-jet-filtration`](#conj:binding-manybody-eq-jet-filtration) as*
 
 $$
   B(A) \;=\; \sum_{n=2}^{A} \mathfrak{m}_e \, a_D^{(n)} \, w_n ,
