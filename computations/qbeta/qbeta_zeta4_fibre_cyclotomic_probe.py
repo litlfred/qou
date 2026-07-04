@@ -78,26 +78,37 @@ def main() -> int:
     # (Q1) ζ₄-faithful grading: carrier on odd powers of q.
     # num even in q  AND  den = const·q^odd  ⇒  carrier odd-q-degree supported.
     num_even = sp.simplify(num.as_expr().subs(q, -q) - num.as_expr()) == 0
-    den_q_exp = sp.Poly(sp.fraction(sp.cancel(1 / den))[1], q).degree() \
-        if den != 0 else 0
-    # den is 4*q^7 → the q-exponent is 7 (odd)
-    den_deg = sp.degree(sp.denom(sp.cancel(odd)), q)
-    carrier_odd_support = bool(num_even and (den_deg % 2 == 1))
-    print(f"  (Q1) num(−q)=num(q): {bool(num_even)};  den q-degree {den_deg} "
-          f"(odd) ⇒ carrier odd-q-degree supported: {carrier_odd_support}")
+    # den must be a single monomial const·q^k with k odd — verify it IS a
+    # monomial (one term), else an odd *degree* alone would be a false
+    # positive (e.g. 4q⁷(q²+1) has odd degree but is not a pure power).
+    den_poly = sp.Poly(sp.denom(sp.cancel(odd)), q)
+    den_deg = den_poly.degree()
+    den_is_monomial = len(den_poly.terms()) == 1
+    carrier_odd_support = bool(num_even and den_is_monomial and (den_deg % 2 == 1))
+    print(f"  (Q1) num(−q)=num(q): {bool(num_even)};  den = {sp.expand(den)} "
+          f"(monomial: {den_is_monomial}, q-degree {den_deg}) ⇒ carrier "
+          f"odd-q-degree supported: {carrier_odd_support}")
 
     # (Q2) Φ₄ = q²+1 residue + full cyclotomic content.
+    # Rigorous: factor over ℚ, classify each irreducible factor via
+    # is_cyclotomic (φ(n)=deg ⇒ finite totient-inverse comparison for n),
+    # rather than a degree-bounded divisor scan (which can miss Φ_n with
+    # small φ(n) but large n, e.g. Φ₄₂: φ=12, deg 12).
     phi4 = q**2 + 1
     phi4_divides = sp.rem(num.as_expr(), phi4, q) == 0
-    cyclo = [n for n in range(1, 2 * num.degree() + 2)
-             if sp.rem(num.as_expr(), cyclotomic_poly(n, q), q) == 0]
-    res = num.as_expr()
-    for n in cyclo:
-        Phi = cyclotomic_poly(n, q)
-        while (sp.rem(res, Phi, q) == 0
-               and sp.degree(res, q) >= sp.degree(Phi, q)):
-            res = sp.quo(res, Phi, q)
-    res = sp.factor(res)
+    cyclo, non_cyclo_factors = [], []
+    for factor, mult in sp.factor_list(num.as_expr())[1]:
+        p = sp.Poly(factor, q)
+        if p.is_cyclotomic:
+            for n in range(1, 6 * p.degree() + 2):
+                if sp.Poly(cyclotomic_poly(n, q), q) == p:
+                    cyclo.extend([n] * mult)
+                    break
+        else:
+            non_cyclo_factors.append(factor ** mult)
+    cyclo.sort()
+    res = sp.factor(sp.Mul(*non_cyclo_factors)) if non_cyclo_factors \
+        else sp.Integer(1)
     print(f"  (Q2) Φ₄ | num: {bool(phi4_divides)};  cyclotomic divisors: "
           f"Φ_{cyclo};  non-cyclotomic residual: {res}")
     print(f"       full factorisation: {sp.factor(num.as_expr())}")
