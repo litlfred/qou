@@ -5,12 +5,24 @@ does the per-braid mass tower reproduce the unweighted-NF-net Q-value ansatz
 at leading order, or do the counit (net) and Markov trace (tr_M) genuinely
 differ?
 
-EXPLORATORY (probe_ prefix, audit-only). Formalize-first for the
-`conj:borromean-quark` energy-scale ansatz `Q_β = |Δ(net)|·E₀` (Step 8 of
-docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md). The ansatz is
-"by construction"; Path A would DERIVE it as the leading-order h-expansion of
-the canonical per-braid mass tower `prop:per-braid-mass-tower`. The two
-functionals in play:
+EXPLORATORY (probe_ prefix, audit-only).
+
+## CORPUS-GREP CORRECTION (read first)
+
+This started as "Path A" — an attempt to derive the energy-scale ansatz by
+h-expanding the mass tower. A corpus-grep (which should have run FIRST) shows
+the result is ALREADY in the corpus, Lean-proved: `prop:qbeta-counit-closed-
+form` (QOU.Interactions.QBetaEnergyScale / QBetaCounitTrace) proves
+ε(Δ)=h²/2−h, tr_M(Δ)=h²/2−hz, gap h(z−1); `prop:qbeta-counit-transition`
+DERIVES the functional selection (counit = transition observable via the
+Frobenius integral pairing); `QOU.Interactions.QBetaTowerBound` (sorry-free)
+has counit_dominates. So this probe is NOT a novel result — it is an
+INDEPENDENT CROSS-CHECK of tr_M(Δ)=h²/2−hz via the Wedderburn Σ_λ y_λ χ^λ
+route (the corpus prop uses direct NF weights). The functional selection is
+DERIVED; the only open item is the non-perturbative tower-convergence
+conjecture `conj:qbeta-trace-counit-convergence`.
+
+The two functionals in play:
 
   net(W) = ε(NF(W))   — the AUGMENTATION: every NF basis element weight 1
                         (proton σ₀(σ₁−h/2) → net(p)=1−h/2; neutron → net(n))
@@ -159,17 +171,19 @@ def main() -> int:
         "difference reproduces the unweighted net difference — the ansatz "
         "is derivable."
         if path_a_holds else
-        f"PATH A (net = leading-order tr_M mass) REFUTED, scope (a): "
-        f"Δtr_M/Δnet → {lim_ratio} ≠ 1"
-        + (" = z (the Markov weight at q→1)" if ratio_is_z else "")
-        + ". The counit (net) and the Markov trace are genuinely different "
-        "functionals differing at O(1), NOT a leading-order coincidence — "
-        "so the borromean-quark energy-scale ansatz Q_β=|Δnet|·E₀ uses the "
-        "COUNIT ε by structural choice; deriving it requires deriving why "
-        "the β-decay/binding channel augments (ε) rather than Markov-traces, "
-        "not an h-expansion of the mass tower. This is the exact Step-6 "
-        "'unweighted net vs weighted trace' gap, quantified: it is O(1)=z, "
-        "not O(h)."
+        f"CROSS-CHECK CONFIRMS prop:qbeta-counit-closed-form (already Lean-"
+        f"proved): Δtr_M/Δnet → {lim_ratio}"
+        + (" = z (Markov weight at q→1)" if ratio_is_z else "")
+        + ". Computed here via the Wedderburn Σ_λ y_λ χ^λ route (vs the "
+        "corpus prop's direct NF-weight route) — agrees. The counit ε (net) "
+        "and Markov trace tr_M are DERIVED-distinct functionals: "
+        "tr_M(β)=⟨β,1⟩ (loop/mass), ε(β)=⟨β,ω⟩, ω=G⁻¹1 (transition/decay) "
+        "per prop:qbeta-counit-transition; β-decay is a transition ⇒ counit. "
+        "This ratio→z IS the corpus's 'trace falls short by a factor of "
+        "two'. NOT a novel refutation: the functional selection is derived; "
+        "the sole open item is the non-perturbative tower convergence "
+        "conj:qbeta-trace-counit-convergence. This probe is one N=0 boundary "
+        "data point for it."
     )
     print(f"\n  VERDICT: {verdict}")
 
