@@ -1,24 +1,33 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-04T10:55:56.363377+00:00",
-  "commitSha": "17d5f19ac0a0f17cac3663b1284a470e8f102a19",
+  "computedAt": "2026-07-04T13:07:01.044026+00:00",
+  "commitSha": "9f9ee0a41503ed3b71f534443b9c570ae7faf0f4",
   "assertions": [
     {
-      "name": "mirror_residual_is_open_em_linking_gate",
-      "computed": "1",
-      "expected": "1",
+      "name": "he3_bondcount_residual_pct",
+      "computed": -2.9686547482331886,
+      "expected": -2.9686547,
       "passed": true,
-      "tolerance": 0,
-      "source": "the A=3 mirror residual reduces to the corpus's open two-like-charge EM-linking invariant (derived Coulomb covers 31%; 3.2× owner-gated); not a fresh target, and not fit-closable (CAL-4)."
+      "tolerance": 0.001,
+      "unit": "percent",
+      "source": "³He linear-chain bond-count binding residual m_e·2·Vol(L6a4) vs AME; the −2.97% is the whole A=3 mirror residual (current best, no fit)."
+    },
+    {
+      "name": "derived_coulomb_fraction",
+      "computed": 0.31118810992188334,
+      "expected": 0.31118811,
+      "passed": true,
+      "tolerance": 1e-05,
+      "source": "tanh(ln q₀)·B_pp / (B_³H − B_³He): the DERIVED pp-Coulomb covers 31.1% of the mirror split; the remaining 3.2× is the OPEN two-like-charge EM-linking invariant (owner-gated; fit-closing is a CAL-4 violation)."
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 9,
   "computation": "a3-mirror-residual-reconciliation",
   "scriptFile": "a3_mirror_residual_reconciliation.py",
-  "scriptHash": "85d4f4ce2ee1",
-  "scriptCommitSha": "17d5f19ac0a0f17cac3663b1284a470e8f102a19",
+  "scriptHash": "b1cc8e57e955",
+  "scriptCommitSha": "9f9ee0a41503ed3b71f534443b9c570ae7faf0f4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
