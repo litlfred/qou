@@ -13,7 +13,7 @@ real-closed extension $K \supseteq \mathbb{R}$, in particular to
 $\mathbf{No}$:
 
 1. **Hecke algebra $H_n(q)$.** The presentation
-   $(T - q)(T + q^{-1}) = 0$ plus the braid relations
+   $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$ plus the braid relations
    $\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$ makes sense over any
    commutative ring in which $q$ is invertible. The Wedderburn
    decomposition $H_n(q) \cong \bigoplus_{\lambda \vdash n}
