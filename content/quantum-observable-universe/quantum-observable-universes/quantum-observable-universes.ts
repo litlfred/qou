@@ -545,7 +545,7 @@ export default chapter({
       title: "Elaboration: categorical context",
       label: "sec:elaboration-intro",
       blocks: [
-        "intro",
+        "quantum-observable-universes-intro",
         "tqft-context",
         "vanishing-explication",
         "levi-generalisation",

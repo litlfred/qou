@@ -25,7 +25,7 @@ export default chapter({
     section({
       title: "Introduction",
       label: "sec:measurement-observation-intro",
-      blocks: ["intro"],
+      blocks: ["measurement-observation-intro"],
     }),
     section({
       title: "Bundle Structure and Observation",

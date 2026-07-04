@@ -359,7 +359,7 @@ export default chapter({
       blocks: [
         "topological-mass-formula-transcendence-intro",
         "hyperbolic-volumes-prose",
-        "intro",
+        "predicted-spectra-intro",
         "knot-formula-table",
         "knot-formula-table-table1-data",
         "knot-formula-table-table2-data",

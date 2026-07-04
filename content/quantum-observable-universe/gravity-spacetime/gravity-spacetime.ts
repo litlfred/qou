@@ -26,7 +26,7 @@ export default chapter({
     section({
       title: "Introduction",
       label: "sec:gravity-spacetime-intro",
-      blocks: ["intro"],
+      blocks: ["gravity-spacetime-intro"],
     }),
     section({
       title: "Positioning against canonical quantum-gravity programmes",
