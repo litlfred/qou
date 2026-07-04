@@ -3,17 +3,32 @@
 (owner ruling 2026-06-24)*
 
 $$
-m_p = \dim V_{(2,1)} \cdot \bigl( m_\mu \cdot F_{\mathrm{Bor}} - |S_3| \cdot m_e \bigr) \cdot R_{\mathrm{s5bb}}(q_0), \qquad
+m_p = \dim V_{(2,1)} \cdot \bigl( m_\mu \cdot F_{\mathrm{Bor}} - |S_3| \cdot m_e \bigr), \qquad
 m_\mu = m_e \cdot \mathrm{Vol}(4_1) / \hbar_q^2 ,
 $$
 
 *with the dimensionless Hecke factor
-$F_{\mathrm{Bor}} = |\mathrm{tr}_M(\beta_{\mathrm{Bor}})| \cdot [3]_q! / q^3$
-and the s5bb Habiro 4-loop dressing
-$R_{\mathrm{s5bb}} = (1 + c_4 u^4)(1 + 4 u^5)(1 - 29 u^6)$,
-$u = b\,\hbar_q^2$, $b = \sqrt{(q^4+q^2+1)/(q^2+1)^2}$,
-$c_4 = 4143/90$, via the canonical chain Steps 1 $\to$ 3 $\to$ 5
-$\to$ here.*
+$F_{\mathrm{Bor}} = |\mathrm{tr}_M(\beta_{\mathrm{Bor}})| \cdot [3]_q! / q^3$,
+via the canonical chain Steps 1 $\to$ 3 $\to$ 5 $\to$ here. This is the
+**raw** identity: the substrate parameter $q_0$ is pinned by solving
+exactly this form against $m_p/m_e$ (owner ruling 2026-07-03, which
+stripped an earlier fitted Habiro 4-loop dressing from the pin), so the
+identity round-trips $m_p$ by construction and $m_\mu$, $m_n$ are the
+predictions.*
+
+> **Fit-tier dressing (not canonical).** An optional 4-loop factor
+> $R_{\mathrm{s5bb}} = (1 + c_4 u^4)(1 + 4 u^5)(1 - 29 u^6)$,
+> $u = b\,\hbar_q^2$, $b = \sqrt{(q^4+q^2+1)/(q^2+1)^2}$, is retained in
+> the producer (`m_p_substrate_identity_50dps.habiro_ratio_s5bb`) but is
+> **fit-tier, not derived**: the exact $c_4$ that lands $m_p$ on CODATA
+> is *linear in the $q_0$ pin offset* (so $c_4$ merely reparametrizes the
+> $\mu$–$p$ tension), and neither $c_4 = 46$ nor $c_4 = 4143/90$ has a
+> derivation trail in the corpus. Applied at the raw pin it *overshoots*
+> CODATA $m_p$ by $\approx 242$ ppb. The reconcile (relabel / revert /
+> drop) is owner-gated — see
+> [PR #3280](https://github.com/litlfred/qou/pull/3280) and the
+> [deuteron ledger](../../../docs/audits/2026-07-03-deuteron-from-scratch-error-ledger.md)
+> finding 5.
 
 ### Input
 
@@ -34,7 +49,7 @@ $\to$ here.*
    (Lean-proved closed form, BorromeanMarkovTrace.lean; h = q − q⁻¹).
 2. Form F_Bor = |tr_M(β_Bor)| · [3]_q! / q³   ([3]_q! Lean-proved).
 3. Muon anchor: m_μ = m_e · Vol(4₁) / ℏ_q²  (ℏ_q = 1 − q⁻¹).
-4. m_p = 2·(m_μ·F_Bor − 6·m_e) · habiro_ratio_s5bb(q₀).
+4. m_p = 2·(m_μ·F_Bor − 6·m_e)   (raw identity; no habiro dressing).
 5. m_n = m_p + Q_β + m_e with the parameter-free Kashiwara b²
    truncation Q_β (derived_masses.q_beta_kashiwara_n2_mev).
 6. Evaluate at q = q₀ with 50-dps mpmath precision.
@@ -63,9 +78,9 @@ m_p_MeV, m_n_MeV = proton_neutron_mass_mev()
 ```
 
 *`computations/canonical_mass.py` is the SINGLE facade (owner ruling
-2026-06-24): it prefers the producer witness and falls back to the
-live formula above, including the $R_{\mathrm{s5bb}}$ dressing.
-Producer:
+2026-06-24): it prefers the producer witness and falls back to the raw
+identity above (no $R_{\mathrm{s5bb}}$ dressing — the fallback matches
+the raw pin). Producer:
 [`m_p_substrate_identity_50dps.py`](../../../computations/m_p_substrate_identity_50dps.py).*
 
 ### Witness contract

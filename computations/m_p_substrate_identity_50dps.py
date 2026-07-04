@@ -138,17 +138,21 @@ def F_Bor(q):
     return trM_borromean(q) * qfact_three(q) / q ** 3
 
 
-#: s5bb 4-loop anomaly coefficient (5-manifold U(1) colour Reeb index).
-#  NB: the q_parameter pin solver historically uses the rounded 46;
-#  the delta is ~0.18 ppb on m_p (owner-gated to reconcile — the pin's
-#  committed 50-digit q₀ was solved with 46; changing it is a re-pin).
+#: Habiro 4-loop coefficient — FIT-TIER (owner ruling 2026-07-03 +
+#  PR #3280): the exact c₄ needed is linear in the q₀ pin offset
+#  (c₄ ≈ 46 is the muon-calibration convention, the μ–p tension
+#  reparametrized), `4143` has no derivation trail in the corpus, and
+#  the fitted tower was STRIPPED from the pin (`q_at`) — the raw proton
+#  pin is canonical. Retained here as the labeled dressing the producer
+#  reports, pending the owner reconcile (bean `2i8g`, #3280 options).
 C4_S5BB = mpf("4143") / mpf("90")
 
 
 def habiro_ratio_s5bb(q, c4=None):
-    """s5bb Habiro 4-loop correction (1 + c₄u⁴)(1 + 4u⁵)(1 − 29u⁶) with
-    u = b·ℏ_q², b = √((q⁴+q²+1)/(q²+1)²). This is the production m_p
-    dressing: m_p = (2·m_μ·F_Bor − 12·m_e) · habiro_ratio_s5bb(q)."""
+    """Habiro 4-loop dressing (1 + c₄u⁴)(1 + 4u⁵)(1 − 29u⁶) with
+    u = b·ℏ_q², b = √((q⁴+q²+1)/(q²+1)²). FIT-TIER (see C4_S5BB note):
+    not part of the raw proton pin; applied by this producer as a
+    labeled dressing pending the owner reconcile."""
     c4 = C4_S5BB if c4 is None else c4
     hbar_q_sq = ((q - 1) / q) ** 2
     b_val = ((q ** 4 + q ** 2 + 1) / (q ** 2 + 1) ** 2) ** mpf("0.5")

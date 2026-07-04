@@ -45,17 +45,18 @@ def _from_witness() -> tuple[float, float] | None:
 def _from_formula() -> tuple[float, float]:
     """Compute the muon-anchored F_Bor identity directly (fallback)."""
     import mpmath as mp
-    from m_p_substrate_identity_50dps import F_Bor, habiro_ratio_s5bb
+    from m_p_substrate_identity_50dps import F_Bor
     from q_parameter import Q as q0, vol_4_1_at
     from codata_constants import M_E_MEV
     q = mp.mpf(str(q0))
     m_e = mp.mpf(str(M_E_MEV))
     hbar_q_sq = ((q - 1) / q) ** 2
     m_mu = m_e * vol_4_1_at(50) / hbar_q_sq           # muon anchor (Vol(4₁))
-    # dim V_(2,1)=2, |S_3|=6, dressed by the s5bb Habiro 4-loop ratio to
-    # match the producer witness (bare identity misses CODATA m_p by
-    # ~−241 ppb; deuteron-from-scratch ledger 2026-07-03)
-    m_p = 2 * (m_mu * F_Bor(q) - 6 * m_e) * habiro_ratio_s5bb(q)
+    # dim V_(2,1)=2, |S_3|=6 — the RAW identity, matching the raw proton
+    # pin (owner ruling 2026-07-03, habiro tower stripped from q_at as a
+    # fit; see m_p_substrate_identity_50dps.habiro_ratio_s5bb for the
+    # fit-tier dressing the producer still reports separately)
+    m_p = 2 * (m_mu * F_Bor(q) - 6 * m_e)
     from derived_masses import q_beta_kashiwara_n2_mev
     m_n = m_p + q_beta_kashiwara_n2_mev() + m_e        # n→p+e+ν̄: Kashiwara b² Q_β (~1 ppb)
     return float(m_p), float(m_n)
