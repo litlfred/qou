@@ -88,20 +88,23 @@ So the deuteron binding dressing is *not* a free choice — but neither is it
 fully derived. This proposition's identity `B_D = E₀·net(p)·Δtr = Q_β·Δtr/h`
 shows the binding dressing `net(p)` is the **bar-even image of the exact same
 object as the $Q$-value** $Q_\beta = |\Delta(\mathrm{net})|·E_0
-= h·\mathrm{net}(p)·E_0$. And that $Q$-value relation
-$Q_\beta = |\Delta(\mathrm{net})|·E_0$ **is the known open core of
-`conj:borromean-quark`** — its "energy-scale ansatz" (Step 8 of
-[`docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md`](2026-05-24-q-beta-net-ansatz-fitting-finding.md)),
-postulated "by construction" and *not yet derived* from the canonical
-per-braid mass tower [`prop:per-braid-mass-tower`](../../content/quantum-observable-universe/braids-and-knots/per-braid-mass-tower.md).
+= h·\mathrm{net}(p)·E_0$. And that $Q$-value relation is **already derived,
+not open** (corpus-grep — see the "Path A" section below):
+[`prop:qbeta-counit-transition`](../../content/quantum-observable-universe/particle-interactions/qbeta-counit-transition.md)
+derives the counit $\varepsilon$ as the *transition/reduction* observable
+(Frobenius pairing against the canonical integral $\omega=G^{-1}\mathbf1$),
+vs the Markov trace $\mathrm{tr}_M$ (pairing against $\mathbf1$) as the *loop/
+mass* observable. A $\beta$-decay is a transition ⇒ counit.
 
-**Therefore "why is binding dressed by net(p)?" is the same open question as
-"why $Q_\beta = |\Delta(\mathrm{net})|·E_0$?"** — the unweighted-NF-net ↔
-leading-order-energy identification (Step 6/8 of the borromean-quark
-closure). One gap, two faces (bar-even binding / bar-odd decay). Note the
-hybrid: `B_D = E₀·net(p)·Δtr` carries BOTH the *unweighted* net(p) dressing
-and the *Markov-weighted* trace difference Δtr — the Step-6 "unweighted net
-vs weighted trace" tension is exactly this mixing.
+**Therefore "why is binding dressed by net(p)?" has the same answer as
+"why $Q_\beta$ uses the counit"** — because the bar-even binding channel, like
+$\beta$-decay, reads the *reduction* content (counit), not the closed-loop
+invariant ($\mathrm{tr}_M$). One derived answer, two faces (bar-even binding /
+bar-odd decay). The residual open item is *not* the functional selection but
+the **tower convergence** `conj:qbeta-trace-counit-convergence` (below). Note
+the hybrid: `B_D = E₀·net(p)·Δtr` carries BOTH the counit net(p) dressing and
+the Markov $\Delta\mathrm{tr}$ of the deuteron — the two functionals whose
+$N{=}0$ ratio is $z$ per `prop:qbeta-counit-closed-form`.
 
 ## How close is `conj:borromean-quark`? (Tier A — discrete identification)
 
@@ -112,13 +115,17 @@ Closure-distance (from the keystone survey +
   $\mathrm{net}(p), \mathrm{net}(n)$ are derived (typed-crossing + exact
   Hecke NF + witness); promoting them from `[BorromeanQuark]` class *fields*
   to Lean *lemmas* is ~1 mechanical reduction lemma, no new mathematics.
-- **The genuine residual is the energy-scale ansatz (Step 8, Path A):**
-  derive $Q_\beta = |\Delta(\mathrm{net})|·E_0$ (equivalently, via this
-  proposition, $B_D = E_0·\mathrm{net}(p)·\Delta\mathrm{tr}$) as the
-  leading-order $h$-expansion of the per-braid mass tower:
-  $\mathfrak m(n) - \mathfrak m(p) - m_e = |\Delta\mathrm{net}|·E_0 + O(h^3)$.
-  **Unexecuted.** Closing it closes *both* the $Q$-value and this binding
-  dressing.
+- **The energy-scale ansatz is DERIVED, not open** (corpus-grep correction):
+  the counit/trace functional selection is
+  [`prop:qbeta-counit-transition`](../../content/quantum-observable-universe/particle-interactions/qbeta-counit-transition.md)
+  and the closed form + gap are Lean-proved
+  ([`prop:qbeta-counit-closed-form`](../../content/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.md),
+  `QOU.Interactions.QBetaEnergyScale` / `QBetaCounitTrace` / `QBetaTowerBound`,
+  sorry-free). The **one** genuine research-grade residual here is the
+  *non-perturbative* **tower-convergence conjecture**
+  `conj:qbeta-trace-counit-convergence`: that the tower-summed *trace* mass
+  difference converges to $\varepsilon(\Delta)\cdot\mathfrak E_0$ with the
+  $+0.17\%$ as its $N{=}0$ remainder.
 - **Plus** the un-Lean-able physical identifications (confinement from the
   Brunnian property, up/down = braid-exponent sign, $T(2,n)$ fermion/boson
   split) — motivated, outside Lean scope.
@@ -132,47 +139,61 @@ that this PR's Lean actually consumes. A reader of only the referenced file
 would wrongly conclude the conjecture is closed. Worth re-pointing the
 `lean.ref` (or splitting the block) — flagged for the owner.
 
-## Path A attempted — REFUTED at leading order (the obstruction is the Markov weight z)
+## Path A — the corpus already derives it (corpus-grep correction)
 
 Producer:
 [`probes/probe_path_a_net_vs_trm_leading_order.py`](../../computations/probes/probe_path_a_net_vs_trm_leading_order.py)
 → `probes/probe-path-a-net-vs-trm-leading-order.witness.json` (audit-only).
 
-Path A hoped to *derive* the energy-scale ansatz
-$Q_\beta = |\Delta(\mathrm{net})|·E_0$ (equivalently $B_D = E_0·\mathrm{net}(p)·\Delta\mathrm{tr}$)
-as the leading-order $h$-expansion of the per-braid mass tower — i.e. that the
-unweighted **net** (counit $\varepsilon$: every NF basis element weight 1)
-equals the mass functional's **Markov trace** $\mathrm{tr}_M$ (the $z$-weighted
-sum) at leading order. **It does not.** Computing both on the exact nucleon
-single-wrap $\Delta(\mathrm{NF}) = (h^2/2)\gamma - (h/2)\sigma_0 - (h/2)\sigma_1$
-(sqrt-free rational $H_3$ reps, braid+Hecke verified):
+**Correction (corpus-grep, per AGENTS.md STRICT).** An earlier revision of
+this section framed "Path A" (derive the energy-scale ansatz by expanding the
+mass tower) as a *novel refutation* and declared the counit-vs-trace functional
+selection an *open question*. **Both are wrong** — the corpus already settles
+this, Lean-verified. The corpus-grep I should have run first turns up:
 
-$$
-\frac{\Delta(\mathrm{tr}_M)}{\Delta(\mathrm{net})} \;\xrightarrow{\;h\to 0\;}\; \tfrac12 \;=\; z\big|_{q\to1}, \qquad z=\frac{1}{\sqrt q+1/\sqrt q}.
-$$
+- [`prop:qbeta-counit-closed-form`](../../content/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.md)
+  (**Lean, sorry-free** — `QOU.Interactions.QBetaEnergyScale.Qbeta_closed`,
+  `QOU.Interactions.QBetaCounitTrace`): proves exactly
+  $\varepsilon(\Delta) = h^2/2 - h$, $\mathrm{tr}_M(\Delta) = h^2/2 - hz$, gap
+  $h(z-1)$, equal iff $z=1$, and $z \le \tfrac12$ on the substrate.
+- [`prop:qbeta-counit-transition`](../../content/quantum-observable-universe/particle-interactions/qbeta-counit-transition.md):
+  **derives the functional selection** — both functionals are Frobenius
+  pairings $\langle\cdot,\cdot\rangle_G = \mathrm{tr}_M(\cdot\,\cdot)$ against
+  different distinguished elements: $\mathrm{tr}_M(\beta)=\langle\beta,\mathbf1\rangle$
+  (closed loop → static **mass**), $\varepsilon(\beta)=\langle\beta,\omega\rangle$
+  with $\omega=G^{-1}\mathbf1$ the canonical integral (crossing-stripped →
+  net reduction → **decay/transition**). A $\beta$-decay is a *transition*
+  (braid reduction, one crossing re-typed $d\to u$), so the counit is the
+  natural observable — not a postulate.
+- `QOU.Interactions.QBetaTowerBound` (**Lean, sorry-free**): `counit_lt_trace`,
+  `trace_neg`, **`counit_dominates`** ($|\varepsilon(\Delta)| > |\mathrm{tr}_M(\Delta)|$),
+  `E0_tower_gap`, residual monotonicity.
 
-So net and $\mathrm{tr}_M$ differ by exactly the Markov weight $z\approx 0.489$
-**at O(1), not O(h)** — this is a *scope-(a)* refutation of the naive Path A.
-The energy-scale ansatz's use of the **counit** $\varepsilon$ (giving net) in
-place of the Markov trace is therefore a genuine **structural functional
-choice**, not a leading-order coincidence of the mass tower. (This confirms
-and quantifies the note in
-[`prop:neutron-qvalue-symbolic`](../../content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md):
-"the counit $\varepsilon$ used here versus the Markov trace $\mathrm{tr}_M$ of
-the mass formula" — Form A/Form B differ by the $z$ normalization.)
+So my probe **rediscovered a Lean-proved result**. Its residual value is only
+as an *independent cross-check via a different route*: I computed
+$\mathrm{tr}_M(\Delta) = h^2/2 - hz$ from the **Wedderburn representation sum**
+$\sum_\lambda y_\lambda \chi^\lambda$ (sqrt-free rational $H_3$ reps), whereas
+the corpus prop derives it from the direct NF Markov weights — the two routes
+agree, and $\Delta\mathrm{tr}_M/\Delta\mathrm{net} \to z$ confirms the corpus's
+"falls short by a factor of two." That is the whole (modest) contribution; the
+functional selection was **not** an open question.
 
-**Reframed wiring gate (borromean-quark Step 8 / Step 6).** Closing the ansatz
-is NOT an $h$-expansion of the mass tower. The real open question is
-**why the $\beta$-decay / binding channel augments (counit $\varepsilon$)
-rather than Markov-traces** — i.e. a derivation that the observable in this
-channel is the augmentation of the NF element, not its Jones–Markov trace.
-Until that functional choice is derived, both the neutron $Q$-value and the
-`+0.12%` D binding dressing remain observation-tier (conditional on
-`conj:borromean-quark`). The naive mass-tower-expansion route is closed
-(refuted); future work should target the counit-vs-trace functional selection,
-not the $h$-expansion.
+**The genuinely open item is narrower and already named:**
+`conj:qbeta-trace-counit-convergence` — the *non-perturbative* claim that the
+tower-summed **trace** mass difference $\mathfrak m(n)-\mathfrak m(p)-m_e$
+converges to $\varepsilon(\Delta)\cdot\mathfrak E_0$ (the counit form) with the
+$+0.17\%$ as the $N{=}0$ remainder. The `QBetaTowerBound` lemmas are "the
+provable frontier around" that conjecture; the convergence itself is the
+research-grade open core. My leading-order $z$ result is one boundary data
+point for it (the $N{=}0$ ratio), nothing more.
 
-Note this also explains the **hybrid** structure of $B_D = E_0·\mathrm{net}(p)·\Delta\mathrm{tr}$
-flagged above: it carries the counit net(p) *and* the Markov $\Delta\mathrm{tr}$
-— two functionals that differ by $z$ — which is precisely why it is a
-near-match rather than a clean single-functional derivation.
+**Consequence for the deuteron dressing.** The functional selection that
+justifies $\varepsilon$ (net) for the $Q$-value carries over to the bar-even
+binding channel by the exact identity of this proposition
+($B_D = E_0\,\mathrm{net}(p)\,\Delta\mathrm{tr} = \mathfrak Q_\beta\,\Delta\mathrm{tr}/h$).
+So "why is binding dressed by net(p)?" inherits the *same* answer as the
+$Q$-value (counit = transition/reduction observable, Frobenius-derived), and
+the *same* residual open item (the tower-convergence conjecture). The hybrid
+$E_0\,\mathrm{net}(p)\,\Delta\mathrm{tr}$ mixes the counit net(p) with the
+Markov $\Delta\mathrm{tr}$ of the deuteron — consistent with, and now located
+against, the counit/trace theory above.

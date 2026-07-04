@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-04T14:07:33.018009+00:00",
-  "commitSha": "c41dd70fc3e95e34f17819ec5d61c337ef49e732",
+  "computedAt": "2026-07-04T14:21:22.683057+00:00",
+  "commitSha": "689791e8e9245e99e40631357a4a7291a332f193",
   "assertions": [
     {
       "name": "delta_net_matches_md",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 331,
+  "durationMs": 330,
   "computation": "probe-path-a-net-vs-trm-leading-order",
   "scriptFile": "probe_path_a_net_vs_trm_leading_order.py",
-  "scriptHash": "08b2ec93567b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "5c20c0e48502",
+  "scriptCommitSha": "689791e8e9245e99e40631357a4a7291a332f193",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,6 +52,6 @@
     "z_at_q_to_1": "1/2",
     "path_a_holds": false,
     "ratio_is_z_at_leading_order": true,
-    "verdict": "PATH A (net = leading-order tr_M mass) REFUTED, scope (a): Δtr_M/Δnet → 1/2 ≠ 1 = z (the Markov weight at q→1). The counit (net) and the Markov trace are genuinely different functionals differing at O(1), NOT a leading-order coincidence — so the borromean-quark energy-scale ansatz Q_β=|Δnet|·E₀ uses the COUNIT ε by structural choice; deriving it requires deriving why the β-decay/binding channel augments (ε) rather than Markov-traces, not an h-expansion of the mass tower. This is the exact Step-6 'unweighted net vs weighted trace' gap, quantified: it is O(1)=z, not O(h)."
+    "verdict": "CROSS-CHECK CONFIRMS prop:qbeta-counit-closed-form (already Lean-proved): Δtr_M/Δnet → 1/2 = z (Markov weight at q→1). Computed here via the Wedderburn Σ_λ y_λ χ^λ route (vs the corpus prop's direct NF-weight route) — agrees. The counit ε (net) and Markov trace tr_M are DERIVED-distinct functionals: tr_M(β)=⟨β,1⟩ (loop/mass), ε(β)=⟨β,ω⟩, ω=G⁻¹1 (transition/decay) per prop:qbeta-counit-transition; β-decay is a transition ⇒ counit. This ratio→z IS the corpus's 'trace falls short by a factor of two'. NOT a novel refutation: the functional selection is derived; the sole open item is the non-perturbative tower convergence conj:qbeta-trace-counit-convergence. This probe is one N=0 boundary data point for it."
   }
 }
