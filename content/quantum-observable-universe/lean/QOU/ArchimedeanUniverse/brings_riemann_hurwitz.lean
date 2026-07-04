@@ -1,5 +1,4 @@
 import Mathlib.Tactic.NormNum
-import Mathlib.Data.Real.Basic
 
 /-!
 # QOU.ArchimedeanUniverse.brings_riemann_hurwitz
