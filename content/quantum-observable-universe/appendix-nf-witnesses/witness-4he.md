@@ -7,7 +7,7 @@ $$
 
 The polynomial $\mathrm{net}(t)$ has $12$ terms in $\mathbb{Z}[t, t^{-1}]$,
 matching the $q$-multinomial coefficient $[2]_t^2 \cdot [3]_t = 12$.
-Doubly magic: both $Z=2$ and $N=2$ are magic numbers.
+Both $Z=2$ and $N=2$ are magic numbers, so ${}^4\mathrm{He}$ is doubly magic.
 
 The high Pauli factor ($0.812$) reflects the strong antisymmetric
 channel dominance characteristic of the $\alpha$-particle.  In the
