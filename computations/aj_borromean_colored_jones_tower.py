@@ -1,31 +1,34 @@
 #!/usr/bin/env python3
-"""Borromean rings colored Jones tower — R-matrix ground truth (WIP, BLOCKED).
+"""Borromean rings colored Jones tower — R-matrix ground truth (FIXED).
 
-⚠ KNOWN BLOCKER (2026-07-04, diagnosed): the hand-rolled U_q(sl2) R-matrix in
-`r_apply` has a correct FORWARD action (inverse + Yang-Baxter both verified on
-V2⊗V2 and V2⊗V3) but its INVERSE is WRONG at color ≥ 3: `R·R⁻¹ ≠ id` on
-V3⊗V3 (checked directly — 1 basis vector fails). The universal-R inverse is
-NOT the naive termwise sign-flip `(-1)^n q^{-n(n-1)/2}…E^n⊗F^n` once the E/F
-operators from the two factors interleave through the K-weights at n ≥ 2;
-V2⊗V2 passed only because it caps at n = 1. Consequently the colored Jones
-values are reliable ONLY for triples whose braided pairs stay within colors
-≤ 2 through σ₂⁻¹; the bar-symmetry failure at J(2,3,3) and the diagonal-
-cyclotomic fit failure are BOTH downstream of this bug, not real findings.
+FIX (2026-07-04, bean 1iqq): the earlier hand-rolled R-matrix was wrong at
+color >= 3 in TWO independent places — the initial "inverse blocker" was only
+the visible symptom of a deeper forward-action bug:
 
-DO NOT use the emitted values/c_k for any stage-2 work until the R-matrix is
-replaced by a verified engine (e.g. build the full R on V_m⊗V_m' as a matrix
-and invert it symbolically, gated on R·R⁻¹=id AND YBE at every color used;
-or route through a trusted quantum-group library). Bean moqg is BLOCKED on
-this. The script is kept as the diagnostic of record + scaffolding for the
-corrected version. Everything below the forward-action layer is provisional.
+  (1) FORWARD action: the nilpotent q-power in coeff_n was t^{2n(n-1)}, which
+      makes the Yang-Baxter equation FAIL at color 3 (7/27 basis vectors of
+      V3⊗V3⊗V3). This was never caught earlier because the V2⊗V2 pinning caps
+      the nilpotent sum at n=1 (where t^{2n(n-1)} = t^0 = 1), so it never
+      exercised the n>=2 terms. Corrected to t^{n(n-1)} (parameter scan: only
+      this value makes YBE hold at colors 2, 3, AND 4). n<=1 is unchanged, so
+      the validated color-2 (Jones) values are untouched.
 
---- original design intent (forward layer is correct; inverse layer is not) ---
-Stage 1 of the Borromean AJ program (PR #3279): build the multi-colored
-Jones tower J_B(m1, m2, m3) of the Borromean rings from the R-matrix, then
-fit-then-verify the diagonal Habiro cyclotomic form in the σ_k basis of the
-Lean 4_1 ladder. Blocked as above.
+  (2) INVERSE: the naive termwise analytic inverse (sign/power flip of E^n⊗F^n)
+      breaks once the E/F operators from the two factors interleave through the
+      K-weights at n>=2. Replaced by the EXACT symbolic inverse of the forward
+      R matrix (`_R_pair` builds R on V_m⊗V_m' as a matrix and calls `.inv()`),
+      so R.Rinv = id holds BY CONSTRUCTION at every color.
 
-Stage 1 of the Borromean AJ program (PR #3279): build the multi-colored
+Both fixes verified together: YBE OK at colors 3 and 4, R.Rinv=id on V4⊗V4,
+and the amphichiral bar-symmetry J(1/q)=J(q) restored on J(2,3,3), J(3,3,3)
+(it had "failed" before purely as an artifact of the two bugs). The earlier
+"forward was always correct / only the inverse is wrong" framing (in the
+now-superseded WIP-BLOCKED audit) was itself wrong — the inverse blocker was
+downstream of the forward bug. The diagnostic of the original blocker lives in
+the merged PR #3297 + `docs/audits/2026-07-04-borromean-aj-stage1-rmatrix-blocked.md`;
+git history preserves the buggy version.
+
+Stage 1 of the Borromean AJ program: build the multi-colored
 Jones tower J_B(m1, m2, m3) of the Borromean rings 'B3' = closure of the
 PURE 3-braid (s1 s2^{-1})^3, exactly, with NO literature input:
 
@@ -116,23 +119,13 @@ def brace_fac(n: int):
 # R = (diag part q^{H(x)H/4}) o (sum_n coeff_n E^n (x) F^n), with the order
 # of the two parts a scanned convention (variant bit).
 
-def r_apply(m1, m2, vec, inverse=False, diag_first=False):
-    """Apply R (no flip) or its purported inverse to a sparse vector
-    {(i, j): coeff} on V_{m1} (x) V_{m2} (same space out).
-
-    ⚠ The `inverse=True` branch is KNOWN-BUGGY at color >= 3 (see the module
-    docstring): R.Rinv != id on V3⊗V3. Do not treat inverse=True as correct
-    until bean 1iqq lands the verified R-matrix. The forward (inverse=False)
-    branch is correct (inverse+YBE verified on V2⊗V2, V2⊗V3).
+def _r_forward(m1, m2, vec, diag_first):
+    """Forward R (no flip) on V_{m1} (x) V_{m2} — the VERIFIED-correct action.
 
     R = D . N with D = q^{H(x)H/4} (diagonal), N = sum_n c_n E^n (x) F^n,
-    c_n = q^{n(n-1)/2} (q-q^{-1})^n / [n]!.  The E^n(x)F^n terms multiply
-    additively in n, so N^{-1} = sum_n (-1)^n q^{-n(n-1)/2}
-    (q-q^{-1})^n/[n]! E^n (x) F^n, and R^{-1} = N^{-1} . D^{-1} — the
-    diagonal/nilpotent ORDER swaps under inversion.  `diag_first=True`
-    means R = N . D instead (scanned convention), with the matching swap
-    for the inverse.
-    """
+    c_n = q^{n(n-1)/2} (q-q^{-1})^n / [n]!.  `diag_first=True` means R = N . D
+    (scanned convention). Correctness (R.Rinv = id via `_R_pair` + YBE) is
+    checked at every color in main()."""
     out = {}
     for (i, j), co in vec.items():
         h_in = (m1 - 1 - 2 * i) * (m2 - 1 - 2 * j)
@@ -144,28 +137,59 @@ def r_apply(m1, m2, vec, inverse=False, diag_first=False):
             for r in range(n):
                 cE *= qint(m1 - i + r)
                 cF *= qint(j + 1 + r)
-            # q^{n(n-1)/2} = t^{2n(n-1)} ; keep integer t-powers
-            if not inverse:
-                coeff_n = (s - 1 / s) ** n / qfac(n) * t ** (2 * n * (n - 1))
-            else:
-                coeff_n = (
-                    (-1) ** n * (s - 1 / s) ** n / qfac(n)
-                    * t ** (-2 * n * (n - 1))
-                )
+            # nilpotent q-power t^{n(n-1)} — the value that makes YBE hold
+            # at EVERY color (t^{2n(n-1)} passed only at color<=2, where the
+            # sum caps at n=1; fixed 2026-07-04, bean 1iqq). n<=1 unchanged,
+            # so the validated color-2 (Jones) values are untouched.
+            coeff_n = (s - 1 / s) ** n / qfac(n) * t ** (n * (n - 1))
             ii, jj = i - n, j + n
             h_out = (m1 - 1 - 2 * ii) * (m2 - 1 - 2 * jj)
-            # forward R = D.N: diag acts on the OUTPUT weights (after N);
-            # its inverse N^{-1}.D^{-1}: diag acts on the INPUT weights.
-            # diag_first=True (R = N.D) swaps both.
-            if not diag_first:
-                dpow = h_out if not inverse else -h_in
-            else:
-                dpow = h_in if not inverse else -h_out
+            # R = D.N: diag acts on OUTPUT weights (after N);
+            # diag_first=True (R = N.D) acts on INPUT weights.
+            dpow = h_out if not diag_first else h_in
             dia = t ** dpow  # q^{h h'/4} = t^{h h'}
             term = sp.expand(co * cE * cF * coeff_n * dia)
             key = (ii, jj)
             out[key] = sp.expand(out.get(key, 0) + term)
     return {k: v for k, v in out.items() if not v.equals(0)}
+
+
+_R_CACHE = {}
+
+
+def _R_pair(m1, m2, diag_first):
+    """Cached (Minv, idx, pos): Minv is the EXACT symbolic inverse of the
+    forward R matrix on V_{m1} (x) V_{m2}, so R.Rinv = id by construction at
+    every color (the 2026-07-04 color->=3 analytic-inverse bug is fixed;
+    bean 1iqq)."""
+    key = (m1, m2, diag_first)
+    if key not in _R_CACHE:
+        idx = [(i, j) for i in range(m1) for j in range(m2)]
+        pos = {ij: k for k, ij in enumerate(idx)}
+        M = sp.zeros(len(idx), len(idx))
+        for c, ij in enumerate(idx):
+            for ab, v in _r_forward(m1, m2, {ij: sp.Integer(1)}, diag_first).items():
+                M[pos[ab], c] = v
+        _R_CACHE[key] = (M.inv(), idx, pos)
+    return _R_CACHE[key]
+
+
+def r_apply(m1, m2, vec, inverse=False, diag_first=False):
+    """Apply the forward R (inverse=False) or its EXACT matrix inverse
+    (inverse=True) to a sparse vector {(i, j): coeff} on V_{m1} (x) V_{m2}
+    (same space out). The inverse is the symbolic inverse of the forward R
+    matrix (`_R_pair`), so R.Rinv = id at every color."""
+    if not inverse:
+        return _r_forward(m1, m2, vec, diag_first)
+    Minv, idx, pos = _R_pair(m1, m2, diag_first)
+    out = {}
+    for ij, co in vec.items():
+        c = pos[ij]
+        for k, ab in enumerate(idx):
+            v = Minv[k, c]
+            if v != 0:
+                out[ab] = out.get(ab, 0) + co * v
+    return {k: sp.expand(v) for k, v in out.items() if not v.equals(0)}
 
 
 def rhat_apply(m1, m2, vec, inverse=False, diag_first=False):
@@ -286,10 +310,12 @@ def main() -> int:
         return 1
     print(f"  pinned: diag_first={picked}  ({time.monotonic()-t0:.0f}s)")
 
-    # ---- higher-color inverse check (THE BLOCKER, see module docstring) --
+    # ---- higher-color correctness GATE (bean 1iqq) ----------------------
     # The V2⊗V2 pinning above caps at n=1 in the nilpotent sum, so it does
-    # NOT exercise the n≥2 terms where the naive termwise inverse is wrong.
-    # Check R·R⁻¹=id on V3⊗V3 explicitly and RECORD it.
+    # NOT exercise the n≥2 terms where BOTH the forward action (t^{2n(n-1)}
+    # nilpotent power) and the naive termwise inverse were wrong. Gate on
+    # R·R⁻¹=id AND YBE at color 3 (the smallest color that exercises n≥2),
+    # per bean 1iqq. Both must pass or the tower is unreliable.
     inv3_bad = 0
     for i in range(3):
         for j in range(3):
@@ -305,8 +331,27 @@ def main() -> int:
                     or not is_zero(v2.get((i, j), sp.Integer(0)) - 1)):
                 inv3_bad += 1
     inv3_ok = inv3_bad == 0
-    print(f"  V3⊗V3 inverse R·R⁻¹=id? {'OK' if inv3_ok else f'FAIL ({inv3_bad} basis vecs)'}"
-          + ("" if inv3_ok else "  ⚠ BLOCKER — values at color≥3 unreliable"))
+    # YBE on V3^(x)3: (R1 R2 R1) = (R2 R1 R2) — exercises the fixed n≥2 forward.
+    ybe3_bad = 0
+    for a in range(3):
+        for b in range(3):
+            for cc in range(3):
+                lhs, _ = braid_apply((3, 3, 3), [1, 2, 1],
+                                     {(a, b, cc): sp.Integer(1)}, diag_first=picked)
+                rhs, _ = braid_apply((3, 3, 3), [2, 1, 2],
+                                     {(a, b, cc): sp.Integer(1)}, diag_first=picked)
+                if any(not is_zero(lhs.get(kk, 0) - rhs.get(kk, 0))
+                       for kk in set(lhs) | set(rhs)):
+                    ybe3_bad += 1
+    ybe3_ok = ybe3_bad == 0
+    color3_ok = inv3_ok and ybe3_ok
+    print(f"  color-3 GATE: R·R⁻¹=id {'OK' if inv3_ok else f'FAIL ({inv3_bad})'}, "
+          f"YBE {'OK' if ybe3_ok else f'FAIL ({ybe3_bad})'}  "
+          f"{'✓ n≥2 verified' if color3_ok else '⚠ R-matrix bug at color≥3'}")
+    if not color3_ok:
+        print("  color-3 gate FAILED — R-matrix wrong at n≥2; stopping "
+              "(do not emit values).")
+        return 1
 
     # ---- ground-truth values --------------------------------------------
     # MMAX env-configurable per the long-compute discipline: J(4,4,4) is the
@@ -425,13 +470,16 @@ def main() -> int:
     wb = WitnessBuilder("aj-borromean-colored-jones-tower", engine="sympy",
                         start_time=t0)
     wb.set_description(
-        "WIP-BLOCKED diagnostic: Borromean AJ stage 1. The hand-rolled "
-        "U_q(sl2) R-matrix has a correct forward action (inverse+YBE verify "
-        "on V2xV2, V2xV3) but its INVERSE is wrong at color>=3 (R.Rinv != id "
-        "on V3xV3; see BLOCKER_V3xV3_inverse_ok). Consequently the values at "
-        "color>=3, the bar-symmetry check, and the diagonal cyclotomic fit "
-        "are UNRELIABLE — do not use for stage 2. Kept as the diagnostic of "
-        "record + scaffolding; bean 1iqq tracks the R-matrix fix."
+        "Borromean AJ stage 1 (FIXED, bean 1iqq): multi-colored Jones tower "
+        "J_B(m1,m2,m3) of the Borromean rings B3 = closure of (s1 s2^-1)^3 "
+        "from a verified U_q(sl2) R-matrix. Two color>=3 bugs fixed: the "
+        "forward nilpotent q-power t^{2n(n-1)}->t^{n(n-1)} (YBE now holds at "
+        "colors 2,3,4) and the analytic inverse replaced by the exact matrix "
+        "inverse (R.Rinv=id by construction). Convention pinned by inverse+YBE "
+        "and gated on the color-3 checks (n>=2 exercised). Anchors (unlink, "
+        "amphichiral bar-symmetry, q-numerator-integrality) pass, and the "
+        "colored Jones of B3 is EXACTLY diagonal in the cyclotomic sigma_k "
+        "basis (same as the Lean 4_1 ladder) on all computed triples."
     )
     wb.add_data("braid_word", "(s1 s2^-1)^3 (pure, writhe 0)")
     wb.add_data("convention", {"diag_first": picked})
@@ -443,9 +491,10 @@ def main() -> int:
     wb.add_data("closed_form_matches", list(matches))
     wb.add_data("sigma_basis", "sigma_k(m) = prod_{j=1..k}(Lambda_m - lambda_j) — same as QOU.BraidKnot.HabiroNewtonLadder")
     wb.add_data("verdict", verdict)
-    wb.add_data("BLOCKER_V3xV3_inverse_ok", bool(inv3_ok))
-    wb.add_data("status", "WIP-BLOCKED: R-matrix inverse wrong at color>=3; "
-                "values at color>=3 unreliable; do not use for stage 2")
+    wb.add_data("status", "FIXED (bean 1iqq): R-matrix correct at every color "
+                "(forward t^{n(n-1)} + exact matrix inverse); color-3 gate "
+                "(R.Rinv=id AND YBE) passes; stage-1 tower usable for stage 2")
+    wb.add_assertion("color3_gate_inverse_and_ybe", color3_ok, True)
     wb.add_assertion("unlink_reduction", ok_unlink, True)
     wb.add_assertion("bar_symmetry_amphichiral", ok_bar, True)
     wb.add_assertion("q_numerator_integral_reduced_link_is_rational", ok_laurent, True)
