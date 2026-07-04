@@ -2,6 +2,7 @@ import { definition } from "../../schema/builders";
 
 export default definition({
   label: "def:knot-particle-generation",
+  defines: ["torus-knot-generators", "linking-operations"],
   title: "Knot-particle generation from $T_{m,n}$ torus knot generators",
   tags: [
     "knot",

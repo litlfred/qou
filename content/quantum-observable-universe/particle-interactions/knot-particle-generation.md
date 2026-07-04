@@ -2,9 +2,9 @@
 
 **Definition.**
 *The particle spectrum is generated from a finite set of
-:defterm[torus knot generators] $T_{m,n}$ (with $\gcd(m,n) = 1$)
+:defterm[torus knot generators]{#torus-knot-generators} $T_{m,n}$ (with $\gcd(m,n) = 1$)
 embedded in the standard torus $\mathbb{T}^2 \subset S^3$, together with
-two :defterm[linking operations] that act on the exceptional divisor and
+two :defterm[linking operations]{#linking-operations} that act on the exceptional divisor and
 the color-tube fibration. The **torus knot generators** are the family*
 
 $$

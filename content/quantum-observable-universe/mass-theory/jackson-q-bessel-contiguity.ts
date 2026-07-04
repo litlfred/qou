@@ -1,7 +1,7 @@
 import { proof } from "../../schema/builders";
 
 export default proof({
-  label: "proof:jackson-q-bessel-contiguity",
+  label: "prf:jackson-q-bessel-contiguity",
   of: "prop:jackson-q-bessel-contiguity-recurrence",
   lean: {
     ref: "qou:QOU.QBeta.qbessel_first_kind_coeff_closed_form",

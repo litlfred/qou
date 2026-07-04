@@ -1,7 +1,7 @@
 *Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
 
 **Definition.**
-*The :defterm[per-nucleon channel decomposition] of the typed Garside
+*The :defterm[per-nucleon channel decomposition]{#per-nucleon-channel-decomposition} of the typed Garside
 element for a nucleus of mass number $A$ is the factorization*
 
 $$
