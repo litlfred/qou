@@ -73,7 +73,36 @@ witness `aj-masbaum-crosscheck`):**
   is now **literature-anchored** (Masbaum's left-handed K₁), upgrading the
   earlier "self-anchored against V(3₁)" status.
 
-## Borromean stage 1: R-matrix ground truth, fit-then-verify cyclotomics
+## Borromean stage 1: BLOCKED on an R-matrix inverse bug at color ≥ 3 (2026-07-04)
+
+**Honest status update.** The stage-1 build below does **not** yield a usable
+ground truth yet. The hand-rolled U_q(sl₂) R-matrix in
+[`aj_borromean_colored_jones_tower.py`](../../computations/aj_borromean_colored_jones_tower.py)
+has a **correct forward action** — inverse *and* Yang–Baxter both verify on
+V₂⊗V₂ and V₂⊗V₃ — but its **inverse is wrong at color ≥ 3**: `R·R⁻¹ ≠ id`
+on **V₃⊗V₃** (checked directly; 1 basis vector fails, now a self-check in the
+script + witness field `BLOCKER_V3xV3_inverse_ok`). The V₂⊗V₂ convention-pin
+caps the nilpotent sum at n = 1, so it never exercises the n ≥ 2 terms where
+the naive termwise inverse `(-1)^n q^{-n(n-1)/2}…E^n⊗F^n` breaks down (the
+E/F operators from the two tensor factors interleave through the K-weights).
+
+Everything downstream is therefore unreliable and **must not be read as a
+finding**: the bar-symmetry "failure" at J(2,3,3) (the first triple where
+σ₂⁻¹ acts on two color-3 strands — all lower triples ARE bar-symmetric, as
+the amphichiral link requires) and the diagonal-cyclotomic fit failure are
+both artifacts of the R⁻¹ bug, not statements about the Borromean rings.
+Scoped per the "before declaring refuted" discipline: this is a
+**(a) scope-limited** blocker on *my construction*, not a structural claim
+about Borromean diagonality either way — the diagonal Habiro form is neither
+confirmed nor refuted here.
+
+**Unblock path (bean `moqg`, blocked):** replace `r_apply` with a verified
+R-matrix — build the full R on V_m⊗V_m' as an explicit matrix and invert it
+symbolically, gated on `R·R⁻¹=id` AND YBE at *every* color used (not just
+V₂⊗V₂); or route through a trusted quantum-group library. Only the
+forward-action layer + the anchor/fit scaffolding are reusable.
+
+## Borromean stage 1 (original design; forward layer correct, inverse blocked)
 
 With no accessible literature formula for the Borromean colored Jones
 (Habiro [H1] unavailable), the epistemics are flipped: rather than
