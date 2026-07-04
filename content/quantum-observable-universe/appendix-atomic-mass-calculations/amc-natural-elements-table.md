@@ -5,7 +5,7 @@ gives the QOU prediction $M_q$, the observed mass $M_o$
 (CODATA 2022 + AME2020), the absolute deviation $|\Delta|$, and
 the relative deviation $\delta$ in percent. Because the formula
 recombines CODATA/AME2020 inputs without an independent prediction
-(see the source classification in [prose:amc-summary](#prose:amc-summary)),
+(see the source classification in the [summary](#prose:amc-summary)),
 the deviations are arithmetic-consistency checks, not predictive
 tests. Sub-keV agreement across all 92 elements confirms the
 formula's bookkeeping.
