@@ -50,8 +50,12 @@ warnings.filterwarnings("ignore")
 import mpmath as mp  # noqa: E402
 import sympy as sp  # noqa: E402
 
-DPS = 50
-mp.mp.dps = DPS + 10
+from _precision import set_compute_dps, COMPUTE_DPS  # noqa: E402
+
+# Use the shared precision infra so the witness precisionMetadata (derived
+# from qou_substrate.precision defaults) matches the dps actually used.
+set_compute_dps()
+DPS = COMPUTE_DPS
 
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from codata_constants import (  # noqa: E402
