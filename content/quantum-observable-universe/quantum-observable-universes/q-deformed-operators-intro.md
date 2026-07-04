@@ -1,4 +1,4 @@
-_[draft]_ The categorical $q$-deformed operators of the previous
+The categorical $q$-deformed operators of the previous
 section live abstractly on $\Omega^\bullet(A)$; we now specialise
 them to a concrete CR manifold $M$ and read the resulting
 formulas in classical differential-geometric language. Each operator inherits a uniform interpolation pattern

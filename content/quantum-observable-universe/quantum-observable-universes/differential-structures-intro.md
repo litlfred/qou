@@ -1,4 +1,4 @@
-_[draft]_ The PawLei machinery treated $\mathrm{Hom}$-spaces;
+The PawLei machinery treated $\mathrm{Hom}$-spaces;
 we now turn to first-order differential structure on $A$ itself
 — the categorical Reeb derivation, the projective-line object,
 the affine chart it carries, and the fibre-adjoint involution

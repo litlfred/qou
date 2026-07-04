@@ -1,4 +1,4 @@
-_[draft]_ With the smooth Bring surface and its cyclotomic reduction
+With the smooth Bring surface and its cyclotomic reduction
 in hand, we can write the gauge data the rest of the chapter uses.
 **Quaternionic spectral resolvents** (def) introduces the resolvent
 basis $\{\omega_k\}$ tied to the quaternionic structure on the

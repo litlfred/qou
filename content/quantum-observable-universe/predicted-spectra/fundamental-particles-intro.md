@@ -1,4 +1,4 @@
-_[draft]_ The unit particle was the simplest defect. We now populate
+The unit particle was the simplest defect. We now populate
 the full elementary spectrum the embeddable-knot generators of the
 previous sections support. **Up quark** (def) and **Down quark**
 (def) fix the two light-quark assignments; **Electron** (def),

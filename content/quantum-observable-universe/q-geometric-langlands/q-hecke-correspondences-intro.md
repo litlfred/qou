@@ -1,4 +1,4 @@
-_[draft]_ Building on the moduli of $q$-local systems, we introduce the
+Building on the moduli of $q$-local systems, we introduce the
 algebraic operators that govern the automorphic side. The section
 defines the **$q$-Hecke operator** (def) — a Hecke modification twisted
 by the Iwahori–Hecke generators $\sigma_i$ of $H_n(q)$ acting on the

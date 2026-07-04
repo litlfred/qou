@@ -1,4 +1,4 @@
-_[draft]_ The $q$-deformed hydrodynamics of the preceding sections
+The $q$-deformed hydrodynamics of the preceding sections
 delivers a closed evolution equation on $\Omega^1(A)$. We now prove
 that this evolution is globally regular whenever $q > 1$, using the
 spectral theory of the $q$-Laplacian and the quantum Peter--Weyl

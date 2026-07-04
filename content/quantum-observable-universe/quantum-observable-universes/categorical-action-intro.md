@@ -1,4 +1,4 @@
-_[draft]_ The Lagrangian $\mathcal{L}_q$ is an endomorphism
+The Lagrangian $\mathcal{L}_q$ is an endomorphism
 of $A$; we now trace it to a morphism $\mathbf{1} \to
 \mathbf{1}$ and read off the gravity, gauge, and matter terms
 that the QOU axioms force into the result. The trace is supplied

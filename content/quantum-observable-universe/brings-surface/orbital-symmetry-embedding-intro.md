@@ -1,4 +1,4 @@
-_[draft]_ The topological mass spectrum of the previous section
+The topological mass spectrum of the previous section
 extracts particle masses from knots embedded in Bring's surface.
 We now ask which cohomological room those knots occupy.
 **The orbital space at shell $n$ is the space of framing-$k$

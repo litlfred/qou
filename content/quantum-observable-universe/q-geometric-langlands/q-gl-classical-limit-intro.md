@@ -1,4 +1,4 @@
-_[draft]_ Having stated the conjecture on the non-torsion locus, we
+Having stated the conjecture on the non-torsion locus, we
 verify that the $q \to 1$ degeneration recovers familiar geometry and
 read the resulting structure physically. The **Classical limit of the
 $q$-Geometric Langlands correspondence** (conj) asserts that

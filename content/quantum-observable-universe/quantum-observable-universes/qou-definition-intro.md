@@ -1,4 +1,4 @@
-_[draft]_ This chapter opens by adding four conditions to the
+This chapter opens by adding four conditions to the
 quantum universe of Chapter 1 — non-degenerate integration,
 observability, measurability via vanishing categorical Chern
 classes, and the categorical volume constraint — and naming the

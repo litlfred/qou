@@ -1,4 +1,4 @@
-_[draft]_ The intrinsic color cubic of the previous section sets up
+The intrinsic color cubic of the previous section sets up
 exactly the data needed to identify an elliptic curve over the color
 parameter. **Color fibre as an elliptic curve** (prop) realises this:
 the generic color fibre carries the Weierstrass structure $\mathcal{E}_q$,

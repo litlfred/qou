@@ -1,4 +1,4 @@
-_[draft]_ The gauge term $\int_A \mathrm{tr}_A(F_\nabla \wedge_q
+The gauge term $\int_A \mathrm{tr}_A(F_\nabla \wedge_q
 \star_q F_\nabla)$ of the canonical action takes its extremal
 value when the curvature is $\star_q$-self-dual; we make this
 precise and read off the consequences for the categorical
