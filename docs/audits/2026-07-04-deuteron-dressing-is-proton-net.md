@@ -72,10 +72,71 @@ bar-odd channel, `h` bridging them.
   → `probe-d-dressing-is-proton-net.witness.json` (audit-only, 2/2;
   `|Δ(net)| = h·net(p)` to 5e-61).
 
-## Next (the wiring gate, unchanged)
+## Why is binding dressed by the proton net coefficient? (answered — it is ONE gap with the Q-value)
 
-Deriving that the binding functional *carries* `net(p)` (not just that it
-numerically matches) is the remaining step to wire the `+0.12%` D result.
-Candidate route: the single p-n interface of the deuteron chain contributes
-its net coefficient to the bar-even binding channel — connect the interface
-census (`closed_form_tau_M`) to the net-coefficient sum. Research-grade.
+`net(p)` is the **unweighted single-wrap normal-form net coefficient** of
+the proton's typed-crossing word in $H_3(q)$ — and it is already *derived*,
+not postulated: the typed-crossing operators
+[`def:typed-crossing-operator`](../../content/quantum-observable-universe/particle-interactions/typed-crossing-operator.md)
+$C(u,u)=\sigma$, $C(d,d)=\sigma-h$ (Hecke $\sigma^{-1}$),
+$C(u,d)=\sigma-\tfrac{h}{2}$ (the u↔d-swap-forced mean) reduce the proton
+word $\sigma_0(\sigma_1-\tfrac{h}{2})$ to NF with identity/$\gamma$
+coefficient $\mathrm{net}(p)=1-\tfrac{h}{2}$ (compute witness
+`computations/nf-qvalues.witness.json`).
+
+So the deuteron binding dressing is *not* a free choice — but neither is it
+fully derived. This proposition's identity `B_D = E₀·net(p)·Δtr = Q_β·Δtr/h`
+shows the binding dressing `net(p)` is the **bar-even image of the exact same
+object as the $Q$-value** $Q_\beta = |\Delta(\mathrm{net})|·E_0
+= h·\mathrm{net}(p)·E_0$. And that $Q$-value relation
+$Q_\beta = |\Delta(\mathrm{net})|·E_0$ **is the known open core of
+`conj:borromean-quark`** — its "energy-scale ansatz" (Step 8 of
+[`docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md`](2026-05-24-q-beta-net-ansatz-fitting-finding.md)),
+postulated "by construction" and *not yet derived* from the canonical
+per-braid mass tower [`prop:per-braid-mass-tower`](../../content/quantum-observable-universe/braids-and-knots/per-braid-mass-tower.md).
+
+**Therefore "why is binding dressed by net(p)?" is the same open question as
+"why $Q_\beta = |\Delta(\mathrm{net})|·E_0$?"** — the unweighted-NF-net ↔
+leading-order-energy identification (Step 6/8 of the borromean-quark
+closure). One gap, two faces (bar-even binding / bar-odd decay). Note the
+hybrid: `B_D = E₀·net(p)·Δtr` carries BOTH the *unweighted* net(p) dressing
+and the *Markov-weighted* trace difference Δtr — the Step-6 "unweighted net
+vs weighted trace" tension is exactly this mixing.
+
+## How close is `conj:borromean-quark`? (Tier A — discrete identification)
+
+Closure-distance (from the keystone survey +
+[`2026-05-09-conjecture-closure-tractability.md`](2026-05-09-conjecture-closure-tractability.md), Tier A):
+
+- **Nearly hypothesis-free already:** the net coefficients
+  $\mathrm{net}(p), \mathrm{net}(n)$ are derived (typed-crossing + exact
+  Hecke NF + witness); promoting them from `[BorromeanQuark]` class *fields*
+  to Lean *lemmas* is ~1 mechanical reduction lemma, no new mathematics.
+- **The genuine residual is the energy-scale ansatz (Step 8, Path A):**
+  derive $Q_\beta = |\Delta(\mathrm{net})|·E_0$ (equivalently, via this
+  proposition, $B_D = E_0·\mathrm{net}(p)·\Delta\mathrm{tr}$) as the
+  leading-order $h$-expansion of the per-braid mass tower:
+  $\mathfrak m(n) - \mathfrak m(p) - m_e = |\Delta\mathrm{net}|·E_0 + O(h^3)$.
+  **Unexecuted.** Closing it closes *both* the $Q$-value and this binding
+  dressing.
+- **Plus** the un-Lean-able physical identifications (confinement from the
+  Brunnian property, up/down = braid-exponent sign, $T(2,n)$ fermion/boson
+  split) — motivated, outside Lean scope.
+
+**Doc-hygiene flag (not fixed here — keystone block, judgment call):** the
+conjecture block's `lean.ref` points at `QOU.Archimedean.BorromeanQuark`,
+whose instance is discharged *definitionally* (hollow — `volume_calibrates_mass`
+closes by `rfl`). The genuinely-conjectural content (net coefficients + $Q$-value
+ansatz, no instance) lives in the sibling `QOU.ParticleInteractions.BorromeanQuark`
+that this PR's Lean actually consumes. A reader of only the referenced file
+would wrongly conclude the conjecture is closed. Worth re-pointing the
+`lean.ref` (or splitting the block) — flagged for the owner.
+
+## Next (the wiring gate, now precisely located)
+
+The wiring gate for the `+0.12%` D binding result is **Path A** above (Step 8
+of the borromean-quark closure): a leading-order $h$-expansion of
+`prop:per-braid-mass-tower` showing the unweighted net difference is the
+leading energy. This is research-grade and is the *same* derivation that
+would upgrade the neutron $Q$-value from "ansatz" to "derived". Executing it
+closes both.
