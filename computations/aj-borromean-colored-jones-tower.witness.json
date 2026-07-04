@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-04T13:05:21.727671+00:00",
-  "commitSha": "f067a3dba537083e9472830b57efce06bb421733",
+  "computedAt": "2026-07-04T13:23:03.426249+00:00",
+  "commitSha": "ccbdcf894661fafe3441e68cf9cd5419f92cf696",
   "assertions": [
     {
       "name": "unlink_reduction",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 96659,
+  "durationMs": 121457,
   "computation": "aj-borromean-colored-jones-tower",
   "scriptFile": "aj_borromean_colored_jones_tower.py",
-  "scriptHash": "80f6c51ccd72",
-  "scriptCommitSha": "968e47d54f880ffd510297a5a67d5db3dd6b1de2",
+  "scriptHash": "a4814fe533b8",
+  "scriptCommitSha": "ccbdcf894661fafe3441e68cf9cd5419f92cf696",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,7 +46,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Stage 1 of the Borromean AJ program: exact multi-colored Jones of the Borromean rings from the U_q(sl2) R-matrix (convention pinned by inverse+YBE; writhe-0 pure braid, amphichiral link), with the diagonal Habiro cyclotomic form fit on the diagonal and verified exactly on all mixed-color triples; c_k closed form identified.",
+  "description": "WIP-BLOCKED diagnostic: Borromean AJ stage 1. The hand-rolled U_q(sl2) R-matrix has a correct forward action (inverse+YBE verify on V2xV2, V2xV3) but its INVERSE is wrong at color>=3 (R.Rinv != id on V3xV3; see BLOCKER_V3xV3_inverse_ok). Consequently the values at color>=3, the bar-symmetry check, and the diagonal cyclotomic fit are UNRELIABLE — do not use for stage 2. Kept as the diagnostic of record + scaffolding; bean 1iqq tracks the R-matrix fix.",
   "data": {
     "braid_word": "(s1 s2^-1)^3 (pure, writhe 0)",
     "convention": {
