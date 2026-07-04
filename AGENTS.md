@@ -741,7 +741,7 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 | Leg | Target | Status |
 |-----|--------|--------|
 | **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) at substrate q_0 | met — `_precision.py` default is 65 dps compute / 50 dps serialization (10⁻⁵⁰ absolute truncation) |
-| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | 3/7 met (m_p, m_e, m_K/m_π) — see `per-observable-100x-status.witness.json` (fresh run 2026-05-31); the 4 missing observables (m_μ, Q_β, m_n, Δ_pn) — note **m_μ misses by 963.6× post-re-pin**, see below — and the Q_β/m_n/Δ_pn trio share a single root cause documented in [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md) |
+| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | 2/7 met (m_e, m_K/m_π) — see `per-observable-100x-status.witness.json` (`beats_100x_count=2`); the 5 missing observables (m_p, m_μ, Q_β, m_n, Δ_pn) — note **m_p misses by ~437× since 2026-07-04** (the fitted Habiro tower that landed it on CODATA to 0.0004 ppb was dropped; de-fitted round-trip +1.35 ppb — see [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)) and **m_μ misses by 963.6× post-re-pin**, see below — and the Q_β/m_n/Δ_pn trio share a single root cause documented in [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md) |
 
 **Key distinctions** (avoid agent confusion):
 
@@ -759,9 +759,15 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
   Post-re-pin it is a *prediction* (m_e × (m_μ/m_e)_CODATA) and misses
   the 100× target by **963.6×** (209.8 ppb vs 0.2177 ppb target) per
   the dashboard. An earlier version of this table listed "4/7 met
-  (… m_μ …)"; that was stale (the q0-repin staleness class). The
-  authoritative count is **3/7**, verified by a fresh
-  `per_observable_100x_status.py` run on 2026-05-31.
+  (… m_μ …)"; that was stale (the q0-repin staleness class).
+- **m_p dropped from "met" 2026-07-04.** Through 2026-07-04 the count was
+  3/7 (m_e, m_p, m_K/m_π), but m_p "met" only because a fitted Habiro
+  tower `(1+46u⁴)(1+4u⁵)(1−29u⁶)` landed it on CODATA to 0.0004 ppb. That
+  tower was a muon-era fit left applied to the proton-pinned q₀ (a live
+  +242 ppb regression) and was **dropped**; the honest documented-pin
+  round-trip is +1.35 ppb, a ~437× miss. So the authoritative count is now
+  **2/7** (m_e, m_K/m_π), per `beats_100x_count=2`. Full analysis:
+  [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md).
 - **"1 ppQ" by itself is ambiguous** — say "L1 compute met" or
   "L2 met for observable X" not bare "1 ppQ".
 - **1 ppQ** = 1 part per quadrillion = 10⁻¹⁵ relative = 10⁻⁶ ppb.
@@ -847,7 +853,9 @@ muon; muon-anchor → ~4000σ on proton).
    prediction (963.6×, FAIL), never "exact / ~0 ppb / MET".** An m_μ
    value ≈ CODATA computed at the muon q₀ is the CAL-2 calibration
    tautology ("equality by construction"), **not** an accuracy win.
-   The canonical L2 count is **3/7** (m_e, m_p, m_K/m_π), **not** 4/7.
+   The canonical L2 count is **2/7** (m_e, m_K/m_π) since 2026-07-04
+   (m_p dropped when its fitted Habiro tower was removed — de-fitted
+   round-trip +1.35 ppb, ~437× miss); **not** 3/7 or 4/7.
 2. **Two q₀ live in the repo; do not conflate them:**
    - **Package layer** `tools/qou-substrate/.../constants.py` (`Q`,
      `q_at()`, `Q_50_DIGIT_STR`) is **proton-pinned**
