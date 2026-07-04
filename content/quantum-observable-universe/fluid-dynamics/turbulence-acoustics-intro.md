@@ -13,10 +13,9 @@ moduli space** (rem) records the geometric phase accumulated by
 filament configurations under adiabatic transport. The structural
 content of vortex oscillations is then derived in **Kelvin wave
 dispersion from the $q$-Laplacian eigenvalue problem** (prop), with
-**Classical limit of the $q$-Kelvin dispersion** (rem) checking the
+Remark: Classical limit of the $q$-Kelvin dispersion checking the
 $q \to 1$ recovery of the classical self-induction law. We close
-with **Acoustic horizon formation and gravitational emergence**
-(prop): perturbations propagate on an acoustic metric whose horizons
+with Proposition: Acoustic horizon formation and gravitational emergence: perturbations propagate on an acoustic metric whose horizons
 seed the analogue-gravity picture used in the next section, **Global
 regularity for $q > 1$**, where the same spectral apparatus
 controls the nonlinear flow.

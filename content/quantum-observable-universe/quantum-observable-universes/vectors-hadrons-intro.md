@@ -6,8 +6,7 @@ trace** (rem) introduces
 $\mathrm{tr}_{\mathrm{Ad}} \colon \mathrm{End}(V) \to R$ from
 the Frobenius pairing and the fibre-adjoint involution, with
 cyclicity inherited from Frobenius and non-degeneracy from
-positive-definiteness of the dagger. **PawLei basis**
-(prop) — the Pawlowski--Leitner canonical basis on
+positive-definiteness of the dagger. Proposition: PawLei basis — the Pawlowski--Leitner canonical basis on
 $\mathrm{Hom}_{\mathrm{SU}(2)}(V_j, V_{1/2}^{\otimes n})$,
 indexed by standard Young tableaux of shape $\lambda \vdash n$
 with at most two rows — is constructed by contraction with the

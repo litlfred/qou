@@ -12,11 +12,9 @@ external blow-up is required.
 The base-to-fibre interpretation occupies the middle of the section.
 The exceptional-divisor and Thurston-relaxation expositions situate
 the base manifold $M$ and the brane-point fibres $\mathcal{S}_p$
-inside the same geometric data, and **Briggs–Klein affine chart**
-(def) fixes a working affine chart for explicit computation.
-**Radial projection of Bring's surface** (def) is the chart's
-geometric counterpart. **Four-colourability of Bring's surface**
-(prop) and **The four-colour theorem and Bring's surface** (rem)
+inside the same geometric data, and Definition: Briggs–Klein affine chart fixes a working affine chart for explicit computation.
+Definition: Radial projection of Bring's surface is the chart's
+geometric counterpart. Proposition: Four-colourability of Bring's surface and Remark: The four-colour theorem and Bring's surface
 record the structural compatibility with the three color tubes plus
 ambient color, and **Cyclotomic reduction and $C_{\mathfrak{p}}$
 preservation** (rem) is the input the next section, spectral

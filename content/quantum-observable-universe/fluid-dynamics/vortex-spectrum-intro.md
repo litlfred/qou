@@ -11,9 +11,9 @@ spectrum** (prop) — the eigenvalues of the $q$-Laplacian on a
 filament are $[k]_q^2 \cdot \hbar_q / L_q^2$ — and interpret
 the resulting levels in **Vortex intensity levels as
 fluid-dynamical orbitals** (rem). The central structural result
-is **Categorical helicity conservation** (prop): helicity is a
+is Proposition: Categorical helicity conservation: helicity is a
 topological invariant of the braided monoidal structure, with
-**Helicity as quantised topological charge** (rem) reading the
+Remark: Helicity as quantised topological charge reading the
 invariant as a charge. We close with **Vortex reconnection as
 divisor surgery** (rem), the birational picture of filament
 recombination that the next section, **Turbulence and acoustics**,

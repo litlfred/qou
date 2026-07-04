@@ -21,7 +21,7 @@ degeneration** (conj).
 The convergence machinery is **$q$-deformed Aubin--Lions lemma:
 compactness of the solution family as $q \to 1$** (conj). The
 blowup criterion adapted to the $q$-deformed setting is
-**$q$-deformed Beale--Kato--Majda criterion** (thm), with
+Theorem: $q$-deformed Beale--Kato--Majda criterion, with
 **Vorticity lower bound for anti-parallel filament collision as
 $q \to 1$** (prop) supplying the last-gap estimate. The geometric
 mechanism at collision is **Levi degeneracy conjecture: contact

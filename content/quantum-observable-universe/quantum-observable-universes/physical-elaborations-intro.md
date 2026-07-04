@@ -4,11 +4,10 @@ the paper will refer back to. **$q$-torsion leaves as $q$-curvature
 minima** (rem) characterises a $q$-torsion leaf as a local
 minimum of $\lVert \Omega_q \rVert$ restricted to the horizontal
 distribution, with the leaf trapped in a $q$-curvature well by
-Reeb-flow invariance. **Physical meaning of $q$-harmonic forms**
-(rem) refers back to the Reeb-decomposition reading: a
+Reeb-flow invariance. Remark: Physical meaning of $q$-harmonic forms refers back to the Reeb-decomposition reading: a
 $q$-harmonic form is itself $q$-dependent and interpolates
 between the Hodge Laplacian's classical harmonic forms and the
-deep-quantum regime. **Linearisation convention** (rem) fixes
+deep-quantum regime. Remark: Linearisation convention fixes
 the identification of $i$ in the Schrödinger equation with the
 CR complex structure $J$ on the Levi distribution and records
 that the curved fibre $\mathbb{P}^1(\mathbb{C})$ of $\mathcal{S}$

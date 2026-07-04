@@ -1,6 +1,6 @@
 Having laid out in the preamble why three colors, a Reeb flow,
 and a $\chi = -6$ ledger force the same surface, we now fix that
-surface. The opening move is **Bring's surface** (def) — the $S_5$-symmetric
+surface. The opening move is Definition: Bring's surface — the $S_5$-symmetric
 quartic-and-quadric in $\mathbb{P}^4$ — followed by **Realisations of
 Bring's surface** (rem) and **Physics interpretations of the $S_5$-symmetric
 structure** (rem), which spell out the geometric and physical content
@@ -12,7 +12,7 @@ Euler characteristic of $\mathcal{O}_q(\mathrm{SU}(2))$ on Bring's surface**
 \mathbb{P}(V)$** (lem).
 
 The section closes by packaging that witness. **QOU 4-tuple for Bring's
-surface** (rem) and **QOU axioms instantiated on Bring's surface** (rem)
+surface** (rem) and Remark: QOU axioms instantiated on Bring's surface
 record the explicit identification $(\mathbf{C}, \varTheta, G, \mathcal{S})$
 that the downstream sections will consume. **Braid-group action on the
 resolvents** (rem) is the form in which the next section, color tube

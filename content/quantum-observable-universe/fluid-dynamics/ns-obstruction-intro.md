@@ -6,7 +6,7 @@ whether finite-time blowup occurs and compute it on the Descartes
 quantum universe.
 
 We first clarify the QOU observability axiom for the fluid setting
-in **What observability means for the brane fluid** (rem) and give
+in Remark: What observability means for the brane fluid and give
 its **Independent motivation for observability: why
 $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ is not an NS
 assumption** (rem). The substrate parameter is then promoted to a
@@ -23,8 +23,8 @@ normal plane** (prop), with **The millennium problem as contact
 non-degeneracy at vortex collision** (rem) reading the criterion
 through contact geometry.
 
-We then define **NS-regular quantum observable universe** (def)
-and **NS obstruction class $\mathrm{NS}(A)$** (def), and connect
+We then define Definition: NS-regular quantum observable universe
+and Definition: NS obstruction class $\mathrm{NS}(A)$, and connect
 them to the classical regularity question in **The classical
 regularity question for the Navier--Stokes equation** (rem). The
 obstruction's cohomological structure is **The NS obstruction
@@ -40,7 +40,7 @@ and NS regularity** (ex), and place the result in the
 representation-theoretic context of **Representation-theoretic
 truncation at roots of unity and the $q = 1$ accumulation** (prop).
 The braided structure underlying the obstruction is named in
-**Observable modular tensor category at $q = \zeta_N$** (def) and
+Definition: Observable modular tensor category at $q = \zeta_N$ and
 **Braid group action on $\mathbf{V}^{\otimes n}$ does not factor
 through $S_n$** (prop) — the non-permutation form of the braid
 action that the next section, **Approaches and open problems**,
