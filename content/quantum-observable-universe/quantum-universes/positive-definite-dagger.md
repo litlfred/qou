@@ -8,7 +8,7 @@ Let $(\mathbf{C}, A)$ be a
 $\mathrm{End}(\mathbf{1}) \cong R$ is a formally-real ordered field,
 equipped with a [Frobenius pairing](#def:frobenius-pairing)
 $\langle a, b \rangle = \int_A(\mu(a \otimes b))$, where $\mu$ is the
-monoidal multiplication, and a pivotal antipode $S$ that is
+multiplication of $A$, and a pivotal antipode $S$ that is
 self-adjoint for the pairing.
 
 Define the *Frobenius dagger* on morphisms by
