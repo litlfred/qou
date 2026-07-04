@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-04T13:09:09.190286+00:00",
-  "commitSha": "8fdc1032bd2f5922738be7945126422303be7c80",
+  "computedAt": "2026-07-04T14:20:30.836710+00:00",
+  "commitSha": "19947f4047f448f837a6620121d1f9b2e6b58e42",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
@@ -2044,12 +2044,12 @@
         "a-K-via-lp-dual-full.witness.json",
         "a-K-via-lp-dual-hecke-basis.witness.json",
         "a-K-via-lp-dual.witness.json",
+        "a3-mirror-residual-reconciliation.witness.json",
         "ab-methodology-metrics.witness.json",
         "active-set-lr-scaling-profile.witness.json",
         "active-set-truncation-prototype.witness.json",
         "adjacent-vs-full-probe.witness.json",
         "affine-light-cone-figure.witness.json",
-        "aj-borromean-colored-jones-tower.witness.json",
         "aj-figure-eight-certificate.witness.json",
         "aj-figure-eight-operator-construct-verify.witness.json",
         "aj-masbaum-crosscheck.witness.json",
@@ -2613,6 +2613,7 @@
         "he3-tower-charge-asymmetry.witness.json",
         "he3-tritium-cosh-asymmetry-diagnosis.witness.json",
         "he4-canonical-tr-m-block-fingerprint.witness.json",
+        "he4-link-volume-braid-closure.witness.json",
         "he4-qreeb-phase-falsification.witness.json",
         "hecke-channel-binding.witness.json",
         "hecke-core-symbolic-migration.witness.json",
