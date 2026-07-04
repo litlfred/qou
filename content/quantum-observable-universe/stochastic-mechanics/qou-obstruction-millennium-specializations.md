@@ -1,6 +1,4 @@
 **Remark (the three millennium problems as specializations).**
-
-**The three millennium problems as specializations.**
 Each millennium problem is a property $\mathcal{P}$ that holds
 unconditionally at the $q$-scale, with obstruction class
 $[\mathcal{P}] \in \mathrm{Obs}(\mathbf{C}, q \to 1) \cong k$.
