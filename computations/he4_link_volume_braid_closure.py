@@ -38,20 +38,20 @@ sys.path.insert(0, str(HERE / "substrate"))
 sys.path.insert(0, str(HERE))
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402  (mandatory — witness-emitting probe)
-from knot_volumes import VOL_8_11_MPF, VOL_BORROMEAN_MPF  # noqa: E402
+from knot_volumes import VOL_8_11_F64, VOL_BORROMEAN_F64  # noqa: E402  (f64 duals — no re-cast)
 
 set_compute_dps()
 
 # ── The framework's SDP binding links (binding-link-volumes.witness.json) ──
 #   isotope → (link, hyperbolic components, hyperbolic volume)
 BINDING_LINK = {
-    "3H":  {"link": "8_11",           "components": 1, "vol": float(VOL_8_11_MPF)},      # a KNOT
-    "3He": {"link": "L6a4=Borromean", "components": 3, "vol": float(VOL_BORROMEAN_MPF)}, # 3-comp link
+    "3H":  {"link": "8_11",           "components": 1, "vol": VOL_8_11_F64},      # a KNOT
+    "3He": {"link": "L6a4=Borromean", "components": 3, "vol": VOL_BORROMEAN_F64}, # 3-comp link
 }
 # per-nucleon braid 𝓑₃ = Borromean rings (3 components, 8G)
-NUCLEON_BORROMEAN = {"components": 3, "vol": float(VOL_BORROMEAN_MPF)}
+NUCLEON_BORROMEAN = {"components": 3, "vol": VOL_BORROMEAN_F64}
 BONDCOUNT_VOL4_BACKOUT = 8.046        # theta_mn_bondcount_linearchain.py (m_e·3·Vol₄ = residual)
-DOUBLY_MAGIC_VOL4 = 2 * float(VOL_BORROMEAN_MPF)   # 14.655 provisional (binding_a3plus_*)
+DOUBLY_MAGIC_VOL4 = 2 * VOL_BORROMEAN_F64   # 14.655 provisional (binding_a3plus_*)
 
 # ── Baked SnapPy 3.3.2 closure results (2026-07-04; avg-interface → +σ) ──
 #   Markov closure of atom_canonical_crossings(Z,N); simplify('global') + 12
@@ -87,16 +87,22 @@ def run_live():
         L = spherogram.Link(braid_closure=w)
         L.simplify("global")
         M = L.exterior()
-        best, geo = 0.0, False
+        best, geo, n_ok = 0.0, False, 0
         for i in range(12):
             try:
                 if i:
                     M.randomize()
-                if "positively" in M.solution_type():
+                sol = M.solution_type()  # queryable even when non-geometric
+                n_ok += 1
+                if "positively" in sol:
                     geo = True
                     best = max(best, float(M.volume()))
             except Exception:
                 pass
+        if n_ok == 0:
+            # A genuinely non-hyperbolic link still returns a solution_type
+            # without raising; zero successes means SnapPy itself failed.
+            raise RuntimeError(f"SnapPy failed on all 12 attempts for (Z={Z}, N={N})")
         return {"components": len(L.link_components), "geometric": geo,
                 "geometric_volume": round(best, 6), "crossings": len(L.crossings)}
 
@@ -166,12 +172,12 @@ def main() -> int:
                              "disagreement_ratio": DOUBLY_MAGIC_VOL4 / BONDCOUNT_VOL4_BACKOUT})
     # Real invariants (regression guards), not tautologies:
     wb.add_assertion(
-        name="3H_closure_component_count_ne_8_11",
+        name="3H_closure_is_4_component",
         computed=float(closure["3H"]["components"]), expected=4.0, tolerance=0,
         source=("³H canonical braid closure has 4 components; 8_11 is a 1-component "
                 "knot — wrong link type, so closure ≠ the SDP binding link."))
     wb.add_assertion(
-        name="3He_closure_component_count_ne_borromean",
+        name="3He_closure_is_4_component",
         computed=float(closure["3He"]["components"]), expected=4.0, tolerance=0,
         source=("³He canonical braid closure has 4 components; L6a4=Borromean is "
                 "3-component — wrong link type."))
