@@ -20,7 +20,8 @@ investigation (qou PR #3289) found two independent failures:
 
 This document specifies **three new deterministic checkers** (§2–§4), **one fix to
 an existing rerate rule** (§5), and **one new agent-judged exposition rater**
-(§5A, `expo-milnor-clarity` — added 2026-07-04 at owner request). It is written to
+(§5A, `expo-milnor-clarity` — added 2026-07-04 at owner request; a strict gating
+rater, `pass` iff a perfect 16/16). It is written to
 be self-contained: the implementing agent should not need the originating chat
 transcript.
 
@@ -426,11 +427,10 @@ a conditional theorem** (qou commit `ae708c05`) rather than left as a
 **NOTE — this criterion is a different class from §2–§4.** "Does this block read
 with the clarity of John Milnor's exposition?" is an **aesthetic judgment**, not a
 deterministic property. It is therefore an **agent-reviewed** criterion
-(`automated: false`), and — because taste is subjective and we do not want
-exposition style to *block* merges — it is an **advisory rater** that emits a
-**score + rationale** and maps to `pass`/`warn` only (it can **never** emit
-`fail`). It follows the existing `proof-rater-*` pattern, not the gating `proof-*`
-pattern.
+(`automated: false`) that emits a **score + rationale**. **Per owner ruling
+(2026-07-04) it is a GATING criterion with a strict bar**: only a perfect score
+`pass`es; anything short of perfect is `warn` (near-miss) or `fail`. The paper's
+exposition is held to Milnor's standard, not merely nudged toward it.
 
 **Intent.** Nudge narrative blocks toward the expository virtues that make
 Milnor's writing a gold standard: economy, concreteness-before-abstraction, plain
@@ -467,14 +467,18 @@ the reader's time and intelligence*.
 | H7 | **Surgical cleanliness / right-tool framing** | every unnecessary technicality is stripped; when a heavy result (a big theorem, a hard lemma) is invoked, it is framed so its *necessity is obvious* — the reader sees *why it is the exact tool* for the problem at hand | technicalities piled in "for completeness"; heavy tools dropped in unframed, so the reader cannot see why they are needed |
 | H8 | **Respect for the reader's time and intelligence** | trusts the reader — no belaboring the trivial, no condescension, no ceremony; also no disrespectful *gaps* (nothing load-bearing hand-waved) | over-explains the obvious *or* hand-waves the hard part; wastes the reader's attention either way |
 
-**Score → result mapping.** Total `T = Σ Hi ∈ [0,16]`.
-- `T ≥ 12` → **pass** (`notes` records the score + the weakest dimension as a nudge).
-- `6 ≤ T ≤ 11` → **warn** (advisory; `notes` names the 1–2 lowest dimensions with a
-  one-sentence concrete suggestion each).
-- `T ≤ 5` → **warn** as well (never `fail`), but flagged `severity: minor` with a
-  stronger note recommending a full exposition pass.
+**Score → result mapping (owner ruling 2026-07-04 — STRICT gate).** Total
+`T = Σ Hi ∈ [0,16]`.
+- `T = 16` → **pass** (perfect — every one of H1–H8 scored 2). `notes` records the
+  full score vector.
+- `12 ≤ T ≤ 15` → **warn** (near-miss; `notes` names every dimension scored < 2
+  with a one-sentence concrete fix each).
+- `T ≤ 11` → **fail** (`notes` names the failing dimensions and recommends a full
+  exposition pass).
 
-The rater **never** returns `fail`. It never blocks CI or `--ci` gating.
+This is a deliberately strict bar: the Milnor standard is *perfection*, and a
+single non-perfect dimension already drops the block out of `pass`. The rater
+**blocks** in `--ci` on `fail` like any gating criterion.
 
 **Agent prompt template (the reviewer runs this).**
 > You are reviewing one narrative block from a formal-mathematics paper for
@@ -488,7 +492,9 @@ The rater **never** returns `fail`. It never blocks CI or `--ci` gating.
 > belaboring the trivial nor hand-waving the hard part?). Return JSON:
 > `{ "scores": {H1..H8}, "total": T, "weakest": ["Hk", …],
 >    "suggestions": ["concrete one-liner per weak dimension"],
->    "result": "pass" | "warn", "notes": "≤ 200-char summary" }`.
+>    "result": "pass" | "warn" | "fail", "notes": "≤ 200-char summary" }`.
+> Return `pass` ONLY if every dimension scored 2 (T = 16); `warn` for T in 12–15;
+> `fail` for T ≤ 11.
 > Be terse and specific; cite the offending sentence/notation. Reward
 > understatement; penalize hype, padding, and notation dumped before use.
 
@@ -498,7 +504,8 @@ The rater is registered `automated: false`, so it enters the agent-drain queue
 writes a fresh sidecar entry. Staleness: re-run when `field_hash.md` drifts (the
 `.md` is the only input that matters — `.ts`/`.lean` changes do not restale it).
 
-**Severity.** `minor`. **`automated`.** `false`. **Axis.** `voice` (it belongs with
+**Severity.** `major` (gating — it can `fail`; owner ruling 2026-07-04).
+**`automated`.** `false`. **Axis.** `voice` (it belongs with
 the one-voice/exposition family) — or a new `exposition` axis if the platform
 prefers to group future style raters separately `⟨confirm against live source⟩`.
 
@@ -508,13 +515,16 @@ the class of verdict that the 2026-06-25 distrust-clear damaged. Two safeguards:
    structured field, so a re-review is a *re-score*, not a from-scratch reguess —
    reducing verdict volatility and the temptation to distrust a whole batch.
 2. Per §6, a distrusted rater verdict must be **re-run**, never cleared to `n/a`.
-   Since the mapping never produces `fail`, there is no blocking flag to lose — but
-   a `warn` must still not be silently `n/a`-cleared.
+   Because the gate can now produce `fail`, this is a genuine blocking flag — a
+   distrusted `fail`/`warn` must be re-audited, never silently `n/a`-cleared (the
+   exact anti-pattern the §6 guard fails CI on).
 
 **Test fixtures (agent-rater fixtures are calibration prompts, not exact-match).**
 | Fixture | Character | Expected band |
 |---|---|---|
-| `milnor-clean` | tight, example-first, motivated, few symbols | pass (`T ≥ 9`) |
+| `milnor-clean` | tight, example-first, motivated, few symbols — every dimension a 2 | pass (`T = 16`) |
+| `one-dim-off` | otherwise clean but one dimension scores < 2 | warn (`T` 12–15) |
+| `several-dims-off` | muddy on ≥ 3 dimensions | fail (`T ≤ 11`) |
 | `notation-wall` | 8 symbols defined before any used | warn, weakest = H4 |
 | `unmotivated-machinery` | abstract construction, no stated purpose | warn, weakest = H3 |
 | `padded-prose` | verbose, throat-clearing, restates statement | warn, weakest = H1 |
@@ -525,12 +535,15 @@ the class of verdict that the 2026-06-25 distrust-clear damaged. Two safeguards:
 | `handwaves-hard-part` | glosses the load-bearing step as "clearly" | warn, weakest = H8 |
 | `bare-equation-block` | one formula, no prose | n/a |
 
-**Design decision recorded (so the implementing agent does not re-litigate it):**
-this rater is **advisory (pass/warn, scored), not gating**. Milnor-style is
-aesthetic; a blocking `fail` on subjective exposition would generate churn and
-false conflict with the author's voice. If the owner later wants a *gating*
-exposition floor, that is a separate criterion with an explicit threshold, not a
-change to this rater.
+**Design decision recorded (owner ruling 2026-07-04 — so the implementing agent
+does not re-litigate it):** this rater is **gating with a strict bar** —
+`pass` iff `T = 16`, `warn` for 12–15, `fail` for `T ≤ 11`. An earlier draft made
+it advisory (pass/warn only); the owner overrode that: the paper's exposition is
+held *to* the Milnor standard, not merely nudged toward it. Because agent scoring
+of a 0–2 rubric carries some variance, implementers should (a) keep the per-block
+score vector in the sidecar so re-reviews re-score rather than re-guess, and
+(b) treat a `fail` as an author-actionable exposition defect (name the failing
+dimensions), not a mysterious rejection.
 
 ---
 
