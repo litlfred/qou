@@ -451,3 +451,26 @@ with a citation but does NOT exclude a Plancherel-fixed E_q(2) row (still needs
 Koornwinder–Swarttouw 1992, TAMS 333, ref [22] — cited by the upload, not
 contained). Audit:
 [`docs/audits/2026-07-04-keystone-qbessel-tricomi-c0q-sourced-refutation.md`](../audits/2026-07-04-keystone-qbessel-tricomi-c0q-sourced-refutation.md).
+
+## LAST disciplined q-Bessel form REFUTED — E_q(2) q-Hankel vacuum row, fully sourced (2026-07-04, bean s013)
+
+Owner uploaded the decisive source: Koornwinder–Swarttouw 1992 (arXiv:1208.2521 =
+TAMS 333), `uploads/1208.2521v1.pdf` — the third (Hahn–Exton) q-Bessel eq.(1.2)
++ Hansen–Lommel orthogonality (roots μ_j of C_α(q;μ)=0 = the Plancherel nodes).
+This is the one form #3292 named as still-testable. Probe
+`keystone_qhankel_eq2_vacuum_row.py` (α∈{0,½,1,2}, 112-candidate parameter-free
+menu): **no coherent (α,form) pair reproduces the ORDERED d_q vector
+{1,[4],[5],[4][3]/[2]} within 1%**; the 4 scattered single-index 1% grazes
+(different α/j/form, none co-locating in one ordered vector) are large-menu
+coincidences (PSLQ/entropy caution), recorded as the sharpener. **Scope-(a),
+sourced, decisive** for redirect (ii): all four realisation routes now refuted
+with sources (Σ(2,3,5) golden D=2; Σ(3,4,5) D=6; colored LR pure-sign; q-Bessel
+Tricomi + Hahn–Exton). Does NOT structurally exclude (scope a) a different node
+convention. **Standing value-step answer = redirect (iii), the NON-geometric
+"why":** S_0λ/S_00 = d_q (Verlinde vacuum row) selected by Markov-trace
+uniqueness / Wenzl bridge / Perron–Frobenius (state positivity = confinement
+SDP) — already in the corpus (`y-lambda-closed-form-wenzl-bridge.md`,
+`wenzl-bridge-applicability-qou.lean`, `intro-markov-axioms-braid-link.md`); a
+categorical "why" that needs no geometry, so the geometric program's exhaustion
+leaves nothing unexplained. Audit:
+[`docs/audits/2026-07-04-keystone-qhankel-eq2-vacuum-row-sourced-refutation.md`](../audits/2026-07-04-keystone-qhankel-eq2-vacuum-row-sourced-refutation.md).
