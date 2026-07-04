@@ -13,7 +13,10 @@ export default proposition({
     ref: "qou:QOU.Mass.linear_chain_cluster_measure",
     validation: "not_checked",
   },
-  uses: ["prop:jet-filtration-binding-extensive"],
+  uses: [
+    "prop:jet-filtration-binding-extensive",
+    "conj:binding-manybody-jet-filtration",
+  ],
   tags: [
     "binding",
     "jet-filtration",
