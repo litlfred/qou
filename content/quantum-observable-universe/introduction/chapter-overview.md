@@ -438,5 +438,4 @@ relation $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$.  Every other
 mass, Q-value, binding energy, and coupling constant is a prediction.
 "'
 
-'"
 

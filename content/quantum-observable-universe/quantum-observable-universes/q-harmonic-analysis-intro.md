@@ -9,16 +9,14 @@ the $\mathbb{C}$-realisation, not the defining property.
 
 Definition: $q$-heat equation introduces $\partial_t u = -\Delta_q
 u$ along the Reeb flow $\phi_t^q$ on a fixed substrate slice;
-Proposition: existence of the $q$-heat equation and **uniqueness
-of the $q$-heat equation** (prop), with their proofs, fix the
+Proposition: existence of the $q$-heat equation and Proposition: uniqueness of the $q$-heat equation, with their proofs, fix the
 construction. Substituting the three-term expansion of
 $\Delta_q$ splits the right-hand side into classical diffusion,
 Reeb-spin diffusion, and Coriolis cross-coupling.
 Definition: Categorical Laplace transform defines $\mathcal{L}$ as
 the monoidal functor pairing against the real grouplike
 $\exp_q(-s \cdot) \in G(\mathcal{H}_q)$; existence and uniqueness
-propositions (with proofs) follow. **Categorical Fourier
-transform** (def), with its existence and uniqueness blocks,
+propositions (with proofs) follow. Definition: Categorical Fourier transform, with its existence and uniqueness blocks,
 pairs against the imaginary-spectral grouplike $\exp_q(i\xi
 \cdot)$.
 
@@ -26,8 +24,7 @@ Definition: $q$-resolvent is $R_q(s) = (s +
 \widehat{\Delta_q})^{-1}$, characterised as the Laplace
 transform of the $q$-heat semigroup and diagonalised over
 irreducibles by Peter--Weyl. Existence and uniqueness blocks
-(with proofs) deliver $R_q$. **Categorical Wick rotation: real
-forms of $\exp_q$** (rem) identifies $\mathcal{F}[f](\xi) =
+(with proofs) deliver $R_q$. Remark: Categorical Wick rotation: real forms of $\exp_q$ identifies $\mathcal{F}[f](\xi) =
 \mathcal{L}[f](i\xi)$: the Laplace and Fourier transforms are
 the two real slices of a single complex pairing against
 $\exp_q$, and the $q$-heat and $q$-Schrödinger equations are

@@ -3,14 +3,12 @@ are all consequences of one structural choice: $\chi(A) = -6$. The
 Descartes theorem turns that observation into a uniqueness statement.
 Theorem: Descartes theorem is the load-bearing claim of the
 section: among quantum observable universes satisfying the Descartes
-condition, Bring's surface is the terminal object. **Constructive
-terminal morphism to Bring's QOU** (ex) exhibits the explicit
+condition, Bring's surface is the terminal object. Example: Constructive terminal morphism to Bring's QOU exhibits the explicit
 morphism that witnesses terminality.
 
 Remark: Universality for a given Euler characteristic extracts the
 general principle behind the theorem — the categorical Euler
-characteristic selects a terminal QOU — and **Bring's surface and
-$q$-flatness obstructions** (ex) records the $q$-flatness obstruction
+characteristic selects a terminal QOU — and Example: Bring's surface and $q$-flatness obstructions records the $q$-flatness obstruction
 language in which Yekutieli's theory expresses the same content.
 Remark: Observations on the Bring's surface gathers the
 observational consequences that the next section, topological mass

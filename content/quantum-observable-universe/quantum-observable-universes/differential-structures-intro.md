@@ -16,15 +16,13 @@ weight decomposition. Example: Reeb derivation for $\mathrm{SU}(2)$ realises $(\
 Woronowicz left-covariant calculus on
 $\mathcal{O}_q(\mathrm{SU}(2))$.
 
-Definition: Projective line object and **projective line on
-$\mathrm{SU}(2)$** (rem) introduce $\mathbb{P}(V) = G/T$ as the
+Definition: Projective line object and Remark: projective line on $\mathrm{SU}(2)$ introduce $\mathbb{P}(V) = G/T$ as the
 function-algebra quotient $A^{\mathrm{co}\,T}$, realised by
 $\mathrm{SU}(2)/\mathrm{U}(1) \cong \mathbb{P}^1(\mathbb{C})$.
 Definition: Contact affine chart supplies the open dense subset
 $U_\xi$ of states with non-vanishing Reeb component and the
 affine coordinate $Z = \alpha_H / \iota_\xi\alpha$.
-**Fibre functors as an affine atlas with $G$-torsor
-transitions** (prop) repackages every fibre functor on
+Proposition: Fibre functors as an affine atlas with $G$-torsor transitions repackages every fibre functor on
 $\mathbf{C}$ as a chart, every monoidal natural isomorphism as
 a transition function, and the cocycle identity as composition
 in the functor category — the whole family forming a $G$-gerbe.

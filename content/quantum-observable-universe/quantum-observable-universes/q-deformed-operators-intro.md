@@ -16,8 +16,7 @@ sections of the gauge bundle. Example: $q$-deformed Reeb vector field acts on $C
 $\mathrm{grad}_{g_\varTheta} f$.
 
 Example: $q$-deformed Reeb flow integrates $\xi_q$ to the
-one-parameter family $\phi_t^q \colon M \to M$. **$q$-torsion
-leaf** (ex) names the maximal integral submanifolds of the
+one-parameter family $\phi_t^q \colon M \to M$. Example: $q$-torsion leaf names the maximal integral submanifolds of the
 horizontal distribution $H = \ker\varTheta$ invariant under
 $\phi_t^q$; Remark: Existence of $q$-torsion leaves explains
 why they are Legendrian (the Levi form forces the dimension

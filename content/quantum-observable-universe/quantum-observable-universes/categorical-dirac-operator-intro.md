@@ -9,8 +9,7 @@ Definition: Categorical Dirac operator introduces
 $\mathcal{D}_\nabla = q^{-1}\nabla + (1 - q^{-1})\,\iota_\xi
 \nabla \colon A \to \Omega^1(A)$, interpolating between the
 full covariant derivative at $q = 1$ and its purely contact
-component $\iota_\xi \nabla$ as $q \to \infty$. **Existence
-of the categorical Dirac operator** (prop) — with its proof —
+component $\iota_\xi \nabla$ as $q \to \infty$. Proposition: Existence of the categorical Dirac operator — with its proof —
 verifies that the formula defines a morphism in $\mathbf{C}$,
 and Proposition: uniqueness of the categorical Dirac operator —
 with its proof — pins it down once $\nabla$, $q$, and $\xi$ are

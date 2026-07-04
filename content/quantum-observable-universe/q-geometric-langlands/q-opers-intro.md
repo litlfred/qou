@@ -4,11 +4,9 @@ Definition: $q$-Oper — a $\check{G}_q$-bundle on $X$ equipped with a
 reduction to the Borel and a $q$-flat connection in oper position —
 which provides the rigid spectral data dual to the $q$-Hecke
 eigensheaves of the automorphic side. The remaining two blocks
-implement this duality: the conjecture **$q$-Opers are $q$-Hecke
-eigensheaves** (conj) asserts that the fibre functor sends every
+implement this duality: the Conjecture: $q$-Opers are $q$-Hecke eigensheaves asserts that the fibre functor sends every
 $q$-oper to a $q$-Hecke eigensheaf with eigenvalue determined by its
-oper coordinates, and the accompanying **Proof sketch: $q$-opers
-produce eigensheaves** (rem) records the Frenkel–Reshetikhin
+oper coordinates, and the accompanying Remark: Proof sketch: $q$-opers produce eigensheaves records the Frenkel–Reshetikhin
 construction underlying that map. Together they give the concrete
 realisation of the abstract Tannakian mediation conjectured in the
 previous section.
