@@ -1,0 +1,164 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-04T10:37:32.716251+00:00",
+  "commitSha": "6fe95b1a81aba81ea8e69c72e1b0c01fed9811fa",
+  "assertions": [
+    {
+      "name": "S_squared_is_identity",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "eq.3.8 involution — anti-fabrication anchor on the transcription (a sign/factor error breaks S²=I)"
+    },
+    {
+      "name": "value_match_within_1pct",
+      "computed": "False",
+      "expected": "False",
+      "passed": true,
+      "source": "refutation gate: if a future transcription change produces a 1% match this must FAIL so the near-match gets re-adjudicated"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "keystone-valuemap-sigma345-dm6",
+  "scriptFile": "keystone_valuemap_sigma345_dm6.py",
+  "scriptHash": "d57ec81ee2e8",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "s013 redirect (i): extend the validated Hikami eq.3.1/3.8 machinery to Σ(3,4,5) (D=6, γ=4 flat connections) and test whether its D=6 modular vacuum row reproduces the 4-class keystone target bwS0=d_q/D = (1,4.110,5.220,6.220). S²=I + unit-row anchors; q₀-robustness softener. No fit; nothing wired.",
+  "data": {
+    "pvec": [
+      3,
+      4,
+      5
+    ],
+    "P": 60,
+    "q0": 1.1099785955541805,
+    "num_independent_components_D": 6,
+    "D_formula": 6,
+    "representatives": [
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        2
+      ],
+      [
+        1,
+        1,
+        3
+      ],
+      [
+        1,
+        1,
+        4
+      ],
+      [
+        1,
+        2,
+        1
+      ],
+      [
+        1,
+        2,
+        2
+      ]
+    ],
+    "vacuum_triple": [
+      1,
+      1,
+      1
+    ],
+    "S_squared_minus_I_maxabs": "4.44583e-50",
+    "S_squared_is_identity": true,
+    "vacuum_row_norm_sq": "1.0",
+    "vacuum_row_is_unit": true,
+    "effective_CS_labels": {
+      "[1, 1, 1]": {
+        "n": 13,
+        "CS": "-169/240"
+      },
+      "[1, 1, 2]": {
+        "n": 1,
+        "CS": "-1/240"
+      },
+      "[1, 1, 3]": {
+        "n": 11,
+        "CS": "-121/240"
+      },
+      "[1, 1, 4]": {
+        "n": 7,
+        "CS": "-49/240"
+      },
+      "[1, 2, 1]": {
+        "n": 2,
+        "CS": "-4/240"
+      },
+      "[1, 2, 2]": {
+        "n": 14,
+        "CS": "-196/240"
+      }
+    },
+    "vacuum_row_abs_sorted": [
+      "0.601500955007545673655997558845",
+      "0.425325404176019966090770248532",
+      "0.425325404176019966090770248532",
+      "0.371748034460184490132060189463",
+      "0.262865556059566803012834542424",
+      "0.262865556059566803012834542424"
+    ],
+    "num_nonzero_vacuum_entries": 6,
+    "vacuum_row_ratios_over_smallest": [
+      "2.28824561127",
+      "1.61803398875",
+      "1.61803398875",
+      "1.41421356237",
+      "1.0",
+      "1.0"
+    ],
+    "bwS0_targets": {
+      "(5)": "1.0",
+      "(4,1)": "4.10968243564",
+      "(3,2)": "5.22044132466",
+      "(3,1,1)": "6.22044132466"
+    },
+    "bwS0_targets_sorted": [
+      "1.0",
+      "4.10968243564",
+      "5.22044132466",
+      "6.22044132466"
+    ],
+    "best_4subset": [
+      "1.0",
+      "1.414213562",
+      "1.618033989",
+      "2.288245611"
+    ],
+    "best_4subset_max_relerr": "0.69005801",
+    "value_match_within_1pct": false,
+    "bwS0_dtarget_dq0": [
+      "0.0",
+      "1.9081584",
+      "3.8536632",
+      "3.8536632"
+    ],
+    "bwS0_is_q0_dependent": true,
+    "geometric_row_is_q0_independent": true,
+    "verdict": "REFUTED-as-is (scope (a)): the genuine Σ(3,4,5) D=6 modular vacuum row does not reproduce the 4-class bwS0 target (1, 4.110, 5.220, 6.220) within 1%. Softener (scope (b), invariant = q₀-independence of rational-angle modular sines): no COMPACT Seifert modular S-matrix vacuum row — a tuple of fixed algebraic constants — can track the q₀-dependent bwS0(λ)=d_q/D as the substrate modulus varies; a single-q₀ coincidence is the only way, and it does not occur here. Confirms the 2026-07-02 redirect to the NON-COMPACT q-Bessel (q₀-dependent) vacuum row as the sole viable geometric object."
+  }
+}
