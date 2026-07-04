@@ -417,3 +417,26 @@ hypothesis, and the Birch–Swinnerton-Dyer and Collatz statements —
 each become the question of whether such a class vanishes, and all
 reduce to a single surreal inequality developed in the surreals
 appendices.
+
+**Calibration.**
+The internal symmetry and the rigid topology of the state space leave
+only a handful of free parameters: **exactly three** weak-sector
+inputs fix the framework — a leptonic mass scale and two decay
+widths, entering at successive orders $h^0$, $h^2$, $h^3$ — and they
+are not chosen freely: they match, one for one, the three real
+degrees of freedom of the state space's first cohomology.  The
+leptonic mass scale ($m_e$) sets the unit, the *scale* of that
+cohomology; the neutron $\beta$-decay width ($\mathfrak{D}_\beta$)
+fixes the substrate parameter $q_0$, its *modulus*; and the pion
+decay width ($\mathfrak{D}_\pi$) fixes the one remaining *orthogonal*
+class, the meson sector whose Hopf-link complement has zero volume.
+Each is read off its most precisely measured proxy — $m_e$, the
+$Q$-value $\mathfrak{Q}_\beta = \hbar/\mathfrak{D}_\beta$, and the
+pion mass $m_\pi$; the modulus is overdetermined, so it is pinned
+numerically by the lepton ratio $m_\mu/m_e$ through the Skein
+relation $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$.  Every other
+mass, Q-value, binding energy, and coupling constant is a prediction.
+"'
+
+'"
+
