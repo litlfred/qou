@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/appendix-atomic-mass-calculations/amc-method.md"
   },
   "source_hashes": {
-    "md": "144ae42d2502",
+    "md": "87c56e954fec",
     "ts": "da21e2fe996e"
   },
   "criteria": {
@@ -45,7 +45,7 @@
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "pass",
@@ -56,14 +56,14 @@
           "script_hash": "d735760f2b64",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "pass",
@@ -74,14 +74,14 @@
           "script_hash": "d735760f2b64",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "pass",
@@ -92,14 +92,14 @@
           "script_hash": "d735760f2b64",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "pass",
@@ -110,14 +110,14 @@
           "script_hash": "d735760f2b64",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "pass",
@@ -128,17 +128,17 @@
           "script_hash": "d735760f2b64",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
@@ -146,14 +146,16 @@
           "script_hash": "d735760f2b64",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/appendix-atomic-mass-calculations/amc-method.md:8: - **naturally occurring** ($Z = 1$--$92$, Hydrogen through | content/quantum-observable-universe/appendix-atomic-mass-calculations/amc-method.md:136: $B/A$ values. For naturally occurring elements ($Z \\leq 92$),"
       }
     ],
     "voice-scholarly-default": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "pass",
@@ -164,8 +166,8 @@
           "script_hash": "d735760f2b64",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "voice-title-scholarly": [
@@ -189,7 +191,7 @@
     "voice-ai-slop": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "pass",
@@ -200,14 +202,14 @@
           "script_hash": "d735760f2b64",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "voice-author-notes-pollution": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "pass",
@@ -218,14 +220,14 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "voice-status-section": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "pass",
@@ -236,14 +238,14 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "framework-canonical": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "pass",
@@ -254,14 +256,14 @@
           "script_hash": "d735760f2b64",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "n/a",
@@ -272,8 +274,8 @@
           "script_hash": "d735760f2b64",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -299,7 +301,7 @@
     "q-usage-regime-detected": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "pass",
@@ -310,14 +312,14 @@
           "script_hash": "93cae3264dc7",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "q-usage-fixed-q0-leak": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "n/a",
@@ -328,14 +330,14 @@
           "script_hash": "93cae3264dc7",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "n/a",
@@ -346,8 +348,8 @@
           "script_hash": "93cae3264dc7",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "q-usage-positivity-implicit": [
@@ -372,7 +374,7 @@
     "q-usage-modulus-vs-real-mismatch": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "n/a",
@@ -383,14 +385,14 @@
           "script_hash": "93cae3264dc7",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "pass",
@@ -401,14 +403,14 @@
           "script_hash": "93cae3264dc7",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "pass",
@@ -419,14 +421,14 @@
           "script_hash": "93cae3264dc7",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "canonical-calibration-count": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "pass",
@@ -437,14 +439,14 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "canonical-witness-pinned": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "pass",
@@ -455,8 +457,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "canonical-script-not-deprecated": [
@@ -480,7 +482,7 @@
     "canonical-dilogarithm-context": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "pass",
@@ -491,14 +493,14 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "canonical-no-hardcoded-observable": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "pass",
@@ -509,14 +511,14 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "canonical-no-negative-result-in-paper": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "pass",
@@ -527,8 +529,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "compute-witness-exists": [
@@ -570,7 +572,7 @@
     "detangler-no-forward-ref": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "n/a",
@@ -581,14 +583,14 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "detangler-section-band": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "n/a",
@@ -599,14 +601,14 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "detangler-no-xchapter-fwd": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "n/a",
@@ -617,8 +619,8 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "detangler-archimedean-wall": [
@@ -643,7 +645,7 @@
     "detangler-block-tanglement": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "n/a",
@@ -654,14 +656,14 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "detangler-graph-energy": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "n/a",
@@ -672,14 +674,14 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "detangler-topic-coherence": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "n/a",
@@ -690,14 +692,14 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "detangler-no-dependency-cycle": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "n/a",
@@ -708,14 +710,14 @@
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
     "bib-cite-resolves": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "n/a",
@@ -725,17 +727,17 @@
           "version": "v1",
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
+          "deps_hash": "b46bef1f21f6"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5",
         "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "n/a",
@@ -745,17 +747,17 @@
           "version": "v1",
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
+          "deps_hash": "b46bef1f21f6"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5",
         "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-metadata-ok": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "n/a",
@@ -765,17 +767,17 @@
           "version": "v1",
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
+          "deps_hash": "b46bef1f21f6"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5",
         "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-screenshot": [
       {
         "field_hash": {
-          "md": "144ae42d2502",
+          "md": "87c56e954fec",
           "ts": "da21e2fe996e"
         },
         "result": "n/a",
@@ -785,10 +787,10 @@
           "version": "v1",
           "script_hash": "6a0f3410ed24",
           "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-          "deps_hash": "c6456bf489a8"
+          "deps_hash": "b46bef1f21f6"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
+        "reviewed_at": "2026-07-04T20:31:57.291Z",
+        "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5",
         "notes": "block has no .lean sibling"
       }
     ],
@@ -1035,5 +1037,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T07:05:42.356Z"
+  "updated_at": "2026-07-04T20:31:57.291Z"
 }
