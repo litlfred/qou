@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "b28645c0db24",
     "ts": "1d88e0fcbf44",
-    "lean": "a918c3906e2f"
+    "lean": "3b3f4616cfad"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1605,6 +1605,23 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, preventing statement verification: content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean:4:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidsAndKnots/FBorBorromeanObservable.olean' of module QOU.BraidsAndKnots.FBorBorromeanObservable does not exist",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b28645c0db24",
+          "ts": "1d88e0fcbf44"
+        },
+        "result": "pass",
+        "notes": "Owner-approved (Option A). The file imported QOU.BraidsAndKnots.FBorBorromeanObservable — a module that never existed — and used F_Bor as a function though the only library F_Bor is a nullary :=0 stub, so it had never compiled (prior statement-integrity fail was a hard compile error, not verifiable). Rewritten self-contained: phantom import dropped, local opaque F_Bor:ℝ→ℝ placeholder, and the vacuous ∃ m_p,m_p=expr replaced by the faithful CODATA-agreement theorem proton_mass_substrate_identity_codata (|m_p−CODATA|≤1ppm·CODATA under fixed calibration hypotheses, honest cited sorry). lean-direct exit 0.",
+        "reviewed_at": "2026-07-04T13:10:13.000Z",
+        "reviewed_sha": "3a68ebaa7bb2627150332e3a5ae8d6f146969984",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-proof-vacuity-audit",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-07-04"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -2037,5 +2054,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.148Z"
+  "updated_at": "2026-07-04T13:10:13.000Z"
 }
