@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-24T16:32:02.571621+00:00",
-  "commitSha": "9f5ddbbc637b9c44e784bca410ad47e7b57715c7",
+  "computedAt": "2026-07-04T00:13:02.073409+00:00",
+  "commitSha": "0648b414b746824773a5198918d3a3b77d11d6e9",
   "assertions": [
     {
       "name": "m_p_matches_codata_within_1ppm",
-      "computed": 4.0373601716288035e-07,
+      "computed": 0.001526117873294384,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1.0,
@@ -15,7 +15,7 @@
     },
     {
       "name": "m_n_matches_codata_within_10ppb",
-      "computed": 1.0397328006513968,
+      "computed": 2.56408114116691,
       "expected": 0.0,
       "passed": true,
       "tolerance": 10.0,
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 14,
   "computation": "m-p-substrate-identity-50dps",
   "scriptFile": "m_p_substrate_identity_50dps.py",
-  "scriptHash": "dc9252cc2fbf",
-  "scriptCommitSha": "9f5ddbbc637b9c44e784bca410ad47e7b57715c7",
+  "scriptHash": "68e49e8ebb97",
+  "scriptCommitSha": "de9e4c5e9313f67ec3249735d6725d0c5428b957",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,15 +39,16 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Production substrate-categorical prediction of m_p and m_n from (m_e, m_μ, q_0) using Lean-proved closed forms for |tr_M(β_Bor)| and [3]_q!. The neutron uses the 3-input chain m_n = m_p + Q_β + m_e with Q_β the parameter-free Kashiwara b² truncation (near-match, ~+1 ppb on m_n); the Hecke-skein flavor-split is a secondary ratio. CAL-3 (Q_β) is NOT used as input — Q_β becomes a DERIVED quantity. Substrate identity: m_p = 2·m_μ·|tr_M|·[3]_q!/q^3 - 12·m_e where the '12' is the Ocneanu cancellation reciprocal.",
   "contentBlock": "prop:proton-mass-substrate-identity",
   "auditOnly": "docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md",
   "parameters": {
     "q0": "1.109978595557334719899763",
-    "m_e_MeV": "0.510998949999999952",
-    "m_mu_MeV": "105.658375500842839",
+    "m_e_MeV": "0.510998950690000009",
+    "m_mu_MeV": "105.658375643512966",
     "m_mu_over_m_e": "206.768282989315044"
   },
   "data": {
@@ -59,37 +60,37 @@
       "flavor_split_X": "0.001375711249976612013528743"
     },
     "predictions": {
-      "m_p_MeV": "938.2720881603788142358888",
-      "m_n_MeV": "939.5654214968969860724671",
-      "M_N_MeV": "938.9187548286379001541779",
+      "m_p_MeV": "938.2720895919138037542201",
+      "m_n_MeV": "939.5654229291219756478892",
+      "M_N_MeV": "938.9187562605178897010546",
       "Q_beta_MeV": "0.7823343865181718847573066",
-      "Delta_m_pn_MeV": "1.293333336518171836578246"
+      "Delta_m_pn_MeV": "1.293333337208171893669102"
     },
     "predictions_pathC": {
-      "m_n_MeV": "939.5654214968969860724671",
-      "m_n_residual_ppm": "0.00103973280065",
-      "Delta_m_pn_MeV": "1.293333336518171836578246",
-      "Delta_m_pn_ppb": "755.0403918112575",
+      "m_n_MeV": "939.5654229291219756478892",
+      "m_n_residual_ppm": "0.00256408114117",
+      "Delta_m_pn_MeV": "1.293333337208171893669102",
+      "Delta_m_pn_ppb": "755.5738974115433",
       "Q_beta_N3_MeV": "0.7823343865181718847573066",
       "derivation": "m_n = m_p + Q_β(Kashiwara b², parameter-free) + m_e"
     },
     "neutron_diagnostics": {
-      "m_n_flavor_split_MeV": "939.5637681169238890603779",
-      "m_n_flavor_split_residual_ppm": "-1.75868868737",
-      "Delta_m_pn_flavor_split_MeV": "1.291679956545074824489116",
+      "m_n_flavor_split_MeV": "939.5637695504296129492469",
+      "m_n_flavor_split_residual_ppm": "-1.75716297591",
+      "Delta_m_pn_flavor_split_MeV": "1.291679958515809195026768",
       "flavor_split_note": "flavor-split is a derived u↔d RATIO (prop:flavor-split-substrate), −1.76 ppm on m_n; NOT the production neutron route.",
-      "roundtrip_check_experimental_qbeta_MeV": "939.5654205196888141877098",
+      "roundtrip_check_experimental_qbeta_MeV": "939.5654219519138037631319",
       "roundtrip_note": "m_p + Q_AME(experimental) + m_e recovers CODATA m_n BY CONSTRUCTION — circular, NOT a prediction (3-input over-count)."
     },
     "codata_comparison": {
       "m_p_codata_MeV": "938.27208816",
-      "m_p_residual_ppm": "4.03736017163e-7",
+      "m_p_residual_ppm": "0.00152611787329",
       "m_n_codata_MeV": "939.56542052",
-      "m_n_residual_ppm": "0.00103973280065",
+      "m_n_residual_ppm": "0.00256408114117",
       "M_N_codata_MeV": "938.91875434",
-      "M_N_residual_ppm": "0.00052042617947",
-      "Q_beta_codata_MeV": "0.7823334100000000481790607",
-      "Q_beta_residual_ppm": "1.24821228309"
+      "M_N_residual_ppm": "0.00204545694803",
+      "Q_beta_codata_MeV": "0.7823334093099999910882048",
+      "Q_beta_residual_ppm": "1.24909426117"
     },
     "lean_uniqueness_ref": {
       "proton": "qou:QOU.BraidKnot.PeriodicTableUniqueness.h_uniqueness_closed",
