@@ -97,6 +97,48 @@ The question becomes well-posed only if the substrate fixes **one** q₀:
 Absent either, `c₄` stays a calibration artifact and the tension stays at
 its ≈ 240 ppb floor.
 
+## Addendum: are the c_k proved? is there a recursion? can we derive them?
+
+Corpus-grep (STRICT) settles this — the authoritative source is
+[`content/.../mass-theory/habiro-precision-ladder-equivalence.md`](../../content/quantum-observable-universe/mass-theory/habiro-precision-ladder-equivalence.md),
+cross-checked against [`2026-05-18-all-c-i-status.md`](2026-05-18-all-c-i-status.md).
+Probe: [`scripts/ck_habiro_ladder_derivation_probe.py`](scripts/ck_habiro_ladder_derivation_probe.py)
+(self-contained, exit 0).
+
+**There is exactly one proved, recursive, derivable c_k ladder — and it is
+not the production tower.**
+
+- **Proved / derivable (the Habiro integrality ladder).** The Markov trace
+  has a *finite* expansion in the cyclotomic q-Pochhammer basis,
+  `tr_M(β) = Σ_{m=0}^{M} a_m(u)·(u;u)_m`, with **integer** `a_m ∈ ℤ[u]` and
+  `M < ∞` (proton `M = 8`). The **recursion is the (u;u)_m basis itself**
+  (finite, cyclotomic). The probe reconstructs the proton `tr_M` from the
+  block's listed `a_m` as an exact degree-76 polynomial in `u`, all
+  coefficients integral — a genuine, fit-free, categorical ladder. This is
+  what "derive c_k" *correctly* yields.
+- **These derived a_m are O(10²) integer-scale objects.** Evaluated at
+  `u₀=√q₀` the proton trace is ≈ 136 — nowhere near the O(10⁻⁷) correction
+  the production tower supplies. The distinctive production coefficients
+  `{46, −29}` do **not** appear among the `a_m` (the only overlap is the
+  ubiquitous small integer `4`, a trivial coincidence).
+- **The production tower `{46, 4, −29}` is not derivable and has no
+  recursion.** The block disowns it in its own words: *"attempts to read
+  them off as a precision ladder tuned the coefficients against the
+  experimental value rather than evaluating them categorically … higher-order
+  corrections that are **not** currently derived from the a_m."* And this
+  audit's main result explains *why no fixed recursion can exist*: c_4 is
+  affine in the q₀ pin (0 at the proton pin, 46 at the muon pin), so it is
+  the μ–p tension, not a fibre Taylor coefficient. Deriving it is the open
+  s5bb Habiro keystone (`beans s5bb`), the same object as the Q_β c_k ladder.
+
+**Bottom line for "derive c_k":** the honest derivation is the Habiro `a_m`,
+and it lands the observable at the substrate's ~240 ppb floor — it does
+**not** reproduce 46. The Family-A precedent (`2026-05-18-all-c-i-status.md`)
+is the same lesson: when the fibre object is an *exact closed form*
+(π_HS = (3[2]_q²−2)/4) its c_k are provable and terminate; when the target is
+solved from a single CODATA value (Family B), the coefficients are not
+determined categorically. `{46, 4, −29}` is Family-B.
+
 ## Scope discipline (AGENTS.md "before declaring refuted")
 
 This is a **scope-(a)** result: *c₄, as a fixed categorical constant, is not
