@@ -205,6 +205,35 @@ carrier and R thus fail in complementary places (D-zero vs mirror
 ordering); a principled combination would need a *derived* rule — per
 the Δ_λ gate and the no-fit discipline, none is proposed here.
 
+## 3e. A = 5 mirror pair (n = 15) — the bar-parity antisymmetry SURVIVES beyond the dense cap
+
+§3c refuted the *linear-trace* generalization; the §3b/§3c open question
+was whether the **quadratic (Gram-level)** bar-parity antisymmetry — clean
+at the A = 3 mirror pair ³H/³He (n = 9) — survives past the dense sweep's
+n = 12 ceiling. The Hutchinson stochastic quadratic trace
+([`gram_qtrace_hutchinson_probe.py`](../../computations/probes/gram_qtrace_hutchinson_probe.py),
+witness `gram-qtrace-hutchinson-probe.witness.json`) reaches the A = 5
+mirror pair ⁵He/⁵Li at **n = 15** (d_max = 292 864); 200 Rademacher samples,
+validated vs the exact dense sweep at n = 9 (z = 0.69).
+
+| iso | class | parity(atom) | parity(free) | Δparity (binding) |
+|---|:--|--:|--:|--:|
+| ⁵He (Z=2,N=3, n-rich) | mirror A=5 | +0.6242 | +0.6759 | **−0.0517** (sheds bar-odd) |
+| ⁵Li (Z=3,N=2, p-rich) | mirror A=5 | +0.7837 | +0.7322 | **+0.0515** (gains bar-odd) |
+
+**Verdict — CONFIRMED (the antisymmetric split is a genuine Gram-level
+phenomenon, not an A = 3 artifact).** The two mirror partners shift the
+bar-odd fraction under binding with **opposite signs and near-equal
+magnitude** (−0.0517 vs +0.0515) — the same pattern as ³H/³He (n-rich sheds,
+p-rich gains), now reproduced at n = 15, and *cleaner* (the A = 5 magnitude
+asymmetry is ≈ 1.005, vs the ≈ 16× magnitude asymmetry at A = 3). Combined
+with §3c (the linear trace sees none of this), the picture is consistent:
+the bar-parity loading under binding is a **p↔n (isospin) antisymmetry that
+lives in the quadratic operator-space Gram norm** and is invisible to the
+linear Markov trace. Recorded as an observation (audit-only, no wire, no
+mechanism claim); the earlier §3b/§3c "unconfirmed beyond n = 12" caveat is
+now lifted for the Gram observable.
+
 ## 4. Cross-references
 
 - Critical assessment delivered in-session 2026-07-03 (chat), branch
