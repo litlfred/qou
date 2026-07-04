@@ -686,7 +686,7 @@ question on both sides of the μ–p work.
   constant. `4143/90` had no derivation trail and cited a refuted Reeb route.
   **Dropped** (also fixed a live +242 ppb regression — the muon-era tower was
   being applied to the proton-pinned q₀). m_p now honest at +1.35 ppb; L2 count
-  3/7 → **2/7** (m_e, m_K/π). The one proved c_k recursion is the Habiro
+  3/7 → **2/7** (m_e, m_K/m_π). The one proved c_k recursion is the Habiro
   integrality `a_m` ladder (finite, M=8), which yields the floor, not 46.
   Audit: [`2026-07-04-c4-mu-p-tension-pin-dependence.md`](../audits/2026-07-04-c4-mu-p-tension-pin-dependence.md).
 - **Q_β (#3296).** The honest counterpoint: the production Q_β ladder is

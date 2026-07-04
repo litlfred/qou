@@ -52,7 +52,8 @@ mp.dps = 50
 M_E = mpf("0.51099895069")            # m_e (MeV)
 M_N = mpf("939.56542052")             # M_N_MEV_VALIDATION
 M_P = mpf("938.27208816")             # M_P_MEV_VALIDATION
-# proton-pinned q₀ (documented raw proton pin, q_parameter.Q_50_DIGIT_STR).
+# proton-pinned q₀ (documented raw proton pin; canonical source
+# qou_substrate.constants.Q_50_DIGIT_STR, mirrored by q_parameter shims).
 Q0 = mpf("1.1099785827513808075916690956107688798744991218736")
 
 with mp.workdps(50):
