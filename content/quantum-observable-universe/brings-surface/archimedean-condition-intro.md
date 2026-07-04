@@ -1,4 +1,4 @@
-_[draft]_ The Descartes elliptic curve $\mathcal{E}_q$ of the previous
+The Descartes elliptic curve $\mathcal{E}_q$ of the previous
 section names a structure; the Descartes condition is what selects
 its Euler characteristic. **Descent to dimension zero** (rem)
 explains the descent of the spectral data to a zero-dimensional

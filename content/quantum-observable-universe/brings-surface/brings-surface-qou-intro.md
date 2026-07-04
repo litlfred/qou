@@ -1,4 +1,4 @@
-_[draft]_ Having laid out in the preamble why three colors, a Reeb flow,
+Having laid out in the preamble why three colors, a Reeb flow,
 and a $\chi = -6$ ledger force the same surface, we now fix that
 surface. The opening move is **Bring's surface** (def) — the $S_5$-symmetric
 quartic-and-quadric in $\mathbb{P}^4$ — followed by **Realisations of

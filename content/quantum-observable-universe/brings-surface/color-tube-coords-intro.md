@@ -1,4 +1,4 @@
-_[draft]_ The braid-group action on the resolvents leaves three
+The braid-group action on the resolvents leaves three
 $S_5$-invariants that the previous section already named in
 passing. We now make those invariants the working coordinate system.
 **Color tube coordinates** (def) introduces the variables

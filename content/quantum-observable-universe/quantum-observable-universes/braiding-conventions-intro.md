@@ -1,4 +1,4 @@
-_[draft]_ The substrate parameter $q$, the imaginary unit $i$,
+The substrate parameter $q$, the imaginary unit $i$,
 and the ribbon twist $v = q^{1/2}$ are bound by sign and
 orientation choices that are entirely separable from the
 content-bearing axioms of the QOU. We collect them in one place

@@ -1,4 +1,4 @@
-_[draft]_ The $q$-deformation of brane hydrodynamics forces vortex
+The $q$-deformation of brane hydrodynamics forces vortex
 circulation onto a discrete ladder and pins helicity to a
 topological invariant. We collect the modes that the braided
 monoidal structure produces and the conservation law it enforces.

@@ -1,4 +1,4 @@
-_[draft]_ The valley of stability handed over by the previous section
+The valley of stability handed over by the previous section
 is a Diophantine locus; the present section asks which transitions
 across that valley the categorical Skein relation actually permits.
 **Beta decay as a Skein crossing change on the Gröbner normal form**

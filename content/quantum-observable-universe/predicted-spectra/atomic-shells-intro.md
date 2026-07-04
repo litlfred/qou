@@ -1,4 +1,4 @@
-_[draft]_ The previous section handed over a Skein-polynomial
+The previous section handed over a Skein-polynomial
 factorisation of a multi-component link as the shape of shell
 corrections. The atomic shells now use the same factorisation
 on the electron side. **Orbital shells from eigenvalues of the

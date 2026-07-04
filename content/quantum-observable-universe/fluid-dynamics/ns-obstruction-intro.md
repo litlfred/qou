@@ -1,4 +1,4 @@
-_[draft]_ The global regularity theorem for the $q$-deformed system
+The global regularity theorem for the $q$-deformed system
 isolates the classical Navier--Stokes question as a degeneration
 problem at $q = 1$. We construct a categorical obstruction
 $\mathrm{NS}(A) \in H^3_{\mathrm{loc}}(A, \varTheta)$ that controls

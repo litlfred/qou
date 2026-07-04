@@ -1,4 +1,4 @@
-_[draft]_ The categorical Dirac operator $\mathcal{D}_\nabla$
+The categorical Dirac operator $\mathcal{D}_\nabla$
 combines with a state $\psi \colon \mathbf{1} \to A$ to form the
 endomorphism of $A$ that will be traced to give the action.
 **Categorical Lagrangian** (def) introduces $\mathcal{L}_q(\nabla,

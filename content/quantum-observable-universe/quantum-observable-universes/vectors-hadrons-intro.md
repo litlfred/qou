@@ -1,4 +1,4 @@
-_[draft]_ The weight decomposition supplied a $T$-equivariant
+The weight decomposition supplied a $T$-equivariant
 splitting of $\Omega^\bullet(A)$; we now collect the trace and
 basis machinery built on top of it for intertwiner spaces of
 tensor powers of the fundamental representation. **Adjoint
