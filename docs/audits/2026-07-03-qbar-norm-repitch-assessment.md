@@ -259,6 +259,47 @@ A=3; the n=15 Hutchinson witness carries only aggregates) and is **not**
 derived. No derived mechanism is claimed — the honest state is "confirmed
 effect, sign understood (isospin mirror), magnitude open".
 
+## 3g. Δ_λ magnitude (T3) — corpus-grep status + category-error guard (no new lever)
+
+Requested as a task; discharged as a **discipline-compliant status
+assessment**, not new math. Per the STRICT Δ_λ gate ("no 7th [now 19th]
+fit-based ansatz") the corpus-grep checklist was run before any statement.
+
+**Status (corpus-verified, authoritative sources).** The Δ_λ per-partition
+*magnitude* is a comprehensively bounded open gap:
+- **18 fit-based per-partition ansätze refuted** (saturating chain;
+  [`docs/coordination/gap-a-path-b-lambda.md`](../coordination/gap-a-path-b-lambda.md)).
+  Rescoped 2026-06-23: a finite refuted set is not a non-existence proof,
+  but no *fitted* ansatz survives.
+- **sign = chirality** proved (keystone; `PartitionOf5.deltaSign_mixed`);
+  the **magnitude** is the open part.
+- Continuous-variational **𝓑₃-selection refuted** and **α-cluster
+  fit-blocked** ([`2026-06-17-delta-lambda-two-remaining-directions-closed.md`](2026-06-17-delta-lambda-two-remaining-directions-closed.md)).
+- **Deuteron not closed**; no light nucleus closed
+  ([`docs/coordination/option-e.md`](../coordination/option-e.md), corrected 2026-06-17).
+- **Only non-fit survivors** (all research-scale / gated, none quick):
+  GAP-A-3 (substrate-derived A(K) × an *open* partition-projection P_λ(K));
+  the **unbuilt dense per-block Wedderburn-projector SDP** for 𝓑₃-selection
+  (`confinement-sdp.md`); the signed categorical-Vol route; the
+  owner-gated s5-so3 keystone.
+
+**No new lever is proposed here** — a new fitted per-partition form is
+forbidden by the gate, and the surviving levers are gated/research-scale.
+
+**Category-error guard (the new, useful record).** This session's T1/T2
+results live in the **decay** sector and must NOT be mistaken for a Δ_λ
+binding-magnitude lever:
+- The Q_β carrier, its bar-**odd** part, the residual R₁₂ → cubic
+  C(y)=y³−4y²+3y−2, and the isospin bar-parity antisymmetry are all
+  **Im 𝔙 (bar-odd / decay-width / Q_β)** objects.
+- Δ_λ magnitude is a **Re 𝔙 (bar-even / binding)** per-partition problem.
+- Bar-even and bar-odd are orthogonal channels (§1–§2); there is **no
+  rigorous bridge** from the T1/T2 decay-sector structure to the Δ_λ
+  binding magnitude. Asserting one (e.g. "the cubic C(y) or the isospin
+  antisymmetry closes Δ_λ") would be numerology and is explicitly **not**
+  claimed. Recorded so the session's decay-sector findings are not
+  re-purposed as a binding-Δ_λ closure path.
+
 ## 4. Cross-references
 
 - Critical assessment delivered in-session 2026-07-03 (chat), branch
