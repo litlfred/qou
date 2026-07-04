@@ -109,14 +109,50 @@ appended strand. This is exactly the **bar-even singlet eigenchannel** of the n=
 cup-diagram Gram (Brunnian/SDP route): the g-response failure of the naive routes
 *motivates* the SDP route as the structurally correct survivor.
 
+## "Explore all options" — the channel routes hit a deeper wall (the ladder is counit-calibrated)
+
+Owner directive: explore all three linkage candidates for the surviving
+channel-projected route. Result — **all channel routes share one obstacle**:
+
+- **Markov-trace functional ≠ augmentation.** Replacing the counit augmentation
+  with the genuine Markov trace `tr_M = Σ_λ y_λ χ^λ` (computed via
+  `q_character_on_braid_word` + `solve_y_lambda`, infra confirmed working) gives a
+  **different** transition q-function: `Δ(tr_M)|_{H₃} @q₀ = −0.11789` vs
+  `Δ(aug) = −0.18829`, and the ratio is **not constant** (0.6261 @q₀ vs 0.6091
+  @q=1.2). So `tr_M` does **not** reproduce the calibrated H₃ ladder — the whole
+  `R(q)` construction (`Q_A/m_e = (2q+1−q²)(q+1)/2q³`, `α_eff`, the `Q_β/m_e`
+  normalisation) was derived **for the augmentation `Δ(net)`**. Switching the
+  functional breaks the baseline and requires re-deriving the calibration.
+- **The bar-even channel lives in the `tr_M` picture**, so it inherits the same
+  obstacle: it cannot enter the counit-calibrated ladder without re-derivation.
+- **The operator-selection SDP/LP is well-defined but does not bridge to the
+  ladder.** `solve_operator_selection_lp([1,1], G, n_target=1)` on the n=4 Gram
+  runs (feasible, gap 0) but is degenerate here (`active_set = []`, no positivity
+  constraint binds); its shadow prices are **confinement/binding** quantities, not
+  a `c₄^even` rung. The SDP selects a channel; it does not tell the counit ladder
+  how to read it.
+
+**The real bottleneck (sharpened).** The H₄ `c₄^even` build is blocked **not** on
+"which 4th strand" (every appended strand contaminates c₂/c₃) nor on compute
+(infra works, H₃ reproduced exactly), but on a deeper fact: **the Q_β precision
+ladder is calibrated to the counit functional, and no σ₂-bearing object enters
+that functional without moving the lower rungs; the channel-projected alternatives
+require re-deriving the ladder calibration (`Q_A`, `α_eff`, the `R`-normalisation)
+for a new functional.** That re-derivation is genuine framework work — owner-gated,
+and materially larger than the audit's original "design the 4th strand" framing.
+
 ## Kill-criterion status
 
-Nothing is refuted in scope-(b). The **appended-strand construction** (lepton and
-brane, any coupling) is set aside as scope-(a) — it moves c₂/c₃ at linear order in
-the coupling. The **channel-projected Brunnian/SDP route** is the sole surviving
-candidate; its SDP-channel → c₄^even ladder linkage is the owner-gated modelling
-decision (the SDP objective weights `t` and net target `n_target` for the n=4
-singlet selection are framework choices, not agent ansätze).
+Nothing is refuted in scope-(b). Two scope-(a) results: (1) the **appended-strand
+construction** (lepton and brane, any coupling) moves c₂/c₃ at linear order —
+out; (2) the **channel/Markov-trace functionals** do not reproduce the
+counit-calibrated H₃ baseline, so they cannot supply a `c₄^even` rung to the
+existing ladder without a calibration re-derivation. The productive path forward
+is therefore an **owner decision**: either (i) re-derive the Q_β ladder
+calibration for a bar-covariant (Markov-trace) functional so channel projection
+becomes usable, or (ii) accept that the counit ladder's even sector is
+H₃-complete through c₃ and the c₄^even rung is not reachable by an H₄ strand
+extension at all.
 
 ## Provenance
 
