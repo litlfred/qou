@@ -208,11 +208,20 @@ def main():
                      str(res["value_target_is_compact_hecke"]), "True",
                      source="the 4 targets equal exact compact q-integers/products "
                             "matching the merged screen probe")
-    if res["murakami_scan"].get("available"):
-        wb.add_assertion("murakami_supplies_colored_block",
-                         str(res["murakami_supplies_colored_block"]), "False",
-                         source="the uploaded GPPV paper has no colored/decorated "
-                                "block term (source scan)")
+    # FACT 2 is a HARD gate: the Murakami PDF is committed under uploads/, so a
+    # run that cannot read it (missing pymupdf / missing-or-corrupt file) must
+    # FAIL loudly rather than emit allPassed:true with a vacuous
+    # "pdf-unavailable" — the assertion is emitted unconditionally.
+    scan_available = bool(res["murakami_scan"].get("available"))
+    wb.add_assertion("murakami_scan_ran", str(scan_available), "True",
+                     source="the committed uploads/2205.01282v2.pdf must be "
+                            "readable (pymupdf present, file intact); a skipped "
+                            "scan is a failure, not a silent pass")
+    wb.add_assertion("murakami_supplies_colored_block",
+                     str(res["murakami_supplies_colored_block"])
+                     if scan_available else "pdf-unavailable", "False",
+                     source="the uploaded GPPV paper has no colored/decorated "
+                            "block term (source scan)")
     path = wb.save()
     print(f"\nwitness: {path}")
     return 0
