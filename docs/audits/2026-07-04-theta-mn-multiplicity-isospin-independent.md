@@ -82,7 +82,7 @@ the single remaining (fit-free) target.
 ## Provenance
 
 Compute: `theta_mn_multiplicity.py` (volumes from `binding-link-volumes.witness.json`;
-anchors from `codata_constants`). Corpus: `conj:binding-manybody-jet-filtration`,
+anchors from `codata_constants`). Corpus: `conj:binding-manybody-eq-jet-filtration`,
 `prop:jet-filtration-binding-extensive` (#3270), the opt-1/opt-2 audits (#3274).
 EXPLORATORY — no production wiring, no fitted constant. No-numerology STRICT: closed
 form left open rather than fit to 3 points.

@@ -68,7 +68,7 @@ per-knot volume infra with #3205.
 ## Provenance
 
 Compute: `theta_wn_kernel_derive_or_refute.py` (anchors from `codata_constants`;
-`a_D^(n)=lw(n−1)`). Corpus: `conj:binding-manybody-jet-filtration`,
+`a_D^(n)=lw(n−1)`). Corpus: `conj:binding-manybody-eq-jet-filtration`,
 `docs/audits/2026-06-29-delta-lambda-imme-askey.md` (IMME T₃ form),
 `prop:jet-filtration-binding-extensive` (PR #3270). EXPLORATORY — no production
 wiring, no fitted constant.

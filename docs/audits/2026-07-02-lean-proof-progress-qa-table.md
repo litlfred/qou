@@ -518,8 +518,8 @@ A `sorry` is acceptable only with a bibliographic `-- Ref:` citation on or just 
 | `def:phi-q-piece` | `da-lean-narrative-divergence`, `da-referee-verdict`, `da-reproducibility` |
 | `prop:plancherel-weight-boundedness` | `compute-witness-exists` |
 | `conj:poincare-lefschetz-borromean` | `da-lean-narrative-divergence`, `da-referee-verdict`, `da-reproducibility`, `da-vacuous` |
-| `proof:q-bessel-c-k-recurrence-cfinite` | `compute-witness-exists` |
-| `proof:q-bessel-second-order-qdifference` | `compute-witness-exists` |
+| `prf:q-bessel-c-k-recurrence-cfinite` | `compute-witness-exists` |
+| `prf:q-bessel-second-order-qdifference` | `compute-witness-exists` |
 | `prf:q-gaussian-obstruction-at-q0` | `da-empirical-fragility`, `da-referee-verdict` |
 | `prop:q-gaussian-obstruction-at-q0` | `compute-prop-has-consumer`, `compute-prop-has-probe` |
 | `def:q-reeb-flow-on-color-coords` | `da-lean-narrative-divergence`, `da-referee-verdict`, `wall-side-statement` |

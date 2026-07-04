@@ -5,12 +5,12 @@ Tracked by bean `c370`. Owner: the Q_β / Habiro keystone (bean `kehn`) — the
 
 ## Problem
 
-`proof:jackson-q-bessel-contiguity` has `of: "rem:brings-q-hyperbolic-geometry"`
+`prf:jackson-q-bessel-contiguity` has `of: "rem:brings-q-hyperbolic-geometry"`
 — a **proof of a remark** (inverted; a `proof` must prove a provable block).
 The contiguity *claim* currently lives only inside the remark's prose, and the
 remark carries `interprets: 0`. (The sibling proofs
-`proof:q-bessel-c-k-recurrence-cfinite` and
-`proof:q-bessel-second-order-qdifference` already correctly target
+`prf:q-bessel-c-k-recurrence-cfinite` and
+`prf:q-bessel-second-order-qdifference` already correctly target
 `prop:q-beta-c-k-recursion-from-habiro-q-difference`; only the Jackson one is
 inverted.)
 
@@ -23,7 +23,7 @@ compute witness `computations/qbeta/qbessel-jackson-contiguity.witness.json`.
 
 ```
 prop:jackson-q-bessel-contiguity-recurrence   .ts + .md + .lean→QOU.QBeta.qbessel_*_kind_coeff_closed_form
-   └─ proof:jackson-q-bessel-contiguity        of: → the new prop          [retarget]
+   └─ prf:jackson-q-bessel-contiguity        of: → the new prop          [retarget]
 rem:brings-q-hyperbolic-geometry               interprets: → the new prop  [add]
 ```
 
@@ -33,7 +33,7 @@ rem:brings-q-hyperbolic-geometry               interprets: → the new prop  [ad
    (`proposition`) + `.md` (move the contiguity statement + closed form out of
    the remark) + `.lean` sibling resolving to the existing sorry-free
    `qbessel_first_kind_coeff_closed_form` / `qbessel_second_kind_coeff_closed_form`.
-2. **Retarget** `proof:jackson-q-bessel-contiguity` `of:` → the new prop.
+2. **Retarget** `prf:jackson-q-bessel-contiguity` `of:` → the new prop.
 3. **Remark** `rem:brings-q-hyperbolic-geometry`: add
    `interprets: "prop:jackson-q-bessel-contiguity-recurrence"`; drop
    `proof:jackson-...` from `uses` (replace with the new prop); keep only the

@@ -67,6 +67,6 @@ original "derive `w_n(K)`".
 
 Compute: `theta_wn_jetfilt_linkvolume.py` (volumes from
 `binding-link-volumes.witness.json`; `a_D^(n)=lw(n−1)`; anchors from
-`codata_constants`). Corpus: `conj:binding-manybody-jet-filtration`,
+`codata_constants`). Corpus: `conj:binding-manybody-eq-jet-filtration`,
 `prop:magic-A-binding-formula`, `prop:jet-filtration-binding-extensive` (#3270).
 EXPLORATORY — no production wiring, no fitted constant.
