@@ -1226,7 +1226,27 @@
         "verdict": "open-objection",
         "referee_argument": "The proposed formalization for 'Categorical Reeb derivation' (asserting 'Let $A$ be a Frobenius--Hopf substrate in a rigid :refterm[monoidal category]...') fails to compile with error: content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.lean:28:33: error(lean.unknownIdentifier): Unknown identifier `FrobeniusHopfSubstrate`. A competent referee cannot accept this as a verified mathematical claim."
       }
+    ],
+    "proof-claims-unencoded": [
+      {
+        "field_hash": {
+          "lean": "0eaf50514b42"
+        },
+        "result": "fail",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.lean:62 [docstring-claims-gap] structure CategoricalReebDerivation (C : Type u) [Category.{v} C] — doc enumerates 2 properties (Normalization, Periodicity); only 0 encoded as Prop field(s)",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
+          "version": "v1",
+          "script_hash": "85d9f0223908",
+          "script_commit_sha": "33a07854edc6009b6b5ac0331a50b162498d581f"
+        },
+        "reviewed_at": "2026-07-04T00:11:46.063Z",
+        "reviewed_sha": "b3302691b06ff4207b2e72cda23501bf922042e8",
+        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+      }
     ]
   },
-  "updated_at": "2026-07-03T00:52:58.083Z"
+  "updated_at": "2026-07-04T00:11:46.063Z"
 }

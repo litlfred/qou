@@ -1,17 +1,56 @@
 {
-  "$schema": "block-qa/v1",
-  "label": "prop:phi-q-aj-machinery-identification",
-  "kind": "proposition",
-  "paths": {
-    "ts": "../qou/content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.ts",
-    "md": "../qou/content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.md",
-    "lean": "../qou/content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean"
-  },
-  "source_hashes": {
-    "md": "e9d39a46dc55",
-    "ts": "a9fabecf6d7f",
-    "lean": "56e496e54c28"
-  },
-  "criteria": {},
-  "updated_at": "2026-06-28T11:19:33.342Z"
+ "$schema": "block-qa/v1",
+ "label": "prop:phi-q-aj-machinery-identification",
+ "kind": "proposition",
+ "paths": {
+  "ts": "../qou/content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.ts",
+  "md": "../qou/content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.md",
+  "lean": "../qou/content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean"
+ },
+ "source_hashes": {
+  "md": "e9d39a46dc55",
+  "ts": "9958d1ab7ec1",
+  "lean": "9bfe63baa895"
+ },
+ "criteria": {
+  "proof-no-self-assuming-projection": [
+   {
+    "field_hash": {
+     "lean": "9bfe63baa895"
+    },
+    "result": "fail",
+    "severity": "critical",
+    "evidence": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean:117 [field-projection] theorem phi_q_eq_aj_saddle_root_of_unity | content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean:127 [field-projection] theorem li2_q_eq_aj_saddle_real",
+    "reviewer": {
+     "kind": "script",
+     "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
+     "version": "v1",
+     "script_hash": "85d9f0223908",
+     "script_commit_sha": "33a07854edc6009b6b5ac0331a50b162498d581f"
+    },
+    "reviewed_at": "2026-07-04T00:11:46.063Z",
+    "reviewed_sha": "b3302691b06ff4207b2e72cda23501bf922042e8",
+    "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+   },
+   {
+    "field_hash": {
+     "md": "e9d39a46dc55",
+     "ts": "9958d1ab7ec1",
+     "lean": "9bfe63baa895"
+    },
+    "result": "fail",
+    "reviewer": {
+     "kind": "agent",
+     "id": "local/lean-proof-vacuity-audit",
+     "agent_date": "2026-07-04",
+     "agent_skill": "local/lean-proof-vacuity-audit"
+    },
+    "reviewed_at": "2026-07-04T00:15:23.700181Z",
+    "reviewed_sha": "b3302691b06ff4207b2e72cda23501bf922042e8",
+    "notes": "Agent-CONFIRMED genuine (ledger 2026-07-03): both theorems return inst.regime_eq verbatim — a String-label equation, trivially satisfiable; the AJ-saddle identification is not encoded. Demote to conjecture or re-encode; owner sign-off pending.",
+    "severity": "critical"
+   }
+  ]
+ },
+ "updated_at": "2026-07-04T00:11:46.063Z"
 }
