@@ -57,7 +57,7 @@ divisibility) is therefore closed from **both** ends:
 - **fibre-Laurent level:** the grading survives, but the Φ₄ residue is
   absent; the cyclotomic content is only the trivial (q²−1).
 
-## Open residue (not pursued here)
+## The residue R₁₂ — identified as a cubic in the bar-even trace variable
 
 The substance of the odd carrier is the non-cyclotomic **palindromic
 degree-12** factor
@@ -66,11 +66,30 @@ $$
   \;=\; x^{6} - 4x^{5} + 6x^{4} - 10x^{3} + 6x^{2} - 4x + 1,\quad x = q^{2}.
 $$
 Any residual fibre-level ζ₄ / Habiro structure of the Q_β sector lives in
-R₁₂, not in a cyclotomic factor. Its relation to the underlying 14-strand
-net braid (Δ_net has denominator 4q⁷ ⇒ a 14-crossing / spanning object) —
-e.g. whether R₁₂ is a knot-invariant specialization — is left open. This is
-a *rung-structure* question at the Laurent/Habiro level, the one place the
-companion audit flagged as non-vacuous.
+R₁₂, not in a cyclotomic factor.
+
+**Identification (Task 1, [`qbeta_r12_trace_variable_probe.py`](../../computations/qbeta/qbeta_r12_trace_variable_probe.py),
+witness `qbeta-r12-trace-variable.witness.json`).** R₁₂ is even and
+palindromic, so it collapses under the **bar-even loop-trace variable**
+$y := q^2 + q^{-2} = 2\cosh 2\lambda$ to a cubic:
+$$
+  R_{12}(q)/q^{6} \;=\; C(y),\qquad C(y) = y^{3} - 4y^{2} + 3y - 2
+$$
+(verified exactly: $C(q^2+q^{-2})\,q^6 = R_{12}$). $C$ is **irreducible over
+ℚ** (no rational root; discriminant $-152 < 0$), with one real root
+$y_0 \approx 3.270$ (⇒ a real $q>1$ branch, $q \approx 1.71$) and a
+complex-conjugate pair.
+
+So the odd carrier's non-cyclotomic content is **not** a root-of-unity
+object (consistent with the Φ₄ refutation above) — it is a degree-3
+polynomial in the *same* $\cosh$-trace variable $y=q^2+q^{-2}$ that the
+bar-even (binding) channel is built from. This is the honest structural
+place of R₁₂: $\mathbb{Q}[y]$, degree 3. Whether the cubic $C$ (a genuine
+$S_3$/non-abelian-cubic-field object, disc $-152 = -2^3\cdot 19$) is a
+knot-invariant specialization of the 14-strand net braid ($\Delta_{\text{net}}$
+has denominator $4q^7$) remains the open Laurent/Habiro-level question; but
+the object to identify is now the concrete cubic $C(y)$, not a degree-12
+polynomial.
 
 ## Cross-references
 
