@@ -49,7 +49,7 @@ class HeckeMassTraceContext where
   ringA  : Ring A
   algebraA : @Algebra R A ringR.toCommSemiring ringA.toSemiring
   /-- The Hecke-algebra typeclass instance. -/
-  heckeInst : @QOU.Hecke.HeckeAlgebra R n q A ringR ringA algebraA
+  heckeInst : @QOU.Hecke.HeckeAlgebra R n q A ringR invR ringA algebraA
   /-- The Markov-trace instance on `A`. -/
   markovInst : @QOU.Hecke.MarkovTrace R n q A ringR invR ringA algebraA heckeInst
   /-- The Hecke mass element `Φ_mass(β) ∈ A`. -/
@@ -77,7 +77,7 @@ class HeckeMassTraceContext where
   claim_trace_decomposition :
     markovInst.trace Phi_mass
       = markovInst.trace Phi_desc
-        + (Phi_trans.foldr (fun a acc => markovInst.trace a + acc) 0)
+        + (Phi_trans.foldr (fun a acc => markovInst.trace a + acc) (0 : R))
 
 /-- **Hecke-mass-trace identity** ([`prop:hecke-mass-trace`]).
 
@@ -86,12 +86,19 @@ class HeckeMassTraceContext where
     the descended + transient pieces. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hecke-mass-trace.md
 def hecke_mass_trace [ctx : HeckeMassTraceContext] :
+    -- The class stores the ring/algebra structure as plain fields; bring
+    -- them into instance scope so the restated arithmetic (`+`, `0 : R`)
+    -- elaborates outside the class body.
+    haveI := ctx.ringR
+    haveI := ctx.invR
+    haveI := ctx.ringA
+    haveI := ctx.algebraA
     -- (i) Mass = norm of Markov trace
     (ctx.cat_mass = ctx.norm (ctx.markovInst.trace ctx.Phi_mass)) ∧
     -- (ii) Topological decomposition descends to H_n(R, q)
     (ctx.markovInst.trace ctx.Phi_mass
        = ctx.markovInst.trace ctx.Phi_desc
-         + (ctx.Phi_trans.foldr (fun a acc => ctx.markovInst.trace a + acc) 0)) :=
+         + (ctx.Phi_trans.foldr (fun a acc => ctx.markovInst.trace a + acc) (0 : ctx.R))) :=
   -- The manuscript's categorical argument is carried as the two class
   -- fields `claim_cat_mass_eq_norm_trace` + `claim_trace_decomposition`
   -- (§3b-cond); this theorem recombines them.
