@@ -17,30 +17,56 @@ Scope: **Ch 1 = `quantum-universes/` (54 blocks)**, **Ch 2 =
 
 [`generating-functions-solve-reeb-flow.md`](../../content/quantum-observable-universe/quantum-observable-universes/generating-functions-solve-reeb-flow.md)
 uses the object three times (lines 58, 77–79, 100–116), naming it
-**$\tau_\infty$** and *"the realisation functor $\tau$ from
+**$\tau_\infty$** (τ_∞) and *"the realisation functor $\tau$ (τ) from
 $\widehat{\mathbb{Z}[q]}$ to $\mathbb{C}[\![q-1]\!]$"*, and links each mention to
 `#def:archimedean-realization-functor`.
 
 That definition **does exist** — but as
-[`mass-theory/archimedean-realization-functor.ts`](../../content/quantum-observable-universe/mass-theory/archimedean-realization-functor.ts),
+[`mass-theory/archimedean-realization-functor.md`](../../content/quantum-observable-universe/mass-theory/archimedean-realization-functor.md),
 **seven chapters later**, where it is:
 
-- titled **"Archimedean realization functor $\mathcal{R}_{\mathrm{top}}$"** —
-  a *different symbol* from the $\tau_\infty$ used in Ch 2;
+- titled **"Archimedean realization functor $\mathcal{R}_{\mathrm{top}}$"**
+  (ℛ_top) — a *different symbol* from the $\tau_\infty$ (τ_∞) used in Ch 2;
 - built on `def:adelic-substrate`, `def:motivic-mass-measure`,
   `def:spatial-realization-functor` — adelic / motivic machinery **not
   introduced anywhere in Ch 1–2**.
 
 The markdown link *resolves* (labels are global), so `validate` is silent — but
 for a Ch 2 reader the archimedean realisation functor is **used with no local
-definition and under a symbol ($\tau_\infty$) that never appears at the
+definition and under a symbol ($\tau_\infty$, τ_∞) that never appears at the
 definition site**. This is genuinely "first use before definition." Note also
-the fibre functor is itself written $\tau$ (`AGENTS.md §7`), so $\tau$ /
-$\tau_\infty$ / $\mathcal{R}_{\mathrm{top}}$ risk being read as one object.
+the fibre functor is itself written $\tau$ (τ) (`AGENTS.md §7`), so $\tau$ (τ) /
+$\tau_\infty$ (τ_∞) / $\mathcal{R}_{\mathrm{top}}$ (ℛ_top) risk being read as one
+object.
 
-**Whether the local $q\to1$ realisation $\tau_\infty$ (Habiro $\to$ analytic)
-and the global adelic $\mathcal{R}_{\mathrm{top}}$ are the *same* functor is a
-framework/math question for the author** — see the decision recorded in the PR.
+**Owner ruling (2026-07-04): do not assert identity.** Ch 2 is made
+self-consistent by giving $\tau_\infty$ (τ_∞) a one-line local gloss (the
+$q\to1$ Taylor germ $\widehat{\mathbb{Z}[q]} \to \mathbb{C}[\![q-1]\!]$),
+aligning the bare $\tau$ (τ) to $\tau_\infty$ (τ_∞) — which also removes the
+collision with the fibre functor $\tau$ — and softening the two links to a
+`cf.` pointer to the global $\mathcal{R}_{\mathrm{top}}$ (ℛ_top), with no
+identity claim and no new block.
+
+**Can the identity be *proved*? Not as a functor equality — the two are not the
+same type.** $\tau_\infty$ (τ_∞) has source the Habiro ring
+$\widehat{\mathbb{Z}[q]}$ and target $\mathbb{C}[\![q-1]\!]$;
+$\mathcal{R}_{\mathrm{top}}$ (ℛ_top) is the composite
+$\widehat{\mathcal{M}} \xrightarrow{\chi_{\mathrm{top}}}
+\widehat{\mathcal{M}}\otimes\mathbb{Z} \xrightarrow{\pi_\infty} \mathbb{R}$ with
+source the *motivic* ring $\widehat{\mathcal{M}}$ and target $\mathbb{R}$.
+"$\tau_\infty = \mathcal{R}_{\mathrm{top}}$" is therefore a type error. The
+provable relationship is a **compatibility square on QOU volume classes**: both
+realizations, applied to the substrate $q$-volume, return the same real number —
+the Bloch–Wigner / Thurston hyperbolic volume
+(`prop:thurston-volume-additivity`; the mass-theory doc's own
+`prop:vol-through-tau` + `rem:kashaev-as-archimedean-realization`). The
+*scaffolding* is provable (both maps exist; both compute $V_{\mathrm{hyp}}$ on
+the figure-8 / trefoil cases already witnessed in the corpus); the *general*
+naturality $\tau_\infty\circ\mathrm{Li}_2^q = \mathcal{R}_{\mathrm{top}}\circ\mu$
+for **all** QOU knots is volume-conjecture-strength and **open** — exactly the
+`HabiroFlowSolution` open conjecture the Ch 2 remark already flags. So the owner
+ruling is the mathematically correct one: they are related by an open
+compatibility, not an equality.
 
 ### F2 — the $q$-deformed commutator is defined inside a proposition + a remark, never in a `definition` block (Ch 2) — **the owner's Heisenberg example**
 
