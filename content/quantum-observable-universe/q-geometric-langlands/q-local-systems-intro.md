@@ -4,8 +4,7 @@ on a brane curve $X$, together with the Definition: $q$-Flat connection
 that supplies its $q$-holonomy residue. Two interpretive remarks track
 the deformation explicitly: Remark: From monodromy to $q$-monodromy
 reads the new $q$-monodromy condition as a $\mathbb{G}_m$-family of
-holonomies degenerating at $q = 1$ to the classical case, and **The
-$d_q^2 \neq 0$ obstruction as curvature** (rem) identifies the
+holonomies degenerating at $q = 1$ to the classical case, and Remark: The $d_q^2 \neq 0$ obstruction as curvature identifies the
 substrate-induced failure of $d_q^2 = 0$ with the curvature class that
 obstructs $q$-flatness. These four blocks fix the automorphic-side
 geometry — moduli of $q$-local systems and their flat sections — that

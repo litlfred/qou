@@ -15,14 +15,12 @@ weight basis $\{e_+, e_-\}$ by $e^{\pm i\varTheta}$.
 Definition: Weight decomposition lifts the $T$-action to the
 non-commutative de Rham forms $\Omega^k(A)$, splitting every
 form $\alpha$ uniquely into a horizontal (weight-zero) and
-vertical (non-zero-weight) component. **Existence of the
-weight decomposition** (thm) — with its proof block — verifies
+vertical (non-zero-weight) component. Theorem: Existence of the weight decomposition — with its proof block — verifies
 the splitting and the projectors $\pi_H, \pi_V$.
 Remark: Weight decomposition on $\mathrm{SU}(2)$ exhibits
 the splitting concretely on left-invariant forms.
 
-The section closes with **Physical interpretation of the weight
-decomposition** (rem), which reads the $\alpha = \alpha_H +
+The section closes with Remark: Physical interpretation of the weight decomposition, which reads the $\alpha = \alpha_H +
 \alpha_V$ splitting as the geometric origin of spin--statistics
 — purely horizontal forms are bosonic, mixed forms fermionic.
 The next section, **Vectors, hadrons, and the PawLei basis**,

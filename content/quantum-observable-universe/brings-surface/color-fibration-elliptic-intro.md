@@ -5,12 +5,10 @@ the generic color fibre carries the Weierstrass structure $\mathcal{E}_q$,
 and Remark: Self-duality of the color elliptic curve records the
 $T$-duality that pairs $q \leftrightarrow q^{-1}$ on this curve.
 Remark: Color tube cubic and Remark: Color tube fibers translate
-the elliptic data back into the tube coordinates, and **T-duality in
-color tube coordinates** (rem) shows how the $T$-duality acts on the
+the elliptic data back into the tube coordinates, and Remark: T-duality in color tube coordinates shows how the $T$-duality acts on the
 tubes themselves.
 
-The closing blocks isolate the confinement geometry. **Sublocus
-$\widetilde C = 0$ and colour confinement** (rem) identifies the
+The closing blocks isolate the confinement geometry. Remark: Sublocus $\widetilde C = 0$ and colour confinement identifies the
 discriminant locus where the elliptic fibre degenerates, and
 Remark: Pure colour sublocus and confinement constraint extracts
 the explicit constraint a pure-color state must satisfy. This is the

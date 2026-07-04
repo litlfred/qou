@@ -7,8 +7,7 @@ Definition: Categorical Lagrangian introduces $\mathcal{L}_q(\nabla,
 two summands packaging the bosonic (gauge $+$ curvature) and
 fermionic (state-connection coupling) sectors before
 trace-integration. Proposition: Existence of the categorical Lagrangian — with its proof — verifies that the formula is an
-endomorphism in $\mathbf{C}$, and **uniqueness of the
-categorical Lagrangian** (prop) — with its proof — fixes
+endomorphism in $\mathbf{C}$, and Proposition: uniqueness of the categorical Lagrangian — with its proof — fixes
 $\mathcal{L}_q$ once $\nabla$, $\psi$, $q$, and $\xi$ are
 chosen. The next section, **Categorical action**, traces this
 endomorphism to deliver the action functional.

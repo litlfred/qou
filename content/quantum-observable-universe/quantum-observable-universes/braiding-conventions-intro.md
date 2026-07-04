@@ -10,8 +10,7 @@ compatibility with the standard Kauffman orientation.
 Remark: $\sqrt q$ as ribbon datum places the formal square
 root $v = q^{1/2}$ in $\mathbb{Q}(q^{1/2})$ and reads the
 ribbon twist $\varTheta_V = q^{1/2}\,\mathrm{id}_V$ on the
-defining representation. **The binary sign of $\sqrt q$ as
-spin structure** (rem) records that the choice $v$ vs $-v$,
+defining representation. Remark: The binary sign of $\sqrt q$ as spin structure records that the choice $v$ vs $-v$,
 once $q$ is fixed to a numerical value, is the spin structure
 on the resulting worldline.
 
@@ -25,8 +24,7 @@ coordinates to the chart-transition data of $\mathbb{P}(V)$:
 $q$ appears as the chart-transition coefficient $zw = q^{-1}$
 in the deformed case, $i$ as the square root of the chart-swap
 involution in the commutative case.
-**The categorical-coordinate ring $R[i, q^{\pm 1}]$ of
-chart-transition data** (prop), with its proof, packages this
+Proposition: The categorical-coordinate ring $R[i, q^{\pm 1}]$ of chart-transition data, with its proof, packages this
 as the smallest $R$-algebra extension in which both data are
 universally available — characterised by a chart-transition
 universal property and the semidirect-product factorisation

@@ -6,8 +6,7 @@ resulting structure. Definition: Quantum Observable Universe
 collects the four axioms on the triple $(\mathbf{C}, A, \tau)$;
 the rest of the chapter takes this triple as fixed input.
 
-The structural backbone is **Existence of quantum observable
-universes** (prop), proved axiom-by-axiom across four lemmas —
+The structural backbone is Proposition: Existence of quantum observable universes, proved axiom-by-axiom across four lemmas —
 Lemma: Haar non-degeneracy, Lemma: adjoint observability,
 Lemma: vanishing categorical Chern classes, and
 Lemma: quantum-determinant volume invariance — each with its

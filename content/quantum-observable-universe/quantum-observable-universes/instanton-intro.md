@@ -6,9 +6,7 @@ Lagrangian on-shell.
 
 Definition: Categorical instanton calls a connection $\nabla$ an
 instanton when its curvature $F_\nabla \in \Omega^2(A)$
-satisfies $\star_q F_\nabla = F_\nabla$. **Existence of the
-categorical instanton** (prop) and **uniqueness of the
-categorical instanton** (prop), each with their proof blocks,
+satisfies $\star_q F_\nabla = F_\nabla$. Proposition: Existence of the categorical instanton and Proposition: uniqueness of the categorical instanton, each with their proof blocks,
 deliver an instanton from the QOU axioms. Remark: Instanton on-shell computes the Bogomolny decomposition: the second Chern
 number $c_2(A)$ supplies the topological piece, the
 anti-self-dual norm is forced to zero, and the gauge sector of
