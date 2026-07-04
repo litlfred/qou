@@ -9,25 +9,20 @@ import QOU.BraidKnot.BringTrilogDepth3Witness
 *Geometric realisation of the depth-3 Bring trilog
 $\mathrm{Cl}_3(2\pi/5) = \mathrm{Re}\,\mathrm{Li}_3(\zeta_5)$.*
 
-**T1 completion + factor-2 fix (bean 5e79, 2026-07-04).** Two changes over the
-2026-06-25 orbit-sum-anchored shape:
+**Dependent conjecture (§3b-tax).** The class takes
+`[W : BringTrilogDepth3Witness]` — the geometric-realisation conjecture
+presupposes the depth-3 witness identification (which archimedean values
+are to be realised), so the dependency is threaded through the TYPE (the
+derived `conjecture_graph` edge), not restated as prose.  The two candidate
+invariants must realise **the witnessed values** `W.cl3_2pi5` /
+`W.cl3_4pi5` — not merely an unconstrained pair with the right sum.  The
+pair identity $\mathrm{Cl}_3(2\pi/5) + \mathrm{Cl}_3(4\pi/5)
+= -(12/25)\,\zeta(3)$ (half the full 4-term orbit sum — each Clausen value
+appears twice in the $k = 1..4$ orbit, `Cl₃` even and $2\pi$-periodic) is
+DERIVED sorry-free (`realize_pair_sum`) from the witness's `pair_sum_eq`.
 
-1. **Dependent-conjecture wiring (§3b-tax).** The class now takes
-   `[W : BringTrilogDepth3Witness]` — the geometric-realisation conjecture
-   presupposes the depth-3 witness identification (which archimedean values
-   are to be realised), so the dependency is threaded through the TYPE (the
-   derived `conjecture_graph` edge), not restated as prose.  The previously
-   free `zeta3 : ℝ` field is gone (it is `W.zeta3`), and the two candidate
-   invariants must realise **the witnessed values** `W.cl3_2pi5` /
-   `W.cl3_4pi5` — not merely an unconstrained pair with the right sum.
-2. **Factor-2 mislabel fixed.** The previous anchor pinned the PAIR
-   $\mathrm{Cl}_3(2\pi/5) + \mathrm{Cl}_3(4\pi/5)$ to the full 4-term orbit
-   sum $-(24/25)\,\zeta(3)$ — but each Clausen value appears TWICE in the
-   $k = 1..4$ orbit (`Cl₃` even, $2\pi$-periodic), so the pair sum is
-   $-(12/25)\,\zeta(3)$ ($\approx -0.577$; the old anchor would force
-   $\mathrm{Cl}_3(4\pi/5) \approx -1.34$, outside Clausen range
-   $|{\cdot}| \le \zeta(3)$).  The corrected pair identity is now DERIVED
-   sorry-free (`realize_pair_sum`) from the witness's `pair_sum_eq`.
+History (bean 5e79 / T1, incl. the factor-2 anchor fix): full record in
+`docs/coordination/s5-so3-keystone.md`.
 
 **Residual Mathlib gap (flagged, not faked).** No Clausen `Cl₃` evaluation
 exists in Mathlib or `Infra.Polylogarithm` (only the parametric predicted
