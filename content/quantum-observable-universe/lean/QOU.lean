@@ -60,6 +60,7 @@ import QOU.Mass.AdditiveCorrectionConfinement
 import QOU.Mass.RogersSzegoInhabited
 import QOU.Mass.SelectionRuleQuantumIntegerForm
 import QOU.Mass.JetFiltrationExtensive
+import QOU.Mass.LinearChainBondCount
 import QOU.Calculations
 import QOU.HadronicMass
 import QOU.AtomicMass
