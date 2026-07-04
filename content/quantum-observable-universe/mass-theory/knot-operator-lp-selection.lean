@@ -48,22 +48,55 @@ structure KnotOperatorFamily
       element `i` in `b_i · toH(o) · b_j`. -/
   supply : Op → Basis → Basis → Basis → R
 
+namespace KnotOperatorFamily
+
+variable {R : Type*} [CommRing R] {H : Type*} [Ring H] [Algebra R H]
+
+/-- LP objective: total crossing energy `Σ_o e(o)·x(o)` of a selection `x`. -/
+noncomputable def objective (ops : KnotOperatorFamily R H) (x : ops.Op → R) : R :=
+  letI := ops.opFinite
+  ∑ o : ops.Op, ops.crossingEnergy o * x o
+
+/-- Supply action of a selection `x` on NF-channel `i` (diagonal read of the
+    4-index supply matrix): `Σ_o x(o)·S(o,i,i,i)`. -/
+noncomputable def supplyAction (ops : KnotOperatorFamily R H)
+    (x : ops.Op → R) (i : ops.Basis) : R :=
+  letI := ops.opFinite
+  ∑ o : ops.Op, x o * ops.supply o i i i
+
+/-- **Feasible** selection for demand `n_T`: non-negative, and its supply
+    action meets the required multiplicity on every channel. -/
+def Feasible [PartialOrder R] (ops : KnotOperatorFamily R H)
+    (x : ops.Op → R) (n_T : ops.Basis → R) : Prop :=
+  (∀ o : ops.Op, 0 ≤ x o) ∧ (∀ i : ops.Basis, n_T i ≤ ops.supplyAction x i)
+
+/-- **LP-optimal** selection for demand `n_T`: feasible and objective-maximal
+    among all feasible selections. -/
+def Optimal [PartialOrder R] (ops : KnotOperatorFamily R H)
+    (x : ops.Op → R) (n_T : ops.Basis → R) : Prop :=
+  ops.Feasible x n_T ∧
+    ∀ x' : ops.Op → R, ops.Feasible x' n_T → ops.objective x' ≤ ops.objective x
+
+end KnotOperatorFamily
+
 /--
   A `KnotOperatorLPSelection R H ops` instance records the LP/SDP-
   duality structure that selects one knot operator per confinement
   via the Frobenius Gram-inverse.
 
-  - `frob`: the Frobenius bilinear form on `H` (e.g. the Markov
-    trace pairing on the Iwahori-Hecke algebra).
-  - `frob_nondegenerate`: non-degeneracy supplies `G^{-1}` as the
-    LP-dual basis transform.
-  - `lpFeasibilityCorrespondence`: the open categorical-physics
-    statement that LP-feasible demand vectors are exactly the
-    physically realisable confinements (encoded as a class
-    hypothesis since QOU lacks a separate authored block for it).
-  - `selectionUnique`: the consequence of strong duality +
-    complementary slackness that the LP-optimal active set is
-    generically a singleton (Schrijver §7.4).
+  Mathlib has no formal LP-duality theory, so the two genuinely
+  LP-theoretic facts — strong duality and complementary slackness —
+  are carried as content-bearing class *hypotheses* (each cited to
+  Schrijver). The block's selection conclusion is then **derived** by
+  composing them (`knot_operator_lp_selection`), not projected.
+
+  - `frob` / `frob_nondegenerate`: the Frobenius pairing supplying
+    `G^{-1}` as the LP-dual basis transform.
+  - `strongDuality` (Schrijver §7.2): every demand admits an
+    objective-maximal feasible selection.
+  - `complementarySlackness` (Schrijver §7.4): at generic non-
+    degeneracy, any optimal selection is supported on a single
+    operator.
 -/
 class KnotOperatorLPSelection
     (R : Type*) [CommRing R] [PartialOrder R] [IsOrderedRing R]
@@ -75,58 +108,46 @@ class KnotOperatorLPSelection
   frob : LinearMap.BilinForm R H
   /-- Non-degeneracy of the Frobenius form: `det G ≠ 0`. -/
   frob_nondegenerate : frob.Nondegenerate
-  /-- For every confinement target (a vector `n_T : Basis → R`
-      of required NF-channel multiplicities), an LP-feasible
-      solution exists iff the demand lies in the Frobenius-
-      positive cone.  Encoded as the existence of a non-negative
-      vector `x : Op → R` whose action on the supply matrix
-      majorises `n_T` componentwise.
-
-      Cited from [schrijver1986theory] §7.2.  Full categorical-
-      physics statement (positive cone ↔ physical confinement)
-      is deferred to a separate authored block. -/
-  lpFeasibilityCorrespondence :
-    ∀ (n_T : ops.Basis → R),
-      ∃ x : ops.Op → R,
-        (∀ o : ops.Op, x o ≥ 0)
-  /-- Strong duality (Schrijver §7.2): for every confinement target
-      `n_T`, the LP has both a primal and a dual optimum.  The
-      witness here records existence of the dual optimum
-      `(y₀, y) : R × (Basis → R)` with non-negative `y`. -/
+  /-- **Strong duality** (Schrijver §7.2): every confinement target `n_T`
+      admits an LP-optimal (objective-maximal feasible) selection. A genuine
+      LP hypothesis — its content is the existence of an optimum, not a bare
+      non-negative vector. -/
   strongDuality :
-    ∀ (_n_T : ops.Basis → R),
-      ∃ y₀ : R, ∃ y : ops.Basis → R, (∀ b : ops.Basis, y b ≥ 0)
-  /-- Complementary slackness + active-set uniqueness (Schrijver
-      §7.4): the optimal active set `A^*(T) = {o : x*(o) > 0}` is
-      generically a singleton.  Encoded as the existence of an
-      operator `oStar : Op` carrying the saturated demand. -/
-  selectionUnique :
-    ∀ (_n_T : ops.Basis → R),
-      ∃ _oStar : ops.Op, True
+    ∀ (n_T : ops.Basis → R), ∃ x : ops.Op → R, ops.Optimal x n_T
+  /-- **Complementary slackness + generic non-degeneracy** (Schrijver §7.4):
+      any optimal selection `x` for `n_T` has its support `{o : x o ≠ 0}`
+      equal to a single operator `oStar`. A genuine LP hypothesis about the
+      *shape* of every optimum (not a bare `∃ oStar, True`). -/
+  complementarySlackness :
+    ∀ (n_T : ops.Basis → R) (x : ops.Op → R), ops.Optimal x n_T →
+      ∃ oStar : ops.Op, ∀ o : ops.Op, x o ≠ 0 ↔ o = oStar
 
 /--
-  The propositional content of `prop:knot-operator-lp-selection`:
-  under a `KnotOperatorLPSelection` instance, every confinement
-  target admits a unique LP-optimal knot-operator selection.
+  **Knot-operator LP selection** (`prop:knot-operator-lp-selection`):
+  under a `KnotOperatorLPSelection` instance, every confinement target
+  `n_T` admits an LP-optimal selection supported on a *unique* knot
+  operator `oStar`.
 
-  The full statement (formal LP solve + active-set extraction)
-  is conditional on the open hypotheses; the theorem here records
-  the dependency chain.
+  **Derived**, not projected: composes `strongDuality` (an optimum
+  `x` exists) with `complementarySlackness` (that optimum's support is
+  a singleton `oStar`) to produce the packaged selection. Neither class
+  field is this theorem's conclusion.
 -/
 theorem knot_operator_lp_selection
     {R : Type*} [CommRing R] [PartialOrder R] [IsOrderedRing R]
     {H : Type*} [Ring H] [Algebra R H]
     {ops : KnotOperatorFamily R H}
-    [_inst : KnotOperatorLPSelection R H ops]
+    [inst : KnotOperatorLPSelection R H ops]
     (n_T : ops.Basis → R) :
-    ∃ _oStar : ops.Op, True := by
+    ∃ oStar : ops.Op, ∃ x : ops.Op → R,
+      ops.Optimal x n_T ∧ (∀ o : ops.Op, x o ≠ 0 ↔ o = oStar) := by
   -- Ref: [schrijver1986theory] https://www.wiley.com/en-us/Theory+of+Linear+and+Integer+Programming-p-9780471982326
   -- Ref: [manuscript] docs/audits/2026-05-05-path-alpha-bring-refinement.md §3
   -- Ref: [manuscript] knot-operator-lp-selection.md §"Statement (formal)"
-  -- Active-set uniqueness reduces to LP strong duality
-  -- (Schrijver §7.2) + complementary slackness (§7.4),
-  -- both packaged as class hypotheses since Mathlib lacks
-  -- formal LP duality theory.
-  exact _inst.selectionUnique n_T
+  -- Compose strong duality (§7.2) with complementary slackness (§7.4),
+  -- both packaged as class hypotheses since Mathlib lacks formal LP duality.
+  obtain ⟨x, hx⟩ := inst.strongDuality n_T
+  obtain ⟨oStar, hoStar⟩ := inst.complementarySlackness n_T x hx
+  exact ⟨oStar, x, hx, hoStar⟩
 
 end QOU.BraidsAndKnots
