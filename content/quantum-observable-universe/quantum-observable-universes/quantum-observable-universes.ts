@@ -298,6 +298,7 @@ export default chapter({
         "categorical-action-notation",
         "categorical-action-notation-su2",
         "qou-canonical-action",
+        "canonical-action-obstruction",
       ],
     }),
 
@@ -351,6 +352,7 @@ export default chapter({
         "q-codifferential-formula",
         "q-laplacian-expansion",
         "q-laplacian-spectral-tower",
+        "q-laplacian-consumers",
         "hodge-laplacian-relation",
         "categorical-lichnerowicz",
         "categorical-lichnerowicz-proof",
@@ -499,6 +501,7 @@ export default chapter({
       blocks: [
         "q-special-functions-dilog-intro",
         "q-dilogarithm",
+        "q-dilogarithm-pentagon-associator",
         "q-dilogarithm-properties",
         "q-dilog-habiro-ring",
         "q-dilog-three-contexts",
