@@ -171,13 +171,14 @@ def build_seminormal_matrices(shape, sparse=None, q=None):
 
     sigmas = []
 
+    # O(1) swap-partner lookup (the former linear scan made construction
+    # O(n·dim²) — the wall at dim ≳ 2·10⁴, e.g. n = 15 blocks). Depends only
+    # on `syts`, so build it once outside the per-generator loop.
+    syt_index = {tuple(sorted(t.items())): idx for idx, t in enumerate(syts)}
+
     for k in range(1, n):  # generator σ_k swaps entries k and k+1
         rows, cols, vals = [], [], []
         processed = set()
-
-        # O(1) swap-partner lookup (the former linear scan made construction
-        # O(n·dim²) — the wall at dim ≳ 2·10⁴, e.g. n = 15 blocks).
-        syt_index = {tuple(sorted(t.items())): idx for idx, t in enumerate(syts)}
 
         for i in range(dim):
             if i in processed:
