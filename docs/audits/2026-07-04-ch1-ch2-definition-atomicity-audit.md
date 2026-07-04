@@ -217,8 +217,24 @@ All content edits validated with
   the scaffolding is established on the figure-8 / trefoil cases, the general
   naturality is the volume-conjecture-strength `HabiroFlowSolution` open
   conjecture.
+- **Item 1 (long-statement trims).** `prop:q-laplacian-spectral-tower` — the
+  truncation argument marked as an explicit `**Proof.**` and the "four
+  consumers" table + concrete truncation values + fibre-vs-observable
+  interpretation moved to a follow-on `rem:q-laplacian-consumers`; **cleared**.
+  `prop:qou-canonical-action` — the trace-factorisation / two-forms / uniqueness
+  derivation marked as an explicit `**Proof.**` and the observability-cohomology
+  interpretation moved to a follow-on `rem:canonical-action-obstruction`;
+  **cleared**.
+- **Item 2 (`def:q-dilogarithm` de-bundle).** The bold sub-sections were dropped
+  so the definition reads as one object (level-$k$ primitive setup →
+  $q$-dilogarithm as the pentagon-normalised level-2 primitive), consistent with
+  the `QDilogarithm` Lean structure (whose `pentagon` field makes the pentagon
+  *definitional*, not a separable proposition — so no extraction of the pentagon
+  itself). Only the monoidal-associator interpretation + tikzcd moved to a
+  follow-on `rem:q-dilogarithm-pentagon-associator`; **cleared**.
 
-Ch 2 clarity candidates **23 → 14**.
+Ch 2 clarity candidates **23 → 11** (the 11 remaining are all the adjudicated
+false positives / aggressive-threshold minors below).
 
 **Adjudicated as false positives / author-naming (not defects):**
 
@@ -236,13 +252,13 @@ Ch 2 clarity candidates **23 → 14**.
   definition's *conditions* (Finite injective dimension / Rigidifying
   isomorphism / Van den Bergh duality), a legitimately structured definition,
   not rambling — same class as `frobenius-hopf-substrate`.
-- `def:q-dilogarithm` `defn-tight` — genuinely bundles a level-$k$ primitive
-  definition + the $q$-dilogarithm + the pentagon identity, but the correct fix
-  is the multi-block split the `definition-clarity-audit` skill itself scopes as
-  a **follow-up** (`def:level-k-primitive` + `def:q-dilogarithm` +
-  `prop:q-dilogarithm-pentagon`), touching the existing `q-dilogarithm-exists` /
-  `-unique` dependents. Deferred to a focused follow-up PR, not this atomicity
-  sweep.
+- `def:q-dilogarithm` `defn-tight` — **resolved** (Item 2 above) by a
+  Lean-consistent light de-bundle rather than the skill's speculative
+  `def:level-k-primitive` + `prop:q-dilogarithm-pentagon` split: the
+  `QDilogarithm` Lean structure carries `pentagon` as a *defining field*, so the
+  pentagon is definitional and must **not** be extracted to a separate
+  proposition (that would desync `.md` from `.lean`). Only the associator
+  interpretation moved out.
 
 **Remaining (lower-value polish, deferred):** the `clarity-defn-tight` /
 `clarity-stmt-tight` **minors** where the flagged "preamble" is the
@@ -250,8 +266,7 @@ definition/statement's own ambient-data setup (`Let $(\mathbf{C},A,\tau)$ be
 … with maximal torus $T$ … and weight decomposition …`) — standard
 graduate-math style that the aggressive 60/80-word threshold over-flags:
 `def:substrate-parameter`, `def:categorical-reeb`, `prop:braiding-induced-ordering`,
-`prop:braiding-eigenvalue-extraction`, `prop:fibre-functor-atlas`; plus the two
-genuinely-long statements `prop:q-laplacian-spectral-tower` (396 w) and
-`prop:qou-canonical-action` (490 w), whose length is enumerated conditions, not
-rambling. Each is an agent-adjudicated candidate, not a confirmed defect; the
-two long props are the only real follow-up polish targets.
+`prop:braiding-eigenvalue-extraction`, `prop:fibre-functor-atlas`. Each is an
+agent-adjudicated candidate, not a confirmed defect. (The two genuinely-long
+statements `prop:q-laplacian-spectral-tower` and `prop:qou-canonical-action` were
+**resolved** in Item 1 above.)
