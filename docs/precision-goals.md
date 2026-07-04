@@ -21,7 +21,7 @@
 | Leg | Target | Status |
 |-----|--------|--------|
 | **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) on every observable at substrate q_0 | **NOT certified (2026-06-17)** — exact methods *exist* (`_precision.py` default 65 dps compute / 50 dps serialization), but the live L1 cross-check (`cross_check_trM_1ppb.py`) reports **4/6 atoms divergent / FAILURES**: the `markov_peel` atomic witness is float64-limited (~2.5e-16, stale producer) and the extended-Habiro nuclei path diverges ~1e-7. Even the two float-clean methods (Hoefsmit, chi-cache) agree only at ~2.5e-16 (float64 ε) on the atomic traces. See [`audits/2026-06-17-l1-1ppq-certification-gap.md`](audits/2026-06-17-l1-1ppq-certification-gap.md). The 3-strand closed-form χ anchor *does* hold at 4e-50. |
-| **L2. Per-observable accuracy** | for each predicted observable O with experimental uncertainty σ_O: `σ_pred(O) ≤ σ_O / 100` (i.e. **100× more precise than experimental**) | **3/7 meet** — two calibration anchors (m_e, m_p) + **m_K/m_π**, the first genuine prediction to meet (closed via the meson EM correction `(3q²−1)/(2q²)`, PR #1442); the other 4 predictions **miss** (m_μ ~964×, m_n ~181×, Q_β ~160×, Δ_pn ~159×). The de-fitted, post-re-pin honest state — live source `per-observable-100x-status.witness.json` (`beats_100x_count=3`, computedAt 2026-06-28). |
+| **L2. Per-observable accuracy** | for each predicted observable O with experimental uncertainty σ_O: `σ_pred(O) ≤ σ_O / 100` (i.e. **100× more precise than experimental**) | **2/7 meet** — one calibration anchor (m_e) + **m_K/m_π**, the first genuine prediction to meet (closed via the meson EM correction `(3q²−1)/(2q²)`, PR #1442); the other 5 **miss** (m_p ~437×, m_μ ~964×, m_n ~416×, Q_β ~160×, Δ_pn ~159×). The de-fitted honest state — m_p dropped from "meet" 2026-07-04 when the fitted Habiro tower (that landed it on CODATA) was removed; live source `per-observable-100x-status.witness.json` (`beats_100x_count=2`). |
 
 Both legs apply. Hitting L1 alone is not sufficient; hitting L2 alone is not
 the framework's working precision discipline.
@@ -182,22 +182,26 @@ is the muon at σ_exp ≈ 22 ppb (100× target 0.22 ppb).
 | Observable | role | σ_exp_rel | **100× target** | Current pred error | Status |
 |---|---|---:|---:|---:|---|
 | m_e | CAL-1 anchor | 0.29 ppb | 2.9 ppt | 0 (anchor) | **anchor** ✓ |
-| m_p | **CAL-2 numerical anchor** | 0.31 ppb | 3.1 ppt | 0.0004 ppb (round-trip) | **anchor** ✓ (not a prediction) |
+| m_p | **CAL-2 numerical anchor** | 0.31 ppb | 3.1 ppt | 1.35 ppb (de-fitted round-trip) | **misses ~437×** (documented-pin round-trip; the 0.0004 ppb was a dropped fitted tower, 2026-07-04) |
 | m_μ | prediction | 21.8 ppb | **0.22 ppb** | 210 ppb | **misses ~964×** (9.5σ μ-p tension) |
 | Q_β | prediction (CAL-3 cross-check) | 0.78 ppm | **7.8 ppb** | 1247 ppb (1.25 ppm) | **misses ~160×** (de-fitted; N=5 ladder was a fit) |
-| m_n | prediction (Path C) | 0.57 ppb | **5.7 ppt** | 1.04 ppb | **misses ~181×** |
+| m_n | prediction (Path C) | 0.57 ppb | **5.7 ppt** | 2.39 ppb | **misses ~416×** (rides on m_p; +1.35 ppb after the tower drop) |
 | Δm_pn | prediction (Path C) | 474 ppb | **4.74 ppb** | 755 ppb | **misses ~159×** |
 | m_K/m_π | prediction (meson ratio) | 26.4 ppm | **264 ppb** | 23.4 ppb (post-#1442 closure via `(3q²−1)/(2q²)`) | **MET** (~11× margin below target) |
 
-**Honest summary: 3/7 "meet" — 2 calibration anchors (m_e, m_p)
+**Honest summary: 2/7 "meet" — 1 calibration anchor (m_e)
 plus m_K/m_π (closed via the merged meson EM correction `(3q²−1)/(2q²)`
 in PR #1442; was previously listed as missing by ~1098× pre-merge).
 m_K/m_π is the first genuine prediction to meet the 100× target; the
-other 4 predictions (m_μ, Q_β, m_n, Δ_pn) still miss it.**
+other 5 (m_p, m_μ, Q_β, m_n, Δ_pn) still miss it.** (Was 3/7 through
+2026-07-04, when the fitted m_p Habiro tower — which landed m_p on CODATA
+to 0.0004 ppb — was dropped; the honest documented-pin round-trip is
++1.35 ppb, a ~437× miss.)
 This is the de-fitted state: production reports the real residuals, not
-CODATA-fitted towers. m_p's "0.0004 ppb" is a calibration round-trip
-(see §"The 1 ppQ target is on the theory residual" — σ_theory = 0, the
-residual is sub-σ_CAL CODATA input slop), not a framework prediction.
+CODATA-fitted towers. m_p's former "0.0004 ppb" was a calibration
+round-trip *with* the fitted tower; de-fitted it is +1.35 ppb — still not
+a framework prediction (it is the CAL-2 anchor round-trip), but no longer
+sub-target. See [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](audits/2026-07-04-c4-mu-p-tension-pin-dependence.md).
 
 > **m_p is the numerical anchor (was a prediction pre-#1422).** Because
 > q₀ is now inverted from m_p/m_e, m_p matches CODATA by construction.
@@ -307,9 +311,10 @@ When reading dashboards:
 - **L1 dashboards** (`onepb-status-dashboard`) → cross-method identity at
   fixed compounds. Currently 0.0 / 92.79 ppb (publication rounding floor).
 - **L2 dashboards** (`per-observable-100x-status`) → predicted vs CODATA.
-  Currently **3/7** (m_e, m_p anchors + m_K/m_π prediction); the 4 remaining
-  predictions m_μ, Q_β, m_n, Δ_pn miss the 100× target by ~159× to ~964×
-  (witness `beats_100x_count=3`, computedAt 2026-06-28).
+  Currently **2/7** (m_e anchor + m_K/m_π prediction); the 5 remaining
+  (m_p, m_μ, Q_β, m_n, Δ_pn) miss the 100× target by ~159× to ~964×
+  (witness `beats_100x_count=2`; m_p dropped from "meet" 2026-07-04 with
+  the fitted Habiro tower — de-fitted round-trip +1.35 ppb, ~437×).
 - **Mass-table sweep** (`mass-table-ppb`) → 10/16 with zero-param rule;
   mean |err| 6.80%. This is downstream of Borromean per-isotope extension.
 
