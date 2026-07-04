@@ -1,30 +1,31 @@
 {
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-04T18:43:59.696379+00:00",
+  "commitSha": "d42ea09fb93f6881be4cc503d66e20b3842f1c4a",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
   "computation": "rho-k-h3a-counit-canonical-integral",
-  "description": "\u0394_\u03bb counit/canonical-integral candidate (\u0394_\u03bb=1/y_\u03bb, \u03c9=G^{-1}\ud835\udfd9) tested at the deuteron. Parameter-free; genuinely distinct from all six refuted ans\u00e4tze; REFUTED on sign (vortex-blind), but first candidate in the correct magnitude regime. audit_only; no new anchor, no fit.",
+  "scriptFile": "rho_k_h3a_counit_canonical_integral.py",
+  "scriptHash": "4c6fe10c8fc9",
+  "scriptCommitSha": "4be46bc2c015423543eaff4dac24df592362e28c",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Δ_λ counit/canonical-integral candidate (Δ_λ=1/y_λ, ω=G^{-1}𝟙) tested at the deuteron. Parameter-free; genuinely distinct from all six refuted ansätze; REFUTED on sign (vortex-blind), but first candidate in the correct magnitude regime. audit_only; no new anchor, no fit.",
   "audit_only": true,
   "tier": "structural-exact (parameter-free categorical weight; decidable sign refutation)",
-  "commitSha": "25b8fb8f0159be05ee5acc75f5bf585b0dfe614d",
-  "engine": "python+mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "scriptFile": "rho_k_h3a_counit_canonical_integral.py",
-  "scriptHash": "2537e7e92963",
-  "assertions": [
-    {
-      "name": "counit_distinct_from_six_refuted",
-      "passed": true
-    },
-    {
-      "name": "counit_wrong_sign_vs_target",
-      "passed": true
-    },
-    {
-      "name": "counit_does_not_close_gate",
-      "passed": true
-    }
-  ],
-  "allPassed": true,
   "result": {
-    "candidate": "counit / canonical-integral, \u0394_\u03bb = 1/y_\u03bb (\u03c9 = G^{-1}\u00b7\ud835\udfd9)",
+    "candidate": "counit / canonical-integral, Δ_λ = 1/y_λ (ω = G^{-1}·𝟙)",
     "free_parameters": 0,
     "distinct_from_six_refuted": true,
     "target_signed_m_e": "-4.35336728187014866",
@@ -36,7 +37,7 @@
     "signed_miss_vs_target": "9.28004550101",
     "closes_deuteron_gate": false,
     "sign_flipped_reading_miss_B_eq_minus_eps": "0.573310937272",
-    "verdict": "REFUTED (parameter-free, on SIGN). Counit \u03a3_\u03bb \u03c7^\u03bb(\u03b2_D) = +4.92668 > 0 > target \u22124.35337; same vortex-blind failure as co-Casimir. First candidate in the correct magnitude regime (13%, 30\u00d7 closer than co-Casimir) \u2014 residual localised to the vortex (Hopf/L\u00b1) sign-content. Scope-(a): counit ALONE insufficient; NOT excluded as an ingredient (counit + vortex is the lead). A fitted c to close (c=\u22120.884) would be the barred 7th fit-based ansatz.",
+    "verdict": "REFUTED (parameter-free, on SIGN). Counit Σ_λ χ^λ(β_D) = +4.92668 > 0 > target −4.35337; same vortex-blind failure as co-Casimir. First candidate in the correct magnitude regime (13%, 30× closer than co-Casimir) — residual localised to the vortex (Hopf/L±) sign-content. Scope-(a): counit ALONE insufficient; NOT excluded as an ingredient (counit + vortex is the lead). A fitted c to close (c=−0.884) would be the barred 7th fit-based ansatz.",
     "per_lambda": [
       {
         "partition": [
@@ -164,7 +165,7 @@
     ]
   },
   "context": {
-    "axis": "\u0394_\u03bb per-isotope binding closure (GAP-A) \u2014 deuteron anchor",
+    "axis": "Δ_λ per-isotope binding closure (GAP-A) — deuteron anchor",
     "anchor_witness": "rho-k-h3a-co-casimir.witness.json",
     "refutation_sibling": "content/quantum-observable-universe/mass-theory/frobenius-cocasimir-refuted-deuteron.md",
     "counit_definition": "content/quantum-observable-universe/particle-interactions/qbeta-counit-transition.md",

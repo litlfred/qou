@@ -21,22 +21,15 @@ audit_only. No production wiring, no fit.
 `-- Ref:` alpha_k_four_strand_singlet_selection.py (the same n=4 Gram + the
 Catalan(m) singlet ladder); prop:operator-selection-lp (the LP/SDP dual infra).
 """
-import hashlib
-import json
-import os
-import subprocess
+import sys
+from pathlib import Path
 
-import sympy as sp
-
-
-def _repo_head_sha():
-    try:
-        return subprocess.check_output(
-            ["git", "rev-parse", "HEAD"],
-            cwd=os.path.dirname(os.path.abspath(__file__)), text=True,
-        ).strip()
-    except Exception:
-        return None
+_HERE = Path(__file__).resolve().parent
+for _p in (str(_HERE.parent), str(_HERE.parent / "substrate")):
+    if _p not in sys.path:
+        sys.path.insert(0, _p)
+import sympy as sp  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 
 def main():
@@ -81,19 +74,13 @@ def main():
         ),
     }
 
-    src = open(__file__, "rb").read()
-    witness = {
+    payload = {
         "computation": "qbeta-h4-gram-barchannel-split",
         "description": "n=4 cup-diagram Gram + bar-even/bar-odd eigenchannel split — "
                        "input groundwork for the Brunnian/SDP route-A c_4^even attempt "
                        "(bean 8we6). audit_only; no c_4 value computed (owner-gated linkage).",
         "audit_only": True,
         "tier": "structural-exact (symbolic Gram eigenchannel split; no fit, no anchor sweep)",
-        "commitSha": _repo_head_sha(),
-        "engine": "sympy",
-        "engineVersion": sp.__version__,
-        "scriptFile": os.path.basename(__file__),
-        "scriptHash": hashlib.sha256(src).hexdigest()[:12],
         "assertions": [
             {"name": "bar_even_eigenvalue_bar_invariant", "passed": bool(bar_even_invariant)},
             {"name": "bar_odd_eigenvalue_bar_invariant", "passed": bool(bar_odd_invariant)},
@@ -107,9 +94,10 @@ def main():
             "ledger": "docs/coordination/1ppq-qbeta.md",
         },
     }
-    out = os.path.join(os.path.dirname(__file__), "qbeta-h4-gram-barchannel-split.witness.json")
-    with open(out, "w") as f:
-        json.dump(witness, f, indent=2)
+    out = WitnessBuilder.wrap_legacy(
+        "qbeta-h4-gram-barchannel-split", payload,
+        script_path=__file__, engine="sympy",
+    ).save()
 
     print("=== n=4 Gram bar-channel split (Brunnian/SDP route groundwork) ===")
     print("  bar-EVEN (u1+u2): eigenvalue", ev_even, " @q0 =", float(ev_even.subs(q, q0)))

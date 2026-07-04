@@ -6,7 +6,7 @@ c3^even ~= +86.66116 (the trusted H3 rungs).  c4^even is then the genuine new
 rung.  Uses the exact ladder from qbeta_c3even_exact_sseries_probe.py.
 Heavy (sqrt series, deg-16 rational per object) -> run backgrounded with tee.
 """
-import sys, time
+import time
 import sympy as sp
 import qbeta_h4_nucleon_assembly as A
 

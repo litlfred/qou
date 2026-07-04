@@ -19,27 +19,27 @@ A-scaling signature.  audit_only; no fit, no new anchor.
 `-- Ref:` delta_lambda_binding_full_evaluation.py (χ^λ loading + B_AME targets);
 rho_k_h3a_counit_canonical_integral.py (the deuteron counit result).
 """
-import hashlib
 import json
 import os
-import subprocess
+import sys
+from pathlib import Path
 
-from mpmath import mp, mpf, fabs
+_HERE = Path(__file__).resolve().parent
+for _p in (str(_HERE), str(_HERE / "substrate")):
+    if _p not in sys.path:
+        sys.path.insert(0, _p)
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
+from mpmath import mp, mpf, fabs  # noqa: E402
+from codata_constants import M_E_MEV  # noqa: E402  single source of truth (CODATA)
+from witness_base import WitnessBuilder  # noqa: E402
 
-mp.dps = 50
-HERE = os.path.dirname(os.path.abspath(__file__))
-m_e = mpf("0.51099895")
+HERE = str(_HERE)
+m_e = mpf(str(M_E_MEV))
 B_AME = {"D": mpf("2.22452"), "T": mpf("8.48180"), "3He": mpf("7.71804"), "4He": mpf("28.29567")}
 CHI = {"D": "atom-chi-rust-d.witness.json", "T": "atom-chi-rust-t.witness.json",
        "3He": "atom-chi-rust-3he.witness.json", "4He": "atom-chi-rust-4he.witness.json"}
 N_INTERFACES = {"D": 1, "T": 3, "3He": 3, "4He": 6}  # C(A,2) nucleon pairs
-
-
-def _repo_head_sha():
-    try:
-        return subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=HERE, text=True).strip()
-    except Exception:
-        return None
 
 
 def load_chi(fn):
@@ -52,12 +52,12 @@ def main():
     rows = []
     for name in ["D", "T", "3He", "4He"]:
         chi = load_chi(CHI[name])
-        S = sum(c for _, c in chi)               # counit reading Σ_λ χ^λ(β_K)
+        S = mp.fsum(c for _, c in chi)           # counit reading Σ_λ χ^λ(β_K)
         tgt = -B_AME[name] / m_e                  # target = -B_AME/m_e (binding = defect)
         ratio = fabs(S) / fabs(tgt)
         right_sign = (S < 0) == (tgt < 0)
         rows.append({
-            "atom": name, "A": sum(divmod(0, 1)) or (2 if name == "D" else 3 if name in ("T", "3He") else 4),
+            "atom": name, "A": (2 if name == "D" else 3 if name in ("T", "3He") else 4),
             "n_partitions": len(chi),
             "n_interfaces": N_INTERFACES[name],
             "counit_sum_chi": mp.nstr(S, 12),
@@ -88,19 +88,13 @@ def main():
         ),
     }
 
-    src = open(__file__, "rb").read()
-    witness = {
+    payload = {
         "computation": "rho-k-counit-isotope-systematics",
         "description": "Counit Δ_λ=1/y_λ (Σ_λ χ^λ) evaluated on D/T/³He/⁴He — the deuteron "
                        "magnitude match does not persist (ratio grows with A); sign systematically "
                        "wrong; error scales with interface count (vortex lead). audit_only, no fit.",
         "audit_only": True,
         "tier": "structural-exact (parameter-free character sums from committed χ^λ witnesses)",
-        "commitSha": _repo_head_sha(),
-        "engine": "python+mpmath",
-        "engineVersion": f"mpmath {mp.__version__ if hasattr(mp, '__version__') else 'n/a'}",
-        "scriptFile": os.path.basename(__file__),
-        "scriptHash": hashlib.sha256(src).hexdigest()[:12],
         "assertions": [
             {"name": "sign_systematically_wrong_all_isotopes", "passed": bool(all_wrong_sign)},
             {"name": "magnitude_ratio_not_fixed", "passed": bool(ratio_spread >= mpf("1.1"))},
@@ -114,9 +108,10 @@ def main():
             "audit": "docs/audits/2026-07-04-delta-lambda-counit-canonical-integral-candidate.md",
         },
     }
-    out = os.path.join(HERE, "rho-k-counit-isotope-systematics.witness.json")
-    with open(out, "w") as f:
-        json.dump(witness, f, indent=2)
+    out = WitnessBuilder.wrap_legacy(
+        "rho-k-counit-isotope-systematics", payload,
+        script_path=__file__, engine="python+mpmath",
+    ).save()
 
     print("=== counit Σ_λ χ^λ across D/T/³He/⁴He ===")
     print(f"{'atom':>4} {'n_int':>5} {'sum_chi':>12} {'-B/me':>12} {'ratio':>8} {'sign':>6}")

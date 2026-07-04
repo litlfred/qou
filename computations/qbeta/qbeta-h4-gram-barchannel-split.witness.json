@@ -1,24 +1,29 @@
 {
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-04T18:45:21.412508+00:00",
+  "commitSha": "d42ea09fb93f6881be4cc503d66e20b3842f1c4a",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
   "computation": "qbeta-h4-gram-barchannel-split",
-  "description": "n=4 cup-diagram Gram + bar-even/bar-odd eigenchannel split \u2014 input groundwork for the Brunnian/SDP route-A c_4^even attempt (bean 8we6). audit_only; no c_4 value computed (owner-gated linkage).",
+  "scriptFile": "qbeta_h4_gram_barchannel_probe.py",
+  "scriptHash": "a06407b8a386",
+  "scriptCommitSha": "195d20d53e021ba71a0653b92d82f41b008527d3",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "n=4 cup-diagram Gram + bar-even/bar-odd eigenchannel split — input groundwork for the Brunnian/SDP route-A c_4^even attempt (bean 8we6). audit_only; no c_4 value computed (owner-gated linkage).",
   "audit_only": true,
   "tier": "structural-exact (symbolic Gram eigenchannel split; no fit, no anchor sweep)",
-  "commitSha": "2023db4cc18b7751b16dfc2d71f6e71a418f5880",
-  "engine": "sympy",
-  "engineVersion": "1.14.0",
-  "scriptFile": "qbeta_h4_gram_barchannel_probe.py",
-  "scriptHash": "5048736e8a38",
-  "assertions": [
-    {
-      "name": "bar_even_eigenvalue_bar_invariant",
-      "passed": true
-    },
-    {
-      "name": "bar_odd_eigenvalue_bar_invariant",
-      "passed": true
-    }
-  ],
-  "allPassed": true,
   "result": {
     "gram_basis": "{u1 = cups(12)(34), u2 = nested cups(14)(23)}",
     "gram_matrix": "[[delta^2, delta], [delta, delta^2]], delta = [2]_q = q + 1/q",
@@ -41,7 +46,7 @@
     "owner_gated_linkage": "The SDP objective weights t and net target n_target for the n=4 singlet selection, and the selected-channel -> Q_beta net-route ladder linkage, are framework choices (NOT agent ansatz). This probe fixes only the Gram + its bar-channel split."
   },
   "context": {
-    "axis": "Q_beta 1ppQ achievable-arm \u2014 H4 c_4^even rung (Brunnian/SDP route)",
+    "axis": "Q_beta 1ppQ achievable-arm — H4 c_4^even rung (Brunnian/SDP route)",
     "predecessor_scan": "docs/audits/2026-07-04-8we6-h4-route-a-explicit-strand-gate-scan.md",
     "gram_source": "computations/alpha_k_four_strand_singlet_selection.py",
     "ledger": "docs/coordination/1ppq-qbeta.md"

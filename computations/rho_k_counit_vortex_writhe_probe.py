@@ -29,22 +29,21 @@ refutation of the naive normalization); interface-knot-markov-z.md (signed p₊/
 interface factorization β_K=β_K^vac·⋈_K); torus-knot-delta-q-writhe.md (bar-odd δ_q).
 """
 import ast
-import hashlib
 import json
 import os
-import subprocess
+import sys
+from pathlib import Path
 
-from mpmath import mp, mpf, power
+_HERE = Path(__file__).resolve().parent
+for _p in (str(_HERE), str(_HERE / "substrate")):
+    if _p not in sys.path:
+        sys.path.insert(0, _p)
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
+from mpmath import mp, mpf, power  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
-mp.dps = 50
-HERE = os.path.dirname(os.path.abspath(__file__))
-
-
-def _repo_head_sha():
-    try:
-        return subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=HERE, text=True).strip()
-    except Exception:
-        return None
+HERE = str(_HERE)
 
 
 def content_sum(part):
@@ -64,7 +63,7 @@ def main():
 
     scan = {}
     for w in (-3, -2, -1, 0, 1, 2, 4):
-        S = sum(chi * power(q0, w * c) for _, c, chi in rows)
+        S = mp.fsum(chi * power(q0, w * c) for _, c, chi in rows)
         scan[w] = {"eps_vortex": mp.nstr(S, 14), "sign_negative": bool(S < 0),
                    "abs_miss": mp.nstr(abs(S - tgt), 8), "within_tol": bool(abs(S - tgt) < tol)}
 
@@ -93,8 +92,7 @@ def main():
         ),
     }
 
-    src = open(__file__, "rb").read()
-    witness = {
+    payload = {
         "computation": "rho-k-counit-vortex-writhe",
         "description": "Counit + Kauffman ribbon-framing vortex weight q^{w c(λ)} on the deuteron. "
                        "Negative writhe supplies the binding sign (mechanism confirmed) but no derived "
@@ -102,11 +100,6 @@ def main():
                        "audit_only, parameter-free scan, no fit.",
         "audit_only": True,
         "tier": "structural-exact (derived ribbon-framing weight; parameter-free writhe scan)",
-        "commitSha": _repo_head_sha(),
-        "engine": "python+mpmath",
-        "engineVersion": "mpmath",
-        "scriptFile": os.path.basename(__file__),
-        "scriptHash": hashlib.sha256(src).hexdigest()[:12],
         "assertions": [
             {"name": "negative_writhe_flips_sign_negative", "passed": bool(sign_flips_negative)},
             {"name": "no_derived_integer_writhe_closes", "passed": bool(not any_integer_closes)},
@@ -121,9 +114,10 @@ def main():
             "audit": "docs/audits/2026-07-04-delta-lambda-counit-canonical-integral-candidate.md",
         },
     }
-    out = os.path.join(HERE, "rho-k-counit-vortex-writhe.witness.json")
-    with open(out, "w") as f:
-        json.dump(witness, f, indent=2)
+    out = WitnessBuilder.wrap_legacy(
+        "rho-k-counit-vortex-writhe", payload,
+        script_path=__file__, engine="python+mpmath",
+    ).save()
 
     print("=== counit + vortex ribbon framing  ε_vortex(β_D) = Σ χ^λ q^{w c(λ)} ===")
     print(f"  target = {mp.nstr(tgt,8)}   tol = 1")

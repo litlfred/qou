@@ -29,24 +29,19 @@ audit_only.  Reads the committed deuteron per-λ anchor data
 `-- Ref:` frobenius-cocasimir-refuted-deuteron.md (the sibling refutation +
 target); qbeta-counit-transition.md (the ε=⟨·,G⁻¹𝟙⟩ vs tr_M=⟨·,𝟙⟩ distinction).
 """
-import hashlib
 import json
 import os
-import subprocess
+import sys
+from pathlib import Path
 
-import mpmath as mp
-
-mp.mp.dps = 50
-
-
-def _repo_head_sha():
-    try:
-        return subprocess.check_output(
-            ["git", "rev-parse", "HEAD"],
-            cwd=os.path.dirname(os.path.abspath(__file__)), text=True,
-        ).strip()
-    except Exception:
-        return None
+_HERE = Path(__file__).resolve().parent
+for _p in (str(_HERE), str(_HERE / "substrate")):
+    if _p not in sys.path:
+        sys.path.insert(0, _p)
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
+import mpmath as mp  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 
 def main():
@@ -105,8 +100,7 @@ def main():
         "per_lambda": rows,
     }
 
-    src = open(__file__, "rb").read()
-    witness = {
+    payload = {
         "computation": "rho-k-h3a-counit-canonical-integral",
         "description": "Δ_λ counit/canonical-integral candidate (Δ_λ=1/y_λ, ω=G^{-1}𝟙) tested "
                        "at the deuteron. Parameter-free; genuinely distinct from all six refuted "
@@ -114,11 +108,6 @@ def main():
                        "magnitude regime. audit_only; no new anchor, no fit.",
         "audit_only": True,
         "tier": "structural-exact (parameter-free categorical weight; decidable sign refutation)",
-        "commitSha": _repo_head_sha(),
-        "engine": "python+mpmath",
-        "engineVersion": f"mpmath {mp.__version__}",
-        "scriptFile": os.path.basename(__file__),
-        "scriptHash": hashlib.sha256(src).hexdigest()[:12],
         "assertions": [
             {"name": "counit_distinct_from_six_refuted", "passed": True},
             {"name": "counit_wrong_sign_vs_target", "passed": bool(not right_sign)},
@@ -134,9 +123,10 @@ def main():
             "gate_rule": "no seventh FIT-based ansatz (this candidate is parameter-free, permitted; refuted on its own)",
         },
     }
-    out = os.path.join(here, "rho-k-h3a-counit-canonical-integral.witness.json")
-    with open(out, "w") as f:
-        json.dump(witness, f, indent=2)
+    out = WitnessBuilder.wrap_legacy(
+        "rho-k-h3a-counit-canonical-integral", payload,
+        script_path=__file__, engine="python+mpmath",
+    ).save()
 
     print("=== Δ_λ counit / canonical-integral (Δ_λ = 1/y_λ) — deuteron ===")
     print("  tr_M mass reading  Σ y_λ χ^λ =", mp.nstr(sum_ychi, 10))
