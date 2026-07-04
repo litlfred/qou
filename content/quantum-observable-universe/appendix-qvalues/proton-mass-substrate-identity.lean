@@ -13,12 +13,15 @@ substrate `q_0`:
 
   m_p = 2 · m_μ · F_Bor(q_0) − 12 · m_e
 
-The categorical observable `F_Bor` and its structural-integer
-identifications (`bar_pair_factor_two_categorical = 2`,
-`ocneanu_factor_twelve_categorical = 12`) live in
-`QOU.BraidsAndKnots.FBorBorromeanObservable`.  This module specialises
-to the archimedean evaluation: at `q = q_0`, with `m_e` and `m_μ`
-calibrated against CODATA values.
+The categorical observable `F_Bor` is carried here as a **local
+`opaque` symbol** (see its declaration below) — its closed form is
+compute-only and not yet in Lean. This module previously imported a
+`QOU.BraidsAndKnots.FBorBorromeanObservable` module that **never
+existed**; the import has been removed and the block made
+self-contained. This file specialises to the archimedean evaluation
+at `q = q_0`, with `m_e` and `m_μ` calibrated against CODATA values.
+The structural-integer identifications (the "2" and the "12"
+factors) are documented as conditional hypotheses below.
 
 The identity is CONDITIONAL on:
 
