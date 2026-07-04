@@ -4,7 +4,6 @@ Copyright (c) 2026 Frederick Carl Leitner. All rights reserved.
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
-import QOU.BraidsAndKnots.FBorBorromeanObservable
 
 /-!
 # QOU.AppendixQValues.ProtonMassSubstrateIdentity
@@ -48,9 +47,19 @@ Refs:
   - PR #1272 (origin), PR #546 (Hoefsmit symbolic for −1/12)
 -/
 
-open QOU.BraidsAndKnots
-
 namespace QOU.AppendixQValues
+
+/-- **Borromean categorical observable** `F_Bor(q) = |tr_M(β_Bor,q)|·[3]_q!/q³`.
+
+    Opaque placeholder: the closed form is produced by the compute pipeline
+    (`computations/`, e.g. `m_p_substrate_identity_50dps.py`) and is not yet
+    formalised in Lean. This file previously imported a
+    `QOU.BraidsAndKnots.FBorBorromeanObservable` module that never existed;
+    the only library `F_Bor` (`QOU.BraidKnot.TwoRoutes`) is a `:= 0` stub of
+    a *nullary* constant, incompatible with the `F_Bor q_0` usage here. The
+    block is made self-contained with this opaque symbol until the real
+    categorical observable is built. -/
+opaque F_Bor : ℝ → ℝ
 
 /-- **The proton-mass substrate identity** (conditional statement).
 
@@ -70,18 +79,33 @@ def ProtonMassSubstrateIdentity (q_0 m_e m_mu m_p : ℝ)
     (h_q : q_0 ≠ 0) : Prop :=
   m_p = 2 * m_mu * F_Bor q_0 - 12 * m_e
 
-/-- **Empirical witness at substrate q_0 ≈ 1.10978.**
+/-- CODATA 2022 proton rest mass (MeV). -/
+def codataProtonMeV : ℝ := 938.27208816
 
-    The substrate identity matches CODATA m_p to 0.24 ppm at
-    50-dps MPFR precision (per
-    `m_p_substrate_identity_50dps.py`).  This Lean theorem STATES
-    the identity holds for some m_p — proof is a numerical
-    verification, not a categorical derivation. -/
-theorem proton_mass_substrate_identity_empirical
-    (q_0 m_e m_mu : ℝ) (h_q : q_0 ≠ 0) :
-    ∃ m_p : ℝ, ProtonMassSubstrateIdentity q_0 m_e m_mu m_p h_q := by
-  refine ⟨2 * m_mu * F_Bor q_0 - 12 * m_e, ?_⟩
-  unfold ProtonMassSubstrateIdentity
+/-- **Empirical CODATA agreement at substrate q_0.**
+
+    With `m_e`, `m_μ` calibrated to their CODATA values and `q_0` the
+    substrate modulus, the proton mass fixed by the substrate identity
+    `m_p = 2·m_μ·F_Bor(q_0) − 12·m_e` agrees with the CODATA proton mass to
+    within `1 ppm` (empirically `0.24 ppm` at 50-dps MPFR, per
+    `m_p_substrate_identity_50dps.py`).
+
+    This is a genuine constraint on the opaque observable `F_Bor(q_0)`, not
+    a tautology: under the fixed calibration hypotheses the conclusion pins
+    `F_Bor(q_0)` to the value reproducing CODATA. Honest `sorry` — the
+    closed form of `F_Bor` at `q_0` is compute-only, not yet in Lean. -/
+-- Ref: [manuscript] quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.md
+theorem proton_mass_substrate_identity_codata
+    (q_0 m_e m_mu m_p : ℝ) (h_q : q_0 ≠ 0)
+    (h_id : ProtonMassSubstrateIdentity q_0 m_e m_mu m_p h_q)
+    (h_cal_e : m_e = 0.51099895)
+    (h_cal_mu : m_mu = 105.6583755)
+    (h_q0 : q_0 = 1.10998) :
+    |m_p - codataProtonMeV| ≤ 1e-6 * codataProtonMeV := by
+  -- Ref: [manuscript] quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.md
+  -- Reduces to the numerical value of F_Bor(q_0) = |tr_M(β_Bor,q_0)|·[3]_q!/q_0³
+  -- (Borromean categorical observable); compute-only, not yet in Lean.
+  sorry
 
 /-! ## Cleaner form of the substrate identity via F_Bor = |tr_M|/y_(3)
 
