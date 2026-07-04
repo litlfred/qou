@@ -100,13 +100,14 @@ def ppb(x: mp.mpf) -> float:
 def stage0_q_pin() -> dict:
     """Solve q₀ live under both anchors; Vol(4₁) from Lobachevsky.
 
-    The proton pin (`q_at`) solves the FULL production identity
-    m_p/m_e = (2·(Vol(4₁)/ℏ_q²)·F_Bor − 12)·habiro_ratio — i.e. it
-    INCLUDES the s5bb Habiro 4-loop factor. Live consequence recorded
-    below: the μ–p anchor tension in q-space is ~0.003 ppb (the
-    habiro-corrected pin sits ~11.5 ppb below the old bare pin, nearly
-    ON the muon closed form) — the q_muon_at docstring's "~11.5 ppb"
-    figure describes the PRE-habiro pin and is stale."""
+    The proton pin (`q_at`) solves the RAW identity
+    m_p/m_e = 2·(Vol(4₁)/ℏ_q²)·F_Bor − 12 (owner ruling 2026-07-03:
+    the fitted habiro tower that briefly dressed this solve is
+    STRIPPED — see qou_substrate.constants.q_at + PR #3280, which
+    proved the exact c₄ is linear in the pin offset, i.e. the tension
+    reparametrized). Consequence: the μ–p anchor tension in q-space is
+    the documented ~11.5 ppb (≈ ×21 sensitivity ⇒ ~242 ppb on masses;
+    the AGENTS m_μ-prediction narrative is CURRENT)."""
     vol41 = vol_4_1_at(DPS)
     q_p = q_at(DPS)          # proton anchor  (phys-obs precision layer)
     q_mu = q_muon_at(DPS)    # muon anchor    (canonical CAL-2 proxy)
@@ -120,10 +121,11 @@ def stage0_q_pin() -> dict:
         "pin_roundtrip_reldiff": float(abs(rel(q_p, pinned))),
         "anchor_tension_rel": float(tension),
         "anchor_tension_ppb": ppb(abs(tension)),
-        "staleness_flag": (
-            "q_muon_at docstring claims ~11.5 ppb μ–p gap; live habiro-"
-            "corrected pin gives ~0.003 ppb in q-space — doc predates "
-            "the s5bb habiro factor entering the pin"
+        "pin_note": (
+            "RAW proton pin (owner ruling 2026-07-03; fitted habiro "
+            "tower stripped — the exact c₄ is pin-offset-linear per "
+            "PR #3280, so a dressed pin merely reparametrizes the μ–p "
+            "tension)"
         ),
         "_q_p": q_p, "_q_mu": q_mu,
     }
@@ -193,12 +195,12 @@ def habiro_ratio(q: mp.mpf, c4: mp.mpf) -> mp.mpf:
 
 def nucleon_masses_at(q: mp.mpf) -> dict:
     """Nucleon masses via the muon-anchored Hecke energy, recomputed
-    live at q — BOTH the bare identity (the `canonical_mass.py`
-    facade-fallback form) and the full production identity with the
-    Habiro 4-loop ratio (the `m_p_substrate_identity_50dps.py`
-    producer form), so the Habiro correction's contribution is
-    attributed explicitly. Two c₄ conventions coexist in the corpus
-    (pin solver: 46; producer: 4143/90) — both reported."""
+    live at q. Headline = the BARE (raw-pin) identity — the canonical
+    form per the owner ruling 2026-07-03 (fitted habiro tower stripped
+    from the pin). The two Habiro-dressed variants (c₄ = 46 and
+    4143/90) are reported as FIT-TIER diagnostics: at the raw pin they
+    miss CODATA m_p by ~+242 ppb, which IS the μ–p tension
+    reparametrized (PR #3280 pin-offset linearity)."""
     m_e = mp.mpf(str(M_E_MEV))
     vol41 = vol_4_1_at(DPS)
     hbar_q_sq = ((q - 1) / q) ** 2
@@ -208,10 +210,11 @@ def nucleon_masses_at(q: mp.mpf) -> dict:
     m_p_pin46 = m_p_bare * habiro_ratio(q, mp.mpf(46))
     m_p_prod = m_p_bare * habiro_ratio(q, mp.mpf(4143) / 90)
     q_beta = q_beta_kashiwara_n2_mev()   # evaluated at the canonical pin
-    m_n = m_p_prod + q_beta + m_e
+    m_n = m_p_bare + q_beta + m_e
     return {"m_mu": m_mu, "F_Bor": fbor,
-            "m_p_bare": m_p_bare, "m_p_pin46": m_p_pin46,
-            "m_p": m_p_prod, "m_n": m_n, "Q_beta": q_beta}
+            "m_p": m_p_bare, "m_p_bare": m_p_bare,
+            "m_p_pin46": m_p_pin46, "m_p_habiro_prod": m_p_prod,
+            "m_n": m_n, "Q_beta": q_beta}
 
 
 def stage2_nucleons(q_p: mp.mpf, q_mu: mp.mpf) -> dict:
@@ -228,17 +231,19 @@ def stage2_nucleons(q_p: mp.mpf, q_mu: mp.mpf) -> dict:
             "err_m_mu_ppb": ppb(rel(r["m_mu"], M_MU_MEV_VALIDATION)),
             "err_m_p_bare_ppb": ppb(rel(r["m_p_bare"], M_P_MEV_VALIDATION)),
             "err_m_p_pin46_ppb": ppb(rel(r["m_p_pin46"], M_P_MEV_VALIDATION)),
+            "err_m_p_habiro_prod_ppb":
+                ppb(rel(r["m_p_habiro_prod"], M_P_MEV_VALIDATION)),
             "err_m_p_ppb": ppb(rel(r["m_p"], M_P_MEV_VALIDATION)),
             "err_m_n_ppb": ppb(rel(r["m_n"], M_N_MEV_VALIDATION)),
             "_raw": r,
         }
     out["mismatch_flags"] = [
-        "canonical_mass.py _from_formula (facade fallback) omits the "
-        "habiro_ratio the producer witness includes — bare identity "
-        "misses CODATA m_p by ~−241 ppb at the current pin",
-        "c₄ convention mismatch: q_parameter pin solver uses 46·u⁴, "
-        "m_p_substrate_identity_50dps producer uses (4143/90)·u⁴ — "
-        "delta reported per-anchor above",
+        "producer (m_p_substrate_identity_50dps.py) still applies the "
+        "FIT-TIER habiro dressing while the pin is RAW (owner ruling "
+        "2026-07-03) — at the raw pin the dressed m_p misses CODATA by "
+        "~+242 ppb; reconcile is #3280's owner options (bean 2i8g)",
+        "producer witness on main is stale vs the raw pin (computed at "
+        "the old dressed pin) — flagged to #3280, not churned here",
     ]
     return out
 
@@ -452,8 +457,8 @@ def main() -> int:
     print(f"  q₀(muon anchor)   = {s0['q_muon_anchor'][:30]}…")
     print(f"  pin round-trip vs witness: {s0['pin_roundtrip_reldiff']:.2e}")
     print(f"  ERROR SOURCE: μ–p anchor tension = "
-          f"{s0['anchor_tension_ppb']:.4f} ppb (in q-space; habiro-corrected pin)")
-    print(f"  STALENESS: {s0['staleness_flag']}")
+          f"{s0['anchor_tension_ppb']:.4f} ppb (in q-space; RAW pin)")
+    print(f"  PIN NOTE: {s0['pin_note']}")
 
     s1 = stage1_gamma_gamma(q_p)
     print("\n[S1] γγ production entry (structural, no numeric error)")
@@ -468,9 +473,9 @@ def main() -> int:
         r = s2[anchor]
         print(f"  [{anchor}] m_p={r['m_p_MeV'][:12]}  m_n={r['m_n_MeV'][:12]}  "
               f"m_μ={r['m_mu_MeV'][:12]}")
-        print(f"    err(ppb): m_p(bare)={r['err_m_p_bare_ppb']:+.2f}  "
-              f"m_p(hab.46)={r['err_m_p_pin46_ppb']:+.4f}  "
-              f"m_p(hab.4143/90)={r['err_m_p_ppb']:+.4f}  "
+        print(f"    err(ppb): m_p(bare/RAW)={r['err_m_p_bare_ppb']:+.4f}  "
+              f"m_p(hab.46 FIT)={r['err_m_p_pin46_ppb']:+.2f}  "
+              f"m_p(hab.4143/90 FIT)={r['err_m_p_habiro_prod_ppb']:+.2f}  "
               f"m_n={r['err_m_n_ppb']:+.2f}  m_μ={r['err_m_mu_ppb']:+.2f}")
     for f in s2["mismatch_flags"]:
         print(f"  MISMATCH FLAG: {f}")
@@ -557,20 +562,22 @@ def main() -> int:
         "crossing_energy_positive",
         computed=s1["crossing_energy_positive"], expected=True,
         source="knot-particle dictionary 𝔈_×(q₀) = ½(q−q⁻¹) > 0")
-    # ratio-space round-trip: the pin solves m_p/m_e (ratio), so the exact
-    # check is in ratio space; the ~+1.35 ppb seen in MeV space is the
-    # CODATA-internal (m_p[MeV] vs m_e[MeV]·(m_p/m_e)) conversion
-    # inconsistency — recorded as its own ledger line, not a failure.
+    # ratio-space round-trip: the RAW proton pin (owner ruling
+    # 2026-07-03, fitted habiro tower stripped from q_at) solves the
+    # BARE identity in m_p/m_e ratio space, so the exact check is the
+    # bare mass; the ~+1.35 ppb seen in MeV space is the CODATA-internal
+    # (m_p[MeV] vs m_e[MeV]·(m_p/m_e)) conversion inconsistency —
+    # recorded as its own ledger line, not a failure.
     from q_parameter import MASS_RATIO_P_E_STR
-    r46 = s2["proton_anchor"]["_raw"]["m_p_pin46"] / mp.mpf(str(M_E_MEV))
-    ratio_roundtrip = float(abs(rel(r46, mp.mpf(MASS_RATIO_P_E_STR))))
+    r_bare = s2["proton_anchor"]["_raw"]["m_p_bare"] / mp.mpf(str(M_E_MEV))
+    ratio_roundtrip = float(abs(rel(r_bare, mp.mpf(MASS_RATIO_P_E_STR))))
     wb.add_data("S2_codata_mev_conversion_inconsistency_ppb",
-                s2["proton_anchor"]["err_m_p_pin46_ppb"])
+                s2["proton_anchor"]["err_m_p_bare_ppb"])
     wb.add_assertion(
         "m_p_over_m_e_proton_anchor_ratio_roundtrip",
         computed=ratio_roundtrip, expected=0.0, tolerance=1e-40,
-        source="anchor round-trip in RATIO space with the pin's own "
-               "habiro c₄=46 (not a prediction) — CODATA m_p/m_e")
+        source="RAW-pin anchor round-trip in RATIO space on the bare "
+               "identity (not a prediction) — CODATA m_p/m_e")
     wb.add_assertion(
         "borromean_tau_below_one",
         computed=float(s5["_bor_tau"] < 1),

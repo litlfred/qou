@@ -159,7 +159,7 @@ def p2_alpha_k(q: mp.mpf) -> dict:
     qs = sp.symbols("q", positive=True)
     mats, _dim, _tab = hoefsmit_matrices_symbolic((2, 1), qs)
     r1, r2 = sp.Matrix(mats[0]), sp.Matrix(mats[1])
-    chi21_delta = sp.simplify(sp.trace(r1 * r2 * r1))
+    chi21_delta = sp.simplify((r1 * r2 * r1).trace())
 
     # collapsed weight (exact): tr_M(T_Δ)/z³ would be α₃·(...): the
     # derived form is tr_M(T_Δ) = z + h·z² = z(1 + q^{1/2} − q^{−1/2})

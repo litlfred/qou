@@ -18,8 +18,8 @@ series closed form; mirror-pair magnitude), restricted to what D can decide.
 
 ## Status
 
-**IN PROGRESS** — scaffold commit. Stages and findings land in subsequent
-commits on this branch; this doc is the ledger of record.
+**COMPLETE** — all seven stages run, symbolic prospects assessed, follow-up
+landed. This doc is the ledger of record; see §Findings and §Verdict.
 
 ## Planned stage decomposition (γγ → D)
 
@@ -52,12 +52,11 @@ All numbers at 50 dps, q₀ solved live, CODATA/AME comparison-only.
 
 | Stage | Error source | Size | Notes |
 |---|---|---|---|
-| S0 anchor choice | μ–p anchor tension in q-space | **0.0028 ppb** | the live proton pin (`q_at`) solves the FULL identity `m_p/m_e = (2·(Vol(4₁)/ℏ_q²)·F_Bor − 12)·habiro`; with the s5bb Habiro factor included, the old ~11.5 ppb μ–p tension is absorbed — `q_muon_at`'s docstring ("~11.5 ppb") and the AGENTS "m_μ 963.6× FAIL" narrative are **stale against the live pin** (live m_μ error at the proton anchor: **+1.36 ppb**) |
+| S0 anchor choice | μ–p anchor tension in q-space | **11.53 ppb** | the proton pin (`q_at`) solves the RAW identity `m_p/m_e = 2·(Vol(4₁)/ℏ_q²)·F_Bor − 12` (owner ruling 2026-07-03: the fitted habiro tower that briefly dressed the pin was stripped). The ~11.5 ppb μ–p tension is the documented substrate floor (≈×21 → ~242 ppb on masses); the AGENTS "m_μ prediction" narrative is CURRENT. PR #3280 proved the exact habiro c₄ is linear in the pin offset, i.e. a dressed pin merely reparametrizes this tension rather than closing it |
 | S1 γγ entry | none (topological) | 0 | γγ spans the 6-operator H₃ basis (Lean `gamma_gamma_chirality_surjective`); crossing energy `𝔈_×(q₀) = ½(q−q⁻¹) > 0`. **Flags:** (i) `nucleon-from-photons-summary.md` cites `four-term-photon-to-atoms.witness.json` which does not exist anywhere in the repo (dangling citation); (ii) the absolute-mass normaliser does not yet come from this chain (bean `ovud`) |
-| S2 nucleon masses | bare F_Bor identity vs CODATA m_p | **−241 ppb** | the Habiro 4-loop ratio `(1+c₄u⁴)(1+4u⁵)(1−29u⁶)` brings it to ~+1.4 ppb; ratio-space round-trip is exact (1e-40) |
-| S2 hygiene | `canonical_mass.py::_from_formula` (facade fallback) omits the habiro factor its preferred witness includes | −241 ppb if fallback fires | producer-vs-facade mismatch, flagged |
-| S2 hygiene | c₄ convention: pin solver `46·u⁴` vs producer `(4143/90)·u⁴` | **0.18 ppb** on m_p | two coexisting c₄ values |
-| S2 CODATA-internal | m_p[MeV] vs m_e[MeV]·(m_p/m_e) | **+1.35 ppb** | MeV-conversion inconsistency inside CODATA anchors, not framework error |
+| S2 nucleon masses (RAW pin) | bare F_Bor identity, m_p ratio | **+1.35 ppb** | at the proton-pinned q₀ the BARE identity round-trips m_p/m_e by construction (ratio-space exact, 1e-40); the residual +1.35 ppb is the CODATA-internal MeV-conversion inconsistency (m_p[MeV] vs m_e[MeV]·(m_p/m_e)), not a framework error |
+| S2 fit-tier diagnostic | Habiro-dressed m_p at the RAW pin | **+242 ppb** | applying either habiro c₄ (46 or 4143/90) at the raw pin OVERSHOOTS CODATA m_p by ~242 ppb — this IS the μ–p tension reparametrized (PR #3280). The dressing is fit-tier, not canonical; owner reconcile pending (bean `2i8g`) |
+| S2 hygiene | producer `m_p_substrate_identity_50dps.py` still applies the fit-tier habiro dressing (its committed witness was computed at the old dressed pin) | producer m_p stale vs raw pin | flagged to #3280, not churned on this PR |
 | S3 trace | transfer (fine-Bratteli) vs closed-form (colour-weighted Wenzl/χ_λ) atom/free ratio | **2.6e-1** | different canonical word families/normalizations, each exact on its own reference (Phase-5q closed form is exact-ℚ); finer Jones-vs-Wenzl convention-D spread is 1.955e-4 |
 | S4 SDP | full-space real SDP unbounded (Frobenius Gram indefinite) | structural | bounded positive-norm subspace: duality gap 0.0; canonical LR-branching encoding does not reproduce B_D — that IS the Δ_λ gate |
 | S5 binding | **the dominant error of the whole chain** | −79% … +33% route spread | see table below |
@@ -138,12 +137,16 @@ Producer: [`probes/probe_d_qbeta_h_invariant.py`](../../computations/probes/prob
    binding functional that the trace-canonical scale is E₀ dressed by
    the smoothed bar-average of the single interface crossing. Until
    derived, the +0.12% candidate stays observation-tier (Δ_λ gate).
-4. **Facade fix landed:** `canonical_mass.py::_from_formula` now applies
-   `habiro_ratio_s5bb(q)` (new module-level function + `C4_S5BB` in
-   `m_p_substrate_identity_50dps.py`; producer witness regenerated,
-   2/2) — fallback now within 1.5 ppb of the witness (was −241 ppb).
-   The c₄ 46-vs-4143/90 **pin** mismatch is a re-pin question →
-   owner-gated bean `2i8g` (NOT changed).
+4. **Facade correctness (revised after main's raw-pin ruling):** the
+   canonical pin (`q_at`) solves the RAW identity — main stripped the
+   fitted habiro tower on 2026-07-03 (`7b95577aae`). So
+   `canonical_mass.py::_from_formula` correctly uses the **bare** form
+   `2·(m_μ·F_Bor − 6·m_e)` (no habiro), matching the raw pin to the
+   ratio-space floor. `habiro_ratio_s5bb()`/`C4_S5BB` remain exposed at
+   module level in `m_p_substrate_identity_50dps.py` **relabeled
+   fit-tier** — the single edit point for the owner reconcile. (An
+   earlier revision of this PR dressed the fallback with habiro; that
+   was wrong against the raw pin and has been reverted.)
 5. **c₄ history verdict (2026-07-04, owner-directed investigation;
    coordinated with PR #3280):** the pin's `46` entered with
    `d27b002745` (2026-06-15) as the then-fitted c₄; `58ba1c6800`
@@ -157,14 +160,17 @@ Producer: [`probes/probe_d_qbeta_h_invariant.py`](../../computations/probes/prob
    i.e. the μ–p tension reparametrized, not resolved), (ii) `4143` has
    **no derivation trail** in the corpus and the cited s5bb
    Reeb-resonance route is an explicit honest-negative, (iii) 4143/90
-   overshoots (+1.53 ppb) vs naked 46 (+1.35 ppb). Combined verdict:
+   overshoots vs naked 46. Combined verdict:
    BOTH values are fit-tier; my earlier "re-pin to 4143/90" direction
    is **withdrawn** — the reconcile is among #3280's owner options
-   (relabel honestly / revert to 46 / drop to the 240 ppb floor).
-   Consequently the S0 "μ–p tension absorbed" reading above must be
-   read as: the tension is absorbed **by the fitted c₄ choice**, not
-   by a categorical closure — the AGENTS m_μ-prediction caution keeps
-   its spirit. Bean `2i8g` updated.
+   (relabel honestly / revert to 46 / drop to the 240 ppb floor). Since
+   main independently stripped the habiro tower from the pin, the
+   canonical pin is now RAW and the S0 tension is the honest ~11.5 ppb
+   substrate floor — no c₄-absorption, and the AGENTS m_μ-prediction
+   narrative is CURRENT. Bean `2i8g` re-scoped to the producer-label
+   reconcile only. This label question is now owned by #3280; this PR
+   only relabels `C4_S5BB` fit-tier so the producer's in-code comment
+   matches.
 6. **Cross-A discriminator (owner pick #1 follow-through):** the
    (1−h/2) dressing is a **D-specific scale fix** — fixed a-priori
    candidates (flat, per-interface) leave A≥3 at −59%…−90% while D
