@@ -1,0 +1,92 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-04T09:32:32.484867+00:00",
+  "commitSha": "275596642112819f91d8c0a245fd978818668474",
+  "assertions": [
+    {
+      "name": "ladder_generators_sigma_fixed",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "unit": "boolean (0 = both u~ and h^2 exactly sigma-fixed)",
+      "source": "exact series composition with phi = series of 1/q - 1."
+    },
+    {
+      "name": "pure_single_tower_exact_on_O",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "unit": "boolean (0 = O = sum d_k h u~^k exact through s^ORD, direct)",
+      "source": "fixed-ring identity; contradicts the 08ds joint-solve inconsistency, which used a shift-corrupted G[ORD]."
+    },
+    {
+      "name": "odd_sector_starts_at_h_cubed",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "unit": "boolean (0 = c_0 = d_0 = 0 exactly)",
+      "source": "the non-vacuous low-order fact retained from the first design of this probe."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 210,
+  "computation": "qbeta-zeta4-faithful-odd",
+  "scriptFile": "qbeta_zeta4_faithful_odd_probe.py",
+  "scriptHash": "7e50b932dcd8",
+  "scriptCommitSha": "275596642112819f91d8c0a245fd978818668474",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Bean 0zr0: fixed-ring vacuity of one-variable ladder-membership tests + exact artifact diagnosis of the 08ds odd-sector refutation.",
+  "auditOnly": "docs/audits/2026-07-04-fixed-ring-vacuity-ladder-membership.md",
+  "parameters": {
+    "ORD": 17,
+    "theorem": "Fix(sigma) of a formal-disk involution is k[[t^2]]; any sigma-fixed ord-2 element generates it"
+  },
+  "data": {
+    "sigma_fixed": {
+      "u_tilde": true,
+      "h_sq": true
+    },
+    "pure_D_on_O_exact": true,
+    "rungs_u": {
+      "d_0": "0",
+      "d_1": "1/8 - sqrt(3)",
+      "d_2": "-97/6 + 5*sqrt(3)/288",
+      "d_3": "373/34560 - 676*sqrt(3)/27",
+      "d_4": "-59195/162 + 15055*sqrt(3)/1741824",
+      "d_5": "-252241*sqrt(3)/243 - 836891/139345920",
+      "d_6": "-48305749/4374 + 9142316411*sqrt(3)/827714764800",
+      "d_7": "-1287465032*sqrt(3)/32805 - 1350254778511/51649401323520",
+      "d_8": "-40374973312/98415 + 93501718487449*sqrt(3)/3286780084224000"
+    },
+    "rungs_h": {
+      "c_0": "0",
+      "c_1": "-3/8 + sqrt(3)/64",
+      "c_2": "-3/4 + sqrt(3)/2048",
+      "c_3": "-13/32 - 43*sqrt(3)/655360",
+      "c_4": "-393/512 + 200449*sqrt(3)/3963617280",
+      "c_5": "-201/256 - 21928577*sqrt(3)/1522029035520",
+      "c_6": "-2117/2048 + 5076536023*sqrt(3)/1148044758220800",
+      "c_7": "-222963/163840 - 25013420516627*sqrt(3)/20058638015633817600",
+      "c_8": "-28455/16384 + 23747018700631841*sqrt(3)/67397023732529627136000"
+    },
+    "c0_equals_zero": true,
+    "verdict": "VACUITY + ARTIFACT: (i) Fix(sigma) = Q(sqrt3)[[u~]] = Q(sqrt3)[[h^2]] (one ord-2 generator), so ladder-MEMBERSHIP of the bar-even/odd parts is an identity — the 08ds E(u~) margin-9 persistence and any h-ladder margin are NOT structural findings; (ii) the 08ds 'h·D(u~)+h^3·F(u~) exactly refuted' verdict is a truncation artifact (shifted division corrupts G[ORD]; the direct solve is exact); (iii) real content: the exact rungs and O[1] = 0 (the odd sector starts at the h^3 rung). Genuine zeta4-faithfulness must be imposed at the Laurent/Habiro level where odd-degree support is a real constraint."
+  }
+}
