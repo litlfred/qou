@@ -1,0 +1,49 @@
+{
+  "computation": "qbeta-h4-gram-barchannel-split",
+  "description": "n=4 cup-diagram Gram + bar-even/bar-odd eigenchannel split \u2014 input groundwork for the Brunnian/SDP route-A c_4^even attempt (bean 8we6). audit_only; no c_4 value computed (owner-gated linkage).",
+  "audit_only": true,
+  "tier": "structural-exact (symbolic Gram eigenchannel split; no fit, no anchor sweep)",
+  "commitSha": "2023db4cc18b7751b16dfc2d71f6e71a418f5880",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "qbeta_h4_gram_barchannel_probe.py",
+  "scriptHash": "5048736e8a38",
+  "assertions": [
+    {
+      "name": "bar_even_eigenvalue_bar_invariant",
+      "passed": true
+    },
+    {
+      "name": "bar_odd_eigenvalue_bar_invariant",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "gram_basis": "{u1 = cups(12)(34), u2 = nested cups(14)(23)}",
+    "gram_matrix": "[[delta^2, delta], [delta, delta^2]], delta = [2]_q = q + 1/q",
+    "bar_even_channel": {
+      "eigenvector": "u1 + u2",
+      "eigenvalue": "(q**2 + 1)*(q**2 + q + 1)/q**2",
+      "eigenvalue_factored": "delta*(delta+1) = (q^2+1)(q^2+q+1)/q^2",
+      "role": "where a c_4^even rung must live (symmetric singlet)",
+      "value_at_q0": 6.054604415731851
+    },
+    "bar_odd_channel": {
+      "eigenvector": "u1 - u2",
+      "eigenvalue": "(q**2 + 1)*(q**2 - q + 1)/q**2",
+      "eigenvalue_factored": "delta*(delta-1) = (q^2+1)(q^2-q+1)/q^2",
+      "role": "bar-odd channel (the 4-strand analogue of e_-)",
+      "value_at_q0": 2.0328101484477554
+    },
+    "delta_at_q0": 2.0108971336420476,
+    "singlet_dim_n4": "Catalan(2) = 2  (dim Hom(1, A^{tensor 4}), generic q)",
+    "owner_gated_linkage": "The SDP objective weights t and net target n_target for the n=4 singlet selection, and the selected-channel -> Q_beta net-route ladder linkage, are framework choices (NOT agent ansatz). This probe fixes only the Gram + its bar-channel split."
+  },
+  "context": {
+    "axis": "Q_beta 1ppQ achievable-arm \u2014 H4 c_4^even rung (Brunnian/SDP route)",
+    "predecessor_scan": "docs/audits/2026-07-04-8we6-h4-route-a-explicit-strand-gate-scan.md",
+    "gram_source": "computations/alpha_k_four_strand_singlet_selection.py",
+    "ledger": "docs/coordination/1ppq-qbeta.md"
+  }
+}
