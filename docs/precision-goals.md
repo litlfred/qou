@@ -173,11 +173,15 @@ is the muon at σ_exp ≈ 22 ppb (100× target 0.22 ppb).
 
 ### Per-observable target table (CODATA 2022)
 
-> **Table updated 2026-05-29 (post q₀ re-pin #1422 + de-fitting #1416).**
-> Two anchors (m_e, m_p) meet trivially; **all five genuine predictions
-> miss** the 100× target. Earlier versions of this table showed the
-> *muon* pin (m_μ "meets, ratio-derived") and the *fitted* Q_β "5.7 ppb
-> (N=5)" — both stale. Live source: `per-observable-100x-status.witness.json`.
+> **Table updated 2026-07-04 (m_p de-fitted; post q₀ re-pin #1422 +
+> de-fitting #1416).** Only m_e meets trivially (scale anchor, err 0);
+> **all five genuine predictions miss** the 100× target, and m_p — the
+> CAL-2 *numerical* anchor — now also misses (~437×): its documented-pin
+> round-trip is +1.35 ppb once the fitted Habiro tower is dropped (it had
+> landed m_p on CODATA to 0.0004 ppb). m_K/m_π is the one prediction that
+> meets. Earlier versions showed the *muon* pin (m_μ "meets, ratio-derived")
+> and the *fitted* Q_β "5.7 ppb (N=5)" — both stale. Live source:
+> `per-observable-100x-status.witness.json` (`beats_100x_count=2`).
 
 | Observable | role | σ_exp_rel | **100× target** | Current pred error | Status |
 |---|---|---:|---:|---:|---|
@@ -204,7 +208,10 @@ a framework prediction (it is the CAL-2 anchor round-trip), but no longer
 sub-target. See [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](audits/2026-07-04-c4-mu-p-tension-pin-dependence.md).
 
 > **m_p is the numerical anchor (was a prediction pre-#1422).** Because
-> q₀ is now inverted from m_p/m_e, m_p matches CODATA by construction.
+> q₀ is inverted from m_p/m_e, m_p matches CODATA nearly by construction —
+> but only to +1.35 ppb: the *documented raw proton pin* (`Q_50_DIGIT_STR`)
+> sits ~0.34 ppb off the exact base-formula solve, so the round-trip is
+> +1.35 ppb, not 0 (the former 0.0004 ppb was the dropped fitted tower).
 > The genuine baryon-mass test is the *bare* categorical value
 > (Family-A Borromean tower, m_p = 965.38 MeV, +2.89% open gap) and the
 > m_μ / m_n / Q_β predictions above.
