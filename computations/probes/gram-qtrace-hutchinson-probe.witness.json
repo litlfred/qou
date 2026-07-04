@@ -1,0 +1,54 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-04T00:14:25.319380+00:00",
+  "commitSha": "2e219e42eaa0fa37f2c2660b998e9346f4952e0e",
+  "assertions": [
+    {
+      "name": "hutchinson_matches_exact_3sigma",
+      "computed": 0.42657469243944623,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 3.0,
+      "unit": "z-score |stochastic − exact| / stderr (n=9 ³He atom word)",
+      "source": "Hutchinson estimator validation vs dense sweep."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9142,
+  "computation": "gram-qtrace-hutchinson-probe",
+  "scriptFile": "gram_qtrace_hutchinson_probe.py",
+  "scriptHash": "82b9e64030d4",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Stochastic Hutchinson quadratic trace tr_M(W·W^sharp) beyond n=12: A=5 mirror pair bar-parity split (Gram level).",
+  "auditOnly": "docs/audits/2026-07-03-qbar-norm-repitch-assessment.md",
+  "parameters": {
+    "q0": 1.1099785955573347,
+    "samples": 200,
+    "exact_dim": 3000,
+    "rng_seed": 20260704,
+    "precision": "float64 + stochastic (LOSSY, exploratory)"
+  },
+  "data": {
+    "validation": {
+      "exact": 13.994511489903996,
+      "stochastic": 13.950767868444155,
+      "stderr": 0.10254621813048735,
+      "z": 0.42657469243944623
+    }
+  }
+}
