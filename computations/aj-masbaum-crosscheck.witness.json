@@ -1,0 +1,46 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-04T10:40:35.057053+00:00",
+  "commitSha": "d1436eb2ff21e4a833292a3415d2ae18b63c62c8",
+  "assertions": [
+    {
+      "name": "fig8_matches_masbaum",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "trefoil_matches_masbaum",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 68,
+  "computation": "aj-masbaum-crosscheck",
+  "scriptFile": "aj_masbaum_crosscheck.py",
+  "scriptHash": "e68d9d50c6e2",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Cross-check of the QOU 4_1 (HabiroNewtonLadder) and trefoil (AJTrefoil Rosso-Jones) colored-Jones towers against Masbaum arXiv:math/0306345 Thm 5.1 / Rmk 5.2 twist-knot formulas (K_-1 = fig-8, K_1 = left trefoil). Provenance note: the paper is twist knots, not Borromean rings.",
+  "data": {
+    "reference": "Masbaum, AGT 3 (2003) 537-556, arXiv:math/0306345",
+    "trefoil_convention_match": "q_M = 1/q_corpus (mirror)",
+    "worst_delta_fig8": "1.12847e-36",
+    "worst_delta_trefoil": "1.20371e-35",
+    "provenance_correction": "math/0306345 = twist knots, NOT Borromean; Borromean ref is Habiro [H1]",
+    "verdict": "Both QOU corpus towers match Masbaum's published twist-knot formulas exactly (40 dps, N<= 7, 4 anchors): the 4_1 Habiro double-Pochhammer tower = J'_{K_-1} (all cyclotomic coefficients 1), and the trefoil Rosso-Jones tower = J'_{K_1} (q_M = 1/q_corpus (mirror)). The trefoil convention is now literature-anchored (Masbaum's left-handed K_1), not merely self-anchored. PROVENANCE: math/0306345 is twist knots, carries NO Borromean formula — the Borromean cross-check needs Habiro [H1], unavailable."
+  }
+}

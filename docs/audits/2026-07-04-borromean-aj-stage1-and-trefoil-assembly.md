@@ -41,12 +41,43 @@ proof needed no case split and no root-of-unity lemmas. The trefoil's
 tower *definition* carries the `1/[N]_v` normalization, so the degeneracy
 is intrinsic to the statement, not the proof method.
 
+## Provenance correction (2026-07-04): Masbaum math/0306345 is twist knots, NOT Borromean
+
+The owner uploaded the paper directly (`uploads/0306345v1.pdf`, commit
+`eab7c2b`) after arXiv egress stayed proxy-blocked. **Reading it corrected a
+mis-attribution**: G. Masbaum, *Skein-theoretical derivation of some formulas
+of Habiro* (AGT 3 (2003) 537–556) is about **twist knots** K_p (his Fig. 3;
+K₁ = left-handed trefoil, K₋₁ = figure-eight), and carries **no Borromean
+formula** — the Borromean rings are not twist knots. The earlier framing
+("Masbaum's Borromean c_k", carried in the bean `moqg` title and an earlier
+draft of this doc) came from my own memory plus a hallucinated web-search
+summary, not the source. The actual simple-links reference is **Habiro [H1]**
+(*On the colored Jones polynomial of some simple links*, RIMS Kokyuroku 1172),
+which this paper cites and which is not available here. Recorded per the
+critical-distance / "before declaring" disciplines: the numerical Borromean
+result below stands on its own (R-matrix self-validation); only the *literature
+attribution* was wrong.
+
+**What the paper DID validate — the two corpus knots (exact, 40 dps,
+[`aj_masbaum_crosscheck.py`](../../computations/aj_masbaum_crosscheck.py),
+witness `aj-masbaum-crosscheck`):**
+
+- **Figure-eight**: the Lean 4₁ Habiro double-Pochhammer tower
+  (`HabiroNewtonLadder.coloredJones41`, PR #3263) equals Masbaum's
+  `J'_{K₋₁}(N)` exactly — his `f_{K₋₁,n} = 1` is the all-ones Newton ladder
+  the Lean proves. Independent literature confirmation of the merged 4₁ work.
+- **Trefoil**: the Lean Rosso–Jones tower (`AJTrefoil.coloredJonesTrefoil`,
+  this tranche) equals Masbaum's left-handed `J'_{K₁}(N)` exactly, under
+  `q_Masbaum = 1/q_corpus` — the two conventions agree up to the bar
+  involution q↔1/q (the standard Kauffman-A-vs-A⁻¹ split). The trefoil tower
+  is now **literature-anchored** (Masbaum's left-handed K₁), upgrading the
+  earlier "self-anchored against V(3₁)" status.
+
 ## Borromean stage 1: R-matrix ground truth, fit-then-verify cyclotomics
 
-arXiv is proxy-403 in this sandbox (Masbaum, *Skein-theoretical derivation
-of some formulas of Habiro*, math/0306345, unreachable; OpenAlex empty
-through the same proxy), so the epistemics are flipped: rather than
-transcribing a half-remembered literature formula,
+With no accessible literature formula for the Borromean colored Jones
+(Habiro [H1] unavailable), the epistemics are flipped: rather than
+transcribing a formula,
 [`aj_borromean_colored_jones_tower.py`](../../computations/aj_borromean_colored_jones_tower.py)
 builds ground truth **directly from the U_q(sl₂) R-matrix** —
 
@@ -88,6 +119,12 @@ statement with no literature theorem to cite; any Lean class must carry
 it as a §3b conjecture-grade input, not a cited theorem, and corpus-side
 verification will be evidence-level. (Scoped claim: bounded search from a
 firewalled sandbox, not a corpus-grep-style exhaustive sweep.)
+
+The Borromean colored-Jones *formula* (as opposed to the AJ *statement*)
+is in Habiro [H1] (*simple links*, RIMS Kokyuroku 1172) — cited by Masbaum
+but not on arXiv, so unavailable here. Stage 1 therefore builds it from the
+R-matrix rather than transcribing it, and the deferred literature
+cross-check (bean `xcyc`) is re-pointed at Habiro [H1], not Masbaum.
 
 ## Status
 
