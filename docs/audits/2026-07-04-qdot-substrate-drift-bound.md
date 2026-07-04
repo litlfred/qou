@@ -32,7 +32,7 @@ The mapping formula is the durable content — plug in any updated limit.
 
 | channel | `d ln X / d ln q` | source |
 |---|---|---|
-| `m_μ/m_e = Vol(4₁)/ℏ_q²` | **−18.185** (exactly `−2/(q−1)`, analytic) | closed form; verified to 10⁻⁴² |
+| `m_μ/m_e = Vol(4₁)/ℏ_q²` | **−18.185** (exactly `−2/(q−1)`) | closed form — analytic identity, no numerical differentiation |
 | `m_p/m_e = 2(Vol(4₁)/ℏ_q²)F_Bor − 12` | **−20.997** (numeric, via the canonical F_Bor) | the lab-constrained ratio μ |
 
 Both are O(20) — the framework is **more** sensitive to `q`-drift than a naive
