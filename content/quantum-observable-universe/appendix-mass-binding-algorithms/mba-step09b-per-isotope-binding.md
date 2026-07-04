@@ -187,16 +187,17 @@ consecutive $n$-clusters number $A-n+1$ and each carries $n-1$ bonds. The
 aggregate cluster measure is $\sum_{n=2}^{A}(A-n+1)(n-1)=\binom{A+1}{3}$, proved
 sorry-free in Lean ([`prop:linear-chain-bond-count`](../mass-theory/linear-chain-bond-count.md),
 `QOU.Mass.linear_chain_cluster_measure`). With the isospin-carrying hyperbolic
-sub-link volumes this reproduces the **tritium** binding to $0.16\%$ with **no
-fitted constant** ([`theta_mn_bondcount_linearchain.py`](../../../computations/theta_mn_bondcount_linearchain.py));
+sub-link volumes this reproduces the **tritium (p-n-n)** binding to within $0.16\%$
+with **no fitted constant** ([`theta_mn_bondcount_linearchain.py`](../../../computations/theta_mn_bondcount_linearchain.py));
 ³He to $-3\%$; the deuteron 2-body bond is the Hopf link ($\mathrm{Vol}=0$) — a
 structural exception. This is a $\sim3\%$ *structural* result, not a ppQ closure.
 
-> **⚠ Convention flag (needs owner reconciliation).** The note above (color-averaging
-> residual) attributes the binding multiplicity to the $C(A,2)$ **all-pairs** bond
-> count, whereas the atomic-braid recipe gives a **linear chain** — $A-1$
+> **Convention flag (needs owner reconciliation).** The note above (color-averaging
+> residual) attributes the binding multiplicity to the $\binom{A}{2}$ **all-pairs**
+> bond count, whereas the atomic-braid recipe gives a **linear chain** — $A-1$
 > *consecutive* 2-body bonds and the $\binom{A+1}{3}$ body-order aggregate above,
-> **not** $C(A,2)=\tfrac{A(A-1)}{2}$ (they agree only at $A=2$). The linear-chain
-> reading is the one the braid recipe and the $0.16\%$ ³H result support; the
-> $C(A,2)$ phrasing should be reconciled to it or its distinct (pairwise-model)
-> scope stated. See [`prop:linear-chain-bond-count`](../mass-theory/linear-chain-bond-count.md).
+> **not** $\binom{A}{2}=\tfrac{A(A-1)}{2}$ (they agree only at $A=2$). The
+> linear-chain reading is the one the braid recipe and the $0.16\%$ ³H (p-n-n)
+> result support; the $\binom{A}{2}$ phrasing should be reconciled to it or its
+> distinct (pairwise-model) scope stated. See
+> [`prop:linear-chain-bond-count`](../mass-theory/linear-chain-bond-count.md).
