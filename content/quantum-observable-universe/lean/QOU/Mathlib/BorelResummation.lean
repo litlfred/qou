@@ -26,11 +26,13 @@
 
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Topology.Algebra.InfiniteSum.Basic
+import Mathlib.Analysis.SpecificLimits.Normed
 import Mathlib.Tactic
 
 namespace QOU.Mathlib.Borel
 
 open scoped Nat
+open Filter
 
 /-- The Borel transform coefficient of a formal series `Σ aₙ zⁿ`: `aₙ / n!`. -/
 noncomputable def borelCoeff (a : ℕ → ℝ) (n : ℕ) : ℝ := a n / (n ! : ℝ)
@@ -82,5 +84,36 @@ theorem borelTransform_tendsto (a : ℕ → ℝ) (z : ℝ) [h : BorelTransformCo
     Filter.Tendsto (fun N => partialBorel a N z) Filter.atTop
       (nhds (borelTransformValue a z)) :=
   h.converges.choose_spec
+
+/-- **The conditional class is genuinely inhabited** — a sorry-free witness.
+    The Borel transform of the everywhere-divergent series `Σ n! zⁿ` is the
+    geometric series `Σ zⁿ`, which converges on `|z| < 1` to `(1 − z)⁻¹`.
+    This is the concrete analytic content that pins `BorelSummable` down to a
+    real convergence statement (as opposed to an empty marker): the partial
+    Borel transforms of the factorial series tend to `(1 − z)⁻¹`. -/
+theorem borelTransform_factorial_tendsto {z : ℝ} (hz : |z| < 1) :
+    Filter.Tendsto (fun N => partialBorel (fun k => (k ! : ℝ)) N z) Filter.atTop
+      (nhds (1 - z)⁻¹) := by
+  have hsum : HasSum (fun n => z ^ n) (1 - z)⁻¹ :=
+    hasSum_geometric_of_norm_lt_one (by rwa [Real.norm_eq_abs])
+  have h1 : Filter.Tendsto (fun N => ∑ n ∈ Finset.range (N + 1), z ^ n)
+      Filter.atTop (nhds (1 - z)⁻¹) :=
+    hsum.tendsto_sum_nat.comp (tendsto_add_atTop_nat 1)
+  simpa only [partialBorel_factorial] using h1
+
+/-- The factorial series `Σ n! zⁿ` has a convergent Borel transform on the unit
+    disc — a nonvacuous instance of the conditional class. -/
+instance instBorelTransformConverges_factorial {z : ℝ} (hz : |z| < 1) :
+    BorelTransformConverges (fun k => (k ! : ℝ)) z where
+  converges := ⟨(1 - z)⁻¹, borelTransform_factorial_tendsto hz⟩
+
+/-- The Borel-transform value of the factorial series is `(1 − z)⁻¹` on the
+    unit disc, confirming `borelTransformValue` computes the geometric sum. -/
+theorem borelTransformValue_factorial {z : ℝ} (hz : |z| < 1) :
+    @borelTransformValue (fun k => (k ! : ℝ)) z (instBorelTransformConverges_factorial hz)
+      = (1 - z)⁻¹ :=
+  tendsto_nhds_unique
+    (@borelTransform_tendsto _ z (instBorelTransformConverges_factorial hz))
+    (borelTransform_factorial_tendsto hz)
 
 end QOU.Mathlib.Borel
