@@ -1,4 +1,5 @@
-import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 
 /-!
 # QOU.LiftingDescent.tm_dilogarithm_evaluation
@@ -11,22 +12,34 @@ import Mathlib.Data.Real.Basic
 
 *in the spectral coordinates of the Briggs–Klein chart at `E_i`.*
 
-## Status
+## Structure (hypothesis vs. derivation)
 
-The substantive identity equates the norm of a **non-abelian
-multiplicative integral** over the exceptional divisor `E_i` with the
-**Faddeev–Kashaev quantum dilogarithm** `Φ_q(z_i)`, itself a
-`q`-deformed dilogarithm integral.  Establishing it requires both
-Yekutieli's multiplicative integration and the quantum dilogarithm
-`Φ_q` with its integral representation — **neither available in
-Mathlib**.
+The `.md` displays a chain of **two** equalities.
 
-The two quantities are modelled as named `opaque` reals — `MI i`
-(the divisor-`i` multiplicative-integral norm) and `Phi_q (z i)`
-(the quantum dilogarithm at the spectral coordinate `z_i`) — so the
-theorem `∀ i, MI i = Phi_q (z i)` is the genuine unproven identity
-between *these specific* objects.  Discharged with `sorry` and the
-citations per AGENTS.md §1.
+- The **second** equality — `Φ_q(z) = ∫₀^{z} ln_q(1+t)/t dt` — is
+  realised *definitionally*: `Phi_q` is **defined** below as a genuine
+  Mathlib interval integral of the q-logarithm integrand, and the
+  representation is recorded as the proved lemma
+  `phi_q_integral_representation`.  `Φ_q` is no longer an opaque
+  constant; only the q-logarithm `ln_q` itself remains opaque (its
+  q-series theory is not in Mathlib).
+- The **first** equality — the Briggs–Klein chart evaluation of the
+  multiplicative-integral norm to that integral — is the genuine open
+  analytic input (Yekutieli multiplicative integration + the
+  Faddeev–Kashaev saddle evaluation), stated as the sub-lemma
+  `tm_divisor_chart_evaluation` with an honest `sorry` + citations
+  (AGENTS.md §1, §1a item 2).
+
+The main theorem *derives* the .md identity by chaining the sorried
+chart evaluation with the proved integral representation — it does not
+assume its conclusion (lean-proof-vacuity-audit fix recipe; AGENTS.md
+§3b-cond item 5).
+
+## Base ring (§7c)
+
+`ℝ` throughout: the statement is about an archimedean norm and a real
+interval integral (`∫ … dt` over the volume measure), which are
+archimedean constructs.
 -/
 
 namespace QOU.LiftingDescent
@@ -35,25 +48,50 @@ namespace QOU.LiftingDescent
     `‖MI∫_{E_i}(∇_A q, L ∧ F⁺)‖`. -/
 opaque MI : ℕ → ℝ
 
-/-- The Faddeev–Kashaev quantum dilogarithm `Φ_q : ℝ → ℝ`. -/
-opaque Phi_q : ℝ → ℝ
+/-- The q-logarithm `ln_q` (at the ambient deformation parameter `q`).
+    Its q-series theory is not in Mathlib, so it stays opaque; the
+    dilogarithm `Phi_q` below is a genuine integral of it. -/
+opaque lnq : ℝ → ℝ
 
 /-- The Briggs–Klein spectral coordinate `z_i` at the exceptional
     divisor `E_i`. -/
 opaque z : ℕ → ℝ
 
-/-- **Exceptional-divisor summand = quantum dilogarithm.**
+/-- The Faddeev–Kashaev quantum dilogarithm, **defined** by its
+    integral representation `Φ_q(w) = ∫₀^{w} ln_q(1+t)/t dt` (the
+    .md's second equality) as a Mathlib interval integral. -/
+-- Ref: [faddeev_kashaev1994] https://doi.org/10.1142/S0217732394002446
+noncomputable def Phi_q (w : ℝ) : ℝ := ∫ t in (0 : ℝ)..w, lnq (1 + t) / t
 
-For every exceptional divisor `E_i`, the multiplicative-integral norm
-equals `Φ_q(z_i)`.  Needs the quantum dilogarithm + Yekutieli
-multiplicative integration (not in Mathlib); body is `sorry`. -/
+/-- **Integral representation of `Φ_q`** — the .md's second equality,
+    proved (definitionally) rather than assumed. -/
+theorem phi_q_integral_representation (w : ℝ) :
+    Phi_q w = ∫ t in (0 : ℝ)..w, lnq (1 + t) / t := rfl
+
+/-- **Open analytic input — Briggs–Klein chart evaluation.**  In the
+    spectral coordinates of the Briggs–Klein chart at `E_i`, the
+    multiplicative-integral norm evaluates to the q-dilogarithm
+    integral at `z_i`.  Needs Yekutieli multiplicative integration and
+    the Faddeev–Kashaev evaluation (neither in Mathlib); body is
+    `sorry`. -/
 -- Ref: [faddeev_kashaev1994] https://doi.org/10.1142/S0217732394002446
 -- Ref: [yekutieli2015] https://doi.org/10.1142/9537
--- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.md
-theorem tm_dilogarithm_evaluation : ∀ i : ℕ, MI i = Phi_q (z i) := by
-  -- Needs: Φ_q = ∫₀^{z} ln_q(1+t)/t dt (quantum dilogarithm integral
-  -- representation) and the Briggs–Klein chart evaluation of the
-  -- multiplicative integral on E_i.
+theorem tm_divisor_chart_evaluation :
+    ∀ i : ℕ, MI i = ∫ t in (0 : ℝ)..(z i), lnq (1 + t) / t := by
+  -- Needs: the Briggs–Klein chart evaluation of the multiplicative
+  -- integral on E_i (saddle-point reduction of the MI-norm to the
+  -- q-dilogarithm integral in the spectral coordinate z_i).
   sorry
+
+/-- **Exceptional-divisor summand = quantum dilogarithm**
+    ([`lem:topological-mass-dilogarithm`]).
+
+`‖MI∫_{E_i}‖ = Φ_q(z_i)` for every exceptional divisor `E_i`.
+*Derived* (not assumed): chain the chart evaluation with the proved
+integral representation of `Φ_q`. -/
+theorem tm_dilogarithm_evaluation : ∀ i : ℕ, MI i = Phi_q (z i) :=
+  fun i =>
+    (tm_divisor_chart_evaluation i).trans
+      (phi_q_integral_representation (z i)).symm
 
 end QOU.LiftingDescent

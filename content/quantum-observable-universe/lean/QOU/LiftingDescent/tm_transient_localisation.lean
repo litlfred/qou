@@ -1,5 +1,4 @@
-import Mathlib.Algebra.BigOperators.Group.Finset.Basic
-import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
 
 /-!
 # QOU.LiftingDescent.tm_transient_localisation
@@ -15,24 +14,37 @@ exceptional divisors `Eᵢ`:
 
   `‖MI∫_Σ (α − τ̂ₙ(α))‖ = Σᵢ ‖MI∫_{Eᵢ} (∇_A q, L ∧ F⁺)‖`.
 
-The genuine mathematical content is the **additivity of the
-multiplicative-integral norm over a disjoint support decomposition**.
-The non-circular input is the per-disc factorisation of the
-multiplicative integral (each `Eᵢ` contributes the integral over its
-disc `Dᵢ`, and disjointness of the discs makes the contributions add),
-which rests on the non-abelian-Stokes / multiplicative-integral
-machinery that is **not in Mathlib**.
+## Structure (hypotheses vs. derivation)
 
-Following the sibling pattern of
-`QOU.TopologicalMass.cat_transient_localises_blowup`, the quantities
-are modelled as named `opaque` constants — `transientMItotal` (the
-total transient MI-norm over `Σ`), `transientMIdiv i` (the per-divisor
-MI-norm at `Eᵢ`), with `transientBlowupCount` blow-up points — so the
-theorem `transientMItotal = Σ_{i<N} transientMIdiv i` is the genuine
-unproven localisation identity between *these specific* objects (a
-prior revision universally quantified over arbitrary reals, which made
-the statement false as stated).  Discharged with `sorry` per
-AGENTS.md §1.
+The `.md` lemma's two clauses map to two genuine sub-claims, each
+stated as its own named proposition (honest `sorry` + citation per
+AGENTS.md §1, §1a item 2); the main theorem *derives* the displayed
+identity by chaining them (`trans` + `Finset.sum_congr`) — it does not
+assume its conclusion:
+
+1. `transient_disjoint_disc_additivity` — the support of
+   `α − τ̂ₙ(α)` is contained in the disjoint discs `Dᵢ`, so the
+   MI-norm over `Σ` is additive across the discs:
+   `‖MI∫_Σ (α − τ̂ₙ(α))‖ = Σᵢ ‖MI∫_{Dᵢ} (α − τ̂ₙ(α))‖`.
+2. `transient_disc_is_divisor_integral` — each disc contribution
+   evaluates to the exceptional-divisor integral (the disc `Dᵢ`
+   retracts onto `Eᵢ`):
+   `‖MI∫_{Dᵢ} (α − τ̂ₙ(α))‖ = ‖MI∫_{Eᵢ} (∇_A q, L ∧ F⁺)‖`.
+
+Both rest on the non-abelian-Stokes / multiplicative-integral
+machinery that is **not in Mathlib**; each is a *visible* sorried gap.
+The per-disc MI-norms `transientMIdisc` are genuine quantities of the
+proof narrative, not a laundering device.  (An earlier revision
+carried the decomposition as a class field `sum_of_disjoint` over
+opaque Props and projected it, which was the self-assuming-projection
+anti-pattern; a still earlier one universally quantified over
+arbitrary reals, which made the statement false as stated.)
+
+## Model
+
+Quantities are named `opaque` reals (an `opaque` constant needs a
+concrete inhabited carrier; the MI-norms are archimedean real values,
+so `ℝ` is the honest carrier per §7c).
 
 -- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.md
 -/
@@ -47,27 +59,50 @@ opaque transientBlowupCount : ℕ
     `‖MI∫_Σ (α − τ̂ₙ(α))‖`. -/
 opaque transientMItotal : ℝ
 
+/-- The norm of the multiplicative integral of the transient component
+    over the `i`-th disc `Dᵢ` (centred at the blow-up point `pᵢ`):
+    `‖MI∫_{Dᵢ} (α − τ̂ₙ(α))‖`. -/
+opaque transientMIdisc : ℕ → ℝ
+
 /-- The norm of the multiplicative integral over the `i`-th exceptional
     divisor `Eᵢ`: `‖MI∫_{Eᵢ} (∇_A q, L ∧ F⁺)‖`. -/
 opaque transientMIdiv : ℕ → ℝ
 
-/-- **Transient-term localisation (norm decomposition).**
-
-The total transient MI-norm equals the sum of the per-divisor MI-norms
-over the `transientBlowupCount` blow-up points.  The analytic input is
-the per-disc factorisation of the transient multiplicative integral
-over the disjoint support `⊔ᵢ Dᵢ` (making the norm additive across the
-divisors); discharging it requires the multiplicative-integral /
-non-abelian-Stokes API, which is not in Mathlib, so the body is
-`sorry`. -/
+/-- **Open input 1 — disjoint-support additivity.**  The transient
+    component is supported in the disjoint discs `Dᵢ`, so the MI-norm
+    over `Σ` decomposes as the sum of the per-disc MI-norms.  Needs
+    the multiplicative-integral / non-abelian-Stokes API (not in
+    Mathlib); body is `sorry`. -/
 -- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.md
+theorem transient_disjoint_disc_additivity :
+    transientMItotal
+      = ∑ i ∈ Finset.range transientBlowupCount, transientMIdisc i := by
+  -- Needs: supp(α − τ̂ₙ(α)) ⊆ ⊔ᵢ Dᵢ with the Dᵢ disjoint, making the
+  -- MI-norm additive across the discs.
+  sorry
+
+/-- **Open input 2 — per-disc evaluation at the exceptional divisor.**
+    Each disc contribution equals the exceptional-divisor integral
+    (the disc `Dᵢ` retracts onto `Eᵢ` and the transient integrand
+    restricts to `(∇_A q, L ∧ F⁺)` there); body is `sorry`. -/
+-- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.md
+theorem transient_disc_is_divisor_integral :
+    ∀ i : ℕ, transientMIdisc i = transientMIdiv i := by
+  -- Needs: the Briggs–Klein retraction of Dᵢ onto Eᵢ identifying the
+  -- per-disc multiplicative integral with the divisor integral.
+  sorry
+
+/-- **Transient-term localisation (norm decomposition)**
+    ([`lem:topological-mass-transient-localisation`]).
+
+`‖MI∫_Σ (α − τ̂ₙ(α))‖ = Σ_{i<N} ‖MI∫_{Eᵢ} (∇_A q, L ∧ F⁺)‖`.
+*Derived* (not assumed): split over the disjoint discs (open input 1),
+then evaluate each disc at its exceptional divisor (open input 2)
+under the finite sum. -/
 theorem tm_transient_localisation :
     transientMItotal
-      = (Finset.range transientBlowupCount).sum (fun i => transientMIdiv i) := by
-  -- Ref: [manuscript] §non-abelian-Stokes multiplicative-integral localisation
-  -- on the disjoint discs Dᵢ ⊃ supp(α − τ̂ₙ(α)); Mathlib has no
-  -- multiplicative-integral / Stokes API to discharge the per-disc
-  -- factorisation, so the disjoint-support additivity is left as `sorry`.
-  sorry
+      = ∑ i ∈ Finset.range transientBlowupCount, transientMIdiv i :=
+  transient_disjoint_disc_additivity.trans
+    (Finset.sum_congr rfl fun i _ => transient_disc_is_divisor_integral i)
 
 end QOU.LiftingDescent
