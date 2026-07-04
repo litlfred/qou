@@ -165,3 +165,58 @@ All content edits validated with
 `bun run scripts/run-validate.ts content/quantum-observable-universe` (after
 `scripts/setup-folio-assistant.sh`); definition `.lean` siblings verified
 `lean`-direct where the toolchain is restorable.
+
+## Resolution status (PR #3288)
+
+**Done:**
+
+- **F1** — Ch 2 `generating-functions-solve-reeb-flow.md` gives $\tau_\infty$
+  (τ_∞) a local gloss ($q\to1$ Taylor germ $\widehat{\mathbb{Z}[q]}\to
+  \mathbb{C}[\![q-1]\!]$), aligns the bare $\tau$ (τ) to $\tau_\infty$ (removing
+  the fibre-functor collision), and softens the two links to `cf.`
+  pointers to the global $\mathcal{R}_{\mathrm{top}}$ (ℛ_top) — no identity
+  claim, no new block (owner ruling). Provability analysis recorded above:
+  $\tau_\infty = \mathcal{R}_{\mathrm{top}}$ is a **type error** (different
+  source/target); the real relation is an open volume-conjecture-strength
+  compatibility.
+- **F2** — new atomic `def:q-deformed-commutator`
+  (`.ts`/`.md`/`.lean`, `qDeformedCommutator` verified `lean` exit 0);
+  `prop:heisenberg-commutator` slimmed to the two limit properties;
+  `rem:heisenberg-commutator` no longer re-defines. Wired into
+  `sec:heisenberg-commutator`.
+- **F3** — new atomic `def:quantum-flatness`
+  (`.ts`/`.md`/`.lean`, `IsQuantumFlat` verified `lean` exit 0);
+  `prop:emergence-to-quantum-flat` define-site demoted to `:refterm`. Also
+  fixes the previously-dangling `#def:quantum-flatness` link in
+  `mass-endomorphism/mass-identity-C-proof.md`. `clarity-defn-misplaced`
+  major: **cleared** (1 → 0).
+- **`clarity-defn-tight` major** `def:q-heat-equation` — definition kept tight;
+  four elaboration sub-sections moved to a follow-on
+  `rem:q-heat-equation-elaboration`.
+- **`clarity-defterm-bold`** — `def:quantum-observable-universe` (was
+  `*italic*`) and `def:weight-decomposition` now bold the principal term.
+
+Ch 2 clarity candidates **23 → 18**.
+
+**Adjudicated as false positives / author-naming (not defects):**
+
+- `def:frobenius-hopf-substrate` `defn-tight` — the five "sub-sections" are the
+  definition's *axioms* (Algebra / Coalgebra / Frobenius / Non-degeneracy /
+  Self-duality), a legitimately structured definition, not rambling.
+- `def:categorical-reeb`, `def:categorical-q-ext-deriv` (Ch 2),
+  `def:categorical-jet` (Ch 1) `defterm-bold` — the principal term **is** bolded
+  at the define-site; the scanner misses bold spans that contain inline math
+  (`**$q$-deformed exterior derivative**`) or wrap across a line
+  (`**jet\nobject**`).
+- `observation.md` `defterm-bold` — the block bolds its actual definienda
+  (**intent on $U$**, **direction**); "Observation" is the section-level name.
+  A rename is an author decision, not a mechanical bold.
+- `fermion-boson-decomposition.md` `defterm-bold` — bolds its real definienda
+  (**boson**, **fermion**).
+
+**Remaining (lower-value polish, deferred):** the `clarity-defn-tight` /
+`clarity-stmt-tight` **minors** (over-length statements, preamble > threshold —
+e.g. `def:commutative-qou`, `def:substrate-parameter`, `def:categorical-reeb`,
+`prop:qou-canonical-action`, `prop:fibre-functor-atlas`) and the Ch 1
+`defterm-bold` minor `def:categorical-connection`. Each is an
+agent-adjudicated candidate, not a confirmed defect.
