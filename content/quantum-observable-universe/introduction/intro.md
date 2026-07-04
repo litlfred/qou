@@ -32,7 +32,7 @@ of mathematics in describing nature "unreasonable," a gift we
 philosophical heart of this approach is to take that
 unreasonableness not as a mystery to be explained but as a
 principle to be *axiomatized*: we posit that the observable
-universe simply *is* the mathematical structure its own
+universe *is* the mathematical structure its own
 observations force, so the fit between mathematics and the world
 is built in rather than discovered.  The natural home for such a
 structure is category theory, the study of how processes combine,

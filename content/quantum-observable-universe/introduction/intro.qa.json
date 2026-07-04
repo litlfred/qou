@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/introduction/intro.md"
   },
   "source_hashes": {
-    "md": "2add892fda67",
+    "md": "266bff0f8b9b",
     "ts": "78c4ecd352f0"
   },
   "criteria": {
@@ -184,40 +184,6 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "1a8fc64d76f5",
-          "ts": "78c4ecd352f0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "d735760f2b64",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
-        },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
-      },
-      {
-        "field_hash": {
-          "md": "671f0d5040e6",
-          "ts": "78c4ecd352f0"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "d735760f2b64",
-          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
-        },
-        "reviewed_at": "2026-06-26T15:20:59.452Z",
-        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/introduction/intro.md:35: universe simply *is* the mathematical structure its own"
-      },
-      {
-        "field_hash": {
           "md": "671f0d5040e6",
           "ts": "78c4ecd352f0"
         },
@@ -234,6 +200,22 @@
         "reviewed_sha": "223e2e140539d2820d219061638d69029acfe2bd",
         "notes": "False positive: the flagged sentence is the introduction's central thesis (the observable universe *is* the mathematical structure its own observations force) — axiomatic framing appropriate to an introduction, not editorializing. Emphasis on *is*/*axiomatized* marks the notions being posited.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "266bff0f8b9b",
+          "ts": "78c4ecd352f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-07-04T23:49:48.628Z",
+        "reviewed_sha": "8b0a8053bf22ce6821124986b7336e3611f909fd"
       }
     ],
     "voice-scholarly-default": [
@@ -1277,5 +1259,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T16:14:57.000Z"
+  "updated_at": "2026-07-04T23:49:48.628Z"
 }
