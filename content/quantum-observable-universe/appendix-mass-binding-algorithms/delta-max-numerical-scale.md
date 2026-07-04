@@ -1,5 +1,3 @@
-# Numerical Scale and Binding Energy Precision
-
 For the deuteron representative $\beta_{\mathrm{D}} = \sigma_0 \in B_2$:
 $L = 1$, $\|\rho\|_{\mathrm{op}} = |q^{1/2}| \approx 1.0536$ at $q_0 \approx 1.1100$, and $\mathfrak{m}^{(0)}(\varrho_{\mathrm{free}}) \approx 0.49932$ (the level-0 Markov trace of the Hopf link). Substituting,
 
