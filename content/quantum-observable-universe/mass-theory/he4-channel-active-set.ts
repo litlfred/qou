@@ -94,6 +94,7 @@ export default proposition({
     "verified-empirically",
   ],
   authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "status",
       body: "Per the conditional-class pattern (AGENTS.md §3b-cond) the Lean\nversion is a class `HasHe4ChannelActiveSet` whose instance\nencodes the witness-verified ordering; the empirical\n$\\Delta_\\mathrm{cat}$ anchors and the LP solution are the sole\n`sorry` inputs.",

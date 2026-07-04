@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition.**
 Let $\iota \colon \mathbb{R}_{>0} \to \mathbb{R}_{>0}$ be the bar
 involution $\iota(q) = q^{-1}$.  The open interval

@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition (conjectural).**
 *Let $M_k(Z,N)$ denote the atomic mass predicted by the BW formula
 with coefficients derived from $H_3(R, q)$ through $H_k(R, q)$ Wedderburn

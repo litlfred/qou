@@ -1,6 +1,9 @@
 import { definition } from "../../schema/builders";
 
 export default definition({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+  ],
   label: "def:color-sector-coords",
   lean: { ref: "qou:QOU.ColorSectorCoords", validation: "not_checked" },
   title: "Color sector coordinates $\\mathfrak{r},\\mathfrak{g},\\mathfrak{b}$",

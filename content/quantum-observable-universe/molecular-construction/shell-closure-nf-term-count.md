@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Conjecture.**
 *In the quotient atom model $H_{Z+1}(q)$ — where the nuclear
 core is a single strand $\mathcal{N}$ and each electron is a

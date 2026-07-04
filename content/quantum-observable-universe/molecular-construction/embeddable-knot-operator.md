@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). The structure and overlap-weighted sum are generic to any ordered field.*
-
 **Definition.**
 *An **embeddable knot operator** is a knot operator $K$ together with an
 embedding of its braid into the ambient $3$-manifold, carrying an

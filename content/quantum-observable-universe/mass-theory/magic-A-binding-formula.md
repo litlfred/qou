@@ -1,7 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c).
-The underlying categorical content is generic; the formula is stated over
-$\mathbb{R}$ for the MeV comparison.*
-
 **Theorem (conditional on [`conj:magic-numbers-bring`](../quantum-observable-universes/magic-numbers-bring.md)
 and [`prop:gravity-spectral-prefactor`](gravity-spectral-prefactor.md)).**
 *For a light nucleus $^A_Z\mathfrak{X}$ that is doubly magic

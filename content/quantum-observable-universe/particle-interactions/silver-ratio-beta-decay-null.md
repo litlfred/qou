@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition (silver-ratio trace degeneracy).**
 *Let $q$ be the substrate parameter and $h = q - q^{-1}$ the Hecke
 skein parameter on $H_3(q)$. Then:*

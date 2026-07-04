@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 The knot-particle generation framework
 ([knot-particle generation](#def:knot-particle-generation)) reduces
 the entire mass spectrum to a computation on the seven $T_{m,n}$

@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over a field $R$ carrying the $q$-data (AGENTS.md §7c).*
-
 **Definition (Hopf symmetric block $e_+$).** *In the 2-strand inter-molecular Hecke
 algebra $H_2(q)$ (two molecules $=$ two strands), the **symmetric (Hopf) block**
 is the idempotent*

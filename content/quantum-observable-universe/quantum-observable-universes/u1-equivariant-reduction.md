@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition.**
 Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be a commutative-limit QOU
 ([def:commutative-qou](#def:commutative-qou)) and let

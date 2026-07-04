@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition (mass as a single sum over curvature-rank strata).**
 
 *Per [spectral sequence collapse](#prop:spectral-sequence-collapse)

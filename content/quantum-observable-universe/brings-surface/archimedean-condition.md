@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 A quantum observable universe $(\mathbf{C}, A, \tau)$ over $R$
 ([quantum observable universe](#def:quantum-observable-universe),
 [QU-to-QOU lifting](#thm:qu-to-qou)) satisfies the **Descartes condition** if the

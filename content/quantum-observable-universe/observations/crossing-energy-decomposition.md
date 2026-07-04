@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 The [crossing energy](#def:crossing-energy) assigns weights
 $+q$ to positive crossings and $-q^{-1}$ to negative crossings,
 with $q > 1$.  Writing $q = e^\lambda$ where $\lambda = \ln q > 0$,

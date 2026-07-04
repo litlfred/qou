@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Beta decay** is the crossing operation that inserts the weak-force
 torus knot $T_{3,5}$ (braid word $\beta_{T_{3,5}} = (\sigma_1\sigma_2)^5$,
 $10$ crossings, [force identification](#rem:force-knot-identification))

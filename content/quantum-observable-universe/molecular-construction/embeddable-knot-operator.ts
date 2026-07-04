@@ -5,6 +5,9 @@ import { definition } from "../../schema/builders";
  * the categorical expression of σ > π bond strength, reusable downstream.
  */
 export default definition({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). The structure and overlap-weighted sum are generic to any ordered field." },
+  ],
   label: "def:embeddable-knot-operator",
   lean: {
     ref: "qou:QOU.Molecular.EmbeddableKnotOperator",

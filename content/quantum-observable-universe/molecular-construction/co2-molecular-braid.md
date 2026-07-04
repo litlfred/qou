@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Definition.**
 **Carbon dioxide** *$CO_2$ is the molecular braid of one carbon atom
 $C(6, 6)$ and two oxygen atoms $O_1(8, 8)$, $O_2(8, 8)$, with

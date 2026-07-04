@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition (Type-B folded crystal cancellation, sorry-free).**
 *For every partition $\lambda$ realised as a list of cells with
 contents $c(r, \mathrm{col}) := \mathrm{col} - r$, the cell-level

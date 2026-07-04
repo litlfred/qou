@@ -31,6 +31,7 @@ export default proposition({
     status: "experimental",
   },
   authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "status",
       body: "Per [`audit_delta_S_chain.py`](../../computations/audit_delta_S_chain.py),\nthe n-p mass-split residual $\\varepsilon_{\\Delta S}$ inherits\n$\\mathfrak{Q}_\\beta$'s residual through the algebraic chain identity\n\n$$\n  \\varepsilon_{\\Delta S}\n  \\;=\\;\n  \\frac{\\mathfrak{Q}_\\beta}{\\mathfrak{Q}_\\beta + m_e} \\cdot \\varepsilon_Q\n  \\;\\approx\\;\n  0.605\\,\\varepsilon_Q .\n$$\n\nUnder the cos resummation:\n$\\varepsilon_Q$ drops $1678 \\to 306$ ppm, and consequently\n$\\varepsilon_{\\Delta S}$ drops $1015 \\to 185$ ppm.  This is one\nrung of the precision ladder toward the $1$ ppb target\n($\\varepsilon_Q \\approx 0.0017$ ppm).  The remaining $305$ ppm\ngap calls for the **3-irrep** extension: $V_{(3)}$ and\n$V_{(1,1,1)}$ contribute at $O(h^2)$ to $\\tau_M$ but are not yet\nincluded in the single-eigenphase resummation above.",

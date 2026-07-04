@@ -31,6 +31,9 @@ import { proposition } from "../../schema/builders";
  * Backlog #1) and a known CAL-4 anchor in the production chain.
  */
 export default proposition({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+  ],
   label: "prop:sw-3root-rational-integrand",
   title:
     "Schur-Weyl 3-root product is an exact rational function with palindromic discriminant",

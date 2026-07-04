@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition.**
 Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with
 $\chi(A) = -6$.  Every baryon formed from torus knot generators

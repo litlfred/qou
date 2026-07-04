@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition.**
 *For any braid $K$ on $3$ strands and any partition $\lambda \vdash k$
 with $k \geq 3$, the Frobenius character of $K$ in the irreducible

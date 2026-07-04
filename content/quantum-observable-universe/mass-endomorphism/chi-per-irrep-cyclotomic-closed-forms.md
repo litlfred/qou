@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **All three $V_\lambda$ per-irrep character-difference closed forms — cyclotomic-factor pattern.**
 
 Per user direction "V_2,1 — write all with 4 in denom — pattern,
@@ -67,7 +65,6 @@ The character $\chi_{(2,1)}(\beta) = \mathrm{Tr}\bigl(\prod_{c \in \beta} M_c\bi
 where $M_c$ is the matrix for each crossing in the canonical word order
 from `atomic_braid_to_crossings`.
 
-
 ## Literature pointers
 
 The canonical values are rigorously evaluated via formal trace definitions.
@@ -77,5 +74,4 @@ The canonical values are rigorously evaluated via formal trace definitions.
 All proved by `field_simp + ring` after unfolding (sorry-free):
 
 See [Table 2](#tbl:chi-per-irrep-cyclotomic-closed-forms-table2-data).
-
 

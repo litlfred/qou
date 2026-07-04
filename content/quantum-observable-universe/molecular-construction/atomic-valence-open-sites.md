@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). The valence count is a generic combinatorial quantity.*
-
 **Definition.**
 *The* **valence** *of an atom (the number of open bonding sites available
 for covalent bonds) is*

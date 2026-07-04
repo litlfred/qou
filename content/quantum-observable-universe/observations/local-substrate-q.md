@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 In any sufficiently small neighbourhood $U \subset M$ of the observable
 universe, the substrate parameter $q$
 ([substrate parameter](#def:substrate-parameter)) satisfies

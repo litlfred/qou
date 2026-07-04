@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 The Markov trace $\mathrm{tr}_M(T_w, q)$ has been written so far as a
 function of $q \in \mathbb{C}$ with poles at the roots of unity, and
 the residue spectral sum

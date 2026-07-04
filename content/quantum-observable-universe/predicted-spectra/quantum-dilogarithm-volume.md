@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition.**
 The nuclear binding energy is the quantum dilogarithm volume
 of the Markov trace, normalised by $\hbar_q^2$:

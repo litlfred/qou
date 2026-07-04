@@ -1,7 +1,4 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Formal proof of the $V_{(3)}$ per-irrep character difference closed form.**
-
 
 $$
   \boxed{
@@ -67,7 +64,6 @@ $$
   [\varepsilon^k]\;\bigl(\chi_{(3)}(\mathcal{B}_n) - \chi_{(3)}(\mathcal{B}_p)\bigr)\big|_{q = 1 + \varepsilon}
    \;=\; \frac{(-1)^k}{4}.
 $$
-
 
 ## Lean theorems exported
 

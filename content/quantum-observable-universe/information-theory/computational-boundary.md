@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 Let $\mathcal{R}^{\circ}(L, q)$ be the polynomial observable
 subcategory of the resolution tree
 ([polynomial observable subcategory](#def:polynomial-observable-subcategory)).

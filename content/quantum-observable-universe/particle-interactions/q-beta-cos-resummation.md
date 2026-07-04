@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **$\mathfrak{Q}_\beta$ cos-resummation theorem (conditional on [`prop:beta-decay-transfer-matrix`](#prop:beta-decay-transfer-matrix)).**
 *The single-wrap Form A closed-form prediction* $\mathfrak{Q}_\beta^A$
 *admits a tighter symbolic refinement obtained by replacing the

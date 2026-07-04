@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 The canonical trace decomposes as a **sum of generator
 volumes** — one for each braid generator $\sigma_i$ in $B_A$.
 Each generator's volume is computed by a transfer matrix product
@@ -227,7 +225,6 @@ crossings.  The total ideal volume
 $V^I = \sum_i V_i^I = \binom{A}{2} - E$ measures how much of
 the naive crossing count is absorbed by double-crossing
 resolutions.
-
 
 ## Connection to the Reeb decomposition
 

@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition.**
 *For a nucleus with $Z$ protons and $N$ neutrons ($A = Z + N$),
 the symmetric channel eigenvalue product of the nuclear braid in the
