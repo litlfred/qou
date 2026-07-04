@@ -432,3 +432,22 @@ compact-vs-geometric **type mismatch**. Owner fork: (a) upload Koelink–Swartto
 the last disciplined q-Bessel form, (b) accept redirect (iii), or (c) pivot. Audit:
 [`docs/audits/2026-07-04-keystone-valuemap-target-is-compact-hecke.md`](../audits/2026-07-04-keystone-valuemap-target-is-compact-hecke.md);
 probe `computations/probes/keystone_valuemap_target_is_compact_hecke.py`.
+
+## q-Bessel Tricomi sub-route refuted WITH a source (2026-07-04, bean s013)
+
+Owner uploaded `uploads/014-026.pdf` (Raza–Fadel–Cesarano 2025, 2-variable
+q-Legendre) in response to the redirect-(ii) source ask. It is a q-Bessel paper
+but **not** the Koelink–Swarttouw Plancherel source — it cites Koornwinder–
+Swarttouw [22] but contains no q-Hankel kernel / E_q(2) measure (scan: 0
+`plancherel`/`E_q(2)`/`measure`/`vacuum`). What it gives is the entire, 0-dof
+0th-order q-Bessel Tricomi `C_{0,q}(x) = Σ (-1)^k x^k/([k]_q!)²` (eq. 11). Its
+positive zeros / q-integer-node values are fixed by q alone, so a falsifiable
+check is constructible. Result (`keystone_qbessel_tricomi_c0q_nodes.py`): **no
+parameter-free quantity** (zeros ξ_j, √ξ_j, ξ_j/ξ_1, gaps, C_{0,q} at [n]_q)
+reproduces the compact target {1,[4]_q,[5]_q,[4][3]/[2]} within 1% (nearest
+ξ₂/ξ₁=5.35 vs [5]_q=5.22, 2.4%; √ξ₄=6.30 vs 6.22, 1.3%); 4-vector no-match.
+**Scope-(a) refutation, now sourced** — closes the q-Bessel-Tricomi sub-route
+with a citation but does NOT exclude a Plancherel-fixed E_q(2) row (still needs
+Koornwinder–Swarttouw 1992, TAMS 333, ref [22] — cited by the upload, not
+contained). Audit:
+[`docs/audits/2026-07-04-keystone-qbessel-tricomi-c0q-sourced-refutation.md`](../audits/2026-07-04-keystone-qbessel-tricomi-c0q-sourced-refutation.md).
