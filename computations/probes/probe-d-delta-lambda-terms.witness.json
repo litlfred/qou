@@ -1,0 +1,433 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-04T19:13:26.695015+00:00",
+  "commitSha": "778a1672938e41636cd740e7557907843b187bb0",
+  "assertions": [
+    {
+      "name": "wedderburn_closure",
+      "computed": 4.7957214796783364e-52,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-09,
+      "source": "Σ_λ y_λ χ^λ(β_D) = tr_M(β_D) (witness cross-check)"
+    },
+    {
+      "name": "bar_conjugate_law_broken_by_colour_weighting",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "χ^λ(β_D, q⁻¹) vs (−1)^L χ^{λ'}(β_D, q): residual ≈2.6e-4 = colour-weighting / flavor-split symmetry breaking"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "probe-d-delta-lambda-terms",
+  "scriptFile": "probe_d_delta_lambda_terms.py",
+  "scriptHash": "0b0b95349b2a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Deuteron Δ_λ per-partition term analysis: y_λ, χ^λ(β_D) bound/free/q⁻¹, Δχ, and per-block binding y_λ·Δχ for all 11 λ⊢6, from committed 50-dps witnesses. Symbolic relations: Wedderburn closure Σy_λχ^λ=tr_M; bar-conjugate law χ(1/q)=(−1)^Lχ_{λ'}(q); χ_bound zeros; (3,2,1) self-conjugate; magnitude/sign dominance. Δ_λ under-determined at A=2 (1 eq, 11 unknowns); uniform-δ magnitude reported. Structural characterisation, NOT a closure ansatz (Δ_λ gate).",
+  "auditOnly": "docs/audits/2026-07-04-deuteron-dressing-is-proton-net.md",
+  "parameters": {
+    "compute_dps": 70,
+    "beta_D_word_length": 23
+  },
+  "data": {
+    "terms": [
+      {
+        "lambda": [
+          6
+        ],
+        "conj": "[1, 1, 1, 1, 1, 1]",
+        "self_conj": false,
+        "dim": 1,
+        "y_lambda": "0.0591877210916",
+        "chi_bound": "1.55987028095",
+        "chi_free": "1.5513064682",
+        "chi_qinv": "0.6769250917",
+        "delta_chi": "-0.00856381275233",
+        "trM_term": "0.0923251671282",
+        "binding_term_y_dchi": "-0.000506872560666"
+      },
+      {
+        "lambda": [
+          5,
+          1
+        ],
+        "conj": "[2, 1, 1, 1, 1]",
+        "self_conj": false,
+        "dim": 5,
+        "y_lambda": "0.0589606835459",
+        "chi_bound": "3.21631789808",
+        "chi_free": "5.93121148832",
+        "chi_qinv": "-2.15541571171",
+        "delta_chi": "2.71489359023",
+        "trM_term": "0.189636301772",
+        "binding_term_y_dchi": "0.160071981835"
+      },
+      {
+        "lambda": [
+          4,
+          2
+        ],
+        "conj": "[2, 2, 1, 1]",
+        "self_conj": false,
+        "dim": 9,
+        "y_lambda": "0.0402843879013",
+        "chi_bound": "1.67439566505",
+        "chi_free": "9.00591303276",
+        "chi_qinv": "0.819715650293",
+        "delta_chi": "7.33151736771",
+        "trM_term": "0.067452004471",
+        "binding_term_y_dchi": "0.295345689546"
+      },
+      {
+        "lambda": [
+          4,
+          1,
+          1
+        ],
+        "conj": "[3, 1, 1, 1]",
+        "self_conj": false,
+        "dim": 10,
+        "y_lambda": "0.010133462519",
+        "chi_bound": "-0.469805655887",
+        "chi_free": "5.36599503401",
+        "chi_qinv": "0.489987771275",
+        "delta_chi": "5.8358006899",
+        "trM_term": "-0.00476075800513",
+        "binding_term_y_dchi": "0.0591368675593"
+      },
+      {
+        "lambda": [
+          3,
+          3
+        ],
+        "conj": "[2, 2, 2]",
+        "self_conj": false,
+        "dim": 5,
+        "y_lambda": "0.0141208742645",
+        "chi_bound": "4.24940291056",
+        "chi_free": "4.62600801264",
+        "chi_qinv": "3.49756389083",
+        "delta_chi": "0.37660510208",
+        "trM_term": "0.0600052841991",
+        "binding_term_y_dchi": "0.00531799329382"
+      },
+      {
+        "lambda": [
+          3,
+          2,
+          1
+        ],
+        "conj": "[3, 2, 1]",
+        "self_conj": true,
+        "dim": 16,
+        "y_lambda": "0.00731845355633",
+        "chi_bound": "-1.97227276292",
+        "chi_free": "7.62558351446",
+        "chi_qinv": "1.97282073802",
+        "delta_chi": "9.59785627738",
+        "trM_term": "-0.0144339866158",
+        "binding_term_y_dchi": "0.0702414654064"
+      },
+      {
+        "lambda": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "conj": "[4, 1, 1]",
+        "self_conj": false,
+        "dim": 10,
+        "y_lambda": "-0.000685309006621",
+        "chi_bound": "-0.490126019454",
+        "chi_free": "-1.91763458064",
+        "chi_qinv": "0.470191710157",
+        "delta_chi": "-1.42750856118",
+        "trM_term": "0.000335887775512",
+        "binding_term_y_dchi": "0.000978284474008"
+      },
+      {
+        "lambda": [
+          2,
+          2,
+          2
+        ],
+        "conj": "[3, 3]",
+        "self_conj": false,
+        "dim": 5,
+        "y_lambda": "0.000773186627968",
+        "chi_bound": "-3.49729518099",
+        "chi_free": "3.74795844081",
+        "chi_qinv": "-4.24906940541",
+        "delta_chi": "7.2452536218",
+        "trM_term": "-0.002704061868",
+        "binding_term_y_dchi": "0.00560193321661"
+      },
+      {
+        "lambda": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "conj": "[4, 2]",
+        "self_conj": false,
+        "dim": 9,
+        "y_lambda": "-0.000342051827473",
+        "chi_bound": "-0.819655254117",
+        "chi_free": "0.844233846277",
+        "chi_qinv": "-1.67374772222",
+        "delta_chi": "1.66388910039",
+        "trM_term": "0.000280364577568",
+        "binding_term_y_dchi": "-0.000569136307502"
+      },
+      {
+        "lambda": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "conj": "[5, 1]",
+        "self_conj": false,
+        "dim": 5,
+        "y_lambda": "9.86356038354e-5",
+        "chi_bound": "2.15525561324",
+        "chi_free": "-2.23046769817",
+        "chi_qinv": "-3.21589087847",
+        "delta_chi": "-4.3857233114",
+        "trM_term": "0.000212584938831",
+        "binding_term_y_dchi": "-0.000432588467075"
+      },
+      {
+        "lambda": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "conj": "[6]",
+        "self_conj": false,
+        "dim": 1,
+        "y_lambda": "-1.24379914837e-5",
+        "chi_bound": "-0.676876656235",
+        "chi_free": "0.67325689637",
+        "chi_qinv": "-1.5597586581",
+        "delta_chi": "1.3501335526",
+        "trM_term": "8.41898608579e-6",
+        "binding_term_y_dchi": "-1.67929496292e-5"
+      }
+    ],
+    "bar_conjugate_check": [
+      {
+        "lambda": [
+          6
+        ],
+        "conj": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "chi_qinv": "0.6769250917",
+        "signed_chi_conj_q": "0.6768766562",
+        "rel_resid": 2.888433394785087e-05
+      },
+      {
+        "lambda": [
+          5,
+          1
+        ],
+        "conj": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "chi_qinv": "-2.155415712",
+        "signed_chi_conj_q": "-2.155255613",
+        "rel_resid": 5.0740253397009334e-05
+      },
+      {
+        "lambda": [
+          4,
+          2
+        ],
+        "conj": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "chi_qinv": "0.8197156503",
+        "signed_chi_conj_q": "0.8196552541",
+        "rel_resid": 3.319099905065231e-05
+      },
+      {
+        "lambda": [
+          4,
+          1,
+          1
+        ],
+        "conj": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "chi_qinv": "0.4899877713",
+        "signed_chi_conj_q": "0.4901260195",
+        "rel_resid": 9.277616656858951e-05
+      },
+      {
+        "lambda": [
+          3,
+          3
+        ],
+        "conj": [
+          2,
+          2,
+          2
+        ],
+        "chi_qinv": "3.497563891",
+        "signed_chi_conj_q": "3.497295181",
+        "rel_resid": 5.9749211136050924e-05
+      },
+      {
+        "lambda": [
+          3,
+          2,
+          1
+        ],
+        "conj": [
+          3,
+          2,
+          1
+        ],
+        "chi_qinv": "1.972820738",
+        "signed_chi_conj_q": "1.972272763",
+        "rel_resid": 0.00018436232059155974
+      },
+      {
+        "lambda": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "conj": [
+          4,
+          1,
+          1
+        ],
+        "chi_qinv": "0.4701917102",
+        "signed_chi_conj_q": "0.4698056559",
+        "rel_resid": 0.0002626566775102883
+      },
+      {
+        "lambda": [
+          2,
+          2,
+          2
+        ],
+        "conj": [
+          3,
+          3
+        ],
+        "chi_qinv": "-4.249069405",
+        "signed_chi_conj_q": "-4.249402911",
+        "rel_resid": 6.353201657005609e-05
+      },
+      {
+        "lambda": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "conj": [
+          4,
+          2
+        ],
+        "chi_qinv": "-1.673747722",
+        "signed_chi_conj_q": "-1.674395665",
+        "rel_resid": 0.00024227635179888973
+      },
+      {
+        "lambda": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "conj": [
+          5,
+          1
+        ],
+        "chi_qinv": "-3.215890878",
+        "signed_chi_conj_q": "-3.216317898",
+        "rel_resid": 0.00010127784922281323
+      },
+      {
+        "lambda": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "conj": [
+          6
+        ],
+        "chi_qinv": "-1.559758658",
+        "signed_chi_conj_q": "-1.559870281",
+        "rel_resid": 4.360488506729814e-05
+      }
+    ],
+    "bar_conjugate_max_rel_resid": 0.0002626566775102883,
+    "sum_y_chi_bound": "0.38835720735922143664",
+    "tr_M": "0.38835720735922143664",
+    "scalar_binding_trace_diff": "0.59516882504552689904",
+    "chi_bound_zeros": [],
+    "top3_binding_lambda": [
+      [
+        4,
+        2
+      ],
+      [
+        5,
+        1
+      ],
+      [
+        3,
+        2,
+        1
+      ]
+    ],
+    "uniform_delta_magnitude": "11.209699136832691541"
+  }
+}
