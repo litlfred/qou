@@ -4,7 +4,7 @@
 **Branch:** `claude/mu-p-tension-closure-uua4os`
 **Executes:** follow-up **#2** of [`2026-07-02-bekenstein-vsl-review.md`](2026-07-02-bekenstein-vsl-review.md) §3.3/§5 (bean `4big`)
 **Probe:** [`scripts/dq_mass_energy_continuity_probe.py`](scripts/dq_mass_energy_continuity_probe.py) (self-contained, sympy-exact, exit 0)
-**Companion:** [`2026-07-04-qdot-substrate-drift-bound.md`](2026-07-04-qdot-substrate-drift-bound.md) (follow-up #3)
+**Companion:** [`2026-07-04-qdot-substrate-drift-bound.md`](2026-07-04-qdot-substrate-drift-bound.md) (follow-up #3, merged in [#3311](https://github.com/litlfred/qou/pull/3311))
 
 ## What this closes
 
@@ -77,4 +77,5 @@ a derived PDE), so this audit makes no cosmological claim — it only records th
 wired; CAL-1/2/3 untouched. Promotion to a content `remark`
 (`interprets: thm:mass-energy-equivalence`) is the natural follow-on once the
 cosmological framing is decided. Review follow-up **#1** (Ellis–Uzan remark
-block) remains open; **#3** (q̇/q drift bound) landed in the companion audit.
+block) remains open; **#3** (q̇/q drift bound) landed in the companion audit
+(merged in [#3311](https://github.com/litlfred/qou/pull/3311)).

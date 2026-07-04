@@ -64,10 +64,15 @@ def main():
         and dEdq_const_m != 0
     )
 
-    # 4. germ-commutator tie-in fails: 2 c_q ~ (q-1)^-1 vs F_q ~ (q-1)^+1
-    #    (opposite sign of the (q-1) exponent — no clean identification)
-    exp_source = sp.degree(sp.together(2 * c).as_numer_denom()[1], q)  # denom power
-    checks["source 2 c_q scales as (q-1)^-1 (inverse of F_q ~ (q-1))"] = exp_source == 1
+    # 4. germ-commutator tie-in fails: 2 c_q ~ (q-1)^-1 vs F_q ~ (q-1)^+1.
+    #    Exact test (no q-degree heuristic): 2·c_q·(q-1) is the nonzero
+    #    CONSTANT 2 — i.e. 2 c_q has an exact simple pole in (q-1), the
+    #    inverse of F_q ∝ (q-1). Multiplying by F_q's (q-1) gives a constant,
+    #    so no (q-1)-power survives to identify the source with F_q.
+    src_times_qm1 = sp.simplify(2 * c * (q - 1))
+    checks["source 2 c_q = 2/(q-1) exactly (inverse of F_q ~ (q-1))"] = (
+        src_times_qm1 == 2
+    )
 
     # bonus corpus relation
     checks["c_q * hbar_q = 1/q"] = sp.simplify(c * hbar - 1 / q) == 0
