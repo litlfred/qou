@@ -173,6 +173,34 @@ def nucleon_nf(types: list[str], lepton_couples_as: str | None = None) -> Term:
     return elem
 
 
+def nucleon_nf_coupled(types: list[str], g) -> Term:
+    """Coupling-parametrised NF: each 4th-strand crossing (a pair touching a
+    non-(u/d) tag) is interpolated  C(g) = (1-g)*I + g*P  between the identity
+    `I = {():1}` (g=0 -> 4th strand unlinked -> exactly the H3 object) and the
+    physical crossing `P` (g=1).  Lets the stability gate be read as the g->0
+    limit and the c_k^even response measured to linear order in g.  Quark-quark
+    crossings (both in {u,d}) are unchanged (always physical)."""
+    elem = confinement_b3()
+    A = len(types)
+    ident = {(): sp.Integer(1)}
+    for i in range(A):
+        for j in range(i + 1, A):
+            ti, tj = types[i], types[j]
+            P = crossing(ti, tj, i)
+            if ti in ("u", "d") and tj in ("u", "d"):
+                cx = P  # physical quark-quark crossing, no coupling knob
+            else:
+                # interpolate the 4th-strand crossing between identity and P
+                cx = {}
+                for w, c in ident.items():
+                    cx[w] = cx.get(w, sp.Integer(0)) + (1 - g) * c
+                for w, c in P.items():
+                    cx[w] = sp.expand(cx.get(w, sp.Integer(0)) + g * c)
+                cx = {w: c for w, c in cx.items() if c != 0}
+            elem = reduce_nf(mul(elem, cx))
+    return elem
+
+
 def augmentation(elem: Term) -> sp.Expr:
     """net = sum_w coeff_w(q)  (counit; the functional the Q_beta ladder reads)."""
     return sp.simplify(sum(elem.values()))
