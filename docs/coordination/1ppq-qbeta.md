@@ -732,3 +732,23 @@ nucleon's short-word structure, so it does not touch c₂,c₃.
 - **Owner-gated remaining decision:** the SDP objective weights `t` / net target
   `n_target` for the n=4 singlet selection, and the selected-channel → Q_β net-route
   ladder linkage. These are framework choices, not agent ansätze.
+
+## 8we6 resolution — Markov-trace calibration already derived; c₄^even = keystone residue (2026-07-04)
+
+Owner authorised "re-derive the Q_β ladder calibration for the Markov-trace functional."
+Corpus-grep shows it is **already derived and Lean-proved** — and the derivation's verdict
+is that `tr_M` is the *wrong* functional for the transition:
+
+- **Counit is correct (derived).** `ε(β)=⟨β,G⁻¹𝟙⟩_G` = crossing-stripped reduction count
+  (transition); `tr_M(β)=⟨β,𝟙⟩_G` = closed-loop static mass. β-decay is a transition ⇒ `ε`.
+  `tr_M` misses by ~2× ([`qbeta-counit-transition.md`](../../content/quantum-observable-universe/particle-interactions/qbeta-counit-transition.md)).
+- **Markov-trace leading analog is Lean-proved** ([`qbeta_counit_vs_trace.lean`](../../content/quantum-observable-universe/lean/QOU/Interactions/qbeta_counit_vs_trace.lean),
+  sorry-free): `trMNP h z = h²/2−h·z`, gap `ε−trMNP = h(z−1)`, `trMNP_q=(q²−1)(q²−2qz−1)/(2q²)`.
+  `E_0` is functional-independent; the phase `cos(α_eff)` **is** `τ_M(M_β)`. Nothing to re-derive.
+- **Open object = ladder residue `F(q)`**, a fibre-level Habiro/root-of-unity element — the
+  **s5-so3 keystone** `W_λ` (bean `s5bb`); ledger says do not open a separate Q_β probe.
+
+**Bean 8we6 closed:** c₄^even not reachable by re-decomposition (Route B, Lean-pruned),
+counit strand-append (contaminates c₂/c₃, proven full+linear), or tr_M recalibration
+(derived-wrong; N=0 analog already Lean-proved). Redirected to the keystone.
+Audit: [`2026-07-04-8we6-h4-route-a-explicit-strand-gate-scan.md`](../audits/2026-07-04-8we6-h4-route-a-explicit-strand-gate-scan.md).
