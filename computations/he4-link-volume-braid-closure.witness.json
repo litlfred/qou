@@ -1,11 +1,11 @@
 {
   "engine": "snappy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-04T13:52:17.571873+00:00",
-  "commitSha": "fca8424977699665df6e3058895be137b5d1505d",
+  "computedAt": "2026-07-04T13:55:09.426736+00:00",
+  "commitSha": "1233e7ff1a6c4f029f280657073bdb5b644fe1eb",
   "assertions": [
     {
-      "name": "3H_closure_component_count_ne_8_11",
+      "name": "3H_closure_is_4_component",
       "computed": 4.0,
       "expected": 4.0,
       "passed": true,
@@ -13,7 +13,7 @@
       "source": "³H canonical braid closure has 4 components; 8_11 is a 1-component knot — wrong link type, so closure ≠ the SDP binding link."
     },
     {
-      "name": "3He_closure_component_count_ne_borromean",
+      "name": "3He_closure_is_4_component",
       "computed": 4.0,
       "expected": 4.0,
       "passed": true,
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "he4-link-volume-braid-closure",
   "scriptFile": "he4_link_volume_braid_closure.py",
-  "scriptHash": "dc88c7c45be6",
-  "scriptCommitSha": "fca8424977699665df6e3058895be137b5d1505d",
+  "scriptHash": "1a08aca3d5ce",
+  "scriptCommitSha": "1233e7ff1a6c4f029f280657073bdb5b644fe1eb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
