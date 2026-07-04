@@ -387,3 +387,22 @@ pair sum is **−(12/25)ζ(3)** ≈ −0.577 (the old anchor would force
 Cl₃(4π/5) ≈ −1.34, outside Clausen range |·| ≤ ζ(3)). Both modules wired into
 the `QOU.BraidKnot` aggregator; lean-direct EXIT 0 (only the intended §3b
 open-conjecture `sorry` instances remain).
+
+## Redirect (i) CLOSED — larger-D Seifert (Σ(3,4,5)) refuted; compact-modular route exhausted (2026-07-04)
+
+The 2026-07-02 Σ(2,3,5) refutation listed three redirects; **(i) larger-D
+Seifert** is now closed. Σ(3,4,5) — smallest pairwise-coprime Brieskorn sphere
+with D=6, γ=4 flat connections (= the 4 bwS0 classes) — was tested by extending
+the validated Hikami eq.3.1/3.8 machinery (S²=I to 4.4e-50, unit-row anchors
+pass). Its D=6 vacuum row ratios are (1,1,√2,φ,φ,2.288), bounded by ~2.29 and
+structurally unable to reach the target's 6.22; best 4-subset 69% off. Scope (a).
+
+**Structural softener (not a hard exclusion):** the modular S-matrix is
+rational-angle sines, **q₀-independent**, while bwS0=d_q/D moves with q₀
+(∂/∂q₀ = 0,1.91,3.85,3.85). No compact Seifert modular row can *track* the
+q₀-dependent target — confirming the redirect to the **non-compact q-Bessel**
+(q₀-dependent) vacuum row as the sole viable geometric object. Redirects (ii)
+Ẑ/GPPV colored blocks (Murakami 2205.01282) and (iii) non-geometric
+`BWVacuumRowIsHecke` stand. Audit:
+[`docs/audits/2026-07-04-keystone-sigma345-largerD-seifert-refuted.md`](../audits/2026-07-04-keystone-sigma345-largerD-seifert-refuted.md);
+probe `computations/probes/keystone_valuemap_sigma345_dm6.py` (PR #3290).
