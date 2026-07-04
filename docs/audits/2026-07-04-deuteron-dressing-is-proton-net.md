@@ -197,3 +197,50 @@ the *same* residual open item (the tower-convergence conjecture). The hybrid
 $E_0\,\mathrm{net}(p)\,\Delta\mathrm{tr}$ mixes the counit net(p) with the
 Markov $\Delta\mathrm{tr}$ of the deuteron — consistent with, and now located
 against, the counit/trace theory above.
+
+## Deuteron Δ_λ term structure (2026-07-04, owner question)
+
+Producer: [`probes/probe_d_delta_lambda_terms.py`](../../computations/probes/probe_d_delta_lambda_terms.py)
+→ `probes/probe-d-delta-lambda-terms.witness.json` (audit-only). Reads the
+committed 50-dps deuteron χ witnesses (bound / free / q⁻¹) — no re-derivation.
+
+The binding formula is $B(K) = m_e\sum_{\lambda\vdash 6} y_\lambda(q)\,\chi^\lambda(\beta_K)\,\Delta_\lambda(K)$.
+**What terms are involved** (β_D word length L = 23, tr_M(β_D) = 0.38836):
+11 partitions of 6, each a product $y_\lambda\cdot\chi^\lambda(\beta_D)$ (both
+exact Laurent in q). The binding trace difference $\sum_\lambda y_\lambda\Delta\chi^\lambda = 0.59517$
+(= the #3295 Δtr), **dominated by three blocks**: $[4,2]$ (0.295), $[5,1]$
+(0.160), and the self-conjugate $[3,2,1]$ (0.070) — two-row + hook + the SDP
+self-dual fixed point. The high-row partitions ($[2^3]$, $[1^6]$, …) contribute
+< 1 %.
+
+**Symbolic relations that hold (exact / near):**
+
+1. **Wedderburn closure** $\sum_\lambda y_\lambda\chi^\lambda(\beta_D) = \mathrm{tr}_M(\beta_D)$
+   — exact (residual 4.8e-52). This is the scalar the collapse-last towers
+   reproduce; it is the ONE hard constraint on any $\Delta_\lambda$.
+2. **Bar-conjugate law is BROKEN by ≈2.6e-4.** $\chi^\lambda(\beta_D, q^{-1})$
+   vs $(-1)^L\chi^{\lambda'}(\beta_D, q)$ (L = 23, sign $-1$) has max rel-resid
+   **2.63e-4** — NOT exact. The break is the **colour-weighted p-n interface**
+   (q₀-baked flavor split), at the same order as the convention-D trace gap
+   (1.955e-4). So the clean q↔q⁻¹ / conjugate-partition symmetry that holds for
+   an unweighted word is deliberately broken at the flavor-split scale; any
+   $\Delta_\lambda$ closure inherits this asymmetry.
+3. **No χ zeros at H_6** (unlike the H_3 Garside $\chi^{(2,1)}(\Delta)=0$): all
+   11 $\chi^\lambda(\beta_D)$ are non-vanishing, so there is no "free" block to
+   drop.
+4. **(3,2,1) self-conjugate fixed point** carries the 3rd-largest binding term
+   — the SDP self-dual block is a genuine load-bearing contributor, not a
+   spectator.
+
+**Δ_λ magnitude — under-determined at A=2 (quantified).** The binding is ONE
+scalar equation $\sum_\lambda y_\lambda\chi^\lambda\Delta_\lambda = B_{AME}/m_e = 4.3534$
+against **11 per-λ unknowns** ⇒ a **10-dimensional null space**. A *uniform*
+$\Delta_\lambda = \delta$ has magnitude $\delta = (B_{AME}/m_e)/\mathrm{tr}_M = 11.21$
+(direct form); the trace-canonical difference form gives the scalar Δtr =
+0.595. **No unique symbolic $\Delta_\lambda(D)$ exists from deuteron data
+alone** (confirms `probe_d_symbolic_prospects` P3). The relations above are the
+constraints a closure must respect — Wedderburn-exact, colour-broken
+bar-conjugate, dominant blocks $[4,2]/[5,1]/[3,2,1]$ — but they do not pin the
+10 free directions; that requires cross-A (per PR #3266's cross-A
+discriminator). **Not a closure ansatz** (Δ_λ gate); a structural map of the
+terms and their exact constraints.

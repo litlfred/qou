@@ -18,7 +18,14 @@ export default conjecture({
         "carrier: a content-bearing class (single-wrap NF net coefficients " +
         "`net_p = 1 − h/2`, `net_n = 1 − 3h/2 + h²/2`, and the `Q_β` energy-" +
         "scale ansatz) with **no instance**, i.e. the honest un-discharged " +
-        "state (AGENTS.md §3b-tax). It previously pointed at " +
+        "state (AGENTS.md §3b-tax). **Scope of this carrier (partial).** It " +
+        "formalizes ONLY the *per-nucleon net-coefficient / β-decay* " +
+        "sub-aspect of the conjecture — NOT the Borromean-confinement claim " +
+        "(Brunnian property ⇒ colour confinement) nor the mass-from-volume " +
+        "claim; those remain un-formalized (the latter's degenerate carrier " +
+        "is the Archimedean one). No single Lean carrier currently captures " +
+        "the whole conjecture; the ref points at the one with genuine, " +
+        "un-discharged mathematical content. It previously pointed at " +
         "`QOU.Archimedean.BorromeanQuark`, whose `instance canonical` is " +
         "**definitionally discharged** (`volume_calibrates_mass := rfl` on a " +
         "field that IS the conclusion; `is_baryon_realisation` = mere " +
