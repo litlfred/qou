@@ -171,6 +171,40 @@ the §3b observation stands at the Gram level for n ≤ 12 and is
 method (e.g. a transfer-style evaluation of tr_M(W·W^♯)), not the dense
 sweep.
 
+## 3d. Redistribution magnitude R(K) as a w_n(K) carrier candidate — direct identification REFUTED (scope (a)), 2026-07-04
+
+Cross-link into the θ_λ / w_n(K) extensive-binding thread
+([`2026-07-03-theta-lambda-via-reeb-nastokes-jet-filtration.md`](2026-07-03-theta-lambda-via-reeb-nastokes-jet-filtration.md),
+[`2026-07-03-wn-linkvolume-isospin-carrier-magnitude-open.md`](2026-07-03-wn-linkvolume-isospin-carrier-magnitude-open.md)):
+that thread narrowed `w_n(K) = M_n(A)·Vol_n(K)` with the multiplier open
+and a structural wall at the deuteron (Hopf sub-link Vol = 0). The
+per-block Gram redistribution size `R(K) = ½·‖Δc‖₁` (probe extension,
+same witness) is derived, isospin-aware, and nonzero at the deuteron —
+tested here as a carrier candidate:
+
+| iso | B_AME | R_abs | R_anti | R_signed | α·R_abs (MeV) | α·R/B_AME |
+|---|--:|--:|--:|--:|--:|--:|
+| ²H | 2.22 | 0.122 | 0.099 | +0.057 | 0.51 | 0.23 |
+| ³H | 8.48 | 0.316 | 0.308 | −0.556 | 1.32 | 0.16 |
+| ³He | 7.72 | 0.758 | 0.747 | +1.460 | 3.17 | 0.41 |
+| ⁴He | 28.30 | 0.964 | 0.947 | +1.304 | 4.04 | 0.14 |
+
+**Verdict — scope (a), direct identification refuted:** R(K) is not a
+direct `w_n(K)` carrier. (i) The mirror ordering is **wrong**:
+R(³He) > R(³H) while B(³H) > B(³He) — the *reverse* of the link-volume
+carrier, which orders correctly. (ii) The ratio α·R/B is not constant
+(0.14–0.41). This constrains the *direct* magnitude identification only;
+no invariant excludes R-type ingredients from a composite closure.
+
+What survives: (a) **extensive-ish growth** — R(⁴He)/R(²H) = 7.9×,
+between the unit-weight jet-filtration (4.87×) and experiment (12.72×);
+(b) **no deuteron wall** — R(²H) = 0.122 ≠ 0 where the Hopf volume
+vanishes; (c) the isospin dependence enters through the **sign** of
+R_signed (³H −, ³He +) rather than the magnitude ordering. The volume
+carrier and R thus fail in complementary places (D-zero vs mirror
+ordering); a principled combination would need a *derived* rule — per
+the Δ_λ gate and the no-fit discipline, none is proposed here.
+
 ## 4. Cross-references
 
 - Critical assessment delivered in-session 2026-07-03 (chat), branch
