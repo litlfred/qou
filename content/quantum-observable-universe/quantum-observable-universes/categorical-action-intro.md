@@ -4,13 +4,12 @@ of $A$; we now trace it to a morphism $\mathbf{1} \to
 that the QOU axioms force into the result. The trace is supplied
 by the rigid duality: no spacetime measure is invoked.
 
-**Categorical action** (def) defines $\mathfrak{S} = \mathrm{tr}
+Definition: Categorical action defines $\mathfrak{S} = \mathrm{tr}
 (\Phi) = \mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes \Phi)
 \circ \mathrm{coev}_A$ for a physics endomorphism $\Phi \in
 \mathrm{End}_{\mathbf{C}}(A)$. **Existence of the categorical
 action** (prop) — with its proof — verifies the construction,
-and **uniqueness of the categorical action (given $\Phi$)**
-(prop) — with its proof — fixes $\mathfrak{S}$ up to the identity
+and Proposition: uniqueness of the categorical action (given $\Phi$) — with its proof — fixes $\mathfrak{S}$ up to the identity
 $\mathfrak{S} = \mathrm{tr}(\Phi)$. **Categorical action
 notation** (rem) and **Categorical action notation on
 $\mathrm{SU}(2)$** (rem) collect the trace, partial trace,
