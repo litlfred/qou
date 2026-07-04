@@ -3,7 +3,7 @@
 **Proposition (bond-count multiplicity).**
 *The canonical atomic braid is a **linear chain** of $A$ nucleon blocks
 (consecutive blocks joined by a single inter-nucleon crossing). Consequently, in
-the body-order (jet-filtration) binding [`conj:binding-manybody-jet-filtration`](#conj:binding-manybody-jet-filtration),*
+the body-order (jet-filtration) binding [`conj:binding-manybody-eq-jet-filtration`](#conj:binding-manybody-eq-jet-filtration),*
 
 - *the number of consecutive $n$-nucleon sub-clusters is $A-n+1$, and*
 - *each $n$-nucleon sub-chain carries exactly $n-1$ inter-nucleon bonds,*
