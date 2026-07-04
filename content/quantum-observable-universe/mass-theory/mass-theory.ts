@@ -312,6 +312,7 @@ export default chapter({
             "calibration-cohomology-alignment-proof",
             "bar-parity-split",
             "bar-parity-split-proof",
+            "deuteron-binding-dressing-proton-net",
             "lr-coefficient-hecke",
             "hecke-1d-irrep-closed-form-character",
             "hecke-1d-irrep-closed-form-character-proof",
