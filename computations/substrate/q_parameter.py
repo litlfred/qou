@@ -36,8 +36,9 @@ del _sys, _Path, _bridge
 # owner ruling 2026-07-03 stripped from the canonical solver and PR #3280
 # dropped from the m_p producer. Removed to leave a single source of truth —
 # the canonical `qou_substrate.constants._solve_q_proton_f64` (tower-free) —
-# reached via the `import *` below. This does NOT change `Q` / `Q_50_DIGIT_STR`
-# (both come from the canonical module); the owner-gated pin re-pin is bean 2i8g.
+# which can be imported directly from the canonical module if needed. This does
+# NOT change `Q` / `Q_50_DIGIT_STR` (both are public names, so they DO come
+# through the `import *` below); the owner-gated pin re-pin is bean 2i8g.
 
 import sys
 from pathlib import Path
