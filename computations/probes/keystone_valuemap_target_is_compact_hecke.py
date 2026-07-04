@@ -99,18 +99,20 @@ def scan_murakami():
     """FACT 2: count colored/decorated terms in the uploaded Murakami PDF."""
     try:
         import fitz  # pymupdf
-    except Exception:
+        if not MURAKAMI_PDF.exists():
+            return {"available": False}
+        d = fitz.open(str(MURAKAMI_PDF))
+        txt = "\n".join(d[i].get_text() for i in range(d.page_count)).lower()
+        terms = ["color", "colour", "decorat", "wilson", "refined", "equivariant"]
+        counts = {t: txt.count(t) for t in terms}
+        # "knot" appears only in a bibliography title (FIMT21) — record for honesty
+        counts["knot_total"] = txt.count("knot")
+        counts["homological_block"] = txt.count("homological block")
+        counts["false_theta"] = txt.count("false theta")
+        return {"available": True, "pages": d.page_count, "counts": counts,
+                "any_colored_block": any(counts[t] for t in terms)}
+    except Exception:  # noqa: BLE001 — missing/corrupt PDF or absent pymupdf: degrade gracefully
         return {"available": False}
-    d = fitz.open(str(MURAKAMI_PDF))
-    txt = "\n".join(d[i].get_text() for i in range(d.page_count)).lower()
-    terms = ["color", "colour", "decorat", "wilson", "refined", "equivariant"]
-    counts = {t: txt.count(t) for t in terms}
-    # "knot" appears only in a bibliography title (FIMT21) — record for honesty
-    counts["knot_total"] = txt.count("knot")
-    counts["homological_block"] = txt.count("homological block")
-    counts["false_theta"] = txt.count("false theta")
-    return {"available": True, "pages": d.page_count, "counts": counts,
-            "any_colored_block": any(counts[t] for t in terms)}
 
 
 def run():
