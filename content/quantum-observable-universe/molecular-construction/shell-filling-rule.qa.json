@@ -1430,9 +1430,10 @@
           "md": "29a6aae81269",
           "ts": "910053cb3da7"
         },
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "result": "fail",
-        "notes": "Reinstated by qa-flag-preservation-audit: the 2026-06-25T15:49:07.000Z 'invalidat' n/a entry cleared a prior 'fail' without a fresh verdict. A distrusted verdict must be re-audited, not silently cleared to n/a. Original flag note: Placeholder stub is unformalised.",
-        "reviewed_at": "2026-07-04T10:32:42.925Z",
+        "notes": "Reinstated by qa-flag-preservation-audit: the 2026-06-25T15:49:07.000Z distrusted n/a entry cleared a prior 'fail' without a fresh verdict. A distrusted verdict must be re-audited, not silently cleared to n/a. Original flag note: Placeholder stub is unformalised.",
+        "reviewed_at": "2026-07-04T10:39:27.232Z",
         "reviewer": {
           "kind": "script",
           "id": "local/qa-flag-reinstate",
@@ -1864,5 +1865,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.117Z"
+  "updated_at": "2026-07-04T10:39:27.233Z"
 }

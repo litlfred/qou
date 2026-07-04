@@ -76,11 +76,17 @@ interface Finding {
   priorEntryIndex: number;
 }
 
-/** The last entry that carried a real flag before the tail distrust-n/a. */
-function lastFlagEntry(entries: Entry[]): { entry: Entry; index: number } | null {
+/**
+ * The verdict the tail distrust-`n/a` actually superseded: the most recent
+ * non-`n/a` entry before the tail. We return it only if it is a real flag
+ * (`fail`/`warn`). Walking past a more-recent `pass` (e.g. history
+ * `[fail, pass, distrust-n/a]`) would reinstate the wrong historical flag,
+ * so we stop at the first non-`n/a` entry rather than hunting for any flag.
+ */
+function supersededFlag(entries: Entry[]): { entry: Entry; index: number } | null {
   for (let i = entries.length - 1; i >= 0; i--) {
-    const r = entries[i].result;
-    if (r && FLAG_RESULTS.has(r)) return { entry: entries[i], index: i };
+    if (entries[i].result === "n/a") continue; // skip the tail + any earlier n/a
+    return FLAG_RESULTS.has(entries[i].result ?? "") ? { entry: entries[i], index: i } : null;
   }
   return null;
 }
@@ -91,7 +97,9 @@ function scan(files: string[]): { findings: Finding[]; sidecars: Map<string, Sid
   for (const f of files) {
     let d: Sidecar;
     try {
-      d = JSON.parse(readFileSync(f, "utf8"));
+      const parsed = JSON.parse(readFileSync(f, "utf8"));
+      if (parsed === null || typeof parsed !== "object") continue;
+      d = parsed as Sidecar;
     } catch {
       continue;
     }
@@ -103,8 +111,8 @@ function scan(files: string[]): { findings: Finding[]; sidecars: Map<string, Sid
       const tail = entries[entries.length - 1];
       if (tail.result !== "n/a") continue;
       if (!DISTRUST_SIGNATURES.test(tail.notes ?? "")) continue;
-      // The tail is a distrust-n/a. Was a real flag masked by it?
-      const prior = lastFlagEntry(entries.slice(0, -1));
+      // The tail is a distrust-n/a. Did it supersede a real flag?
+      const prior = supersededFlag(entries);
       if (!prior) continue;
       findings.push({
         file: f,
@@ -122,17 +130,19 @@ function reinstate(d: Sidecar, cid: string, prior: Entry): void {
   const entries = asArray(d.criteria![cid]);
   const tail = entries[entries.length - 1];
   const reinstated: Entry = {
-    // Restore the source hash the flag was computed against so ordinary
+    // Restore the source hash + sha the flag was computed against so ordinary
     // staleness (source has since drifted) re-queues a legitimate re-audit
-    // instead of trusting this reinstated verdict verbatim.
-    ...(prior.field_hash ? { field_hash: prior.field_hash } : {}),
+    // instead of trusting this reinstated verdict verbatim. field_hash is
+    // required by the block-qa schema, so always emit it (empty ⇒ stale).
+    field_hash: prior.field_hash ?? {},
+    ...(prior.reviewed_sha ? { reviewed_sha: prior.reviewed_sha } : {}),
     result: prior.result,
     notes:
       `Reinstated by qa-flag-preservation-audit: the ` +
-      `${tail.reviewed_at ?? "prior"} '${DISTRUST_SIGNATURES.exec(tail.notes ?? "")?.[0] ?? "distrust"}' ` +
-      `n/a entry cleared a prior '${prior.result}' without a fresh verdict. ` +
-      `A distrusted verdict must be re-audited, not silently cleared to n/a. ` +
-      `Original flag note: ${prior.notes ?? "(none)"}`,
+      `${tail.reviewed_at ?? "prior"} distrusted n/a entry cleared a prior ` +
+      `'${prior.result}' without a fresh verdict. A distrusted verdict must be ` +
+      `re-audited, not silently cleared to n/a. Original flag note: ` +
+      `${prior.notes ?? "(none)"}`,
     reviewed_at: new Date().toISOString(),
     reviewer: { kind: "script", id: "local/qa-flag-reinstate", version: "v1" },
   };
@@ -157,7 +167,9 @@ function main() {
       reinstate(d, fnd.criterion, prior);
       touched.set(fnd.file, d);
     }
+    const now = new Date().toISOString();
     for (const [f, d] of touched) {
+      d.updated_at = now; // keep staleness tooling in sync, like sibling QA writers
       writeFileSync(f, JSON.stringify(d, null, 2) + "\n");
     }
     console.log(
