@@ -144,6 +144,22 @@ Producer: [`probes/probe_d_qbeta_h_invariant.py`](../../computations/probes/prob
    2/2) — fallback now within 1.5 ppb of the witness (was −241 ppb).
    The c₄ 46-vs-4143/90 **pin** mismatch is a re-pin question →
    owner-gated bean `2i8g` (NOT changed).
+5. **c₄ history verdict (2026-07-04, owner-directed investigation):**
+   the pin's `46` entered with `d27b002745` (2026-06-15) as the
+   then-fitted c₄; `58ba1c6800` (2026-06-28, bean `ovud`) *"replace
+   fitted c_4 with exact geometric index 4143/90"* upgraded the
+   **producer only** (zero q_parameter files touched). So the
+   committed `Q_50_DIGIT_STR` is solved against the stale **fitted**
+   46 while the derived 4143/90 exists — direction when a re-pin
+   window opens: align the pin to 4143/90. Deferred per the owner
+   ruling (document + defer); recorded in bean `2i8g`.
+6. **Cross-A discriminator (owner pick #1 follow-through):** the
+   (1−h/2) dressing is a **D-specific scale fix** — fixed a-priori
+   candidates (flat, per-interface) leave A≥3 at −59%…−90% while D
+   closes to +0.29%; the A≥3 gap is the saturating-Δtr extensive
+   deficit, a separate mechanism (jet-filtration channel, PR #3270).
+   Scope (a). Producer:
+   [`probes/probe_d_dressing_cross_a.py`](../../computations/probes/probe_d_dressing_cross_a.py).
 
 ### Verdict
 
