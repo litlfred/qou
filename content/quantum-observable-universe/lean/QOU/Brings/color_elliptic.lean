@@ -1,4 +1,6 @@
-import Mathlib.Tactic
+import Mathlib.Algebra.GroupWithZero.Basic
+import Mathlib.Algebra.Group.Basic
+import Mathlib.Tactic.Ring
 
 /-!
 # QOU.Brings.color_elliptic

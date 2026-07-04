@@ -71,8 +71,10 @@ def cartanEmbed {Ω : Type*} [Zero Ω] (ω : Ω) : WeightDecomposedForm Ω :=
 theorem eq_cartanEmbed_of_offdiag_zero {Ω : Type*} [Zero Ω]
     (A : WeightDecomposedForm Ω) (hp : A.plus = 0) (hm : A.minus = 0) :
     A = cartanEmbed A.cartan := by
-  cases A
-  simp_all [cartanEmbed]
+  obtain ⟨cartan, plus, minus⟩ := A
+  simp only at hp hm
+  subst hp hm
+  rfl
 
 /-- **§3b-cond hypothesis class** for
     [`lem:mi-sw-abelianisation-cartan`]: the geometric inputs of the
