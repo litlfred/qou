@@ -29,7 +29,7 @@ The visualization should be an interactive HTML page
    - Toggle between standard and knot-centric layouts
    - Filter by stability pair, magic-receptive status, $k_\alpha$
    - $q$ slider to show how the table changes with substrate
-     parameter (at $q = 1$: all rows equal width, no
+     parameter (at $q = 1$: all rows equal width,
      no magic shells; at $q = q_0$: observed table)
 
 6. **Knot notation**: use the visual conventions from
