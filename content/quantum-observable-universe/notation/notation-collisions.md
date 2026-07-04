@@ -102,8 +102,7 @@ paper to keep them disambiguated:
   *trace-component*** ($\operatorname{Im}\mathfrak{V}$, derived). Promoted
   to fraktur (observable register) from the older roman $Q_\beta$; the
   measured/experimental value is $\mathfrak{Q}_\beta^{\,\mathrm{obs}}$
-  (CODATA). *(Corpus migration roman $Q_\beta \to \mathfrak{Q}_\beta$ is a
-  tracked follow-up; ~108 files still use the roman form.)*
+  (CODATA).
 - **$\mathfrak{D}$ (decay width) vs $\mathcal{D}$ (operator)** — visually
   close but **register-distinct**: $\mathfrak{D}$ (fraktur, a *decay-rate*
   observable) **always** carries a decay subscript ($\mathfrak{D}_\beta$
