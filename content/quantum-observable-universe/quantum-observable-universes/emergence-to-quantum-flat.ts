@@ -10,7 +10,6 @@ export default proposition({
   },
   title: "From Tannakian emergence to 2-group quantum flatness",
   tags: ["tannaka-krein", "2-group", "instanton"],
-  uses: ["rem:self-dual-2group"],
+  uses: ["rem:self-dual-2group", "def:quantum-flatness"],
   proofs: ["prf:emergence-to-quantum-flat"],
-  defines: ["quantum-flatness"],
 });
