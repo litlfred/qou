@@ -99,18 +99,47 @@ committed `χ^λ` witnesses (`atom-chi-rust-{d,t,3he,4he}`, zero free parameters
    the counit+vortex direction alive, now with a concrete **A-scaling signature**:
    the vortex correction should grow ~ with the number of nucleon pairs.
 
-## The lead this exposes (concrete, non-fitted)
+## Counit + vortex (bean `vr93`) — mechanism CONFIRMED, closure NOT achieved
 
-Both the co-Casimir and the counit are **character-sum** functionals, both land
-**positive**, both are diagnosed **vortex-blind** — the negative target sign lives
-in the **vortex (Hopf / L±) content** that character sums drop (cf.
-[`neutron-qvalue-symbolic.md`](../../content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md):
-"the L₊/L₋ (Hopf) content cancels between the two nucleons at single wrap"). The
-sharp, testable hypothesis is therefore **counit + vortex content** — the counit
-supplies the correct magnitude, the inter-nucleon Hopf/L± content supplies the
-sign. Next steps: (1) add the deuteron interface Hopf/L± content to the counit and
-re-test the sign; (2) check whether the 13% is systematic by evaluating the counit
-at ⁴He. Both are parameter-free.
+Both the co-Casimir and the counit are **character-sum** functionals — class
+functions, hence **writhe-averaged / sign-blind**. The negative binding sign lives
+in the **framing (writhe) content** they drop. The *derived* vortex weight is the
+Kauffman ribbon framing factor
+([`chirality-writhe-ribbon-derivation.md`](../../content/quantum-observable-universe/mass-theory/chirality-writhe-ribbon-derivation.md)):
+`Θ_λ^{w/2}=q^{w·c(λ)}`, `c(λ)=Σ(col−row)` (content sum), which breaks the self-dual
+`c(λ)+c(λ')=0` symmetry that keeps the plain sum sign-blind. The counit+vortex
+functional `ε_vortex(β_D)=Σ_λ χ^λ(β_D)·q^{w·c(λ)}`
+([`rho_k_counit_vortex_writhe_probe.py`](../../computations/rho_k_counit_vortex_writhe_probe.py)):
+
+| writhe w | `ε_vortex` | sign | `|miss|` |
+|---|---|---|---|
+| −2 | −9.98 | neg | 5.62 |
+| −1 | −1.19 | neg | 3.16 |
+| 0 (plain counit) | +4.93 | pos | 9.28 |
+| +1 (interface writhe) | +19.0 | pos | 23.4 |
+| +4 (chirality-block deuteron w) | +977.6 | pos | 982 |
+
+- **CONFIRMED:** a *negative* writhe flips the sum negative — the derived ribbon
+  framing supplies exactly the sign the class-function character sum drops. The
+  counit+vortex hypothesis is mechanistically substantiated.
+- **NOT closed parameter-free:** no derived *integer* writhe reproduces −4.353 (it
+  sits between w=−1 and w=−2, near w≈−1.5), and the framework's *actually-derived*
+  writhes give the **wrong sign** entirely (interface +1 → +19; chirality-block
+  +4 → +978). Hitting the target needs a non-integer effective writhe — a fit,
+  **barred**. (Consistent with `chirality-writhe-ribbon-derivation.md` itself,
+  which records the naive ribbon ansatz refuted at the deuteron over 8 variants —
+  the culprit flagged as the algebraic-vs-topological writhe convention.)
+
+**The one principled untested object.** The framework's binding is a **mass
+defect** `B = M(bound) − ΣM(free) < 0`, so the natural functional is the *defect*
+`ε(β_D) − ε(β_D^{vac})`, which — via the exact interface factorization
+`β_K = β_K^{vac}·⋈_K` ([`interface-knot-markov-z.md`](../../content/quantum-observable-universe/mass-theory/interface-knot-markov-z.md))
+— isolates the single **bar-odd pn interface crossing** `⋈_D` (`p₊=1`), precisely
+where the sign lives. The counit probe used the *absolute* `ε(β_D)`; the defect
+form is untested (needs `χ^λ(β_D^{vac})`, the disjoint p·n vacuum character,
+obtainable from the canonical `closed_form_tau_M` formalism). This is the sharp,
+parameter-free next test of the counit+vortex direction — and the most-correct
+object surfaced by this investigation.
 
 ## Provenance
 

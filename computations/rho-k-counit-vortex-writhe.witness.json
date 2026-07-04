@@ -1,0 +1,87 @@
+{
+  "computation": "rho-k-counit-vortex-writhe",
+  "description": "Counit + Kauffman ribbon-framing vortex weight q^{w c(\u03bb)} on the deuteron. Negative writhe supplies the binding sign (mechanism confirmed) but no derived integer writhe closes the target; principled defect form is the untested next object. audit_only, parameter-free scan, no fit.",
+  "audit_only": true,
+  "tier": "structural-exact (derived ribbon-framing weight; parameter-free writhe scan)",
+  "commitSha": "d8037cd4c6aa52f187ec122aa2512bef0cdaff60",
+  "engine": "python+mpmath",
+  "engineVersion": "mpmath",
+  "scriptFile": "rho_k_counit_vortex_writhe_probe.py",
+  "scriptHash": "3a159c89584b",
+  "assertions": [
+    {
+      "name": "negative_writhe_flips_sign_negative",
+      "passed": true
+    },
+    {
+      "name": "no_derived_integer_writhe_closes",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "functional": "counit + vortex:  \u03b5_vortex(\u03b2_D) = \u03a3_\u03bb \u03c7^\u03bb(\u03b2_D)\u00b7q^{w\u00b7c(\u03bb)}",
+    "vortex_weight": "Kauffman ribbon framing q^{w\u00b7c(\u03bb)}, c(\u03bb)=content sum (DERIVED, prop:chirality-writhe-ribbon-derivation)",
+    "free_parameters": 0,
+    "target_signed": "-4.3533672818701",
+    "tol": 1,
+    "writhe_scan": {
+      "-3": {
+        "eps_vortex": "-52.077797122465",
+        "sign_negative": true,
+        "abs_miss": "47.72443",
+        "within_tol": false
+      },
+      "-2": {
+        "eps_vortex": "-9.975665517305",
+        "sign_negative": true,
+        "abs_miss": "5.6222982",
+        "within_tol": false
+      },
+      "-1": {
+        "eps_vortex": "-1.1922294900681",
+        "sign_negative": true,
+        "abs_miss": "3.1611378",
+        "within_tol": false
+      },
+      "0": {
+        "eps_vortex": "4.9266782191423",
+        "sign_negative": false,
+        "abs_miss": "9.2800455",
+        "within_tol": false
+      },
+      "1": {
+        "eps_vortex": "18.999560395474",
+        "sign_negative": false,
+        "abs_miss": "23.352928",
+        "within_tol": false
+      },
+      "2": {
+        "eps_vortex": "64.44687287713",
+        "sign_negative": false,
+        "abs_miss": "68.80024",
+        "within_tol": false
+      },
+      "4": {
+        "eps_vortex": "977.60113886191",
+        "sign_negative": false,
+        "abs_miss": "981.95451",
+        "within_tol": false
+      }
+    },
+    "mechanism_confirmed_negative_writhe_flips_sign": true,
+    "any_derived_integer_writhe_closes": false,
+    "framework_derived_writhes": {
+      "interface_writhe_plus1": "+18.9996 (wrong sign)",
+      "chirality_block_deuteron_plus4": "+977.60 (wrong sign)"
+    },
+    "verdict": "MECHANISM CONFIRMED, closure NOT achieved. A negative writhe flips \u03a3_\u03bb \u03c7^\u03bb q^{wc} negative \u2014 the derived ribbon framing supplies the sign the class-function character sum drops (counit+vortex hypothesis substantiated). BUT no derived integer writhe hits \u22124.353 (w=\u22121 \u2192 \u22121.19 under; w=\u22122 \u2192 \u22129.98 over; target at w\u2248\u22121.5), and the framework's actually-derived writhes (+1, +4) give the WRONG sign. Closing needs a non-integer effective writhe (a fit, barred) OR the principled defect form \u03b5(\u03b2_D)\u2212\u03b5(\u03b2_D^vac) (untested, isolates the single bar-odd pn interface crossing). Scope-(a)."
+  },
+  "context": {
+    "axis": "\u0394_\u03bb per-isotope binding closure (GAP-A) \u2014 counit+vortex sign test",
+    "counit_predecessor": "rho-k-h3a-counit-canonical-integral.witness.json",
+    "vortex_weight_source": "content/quantum-observable-universe/mass-theory/chirality-writhe-ribbon-derivation.md",
+    "interface_factorization": "content/quantum-observable-universe/mass-theory/interface-knot-markov-z.md",
+    "audit": "docs/audits/2026-07-04-delta-lambda-counit-canonical-integral-candidate.md"
+  }
+}
