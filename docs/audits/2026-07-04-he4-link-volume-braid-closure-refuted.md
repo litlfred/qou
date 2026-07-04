@@ -60,15 +60,17 @@ issue #604 / GAP-A-1), not the Markov closure of the operator-valued word.
   > `hecke_characters.build_seminormal_matrices` supports any partition of any n
   > (verified at n=5: Hecke + braid relations hold), and `binding_k_solver.py`
   > (lines 20-24, 47-49) states the ³H B_5/8_11 case needs "no separate H_5
-  > detour"; (ii) the binding-K evaluator is a **pure numpy/scipy algebraic
-  > Wedderburn evaluation, not an SDP** (`binding_k_solver.py` lines 8-14), so
-  > **Clarabel is not involved**. The A=4 link is gated on the *identification*
+  > detour"; (ii) the binding-K evaluator is an **algebraic Wedderburn
+  > evaluation, not an SDP** (`binding_k_solver.py` docstring lines 8-14: "does
+  > not perform any optimisation / feasibility search"), built on
+  > `hecke_characters.build_seminormal_matrices` (numpy/scipy) — so **Clarabel
+  > is not involved**. The A=4 link is gated on the *identification*
   > (#604), which is computable in-sandbox via the Jones polynomial of the
   > binding-K factor — not on any missing infrastructure.
 - **A real A=4 tension is recorded, not resolved:** the provisional doubly-magic
   assignment `2·Vol(Borromean) = 14.655` (`binding_a3plus_*`) disagrees with the
-  bond-count back-out `8.046` by ~1.82×. Both are unverified; the SDP-derived
-  link is needed to adjudicate.
+  bond-count back-out `8.046` by ~1.82×. Both are unverified; the
+  canonical-knot-ID-derived link is needed to adjudicate.
 
 **Scope discipline.** This is a scope-(a) negative — *braid closure, alone, does
 not reproduce the binding links*. It is **not** a refutation of the bond-count
