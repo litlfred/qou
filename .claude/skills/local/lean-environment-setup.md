@@ -312,6 +312,35 @@ git config --global url."file:///home/user/mathlib4".insteadOf \
 > to compile. Don't declare Lean verification impossible until codeload
 > is also blocked.
 
+> **🟦 Two egress regimes — check which one you're in (updated 2026-07-04,
+> PR #3295).** The git proxy is **not always repo-scoped**. Diagnose with
+> `curl -sS "$HTTPS_PROXY/__agentproxy/status"` (lists `recentRelayFailures`
+> by host) and a one-line probe `git ls-remote --heads
+> https://github.com/leanprover-community/mathlib4 | head -1`:
+> - **Regime A — full git egress (observed 2026-07-04):** `git ls-remote` /
+>   `git clone` of *any* github repo succeeds; only `release.lean-lang.org`
+>   (elan toolchain host **and** the `lake exe cache get` olean blob store)
+>   returns 403. Here you can `git clone` mathlib source directly (no need
+>   for the codeload tarball) — but a clone gives **source only, not
+>   oleans**, and `lake exe cache get` still 403s, so oleans still come from
+>   either the `lake-cache/qou-<slug>` orphan branch (QOU-only; §"PRESERVE
+>   THE BUILD") or the §278 stage-source + `lean`-direct compile-the-delta
+>   path. `lake build <Module>` from scratch *does* work in Regime A (it git-
+>   clones mathlib, cache-get 403s, then **builds Mathlib from source** — but
+>   that is the 30–60 min storm; prefer restore+delta).
+> - **Regime B — repo-scoped git proxy:** even `git clone …/mathlib4` 403s;
+>   use the codeload tarball above.
+>
+> **Bottom line:** the toolchain is pre-installed (`~/.elan/toolchains/`) and
+> is invoked directly (`~/.elan/toolchains/lean-v4.24.0/bin/lean`, bypassing
+> the elan wrapper, which itself tries `release.lean-lang.org` and 403s). The
+> only true blocker is **prebuilt Mathlib oleans** — never "github is
+> unreachable" (git egress usually works). For a **trivial `ring`/`field_simp`
+> extension of an already-compiling file**, a rigorous hand-audit + CI is an
+> acceptable fallback per AGENTS.md when the olean-restore path is
+> unavailable and a full source build would blow the session budget — state
+> the non-machine-verification explicitly.
+
 After Step 3 succeeds, `lean_diagnostic_messages` returns real error /
 warning items (not the `success: false, items: []` timeout sentinel),
 unblocking iterative Lean proof development.
