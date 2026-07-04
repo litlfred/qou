@@ -38,7 +38,7 @@ knot-operator holonomy   Hol(∂S_c) = ∮_{S_c} F           Yekutieli non-abeli
 
 ## What was implemented (the unstaffed consumer)
 
-`conj:binding-manybody-jet-filtration` states
+`conj:binding-manybody-eq-jet-filtration` states
 `B(K) = Σ_{n=2}^{A} m_e·a_D^(n)·w_n(K)` and its `.md/.ts/.lean` blocks exist, but the
 **compute consumer was unimplemented** (the §"Compute wire-up" step 2 of the fork audit).
 This probe implements it and tests the weight-free (`w_n=1`) null against D/T/³He/⁴He, **no
@@ -122,7 +122,7 @@ that catches a fit early.
 
 Compute: `binding_manybody_jet_filtration.py` (reuses the `lw`/`dim_q` of
 `sw_period_growth_probe.py`). Corpus: `QOU.Mass.NaStokesKeystone`,
-`conj:binding-manybody-jet-filtration`, `prop:sw-period-residue-sum`,
+`conj:binding-manybody-eq-jet-filtration`, `prop:sw-period-residue-sum`,
 `prop:mi-sw-abelianisation`, `docs/audits/2026-06-25-sw-jet-prolongation-explicit-and-fork.md`.
 Supersedes the intensive-phase route of `probe_full_theta_binding.py` for the extensive channel.
 EXPLORATORY — no production wiring, no fitted constant.

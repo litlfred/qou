@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 binding_manybody_jet_filtration.py — the UNIMPLEMENTED consumer of
-`conj:binding-manybody-jet-filtration` (the §"Compute wire-up" step 2 of
+`conj:binding-manybody-eq-jet-filtration` (the §"Compute wire-up" step 2 of
 docs/audits/2026-06-25-sw-jet-prolongation-explicit-and-fork.md).
 
 OWNER STEER (2026-07-03): the A≥3 absolute-binding θ_λ magnitude gate, closed
