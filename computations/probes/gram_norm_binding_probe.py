@@ -198,8 +198,9 @@ def main() -> int:
         delta = {lam: pl_a[lam] - pl_f.get(lam, 0.0) for lam in pl_a}
         top_recv = sorted(delta.items(), key=lambda kv: -abs(kv[1]))[:3]
         # redistribution aggregates (the w_n(K)-carrier cross-link, 2026-07-04):
-        # R = half the total variation of the per-block Gram distribution under
-        # binding — derived, isospin-aware, and (unlike the hyperbolic
+        # R_abs = ½·‖Δc‖₁ over the signed per-λ decomposition (NB: G is
+        # indefinite, so this is an ℓ¹ redistribution size, not a probability
+        # TV distance) — derived, isospin-aware, and (unlike the hyperbolic
         # sub-link volume, Hopf Vol=0) NONZERO for the deuteron.
         R_abs = 0.5 * sum(abs(d) for d in delta.values())
         R_signed = sum(delta.values())            # = G_atom − G_free
@@ -305,7 +306,7 @@ def main() -> int:
     print("\n| iso | B_AME | R_abs | R_anti | R_signed | α·R_abs (MeV) |")
     print("|---|--:|--:|--:|--:|--:|")
     for r in rows:
-        print(f"| {r['iso']} | {r['B_AME'] if r['B_AME'] else '—'} "
+        print(f"| {r['iso']} | {r['B_AME'] if r['B_AME'] is not None else '—'} "
               f"| {r['R_abs']:.4f} | {r['R_anti']:.4f} | {r['R_signed']:+.4f} "
               f"| {alpha * r['R_abs']:.3f} |")
 
