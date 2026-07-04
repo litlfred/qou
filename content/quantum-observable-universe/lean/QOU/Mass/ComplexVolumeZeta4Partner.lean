@@ -141,4 +141,84 @@ theorem vModel_eq_faithful_sum (z : ℂ) :
       = (1 + Complex.I) / 2 * Complex.exp z + (1 - Complex.I) / 2 * Complex.exp (-z) := by
   rw [vModel, ← Complex.cosh_add_sinh z, ← Complex.cosh_sub_sinh z]; ring
 
+/-! ## The ζ₄-faithfulness constraint as a §3b conjecture class (bean 5nx8)
+
+The 5nx8 deliverable: turn the "any candidate single-`𝔙` assembly must be
+ζ₄-faithful" **constraint** (identified above from `vModel_orbit_sum_zero` +
+`vModel_sign_isotype_zero`) into a formal, falsifiable object — a predicate on
+candidate assemblies plus the §3b conjecture class carrying the open
+single-`𝔙` assembly as a ζ₄-faithful fibre object.
+
+* `IsZeta4Faithful A` — the predicate: the ζ₄-orbit sum (trivial isotype) and
+  alternating orbit sum (sign isotype) of `A` both vanish, i.e. `A` is
+  supported entirely on the two faithful `±i` characters. This is the exact
+  falsifiable constraint: a candidate assembly with a nonzero orbit sum or
+  sign isotype is refuted.
+* `vModel_isZeta4Faithful` — the proved `cosh + i·sinh` model satisfies it
+  (non-vacuity: the constraint is realisable, so the conjecture asks something
+  possible; what is open is whether the *physical* assembly is such an object).
+* `IsZeta4Faithful.zeta4_sq` — a **derived, sorry-free** structural consequence:
+  faithfulness alone forces `ζ₄² = −1` on the assembly. This is the class's
+  non-degenerate content (§3b-tax): the conjectural field has a genuine
+  provable consequence, not a bare marker.
+-/
+
+/-- **ζ₄-faithfulness predicate.** A candidate assembly `A : ℂ → ℂ` is
+    ζ₄-faithful iff both non-faithful `ℤ₄` isotypes vanish: the full ζ₄-orbit
+    sum (trivial isotype) and the alternating orbit sum (sign isotype) are `0`,
+    so `A` is supported on the two faithful `±i` characters. The falsifiable
+    constraint on the open single-`𝔙` assembly. -/
+def IsZeta4Faithful (A : ℂ → ℂ) : Prop :=
+  (∀ z, A z + A (z + (↑(Real.pi / 2) : ℂ) * Complex.I)
+        + A (z + (↑(Real.pi / 2) : ℂ) * Complex.I + (↑(Real.pi / 2) : ℂ) * Complex.I)
+        + A (z + (↑(Real.pi / 2) : ℂ) * Complex.I + (↑(Real.pi / 2) : ℂ) * Complex.I
+            + (↑(Real.pi / 2) : ℂ) * Complex.I) = 0)
+  ∧ (∀ z, A z - A (z + (↑(Real.pi / 2) : ℂ) * Complex.I)
+        + A (z + (↑(Real.pi / 2) : ℂ) * Complex.I + (↑(Real.pi / 2) : ℂ) * Complex.I)
+        - A (z + (↑(Real.pi / 2) : ℂ) * Complex.I + (↑(Real.pi / 2) : ℂ) * Complex.I
+            + (↑(Real.pi / 2) : ℂ) * Complex.I) = 0)
+
+/-- **Non-vacuity: the `cosh + i·sinh` model is ζ₄-faithful.** Direct from the
+    proved orbit/sign-isotype vanishing lemmas — the constraint is realisable,
+    so the conjecture below asks for something possible. -/
+theorem vModel_isZeta4Faithful : IsZeta4Faithful vModel :=
+  ⟨vModel_orbit_sum_zero, vModel_sign_isotype_zero⟩
+
+/-- **Derived (sorry-free): ζ₄-faithfulness forces `ζ₄² = −1`.** Adding the
+    orbit-sum and sign-isotype vanishing gives `A z + A(z + 2·iπ/2) = 0`, i.e.
+    two ζ₄ rotations negate the assembly — recovering `vModel_zeta4_sq` from
+    faithfulness *alone*, for any faithful `A`. This is the class's genuine
+    provable content. -/
+theorem IsZeta4Faithful.zeta4_sq {A : ℂ → ℂ} (h : IsZeta4Faithful A) (z : ℂ) :
+    A (z + (↑(Real.pi / 2) : ℂ) * Complex.I + (↑(Real.pi / 2) : ℂ) * Complex.I) = -A z := by
+  have h1 := h.1 z
+  have h2 := h.2 z
+  linear_combination (h1 + h2) / 2
+
+/-- **Single-`𝔙` assembly conjecture (§3b class; conjecture — no instance is
+    provided).** The OPEN piece of the `𝔙` fibre-descent (the 5nx8 gap map's
+    OPEN item): that the actual binding + `Q_β` observables of a composite `K`
+    assemble into a *single* complex fibre object `𝔙_asm(K) : ℂ → ℂ`, and that
+    this physical assembly is **ζ₄-faithful** (supported on the two faithful
+    `±i` characters — the falsifiable constraint). The field carries the
+    conjecture's content (a per-composite ζ₄-faithful assembly); the physical
+    match is the open input, so no instance is given. Non-degenerate: the
+    structural consequence `ζ₄² = −1` is derived from the field below. -/
+class SingleFrakVAssembly (K : Type*) where
+  /-- the assembled single complex-volume fibre object of the composite `K`,
+      as a function of the fibre argument. -/
+  frakV : K → ℂ → ℂ
+  /-- the open physical content: each composite's assembly is ζ₄-faithful. -/
+  faithful : ∀ k, IsZeta4Faithful (frakV k)
+
+/-- Derived (proved, conditional on the class): each composite's assembled
+    fibre object satisfies `ζ₄² = −1` — the two-rotation negation, obtained
+    from the conjectural faithfulness field alone (via
+    `IsZeta4Faithful.zeta4_sq`). Confirms the class asserts genuine content. -/
+theorem SingleFrakVAssembly.zeta4_sq {K : Type*} [A : SingleFrakVAssembly K]
+    (k : K) (z : ℂ) :
+    A.frakV k (z + (↑(Real.pi / 2) : ℂ) * Complex.I + (↑(Real.pi / 2) : ℂ) * Complex.I)
+      = -A.frakV k z :=
+  (A.faithful k).zeta4_sq z
+
 end QOU.Mass.ComplexVolumeZeta4Partner
