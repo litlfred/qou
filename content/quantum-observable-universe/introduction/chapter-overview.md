@@ -307,8 +307,7 @@ A few examples:
   $1/\hbar_q^{2}$ enters once, in the muon anchor; the Borromean structure
   contributes only the dimensionless $F_{\mathrm{Bor}}$. Together with the
   **$\beta$-decay Q-values** for six benchmark nuclei at $4.4\%$ mean
-  absolute error. (The earlier $\Phi_q$-tower endomorphism route, which
-  applied $1/\hbar_q^{2}$ to the Borromean volume directly, is superseded.)
+  absolute error.
 
 [*Molecular Construction from Nucleon Braids*](#chap:molecular-construction) extends the knot-word
 formalism from nucleons to molecules.  The molecular Hecke algebra
