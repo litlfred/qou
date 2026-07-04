@@ -115,8 +115,9 @@ $(m_n - m_p)/M_N$ flavor split), set in
 n-n ($\sigma^{-1}$) interfaces are isospin-distinct and carry no
 extra color weight. The color shift is at the $\Delta m_{pn}$ scale
 ($\delta/4 \approx 3.4\times10^{-4}$) — not the dominant binding
-residual, which is the inter-nucleon multiplicity (the $\binom{A}{2}$
-bond count) plus per-bond growth. See
+residual, which is the inter-nucleon multiplicity (the linear-chain
+$A-1$ consecutive-bond count, [`prop:linear-chain-bond-count`](../mass-theory/linear-chain-bond-count.md))
+plus per-bond growth. See
 [`docs/audits/2026-06-03-color-averaging-wiring-audit.md`](../../../docs/audits/2026-06-03-color-averaging-wiring-audit.md)
 and [`docs/audits/2026-06-03-nuclear-a3-dpn-plan.md`](../../../docs/audits/2026-06-03-nuclear-a3-dpn-plan.md).*
 
@@ -192,12 +193,16 @@ with **no fitted constant** ([`theta_mn_bondcount_linearchain.py`](../../../comp
 ³He to $-3\%$; the deuteron 2-body bond is the Hopf link ($\mathrm{Vol}=0$) — a
 structural exception. This is a $\sim3\%$ *structural* result, not a ppQ closure.
 
-> **Convention flag (needs owner reconciliation).** The note above (color-averaging
-> residual) attributes the binding multiplicity to the $\binom{A}{2}$ **all-pairs**
-> bond count, whereas the atomic-braid recipe gives a **linear chain** — $A-1$
-> *consecutive* 2-body bonds and the $\binom{A+1}{3}$ body-order aggregate above,
-> **not** $\binom{A}{2}=\tfrac{A(A-1)}{2}$ (they agree only at $A=2$). The
-> linear-chain reading is the one the braid recipe and the $0.16\%$ ³H (p-n-n)
-> result support; the $\binom{A}{2}$ phrasing should be reconciled to it or its
-> distinct (pairwise-model) scope stated. See
-> [`prop:linear-chain-bond-count`](../mass-theory/linear-chain-bond-count.md).
+> **Convention resolved — linear chain, not all-pairs.** An earlier phrasing
+> attributed the binding multiplicity to the all-pairs $\binom{A}{2}$ bond count.
+> The atomic-braid recipe settles it: the *inter-nucleon crossing rule* places a
+> single interface crossing at generator $3k-1$ for $k=1..A-1$, so the bonds sit at
+> $\{2,5,8,\ldots\}$ — $A-1$ **consecutive** bonds (deuteron $1$; $^4$He $3$ at gens
+> $2,5,8$, **not** $\binom{4}{2}=6$; verified
+> [`theta_mn_linearchain_vs_allpairs.py`](../../../computations/theta_mn_linearchain_vs_allpairs.py)).
+> The structure is the path graph $P_A$, **not** the complete graph $K_A$; the
+> multiplicity is the linear-chain $A-1$ with the $\binom{A+1}{3}$ body-order
+> aggregate ([`prop:linear-chain-bond-count`](../mass-theory/linear-chain-bond-count.md),
+> Lean-proved), which reproduces $^3$H (p-n-n) to within $0.16\%$ with no fit. A
+> distinct all-pairs mean-field model, if wanted, would need its own derivation —
+> the canonical braid does not realise one.
