@@ -1,0 +1,50 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-04T00:02:24.019376+00:00",
+  "commitSha": "425918de3d92f69df43c46e4e8e1cb1ad5995fca",
+  "assertions": [
+    {
+      "name": "multiplicity_is_isospin_independent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "³H/³He multiplicity residual 2.9% (< 5%) after dividing out the 12% volume split — isospin is in the volume; M_n(A) is a pure (n,A) count. Closed form left OPEN (no fit)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 109,
+  "computation": "theta-mn-multiplicity",
+  "scriptFile": "theta_mn_multiplicity.py",
+  "scriptHash": "257df3a403e9",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Body-order multiplicity M_n(A) of the θ_λ weight w_n=M_n(A)·Vol_n. ROBUST: M is isospin-independent (volume explains ~all the ³H/³He split, M residual 2.9%), validating volume-as-isospin-carrier. OPEN: closed form not pinned by 3 anchors (M_3≈(A−1)! is one coincidence, not a derivation); needs per-n-body sub-link decomposition. No fit.",
+  "data": {
+    "M_A_A": {
+      "D": 0.5940953841213739,
+      "T": 2.003116879892434,
+      "3He": 2.0611896030201464,
+      "4He": 7.55667438554839
+    },
+    "isospin_split": {
+      "binding": 0.09429167163646959,
+      "volume": 0.12278589883550244,
+      "multiplicity_residual": 0.028576940923065543
+    }
+  }
+}
