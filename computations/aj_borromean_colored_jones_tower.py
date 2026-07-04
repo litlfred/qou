@@ -77,9 +77,11 @@ q = t**4
 
 
 def is_zero(e):
-    """Robust rational-function zero test (sp.simplify is unreliable on the
-    big cyclotomic-denominator ratios these link invariants produce)."""
-    return sp.cancel(sp.together(e)) == 0
+    """Robust rational-function zero test. Uses the numerator of together(e)
+    (cheap) rather than a full sp.cancel GCD (expensive; compute-audit-flagged)
+    or the unreliable sp.simplify."""
+    num = sp.fraction(sp.together(e))[0]
+    return sp.expand(num) == 0
 
 
 def qint(n: int):
@@ -155,7 +157,7 @@ def r_apply(m1, m2, vec, inverse=False, diag_first=False):
             term = sp.expand(co * cE * cF * coeff_n * dia)
             key = (ii, jj)
             out[key] = sp.expand(out.get(key, 0) + term)
-    return {k: v for k, v in out.items() if sp.simplify(v) != 0}
+    return {k: v for k, v in out.items() if not v.equals(0)}
 
 
 def rhat_apply(m1, m2, vec, inverse=False, diag_first=False):
@@ -244,8 +246,8 @@ def main() -> int:
                                     diag_first=diag_first)
                     for k2, c2 in r2.items():
                         v2[k2] = sp.expand(v2.get(k2, 0) + c2)
-                v2 = {k_: sp.simplify(v_) for k_, v_ in v2.items()
-                      if sp.simplify(v_) != 0}
+                v2 = {k_: v_ for k_, v_ in v2.items()
+                      if not v_.equals(0)}
                 if v2 != {(i, j): sp.Integer(1)}:
                     ok_inv = False
         # YBE on V2^(x)3: (R1 R2 R1) = (R2 R1 R2) as braid word action
@@ -261,7 +263,7 @@ def main() -> int:
                                          diag_first=diag_first)
                     keys = set(lhs) | set(rhs)
                     for kk in keys:
-                        if sp.simplify(lhs.get(kk, 0) - rhs.get(kk, 0)) != 0:
+                        if not (lhs.get(kk, 0) - rhs.get(kk, 0)).equals(0):
                             ok_ybe = False
         print(f"  convention diag_first={diag_first}: inverse {'OK' if ok_inv else 'FAIL'}, "
               f"YBE {'OK' if ok_ybe else 'FAIL'}")
@@ -406,11 +408,13 @@ def main() -> int:
     wb = WitnessBuilder("aj-borromean-colored-jones-tower", engine="sympy",
                         start_time=t0)
     wb.set_description(
-        "Stage 1 of the Borromean AJ program: exact multi-colored Jones of "
-        "the Borromean rings from the U_q(sl2) R-matrix (convention pinned "
-        "by inverse+YBE; writhe-0 pure braid, amphichiral link), with the "
-        "diagonal Habiro cyclotomic form fit on the diagonal and verified "
-        "exactly on all mixed-color triples; c_k closed form identified."
+        "WIP-BLOCKED diagnostic: Borromean AJ stage 1. The hand-rolled "
+        "U_q(sl2) R-matrix has a correct forward action (inverse+YBE verify "
+        "on V2xV2, V2xV3) but its INVERSE is wrong at color>=3 (R.Rinv != id "
+        "on V3xV3; see BLOCKER_V3xV3_inverse_ok). Consequently the values at "
+        "color>=3, the bar-symmetry check, and the diagonal cyclotomic fit "
+        "are UNRELIABLE — do not use for stage 2. Kept as the diagnostic of "
+        "record + scaffolding; bean 1iqq tracks the R-matrix fix."
     )
     wb.add_data("braid_word", "(s1 s2^-1)^3 (pure, writhe 0)")
     wb.add_data("convention", {"diag_first": picked})

@@ -54,7 +54,7 @@ ok_all = True
 
 def check(name, expr):
     global ok_all
-    val = sp.simplify(sp.together(expr))
+    val = sp.expand(sp.fraction(sp.together(expr))[0])
     ok = val == 0
     ok_all &= ok
     print(f"  [{name}] {'PASS' if ok else 'FAIL: ' + str(val)}")
@@ -140,8 +140,9 @@ def J_mp(w, N):
     dN = qint_mp(vv, N)
     if abs(dN) < mp.mpf("1e-30"):
         return None
-    tot = sum((-1) ** ((n - j) % 2) * w ** (3 * (2 * j * (j + 1) - n * (n + 2)))
-              * qint_mp(vv, 2 * j + 1) for j in range(n + 1))
+    tot = mp.fsum((-1) ** ((n - j) % 2)
+                  * w ** (3 * (2 * j * (j + 1) - n * (n + 2)))
+                  * qint_mp(vv, 2 * j + 1) for j in range(n + 1))
     return w ** (-3 * n * (n + 2)) * tot / dN
 
 

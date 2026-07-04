@@ -58,15 +58,15 @@ def qpoch(x, q, n):
 # ---- Masbaum published towers (q-form, Rmk 5.2) ------------------------
 def masbaum_fig8(q, N):
     # ftilde_{K_{-1},n} = (-1)^n q^{-n(n+1)/2}
-    return sum((-1) ** n * q ** (mp.mpf(-n * (n + 1)) / 2)
-               * qpoch(q ** (1 - N), q, n) * qpoch(q ** (1 + N), q, n)
-               for n in range(N))
+    return mp.fsum((-1) ** n * q ** (mp.mpf(-n * (n + 1)) / 2)
+                   * qpoch(q ** (1 - N), q, n) * qpoch(q ** (1 + N), q, n)
+                   for n in range(N))
 
 
 def masbaum_trefoil(q, N):
     # ftilde_{K_1,n} = q^n  (left-handed trefoil)
-    return sum(q ** n * qpoch(q ** (1 - N), q, n) * qpoch(q ** (1 + N), q, n)
-               for n in range(N))
+    return mp.fsum(q ** n * qpoch(q ** (1 - N), q, n) * qpoch(q ** (1 + N), q, n)
+                   for n in range(N))
 
 
 # ---- QOU corpus towers (mirrors of the Lean defs), reduced J' ----------
@@ -91,9 +91,9 @@ def corpus_fig8(q, N):
 def corpus_trefoil(w, N):
     # coloredJonesTrefoil (Rosso-Jones), q = w^4, reduced J_1 = 1
     n = N - 1
-    num = sum(((-1) ** ((n - j) % 2)
-               * w ** (2 * j * (j + 1) - n * (n + 2))) ** 3
-              * qint_w(w ** 2, 2 * j + 1) for j in range(n + 1))
+    num = mp.fsum(((-1) ** ((n - j) % 2)
+                   * w ** (2 * j * (j + 1) - n * (n + 2))) ** 3
+                  * qint_w(w ** 2, 2 * j + 1) for j in range(n + 1))
     return w ** (-3 * n * (n + 2)) * num / qint_w(w ** 2, N)
 
 
