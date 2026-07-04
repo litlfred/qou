@@ -1,7 +1,5 @@
 **Remark (the obstruction as a function on $\mathbb{P}^1$).**
 
-**The obstruction as a function on $\mathbb{P}^1$.**
-
 The obstruction $\chi(A) \bmod n$ varies over the Kummer tower
 $\{\mu_n\}_{n \geq 1}$ inside $\mathbb{G}_m \hookrightarrow \mathbb{P}^1$:
 

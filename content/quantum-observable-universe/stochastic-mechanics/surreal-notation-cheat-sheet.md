@@ -10,7 +10,7 @@ of the appendix.
 
 See [Table](#tbl:surreal-notation-cheat-sheet-table-data).
 
-**where $\varepsilon$ in the substrate-level definitions
+**Wherever $\varepsilon$ appears in the substrate-level definitions
 below** — primarily in
 [`def:reeb-epsilon`](#def:reeb-epsilon),
 [`def:q-from-epsilon`](#def:q-from-epsilon),
@@ -18,7 +18,7 @@ and the joint Galois-braid action — read it as "the positive
 infinitesimal $1/\omega$". You do not need the appendix machinery
 to follow these definitions.
 
-**where a surreal-bound statement** — e.g.
+**Wherever a surreal-bound statement appears** — e.g.
 [BSD](#rem:bsd-surreal-bound),
 [Collatz](#rem:collatz-surreal-bound), or the unified
 [graded-Mikusiński bound](#rem:surreal-bounds-graded-mikusinski) —

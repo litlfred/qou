@@ -1,5 +1,4 @@
-**Theorem (D13 reverse-limit closure — algebraic fragment, Sprint 3
-discharge; full categorical bar deferred to Sprint 5 Hoefsmit).**
+**Theorem (D13 reverse-limit closure — algebraic fragment).**
 *The Kashiwara crystal limit $q \to 0$
 ([`prop:crystal-isospin-degeneracy`](#prop:crystal-isospin-degeneracy), D12)
 has a structural counterpart at $q \to \infty$, related to the $q
@@ -61,8 +60,6 @@ matter-antimatter conjugation** orthogonal to the color-tube C
 action of [D6](c-from-color-flavor-swap.md).
 
 ## Diagnostics
-
-Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/canonical-watcher.md) §Slot J:
 
 - **GB filtration level**: same as the Kashiwara crystal at $q \to 0$
   (the bar-image preserves Coxeter length).
