@@ -132,10 +132,19 @@ class ThreeCalibrationDiscipline (State : Type u) where
           * m_pi ^ (m_pi_degree X)
           * towerValue X
 
-/-- Headline statement: under `ThreeCalibrationDiscipline`, every
-    mass factors as `m_e^a · m_π^c · Q_ℝ(q_0)` where `Q_ℝ(q_0)` is the
-    realised real value (`towerValue`) of the dimensionless
-    `ℚ[q^{±1}]`-tower at the substrate parameter. -/
+/-- Headline statement ([`prop:three-calibration-discipline`]): under
+    `ThreeCalibrationDiscipline`, every mass factors as
+    `m_e^a · m_π^c · Q_ℝ(q_0)` where `Q_ℝ(q_0)` is the realised real value
+    (`towerValue`) of the dimensionless `ℚ[q^{±1}]`-tower at the substrate
+    parameter.
+
+    This faithfully surfaces the discipline *axiom* — the factorisation is
+    a structural assumption on how the algebraic-side chain realises the
+    mass functional (AGENTS.md §3b), not a result derived from more
+    primitive Lean data; its content lives in the class field
+    `mass_factorisation`. The genuinely-derived consequence that exercises
+    the discipline (and its scale-positivity hypotheses) is
+    `threeCalibrationDiscipline_mass_pos` below. -/
 theorem threeCalibrationDiscipline
     {State : Type u} [c : ThreeCalibrationDiscipline State]
     (X : State) :
@@ -144,5 +153,23 @@ theorem threeCalibrationDiscipline
         * c.m_pi ^ (c.m_pi_degree X)
         * c.towerValue X :=
   c.mass_factorisation X
+
+/-- **Positivity consequence of the discipline** — *derived*, not assumed:
+    a mass with a positive realised tower value is itself positive.
+
+    Composes the factorisation with the two calibration-scale positivity
+    hypotheses `m_e_pos`, `m_pi_pos` (the `q_0` modulus enters only through
+    `towerValue`, whose positivity is the antecedent). The conclusion
+    `0 < mass X` appears in no class field — this is the discipline earning
+    a real inference: the two dimensional scales `m_e`, `m_π` never flip a
+    positive dimensionless tower amplitude to a non-positive mass. -/
+theorem threeCalibrationDiscipline_mass_pos
+    {State : Type u} [c : ThreeCalibrationDiscipline State]
+    (X : State) (hX : 0 < c.towerValue X) :
+    0 < c.mass X := by
+  rw [threeCalibrationDiscipline X]
+  have hpe : 0 < c.m_e ^ (c.m_e_degree X) := pow_pos c.m_e_pos _
+  have hpi : 0 < c.m_pi ^ (c.m_pi_degree X) := pow_pos c.m_pi_pos _
+  exact mul_pos (mul_pos hpe hpi) hX
 
 end QOU.Observations
