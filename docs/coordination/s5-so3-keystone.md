@@ -406,3 +406,29 @@ q₀-dependent target — confirming the redirect to the **non-compact q-Bessel*
 `BWVacuumRowIsHecke` stand. Audit:
 [`docs/audits/2026-07-04-keystone-sigma345-largerD-seifert-refuted.md`](../audits/2026-07-04-keystone-sigma345-largerD-seifert-refuted.md);
 probe `computations/probes/keystone_valuemap_sigma345_dm6.py` (PR #3290).
+
+## Value map GROUNDED: target is compact Hecke quantum-dimension data; redirect (ii)-via-Murakami closed (2026-07-04)
+
+Two machine-verified facts consolidate the whole refutation series. **(1)** bwS0=d_q/D
+at n=5 is *exactly* the compact SU_q(2)/Hecke quantum-dimension vector — 3 balanced
+q-integers [1],[4],[5] (Laurent polynomials in q₀) + the product [4][3]/[2] = the
+Verlinde ratio S₀λ/S₀₀. **(2)** The owner-uploaded Murakami GPPV paper
+(`uploads/2205.01282v2.pdf`) has **0** colored/decorated/wilson/refined terms — its
+Σ(2,3,5) homological block is the undecorated D=2 golden false theta (already refuted).
+
+**Type argument (why every geometric route failed):** the target is compact-algebraic
+(Laurent poly); compact modular S-matrices are q₀-independent rational sines (redirect i);
+the non-compact q-Bessel J_ν(x;q) is a transcendental ₁φ₁ series — its single-argument
+(falsifiable) form is refuted (qbessel-gate §4) and the multi-argument form is an
+unfalsifiable ≥4-dof fit without the un-uploaded Koelink–Swarttouw Plancherel kernel.
+
+**Honest resolution:** the value map *is* the compact Verlinde/Hecke identity
+S₀λ/S₀₀=d_q (redirect iii, BWVacuumRowIsHecke) — near-definitional. It closes the
+value-map *question* but does NOT supply the manifold-side geometric derivation the
+Subgoal-2 reversal targeted: the manifold WRT category (D=2 golden) is a *different*
+category from the n=5 Hecke category (4-class), so the identity holds tautologically on
+the Hecke side and adds no q₀/D constraint. The geometric route is stalled at the
+compact-vs-geometric **type mismatch**. Owner fork: (a) upload Koelink–Swarttouw to test
+the last disciplined q-Bessel form, (b) accept redirect (iii), or (c) pivot. Audit:
+[`docs/audits/2026-07-04-keystone-valuemap-target-is-compact-hecke.md`](../audits/2026-07-04-keystone-valuemap-target-is-compact-hecke.md);
+probe `computations/probes/keystone_valuemap_target_is_compact_hecke.py`.
