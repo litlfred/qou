@@ -64,8 +64,8 @@ m_p_MeV, m_n_MeV = proton_neutron_mass_mev()
 
 *`computations/canonical_mass.py` is the SINGLE facade (owner ruling
 2026-06-24): it prefers the producer witness and falls back to the
-live formula above (including the $R_{\mathrm{s5bb}}$ dressing —
-facade/producer alignment fixed 2026-07-04, PR #3266). Producer:
+live formula above, including the $R_{\mathrm{s5bb}}$ dressing.
+Producer:
 [`m_p_substrate_identity_50dps.py`](../../../computations/m_p_substrate_identity_50dps.py).*
 
 ### Witness contract
