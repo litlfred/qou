@@ -1,0 +1,57 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-04T14:07:33.018009+00:00",
+  "commitSha": "c41dd70fc3e95e34f17819ec5d61c337ef49e732",
+  "assertions": [
+    {
+      "name": "delta_net_matches_md",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "source": "ε(ΔNF) = h²/2 − h reproduces neutron-qvalue-symbolic.md"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 331,
+  "computation": "probe-path-a-net-vs-trm-leading-order",
+  "scriptFile": "probe_path_a_net_vs_trm_leading_order.py",
+  "scriptHash": "08b2ec93567b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Path A test for the borromean-quark energy-scale ansatz: compares the counit net difference ε(ΔNF)=h²/2−h against the Markov-trace difference tr_M(ΔNF) of the nucleon single-wrap NF, symbolically exact. Determines whether the per-braid mass tower reproduces the unweighted net at leading order (ansatz derivable) or differs by the Markov weight z (ansatz is a counit structural choice). Derive-or-refute; nothing wired.",
+  "auditOnly": "docs/audits/2026-07-04-deuteron-dressing-is-proton-net.md",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "compute_dps": 70
+  },
+  "data": {
+    "trM_basis_numeric_at_q0": {
+      "gamma": "1.0",
+      "sigma0": "0.49932033418369445241",
+      "sigma1": "0.49932033418369445241",
+      "Lplus": "0.2493207961293163067"
+    },
+    "delta_net_numeric": "-0.1872071945293783207298365",
+    "delta_trM_numeric": "-0.08253495399292064313210749",
+    "ratio_numeric_at_q0": "0.4408749044095550440430726",
+    "leading_order_ratio": "1/2",
+    "z_numeric_at_q0": "0.4993203341836944524134427",
+    "z_at_q_to_1": "1/2",
+    "path_a_holds": false,
+    "ratio_is_z_at_leading_order": true,
+    "verdict": "PATH A (net = leading-order tr_M mass) REFUTED, scope (a): Δtr_M/Δnet → 1/2 ≠ 1 = z (the Markov weight at q→1). The counit (net) and the Markov trace are genuinely different functionals differing at O(1), NOT a leading-order coincidence — so the borromean-quark energy-scale ansatz Q_β=|Δnet|·E₀ uses the COUNIT ε by structural choice; deriving it requires deriving why the β-decay/binding channel augments (ε) rather than Markov-traces, not an h-expansion of the mass tower. This is the exact Step-6 'unweighted net vs weighted trace' gap, quantified: it is O(1)=z, not O(h)."
+  }
+}

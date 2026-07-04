@@ -132,11 +132,47 @@ that this PR's Lean actually consumes. A reader of only the referenced file
 would wrongly conclude the conjecture is closed. Worth re-pointing the
 `lean.ref` (or splitting the block) — flagged for the owner.
 
-## Next (the wiring gate, now precisely located)
+## Path A attempted — REFUTED at leading order (the obstruction is the Markov weight z)
 
-The wiring gate for the `+0.12%` D binding result is **Path A** above (Step 8
-of the borromean-quark closure): a leading-order $h$-expansion of
-`prop:per-braid-mass-tower` showing the unweighted net difference is the
-leading energy. This is research-grade and is the *same* derivation that
-would upgrade the neutron $Q$-value from "ansatz" to "derived". Executing it
-closes both.
+Producer:
+[`probes/probe_path_a_net_vs_trm_leading_order.py`](../../computations/probes/probe_path_a_net_vs_trm_leading_order.py)
+→ `probes/probe-path-a-net-vs-trm-leading-order.witness.json` (audit-only).
+
+Path A hoped to *derive* the energy-scale ansatz
+$Q_\beta = |\Delta(\mathrm{net})|·E_0$ (equivalently $B_D = E_0·\mathrm{net}(p)·\Delta\mathrm{tr}$)
+as the leading-order $h$-expansion of the per-braid mass tower — i.e. that the
+unweighted **net** (counit $\varepsilon$: every NF basis element weight 1)
+equals the mass functional's **Markov trace** $\mathrm{tr}_M$ (the $z$-weighted
+sum) at leading order. **It does not.** Computing both on the exact nucleon
+single-wrap $\Delta(\mathrm{NF}) = (h^2/2)\gamma - (h/2)\sigma_0 - (h/2)\sigma_1$
+(sqrt-free rational $H_3$ reps, braid+Hecke verified):
+
+$$
+\frac{\Delta(\mathrm{tr}_M)}{\Delta(\mathrm{net})} \;\xrightarrow{\;h\to 0\;}\; \tfrac12 \;=\; z\big|_{q\to1}, \qquad z=\frac{1}{\sqrt q+1/\sqrt q}.
+$$
+
+So net and $\mathrm{tr}_M$ differ by exactly the Markov weight $z\approx 0.489$
+**at O(1), not O(h)** — this is a *scope-(a)* refutation of the naive Path A.
+The energy-scale ansatz's use of the **counit** $\varepsilon$ (giving net) in
+place of the Markov trace is therefore a genuine **structural functional
+choice**, not a leading-order coincidence of the mass tower. (This confirms
+and quantifies the note in
+[`prop:neutron-qvalue-symbolic`](../../content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md):
+"the counit $\varepsilon$ used here versus the Markov trace $\mathrm{tr}_M$ of
+the mass formula" — Form A/Form B differ by the $z$ normalization.)
+
+**Reframed wiring gate (borromean-quark Step 8 / Step 6).** Closing the ansatz
+is NOT an $h$-expansion of the mass tower. The real open question is
+**why the $\beta$-decay / binding channel augments (counit $\varepsilon$)
+rather than Markov-traces** — i.e. a derivation that the observable in this
+channel is the augmentation of the NF element, not its Jones–Markov trace.
+Until that functional choice is derived, both the neutron $Q$-value and the
+`+0.12%` D binding dressing remain observation-tier (conditional on
+`conj:borromean-quark`). The naive mass-tower-expansion route is closed
+(refuted); future work should target the counit-vs-trace functional selection,
+not the $h$-expansion.
+
+Note this also explains the **hybrid** structure of $B_D = E_0·\mathrm{net}(p)·\Delta\mathrm{tr}$
+flagged above: it carries the counit net(p) *and* the Markov $\Delta\mathrm{tr}$
+— two functionals that differ by $z$ — which is precisely why it is a
+near-match rather than a clean single-functional derivation.
