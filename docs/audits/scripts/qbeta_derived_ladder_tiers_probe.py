@@ -55,7 +55,8 @@ M_P = mpf("938.27208816")             # M_P_MEV_VALIDATION
 # proton-pinned q₀ (documented raw proton pin, q_parameter.Q_50_DIGIT_STR).
 Q0 = mpf("1.1099785827513808075916690956107688798744991218736")
 
-Q_CODATA = M_N - M_P - M_E
+with mp.workdps(50):
+    Q_CODATA = +(M_N - M_P - M_E)
 
 
 def q_A(q):
