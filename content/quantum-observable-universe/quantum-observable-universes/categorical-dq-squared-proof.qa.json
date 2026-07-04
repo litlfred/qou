@@ -835,23 +835,7 @@
         "notes": "The block content is well-aligned with the chapter scope."
       }
     ],
-    "proof-no-trivial-true": [
-      {
-        "field_hash": {
-          "lean": "3ce4edc0ee31"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
-          "version": "v1",
-          "script_hash": "397e2491603f",
-          "script_commit_sha": "010231d905101857ff9f9b277f96791cf7b461bb"
-        },
-        "reviewed_at": "2026-06-23T11:59:48.389Z",
-        "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb"
-      }
-    ],
+    "proof-no-trivial-true": [],
     "da-false-claim": [
       {
         "field_hash": {
@@ -1112,5 +1096,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:58.083Z"
+  "updated_at": "2026-07-04T00:11:46.063Z"
 }
