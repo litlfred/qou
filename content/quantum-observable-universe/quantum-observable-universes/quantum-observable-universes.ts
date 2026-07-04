@@ -429,6 +429,7 @@ export default chapter({
       blocks: [
         "q-harmonic-analysis-intro",
         "q-heat-equation",
+        "q-heat-equation-elaboration",
         "q-heat-equation-exists",
         "q-heat-equation-exists-proof",
         "q-heat-equation-unique",
