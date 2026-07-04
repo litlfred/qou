@@ -24,6 +24,5 @@ diagram commutes (the *Frobenius relation*):
 ```
 
 That is, sliding a multiplication past a comultiplication (or vice versa)
-yields the same result as composing them:
-$(\mu \otimes \mathrm{id}) \circ (\mathrm{id} \otimes \Delta_\mu) = \Delta_\mu \circ \mu$.
+yields the same result as composing them.
 
