@@ -35,28 +35,27 @@ the handle element ω=G⁻¹𝟙", stated explicitly.
 `-- Ref:` interface-knot-markov-z.md (β_K=β_K^vac·⋈_K); Ram IMRN 1997 (tr_M=Σy_λχ^λ);
 Geck–Pfeiffer 2000 (symmetrizing trace / Schur elements).
 """
-import ast
-import hashlib
 import json
 import math
 import os
-import subprocess
+import sys
+from pathlib import Path
 
-from mpmath import mp, mpf, fabs
+_HERE = Path(__file__).resolve().parent
+for _p in (str(_HERE), str(_HERE / "substrate")):
+    if _p not in sys.path:
+        sys.path.insert(0, _p)
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
+from mpmath import mp, mpf, fabs  # noqa: E402
+from codata_constants import M_E_MEV  # noqa: E402  single source of truth (CODATA)
+from witness_base import WitnessBuilder  # noqa: E402
 
-mp.dps = 50
-HERE = os.path.dirname(os.path.abspath(__file__))
-m_e = mpf("0.51099895")
+HERE = str(_HERE)
+m_e = mpf(str(M_E_MEV))
 B_AME = {"D": mpf("2.22452"), "T": mpf("8.48180"), "3He": mpf("7.71804"), "4He": mpf("28.29567")}
 FILES = {"D": "atom-chi-rust-d.witness.json", "T": "atom-chi-rust-t.witness.json",
          "3He": "atom-chi-rust-3he.witness.json", "4He": "atom-chi-rust-4he.witness.json"}
-
-
-def _sha():
-    try:
-        return subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=HERE, text=True).strip()
-    except Exception:
-        return None
 
 
 def dim_sn(lam):
@@ -102,8 +101,8 @@ def main():
     for name, fn in FILES.items():
         atom = load_chi(fn, "atom"); free = load_chi(fn, "free")
         dchi = {l: atom[l] - free[l] for l in atom}
-        counit_def = sum(dchi.values())
-        trM_def = sum(YMAP[name].get(l, mpf(0)) * dchi[l] for l in dchi)
+        counit_def = mp.fsum(dchi.values())
+        trM_def = mp.fsum(YMAP[name].get(l, mpf(0)) * dchi[l] for l in dchi)
         tgt = -B_AME[name] / m_e
         per_isotope.append({
             "atom": name,
@@ -128,7 +127,7 @@ def main():
     }
     sweep = {}
     for lbl, wf in weights.items():
-        S = sum(wf(l) * dchi[l] for l in dchi)
+        S = mp.fsum(wf(l) * dchi[l] for l in dchi)
         sweep[lbl] = {"value": mp.nstr(S, 10), "sign_negative": bool(S < 0),
                       "abs_miss": mp.nstr(fabs(S - tgt), 6), "within_tol": bool(fabs(S - tgt) < 1)}
 
@@ -159,19 +158,13 @@ def main():
         ),
     }
 
-    src = open(__file__, "rb").read()
-    witness = {
+    payload = {
         "computation": "rho-k-counit-defect-form",
         "description": "Counit defect ε(β_K)−ε(β_K^vac) across D/T/³He/⁴He + deuteron per-block weight "
                        "sweep. The defect structure fixes the binding sign (all negative); no standard "
                        "weight closes the magnitude. audit_only, parameter-free, no fit.",
         "audit_only": True,
         "tier": "structural-exact (committed χ^λ atom/free; parameter-free defect + weight sweep)",
-        "commitSha": _sha(),
-        "engine": "python+mpmath",
-        "engineVersion": "mpmath",
-        "scriptFile": os.path.basename(__file__),
-        "scriptHash": hashlib.sha256(src).hexdigest()[:12],
         "assertions": [
             {"name": "defect_structure_fixes_sign_all_isotopes", "passed": bool(all_defect_negative)},
             {"name": "no_standard_weight_closes_magnitude", "passed": bool(not any_sweep_closes)},
@@ -185,9 +178,10 @@ def main():
             "audit": "docs/audits/2026-07-04-delta-lambda-counit-canonical-integral-candidate.md",
         },
     }
-    out = os.path.join(HERE, "rho-k-counit-defect-form.witness.json")
-    with open(out, "w") as f:
-        json.dump(witness, f, indent=2)
+    out = WitnessBuilder.wrap_legacy(
+        "rho-k-counit-defect-form", payload,
+        script_path=__file__, engine="python+mpmath",
+    ).save()
 
     print("=== counit DEFECT ε(β_K)−ε(β_K^vac) across isotopes ===")
     print(f"{'atom':>4} {'counit_def':>12} {'ratio':>8} {'trM_def':>10} {'ratio':>9} {'sign':>6}")
