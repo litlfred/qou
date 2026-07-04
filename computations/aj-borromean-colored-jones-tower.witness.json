@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-04T13:46:21.637984+00:00",
-  "commitSha": "a113929978d83be3f96eb1f7c1ebc618acacb70f",
+  "computedAt": "2026-07-04T13:56:01.869738+00:00",
+  "commitSha": "c6b223fa8739635e269c1e9752c3625a3b4b1d1e",
   "assertions": [
     {
       "name": "unlink_reduction",
@@ -30,10 +30,10 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 122743,
+  "durationMs": 160195,
   "computation": "aj-borromean-colored-jones-tower",
   "scriptFile": "aj_borromean_colored_jones_tower.py",
-  "scriptHash": "a4814fe533b8",
+  "scriptHash": "539af25a0f6a",
   "scriptCommitSha": "a113929978d83be3f96eb1f7c1ebc618acacb70f",
   "precisionMetadata": {
     "compute_dps": 70,
