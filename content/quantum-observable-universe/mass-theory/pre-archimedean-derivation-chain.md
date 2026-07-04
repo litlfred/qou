@@ -473,14 +473,14 @@ construction.
 ## Summary
 
 ```tex
-\begin{aligned}
+\begin{align*}
 \text{categorical action } \rho_n
   &\xrightarrow{\ \text{Yekutieli}\ } H_{n_0}(q),\quad \sigma_i^2 = (q-q^{-1})\sigma_i + 1 \\
   &\xrightarrow{\ \text{SDP} + \text{GB-NF}\ } T_w \in H_{n_0}(q_0) \\
   &\xrightarrow{\ \text{Wedderburn}\ } \bigoplus_\lambda M_{d_\lambda}(\mathbb{Q}(q)) \\
   &\xrightarrow{\ \text{Hoefsmit} + \text{Wenzl}\ } \mathrm{tr}_M(T_w) = \sum_\lambda y_\lambda\,\chi_\lambda(T_w) \\
   &\xrightarrow{\ \Phi_\mathrm{arch}\,\times\, m_e\ } \mathfrak{m}(\mathfrak{H}) \quad \text{in MeV.}
-\end{aligned}
+\end{align*}
 ```
 
 Each arrow is algebraic, living in $\mathbb{Q}(q)$ until the Archimedean
