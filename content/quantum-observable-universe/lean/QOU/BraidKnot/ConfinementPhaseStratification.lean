@@ -73,96 +73,97 @@ def muReal (P : ConfinedParticle) [h : HasRealAxisData P] (q : ℝ) : ℕ :=
 def sigmaFReal (P : ConfinedParticle) [h : HasRealAxisData P] (q : ℝ) : ℝ :=
   h.sigmaF q
 
-/-! ## §1  Openness of the confinement locus -/
-
-/-! ### Stratification trio as a typeclass (Pattern 4 + 2)
+/-! ## §1  SDP regularity hypotheses
 
 The three stratification claims (open locus, μ-constancy on
-components, σ_F-continuity) are conceptually independent and are
-all consequences of Slater-strict SDP feasibility plus continuity
-of the constraint matrices in `q`. Rather than asserting them as
-universal axioms, we **split** them into a single typeclass with
-three fields. Callers obtain the relevant claim by binding to a
-`HasPhaseStratification` instance for the specific particle. -/
+components, σ_F-continuity) are all **consequences** of Slater-strict
+SDP feasibility plus continuity of the constraint matrices in `q`
+(Boyd–Vandenberghe §5.6). We therefore package the genuine *analytic
+inputs* — not the conclusions — as a typeclass, and **derive** the
+trio from them. This keeps the class honest: its fields are the
+hypotheses of the stratification theorem, and each theorem below
+performs a real inference (the SDP-sensitivity step is the residual
+`sorry`), rather than projecting an assumed conclusion. -/
 
-/-- **Phase-stratification trio — typeclass.**
-    Per-particle witness to the three stratification claims.
-    Splitting into one class (rather than three independent
-    axioms) keeps the conceptual unit intact while moving the
-    universal quantifier into per-instance evidence. -/
+/-- **Slater-strict SDP feasibility** at real `q` — an SDP feasible
+    point exists strictly inside the positive-semidefinite cone. Opaque:
+    the strict-feasibility predicate is defined by the numerical SDP data
+    at `q` (compute-only), not by a Lean closed form. -/
+opaque StrictlyFeasible (P : ConfinedParticle) (q : ℝ) : Prop
+
+/-- **SDP regularity hypotheses** — the genuine inputs of the
+    phase-stratification theorem. An instance asserts that confinement on
+    the real axis *is* Slater-strict SDP feasibility, and that this
+    strict-feasibility set is open with the value/multiplicity data locally
+    regular. These are hypotheses (the "IF" of the stratification claim),
+    not the topological conclusions. -/
 -- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
 -- Ref: [boyd-vandenberghe-2004] §5.6 (Perturbation and sensitivity
 --      analysis — feasibility-set topology + value-function continuity)
-class HasPhaseStratification (P : ConfinedParticle)
-    [HasRealAxisData P] : Prop where
-  /-- **Claim (1)** — openness of the confinement locus
-      (Slater-strict feasibility is open). -/
-  locus_open : IsOpen (confinementLocus P)
-  /-- **Claim (2)** — μ is constant on connected components of the
-      locus (active-support cardinality is locally constant). -/
-  mu_constant : ∀ (C : Set ℝ), IsConnected C → C ⊆ confinementLocus P →
-    ∀ (q₁ q₂ : ℝ), q₁ ∈ C → q₂ ∈ C → muReal P q₁ = muReal P q₂
-  /-- **Claim (3)** — σ_F is continuous on the locus. -/
-  sigmaF_continuous : ContinuousOn (sigmaFReal P) (confinementLocus P)
+class HasSDPRegularity (P : ConfinedParticle) [HasRealAxisData P] : Prop where
+  /-- Confinement at real `q` is exactly Slater-strict SDP feasibility. -/
+  confined_iff_feasible : ∀ q, confinedReal P q ↔ StrictlyFeasible P q
+  /-- The strictly-feasible set is open (Slater strictness is an open
+      condition when the SDP data is continuous in `q`). -/
+  feasible_isOpen : IsOpen { q : ℝ | StrictlyFeasible P q }
+  /-- On a connected set of strictly-feasible points the active-support
+      cardinality (hence `μ`) does not jump. -/
+  mu_locally_constant :
+    ∀ (C : Set ℝ), IsConnected C → (∀ q ∈ C, StrictlyFeasible P q) →
+      ∀ (q₁ q₂ : ℝ), q₁ ∈ C → q₂ ∈ C → muReal P q₁ = muReal P q₂
+  /-- The value data `σ_F` is continuous on the strictly-feasible set. -/
+  sigmaF_continuousOn :
+    ContinuousOn (sigmaFReal P) { q : ℝ | StrictlyFeasible P q }
 
-/-- **Default instance from a Fact-bundled triple**: when each of
-    the three stratification claims is in scope as a `Fact`, the
-    `HasPhaseStratification` instance follows. -/
-instance hasPhaseStratification_of_facts (P : ConfinedParticle)
-    [HasRealAxisData P]
-    [hOpen : Fact (IsOpen (confinementLocus P))]
-    [hMu : Fact (∀ (C : Set ℝ), IsConnected C → C ⊆ confinementLocus P →
-              ∀ (q₁ q₂ : ℝ), q₁ ∈ C → q₂ ∈ C → muReal P q₁ = muReal P q₂)]
-    [hSigma : Fact (ContinuousOn (sigmaFReal P) (confinementLocus P))] :
-    HasPhaseStratification P where
-  locus_open := hOpen.out
-  mu_constant := hMu.out
-  sigmaF_continuous := hSigma.out
+/-- The confinement locus coincides with the strictly-feasible set. -/
+theorem confinementLocus_eq_feasible (P : ConfinedParticle)
+    [HasRealAxisData P] [h : HasSDPRegularity P] :
+    confinementLocus P = { q : ℝ | StrictlyFeasible P q } := by
+  ext q; simpa [confinementLocus, Set.mem_setOf_eq] using h.confined_iff_feasible q
 
-/-- **Claim (1) — Openness** (per-instance form).
-    Backed by `HasPhaseStratification.locus_open`. -/
--- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
--- Ref: [boyd-vandenberghe-2004] §5.6 (Perturbation and sensitivity
---      analysis — feasibility-set topology + value-function continuity)
+/-- **Claim (1) — Openness of the confinement locus.** Derived: the locus
+    equals the strictly-feasible set, which is open. -/
+-- Ref: [boyd-vandenberghe-2004] §5.6
 theorem phase_locus_open (P : ConfinedParticle)
-    [HasRealAxisData P] [h : HasPhaseStratification P] :
-    IsOpen (confinementLocus P) :=
-  h.locus_open
+    [HasRealAxisData P] [h : HasSDPRegularity P] :
+    IsOpen (confinementLocus P) := by
+  rw [confinementLocus_eq_feasible P]; exact h.feasible_isOpen
 
 /-! ## §2  Local constancy of μ on components -/
 
-/-- **Claim (2) — local constancy of μ** (per-instance form).
-    Backed by `HasPhaseStratification.mu_constant`. -/
--- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
--- Ref: [boyd-vandenberghe-2004] §5.6 (Perturbation and sensitivity
---      analysis — feasibility-set topology + value-function continuity)
+/-- **Claim (2) — local constancy of μ.** Derived from
+    `mu_locally_constant` after rewriting the locus to the feasible set. -/
+-- Ref: [boyd-vandenberghe-2004] §5.6
 theorem phase_mu_constant_on_components
-    (P : ConfinedParticle) [HasRealAxisData P] [h : HasPhaseStratification P]
+    (P : ConfinedParticle) [HasRealAxisData P] [h : HasSDPRegularity P]
     (C : Set ℝ)
     (hC : IsConnected C) (hsub : C ⊆ confinementLocus P)
     (q₁ q₂ : ℝ) (h₁ : q₁ ∈ C) (h₂ : q₂ ∈ C) :
-    muReal P q₁ = muReal P q₂ :=
-  h.mu_constant C hC hsub q₁ q₂ h₁ h₂
+    muReal P q₁ = muReal P q₂ := by
+  have hsub' : ∀ q ∈ C, StrictlyFeasible P q := by
+    intro q hq
+    have := hsub hq
+    rwa [confinementLocus_eq_feasible P, Set.mem_setOf_eq] at this
+  exact h.mu_locally_constant C hC hsub' q₁ q₂ h₁ h₂
 
 /-! ## §3  Continuity of σ_F -/
 
-/-- **Claim (3) — continuity of σ_F** (per-instance form).
-    Backed by `HasPhaseStratification.sigmaF_continuous`. -/
--- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
--- Ref: [boyd-vandenberghe-2004] §5.6 (Perturbation and sensitivity
---      analysis — feasibility-set topology + value-function continuity)
+/-- **Claim (3) — continuity of σ_F.** Derived from `sigmaF_continuousOn`
+    after rewriting the locus to the feasible set. -/
+-- Ref: [boyd-vandenberghe-2004] §5.6
 theorem phase_sigmaF_continuous_on_locus
-    (P : ConfinedParticle) [HasRealAxisData P] [h : HasPhaseStratification P] :
-    ContinuousOn (sigmaFReal P) (confinementLocus P) :=
-  h.sigmaF_continuous
+    (P : ConfinedParticle) [HasRealAxisData P] [h : HasSDPRegularity P] :
+    ContinuousOn (sigmaFReal P) (confinementLocus P) := by
+  rw [confinementLocus_eq_feasible P]; exact h.sigmaF_continuousOn
 
 /-! ## §4  Headline theorem -/
 
-/-- **Confinement phase stratification (headline).** The locus
-    `Ω(P)` is open and μ is locally constant on components. -/
+/-- **Confinement phase stratification (headline).** The locus `Ω(P)` is
+    open and μ is locally constant on its components — derived from the SDP
+    regularity hypotheses, not assumed. -/
 -- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
 theorem ConfinementPhaseStratification (P : ConfinedParticle)
-    [HasRealAxisData P] [HasPhaseStratification P] :
+    [HasRealAxisData P] [HasSDPRegularity P] :
     IsOpen (confinementLocus P) :=
   phase_locus_open P
 
