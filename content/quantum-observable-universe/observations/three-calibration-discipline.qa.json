@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "306f855e1d6c",
     "ts": "22487e0d576f",
-    "lean": "4902f3e9c3c5"
+    "lean": "d5f435c797d1"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1659,6 +1659,23 @@
         "severity": "critical",
         "evidence": "three-calibration-discipline.lean:139-146: 'theorem threeCalibrationDiscipline ... : c.mass X = c.m_e^... * c.m_pi^... * c.towerValue X := c.mass_factorisation X' — the class field mass_factorisation (lines 128-133) has a type IDENTICAL to the theorem conclusion.",
         "notes": "Verbatim projection of the class field whose type IS the declaration's conclusion (P ⊢ P). The sibling hypothesis fields m_e_pos, q_0_pos, m_pi_pos are unused; the proof composes nothing. Per §3b-cond non-degeneracy clause this is the vacuous self-assuming projection pattern (class axiomatises the block's own conclusion rather than genuine sub-hypotheses). Mitigating context: AGENTS.md states this proposition is deliberately a §3b structural-assumption 'class', not a free-standing theorem — but the headline theorem still merely returns the assumed field. Routes to lean-proof-review."
+      },
+      {
+        "field_hash": {
+          "md": "306f855e1d6c",
+          "ts": "22487e0d576f"
+        },
+        "result": "pass",
+        "notes": "Owner-approved (Option B). threeCalibrationDiscipline faithfully surfaces the §3b structural-assumption axiom (the .md's headline factorisation IS the discipline axiom — statement-integrity matches exactly), and a genuinely-derived companion threeCalibrationDiscipline_mass_pos now composes the factorisation with the previously-dead positivity hypotheses m_e_pos/m_pi_pos to prove towerValue X>0 ⟹ mass X>0 (sorry-free). Not a harmful self-projection: the class encodes the framework's calibration-count assumption, and the discipline now yields a real inference. lean-direct exit 0.",
+        "reviewed_at": "2026-07-04T13:10:13.000Z",
+        "reviewed_sha": "3a68ebaa7bb2627150332e3a5ae8d6f146969984",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-proof-vacuity-audit",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-07-04"
+        }
       }
     ],
     "proof-no-trivial-true": [
@@ -2234,5 +2251,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.226Z"
+  "updated_at": "2026-07-04T13:10:13.000Z"
 }
