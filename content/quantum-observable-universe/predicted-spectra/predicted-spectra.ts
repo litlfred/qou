@@ -73,7 +73,6 @@ export default chapter({
         "categorical-proton-table1-data",
         "categorical-proton-exists",
         "categorical-proton-exists-proof",
-        "categorical-proton-unique",
       ],
     }),
     section({
@@ -81,6 +80,7 @@ export default chapter({
       label: "sec:mesons-nucleons-categorical-proton-unique",
       blocks: [
         "mesons-nucleons-categorical-proton-unique-intro",
+        "categorical-proton-unique",
         "categorical-proton-unique-proof",
         "meson-to-proton-via-borromean",
         "categorical-neutron-table-data",
