@@ -13,7 +13,12 @@ Scope: **Ch 1 = `quantum-universes/` (54 blocks)**, **Ch 2 =
 
 ## Headline findings
 
-### F1 — `archimedean realisation functor` used before definition (Ch 2)  — **the owner's headline issue**
+### F1 — `archimedean realization functor` used before definition (Ch 2)  — **the owner's headline issue**
+
+> Spelling note: this doc uses "realization" (American) in its own prose to
+> match the block label/title `archimedean-realization-functor` /
+> $\mathcal{R}_{\mathrm{top}}$ for greppability. Verbatim quotes of Ch 2 content
+> keep the corpus's British "realisation".
 
 [`generating-functions-solve-reeb-flow.md`](../../content/quantum-observable-universe/quantum-observable-universes/generating-functions-solve-reeb-flow.md)
 uses the object three times (lines 58, 77–79, 100–116), naming it
@@ -32,7 +37,7 @@ That definition **does exist** — but as
   introduced anywhere in Ch 1–2**.
 
 The markdown link *resolves* (labels are global), so `validate` is silent — but
-for a Ch 2 reader the archimedean realisation functor is **used with no local
+for a Ch 2 reader the archimedean realization functor is **used with no local
 definition and under a symbol ($\tau_\infty$, τ_∞) that never appears at the
 definition site**. This is genuinely "first use before definition." Note also
 the fibre functor is itself written $\tau$ (τ) (`AGENTS.md §7`), so $\tau$ (τ) /
@@ -157,9 +162,8 @@ Clean axes (0 candidates): `clarity-defn-single`, `clarity-stmt-pure`,
 2. **Structural / atomicity (new `definition` blocks + `.lean` siblings +
    manifest wiring + `uses[]` rewiring) — F2, F3.**
 
-3. **Framework decision — F1** (archimedean realisation functor): requires the
-   author's ruling on whether $\tau_\infty$ (local $q\to1$) $=
-   \mathcal{R}_{\mathrm{top}}$ (global adelic) before the fix shape is fixed.
+3. **Framework decision — F1** (archimedean realization functor): resolved by
+   the owner ruling "do not assert identity" (2026-07-04). See Resolution below.
 
 All content edits validated with
 `bun run scripts/run-validate.ts content/quantum-observable-universe` (after
@@ -195,8 +199,26 @@ All content edits validated with
   `rem:q-heat-equation-elaboration`.
 - **`clarity-defterm-bold`** — `def:quantum-observable-universe` (was
   `*italic*`) and `def:weight-decomposition` now bold the principal term.
+- **Item 2 (defterm/naming batch).** `observation.md` now leads with
+  **observation** as the primary term (keeping **intent** as the synonym);
+  `def:commutative-qou` title aligned to "Strictly commutative QOU
+  (commutative specialisation)" so the bolded term **strictly commutative**
+  matches (clears both its `defterm-bold` and `defn-tight` FP flags);
+  `substrate-parameter-planck.md` bolds **quantum Planck constant** (was
+  `*italic*`); Ch 1 `def:categorical-connection` bolds **curvature** (was
+  `*italic*`).
+- **Item 3 (F1 scaffolding formalized).** New `conjecture` block
+  `conj:archimedean-realisation-volume-compatibility`
+  (`.ts`/`.md`, wired after `generating-functions-solve-reeb-flow`) states the
+  precise open statement: $\tau_\infty$ (τ_∞) and $\mathcal{R}_{\mathrm{top}}$
+  (ℛ_top) are *not* equal as functors (different source/target types), but the
+  real-valued volume observables agree on QOU volume classes
+  ($\tau_\infty\circ\mathrm{Li}_2^q = \mathcal{R}_{\mathrm{top}}\circ\mu = V_{\mathrm{hyp}}$);
+  the scaffolding is established on the figure-8 / trefoil cases, the general
+  naturality is the volume-conjecture-strength `HabiroFlowSolution` open
+  conjecture.
 
-Ch 2 clarity candidates **23 → 18**.
+Ch 2 clarity candidates **23 → 14**.
 
 **Adjudicated as false positives / author-naming (not defects):**
 
@@ -208,15 +230,28 @@ Ch 2 clarity candidates **23 → 18**.
   at the define-site; the scanner misses bold spans that contain inline math
   (`**$q$-deformed exterior derivative**`) or wrap across a line
   (`**jet\nobject**`).
-- `observation.md` `defterm-bold` — the block bolds its actual definienda
-  (**intent on $U$**, **direction**); "Observation" is the section-level name.
-  A rename is an author decision, not a mechanical bold.
 - `fermion-boson-decomposition.md` `defterm-bold` — bolds its real definienda
   (**boson**, **fermion**).
+- `def:rigid-dualizing-complex` `defn-tight` — the three "sub-sections" are the
+  definition's *conditions* (Finite injective dimension / Rigidifying
+  isomorphism / Van den Bergh duality), a legitimately structured definition,
+  not rambling — same class as `frobenius-hopf-substrate`.
+- `def:q-dilogarithm` `defn-tight` — genuinely bundles a level-$k$ primitive
+  definition + the $q$-dilogarithm + the pentagon identity, but the correct fix
+  is the multi-block split the `definition-clarity-audit` skill itself scopes as
+  a **follow-up** (`def:level-k-primitive` + `def:q-dilogarithm` +
+  `prop:q-dilogarithm-pentagon`), touching the existing `q-dilogarithm-exists` /
+  `-unique` dependents. Deferred to a focused follow-up PR, not this atomicity
+  sweep.
 
 **Remaining (lower-value polish, deferred):** the `clarity-defn-tight` /
-`clarity-stmt-tight` **minors** (over-length statements, preamble > threshold —
-e.g. `def:commutative-qou`, `def:substrate-parameter`, `def:categorical-reeb`,
-`prop:qou-canonical-action`, `prop:fibre-functor-atlas`) and the Ch 1
-`defterm-bold` minor `def:categorical-connection`. Each is an
-agent-adjudicated candidate, not a confirmed defect.
+`clarity-stmt-tight` **minors** where the flagged "preamble" is the
+definition/statement's own ambient-data setup (`Let $(\mathbf{C},A,\tau)$ be
+… with maximal torus $T$ … and weight decomposition …`) — standard
+graduate-math style that the aggressive 60/80-word threshold over-flags:
+`def:substrate-parameter`, `def:categorical-reeb`, `prop:braiding-induced-ordering`,
+`prop:braiding-eigenvalue-extraction`, `prop:fibre-functor-atlas`; plus the two
+genuinely-long statements `prop:q-laplacian-spectral-tower` (396 w) and
+`prop:qou-canonical-action` (490 w), whose length is enumerated conditions, not
+rambling. Each is an agent-adjudicated candidate, not a confirmed defect; the
+two long props are the only real follow-up polish targets.
