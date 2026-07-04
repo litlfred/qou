@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition.**
 The bar involution $\iota \colon q \mapsto q^{-1}$ on the substrate
 parameter line lifts to a **substrate-level T-duality** between

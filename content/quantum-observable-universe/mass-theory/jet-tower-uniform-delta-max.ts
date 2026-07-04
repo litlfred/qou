@@ -1,6 +1,9 @@
 import { conjecture } from "../../schema/builders";
 
 export default conjecture({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+  ],
   label: "conj:jet-tower-uniform-delta-max",
   title:
     "Uniform per-level binding bound $|\\Delta^{(n)}(\\varrho)| \\le \\Delta_{\\max}(\\varrho)$ for the brane tower",

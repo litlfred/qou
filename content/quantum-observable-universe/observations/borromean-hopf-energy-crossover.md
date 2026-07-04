@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition.**
 Let $q > 1$ be the substrate parameter and $\hbar_q = (q-1)/q$.
 Consider $6$ quarks (two baryon-number units) with flavor content

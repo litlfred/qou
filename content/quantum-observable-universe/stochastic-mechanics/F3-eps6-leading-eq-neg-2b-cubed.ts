@@ -20,6 +20,7 @@ export default remark({
     status: "experimental",
   },
   authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "status",
       body: "Lean stub: **closed**, no `sorry`s. Provable by Mathlib `Real.sqrt_sq` +\n`ring`. Companion to `rem:markov-axioms-primitive` in the categorical-chain\nLean infrastructure.",

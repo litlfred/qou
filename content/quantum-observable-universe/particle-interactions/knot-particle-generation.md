@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Definition.**
 *The particle spectrum is generated from a finite set of
 :defterm[torus knot generators]{#torus-knot-generators} $T_{m,n}$ (with $\gcd(m,n) = 1$)

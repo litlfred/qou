@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition (conditional on [`conj:borromean-quark`](#conj:borromean-quark) — Hoefsmit V_(2,1) Markov-symmetrized cos resummation, non-trivial Markov machinery for the 2-dimensional irrep).**
 
 The 1-d Hecke irreps admit the universal closed form

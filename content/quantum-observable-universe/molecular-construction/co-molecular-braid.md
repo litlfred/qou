@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Definition.**
 **Carbon monoxide** *$CO$ is the molecular braid of a carbon atom
 $C(6, 6)$ and an oxygen atom $O(8, 8)$ sharing three electron

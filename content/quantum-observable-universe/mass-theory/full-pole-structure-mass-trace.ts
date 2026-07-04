@@ -1,6 +1,9 @@
 import { proposition } from "../../schema/builders";
 
 export default proposition({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+  ],
   label: "prop:full-pole-structure-mass-trace",
   title:
     "Habiro completion of the mass trace",

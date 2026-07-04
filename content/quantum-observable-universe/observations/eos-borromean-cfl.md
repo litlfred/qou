@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition.**
 Let $q > 1$ be the substrate parameter, $\hbar_q = (q-1)/q$,
 and $V_B = 7.32772$ the Borromean volume.  The two topological

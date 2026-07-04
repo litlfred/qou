@@ -1,6 +1,9 @@
 import { conjecture } from "../../schema/builders";
 
 export default conjecture({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+  ],
   label: "conj:magic-shell-stabilization",
   title: "Magic-shell stabilization term $\\Delta_{\\mathrm{shell}}(Z, N)$ in the brane-tower binding formula",
   lean: { ref: "qou:QOU.BraidKnot.MagicShellStabilization" },

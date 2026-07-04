@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 The raw normal form has up to $A!$ terms. Quotienting by the
 adjacency / chain-collapse ideals
 ([quotient ideals $I_8$, $I_9$](#def:gs-quotient-ideals-I8-I9))

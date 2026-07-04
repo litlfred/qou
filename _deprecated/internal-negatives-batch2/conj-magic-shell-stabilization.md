@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 The six-way refutation of the level-selection rule $n_\star$ in
 [`conj:brane-tower-z-habiro`](#conj:brane-tower-z-habiro)
 ([closure audit](../../../docs/audits/2026-05-11-brane-tower-n_star-closure-audit.md))

@@ -1,6 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c).
-Underlying combinatorial content stays generic to any commutative ring.*
-
 **Proposition.**
 *For partitions $\mu \vdash n_1$, $\nu \vdash n_2$, and $\lambda \vdash n_1 + n_2$,
 the **Littlewood-Richardson coefficient** $c^\lambda_{\mu\nu}$ is the

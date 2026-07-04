@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition.**
 Let $\sigma$ denote the cyclic generator of $\mathbb{Z}_5$, and write its
 induced action on regular functions on the left.

@@ -5,6 +5,9 @@ import { definition } from "../../schema/builders";
  * Two protons + two electrons in H₄(q).
  */
 export default definition({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+  ],
   label: "def:h2-molecular-braid",
   title: "Hydrogen molecule $H_2$ as a braid in $H_4(q)$",
   lean: { ref: "qou:QOU.Molecular.H2Braid",

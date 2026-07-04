@@ -9,6 +9,9 @@ import { proposition } from "../../schema/builders";
  * and the seminormal paired sum identity gives h per pair.
  */
 export default proposition({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+  ],
   label: "prop:wigner-2-coefficient",
   title:
     "Wigner-2 coefficient $C_{[3,2,1]} = w_{[3,2,1]} \\cdot h/2$ from self-conjugate trace pairing",

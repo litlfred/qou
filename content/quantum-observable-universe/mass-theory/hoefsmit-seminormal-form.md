@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition.**
 *For each partition $\lambda \vdash n$ and substrate parameter $q > 1$,
 the Hoefsmit seminormal form \cite{hoefsmit1974} gives an explicit

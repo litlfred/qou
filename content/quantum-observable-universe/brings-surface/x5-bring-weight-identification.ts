@@ -1,6 +1,9 @@
 import { proposition } from "../../schema/builders";
 
 export default proposition({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+  ],
   label: "prop:x5-bring-weight-identification",
   lean: { ref: "qou:QOU.HyperellipticQuintic.bring_weight_match", validation: "not_checked" },
   title: "$\\mathbb{Z}_5$-weight identification: $x$ on $\\mathcal{X}_5$ matches $w_1$ on Bring",

@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Multi-link Jones values at $q = 1$ — Lean infrastructure for the $c_5 / c_6$ candidate investigation.**
 
 The $\mathfrak{Q}_\beta$ precision ladder
@@ -10,7 +8,6 @@ from the mixed Kashiwara-plus-Hopf-half $b^2 + 1/2$. The simple
 alternating Kashiwara $\times$ Jones pattern at odd $k = 3$ suggests trying
 multi-link Jones values for $c_5, c_7, \ldots$ — Borromean rings,
 double-Hopf, etc.
-
 
 | coefficient | empirical | closest simple multi-link Jones candidate |
 |:---:|---:|---:|
@@ -39,7 +36,6 @@ This is **infrastructure, not closure**. The Lean module
    docstrings noting the empirical mismatch** — they are not
    closures.
 
-
 ## Failure of the simple multi-link pattern
 
 Three structural hypotheses for the 50–3000$\times$ mismatch:
@@ -59,7 +55,6 @@ Three structural hypotheses for the 50–3000$\times$ mismatch:
 3. **New categorical input at $k \geq 5$**: a higher-rank irrep
    coupling, a Mostow rigidity gap correction, or a non-trivial
    Habiro residue contribution may enter only at orders $k \geq 5$.
-
 
 Test whether the **per-Wedderburn-block contribution at $k = 5, 6$**
 matches empirical when properly weighted by the $q$-deformed

@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition.** *The Schur-Weyl 3-root product `λ_{SW}^{(1)}(z)`
 appearing in the categorical action
 ([def:categorical-action](#def:categorical-action))

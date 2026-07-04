@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition ($c_5$ involution + Leibniz decomposition).**
 
 *Let $c_5(q)$ be the precision-ladder coefficient at rung $N=5$ in

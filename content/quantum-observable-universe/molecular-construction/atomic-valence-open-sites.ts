@@ -6,6 +6,9 @@ import { definition } from "../../schema/builders";
  * def:electron-shell-braid-capacity (the second definiendum).
  */
 export default definition({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). The valence count is a generic combinatorial quantity." },
+  ],
   label: "def:atomic-valence-open-sites",
   title: "Valence and lone pairs as open bonding sites",
   lean: {

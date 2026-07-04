@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition (conditional on [`conj:borromean-quark`](#conj:borromean-quark)).**
 Let $\varrho: S^1 \hookrightarrow \Sigma_4$ be the trefoil
 $T_{2,3}$ embedded in the Bring's surface, and let

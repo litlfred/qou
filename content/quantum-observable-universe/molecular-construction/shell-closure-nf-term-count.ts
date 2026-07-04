@@ -4,6 +4,9 @@ import { conjecture } from "../../schema/builders";
  * Shell closure is detectable from NF term count in the quotient atom model.
  */
 export default conjecture({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+  ],
   label: "conj:shell-closure-nf-term-count",
   title: "Shell closure from NF term count",
   lean: { ref: "qou:QOU.Molecular.ShellClosureNFTermCount",

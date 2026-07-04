@@ -1,6 +1,9 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+  ],
   interprets: "def:knot-particle-generation",
   label: "rem:mass-from-generators",
   title: "Mass spectrum from $T_{m,n}$ generators and linking operations",

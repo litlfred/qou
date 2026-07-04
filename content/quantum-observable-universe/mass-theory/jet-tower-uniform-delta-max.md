@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 The brane-tower convergence proposition
 ([prop:jet-tower-convergence](#prop:jet-tower-convergence))
 gives a geometric tail bound for the mass series

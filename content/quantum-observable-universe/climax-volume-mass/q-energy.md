@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 The **$q$-energy** of a particle knot $K$ is the sum of three
 terms, each derived from the categorical triple $(\mathbf{C}, A, \tau)$
 and the substrate parameter $q$.

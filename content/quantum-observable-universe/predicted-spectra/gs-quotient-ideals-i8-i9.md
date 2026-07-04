@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 The raw Gröbner--Shirshov normal form
 ([shell closure normal form](#prop:shell-closure-normal-form)) has up
 to $A!$ terms. Two quotient ideals absorb the structurally-determined

@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 Let shell $\ell$ contain $n_s$ nucleons and be closed
 (palindromic histogram). The crossing of a new nucleon
 (starting shell $\ell + 1$) with the closed shell $\ell$ is

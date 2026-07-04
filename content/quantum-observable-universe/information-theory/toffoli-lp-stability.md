@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition.**
 *Let $T_q \in H_3(q)$ be the $q$-Toffoli element, realised as
 the $3$-strand braid word whose traced volume matrix is $M(q)$

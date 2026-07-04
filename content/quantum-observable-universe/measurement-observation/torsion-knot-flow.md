@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 Given a bundle initial condition $\mathcal{S}_0 = \{(p_i, K_i)\}_{i=1}^{N}$
 ([Definition](#def:bundle-initial-conditions)), the **torsion-driven knot
 flow** is the one-parameter family of bundle states

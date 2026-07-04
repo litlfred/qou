@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 The [Biot–Savart prediction](#rem:townsend-biot-savart-strain)
 that the squared core ratio $\kappa^2 \to 0$ at the collision
 holds only while the cores remain well separated. Once the
