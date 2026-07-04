@@ -19,7 +19,7 @@ of the *Leibniz triangle*:
 \end{equation}
 ```
 
-The *curvature* of $\nabla$ is the composition
+The **curvature** of $\nabla$ is the composition
 
 ```tex
 \begin{equation}\label{eq:curvature-composition}
