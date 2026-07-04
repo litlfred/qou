@@ -144,15 +144,27 @@ Producer: [`probes/probe_d_qbeta_h_invariant.py`](../../computations/probes/prob
    2/2) — fallback now within 1.5 ppb of the witness (was −241 ppb).
    The c₄ 46-vs-4143/90 **pin** mismatch is a re-pin question →
    owner-gated bean `2i8g` (NOT changed).
-5. **c₄ history verdict (2026-07-04, owner-directed investigation):**
-   the pin's `46` entered with `d27b002745` (2026-06-15) as the
-   then-fitted c₄; `58ba1c6800` (2026-06-28, bean `ovud`) *"replace
-   fitted c_4 with exact geometric index 4143/90"* upgraded the
-   **producer only** (zero q_parameter files touched). So the
-   committed `Q_50_DIGIT_STR` is solved against the stale **fitted**
-   46 while the derived 4143/90 exists — direction when a re-pin
-   window opens: align the pin to 4143/90. Deferred per the owner
-   ruling (document + defer); recorded in bean `2i8g`.
+5. **c₄ history verdict (2026-07-04, owner-directed investigation;
+   coordinated with PR #3280):** the pin's `46` entered with
+   `d27b002745` (2026-06-15) as the then-fitted c₄; `58ba1c6800`
+   (2026-06-28, bean `ovud`) *"replace fitted c_4 with exact geometric
+   index 4143/90"* upgraded the **producer only** (zero q_parameter
+   files touched) — and the "derived geometrically" label entered via
+   that commit message alone. Sibling
+   [PR #3280](https://github.com/litlfred/qou/pull/3280) independently
+   shows: (i) the exact c₄ needed is **linear in the q₀ pin offset**
+   (slope ≈ 3.99/ppb — c₄ = 46 *is* the muon-calibration convention,
+   i.e. the μ–p tension reparametrized, not resolved), (ii) `4143` has
+   **no derivation trail** in the corpus and the cited s5bb
+   Reeb-resonance route is an explicit honest-negative, (iii) 4143/90
+   overshoots (+1.53 ppb) vs naked 46 (+1.35 ppb). Combined verdict:
+   BOTH values are fit-tier; my earlier "re-pin to 4143/90" direction
+   is **withdrawn** — the reconcile is among #3280's owner options
+   (relabel honestly / revert to 46 / drop to the 240 ppb floor).
+   Consequently the S0 "μ–p tension absorbed" reading above must be
+   read as: the tension is absorbed **by the fitted c₄ choice**, not
+   by a categorical closure — the AGENTS m_μ-prediction caution keeps
+   its spirit. Bean `2i8g` updated.
 6. **Cross-A discriminator (owner pick #1 follow-through):** the
    (1−h/2) dressing is a **D-specific scale fix** — fixed a-priori
    candidates (flat, per-interface) leave A≥3 at −59%…−90% while D
