@@ -223,8 +223,32 @@ self-dual fixed point. The high-row partitions ($[2^3]$, $[1^6]$, …) contribut
    **2.63e-4** — NOT exact. The break is the **colour-weighted p-n interface**
    (q₀-baked flavor split), at the same order as the convention-D trace gap
    (1.955e-4). So the clean q↔q⁻¹ / conjugate-partition symmetry that holds for
-   an unweighted word is deliberately broken at the flavor-split scale; any
-   $\Delta_\lambda$ closure inherits this asymmetry.
+   an unweighted word is deliberately broken at the flavor-split scale. **This
+   is a decay-sector ($q\leftrightarrow q^{-1}$) property of the character data,
+   NOT a constraint on the $\Delta_\lambda$ vector's $\lambda\leftrightarrow\lambda'$
+   parity** — see the bar-parity check below; it does **not** justify narrowing
+   the closure search to exclude bar-symmetric ansätze.
+
+**Bar-parity of the binding constraint (does the 2.6e-4 kill any refuted
+ansatz? — NO).** A follow-up check (`barsym_check`, 2026-07-04) decomposes the
+binding coefficient vector $a_\lambda = y_\lambda\chi^\lambda(\beta_D)$ under the
+partition involution $\lambda\leftrightarrow\lambda'$. Result: the bar-**odd**
+projection of $a_\lambda$ has $\ell_2$-norm ≈ 0.163 (≈ 70 % of $\|a\|$ — large,
+and generic: conjugate partitions have unrelated characters) **but it sums to
+exactly zero** ($-8\!\times\!10^{-53}$). Hence the A=2 binding scalar
+$\sum_\lambda a_\lambda = \mathrm{tr}_M$ is a **purely bar-EVEN functional**: a
+bar-symmetric $\Delta_\lambda$ (the uniform $\delta=11.21$, or any $\dim$-/hook-
+based ansatz, all bar-even) satisfies the deuteron binding with **zero**
+obstruction from bar-symmetry. Therefore:
+- The 2.6e-4 bar-conjugate breaking (a $q\leftrightarrow q^{-1}$, Im $\mathfrak V$
+  decay-sector effect) does **not** upgrade any of the refuted $\Delta_\lambda$
+  ansätze from a scope-(a) numerical refutation to a scope-(b) structural one —
+  they fail on magnitude / cross-A, and that is where they stay.
+- Asserting "a bar-symmetric closure is structurally incomplete for the
+  deuteron" would bridge the bar-even (binding, Re $\mathfrak V$) and bar-odd
+  ($q\leftrightarrow q^{-1}$ law, Im $\mathfrak V$) sectors with no proved
+  invariant — exactly the category error the #3315 guard names. It is **not**
+  made here.
 3. **No χ zeros at H_6** (unlike the H_3 Garside $\chi^{(2,1)}(\Delta)=0$): all
    11 $\chi^\lambda(\beta_D)$ are non-vanishing, so there is no "free" block to
    drop.
