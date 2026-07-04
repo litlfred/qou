@@ -1,0 +1,173 @@
+{
+  "computation": "rho-k-h3a-counit-canonical-integral",
+  "description": "\u0394_\u03bb counit/canonical-integral candidate (\u0394_\u03bb=1/y_\u03bb, \u03c9=G^{-1}\ud835\udfd9) tested at the deuteron. Parameter-free; genuinely distinct from all six refuted ans\u00e4tze; REFUTED on sign (vortex-blind), but first candidate in the correct magnitude regime. audit_only; no new anchor, no fit.",
+  "audit_only": true,
+  "tier": "structural-exact (parameter-free categorical weight; decidable sign refutation)",
+  "commitSha": "25b8fb8f0159be05ee5acc75f5bf585b0dfe614d",
+  "engine": "python+mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "scriptFile": "rho_k_h3a_counit_canonical_integral.py",
+  "scriptHash": "2537e7e92963",
+  "assertions": [
+    {
+      "name": "counit_distinct_from_six_refuted",
+      "passed": true
+    },
+    {
+      "name": "counit_wrong_sign_vs_target",
+      "passed": true
+    },
+    {
+      "name": "counit_does_not_close_gate",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "candidate": "counit / canonical-integral, \u0394_\u03bb = 1/y_\u03bb (\u03c9 = G^{-1}\u00b7\ud835\udfd9)",
+    "free_parameters": 0,
+    "distinct_from_six_refuted": true,
+    "target_signed_m_e": "-4.35336728187014866",
+    "tol_m_e": 1,
+    "trM_mass_reading_sum_y_chi": "0.388286471547713279",
+    "counit_sum_chi": "4.92667821914229699",
+    "magnitude_ratio_abs_counit_over_abs_target": "1.1316936753",
+    "right_sign": false,
+    "signed_miss_vs_target": "9.28004550101",
+    "closes_deuteron_gate": false,
+    "sign_flipped_reading_miss_B_eq_minus_eps": "0.573310937272",
+    "verdict": "REFUTED (parameter-free, on SIGN). Counit \u03a3_\u03bb \u03c7^\u03bb(\u03b2_D) = +4.92668 > 0 > target \u22124.35337; same vortex-blind failure as co-Casimir. First candidate in the correct magnitude regime (13%, 30\u00d7 closer than co-Casimir) \u2014 residual localised to the vortex (Hopf/L\u00b1) sign-content. Scope-(a): counit ALONE insufficient; NOT excluded as an ingredient (counit + vortex is the lead). A fitted c to close (c=\u22120.884) would be the barred 7th fit-based ansatz.",
+    "per_lambda": [
+      {
+        "partition": [
+          6
+        ],
+        "y_lambda": "0.0591877169321486317",
+        "chi_lambda_beta_D": "1.55975873941806135",
+        "Delta_lambda_counit_inv_y": "16.8953974208",
+        "contribution_signed": "1.55975873941806135"
+      },
+      {
+        "partition": [
+          5,
+          1
+        ],
+        "y_lambda": "0.0589606814014537308",
+        "chi_lambda_beta_D": "3.21589143393868731",
+        "Delta_lambda_counit_inv_y": "16.9604552768",
+        "contribution_signed": "3.21589143393868731"
+      },
+      {
+        "partition": [
+          4,
+          2
+        ],
+        "y_lambda": "0.0402843869659352112",
+        "chi_lambda_beta_D": "1.6737481247387005",
+        "Delta_lambda_counit_inv_y": "24.823512912",
+        "contribution_signed": "1.6737481247387005"
+      },
+      {
+        "partition": [
+          4,
+          1,
+          1
+        ],
+        "y_lambda": "0.0101334634920729347",
+        "chi_lambda_beta_D": "-0.470191480004721442",
+        "Delta_lambda_counit_inv_y": "98.6829429822",
+        "contribution_signed": "-0.470191480004721442"
+      },
+      {
+        "partition": [
+          3,
+          3
+        ],
+        "y_lambda": "0.0141208740049752873",
+        "chi_lambda_beta_D": "4.24907029262365059",
+        "Delta_lambda_counit_inv_y": "70.8171462792",
+        "contribution_signed": "4.24907029262365059"
+      },
+      {
+        "partition": [
+          3,
+          2,
+          1
+        ],
+        "y_lambda": "0.00731845435228573078",
+        "chi_lambda_beta_D": "-1.9728210551001285",
+        "Delta_lambda_counit_inv_y": "136.640874133",
+        "contribution_signed": "-1.9728210551001285"
+      },
+      {
+        "partition": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "y_lambda": "-0.000685308885514466785",
+        "chi_lambda_beta_D": "-0.489988138291705525",
+        "Delta_lambda_counit_inv_y": "-1459.19602261",
+        "contribution_signed": "-0.489988138291705525"
+      },
+      {
+        "partition": [
+          2,
+          2,
+          2
+        ],
+        "y_lambda": "0.000773186736905380122",
+        "chi_lambda_beta_D": "-3.4975646652884291",
+        "Delta_lambda_counit_inv_y": "1293.34862106",
+        "contribution_signed": "-3.4975646652884291"
+      },
+      {
+        "partition": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "y_lambda": "-0.000342051770885401226",
+        "chi_lambda_beta_D": "-0.819715955891046803",
+        "Delta_lambda_counit_inv_y": "-2923.53405279",
+        "contribution_signed": "-0.819715955891046803"
+      },
+      {
+        "partition": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "y_lambda": "0.0000986355761098033752",
+        "chi_lambda_beta_D": "2.15541598752643784",
+        "Delta_lambda_counit_inv_y": "10138.3297938",
+        "contribution_signed": "2.15541598752643784"
+      },
+      {
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "y_lambda": "-0.0000124379869743011551",
+        "chi_lambda_beta_D": "-0.676925064527209226",
+        "Delta_lambda_counit_inv_y": "-80398.8621363",
+        "contribution_signed": "-0.676925064527209226"
+      }
+    ]
+  },
+  "context": {
+    "axis": "\u0394_\u03bb per-isotope binding closure (GAP-A) \u2014 deuteron anchor",
+    "anchor_witness": "rho-k-h3a-co-casimir.witness.json",
+    "refutation_sibling": "content/quantum-observable-universe/mass-theory/frobenius-cocasimir-refuted-deuteron.md",
+    "counit_definition": "content/quantum-observable-universe/particle-interactions/qbeta-counit-transition.md",
+    "gate_rule": "no seventh FIT-based ansatz (this candidate is parameter-free, permitted; refuted on its own)"
+  }
+}
