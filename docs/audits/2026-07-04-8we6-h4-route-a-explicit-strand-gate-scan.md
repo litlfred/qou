@@ -141,18 +141,57 @@ require re-deriving the ladder calibration (`Q_A`, `α_eff`, the `R`-normalisati
 for a new functional.** That re-derivation is genuine framework work — owner-gated,
 and materially larger than the audit's original "design the 4th strand" framing.
 
+## Resolution (2026-07-04): the Markov-trace calibration is already derived; the c₄^even rung is the keystone residue
+
+Owner authorised "re-derive the Q_β ladder calibration for the Markov-trace
+functional." Corpus-grep (per the STRICT open-declaration checklist) shows **the
+re-derivation already exists and is Lean-proved** — the request is substantially
+already satisfied, and the honest reason Q_β stays open is *not* a missing
+Markov-trace calibration:
+
+1. **The counit is the correct functional — derived, not chosen.**
+   [`qbeta-counit-transition.md`](../../content/quantum-observable-universe/particle-interactions/qbeta-counit-transition.md):
+   both `ε` and `tr_M` are Frobenius pairings `⟨x,y⟩_G=tr_M(xy)`, but `tr_M(β)=⟨β,𝟙⟩_G`
+   is the **closed-loop / static-mass** reading and `ε(β)=⟨β,G⁻¹𝟙⟩_G` is the
+   **crossing-stripped / net-reduction-count** reading. A β-decay is a *transition*
+   (a d→u re-typing = a reduction count), so `ε` is forced; `tr_M` is the wrong
+   functional and misses by ~2× (matching the −56% / −240000 ppm the prior probes saw).
+2. **The Markov-trace analog of the leading term is already Lean-proved.**
+   [`qbeta_counit_vs_trace.lean`](../../content/quantum-observable-universe/lean/QOU/Interactions/qbeta_counit_vs_trace.lean)
+   (`QOU.Interactions.QBetaCounitTrace`, sorry-free, generic `R`): `epsNP h = h²/2−h`
+   (counit), **`trMNP h z = h²/2−h·z`** (Markov-trace analog), the exact gap
+   `eps_sub_trMNP: epsNP−trMNP = h(z−1)`, and `trMNP_q = (q²−1)(q²−2qz−1)/(2q²)`,
+   `z=1/(√q+1/√q)`. `E_0=m_e/(q(q−1))` is functional-independent, and the phase
+   `cos(α_eff)` with `α=(z−1)h/2` **is itself `τ_M(M_β)`** — the Markov trace of the
+   β-transfer matrix on `V_{(2,1)}`. So `tr_M` already enters the ladder through the
+   *phase*; the counit supplies the *amplitude*. There is nothing to re-derive.
+3. **The genuinely open object is the ladder residue, and it is the keystone.** What
+   is unresolved beyond `c₂=−1` is the residue `∏_k(1+c_k u^k)` — a fibre-level,
+   complex/root-of-unity **Habiro element `F(q)`** with non-constant kernel `R(q,ξ)`,
+   *not* a real-q mass-side trace identity (mass-side tr_M routes C8/C12 are refuted;
+   [`2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md`](2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md)).
+   As of 2026-06-23 this axis is **merged into the s5-so3 keystone `W_λ` build**
+   (bean `s5bb`, [`s5-so3-keystone.md`](../coordination/s5-so3-keystone.md)); the
+   ledger instructs **not** to open a separate Q_β root-of-unity probe.
+
+**Bean 8we6 verdict.** The `c₄^even` rung is **not reachable** by (a) re-decomposing
+H₃ (Route B, Lean-pruned), (b) appending a 4th strand through the counit (contaminates
+c₂/c₃ — proven full-coupling and linear), or (c) recalibrating to a Markov-trace/
+channel functional (that functional is derived-wrong for a transition, and its N=0
+analog is already Lean-proved). The genuine missing object is the keystone Habiro
+residue `F(q)`/`W_λ` — owner-gated, and explicitly *not* a separate Q_β probe. The
+productive H₄ contribution of this session is therefore the **machine-checked Route-B
+prune plus the exhaustive, honest closure of the strand/functional routes**, redirecting
+the c₄^even rung to the keystone where the corpus already places it.
+
 ## Kill-criterion status
 
-Nothing is refuted in scope-(b). Two scope-(a) results: (1) the **appended-strand
-construction** (lepton and brane, any coupling) moves c₂/c₃ at linear order —
-out; (2) the **channel/Markov-trace functionals** do not reproduce the
-counit-calibrated H₃ baseline, so they cannot supply a `c₄^even` rung to the
-existing ladder without a calibration re-derivation. The productive path forward
-is therefore an **owner decision**: either (i) re-derive the Q_β ladder
-calibration for a bar-covariant (Markov-trace) functional so channel projection
-becomes usable, or (ii) accept that the counit ladder's even sector is
-H₃-complete through c₃ and the c₄^even rung is not reachable by an H₄ strand
-extension at all.
+Nothing is refuted in scope-(b). Two scope-(a) results stand: (1) the
+**appended-strand construction** (lepton and brane, any coupling) moves c₂/c₃ at
+linear order; (2) the **Markov-trace/channel functional** is derived-wrong for the
+transition (Lean `trMNP_q`) and cannot supply a counit-ladder rung. The `c₄^even`
+rung is redirected to the **s5-so3 keystone** `W_λ`/Habiro `F(q)` per the standing
+ledger — not a separate build.
 
 ## Provenance
 
