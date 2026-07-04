@@ -2,24 +2,23 @@ import { algorithm } from "../../schema/builders";
 
 export default algorithm({
   label: "alg:mass-identity",
-  title: "Mass identity $m(K) = m_e \\cdot \\mathrm{Geom}_{\\mathrm{full}}(K, q_0)$",
+  title: "Mass identity $m_p = 2\\,(m_\\mu F_{\\mathrm{Bor}} - 6 m_e) \\cdot R_{\\mathrm{s5bb}}$ (muon-anchored Hecke energy)",
   uses: [
     "prop:mass-identity-exists",
     "prop:mass-identity-unique",
     "thm:knot-mass-formula-unified",
-    "conj:geom-yekutieli-alignment",
   ],
   computation: {
     engine: "python+mpmath",
-    script: "qou-mass/src/qou_mass/api.py",
-    witness: "computations/per-observable-100x-status.witness.json",
+    script: "computations/canonical_mass.py",
+    witness: "computations/m-p-substrate-identity-50dps.witness.json",
     status: "verified",
   },
   tags: [
     "mba",
     "step-9a",
     "mass-identity",
-    "vol-density",
+    "muon-anchor",
     "canonical-chain",
   ],
 });
