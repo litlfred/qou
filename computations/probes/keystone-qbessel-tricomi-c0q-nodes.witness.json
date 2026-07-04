@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-04T13:15:51.670285+00:00",
-  "commitSha": "c94c21f8ddc90abed0fa29b185415723f89001dc",
+  "computedAt": "2026-07-04T14:14:58.176896+00:00",
+  "commitSha": "95cf7b962bb41d3777900cc6bc494b271c14d179",
   "assertions": [
     {
       "name": "zeros_found",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 23,
   "computation": "keystone-qbessel-tricomi-c0q-nodes",
   "scriptFile": "keystone_qbessel_tricomi_c0q_nodes.py",
   "scriptHash": "ad5574590fa0",
-  "scriptCommitSha": "c94c21f8ddc90abed0fa29b185415723f89001dc",
+  "scriptCommitSha": "ec1825ba7f6b81548a9f70ac96e7c84295a0651b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
