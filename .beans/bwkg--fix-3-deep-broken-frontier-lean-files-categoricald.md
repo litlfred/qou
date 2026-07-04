@@ -1,11 +1,11 @@
 ---
 # bwkg
 title: 'Fix 3 deep-broken frontier Lean files: CategoricalDqSquared, QHookBound, MarkovPeel'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-23T17:03:11Z
-updated_at: 2026-06-26T02:22:35Z
+updated_at: 2026-07-04T18:48:01Z
 ---
 
 
