@@ -354,3 +354,11 @@ siblings + s5-so3 main drift dispatched.
 
 **Siblings flagged:** #3014 (same dashboard file, non-overlapping region — rebase
 heads-up), #2985 (binding-tower domain — finding cross-linked).
+
+## 2026-07-04 — Deuteron from-scratch ledger (PR #3266) coordination entry
+
+- **Delivered:** per-stage γγ→D error ledger (`deuteron_from_scratch_ledger.py`, 4/4) + 3 D probes; end-to-end m_D error is entirely binding-stage (routes −79%…+33%; best composed −12.9 ppm via m_e·Vol(6₂)).
+- **Exact reduction (sympy):** Q_β_proxy = E₀·h·(2−h)/2 ⟹ "Δ_λ(D)=1/h" ⟺ B_D = E₀·(1−h/2)·Δtr (+0.29% proxy / +0.12% Kashiwara). Cross-A discriminator: the dressing is D-specific (A≥3 −59%…−90%) — the extensive gap is a separate mechanism (jet-filtration thread, #3270/#3278).
+- **c₄ coordination (with #3280):** pin's 46 = fitted leftover (d27b0027); producer's 4143/90 label has no derivation trail (#3280) and c₄ is linear in the pin offset — both fit-tier; reconcile is among #3280's owner options. Bean `2i8g` re-scoped.
+- **MBA sync:** `alg:mass-identity` (step-9a) rewritten off `m_e·VolDensity`/`Geom_full` to the muon-anchored facade; facade fallback now carries `habiro_ratio_s5bb` (was −241 ppb vs witness).
+- **Intent posted:** #3280 (c₄ history datum), #3285 (mba-9a/9b adjacency), #3278 (A=2 under-determination + dressing discriminator).
