@@ -33,15 +33,27 @@ The framework's [`canonical-derivation-cheat-sheet.md`](../../../docs/canonical-
 
 ## Lean structure
 
-[`phi-q-aj-machinery-identification.lean`](phi-q-aj-machinery-identification.lean) encodes this as a **conditional proposition** under §3b-cond:
+[`phi-q-aj-machinery-identification.lean`](phi-q-aj-machinery-identification.lean) encodes this as a **conditional proposition** under §3b-cond, split explicitly into a provable backbone and conjectural class inputs.
 
-- Class `QuantumAPolynomial K` axiomatizes the AJ conjecture (existence of $\hat{A}_K$)
-- Class `PhiQRegulator K` axiomatizes the Faddeev dilog regime
-- Class `Li2QRegulator K` axiomatizes the Rogers dilog regime
-- Theorem `phi_q_eq_aj_saddle_root_of_unity`: given `[QuantumAPolynomial K] [PhiQRegulator K]`, $\Phi_q$ equals the AJ saddle at $q = e^{2\pi i / N}$
-- Theorem `li2_q_eq_aj_saddle_real`: given `[QuantumAPolynomial K] [Li2QRegulator K]`, $\mathrm{Li}_2^q$ equals the AJ saddle at real $q$
+**Proved unconditionally (sorry-free):**
 
-Both theorems are **fully verified by Lean** modulo the three class instances. The classes encode literature statements (AJ conjecture, dilog identities); the framework's contribution is the IDENTIFICATION at the algebraic-over-$\mathbb{Z}[q^{\pm 1}]$ level.
+- `qWeyl_commutation` — the q-Weyl relation $\hat{L}\hat{M} = q\hat{M}\hat{L}$ on the function model $\hat{M}f(m) = m \cdot f(m)$, $\hat{L}f(m) = f(qm)$.
+- `Annihilates.add_smul` — the solution space of a homogeneous q-difference operator is closed under linear combinations (superposition).
+- `saddle_regimes_disjoint` — the two archimedean regimes are genuinely distinct: a real $q \in (0,1)$ satisfies $q^N \neq 1$, so no parameter lies in both regimes.
+
+**Conjectural class inputs (no instances fabricated):**
+
+- Class `QuantumAPolynomial F K` carries the AJ conjecture's content: the operator $\hat{A}_K$ (order, coefficients, homogeneity), the colored Jones tower, the annihilation $\hat{A}_K \cdot J_N = 0$, and non-triviality.
+- Class `PhiQRegulator F K` carries the Faddeev identification: the $\Phi_q$-generated saddle tower is annihilated by the same $\hat{A}_K$ in the root-of-unity regime ($q^N = 1$, $q \neq 1$).
+- Class `Li2QRegulator K` carries the Rogers identification: the $\mathrm{Li}_2^q$-generated saddle tower is annihilated by the same $\hat{A}_K$ in the real regime $q \in (0,1)$ (stated over $\mathbb{R}$, the archimedean side of the wall).
+
+**Derived conditional theorems** (they compose class fields through the proved superposition lemma — they do not project a conclusion-typed field):
+
+- `phi_q_eq_aj_saddle_root_of_unity`: at every root-of-unity parameter, the Jones tower and the $\Phi_q$ saddle tower lie in the *same* solution space of $\hat{A}_K$ — every linear combination is annihilated.
+- `li2_q_eq_aj_saddle_real`: the same at real $q \in (0,1)$ for $\mathrm{Li}_2^q$.
+- `phi_q_li2_q_unified_via_aj`: the two lenses on the one algebraic object $\hat{A}_K$ are genuinely different — the regimes are disjoint (unconditional).
+
+The classes encode literature statements (AJ conjecture, dilog-saddle identifications); the framework's contribution is the IDENTIFICATION at the algebraic-over-$\mathbb{Z}[q^{\pm 1}]$ level. The analytic half of the saddle-point statement (asymptotic growth extraction) remains part of the open class inputs.
 
 ## Conditional dependencies
 

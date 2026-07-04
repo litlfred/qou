@@ -49,6 +49,23 @@
     "reviewed_sha": "b3302691b06ff4207b2e72cda23501bf922042e8",
     "notes": "Agent-CONFIRMED genuine (ledger 2026-07-03): both theorems return inst.regime_eq verbatim — a String-label equation, trivially satisfiable; the AJ-saddle identification is not encoded. Demote to conjecture or re-encode; owner sign-off pending.",
     "severity": "critical"
+   },
+   {
+    "field_hash": {
+     "md": "cc5f92c19224",
+     "ts": "9958d1ab7ec1",
+     "lean": "ddac04485665"
+    },
+    "result": "pass",
+    "reviewer": {
+     "kind": "agent",
+     "id": "local/lean-proof-vacuity-audit",
+     "agent_date": "2026-07-04",
+     "agent_skill": "local/lean-proof-vacuity-audit"
+    },
+    "reviewed_at": "2026-07-04T00:30:51.499613Z",
+    "reviewed_sha": "c588e48cb73bc995f7d35dc988f12a9aef882e2c",
+    "notes": "RESOLVED (supersedes the 2026-07-03 agent fail): sibling re-encoded — String-label classes replaced by content-bearing QDiffOperator model; conditional theorems now DERIVE via proved superposition lemma (Annihilates.add_smul) instead of projecting a conclusion field; qWeyl_commutation + saddle_regimes_disjoint proved unconditionally; no class instance fabricated. lean-direct exit 0, sorry-free."
    }
   ]
  },

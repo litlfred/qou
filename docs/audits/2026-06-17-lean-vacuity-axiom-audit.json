@@ -1,20 +1,20 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-07-04T00:15:55.808Z",
+  "generated": "2026-07-04T00:30:16.381Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 1813,
-  "files_flagged": 47,
-  "total_defects": 29,
+  "files_flagged": 46,
+  "total_defects": 27,
   "total_exempt": 35,
   "categories": {
     "proof-no-trivial-true": 9,
     "proof-no-false-premise": 15,
-    "proof-no-self-assuming-projection": 3,
+    "proof-no-self-assuming-projection": 1,
     "proof-no-decide-masking": 1,
     "proof-claims-unencoded": 1
   },
   "conjecture_graph": {
-    "total": 224,
+    "total": 227,
     "primary": [
       {
         "name": "AeonRecycling",
@@ -832,6 +832,11 @@
         "line": 155
       },
       {
+        "name": "QuantumAPolynomial",
+        "file": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean",
+        "line": 163
+      },
+      {
         "name": "QuantumComputationalUniversality",
         "file": "content/quantum-observable-universe/information-theory/quantum-computational-universality.lean",
         "line": 79
@@ -1154,6 +1159,22 @@
         "line": 81,
         "dependsOn": [
           "ArchimedeanLimit"
+        ]
+      },
+      {
+        "name": "PhiQRegulator",
+        "file": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean",
+        "line": 182,
+        "dependsOn": [
+          "QuantumAPolynomial"
+        ]
+      },
+      {
+        "name": "Li2QRegulator",
+        "file": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean",
+        "line": 196,
+        "dependsOn": [
+          "QuantumAPolynomial"
         ]
       }
     ]
@@ -1838,24 +1859,6 @@
         "decl": "CategoricalReebDerivation",
         "severity": "major",
         "detail": "doc enumerates 2 properties (Normalization, Periodicity); only 0 encoded as Prop field(s)"
-      }
-    ],
-    "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean": [
-      {
-        "line": 117,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "theorem phi_q_eq_aj_saddle_root_of_unity",
-        "decl": "phi_q_eq_aj_saddle_root_of_unity",
-        "severity": "critical"
-      },
-      {
-        "line": 127,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "theorem li2_q_eq_aj_saddle_real",
-        "decl": "li2_q_eq_aj_saddle_real",
-        "severity": "critical"
       }
     ]
   }

@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-07-04T00:11:46.092Z",
+  "updated_at": "2026-07-04T00:30:14.893Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Archimedean/BetaDecay.lean::interaction_completeness::proof-no-false-premise": {
       "category": "proof-no-false-premise",
@@ -296,28 +296,6 @@
       "file_sha": "0eaf50514b42",
       "disposition": "no-fix",
       "evidence": "Detector false positive: both enumerated properties ARE encoded as Prop fields (reeb_normalizes : reeb >> contact = contact; reeb_periodic : (reeb : End obj)^period = 1). The third (Leibniz) is explicitly documented as deferred to the preadditive specialisation.",
-      "reviewer": "agent",
-      "reviewed_at": "2026-07-03T19:59:05Z"
-    },
-    "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean::phi_q_eq_aj_saddle_root_of_unity::proof-no-self-assuming-projection": {
-      "category": "proof-no-self-assuming-projection",
-      "pattern": "field-projection",
-      "line": 117,
-      "verdict": "genuine",
-      "file_sha": "9bfe63baa895",
-      "disposition": "owner-signoff",
-      "evidence": "Proof is := inst.regime_eq — verbatim projection of the class field that IS the conclusion; and the 'conclusion' is a String-label equation (archimedean_regime = \"root_of_unity\") carrying no mathematics: any instance <\"root_of_unity\", rfl> satisfies it. The real identification (Phi_q is the AJ saddle at root of unity) is nowhere encoded. Block is prop:phi-q-aj-machinery-identification (provable kind) — honest fix is encoding real saddle content or demoting to conjecture; kind change needs owner sign-off.",
-      "reviewer": "agent",
-      "reviewed_at": "2026-07-03T19:59:05Z"
-    },
-    "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean::li2_q_eq_aj_saddle_real::proof-no-self-assuming-projection": {
-      "category": "proof-no-self-assuming-projection",
-      "pattern": "field-projection",
-      "line": 127,
-      "verdict": "genuine",
-      "file_sha": "9bfe63baa895",
-      "disposition": "owner-signoff",
-      "evidence": "Same as sibling: := inst.regime_eq projects a String-label equation (\"real_positive\"); trivially satisfiable class, no mathematical content. Same disposition — encode real content or demote; owner sign-off needed.",
       "reviewer": "agent",
       "reviewed_at": "2026-07-03T19:59:05Z"
     }
