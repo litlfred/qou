@@ -154,24 +154,14 @@ theorem trefoilOperator_nontrivial [CharZero K] {q : K} (hq : q ≠ 0) :
   rw [neg_ne_zero]
   exact mul_ne_zero hq (by rw [hA]; norm_num)
 
-/-- **The literature instance (strong AJ for the trefoil), transcribed.**
-    Every field except the general-`N` annihilation is machine-checked;
-    the annihilation for all `N` is literature-established (two-bridge
-    knots) and verified symbolically for `N = 1..10` in the corpus
-    witness — the Lean creative-telescoping certificate is queued. -/
-instance [CharZero K] : StrongAJTrefoil K where
-  op := trefoilOperator
-  order_eq := rfl
-  nontrivial := fun _ hq => trefoilOperator_nontrivial hq
-  annihilates := fun _ _ =>
-    -- Ref: [garoufalidis2004] https://doi.org/10.4310/JDG/1090425531
-    -- (AJ statement; trefoil = two-bridge, established by Lê 2006;
-    --  corpus-side exact symbolic verification N=1..10:
-    --  aj-trefoil-operator-construct-verify.witness.json)
-    sorry
-  unit := trUnit
-  unit_nondegenerate := trUnit_nondegenerate
-  specializes := trefoilOperator_specializes
+/-!
+The instance `StrongAJTrefoil K` lives in
+`QOU.BraidKnot.AJTrefoilAnnihilation`, where the general-`N` annihilation
+is **assembled** (`trefoilOperator_annihilates`: P-form + case split; the
+only unproved inputs are two narrowly-scoped root-of-unity evaluation
+cores).  A broad cited-`sorry` instance formerly lived here; it is
+superseded.
+-/
 
 /-- **Derived (conditional on the literature class): the trefoil tower is
     q-holonomic at every `q = w⁴`, `w ≠ 0`** — ∃-packaging as for `4₁`.
