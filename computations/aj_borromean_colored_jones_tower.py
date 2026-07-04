@@ -61,6 +61,7 @@ Laurent-in-q integrality, YBE, inverse. Audit-only; no production wiring.
 """
 from __future__ import annotations
 
+import os
 import sys
 import time
 from pathlib import Path
@@ -116,8 +117,13 @@ def brace_fac(n: int):
 # of the two parts a scanned convention (variant bit).
 
 def r_apply(m1, m2, vec, inverse=False, diag_first=False):
-    """Apply R (no flip) or its exact inverse to a sparse vector
+    """Apply R (no flip) or its purported inverse to a sparse vector
     {(i, j): coeff} on V_{m1} (x) V_{m2} (same space out).
+
+    ⚠ The `inverse=True` branch is KNOWN-BUGGY at color >= 3 (see the module
+    docstring): R.Rinv != id on V3⊗V3. Do not treat inverse=True as correct
+    until bean 1iqq lands the verified R-matrix. The forward (inverse=False)
+    branch is correct (inverse+YBE verified on V2⊗V2, V2⊗V3).
 
     R = D . N with D = q^{H(x)H/4} (diagonal), N = sum_n c_n E^n (x) F^n,
     c_n = q^{n(n-1)/2} (q-q^{-1})^n / [n]!.  The E^n(x)F^n terms multiply
@@ -142,8 +148,10 @@ def r_apply(m1, m2, vec, inverse=False, diag_first=False):
             if not inverse:
                 coeff_n = (s - 1 / s) ** n / qfac(n) * t ** (2 * n * (n - 1))
             else:
-                coeff_n = (-1) ** n * (s - 1 / s) ** n / qfac(n) \
+                coeff_n = (
+                    (-1) ** n * (s - 1 / s) ** n / qfac(n)
                     * t ** (-2 * n * (n - 1))
+                )
             ii, jj = i - n, j + n
             h_out = (m1 - 1 - 2 * ii) * (m2 - 1 - 2 * jj)
             # forward R = D.N: diag acts on the OUTPUT weights (after N);
@@ -190,7 +198,7 @@ def braid_apply(colors, word, basis_vec, diag_first=False):
                 nid[pos], nid[pos + 1] = x_, y_
                 key = tuple(nid)
                 new[key] = sp.expand(new.get(key, 0) + co2)
-        vec = {k: v for k, v in new.items() if v != 0}
+        vec = {k: v for k, v in new.items() if not v.equals(0)}
         cols[pos], cols[pos + 1] = cols[pos + 1], cols[pos]
     return vec, cols
 
@@ -210,8 +218,11 @@ def colored_jones_reduced(m1, m2, m3, diag_first=False):
                 assert cols == [m1, m2, m3]
                 co = vec.get((a, b, c), sp.Integer(0))
                 if co != 0:
-                    mu = s ** (m1 - 1 - 2 * a) * s ** (m2 - 1 - 2 * b) \
+                    mu = (
+                        s ** (m1 - 1 - 2 * a)
+                        * s ** (m2 - 1 - 2 * b)
                         * s ** (m3 - 1 - 2 * c)
+                    )
                     tr += sp.expand(co * mu)
     red = sp.cancel(sp.expand(tr) / (qint(m1) * qint(m2) * qint(m3)))
     return sp.expand(red)
@@ -248,7 +259,8 @@ def main() -> int:
                         v2[k2] = sp.expand(v2.get(k2, 0) + c2)
                 v2 = {k_: v_ for k_, v_ in v2.items()
                       if not v_.equals(0)}
-                if v2 != {(i, j): sp.Integer(1)}:
+                if (set(v2.keys()) != {(i, j)}
+                        or not (v2.get((i, j), sp.Integer(0)) - 1).equals(0)):
                     ok_inv = False
         # YBE on V2^(x)3: (R1 R2 R1) = (R2 R1 R2) as braid word action
         ok_ybe = True
@@ -289,7 +301,8 @@ def main() -> int:
                 for k2, c2 in r2.items():
                     v2[k2] = v2.get(k2, 0) + c2
             v2 = {k_: v_ for k_, v_ in v2.items() if not is_zero(v_)}
-            if v2 != {(i, j): sp.Integer(1)}:
+            if (set(v2.keys()) != {(i, j)}
+                    or not is_zero(v2.get((i, j), sp.Integer(0)) - 1)):
                 inv3_bad += 1
     inv3_ok = inv3_bad == 0
     print(f"  V3⊗V3 inverse R·R⁻¹=id? {'OK' if inv3_ok else f'FAIL ({inv3_bad} basis vecs)'}"
@@ -300,7 +313,6 @@ def main() -> int:
     # heaviest triple (64 basis states x 6-crossing braid, exact ℚ(√3)) and
     # can run 30-60 min; the committed witness uses MMAX=3 (c_0,c_1,c_2 fully
     # over-determined on all m_i<=3 triples), MMAX=4 is the slower extension.
-    import os
     MMAX = int(os.environ.get("BORROMEAN_MMAX", "3"))
     values = {}
     triples = []
@@ -327,10 +339,15 @@ def main() -> int:
     # t-exponent is a multiple of 4 (a genuine function of q = t^4).
     def q_shape_ok(e):
         num, den = sp.fraction(sp.together(sp.cancel(e)))
-        # numerator must be a Laurent polynomial in q (exponents ≡ 0 mod 4
-        # after clearing an overall t-power)
-        pn = sp.Poly(sp.expand(num * t ** 400), t)
-        num_q = all((m_[0] - 400) % 4 == 0 for m_ in pn.monoms())
+        # numerator is a Laurent polynomial in t; shift it up by its own
+        # most-negative exponent (computed, not hard-coded) so sp.Poly can
+        # parse it, then require every ORIGINAL exponent ≡ 0 mod 4 (a genuine
+        # function of q = t^4).
+        n2 = sp.expand(num)
+        exps = [term.as_coeff_exponent(t)[1] for term in n2.as_ordered_terms()]
+        shift = -min(exps) if exps else 0
+        pn = sp.Poly(sp.expand(n2 * t ** shift), t)
+        num_q = all((m_[0] - shift) % 4 == 0 for m_ in pn.monoms())
         # denominator must factor into t^k and cyclotomic pieces (t^{4}-1)-type
         dfac = sp.factor(den)
         return num_q, str(dfac)
