@@ -5,7 +5,8 @@ reduces to the six-element normal form basis via these rules.
 **Relation 1 (Hecke).**
 $\sigma_i^2 = (q - q^{-1})\sigma_i + \mathbf{1}$
 for each generator $\sigma_i$.  Squaring a crossing yields
-the identity (photon) plus a HA-weighted crossing.
+the identity (photon) plus a crossing weighted by the Hecke
+amplitude $h = q - q^{-1}$.
 
 **Relation 2 (Yang--Baxter).**
 $\sigma_0\sigma_1\sigma_0 = \sigma_1\sigma_0\sigma_1$.
@@ -14,7 +15,8 @@ the trefoil representations on both generator orderings.
 
 **Relation 3 (Hecke inverse).**
 $\sigma_i^{-1} = \sigma_i - (q - q^{-1})\mathbf{1}$.
-Inverting a crossing subtracts HA from the identity channel.
+Inverting a crossing subtracts the Hecke amplitude $h$ from
+the identity channel.
 
 **Table K.2: Composite operations and their normal forms.**
 
