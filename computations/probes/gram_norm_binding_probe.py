@@ -197,6 +197,20 @@ def main() -> int:
         sc_f, anti_f = _stratum_stats(pl_f, Gf)
         delta = {lam: pl_a[lam] - pl_f.get(lam, 0.0) for lam in pl_a}
         top_recv = sorted(delta.items(), key=lambda kv: -abs(kv[1]))[:3]
+        # redistribution aggregates (the w_n(K)-carrier cross-link, 2026-07-04):
+        # R = half the total variation of the per-block Gram distribution under
+        # binding — derived, isospin-aware, and (unlike the hyperbolic
+        # sub-link volume, Hopf Vol=0) NONZERO for the deuteron.
+        R_abs = 0.5 * sum(abs(d) for d in delta.values())
+        R_signed = sum(delta.values())            # = G_atom − G_free
+        # chiral-antisymmetric part of the redistribution (block-level bar-odd)
+        seen_p, R_anti = set(), 0.0
+        for lam, d in delta.items():
+            lc = _conj(lam)
+            if lc == lam or lam in seen_p:
+                continue
+            seen_p.add(lc)
+            R_anti += abs(d - delta.get(lc, 0.0)) / 2.0
         # bar-parity split of G: rerun the whole pipeline at q₀⁻¹ through the
         # q-parameterised path. NB the q-explicit word uses the proven leading
         # flavor split (not the baked canonical δ), so both bar legs use the
@@ -253,6 +267,10 @@ def main() -> int:
             "chiral_anti_share_atom": anti_a, "chiral_anti_share_free": anti_f,
             "top_receivers": [{"lam": list(lam), "delta_c": dc}
                               for lam, dc in top_recv],
+            "R_abs": R_abs, "R_signed": R_signed, "R_anti": R_anti,
+            "delta_c_full": [{"lam": list(lam), "delta": d}
+                             for lam, d in sorted(delta.items(),
+                                                  key=lambda kv: -abs(kv[1]))],
             "qbar": qbar,
             "wall_sec": round(time.time() - t0, 2),
         })
@@ -283,6 +301,13 @@ def main() -> int:
               f"| {f2(r['selfconj_share_free'])} "
               f"| {f2(r['chiral_anti_share_atom'])} "
               f"| {f2(r['chiral_anti_share_free'])} | {tops} |")
+
+    print("\n| iso | B_AME | R_abs | R_anti | R_signed | α·R_abs (MeV) |")
+    print("|---|--:|--:|--:|--:|--:|")
+    for r in rows:
+        print(f"| {r['iso']} | {r['B_AME'] if r['B_AME'] else '—'} "
+              f"| {r['R_abs']:.4f} | {r['R_anti']:.4f} | {r['R_signed']:+.4f} "
+              f"| {alpha * r['R_abs']:.3f} |")
 
     if args.qbar:
         print("\n| iso | G_even atom | G_odd atom | odd/even atom "
