@@ -47,7 +47,7 @@ class BringsEulerCharacteristicContext where
   /-- The Descartes substrate parameter `q₀ : ℝ`, at which the quantum
       dimension is specialised in `quantum_dimension_recovers_chi`
       (archimedean, hence `ℝ` per AGENTS.md §7c). -/
-  q : ℝ
+  q0 : ℝ
   /-- Bring's surface genus — the genuine geometric input `g(Σ₄) = 4`. -/
   g : ℕ
   /-- The classical genus fact for Bring's surface. -/
@@ -95,7 +95,7 @@ opaque quantumDimensionAt : ℝ → ℤ
     (AGENTS.md §1), not a projected claim field. -/
 -- Ref: [manuscript] quantum-observable-universe/brings-surface/brings-euler-characteristic.md
 theorem quantum_dimension_recovers_chi [ctx : BringsEulerCharacteristicContext] :
-    quantumDimensionAt ctx.q = BringsEulerCharacteristicContext.chi_A := by
+    quantumDimensionAt ctx.q0 = BringsEulerCharacteristicContext.chi_A := by
   -- Needs: the categorical trace tr(id_A) of A = 𝒪_q(SU(2)) on Σ₄ and its
   -- specialisation at the Descartes substrate parameter q₀.
   -- Ref: [manuscript] quantum-observable-universe/brings-surface/brings-euler-characteristic.md
