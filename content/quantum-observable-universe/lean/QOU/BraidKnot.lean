@@ -24,6 +24,8 @@ import QOU.BraidKnot.CyclotomicDimensionSynthesisAllDepths
 import QOU.BraidKnot.QHeckeSeminormalCharacterClosure
 import QOU.BraidKnot.BringTrilogImaginaryTateRational
 import QOU.BraidKnot.Cl3Zeta5OrbitSum
+import QOU.BraidKnot.BringTrilogDepth3Witness
+import QOU.BraidKnot.Cl3Zeta5GeometricRealization
 import QOU.BraidKnot.Cl3Zeta5PslqIndependence
 import QOU.BraidKnot.KnotIndexedConvolutionGrid
 import QOU.BraidKnot.ConfinedParticle
