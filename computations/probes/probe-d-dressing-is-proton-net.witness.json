@@ -1,12 +1,12 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-04T10:58:36.385551+00:00",
-  "commitSha": "3abd8ecc12d8005cbc7e2b955faad1840335929f",
+  "computedAt": "2026-07-04T13:24:19.598668+00:00",
+  "commitSha": "4dfe838c398126a960003b0092b87838bf3818a1",
   "assertions": [
     {
       "name": "abs_delta_net_eq_h_net_p",
-      "computed": 5.193957099833648e-61,
+      "computed": 0.0,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-45,
@@ -21,11 +21,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": 21,
   "computation": "probe-d-dressing-is-proton-net",
   "scriptFile": "probe_d_dressing_is_proton_net.py",
-  "scriptHash": "59b357d1e73e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "909123d5e1a4",
+  "scriptCommitSha": "4dfe838c398126a960003b0092b87838bf3818a1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,7 +43,7 @@
   "auditOnly": "docs/audits/2026-07-04-deuteron-dressing-is-proton-net.md",
   "parameters": {
     "q0": "1.1099785827513808075916690956107688798744991218736",
-    "compute_dps": 50
+    "compute_dps": 70
   },
   "data": {
     "symbolic": {
@@ -60,7 +60,7 @@
       "net_n": "0.70826265607280202155",
       "abs_delta_net": "0.18720719452937832073",
       "h_times_net_p": "0.18720719452937832073",
-      "abs_delta_eq_h_net_p_reldiff": 5.193957099833648e-61,
+      "abs_delta_eq_h_net_p_reldiff": 0.0,
       "Qbeta_ansatz_MeV": "0.783645827374621213",
       "Qbeta_kashiwara_MeV": "0.782334386518171885",
       "Qbeta_ansatz_vs_kashiwara_rel": 0.0016763175427913603,
@@ -69,7 +69,7 @@
       "B_cand_err_vs_AME_pct": 0.28665559959396997,
       "B_via_kashiwara_qbeta_MeV": "2.2272095331670547",
       "B_via_qbeta_err_vs_AME_pct": 0.11882465745702253,
-      "consistency_cand_vs_ansatz_route_rel": 6.973525496058736e-61
+      "consistency_cand_vs_ansatz_route_rel": 0.0
     }
   }
 }
