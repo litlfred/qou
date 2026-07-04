@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-04T00:25:49.309309+00:00",
-  "commitSha": "93ef68dc031f88c4dbabd5eb162b7049083feea2",
+  "computedAt": "2026-07-04T00:33:36.431074+00:00",
+  "commitSha": "1901fde05efa4200df44c569af122c2e3d9a8a25",
   "assertions": [
     {
       "name": "Mn_derived_as_bondcount_3H_within_1pct",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 10,
   "computation": "theta-mn-bondcount-linearchain",
   "scriptFile": "theta_mn_bondcount_linearchain.py",
   "scriptHash": "d59b4841a622",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "21b8e426c0aace22119f21325e65bd11a5d1d7f6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
