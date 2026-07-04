@@ -57,8 +57,9 @@ def main() -> int:
     # ---- rebuild E, O, u~ exactly as the 08ds ORD-17 probe (same conventions) ----
     dnet = sp.simplify(load_net_symbolic("neutron") - load_net_symbolic("proton"))
     dnet_reg = sp.cancel(dnet / (q - 1))
-    q0 = mp.mpf(json.load(open(_pb.witness_path(
-        "q-pinning-50-digit.witness.json", HERE)))["derived_50_digit"]["q"])
+    with open(_pb.witness_path("q-pinning-50-digit.witness.json", HERE),
+              encoding="utf-8") as fh:
+        q0 = mp.mpf(json.load(fh)["derived_50_digit"]["q"])
     sgn = int(mp.sign(sp.lambdify(q, dnet, "mpmath")(q0)))
     Qb = rat_series(sp.Integer(sgn) * dnet_reg / q)
     QA = rat_series((2 * q + 1 - q**2) * (q + 1) / (2 * q**3))
