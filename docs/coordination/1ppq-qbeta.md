@@ -703,3 +703,32 @@ question on both sides of the μ–p work.
   frontier, localizes residue to R₁₂) and **#3273** (route-A `c₄^even` H₄ build)
   both live past this floor; flagged the pin-stability caution to #3273 so
   `c₄^even` doesn't absorb the μ–p tension the way m_p's c₄ did.
+## 8we6 — H₄ `c₄^even` build: appended-strand routes fail the gate; channel-projection is the survivor (2026-07-04)
+
+The gated next step P-C15 pointed to (the H₄ Hoefsmit `c₄^even` build) was attempted.
+Route B (re-decompose the unchanged H₃ element at λ⊢4) is **machine-checked pruned**
+([`H4RouteBBranchingPrune.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/H4RouteBBranchingPrune.lean),
+PR #3273). A headless n-agnostic H₄ Markov-assembly
+([`qbeta_h4_nucleon_assembly.py`](../../computations/qbeta/qbeta_h4_nucleon_assembly.py))
+reproduces the committed H₃ `Δ(net)` **exactly**, validating the harness (H₃ ladder
+gives `c₂=−8.00641, c₃=+86.66116` exactly).
+
+**Both owner-chosen explicit 4th-strand routes fail the stability gate.** Lepton
+(u–d-averaged) and brane (bare σ₂ Hopf) reach word length 4 (real σ₂-support) but
+**move c₂/c₃** — at full coupling (lepton `−6.84/+73.4`; brane `+3.99/−65.5`,
+sign-flipped) **and at linear order** (`dc₂/dg|₀ ≈ +16.4 / +13.7`, not zero). Recorded
+**scope-(a)**: the *appended-strand construction* is out (it redistributes NF weight
+across all word lengths, hitting the short words that drive c₂,c₃), **not** the
+4th-strand ingredient.
+
+**The g-response failure motivates the channel-projected (Brunnian/SDP) route** as the
+structural survivor: the n=4 cup-diagram Gram `G=[[δ²,δ],[δ,δ²]]` splits into a
+**bar-even** channel (`u1+u2`, eigenvalue `δ(δ+1)` — where a `c₄^even` rung lives) and
+bar-odd (`u1−u2`, `δ(δ−1)`); both bar-invariant. This channel is orthogonal to the
+nucleon's short-word structure, so it does not touch c₂,c₃.
+
+- Audit: [`2026-07-04-8we6-h4-route-a-explicit-strand-gate-scan.md`](../audits/2026-07-04-8we6-h4-route-a-explicit-strand-gate-scan.md)
+- Gram groundwork: [`qbeta_h4_gram_barchannel_probe.py`](../../computations/qbeta/qbeta_h4_gram_barchannel_probe.py) → witness.
+- **Owner-gated remaining decision:** the SDP objective weights `t` / net target
+  `n_target` for the n=4 singlet selection, and the selected-channel → Q_β net-route
+  ladder linkage. These are framework choices, not agent ansätze.
