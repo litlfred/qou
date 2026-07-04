@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "621c2a87c78e",
     "ts": "01d9c8ff0d10",
-    "lean": "1c2642e2e9f1"
+    "lean": "c68c25e563db"
   },
   "criteria": {
     "voice-status-leak": [
@@ -474,6 +474,23 @@
         "severity": "critical",
         "evidence": "germ-commutator-q-curvature.lean:50-59: field `parallelogram : obsCommutator δq₁ δq₂ = Fq` and `theorem commutator_eq_curvature (P : ObservationParallelogram R) : obsCommutator P.δq₁ P.δq₂ = P.Fq := P.parallelogram`",
         "notes": "The lean.ref resolves to commutator_eq_curvature, whose body is a verbatim projection of the structure field `parallelogram` whose type IS the theorem's own conclusion (P ⊢ P). The data fields δq₁/δq₂/Fq are not derived through any composition — the identity is assumed as a field and handed back. This is the self-assuming-projection anti-pattern. Restructure so the identity is derived (e.g. carry the two perturbations + a curvature DEFINITION and prove the bracket equals it), or treat the structure as a conjecture carrier. Note agree_iff_flat / curvature_antisymm DO compose fields and are legitimate."
+      },
+      {
+        "field_hash": {
+          "md": "621c2a87c78e",
+          "ts": "01d9c8ff0d10"
+        },
+        "result": "pass",
+        "notes": "Re-encoded on branch claude/lean-qa-backlog-2h3f8d: carrier fields are now genuine sub-hypotheses (never the conclusion) and the theorem DERIVES its conclusion by composing them / applying proved lemmas — no longer projects an assumed field (AGENTS.md §3b-cond item 5). Verified lean-direct exit 0.",
+        "reviewed_at": "2026-07-04T10:41:58.000Z",
+        "reviewed_sha": "3dd36f14516a6043b87a5a6f8ad6a24bc6b16c13",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-proof-vacuity-audit",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-07-04"
+        }
       }
     ],
     "proof-no-trivial-true": [
@@ -826,5 +843,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:58.083Z"
+  "updated_at": "2026-07-04T10:41:58.000Z"
 }

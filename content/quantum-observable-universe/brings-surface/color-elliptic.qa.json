@@ -1692,6 +1692,23 @@
         "severity": "critical",
         "evidence": "lean/QOU/Brings/color_elliptic.lean:28-52: `class ColorEllipticContext ... where claim_color_elliptic : X^3 + (z+1)X^2 + ... = 0` then `theorem color_elliptic [ctx : ColorEllipticContext] : <same cubic> = 0 := ctx.claim_color_elliptic`",
         "notes": "Verbatim self-assuming projection (P ⊢ P): the theorem's conclusion IS the class field `claim_color_elliptic`, handed straight back. The inherited MarkovTraceContext sibling fields are unused. No derivation/composition. This is the §3b-cond anti-pattern and a deletion/replacement target — the real algebraic content lives in the sibling color-elliptic.lean (ring lemmas) but is not what the ref resolves to."
+      },
+      {
+        "field_hash": {
+          "md": "93e9c72aceec",
+          "ts": "9da0df7b86b8"
+        },
+        "result": "pass",
+        "notes": "Re-encoded on branch claude/lean-qa-backlog-2h3f8d: carrier fields are now genuine sub-hypotheses (never the conclusion) and the theorem DERIVES its conclusion by composing them / applying proved lemmas — no longer projects an assumed field (AGENTS.md §3b-cond item 5). Verified lean-direct exit 0.",
+        "reviewed_at": "2026-07-04T10:41:58.000Z",
+        "reviewed_sha": "3dd36f14516a6043b87a5a6f8ad6a24bc6b16c13",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-proof-vacuity-audit",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-07-04"
+        }
       }
     ],
     "proof-no-trivial-true": [
@@ -1801,6 +1818,23 @@
         "severity": "major",
         "evidence": "lean/QOU/Brings/color_elliptic.lean:48-52: theorem uses only `ctx.claim_color_elliptic`; the inherited `QOU.Shared.MarkovTraceContext` fields and the `z`/`X` data carry no role in the derivation.",
         "notes": "Direct consequence of the self-assuming projection: every sibling hypothesis field except the claim itself is unused. Indicates the statement is the assumed field, not a derived result."
+      },
+      {
+        "field_hash": {
+          "md": "93e9c72aceec",
+          "ts": "9da0df7b86b8"
+        },
+        "result": "pass",
+        "notes": "Re-encoded to a self-contained declaration; the previously-inherited unused context fields are gone.",
+        "reviewed_at": "2026-07-04T10:41:58.000Z",
+        "reviewed_sha": "3dd36f14516a6043b87a5a6f8ad6a24bc6b16c13",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-proof-vacuity-audit",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-07-04"
+        }
       }
     ],
     "proof-no-decide-masking": [
@@ -2084,5 +2118,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.404Z"
+  "updated_at": "2026-07-04T10:41:58.000Z"
 }
