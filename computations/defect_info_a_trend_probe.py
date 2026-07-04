@@ -32,7 +32,7 @@ from phase5_n8_dim_q_table import hook_lengths  # noqa: E402
 from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
 from chi_free_via_lr import chi_free_lr  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q as Q0, Q_50_DIGIT_STR  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 
 COMPUTE_DPS = 70
@@ -62,7 +62,7 @@ def main() -> int:
     start = time.monotonic()
     mp.mp.dps = COMPUTE_DPS
     ame = json.loads(AME_WITNESS.read_text())["data"]
-    q0 = mp.mpf(str(Q0))
+    q0 = mp.mpf(Q_50_DIGIT_STR)  # high-precision q0 (Q is the f64 shim)
     m_e = mp.mpf(str(M_E_MEV))
     e0 = m_e / (q0 * (q0 - 1))
 
@@ -90,7 +90,7 @@ def main() -> int:
             "B_q0_MeV": mp.nstr(b_q0, DPS), "B_AME_MeV": mp.nstr(b_ame, DPS),
             "residual_raw_MeV": mp.nstr(r_raw, DPS),
             "E_defect_info_MeV": mp.nstr(e_def, DPS),
-            "ratio": mp.nstr(ratio, mp.mp.dps) if ratio is not None else None,
+            "ratio": mp.nstr(ratio, DPS) if ratio is not None else None,
         }
         ratio_str = f"{float(ratio):8.3f}" if ratio is not None else "     n/a"
         print(f"  {iso:4s}| {z+nn:2d} | {float(b_q0):8.3f}  {float(b_ame):8.3f}  "
@@ -112,7 +112,7 @@ def main() -> int:
         "tier": "shape-probe (fit-free; production channel weights; nothing wired)",
         "precision_dps": {"compute": COMPUTE_DPS, "serialized": DPS},
         "source_witness": AME_WITNESS.name,
-        "constants": {"q_0": mp.nstr(q0, 20), "E0_MeV": mp.nstr(e0, 20)},
+        "constants": {"q_0": mp.nstr(q0, DPS), "E0_MeV": mp.nstr(e0, DPS)},
         "isotopes": rows,
         "verdict": {"deviation_from_1_nonincreasing_at_top3_A": converging},
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
