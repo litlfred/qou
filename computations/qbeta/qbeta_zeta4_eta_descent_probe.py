@@ -27,15 +27,14 @@ over-determined checks run):
   (iii) relation of t to the ladder variable u~ = q*u: is t a u~-series?
         (Ties the descent variable to the c_k program; informational.)
 
-VALIDITY WINDOW (v2 fix): O is exact through s^ORD, so (O/ell)/s^3 is
-exact only through order ORD-3, hence eta through ORD-2 and t = eta^2
-through ORD-1.  v1 zero-padded the top 3 orders and scanned to ORD,
-producing garbage "violations" exactly at the corrupted orders (i)=14,
-(ii)=15 at ORD=15 — truncation artifacts, not obstructions.  v2 scans
-only the valid window.  v1's check "(O/(ell eta^3) in [[t]])" was a
-tautology under this gauge (identically 1) and is removed.
+VALIDITY WINDOW: O is exact through s^ORD, so (O/ell)/s^3 is exact
+only through order ORD-3, hence eta through ORD-2 and t = eta^2 through
+ORD-1.  The probe scans only this valid window to avoid truncation
+artifacts.  (Development history — earlier boundary-order artifacts and
+a removed gauge-tautology check — is recorded in
+docs/audits/2026-07-03-0zr0-eta-descent-invariant-theory-prune.md.)
 
-INTERPRETATION (v3 — formalize-first prune of this very test class):
+INTERPRETATION (formalize-first prune of this very test class):
 all three membership checks are THEOREMS, not empirical findings.
 sigma is an order-2 automorphism of Q(sqrt3)[[s]]; the invariant ring of
 a finite-order automorphism of k[[s]] is k[[w]] on ANY invariant
@@ -144,8 +143,9 @@ def main() -> int:
 
     dnet = sp.simplify(load_net_symbolic("neutron") - load_net_symbolic("proton"))
     dnet_reg = sp.cancel(dnet / (q - 1))
-    q0 = mp.mpf(json.load(open(_pb.witness_path(
-        "q-pinning-50-digit.witness.json", HERE)))["derived_50_digit"]["q"])
+    with open(_pb.witness_path(
+            "q-pinning-50-digit.witness.json", HERE)) as fh:
+        q0 = mp.mpf(json.load(fh)["derived_50_digit"]["q"])
     sgn = int(mp.sign(sp.lambdify(q, dnet, "mpmath")(q0)))
     Qb = rat_series(sp.Integer(sgn) * dnet_reg / q)
     QA = rat_series((2 * q + 1 - q**2) * (q + 1) / (2 * q**3))
@@ -227,9 +227,10 @@ def main() -> int:
     print(f"\n  VERDICT: {verdict}")
     print(f"  ({time.monotonic()-t0:.1f}s)")
 
-    wb = WitnessBuilder("qbeta-zeta4-eta-descent", engine="sympy")
+    wb = WitnessBuilder("qbeta-zeta4-eta-descent", engine="sympy",
+                        start_time=t0)
     wb.set_description(
-        "0zr0 (v3): eta-descent — exact construction of the bar-odd fibre "
+        "0zr0: eta-descent — exact construction of the bar-odd fibre "
         "argument eta from O (cube-root gauge; O = ell*eta^3 by construction) "
         "+ exact membership checks over the validity window. INTERPRETATION: "
         "the membership checks are THEOREMS (invariant ring of the order-2 "
@@ -239,9 +240,8 @@ def main() -> int:
         "falsifiable content. The data is the exact rung arithmetic: growing "
         "|g_{k+1}/g_k| -> ~20 falsifies the entire cosh/sinh (zeta4-partner "
         "V0) family scope (a) and locates a finite radius of convergence "
-        "~1/20.5 in t = eta^2 (|eta| ~ 0.221). v1's boundary 'failures' "
-        "were zero-padding "
-        "truncation artifacts; v1's odd-tail check was a gauge tautology."
+        "~1/20.5 in t = eta^2 (|eta| ~ 0.221). Development history: "
+        "docs/audits/2026-07-03-0zr0-eta-descent-invariant-theory-prune.md."
     )
     wb.add_data("ORD", ORD)
     wb.add_data("eta_valid_through", ETA_MAX)

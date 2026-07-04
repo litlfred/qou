@@ -106,8 +106,9 @@ def main() -> int:
     # ---- shared exact objects --------------------------------------------
     dnet = sp.simplify(load_net_symbolic("neutron") - load_net_symbolic("proton"))
     dnet_reg = sp.cancel(dnet / (q - 1))
-    q0 = mp.mpf(json.load(open(_pb.witness_path(
-        "q-pinning-50-digit.witness.json", HERE)))["derived_50_digit"]["q"])
+    with open(_pb.witness_path(
+            "q-pinning-50-digit.witness.json", HERE)) as fh:
+        q0 = mp.mpf(json.load(fh)["derived_50_digit"]["q"])
     sgn = int(mp.sign(sp.lambdify(q, dnet, "mpmath")(q0)))
 
     # ---- LEG 1: exact rungs -> t_c ---------------------------------------
@@ -304,7 +305,8 @@ def main() -> int:
     print(f"\n  VERDICT: {verdict}")
     print(f"  ({time.monotonic()-t0:.1f}s)")
 
-    wb = WitnessBuilder("qbeta-eta-singularity", engine="mpmath+sympy")
+    wb = WitnessBuilder("qbeta-eta-singularity", engine="mpmath+sympy",
+                        start_time=t0)
     wb.set_description(
         "0zr0 follow-up: identify the nearest t-plane singularity of the "
         "descent function E(t). LEG 1: Domb-Sykes + Pade t_c from the exact "

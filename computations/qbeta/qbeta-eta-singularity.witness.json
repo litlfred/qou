@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-03T19:29:55.242025+00:00",
-  "commitSha": "fa31938cfa0eef86db7937d48497853100c0fba0",
+  "computedAt": "2026-07-04T00:01:26.542458+00:00",
+  "commitSha": "0df9d60932948c370cf9dcd038eec6e3f27fd28c",
   "assertions": [
     {
       "name": "rungs_grow_finite_radius",
@@ -12,11 +12,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 19204,
   "computation": "qbeta-eta-singularity",
   "scriptFile": "qbeta_eta_singularity_probe.py",
-  "scriptHash": "375514e51f69",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a09e26bd4e63",
+  "scriptCommitSha": "0c55eb3e888bcccb93cff99b96b96945c50cf3c3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
