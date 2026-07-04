@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-04T00:02:24.019376+00:00",
-  "commitSha": "425918de3d92f69df43c46e4e8e1cb1ad5995fca",
+  "computedAt": "2026-07-04T00:07:25.296524+00:00",
+  "commitSha": "373f2b8c6a2804ed45fdf9b6f017f7bac907f4f1",
   "assertions": [
     {
       "name": "multiplicity_is_isospin_independent",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 109,
+  "durationMs": 9,
   "computation": "theta-mn-multiplicity",
   "scriptFile": "theta_mn_multiplicity.py",
-  "scriptHash": "257df3a403e9",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0082d4d299c5",
+  "scriptCommitSha": "373f2b8c6a2804ed45fdf9b6f017f7bac907f4f1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
