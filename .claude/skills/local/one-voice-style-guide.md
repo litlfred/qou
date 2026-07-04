@@ -102,11 +102,12 @@ dimension of the `expo-milnor-clarity` QA param (below):
 These are enforced two ways: (a) as **author guidance** here in the
 one-voice profile — write to them from the first draft; and (b) as an
 explicit **agentic-QA sidecar param**, `expo-milnor-clarity`, an
-advisory agent rater that scores each block 0–2 on H1–H8 and records the
-score + weakest dimensions in the block's `.qa.json`. The rater is
-*advisory* (`pass`/`warn`, never a blocking `fail`) — Milnor-style is
-aesthetic, so it nudges, it does not gate. Full spec (rubric, prompt,
-scoring, fixtures):
+agent rater that scores each block 0–2 on H1–H8 and records the
+score + weakest dimensions in the block's `.qa.json`. Per owner ruling
+(2026-07-04) the rater is a **strict gate**: `pass` only on a perfect
+16/16 (every hallmark a 2), `warn` for 12–15, `fail` for ≤ 11. The
+Milnor standard is *perfection* — a single non-perfect dimension drops
+the block out of `pass`. Full spec (rubric, prompt, scoring, fixtures):
 [`docs/requirements/2026-07-04-folio-assistant-proof-narrative-checkers.md` §5A](../../../docs/requirements/2026-07-04-folio-assistant-proof-narrative-checkers.md).
 
 ## Paper-Level Voice Rules
