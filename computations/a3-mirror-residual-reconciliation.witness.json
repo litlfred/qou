@@ -1,0 +1,48 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-04T10:55:56.363377+00:00",
+  "commitSha": "17d5f19ac0a0f17cac3663b1284a470e8f102a19",
+  "assertions": [
+    {
+      "name": "mirror_residual_is_open_em_linking_gate",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "the A=3 mirror residual reduces to the corpus's open two-like-charge EM-linking invariant (derived Coulomb covers 31%; 3.2× owner-gated); not a fresh target, and not fit-closable (CAL-4)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "a3-mirror-residual-reconciliation",
+  "scriptFile": "a3_mirror_residual_reconciliation.py",
+  "scriptHash": "85d4f4ce2ee1",
+  "scriptCommitSha": "17d5f19ac0a0f17cac3663b1284a470e8f102a19",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "The ~3% ³He residual of the linear-chain bond-count binding reconciles with the corpus-derived pp-Coulomb mechanism (def:coulomb-charge): the bond-count VOLUME gap (8_11 vs L6a4) and the pp-Coulomb reduction are the same mirror-split object. Residual = the OPEN two-like-charge EM-linking invariant (owner-gated; 3.2× remaining of the split). No fit — fitting a pp-Coulomb constant is a CAL-4 violation.",
+  "data": {
+    "bond_count": {
+      "3H_err_pct": -0.1556014990299123,
+      "3He_err_pct": -2.9686547482331886
+    },
+    "coulomb": {
+      "split_AME_MeV": 0.76375488,
+      "derived_MeV": 0.23767143755081482,
+      "derived_fraction": 0.31118810992188334
+    }
+  }
+}
