@@ -11,10 +11,9 @@ $\dagger \colon \mathbf{C}^{\mathrm{op}} \to \mathbf{C}$ satisfying:
 
    ```tex
    \begin{equation}\label{eq:involutivity-cd}
-   \begin{tikzcd}[column sep=3em]
-     X \ar[r, "f"] \ar[rr, bend left=30, "f^{\dagger\dagger} = f"]
-     & Y \ar[r, "f^{\dagger}"{description}]
-     & X
+   \begin{tikzcd}[column sep=5em]
+     X \ar[r, bend left=30, "f = f^{\dagger\dagger}"]
+     & Y \ar[l, bend left=30, "f^{\dagger}"]
    \end{tikzcd}
    \end{equation}
    ```
