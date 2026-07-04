@@ -35,7 +35,8 @@ $$
 
 where the product is taken in decreasing order of $j$.
 
-The **Markov-traced volume** at generator $\sigma_i$ is:
+The **Markov-traced volume** at generator $\sigma_i$ is (with
+$z(q) = 1/(q^{1/2} + q^{-1/2})$ the Markov-trace loop value):
 
 $$
   \hat{V}_i(q) =  z(q) \cdot (M_i)_{11} + (M_i)_{21}
