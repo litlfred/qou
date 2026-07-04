@@ -30,7 +30,6 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE / "substrate"))
 sys.path.insert(0, str(HERE))
-from q_parameter import Q as Q0  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_E_MEV, AME_B_DEUTERON_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION,
