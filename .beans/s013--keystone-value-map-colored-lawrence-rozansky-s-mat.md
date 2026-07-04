@@ -1,10 +1,11 @@
 ---
 # s013
 title: 'Keystone value-map: colored Lawrence-Rozansky S-matrix for Σ(2,3,5) → bwS0=d_q/D'
-status: in-progress
+status: completed
 type: task
+priority: normal
 created_at: 2026-06-30T23:50:37Z
-updated_at: 2026-07-02T12:40:00Z
+updated_at: 2026-07-04T14:16:24Z
 ---
 
 
