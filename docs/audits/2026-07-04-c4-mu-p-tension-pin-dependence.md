@@ -97,6 +97,41 @@ The question becomes well-posed only if the substrate fixes **one** q₀:
 Absent either, `c₄` stays a calibration artifact and the tension stays at
 its ≈ 240 ppb floor.
 
+## Update (2026-07-04, same day): the tower was a live +242 ppb bug — DROPPED
+
+After the **2026-07-03 owner ruling** re-pinned the canonical q₀ to the raw
+**proton** pin (commit `7b95577a`), `computations/m_p_substrate_identity_50dps.py`
+still multiplied the base formula by the **muon-era** fitted tower
+`(1+46u⁴)(1+4u⁵)(1−29u⁶)`. At the proton pin the base already lands m_p at
+**+1.35 ppb**, so the tower *added* its +242 ppb on top — pushing production
+m_p to **+243.8 ppb**. The committed witness (`m-p-substrate-identity-50dps.witness.json`)
+still held the old muon-q₀+tower value (938.2720882, −0.13 ppb), masking the
+inconsistency; the next routine regen would have corrupted m_p to +243.8 ppb.
+
+**Fix (this PR): the tower is dropped.** Production is now
+`m_p = 2·m_μ·F_Bor − 12·m_e` (formula muon, `m_μ = m_e·Vol(4₁)/ℏ_q²`), giving
+m_p = **+1.35 ppb** at the proton pin — the honest floor, and code↔witness
+consistent. `canonical_mass.py` (the facade) is confirmed correct on both its
+witness and direct paths.
+
+**Why c₄ = 0 now (reconciliation with `mp_habiro_c4_keystone_probe.py`).**
+That probe reports a pin-stable c₄ ≈ 46.03 — but it holds m_μ **fixed at the
+CODATA measured value** (only F_Bor varies with q, and F_Bor is flat). *Production
+uses the muon formula* (m_μ must be predicted, per the 3-calibration discipline).
+Verified side by side:
+
+| pin | c₄, **formula muon** (production) | c₄, measured muon (keystone) |
+|---|---|---|
+| proton | **≈ 0** | 40.2 |
+| muon | 46.07 | 46.07 |
+
+At the proton pin, the production (formula-muon) c₄ is **0** — no dressing is
+needed, and the μ–p tension correctly surfaces instead as the m_μ prediction
+missing CODATA by 211 ppb (9.5σ). The keystone's 46.03 is a *measured-muon
+diagnostic*, not the object production's tower multiplied. So the whole
+"derive c₄ = 46" quest was an artifact of the muon-pinned-q₀ era; after the
+proton re-pin, m_p needs no c₄ at all.
+
 ## Addendum: are the c_k proved? is there a recursion? can we derive them?
 
 Corpus-grep (STRICT) settles this — the authoritative source is

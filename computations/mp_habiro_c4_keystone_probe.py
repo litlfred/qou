@@ -44,6 +44,17 @@ fit; the true c_4 = 46.03 is the term-6 Habiro residue, whose first-
 principles derivation is the SAME open Habiro-element problem as the Q_β
 c_k ladder (s5bb keystone).  Nothing wired; production unchanged.
 
+SUPERSEDED 2026-07-04 (production side): the fitted tower was DROPPED from
+computations/m_p_substrate_identity_50dps.py.  IMPORTANT — this probe holds
+m_mu FIXED at the CODATA measured value, so its c_4 ~ 46.03 is a
+*measured-muon* diagnostic.  Production uses the muon FORMULA
+(m_mu = m_e*Vol(4_1)/hbar_q^2, 3-calibration-compliant), and at the current
+proton-pinned q_0 the formula-muon c_4 is ~0 (not 46) — the tower over-added
++242 ppb (m_p -> +243.8 ppb).  So the "46.03 term-6 residue" is NOT the object
+production dressed; there is no production c_4 to derive after the proton
+re-pin.  Full analysis + side-by-side table:
+docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md.
+
 Witness: mp-habiro-c4-keystone-probe.witness.json
 """
 

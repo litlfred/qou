@@ -138,21 +138,25 @@ def F_Bor(q):
     return trM_borromean(q) * qfact_three(q) / q ** 3
 
 
-#: Habiro 4-loop coefficient — FIT-TIER (owner ruling 2026-07-03 +
-#  PR #3280): the exact c₄ needed is linear in the q₀ pin offset
-#  (c₄ ≈ 46 is the muon-calibration convention, the μ–p tension
-#  reparametrized), `4143` has no derivation trail in the corpus, and
-#  the fitted tower was STRIPPED from the pin (`q_at`) — the raw proton
-#  pin is canonical. Retained here as the labeled dressing the producer
-#  reports, pending the owner reconcile (bean `2i8g`, #3280 options).
+#: Habiro 4-loop coefficient — FIT-TIER, RETAINED-BUT-NOT-APPLIED
+#  (owner ruling 2026-07-03 "drop" + PR #3280 option 1; bean `2i8g`
+#  reconcile CLOSED as drop): the exact c₄ needed is linear in the q₀
+#  pin offset (c₄ ≈ 46 is the muon-calibration convention, the μ–p
+#  tension reparametrized), `4143` has no derivation trail in the corpus,
+#  and the fitted tower was STRIPPED from the pin (`q_at`) — the raw
+#  proton pin is canonical. This constant + `habiro_ratio_s5bb` are kept
+#  as the documented record of the fitted dressing, but are NO LONGER
+#  applied to production m_p (they over-added +242 ppb at the proton
+#  pin). See docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md.
 C4_S5BB = mpf("4143") / mpf("90")
 
 
 def habiro_ratio_s5bb(q, c4=None):
     """Habiro 4-loop dressing (1 + c₄u⁴)(1 + 4u⁵)(1 − 29u⁶) with
     u = b·ℏ_q², b = √((q⁴+q²+1)/(q²+1)²). FIT-TIER (see C4_S5BB note):
-    not part of the raw proton pin; applied by this producer as a
-    labeled dressing pending the owner reconcile."""
+    NOT part of the raw proton pin and NO LONGER applied to production m_p
+    (owner ruling drop, #3280). Kept as the documented record of the
+    fitted dressing; callers must not multiply it into a production mass."""
     c4 = C4_S5BB if c4 is None else c4
     hbar_q_sq = ((q - 1) / q) ** 2
     b_val = ((q ** 4 + q ** 2 + 1) / (q ** 2 + 1) ** 2) ** mpf("0.5")
@@ -192,11 +196,24 @@ def main():
 
     # ── PREDICTIONS ────────────────────────────────────────────────
     F = F_Bor(q)
-    # 4-loop anomaly derived geometrically from s5bb 5-manifold U(1)
-    # colour Reeb index (module-level habiro_ratio_s5bb, shared with the
-    # canonical_mass facade fallback)
-    habiro_ratio = habiro_ratio_s5bb(q)
-    m_p_pred = (2 * m_mu * F - 12 * m_e) * habiro_ratio
+    # m_p = 2·m_μ·F_Bor − 12·m_e — the exact N=0 substrate formula.
+    #
+    # The fitted Habiro precision tower (`habiro_ratio_s5bb`, module-level
+    # FIT-TIER helper) is DEFINED but NO LONGER APPLIED here (owner ruling
+    # "drop", PR #3280 option 1; bean 2i8g reconcile). It closed the
+    # −242 ppb formula→CODATA residual to sub-ppb, but at the current raw
+    # proton pin the base already lands m_p at +1.35 ppb, so applying the
+    # muon-era tower over-added +242 ppb (m_p → +243.8 ppb — a live
+    # regression). The u⁴ coefficient is affine in the q₀ pin (≈0 at the
+    # proton pin, 46 at the muon pin, slope 3.99/ppb): it measures the
+    # muon↔proton calibration gap, not a derived constant; the old
+    # `4143/90` "s5bb colour Reeb index" provenance cited a refuted route
+    # (2026-06-16-s5so3-reeb-resonance-probe-negative). F_Bor is already the
+    # exact Borromean Markov-trace (Habiro) evaluation, so no a_m tail is
+    # added. Consistent with the 2026-07-03 owner ruling that stripped the
+    # same tower from the q₀ solver + the 2026-05-28 floor audit rec #1.
+    # Full analysis: docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md.
+    m_p_pred = 2 * m_mu * F - 12 * m_e
     # Canonical neutron: n → p + e⁻ + ν̄, with Q_β the parameter-free
     # Kashiwara b² truncation (q_0-only; derived_masses.q_beta_kashiwara_n2_mev).
     # Q_β is ~0.083 % of m_n, so its +1.25 ppm lands m_n at ~+1 ppb.
