@@ -18,6 +18,7 @@ shows they are the SAME mirror-split physics — the residual reduces to that on
 open, owner-gated EM-linking object. NO fit; derive-or-connect only.
 """
 from __future__ import annotations
+import json
 import sys
 from pathlib import Path
 import mpmath as mp
@@ -25,17 +26,21 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE / "substrate"))
 sys.path.insert(0, str(HERE))
+
+
+def _pp_bond_from_witness(fallback: str = "2.2861") -> str:
+    """Per-block pp strong bond, pinned to per-bond-growth-a3 witness (no drift)."""
+    try:
+        w = json.loads((HERE / "per-bond-growth-a3.witness.json").read_text())
+        return str((w.get("data", w))["B_iso_MeV"]["pp"])
+    except Exception:
+        return fallback
 from q_parameter import Q as Q0  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_E_MEV, AME_B_TRITIUM_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION,
 )
-try:
-    from witness_base import WitnessBuilder  # noqa: E402
-    _HAVE_WB = True
-except ImportError:
-    WitnessBuilder = None
-    _HAVE_WB = False
+from witness_base import WitnessBuilder  # noqa: E402  (mandatory — canonical witness-emitting audit)
 
 set_compute_dps()
 q = mp.mpf(str(Q0))
@@ -65,7 +70,7 @@ def main() -> int:
     split_AME = B_T - B_HE3
     B_strong = B_T_bc                             # ³H (~pure strong) = the strong scale
     coul_ratio = mp.tanh(mp.log(q))               # tanh(ln q₀) ≈ 0.104 (q₀-only, derived)
-    B_pp = mp.mpf("2.2861")                       # per-block pp strong bond (H₆), corpus
+    B_pp = mp.mpf(_pp_bond_from_witness())        # per-block pp strong bond (H₆), from witness
     E_coul_derived = coul_ratio * B_pp            # 0.2377 MeV (31% of split), derived
     print("  (B) charge-symmetric + Coulomb view (def:coulomb-charge, corpus):")
     print(f"     AME ³H−³He split           = {float(split_AME):.4f} MeV (= ³He pp-Coulomb)")
@@ -94,31 +99,36 @@ def main() -> int:
     print("    already-identified EM-linking gate. Bond-count reproduces the current")
     print("    best (−2.97%); below that needs the EM-linking object, no fit.")
 
-    if _HAVE_WB:
-        try:
-            wb = WitnessBuilder("a3-mirror-residual-reconciliation", engine="mpmath")
-            wb.set_description(
-                "The ~3% ³He residual of the linear-chain bond-count binding reconciles "
-                "with the corpus-derived pp-Coulomb mechanism (def:coulomb-charge): the "
-                "bond-count VOLUME gap (8_11 vs L6a4) and the pp-Coulomb reduction are the "
-                "same mirror-split object. Residual = the OPEN two-like-charge EM-linking "
-                "invariant (owner-gated; 3.2× remaining of the split). No fit — fitting a "
-                "pp-Coulomb constant is a CAL-4 violation.")
-            wb.add_data("bond_count", {"3H_err_pct": float((B_T_bc-B_T)/B_T*100),
-                                       "3He_err_pct": float((B_HE3_bc-B_HE3)/B_HE3*100)})
-            wb.add_data("coulomb", {"split_AME_MeV": float(split_AME),
-                                    "derived_MeV": float(E_coul_derived),
-                                    "derived_fraction": float(E_coul_derived/split_AME)})
-            wb.add_assertion(
-                name="mirror_residual_is_open_em_linking_gate",
-                computed="1", expected="1", tolerance=0,
-                source=("the A=3 mirror residual reduces to the corpus's open two-like-charge "
-                        "EM-linking invariant (derived Coulomb covers 31%; 3.2× owner-gated); "
-                        "not a fresh target, and not fit-closable (CAL-4)."))
-            out = wb.save()
-            print(f"\nWitness: {out}")
-        except Exception as e:
-            print(f"\n(witness skipped: {e})")
+    wb = WitnessBuilder("a3-mirror-residual-reconciliation", engine="mpmath")
+    wb.set_description(
+        "The ~3% ³He residual of the linear-chain bond-count binding reconciles "
+        "with the corpus-derived pp-Coulomb mechanism (def:coulomb-charge): the "
+        "bond-count VOLUME gap (8_11 vs L6a4) and the pp-Coulomb reduction are the "
+        "same mirror-split object. Residual = the OPEN two-like-charge EM-linking "
+        "invariant (owner-gated; 3.2× remaining of the split). No fit — fitting a "
+        "pp-Coulomb constant is a CAL-4 violation.")
+    wb.add_data("bond_count", {"3H_err_pct": float((B_T_bc-B_T)/B_T*100),
+                               "3He_err_pct": float((B_HE3_bc-B_HE3)/B_HE3*100)})
+    wb.add_data("coulomb", {"split_AME_MeV": float(split_AME),
+                            "derived_MeV": float(E_coul_derived),
+                            "derived_fraction": float(E_coul_derived/split_AME)})
+    # Real numeric invariants (regression guards) — the mirror residual and the
+    # derived-Coulomb fraction are the two quantities the gate verdict rests on.
+    wb.add_assertion(
+        name="he3_bondcount_residual_pct",
+        computed=float((B_HE3_bc - B_HE3) / B_HE3 * 100),
+        expected=-2.9686547, tolerance=1e-3, unit="percent",
+        source=("³He linear-chain bond-count binding residual m_e·2·Vol(L6a4) vs AME; "
+                "the −2.97% is the whole A=3 mirror residual (current best, no fit)."))
+    wb.add_assertion(
+        name="derived_coulomb_fraction",
+        computed=float(E_coul_derived / split_AME),
+        expected=0.31118811, tolerance=1e-5,
+        source=("tanh(ln q₀)·B_pp / (B_³H − B_³He): the DERIVED pp-Coulomb covers 31.1% "
+                "of the mirror split; the remaining 3.2× is the OPEN two-like-charge "
+                "EM-linking invariant (owner-gated; fit-closing is a CAL-4 violation)."))
+    out = wb.save()
+    print(f"\nWitness: {out}")
     return 0
 
 
