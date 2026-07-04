@@ -175,6 +175,10 @@ def build_seminormal_matrices(shape, sparse=None, q=None):
         rows, cols, vals = [], [], []
         processed = set()
 
+        # O(1) swap-partner lookup (the former linear scan made construction
+        # O(n·dim²) — the wall at dim ≳ 2·10⁴, e.g. n = 15 blocks).
+        syt_index = {tuple(sorted(t.items())): idx for idx, t in enumerate(syts)}
+
         for i in range(dim):
             if i in processed:
                 continue
@@ -193,13 +197,9 @@ def build_seminormal_matrices(shape, sparse=None, q=None):
             swap_map[k + 1] = ci_k
 
             # Check if swap gives valid SYT
-            j = None
-            for jj in range(dim):
-                if jj == i:
-                    continue
-                if syts[jj] == swap_map:
-                    j = jj
-                    break
+            j = syt_index.get(tuple(sorted(swap_map.items())))
+            if j == i:
+                j = None
 
             if j is None:
                 # 1×1 block: eigenvalue is q (same row) or -q⁻¹ (same col)
