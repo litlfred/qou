@@ -148,7 +148,8 @@ def F_Bor(q):
 #  as the documented record of the fitted dressing, but are NO LONGER
 #  applied to production m_p (they over-added +242 ppb at the proton
 #  pin). See docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md.
-C4_S5BB = mpf("4143") / mpf("90")
+with mp.workdps(70):
+    C4_S5BB = +(mpf("4143") / mpf("90"))
 
 
 def habiro_ratio_s5bb(q, c4=None):

@@ -64,7 +64,8 @@ M_P = mpf("938.272088160000000000000000000000000000000000000000000000000021")  #
 M_MU = mpf("105.658375500000000000000000000000000000000000000000000000000004")  # codata_constants.M_MU_MEV_VALIDATION
 # Vol(4₁) = 2·Λ(π/3) = 2·Cl₂(π/3) (figure-eight complement volume), computed
 # from mpmath's Clausen function; matches q_parameter.vol_4_1_at(60) to 55 dps.
-VOL_4_1 = 2 * clsin(2, pi / 3)
+with mp.workdps(60):
+    VOL_4_1 = +(2 * clsin(2, pi / 3))
 
 # production companion coefficients (held fixed; each is ~1e2/1e4× smaller
 # than the u⁴ term so they do not affect the argument)
