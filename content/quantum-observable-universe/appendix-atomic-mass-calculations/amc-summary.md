@@ -65,8 +65,7 @@ $M_q$ and $M_o$ use the same inputs at different precisions.
 
 ## Data Source Audit: CODATA 2022 vs AME2020
 
-The Lean formalization (`QOU.AtomicMass`) separates two independent
-mass-derivation paths:
+Two independent mass-derivation paths yield the atomic mass:
 
 1. **CODATA path**: $M_{\mathrm{CODATA}} = Z \cdot m_{\mathfrak{p}} + N \cdot m_{\mathfrak{n}} + Z \cdot m_e - B$
    using CODATA 2022 constituent masses ($m_{\mathfrak{p}} = 938.27208943$,
@@ -95,6 +94,6 @@ includes the 13.6 eV electron binding energy.
 | $51$--$92$ | 1.42 keV |
 | $93$--$118$ | 1.83 keV |
 
-All 118 `deviation_*` theorems in the Lean formalization prove
-$|M_{\mathrm{CODATA}} - M_{\mathrm{AME}}| < \epsilon$ with tight
-bounds, confirming sub-keV agreement between the two data sources.
+Across all 118 elements $|M_{\mathrm{CODATA}} - M_{\mathrm{AME}}| < \epsilon$
+with tight bounds, confirming sub-keV agreement between the two data
+sources.

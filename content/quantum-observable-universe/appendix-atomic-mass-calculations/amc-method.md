@@ -5,7 +5,7 @@ can reproduce each result independently.
 
 The elements divide into two groups:
 
-- **accordingly occurring** ($Z = 1$--$92$, Hydrogen through
+- **naturally occurring** ($Z = 1$--$92$, Hydrogen through
  Uranium): formed in stellar nucleosynthesis under ambient
  substrate parameter $q = q_0$. Observed masses are precise
  (AME2020).
@@ -133,7 +133,7 @@ observed mass derivation, the deviations shown here are small
 
 The deeper test of the QOU framework is whether the Skein
 polynomial computed purely at $q_0$ reproduces the AME2020
-$B/A$ values. For accordingly occurring elements ($Z \leq 92$),
+$B/A$ values. For naturally occurring elements ($Z \leq 92$),
 the transfer matrix calculation
 ([transfer matrix operator](#def:transfer-matrix-operator))
 confirms this to high precision.
