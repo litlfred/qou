@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-04T19:03:25.074664+00:00",
-  "commitSha": "0b6caba73276ea7649b0f0ef4b811d5a7574921f",
+  "computedAt": "2026-07-04T19:04:37.227673+00:00",
+  "commitSha": "70e0f705076ab5042d2d647a7b459495d9a7cac4",
   "assertions": [
     {
       "name": "M1_uu_identity_free",
@@ -33,11 +33,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 39,
+  "durationMs": 42,
   "computation": "qbeta-isospin-barodd-mechanism",
   "scriptFile": "qbeta_isospin_barodd_mechanism_probe.py",
   "scriptHash": "112fe9914c09",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "70e0f705076ab5042d2d647a7b459495d9a7cac4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
