@@ -73,6 +73,32 @@ It is **not** a structural exclusion of the counit as an *ingredient*. No proved
 invariant forbids it; on the contrary the magnitude proximity is evidence it is
 close to the right structure.
 
+## Isotope systematics (bean `qei4`) — the deuteron 13% is coincidental; the error scales with A
+
+Evaluating the counit `Σ_λ χ^λ(β_K)` on all four light isotopes using the
+committed `χ^λ` witnesses (`atom-chi-rust-{d,t,3he,4he}`, zero free parameters,
+[`rho_k_counit_isotope_systematics.py`](../../computations/rho_k_counit_isotope_systematics.py)):
+
+| atom | interfaces `C(A,2)` | counit `Σχ^λ` | target `−B/mₑ` | `|Σχ|/|target|` | sign |
+|---|---|---|---|---|---|
+| D | 1 | +4.929 | −4.353 | **1.13** | wrong |
+| T | 3 | +27.06 | −16.60 | **1.63** | wrong |
+| ³He | 3 | +44.99 | −15.10 | **2.98** | wrong |
+| ⁴He | 6 | +150.36 | −55.37 | **2.72** | wrong |
+
+**Two corrections to the deuteron-only view:**
+
+1. **The 13% match was coincidental.** The magnitude ratio is **not fixed** — it
+   grows from 1.13 (D) to 2.7–3.0 (He), spread 2.6×. So the counit is not "one
+   constant away" from closing; it over-predicts progressively for heavier nuclei.
+   The sign is systematically wrong for all four. **Counit alone is refuted across
+   the mass range**, more decisively than the deuteron suggested.
+2. **But the error scales with A** — and so does the inter-nucleon **interface
+   count** (D:1 pair, T/³He:3, ⁴He:6). The A-growing discrepancy is exactly what a
+   missing **interface-vortex (Hopf/L±)** contribution would produce. This keeps
+   the counit+vortex direction alive, now with a concrete **A-scaling signature**:
+   the vortex correction should grow ~ with the number of nucleon pairs.
+
 ## The lead this exposes (concrete, non-fitted)
 
 Both the co-Casimir and the counit are **character-sum** functionals, both land
