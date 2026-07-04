@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-28T00:03:06.146295+00:00",
-  "commitSha": "466b8aa03eb04060145ed7256c2ecd68a5aaa82c",
+  "computedAt": "2026-07-04T10:40:24.918869+00:00",
+  "commitSha": "b92b33ddd5e56c26d074d542c4316d0e5e16a2c3",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 60,
+  "durationMs": 14,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
   "scriptHash": "04904109d041",
-  "scriptCommitSha": "f4c7e8f6549d3a5195926c3ad37605dd762f1c32",
+  "scriptCommitSha": "fd2b28c2a67a1a49bb1def3ec56ca8007ae84e3b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,7 +27,6 @@
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.6",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
@@ -38,15 +37,15 @@
       {
         "obs": "m_p",
         "role": "CAL-2 numerical anchor",
-        "pred_MeV": "938.272088160",
+        "pred_MeV": "938.272089427",
         "codata_MeV": "938.272088160",
         "sigma_exp_MeV": "2.90000e-7",
-        "err_ppb": "0.0004037",
+        "err_ppb": "1.351",
         "sigma_exp_ppb": "0.3091",
         "target_100x_ppb": "0.003091",
-        "miss_factor": "0.1306",
-        "beats_1x_experimental": true,
-        "beats_100x_experimental": true,
+        "miss_factor": "437.0",
+        "beats_1x_experimental": false,
+        "beats_100x_experimental": false,
         "source_witness": "m-p-substrate-identity-50dps.witness.json",
         "sigma_source": "codata_constants.M_P_MEV_VALIDATION",
         "compute_truncation_ppb": "1.066e-54",
@@ -89,13 +88,13 @@
       {
         "obs": "m_n",
         "role": "validation",
-        "pred_MeV": "939.565421498",
+        "pred_MeV": "939.565422765",
         "codata_MeV": "939.565420520",
         "sigma_exp_MeV": "5.40000e-7",
-        "err_ppb": "1.040",
+        "err_ppb": "2.389",
         "sigma_exp_ppb": "0.5747",
         "target_100x_ppb": "0.005747",
-        "miss_factor": "181.0",
+        "miss_factor": "415.7",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
         "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=0) + m_e; no flavor-split — per PR #1298 gap diagnostic",
@@ -139,13 +138,13 @@
       {
         "obs": "m_K/m_pi",
         "role": "validation (meson ratio)",
-        "pred_MeV": "3.53711853802",
+        "pred_MeV": "3.53711852187",
         "codata_MeV": "3.53711843895",
         "sigma_exp_MeV": "9.32546e-5",
-        "err_ppb": "28.01",
+        "err_ppb": "23.44",
         "sigma_exp_ppb": "2.636e+4",
         "target_100x_ppb": "263.6",
-        "miss_factor": "0.1062",
+        "miss_factor": "0.08892",
         "beats_1x_experimental": true,
         "beats_100x_experimental": true,
         "source_witness": "[3]_q·[4]_q + (α_em/π)·(3q²−1)/(2q²) — closed form; both pieces Lean-proved (qou:QOU.BraidKnot.meson_qCG_3x4, qou:QOU.BraidKnot.meson_EM_closed_form); α_em is a CLASS-A acknowledged anchor (CS ansatz conditional on Witten-κ class)",
@@ -156,25 +155,25 @@
     ],
     "summary": {
       "total": 7,
-      "beats_1x_count": 3,
-      "beats_100x_count": 3
+      "beats_1x_count": 2,
+      "beats_100x_count": 2
     },
     "upstream_witness_hashes": [
       {
         "path": "m-p-substrate-identity-50dps.witness.json",
-        "sha256": "0da52f6c3fdceb81c430fb435c6ce46e481e16edadee5e2886a9a59c6803a4db",
-        "size_bytes": 4974,
-        "commitSha": "9f5ddbbc637b9c44e784bca410ad47e7b57715c7",
-        "scriptCommitSha": "9f5ddbbc637b9c44e784bca410ad47e7b57715c7",
-        "computedAt": "2026-06-24T16:32:02.571621+00:00"
+        "sha256": "caa6ee49ea51503067aed121d04baca3875ec1ded8e9595f5fb8ed7256737a85",
+        "size_bytes": 4948,
+        "commitSha": "3399c7c092652cc746ae83e675844e638f8a1390",
+        "scriptCommitSha": "fd2b28c2a67a1a49bb1def3ec56ca8007ae84e3b",
+        "computedAt": "2026-07-04T10:24:14.954590+00:00"
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "cb4b76b51ef58f364fcc1a6e9a5c5ece4529dfffe098ce3a96b5e61f73f47819",
-        "size_bytes": 9112,
-        "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
-        "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
-        "computedAt": "2026-06-22T13:19:41.230571+00:00"
+        "sha256": "6e8536cef754cbbaecbe12f3610837c293eb83979b279f77316c8230093ac7bc",
+        "size_bytes": 10359,
+        "commitSha": "e309512a690ab453503aad077dba5ed3077cabb1",
+        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+        "computedAt": "2026-07-02T12:20:49.981050+00:00"
       },
       {
         "path": "q-beta-operator-valued-N3.witness.json",
@@ -194,11 +193,11 @@
       },
       {
         "path": "cal-3-q-beta.witness.json",
-        "sha256": "cd281a06e92e1031d088b150c1660014d68f7e46d7eda1681fbe491798f7a101",
-        "size_bytes": 2503,
-        "commitSha": "4f207588745f901d68703c022c9e38a1d134bb5f",
-        "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
-        "computedAt": "2026-05-29T14:42:16.116070+00:00"
+        "sha256": "0644933140c21520b4857f8d7c77167ffd848b0508ddf9563bc5dd80fedd34ab",
+        "size_bytes": 2674,
+        "commitSha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4",
+        "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+        "computedAt": "2026-06-28T23:06:11.102879+00:00"
       },
       {
         "path": "meson-kaon-pion-derivation.witness.json",
