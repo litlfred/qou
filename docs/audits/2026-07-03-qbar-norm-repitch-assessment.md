@@ -234,6 +234,31 @@ linear Markov trace. Recorded as an observation (audit-only, no wire, no
 mechanism claim); the earlier §3b/§3c "unconfirmed beyond n = 12" caveat is
 now lifted for the Gram observable.
 
+## 3f. Per-λ mechanism of the isospin antisymmetry — naive crossing-weight story REFUTED (T2)
+
+Probe [`qbeta_isospin_barodd_mechanism_probe.py`](../../computations/qbeta/qbeta_isospin_barodd_mechanism_probe.py),
+witness `qbeta-isospin-barodd-mechanism.witness.json`. Tested the natural
+hypothesis that the confirmed §3b/§3e antisymmetry is a crossing-weight
+bar-parity count (u-u pure-σ = bar-even; d-involving weights inject a
+bar-odd s-term).
+
+**Refuted (scope a).** The u-u quark crossing is identity-free (TRUE), and
+d-d, u-d carry a 𝟏-component (TRUE) — but that component b = −q·s is
+bar-**mixed**, not bar-odd: s = q½−q⁻½ is bar-odd, yet q is not bar-fixed,
+so q·s is mixed. And even the pure-σ u-u weight is not bar-even, since
+σ − σ⁻¹ = (q−q⁻¹)·𝟏 ≠ 0 (skein). So bar-parity is **not** partitioned by
+quark-crossing type; the one-line count fails.
+
+**What survives.** (i) The antisymmetry is a property of the full
+*quadratic* Gram object tr_M(W·W^♯), living in the conjugate-pair
+(bar-swapped e_λ↔e_λ′) blocks — empirically the A=3 blocks (6,3),(5,3,1)
+(§3b). (ii) Its **sign** is fixed by the u↔d isospin mirror (quark-content
+symmetry ⇒ antisymmetric across a mirror pair), which is why ⁵He/⁵Li split
+oppositely. (iii) Its **magnitude** needs per-block Gram data (exact at
+A=3; the n=15 Hutchinson witness carries only aggregates) and is **not**
+derived. No derived mechanism is claimed — the honest state is "confirmed
+effect, sign understood (isospin mirror), magnitude open".
+
 ## 4. Cross-references
 
 - Critical assessment delivered in-session 2026-07-03 (chat), branch

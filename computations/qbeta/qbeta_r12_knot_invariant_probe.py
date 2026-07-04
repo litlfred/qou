@@ -180,9 +180,13 @@ def main() -> int:
 
     w = WitnessBuilder("qbeta-r12-knot-invariant", engine="sympy")
     w.set_description(
-        "T1: R_12/C(y) is not a knot invariant of the net braid — S_3 "
-        "(non-abelian) Galois of C(y) vs cyclotomic constituent-knot "
-        "invariants; it is the isospin crossing-weight difference.")
+        "T1: R_12/C(y) is not a constituent-knot invariant and the net is "
+        "not a braid closure. Separators: (A) R_12 q-span 12 >> every "
+        "constituent Jones span (<=4), equals/divides none; (B) R_12 even "
+        "in q lives in Q[y], y=q^2+q^-2, the isospin crossing-weight sector. "
+        "NOTE: the S_3/cyclotomic Galois argument does NOT separate (the "
+        "trefoil's own reduced Jones cubic is also non-cyclotomic); "
+        "disc(C)=-152 => S_3 is recorded as structure only.")
     w.add_parameter("C_of_y", str(Cy))
     w.add_parameter("net_basis_knots",
                     "unknot,virtual,Hopf,trefoil (H_3 NF basis)")
