@@ -80,7 +80,8 @@ def ladder(q):
 
 def main():
     QA, QN1, QN2, b, u = ladder(Q0)
-    ppm = lambda x: float((x / Q_CODATA - 1) * mpf(10) ** 6)  # noqa: E731
+    def ppm(x):
+        return float((x / Q_CODATA - 1) * 1e6)
 
     rows = [
         ("Q_A   base", "derived", "prop:neutron-qvalue-symbolic", QA),
@@ -109,7 +110,7 @@ def main():
 
     # sanity: each tier strictly improves and c_2 factor is exactly (1−u²)
     assert abs(ppm(QA)) > abs(ppm(QN1)) > abs(ppm(QN2)), "tiers must improve"
-    assert abs((1 - u ** 2) - QN2 / QN1) < mpf(10) ** (-40), "c_2 factor ≠ (1−u²)"
+    assert abs((1 - u ** 2) - QN2 / QN1) < mpf(10) ** (-mp.dps + 8), "c_2 factor ≠ (1−u²)"
     print("\nchecks: tiers strictly improve ✓ ; c_2 factor = (1−u²) exact ✓")
 
 
