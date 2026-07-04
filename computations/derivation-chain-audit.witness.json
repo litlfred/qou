@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-04T14:28:13.000021+00:00",
-  "commitSha": "7dbd32607be322b44fe4e06e03a34a0d09428b12",
+  "computedAt": "2026-07-04T14:33:27.269559+00:00",
+  "commitSha": "1137a441999497c12fe64b32bebbcef7869ba369",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2051,6 +2051,7 @@
         "active-set-truncation-prototype.witness.json",
         "adjacent-vs-full-probe.witness.json",
         "affine-light-cone-figure.witness.json",
+        "aj-borromean-colored-jones-tower.witness.json",
         "aj-figure-eight-certificate.witness.json",
         "aj-figure-eight-operator-construct-verify.witness.json",
         "aj-masbaum-crosscheck.witness.json",
