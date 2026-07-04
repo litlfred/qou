@@ -82,18 +82,14 @@ def _apply_T(letters, z):
     return v
 
 
-def _chi_sharp_block(word, lam, q, exact_dim, samples):
-    """(χ♯_λ, stderr, dim, mode) for one block.
+def _chi_sharp_from_letters(letters, dim, exact_dim, samples):
+    """(χ♯, stderr, mode) given materialised letters for one block.
 
-    F = ρ(W) = L_1···L_k (letters applied left-to-right on the right),
-    R = ρ(W^♯) = L_k···L_1. Exact: dense products, tr via einsum.
-    Stochastic: tr(F·R) = E_z[(Fᵀz)·(Rz)], z Rademacher.
+    F = ρ(W) = L_1···L_k, R = ρ(W^♯) = L_k···L_1. Exact: dense products.
+    Stochastic: tr(F·R) = E_z[(Fᵀz)·(Rz)], z Rademacher — vectorised over
+    a d×m block of z's per pass (sparse @ dense-matrix, chunked ≤ 64
+    columns to bound memory at d ~ 3·10⁵).
     """
-    res = build_seminormal_matrices(lam, q=q)
-    sigmas, dim = res[0], res[1]
-    if dim == 0:
-        return 0.0, 0.0, 0, "empty"
-    letters = _letters(word, dim, sigmas)
     if dim <= exact_dim:
         fwd = np.eye(dim)
         rev = np.eye(dim)
@@ -101,34 +97,52 @@ def _chi_sharp_block(word, lam, q, exact_dim, samples):
             fwd = np.asarray(fwd @ L)
         for L in reversed(letters):
             rev = np.asarray(rev @ L)
-        return float(np.einsum("ij,ji->", fwd, rev)), 0.0, dim, "exact"
-    # Hutchinson: u = Fᵀz needs letters transposed L_kᵀ first —
-    # F = L1@L2@...@Lk as MATRIX product; acting on column z: Fz applies
-    # L_k first. Fᵀz applies L_1ᵀ first. Rz (R = Lk@...@L1) applies L_1 first.
+        return float(np.einsum("ij,ji->", fwd, rev)), 0.0, "exact"
     ests = np.empty(samples)
-    for m in range(samples):
-        z = RNG.choice((-1.0, 1.0), size=dim)
-        u = _apply_T(letters, z)                    # Fᵀ z
-        v = _apply(letters, z)                      # R z (L_1 first)
-        ests[m] = float(u @ v)
+    done = 0
+    while done < samples:
+        m = min(64, samples - done)
+        Z = RNG.choice((-1.0, 1.0), size=(dim, m))
+        U = _apply_T(letters, Z)                    # Fᵀ Z (L_1ᵀ first)
+        V = _apply(letters, Z)                      # R Z (L_1 first)
+        ests[done:done + m] = np.einsum("im,im->m", U, V)
+        done += m
     mean = float(ests.mean())
     stderr = float(ests.std(ddof=1) / math.sqrt(samples)) if samples > 1 else 0.0
-    return mean, stderr, dim, f"hutchinson({samples})"
+    return mean, stderr, f"hutchinson({samples})"
 
 
-def gram_qtrace(word, n, y, *, q, exact_dim, samples, label=""):
-    """(G, stderr_G) = Σ_λ y_λ·χ♯_λ with propagated stochastic error."""
-    G, var = 0.0, 0.0
+def gram_qtrace_multi(words, n, y, *, q, exact_dim, samples, label=""):
+    """[(G, stderr_G)] per word in `words` — Σ_λ y_λ·χ♯_λ with propagated
+    stochastic error. The per-λ representation is built ONCE and shared
+    across all words (the dominant cost at n = 15 is SYT/matrix
+    construction, not the sampling)."""
+    G = [0.0] * len(words)
+    var = [0.0] * len(words)
     t0 = time.time()
     for lam in partitions_of(n):
-        chi, se, dim, mode = _chi_sharp_block(word, lam, q, exact_dim, samples)
+        res = build_seminormal_matrices(lam, q=q)
+        sigmas, dim = res[0], res[1]
+        if dim == 0:
+            continue
         yl = float(y[tuple(lam)])
-        G += yl * chi
-        var += (yl * se) ** 2
+        mode = ""
+        for i, word in enumerate(words):
+            letters = _letters(word, dim, sigmas)
+            chi, se, mode = _chi_sharp_from_letters(
+                letters, dim, exact_dim, samples)
+            G[i] += yl * chi
+            var[i] += (yl * se) ** 2
         if dim > 20000:
             print(f"      {label} λ={tuple(lam)} d={dim} [{mode}] "
                   f"({time.time()-t0:.0f}s)", flush=True)
-    return G, math.sqrt(var)
+    return [(g, math.sqrt(v)) for g, v in zip(G, var)]
+
+
+def gram_qtrace(word, n, y, *, q, exact_dim, samples, label=""):
+    """Single-word wrapper (kept for the --validate path)."""
+    return gram_qtrace_multi([word], n, y, q=q, exact_dim=exact_dim,
+                             samples=samples, label=label)[0]
 
 
 def _parity(g0, gi):
@@ -145,10 +159,9 @@ def run_isotope(name, Z, N, *, exact_dim, samples):
         y = y_lambda_at(n, q_val=float(qv))
         wa = atom_braid_word_3A(Z, N, include_inter=True, q=qv)
         wf = atom_braid_word_3A(Z, N, include_inter=False, q=qv)
-        Ga, sa = gram_qtrace(wa, n, y, q=float(qv), exact_dim=exact_dim,
-                             samples=samples, label=f"{name}:{tag}:atom")
-        Gf, sf = gram_qtrace(wf, n, y, q=float(qv), exact_dim=exact_dim,
-                             samples=samples, label=f"{name}:{tag}:free")
+        (Ga, sa), (Gf, sf) = gram_qtrace_multi(
+            [wa, wf], n, y, q=float(qv), exact_dim=exact_dim,
+            samples=samples, label=f"{name}:{tag}")
         out[f"G_atom_{tag}"], out[f"se_atom_{tag}"] = Ga, sa
         out[f"G_free_{tag}"], out[f"se_free_{tag}"] = Gf, sf
     out["parity_atom"] = _parity(out["G_atom_q0"], out["G_atom_qi"])
