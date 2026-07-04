@@ -15,10 +15,9 @@ $$
 $$
 
 where $\mathcal{L}_q = \mathcal{L}_q(\nabla, \psi)$ is the categorical
-Lagrangian ([categorical Lagrangian](#def:categorical-lagrangian)).
-The physics endomorphism is $\Phi_q = \mathcal{L}_q$.
-
-The square of the Dirac operator
+Lagrangian ([categorical Lagrangian](#def:categorical-lagrangian)) and
+$\Phi_q = \mathcal{L}_q$ is the physics endomorphism. The square of the
+Dirac operator
 ([categorical Dirac operator](#def:categorical-dirac-operator))
 decomposes via the Frobenius--Hopf structure as
 
@@ -30,12 +29,8 @@ $$
   \bigr),
 $$
 
-The categorical action expands to three terms.  The categorical trace
-factors as $\mathrm{tr} = \int_A \circ \mathrm{tr}_A$ --- the Frobenius
-form $\int_A \colon A \to \mathbf{1}$ after the partial trace
-$\mathrm{tr}_A \colon \mathrm{End}(A) \to A$ --- so all three summands
-share the *same* integration $\int_A$: there is one trace, applied term
-by term, not three distinct integrations.
+and applying the categorical trace term by term yields the
+gravity $+$ gauge $+$ matter decomposition
 
 ```tex
 \begin{equation}\label{eq:canonical-action-decomposition}
@@ -53,11 +48,16 @@ by term, not three distinct integrations.
   + 
   \underbrace{%
     \int_A\!\bigl(\psi^* \cdot \mathcal{D}_\nabla\psi\bigr)
-  }_{\text{matter}},
+  }_{\text{matter}}.
 \end{equation}
 ```
 
-with notation as in [categorical action notation](#sec:categorical-action-notation).
+**Proof.** The categorical trace factors as $\mathrm{tr} = \int_A \circ
+\mathrm{tr}_A$ --- the Frobenius form $\int_A \colon A \to \mathbf{1}$ after
+the partial trace $\mathrm{tr}_A \colon \mathrm{End}(A) \to A$ --- so all
+three summands share the *same* integration $\int_A$: there is one trace,
+applied term by term, not three distinct integrations, with notation as in
+[categorical action notation](#sec:categorical-action-notation).
 Here $\mathrm{tr} = \mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes {-}) \circ \mathrm{coev}_A = \int_A \circ \mathrm{tr}_A$ is the
 categorical trace, which plays the role of spacetime integration;
 $R_{\int}$ is the Frobenius--Ricci endomorphism; and
@@ -70,9 +70,8 @@ Chamseddine--Connes spectral action
 \cite{chamseddine-connes-1997, connes1996}, and the categorical
 trace framework \cite{stolz-teichner-2012}.
 
-**Trace and integral forms.**  The same action admits two equivalent
-right-hand sides.  The *trace form* (string diagram) carries the
-categorical trace on each term,
+The same action admits two equivalent right-hand sides.  The *trace form*
+(string diagram) carries the categorical trace on each term,
 
 $$
   \mathfrak{S}_q
@@ -107,7 +106,7 @@ classical $S = \int L\,\mathrm{d}t$: $\int_A$ (Frobenius
 form $=$ Markov trace $=$ Yekutieli integral) plays the role of
 integration over spacetime, $\mathcal{L}_q$ the Lagrangian density.
 
-*Uniqueness up to scalar.*  The evaluation and coevaluation maps are
+For uniqueness, the evaluation and coevaluation maps are
 determined up to unique isomorphism by the duality data, and the
 Frobenius--Hopf axioms fix the decomposition of $\mathcal{D}_\nabla^2$
 into curvature terms.  The residual ambiguity is a single scalar
@@ -116,17 +115,4 @@ $\int_A$.  Replacing $\int_A$ by $\lambda\!\int_A$ sends
 $\mathfrak{S}_q \mapsto \lambda\mathfrak{S}_q$.  This is the
 categorical analog of the choice of physical units --- it corresponds
 to the freedom in choosing $G$, $g^2$, and $\hbar$ in the archimedean
-realization ([Remark](#rem:physicist-translation)).
-
-The scalar ambiguity is controlled by the same obstruction that governs
-the forgetful functor $\tau$: the observability axiom
-$\mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, \mathrm{Ad}(A)) = 0$
-([QOU axiom 2](#def:quantum-observable-universe)) ensures that the
-trace $\mathrm{tr} \colon \mathrm{End}(A) \to R$ is faithful --- no
-endomorphism is "invisible" to integration.  Relaxing this condition
-(allowing hidden symmetries, $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) \neq 0$) introduces a nontrivial kernel in the trace, and the
-obstruction to recovering a well-defined action is classified by the
-same cohomology class $\kappa \in H^2(\mathcal{S}, \mathcal{B})$
-that obstructs lifting in the Yekutieli sense
-([Yekutieli lifting condition](#def:yekutieli-lifting-condition);
-[Yekutieli--Stokes remark](#rem:yekutieli-stokes)).
+realization ([Remark](#rem:physicist-translation)). $\blacksquare$

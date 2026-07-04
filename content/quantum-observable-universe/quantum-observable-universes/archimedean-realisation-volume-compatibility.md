@@ -23,7 +23,7 @@ motivic volume under $\mathcal{R}_{\mathrm{top}}$ coincide, and both equal the
 Bloch–Wigner / Thurston hyperbolic volume of the associated hyperbolic piece:*
 
 $$
-  \operatorname{ev}_{q \to 1}\bigl(\tau_\infty(-\mathrm{Li}_2^q(-V_0(\beta)))\bigr)
+  \mathrm{ev}_{q \to 1}\bigl(\tau_\infty(-\mathrm{Li}_2^q(-V_0(\beta)))\bigr)
   \;=\;
   \mathcal{R}_{\mathrm{top}}\bigl(\mu(\beta)\bigr)
   \;=\;
