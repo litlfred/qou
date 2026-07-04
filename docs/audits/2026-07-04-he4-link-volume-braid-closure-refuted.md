@@ -49,10 +49,22 @@ issue #604 / GAP-A-1), not the Markov closure of the operator-valued word.
 - **The closure route to the ⁴He 4-body link is dead** (5-component,
   non-hyperbolic; ≠ any binding link).
 - **`Vol₄ ≈ 8.046` stays an unverified bond-count back-out.** The canonical
-  4-body link requires the SDP/canonical-knot-ID at A=4, which needs B₅ Hoefsmit
-  seminormal reps + the Clarabel SDP backend (`atomic-braid-recipe-4he-canonical`:
-  "not yet SDP-optimum-verified at A=4; solver scope A≤3"; Clarabel unreachable
-  in this sandbox).
+  4-body link requires the canonical-knot-ID at A=4 (`conj:canonical-knot-id-sdp`,
+  #604).
+
+  > **Correction (2026-07-04, superseding the paragraph as first written).** The
+  > first version of this bullet said the A=4 case "needs B₅ Hoefsmit seminormal
+  > reps + the Clarabel SDP backend." **Both are wrong** — I was misled by a stale
+  > status note in `atomic-braid-recipe-4he-canonical.derivation.json` ("B_5
+  > Hoefsmit pending"). In fact: (i) **general-n Hoefsmit already exists** —
+  > `hecke_characters.build_seminormal_matrices` supports any partition of any n
+  > (verified at n=5: Hecke + braid relations hold), and `binding_k_solver.py`
+  > (lines 20-24, 47-49) states the ³H B_5/8_11 case needs "no separate H_5
+  > detour"; (ii) the binding-K evaluator is a **pure numpy/scipy algebraic
+  > Wedderburn evaluation, not an SDP** (`binding_k_solver.py` lines 8-14), so
+  > **Clarabel is not involved**. The A=4 link is gated on the *identification*
+  > (#604), which is computable in-sandbox via the Jones polynomial of the
+  > binding-K factor — not on any missing infrastructure.
 - **A real A=4 tension is recorded, not resolved:** the provisional doubly-magic
   assignment `2·Vol(Borromean) = 14.655` (`binding_a3plus_*`) disagrees with the
   bond-count back-out `8.046` by ~1.82×. Both are unverified; the SDP-derived
@@ -67,8 +79,18 @@ bounds.
 
 ## Next
 
-The forward path is infrastructure, not a probe: implement **B₅ Hoefsmit** so the
-SDP/canonical-knot-ID can run at A=4 and *select* the ⁴He link, whose volume is
-then one SnapPy call away (the harness in this probe's `--live` path). That is an
-owner-scoped build (Clarabel + higher Hecke reps), coordinated with the
-canonical-knot-ID / SDP cluster — not an idle-time move.
+The forward path is **not** an infrastructure build (see the Correction above —
+general-n Hoefsmit exists, no Clarabel needed). It is a direct computation now
+that SnapPy is available:
+
+1. compute `ρ_λ(K) = ρ_λ(T_w(⁴He))·ρ_λ(constituents)⁻¹` per Wedderburn block
+   `λ ⊢ 12` (existing general-n Hoefsmit, `binding_k_solver.py` machinery);
+2. form the Jones polynomial `J_K(q) = Σ_λ y_λ·tr ρ_λ(K)` (the Markov trace);
+3. identify `K` by matching `J_K` against the knot/link tables;
+4. `Vol₄` = the hyperbolic volume of `K` (SnapPy) — compared to the `8.046`
+   back-out and the `14.655` doubly-magic provisional.
+
+Steps 1-2 realize the canonical-knot-ID (`conj:canonical-knot-id-sdp`, #604) as
+a concrete Jones-polynomial identification; step 3 may resolve cleanly or land on
+an ambiguous / non-tabulated `K`, in which case that ambiguity is the honest
+residual. Pursued in the follow-up branch.
