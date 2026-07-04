@@ -6,23 +6,19 @@
 > --- Werner Heisenberg, *Physics and Philosophy* (1958) \cite{heisenberg1958}
 
 The Heisenberg uncertainty principle emerges as a *fibre coordinate
-measurement*.  Let $\hat{X}, \hat{P}$ be position and momentum
-observables on the fibre $\mathbb{P}^1(\mathbb{C})$, and let
-$J \colon H \to H$ be the complex structure on the Levi distribution
-($J^2 = -\mathrm{Id}$; throughout this paper $i$ is identified with
-the action of $J$ on horizontal planes).  The substrate parameter $q \in \mathrm{End}(\mathbf{1})$
+measurement*.  The $q$-deformed commutator
+$[\hat{X}, \hat{P}]_q = J\hbar_q(p)$
+([$q$-deformed commutator](#def:q-deformed-commutator)) measures
+displacement along the Reeb fibre: the complex structure
+$J \colon H \to H$ on the Levi distribution ($J^2 = -\mathrm{Id}$;
+throughout this paper $i$ is identified with the action of $J$ on
+horizontal planes) supplies the imaginary unit, and the quantum
+Planck constant $\hbar_q = 1 - q^{-1}$
+([quantum Planck constant](#def:quantum-planck-constant)) measures the
+displacement itself.  The substrate parameter
+$q \in \mathrm{End}(\mathbf{1})$
 ([substrate parameter](#def:substrate-parameter)) parametrises the
-categorical interpolation family between $d$ and $\pi_V \circ d$;
-the quantum Planck constant
-$\hbar_q = 1 - q^{-1}$
-([quantum Planck constant](#def:quantum-planck-constant)) measures
-displacement along this fibre.  The $q$-deformed commutator at
-$p \in M$ is
-
-$$
-  [\hat{X}, \hat{P}]_q := J\hbar_q(p),
-  \qquad \hbar_q(p) = 1 - q(p)^{-1}.
-$$
+categorical interpolation family between $d$ and $\pi_V \circ d$.
 
 As $q \to 1$, $[\hat{X}, \hat{P}]_q \to 0$ (classicality: one sits at
 the base of the Reeb fibre, where $d_q = d$); as $q \to \infty$,

@@ -211,6 +211,7 @@ export default chapter({
       label: "sec:heisenberg-commutator",
       blocks: [
         "intro-heisenberg-commutator",
+        "q-deformed-commutator",
         "heisenberg-commutator-prop",
         "heisenberg-commutator",
       ],
@@ -545,6 +546,7 @@ export default chapter({
         "levi-generalisation",
         "quantum-gauge-group-category",
         "hopf-structure-diagrams",
+        "quantum-flatness",
         "self-dual-2group",
         "emergence-to-quantum-flat",
         "emergence-to-quantum-flat-proof",

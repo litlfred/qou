@@ -5,7 +5,7 @@ export default remark({
   label: "rem:heisenberg-commutator",
   title: "Heisenberg commutator and the Reeb fibre",
   tags: ["heisenberg", "uncertainty", "reeb", "fibre-coordinate"],
-  uses: ["prop:heisenberg-commutator"],
+  uses: ["prop:heisenberg-commutator", "def:q-deformed-commutator"],
   cites: [
     "heisenberg1958",
   ],

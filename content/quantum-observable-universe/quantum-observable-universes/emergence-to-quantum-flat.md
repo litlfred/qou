@@ -20,8 +20,9 @@ instanton equation $F_A^{-} = 0$ under the simplicity constraint.
 \end{equation}
 ```
 
-:defterm[Quantum flatness]{#quantum-flatness} is not an independent assumption: it is a *derived
-consequence* of the instanton axiom. The instanton condition
+:refterm[Quantum flatness]{#quantum-flatness}
+([quantum flatness](#def:quantum-flatness)) is not an independent
+assumption: it is a *derived consequence* of the instanton axiom. The instanton condition
 $F_A = F_A^+$ (self-dual curvature) combined with the simplicity
 constraint $B = F_A^+$ gives $F_A = B$ automatically. The $2$-group
 language is a descriptive overlay that makes the higher-categorical

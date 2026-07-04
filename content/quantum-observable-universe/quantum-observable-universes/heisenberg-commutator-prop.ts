@@ -7,5 +7,5 @@ export default proposition({
   lean: { ref: "qou:QOU.ArchimedeanUniverse.heisenberg_commutator",
     validation: "not_checked",
   },
-  uses: ["def:quantum-planck-constant"],
+  uses: ["def:q-deformed-commutator", "def:quantum-planck-constant"],
 });
