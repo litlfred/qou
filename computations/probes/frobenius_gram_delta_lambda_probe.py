@@ -37,7 +37,6 @@ Ram IMRN 1997 (tr_M = Σ y_λ χ^λ); Geck–Pfeiffer 2000 (Schur elements y_λ)
 from __future__ import annotations
 
 import json
-import math
 import os
 import sys
 from pathlib import Path
