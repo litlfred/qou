@@ -1,0 +1,92 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-05T23:37:58.866844+00:00",
+  "commitSha": "9bd15a0616e7c693566fdeb20dc5d1350bd6f63b",
+  "assertions": [
+    {
+      "name": "he4_target_above_all_pairwise_models",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "he4_is_super_pairwise",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "excess_is_A4_local",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "b4-iconn-irreducibly-connected",
+  "scriptFile": "b4_iconn_irreducibly_connected_probe.py",
+  "scriptHash": "64aa0fc74e55",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "I-conn for the [1^4] magnitude leg: the ⁴He binding (12.72×D) exceeds the pairwise-product ceiling (6.079×D) ⇒ irreducibly connected, A=4-local. Anchored on the proved extensivity theorem (not the mis-named comment). audit-only, no fit.",
+  "tier": "structural (committed ceiling witness + proved extensivity theorem)",
+  "result": {
+    "closure": "⁴He target (12.72×D) > sup over all pairwise products (6.079×D) ⇒ the excess is irreducibly connected (super_pairwise = 2.093 > 1); A=4-LOCAL (⁶Li super_pairwise 0.944 ≤ 1, where the SU(4) gate gives C(4,6)=0).",
+    "per_atom": {
+      "D": {
+        "A": 2,
+        "ame_over_D": 1.0,
+        "best_pairwise_over_D": 1.0,
+        "super_pairwise": 1.0
+      },
+      "T": {
+        "A": 3,
+        "ame_over_D": 3.8128,
+        "best_pairwise_over_D": 3.3312,
+        "super_pairwise": 1.1446
+      },
+      "3He": {
+        "A": 3,
+        "ame_over_D": 3.4695,
+        "best_pairwise_over_D": 2.7474,
+        "super_pairwise": 1.2628
+      },
+      "4He": {
+        "A": 4,
+        "ame_over_D": 12.7196,
+        "best_pairwise_over_D": 6.0786,
+        "super_pairwise": 2.0925
+      },
+      "6Li": {
+        "A": 6,
+        "ame_over_D": 14.3824,
+        "best_pairwise_over_D": 15.2358,
+        "super_pairwise": 0.944
+      }
+    },
+    "lean_anchor": "QOU.Mass.BindingTauAnchorClosure.binding_extensive_at_substrate (λ₊>1, proved)",
+    "citation_correction": "scoping §3 named 'productModel_3body_nonpos' — that is a COMMENT string (BindingRecurrenceSpectral.lean L18, PR #2703), not a theorem. Real anchor: binding_extensive_at_substrate + lambdaPlus_gt_one.",
+    "verdict": "I-conn CLEARED (scope-(b) for ⁴He): the ⁴He binding is strictly above the pairwise-product supremum ⇒ no pairwise product realizes it ⇒ irreducibly connected; A=4-local. Extensivity (λ₊>1, Lean) supports that a saturating pairwise trace cannot supply it. Next: I-ceil, then the b₄^even value. No fit."
+  },
+  "context": {
+    "axis": "GAP-A-4 class-D — [1^4] Ursell operator magnitude, invariant I-conn",
+    "scoping": "docs/scope/2026-07-05-gap-a4-ursell-operator-magnitude-scoping.md §3",
+    "ceiling_witness": "probes/interface-operator-pairwise-ceiling.witness.json",
+    "lean": "qou:QOU.Mass.BindingTauAnchorClosure.binding_extensive_at_substrate"
+  },
+  "auditOnly": true
+}
