@@ -4,6 +4,7 @@ title: 'Prove qPoch_seven_eq_eight (zeta8-witness-level2-su2.lean:68)'
 status: completed
 type: task
 priority: normal
+parent: b9ms
 created_at: 2026-07-05T12:30:00Z
 updated_at: 2026-07-05T12:30:00Z
 ---

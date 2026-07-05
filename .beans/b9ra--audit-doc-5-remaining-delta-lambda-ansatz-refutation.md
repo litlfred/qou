@@ -4,6 +4,7 @@ title: 'Audit doc: 5 remaining Delta_lambda-ansatz refutations at correct anchor
 status: completed
 type: task
 priority: normal
+parent: b9ms
 created_at: 2026-07-05T12:55:00Z
 updated_at: 2026-07-05T12:55:00Z
 ---

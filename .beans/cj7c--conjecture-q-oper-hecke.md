@@ -4,6 +4,7 @@ title: 'Conjecture carrier: q_oper_hecke (q_oper_hecke.lean) — §3b, framework
 status: todo
 type: task
 priority: low
+parent: b9cj
 created_at: 2026-07-05T13:20:00Z
 updated_at: 2026-07-05T13:20:00Z
 ---

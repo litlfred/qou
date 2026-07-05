@@ -4,6 +4,7 @@ title: 'B [TRACTABLE-restructure]: standardPolytabloid_triangular (SpechtStandar
 status: completed
 type: task
 priority: low
+parent: sp00
 created_at: 2026-07-05T16:45:00Z
 updated_at: 2026-07-05T16:45:00Z
 ---
