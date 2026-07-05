@@ -6,13 +6,13 @@ import Mathlib.Data.Real.Basic
 /-!
 # QOU.AlgebraicSubstrate.qou_obstruction_reduction
 
-**Placeholder canonical** for content block
+**Canonical declaration** for content block
 [`thm:qou-obstruction-reduction`](../../../quantum-observable-universe/braids-and-knots/qou-obstruction-reduction.md): *QOU.AlgebraicSubstrate.qou_obstruction_reduction*.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.AlgebraicSubstrate.qou_obstruction_reduction` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per AGENTS.md §1.
+The `lean.ref` URI `qou:QOU.AlgebraicSubstrate.qou_obstruction_reduction`
+resolves to this declaration in the `qou` Lake package.  The claim is
+formalised below (§3b-conditional, sorry-free): the three sub-claims are
+derived from the context class's structural link fields.
 -/
 
 namespace QOU.AlgebraicSubstrate
@@ -49,10 +49,9 @@ Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
 with gauge group $G = \mathrm{Aut}^{\otimes}(\tau)$ of dimension
 $d = \dim G$.  Then:
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    The Lean encoding below states the claim over the context class and
+    derives it from the class's structural link fields (§3b-conditional;
+    sorry-free). -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/qou-obstruction-reduction.ts
 theorem qou_obstruction_reduction [ctx : QouObstructionReductionContext] :
     ctx.obs_dim = 1 ∧

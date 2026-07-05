@@ -3,13 +3,13 @@ import Mathlib.Tactic
 /-!
 # QOU.FluidDynamics.root_of_unity_truncation
 
-**Placeholder canonical** for content block referenced by
+**Canonical declaration** for content block referenced by
 `qou:QOU.FluidDynamics.root_of_unity_truncation`.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI resolves to a real declaration in the `qou` Lake
-package. The body is `sorry` carrying the manuscript citation per
-AGENTS.md §1.
+The `lean.ref` URI resolves to this declaration in the `qou` Lake
+package.  The claim is formalised below (§3b-conditional, sorry-free):
+the five sub-claims are discharged from the context class's `impl_*`
+fields (conditional on the axiomatised `root_unity_truncated`).
 -/
 
 namespace QOU.FluidDynamics
@@ -62,10 +62,9 @@ representation theory undergoes a dramatic truncation that
 **strengthens** regularity.  The blowup at $q = 1$ is the
 accumulation of infinitely many such truncations.
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    The Lean encoding below states the claim over the context class and
+    discharges it from the class's `impl_*` fields (§3b-conditional;
+    sorry-free). -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.ts
 theorem root_of_unity_truncation [ctx : RootOfUnityTruncationContext] :
     1 < ctx.q ∧ 2 ≤ ctx.κ ∧
