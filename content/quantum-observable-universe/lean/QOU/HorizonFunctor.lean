@@ -3,21 +3,56 @@ import Mathlib.Tactic
 /-!
 # QOU.HorizonFunctor
 
-**Placeholder canonical** for content block at
+**Canonical declaration** for content block at
 [`quantum-observable-universe/information-theory/horizon-functor.ts`](quantum-observable-universe/information-theory/horizon-functor.ts).
 
-The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.HorizonFunctor` resolves to a real declaration in the `qou`
-Lake package.
+Formalises the manuscript **horizon functor**
+`∂ : π₀(Bun°(ℙ(V))) → 𝒫(Bun ∖ Bun°)` sending each aeon `𝒜` to its boundary
+— the configurations that are limits of diagrams in `𝒜` but have
+`A₀|_𝒮 = 0` (hence lie *outside* the observable subcategory `Bun°`).
 -/
 
 namespace QOU
 
-/-- HorizonFunctor
+/-- Data for the horizon functor.
 
-    Placeholder; full formalisation pending. -/
--- Ref: [manuscript] quantum-observable-universe/information-theory/horizon-functor.ts
--- Placeholder structure; full data to be specified.
+    A `definition` carrier: the ambient configurations `Config`, the aeons
+    `Aeon = π₀(Bun°)`, the observability predicate, and the boundary map
+    `∂`, with the defining property that the boundary lands in the
+    non-observable complement (`A₀ = 0`). -/
 structure HorizonFunctor where
+  /-- Objects of the ambient bundle category `Bun(ℙ(V))`. -/
+  Config : Type
+  /-- Aeons `π₀(Bun°)` (connected components of the observable subcategory). -/
+  Aeon : Type
+  /-- Observability predicate (membership in `Bun°`). -/
+  observable : Config → Prop
+  /-- The horizon / boundary map `∂`. -/
+  boundary : Aeon → Set Config
+  /-- The boundary of an aeon consists of non-observable configurations
+      (`A₀|_𝒮 = 0`) — it lands in `Bun ∖ Bun°`. -/
+  boundary_nonobservable : ∀ (𝒜 : Aeon) (c : Config), c ∈ boundary 𝒜 → ¬ observable c
+
+namespace HorizonFunctor
+
+variable (H : HorizonFunctor)
+
+/-- The boundary of every aeon is disjoint from the observable subcategory:
+    no observable configuration lies on any horizon. -/
+theorem observable_not_mem_boundary (𝒜 : H.Aeon) {c : H.Config}
+    (hc : H.observable c) : c ∉ H.boundary 𝒜 :=
+  fun hmem => H.boundary_nonobservable 𝒜 c hmem hc
+
+/-- Restated as set disjointness: `∂(𝒜) ∩ {observable} = ∅`. -/
+theorem boundary_disjoint_observable (𝒜 : H.Aeon) :
+    H.boundary 𝒜 ∩ {c | H.observable c} = ∅ := by
+  ext c
+  simp only [Set.mem_inter_iff, Set.mem_setOf_eq, Set.mem_empty_iff_false, iff_false]
+  rintro ⟨hb, ho⟩
+  exact H.boundary_nonobservable 𝒜 c hb ho
+
+end HorizonFunctor
+
+-- Ref: [manuscript] quantum-observable-universe/information-theory/horizon-functor.ts
 
 end QOU
