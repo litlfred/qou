@@ -11,7 +11,7 @@ import Mathlib.Data.Real.Basic
 
 The `lean.ref` URI `qou:QOU.AlgebraicSubstrate.qou_obstruction_reduction`
 resolves to this declaration in the `qou` Lake package.  The claim is
-formalised below (§3b-conditional, sorry-free): the three sub-claims are
+formalised below (§3b-conditional, fully proved): the three sub-claims are
 derived from the context class's structural link fields.
 -/
 
@@ -51,7 +51,7 @@ $d = \dim G$.  Then:
 
     The Lean encoding below states the claim over the context class and
     derives it from the class's structural link fields (§3b-conditional;
-    sorry-free). -/
+    fully proved). -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/qou-obstruction-reduction.ts
 theorem qou_obstruction_reduction [ctx : QouObstructionReductionContext] :
     ctx.obs_dim = 1 ∧
