@@ -27,6 +27,16 @@ in the QOU formalization.  Its purpose is twofold:
    | CODATA end-to-end chain | CODATAChain | `end_to_end` |
    | Descartes terminality | ArchimedeanUniverse | `descartes_terminal` |
 
+> **Canonical-accuracy note.** This synthesis node bundles the *proved*
+> pillars, but the CODATA leg (`end_to_end`) rests on CODATA-pinned mass
+> constants (`HadronicMass`) and the deprecated `Vol(K)/ℏ_q²` mass shape,
+> **not** the canonical muon-anchored Hecke energy (`canonical_mass.py`),
+> and its binding row is a consistency identity rather than a prediction.
+> Read pillars 3–4 below with those caveats — per-isotope binding is the
+> still-open `Δ_λ` gate.  Canonical sources:
+> `docs/canonical-mass-formula-guardrail.md`,
+> `docs/canonical-derivation-cheat-sheet.md` §9.
+
 ## How to use
 
 ```
@@ -57,13 +67,32 @@ open HadronicMass CODATAChain ArchimedeanUniverse Torsion
     2. **Self-dual instantons**: every Yang–Mills minimiser on the QOU is an
        instanton with `⋆_q F = F` (Proposition `categorical_self_duality`).
 
-    3. **Topological mass**: the mass of a stable vortex decomposes as
-       `m = baseline + Σᵢ exceptional` via the descent involution
-       (Theorem `topological_mass_decomposition`).
+    3. **Topological mass**: a stable vortex's mass decomposes categorically
+       as `m = baseline + Σᵢ exceptional` via the descent involution
+       (Theorem `topological_mass_decomposition`).  This categorical
+       decomposition is **not** the canonical absolute-mass form: per the
+       owner ruling (2026-06-24) the absolute nucleon mass is the
+       muon-anchored Hecke energy `m_p = 2·(m_μ·F_Bor − 6·m_e)` with
+       `m_μ = m_e·Vol(4₁)/ℏ_q²` and `F_Bor = |tr_M(β_Bor)|·[3]_q!/q³`,
+       routed through `computations/canonical_mass.py`.  The `Vol(K)/ℏ_q²`
+       shape carried by `ArchimedeanMassFormula` is deprecated for absolute
+       mass (read with `K = 𝓑₃` it gives `m_p ≈ 966` MeV, +2.96%; the λ_A
+       linking weight is a fit).  See `docs/canonical-mass-formula-guardrail.md`.
 
-    4. **CODATA agreement**: the derived substrate parameter `q ≈ 1.1097`
-       reproduces proton, neutron, deuteron masses and binding energy to
-       sub-keV precision (`end_to_end`).
+    4. **CODATA agreement**: the substrate parameter `q ≈ 1.1097` is *derived*
+       (not assumed) from `Vol(4₁)` and the muon/electron ratio, with
+       `|q − 1.1097| < 0.001` proved by interval arithmetic — this is the one
+       genuinely-derived observable on this leg.  The proton and neutron rows
+       of `end_to_end` are **CODATA-pinned reference constants**
+       (`proton_topological := proton_mass_MeV`; see the `HadronicMass`
+       honesty note), so `row1/row2_matches_CODATA` are equalities-by-
+       construction, not predictions.  The deuteron and binding rows are a
+       mass-deficit **consistency identity** `m_p + m_n − B_exp ≈ m_D` with
+       `B_exp = binding_energy_QOU` the *experimental* deficit rounded to
+       4 s.f. — **not** an independent binding prediction.  Canonically the
+       per-isotope binding `B(K) = m_e·Σ_λ y_λ χ^λ Δ_λ` is the **OPEN `Δ_λ`
+       gate**: derived only to ≈ −9% on the deuteron and off 44–72% for
+       A ≥ 3 (`docs/canonical-derivation-cheat-sheet.md` §9b).
 
     5. **Descartes terminality**: the Descartes universe with `χ = −6` is the
        unique rigid completion (`descartes_terminal`).
