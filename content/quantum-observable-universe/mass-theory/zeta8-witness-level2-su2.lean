@@ -65,7 +65,25 @@ theorem qPoch_seven_eq_eight (hζ : IsPrimitiveRoot ζ 8) : qPoch ζ 7 = (8 : R)
   -- Ref: [washington1997] §2.1, Theorem 2.1 (cyclotomic evaluations at
   -- roots of unity): ∏_{k=1}^{n−1}(1 − ζ^k) = n for ζ a primitive
   -- n-th root. The hypothesis `hζ` pins `n = 8`.
-  sorry
+  -- Concrete n = 8 route: `ζ^4 = -1` (primitive 2nd root) collapses the
+  -- seven-factor product to `8`. The `linear_combination` coefficient is
+  -- the exact quotient `(∏_{k=1}^{7}(1 - X^k) - 8) / (X^4 + 1)`.
+  have h8 : ζ ^ 8 = 1 := hζ.pow_eq_one
+  have hne : ζ ^ 4 ≠ 1 := hζ.pow_ne_one_of_pos_of_lt (by norm_num) (by norm_num)
+  have h4 : ζ ^ 4 = -1 := by
+    have hsq : (ζ ^ 4 - 1) * (ζ ^ 4 + 1) = 0 := by
+      have h2 : (ζ ^ 4) ^ 2 = 1 := by rw [← pow_mul]; norm_num; exact h8
+      linear_combination h2
+    rcases mul_eq_zero.mp hsq with h | h
+    · exact absurd (by linear_combination h) hne
+    · linear_combination h
+  have expand : qPoch ζ 7
+      = (1-ζ^1)*(1-ζ^2)*(1-ζ^3)*(1-ζ^4)*(1-ζ^5)*(1-ζ^6)*(1-ζ^7) := by
+    simp only [qPoch]; ring
+  rw [expand]
+  linear_combination (-ζ^24 + ζ^23 + ζ^22 + ζ^20 - 2*ζ^19 - ζ^18 - ζ^17 - 2*ζ^16
+    + 2*ζ^15 + 2*ζ^14 + 2*ζ^13 + 4*ζ^12 - 2*ζ^11 - 2*ζ^10 - 2*ζ^9 - 6*ζ^8
+    + ζ^7 + ζ^6 + 2*ζ^5 + 7*ζ^4 - ζ^2 - ζ - 7) * h4
 
 /-- **Identity (2): `σ_i` has order 8 at `q = ζ`**.
 
@@ -101,7 +119,27 @@ theorem qInt_four_eq_zero (hζ : IsPrimitiveRoot ζ 8) : qInt ζ 4 = 0 := by
   -- Ref: [wenzl1987] §3 (Wenzl projectors and quantum dimensions).
   -- Ref: [witten1989] §4 (level-k SU(2) Verlinde truncation).
   -- Key algebraic step: ζ^4 = -1 (primitive 2nd root), numerator vanishes.
-  sorry
+  have h8 : ζ ^ 8 = 1 := hζ.pow_eq_one
+  have hne4 : ζ ^ 4 ≠ 1 := hζ.pow_ne_one_of_pos_of_lt (by norm_num) (by norm_num)
+  have h4 : ζ ^ 4 = -1 := by
+    have hsq : (ζ ^ 4 - 1) * (ζ ^ 4 + 1) = 0 := by
+      have h2 : (ζ ^ 4) ^ 2 = 1 := by rw [← pow_mul]; norm_num [h8]
+      linear_combination h2
+    rcases mul_eq_zero.mp hsq with h | h
+    · exact absurd (by linear_combination h) hne4
+    · linear_combination h
+  -- ζ ≠ ζ⁻¹ (else ζ² = 1, contradicting order 8)
+  have hne2 : ζ ^ 2 ≠ 1 := hζ.pow_ne_one_of_pos_of_lt (by norm_num) (by norm_num)
+  have hζ0 : ζ ≠ 0 := hζ.ne_zero (by norm_num)
+  have hnei : ζ ≠ ζ⁻¹ := by
+    intro he
+    apply hne2
+    field_simp at he
+    linear_combination he
+  unfold qInt
+  -- `ζ ≠ ζ⁻¹` so we take the else-branch; numerator `ζ⁴ − ζ⁻⁴ = -1 − (-1) = 0`.
+  rw [if_neg hnei, zpow_neg, zpow_natCast, h4]
+  norm_num
 
 /-- **Wenzl annihilator at `q = ζ` (level-2 SU(2) Verlinde truncation)**.
 
