@@ -3,8 +3,9 @@ framework's physical observables are later read off: its fibre functor
 $\tau$ and Frobenius object $A$ are what subsequently carry the
 observable and mass data. The archetypal instance is the category
 $\mathbf{Rep}(\mathrm{SU}_q(2))$ of representations of the quantum
-group (see [Example](#ex:quantum-universe-su2)); keep it in mind as the
-concrete picture behind the abstract triple.
+group; its classical symmetric ($q \to 1$) limit $\mathrm{SU}(2)$ is the
+concrete picture worked in [Example](#ex:quantum-universe-su2). Keep
+that example in mind behind the abstract triple.
 
 Let $R$ be a commutative ring. A **quantum universe over $R$** is a
 triple $(\mathbf{C}, A, \tau)$ where:

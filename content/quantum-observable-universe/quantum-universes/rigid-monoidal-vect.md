@@ -1,7 +1,8 @@
 Two rigid monoidal categories run through the paper: the degenerate
-baseline $\mathrm{Vect}_{\mathbb{C}}$, and the object of interest
-$\mathrm{Rep}(\mathrm{SU}(2))$, the running example the whole framework
-instantiates.  Each arises as representations of a function algebra, so
+baseline $\mathrm{Vect}_{\mathbb{C}}$, and the classical running example
+$\mathrm{Rep}(\mathrm{SU}(2))$ — the symmetric ($q \to 1$) limit of the
+framework's $\mathrm{Rep}(\mathrm{SU}_q(2))$.  Each arises as
+representations of a function algebra, so
 we read them off from that algebra in turn.
 
 The polynomial ring $\mathbb{C}[z]$ is the algebra of functions on the
