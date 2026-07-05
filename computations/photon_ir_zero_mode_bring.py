@@ -48,13 +48,14 @@ import mpmath as mp
 
 mp.mp.dps = 40
 
-try:
-    from qou_substrate.constants import q_at
-    Q0 = str(q_at())
-except Exception:
-    Q0 = "1.1099780333553254"
+# Canonical substrate q_0 (50-digit, proton-pinned) — imported, never hardcoded.
+# q_parameter re-exports qou_substrate.constants; Q_50_DIGIT_STR == q_at() to 50 dps
+# (the former hardcoded fallback was stale and unused, removed 2026-07-05).
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
-CODATA_INV_ALPHA = "137.035999177"
+Q0 = Q_50_DIGIT_STR
+
+CODATA_INV_ALPHA = "137.035999177"  # CODATA 2022: 1/alpha = 137.035999177(21)
 
 
 def qbracket(q, k):
@@ -205,6 +206,26 @@ def main() -> None:
         "naive M x S^1 zero-mode is strictly smaller (the recorded failure)",
         computed=bool(naive_shift < photon_shift), expected=True,
         source="(2g+1)/(8pi^2(g-1)) = 9/(24pi^2) < 2/(3pi); diff (16pi-9)/(24pi^2)>0",
+    )
+    # --- DERIVED (honest, gated) accuracy claim: additive Level-1 form ---
+    # 1/alpha = q[9]_q[10]_q + 2/(3pi).  Bare tree (DERIVED, prop:em-coupling-
+    # projection) + photon IR zero-mode 2/(3pi) (DERIVED, this prop). Nothing
+    # fitted; this is the only assembled-accuracy claim status:"verified" rests on.
+    LEVEL1_PPM_BOUND = mp.mpf("5e-6")
+    w.add_assertion(
+        "Level-1 assembled 1/alpha = q[9]_q[10]_q + 2/(3pi) matches CODATA to < 5 ppm "
+        "(DERIVED: bare tree + photon IR zero-mode; no fit, no free parameter)",
+        computed=bool(abs(resid_2) < LEVEL1_PPM_BOUND), expected=True,
+        source=f"|resid_2| = |{s(resid_2,4)}| < 5e-6 vs CODATA {CODATA_INV_ALPHA}",
+    )
+    w.add_data("inv_alpha_level1_ppm_bound", str(LEVEL1_PPM_BOUND))
+    # --- Level-2 (+alpha/(4pi)) is CONJECTURAL — reported, never asserted ---
+    w.add_data(
+        "inv_alpha_resid_3term_status",
+        "CONJECTURAL — the +alpha/(4pi) Level-2 term is the suggestive Schwinger-like "
+        "next-order self-coupling; it is NOT derived (prop:em-coupling-bring-zero-mode "
+        "open item 2 / next-order self-energy). Recorded as an unasserted diagnostic "
+        "only; no verified status is gated on it.",
     )
     w.add_data(
         "finding",
