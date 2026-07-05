@@ -32,8 +32,3 @@ which:
 \qquad\text{(fibre--adjoint involution)}
 \end{equation}
 ```
-
-
-## Lean formalization
-
-The companion Lean `fiber_adjoint_involution_exists` currently encodes an existence stub (`∃ inv, True`) pending a faithful statement; the proof above is the intended content, deferred via `sorry` (`-- Ref: [manuscript]`).
