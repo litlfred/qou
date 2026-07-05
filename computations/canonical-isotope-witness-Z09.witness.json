@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T14:26:22.665902+00:00",
-  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
+  "computedAt": "2026-07-05T11:17:37.875444+00:00",
+  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 27,
+  "durationMs": 25,
   "computation": "canonical-isotope-witness-Z09",
   "scriptFile": "canonical_isotope_witness.py",
-  "scriptHash": "45fb3f70048a",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "19d75785a6b2",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,15 +19,15 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
   },
   "description": "Per-Z=9 shard of the recursive atom-knot atlas. Element: F. Covers every (Z=9, N) in AME 2020. Each row carries: prediction_type ∈ {mass, binding_energy}; the prediction value (from L1 canonical |tr_M| via markov_peel+mpmath, OR L2 α-cluster recursion); the AME 2020 reference; err in MeV / % / ppm; L4 composite mass M = N·m_n + Z·m_p − B (when nucleon masses + B are available). L1 source: canonical-mass-table-extended.witness.json; L2 source: alpha-cluster-recursion.witness.json; nucleon masses: m-p-borromean-verification-50dps.witness.json.",
   "parameters": {
     "Z": 9,
     "element": "F",
-    "q_0": "1.1099785955573347198997632204832250266562084087802",
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
     "rows_total": 19,
     "rows_with_prediction": 0,
     "rows_with_composite_mass": 0
@@ -50,7 +50,7 @@
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 12151.453276855293,
+          "M_AME_MeV": 12151.453293813951,
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -82,7 +82,7 @@
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 13072.881836577386,
+          "M_AME_MeV": 13072.881854821995,
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -114,7 +114,7 @@
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 13988.97828838922,
+          "M_AME_MeV": 13988.97830791234,
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -146,7 +146,7 @@
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 14914.580820089095,
+          "M_AME_MeV": 14914.580840903993,
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -178,7 +178,7 @@
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 15837.351442048672,
+          "M_AME_MeV": 15837.351464151396,
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -210,7 +210,7 @@
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 16767.76695533806,
+          "M_AME_MeV": 16767.766978739277,
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -247,7 +247,7 @@
         },
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 17696.900500865682,
+          "M_AME_MeV": 17696.900525563608,
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -279,7 +279,7 @@
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 18629.864584748568,
+          "M_AME_MeV": 18629.864610748544,
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -311,7 +311,7 @@
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 19561.328544950906,
+          "M_AME_MeV": 19561.32857225084,
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -343,7 +343,7 @@
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 20495.663628932263,
+          "M_AME_MeV": 20495.663657536163,
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -375,7 +375,7 @@
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 21427.64961892247,
+          "M_AME_MeV": 21427.649648827057,
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -407,7 +407,7 @@
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 22363.402973468317,
+          "M_AME_MeV": 22363.403004678847,
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -439,7 +439,7 @@
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 23298.68672644036,
+          "M_AME_MeV": 23298.686758956177,
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -471,7 +471,7 @@
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 24237.521317232433,
+          "M_AME_MeV": 24237.521351058494,
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -503,7 +503,7 @@
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 25175.474243267603,
+          "M_AME_MeV": 25175.47427840268,
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -535,7 +535,7 @@
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 26115.238663582135,
+          "M_AME_MeV": 26115.238700028756,
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -567,7 +567,7 @@
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 27053.479160476607,
+          "M_AME_MeV": 27053.479198232642,
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -599,7 +599,7 @@
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 27993.7833341173,
+          "M_AME_MeV": 27993.783373185626,
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -631,7 +631,7 @@
         "excised": null,
         "composite_mass": {
           "M_pred_MeV": null,
-          "M_AME_MeV": 28933.159739631974,
+          "M_AME_MeV": 28933.159780011305,
           "err_MeV": null,
           "err_ppm": null,
           "canonical_status": "pending",
@@ -651,11 +651,11 @@
     "upstream_witness_hashes": [
       {
         "path": "canonical-mass-table-extended.witness.json",
-        "sha256": "e9df7bc74ec3dca6500c62f45f0b583d40c5f43725c1b254d462690cf006a937",
-        "size_bytes": 23828,
-        "commitSha": "96c4de9c94ef659a11c87efc0293c598271531ad",
-        "scriptCommitSha": "96c4de9c94ef659a11c87efc0293c598271531ad",
-        "computedAt": "2026-06-14T23:40:47.221743+00:00"
+        "sha256": "d0e2ec2545d885ee239bc5d6a5d6ef16adc91c78428ae21d8d684dce91fcedb1",
+        "size_bytes": 59040,
+        "commitSha": "ea19ddc940c3510b105bedd8d6cf7fba9ffc55c7",
+        "scriptCommitSha": "e4bc522ce86b2886977509df649613bacb0de950",
+        "computedAt": "2026-06-29T17:22:46.103608+00:00"
       },
       {
         "path": "alpha-cluster-recursion.witness.json",
@@ -675,11 +675,11 @@
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "cb4b76b51ef58f364fcc1a6e9a5c5ece4529dfffe098ce3a96b5e61f73f47819",
-        "size_bytes": 9112,
-        "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
-        "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
-        "computedAt": "2026-06-22T13:19:41.230571+00:00"
+        "sha256": "6e8536cef754cbbaecbe12f3610837c293eb83979b279f77316c8230093ac7bc",
+        "size_bytes": 10359,
+        "commitSha": "e309512a690ab453503aad077dba5ed3077cabb1",
+        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+        "computedAt": "2026-07-02T12:20:49.981050+00:00"
       },
       {
         "path": "ame2020.json",

@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-05T18:55:33.977950+00:00",
-  "commitSha": "730c4f14a2295cf5c01c4f4eb4a28ffbf089a56f",
+  "computedAt": "2026-07-05T11:18:56.794558+00:00",
+  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
   "assertions": [
     {
       "name": "mass_theory_formalize_first_invariants_matrix_executed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 575,
+  "durationMs": 577,
   "computation": "mass-theory-formalize-first-invariants-probe",
   "scriptFile": "mass_theory_formalize_first_invariants_probe.py",
-  "scriptHash": "713044416c1a",
-  "scriptCommitSha": "730c4f14a2295cf5c01c4f4eb4a28ffbf089a56f",
+  "scriptHash": "c9319c6d34a4",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,

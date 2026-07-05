@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:18:27.632247+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-07-05T11:17:41.160034+00:00",
+  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
   "assertions": [
     {
       "name": "He-4 mass",
@@ -186,7 +186,7 @@
     },
     {
       "name": "Ti-48 mass",
-      "computed": 44851.536,
+      "computed": 44851.535,
       "expected": 44663.23,
       "passed": true,
       "tolerance": 893.2646000000001,
@@ -294,11 +294,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 18,
   "computation": "channel-product-mass",
   "scriptFile": "channel_product_mass.py",
-  "scriptHash": "45a94d55cf0e",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "b57b83d70b02",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -308,18 +308,19 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
   "description": "Exact per-nucleon channel product mass formula. Uses the T_{2,3} eigendecomposition of H₃(q) to factor the nuclear Garside element as a product of per-nucleon channel sums: a = -HA/2 (proton), b = -3(q²-1)(q²+1)²/(4q³) (neutron). Mass = constituents - α·(Z·ln|a| + N·ln|b|) with α = m_e × 8G. Zero fitted parameters.",
   "contentBlock": "rem:q-integer-mass-table",
   "parameters": {
-    "q₀": 1.1099785955573347,
-    "α (MeV)": 3.74445965488548,
-    "a (proton sum)": -0.10453016099779683,
-    "b (neutron sum)": -0.6340338930295157,
-    "ln|a|": -2.2582796272320986,
-    "ln|b|": -0.4556528669367035
+    "q₀": 1.1099785827513808,
+    "α (MeV)": 3.7444596599416102,
+    "a (proton sum)": -0.10453014939781968,
+    "b (neutron sum)": -0.6340338211481932,
+    "ln|a|": -2.2582797382046413,
+    "ln|b|": -0.45565298030812956
   },
   "data": {
     "results": [
@@ -440,7 +441,7 @@
         "A": 23,
         "M_pred_MeV": 21487.909,
         "M_obs_MeV": 21414.835,
-        "B_pred_MeV": 113.49,
+        "B_pred_MeV": 113.491,
         "B_obs_MeV": 186.564,
         "error_pct": 0.3412
       },
@@ -517,7 +518,7 @@
         "A": 40,
         "M_pred_MeV": 37378.79,
         "M_obs_MeV": 37224.719,
-        "B_pred_MeV": 189.744,
+        "B_pred_MeV": 189.745,
         "B_obs_MeV": 343.816,
         "error_pct": 0.4139
       },
@@ -559,7 +560,7 @@
         "Z": 22,
         "N": 26,
         "A": 48,
-        "M_pred_MeV": 44851.536,
+        "M_pred_MeV": 44851.535,
         "M_obs_MeV": 44663.23,
         "B_pred_MeV": 230.393,
         "B_obs_MeV": 418.699,
@@ -693,8 +694,8 @@
       "n_atoms": 32
     },
     "channel_sums": {
-      "a_proton": -0.10453016099779683,
-      "b_neutron": -0.6340338930295157,
+      "a_proton": -0.10453014939781968,
+      "b_neutron": -0.6340338211481932,
       "a_proton_formula": "-HA/2 = -(q-q⁻¹)/2",
       "b_neutron_formula": "-3(q²-1)(q²+1)²/(4q³)"
     }

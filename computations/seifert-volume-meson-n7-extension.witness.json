@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-28T04:41:25.122650+00:00",
-  "commitSha": "bc44957b45c651c81245f367871ed18da68f5d13",
+  "computedAt": "2026-07-05T11:19:19.123460+00:00",
+  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
   "assertions": [
     {
       "name": "torus_knots_not_hyperbolic",
@@ -14,7 +14,7 @@
     },
     {
       "name": "kaon_reference_under_500ppm",
-      "computed": 289.5270685116303,
+      "computed": 289.6474297199268,
       "expected": 0,
       "passed": true,
       "tolerance": 500,
@@ -38,25 +38,32 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 15,
   "computation": "seifert-volume-meson-n7-extension",
   "scriptFile": "seifert_volume_meson_n7_extension.py",
-  "scriptHash": "3859503dbe65",
-  "scriptCommitSha": "ea46b025a1c1449ffebec67c1804df1c1f1592b3",
+  "scriptHash": "a9469102c3cb",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Extension of meson mass formula to eta (547.862 MeV) and phi (1019.461 MeV). Confirms torus knots T(2,k) have Vol=0 (not hyperbolic); uses character-based formulas from H_n(q) instead. Best eta: E1: eta = m_K * q_0 (!!!) at 199 ppm. Best phi: C6: phi = m_K * |tr_H2(10)/tr_H2(5)| at 17305 ppm. Notable: m_eta/m_K = 1.109758 vs q_0 = 1.1099786.",
   "data": {
     "substrate": {
-      "q_0": "1.10997859555418057528159407960950937799328227995870",
-      "h": "0.2090603219898794611016084222979219064618",
-      "hbar_q": "0.09908172643569888582001434268841252846847",
-      "u": "0.00851723634004395810711354481100800446028",
-      "b": "0.8675840673070581786583330825239334460697"
+      "q_0": "1.1099785827513808075916690956107688798744991218736",
+      "h": "0.2090602987956393154308462131296749438598",
+      "hbar_q": "0.09908171604425850783917711751890606398526",
+      "u": "0.008517234550156142189255573603309202969194",
+      "b": "0.867584066965251155651162891536052395705"
     },
     "pdg_masses_MeV": {
       "m_pi": "139.57039",
@@ -66,9 +73,9 @@
     },
     "kaon_reference": {
       "formula": "chi5 * (9/5)^2",
-      "predicted_ratio": "3.53609434741422",
+      "predicted_ratio": "3.53609392168237",
       "pdg_ratio": "3.53711843894683",
-      "err_ppm": 289.5270685116303
+      "err_ppm": 289.6474297199268
     },
     "torus_knot_volumes": {
       "T(2,3)": "0 (not hyperbolic — Seifert fibered)",
@@ -80,142 +87,142 @@
     "eta_candidates": [
       {
         "label": "E1: eta = m_K * q_0 (!!!)",
-        "pred_MeV": 547.9709031174012,
-        "err_ppm": 198.7783737532515
+        "pred_MeV": 547.9708967969534,
+        "err_ppm": 198.7668371842233
       },
       {
         "label": "A1: eta n_eff=8, (15/8)^2*chi5",
-        "pred_MeV": 535.5187360518646,
-        "err_ppm": 22529.87786730132
+        "pred_MeV": 535.5186715775153,
+        "err_ppm": 22529.995550858865
       },
       {
         "label": "C5: eta = m_K * |tr_H2(7)/tr_H2(5)|",
-        "pred_MeV": 646.1183894842558,
-        "err_ppm": 179345.1443689391
+        "pred_MeV": 646.1183750401306,
+        "err_ppm": 179345.1180044073
       },
       {
         "label": "B1: eta = m_pi * chi7/chi3",
-        "pred_MeV": 349.6631755775731,
-        "err_ppm": 361767.7890096902
+        "pred_MeV": 349.66317019115326,
+        "err_ppm": 361767.7988413994
       },
       {
         "label": "C3: eta = m_pi * |tr_H3(7)/tr_H3(3)|",
-        "pred_MeV": 277.1480875183364,
-        "err_ppm": 494127.92360423534
+        "pred_MeV": 277.14808171753793,
+        "err_ppm": 494127.93419230037
       },
       {
         "label": "C1: eta = m_pi * |tr_H2(7)/tr_H2(3)|",
-        "pred_MeV": 248.55546352042094,
-        "err_ppm": 546317.387370504
+        "pred_MeV": 248.55545134846648,
+        "err_ppm": 546317.4095876946
       },
       {
         "label": "B4: eta = m_pi * [5]_q * (9/5)^2 * eta_mix",
-        "pred_MeV": 215.4226027795727,
-        "err_ppm": 606794.0416024971
+        "pred_MeV": 215.42257769967011,
+        "err_ppm": 606794.0873802707
       },
       {
         "label": "D1: eta = m_pi * net(8)/net(6) [same as K topology]",
-        "pred_MeV": 159.83161216043328,
-        "err_ppm": 708263.007544905
+        "pred_MeV": 159.83160988214502,
+        "err_ppm": 708263.0117034125
       }
     ],
     "phi_candidates": [
       {
         "label": "C6: phi = m_K * |tr_H2(10)/tr_H2(5)|",
-        "pred_MeV": 1037.1028023114097,
-        "err_ppm": 17305.029139329305
+        "pred_MeV": 1037.10276945484,
+        "err_ppm": 17304.99690997485
       },
       {
         "label": "E2: phi = m_K * [5]_q/[3]_q",
-        "pred_MeV": 846.7347460802966,
-        "err_ppm": 169428.9962241845
+        "pred_MeV": 846.734740775826,
+        "err_ppm": 169429.00142739547
       },
       {
         "label": "E3: phi = m_K * q^2",
-        "pred_MeV": 608.2359734468089,
-        "err_ppm": 403374.9467151672
+        "pred_MeV": 608.2359594156856,
+        "err_ppm": 403374.9604784435
       },
       {
         "label": "E5: phi = m_eta * q_0 (chain test)",
-        "pred_MeV": 608.1150933175045,
-        "err_ppm": 403493.51930333336
+        "pred_MeV": 608.115086303337,
+        "err_ppm": 403493.5261836039
       },
       {
         "label": "E4: phi = m_pi * kaon_base * q^2",
-        "pred_MeV": 608.0598726684535,
-        "err_ppm": 403547.68581784534
+        "pred_MeV": 608.0597854333776,
+        "err_ppm": 403547.7713876475
       },
       {
         "label": "B3: phi = m_pi * chi7/chi3 * chi5/chi3",
-        "pred_MeV": 599.7280816937117,
-        "err_ppm": 411720.427074982
+        "pred_MeV": 599.7280686980753,
+        "err_ppm": 411720.43982253835
       },
       {
         "label": "A2: phi n_eff=10, (19/10)^2*chi5",
-        "pred_MeV": 549.894439010768,
-        "err_ppm": 460602.7704730559
+        "pred_MeV": 549.8943728056406,
+        "err_ppm": 460602.83541436045
       },
       {
         "label": "C4: phi = m_pi * |tr_H3(10)/tr_H3(3)|",
-        "pred_MeV": 484.0786061359036,
-        "err_ppm": 525162.2120552885
+        "pred_MeV": 484.0786075091334,
+        "err_ppm": 525162.2107082729
       },
       {
         "label": "B2: phi = m_pi * chi9/chi3",
-        "pred_MeV": 475.2233401361354,
-        "err_ppm": 533848.4354613513
+        "pred_MeV": 475.22332723650453,
+        "err_ppm": 533848.4481147346
       },
       {
         "label": "C2: phi = m_pi * |tr_H2(10)/tr_H2(3)|",
-        "pred_MeV": 398.963366377179,
-        "err_ppm": 608652.6445080498
+        "pred_MeV": 398.9633431189473,
+        "err_ppm": 608652.6673222935
       },
       {
         "label": "D2: phi = m_pi * net(10)/net(6)",
-        "pred_MeV": 182.63117008334444,
-        "err_ppm": 820855.167501901
+        "pred_MeV": 182.63116499584385,
+        "err_ppm": 820855.1724922839
       },
       {
         "label": "E6: phi = m_pi * |chi5 * chi3|",
-        "pred_MeV": 96.92737970508472,
-        "err_ppm": 904922.9154375844
+        "pred_MeV": 96.92735697294864,
+        "err_ppm": 904922.9377357754
       },
       {
         "label": "E7: phi = m_pi * [5]_q * [3]_q",
-        "pred_MeV": 2217.7022773710955,
-        "err_ppm": 1175367.4513994113
+        "pred_MeV": 2217.7022493457553,
+        "err_ppm": 1175367.423909061
       }
     ],
     "tower_correction": {
-      "R": "1.00029017325949",
-      "four_u_sq": "0.000290173259488662",
-      "kaon_without_R_ppm": 289.5270685116303,
-      "kaon_with_R_ppm": 0.562177963851051,
+      "R": "1.00029017313753",
+      "four_u_sq": "0.000290173137529494",
+      "kaon_without_R_ppm": 289.6474297199268,
+      "kaon_with_R_ppm": 0.44165990610802736,
       "kaon_R_effect": "improves",
-      "best_eta_without_R_ppm": 198.7783737532515,
-      "best_eta_with_R_ppm": 489.0093134105409,
+      "best_eta_without_R_ppm": 198.7668371842233,
+      "best_eta_with_R_ppm": 488.99765151049985,
       "best_eta_R_effect": "worsens",
-      "best_phi_without_R_ppm": 17305.029139329305,
-      "best_phi_with_R_ppm": 17600.22385552887,
+      "best_phi_without_R_ppm": 17304.99690997485,
+      "best_phi_with_R_ppm": 17600.19149275265,
       "best_phi_R_effect": "worsens"
     },
     "notable_ratio": {
       "m_eta_over_m_K": "1.10975799966375",
-      "q_0": "1.10997859555418",
-      "difference_ppm": 198.738868764117,
+      "q_0": "1.10997858275138",
+      "difference_ppm": 198.7273367800295,
       "interpretation": "m_eta / m_K ~ q_0 to the precision shown"
     },
     "h2_markov_traces": {
-      "tr_H2(sigma^3)": "0.728085556082587",
-      "tr_H2(sigma^5)": "0.990702433361211",
-      "tr_H2(sigma^7)": "1.29661916739382",
-      "tr_H2(sigma^10)": "2.08123989956114"
+      "tr_H2(sigma^3)": "0.728085528688015",
+      "tr_H2(sigma^5)": "0.990702369717464",
+      "tr_H2(sigma^7)": "1.29661905511145",
+      "tr_H2(sigma^10)": "2.08123969992415"
     },
     "h3_markov_traces": {
-      "tr_H3(sigma^3)": "0.27017941877712",
-      "tr_H3(sigma^5)": "0.394714665190813",
-      "tr_H3(sigma^7)": "0.536501396900119",
-      "tr_H3(sigma^10)": "0.937076097933356"
+      "tr_H3(sigma^3)": "0.270179386836878",
+      "tr_H3(sigma^5)": "0.394714614906721",
+      "tr_H3(sigma^7)": "0.536501322246512",
+      "tr_H3(sigma^10)": "0.937075989811789"
     }
   }
 }

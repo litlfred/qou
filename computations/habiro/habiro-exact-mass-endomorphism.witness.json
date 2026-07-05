@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T13:24:46.612179+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-05T11:18:49.596010+00:00",
+  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "habiro-exact-mass-endomorphism",
   "scriptFile": "habiro_exact_mass_endomorphism.py",
-  "scriptHash": "8cb75c2d7f9e",
-  "scriptCommitSha": "c30da51bea8725add6b37e84c3e6d14cc94ce01e",
+  "scriptHash": "54c5b62e725e",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,7 +17,7 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
@@ -27,7 +27,7 @@
   "contentBlock": "prop:mass-endomorphism-tower",
   "parameters": {
     "q_0_mpf50": "1.1099785955541805677630215523262746828651420435574",
-    "m_e_MeV": 0.51099895,
+    "m_e_MeV": 0.51099895069,
     "mpmath_dps": 70
   },
   "data": {

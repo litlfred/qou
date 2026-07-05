@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T23:47:27.716463+00:00",
-  "commitSha": "9bfbf7e9b7e1e0b6014b8c7e1c35158413a40ad1",
+  "computedAt": "2026-07-05T11:17:33.802561+00:00",
+  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
   "assertions": [
     {
       "name": "stage_c_per_block_chi_symbolic_matches_pyhecke",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 369,
+  "durationMs": 383,
   "computation": "qbeta-stage-c-per-block-chi-closed-form-probe",
   "scriptFile": "qbeta_stage_c_per_block_chi_closed_form_probe.py",
-  "scriptHash": "df3eaddbaa36",
-  "scriptCommitSha": "9bfbf7e9b7e1e0b6014b8c7e1c35158413a40ad1",
+  "scriptHash": "de91718e2bc7",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -60,8 +60,8 @@
           3
         ],
         "chi_symbolic_q": "q**3",
-        "chi_at_q_0_symbolic": "1.367551836951385187966724",
-        "chi_at_q_0_pyhecke": "1.3675518369513862",
+        "chi_at_q_0_symbolic": "1.367551884284206570868045",
+        "chi_at_q_0_pyhecke": "1.3675518842842074",
         "match_at_q_0": true
       },
       {
@@ -71,7 +71,7 @@
         ],
         "chi_symbolic_q": "0",
         "chi_at_q_0_symbolic": "0.0",
-        "chi_at_q_0_pyhecke": "1.1102230246251565e-16",
+        "chi_at_q_0_pyhecke": "4.996003610813204e-16",
         "match_at_q_0": true
       },
       {
@@ -81,8 +81,8 @@
           1
         ],
         "chi_symbolic_q": "-1/q**3",
-        "chi_at_q_0_symbolic": "-0.7312337075494336740413528",
-        "chi_at_q_0_pyhecke": "-0.7312337075494344",
+        "chi_at_q_0_symbolic": "-0.7312336822404454986420315",
+        "chi_at_q_0_pyhecke": "-0.7312336822404466",
         "match_at_q_0": true
       }
     ],

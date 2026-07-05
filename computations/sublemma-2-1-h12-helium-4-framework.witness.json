@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-20T15:59:44.863096+00:00",
-  "commitSha": "b547ff7992e1e7dce96040ee5625fefea4a37fb1",
+  "computedAt": "2026-07-05T11:19:19.993026+00:00",
+  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
   "assertions": [
     {
       "name": "framework documented + prerequisite witnesses checked",
@@ -15,11 +15,24 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 29,
+  "durationMs": 74,
   "computation": "sublemma-2-1-h12-helium-4-framework",
   "scriptFile": "sublemma_2_1_h12_helium_4_framework.py",
-  "scriptHash": "96505d14b17a",
-  "scriptCommitSha": "90ef1279d9a3d0287007065c7f00cb0ac77a9ec6",
+  "scriptHash": "e78764d36968",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
   "description": "Framework / next-step scaffold for the H_{12} ⁴He A-operator extract — extending prop:mass-tower-operator-valued from A = 3 (PROVED, this branch) to A = 4 (OPEN). Documents the iterated 3-interface formula, verifies prerequisite H_6 + H_9 witnesses, and records the deferred H_{12} extraction plan.",
   "auditOnly": "docs/coordination/2026-05-20-lambda-p-followons-ledger.md",
   "data": {
@@ -74,6 +87,12 @@
         "Rank-deficiency at H_9 extraction (per docs/audits/2026-05-18-recursive-rho-xi-blocked-by-underdetermined-extracts.md) was 42% error on tritium direct-eval; the same pattern likely amplifies at H_{12}. Closure path: regenerate H_{12} extracts with ≥3500 test words spanning the full Wedderburn-block lattice (not just the 'natural' canonical-form basis).",
         "Alternative closure (not requiring full A-operator extraction): use markov_peel.tr_M_atomic(2, 2) directly to get |tr_M(β_⁴He, q_0)| (already in canonical-mass-table-extended.witness.json at 0.0553483459). The operator-valued formula's VALUE-ADD over direct markov_peel is structural transparency (per-(μ_1,...,μ_A)-block decomposition), not numerical precision."
       ]
+    },
+    "lean_uniqueness_ref": {
+      "nucleus": "helium-4",
+      "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     }
   }
 }

@@ -1,15 +1,15 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-04T18:45:21.412508+00:00",
-  "commitSha": "d42ea09fb93f6881be4cc503d66e20b3842f1c4a",
+  "computedAt": "2026-07-05T11:21:14.970537+00:00",
+  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 0,
+  "durationMs": 4,
   "computation": "qbeta-h4-gram-barchannel-split",
   "scriptFile": "qbeta_h4_gram_barchannel_probe.py",
-  "scriptHash": "a06407b8a386",
-  "scriptCommitSha": "195d20d53e021ba71a0653b92d82f41b008527d3",
+  "scriptHash": "353a596395fb",
+  "scriptCommitSha": "fe34c5100a1ba3487fb9c043ebb15fea07effabe",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -18,6 +18,8 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },

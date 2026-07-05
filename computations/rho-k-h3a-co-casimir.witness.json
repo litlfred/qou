@@ -1,15 +1,28 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T15:53:54.819985+00:00",
-  "commitSha": "71735cc5beff98b495e89da7e8b39814ea22b39c",
+  "computedAt": "2026-07-05T11:19:07.572518+00:00",
+  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 0,
+  "durationMs": 4,
   "computation": "rho-k-h3a-co-casimir",
   "scriptFile": "rho_k_h3a_co_casimir.py",
-  "scriptHash": "a4935d1a4827",
-  "scriptCommitSha": "fbf39bd26ca0665fbde72cec214f607eb92e2c42",
+  "scriptHash": "a2d312e8ebce",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
   "description": "Option B for the underdetermined Δ_λ(K) selector in prop:rho-k-h3a-refinement (deuteron, A=2, n=6).  Replaces the Occam single-partition heuristic (rho_k_h3a_refinement.py) with the Frobenius co-Casimir per-isotypic restriction Δ_λ := tr_M(C_dim_q · 1_λ) = 1/dim_q(λ), forced by thm:frobenius-codim-universal (no free parameters).  Computes the resulting mass-equation residual; honest reporting — no rescaling applied to Δ_λ^B.",
   "engine_note": "sympy q-hook-length symbolic dim_q + 50-dps mpmath evaluation; y_λ(q_0) and χ^λ(β_D) reused verbatim from rho-k-h3a-refinement.witness.json (Occam baseline).",
   "selector": {
@@ -28,7 +41,7 @@
     "rationale": "C_dim_q = Σ_λ [1/(dim_q(λ)·τ(p_λ))]·p_λ is in Z(H_n(q)). Restricting to the λ-isotypic (multiplying by 1_λ = p_λ) and tracing telescopes the τ(p_λ) factors: tr_M(C_dim_q · p_λ) = [1/(dim_q·τ(p_λ))]·τ(p_λ) = 1/dim_q. The Lean lemma ``codim_block_contribution`` captures this exact identity.  ``frobenius_codim_tau_invariant`` shows the value does NOT depend on the choice of Frobenius pairing τ (Plancherel-A vs Wenzl-Schur both give 1/dim_q)."
   },
   "parameters": {
-    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
     "atom": "deuteron",
     "Z": 1,
     "N": 1,
@@ -37,7 +50,7 @@
     "n_partitions": 11,
     "compute_status": "deuteron",
     "M_codata_MeV": "1875.61294257",
-    "m_e_MeV": "0.51099895",
+    "m_e_MeV": "0.51099895069",
     "m_p_MeV": "938.27208816",
     "m_n_MeV": "939.56542052",
     "occam_witness_loaded": "rho-k-h3a-refinement.witness.json",
@@ -48,8 +61,8 @@
     "rho_K_LO": "9464.2399476222402644936590084821725363213426591396",
     "rho_K_codata": "9453.0282068049061232379807700611810852137428762323",
     "delta_rho_residual": "-11.211740817334141255678238420991451107599782907313",
-    "target_signed": "-4.353367281870148656861232298031140768488858930132",
-    "sigma_inv_dim_q_n6_at_q0": "3.2021339838031971925527950871246437377495694488791",
+    "target_signed": "-4.353367281870148656861232298031140768488858930132015702684597273065328",
+    "sigma_inv_dim_q_n6_at_q0": "3.202134001221746244787688845726382440735183005892842685598784575620916",
     "per_lambda": [
       {
         "partition": [
@@ -84,12 +97,12 @@
           1
         ],
         "self_dual": false,
-        "dim_q_at_q0": "5.2204413246645735350888079235694566971933489931084",
-        "Delta_lambda_co_casimir": "0.19155468624374444266815157678882015532087757417557",
+        "dim_q_at_q0": "5.220441275326898244960433252993901451232448302223146434702167190410016",
+        "Delta_lambda_co_casimir": "0.1915546880541015392728789842847080101410427279918844967340370222301146",
         "y_lambda_at_q0": "0.058960681401453730785485915659443199470465849311845",
         "chi_lambda_beta_D_at_q0": "3.2158914339386873128784472462978051568372154356128",
         "y_chi_product_signed": "0.18961115025812313016914536057171259868832724451837",
-        "contribution_y_chi_Delta": "0.036320904396010259292221133784749762075177988260273"
+        "contribution_y_chi_Delta": "0.03632090473927415075739963345610179358705193677697969349158092608490193"
       },
       {
         "partition": [
@@ -103,12 +116,12 @@
           1
         ],
         "self_dual": false,
-        "dim_q_at_q0": "9.6690483971245204745428557739100086627306943253172",
-        "Delta_lambda_co_casimir": "0.10342279394292721985427856296109300673959954388711",
+        "dim_q_at_q0": "9.669048245665018946103436965569947555999583822813244301916134190305951",
+        "Delta_lambda_co_casimir": "0.1034227955629796199751649989166890932636444817171759367632647555079544",
         "y_lambda_at_q0": "0.040284386965935211236296233398315147983734378748849",
         "chi_lambda_beta_D_at_q0": "1.6737481247387004963839340269207117288136410247938",
         "y_chi_product_signed": "0.067425917140482208360553363912676662585540529909909",
-        "contribution_y_chi_Delta": "0.0069733767348329759508562165708944316673494200495854"
+        "contribution_y_chi_Delta": "0.006973376844066494844646434196859205101528449503942020601779029786010929"
       },
       {
         "partition": [
@@ -123,12 +136,12 @@
           1
         ],
         "self_dual": false,
-        "dim_q_at_q0": "10.669048397124520474542855773910008662730694325317",
-        "Delta_lambda_co_casimir": "0.093729071495215639477706503855464801011936415431814",
+        "dim_q_at_q0": "10.66904824566501894610343696556994755599958382281324430191613419030595",
+        "Delta_lambda_co_casimir": "0.09372907282580840843972850548701291333707049381141892143472231901434093",
         "y_lambda_at_q0": "0.010133463492072934671136866135432127585911899823022",
         "chi_lambda_beta_D_at_q0": "-0.47019148000472144246476155275233920272035694259016",
         "y_chi_product_signed": "-0.0047646681969115859858117404189352329560631255475315",
-        "contribution_y_chi_Delta": "-0.00044658792607930623161941547720511123183032557369038"
+        "contribution_y_chi_Delta": "-0.000446587932419139280933287361239426818528117295792410387282749976861129"
       },
       {
         "partition": [
@@ -141,12 +154,12 @@
           2
         ],
         "self_dual": false,
-        "dim_q_at_q0": "5.4486070724599469394540478503405519655373453322088",
-        "Delta_lambda_co_casimir": "0.18353314649068981184614147166245611099988585400374",
+        "dim_q_at_q0": "5.448606970338120701143003712576046104767135520590097867213966999895935",
+        "Delta_lambda_co_casimir": "0.1835331499306039397924273794156913098239245527327542762895897619433285",
         "y_lambda_at_q0": "0.014120874004975287300431630623435029775788893853587",
         "chi_lambda_beta_D_at_q0": "4.2490702926236505900647331330454182072731397862965",
         "y_chi_product_signed": "0.060000586240422044867861509735170570422375244722244",
-        "contribution_y_chi_Delta": "0.011012096383990646635322655272530789546222173196447"
+        "contribution_y_chi_Delta": "0.01101209659038751092880997507195949346072565061530343414746052972000864"
       },
       {
         "partition": [
@@ -160,12 +173,12 @@
           1
         ],
         "self_dual": true,
-        "dim_q_at_q0": "17.344673582613544481493398756536650629922511925192",
-        "Delta_lambda_co_casimir": "0.057654587458042964860238856588975589604970673882639",
+        "dim_q_at_q0": "17.34467327674696545443439371658203548654080299894685548289998451975701",
+        "Delta_lambda_co_casimir": "0.05765458847475922982728910951817978760381849338637542315555685822943952",
         "y_lambda_at_q0": "0.0073184543522857307843666769029052172957683238888947",
         "chi_lambda_beta_D_at_q0": "-1.9728210551001285049496437509574067414460258016939",
         "y_chi_product_signed": "-0.014438000836978462960296828680734165283580943741507",
-        "contribution_y_chi_Delta": "-0.00083241698197487231989493636492908241421885157800736"
+        "contribution_y_chi_Delta": "-0.0008324169966542226044588246355765389143019212881189958608475583098312094"
       },
       {
         "partition": [
@@ -180,12 +193,12 @@
           1
         ],
         "self_dual": false,
-        "dim_q_at_q0": "10.669048397124520474542855773910008662730694325317",
-        "Delta_lambda_co_casimir": "0.093729071495215639477706503855464801011936415431814",
+        "dim_q_at_q0": "10.66904824566501894610343696556994755599958382281324430191613419030595",
+        "Delta_lambda_co_casimir": "0.09372907282580840843972850548701291333707049381141892143472231901434093",
         "y_lambda_at_q0": "-0.0006853088855144667846371853194123257721618416390897",
         "chi_lambda_beta_D_at_q0": "-0.48998813829170552523126588270765227788218253200051",
         "y_chi_product_signed": "0.00033579322496799714026187243306333341606849317753425",
-        "contribution_y_chi_Delta": "0.00003147358719063443332221006575430519469420337963442"
+        "contribution_y_chi_Delta": "0.00003147358763743847033106456244945962746395076617008840215861215964912669"
       },
       {
         "partition": [
@@ -198,12 +211,12 @@
           3
         ],
         "self_dual": false,
-        "dim_q_at_q0": "5.4486070724599469394540478503405519655373453322088",
-        "Delta_lambda_co_casimir": "0.18353314649068981184614147166245611099988585400374",
+        "dim_q_at_q0": "5.448606970338120701143003712576046104767135520590097867213966999895935",
+        "Delta_lambda_co_casimir": "0.1835331499306039397924273794156913098239245527327542762895897619433285",
         "y_lambda_at_q0": "0.00077318673690538012239285368505156904988009656817756",
         "chi_lambda_beta_D_at_q0": "-3.4975646652884290952655280198503765208286836804627",
         "y_chi_product_signed": "-0.0027042706106699185154715449299092262561365192603624",
-        "contribution_y_chi_Delta": "-0.00049632329413854934983881472849449648671661359254292"
+        "contribution_y_chi_Delta": "-0.0004963233034410080292721975334321114887576308660292849198237809690370728"
       },
       {
         "partition": [
@@ -217,12 +230,12 @@
           2
         ],
         "self_dual": false,
-        "dim_q_at_q0": "9.6690483971245204745428557739100086627306943253172",
-        "Delta_lambda_co_casimir": "0.10342279394292721985427856296109300673959954388711",
+        "dim_q_at_q0": "9.669048245665018946103436965569947555999583822813244301916134190305951",
+        "Delta_lambda_co_casimir": "0.1034227955629796199751649989166890932636444817171759367632647555079544",
         "y_lambda_at_q0": "-0.00034205177088540122561375790932120435273011553866567",
         "chi_lambda_beta_D_at_q0": "-0.81971595589104680333865394268852609738826066586904",
         "y_chi_product_signed": "0.00028038529433555199823591444804738865188314582854933",
-        "contribution_y_chi_Delta": "0.000028998230520692792930134989972996499261230622837241"
+        "contribution_y_chi_Delta": "0.00002899823097493166197704718896647113182488986294499488162366184430595788"
       },
       {
         "partition": [
@@ -237,12 +250,12 @@
           1
         ],
         "self_dual": false,
-        "dim_q_at_q0": "5.2204413246645735350888079235694566971933489931084",
-        "Delta_lambda_co_casimir": "0.19155468624374444266815157678882015532087757417557",
+        "dim_q_at_q0": "5.220441275326898244960433252993901451232448302223146434702167190410016",
+        "Delta_lambda_co_casimir": "0.1915546880541015392728789842847080101410427279918844967340370222301146",
         "y_lambda_at_q0": "0.000098635576109803375181019479569565757727074496247923",
         "chi_lambda_beta_D_at_q0": "2.1554159875264378405157641866290182935325203505091",
         "y_chi_product_signed": "0.00021260069768595096197700159456262478286170814490355",
-        "contribution_y_chi_Delta": "0.000040724659940433501701224779519661771790278363326771"
+        "contribution_y_chi_Delta": "0.00004072466032531668350010235178619492678430559568370875932083655038966916"
       },
       {
         "partition": [
@@ -266,13 +279,13 @@
       }
     ],
     "co_casimir_prediction": {
-      "sum_contributions_signed": "0.14495922412654927717961142254370750244176731304766",
-      "rho_K_pred": "9464.6132782292756848609880440591870022800742690753",
-      "M_pred_MeV": "1877.9115826913214813477620403983278408628548655331",
-      "residual_MeV": "-2.2986401213214813477620403983278408628548655331098",
-      "residual_pct_of_M_codata": "-0.12255407654480361926702144543561262246141366117102",
-      "closure_gap_LHS_minus_RHS": "4.4983265059966979340408437205748482709306262431797",
-      "diagnostic_lambda_scale": "-30.031667926627854935594561476190736204587101060932"
+      "sum_contributions_signed": "0.1449592247564078359066109609487887864338293235908788286159695068895368",
+      "rho_K_pred": "9464.613278230897833982528070430109794218484686458266680348665668365703",
+      "M_pred_MeV": "1877.911585227380431523778510487807476640652352602894545715139216646069",
+      "residual_MeV": "-2.298642657380431523778510487807476640652352602894545715139216646068982",
+      "residual_pct_of_M_codata": "-0.1225542117570797033220277373662907118959565989755040355750991423523093",
+      "closure_gap_LHS_minus_RHS": "4.498326506626556492767843258979929554922688253722894531300566779954865",
+      "diagnostic_closure_rescaler": "-30.03166779613803541413963674168779718918393310796400115990009624873232"
     },
     "occam_comparison": {
       "occam_partition": [
@@ -281,10 +294,10 @@
       ],
       "Delta_lambda_occam": "-22.959447669315776828012250177531034211830483407403",
       "abs_Delta_occam": "22.959447669315776828012250177531034211830483407403",
-      "Delta_lambda_co_casimir_on_occam_partition": "0.19155468624374444266815157678882015532087757417557",
-      "ratio_abs_occam_over_co_casimir": "119.85844940436980945940046931668607162606319500974",
-      "sum_abs_Delta_occam_singleton_trials": "569052.25004164341446700597277792598417428213502009",
-      "sum_Delta_co_casimir": "3.2021339838031971925527950871246437377495694488791"
+      "Delta_lambda_co_casimir_on_occam_partition": "0.1915546880541015392728789842847080101410427279918844967340370222301146",
+      "ratio_abs_occam_over_co_casimir": "119.8584482716040355100039641709663836982629857536714609422120791241114",
+      "sum_abs_Delta_occam_singleton_trials": "569052.250041643414467005972777925984174282135020085342",
+      "sum_Delta_co_casimir": "3.202134001221746244787688845726382440735183005892842685598784575620916"
     }
   },
   "audit_reference": "AUDIT-DEEP-2026-05.md §7 P3 / P3' (Δ_λ selector)",
@@ -292,6 +305,6 @@
   "parent_pr": "#600",
   "race_position": "Option B of a 4-way derivation race for Δ_λ(K).  Option B = Frobenius co-Casimir restriction (theorem-forced, vortex-blind, 0 free parameters).  Other options under separate PRs.",
   "interpretation": "Δ_λ^B is FORCED by thm:frobenius-codim-universal — there is no freedom to fit it.  If the residual is small (≪ 0.1 MeV), co-Casimir restriction is the categorical Δ_λ selector and the deuteron binding ≈ -2.225 MeV is reproduced from the structure of C_dim_q alone, without any per-vortex tuning. If the residual is large (≥ 1 MeV), this option fails — the Frobenius co-Casimir is vortex-blind (per the .md theorem section 'Independence of the vortex'), so it cannot encode vortex-specific binding by itself; some additional vortex-dependent piece (Option A / C / D in the race) must carry it.",
-  "honest_reporting_note": "Δ_λ^B is fixed at 1/dim_q(λ) by theorem — NOT rescaled to match M(D).  The diagnostic_lambda_scale field reports what uniform rescaling would close the equation, but that rescaling is NOT applied to Δ_λ in the reported per_lambda table. The reported residual is the un-tuned, theorem-only result.",
+  "honest_reporting_note": "Δ_λ^B is fixed at 1/dim_q(λ) by theorem — NOT rescaled to match M(D).  The diagnostic_closure_rescaler field reports what uniform rescaling would close the equation, but that rescaling is NOT applied to Δ_λ in the reported per_lambda table.  The reported residual is the un-tuned, theorem-only result.  Field renamed from `diagnostic_lambda_scale` per PR #1080 framing (no λ_scale; the framework's per-knot factor is VolDensity).",
   "follow_up": "If Option B residual is small for D, extend to (T, ³He) at n=9 (p(9)=30) and ⁴He at n=12 (p(12)=77) — the per-isotypic 1/dim_q profile is universal across all H_n(q), so the only atom-dependence is via y_λ(q_0) and χ^λ(β_K).  If Option B residual is large for D, document the gap and let the race favour another option (A: Plancherel truncation; C: jet-knot cohomology; D: minimum-norm pseudoinverse)."
 }

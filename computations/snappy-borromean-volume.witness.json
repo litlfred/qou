@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-30T12:56:33.517424+00:00",
-  "commitSha": "2a83182a641af1ddfbf35afd75279befb9fbea03",
+  "computedAt": "2026-07-05T11:19:19.372620+00:00",
+  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
   "assertions": [
     {
       "name": "alt_precision_emitted_all_tiers",
@@ -22,16 +22,23 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 72,
+  "durationMs": 16,
   "computation": "snappy-borromean-volume",
   "scriptFile": "snappy_borromean_volume.py",
-  "scriptHash": "361cbd7e681a",
-  "scriptCommitSha": "0105272688ed7fbb0d097b8f33886d7c93526ed3",
+  "scriptHash": "ebd7540d249e",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Producer witness for Vol(L6a4) = Vol(𝓑₃), the hyperbolic volume of the Borromean rings complement. Records the canonical value (Adams 1985: 8·Catalan) at multiple precision tiers as the single source of truth. SnapPy 3.2.0+ Manifold('L6a4').volume() returns the same value to its internal precision (verified when SnapPy is locally installed).",
   "data": {
