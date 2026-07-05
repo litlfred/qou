@@ -30,7 +30,7 @@ in the QOU formalization.  Its purpose is twofold:
 > **Canonical-accuracy note.** This synthesis node bundles the *proved*
 > pillars, but the CODATA leg (`end_to_end`) rests on CODATA-pinned mass
 > constants (`HadronicMass`) and the deprecated `Vol(K)/ℏ_q²` mass shape,
-> **not** the canonical muon-anchored Hecke energy (`canonical_mass.py`),
+> **not** the canonical muon-anchored Hecke energy (`computations/canonical_mass.py`),
 > and its binding row is a consistency identity rather than a prediction.
 > Read pillars 3–4 below with those caveats — per-isotope binding is the
 > still-open `Δ_λ` gate.  Canonical sources:
