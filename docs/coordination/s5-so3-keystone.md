@@ -505,10 +505,12 @@ the constraint any geometric realisation must meet, and the structural reason a
 free-scale q-Bessel family cannot be it. PR #3358; audit
 [`docs/audits/2026-07-05-keystone-selfduality-spectral-narrowing.md`](../audits/2026-07-05-keystone-selfduality-spectral-narrowing.md).
 
-## Value-step reframe FORMALIZED across three legs — merged (2026-07-05, bean s013)
+## Value-step reframe FORMALIZED across three legs (2026-07-05, bean s013)
 
-The self-duality reframe (owner redirect, 2026-07-05) is now on `main` as three
-sorry-free Lean legs plus a capstone:
+The self-duality reframe (owner redirect, 2026-07-05) is formalized as three
+sorry-free Lean legs — legs (B) and (C) **merged** (#3380, #3362); leg (A)
+pre-existing — plus a capstone introduced by **this PR** (#3391, not yet on
+`main` at time of writing):
 
 - **(C) Self-duality** — `KeystoneSelfDualSpectralNarrowing.lean` (**PR #3362**,
   merged): `S²=C ⇒ S⁴=1` (self-reciprocality), eigenvalues 4th-roots-of-unity

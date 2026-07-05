@@ -58,8 +58,7 @@ theorem keystone_value_map_pinned
   have hvd : v = d :=
     PerronFrobeniusGroundState.eq_d_of_normalized v hv_pos hv_eig k hnorm
   refine ⟨hvd, ?_⟩
-  have hv_ne : v ≠ 0 := by
-    intro h; have hk := hv_pos k; rw [h] at hk; simp at hk
+  have hv_ne : v ≠ 0 := fun h => by simpa [h] using hv_pos k
   have hvCfix : T.C.mulVec v = v := by rw [hvd]; exact hCfix
   exact eigenvalue_selfdual_sector_pm_one T hv_ne hvCfix ζ hSeig
 
