@@ -8,18 +8,18 @@ $\sigma_{i_1}^{\epsilon_1} \cdots \sigma_{i_k}^{\epsilon_k}$
 where $\epsilon_j = \pm 1$.  The **$q$-momentum** is:
 
 $$
-  p_q(\beta) =  \sum_{j=1}^{k} \epsilon_j 
-  \frac{q^{\epsilon_j} - q^{-\epsilon_j}}{q - q^{-1}}
-  =  \sum_{j=1}^{k} \frac{q^{2\epsilon_j} - 1}{q^2 - 1}
+  p_q(\beta) =  \sum_{j=1}^{k} [\epsilon_j]_q
+  =  \sum_{j=1}^{k} \frac{q^{\epsilon_j} - q^{-\epsilon_j}}{q - q^{-1}}
+  =  \sum_{j=1}^{k} \epsilon_j = w(\beta)
 $$
 
-At $q = 1$: $p_q(\beta) \to w(\beta)$, the classical writhe
-(sum of crossing signs).
-
-At the substrate parameter $q$: each positive crossing contributes
-$[1]_q = 1$ and each negative crossing contributes
-$[-1]_q = -1$, but with $q$-weighting that distinguishes
-the two.
+where $[\epsilon]_q = (q^{\epsilon} - q^{-\epsilon})/(q - q^{-1})$ is the
+$q$-integer.  Because $[+1]_q = 1$ and $[-1]_q = -1$ *exactly* for every
+$q$, each crossing contributes precisely its sign, so the $q$-momentum
+coincides with the classical writhe $w(\beta)$ at all $q$ — not only in
+the limit $q \to 1$.  (The $q$-deformation is trivial at single crossings;
+it would distinguish multi-strand contributions $|\epsilon| \geq 2$, which
+do not occur in a braid word.)
 
 **Equivalently**, the $q$-momentum is the trace of the braid
 in the fundamental representation of $H_n(R, q)$:
