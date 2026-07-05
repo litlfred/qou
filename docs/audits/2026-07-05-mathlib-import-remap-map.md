@@ -28,11 +28,24 @@ the package root, absent only from the *contents* of `Mathlib.lean`.
   (`lake-cache/qou-v4-24-0`, 2962 oleans) with
   `LEAN_PATH` set to the package `.lake/build/lib/lean` dirs.
 - **Post-apply re-sweep: 0 stale** content-block imports remain.
-- **Declaration-level / full proof checking is out of scope here.** Many of
-  these siblings carry pre-existing breakage (parse / unknown-tactic /
-  proof-goal errors) that the dead import previously masked; that breakage
-  is a separate deep-drain backlog (bean `szkf`) and is *not* introduced by
-  this remap. Per-file `lean`-direct results are recorded in the PR.
+- **Per-file `lean`-direct sweep (45 changed siblings).** Ran each changed
+  file with `lean` v4.24.0 against restored Mathlib + QOU (864 oleans) + UGB
+  (20 oleans) libs. Result: **0 import-line errors** (no `unknown module`
+  at any `import` line — every file compiles *past* the import block), and
+  **no residual error traces to a remapped module**. All 45 still fail on
+  **pre-existing** breakage the dead import previously masked — parse errors
+  (`unexpected token 'section'; expected 'lemma'`), tactic failures
+  (`omega could not prove`, `unknown tactic`), unresolved paper decls
+  (`tr_M`, `QuantumUniverse`, `MarkovAlgebra`, …), and references to lemma
+  names absent from this Mathlib (`Finset.prod_range_add_prod_Ico`,
+  `div_sub_div_eq_sub_div` — 0 oleans; both already referenced identically
+  on `main`). This is the deep-drain backlog (bean `szkf`), **not** introduced
+  by this remap.
+- **Declaration-level improvement, if ever needed:** since all replacement
+  modules resolve and no split-module choice caused a missing-decl error,
+  no narrowing was required. Should a future `szkf` fix surface a decl that a
+  broader/narrower successor would provide, adjust the single import for that
+  file.
 
 ## Old → new module map
 
