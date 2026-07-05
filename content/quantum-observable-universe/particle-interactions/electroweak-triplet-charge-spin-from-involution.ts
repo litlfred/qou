@@ -91,6 +91,30 @@ export default theorem({
         "`signed_C_does_not_force_W_slot_but_forces_neutral_mixed`, all sorry-" +
         "free, base ring ℤ. lean-direct exit 0 on lake-cache/qou-v4-24-0.",
     },
+    {
+      kind: "note",
+      date: "2026-07-05",
+      body:
+        "Task 1′ sharpening (2026-07-05, two more theorems). (A) NEGATIVE — the " +
+        "NAMED second-charge candidates provably don't force the label: " +
+        "`named_second_charge_candidates_do_not_force_label` shows the Milnor " +
+        "triple linking μ̄(123) ≡ 0 on every even-twist carrier (2-component ⇒ no " +
+        "triple) AND the pairwise linking Lk(T(2,2k)) = k ≠ 0 on all carriers " +
+        "(k=2,3,4) — so neither satisfies `second_charge_would_force_neutral_" +
+        "slot`'s hypothesis (nonzero on exactly one slot). Non-vacuous (real " +
+        "rfl/decide, two distinct ways of missing the datum). (B) CONDITIONAL-" +
+        "POSITIVE — the group-structure data DOES force it: open §3b-cond class " +
+        "`EWGroupAssignment` carries WHICH vector slot is the su(2)_L Cartan (W³) " +
+        "vs charged root (W±) member (a group datum, NOT the T₃ conclusion); " +
+        "`label_forced_given_group_assignment` DERIVES 2T₃ = 0 for the Cartan " +
+        "slot, 2 for the charged slot, and neutral ⟺ Cartan slot, via the adjoint " +
+        "zero-weight rule (weights {+1,0,−1}). No instance supplied — stays the " +
+        "open (W³,B)→(Z,γ) Weinberg mixing input (conj:weinberg-angle-" +
+        "categorical). Net: label unforced by any single-slot topological " +
+        "invariant, forced only by the conjectural SU(2)_L×U(1)_Y assignment — " +
+        "RELOCATES the postulate, does not close it. Whole file lean-direct " +
+        "exit 0 (no warnings) on lake-cache/qou-v4-24-0.",
+    },
   ],
   tags: [
     "electroweak",

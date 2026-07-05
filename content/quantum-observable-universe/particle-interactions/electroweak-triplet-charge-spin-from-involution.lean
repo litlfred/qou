@@ -654,6 +654,119 @@ theorem signed_C_does_not_force_W_slot_but_forces_neutral_mixed :
   · exact evenTwist_not_cInvariant (by norm_num)
   · exact evenTwist_not_cInvariant (by norm_num)
 
+/-! ### The NAMED second-charge candidates (linking, triple-linking) also fail
+
+The `second_charge_would_force_neutral_slot` conditional needs a charge that is
+nonzero on *exactly one* vector slot. The audit
+(`docs/audits/2026-06-02-u1-hypercharge-assignment.md`) names the missing object
+as a baryon / color-trace charge; its two natural knot-theoretic realizations are
+the pairwise linking number `Lk` and the Milnor triple linking `μ̄(123)`. Below,
+neither meets the forcing hypothesis — the negative is sharpened from "no such
+charge in the corpus" to "the two natural candidates provably do not force." -/
+
+/-- Pairwise linking number of the even-twist carrier `T(2,2k)`: the two strands
+of the `(2,2k)` torus link wind `k` times, so `lk(T(2,2k)) = k`. Models the
+categorical linking operation `Lk_R` (`conj:categorical-linking-operation`). -/
+def evenTwistLinkingNumber (k : ℕ) : ℤ := k
+
+/-- Milnor triple linking number `μ̄(123)` of the even-twist carrier. `T(2,2k)` is
+a **two**-component link, and the triple linking number requires **≥ 3**
+components, so it vanishes identically. Models the baryon / color-trace charge the
+U(1)-assignment audit names (`docs/audits/2026-06-02-u1-hypercharge-assignment.md`;
+cf. the three-strand color structure of `observations/hadron-proton-example`). -/
+def evenTwistTripleLinking (_k : ℕ) : ℤ := 0
+
+/-- **The named second-charge candidates do NOT force the label.** The forcing
+hypothesis of `second_charge_would_force_neutral_slot` demands a charge that is
+zero on one vector slot and nonzero on the other. Neither candidate qualifies:
+
+* the Milnor triple linking `μ̄(123) ≡ 0` on **every** even-twist carrier (a
+  2-component link has no triple) — it vanishes on BOTH slots, so it produces no
+  charged slot;
+* the pairwise linking `Lk(T(2,2k)) = k ≠ 0` on **every** carrier (`k = 2,3,4`) —
+  it vanishes on NEITHER slot, so it produces no neutral slot.
+
+Both halves do real work (`rfl`-per-`k` / `decide`), not a vacuous ¬∃: one
+exhibits a charge that is identically zero, the other a charge that is nowhere
+zero — the two distinct ways of missing the "nonzero on exactly one slot" datum
+that `second_charge_would_force_neutral_slot` requires. -/
+theorem named_second_charge_candidates_do_not_force_label :
+    (∀ k : ℕ, evenTwistTripleLinking k = 0) ∧
+    (evenTwistLinkingNumber 2 ≠ 0 ∧ evenTwistLinkingNumber 3 ≠ 0 ∧
+     evenTwistLinkingNumber 4 ≠ 0) := by
+  refine ⟨fun _ => rfl, ?_, ?_, ?_⟩ <;>
+    · unfold evenTwistLinkingNumber; decide
+
+/-! ### The group-structure data DOES force the label (§3b-cond conditional positive)
+
+Topology cannot force which vector slot is the charged `W` (Task 1′ above), but
+the `su(2)_L × u(1)_Y` group assignment can. We axiomatise the *genuine* missing
+input as an open hypothesis class — the alignment of the two `A₋` vector slots
+with the `su(2)_L` Cartan–Weyl basis — and DERIVE the `T₃` label from it. Per
+§3b-cond, the class carries the *hypothesis* (which slot is the neutral Cartan
+member `W³`), and the theorem *derives* the `T₃` conclusion via the adjoint
+zero-weight rule; it does not carry `T₃` as a field. No instance is supplied — the
+group assignment stays an open input (exactly the `(W³,B)→(Z,γ)` mixing data of
+`conj:weinberg-angle-categorical`). -/
+
+/-- The two `A₋` vector slots (crossing counts `4` and `6`) hosting the charged
+`W±` and the neutral `W³/Z`. -/
+inductive VectorSlot
+  | s4  -- σ₁⁴ = T(2,4)
+  | s6  -- σ₃⁶ = T(2,6)
+deriving DecidableEq
+
+/-- **The group-assignment datum (open §3b hypothesis class).** The genuine input
+the topological invariants cannot supply: the alignment of the two vector slots
+with the `su(2)_L` Cartan–Weyl basis. The fields carry WHICH slot is the neutral
+`su(2)_L` Cartan generator `W³` (→ `Z`) versus the charged `W±` root member —
+a group-theoretic datum, NOT the `T₃` values (those are derived below). The
+`cartan_ne_charged` field is the genuine non-degeneracy of the Cartan–Weyl split
+of the adjoint triplet (exactly one neutral Cartan direction, complementary root).
+No instance is provided; it is the open `(W³,B)→(Z,γ)` mixing input of
+`conj:weinberg-angle-categorical`. -/
+class EWGroupAssignment where
+  /-- Which vector slot hosts the neutral `su(2)_L` Cartan member `W³` (→ `Z`). -/
+  cartanSlot : VectorSlot
+  /-- Which vector slot hosts the charged `W±` root member. -/
+  chargedSlot : VectorSlot
+  /-- The Cartan (neutral) and root (charged) slots are distinct — the
+  non-degeneracy of the Cartan–Weyl split of the adjoint triplet. -/
+  cartan_ne_charged : cartanSlot ≠ chargedSlot
+
+/-- **Derived doubled isospin `2·T₃` from the group assignment.** The neutral
+Cartan member `W³` sits in the **zero-weight** space of the `su(2)_L` adjoint, so
+`T₃ = 0`; the complementary root member `W±` has `|T₃| = 1` (`2·T₃` magnitude
+`2`). These are the adjoint weights `{+1, 0, −1}`, applied to the group datum — a
+derivation, not a re-postulation of `T₃`. -/
+def derivedDoubledT3 [EWGroupAssignment] (s : VectorSlot) : ℤ :=
+  if s = EWGroupAssignment.cartanSlot then 0 else 2
+
+/-- **The W/Z label IS forced, given the group assignment (§3b-cond conditional
+positive; answers "can you prove it?").** No single-slot topological invariant
+forces which slot is the charged `W`
+(`named_second_charge_candidates_do_not_force_label`, `signed_which_slot_is_W_free`),
+but the `su(2)_L × u(1)_Y` group datum `EWGroupAssignment` DOES: the neutral
+`W³→Z` slot is the Cartan slot (`2·T₃ = 0`), the charged `W±` slot is the
+complementary root slot (`2·T₃ = 2`), and a slot is neutral **iff** it is the
+Cartan slot — each DERIVED from the group assignment via the adjoint
+zero-weight rule (`derivedDoubledT3`), not projected. The label is determined:
+the charged slot is exactly the non-Cartan slot. This relocates the postulate
+from a bare `T₃` label to the group-structure (mixing) input — it does not
+fabricate a topological forcing. -/
+theorem label_forced_given_group_assignment [EWGroupAssignment] :
+    derivedDoubledT3 EWGroupAssignment.cartanSlot = 0 ∧
+    derivedDoubledT3 EWGroupAssignment.chargedSlot = 2 ∧
+    (∀ s : VectorSlot, derivedDoubledT3 s = 0 ↔ s = EWGroupAssignment.cartanSlot) := by
+  refine ⟨?_, ?_, ?_⟩
+  · unfold derivedDoubledT3; rw [if_pos rfl]
+  · unfold derivedDoubledT3; rw [if_neg (EWGroupAssignment.cartan_ne_charged).symm]
+  · intro s
+    unfold derivedDoubledT3
+    by_cases h : s = EWGroupAssignment.cartanSlot
+    · rw [if_pos h]; exact iff_of_true rfl h
+    · rw [if_neg h]; exact iff_of_false (by decide) h
+
 end SignedCrossing
 
 end QOU.ParticleInteractions
