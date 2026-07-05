@@ -69,8 +69,8 @@ structure FiberAdjointInvolution (C : Type u) [CategoryTheory.Category.{v} C]
 /-- **Existence of the fibre–adjoint involution.**  The structure
     `FiberAdjointInvolution` already bundles the genuine content (the orbit
     embedding `σ`, its antipode-induced involution with `τ_Ad ≫ τ_Ad = id`,
-    the embedding/involution compatibility, and the monomorphism property),
-    so the honest claim is that this bundle is *inhabited* for every
+    the embedding/involution compatibility, and the monomorphism property).
+    The claim asserts that this bundle is *inhabited* for every
     Frobenius–Hopf datum — not the degenerate `∃ inv, True`.
 
     Constructing the witness (the coadjoint-orbit embedding `P(V) ↪ Ad(A)`
