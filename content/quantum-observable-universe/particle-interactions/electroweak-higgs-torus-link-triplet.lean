@@ -114,7 +114,22 @@ class EWSectorEnumeration [EWSelectionPrinciple] where
     (`H ∈ A₊ ⇒` scalar+neutral; `W± ∈ A₋ ⇒` vector, `T₃=±1`; `Z ∈ A₋` vector,
     neutral via Weinberg mixing).
 
-    Twist convention: `k = 2 ↔ W`, `k = 3 ↔ Z`, `k = 4 ↔ H`. -/
+    Twist convention: `k = 2 ↔ W`, `k = 3 ↔ Z`, `k = 4 ↔ H`.
+
+    **The `t3Label` field is a FREE LABEL, not forced (honest, 2026-07-05).**
+    Which of the two *vector* slots (`k = 2 ↔ σ₁⁴` or `k = 3 ↔ σ₃⁶`) hosts the
+    *charged* carrier `W±` (`|t₃| = 1`) versus the neutral `Z` (`t₃ = 0`) is
+    **not** fixed by any proved crossing→charge principle. The corpus
+    crossing→charge map `def:coulomb-charge` (`Q = ½·writhe`) evaluated on the
+    all-positive braid `σ₁^{2k}` gives `Q(T(2,2k)) = k > 0` for *every* carrier,
+    so it makes all three charged and cannot select the neutral slot; the
+    `writhe → Y` map is falsified (`2026-06-02-u1-hypercharge-assignment.md`).
+    The assignment `t3Label 2 = 1` (`W` at the lower crossing `σ₁⁴`) below is the
+    paper's *choice*, consistent with the mass ordering `4 < 6 < 8` (necessary,
+    not sufficient); its underdetermination is proved as `which_slot_is_W_free`
+    in `thm:ew-triplet-charge-spin-from-involution`. What *would* force it is a
+    genuine crossing/linking → `T₃` map singling out the `Z` slot — an open
+    input the framework does not yet supply. -/
 -- @conjecture: primary
 class EWSectorAssignment where
   /-- Spin sector of the carrier of twist `k`: `true` = singlet (`A₊`),
@@ -126,6 +141,18 @@ class EWSectorAssignment where
   w_doublet : isSinglet 2 = false
   /-- `Z` (`k = 3`) is a bar-odd doublet (neutral via mixing, not via `A₊`). -/
   z_doublet : isSinglet 3 = false
+  /-- Doubled isospin `2·T₃` label of the carrier of twist `k`. This is the
+      **free label** (see the class docstring): no proved crossing→charge
+      principle forces which vector slot is charged. -/
+  t3Label : ℕ → ℤ
+  /-- `W` (`k = 2`) is the charged member — the paper's free choice of the
+      charged vector slot (mirror `t3Label 3 = 1` is equally admissible). -/
+  w_charged : t3Label 2 = 1
+  /-- `Z` (`k = 3`) is neutral — via the Weinberg `(W³, B) → (Z, γ)` mixing, not
+      via bar-even membership. -/
+  z_neutral : t3Label 3 = 0
+  /-- `H` (`k = 4`) is the neutral singlet. -/
+  higgs_neutral : t3Label 4 = 0
 
 /-- **C_top (DEPENDENT on C1, C-sector) — the full electroweak identification.**
 
