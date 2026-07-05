@@ -976,11 +976,14 @@ mechanical one-voice fix.
   — these are deliberate notation/framing reconciliation notes that orient the
   reader; process-flavoured but content-bearing. Owner call whether to prune.
 
-### Not machine-validated
+### Validation
 
-The content-pipeline render was not run (folio-assistant clone availability not
-confirmed in this worktree). The edits only delete a non-math line; the grep
-preflight battery (balanced `$`/`$$`, no new `\operatorname`, no list-hijack)
-was run on all five edited files and passed. Pre-existing `\operatorname{Im/Re}`
-in `complex-volume-ladder-intro.md` was left untouched (out of scope; not
-introduced by this sweep).
+`bun run scripts/run-validate.ts content/quantum-observable-universe` (after
+`bash scripts/setup-folio-assistant.sh`) returns **`✓ Valid — 3 issue(s)`**;
+all three warnings are pre-existing and in files this sweep did not touch
+(`meson-scale-independence`, `pre-archimedean-derivation-chain`,
+`proton-mass-substrate-identity`). The grep preflight battery (balanced
+`$`/`$$`, no new `\operatorname`, no list-hijack) also passed on all five
+edited files; edits only delete a non-math line. Pre-existing
+`\operatorname{Im/Re}` in `complex-volume-ladder-intro.md` was left untouched
+(out of scope; not introduced by this sweep).
