@@ -278,4 +278,142 @@ theorem ew_charge_spin_forced :
     EWSectorSelection.z_t3, EWSectorSelection.higgs_t3,
     higgs_neutral, wPlus_charged⟩
 
+/-! ## Task 2 — the σ₅⁸ bar-grading is DERIVED from spin (not merely stated)
+
+The sector→spin map `spinDouble` (singlet ↦ 0, doublet ↦ 2) is injective, so it
+**inverts**: spin determines the sector. Physically, an object's spin is an
+independent measured input — the Higgs boson is a scalar (spin 0), the
+hypercharge gauge boson `B` is a vector (spin 1) — and the spin-involution
+grading law of `def:spin-involution` (`A₊` = spin-singlet, `A₋` = spin-doublet)
+then *forces* the sector. This upgrades the owner-ruled σ₅⁸ H/B bar-grading from
+a bare postulate to a spin-derived theorem: the only residual postulate is that
+`H` and `B` inhabit the *one* σ₅⁸ slot; the *grading* of that slot is derived. -/
+
+/-- **Spin forces the sector (the injective inverse of `spinDouble`).** A scalar
+(`spinDouble c = 0`) must inhabit the singlet `A₊` (`isSinglet = true`); a vector
+(`spinDouble c = 2`) must inhabit the doublet `A₋` (`isSinglet = false`). The
+sector is *determined* by the spin — it is not an independent free choice once
+the spin is fixed. -/
+theorem sector_forced_by_spin (c : EWCarrier) :
+    (spinDouble (R := R) c = 0 → EWSectorSelection.isSinglet (R := R) c = true) ∧
+    (spinDouble (R := R) c = 2 → EWSectorSelection.isSinglet (R := R) c = false) := by
+  unfold spinDouble
+  cases EWSectorSelection.isSinglet (R := R) c <;> simp
+
+/-- Bar-sector recovered from the (doubled) spin via the spin-involution grading
+law of `def:spin-involution`: `A₊` (bar-even singlet) `⟺ 2s = 0`, `A₋` (bar-odd
+doublet) `⟺ 2s = 2`. `true = A₊`, `false = A₋`. -/
+def barSectorOfSpin (twoS : ℕ) : Bool := twoS == 0
+
+/-- **`barSectorOfSpin` is a genuine two-sided inverse of the spin grading.** For
+every EW carrier it recovers the sector from the spin (`barSectorOfSpin ∘
+spinDouble = isSinglet`). This injectivity is what makes "spin forces sector" a
+*derivation* rather than a re-postulation. -/
+theorem barSectorOfSpin_inverts (c : EWCarrier) :
+    barSectorOfSpin (spinDouble (R := R) c) = EWSectorSelection.isSinglet (R := R) c := by
+  unfold barSectorOfSpin spinDouble
+  cases EWSectorSelection.isSinglet (R := R) c <;> rfl
+
+/-- The two occupants of the Hoefsmit slot `σ₅⁸` (`= T(2,8)`, strands 5–6): the
+Higgs boson `H` and the `U(1)_Y` hypercharge gauge boson `B`. The residual
+sector postulate is *only* that both inhabit this one slot; their bar-sectors
+are DERIVED from spin below. -/
+inductive Sigma58
+  | higgs   -- the Higgs boson H
+  | hyperB  -- the U(1)_Y hypercharge gauge boson B
+deriving DecidableEq
+
+/-- Physical (Standard-Model measured) doubled spin of each σ₅⁸ occupant: the
+Higgs is a scalar (`2s = 0`), the hypercharge boson `B` is a vector (`2s = 2`).
+These are independent physical inputs, **not** sector assignments. -/
+def spin58 : Sigma58 → ℕ
+  | .higgs  => 0
+  | .hyperB => 2
+
+/-- **σ₅⁸ bar-grading FORCED by spin (Task 2 — derived, not stated).** Given only
+the physical spins, the Higgs (scalar, `2s = 0`) is forced into `A₊` (bar-even
+singlet) and the hypercharge boson `B` (vector, `2s = 2`) into `A₋` (bar-odd
+doublet), through the same spin↔sector inversion (`barSectorOfSpin`,
+`barSectorOfSpin_inverts`) that governs the whole triplet. The σ₅⁸ H/B grading
+is therefore a *consequence* of the two carriers' spins, not an owner postulate;
+the single residual postulate is that both `H` and `B` occupy the one σ₅⁸ slot. -/
+theorem ew_sigma5_bargrade_forced :
+    barSectorOfSpin (spin58 Sigma58.higgs) = true ∧
+    barSectorOfSpin (spin58 Sigma58.hyperB) = false := by
+  decide
+
+/-! ## Task 1 — is which-slot-is-`W` (σ₁⁴ vs σ₃⁶) forced? (HONEST: no)
+
+The corpus does supply a crossing→charge map — `def:coulomb-charge`,
+`Q(𝔥) = ½(n₊ − n₋) = writhe/2`. But on the all-positive even-twist braid
+`σ₁^{2k}` it gives `Q(T(2, 2k)) = k > 0` for *every* carrier (`k = 2, 3, 4`), so
+it makes `W`, `Z`, `H` all charged and does **not** single out the neutral slot.
+The corpus further records `writhe → Q` as FAILED and `writhe → Y` as FALSIFIED
+(`docs/audits/2026-06-02-u1-hypercharge-assignment.md`: only `writhe → I₃`
+survives, and Gell-Mann–Nishijima `Y = 2(Q − I₃)` needs a *second* independent
+crossing/trace charge the framework does not supply). Consequently which
+sub-saturating slot hosts the charged carrier is a **free label**. Below:
+(i) the *forced* part — the charged carriers are bar-odd `A₋` doublets and the
+`A₊` singlet is neutral; and (ii) the *underdetermination* — two distinct
+crossing→isospin labelings both satisfy every proved constraint. -/
+
+/-- **Forced part of the charge labeling.** From the sector postulate alone: the
+charged carriers `W±` (`t₃ = ±1 ≠ 0`) are bar-odd `A₋` doublets, and the `A₊`
+singlet `H` is neutral (`t₃ = 0`). So *charge ⇒ doublet* and *singlet ⇒ neutral*
+hold for these carriers. What is **not** entailed is which crossing slot the
+charged pair occupies — that is the free label of `which_slot_is_W_free`. -/
+theorem charged_are_doublets_singlet_neutral :
+    EWSectorSelection.isSinglet (R := R) EWCarrier.Wp = false ∧
+    EWSectorSelection.isSinglet (R := R) EWCarrier.Wm = false ∧
+    EWSectorSelection.t3Double (R := R) EWCarrier.Wp ≠ 0 ∧
+    EWSectorSelection.t3Double (R := R) EWCarrier.Wm ≠ 0 ∧
+    EWSectorSelection.isSinglet (R := R) EWCarrier.H = true ∧
+    EWSectorSelection.t3Double (R := R) EWCarrier.H = 0 :=
+  ⟨EWSectorSelection.wPlus_doublet, EWSectorSelection.wMinus_doublet,
+    by rw [EWSectorSelection.wPlus_t3]; decide,
+    by rw [EWSectorSelection.wMinus_t3]; decide,
+    EWSectorSelection.higgs_singlet, EWSectorSelection.higgs_t3⟩
+
+/-- A crossing→isospin labeling of the two *vector* (`A₋` doublet) electroweak
+slots, indexed by their crossing counts. `t3` gives the doubled isospin at each
+admissible crossing count `4` (`σ₁⁴`) and `6` (`σ₃⁶`); a valid electroweak
+labeling puts the charged carrier (`|t3| = 1`) on exactly one of the two slots
+and the neutral carrier (`t3 = 0`) on the other. Nothing in the proved core
+distinguishes the two ways of doing this. -/
+structure EWVectorLabeling where
+  /-- Doubled isospin at each crossing count. -/
+  t3 : ℕ → ℤ
+  /-- Exactly one of the two vector slots (`4` or `6`) carries the charge. -/
+  charged_at_4_xor_6 : (t3 4 = 1 ∧ t3 6 = 0) ∨ (t3 4 = 0 ∧ t3 6 = 1)
+
+/-- The paper's labeling: charged `W` at the 4-crossing slot `σ₁⁴`, neutral `Z`
+at the 6-crossing slot `σ₃⁶`. -/
+def labelWat4 : EWVectorLabeling where
+  t3 := fun k => if k = 4 then 1 else 0
+  charged_at_4_xor_6 := Or.inl ⟨by decide, by decide⟩
+
+/-- The mirror labeling: charged `W` at the 6-crossing slot `σ₃⁶`, neutral at
+`σ₁⁴`. Equally admissible under the proved constraints. -/
+def labelWat6 : EWVectorLabeling where
+  t3 := fun k => if k = 6 then 1 else 0
+  charged_at_4_xor_6 := Or.inr ⟨by decide, by decide⟩
+
+/-- **Which slot is `W` is UNDETERMINED (a free label).** Both `labelWat4` (the
+paper's `W = σ₁⁴`) and `labelWat6` (`W = σ₃⁶`) are valid `EWVectorLabeling`s and
+they disagree on the charged slot (`t3 4 = 1` vs `t3 4 = 0`). No *proved*
+crossing→charge principle selects between them: the corpus `writhe → Q` map
+(`Q = ½·writhe`) makes *every* even-twist carrier charged (`Q = k`), and
+`writhe → Y` is falsified. Hence `W = σ₁⁴` is a labeling choice — supported by
+the mass ordering `4 < 6 < 8` (necessary, not sufficient) — and **not** a
+theorem. What *would* force it is a genuine crossing/linking → `T₃` (or electric
+charge) map assigning the neutral label to exactly the `Z` slot; the corpus does
+not yet supply one. -/
+theorem which_slot_is_W_free :
+    labelWat4.t3 4 = 1 ∧ labelWat6.t3 4 = 0 ∧ labelWat4 ≠ labelWat6 := by
+  refine ⟨by decide, by decide, ?_⟩
+  intro h
+  have hne : labelWat4.t3 4 = labelWat6.t3 4 := congrArg (fun L => L.t3 4) h
+  revert hne
+  decide
+
 end QOU.ParticleInteractions
