@@ -137,3 +137,57 @@ electric charge) invariant — a carrier realisation with a $\sigma \leftrightar
 \sigma^{-1}$ asymmetry that drives one vector slot's net writhe to zero — or the
 second independent baryon / color-trace charge the audit names; the framework
 supplies neither for the same-sign even-twist triple.
+
+**The signed $\sigma \leftrightarrow \sigma^{-1}$ / charge-conjugation test:
+still free, and the neutral slot is forced to be mixed.**
+
+The two ingredients just named — a *signed* crossing asymmetry and a second
+charge — can be examined directly. Charge conjugation is crossing reversal
+([rem:chirality-trefoil-electron-positron](#rem:chirality-trefoil-electron-positron)):
+the operation $C = (\sigma \leftrightarrow \sigma^{-1})$ reverses every crossing,
+so on the signed writhe $w$ it acts as negation, $C(w) = -w$, and
+$Q(\mathfrak{p}^{\sigma}) = -Q(\mathfrak{p})$. A carrier is **neutral iff it is a
+fixed point of $C$** — its own antiparticle — i.e. **$C$-invariant**, i.e.
+**amphichiral**. Over $\mathbb{Z}$ this fixed-point condition is exactly the
+vanishing of the signed writhe,
+
+$$
+  C(w) = w \iff -w = w \iff w = 0,
+$$
+
+proved sorry-free (`cInvariant_iff_writhe_zero`, by integer arithmetic — not a
+type tautology). Two consequences follow, and together they give a sharper
+negative than the unsigned analysis above.
+
+First, admitting the signed asymmetry does **not** force which slot is $W$. Two
+distinct signed labelings — one placing the charged (chiral, $w \neq 0$) $W$ at
+$\sigma_1^4$ and the amphichiral ($w = 0$) neutral member at $\sigma_3^6$, the
+other the mirror — both satisfy the full $C$-invariance neutrality constraint yet
+disagree on the charged slot (`signed_which_slot_is_W_free`). The signed test
+constrains the neutral slot to be *amphichiral*, but not *which* slot it is.
+
+Second, and more sharply, the $C$-invariance criterion **excludes every pure
+even-twist slot from being the neutral member**. Each carrier
+$\sigma_1^{2k} = T(2,2k)$ has signed writhe $2k \neq 0$ for $k \geq 1$, so none is
+$C$-invariant / amphichiral — all three of $\sigma_1^4$ ($k=2$), $\sigma_3^6$
+($k=3$), $\sigma_5^8$ ($k=4$) are genuinely chiral (`evenTwist_not_cInvariant`).
+Hence the neutral electroweak boson is **necessarily not a single even-twist
+slot**: it must be the mixed $(W^3, B) \mapsto (Z, \gamma)$ Weinberg combination
+([conj:weinberg-angle-categorical](#conj:weinberg-angle-categorical)) — a $w = 0$
+amphichiral state assembled from chiral pieces, not any one slot. This upgrades
+`which_slot_is_W_free` with the *reason* it holds: the correct neutrality
+criterion (charge-conjugation invariance) forbids every chiral slot from being
+neutral, so no single-slot topological invariant can pick out the $Z$.
+
+What *would* break the tie is precisely the second charge the audit names. If a
+hypothetical second (baryon / color-trace) charge $S$ were nonzero on exactly one
+vector slot, reading "neutral $\iff$ $S$ vanishes" would determine the neutral
+slot uniquely (`second_charge_would_force_neutral_slot`, a proved conditional).
+The corpus supplies no such $S$ for the same-sign even-twist triple (the
+2026-06-02 U(1)-assignment audit records this second charge as a *missing*
+object). The capstone
+`signed_C_does_not_force_W_slot_but_forces_neutral_mixed` bundles the three facts
+sorry-free: signed non-forcing, $C$-invariance $=$ amphichirality, and the
+chirality of all three even-twist carriers. The $T_3$ label of the pure slots is
+therefore fixed **only by the mixing / second-charge data**, not by any
+single-slot invariant.

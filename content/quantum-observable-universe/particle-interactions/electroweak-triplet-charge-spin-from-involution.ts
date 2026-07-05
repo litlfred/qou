@@ -19,6 +19,7 @@ export default theorem({
     "prop:self-dual-higgs-real-volume",
     "prop:vdw-pskew-isolation",
     "def:coulomb-charge",
+    "rem:chirality-trefoil-electron-positron",
   ],
   authorNotes: [
     {
@@ -67,6 +68,28 @@ export default theorem({
         "4<6<8 (necessary, not sufficient). What would force it: a genuine " +
         "crossing/linking→T₃ map — carried as the free-label field t3Label of " +
         "conj:electroweak-higgs-torus-link-triplet.",
+    },
+    {
+      kind: "note",
+      date: "2026-07-05",
+      body:
+        "Task 1′ (signed σ↔σ⁻¹ / C-invariance test, 2026-07-05): tried to FORCE " +
+        "the W-slot label with the two ingredients the prior result named — a " +
+        "signed crossing asymmetry and a second baryon/color-trace charge. " +
+        "NEITHER forces it; proved the SHARPER NEGATIVE. Charge conjugation " +
+        "C = crossing reversal negates writhe (rem:chirality-trefoil-electron-" +
+        "positron), so neutral ⟺ C-invariant ⟺ amphichiral (w=0), proved " +
+        "`cInvariant_iff_writhe_zero` (−w=w ↔ w=0, by omega). (i) Signed test " +
+        "does NOT force: `signed_which_slot_is_W_free` exhibits two distinct " +
+        "C-consistent labelings. (ii) But it EXCLUDES every pure even-twist slot " +
+        "from neutrality: `evenTwist_not_cInvariant` (writhe 2k≠0 for σ₁⁴,σ₃⁶," +
+        "σ₅⁸), so the neutral Z is NECESSARILY the mixed (W³,B)→(Z,γ) Weinberg " +
+        "state, not a single slot — upgrading which_slot_is_W_free with the " +
+        "reason. (iii) The second charge is a MISSING corpus object (audit " +
+        "2026-06-02); `second_charge_would_force_neutral_slot` is the proved " +
+        "conditional pinpointing exactly what is absent. Capstone: " +
+        "`signed_C_does_not_force_W_slot_but_forces_neutral_mixed`, all sorry-" +
+        "free, base ring ℤ. lean-direct exit 0 on lake-cache/qou-v4-24-0.",
     },
   ],
   tags: [
