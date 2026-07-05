@@ -3,13 +3,10 @@ import Mathlib.Tactic
 /-!
 # QOU.Braiding.fermion_boson_knot_link
 
-**Placeholder canonical** for content block referenced by
+**Canonical declaration** for content block referenced by
 `qou:QOU.Braiding.fermion_boson_knot_link`.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI resolves to a real declaration in the `qou` Lake
-package. The body is `sorry` carrying the manuscript citation per
-AGENTS.md §1.
+This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
 -/
 
 namespace QOU.Braiding
@@ -46,10 +43,7 @@ The fermion--boson decomposition
 coincides with the knot--link decomposition of the $T(2,n)$
 torus family on the Bring's surface:
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/fermion-boson-knot-link.ts
 def fermion_boson_knot_link [ctx : FermionBosonKnotLinkContext] :
     (∀ n : ℕ, 1 ≤ n → (ctx.is_knot n ↔ Odd n)) ∧

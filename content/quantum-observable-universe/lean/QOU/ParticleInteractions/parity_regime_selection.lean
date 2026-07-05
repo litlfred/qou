@@ -4,12 +4,10 @@ import Mathlib.Algebra.Group.Even
 /-!
 # QOU.ParticleInteractions.parity_regime_selection
 
-**Placeholder canonical** for content block
+**Canonical declaration** for content block
 [`thm:parity-regime-selection`](../../../quantum-observable-universe/particle-interactions/parity-regime-selection.md): *QOU.ParticleInteractions.parity_regime_selection*.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.ParticleInteractions.parity_regime_selection` resolves to a real declaration in
-the `qou` Lake package.
+This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
 -/
 
 namespace QOU.ParticleInteractions

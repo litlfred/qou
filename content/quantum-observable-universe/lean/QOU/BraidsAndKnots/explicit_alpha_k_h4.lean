@@ -3,12 +3,9 @@ import QOU.Shared.MarkovTraceClaim
 /-!
 # QOU.BraidsAndKnots.explicit_alpha_k_h4
 
-**Placeholder canonical** for content block Explicit α_k at H_4.
+**Canonical declaration** for content block Explicit α_k at H_4.
 
-The full Lean statement and proof are pending; this stub exists so the
-`lean.ref` URI `qou:QOU.BraidsAndKnots.explicit_alpha_k_h4` resolves to a real
-declaration in the `qou` Lake package. The body is `sorry` carrying
-the manuscript citation per AGENTS.md §1.
+This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
 
 Note: the chapter-dir uses singular `QOU.BraidKnot` for most blocks;
 this plural `QOU.BraidsAndKnots` namespace was inherited from existing
@@ -34,10 +31,7 @@ class ExplicitAlphaKH4Context extends QOU.Shared.MarkovTraceContext where
 $\{T_{w_C}\}_C$ canonical Hecke representatives of the $p(4) = 5$
 conjugacy classes of $S_4$:*
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/explicit-alpha-k-h4.ts
 def explicit_alpha_k_h4 [ctx : ExplicitAlphaKH4Context] :
     ctx.n_classes = 5 :=
