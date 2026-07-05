@@ -907,3 +907,80 @@ Extracted numerical/testing commentary from `mass-theory` files, replaced with c
 - Line 9: | 2 (Markov trace symbolic) | [`y_lambda_wenzl_bridge_extended.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/y_lambda_wenzl_bridge_extended.py) + [`q_mn_recursive_memoized.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/q_mn_recursive_memoized.py) | ✓ for $n \leq 12$ |
 - Line 12: | 5 (Archimedean realization at $q_0$ + $m_e$) | MPFR via SymPy/mpmath | ✓ |
 - Line 13: | 6 (AME comparison) | mass-table-ppb witness + [`recursive_atom_knot_atlas_render.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/recursive_atom_knot_atlas_render.py) | ✓ |
+
+---
+
+## 2026-07-05 sweep — placeholder audit + `_(draft.)_` banner removal (beans zslh/vutt/aipm)
+
+Branch: `claude/mass-theory-placeholders-2026-07-05`.
+
+### Honest actionable count (zslh)
+
+The bean claimed "103 placeholders/TODOs". Running the repo's honest counter
+scoped to the lane:
+
+```
+bun scripts/count-actionable-placeholders.ts content/quantum-observable-universe/mass-theory
+→ 0 actionable (0 uncited-sorry + 0 TODO/FIXME) across 0 files
+```
+
+The "103" was a naive-grep artefact: `.qa.json` / `.witness.json` sidecar
+reviewer notes containing the words "sorry"/"placeholder", narrative prose
+mentions of "numerical"/"probe"/"placeholder", and `-- Ref:`-cited / §3b
+conjectural sorries — none of which are actionable source markers. There are
+**no** un-cited Lean sorries and **no** `TODO`/`FIXME`/`XXX` markers in any
+mass-theory `.md` or `.ts` file.
+
+### Removed — pure working-draft `_(draft.)_` banners (vutt/aipm)
+
+Five section-intro `.md` files carried a standalone `_(draft.)_` marker sitting
+between the auto-generated block-roster paragraph and the hand-written intro
+prose. These are pure working-draft status leaks (zero scholarly content) —
+stripped per one-voice-audit Category H. No content lost; prose flows unchanged;
+`$`/`$$` balance verified on each edited file.
+
+- `calibration-algebraic-mass-intro.md` (was line 9)
+- `complex-volume-ladder-intro.md` (was line 5, trailing)
+- `nuclear-binding-beta-stability-intro.md` (was line 9, trailing)
+- `transfer-matrix-mass-intro.md` (was line 7, trailing)
+- `vertex-factorisation-intro.md` (was line 7, trailing)
+
+### Deferred — need author judgment / carry scholarly content (NOT removed)
+
+These status/working-draft phrasings were flagged but **left in place**: each is
+either honest §3b conjectural-status content or is woven into a structured block
+whose epistemic-status annotations are arguably scholarly. Removing or migrating
+them to `authorNotes` needs author judgment on how much framing to keep — not a
+mechanical one-voice fix.
+
+- `categorical-higgs-mechanism.md:1,9,107` — block is an honest §3b conjecture
+  titled "…— skeleton"; the `(status: work-in-progress)` parenthetical and
+  "Requirements for completing the skeleton" section describe genuine open
+  structure. Migration to `authorNotes` is a judgment call.
+- `six-term-mass-formula-complete.md:30,47,92,112,132,167,…` — per-term
+  `*Status: **DERIVED** / **PATHOLOGICAL** / **TRACE***` annotations woven into
+  a structured derivation table; they convey per-term epistemic status (arguably
+  scholarly), and cleanly migrating ~7 inline italics needs restructuring.
+- `phi-q-tower-jsj-bridge.md:140` — "### Required ingredients (to be filled in
+  incrementally)" describes the open structure of a bridge conjecture.
+- `jet-tower-uniform-delta-max.md:136` — "**Status: conjectural** under
+  AGENTS.md §3b" is an honest §3b banner (KEEP per §4d exceptions).
+- `conj-atom-braid-exterior-algebra.md:54` — "**Status:** … **FALSIFIED**"
+  is a scholarly retraction note pointing to a published audit; scholarly.
+- `isospin-from-canonical-bowtie.md:2` correction note, and the many
+  "An earlier draft …" / "Earlier drafts …" correction notes across the lane
+  (`h3-markov-wenzl-weights.md:119`, `hoefsmit-ew-cell-content.md:177,228`,
+  `plancherel-term-7-formulation*.md`, `q-character-closes-parity-gap.md:102`,
+  `conj-rho-prefactor-structural.md:51,83`, `conj-canonical-knot-id-sdp.md:37,66`,
+  `unified-curvature-rank-mass-formula-proof.md:18`, `weak-spectral-completeness.md:96`)
+  — these are deliberate notation/framing reconciliation notes that orient the
+  reader; process-flavoured but content-bearing. Owner call whether to prune.
+
+### Not machine-validated
+
+The content-pipeline render was not run (folio-assistant clone availability not
+confirmed in this worktree). The edits only delete a non-math line; the grep
+preflight battery (balanced `$`/`$$`, no new `\operatorname`, no list-hijack)
+was run on all five edited files and passed. Pre-existing `\operatorname{Im/Re}`
+in `complex-volume-ladder-intro.md` was left untouched (out of scope; not
+introduced by this sweep).
