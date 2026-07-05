@@ -56,11 +56,25 @@ ambiguity survives.
 Hoefsmit off-diagonal √(a_δ·a_{−δ}+1) of `build_seminormal_matrices`. So the
 transfer reproduces the dense product entry-for-entry, EXACTLY, at 50 dps.
 
-Validated: per-λ ‖ρ_λ(W)‖_F² ≡ the dense einsum ρ(W)·ρ(W)^T of
-`gram_norm_binding_probe` at n = 9 (³H/³He) and n = 12 (⁴He, the wall), to the
-float64 floor of the dense reference (the transfer itself carries 50 dps).
-The transfer additionally reaches n = 15 (⁵He), where dense is infeasible,
-when run with `--with-5he` (the default run stops at n = 12).
+Validated TWO ways:
+
+  • EXACT (n ≤ 12): per-λ ‖ρ_λ(W)‖_F² ≡ the dense einsum ρ(W)·ρ(W)^T of
+    `gram_norm_binding_probe` at n = 9 (³H/³He) and n = 12 (⁴He, the wall), to
+    the float64 floor of the dense reference (the transfer itself carries
+    50 dps). This is an exact, deterministic match.
+
+  • STOCHASTIC (n = 15, ⁵He, where dense is infeasible): the transfer's EXACT
+    aggregate G(W)=Σ y_λ‖ρ_λ(W)‖_F² is cross-checked against the INDEPENDENT
+    stochastic Hutchinson estimator `probes/gram_qtrace_hutchinson_probe`
+    (tr(F·R)=E_z[(Fᵀz)·(Rz)], Rademacher z), using the SAME word, ♯ convention
+    and y_λ weights. The claim is honest: transfer(exact 50-dps) ≡
+    Hutchinson(float64, stochastic) within k·σ of the propagated sampling error
+    (NOT an exact match). Convention parity of the two estimators is first
+    confirmed at n = 9 and n = 12 — where the transfer is ALSO pinned to the
+    exact dense value — with the Hutchinson forced fully stochastic
+    (exact_dim=0); only then is the n = 15 number trusted. See `--with-5he`
+    (the default run stops at n = 12 and still runs the n=9/12 stochastic
+    parity checks).
 
 NO float64 on the transfer path (owner ruling 2026-06-09): all numeric work is
 mpmath at the 50-dps floor; the float (c,d) word is re-lifted via
@@ -74,7 +88,9 @@ primal/dual witness fields apply.
 Usage:
     python3 -u gram_transfer_quadratic.py 2>&1 | tee /tmp/gram_transfer_quadratic.log
     python3 -u gram_transfer_quadratic.py --max-dense 9   # skip the ~min n=12 dense check
-    python3 -u gram_transfer_quadratic.py --with-5he      # also reach n=15 (transfer only)
+    python3 -u gram_transfer_quadratic.py --with-5he      # also reach + validate n=15
+    python3 -u gram_transfer_quadratic.py --with-5he --hutchinson-samples 200
+    python3 -u gram_transfer_quadratic.py --no-hutchinson # skip stochastic cross-check
 """
 from __future__ import annotations
 
@@ -263,6 +279,36 @@ def _dense_gram_per_lambda(word, n):
     return out
 
 
+# ── stochastic Hutchinson cross-check (independent estimator) ──────────────
+# Isotopes whose EXACT transfer G_atom is additionally cross-checked against the
+# stochastic Hutchinson quadratic-trace estimator
+# (`probes/gram_qtrace_hutchinson_probe`).  The estimator computes the SAME
+# aggregate G=Σ y_λ·tr(ρ_λ(W)ρ_λ(W^♯)) with the SAME ♯ (word reversal) and the
+# transfer's own y_λ weights, so the ONLY difference is exact-transfer(50 dps)
+# vs stochastic-trace(float64).  n ≤ 12 is forced FULLY stochastic
+# (exact_dim=0) — every block, including the small ones already pinned to the
+# dense reference, is independently sampled: the strongest convention-parity
+# test.  n = 15 samples only blocks with d>exact_dim (small blocks exact) so the
+# relative sampling error stays ≲1e-2 at a few-hundred probes.
+HUTCH_ISOS = {"3He", "4He", "5He"}
+HUTCH_EXACT_DIM = 3000   # n=15: blocks with d ≤ this computed exactly, rest sampled
+
+
+def _hutchinson_gram_atom(Z, N, n, *, q0f, exact_dim, samples):
+    """(G_hutch, stderr, wall_sec) — Hutchinson estimate of the SAME aggregate
+    G_atom the transfer computes exactly, apples-to-apples: transfer's own y_λ
+    (`y_lambda_at_q0_mpmath`) + the baked atom word (the word `gram_norm_zn`
+    uses for G_atom and the dense cross-check).  The probe is imported lazily so
+    the transfer path stays float64-free unless the cross-check runs."""
+    import gram_qtrace_hutchinson_probe as _hutch
+    y_mp = y_lambda_at_q0_mpmath(n, mp.mpf(Q_50_DIGIT_STR))
+    word = atom_braid_word_3A(Z, N, include_inter=True)
+    t0 = time.time()
+    G, se = _hutch.gram_qtrace(word, n, y_mp, q=q0f, exact_dim=exact_dim,
+                               samples=samples, label=f"{Z}p{N}n")
+    return G, se, time.time() - t0
+
+
 def main() -> int:
     run_start = time.monotonic()  # duration baseline (full compute, not just serialize)
     ap = argparse.ArgumentParser()
@@ -270,7 +316,13 @@ def main() -> int:
                     help="max n to cross-check against the dense float64 einsum "
                          "(default 12 = ⁴He wall; set 9 to skip the ~min n=12 run)")
     ap.add_argument("--with-5he", action="store_true",
-                    help="also compute ⁵He (n=15) — transfer only, dense infeasible")
+                    help="also compute + validate ⁵He (n=15); dense infeasible, "
+                         "so validated stochastically vs the Hutchinson estimator")
+    ap.add_argument("--hutchinson-samples", type=int, default=120,
+                    help="Rademacher probes for the stochastic transfer-vs-"
+                         "Hutchinson cross-check (default 120 → rel std err ≲1e-2)")
+    ap.add_argument("--no-hutchinson", action="store_true",
+                    help="skip the stochastic Hutchinson cross-check entirely")
     args = ap.parse_args()
 
     mp.mp.dps = 50
@@ -286,6 +338,8 @@ def main() -> int:
     rows = []
     max_dense_rel = mp.mpf(0)
     dense_checked = []
+    hutch_checks = []       # per-isotope transfer(exact) vs Hutchinson(stochastic)
+    max_hutch_z = 0.0
     for name, Z, N in isotopes:
         n = 3 * (Z + N)
         t0 = time.time()
@@ -318,6 +372,39 @@ def main() -> int:
             print(f"      dense n={n}: max_rel(transfer,dense)="
                   f"{mp.nstr(iso_rel, 4)}  ({time.time()-td:.1f}s)", flush=True)
 
+        # transfer(exact) ≡ Hutchinson(stochastic) within k·σ, INDEPENDENT
+        # estimator (this is the ONLY validation available at n=15 where dense
+        # is infeasible; at n≤12 it doubles as a convention-parity check, since
+        # the transfer is there ALSO pinned to the exact dense value above).
+        hrow = None
+        if (not args.no_hutchinson) and name in HUTCH_ISOS:
+            # n≤12: fully stochastic (exact_dim=0) — strongest parity test.
+            # n=15: sample only the large blocks (small ones exact), keeping
+            # the relative sampling error small at a few-hundred probes.
+            edim = 0 if n <= 12 else HUTCH_EXACT_DIM
+            Gh, se, hwall = _hutchinson_gram_atom(
+                Z, N, n, q0f=float(q0), exact_dim=edim,
+                samples=args.hutchinson_samples)
+            z = float(abs(float(Ga) - Gh) / se) if se > 0 else 0.0
+            max_hutch_z = max(max_hutch_z, z)
+            relse = (se / abs(Gh)) if Gh != 0 else None
+            hrow = {
+                "n": n,
+                "transfer_exact": mp.nstr(Ga, 16),
+                "hutchinson": Gh, "hutchinson_stderr": se,
+                "rel_stderr": relse,
+                "deviation_sigma": z,
+                "samples": args.hutchinson_samples,
+                "exact_dim": edim,
+                "mode": ("fully-stochastic" if edim == 0
+                         else f"stochastic(d>{edim})"),
+                "hutch_wall_sec": round(hwall, 2),
+            }
+            hutch_checks.append(hrow)
+            print(f"      hutch n={n}: transfer={mp.nstr(Ga, 10)} "
+                  f"hutch={Gh:.6f} ± {se:.6f}  z={z:.2f}  "
+                  f"relse={relse:.2e}  ({hwall:.1f}s)", flush=True)
+
         # bar-parity split of G at q₀ / q₀⁻¹ (q-parameterised word for both legs,
         # matching gram_norm_binding_probe --qbar internal consistency)
         Ga0, _, _ = gram_norm_zn(Z, N, include_inter=True, q=q0)
@@ -349,6 +436,7 @@ def main() -> int:
                 {"lam": list(lam), "c_lambda": mp.nstr(pl_f[lam], 24)}
                 for lam in sorted(pl_f, key=lambda L: (-abs(pl_f[L]),))],
             "dense_crosscheck": drow,
+            "hutchinson_crosscheck": hrow,
             "wall_sec": round(wall, 3),
         })
         print(f"      G_atom={mp.nstr(Ga, 8)} G_free={mp.nstr(Gf, 8)} "
@@ -372,6 +460,19 @@ def main() -> int:
         if d:
             print(f"| {r['iso']} | {d['n']} | {d['n_lambda']} | "
                   f"{d['max_rel_transfer_vs_dense']} | {d['dense_wall_sec']}s |")
+
+    if hutch_checks:
+        print("\n| iso n | transfer (exact) | Hutchinson ± σ | dev (σ) | "
+              "rel σ | samples | mode | wall |")
+        print("|---|--:|--:|--:|--:|--:|---|--:|")
+        for r in rows:
+            h = r["hutchinson_crosscheck"]
+            if h:
+                print(f"| {r['iso']} n={h['n']} | "
+                      f"{mp.nstr(mp.mpf(h['transfer_exact']), 10)} | "
+                      f"{h['hutchinson']:.6f} ± {h['hutchinson_stderr']:.6f} | "
+                      f"{h['deviation_sigma']:.2f} | {h['rel_stderr']:.2e} | "
+                      f"{h['samples']} | {h['mode']} | {h['hutch_wall_sec']}s |")
 
     max_n = max(r["n"] for r in rows)
 
@@ -402,6 +503,14 @@ def main() -> int:
         "when a_i≠b_i; ‖ρ_λ(W)‖_F²=Σ_{S,T}(Π F_i)²")
     builder.add_data("rows", rows)
     builder.add_data("dense_validated_n", dense_checked)
+    builder.add_data("hutchinson_crosschecks", hutch_checks)
+    builder.add_parameter(
+        "hutchinson_estimator",
+        "probes/gram_qtrace_hutchinson_probe: tr(F·R)=E_z[(Fᵀz)·(Rz)], "
+        "Rademacher z; float64 + stochastic. Same word, same ♯ (reversal), "
+        "same y_λ as the transfer — only exact-vs-stochastic differs.")
+    hutch_validated_n = sorted({h["n"] for h in hutch_checks})
+    builder.add_data("hutchinson_validated_n", hutch_validated_n)
 
     builder.add_assertion(
         name="exact_transfer_matches_dense_gram",
@@ -419,11 +528,31 @@ def main() -> int:
         source="Σ_λ d_λ²=(3A)! caps the dense probe at A≤3 (opt-in ⁴He); the "
                "transfer is edge-count bound, not d_λ bound.",
     )
+    if hutch_checks:
+        builder.add_assertion(
+            name="transfer_matches_hutchinson_within_error",
+            computed=max_hutch_z, expected=0.0, tolerance=3.0,
+            unit=f"max |transfer(exact 50dps) − Hutchinson(float64 stochastic)| "
+                 f"/ σ_hutch over n∈{hutch_validated_n} (units of Hutchinson "
+                 f"standard errors; 3 = 3σ)",
+            source="INDEPENDENT stochastic estimator "
+                   "probes/gram_qtrace_hutchinson_probe on the SAME word/♯/y_λ. "
+                   "Convention parity confirmed at n=9,12 (fully stochastic, "
+                   "exact_dim=0) where the transfer is ALSO pinned to the exact "
+                   "dense value; this is the ONLY validation at n=15 (⁵He), "
+                   "where dense is infeasible. Not an exact match — agreement "
+                   "within propagated sampling error.",
+        )
     builder.set_audit_only(
         "docs/audits/2026-07-03-qbar-norm-repitch-assessment.md")
     out = builder.save()
     print(f"\nWitness: {out}")
-    all_passed = bool(max_dense_rel <= mp.mpf("1e-8")) and max_n >= 12
+    hutch_ok = (not hutch_checks) or (max_hutch_z <= 3.0)
+    all_passed = (bool(max_dense_rel <= mp.mpf("1e-8")) and max_n >= 12
+                  and hutch_ok)
+    print(f"Max Hutchinson deviation: {max_hutch_z:.2f}σ  "
+          f"(over n∈{hutch_validated_n})" if hutch_checks
+          else "Hutchinson cross-check: skipped")
     print(f"All assertions pass: {all_passed}")
     return 0
 
