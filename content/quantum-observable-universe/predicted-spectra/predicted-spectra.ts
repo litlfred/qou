@@ -130,6 +130,7 @@ export default chapter({
         "chern-simons-as-knot-invariant",
         "alpha-em-derivation-open-problems",
         "em-coupling-bring-zero-mode",
+        "em-coupling-fixed-point",
         "photon-ir-zero-mode-bring",
         "alpha-em-derivation-exploration-options",
         "alpha-em-derivation-exploration-options-table-data",
