@@ -385,6 +385,7 @@ export default chapter({
         "electroweak-triplet-far-commuting-minimal",
         "electroweak-higgs-torus-link-triplet",
         "electroweak-triplet-charge-spin-from-involution",
+        "ew-slot-far-commutation-obstruction",
         "electroweak-higgs-torus-link-triplet-table1-data",
         "electroweak-higgs-torus-link-triplet-table2-data",
         "electroweak-higgs-torus-link-triplet-table3-data",
