@@ -1,7 +1,10 @@
 This chapter develops the categorical account of quantum measurement
-within the QOU framework. The fibre functor $\tau : \mathbf{C} \to
+within the QOU framework. Consider the most familiar measurement
+instance: an observer projects a quantum state and reads off a single
+definite outcome — a spin registered as up, a photon counted at one
+detector. The fibre functor $\tau : \mathbf{C} \to
 \mathrm{Vect}_{\mathbb{C}}$ — already present as an axiom of the
-substrate — IS the measurement operation: it extracts a complex
+substrate — IS that operation: it extracts a complex
 vector space from the categorical state, against which observation
 projects.
 

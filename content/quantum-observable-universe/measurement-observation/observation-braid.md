@@ -1,12 +1,13 @@
 An observation
-([observation](#def:observation)) is reflected in the braid
-as an **open map**: it maps open sets in the state space to
-open sets.  This has a fundamental consequence — the outcome
-of an observation is not necessarily determined by the
+([observation](#def:observation)) injects genuinely new
+information: its outcome is not necessarily determined by the
 initial conditions $\mathcal{S}_0$
 ([bundle initial conditions](#def:bundle-initial-conditions)).
-New open neighbourhoods can be created in the state space
-that were not present in the reference configuration $\mathcal{S}_0$.
+This is precisely the **open-map** property by which an
+observation is reflected in the braid — it maps open sets in
+the state space to open sets, so new open neighbourhoods can be
+created that were not present in the reference configuration
+$\mathcal{S}_0$.
 
 **Observation as crossing injection.**
 In the braid picture, an observation inserts a new crossing
