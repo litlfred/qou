@@ -34,21 +34,18 @@ against CODATA $137.035999$, a factor-$370$ improvement over the bare
 form with no free parameters. Both the tree term and this additive
 zero-mode are Lean-formalised.
 
-**Order of validity — the prediction is complete only to this order.**
-The remaining $-4.2\;\mathrm{ppm}$ is a next-order, Schwinger-type effect
-$\sim \alpha/(4\pi)$ whose exact coefficient is an **open problem**
-([open problems](#rem:alpha-em-derivation-open-problems)): its
-denominator $8\pi = \pi\,b_1$ is derived, but the $O(\alpha^2)$
-normalisation — a Bloch-group class in $B_3(\mathbb{C})$ over Bring's
-ideal hyperbolic tetrahedra — is not yet closed. The earlier
-*multiplicative* Chern–Simons and gluon-octet forms that appear to reach
-$2.1$ ppm are **single-point fits at $q_0$, not derivations** — a PSLQ
-scan over a $54$-element basis (including $\pi$, $\zeta(3)$, $\log 2$)
-found no integer relation — and must not be read as a closed result.
-**The fine-structure constant is therefore predicted parameter-free to
-$\approx 4\;\mathrm{ppm}$, through the additive correction; the
-$O(\alpha)$ self-energy coefficient and everything beyond it remain
-open.**
+**Order of validity.**
+The tree term and the additive $2/(3\pi)$ zero-mode are the derived
+content, both Lean-formalised. The remaining $-4.2\;\mathrm{ppm}$ is a
+next-order, Schwinger-type effect $\sim \alpha/(4\pi)$ whose denominator
+$8\pi = \pi\,b_1$ is derived, but whose exact coefficient — an
+$O(\alpha^2)$ Bloch-group normalisation in $B_3(\mathbb{C})$ over Bring's
+ideal hyperbolic tetrahedra — is not yet closed; the higher-order forms
+and their status are treated in
+[α_EM derivation open problems](#rem:alpha-em-derivation-open-problems).
+The fine-structure constant is therefore predicted parameter-free to
+$\approx 4\;\mathrm{ppm}$ through the additive correction; the $O(\alpha)$
+self-energy coefficient and everything beyond it remain open.
 
 **Numerical comparison with CODATA.**
 
