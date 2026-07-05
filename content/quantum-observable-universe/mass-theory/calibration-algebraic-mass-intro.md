@@ -6,8 +6,6 @@ The body of the section develops the seminormal and convergence machinery. Propo
 
 The section closes with a long roster of structural witnesses that the rest of the chapter takes as given: the depth-2 and depth-3 base-surface witnesses, the Tate-rational and orbit-sum cyclotomic theorems, the Baer-* and central-idempotent foundations of the Hecke algebra, and the bi-filtration grid that places the chapter's knot-indexed convolutions inside the joint Galois/braid grading. Remark: Knots admitting the base-surface embedding: genus-bounded table and per-knot B1 witness targets lists the falsifiability targets, Remark: Conway--KT mutant pair: B1 Vol-injectivity sanity check and Remark: Jones-faithfulness theorem at crossing $\le$ 10 record the volume-injectivity probes, and Remark: Quantum Bloch group and the pentagon identity anchors the algebra in Bloch-group terms. The next section, **Atom, Isotope, and Confinement Levels**, takes the three-input calibration and the quantum dilogarithm as fixed and uses them to climb the confinement ladder.
 
-_(draft.)_
-
 **Calibration.**
 The internal symmetry and the rigid topology of the state space leave
 only a handful of free parameters: **exactly three** weak-sector
@@ -27,5 +25,3 @@ numerically by the lepton ratio $m_\mu/m_e$ through the Skein
 relation $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$.  Every other
 mass, Q-value, binding energy, and coupling constant is a prediction.
 "'
-
-
