@@ -45,3 +45,18 @@ with $T_3(a) = 0$ for $a \in A_+$ (singlet, $\sigma(a) = a$)
 and $T_3(a) = \pm \tfrac{1}{2}$ for $a \in A_-$ realising
 $\sigma(a) = \pm a$. For a general $a \in A$, $T_3$ is read
 off the $A_\pm$-projection $a = a_+ + a_-$.
+
+**Derived spin grading (formalised sorry-free).** The Lean sibling proves
+the following facts about the grading, over any commutative ring $R$ with
+$\tfrac{1}{2} \in R$ (so $2 \in R^\times$):
+
+1. $\sigma$ is an additive group homomorphism ($\sigma 0 = 0$,
+   $\sigma(-a) = -\sigma(a)$, $\sigma(a-b) = \sigma a - \sigma b$).
+2. The projections $a_\pm = \tfrac{1}{2}(a \pm \sigma(a))$ satisfy
+   $\sigma(a_+) = a_+$ and $\sigma(a_-) = -a_-$; the decomposition
+   $a = a_+ + a_-$ holds, and $\sigma(a) = a_+ - a_-$.
+3. The sectors meet trivially: $\sigma(x) = x$ and $\sigma(x) = -x$ force
+   $x = 0$, so $A_+ \cap A_- = 0$.
+4. The isospin third component $T_3 = \tfrac{1}{2}\,\mathrm{sgn}_\sigma$
+   satisfies $T_3 = 0$ on the singlet sector and $T_3 = \pm\tfrac{1}{2}$ on
+   the two doublet components, with $2\,T_3 = \mathrm{sgn}_\sigma$.

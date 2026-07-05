@@ -16,22 +16,30 @@ $$
 
 This is the **top node** of the electroweak conjecture lattice. Its
 provable base — that these three links exist, have Seifert genera
-$1, 2, 3$, and co-embed in Bring's genus-$4$ fiber alongside the
-saturating carriers — is discharged to the sorry-free proposition
-([prop:electroweak-triplet-bring-embedding](#prop:electroweak-triplet-bring-embedding)).
+$1, 2, 3$, co-embed in Bring's genus-$4$ fiber alongside the saturating
+carriers, and fit minimally in $B_6$ at the far-commuting triple $(1,3,5)$ —
+is discharged to the sorry-free
+([prop:electroweak-triplet-bring-embedding](#prop:electroweak-triplet-bring-embedding))
+and
+([thm:ew-triplet-far-commuting-minimal](#thm:ew-triplet-far-commuting-minimal)).
 What remains conjectural is the *identification itself*: which link is
-which particle. That rests on three sub-conjectures, formalised as §3b
-classes in the sibling Lean file and summarised below.
+which particle. As of 2026-07-05 that residual is **narrowed**: charge and
+spin are no longer independent open gaps but proved consequences of a single
+sector postulate (see below).
 
-**The conjecture lattice.**
+**The conjecture lattice (narrowed).**
 
 | Node | Kind | Rests on | Content |
 |------|------|----------|---------|
-| **C1** selection | primary | — | EW carriers are the nontrivial, strictly sub-saturating even-twist links ($0 < g < 4$) |
+| **C1** selection | primary | — | EW carriers *are* the nontrivial, strictly sub-saturating even-twist links ($0 < g < 4$) — physics postulate only |
 | **C2** enumeration | dependent (C1) | C1 | those carriers are exactly $\{T(2,4), T(2,6), T(2,8)\}$ |
-| **C3** charge | primary | — | which link is the charged $W^\pm$ versus the neutral $Z, H$ |
-| **C4** spin | primary | — | scalar $H$ versus vector $W, Z$ |
-| **C$_{\text{top}}$** identification | dependent (C1, C3, C4) | C1, C3, C4 | the full map above |
+| **C$_{\text{sector}}$** sector assignment | primary | — | which link sits in the singlet $A_+$ versus doublet $A_-$ of the spin involution |
+| **C$_{\text{top}}$** identification | dependent (C1, C$_{\text{sector}}$) | C1, C$_{\text{sector}}$ | the full map above |
+
+The former **C3 (charge)** and **C4 (spin)** — previously two independent
+open primary conjectures — are **removed as independent nodes**: they are now
+proved consequences of C$_{\text{sector}}$ via
+([thm:ew-triplet-charge-spin-from-involution](#thm:ew-triplet-charge-spin-from-involution)).
 
 **C1 — the selection principle (strong corpus grounding).**
 
@@ -57,23 +65,45 @@ enumeration `ew_enumeration` of
 the conjectural content of C2 is only the reverse inclusion — that all
 three genera are realised as carriers.
 
-**C3 — charge discriminator (OPEN).**
+**C$_{\text{sector}}$ — the single sector-assignment postulate (replaces C3 + C4).**
 
-A link's Seifert genus does not see electric charge, so no
-genus/embedding argument distinguishes the charged $W^\pm$ from the
-neutral $Z, H$. C3 states the hypothesis that the minimal-genus carrier
-($k = 2$) is charged and the two higher carriers ($k = 3, 4$) neutral, to
-be derived — if at all — from bar-self-duality / amphichirality data
-([bar T-duality of the substrate](#prop:bar-t-duality-substrate)), not
-from the link genus. This remains open.
+Charge and spin were previously two separate open conjectures because a
+link's Seifert genus is blind to both. They are now unified: both are read
+off one $\mathbb{Z}/2$ datum — the assignment of each carrier to a sector of
+the spin involution $\sigma$ of ([def:spin-involution](#def:spin-involution)),
+$A = A_+ \oplus A_-$. Restricted to the sym/alt Hecke block, $\sigma$ is the
+swap of the eigenvalues $q^{2k} \leftrightarrow q^{-2k}$ (the bar involution
+$q \mapsto q^{-1}$); its projections give a bar-even part in $A_+$ (neutral,
+retained by the Markov trace) and a bar-odd part in $A_-$ (charged,
+$P_{\mathrm{skew}}$, traceless), per
+([prop:vdw-pskew-isolation](#prop:vdw-pskew-isolation)). The Higgs is the
+bar-even self-dual carrier
+([prop:self-dual-higgs-real-volume](#prop:self-dual-higgs-real-volume)).
 
-**C4 — spin discriminator (OPEN — the deepest gap).**
+**Charge and spin are now proved consequences, not conjectures.** Given the
+sector assignment ($H$ singlet, $W^\pm, Z$ doublets), the theorem
+([thm:ew-triplet-charge-spin-from-involution](#thm:ew-triplet-charge-spin-from-involution))
+derives (sorry-free): $H \in A_+ \Rightarrow$ scalar (spin $0$) and neutral;
+$W^\pm \in A_- \Rightarrow$ vector (spin $1$) with $T_3 = \pm 1$;
+$Z \in A_- \Rightarrow$ vector, neutral with $T_3 = 0$ via the
+$(W^3, B) \mapsto (Z, \gamma)$ Weinberg mixing
+([conj:weinberg-angle-categorical](#conj:weinberg-angle-categorical)). The
+single residual conjectural input is the sector assignment itself (which link
+lands in which sector) plus the bare particle-label map — the physics
+selection, not the derivation of the quantum numbers.
 
-Link and genus data are spin-blind: nothing in the torus-link topology of
-$T(2, 2k)$ determines whether the carrier is a scalar or a vector. C4
-states the hypothesis that $W$ and $Z$ are spin-$1$ vectors while $H$ is a
-spin-$0$ scalar. This is not addressed by any argument in the embedding
-proposition and is the deepest residual of the whole identification.
+**Notation tension flagged for the owner ($\sigma_5^8 = B$ versus $H$).**
+
+The Weinberg-angle block
+([conj:weinberg-angle-categorical](#conj:weinberg-angle-categorical)) reads
+the Hoefsmit slot $\sigma_5^8$ as the $\mathrm{U}(1)_Y$ singlet $B$
+(pre-mixing), whereas this block reads $\sigma_5^8$ ($= T(2,8)$, strands
+$5$–$6$) as the Higgs $H$. Both are singlet-like (bar-even, $A_+$), but the
+gauge singlet $B$ — which mixes into $Z$ and $\gamma$ — and the scalar $H$
+are distinct particles. This assignment needs an owner ruling; it is
+recorded here and in
+([thm:ew-triplet-charge-spin-from-involution](#thm:ew-triplet-charge-spin-from-involution)),
+not silently resolved.
 
 **Supporting evidence (necessary, not sufficient).**
 
@@ -117,6 +147,11 @@ If true, the identification supplies the missing categorical structure for
 the weak-scale crossing count $N_v$ in the Fermi-constant decomposition
 $G_F = 1/(\sqrt{2}\,v^2)$, $v = N_v\,E_\times\,\mu_0$ — the **NV-1** audit
 flag ([NV-1 / FROB-FILTER conjectures, 2026-05-02](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-02-nv-frob-filter-conjectures.md)).
-The residual to close is exactly C1 (selection), C3 (charge), and C4
-(spin); the enumeration and embedding are already discharged to
-([prop:electroweak-triplet-bring-embedding](#prop:electroweak-triplet-bring-embedding)).
+The residual to close is now just C1 (selection) and C$_{\text{sector}}$ (the
+sector assignment); the enumeration and far-commuting minimality are
+discharged to
+([prop:electroweak-triplet-bring-embedding](#prop:electroweak-triplet-bring-embedding))
+and
+([thm:ew-triplet-far-commuting-minimal](#thm:ew-triplet-far-commuting-minimal)),
+and charge and spin (the former C3, C4) to
+([thm:ew-triplet-charge-spin-from-involution](#thm:ew-triplet-charge-spin-from-involution)).
