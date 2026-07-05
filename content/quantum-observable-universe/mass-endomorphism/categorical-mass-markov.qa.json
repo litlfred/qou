@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "9184ce53e64b",
-    "ts": "6a8b7cd19d90",
+    "ts": "16e5b86f43a7",
     "lean": "693929869d86"
   },
   "criteria": {
@@ -265,10 +265,10 @@
       {
         "field_hash": {
           "md": "9184ce53e64b",
-          "ts": "6a8b7cd19d90",
+          "ts": "16e5b86f43a7",
           "lean": "693929869d86"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
@@ -276,10 +276,8 @@
           "script_hash": "fd89dc9369e1",
           "script_commit_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
         },
-        "reviewed_at": "2026-07-05T11:29:32.387Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "severity": "critical",
-        "evidence": "../qou/content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov.lean:1: Lean file uses archimedean constructs but neither the .md narrative nor the .ts authorNotes acknowledge archimedean specialisation. Add a §7c-style note (in authorNotes, per §4d) or move the archimedean evaluation to a sibling block."
+        "reviewed_at": "2026-07-05T12:54:41.312Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1051,5 +1049,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-05T12:54:41.312Z"
 }

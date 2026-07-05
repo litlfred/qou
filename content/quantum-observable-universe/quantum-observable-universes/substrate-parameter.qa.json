@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "fafd716bd8cf",
-    "ts": "7b19bcfec52c",
+    "ts": "a4574fd46484",
     "lean": "7770ba3da5a4"
   },
   "criteria": {
@@ -245,10 +245,10 @@
       {
         "field_hash": {
           "md": "fafd716bd8cf",
-          "ts": "7b19bcfec52c",
+          "ts": "a4574fd46484",
           "lean": "7770ba3da5a4"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
@@ -256,10 +256,8 @@
           "script_hash": "fd89dc9369e1",
           "script_commit_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
         },
-        "reviewed_at": "2026-07-05T11:29:32.387Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "severity": "critical",
-        "evidence": "../qou/content/quantum-observable-universe/quantum-observable-universes/substrate-parameter.lean:1: Lean file uses archimedean constructs but neither the .md narrative nor the .ts authorNotes acknowledge archimedean specialisation. Add a §7c-style note (in authorNotes, per §4d) or move the archimedean evaluation to a sibling block."
+        "reviewed_at": "2026-07-05T12:54:40.004Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1175,5 +1173,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-05T12:54:40.004Z"
 }
