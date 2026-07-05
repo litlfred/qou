@@ -29,7 +29,7 @@ off an empirical table.
    $T_{\gamma e}(q)$
    ([shell structure eigenvalues](#prop:shell-structure-eigenvalues)):
    at the substrate parameter $q$, the larger eigenvalue
-   $\lambda_+ = 1.1073$ governs shell energy scaling via a
+   $\lambda_+ \approx 1.1073$ governs shell energy scaling via a
    Chebyshev recurrence.
 
 3. **Color coding**: $k_\alpha$ (number of $\alpha$ sub-links
