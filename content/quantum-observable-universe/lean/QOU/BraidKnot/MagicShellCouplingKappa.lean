@@ -3,21 +3,55 @@ import Mathlib.Tactic
 /-!
 # QOU.BraidKnot.MagicShellCouplingKappa
 
-**Placeholder canonical** for content block at
-[`quantum-observable-universe/braids-and-knots/magic-shell-coupling-kappa.ts`](quantum-observable-universe/braids-and-knots/magic-shell-coupling-kappa.ts).
+**Canonical declaration** for content block at
+[`quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa-table-data.ts`](quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa-table-data.ts).
 
-The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.BraidKnot.MagicShellCouplingKappa` resolves to a real declaration in the `qou`
-Lake package.
+Formalises the manuscript magic-shell coupling table: the shell scale
+`E₀ = m_e/(q(q−1))`, `h = q − q⁻¹`, and the q-integers `[2]_q = q + q⁻¹`,
+`[3]_q = q² + 1 + q⁻²`, together with the identity `[3]_q = [2]_q² − 1`.
+Generic over any field (§7c: `q⁻¹` needs `Field`; no ordering used).
 -/
 
 namespace QOU.BraidKnot
 
-/-- MagicShellCouplingKappa
+/-- Data for the magic-shell coupling table at `q`.
 
-    Placeholder; full formalisation pending. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/magic-shell-coupling-kappa.ts
--- Placeholder structure; full data to be specified.
-structure MagicShellCouplingKappa where
+    A `definition` carrier: `q ≠ 0`, the electron scale `m_e`, the shell
+    scale `E₀`, the deformation `h`, and the q-integers `[2]_q`, `[3]_q`,
+    each pinned to its manuscript value. -/
+structure MagicShellCouplingKappa (R : Type*) [Field R] where
+  /-- Substrate parameter `q`. -/
+  q : R
+  /-- `q ≠ 0`. -/
+  q_ne : q ≠ 0
+  /-- Electron scale `m_e`. -/
+  m_e : R
+  /-- Shell scale `E₀ = m_e/(q(q−1))`. -/
+  E0 : R
+  /-- Deformation `h = q − q⁻¹`. -/
+  h : R
+  /-- `[2]_q = q + q⁻¹`. -/
+  br2 : R
+  /-- `[3]_q = q² + 1 + q⁻²`. -/
+  br3 : R
+  /-- `E₀ = m_e/(q(q−1))`. -/
+  E0_def : E0 = m_e / (q * (q - 1))
+  /-- `h = q − q⁻¹`. -/
+  h_def : h = q - q⁻¹
+  /-- `[2]_q = q + q⁻¹`. -/
+  br2_def : br2 = q + q⁻¹
+  /-- `[3]_q = q² + 1 + q⁻²`. -/
+  br3_def : br3 = q ^ 2 + 1 + q⁻¹ ^ 2
+
+-- Ref: [manuscript] quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa-table-data.ts
+
+/-- The q-integer identity `[3]_q = [2]_q² − 1` (since
+    `(q + q⁻¹)² = q² + 2 + q⁻²`). -/
+theorem MagicShellCouplingKappa.br3_eq_br2_sq_sub_one {R : Type*} [Field R]
+    (M : MagicShellCouplingKappa R) : M.br3 = M.br2 ^ 2 - 1 := by
+  rw [M.br3_def, M.br2_def]
+  have hq : M.q ≠ 0 := M.q_ne
+  field_simp
+  ring
 
 end QOU.BraidKnot
