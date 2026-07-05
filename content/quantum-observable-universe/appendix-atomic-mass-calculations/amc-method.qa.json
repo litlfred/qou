@@ -148,6 +148,21 @@
         },
         "reviewed_at": "2026-07-05T04:17:54.684Z",
         "reviewed_sha": "3a7e4dbe0e216d15bcb5e95c2a1eeb09a2a77b65"
+      },
+      {
+        "field_hash": {
+          "md": "87c56e954fec",
+          "ts": "da21e2fe996e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-drain-swarm3",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-07-05T20:11:39.307Z",
+        "reviewed_sha": "90227015687f46b75ab58bb823f6bce4ff46f2f1",
+        "notes": "Triage (bean 9pxo): the voice-editorializing pass->fail surfaced by PR #3327's exposition-drain sidecar refresh is RESOLVED on main. The qa-checkers-voice script re-verdicted this block 'pass' on 2026-07-05 after the drain-era prose was cleaned. Confirmatory triage entry; no content action outstanding."
       }
     ],
     "voice-scholarly-default": [
@@ -1035,5 +1050,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T04:27:18.749Z"
+  "updated_at": "2026-07-05T20:11:39.307Z"
 }

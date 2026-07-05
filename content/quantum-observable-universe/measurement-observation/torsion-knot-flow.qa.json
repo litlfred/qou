@@ -258,6 +258,22 @@
         },
         "reviewed_at": "2026-07-05T04:58:59.318Z",
         "reviewed_sha": "e28e45e2256ea73187107f230cc7beeb37a6c301"
+      },
+      {
+        "field_hash": {
+          "md": "d39aa965fd29",
+          "ts": "7fac30c10e7d",
+          "lean": "0a0e2600dcd7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-drain-swarm3",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-07-05T20:11:39.307Z",
+        "reviewed_sha": "90227015687f46b75ab58bb823f6bce4ff46f2f1",
+        "notes": "Triage (bean 9pxo): the wall-side-correct pass->fail surfaced by PR #3327 (drain-edited .md dropped the section 7c archimedean-wall banner while the .lean uses archimedean constructs) is RESOLVED on main; script re-verdict 'pass', 2026-07-05. Note: a q-usage-narrative-chapter-mismatch 'warn' remains on this block (out of QA-drain lane; needs an .md chapter-context edit)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1173,5 +1189,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T05:03:37.077Z"
+  "updated_at": "2026-07-05T20:11:39.307Z"
 }
