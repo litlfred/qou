@@ -1,0 +1,76 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-05T23:28:01.727414+00:00",
+  "commitSha": "66a57c25c990be893e8ab1588481c3f200af9dcc",
+  "assertions": [
+    {
+      "name": "z_is_bar_even",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "h_is_bar_odd",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "pn_factor_is_bar_mixed",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "b4-connected-bar-parity",
+  "scriptFile": "b4_connected_bar_parity_probe.py",
+  "scriptHash": "0918fcacf4b9",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "I-par for the [1^4] connected-Ursell magnitude leg: z is bar-even, h bar-odd ⇒ the pn factor and hence b₄ are bar-MIXED. Refines the invariant to a prescription — the binding magnitude is the bar-even projection b₄^even; bar-odd is radiated. audit-only, no fit.",
+  "tier": "structural-exact (40 dps bar-split of the Markov building blocks)",
+  "result": {
+    "q0": "1.1099785827513808076",
+    "z": {
+      "q": "0.499320334184",
+      "qinv": "0.499320334184",
+      "even": "0.499320334184",
+      "odd": "-5.74e-42",
+      "parity": "bar-even"
+    },
+    "h": {
+      "q": "0.209060298796",
+      "qinv": "-0.209060298796",
+      "even": "0.0",
+      "odd": "0.209060298796",
+      "parity": "bar-odd"
+    },
+    "pn_factor_z_minus_h_over_2": {
+      "even_part": "0.499320334184",
+      "odd_part": "-0.104530149398",
+      "parity": "bar-MIXED"
+    },
+    "verdict": "I-par REFINED: z bar-even, h bar-odd ⇒ pn factor (z−h/2) bar-mixed ⇒ the connected b₄ is BAR-MIXED, not purely bar-even (original I-par phrasing too strong). Prescription: the binding magnitude is the BAR-EVEN PROJECTION b₄^even = ½[b₄(q)+b₄(q⁻¹)]; the bar-odd projection is radiated (Q_β-like), not retained binding. The magnitude compute (next unit) targets b₄^even; I-conn / I-ceil apply to b₄^even. Scope-(a), no fit."
+  },
+  "context": {
+    "axis": "GAP-A-4 class-D — [1^4] Ursell operator magnitude, invariant I-par",
+    "scoping": "docs/scope/2026-07-05-gap-a4-ursell-operator-magnitude-scoping.md §3",
+    "bar_framework": "computations/binding_bar_even_odd_probe.py (retained/emitted)"
+  },
+  "auditOnly": true
+}
