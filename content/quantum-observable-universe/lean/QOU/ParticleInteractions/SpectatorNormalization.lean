@@ -3,13 +3,10 @@ import Mathlib.Tactic
 /-!
 # QOU.ParticleInteractions.SpectatorNormalization
 
-**Placeholder canonical** for content block referenced by
+**Canonical declaration** for content block referenced by
 `qou:QOU.ParticleInteractions.SpectatorNormalization`.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI resolves to a real declaration in the `qou` Lake
-package. The body is `sorry` carrying the manuscript citation per
-AGENTS.md §1.
+This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
 -/
 
 namespace QOU.ParticleInteractions

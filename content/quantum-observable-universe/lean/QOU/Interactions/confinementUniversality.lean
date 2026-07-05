@@ -4,13 +4,10 @@ import Mathlib.Data.Real.Basic
 /-!
 # QOU.Interactions.confinementUniversality
 
-**Placeholder canonical** for content block
+**Canonical declaration** for content block
 [`prop:confinement-universality`](../../../quantum-observable-universe/particle-interactions/confinement-universality.md): *Confinement universality: nucleon NF independent of photon polarization*.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.Interactions.confinementUniversality` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per AGENTS.md §1.
+This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
 -/
 
 namespace QOU.Interactions
@@ -61,9 +58,7 @@ The derivation chain has two stages:
 
 1.
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types and translating
-    the manuscript claim above. -/
+    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-universality.ts
 theorem confinementUniversality [ctx : ConfinementUniversalityContext] :
     ∀ (φ_0 φ_1 φ_01 : ℝ), ctx.N_F φ_0 φ_1 φ_01 = ctx.N_F 0 0 0 := by

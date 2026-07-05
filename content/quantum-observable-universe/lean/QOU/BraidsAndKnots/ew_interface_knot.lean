@@ -3,12 +3,9 @@ import Mathlib.Tactic
 /-!
 # QOU.BraidsAndKnots.ew_interface_knot
 
-**Placeholder canonical** for content block EW interface knot.
+**Canonical declaration** for content block EW interface knot.
 
-The full Lean statement and proof are pending; this stub exists so the
-`lean.ref` URI `qou:QOU.BraidsAndKnots.ew_interface_knot` resolves to a real
-declaration in the `qou` Lake package. The body is `sorry` carrying
-the manuscript citation per AGENTS.md §1.
+This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
 
 Note: the chapter-dir uses singular `QOU.BraidKnot` for most blocks;
 this plural `QOU.BraidsAndKnots` namespace was inherited from existing
@@ -63,10 +60,7 @@ $W \leftrightarrow \sigma_1^{\,4}$, $Z \leftrightarrow \sigma_3^{\,6}$,
 $H \leftrightarrow \sigma_5^{\,8}$ act
 ([`conj:hoefsmit-ew-cell-content`](#conj:hoefsmit-ew-cell-content)).*
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/ew-interface-knot.ts
 def ew_interface_knot [ctx : EwInterfaceKnotContext] :
     ctx.n_strands = 6 ∧

@@ -3,13 +3,10 @@ import Mathlib.Tactic
 /-!
 # QOU.LiftingDescent.jp_categorical_jet
 
-**Placeholder canonical** for content block
+**Canonical declaration** for content block
 [`lem:jet-prolongation-categorical-jet`](../../../quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.md): *Categorical jet object $J^1(A)$ inherits the Frobenius--Hopf structure*.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.LiftingDescent.jp_categorical_jet` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per AGENTS.md §1.
+This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
 -/
 
 namespace QOU.LiftingDescent
@@ -33,9 +30,7 @@ Kähler differentials, is an object of the ambient rigid monoidal
 category, and inherits a Frobenius--Hopf structure
 $(\Delta', \varepsilon', S')$ from $A$.
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types and translating
-    the manuscript claim above. -/
+    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts
 theorem jp_categorical_jet [ctx : JpCategoricalJetContext] :
     ∀ x : ctx.J1A, ctx.S' (ctx.S' x) = x :=
