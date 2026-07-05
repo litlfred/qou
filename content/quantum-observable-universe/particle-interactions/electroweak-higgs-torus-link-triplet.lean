@@ -7,59 +7,78 @@ import Mathlib.Tactic
 The physical identification `W↔T(2,4)`, `Z↔T(2,6)`, `H↔T(2,8)` is **not**
 one monolithic conjecture. It decomposes into an honest §3b conjecture
 lattice (primary/dependent per §3b-tax, dependency threaded through
-`[instance]` binders) sitting on top of a **provable** genus/enumeration
-core (the sibling `prop:electroweak-triplet-bring-embedding`, proved
-sorry-free).
+`[instance]` binders) sitting on top of a **provable** genus / enumeration /
+far-commuting / bar-parity core.
 
 LaTeX label (of the top node): `conj:electroweak-higgs-torus-link-triplet`.
 
-## The lattice
+## The lattice (narrowed 2026-07-05)
 
 | Node | Kind | Rests on | Content |
 |------|------|----------|---------|
-| `EWSelectionPrinciple`   | primary   | —              | EW carriers are the nontrivial, strictly sub-saturating even-twist links (`0 < g < 4`) |
-| `EWSectorEnumeration`    | dependent | C1             | those carriers are exactly `{T(2,4),T(2,6),T(2,8)}` |
-| `EWChargeDiscriminator`  | primary   | —              | which link is the charged `W±` vs neutral `Z/H` |
-| `EWSpinDiscriminator`    | primary   | —              | scalar `H` vs vector `W/Z` (deepest gap) |
-| `EWHiggsTorusLinkTriplet`| dependent | C1, C3, C4     | the full identification |
+| `EWSelectionPrinciple` | primary   | — | **physics postulate only**: EW carriers *are* the sub-saturating even-twist links (`0 < g < 4`) |
+| `EWSectorEnumeration`  | dependent | C1 | those carriers are exactly `{T(2,4),T(2,6),T(2,8)}` |
+| `EWSectorAssignment`   | primary   | — | **the single sector postulate** replacing charge+spin: `H` singlet (`A₊`), `W±,Z` doublets (`A₋`) |
+| `EWHiggsTorusLinkTriplet` | dependent | C1, sector | the full identification |
 
-The provable half — `genus(T(2,2k)) = k-1`, the `{1,2,3}` enumeration,
-and the `g ≤ 4 = g(Σ₄)` embedding — lives in
-`prop:electroweak-triplet-bring-embedding`. The irreducible residual is
-exactly C1 (selection, strongly grounded in the corpus genus-filtration
-saturation story), C3 (charge), and C4 (spin). A link's genus does **not**
-see spin, so C4 is not addressed by any genus/embedding argument — it is
-stated as an open primary conjecture, not papered over.
+**What is now PROVED (no longer conjectural).**
 
-`sorry`-free: this file declares only conjecture **classes** (no
-`instance` fabricated to "close" them) plus the `crossings` data; there
-are no `sorry`s and no vacuous `: True` bodies.
+* The **enumeration / far-commuting minimality** — that three pairwise
+  far-commuting even-twist generators fit minimally in `B₆` at `(1,3,5)` and
+  that the sub-saturating window is exactly `{T(2,4),T(2,6),T(2,8)}` — is
+  `thm:ew-triplet-far-commuting-minimal` + `prop:electroweak-triplet-bring-embedding`
+  (both sorry-free). So `EWSelectionPrinciple` carries **only** the physics
+  selection postulate (EW sector ↔ this proved set), *not* the enumeration.
+* **Charge and spin** are `thm:ew-triplet-charge-spin-from-involution`
+  (sorry-free, conditional on the sector postulate): via the spin involution
+  of `def:spin-involution`, `H ∈ A₊ ⇒` scalar+neutral, `W± ∈ A₋ ⇒` vector
+  `T₃=±1`, `Z ∈ A₋` vector neutral via Weinberg mixing. The **former C3
+  (charge) and C4 (spin) — previously two independent open primary
+  conjectures — are now proved consequences** of the single sector postulate
+  `EWSectorAssignment`. They are removed from the lattice as independent nodes.
+
+The irreducible residual is therefore just **C1 (selection)** — strongly
+grounded in the corpus genus-4 saturation story — and the **sector
+assignment** (which link sits in which `σ`-sector), together with the bare
+particle-label map. Charge and spin no longer appear as open gaps.
+
+`sorry`-free: this file declares only conjecture **classes** (no `instance`
+fabricated to "close" them) plus the `crossings` data; there are no `sorry`s
+and no vacuous `: True` bodies.
 
 ## References
 
 - [manuscript] particle-interactions/electroweak-higgs-torus-link-triplet
-- [manuscript] particle-interactions/electroweak-triplet-bring-embedding (provable core)
+- `thm:ew-triplet-far-commuting-minimal` (far-commuting minimality + enumeration, proved)
+- `prop:electroweak-triplet-bring-embedding` (genus/embedding core, proved)
+- `thm:ew-triplet-charge-spin-from-involution` (charge+spin from the sector postulate, proved)
+- `def:spin-involution` (the `σ` spin grading `A = A₊ ⊕ A₋`)
 -/
 
 namespace QOU.ParticleInteractions
 
 /-! ## The conjecture lattice (formal §3b classes)
 
-The Seifert genus of the even 2-component torus link `T(2, 2k)` is `k - 1`
-and the Bring surface has genus `g(Σ₄) = 4`; both facts are Lean-proved in
-the sibling `prop:electroweak-triplet-bring-embedding`. Here we use the raw
-`k - 1` / `4` inline so this file stays self-contained. -/
+The Seifert genus of `T(2, 2k)` is `k - 1` and `g(Σ₄) = 4`; both are
+Lean-proved in `prop:electroweak-triplet-bring-embedding`, and the
+far-commuting `n = 6` minimality in `thm:ew-triplet-far-commuting-minimal`.
+Here the raw `k - 1` / `4` is used inline so this file stays self-contained. -/
 
-/-- **C1 (PRIMARY) — electroweak selection principle.**
+/-- **C1 (PRIMARY) — electroweak selection postulate.**
 
     The electroweak carrier sector consists of the *nontrivial, strictly
     sub-saturating* even-twist 2-component torus links: those with Seifert
-    genus `g` in the window `0 < g < 4 = g(Σ₄)`. This is the sub-saturating
-    complement of the genus-4-**saturating** force-carrier knots
-    `{T(2,9), T(3,5)}` (corpus: `genus-filtration-ideal` "saturates"; the
-    Hopf link `T(2,2)` has genus `0` = trivial/vacuum). The window bound is
-    the genuine hypothesis; the field carries it as a
-    parameter-quantified inequality, not the conclusion. -/
+    genus `g` in the window `0 < g < 4 = g(Σ₄)`, the sub-saturating complement
+    of the genus-4-**saturating** carriers `{T(2,9), T(3,5)}` (corpus:
+    `genus-filtration-ideal`).
+
+    **This class now carries ONLY the physics selection postulate** — the
+    claim that the electroweak sector *is* realised by this window. The
+    *enumeration* of the window (that it is exactly `{T(2,4),T(2,6),T(2,8)}`,
+    `k ∈ {2,3,4}`) and the far-commuting minimality are no longer part of this
+    conjecture: they are the proved `thm:ew-triplet-far-commuting-minimal` and
+    `prop:electroweak-triplet-bring-embedding`. The field carries the window
+    membership as a parameter-quantified predicate, not the conclusion. -/
 -- @conjecture: primary
 class EWSelectionPrinciple where
   /-- Carrier predicate on the twist parameter `k` of `T(2, 2k)`. -/
@@ -73,74 +92,63 @@ class EWSelectionPrinciple where
 
 /-- **C2 (DEPENDENT on C1) — sector enumeration.**
 
-    Given the selection principle, the electroweak carriers are exactly
-    `k ∈ {2, 3, 4}` — the triplet `T(2,4), T(2,6), T(2,8)`. The forward
-    inclusion `carrier ⊆ {2,3,4}` already follows from C1's window bound
-    (proved as `ew_enumeration` in the sibling proposition); the
-    conjectural content here is the *reverse* inclusion — that all three
-    are realised as carriers. -/
+    Given the selection postulate, the electroweak carriers are exactly
+    `k ∈ {2, 3, 4}`. The forward inclusion `carrier ⊆ {2,3,4}` follows from
+    C1's window bound (proved as `ew_enumeration` /
+    `sub_saturating_enumeration`); the conjectural content here is only the
+    *reverse* inclusion — that all three are realised as carriers. -/
 -- @conjecture: dependent (on EWSelectionPrinciple)
 class EWSectorEnumeration [EWSelectionPrinciple] where
   /-- The carrier set is exactly `{2, 3, 4}`. -/
   carriers_eq : ∀ k, EWSelectionPrinciple.isCarrier k ↔ (k = 2 ∨ k = 3 ∨ k = 4)
 
-/-- **C3 (PRIMARY) — charge discriminator.**
+/-- **C-sector (PRIMARY) — the single sector-assignment postulate.**
 
-    OPEN. A link's Seifert genus does not see electric charge, so no
-    genus/embedding argument distinguishes the charged `W±` from the
-    neutral `Z, H`. The class states the hypothesis that the minimal-genus
-    carrier (`k = 2`, `W±`) carries unit charge magnitude and the two
-    higher carriers (`k = 3, 4`; `Z, H`) are neutral — to be derived,
-    if at all, from bar-self-duality / amphichirality data, not from the
-    link genus. -/
+    This class **replaces the former C3 (charge) and C4 (spin) primary
+    conjectures**. It is the one residual physics input beyond selection: the
+    assignment of each carrier to a `σ`-spin-involution sector
+    (`def:spin-involution`) — the spin-singlet `A₊` (bar-even, neutral) or the
+    spin-doublet `A₋` (bar-odd, charged). Once this assignment is fixed, charge
+    and spin are **derived**, not postulated: this is the sorry-free
+    `thm:ew-triplet-charge-spin-from-involution`
+    (`H ∈ A₊ ⇒` scalar+neutral; `W± ∈ A₋ ⇒` vector, `T₃=±1`; `Z ∈ A₋` vector,
+    neutral via Weinberg mixing).
+
+    Twist convention: `k = 2 ↔ W`, `k = 3 ↔ Z`, `k = 4 ↔ H`. -/
 -- @conjecture: primary
-class EWChargeDiscriminator where
-  /-- Electric-charge magnitude `|Q|` assigned to the carrier of twist `k`. -/
-  chargeMagnitude : ℕ → ℕ
-  /-- `W±` (`k=2`) is charged; `Z` (`k=3`), `H` (`k=4`) are neutral. -/
-  charge_assignment :
-    chargeMagnitude 2 = 1 ∧ chargeMagnitude 3 = 0 ∧ chargeMagnitude 4 = 0
+class EWSectorAssignment where
+  /-- Spin sector of the carrier of twist `k`: `true` = singlet (`A₊`),
+      `false` = doublet (`A₋`). -/
+  isSinglet : ℕ → Bool
+  /-- `H` (`k = 4`) is the bar-even self-dual singlet. -/
+  higgs_singlet : isSinglet 4 = true
+  /-- `W` (`k = 2`) is a bar-odd doublet. -/
+  w_doublet : isSinglet 2 = false
+  /-- `Z` (`k = 3`) is a bar-odd doublet (neutral via mixing, not via `A₊`). -/
+  z_doublet : isSinglet 3 = false
 
-/-- **C4 (PRIMARY) — spin discriminator.**
+/-- **C_top (DEPENDENT on C1, C-sector) — the full electroweak identification.**
 
-    The DEEPEST OPEN GAP. Link/genus data is spin-blind: nothing in the
-    torus-link topology of `T(2,2k)` determines whether the carrier is a
-    scalar or a vector. The class states the hypothesis that `W` (`k=2`)
-    and `Z` (`k=3`) are spin-1 vectors while `H` (`k=4`) is a spin-0
-    scalar (spin recorded doubled, so `spin 1 ↦ 2`, `spin 0 ↦ 0`). This
-    is genuinely open and is not addressed by any argument in the
-    embedding proposition. -/
--- @conjecture: primary
-class EWSpinDiscriminator where
-  /-- Doubled spin `2·s` assigned to the carrier of twist `k`. -/
-  spinDouble : ℕ → ℕ
-  /-- `W` (`k=2`), `Z` (`k=3`) are vectors (`2s = 2`); `H` (`k=4`) is a
-      scalar (`2s = 0`). -/
-  spin_assignment :
-    spinDouble 2 = 2 ∧ spinDouble 3 = 2 ∧ spinDouble 4 = 0
-
-/-- **C_top (DEPENDENT on C1, C3, C4) — the full electroweak identification.**
-
-    `W ↔ T(2,4)`, `Z ↔ T(2,6)`, `H ↔ T(2,8)`: the crossing counts are
-    `(4, 6, 8)`, with the charge and spin assignments supplied by the
-    (open) discriminators C3 and C4. This is the top node of the lattice
-    — it rests on the conjectural selection principle (C1) and the two
-    open discriminators, so it is a *dependent* conjecture, honestly
-    carrying all three as `[instance]` binders. -/
--- @conjecture: dependent (on EWSelectionPrinciple, EWChargeDiscriminator, EWSpinDiscriminator)
+    `W ↔ T(2,4)`, `Z ↔ T(2,6)`, `H ↔ T(2,8)`: crossings `(4, 6, 8)`, with the
+    spin sectors supplied by the (open) sector postulate `EWSectorAssignment`.
+    Charge and spin themselves are *not* carried here as conjectural fields —
+    they are the proved `thm:ew-triplet-charge-spin-from-involution`. This top
+    node rests on the conjectural selection principle (C1) and the sector
+    postulate, so it is a *dependent* conjecture, honestly carrying both as
+    `[instance]` binders. -/
+-- @conjecture: dependent (on EWSelectionPrinciple, EWSectorAssignment)
 class EWHiggsTorusLinkTriplet
-    [EWSelectionPrinciple] [EWChargeDiscriminator] [EWSpinDiscriminator] where
+    [EWSelectionPrinciple] [EWSectorAssignment] where
   /-- Crossing counts of the `(W, Z, H)` carrier links. -/
   crossings : Fin 3 → ℕ
-  /-- The identification: crossings `(4, 6, 8)`, charges `(1, 0, 0)` via
-      C3, doubled spins `(2, 2, 0)` via C4. -/
+  /-- The identification: crossings `(4, 6, 8)`, with sectors `W, Z` doublets
+      and `H` singlet supplied by `EWSectorAssignment` (whence, via
+      `thm:ew-triplet-charge-spin-from-involution`, spins `(1,1,0)` and charges
+      `(±1, 0, 0)`). -/
   identification :
     crossings 0 = 4 ∧ crossings 1 = 6 ∧ crossings 2 = 8 ∧
-    EWChargeDiscriminator.chargeMagnitude 2 = 1 ∧
-    EWChargeDiscriminator.chargeMagnitude 3 = 0 ∧
-    EWChargeDiscriminator.chargeMagnitude 4 = 0 ∧
-    EWSpinDiscriminator.spinDouble 2 = 2 ∧
-    EWSpinDiscriminator.spinDouble 3 = 2 ∧
-    EWSpinDiscriminator.spinDouble 4 = 0
+    EWSectorAssignment.isSinglet 2 = false ∧
+    EWSectorAssignment.isSinglet 3 = false ∧
+    EWSectorAssignment.isSinglet 4 = true
 
 end QOU.ParticleInteractions

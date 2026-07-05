@@ -10,6 +10,9 @@ export default conjecture({
   },
   uses: [
     "prop:electroweak-triplet-bring-embedding",
+    "thm:ew-triplet-far-commuting-minimal",
+    "thm:ew-triplet-charge-spin-from-involution",
+    "def:spin-involution",
     "prop:force-carrier-bring-uniqueness",
     "prop:torus-knot-genus-four-unique",
     "conj:n-v-bring-action",
@@ -21,17 +24,30 @@ export default conjecture({
       kind: "status",
       date: "2026-07-05",
       body:
-        "Top node of the electroweak identification conjecture lattice " +
-        "(Lean file: five §3b classes — C1 selection [primary], " +
-        "C2 enumeration [dependent on C1], C3 charge [primary], " +
-        "C4 spin [primary], C_top identification [dependent on C1/C3/C4]). " +
-        "The genus/enumeration/embedding half is discharged to the " +
-        "sorry-free `prop:electroweak-triplet-bring-embedding`. Residual, " +
-        "stated plainly: C1 selection has strong corpus grounding " +
-        "(genus-4 saturation of {T(2,9),T(3,5)}); C3 (charge) and C4 (spin) " +
-        "are OPEN — a link's Seifert genus does not see charge or spin, so " +
-        "no genus/embedding argument closes them. C4 (scalar H vs vector " +
-        "W/Z) is the deepest gap.",
+        "Top node of the electroweak identification conjecture lattice, " +
+        "NARROWED 2026-07-05 (Lean file: four §3b classes — C1 selection " +
+        "[primary, physics postulate only], C2 enumeration [dependent on C1], " +
+        "C_sector sector assignment [primary], C_top identification " +
+        "[dependent on C1/C_sector]). The genus / enumeration / far-commuting " +
+        "minimality half is discharged to the sorry-free " +
+        "`prop:electroweak-triplet-bring-embedding` + " +
+        "`thm:ew-triplet-far-commuting-minimal`. Charge and spin (the former " +
+        "C3, C4 — previously two independent open primary conjectures) are now " +
+        "PROVED consequences of the single sector postulate via " +
+        "`thm:ew-triplet-charge-spin-from-involution` (spin involution " +
+        "def:spin-involution: H in A+ => scalar+neutral; W± in A- => vector " +
+        "T3=±1; Z in A- vector neutral via Weinberg mixing). Residual: C1 " +
+        "selection (strong corpus grounding, genus-4 saturation of " +
+        "{T(2,9),T(3,5)}) + the sector assignment + bare label map.",
+    },
+    {
+      kind: "caveat",
+      date: "2026-07-05",
+      body:
+        "TENSION FLAGGED FOR OWNER (σ₅⁸ = B vs H). weinberg-angle-categorical " +
+        "reads σ₅⁸ as the U(1)_Y singlet B (pre-mixing); this block reads σ₅⁸ " +
+        "(= T(2,8)) as H. Both bar-even/A+ singlet-like, but B and H are " +
+        "distinct particles. Needs an owner ruling; not silently resolved.",
     },
   ],
   computation: {
