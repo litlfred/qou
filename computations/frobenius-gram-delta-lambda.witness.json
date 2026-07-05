@@ -1,15 +1,28 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-05T11:14:36.288377+00:00",
-  "commitSha": "73c3e2233c38da519829b4f2e30b62cbde0378df",
-  "assertions": [],
+  "computedAt": "2026-07-05T11:21:33.019659+00:00",
+  "commitSha": "be738077a998aced47326c8de63ea658ce2849c4",
+  "assertions": [
+    {
+      "name": "frobenius_variants_preserve_binding_sign",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "no_frobenius_variant_closes_magnitude",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
   "allPassed": true,
   "durationMs": 0,
   "computation": "frobenius-gram-delta-lambda",
   "scriptFile": "frobenius_gram_delta_lambda_probe.py",
-  "scriptHash": "999293b47491",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "2ee558670acc",
+  "scriptCommitSha": "be738077a998aced47326c8de63ea658ce2849c4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -23,8 +36,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Frobenius Gram norm ‖ρ_λ‖²_F (gram_transfer_quadratic) as a parameter-free Δ_λ weight in the sign-solved counit defect, on D/T/³He/⁴He. Every Frobenius variant explodes with A (≈d_λ² scale) — REFUTED as the closing weight (scope-(a)); brackets GAP-A between Option-E and the target. audit_only, no fit.",
-  "audit_only": true,
+  "description": "Frobenius Gram norm ‖ρ_λ‖²_F (gram_transfer_quadratic) as a parameter-free Δ_λ weight in the sign-solved counit defect, on D/T/³He/⁴He. Every Frobenius variant explodes with A (≈d_λ² scale) — REFUTED as the closing weight (scope-(a)); brackets GAP-A between Option-E and the target. audit-only, no fit.",
   "tier": "structural-exact (committed χ^λ atom/free + exact 50-dps Frobenius Gram norms)",
   "result": {
     "free_parameters": 0,
@@ -34,7 +46,7 @@
         "n": 6,
         "variants": {
           "ref_trM  Σ y·dχ": {
-            "S": "-0.5951688238",
+            "S": "-0.5951688224",
             "abs_miss": "3.75811",
             "within_tol": false,
             "sign_negative": true
@@ -46,7 +58,7 @@
             "sign_negative": true
           },
           "frob  Σ y·‖ρa‖²·dχ": {
-            "S": "-29.19406689",
+            "S": "-29.19406632",
             "abs_miss": "24.8408",
             "within_tol": false,
             "sign_negative": true
@@ -205,5 +217,6 @@
     "sign_solved_by": "rho_k_counit_defect_form.py (defect ε(β_K)−ε(β_K^vac) < 0 all isotopes)",
     "weight_source": "gram_transfer_quadratic.gram_norm_zn (exact doubled-Bratteli tr_M(W·W^♯))",
     "chi_source": "atom-chi-rust-{d,t,3he,4he}.witness.json (data.atom + data.free)"
-  }
+  },
+  "auditOnly": true
 }
