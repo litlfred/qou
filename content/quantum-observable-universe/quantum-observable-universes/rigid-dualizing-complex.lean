@@ -1,4 +1,4 @@
-import Mathlib.Algebra.Homology.Complex
+import Mathlib.Algebra.Homology.HomologicalComplex
 import Mathlib.Algebra.Ring.Basic
 
 /-!
