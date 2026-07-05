@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "$(W^\\pm, Z, H) \\leftrightarrow (T(2,4), T(2,6), T(2,8))$ — non-Bring even-twist 2-component torus-link triplet",
   lean: {
-    ref: "qou:QOU.Archimedean.EWHiggsTorusLinkTriplet",
+    ref: "qou:QOU.ParticleInteractions.EWHiggsTorusLinkTriplet",
     validation: "not_checked",
   },
   uses: [
