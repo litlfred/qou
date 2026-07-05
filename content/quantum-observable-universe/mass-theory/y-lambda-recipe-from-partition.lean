@@ -46,12 +46,13 @@ universe u
 /-- Content c(i, j) := j - i for the cell at row i, column j (1-indexed). -/
 def cellContent (i j : ℕ) : ℤ := (j : ℤ) - (i : ℤ)
 
-/-- Hook length h(i, j) for the cell at row i, column j of partition λ:
+/-- Hook length h(i, j) for the cell at row i, column j of partition λ
+    (rows and columns 0-indexed):
     arm + leg + 1 where
-      arm(i, j) := λ_i - j  (cells right of (i, j) in row i)
+      arm(i, j) := λ_i - (j + 1)  (cells strictly right of (i, j) in row i)
       leg(i, j) := |{r > i : λ_r > j}|  (cells below in column j) -/
 def cellHook (lam : List ℕ) (i j : ℕ) : ℕ :=
-  let arm := if h : i < lam.length then lam.get ⟨i, h⟩ - j else 0
+  let arm := if h : i < lam.length then lam.get ⟨i, h⟩ - (j + 1) else 0
   let leg := (List.range (lam.length - i - 1)).countP
     (fun r =>
       let r' := i + 1 + r
@@ -121,6 +122,7 @@ noncomputable def schurPrincipal {R : Type u} [Field R] (lam : List ℕ) (q v : 
     An `axiom` carries the same "fixed but unspecified constant" semantics
     without triggering code-gen.  Follow-up: give a concrete definition via
     partition enumeration (`d_µ = hookDim µ`, `s_µ = schurPrincipal µ`). -/
+-- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see content/bib-qa-verifications.json
 axiom partitionFunctionZ {R : Type u} [Field R] (n : ℕ) (q v : R) : R
 
 /-- The recipe: `y_λ(q) = s_{λ, r}(Q) / Z_n`. -/
@@ -181,6 +183,7 @@ structure MarkovTraceCoefficient (R : Type u) where
     Jones–Markov coefficient is an external datum ([wenzl1988]); `opaque
     … : R` over generic `Field R` fails v4.24 code-gen (see
     `partitionFunctionZ`), so it is declared as an `axiom`. -/
+-- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see content/bib-qa-verifications.json
 axiom JonesMarkovCoefficient {R : Type u} [Field R]
     (q v : R) (lam : List ℕ) : R
 
