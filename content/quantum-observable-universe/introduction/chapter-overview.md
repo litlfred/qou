@@ -434,6 +434,5 @@ proxies through which each is read off, and the Skein pinning of the
 substrate parameter $q_0$ are stated in full under
 [*Physical Observations*](#chap:observations) above.  Every other
 mass, Q-value, binding energy, and coupling constant is a prediction.
-"'
 
 

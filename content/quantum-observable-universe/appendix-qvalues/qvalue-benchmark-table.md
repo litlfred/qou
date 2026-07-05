@@ -2,7 +2,7 @@ All predictions use $\approx$ (derived from $q$).
 Experimental values from NNDC/ENSDF with stated uncertainties.
 Crossing convention: $(1, -\mathrm{HA})$ throughout (unimodular, $\det T = -1$).
 
-**Table 1 --- $q$-weighted Q-values: $2 \times 2 = 6 \times 6$ formula, zero fitting.**
+**Table 1 --- $q$-weighted Q-values: $2 \times 2$ block with $6 \times 6$ shell factors, zero fitting.**
 
 The six benchmarks span the mass range, from light nuclei that need no
 shell corrections to heavy nuclei that do, so a single $q$-derived

@@ -1,6 +1,6 @@
 The **Pauli witness** records how strongly a nucleus's Hecke normal form
 is dominated by the antisymmetric channel.  For ${}^4\mathrm{He}$ ($Z=2$,
-$N=2$, $A=4$) it is the exact Gröbner normal form in $H_4(q)$ after
+$N=2$, $A=4$), it is the exact Gröbner normal form in $H_4(q)$ after
 quotient ideals $I_8 + I_9$.
 
 $$

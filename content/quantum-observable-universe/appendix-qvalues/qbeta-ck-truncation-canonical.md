@@ -1,6 +1,6 @@
 This block records the epistemic status of the $\mathfrak{Q}_\beta$
 truncation coefficients — which rung is proved, which is a near-match, and
-which remain calibration-anchored — so that their open status is
+which rungs remain calibration-anchored — so that their open status is
 first-class and auditable from the manifest rather than buried in the
 compute layer.
 
