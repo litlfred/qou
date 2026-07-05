@@ -1,5 +1,8 @@
 The simple CODATA-recombination mass formula
 $M_q = Z\mathfrak{m}_{\mathfrak{p}} + N\mathfrak{m}_{\mathfrak{n}} + Z\mathfrak{m}_e - (Z+N)\,B/A$
+(with per-atom knot identifications and predictions collected in the
+recursive knot$\to$particle dictionary,
+[recursive-atom-knot-atlas](#prop:recursive-atom-knot-atlas))
 uses only the 2$\times$2 **standard** irrep of $H_3(q)$ for the
 transfer matrix chain.
 This projects the Hecke element onto the $(2,1)$-seminormal representation
