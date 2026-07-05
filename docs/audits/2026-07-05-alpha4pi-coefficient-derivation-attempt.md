@@ -266,3 +266,134 @@ open step and rules a fabricated closure out.
 - `content/quantum-observable-universe/braids-and-knots/alpha-em-habiro-bar-involution.md`
 - `content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.md`
 - `computations/alpha_em_4pi_fixed_point_solve.py`, `computations/q-pinning-50-digit.witness.json`
+
+---
+
+## B₃(ℂ) closed-form attempt (2026-07-05, follow-up)
+
+**Scope:** the specific route named in
+[`docs/coordination/2026-06-13-alpha-em-phase5-rt-ledger.md`](../coordination/2026-06-13-alpha-em-phase5-rt-ledger.md)
+— construct the Bloch class `[Z₂] ∈ B₃(ℂ)` from the *ideal-hyperbolic-tetrahedron
+cross-ratio data* of Bring's-surface fundamental domain, evaluate the Goncharov /
+single-valued trilogarithm regulator `L₃([Z₂])`, and test whether it yields a
+**closed form** for the O(α²) coefficient. Companion compute:
+[`computations/bring_b3_closed_form_attempt.py`](../../computations/bring_b3_closed_form_attempt.py)
+(standalone mpmath, 60 dps; emits no witness — records an open negative).
+
+**Verdict: OPEN.** A genuine, exact, parameter-free B₃(ℂ) value *does* exist in
+Bring's arithmetic — but it supplies **no** closed form for the coefficient, and
+the obstruction is now identifiable at three sharp levels. No fit was made and no
+closure fabricated.
+
+### B.1 The positive nugget — an exact B₃ Bloch value in Bring's √5 arithmetic
+
+Bring's curve is the genus-4 arithmetic curve with automorphism group `S₅`
+(order **120** — the RT ledger's "120 symmetries"; *not* PSL₂(11), which is a
+misattribution — the maximal genus-4 group is `S₅`). Its natural field of
+definition carries `ℚ(√5)`; the natural algebraic points are the golden-ratio
+unit `φ = (1+√5)/2` and its powers. The correct arithmetic home for a
+*trilogarithm* (weight-3 / B₃) class is therefore the higher-regulator lattice of
+`K₅(ℚ(√5))` (Borel/Zagier), whose single-valued trilogarithm generators at
+golden-ratio units evaluate **exactly** (verified to 40+ dps):
+
+$$
+  \mathcal L_3\!\left(\tfrac{1}{\varphi^{2}}\right) \;=\; \tfrac{4}{5}\,\zeta(3),
+  \qquad
+  \mathcal L_3\!\left(\tfrac{1}{\varphi}\right)+\mathcal L_3\!\left(-\tfrac{1}{\varphi}\right)
+  \;=\; \tfrac{1}{5}\,\zeta(3),
+$$
+
+with `1/φ² = (3−√5)/2`, `𝓛₃` the Zagier single-valued (Bloch–Wigner–Ramakrishnan)
+trilogarithm. The cyclotomic `L(3,χ₅)` sector (the second Borel generator, `r₁=2`
+real places ⇒ `rank K₅(ℚ(√5)) = 2`) satisfies the exact distribution relation
+`Im Li₃(ζ₅) = 2·Im Li₃(ζ₅²)`. **This is the object the scaffold asked for**: a
+genuine trilogarithm Bloch class, on Bring-natural arithmetic points, with a
+closed form. It sharpens the RT-ledger scaffold's "simple multiples of Li₃(ζ₅) or
+Li₃(1/φ) do not match" to the *exact* Borel/Zagier lattice `{ζ(3), L(3,χ₅)}`.
+
+### B.2 The negative — the coefficient does not close
+
+The data-demanded next term (muon-`q₀`, 60 dps) is
+`T_data = CODATA − bare − 2/(3π) = 5.72836×10⁻⁴`, i.e.
+`C_data = T_data/α = 0.0784992 = 0.98645·(1/4π)`.
+
+No **parameter-free** archimedean normalization of the Borel generators
+reproduces it. Diagnostic (not a fit): `C_data/[(4/5)ζ(3)] = 0.08163`,
+`C_data·π²/ζ(3) = 0.6445` (≠ 2/3), and a **bounded** PSLQ over the *canonical*
+generators only —
+`{ζ(3), L(3,χ₅)}`, `{ζ(3), L(3,χ₅), π³}`, `{ζ_F(3), α/(4π)}`, tol `10⁻²²`,
+maxcoeff `10⁶` — returns **no integer relation** in every case. (This is *not*
+the forbidden wide PSLQ scan: it tests only the three canonical Borel/regulator
+combinations the geometry would supply, and reports the null honestly.)
+
+### B.3 The three-level obstruction (why it is genuinely OPEN, not a near-miss)
+
+1. **Dimensional/geometric — the scaffold's cycle is ill-posed as stated.**
+   `B₃` / the trilogarithm is **3-dimensional** scissors-congruence data: its
+   generators are ideal hyperbolic **tetrahedra** (parametrised by a single
+   cross-ratio each), living in `ℍ³`. Bring's surface is a **2-real-dimensional**
+   hyperbolic surface; its fundamental domain (the regular map `{5,4}`: 12 ideal
+   pentagons, 30 edges, 12 vertices) tiles into ideal **triangles**, which are
+   `B₂`/dilogarithm data — *not* tetrahedra. There is no canonical 3-manifold or
+   ideal-tetrahedron decomposition attached to the 2-surface to supply a B₃
+   **cycle** `Z₂ = Σ[z_i]₃`. So the ledger step "construct `[Z₂]` from the ideal
+   hyperbolic tetrahedra of the fundamental domain" is *not well-posed* for a
+   2-surface — the tetrahedra it invokes do not canonically exist. *(Scope-(a):
+   this refutes the construction **as posed**; it does **not** exclude that some
+   B₃ class — e.g. from an auxiliary 3-manifold, a mapping torus, or a Goncharov
+   cosimplicial/Grassmannian polylog on configurations of ideal vertices — is
+   ultimately relevant. §B.1 shows the target arithmetic ring genuinely carries
+   B₃ classes.)*
+
+2. **Normalization is unfixed — no forcing analogue of the `n=1` heat kernel.**
+   Even granting the arithmetic home, the map `{ζ(3), L(3,χ₅)} → δ(1/α)` needs an
+   overall rational × π-power normalization that the geometry does not fix. The
+   `n=1` term is *derived* precisely because the heat-kernel zero-mode forces
+   `b₁/Area` with **zero** free parameters; the `n=2` analogue is the residue sum
+   `a_D^{(2)} = ∮λ_SW^{(2)}` (`prop:jet-sw-tau-decomposition`), and *that
+   computation is still never carried out*. Absent it, the B₃ value's coefficient
+   is a free choice — matching it to `T_data` would be a single-point fit, which
+   the corpus and this task forbid.
+
+3. **Numerical floor — the target is only ~0.5%-determined (sharpened).**
+   `T_data ≈ 5.7×10⁻⁴` is a small difference of large numbers (`~137`). Propagating
+   the ~3 ppb muon-`q₀` uncertainty (it enters multiplied by `~137`) gives a
+   **relative uncertainty of ≈ 0.49% in `C_data`** (probe: `dT/T ≈ 4.9×10⁻³`). The
+   headline "1.4% below `1/(4π)`" is therefore only **~2.8×** the `q₀` band, and the
+   inter-candidate spread (`1/4π` vs `[2]_q/8π` vs `1/(2π[2]_q)`) sits far below it.
+   A 0.5%-uncertain target admits a large family of "clean" B₃ expressions; **no
+   closed form can be numerically validated or discriminated** here. This
+   strengthens the parent audit's `10⁻⁸`-floor observation: the coefficient is not
+   merely under-resolved at `10⁻⁸`, it is under-determined at the **percent** level
+   once `q₀` propagation is included.
+
+### B.4 Refutation-scope discipline (AGENTS.md §"Before declaring refuted")
+
+- **(a) Scope-limited negatives:** (i) the specific "tetrahedra-of-the-2-surface"
+  cycle is ill-posed as written; (ii) the canonical Borel generators
+  `{ζ(3), L(3,χ₅)}`, evaluated parameter-free, do not reproduce `C_data`. Both
+  constrain *this construction / these combinations*, not the *ingredient*: a B₃
+  class from an auxiliary 3-dimensional or cosimplicial structure is **not**
+  excluded, and §B.1 shows the arithmetic genuinely supports weight-3 classes.
+- **(b) Structural exclusions:** none newly asserted. The only permanent exclusion
+  in play remains the prior 100-dps 54-element **multiplicative** PSLQ (entropy/
+  precision bound — admissible (b)), which is *why* the additive/`Bₙ` route exists
+  and says nothing against it.
+
+### B.5 The precise remaining step (unchanged in kind, sharper in content)
+
+Evaluate `a_D^{(2)} = ∮λ_SW^{(2)}` on `M_Bring` (equivalently the `n=2`
+photon vacuum-polarization spectral sum) and read off its regulator image. The
+result would fix the normalization from first principles; the natural target
+lattice is now known to be the `K₅(ℚ(√5))` Borel pair `{ζ(3), L(3,χ₅)}`, with the
+exact generator `𝓛₃(1/φ²) = (4/5)ζ(3)` as its `ζ(3)`-axis. Until that spectral
+computation exists — and until `q₀` is pinned two-to-three orders tighter so the
+target is better than 0.5% — the coefficient is **OPEN**. No content block is
+changed by this attempt; it records the exact B₃ value, the sharpened
+obstruction, and rules out a fabricated closure.
+
+### Files added / read (follow-up)
+- **Added:** [`computations/bring_b3_closed_form_attempt.py`](../../computations/bring_b3_closed_form_attempt.py)
+- Read: `computations/bring_zero_mode_bloch_hunt.py`,
+  `computations/bring_trilog_zeta5_depth_3.py`,
+  `computations/bring_d3_goncharov_probe.py`
