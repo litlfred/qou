@@ -504,3 +504,30 @@ vacuum row is C-fixed (self-dual sector, where the PF-positive `+1` state is `d_
 the constraint any geometric realisation must meet, and the structural reason a
 free-scale q-Bessel family cannot be it. PR #3358; audit
 [`docs/audits/2026-07-05-keystone-selfduality-spectral-narrowing.md`](../audits/2026-07-05-keystone-selfduality-spectral-narrowing.md).
+
+## Value-step reframe FORMALIZED across three legs — merged (2026-07-05, bean s013)
+
+The self-duality reframe (owner redirect, 2026-07-05) is now on `main` as three
+sorry-free Lean legs plus a capstone:
+
+- **(C) Self-duality** — `KeystoneSelfDualSpectralNarrowing.lean` (**PR #3362**,
+  merged): `S²=C ⇒ S⁴=1` (self-reciprocality), eigenvalues 4th-roots-of-unity
+  (`ζ⁴=1` over a field on a nonzero eigenvector), sector tightening `ζ²=1` on the
+  `C=+1` self-dual sector, vacuum row `C`-fixed.
+- **(B) PF selection** — `KeystonePerronFrobeniusGroundState.lean` (**PR #3380**,
+  merged): §3b-cond `Prop`-class over explicit `(N, rho, d)` carrying the cited
+  PF/Ocneanu–Wenzl up-to-scale uniqueness (`pf_proportional`); derived
+  `eq_d_of_normalized` pins a normalised positive ground eigenvector uniquely to
+  `d_q`.
+- **(A) Frobenius** — the quantum-dimension measure `d²/D²`
+  (`KeystoneVerlindeSMatrixBridge.verlindeMeasure_eq_plancherel`, pre-existing);
+  its self-duality `d(λ′)=d(λ)` is the `C`-fixed hypothesis of the capstone.
+- **Capstone** — `KeystoneValueMapSynthesis.lean` (this PR):
+  `keystone_value_map_pinned` composes (A)+(B)+(C) — a positive, `k`-normalised
+  fusion-ground `S`-eigenvector is **`= d_q` and its `S`-eigenvalue is `±1`**.
+
+**Status: the value-step narrowing is formalized.** Redirect (iii) (the categorical
+"why") remains the standing answer; leg (B) stays conditional on the owner-gated
+physical instance (the fusion category whose PF eigenvector is the Hecke `d_q`).
+Both q-Bessel uploads (1208.2521, math/9805023) are retired as redirect-(ii)
+node-screen material — superseded by this structural narrowing.
