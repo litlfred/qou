@@ -150,4 +150,32 @@ theorem borelTransformValue_add (a b : ℕ → ℝ) (z : ℝ)
   simpa only [partialBorel_add] using
     (borelTransform_tendsto a z).add (borelTransform_tendsto b z)
 
+/-- Borel coefficients are homogeneous under scalar multiplication. -/
+theorem borelCoeff_smul (c : ℝ) (a : ℕ → ℝ) (n : ℕ) :
+    borelCoeff (fun k => c * a k) n = c * borelCoeff a n := by
+  unfold borelCoeff; rw [mul_div_assoc]
+
+/-- The partial Borel transform is homogeneous in the source sequence. -/
+theorem partialBorel_smul (c : ℝ) (a : ℕ → ℝ) (N : ℕ) (t : ℝ) :
+    partialBorel (fun k => c * a k) N t = c * partialBorel a N t := by
+  unfold partialBorel
+  rw [Finset.mul_sum]
+  refine Finset.sum_congr rfl (fun n _ => ?_)
+  rw [borelCoeff_smul, mul_assoc]
+
+/-- **The convergence class is closed under scalar multiplication.** -/
+instance instBorelTransformConverges_smul (c : ℝ) (a : ℕ → ℝ) (z : ℝ)
+    [ha : BorelTransformConverges a z] :
+    BorelTransformConverges (fun k => c * a k) z where
+  converges := by
+    obtain ⟨L, hL⟩ := ha.converges
+    exact ⟨c * L, by simpa only [partialBorel_smul] using hL.const_mul c⟩
+
+/-- **The Borel-transform value is homogeneous** — the scalar leg of linearity. -/
+theorem borelTransformValue_smul (c : ℝ) (a : ℕ → ℝ) (z : ℝ)
+    [BorelTransformConverges a z] :
+    borelTransformValue (fun k => c * a k) z = c * borelTransformValue a z := by
+  refine tendsto_nhds_unique (borelTransform_tendsto _ z) ?_
+  simpa only [partialBorel_smul] using (borelTransform_tendsto a z).const_mul c
+
 end QOU.Mathlib.Borel
