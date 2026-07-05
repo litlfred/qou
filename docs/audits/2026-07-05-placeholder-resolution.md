@@ -45,19 +45,29 @@ decision on edition ambiguity. The full sourced findings live in
 The author has already reviewed these (bean doth updates 2026-06-24) and elected
 to **keep them flagged** pending manual DOI resolution:
 
-- `references.ts:1485` — bib metadata TODO until verified (entry note).
-- `references.ts:3578` (`wenzl1988b`, DOI `10.1007/BF01393839`) — title/venue
-  "to be verified"; DOI reportedly resolves to a non-Wenzl number-theory paper.
-  Real paper (widely cited), only the DOI is wrong; correct DOI not found
-  off-sandbox. **Author kept flagged.**
-- `references.ts:3593` (`wenzl1988c`, DOI `10.1007/BF01388470`) — same class;
-  cited inline across 4 `.lean` files. **Author kept flagged.**
-- `references.ts:5574`, `:5577` — block header comment marking the
-  post-2026-05-29 placeholder-entry region ("venue/DOI marked PLACEHOLDER where
-  not independently verified"). Documentation, not an actionable slot.
-- `references.ts:5643` (`drinfeld1985`) — edition ambiguity (1985 Doklady note
-  vs 1986 ICM Berkeley address); needs author decision on which the Lean
-  `-- Ref:` intends. **Author input required.**
+1. `references.ts:1485` — bib metadata TODO until verified (entry note).
+2. `references.ts:3582` (`wenzl1988b`, DOI `10.1007/BF01393839`) — `note:`
+   PLACEHOLDER (entry title also carries the marker at `:3578`); DOI reportedly
+   resolves to a non-Wenzl number-theory paper. Real paper (widely cited), only
+   the DOI is wrong; correct DOI not found off-sandbox. **Author kept flagged.**
+3. `references.ts:3597` (`wenzl1988c`, DOI `10.1007/BF01388470`) — `note:`
+   PLACEHOLDER (title marker at `:3593`); same class, cited inline across 4
+   `.lean` files. **Author kept flagged.**
+4. `references.ts:5574`, `:5577` — block header comment marking the
+   post-2026-05-29 placeholder-entry region ("venue/DOI marked PLACEHOLDER where
+   not independently verified"). Documentation, not an actionable slot.
+5. `references.ts:5643` (`drinfeld1985`) — `note:` PLACEHOLDER; edition
+   ambiguity (1985 Doklady note vs 1986 ICM Berkeley address); needs author
+   decision on which the Lean `-- Ref:` intends. **Author input required.**
+6. `references.ts:5686` (`habiro2000`) — `note:` PLACEHOLDER; RIMS Kōkyūroku
+   preprint, cited in `DeltaLambdaSignRule.lean` / `TwoRoutesProtonMass.lean`;
+   author to confirm the Lean `-- Ref:` intends the 2000 RIMS preprint vs an
+   alternate Habiro 2000 work. **Author input required.**
+7. `references.ts:5758` (`james1984representation`) — `note:` PLACEHOLDER;
+   partially verified 2026-06-23 (authors James & Kerber confirmed) but
+   EDITION/YEAR unresolved (Addison-Wesley 1981 original vs CUP later reprint);
+   author to confirm which edition `S5SO3FiberAction.lean` /
+   `S4S3HalfSymmetricProjection.lean` cite. **Author input required.**
 
 Reason not resolved: DOI landing pages 403-blocked in sandbox; author already
 reviewed and chose to keep flagged. Editing titles/DOIs from memory would be
