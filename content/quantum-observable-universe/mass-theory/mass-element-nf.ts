@@ -7,7 +7,7 @@ export default proposition({
   label: "prop:mass-element-nf",
   lean: { ref: "qou:QOU.BraidKnot.HeckeMassNF" },
   title: "Normal form of the Hecke mass element",
-  uses: ["conj:mass-endomorphism"],
+  uses: ["conj:mass-endomorphism", "def:hecke-mass-element"],
   tags: [
     "mass",
     "hecke-algebra",
