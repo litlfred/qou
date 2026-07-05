@@ -582,18 +582,16 @@
           "md": "6ea732162052",
           "ts": "4f2bb1d4b023"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+          "script_hash": "5f903a2b693b",
+          "script_commit_sha": "2063f8a5cc530414b6ebe9ea2b29720e801e0a28"
         },
-        "reviewed_at": "2026-07-05T22:59:20.300Z",
-        "reviewed_sha": "c7fd591217c36c9bfda17f48721666a890ebec8c",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/branch-phase-mass-tower-witness.ts:1: declared witness 'computations/branch-phase-fit-to-mass-tower.witness.json' does not exist on disk | content/quantum-observable-universe/climax-volume-mass/branch-phase-mass-tower-witness.ts:1: declared witness 'computations/isospin-mass-tower-collapse.witness.json' does not exist on disk"
+        "reviewed_at": "2026-07-05T23:28:16.860Z",
+        "reviewed_sha": "826a91fe110bffeece4fa28cd948b6ca7189ff3e"
       }
     ],
     "compute-lp-dual-present": [
@@ -820,5 +818,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T22:59:20.300Z"
+  "updated_at": "2026-07-05T23:28:16.860Z"
 }

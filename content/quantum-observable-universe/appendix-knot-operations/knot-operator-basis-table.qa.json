@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/appendix-knot-operations/knot-operator-basis-table.md"
   },
   "source_hashes": {
-    "md": "36cf0bda8760",
+    "md": "b76d5a979fe7",
     "ts": "8def6f04f1dc"
   },
   "criteria": {
@@ -539,21 +539,19 @@
     "compute-witness-exists": [
       {
         "field_hash": {
-          "md": "36cf0bda8760",
+          "md": "b76d5a979fe7",
           "ts": "8def6f04f1dc"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+          "script_hash": "f2c5b0fad923",
+          "script_commit_sha": "3b4fb713350705380c7be4d1ff7b02a45a74b5a1"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/appendix-knot-operations/knot-operator-basis-table.ts:1: declared witness 'computations/photon-operator-table.witness.json' does not exist on disk"
+        "reviewed_at": "2026-07-05T23:33:10.305Z",
+        "reviewed_sha": "4ef20b87a020c607bea6187e15e720443cea843a"
       }
     ],
     "compute-lp-dual-present": [
@@ -1062,5 +1060,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T16:25:39.114Z"
+  "updated_at": "2026-07-05T23:33:10.305Z"
 }

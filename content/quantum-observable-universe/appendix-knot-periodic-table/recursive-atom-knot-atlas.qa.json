@@ -784,18 +784,16 @@
           "ts": "ba19994fffcd",
           "lean": "cd348a430dcc"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+          "script_hash": "f2c5b0fad923",
+          "script_commit_sha": "3b4fb713350705380c7be4d1ff7b02a45a74b5a1"
         },
-        "reviewed_at": "2026-07-05T04:39:43.766Z",
-        "reviewed_sha": "7415132ccce30885dcfd323600b8bcf311c431e4",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.ts:1: declared witness 'computations/q-pinning-50-digit.witness.json' does not exist on disk"
+        "reviewed_at": "2026-07-05T23:33:10.376Z",
+        "reviewed_sha": "4ef20b87a020c607bea6187e15e720443cea843a"
       }
     ],
     "compute-lp-dual-present": [
@@ -1050,5 +1048,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T18:14:41.850Z"
+  "updated_at": "2026-07-05T23:33:10.376Z"
 }

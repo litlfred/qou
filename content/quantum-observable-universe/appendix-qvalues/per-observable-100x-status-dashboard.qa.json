@@ -539,21 +539,19 @@
     "compute-witness-exists": [
       {
         "field_hash": {
-          "md": "3cd4aa1b6811",
+          "md": "30c8cc4bcee1",
           "ts": "28b5d5bdb77a"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+          "script_hash": "f2c5b0fad923",
+          "script_commit_sha": "3b4fb713350705380c7be4d1ff7b02a45a74b5a1"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/appendix-qvalues/per-observable-100x-status-dashboard.ts:1: declared witness 'computations/per-observable-100x-status.witness.json' does not exist on disk"
+        "reviewed_at": "2026-07-05T23:33:10.228Z",
+        "reviewed_sha": "4ef20b87a020c607bea6187e15e720443cea843a"
       }
     ],
     "compute-lp-dual-present": [
@@ -1068,5 +1066,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T16:25:38.662Z"
+  "updated_at": "2026-07-05T23:33:10.228Z"
 }
