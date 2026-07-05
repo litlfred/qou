@@ -2,7 +2,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
 
 /-!
-# QOU.Archimedean.electroweak_triplet_bring_embedding — `prop:electroweak-triplet-bring-embedding`
+# QOU.ParticleInteractions.electroweak_triplet_bring_embedding — `prop:electroweak-triplet-bring-embedding`
 
 The **provable** structural half of the electroweak torus-link story.
 The even-twist 2-component torus links `T(2,4), T(2,6), T(2,8)` (braids
@@ -26,7 +26,7 @@ LaTeX label: `prop:electroweak-triplet-bring-embedding`.
 - `prop:torus-embeddable-complete` (the `g(K) ≤ g(Σ₄)` embedding bound, cited)
 -/
 
-namespace QOU.Archimedean
+namespace QOU.ParticleInteractions
 
 /-- Seifert genus of the even 2-component torus link `T(2, 2k)`: `g = k - 1`.
     (The canonical Seifert surface of `T(2, 2k)` has genus `k - 1`.) -/
@@ -69,4 +69,4 @@ theorem electroweak_triplet_bring_embedding :
       torusLinkGenus 4 ≤ bringsGenus) := by
   unfold torusLinkGenus bringsGenus; omega
 
-end QOU.Archimedean
+end QOU.ParticleInteractions

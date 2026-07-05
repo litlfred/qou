@@ -5,7 +5,7 @@ export default proposition({
   title:
     "The even-twist triplet $T(2,4), T(2,6), T(2,8)$ co-embeds in Bring's genus-$4$ fiber",
   lean: {
-    ref: "qou:QOU.Archimedean.electroweak_triplet_bring_embedding",
+    ref: "qou:QOU.ParticleInteractions.electroweak_triplet_bring_embedding",
     validation: "not_checked",
   },
   uses: [

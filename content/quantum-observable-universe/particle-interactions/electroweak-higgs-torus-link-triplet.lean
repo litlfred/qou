@@ -2,7 +2,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
 
 /-!
-# QOU.Archimedean.EWHiggsTorusLinkTriplet — the electroweak identification conjecture lattice
+# QOU.ParticleInteractions.EWHiggsTorusLinkTriplet — the electroweak identification conjecture lattice
 
 The physical identification `W↔T(2,4)`, `Z↔T(2,6)`, `H↔T(2,8)` is **not**
 one monolithic conjecture. It decomposes into an honest §3b conjecture
@@ -41,7 +41,7 @@ are no `sorry`s and no vacuous `: True` bodies.
 - [manuscript] particle-interactions/electroweak-triplet-bring-embedding (provable core)
 -/
 
-namespace QOU.Archimedean
+namespace QOU.ParticleInteractions
 
 /-! ## The conjecture lattice (formal §3b classes)
 
@@ -143,4 +143,4 @@ class EWHiggsTorusLinkTriplet
     EWSpinDiscriminator.spinDouble 3 = 2 ∧
     EWSpinDiscriminator.spinDouble 4 = 0
 
-end QOU.Archimedean
+end QOU.ParticleInteractions
