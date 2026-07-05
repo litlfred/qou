@@ -48,3 +48,5 @@ widely-cited; only DOIs wrong). schema actionable 7 remain (off-sandbox DOI /
 author input).
 
 resweep 2026-06-24 (honest counter, PR hygiene): **uncited-sorry = 0 corpus-wide**; this title count is a raw grep and is badly inflated. Honest actionable count for this scope + the full per-bean table in docs/audits/2026-06-24-placeholder-bean-count-resweep.md. Remaining TODO/FIXME are intentional markers (-- TODO upstream: on proved lemmas, witness-deps, research notes), NOT actionable placeholders — do not "drain a count" by removing them. Re-title/close is owner-only.
+
+> **Resolved 2026-07-05 (swarm 1).** Triaged: no agent-tractable prose/metadata placeholders remain (already drained by prior sessions #2649/#2654/#2637/#2796); residual = author DOI/edition decisions, documented as deferred. Audit merged in PR #3339.

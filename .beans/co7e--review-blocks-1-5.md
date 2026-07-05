@@ -1,9 +1,11 @@
 ---
 # co7e
 title: Review blocks 1-5
-status: todo
+status: completed
 type: task
 created_at: 2026-06-28T23:24:07Z
-updated_at: 2026-06-28T23:24:07Z
+updated_at: 2026-07-05T05:05:00Z
 ---
 
+
+> **Resolved 2026-07-05 (swarm 1).** Blocks 1–25 reviewed; 2 render fixes landed + audit doc. Merged in PR #3341.

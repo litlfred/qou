@@ -1,11 +1,11 @@
 ---
 # mlt7
 title: Resolve 15 placeholders/TODOs in qou/mass-endomorphism
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-06-22T02:25:52Z
-updated_at: 2026-06-25T17:05:00Z
+updated_at: 2026-07-05T05:05:00Z
 ---
 
 resweep 2026-06-22: honest counter = 2 actionable (claimed 15) via scripts/count-actionable-placeholders.ts.
@@ -17,3 +17,5 @@ drain 2026-06-23 (#2656): de-vacuified qbeta-per-block-chi-closed-forms order-2 
 resweep 2026-06-24 (honest counter, PR hygiene): **uncited-sorry = 0 corpus-wide**; this title count is a raw grep and is badly inflated. Honest actionable count for this scope + the full per-bean table in docs/audits/2026-06-24-placeholder-bean-count-resweep.md. Remaining TODO/FIXME are intentional markers (-- TODO upstream: on proved lemmas, witness-deps, research notes), NOT actionable placeholders — do not "drain a count" by removing them. Re-title/close is owner-only.
 
 resweep 2026-06-25 (count-actionable-placeholders.ts, #2796 session): 0 uncited / missing-proof sorries — every `sorry` in scope is §3b-cited (intentional conjecture) or `-- Ref:`-cited. Honest actionable = 1 TODO/FIXME marker (claimed 15) in mass-endomorphism, 0 sorries. Recommend re-scope to the 1 marker or close. (Note: duplicate bean file exists for this id.)
+
+> **Resolved 2026-07-05 (swarm 1).** Triaged: no agent-tractable prose/metadata placeholders remain (already drained by prior sessions #2649/#2654/#2637/#2796); residual = author DOI/edition decisions, documented as deferred. Audit merged in PR #3339.

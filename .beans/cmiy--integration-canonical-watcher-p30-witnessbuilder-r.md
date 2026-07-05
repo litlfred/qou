@@ -125,3 +125,5 @@ builder.add_upstream → data.upstream_witness_hashes; plus sibling-first path
 resolution in witness_dependency_drift.py (substrate upstreams were false
 upstream_missing). PROV_MISSING 258→254 post-rebase. Remaining substrate tail
 ~9 (qaskey, qholonomic ×2, z2bn ×3, + non-substrate).
+
+> **Investigated 2026-07-05 (swarm 2, PR #3344) — deferred, kept OPEN.** WitnessBuilder ports need running the producer (regen witness w/ provenance); WitnessBuilder imports mpmath → unimportable in sandbox (compute-blocked). Easy tail drained (batches 1–9b); hard tail (qaskey/qholonomic/z2bn) needs canonical env.
