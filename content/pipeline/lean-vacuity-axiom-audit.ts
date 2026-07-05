@@ -581,13 +581,22 @@ const EXACT_PROJECTION = /^by\s+exact\s+([a-z][\w']*)\.([A-Za-z_][\w']*)\s*$/;
 // detector entirely (measured 2026-07-05: 0/99 corpus hits). Distinct name so
 // they are tracked separately and never disturb the existing verbatim-tuple
 // classification.
+// Tight by design (per Copilot #3370): every `applied-tuple-projection` hit is
+// auto-`exempt`, so an over-broad regex could silently downgrade an unrelated
+// conjunction proof to tracked. Enforce BOTH (a) a single captured tuple prefix
+// `\1` (e.g. `ctx`) shared across all components, and (b) ≥1 applied argument
+// per component (`)+`). This matches exactly the placeholder pattern
+// `⟨ctx.impl_x ctx.active, ctx.impl_y ctx.active, …⟩` and nothing looser — a
+// fully-bare `⟨ctx.a, ctx.b⟩` is left to the verbatim `TUPLE_PROJECTION`
+// branch. (Supersedes the looser symmetric-`*` suggestion — that would
+// over-match.)
 const APPLIED_TUPLE_PROJECTION =
-  /^⟨\s*[a-z][\w']*\.[A-Za-z_][\w']*(?:\s+[a-z][\w']*(?:\.[A-Za-z_][\w']*)?)+\s*(?:,\s*[a-z][\w']*\.[A-Za-z_][\w']*(?:\s+[a-z][\w']*(?:\.[A-Za-z_][\w']*)?)*\s*)*⟩\s*$/;
+  /^⟨\s*([a-z][\w']*)\.[A-Za-z_][\w']*(?:\s+[a-z][\w']*(?:\.[A-Za-z_][\w']*)?)+\s*(?:,\s*\1\.[A-Za-z_][\w']*(?:\s+[a-z][\w']*(?:\.[A-Za-z_][\w']*)?)+\s*)*⟩\s*$/;
 // A `def`-kind declaration counts as a disguised provable claim when its
 // conclusion type carries a logical connective / relation (i.e. it is a proof
 // of a Prop, not a data definition). `detectSelfAssuming` skips `def` by
 // default (`PROVABLE_KINDS`); this opts the Prop-valued ones in.
-const PROP_CONCLUSION = /[∧↔∨∀∃≤≥]|=/;
+const PROP_CONCLUSION = /[∧↔∨∀∃≤≥¬≠]|=/;
 const CONCLUSION_FIELD =
   /^(exists_|claim_|is_|has_|selects_|are_|satisfies_|holds_|equals_)|(_holds|_eq|_iff|_property|_spec|_result)$|^(holds|property|spec|result|main|claim)$/;
 const DERIVES =
@@ -644,7 +653,8 @@ function detectSelfAssuming(d: Decl): Hit | undefined {
   // out. This is the primary corpus gap: 36/99 placeholder-canonical
   // projections are `def`-kind.
   const isDefProof =
-    /^def\b/.test(d.kind) && PROP_CONCLUSION.test(conclusionTypeAscription(d.sig));
+    /^def\b/.test(d.kind) &&
+    PROP_CONCLUSION.test(conclusionTypeAscription(d.sig) ?? "");
   if (!provable && !isDefProof) return undefined;
   const body = d.body.trim();
   if (DERIVES.test(body)) return undefined;
