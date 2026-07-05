@@ -512,4 +512,151 @@ theorem writheI3_does_not_select_neutral_slot :
   · rw [h4] at h; exact absurd h (by decide)
   · rw [h6] at h; exact absurd h (by decide)
 
+/-! ## Task 1′ — the SIGNED `σ ↔ σ⁻¹` criterion and the C-invariance neutrality
+test: which-slot-is-`W` is STILL free, and the neutral slot is forced to be MIXED
+
+`writheI3_does_not_select_neutral_slot` used the *unsigned* surviving map on the
+all-positive carriers. The prior result named the two ingredients that *might*
+force the label: a **signed** `σ ↔ σ⁻¹` crossing asymmetry, and a second
+baryon/color-trace charge. This section tests the signed / charge-conjugation
+route and proves the sharper negative honestly.
+
+**Charge conjugation is crossing reversal** (`predicted-spectra/
+chirality-trefoil-electron-positron`): `C = σ ↔ σ⁻¹` reverses every crossing, so
+it negates the signed writhe and `Q(𝔭^σ) = −Q(𝔭)`. A carrier is **neutral iff it
+is a fixed point of `C`** (its own antiparticle) — i.e. **C-invariant**, i.e.
+**amphichiral** (`w = −w`). The signed test therefore replaces the all-positive
+magnitude ladder with a genuine sign charge; below it is shown to (i) leave ≥ 2
+labelings consistent (no forcing), while (ii) *excluding every pure even-twist
+slot* from being the neutral member — so the neutral `Z` is necessarily the mixed
+`W³/B → Z` (Weinberg) state, not a single slot. -/
+
+section SignedCrossing
+
+/-- Charge conjugation `C` on the signed writhe: crossing reversal `σ ↔ σ⁻¹`
+negates every crossing sign, hence negates the writhe (`predicted-spectra/
+chirality-trefoil-electron-positron`: `Q(𝔭^σ) = −Q(𝔭)`). -/
+def crossingReversal (w : ℤ) : ℤ := -w
+
+/-- `C` is an involution (`σ² = id`), matching the fibre-adjoint involution of
+`chirality-trefoil`. -/
+theorem crossingReversal_involutive (w : ℤ) :
+    crossingReversal (crossingReversal w) = w := by
+  unfold crossingReversal; ring
+
+/-- **C-invariance ⟺ amphichirality ⟺ zero signed writhe.** A carrier is a fixed
+point of charge conjugation (its own antiparticle — the neutrality criterion of
+`chirality-trefoil`) exactly when its signed writhe vanishes. Over `ℤ` the content
+is `−w = w ↔ 2w = 0 ↔ w = 0` — the load-bearing step (`omega`), *not* a type
+tautology. -/
+theorem cInvariant_iff_writhe_zero (w : ℤ) : crossingReversal w = w ↔ w = 0 := by
+  unfold crossingReversal; omega
+
+/-- **Signed** writhe of the pure even-twist carrier `T(2,2k) = σ₁^{2k}`: `+2k`
+(all crossings positive). Same value as `evenTwistWrithe`, restated in the signed
+layer. -/
+def evenTwistSignedWrithe (k : ℕ) : ℤ := 2 * (k : ℤ)
+
+/-- **No pure even-twist carrier is C-invariant / amphichiral.** For `k ≥ 1` the
+signed writhe `2k ≠ 0`, so `C` never fixes it: the all-positive braid `σ₁^{2k}` is
+genuinely chiral. Hence **no pure even-twist slot** can be the neutral (C-fixed)
+electroweak member. The proof genuinely runs `cInvariant_iff_writhe_zero` against
+`2k ≠ 0` — it is not vacuous. -/
+theorem evenTwist_not_cInvariant {k : ℕ} (hk : 1 ≤ k) :
+    crossingReversal (evenTwistSignedWrithe k) ≠ evenTwistSignedWrithe k := by
+  rw [Ne, cInvariant_iff_writhe_zero]
+  unfold evenTwistSignedWrithe; omega
+
+/-- A **signed** crossing→charge labeling of the two vector slots (crossing counts
+`4` and `6`): each slot carries a signed writhe, and — by
+`cInvariant_iff_writhe_zero` — the **neutral** slot is the C-invariant one
+(`sw = 0`) and the **charged** slot the chiral one (`sw ≠ 0`). A valid electroweak
+labeling makes exactly one vector slot neutral (the `Z`/`W³`) and the other
+charged (the `W`). -/
+structure SignedEWLabeling where
+  /-- Signed writhe at each vector-slot crossing count. -/
+  sw : ℕ → ℤ
+  /-- Exactly one vector slot is C-invariant (neutral); the other is chiral. -/
+  neutral_at_4_xor_6 :
+    (sw 4 = 0 ∧ sw 6 ≠ 0) ∨ (sw 4 ≠ 0 ∧ sw 6 = 0)
+
+/-- The paper's signed labeling: charged `W` (chiral, `sw = 2`) at slot `4`,
+neutral `Z`/`W³` (amphichiral, `sw = 0`) at slot `6`. -/
+def signedWat4 : SignedEWLabeling where
+  sw := fun k => if k = 4 then 2 else 0
+  neutral_at_4_xor_6 := Or.inr ⟨by decide, by decide⟩
+
+/-- The mirror signed labeling: neutral at slot `4`, charged `W` (chiral,
+`sw = 2`) at slot `6`. Equally C-consistent. -/
+def signedWat6 : SignedEWLabeling where
+  sw := fun k => if k = 6 then 2 else 0
+  neutral_at_4_xor_6 := Or.inl ⟨by decide, by decide⟩
+
+/-- **The signed / C-invariance criterion does NOT force which slot is `W`.** Both
+`signedWat4` (paper: `W` chiral at slot 4, `Z` amphichiral at slot 6) and
+`signedWat6` (mirror) are valid `SignedEWLabeling`s satisfying the full
+charge-conjugation neutrality constraint, yet they disagree on the charged slot
+(`sw 4 = 2` vs `sw 4 = 0`). Admitting the *signed* `σ ↔ σ⁻¹` asymmetry — the first
+ingredient the prior result named — therefore leaves ≥ 2 labelings consistent: it
+constrains the neutral slot to be **amphichiral**, but not **which** slot. -/
+theorem signed_which_slot_is_W_free :
+    signedWat4.sw 4 = 2 ∧ signedWat6.sw 4 = 0 ∧ signedWat4 ≠ signedWat6 := by
+  refine ⟨by decide, by decide, ?_⟩
+  intro h
+  have hne : signedWat4.sw 4 = signedWat6.sw 4 := congrArg (fun L => L.sw 4) h
+  revert hne; decide
+
+/-- **What WOULD force the label: a second charge nonzero on exactly one slot.** If
+a hypothetical second (baryon/color-trace) charge `S : ℕ → ℤ` vanishes on one
+vector slot and is nonzero on the other — reading "neutral ⟺ `S` vanishes" — it
+*determines* the neutral slot uniquely. This is the precise missing object the
+prior result and the U(1)-assignment audit named
+(`docs/audits/2026-06-02-u1-hypercharge-assignment.md`: "the precise missing
+object is a SECOND, independent crossing invariant (a baryon-number / color-trace
+charge)"). The corpus does **not** supply such an `S` for the same-sign even-twist
+triple; this conditional makes "fixed only by the second-charge / mixing data"
+precise. -/
+theorem second_charge_would_force_neutral_slot
+    (S : ℕ → ℤ) (hS : S 4 = 0 ∧ S 6 ≠ 0) :
+    ∀ j : ℕ, (j = 4 ∨ j = 6) → (S j = 0 ↔ j = 4) := by
+  obtain ⟨h4, h6⟩ := hS
+  intro j hj
+  rcases hj with rfl | rfl
+  · exact iff_of_true h4 rfl
+  · exact iff_of_false h6 (by decide)
+
+/-- **Capstone (honest stronger negative).** Neither ingredient the prior result
+named forces which pure even-twist slot hosts the charged `W`:
+
+* the **signed `σ ↔ σ⁻¹` asymmetry** leaves ≥ 2 C-consistent labelings — two
+  distinct labelings disagree on the `W` slot (`signedWat4 ≠ signedWat6`, and
+  `sw 4` differs);
+* the neutrality criterion **is** C-invariance ⟺ amphichirality (`∀ w, −w = w ↔
+  w = 0`), and **no pure even-twist carrier is amphichiral** — all three carriers
+  `σ₁⁴` (k=2), `σ₃⁶` (k=3), `σ₅⁸` (k=4) are chiral — so the neutral electroweak
+  boson is *necessarily not a single even-twist slot* but the **mixed `W³/B → Z`
+  (Weinberg) state**.
+
+Hence which-slot-is-`W` is fixed **only by the mixing / combination data**, not by
+any single-slot topological invariant — strengthening `which_slot_is_W_free` with
+the *reason*: the correct neutrality criterion (charge-conjugation invariance)
+excludes every chiral slot from being neutral. The remaining tie-breaker, a second
+baryon/color-trace charge (`second_charge_would_force_neutral_slot`), is a missing
+corpus object, not supplied. -/
+theorem signed_C_does_not_force_W_slot_but_forces_neutral_mixed :
+    (signedWat4 ≠ signedWat6 ∧ signedWat4.sw 4 ≠ signedWat6.sw 4) ∧
+    (∀ w : ℤ, crossingReversal w = w ↔ w = 0) ∧
+    (crossingReversal (evenTwistSignedWrithe 2) ≠ evenTwistSignedWrithe 2 ∧
+     crossingReversal (evenTwistSignedWrithe 3) ≠ evenTwistSignedWrithe 3 ∧
+     crossingReversal (evenTwistSignedWrithe 4) ≠ evenTwistSignedWrithe 4) := by
+  refine ⟨⟨?_, by decide⟩, cInvariant_iff_writhe_zero, ?_, ?_, ?_⟩
+  · intro h
+    have hne : signedWat4.sw 4 = signedWat6.sw 4 := congrArg (fun L => L.sw 4) h
+    revert hne; decide
+  · exact evenTwist_not_cInvariant (by norm_num)
+  · exact evenTwist_not_cInvariant (by norm_num)
+  · exact evenTwist_not_cInvariant (by norm_num)
+
+end SignedCrossing
+
 end QOU.ParticleInteractions
