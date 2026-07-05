@@ -649,10 +649,7 @@ theorem signed_C_does_not_force_W_slot_but_forces_neutral_mixed :
     (crossingReversal (evenTwistSignedWrithe 2) ≠ evenTwistSignedWrithe 2 ∧
      crossingReversal (evenTwistSignedWrithe 3) ≠ evenTwistSignedWrithe 3 ∧
      crossingReversal (evenTwistSignedWrithe 4) ≠ evenTwistSignedWrithe 4) := by
-  refine ⟨⟨?_, by decide⟩, cInvariant_iff_writhe_zero, ?_, ?_, ?_⟩
-  · intro h
-    have hne : signedWat4.sw 4 = signedWat6.sw 4 := congrArg (fun L => L.sw 4) h
-    revert hne; decide
+  refine ⟨⟨signed_which_slot_is_W_free.2.2, by decide⟩, cInvariant_iff_writhe_zero, ?_, ?_, ?_⟩
   · exact evenTwist_not_cInvariant (by norm_num)
   · exact evenTwist_not_cInvariant (by norm_num)
   · exact evenTwist_not_cInvariant (by norm_num)
