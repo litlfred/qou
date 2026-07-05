@@ -1,4 +1,4 @@
-import QOU.BraidKnot.SpechtStandardBasis
+import QOU.BraidKnot.SpechtStandardBasisCore
 import Mathlib.Data.Finsupp.Basic
 import Mathlib.Data.Prod.Lex
 import Mathlib.Data.Fintype.EquivFin

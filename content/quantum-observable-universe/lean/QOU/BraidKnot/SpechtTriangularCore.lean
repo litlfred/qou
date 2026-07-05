@@ -1,4 +1,4 @@
-import QOU.BraidKnot.SpechtStandardBasis
+import QOU.BraidKnot.SpechtStandardBasisCore
 import QOU.BraidKnot.SpechtDominanceCore
 import Mathlib.Data.Finset.Sort
 import Mathlib.Order.Monotone.Basic
