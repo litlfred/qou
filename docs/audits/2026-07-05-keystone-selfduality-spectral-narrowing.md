@@ -74,11 +74,14 @@ orthogonality for completed q-Laguerre") — two bases exchanged by `𝓗_q`. So
 
 ## Follow-up (queued, not run)
 
-1. Sector refinement — **done** (this PR): `conjFixed_sSq_fixed` (`C w = w ⇒ S² w = w`) and
+1. Sector refinement — **done** (PR #3362): `conjFixed_sSq_fixed` (`C w = w ⇒ S² w = w`) and
    `eigenvalue_selfdual_sector_pm_one` (over a field, nonzero `w` in the `C = +1` sector ⇒ `ζ² = 1`,
-   i.e. `ζ = ±1`), both sorry-free. **Still open:** pin the `+1` PF ground state to `d_q` conditional
-   on a `PerronFrobeniusGroundState` class (§3b-cond), citing Wenzl — the (B) input, not yet a Lean
-   class.
+   i.e. `ζ = ±1`), both sorry-free. The `+1` PF ground state pin to `d_q` — **done** (follow-up PR,
+   `KeystonePerronFrobeniusGroundState.lean`): the §3b-cond primary conjecture class
+   `PerronFrobeniusGroundState` (content field `pf_proportional` = cited PF/Ocneanu–Wenzl up-to-scale
+   uniqueness), and the derived sorry-free `eq_d_of_normalized` / `ground_state_unique` — a normalised
+   positive ground eigenvector is uniquely `d_q`. Non-vacuity via a `Unit`-block instance; the
+   physical Hecke-fusion instance stays owner-gated open.
 2. ~~Strengthen `eigenvalue_pow_four_eq_one` to `ζ⁴ = 1` over `[Field R]`~~ — **done** (this PR,
    addressing Copilot review): field + nonzero `v` gives `ζ⁴ = 1` via a per-component domain argument.
 3. Record in the s013 ledger that both q-Bessel uploads are keystone redirect-(ii), now superseded by
