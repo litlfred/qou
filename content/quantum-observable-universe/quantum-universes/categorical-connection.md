@@ -1,6 +1,12 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum universe over $R$ with
 differential forms $\Omega^k(A)$ ([higher forms](#def:higher-forms)).
 
+A connection is the categorical device that lets one differentiate
+sections and transport structure along $A$; it generalizes the
+classical de Rham connection $d$ on differential forms, and the
+$\mathrm{SU}(2)$ instance in [Example](#ex:categorical-connection-su2)
+gives the reader's first concrete grip on it.
+
 A **connection** on $A$ is a morphism
 $\nabla \colon A \to A \otimes \Omega^1(A)$ in $\mathbf{C}$ satisfying
 the Leibniz rule: $\nabla(\mu(a \otimes b)) = \nabla(a) \cdot b + a \cdot \nabla(b)$, expressed by the commutativity

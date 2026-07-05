@@ -5,7 +5,7 @@ of [quantum universe](#def:quantum-universe) for $G = \mathrm{SU}(2)$.
 $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}(2))$, the category of
 finite-dimensional complex representations. Objects are vector spaces
 $V$ with a continuous $G$-action $\rho_V \colon G \to \mathrm{GL}(V)$;
-morphisms are $G$-equivariant linear maps. This is an
+morphisms are $G$-equivariant linear maps. This is a
 $\mathbb{C}$-linear rigid :refterm[monoidal category]{#monoidal-category}
 ([rigid monoidal Vect](#ex:rigid-monoidal-vect)). The $G$-action on tensor
 products is diagonal: $g \cdot (v \otimes w) = (g \cdot v) \otimes (g \cdot w)$; on duals it is the contragredient:

@@ -1,3 +1,9 @@
+Two rigid monoidal categories run through the paper: the degenerate
+baseline $\mathrm{Vect}_{\mathbb{C}}$, and the object of interest
+$\mathrm{Rep}(\mathrm{SU}(2))$, the running example the whole framework
+instantiates.  Each arises as representations of a function algebra, so
+we read them off from that algebra in turn.
+
 The polynomial ring $\mathbb{C}[z]$ is the algebra of functions on the
 complex line $\mathbb{C}$.  The category
 $\mathrm{Vect}_{\mathbb{C}}$ of finite-dimensional complex vector spaces

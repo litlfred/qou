@@ -1,8 +1,13 @@
 Let $(\mathbf{C}, A, \tau)$ be a
 ([quantum universe](#def:quantum-universe)). Denote by $\Delta_\mu$ the
 comultiplication on $A$ dual to the multiplication $\mu$ under the
-[Frobenius pairing](#def:frobenius-pairing). Then the following
-diagram commutes (the *Frobenius relation*):
+[Frobenius pairing](#def:frobenius-pairing). This compatibility is
+exactly what makes $A$ a Frobenius algebra — a self-dual object in
+$\mathbf{C}$ whose multiplication and comultiplication interlock rather
+than act independently; concretely, one may picture sliding a
+multiplication past a comultiplication (worked out for $\mathrm{su}(2)$
+fusion in the example below). Then the following diagram commutes (the
+*Frobenius relation*):
 
 ```tex
 \begin{equation}\label{eq:frobenius-relation}

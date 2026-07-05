@@ -1,4 +1,7 @@
-The difference $\omega = \nabla_2 - \nabla_1$ is $R$-linear: for any
+Uniqueness up to gauge follows once we show that the difference of two
+connections is a derivation, hence lies in a fixed module. To that end,
+consider the difference $\omega = \nabla_2 - \nabla_1$, which is
+$R$-linear: for any
 $a, b \in A$ the Leibniz rule applied to both $\nabla_1$ and
 $\nabla_2$ gives
 

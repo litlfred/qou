@@ -4,6 +4,10 @@ pairing, non-degenerate by
 $R \cong \mathrm{End}(\mathbf{1})$ is the formally-real ordered field and
 $S$ is the pivotal self-adjoint antipode of the hypotheses.
 
+A positive-definite dagger structure requires two things: that
+$\dagger$ is an involution, and that $f^{\dagger} \circ f$ is strictly
+positive for every non-zero $f$. We verify each in turn.
+
 **Involutivity.** Because the antipode is pivotal, $S^2 = \mathrm{id}$.
 Expanding
 $(f^{\dagger})^{\dagger} = \int_A \mu(S(f^{\dagger}) \otimes -)$ and
