@@ -579,11 +579,12 @@ two kinds — this classification is what governs the (strict) resolve:
 | **exact-dup** | the two occurrences are **semantically identical** — the second adds, qualifies, or changes *nothing* | **Yes** — one copy may be deleted |
 | **differs** | the second occurrence **adds or changes** content (a new qualifier, a sharper bound, a different framing, an extra case) | **No** — deletion forbidden; the distinct content must be preserved |
 
-**Score → result.** Total redundancy is scored; a block with **no**
-intra-block duplication is `pass`; a block with one duplicated span is
-`warn`; a block with pervasive repetition (≥ 3 duplicated spans, or a
-whole paragraph restated) is `fail`. `notes` lists each duplicated span,
-its class (**exact-dup** / **differs**), and the two source locations.
+**Score → result.** Total redundancy is scored by the count of duplicated
+spans `k`: `k = 0` → `pass`; `1 ≤ k ≤ 2` → `warn`; `k ≥ 3` (or a whole
+paragraph restated) → `fail`. The **`duplications` array** is the detailed
+record — each entry carries the span, its class (`exact-dup` / `differs`),
+and the two source locations; **`notes` is only the ≤ 200-char summary**
+(it does not re-list the spans).
 
 **Resolve discipline (STRICT — this is the point of the separate
 criterion).** The resolve agent may:
@@ -624,11 +625,13 @@ pass.
 > span, record the two locations and classify it: **exact-dup** (the
 > second occurrence adds/changes nothing) or **differs** (the second adds
 > a qualifier, a sharper claim, a new case, or a different framing).
-> Return JSON: `{ "duplications": [{ "span": "...", "loc_a": "...",
-> "loc_b": "...", "class": "exact-dup" | "differs" }], "result": "pass" |
-> "warn" | "fail", "notes": "≤ 200-char summary" }`. `pass` iff
-> `duplications` is empty; `warn` for exactly one; `fail` for ≥ 3 or a
-> restated paragraph.
+> Return JSON of this shape (do not emit literal `|` — each field holds one
+> string value from the allowed set): `{ "duplications": [{ "span": "...",
+> "loc_a": "...", "loc_b": "...", "class": "..." }], "result": "...",
+> "notes": "≤ 200-char summary" }`, where each `class` is `"exact-dup"` or
+> `"differs"`, and `result` is `"pass"`, `"warn"`, or `"fail"`. `pass` iff
+> `duplications` is empty; `warn` for 1–2 duplicated spans; `fail` for ≥ 3
+> or a restated paragraph.
 >
 > **Resolve (only when authorised — this criterion is human-reviewed):**
 > Edit the `.md` prose. Delete a span ONLY if its class is `exact-dup`.
