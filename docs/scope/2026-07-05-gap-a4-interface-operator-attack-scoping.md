@@ -113,13 +113,20 @@ before the gate.
 
 ## 6. Cross-references
 
-- Gate trio (landed): `QOU/MassTheory/TraceConventionGate.lean` (I-1/I-6),
-  `QOU/MassTheory/BarParityExclusion.lean` (I-2),
-  `docs/scope/2026-07-02-gap-a4-perknot-density-rule-scoping.md`.
+- Gate trio (landed on main): `QOU/MassTheory/TraceConventionGate.lean` (I-1/I-6),
+  `QOU/MassTheory/BarParityExclusion.lean` (I-2).
+- `docs/scope/2026-07-02-gap-a4-perknot-density-rule-scoping.md` — the §I-1…I-6
+  formalize-first invariants (**on PR #3205's branch `claude/stalled-agent-mg3lij`;
+  not yet merged to main**).
 - `docs/coordination/option-e.md` — PROBE 2 / A=4 non-closure rows.
 - `docs/audits/2026-06-23-interface-operator-derivation-and-4body-assembly.md`.
-- `computations/option_e_a4_full_reconciliation.py` (the −80.4% / ×5.10 sum),
-  `computations/gap_a4_T2…T18_*_probe.py`, `computations/interface_*_probe.py`,
+- Probe scripts: `computations/option_e_a4_full_reconciliation.py` (the −80.4% /
+  ×5.10 sum) and `computations/a4_interface_*.py` in the `computations/` root;
+  the 17 T-probes `computations/probes/gap_a4_T2_per_knot_vol_probe.py` …
+  `computations/probes/gap_a4_T18_markov_normalization_probe.py`, the
+  `computations/probes/interface_*_probe.py` family, and
   `computations/a_operator/*.py`.
-- `docs/coordination/s5-so3-keystone.md` — the owner-authorized geometric `W_λ`
-  route (class C), the alternative absolute-magnitude source.
+- `docs/coordination/s5-so3-keystone.md` — the geometric `W_λ` route (class C).
+  Its hard core (G1, the S³/2I Seifert–CS index) is **owner-gated** (narrow
+  2026-06-22 reversal); PRs #2524/#2503/#2603 are *active unmerged* attacks that
+  supply candidate index mechanisms — none *owns*/closes the gated object.
