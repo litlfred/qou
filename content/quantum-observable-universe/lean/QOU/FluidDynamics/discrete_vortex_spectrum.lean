@@ -3,13 +3,13 @@ import Mathlib.Tactic
 /-!
 # QOU.FluidDynamics.discrete_vortex_spectrum
 
-**Placeholder canonical** for content block
+**Canonical declaration** for content block
 [`prop:discrete-vortex-spectrum`](../../../quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.md): *Discrete vortex mode spectrum*.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.FluidDynamics.discrete_vortex_spectrum` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per AGENTS.md §1.
+The `lean.ref` URI `qou:QOU.FluidDynamics.discrete_vortex_spectrum`
+resolves to this declaration in the `qou` Lake package.  The claim is
+formalised below (§3b-conditional, sorry-free): the four sub-claims are
+discharged from the context class's `impl_*` fields.
 -/
 
 namespace QOU.FluidDynamics
@@ -63,10 +63,9 @@ brane fluid with [substrate parameter](#def:substrate-parameter)
 $q > 1$, and let $\Delta_q$ be the $q$-Laplacian acting on
 sections of the normal bundle $N_\varrho$.  Then:
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    The Lean encoding below states the claim over the context class and
+    discharges it from the class's structural fields (§3b-conditional;
+    sorry-free). -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts
 theorem discrete_vortex_spectrum [ctx : DiscreteVortexSpectrumContext] :
     (∀ k : ℕ, 1 ≤ k →
