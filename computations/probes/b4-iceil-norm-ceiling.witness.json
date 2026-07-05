@@ -1,0 +1,60 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-05T23:44:25.366773+00:00",
+  "commitSha": "27252e8ff1ba253de9b8e21bf4a7736899a756c3",
+  "assertions": [
+    {
+      "name": "trace_ceiling_admits_connected_excess",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "headroom_is_positive_but_modest",
+      "computed": "0.138",
+      "expected": "0.14",
+      "passed": true,
+      "tolerance": 0.03
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "b4-iceil-norm-ceiling",
+  "scriptFile": "b4_iceil_norm_ceiling_probe.py",
+  "scriptHash": "49f1d724dff1",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "I-ceil: the parameter-free trace-magnitude ceiling B_vol(⁴He)=30.3 MeV leaves 16.8 MeV connected room ≥ the 14.8 MeV needed excess ⇒ the [1^4] connected term is not excluded (~14% headroom); value computation licensed. audit-only, no fit.",
+  "tier": "structural (parameter-free B_vol ceiling + committed pairwise best)",
+  "result": {
+    "E0_MeV": "4.1859808",
+    "B_AME_he4_MeV": "28.29567",
+    "best_pairwise_MeV": "13.522857",
+    "needed_connected_excess_MeV": "14.772813",
+    "a_V_MeV_per_nucleon": "7.5835662",
+    "trace_ceiling_B_vol_he4_MeV": "30.334265",
+    "max_connected_room_MeV": "16.811408",
+    "headroom_fraction": "0.137996",
+    "verdict": "I-ceil PASSES: max connected room (16.811 MeV = B_vol − pairwise) ≥ needed excess (14.773 MeV), ~14% headroom. The trace framework admits the connected b₄^even excess; the [1^4] term is NOT excluded by the norm ceiling — the value computation is licensed. NECESSARY condition only: passing ≠ the term supplies it; the connected-slice value (not the total 30.3 MeV) must reach ~14.8 MeV. Modest headroom. Scope-(a), no fit.",
+    "gates_status": "I-par (done), I-conn (done), I-ceil (done) — all three magnitude gates cleared."
+  },
+  "context": {
+    "axis": "GAP-A-4 class-D — [1^4] Ursell operator magnitude, invariant I-ceil",
+    "scoping": "docs/scope/2026-07-05-gap-a4-ursell-operator-magnitude-scoping.md §3",
+    "ceiling_form": "B_vol = a_V·A, a_V = E₀·ln(1/W_free) (standard-part-functor.md)"
+  },
+  "auditOnly": true
+}
