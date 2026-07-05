@@ -106,12 +106,6 @@ no-periodic-cycles theorem
 main alternative to convergence; and the classical
 average $\mathbb{E}[v_2] = 2$ saturates the threshold.
 
-The gap between the Hausdorff proof and the Collatz
-conjecture is precisely the difference between a
-**smooth contraction** (derivative $< 1$ everywhere)
-and a **discrete contraction** (ratio $< 1$ only when
-$v \geq 2$, which must be verified orbit by orbit).
-
 ### Connection via Planck steps
 
 Both the Hausdorff recurrence and the Collatz cycle
@@ -135,6 +129,5 @@ $$
 Each Collatz cycle (at $v = 2$) covers about $3$ Planck
 steps worth of Lyapunov decrease.  The Collatz orbit is
 a discrete walk on the same parameter space that the
-Hausdorff recurrence traverses smoothly — both headed
-toward $q = 1$, both using the substrate parameter as
-their natural scale.
+Hausdorff recurrence traverses smoothly, both using the
+substrate parameter as their natural scale.

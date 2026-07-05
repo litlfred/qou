@@ -28,7 +28,7 @@ The main paper's mass formula outputs live in $\mathbb{Q}(q)$ with
 $q = q_0 \in \mathbb{R}$ as the substrate value. Under a surreal lift,
 $q$ becomes $1 + \varepsilon$ and the outputs live in
 $\mathbf{No}_{\mathrm{fin}}$ (they are rational in $\varepsilon$).
-Applying $\mathrm{St}$ recovers exactly the paper's reals; the
+Applying $\mathrm{st}$ recovers exactly the paper's reals; the
 discarded infinitesimal part is an explicit record of the
 first-order quantum correction.
 

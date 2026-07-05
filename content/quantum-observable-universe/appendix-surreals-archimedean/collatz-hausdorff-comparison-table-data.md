@@ -1,3 +1,5 @@
+The table below aligns the Hausdorff recurrence in $q$ with the Collatz-type step dynamics in $\Phi$, comparing the two systems row by row.
+
 | | Hausdorff recurrence | Collatz dynamics |
 |---|---|---|
 | **Space** | $q \in \mathbb{R}_{>0}$ | $\Phi \in \mathbb{R}_{\geq 0}$ |

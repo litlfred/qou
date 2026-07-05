@@ -1,3 +1,9 @@
+The standard-part map bridges the surreal substrate to its
+archimedean limit: it realizes the quotient $\mathbf{No}_{\mathrm{fin}}
+/ \mathbf{No}_{\mathrm{inf}} \cong \mathbb{R}$ and underlies the
+classical limit at $q = 1 + \varepsilon$. Its construction begins with
+the finite and infinitesimal surreals.
+
 An element $x \in \mathbf{No}$ is **finite** if there exists
 $n \in \mathbb{N}$ with $|x| \leq n$. Write $\mathbf{No}_{\mathrm{fin}}
 \subset \mathbf{No}$ for the subring of finite surreals, and
