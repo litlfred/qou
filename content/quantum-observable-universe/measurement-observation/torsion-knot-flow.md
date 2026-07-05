@@ -1,11 +1,12 @@
-*Base-ring note (§7c). The combinatorial knot data — the crossing number
+**Base-ring note (§7c).** The combinatorial knot data — the crossing number
 $c(K)$, the $q$-factorial $[c(K)]_q!$, and the $q$-Alexander polynomial
 $\Delta_q(K)$ — lives over the combinatorial ground ring
 $R_q = \mathbb{Z}[q, q^{-1}]$. The angular-momentum normalisation ($2\pi$),
 the round metric on $S^2$, and the evaluation $q = e^{-r}$ are the
-**archimedean specialisation** over $\mathbb{R}$; the Lean sibling
-accordingly places `intrinsicAngularMomentum` in $\mathbb{R}$ (via
-`Real.pi`) while keeping the strand data over $R_q$.*
+archimedean specialisation over $\mathbb{R}$. The Lean sibling realises only
+the real-valued $2\pi\,c(K)$ term (`intrinsicAngularMomentum` over
+$\mathbb{R}$, via `Real.pi`); the $[c(K)]_q!$ normalisation of $\omega_K$ and
+the interaction kernel remain over $R_q$.
 
 Given a bundle initial condition $\mathcal{S}_0 = \{(p_i, K_i)\}_{i=1}^{N}$
 ([Definition](#def:bundle-initial-conditions)), the **torsion-driven knot
