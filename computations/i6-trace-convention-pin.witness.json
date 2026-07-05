@@ -1,0 +1,78 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-05T11:27:55.338992+00:00",
+  "commitSha": "6949424f7a827fb6d8f76f8fd3f1d4a45e37cfa2",
+  "assertions": [
+    {
+      "name": "Fbor_implied_trM_beta_Bor_near_unity",
+      "computed": "0.99856216",
+      "expected": "0.998562",
+      "passed": true,
+      "tolerance": 0.0001
+    },
+    {
+      "name": "chicache_trM_p_over_n_asymmetric",
+      "computed": "1.1539211",
+      "expected": "1.15392",
+      "passed": true,
+      "tolerance": 0.001
+    },
+    {
+      "name": "conventions_distinct_factor_R_p_gt_1",
+      "computed": "1.0668339",
+      "expected": "1.0668",
+      "passed": true,
+      "tolerance": 0.001
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "i6-trace-convention-pin",
+  "scriptFile": "i6_trace_convention_pin.py",
+  "scriptHash": "63832968650a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "GAP-A-4 gate I-6: pin the canonical per-knot Markov-trace convention. F_Bor (unnormalised × [3]_q!/q³) |tr_M(β_Bor)|=0.9986 vs dim-λ-normalised chi-cache tr_M(p)=1.0653; related by explicit factor R_p≈1.0668. Canonical for ρ(K) = chi-cache (B). audit-only, parameter-free, no fit.",
+  "tier": "structural (F_Bor side exact 50-dps; chi-cache side ledger precision)",
+  "result": {
+    "q0": "1.10997859555733471",
+    "convention_A_Fbor": {
+      "F_Bor": "4.46913859783",
+      "framing_[3]q!/q^3": "4.47557374247",
+      "abs_trM_beta_Bor": "0.998562163197",
+      "normalisation": "unnormalised Borromean braid trace × [3]_q!/q³ framing",
+      "role": "muon-anchored ABSOLUTE-mass facade (canonical_mass.py)"
+    },
+    "convention_B_chicache": {
+      "trM_p": "1.0653 (ledger precision)",
+      "trM_n": "0.9232 (ledger precision)",
+      "trM_p_over_n": "1.1539211",
+      "normalisation": "dim-λ-normalised per-block Σ_λ y_λ χ^λ/dim λ",
+      "role": "per-knot density ρ(K) / BINDING (p≠n distinct is the signal)"
+    },
+    "relating_factor_R_p": "1.0668339",
+    "pin": "CANONICAL for ρ(K)/binding = convention (B), the dim-λ-normalised chi-cache tr_M(K) (p≠n distinct). Convention (A) F_Bor is reserved for the muon-anchored absolute-mass facade. The two relate by the explicit per-knot framing factor R(K) = tr_M(K)_chicache / |tr_M(β_K)|_Fbor ≈ 1.0668 (p) — a normalisation, not a free DOF.",
+    "hidden_dof_closed": "Fixing the convention to (B) removes the 0.41→5.62 convention-freedom span the q-dim route probe flagged.",
+    "verdict": "I-6 PINNED: dim-λ-normalised chi-cache tr_M(K) is canonical for ρ(K); F_Bor's [3]_q!/q³-framed unnormalised trace is the absolute-mass-facade convention; related by explicit factor R(K)."
+  },
+  "context": {
+    "axis": "GAP-A-4 per-knot density ρ(K) — trace-convention gate (I-6)",
+    "scoping_note": "docs/scope/2026-07-02-gap-a4-perknot-density-rule-scoping.md §I-6",
+    "lean": "qou:QOU.MassTheory.TraceConventionGate",
+    "facade": "computations/canonical_mass.py (F_Bor); _li_2_q_util.vol_density_per_block (chi-cache)"
+  },
+  "auditOnly": true
+}
