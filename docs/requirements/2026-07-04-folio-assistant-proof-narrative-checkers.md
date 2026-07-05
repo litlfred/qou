@@ -505,9 +505,10 @@ writes a fresh sidecar entry. Staleness: re-run when `field_hash.md` drifts (the
 `.md` is the only input that matters — `.ts`/`.lean` changes do not restale it).
 
 **Severity.** `major` (gating — it can `fail`; owner ruling 2026-07-04).
-**`automated`.** `false`. **Axis.** `voice` (it belongs with
-the one-voice/exposition family) — or a new `exposition` axis if the platform
-prefers to group future style raters separately `⟨confirm against live source⟩`.
+**`automated`.** `false`. **Axis.** `expo` — registered in the
+folio-assistant `qa-criteria-registry.ts` `EXPO` domain and
+`WATCHER_CRITERIA_BY_AXIS.expo` (as of 2026-07-05), alongside the
+companion `milnor-brevity` rater (§5B).
 
 **Anti-flag-loss note (ties to §6).** Because this is an agent rater, it is exactly
 the class of verdict that the 2026-06-25 distrust-clear damaged. Two safeguards:
@@ -544,6 +545,122 @@ of a 0–2 rubric carries some variance, implementers should (a) keep the per-bl
 score vector in the sidecar so re-reviews re-score rather than re-guess, and
 (b) treat a `fail` as an author-actionable exposition defect (name the failing
 dimensions), not a mysterious rejection.
+
+---
+
+## 5B. SPEC — `milnor-brevity` (agent-judged intra-block de-duplication)
+
+**Added 2026-07-05 at owner request.** A **companion** to
+`expo-milnor-clarity` (§5A). Where §5A scores overall Milnor quality
+(H1–H8), `milnor-brevity` isolates one sub-property — **no content is
+repeated within a block** — and gives it a **stricter, deletion-aware
+resolve discipline**. It is registered separately (and reviewed more
+carefully) precisely *because* its remedy can involve **deleting** prose,
+which the clarity drain otherwise treats conservatively.
+
+**Intent.** Milnor's economy (H1) forbids restating the same point twice.
+`milnor-brevity` surfaces where a block says the *same thing* more than
+once — a claim, a definition, a motivation, an example, or a numeric
+result repeated in two places — so the redundant copy can be removed *or*
+the block restructured. It is the "same content is not repeated /
+duplicated in the block" check.
+
+**Applies to.** The same narrative-bearing kinds as §5A: `definition,
+theorem, proposition, lemma, corollary, remark, prose, example,
+conjecture` with ≥ ~50 words of prose. **`n/a`** on pure
+equation/diagram/simulator/glossary and near-empty blocks.
+
+**What the rater detects (audit).** Intra-block semantic duplication.
+For each duplicated span, the rater **classifies** it into exactly one of
+two kinds — this classification is what governs the (strict) resolve:
+
+| Class | Meaning | Deletion permitted? |
+|---|---|---|
+| **exact-dup** | the two occurrences are **semantically identical** — the second adds, qualifies, or changes *nothing* | **Yes** — one copy may be deleted |
+| **differs** | the second occurrence **adds or changes** content (a new qualifier, a sharper bound, a different framing, an extra case) | **No** — deletion forbidden; the distinct content must be preserved |
+
+**Score → result.** Total redundancy is scored; a block with **no**
+intra-block duplication is `pass`; a block with one duplicated span is
+`warn`; a block with pervasive repetition (≥ 3 duplicated spans, or a
+whole paragraph restated) is `fail`. `notes` lists each duplicated span,
+its class (**exact-dup** / **differs**), and the two source locations.
+
+**Resolve discipline (STRICT — this is the point of the separate
+criterion).** The resolve agent may:
+
+1. **Delete a repeat ONLY when its class is `exact-dup`** (content
+   unchanged between the two occurrences). Cite the deleted span + the
+   surviving copy in the resolve record.
+2. **NEVER delete a `differs` span.** If the content changed, deletion
+   would lose information. Instead **merge** the two occurrences into one
+   statement that preserves *every* distinct point, or keep both.
+3. **NEVER delete math content** — a diagram, display equation, `align`
+   environment, or derivation body — even if it *looks* duplicated
+   (inherits the §5A / drain `NO-DELETE-MATH-CONTENT` rule). A repeated
+   equation is re-expressed by prose reference, not deleted.
+4. **A block MAY be split** into two or more blocks when de-duplication
+   would otherwise cram distinct ideas together, or when separating a
+   repeated setup from its result aids explication (e.g. a `prose` setup
+   block + the `proposition` it motivates). Splitting is the *preferred*
+   remedy when content differs but is entangled.
+
+**Careful-review gate (STRICT).** Because the remedy involves deletion,
+`milnor-brevity` resolves are **not** auto-mergeable in an autonomous
+exposition drain. Every `milnor-brevity` edit — and unconditionally every
+**deletion** — is held for **human / reviewer sign-off before merge**
+(Gemini + Copilot review at minimum; owner sign-off for any block split
+or any deletion the reviewer flags). The autonomous `expo-milnor-clarity`
+drain runs `milnor-brevity` in **audit-only** mode by default (it *flags*
+duplication into the sidecar); the *resolve* is a deliberate, reviewed
+pass.
+
+**Agent prompt template.**
+
+> You are auditing one narrative block from a formal-mathematics paper for
+> **intra-block redundancy**, the Milnor economy sub-property "the same
+> content is never stated twice in one block." Do not judge overall
+> clarity (that is `expo-milnor-clarity`) or correctness — only whether
+> any content is **duplicated within this block**. For each duplicated
+> span, record the two locations and classify it: **exact-dup** (the
+> second occurrence adds/changes nothing) or **differs** (the second adds
+> a qualifier, a sharper claim, a new case, or a different framing).
+> Return JSON: `{ "duplications": [{ "span": "...", "loc_a": "...",
+> "loc_b": "...", "class": "exact-dup" | "differs" }], "result": "pass" |
+> "warn" | "fail", "notes": "≤ 200-char summary" }`. `pass` iff
+> `duplications` is empty; `warn` for exactly one; `fail` for ≥ 3 or a
+> restated paragraph.
+>
+> **Resolve (only when authorised — this criterion is human-reviewed):**
+> Edit the `.md` prose. Delete a span ONLY if its class is `exact-dup`.
+> Never delete a `differs` span — merge preserving every distinct point,
+> or split the block. Never delete a diagram / equation / derivation.
+> Prefer splitting the block over cramming distinct ideas together.
+
+**Reviewer.** `{ kind: "agent", id: "local/milnor-brevity-rater",
+version: "1.0" }`. Registered `automated: false`; enters the agent-drain
+queue; satisfied by a fresh sidecar entry. Staleness: re-run when
+`field_hash.md` drifts.
+
+**Severity.** `major`. **`automated`.** `false`. **Axis.** `expo`
+(grouped with `expo-milnor-clarity`; both registered in the folio-assistant
+`qa-criteria-registry.ts` `EXPO` domain / `WATCHER_CRITERIA_BY_AXIS.expo`).
+
+**Relationship to §5A.** A block can be `expo-milnor-clarity: warn`
+(muddy) yet `milnor-brevity: pass` (not repetitive), or vice-versa. They
+are scored independently and stored as two sidecar entries. Clarity's
+resolve is conservative-additive (motivation-first, reorderings);
+brevity's resolve is the deletion-aware pass and therefore carries the
+extra review gate above.
+
+**Test fixtures (calibration prompts).**
+| Fixture | Character | Expected |
+|---|---|---|
+| `no-repeat` | every point stated once | pass |
+| `exact-restate` | a sentence's claim restated verbatim later | warn, one `exact-dup` |
+| `qualified-restate` | a claim restated *with an added qualifier* | warn, one `differs` (NO deletion) |
+| `paragraph-echo` | a whole paragraph's content repeated | fail |
+| `repeated-equation` | same display equation twice | warn, but resolve re-refs, never deletes |
+| `entangled-two-ideas` | two distinct ideas interleaved + partly repeated | warn, resolve = **split** |
 
 ---
 
