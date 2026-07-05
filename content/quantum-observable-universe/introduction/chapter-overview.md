@@ -227,9 +227,9 @@ $\mathbb{Q}(q)$ — to the three calibration inputs, with no fitting or
 empirical nuclear-physics constants entering until the Archimedean
 realization functor at the very end.  A single **complex volume**
 $\mathfrak{V}$ organises the nuclear observables: its real part is
-the binding energy, $\operatorname{Re}\mathfrak{V} = \mathfrak{E}_{\mathrm{bind}}$,
+the binding energy, $\mathrm{Re}\,\mathfrak{V} = \mathfrak{E}_{\mathrm{bind}}$,
 and its imaginary part is the $\beta$-decay $Q$-value,
-$\operatorname{Im}\mathfrak{V} = \mathfrak{Q}_\beta$ — the bar-even
+$\mathrm{Im}\,\mathfrak{V} = \mathfrak{Q}_\beta$ — the bar-even
 and bar-odd parts of one geometric quantity.
 
 [*Gravity and Spacetime Emergence*](#chap:gravity-spacetime-emergence) closes the part by showing how long-range
