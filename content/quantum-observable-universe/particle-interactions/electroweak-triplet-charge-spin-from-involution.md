@@ -191,3 +191,43 @@ sorry-free: signed non-forcing, $C$-invariance $=$ amphichirality, and the
 chirality of all three even-twist carriers. The $T_3$ label of the pure slots is
 therefore fixed **only by the mixing / second-charge data**, not by any
 single-slot invariant.
+
+**The two natural realizations of the second charge also fail.**
+
+The audit names the missing object as a baryon / color-trace charge. Its two
+natural knot-theoretic realizations — the pairwise linking number $\mathrm{Lk}$
+and the Milnor triple linking $\bar\mu(123)$ — can be tested directly against the
+forcing hypothesis of `second_charge_would_force_neutral_slot` (a charge nonzero
+on exactly one vector slot). Neither qualifies
+(`named_second_charge_candidates_do_not_force_label`): the even-twist carrier
+$T(2,2k)$ is a two-component link, so $\bar\mu(123) \equiv 0$ on every carrier (a
+triple linking needs $\geq 3$ components) — it vanishes on *both* slots, giving no
+charged slot; while $\mathrm{Lk}(T(2,2k)) = k \neq 0$ on every carrier
+($k = 2, 3, 4$) — it vanishes on *neither* slot, giving no neutral slot. These are
+the two distinct ways of missing the "nonzero on exactly one slot" datum, and both
+are proved (not a vacuous non-existence).
+
+**The group-structure data does force the label (conditional positive).**
+
+Topology cannot force the label, but the $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$
+group assignment can. The genuine missing input is the alignment of the two
+vector slots with the $\mathfrak{su}(2)_L$ Cartan–Weyl basis — *which* slot hosts
+the neutral Cartan generator $W^3$ (the zero-weight member of the adjoint, which
+mixes into $Z$) versus the charged root member $W^\pm$. Axiomatised as the open
+hypothesis class `EWGroupAssignment` (carrying the Cartan/charged slot alignment
+and its non-degeneracy — a group-theoretic datum, *not* the $T_3$ values), the
+label is then **derived**: the neutral slot is the Cartan slot ($2 T_3 = 0$), the
+charged slot is the complementary root slot ($2 T_3 = 2$), and a slot is neutral
+*iff* it is the Cartan slot — read off from the adjoint weights $\{+1, 0, -1\}$,
+not projected (`label_forced_given_group_assignment`, §3b-cond conditional
+positive). No instance of `EWGroupAssignment` is supplied — it stays an open
+input, precisely the $(W^3, B) \mapsto (Z, \gamma)$ Weinberg mixing data
+([conj:weinberg-angle-categorical](#conj:weinberg-angle-categorical)).
+
+The net picture: the $W/Z$ label is **unforced by any single-slot topological
+invariant** (the signed / $C$-invariance results and the two named second-charge
+candidates), and **forced only by the conjectural $\mathrm{SU}(2)_L \times
+\mathrm{U}(1)_Y$ group assignment**. This *relocates* the postulate — from a bare
+$T_3$ label to the group-structure (mixing) input — rather than closing it: given
+the group datum the label is a theorem, but the group datum itself remains the
+open conjectural input.
