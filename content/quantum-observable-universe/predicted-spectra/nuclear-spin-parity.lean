@@ -1,5 +1,5 @@
 import Mathlib.Data.Nat.Basic
-import Mathlib.Data.Nat.Parity
+import Mathlib.Algebra.Ring.Parity
 
 
 /-!
