@@ -1,16 +1,20 @@
-The Borromean braid $B_3$ has NF:
+Is the Borromean baryon a color singlet, and how much gluon
+content does it carry? Both are read off the normal form (NF)
+of the Borromean braid $B_3$:
 
 $$
   B_3 = +0.998\gamma - 0.010\sigma_0 + 0.009\sigma_1
         + 0.046L_+ - 0.044L_-
 $$
 
-The $L_+$ and $L_-$ terms are the **gluon content** of $B_3$.
-Their near-cancellation ($+0.046 - 0.044 = +0.002$) reflects
-the color neutrality of the baryon: the net gluon content is
-close to zero, consistent with a color singlet.
+The $L_+$ and $L_-$ coefficients are the **gluon content** of
+$B_3$, so the net gluon content is their signed sum. Here that
+sum nearly cancels ($+0.046 - 0.044 = +0.002$): the net gluon
+coefficient vanishes to the third decimal, and it is exactly
+this vanishing of the net gluon coefficient that is the
+color-singlet condition for the baryon.
 
-The $\gamma$ term $\approx +0.998$ shows that $B_3$ is
-perturbatively close to the identity — the Borromean
-confinement is a small correction to free quarks, with
-net$(B_3) \approx 1$.
+The identity coefficient $\gamma \approx +0.998$ places $B_3$
+perturbatively close to the identity: the gluon terms are a
+small correction to free quarks rather than a leading
+contribution, with net$(B_3) \approx 1$.
