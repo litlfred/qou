@@ -139,10 +139,23 @@ the next refinement step, recorded under
 -/
 
 -- Ref: [manuscript] prop:chi-lambda-w0-sign-weighting
-/-- The c_k chain at H_3 has the same sign as the character-weighted sum at the long element w_0. -/
-theorem chi_lambda_w0_sign_weighting (k : ℕ) (c_k_chain : ℝ) (c_k_3 c_k_21 c_k_111 : ℝ) :
-    (c_k_chain < 0 ↔ S_w0 c_k_3 c_k_21 c_k_111 < 0) ∧
-    (c_k_chain > 0 ↔ S_w0 c_k_3 c_k_21 c_k_111 > 0) := by
-  sorry
+/-- **Long-element sign-weighting, verified at `k ∈ {5, 6}`.** At each
+    witnessed level the `S_3` character-weighted sum at `w₀` collapses to
+    `c_k^{(3)} − c_k^{(1,1,1)}` — the standard `(2,1)` block drops out because
+    `χ_{(2,1)}(w₀) = 0` (`S_w0_simp`) — and is strictly negative
+    (`S_w0_at_k{5,6}_neg`), matching the empirical sign of the `c_k` chain
+    (both `-395.41` and `-45485` per `per-wedderburn-block-ck.witness.json`).
+
+    (The earlier free-variable phrasing "`sign(c_k_chain) = sign(S_w0 …)`" was
+    ill-posed — `c_k_chain` was unconstrained, making the biconditional false
+    for e.g. `c_k_chain = -1` with all `c_k^{(λ)} = 0`. The genuine content is
+    the collapse together with the per-level sign, verified against the
+    witnessed coefficients.) -/
+theorem chi_lambda_w0_sign_weighting :
+    (S_w0 c5_V3 c5_V21 c5_V111 = c5_V3 - c5_V111 ∧
+      S_w0 c5_V3 c5_V21 c5_V111 < 0) ∧
+    (S_w0 c6_V3 c6_V21 c6_V111 = c6_V3 - c6_V111 ∧
+      S_w0 c6_V3 c6_V21 c6_V111 < 0) :=
+  ⟨⟨S_w0_simp _ _ _, S_w0_at_k5_neg⟩, ⟨S_w0_simp _ _ _, S_w0_at_k6_neg⟩⟩
 
 end QOU.BraidKnot
