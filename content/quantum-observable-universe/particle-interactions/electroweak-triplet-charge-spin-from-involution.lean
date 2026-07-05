@@ -416,4 +416,81 @@ theorem which_slot_is_W_free :
   revert hne
   decide
 
+/-! ### The one surviving crossing→charge map (`writhe → I₃`) also fails to
+select the neutral slot
+
+The corpus U(1)-assignment audit
+(`docs/audits/2026-06-02-u1-hypercharge-assignment.md`) found that of the three
+crossing→quantum-number maps, `writhe → Q` FAILS and `writhe → Y` is FALSIFIED,
+while **`writhe → I₃` survives** — but only as a *sign+ratio* map `2·I₃ = writhe`
+keyed on the **crossing sign**. It matched the nucleon doublet because `p` and
+`n` differ by the `σ ↔ σ⁻¹` (`u ↔ d`) crossing-sign flip: `w(p) = +1`,
+`w(n) = −1`, giving `I₃(p) = +½`, `I₃(n) = −½`.
+
+One might hope this surviving map, evaluated on the even-twist carriers, singles
+out the neutral `Z` slot. **It does not.** The carriers `T(2, 2k) = σ₁^{2k}` are
+*all-positive* torus links: writhe `n₊ − n₋ = 2k` with *no* negative crossings.
+So the surviving map assigns them a uniformly positive, strictly monotone
+`2·I₃ = 2k` — a magnitude / twist ladder (the exact analogue of the audit's
+`θ_j = q^{j(j+1)}` spin ladder: monotone, no sign change, no zero), **not** an
+additive sign charge. It is nonzero on *both* vector slots `σ₁⁴` (`k = 2`) and
+`σ₃⁶` (`k = 3`), so it produces no neutral slot and cannot furnish the
+`charged_at_4_xor_6` datum of an `EWVectorLabeling`. The reason is structural:
+`I₃`'s sign *is* the crossing sign, and the two same-sign vector carriers offer
+no crossing-sign flip for the map to act on — exactly the flip that produced the
+`p/n` split is absent among the all-positive even-twist links.
+
+Hence admitting the one surviving map **strengthens, rather than closes,**
+`which_slot_is_W_free`: the which-slot-is-`W` label remains free. What *would*
+force it is a genuinely *signed* crossing/linking → `T₃` invariant (a carrier
+realisation with a `σ ↔ σ⁻¹` asymmetry making one vector slot's net writhe zero),
+or the second independent baryon/color-trace charge the audit names — neither of
+which the framework supplies for the same-sign even-twist triple. -/
+
+/-- Writhe of the all-positive even-twist torus link `T(2, 2k)` = closure of the
+positive braid `σ₁^{2k}`: `2k` positive crossings, no negative crossings, so
+`w = n₊ − n₋ = 2k`. -/
+def evenTwistWrithe (k : ℕ) : ℤ := 2 * (k : ℤ)
+
+/-- Doubled isospin `2·I₃` assigned by the surviving audit map `writhe → I₃`
+(`2·I₃ = writhe`) to the even-twist carrier `T(2, 2k)`. Since the carrier is the
+all-positive braid `σ₁^{2k}` (writhe `2k`), this equals `2k`. -/
+def evenTwistDoubledI3 (k : ℕ) : ℤ := evenTwistWrithe k
+
+@[simp] theorem evenTwistDoubledI3_eq (k : ℕ) : evenTwistDoubledI3 k = 2 * (k : ℤ) := rfl
+
+/-- **The surviving `writhe → I₃` map assigns strictly positive isospin to every
+even-twist carrier.** In particular both vector slots `k = 2` (σ₁⁴) and `k = 3`
+(σ₃⁶) get `2·I₃ > 0` — neither is neutral. -/
+theorem evenTwist_doubledI3_pos {k : ℕ} (hk : 1 ≤ k) : 0 < evenTwistDoubledI3 k := by
+  simp only [evenTwistDoubledI3_eq]
+  have : (1 : ℤ) ≤ (k : ℤ) := by exact_mod_cast hk
+  linarith
+
+/-- **`writhe → I₃` is a monotone twist ladder, not a sign charge.** Across the
+carriers it strictly increases (`k = 2 ↦ 4 < k = 3 ↦ 6 < k = 4 ↦ 8`) with no sign
+change and no zero — the signature of a magnitude / spin ladder (audit §3), not
+of an additive charge. -/
+theorem evenTwist_doubledI3_strictMono :
+    evenTwistDoubledI3 2 < evenTwistDoubledI3 3 ∧
+    evenTwistDoubledI3 3 < evenTwistDoubledI3 4 := by
+  constructor <;> decide
+
+/-- **The surviving `writhe → I₃` map does NOT single out the neutral slot.**
+Evaluated on the two vector carriers it gives `2·I₃(σ₁⁴) = 4 ≠ 0` and
+`2·I₃(σ₃⁶) = 6 ≠ 0`: neither is neutral, so the map cannot supply the
+`charged_at_4_xor_6` datum of any `EWVectorLabeling` (which requires exactly one
+of the two slots to carry `t3 = 0`). Hence the one crossing→quantum-number map
+that survives the U(1)-assignment audit still leaves which-slot-is-`W` a **free
+label** — it strengthens, rather than closes, `which_slot_is_W_free`. -/
+theorem writheI3_does_not_select_neutral_slot :
+    evenTwistDoubledI3 2 ≠ 0 ∧ evenTwistDoubledI3 3 ≠ 0 ∧
+    ¬ ∃ L : EWVectorLabeling,
+        L.t3 4 = evenTwistDoubledI3 2 ∧ L.t3 6 = evenTwistDoubledI3 3 := by
+  refine ⟨by decide, by decide, ?_⟩
+  rintro ⟨L, h4, h6⟩
+  rcases L.charged_at_4_xor_6 with ⟨_, hc6⟩ | ⟨hc4, _⟩
+  · rw [hc6] at h6; norm_num [evenTwistDoubledI3_eq] at h6
+  · rw [hc4] at h4; norm_num [evenTwistDoubledI3_eq] at h4
+
 end QOU.ParticleInteractions
