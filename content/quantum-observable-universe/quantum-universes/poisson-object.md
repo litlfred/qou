@@ -4,6 +4,11 @@ Let $(\mathbf{C}, A, \tau)$ be a
 $\int_A \circ \mu \colon A \otimes A \to \mathbf{1}$ and
 [higher forms](#def:higher-forms) $\Omega^k(A)$.
 
+We now equip the quantum universe with an internal Poisson
+structure: a datum that endows $A$ with a bracket $\{-, -\}$, the
+categorical counterpart of the phase-space bracket of classical
+mechanics and the first-order datum of a deformation quantisation.
+
 An **internal Poisson object** on $A$ is a morphism
 
 $$
@@ -11,6 +16,11 @@ $$
 $$
 
 in $\mathbf{C}$ (a *bivector*), subject to the conditions below.
+Concretely, $\pi$ contracts a pair of differentials to a scalar,
+so that it defines the bracket
+$\{f, g\} := \langle \pi, df \wedge dg \rangle$ on points
+$f, g \colon \mathbf{1} \to A$; the remainder of this block makes
+the contraction $\langle \pi, {-} \rangle$ precise.
 
 **Construction via pullback.**
 The Frobenius self-duality $A \xrightarrow{ \sim } A^{\vee}$

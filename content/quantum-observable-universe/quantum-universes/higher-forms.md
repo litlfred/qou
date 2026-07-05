@@ -1,5 +1,8 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum universe with differential
-calculus $\Omega^1(A)$ ([quantum universe](#def:quantum-universe)). The
+calculus $\Omega^1(A)$ ([quantum universe](#def:quantum-universe)). To
+assemble a graded differential calculus — the setting in which curvature
+and de Rham cohomology are later defined — the first-order forms
+$\Omega^1(A)$ must be extended to forms of every degree. The
 **higher differential forms** are the graded $A$-bimodule
 
 $$
@@ -8,7 +11,9 @@ $$
 $$
 
 (exterior powers of the $A$-bimodule $\Omega^1(A)$ in $\mathbf{C}$),
-with $\Omega^0(A) = A$. For an object $V$ in $\mathbf{C}$,
+with $\Omega^0(A) = A$ and $\Omega^1(A)$ the first-order forms already in
+hand; the $\mathrm{SU}(2)$ instance is worked out in the
+[higher-forms example](#ex:higher-forms-su2). For an object $V$ in $\mathbf{C}$,
 $\Lambda^k V$ denotes the $k$-th exterior power of $V$ in the sense
 of rigid monoidal categories. The differential
 $d \colon \Omega^k(A) \to \Omega^{k+1}(A)$ extends the universal

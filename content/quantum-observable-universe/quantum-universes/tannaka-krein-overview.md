@@ -1,5 +1,8 @@
-The fibre functor $\tau$ of a quantum universe encodes an extraordinary
-amount of structure. Tannaka--Krein duality \cite{deligne1990} says:
+From the fibre functor $\tau$ of a quantum universe alone — with no
+group posited in advance — one recovers $\mathrm{SU}_q(2)$, with the
+deformation parameter $q$ fixed categorically. This concrete payoff is
+an instance of the structure encoded by $\tau$: Tannaka--Krein duality
+\cite{deligne1990} generalises it into four statements:
 
 1. **Reconstruction.** The group $G$ can be recovered from
    $\tau$ alone:

@@ -1,7 +1,10 @@
 The structure that makes $A$ self-dual and equips it with a
 categorical trace is a pairing $A \otimes A \to \mathbf{1}$ built from
 its multiplication and Frobenius form; we record it here before using
-it. Let $(\mathbf{C}, A, \tau)$ be a
+it. The motivating instance is the quantum-dimension pairing of
+$\mathbf{Rep}(\mathrm{SU}_q(2))$ (see
+[example](#ex:frobenius-pairing-su2)); the general definition abstracts
+it as follows. Let $(\mathbf{C}, A, \tau)$ be a
 [quantum universe](#def:quantum-universe) with multiplication
 $\mu \colon A \otimes A \to A$ and Frobenius form
 $\int_A \colon A \to \mathbf{1}$. The **Frobenius pairing** is the

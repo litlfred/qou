@@ -1,3 +1,13 @@
+A **quantum universe** is the purely categorical substrate from which
+the framework later reads off physics: its axioms are chosen so that,
+once observability and a volume constraint are imposed, they *force*
+$\mathrm{SU}_2(R)$ as the physical gauge group rather than assuming it.
+Before the axioms, it helps to have one instance in hand:
+$\mathbf{Rep}(\mathrm{SU}_q(2))$, the category of representations of the
+quantum group, is a rigid :refterm[braided monoidal category]{#braided-monoidal-category}
+carrying a Frobenius--Hopf object, and it is the guiding example
+throughout this chapter.
+
 This chapter introduces the **quantum universe** (QU): a rigid
 :refterm[braided monoidal category]{#braided-monoidal-category} equipped with a Frobenius--Hopf object,
 a fibre functor, and a differential calculus.  We begin with

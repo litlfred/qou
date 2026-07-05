@@ -46,7 +46,8 @@ natural isomorphism (the *braiding*)
 $c_{X,Y} \colon X \otimes Y \xrightarrow{\sim} Y \otimes X$
 compatible with the associator and satisfying the hexagon axioms.
 When $c_{Y,X} \circ c_{X,Y} = \mathrm{id}$ the braiding is
-*symmetric*; in general $c^2 \neq \mathrm{id}$.  Given a braiding,
+*symmetric* (as in $\mathbf{Vect}$); in general
+$c^2 \neq \mathrm{id}$ (as in $\mathbf{Rep}(\mathrm{SU}_q(2))$).  Given a braiding,
 the *exterior power* $\Lambda^k V$ is defined as the image of the
 antisymmetriser
 $\mathrm{Alt}_k = \sum_{\pi \in S_k} \mathrm{sgn}(\pi)\pi$ acting

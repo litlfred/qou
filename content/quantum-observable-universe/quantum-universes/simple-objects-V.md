@@ -1,8 +1,9 @@
-In any rigid :refterm[monoidal category]{#monoidal-category} $\mathbf{C}$ with a fibre functor
-$\tau \colon \mathbf{C} \to R\text{-}\mathrm{Mod}$, an object $X$ is
-*simple* if every monomorphism into $X$ is either zero or an isomorphism.
-The simple objects are the irreducible building blocks: every object of
+The simple objects are the irreducible building blocks of a rigid
+:refterm[monoidal category]{#monoidal-category} $\mathbf{C}$ with a fibre functor
+$\tau \colon \mathbf{C} \to R\text{-}\mathrm{Mod}$: every object of
 $\mathbf{C}$ admits a filtration whose successive quotients are simple.
+Concretely, an object $X$ is
+*simple* if every monomorphism into $X$ is either zero or an isomorphism.
 
 Because $\tau$ is faithful and exact, it reflects simplicity: $X$ is
 simple in $\mathbf{C}$ if and only if $\tau(X)$ is a simple module.

@@ -3,8 +3,11 @@ Before stating the formal definition, we pause to explain why a rigid
 quantum-geometric structure. Two independent lines of reasoning
 converge on the same conclusion.
 
-**Information-theoretic necessity.** Coecke and Kissinger
-\cite{coecke2017} demonstrate that the tensor product $\otimes$ is
+**Information-theoretic necessity.** Picture two subsystems placed
+side by side — a pair of qubits, or an apparatus alongside the system
+it measures. Coecke and Kissinger
+\cite{coecke2017} demonstrate that the tensor product $\otimes$ that
+joins them is
 not an algebraic convenience but the *grammar* of any physical system
 possessing inputs and outputs. The moment one demands a compositional
 language — where composite systems are described by combining
@@ -16,7 +19,9 @@ system of type $V$ can always be "bent around" to become an input of
 type $V^{\vee}$, which is precisely the content of the snake
 identities.
 
-**Physical reconstruction from superselection.** From an entirely
+**Physical reconstruction from superselection.** Take an electric
+charge and its conjugate anticharge — a sector and the sector that
+neutralizes it when the two are fused. From an entirely
 different direction, Haag's algebraic quantum field theory
 \cite{haag1996} arrives at the same structure through the analysis of
 superselection sectors. In the DHR (Doplicher--Haag--Roberts)
