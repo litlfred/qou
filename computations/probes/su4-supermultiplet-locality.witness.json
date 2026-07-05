@@ -1,0 +1,114 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-05T23:06:12.480898+00:00",
+  "commitSha": "265ccfaea93232c3682eda43c9fb1af67cd53352",
+  "assertions": [
+    {
+      "name": "gate_present_for_A_le_4",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "gate_vanishes_for_A_gt_4",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "measured_excess_peaks_at_A4",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "measured_excess_off_by_A6",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "su4-supermultiplet-locality",
+  "scriptFile": "su4_supermultiplet_locality_probe.py",
+  "scriptHash": "eeb9df7baf03",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Narrow A=4/A=6 probe: the proved SU(4) [1^A] supermultiplet gate (dim C(4,A), zero for A>4) predicts a connected term local to A≤4; the measured super-pairwise excess peaks at ⁴He (2.093×) and returns to ~pairwise by ⁶Li (0.944×) where C(4,6)=0 — a clean LOCALITY MATCH. Magnitude derivation is follow-on. audit-only, no fit.",
+  "tier": "structural (proved gate dims) + measured (committed ceiling witness)",
+  "result": {
+    "gate": "QOU.MassTheory.SU4SupermultipletGate (C(4,A)=0 ↔ A>4, sorry-free)",
+    "dim_C4A": {
+      "0": 1,
+      "1": 4,
+      "2": 6,
+      "3": 4,
+      "4": 1,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0
+    },
+    "per_atom": {
+      "D": {
+        "A": 2,
+        "ame_ratio_over_D": 1.0,
+        "best_pairwise_over_D": 1.0,
+        "super_pairwise": 1.0,
+        "dim_C4A": 6
+      },
+      "T": {
+        "A": 3,
+        "ame_ratio_over_D": 3.812787752757167,
+        "best_pairwise_over_D": 3.3312023249779146,
+        "super_pairwise": 1.1445680510511906,
+        "dim_C4A": 4
+      },
+      "3He": {
+        "A": 3,
+        "ame_ratio_over_D": 3.469460110421539,
+        "best_pairwise_over_D": 2.747410052742214,
+        "super_pairwise": 1.2628111726382598,
+        "dim_C4A": 4
+      },
+      "4He": {
+        "A": 4,
+        "ame_ratio_over_D": 12.719637448383192,
+        "best_pairwise_over_D": 6.078612377720129,
+        "super_pairwise": 2.0925232039806225,
+        "dim_C4A": 1
+      },
+      "6Li": {
+        "A": 6,
+        "ame_ratio_over_D": 14.382384698858116,
+        "best_pairwise_over_D": 15.235837133160386,
+        "super_pairwise": 0.9439838830749409,
+        "dim_C4A": 0
+      }
+    },
+    "super_pairwise_peaks_at_A4": true,
+    "super_pairwise_off_by_A6": true,
+    "verdict": "LOCALITY MATCH (scope-(a)): the measured super-pairwise excess peaks at the A=4 closed shell (2.093×, the unique [1^4] singlet) and returns to ~pairwise (0.944×) by ⁶Li where the gate gives C(4,6)=0. The missing ⁴He binding term is A=4-local exactly as the [1^4] supermultiplet requires. Not proportional to C(4,A) (which peaks at A=2) — it peaks at the maximally-bound α singlet. Magnitude (2.093× ↔ the [1^4] connected-operator value) is the multi-session follow-on; this is locality-consistency only."
+  },
+  "context": {
+    "axis": "GAP-A-4 class-D — A=4 interface operator (Δ_λ magnitude)",
+    "gate_lean": "qou:QOU.MassTheory.SU4SupermultipletGate",
+    "measured_source": "probes/interface-operator-pairwise-ceiling.witness.json",
+    "scoping": "docs/scope/2026-07-05-gap-a4-interface-operator-attack-scoping.md §3"
+  },
+  "auditOnly": true
+}
