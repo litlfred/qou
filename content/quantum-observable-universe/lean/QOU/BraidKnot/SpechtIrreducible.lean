@@ -14,9 +14,18 @@ It builds the `S_n`-invariant symmetric bilinear form `⟨f, g⟩ = Σ_d f d · 
 `M^μ` (tabloids orthonormal) **sorry-free**, builds the **column antisymmetrizer
 `κ_t`** and its structural theory **sorry-free** (§3.5), and thereby *proves*
 James's submodule theorem (`specht_submodule_dichotomy`, §4.5) sorry-free **modulo
-one** sharply-localised combinatorial core (`kap_of_mem_line`, the column-clash
-lemma).  `specht_isSimple` is then **sorry-free MODULO the two remaining cores**
-(`kap_of_mem_line` + `specht_form_nondegenerate`).
+one** sharply-localised combinatorial core (`noclash_match_exists`, the Gale–Ryser
+/ conjugate-partition matching — the *pure-combinatorial* residual of the
+column-clash lemma).  `specht_isSimple` is then **sorry-free MODULO the two
+remaining cores** (`noclash_match_exists` + `specht_form_nondegenerate`).
+
+The column-clash lemma `kap_of_mem_line` (`κ_t {s} ∈ span {e_t}`) is itself now
+**proved sorry-free modulo `noclash_match_exists`**: its two legs — the clash
+cancellation (`kap_of_mem_line_clash`, a sign-reversing involution ⇒ `κ_t{s} = 0`)
+and the no-clash reindexing (`kap_of_mem_line_match`, `{π₀•s} = {t}` for `π₀ ∈ C_t`
+⇒ `κ_t{s} = sgn(π₀)·e_t`) — are both sorry-free, so the *entire
+representation-theoretic content* of the lemma is discharged.  All that remains is
+the pure statement about tableau patterns `noclash_match_exists`.
 
 ## sorry-free ↔ stubbed map
 
@@ -28,15 +37,19 @@ lemma).  `specht_isSimple` is then **sorry-free MODULO the two remaining cores**
 | `kapL` (+ `_apply`, `_of`, `_of_self`, `_mem_U`, `_selfadjoint`) — the `κ_t` operator | **sorry-free** |
 | `bilinM_zsmul_left/right`, `bilinM_rep_swap`, `rep_mul_apply` | **sorry-free** |
 | `conjEquiv`, `sign_conj`, `polytabloid_rep_equivariant`, `tableau_transitive` | **sorry-free** |
-| `kapL_mem_line` (from the core) | **sorry-free MODULO `kap_of_mem_line`** |
-| `specht_submodule_dichotomy` (James §8) | **sorry-free MODULO `kap_of_mem_line`** (was: full stub) |
-| `kap_of_mem_line` (column-clash / sign-reversing-involution lemma) | **STUB** `sorry` — `-- Ref: [james1984representation]` §8 |
+| `mtab_of_congr`, `kap_of_mem_line_clash` (clash ⇒ `κ_t{s}=0`), `kap_of_mem_line_match` (no-clash ⇒ `±e_t`) | **sorry-free** |
+| `kap_of_mem_line` (column-clash lemma) | **sorry-free MODULO `noclash_match_exists`** (was: full stub) |
+| `kapL_mem_line` (from the core) | **sorry-free MODULO `noclash_match_exists`** |
+| `specht_submodule_dichotomy` (James §8) | **sorry-free MODULO `noclash_match_exists`** (was: full stub) |
+| `noclash_match_exists` (Gale–Ryser / conjugate-partition matching) | **STUB** `sorry` — `-- Ref: [sagan2001]` §2.4 |
 | `specht_form_nondegenerate` (char-0 Gram) | **STUB** `sorry` — `-- Ref: [sagan2001]` §2.4 |
 | `specht_isSimple` (the reduction) | **sorry-free MODULO the two remaining cores** |
 
 `#print axioms` confirms `sorryAx` enters `specht_isSimple` *only* through the two
-remaining cores (`kap_of_mem_line`, `specht_form_nondegenerate`); the entire
-invariant-form + `κ_t` layer is `[propext, Classical.choice, Quot.sound]`.
+remaining cores (`noclash_match_exists`, `specht_form_nondegenerate`); the entire
+invariant-form + `κ_t` layer — including both legs of the column-clash lemma
+(`kap_of_mem_line_clash`, `kap_of_mem_line_match`) — is
+`[propext, Classical.choice, Quot.sound]`.
 
 The form and `κ_t` live over a generic `[CommRing k]` (§7c clean — no `ℝ`, no
 ordering, no `Real.*`); only `specht_submodule_dichotomy` and the final theorems
@@ -300,10 +313,139 @@ theorem tableau_transitive {μ : YoungDiagram} (s t' : Tableau μ) :
 
 /-! ## 4. The remaining deep cores (stated, `sorry` + `-- Ref:`)
 
-Thanks to §3.5, James's submodule theorem is now reduced (§4.5) to the **single**
-combinatorial core `kap_of_mem_line` (the column-clash lemma).  Non-degeneracy of
-the form on `S^μ` (`specht_form_nondegenerate`) remains a genuinely separate
-char-0 obstruction (the James–Specht Gram determinant), unchanged by this pass. -/
+Thanks to §3.5 **and** the two legs of the column-clash lemma below (`_clash`,
+`_match`, both sorry-free), James's submodule theorem is now reduced (§4.5) to the
+**single** *pure-combinatorial* core `noclash_match_exists` (the Gale–Ryser /
+conjugate-partition matching).  Non-degeneracy of the form on `S^μ`
+(`specht_form_nondegenerate`) remains a genuinely separate char-0 obstruction (the
+James–Specht Gram determinant), unchanged by this pass. -/
+
+/-- `Mtab.of` depends only on the tabloid class: row-equivalent tableaux give the
+same basis vector. -/
+theorem mtab_of_congr {μ : YoungDiagram} {s₁ s₂ : Tableau μ}
+    (h : Tabloid.mk s₁ = Tabloid.mk s₂) :
+    Mtab.of (k := k) s₁ = Mtab.of (k := k) s₂ := by
+  unfold Mtab.of; rw [h]
+
+/-- **Clash leg of the column-clash lemma (sorry-free).**  If two *distinct*
+labels `a ≠ b` lie in a common column of `t` (`colPattern t a = colPattern t b`)
+and a common row of `s` (`rowPattern s a = rowPattern s b`), then `κ_t {s} = 0`:
+the transposition `τ = (a b)` is a sign-reversing involution of the `C_t`-sum
+fixing every tabloid `{π • s}`, so the sum cancels in pairs. -/
+theorem kap_of_mem_line_clash (μ : YoungDiagram) (t s : Tableau μ)
+    (a b : Fin (nOf μ)) (hab : a ≠ b)
+    (hcol : colPattern t a = colPattern t b)
+    (hrow : rowPattern s a = rowPattern s b) :
+    kapL (k := k) μ t (Mtab.of s) ∈ Submodule.span k {polytabloid (k := k) t} := by
+  classical
+  set τ : Equiv.Perm (Fin (nOf μ)) := Equiv.swap a b with hτ
+  -- `τ` stabilizes the column pattern of `t`.
+  have hτcol : τ ∈ colStab t := by
+    rw [mem_colStab]
+    funext l
+    show colPattern t (τ.symm l) = colPattern t l
+    rw [hτ, Equiv.symm_swap]
+    rcases eq_or_ne l a with rfl | hla
+    · rw [Equiv.swap_apply_left]; exact hcol.symm
+    · rcases eq_or_ne l b with rfl | hlb
+      · rw [Equiv.swap_apply_right]; exact hcol
+      · rw [Equiv.swap_apply_of_ne_of_ne hla hlb]
+  -- `τ` fixes the tabloid `{s}` (it stabilizes the row pattern of `s`).
+  have hτrow : Tabloid.mk (τ • s) = Tabloid.mk s := by
+    rw [Tabloid.mk, Tabloid.mk, Quotient.eq, rowEquiv_iff]
+    funext l
+    show rowPattern (τ • s) l = rowPattern s l
+    rw [rowPattern_smul]
+    show rowPattern s (τ.symm l) = rowPattern s l
+    rw [hτ, Equiv.symm_swap]
+    rcases eq_or_ne l a with rfl | hla
+    · rw [Equiv.swap_apply_left]; exact hrow.symm
+    · rcases eq_or_ne l b with rfl | hlb
+      · rw [Equiv.swap_apply_right]; exact hrow
+      · rw [Equiv.swap_apply_of_ne_of_ne hla hlb]
+  rw [kapL_of]
+  have hzero : (∑ π : colStab t, (Equiv.Perm.sign (π : Equiv.Perm (Fin (nOf μ))) : ℤ) •
+      Mtab.of (k := k) ((π : Equiv.Perm (Fin (nOf μ))) • s)) = 0 := by
+    refine Finset.sum_involution (fun π _ => π * ⟨τ, hτcol⟩) ?_ ?_ ?_ ?_
+    · intro π _
+      have hsgn : (Equiv.Perm.sign (((π * ⟨τ, hτcol⟩ : colStab t) :
+              Equiv.Perm (Fin (nOf μ)))) : ℤ)
+          = - (Equiv.Perm.sign (π : Equiv.Perm (Fin (nOf μ))) : ℤ) := by
+        show (Equiv.Perm.sign ((π : Equiv.Perm (Fin (nOf μ))) * τ) : ℤ) = _
+        rw [Equiv.Perm.sign_mul, hτ, Equiv.Perm.sign_swap hab]
+        push_cast; ring
+      have hof : Mtab.of (k := k)
+            (((π * ⟨τ, hτcol⟩ : colStab t) : Equiv.Perm (Fin (nOf μ))) • s)
+          = Mtab.of (k := k) ((π : Equiv.Perm (Fin (nOf μ))) • s) := by
+        apply mtab_of_congr
+        show Tabloid.mk (((π : Equiv.Perm (Fin (nOf μ))) * τ) • s) = _
+        rw [mul_smul, ← Tabloid.smul_mk, hτrow, Tabloid.smul_mk]
+      rw [hsgn, hof, neg_smul]; abel
+    · intro π _ _ hcontra
+      have hx1 : (⟨τ, hτcol⟩ : colStab t) = 1 :=
+        mul_left_cancel (a := π) (by rw [mul_one]; exact hcontra)
+      have hτ1 : τ = 1 := by
+        have := congrArg (Subtype.val) hx1; simpa using this
+      rw [hτ] at hτ1
+      exact hab (Equiv.swap_eq_one_iff.1 hτ1)
+    · intro π _; exact Finset.mem_univ _
+    · intro π _
+      show (π * ⟨τ, hτcol⟩) * ⟨τ, hτcol⟩ = π
+      rw [mul_assoc,
+        show (⟨τ, hτcol⟩ : colStab t) * ⟨τ, hτcol⟩ = 1 from by
+          apply Subtype.ext; show τ * τ = 1; rw [hτ, Equiv.swap_mul_self],
+        mul_one]
+  rw [hzero]; exact Submodule.zero_mem _
+
+/-- **No-clash matching leg (sorry-free).**  If some `π₀ ∈ C_t` carries the
+tabloid `{s}` onto `{t}` (`{π₀ • s} = {t}`), then `κ_t {s} = sgn(π₀) · e_t`, hence
+lies in `span {e_t}`.  Proved by reindexing the `C_t`-sum through right
+multiplication by `π₀` (a bijection of `C_t`) and using that `{ρ • (π₀ • s)} =
+{ρ • t}` for every `ρ`. -/
+theorem kap_of_mem_line_match (μ : YoungDiagram) (t s : Tableau μ)
+    (π₀ : Equiv.Perm (Fin (nOf μ))) (hπ₀ : π₀ ∈ colStab t)
+    (hmk : Tabloid.mk (π₀ • s) = Tabloid.mk t) :
+    kapL (k := k) μ t (Mtab.of s) ∈ Submodule.span k {polytabloid (k := k) t} := by
+  classical
+  rw [kapL_of]
+  have hrel : ∀ ρ : Equiv.Perm (Fin (nOf μ)),
+      Mtab.of (k := k) ((ρ * π₀) • s) = Mtab.of (k := k) (ρ • t) := by
+    intro ρ
+    apply mtab_of_congr
+    rw [mul_smul, ← Tabloid.smul_mk, hmk, Tabloid.smul_mk]
+  have key : (∑ π : colStab t, (Equiv.Perm.sign (π : Equiv.Perm (Fin (nOf μ))) : ℤ) •
+        Mtab.of (k := k) ((π : Equiv.Perm (Fin (nOf μ))) • s))
+      = (Equiv.Perm.sign π₀ : ℤ) • polytabloid (k := k) t := by
+    rw [← Equiv.sum_comp (Equiv.mulRight (⟨π₀, hπ₀⟩ : colStab t))
+        (fun π : colStab t => (Equiv.Perm.sign (π : Equiv.Perm (Fin (nOf μ))) : ℤ) •
+          Mtab.of (k := k) ((π : Equiv.Perm (Fin (nOf μ))) • s))]
+    rw [polytabloid, Finset.smul_sum]
+    apply Finset.sum_congr rfl
+    intro ρ _
+    simp only [Equiv.coe_mulRight, Subgroup.coe_mul]
+    rw [hrel (ρ : Equiv.Perm (Fin (nOf μ))), Equiv.Perm.sign_mul]
+    push_cast
+    rw [smul_smul, mul_comm]
+  rw [key]
+  exact zsmul_mem (Submodule.mem_span_singleton_self _) _
+
+/-- **Core 1′ — the residual pure-combinatorial matching (no module theory).**
+If no column of `t` shares two labels with a common row of `s` (the *no-clash*
+hypothesis), then some column permutation `π₀ ∈ C_t` carries the tabloid `{s}`
+onto `{t}`.  This is the Gale–Ryser / conjugate-partition matching fact
+([sagan2001] §2.4, Lemma 2.4.4; [james1984representation] §8): the labels of each
+column of `t` occupy, under `s`, exactly the rows `{0, …, h_c − 1}` — the unique
+`0/1` matrix with the conjugate-partition margins is the Young diagram itself.
+It is the sole remaining combinatorial obligation of `kap_of_mem_line`; the clash
+leg and the reindexing leg above are both `sorry`-free. -/
+theorem noclash_match_exists {μ : YoungDiagram} (t s : Tableau μ)
+    (hnoclash : ∀ a b : Fin (nOf μ),
+      colPattern t a = colPattern t b → rowPattern s a = rowPattern s b → a = b) :
+    ∃ π₀ ∈ colStab t, Tabloid.mk (π₀ • s) = Tabloid.mk t := by
+  -- Ref: [sagan2001] §2.4 (Lemma 2.4.4) / [james1984representation] §8
+  -- (the conjugate-partition / Gale–Ryser matching: no column-of-`t`/row-of-`s`
+  -- clash ⇒ a column permutation of `t` carries `{s}` to `{t}`).
+  sorry
 
 /-- **Core 1 — the column-clash lemma (`κ_t` lands in the polytabloid line).**
 For any tableaux `t, s`, the column-antisymmetrised basis vector
@@ -312,23 +454,39 @@ For any tableaux `t, s`, the column-antisymmetrised basis vector
 heart of James's submodule theorem ([james1984representation] §8; [sagan2001]
 §2.4, the "sign-reversing involution" lemma).  **Two cases:**
 
-* *Column clash* — if two labels lie in a common column of `t` and a common row
-  of `s`, the transposition of those labels is a sign-reversing involution of the
-  `C_t`-sum fixing every tabloid `{π•s}`, so `κ_t {s} = 0 ∈ span{e_t}`.
-* *No clash* — the labels in each column of `t` occupy distinct `s`-rows, so a
-  unique `π₀ ∈ C_t` (up to `R_t`) row-matches `s` to `t`, giving `κ_t {s} = ±e_t`.
+* *Column clash* (`kap_of_mem_line_clash`, **sorry-free**) — if two labels lie in a
+  common column of `t` and a common row of `s`, the transposition of those labels
+  is a sign-reversing involution of the `C_t`-sum fixing every tabloid `{π•s}`, so
+  `κ_t {s} = 0 ∈ span{e_t}`.
+* *No clash* (`kap_of_mem_line_match`, **sorry-free**, applied to `π₀` from
+  `noclash_match_exists`) — the labels in each column of `t` occupy distinct
+  `s`-rows, so some `π₀ ∈ C_t` row-matches `s` to `t` (`{π₀•s} = {t}`), giving
+  `κ_t {s} = sgn(π₀)·e_t`.
 
-Everything downstream — `kapL_mem_line`, and hence `specht_submodule_dichotomy`
-(§4.5) — is sorry-free **modulo this one lemma**.  It replaces the former opaque
-`specht_submodule_dichotomy` stub with a single, sharply-localised combinatorial
-obligation (mirroring how `SpechtDominanceCore` reduced brick 4's dominance
-content to `dominance_relation_exists`). -/
+This lemma is thus **proved sorry-free modulo the single pure-combinatorial core
+`noclash_match_exists`** (the existence of the matching `π₀` in the no-clash case);
+both legs are discharged.  Everything downstream — `kapL_mem_line`, and hence
+`specht_submodule_dichotomy` (§4.5) — is sorry-free modulo that same one core,
+which replaces the former opaque `specht_submodule_dichotomy` stub with a single,
+sharply-localised combinatorial obligation (mirroring how `SpechtDominanceCore`
+reduced brick 4's dominance content to `dominance_relation_exists`). -/
 theorem kap_of_mem_line (μ : YoungDiagram) (t s : Tableau μ) :
     kapL (k := k) μ t (Mtab.of s) ∈ Submodule.span k {polytabloid (k := k) t} := by
-  -- Ref: [james1984representation] §8 / [sagan2001] §2.4 (the column-clash /
-  -- sign-reversing-involution lemma: κ_t{s} is an integer multiple of e_t;
-  -- clash ⇒ 0, no-clash ⇒ ±e_t).  The single remaining combinatorial core.
-  sorry
+  classical
+  by_cases hcl : ∃ a b : Fin (nOf μ), a ≠ b ∧
+      colPattern t a = colPattern t b ∧ rowPattern s a = rowPattern s b
+  · -- column clash: `κ_t {s} = 0` (sign-reversing involution)
+    obtain ⟨a, b, hab, hcol, hrow⟩ := hcl
+    exact kap_of_mem_line_clash μ t s a b hab hcol hrow
+  · -- no clash: match `{s}` to `{t}` via a column permutation, then `κ_t{s} = ±e_t`
+    push_neg at hcl
+    have hnoclash : ∀ a b : Fin (nOf μ),
+        colPattern t a = colPattern t b → rowPattern s a = rowPattern s b → a = b := by
+      intro a b hc hr
+      by_contra hne
+      exact hcl a b hne hc hr
+    obtain ⟨π₀, hπ₀c, hmk⟩ := noclash_match_exists t s hnoclash
+    exact kap_of_mem_line_match μ t s π₀ hπ₀c hmk
 
 /-- `κ_t` lands in the polytabloid line for **every** input — sorry-free from the
 core `kap_of_mem_line`, by `Finsupp` linearity over the tabloid basis
