@@ -24,16 +24,12 @@ with 10 crossings all of the same sign.
 **The two components are the $\pi$ electrons.**
 Since $\gcd(2,6) = 2$, the threading link $T(2,6)$ has
 **two components**, each an unknotted loop winding 3 times
-through the hexagon.  These two components are the two
-delocalised $\pi$ electrons of benzene.
-
-Each component passes through all 6 carbons, threading one
-electron through the entire ring.  The two components are
-linked with linking number 3 — they cannot be separated without
-cutting through 3 crossings.  This is why benzene's $\pi$
-electrons are delocalised: they are not localised to individual
-bonds but are topologically constrained to thread the entire
-ring.
+through all 6 carbons of the hexagon.  These two components are
+the two delocalised $\pi$ electrons of benzene, linked with
+linking number 3 — they cannot be separated without cutting
+through 3 crossings.  Delocalisation is therefore topological:
+the $\pi$ electrons are not localised to individual bonds but
+are constrained to thread the entire ring.
 
 **Alexander polynomial.**
 

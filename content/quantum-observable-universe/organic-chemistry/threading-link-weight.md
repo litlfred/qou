@@ -1,5 +1,7 @@
 **Key identity.**
-For $T(2,6)$:
+The threading link's Alexander weight is what sets the ring-closure
+barrier, so the payoff of this section is its relation to the Hopf
+link energy quantum $|q + q^{-1}|$.  For $T(2,6)$:
 
 $$
   \Delta_{T(2,6)}(q)
@@ -16,8 +18,9 @@ threading link "knows" about the Hopf link, but carries strictly
 less weight.
 
 **Contrast with pairwise Hopf links.**
-The pairwise picture bonds $N$ atoms with $N$ separate Hopf
-links, giving total Alexander weight $N \cdot \Delta_{T(2,2)}(q) = N$.  The threading link replaces all $N$ bonds with a single
+Take the $T(2,6)$ ring above, so $N = 6$ atoms and $m = 3$ (hence
+$2m = 6 = N$).  The pairwise picture bonds $N$ atoms with $N$ separate
+Hopf links, giving total Alexander weight $N \cdot \Delta_{T(2,2)}(q) = N$.  The threading link replaces all $N$ bonds with a single
 invariant:
 
 $$
