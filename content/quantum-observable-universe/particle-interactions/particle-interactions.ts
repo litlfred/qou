@@ -381,6 +381,7 @@ export default chapter({
       title: "Electroweak and Higgs sector as an even-twist torus-link triplet",
       label: "sec:electroweak-higgs-torus-link-triplet",
       blocks: [
+        "electroweak-triplet-bring-embedding",
         "electroweak-higgs-torus-link-triplet",
         "electroweak-higgs-torus-link-triplet-table1-data",
         "electroweak-higgs-torus-link-triplet-table2-data",
