@@ -18,6 +18,7 @@ export default conjecture({
     "conj:n-v-bring-action",
     "def:hecke-normal-form",
     "rem:hecke-algebra-from-braiding",
+    "def:coulomb-charge",
   ],
   authorNotes: [
     {
@@ -44,19 +45,35 @@ export default conjecture({
       kind: "note",
       date: "2026-07-05",
       body:
-        "OWNER RULING (2026-07-05) — σ₅⁸ = B vs H tension RESOLVED via the " +
-        "spin-involution A± bar-grading (def:spin-involution). The slot σ₅⁸ " +
-        "(= T(2,8)) carries BOTH gauge bosons, bar-graded: the Higgs BOSON " +
-        "H = the A+ (bar-even, scalar) part (mass-consistent with the EW " +
-        "scale), and B (the U(1)_Y hypercharge gauge boson) = the A- " +
-        "(bar-odd, vector) part. weinberg-angle-categorical reads the A- (B) " +
-        "part; this block reads the A+ (H) part — no contradiction, they are " +
-        "the two σ-eigen-sectors of one slot. Separately: 4₁ (the figure-eight, " +
-        "self-dual real-volume knot of self-dual-higgs-real-volume) is the " +
-        "Higgs MASS MECHANISM / muon scale (m_μ/m_e = Vol(4₁)/ℏ_q²), NOT the " +
-        "125-GeV Higgs boson — the word 'Higgs' there means the mechanism, " +
-        "distinct from the EW-slot boson H = T(2,8) = A+ of σ₅⁸. Uses the " +
-        "A± grading proved in thm:ew-triplet-charge-spin-from-involution.",
+        "σ₅⁸ = B vs H bar-grading is now DERIVED-FROM-SPIN, not merely stated " +
+        "(Task 2, 2026-07-05). The slot σ₅⁸ (= T(2,8)) carries BOTH gauge " +
+        "bosons, bar-graded: Higgs BOSON H = A+ (bar-even, scalar), B (U(1)_Y " +
+        "hypercharge) = A- (bar-odd, vector). Formerly an owner ruling, this is " +
+        "now the sorry-free `ew_sigma5_bargrade_forced` in " +
+        "thm:ew-triplet-charge-spin-from-involution: the sector→spin map is " +
+        "injective and inverts (spin ⇒ sector), so H scalar (spin 0) ⇒ A+ and " +
+        "B vector (spin 1) ⇒ A- are FORCED. Residual postulate: only that both " +
+        "inhabit the one σ₅⁸ slot. weinberg-angle-categorical (reads A- = B) and " +
+        "this block (reads A+ = H) agree by derivation. 4₁ in " +
+        "self-dual-higgs-real-volume is the Higgs MASS MECHANISM (muon scale " +
+        "m_μ/m_e = Vol(4₁)/ℏ_q²), NOT the 125-GeV boson H = T(2,8) = A+.",
+    },
+    {
+      kind: "note",
+      date: "2026-07-05",
+      body:
+        "Task 1 (which-slot-is-W) HONEST — W = σ₁⁴ is a FREE LABEL, not forced. " +
+        "Corpus has no crossing→charge principle that selects the neutral slot: " +
+        "def:coulomb-charge Q = ½·writhe on σ₁^{2k} gives Q = k > 0 for all " +
+        "three carriers (makes W,Z,H all charged); writhe→Y falsified " +
+        "(2026-06-02-u1-hypercharge-assignment.md; only writhe→I₃ survives). " +
+        "Proved sorry-free: which_slot_is_W_free (two labelings W=σ₁⁴ and " +
+        "mirror W=σ₃⁶ both admissible). The crossing→isospin label is now an " +
+        "explicit content-bearing free-label field `t3Label` on EWSectorAssignment " +
+        "(w_charged: t3Label 2 = 1 is the paper's choice; z_neutral, higgs_neutral). " +
+        "Paper's W=σ₁⁴ rests only on mass ordering 4<6<8 (necessary, not " +
+        "sufficient). Forcing it needs a genuine crossing/linking→T₃ map the " +
+        "framework does not yet supply.",
     },
   ],
   computation: {
