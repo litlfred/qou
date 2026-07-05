@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-05T02:49:39.693888+00:00",
-  "commitSha": "a3538cecf2d6702c28ffc1d9c95dc57cd03bff08",
+  "computedAt": "2026-07-05T03:47:29.523842+00:00",
+  "commitSha": "d1ee2b36477da5bcc8dde0a5c3a81eee3d5ddc59",
   "assertions": [
     {
       "name": "exact_transfer_matches_dense_gram",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 179917,
   "computation": "gram-transfer-quadratic",
   "scriptFile": "gram_transfer_quadratic.py",
-  "scriptHash": "8938a7e28f89",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "5daab95096b0",
+  "scriptCommitSha": "d1ee2b36477da5bcc8dde0a5c3a81eee3d5ddc59",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,7 +41,7 @@
     "scipy": "1.17.1",
     "mpmath": "1.4.1"
   },
-  "description": "EXACT d_λ-free doubled-Bratteli transfer for the quadratic Markov/Frobenius Gram norm G(W)=tr_M(W·W^♯)=Σ y_λ‖ρ_λ(W)‖_F²; drop-in exact replacement for the float64 dense gram_norm_binding_probe, clearing the n=12 dense wall (reaches n=15). Exploratory, no fit.",
+  "description": "EXACT d_λ-free doubled-Bratteli transfer for the quadratic Markov/Frobenius Gram norm G(W)=tr_M(W·W^♯)=Σ y_λ‖ρ_λ(W)‖_F²; drop-in exact replacement for the float64 dense gram_norm_binding_probe, clearing the n=12 dense wall (this run: max_n_reached=12; n=15 optional via --with-5he). Exploratory, no fit.",
   "auditOnly": "docs/audits/2026-07-03-qbar-norm-repitch-assessment.md",
   "parameters": {
     "q0": "1.1099785827513808075916690956107688798744991218736",
@@ -864,7 +864,7 @@
           ],
           "dense_wall_sec": 0.16
         },
-        "wall_sec": 0.022
+        "wall_sec": 0.025
       },
       {
         "iso": "3He",
@@ -1454,9 +1454,9 @@
             1,
             1
           ],
-          "dense_wall_sec": 0.16
+          "dense_wall_sec": 0.14
         },
-        "wall_sec": 0.022
+        "wall_sec": 0.024
       },
       {
         "iso": "4He",
@@ -3061,9 +3061,9 @@
             1,
             1
           ],
-          "dense_wall_sec": 182.83
+          "dense_wall_sec": 179.0
         },
-        "wall_sec": 0.08
+        "wall_sec": 0.09
       }
     ],
     "dense_validated_n": [
