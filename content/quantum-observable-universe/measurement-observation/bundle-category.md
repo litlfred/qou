@@ -29,6 +29,6 @@ $(\mathbb{R}_{\geq 0}, +)$ — viewed as a one-object category — into the
 endofunctor category $\mathrm{End}(\mathrm{Bun}(\mathbb{P}(V)))$.
 
 The reference configuration $\mathcal{S}_0$ sits at $t = 0$; the physics
-is the trajectory $t \mapsto E_t$ in $\mathrm{Bun}(\mathbb{P}(V))$.  The
+is the trajectory $t \mapsto \mathcal{S}_t$ in $\mathrm{Bun}(\mathbb{P}(V))$.  The
 braid-group action on fibres ([Chapter 3](#chap:path-integrals-braiding)) then encodes the interactions
 that occur when two knots approach within Planck-scale separation.

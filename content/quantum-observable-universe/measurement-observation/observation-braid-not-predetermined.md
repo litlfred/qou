@@ -20,7 +20,7 @@ the universe is the interleaving of two sources:
 Concretely: suppose the flow alone winds three colour
 fibres into the partial word $\sigma_1\sigma_2$, leaving
 the first and third strands unlinked.  An observer
-measuring that pair injects a single adjoint crossing
+measuring that pair injects a single inverse crossing
 $\sigma_1^{-1}$, completing the word to
 $\sigma_1\sigma_2\sigma_1^{-1}$ — a finite braid, and
 hence a computable section, that no autonomous
