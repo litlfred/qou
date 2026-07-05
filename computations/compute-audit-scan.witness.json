@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-04T18:52:38.669974+00:00",
-  "commitSha": "529dd8b6565d297ee7ed6a48709d77ef9eac4a79",
+  "computedAt": "2026-07-05T11:58:35.356880+00:00",
+  "commitSha": "f0bd64231d2c0c836ce6736758f818afec48b29a",
   "assertions": [],
   "allPassed": true,
   "durationMs": 10,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "8a602c238718",
-  "scriptCommitSha": "7b25fc605812dc42f9214aa1b5aa6e52a49abf78",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,13 +19,14 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
   "description": "Static scan of computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 1032,
+    "files_scanned": 1034,
     "patterns": [
       "P15",
       "P16",
@@ -38,7 +39,7 @@
     "by_pattern_count": {
       "P15": 157,
       "P16": 341,
-      "P21": 24,
+      "P21": 25,
       "P30": 144,
       "P31": 26
     },
@@ -179,21 +180,21 @@
       {
         "pattern": "P15",
         "file": "aj_borromean_colored_jones_tower.py",
-        "line": 227,
+        "line": 251,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "aj_borromean_colored_jones_tower.py",
-        "line": 341,
+        "line": 386,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "aj_borromean_colored_jones_tower.py",
-        "line": 371,
+        "line": 416,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
@@ -2321,6 +2322,13 @@
       {
         "pattern": "P21",
         "file": "gram_matrix_seminormal_n.py",
+        "line": 1,
+        "snippet": "Hoefsmit construction without BlockCache",
+        "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
+      },
+      {
+        "pattern": "P21",
+        "file": "gram_transfer_quadratic.py",
         "line": 1,
         "snippet": "Hoefsmit construction without BlockCache",
         "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
