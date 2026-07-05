@@ -9,8 +9,10 @@ import Mathlib.Tactic
 Formalises the manuscript **definition** of the Skein resolution obstruction
 `κ_c^comp(L,q)` — the image of the universal obstruction class
 `χ(A) ∈ HH² ≅ k` under the resolution-tree restriction map (the fourth
-evaluation of `χ(A)`; cf. `thm:qou-obstruction-reduction`). Generic over the
-coefficient ring (§7c-clean).
+evaluation of `χ(A)`; cf. `thm:qou-obstruction-reduction`). Kept generic over
+the coefficient ring, matching the block's `authorNote` that the "underlying
+combinatorial content stays generic to any commutative ring" (§7c: no
+archimedean construct is used, so no `ℝ` specialisation is needed).
 -/
 
 namespace QOU

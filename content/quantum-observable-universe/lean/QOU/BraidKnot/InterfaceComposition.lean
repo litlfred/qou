@@ -4,7 +4,7 @@ import Mathlib.Tactic
 # QOU.BraidKnot.InterfaceComposition
 
 **Canonical declaration** for content block at
-[`quantum-observable-universe/mass-theory/canonical-braid-interface-composition-table3-data.ts`](quantum-observable-universe/mass-theory/canonical-braid-interface-composition-table3-data.ts).
+[`quantum-observable-universe/mass-theory/canonical-braid-interface-composition.ts`](quantum-observable-universe/mass-theory/canonical-braid-interface-composition.ts).
 
 Formalises the manuscript interface-composition table: the `pp`/`pn`/`nn`
 adjacent-interface counts for the three nucleon orderings — canonical
@@ -58,7 +58,7 @@ theorem alternating_profile_ne_canonical :
 
 end InterfaceComposition
 
--- Ref: [manuscript] quantum-observable-universe/mass-theory/canonical-braid-interface-composition-table3-data.ts
+-- Ref: [manuscript] quantum-observable-universe/mass-theory/canonical-braid-interface-composition.ts
 
 /-- Placeholder carrier retained so the `lean.ref` URI
     `qou:QOU.BraidKnot.InterfaceComposition` resolves; the tabulated content
