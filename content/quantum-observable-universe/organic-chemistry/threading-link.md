@@ -38,6 +38,11 @@ through all $N$ atoms.  These two components are the topological
 realisation of the two delocalised $\pi$ electrons.
 
 **Alexander polynomial.**
+To read off how the winding structure distinguishes threading
+links of different ring sizes, we record the Alexander polynomial
+of $T(2,N)$ — the standard topological invariant of the link — and
+evaluate it at the substrate parameter, where the resulting
+$q$-symmetric Laurent polynomial tracks the winding count $m = N/2$.
 The Alexander polynomial of $T(2,N)$ for even $N = 2m$ is
 
 $$

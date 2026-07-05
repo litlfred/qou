@@ -1,6 +1,8 @@
-The threading link picture makes a quantitative prediction —
-with **no free parameters** — that can be compared to
-experimental data.
+The pairwise Hopf-link estimate of the cyclisation barrier
+overshot by a factor of two; the threading-link picture halves it
+exactly, with **no free parameters**, giving a quantitative
+prediction that can be compared to experimental data. The halving
+follows from the derivation chain below.
 
 **Derivation chain.**
 Every quantity is determined by the Bring's surface geometry:
@@ -43,7 +45,7 @@ consequence of replacing $N$ separate Hopf links with the
 single threading invariant $T(2,N)$.
 
 **Predictions for other even-$N$ rings.**
-The same framework, with no additional parameters, predicts
+The same framework predicts
 barriers for even-$N$ cyclic molecules (where $T(2,N)$ is a
 2-component link and the Alexander formula
 $\Delta_{T(2,2m)}(q) = (q^m - q^{-m})/(q - q^{-1})$ applies):
@@ -58,9 +60,6 @@ requires separate treatment.
 The barrier increases with $N$ (more pairwise links to dissolve
 and replace), but the threading efficiency ratio
 $\Delta_{T(2,N)}(1) / N = 1/2$ is constant for all even $N$.
-The prediction that larger rings have higher cyclisation barriers
-is consistent with the experimental observation that macrocyclic
-ring closure becomes progressively harder.
 
 **Experimental data.**
 

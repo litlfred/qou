@@ -18,8 +18,11 @@ $$
   \mathcal{T}_N,
 $$
 
-where $\mathcal{T}_N = T(2, N)$ is the threading link — a single
-torus link that passes through all $N$ atoms.  The threading
+where $[\mathcal{A}_1, \ldots, \mathcal{A}_N]$ denotes the $N$
+atoms held in their fixed cyclic arrangement, and $\oplus$
+superposes that arrangement with the single threading link
+$\mathcal{T}_N = T(2, N)$ — a single torus link that passes
+through all $N$ atoms.  The threading
 link's braid word in $B_N$ is
 
 $$

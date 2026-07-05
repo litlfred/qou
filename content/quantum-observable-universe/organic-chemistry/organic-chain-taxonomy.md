@@ -15,11 +15,13 @@ backbone, and whether the chain is **open or closed**.
 | Polyyne (carbyne) | $(1, 3, 1, 3, \ldots)$ | 0 (interior) | 2 |
 
 **Saturation as linking-site occupancy.**
-An alkane uses only single bonds ($k = 1$), leaving the maximum
-number of free linking sites for hydrogen.  Each additional unit
-of bond order ($k \to k + 1$) at one position consumes one free
-site per adjacent carbon, reducing the hydrogen capacity by 2.
-In the Hopf chain picture:
+The hydrogen capacities tabulated above follow from one rule:
+raising the bond order at a single position by one unit
+($k \to k + 1$) consumes one free linking site on each adjacent
+carbon, so it costs two hydrogens.  Saturation is therefore the
+extreme case in which every backbone bond is single and hydrogen
+occupies the maximum number of free sites.  In the Hopf chain
+picture:
 
 - **Saturated** = all backbone bonds are single Hopf links;
   maximum hydrogen attachment.
@@ -27,6 +29,9 @@ In the Hopf chain picture:
   Hopf links; reduced hydrogen attachment.
 
 **Open vs. closed (chain vs. ring).**
+The second parameter — whether the backbone closes into a ring —
+shifts the hydrogen count by a fixed offset and, together with the
+degree of unsaturation, fixes the molecular formula:
 
 | Topology | Backbone bonds | Hydrogen formula | Naming |
 |----------|:-:|---|---|
@@ -41,8 +46,11 @@ A closed ring with $d = N/2$ (one extra Hopf link per two
 edges — bond order $3/2$ on average) is the aromatic case
 ([benzene](#ex:benzene-ring)).  The secondary Hopf ring formed
 by the extra trefoils is closed, producing the resonance
-stabilisation.  Hückel's rule ($4n + 2$ $\pi$ electrons for
-aromaticity) should correspond to the **sub-Hopf link closure
-condition** applied at the molecular scale: only certain numbers
-of trefoils can form a closed secondary ring, and $4n + 2$ is
-the molecular analogue of the shell capacity $2n^2$.
+stabilisation.  The link to Hückel's rule ($4n + 2$ $\pi$
+electrons for aromaticity) is an open correspondence, not a
+derived result: we conjecture that it matches a **sub-Hopf link
+closure condition** at the molecular scale — only certain numbers
+of trefoils can form a closed secondary ring — with $4n + 2$
+playing the role for molecules that the shell capacity $2n^2$
+plays for atoms.  This identification is proposed here as a
+conjecture and is not established.

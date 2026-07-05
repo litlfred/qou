@@ -1,5 +1,9 @@
 **Crossing energy of the ring.**
-The crossing energy is determined by the threading link's
+Why should a ring whose atoms are held together by a single link
+threaded through all of them be both cheaper to form than the same
+ring bonded pair by pair and stiffer once formed?  Both answers come
+from one object — the threading link's Alexander polynomial — so we
+begin there.  The crossing energy is determined by that
 Alexander polynomial evaluated at the substrate parameter:
 
 $$

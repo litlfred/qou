@@ -47,11 +47,10 @@ is the **activation barrier**.
 The open chain is a spring held apart.  The endpoints are free,
 the interior oscillates
 ([spring-like modes](#rem:chain-spring-modes)).  Snapping it
-shut means:
-
-- Bringing the endpoints together (geometric cost).
-- Dissolving the pairwise links (bond-breaking cost).
-- Forming the threading link (topological phase transition).
+shut runs the same three steps as above: bringing the endpoints
+together is the step-2 geometric cost, dissolving the pairwise
+links is the step-1 bond-breaking cost, and forming the threading
+link is the step-3 topological phase transition.
 
 Once the threading forms, the energy drops below the chain —
 the spring has snapped into a lower-energy, locked
@@ -60,10 +59,11 @@ non-local topological structure that cannot be broken by any
 local perturbation.
 
 **Asymmetry of the barriers.**
-The closure barrier (chain $\to$ ring) is primarily **geometric**:
-getting the atoms into position.  The opening barrier (ring $\to$
-chain) is primarily **topological**: dissolving the threading
-link $T(2,6)$ into 5 separate Hopf links, which costs
+The closure barrier (chain $\to$ ring) is dominated by the step-2
+geometric cost of getting the atoms into position.  The opening
+barrier (ring $\to$ chain) runs step 3 in reverse — a topological
+cost, dissolving the threading link $T(2,6)$ into 5 separate Hopf
+links, which costs
 
 $$
   \Delta E_{\mathrm{open}}
