@@ -68,10 +68,25 @@ reworded prose is accurate for these too (they still discharge *from the
 class's fields*; the extra arithmetic does not change the conditional
 status).
 
-**Follow-up (not done here):** buckets A+C are candidates for the Lean
-vacuity review ledger (`docs/audits/lean-vacuity-review-ledger.json`,
-`--review-ledger` seeding). This audit does not seed ~70 ledger entries
-in one pass; that is the automated `lean-vacuity-axiom-audit.ts` job.
+**Detector-coverage finding (measured 2026-07-05).** Running
+`content/pipeline/lean-vacuity-axiom-audit.ts` over the whole QOU tree
+flags **0 of the 99** corpus files under *any* vacuity criterion — including
+its `proof-no-self-assuming-projection` detector. The reason is a
+**coverage gap**: that detector matches only a *single conclusion-typed
+field returned verbatim* (`… := ctx.field`), whereas every file in this
+corpus discharges via a **tuple or applied** projection
+(`… := ⟨ctx.a, ctx.b, …⟩`, `… := ⟨ctx.impl_x ctx.active, …⟩`) or a
+`refine ⟨…⟩; rw […]` block. So these self-assuming projections are **not**
+currently machine-detected.
+
+**Follow-up (not done here), corrected:** the recommendation is therefore
+*not* "run the existing `--review-ledger` job" — that job returns 0 on
+this corpus. The productive follow-ups are either (a) **extend
+`proof-no-self-assuming-projection`** to recognise tuple/applied
+projections whose components are all `ctx.<field>` (a change to a
+CI-gating checker — its own focused PR, since it will surface new
+CRITICAL flags across the corpus), or (b) hand-track buckets A+C. Seeding
+~70 ledger entries by hand in one pass is out of scope here.
 
 ## Bucket A — fixed this PR (48)
 
