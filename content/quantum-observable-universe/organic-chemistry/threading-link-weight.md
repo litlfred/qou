@@ -1,7 +1,7 @@
 **Key identity.**
 The threading link's Alexander weight is what sets the ring-closure
 barrier, so the payoff of this section is its relation to the Hopf
-link energy quantum $|q + q^{-1}|$.  For $T(2,6)$:
+link energy quantum $|q + q^{-1}|_{\mathrm{mol}}$.  For $T(2,6)$:
 
 $$
   \Delta_{T(2,6)}(q)
@@ -12,7 +12,7 @@ $$
 $$
 
 The threading link's Alexander weight is **one less than the
-square** of the Hopf link energy quantum $|q + q^{-1}|$.  This
+square** of the Hopf link energy quantum $|q + q^{-1}|_{\mathrm{mol}}$.  This
 quadratic relation encodes the non-local correlation: the
 threading link "knows" about the Hopf link, but carries strictly
 less weight.
