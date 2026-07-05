@@ -13,7 +13,7 @@ Given a bundle initial condition $\mathcal{S}_0 = \{(p_i, K_i)\}_{i=1}^{N}$
 flow** is the one-parameter family of bundle states
 
 $$
-  E_t =  \bigl\{\bigl(\Phi_t^q(p_i), K_i\bigr)\bigr\}_{i=1}^{N}
+  \mathcal{S}_t =  \bigl\{\bigl(\Phi_t^q(p_i), K_i\bigr)\bigr\}_{i=1}^{N}
   \qquad t \geq 0,
 $$
 
