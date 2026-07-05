@@ -42,6 +42,7 @@ import QOU.KnotRegistry
 import QOU.MassDerivation
 import QOU.MassTheory.TraceConventionGate
 import QOU.MassTheory.BarParityExclusion
+import QOU.MassTheory.SU4SupermultipletGate
 import QOU.Mass.MassVolDensity
 import QOU.Mass.BindingRecurrenceSpectral
 import QOU.Mass.Lever1Depth2Exclusion
