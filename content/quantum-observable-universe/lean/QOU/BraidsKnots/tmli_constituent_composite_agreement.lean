@@ -104,12 +104,26 @@ class TmliConstituentCompositeAgreementContext
     the Markov peel of `thm:markov-trace-product` across the
     constituent factorisation of `rem:knot-factorization`.  Stated
     with `sorry` + citation per AGENTS.md §1a disposition 2 — no
-    conclusion field on the class hands this back. -/
+    conclusion field on the class hands this back.
+
+    **Mathematical content: PROVED sorry-free** in the chain-list Markov
+    model as `QOU.Braiding.markov_trace_flatten`
+    (`content/quantum-observable-universe/mass-theory/markov-trace-product.lean`):
+    a composite braid that is the `List.flatten` of its constituent
+    sub-braids has `tr_M(β_𝔥) = ∏ᵢ tr_M(β_i)` (iterated Markov peel via
+    `markov_trace_append` + `chainProduct_flatten`).  The residual `sorry`
+    here is purely the **carrier bridge** from that concrete result to the
+    abstract `MarkovTraceContext` Hecke-element carriers (`beta_H`,
+    `constituent i` are unlinked `A`-elements in this class — the split-
+    tensor structure needed to instantiate `markov_trace_flatten` is not
+    yet carried).  It is a modelling artifact, not an open math gap. -/
 -- Ref: [manuscript] quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.md
+-- Math proved sorry-free: QOU.Braiding.markov_trace_flatten (chain-list model)
 theorem tmli_constituent_composite_agreement
     [ctx : TmliConstituentCompositeAgreementContext] :
     ctx.constituent_product = ctx.composite_trace := by
   -- Ref: [manuscript] quantum-observable-universe/mass-theory/tmli-constituent-composite-agreement.md
+  -- Carrier bridge to QOU.Braiding.markov_trace_flatten (proved sorry-free).
   sorry
 
 /-- **Constituent product equals the link polynomial** — derived:
