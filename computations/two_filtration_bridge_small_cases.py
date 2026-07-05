@@ -48,9 +48,13 @@ from __future__ import annotations
 import _path_bridge  # noqa: F401, E402 — substrate bridge (mpmath precision + witness_base)
 
 from mpmath import mp, mpf, pi, clsin, fabs  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
-mp.dps = 50
+# Canonical compute precision (so runtime mp.dps matches the witness's
+# recorded precisionMetadata.compute_dps — module level, since the constants
+# below are evaluated at import time).
+set_compute_dps()
 
 # Canonical minimal-volume hyperbolic-knot constant: Vol(4₁) = 2·Cl₂(π/3).
 VOL_4_1 = 2 * clsin(2, pi / 3)
