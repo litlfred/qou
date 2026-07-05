@@ -47,16 +47,35 @@ cited, everything else machine-checked."*
 | `standardPolytabloid_mem` | **sorry-free** (lands in `S^μ`) |
 | `standardPolytabloidS` (corestriction) | **sorry-free** |
 | `standardPolytabloid_linearIndependent` | **STUB** `sorry` — `-- Ref: [sagan2001]` Thm 2.5.2 |
-| `standardPolytabloid_span` | **STUB** `sorry` — `-- Ref: [sagan2001]` (Garnir relations) |
+| `colStab_smul_self`, `polytabloid_colStab_smul` (column-antisymmetry) | **sorry-free** |
+| `domCount'`, `domWeight`, `domBound`, `domCount'_le`, `domWeight_le` (the dominance measure) | **sorry-free** |
+| `straightening_step` (Garnir straightening core) | **STUB** `sorry` — `-- Ref: [sagan2001]` §2.6 |
+| `standardPolytabloid_straightening` | **sorry-free MODULO `straightening_step`** (well-founded induction on the dominance weight) |
+| `standardPolytabloid_span` | **sorry-free MODULO `straightening_step`** (Garnir relations) |
 | `standardBasis` | **sorry-free MODULO the two stubs** (`Basis.mk` wiring) |
 | `specht_finrank_eq_numSYT` | **sorry-free MODULO the two stubs** (the reduction) |
 
 The reduction (`standardBasis` + `specht_finrank_eq_numSYT`) is **genuinely
 sorry-free**: its only `sorry`-tainted inputs are the two named classical facts
-(`standardPolytabloid_linearIndependent`, `standardPolytabloid_span`). The
+(`standardPolytabloid_linearIndependent`, and — via
+`standardPolytabloid_straightening` — the single Garnir core
+`straightening_step`). The
 SYT→tableau conversion **and** the `Fintype` instance brick 1 left open are
-*both* proved sorry-free here, so the two stubs above are the *entire* remaining
-mathematical debt.
+*both* proved sorry-free here.
+
+**Spanning half — reduction (this file, §3b).** The former single spanning stub
+`standardPolytabloid_straightening` (every polytabloid `e_t` lies in the span of
+the *standard* polytabloids) is now **proved sorry-free by well-founded induction**
+on a self-contained dominance weight (`domWeight`, a strictly-monotone ℕ-valued
+linear extension of Sagan's dominance order, defined locally because this file sits
+*below* `SpechtDominanceCore` in the import graph), reducing the whole spanning
+half to a **single** sharper combinatorial core, `straightening_step`: a
+*non-standard* polytabloid is a `k`-combination of polytabloids of strictly
+dominance-greater (`domWeight`-greater) tabloids (Sagan §2.6 Garnir relations).
+The column-antisymmetry lemma `polytabloid_colStab_smul`
+(`e_{σ·t} = sgn(σ)·e_t` for `σ ∈ C_t`) — the column-sort ingredient of the
+straightening algorithm — is proved sorry-free here and is the tool that discharges
+the column half of `straightening_step`.
 
 ## References
 - [sagan2001] Sagan, *The Symmetric Group*, §2.5 (the standard basis, Thm 2.5.2;
@@ -265,19 +284,165 @@ theorem linearIndependent_corestrict_iff :
 `standardPolytabloid_linearIndependent` live in `SpechtStandardBasis`, above the
 independence cores.) -/
 
+/-! #### The column-antisymmetry lemma (`e_{σ·t} = sgn(σ)·e_t`, sorry-free)
+
+The first ingredient of Sagan's §2.6 straightening algorithm: a column
+permutation `σ ∈ C_t` acts on the polytabloid by its sign. This is the
+"column-sort" reduction — every `e_t` equals `±e_{column-sorted t}`. -/
+
+/-- For `σ ∈ C_t`, the column stabilizer is `σ`-invariant: `C_{σ·t} = C_t`.
+(`colPattern (σ·t) = σ · colPattern t = colPattern t` since `σ ∈ C_t`.) -/
+theorem colStab_smul_self (t : Specht.Tableau μ) {σ : Equiv.Perm (Fin (Specht.nOf μ))}
+    (hσ : σ ∈ Specht.colStab t) : Specht.colStab (σ • t) = Specht.colStab t := by
+  unfold Specht.colStab
+  rw [Specht.colPattern_smul, Specht.mem_colStab.mp hσ]
+
 omit [CharZero k] in
-/-- **STUB — the irreducible spanning core (Garnir / straightening law).** Every
-polytabloid `e_t` (arbitrary tableau `t`) lies in the span of the *standard*
-polytabloids. This is Sagan's §2.6 straightening algorithm; from it, spanning
-follows sorry-free. -/
+/-- **Column-antisymmetry (sorry-free).** A column permutation `σ ∈ C_t` acts on
+the polytabloid by its sign: `e_{σ·t} = sgn(σ)·e_t`. The sum over `C_{σ·t} = C_t`
+is reindexed `ρ ↦ ρσ` (right multiplication by `σ ∈ C_t`), using
+`sgn(ρσ) = sgn(ρ)sgn(σ)`, `ρ·(σ·t) = (ρσ)·t`, and `sgn(σ)² = 1`. This is the
+column-sort step of Sagan §2.6: every polytabloid equals `±` its
+column-standardised representative. -/
+theorem polytabloid_colStab_smul (t : Specht.Tableau μ)
+    {σ : Equiv.Perm (Fin (Specht.nOf μ))} (hσ : σ ∈ Specht.colStab t) :
+    Specht.polytabloid (k := k) (σ • t)
+      = (Equiv.Perm.sign σ : ℤ) • Specht.polytabloid (k := k) t := by
+  classical
+  have hEq : Specht.colStab (σ • t) = Specht.colStab t := colStab_smul_self t hσ
+  have hs2 : (Equiv.Perm.sign σ : ℤ) * (Equiv.Perm.sign σ : ℤ) = 1 := by
+    rcases Int.units_eq_one_or (Equiv.Perm.sign σ) with h | h <;> rw [h] <;> decide
+  rw [Specht.polytabloid, Specht.polytabloid, Finset.smul_sum]
+  refine Finset.sum_bij'
+    (i := fun (ρ : Specht.colStab (σ • t)) _ =>
+      (⟨(ρ : Equiv.Perm (Fin (Specht.nOf μ))) * σ, ?_⟩ : Specht.colStab t))
+    (j := fun (π : Specht.colStab t) _ =>
+      (⟨(π : Equiv.Perm (Fin (Specht.nOf μ))) * σ⁻¹, ?_⟩ : Specht.colStab (σ • t)))
+    ?_ ?_ ?_ ?_ ?_
+  · exact Subgroup.mul_mem _ (hEq ▸ ρ.2) hσ
+  · exact hEq.symm ▸ Subgroup.mul_mem _ π.2 (Subgroup.inv_mem _ hσ)
+  · intro ρ _; exact Finset.mem_univ _
+  · intro π _; exact Finset.mem_univ _
+  · intro ρ _; apply Subtype.ext; simp [mul_assoc]
+  · intro π _; apply Subtype.ext; simp [mul_assoc]
+  · intro ρ _
+    have e1 : (ρ : Equiv.Perm (Fin (Specht.nOf μ))) • (σ • t)
+        = ((ρ : Equiv.Perm (Fin (Specht.nOf μ))) * σ) • t := (mul_smul _ _ _).symm
+    show (Equiv.Perm.sign (ρ : Equiv.Perm (Fin (Specht.nOf μ))) : ℤ)
+          • Specht.Mtab.of (k := k) ((ρ : Equiv.Perm (Fin (Specht.nOf μ))) • (σ • t))
+      = (Equiv.Perm.sign σ : ℤ) • ((Equiv.Perm.sign
+            ((ρ : Equiv.Perm (Fin (Specht.nOf μ))) * σ) : ℤ)
+          • Specht.Mtab.of (k := k) (((ρ : Equiv.Perm (Fin (Specht.nOf μ))) * σ) • t))
+    rw [e1, ← mul_smul]
+    congr 1
+    rw [map_mul]
+    push_cast
+    have : (Equiv.Perm.sign σ : ℤ)
+        * ((Equiv.Perm.sign (ρ : Equiv.Perm (Fin (Specht.nOf μ))) : ℤ) * (Equiv.Perm.sign σ : ℤ))
+      = (Equiv.Perm.sign (ρ : Equiv.Perm (Fin (Specht.nOf μ))) : ℤ)
+        * ((Equiv.Perm.sign σ : ℤ) * (Equiv.Perm.sign σ : ℤ)) := by ring
+    rw [this, hs2, mul_one]
+
+/-! #### The self-contained dominance weight (sorry-free)
+
+The straightening induction needs a well-founded measure that strictly increases
+under a Garnir step. Because this file sits **below** `SpechtDominanceCore` in the
+import graph, we cannot reuse that module's `domRel`; instead we define, locally
+and self-containedly, a strictly-monotone ℕ-valued *linear extension* of the
+dominance order — the total of all clamped dominance counts `domCount' f i m`
+(`= #{l : (l:ℕ) < m ∧ f l ≤ i}`, "how many of the `m` smallest labels lie in rows
+`≤ i`"), summed over `i, m ∈ [0, n]`. A tabloid strictly dominating another has
+this total strictly larger, so it is a valid well-founded measure. All ℕ-valued
+(§7c-clean: no `ℝ`, no ordering on `q`). -/
+
+/-- The **dominance count** of a row pattern `f` (self-contained, local to this
+file): `domCount' f i m = #{l : (l:ℕ) < m ∧ f l ≤ i}`. -/
+def domCount' (f : Fin (Specht.nOf μ) → ℕ) (i m : ℕ) : ℕ :=
+  (Finset.univ.filter (fun l : Fin (Specht.nOf μ) => (l : ℕ) < m ∧ f l ≤ i)).card
+
+/-- The **dominance weight** of a tableau: the total of all clamped dominance
+counts of its row pattern. A strictly-monotone linear extension of the dominance
+order (a Garnir straightening step strictly increases it), hence a valid
+well-founded measure for the straightening induction. -/
+def domWeight (t : Specht.Tableau μ) : ℕ :=
+  ∑ i ∈ Finset.range (Specht.nOf μ + 1), ∑ m ∈ Finset.range (Specht.nOf μ + 1),
+    domCount' (Specht.rowPattern t) i m
+
+/-- A fixed ceiling for `domWeight` (used to run the strong induction on the
+decreasing measure `domBound μ - domWeight t`). -/
+def domBound (μ : YoungDiagram) : ℕ :=
+  (Specht.nOf μ + 1) * ((Specht.nOf μ + 1) * Specht.nOf μ)
+
+/-- Each dominance count is bounded by `n = nOf μ` (a filtered subset of the
+`n`-element label set). -/
+theorem domCount'_le (f : Fin (Specht.nOf μ) → ℕ) (i m : ℕ) :
+    domCount' (μ := μ) f i m ≤ Specht.nOf μ := by
+  unfold domCount'
+  refine le_trans (Finset.card_filter_le _ _) ?_
+  rw [Finset.card_univ, Fintype.card_fin]
+
+/-- `domWeight t ≤ domBound μ` (sum of `(n+1)²` counts, each `≤ n`). -/
+theorem domWeight_le (t : Specht.Tableau μ) : domWeight t ≤ domBound μ := by
+  unfold domWeight domBound
+  calc ∑ i ∈ Finset.range (Specht.nOf μ + 1), ∑ m ∈ Finset.range (Specht.nOf μ + 1),
+          domCount' (Specht.rowPattern t) i m
+      ≤ ∑ _i ∈ Finset.range (Specht.nOf μ + 1), ∑ _m ∈ Finset.range (Specht.nOf μ + 1),
+          Specht.nOf μ := by
+        refine Finset.sum_le_sum (fun i _ => ?_)
+        refine Finset.sum_le_sum (fun m _ => ?_)
+        exact domCount'_le _ i m
+    _ = (Specht.nOf μ + 1) * ((Specht.nOf μ + 1) * Specht.nOf μ) := by
+        simp [Finset.sum_const, Finset.card_range, Nat.mul_comm, Nat.mul_left_comm]
+
+/-! #### The single residual straightening core + the induction skeleton -/
+
+omit [CharZero k] in
+/-- **STUB — the single residual straightening core (Sagan §2.6 Garnir relations).**
+A polytabloid `e_t` that is *not itself* a standard polytabloid is a `k`-linear
+combination of polytabloids of **strictly dominance-greater** tabloids (encoded by
+the strictly-monotone measure `domWeight`). This is the irreducible combinatorial
+heart of the straightening algorithm: a column permutation column-standardises `t`
+(`polytabloid_colStab_smul`, proved above), raising `domWeight`; a Garnir relation
+at a row descent rewrites the result over tabloids of strictly higher dominance.
+From this core, the full spanning half (`standardPolytabloid_straightening`) follows
+sorry-free by well-founded induction on `domBound μ - domWeight t`. -/
+theorem straightening_step (t : Specht.Tableau μ)
+    (h : Specht.polytabloid (k := k) t ∉ Set.range (standardPolytabloid (k := k) (μ := μ))) :
+    ∃ (s : Finset (Specht.Tableau μ)) (c : Specht.Tableau μ → k),
+      (∀ t' ∈ s, domWeight t < domWeight t') ∧
+      Specht.polytabloid (k := k) t = ∑ t' ∈ s, c t' • Specht.polytabloid (k := k) t' := by
+  -- Ref: [sagan2001] §2.6 (Garnir relations / straightening algorithm). See also
+  -- [james1984representation] §8. The irreducible spanning core of brick 4:
+  -- column-antisymmetry (`polytabloid_colStab_smul`, proved) + the Garnir
+  -- coset-sum identity at a row descent, both producing dominance-greater terms.
+  sorry
+
+omit [CharZero k] in
+/-- **Spanning half — now proved sorry-free MODULO the single core
+`straightening_step`.** Every polytabloid `e_t` (arbitrary tableau `t`) lies in the
+span of the *standard* polytabloids, by well-founded (strong) induction on the
+measure `domBound μ - domWeight t`: if `e_t` is already a standard polytabloid it is
+in the spanning set; otherwise `straightening_step` rewrites it over tabloids of
+strictly greater `domWeight` (strictly smaller measure), each in the span by the
+induction hypothesis, and the span is closed under `k`-linear combinations. -/
 theorem standardPolytabloid_straightening :
     ∀ t : Specht.Tableau μ,
       Specht.polytabloid (k := k) t ∈
         Submodule.span k (Set.range (standardPolytabloid (k := k) (μ := μ))) := by
-  -- Ref: [sagan2001] §2.6 (Garnir relations / straightening algorithm: every
-  -- polytabloid is a ℤ-combination of standard polytabloids). See also
-  -- [james1984representation] §8. The irreducible spanning core of brick 4.
-  sorry
+  intro t
+  generalize hg : domBound μ - domWeight t = g
+  induction g using Nat.strong_induction_on generalizing t with
+  | _ g IH =>
+    by_cases hr : Specht.polytabloid (k := k) t ∈
+        Set.range (standardPolytabloid (k := k) (μ := μ))
+    · exact Submodule.subset_span hr
+    · obtain ⟨s, c, hgt, heq⟩ := straightening_step (k := k) t hr
+      rw [heq]
+      refine Submodule.sum_mem _ (fun t' ht' => ?_)
+      refine Submodule.smul_mem _ _ ?_
+      have hlt : domWeight t < domWeight t' := hgt t' ht'
+      have hb : domWeight t' ≤ domBound μ := domWeight_le t'
+      exact IH (domBound μ - domWeight t') (by omega) t' rfl
 
 omit [CharZero k] in
 /-- **M^μ-level span identity.** The standard polytabloids span exactly `S^μ`
