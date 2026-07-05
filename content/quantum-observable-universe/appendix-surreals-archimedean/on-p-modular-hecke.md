@@ -24,7 +24,7 @@ $\mathbf{On}_p$ in characteristic $p$ (Lenstra--Conway).
 ## Note on QOU's main paper
 
 This conjecture is **not** load-bearing for QOU's main results;
-the substrate value $q_0 = 1.109978595554181\ldots$ (50 dps) is generic (not a root
+the substrate value $q_0$ is generic (not a root
 of unity), so the binary Hoefsmit / char-0 surreal picture applies
 throughout the main paper. The char-$p$ extension is included
 here as a conceptual companion: a record of where the same
@@ -82,7 +82,7 @@ $\mathbb{Z}/p$ on the truncated tensor power.
 
 The smallest instance already makes this correspondence concrete:
 at $p = 2$, $n = 3$ the three Kazhdan--Lusztig cells of $H_3(-1)$
-match the first three nimbers $0$, $1$, $*2$ (worked out in the
+are conjectured to match the first three nimbers $0$, $1$, $*2$ (worked out in the
 proof strategy below).
 
 ## Surviving and broken structure
