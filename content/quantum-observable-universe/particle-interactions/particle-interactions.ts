@@ -382,7 +382,9 @@ export default chapter({
       label: "sec:electroweak-higgs-torus-link-triplet",
       blocks: [
         "electroweak-triplet-bring-embedding",
+        "electroweak-triplet-far-commuting-minimal",
         "electroweak-higgs-torus-link-triplet",
+        "electroweak-triplet-charge-spin-from-involution",
         "electroweak-higgs-torus-link-triplet-table1-data",
         "electroweak-higgs-torus-link-triplet-table2-data",
         "electroweak-higgs-torus-link-triplet-table3-data",
