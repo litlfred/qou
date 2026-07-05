@@ -2,7 +2,10 @@ The standard periodic table organizes elements by electron
 configuration (rows = periods, columns = groups).  A
 **knot-centric periodic table** reorganizes by the underlying
 knot topology: nuclear Borromean shell structure and electron
-trefoil resonance modes.
+trefoil resonance modes.  The payoff of this reorganization is
+that shell structure and magic numbers become *emergent* — they
+follow from the Borromean crossing count rather than being read
+off an empirical table.
 
 **Organizing principles.**
 
@@ -11,12 +14,11 @@ trefoil resonance modes.
    Each row boundary is a magic number (stability pair).
 
 2. **Columns**: proton sub-shell filling order
-   (Mayer--Jensen), left to right.  The leftmost element
-   in each row has just started filling the new shell
-   (magic-receptive); the rightmost element closes the
-   shell (magic number).  Sub-shells are separated by
-   gaps; within each sub-shell, elements fill
-   sequentially by $Z$.
+   (Mayer--Jensen), left to right, with sub-shells
+   separated by gaps and elements filling sequentially
+   by $Z$ within each sub-shell (the left-to-right
+   magic-receptive-to-magic pattern is detailed under
+   *Column structure* below).
 
    The sub-shell capacities follow the spin-orbit
    splitting of the harmonic oscillator levels
@@ -26,8 +28,9 @@ trefoil resonance modes.
    eigenvalues of the photon-electron transfer matrix
    $T_{\gamma e}(q)$
    ([shell structure eigenvalues](#prop:shell-structure-eigenvalues)):
-   at the substrate parameter $q$, $\lambda_+ = 1.1073$
-   governs shell energy scaling via a Chebyshev recurrence.
+   at the substrate parameter $q$, the larger eigenvalue
+   $\lambda_+ = 1.1073$ governs shell energy scaling via a
+   Chebyshev recurrence.
 
 3. **Color coding**: $k_\alpha$ (number of $\alpha$ sub-links
    in the nucleus), magic-receptive status (whether the element
