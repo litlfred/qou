@@ -59,7 +59,8 @@ transfer reproduces the dense product entry-for-entry, EXACTLY, at 50 dps.
 Validated: per-λ ‖ρ_λ(W)‖_F² ≡ the dense einsum ρ(W)·ρ(W)^T of
 `gram_norm_binding_probe` at n = 9 (³H/³He) and n = 12 (⁴He, the wall), to the
 float64 floor of the dense reference (the transfer itself carries 50 dps).
-The transfer reaches n = 15 (⁵He) where dense is infeasible.
+The transfer additionally reaches n = 15 (⁵He), where dense is infeasible,
+when run with `--with-5he` (the default run stops at n = 12).
 
 NO float64 on the transfer path (owner ruling 2026-06-09): all numeric work is
 mpmath at the 50-dps floor; the float (c,d) word is re-lifted via
@@ -263,6 +264,7 @@ def _dense_gram_per_lambda(word, n):
 
 
 def main() -> int:
+    run_start = time.monotonic()  # duration baseline (full compute, not just serialize)
     ap = argparse.ArgumentParser()
     ap.add_argument("--max-dense", type=int, default=12,
                     help="max n to cross-check against the dense float64 einsum "
@@ -374,12 +376,14 @@ def main() -> int:
     max_n = max(r["n"] for r in rows)
 
     # ── witness ──
-    builder = WitnessBuilder("gram-transfer-quadratic", engine="mpmath")
+    builder = WitnessBuilder("gram-transfer-quadratic", engine="mpmath",
+                             start_time=run_start)
     builder.set_description(
         "EXACT d_λ-free doubled-Bratteli transfer for the quadratic Markov/"
         "Frobenius Gram norm G(W)=tr_M(W·W^♯)=Σ y_λ‖ρ_λ(W)‖_F²; drop-in exact "
         "replacement for the float64 dense gram_norm_binding_probe, clearing "
-        "the n=12 dense wall (reaches n=15). Exploratory, no fit.")
+        f"the n=12 dense wall (this run: max_n_reached={max_n}; n=15 optional "
+        "via --with-5he). Exploratory, no fit.")
     builder.add_parameter("q0", Q_50_DIGIT_STR)
     builder.add_parameter("q0_inverse", mp.nstr(qi0, 50))
     builder.add_parameter("alpha_MeV", alpha)
