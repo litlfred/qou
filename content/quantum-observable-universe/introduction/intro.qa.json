@@ -216,6 +216,21 @@
         },
         "reviewed_at": "2026-07-04T23:49:48.628Z",
         "reviewed_sha": "8b0a8053bf22ce6821124986b7336e3611f909fd"
+      },
+      {
+        "field_hash": {
+          "md": "266bff0f8b9b",
+          "ts": "78c4ecd352f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-drain-swarm3",
+          "version": "claude-opus-4-8"
+        },
+        "reviewed_at": "2026-07-05T20:11:39.307Z",
+        "reviewed_sha": "90227015687f46b75ab58bb823f6bce4ff46f2f1",
+        "notes": "Triage (bean 9pxo): the voice-editorializing fail surfaced by PR #3327 is RESOLVED on main (script re-verdict 'pass', 2026-07-04). Confirmatory triage entry."
       }
     ],
     "voice-scholarly-default": [
@@ -1259,5 +1274,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-04T23:49:48.628Z"
+  "updated_at": "2026-07-05T20:11:39.307Z"
 }
