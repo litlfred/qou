@@ -1,10 +1,10 @@
 ---
 # e5tn
 title: 'Integration: detangler watcher - cross-chapter-forward (12 items)'
-status: todo
+status: completed
 type: task
 created_at: 2026-06-21T21:46:07Z
-updated_at: 2026-06-29T20:00:00Z
+updated_at: 2026-07-05T11:05:00Z
 ---
 
 ## Triage complete (2026-06-29, PR #3136) — ready to close
