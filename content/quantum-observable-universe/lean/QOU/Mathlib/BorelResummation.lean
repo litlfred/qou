@@ -117,4 +117,37 @@ theorem borelTransformValue_factorial {z : ℝ} (hz : |z| < 1) :
     (@borelTransform_tendsto _ z (instBorelTransformConverges_factorial hz))
     (borelTransform_factorial_tendsto hz)
 
+/-! ### Additivity of the Borel transform
+
+    The Borel transform is a linear operation. At the partial-sum level this is
+    `borelCoeff`'s linearity summed; at the limit level it upgrades to closure
+    of the convergence class under addition and linearity of the value. -/
+
+/-- The partial Borel transform is additive in the source sequence. -/
+theorem partialBorel_add (a b : ℕ → ℝ) (N : ℕ) (t : ℝ) :
+    partialBorel (fun k => a k + b k) N t = partialBorel a N t + partialBorel b N t := by
+  unfold partialBorel
+  rw [← Finset.sum_add_distrib]
+  refine Finset.sum_congr rfl (fun n _ => ?_)
+  rw [borelCoeff_add, add_mul]
+
+/-- **The convergence class is closed under addition.** If the Borel transforms
+    of `a` and `b` both converge at `z`, so does the transform of `a + b`. -/
+instance instBorelTransformConverges_add (a b : ℕ → ℝ) (z : ℝ)
+    [ha : BorelTransformConverges a z] [hb : BorelTransformConverges b z] :
+    BorelTransformConverges (fun k => a k + b k) z where
+  converges := by
+    obtain ⟨La, hLa⟩ := ha.converges
+    obtain ⟨Lb, hLb⟩ := hb.converges
+    exact ⟨La + Lb, by simpa only [partialBorel_add] using hLa.add hLb⟩
+
+/-- **The Borel-transform value is additive** — linearity at the limit level. -/
+theorem borelTransformValue_add (a b : ℕ → ℝ) (z : ℝ)
+    [BorelTransformConverges a z] [BorelTransformConverges b z] :
+    borelTransformValue (fun k => a k + b k) z
+      = borelTransformValue a z + borelTransformValue b z := by
+  refine tendsto_nhds_unique (borelTransform_tendsto _ z) ?_
+  simpa only [partialBorel_add] using
+    (borelTransform_tendsto a z).add (borelTransform_tendsto b z)
+
 end QOU.Mathlib.Borel
