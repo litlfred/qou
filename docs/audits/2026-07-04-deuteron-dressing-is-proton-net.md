@@ -249,6 +249,19 @@ obstruction from bar-symmetry. Therefore:
   ($q\leftrightarrow q^{-1}$ law, Im $\mathfrak V$) sectors with no proved
   invariant — exactly the category error the #3315 guard names. It is **not**
   made here.
+
+**Co-Casimir sector (`probe_d_cocasimir_barparity`, 2026-07-05) — a worked
+instance.** The refuted Frobenius co-Casimir ansatz
+([`lem:frobenius-cocasimir-refuted-deuteron`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/DeltaLambdaRefutation.lean))
+has $\Delta_\lambda$ **bar-EVEN** ($\Delta_\lambda = \Delta_{\lambda'}$ exactly on
+all conjugate pairs — the norm-type Casimir $\propto\sum\mathrm{content}^2$, *not*
+the linear content sum $\sum(j-i)$ which would be bar-odd). It therefore occupies
+the **same bar-even sector as the binding target**; its prediction couples only to
+$a^{\mathrm{even}}$ (the bar-odd sector contributes 0, reproducing the committed
+`co_casimir_prediction` $=0.14496$ to 1.7e-51) yet still misses (wrong sign
+$+0.145$ vs $-4.353$, ~30×). Its refutation is thus **scope-(a) numerical — an
+in-sector ansatz giving the wrong number**, not a sector exclusion. A concrete
+confirmation that bar-symmetric ansätze are not structurally excluded.
 3. **No χ zeros at H_6** (unlike the H_3 Garside $\chi^{(2,1)}(\Delta)=0$): all
    11 $\chi^\lambda(\beta_D)$ are non-vanishing, so there is no "free" block to
    drop.
