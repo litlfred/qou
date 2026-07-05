@@ -21,4 +21,11 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["thm:em-spectral-completeness"],
+  computation: {
+    engine: "python",
+    script: "computations/probes/em_coupling_projection_probe.py",
+    witness: "computations/probes/em-coupling-projection-probe.witness.json",
+    status: "verified",
+    requires: ["mpmath"],
+  },
 });
