@@ -401,7 +401,7 @@
           "kind": "human",
           "id": "litlfred"
         },
-        "reviewed_at": "2026-07-05",
+        "reviewed_at": "2026-07-05T11:21:35Z",
         "reviewed_sha": "73c3e2233c38da519829b4f2e30b62cbde0378df",
         "notes": "Dispensation kind: false-positive (no-q block mis-detected). This remark carries NO q-mathematics; the regime detector's `\\bq\\b` na-guard matches the standalone 'q' in the cross-reference label `rem:toffoli-q-and` in uses[], so it skips the `na` regime, matches no real q-regime, and falls back to `symbolic` (qa-checkers-q-usage.ts line 378) — which is disjoint from measurement-observation's expected archimedean profile. True regime is `na` (in the expected set). Root-cause fix belongs in folio detectRegimes (strip uses[]/label refs before the q-guard). Re-grant after any change to the .md / .ts."
       }
@@ -1096,5 +1096,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05"
+  "updated_at": "2026-07-05T11:21:35Z"
 }
