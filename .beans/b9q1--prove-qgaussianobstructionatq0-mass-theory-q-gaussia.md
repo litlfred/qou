@@ -4,6 +4,7 @@ title: 'Prove qGaussianObstructionAtQ0 (mass-theory/q-gaussian-obstruction-at-q0
 status: completed
 type: task
 priority: normal
+parent: b9ms
 created_at: 2026-07-05T11:15:00Z
 updated_at: 2026-07-05T11:30:00Z
 ---

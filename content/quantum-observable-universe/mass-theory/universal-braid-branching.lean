@@ -261,7 +261,8 @@ theorem base_enum (lam : List ℕ) (hsort : lam.Sorted (· ≥ ·)) (hpos : ∀ 
       omega
 
 /-- Linearity of the list sum over the three-term branching combination. -/
-theorem sum_lin (l : List (List ℕ)) (A B C : List ℕ → ℝ) (p q r : ℝ) :
+theorem sum_lin {R : Type*} [CommSemiring R]
+    (l : List (List ℕ)) (A B C : List ℕ → R) (p q r : R) :
     (l.map (fun x => A x * p + B x * q + C x * r)).sum
       = (l.map A).sum * p + (l.map B).sum * q + (l.map C).sum * r := by
   induction l with

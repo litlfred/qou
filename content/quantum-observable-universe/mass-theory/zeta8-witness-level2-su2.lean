@@ -134,7 +134,7 @@ theorem qInt_four_eq_zero (hζ : IsPrimitiveRoot ζ 8) : qInt ζ 4 = 0 := by
   have hnei : ζ ≠ ζ⁻¹ := by
     intro he
     apply hne2
-    field_simp at he
+    field_simp [hζ0] at he
     linear_combination he
   unfold qInt
   -- `ζ ≠ ζ⁻¹` so we take the else-branch; numerator `ζ⁴ − ζ⁻⁴ = -1 − (-1) = 0`.

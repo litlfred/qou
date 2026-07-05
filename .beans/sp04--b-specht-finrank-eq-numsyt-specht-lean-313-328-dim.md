@@ -4,6 +4,7 @@ title: 'B: specht_finrank_eq_numSYT (Specht.lean:313,328) — dim S^mu = #SYT'
 status: todo
 type: task
 priority: low
+parent: sp00
 created_at: 2026-07-05T16:30:00Z
 updated_at: 2026-07-05T16:30:00Z
 ---

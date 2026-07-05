@@ -4,6 +4,7 @@ title: 'Conjecture carrier: q_gl_classical_limit (q_gl_classical_limit.lean) —
 status: todo
 type: task
 priority: low
+parent: b9cj
 created_at: 2026-07-05T13:20:00Z
 updated_at: 2026-07-05T13:20:00Z
 ---
