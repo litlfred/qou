@@ -98,6 +98,14 @@ theorem sTransform_pow_four : T.S ^ 4 = 1 := by
 theorem sSq_mul_sSq : (T.S * T.S) * (T.S * T.S) = 1 := by
   rw [T.S_sq, T.C_invol]
 
+/-- **On the self-dual sector `S² = +1`.**  A charge-conjugation-fixed vector `w` (`C w = w`,
+the `C = +1` sector where the vacuum row lives) satisfies `S² w = w`: `S` restricted to the
+self-dual sector is an involution.  This is the sector statement behind the `±1` eigenvalue
+tightening (`eigenvalue_selfdual_sector_pm_one`). -/
+theorem conjFixed_sSq_fixed (w : ι → R) (hw : T.C.mulVec w = w) :
+    (T.S * T.S).mulVec w = w := by
+  rw [T.S_sq]; exact hw
+
 /-- **Eigenvector action of `S⁴`: `ζ⁴ • v = v`.**  From `S⁴ = 1`, an eigenvector `v` with
 `S v = ζ v` satisfies `ζ⁴ • v = v` (over any `CommRing`, no nonzero hypothesis).  The scalar
 consequence `ζ⁴ = 1` needs a nonzero `v` over a field — see `eigenvalue_pow_four_eq_one`. -/
@@ -131,6 +139,26 @@ theorem eigenvalue_pow_four_eq_one {ι R : Type*} [Fintype ι] [DecidableEq ι] 
   have hcomp : ζ ^ 4 * v i = v i := by
     have := congrFun hfix i; simpa [Pi.smul_apply, smul_eq_mul] using this
   have hz : (ζ ^ 4 - 1) * v i = 0 := by rw [sub_mul, one_mul, hcomp, sub_self]
+  rcases mul_eq_zero.mp hz with h | h
+  · exact sub_eq_zero.mp h
+  · exact absurd h hi
+
+/-- **Self-dual sector: eigenvalues are `±1`.**  Over a field, a nonzero eigenvector `w` that also
+lies in the `C = +1` (self-dual) sector — `C w = w` — has `ζ² = 1`, i.e. `ζ = ±1`.  This is the
+tightening of the global `ζ⁴ = 1` on the sector where the vacuum row lives
+(`vacuumRow_conj_invariant`): the real symmetric `S²` acts as `+1` there, so the PF-positive ground
+eigenvalue is `+1` and its eigenvector is `d_q` (input (A)+(B), Ocneanu/Wenzl — cited, not proved). -/
+theorem eigenvalue_selfdual_sector_pm_one {ι R : Type*} [Fintype ι] [DecidableEq ι] [Field R]
+    (T : SelfDualSTransform ι R) {w : ι → R} (hw0 : w ≠ 0) (hw : T.C.mulVec w = w)
+    (ζ : R) (heig : T.S.mulVec w = ζ • w) : ζ ^ 2 = 1 := by
+  have hsq : (T.S * T.S).mulVec w = ζ ^ 2 • w := by
+    rw [← Matrix.mulVec_mulVec, heig, Matrix.mulVec_smul, heig, smul_smul, sq]
+  have heq : ζ ^ 2 • w = w := hsq.symm.trans (T.conjFixed_sSq_fixed w hw)
+  obtain ⟨i, hi⟩ := Function.ne_iff.mp hw0
+  rw [Pi.zero_apply] at hi
+  have hcomp : ζ ^ 2 * w i = w i := by
+    have := congrFun heq i; simpa [Pi.smul_apply, smul_eq_mul] using this
+  have hz : (ζ ^ 2 - 1) * w i = 0 := by rw [sub_mul, one_mul, hcomp, sub_self]
   rcases mul_eq_zero.mp hz with h | h
   · exact sub_eq_zero.mp h
   · exact absurd h hi

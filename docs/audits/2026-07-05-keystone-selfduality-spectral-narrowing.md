@@ -74,9 +74,11 @@ orthogonality for completed q-Laguerre") — two bases exchanged by `𝓗_q`. So
 
 ## Follow-up (queued, not run)
 
-1. Formalize the sector refinement: on the `C = +1` subspace `S² = +1`, real symmetric ⇒ eigenvalues
-   `±1`; pin the `+1` PF ground state to `d_q` conditional on a `PerronFrobeniusGroundState` class
-   (§3b-cond), citing Wenzl.
+1. Sector refinement — **done** (this PR): `conjFixed_sSq_fixed` (`C w = w ⇒ S² w = w`) and
+   `eigenvalue_selfdual_sector_pm_one` (over a field, nonzero `w` in the `C = +1` sector ⇒ `ζ² = 1`,
+   i.e. `ζ = ±1`), both sorry-free. **Still open:** pin the `+1` PF ground state to `d_q` conditional
+   on a `PerronFrobeniusGroundState` class (§3b-cond), citing Wenzl — the (B) input, not yet a Lean
+   class.
 2. ~~Strengthen `eigenvalue_pow_four_eq_one` to `ζ⁴ = 1` over `[Field R]`~~ — **done** (this PR,
    addressing Copilot review): field + nonzero `v` gives `ζ⁴ = 1` via a per-component domain argument.
 3. Record in the s013 ledger that both q-Bessel uploads are keystone redirect-(ii), now superseded by
