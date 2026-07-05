@@ -261,3 +261,31 @@ generating function, exact data), structure pinned; does **not** yet show it
 adds the 41–64 % ℓ¹ mass to close the deficit — closure is downstream. The
 ℓ¹-ceiling sets the bar the kernel's mass contribution must clear.
 Audit: `docs/audits/2026-06-27-lever1-qinvolution-cyclotomic-kernel.md`.
+
+## 2026-07-05 — PROBE-2 (A=4 interface operator) class-D gate landed + s5-so3 coordination
+
+The A=4 interface-operator lever (PROBE 2 / GAP-A-4 class D) got its
+**formalize-first gate + a confirmed locality prediction** (PRs #3375 scoping,
+#3385 gate+probe; the I-1/I-6/I-2 gate trio landed earlier via #3351/#3366):
+
+- **Scoping map** `docs/scope/2026-07-05-gap-a4-interface-operator-attack-scoping.md`
+  synthesizes the ~40-probe graveyard (T2–T18 + interface/a_operator). The ×5.10
+  ⁴He gap is pinned as a **missing higher-order term** — not a weight (bond
+  factors Lean-exact, `deltaSign_mixed`) and not sign-fixable (the ℓ¹-ceiling
+  0.41 < 1, row 2026-06-28 above). It is **≥4-body and ⁴He-LOCAL**.
+- **Gate (sorry-free)** `QOU/MassTheory/SU4SupermultipletGate.lean`: the Wigner
+  SU(4) [1^A] supermultiplet has dim `C(4,A)`, **zero iff A>4** — the α (A=4) is
+  the top closed shell. The degree/orbit-count vanishing that *predicts* the
+  ⁴He-locality.
+- **Narrow probe (scope-(a))** `su4-supermultiplet-locality.witness.json`: the
+  **measured super-pairwise excess peaks at ⁴He (2.093×) and returns to ~pairwise
+  by ⁶Li (0.944×) where `C(4,6)=0`** — a clean LOCALITY MATCH. Not ∝ `C(4,A)`
+  (that peaks at A=2); peaks at the unique maximally-bound α singlet. **Magnitude
+  leg (2.093× ↔ the [1^4] connected-operator value) is the multi-session
+  follow-on** — this is locality-consistency, not a magnitude closure.
+
+**Coordination:** posted intent on #2503 (the class-C geometric `W_λ` route) —
+the two ⁴He-magnitude attacks (class-C geometric vs class-D interface operator)
+now share a proved A=4-local / A>4-vanishing signature any candidate index can be
+cross-checked against, alongside the existing defect-cubic / `f_pn`-bracket gates.
+Earlier same-day: I-6 trace-convention unblock posted on #3205 (per-knot axis).
