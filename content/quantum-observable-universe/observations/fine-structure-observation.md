@@ -12,29 +12,47 @@ $$
   = 136.823.
 $$
 
-**Chern-Simons corrected formula (:refterm[descent]{#descent} decomposition):**
-
-$$
-  \alpha_{\mathrm{EM}}^{-1}(q)
-  = 
-  \frac{q \cdot [9]_q \cdot [10]_q}{1 - \delta_{\mathrm{CS}}}
-$$
-
-where $\delta_{\mathrm{CS}} = (\mathrm{CS}(T_{2,9}) + \mathrm{CS}(T_{3,5})) \cdot ([2]_q/2) \cdot \hbar_q^2 / (q \cdot [9]_q \cdot [10]_q)$ incorporates the Chern-Simons invariants of the two force-carrier torus knots.
-
 The crossing numbers $9$ and $10$ are determined by the force-carrier
 generators $T_{2,9}$ and $T_{3,5}$
 ([force identification](#rem:force-knot-identification)); the
 $q$-integers are fixed by the Descartes substrate parameter.
 
+**Derived correction (additive photon zero-mode).**
+The leading correction to the bare formula is *additive*, not
+multiplicative, and is derived from the photon infrared zero-mode on
+Bring's surface ([photon IR zero-mode](#prop:photon-ir-zero-mode-bring)):
+
+$$
+  \alpha_{\mathrm{EM}}^{-1}(q) = q \cdot [9]_q \cdot [10]_q + \frac{2}{3\pi},
+  \qquad \frac{2}{3\pi} = \frac{b_1(M_{\mathrm{Bring}})}{\mathrm{Area}(M_{\mathrm{Bring}})}
+  = \frac{2g}{4\pi(g-1)}\Big|_{g=4}.
+$$
+
+With $b_1 = 2g = 8$ and the Gauss–Bonnet area fixed by the genus-$4$
+topology, this lands at $137.0354$ — a residual of $-4.2\;\mathrm{ppm}$
+against CODATA $137.035999$, a factor-$370$ improvement over the bare
+form with no free parameters. Both the tree term and this additive
+zero-mode are Lean-formalised.
+
+**Order of validity — the prediction is complete only to this order.**
+The remaining $-4.2\;\mathrm{ppm}$ is a next-order, Schwinger-type effect
+$\sim \alpha/(4\pi)$ whose exact coefficient is an **open problem**
+([open problems](#rem:alpha-em-derivation-open-problems)): its
+denominator $8\pi = \pi\,b_1$ is derived, but the $O(\alpha^2)$
+normalisation — a Bloch-group class in $B_3(\mathbb{C})$ over Bring's
+ideal hyperbolic tetrahedra — is not yet closed. The earlier
+*multiplicative* Chern–Simons and gluon-octet forms that appear to reach
+$2.1$ ppm are **single-point fits at $q_0$, not derivations** — a PSLQ
+scan over a $54$-element basis (including $\pi$, $\zeta(3)$, $\log 2$)
+found no integer relation — and must not be read as a closed result.
+**The fine-structure constant is therefore predicted parameter-free to
+$\approx 4\;\mathrm{ppm}$, through the additive correction; the
+$O(\alpha)$ self-energy coefficient and everything beyond it remain
+open.**
+
 **Numerical comparison with CODATA.**
 
 See [Table 1](#tbl:fine-structure-observation-table1-data).
-
-The Chern-Simons correction reduces the discrepancy by a factor of
-$120$, from $0.155\%$ to $2.1\;\mathrm{ppm}$, with zero additional
-parameters.  All ingredients — the bare coupling, the torus knot
-Chern-Simons invariants, and $\hbar_q$ — are determined by $q$ alone.
 
 **Inversion: $q$ from $\alpha_{\mathrm{EM}}$.**
 Conversely, fixing $\alpha^{-1} \approx 137.036$ and solving for $q$
