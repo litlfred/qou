@@ -49,8 +49,10 @@ orthogonality for completed q-Laguerre") — two bases exchanged by `𝓗_q`. So
 - **`sTransform_pow_four : S ^ 4 = 1`** — self-reciprocality. `S` has order dividing 4: `𝓗⁴ = id`,
   matching the self-reciprocal q-Hankel transform of 1208.2521. This is the structural fact the
   program should have matched against instead of screening node values.
-- **`eigenvalue_pow_four_eq_one`** — every eigenvalue `ζ` of `S` on a nonzero vector satisfies
-  `ζ⁴ • v = v` (a 4th root of unity): the eigenfunction class is narrowed to the four
+- **`eigenvector_pow_four_fixed`** — an eigenvector `v` with `S v = ζ v` satisfies `ζ⁴ • v = v`
+  (any `CommRing`); and **`eigenvalue_pow_four_eq_one`** — over a **field**, on a **nonzero** `v`,
+  this sharpens to `ζ⁴ = 1`, so every eigenvalue is a 4th root of unity: the eigenfunction class is
+  narrowed to the four
   charge-conjugation phases, as ordinary self-dual Fourier forces `iⁿ` on Hermite functions.
 - **`vacuumRow_conj_invariant`** — the vacuum row `d_q(λ)/D` is fixed by the transpose involution
   (`d_q(λ′)=d_q(λ)`), so it lives in the `C = +1` **self-dual sector**. There `S² = +1`, the real
@@ -75,6 +77,7 @@ orthogonality for completed q-Laguerre") — two bases exchanged by `𝓗_q`. So
 1. Formalize the sector refinement: on the `C = +1` subspace `S² = +1`, real symmetric ⇒ eigenvalues
    `±1`; pin the `+1` PF ground state to `d_q` conditional on a `PerronFrobeniusGroundState` class
    (§3b-cond), citing Wenzl.
-2. Strengthen `eigenvalue_pow_four_eq_one` to `ζ⁴ = 1` over `[Field R]` via `NoZeroSMulDivisors`.
+2. ~~Strengthen `eigenvalue_pow_four_eq_one` to `ζ⁴ = 1` over `[Field R]`~~ — **done** (this PR,
+   addressing Copilot review): field + nonzero `v` gives `ζ⁴ = 1` via a per-component domain argument.
 3. Record in the s013 ledger that both q-Bessel uploads are keystone redirect-(ii), now superseded by
    the (A)+(B)+(C) narrowing.
