@@ -19,11 +19,12 @@ $$
   m_{e,\mathrm{dau}} = \prod_{m=1}^{A} G_{n'_m}(c_m) \geq 0
 $$
 
-*Writing $\varepsilon_m \in \{0, 1\}$ for the sign of the $m$-th
-spectator factor ($\varepsilon_m = 1$ exactly when $G_{n_m}(c_m) < 0$),
-a configuration is excluded exactly when its sign-pattern has odd total
-parity, $\sum_{m=1}^{A} \varepsilon_m \equiv 1 \pmod 2$.  Of the $2^A$
-sign-patterns, exactly half — $2^{A-1}$ — are excluded.*
+*Under the spectator-factor sign mechanism — writing
+$\varepsilon_m \in \{0, 1\}$ for the sign of the $m$-th spectator factor
+($\varepsilon_m = 1$ exactly when $G_{n_m}(c_m) < 0$), so that a
+configuration is excluded exactly when its sign-pattern has odd total
+parity $\sum_{m=1}^{A} \varepsilon_m \equiv 1 \pmod 2$ — of the $2^A$
+sign-patterns, exactly half ($2^{A-1}$) are excluded.*
 
 ## Connection to the confinement LP
 
