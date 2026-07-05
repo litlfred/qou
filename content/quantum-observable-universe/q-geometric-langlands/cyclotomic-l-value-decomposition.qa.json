@@ -30,7 +30,152 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "detangler-no-forward-ref": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-07-05T05:26:50.219Z",
+        "reviewed_sha": "e28e45e2256ea73187107f230cc7beeb37a6c301"
+      }
+    ],
+    "detangler-section-band": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-07-05T05:26:50.219Z",
+        "reviewed_sha": "e28e45e2256ea73187107f230cc7beeb37a6c301"
+      }
+    ],
+    "detangler-no-xchapter-fwd": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-07-05T05:26:50.219Z",
+        "reviewed_sha": "e28e45e2256ea73187107f230cc7beeb37a6c301"
+      }
+    ],
+    "detangler-archimedean-wall": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-07-05T05:26:50.219Z",
+        "reviewed_sha": "e28e45e2256ea73187107f230cc7beeb37a6c301",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "detangler-block-tanglement": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-07-05T05:26:50.219Z",
+        "reviewed_sha": "e28e45e2256ea73187107f230cc7beeb37a6c301"
+      }
+    ],
+    "detangler-graph-energy": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-07-05T05:26:50.219Z",
+        "reviewed_sha": "e28e45e2256ea73187107f230cc7beeb37a6c301"
+      }
+    ],
+    "detangler-topic-coherence": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-07-05T05:26:50.219Z",
+        "reviewed_sha": "e28e45e2256ea73187107f230cc7beeb37a6c301"
+      }
+    ],
+    "detangler-no-dependency-cycle": [
+      {
+        "field_hash": {
+          "md": "12d7aba4174c",
+          "ts": "1890f983dcc3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-07-05T05:26:50.219Z",
+        "reviewed_sha": "e28e45e2256ea73187107f230cc7beeb37a6c301"
+      }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.994Z"
+  "updated_at": "2026-07-05T05:26:50.219Z"
 }
