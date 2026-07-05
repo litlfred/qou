@@ -226,8 +226,8 @@ Principled entries:
  (`recursive-on-⁴He`).
 
 Atlas covers $\ell \leq 2$ at $q_0$; further atoms ($\ell = 3$
-molecules, heavier nuclei) defer to
-[appendix-atomic-mass-calculations](#app:atomic-mass-calculations).
+molecules, heavier nuclei) are covered by the all-atoms /
+all-isotopes extension below.
 
 ## All-atoms / all-isotopes extension
 

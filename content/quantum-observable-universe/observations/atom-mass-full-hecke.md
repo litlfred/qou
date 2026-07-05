@@ -1,6 +1,7 @@
-The existing atomic mass appendix
-([atomic mass calculations](#sec:amc-calculations)) uses the 2$\times$2
-**standard** irrep of $H_3(q)$ for the transfer matrix chain.
+The simple CODATA-recombination mass formula
+$M_q = Z\mathfrak{m}_{\mathfrak{p}} + N\mathfrak{m}_{\mathfrak{n}} + Z\mathfrak{m}_e - (Z+N)\,B/A$
+uses only the 2$\times$2 **standard** irrep of $H_3(q)$ for the
+transfer matrix chain.
 This projects the Hecke element onto the $(2,1)$-seminormal representation
 and discards the symmetric (trivial) and alternating (sign)
 channels.  For multi-nucleon systems, this projection throws
