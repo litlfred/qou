@@ -206,8 +206,9 @@ theorem gram_indefinite_witness :
     2 • (hopfPlus * hopfMinus) := by
   intro h
   -- The two matrices differ at entry (0,0): the LHS is `-1 = -T 0`, the RHS is
-  -- `2·q² = 2·T 4`.  Fold both entries to `T`-monomial combinations, then read
-  -- off the degree-`0` coefficient: `-1` on the left, `0` on the right.
+  -- `2·q² = 2•T 4`.  Fold both entries to `T`-monomial combinations, then read
+  -- off the degree-`4` coefficient: `0` on the left (`(-T 0)` has no `T 4` term),
+  -- `2` on the right (`2 • T 4`).
   have h00 := congr_fun (congr_fun h 0) 0
   simp only [Matrix.add_apply, Matrix.smul_apply, hopfPlus, hopfMinus,
              stdRep3_gen0, stdRep3_gen1, Matrix.mul_apply, Fin.sum_univ_two,
