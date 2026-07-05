@@ -6,7 +6,6 @@ import Mathlib.Algebra.BigOperators.Fin
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.DeriveFintype
 import Mathlib.Tactic.Ring
-import Mathlib.Tactic.LinearCombination
 
 /-!
 # QOU.ParticleInteractions.frobenius_positivity_filter
@@ -100,7 +99,7 @@ The manuscript claims `2^{A-1}` excluded configurations.  The honest carrier of
 that count is **not** the full `4^A` configuration space (over which the count
 is `P`-dependent and false for generic `P` — an all-positive product excludes
 nothing; see
-[`docs/audits/2026-07-05-frobenius-positivity-filter-lean-overgeneralization.md`](../../../../docs/audits/2026-07-05-frobenius-positivity-filter-lean-overgeneralization.md)),
+[`docs/audits/2026-07-05-frobenius-positivity-filter-lean-overgeneralization.md`](../../../../../docs/audits/2026-07-05-frobenius-positivity-filter-lean-overgeneralization.md)),
 but the **`2^A` per-factor sign-pattern space** `Fin A → ZMod 2`, on which the
 exclusion is governed by the *odd total parity* of the per-factor signs
 (product `∏ₘ G(cₘ)` is negative ⟺ an odd number of factors are negative).  On
