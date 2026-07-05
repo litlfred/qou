@@ -13,19 +13,19 @@ theorem).
 It builds the `S_n`-invariant symmetric bilinear form `⟨f, g⟩ = Σ_d f d · g d` on
 `M^μ` (tabloids orthonormal) **sorry-free**, builds the **column antisymmetrizer
 `κ_t`** and its structural theory **sorry-free** (§3.5), and thereby *proves*
-James's submodule theorem (`specht_submodule_dichotomy`, §4.5) sorry-free **modulo
-one** sharply-localised combinatorial core (`noclash_match_exists`, the Gale–Ryser
-/ conjugate-partition matching — the *pure-combinatorial* residual of the
-column-clash lemma).  `specht_isSimple` is then **sorry-free MODULO the two
-remaining cores** (`noclash_match_exists` + `specht_form_nondegenerate`).
+James's submodule theorem (`specht_submodule_dichotomy`, §4.5) **fully sorry-free**:
+the former pure-combinatorial residual `noclash_match_exists` (the Gale–Ryser /
+conjugate-partition matching) is now discharged (§4.x) from four elementary
+`YoungDiagram` counting helpers.  `specht_isSimple` is then **sorry-free MODULO the
+single remaining core** `specht_form_nondegenerate` (the char-0 Gram
+non-degeneracy).
 
-The column-clash lemma `kap_of_mem_line` (`κ_t {s} ∈ span {e_t}`) is itself now
-**proved sorry-free modulo `noclash_match_exists`**: its two legs — the clash
-cancellation (`kap_of_mem_line_clash`, a sign-reversing involution ⇒ `κ_t{s} = 0`)
-and the no-clash reindexing (`kap_of_mem_line_match`, `{π₀•s} = {t}` for `π₀ ∈ C_t`
-⇒ `κ_t{s} = sgn(π₀)·e_t`) — are both sorry-free, so the *entire
-representation-theoretic content* of the lemma is discharged.  All that remains is
-the pure statement about tableau patterns `noclash_match_exists`.
+The column-clash lemma `kap_of_mem_line` (`κ_t {s} ∈ span {e_t}`) is now **fully
+sorry-free**: its two legs — the clash cancellation (`kap_of_mem_line_clash`, a
+sign-reversing involution ⇒ `κ_t{s} = 0`) and the no-clash reindexing
+(`kap_of_mem_line_match`, `{π₀•s} = {t}` for `π₀ ∈ C_t` ⇒ `κ_t{s} = sgn(π₀)·e_t`)
+— are both sorry-free, and the matching existence `noclash_match_exists` they
+consume is now proved (§4.x), so the lemma carries no residual `sorry`.
 
 ## sorry-free ↔ stubbed map
 
@@ -38,25 +38,27 @@ the pure statement about tableau patterns `noclash_match_exists`.
 | `bilinM_zsmul_left/right`, `bilinM_rep_swap`, `rep_mul_apply` | **sorry-free** |
 | `conjEquiv`, `sign_conj`, `polytabloid_rep_equivariant`, `tableau_transitive` | **sorry-free** |
 | `mtab_of_congr`, `kap_of_mem_line_clash` (clash ⇒ `κ_t{s}=0`), `kap_of_mem_line_match` (no-clash ⇒ `±e_t`) | **sorry-free** |
-| `kap_of_mem_line` (column-clash lemma) | **sorry-free MODULO `noclash_match_exists`** (was: full stub) |
-| `kapL_mem_line` (from the core) | **sorry-free MODULO `noclash_match_exists`** |
-| `specht_submodule_dichotomy` (James §8) | **sorry-free MODULO `noclash_match_exists`** (was: full stub) |
-| `noclash_match_exists` (Gale–Ryser / conjugate-partition matching) | **STUB** `sorry` — `-- Ref: [sagan2001]` §2.4 |
+| `filterCard_reindex`, `colCells_card`, `Col_card`, `row_lt_colLen` (§4.x counting helpers) | **sorry-free** |
+| `noclash_match_exists` (Gale–Ryser / conjugate-partition matching) | **sorry-free** (was: full stub) |
+| `kap_of_mem_line` (column-clash lemma) | **sorry-free** (was: full stub) |
+| `kapL_mem_line` (from the core) | **sorry-free** |
+| `specht_submodule_dichotomy` (James §8) | **sorry-free** (was: full stub) |
 | `specht_form_nondegenerate` (char-0 Gram) | **STUB** `sorry` — `-- Ref: [sagan2001]` §2.4 |
-| `specht_isSimple` (the reduction) | **sorry-free MODULO the two remaining cores** |
+| `specht_isSimple` (the reduction) | **sorry-free MODULO the single remaining core** |
 
-`#print axioms` confirms `sorryAx` enters `specht_isSimple` *only* through the two
-remaining cores (`noclash_match_exists`, `specht_form_nondegenerate`); the entire
-invariant-form + `κ_t` layer — including both legs of the column-clash lemma
-(`kap_of_mem_line_clash`, `kap_of_mem_line_match`) — is
-`[propext, Classical.choice, Quot.sound]`.
+`#print axioms` confirms `sorryAx` enters `specht_isSimple` *only* through the one
+remaining core (`specht_form_nondegenerate`); the entire invariant-form + `κ_t`
+layer, both legs of the column-clash lemma (`kap_of_mem_line_clash`,
+`kap_of_mem_line_match`), **and** the Gale–Ryser matching (`noclash_match_exists`,
+hence `specht_submodule_dichotomy`) are `[propext, Classical.choice, Quot.sound]`.
 
 The form and `κ_t` live over a generic `[CommRing k]` (§7c clean — no `ℝ`, no
 ordering, no `Real.*`); only `specht_submodule_dichotomy` and the final theorems
 add `[Field k]` (submodule lattice / `c⁻¹`) and `[CharZero k]` (non-degeneracy of
 the Gram form).
 
-This module carries 2 honest `sorry` targets, so — like brick 2 itself — it is
+This module carries 1 honest `sorry` target (`specht_form_nondegenerate`), so —
+like brick 2 itself — it is
 intentionally **not** imported by the `QOU.BraidKnot` umbrella. It reproduces the
 brick-2 `specht_isSimple` statement as a separate, reduction-bearing theorem (brick 2
 cannot import this file — the standard one-way dependency).
@@ -311,12 +313,12 @@ theorem tableau_transitive {μ : YoungDiagram} (s t' : Tableau μ) :
   intro l
   simp [Tableau.smul_apply]
 
-/-! ## 4. The remaining deep cores (stated, `sorry` + `-- Ref:`)
+/-! ## 4. The remaining deep core (stated, `sorry` + `-- Ref:`)
 
-Thanks to §3.5 **and** the two legs of the column-clash lemma below (`_clash`,
-`_match`, both sorry-free), James's submodule theorem is now reduced (§4.5) to the
-**single** *pure-combinatorial* core `noclash_match_exists` (the Gale–Ryser /
-conjugate-partition matching).  Non-degeneracy of the form on `S^μ`
+Thanks to §3.5, the two legs of the column-clash lemma below (`_clash`, `_match`,
+both sorry-free) **and** the §4.x discharge of the Gale–Ryser matching
+`noclash_match_exists`, James's submodule theorem is now proved (§4.5) **fully
+sorry-free**.  Only non-degeneracy of the form on `S^μ`
 (`specht_form_nondegenerate`) remains a genuinely separate char-0 obstruction (the
 James–Specht Gram determinant), unchanged by this pass. -/
 
@@ -429,6 +431,145 @@ theorem kap_of_mem_line_match (μ : YoungDiagram) (t s : Tableau μ)
   rw [key]
   exact zsmul_mem (Submodule.mem_span_singleton_self _) _
 
+/-! ### 4.x. Pure-combinatorial core of `noclash_match_exists` (sorry-free)
+
+The residual matching lemma below is discharged from four combinatorial helpers over
+Mathlib's `YoungDiagram`, with **no** representation theory: a cardinality reindexer
+through a tableau bijection (`filterCard_reindex`), the column-cell count
+`min r (colLen c)` (`colCells_card`), the per-column label count `colLen c`
+(`Col_card`), and the Gale–Ryser saturation `rowPattern s l < colLen (colPattern t l)`
+(`row_lt_colLen`).  From saturation the label map `l ↦ (rowPattern s l, colPattern t l)`
+is a bijection onto `μ.cells`; matching it against `t` produces the column permutation
+`π₀ ∈ C_t` with `{π₀ • s} = {t}`. -/
+
+/-- Reindex a label-filter cardinality through a tableau bijection to the corresponding
+cell-filter on `μ.cells`. -/
+private theorem filterCard_reindex {μ : YoungDiagram} (e : Tableau μ) (P : ℕ × ℕ → Prop)
+    [DecidablePred P] :
+    (Finset.univ.filter (fun l => P ((e l : ℕ × ℕ)))).card = (μ.cells.filter P).card := by
+  classical
+  refine Finset.card_bij'
+    (fun l _ => ((e l : ℕ × ℕ)))
+    (fun c hc => e.symm ⟨c, (Finset.mem_filter.mp hc).1⟩)
+    ?_ ?_ ?_ ?_
+  · intro l hl; rw [Finset.mem_filter] at hl ⊢; exact ⟨(e l).2, hl.2⟩
+  · intro c hc; rw [Finset.mem_filter] at hc ⊢
+    refine ⟨Finset.mem_univ _, ?_⟩; rw [Equiv.apply_symm_apply]; exact hc.2
+  · intro l hl; rw [Equiv.symm_apply_eq]
+  · intro c hc; simp only [Equiv.apply_symm_apply]
+
+/-- Cells of `μ` in column `c` and rows `< r` number `min r (colLen c)` (columns are
+downward-closed initial segments of rows). -/
+private theorem colCells_card {μ : YoungDiagram} (r c : ℕ) :
+    (μ.cells.filter (fun cell => cell.1 < r ∧ cell.2 = c)).card = min r (μ.colLen c) := by
+  classical
+  rw [← Finset.card_range (min r (μ.colLen c))]
+  refine Finset.card_bij' (fun cell _ => cell.1) (fun a _ => (a, c)) ?_ ?_ ?_ ?_
+  · intro cell hcell; rw [Finset.mem_filter] at hcell
+    obtain ⟨hmem, hlt, hsnd⟩ := hcell
+    rw [Finset.mem_range, lt_min_iff]; refine ⟨hlt, ?_⟩
+    have : (cell.1, cell.2) ∈ μ := (YoungDiagram.mem_cells _).1 hmem
+    rw [hsnd] at this; exact (YoungDiagram.mem_iff_lt_colLen).1 this
+  · intro a ha; rw [Finset.mem_range, lt_min_iff] at ha; rw [Finset.mem_filter]
+    exact ⟨(YoungDiagram.mem_cells _).2 ((YoungDiagram.mem_iff_lt_colLen).2 ha.2), ha.1, rfl⟩
+  · intro cell hcell; rw [Finset.mem_filter] at hcell; exact Prod.ext rfl hcell.2.2.symm
+  · intro a _; rfl
+
+/-- The labels in column `c` of a tableau `t` number `colLen c`. -/
+private theorem Col_card {μ : YoungDiagram} (t : Tableau μ) (c : ℕ) :
+    (Finset.univ.filter (fun l => colPattern t l = c)).card = μ.colLen c := by
+  classical
+  have h := filterCard_reindex t (fun cell => cell.2 = c)
+  simp only [colPattern] at *
+  rw [h, YoungDiagram.colLen_eq_card]
+  congr 1
+
+/-- **Gale–Ryser saturation.** Under the no-clash hypothesis, the `s`-row of every label
+is below the height of its `t`-column: `rowPattern s l < colLen (colPattern t l)`.  Proof is
+the classical prefix-counting / conjugate-partition majorization: for each row-threshold
+`r`, the labels of each `t`-column with `s`-row `< r` number exactly `min r (colLen c)`
+(the ≤ is no-clash injectivity within the column; the total forces equality against the
+cell count `Σ_c min r (colLen c) = #cells in rows < r`).  Taking `r = colLen c` fills the
+whole column. -/
+private theorem row_lt_colLen {μ : YoungDiagram} (t s : Tableau μ)
+    (hnoclash : ∀ a b : Fin (nOf μ),
+      colPattern t a = colPattern t b → rowPattern s a = rowPattern s b → a = b)
+    (l₀ : Fin (nOf μ)) :
+    rowPattern s l₀ < μ.colLen (colPattern t l₀) := by
+  classical
+  have hmapT_univ : ∀ l : Fin (nOf μ), colPattern t l ∈ μ.cells.image Prod.snd := by
+    intro l
+    exact Finset.mem_image.2 ⟨(t l : ℕ × ℕ), (t l).2, rfl⟩
+  have master : ∀ r : ℕ, ∀ c ∈ μ.cells.image Prod.snd,
+      (Finset.univ.filter (fun l => rowPattern s l < r ∧ colPattern t l = c)).card
+        = min r (μ.colLen c) := by
+    intro r
+    have hA_sum : (Finset.univ.filter (fun l => rowPattern s l < r)).card
+        = ∑ c ∈ μ.cells.image Prod.snd,
+            (Finset.univ.filter (fun l => rowPattern s l < r ∧ colPattern t l = c)).card := by
+      rw [Finset.card_eq_sum_card_fiberwise
+            (f := fun l => colPattern t l) (t := μ.cells.image Prod.snd)
+            (by intro l _; exact hmapT_univ l)]
+      simp only [Finset.filter_filter]
+    have hCells_sum : (μ.cells.filter (fun cell => cell.1 < r)).card
+        = ∑ c ∈ μ.cells.image Prod.snd, min r (μ.colLen c) := by
+      rw [Finset.card_eq_sum_card_fiberwise
+            (f := Prod.snd) (t := μ.cells.image Prod.snd)
+            (by intro cell hcell
+                exact Finset.mem_image.2 ⟨cell, (Finset.mem_filter.mp hcell).1, rfl⟩)]
+      apply Finset.sum_congr rfl
+      intro c _
+      rw [Finset.filter_filter]
+      exact colCells_card r c
+    have hAC : (Finset.univ.filter (fun l => rowPattern s l < r)).card
+        = (μ.cells.filter (fun cell => cell.1 < r)).card := by
+      have h := filterCard_reindex s (fun cell => cell.1 < r)
+      simpa only [rowPattern] using h
+    have hsum_eq : ∑ c ∈ μ.cells.image Prod.snd,
+          (Finset.univ.filter (fun l => rowPattern s l < r ∧ colPattern t l = c)).card
+        = ∑ c ∈ μ.cells.image Prod.snd, min r (μ.colLen c) := by
+      rw [← hA_sum, hAC, hCells_sum]
+    have hle : ∀ c ∈ μ.cells.image Prod.snd,
+        (Finset.univ.filter (fun l => rowPattern s l < r ∧ colPattern t l = c)).card
+          ≤ min r (μ.colLen c) := by
+      intro c _
+      apply le_min
+      · have hbound : (Finset.univ.filter
+              (fun l => rowPattern s l < r ∧ colPattern t l = c)).card
+            ≤ (Finset.range r).card := by
+          apply Finset.card_le_card_of_injOn (fun l => rowPattern s l)
+          · intro l hl
+            simp only [Finset.coe_filter, Set.mem_setOf_eq, Finset.mem_univ, true_and,
+              Finset.mem_coe, Finset.mem_range] at hl ⊢
+            exact hl.1
+          · intro l hl l' hl' heq
+            simp only [Finset.coe_filter, Set.mem_setOf_eq, Finset.mem_univ, true_and] at hl hl'
+            exact hnoclash l l' (hl.2.trans hl'.2.symm) heq
+        rwa [Finset.card_range] at hbound
+      · rw [← Col_card t c]
+        apply Finset.card_le_card
+        intro l hl
+        rw [Finset.mem_filter] at hl ⊢
+        exact ⟨hl.1, hl.2.2⟩
+    exact fun c hc => (Finset.sum_eq_sum_iff_of_le hle).1 hsum_eq c hc
+  have hc0T : colPattern t l₀ ∈ μ.cells.image Prod.snd := hmapT_univ l₀
+  have hmaster := master (μ.colLen (colPattern t l₀)) (colPattern t l₀) hc0T
+  rw [min_self] at hmaster
+  have hsub :
+      (Finset.univ.filter (fun l => rowPattern s l < μ.colLen (colPattern t l₀)
+          ∧ colPattern t l = colPattern t l₀))
+        ⊆ (Finset.univ.filter (fun l => colPattern t l = colPattern t l₀)) := by
+    intro l hl
+    rw [Finset.mem_filter] at hl ⊢
+    exact ⟨hl.1, hl.2.2⟩
+  have heq := Finset.eq_of_subset_of_card_le hsub
+    (le_of_eq (by rw [Col_card, hmaster]))
+  have hl0col : l₀ ∈ (Finset.univ.filter (fun l => colPattern t l = colPattern t l₀)) := by
+    rw [Finset.mem_filter]; exact ⟨Finset.mem_univ _, rfl⟩
+  rw [← heq, Finset.mem_filter] at hl0col
+  exact hl0col.2.1
+
+
 /-- **Core 1′ — the residual pure-combinatorial matching (no module theory).**
 If no column of `t` shares two labels with a common row of `s` (the *no-clash*
 hypothesis), then some column permutation `π₀ ∈ C_t` carries the tabloid `{s}`
@@ -436,16 +577,61 @@ onto `{t}`.  This is the Gale–Ryser / conjugate-partition matching fact
 ([sagan2001] §2.4, Lemma 2.4.4; [james1984representation] §8): the labels of each
 column of `t` occupy, under `s`, exactly the rows `{0, …, h_c − 1}` — the unique
 `0/1` matrix with the conjugate-partition margins is the Young diagram itself.
-It is the sole remaining combinatorial obligation of `kap_of_mem_line`; the clash
-leg and the reindexing leg above are both `sorry`-free. -/
+It was the sole remaining combinatorial obligation of `kap_of_mem_line`; it is now
+discharged (§4.x) from the elementary `YoungDiagram` counting helpers, so — with the
+clash leg and the reindexing leg both already `sorry`-free — `kap_of_mem_line` is
+fully closed. -/
 theorem noclash_match_exists {μ : YoungDiagram} (t s : Tableau μ)
     (hnoclash : ∀ a b : Fin (nOf μ),
       colPattern t a = colPattern t b → rowPattern s a = rowPattern s b → a = b) :
     ∃ π₀ ∈ colStab t, Tabloid.mk (π₀ • s) = Tabloid.mk t := by
-  -- Ref: [sagan2001] §2.4 (Lemma 2.4.4) / [james1984representation] §8
-  -- (the conjugate-partition / Gale–Ryser matching: no column-of-`t`/row-of-`s`
-  -- clash ⇒ a column permutation of `t` carries `{s}` to `{t}`).
-  sorry
+  classical
+  have hmem : ∀ l : Fin (nOf μ), (rowPattern s l, colPattern t l) ∈ μ.cells := by
+    intro l
+    exact (YoungDiagram.mem_cells _).2
+      ((YoungDiagram.mem_iff_lt_colLen).2 (row_lt_colLen t s hnoclash l))
+  set Gcell : Fin (nOf μ) → μ.cells := fun l => ⟨(rowPattern s l, colPattern t l), hmem l⟩
+    with hGcell
+  have hGinj : Function.Injective Gcell := by
+    intro l l' h
+    rw [hGcell] at h
+    have h2 := Subtype.ext_iff.mp h
+    simp only [Prod.mk.injEq] at h2
+    exact hnoclash l l' h2.2 h2.1
+  have hcard : Fintype.card (Fin (nOf μ)) = Fintype.card μ.cells := by
+    rw [Fintype.card_fin, Fintype.card_coe]
+  have hGbij : Function.Bijective Gcell :=
+    (Fintype.bijective_iff_injective_and_card Gcell).2 ⟨hGinj, hcard⟩
+  set Gequiv : Fin (nOf μ) ≃ μ.cells := Equiv.ofBijective Gcell hGbij with hGe
+  set ρ : Equiv.Perm (Fin (nOf μ)) := t.trans Gequiv.symm with hρ
+  -- key identity: the matched permutation sends each label to a `t`-cell whose row
+  -- (in `t`) is the `s`-row and whose column (in `t`) is preserved.
+  have hkey : ∀ l, (rowPattern s (ρ l), colPattern t (ρ l)) = ((t l : ℕ × ℕ)) := by
+    intro l
+    have hGl : Gequiv (ρ l) = t l := by
+      rw [hρ]; simp only [Equiv.trans_apply, Equiv.apply_symm_apply]
+    have hval := congrArg (Subtype.val) hGl
+    rw [hGe, Equiv.ofBijective_apply, hGcell] at hval
+    exact hval
+  have hP1 : ∀ l, colPattern t (ρ l) = colPattern t l := by
+    intro l; exact (Prod.ext_iff.mp (hkey l)).2
+  have hP2 : ∀ l, rowPattern s (ρ l) = rowPattern t l := by
+    intro l; exact (Prod.ext_iff.mp (hkey l)).1
+  refine ⟨ρ.symm, ?_, ?_⟩
+  · -- `ρ.symm ∈ colStab t`: `ρ` preserves the column pattern of `t` (P1).
+    rw [mem_colStab]
+    funext l
+    show colPattern t (ρ.symm.symm l) = colPattern t l
+    rw [Equiv.symm_symm]
+    exact hP1 l
+  · -- `{ρ.symm • s} = {t}`: `ρ` matches `s`-rows to `t`-rows (P2).
+    rw [Tabloid.mk, Tabloid.mk, Quotient.eq, rowEquiv_iff]
+    funext l
+    show rowPattern (ρ.symm • s) l = rowPattern t l
+    rw [rowPattern_smul]
+    show rowPattern s (ρ.symm.symm l) = rowPattern t l
+    rw [Equiv.symm_symm]
+    exact hP2 l
 
 /-- **Core 1 — the column-clash lemma (`κ_t` lands in the polytabloid line).**
 For any tableaux `t, s`, the column-antisymmetrised basis vector
@@ -463,13 +649,13 @@ heart of James's submodule theorem ([james1984representation] §8; [sagan2001]
   `s`-rows, so some `π₀ ∈ C_t` row-matches `s` to `t` (`{π₀•s} = {t}`), giving
   `κ_t {s} = sgn(π₀)·e_t`.
 
-This lemma is thus **proved sorry-free modulo the single pure-combinatorial core
-`noclash_match_exists`** (the existence of the matching `π₀` in the no-clash case);
-both legs are discharged.  Everything downstream — `kapL_mem_line`, and hence
-`specht_submodule_dichotomy` (§4.5) — is sorry-free modulo that same one core,
-which replaces the former opaque `specht_submodule_dichotomy` stub with a single,
-sharply-localised combinatorial obligation (mirroring how `SpechtDominanceCore`
-reduced brick 4's dominance content to `dominance_relation_exists`). -/
+This lemma is thus **fully proved sorry-free**: both legs are discharged, and the
+matching existence `noclash_match_exists` they consume is now proved (§4.x) from
+elementary `YoungDiagram` counting.  Everything downstream — `kapL_mem_line`, and
+hence `specht_submodule_dichotomy` (§4.5) — is therefore sorry-free, closing the
+former opaque `specht_submodule_dichotomy` stub entirely (mirroring how
+`SpechtDominanceCore` reduced brick 4's dominance content, but here with the residual
+combinatorial obligation also carried out). -/
 theorem kap_of_mem_line (μ : YoungDiagram) (t s : Tableau μ) :
     kapL (k := k) μ t (Mtab.of s) ∈ Submodule.span k {polytabloid (k := k) t} := by
   classical
