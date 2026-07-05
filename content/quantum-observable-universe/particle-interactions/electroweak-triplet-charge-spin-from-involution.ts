@@ -18,6 +18,7 @@ export default theorem({
     "thm:hoefsmit-ew-cell-content",
     "prop:self-dual-higgs-real-volume",
     "prop:vdw-pskew-isolation",
+    "def:coulomb-charge",
   ],
   authorNotes: [
     {
@@ -35,17 +36,37 @@ export default theorem({
       kind: "note",
       date: "2026-07-05",
       body:
-        "OWNER RULING (2026-07-05) — the σ₅⁸ = B vs H tension is RESOLVED by " +
-        "the very A± bar-grading this theorem proves. σ₅⁸ (= T(2,8)) carries " +
-        "BOTH: the Higgs BOSON H = the A₊ (bar-even, scalar) part, and B (the " +
-        "U(1)_Y hypercharge gauge boson) = the A₋ (bar-odd, vector) part. " +
-        "`conj:weinberg-angle-categorical` reads the A₋ (B) part; " +
-        "`conj:electroweak-higgs-torus-link-triplet` reads the A₊ (H) part — " +
-        "the two σ-eigen-sectors of one slot, no contradiction. The `z_t3 = 0` " +
-        "mixing field stays as the Weinberg (W³,B) → (Z,γ) residual. Note also " +
-        "that 4₁ in `prop:self-dual-higgs-real-volume` is the Higgs mass " +
+        "σ₅⁸ bar-grading is now DERIVED-FROM-SPIN, not merely stated (Task 2, " +
+        "2026-07-05). The former owner ruling (σ₅⁸ carries both H = A₊ and " +
+        "B = A₋) is upgraded to a sorry-free theorem `ew_sigma5_bargrade_forced`: " +
+        "the sector→spin map is injective and inverts (`barSectorOfSpin`, proved " +
+        "a genuine two-sided inverse by `barSectorOfSpin_inverts`), so given the " +
+        "Higgs is a scalar (spin 0) and B a vector (spin 1) — independent " +
+        "physical inputs — H ∈ A₊ and B ∈ A₋ of σ₅⁸ are FORCED, not chosen. The " +
+        "only residual postulate is that both inhabit the one σ₅⁸ slot. " +
+        "`conj:weinberg-angle-categorical` (reads A₋ = B) and " +
+        "`conj:electroweak-higgs-torus-link-triplet` (reads A₊ = H) agree by " +
+        "derivation. 4₁ in `prop:self-dual-higgs-real-volume` is the Higgs mass " +
         "MECHANISM (muon scale m_μ/m_e = Vol(4₁)/ℏ_q²), distinct from the " +
         "125-GeV Higgs boson H = T(2,8) = A₊ of σ₅⁸.",
+    },
+    {
+      kind: "note",
+      date: "2026-07-05",
+      body:
+        "Task 1 (which-slot-is-W) HONEST assessment: W = σ₁⁴ is NOT forced — it " +
+        "is a FREE LABEL. Corpus-grep found def:coulomb-charge (Q = ½·writhe) as " +
+        "the only crossing→charge map, but on σ₁^{2k} it gives Q = k > 0 for all " +
+        "three carriers (2,3,4) — makes W,Z,H all charged, cannot pick the " +
+        "neutral slot; writhe→Y is falsified (2026-06-02-u1-hypercharge-" +
+        "assignment.md, only writhe→I₃ survives). Forced part proved: charge ⇒ " +
+        "A₋ doublet, A₊ singlet ⇒ neutral (`charged_are_doublets_singlet_" +
+        "neutral`). Non-forcing proved: `which_slot_is_W_free` exhibits two " +
+        "distinct labelings (W=σ₁⁴ and mirror W=σ₃⁶) both satisfying every " +
+        "proved constraint. The paper's W=σ₁⁴ rests only on mass ordering " +
+        "4<6<8 (necessary, not sufficient). What would force it: a genuine " +
+        "crossing/linking→T₃ map — carried as the free-label field t3Label of " +
+        "conj:electroweak-higgs-torus-link-triplet.",
     },
   ],
   tags: [

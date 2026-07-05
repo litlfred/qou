@@ -63,7 +63,7 @@ $(W^3, B) \mapsto (Z, \gamma)$ Weinberg mixing
 ([conj:weinberg-angle-categorical](#conj:weinberg-angle-categorical)), carried
 as the postulate field $T_3(Z) = 0$.
 
-**The $\sigma_5^8$ slot carries both $H$ and $B$ (owner-ruled via bar-grading).**
+**The $\sigma_5^8$ bar-grading is DERIVED from spin (not merely stated).**
 
 The Weinberg-angle block
 ([conj:weinberg-angle-categorical](#conj:weinberg-angle-categorical)) reads the
@@ -73,10 +73,45 @@ Hoefsmit slot $\sigma_5^8$ as the $\mathrm{U}(1)_Y$ hypercharge gauge boson $B$
 reads $\sigma_5^8$ (that is $T(2,8)$, strands $5$–$6$) as the Higgs. These are
 not in conflict: $\sigma_5^8$ **carries both, bar-graded** by the spin
 involution above. The Higgs *boson* $H$ is the $A_+$ (bar-even, scalar) part;
-the hypercharge gauge boson $B$ is the $A_-$ (bar-odd, vector) part — the two
-$\sigma$-eigen-sectors of one slot, so Weinberg (reading $A_-$) and this block
-(reading $A_+$) agree. Distinct again is the self-dual figure-eight $4_1$ of
-([prop:self-dual-higgs-real-volume](#prop:self-dual-higgs-real-volume)): it is
-the Higgs *mass mechanism* (the muon scale
+the hypercharge gauge boson $B$ is the $A_-$ (bar-odd, vector) part.
+
+This bar-grading is no longer an owner postulate: it is now **derived from the
+two carriers' spins**, sorry-free (`ew_sigma5_bargrade_forced`). The
+sector$\to$spin map (singlet $\mapsto 0$, doublet $\mapsto 2$) is injective, so
+it **inverts** — spin *determines* the sector (`barSectorOfSpin`, proved a
+genuine two-sided inverse by `barSectorOfSpin_inverts`). The Higgs is a scalar
+(spin $0$) and $B$ is a vector (spin $1$) as independent physical inputs; hence
+$H \in A_+$ and $B \in A_-$ of the $\sigma_5^8$ slot are **forced, not chosen**.
+The single residual postulate is that both $H$ and $B$ inhabit the one
+$\sigma_5^8$ slot; its *grading into $A_+ / A_-$* is a consequence of their
+spins. Weinberg (reading $A_-$) and the triplet block (reading $A_+$) therefore
+agree by derivation, not by fiat. Distinct again is the self-dual figure-eight
+$4_1$ of ([prop:self-dual-higgs-real-volume](#prop:self-dual-higgs-real-volume)):
+it is the Higgs *mass mechanism* (the muon scale
 $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$), **not** the $125\,$GeV Higgs boson
 $H = T(2,8) = A_+$ of $\sigma_5^8$.
+
+**Which slot is $W$ ($\sigma_1^4$ vs $\sigma_3^6$) is a free label — not forced.**
+
+The sector membership $A_+ / A_-$ of each carrier is forced by its spin above,
+and a *charged* carrier must be a bar-odd $A_-$ doublet
+(`charged_are_doublets_singlet_neutral`). What is **not** forced is which of the
+two vector slots — $\sigma_1^4$ ($T(2,4)$, $4$ crossings) or $\sigma_3^6$
+($T(2,6)$, $6$ crossings) — hosts the *charged* $W^\pm$ ($T_3 = \pm 1$) versus
+the *neutral* $Z$ ($T_3 = 0$). The corpus crossing$\to$charge map
+([def:coulomb-charge](#def:coulomb-charge)), $Q = \tfrac12(n_+ - n_-) =
+\tfrac12\,\mathrm{writhe}$, evaluated on the all-positive braid $\sigma_1^{2k}$
+gives $Q(T(2,2k)) = k > 0$ for *every* carrier ($k = 2, 3, 4$), so it makes
+$W, Z, H$ all charged and cannot single out the neutral slot; independently the
+$\mathrm{writhe} \to Y$ hypercharge map is falsified (only
+$\mathrm{writhe} \to I_3$ survives, per the U(1)-assignment audit). So no proved
+crossing$\to$charge principle selects the $W$ slot. The paper's choice
+$W = \sigma_1^4$ (the lower crossing) is supported only by the mass ordering
+$4 < 6 < 8$ (necessary, not sufficient). This underdetermination is proved
+sorry-free (`which_slot_is_W_free`): both $W = \sigma_1^4$ and the mirror
+$W = \sigma_3^6$ satisfy every proved constraint. It is carried as the explicit
+free-label field `t3Label` of the sector postulate
+([conj:electroweak-higgs-torus-link-triplet](#conj:electroweak-higgs-torus-link-triplet)).
+What *would* force it is a genuine crossing/linking $\to T_3$ (or electric
+charge) map that assigns neutrality to exactly the $Z$ slot — an input the
+framework does not yet supply.

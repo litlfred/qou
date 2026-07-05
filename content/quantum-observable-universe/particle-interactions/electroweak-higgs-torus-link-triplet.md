@@ -92,7 +92,7 @@ single residual conjectural input is the sector assignment itself (which link
 lands in which sector) plus the bare particle-label map — the physics
 selection, not the derivation of the quantum numbers.
 
-**The $\sigma_5^8$ slot carries both $H$ and $B$ (owner-ruled via bar-grading).**
+**The $\sigma_5^8$ bar-grading is DERIVED from spin (not merely stated).**
 
 The Weinberg-angle block
 ([conj:weinberg-angle-categorical](#conj:weinberg-angle-categorical)) reads
@@ -102,15 +102,41 @@ strands $5$–$6$) as the Higgs. These are not in conflict: $\sigma_5^8$
 **carries both, bar-graded** by the spin involution
 ([def:spin-involution](#def:spin-involution)). The Higgs *boson* $H$ is the
 $A_+$ (bar-even, scalar) part; the hypercharge gauge boson $B$ is the $A_-$
-(bar-odd, vector) part. Weinberg reads the $A_-$ ($B$) sector, this block
-reads the $A_+$ ($H$) sector — the two $\sigma$-eigen-sectors of one slot.
+(bar-odd, vector) part.
+
+As of 2026-07-05 this bar-grading is **derived from the two carriers' spins**,
+not an owner ruling: the sector$\to$spin map is injective and inverts, so spin
+*determines* the sector (`ew_sigma5_bargrade_forced`, proved sorry-free in
+([thm:ew-triplet-charge-spin-from-involution](#thm:ew-triplet-charge-spin-from-involution))).
+The Higgs is a scalar (spin $0$) and $B$ a vector (spin $1$) as independent
+physical inputs, so $H \in A_+$ and $B \in A_-$ are **forced, not chosen**.
+Weinberg reads the $A_-$ ($B$) sector, this block reads the $A_+$ ($H$) sector
+— the two $\sigma$-eigen-sectors of one slot, agreeing by derivation. The lone
+residual postulate is that both $H$ and $B$ inhabit the one $\sigma_5^8$ slot.
 Separately, the self-dual figure-eight $4_1$ of
 ([prop:self-dual-higgs-real-volume](#prop:self-dual-higgs-real-volume)) is
 the Higgs *mass mechanism* (the muon scale
 $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$), **not** the $125\,$GeV Higgs
 boson, which is the electroweak-slot link $T(2,8) = A_+$ of $\sigma_5^8$.
-The $A_\pm$ grading used here is the one proved in
-([thm:ew-triplet-charge-spin-from-involution](#thm:ew-triplet-charge-spin-from-involution)).
+
+**Which link is $W$ ($\sigma_1^4$) vs $Z$ ($\sigma_3^6$) is a free label — not forced.**
+
+The spin fixes each carrier's sector (scalar $H \to A_+$; vectors $W, Z \to
+A_-$), but it does **not** fix which of the two $A_-$ vector slots is the
+charged $W^\pm$ and which is the neutral $Z$. No proved crossing$\to$charge
+principle selects it: the corpus map
+([def:coulomb-charge](#def:coulomb-charge)),
+$Q = \tfrac12(n_+ - n_-) = \tfrac12\,\mathrm{writhe}$, on the all-positive braid
+$\sigma_1^{2k}$ gives $Q(T(2,2k)) = k > 0$ for *all* three carriers, so it
+cannot single out the neutral slot; the $\mathrm{writhe} \to Y$ map is falsified
+(only $\mathrm{writhe} \to I_3$ survives — U(1)-assignment audit). The paper's
+$W = \sigma_1^4$ is supported only by the mass ordering $4 < 6 < 8$ (necessary,
+not sufficient), and is carried as the explicit **free-label** field `t3Label`
+of $C_{\text{sector}}$. Its underdetermination is proved sorry-free
+(`which_slot_is_W_free`): both $W = \sigma_1^4$ and the mirror $W = \sigma_3^6$
+satisfy every proved constraint. Forcing it would require a genuine
+crossing/linking $\to T_3$ map assigning neutrality to exactly the $Z$ slot — an
+input the framework does not yet supply.
 
 **Supporting evidence (necessary, not sufficient).**
 
