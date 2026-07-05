@@ -1,9 +1,3 @@
-An involutive structure abstracts the adjoint — the
-conjugate-transpose of Hilbert-space linear algebra — so that the
-$\mathrm{SU}(2)$ representation category (and any rigid monoidal
-category) carries a $\ast$-operation, induced by the Hopf antipode.
-The axioms record exactly the properties the adjoint enjoys.
-
 Let $(\mathbf{C}, \otimes, \mathbf{1})$ be an $R$-linear rigid monoidal
 category. An **involutive structure** (also called a
 *$\ast$-structure* or *dagger structure*) on $\mathbf{C}$ is
@@ -25,7 +19,20 @@ $\dagger \colon \mathbf{C}^{\mathrm{op}} \to \mathbf{C}$ satisfying:
    ```
 
 3. **Monoidal compatibility:**
-   $(\mathrm{id}_X \otimes f)^{\dagger} = \mathrm{id}_X \otimes f^{\dagger}$.
+   $(\mathrm{id}_X \otimes f)^{\dagger} = \mathrm{id}_X \otimes f^{\dagger}$, i.e.
+   the following square commutes:
+
+   ```tex
+   \begin{equation}\label{eq:monoidal-dagger-cd}
+   \begin{tikzcd}[row sep=2.5em, column sep=3em]
+     X \otimes Y \ar[r, "\mathrm{id} \otimes f"]
+       \ar[d, "(\mathrm{id} \otimes f)^{\dagger}"']
+     & X \otimes Z \ar[d, "\mathrm{id} \otimes f^{\dagger}"] \\
+     X \otimes Z \ar[r, equal]
+     & X \otimes Z
+   \end{tikzcd}
+   \end{equation}
+   ```
 
 4. **Contravariance:**
    $(g \circ f)^{\dagger} = f^{\dagger} \circ g^{\dagger}$:
