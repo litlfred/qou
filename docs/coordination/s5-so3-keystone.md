@@ -474,3 +474,32 @@ SDP) — already in the corpus (`y-lambda-closed-form-wenzl-bridge.md`,
 categorical "why" that needs no geometry, so the geometric program's exhaustion
 leaves nothing unexplained. Audit:
 [`docs/audits/2026-07-04-keystone-qhankel-eq2-vacuum-row-sourced-refutation.md`](../audits/2026-07-04-keystone-qhankel-eq2-vacuum-row-sourced-refutation.md).
+
+## REFRAME — self-duality narrows the eigenfunction class; node screens retired (2026-07-05, bean s013)
+
+Owner redirect: stop screening off-the-shelf q-Bessel families against `d_q`;
+instead use the framework's own structure to narrow the orthogonal-eigenfunction
+class. Two inputs settled first:
+
+- **1208.2521 vs Step-9b: NO** (wrong gap). 9b's open legs (per-λ FR weight, κ,
+  IMME Δ³=0) are compact algebraic Hecke/Markov objects; the q-Hankel transform
+  is a non-compact E_q(2) Plancherel kernel — no mechanism. 1208.2521 is keystone
+  redirect-(ii), not 9b.
+- **math/9805023 (big q-Bessel / q-Laguerre, Ciccoli–Koelink–Koornwinder)** —
+  identified from owner upload `9805023v1.pdf` (commit `8e311cb`). Its discrete
+  orthogonality is supported on `{c·q^k : k∈ℤ}` for ANY `c>0` (§4): the scale `c`
+  is a FREE parameter ⇒ a node screen is a fit, not 0-dof. **Not run** (would
+  violate the discipline). This is diagnostic that the node-screen frame is wrong.
+
+**The (A)+(B)+(C) narrowing** (replaces node screens): (A) Frobenius pairing
+supplies the orthogonal system (`χ_λ`, quantum-dimension measure); (B) Verlinde/PF
+pins `d_q` as the unique PF-positive fusion ground state (Wenzl); (C) self-duality
+`S=Sᵀ`, `S²=C`. The (C) leg is now **Lean-formalized sorry-free**
+([`KeystoneSelfDualSpectralNarrowing.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneSelfDualSpectralNarrowing.lean)):
+`S⁴=1` (self-reciprocality = the categorical avatar of the self-reciprocal
+q-Hankel transform), eigenvalues are 4th roots of unity (class narrowing), and the
+vacuum row is C-fixed (self-dual sector, where the PF-positive `+1` state is `d_q`).
+**Narrowing, not closure** — the value step already has redirect (iii); leg (C) is
+the constraint any geometric realisation must meet, and the structural reason a
+free-scale q-Bessel family cannot be it. PR #3358; audit
+[`docs/audits/2026-07-05-keystone-selfduality-spectral-narrowing.md`](../audits/2026-07-05-keystone-selfduality-spectral-narrowing.md).
