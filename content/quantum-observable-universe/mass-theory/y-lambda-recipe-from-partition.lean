@@ -38,6 +38,7 @@ import Mathlib.Data.Nat.Factorial.Basic
 import Mathlib.Data.List.Sort
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
+import QOU.BraidKnot.IdentityIContentDecomposition
 
 namespace QOU.BraidsAndKnots
 
@@ -116,25 +117,14 @@ noncomputable def schurPrincipal {R : Type u} [Field R] (lam : List ℕ) (q v : 
 
 /-! ## Step 4: Normalisation -/
 
-/-- Partitions of `n` with every part `≤ k`, as non-increasing lists.
-    Fuel-driven (structural recursion on `fuel`) so no bespoke termination
-    proof is needed; `partitionsOf` supplies fuel above the recursion depth. -/
-def partsFuel : ℕ → ℕ → ℕ → List (List ℕ)
-  | 0,      _,   _   => []
-  | _ + 1,  0,   _   => [[]]
-  | _ + 1,  _ + 1, 0 => []
-  | fuel + 1, n + 1, k + 1 =>
-    partsFuel fuel (n + 1) k ++
-      (if k + 1 ≤ n + 1
-       then (partsFuel fuel (n + 1 - (k + 1)) (k + 1)).map (fun p => (k + 1) :: p)
-       else [])
-
-/-- Partitions of `n` (non-increasing lists), fuel `= 2·n + 1 ≥` depth. -/
-def partitionsOf (n : ℕ) : List (List ℕ) := partsFuel (2 * n + 1) n n
+-- Reuse the existing, already-bridged partition enumerator
+-- `QOU.BraidKnot.IdentityI.partitionsOf` (soundness / nodup / completeness
+-- proven in `QOU.Mathlib.PartitionsOfBridge`) rather than duplicating one.
+open QOU.BraidKnot.IdentityI (partitionsOf)
 
 /-- Partition-function denominator `Z_n = Σ_µ d_µ · s_µ` — a **concrete**
-    sum over `partitionsOf n` with `d_µ = hookDim µ`, `s_µ = schurPrincipal µ`
-    (de-axiomatised; the enumerator makes it computable). -/
+    sum over the shared `partitionsOf n` with `d_µ = hookDim µ`,
+    `s_µ = schurPrincipal µ` (de-axiomatised; computable). -/
 noncomputable def partitionFunctionZ {R : Type u} [Field R] (n : ℕ) (q v : R) : R :=
   (partitionsOf n).foldr
     (fun mu acc => acc + (hookDim mu : R) * schurPrincipal mu q v) 0
@@ -284,27 +274,51 @@ theorem y_lambda_recipe_n2_partition_2 {R : Type u} [Field R]
     (hX : 1 + q - q ^ 2 - q ^ 3 + q * v ≠ 0)
     (hX1 : 1 + q - q ^ 2 - q ^ 3 ≠ 0) :
     yLambdaRecipe [2] q v = (q * v + q + 1) / ((q + 1) * (q ^ 2 + 1)) := by
-  have hp : partitionsOf 2 = [[1, 1], [2]] := by decide
+  -- `rfl` reduces each concrete `schurPrincipal` cell-product fold to its
+  -- explicit form (Q = q², X = universalX q v; `zpow` for the ℤ content).
+  have hs2 : schurPrincipal [2] q v
+      = (q ^ 2) ^ (0 : ℕ) *
+        (1 * ((1 * ((1 - universalX q v * (q ^ 2) ^ (1 : ℤ)) / (1 - (q ^ 2) ^ (1 : ℕ)))) *
+              ((1 - universalX q v * (q ^ 2) ^ (0 : ℤ)) / (1 - (q ^ 2) ^ (2 : ℕ))))) := by
+    rfl
+  have hs11 : schurPrincipal [1, 1] q v
+      = (q ^ 2) ^ (1 : ℕ) *
+        ((1 * (1 * ((1 - universalX q v * (q ^ 2) ^ (-1 : ℤ)) / (1 - (q ^ 2) ^ (1 : ℕ))))) *
+         (1 * ((1 - universalX q v * (q ^ 2) ^ (0 : ℤ)) / (1 - (q ^ 2) ^ (2 : ℕ))))) := by
+    rfl
+  have hp : partitionsOf 2 = [[2], [1, 1]] := by decide
   have hd2 : hookDim [2] = 1 := by decide
   have hd11 : hookDim [1, 1] = 1 := by decide
-  have hZ : partitionFunctionZ 2 q v
-      = schurPrincipal [2] q v + schurPrincipal [1, 1] q v := by
-    simp only [partitionFunctionZ, hp, hd2, hd11,
-      List.foldr_cons, List.foldr_nil, Nat.cast_one, one_mul, zero_add]
   have hrec : ([2] : List ℕ).foldr (· + ·) 0 = 2 := rfl
-  unfold yLambdaRecipe
-  rw [hrec, hZ]
-  -- Reduces to the closed-form algebra: `schurPrincipal [2]` and
-  -- `schurPrincipal [1,1]` unfold (via their concrete cell-products) to
-  --   s_(2)   = (1−X)(1−XQ)/((1−Q²)(1−Q)),
-  --   s_(1,1) = Q(1−X)(1−X/Q)/((1−Q²)(1−Q)),   Q = q², X = universalX q v,
-  -- whence s_(2)/(s_(2)+s_(1,1)) = (1−XQ)/((1+Q)(1−X)), and substituting X
-  -- gives (qv+q+1)/((q+1)(q²+1)) (verified by hand + by the numerical
-  -- witness).  The remaining step is the mechanical reduction of the
-  -- concrete `List.foldr`/`List.range`/`zpow` structure of `schurPrincipal`
-  -- to that closed form, then `field_simp; ring` under the nonzero
-  -- hypotheses — not yet discharged.
-  -- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988).
-  sorry
+  have hq2ne : q ^ 2 ≠ 0 := pow_ne_zero 2 hq
+  have hd1 : (1 : R) - q ^ 2 ≠ 0 := sub_ne_zero.mpr (Ne.symm hq2)
+  have hd4' : (1 : R) - q ^ 4 ≠ 0 := sub_ne_zero.mpr (Ne.symm hq4)
+  have hd4 : (1 : R) - (q ^ 2) ^ 2 ≠ 0 := by
+    have h : (q ^ 2) ^ 2 = q ^ 4 := by ring
+    rw [h]; exact hd4'
+  -- `1 − X ≠ 0` (the factor the recipe cancels): `1 − qv/Dx = (Dx − qv)/Dx`
+  -- with `Dx − qv = 1 + q − q² − q³` (`hX1`) and `Dx ≠ 0` (`hX`).
+  have hp2' : (1 : R) + q ^ 2 ≠ 0 := by rw [add_comm]; exact hp2
+  have hXm : (1 : R) - universalX q v ≠ 0 := by
+    rw [universalX, ne_eq, sub_eq_zero]
+    intro h
+    rw [eq_div_iff hX] at h
+    exact hX1 (by linear_combination h)
+  -- `Z_2 = (1−X)²/(1−q²)²` (common `(1−q²)(1−q⁴)` denom; `X` abstract), so `Z ≠ 0`.
+  have hZval : schurPrincipal [1, 1] q v + schurPrincipal [2] q v
+      = (1 - universalX q v) ^ 2 / (1 - q ^ 2) ^ 2 := by
+    rw [hs2, hs11]
+    simp only [zpow_zero, zpow_one, zpow_neg_one, pow_zero, pow_one, mul_one, one_mul]
+    field_simp [hd1, hd4', hq2ne]
+    ring
+  have hZne : schurPrincipal [1, 1] q v + schurPrincipal [2] q v ≠ 0 := by
+    rw [hZval]; exact div_ne_zero (pow_ne_zero 2 hXm) (pow_ne_zero 2 hd1)
+  unfold yLambdaRecipe partitionFunctionZ
+  rw [hrec, hp]
+  simp only [List.foldr_cons, List.foldr_nil, hd2, hd11, Nat.cast_one, one_mul, zero_add]
+  -- Clear the top-level division (needs `Z ≠ 0`), then expand schur/X and ring.
+  rw [div_eq_div_iff hZne (mul_ne_zero hp1 hp2), hs2, hs11, universalX]
+  field_simp [hX, hd1, hd4', hq2ne]
+  ring
 
 end QOU.BraidsAndKnots
