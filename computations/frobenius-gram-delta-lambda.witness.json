@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-05T11:21:33.019659+00:00",
-  "commitSha": "be738077a998aced47326c8de63ea658ce2849c4",
+  "computedAt": "2026-07-05T12:44:04.083583+00:00",
+  "commitSha": "21820303069c6916aea57d30f460b8c4fbd8d01a",
   "assertions": [
     {
       "name": "frobenius_variants_preserve_binding_sign",
@@ -21,8 +21,8 @@
   "durationMs": 0,
   "computation": "frobenius-gram-delta-lambda",
   "scriptFile": "frobenius_gram_delta_lambda_probe.py",
-  "scriptHash": "2ee558670acc",
-  "scriptCommitSha": "be738077a998aced47326c8de63ea658ce2849c4",
+  "scriptHash": "fd124339c930",
+  "scriptCommitSha": "21820303069c6916aea57d30f460b8c4fbd8d01a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,7 +46,7 @@
         "n": 6,
         "variants": {
           "ref_trM  Σ y·dχ": {
-            "S": "-0.5951688224",
+            "S": "-0.5951688238",
             "abs_miss": "3.75811",
             "within_tol": false,
             "sign_negative": true
@@ -58,7 +58,7 @@
             "sign_negative": true
           },
           "frob  Σ y·‖ρa‖²·dχ": {
-            "S": "-29.19406632",
+            "S": "-29.19406689",
             "abs_miss": "24.8408",
             "within_tol": false,
             "sign_negative": true
