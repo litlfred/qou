@@ -574,6 +574,20 @@ const PROJECTION_BODY = /^([a-z][\w']*)\.([A-Za-z_][\w']*)\s*$/;
 const TUPLE_PROJECTION =
   /^⟨\s*([a-z][\w']*)\.[A-Za-z_][\w']*\s*(?:,\s*\1\.[A-Za-z_][\w']*\s*)*⟩\s*$/;
 const EXACT_PROJECTION = /^by\s+exact\s+([a-z][\w']*)\.([A-Za-z_][\w']*)\s*$/;
+// An *applied*-field tuple `⟨ctx.impl_x ctx.active, ctx.impl_y ctx.active⟩`:
+// each component is a field `word.field` optionally APPLIED to further
+// `word[.field]` arguments. The `TUPLE_PROJECTION` regex above rejects the
+// trailing argument, so these placeholder-canonical projections escaped the
+// detector entirely (measured 2026-07-05: 0/99 corpus hits). Distinct name so
+// they are tracked separately and never disturb the existing verbatim-tuple
+// classification.
+const APPLIED_TUPLE_PROJECTION =
+  /^⟨\s*[a-z][\w']*\.[A-Za-z_][\w']*(?:\s+[a-z][\w']*(?:\.[A-Za-z_][\w']*)?)+\s*(?:,\s*[a-z][\w']*\.[A-Za-z_][\w']*(?:\s+[a-z][\w']*(?:\.[A-Za-z_][\w']*)?)*\s*)*⟩\s*$/;
+// A `def`-kind declaration counts as a disguised provable claim when its
+// conclusion type carries a logical connective / relation (i.e. it is a proof
+// of a Prop, not a data definition). `detectSelfAssuming` skips `def` by
+// default (`PROVABLE_KINDS`); this opts the Prop-valued ones in.
+const PROP_CONCLUSION = /[∧↔∨∀∃≤≥]|=/;
 const CONCLUSION_FIELD =
   /^(exists_|claim_|is_|has_|selects_|are_|satisfies_|holds_|equals_)|(_holds|_eq|_iff|_property|_spec|_result)$|^(holds|property|spec|result|main|claim)$/;
 const DERIVES =
@@ -623,7 +637,15 @@ const TWO_FIELD_TUPLE =
   /^⟨\s*[a-z][\w']*\.[A-Za-z_][\w']*\s*,\s*[a-z][\w']*\.[A-Za-z_][\w']*\s*⟩$/;
 
 function detectSelfAssuming(d: Decl): Hit | undefined {
-  if (!PROVABLE_KINDS.test(d.kind)) return undefined;
+  const provable = PROVABLE_KINDS.test(d.kind);
+  // A Prop-valued `def` is a disguised provable claim (§1a def-disguised); it
+  // escaped detection because `detectSelfAssuming` only scanned the provable
+  // kinds. Opt those in — a data `def` (no connective in its conclusion) stays
+  // out. This is the primary corpus gap: 36/99 placeholder-canonical
+  // projections are `def`-kind.
+  const isDefProof =
+    /^def\b/.test(d.kind) && PROP_CONCLUSION.test(conclusionTypeAscription(d.sig));
+  if (!provable && !isDefProof) return undefined;
   const body = d.body.trim();
   if (DERIVES.test(body)) return undefined;
   let field: string | undefined;
@@ -638,10 +660,32 @@ function detectSelfAssuming(d: Decl): Hit | undefined {
   } else if (TUPLE_PROJECTION.test(body)) {
     pat = "tuple-projection";
     field = body.match(/\.([A-Za-z_][\w']*)/)?.[1];
+  } else if (APPLIED_TUPLE_PROJECTION.test(body)) {
+    pat = "applied-tuple-projection";
+    field = body.match(/\.([A-Za-z_][\w']*)/)?.[1];
   }
   if (!pat) return undefined;
-  if (pat !== "tuple-projection" && field && !CONCLUSION_FIELD.test(field))
+  if (
+    pat !== "tuple-projection" &&
+    pat !== "applied-tuple-projection" &&
+    field &&
+    !CONCLUSION_FIELD.test(field)
+  )
     return undefined;
+  // Newly-covered patterns (the def-disguised projections + applied-field
+  // tuples) are the acknowledged §3b placeholder-canonical projections whose
+  // docstrings honestly state the content is carried by the context-class
+  // axioms with derivation pending (post-PR #3363). Emit them EXEMPT
+  // (tracked-not-counted) so the coverage blindspot is closed WITHOUT turning
+  // the vacuity CI gate red on ~99 files. Promoting these to a hard failure —
+  // once the honest-placeholder vs. dishonest-dodge line is codified — is a
+  // deliberate follow-up, not a silent side effect of closing the blindspot.
+  if (isDefProof || pat === "applied-tuple-projection") {
+    const h = mk(d, "proof-no-self-assuming-projection", pat, true);
+    h.exempt_reason =
+      "canonical §3b placeholder projection (tracked; derivation pending)";
+    return h;
+  }
   // Precision: exempt a two-field tuple-projection that derives a top-level
   // `↔` from its direction fields — the legitimate conditional-class pattern
   // (`q_bkm_criterion`, `ns_obstruction_tower`), not a self-assuming defect.
