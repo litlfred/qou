@@ -120,11 +120,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "d735760f2b64",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+          "script_hash": "badc8fb0888e",
+          "script_commit_sha": "e28e45e2256ea73187107f230cc7beeb37a6c301"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-05T04:17:54.851Z",
+        "reviewed_sha": "3a7e4dbe0e216d15bcb5e95c2a1eeb09a2a77b65"
       }
     ],
     "voice-scholarly-default": [
@@ -248,18 +248,16 @@
           "ts": "d860f15c6f69",
           "lean": "a15822bc0aeb"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "d735760f2b64",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+          "script_hash": "badc8fb0888e",
+          "script_commit_sha": "e28e45e2256ea73187107f230cc7beeb37a6c301"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/molecular-construction/tetrahedral-hbond-directions.lean:1: Lean file uses archimedean constructs but .md narrative does not acknowledge archimedean specialisation. Add a §7c-style banner or move the archimedean evaluation to a sibling block."
+        "reviewed_at": "2026-07-05T04:18:31.815Z",
+        "reviewed_sha": "3a7e4dbe0e216d15bcb5e95c2a1eeb09a2a77b65"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1618,5 +1616,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.117Z"
+  "updated_at": "2026-07-05T04:27:18.907Z"
 }

@@ -196,39 +196,20 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "54eb9d369c7a",
+          "md": "1714c55eca19",
           "ts": "cd481607e1b7",
-          "lean": "17d3867949e4"
+          "lean": "b3df4dcdf079"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "d735760f2b64",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+          "script_hash": "badc8fb0888e",
+          "script_commit_sha": "e28e45e2256ea73187107f230cc7beeb37a6c301"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
-      },
-      {
-        "field_hash": {
-          "md": "3cf5fd6d3a39",
-          "ts": "cd481607e1b7",
-          "lean": "17d3867949e4"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "d735760f2b64",
-          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
-        },
-        "reviewed_at": "2026-06-26T15:20:59.452Z",
-        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/recursive-brane-tower.md:32: object defined above.  We accordingly write simply *(recursive) brane"
+        "reviewed_at": "2026-07-05T04:17:54.743Z",
+        "reviewed_sha": "3a7e4dbe0e216d15bcb5e95c2a1eeb09a2a77b65"
       }
     ],
     "voice-scholarly-default": [
@@ -1413,5 +1394,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.146Z"
+  "updated_at": "2026-07-05T04:27:18.808Z"
 }
