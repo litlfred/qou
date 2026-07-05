@@ -24,6 +24,11 @@ import Mathlib.Data.Nat.Choose.Basic
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.Fintype.Fin
+import Mathlib.Data.Finset.Max
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Algebra.BigOperators.Ring.Finset
+import Mathlib.Algebra.Order.BigOperators.Group.Finset
 
 namespace QOU.BraidKnot.BindingConcentration
 
@@ -68,18 +73,79 @@ example : dominantPartition 2 (by omega) = [3, 3] := by simp [dominantPartition]
 -- Faithful encoding: the L¹-minimal feasible solution is 1-sparse — an
 -- optimal `Δ` supported on a single partition index exists (basic
 -- feasible solution of a 1-constraint program ⇒ ≤ 1 nonzero).
+--
+-- The `hfeas : ∃ i, y_chi i ≠ 0` hypothesis is a genuine feasibility
+-- premise: with `target ≠ 0`, the equality constraint `∑ y_chi·Δ = target`
+-- is unsatisfiable when every `y_chi i = 0` (in particular when `n = 0`),
+-- so no optimal support index can exist. It strengthens the antecedent
+-- honestly — the 1-sparse-optimal existence is still real content.
 theorem lp_binding_sparse (n : ℕ) (y_chi : Fin n → ℝ) (target : ℝ)
     (cost : Fin n → ℝ) (hcost : ∀ i, 0 < cost i)
-    (htarget : target ≠ 0) :
+    (htarget : target ≠ 0) (hfeas : ∃ i, y_chi i ≠ 0) :
     ∃ Δ : Fin n → ℝ,
       (∑ i, y_chi i * Δ i = target) ∧
       (∃ i₀ : Fin n, ∀ i, i ≠ i₀ → Δ i = 0) ∧
       (∀ Δ' : Fin n → ℝ, (∑ i, y_chi i * Δ' i = target) →
         (∑ i, cost i * |Δ i|) ≤ ∑ i, cost i * |Δ' i|) := by
-  -- Ref: [bertsimas1997] basic-feasible-solution sparsity for a
-  -- single-equality-constraint L¹ program (vertex of the feasible
-  -- polytope ⇒ ≤ 1 nonzero); not yet formalised.
-  sorry
+  classical
+  -- The support set `S = {i : y_chi i ≠ 0}` is nonempty by feasibility.
+  set S : Finset (Fin n) := Finset.univ.filter (fun i => y_chi i ≠ 0) with hS
+  have hSne : S.Nonempty := by
+    obtain ⟨i, hi⟩ := hfeas
+    exact ⟨i, Finset.mem_filter.mpr ⟨Finset.mem_univ i, hi⟩⟩
+  -- Pick the optimal support index `i₀` as the argmin of the
+  -- cost-to-coefficient ratio `cost i / |y_chi i|` over `S`.
+  obtain ⟨i₀, hi₀S, hi₀min⟩ := S.exists_min_image (fun i => cost i / |y_chi i|) hSne
+  have hy0 : y_chi i₀ ≠ 0 := (Finset.mem_filter.mp hi₀S).2
+  have hay0 : 0 < |y_chi i₀| := abs_pos.mpr hy0
+  set r : ℝ := cost i₀ / |y_chi i₀| with hr
+  have hrpos : 0 < r := div_pos (hcost i₀) hay0
+  -- Termwise bound `r · |y_chi i| ≤ cost i`, from the argmin property
+  -- (nonzero indices) or triviality (zero indices).
+  have key : ∀ i, r * |y_chi i| ≤ cost i := by
+    intro i
+    by_cases hyi : y_chi i = 0
+    · rw [hyi, abs_zero, mul_zero]; exact (hcost i).le
+    · have hiS : i ∈ S := Finset.mem_filter.mpr ⟨Finset.mem_univ i, hyi⟩
+      have hai : 0 < |y_chi i| := abs_pos.mpr hyi
+      have hmin : r ≤ cost i / |y_chi i| := hi₀min i hiS
+      rw [le_div_iff₀ hai] at hmin
+      exact hmin
+  -- The 1-sparse candidate: mass `target / y_chi i₀` on `i₀`, zero else.
+  set Δ₀ : Fin n → ℝ := fun i => if i = i₀ then target / y_chi i₀ else 0 with hΔ₀
+  have hΔ₀i₀ : Δ₀ i₀ = target / y_chi i₀ := by simp [hΔ₀]
+  have hΔ₀ne : ∀ i, i ≠ i₀ → Δ₀ i = 0 := fun i hi => by simp [hΔ₀, hi]
+  refine ⟨Δ₀, ?_, ⟨i₀, hΔ₀ne⟩, ?_⟩
+  · -- Constraint: only the `i₀` term survives and equals `target`.
+    rw [Finset.sum_eq_single i₀
+        (fun b _ hb => by rw [hΔ₀ne b hb, mul_zero])
+        (fun h => absurd (Finset.mem_univ i₀) h), hΔ₀i₀]
+    field_simp
+  · -- Optimality against any feasible `Δ'`.
+    intro Δ' hΔ'
+    -- Cost of the candidate is `r · |target|`.
+    have hcandidate : (∑ i, cost i * |Δ₀ i|) = r * |target| := by
+      rw [Finset.sum_eq_single i₀
+          (fun b _ hb => by rw [hΔ₀ne b hb, abs_zero, mul_zero])
+          (fun h => absurd (Finset.mem_univ i₀) h), hΔ₀i₀, abs_div, hr]
+      ring
+    rw [hcandidate]
+    -- `|target| ≤ ∑ |y_chi i| · |Δ' i|` by the triangle inequality.
+    have step1 : |target| ≤ ∑ i, |y_chi i| * |Δ' i| := by
+      calc |target| = |∑ i, y_chi i * Δ' i| := by rw [hΔ']
+        _ ≤ ∑ i, |y_chi i * Δ' i| := Finset.abs_sum_le_sum_abs _ _
+        _ = ∑ i, |y_chi i| * |Δ' i| := by simp_rw [abs_mul]
+    -- Scale by `r > 0` and apply the termwise bound `r · |y_chi i| ≤ cost i`.
+    calc r * |target| ≤ r * ∑ i, |y_chi i| * |Δ' i| :=
+            mul_le_mul_of_nonneg_left step1 hrpos.le
+      _ = ∑ i, r * (|y_chi i| * |Δ' i|) := by rw [Finset.mul_sum]
+      _ ≤ ∑ i, cost i * |Δ' i| := by
+          apply Finset.sum_le_sum
+          intro i _
+          have hk := key i
+          have hrw : r * (|y_chi i| * |Δ' i|) = (r * |y_chi i|) * |Δ' i| := by ring
+          rw [hrw]
+          exact mul_le_mul_of_nonneg_right hk (abs_nonneg _)
 
 /-- The interface eigenvalue asymmetry is maximal for the partition
     that separates interface strands from bulk strands.
