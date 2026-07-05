@@ -34,6 +34,8 @@
 
 import Mathlib.Algebra.Field.Basic
 import Mathlib.Data.List.Basic
+import Mathlib.Data.Nat.Factorial.Basic
+import Mathlib.Data.List.Sort
 
 namespace QOU.BraidsAndKnots
 
@@ -93,14 +95,33 @@ noncomputable def universalX {R : Type u} [Field R] (q v : R) : R :=
 
       s_{λ, r}(Q) = Q^{n(λ)} · ∏_{(i,j) ∈ λ} (1 - X·Q^{c(i,j)}) / (1 - Q^{h(i,j)})
 
-    Stub — full implementation requires partition-cell iteration. -/
-opaque schurPrincipal {R : Type u} [Field R] (lam : List ℕ) (q v : R) : R
+    Concrete cell-product: outer fold over rows `(row-length, row-index)`
+    (the `hookDim` iteration pattern), inner fold over columns `j`.  The
+    content `c(i,j) : ℤ` gives an integer power `Q ^ (c : ℤ)` (zpow); the
+    hook `h(i,j) : ℕ` gives a natural power. -/
+noncomputable def schurPrincipal {R : Type u} [Field R] (lam : List ℕ) (q v : R) : R :=
+  let Q := q ^ 2
+  let X := universalX q v
+  Q ^ (nPartition lam) *
+    (lam.zip (List.range lam.length)).foldr
+      (fun (p : ℕ × ℕ) acc =>
+        acc * (List.range p.1).foldr
+          (fun j inner =>
+            inner * ((1 - X * Q ^ (cellContent p.2 j)) / (1 - Q ^ (cellHook lam p.2 j))))
+          1)
+      1
 
 /-! ## Step 4: Normalisation -/
 
 /-- Partition function denominator `Z_n = Σ_µ d_µ · s_µ` over all
-    partitions µ of `n`. -/
-opaque partitionFunctionZ {R : Type u} [Field R] (n : ℕ) (q v : R) : R
+    partitions µ of `n`.  Declared as an abstract constant (`axiom`, not
+    `opaque`): `opaque … : R` over a *generic* `Field R` fails Lean-v4.24
+    code-gen — it must synthesise the value via the noncomputable
+    `Classical.ofNonempty`, which the compiler rejects for a `def`/`opaque`.
+    An `axiom` carries the same "fixed but unspecified constant" semantics
+    without triggering code-gen.  Follow-up: give a concrete definition via
+    partition enumeration (`d_µ = hookDim µ`, `s_µ = schurPrincipal µ`). -/
+axiom partitionFunctionZ {R : Type u} [Field R] (n : ℕ) (q v : R) : R
 
 /-- The recipe: `y_λ(q) = s_{λ, r}(Q) / Z_n`. -/
 noncomputable def yLambdaRecipe {R : Type u} [Field R]
@@ -154,8 +175,13 @@ structure MarkovTraceCoefficient (R : Type u) where
     satisfy this theorem and are not interchangeable.
 
     Equivalent to prop:y-lambda-closed-form-wenzl-bridge restated
-    algorithmically. -/
-opaque JonesMarkovCoefficient {R : Type u} [Field R]
+    algorithmically.
+
+    Abstract external constant (`axiom`, not `opaque`): the canonical
+    Jones–Markov coefficient is an external datum ([wenzl1988]); `opaque
+    … : R` over generic `Field R` fails v4.24 code-gen (see
+    `partitionFunctionZ`), so it is declared as an `axiom`. -/
+axiom JonesMarkovCoefficient {R : Type u} [Field R]
     (q v : R) (lam : List ℕ) : R
 
 /-- The Markov-trace convention this recipe implements. -/
