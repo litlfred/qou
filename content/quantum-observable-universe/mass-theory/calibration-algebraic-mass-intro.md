@@ -24,4 +24,3 @@ pion mass $m_\pi$; the modulus is overdetermined, so it is pinned
 numerically by the lepton ratio $m_\mu/m_e$ through the Skein
 relation $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$.  Every other
 mass, Q-value, binding energy, and coupling constant is a prediction.
-"'
