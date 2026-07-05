@@ -6,9 +6,10 @@ strict equality, hence a binary non-degeneracy condition. Over the
 surreals this condition can fail at infinitesimal scale, where a
 pairing may be non-degenerate only up to an infinitesimal
 correction. Two phenomena already invite such a reading — the
-diagonal regularisation of the Möbius energy and the $\sim 4\%$
-mean absolute error in the QOU mass formula's $\mathcal{Q}$-values —
-each of which the sections below interpret as an infinitesimal
+diagonal regularisation of the Möbius energy and the small
+residual error in the QOU mass formula's $\mathcal{Q}$-values
+(quantified in §Significance below) — each of which the sections
+below interpret as an infinitesimal
 Frobenius deviation. In a surreal QOU, the strict axiom can
 accordingly be relaxed.
 
