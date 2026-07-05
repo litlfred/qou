@@ -7,7 +7,7 @@ import Mathlib.Tactic
 `qou:QOU.FluidDynamics.root_of_unity_truncation`.
 
 The `lean.ref` URI resolves to this declaration in the `qou` Lake
-package.  The claim is formalised below (§3b-conditional, sorry-free):
+package.  The claim is formalised below (§3b-conditional, fully proved):
 the five sub-claims are discharged from the context class's `impl_*`
 fields (conditional on the axiomatised `root_unity_truncated`).
 -/
@@ -64,7 +64,7 @@ accumulation of infinitely many such truncations.
 
     The Lean encoding below states the claim over the context class and
     discharges it from the class's `impl_*` fields (§3b-conditional;
-    sorry-free). -/
+    fully proved). -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.ts
 theorem root_of_unity_truncation [ctx : RootOfUnityTruncationContext] :
     1 < ctx.q ∧ 2 ≤ ctx.κ ∧

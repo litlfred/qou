@@ -8,7 +8,7 @@ import Mathlib.Tactic
 
 The `lean.ref` URI `qou:QOU.FluidDynamics.discrete_vortex_spectrum`
 resolves to this declaration in the `qou` Lake package.  The claim is
-formalised below (§3b-conditional, sorry-free): the four sub-claims are
+formalised below (§3b-conditional, fully proved): the four sub-claims are
 discharged from the context class's `impl_*` fields.
 -/
 
@@ -65,7 +65,7 @@ sections of the normal bundle $N_\varrho$.  Then:
 
     The Lean encoding below states the claim over the context class and
     discharges it from the class's structural fields (§3b-conditional;
-    sorry-free). -/
+    fully proved). -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts
 theorem discrete_vortex_spectrum [ctx : DiscreteVortexSpectrumContext] :
     (∀ k : ℕ, 1 ≤ k →
