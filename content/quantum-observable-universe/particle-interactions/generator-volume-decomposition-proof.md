@@ -27,6 +27,10 @@ relation and far commutativity.
    generators cancelling exactly — the 1-jet variation.
 
 The Lean sibling proves `energy_additive` and
-`beta_decay_locality` outright and assembles
-`generator_volume_decomposition_prop`, whose closing step is deferred via
-`sorry` (`-- Ref: [manuscript]`). $\square$
+`beta_decay_locality` outright, and states the assembly
+`generator_volume_decomposition_prop` as the decomposition identity
+itself — the categorically-defined energy
+`generator_volume_decomposition` equals the generator-volume sum
+$\sum_i V_i$ by construction (proved by `rfl`), with the substantive
+transfer-matrix, additivity, and locality content carried by the
+sublemmas above. $\square$

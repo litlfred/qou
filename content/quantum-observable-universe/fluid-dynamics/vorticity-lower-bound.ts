@@ -17,4 +17,11 @@ export default proposition({
     "blowup",
     "last-gap",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      body:
+        "Lean sibling is archimedean by construction (AGENTS.md §7c): the collision time, separation $d(t)$, vorticity sup-norm and the Biot–Savart law $c_1\\sqrt{T^*-t}$ are real-analytic quantities over $\\mathbb{R}$ (uses `Real.sqrt`). This is the observable/archimedean side of the substrate→archimedean wall, on which the blow-up estimate is genuinely meaningful — not a gratuitous specialisation of otherwise-generic combinatorial content.",
+    },
+  ],
 });

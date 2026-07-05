@@ -9,9 +9,9 @@ structure $H^1(\mathrm{Bring}) = 2W$ ($W$-plane scale + modulus + one
 orthogonal $\mathrm{Vol}(\mathrm{Hopf})=0$ meson class). All other
 masses, binding energies, Q-values, and coupling constants — including
 the $\beta$-decay Q-value $\mathfrak{Q}_\beta = \hbar/\mathfrak{D}_\beta$
-itself — are predictions or cross-checks. (Per the 2026-06-26
-decay-width ruling, $\mathfrak{Q}_\beta$ is the **CAL-2 proxy /
-cross-check**, *not* a separate input; the hadronic energy scale
+itself — are predictions or cross-checks. ($\mathfrak{Q}_\beta$ is the
+**CAL-2 proxy / cross-check**, *not* a separate input; the hadronic
+energy scale
 $\mathfrak{E}_0$ is framework-derived from $(m_e, q_0)$ and
 $\mathfrak{Q}_\beta$ validates it. See the three-calibration discipline
 in [`epistemic-status-of-calibrations`](#rem:epistemic-status-of-calibrations).)
@@ -194,7 +194,7 @@ all but three real parameters:
    orthogonal class ($\mathrm{Vol}(\mathrm{Hopf})=0$) genuinely
    independent of $(m_e, q_0)$ — the charged-pion mass $m_\pi$ fixes
    it (SDP-validated). The hadronic $\beta$-decay scale $\mathfrak{E}_0$
-   is *derived* from $(m_e, q_0)$ and merely cross-checked by
+   is *derived* from $(m_e, q_0)$ and cross-checked by
    $\mathfrak{Q}_\beta$ (the CAL-2 proxy), so it is not the third
    independent input. The three inputs correspond to the three
    physical sectors: shape ($q$, via $\mathfrak{D}_\beta$/CAL-2),
