@@ -3,11 +3,10 @@ The companion conjecture
 reduces the Wightman-axiom portion of the Yang–Mills millennium
 statement to a single substrate axiom — $C^*$-Frobenius positivity
 of the QOU Frobenius–Hopf substrate at $q = q_0$. This conjecture
-makes the natural follow-up step: the axiom is **not** independent of
-existing categorical theory. It should be **derivable** from Wenzl's
-positivity criterion for $\mathrm{Rep}(U_q(\mathfrak{sl}_2))$ at
-$q_0 \in \mathbb{R}_{>1}$ — i.e. *not posited*, *derived* from
-existing unitarity.
+makes the natural follow-up step: the axiom should be **derivable**
+from Wenzl's positivity criterion for
+$\mathrm{Rep}(U_q(\mathfrak{sl}_2))$ at $q_0 \in \mathbb{R}_{>1}$ —
+not an independent posit but a consequence of existing unitarity.
 
 **Conjecture (Wenzl positivity at $q_0$ implies substrate
 $C^*$-Frobenius positivity).** *Wenzl's positivity criterion for the
@@ -21,6 +20,11 @@ substrate $C^*$-Frobenius positivity axiom of*
 $A$ at $q_0$, induced by the categorical trace of $\mathrm{Rep}(U_q(\mathfrak{sl}_2))$,
 makes the antipode-twisted Frobenius pairing $\langle\theta(\cdot),
 \cdot\rangle_F$ positive-definite on the positive-time Reeb half.*
+
+Here $\theta$ is the Reeb reflection (the antipodal
+$\mathbb{Z}_2 \subset U(1)$ of
+[`conj:os-reflection-positivity-from-reeb`](#conj:os-reflection-positivity-from-reeb))
+and $\langle\cdot,\cdot\rangle_F$ the Frobenius form of $A$.
 
 ## The natural follow-up
 
@@ -85,10 +89,9 @@ positivity notions:
     $\mathrm{Rep}(U_{q_0}(\mathfrak{sl}_2))$ — needed by
     [`conj:os-reflection-positivity-from-reeb`](#conj:os-reflection-positivity-from-reeb).
 
-(a) is a theorem; (b) is the substrate axiom. The conjecture asserts
-that (a) implies (b) via the categorical Frobenius–algebra theory
-of Müger / BKLR — making the OS reflection-positivity axiom *not
-free-standing* but *derived* from Wenzl's classical result.
+(a) is a theorem; (b) is the substrate axiom, so the conjecture is
+exactly the claim that (a) implies (b) via the categorical
+Frobenius–algebra theory of Müger / BKLR.
 ## Strategic significance
 
 If this conjecture is proved, the entire Yang–Mills millennium

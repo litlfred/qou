@@ -2,7 +2,15 @@ The Frobenius axiom in
 [quantum observable universe](#def:quantum-observable-universe)
 requires the pairing $\int_A \circ \mu : A \otimes A \to \mathbf{1}$
 to induce an isomorphism $A \xrightarrow{\sim} A^{\vee}$ — a
-strict equality. In a surreal QOU, this can be relaxed.
+strict equality, hence a binary non-degeneracy condition. Over the
+surreals this condition can fail at infinitesimal scale, where a
+pairing may be non-degenerate only up to an infinitesimal
+correction. Two phenomena already invite such a reading — the
+diagonal regularisation of the Möbius energy and the $\sim 4\%$
+mean absolute error in the QOU mass formula's $\mathcal{Q}$-values —
+each of which the sections below interpret as an infinitesimal
+Frobenius deviation. In a surreal QOU, the strict axiom can
+accordingly be relaxed.
 
 ## Conjecture
 
@@ -97,7 +105,8 @@ and strict generalisation (hard).
  the infinitesimal $\varepsilon$, the term $\varepsilon \cdot \delta$
  is itself infinitesimal.
 
-3. By `standardPart_of_infinitesimal`, $\mathrm{St}(\varepsilon
+3. Since $\varepsilon \cdot \delta$ is infinitesimal, its standard
+ part vanishes: $\mathrm{St}(\varepsilon
    \cdot \delta) = 0$. So $\mathrm{St}((\int \circ \mu) \circ \eta)
    = \mathrm{St}(\mathrm{id} + \varepsilon \cdot \delta) = \mathrm{id}$,
  recovering the strict Frobenius axiom.
@@ -117,19 +126,14 @@ and strict generalisation (hard).
 6. Show the deformed structure is **not** gauge-equivalent to
  the strict structure (a Hochschild-cohomology computation).
 
-**Required infrastructure**:
-- `standardPart_of_infinitesimal` (proved).
-- `standardPart_add` (axiomatic; reduces to
- `IsFinite_decomposition`).
-- Hochschild cohomology of Frobenius algebras over $\mathbf{No}$
- (does not exist in mathlib).
+The two halves rest on very different prerequisites. Standard-part
+recovery needs only that the standard part of an infinitesimal
+vanishes and that it is additive — elementary facts about
+$\mathrm{St}$. Strict generalisation needs the Hochschild cohomology
+of Frobenius algebras over $\mathbf{No}$, a deformation theory over a
+surreal-coefficient field that has yet to be developed.
 
 **Falsification path**: prove a *rigidity theorem* for
 $\varepsilon$-Frobenius algebras: every $\varepsilon$-deformation
 is gauge-equivalent to the strict structure. This would refute
 the strict-generalisation half by collapsing the relaxation.
-
-**Provability assessment**: standard-part recovery provable in
-Lean today (modulo `standardPart_add` axiom). Strict
-generalisation requires deformation theory of Frobenius algebras
-over a surreal-coefficient field — substantial new mathematics.

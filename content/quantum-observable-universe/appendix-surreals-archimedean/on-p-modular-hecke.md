@@ -1,3 +1,6 @@
+This conjecture extends, to a primitive $p$-th root of unity, the
+char-$0$ surreal picture of Hecke representation theory recalled
+next.
 [Hoefsmit-is-surreal-construction](#prop:hoefsmit-is-surreal-construction)
 identifies the binary $\{L \mid R\}$ split at each Hecke
 eigenchannel step with Conway's recursive surreal
@@ -17,6 +20,15 @@ This conjecture asserts the natural extension of
 to the modular setting: the modular Hecke combinatorics at $q =
 \zeta_p$ corresponds to **nimber surreals**
 $\mathbf{On}_p$ in characteristic $p$ (Lenstra--Conway).
+
+## Note on QOU's main paper
+
+This conjecture is **not** load-bearing for QOU's main results;
+the substrate value $q_0 = 1.109978595554181\ldots$ (50 dps) is generic (not a root
+of unity), so the binary Hoefsmit / char-0 surreal picture applies
+throughout the main paper. The char-$p$ extension is included
+here as a conceptual companion: a record of where the same
+Hoefsmit machinery would go in the modular setting.
 
 ## Background: nimber surreals
 
@@ -68,6 +80,23 @@ at each step, a vector decomposes into $p$ eigencomponents
 (rather than $2$) according to the cyclic-group action of
 $\mathbb{Z}/p$ on the truncated tensor power.
 
+The smallest instance already makes this correspondence concrete:
+at $p = 2$, $n = 3$ the three Kazhdan--Lusztig cells of $H_3(-1)$
+match the first three nimbers $0$, $1$, $*2$ (worked out in the
+proof strategy below).
+
+## Surviving and broken structure
+
+Compared to the char-0 surreal lift
+([algebraic core survives](#rem:algebraic-core-survives)):
+
+See [Table](#tbl:on-p-modular-hecke-table-data).
+
+The crucial *break* is **Wedderburn semisimplicity**: at $q = \zeta_p$
+the Hecke algebra is not semisimple, so the Hoefsmit-style
+diagonalisation fails. The replacement is the **Kazhdan--Lusztig
+cell decomposition**, which is *p*-ary rather than *binary*.
+
 ## Visibility in characteristic 0
 
 The $p$-ary structure at $q = \zeta_p$ is *not* purely modular —
@@ -98,18 +127,6 @@ $q_{\mathrm{gold}} = 1/\varphi^2$
 present) is the $p = 5$ case: the Descartes elliptic curve nodes
 at $\zeta_5$, and Hecke fusion becomes 5-ary.
 
-## Surviving and broken structure
-
-Compared to the char-0 surreal lift
-([algebraic core survives](#rem:algebraic-core-survives)):
-
-See [Table](#tbl:on-p-modular-hecke-table-data).
-
-The crucial *break* is **Wedderburn semisimplicity**: at $q = \zeta_p$
-the Hecke algebra is not semisimple, so the Hoefsmit-style
-diagonalisation fails. The replacement is the **Kazhdan--Lusztig
-cell decomposition**, which is *p*-ary rather than *binary*.
-
 ## Implications for QOU
 
 If the conjecture holds, QOU has a *parallel theory* in
@@ -131,28 +148,10 @@ The two lifts are related by:
 - they are *both* valid algebraic ambients for the same
  underlying $\mathbb{Z}[q^{\pm 1}]$-form of QOU.
 
-Possible physical readings (highly speculative):
-
-- Char-$p$ QOU at $p = 2$ might capture **fermion–boson
- alternation** combinatorically.
-- Char-$p$ QOU at $p$ matching specific knot crossing data
- might capture **fusion of $p$-quark systems** (e.g. pentaquark,
- hexaquark — the $p$-strand fusion combinatorics).
-- The golden-ratio degeneration suggests a **5-ary fusion**
- natural to particle generations, hinting at why three
- generations exist.
-
-These are conjectural. The mathematical content — that modular
-Hecke at $\zeta_p$ corresponds to $\mathbf{On}_p$ surreals — is
-the actual claim.
-## Note on QOU's main paper
-
-This conjecture is **not** load-bearing for QOU's main results;
-the substrate value $q_0 = 1.109978595554181\ldots$ (50 dps) is generic (not a root
-of unity), so the binary Hoefsmit / char-0 surreal picture applies
-throughout the main paper. The char-$p$ extension is included
-here as a conceptual companion: a record of where the same
-Hoefsmit machinery would go in the modular setting.
+We do not pursue speculative physical readings of the char-$p$
+lifts here. The mathematical content — that modular Hecke at
+$\zeta_p$ corresponds to $\mathbf{On}_p$ surreals — is the actual
+claim.
 
 ## Proof strategy
 
@@ -187,12 +186,6 @@ established) and Hecke $\leftrightarrow$ nimber correspondence (open).
 6. **Generalise** to larger $n$ and other primes $p$ by
  induction on KL-cell complexity.
 
-**Required infrastructure**:
-- Mathlib's nimber arithmetic (`Mathlib.Combinatorics.Nimber`,
- exists but limited).
-- Kazhdan–Lusztig cell theory in Lean (does not exist).
-- Modular Hecke algebra at root of unity (does not exist).
-
 **Falsification path**: produce a $H_n(\zeta_p)$-cell that does
 not correspond to any nimber of depth $\leq n$ (i.e., a
 "phantom" cell with no nimber witness). Such an example would
@@ -200,11 +193,11 @@ require $p$-ary fusion data not captured by nim-arithmetic,
 suggesting a different combinatorial replacement is needed.
 
 **Provability assessment**: Layer 1 already established. Layer 2
-for $p = 2, n = 3$ feasible by hand and Lean — matter of weeks.
-General Layer 2: requires Kazhdan–Lusztig cell theory in Lean —
-substantial mathlib gap, multi-year project.
+for $p = 2, n = 3$ is feasible by hand — a matter of weeks.
+General Layer 2 requires Kazhdan–Lusztig cell theory, a
+substantial multi-year project.
 
 **Significance**: even verifying the smallest case ($p = 2,
-n = 3$) would be the first formalised connection between Hecke
+n = 3$) would be the first explicit connection between Hecke
 combinatorics and nim-arithmetic, opening a door to a much
 larger program.

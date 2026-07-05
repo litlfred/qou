@@ -1,6 +1,6 @@
 ## Archimedean Functor & Trace Commutativity
 
-The standard-part functor acts as the **Archimedean Functor** $\mathcal{F}_{Arch}$, transforming algebraic traces into physical macroscopic observables. The evaluation of nuclear binding traces rigorously commutes as the scale $A \to \infty$:
+Two independently defined binding traces — the exact active-partition factorization $B_{\mathrm{sym}}$ and the Q-CLT statistical limit $B_{\mathrm{qCLT}}$ — must land on the *same* macroscopic observable, and the standard-part functor is what guarantees it. Acting as the **Archimedean Functor** $\mathcal{F}_{Arch}$, it transforms algebraic traces into physical macroscopic observables, so that the evaluation of nuclear binding traces rigorously commutes as the scale $A \to \infty$. The payoff is already concrete in the tritium / helium-3 splitting: both routes agree that the $n$–$n$ bond of tritium binds more tightly than the $p$–$p$ bond of helium-3.
 
 ```mermaid
 flowchart TD
@@ -29,8 +29,6 @@ flowchart TD
     M_sym -.->|"Perfect mapping in algebraic limit"| M_obs
     M_qclt -.->|"Approximates"| M_obs
 ```
-
-This mapping guarantees that the exact active-partition factorization and the Q-CLT statistical limit share the same macroscopic limit under $\mathrm{St}$.
 
 ### Numerical realization
 
