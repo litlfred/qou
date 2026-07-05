@@ -73,3 +73,5 @@ $$
 These are the **beta-decay thresholds**: at $A = A_k$, the nuclei
 $(k, A_k - k)$ and $(k + 1, A_k - k - 1)$ have equal binding
 energy, and beta decay is energetically neutral.
+
+**Archimedean specialisation (§7c).** The binding energy $E(p)$, its continuous optimum $p^*$, and the convex-minimisation argument are stated over $\mathbb{R}$: the integer-minimiser bound uses the real ordering, placing this block on the archimedean side of the substrate wall.

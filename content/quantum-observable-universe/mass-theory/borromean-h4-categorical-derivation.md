@@ -89,3 +89,5 @@ the framework's existing structure.
 > question (`conj:s5-so3-fiber-action`) and remains open per the
 > [T4–T14 retrospective](../../../docs/audits/2026-06-06-gap-a4-T9-T14-followup-retrospective.md)
 > (eight candidate cross-algebra functors refuted).
+
+**Archimedean specialisation (§7c).** The factor $1/4 = [2]_q^{-2}\big|_{q=1}$ is the archimedean $q = 1$ numerical evaluation of the exact Wenzl weight; the companion Lean states the rational factorisation $(-3)\cdot(1/4) = -3/4$ over $\mathbb{R}$, on the archimedean side of the substrate wall.

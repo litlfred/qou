@@ -50,3 +50,5 @@ Then:
    where $c$ is the coefficient of the $\sigma_i^2$ term.  Every
    Hecke step **increases** the total weight by $|c| \cdot (q - q^{-1})$
    (since $q > 1$ ensures $q - q^{-1} > 0$).
+
+**Archimedean specialisation (§7c).** The energy $|c|\,(q - q^{-1})$ and its positivity for $q > 1$ are stated over $\mathbb{R}$ using the real ordering, so this block sits on the archimedean side of the substrate wall.

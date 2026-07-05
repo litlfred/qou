@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean"
   },
   "source_hashes": {
-    "md": "7938520999a8",
+    "md": "7d6348b8788e",
     "ts": "2469a091c744",
     "lean": "497df1c0b6e2"
   },
@@ -431,39 +431,20 @@
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "86d931e6f0ba",
+          "md": "7d6348b8788e",
           "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
+          "lean": "497df1c0b6e2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "d735760f2b64",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+          "script_hash": "fd89dc9369e1",
+          "script_commit_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
-      },
-      {
-        "field_hash": {
-          "md": "7938520999a8",
-          "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "d735760f2b64",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
-        },
-        "reviewed_at": "2026-06-28T23:06:52.243Z",
-        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean:1: Lean file uses archimedean constructs but .md narrative does not acknowledge archimedean specialisation. Add a §7c-style banner or move the archimedean evaluation to a sibling block."
+        "reviewed_at": "2026-07-05T10:57:47.156Z",
+        "reviewed_sha": "ca2a2ac4c8c55853631cac524e6d5d307b5594f9"
       }
     ],
     "wall-base-ring-minimal": [
@@ -2817,5 +2798,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-05T10:57:47.156Z"
 }

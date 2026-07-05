@@ -20,3 +20,5 @@ in $n$).*
   (`CKRecursion` structure).
 - 1ppQ-Q$_\beta$ coordination ledger:
   [`docs/coordination/1ppq-qbeta.md`](../../../docs/coordination/1ppq-qbeta.md).
+
+**Archimedean specialisation (§7c).** The recursion coefficients $a_n$ are the real $Q_\beta$ Taylor sequence; the forward form is stated over $\mathbb{R}$ (numerical evaluation of the $q$-difference recursion), placing this block on the archimedean side of the substrate wall.

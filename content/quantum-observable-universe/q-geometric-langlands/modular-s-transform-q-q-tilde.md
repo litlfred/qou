@@ -134,3 +134,5 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
 - Volume Conjecture: [`conj:kashaev-volume-conjecture`](#conj:kashaev-volume-conjecture)
 - D16 Bloch group: [`conj:borromean-bloch-group-element`](borromean-bloch-group-element.md)
 - 13-driver menu driver (viii): [`docs/audits/-lambda-scale-canonical-unification.md`](../../docs/audits/-lambda-scale-canonical-unification.md)
+
+**Archimedean specialisation (§7c).** Modular convergence is an archimedean statement: the estimates use $\mathrm{Im}\,\tau$ and $\exp$ over $\mathbb{R}$, so the companion Lean lives on the archimedean side of the substrate wall.
