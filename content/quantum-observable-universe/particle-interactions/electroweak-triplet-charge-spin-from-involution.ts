@@ -8,8 +8,12 @@ export default theorem({
     ref: "qou:QOU.ParticleInteractions.ew_charge_spin_forced",
     validation: "not_checked",
   },
+  // NB: does NOT `use` conj:electroweak-higgs-torus-link-triplet, to avoid a
+  // dependency cycle (that conjecture `uses` this theorem) and a false-positive
+  // conjectural-propagation flag. This theorem is honestly conditional on its
+  // *own* in-type postulate class `EWSectorSelection` (the §3b-cond pattern);
+  // the conceptual link to the C1 selection is a prose cross-reference in the .md.
   uses: [
-    "conj:electroweak-higgs-torus-link-triplet",
     "def:spin-involution",
     "thm:hoefsmit-ew-cell-content",
     "prop:self-dual-higgs-real-volume",
