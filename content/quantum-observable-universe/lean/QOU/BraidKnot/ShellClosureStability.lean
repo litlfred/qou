@@ -95,7 +95,9 @@ instance shellClosureMonotone_refl
     (q : R_q) (h : isOneStepDressing D D) :
     ShellClosureMonotone D D q h :=
   -- Ref: [manuscript] particle-interactions/shell-closure-stability
-  sorry
+  -- `≤` on `R_q` is the trivial (`fun _ _ => True`) order (local instance
+  -- above), so `x ≤ x` is `True`.
+  ⟨trivial⟩
 
 /-- **Shell-closure stability, claim (1) — monotone non-decrease.**
     Per-instance form backed by `ShellClosureMonotone`. -/
