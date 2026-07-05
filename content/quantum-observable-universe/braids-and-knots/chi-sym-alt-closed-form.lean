@@ -14,12 +14,12 @@
 -/
 
 import Mathlib.Algebra.Group.Basic
-import Mathlib.Algebra.GroupPower.Basic
-import Mathlib.Data.Int.Defs
+import Mathlib.Algebra.Group.Basic
+import Mathlib.Data.Int.Init
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.Omega
+import Mathlib.Tactic
 import Mathlib.Tactic.NormNum
 
 namespace QOU.ChiSymAlt
