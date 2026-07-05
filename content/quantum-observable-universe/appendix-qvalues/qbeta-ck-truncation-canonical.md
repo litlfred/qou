@@ -1,3 +1,9 @@
+This block records the epistemic status of the $\mathfrak{Q}_\beta$
+truncation coefficients — which rung is proved, which is a near-match, and
+which remain calibration-anchored — so that their open status is
+first-class and auditable from the manifest rather than buried in the
+compute layer.
+
 The $\mathfrak{Q}_\beta$ categorical precision ladder writes the substrate prediction
 for the neutron $\beta$-decay $Q$-value as a convergent product of
 correction rungs about a Form-A baseline,
@@ -41,9 +47,7 @@ The status of the rung coefficients $c_k$ is **tiered**:
 substrate-only, $q_0$-anchor-independent closed form for the truncation
 coefficient $c_k$ — a genuine Taylor coefficient of a single underlying
 $q$-series (a Habiro element) rather than a calibration-anchored
-near-match. At present only $c_2 = -1$ is proved exact; $c_3 = -2$ is a
-near-match to the Hopf Jones value; and $c_k$ for $k \geq 3$ are
-calibration-anchored.*
+near-match.*
 
 The conjecture is the precise statement of what would close the gap. The
 expected route is the same machinery that resolved the analogous
@@ -53,16 +57,4 @@ $c_k$. Such an element would make each $c_{k\geq 3}$ exact and
 anchor-independent, turn the per-rung magnitude $|c_{N+1}\,u^{N+1}|$ into a
 rigorous truncation bound to arbitrary order, and promote the
 precision-order formula $N(\varepsilon)$ from a heuristic to a derivation.
-Until then the higher rungs remain a calibration record, not a prediction,
-and the block records that status so it is auditable from the manifest.
-
-## Lean structure
-
-The conjecture is axiomatised as a class
-`QbetaCkTruncationCanonicalClass` in the accompanying `.lean` file. Its
-fields encode the three tier facts — $c_2$ proved exact, $c_3$ a
-near-match to $J_{\mathrm{Hopf}}(q{=}1)$, and the existence claim for a
-canonical $c_k$ at $k \geq 3$ — with the existence field carrying the open
-content. Following the conditional-class convention, the class admits no
-unconditional instance: the single `sorry` in any instance **is** the
-conjecture, not a missing proof.
+Until then the higher rungs remain a calibration record, not a prediction.

@@ -1,3 +1,10 @@
+A particle's Gröbner normal form can be read as an occupancy pattern
+over the six basis channels of $H_3(q)$, and that pattern is what
+exposes its flavour and mass structure — the
+$\mathfrak{d}$--$\mathfrak{u}$ splitting (observation 2 below) shows up
+precisely as leakage into the identity channel.  With that reading in
+view:
+
 Every fundamental particle in the knot--particle dictionary
 ([Knot--particle dictionary](#rem:knot-particle-dictionary))
 has a unique Gröbner normal form in the Iwahori--Hecke algebra
@@ -34,7 +41,8 @@ own knot type.
 
 2. **Down quark** $\mathfrak{d} = \sigma_0^{-1} = \sigma_0 -
    (q - q^{-1})\mathbf{1}$.  The negative crossing orientation
-   bleeds $-\mathrm{HA} \approx -0.209$ into the $\gamma$ (identity)
+   bleeds the Hecke amplitude $-\mathrm{HA} \approx -0.209$ (with
+   $\mathrm{HA} = q - q^{-1}$) into the $\gamma$ (identity)
    channel.  This leakage is the origin of the $\mathfrak{d}$--$\mathfrak{u}$
    mass splitting.
 
@@ -44,15 +52,14 @@ own knot type.
 
 4. **Gluon** $L_{\pm}$ is already a basis element of $H_3(q)$.
    The Borromean braid $B_3 = (\sigma_0\sigma_1^{-1})^3$ contains
-   both $L_+$ and $L_-$ in its NF, confirming that the gluon
-   field is encoded in the Borromean structure.  This is the
+   both $L_+$ and $L_-$ in its NF.  This is the
    Hopf link $\mathcal{L}_H$ from [Definition](#def:borromean-baryon):
    $B = \mathcal{B}_3 \oplus \mathcal{L}_H$.
 
 5. **Hopf self-link** $\sigma_i^2 = \mathrm{HA}\cdot\sigma_i +
    \mathbf{1}$.  This is the Hecke relation itself — squaring
-   any crossing yields the identity (photon) plus a
-   HA-weighted crossing.
+   any crossing yields the identity (photon) plus an
+   $\mathrm{HA}$-weighted crossing.
 
 6. **Trefoil vs unknot test.**  Using full trefoil words
    $\sigma_0\sigma_1\sigma_0$ as quark crossings (Model T)

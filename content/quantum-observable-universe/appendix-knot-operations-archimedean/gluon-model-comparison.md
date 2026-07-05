@@ -76,10 +76,9 @@ Their near-cancellation ($+0.046 - 0.044 = +0.002$) reflects
 the color neutrality of the baryon: the net gluon content is
 close to zero, consistent with a color singlet.
 
-The $\nu$ term $\approx +0.998$ shows that $B_3$ is
+The $\gamma$ term $\approx +0.998$ shows that $B_3$ is
 perturbatively close to the identity — the Borromean
-confinement is a small correction to free quarks, with
-net$(B_3) \approx 1$.
+confinement is a small correction to free quarks.
 
 **Proton and neutron NF** (Model A, confirmed):
 

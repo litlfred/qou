@@ -1,10 +1,17 @@
-The Pauli witnesses are computed by the **hecke-engine** (versions v8/v9),
-an inductive Gröbner--Shirshov reduction algorithm operating in the
-Iwahori--Hecke algebra $H_A(q)$.
+An inductive Gröbner--Shirshov reduction is the natural vehicle for the
+Pauli witnesses: it runs entirely in exact Laurent arithmetic, so no
+floating-point error accumulates through the reduction, and it grows the
+braid one strand at a time, so its induction on strand count runs in
+lockstep with the induction on mass number that the witnesses track. The
+Pauli witnesses are accordingly computed by the **hecke-engine**
+(versions v8/v9), which realises this reduction in the Iwahori--Hecke
+algebra $H_A(q)$.
 
 ## Crossing convention
 
-All computations use the unimodular $(1, -\mathrm{HA})$ crossing convention:
+All computations use the unimodular $(1, -\mathrm{HA})$ crossing
+convention, writing $\mathrm{HA} = q - q^{-1}$ for the Hecke relation's
+discriminant:
 
 | Crossing type | $(c, d)$ | Source |
 |:---:|:---:|:---|
@@ -12,7 +19,7 @@ All computations use the unimodular $(1, -\mathrm{HA})$ crossing convention:
 | $\mathfrak{n}\mathfrak{n}$ (neutron--neutron) | $(1, -\mathrm{HA})$ | negative crossing $\sigma^{-1} = \sigma - (q - q^{-1})$ |
 | $\mathfrak{p}\mathfrak{n}$ (mixed) | $(1, -\mathrm{HA}/2)$ | averaged $\tfrac{1}{2}(\sigma + \sigma^{-1})$ |
 
-where $\mathrm{HA} = q - q^{-1}$.  This gives $\det T_{nn} = -1$
+This gives $\det T_{nn} = -1$
 (unimodular), consistent with the Iwahori--Hecke inverse relation.
 
 ## Inductive construction
@@ -27,15 +34,25 @@ target mass number.  At each step $A \to A + 1$:
 2. **Reduce**: apply the Iwahori--Hecke relation $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$
    to eliminate all non-reduced words.
 
-3. **Strip $I_8$**: absorb adjacency correlations $\sigma_i \sigma_{i+1}$
-   into single-generator terms.
+3. **Strip $I_8$** (the adjacency-correlation ideal): absorb adjacency
+   correlations $\sigma_i \sigma_{i+1}$ into single-generator terms.
 
-4. **Strip $I_9$**: collapse closed shell chains by absorbing $w \cdot \sigma_j$
-   into its prefix $w$ when both are present.
+4. **Strip $I_9$** (the closed-shell-chain ideal): collapse closed shell
+   chains by absorbing $w \cdot \sigma_j$ into its prefix $w$ when both
+   are present.
 
 5. **Accumulate**: update the Pauli accumulator
    $\mathrm{tr}_{\mathrm{alt}} = \sum_w c_w \cdot (-q^{-1})^{\ell(w)}$
    and the net trace $\mathrm{net} = \sum_w c_w \cdot q^{\ell(w)}$.
+
+Steps 3 and 4 carry the reduction loop's real work: they are the
+projection that keeps the term count bounded. By quotienting each freshly
+extended word through the adjacency and chain-collapse ideals, they absorb
+the structurally-determined words back into the per-generator
+transfer-matrix factorisation, so the surviving support never grows to the
+full $A!$ dimension of $H_A(q)$. It is this bounded growth that lets the
+symbolic loop run to $A = 12$ before the engine falls back to the
+fixed-point $f_{64}$ evaluation of the Scalability section below.
 
 ## Arithmetic
 
