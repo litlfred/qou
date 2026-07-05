@@ -20,18 +20,17 @@
   for the concrete `h`-scalars; this file states the general **exclusion** those
   specialise to — the missing (b)-grade invariant.
 
-  Base ring (§7c): generic `[Field R] [CharZero R]` — purely algebraic; the
-  only requirement is `2 ≠ 0` (the substrate is not characteristic 2). No q₀,
-  no archimedean construct.
+  Base ring (§7c): generic `[Field R] [NeZero (2 : R)]` — purely algebraic; the
+  only requirement is `2 ≠ 0` (the substrate is not characteristic 2), which is
+  strictly weaker than `CharZero` (admits finite fields of characteristic
+  `p > 2`). No q₀, no archimedean construct.
 -/
 import Mathlib.Algebra.Field.Basic
-import Mathlib.Algebra.CharZero.Defs
 import Mathlib.Tactic.LinearCombination
-import Mathlib.Tactic.NormNum
 
 namespace QOU.MassTheory
 
-variable {R : Type*} [Field R] [CharZero R]
+variable {R : Type*} [Field R] [NeZero (2 : R)]
 
 /-- A function that is simultaneously bar-EVEN (`f(−h) = f h`) and bar-ODD
 (`f(−h) = −f h`) is identically zero. The two parity conditions force
@@ -42,7 +41,7 @@ theorem barEven_and_barOdd_forces_zero
   intro h
   have h1 : f h = -f h := (heven h).symm.trans (hodd h)
   have h2 : (2 : R) * f h = 0 := by linear_combination h1
-  exact (mul_eq_zero.mp h2).resolve_left (by norm_num)
+  exact (mul_eq_zero.mp h2).resolve_left (NeZero.ne (2 : R))
 
 /-- **I-2 exclusion.** If the proton−neutron trace difference `d` is bar-ODD and
 nonzero at some point, then no bar-EVEN candidate `c` equals it: a bar-even
