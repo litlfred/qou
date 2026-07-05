@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Matrix.Notation
+import Mathlib.Tactic.FinCases
+
 /-!
 # QOU.Archimedean.EWHiggsTorusLinkTriplet — `conj:electroweak-higgs-torus-link-triplet` axiomatised
 
@@ -16,7 +20,7 @@ Conjectural EW–Higgs identification: the three carriers W±, Z, H realise as t
 
 Class-axiomatised per CLAUDE.md §3b-cond. The conjecture sits in
 the residual §3b-violator cone identified in
-[`AUDIT-DEEP-2026-05.md`](../../../../AUDIT-DEEP-2026-05.md) §1A
+[`AUDIT-DEEP-2026-05.md`](../../../AUDIT-DEEP-2026-05.md) §1A
 (P1.b sweep). Class declaration here lets downstream
 provable-kind blocks (in the same `uses[]` cone) become
 `conditional-on-class` rather than violators.
@@ -55,7 +59,7 @@ class EWHiggsTorusLinkTriplet where
   /-- **The conjecture itself.**  The crossing counts are
       $(4, 6, 8)$ and the genera are $(1, 2, 3)$ — the canonical
       $T(2, 2k)$ family at $k = 2, 3, 4$. -/
-  -- Ref: [manuscript] archimedean-universe/electroweak-higgs-torus-link-triplet
+  -- Ref: [manuscript] particle-interactions/electroweak-higgs-torus-link-triplet
   ew_higgs_triplet_holds :
     crossings 0 = 4 ∧ crossings 1 = 6 ∧ crossings 2 = 8 ∧
     genus 0 = 1 ∧ genus 1 = 2 ∧ genus 2 = 3

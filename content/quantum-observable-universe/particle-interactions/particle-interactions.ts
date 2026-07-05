@@ -378,6 +378,16 @@ export default chapter({
       ],
     }),
     section({
+      title: "Electroweak and Higgs sector as an even-twist torus-link triplet",
+      label: "sec:electroweak-higgs-torus-link-triplet",
+      blocks: [
+        "electroweak-higgs-torus-link-triplet",
+        "electroweak-higgs-torus-link-triplet-table1-data",
+        "electroweak-higgs-torus-link-triplet-table2-data",
+        "electroweak-higgs-torus-link-triplet-table3-data",
+      ],
+    }),
+    section({
       title: "Confined particles and shells",
       label: "sec:confined-particles-shells",
       blocks: [
