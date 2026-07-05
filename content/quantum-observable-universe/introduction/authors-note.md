@@ -18,6 +18,6 @@ formalisation process, both because a physical disability prevents
 sustained typing and for Lean proof engineering.  Human
 adjudication is not complete.
 
-> *Je n'ai fait celle-ci plus longue que parce que je n'ai pas eu
-> le loisir de la faire plus courte.*
+> *I have made this longer than usual only because I have not had
+> the leisure to make it shorter.*
 > — Blaise Pascal

@@ -1,5 +1,7 @@
-The **Pauli witness** for ${}^8\mathrm{Be}$ ($Z=4$, $N=4$, $A=8$) is the
-exact Gröbner normal form in $H_8(q)$ after quotient ideals $I_8 + I_9$.
+The **Pauli witness** for ${}^8\mathrm{Be}$ ($Z=4$, $N=4$, $A=8$)
+captures the antisymmetric channel of the reduced configuration, whose
+weight dilutes as it spreads across the braid generators. It is the
+exact Gröbner normal form in $H_8(q)$ after quotient ideals $I_8 + I_9$:
 
 $$
   F_{\mathrm{Pauli}}^{(8)} \approx 0.368

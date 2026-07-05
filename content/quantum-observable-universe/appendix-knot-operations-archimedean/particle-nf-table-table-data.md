@@ -1,3 +1,11 @@
+Each row records the Gröbner normal form of a particle's Hecke word
+in $H_3(q)$ at $q = q_0$, expanded over the six basis channels
+$\gamma,\ \sigma_0,\ \sigma_1,\ L_+,\ L_-,\ e^-$: a numeric entry is
+that basis element's coefficient in the normal form (a dash marks a
+zero coefficient), and the **net** column is their sum. The full
+discussion is in
+[Fundamental particle NF decomposition](#rem:particle-nf-table).
+
 | Particle | Knot | Hecke word | $\gamma$ | $\sigma_0$ | $\sigma_1$ | $L_+$ | $L_-$ | $e^-$ | net |
 |----------|------|-----------|------:|------:|------:|------:|------:|------:|----:|
 | $\nu$ | unknot $0_1$ | $\mathbf{1}$ | $+1$ | — | — | — | — | — | $+1.000$ |

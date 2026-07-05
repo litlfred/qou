@@ -5,7 +5,7 @@ electron mass (CAL-1), $m_\mu$ the muon mass (derived from CAL-2
 $\mathfrak{D}_\beta$), and let $F_{\mathrm{Bor}}$ denote the
 Borromean categorical observable
 ([`def:f-bor-borromean-observable`](../braids-and-knots/f-bor-borromean-observable.md)).
-Then the proton mass satisfies the substrate identity*
+Then the proton mass satisfies the approximate substrate identity*
 
 $$
   \boxed{\;m_p \;=\; 2 \cdot m_\mu \cdot F_{\mathrm{Bor}}(q_0) \;-\; 12 \cdot m_e\;}
@@ -118,8 +118,7 @@ directly, so the historical $2113\,\mathrm{ppm}$ gap between the flavor-split
 mass-derived $\mathfrak{Q}_\beta$ and the categorical ladder is **closed at the
 production level**. The remaining open item is the *exact* closure —
 promoting the $\mathfrak{Q}_\beta$ near-match to a derivation — which would
-cohomologically prove the $q_0 \leftrightarrow \mathfrak{Q}_\beta$ relationship; it is
-gated on the s5-so3 / Habiro keystone (`conj:s5-so3-fiber-action`, bean s5bb).
+cohomologically prove the $q_0 \leftrightarrow \mathfrak{Q}_\beta$ relationship.
 
 A decay-width cross-check connects both derivations to experimental
 lifetimes via the Fermi theory:
@@ -174,7 +173,7 @@ appears in m_K/m_π's Bring zero-mode closure, and
 $1/\dim H_3$ is the Plancherel-mean normalization over the H_3
 Wedderburn block.
 
-**Status: tier=near-match (not derivation).** A Bring zero-mode template transfer
+A Bring zero-mode template transfer
 and an enumeration of 27 alternative
 knot-operator geometries both confirmed that $1/\dim H_3 = 1/6$ is
 the structurally robust denominator, but no transfer of the m_K/m_π
@@ -182,8 +181,8 @@ $(3q^2-1)/(2q^2)$ shape gives a tighter form. The 54 ppb residual
 after the EM correction is either (a) a non-trivial categorical
 $f(q)$ factor with $f(q_0) \approx 1.00167$ not yet identified, or
 (b) higher-order QED / categorical corrections at the substrate
-precision floor. **Do not wire to production** without a Bring-analog
-categorical derivation.
+precision floor. This correction remains a near-match candidate, not
+an established categorical derivation.
 
 ## See also
 

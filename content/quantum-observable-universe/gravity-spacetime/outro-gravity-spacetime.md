@@ -7,4 +7,4 @@ substrate-parametrised differential — that pins the
 classical-limit obstruction structurally.  The geometric-Langlands
 chapter that follows formalises the resulting categorical
 backbone; the chapters after that translate the substrate
-geometry into physical predictions.
+geometry into physical predictions such as particle masses.
