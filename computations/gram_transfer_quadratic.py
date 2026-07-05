@@ -324,6 +324,11 @@ def main() -> int:
     ap.add_argument("--no-hutchinson", action="store_true",
                     help="skip the stochastic Hutchinson cross-check entirely")
     args = ap.parse_args()
+    if (not args.no_hutchinson) and args.hutchinson_samples < 2:
+        ap.error("--hutchinson-samples must be >= 2: a stochastic standard "
+                 "error is undefined for < 2 samples, which would collapse the "
+                 "z-score to 0 and pass the 3-sigma gate trivially (a false "
+                 "validation). Use --no-hutchinson to skip the cross-check.")
 
     mp.mp.dps = 50
     q0 = mp.mpf(Q_50_DIGIT_STR)
