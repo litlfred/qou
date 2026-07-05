@@ -1,11 +1,11 @@
 ---
 # njr9
 title: 'wall-side: restore §7c archimedean banner in measurement-observation/torsion-knot-flow.md (or move archimedean eval to sibling); .lean uses archimedean constructs, drain dropped banner'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-04T22:41:59Z
-updated_at: 2026-07-04T22:42:16Z
+updated_at: 2026-07-05T02:28:49Z
 parent: 9pxo
 ---
 
