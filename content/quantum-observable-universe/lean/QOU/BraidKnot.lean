@@ -28,6 +28,7 @@ import QOU.BraidKnot.BringTrilogDepth3Witness
 import QOU.BraidKnot.Cl3Zeta5GeometricRealization
 import QOU.BraidKnot.BWVacuumRowIsHecke
 import QOU.BraidKnot.KeystoneSelfDualSpectralNarrowing
+import QOU.BraidKnot.KeystonePerronFrobeniusGroundState
 import QOU.BraidKnot.Cl3Zeta5PslqIndependence
 import QOU.BraidKnot.KnotIndexedConvolutionGrid
 import QOU.BraidKnot.ConfinedParticle
