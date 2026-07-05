@@ -11,9 +11,10 @@ Formalises the manuscript **definition** of the `q`-momentum as the
 
 `p_q(β) = Σ_j [ε_j]_q = Σ_j (q^{ε_j} − q^{−ε_j})/(q − q⁻¹)`,
 
-and proves the owner-ruled canonical fact (2026-07-05): since
-`[+1]_q = +1` and `[−1]_q = −1` exactly, `p_q(β)` equals the classical
-writhe `w(β) = Σ_j ε_j` for every `q`. (This corrects the block's boxed
+and proves the owner-ruled canonical fact (2026-07-05): whenever
+`q − q⁻¹ ≠ 0` (i.e. `q ≠ ±1`; at `q = 1` the identity holds in the limit)
+`[+1]_q = +1` and `[−1]_q = −1` exactly, so `p_q(β)` equals the classical
+writhe `w(β) = Σ_j ε_j`. (This corrects the block's boxed
 formula: the spurious `ε_j` prefactor and the inequivalent `Σ(q^{2ε}−1)/(q²−1)`
 form both disagree with the building-block table for negative crossings.)
 §7c: archimedean over `ℝ` (uses `q⁻¹`).
@@ -76,9 +77,10 @@ theorem qMomentum_aux (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
     · rw [ha, qBracket_one q hq]; push_cast; ring
     · rw [ha, qBracket_neg_one q hq]; push_cast; ring
 
-/-- **Owner-ruled canonical identity (2026-07-05):** the `q`-momentum equals
-    the writhe for every `q` — because `[±1]_q = ±1` exactly, each crossing
-    contributes its sign with no residual `q`-dependence. -/
+/-- **Owner-ruled canonical identity (2026-07-05):** for `q` with
+    `q − q⁻¹ ≠ 0` (`M.q_reg`) the `q`-momentum equals the writhe — because
+    `[±1]_q = ±1` exactly, each crossing contributes its sign with no residual
+    `q`-dependence. -/
 theorem QMomentum.p_q_eq_writhe (M : QMomentum) : M.p_q = (M.writhe : ℝ) :=
   qMomentum_aux M.q M.q_reg M.crossings M.signs
 

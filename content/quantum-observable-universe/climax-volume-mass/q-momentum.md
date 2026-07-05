@@ -14,10 +14,12 @@ $$
 $$
 
 where $[\epsilon]_q = (q^{\epsilon} - q^{-\epsilon})/(q - q^{-1})$ is the
-$q$-integer.  Because $[+1]_q = 1$ and $[-1]_q = -1$ *exactly* for every
-$q$, each crossing contributes precisely its sign, so the $q$-momentum
-coincides with the classical writhe $w(\beta)$ at all $q$ — not only in
-the limit $q \to 1$.  (The $q$-deformation is trivial at single crossings;
+$q$-integer, defined for $q \neq \pm 1$ (so that $q - q^{-1} \neq 0$).  On
+that domain $[+1]_q = 1$ and $[-1]_q = -1$ *exactly*, so each crossing
+contributes precisely its sign and the $q$-momentum coincides with the
+classical writhe $w(\beta)$ for all such $q$ — not only in the limit
+$q \to 1$ (where the removable $0/0$ singularity of $[\pm 1]_q$ takes the
+same values $\pm 1$).  (The $q$-deformation is trivial at single crossings;
 it would distinguish multi-strand contributions $|\epsilon| \geq 2$, which
 do not occur in a braid word.)
 
