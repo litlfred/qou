@@ -127,7 +127,6 @@ export default paper({
     chapterRef({ dir: "appendix-knot-operations" }),
     chapterRef({ dir: "appendix-knot-operations-archimedean" }),  // Archimedean lobe (particle NF + gluon-model) — split per q-usage Policy A
     chapterRef({ dir: "appendix-transfer-matrices" }),
-    chapterRef({ dir: "appendix-atomic-mass-calculations" }),
     chapterRef({ dir: "appendix-mass-binding-algorithms" }),    // Bridge: canonical chain steps → propositions → Python API
     chapterRef({ dir: "appendix-qvalues" }),
     chapterRef({ dir: "appendix-surreals" }),                  // Surreal-number lift (categorical lobe) + Millennium-problem surreal bounds
