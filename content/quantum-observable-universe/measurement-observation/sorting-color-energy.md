@@ -1,3 +1,11 @@
+Observation sorts colour: swapping two adjacent items into
+their correct order is a projection between the two eigenspaces
+of the R-matrix, and each such swap deposits a fixed quantum of
+energy in the colour fibre.  The proposition below makes this
+precise — the eigenspace decomposition is the mechanism, the
+projection is the sorting operation, and the eigenvalue gap is
+the energy per crossing.
+
 **Proposition.**
 *Let $\sigma_i$ be the Hecke generator
 ([R-matrix braiding](#rem:r-matrix-braiding)) acting on
@@ -16,7 +24,7 @@ Then:*
    *with eigenvalues $q$ (symmetric, ordered) and $-q^{-1}$
    (antisymmetric, disordered) respectively.  These are the
    two roots of the Hecke relation
-   $T^2 = (q - q^{-1})T + 1$.*
+   $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$.*
 
 2. **(Sorting is projection.)** *A sorting operation —
    swapping two adjacent items into the correct order —

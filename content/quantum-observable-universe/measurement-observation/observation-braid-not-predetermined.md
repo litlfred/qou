@@ -17,6 +17,17 @@ the universe is the interleaving of two sources:
    **not** determined by $\mathcal{S}_0$ — they are the
    open-map contributions.
 
+Concretely: suppose the flow alone winds three colour
+fibres into the partial word $\sigma_1\sigma_2$, leaving
+the first and third strands unlinked.  An observer
+measuring that pair injects a single adjoint crossing
+$\sigma_1^{-1}$, completing the word to
+$\sigma_1\sigma_2\sigma_1^{-1}$ — a finite braid, and
+hence a computable section, that no autonomous
+continuation of $\mathcal{S}_0$ would have produced.  The
+observation does not perturb the flow; it appends a
+crossing the flow could not.
+
 The computable sections $E$ of
 ([Chapter 8](#chap:info-theory)) are those whose braid
 word is finite.  The open map structure of observation

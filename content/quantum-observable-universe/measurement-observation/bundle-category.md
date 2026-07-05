@@ -1,3 +1,12 @@
+This category is the categorical counterpart of the Feynman path
+integral: rather than integrating over all field configurations, we
+follow a single deterministic flow on a finite bundle.  Concretely, a
+configuration is a fixed collection of knots pinned to base points in
+the projective fibres — if a cosmological initial state exists in the
+given affine chart, it is one such $\mathcal{S}_0$ — and the content of
+the theory is the trajectory that configuration traces as the torsion
+flow carries it forward.  We formalize this picture as follows.
+
 The bundle initial conditions and the torsion-driven knot flow together
 define a category $\mathrm{Bun}(\mathbb{P}(V))$:
 
@@ -20,12 +29,6 @@ $(\mathbb{R}_{\geq 0}, +)$ — viewed as a one-object category — into the
 endofunctor category $\mathrm{End}(\mathrm{Bun}(\mathbb{P}(V)))$.
 
 The reference configuration $\mathcal{S}_0$ sits at $t = 0$; the physics
-is the trajectory $t \mapsto E_t$ in $\mathrm{Bun}(\mathbb{P}(V))$.
-(If a cosmological initial state exists in the given affine chart, it
-is one such $\mathcal{S}_0$.)
-
-This structure is the categorical counterpart of the Feynman path
-integral: instead of integrating over all field configurations, we
-follow the deterministic flow $\Phi_t^q$ on a finite bundle.  The
+is the trajectory $t \mapsto E_t$ in $\mathrm{Bun}(\mathbb{P}(V))$.  The
 braid-group action on fibres ([Chapter 3](#chap:path-integrals-braiding)) then encodes the interactions
 that occur when two knots approach within Planck-scale separation.
