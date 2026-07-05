@@ -6,7 +6,8 @@ Before the axioms, it helps to have one instance in hand:
 $\mathbf{Rep}(\mathrm{SU}_q(2))$, the category of representations of the
 quantum group, is a rigid :refterm[braided monoidal category]{#braided-monoidal-category}
 carrying a Frobenius--Hopf object, and it is the guiding example
-throughout this chapter.
+throughout this chapter — worked concretely in its classical symmetric
+($q \to 1$) limit $\mathrm{SU}(2)$.
 
 This chapter introduces the **quantum universe** (QU): a rigid
 :refterm[braided monoidal category]{#braided-monoidal-category} equipped with a Frobenius--Hopf object,
