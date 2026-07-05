@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-05T23:48:11.251241+00:00",
-  "commitSha": "4fd544853aae392174739ad53cf8e789515f3fde",
+  "computedAt": "2026-07-05T23:58:18.695937+00:00",
+  "commitSha": "928891912057b2ba3d36beed08ae6ac2bb5b5f5e",
   "assertions": [
     {
       "name": "vol_4_1_equals_2_Cl2_pi3",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "two-filtration-bridge-small-cases",
   "scriptFile": "two_filtration_bridge_small_cases.py",
-  "scriptHash": "06944d326d3a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "285f16ec813d",
+  "scriptCommitSha": "928891912057b2ba3d36beed08ae6ac2bb5b5f5e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
