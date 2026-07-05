@@ -10,7 +10,7 @@ $$
 The $L_+$ and $L_-$ coefficients are the **gluon content** of
 $B_3$, so the net gluon content is their signed sum. Here that
 sum nearly cancels ($+0.046 - 0.044 = +0.002$): the net gluon
-coefficient vanishes to the third decimal, and it is exactly
+coefficient vanishes to two decimal places, and it is exactly
 this vanishing of the net gluon coefficient that is the
 color-singlet condition for the baryon.
 

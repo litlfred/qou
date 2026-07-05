@@ -28,9 +28,12 @@ See [Table 1](#tbl:knot-operator-basis-table-table1-data).
 
 **Key observations:**
 
-1. **$e^-$ channel opening under $T_{1,0}$**: For the identity
-   operator, 19/36 pairs produce a nonzero $e^-$ coefficient;
-   the remaining pairs leave the electron channel closed.
+1. **$e^-$ channel universality under $T_{2,3}$**: When the
+   trefoil operator $T_{2,3}$ is inserted, the $e^-$ coefficient
+   is always nonzero (36/36 pairs).  In contrast, under the
+   identity operator $T_{1,0}$, only 19/36 pairs produce a nonzero
+   $e^-$ coefficient, leaving the channel closed for the remaining
+   pairs.
 
 2. **$e^- \cdot e^- = \gamma + h\sigma_0 + h\sigma_1 + h^2 L_+ + h^2 L_- + (h^3+h)e^-$**:
    the self-product of the electron populates all six basis
