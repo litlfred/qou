@@ -265,6 +265,58 @@ theorem markov_trace_pair {z : R_q} [inst : MarkovTraceAxioms z]
   rw [markov_trace_product_recursion]
   simp [chainProduct]
 
+/-- **Markov-trace multiplicativity over concatenation.**  Combining
+    `markov_trace_product_recursion` (`trace = chainProduct`) with
+    `chainProduct_append` gives the downstream multiplicativity lemma the
+    `chainProduct_append` docstring names but does not state:
+
+      `trace (cs ++ ds) = trace cs · trace ds`.
+
+    This is the two-constituent case of the Markov-peel factorisation of a
+    composite braid word into sub-words on the same strand set.
+
+    Ref: [jones1987] https://doi.org/10.2307/1971403 -/
+theorem markov_trace_append {z : R_q} [inst : MarkovTraceAxioms z]
+    (cs ds : List GeneratorChain) :
+    MarkovTraceAxioms.trace (z := z) (cs ++ ds)
+      = MarkovTraceAxioms.trace (z := z) cs * MarkovTraceAxioms.trace (z := z) ds := by
+  simp only [markov_trace_product_recursion, chainProduct_append]
+
+/-- **`chainProduct` over `List.flatten`** (pure list lemma).  Iterating
+    `chainProduct_append` across a list of chain-lists: the product over the
+    flattened list is the product of the per-block products. -/
+theorem chainProduct_flatten (z : R_q) (lls : List (List GeneratorChain)) :
+    chainProduct z lls.flatten = (lls.map (chainProduct z)).prod := by
+  induction lls with
+  | nil => simp [chainProduct]
+  | cons l ls ih => simp [List.flatten_cons, chainProduct_append, List.map_cons,
+      List.prod_cons, ih]
+
+/-- **Constituent/composite Markov-trace agreement** (chain-list model) —
+    the sorry-free realisation of `lem:tmli-constituent-composite-agreement`
+    (Phase 5l).  A composite hadron braid `β_𝔥` is the concatenation
+    (`List.flatten`) of its constituent sub-braid words; its Markov trace
+    equals the **product of the constituent Markov traces**:
+
+      `tr_M(β_𝔥) = ∏_i tr_M(β_i)`.
+
+    Proved by iterating the Markov peel (`markov_trace_append`) across the
+    constituent factorisation — the abstract-Hecke-element statement in
+    `QOU.BraidsKnots.tmli_constituent_composite_agreement` is the bridge of
+    this identity to the `MarkovTraceContext` carrier.
+
+    Ref: [jones1987] https://doi.org/10.2307/1971403
+    Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 -/
+theorem markov_trace_flatten {z : R_q} [inst : MarkovTraceAxioms z]
+    (lls : List (List GeneratorChain)) :
+    MarkovTraceAxioms.trace (z := z) lls.flatten
+      = (lls.map (MarkovTraceAxioms.trace (z := z))).prod := by
+  rw [markov_trace_product_recursion, chainProduct_flatten]
+  congr 1
+  apply List.map_congr_left
+  intro l _
+  rw [markov_trace_product_recursion]
+
 /-- **Degree bound `≤ n² − 1`.**
 
     The degree of the product polynomial is bounded by `n² − 1`.  The
