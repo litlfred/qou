@@ -33,8 +33,13 @@ state saturates.
 The right experimental comparison object (separate question) is
 the *additive* constituent sum
     M_atom = Z·M_p + N·M_n + Z·M_e − E_binding(A, Z).
-(The additive baseline was purged 2026-06-09; the canonical derived
-mass is m_e·Vol(K)·ρ(K)/ℏ_q² in `mass_vol_density.py`, and experimental
+(The additive baseline was purged 2026-06-09; the canonical absolute
+nucleon/atom mass is the muon-anchored Hecke energy via the
+`canonical_mass` facade (`canonical_mass.proton_mass_mev` /
+`neutron_mass_mev` / `nucleon_mass_mev`), NOT the deprecated
+Borromean-volume form `m_e·Vol(𝓑₃)·ρ/ℏ_q²` in `mass_vol_density.py`
+(owner ruling 2026-06-24, docs/canonical-mass-formula-guardrail.md;
+that form → 966 MeV, +2.96 %, a λ_A fit). Experimental
 binding is in `ame-2020-binding-energies.witness.json`.)
 Whether the LP active set reproduces empirical Δ_binding via
 ρ_F · V_hyp is the interpretive question tracked in
@@ -50,9 +55,11 @@ This file is preserved for two reasons:
    records.  Removing it would break those audits.
 
 If you're authoring a new mass-formula path, do NOT extend this
-script — use the canonical derived mass m_e·Vol(K)·ρ(K)/ℏ_q² in
-`mass_vol_density.py`, and source experimental binding from
-`ame-2020-binding-energies.witness.json`.
+script — route absolute nucleon/atom mass through the `canonical_mass`
+facade (muon-anchored Hecke energy; owner ruling 2026-06-24,
+docs/canonical-mass-formula-guardrail.md), NOT the deprecated
+`m_e·Vol(𝓑₃)·ρ/ℏ_q²` form in `mass_vol_density.py`, and source
+experimental binding from `ame-2020-binding-energies.witness.json`.
 
 Original (legacy) docstring:
 
