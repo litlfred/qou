@@ -1,4 +1,8 @@
-The following table shows the knot structure of each atom with
+The closed-sub-link structure that governs shell closure — and
+hence both chemical reactivity and nuclear stability — is most
+legible as a picture, where a shell reads as closed precisely when
+its components split off as a self-contained Hopf sub-link.  The
+following table shows the knot structure of each atom with
 $Z \leq 4$, with closed sub-Hopf links indicated.
 
 **Visual conventions.**
@@ -13,6 +17,10 @@ $Z \leq 4$, with closed sub-Hopf links indicated.
   distinguished from the neutrino by orientation, not knot type.
 - **Interlocked circles**: Hopf link $\mathcal{L}_H$ — the
   $\oplus$ operation connecting components.
+- **$\alpha$**: the alpha particle $2\mathfrak{p} \oplus 2\mathfrak{n}$
+  — the helium-4 nucleus.
+- **Bracket-star $[\cdots]^*$**: a **closed sub-Hopf link** — a
+  sub-link that splits from the remaining components.
 - **Green border**: closed $1s$ sub-link (2 electrons).
 - **Blue border**: closed $2s$ sub-link (2 electrons).
 - **Brown border**: nuclear sub-link (protons + neutrons).

@@ -13,6 +13,10 @@ proton (color-linked quark triple), $\mathfrak{n} = [\mathfrak{u}, \mathfrak{d},
 (electron), and $\oplus$ denotes Hopf linking.
 Here $Z$ is the atomic number (proton count) and $N$ is the
 neutron count, with $A = Z + N$ the mass number.
+Throughout, fraktur letters name particles ($\mathfrak{p}$ the
+proton, $\mathfrak{n}$ the neutron, with $\mathfrak{u}, \mathfrak{d}$
+their quark constituents) and $\oplus$ denotes Hopf linking; each
+symbol is glossed at first use.
 
 **Mass formula.**
 
@@ -61,9 +65,13 @@ $$
 
 computed by exactly $\binom{A}{2}$ transfer matrix multiplications
 (one per nucleon pair), with polynomial degree $\leq A^2 - 1$.
-For ${}^{56}\mathrm{Fe}$: $1540$ steps, degree $\leq 3135$; for
-${}^{238}\mathrm{U}$: $28203$ steps — all evaluated in
-milliseconds.
+The factored form is never expanded — each factor $\hat{V}_i(q)$ is
+a rational function in $q^{1/2}$ obtained from a chain of
+$2 \times 2$ matrix products.  The step count ranges from trivial
+(${}^{1}\mathrm{H}$: $0$ steps) to cheap at the heavy end:
+${}^{56}\mathrm{Fe}$ takes $1540$ steps (degree $\leq 3135$) and
+${}^{238}\mathrm{U}$ takes $28203$ steps (degree $\leq 56643$) —
+all evaluated in milliseconds.
 
 **Electron shell structure.**
 
@@ -90,11 +98,12 @@ is the difference of parent and daughter Skein polynomials,
 concentrated at the converting nucleon's generators.
 
 **Neutron excess $N > Z$ for heavy elements.**
-The neutron count $N$ exceeds $Z$ for all elements beyond
-calcium.  In the QOU framework, proton--proton Hopf crossings carry
-a repulsive Skein phase (electromagnetic charge), while
+In the QOU framework, proton--proton Hopf crossings carry a
+repulsive Skein phase (electromagnetic charge), while
 proton--neutron and neutron--neutron crossings are purely attractive
-(strong force only).  The repulsive crossing penalty grows as
+(strong force only), so heavy nuclei must acquire extra neutrons to
+stay bound.  The neutron count $N$ therefore exceeds $Z$ for all
+elements beyond calcium: the repulsive crossing penalty grows as
 $\sim Z^2$, requiring additional neutrons to stabilize the
 multi-nucleon link.  Elements marked $\diamond$ have a proton
 stability pair; those marked $\star$ have a neutron stability pair.
@@ -143,16 +152,6 @@ All masses in MeV/$c^2$.  $M_q$ computed at
 $q = q_0$; $M_o$ from AME2020 nuclear
 masses plus $Z \cdot m_e$.  $B/A$ (MeV) from AME2020.
 The most stable (longest-lived) isotope is listed for each element.
-
-**Transfer matrix complexity.**
-Each element's Skein polynomial requires $\binom{A}{2}$ transfer
-matrix multiplications.  For the lightest elements this is trivial
-(${}^{1}\mathrm{H}$: 0 steps); for the heaviest it remains
-computationally cheap (${}^{238}\mathrm{U}$: 28203 steps, degree
-$\leq 56643$, evaluated in milliseconds).  The factored form
-$P_{\mathcal{N}}(q) = \prod_i \hat{V}_i(q)$ is never expanded —
-each factor is a rational function in $q^{1/2}$ obtained from a
-chain of $2 \times 2$ matrix products.
 
 **Knot exhaustiveness.**
 Detection is complete: every irreducible summand is labeled by a

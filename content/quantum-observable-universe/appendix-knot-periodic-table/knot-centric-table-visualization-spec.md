@@ -1,7 +1,20 @@
+Where the static appendix table freezes the periodic structure at
+the observed substrate value, an interactive rendering lets a reader
+watch the row and shell structure deform continuously as $q$ slides
+from $1$ to $q_0$ — seeing the equal-width rows and absent magic
+shells at $q = 1$ reorganize into the observed table with its
+magic-receptive shells.
+
 **Visualization specification (for implementation).**
 
 The visualization should be an interactive HTML page
-(`folio-assistant/simulators/knot_periodic_table.html`) with:
+(`folio-assistant/simulators/knot_periodic_table.html`).  Its feature
+groups fall into three physical layers the static table cannot expose
+side by side — the nuclear Borromean composition of each element, the
+trefoil-shell structure of its electrons, and the way both respond to
+the substrate parameter $q$ — so the specification below unfolds from
+layout and tiles through the nuclear and electron panels to the $q$
+control that ties them together:
 
 1. **Layout**: 7 rows (one per stability-pair interval),
    vertically aligned on a shared grid.  Columns follow

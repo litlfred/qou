@@ -1,6 +1,8 @@
 ## Build-pipeline integration
 
-The atlas is auto-rendered by
+The purpose of this integration is a single reproducible source of truth, so
+the rendered appendix never drifts from the witnesses it summarizes. The atlas
+is auto-rendered by
 [`recursive_atom_knot_atlas_render.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/recursive_atom_knot_atlas_render.py).
 
 **Sources of truth** (in order):
@@ -10,6 +12,11 @@ The atlas is auto-rendered by
 3. [`methodology-deprecation.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/methodology-deprecation.witness.json) — per-particle methodology audit.
 4. [`hp_volume.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/hp_volume.py) — $\geq 50$-digit symbolic-$q$ Markov-closure $\to$ $\mathrm{Vol}_{\mathrm{hyp}}$.
 5. [`y_lambda_wenzl_bridge_extended.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/y_lambda_wenzl_bridge_extended.py) — symbolic-$q$ Wenzl bridge for $y_\lambda$.
+
+These compose in that order: the particle registry fixes the canonical $T_w$,
+the mass-table witness supplies the tabulated masses, the methodology audit
+tags each particle's derivation method, `hp_volume.py` supplies
+$\mathrm{Vol}_{\mathrm{hyp}}$, and the Wenzl bridge supplies $y_\lambda$.
 
 For `principled-derivation` entries (electron, proton, neutron) the
 hyperbolic volume of the Markov closure is computed from the

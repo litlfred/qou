@@ -1,3 +1,14 @@
+The atlas answers a single question: if every particle and atom is a
+confined braid at the substrate value $q_0$, which specific knot or
+link is each one, and does the invariant that knot carries reproduce
+the measured mass or binding energy? Collecting the answer as one
+$q_0$-indexed registry — rather than an isolated calculation per
+isotope — lets a composite entry be built recursively from the nucleon
+and $\alpha$-cluster entries it contains, and lets every prediction be
+read against the same AME 2020 reference column. The construction
+mechanics below make the identification precise; the layered extension
+then carries the same machinery across every isotope.
+
 **Atlas (recursive, $q_0$-indexed).**
 *Each entry of the atlas is determined by the
 [GB-NF / confinement source of truth](#def:confined-particle): a
