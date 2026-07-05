@@ -63,14 +63,20 @@ $(W^3, B) \mapsto (Z, \gamma)$ Weinberg mixing
 ([conj:weinberg-angle-categorical](#conj:weinberg-angle-categorical)), carried
 as the postulate field $T_3(Z) = 0$.
 
-**Notation tension flagged for the owner ($\sigma_5^8 = B$ versus $H$).**
+**The $\sigma_5^8$ slot carries both $H$ and $B$ (owner-ruled via bar-grading).**
 
 The Weinberg-angle block
 ([conj:weinberg-angle-categorical](#conj:weinberg-angle-categorical)) reads the
-Hoefsmit slot $\sigma_5^8$ as the $\mathrm{U}(1)_Y$ singlet $B$ (pre-mixing),
-whereas
+Hoefsmit slot $\sigma_5^8$ as the $\mathrm{U}(1)_Y$ hypercharge gauge boson $B$
+(pre-mixing), whereas
 ([conj:electroweak-higgs-torus-link-triplet](#conj:electroweak-higgs-torus-link-triplet))
-reads $\sigma_5^8$ (that is $T(2,8)$, strands $5$–$6$) as the Higgs $H$. Both
-are singlet-like (bar-even, $A_+$), but the gauge singlet $B$ — which mixes
-into $Z$ and $\gamma$ — and the scalar $H$ are distinct particles. This
-assignment needs an owner ruling; it is recorded, not silently resolved.
+reads $\sigma_5^8$ (that is $T(2,8)$, strands $5$–$6$) as the Higgs. These are
+not in conflict: $\sigma_5^8$ **carries both, bar-graded** by the spin
+involution above. The Higgs *boson* $H$ is the $A_+$ (bar-even, scalar) part;
+the hypercharge gauge boson $B$ is the $A_-$ (bar-odd, vector) part — the two
+$\sigma$-eigen-sectors of one slot, so Weinberg (reading $A_-$) and this block
+(reading $A_+$) agree. Distinct again is the self-dual figure-eight $4_1$ of
+([prop:self-dual-higgs-real-volume](#prop:self-dual-higgs-real-volume)): it is
+the Higgs *mass mechanism* (the muon scale
+$m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$), **not** the $125\,$GeV Higgs boson
+$H = T(2,8) = A_+$ of $\sigma_5^8$.

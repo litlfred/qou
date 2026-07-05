@@ -92,18 +92,25 @@ single residual conjectural input is the sector assignment itself (which link
 lands in which sector) plus the bare particle-label map — the physics
 selection, not the derivation of the quantum numbers.
 
-**Notation tension flagged for the owner ($\sigma_5^8 = B$ versus $H$).**
+**The $\sigma_5^8$ slot carries both $H$ and $B$ (owner-ruled via bar-grading).**
 
 The Weinberg-angle block
 ([conj:weinberg-angle-categorical](#conj:weinberg-angle-categorical)) reads
-the Hoefsmit slot $\sigma_5^8$ as the $\mathrm{U}(1)_Y$ singlet $B$
-(pre-mixing), whereas this block reads $\sigma_5^8$ ($= T(2,8)$, strands
-$5$–$6$) as the Higgs $H$. Both are singlet-like (bar-even, $A_+$), but the
-gauge singlet $B$ — which mixes into $Z$ and $\gamma$ — and the scalar $H$
-are distinct particles. This assignment needs an owner ruling; it is
-recorded here and in
-([thm:ew-triplet-charge-spin-from-involution](#thm:ew-triplet-charge-spin-from-involution)),
-not silently resolved.
+the Hoefsmit slot $\sigma_5^8$ as the $\mathrm{U}(1)_Y$ hypercharge gauge
+boson $B$ (pre-mixing), whereas this block reads $\sigma_5^8$ ($= T(2,8)$,
+strands $5$–$6$) as the Higgs. These are not in conflict: $\sigma_5^8$
+**carries both, bar-graded** by the spin involution
+([def:spin-involution](#def:spin-involution)). The Higgs *boson* $H$ is the
+$A_+$ (bar-even, scalar) part; the hypercharge gauge boson $B$ is the $A_-$
+(bar-odd, vector) part. Weinberg reads the $A_-$ ($B$) sector, this block
+reads the $A_+$ ($H$) sector — the two $\sigma$-eigen-sectors of one slot.
+Separately, the self-dual figure-eight $4_1$ of
+([prop:self-dual-higgs-real-volume](#prop:self-dual-higgs-real-volume)) is
+the Higgs *mass mechanism* (the muon scale
+$m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$), **not** the $125\,$GeV Higgs
+boson, which is the electroweak-slot link $T(2,8) = A_+$ of $\sigma_5^8$.
+The $A_\pm$ grading used here is the one proved in
+([thm:ew-triplet-charge-spin-from-involution](#thm:ew-triplet-charge-spin-from-involution)).
 
 **Supporting evidence (necessary, not sufficient).**
 

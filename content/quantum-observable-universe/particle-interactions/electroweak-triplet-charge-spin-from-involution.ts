@@ -32,17 +32,20 @@ export default theorem({
         "independent open primary conjectures — into proved consequences.",
     },
     {
-      kind: "caveat",
+      kind: "note",
       date: "2026-07-05",
       body:
-        "TENSION FLAGGED FOR OWNER (σ₅⁸ = B vs H). `conj:weinberg-angle-" +
-        "categorical` reads the Hoefsmit slot σ₅⁸ as the U(1)_Y singlet `B` " +
-        "(pre-mixing), whereas `conj:electroweak-higgs-torus-link-triplet` " +
-        "reads σ₅⁸ (= T(2,8), strands 5–6) as the Higgs `H`. Both are " +
-        "singlet-like (bar-even / A₊), but B (a gauge singlet that mixes into " +
-        "Z, γ) and H (the scalar) are distinct particles. The Z-neutral-via-" +
-        "mixing field `z_t3 = 0` of `EWSectorSelection` is where this bites. " +
-        "Not silently resolved — needs an owner ruling on the σ₅⁸ assignment.",
+        "OWNER RULING (2026-07-05) — the σ₅⁸ = B vs H tension is RESOLVED by " +
+        "the very A± bar-grading this theorem proves. σ₅⁸ (= T(2,8)) carries " +
+        "BOTH: the Higgs BOSON H = the A₊ (bar-even, scalar) part, and B (the " +
+        "U(1)_Y hypercharge gauge boson) = the A₋ (bar-odd, vector) part. " +
+        "`conj:weinberg-angle-categorical` reads the A₋ (B) part; " +
+        "`conj:electroweak-higgs-torus-link-triplet` reads the A₊ (H) part — " +
+        "the two σ-eigen-sectors of one slot, no contradiction. The `z_t3 = 0` " +
+        "mixing field stays as the Weinberg (W³,B) → (Z,γ) residual. Note also " +
+        "that 4₁ in `prop:self-dual-higgs-real-volume` is the Higgs mass " +
+        "MECHANISM (muon scale m_μ/m_e = Vol(4₁)/ℏ_q²), distinct from the " +
+        "125-GeV Higgs boson H = T(2,8) = A₊ of σ₅⁸.",
     },
   ],
   tags: [
