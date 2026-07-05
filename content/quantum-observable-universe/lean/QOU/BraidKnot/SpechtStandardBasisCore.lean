@@ -352,6 +352,64 @@ theorem polytabloid_colStab_smul (t : Specht.Tableau μ)
         * ((Equiv.Perm.sign σ : ℤ) * (Equiv.Perm.sign σ : ℤ)) := by ring
     rw [this, hs2, mul_one]
 
+omit [CharZero k] in
+/-- **Garnir annihilation — algebraic core (sorry-free).** The sign-reversing
+involution at the heart of every Garnir relation. If `τ` is an involution
+(`τ*τ = 1`) of sign `-1` lying in the *row* stabiliser of `t` (so `τ` fixes the
+tabloid `{t}`), and `G` is a finite set of permutations closed under right
+multiplication by `τ`, then the signed sum of basis tabloids
+`∑_{g∈G} sgn(g)·{g·t}` vanishes: pairing `g ↔ gτ` cancels terms, because
+`{gτ·t} = {g·t}` (`τ` fixes the row pattern) while `sgn(gτ) = -sgn(g)`.
+This is the Mathlib-side realisation of "the full column antisymmetriser of a
+Garnir set annihilates the tabloid" (Sagan §2.6). It is the algebraic ingredient
+the column-maximal Garnir core (`straightening_step_colMax`, still `sorry`)
+consumes; the three pieces still missing on top of it — the coset→polytabloid
+antisymmetriser bridge (needs `CharZero k`), the Garnir-set/row-descent existence
+for a column-maximal non-standard tableau, and the dominance strict-increase —
+are recorded in the module docstring. -/
+-- Ref: [sagan2001] Sagan, *The Symmetric Group*, §2.6 (Garnir relations).
+theorem mtab_sum_sign_smul_of_eq_zero (t : Specht.Tableau μ)
+    (G : Finset (Equiv.Perm (Fin (Specht.nOf μ))))
+    (τ : Equiv.Perm (Fin (Specht.nOf μ)))
+    (hτ2 : τ * τ = 1) (hτsign : Equiv.Perm.sign τ = -1)
+    (hτrow : τ ∈ Specht.rowStab t)
+    (hGclosed : ∀ g ∈ G, g * τ ∈ G) :
+    ∑ g ∈ G, (Equiv.Perm.sign g : ℤ) • Specht.Mtab.of (k := k) (g • t) = 0 := by
+  classical
+  -- `τ` fixes the tabloid of `t`: `{τ·t} = {t}`.
+  have hrow : Specht.Tabloid.mk (τ • t) = Specht.Tabloid.mk t :=
+    Quotient.sound (by
+      show Specht.rowPattern (τ • t) = Specht.rowPattern t
+      rw [Specht.rowPattern_smul]; exact Specht.mem_rowStab.mp hτrow)
+  -- Hence `of ((g*τ)·t) = of (g·t)` for every `g`.
+  have hofeq : ∀ g : Equiv.Perm (Fin (Specht.nOf μ)),
+      Specht.Mtab.of (k := k) ((g * τ) • t) = Specht.Mtab.of (k := k) (g • t) := by
+    intro g
+    have hmk : Specht.Tabloid.mk ((g * τ) • t) = Specht.Tabloid.mk (g • t) := by
+      rw [mul_smul, ← Specht.Tabloid.smul_mk g (τ • t), hrow, Specht.Tabloid.smul_mk]
+    simp only [Specht.Mtab.of, hmk]
+  -- Sign is reversed by right-multiplication with `τ`.
+  have hs : ∀ g : Equiv.Perm (Fin (Specht.nOf μ)),
+      (Equiv.Perm.sign (g * τ) : ℤ) = -(Equiv.Perm.sign g : ℤ) := by
+    intro g; rw [map_mul, hτsign]; simp
+  refine Finset.sum_involution (fun g _ => g * τ) ?_ ?_ ?_ ?_
+  · -- paired terms cancel
+    intro g _
+    rw [hofeq g, hs g, neg_smul]
+    abel
+  · -- involution is fixed-point free (τ ≠ 1), so the `f a ≠ 0 → …` premise is free
+    intro g _ _ hgg
+    have hτ1 : τ = 1 := by
+      have hg1 : g * τ = g * 1 := by rw [mul_one]; exact hgg
+      exact mul_left_cancel hg1
+    rw [hτ1, map_one] at hτsign
+    exact absurd hτsign (by decide)
+  · -- closed under the involution
+    intro g hg; exact hGclosed g hg
+  · -- it is an involution
+    intro g _; show (g * τ) * τ = g
+    rw [mul_assoc, hτ2, mul_one]
+
 /-! #### The self-contained dominance weight (sorry-free)
 
 The straightening induction needs a well-founded measure that strictly increases
