@@ -497,7 +497,8 @@ pins `d_q` as the unique PF-positive fusion ground state (Wenzl); (C) self-duali
 `S=Sᵀ`, `S²=C`. The (C) leg is now **Lean-formalized sorry-free**
 ([`KeystoneSelfDualSpectralNarrowing.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneSelfDualSpectralNarrowing.lean)):
 `S⁴=1` (self-reciprocality = the categorical avatar of the self-reciprocal
-q-Hankel transform), eigenvalues are 4th roots of unity (class narrowing), and the
+q-Hankel transform), eigenvalues are 4th roots of unity — `ζ⁴=1` over a field on a
+nonzero eigenvector (`ζ⁴•v=v` over any CommRing) — the class narrowing, and the
 vacuum row is C-fixed (self-dual sector, where the PF-positive `+1` state is `d_q`).
 **Narrowing, not closure** — the value step already has redirect (iii); leg (C) is
 the constraint any geometric realisation must meet, and the structural reason a

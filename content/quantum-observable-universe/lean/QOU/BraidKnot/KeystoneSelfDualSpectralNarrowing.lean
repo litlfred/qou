@@ -34,9 +34,11 @@ narrow the class. Three ingredients:
 
 * `sTransform_pow_four : S ^ 4 = 1` — `S` has order dividing 4: the categorical **self-reciprocality**
   (`𝓗_q⁴ = id`), matching the self-reciprocal q-Hankel transform of arXiv:1208.2521.
-* `eigenvalue_pow_four_eq_one` — every eigenvalue `ζ` of `S` on a nonzero vector satisfies `ζ⁴ = 1`:
-  the eigenfunction class is narrowed to the four charge-conjugation phases (as ordinary Fourier
-  self-duality forces `iⁿ` on the Hermite eigenfunctions). On the **self-dual** (`C`-fixed) sector
+* `eigenvector_pow_four_fixed` — an eigenvector `v` with `S v = ζ v` satisfies `ζ⁴ • v = v` (any
+  `CommRing`); and `eigenvalue_pow_four_eq_one` — over a **field**, on a **nonzero** `v`, this gives
+  `ζ⁴ = 1`: every eigenvalue is a 4th root of unity. The eigenfunction class is narrowed to the four
+  charge-conjugation phases (as ordinary Fourier self-duality forces `iⁿ` on the Hermite
+  eigenfunctions). On the **self-dual** (`C`-fixed) sector
   `C = +1`, so `S² = +1` there and the real symmetric `S` has eigenvalues `±1`; the vacuum row lives
   in this sector (`vacuumRow_conj_invariant`) and is the `+1` / PF-positive ground state — this is
   where `d_q` is pinned by (A)+(B).
@@ -96,12 +98,10 @@ theorem sTransform_pow_four : T.S ^ 4 = 1 := by
 theorem sSq_mul_sSq : (T.S * T.S) * (T.S * T.S) = 1 := by
   rw [T.S_sq, T.C_invol]
 
-/-- **Eigenvalue narrowing: `ζ⁴ = 1`.**  Any eigenvalue `ζ` of `S` on a nonzero vector `v` is a
-4th root of unity.  So the eigenfunctions the framework needs are not an arbitrary orthogonal family:
-their eigenvalues are the four charge-conjugation phases (as ordinary self-dual Fourier forces `iⁿ`
-on Hermite functions).  On the self-dual (`C`-fixed) sector this tightens to `ζ = ±1`, and the
-PF-positive `+1` ground state is `d_q` (input (A)+(B), Ocneanu/Wenzl). -/
-theorem eigenvalue_pow_four_eq_one {v : ι → R}
+/-- **Eigenvector action of `S⁴`: `ζ⁴ • v = v`.**  From `S⁴ = 1`, an eigenvector `v` with
+`S v = ζ v` satisfies `ζ⁴ • v = v` (over any `CommRing`, no nonzero hypothesis).  The scalar
+consequence `ζ⁴ = 1` needs a nonzero `v` over a field — see `eigenvalue_pow_four_eq_one`. -/
+theorem eigenvector_pow_four_fixed {v : ι → R}
     (ζ : R) (heig : T.S.mulVec v = ζ • v) : ζ ^ 4 • v = v := by
   have hpow : (T.S ^ 4).mulVec v = ζ ^ 4 • v := by
     have step : ∀ n : ℕ, (T.S ^ n).mulVec v = ζ ^ n • v := by
@@ -116,6 +116,24 @@ theorem eigenvalue_pow_four_eq_one {v : ι → R}
   exact hpow.symm
 
 end SelfDualSTransform
+
+/-- **Eigenvalue narrowing: `ζ⁴ = 1`.**  Over a **field**, any eigenvalue `ζ` of `S` on a **nonzero**
+vector `v` is a 4th root of unity.  So the eigenfunctions the framework needs are not an arbitrary
+orthogonal family: their eigenvalues are the four charge-conjugation phases (as ordinary self-dual
+Fourier forces `iⁿ` on Hermite functions).  On the self-dual (`C`-fixed) sector this tightens to
+`ζ = ±1`, and the PF-positive `+1` ground state is `d_q` (input (A)+(B), Ocneanu/Wenzl). -/
+theorem eigenvalue_pow_four_eq_one {ι R : Type*} [Fintype ι] [DecidableEq ι] [Field R]
+    (T : SelfDualSTransform ι R) {v : ι → R} (hv : v ≠ 0)
+    (ζ : R) (heig : T.S.mulVec v = ζ • v) : ζ ^ 4 = 1 := by
+  have hfix : ζ ^ 4 • v = v := T.eigenvector_pow_four_fixed ζ heig
+  obtain ⟨i, hi⟩ := Function.ne_iff.mp hv
+  rw [Pi.zero_apply] at hi
+  have hcomp : ζ ^ 4 * v i = v i := by
+    have := congrFun hfix i; simpa [Pi.smul_apply, smul_eq_mul] using this
+  have hz : (ζ ^ 4 - 1) * v i = 0 := by rw [sub_mul, one_mul, hcomp, sub_self]
+  rcases mul_eq_zero.mp hz with h | h
+  · exact sub_eq_zero.mp h
+  · exact absurd h hi
 
 /-! ## The vacuum row lives in the self-dual sector -/
 

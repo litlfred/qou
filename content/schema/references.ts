@@ -256,6 +256,25 @@ export const references: CSLData[] = [
     note: "q-Hankel (q-Fourier–Bessel) transform built from the orthogonality of the Hahn–Exton q-Bessel zeros; the q-Lommel three-term recurrence. Reference for the q-Bessel contiguity ⟹ coefficient-recurrence derivation (QBesselContiguityRecurrence.lean).",
   }),
 
+  // ── Koornwinder–Swarttouw 1992 — q-Fourier / q-Hankel transforms on E_q(2) ──
+  ref({
+    id: "koornwinderswarttouw1992",
+    type: "article-journal",
+    title: "On q-analogues of the Fourier and Hankel transforms",
+    author: [
+      { family: "Koornwinder", given: "T. H." },
+      { family: "Swarttouw", given: "R. F." },
+    ],
+    "container-title": "Transactions of the American Mathematical Society",
+    issued: { "date-parts": [[1992]] },
+    volume: "333",
+    issue: "1",
+    page: "445-461",
+    DOI: "10.1090/S0002-9947-1992-1069750-0",
+    URL: "https://arxiv.org/abs/1208.2521",
+    note: "The self-reciprocal q-Hankel transform on E_q(2); third (Hahn–Exton) q-Bessel eq. (1.2) with Hansen–Lommel orthogonality at the roots of C_α(q;μ)=0. Source for the keystone value-map q-Bessel node screens (KeystoneSelfDualSpectralNarrowing.lean; docs/audits/2026-07-04-keystone-qhankel-eq2-vacuum-row-sourced-refutation.md).",
+  }),
+
   // ── Koornwinder 1990 — orthogonal polynomials & quantum groups ──
   ref({
     id: "koornwinder1990",
