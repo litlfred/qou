@@ -49,4 +49,4 @@ triple $(\mathbf{C}, A, \tau)$ where:
    functor;
 
 4. $A$ admits a *differential calculus*: the module of
-   K"ahler differentials $\Omega^1(A)$ exists in $\mathbf{C}$.
+   Kähler differentials $\Omega^1(A)$ exists in $\mathbf{C}$.
