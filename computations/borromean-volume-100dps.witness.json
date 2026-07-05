@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-29T14:42:14.169616+00:00",
-  "commitSha": "4f207588745f901d68703c022c9e38a1d134bb5f",
+  "computedAt": "2026-07-05T11:28:28.370156+00:00",
+  "commitSha": "6949424f7a827fb6d8f76f8fd3f1d4a45e37cfa2",
   "assertions": [
     {
       "name": "Λ(π/4) = G/2 (exact identity, to numerical precision)",
@@ -24,16 +24,23 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 68,
+  "durationMs": 67,
   "computation": "borromean-volume-100dps",
   "scriptFile": "borromean_volume_100dps.py",
-  "scriptHash": "1531ccf271f5",
-  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+  "scriptHash": "3bfcbd8ba174",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Vol(𝓑₃) at 100 dps via Lobachevsky-Catalan identity. Tests the audit claim that Vol(𝓑₃) and 8·G differ at the 7th digit. Computes Λ(π/4) numerically, mpmath.catalan to 100 dps, and 16·Λ(π/4) vs 8·G.",
   "auditOnly": "docs/audits/2026-05-18-lambda-scale-derivation-search.md",

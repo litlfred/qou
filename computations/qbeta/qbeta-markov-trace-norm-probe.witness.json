@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-03T17:15:05.348314+00:00",
-  "commitSha": "d0347b4f05a55a68427f8ff6a70b137875869cce",
+  "computedAt": "2026-07-05T11:17:30.635481+00:00",
+  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
   "assertions": [
     {
       "name": "gram-matrix-symmetric",
@@ -13,7 +13,7 @@
     },
     {
       "name": "L2-constraint-at-q0",
-      "computed": 2.777826848144321e-10,
+      "computed": 6.845644678724866e-14,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-09,
@@ -21,7 +21,7 @@
     },
     {
       "name": "Markov-constraint-at-q0",
-      "computed": 0.0,
+      "computed": 6.681911775230489e-52,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-09,
@@ -36,11 +36,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4636,
+  "durationMs": 4220,
   "computation": "qbeta-markov-trace-norm-probe",
   "scriptFile": "qbeta_markov_trace_norm_probe.py",
-  "scriptHash": "42fa155ed432",
-  "scriptCommitSha": "d0347b4f05a55a68427f8ff6a70b137875869cce",
+  "scriptHash": "b416f84925e0",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,9 +52,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "description": "Markov-trace inner product replacement of L2 in T_β NF coords. Steps 1–3: Gram matrix G(q), x_M = G^{-1}A·S/(A^T G^{-1}A) closed form, sanity comparison vs x_L2 at q_0.",
   "data": {
@@ -92,18 +90,18 @@
         "0.053481294118475318499772441782624810002744197845459"
       ],
       "x_M": [
-        "0.18689369188617716011080460702942218631505966186524",
-        "0",
-        "-7.4928429631832765255282202646664928810372384936365e-52",
+        "0.18689369188617716011080460702942218631505966186523",
+        "-4.9952286421221843503521468431109952540248256624243e-52",
+        "-2.4976143210610921751760734215554976270124128312122e-52",
         "2.4976143210610921751760734215554976270124128312122e-52",
-        "2.4976143210610921751760734215554976270124128312122e-52",
+        "4.9952286421221843503521468431109952540248256624243e-52",
         "-9.9904572842443687007042936862219905080496513248487e-52"
       ],
       "max_abs_diff": "0.089909500604593697858923917465290287509560585021973"
     },
     "constraint_residues_at_q0": {
-      "L2": "0.00000000027778268481443214041103030139149989077656026193968",
-      "Markov": "0"
+      "L2": "0.000000000000068456446787248668585547678820215785483723010597518",
+      "Markov": "6.6819117752304891153513411678787046970379922002626e-52"
     }
   }
 }

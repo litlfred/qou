@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-29T14:36:25.748566+00:00",
-  "commitSha": "4f207588745f901d68703c022c9e38a1d134bb5f",
+  "computedAt": "2026-07-05T11:22:06.282852+00:00",
+  "commitSha": "6949424f7a827fb6d8f76f8fd3f1d4a45e37cfa2",
   "assertions": [
     {
       "name": "ell_K_q_eq_n_strands_disjoint",
@@ -25,13 +25,20 @@
   "durationMs": 17,
   "computation": "atomic-braid-gb-filtration-extension",
   "scriptFile": "atomic_braid_gb_filtration_extension.py",
-  "scriptHash": "ec206bed7616",
-  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+  "scriptHash": "1665afacfc8c",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "v3 #5: gb_filtration_jet_tracker extension to atomic braid words at n ∈ {6, 9, 12}. Per-atom filtration certificate + max-grade ℓ(K, q) + reduction-step counts. Multi-nucleon counterpart of the existing H_3 test cases on main.",
   "auditOnly": "docs/audits/2026-05-09-refocused-1ppb-workplan-v3.md",

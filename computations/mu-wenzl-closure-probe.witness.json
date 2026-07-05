@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.2",
-  "computedAt": "2026-06-13T18:40:20.944924+00:00",
-  "commitSha": "f9079f74ea382222eba75d26dd15e620ba369dac",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-05T11:22:22.700210+00:00",
+  "commitSha": "6949424f7a827fb6d8f76f8fd3f1d4a45e37cfa2",
   "assertions": [
     {
       "name": "improves_prediction",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1038,
+  "durationMs": 9,
   "computation": "mu-wenzl-closure-probe",
   "scriptFile": "test_muon_wenzl_closure.py",
-  "scriptHash": "26555370d444",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e2dcdc9966c4",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,13 +25,11 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.2",
+    "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.11.1",
-    "mpmath": "0.0.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Tests if 5/2 / [8]_q! closes the muon mass tension",
   "data": {

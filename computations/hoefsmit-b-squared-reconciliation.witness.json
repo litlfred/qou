@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-05-27T13:45:43.434046+00:00",
-  "commitSha": "e9d827a31c96bcb283912a41802e57145ea62569",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-05T11:18:51.031435+00:00",
+  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
   "assertions": [
     {
       "name": "b2_formulas_agree",
-      "computed": 0.0,
+      "computed": 9.055679078826712e-72,
       "expected": 0,
       "passed": true,
       "tolerance": 1e-40,
@@ -14,7 +14,7 @@
     },
     {
       "name": "hecke_relation_exact",
-      "computed": 2.6727647100921956e-51,
+      "computed": 1.8111358157653425e-71,
       "expected": 0,
       "passed": true,
       "tolerance": 1e-40,
@@ -22,7 +22,7 @@
     },
     {
       "name": "braid_relation_exact",
-      "computed": 1.202744119541488e-50,
+      "computed": 3.622271631530685e-71,
       "expected": 0,
       "passed": true,
       "tolerance": 1e-40,
@@ -30,7 +30,7 @@
     },
     {
       "name": "proton_trace_1994",
-      "computed": 1.9941858103812133,
+      "computed": 1.9941858129799641,
       "expected": 1.994,
       "passed": true,
       "tolerance": 0.001,
@@ -38,43 +38,50 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 10,
   "computation": "hoefsmit-b-squared-reconciliation",
   "scriptFile": "hoefsmit_b_squared_reconciliation.py",
-  "scriptHash": "0f1ba32b17cd",
-  "scriptCommitSha": "b77e970d1a16a22b2bceedb32e601b9867c29dea",
+  "scriptHash": "9a8c250eb648",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Reconcile b² values: PR #1331 (b²≈1.167) vs proved b²=(h²+3)/(h²+4)≈0.753. Finding: both formulas give 0.753 when computed correctly. The 1.167 appears to be a sign error (a(a−h)+1 vs a(h−a)+1). Cross-validate proton trace = 1.994.",
   "data": {
     "b_squared_comparison": {
-      "b2_sq_proved": "0.752702113845058",
-      "b2_sq_from_hecke": "0.752702113845058",
-      "b2_sq_as_ratio": "0.752702113845058",
-      "b2_sq_pr1331_correct": "0.752702113845058",
-      "b2_sq_pr1331_sign_err": "1.247297886154942",
+      "b2_sq_proved": "0.7527021132519655",
+      "b2_sq_from_hecke": "0.7527021132519655",
+      "b2_sq_as_ratio": "0.7527021132519655",
+      "b2_sq_pr1331_correct": "0.7527021132519655",
+      "b2_sq_pr1331_sign_err": "1.2472978867480347",
       "match_proved_vs_hecke": true,
       "match_proved_vs_ratio": true,
       "match_proved_vs_pr1331": true,
       "reconciliation": "All four formulas give b²≈0.753. PR #1331's '1.167' is a(a−h)+1 (sign error on the second factor). The correct formula a(h−a)+1 gives 0.753."
     },
     "matrix_verification": {
-      "hecke_residual": 2.6727647100921956e-51,
-      "braid_residual": 1.202744119541488e-50,
+      "hecke_residual": 1.8111358157653425e-71,
+      "braid_residual": 3.622271631530685e-71,
       "inverse_residual": 0.0
     },
     "proton_trace_crossval": {
-      "tr_B3_on_V21": "1.9941858103812133",
-      "abs_tr_B3": "1.9941858103812133",
+      "tr_B3_on_V21": "1.9941858129799641",
+      "abs_tr_B3": "1.9941858129799641",
       "det_B3": "1.0",
       "pr1331_untyped_trace": 1.994,
       "match": true,
-      "theta_spectral_phase": "0.07626931802130164",
-      "theta_over_hbar_sq": "7.768957264759297",
+      "theta_spectral_phase": "0.0762693009680988",
+      "theta_over_hbar_sq": "7.7689571572602585",
       "note": "Both conventions reproduce the untyped proton trace 1.994"
     }
   }

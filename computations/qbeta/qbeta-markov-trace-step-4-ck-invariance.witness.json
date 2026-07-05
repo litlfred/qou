@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-03T18:28:14.141928+00:00",
-  "commitSha": "9bd3f954445fb02ea598a4ed7108465b0b69ac71",
+  "computedAt": "2026-07-05T11:17:31.299708+00:00",
+  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
   "assertions": [
     {
       "name": "L2-constraint-symbolic-identity",
@@ -31,8 +31,8 @@
   "durationMs": 17,
   "computation": "qbeta-markov-trace-step-4-ck-invariance",
   "scriptFile": "qbeta_markov_trace_step_4_ck_invariance.py",
-  "scriptHash": "d55ff0ff5c2f",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e91d316c4757",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,9 +44,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "description": "Step 4 of PR #1750 Markov-trace probe — diagnostic that the observable c_k Taylor coefficients are L2/Markov-independent. Both norms satisfy τ_M(T_β)(q) ≡ S(q) by the SDP constraint, so c_k = Taylor of S(q) regardless of norm choice. The Markov collapse is a structural simplification of T_β-as-operator, NOT a redirection of c_k extraction.",
   "data": {

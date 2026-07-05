@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T18:15:11.746109+00:00",
-  "commitSha": "18ac6def75acf693c516f28e4a8e625e698c5307",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-05T11:20:29.360124+00:00",
+  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
   "assertions": [
     {
       "name": "alpha_em_habiro_is_bar_involution_fixed_point",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 569,
+  "durationMs": 832,
   "computation": "alpha-em-q-difference-fourier",
   "scriptFile": "alpha_em_q_difference_fourier.py",
-  "scriptHash": "b512c073edb2",
-  "scriptCommitSha": "f85a6e5f67328219a98e79758b687c5b4d9d2d31",
+  "scriptHash": "a2995bbbbd68",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,7 +34,7 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",

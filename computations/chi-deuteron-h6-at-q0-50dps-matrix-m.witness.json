@@ -1,9 +1,9 @@
 {
   "computation": "chi-deuteron-h6-at-q0-50dps-matrix-m",
-  "description": "Lossless per-λ χ^λ(β_atomic(1,1))=deuteron at q_0, 50 dps, ALL 11 partitions of S_6 via the canonical Rust chi_q_via_gp path (sign-only crossings; matches the matrix-M backend to the 50-dps floor, PR #2062 §8). No max_dim cap — feasible at any n because χ_λ is dim-independent (~20 ms/λ). y_λ from the closed-form tower (y_lambda_tower_infra.py).",
-  "producer": "rust-chi-q-via-gp-lossless",
+  "description": "Numerical χ^λ_q(β_atomic(1, 1)) = deuteron per partition λ ⊢ 6 at q_0, 50 dps, matrix-M mpfr backend. Lossless (every λ) unless max_dim is set.",
+  "producer": "matrix-m-chi-q-via-gp",
   "convention": "sign-only-crossings",
-  "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
+  "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
   "dps": 50,
   "n_strands": 6,
   "atom": "deuteron",
@@ -15,7 +15,7 @@
   "n_skipped_max_dim": 0,
   "tr_M_partial": false,
   "partial": false,
-  "compute_time_sec": 0.01,
+  "compute_time_sec": 0.0,
   "tr_M_at_q0": "1.331782555055782735209145221967158590016601407687",
   "by_partition": [
     {

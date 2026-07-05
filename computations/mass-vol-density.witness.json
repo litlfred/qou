@@ -1,22 +1,22 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:19:45.937632+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-07-05T11:18:58.660583+00:00",
+  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
   "assertions": [
     {
       "name": "vol_density_equiv_vol_density",
       "computed": 1,
       "expected": 1,
       "passed": true,
-      "source": "vol_density_equiv_vol_density: |Δ| = 5.474e-48 < 1.0e-40"
+      "source": "vol_density_equiv_vol_density: |Δ| = 1.916e-47 < 1.0e-40"
     },
     {
       "name": "h_eq_2sinh_log_q",
       "computed": 1,
       "expected": 1,
       "passed": true,
-      "source": "h_eq_2sinh_log_q: |Δ| = 0.0 < 1.0e-40"
+      "source": "h_eq_2sinh_log_q: |Δ| = 6.682e-52 < 1.0e-40"
     },
     {
       "name": "bracket2_eq_2cosh_log_q",
@@ -58,15 +58,15 @@
       "computed": 1,
       "expected": 1,
       "passed": true,
-      "source": "vol_density_vd(density=tr_M) ≡ vol_density_per_block: |Δ| = 2.737e-48 < 1.0e-40"
+      "source": "vol_density_vd(density=tr_M) ≡ vol_density_per_block: |Δ| = 8.211e-48 < 1.0e-40"
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 12,
   "computation": "mass-vol-density",
   "scriptFile": "mass_vol_density.py",
-  "scriptHash": "3111f7ee29da",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "7cd88839cff5",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -76,19 +76,20 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
   "auditOnly": "docs/workplans/2026-06-04-mass-vol-density-stokes-delta-formalization.md",
   "parameters": {
-    "q_0": "1.1099785955573347198997632204832250266562084087802"
+    "q_0": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
-    "bracket_2_q_at_q0": "2.010896869119076",
+    "bracket_2_q_at_q0": "2.010896866707122",
     "su2_density_loss": {
-      "density_global_H4_scalar": "2.532779663674676",
-      "density_per_block_H3_trM_proton": "1.06530614425445",
-      "ratio_global_over_per_block": "2.377513428731073",
+      "density_global_H4_scalar": "2.532779656399391",
+      "density_per_block_H3_trM_proton": "1.065306238075878",
+      "ratio_global_over_per_block": "2.377513212514381",
       "gate_verdict": "RED — global SU(2)-blind scalar ≠ per-block Markov trace"
     }
   }

@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T18:00:28.147878+00:00",
-  "commitSha": "e01e193ab09eb15cd76509f40c2c96497404f91d",
+  "computedAt": "2026-07-05T11:21:16.460092+00:00",
+  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
   "assertions": [
     {
       "name": "stage_b_blocker_recorded",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 256,
+  "durationMs": 264,
   "computation": "qbeta-hoefsmit-chi-cross-anchor-stability-probe",
   "scriptFile": "qbeta_hoefsmit_chi_cross_anchor_stability_probe.py",
-  "scriptHash": "45a176e28f4d",
-  "scriptCommitSha": "e01e193ab09eb15cd76509f40c2c96497404f91d",
+  "scriptHash": "9e9e4bb5081c",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,

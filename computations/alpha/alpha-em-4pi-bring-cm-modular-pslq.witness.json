@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T13:21:46.343585+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-07-05T11:18:57.419243+00:00",
+  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
   "assertions": [
     {
       "name": "pslq_sweep_complete",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 204,
+  "durationMs": 236,
   "computation": "alpha-em-4pi-bring-cm-modular-pslq",
   "scriptFile": "alpha_em_4pi_bring_cm_modular_pslq.py",
-  "scriptHash": "b20b877602ff",
-  "scriptCommitSha": "0c4c46e87ad1f433a3255f277884fd108b2fa396",
+  "scriptHash": "6c27e724a9cf",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,7 +26,7 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
