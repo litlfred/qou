@@ -67,15 +67,18 @@ YFILE = {"D": None, "T": "wenzl-y-lambda-h9.witness.json",
 
 
 def load_chi(fn: str, key: str) -> dict:
-    d = json.load(open(os.path.join(COMP, fn)))["data"][key]["by_partition"]
+    with open(os.path.join(COMP, fn), encoding="utf-8") as f:
+        d = json.load(f)["data"][key]["by_partition"]
     return {tuple(e["partition"]): mpf(e["chi_lambda"]) for e in d}
 
 
 def load_y(name: str) -> dict:
     if name == "D":
-        lp = json.load(open(os.path.join(COMP, "rho-k-h3a-lp-dual.witness.json")))
+        with open(os.path.join(COMP, "rho-k-h3a-lp-dual.witness.json"), encoding="utf-8") as f:
+            lp = json.load(f)
         return {tuple(e["partition"]): mpf(str(e["y_lambda_at_q0"])) for e in lp["data"]["per_lambda"]}
-    d = json.load(open(os.path.join(COMP, YFILE[name])))
+    with open(os.path.join(COMP, YFILE[name]), encoding="utf-8") as f:
+        d = json.load(f)
     return {tuple(e["partition"]): mpf(e["y_lambda"]) for e in d["data"]["per_partition"]}
 
 
@@ -123,14 +126,8 @@ def main() -> int:
                         "parameter-free Δ_λ weight in the sign-solved counit defect, on "
                         "D/T/³He/⁴He. Every Frobenius variant explodes with A (≈d_λ² scale) "
                         "— REFUTED as the closing weight (scope-(a)); brackets GAP-A between "
-                        "Option-E and the target. audit_only, no fit."),
-        "audit_only": True,
+                        "Option-E and the target. audit-only, no fit."),
         "tier": "structural-exact (committed χ^λ atom/free + exact 50-dps Frobenius Gram norms)",
-        "assertions": [
-            {"name": "frobenius_variants_preserve_binding_sign", "passed": bool(all_neg)},
-            {"name": "no_frobenius_variant_closes_magnitude", "passed": bool(not any_close)},
-        ],
-        "allPassed": True,
         "result": {
             "free_parameters": 0,
             "per_isotope": per_iso,
@@ -146,11 +143,18 @@ def main() -> int:
             "chi_source": "atom-chi-rust-{d,t,3he,4he}.witness.json (data.atom + data.free)",
         },
     }
-    out = WitnessBuilder.wrap_legacy(
+    # Assertions via the builder API — wrap_legacy() drops payload-level
+    # `assertions`/`allPassed` (reserved keys); booleans encoded as computed/expected.
+    wb = WitnessBuilder.wrap_legacy(
         "frobenius-gram-delta-lambda", payload,
         script_path=__file__, engine="python+mpmath",
         output_dir=COMP,
-    ).save()
+    )
+    wb.add_assertion("frobenius_variants_preserve_binding_sign",
+                     computed=str(bool(all_neg)), expected="True")
+    wb.add_assertion("no_frobenius_variant_closes_magnitude",
+                     computed=str(bool(not any_close)), expected="True")
+    out = wb.save(extra={"auditOnly": True})
 
     print("=== Frobenius-Gram Δ_λ in the sign-solved defect ===")
     for name, iso in per_iso.items():
