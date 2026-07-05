@@ -397,3 +397,172 @@ obstruction, and rules out a fabricated closure.
 - Read: `computations/bring_zero_mode_bloch_hunt.py`,
   `computations/bring_trilog_zeta5_depth_3.py`,
   `computations/bring_d3_goncharov_probe.py`
+
+---
+
+## Auxiliary-3-manifold route
+
+**Scope:** the lead sharpened out of §B.3.1 — since Bring's *surface* (2 real
+dimensions) supplies no ideal-tetrahedron data, a genuine `B₃`/trilogarithm class
+must come from an **auxiliary 3-manifold** canonically attached to the α_EM
+construction. This section works that lead to its end. Companion compute:
+[`computations/bring_aux_3manifold_weight_probe.py`](../../computations/bring_aux_3manifold_weight_probe.py)
+(standalone mpmath, 50 dps; emits no witness — records an open negative).
+
+**Verdict: OPEN.** The route does *not* close, and the reason is a **new, sharper
+obstruction than the §B "dimensional ill-posedness on the 2-surface":** it is a
+**weight (regulator-degree) obstruction**. No 3-manifold canonically attached to
+Bring's surface can carry the target class, because a 3-manifold period is a
+*weight-2* (dilogarithm) regulator while the target is *weight 3* (trilogarithm),
+and — decisively — the weight-2 regulator of the relevant field vanishes. No fit
+was made and no closure fabricated. The finding **re-scopes** the auxiliary-
+3-manifold idea from "compute it" to "(a)-refuted as posed, with one admissible
+(b)", and redirects the open step to a genuinely non-3-manifold object.
+
+### C.1 The most principled auxiliary 3-manifold — and why
+
+Three candidates were weighed against the test "canonically attached to the α_EM
+construction, **not** chosen to fit":
+
+| Candidate | Canonicity | Hyperbolic? | Verdict |
+|---|---|---|---|
+| **Unit-tangent / frame bundle** `UT(M_Bring) = \mathrm{PSL}_2(\mathbb R)/\Gamma_{\mathrm{Bring}}` | **Highest** — it *is* the frame bundle of the state bundle `\mathcal S` already in the QOU tuple `(\mathbf C,\varTheta,G,\mathcal S)`; no choices | **No** — Seifert-fibered (`\widetilde{\mathrm{SL}_2}` geometry) | **chosen** (canonical) |
+| Mapping torus `M_\varphi` of a Bring automorphism `\varphi\in S_5` | High, but needs a choice of `\varphi` | **No** — the `S_5` automorphisms are *conformal ⇒ finite order*; a periodic mapping torus is Seifert-fibered | rejected (still Seifert) |
+| Pseudo-Anosov mapping torus | Low — the pA class is **not** the conformal `S_5` symmetry | Yes | rejected (fit-flavoured *and* wrong weight, below) |
+
+The unit-tangent bundle is the unique principled pick: it is literally the
+principal frame bundle `P` / state-bundle geometry named in the archimedean
+tuple, so it is *canonically attached to the construction, not to the answer*.
+`UT(M_{\mathrm{Bring}})` is an `S^1`-bundle over the genus-4 surface with Euler
+number `e = \chi(M_{\mathrm{Bring}}) = 2-2g = -6`.
+
+### C.2 Its scissors / B₃ class — computed, and it is empty
+
+`UT(M_{\mathrm{Bring}})` carries `\widetilde{\mathrm{SL}_2}` geometry, hence:
+
+- **Simplicial (Gromov) volume `= 0`.** Every Seifert-fibered 3-manifold has
+  vanishing Gromov norm (the `S^1` action amenably collapses the fundamental
+  cycle). So there is **no** ideal-tetrahedron decomposition contributing
+  hyperbolic volume, and the `B_2`/`B_3` scissors class is trivial.
+- **Chern–Simons invariant `\in \mathbb Q/\mathbb Z`.** For a Seifert space the
+  `\widetilde{\mathrm{SL}_2}` Chern–Simons invariant is a rational function of the
+  Euler and Seifert data (Kirk–Klassen / Auckly) — a *rational* number, carrying
+  no transcendental dilog, let alone trilog.
+
+The mapping tori of the conformal `S_5` automorphisms are periodic and give the
+same Seifert conclusion. **The canonical auxiliary 3-manifold therefore supplies
+exactly zero transcendental scissors content** — neither the `n=2` dilogarithm
+nor the sought `n=3` trilogarithm.
+
+### C.3 The sharp new obstruction — a weight/regulator mismatch (with cited invariants)
+
+Even setting the Seifert-vanishing aside and asking for *any* hyperbolic
+3-manifold, the route is blocked at the level of **regulator weight**:
+
+1. **A hyperbolic 3-manifold period is weight 2, never weight 3.** For
+   `M = \mathbb H^3/\Gamma`, the complex volume `\mathrm{Vol}(M) + i\,\mathrm{CS}(M)`
+   is the image of the fundamental class `[M]\in H_3(\mathrm{PSL}_2\mathbb C)`
+   under the **weight-2** (dilogarithm) Borel regulator on
+   `K_3(\mathbb C)\cong B_2(\mathbb C)` (Neumann–Zagier; Neumann's complex-volume
+   theorem). A 3-manifold's ideal-tetrahedron scissors class is a **dilogarithm**
+   sum `\sum \mathcal L_2(z_j)`. A **trilogarithm** (`B_3`, weight 3,
+   `K_5`) is *not* the volume or CS invariant of any hyperbolic 3-manifold.
+   The RT-Phase-5 scaffold's target is weight 3 — **one weight above** anything a
+   3-manifold classical invariant can produce.
+
+2. **The relevant field kills exactly the weight a 3-manifold computes.**
+   `\mathbb Q(\sqrt5)` is **totally real** (`r_1 = 2`, `r_2 = 0`). By Borel's
+   rank theorem,
+   $$
+   \operatorname{rank}_{\mathbb Q} K_3(\mathbb Q(\sqrt5)) = r_2 = 0
+   \quad(\text{weight 2 / dilog: trivial}),\qquad
+   \operatorname{rank}_{\mathbb Q} K_5(\mathbb Q(\sqrt5)) = r_1 + r_2 = 2
+   \quad(\text{weight 3 / trilog: rank 2}).
+   $$
+   The weight-2 regulator — *the one a 3-manifold volume realizes* — is **zero**
+   for this field, while all the arithmetic content sits at weight 3. Numerical
+   fingerprint (probe, 50 dps):
+   - **weight 2 is decomposable/torsion:** `\mathrm{Li}_2(1/\varphi^2)=\pi^2/15-\ln^2\varphi`
+     **exactly** (diff `= 0`) — a `\pi^2`-rational value up to a product of logs,
+     i.e. the golden Bloch class is torsion (`K_3` rank 0), matching Landen;
+   - **weight 3 is genuinely transcendental:** `\mathcal L_3(1/\varphi^2)=\tfrac45\zeta(3)`
+     (diff `1.3\times10^{-51}`), the `\zeta(3)`-axis of the rank-2 `K_5`.
+
+   So the geometry a 3-manifold provides (weight 2) is *precisely* the geometry
+   `\mathbb Q(\sqrt5)` makes trivial. This is why **no** 3-manifold — Seifert or
+   hyperbolic — can host the target: it would have to realize a weight-3 class as
+   a weight-2 period, which is impossible, and even its weight-2 output is
+   arithmetically empty here.
+
+3. **This supersedes and explains §B's dimensional finding.** §B said "a
+   2-surface has no ideal tetrahedra." The deeper reason a 3-manifold does not
+   rescue it: ideal tetrahedra in `\mathbb H^3` are **weight-2** (dilog) data —
+   they compute `K_3`, not `K_5`. Climbing from a surface to a 3-manifold climbs
+   from weight ~1 (area, `\pi`) to weight 2 (dilog), **not** to weight 3. The
+   trilogarithm is two rungs up from the surface and one rung above every
+   3-manifold.
+
+### C.4 Where the real weight-3 class does live (the redirect)
+
+The `K_5(\mathbb Q(\sqrt5))` class `\{\zeta(3), L(3,\chi_5)\}`, with the exact
+generator `\mathcal L_3(1/\varphi^2)=\tfrac45\zeta(3)` (§B.1, re-confirmed above),
+is **real** — but its geometric home is **not** a 3-manifold. Its admissible
+realizations are:
+
+- **A Goncharov weight-3 regulator on a configuration of the 5 golden points.**
+  Bring's `S_5` symmetry acts on 5 marked points (the quintic's roots / the `\{5,4\}`
+  map data); the weight-3 regulator of `K_5` is a Grassmannian/cosimplicial
+  polylogarithm on such configurations, **not** an ideal-tetrahedron sum. This is
+  a 4- or higher-dimensional volume in Goncharov's sense, not a 3-manifold.
+- **The Reshetikhin–Turaev / Chern–Simons *2-loop* perturbative invariant** of
+  the auxiliary Seifert manifold. Perturbative CS carries `\zeta(3)` at two loops
+  even when the *classical* volume vanishes — matching the physics fact that
+  `\zeta(3)` first appears in QED at two loops (`a_D^{(2)}` order). This is the
+  "Reshetikhin–Turaev two-loop track" already named in
+  [`prop:photon-ir-zero-mode-bring`](../../content/quantum-observable-universe/predicted-spectra/photon-ir-zero-mode-bring.md);
+  the present finding says it is the *only* surviving weight-3 route, since the
+  classical scissors route is weight-obstructed.
+
+### C.5 Does it yield a parameter-free O(α²) coefficient? — No; the precise remaining step
+
+No. The canonical 3-manifold gives a *zero* (Seifert), and no 3-manifold can give
+the weight-3 target at all (§C.3). The data-demanded coefficient
+`C_{\mathrm{data}}\approx0.986\cdot(1/4\pi)` is therefore **not** produced here,
+and — consistent with §B.3 item 3 — it remains only `~0.5%`-determined once the
+`~3` ppb muon-`q_0` uncertainty is propagated, so even a candidate weight-3 form
+could not be numerically discriminated. The precise remaining step, sharpened:
+
+> Evaluate the `n=2` object `a_D^{(2)}` **as a weight-3 regulator that is not a
+> 3-manifold period** — either the Goncharov weight-3 configuration polylog on the
+> five golden points, or the RT/CS **2-loop** perturbative invariant of
+> `UT(M_{\mathrm{Bring}})` — and read off its image on the `K_5(\mathbb Q(\sqrt5))`
+> lattice `\{\zeta(3), L(3,\chi_5)\}` (`\zeta(3)`-axis fixed by
+> `\mathcal L_3(1/\varphi^2)=\tfrac45\zeta(3)`). Only that computation fixes the
+> normalization from first principles; until it exists — and until `q_0` is pinned
+> two-to-three orders tighter — the coefficient is **OPEN**.
+
+### C.6 Refutation-scope discipline (AGENTS.md §"Before declaring refuted")
+
+- **(a) Scope-limited negatives.** (i) The canonical auxiliary 3-manifold
+  `UT(M_{\mathrm{Bring}})` is Seifert-fibered and contributes zero transcendental
+  scissors content; (ii) mapping tori of the conformal `S_5` automorphisms are
+  periodic ⇒ Seifert ⇒ volume 0. These refute *these constructions*, not the
+  weight-3 *ingredient*: the `K_5(\mathbb Q(\sqrt5))` class exists and may enter
+  via a Goncharov or RT-2-loop route (§C.4).
+- **(b) Structural exclusion — one, newly asserted, with cited invariants.**
+  *No hyperbolic-3-manifold scissors/volume/CS class can realize a `B_3`
+  (trilogarithm) value.* Cited invariants: **(i)** the Neumann–Zagier
+  complex-volume theorem (a 3-manifold period is the weight-2 dilog regulator on
+  `K_3`), a proved regulator-degree fact; **(ii)** Borel's rank theorem giving
+  `\operatorname{rank}K_3(\mathbb Q(\sqrt5))\otimes\mathbb Q = 0` (a proved
+  dimension/rank bound). Together these exclude the *3-manifold-scissors
+  realization of a `B_3` class on `\mathbb Q(\sqrt5)`* as a structural
+  impossibility — an admissible `(b)` (proved-invariant exclusion), and precisely
+  the kind AGENTS.md permits. **The excluded object is the realization method, not
+  the ingredient:** the trilogarithm class itself stands (§B.1, §C.3 item 2).
+
+### C.7 Files added / read
+- **Added:** [`computations/bring_aux_3manifold_weight_probe.py`](../../computations/bring_aux_3manifold_weight_probe.py)
+- Read: `content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.md`,
+  `docs/coordination/2026-06-13-alpha-em-phase5-rt-ledger.md`,
+  `content/quantum-observable-universe/predicted-spectra/photon-ir-zero-mode-bring.md`
