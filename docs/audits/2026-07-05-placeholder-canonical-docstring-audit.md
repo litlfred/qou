@@ -1,15 +1,18 @@
 # Audit — QOU "Placeholder canonical" docstring corpus (2026-07-05)
 
 **Branch:** `claude/do-lean-backlog-t153m9` · **Scope:** every
-`content/quantum-observable-universe/lean/QOU/**/*.lean` file carrying a
-`Placeholder canonical` header docstring.
+`content/quantum-observable-universe/lean/QOU/**/*.lean` file that
+**originally** carried a `Placeholder canonical` header docstring
+(the selection was run on the pre-fix corpus; this same PR then rewrites
+48 of those headers to `Canonical declaration`, so the marker no longer
+matches those files on-branch).
 
 ## Why this audit exists
 
 A grep-based "Lean sorry backlog" count on this repo returns 50–100
 files. Almost none of them carry a real `sorry`. The count is dominated
 by **stale header/declaration docstrings** that *say* things like
-*"The body is `sorry`"*, *"proof are pending"*, *"`… := by sorry`
+*"The body is `sorry`"*, *"statement and proof are pending"*, *"`… := by sorry`
 placeholder"* — while the declaration underneath actually **compiles as
 a complete term**. This audit classifies the whole corpus so the
 docstrings can be made honest without either (a) blindly relabelling
