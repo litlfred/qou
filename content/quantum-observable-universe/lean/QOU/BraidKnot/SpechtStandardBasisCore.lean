@@ -49,17 +49,18 @@ cited, everything else machine-checked."*
 | `standardPolytabloid_linearIndependent` | **STUB** `sorry` — `-- Ref: [sagan2001]` Thm 2.5.2 |
 | `colStab_smul_self`, `polytabloid_colStab_smul` (column-antisymmetry) | **sorry-free** |
 | `domCount'`, `domWeight`, `domBound`, `domCount'_le`, `domWeight_le` (the dominance measure) | **sorry-free** |
-| `straightening_step` (Garnir straightening core) | **STUB** `sorry` — `-- Ref: [sagan2001]` §2.6 |
-| `standardPolytabloid_straightening` | **sorry-free MODULO `straightening_step`** (well-founded induction on the dominance weight) |
-| `standardPolytabloid_span` | **sorry-free MODULO `straightening_step`** (Garnir relations) |
+| `straightening_step_colMax` (Garnir core, **column-maximal case**) | **STUB** `sorry` — `-- Ref: [sagan2001]` §2.6 |
+| `straightening_step` (Garnir straightening core) | **sorry-free MODULO `straightening_step_colMax`** (column-sort dichotomy: the `domWeight`-raising branch is proved outright via `polytabloid_colStab_smul`) |
+| `standardPolytabloid_straightening` | **sorry-free MODULO `straightening_step_colMax`** (well-founded induction on the dominance weight) |
+| `standardPolytabloid_span` | **sorry-free MODULO `straightening_step_colMax`** (Garnir relations) |
 | `standardBasis` | **sorry-free MODULO the two stubs** (`Basis.mk` wiring) |
 | `specht_finrank_eq_numSYT` | **sorry-free MODULO the two stubs** (the reduction) |
 
 The reduction (`standardBasis` + `specht_finrank_eq_numSYT`) is **genuinely
 sorry-free**: its only `sorry`-tainted inputs are the two named classical facts
 (`standardPolytabloid_linearIndependent`, and — via
-`standardPolytabloid_straightening` — the single Garnir core
-`straightening_step`). The
+`standardPolytabloid_straightening` and `straightening_step` — the single Garnir
+core `straightening_step_colMax`). The
 SYT→tableau conversion **and** the `Fintype` instance brick 1 left open are
 *both* proved sorry-free here.
 
@@ -72,10 +73,18 @@ linear extension of Sagan's dominance order, defined locally because this file s
 half to a **single** sharper combinatorial core, `straightening_step`: a
 *non-standard* polytabloid is a `k`-combination of polytabloids of strictly
 dominance-greater (`domWeight`-greater) tabloids (Sagan §2.6 Garnir relations).
-The column-antisymmetry lemma `polytabloid_colStab_smul`
-(`e_{σ·t} = sgn(σ)·e_t` for `σ ∈ C_t`) — the column-sort ingredient of the
-straightening algorithm — is proved sorry-free here and is the tool that discharges
-the column half of `straightening_step`.
+
+That core is itself now **proved sorry-free MODULO a still-sharper residual**,
+`straightening_step_colMax`, via a **column-sort dichotomy** on whether some column
+permutation `σ ∈ C_t` strictly raises `domWeight`. The `domWeight`-raising branch is
+discharged outright by the column-antisymmetry lemma `polytabloid_colStab_smul`
+(`e_{σ·t} = sgn(σ)·e_t` for `σ ∈ C_t`, proved sorry-free here): since `sgn(σ)² = 1`,
+`e_t = sgn(σ)·e_{σ·t}`, a one-term combination whose single term is strictly
+`domWeight`-greater by the branch hypothesis. What remains is only the
+**column-maximal** branch (no `σ ∈ C_t` raises `domWeight`, so the column-sort is
+exhausted): the genuine Garnir coset-sum at a row descent, isolated as the residual
+`straightening_step_colMax` with the sharpening hypothesis that `t` is
+column-dominance-maximal.
 
 ## References
 - [sagan2001] Sagan, *The Symmetric Group*, §2.5 (the standard basis, Thm 2.5.2;
@@ -397,25 +406,85 @@ theorem domWeight_le (t : Specht.Tableau μ) : domWeight t ≤ domBound μ := by
 /-! #### The single residual straightening core + the induction skeleton -/
 
 omit [CharZero k] in
-/-- **STUB — the single residual straightening core (Sagan §2.6 Garnir relations).**
+/-- **STUB — the residual straightening core, SHARPENED to the column-maximal case
+(Sagan §2.6 Garnir relations).**
+A polytabloid `e_t` that is *not itself* a standard polytabloid **and** whose tableau
+`t` is already **column-(dominance-)maximal** — no column permutation `σ ∈ C_t`
+strictly raises the dominance measure `domWeight` (hypothesis `hmax`) — is a
+`k`-linear combination of polytabloids of **strictly `domWeight`-greater** tabloids.
+
+This is the *irreducible* combinatorial heart of the straightening algorithm with the
+**column-sort already exhausted**: because `hmax` says no column permutation can raise
+`domWeight` further, the column-antisymmetry lever `polytabloid_colStab_smul` (proved
+above) is spent, and closing this requires a genuine **Garnir coset-sum identity at a
+row descent** (Sagan §2.6), whose non-identity coset terms are `±e_{π•t}` with
+`domWeight (π•t) > domWeight t`. The general `straightening_step` (below) reduces to
+this case sorry-free by splitting on whether a `domWeight`-raising column permutation
+exists.
+
+`hmax` is a genuine restriction (a column-maximal `t` is column-standard up to the
+row order), so this is an honest sub-case, cited but not vacuous: for a column-maximal
+non-standard `t` a row descent between adjacent columns exists and the Garnir relation
+yields strictly dominance-greater — hence strictly `domWeight`-greater — terms. -/
+theorem straightening_step_colMax (t : Specht.Tableau μ)
+    (h : Specht.polytabloid (k := k) t ∉ Set.range (standardPolytabloid (k := k) (μ := μ)))
+    (hmax : ∀ σ : Specht.colStab t,
+      domWeight ((σ : Equiv.Perm (Fin (Specht.nOf μ))) • t) ≤ domWeight t) :
+    ∃ (s : Finset (Specht.Tableau μ)) (c : Specht.Tableau μ → k),
+      (∀ t' ∈ s, domWeight t < domWeight t') ∧
+      Specht.polytabloid (k := k) t = ∑ t' ∈ s, c t' • Specht.polytabloid (k := k) t' := by
+  -- Ref: [sagan2001] §2.6 (Garnir relations / straightening algorithm). See also
+  -- [james1984representation] §8. With the column-sort exhausted (`hmax`: `t` is
+  -- column-dominance-maximal), the residual is a pure Garnir coset-sum identity at a
+  -- row descent, whose non-identity terms are polytabloids of strictly
+  -- dominance-greater (hence `domWeight`-greater) tabloids.
+  sorry
+
+omit [CharZero k] in
+/-- **Straightening step (Sagan §2.6) — reduced sorry-free to the column-maximal core.**
 A polytabloid `e_t` that is *not itself* a standard polytabloid is a `k`-linear
-combination of polytabloids of **strictly dominance-greater** tabloids (encoded by
-the strictly-monotone measure `domWeight`). This is the irreducible combinatorial
-heart of the straightening algorithm: a column permutation column-standardises `t`
-(`polytabloid_colStab_smul`, proved above), raising `domWeight`; a Garnir relation
-at a row descent rewrites the result over tabloids of strictly higher dominance.
-From this core, the full spanning half (`standardPolytabloid_straightening`) follows
-sorry-free by well-founded induction on `domBound μ - domWeight t`. -/
+combination of polytabloids of **strictly dominance-greater** tabloids (encoded by the
+strictly-monotone measure `domWeight`). From this core, the full spanning half
+(`standardPolytabloid_straightening`) follows sorry-free by well-founded induction on
+`domBound μ - domWeight t`.
+
+**Reduction (sorry-free half).** Split on whether some column permutation `σ ∈ C_t`
+strictly raises `domWeight`:
+
+* **Column-raising** (`∃ σ ∈ C_t, domWeight t < domWeight (σ•t)`) — handled here
+  outright by the column-antisymmetry lever `polytabloid_colStab_smul`: since
+  `e_{σ•t} = sgn(σ)·e_t` and `sgn(σ)² = 1`, we get `e_t = sgn(σ)·e_{σ•t}`, a
+  one-term combination over `{σ•t}`, and `domWeight t < domWeight (σ•t)` is exactly
+  the branch hypothesis. No dominance theory needed.
+* **Column-maximal** (no such `σ`) — delegated to `straightening_step_colMax`, the
+  single sharpened Garnir residual, which now carries the extra hypothesis `hmax`
+  that no column permutation raises `domWeight`. -/
 theorem straightening_step (t : Specht.Tableau μ)
     (h : Specht.polytabloid (k := k) t ∉ Set.range (standardPolytabloid (k := k) (μ := μ))) :
     ∃ (s : Finset (Specht.Tableau μ)) (c : Specht.Tableau μ → k),
       (∀ t' ∈ s, domWeight t < domWeight t') ∧
       Specht.polytabloid (k := k) t = ∑ t' ∈ s, c t' • Specht.polytabloid (k := k) t' := by
-  -- Ref: [sagan2001] §2.6 (Garnir relations / straightening algorithm). See also
-  -- [james1984representation] §8. The irreducible spanning core of brick 4:
-  -- column-antisymmetry (`polytabloid_colStab_smul`, proved) + the Garnir
-  -- coset-sum identity at a row descent, both producing dominance-greater terms.
-  sorry
+  classical
+  by_cases hraise : ∃ σ : Specht.colStab t,
+      domWeight t < domWeight ((σ : Equiv.Perm (Fin (Specht.nOf μ))) • t)
+  · -- Column-raising case: fully proved via column-antisymmetry.
+    obtain ⟨σ, hσ⟩ := hraise
+    set σ0 : Equiv.Perm (Fin (Specht.nOf μ)) := (σ : Equiv.Perm (Fin (Specht.nOf μ))) with hσ0
+    have hmem : σ0 ∈ Specht.colStab t := σ.property
+    have hpc : Specht.polytabloid (k := k) (σ0 • t)
+        = (Equiv.Perm.sign σ0 : ℤ) • Specht.polytabloid (k := k) t :=
+      polytabloid_colStab_smul (k := k) t hmem
+    have hs2 : (Equiv.Perm.sign σ0 : ℤ) * (Equiv.Perm.sign σ0 : ℤ) = 1 := by
+      rcases Int.units_eq_one_or (Equiv.Perm.sign σ0) with h1 | h1 <;> rw [h1] <;> decide
+    refine ⟨{σ0 • t}, fun _ => ((Equiv.Perm.sign σ0 : ℤ) : k), ?_, ?_⟩
+    · intro t' ht'
+      rw [Finset.mem_singleton] at ht'; subst ht'; exact hσ
+    · rw [Finset.sum_singleton, hpc,
+          ← Int.cast_smul_eq_zsmul k (Equiv.Perm.sign σ0 : ℤ) (Specht.polytabloid (k := k) t),
+          smul_smul, ← Int.cast_mul, hs2, Int.cast_one, one_smul]
+  · -- Column-maximal case: delegated to the sharpened Garnir residual.
+    push_neg at hraise
+    exact straightening_step_colMax (k := k) t h hraise
 
 omit [CharZero k] in
 /-- **Spanning half — now proved sorry-free MODULO the single core
