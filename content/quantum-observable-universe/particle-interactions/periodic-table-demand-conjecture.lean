@@ -1,4 +1,4 @@
-import Mathlib.Data.Nat.Defs
+import Mathlib.Data.Nat.Basic
 
 /-!
 # Periodic-table demand conjecture (conjectural)
