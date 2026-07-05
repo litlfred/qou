@@ -1,0 +1,68 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-05T23:53:25.003801+00:00",
+  "commitSha": "ef6fd4c6c641bf060cbef0a61193261724c218e5",
+  "assertions": [
+    {
+      "name": "cumulant_reconstruction_exact",
+      "computed": "28.29567",
+      "expected": "28.29567",
+      "passed": true,
+      "tolerance": 1e-06
+    },
+    {
+      "name": "b4_target_within_iceil_room",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "b4-value-cumulant-target",
+  "scriptFile": "b4_value_cumulant_target_probe.py",
+  "scriptHash": "67abedeab7c9",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Value leg step 1: the connected 4-body cumulant of ⁴He is b₄=9.243 MeV (AME Ursell inversion), the exact non-circular target for the [1^4] operator; existing forms (B_sym 2-body, B_vol 1-body) supply connected b₄=0 ⇒ no shortcut, a new operator is required. audit-only, no fit.",
+  "tier": "structural (exact cumulant inversion of AME; body-order argument on existing forms)",
+  "result": {
+    "cumulants_MeV": {
+      "b2_pair": "2.22452",
+      "b3_connected_3body": "1.42636",
+      "b4_connected_4body_TARGET": "9.24311"
+    },
+    "reconstruction_check": {
+      "sum_6b2_4b3_b4": "28.29567",
+      "B_4He": "28.29567",
+      "exact": true
+    },
+    "target_within_iceil_room": true,
+    "existing_forms_connected_b4": {
+      "B_sym": "0 (2-body additive)",
+      "B_vol": "0 (1-body linear)",
+      "B_gate": "n/a (single-partition collective, not a cumulant expansion)"
+    },
+    "verdict": "Value TARGET = connected 4-body cumulant b₄ ≈ 9.243 MeV (AME Ursell inversion, non-circular). Existing trace forms supply connected b₄ = 0 (B_sym 2-body, B_vol 1-body) — orthogonal, no shortcut. b₄ sits inside the I-ceil room (16.8 MeV). The remaining core is the b₄^even VALUE from the [1^4]-projected 4-nucleon Markov trace (77-partition ⁴He χ + branching combiner) — multi-session, now with an exact target and cleared ceiling. Built parameter-free; NO fit to b₄. Scope-(a)."
+  },
+  "context": {
+    "axis": "GAP-A-4 class-D — [1^4] Ursell operator magnitude, VALUE leg",
+    "scoping": "docs/scope/2026-07-05-gap-a4-ursell-operator-magnitude-scoping.md §3",
+    "gates_cleared": "I-par (#3395), I-conn (#3398), I-ceil (#3400)",
+    "remaining": "b₄^even value = [1^4]-projected 4-nucleon Markov trace (branching combiner + 77-partition ⁴He χ)"
+  },
+  "auditOnly": true
+}
