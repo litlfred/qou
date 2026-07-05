@@ -8,7 +8,7 @@
   },
   "source_hashes": {
     "md": "bc0e19b4848e",
-    "ts": "675d851e89de"
+    "ts": "cfa8caab839e"
   },
   "criteria": {
     "voice-status-leak": [
@@ -713,58 +713,54 @@
       {
         "field_hash": {
           "md": "bc0e19b4848e",
-          "ts": "675d851e89de"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
-        },
-        "reviewed_at": "2026-07-05T04:39:43.766Z",
-        "reviewed_sha": "7415132ccce30885dcfd323600b8bcf311c431e4",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/two-filtration-bridge-small-cases.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
-      }
-    ],
-    "compute-prop-has-consumer": [
-      {
-        "field_hash": {
-          "md": "bc0e19b4848e",
-          "ts": "675d851e89de"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
-        },
-        "reviewed_at": "2026-07-05T04:39:43.766Z",
-        "reviewed_sha": "7415132ccce30885dcfd323600b8bcf311c431e4",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/two-filtration-bridge-small-cases.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
-      }
-    ],
-    "compute-witness-exists": [
-      {
-        "field_hash": {
-          "md": "bc0e19b4848e",
-          "ts": "675d851e89de"
+          "ts": "cfa8caab839e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+          "script_hash": "f2c5b0fad923",
+          "script_commit_sha": "3b4fb713350705380c7be4d1ff7b02a45a74b5a1"
         },
-        "reviewed_at": "2026-07-05T04:39:43.766Z",
-        "reviewed_sha": "7415132ccce30885dcfd323600b8bcf311c431e4"
+        "reviewed_at": "2026-07-05T23:48:56.445Z",
+        "reviewed_sha": "4fd544853aae392174739ad53cf8e789515f3fde"
+      }
+    ],
+    "compute-prop-has-consumer": [
+      {
+        "field_hash": {
+          "md": "bc0e19b4848e",
+          "ts": "cfa8caab839e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f2c5b0fad923",
+          "script_commit_sha": "3b4fb713350705380c7be4d1ff7b02a45a74b5a1"
+        },
+        "reviewed_at": "2026-07-05T23:48:56.445Z",
+        "reviewed_sha": "4fd544853aae392174739ad53cf8e789515f3fde"
+      }
+    ],
+    "compute-witness-exists": [
+      {
+        "field_hash": {
+          "md": "bc0e19b4848e",
+          "ts": "cfa8caab839e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "f2c5b0fad923",
+          "script_commit_sha": "3b4fb713350705380c7be4d1ff7b02a45a74b5a1"
+        },
+        "reviewed_at": "2026-07-05T23:48:56.445Z",
+        "reviewed_sha": "4fd544853aae392174739ad53cf8e789515f3fde"
       }
     ],
     "compute-lp-dual-present": [
@@ -1011,5 +1007,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T23:06:25.607Z"
+  "updated_at": "2026-07-05T23:48:56.445Z"
 }
