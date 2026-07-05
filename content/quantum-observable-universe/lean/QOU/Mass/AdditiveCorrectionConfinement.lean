@@ -16,13 +16,13 @@ energy can only live where predictions do *not* already saturate observation —
 binding / convolution-defect sector.
 
 Both statements are elementary order-field algebra, stated over a generic
-`LinearOrderedField` (§7c: the ordering is the entire content; no `ℝ`-specific
-construct is used).
+linearly ordered field (`[Field K] [LinearOrder K] [IsStrictOrderedRing K]`;
+§7c: the ordering is the entire content; no `ℝ`-specific construct is used).
 -/
 
 namespace QOU.Mass.AdditiveCorrectionConfinement
 
-variable {K : Type*} [LinearOrderedField K]
+variable {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
 
 /-- **Confinement bound.** If a predicted mass already matches observation within `ε`,
 then any modified prediction `m_pred + δ` that also matches within `ε` has `|δ| ≤ 2ε`:
