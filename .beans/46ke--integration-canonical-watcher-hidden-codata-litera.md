@@ -58,3 +58,5 @@ using 931.49410372 are CORRECT (2022). So this is an edition inconsistency, NOT
 a bug in those scripts. Fix = bump the registry + AME2020-derived constants to
 CODATA 2022 (value-changing for AME binding witnesses → owner-gated, me3r/ce18).
 Do NOT route those scripts down to the stale registry value.
+
+> **Investigated 2026-07-05 (swarm 2, PR #3344) — deferred, kept OPEN.** 307 files/521 occ; ~495 docstrings/anchors (out of scope), 17 in _deprecated/, 0 bit-safe inline literals remain. ~5 active float live-inputs unpinnable: root blocker is truncated registry witness codata-2022-validation-masses (m_e=0.51099895, 8 figs) — pinning fuller values loses precision. Gated behind bean me3r (owner, value-changing).

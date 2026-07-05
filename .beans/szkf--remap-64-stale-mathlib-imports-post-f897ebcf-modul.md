@@ -1,10 +1,10 @@
 ---
 # szkf
 title: Remap 64 stale Mathlib imports (post-f897ebcf module renames/splits)
-status: todo
+status: completed
 type: milestone
 created_at: 2026-06-30T23:32:53Z
-updated_at: 2026-06-30T23:32:53Z
+updated_at: 2026-07-05T05:05:00Z
 ---
 
 
@@ -68,3 +68,5 @@ TACTIC(mech) | particle-interactions/periodic-table-demand-conjecture.lean
 Classes: PARSE/TACTIC/NONCOMPUT = mechanical (no LSP); PROOF = needs LSP goal inspection
 (blocked in the web sandbox — lean-lsp MCP can't resolve the toolchain). Remap map:
 /tmp/remap.sed in-session; reproduce via the codeload mathlib source at f897ebcf.
+
+> **Resolved 2026-07-05 (swarm 1).** Mathlib import remaps applied + Lean-verified (0 stale imports remain). Merged in PR #3337.

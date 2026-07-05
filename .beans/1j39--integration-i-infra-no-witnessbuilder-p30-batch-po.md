@@ -14,3 +14,5 @@ the **same work** (the P30 WitnessBuilder port, ~133 scripts). **`cmiy` is
 the canonical bean**; see its body for the deferral rationale (high collision
 with the active compute-PR storm — `/coordinate` 2026-06-28). Owner-close
 this duplicate when convenient (resolve is human-only).
+
+> **Investigated 2026-07-05 (swarm 2, PR #3344) — DUPLICATE of cmiy; kept OPEN pending owner close.** Same P30 WitnessBuilder scope; compute-blocked.

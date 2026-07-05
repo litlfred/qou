@@ -1,10 +1,10 @@
 ---
 # 0voz
 title: 'λ_A: migrate ~64 production scripts off vol_density_borromean → vol_density_per_block'
-status: todo
+status: completed
 type: task
 created_at: 2026-06-24T01:21:10Z
-updated_at: 2026-06-24T01:21:10Z
+updated_at: 2026-07-05T05:05:00Z
 ---
 
 
@@ -17,3 +17,5 @@ but per-knot is *worse* for absolute mass; true ρ≈2.46 is underived
 NOT a find-replace. Dashboard (diagnostic, shows both) already done.
 See `docs/audits/2026-06-24-lambda-a-refutation-artifact-audit.md`
 §critical-nuance.
+
+> **Resolved 2026-07-05 (swarm 1).** Migration already substantially complete; literal 'borromean→per_block' target superseded by the 2026-06-24 owner ruling (per_block is binding-ratios-only; absolute mass routes via canonical_mass facade). Inventory audit + docstring redirect merged in PR #3340.
