@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean"
   },
   "source_hashes": {
-    "md": "2efea38904b5",
+    "md": "7912c15f17af",
     "ts": "115c96abbd6c",
     "lean": "75f39159bdb3"
   },
@@ -266,22 +266,20 @@
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "2efea38904b5",
+          "md": "7912c15f17af",
           "ts": "115c96abbd6c",
           "lean": "75f39159bdb3"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "d735760f2b64",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+          "script_hash": "fd89dc9369e1",
+          "script_commit_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean:1: Lean file uses archimedean constructs but .md narrative does not acknowledge archimedean specialisation. Add a §7c-style banner or move the archimedean evaluation to a sibling block."
+        "reviewed_at": "2026-07-05T10:57:46.711Z",
+        "reviewed_sha": "ca2a2ac4c8c55853631cac524e6d5d307b5594f9"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1272,5 +1270,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-04T10:39:27.233Z"
+  "updated_at": "2026-07-05T10:57:46.711Z"
 }

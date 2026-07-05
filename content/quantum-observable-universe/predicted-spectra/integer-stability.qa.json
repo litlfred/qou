@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/predicted-spectra/integer-stability.lean"
   },
   "source_hashes": {
-    "md": "f77a889243b2",
+    "md": "0794d197f4e0",
     "ts": "2e553aa598e9",
     "lean": "31a74aef2798"
   },
@@ -244,22 +244,20 @@
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "0b237dbf5548",
+          "md": "0794d197f4e0",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "d735760f2b64",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+          "script_hash": "fd89dc9369e1",
+          "script_commit_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
-        "severity": "critical",
-        "evidence": "quantum-observable-universe/predicted-spectra/integer-stability.lean:1: Lean file uses archimedean constructs but .md narrative does not acknowledge archimedean specialisation. Add a §7c-style banner or move the archimedean evaluation to a sibling block."
+        "reviewed_at": "2026-07-05T10:57:45.800Z",
+        "reviewed_sha": "ca2a2ac4c8c55853631cac524e6d5d307b5594f9"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1596,5 +1594,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.812Z"
+  "updated_at": "2026-07-05T10:57:45.800Z"
 }
