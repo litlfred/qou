@@ -41,13 +41,22 @@ export default conjecture({
         "{T(2,9),T(3,5)}) + the sector assignment + bare label map.",
     },
     {
-      kind: "caveat",
+      kind: "note",
       date: "2026-07-05",
       body:
-        "TENSION FLAGGED FOR OWNER (σ₅⁸ = B vs H). weinberg-angle-categorical " +
-        "reads σ₅⁸ as the U(1)_Y singlet B (pre-mixing); this block reads σ₅⁸ " +
-        "(= T(2,8)) as H. Both bar-even/A+ singlet-like, but B and H are " +
-        "distinct particles. Needs an owner ruling; not silently resolved.",
+        "OWNER RULING (2026-07-05) — σ₅⁸ = B vs H tension RESOLVED via the " +
+        "spin-involution A± bar-grading (def:spin-involution). The slot σ₅⁸ " +
+        "(= T(2,8)) carries BOTH gauge bosons, bar-graded: the Higgs BOSON " +
+        "H = the A+ (bar-even, scalar) part (mass-consistent with the EW " +
+        "scale), and B (the U(1)_Y hypercharge gauge boson) = the A- " +
+        "(bar-odd, vector) part. weinberg-angle-categorical reads the A- (B) " +
+        "part; this block reads the A+ (H) part — no contradiction, they are " +
+        "the two σ-eigen-sectors of one slot. Separately: 4₁ (the figure-eight, " +
+        "self-dual real-volume knot of self-dual-higgs-real-volume) is the " +
+        "Higgs MASS MECHANISM / muon scale (m_μ/m_e = Vol(4₁)/ℏ_q²), NOT the " +
+        "125-GeV Higgs boson — the word 'Higgs' there means the mechanism, " +
+        "distinct from the EW-slot boson H = T(2,8) = A+ of σ₅⁸. Uses the " +
+        "A± grading proved in thm:ew-triplet-charge-spin-from-involution.",
     },
   ],
   computation: {
