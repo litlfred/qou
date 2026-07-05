@@ -123,7 +123,12 @@ class EWSectorEnumeration [EWSelectionPrinciple] where
     crossing→charge map `def:coulomb-charge` (`Q = ½·writhe`) evaluated on the
     all-positive braid `σ₁^{2k}` gives `Q(T(2,2k)) = k > 0` for *every* carrier,
     so it makes all three charged and cannot select the neutral slot; the
-    `writhe → Y` map is falsified (`2026-06-02-u1-hypercharge-assignment.md`).
+    `writhe → Y` map is falsified, and the one map that survives that audit,
+    `writhe → I₃` (`2·I₃ = writhe`), *also* fails here — on the all-positive
+    carriers it gives `2·I₃ = 2k`, nonzero on both vector slots, so it too
+    yields no neutral slot (`writheI3_does_not_select_neutral_slot` in
+    `thm:ew-triplet-charge-spin-from-involution`;
+    `2026-06-02-u1-hypercharge-assignment.md`).
     The assignment `t3Label 2 = 1` (`W` at the lower crossing `σ₁⁴`) below is the
     paper's *choice*, consistent with the mass ordering `4 < 6 < 8` (necessary,
     not sufficient); its underdetermination is proved as `which_slot_is_W_free`

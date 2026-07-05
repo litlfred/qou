@@ -103,15 +103,37 @@ the *neutral* $Z$ ($T_3 = 0$). The corpus crossing$\to$charge map
 \tfrac12\,\mathrm{writhe}$, evaluated on the all-positive braid $\sigma_1^{2k}$
 gives $Q(T(2,2k)) = k > 0$ for *every* carrier ($k = 2, 3, 4$), so it makes
 $W, Z, H$ all charged and cannot single out the neutral slot; independently the
-$\mathrm{writhe} \to Y$ hypercharge map is falsified (only
-$\mathrm{writhe} \to I_3$ survives, per the U(1)-assignment audit). So no proved
-crossing$\to$charge principle selects the $W$ slot. The paper's choice
-$W = \sigma_1^4$ (the lower crossing) is supported only by the mass ordering
-$4 < 6 < 8$ (necessary, not sufficient). This underdetermination is proved
-sorry-free (`which_slot_is_W_free`): both $W = \sigma_1^4$ and the mirror
-$W = \sigma_3^6$ satisfy every proved constraint. It is carried as the explicit
-free-label field `t3Label` of the sector postulate
+$\mathrm{writhe} \to Y$ hypercharge map is falsified. Of the three
+crossing$\to$quantum-number maps the U(1)-assignment audit tested, only
+$\mathrm{writhe} \to I_3$ survives — and even *it* fails to select the neutral
+slot once evaluated on these carriers. That surviving map is the *sign+ratio*
+relation $2 I_3 = \mathrm{writhe}$, keyed on the **crossing sign**: it matched
+the nucleon doublet because $p$ and $n$ differ by the $\sigma \leftrightarrow
+\sigma^{-1}$ ($u \leftrightarrow d$) crossing-sign flip ($w(p) = +1$,
+$w(n) = -1$, whence $I_3(p) = +\tfrac12$, $I_3(n) = -\tfrac12$). But the
+even-twist carriers $\sigma_1^{2k}$ are all-positive (writhe $2k$, no negative
+crossings), so the surviving map assigns them $2 I_3 = 2k$: strictly positive,
+strictly monotone in $k$ ($4 < 6 < 8$), and **nonzero on both vector slots**
+$\sigma_1^4$ and $\sigma_3^6$. It is thus a magnitude / twist ladder — the exact
+analogue of the audit's monotone $\theta_j = q^{j(j+1)}$ spin ladder, with no
+sign change and no zero — not an additive sign charge, and it produces no
+neutral slot. The structural reason is that $I_3$'s sign *is* the crossing sign,
+and the two same-sign vector carriers offer no $\sigma \leftrightarrow
+\sigma^{-1}$ flip for the map to act on.
+
+So no proved crossing$\to$charge principle selects the $W$ slot. The paper's
+choice $W = \sigma_1^4$ (the lower crossing) is supported only by the mass
+ordering $4 < 6 < 8$ (necessary, not sufficient). This underdetermination is
+proved sorry-free (`which_slot_is_W_free`), and the failure of the surviving map
+to close it is proved sorry-free as well
+(`evenTwist_doubledI3_pos`, `evenTwist_doubledI3_strictMono`,
+`writheI3_does_not_select_neutral_slot`): both $W = \sigma_1^4$ and the mirror
+$W = \sigma_3^6$ satisfy every proved constraint, and the surviving $\mathrm{writhe}
+\to I_3$ map cannot even furnish the neutral-slot datum needed to break the tie.
+It is carried as the explicit free-label field `t3Label` of the sector postulate
 ([conj:electroweak-higgs-torus-link-triplet](#conj:electroweak-higgs-torus-link-triplet)).
-What *would* force it is a genuine crossing/linking $\to T_3$ (or electric
-charge) map that assigns neutrality to exactly the $Z$ slot — an input the
-framework does not yet supply.
+What *would* force it is a genuinely *signed* crossing/linking $\to T_3$ (or
+electric charge) invariant — a carrier realisation with a $\sigma \leftrightarrow
+\sigma^{-1}$ asymmetry that drives one vector slot's net writhe to zero — or the
+second independent baryon / color-trace charge the audit names; the framework
+supplies neither for the same-sign even-twist triple.

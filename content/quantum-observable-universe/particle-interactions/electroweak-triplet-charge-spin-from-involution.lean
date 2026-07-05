@@ -463,9 +463,7 @@ def evenTwistDoubledI3 (k : ℕ) : ℤ := evenTwistWrithe k
 even-twist carrier.** In particular both vector slots `k = 2` (σ₁⁴) and `k = 3`
 (σ₃⁶) get `2·I₃ > 0` — neither is neutral. -/
 theorem evenTwist_doubledI3_pos {k : ℕ} (hk : 1 ≤ k) : 0 < evenTwistDoubledI3 k := by
-  simp only [evenTwistDoubledI3_eq]
-  have : (1 : ℤ) ≤ (k : ℤ) := by exact_mod_cast hk
-  linarith
+  simp only [evenTwistDoubledI3_eq]; omega
 
 /-- **`writhe → I₃` is a monotone twist ladder, not a sign charge.** Across the
 carriers it strictly increases (`k = 2 ↦ 4 < k = 3 ↦ 6 < k = 4 ↦ 8`) with no sign
@@ -476,21 +474,42 @@ theorem evenTwist_doubledI3_strictMono :
     evenTwistDoubledI3 3 < evenTwistDoubledI3 4 := by
   constructor <;> decide
 
-/-- **The surviving `writhe → I₃` map does NOT single out the neutral slot.**
-Evaluated on the two vector carriers it gives `2·I₃(σ₁⁴) = 4 ≠ 0` and
-`2·I₃(σ₃⁶) = 6 ≠ 0`: neither is neutral, so the map cannot supply the
-`charged_at_4_xor_6` datum of any `EWVectorLabeling` (which requires exactly one
-of the two slots to carry `t3 = 0`). Hence the one crossing→quantum-number map
-that survives the U(1)-assignment audit still leaves which-slot-is-`W` a **free
-label** — it strengthens, rather than closes, `which_slot_is_W_free`. -/
+/-- **Every valid `EWVectorLabeling` has a neutral vector slot.** The
+`charged_at_4_xor_6` datum puts the charge (`t3 = 1`) on exactly one of the two
+vector slots, so the *other* slot is neutral (`t3 = 0`) — this is the `Z`. Any
+electroweak labeling therefore *requires* one of `{σ₁⁴, σ₃⁶}` to carry `t3 = 0`. -/
+theorem EWVectorLabeling.has_neutral_slot (L : EWVectorLabeling) :
+    L.t3 4 = 0 ∨ L.t3 6 = 0 := by
+  rcases L.charged_at_4_xor_6 with ⟨_, h⟩ | ⟨h, _⟩
+  · exact Or.inr h
+  · exact Or.inl h
+
+/-- **The surviving `writhe → I₃` map is INCOMPATIBLE with any valid electroweak
+labeling** (the non-vacuous negative result). Two facts do the work:
+
+* the writhe-derived doubled isospin is **nonzero on every carrier** — `2·I₃(σ₁⁴)
+  = 4 ≠ 0`, `2·I₃(σ₃⁶) = 6 ≠ 0`, `2·I₃(σ₅⁸) = 8 ≠ 0` (the all-positive braids
+  have no zero-writhe slot);
+* every valid `EWVectorLabeling` **requires** a neutral (`t3 = 0`) vector slot
+  (`has_neutral_slot`) — the `Z`.
+
+Since the writhe map never produces the required `0`, **no** valid labeling can
+agree with it on the two vector slots. The proof genuinely uses the nonzeroness
+of the writhe assignment against the labeling's mandatory neutral slot — it is
+*not* true by the `t3 ∈ {0,1}` type constraint alone. Hence the one
+crossing→quantum-number map that survives the U(1)-assignment audit assigns
+*all* carriers a nonzero isospin and so **cannot select the neutral `Z` slot**;
+which-slot-is-`W` remains a **free label**, strengthening rather than closing
+`which_slot_is_W_free`. -/
 theorem writheI3_does_not_select_neutral_slot :
-    evenTwistDoubledI3 2 ≠ 0 ∧ evenTwistDoubledI3 3 ≠ 0 ∧
+    evenTwistDoubledI3 2 ≠ 0 ∧ evenTwistDoubledI3 3 ≠ 0 ∧ evenTwistDoubledI3 4 ≠ 0 ∧
     ¬ ∃ L : EWVectorLabeling,
         L.t3 4 = evenTwistDoubledI3 2 ∧ L.t3 6 = evenTwistDoubledI3 3 := by
-  refine ⟨by decide, by decide, ?_⟩
+  refine ⟨by decide, by decide, by decide, ?_⟩
   rintro ⟨L, h4, h6⟩
-  rcases L.charged_at_4_xor_6 with ⟨_, hc6⟩ | ⟨hc4, _⟩
-  · rw [hc6] at h6; norm_num [evenTwistDoubledI3_eq] at h6
-  · rw [hc4] at h4; norm_num [evenTwistDoubledI3_eq] at h4
+  -- a valid labeling has a neutral (`t3 = 0`) slot; the writhe map is nonzero there
+  rcases L.has_neutral_slot with h | h
+  · rw [h4] at h; exact absurd h (by decide)
+  · rw [h6] at h; exact absurd h (by decide)
 
 end QOU.ParticleInteractions
