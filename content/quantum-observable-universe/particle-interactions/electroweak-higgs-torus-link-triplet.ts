@@ -4,6 +4,10 @@ export default conjecture({
   label: "conj:electroweak-higgs-torus-link-triplet",
   title:
     "$(W^\\pm, Z, H) \\leftrightarrow (T(2,4), T(2,6), T(2,8))$ — non-Bring even-twist 2-component torus-link triplet",
+  lean: {
+    ref: "qou:QOU.Archimedean.EWHiggsTorusLinkTriplet",
+    validation: "not_checked",
+  },
   uses: [
     "prop:force-carrier-bring-uniqueness",
     "prop:torus-knot-genus-four-unique",
@@ -12,8 +16,8 @@ export default conjecture({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/ew_higgs_sdp_probe.py",
-    witness: "folio-assistant/computations/ew-higgs-sdp-probe.witness.json",
+    script: "computations/probes/ew_higgs_sdp_probe.py",
+    witness: "computations/probes/ew-higgs-sdp-probe.witness.json",
     status: "verified",
   },
   tags: [

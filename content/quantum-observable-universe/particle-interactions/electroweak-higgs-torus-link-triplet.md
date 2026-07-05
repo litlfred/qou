@@ -40,7 +40,7 @@ established that:
    **NV-1** audit flag) requires identifying $W^\pm, Z$ as specific
    knots/links.
 3. An exploratory SDP-feasibility probe
-   ([`ew-higgs-sdp-probe.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/ew-higgs-sdp-probe.witness.json))
+   ([`ew-higgs-sdp-probe.witness.json`](https://github.com/litlfred/qou/blob/main/computations/probes/ew-higgs-sdp-probe.witness.json))
    on three candidate identification paths returned a **clean PSD
    discrimination**: only the non-Bring even-twist torus-link
    triplet $\{T(2,4), T(2,6), T(2,8)\}$ produced
@@ -174,7 +174,7 @@ proposition. Until both are available, the identification is
 *structurally consistent* but not *categorically unique*.
 
 **Witness.**
-[`ew-higgs-sdp-probe.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/ew-higgs-sdp-probe.witness.json)
+[`ew-higgs-sdp-probe.witness.json`](https://github.com/litlfred/qou/blob/main/computations/probes/ew-higgs-sdp-probe.witness.json)
 — PSD-feasibility certificates for the three candidate paths
 (α non-Bring even-twist; β $T_{3,5}$ double-duty; γ non-torus
 knots). Path α passes every block; β and γ fail the standard
@@ -210,8 +210,9 @@ PSD-feasible under any such specialization.*
 *Proof.* Direct from the Hecke relation
 $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$ specialised to $i = 1$ in
 $B_2$: $\sigma_1 = q$ on sym, $\sigma_1 = -q^{-1}$ on alt
-([Hecke-Skein convention](#prop:hecke-skein-convention) §7a of
-CLAUDE.md). Composition with itself $2k$ times preserves the sign
+(the [Hecke algebra from braiding](#rem:hecke-algebra-from-braiding);
+Hecke–Skein convention, §7a of AGENTS.md). Composition with
+itself $2k$ times preserves the sign
 on sym and squares the sign on alt, giving $(-q^{-1})^{2k} =
 q^{-2k}$. Odd powers retain the negative sign on alt. The
 positivity statement under specialization $R \to F$ uses only
