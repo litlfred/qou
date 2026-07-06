@@ -1,0 +1,60 @@
+{
+  "computation": "qbeta-z-bar-parity-fmap-class",
+  "description": "z->c_k f-map keystone: exact bar-parity of the z-side atoms. z = sqrt(q)/(1+q) bar-even (twist 1); hbar bar-odd (twist -q); u ~ hbar^2 bar-even (twist q^2); kappa_(2,1) bar-odd (twist 1); closure checks. Companion to QOU/QBeta/ZBarParity.lean.",
+  "audit_only": true,
+  "tier": "structural-exact (symbolic bar-parity identities; no fit, no anchors)",
+  "computedAt": "2026-07-06T23:06:04.300963+00:00",
+  "commitSha": "f714fc8bb69724a2f8a67338345dc264bee89c3b",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "qbeta_z_bar_parity_fmap_class_probe.py",
+  "scriptHash": "78b5d3a56e5d",
+  "assertions": [
+    {
+      "name": "z_bar_even_twist_1",
+      "passed": true
+    },
+    {
+      "name": "hbar_bar_odd_twist_minus_q",
+      "passed": true
+    },
+    {
+      "name": "hbar_sq_bar_even_twist_q_sq",
+      "passed": true
+    },
+    {
+      "name": "kappa21_bar_odd_twist_1",
+      "passed": true
+    },
+    {
+      "name": "z_powers_1_to_6_bar_even",
+      "passed": true
+    },
+    {
+      "name": "rational_functional_of_z_bar_even",
+      "passed": true
+    },
+    {
+      "name": "z_power_times_kappa_bar_odd",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "z": "sqrt(q)/(q + 1)",
+    "z_parity": "even",
+    "hbar_twist": "-q",
+    "hbar_sq_twist": "q**2",
+    "kappa21": "(q - 1)**3*(q + 1)/q**2",
+    "kappa21_parity": "odd",
+    "verdict": "STRUCTURAL EXCLUSION (scope-(a)): every scalar functional of z alone is bar-EVEN, while the kernel's leading coefficient a_1 is bar-ODD and nonzero (a_1 = -c_3, QBetaCKRecursionKernelConstraints.lean) -- so no scalar rational function of z alone can source a_1. The surviving z->c_k f-map class factors as (bar-even z-functional) x (bar-odd carrier, e.g. kappa_(2,1)). This narrows the ea56 hypothesis class; it derives NO c_k value and wires NOTHING."
+  },
+  "context": {
+    "axis": "z->c_k f-map keystone (bean ea56)",
+    "ledger": "docs/coordination/z-ck-fmap-keystone.md",
+    "lean_certificate": "QOU/QBeta/ZBarParity.lean",
+    "kernel_constraints": "QOU/BraidKnot/QBetaCKRecursionKernelConstraints.lean",
+    "heat_fmap_audit": "docs/audits/2026-06-13-qbeta-heat-fmap-symbolic-and-literature.md",
+    "refuted_class_map": "docs/audits/2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md"
+  }
+}
