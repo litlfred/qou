@@ -7,8 +7,8 @@ import Mathlib.Analysis.SpecialFunctions.Log.Basic
 The bar-odd writhe coefficient `κ` of the per-isotope binding residual decomposes as
 `κ = κ_FW + κ_AME`, and its framework part is carried by the isovector (mirror) slope
 `b_pred(A) = d(log_{q₀} B_pred)/dT₃`.  The Phase-5q closed form
-([`computations/probes/b_pred_mirror_slope_closed_form.py`](../../../../computations/probes/b_pred_mirror_slope_closed_form.py),
-audit [`2026-06-29-delta-lambda-z-correction-writhe`](../../../../docs/audits/2026-06-29-delta-lambda-z-correction-writhe.md))
+([`computations/probes/b_pred_mirror_slope_closed_form.py`](../../../../../computations/probes/b_pred_mirror_slope_closed_form.py),
+audit [`2026-06-29-delta-lambda-z-correction-writhe`](../../../../../docs/audits/2026-06-29-delta-lambda-z-correction-writhe.md))
 gives, for a mirror pair `(Z,N) ↔ (N,Z)`,
 
 ```
