@@ -21,7 +21,7 @@ found during the 2026-06-10 review.
 | rung | tier | note |
 |---|---|---|
 | c_2 = −1 | **CANONICAL** (proved, Taylor-exact, anchor-stable; Kashiwara f̃₁², bar-even) | the only derived rung |
-| c_3 = −2 | **CANONICAL** (proved exact -2.0 for all q from standard block (2,1)) | previously masked by 0-indexed generator bug in python infra |
+| c_3 ≈ −2.02 … −2.07 | **empirical — cal-anchored near-match** (q-dependent; swings 2.375% between muon/proton anchors) | the "exact −2 / 0-index-bug" claim was **falsified 2026-07-06** ([c_3 cross-anchor verdict](2026-07-06-c3-not-exact-cross-anchor-verdict.md)); only c_2 = −1 is Taylor-exact |
 | c_4 | empirical (CODATA fit / normalisation artifact) | |
 | c_5 | empirical outlier | |
 | c_6, c_7 | imposed in extraction (self-consistent only) | |
@@ -55,10 +55,15 @@ distinct objects; only the first two are proved:
    refuted through depth 4** (commit `eca145ca`); **constant depth-2 kernel
    refuted** (PR #1900 — it over-determines `c_4 = 1 − c_3² ≈ −3.0` vs
    fitted −0.97, 3.4× miss) ⇒ depth ≥ 3 **or non-constant q-rational**
-   coefficients; leading coefficient `a_1 = −c_3 = 2` is exact,
-   coming structurally from the standard block (2,1) trace `Δχ = -2.0`
-   (which was previously masked by a 0-indexed generator bug `(0,1,0)`
-   in the python audits). 
+   coefficients; leading coefficient `a_1 = −c_3`, where `c_3` is the
+   cal-anchored, q-dependent near-match (≈ −2.02 muon / −2.07 proton;
+   2.375% swing). The "`c_3 = −2` exact from a fixed standard-block (2,1)
+   trace `Δχ = −2.0`, previously masked by a 0-indexed generator bug
+   `(0,1,0)`" claim was **falsified 2026-07-06**: generators are correctly
+   0-indexed (`(0,1,0) ≡ σ₁σ₂σ₁`), the one real historical bug (`TR_M[5]`)
+   is already fixed, and c_3 **still swings** on the post-fix code — the
+   fixed theoretical ladder has `[u³] = 0` (no first-principles c_3). See
+   [c_3 cross-anchor verdict](2026-07-06-c3-not-exact-cross-anchor-verdict.md). 
 4. **The element F(q) / the phase Φ(u) (open).** The #1887 reframe is the
    cleanest current statement: `Q_β/Q_A = cos(Φ(u))` with `Φ₁ = √2`
    **anchor-exact** (forced by c_2 = −1, sorry-free Lean) and
