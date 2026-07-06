@@ -173,6 +173,7 @@ export default chapter({
           label: "sec:mass-algebraic-complex-volume-ladder",
           blocks: [
             "complex-volume-ladder-intro",
+            "phi-b-bar-parity-decomposition",
             "q-beta-categorical-precision-ladder",
             "q-beta-c3-hopf-three-fold-markov",
             "ck-extraction-from-algebraic-rules",
