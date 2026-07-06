@@ -264,3 +264,30 @@ weight expression.
 — enumerates standard Young tableaux of partitions of 6 with
 their $(\sigma_1, \sigma_3, \sigma_5)$ eigenvalue classes; reports
 pure-eigenspace counts and 8-pattern multiplicities.
+
+### Historical alignment: quaternionic electroweak theory
+
+The disjoint-strand-pair identification of $W^\pm, Z, H$ above sits
+alongside a much older algebraic observation: Morita's quaternionic
+formulation of the electroweak sector (early 1980s), in which writing
+fermion and Higgs multiplets over the quaternion field $\mathbb{H}$
+rather than $\mathbb{C}$ makes the left–right symmetric gauge structure
+$\mathrm{SU}(2)_L \times \mathrm{SU}(2)_R \times \mathrm{U}(1)$ appear
+algebraically, with quarks and leptons organised into flavor doublets
+(compare also the quaternionic/superconformal constructions of
+Cederwall and Preitschopf).
+
+The QOU tetraplectic boundary supplies a geometric home for the same
+$\mathrm{SU}(2)$: the Reeb triad on the Bring-cone link (the quaternionic
+twist $[M_i, M_j] = 2 M_k$, formalised in
+[`BringCone.lean`](../lean/QOU/BringCone.lean)). The unit-quaternion
+$\mathrm{SU}(2)_L \times \mathrm{SU}(2)_R$ actions on the flavor doublet
+are formalised in
+[`QuaternionicElectroweak.lean`](../lean/QOU/QuaternionicElectroweak.lean),
+where they are proved to be **norm-preserving** (a genuine unitary gauge
+action) and to **commute** as two factors. What is established is exactly
+this group-action content; the identification of these algebraic actions
+with the physical $W^\pm, Z, H$ carriers is an interpretive alignment
+(Morita; Cederwall–Preitschopf), **not** a derivation. Formal
+bibliography entries for these historical references are a follow-up
+(pending verified metadata).
