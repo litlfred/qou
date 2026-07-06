@@ -10,42 +10,42 @@ $$
   T_{w_{q^Z}} \;\cdot\; T_{w_{\bar q^N}} \;\cdot\; T_{w_{\mathrm{inter}}},
   \qquad
   w \;=\; w_{q^Z} \cdot w_{\bar q^N} \cdot w_{\mathrm{inter}}
-  \;\in\; S_{n(K)},
+  \;\in\; S_{n(K)}.
 $$
 
-*where:*
+*The components are:*
 
-- *$n(K) = $ braid index of $K$ (minimum strand count over braid
-  representatives).  For a $(Z, N)$ atom built from Borromean
+- *$n(K)$ is the braid index of $K$ (the minimum strand count over braid
+  representatives). For a $(Z, N)$ atom built from Borromean
   baryons on $3$ strands each plus inter-nucleon connectors,
   $n(K) = 3(Z+N)$.*
-- *$w_{q^Z} \in S_{n(K)}$ is the **proton-quark block**: the product
-  of $Z$ permutations, each realising the Borromean baryon NF for
+- *$w_{q^Z} \in S_{n(K)}$ is the proton-quark block. It is the product
+  of $Z$ permutations. Each permutation realizes the Borromean baryon normal form for
   one $\mathfrak{u}\mathfrak{u}\mathfrak{d}$ proton-quark substructure
   on a disjoint $3$-strand block of $\{1, \ldots, n(K)\}$.*
-- *$w_{\bar q^N}$ is the **neutron-quark block**: $N$ disjoint
-  Borromean NFs for $\mathfrak{u}\mathfrak{d}\mathfrak{d}$
+- *$w_{\bar q^N}$ is the neutron-quark block. It consists of $N$ disjoint
+  Borromean normal forms for $\mathfrak{u}\mathfrak{d}\mathfrak{d}$
   neutron-quark substructures.*
-- *$w_{\mathrm{inter}}$ is the **inter-nucleon connector**: a
-  permutation realising the pp, nn, pn crossings between the
+- *$w_{\mathrm{inter}}$ is the inter-nucleon connector. This
+  permutation realizes the pp, nn, and pn crossings between the
   $Z + N$ disjoint baryon blocks ([atomic
   braid](#def:atomic-braid)).*
 
-*The decomposition is unique up to NF rewriting (Diamond Lemma) —
-no positional or temporal ordering is imposed beyond the
-shortlex-canonical NF.*
+*The decomposition is unique up to normal form rewriting (by the Diamond Lemma).
+No positional or temporal ordering is imposed beyond the
+shortlex-canonical normal form.*
 
-**Atom is a knot.**
-*The atom is the closed braid $\hat K = \hat\beta$ obtained by
-Markov closure of any braid representative $\beta$ realising $T_w$.
+**The atom is a knot.**
+*The atom is the closed braid $\hat K = \hat\beta$ obtained via
+the Markov closure of any braid representative $\beta$ that realizes $T_w$.
 Markov-trace invariance ([Jones–Markov trace](#thm:jones-markov-trace))
-guarantees that $\hat K$ is a well-defined knot/link in $S^3$
-independent of the choice of $\beta$.  No phase or temperature
-data enters the definition — the atom is a topological object.*
+guarantees that $\hat K$ forms a well-defined knot or link in $S^3$,
+independent of the choice of $\beta$. No phase or temperature
+data enters the definition. The atom represents a purely topological object.*
 
-**Phase, dynamics, evolution** are separate structures defined on
-the space of atom-knots — they are NOT part of the atom's definition
-itself.  The same atom $K$ may exhibit different confinement
+Phase, dynamics, and evolution represent separate structures defined on
+the space of atom-knots. They do not enter the atom's definition.
+The same atom $K$ may exhibit different confinement
 levels at different $q$
-([confinement level](#def:confinement-level)), but $K$ itself is
-$q$-independent.
+([confinement level](#def:confinement-level)), but $K$ itself remains
+independent of $q$.

@@ -1,22 +1,22 @@
 *Proof.*
-*The NF $T_w$ is unique by the Diamond Lemma
-([hecke normal form](#def:hecke-normal-form)).  Two braids
-realising the same NF differ only by a sequence of:*
+*The normal form $T_w$ is unique by the Diamond Lemma
+([hecke normal form](#def:hecke-normal-form)). Two braids
+that realize the same NF differ only by a sequence of:*
 
-- *Reidemeister II moves (Hecke relation $\sigma_i^2 \sim
-  H_A \sigma_i + 1$ rewritten in NF);*
-- *Reidemeister III moves (Yang–Baxter
+- *Reidemeister II moves (the Hecke relation $\sigma_i^2 \sim
+  H_A \sigma_i + 1$ rewritten in NF).*
+- *Reidemeister III moves (the Yang–Baxter equation
   $\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i
-  \sigma_{i+1}$);*
+  \sigma_{i+1}$).*
 - *Far commutations
   ($\sigma_i \sigma_j = \sigma_j \sigma_i$ for $|i-j| \geq 2$).*
 
-*Each is a categorical Markov move
-([Jones–Markov trace](#thm:jones-markov-trace)), so the closures
-are isotopic.  $\square$*
+*Each represents a categorical Markov move
+([Jones–Markov trace](#thm:jones-markov-trace)). Thus, the closures
+are isotopic.* $\square$
 
 **Scope.**
-*Uniqueness is up to **isotopy**, not up to NF strict equality.
+*Uniqueness holds up to isotopy, not up to strict NF equality.
 Different $w_{q^Z}$
-realisations yield distinct categorical isotopy classes in the abstract
+realizations yield distinct categorical isotopy classes in the abstract
 braid representation.*

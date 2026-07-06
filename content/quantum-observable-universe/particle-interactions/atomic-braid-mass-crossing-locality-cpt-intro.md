@@ -1,12 +1,3 @@
-The preceding sub-section developed the atomic-braid LP / mass-
-formula foundations (LP stability, $q$-integer mass formula,
-universal ILP algorithm, neutron-proton splitting, color-pairing
-binding, the $Z = 1$-20 mass table, atomic NF witness, step-LP
-verification, Gröbner reduction methods, tower binding energy,
-mass categorical descent, Thurston-volume additivity). This
-sub-section reads off the crossing-graded + locality + CPT-orbit
-consequences: mass-volume factorisation + crossing-graded mass
-expansion + lifted-crossing locality + $q$-holonomy locality
-derivation + Frobenius-packing density + CPT-orbit closure density
-+ bar-involution invariance + soft-confinement at $q_0$ that
-closes the atomic-braid mass-formula arc.
+The preceding sub-section developed the foundations for the atomic-braid linear programming (LP) and mass formula. This included LP stability, the $q$-integer mass formula, the universal integer linear programming (ILP) algorithm, neutron-proton splitting, and color-pairing binding. We also covered the $Z = 1$-20 mass table, atomic normal form witnesses, step-LP verification, Gröbner reduction methods, tower binding energy, mass categorical descent, and Thurston-volume additivity. 
+
+This sub-section establishes the consequences for crossing grading, locality, and CPT orbits. We treat mass-volume factorization, the crossing-graded mass expansion, and lifted-crossing locality. We derive $q$-holonomy locality, Frobenius-packing density, and CPT-orbit closure density. Finally, we establish bar-involution invariance and soft-confinement at $q_0$ to complete the atomic-braid mass-formula arc.
