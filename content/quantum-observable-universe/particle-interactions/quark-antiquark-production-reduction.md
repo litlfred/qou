@@ -190,6 +190,4 @@ which is confined by the Borromean braid $\mathcal{B}_3$
 The confinement operator is derived, not asserted — see
 [confinement selection](#prop:confinement-operator-selection).
 
-**Witness**: `breit-wheeler-nucleon-nf.witness.json`,
-`meson-nucleon-nf.witness.json`,
-`four-term-photon-to-atoms.witness.json`.
+**Witness**: `breit-wheeler-nucleon-nf.witness.json`, `meson-nucleon-nf.witness.json`, `four-term-photon-to-atoms.witness.json`.

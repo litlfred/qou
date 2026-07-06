@@ -1,7 +1,1 @@
-Blocks in this section were reconnected during the Phase 7
-orphan audit and the restructuring.  They include
-the Geom universality proposition, Stokes-region identification,
-time-reversal from trace cyclicity, and the spin/CPT/Weinberg/Wigner
-conjectures absorbed from the dissolved Statistics chapter.
-
-The arc proceeds from the substrate-level Geom universality result (which pins the categorical geometry's role in the chapter's predictions) through the supporting conjectures (Stokes-region identification, time-reversal from trace cyclicity, spin from $\mathrm{SO}(3)$ fibre, Type-B folding CPT, Weinberg-angle categorical, Wigner-$\mathrm{SU}(4)$ from spin-isospin) to the categorical proton and neutron blocks that close the chapter's substrate-level particle inventory.
+This section collects foundational substrate-level results and supporting conjectures. The sequence begins with the Geom universality proposition, which establishes the role of categorical geometry in the chapter's physical predictions. We then develop the supporting symmetry principles: Stokes-region identification, time-reversal from trace cyclicity, spin from the $\mathrm{SO}(3)$ fibre, Type-B folding CPT, the categorical Weinberg angle, and Wigner-$\mathrm{SU}(4)$ symmetry from spin-isospin. The section concludes with the categorical proton and neutron blocks, completing the substrate-level particle inventory.
