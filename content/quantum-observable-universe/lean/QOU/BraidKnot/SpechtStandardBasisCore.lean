@@ -1010,8 +1010,11 @@ then reindex the permutation sum to a sum over the tableaux `{π·t}` with fibre
 aggregated coefficients. This is the interface that closes `straightening_step_colMax`
 once the Garnir set supplies `hann` and `hdom`. -/
 theorem garnir_assembly (t : Specht.Tableau μ)
-    (T : Finset (Equiv.Perm (Fin (Specht.nOf μ)))) (h1 : (1 : Equiv.Perm (Fin (Specht.nOf μ))) ∈ T)
-    (hdom : ∀ π ∈ T, π ≠ 1 →
+    (T : Finset (Equiv.Perm (Fin (Specht.nOf μ))))
+    (π₀ : Equiv.Perm (Fin (Specht.nOf μ))) (hπ₀ : π₀ ∈ T)
+    (hfix : Specht.Mtab.rep μ π₀ (Specht.polytabloid (k := k) t)
+      = (Equiv.Perm.sign π₀ : ℤ) • Specht.polytabloid (k := k) t)
+    (hdom : ∀ π ∈ T, π ≠ π₀ →
       domWeight t < domWeight ((π : Equiv.Perm (Fin (Specht.nOf μ))) • t))
     (hann : ∑ π ∈ T, (Equiv.Perm.sign π : ℤ) •
         Specht.Mtab.rep μ π (Specht.polytabloid (k := k) t) = 0) :
@@ -1020,10 +1023,13 @@ theorem garnir_assembly (t : Specht.Tableau μ)
       Specht.polytabloid (k := k) t = ∑ t' ∈ s, c t' • Specht.polytabloid (k := k) t' := by
   classical
   -- Abbreviations: the non-identity part of the transversal, and the coefficient sum.
-  set E := T.erase (1 : Equiv.Perm (Fin (Specht.nOf μ))) with hE
-  -- Isolate the identity term of `hann`: `e_t + ∑_{π ∈ E} sgn(π)·(π·e_t) = 0`.
-  rw [← Finset.add_sum_erase T _ h1] at hann
-  simp only [map_one, Module.End.one_apply, Units.val_one, one_smul] at hann
+  set E := T.erase π₀ with hE
+  -- Isolate the distinguished term of `hann`: `e_t + ∑_{π ∈ E} sgn(π)·(π·e_t) = 0`.
+  rw [← Finset.add_sum_erase T _ hπ₀] at hann
+  rw [hfix, smul_smul] at hann
+  have hs2 : (Equiv.Perm.sign π₀ : ℤ) * (Equiv.Perm.sign π₀ : ℤ) = 1 := by
+    rcases Int.units_eq_one_or (Equiv.Perm.sign π₀) with h | h <;> rw [h] <;> decide
+  rw [hs2, one_smul] at hann
   -- Hence `e_t = ∑_{π ∈ E} (−sgn π : k) · e_{π·t}` (equivariance turns `π·e_t` into `e_{π·t}`).
   have hexp : Specht.polytabloid (k := k) t
       = ∑ π ∈ E, (-(Equiv.Perm.sign π : k)) •
