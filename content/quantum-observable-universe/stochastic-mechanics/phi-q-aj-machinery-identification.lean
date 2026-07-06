@@ -157,9 +157,9 @@ theorem saddle_regimes_disjoint (N : ℕ) (hN : 2 ≤ N)
     *homogeneous* q-difference operator Â_K annihilates the N-colored
     Jones tower at every invertible parameter.
 
-    Status: proved for 2-bridge knots (`le2006-aj`), pretzel knots, many
+    Status: proved for 2-bridge knots (`le2006`), pretzel knots, many
     Rolfsen-table cases. For 𝓑_3 specifically, VERIFIED OPEN: the link-AJ
-    conjecture was only *formulated* in 2024 (`sawabe2024-link-aj`, Hopf +
+    conjecture was only *formulated* in 2024 (`sawabe2024`, Hopf +
     Whitehead computed) and no Borromean recurrence ideal is published —
     see docs/audits/2026-07-06-borromean-aj-literature-status.md.
     Hence no instance here. -/
