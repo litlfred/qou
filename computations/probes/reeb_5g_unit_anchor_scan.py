@@ -37,14 +37,15 @@ for _p in (str(_COMP), str(_HERE)):
         sys.path.insert(0, _p)
 from _li_2_q_util import load_q_50dps  # noqa: E402
 from substrate._precision import set_compute_dps  # noqa: E402
-from substrate.experimental_constants import M_E_MEV  # noqa: E402
+from substrate.experimental_constants import M_E_MEV, Q_NEUTRON_MEV  # noqa: E402
 from substrate.witness_base import WitnessBuilder  # noqa: E402
 
 set_compute_dps()
 COMP = str(_COMP)
 
 AME_B_2H = mp.mpf("2.224566")
-Q_BETA_MEV = mp.mpf("0.782347")   # neutron Q-value (CODATA/NNDC), the CAL-2 proxy
+# neutron Q-value (CODATA-derived shared constant), the CAL-2 proxy
+Q_BETA_MEV = mp.mpf(str(Q_NEUTRON_MEV))
 
 
 def main() -> int:
@@ -110,9 +111,11 @@ def main() -> int:
             "verdict": verdict,
         },
     }
+    import platform
     wb = WitnessBuilder.wrap_legacy(
         "reeb-5g-unit-anchor-scan", payload,
         script_path=__file__, engine="python+mpmath",
+        engine_version=f"python {platform.python_version()} + mpmath {mp.__version__}",
         output_dir=os.path.join(COMP, "probes"), start_time=t0,
     )
     wb.add_assertion("no_candidate_within_1pct_of_needed_unit",
