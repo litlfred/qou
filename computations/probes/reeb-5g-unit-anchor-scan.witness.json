@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-06T18:49:46.671339+00:00",
-  "commitSha": "6729b5587c7b732ae903a05272b6760c298a2c17",
+  "engineVersion": "python 3.11.15 + mpmath 1.4.1",
+  "computedAt": "2026-07-06T19:07:09.089593+00:00",
+  "commitSha": "73fb301e945309e9842470d983192c231bb1ad6f",
   "assertions": [
     {
       "name": "no_candidate_within_1pct_of_needed_unit",
@@ -12,11 +12,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 0,
+  "durationMs": 2,
   "computation": "reeb-5g-unit-anchor-scan",
   "scriptFile": "reeb_5g_unit_anchor_scan.py",
-  "scriptHash": "650cfb84c2cf",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a57a9806f6bf",
+  "scriptCommitSha": "73fb301e945309e9842470d983192c231bb1ad6f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -102,10 +102,10 @@
       },
       {
         "candidate": "Q_beta",
-        "E_unit_MeV": "0.782347",
-        "dev_from_1MeV_pct": "-21.765",
-        "B_pred_MeV": "1.7474779",
-        "err_vs_AME_pct": "-21.446"
+        "E_unit_MeV": "0.78233341",
+        "dev_from_1MeV_pct": "-21.767",
+        "B_pred_MeV": "1.7474475",
+        "err_vs_AME_pct": "-21.448"
       }
     ],
     "verdict": "NEGATIVE (scope-(a), preregistered list): no listed canonical energy is ≈ 1 MeV — nearest is 2*m_e = 1.022 MeV. The linear law would need E_unit = 0.99593965 MeV for AME exactness; no listed candidate matches it within 1 %. The 5·g law's unit anchor remains open; the law stays classified ASSERTED."
