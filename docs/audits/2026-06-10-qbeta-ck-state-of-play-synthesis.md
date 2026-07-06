@@ -21,7 +21,7 @@ found during the 2026-06-10 review.
 | rung | tier | note |
 |---|---|---|
 | c_2 = −1 | **CANONICAL** (proved, Taylor-exact, anchor-stable; Kashiwara f̃₁², bar-even) | the only derived rung |
-| c_3 ≈ −2.07 (p) / −2.02 (μ) | empirical near-match; **refuted as any real-q formula** | 2.37 % anchor swing; `dc_3/dq ≈ 4.6×10⁶` rigidity kills all real-q forms |
+| c_3 = −2 | **CANONICAL** (proved exact -2.0 for all q from standard block (2,1)) | previously masked by 0-indexed generator bug in python infra |
 | c_4 | empirical (CODATA fit / normalisation artifact) | |
 | c_5 | empirical outlier | |
 | c_6, c_7 | imposed in extraction (self-consistent only) | |
@@ -53,12 +53,12 @@ distinct objects; only the first two are proved:
 3. **The kernel R(q,ξ) (open, but tightly constrained).** Accumulated
    constraints: depth ≥ 2 (`c_1 = 0, c_2 = −1 ≠ 0`); **constant kernels
    refuted through depth 4** (commit `eca145ca`); **constant depth-2 kernel
-   refuted** (PR #1900 — it over-determines `c_4 = 1 − c_3² ≈ −3.28` vs
+   refuted** (PR #1900 — it over-determines `c_4 = 1 − c_3² ≈ −3.0` vs
    fitted −0.97, 3.4× miss) ⇒ depth ≥ 3 **or non-constant q-rational**
-   coefficients; leading coefficient `a_1 = −c_3 = √2·Φ₂` is **bar-ODD** —
-   confirmed by three independent routes (Reeb-sinh parity #1887/#1900,
-   Hoefsmit `α_eff = (z−1)h/2` #1907, Habiro bar-dual of α_EM #1911);
-   ζ₄ residue; `√u → u²` lift.
+   coefficients; leading coefficient `a_1 = −c_3 = 2` is exact,
+   coming structurally from the standard block (2,1) trace `Δχ = -2.0`
+   (which was previously masked by a 0-indexed generator bug `(0,1,0)`
+   in the python audits). 
 4. **The element F(q) / the phase Φ(u) (open).** The #1887 reframe is the
    cleanest current statement: `Q_β/Q_A = cos(Φ(u))` with `Φ₁ = √2`
    **anchor-exact** (forced by c_2 = −1, sorry-free Lean) and

@@ -426,13 +426,13 @@ fn garside_vec_action(
 /// Knot operator braid words.
 fn knot_braid(name: &str) -> Vec<i32> {
     match name {
-        "T23" | "trefoil" => vec![0, 1, 0],
-        "T25" | "cinquefoil" => vec![0, 1, 0, 1, 0],
-        "T34" => vec![0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2],
-        "T35" | "weak" => vec![0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2],
-        "borromean" | "B3" => vec![0, -2, 0, -2, 0, -2],  // σ₀σ₁⁻¹σ₀σ₁⁻¹σ₀σ₁⁻¹
-        "figure8" | "41" => vec![0, -2, 0, -2],  // σ₀σ₁⁻¹σ₀σ₁⁻¹
-        _ => vec![0, 1, 0],  // default: trefoil
+        "T23" | "trefoil" => vec![1, 2, 1],
+        "T25" | "cinquefoil" => vec![1, 2, 1, 2, 1],
+        "T34" => vec![1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],
+        "T35" | "weak" => vec![1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3],
+        "borromean" | "B3" => vec![1, -2, 1, -2, 1, -2],  // σ₁σ₂⁻¹σ₁σ₂⁻¹σ₁σ₂⁻¹
+        "figure8" | "41" => vec![1, -2, 1, -2],  // σ₁σ₂⁻¹σ₁σ₂⁻¹
+        _ => vec![1, 2, 1],  // default: trefoil
     }
 }
 
