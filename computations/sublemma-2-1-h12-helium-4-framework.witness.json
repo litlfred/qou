@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-05T11:19:19.993026+00:00",
-  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-07-06T18:15:13.401531+00:00",
+  "commitSha": "e86879306f9a7c09d5f1e6d921384addb4544cef",
   "assertions": [
     {
       "name": "framework documented + prerequisite witnesses checked",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 74,
+  "durationMs": 26,
   "computation": "sublemma-2-1-h12-helium-4-framework",
   "scriptFile": "sublemma_2_1_h12_helium_4_framework.py",
   "scriptHash": "e78764d36968",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,11 +27,12 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Framework / next-step scaffold for the H_{12} ⁴He A-operator extract — extending prop:mass-tower-operator-valued from A = 3 (PROVED, this branch) to A = 4 (OPEN). Documents the iterated 3-interface formula, verifies prerequisite H_6 + H_9 witnesses, and records the deferred H_{12} extraction plan.",
   "auditOnly": "docs/coordination/2026-05-20-lambda-p-followons-ledger.md",

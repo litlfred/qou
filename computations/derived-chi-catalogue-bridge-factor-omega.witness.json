@@ -1,8 +1,8 @@
 {
   "engine": "sympy + pyhecke_native",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-07T12:30:04.230180+00:00",
-  "commitSha": "c6d67b1b940218fe6d49ac436177cf3f57c66f82",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-07-06T18:15:16.614627+00:00",
+  "commitSha": "e86879306f9a7c09d5f1e6d921384addb4544cef",
   "assertions": [
     {
       "name": "bridge_factor_omega_derived_and_held_out_validated",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5081,
+  "durationMs": 2781,
   "computation": "derived-chi-catalogue-bridge-factor-omega",
   "scriptFile": "derived_chi_catalogue_bridge_factor_deuteron.py",
-  "scriptHash": "6497bfb59a26",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f9a3152cf53d",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,9 +25,9 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
@@ -35,8 +35,8 @@
   "description": "Tier 1 Phase 1.1 — deuteron bridge factor ω(μ_p, μ_n, λ; q) empirically derived via linear regression on 100 test (w_p, w_n) pairs. Cross-validated on held-out braids: every prediction must match chi_q_via_gp exactly. The ω is a rational function in q (for c_LR > 1 cases — only c_LR=1 cases reduce to simple ±q²/±q⁻²).",
   "data": {
     "omega_table_entries": 2,
-    "derived_clean_form": 2,
-    "derived_rational": 0,
+    "derived_clean_form": 0,
+    "derived_rational": 2,
     "failed_to_derive": 33,
     "held_out_pass": 6,
     "held_out_fail": 27,
@@ -52,10 +52,10 @@
           6
         ],
         "c_lr": 1,
-        "omega_sympy": "q**2",
-        "omega_simplified": "q**2",
-        "m_plus": 1,
-        "m_minus": 0
+        "omega_sympy": "q",
+        "omega_simplified": "q",
+        "m_plus": null,
+        "m_minus": null
       },
       {
         "mu_p": [
@@ -77,10 +77,10 @@
           1
         ],
         "c_lr": 1,
-        "omega_sympy": "-1/q**2",
-        "omega_simplified": "-1/q**2",
-        "m_plus": 0,
-        "m_minus": 1
+        "omega_sympy": "-1/q",
+        "omega_simplified": "-1/q",
+        "m_plus": null,
+        "m_minus": null
       }
     ]
   }
