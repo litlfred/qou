@@ -9,13 +9,7 @@ $$
   h \;=\; \frac{q-1}{q}.
 $$
 
-*Assume the typeclass
-[`QOU.ArchimedeanUniverse.AlphaEmFixedPointNormalization`](em-coupling-fixed-point.lean)
-is inhabited at $(q,\alpha)$ — i.e. the exact $\mathcal{O}(\alpha^2)$
-self-energy normalization of the coupling equation is
-$H\cdot(1-h^2\alpha)$, the archimedean image of a class in the Bloch
-group $B_3(\mathbb{C})$, so that $\alpha$ solves the self-consistent
-fixed point*
+*Assume the typeclass [`QOU.ArchimedeanUniverse.AlphaEmFixedPointNormalization`](em-coupling-fixed-point.lean) is inhabited at $(q,\alpha)$ — i.e., the exact $\mathcal{O}(\alpha^2)$ self-energy normalization of the coupling equation is $H\cdot(1-h^2\alpha)$, the archimedean image of a class in the Bloch group $B_3(\mathbb{C})$. Consequently, $\alpha$ solves the self-consistent fixed point:*
 
 $$
   \frac{1}{\alpha}
@@ -23,7 +17,7 @@ $$
   T + \alpha\,H\,\bigl(1 - h^2\alpha\bigr).
 $$
 
-*Then $\alpha$ is a root of the characteristic cubic*
+*Then $\alpha$ constitutes a root of the characteristic cubic:*
 
 $$
   P(\alpha)
@@ -32,47 +26,21 @@ $$
   \;=\; 0,
 $$
 
-*and its inverse is CODATA-consistent,
-$\lvert \alpha^{-1} - 137.035999084\rvert < 10^{-3}$.*
+*and its inverse yields CODATA-consistency: $\lvert \alpha^{-1} - 137.035999084\rvert < 10^{-3}$.*
 
 ## What is proved vs. what is assumed
 
-The fine-structure constant is presented here as the **symbolic root of a
-self-consistent fixed-point equation**, not as a fitted product. The
-route is deliberately additive-then-self-consistent and is independent of
-the refuted multiplicative Chern–Simons / gluon-octet form
-([`rem:em-coupling-chern-simons`](#rem:em-coupling-chern-simons)); that
-form is neither used nor restated.
+We present the fine-structure constant as the symbolic root of a self-consistent fixed-point equation, not as a fitted product. The path is additive and self-consistent. It eschews the refuted multiplicative Chern–Simons / gluon-octet form ([`rem:em-coupling-chern-simons`](#rem:em-coupling-chern-simons)); we neither use nor restate that form.
 
-The equation assembles three ingredients, of which only the third is
-open:
+The equation integrates three components. Only the third remains open:
 
-1. **Tree term $q\cdot[9]_q\cdot[10]_q$** — the bare inverse coupling of
-   [`prop:em-coupling-projection`](#prop:em-coupling-projection), whose
-   categorical-trace refactoring
-   [`prop:alpha-em-categorical-trace-ratio`](#prop:alpha-em-categorical-trace-ratio)
-   is Lean-proved.
-2. **Zero-mode shift $2/(3\pi) = 2g/(4\pi(g-1))\big|_{g=4}$** — the
-   photon IR harmonic-$1$-form contribution on Bring's surface,
-   $b_1/\mathrm{Area}$, proved sorry-free in
-   [`prop:photon-ir-zero-mode-bring`](#prop:photon-ir-zero-mode-bring)
-   and reused here as the Lean constant
-   `QOU.Archimedean.bringZeroModeValue`. The normalization $8\pi = \pi
-   b_1 = \pi\dim H^1(M_{\text{Bring}})$ is the same harmonic count.
-3. **$\mathcal{O}(\alpha^2)$ normalization $H\cdot(1-h^2\alpha)$** — the
-   Habiro deformation $(1-h^2\alpha)$ with $h = (q-1)/q = \hbar_q$, and
-   the coefficient $H = [2]_q/(8\pi)$. The identification of the exact
-   $\mathcal{O}(\alpha^2)$ correction to $H$ with a class in
-   $B_3(\mathbb{C})$ is the **single open input**, axiomatised as the
-   §3b-cond class field `b3_normalization`.
+1. **Tree term $q\cdot[9]_q\cdot[10]_q$**: The bare inverse coupling from [`prop:em-coupling-projection`](#prop:em-coupling-projection). Lean verifies its categorical-trace refactoring ([`prop:alpha-em-categorical-trace-ratio`](#prop:alpha-em-categorical-trace-ratio)).
+2. **Zero-mode shift $2/(3\pi) = 2g/(4\pi(g-1))\big|_{g=4}$**: The photon IR harmonic-$1$-form contribution on Bring's surface, $b_1/\mathrm{Area}$. Lean proves this sorry-free in [`prop:photon-ir-zero-mode-bring`](#prop:photon-ir-zero-mode-bring) and reuses it here as `QOU.Archimedean.bringZeroModeValue`. The normalization $8\pi = \pi b_1 = \pi\dim H^1(M_{\text{Bring}})$ maintains the same harmonic count.
+3. **$\mathcal{O}(\alpha^2)$ normalization $H\cdot(1-h^2\alpha)$**: The Habiro deformation $(1-h^2\alpha)$ with $h = (q-1)/q = \hbar_q$, alongside coefficient $H = [2]_q/(8\pi)$. Identifying the exact $\mathcal{O}(\alpha^2)$ correction to $H$ with a class in $B_3(\mathbb{C})$ forms the **single open input**. We axiomatise this as the §3b-cond class field `b3_normalization`.
 
 ## Genuine derivation, not projection
 
-Per AGENTS.md §3b-cond item 5, the class carries the *hypothesis* (the
-self-consistency relation), and the theorem *derives* the conclusion. The
-sorry-free lemma
-[`QOU.ArchimedeanUniverse.fixedPoint_iff_cubic`](em-coupling-fixed-point.lean)
-establishes, for every $\alpha \neq 0$,
+Per AGENTS.md §3b-cond item 5, the class carries the *hypothesis* (the self-consistency relation), and the theorem *derives* the conclusion. The sorry-free lemma [`QOU.ArchimedeanUniverse.fixedPoint_iff_cubic`](em-coupling-fixed-point.lean) establishes for every $\alpha \neq 0$:
 
 $$
   \Bigl(\tfrac{1}{\alpha} = T + \alpha H(1-h^2\alpha)\Bigr)
@@ -80,31 +48,12 @@ $$
   P(\alpha) = 0,
 $$
 
-by clearing the denominator ($\alpha \neq 0$ from `alpha_pos`) and
-`linear_combination`. The main theorem
-[`QOU.ArchimedeanUniverse.alpha_em_is_fixed_point_root`](em-coupling-fixed-point.lean)
-composes this equivalence with the class' `b3_normalization` field; there
-is no stored `alphaCubic_zero` field to read off, so the derivation is
-non-degenerate.
+by clearing the denominator ($\alpha \neq 0$ from `alpha_pos`) and applying `linear_combination`. The main theorem [`QOU.ArchimedeanUniverse.alpha_em_is_fixed_point_root`](em-coupling-fixed-point.lean) composes this equivalence with the class's `b3_normalization` field. No stored `alphaCubic_zero` field exists to short-circuit the proof, rendering the derivation non-degenerate.
 
 ## Numerical context
 
-At $q_0$ the tree term and zero-mode already reproduce $1/\alpha$ to
-$-4.2\times 10^{-6}$
-([`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode));
-the $\mathcal{O}(\alpha^2)$ self-consistency term supplies the residual
-$\mathcal{O}(\alpha)$ correction whose exact form is the conjectural
-$B_3(\mathbb{C})$ Bloch-class content encoded in the class field. The
-cubic $P$ has a real root near $1/137.036$; its CODATA-consistency is the
-empirical face of the conjecture, carried by the class field
-`codata_consistent`.
+At $q_0$, the tree term and zero-mode reproduce $1/\alpha$ to $-4.2\times 10^{-6}$ ([`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)). The $\mathcal{O}(\alpha^2)$ self-consistency term supplies the residual $\mathcal{O}(\alpha)$ correction; the conjectural $B_3(\mathbb{C})$ Bloch-class content (encoded in the class field) supplies its exact form. The cubic $P$ features a real root near $1/137.036$. CODATA-consistency provides the empirical foundation of the conjecture, enforced by the class field `codata_consistent`.
 
 ## Status
 
-Open piece: the $B_3(\mathbb{C})$ $\mathcal{O}(\alpha^2)$ normalization
-(the sole class field `b3_normalization`). Everything else — the
-tree/zero-mode assembly of $T$, the algebraic equivalence
-fixed-point $\Leftrightarrow$ cubic, and the derivation of $P(\alpha)=0$
-under the class — is proved sorry-free. The class is left uninhabited
-(the honest open state, §3b-tax): no fabricated instance closes the
-primary conjecture.
+The sole open element remains the $B_3(\mathbb{C})$ $\mathcal{O}(\alpha^2)$ normalization (the class field `b3_normalization`). Lean proves everything else sorry-free: the tree/zero-mode assembly of $T$, the algebraic equivalence fixed-point $\Leftrightarrow$ cubic, and the derivation of $P(\alpha)=0$ from the class. We leave the class uninhabited (the honest open state, §3b-tax); no fabricated instance attempts to close the primary conjecture.
