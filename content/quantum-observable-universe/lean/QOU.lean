@@ -138,3 +138,4 @@ import QOU.Conjectures.KnotFactorFrobeniusPairing
 import QOU.Conjectures.WeakSpectralCompleteness
 import QOU.Conjectures.MagicNumbersBring
 import QOU.Conjectures.QuantumLanglandsDual
+import QOU.QuaternionicElectroweak

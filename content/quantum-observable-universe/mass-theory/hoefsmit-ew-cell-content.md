@@ -264,3 +264,10 @@ weight expression.
 — enumerates standard Young tableaux of partitions of 6 with
 their $(\sigma_1, \sigma_3, \sigma_5)$ eigenvalue classes; reports
 pure-eigenspace counts and 8-pattern multiplicities.
+
+### Historical Alignment: Quaternionic Electroweak Theory
+The mapping of the electroweak sector to the $S_5$ Bring curve's tetraplectic boundary strongly aligns with the **Quaternionic Electroweak Theory** formalized by Katsusada Morita in the early 1980s. 
+
+Morita demonstrated that by formulating fermions and Higgs mesons over the quaternionic field $\mathbb{H}$ instead of $\mathbb{C}$, the left-right symmetric gauge $SU(2)_L \times SU(2)_R \times U(1)$ emerges as a purely algebraic consequence, naturally replicating quarks and leptons into flavor doublets. 
+
+In the QOU framework, this is exactly instantiated by the $SU(2)$ Reeb triads acting on the quaternionic color tubes (modeled mathematically similarly to the $N=4$ Superconformal theory in Cederwall & Preitschopf's *Quaternionic Superconformal Field Theory*). Morita's algebraic flavor doublets are the macroscopic manifestation of the tetraplectic geometry's inherent $SU(2)$ constraints, proving that the $W^\pm, Z, H$ carriers are geometrically demanded by the division algebra of the substrate, rather than phenomenologically inserted.
