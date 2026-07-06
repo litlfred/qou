@@ -90,10 +90,19 @@ def _committed(rel_path: str) -> str:
 
 
 def _witness_for(producer: Path) -> Path | None:
-    """Best-effort: the producer's witness shares its stem with '-'/'_' swapped."""
+    """Best-effort: the producer's witness shares its stem with '-'/'_' swapped.
+
+    Prefer the top-level witness; fall back to an rglob over the whole
+    computations/ tree — some producers emit into a nested
+    `computations/computations/…` path.
+    """
     stem = producer.stem
     for cand in (stem.replace("_", "-"), stem):
-        for w in HERE.glob(f"{cand}.witness.json"):
+        w = HERE / f"{cand}.witness.json"
+        if w.exists():
+            return w
+    for cand in (stem.replace("_", "-"), stem):
+        for w in HERE.rglob(f"{cand}.witness.json"):
             return w
     return None
 
@@ -131,7 +140,13 @@ def run_one(producer: Path, rel_tol: float, timeout: int = 1800) -> tuple[str, l
                 return (f"RUN_FAILED (exit {r.returncode}): {r.stderr.strip()[-160:]}", [])
             fresh = json.loads(wit.read_text())
         finally:
-            subprocess.run(["git", "checkout", "--", rel], cwd=HERE.parent, capture_output=True)
+            # Blanket-restore the WHOLE computations/ tree, not just `rel`: a
+            # producer may emit several witnesses (incl. nested
+            # computations/computations/… paths). Restoring only the diffed one
+            # leaks a proton-drifted witness over a committed muon witness (the
+            # tnjb corruption). `fresh` is already read above, so this is safe.
+            subprocess.run(["git", "checkout", "--", "computations/"],
+                           cwd=HERE.parent, capture_output=True)
         diffs: list = []
         _walk(committed, fresh, producer.stem, rel_tol, diffs)
         if not diffs:
