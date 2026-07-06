@@ -1,5 +1,4 @@
-The hyperbolic volume claims in this paper are independently verified by
-computing them from scratch using the SnapPea kernel (SnapPy 3.3).
+We independently verify the hyperbolic volume claims by computing them from scratch using the SnapPea kernel (SnapPy 3.3).
 
 **Verified assertions** (11 total, all passing):
 

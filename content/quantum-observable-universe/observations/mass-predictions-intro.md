@@ -1,9 +1,31 @@
-Having calibrated $q_0$ from the lepton sector, we apply the mass formula to the full hadron and nuclear spectrum and compare to CODATA / PDG values. The section opens with the lattice geometry: Remark: The stability cubic at $q = 1.1097$: lattice points and the nuclear chart marks which $(Z, N)$ points sit on the stability surface, Proposition: Comparison of predicted and observed stable neutron numbers for $p \leq 103$ tabulates the neutron-number predictions element by element, and Remark: Stability of $n_{\mathrm{pred}}$ under local variations in $q$ records how the predictions move under perturbations of the substrate parameter.
+We apply the mass formula, calibrated by $q_0$ from the lepton sector,
+to the hadron and nuclear spectrum and compare with CODATA and PDG values.
+We first examine the lattice geometry. The stability cubic marks which
+$(Z, N)$ coordinates lie on the stability surface. We tabulate
+neutron-number predictions element by element for $p \leq 103$. We also
+record how these predictions shift under local perturbations of the
+substrate parameter $q$.
 
-Ratios come next. Remark: Theoretical mass ratios from the mass identity extracts the dimensionless quotients the formula predicts, Remark: Mass predictions from knot formulas vs. CODATA/PDG values lays the ratios alongside experiment, Remark: Atomic mass of $Z = 1$--$10$ via full three-channel Hecke algebra carries the calculation through the first ten elements using the full Hecke decomposition, and Remark: Feynman vs QOU: term-by-term atomic mass comparison sets the QOU contributions against the corresponding Feynman-diagram terms. Remark: From 4 photon channels to 3 Wedderburn invariants records the channel-counting reduction the table uses, and Remark: Mass formula validation: source classification and isotope coverage classifies the isotopes by data source.
+We next analyze mass ratios. We extract the dimensionless quotients
+predicted by the mass identity and compare them directly with experimental
+values. A full three-channel Hecke algebra calculation covers the first
+ten elements. We compare framework mass contributions term-by-term against
+corresponding Feynman-diagram amplitudes. We detail the channel-counting
+reduction from four photon channels to three Wedderburn invariants, and
+we classify the analyzed isotopes by data source.
 
-The neutron–proton splitting and its consequences occupy the middle of the section. Proposition: Neutron--proton mass splitting from quark crossing change derives the splitting from the single crossing-change between the two nucleons, Lemma: Nucleon Borromean topology and Hopf-link binding and its **Proof of nucleon Borromean topology** (prf) establish the link structure that supports the formula, and Lemma: Pair Skein mass and crossing-by-crossing recursion with its **Proof of the pair Skein mass formula** (prf) provides the recursion the deuteron and heavier pair states use. Proposition: Substrate-pure derivation of the $u$--$d$ flavor split and **Proof of the substrate-pure flavor split formula** (prf) isolate the flavor splitting from the dressed kinematics, while Remark: Dressed-quark numerology at $q_0$ records the numerical values at the calibrated point. Lemma: Deuteron binding energy from Skein-polynomial smoothing and **Proof of deuteron binding energy** (prf) close the nucleon-pair material.
+The middle of this section addresses neutron-proton splitting and its
+consequences. We derive this mass splitting from the single crossing-change
+distinguishing the two nucleons. We establish the Borromean link topology
+that supports the formula. A pair-skein mass formula provides the recursion
+used for the deuteron and heavier states. We isolate the $u$--$d$ flavor split
+from the dressed kinematics and record the numerical values at $q_0$.
+We close the two-nucleon material by deriving the deuteron binding energy.
 
-The section ends with terminal-resolution results and the W-boson anomaly. **Proof of Terminal Resolution of Hadronic Mass** (prf) and Example: Terminal resolution in $\mathbb{C}[z]$ supply the resolution-theoretic identity that the closure depends on. Remark: Electroweak boson masses from vertex $\delta q$ at the CODATA substrate is the form of the boson-mass result the beta-decay section in the next section will treat as given when matching weak-vertex amplitudes to half-lives.
+The section concludes with terminal-resolution results and the $W$-boson
+anomaly. We prove the resolution-theoretic identity anchoring the closure.
+Finally, we analyze the electroweak boson masses. This sets up the boson-mass
+result used later to match weak-vertex amplitudes with $\beta$-decay
+half-lives.
 
 _(draft.)_

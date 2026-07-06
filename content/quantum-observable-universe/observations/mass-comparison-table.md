@@ -1,9 +1,4 @@
-The following table evaluates the topological knot formulas
-([knot formula table](#rem:knot-formula-table)) at the substrate
-parameter $q_0$ derived from the muon--electron mass
-ratio ([Skein mass relation](#rem:skein-mass-relation)), and
-compares the results against CODATA 2022 recommended values and
-PDG 2024 averages.  All masses are in MeV/$c^2$.
+This table evaluates the topological knot formulas ([knot formula table](#rem:knot-formula-table)) at the substrate parameter $q_0$. We derive $q_0$ from the muon--electron mass ratio ([Skein mass relation](#rem:skein-mass-relation)). We compare the results against CODATA 2022 recommended values and PDG 2024 averages. All masses are in MeV/$c^2$.
 
 **Input parameters** (one free parameter):
 
@@ -19,42 +14,19 @@ $$
 
 See [Table 1](#tbl:mass-comparison-table-table1-data).
 
-The electron mass is an input (it fixes $\mu_{\mathfrak{u}}$ through the pair
-Skein mass).  The muon mass is the first *prediction* — it equals
-$\mathrm{Vol}(4_1)/\hbar_q^2$ and reproduces the CODATA value
-to six significant figures with $q = q_0$.
+The electron mass is an input. It fixes $\mu_{\mathfrak{u}}$ through the pair Skein mass. The muon mass prediction equals $\mathrm{Vol}(4_1)/\hbar_q^2$. This reproduces the CODATA value to six significant figures at $q = q_0$.
 
 *Hadrons (from pair Skein masses).*
 
-The proton and neutron rows currently come from the **LO ρ_K
-assembly** which consumes $m_p$ and $m_n$ as CODATA inputs (per
-[`atomic-mass-via-rho-k.witness.json`](../../../computations/atomic-mass-via-rho-k.witness.json)).
-Per owner directive ("do not use LO — use full"), this
-is tautological by construction (the $|\mathrm{tr}_M|$ factor
-cancels in $\rho_K^{\mathrm{LO}} \cdot m_e \cdot |\mathrm{tr}_M|$,
-reducing $\mathcal{M}_\text{pred}$ to $Z m_p + N m_n$). The FULL
-framework prediction for atomic masses requires the unified knot
-mass formula
-$M(\mathfrak{H}) = \rho \cdot [|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w) + \mathrm{tr}_M(C_{\dim_q})]$
-which is **not yet wired** at the nucleon scale (Workplan 0b
-Phase 0b.4 + Workplan 2 + open Δ_λ derivation; see
-[handoff](../../../docs/audits/-workplan-0b-script-rewire-handoff.md)).
-The $n$–$p$ splitting is a *consequence* of the FULL $\mathfrak{Q}_\beta$ chain
-($\mathfrak{Q}_\beta + m_e \approx 1.293$ MeV) — see the framework prediction
-panel after this table.
+The proton and neutron rows derive from the LO $\rho_K$ assembly (witness: [`atomic-mass-via-rho-k.witness.json`](../../../computations/atomic-mass-via-rho-k.witness.json)). This assembly consumes $m_p$ and $m_n$ as CODATA inputs. It is tautological by construction. The $|\mathrm{tr}_M|$ factor cancels in $\rho_K^{\mathrm{LO}} \cdot m_e \cdot |\mathrm{tr}_M|$, reducing the output to $Z m_p + N m_n$. The FULL framework prediction requires the unified knot mass formula $M(\mathfrak{H}) = \rho \cdot [|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w) + \mathrm{tr}_M(C_{\dim_q})]$. This formula is not yet wired at the nucleon scale (see [handoff](../../../docs/audits/-workplan-0b-script-rewire-handoff.md)). The $n$–$p$ splitting emerges as a consequence of the FULL $\mathfrak{Q}_\beta$ chain ($\mathfrak{Q}_\beta + m_e \approx 1.293$ MeV).
 
 See [Table 2](#tbl:mass-comparison-table-table2-data).
 
-† **Tautological under the LO chain.** The proton, neutron, and
-$n$-$p$ split rows read back the CODATA inputs because the LO
-formula collapses to $Z m_p + N m_n$ identically (no binding
-correction). FULL framework prediction below.
+† **Tautological under the LO chain.** The proton, neutron, and $n$-$p$ split rows return the CODATA inputs because the LO formula collapses to $Z m_p + N m_n$ (no binding correction).
 
 #### FULL $\mathfrak{Q}_\beta$ prediction (framework, no CODATA mass injection)
 
-Per [`prop:neutron-qvalue-symbolic`](../../particle-interactions/neutron-qvalue-symbolic.md)
-the framework predicts the β-decay Q-value from CAL-1 ($m_e$) and
-CAL-2 ($q_0$) only via the closed form:
+Per [`prop:neutron-qvalue-symbolic`](../../particle-interactions/neutron-qvalue-symbolic.md), the framework predicts the $\beta$-decay Q-value using only CAL-1 ($m_e$) and CAL-2 ($q_0$):
 
 $$
 \boxed{
@@ -62,77 +34,29 @@ $$
 }
 $$
 
-vs CODATA $0.7823$ MeV — **+0.168% / +1.31 keV framework prediction**.
-At single wrap the $L_\pm$ and $e^-$ contributions cancel exactly
-between proton and neutron, so $\Delta(\mathrm{net}) = h(h-2)/2$
-with $h = q_0 - q_0^{-1}$, and the entire $Q$-value lives in the
-$\gamma + \sigma_0 + \sigma_1$ channels.
+This compares to the CODATA value of $0.7823$ MeV ($+0.168\%$ error, $+1.31$ keV). At single wrap, the $L_\pm$ and $e^-$ contributions cancel exactly between proton and neutron. Thus $\Delta(\mathrm{net}) = h(h-2)/2$ with $h = q_0 - q_0^{-1}$. The entire Q-value lies in the $\gamma + \sigma_0 + \sigma_1$ channels.
 
-The $n$-$p$ mass split follows: $\mathfrak{m}_n - \mathfrak{m}_p = \mathfrak{Q}_\beta + m_e \approx 1.295$ MeV
-(vs CODATA $1.293$, same $0.17\%$ framework error, no CODATA $m_n - m_p$
-input).
+The $n$-$p$ mass split follows: $\mathfrak{m}_n - \mathfrak{m}_p = \mathfrak{Q}_\beta + m_e \approx 1.295$ MeV. This compares to the CODATA value of $1.293$ MeV ($0.17\%$ error, no CODATA $m_n - m_p$ input).
 
-The +1.31 keV residual is the **brane-tower truncation** — the
-derived $E_0$ uses the single-level Planck-tick approximation;
-exact tower-summed $E_0$ closes it (Workplan 2 Phase 2). The
-typed-crossings 6-term form gives a looser +0.747% prediction
-(0.7882 MeV) — kept in the witness only for cross-check, not used
-for production. Witness:
-[`q-beta-predicted.witness.json`](../../../computations/q-beta-predicted.witness.json).
+The $+1.31$ keV residual stems from the brane-tower truncation. The derived $E_0$ uses the single-level Planck-tick approximation. The exact tower-summed $E_0$ corrects this. The typed-crossings 6-term form yields a looser prediction of $0.7882$ MeV ($+0.747\%$ error). We keep this in the witness for cross-checks. Witness: [`q-beta-predicted.witness.json`](../../../computations/q-beta-predicted.witness.json).
 
-*Light nuclei (from multi-body Skein).* All rows below come from
-the **LO ρ_K assembly** with CODATA $m_p$, $m_n$ inputs — same
-discipline caveat as the proton/neutron rows above. The $\Delta$
-column equals the CODATA binding energy by construction, not a
-genuine framework prediction. The FULL multi-body unified knot
-mass formula at $H_{3A}$ is not yet tractable beyond $A = 1$
-(the $n$-$p$ split through $\mathfrak{Q}_\beta$ is the only mass-domain framework
-prediction wired today; binding-energy predictions await closure
-of the open Δ_λ research question per
-[recomputed-low-isotope-mass-table.md:99](../braids-and-knots/recomputed-low-isotope-mass-table.md)).
+*Light nuclei (from multi-body Skein).* 
+
+All rows below come from the LO $\rho_K$ assembly using CODATA $m_p, m_n$ inputs. The $\Delta$ column equals the CODATA binding energy by construction. The FULL multi-body unified knot mass formula at $H_{3A}$ remains intractable beyond $A = 1$. Binding-energy predictions require resolving the open $\Delta_\lambda$ research question (see [recomputed-low-isotope-mass-table.md:99](../braids-and-knots/recomputed-low-isotope-mass-table.md)).
 
 See [Table 3](#tbl:mass-comparison-table-table3-data).
 
-† **LO output is constituent sum only.** Genuine FULL prediction
-not yet wired (see Workplan 0b §FULL chain status). Witness:
-[`atomic-mass-via-rho-k.witness.json`](../../../computations/atomic-mass-via-rho-k.witness.json).
+† **LO output is constituent sum only.** The FULL prediction is not yet wired. Witness: [`atomic-mass-via-rho-k.witness.json`](../../../computations/atomic-mass-via-rho-k.witness.json).
 
-**Notes.**  The substrate parameter $q$ is fixed by the
-muon--electron mass ratio (one free input).  Hadronic masses follow
-from the pair Skein formula
-([terminal resolution](#prop:terminal-resolution)) — no QCD lattice
-input — and nuclear binding from the Hopf-junction Skein change
-$\Delta E = \Delta\mathcal{S}$.  The table truncates at
-${}^4\mathrm{He}$; the multi-body Skein polynomials beyond $A = 4$
-remain computable in principle ([embeddability
-closure](#thm:embeddability-closure)) but have not yet been
-evaluated.
+**Notes.** The muon--electron mass ratio fixes the substrate parameter $q$. Hadronic masses follow from the pair Skein formula ([terminal resolution](#prop:terminal-resolution)). Nuclear binding follows from the Hopf-junction Skein change $\Delta E = \Delta\mathcal{S}$. We evaluate the multi-body Skein polynomials up to ${}^4\mathrm{He}$. Polynomials beyond $A = 4$ are computable in principle ([embeddability closure](#thm:embeddability-closure)) but remain unevaluated.
 
-**Sources & scope.**  Proton and neutron entries use CODATA 2022
-values directly; nuclear entries use AME2020 binding energies as
-input.  These are recombinations of observed constants, **not**
-predictions from $q$.  The genuine $q$-predictions are mass *ratios*
-($m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$), $Q$-values
-($\Delta\mathrm{net} \times E_0$), and half-life ratios via
-$\log_q(ft)$ spectroscopy.  The one external scaling ruler is
-$m_e = :val[m_e_MeV]{precision=6, witness=computations/codata-masses.witness.json}$ MeV (CODATA 2022 experimental input, not a
-QOU-derived value), which converts dimensionless $q$-ratios to
-physical MeV.  All "Source" column
-entries (CODATA, PDG, AME2020) refer to these external standards.
+**Sources and scope.** The proton and neutron entries use CODATA 2022 values directly. The nuclear entries use AME2020 binding energies. These entries recombine observed constants. The parameter $q$ predicts mass ratios ($m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$), Q-values ($\Delta\mathrm{net} \times E_0$), and half-life ratios via $\log_q(ft)$ spectroscopy. The single external scaling ruler is $m_e = :val[m_e_MeV]{precision=6, witness=computations/codata-masses.witness.json}$ MeV (CODATA 2022 input). This ruler converts dimensionless $q$-ratios to physical MeV. 
 
 *Isotope-level data (hecke-engine certificates, $A \leq 14$).*
 
-47 isotopes from ${}^2\mathrm{H}$ through ${}^{60}\mathrm{Co}$
-have hecke-engine certificates providing exact Skein polynomial
-evaluations at $q_0$. All 47 have AME2020 binding-energy data
-available ("matched" = lookup succeeded, NOT a prediction test).
-The certificate fields encode crossing structure (combinatorial
-data), not mass directly:
+The hecke-engine provides exact Skein polynomial evaluations at $q_0$ for 47 isotopes from ${}^2\mathrm{H}$ through ${}^{60}\mathrm{Co}$. All 47 isotopes have corresponding AME2020 binding-energy data. The certificate fields encode combinatorial crossing structure, not mass directly.
 
 See [Table 4](#tbl:mass-comparison-table-table4-data).
 
-The $F_{\mathrm{Pauli}}$ factor is $O(1)$ for all isotopes and
-encodes the Pauli exclusion statistical weight. The $\ln|P|$ column
-is the transfer matrix Skein polynomial evaluated at $q_0$. Neither
-field maps linearly to $B/A$ or mass in MeV. The full validation is
-in `certificate-to-mass.witness.json`.
+The $F_{\mathrm{Pauli}}$ factor remains $O(1)$ across all isotopes and encodes the Pauli exclusion statistical weight. The $\ln|P|$ column records the transfer matrix Skein polynomial evaluated at $q_0$. Neither field maps linearly to $B/A$ or mass in MeV. See `certificate-to-mass.witness.json` for validation.
+

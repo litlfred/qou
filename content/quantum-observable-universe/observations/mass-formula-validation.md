@@ -1,36 +1,34 @@
-The atomic mass computation $M(Z,N) = Z\mathfrak{m}_\mathfrak{p} + N\mathfrak{m}_\mathfrak{n} + Zm_e - B(Z,N)$
-uses CODATA nucleon masses and AME2020 binding energies as direct inputs.
-This recombines observed constants and is by definition correct --- the
+The atomic mass formula $M(Z,N) = Z\mathfrak{m}_\mathfrak{p} + N\mathfrak{m}_\mathfrak{n} + Zm_e - B(Z,N)$
+inputs CODATA nucleon masses and AME2020 binding energies directly.
+This recombination of observed constants is tautological. The
 $<0.1$ MeV deviations in the mass table arise solely from rounding.
 The 0.0000% entries are arithmetic checks, not predictions.
 
 ## The ruler: $m_e$ as external scaling parameter
 
 The substrate parameter $q$ determines all dimensionless mass ratios
-($m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2 = :val[m_mu_over_e]{precision=6}$), but to convert
-these ratios into physical MeV we need one external input:
-$m_e = :val[m_e_MeV]{precision=6, witness=computations/codata-masses.witness.json}$ MeV (CODATA 2022). This is our **ruler** ---
-it fixes the absolute energy scale. Without $m_e$, QOU predicts
-ratios only.
+($m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2 = :val[m_mu_over_e]{precision=6}$). Converting
+these ratios into physical units requires one external input:
+$m_e = :val[m_e_MeV]{precision=6, witness=computations/codata-masses.witness.json}$ MeV (CODATA 2022). This ruler
+fixes the absolute energy scale. Without $m_e$, the framework predicts
+only mass ratios.
 
-**Resolved**: $E_0$ is derivable from $q_0$ and $m_e$ alone
+We derive the hadronic scale $E_0$ from $q_0$ and $m_e$
 ([energy scale and Planck time](#rem:energy-scale-planck)):
 $E_0 = m_e/(q_0(q_0 - 1)) = m_e \cdot c_q^2 \cdot \hbar_q \approx 4.186$ MeV.
-This agrees with the calibrated value
+This value agrees with the calibrated scale
 $E_0^{(\mathrm{cal})} = \mathfrak{Q}_\beta/|\Delta\mathrm{net}| \approx 4.155$ MeV
-to $0.75\%$. The residual is the brane-tower correction
-(single-level vs full-tower). Using the derived $E_0$, the
-neutron $Q$-value becomes a prediction:
+to $0.75\%$. The residual stems from the brane-tower correction
+(single-level versus full-tower). With the derived $E_0$, the
+neutron $Q$-value is a prediction:
 $\mathfrak{Q}_\beta = |\Delta\mathrm{net}| \times E_0 \approx 0.788$ MeV
-(CODATA: $0.782$ MeV, $0.75\%$ error). In this derivation
-the hadronic scale $E_0$ is itself derived from $\mathfrak{Q}_\beta(n)$;
-the complete framework uses three calibration inputs
+(CODATA: $0.782$ MeV). The complete framework relies on three calibration inputs
 ([calibration inputs](#rem:calibration-inputs)): $\mathrm{Vol}(4_1)$,
 $m_\mu/m_e$, and $m_e$.
 
 ## Genuine predictions of the substrate parameter $q$
 
-The single-parameter derivation chain $m_\mu/m_e \to \mathrm{Vol}(4_1)
+The derivation chain $m_\mu/m_e \to \mathrm{Vol}(4_1)
 \to \hbar_q \to q_0$ yields:
 
 - **Mass ratios**: $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2 = :val[m_mu_over_e]{precision=6}$
@@ -53,13 +51,13 @@ Mean $|\Delta/M| = 0.010\%$ across 15 isotopes.
 
 See [Table 2](#tbl:mass-formula-validation-table2-data).
 
-The gluon count is $A$-dependent. The proton ILP gives $2\sigma_0$
-(minimum-action stabiliser); this suffices for $A \leq 12$.
+The gluon count depends on $A$. The proton ILP yields $2\sigma_0$
+(minimum-action stabiliser), sufficing for $A \leq 12$.
 At $A = 16$ (${}^{16}\mathrm{O}$), the $\sigma_0$ and $L_-$ channels
-violate Frobenius positivity, requiring one additional $\sigma_1$
+violate Frobenius positivity, forcing one additional $\sigma_1$
 crossing. For $A \geq 20$, no single-operator repetition stabilises
-the braid — the full multi-word ILP
-([universal ILP](#def:universal-ilp-algorithm)) is needed.
+the braid; we require the full multi-word ILP
+([universal ILP](#def:universal-ilp-algorithm)).
 
 **$Q$-values** from mass difference $Q = M_{\mathrm{par}} - M_{\mathrm{dau}}$
 (neutral atoms, consistent $k = 11$):
@@ -70,9 +68,9 @@ See [Table 3](#tbl:mass-formula-validation-table3-data).
 
 See [Table 4](#tbl:mass-formula-validation-table4-data).
 
-MAE $\approx 4.4\%$ across all six $\beta^-$ benchmarks. Light
-nuclei ($A \leq 14$) achieve $\leq 2.2\%$ with no shell corrections.
-These are the real predictions --- not the by definition correct 0.0000%
+MAE is approximately $4.4\%$ across all six $\beta^-$ benchmarks. Light
+nuclei ($A \leq 14$) achieve $\leq 2.2\%$ without shell corrections.
+These are genuine predictions, distinct from the tautological 0.0000%
 mass table entries.
 
 ## BW mass table (k=12, zero fitted parameters)
@@ -85,25 +83,24 @@ and knot factors from the Frobenius norm
 
 See [Table 5](#tbl:mass-formula-validation-table5-data).
 
-All $\beta$-stable nuclei have $|\Delta/M| < 0.04\%$.
-Best: ${}^3$He ($0.000004\%$).
-Worst: ${}^6$Li ($0.039\%$), improved from $0.048\%$ by the
-Wigner energy term from the $(2,2)$ partition
-([Wigner np pairing](#prop:wigner-np-pairing)).
+All $\beta$-stable nuclei satisfy $|\Delta/M| < 0.04\%$.
+The ${}^3$He mass is most accurate ($0.000004\%$).
+The ${}^6$Li mass is least accurate ($0.039\%$), though the
+Wigner energy term from the $(2,2)$ partition improves this
+from $0.048\%$ ([Wigner np pairing](#prop:wigner-np-pairing)).
 
 For $Z = N$ even-even nuclei (${}^4$He, ${}^{12}$C, ${}^{16}$O,
-${}^{40}$Ca): the entanglement Markov chain on the three $H_3(q)$
-partitions returns to \textbf{exact equilibrium} after all
-inter-nucleon crossings (pp and nn character shifts cancel
-exactly). This gives $a_N = 1$ by algebraic cancellation
-(not approximation).
+${}^{40}$Ca), the entanglement Markov chain on the three $H_3(q)$
+partitions returns to exact equilibrium after all
+inter-nucleon crossings. Proton-proton and neutron-neutron character shifts cancel
+exactly, yielding $a_N = 1$ by algebraic identity rather than approximation.
 
-For $Z = N$ odd-odd (${}^6$Li, ${}^{14}$N): the last neutron step
-breaks symmetry, shifting the partition distribution. The residual
-$0.05\%$ arises from this entanglement imbalance, captured by the
-Kerov $q$-hook walk \cite{kerov1996} on the Young lattice.
+For $Z = N$ odd-odd nuclei (${}^6$Li, ${}^{14}$N), the final neutron step
+breaks symmetry and shifts the partition distribution. The residual
+$0.05\%$ error stems from this entanglement imbalance. The
+Kerov $q$-hook walk \cite{kerov1996} on the Young lattice captures this effect.
 
-The knot factor for $A \geq 5$ is the \textbf{path probability ratio}
+For $A \geq 5$, the knot factor is the path probability ratio
 in the Kerov walk: the ratio of the nuclear braid's specific
 entanglement path to the $q$-Plancherel average
 ([jet-filtered knot factor](#conj:jet-filtered-knot-factor)).
@@ -116,77 +113,70 @@ Witness: `hadron-knot-table.witness.json`, `transition-nf.witness.json`.
 
 ## Hecke-engine certificate validation
 
-47 isotopes (${}^2\mathrm{H}$ through ${}^{60}\mathrm{Co}$) have
-exact Gröbner--Shirshov certificates from the hecke-engine. All 47
-have AME2020 binding-energy data available. "Matched" means the
-AME2020 lookup succeeded --- it does **not** mean any certificate
-field reproduces the observed mass. There is currently no formula
+We compute exact Gröbner--Shirshov certificates for 47 isotopes
+(${}^2\mathrm{H}$ through ${}^{60}\mathrm{Co}$). All 47
+have AME2020 binding-energy data. "Matched" indicates successful
+AME2020 lookup, not mass reproduction. We lack a direct formula
 mapping certificate polynomials to $B/A$ in MeV.
 
 Each certificate contains:
 
-- $\mathrm{tr\_alt}(q_0)$: alternating trace of the Skein polynomial
-- $\mathrm{net}(q_0)$: signed crossing sum
-- $F_\mathrm{Pauli}(q_0)$: Pauli exclusion statistical weight
+- $\mathrm{tr\_alt}(q_0)$: the alternating trace of the Skein polynomial.
+- $\mathrm{net}(q_0)$: the signed crossing sum.
+- $F_\mathrm{Pauli}(q_0)$: the Pauli exclusion statistical weight.
 
-Key finding: the net values span $\sim$50 orders of magnitude
-($\sim10^{-8}$ for ${}^{11}\mathrm{B}$ to $\sim10^{47}$ for
-${}^{60}\mathrm{Co}$) while $B/A$ varies only between 0 and 9 MeV.
+The $\mathrm{net}$ values span 50 orders of magnitude
+(from $10^{-8}$ for ${}^{11}\mathrm{B}$ to $10^{47}$ for
+${}^{60}\mathrm{Co}$), while $B/A$ varies only between 0 and 9 MeV.
 No simple linear mapping $\mathrm{net} \times E_0 = M$ exists across
-all isotopes. The certificate fields encode *combinatorial crossing
-structure*, not mass directly.
+all isotopes. The certificate fields encode combinatorial crossing
+structure rather than direct mass.
 
 ## Certificate fields and the $6 \times 6$ transfer matrix
 
-The three certificate fields are evaluations of polynomials derived
-from the $6 \times 6$ transfer matrix of $H_3(q)$. The transfer
-matrix acts on the full NF basis
-$\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$ (the 6 reduced
-words of $S_3$, i.e. $\{1, \sigma_0, \sigma_1, \sigma_0\sigma_1,
-\sigma_1\sigma_0, \sigma_0\sigma_1\sigma_0\}$).
+The three certificate fields evaluate polynomials derived
+from the $6 \times 6$ transfer matrix of $H_3(q)$. This matrix acts
+on the full normal form basis
+$\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$.
+These correspond to the six reduced words of $S_3$:
+$\{1, \sigma_0, \sigma_1, \sigma_0\sigma_1, \sigma_1\sigma_0, \sigma_0\sigma_1\sigma_0\}$.
 
 **Certificate field origins.** For a nuclear braid word $w$ with
 $A$ nucleons:
 
-- $\mathrm{net}(q_0)$: the sum of all 6 NF coefficients after
- reducing $w$ to the Gröbner--Shirshov normal form. This is the
- Markov trace of the braid.
-- $\mathrm{tr\_alt}(q_0)$: the alternating trace --- the projection
- of the NF onto the alternating (sign) irrep of $S_3$. This picks
- out the antisymmetric channel.
-- $F_\mathrm{Pauli}(q_0)$: the ratio
- $\mathrm{tr\_alt}/\mathrm{tr\_sym}$, measuring the Pauli exclusion
- statistical weight. For identical fermions, $F_\mathrm{Pauli}$
- suppresses symmetric configurations.
+- $\mathrm{net}(q_0)$: the sum of all six normal form coefficients after
+  Gröbner--Shirshov reduction. This evaluates the Markov trace of the braid.
+- $\mathrm{tr\_alt}(q_0)$: the projection of the normal form onto the
+  alternating irrep of $S_3$. This isolates the antisymmetric channel.
+- $F_\mathrm{Pauli}(q_0)$: the ratio $\mathrm{tr\_alt}/\mathrm{tr\_sym}$.
+  This measures the Pauli exclusion statistical weight, suppressing
+  symmetric configurations for identical fermions.
 
 **Irrep decomposition.** The regular representation of $H_3(q)$
-decomposes into three irreps:
+decomposes as:
 
 $$
 H_3(q) \cong V_\mathrm{sym}(1) \oplus V_\mathrm{std}(2) \oplus V_\mathrm{alt}(1)
 $$
 
-where dimensions are $1 + 2^2 + 1 = 6$ (the standard irrep
-appears with multiplicity 2 in the regular representation). The
-$6 \times 6$ transfer matrix captures all three irreps simultaneously.
-The $2 \times 2$ transfer matrix (used in earlier computations) only
-captures the symmetric and one copy of the standard irrep, missing
-the alternating channel entirely.
+The dimensions sum to $1 + 2^2 + 1 = 6$. The standard irrep
+appears with multiplicity two. The $6 \times 6$ transfer matrix captures
+all three irreps. Earlier computations used a $2 \times 2$ matrix,
+capturing only the symmetric irrep and one copy of the standard irrep,
+entirely missing the alternating channel.
 
 **Necessity of the full $6 \times 6$.** The adjoint representation
 of the strong force requires all three channels. The $L_+$ and $L_-$
 terms (Hopf links) carry the gluon field content. The $e^-$ term
-(trefoil = $\sigma_0\sigma_1\sigma_0$, the longest element $w_0$)
-carries the alternating irrep. Without the full $6 \times 6$, the
-Pauli exclusion factor $F_\mathrm{Pauli}$ cannot be computed and
-nuclear shell effects are invisible.
+(the trefoil $\sigma_0\sigma_1\sigma_0$, or longest element $w_0$)
+carries the alternating irrep. Without the $6 \times 6$ matrix,
+we cannot compute $F_\mathrm{Pauli}$, rendering nuclear shell effects invisible.
 
 ## Nucleon NF structure and binding receptivity
 
-Each nucleon's NF in $H_3(q)$ has 6 coefficients with a characteristic
-sign pattern. Negative coefficients indicate channels where the
-nucleon has a *deficit* --- these are the channels it is receptive to
-(can absorb from a binding partner).
+Each nucleon normal form in $H_3(q)$ has six coefficients.
+Negative coefficients indicate a deficit; the nucleon is
+receptive to absorbing these channels from a binding partner.
 
 **Proton** (uud, typed crossings):
 
@@ -199,109 +189,95 @@ See [Table 8](#tbl:mass-formula-validation-table8-data).
 **Key observations:**
 
 - Both nucleons have negative $\gamma$ (identity) and $e^-$ (trefoil)
- coefficients. These channels carry mass-energy deficit.
-- The neutron additionally has a negative $L_+$ (Hopf link)
- coefficient --- it is receptive to the $L_+$ gluon channel.
- The proton's $L_+$ is positive ($+0.099$).
-- $\mathrm{net}(p) = +0.999$, $\mathrm{net}(n) = +0.811$.
- The $\Delta\mathrm{net} = -0.188$ drives the neutron $\beta$-decay
- $Q$-value.
+  coefficients. These channels carry mass-energy deficits.
+- The neutron has a negative $L_+$ (Hopf link) coefficient, making
+  it receptive to the $L_+$ gluon channel. The proton $L_+$
+  coefficient is positive ($+0.099$).
+- We have $\mathrm{net}(p) = +0.999$ and $\mathrm{net}(n) = +0.811$.
+  The difference $\Delta\mathrm{net} = -0.188$ drives the neutron
+  $\beta$-decay $Q$-value.
 
-**Beta decay: minimality of the free neutron.** Free neutron decay
-$n \to p + e^- + \bar{\nu}$ is the simplest possible $\beta^-$ decay:
-a single nucleon, no nuclear environment, no Coulomb corrections.
-This is why it calibrates $E_0$ directly. The next simplest is tritium
+**Beta decay minimality.** Free neutron decay
+$n \to p + e^- + \bar{\nu}$ is the simplest $\beta^-$ process.
+It involves a single nucleon, free of nuclear environment or
+Coulomb corrections. This minimality calibrates $E_0$ directly.
+The next simplest decay is tritium
 ${}^3\mathrm{H} \to {}^3\mathrm{He} + e^- + \bar{\nu}$, where the
-spectator deuteron core adds only a small nuclear correction.
+spectator deuteron adds only a small correction.
 
 ## The open problem: $B/A$ from $q$
 
 **Physics of $B/A$.** The binding energy per nucleon $B/A$ measures
-how tightly nucleons are bound inside a nucleus. For free nucleons
-(${}^1\mathrm{H}$), $B/A = 0$. For iron-56, $B/A \approx 8.79$ MeV
---- the most tightly bound nucleus. The total binding energy is
+nuclear cohesion. For free nucleons
+(${}^1\mathrm{H}$), $B/A = 0$. For iron-56, $B/A \approx 8.79$ MeV.
+The total binding energy is
 $B = Z m_\mathfrak{p} + N m_\mathfrak{n} - M_\mathrm{nucleus}$,
-i.e. the mass deficit between free constituents and the actual
-nucleus. $B/A$ varies smoothly from 0 (hydrogen) through a peak
-near iron to $\sim$7.6 (uranium), encoding the entire nuclear
+the mass deficit between free constituents and the bound
+nucleus. The $B/A$ curve varies smoothly, encoding the entire nuclear
 landscape.
 
-**Significance.** Currently, $B/A$ enters our mass formula as an
-external AME2020 input, making $M(Z,N)$ a tautology. If $B/A$ could
-be derived from the certificate polynomial $P(q_0)$, then
+**Significance.** Currently, $B/A$ enters the mass formula as an
+external AME2020 input. This makes $M(Z,N)$ tautological. Deriving
+$B/A$ from the certificate polynomial $P(q_0)$ would elevate
 $M(Z,N) = Z m_\mathfrak{p}(q) + N m_\mathfrak{n}(q) + Z m_e - A \cdot (B/A)(q)$
-would be a genuine one-parameter prediction (with $m_e$ as ruler).
-This is the single most important open computation in the QOU mass
-programme.
+to a one-parameter prediction, using $m_e$ as the sole ruler.
+This remains the central open computation in the mass programme.
 
-**Current status.** Computing $B/A$ purely from $q$ requires deriving
-the nuclear Skein polynomial volume integral from the transfer matrix
-chain, without importing AME2020 values. The transfer matrix product
-$\prod_i \hat{V}_i(q)$ gives the Skein polynomial $P(q)$ whose
-logarithm $\ln|P(q_0)|$ grows monotonically with $A$, but the
-mapping $\ln|P| \to B/A$ is not yet established.
+**Current status.** Computing $B/A$ from $q$ requires evaluating
+the nuclear Skein volume integral from the transfer matrix chain.
+The transfer matrix product $\prod_i \hat{V}_i(q)$ yields
+the Skein polynomial $P(q)$. While $\ln|P(q_0)|$ grows monotonically
+with $A$, the precise mapping $\ln|P| \to B/A$ is unknown.
 
-**Approach 1: Volume integral (non-abelian Stokes).** For a single
-knot $K$, mass is $\mathfrak{m}(K) = \mathrm{Vol}(K)/\hbar_q^2$.
-For a multi-nucleon system with $A$ nucleons, the non-abelian Stokes
-theorem expands the volume integral over the composite braid as a sum
-of crossing contributions:
+**Approach 1: Volume integral.** For a single knot $K$, mass is
+$\mathfrak{m}(K) = \mathrm{Vol}(K)/\hbar_q^2$.
+For an $A$-nucleon system, non-abelian Stokes expands the
+composite braid volume as a sum over crossings:
 
 $$
 \mathrm{Vol}(K_A) = \sum_{i < j}^A V_{ij}(q)
 $$
 
-where $V_{ij}$ is the crossing volume between nucleon strands $i$ and
-$j$. Each $V_{ij}$ is computed from the $6 \times 6$ transfer matrix
-at the $(i,j)$ crossing site. The binding energy is the difference
-between the interacting and free volumes:
+Here $V_{ij}$ is the crossing volume between strands $i$ and
+$j$, computed via the $6 \times 6$ transfer matrix.
+Binding energy is the deficit:
 
 $$
 B(Z,N) = \sum_\mathrm{free} \mathrm{Vol}(K_i) - \mathrm{Vol}(K_A)
 $$
 
-This is a simple sum (not a path-ordered integral) because each
-crossing site contributes independently to the total volume after
-Gröbner reduction.
+This reduces to a simple sum because Gröbner reduction makes each
+crossing site contribute independently.
 
-**Approach 2: Spectral decomposition (eigenvalues of $6 \times 6$).**
-The eigenvalues of the transfer matrix encode crossing energies in
-each irrep channel. The binding energy may emerge as the difference
-between eigenvalues of the interacting vs free Skein polynomials.
-This is the same as tracking cross-channel traffic on the jet bundle
---- the $6 \times 6$ is the spectral decomposition, and each eigenvalue
-corresponds to a definite irrep of $S_3$.
+**Approach 2: Spectral decomposition.**
+The $6 \times 6$ transfer matrix eigenvalues encode crossing energies in
+each irrep channel. Binding energy may emerge from the difference
+between eigenvalues of the interacting and free Skein polynomials.
+This tracks cross-channel traffic on the jet bundle.
 
-**Approach 3: Binding operator from NF receptivity.** The negative NF
-coefficients of proton and neutron indicate which channels they are
-receptive to. A binding operator $\hat{B}$ must supply what the
-negative channels demand. Concretely:
+**Approach 3: Binding operator from normal form receptivity.**
+A binding operator $\hat{B}$ must supply the channels where nucleons
+exhibit deficits:
 
-- Both p and n have negative $\gamma$ and $e^-$ --- the binding
- operator must supply identity and trefoil content.
-- The neutron has negative $L_+$ --- the binding operator must supply
- Hopf link content to the neutron.
+- Both nucleons demand identity ($\gamma$) and trefoil ($e^-$) content.
+- The neutron demands Hopf link ($L_+$) content.
 
-**Open problem.** The outstanding computational goal is to identify a
-torus knot $T(2,k)$ whose normal form, when applied to both proton
-and neutron simultaneously, fills their negative channels and yields
-$B/A$ matching the AME2020 curve. The candidate must have positive
-$\gamma$, positive $e^-$, and positive $L_+$ coefficients. The
-Borromean link $B_3 = (\sigma_0\sigma_1^{-1})^3$ already provides
-exactly this pattern with $\mathrm{net}(B_3) = +1.000$,
-$L_+ = +0.046$, $L_- = -0.044$, but operates at the single-nucleon
-(gluon) level, not the inter-nucleon binding level.
+The outstanding goal is to identify a torus knot $T(2,k)$ whose normal form
+fills these deficits and reproduces the AME2020 $B/A$ curve.
+The candidate requires positive $\gamma$, $e^-$, and $L_+$ coefficients.
+The Borromean link $B_3 = (\sigma_0\sigma_1^{-1})^3$ provides
+this pattern ($\mathrm{net}(B_3) = +1.000$,
+$L_+ = +0.046$, $L_- = -0.044$), but it operates at the intra-nucleon gluon level.
 
-**Approach 4:** Certificate polynomial roots --- the tr\_alt
-polynomial's root structure at $q = q_0$ may encode binding through
-level repulsion.
+**Approach 4: Certificate polynomial roots.** The root structure
+of the alternating trace polynomial at $q = q_0$ may encode binding
+via level repulsion.
 
 ## Isotope coverage
 
 See [Table 9](#tbl:mass-formula-validation-table9-data).
 
-The hecke-engine computations scale as $O(A^2)$ in crossing pairs.
-For $A \leq 14$ the symbolic engine completes in seconds; for
-$A = 20$ (neon) it runs in minutes; for $A = 40$ (calcium) the
-computation required BigInt arithmetic and hours of wall time;
-$A = 60$ (cobalt) is at the boundary of tractability.
+The symbolic Hecke engine scales as $O(A^2)$ in crossing pairs.
+Computations for $A \leq 14$ complete in seconds. Neon ($A = 20$)
+requires minutes. Calcium ($A = 40$) demands BigInt arithmetic and
+hours of computation. Cobalt ($A = 60$) marks the current boundary of tractability.
