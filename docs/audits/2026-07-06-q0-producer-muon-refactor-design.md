@@ -77,3 +77,31 @@ Append to `computations/substrate/q_parameter.py`, **after** the `import *` (lin
 
 **Do not merge on a sample.** A missed constant/closure corrupts the canonical layer silently; only a
 full re-run+diff sweep proves correctness. This is a focused-session task with the harness above.
+
+## Validation result (2026-07-06) — implementation landed on this branch
+
+The override is **implemented** in `computations/substrate/q_parameter.py` (appended after the
+`import *`) and validated on the FR producer:
+
+- **q-derived content BIT-EXACT.** `fr_pullback_k3_test.py` under the override reproduces every
+  `B_MeV` in `fr-pullback-k3-test.witness.json` exactly (q0_f64 = `1.1099785955573347`; all `B_MeV`
+  gone from the drift-filtered diff).
+- **Closure trap (F2) fixed.** `q_int(3)` now returns `3.043706218232901` (muon), matching the
+  witness `[3]_q`.
+- **Key correction:** derive the f64 dependents via the *same* f64 ops as `constants.py`
+  (`Q_INV = 1.0/Q`, …), taking only `q` from the witness — reading `q_inv`/`hbar_q` *strings* rounds
+  ~1 ULP off and perturbs `dim_q` at the ~15th digit. (`float(50-digit q)` IS bit-identical to the
+  committed `q0_f64`.)
+
+### Separate pre-existing artifact (NOT q₀, do not conflate)
+The only residual diff is `B_AME_MeV` — the *experimental* literal `mp.mpf("8.4817962")` — rendered at
+a different dps (committed = f64/dps-15; sandbox = dps-50), which also shifts the downstream
+`ratio_pred_over_AME` / `max_over_min` at the ~16th digit. This appears in the **no-override baseline
+too**, so it is an import-time-dps artifact of experimental literals, orthogonal to the q₀ refactor.
+The full-sweep validation must filter (or resolve) this experimental-literal precision drift so it is
+not mistaken for a q₀ regression.
+
+### Status
+Implementation is a **validated proof-of-concept on one producer**. Merge still gated on the full
+re-run+diff sweep of ALL producers (design §"Validation gate") + resolving the B_AME experimental-
+literal dps artifact. NOT auto-merged.
