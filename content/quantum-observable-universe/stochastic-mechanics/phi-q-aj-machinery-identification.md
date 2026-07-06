@@ -59,7 +59,7 @@ The classes encode literature statements (AJ conjecture, dilog-saddle identifica
 
 **Conditional on [`conj:quantum-langlands-dual`](quantum-langlands-dual.md) + [`conj:dim-master-pentagon`](dim-master-pentagon.md)** because the full identification requires:
 
-1. AJ conjecture proved for $K$ (proved for many: 2-bridge knots, twist knots, most Rolfsen-table knots; status for 𝓑_3 specifically needs literature check — Hikami / Habiro)
+1. AJ conjecture proved for $K$ (proved for many: 2-bridge knots, twist knots, most Rolfsen-table knots — Lê 2006; for 𝓑_3 the question is verified open: the link version of the AJ conjecture was only formulated in 2024 with the Hopf and Whitehead links computed, and no Borromean recurrence ideal is published — see [the stage-1b literature audit](../../../docs/audits/2026-07-06-borromean-aj-literature-status.md))
 2. The Faddeev / Rogers identifications used in the framework match the literature's exactly (not just up to convention)
 
 For 𝓑_3 specifically, the algebraic side is in literature (Champanerkar 2003 for classical A-polynomials and Bloch invariants of hyperbolic 3-manifolds; Hikami for related quantum work). What's open: explicit verification that the framework's $\Phi_q$ / $\mathrm{Li}_2^q$ choices align with the AJ machinery's saddles.

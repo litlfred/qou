@@ -29,7 +29,8 @@ machinery `Â_K · J_N = 0`.
   ✗ `QuantumAPolynomial F K` — the AJ conjecture for K (Garoufalidis
     2004): a nontrivial homogeneous q-difference operator Â_K
     annihilating the colored Jones tower. Proved in the literature for
-    many knots; for 𝓑_3 needs literature verification (Hikami/Habiro).
+    many knots; for 𝓑_3 VERIFIED OPEN (link-AJ formulated only, Sawabe
+    2024) — docs/audits/2026-07-06-borromean-aj-literature-status.md.
   ✗ `PhiQRegulator F K` — the identification: the Φ_q-generated saddle
     tower solves the SAME Â_K recursion in the root-of-unity regime
     (`q^N = 1`, `q ≠ 1`).
@@ -156,10 +157,13 @@ theorem saddle_regimes_disjoint (N : ℕ) (hN : 2 ≤ N)
     *homogeneous* q-difference operator Â_K annihilates the N-colored
     Jones tower at every invertible parameter.
 
-    Status: proved for 2-bridge knots (Lê 2006), pretzel knots, many
-    Rolfsen-table cases. For 𝓑_3 specifically, needs literature
-    verification (Hikami / Habiro) — hence no instance here. -/
--- Ref: [garoufalidis2004] https://doi.org/10.4310/JDG/1090425531
+    Status: proved for 2-bridge knots (`le2006-aj`), pretzel knots, many
+    Rolfsen-table cases. For 𝓑_3 specifically, VERIFIED OPEN: the link-AJ
+    conjecture was only *formulated* in 2024 (`sawabe2024-link-aj`, Hopf +
+    Whitehead computed) and no Borromean recurrence ideal is published —
+    see docs/audits/2026-07-06-borromean-aj-literature-status.md.
+    Hence no instance here. -/
+-- Ref: [garoufalidis2004] https://doi.org/10.2140/gtm.2004.7.291
 class QuantumAPolynomial (F : Type*) [Field F] (K : KnotComplement) where
   /-- The annihilating operator Â_K. -/
   ahat : QDiffOperator F
@@ -210,7 +214,7 @@ class Li2QRegulator (K : KnotComplement) [QuantumAPolynomial ℝ K] where
     annihilated. Derived by composing the two class fields through the
     proved superposition principle (§3b-cond item 5: the classes carry
     the hypotheses, the theorem derives). -/
--- Ref: [garoufalidis2004] https://doi.org/10.4310/JDG/1090425531
+-- Ref: [garoufalidis2004] https://doi.org/10.2140/gtm.2004.7.291
 theorem phi_q_eq_aj_saddle_root_of_unity
     (K : KnotComplement) [ap : QuantumAPolynomial F K] [pr : PhiQRegulator F K]
     (N : ℕ) (q : F) (hN : 2 ≤ N) (hq : q ^ N = 1) (hq1 : q ≠ 1) (a b : F) :
