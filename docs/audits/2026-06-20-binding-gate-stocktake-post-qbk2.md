@@ -111,15 +111,18 @@ to search. That is the framework's discipline working as designed — the
 three-calibration / no-7th-ansatz gate is catching fits before they reach production.
 But a referee will read the same pattern as: **the per-isotope binding energies are
 not yet derived, and the most natural categorical candidates have been falsified.** The
-honest headline is unchanged from `precision-goals.md`: **3/7 L2 observables met**; the
-binding energies (B_D, B_T, B_³He, B_⁴He) remain gated, and the gate is now *better
+honest headline is unchanged from `precision-goals.md`: **3/7 L2 observables met** at
+this doc's date (**2/7 since 2026-07-04** — m_p dropped when its fitted Habiro tower
+was removed; de-fitted round-trip +1.35 ppb, ~437× miss, per
+[`2026-07-04-c4-mu-p-tension-pin-dependence.md`](2026-07-04-c4-mu-p-tension-pin-dependence.md));
+the binding energies (B_D, B_T, B_³He, B_⁴He) remain gated, and the gate is now *better
 characterized* (we know what does **not** close it) but no closer to closed. Publishing
-the mass sector should foreground the 3 met observables (m_p, m_e, m_K/m_π) and present
+the mass sector should foreground the met observables (now m_e, m_K/m_π) and present
 binding as open, characterized R&D — not as a closure pending verification.
 
 ## Cross-references
 
-- [`docs/precision-goals.md`](../precision-goals.md) — two-leg L1/L2 target; 3/7 L2 met.
+- [`docs/precision-goals.md`](../precision-goals.md) — two-leg L1/L2 target; 2/7 L2 met (was 3/7 until the 2026-07-04 m_p de-fit).
 - [`2026-05-18-delta-lambda-gating-context.md`](2026-05-18-delta-lambda-gating-context.md) — the four paths; six failed Δ_λ ansätze; retraction.
 - [`2026-06-20-he4-nu-sdp-not-computed-definition-gate.md`](2026-06-20-he4-nu-sdp-not-computed-definition-gate.md) — ν_SDP has no computable definition.
 - [`2026-06-20-qbessel-yweighted-gap-deflation.md`](2026-06-20-qbessel-yweighted-gap-deflation.md) — qbk2 forced-weight deflation.

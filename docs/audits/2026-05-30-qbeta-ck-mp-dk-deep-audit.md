@@ -6,8 +6,10 @@
 > wiring now lives in
 > [`docs/coordination/ck-dk-canonical-registry.md`](../coordination/ck-dk-canonical-registry.md).
 > The TL;DR table below is a **2026-05-30 snapshot** (its "4/7 → 6/7" is
-> stale — the live dashboard is **3/7** post proton-anchor re-pin). Read the
-> registry for current tiers; this doc is historical record of the flip-flops.
+> stale — the live dashboard is **2/7**: 3/7 post proton-anchor re-pin,
+> then m_p dropped 2026-07-04 when its fitted Habiro tower was removed,
+> per [`2026-07-04-c4-mu-p-tension-pin-dependence.md`](2026-07-04-c4-mu-p-tension-pin-dependence.md)).
+> Read the registry for current tiers; this doc is historical record of the flip-flops.
 
 > ## ⚠ READ THIS FIRST — BODY SUPERSEDED BY THE ADDENDUM
 >

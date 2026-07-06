@@ -4,6 +4,18 @@
 
 **Source.** [`computations/per-observable-100x-status.witness.json`](../../computations/per-observable-100x-status.witness.json).
 
+> **🛑 Refresh (2026-07-06, post the 2026-07-04 m_p de-fit).** The
+> shared-root analysis of the (Q_β, m_n, Δ_pn) trio below **stands** —
+> but the headline count and the m_p row are stale. **m_p no longer
+> meets 100×**: its "0.0004 ppb ✓" rode the fitted Habiro tower
+> `(1+46u⁴)(1+4u⁵)(1−29u⁶)`, dropped 2026-07-04 (de-fitted round-trip
+> +1.35 ppb, ~437× miss). The failing set is now **5 of 7** (the trio +
+> m_μ + m_p); the met set is **2/7** (m_e, m_K/m_π), per
+> `per-observable-100x-status.witness.json` (`beats_100x_count=2`). See
+> [`2026-07-04-c4-mu-p-tension-pin-dependence.md`](2026-07-04-c4-mu-p-tension-pin-dependence.md).
+> m_p's miss is a *third* independent class (pin round-trip), not the
+> trio's shared root and not the μ–p tension row.
+
 > **Refresh (2026-06-01, PR #1602).** The table below was first written
 > against the muon-pinned dashboard (`computedAt 2026-05-30`, commit
 > `3fda58749d`), where `m_μ` was the calibration anchor and read ✓ at

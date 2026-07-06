@@ -1,5 +1,13 @@
 # L2 100× shared root (Q_β / m_n / Δ_pn) — currency triage + honest gate (2026-06-24)
 
+> **🛑 Currency note (2026-07-06).** The margins table below is a
+> 2026-06-22 snapshot: the **m_p row ("0.0004 ppb ✓") is stale** — m_p
+> was dropped from the met set 2026-07-04 when its fitted Habiro tower
+> `(1+46u⁴)(1+4u⁵)(1−29u⁶)` was removed from production (de-fitted
+> round-trip +1.35 ppb, ~437× miss). Met set is now **2/7** (m_e,
+> m_K/m_π). The (Q_β, m_n, Δ_pn) shared-root triage itself stands. See
+> [`2026-07-04-c4-mu-p-tension-pin-dependence.md`](2026-07-04-c4-mu-p-tension-pin-dependence.md).
+
 **Date:** 2026-06-24
 **Branch:** `claude/mass-open-keystone-w-l2-root-2026-06-24`
 **Status:** triage only (no new compute). Confirms the 2026-05-30 shared-root diagnosis is still canonical, re-scopes the gate post-repin, flags a stale-witness backlog.

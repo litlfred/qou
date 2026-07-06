@@ -89,7 +89,8 @@ the on-scale sibling — exactly the qbk2 pattern.
 
 - It does **not** re-open any refuted *numeric* result, propose a 7th Δ_λ ansatz,
   or claim the binding gate closed. The Δ_λ / per-isotope binding gate **remains
-  open** (`precision-goals.md`: 3/7 L2 met).
+  open** (`precision-goals.md`: 3/7 L2 met at this doc's date; 2/7 since the
+  2026-07-04 m_p de-fit).
 - It **does** record that the still-live directions — the log-free-energy
   functional (on-scale, edge-set/occupancy residual = lever 2), the channel-topology
   route, the k-dependent recursion kernel, the categorical-Vol / `s5-so3` keystone —

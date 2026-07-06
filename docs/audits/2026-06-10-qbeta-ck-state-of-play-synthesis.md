@@ -170,7 +170,9 @@ Minor cross-doc nits that are NOT errors: the ledger's c_k table (2026-06-03)
 says c_6 "NOT derived" while the registry says "applied in extraction
 (self-consistent)" — same empirical tier, different wording; the deep-audit's
 "4/7 / 6/7" L2 counts are pre-re-pin stale and already superseded (live count
-**3/7**: m_p, m_e, m_K/m_π).
+was **3/7** at this doc's date; **2/7 since 2026-07-04** — m_p dropped when
+its fitted Habiro tower was removed, per
+[`2026-07-04-c4-mu-p-tension-pin-dependence.md`](2026-07-04-c4-mu-p-tension-pin-dependence.md)).
 
 ## 6. What we need to do — the live menu
 
