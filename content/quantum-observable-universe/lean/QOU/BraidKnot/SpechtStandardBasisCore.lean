@@ -477,6 +477,43 @@ theorem polytabloid_rep_smul (σ : Equiv.Perm (Fin (Specht.nOf μ))) (t : Specht
       rw [← mul_smul, ← mul_smul, ← mul_assoc, ← mul_assoc, mul_inv_cancel,
         one_mul, mul_smul]
 
+omit [CharZero k] in
+/-- **Polytabloid is a sign-eigenvector of its column stabiliser (sorry-free).**
+For `σ ∈ C_t`, the representation acts on `e_t` by the sign character:
+`σ · e_t = sgn(σ) · e_t`. Immediate from equivariance
+(`polytabloid_rep_smul`: `e_{σ·t} = σ · e_t`) composed with column-antisymmetry
+(`polytabloid_colStab_smul`: `e_{σ·t} = sgn(σ) · e_t` for `σ ∈ C_t`). This is the
+eigenvector property the Garnir antisymmetriser bridge consumes. -/
+theorem rep_polytabloid_of_mem_colStab (t : Specht.Tableau μ)
+    {σ : Equiv.Perm (Fin (Specht.nOf μ))} (hσ : σ ∈ Specht.colStab t) :
+    Specht.Mtab.rep μ σ (Specht.polytabloid (k := k) t)
+      = (Equiv.Perm.sign σ : ℤ) • Specht.polytabloid (k := k) t := by
+  rw [← polytabloid_rep_smul, polytabloid_colStab_smul t hσ]
+
+omit [CharZero k] in
+/-- **Antisymmetriser eigenvalue (sorry-free).** Summing the signed group action
+over any finite set `H` of column-stabiliser elements collapses to `|H| · e_t`:
+`∑_{ρ∈H} sgn(ρ) · (ρ · e_t) = |H| · e_t`, because each term is
+`sgn(ρ)·sgn(ρ)·e_t = e_t` by the sign-eigenvector property (`sgn(ρ)² = 1`). This
+is the `α · e_t = |S_A×S_B| · e_t` step of the Garnir coset→polytabloid bridge
+(here for an arbitrary `H ⊆ C_t`, of which `S_A×S_B` is the relevant instance). -/
+theorem sum_sign_rep_polytabloid (t : Specht.Tableau μ)
+    (H : Finset (Equiv.Perm (Fin (Specht.nOf μ))))
+    (hH : ∀ ρ ∈ H, ρ ∈ Specht.colStab t) :
+    ∑ ρ ∈ H, (Equiv.Perm.sign ρ : ℤ) •
+        Specht.Mtab.rep μ ρ (Specht.polytabloid (k := k) t)
+      = H.card • Specht.polytabloid (k := k) t := by
+  classical
+  have hterm : ∀ ρ ∈ H, (Equiv.Perm.sign ρ : ℤ) •
+      Specht.Mtab.rep μ ρ (Specht.polytabloid (k := k) t)
+        = Specht.polytabloid (k := k) t := by
+    intro ρ hρ
+    rw [rep_polytabloid_of_mem_colStab t (hH ρ hρ), smul_smul]
+    have hs2 : (Equiv.Perm.sign ρ : ℤ) * (Equiv.Perm.sign ρ : ℤ) = 1 := by
+      rcases Int.units_eq_one_or (Equiv.Perm.sign ρ) with h | h <;> rw [h] <;> decide
+    rw [hs2, one_smul]
+  rw [Finset.sum_congr rfl hterm, Finset.sum_const]
+
 /-! #### The self-contained dominance weight (sorry-free)
 
 The straightening induction needs a well-founded measure that strictly increases
