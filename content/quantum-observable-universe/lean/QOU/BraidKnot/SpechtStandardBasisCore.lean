@@ -6,6 +6,7 @@ import Mathlib.Data.Fintype.OfMap
 import Mathlib.Data.Finset.Max
 import QOU.BraidKnot.StandardYoungTableau
 import QOU.BraidKnot.Specht
+import Mathlib.Tactic.Group
 
 /-!
 # QOU.BraidKnot.SpechtStandardBasisCore — brick-4 definitions + the order-agnostic core
@@ -409,6 +410,72 @@ theorem mtab_sum_sign_smul_of_eq_zero (t : Specht.Tableau μ)
   · -- it is an involution
     intro g _; show (g * τ) * τ = g
     rw [mul_assoc, hτ2, mul_one]
+
+omit [CharZero k] in
+/-- **Column-stabiliser conjugation.** `ρ ∈ C_{σ·t} ↔ σ⁻¹ρσ ∈ C_t` — the column
+stabiliser transforms by conjugation under the `Sₙ` action, since
+`colPattern (σ·t) = σ · colPattern t`. -/
+theorem mem_colStab_smul (σ : Equiv.Perm (Fin (Specht.nOf μ))) (t : Specht.Tableau μ)
+    (ρ : Equiv.Perm (Fin (Specht.nOf μ))) :
+    ρ ∈ Specht.colStab (σ • t) ↔ σ⁻¹ * ρ * σ ∈ Specht.colStab t := by
+  rw [Specht.mem_colStab, Specht.mem_colStab, Specht.colPattern_smul]
+  constructor
+  · intro h
+    rw [mul_smul, mul_smul, h, ← mul_smul, inv_mul_cancel, one_smul]
+  · intro h
+    rw [← mul_smul]
+    have hrw : ρ * σ = σ * (σ⁻¹ * ρ * σ) := by group
+    rw [hrw, mul_smul, h]
+
+omit [CharZero k] in
+/-- **Polytabloid equivariance (sorry-free).** The polytabloid is `Sₙ`-equivariant:
+`e_{σ·t} = σ · e_t`, i.e. acting on the tableau by `σ` equals acting on the
+polytabloid by the module representation `Mtab.rep`. Reindex the column-stabiliser
+sum by the conjugation `π ↦ σπσ⁻¹` (bijecting `C_t ≅ C_{σ·t}`, preserving sign,
+and sending `σ·(π·t)` to `(σπσ⁻¹)·(σ·t)`). -/
+theorem polytabloid_rep_smul (σ : Equiv.Perm (Fin (Specht.nOf μ))) (t : Specht.Tableau μ) :
+    Specht.polytabloid (k := k) (σ • t)
+      = Specht.Mtab.rep μ σ (Specht.polytabloid (k := k) t) := by
+  classical
+  rw [Specht.polytabloid, Specht.polytabloid, map_sum]
+  refine Finset.sum_bij'
+    (i := fun (ρ : Specht.colStab (σ • t)) _ =>
+      (⟨σ⁻¹ * (ρ : Equiv.Perm (Fin (Specht.nOf μ))) * σ,
+        (mem_colStab_smul σ t _).mp ρ.2⟩ : Specht.colStab t))
+    (j := fun (π : Specht.colStab t) _ =>
+      (⟨σ * (π : Equiv.Perm (Fin (Specht.nOf μ))) * σ⁻¹, ?_⟩ : Specht.colStab (σ • t)))
+    ?_ ?_ ?_ ?_ ?_
+  · -- `σπσ⁻¹ ∈ C_{σ·t}`
+    rw [mem_colStab_smul]
+    have : σ⁻¹ * (σ * (π : Equiv.Perm (Fin (Specht.nOf μ))) * σ⁻¹) * σ
+        = (π : Equiv.Perm (Fin (Specht.nOf μ))) := by group
+    rw [this]; exact π.2
+  · intro ρ _; exact Finset.mem_univ _
+  · intro π _; exact Finset.mem_univ _
+  · -- left inverse `j (i ρ) = ρ`
+    intro ρ _; apply Subtype.ext
+    show σ * (σ⁻¹ * (ρ : Equiv.Perm (Fin (Specht.nOf μ))) * σ) * σ⁻¹ = ρ
+    group
+  · -- right inverse `i (j π) = π`
+    intro π _; apply Subtype.ext
+    show σ⁻¹ * (σ * (π : Equiv.Perm (Fin (Specht.nOf μ))) * σ⁻¹) * σ = π
+    group
+  · -- term equality
+    intro ρ _
+    rw [map_zsmul, Specht.Mtab.rep_of]
+    congr 1
+    · -- sign: `sgn ρ = sgn (σ⁻¹ρσ)`
+      have : Equiv.Perm.sign (σ⁻¹ * (ρ : Equiv.Perm (Fin (Specht.nOf μ))) * σ)
+          = Equiv.Perm.sign (ρ : Equiv.Perm (Fin (Specht.nOf μ))) := by
+        rw [map_mul, map_mul, map_inv, mul_right_comm, inv_mul_cancel, one_mul]
+      rw [this]
+    · -- tabloid: `ρ • σ • t = σ • (σ⁻¹ρσ) • t`
+      show Specht.Mtab.of (k := k) ((ρ : Equiv.Perm (Fin (Specht.nOf μ))) • σ • t)
+        = Specht.Mtab.of (k := k)
+            (σ • (σ⁻¹ * (ρ : Equiv.Perm (Fin (Specht.nOf μ))) * σ) • t)
+      congr 1
+      rw [← mul_smul, ← mul_smul, ← mul_assoc, ← mul_assoc, mul_inv_cancel,
+        one_mul, mul_smul]
 
 /-! #### The self-contained dominance weight (sorry-free)
 
