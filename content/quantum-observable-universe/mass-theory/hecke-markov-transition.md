@@ -76,3 +76,5 @@ volume $\hat{V}_i$ is determined by the local crossing data
 $(a_i, b_i)$ at generator $\sigma_i$, with no dependence on the
 crossings at other generators.  This is a direct consequence of
 memorylessness (iii).*
+
+**Archimedean specialisation (§7c).** This block is stated over the real field $\mathbb{R}$ — the archimedean side of the substrate wall: its constructs are real-valued (physical observables, real-analytic bounds, or numerical evaluations at the substrate parameter $q_0$) rather than generic-ring $q$-deformation data. The generic categorical / $q$-deformation machinery it draws on is stated over an abstract coefficient ring in its own blocks; only the archimedean realisation is specialised here.

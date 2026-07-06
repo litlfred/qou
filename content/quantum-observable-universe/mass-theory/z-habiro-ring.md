@@ -88,3 +88,5 @@ the brane-tower partial sums are Cauchy in this topology and that
 their limit recovers the empirical mass under cyclotomic projection
 at a canonically determined depth. See
 [brane tower in $z$-Habiro](#conj:brane-tower-z-habiro).
+
+**Archimedean specialisation (§7c).** This block is stated over the real field $\mathbb{R}$ — the archimedean side of the substrate wall: its constructs are real-valued (physical observables, real-analytic bounds, or numerical evaluations at the substrate parameter $q_0$) rather than generic-ring $q$-deformation data. The generic categorical / $q$-deformation machinery it draws on is stated over an abstract coefficient ring in its own blocks; only the archimedean realisation is specialised here.

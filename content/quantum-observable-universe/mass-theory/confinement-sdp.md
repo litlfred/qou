@@ -108,3 +108,5 @@ The geometric face of this proposition — SDP optimality as
 Picard--Lefschetz steepest descent, dual variables as thimble
 depths — is developed in
 the SDP-as-thimble-flow remark below.
+
+**Archimedean specialisation (§7c).** This block is stated over the real field $\mathbb{R}$ — the archimedean side of the substrate wall: its constructs are real-valued (physical observables, real-analytic bounds, or numerical evaluations at the substrate parameter $q_0$) rather than generic-ring $q$-deformation data. The generic categorical / $q$-deformation machinery it draws on is stated over an abstract coefficient ring in its own blocks; only the archimedean realisation is specialised here.

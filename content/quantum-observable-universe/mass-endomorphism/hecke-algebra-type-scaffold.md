@@ -13,3 +13,5 @@ words, the defining relations, and the Plancherel completeness as class
 hypotheses. Downstream Lean theorems take `[HeckeRelations n q]` and
 `[HeckeWedderburn n q]` as hypotheses; the per-$n$ instances plug in when
 the relation-quotient and Murphy seminormal-form infrastructure land.
+
+**Archimedean specialisation (§7c).** This block is stated over the real field $\mathbb{R}$ — the archimedean side of the substrate wall: its constructs are real-valued (physical observables, real-analytic bounds, or numerical evaluations at the substrate parameter $q_0$) rather than generic-ring $q$-deformation data. The generic categorical / $q$-deformation machinery it draws on is stated over an abstract coefficient ring in its own blocks; only the archimedean realisation is specialised here.

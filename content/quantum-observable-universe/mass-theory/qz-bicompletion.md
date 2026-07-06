@@ -25,3 +25,5 @@ for $(m, n) \leq (m', n')$ are well-defined because $I_{m',n'} \subseteq I_{m,n}
 The bicompletion sits at the apex of the diagram of cyclotomic
 completions, jointly carrying the $q$-only ([Habiro ring](#def:habiro-ring))
 and $z$-only ([$z$-Habiro ring](#def:z-habiro-ring)) cyclotomic structures.
+
+**Archimedean specialisation (§7c).** This block is stated over the real field $\mathbb{R}$ — the archimedean side of the substrate wall: its constructs are real-valued (physical observables, real-analytic bounds, or numerical evaluations at the substrate parameter $q_0$) rather than generic-ring $q$-deformation data. The generic categorical / $q$-deformation machinery it draws on is stated over an abstract coefficient ring in its own blocks; only the archimedean realisation is specialised here.

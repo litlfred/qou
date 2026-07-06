@@ -206,3 +206,5 @@ twist.
 ## Lean formalization
 
 The companion Lean `descended_level_zero` states the result conditional on a `DescendedLevelZeroContext` class instance and defers its proof via `sorry` (`-- Ref: [manuscript]`).
+
+**Archimedean specialisation (§7c).** This block is stated over the real field $\mathbb{R}$ — the archimedean side of the substrate wall: its constructs are real-valued (physical observables, real-analytic bounds, or numerical evaluations at the substrate parameter $q_0$) rather than generic-ring $q$-deformation data. The generic categorical / $q$-deformation machinery it draws on is stated over an abstract coefficient ring in its own blocks; only the archimedean realisation is specialised here.

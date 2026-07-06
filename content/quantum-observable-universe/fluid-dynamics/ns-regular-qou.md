@@ -47,3 +47,5 @@ $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ is a
 irreducibility of the adjoint representation, which gives
 nonzero Euler class).  It is not assumed in this definition;
 it is a diagnostic.
+
+**Archimedean specialisation (§7c).** This block is stated over the real field $\mathbb{R}$ — the archimedean side of the substrate wall: its constructs are real-valued (physical observables, real-analytic bounds, or numerical evaluations at the substrate parameter $q_0$) rather than generic-ring $q$-deformation data. The generic categorical / $q$-deformation machinery it draws on is stated over an abstract coefficient ring in its own blocks; only the archimedean realisation is specialised here.

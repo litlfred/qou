@@ -23,3 +23,5 @@ Then for every $a > 0$:
 3. **Negation transfer.**
    $\bigl(\exists q < a,\, q > 0 \land \neg P(q)\bigr) \iff
     \bigl(\exists q > a^{-1},\, \neg P(q)\bigr)$.
+
+**Archimedean specialisation (§7c).** This block is stated over the real field $\mathbb{R}$ — the archimedean side of the substrate wall: its constructs are real-valued (physical observables, real-analytic bounds, or numerical evaluations at the substrate parameter $q_0$) rather than generic-ring $q$-deformation data. The generic categorical / $q$-deformation machinery it draws on is stated over an abstract coefficient ring in its own blocks; only the archimedean realisation is specialised here.

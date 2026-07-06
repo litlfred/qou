@@ -165,3 +165,5 @@ character `demazureCharacter`, the principal-specialisation ratio
   $x_i = q^{i-1}$, $D_{w_0}(\lambda)$ equals the Macdonald
   hook-content principal specialisation; deferred to a single
   `sorry` citing Kashiwara's refined character formula.
+
+**Archimedean specialisation (§7c).** This block is stated over the real field $\mathbb{R}$ — the archimedean side of the substrate wall: its constructs are real-valued (physical observables, real-analytic bounds, or numerical evaluations at the substrate parameter $q_0$) rather than generic-ring $q$-deformation data. The generic categorical / $q$-deformation machinery it draws on is stated over an abstract coefficient ring in its own blocks; only the archimedean realisation is specialised here.

@@ -125,3 +125,5 @@ This statement is a **conjecture** rather than a theorem because:
 
 Each component is tracked separately as a conjecture so the status
 of the overall expansion can be refined as derivations mature.
+
+**Archimedean specialisation (§7c).** This block is stated over the real field $\mathbb{R}$ — the archimedean side of the substrate wall: its constructs are real-valued (physical observables, real-analytic bounds, or numerical evaluations at the substrate parameter $q_0$) rather than generic-ring $q$-deformation data. The generic categorical / $q$-deformation machinery it draws on is stated over an abstract coefficient ring in its own blocks; only the archimedean realisation is specialised here.
