@@ -1,0 +1,57 @@
+{
+  "computation": "qbeta-t3-carrier-q1-order-preflight",
+  "description": "T3 (bean pxvo): q=1 vanishing-order bookkeeping for the Z3 carrier class (kappa order 3; z critical, z-functionals even orders only => f(z)*kappa excluded as sole a_1 source) + the parity-vs-shadow tension flag. Pre-stated in ledger SS4-ter (commit 44b0b82c).",
+  "audit_only": true,
+  "tier": "structural-exact (symbolic series orders; no fit, no anchors)",
+  "computedAt": "2026-07-06T23:45:03.025445+00:00",
+  "commitSha": "44b0b82cbdf17cffa67c15a264e5725be3488bd1",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "qbeta_t3_carrier_q1_order_preflight_probe.py",
+  "scriptHash": "60bec6cb7d07",
+  "assertions": [
+    {
+      "name": "kappa_q1_order_exactly_3",
+      "passed": true
+    },
+    {
+      "name": "z_minus_half_q1_order_exactly_2",
+      "passed": true
+    },
+    {
+      "name": "dz_dq_at_1_is_zero",
+      "passed": true
+    },
+    {
+      "name": "z_functional_orders_even_only_sampled",
+      "passed": true
+    },
+    {
+      "name": "kappa_over_zhalf_order_1_vanishes",
+      "passed": true
+    },
+    {
+      "name": "kappa_over_zhalf_sq_poles",
+      "passed": true
+    },
+    {
+      "name": "bar_odd_kappa_vanishes_at_1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "kappa_q1_order": 3,
+    "kappa_leading_coeff": "2",
+    "z_minus_half_q1_order": 2,
+    "z_minus_half_leading_coeff": "-1/16",
+    "tension_flag": "a_1 exactly-bar-odd AND a_1(1)=2 jointly impossible for q=1-regular a_1 (odd => vanishes at the bar fixed point). Owner ruling needed: odd-part/swing reading of #1887, or q=1-singular a_1.",
+    "verdict": "T3-1 EXCLUSION (scope-(a)): (rational-in-z, q=1-regular f) x kappa_(2,1) has odd q=1 order (3 - 2k) and can never equal the finite nonzero shadow a_1(1) = 2 -- the naive f(z)*kappa sub-class of Z3 is excluded as the sole a_1 source. T3-2 TENSION (YELLOW, owner): 'a_1 exactly bar-odd' + 'a_1 q=1-regular with shadow 2' are jointly impossible; the #1887 parity must be an odd-part/swing statement or a_1 is q=1-singular. Nothing wired."
+  },
+  "context": {
+    "axis": "z->c_k f-map keystone, bean pxvo (T3)",
+    "prestatement": "docs/coordination/z-ck-fmap-keystone.md SS4-ter (commit 44b0b82c)",
+    "kernel_constraints": "QOU/BraidKnot/QBetaCKRecursionKernelConstraints.lean",
+    "ea56": "QOU/QBeta/ZBarParity.lean"
+  }
+}
