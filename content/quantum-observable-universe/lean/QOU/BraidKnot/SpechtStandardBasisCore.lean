@@ -1082,6 +1082,36 @@ theorem card_col_labels (t : Specht.Tableau μ) (c : ℕ) :
     · show ((t (t.symm ⟨p, _⟩) : ℕ × ℕ)) = p
       rw [Equiv.apply_symm_apply]
 
+omit [CharZero k] in
+/-- The labels in column `c` of `t` with row index `< m` number exactly `m`, provided
+`m ≤ μ.colLen c` (they biject with rows `0, …, m-1`, all of which occur in column `c`). -/
+theorem card_col_labels_row_lt_of_le (t : Specht.Tableau μ) (c m : ℕ)
+    (hm : m ≤ μ.colLen c) :
+    (Finset.univ.filter
+      (fun l => Specht.colPattern t l = c ∧ Specht.rowPattern t l < m)).card = m := by
+  classical
+  refine Eq.trans
+    (Finset.card_bij (fun l _ => Specht.rowPattern t l) ?_ ?_ ?_) (Finset.card_range m)
+  · intro l hl
+    rw [Finset.mem_range]
+    exact (Finset.mem_filter.mp hl).2.2
+  · intro a ha b hb hab
+    rw [Finset.mem_filter] at ha hb
+    refine t.injective (Subtype.ext (Prod.ext hab ?_))
+    exact (ha.2.1).trans (hb.2.1).symm
+  · intro r hr
+    rw [Finset.mem_range] at hr
+    have hcell : (r, c) ∈ μ := YoungDiagram.mem_iff_lt_colLen.mpr (lt_of_lt_of_le hr hm)
+    refine ⟨t.symm ⟨(r, c), (YoungDiagram.mem_cells _).2 hcell⟩, ?_, ?_⟩
+    · rw [Finset.mem_filter]
+      refine ⟨Finset.mem_univ _, ?_, ?_⟩
+      · show ((t (t.symm ⟨(r, c), _⟩) : ℕ × ℕ)).2 = c
+        rw [Equiv.apply_symm_apply]
+      · show ((t (t.symm ⟨(r, c), _⟩) : ℕ × ℕ)).1 < m
+        rw [Equiv.apply_symm_apply]; exact hr
+    · show ((t (t.symm ⟨(r, c), _⟩) : ℕ × ℕ)).1 = r
+      rw [Equiv.apply_symm_apply]
+
 /-! #### The single residual straightening core + the induction skeleton -/
 
 omit [CharZero k] in
