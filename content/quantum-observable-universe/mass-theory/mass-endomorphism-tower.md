@@ -367,3 +367,5 @@ maximal $R$-side statement available without invoking PL machinery
 (which is intrinsically $\mathbb{C}$-side); the extension to
 $|S| \geq 3$ requires moving across $\tau$ and so is recorded as an
 archimedean addendum, not as part of the $R$-side tower formula.*
+
+**Archimedean specialisation (§7c).** The proton–electron ratio is stated over $\mathbb{R}$ (a real Frobenius-norm map $\mathbb{R}\to\mathbb{R}$ and real $q, v$); it is the archimedean numerical evaluation of the generic mass-endomorphism tower, acknowledged here.

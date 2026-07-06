@@ -181,3 +181,5 @@ conjecture class `AWDeformationPath`, whose two-channel descent
 companion remarks
 [`rem:channel-rotation-askey-lit`](#rem:channel-rotation-askey-lit) and
 [`rem:complex-volume-character-variety-path`](#rem:complex-volume-character-variety-path).
+
+**Archimedean specialisation (§7c).** The measured binding and $Q_\beta$ are the real and imaginary parts $\mathrm{Re}, \mathrm{Im}$ of the complex Bring-surface volume, valued in $\mathbb{R}$ (with $E_0 : \mathbb{R}$); this is the archimedean readout of the generic complex-volume construction, acknowledged here.

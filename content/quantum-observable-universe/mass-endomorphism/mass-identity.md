@@ -43,3 +43,5 @@ where $\lVert \cdot \rVert$ is the norm on $R$ induced by the
 [Frobenius pairing](#def:frobenius-pairing).  The mass measures the resistance of the
 Frobenius--Hopf structure to transporting the cycle $\varrho$ through
 the comultiplication.
+
+**Archimedean specialisation (§7c).** This block spans the substrate wall by design: the pre-archimedean `frobeniusMass` is valued in the generic ground ring $R$ (the Frobenius norm $\lVert x\rVert_F = \langle x, x\rangle_F$ stays in $R$), while the post-$\tau$ `scalarMass` is the archimedean realisation $R \to \mathbb{R}$, $x \mapsto \lVert x\rVert$, obtained by evaluating the Frobenius norm at the substrate parameter $q = q_0$. The $R \to \mathbb{R}$ realisation map is intrinsically wall-crossing and cannot be made either $\mathbb{R}$-free or generic-only; it is acknowledged here rather than split off.

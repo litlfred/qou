@@ -183,6 +183,7 @@ export default chapter({
         "enveloping-algebra",
         "quantum-su2",
         "q-casimir",
+        "q-casimir-classical-limit",
         "q-casimir-exists",
         "q-casimir-exists-proof",
         "q-casimir-unique",

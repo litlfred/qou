@@ -114,3 +114,5 @@ When the canonical $f_2$ is derived:
 - [`prop:per-braid-mass-tower`](per-braid-mass-tower.md) — canonical mass formula
 - [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) — sibling conjecture for leptons
 - Audit: [`docs/audits/2026-05-25-rho-k-dependent-conjectures-status.md`](../../../docs/audits/2026-05-25-rho-k-dependent-conjectures-status.md) — full dependency graph
+
+**Archimedean specialisation (§7c).** This conjecture is stated on the archimedean side of the substrate wall: its content is a real-mass sub-percent recovery bound — $\forall M \ge 0,\ \exists M_{\mathrm{rec}},\ |M_{\mathrm{rec}} - M| \le M/100$ over $\mathbb{R}$. The posited functional $f_2(q, \hat V_i, \hat V_j)$ is the generic $q$-deformation input it consumes; the real-mass claim and the generic functional coexist in one block because the conjectural statement is intrinsically about real masses, not a separable archimedean specialisation of an otherwise ℝ-free construction.

@@ -1,7 +1,6 @@
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
-import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.FieldSimp
 
 
@@ -122,14 +121,15 @@ structure CosimplicialCrossedGroupoid (M : Type*) (G : Type*) [Field G] where
 
 /-- The assignment `[n] ↦ 𝔊ₙ` extends to a cosimplicial crossed groupoid.
 
-    Stated with the band group `G = ℝ` (the archimedean specialisation of
-    `𝒪_M×`); the crossed module at each level is the central one
-    (`∂ ≡ 1`), for which the Peiffer identity is automatic. -/
+    Stated over an arbitrary band field `G` (§7c: the construction is
+    algebraic — the central crossed module `∂ ≡ 1` and the Peiffer identity
+    need only field arithmetic — so no archimedean specialisation to `ℝ` is
+    required; the numerical band `𝒪_M×` is recovered by `G := ℝ`). -/
 -- Ref: [yekutieli2010] §4, Theorem 4.2
 -- Ref: [manuscript] §3, Proposition: Cosimplicial crossed groupoid
-theorem cosimplicial_crossed_groupoid_exists (M : Type*)
+theorem cosimplicial_crossed_groupoid_exists (M : Type*) (G : Type*) [Field G]
     [inst : Nonempty M] :
-    Nonempty (CosimplicialCrossedGroupoid M ℝ) := by
+    Nonempty (CosimplicialCrossedGroupoid M G) := by
   -- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2009.12.006
   obtain ⟨p⟩ := inst
   exact ⟨{

@@ -79,3 +79,5 @@ attempts to read them off as a "precision ladder" tuned the
 coefficients against the experimental value rather than evaluating
 them categorically. The canonical content of this block is the
 integrality of the $a_m$, not a high-precision prediction.
+
+**Archimedean specialisation (§7c).** The Habiro / precision-ladder Taylor coefficients ($\mathbb{N}\to\mathbb{R}$) are the real archimedean evaluations of the generic Habiro-ring expansion; the real coefficient sequences sit on the archimedean side of the substrate wall, acknowledged here.

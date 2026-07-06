@@ -80,3 +80,5 @@ unconditional `BlochSuslinUniqueness` is:
 (2) is partially closed at the boundary in
 [`cl2-pentagon-and-faddeev-partial.lean`](cl2-pentagon-and-faddeev-partial.lean).
 (3) and (4) remain Mathlib-pending substantive work.
+
+**Archimedean specialisation (§7c).** The pentagon / Bloch-group relation is instantiated at $\mathbb{R}$ (the Rogers-dilogarithm archimedean realisation) alongside the generic $\mathrm{BlochGroup}[\mathrm{Field}\ F]$ construction; the real instance is the archimedean specialisation, acknowledged here.

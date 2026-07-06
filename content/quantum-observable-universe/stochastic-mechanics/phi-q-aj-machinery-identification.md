@@ -65,3 +65,5 @@ The classes encode literature statements (AJ conjecture, dilog-saddle identifica
 For 𝓑_3 specifically, the algebraic side is in literature (Champanerkar 2003 for classical A-polynomials and Bloch invariants of hyperbolic 3-manifolds; Hikami for related quantum work). What's open: explicit verification that the framework's $\Phi_q$ / $\mathrm{Li}_2^q$ choices align with the AJ machinery's saddles.
 
 **Cross-reference:** [`docs/audits/-q0-into-character-variety-minimal-archimedean.md`](../../../docs/audits/-q0-into-character-variety-minimal-archimedean.md) §9 (AJ conjecture crosses archimedean wall) for full background.
+
+**Archimedean specialisation (§7c).** The $\Phi_q$ / $A_J$ regulator identities are stated over real $q$ with the archimedean ordering $0 < q < 1$; this real-analytic regime is the archimedean side of the substrate wall for the generic quantum-$A$-polynomial machinery, acknowledged here.
