@@ -714,6 +714,39 @@ theorem transversal_sum_eq_zero (t : Specht.Tableau μ)
     _ = (H.card : k)⁻¹ • (0 : Specht.Mtab (k := k) μ) := by rw [hann]
     _ = 0 := smul_zero _
 
+omit [CharZero k] in
+/-- **Polytabloid annihilation from a tabloid-annihilation family (sorry-free) —
+Garnir piece 2, annihilation reduction.** The rep-level signed sum
+`∑_{σ ∈ G} sgn(σ)·(σ·e_t)` vanishes as soon as, for *every* column-stabiliser element
+`ρ ∈ C_t`, the tabloid-level signed sum `∑_{σ ∈ G} sgn(σ)·{σ·ρ·t}` vanishes (`hfam`).
+
+Pure linear algebra: expand `e_t = ∑_{ρ ∈ C_t} sgn(ρ)·{ρ·t}`, push `rep σ` through
+(`rep_of`: `σ·{ρ·t} = {σ·ρ·t}`), swap the `G`- and `C_t`-sums, and factor out `sgn(ρ)`
+so each inner sum is exactly a term of `hfam`. This is the bridge from the tabloid-level
+Garnir annihilation (`mtab_sum_sign_smul_of_eq_zero`, applied to each `ρ·t` with a
+same-row transposition of the Garnir set) to `transversal_sum_eq_zero`'s `hann`
+hypothesis — isolating the remaining pigeonhole crux entirely inside `hfam`. -/
+theorem sum_sign_rep_polytabloid_eq_zero_of_family (t : Specht.Tableau μ)
+    (G : Finset (Equiv.Perm (Fin (Specht.nOf μ))))
+    (hfam : ∀ ρ : Specht.colStab t, ∑ σ ∈ G, (Equiv.Perm.sign σ : ℤ) •
+        Specht.Mtab.of (k := k)
+          (σ • (ρ : Equiv.Perm (Fin (Specht.nOf μ))) • t) = 0) :
+    ∑ σ ∈ G, (Equiv.Perm.sign σ : ℤ) •
+        Specht.Mtab.rep μ σ (Specht.polytabloid (k := k) t) = 0 := by
+  classical
+  simp only [Specht.polytabloid, map_sum, map_zsmul, Specht.Mtab.rep_of, Finset.smul_sum]
+  rw [Finset.sum_comm]
+  refine Finset.sum_eq_zero (fun ρ _ => ?_)
+  have hpull : ∑ σ ∈ G, (Equiv.Perm.sign σ : ℤ) •
+        (Equiv.Perm.sign (ρ : Equiv.Perm (Fin (Specht.nOf μ))) : ℤ) •
+          Specht.Mtab.of (k := k) (σ • (ρ : Equiv.Perm (Fin (Specht.nOf μ))) • t)
+      = (Equiv.Perm.sign (ρ : Equiv.Perm (Fin (Specht.nOf μ))) : ℤ) •
+          ∑ σ ∈ G, (Equiv.Perm.sign σ : ℤ) •
+            Specht.Mtab.of (k := k) (σ • (ρ : Equiv.Perm (Fin (Specht.nOf μ))) • t) := by
+    rw [Finset.smul_sum]
+    exact Finset.sum_congr rfl (fun σ _ => smul_comm _ _ _)
+  rw [hpull, hfam ρ, smul_zero]
+
 /-! #### The self-contained dominance weight (sorry-free)
 
 The straightening induction needs a well-founded measure that strictly increases
