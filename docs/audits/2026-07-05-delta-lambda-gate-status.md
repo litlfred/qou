@@ -252,6 +252,98 @@ not because a new fit is missing.
 - Any **seventh fit-based ansatz** — explicitly banned (AGENTS.md §Precision
   goals; caught by the three-calibration discipline review).
 
+## PROBE 2: A=4 connected [1⁴] interface operator — the MAGNITUDE leg
+
+**Date:** 2026-07-06 · **Bean:** uer8 · **Type:** the one genuinely-untried gated
+lever (scoping §3 Lever 1). Single connected operator, **no fit, no scan**. Per
+the gated discipline: the SU(4) gate is proved and the LOCALITY is measured
+(§2b, 2.093× peak); the untried piece is the MAGNITUDE — does the *single
+connected 4-body [1⁴] operator*, built from canonical zero-fit machinery, supply
+the 2.093× super-pairwise excess at ⁴He and vanish at ⁶Li?
+
+### The object (canonical, zero-fit)
+
+The connected 4-body [1⁴] operator is realized as the **irreducible connected
+(Ursell/Mayer) A-body cluster** `b_A^c` of the canonical interface graph `K_A`
+on nodes `{p^Z, n^N}`, with the *same categorically-forced per-bond factors* the
+pairwise-ceiling probe uses (`f_pp=z`, `f_nn=z−h`, `f_pn=z−h(½−δ/4)`,
+`δ=flavor_split_leading(q)`; Mayer function `g_ij = 1−f_ij`):
+
+```
+b_A^c = Σ_{S ⊆ K_A : S connects all A vertices} ∏_{e∈S} (−g_e)
+```
+
+This is exactly the part of the cluster expansion `1 − ∏_{i<j}(1−g_ij)` that **no
+product of ≤3-body clusters can produce** — the genuine irreducible 4-body term
+the pairwise ceiling structurally lacks (a log-additive pairwise proxy has
+`κ₄ ≡ 0` by construction). The SU(4) gate multiplies by `C(4,A)` (present =1 at
+the ⁴He `[1⁴]` singlet, exactly 0 for `A>4`). Reuses `closed_form_tau_M.markov_z/
+hecke_h` + `_li_2_q_util.flavor_split_leading`; nothing invented.
+Compute: [`computations/probes/su4_connected_1111_magnitude_probe.py`](../../computations/probes/su4_connected_1111_magnitude_probe.py);
+witness `su4-connected-1111-magnitude.witness.json` (mpmath, 50 dps).
+
+### The numbers (q₀ ≈ 1.10998, canonical muon-q₀ literal)
+
+| atom | A | C(4,A) | \|b_A^c\| | Σg (2-body) | \|b_A^c\|/Σg | gated \|b_A^c\| | super× needed |
+|---|---|---|---|---|---|---|---|
+| D    | 2 | 6 | 0.6051 | 0.6051 | 1.000 | — | 1.000 |
+| ⁴He  | 4 | 1 | **1.9614** | 3.6310 | 0.540 | **1.9614** | **2.0925** |
+| ⁶Li  | 6 | 0 | 22.219 | 9.078 | 2.448 | **0.0** | 0.9440 |
+
+- **A=4 magnitude.** The connected `[1⁴]` cluster delivers a super-pairwise
+  enhancement of **×1.540** (`1 + |b₄ᶜ|/Σg`) against the **×2.093** needed —
+  **74 % of the target, ~26 % short**. Right order of magnitude, from zero fit.
+- **A=6 vanishing.** The **proved gate** `C(4,6)=0` drives the gated magnitude to
+  **exactly 0** — the correct locality (measured 0.944×). **Load-bearing caveat:**
+  the *ungated* cluster at A=6 is `|b₆ᶜ|=22.2` (enhancement ×3.45), badly
+  overshooting — so the A=6 locality is supplied **entirely by the proved SU(4)
+  gate**, not by the cluster, whose bare A-scaling is *wrong* (grows with A).
+
+### Verdict — **PARTIAL (scope-(a))**
+
+The single connected `[1⁴]` operator is **right-KIND** (irreducible 4-body, the
+content the pairwise ceiling provably lacks), **right-LOCALITY** (exact A=6
+vanishing via the proved gate), and **right-ORDER-of-magnitude at A=4** (×1.54
+delivered vs ×2.09 needed). It **does NOT close the magnitude parameter-free**:
+
+1. **26 % short** on the physically-honest enhancement metric (×1.54 vs ×2.09).
+2. **Convention-dependent (hidden DOF, Rule 14).** The `delivered = 1+|b₄ᶜ|/Σg`
+   metric depends on the `Σg` normalization choice. A *different* comparison —
+   the gated `|b₄ᶜ|·C(4,4) = 1.9614` directly against the target 2.093 — is
+   within **6 %**, but this is a **UNITS-MISMATCHED coincidence** (a dimensionless
+   Mayer cluster sum vs a ratio-of-binding-ratios; there is no reason they should
+   be equal) and **must NOT be wired** — it is exactly the near-match trap the
+   q-dim convention hidden-DOF finding warns against (option-e.md, 2026-06-28).
+3. The **A=6 vanishing is the gate's, not the cluster's** — the cluster alone has
+   the wrong A-scaling.
+
+**Scope-(a), not (b):** this **constrains the magnitude and confirms the
+ingredient KIND**; it does **not** exclude the `[1⁴]` operator (the ×1.54 lift is
+a permanent, correct, zero-fit contribution — "inaccurate alone" ≠ "excluded"),
+and it is **not** a seventh fit-based ansatz (a single canonical operator, no
+free parameter, no scan). The frontier is unchanged: the exact 2.093× closure
+needs the fuller `[1⁴]`-flavor-projected object (Schur-Weyl `[1⁴]` supermultiplet
+Markov trace on the 12-strand ⁴He braid, or the s5-so3 `W_λ` enrichment) whose
+normalization is fixed by an independent categorical principle — the multi-session
+construction the status doc already flags. **What this session moved:** the
+magnitude leg is no longer "untouched follow-on" — it now has a concrete zero-fit
+lower estimate (×1.54, 74 % of target) with a proved-gate locality, and a pinned
+next step.
+
+### Exact remaining step to production-wire (only if magnitude closes)
+
+The lever would advance to production **only** if an independent categorical
+principle fixes the connected-operator normalization so the enhancement lands at
+2.093× **without** the `Σg` hidden DOF — concretely: replace the Mayer-cluster
+stand-in `b_A^c` with the **Schur-Weyl `[1⁴]`-flavor-projected Markov trace** of
+the 4-nucleon (12-strand) closed braid (the genuine supermultiplet operator, not
+the pairwise-derived cluster), whose weight is canonically normalized by the
+Wenzl `y_λ`. If that projected trace yields ×2.093 at A=4 and the gate still gives
+0 at A=6, wire it as the additive many-body term
+`B(K) = Σ_b B_b + m_e·C(4,A)·|tr_M(e_{[1⁴]}·β_K)|` and add the matching
+`alg:`-block per the appendix-sync STRICT rule. **Until then it stays PARTIAL /
+scope-(a) — not wired.**
+
 ## 5. Key files
 
 - [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](2026-05-18-delta-lambda-gating-context.md) — the original gate doc (Path A/B/C/D taxonomy)
