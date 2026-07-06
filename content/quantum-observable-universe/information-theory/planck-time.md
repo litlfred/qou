@@ -1,29 +1,15 @@
 **Definition.**
-Let $q \in k^\times \setminus \{1\}$ be the substrate parameter
-([substrate parameter](#def:substrate-parameter)) and
-$\hbar_q = 1 - q^{-1}$ the quantum Planck constant
-([quantum Planck constant](#def:quantum-planck-constant)).
-The **Planck time** is
+Let $q \in k^\times \setminus \{1\}$ denote the substrate parameter ([substrate parameter](#def:substrate-parameter)). Let $\hbar_q = 1 - q^{-1}$ denote the quantum Planck constant ([quantum Planck constant](#def:quantum-planck-constant)). We define the **Planck time** as
 
 $$
   t_P(q)  :=  \frac{1}{\hbar_q}
   =  \frac{q}{q - 1}.
 $$
 
-This is a rational function of $q$ defined over any field $k$ in
-which $q \neq 1$.
+This rational function of $q$ is defined over any field $k$ where $q \neq 1$.
 
-**Interpretation.**  One Planck time is the period of a single
-full circuit of the $q$-Reeb flow
-([$q$-Reeb flow](#ex:q-reeb-flow)) — measured in discrete
-$f_q$-iterations on the exceptional divisor
-([Julia set of Reeb flow](#rem:julia-set-reeb)).  One circuit
-comprises $t_P(q)$ iterations of $f_q(z) = z^2 + c(q)$: at the
-deep-quantum limit ($t_P = 1$) one iteration completes one circuit; at
-$q = q_0$ ([local substrate $q$](#prop:local-substrate-q)),
-$\sim 10$ iterations compose one circuit.  The reciprocal
-$\hbar_q = 1/t_P$ is the angular velocity: the fraction of a
-full circuit completed per $f_q$-iteration.
+**Interpretation.**
+One Planck time equals the period of a single full circuit of the $q$-Reeb flow ([$q$-Reeb flow](#ex:q-reeb-flow)). We measure this in discrete $f_q$-iterations on the exceptional divisor ([Julia set of Reeb flow](#rem:julia-set-reeb)). One circuit comprises $t_P(q)$ iterations of $f_q(z) = z^2 + c(q)$. At the deep-quantum limit ($t_P = 1$), one iteration completes one circuit. At the physical substrate value $q = q_0$ ([local substrate $q$](#prop:local-substrate-q)), roughly $10$ iterations compose one circuit. The reciprocal $\hbar_q = 1/t_P$ represents the angular velocity: the fraction of a full circuit completed per $f_q$-iteration.
 
 **Regime table.**
 
@@ -35,21 +21,15 @@ full circuit completed per $f_q$-iteration.
 
 **Field realisations.**
 
-- Over $\mathbb{F}_\pp$: $t_P = q/(q-1) \in \mathbb{F}_\pp$
-  whenever $q \in \mathbb{F}_\pp^\times \setminus \{1\}$.
-  One Planck step is one evaluation of $f_q(z) = z^2 + c(q)$.
-- Over $\mathbb{Q}_\pp$: $v_\pp(t_P) = v_\pp(q) - v_\pp(q-1)$
-  encodes the $\pp$-adic proximity of $q$ to the classical limit.
-- Over $\mathbb{C}$: reproduces the angular period $T = 2\pi/\hbar_q$
-  up to the conventional factor $2\pi$.
+- Over $\mathbb{F}_\pp$: $t_P = q/(q-1) \in \mathbb{F}_\pp$ for $q \in \mathbb{F}_\pp^\times \setminus \{1\}$. One Planck step evaluates $f_q(z) = z^2 + c(q)$ once.
+- Over $\mathbb{Q}_\pp$: The valuation $v_\pp(t_P) = v_\pp(q) - v_\pp(q-1)$ encodes the $\pp$-adic proximity of $q$ to the classical limit.
+- Over $\mathbb{C}$: This reproduces the angular period $T = 2\pi/\hbar_q$, up to the conventional factor $2\pi$.
 
-**Planck length.**  After one Planck time of Reeb flow, the
-angular displacement is
+**Planck length.**
+After one Planck time of Reeb flow, the angular displacement is
 
 $$
   \ell_P(q) =  \hbar_q \cdot t_P =  1
 $$
 
-identically over any field.  The Planck length is always $1$;
-what varies with $q$ is how many discrete operations $t_P(q)$
-compose that unit displacement.
+This identity holds over any field. The Planck length strictly equals $1$. The parameter $q$ varies only the number of discrete operations $t_P(q)$ composing that unit displacement.
