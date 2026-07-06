@@ -14,47 +14,32 @@
 | $m$ | Magnetic | $-\ell, \ldots, +\ell$ | Projection onto Reeb axis |
 | $s$ | Spin | $\pm \tfrac{1}{2}$ | Crossing orientation in Hopf link |
 
-- **$n$**: the writhe level — how many R-I curls have been added
-  at the exceptional divisor.
-- **$\ell$**: which Fourier mode of the curl distribution on
-  the trefoil's torus — how the writhe excitation oscillates
-  around the $(2,3)$ winding.
-- **$m$**: the projection of that oscillation onto the Reeb
-  flow direction — the spatial orientation.
-- **$s$**: the two crossing orientations within the Hopf link
-  (the fiber adjoint involution exchanges them) — spin up
-  and spin down.
+- **$n$**: The writhe level. This counts the R-I curls added at the exceptional divisor.
+- **$\ell$**: The Fourier mode of the curl distribution on the trefoil's torus. This dictates how the writhe excitation oscillates around the $(2,3)$ winding.
+- **$m$**: The projection of that oscillation onto the Reeb flow direction. This determines the spatial orientation.
+- **$s$**: The two crossing orientations within the Hopf link (exchanged by the fiber adjoint involution), corresponding to spin up and spin down.
 
 **The $2n^2$ capacity.**
 
-Each orbital can hold **two electrons** (spin up and spin
-down), corresponding to the trefoil's two crossing
-orientations within the Hopf link.  So each shell $n$ holds
-$2n^2$ electrons:
+Each orbital holds two electrons (spin up and spin down), representing the trefoil's two crossing orientations within the Hopf link. Shell $n$ thus holds $2n^2$ electrons:
 
 $$
   2n^2 =  2 \sum_{\ell=0}^{n-1} (2\ell + 1)
-  =  2(1 + 3 + 5 + \cdots + (2n-1))
+  =  2(1 + 3 + 5 + \cdots + (2n-1)).
 $$
 
-For hydrogen (one electron), only the $n = 1$, $\ell = 0$
-orbital is occupied in the ground state.
+For hydrogen (one electron), only the $n = 1, \ell = 0$ orbital is occupied in the ground state.
 
 **Origin of $1/n^2$ energy levels.**
 
-At shell $n$, the Seifert surface of the Hopf link between
-electron and proton is an $n$-fold covering of the base
-surface, with area $\propto n^2$.  The R-I curls are
-distributed over this surface.  The crossing energy per curl
-scales as $1/n^2$ (same energy spread over larger area):
+At shell $n$, the Seifert surface of the Hopf link between electron and proton is an $n$-fold covering of the base surface, scaling in area as $n^2$. The R-I curls distribute over this surface. Consequently, the crossing energy per curl scales as $1/n^2$:
 
 $$
   E_n =  -\frac{E_{\mathrm{ion}}}{n^2}
-  =  -\frac{13.6 \text{ eV}}{n^2}
+  =  -\frac{13.6 \text{ eV}}{n^2}.
 $$
 
-This is the Rydberg formula, derived from the R-I crossing
-energy on the Hopf link Seifert surface.
+This recovers the Rydberg formula directly from the R-I crossing energy on the Hopf link Seifert surface.
 
 **Hydrogen spectral series as R-I transitions.**
 
@@ -65,5 +50,4 @@ energy on the Hopf link Seifert surface.
 | $n=2 \to 3$ | $+2$ | $1.89$ eV | $656.3$ nm | Balmer-$\alpha$ |
 | $n=3 \to 4$ | $+2$ | $0.66$ eV | $1875$ nm | Paschen-$\alpha$ |
 
-Each transition absorbs or emits a photon ($\mathbf{1}_{B_4}$ 4-strand identity, knot-trivial)
-whose energy equals the R-I crossing energy difference.
+Each transition absorbs or emits a photon ($\mathbf{1}_{B_4}$ 4-strand identity, knot-trivial). The photon energy precisely equals the R-I crossing energy difference.
