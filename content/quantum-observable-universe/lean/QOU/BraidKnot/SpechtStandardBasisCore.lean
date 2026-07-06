@@ -691,6 +691,202 @@ theorem domWeight_le (t : Specht.Tableau μ) : domWeight t ≤ domBound μ := by
     _ = (Specht.nOf μ + 1) * ((Specht.nOf μ + 1) * Specht.nOf μ) := by
         simp [Finset.sum_const, Finset.card_range, Nat.mul_comm, Nat.mul_left_comm]
 
+/-! #### Column-maximality kills column descents (Garnir steps 3b/3c, sorry-free)
+
+Two sorry-free pieces: (3b) the transposition of two same-column labels lies in the
+column stabiliser `C_t`; (3c) swapping a *column descent* — a same-column pair whose
+larger label sits in a strictly lower row — strictly raises the dominance measure
+`domWeight`. Together they say: under column-maximality `hmax` (no `σ ∈ C_t` raises
+`domWeight`), `t` has no column descent. All `ℕ`-valued (§7c-clean). -/
+
+/-- **Garnir step 3b (sorry-free).** The transposition of two labels lying in the same
+column of `t` stabilises the column pattern, hence lies in `C_t`. -/
+theorem colStab_swap_mem (t : Specht.Tableau μ) {a b : Fin (Specht.nOf μ)}
+    (hcol : Specht.colPattern t a = Specht.colPattern t b) :
+    Equiv.swap a b ∈ Specht.colStab t := by
+  rw [Specht.mem_colStab]
+  funext l
+  rw [Specht.arrow_smul_apply, Equiv.symm_swap]
+  rcases eq_or_ne l a with rfl | hla
+  · rw [Equiv.swap_apply_left]; exact hcol.symm
+  rcases eq_or_ne l b with rfl | hlb
+  · rw [Equiv.swap_apply_right]; exact hcol
+  · rw [Equiv.swap_apply_of_ne_of_ne hla hlb]
+
+/-- The row index of any cell of a Young diagram is `< ν.card` (the `i+1` cells
+`(0,0), …, (i,0)` lie in `ν` by down-closure). Local copy — the identical
+`SpechtDominanceCore.row_lt_card` sits *above* this file in the import graph. -/
+theorem row_lt_card (ν : YoungDiagram) (i j : ℕ) (h : (i, j) ∈ ν) : i < ν.card := by
+  classical
+  have hsub : (Finset.range (i + 1)).image (fun i' => (i', 0)) ⊆ ν.cells := by
+    intro c hc
+    rw [Finset.mem_image] at hc
+    obtain ⟨i', hi', rfl⟩ := hc
+    rw [Finset.mem_range] at hi'
+    rw [YoungDiagram.mem_cells]
+    exact YoungDiagram.up_left_mem ν (Nat.lt_succ_iff.mp hi') (Nat.zero_le _) h
+  have hcard : ((Finset.range (i + 1)).image (fun i' => (i', 0))).card = i + 1 := by
+    rw [Finset.card_image_of_injective]
+    · rw [Finset.card_range]
+    · intro x y hxy; simpa using hxy
+  have hle : i + 1 ≤ ν.card := by
+    show i + 1 ≤ ν.cells.card
+    rw [← hcard]; exact Finset.card_le_card hsub
+  omega
+
+/-- The row pattern of a tableau is bounded by `nOf μ`. Local copy (see `row_lt_card`). -/
+theorem rowPattern_lt_nOf (t : Specht.Tableau μ) (l : Fin (Specht.nOf μ)) :
+    Specht.rowPattern t l < Specht.nOf μ :=
+  row_lt_card μ _ _ (t l).2
+
+/-- **Two-point surgery for `domCount'`.** Splitting the underlying `card` sum at the
+labels `a ≠ b` leaves a common tail (the sum over `univ \ {a,b}`) plus the two
+indicator contributions of `a` and `b`. -/
+theorem domCount'_two_point (g : Fin (Specht.nOf μ) → ℕ) {a b : Fin (Specht.nOf μ)}
+    (hab : a ≠ b) (i m : ℕ) :
+    domCount' (μ := μ) g i m
+      = (∑ l ∈ (Finset.univ.erase a).erase b,
+            if ((l : ℕ) < m ∧ g l ≤ i) then 1 else 0)
+        + (if ((a : ℕ) < m ∧ g a ≤ i) then 1 else 0)
+        + (if ((b : ℕ) < m ∧ g b ≤ i) then 1 else 0) := by
+  classical
+  unfold domCount'
+  rw [Finset.card_filter]
+  have hb : b ∈ Finset.univ.erase a :=
+    Finset.mem_erase.mpr ⟨hab.symm, Finset.mem_univ b⟩
+  rw [← Finset.add_sum_erase Finset.univ _ (Finset.mem_univ a),
+      ← Finset.add_sum_erase (Finset.univ.erase a) _ hb]
+  ring
+
+/-- **Garnir step 3c (sorry-free) — the dominance strict-increase core.** Swapping a
+*column descent* strictly raises `domWeight`: if the smaller label `a` (`↑a < ↑b`)
+sits in a strictly lower row than the larger label `b`
+(`rowPattern t b < rowPattern t a`), then the transposition `swap a b` — which moves
+the smaller label up — strictly increases the dominance measure. The gap is exactly
+`(rowPattern t a − rowPattern t b) · (↑b − ↑a) ≥ 1`, realised termwise at
+`(i, m) = (rowPattern t b, ↑b)`. -/
+theorem domWeight_swap_lt (t : Specht.Tableau μ) {a b : Fin (Specht.nOf μ)}
+    (hab : (a : ℕ) < (b : ℕ))
+    (hrow : Specht.rowPattern t b < Specht.rowPattern t a) :
+    domWeight t < domWeight (Equiv.swap a b • t) := by
+  classical
+  set f := Specht.rowPattern t with hf
+  have hne : a ≠ b := fun h => (Nat.ne_of_lt hab) (by rw [h])
+  have hrp : Specht.rowPattern (Equiv.swap a b • t)
+      = fun l => f (Equiv.swap a b l) := by
+    funext l
+    rw [Specht.rowPattern_smul, Specht.arrow_smul_apply, Equiv.symm_swap]
+  have hpt : ∀ i m,
+      (if ((a : ℕ) < m ∧ f a ≤ i) then (1:ℕ) else 0)
+        + (if ((b : ℕ) < m ∧ f b ≤ i) then 1 else 0)
+      ≤ (if ((a : ℕ) < m ∧ f b ≤ i) then 1 else 0)
+        + (if ((b : ℕ) < m ∧ f a ≤ i) then 1 else 0) := by
+    intro i m
+    split_ifs <;> omega
+  have key : ∀ i m,
+      domCount' (μ := μ) f i m
+        ≤ domCount' (μ := μ) (Specht.rowPattern (Equiv.swap a b • t)) i m := by
+    intro i m
+    rw [hrp, domCount'_two_point (μ := μ) f hne i m,
+        domCount'_two_point (μ := μ) (fun l => f (Equiv.swap a b l)) hne i m]
+    have htail :
+        (∑ l ∈ (Finset.univ.erase a).erase b,
+            if ((l : ℕ) < m ∧ f l ≤ i) then (1:ℕ) else 0)
+        = ∑ l ∈ (Finset.univ.erase a).erase b,
+            if ((l : ℕ) < m ∧ f (Equiv.swap a b l) ≤ i) then (1:ℕ) else 0 := by
+      apply Finset.sum_congr rfl
+      intro l hl
+      have hla : l ≠ a := (Finset.mem_erase.mp (Finset.mem_of_mem_erase hl)).1
+      have hlb : l ≠ b := (Finset.mem_erase.mp hl).1
+      rw [Equiv.swap_apply_of_ne_of_ne hla hlb]
+    rw [htail, Equiv.swap_apply_left, Equiv.swap_apply_right]
+    have := hpt i m
+    omega
+  have hstrict :
+      domCount' (μ := μ) f (f b) (b : ℕ)
+        < domCount' (μ := μ) (Specht.rowPattern (Equiv.swap a b • t)) (f b) (b : ℕ) := by
+    rw [hrp, domCount'_two_point (μ := μ) f hne (f b) (b : ℕ),
+        domCount'_two_point (μ := μ) (fun l => f (Equiv.swap a b l)) hne (f b) (b : ℕ)]
+    have htail :
+        (∑ l ∈ (Finset.univ.erase a).erase b,
+            if ((l : ℕ) < (b : ℕ) ∧ f l ≤ f b) then (1:ℕ) else 0)
+        = ∑ l ∈ (Finset.univ.erase a).erase b,
+            if ((l : ℕ) < (b : ℕ) ∧ f (Equiv.swap a b l) ≤ f b) then (1:ℕ) else 0 := by
+      apply Finset.sum_congr rfl
+      intro l hl
+      have hla : l ≠ a := (Finset.mem_erase.mp (Finset.mem_of_mem_erase hl)).1
+      have hlb : l ≠ b := (Finset.mem_erase.mp hl).1
+      rw [Equiv.swap_apply_of_ne_of_ne hla hlb]
+    rw [htail, Equiv.swap_apply_left, Equiv.swap_apply_right]
+    split_ifs <;> omega
+  unfold domWeight
+  refine Finset.sum_lt_sum (fun i _ => Finset.sum_le_sum (fun m _ => key i m)) ?_
+  refine ⟨f b, Finset.mem_range.mpr (Nat.lt_succ_of_lt (rowPattern_lt_nOf t b)), ?_⟩
+  refine Finset.sum_lt_sum (fun m _ => key (f b) m) ?_
+  exact ⟨(b : ℕ), Finset.mem_range.mpr (Nat.lt_succ_of_lt b.2), hstrict⟩
+
+/-- **Column-standardness under column-maximality (sorry-free).** Combining steps 3b/3c:
+if `t` is column-(dominance-)maximal (`hmax`: no `σ ∈ C_t` raises `domWeight`), then the
+labels in each column of `t` strictly increase with the row — `t` has **no column
+descent**. Two same-column labels with `↑a < ↑b` have `rowPattern t a < rowPattern t b`;
+a violation would give a `domWeight`-raising column transposition (`colStab_swap_mem` +
+`domWeight_swap_lt`) contradicting `hmax`. This is the exact "column-sort exhausted"
+consequence the Garnir core `straightening_step_colMax` consumes: it leaves only pure
+*row* descents to resolve. -/
+theorem colStandard_of_colMax (t : Specht.Tableau μ)
+    (hmax : ∀ σ : Specht.colStab t,
+      domWeight ((σ : Equiv.Perm (Fin (Specht.nOf μ))) • t) ≤ domWeight t)
+    {a b : Fin (Specht.nOf μ)}
+    (hcol : Specht.colPattern t a = Specht.colPattern t b)
+    (hab : (a : ℕ) < (b : ℕ)) :
+    Specht.rowPattern t a < Specht.rowPattern t b := by
+  rcases lt_trichotomy (Specht.rowPattern t a) (Specht.rowPattern t b) with h | h | h
+  · exact h
+  · exfalso
+    have hcell : (t a : ℕ × ℕ) = (t b : ℕ × ℕ) := Prod.ext h hcol
+    have hab' : a = b := t.injective (Subtype.ext hcell)
+    exact (Nat.ne_of_lt hab) (by rw [hab'])
+  · exfalso
+    exact absurd (hmax ⟨Equiv.swap a b, colStab_swap_mem t hcol⟩)
+      (not_le.mpr (domWeight_swap_lt t hab h))
+
+omit [CharZero k] in
+/-- **Pure row-descent existence under column-maximality (sorry-free).** Combines
+`exists_descent_of_not_mem_range` (a non-standard polytabloid has a row *or* column
+descent) with `colStandard_of_colMax` (column-maximality kills column descents): a
+column-maximal `t` whose polytabloid is non-standard has a **row descent**. This is
+exactly the input the Garnir coset-sum step of `straightening_step_colMax` consumes —
+it closes Garnir piece 1. -/
+theorem exists_row_descent_of_colMax (t : Specht.Tableau μ)
+    (h : Specht.polytabloid (k := k) t ∉ Set.range (standardPolytabloid (k := k) (μ := μ)))
+    (hmax : ∀ σ : Specht.colStab t,
+      domWeight ((σ : Equiv.Perm (Fin (Specht.nOf μ))) • t) ≤ domWeight t) :
+    ∃ i j, ∃ (hij : (i, j) ∈ μ) (hij1 : (i, j + 1) ∈ μ), labelAt t hij1 ≤ labelAt t hij := by
+  rcases exists_descent_of_not_mem_range (k := k) t h with hrow | hcol
+  · -- already a row descent
+    exact hrow
+  · -- column descent is impossible under `hmax`
+    exfalso
+    obtain ⟨i, j, hij, hi1j, hle⟩ := hcol
+    set a := t.symm ⟨(i + 1, j), (YoungDiagram.mem_cells _).2 hi1j⟩ with ha
+    set b := t.symm ⟨(i, j), (YoungDiagram.mem_cells _).2 hij⟩ with hb
+    have hta : (t a : ℕ × ℕ) = (i + 1, j) := by rw [ha, Equiv.apply_symm_apply]
+    have htb : (t b : ℕ × ℕ) = (i, j) := by rw [hb, Equiv.apply_symm_apply]
+    have hle' : (a : ℕ) ≤ (b : ℕ) := hle
+    have hne : a ≠ b := by
+      intro he
+      rw [he] at hta
+      rw [htb] at hta
+      exact (by simp : ((i, j) : ℕ × ℕ) ≠ (i + 1, j)) hta
+    have hab : (a : ℕ) < (b : ℕ) := lt_of_le_of_ne hle' (fun he => hne (Fin.ext he))
+    have hcolab : Specht.colPattern t a = Specht.colPattern t b := by
+      show (t a : ℕ × ℕ).2 = (t b : ℕ × ℕ).2
+      rw [hta, htb]
+    have hrow := colStandard_of_colMax t hmax hcolab hab
+    rw [show Specht.rowPattern t a = i + 1 from by show (t a : ℕ × ℕ).1 = i + 1; rw [hta],
+        show Specht.rowPattern t b = i from by show (t b : ℕ × ℕ).1 = i; rw [htb]] at hrow
+    omega
+
 /-! #### The single residual straightening core + the induction skeleton -/
 
 omit [CharZero k] in
