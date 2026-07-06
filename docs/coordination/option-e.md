@@ -289,3 +289,28 @@ the two ⁴He-magnitude attacks (class-C geometric vs class-D interface operator
 now share a proved A=4-local / A>4-vanishing signature any candidate index can be
 cross-checked against, alongside the existing defect-cubic / `f_pn`-bracket gates.
 Earlier same-day: I-6 trace-convention unblock posted on #3205 (per-knot axis).
+
+## 2026-07-06 — [1⁴] value-leg writhe derivation + Wigner phys-lit (coordination)
+
+The ⁴He magnitude value leg narrowed to a single object across ~10 PRs
+(#3395 I-par … #3420 Perron–Frobenius … #3422 antisym-Hecke): `b₄` = the
+connected 4-body cumulant (9.243 MeV, exact) of a nucleon-flavor `Λ⁴(4)`
+operator (gate-verified), Lean-proved orthogonal to existing forms, functional
+form `−ln det(I+G)` (sign-unique), `G` a **sign-carrying (bar-odd) exchange**
+(Perron–Frobenius excludes the positive binding factors). PR #3423 adds the
+**lit anchor** (the α binding IS the Wigner SU(4) supermultiplet closed-shell
+energy — nuclear physics *fits* it; `b₄` derives it), a phys-lit **remark**
+(`rem:alpha-wigner-supermultiplet-context` on `conj:wigner-su4-from-spin-isospin`),
+and the **§4a structural finding** (the committed atom word is a linear CHAIN,
+not the [1⁴] complete graph — why `B_sym` under-binds ⁴He). The one open object
+is the **per-pair writhe sign** `sgn(w_{ij})` of the six [1⁴] block crossings,
+read from the [1⁴] link-diagram framing (never fitted).
+
+**Coordination posted:**
+- **#3417** (Elliott SU(3) + q-deformed nuclear) — overlaps on
+  `wigner-su4-from-spin-isospin`; flagged the new phys-lit remark so bean 1ict
+  builds on it rather than duplicating (Wigner SU(4) ⊃ Elliott SU(3), complementary).
+- **#3407** (Reeb-flow `Lk_R^{(k)}` categorical linking operation) — possible
+  **dependency**: their bar-odd-A₋ linking operation may supply the `w_{ij}`
+  linking numbers my writhe leg reads as open. Both independently land in the
+  bar-odd sector. Watching #3407; will consume `Lk_R^{(k)}` if it closes.
