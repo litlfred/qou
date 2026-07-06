@@ -42,10 +42,12 @@ the Prereq-1 finding — so consuming them directly would produce a
 q-inconsistent hybrid.  This script is therefore self-contained at
 the witness q₀ and its output witness is canonical-layer consistent.
 
-Feasibility wall: A ≤ 4 (H_12: 77 partitions, ~1-6 min per χ-word
-eval).  ⁶Li is H_18 (385 partitions, hours); ¹⁶O is H_48
-(p(48) ≈ 1.47e8 partitions) — infeasible for the seminormal kernel;
-recorded in the audit doc.
+Feasibility wall: A ≤ 4.  The binding cost is the seminormal irrep
+dimension, not the partition count: max f^λ = 7700 at H_12 (⁴He,
+minutes), 292,864 at H_15 (⁵Li), 16,336,320 at H_18 (⁶Li), and
+~√(48!) ≈ 3.5e30 at H_48 (¹⁶O, p(48) = 147,273 blocks) — H_18+ is
+out of reach for dense seminormal character evaluation; recorded in
+the audit doc.
 
 No new constants; no fits; derive-or-refute only (Δ_λ gate
 respected — the FR weight is built from χ^λ of a FIXED canonical
@@ -459,7 +461,7 @@ def main() -> int:
         "Weight redistribution within depth strata ∝ dim_q²·|χ^λ(K*)|, "
         "stratum mass preserved; binding B = Σ_k α_k(Φ_k^free − "
         "Φ_k^atom) vs AME (D, T, 3He, 4He; A ≤ 4 wall — 16O is H_48, "
-        "p(48)≈1.47e8, infeasible). ALL χ recomputed at the canonical "
+        "max f^λ ≈ √(48!) ≈ 3.5e30, infeasible). ALL χ recomputed at the canonical "
         "witness q₀ (load_q_50dps; Prereq-1 discipline) at MPFR 50 dps "
         "— committed atom-chi-rust inputs are provenance-verified to "
         "sit at the RUNTIME proton q (exact match) not the witness q₀ "
@@ -504,9 +506,14 @@ def main() -> int:
     })
     wb.add_data("feasibility_wall", {
         "max_A_feasible": 4,
-        "H_18_6Li": "385 partitions, upstream atom word ~hours",
-        "H_48_16O": "p(48) = 147273109 partitions — infeasible for "
-                    "the seminormal kernel",
+        "cost_driver": "max seminormal irrep dim f^lambda "
+                       "(dense matrices), not partition count",
+        "H_12_4He": "p(12)=77, max f^lambda = 7700 — minutes/word",
+        "H_15_5Li": "p(15)=176, max f^lambda = 292864",
+        "H_18_6Li": "p(18)=385, max f^lambda = 16336320 — out of "
+                    "reach dense",
+        "H_48_16O": "p(48)=147273, max f^lambda ~ sqrt(48!) ~ 3.5e30 "
+                    "— structurally infeasible",
     })
     wb.add_data("verdict_tier", tier)
     wb.add_data("verdict", verdict)
