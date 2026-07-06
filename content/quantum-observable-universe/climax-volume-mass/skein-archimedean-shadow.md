@@ -1,12 +1,1 @@
-In the archimedean realisation, the Markov trace on the braid-group
-representation yields the Jones polynomial, and the Skein
-relation is the trace of the characteristic equation of the
-braiding $c_{V,V}$
-([R-matrix braiding](#rem:r-matrix-braiding)).  Over
-$\mathbb{Q}_\mathfrak{p}$, the same characteristic equation holds
-(the eigenvalues $q$ and $-q^{-1}$ are elements of the base ring),
-but there is no ambient $3$-manifold in which to interpret it as a
-knot invariant.  The categorical formulation of the
-[braid action on tensor products](#prop:braid-action-tensor)
-therefore captures the algebraic content of braiding without
-presupposing an archimedean topology.
+In the archimedean realization, the Markov trace on the braid group representation yields the Jones polynomial. The Skein relation is the trace of the characteristic equation of the braiding $c_{V,V}$ ([R-matrix braiding](#rem:r-matrix-braiding)). Over $\mathbb{Q}_\mathfrak{p}$, the same characteristic equation holds because the eigenvalues $q$ and $-q^{-1}$ are elements of the base ring. However, there is no ambient $3$-manifold in which to interpret it as a knot invariant. The categorical formulation of the [braid action on tensor products](#prop:braid-action-tensor) captures the algebraic content of braiding without presupposing an archimedean topology.

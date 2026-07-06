@@ -1,20 +1,16 @@
 **Connection to the Jones polynomial.**
 
-The Jones polynomial $J_K(q)$ of a knot $K$ is the quantum
-trace over the spin-$\tfrac{1}{2}$ representation:
+The Jones polynomial $J_K(q)$ of a knot $K$ is the quantum trace over the spin-$\tfrac{1}{2}$ representation:
 
 $$
-  J_K(q) =  \mathrm{tr}_{V_{1/2}}(\rho(\beta))
+  J_K(q) =  \mathrm{tr}_{V_{1/2}}(\rho(\beta)).
 $$
 
-The colored Jones polynomial $J_K^{(j)}(q)$ uses the
-spin-$j$ representation.  The $q$-angular momentum is
-encoded in the **recursion** between colored Jones
-polynomials:
+The colored Jones polynomial $J_K^{(j)}(q)$ uses the spin-$j$ representation. The $q$-angular momentum is encoded in the recursion between colored Jones polynomials:
 
 $$
   J_K^{(j+1/2)}(q) =  [2j+1]_q \cdot J_K^{(j)}(q)
-  +  \text{(lower-order terms)}
+  +  \text{(lower-order terms)}.
 $$
 
 **Building block values.**
@@ -27,20 +23,14 @@ $$
 | $5_1$ (cinquefoil) | $2$ | $\frac{1}{2}$ | $0.818$ | $0.75$ |
 | $\mathcal{B}_3$ (Borromean) | $3$ | $\frac{1}{2}$ | $0.818$ | $0.75$ |
 
-All single-component knots in $B_2$ carry spin $j = \tfrac{1}{2}$.
-The nuclear spin depends on coupling: $A$ nucleons
-(each $j = 1/2$) couple to total $J$ via $q$-Clebsch--Gordan
-coefficients, with $J$ parity determined by $A \bmod 2$
-([nuclear spin parity](#prop:nuclear-spin-parity)).
+All single-component knots in $B_2$ carry spin $j = \tfrac{1}{2}$. The nuclear spin depends on coupling. $A$ nucleons (each $j = 1/2$) couple to a total $J$ via $q$-Clebsch--Gordan coefficients. The $J$ parity is determined by $A \bmod 2$ ([nuclear spin parity](#prop:nuclear-spin-parity)).
 
 **Nuclear $q$-angular momentum.**
 
 For a nucleus $\mathcal{N}(Z, N)$ with $A = Z + N$:
 
 $$
-  J_q^2(\mathcal{N}) =  [J]_q  [J+1]_q
+  J_q^2(\mathcal{N}) =  [J]_q  [J+1]_q,
 $$
 
-where $J$ is the ground-state spin determined by the nuclear
-link's embedding in the Temperley--Lieb algebra $TL_A(\delta)$
-with $\delta = -(q^{1/2} + q^{-1/2})$.
+where $J$ is the ground-state spin determined by the nuclear link's embedding in the Temperley--Lieb algebra $TL_A(\delta)$ with $\delta = -(q^{1/2} + q^{-1/2})$.

@@ -1,13 +1,6 @@
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
-([Definition](#def:quantum-observable-universe)) with substrate
-parameter $q$ ([Definition](#def:substrate-parameter)),
-categorical action $\mathfrak{S}_q$
-([Definition](#def:categorical-action)), and $q$-Hodge star
-$\star_q$ ([Definition](#def:q-hodge-star)).
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe ([Definition](#def:quantum-observable-universe)) with substrate parameter $q$ ([Definition](#def:substrate-parameter)), categorical action $\mathfrak{S}_q$ ([Definition](#def:categorical-action)), and $q$-Hodge star $\star_q$ ([Definition](#def:q-hodge-star)).
 
-Let $\varrho \colon S^1 \to \tau(A)$ be a smooth closed curve
-(a knot embedding) and let $\mathfrak{m}(\varrho)$ denote the categorical mass
-([Theorem](#thm:topological-mass)).
+Let $\varrho \colon S^1 \to \tau(A)$ be a smooth closed curve (a knot embedding) and let $\mathfrak{m}(\varrho)$ denote the categorical mass ([Theorem](#thm:topological-mass)).
 
 Define the *categorical Möbius energy* by
 
@@ -22,15 +15,12 @@ $$
   \Bigl\lVert
     \frac{d\varrho}{ds} \wedge_q \frac{d\varrho}{dt}
   \Bigr\rVert
-  ds dt,
+  ds dt.
 $$
 
-where $\Delta$ is the Hopf comultiplication, $\int_A$ is the
-Frobenius form ([Remark](#rem:frobenius-simplification)), and the
-integration excludes the diagonal $\mathrm{diag} \subset S^1 \times S^1$.
+Here $\Delta$ is the Hopf comultiplication, $\int_A$ is the Frobenius form ([Remark](#rem:frobenius-simplification)), and the integration excludes the diagonal $\mathrm{diag} \subset S^1 \times S^1$.
 
-Then in the classical limit $q \to 1$, the categorical Möbius energy
-recovers the classical Möbius energy up to a topological normalization:
+In the classical limit $q \to 1$, the categorical Möbius energy recovers the classical Möbius energy up to a topological normalization:
 
 $$
   \lim_{q \to 1} E_{\mathrm{cat}}(\varrho)
@@ -39,7 +29,7 @@ $$
   +  \text{const}.
 $$
 
-Here $E(\varrho)$ is the classical Möbius energy
+The term $E(\varrho)$ is the classical Möbius energy
 
 $$
   E(\varrho)
@@ -51,10 +41,9 @@ $$
     \frac{1}{D(\varrho(s), \varrho(t))^2}
   \Bigr)
   \lvert \varrho'(s) \rvert  \lvert \varrho'(t) \rvert
-  ds dt.
+  ds dt,
 $$
 
-Here $D(\varrho(s), \varrho(t))$ denotes the intrinsic arc-length distance
-along $\varrho$.
+where $D(\varrho(s), \varrho(t))$ denotes the intrinsic arc-length distance along $\varrho$.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs: real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring. Only their archimedean realisation is specialised here.

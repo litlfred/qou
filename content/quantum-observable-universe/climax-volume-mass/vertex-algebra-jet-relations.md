@@ -1,19 +1,6 @@
-Every relation in the QU/QUO presentation
-([vertex algebra relations](#prop:vertex-algebra-relations)) lifts to
-the jet bundle $J^n(A) = A_n$ via the brane tower
-([recursive brane tower](#def:recursive-brane-tower)).  The jet
-prolongation $L_{-1}\colon A_n \to A_{n+1}$ promotes each
-level-$n$ Iwahori--Hecke algebra $H^{(n)}(q)$ to a level-$(n{+}1)$ Hecke
-algebra $H^{(n+1)}(q)$, and the :refterm[descent]{#descent} involution
-$\hat{\tau}_n = \ell_n \circ \mathfrak{d}_{n+1}$ splits the
-level-$(n{+}1)$ relations into **descended** (inherited from
-level $n$) and **transient** (genuinely new at level $n{+}1$).
+Every relation in the QU/QUO presentation ([vertex algebra relations](#prop:vertex-algebra-relations)) lifts to the jet bundle $J^n(A) = A_n$ via the brane tower ([recursive brane tower](#def:recursive-brane-tower)). The jet prolongation $L_{-1}\colon A_n \to A_{n+1}$ promotes each level-$n$ Iwahori--Hecke algebra $H^{(n)}(q)$ to a level-$(n+1)$ Hecke algebra $H^{(n+1)}(q)$. The :refterm[descent]{#descent} involution $\hat{\tau}_n = \ell_n \circ \mathfrak{d}_{n+1}$ splits the level-$(n+1)$ relations into descended (inherited from level $n$) and transient (genuinely new at level $n+1$) parts.
 
-Write $\sigma_i^{(n)}$ for the Hecke generators at brane level $n$,
-$\mathrm{tr}_M^{(n)}$ for the level-$n$ Markov trace, and
-$\check{R}^{(n)}$ for the $R$-matrix at level $n$.  The
-jet embedding is $\ell_n\colon H^{(n)}(q) \hookrightarrow H^{(n+1)}(q)$ with $\ell_n(\sigma_i^{(n)}) = \sigma_i^{(n+1)}$, and
-the :refterm[descent]{#descent} is $\mathfrak{d}_{n+1}\colon H^{(n+1)}(q) \to H^{(n)}(q)$ with $\mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}$.
+Write $\sigma_i^{(n)}$ for the Hecke generators at brane level $n$, $\mathrm{tr}_M^{(n)}$ for the level-$n$ Markov trace, and $\check{R}^{(n)}$ for the $R$-matrix at level $n$. The jet embedding is $\ell_n\colon H^{(n)}(q) \hookrightarrow H^{(n+1)}(q)$ with $\ell_n(\sigma_i^{(n)}) = \sigma_i^{(n+1)}$. The :refterm[descent]{#descent} is $\mathfrak{d}_{n+1}\colon H^{(n+1)}(q) \to H^{(n)}(q)$ with $\mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}$.
 
 ***
 
@@ -21,8 +8,7 @@ the :refterm[descent]{#descent} is $\mathfrak{d}_{n+1}\colon H^{(n+1)}(q) \to H^
 
 ### J-1: Hecke relations (level $n$)
 
-The Hecke generators at every brane level satisfy the same
-quadratic, braid, and locality relations:
+The Hecke generators at every brane level satisfy the same quadratic, braid, and locality relations:
 
 **(J-1a)** $\sigma_i^{(n)2} =  (q - q^{-1})\sigma_i^{(n)} + 1$
 
@@ -30,15 +16,11 @@ quadratic, braid, and locality relations:
 
 **(J-1c)** $\sigma_i^{(n)} \sigma_j^{(n)} =  \sigma_j^{(n)} \sigma_i^{(n)} \qquad (|i - j| \geq 2)$
 
-The substrate parameter $q$ is the **same at every level** —
-this is the content of the Euler characteristic stability
-$\chi(A_n) = \chi(A_0)$.
+The substrate parameter $q$ is identical at every level. This embodies the Euler characteristic stability $\chi(A_n) = \chi(A_0)$.
 
 ### J-2: Jet-prolonged Frobenius--Hopf relations
 
-The multiplication $\mu_n$, comultiplication $\Delta_n$, and
-antipode $S_n$ on $A_n$ are inherited from $A_0$ by
-jet prolongation.  The Frobenius relation lifts level by level:
+The multiplication $\mu_n$, comultiplication $\Delta_n$, and antipode $S_n$ on $A_n$ are inherited from $A_0$ via jet prolongation. The Frobenius relation lifts level by level:
 
 **(J-2a) Frobenius sliding at level $n$**:
 
@@ -73,7 +55,7 @@ $$
   \bigr).
 $$
 
-Non-degeneracy: $\det G^{(n)}_{ij} \neq 0$ at every brane level.
+Non-degeneracy means $\det G^{(n)}_{ij} \neq 0$ at every brane level.
 
 ### J-3: Markov trace at level $n$
 
@@ -96,8 +78,8 @@ $$
   \delta = -(q + q^{-1}).
 $$
 
-**(J-3c) Inter-level compatibility** (jet prolongation preserves
-the Markov trace):
+**(J-3c) Inter-level compatibility**:
+Jet prolongation preserves the Markov trace:
 
 $$
   \mathrm{tr}_M^{(n+1)}\!\bigl(\ell_n(w)\bigr)
@@ -106,8 +88,7 @@ $$
   \qquad \forall w \in H^{(n)}(q).
 $$
 
-This is the knot-variable form of Euler stability: the Jones
-polynomial of a knot is independent of brane level.
+This is the knot-variable form of Euler stability. The Jones polynomial of a knot remains independent of brane level.
 
 ### J-4: Translation operator between levels
 
@@ -117,10 +98,7 @@ $$
   [L_{-1}, a_m^{(n)}] =  -m a_{m-1}^{(n+1)},
 $$
 
-where $a_m^{(n)} = \mathrm{tr}_M^{(n)}(\check{R}^{(n)}_{(a)} z^m)$
-is the $m$-th mode at level $n$.  The commutator maps level-$n$
-modes to level-$(n{+}1)$ modes — the translation operator is the
-**inter-level ladder**.
+where $a_m^{(n)} = \mathrm{tr}_M^{(n)}(\check{R}^{(n)}_{(a)} z^m)$ is the $m$-th mode at level $n$. The commutator maps level-$n$ modes to level-$(n+1)$ modes. The translation operator acts as the inter-level ladder.
 
 **(J-4b) Vacuum stability across levels**:
 
@@ -140,10 +118,7 @@ $$
   w \in R \cdot 1  \text{in } H^{(n)}(q).
 $$
 
-The vanishing of $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A_n))$
-propagates from level $0$ by the jet prolongation proof: any
-$\mathrm{Ad}$-invariant at level $n{+}1$ projects to one at
-level $n$, contradicting the base case.
+The vanishing of $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A_n))$ propagates from level $0$ via the jet prolongation proof. Any $\mathrm{Ad}$-invariant at level $n+1$ projects to one at level $n$, contradicting the base case.
 
 ### J-6: Volume constraint at level $n$
 
@@ -153,16 +128,13 @@ $$
   \epsilon_n \circ (\Lambda^2 g_V^{(n)}) = \epsilon_n.
 $$
 
-The $q$-antisymmetriser $\mathrm{Alt}_2^{(n)} = \frac{1}{[2]_q}(\mathrm{id} - q^{-1} \sigma_1^{(n)})$ has the same
-form at every level (same $q$), so the volume constraint is
-**level-independent**.
+The $q$-antisymmetriser $\mathrm{Alt}_2^{(n)} = \frac{1}{[2]_q}(\mathrm{id} - q^{-1} \sigma_1^{(n)})$ retains the same form at every level because $q$ is constant. The volume constraint remains level-independent.
 
 ***
 
 ## II. :refterm[Descent]{#descent} decomposition of relations
 
-The :refterm[descent]{#descent} involution $\hat{\tau}_n = \ell_n \circ \mathfrak{d}_{n+1}$ is idempotent on $H^{(n+1)}(q)$ and
-splits every relation into descended and transient parts.
+The :refterm[descent]{#descent} involution $\hat{\tau}_n = \ell_n \circ \mathfrak{d}_{n+1}$ is idempotent on $H^{(n+1)}(q)$. It splits every relation into descended and transient parts.
 
 ### D-1: Descended Hecke generators
 
@@ -176,15 +148,11 @@ $$
   \sigma_i^{(n+1)}.
 $$
 
-For $i \leq n-1$: the base Hecke generators are **entirely
-descended** — they are the same crossing at every level.  The
-Hecke relation QU-1a is purely descended.
+For $i \leq n-1$, the base Hecke generators are entirely descended. They represent the same crossing at every level. The Hecke relation QU-1a is purely descended.
 
 ### D-2: Transient generators
 
-At level $n{+}1$, the jet prolongation may produce new
-generators $\sigma^{(n+1)}_{\mathrm{new}}$ in the transient
-complement $\mathcal{A}^{\mathrm{trans}}_{n+1} = \ker\hat{\tau}_n$.  These satisfy:
+At level $n+1$, the jet prolongation may produce new generators $\sigma^{(n+1)}_{\mathrm{new}}$ in the transient complement $\mathcal{A}^{\mathrm{trans}}_{n+1} = \ker\hat{\tau}_n$. These satisfy:
 
 $$
   \hat{\tau}_n(\sigma^{(n+1)}_{\mathrm{new}}) =  0,
@@ -192,9 +160,7 @@ $$
   \mathfrak{d}_{n+1}(\sigma^{(n+1)}_{\mathrm{new}}) =  0.
 $$
 
-Transient generators have no pre-image at level $n$.  They
-still satisfy the Hecke relation (J-1a) at level $n{+}1$
-but their Markov traces are **invisible at level $n$**:
+Transient generators lack a pre-image at level $n$. They satisfy the Hecke relation (J-1a) at level $n+1$, but their Markov traces vanish at level $n$:
 
 $$
   \mathrm{tr}_M^{(n)}\!\bigl(
@@ -219,34 +185,25 @@ $$
   }_{\text{transient correction}}.
 $$
 
-The transient correction encodes the **jet curvature**: the
-failure of the level-$(n{+}1)$ Frobenius relation to be
-entirely determined by level $n$.
+The transient correction encodes the jet curvature: the failure of the level-$(n+1)$ Frobenius relation to be completely determined by level $n$.
 
 ### D-4: Bosonic vs fermionic modes
 
-The :refterm[descent]{#descent} eigenspaces
-([:refterm[descent]{#descent} eigenspaces](#prop:descent-eigenspaces)) separate
-modes by statistics:
+The :refterm[descent]{#descent} eigenspaces ([:refterm[descent]{#descent} eigenspaces](#prop:descent-eigenspaces)) separate modes by statistics:
 
-* **Bosonic (longitudinal)**: $w \in \mathcal{A}^{\mathrm{desc}}_{n+1}$
-  satisfies $\hat{\tau}_n(w) = w$.  In knot coordinates: braid words
-  whose Markov trace is fully determined at level $n$:
+- **Bosonic (longitudinal)**: $w \in \mathcal{A}^{\mathrm{desc}}_{n+1}$ satisfies $\hat{\tau}_n(w) = w$. In knot coordinates, these are braid words whose Markov trace is fully determined at level $n$:
 
 $$
   \mathrm{tr}_M^{(n+1)}(w) =  \mathrm{tr}_M^{(n)}(\mathfrak{d}_{n+1}(w)).
 $$
 
-* **Fermionic (ladder)**: $w \in \mathcal{A}^{\mathrm{trans}}_{n+1}$
-  satisfies $\hat{\tau}_n(w) = 0$.  In knot coordinates: braid words
-  whose Markov trace vanishes when descended:
+- **Fermionic (ladder)**: $w \in \mathcal{A}^{\mathrm{trans}}_{n+1}$ satisfies $\hat{\tau}_n(w) = 0$. In knot coordinates, these are braid words whose Markov trace vanishes when descended:
 
 $$
   \mathrm{tr}_M^{(n)}(\mathfrak{d}_{n+1}(w)) =  0.
 $$
 
-Fermionic modes are the jet-created braid words with no
-analogue at the previous level.
+Fermionic modes are the jet-created braid words with no analog at the previous level.
 
 ***
 
@@ -259,8 +216,7 @@ $$
   \qquad\text{on } \Omega^k_H(A_n),
 $$
 
-where $\Omega^k_H(A_n)$ is the horizontal subcomplex at level $n$
-(braid words with zero writhe at level $n$).
+where $\Omega^k_H(A_n)$ is the horizontal subcomplex at level $n$ (braid words with zero writhe at level $n$).
 
 ### JC-2: $q$-Obstruction at level $n$
 
@@ -270,10 +226,7 @@ $$
   q^{-1}(1 - q^{-1})\omega_V^{(n)} \wedge_q [\xi_n, \alpha],
 $$
 
-where $\omega_V^{(n)} = \sum_{i<j}(\sigma_i^{(n)} \sigma_j^{(n)} - \sigma_j^{(n)} \sigma_i^{(n)})dz^i \wedge dz^j$ is the level-$n$
-Hecke Casimir.  Since $q$ is level-independent, the
-obstruction to $d_q^2 = 0$ has the **same algebraic form**
-at every level — but acts on a larger algebra.
+where $\omega_V^{(n)} = \sum_{i<j}(\sigma_i^{(n)} \sigma_j^{(n)} - \sigma_j^{(n)} \sigma_i^{(n)})dz^i \wedge dz^j$ is the level-$n$ Hecke Casimir. Since $q$ is level-independent, the obstruction to $d_q^2 = 0$ maintains the same algebraic form at every level, acting on a larger algebra.
 
 ### JC-3: Euler characteristic stability
 
@@ -288,9 +241,7 @@ $$
   =  -6.
 $$
 
-The rigidity trace of the identity is level-invariant.  In Hecke
-generators: the quantum factorial $[n]_q!$ at the base strand
-count is preserved by jet prolongation.
+The rigidity trace of the identity is level-invariant. In Hecke generators, the quantum factorial $[n]_q!$ at the base strand count is preserved by jet prolongation.
 
 ### JC-4: Yekutieli obstruction at level $n$
 
@@ -303,8 +254,7 @@ $$
    \in  H^2(\mathcal{S}, \mathcal{B}).
 $$
 
-In Hecke generators, this measures the **transient part of the
-$R$-matrix**:
+In Hecke generators, this measures the transient part of the $R$-matrix:
 
 $$
   \kappa_n
@@ -314,10 +264,7 @@ $$
   \bigr).
 $$
 
-The perpetual obstruction $\kappa_n \neq 0$ means: at every
-level, the $R$-matrix has a nonzero transient component —
-braiding at level $n{+}1$ is **not** entirely determined by
-level $n$.
+The perpetual obstruction $\kappa_n \neq 0$ asserts that at every level, the $R$-matrix possesses a nonzero transient component. Braiding at level $n+1$ is not entirely determined by level $n$.
 
 ### JC-5: Betti numbers across levels
 
@@ -341,9 +288,7 @@ $$
   b_k(A_n)
 $$
 
-and $b_k^{\mathrm{trans}}$ counts genuinely new cohomology
-classes at level $n{+}1$.  The Leray--Serre spectral sequence
-for $A_{n+1} \to A_n$ has $E_2$-page:
+and $b_k^{\mathrm{trans}}$ counts genuinely new cohomology classes at level $n+1$. The Leray--Serre spectral sequence for $A_{n+1} \to A_n$ yields the $E_2$-page:
 
 $$
   E_2^{p,r}
@@ -363,9 +308,7 @@ $$
   [\sigma_i^{(n)}, \sigma_j^{(n)}].
 $$
 
-Self-duality of the curvature holds at every level by
-inheritance of the Frobenius-adjoint structure.  The
-instanton number decomposes:
+Self-duality of the curvature holds at every level via inheritance of the Frobenius-adjoint structure. The instanton number decomposes:
 
 $$
   c_2(A_n)
@@ -373,9 +316,7 @@ $$
   c_2^{\mathrm{desc}}(A_n) + c_2^{\mathrm{trans}}(A_n),
 $$
 
-where $c_2^{\mathrm{desc}} = c_2(A_{n-1})$ is inherited and
-$c_2^{\mathrm{trans}}$ is the topological charge of the
-transient sector.
+where $c_2^{\mathrm{desc}} = c_2(A_{n-1})$ is inherited and $c_2^{\mathrm{trans}}$ is the topological charge of the transient sector.
 
 ### JC-7: Harmonic braid words at level $n$
 
@@ -401,9 +342,7 @@ $$
   }_{\text{new particles at level $n{+}1$}}.
 $$
 
-Descended harmonics are the particles already present at
-level $n$; transient harmonics are **new particle states**
-created by the jet prolongation.
+Descended harmonics represent particles already present at level $n$. Transient harmonics represent new particle states created by the jet prolongation.
 
 ### JC-8: \v{C}ech cocycle at level $n$
 
@@ -415,10 +354,7 @@ $$
   \qquad\text{in } H^{(n)}(q).
 $$
 
-The cosimplicial structure links adjacent levels: the coface
-map $\delta^i$ is jet prolongation $\ell_n$, and the
-codegeneracy $\sigma^j$ is :refterm[descent]{#descent} $\mathfrak{d}_{n+1}$.
-The cosimplicial identities in knot coordinates:
+The cosimplicial structure links adjacent levels. The coface map $\delta^i$ is the jet prolongation $\ell_n$, and the codegeneracy $\sigma^j$ is the :refterm[descent]{#descent} $\mathfrak{d}_{n+1}$. The cosimplicial identities in knot coordinates are:
 
 $$
   \ell_n(T_{g^{(n)}_{ijk}}) =  T_{g^{(n+1)}_{\delta^i(ijk)}},
@@ -428,12 +364,7 @@ $$
 
 ### JC-9: Global gluing (direct limit)
 
-The direct limit $\mathcal{A}_\infty = \varinjlim H^{(n)}(q)$
-is the **infinite-level Iwahori--Hecke algebra**.  A braid word
-$w_\infty \in \mathcal{A}_\infty$ is a compatible sequence
-$(w^{(0)}, w^{(1)}, w^{(2)}, \ldots)$ with
-$\ell_n(w^{(n)}) = \hat{\tau}_n(w^{(n+1)})$ for all $n$.
-The global Markov trace is:
+The direct limit $\mathcal{A}_\infty = \varinjlim H^{(n)}(q)$ is the infinite-level Iwahori--Hecke algebra. A braid word $w_\infty \in \mathcal{A}_\infty$ is a compatible sequence $(w^{(0)}, w^{(1)}, w^{(2)}, \ldots)$ with $\ell_n(w^{(n)}) = \hat{\tau}_n(w^{(n+1)})$ for all $n$. The global Markov trace is:
 
 $$
   \mathrm{tr}_M^{(\infty)}(w_\infty)
@@ -444,10 +375,7 @@ $$
   \qquad\text{(level-independent)}.
 $$
 
-All structural and cohomological relations hold in
-$\mathcal{A}_\infty$.  The global gluing condition ensures
-that locally defined braid words patch into a well-defined
-element of the direct limit.
+All structural and cohomological relations hold in $\mathcal{A}_\infty$. The global gluing condition ensures locally defined braid words patch into a well-defined element of the direct limit.
 
 ***
 
@@ -465,10 +393,4 @@ See [Table 2](#tbl:vertex-algebra-jet-relations-table2-data).
 
 See [Table 3](#tbl:vertex-algebra-jet-relations-table3-data).
 
-The total presentation on $J^n(A)$ comprises **34 relations**:
-11 structural (level-$n$ QU/QUO), 4 :refterm[descent]{#descent}, 9 cohomological,
-plus the 2 inter-level relations J-3c and J-4a that connect
-adjacent brane levels.  All are expressed in the level-$n$
-Hecke generators $\sigma_i^{(n)}$, the level-$n$ Markov trace
-$\mathrm{tr}_M^{(n)}$, and the :refterm[descent]{#descent} involution
-$\hat{\tau}_n$.
+The total presentation on $J^n(A)$ comprises 34 relations: 11 structural (level-$n$ QU/QUO), 4 :refterm[descent]{#descent}, 9 cohomological, plus the 2 inter-level relations J-3c and J-4a that connect adjacent brane levels. We express all relations in the level-$n$ Hecke generators $\sigma_i^{(n)}$, the level-$n$ Markov trace $\mathrm{tr}_M^{(n)}$, and the :refterm[descent]{#descent} involution $\hat{\tau}_n$.

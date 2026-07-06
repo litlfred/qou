@@ -1,13 +1,6 @@
-Let $\zeta=e^{2\pi i/n}$.  The discrete Fourier transform on $C_n$
-([Lagrange resolvent transform](#prop:lagrange-resolvent-transform))
-diagonalises the cyclic action: $\sigma(w_k) = \zeta^{-k} w_k$.
-Any $C_n$-invariant polynomial constraint on the coordinates $x_j$
-transforms to constraints on $C_n$-equivariant combinations of the
-Fourier modes $w_k$.
+Let $\zeta=e^{2\pi i/n}$. The discrete Fourier transform on $C_n$ ([Lagrange resolvent transform](#prop:lagrange-resolvent-transform)) diagonalises the cyclic action as $\sigma(w_k) = \zeta^{-k} w_k$. Any $C_n$-invariant polynomial constraint on the coordinates $x_j$ transforms into constraints on $C_n$-equivariant combinations of the Fourier modes $w_k$.
 
-For $n = 5$
-([Bring's surface](#def:brings-surface)), the three power-sum
-equations become:
+For $n = 5$ ([Bring's surface](#def:brings-surface)), the three power-sum equations become:
 
 ```tex
 \begin{align}
@@ -23,7 +16,4 @@ equations become:
 \end{align}
 ```
 
-The quadric pairs conjugate modes ($w_k$ with $w_{5-k}$); the
-cubic pairs squared modes in the skip-one pattern.  These are the
-$C_5$-equivariant invariants $h_2$ and $h_3$
-([aggregate color quantities](#rem:aggregate-color-quantities)).
+The quadric pairs conjugate modes ($w_k$ with $w_{5-k}$). The cubic pairs squared modes in a skip-one pattern. These combinations correspond to the $C_5$-equivariant invariants $h_2$ and $h_3$ ([aggregate color quantities](#rem:aggregate-color-quantities)).

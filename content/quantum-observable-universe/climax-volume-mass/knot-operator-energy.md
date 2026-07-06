@@ -1,12 +1,5 @@
 **Definition.**
-*Let $H_n(R, q)$ be the Hecke algebra at substrate parameter $q$.
-For each Wedderburn block indexed by a partition $\lambda \vdash k$
-($k = 2, \ldots, k_{\max}(K, q)$, where $k_{\max}(K, q)$ is the
-per-atom truncation determined by the interaction-strand
-requirement of $K$ — see [confinement level](#def:confinement-level)),
-the **knot operator energy** of $\lambda$ at $q$ is the absolute
-value of its LP-dual shadow price
-([prop:mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price)):*
+*Let $H_n(R, q)$ be the Hecke algebra at substrate parameter $q$. Fix a partition $\lambda \vdash k$, bounded by the interaction-strand cutoff $k \leq k_{\max}(K, q)$ ([confinement level](#def:confinement-level)). The **knot operator energy** of $\lambda$ at $q$ is the absolute value of its LP-dual shadow price ([prop:mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price)):*
 
 $$
   E(\lambda, q)
@@ -17,23 +10,13 @@ $$
     \frac{w_\lambda(q)}{d_\lambda(q)}
     \;-\;
     \frac{1}{[k]_q!}
-  \right|,
+  \right|.
 $$
 
-*where $w_\lambda(q) = d_q(\lambda)^2 / [k]_q!$ is the Wedderburn
-weight, $d_\lambda(q) = \dim_q V_\lambda$ is the quantum dimension,
-and $1/[k]_q!$ is the LP-dual variable of the normalisation
-constraint (the smallest $w_\lambda/d_\lambda$ across partitions of
-$k$, attained by the trivial $1$-dimensional $(k)$ and $(1^k)$
-representations).*
+*Here $w_\lambda(q) = d_q(\lambda)^2 / [k]_q!$ is the Wedderburn weight and $d_\lambda(q) = \dim_q V_\lambda$ is the quantum dimension. The subtrahend $1/[k]_q!$ is the LP-dual variable of the normalisation constraint. It equals the minimum of $w_\lambda/d_\lambda$ across partitions of $k$, attained by the trivial $1$-dimensional $(k)$ and $(1^k)$ representations.*
 
 **Values.**
-*The energy takes values in:*
-- *Archimedean realisation $R = \mathbb{R}$: $E(\lambda, q)
-  \in \mathbb{R}_{\geq 0}$ (totally ordered).*
-- *Non-archimedean $\mathbb{Q}_p$: $E(\lambda, q) \in
-  \{p^{-n} : n \in \mathbb{Z}\} \cup \{0\}$ (also totally ordered).*
-- *Finite field $\mathbb{F}_p$: no archimedean absolute value —
-  the energy filtration is undefined, and confinement falls back
-  to ILP feasibility (see [stable atom](#def:stable-atom)) which
-  IS base-ring-independent.*
+*The absolute value depends on the base ring:*
+- *$R = \mathbb{R}$: $E(\lambda, q) \in \mathbb{R}_{\geq 0}$.*
+- *$\mathbb{Q}_p$: $E(\lambda, q) \in \{p^{-n} : n \in \mathbb{Z}\} \cup \{0\}$.*
+- *$\mathbb{F}_p$: No absolute value exists. The energy filtration is undefined. Confinement relies on ILP feasibility ([stable atom](#def:stable-atom)).*
