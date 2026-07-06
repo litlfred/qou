@@ -100,7 +100,7 @@ genuine external dependency, tracked as an open bean):
 | `CompoundBetaShellCalibration` | `lqft` | `E₀ = 𝔔_β` is a **numerical calibration fact** — de-axiom is compute-side (β-decay Q-value chain), not pure Lean |
 | `HorizonFunctor` | `bqfr` | needs an actual directed-limit / boundary construction (category-theory infra) |
 | `CMBFunctor` | `gob0` | needs an actual jet-quotient colimit in `Mod_R` (colimit infra) |
-| `BlowupCalculus` | `zkst` | needs a `BlowupField` model (ordered non-archimedean field — Mathlib `Surreal`/hyperreal cone absent from cache) |
+| `BlowupCalculus` | `zkst` | needs a `BlowupField` model (ordered non-archimedean field). **Verified 2026-07-06: environmental block** — `Hyperreal` (ℝ*), `HahnSeries`, and `LaurentSeries` oleans are *all* absent from the restored sandbox cache (0 oleans + 0 source each) and unfetchable (release server firewalled). The faithful model `ℝ((X))`/ℝ* would compile in a full Mathlib build; it cannot be constructed in this sandbox. Not faked with toy inhabitation. |
 | `CategoricalMassMarkov` | `2g2u` | the Markov-trace mass endomorphism **is** the framework's open research arc (mass-endomorphism conjecture) |
 
 Trivial *inhabitation* of the LOW four (a dummy instance proving the carrier is
