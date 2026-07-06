@@ -97,6 +97,7 @@ export default chapter({
         "complex-volume-intro",
         "binding-qbeta-complex-volume",
         "channel-rotation-askey-lit",
+        "whipple-rotation-intertwining",
         "complex-volume-character-variety-path",
         "color-spacetime-s5-factorization",
         "mass-modulus-em-phase-color-grading",
