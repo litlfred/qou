@@ -134,8 +134,84 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2004]] },
     volume: "7",
     page: "291-309",
-    DOI: "10.4310/JDG/1090425531",
-    URL: "https://doi.org/10.4310/JDG/1090425531",
+    DOI: "10.2140/gtm.2004.7.291",
+    URL: "https://doi.org/10.2140/gtm.2004.7.291",
+    note: "Proceedings of the Casson Fest; arXiv:math/0306230. The AJ-conjecture formulation paper. DOI corrected 2026-07-06 from the spurious J. Diff. Geom. DOI 10.4310/JDG/1090425531 to the authoritative GTM DOI (verified via msp.org search snippets; ds4b literature check, PR #3434).",
+  }),
+
+  // ── Garoufalidis–Lê 2005 — colored Jones is q-holonomic (knots AND links) ──
+  ref({
+    id: "garoufalidis-le-2005-qholonomic",
+    type: "article-journal",
+    title: "The colored Jones function is q-holonomic",
+    author: [
+      { family: "Garoufalidis", given: "Stavros" },
+      { family: "Lê", given: "Thang T. Q." },
+    ],
+    "container-title": "Geometry & Topology",
+    issued: { "date-parts": [[2005]] },
+    volume: "9",
+    page: "1253-1293",
+    DOI: "10.2140/gt.2005.9.1253",
+    URL: "https://doi.org/10.2140/gt.2005.9.1253",
+    note: "arXiv:math/0309214. The existence half of the AJ machinery: the (multi-)colored Jones function satisfies a nontrivial q-difference recurrence for every knot and link — a THEOREM needing no framework input. Added 2026-07-06 (ds4b Borromean-AJ literature check, PR #3434); metadata verified via msp.org/Project Euclid snippets, PDF body not read in-sandbox.",
+  }),
+
+  // ── Lê 2006 — AJ conjecture proved for a large class of 2-bridge knots ──
+  ref({
+    id: "le2006-aj",
+    type: "article-journal",
+    title: "The colored Jones polynomial and the A-polynomial of knots",
+    author: [{ family: "Lê", given: "Thang T. Q." }],
+    "container-title": "Advances in Mathematics",
+    issued: { "date-parts": [[2006]] },
+    volume: "207",
+    page: "782-804",
+    URL: "https://arxiv.org/abs/math/0407521",
+    note: "arXiv:math/0407521 (ScienceDirect S0001870806000156). Proves the AJ conjecture for a large class of two-bridge knots (including all twist knots); the trefoil-class backing for the corpus's StrongAJTrefoil literature class. Added 2026-07-06 (ds4b, PR #3434); DOI not captured in-sandbox — vol/pages verified via ScienceDirect snippet.",
+  }),
+
+  // ── Garoufalidis–Lê 2011 — asymptotics; Borromean VC via Habiro expansion ──
+  ref({
+    id: "garoufalidis-le-2011-asymptotics",
+    type: "article-journal",
+    title: "Asymptotics of the colored Jones function of a knot",
+    author: [
+      { family: "Garoufalidis", given: "Stavros" },
+      { family: "Lê", given: "Thang T. Q." },
+    ],
+    "container-title": "Geometry & Topology",
+    issued: { "date-parts": [[2011]] },
+    volume: "15",
+    page: "2135-2180",
+    URL: "https://arxiv.org/abs/math/0508100",
+    note: "arXiv:math/0508100. Appendix proves the volume conjecture for the BORROMEAN RINGS using Habiro's cyclotomic expansion (habiro2000) — the strongest published Borromean asymptotic result; no AJ/recurrence-ideal statement for the Borromean exists in the literature as of 2026-07 (ds4b check, PR #3434). Metadata verified via search snippets, PDF body not read in-sandbox.",
+  }),
+
+  // ── Sawabe 2024 — the link-AJ formulation (Hopf + Whitehead computed) ──
+  ref({
+    id: "sawabe2024-link-aj",
+    type: "article",
+    title: "On the Annihilating polynomial of the Colored Jones Polynomial for Some Links",
+    author: [{ family: "Sawabe", given: "Shun" }],
+    issued: { "date-parts": [[2024]] },
+    URL: "https://arxiv.org/abs/2409.03802",
+    note: "arXiv:2409.03802 (v3 2026-03-30, unpublished preprint). Per the abstract: computes the annihilating polynomial of the multi-colored Jones for the Hopf and Whitehead links, defines the commutative/noncommutative link A-ideals, and FORMULATES the link version of the AJ conjecture — the only explicit link-AJ formulation found (ds4b check, PR #3434). Whether the Borromean rings appear beyond remarks is UNRESOLVED (PDF body not readable in-sandbox); do not cite this as a Borromean result.",
+  }),
+
+  // ── Masbaum 2003 — skein derivation of Habiro's twist-knot formulas ──
+  ref({
+    id: "masbaum2003-habiro",
+    type: "article-journal",
+    title: "Skein-theoretical derivation of some formulas of Habiro",
+    author: [{ family: "Masbaum", given: "Gregor" }],
+    "container-title": "Algebraic & Geometric Topology",
+    issued: { "date-parts": [[2003]] },
+    volume: "3",
+    page: "537-556",
+    DOI: "10.2140/agt.2003.3.537",
+    URL: "https://doi.org/10.2140/agt.2003.3.537",
+    note: "arXiv:math/0306345. Published companion to habiro2000: skein-theoretic derivation of Habiro's cyclotomic expansions for TWIST KNOTS (4₁ = K_{-1}, trefoil = K_1) — the source used by the corpus's Masbaum twist-knot cross-check (bean xcyc). Twist knots only; does NOT cover the Borromean rings. Added 2026-07-06 (ds4b, PR #3434).",
   }),
 
   // ── Nguyen–Tran 2021 — strong AJ conjecture proved for the figure-eight ──
@@ -5746,13 +5822,13 @@ export const references: CSLData[] = [
     id: "habiro2000",
     type: "article-journal",
     title:
-      "On the colored Jones polynomial of some simple links",
+      "On the colored Jones polynomials of some simple links",
     author: [{ family: "Habiro", given: "Kazuo" }],
     "container-title": "Recent progress towards the volume conjecture (RIMS Kokyuroku)",
     volume: "1172",
     page: "34-43",
     issued: { "date-parts": [[2000]] },
-    note: "PLACEHOLDER: Habiro 2000 RIMS Kokyuroku preprint introducing the colored-Jones machinery later expanded in habiro2002 / habiro2004. Cited in DeltaLambdaSignRule.lean / TwoRoutesProtonMass.lean. Distinct from habiro2002 (Habiro ring) and habiro2004; verify the QOU Lean Ref intends the 2000 RIMS preprint vs an alternate Habiro 2000 work.",
+    note: "Sūrikaisekikenkyūsho Kōkyūroku No. 1172 (2000), 34-43 — unrefereed proceedings, no DOI/arXiv. Citation CONFIRMED 2026-07-06 (ds4b literature check, PR #3434; title pluralised to match standard citations): the single-sum cyclotomic expansion of the colored Jones of simple links including the BORROMEAN RINGS, symmetric in the three colors — the key input to the Garoufalidis-Lê 2011 Borromean volume-conjecture appendix (garoufalidis-le-2011-asymptotics) and the published-derivation companion masbaum2003-habiro (twist knots). Exact formula NOT transcribed into the corpus yet (PDF unavailable in-sandbox; bean n920). Distinct from habiro2002 (bottom tangles) and habiro2004cyclotomic (Habiro ring).",
   }),
 
   // ── Halverson–Ram 1998 — characters of Iwahori–Hecke ──────────
