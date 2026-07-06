@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15 + mpmath 1.4.1",
-  "computedAt": "2026-07-06T21:56:45.699085+00:00",
-  "commitSha": "377fe2c0fd0ab21f7b59d97b49fa0bea46d9f248",
+  "computedAt": "2026-07-06T21:58:57.625598+00:00",
+  "commitSha": "52d7e805050f8001b0b0972bf65aee7de3517b21",
   "assertions": [
     {
       "name": "no_candidate_within_1pct_of_needed_unit",
@@ -12,11 +12,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 121,
+  "durationMs": 2,
   "computation": "reeb-5g-unit-anchor-scan",
   "scriptFile": "reeb_5g_unit_anchor_scan.py",
-  "scriptHash": "10dec6d7eafe",
-  "scriptCommitSha": "08834e2f70dc8604d9a7ba97c39d0b222e6dc71f",
+  "scriptHash": "3c4e118446d6",
+  "scriptCommitSha": "52d7e805050f8001b0b0972bf65aee7de3517b21",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

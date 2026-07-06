@@ -49,7 +49,7 @@ Q_BETA_MEV = mp.mpf(str(Q_NEUTRON_MEV))
 
 def main() -> int:
     t0 = time.monotonic()
-    q, qi, z = load_q_50dps()
+    q, _, _ = load_q_50dps()
     v = mp.sqrt(q)
     two_v = v + 1 / v
     two_q = q + 1 / q
@@ -118,7 +118,7 @@ def main() -> int:
         output_dir=os.path.join(COMP, "probes"), start_time=t0,
     )
     wb.add_assertion("no_candidate_within_1pct_of_needed_unit",
-                     computed=str(all(abs(float(mp.mpf(1) - val / e_needed)) > 0.01
+                     computed=str(all(mp.fabs(1 - val / e_needed) > mp.mpf("0.01")
                                       for val in candidates.values())),
                      expected="True")
     wb.save(extra={"auditOnly": True})
