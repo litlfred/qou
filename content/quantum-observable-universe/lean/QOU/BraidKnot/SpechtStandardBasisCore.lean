@@ -1088,6 +1088,39 @@ theorem straightening_step_colMax (t : Specht.Tableau μ)
   -- column-dominance-maximal), the residual is a pure Garnir coset-sum identity at a
   -- row descent, whose non-identity terms are polytabloids of strictly
   -- dominance-greater (hence `domWeight`-greater) tabloids.
+  --
+  -- REDUCTION ROADMAP (the algebraic half is already proved sorry-free; only the
+  -- combinatorial Garnir-set construction remains). The proved pieces compose as
+  --   Garnir set → hfam → `sum_sign_rep_polytabloid_eq_zero_of_family`
+  --              → `transversal_sum_eq_zero` → `garnir_assembly` → this goal.
+  --
+  -- 1. Take the row descent from `exists_row_descent_of_colMax t h hmax`:
+  --    cells (i,j),(i,j+1) ∈ μ with `labelAt t hij1 ≤ labelAt t hij`.
+  -- 2. Garnir label-sets (as `Finset (Fin (nOf μ))`, via `colPattern`/`rowPattern`):
+  --      A := univ.filter (fun l => colPattern t l = j     ∧ i ≤ rowPattern t l)
+  --      B := univ.filter (fun l => colPattern t l = j + 1 ∧ rowPattern t l ≤ i)
+  --    Disjoint (columns j ≠ j+1). Cardinalities via the labels↔rows bijection in a
+  --    column (each column c has one label per row 0..colLen c − 1):
+  --      |A| = colLen j − i,  |B| = i + 1  (rows 0..i all in col j+1 since (i,j+1)∈μ),
+  --    so |A| + |B| = colLen j + 1.
+  -- 3. `H := (S_A × S_B)` as the subgroup of perms supported on A resp. B, and `T` a
+  --    left transversal of H in `S_{A∪B}`; both are `⊆ colStab t` for H (A,B live in
+  --    single columns), giving `garnir_assembly`'s `1 ∈ T` and
+  --    `transversal_sum_eq_zero`'s `hH`, `0 < H.card`.
+  -- 4. hfam (the pigeonhole crux, now fully worked out): for every ρ ∈ colStab t set
+  --    φ l := rowPattern t (ρ⁻¹ l). φ is injective on A and on B (a column has ≤ 1
+  --    label per row, and t is a bijection); φ(A), φ(B) ⊆ {0..colLen j − 1} (φ(B) via
+  --    colLen (j+1) ≤ colLen j). Were φ(A) ∩ φ(B) = ∅ they would occupy
+  --    |A|+|B| = colLen j + 1 distinct rows inside a colLen j-element set — impossible
+  --    (`Finset.exists_ne_map_eq_of_card_lt_of_maps_to`). Hence ∃ a∈A, b∈B with
+  --    rowPattern (ρ•t) a = rowPattern (ρ•t) b (`rowPattern_smul`), so
+  --    τ_ρ := Equiv.swap a b ∈ rowStab (ρ•t) ∩ S_{A∪B}; feed `mtab_sum_sign_smul_of_eq_zero`
+  --    at the tableau ρ•t (G = S_{A∪B} right-τ_ρ-closed) to get hfam ρ.
+  -- 5. hdom: each non-identity transversal rep interleaves an A-label (col j, row ≥ i)
+  --    with a B-label (col j+1, row ≤ i), a row-raising exchange → `domWeight` strictly
+  --    up (the multi-swap generalization of `domWeight_swap_lt`).
+  -- Combine: `garnir_assembly t T h1 hdom (transversal_sum_eq_zero t T H hH hpos
+  --   (sum_sign_rep_polytabloid_eq_zero_of_family t (S_{A∪B}) hfam |> reindexed))`.
   sorry
 
 omit [CharZero k] in
