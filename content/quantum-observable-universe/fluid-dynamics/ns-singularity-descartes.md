@@ -1,8 +1,6 @@
-Let $(\mathbf{C}, A, \tau)$ be the Descartes quantum universe
-with $\chi(A) = -6$ (Bring's surface of genus 4).
+Let $(\mathbf{C}, A, \tau)$ be the Descartes quantum universe with $\chi(A) = -6$ (Bring's surface of genus 4).
 
-Then $(\mathbf{C}, A, \tau)$ is
-[NS-singular](#def:ns-obstruction):
+The universe $(\mathbf{C}, A, \tau)$ is [NS-singular](#def:ns-obstruction):
 
 $$
   \mathrm{NS}(A)
@@ -11,6 +9,4 @@ $$
    \neq  0.
 $$
 
-The classical 3-dimensional Navier--Stokes equation admits
-smooth initial data for which the solution develops a
-singularity in finite time.
+The classical 3-dimensional Navier--Stokes equation admits smooth initial data for which the solution develops a singularity in finite time.

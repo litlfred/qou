@@ -1,19 +1,5 @@
-With the vortex spectrum and helicity invariant in hand,
-we treat collective behaviour: how the discrete modes assemble into
-turbulent tangles and how perturbations propagate on the brane
-fluid as acoustic excitations.
+We turn to collective behaviour. We examine how discrete modes assemble into turbulent tangles and how perturbations propagate as acoustic excitations on the brane fluid.
 
-We begin with Proposition: $q$-deformed energy cascade and modified Kolmogorov spectrum, which fixes the inertial-range scaling of the
-energy spectrum $E(k)$ as a function of $q$ and the Planck--Reynolds
-number, and Remark: Testable prediction: high-wavenumber deviations from Kolmogorov scaling, which extracts a falsifiable signature
-for BEC and superfluid measurements. Remark: Berry phase on the vortex moduli space records the geometric phase accumulated by
-filament configurations under adiabatic transport. The structural
-content of vortex oscillations is then derived in Proposition: Kelvin wave dispersion from the $q$-Laplacian eigenvalue problem, with
-Remark: Classical limit of the $q$-Kelvin dispersion checking the
-$q \to 1$ recovery of the classical self-induction law. We close
-with Proposition: Acoustic horizon formation and gravitational emergence: perturbations propagate on an acoustic metric whose horizons
-seed the analogue-gravity picture used in the next section, **Global
-regularity for $q > 1$**, where the same spectral apparatus
-controls the nonlinear flow.
+Proposition: $q$-deformed energy cascade and modified Kolmogorov spectrum determines the inertial-range scaling of the energy spectrum $E(k)$ through $q$ and the Planck--Reynolds number. Remark: Testable prediction: high-wavenumber deviations from Kolmogorov scaling extracts a falsifiable signature for BEC and superfluid measurements. Remark: Berry phase on the vortex moduli space records the geometric phase accumulated by filament configurations under adiabatic transport. Proposition: Kelvin wave dispersion from the $q$-Laplacian eigenvalue problem derives the structural content of vortex oscillations. Remark: Classical limit of the $q$-Kelvin dispersion recovers the classical self-induction law at $q \to 1$. We close with Proposition: Acoustic horizon formation and gravitational emergence. Perturbations propagate on an acoustic metric. The horizons of this metric seed the analogue-gravity picture used in the subsequent section, **Global regularity for $q > 1$**, where this spectral apparatus controls the nonlinear flow.
 
 _(draft.)_

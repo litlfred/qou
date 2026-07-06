@@ -1,115 +1,39 @@
-The [NS-singularity theorem](#thm:ns-singularity-descartes) deduces
-Navier--Stokes blowup from the QOU observability axiom
-$\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$. This raises
-the question: is the observability axiom independently motivated,
-or does assuming it amount to assuming the NS conclusion?
+The [NS-singularity theorem](#thm:ns-singularity-descartes) deduces Navier--Stokes blowup from the QOU observability axiom $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$. We must ask whether this axiom is independently motivated, or if assuming it merely amounts to assuming the NS conclusion.
 
-**The axiom has six independent motivations, none involving NS.**
+**The axiom has six independent motivations.** None involve Navier--Stokes.
 
 **1. Gauge irreducibility.**
-In the archimedean realisation, observability becomes
-$H^0(M, \mathrm{Ad}(P)) = 0$: the gauge connection $A$ is
-**irreducible** (no nonzero gauge-equivariant sections of the
-adjoint bundle). Irreducibility is the generic condition for
-connections on principal bundles over compact manifolds — the
-moduli space of irreducible connections is open and dense in the
-space of all connections. Reducible connections form a lower-
-dimensional stratum.
-
-This is a standard condition in gauge theory (Donaldson,
-Uhlenbeck, Atiyah--Bott) that predates QOU by decades.
+In the archimedean realisation, observability becomes $H^0(M, \mathrm{Ad}(P)) = 0$. The gauge connection $A$ is irreducible (there are no nonzero gauge-equivariant sections of the adjoint bundle). Irreducibility constitutes the generic condition for connections on principal bundles over compact manifolds. The moduli space of irreducible connections is open and dense in the space of all connections. Reducible connections form a lower-dimensional stratum. This is a standard condition in gauge theory (Donaldson, Uhlenbeck, Atiyah--Bott).
 
 **2. Contact non-integrability.**
-Observability is equivalent to non-degeneracy of the Levi form
-$\mathcal{L}_\varTheta$ ([core-Levi equivalence](#prop:core-levi-form)),
-which is the defining property of a **contact manifold**.
-Contact manifolds are maximally non-integrable: the horizontal
-distribution $\ker(\varTheta)$ has no integral submanifolds of
-dimension greater than half the contact dimension.
-
-Every odd-dimensional manifold admits a contact structure
-(Martinet 1971). The question is not whether one exists but
-whether the physical brane carries one. The CR structure of
-Bring's surface is strictly pseudoconvex (Levi form positive
-definite), which is stronger than mere non-degeneracy. This is
-a property of the specific manifold, not an assumption about NS.
-Cf.\ \cite{nicolaescu2005, leitner-2018}.
+Observability is equivalent to non-degeneracy of the Levi form $\mathcal{L}_\varTheta$ ([core-Levi equivalence](#prop:core-levi-form)). This is the defining property of a contact manifold. Contact manifolds are maximally non-integrable: the horizontal distribution $\ker(\varTheta)$ contains no integral submanifolds of dimension greater than half the contact dimension. Every odd-dimensional manifold admits a contact structure (Martinet 1971). The relevant question is whether the physical brane carries one. Bring's surface possesses a strictly pseudoconvex CR structure (positive definite Levi form). This condition is stronger than mere non-degeneracy, and it is a property of the specific manifold rather than an assumption about Navier--Stokes.
 
 **3. Tannaka--Krein reconstruction.**
-The fibre functor $\tau$ reconstructs $A$ as a Hopf algebra via
-Tannaka--Krein duality. For this reconstruction to yield a
-**quantum group** (rather than a quantum groupoid or a degenerate
-algebra), the representation category must be semisimple and the
-forgetful functor must be faithful. Observability ensures that
-the adjoint representation is **simple** (no trivial
-sub-representation), which is necessary for semisimplicity of
-$\mathrm{Rep}(\mathrm{SU}_q(2))$.
-
-Without observability, the adjoint representation would contain
-a copy of $\mathbf{1}$, the Lie algebra $\mathfrak{su}(2)$
-would have a centre, and the quantum group would degenerate
-to $\mathrm{U}(1) \times \mathrm{SU}(2)/\mathrm{U}(1)$ — a
-reducible structure.
+The fibre functor $\tau$ reconstructs $A$ as a Hopf algebra via Tannaka--Krein duality. For this reconstruction to yield a quantum group (rather than a quantum groupoid or a degenerate algebra), the representation category must be semisimple, and the forgetful functor must be faithful. Observability ensures the adjoint representation is simple (no trivial sub-representation). This simplicity is necessary for the semisimplicity of $\mathrm{Rep}(\mathrm{SU}_q(2))$. Without observability, the adjoint representation would contain a copy of $\mathbf{1}$. The Lie algebra $\mathfrak{su}(2)$ would acquire a centre, and the quantum group would degenerate to the reducible structure $\mathrm{U}(1) \times \mathrm{SU}(2)/\mathrm{U}(1)$.
 
 **4. Mass non-degeneracy.**
-The [mass identity](#def:mass-identity) $m \propto
-\oint_\varrho \|\nabla_A q\| \cdot \|L \wedge F^+\|$ is
-nonzero for a stable vortex $\varrho$ iff the integrand is
-nonzero, which requires $L \neq 0$ (Levi form non-degenerate)
-at points of $\varrho$. If observability fails at $\varrho$,
-then $L = 0$ there, $m = 0$, and the vortex is massless —
-it is not a particle but a gauge artifact.
+The [mass identity](#def:mass-identity) $m \propto \oint_\varrho \|\nabla_A q\| \cdot \|L \wedge F^+\|$ is nonzero for a stable vortex $\varrho$ if and only if the integrand is nonzero. This requires $L \neq 0$ (a non-degenerate Levi form) at points of $\varrho$. If observability fails at $\varrho$, then $L = 0$ there. Consequently, $m = 0$, and the vortex becomes a massless gauge artifact rather than a particle.
 
 **5. Particle existence.**
-The [SU(2) emergence theorem](#thm:su2-emergence) deduces the
-gauge group $\mathrm{SU}(2)$ from the QOU axioms. If
-observability fails, the gauge group reduces to a proper
-subgroup (e.g. $\mathrm{U}(1)$), and the representation
-theory cannot produce the full particle spectrum. No quarks,
-no hadrons, no nuclear physics.
+The [SU(2) emergence theorem](#thm:su2-emergence) deduces the gauge group $\mathrm{SU}(2)$ from the QOU axioms. If observability fails, the gauge group reduces to a proper subgroup (such as $\mathrm{U}(1)$). The representation theory can no longer produce the full particle spectrum.
 
 **6. Measurability.**
-The word "observable" in "quantum observable universe" is
-literal: every degree of freedom of $A$ is accessible to
-measurement via the fibre functor $\tau$.
-$\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) \neq 0$ would mean
-there exists a nonzero morphism $\phi \colon \mathbf{1} \to
-\mathrm{Ad}(A)$ — a "hidden symmetry" that commutes with all
-measurements. The universe would contain a sector invisible
-to any experiment.
+Every degree of freedom of $A$ must be accessible to measurement via the fibre functor $\tau$. A failure of observability ($\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) \neq 0$) implies the existence of a nonzero morphism $\phi \colon \mathbf{1} \to \mathrm{Ad}(A)$. This constitutes a "hidden symmetry" that commutes with all measurements. The universe would contain a sector entirely invisible to experiment.
 
 **Consequences of dropping observability.**
 
-Define a **quantum pre-universe** (QPU) as a quantum universe
-$(\mathbf{C}, A, \tau)$ satisfying all QOU axioms **except**
-observability. In a QPU:
+We define a quantum pre-universe (QPU) as a quantum universe $(\mathbf{C}, A, \tau)$ satisfying all QOU axioms except observability.
 
 See [Table](#tbl:observability-independent-motivation-table-data).
 
-The QPU is a weaker framework. It does not force NS blowup
-because the contact structure can degenerate at collision
-points, allowing vortex cores to flatten.
+The QPU provides a weaker framework. It does not force Navier--Stokes blowup because the contact structure can degenerate at collision points, permitting vortex cores to flatten.
 
 **The relationship between observability and NS.**
 
-The logical relationship is:
+We have the logical implication:
 
 $$
   \text{Observability} \Longrightarrow \text{NS singular}
 $$
 
-but **not** the converse. NS blowup could occur even without
-observability (through a different mechanism). And NS regularity
-is **compatible** with a QPU (where observability fails).
-
-The argument is:
-- If the physical universe is a QOU (observability holds), then
- NS blows up.
-- If the physical universe is only a QPU (observability fails),
- then the NS question is open — but so is particle physics
- (no mass, no SU(2), no quarks).
-
-The observability axiom is not an encoding of NS blowup. It is
-a measurement principle with independent gauge-theoretic,
-contact-geometric, representation-theoretic, and physical
-content. The NS consequence is a theorem, not an assumption.
+The converse does not hold. Navier--Stokes blowup could occur through a different mechanism even without observability. Furthermore, NS regularity remains compatible with a QPU. If the physical universe is a QOU (observability holds), Navier--Stokes blows up. If it is only a QPU (observability fails), the Navier--Stokes question remains open, but particle physics loses mass, SU(2), and quarks. The observability axiom encodes a measurement principle with independent physical and geometric content. The Navier--Stokes consequence is a theorem, not an assumption.
