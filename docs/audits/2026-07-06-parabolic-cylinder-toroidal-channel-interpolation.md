@@ -433,7 +433,55 @@ ordered by nearness:
    numerical exploitation must go through the Δ_λ gate (formalize-first,
    no seventh ansatz): the path is P1-style forcing lemmas, not fits.
 
-## 10. Corpus-grep record
+## 10. Tranche 3 (owner picked §9 paths 1 + 2 + conjecture formalization)
+
+**T1 — bar-parity prune of the recorded Δ_λ ansätze (6/6, audit-only).**
+[`bar_parity_delta_lambda_prune_probe.py`](../../computations/substrate/bar_parity_delta_lambda_prune_probe.py).
+Grounding facts, all exact: $\mathrm{dim}_q$ is bar-even (hook brackets);
+Hecke characters obey the **twisted** parity
+$\chi_\lambda(w; q^{-1}) = (-1)^{\ell(w)} \chi_{\lambda'}(w; q)$ (verified
+via explicit Hoefsmit representations, every irrep of $H_2$ and $H_3$,
+words to length 3 — the probe also pinned the Hoefsmit diagonal-order
+convention by the braid relation); content sums are conjugation-odd.
+Classification of the recorded families
+(per [`2026-05-18-delta-lambda-gating-context.md`](2026-05-18-delta-lambda-gating-context.md)):
+content-linear kernels (PR #619 `c_content_monotonic`) are **bar-odd →
+pruned**; $\lambda \leftrightarrow \lambda'$-asymmetric Frobenius-cost
+kernels (the LP singleton picks) are **pruned unless routed to the weak
+sector**; $\mathrm{dim}_q$-built kernels (co-Casimir, Plancherel) **pass
+parity** — their recorded numerical failures stand unchanged; PROBE-4's KL
+prune is parity-consistent (the chirality sign is the bar-odd datum). No
+ansatz re-litigated, none proposed.
+
+**T2 — toroidal level selection on the Hopf tower (6/6; GAP-A-3 candidate).**
+[`toroidal_level_selection_hopf_probe.py`](../../computations/substrate/toroidal_level_selection_hopf_probe.py).
+The $(2, 2k)$ torus-link (Hopf-power) two-channel trace tower
+$x_k = W_+ q^{2k} + W_- q^{-2k}$ **is exactly** the forced toroidal family:
+it satisfies the $2\cosh\eta$ degree recurrence at $\eta = 2\ln q$, and
+
+$$
+x_k = \sqrt{\tfrac{\pi \sinh\eta}{2}}
+\Bigl[ (W_+ + W_-)\, P^{1/2}_{k-1/2}(\cosh\eta)
++ (W_+ - W_-)\, k\, P^{-1/2}_{k-1/2}(\cosh\eta) \Bigr],
+$$
+
+with $k$-independent coefficients (solved at $k = 1,2$, verified to
+$\sim 10^{-42}$ at $k = 3..5$): the bar-even channel rides $P^{+1/2}$
+($\cosh$), the bar-odd channel rides $P^{-1/2}$ ($\sinh$), at exactly the
+forced order $\mu = \tfrac12$ and half-integer degree $k - \tfrac12$.
+**Level-selection reading:** allowed levels = integer windings $k$;
+Hopf/²H = the $k = 1$ ground level; zero-point = the forced $-\tfrac12$.
+Structural only — selects levels, produces no binding number.
+
+**T3 — conjecture formalized (§3b primary class, `lean`-direct exit 0).**
+[`conj:whipple-rotation-intertwining`](../../content/quantum-observable-universe/mass-endomorphism/whipple-rotation-intertwining.md)
+(registered in `sec:complex-volume`): the channel rotation acts on
+winding-graded ladder data as the Whipple degree–order exchange
+(grading swap + involutivity as content-bearing class fields; primary — no
+instance, no conjectural hypothesis; a provable `grading_square` sanity
+theorem keeps the fields non-vacuous).
+
+## 11. Corpus-grep record
 
 - `parabolic cylinder|Weber equation|Hermite`: hits are the Askey/channel
   cluster cited above + bibliography; no prior parabolic-cylinder treatment.
