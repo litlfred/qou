@@ -29,6 +29,7 @@ del _sys, _Path, _bridge
 
 import json, time
 from q_parameter import Q_50_DIGIT_STR
+from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION, M_D_MEV_VALIDATION
 from pathlib import Path
 from mpmath import mp, mpf, fabs
 import numpy as np
@@ -186,8 +187,8 @@ rho_codata = float(lp_w['data']['rho_K_codata'])
 delta_rho = sum(D_y[i] * D_chi[i] * delta_full[i] for i in range(len(D_parts)))
 rho_pred = rho_LO + delta_rho / abs_tr_M_D
 m_D_pred = m_e * rho_pred
-m_D_codata = 1875.61294257  # MeV
-B_D_pred = (938.27208816 + 939.56542052) - m_D_pred + m_e  # Z*m_p + N*m_n - M_D + Z*m_e
+m_D_codata = mpf(M_D_MEV_VALIDATION)  # MeV (codata_constants registry)
+B_D_pred = (mpf(M_P_MEV_VALIDATION) + mpf(M_N_MEV_VALIDATION)) - m_D_pred + m_e  # Z*m_p + N*m_n - M_D + Z*m_e
 B_D_AME = 2.22452  # MeV
 
 print(f"\n── Deuteron binding prediction (bar-symmetric min-norm) ──")

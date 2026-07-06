@@ -35,18 +35,19 @@ $V^{\vee}$ together with morphisms
 $\mathrm{ev}_V \colon V \otimes V^{\vee} \to \mathbf{1}$
 and
 $\mathrm{coev}_V \colon \mathbf{1} \to V^{\vee} \otimes V$
-satisfying the [snake identities](#def\:snake-identity).
+satisfying the [snake identities](#def:snake-identity).
 
 We say $\mathbf{C}$ is *$R$-linear* (for a commutative ring $R$)
 if every hom-set is an $R$-module and composition is $R$-bilinear.
-We require $R$ to be [without quasi-zeros](#rem\:glossary-no-quasi-zeros).
+We require $R$ to be [without quasi-zeros](#rem:glossary-no-quasi-zeros).
 
 The category is *braided monoidal* if it is further equipped with a
 natural isomorphism (the *braiding*)
 $c_{X,Y} \colon X \otimes Y \xrightarrow{\sim} Y \otimes X$
 compatible with the associator and satisfying the hexagon axioms.
 When $c_{Y,X} \circ c_{X,Y} = \mathrm{id}$ the braiding is
-*symmetric*; in general $c^2 \neq \mathrm{id}$.  Given a braiding,
+*symmetric* (as in $\mathbf{Vect}$); in general
+$c^2 \neq \mathrm{id}$ (as in $\mathbf{Rep}(\mathrm{SU}_q(2))$).  Given a braiding,
 the *exterior power* $\Lambda^k V$ is defined as the image of the
 antisymmetriser
 $\mathrm{Alt}_k = \sum_{\pi \in S_k} \mathrm{sgn}(\pi)\pi$ acting

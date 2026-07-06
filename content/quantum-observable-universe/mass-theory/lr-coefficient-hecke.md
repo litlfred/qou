@@ -1,6 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c).
-Underlying combinatorial content stays generic to any commutative ring.*
-
 **Proposition.**
 *For partitions $\mu \vdash n_1$, $\nu \vdash n_2$, and $\lambda \vdash n_1 + n_2$,
 the **Littlewood-Richardson coefficient** $c^\lambda_{\mu\nu}$ is the
@@ -55,14 +52,14 @@ $c^\lambda_{\mu\nu}$-dimensional multiplicity space.
 
 ## Computational realisation
 
-The script
-[`folio-assistant/computations/substrate/lr_coefficients.py`](../../folio-assistant/computations/substrate/lr_coefficients.py)
+the formalism
+the canonical formalism
 computes $c^\lambda_{\mu\nu}$ via direct LR-tableau enumeration with
 Yamanouchi pruning. Precomputed tables exist for the canonical
 A=2/3/4 atomic decompositions
 (`LR_TABLE_3_3_TO_6`, `LR_TABLE_3_6_TO_9`, `LR_TABLE_6_6_TO_12`).
 The skew-SYT primitive
-[`pyhecke.skew_syt.skew_syt_count`](../../tools/pyhecke/python/pyhecke/skew_syt.py)
+the canonical formalism
 (PR [#1515](https://github.com/litlfred/qou/pull/1515)) is a
 related-but-distinct quantity ($f^{\lambda/\mu} = $ # SYT of skew
 shape, weights all chains; $c^\lambda_{\mu\nu}$ counts only the

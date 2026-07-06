@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ and $V$ the fundamental
 representation.  Suppose $q$ is not a root of unity.  Then:
@@ -45,7 +43,5 @@ representation.  Suppose $q$ is not a root of unity.  Then:
    is completely decomposed by (1), the set of irreducible summands
    --- labelled by knot types via (2) --- spans $V_{\mathrm{phys}}$.
    No metric completion is invoked.
-
-
 
 **Mathematical Novelty:** The synthesis that knot types form a complete eigenbasis for $\varinjlim V^{\otimes n}$, which conceptually replaces Feynman's continuum integral, is a genuinely framework-specific and novel mathematical synthesis. The accompanying Lean formalization achieves a careful combining and conditional proof over bundled standard results.

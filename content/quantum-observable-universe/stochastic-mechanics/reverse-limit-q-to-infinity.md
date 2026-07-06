@@ -1,5 +1,4 @@
-**Theorem (D13 reverse-limit closure — algebraic fragment, Sprint 3
-discharge; full categorical bar deferred to Sprint 5 Hoefsmit).**
+**Theorem (D13 reverse-limit closure — algebraic fragment).**
 *The Kashiwara crystal limit $q \to 0$
 ([`prop:crystal-isospin-degeneracy`](#prop:crystal-isospin-degeneracy), D12)
 has a structural counterpart at $q \to \infty$, related to the $q
@@ -44,7 +43,7 @@ just a formal involution on the parameter: every Kashiwara crystal
 construction has a reverse-crystal analogue at $q \to \infty$,
 related by bar.
 
-## Why this matters
+## Significance
 
 D12 (Kashiwara $q \to 0$) is partially formalised in the framework
 via [`prop:crystal-isospin-degeneracy`](#prop:crystal-isospin-degeneracy).
@@ -52,7 +51,7 @@ The framework does NOT currently use the $q \to \infty$ limit
 explicitly — but every Kashiwara-crystal result has a bar-paired
 counterpart at $q \to \infty$ that can be derived for free.
 
-For the matter/antimatter discussion (per CLAUDE.md §7b + D22 Type-B
+For the matter/antimatter discussion (per AGENTS.md §7b + D22 Type-B
 folding): if matter is identified with Kashiwara crystal fixed
 points (at $q \to 0$), antimatter corresponds to
 reverse-crystal fixed points (at $q \to \infty$), and the bar
@@ -61,8 +60,6 @@ matter-antimatter conjugation** orthogonal to the color-tube C
 action of [D6](c-from-color-flavor-swap.md).
 
 ## Diagnostics
-
-Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/canonical-watcher.md) §Slot J:
 
 - **GB filtration level**: same as the Kashiwara crystal at $q \to 0$
   (the bar-image preserves Coxeter length).

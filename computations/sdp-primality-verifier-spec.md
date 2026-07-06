@@ -15,13 +15,13 @@ optimised numerical at n ≤ 30 via the existing `shell_closure_compute.py`
 framework.
 
 **Audit branch infrastructure** (
-[`folio-assistant/computations/from_scratch/hoefsmit_general.py`](https://github.com/litlfred/qou/blob/claude/tier3-math-audit-B0wyO/folio-assistant/computations/from_scratch/hoefsmit_general.py)
+[`computations/from_scratch/hoefsmit_general.py`](https://github.com/litlfred/qou/blob/claude/tier3-math-audit-B0wyO/computations/from_scratch/hoefsmit_general.py)
 on `claude/tier3-math-audit-B0wyO`):
 
 - From-scratch Hoefsmit seminormal matrix construction for $H_n(q)$.
 - Generates SYTs of any partition shape, computes axial distances,
   builds `σ_i^λ` matrices over $\mathbb{Q}(q)$.
-- Companion: [`wedderburn_markov.py`](https://github.com/litlfred/qou/blob/claude/tier3-math-audit-B0wyO/folio-assistant/computations/from_scratch/wedderburn_markov.py)
+- Companion: [`wedderburn_markov.py`](https://github.com/litlfred/qou/blob/claude/tier3-math-audit-B0wyO/computations/from_scratch/wedderburn_markov.py)
   for Wedderburn-block trace identities.
 
 The audit branch independently **confirmed our proved theorem**

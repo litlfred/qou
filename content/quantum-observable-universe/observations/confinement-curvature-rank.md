@@ -66,10 +66,10 @@ Confinement is then not a separate dynamical mechanism on top of the
 QOU framework — it is *built in* as the spectral-sequence collapse.
 Every prediction of the framework
 ([universal residue](#prop:plancherel-term-7-formulation),
-[$Q_\beta$ structural derivation](#)) is automatically gauge-invariant
+[$\mathfrak{Q}_\beta$ structural derivation](#)) is automatically gauge-invariant
 because the spectral-sequence projection forces it through $Z(A)$.
 The rank-3 chirality residue $\mathrm{Vol}(6_1) \cdot |(q;q)_3|$ in
-the $Q_\beta$ formula is a **gluon-condensate background term**, and
+the $\mathfrak{Q}_\beta$ formula is a **gluon-condensate background term**, and
 the rank-$\geq 4$ universal Pochhammer tail $|(q;q)_4|$ is the
 **Frobenius co-Casimir** — both confinement residues, not free
 parameters.

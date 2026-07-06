@@ -44,7 +44,7 @@ extensions identified") was: go DOWN to H_1, not UP to H_4/H_5.
 ```
 
 All α/(4π) PRs are SHALLOW additions under
-`folio-assistant/computations/` + `docs/coordination/` (and
+`computations/` + `docs/coordination/` (and
 `content/.../predicted-spectra/em-coupling-bring-zero-mode.{md,lean}`
 for #1508 + #1523).  **No file-level conflicts** across the seven PRs.
 
@@ -52,7 +52,7 @@ for #1508 + #1523).  **No file-level conflicts** across the seven PRs.
 
 All 5 open PRs hit the same `validate` + `Content pipeline` 3-4 sec
 failures.  Owner confirmed earlier these are the **pre-existing
-billing-related cluster** (per CLAUDE.md "CI billing failures"
+billing-related cluster** (per AGENTS.md "CI billing failures"
 section); not actionable from any feature branch.  Skip per
 established pattern.
 

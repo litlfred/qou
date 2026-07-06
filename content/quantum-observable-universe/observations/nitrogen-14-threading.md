@@ -14,7 +14,7 @@ $(q + q^{-1})/2$).
 | Coulomb excess | 0 | $-2(q - q^{-1})$ |
 | Pauli cost | 0 | $(n-p)^2/(4A)$ asymmetry |
 
-**Why $\mathcal{N}(7,7)$ is the ground state.**
+**Ground-state character of $\mathcal{N}(7,7)$.**
 With $p = n = 7$, every crossing in the braid word is a
 $\mathfrak{p}$-$\mathfrak{n}$ mixed crossing.  The mixed
 crossing weight $(q + q^{-1})/2 \approx 1.005$ is the **average**
@@ -29,7 +29,7 @@ $\sigma_i^2$ terms (because the alternation prevents any
 generator from appearing twice consecutively), and the
 Gröbner--Shirshov normal form is maximally efficient.
 
-**Why $\mathcal{N}(6,8)$ is unstable.**
+**Instability of $\mathcal{N}(6,8)$.**
 With $p = 6, n = 8$, the 8 neutrons include 4
 $\mathfrak{n}$-$\mathfrak{n}$ crossings (between neutrons 7–8,
 7–9, etc.) that break the alternation pattern.  These same-species

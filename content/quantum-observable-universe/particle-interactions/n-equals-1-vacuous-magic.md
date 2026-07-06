@@ -7,35 +7,6 @@ Equivalently, the canonical state $\psi_1(q)$ is not in the closed
 span of any non-trivial tensor product of canonical states indexed
 by a decomposition $1 = n_1 + \cdots + n_k$ with $k \geq 2$ and
 $n_i \geq 1$ — because no such decomposition exists.*
-
-## Proof
-
-The claim reduces to a vacuous-truth statement about positive-integer
-decompositions.
-
-1. Suppose, for contradiction, that a decomposition $1 = n_1 + n_2 +
-   \cdots + n_k$ exists with $k \geq 2$ and $n_i \geq 1$ for all
-   $i = 1, \ldots, k$.
-
-2. Lower-bound the sum:
-   $$
-     \sum_{i=1}^{k} n_i \;\geq\; \sum_{i=1}^{k} 1 \;=\; k \;\geq\; 2.
-   $$
-
-3. By hypothesis $\sum_{i=1}^{k} n_i = 1$, so $1 \geq 2$.
-   Contradiction.
-
-4. Therefore no decomposition with $k \geq 2$ and all $n_i \geq 1$
-   summing to $1$ exists.
-
-5. The universal-quantifier statement
-   "$\psi_1(q) \notin \overline{\mathrm{span}}\{\cdots\}$ for every
-   such decomposition" ranges over the empty set of decompositions
-   and is vacuously true.
-
-Therefore $1$ is algebraically prime at every $q > 1$.
-$\square$
-
 ## Remarks
 
 - The proof uses only **elementary arithmetic** (positivity-induced
@@ -73,3 +44,5 @@ combines `length ≥ 2` and `sum = 1` via `omega` to derive the
 contradiction.
 
 The proof contains **no `sorry`**.
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

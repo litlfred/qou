@@ -6,9 +6,9 @@
 `conj:s5-so3-fiber-action` (Lean class `BringFiberAction`). Three gauge
 correspondences investigated: **SO(3)/h⁴**, **SU(2)/spin**, **U(1)/hypercharge**.
 **Compute:**
-[`s5_so3_su2_u1_fiber_action.py`](../../folio-assistant/computations/s5_so3_su2_u1_fiber_action.py),
+[`s5_so3_su2_u1_fiber_action.py`](../../computations/s5_so3_su2_u1_fiber_action.py),
 witness
-[`s5-so3-su2-u1-fiber-action.witness.json`](../../folio-assistant/computations/s5-so3-su2-u1-fiber-action.witness.json).
+[`s5-so3-su2-u1-fiber-action.witness.json`](../../computations/s5-so3-su2-u1-fiber-action.witness.json).
 All RAW @ 60 dps, audit-only. **No tuning to h⁴=−3/4, m_n−m_p, spin, or
 hypercharge.** The icosahedral character decomposition was computed FIRST;
 the comparison to −3/4 came SECOND.

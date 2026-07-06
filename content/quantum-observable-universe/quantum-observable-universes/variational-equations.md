@@ -1,5 +1,5 @@
 Let $\mathfrak{S}_q$ be the
-([categorical action](#def\:categorical-action)).  The three variational
+([categorical action](#def:categorical-action)).  The three variational
 equations are:
 
 1. *Gravity (vary $\int_A$)*:

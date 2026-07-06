@@ -79,7 +79,7 @@ units — this IS the "slow historical cherry-pick" preparation.
   shims for the 19 in-repo importers; mechanical consumer migration PR).
 - 2b. Neutral test fixtures (symmetric-group data, generic q ∈ {2, 3/2,
   golden}, exact Fractions) replacing physics-pinned assertions; physics
-  regression tests MOVE to `folio-assistant/computations` (they are qou's,
+  regression tests MOVE to `computations` (they are qou's,
   not the library's).
 - 2c. READMEs/docstrings rewritten neutrally; no `q₀`, no MeV, no CAL-*.
 - 2d. Wall gate flips to hard.

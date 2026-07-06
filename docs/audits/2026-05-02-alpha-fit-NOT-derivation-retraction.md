@@ -102,7 +102,7 @@ match is significant.
 
 The two probe scripts that produced this retraction
 (`alpha_analytic_attempt.py` and `alpha_categorical_derivation.py`)
-have been removed from `folio-assistant/computations/`. They were
+have been removed from `computations/`. They were
 both **null-result candidate searches** (closest fit
 $m_e \cdot [7]_q [8]_q [9]_q = 361.2$ MeV, off by +6.4%; α/E₀ ratio
 falsified at 81.27 not 82). Their results stand recorded in the
@@ -113,7 +113,7 @@ witness JSONs under `docs/audits/`:
 - `2026-05-02-alpha-categorical-probe.witness.json`
 
 The downstream **canonical α/binding pipeline** is now the
-magic-A formula (`folio-assistant/computations/magic_A_formula.py`,
+magic-A formula (`computations/magic_A_formula.py`,
 landed via PR #519) which exposes
 $$
 B \;=\; \rho_F \cdot m_e \cdot A \cdot 8G

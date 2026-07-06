@@ -4,20 +4,20 @@ the Frobenius pairing concrete.
 
 Set $A = \mathcal{O}(\mathrm{SU}(2))$ with pointwise multiplication
 $\mu(f \otimes g) = fg$ and Frobenius form
-$\int_A f = \int_{\mathrm{SU}(2)} f(g)d\mu_{\mathrm{Haar}}(g)$
+$\int_A f = \int_{\mathrm{SU}(2)} f(x)\,d\mu_{\mathrm{Haar}}(x)$
 (the Haar integral).  The Frobenius pairing is the composite
 
 $$
   \langle f, g \rangle_A
   =  \int_A \!\circ \mu(f \otimes g)
-  =  \int_{\mathrm{SU}(2)} f(g)h(g)d\mu_{\mathrm{Haar}}(g).
+  =  \int_{\mathrm{SU}(2)} f(x)g(x)\,d\mu_{\mathrm{Haar}}(x).
 $$
 
 This is the $L^2$ inner product on SU(2).
 
 **Non-degeneracy.**  The pairing is non-degenerate because Haar
 measure on a compact group has full support: if
-$\langle f, g \rangle_A = 0$ for all $g \in A$, then $f = 0$ a.e.,
+$\langle f, \phi \rangle_A = 0$ for all $\phi \in A$, then $f = 0$ a.e.,
 hence $f = 0$ in $A$.  Equivalently, the Peter–Weyl theorem gives
 an orthonormal basis of matrix coefficients
 $\{D^j_{mn}\}_{j \in \frac{1}{2}\mathbb{Z}_{\geq 0}}$ satisfying

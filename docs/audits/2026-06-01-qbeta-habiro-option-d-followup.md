@@ -21,10 +21,10 @@
 > [P_8 identification](2026-05-31-qbeta-habiro-p8-identification.md).
 > Sibling audit (parallel work): [a_8 partition-function match](2026-06-01-qbeta-habiro-a8-partition-function-match.md).
 > Probe scripts:
-> [`qbeta_habiro_recursion_probe.py`](../../folio-assistant/computations/probes/qbeta_habiro_recursion_probe.py),
-> [`qbeta_habiro_partition_followup.py`](../../folio-assistant/computations/qbeta/qbeta_habiro_partition_followup.py),
-> [`qbeta_habiro_delta6_partition_check.py`](../../folio-assistant/computations/qbeta/qbeta_habiro_delta6_partition_check.py),
-> [`qbeta_habiro_a7_partition_check.py`](../../folio-assistant/computations/qbeta/qbeta_habiro_a7_partition_check.py).
+> [`qbeta_habiro_recursion_probe.py`](../../computations/probes/qbeta_habiro_recursion_probe.py),
+> [`qbeta_habiro_partition_followup.py`](../../computations/qbeta/qbeta_habiro_partition_followup.py),
+> [`qbeta_habiro_delta6_partition_check.py`](../../computations/qbeta/qbeta_habiro_delta6_partition_check.py),
+> [`qbeta_habiro_a7_partition_check.py`](../../computations/qbeta/qbeta_habiro_a7_partition_check.py).
 > Witnesses: `qbeta-habiro-recursion.witness.json`,
 > `qbeta-habiro-partition-followup.witness.json`,
 > `qbeta-habiro-delta6-partition.witness.json`,
@@ -208,14 +208,14 @@ This is a **TIERED** result:
 
 ## Files added
 
-- **NEW:** `folio-assistant/computations/probes/qbeta_habiro_recursion_probe.py`
-- **NEW:** `folio-assistant/computations/qbeta/qbeta_habiro_partition_followup.py`
-- **NEW:** `folio-assistant/computations/qbeta/qbeta_habiro_delta6_partition_check.py`
-- **NEW:** `folio-assistant/computations/qbeta/qbeta_habiro_a7_partition_check.py`
-- **NEW:** `folio-assistant/computations/probes/qbeta-habiro-recursion.witness.json`
-- **NEW:** `folio-assistant/computations/qbeta/qbeta-habiro-partition-followup.witness.json`
-- **NEW:** `folio-assistant/computations/qbeta/qbeta-habiro-delta6-partition.witness.json`
-- **NEW:** `folio-assistant/computations/qbeta/qbeta-habiro-a7-partition.witness.json`
+- **NEW:** `computations/probes/qbeta_habiro_recursion_probe.py`
+- **NEW:** `computations/qbeta/qbeta_habiro_partition_followup.py`
+- **NEW:** `computations/qbeta/qbeta_habiro_delta6_partition_check.py`
+- **NEW:** `computations/qbeta/qbeta_habiro_a7_partition_check.py`
+- **NEW:** `computations/probes/qbeta-habiro-recursion.witness.json`
+- **NEW:** `computations/qbeta/qbeta-habiro-partition-followup.witness.json`
+- **NEW:** `computations/qbeta/qbeta-habiro-delta6-partition.witness.json`
+- **NEW:** `computations/qbeta/qbeta-habiro-a7-partition.witness.json`
 - **NEW:** `docs/audits/2026-06-01-qbeta-habiro-option-d-followup.md` (this file)
 
 ## Cross-references

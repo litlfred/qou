@@ -19,9 +19,9 @@ and binding energy in the paper is a prediction.
 
 | ID    | Observable            | Module export        | Measurement / Source                      |
 |-------|----------------------|----------------------|------------------------------------------|
-| CAL-1 | m_e                  | M_E_MEV              | electron mass (Penning trap, h⁰ jet order) |
-| CAL-2 | 𝔇_β (→ Q_β → q₀)    | (in q_parameter.py)  | neutron β-decay width (τ_n, h² jet order) |
-| CAL-3 | 𝔇_π (→ m_π)          | M_PI_PM_MEV_VALIDATION | pion decay width (τ_π, h³ jet order)     |
+| CAL-1 | m_e                  | M_E_MEV              | electron mass (Penning trap); W-plane scale (DOF of H¹=2W) |
+| CAL-2 | m_μ (→ q₀)           | (in q_parameter.py)  | muon mass (CODATA); fixes q₀ via m_μ/m_e = Vol(4_1)/ℏ_q²; W-plane modulus (DOF of H¹=2W). Phys-obs may anchor q₀ on the more-precise proton ratio m_p/m_e (live q_at, re-pin 2026-05-28) — precision substitution, not a change to canonical CAL-2 |
+| CAL-3 | m_π                  | M_PI_PM_MEV_VALIDATION | charged-pion mass (PDG); orthogonal Vol(Hopf)=0 meson class. Q_β (neutron β-decay 𝔇_β) is DERIVED from CAL-1+CAL-2, not a calibration |
 
 `m_p`, `m_n`, `m_D`, `m_T`, `m_3He`, `m_4He` are **predictions** of
 the framework. They are exposed below for **validation only** —
@@ -108,7 +108,23 @@ def _load_mpf(witness_path: Path, dotted_key: str) -> mp.mpf:
 # 2026-05-23 precision-pipeline audit (docs/audits/2026-05-23-
 # codata-precision-audit.md), 4+ scripts were already redefining
 # M_E_MEV at the full precision — this import unifies them.
-from codata_2022_source import M_E_MEV, M_E_MEV_ERR  # noqa: E402
+from codata_2022_source import (  # noqa: E402
+    M_E_MEV,
+    M_E_MEV_ERR,
+    U_MEV as _U_MEV_CODATA2022,
+    U_MEV_ERR as _U_MEV_CODATA2022_ERR,
+)
+
+
+# ── Precision-safe parser for in-module literals (bean me3r) ────
+# Bare `mp.mpf("...")` at module import time parses at the caller's
+# current mp.dps (often the 15-dps default), silently truncating the
+# constant's binary representation. `_mpf50` forces ≥50 dps parsing
+# (mirrors `_load_mpf` and `codata_2022_source._load_mpf`) so a routed
+# import is bit-identical at any consumer precision ≤ 50 dps.
+def _mpf50(literal: str) -> mp.mpf:
+    with mp.workdps(max(50, mp.mp.dps)):
+        return +mp.mpf(literal)
 
 # ── Q_β: DERIVED from CAL-1 + CAL-2 (cross-check, NOT independent) ─
 # Q_β = m_e·|q₀²−2q₀−1|·(q₀+1)/(2q₀³) ≈ 0.784 MeV (0.17% miss).
@@ -143,8 +159,8 @@ M_HE4_MEV_VALIDATION = _load_mpf(_VALIDATION_WITNESS, "data.m_4He_MeV")
 # `hydrogen_step_by_step`, and `hydrogen_qshuffle_compound`.
 # These are pure validation/comparison targets, never CAL inputs.
 # Source: CODATA 2018 / PDG 2022 atomic-mass tables.
-M_H1_MEV_VALIDATION = mp.mpf("938.7830731")
-RYDBERG_eV_VALIDATION = mp.mpf("13.605693")
+M_H1_MEV_VALIDATION = _mpf50("938.7830731")
+RYDBERG_eV_VALIDATION = _mpf50("13.605693")
 
 # ── AME 2020 atomic binding energies (validation-only) ──────────
 # Added 2026-05-24 per the canonical-iw P31 follow-up: scripts like
@@ -152,7 +168,7 @@ RYDBERG_eV_VALIDATION = mp.mpf("13.605693")
 # (2.22452, 8.481798, 7.71804, 28.295674) inline in their __main__
 # print loops. The values are AME 2020 binding energies, used ONLY
 # for comparison against framework predictions (`err = pred - AME_B_*`).
-# Per CLAUDE.md three-calibration discipline, importing these as
+# Per AGENTS.md three-calibration discipline, importing these as
 # upstream inputs to mass / binding compute is an opt-out from CAL
 # (and is flagged by canonical-iw + production-vs-exploratory-discipline).
 #
@@ -162,29 +178,98 @@ RYDBERG_eV_VALIDATION = mp.mpf("13.605693")
 # be unambiguous since these are AME constants, but the suffix makes
 # the validation-only role explicit at every call site.
 #
-# Source witness:
-# `ame-2020-binding-energies.witness.json` (committed alongside).
-# Original data: Wang, M. et al., "The AME 2020 atomic mass
-# evaluation", Chinese Physics C 45.3 (2021) 030003.
-_AME_BINDING_WITNESS = _WITNESS_DIR / "ame-2020-binding-energies.witness.json"
+# SINGLE SOURCE OF TRUTH (write-once): the binding/atomic-mass values are
+# NOT copied here — they are read directly, by (Z, A), from the vendored
+# AME2020 evaluation `qou-mass/src/qou_mass/data/ame2020.json` (Huang/Wang/
+# Kondev/Audi/Naimi, Chinese Physics C 45 (2021) 030002). This eliminates the
+# hand-maintained `ame-2020-binding-energies.witness.json` (whose manual entry
+# had drifted on ⁵Li/⁷Li/⁹Be) and any divergence between the registry and the
+# in-script literals — each number lives in exactly one place.
+_AME2020_JSON = _WITNESS_DIR.parent / "qou-mass" / "src" / "qou_mass" / "data" / "ame2020.json"
 
-AME_B_DEUTERON_MEV_VALIDATION = _load_mpf(_AME_BINDING_WITNESS, "data.B_deuteron_MeV")
-AME_B_TRITIUM_MEV_VALIDATION = _load_mpf(_AME_BINDING_WITNESS, "data.B_tritium_MeV")
-AME_B_HE3_MEV_VALIDATION = _load_mpf(_AME_BINDING_WITNESS, "data.B_he3_MeV")
-AME_B_HE4_MEV_VALIDATION = _load_mpf(_AME_BINDING_WITNESS, "data.B_he4_MeV")
-AME_B_LI5_MEV_VALIDATION = _load_mpf(_AME_BINDING_WITNESS, "data.B_li5_MeV")
-AME_B_LI6_MEV_VALIDATION = _load_mpf(_AME_BINDING_WITNESS, "data.B_li6_MeV")
-AME_B_LI7_MEV_VALIDATION = _load_mpf(_AME_BINDING_WITNESS, "data.B_li7_MeV")
+
+def _ame2020() -> dict:
+    if _AME2020_JSON not in _WITNESS_CACHE:
+        with _AME2020_JSON.open("r", encoding="utf-8") as fh:
+            data = json.load(fh)
+        data["_index"] = {(e["Z"], e["A"]): e for e in data["entries"]}  # O(1) lookup
+        _WITNESS_CACHE[_AME2020_JSON] = data
+    return _WITNESS_CACHE[_AME2020_JSON]
+
+
+def _ame_entry(Z: int, A: int) -> dict:
+    return _ame2020()["_index"][(Z, A)]
+
+
+# u→MeV conversion (bean me3r, 2026-06-30): sourced from the CODATA-2022
+# module rather than scraped from the vendored AME2020 metadata note.
+# The AME2020 metadata carries the CODATA-**2018** value 931.49410242;
+# this registry now uses the CODATA-**2022** value 931.49410372(29) so the
+# conversion matches the codata_2022_source edition (M_E/M_P/M_N etc.).
+# The two differ by ~1.4 ppb (within mutual σ) and feed only the
+# `*_ATOMIC_*_VALIDATION` comparison masses; AME binding energies come
+# from `binding_energy_total_keV` directly and are unaffected. Verify:
+#   assert "931.49410242" in _ame2020()["_metadata"]["units"]["atomic_mass_micro_u"]
+_U_MEV = _U_MEV_CODATA2022
+
+# Public alias for the atomic-mass-unit → MeV conversion (CODATA-2022).
+# Consumers import this rather than re-typing the 931.494… literal
+# (beans 46ke / me3r / ce18).
+U_MEV = _U_MEV
+U_MEV_ERR = _U_MEV_CODATA2022_ERR
+
+
+def _ame_binding_mev(Z: int, A: int) -> mp.mpf:
+    """Total nuclear binding energy (MeV) read from vendored AME2020.
+
+    The whole expression (parse + division) runs inside `workdps(≥50)` so the
+    arithmetic, not just the string parse, is high-precision (Gemini review)."""
+    with mp.workdps(max(50, mp.mp.dps)):
+        return +(mp.mpf(str(_ame_entry(Z, A)["binding_energy_total_keV"])) / 1000)
+
+
+def _ame_atomic_mev(Z: int, A: int) -> mp.mpf:
+    """Neutral-atom mass (MeV) read from vendored AME2020 (atomic_mass_micro_u·u).
+
+    Whole expression in `workdps(≥50)` so the multiplications are high-precision
+    (Gemini review), not just the literal parse."""
+    with mp.workdps(max(50, mp.mp.dps)):
+        return +(mp.mpf(str(_ame_entry(Z, A)["atomic_mass_micro_u"]))
+                 * mp.mpf("1e-6") * _U_MEV)
+
+
+AME_B_DEUTERON_MEV_VALIDATION = _ame_binding_mev(1, 2)
+AME_B_TRITIUM_MEV_VALIDATION = _ame_binding_mev(1, 3)
+AME_B_HE3_MEV_VALIDATION = _ame_binding_mev(2, 3)
+AME_B_HE4_MEV_VALIDATION = _ame_binding_mev(2, 4)
+AME_B_LI5_MEV_VALIDATION = _ame_binding_mev(3, 5)
+AME_B_LI6_MEV_VALIDATION = _ame_binding_mev(3, 6)
+AME_B_LI7_MEV_VALIDATION = _ame_binding_mev(3, 7)
 
 # ── PDG 2024 meson masses (validation-only) ───────────────────
 # Added 2026-05-26 per meson knot-dictionary probe (PR #1292).
 # These are comparison targets for meson-sector predictions, NOT
 # calibration inputs. Source: PDG 2024 Review of Particle Physics.
-M_PI_PM_MEV_VALIDATION = mp.mpf("139.57039")     # ± 0.00018 MeV (1.3 ppb)
-M_PI_0_MEV_VALIDATION  = mp.mpf("134.9768")      # ± 0.0005 MeV (3.7 ppm)
-M_K_PM_MEV_VALIDATION  = mp.mpf("493.677")       # ± 0.013 MeV (26 ppm)
-M_K_0_MEV_VALIDATION   = mp.mpf("497.611")       # ± 0.013 MeV (26 ppm)
-M_MU_MEV_VALIDATION    = mp.mpf("105.6583755")   # ± 0.0000023 MeV (22 ppb)
+M_PI_PM_MEV_VALIDATION = _mpf50("139.57039")     # ± 0.00018 MeV (1.3 ppb)
+M_PI_0_MEV_VALIDATION  = _mpf50("134.9768")      # ± 0.0005 MeV (3.7 ppm)
+M_K_PM_MEV_VALIDATION  = _mpf50("493.677")       # ± 0.013 MeV (26 ppm)
+M_K_0_MEV_VALIDATION   = _mpf50("497.611")       # ± 0.013 MeV (26 ppm)
+M_MU_MEV_VALIDATION    = _mpf50("105.6583755")   # ± 0.0000023 MeV (22 ppb)
+
+# ── Neutral-atom atomic masses (validation-only) ──────────────
+# Added 2026-06-21 (bean fvxq class-4): single canonical source for
+# the atomic (neutral-atom, electrons included) masses used as
+# absolute-mass comparison targets in tower_isotope_absolute.py.
+# These are ATOMIC masses (≠ the nuclear M_*_MEV_VALIDATION above,
+# which differ by ≈ Z·m_e); never calibration inputs. Read by (Z, A)
+# from the same vendored AME2020 file (full evaluation precision —
+# supersedes the prior 5–6 dp in-script literals).
+M_D_ATOMIC_MEV_VALIDATION   = _ame_atomic_mev(1, 2)    # ²H  (deuterium atom)
+M_T_ATOMIC_MEV_VALIDATION   = _ame_atomic_mev(1, 3)    # ³H  (tritium atom)
+M_HE3_ATOMIC_MEV_VALIDATION = _ame_atomic_mev(2, 3)    # ³He atom
+M_HE4_ATOMIC_MEV_VALIDATION = _ame_atomic_mev(2, 4)    # ⁴He atom
+M_LI6_ATOMIC_MEV_VALIDATION = _ame_atomic_mev(3, 6)    # ⁶Li atom
+M_C12_ATOMIC_MEV_VALIDATION = _ame_atomic_mev(6, 12)   # ¹²C atom
 
 # ── Internal consistency check (Q_β derived vs CODATA m_n − m_p − m_e) ─
 # Q_β is derived from CAL-1 + CAL-2; this check verifies it agrees
@@ -251,6 +336,7 @@ def __getattr__(name: str):
 __all__ = [
     # Legitimate calibration inputs (CAL-1) + derived cross-check (Q_β)
     "M_E_MEV", "M_E_MEV_ERR",
+    "U_MEV", "U_MEV_ERR",  # atomic-mass-unit → MeV (CODATA-2022, from codata_2022_source)
     "Q_BETA_MEV", "Q_BETA_MEV_ERR",  # derived from CAL-1+CAL-2; kept for cross-check
     # Validation-only experimental values (loaded from witness)
     "M_P_MEV_VALIDATION", "M_P_MEV_VALIDATION_ERR",

@@ -1,4 +1,6 @@
 import Mathlib.Tactic
+import QOU.BraidKnot.BraidLinkTypes
+import QOU.BraidKnot.F3_eps6_leading_eq_neg_2b_cubed
 
 /-!
 # QOU.BraidKnot.typed_b3_sub_braid_extraction
@@ -52,8 +54,6 @@ LaTeX label: `rem:typed-b3-sub-braid-extraction` (Track C extension).
 -- `F3-eps6-leading-eq-neg-2b-cubed.lean`.
 -- Ref: [manuscript] rem:braid-link-types
 -- Ref: [manuscript] rem:F3-eps6-leading-eq-neg-2b-cubed
-import QOU.BraidKnot.BraidLinkTypes
-import QOU.BraidKnot.F3_eps6_leading_eq_neg_2b_cubed
 
 namespace QOU.BraidKnot
 
@@ -165,7 +165,7 @@ substantive discharge. -/
 -- Ref: [manuscript] rem:typed-b3-sub-braid-extraction
 -- Ref: [manuscript] rem:braid-link-types
 -- Ref: [manuscript] empirical zero-residual:
---   folio-assistant/computations/q-beta-cat-per-factor-decomposition.witness.json
+--   computations/q-beta-cat-per-factor-decomposition.witness.json
 /-- **Default instance** of `DominantSubBraidAtEps6`. The
     `dominance_residual` is set to `0` per the empirical observation
     in `probe_q_beta_cat_per_factor_decomposition.py`. A formal

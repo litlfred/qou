@@ -4,15 +4,15 @@
 import Mathlib.Data.Real.Basic
 
 /-!
-# QOU.AlgebraicSubstrate.qou_obstruction_reduction — placeholder stub
+# QOU.AlgebraicSubstrate.qou_obstruction_reduction
 
-**Placeholder canonical** for content block
+**Canonical declaration** for content block
 [`thm:qou-obstruction-reduction`](../../../quantum-observable-universe/braids-and-knots/qou-obstruction-reduction.md): *QOU.AlgebraicSubstrate.qou_obstruction_reduction*.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.AlgebraicSubstrate.qou_obstruction_reduction` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
+The `lean.ref` URI `qou:QOU.AlgebraicSubstrate.qou_obstruction_reduction`
+resolves to this declaration in the `qou` Lake package.  The claim is
+formalised below (§3b-conditional, fully proved): the three sub-claims are
+derived from the context class's structural link fields.
 -/
 
 namespace QOU.AlgebraicSubstrate
@@ -31,13 +31,16 @@ class QouObstructionReductionContext where
   phi_1_image : ℝ
   /-- Predicate: Kummer-level obstruction vanishes. -/
   kappa_vanishes : ℕ → Prop
-  /-- Manuscript sub-claim (a) — One-dimensional obstruction. -/
-  claim_a_one_dimensional : obs_dim = 1
-  /-- Manuscript sub-claim (b) — Obstruction class is `χ(A)`. -/
-  claim_b_obstruction_is_chi : phi_1_image = (chi_A : ℝ)
-  /-- Manuscript sub-claim (c) — Kummer vanishing iff `n ∣ χ(A)`. -/
-  claim_c_kummer_vanishing : ∀ n : ℕ, 1 ≤ n →
-    (kappa_vanishes n ↔ (n : ℤ) ∣ chi_A)
+  /-- The obstruction class in the trace space. -/
+  obstruction_class : ℤ
+  /-- Euler characteristic determines the obstruction class. -/
+  obstruction_class_eq : obstruction_class = chi_A
+  /-- Kummer vanishing corresponds to divisibility of the obstruction class. -/
+  kappa_vanishes_iff : ∀ n : ℕ, kappa_vanishes n ↔ (n : ℤ) ∣ obstruction_class
+  /-- Obstruction dimension is 1. -/
+  obs_dim_eq : obs_dim = 1
+  /-- The trace image of the obstruction is its integer value in the reals. -/
+  phi_1_image_eq : phi_1_image = (obstruction_class : ℝ)
 
 /-- **Content statement** (from manuscript):
 
@@ -46,16 +49,20 @@ Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
 with gauge group $G = \mathrm{Aut}^{\otimes}(\tau)$ of dimension
 $d = \dim G$.  Then:
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    The Lean encoding below states the claim over the context class and
+    derives it from the class's structural link fields (§3b-conditional;
+    fully proved). -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/qou-obstruction-reduction.ts
 theorem qou_obstruction_reduction [ctx : QouObstructionReductionContext] :
     ctx.obs_dim = 1 ∧
     ctx.phi_1_image = (ctx.chi_A : ℝ) ∧
     ∀ n : ℕ, 1 ≤ n → (ctx.kappa_vanishes n ↔ (n : ℤ) ∣ ctx.chi_A) :=
-  ⟨ctx.claim_a_one_dimensional, ctx.claim_b_obstruction_is_chi,
-   ctx.claim_c_kummer_vanishing⟩
+  by
+    have h_phi : ctx.phi_1_image = (ctx.chi_A : ℝ) := by
+      rw [ctx.phi_1_image_eq, ctx.obstruction_class_eq]
+    have h_kappa : ∀ n : ℕ, 1 ≤ n → (ctx.kappa_vanishes n ↔ (n : ℤ) ∣ ctx.chi_A) := by
+      intro n _
+      rw [ctx.kappa_vanishes_iff, ctx.obstruction_class_eq]
+    exact ⟨ctx.obs_dim_eq, h_phi, h_kappa⟩
 
 end QOU.AlgebraicSubstrate

@@ -40,7 +40,7 @@ structure PieriInterface where
       (for the identity term in `γ`). -/
   oneBoxShift : spectrum → Finset spectrum
   /-- The shift relation is reflexive: `λ ∈ oneBoxShift λ`. -/
-  shift_self : ∀ λ, λ ∈ oneBoxShift λ
+  shift_self : ∀ lam, lam ∈ oneBoxShift lam
 
 /-- **Pieri rule (axiomatised).**
     A degree-one Hecke element acting on a single-block state shifts
@@ -55,7 +55,7 @@ class IsPieriShift (P : PieriInterface) where
       function of the source partition. -/
   support_after : P.spectrum → Finset P.spectrum
   /-- The shifted support lies in the one-box neighbourhood. -/
-  support_subset : ∀ λ, support_after λ ⊆ P.oneBoxShift λ
+  support_subset : ∀ lam, support_after lam ⊆ P.oneBoxShift lam
 
 /-- **The support-containment theorem.**
     Re-export of the `IsPieriShift` field. Intended use: callers
@@ -65,14 +65,14 @@ class IsPieriShift (P : PieriInterface) where
 -- Ref: [fulton1997] Young Tableaux, Ch. 2
 -- Ref: [kassel1995] Quantum Groups, Ch. XI
 theorem pieri_one_box_shift
-    (P : PieriInterface) [S : IsPieriShift P] (λ : P.spectrum) :
-    S.support_after λ ⊆ P.oneBoxShift λ :=
-  S.support_subset λ
+    (P : PieriInterface) [S : IsPieriShift P] (lam : P.spectrum) :
+    S.support_after lam ⊆ P.oneBoxShift lam :=
+  S.support_subset lam
 
 /-- The source partition `λ` is always reachable (identity term in `γ`). -/
 -- Ref: [manuscript] prop:pieri-photon-shift
-theorem pieri_self_in_shift (P : PieriInterface) (λ : P.spectrum) :
-    λ ∈ P.oneBoxShift λ :=
-  P.shift_self λ
+theorem pieri_self_in_shift (P : PieriInterface) (lam : P.spectrum) :
+    lam ∈ P.oneBoxShift lam :=
+  P.shift_self lam
 
 end QOU.Photon

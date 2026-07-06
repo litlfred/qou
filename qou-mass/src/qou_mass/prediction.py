@@ -79,6 +79,7 @@ class Prediction:
     uncertainty: Optional[Decimal] = None
     ppm_vs_codata: Optional[Decimal] = None
     method: str = "auto"
+    method_status: Optional[str] = None
     precision_dps: int = 50
     q_value: Optional[Decimal] = None
     witness: Optional[Witness] = None

@@ -10,9 +10,9 @@ export default proposition({
   },
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/cyclotomic_depth3_dimension_pslq.py",
+    script: "computations/cyclotomic_depth3_dimension_pslq.py",
     witness:
-      "folio-assistant/computations/cyclotomic-depth3-dimension-pslq.witness.json",
+      "computations/cyclotomic-depth3-dimension-pslq.witness.json",
     status: "verified",
   },
   uses: ["prop:two-filtration-bridge-general"],

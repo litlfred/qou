@@ -59,3 +59,5 @@ $\Delta_4 = \sigma_0\sigma_1\sigma_0\sigma_2\sigma_1\sigma_0$.
 **Verified.**  For $A = 4$ (${}^4\mathrm{He}$, $6$ crossings):
 $18$ NF terms.  For $A = 6$ (${}^6\mathrm{He}$, $15$ crossings):
 $988$ NF terms.
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

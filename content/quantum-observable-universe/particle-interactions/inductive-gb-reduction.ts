@@ -2,11 +2,10 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:inductive-gb-reduction",
-  title: "Inductive Gröbner--Shirshov reduction (polynomial scaling)",
+  title: "Inductive Gröbner--Shirshov reduction",
   tags: [
     "groebner-shirshov",
     "inductive",
-    "polynomial-scaling",
     "normal-form",
     "hecke-algebra",
   ],

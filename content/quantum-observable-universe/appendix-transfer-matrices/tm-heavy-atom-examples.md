@@ -2,12 +2,20 @@ The light-nucleus examples (Section B.5) use only the bare
 transfer matrix product.  For heavy nuclei, **shell corrections**
 from the magic number structure become essential.  This section
 works through the full $Q$-value algorithm for
-nuclei spanning the periodic table.
+nuclei spanning the periodic table.  These worked examples
+demonstrate the mechanics of the algorithm: a definite
+$Q$-value output from the substrate parameter $q$ alone.  Where
+a residual remains between the computed and observed values, it
+is bracketed as a known open direction — the open conjectures
+C1--C3 — not absorbed into a free parameter.
 
 Recall: $s = q^{1/2} - q^{-1/2}$,
 $z = 1/(q^{1/2} + q^{-1/2})$,
 $\hbar_q = 1 - q^{-1}$,
-$E_{\times} = \frac{1}{2}(q - q^{-1})$.
+$E_{\times} = \frac{1}{2}(q - q^{-1})$, and $\mu_0$ the remaining
+conversion constant that, together with $\hbar_q$ and
+$E_{\times}$, carries the dimensionless bracket of the final
+step into MeV.
 
 ---
 
@@ -130,7 +138,7 @@ $$
 $$
 
 The $n = 8$ closed sub-link provides extra parent stability,
-increasing $Q_\beta$ via the $Q^5$ phase-space factor.
+increasing $\mathfrak{Q}_\beta$ via the $Q^5$ phase-space factor.
 
 ---
 
@@ -148,6 +156,10 @@ The daughter has $Z' = 28$ — a **closed proton shell**.  This
 transition creates a shell closure.
 
 ### Step 1: Torus knot traces
+
+Each parent and daughter outer-shell occupancy contributes a
+torus-knot Markov trace $\tau(n)$; these traces are the inputs
+to the shell correction assembled in Step 3.
 
 See [Table 5](#tbl:tm-heavy-atom-examples-table5-data).
 
@@ -188,10 +200,10 @@ $$
 $$
 
 $\mathcal{Q}_{\mathrm{exp}} \approx 0.318$ MeV.  Error:
-$+61\%$.  The algorithm produces a definite answer from $q$
-alone; the residual indicates the shell correction is not
-yet capturing the full structure (conjectures C1--C3 need
-verification).
+$+61\%$.  As framed at the outset, this is a definite output of
+the algorithm; the $+61\%$ residual measures shell structure
+not yet captured by the correction, and stays bracketed under
+conjectures C1--C3.
 
 ---
 

@@ -5,8 +5,6 @@
 
 Because this threshold is exactly the inverse of the first Super Metallic Mean, the structural rank drop leaves a permanent geometric signature on the operator algebra. However, this algebraic collapse at $q \approx 1.4655$ is a fundamental property of the $q$-regime's SDP solutions, distinct from the physical aeon instantiation (which occurs at the boundary $q \to 1^+$).
 
-**Remark.** In the algebraic geometry of spectrahedra—as pioneered by Sturmfels and Parrilo—the valid solution space of an SDP forms a highly structured convex boundary. The phase collapse described above is structurally identical to the conformal bootstrap methodology utilized in high-energy physics. Demanding unitarity isolates physical theories—such as the 3D Ising model "island"—strictly on the extreme geometric boundaries (the spectral extents) of SDP solution spaces. Similarly, the convex algebraic geometry of curvature operators dictates strict geometric boundaries.
-
 ## The Cosmological Melt
 
 The stability of matter emerges from the rigid algebraic bounds of the Hecke representations. We investigate the topological hierarchy that governs when specific physical structures dissolve as a function of the substrate parameter $q$. This hierarchical decay constitutes the cosmological melt.

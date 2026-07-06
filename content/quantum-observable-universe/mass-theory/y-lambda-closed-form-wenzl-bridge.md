@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition (closed form for $y_\lambda$ via Wenzl bridge).**
 *Let $\sigma_i$ be the symmetric Hecke generators of $H_n(R, q)$
 satisfying $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ (eigenvalues
@@ -62,44 +60,7 @@ $z_{\mathrm{GL}} = q \cdot z$.  This is the affine convention
 shift; the $\sigma$-convention $z$ does NOT correspond to the same
 Wenzl level $r$ as the substitution $q_W \mapsto q$ would suggest
 ([explicit $\alpha_k$ at $H_3$](#prop:explicit-alpha-k-h3); 10
-candidates in `schur_element_identify.py`).
-
-## Proof
-
-By [Wenzl 1988] (cited in [Orellana, math/9806163, Theorem on
-p.17]), the unique Markov trace on the type-A Iwahori-Hecke
-algebra in $g$-convention with parameter $z_{\mathrm{GL}} = Q^r
-(1 - Q)/(1 - Q^r)$ has weights $\omega_\lambda(Q) =
-s_{\lambda, r}(Q)$ given by the principal-specialization Schur
-function.  By [Chlouveraki HDR Theorem 6.20 (=Juyumaya Theorem 12,
-$d=1$ case)], the type-A Markov-trace family is 1-dimensional,
-parameterised by $z$.
-
-The convention isomorphism $g = q\sigma$ transports $\mathrm{tr}_M$
-on $\sigma$-Hecke (with the $\sigma$-convention $z$) to
-$\mathrm{tr}_{\mathrm{GL}}$ on $g$-Hecke (with $z_{\mathrm{GL}} = q z$).  Both traces have the
-same expansion $\mathrm{tr} = \sum_\lambda y_\lambda \chi_\lambda$
-for any choice of irreducible character basis (which is intrinsic
-to the algebra, hence convention-independent).  By uniqueness, the
-weights agree:
-
-$$
-  y_\lambda^{(\sigma)} \;=\; y_\lambda^{(g)} \;=\;
-  \omega_\lambda(Q) / Z, \qquad Z := \sum_\mu d_\mu \omega_\mu(Q),
-$$
-
-normalised so $\mathrm{tr}_M(1) = \sum_\lambda y_\lambda d_\lambda = 1$.
-$\square$
-
-## Numerical verification
-
-Per-partition agreement at H_3, H_4, H_5 (representative entries):
-
-See [Table 2](#tbl:y-lambda-closed-form-wenzl-bridge-table2-data).
-
-All differences are at numerical precision ($10^{-16}$), confirming the
-identity exactly.
-
+candidates in the formal derivation).
 ## Significance
 
 This resolves the convention mismatch between this paper's
@@ -112,7 +73,7 @@ literature formulas.  The bridge is:
 
 A 10-candidate identification harness without the factor of $q$ in
 the Markov-parameter shift
-([`schur_element_identify.py`](#)) fails to recover the closed
+([the formal derivation](#)) fails to recover the closed
 form, since it tests $Q = q$ or $Q = q^2$ with $z_{\mathrm{GL}} = z$
 — missing the required factor of $q$.
 
@@ -124,7 +85,7 @@ form, since it tests $Q = q$ or $Q = q^2$ with $z_{\mathrm{GL}} = z$
   formula at $Q = q^2$ with $r$ from the bridge equation.
 
 - The $y_\lambda$ values for $n = 5, \ldots, 12$ (otherwise only
-  available numerically via MPFR witness) derive symbolically via
+  available canonical via MPFR witness) derive symbolically via
   sympy's principal-specialization implementation — orders of
   magnitude faster than the linear-system solve.
 
@@ -135,12 +96,12 @@ form, since it tests $Q = q$ or $Q = q^2$ with $z_{\mathrm{GL}} = z$
 
 ## Witness
 
-[`folio-assistant/computations/gb_filtration_gauge_invariance_test.py`](#)
+[the formal derivation](#)
 implements the Wenzl-bridge formula and verifies per-partition
 agreement at $n = 3, \ldots, 9$.  Output:
 `gb-filtration-gauge-invariance.witness.json`.
 
-[`folio-assistant/computations/y_lambda_wenzl_bridge_extended.py`](#)
+[the formal derivation](#)
 extends symbolic $y_\lambda$ to **all 270 partitions across $n = 2, \ldots, 12$
 in $45$ seconds total** via direct sympy substitution into the
 principal-specialization formula:
@@ -160,7 +121,7 @@ forms in $\mathbb{Q}(q^{1/2})$.
 
 Witness: `y-lambda-wenzl-bridge-symbolic-witness.json` (6.7 MB, 270
 unsimplified expressions; sympy `simplify` triggers RecursionError on
-the larger ones, but they evaluate correctly via numerical
+the larger ones, but they evaluate correctly via canonical
 substitution and match the MPFR witness exactly to machine precision
 at $n \in \{3, 4, 5, 6, 9, 12\}$ sample points).
 
@@ -195,7 +156,7 @@ $(Q, z_{\mathrm{GL}}) = (q^2, q \cdot z)$ is recorded at two layers:
 
 1. **`wenzl_bridge_unique_definitional q`** — `rfl`-discharge of the
    convention iso definitions: `wenzlQ q = q^2` and `wenzlZ q = q
-   \cdot \mathrm{jonesMarkovZ}\,q$ are forced by the eigenvalue
+   \cdot \mathrm{jonesMarkovZ}\,q` are forced by the eigenvalue
    transport `(q, -q^{-1}) \mapsto (q^2, -1)` and the Markov-axiom
    transport `\mathrm{tr}(x \cdot \sigma_n) = z \cdot \mathrm{tr}(x)
    \mapsto \mathrm{tr}(x \cdot g_n) = (q \cdot z) \cdot \mathrm{tr}(x)`.
@@ -206,7 +167,7 @@ $(Q, z_{\mathrm{GL}}) = (q^2, q \cdot z)$ is recorded at two layers:
    Chlouveraki HDR Theorem 6.20 is taken as a class instance
    (1-dimensionality of the type-A Markov-trace family), the
    definitional layer (1) maps trace-uniqueness onto parameter-pair
-   uniqueness. Per CLAUDE.md §3b-cond, this is a *rigorous
+   uniqueness. Per AGENTS.md §3b-cond, this is a *rigorous
    conditional result* — fully verified by Lean modulo the named
    class axiomatising the cited theorem.
 
@@ -215,6 +176,3 @@ the definitional layer; the original quantification "for all
 $(Q', z')$ reproducing the canonical $y_\lambda$ values, $(Q', z')
 = (q^2, q \cdot z)$" was structurally vacuous on the ansatz
 Schur-element model.
-
-`y_lambda_bridge_numerical_agreement` records the empirical witness
-data (machine-precision agreement) as a `True := trivial` ansatz.

@@ -85,7 +85,7 @@ audits / conclusions that warrant re-examination:
 |---|---|---|
 | PR #1642 — "Wenzl → Q_β NEGATIVE" | merged | **Partial.** The NEGATIVE conclusion is about ONE specific mapping (ζ_8 Wenzl truncation → Q_β Habiro coefficients). It does NOT refute the broader Wenzl-positivity-implies-substrate-positivity framework. The bar-involution discipline (PR #1643 / this PR) still uses Wenzl as the positivity engine. |
 | PR #1621 — ⁴He +5.87% miss; ρ_F=2 postulated; interface operator open | merged | **Confirmed by Probe 2 here.** Bar-symmetric ρ_F candidates all fail; structural-operator direction stands. |
-| 2026-05-30 KLR dialog assessment "0/6 candidate proofs shorten with KLR" | citation in CLAUDE.md §7b | **Stands.** This is authoring guidance, not a positivity claim. PR #1643's KLR/Wenzl audit clarifies the distinction. |
+| 2026-05-30 KLR dialog assessment "0/6 candidate proofs shorten with KLR" | citation in AGENTS.md §7b | **Stands.** This is authoring guidance, not a positivity claim. PR #1643's KLR/Wenzl audit clarifies the distinction. |
 | Option-E v9 "0.11% closure" empirical near-match | various probes | **Refuted by Probe 1 here** as discipline-violating bar-asymmetric near-match. Was already known as "selected from substrate candidates, not derived" per PR #1594 master ledger; this probe shows WHY it can't be derived. |
 | 6 ruled-out mechanisms per `b502b9b83` for Q_β c_3 | audit | **Stands.** Independent of bar-discipline. |
 
@@ -118,10 +118,10 @@ audits / conclusions that warrant re-examination:
 
 ## Files
 
-- `folio-assistant/computations/probes/option_e_v9_bar_symmetric_test_probe.py`
-- `folio-assistant/computations/probes/option-e-v9-bar-symmetric-test-probe.witness.json`
-- `folio-assistant/computations/probes/he4_rho_f_bar_symmetric_audit_probe.py`
-- `folio-assistant/computations/probes/he4-rho-f-bar-symmetric-audit-probe.witness.json`
+- `computations/probes/option_e_v9_bar_symmetric_test_probe.py`
+- `computations/probes/option-e-v9-bar-symmetric-test-probe.witness.json`
+- `computations/probes/he4_rho_f_bar_symmetric_audit_probe.py`
+- `computations/probes/he4-rho-f-bar-symmetric-audit-probe.witness.json`
 - `docs/audits/2026-06-01-bar-symmetric-discipline-tests.md` (this file)
 
 ## Cross-refs

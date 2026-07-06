@@ -58,7 +58,7 @@ Plancherel weighting to a single observable. The 3-channel structure
 for leptons is the **canonical "where leptons live"** on the
 Bring surface: even though $\sigma_1^{2m+1}$ is naturally an $H_2$
 element (2 strands, 1 generator), the mass formula sits at $H_3$
-because that's where the cohomological discipline
+because that is where the cohomological discipline
 ([`prop:three-parameters-wedderburn`](three-parameters-wedderburn.md))
 fixes the 3-CAL $\leftrightarrow$ 3-channel mapping.
 
@@ -94,11 +94,11 @@ Computed $\hat V_\ell$ and Li_2^q-tower mass ratios at $q_0$:
 
 | Lepton | Braid | $\hat V_\ell$ | $\|\hat V\| < q_0$? | $m_{\mathrm{dim}}$ | Ratio | CODATA | Δ |
 |---|---|---:|:---:|---:|---:|---:|---:|
-| Electron | $\sigma_1^3$ T(2,3) | $+0.586$ | ✓ | $0.518$ | $1$ (cal) | — | — |
-| Muon T(2,5) | $\sigma_1^5$ | $+0.834$ | ✓ | $0.705$ | $1.36$ | $206.77$ | $-99.3\%$ |
-| Muon T(2,7) | $\sigma_1^7$ | $+1.119$ | ✗ | diverges | — | — | — |
-| Tau T(2,7) | $\sigma_1^7$ | $+1.119$ | ✗ | diverges | — | — | — |
-| Tau T(2,9) | $\sigma_1^9$ | $+1.452$ | ✗ | diverges | — | — | — |
+| Electron | $\sigma_1^3$ T(2,3) | $+0.586$ | yes | $0.518$ | $1$ (cal) | — | — |
+| Muon T(2,5) | $\sigma_1^5$ | $+0.834$ | yes | $0.705$ | $1.36$ | $206.77$ | $-99.3\%$ |
+| Muon T(2,7) | $\sigma_1^7$ | $+1.119$ | no | diverges | — | — | — |
+| Tau T(2,7) | $\sigma_1^7$ | $+1.119$ | no | diverges | — | — | — |
+| Tau T(2,9) | $\sigma_1^9$ | $+1.452$ | no | diverges | — | — | — |
 
 The convention is internally consistent (electron calibrates correctly),
 but **mass ratios do not close** under the canonical Li_2^q tower
@@ -134,7 +134,7 @@ Per [`prop:three-parameters-wedderburn`](three-parameters-wedderburn.md):
 
 - sym (highest weight, $+q$ only) $\leftrightarrow$ CAL-2 $q_0$ (substrate deformation)
 - std (mixed eigenvalues) $\leftrightarrow$ CAL-1 $m_e$ (mass scale)
-- alt (lowest weight, $-q^{-1}$ only) $\leftrightarrow$ CAL-3 $Q_\beta$ (interaction)
+- alt (lowest weight, $-q^{-1}$ only) $\leftrightarrow$ CAL-3 $\mathfrak{Q}_\beta$ (interaction)
 
 A natural conjecture maps the 3 lepton generations to the 3 H_3 channels
 respecting this lowest/highest-weight structure:
@@ -154,7 +154,7 @@ representation capacity at high crossing count.
 A plausible elementary-particle count fitting the 6-dim NF diamond:
 
 - 2 lepton generations $\times$ 2 chiralities (L, R) = 4 dimensions
-- 1 Higgs (figure-eight $4_1$, "Higgs field / mass mechanism" per `knot-volumes.py:58`)
+- 1 Higgs (figure-eight $4_1$, "Higgs field / mass mechanism" per `the formal derivation:58`)
 - 1 photon ($\gamma$, identity element of $H_3$)
 - **Total = 6 dimensions = $\dim H_3(q)$**
 
@@ -176,8 +176,8 @@ and possibly weak-isospin partner (neutrino).
 - [`prop:per-braid-mass-tower`](per-braid-mass-tower.md) — Li_2^q canonical mass formula
 - [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) — F_ℓ existence conjecture
 - [`rem:bar-involution`](bar-involution.md) — P_avg / P_skew projection (real-q mechanism)
-- Convention source: `tools/pyhecke/python/pyhecke/constants.py:156` (V_HAT_ELECTRON)
-- Compute infrastructure: `folio-assistant/computations/per_generator_V_hat_general.py` (generalises `per_generator_V_hat_3A`)
-- T6 closure attempt: `folio-assistant/computations/t6_lepton_h3_3channel_convention.py`
+- Convention source: `tools/pyhecke/python/pyhecke/the formal derivation:156` (V_HAT_ELECTRON)
+- Compute infrastructure: the formal derivation (generalises `per_generator_V_hat_3A`)
+- T6 closure attempt: the formal derivation
 - Audit: [`docs/audits/-lepton-bring-surface-h3-3channel-convention.md`](../../../docs/audits/-lepton-bring-surface-h3-3channel-convention.md)
 - SUPERSEDED ρ_q purge (now understood as incomplete): [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md)

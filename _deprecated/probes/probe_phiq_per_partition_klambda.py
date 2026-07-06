@@ -11,7 +11,7 @@ analysing the per-partition contributions to the brane-tower sum
 recomputed from PR #638's per-eigenvalue probe data.
 
 **Data source.** Read from PR #638's
-[`probe-phiq-operator-valued.witness.json`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe-phiq-operator-valued.witness.json)
+[`probe-phiq-operator-valued.witness.json`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/computations/probe-phiq-operator-valued.witness.json)
 on branch `claude/close-level-selection-rule-bvMvw`. The witness stores
 per-partition eigenvalue spectra $\\{\\mu_a^{(\\lambda)}\\}$ for each
 atom; the probe recomputes

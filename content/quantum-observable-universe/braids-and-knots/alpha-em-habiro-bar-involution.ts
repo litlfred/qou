@@ -16,9 +16,9 @@ export default proposition({
   computation: {
     engine: "sympy",
     script:
-      "folio-assistant/computations/alpha/alpha_em_q_difference_fourier.py",
+      "computations/alpha/alpha_em_q_difference_fourier.py",
     witness:
-      "folio-assistant/computations/alpha/alpha-em-q-difference-fourier.witness.json",
+      "computations/alpha/alpha-em-q-difference-fourier.witness.json",
     status: "verified",
   },
   tags: [

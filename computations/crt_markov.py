@@ -13,7 +13,7 @@ violation.
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 #!/usr/bin/env python3
-# DEPRECATION-CANDIDATE: witness was moved to folio-assistant/computations/_deprecated/ in PR #554 (dead-exploratory).
+# DEPRECATION-CANDIDATE: witness was moved to computations/_deprecated/ in PR #554 (dead-exploratory).
 # This .py script is kept in place because it is still imported by live code; revisit when the live importer is itself retired or rewired.
 """
 TRACK A: CRT-style polynomial reconstruction for Markov traces.
@@ -49,6 +49,8 @@ import numpy as np
 import mpmath
 
 sys.path.insert(0, str(Path(__file__).parent))
+import _path_bridge  # noqa: F401, E402 — ensure substrate/ on path for direct runs
+from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 — full-precision m_p for E_0 anchor
 from q_parameter import Q as _Q_CANONICAL
 
 
@@ -490,7 +492,7 @@ def test_tower_binding():
 
     # Calibration from single-nucleon proton tower
     m_p_tower = tower_mass_symbolic_eval(1, 0, False, 1, 1, 1, q0, 50)
-    E_0_tower = mpmath.mpf('938.272') / m_p_tower["total"]
+    E_0_tower = mpmath.mpf(M_P_MEV_VALIDATION) / m_p_tower["total"]
     print(f"m_p_tower = {m_p_tower['total']!s}")
     print(f"E_0_tower = {E_0_tower!s} MeV/cat.unit")
     print()
@@ -512,7 +514,7 @@ def test_tower_binding():
         mf = tower_mass_symbolic_eval(Z, N, False, mp, mpn, mn, q0, 50)
         ma = tower_mass_symbolic_eval(Z, N, True, mp, mpn, mn, q0, 50)
         B = float(E_0_tower * (mf["total"] - ma["total"]))
-        M_total = (Z + N) * 938.272
+        M_total = (Z + N) * float(M_P_MEV_VALIDATION)
         dm = abs(B - B_AME) / M_total * 100
         print(f"  {atom:>6} {Z+N:>3d} {float(mf['total']):>15.4e} "
               f"{float(ma['total']):>15.4e} {B:>10.4f} "
@@ -602,7 +604,7 @@ if __name__ == "__main__":
         tr_free = mpmath.mpf(r["tr_free_abs"])
         B_cat = tr_free - tr_atom
         B_MeV = float(E_0_cat * B_cat)
-        M_total = r["A"] * 938.272
+        M_total = r["A"] * float(M_P_MEV_VALIDATION)
         dm_m = abs(B_MeV - r["B_AME_MeV"]) / M_total * 100
         B_err = B_MeV - r["B_AME_MeV"]
         Bpa = B_MeV / r["A"]

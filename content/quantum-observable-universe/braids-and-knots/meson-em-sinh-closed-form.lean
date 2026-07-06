@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
+
 /-!
 # Meson EM sinh-channel correction: closed-form identity
 
@@ -23,32 +27,33 @@ rigorous derivation of the truncation order from first principles.
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -/
 
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.Ring
 
 namespace QOU.BraidKnot
 
-variable {R : Type*}
+/-- The substrate Planck quantum `ℏ_q = (q − 1)/q = 1 − q⁻¹`.
 
-/-- The substrate Planck quantum `ℏ_q = (q − 1)/q = 1 − q⁻¹`. -/
-noncomputable def hbarQ [Field R] (q : R) : R := (q - 1) / q
+    Stated over `ℝ`: the closed-form identities below halve the
+    EM self-energy (division by the literal `2`), which requires a
+    base ring of characteristic `≠ 2`.  These are the physical meson
+    EM correction factors evaluated at the substrate `q_0`
+    (archimedean side of the substrate→archimedean wall, §7c). -/
+noncomputable def hbarQ (q : ℝ) : ℝ := (q - 1) / q
 
 /-- The sinh-channel EM correction factor in closed form:
     `1 + ℏ_q − ℏ_q²/2 = (3q² − 1)/(2q²)`. -/
-theorem meson_EM_closed_form [Field R] (q : R) (hq : q ≠ 0) :
+theorem meson_EM_closed_form (q : ℝ) (hq : q ≠ 0) :
     1 + hbarQ q - (hbarQ q)^2 / 2 = (3 * q^2 - 1) / (2 * q^2) := by
   unfold hbarQ
   field_simp
   ring
 
 /-- Equivalent form: `(3q² − 1)/(2q²) = (3 − q⁻²)/2`. -/
-theorem meson_EM_closed_form_inverse [Field R] (q : R) (hq : q ≠ 0) :
+theorem meson_EM_closed_form_inverse (q : ℝ) (hq : q ≠ 0) :
     (3 * q^2 - 1) / (2 * q^2) = (3 - q⁻¹^2) / 2 := by
   field_simp
-  ring
 
 /-- Equivalent form: `1 + ℏ_q − ℏ_q²/2 = 1 + (1 − q⁻²)/2`. -/
-theorem meson_EM_closed_form_planck [Field R] (q : R) (hq : q ≠ 0) :
+theorem meson_EM_closed_form_planck (q : ℝ) (hq : q ≠ 0) :
     1 + hbarQ q - (hbarQ q)^2 / 2 = 1 + (1 - q⁻¹^2) / 2 := by
   unfold hbarQ
   field_simp

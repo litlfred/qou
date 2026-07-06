@@ -1,4 +1,9 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Data.Finset.Card
+import Mathlib.Data.Nat.Factorial.Basic
+import Mathlib.Tactic.FinCases
+import Mathlib.Tactic.IntervalCases
+import Mathlib.Tactic.NormNum
 
 
 /-!
@@ -19,7 +24,7 @@ LaTeX label: `prop:shell-closure-normal-form`
 ## References
 - [manuscript] §6/shell-closure-normal-form
 - [unital-groebner-bases] main theorem (division algorithm)
-- Computation: folio-assistant/computations/pruned-normal-forms.py
+- Computation: computations/pruned-normal-forms.py
 
 **Ground ring**: `ℝ` (archimedean realisation).
 Evaluates formal results at q₀ ≈ 1.1098 for comparison with
@@ -63,18 +68,18 @@ namespace QOU.Archimedean
 -- Ref: [unital-groebner-bases:def:groebner-basis]
 structure IsNormalForm (support : List (List ℕ)) : Prop where
   /-- No word contains σᵢσᵢ (Hecke reducible). -/
-  no_squares : ∀ w ∈ support, ∀ i, i + 1 < w.length →
-    w.get ⟨i, by omega⟩ ≠ w.get ⟨i + 1, by omega⟩
+  no_squares : ∀ w ∈ support, ∀ i, (hi : i + 1 < w.length) →
+    w.get ⟨i, Nat.lt_of_succ_lt hi⟩ ≠ w.get ⟨i + 1, hi⟩
   /-- No word contains σᵢσⱼ with i > j, |i-j| ≥ 2 (far-comm reducible). -/
-  no_far_comm : ∀ w ∈ support, ∀ i, i + 1 < w.length →
-    let a := w.get ⟨i, by omega⟩
-    let b := w.get ⟨i + 1, by omega⟩
+  no_far_comm : ∀ w ∈ support, ∀ i, (hi : i + 1 < w.length) →
+    let a := w.get ⟨i, Nat.lt_of_succ_lt hi⟩
+    let b := w.get ⟨i + 1, hi⟩
     (a > b ∧ a - b ≥ 2) → False
   /-- No word contains σᵢσ_{i±1}σᵢ that is YB-reducible to a lex-smaller triple. -/
-  no_yang_baxter : ∀ w ∈ support, ∀ i, i + 2 < w.length →
-    let a := w.get ⟨i, by omega⟩
-    let b := w.get ⟨i + 1, by omega⟩
-    let c := w.get ⟨i + 2, by omega⟩
+  no_yang_baxter : ∀ w ∈ support, ∀ i, (hi : i + 2 < w.length) →
+    let a := w.get ⟨i, Nat.lt_of_succ_lt (Nat.lt_of_succ_lt hi)⟩
+    let b := w.get ⟨i + 1, Nat.lt_of_succ_lt hi⟩
+    let c := w.get ⟨i + 2, hi⟩
     (a = c ∧ (a = b + 1 ∨ b = a + 1) ∧ (a, b, a) > (b, a, b)) → False
 
 /-- The Gröbner division algorithm preserves well-foundedness.
@@ -89,9 +94,9 @@ axiom division_terminates_unique (n : ℕ) (q : ℝ) (hq : q > 1) :
 /-- Base case: the identity element is in normal form. -/
 -- Ref: [manuscript] §6/shell-closure-normal-form
 theorem identity_is_normal_form : IsNormalForm [[]] where
-  no_squares := by intro w hw i hi; simp [List.mem_singleton] at hw; subst hw; omega
-  no_far_comm := by intro w hw i hi; simp [List.mem_singleton] at hw; subst hw; omega
-  no_yang_baxter := by intro w hw i hi; simp [List.mem_singleton] at hw; subst hw; omega
+  no_squares := by intro w hw i hi; simp only [List.mem_singleton] at hw; subst hw; simp at hi
+  no_far_comm := by intro w hw i hi; simp only [List.mem_singleton] at hw; subst hw; simp at hi
+  no_yang_baxter := by intro w hw i hi; simp only [List.mem_singleton] at hw; subst hw; simp at hi
 
 /-- Inductive step: if N̄(A) is in normal form, then after Hopf-linking
     one nucleon and applying the division algorithm, N̄(A+1) is also
@@ -106,7 +111,7 @@ theorem hopf_link_preserves_normal_form (n : ℕ) (q : ℝ) (hq : q > 1)
     (h_nf : IsNormalForm (nf_A.map Prod.fst)) :
     ∃ nf_A1 : List (List ℕ × ℝ),
     IsNormalForm (nf_A1.map Prod.fst) :=
-  division_terminates_unique (n + 1) q hq _
+  division_terminates_unique (n + 1) q hq nf_A
 
 /-- The sequential construction produces a normal form at every step.
     By induction on A. -/
@@ -116,7 +121,7 @@ theorem sequential_build_always_normal_form (q : ℝ) (hq : q > 1) :
     ∃ nf : List (List ℕ × ℝ),
     IsNormalForm (nf.map Prod.fst) := by
   intro A hA
-  exact division_terminates_unique A q hq _
+  exact division_terminates_unique A q hq []
 
 -- ═══════════════════════════════════════════════════════════════════
 -- PART 0b: Finiteness of the normal form
@@ -151,35 +156,40 @@ theorem hecke_basis_size (A : ℕ) :
 /-- A word-length histogram is palindromic if h(ℓ) = h(L - ℓ) for all ℓ. -/
 -- Ref: [manuscript] §6/shell-closure-normal-form
 def isPalindrome (h : List ℕ) : Prop :=
-  ∀ i, i < h.length → h.get ⟨i, by omega⟩ = h.get ⟨h.length - 1 - i, by omega⟩
+  ∀ i, (hi : i < h.length) →
+    h.get ⟨i, hi⟩ = h.get ⟨h.length - 1 - i,
+      lt_of_le_of_lt (Nat.sub_le _ _)
+        (Nat.sub_lt (Nat.pos_of_lt_of_le (Nat.zero_le i) (Nat.le_of_lt hi)) Nat.one_pos)⟩
 
 /-- ⁴He histogram {1, 3, 4, 3, 1} is palindromic. -/
 -- Ref: [manuscript] pruned-normal-forms.py witness, A=4
 theorem he4_palindrome : isPalindrome [1, 3, 4, 3, 1] := by
   intro i hi
-  fin_cases i <;> simp [isPalindrome, List.get]
+  simp only [List.length_cons, List.length_nil] at hi
+  interval_cases i <;> rfl
 
-/-- The Poincaré polynomial of S_n evaluated at t=1 gives n!.
-    For S_4: 1+3+4+3+1 = 12 = 4!/(2^0 ... nah just sum). Actually
-    1+3+4+3+1 = 12 ≠ 4! = 24. The histogram counts TERMS per length,
-    not the actual Poincaré polynomial coefficients.
+/- The Poincaré polynomial of S_n evaluated at t=1 gives n!.
+   For S_4: 1+3+4+3+1 = 12 = 4!/(2^0 ... nah just sum). Actually
+   1+3+4+3+1 = 12 ≠ 4! = 24. The histogram counts TERMS per length,
+   not the actual Poincaré polynomial coefficients.
 
-    Actually: |{w ∈ S_4 : ℓ(w) = k}| for k=0..3 is {1,3,5,6,5,3,1}
-    (6 elements total = 4! = 24 summing all). But our histogram is
-    {1,3,4,3,1} = 12 terms. This is the HECKE ELEMENT term count,
-    which may differ from the permutation count because the Gröbner
-    reduction can merge or cancel terms.
+   Actually: |{w ∈ S_4 : ℓ(w) = k}| for k=0..3 is {1,3,5,6,5,3,1}
+   (6 elements total = 4! = 24 summing all). But our histogram is
+   {1,3,4,3,1} = 12 terms. This is the HECKE ELEMENT term count,
+   which may differ from the permutation count because the Gröbner
+   reduction can merge or cancel terms.
 
-    The palindrome property comes from the Bruhat order duality:
-    w ↦ w₀w (where w₀ is the longest element) reverses the length
-    grading and preserves the coefficient structure. -/
+   The palindrome property comes from the Bruhat order duality:
+   w ↦ w₀w (where w₀ is the longest element) reverses the length
+   grading and preserves the coefficient structure. -/
 
 /-- ⁶Li(3,3) histogram is palindromic. -/
 -- Ref: [manuscript] pruned-normal-forms.py witness, A=6
 theorem li6_palindrome :
     isPalindrome [1, 5, 13, 23, 31, 34, 31, 23, 13, 5, 1] := by
   intro i hi
-  interval_cases i <;> simp [isPalindrome, List.get]
+  simp only [List.length_cons, List.length_nil] at hi
+  interval_cases i <;> rfl
 
 -- ═══════════════════════════════════════════════════════════════════
 -- PART II: Shell energy gap

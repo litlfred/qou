@@ -5,7 +5,7 @@
 **Coordinates with:** [PR #644 — 1 ppb mass closure plan](https://github.com/litlfred/qou/pull/644)
 **Companion:** [`2026-05-12-lean-handover.md`](2026-05-12-lean-handover.md),
 [`2026-05-08-trivial-skeleton-workplan.md`](2026-05-08-trivial-skeleton-workplan.md),
-CLAUDE.md §3b-cond
+AGENTS.md §3b-cond
 
 This note records the P4 canonical-instance review for the two
 `sorry`s named in the handover doc and explains why they are kept
@@ -18,7 +18,7 @@ in place rather than discharged.
 
 Both `sorry`s sit inside the `data + proof` fields of a §3b-cond
 **class canonical instance** and faithfully encode the conjectural
-input.  Per CLAUDE.md §3b-cond:
+input.  Per AGENTS.md §3b-cond:
 
 > **Class axiomatisation.** `conj:C` has a Lean `class C`
 > declaration in its `.lean` file, with class fields encoding the
@@ -116,7 +116,7 @@ Symptoms of triviality:
 
 ## Why the original `sorry`s are correct
 
-Per CLAUDE.md §3b-cond, a `class C` Lean declaration carries the
+Per AGENTS.md §3b-cond, a `class C` Lean declaration carries the
 conjecture's content via its fields, and the `sorry` in the canonical
 instance IS the conjectural axiom.  Downstream conditional theorems
 (taking `[C]` as an explicit hypothesis) are unconditional Lean
@@ -145,7 +145,7 @@ on `main`, so `lake build QOU` should remain green:
 
 - CI: `lean_ci.yml` runs `lake build` with `continue-on-error` and
   reports `sorry` counts (per `.github/workflows/lean_ci.yml:130-164`).
-- Local: per CLAUDE.md §0a, run `lake build QOU` from the repo root.
+- Local: per AGENTS.md §0a, run `lake build QOU` from the repo root.
 
 ## What this PR does not do
 

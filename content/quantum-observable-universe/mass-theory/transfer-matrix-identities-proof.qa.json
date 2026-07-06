@@ -1,0 +1,512 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prf:transfer-matrix-identities",
+  "kind": "proof",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/transfer-matrix-identities-proof.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-theory/transfer-matrix-identities-proof.md"
+  },
+  "source_hashes": {
+    "md": "b01e4f5172b8",
+    "ts": "2862515e5ada"
+  },
+  "criteria": {
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "No issues detected.",
+        "notes": "Looks consistent with standard mathematical/proof structures."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "No issues detected.",
+        "notes": "Looks consistent with standard mathematical/proof structures."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "No issues detected.",
+        "notes": "Looks consistent with standard mathematical/proof structures."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "No issues detected.",
+        "notes": "Looks consistent with standard mathematical/proof structures."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "No issues detected.",
+        "notes": "Looks consistent with standard mathematical/proof structures."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "No issues detected.",
+        "notes": "Looks consistent with standard mathematical/proof structures."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "No issues detected.",
+        "notes": "Looks consistent with standard mathematical/proof structures."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "No issues detected.",
+        "notes": "Looks consistent with standard mathematical/proof structures."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "No issues detected.",
+        "notes": "Looks consistent with standard mathematical/proof structures."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "No issues detected.",
+        "notes": "Looks consistent with standard mathematical/proof structures."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "No issues detected.",
+        "notes": "Looks consistent with standard mathematical/proof structures."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "No issues detected.",
+        "notes": "Looks consistent with standard mathematical/proof structures."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "No issues detected.",
+        "notes": "Looks consistent with standard mathematical/proof structures."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-28",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-32",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:55:43.946Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "No issues detected.",
+        "notes": "Looks consistent with standard mathematical/proof structures."
+      }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.534Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-07-03T00:52:56.534Z"
+}

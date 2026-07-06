@@ -20,12 +20,14 @@ set_option autoImplicit false
 
 namespace QOU.AlgebraicSubstrate
 
+open CategoryTheory
+
 universe u v
 
 variable {C : Type u} [CategoryTheory.Category.{v} C]
   [CategoryTheory.MonoidalCategory C]
 
-/-- The unit particle defect is Legendrian: the contact form θ
+/- The unit particle defect is Legendrian: the contact form θ
     vanishes on the support of the unit particle state Li_q(z).
 
     In a 3-dimensional torsion leaf L_q, Legendrian curves are knots,

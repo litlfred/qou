@@ -37,15 +37,16 @@ import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from q1_mass_gap_probe import plancherel_weight  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION  # noqa: E402
 
 set_compute_dps()
 
 # Empirical binding energies / masses (MeV) — AME2020-class values,
 # exploratory comparison targets only (not substrate inputs):
 EMPIRICAL = {
-    "d":    {"B": 2.224566,  "m": 1875.612928},
-    "He3":  {"B": 7.718043,  "m": 2808.391607},
-    "He4":  {"B": 28.295674, "m": 3727.379378},
+    "d":    {"B": float(AME_B_DEUTERON_MEV_VALIDATION),  "m": 1875.612928},
+    "He3":  {"B": float(AME_B_HE3_MEV_VALIDATION),  "m": 2808.391607},
+    "He4":  {"B": float(AME_B_HE4_MEV_VALIDATION), "m": 3727.379378},
 }
 
 

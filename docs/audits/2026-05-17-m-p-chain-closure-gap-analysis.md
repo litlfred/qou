@@ -51,7 +51,7 @@ is a fourth term separate from the tower above). The proton row in
 ## What the numbers actually say
 
 ```
-$ python3 folio-assistant/computations/build_proton_mass_50dps_chain.py
+$ python3 computations/build_proton_mass_50dps_chain.py
 target_value:  0.59741815 MeV
 CODATA m_p:    938.27208816 MeV
 rel_diff:      0.9994  (9.99363e+08 ppb; target 1 ppb)
@@ -89,7 +89,7 @@ not that the formula is empty. Either:
    conjecture (open) may forbid A=1 brane levels; this would force
    T2+T3 = 0 structurally and shift the missing mass to T5/T6.
 
-`folio-assistant/computations/probe_proton_t2_t3_at_a1.py` (proposed) —
+`computations/probe_proton_t2_t3_at_a1.py` (proposed) —
 extend the per-gen pipeline to A=1, see what T2+T3 actually contribute.
 
 ### Item B — Structural ansatz for T5 (chirality BW)
@@ -114,7 +114,7 @@ of double-counting between T1+T2+T3 and the chirality channel — a
 *subtractive* term that's accidentally being added. This needs careful
 audit.
 
-`folio-assistant/computations/probe_t5_chirality_categorical_audit.py`
+`computations/probe_t5_chirality_categorical_audit.py`
 (proposed) — enumerate candidate categorical objects at 50 dps and
 compare to $-7.79$.
 
@@ -126,7 +126,7 @@ T6 alone can't carry it. *Unless* T6 has a different role at A=1 vs
 A≥2: maybe at A=1 the Habiro infinite series doesn't truncate the way
 it does for compounds, and the full residue is much larger.
 
-`folio-assistant/computations/probe_t6_habiro_residue_full_series.py`
+`computations/probe_t6_habiro_residue_full_series.py`
 (proposed) — evaluate the full Habiro generating-function residue at
 $q_0$ for the 3-strand proton braid without the residue-tail
 truncation.
@@ -159,9 +159,9 @@ it, B is essential.
 
 - [PR #663](https://github.com/litlfred/qou/pull/663) — isotope-mass-table
   honest no-cal regen + the 1 % sanity guard
-- [`build_proton_mass_50dps_chain.py`](../../folio-assistant/computations/build_proton_mass_50dps_chain.py) — chain assembly
-- [`derive_m_p_hecke_path_a.py`](../../folio-assistant/computations/derive_m_p_hecke_path_a.py) — T1+T4 partial
-- [`mass_endomorphism.py`](../../folio-assistant/computations/mass_endomorphism.py) — `mass_from_tower(vols)` definition
+- [`build_proton_mass_50dps_chain.py`](../../computations/build_proton_mass_50dps_chain.py) — chain assembly
+- [`derive_m_p_hecke_path_a.py`](../../computations/derive_m_p_hecke_path_a.py) — T1+T4 partial
+- [`mass_endomorphism.py`](../../computations/mass_endomorphism.py) — `mass_from_tower(vols)` definition
 - [`docs/audits/2026-05-10-non-calibrated-mass-state-of-play.md`](2026-05-10-non-calibrated-mass-state-of-play.md) — prior state-of-play
 - [`docs/audits/2026-05-12-1ppb-implementation-plan.md`](2026-05-12-1ppb-implementation-plan.md) — 1ppb plan
 

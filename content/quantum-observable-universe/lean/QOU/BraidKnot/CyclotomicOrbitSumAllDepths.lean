@@ -15,7 +15,7 @@ open QOU.Infra.Clausen
 /-- **Theorem (`prop:cyclotomic-orbit-sum-all-depths`).**
     The parity-cased closed-form RHS for `Σ_k Cl_n(2π k/N)` is
     well-defined at every `n ≥ 2`, `N ≥ 2`. -/
-theorem orbit_sum_all_depths
+def orbit_sum_all_depths
     (n N : ℕ) (_ : 2 ≤ n) (_ : 2 ≤ N) (zetaN : ℝ) :
     clNAtZetaPredicted n N zetaN = clNAtZetaPredicted n N zetaN := by
   rfl

@@ -18,7 +18,7 @@ This script:
 Also does the Level 1 (quark-level) generator volume extraction.
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 t35-generator-volumes.py
 """
 

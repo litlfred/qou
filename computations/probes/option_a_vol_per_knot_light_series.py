@@ -110,7 +110,7 @@ HERE = Path(__file__).resolve().parent
 # matches `codata_2022_source.py` ("0.51099895069").
 M_E_MEV_50DPS = "0.51099895069"
 
-# Chi-cache + y_lambda witnesses live in folio-assistant/computations/
+# Chi-cache + y_lambda witnesses live in computations/
 # (one directory up from probes/).
 COMPUTE_DIR = HERE.parent
 CHI_CACHE_DIR = COMPUTE_DIR

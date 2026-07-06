@@ -115,7 +115,7 @@ def main() -> int:
     # If the normalized Markov trace of the identity were the Casimir
     # mode-count weight, ξ_k = 0 — but this holds for ALL q, so it is a
     # normalization tautology, not Casimir physics.
-    q_sweep = ["1.05", "1.1099785827513808", "1.3", "1.7", "2.0"]
+    q_sweep = ["1.05", "1.1099785955573347", "1.3", "1.7", "2.0"]
     normalized_across_q = []
     max_dev_from_1 = mp.mpf(0)
     for qs in q_sweep:

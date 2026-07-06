@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/_deprecated/recursive_alpha.py",
+  "script_path": "computations/_deprecated/recursive_alpha.py",
   "language": "python",
   "source_hash": "fa33cffb13a6",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -21,7 +21,7 @@
         "reviewed_at": "2026-05-22T18:27:38.070Z",
         "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
         "severity": "major",
-        "evidence": "folio-assistant/computations/_deprecated/recursive_alpha.py:44: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/recursive_alpha.py:44: bare float literal `0.5` — wrap in `mpmath.mpf(\"0.5\")` / `Decimal(\"0.5\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/recursive_alpha.py:44: bare float literal `0.5` — wrap in `mpmath.mpf(\"0.5\")` / `Decimal(\"0.5\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/recursive_alpha.py:48: bare float literal `10.0` — wrap in `mpmath.mpf(\"10.0\")` / `Decimal(\"10.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/recursive_alpha.py:48: bare float literal `9.0` — wrap in `mpmath.mpf(\"9.0\")` / `Decimal(\"9.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/_deprecated/recursive_alpha.py:44: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/_deprecated/recursive_alpha.py:44: bare float literal `0.5` — wrap in `mpmath.mpf(\"0.5\")` / `Decimal(\"0.5\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/_deprecated/recursive_alpha.py:44: bare float literal `0.5` — wrap in `mpmath.mpf(\"0.5\")` / `Decimal(\"0.5\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/_deprecated/recursive_alpha.py:48: bare float literal `10.0` — wrap in `mpmath.mpf(\"10.0\")` / `Decimal(\"10.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/_deprecated/recursive_alpha.py:48: bare float literal `9.0` — wrap in `mpmath.mpf(\"9.0\")` / `Decimal(\"9.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       },
       {
         "field_hash": {
@@ -38,7 +38,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/_deprecated/recursive_alpha.py:44: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/recursive_alpha.py:44: bare float literal `0.5` — wrap in `mpmath.mpf(\"0.5\")` / `Decimal(\"0.5\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/recursive_alpha.py:44: bare float literal `0.5` — wrap in `mpmath.mpf(\"0.5\")` / `Decimal(\"0.5\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/recursive_alpha.py:48: bare float literal `10.0` — wrap in `mpmath.mpf(\"10.0\")` / `Decimal(\"10.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/recursive_alpha.py:48: bare float literal `9.0` — wrap in `mpmath.mpf(\"9.0\")` / `Decimal(\"9.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/_deprecated/recursive_alpha.py:44: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/_deprecated/recursive_alpha.py:44: bare float literal `0.5` — wrap in `mpmath.mpf(\"0.5\")` / `Decimal(\"0.5\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/_deprecated/recursive_alpha.py:44: bare float literal `0.5` — wrap in `mpmath.mpf(\"0.5\")` / `Decimal(\"0.5\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/_deprecated/recursive_alpha.py:48: bare float literal `10.0` — wrap in `mpmath.mpf(\"10.0\")` / `Decimal(\"10.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/_deprecated/recursive_alpha.py:48: bare float literal `9.0` — wrap in `mpmath.mpf(\"9.0\")` / `Decimal(\"9.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       }
     ],
     "respects_archimedean_wall": [
@@ -91,7 +91,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/_deprecated/recursive_alpha.py:50: `def conjugate(…)` has 1 parameter without type annotation: p — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/recursive_alpha.py:59: `def compute_alpha_correction_at_k(…)` has 2 parameters without type annotation: k, prev_witness — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/recursive_alpha.py:179: `def compute_recursive_alpha(…)` has 2 parameters without type annotation: max_k, resume_witness — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/_deprecated/recursive_alpha.py:50: `def conjugate(…)` has 1 parameter without type annotation: p — add `: type` (or `: Any` if the type genuinely is untyped) | computations/_deprecated/recursive_alpha.py:59: `def compute_alpha_correction_at_k(…)` has 2 parameters without type annotation: k, prev_witness — add `: type` (or `: Any` if the type genuinely is untyped) | computations/_deprecated/recursive_alpha.py:179: `def compute_recursive_alpha(…)` has 2 parameters without type annotation: max_k, resume_witness — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -110,7 +110,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/_deprecated/recursive_alpha.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/_deprecated/recursive_alpha.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       }
     ],
     "connected_to_ci_pipeline": [
@@ -146,7 +146,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/_deprecated/recursive_alpha.py:1: script lives under `_deprecated/` — consumers must not depend on its output. Move to the canonical path if still active, or delete if truly retired"
+        "evidence": "computations/_deprecated/recursive_alpha.py:1: script lives under `_deprecated/` — consumers must not depend on its output. Move to the canonical path if still active, or delete if truly retired"
       }
     ],
     "uses_library_framework_appropriately": [
@@ -165,7 +165,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/_deprecated/recursive_alpha.py:248: script writes `.witness.json` (\"recursive-alpha.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
+        "evidence": "computations/_deprecated/recursive_alpha.py:248: script writes `.witness.json` (\"recursive-alpha.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
       }
     ],
     "compute_no_mpf_to_float_cast": [

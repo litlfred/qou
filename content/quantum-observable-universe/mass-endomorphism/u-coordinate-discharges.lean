@@ -1,4 +1,7 @@
 import Mathlib.Tactic
+import QOU.BraidKnot.QBetaCategoricalPrecisionLadder
+import QOU.BraidKnot.HoefsmitV21CosSymmetrization
+import QOU.BraidKnot.H3HeckeIdempotents
 
 /-!
 # QOU.BraidKnot.u_coordinate_discharges
@@ -29,9 +32,6 @@ LaTeX label: `rem:u-coordinate-discharges`
 -/
 
 -- Sibling-chapter dependency for `hoefsmitB` and `hoefsmit_b_sq`.
-import QOU.BraidKnot.QBetaCategoricalPrecisionLadder
-import QOU.BraidKnot.HoefsmitV21CosSymmetrization
-import QOU.BraidKnot.H3HeckeIdempotents
 
 namespace QOU.BraidKnot
 

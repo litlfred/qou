@@ -42,7 +42,7 @@ $$
 $$
 
 > **Theorem (conditional on [`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit)).**
-> Per CLAUDE.md §3b-cond: the upstream conjecture is axiomatised in
+> Per AGENTS.md §3b-cond: the upstream conjecture is axiomatised in
 > Lean as the typeclass
 > [`QOU.QPochhammer.ArchimedeanLimit`](../braids-and-knots/dilogarithm-archimedean-limit.lean);
 > the Bloch-Suslin pentagon-uniqueness theorem [`suslin1991`,
@@ -135,40 +135,7 @@ The Bloch-Wigner dilogarithm is uniquely characterized as the
 function satisfying the 5-term pentagon identity
 [`suslin1991`, `bloch2000`], providing the exact geometric measure
 of the ideal tetrahedra that triangulate the knot complement.
-
-## Proof sketch
-
-Three ingredients close the conditional statement.
-
-1. **Pentagon-coherence on the substrate.** The 5-term pentagon
-   identity is built into the cosimplicial / Yekutieli triple
-   structure of the QOU substrate
-   ([cosimplicial crossed groupoid](#prop:cosimplicial-crossed-groupoid)).
-   The motivic class assembled by the mass-formula state sum lives
-   in the Bloch group
-   $B(\mathbb{C}) = \mathbb{Z}[\mathbb{C}\setminus\{0,1\}]
-   /\langle\text{5-term pentagon relations}\rangle$
-   under this identification.
-2. **Bloch-Suslin uniqueness.** Suslin [`suslin1991`] proves that
-   the Suslin map
-   $K_3^{\text{ind}}(\mathbb{C}) \to \mathbb{R}$
-   is unique up to a real scalar; equivalently, any real-valued
-   continuous antisymmetric function on $\mathbb{C}\setminus\{0,1\}$
-   satisfying the pentagon is a constant scalar multiple of $D$.
-   This is the K-theoretic incarnation of the rigidity of the
-   Bloch group; see [`bloch2000`] for the definitive treatment.
-3. **Archimedean matching.** $\tau_{\text{arch}}$ acting on the
-   substrate's Bloch-group class is, by ingredient 1, a real-valued
-   continuous pentagon-coherent functional on $B(\mathbb{C})$. By
-   ingredient 2, it is therefore proportional to $D$. The
-   proportionality constant is fixed by demanding the
-   Faddeev-Kashaev quasi-classical limit
-   $(1-q)\log\Phi_n(z;q) \to \mathrm{Li}_2(z)$
-   ([dilogarithm archimedean limit](#conj:dilogarithm-archimedean-limit))
-   match the standard Bloch-Wigner normalisation
-   $D(z) = \mathrm{Im}\,\mathrm{Li}_2(z) + \log|z|\arg(1-z)$.
-
-## Consequences
+## Corollaries
 
 **(a) Resolves the pre-archimedean concern in
 [`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode).**
@@ -228,7 +195,7 @@ transcendental continuum required for geometric measurement. See
 
 ## Witness
 
-No numerical witness is appropriate for a uniqueness claim. The
+No canonical witness is appropriate for a uniqueness claim. The
 relevant cross-check is that any new closed form for a QOU
 observable proposed in this repository must be expressible as a
 $\tau_{\text{arch}}$-image of a pentagon-coherent

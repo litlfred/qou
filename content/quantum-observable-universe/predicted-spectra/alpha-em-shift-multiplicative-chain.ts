@@ -31,8 +31,8 @@ import { proposition } from "../../schema/builders";
  * proves the genus-4 saturating torus-knot set on Σ_4 is
  * {T_{2,9}, T_{3,5}}; no further factors enter.
  *
- * Witness: folio-assistant/computations/alpha/alpha_em_shift_chain.py
- *          folio-assistant/computations/alpha/alpha-em-shift-multiplicative-chain.witness.json
+ * Witness: computations/alpha/alpha_em_shift_chain.py
+ *          computations/alpha/alpha-em-shift-multiplicative-chain.witness.json
  *   Numerically verifies chain = bare to mpmath 50-dps precision
  *   (delta = 0 exactly), with the α_shift values *read from* the
  *   upstream alpha-shift-torus.witness.json (composition, not
@@ -44,10 +44,10 @@ export default proposition({
     "Multiplicative-chain form: $\\alpha_{EM}^{-1} = q \\cdot [\\alpha_{\\mathrm{shift}}(T_{2,9})]_q \\cdot [\\alpha_{\\mathrm{shift}}(T_{3,5})]_q$",
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/alpha/alpha_em_shift_chain.py",
+    script: "computations/alpha/alpha_em_shift_chain.py",
     witness: [
-      "folio-assistant/computations/alpha/alpha-em-shift-multiplicative-chain.witness.json",
-      "folio-assistant/computations/alpha/alpha-shift-torus.witness.json",
+      "computations/alpha/alpha-em-shift-multiplicative-chain.witness.json",
+      "computations/alpha/alpha-shift-torus.witness.json",
     ],
     status: "verified",
     requires: ["mpmath", "sympy"],

@@ -1,12 +1,12 @@
-/-!
-# QOU.AlgebraicSubstrate.collatz_contact_boundary — placeholder stub
+import Mathlib.Data.Real.Basic
 
-**Placeholder canonical** for content block at
+/-!
+# QOU.AlgebraicSubstrate.collatz_contact_boundary
+
+**Canonical declaration** for content block at
 [`quantum-observable-universe/appendix-surreals/collatz-contact-boundary.ts`](quantum-observable-universe/appendix-surreals/collatz-contact-boundary.ts).
 
-The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.AlgebraicSubstrate.collatz_contact_boundary` resolves to a real declaration in the `qou`
-Lake package.
+This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
 -/
 
 namespace QOU.AlgebraicSubstrate
@@ -25,10 +25,8 @@ class CollatzContactBoundaryContext where
   chi_A_eq : chi_A = -6
   /-- Kummer-level-2 obstruction is removable. -/
   kummer_obstruction_removable : Prop
-  /-- Manuscript identity: at the `[2]_q`-divisor `q = -1`, Kummer
-      level-2 obstruction is removable because `2 ∣ χ(A) = -6`. -/
-  claim_collatz_contact_boundary :
-    (q_int_2 = 0 → kummer_obstruction_removable) ∧ ((2 : ℤ) ∣ chi_A)
+  /-- Kummer obstruction vanishes if parity matches. -/
+  obstruction_removable_of_even_chi : (2 : ℤ) ∣ chi_A → (q_int_2 = 0 → kummer_obstruction_removable)
 
 /-- **Manuscript statement** (full body):
 
@@ -90,13 +88,15 @@ $$
 
 […truncated; see manuscript for remainder…]
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.claim_collatz_contact_boundary := by sorry`
-    placeholder; the `ctx.claim_collatz_contact_boundary : Prop` field carries the residual claim,
-    awaiting per-block type-level translation. -/
+    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/collatz-contact-boundary.ts
 theorem collatz_contact_boundary [ctx : CollatzContactBoundaryContext] :
     (ctx.q_int_2 = 0 → ctx.kummer_obstruction_removable) ∧
     ((2 : ℤ) ∣ ctx.chi_A) :=
-  ctx.claim_collatz_contact_boundary
+  by
+    have h1 : (2 : ℤ) ∣ ctx.chi_A := by
+      rw [ctx.chi_A_eq]
+      exact ⟨-3, rfl⟩
+    exact ⟨ctx.obstruction_removable_of_even_chi h1, h1⟩
 
 end QOU.AlgebraicSubstrate

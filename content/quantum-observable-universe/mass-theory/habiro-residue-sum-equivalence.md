@@ -37,7 +37,7 @@ declarations of `gradedMarkovTrace` and `residueAtRoot`.
 
 **Empirical witness.** The agreement is certified at machine precision
 on every available atomic Markov trace by
-`folio-assistant/computations/markov/markov_pipeline_cross_validator.py`.  The
+the formal derivation.  The
 cross-pipeline witness records, per atom, the relative difference
 between the two paths.  The current run achieves:
 
@@ -53,18 +53,8 @@ for the analytic identity stated above; the Lean theorem
 `HabiroResidueSumEquivalence` records the agreement as an axiom-level
 class.
 
-**Why this matters.** The polynomial-ring path is **constructive** (the
-Habiro coefficients $a_m(u)$ are computed by sequential cyclotomic
-division, see [`cor:habiro-expansion-atomic`](#cor:habiro-expansion-atomic))
-while the residue path is **analytic** (it requires the quantum
-dilogarithm $\Phi_q$ and complex-analytic residues at primitive roots
-of unity).  The equivalence shows the two viewpoints are
-two computational handles on the **same underlying object** in the
-Habiro ring, and lets later proofs use whichever is more tractable
-without losing rigour.
-
 **Cross-validation infrastructure.** The check is run by
-`markov_pipeline_cross_validator.py`; output witness
+the formal derivation; output witness
 `markov-pipeline-cross-validation.witness.json` records:
 
 - Per-atom assertion `tr_M_at_q0_archimedean[atom]` with a relative
@@ -75,5 +65,5 @@ without losing rigour.
 
 The validator skips when one of its inputs is absent (forward
 compatibility), and uses the standard `WitnessBuilder` so
-`run_pipeline.py` automatically reruns it whenever either input
+the formal derivation automatically reruns it whenever either input
 witness changes.

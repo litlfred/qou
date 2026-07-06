@@ -1,6 +1,28 @@
 {
-  "description": "Test 1 Phase A v2 \u2014 Apollonius parametrization on (CAL-2, CAL-3) for complex q under Q_\u03b2 ansatz",
-  "computation": "q_beta_complex_q_test1_phaseA_v2",
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-30T23:44:49.457888+00:00",
+  "commitSha": "0220fdf924b1bb13b50fc87488a49b858e67ae23",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "q-beta-complex-q-test1-phasea-v2",
+  "scriptFile": "q_beta_complex_q_test1_phaseA_v2.py",
+  "scriptHash": "54effc787e8c",
+  "scriptCommitSha": "f6ddd9350192668fe1fb6c2498f8d5b91bb70331",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Test 1 Phase A v2 — Apollonius parametrization on (CAL-2, CAL-3) for complex q under Q_β ansatz",
   "audit_only": true,
   "precision_dps": 50,
   "context": {
@@ -9,7 +31,7 @@
       "docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md",
       "docs/audits/2026-05-24-complex-q-historical-trajectory.md"
     ],
-    "ansatz_form": "Q_\u03b2(q) = m_e \u00b7 |(q\u00b2\u22122q\u22121)(q+1)/(2q\u00b3)|",
+    "ansatz_form": "Q_β(q) = m_e · |(q²−2q−1)(q+1)/(2q³)|",
     "ansatz_status": "ANSATZ (per pre-archimedean-derivation-chain.md:391 'by construction')"
   },
   "constants": {
@@ -37,7 +59,7 @@
     "n_real": 0,
     "n_complex": 0,
     "outcome_class": "d",
-    "outcome_description": "NO joint solution found anywhere on the Apollonius circle \u2014 ansatz cannot simultaneously fit CAL-2 + CAL-3 for ANY complex q"
+    "outcome_description": "NO joint solution found anywhere on the Apollonius circle — ansatz cannot simultaneously fit CAL-2 + CAL-3 for ANY complex q"
   },
-  "timestamp": "2026-05-24T22:03:18+00:00"
+  "timestamp": "2026-06-30T23:44:49+00:00"
 }

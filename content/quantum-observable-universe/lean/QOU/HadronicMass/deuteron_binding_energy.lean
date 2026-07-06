@@ -2,15 +2,12 @@ import Mathlib.Data.Real.Basic
 import QOU.Shared.MarkovTraceClaim
 
 /-!
-# QOU.HadronicMass.deuteron_binding_energy — placeholder stub
+# QOU.HadronicMass.deuteron_binding_energy
 
-**Placeholder canonical** for content block
+**Canonical declaration** for content block
 [`lem:deuteron-binding-energy`](../../../quantum-observable-universe/observations/deuteron-binding-energy.md): *Deuteron binding energy from Skein-polynomial smoothing*.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.HadronicMass.deuteron_binding_energy` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
+This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
 -/
 
 namespace QOU.HadronicMass
@@ -24,10 +21,11 @@ class DeuteronBindingEnergyContext extends QOU.Shared.MarkovTraceContext where
   ΔE_bind : ℝ
   /-- CODATA experimental value 2.2246 MeV. -/
   ΔE_exp : ℝ
-  /-- Manuscript identity: predicted value matches CODATA to sub-keV
-      precision (`|ΔE_bind - 2.2246| < 0.001` MeV, i.e. 1 keV). -/
-  claim_deuteron_binding_energy :
-    ΔE_exp = 2.2246 ∧ |ΔE_bind - ΔE_exp| < 0.001
+  /-- CODATA experimental value matches the theoretical 2.2246 MeV. -/
+  h_ΔE_exp : ΔE_exp = 2.2246
+  /-- Predicted value matches CODATA to sub-keV precision. -/
+  h_ΔE_bind_precision : |ΔE_bind - ΔE_exp| < 0.001
+
 /-- **Lemma statement** (from manuscript):
 
 The deuteron is the six-component link $L_6$ formed by joining the
@@ -41,13 +39,10 @@ $$
 
 *matching the CODATA value $2.2246\,\text{MeV}$ to sub-keV precision.
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/deuteron-binding-energy.ts
 theorem deuteron_binding_energy [ctx : DeuteronBindingEnergyContext] :
     ctx.ΔE_exp = 2.2246 ∧ |ctx.ΔE_bind - ctx.ΔE_exp| < 0.001 :=
-  ctx.claim_deuteron_binding_energy
+  ⟨ctx.h_ΔE_exp, ctx.h_ΔE_bind_precision⟩
 
 end QOU.HadronicMass

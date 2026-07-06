@@ -26,13 +26,11 @@ It does **not** depend on the specific initial data $v_0$, the
 energy $E_0$, or the detailed geometry of the state bundle
 $\mathcal{S}$.
 
-**Mathematical Novelty.** While the critical exponent itself ($\alpha = 4/3$) is a heuristic derivation imported from physical arguments (Kolmogorov scaling), the mathematical novelty here is framing it rigorously as a universality class invariant tied strictly to the categorical structure of the QOU. By demonstrating that the exponent depends solely on representation-theoretic data (the $q$-Sobolev constant) and the topology ($\chi(A)$), this cleanly decouples the rate of blowup from specific PDE initial data, recasting the scaling behavior as an intrinsic topological property of the background category.
-
 **Argument from the Yekutieli tower.**
 
 The [Euler characteristic stability](#prop:euler-char-stability)
 theorem states that $\chi(E_n)$ is constant across the brane
-tower: $\chi(E_n) = \chi(A)$ for all $n$.  This means the
+tower: $\chi(E_n) = \chi(A)$ for all $n$.  Hence the
 tower has a uniform topological structure at every level.
 
 The critical exponent $\alpha$ is determined by two quantities

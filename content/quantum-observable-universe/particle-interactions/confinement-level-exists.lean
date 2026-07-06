@@ -1,4 +1,4 @@
-import QOU.Basic
+import QOU.BraidKnot.ConfinementLevel
 
 
 /-!
@@ -8,16 +8,20 @@ The set { ℓ : T_w ∈ J^ℓ(q) } is finite, upward-closed, and nonempty,
 so its minimum exists.
 
 LaTeX: `\label{prop:confinement-level-exists}`
+
+**Canonical declaration.** The theorem `QOU.BraidKnot.ConfinementLevel.exists`
+is proved in the compiled library module `QOU.BraidKnot.ConfinementLevel`
+(imported above), which the `.ts` manifest's `lean.ref` resolves to. This
+content-extract file confirms the canonical statement is in scope rather than
+shadowing it with a re-declaration (AGENTS.md §0a no-shadowing-stubs).
 -/
 
 namespace QOU.BraidKnot
 
-universe u
-
-/-- **Existence of the confinement level.** -/
+-- Witness that the canonical existence theorem is in scope (no re-declaration).
+-- canonical decl: QOU.BraidKnot.ConfinementLevel.exists
 -- Ref: [manuscript] braids-and-knots/confinement-level
-theorem ConfinementLevel.exists (R : Type u) [CommRing R] :
-    Nonempty (ConfinementLevel R) := by
-  exact ⟨{ braidIndex := 0, nStrands := 1, q := 0, level := 0 }⟩
+example (R : Type) [CommRing R] : Nonempty (ConfinementLevel R) :=
+  ConfinementLevel.exists R
 
 end QOU.BraidKnot

@@ -104,7 +104,7 @@ research-grade work.
 ## Files
 
 - `docs/audits/2026-05-03-tau-hat-n-proton-level-1-empty.md` (this file)
-- `folio-assistant/computations/tau-hat-n-proton-level-1-empty.witness.json`
+- `computations/tau-hat-n-proton-level-1-empty.witness.json`
 
 No code changes — analysis/derivation only.
 

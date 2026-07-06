@@ -8,8 +8,7 @@ export default definition({
     validation: "not_checked",
   },
   uses: [
-    "rem:q-laplacian-expansion",
+    "def:q-harmonic-form",
     "prop:substrate-radial-coordinate",
-    "rem:base-field-independence",
   ],
 });

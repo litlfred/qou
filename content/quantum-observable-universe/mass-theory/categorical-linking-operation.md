@@ -123,14 +123,6 @@ other steps are identical.
 Therefore $\mathrm{Lk}_R^{(k)}$ is $R$-bilinear, i.e. $R$-linear
 in each factor separately. $\square$
 
-**Remark (proof scope).** This proof uses only the $R$-linear
-rigid-monoidal-category axioms; it makes no assumption about the
-specific ribbon structure of the QOU substrate, the Hecke
-algebra, or the Markov trace. So linearity holds for **any**
-rigid monoidal $R$-linear category in which the trace-cut
-definition makes sense — it is a generic categorical fact, not a
-QOU-specific statement.
-
 ### Proof of Property 2 ($k = 0$ reduction)
 
 **Claim.** Let $\mathbf{C}$ be an $R$-linear rigid braided
@@ -311,7 +303,7 @@ on the substrate's specific ribbon structure (specifically on the
 behavior of $c_{A, A}$ under iteration and on its relation to the
 Frobenius pairing); they are open per the status section below.
 
-### Why this is the right operation for the Higgs mechanism
+### Suitability for the Higgs mechanism
 
 Per [`conj:categorical-higgs-mechanism`](#conj:categorical-higgs-mechanism)
 Step C, the Higgs mechanism's "Goldstone-eating" lifts a gauge

@@ -1,4 +1,4 @@
-import QOU.Basic
+import QOU.QuantumObservableUniverse.CategoricalFoundations
 
 
 /-!
@@ -16,23 +16,21 @@ LaTeX: `\label{prop:quantum-universe-exists}`
 
 namespace QOU
 
-/-- **Existence of a quantum universe over a base field `k`.**
-
-    Records the claim that a `QuantumUniverse k` term exists for every
-    field `k`.  The stub uses `sorry` because construction of a concrete
-    witness (R-Mod or Rep(SU_q(2))) requires category/monoidal-category
-    instances not yet provided in `QOU.Basic`. -/
--- Ref: [kassel1995] Quantum Groups, §XI
 /-- **External axiom (§3b-cond pattern): QuantumUniverse.exists_instance.**
 
-    Auto-extracted from the single-sorry theorem body in this file.
     Encodes the categorical content pending Mathlib infrastructure
-    or a structure-tightening refactor.
-
-    See the theorem docstring below for the cited reference. -/
+    or a structure-tightening refactor: a concrete witness (R-Mod or
+    Rep(SU_q(2))) requires category/monoidal-category instances not yet
+    provided. Ref: [kassel1995] Quantum Groups, §XI. -/
+-- Ref: [kassel1995] Quantum Groups, §XI
 axiom QuantumUniverse.exists_instance_axiom (k : Type*) [Field k] :
     Nonempty (QuantumUniverse k)
 
+/-- **Existence of a quantum universe over a base field `k`.**
+
+    Records the claim that a `QuantumUniverse k` term exists for every
+    field `k`, discharged via the external axiom above. -/
+-- Ref: [kassel1995] Quantum Groups, §XI
 theorem QuantumUniverse.exists_instance (k : Type*) [Field k] :
     Nonempty (QuantumUniverse k) :=
   QuantumUniverse.exists_instance_axiom k

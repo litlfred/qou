@@ -10,7 +10,7 @@ For each atom Z=1-20:
 The atomic braid uses iterative electron insertion (ep pairs).
 
 Usage:
-    python3 folio-assistant/computations/atom_mass_atomic_braid.py
+    python3 computations/atom_mass_atomic_braid.py
 """
 
 import math, sys, subprocess, json, time

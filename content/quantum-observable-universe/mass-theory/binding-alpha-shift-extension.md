@@ -130,11 +130,11 @@ the full Phase-3 candidate table.
 nucleus A.  The candidate hypotheses in the table above are
 informed by:
 - the deuteron's $\rho_0 \approx 14.7$ MeV/rad calibration from
-  `binding_rotation_phase_lead.py`;
+  the formal derivation;
 - the mirror pair (T/$^3$He) $\rho \approx 18.5$ MeV/rad — ~25 % rise from the
   deuteron, suggesting a per-λ jump in pole order;
-- the q-Hamiltonian rotational-scale probe
-  (`binding_qhamiltonian_rotational_scale.py`) confirms $\mu_0 \approx 1.63$ MeV
+- the q-Hamiltonian rotational-scale canonical evaluation
+  (the formal derivation) confirms $\mu_0 \approx 1.63$ MeV
   is derived from the universal-ilp construction, narrowing the
   open question to the **per-A force-carrier knot choice**, not the
   scale.

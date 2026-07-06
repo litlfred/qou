@@ -2,7 +2,7 @@
 -- Substrate identity for the proton-neutron Skein difference.
 -- Conditional on conj:borromean-baryon-mass-formula via the
 -- BorromeanCommonScale class hypothesis
--- (CLAUDE.md §3b-cond conditional-class exception).
+-- (AGENTS.md §3b-cond conditional-class exception).
 --
 -- This file states the substrate identity ΔS(n − p) = (Q_β + m_e)/m_e
 -- as a Lean lemma that holds whenever the common-scale class is in
@@ -78,7 +78,7 @@ def deltaSkeinTilde
 -- substrate Q_β = 0.78174… MeV:
 --   deltaSkeinTilde ≈ 0.0033943
 --   empirical       ≈ 0.0033908   (1 015 ppm agreement)
--- See folio-assistant/computations/m-baryon-volume-form.witness.json
+-- See computations/m-baryon-volume-form.witness.json
 -- for the 50-dps numerical certificate.
 
 end Borromean

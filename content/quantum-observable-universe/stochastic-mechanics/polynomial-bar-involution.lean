@@ -1,4 +1,6 @@
 import Mathlib.Algebra.Polynomial.Eval.Defs
+import Mathlib.Algebra.Polynomial.Eval.Coeff
+import Mathlib.Tactic
 
 /-!
 # QOU.BraidKnot.PolynomialBarInvolution
@@ -67,7 +69,7 @@ theorem barPoly_add (p q : R[X]) : barPoly (p + q) = barPoly p + barPoly q := by
 /-- `bar` is **multiplicative**: `bar (p · q) = bar p · bar q`. -/
 theorem barPoly_mul (p q : R[X]) : barPoly (p * q) = barPoly p * barPoly q := by
   unfold barPoly
-  exact mul_comp
+  exact mul_comp p q (-X)
 
 /-- `bar 1 = 1`. -/
 theorem barPoly_one : barPoly (1 : R[X]) = 1 := by
@@ -84,9 +86,7 @@ theorem barPoly_zero : barPoly (0 : R[X]) = 0 := by
     `-(-X) = X`, so we recover the identity composition. -/
 theorem barPoly_involutive (p : R[X]) : barPoly (barPoly p) = p := by
   unfold barPoly
-  rw [comp_assoc]
-  congr 1
-  rw [neg_comp, X_comp, neg_neg]
+  rw [comp_assoc, neg_comp, X_comp, neg_neg, comp_X]
 
 /-- **`bar X² = X²`** — the squared indeterminate is bar-symmetric.
     Concrete polynomial realisation of "anti × anti = sym". -/
@@ -129,7 +129,7 @@ theorem barPoly_natCast (n : ℕ) :
     barPoly ((n : R[X])) = (n : R[X]) := by
   induction n with
   | zero =>
-    show barPoly (0 : R[X]) = 0
+    rw [Nat.cast_zero]
     exact barPoly_zero
   | succ k ih =>
     have hstep : ((k + 1 : ℕ) : R[X]) = (k : R[X]) + 1 := by push_cast; ring
@@ -220,10 +220,11 @@ theorem barPoly_even_finset_sum
     {ι : Type*} (s : Finset ι) (c : ι → R) (k : ι → ℕ) :
     barPoly (∑ i ∈ s, C (c i) * X ^ (2 * k i))
       = ∑ i ∈ s, C (c i) * X ^ (2 * k i) := by
+  classical
   induction s using Finset.induction with
   | empty => simp [barPoly_zero]
-  | insert hi ih =>
-    rw [Finset.sum_insert hi, barPoly_add, barPoly_mul,
+  | @insert a t ha ih =>
+    rw [Finset.sum_insert ha, barPoly_add, barPoly_mul,
         barPoly_C, barPoly_X_pow_even, ih]
 
 /-- **Constant-plus-even-truncation is bar-symmetric**: a more
@@ -275,7 +276,7 @@ end QOU.BraidKnot.PolynomialBarInvolution.ArbitraryOdd
 
 /-! ## Pre-archimedean generic versions (over `CommRing R`)
 
-Per CLAUDE.md §7c (Base ring convention), the bar-symmetry of
+Per AGENTS.md §7c (Base ring convention), the bar-symmetry of
 even-power polynomial truncations is **algebraic**, not analytic
 — it holds over any commutative ring `R`, no `Field`/`ℝ` needed.
 This section provides the **pre-archimedean generic** versions of

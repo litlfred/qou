@@ -57,11 +57,11 @@
       "chapter": 6
     },
     {
-      "narrative_term": "{Coral sector coordinates $\\mathfrak{r},\\mathfrak{g},\\mathfrak{b}$}",
-      "lean_name": "QOU.DescartesUniverse.CoralSectorCoords",
+      "narrative_term": "{Color sector coordinates $\\mathfrak{r},\\mathfrak{g},\\mathfrak{b}$}",
+      "lean_name": "QOU.DescartesUniverse.ColorSectorCoords",
       "kind": "def",
-      "narrative_definition": "With notation as in hyperref[def:exceptional-divisor]exceptional divisor, fix the substrate parameter q (hyperref[def:substrate-parameter]substrate parameter) and set phi in [0,pi], psi in [0, 2pi/3].  Define the , , and  sector embeddings by   (phi,psi) &=  O + Rbigl(sinphi bigl(cos(psi + qphi) T_1 + sin(psi + qphi) T_2bigr) - cosphi Nbigr), (phi,psi) &=  !bigl(phi,psi + 3bigr), (phi,psi) &=  !bigl(phi,psi + 3bigr).   The  qphi -- so named because the resulting geometry resembles a coral reef: ",
-      "latex_label": "def:coral-sector-coords",
+      "narrative_definition": "With notation as in hyperref[def:exceptional-divisor]exceptional divisor, fix the substrate parameter q (hyperref[def:substrate-parameter]substrate parameter) and set phi in [0,pi], psi in [0, 2pi/3].  Define the , , and  sector embeddings by   (phi,psi) &=  O + Rbigl(sinphi bigl(cos(psi + qphi) T_1 + sin(psi + qphi) T_2bigr) - cosphi Nbigr), (phi,psi) &=  !bigl(phi,psi + 3bigr), (phi,psi) &=  !bigl(phi,psi + 3bigr).   The  qphi -- so named because the resulting geometry is a weave of ",
+      "latex_label": "def:color-sector-coords",
       "chapter": 6
     },
     {
@@ -76,7 +76,7 @@
       "narrative_term": "{Up quark}",
       "lean_name": "QOU.DescartesUniverse.UpQuark",
       "kind": "def",
-      "narrative_definition": "The  is an unknot (neutrino) localized in a color tube of the Bring's surface with  within the Borromean link _3 (hyperref[conj:borromean-quark]Borromean quark conjecture).  [  =  nu big|__3, + qquad _3 ]  The up quark is not a distinct knot type — it is the unknot K_0_1 (hyperref[def:neutrino-knot]neutrino) distinguished by its : threaded through a coral tube (hyperref[def:color-tube-coordinates]color tube coordinates) and Borromean-linked with two other unknots.",
+      "narrative_definition": "The  is an unknot (neutrino) localized in a color tube of the Bring's surface with  within the Borromean link _3 (hyperref[conj:borromean-quark]Borromean quark conjecture).  [  =  nu big|__3, + qquad _3 ]  The up quark is not a distinct knot type — it is the unknot K_0_1 (hyperref[def:neutrino-knot]neutrino) distinguished by its : threaded through a color tube (hyperref[def:color-tube-coordinates]color tube coordinates) and Borromean-linked with two other unknots.",
       "latex_label": "def:up-quark",
       "chapter": 6
     },
@@ -84,7 +84,7 @@
       "narrative_term": "{Down quark}",
       "lean_name": "QOU.DescartesUniverse.DownQuark",
       "kind": "def",
-      "narrative_definition": "The  is an unknot (neutrino) localized in a coral tube with  within the Borromean link _3 (hyperref[conj:borromean-quark]Borromean quark conjecture).  [  =  nu big|__3, - qquad _3 ]  The down quark differs from the up quark (hyperref[def:up-quark]up quark) only in : at each crossing point within _3, the down quark's strand passes under where the up quark passes over.  This reversal contributes q^-1 instead of q to the Skein polynomial, giving the down quark a Coulomb charge contribution of -1/3 ",
+      "narrative_definition": "The  is an unknot (neutrino) localized in a color tube with  within the Borromean link _3 (hyperref[conj:borromean-quark]Borromean quark conjecture).  [  =  nu big|__3, - qquad _3 ]  The down quark differs from the up quark (hyperref[def:up-quark]up quark) only in : at each crossing point within _3, the down quark's strand passes under where the up quark passes over.  This reversal contributes q^-1 instead of q to the Skein polynomial, giving the down quark a Coulomb charge contribution of -1/3 ",
       "latex_label": "def:down-quark",
       "chapter": 6
     },
@@ -92,7 +92,7 @@
       "narrative_term": "{Electron}",
       "lean_name": "QOU.DescartesUniverse.ElectronKnot",
       "kind": "def",
-      "narrative_definition": "The  is the trefoil T_2,3 in the lepton sector — the same knot type as the up quark, but not localized in a coral tube.  [ e^- =  T_2,3 qquad  ]  The electron and the up quark are the  T_2,3. What distinguishes them is their : the up quark is threaded through a coral tube of the Bring's surface (hyperref[def:color-tube-coordinates]color tube coordinates), while the electron orbits the nucleus via Hopf linking without entering the coral tubes.   The electron is drawn as a  trefoil (forward time d",
+      "narrative_definition": "The  is the trefoil T_2,3 in the lepton sector — the same knot type as the up quark, but not localized in a color tube.  [ e^- =  T_2,3 qquad  ]  The electron and the up quark are the  T_2,3. What distinguishes them is their : the up quark is threaded through a color tube of the Bring's surface (hyperref[def:color-tube-coordinates]color tube coordinates), while the electron orbits the nucleus via Hopf linking without entering the color tubes.   The electron is drawn as a  trefoil (forward time d",
       "latex_label": "def:electron-knot",
       "chapter": 6
     },
@@ -100,7 +100,7 @@
       "narrative_term": "{Positron}",
       "lean_name": "QOU.DescartesUniverse.PositronKnot",
       "kind": "def",
-      "narrative_definition": "The  is the mirror trefoil T_2,3^sigma in the lepton sector — the antiparticle of the electron.  [ e^+ =  T_2,3^sigma qquad  ]  The positron is the same knot as the down quark, distinguished by environment (orbital vs. coral tube).  It carries reversed crossing chirality: where the electron has Coulomb charge Q = -1, the positron has Q = +1.   The positron is drawn as an  trefoil (reversed time direction).    The mirror operation sigma reverses all crossings, which in the Reeb flow corresponds t",
+      "narrative_definition": "The  is the mirror trefoil T_2,3^sigma in the lepton sector — the antiparticle of the electron.  [ e^+ =  T_2,3^sigma qquad  ]  The positron is the same knot as the down quark, distinguished by environment (orbital vs. color tube).  It carries reversed crossing chirality: where the electron has Coulomb charge Q = -1, the positron has Q = +1.   The positron is drawn as an  trefoil (reversed time direction).    The mirror operation sigma reverses all crossings, which in the Reeb flow corresponds t",
       "latex_label": "def:positron-knot",
       "chapter": 6
     },
@@ -156,7 +156,7 @@
       "narrative_term": "{Proton (categorical)}",
       "lean_name": "QOU.DescartesUniverse.CategoricalProton",
       "kind": "def",
-      "narrative_definition": "The  is the baryon with 2 + 1 crossing partition: two up quarks (positive orientation) and one down quark (negative orientation) in the Borromean braid _3 (hyperref[conj:borromean-quark]Borromean quark).  [  = _3(,,) ]  where:   item _3 = (sigma_0sigma_1^-1)^3 is the Borromean braid of three unknots threaded through coral tubes (r,g,b) (hyperref[def:color-tube-coordinates]color tube coordinates): two with positive crossing orientation (, hyperref[def:up-quark]up quark) and one with negative orie",
+      "narrative_definition": "The  is the baryon with 2 + 1 crossing partition: two up quarks (positive orientation) and one down quark (negative orientation) in the Borromean braid _3 (hyperref[conj:borromean-quark]Borromean quark).  [  = _3(,,) ]  where:   item _3 = (sigma_0sigma_1^-1)^3 is the Borromean braid of three unknots threaded through color tubes (r,g,b) (hyperref[def:color-tube-coordinates]color tube coordinates): two with positive crossing orientation (, hyperref[def:up-quark]up quark) and one with negative orie",
       "latex_label": "def:categorical-proton",
       "chapter": 6
     },

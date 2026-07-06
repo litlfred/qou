@@ -23,9 +23,9 @@ numerical evaluation.
 
 namespace QOU.Archimedean
 
+noncomputable section
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -67,5 +67,7 @@ theorem positron_charge_opposite_electron :
 -- Ref: [manuscript] Ch. 5, §positron-knot
 theorem positron_reversed_orientation :
     Positron.mk.orientation = -Electron.mk.orientation := by decide
+
+end
 
 end QOU.Archimedean

@@ -1,5 +1,4 @@
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 
 /-!
@@ -14,61 +13,57 @@ LaTeX label: `prop:beta-stability`
 ## References
 - [manuscript] §4/beta-stability
 
-**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-Part of the formal proof chain. The parameter `q` is the canonical
-indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
-numerical evaluation.
+**Ground ring (Lean sibling): archimedean specialisation over `ℝ`**
+(AGENTS.md §7c) — the stability line uses `rpow` (`A^{2/3}`), division,
+and strict ordering, all of which are archimedean. The underlying
+combinatorial `q`-data stays generic over a commutative ring; only this
+numerical-evaluation slice is specialised to `ℝ`.
 -/
 
 namespace QOU.Braiding
 
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
-abbrev R_q := LaurentPolynomial ℤ
-def q_param : R_q := LaurentPolynomial.T 1
-def q_inv_param : R_q := LaurentPolynomial.T (-1)
+open Real
 
 /-- Beta-stability line: p*(A) = A / (2 + a_C·A^{2/3}/(2·a_A)). -/
 -- Ref: [manuscript] §4/beta-stability
-noncomputable def betaStabilityLine (A a_C a_A : R_q) : R_q :=
-  A / (2 + a_C * A^((2:R_q)/3) / (2 * a_A))
+noncomputable def betaStabilityLine (A a_C a_A : ℝ) : ℝ :=
+  A / (2 + a_C * A ^ ((2 : ℝ) / 3) / (2 * a_A))
 
-/-- At q = 1 (classical limit), a_C = 0 and all nuclei have p = A/2.
-    No Coulomb repulsion means symmetric nuclear matter. -/
+/-- At a_C = 0 (no Coulomb repulsion), all nuclei have p = A/2:
+    symmetric nuclear matter. -/
 -- Ref: [manuscript] §4/beta-stability
-theorem classical_limit_symmetric (A a_A : R_q) (hA : A ≠ 0) :
+theorem classical_limit_symmetric (A a_A : ℝ) :
     betaStabilityLine A 0 a_A = A / 2 := by
   unfold betaStabilityLine
-  simp [zero_mul, zero_div, add_zero]
+  simp
 
 /-- The denominator of the stability line is > 2 when a_C > 0 and A > 0,
     so p*(A) < A/2: heavy nuclei have more neutrons than protons. -/
 -- Ref: [manuscript] §4/beta-stability
--- theorem neutron_excess (A a_C a_A : R_q) (hA : 0 < A) (hC : 0 < a_C) (haA : 0 < a_A) :  -- (archimedean; not meaningful over R_q)
+theorem neutron_excess (A a_C a_A : ℝ) (hA : 0 < A) (hC : 0 < a_C) (haA : 0 < a_A) :
     betaStabilityLine A a_C a_A < A / 2 := by
   unfold betaStabilityLine
-  apply div_lt_div_of_pos_left hA (by linarith) -- A > 0
-  · -- 2 + a_C·A^{2/3}/(2·a_A) > 2
-    have h1 : 0 < a_C * A ^ ((2:R_q)/3) / (2 * a_A) := by
-      apply div_pos
-      · exact mul_pos hC (rpow_pos_of_pos hA _)
-      · linarith
+  have hpow : 0 < A ^ ((2 : ℝ) / 3) := Real.rpow_pos_of_pos hA _
+  have h1 : 0 < a_C * A ^ ((2 : ℝ) / 3) / (2 * a_A) := by
+    apply div_pos (mul_pos hC hpow)
     linarith
-  · linarith
+  have hden : (2 : ℝ) < 2 + a_C * A ^ ((2 : ℝ) / 3) / (2 * a_A) := by linarith
+  exact div_lt_div_of_pos_left hA (by norm_num) hden
 
 /-- Stable neutron number: n*(p) = A*(p) - p where A*(p) is the
     fixed point of A = p·(2 + a_C·A^{2/3}/(2·a_A)). -/
 -- Ref: [manuscript] §4/beta-stability
-noncomputable def stableNeutronNumber (p : ℕ) (a_C a_A : R_q) (A_stable : R_q) : R_q :=
+noncomputable def stableNeutronNumber (p : ℕ) (A_stable : ℝ) : ℝ :=
   A_stable - p
 
-/-- The n/p ratio is 1 when a_C = 0. -/
+/-- The n/p ratio is 1 when the stable mass number is 2p (the
+    symmetric a_C = 0 fixed point). -/
 -- Ref: [manuscript] §4/beta-stability
--- theorem nOverP_classical (p : ℕ) (a_A : R_q) (hp : 0 < p) :  -- (archimedean; not meaningful over R_q)
-    stableNeutronNumber p 0 a_A (2 * p) / p = 1 := by
+theorem nOverP_classical (p : ℕ) (hp : 0 < p) :
+    stableNeutronNumber p (2 * p) / p = 1 := by
   unfold stableNeutronNumber
-  push_cast
+  have hp0 : (0 : ℝ) < p := by exact_mod_cast hp
   field_simp
+  ring
 
 end QOU.Braiding

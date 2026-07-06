@@ -23,9 +23,9 @@ canonical, derivation-motivated complex per-crossing `z_i` whose
 `V̂_i` by a known map, and carrying the p/n distinction?
 
 **Compute:**
-[`complex_fibre_cross_ratio.py`](../../folio-assistant/computations/complex_fibre_cross_ratio.py),
+[`complex_fibre_cross_ratio.py`](../../computations/complex_fibre_cross_ratio.py),
 witness
-[`complex-fibre-cross-ratio.witness.json`](../../folio-assistant/computations/complex-fibre-cross-ratio.witness.json).
+[`complex-fibre-cross-ratio.witness.json`](../../computations/complex-fibre-cross-ratio.witness.json).
 All values RAW @ 60 dps via `WitnessBuilder.wrap_legacy` + `set_audit_only`
 (audit-only). No tuning to m_p / B_AME / known volumes.
 
@@ -81,7 +81,7 @@ constants exactly: `Vol(4_1) = 2·Cl₂(π/3) = 2.02988…` (the
 [`:val[Vol_4_1]`](../../content/quantum-observable-universe/mass-theory/figure-8-archimedean-illustration.md)
 constant) and `Vol(ℬ_3) = 8G = 7.32772…` (the production substrate
 constant in
-[`derive_m_baryon_volume_form.py`](../../folio-assistant/computations/derive_m_baryon_volume_form.py)).
+[`derive_m_baryon_volume_form.py`](../../computations/derive_m_baryon_volume_form.py)).
 Confirmed: the complex-fibre cross-ratio gives a finite, real, zero-param
 volume natively — exactly as the predecessor anticipated D would, on
 COMPLEX arguments.
@@ -102,7 +102,7 @@ volume** and **cannot** supply a p/n signal.
 **(b) Proton and neutron share the SAME complement.** The canonical
 baryon is the 3-quark **Borromean linking `ℬ_3`** for both proton (uud)
 and neutron (udd)
-([`derive_m_baryon_volume_form.py`](../../folio-assistant/computations/derive_m_baryon_volume_form.py):
+([`derive_m_baryon_volume_form.py`](../../computations/derive_m_baryon_volume_form.py):
 `Vol(ℬ_3) = 8·Cl₂(π/3)` is one constant for both). Same complement →
 same ideal-octahedral shapes → **identical `Σ D`** → p/n difference in
 `Σ D(z) = 0` (raw). The complex-shape volume is the absolute mass scale,
@@ -149,7 +149,7 @@ The connecting map `V̂_i → z_i` (real Markov trace → complex shape) is
 [`conj:shared-denominator-cusp-holonomy`](../../content/quantum-observable-universe/mass-theory/shared-denominator-cusp-holonomy.md),
 proposes the algebraic denominator roots `q₀^{−k}` label the cusps `z_k`,
 but
-[`snappy-cusp-seeding.witness.json`](../../folio-assistant/computations/snappy-cusp-seeding.witness.json)
+[`snappy-cusp-seeding.witness.json`](../../computations/snappy-cusp-seeding.witness.json)
 shows the bare seeds sit at distance **0.4–0.9** from SnapPy's true
 shapes `z_k`; the actual shape is a non-trivial function
 `τ_arch(q₀^{−k})` whose form is **explicitly "the subject of further
@@ -237,4 +237,4 @@ framework does not currently supply.
 - The conjectural real isospin refinement:
   [`conj:inter-nucleon-channel-color-tube`](../../content/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.md).
 - Canonical baryon volume formula (one `Vol(ℬ_3)` for p and n):
-  [`derive_m_baryon_volume_form.py`](../../folio-assistant/computations/derive_m_baryon_volume_form.py).
+  [`derive_m_baryon_volume_form.py`](../../computations/derive_m_baryon_volume_form.py).

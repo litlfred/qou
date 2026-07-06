@@ -20,7 +20,7 @@ branching combinatorics (remove-a-box rule), together with the adjoint
 induction, the Markov tower H3<H4<H5, and the icosahedral A5 -> S3-stabilizer
 restriction.
 
-DISCIPLINE (CLAUDE.md production-vs-exploratory): DERIVE or prove-nonexistence;
+DISCIPLINE (AGENTS.md production-vs-exploratory): DERIVE or prove-nonexistence;
 NEVER fit to close the gap. The h^4 = -3/4 Borromean coefficient is a
 FALSIFICATION reference, not a target. Every multiplicity is computed FIRST
 from the branching rule; the comparison to the (2,1) std block comes SECOND.

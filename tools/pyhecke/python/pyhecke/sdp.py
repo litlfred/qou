@@ -169,7 +169,7 @@ def solve_pair_sdp(
         caveats=[
             f"LP: xᵀGx = {rep.lp_xTGx:.4f} {'(Frobenius-invalid)' if rep.lp_xTGx < 0 else '(Frobenius-valid)'}",
             f"SDP: tr(G·X) = {rep.sdp_tr_GX:.4f} (moment-cone lift)",
-            "See folio-assistant/computations/sdp_moment_lift.py for details.",
+            "See computations/sdp_moment_lift.py for details.",
         ],
     )
 
@@ -253,7 +253,7 @@ def solve_shell_magic_sdp(
             status="not_implemented",
             caveats=[
                 f"sigma_shell_characterization not importable: {e}. "
-                "Ensure folio-assistant/computations is on PYTHONPATH."
+                "Ensure computations is on PYTHONPATH."
             ],
         )
 

@@ -98,7 +98,7 @@ Canonical reference (cite this in any audit/coord that touches λ_scale): [`lamb
 
 - 32 top-level orphan docs moved to `_archive/orphan-top-level/` (none referenced by code, content, or witnesses; all clearly historical session summaries / superseded workplans).
 - Top-of-cheat-sheet absorption-framing banner added.
-- CLAUDE.md §"Canonical derivation chain" gets a one-line framing warning.
+- AGENTS.md §"Canonical derivation chain" gets a one-line framing warning.
 - `audits/`, `coordination/`, `workplans/` left intact — too many internal `auditOnly` references in witness JSONs to safely bulk-move.
 
 If you find a stale doc here that should be archived, just `git mv` it to `_archive/orphan-top-level/` and append a line to that directory's README explaining why.

@@ -13,7 +13,7 @@ Results:
   Neutron: L₊ → L₋ (4 crossings, 13 total), |tr_M| = 0.112
 
 Usage:
-    cd folio-assistant/computations && python3 integer-lp-gluon.py
+    cd computations && python3 integer-lp-gluon.py
 """
 
 import json

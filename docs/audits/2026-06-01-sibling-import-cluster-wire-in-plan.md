@@ -86,7 +86,7 @@ item-A files import (e.g. `braid-group-n-strand`, `markov-axioms-primitive`,
 - `stochastic-mechanics/markov-closure-map-axiomatic`
 
 All are `kind: remark` with **no `lean:` field** (only the `"lean-infrastructure"`
-tag). Per CLAUDE.md §3 a `remark` does not *require* a `.lean` sibling, so
+tag). Per AGENTS.md §3 a `remark` does not *require* a `.lean` sibling, so
 "wiring in" here is a **decision**, made during the same toolchain session:
 
 - **If the block's `.lean` becomes a real in-build module** (because item-A

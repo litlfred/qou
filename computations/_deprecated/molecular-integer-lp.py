@@ -15,7 +15,7 @@ For multi-bond molecules, each bond is an independent channel
 (σ and π orbitals are orthogonal).
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 molecular-integer-lp.py
 """
 

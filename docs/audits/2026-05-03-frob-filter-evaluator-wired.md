@@ -21,11 +21,11 @@ compute cost per digit and **zero** cancellation.
 
 ## What the evaluator does
 
-Module: [`folio-assistant/computations/sigma_all_evaluator.py`](../../folio-assistant/computations/sigma_all_evaluator.py)
+Module: [`computations/sigma_all_evaluator.py`](../../computations/sigma_all_evaluator.py)
 
 Pure mpmath, no sympy at runtime. Sympy was the bottleneck (recursion
 error past $n = 12$); the symbolic compute happens once, off-line, in
-[`sigma_all_symbolic_decay.py`](../../folio-assistant/computations/sigma_all_symbolic_decay.py)
+[`sigma_all_symbolic_decay.py`](../../computations/sigma_all_symbolic_decay.py)
 and is **not** modified by this work. The runtime evaluator just
 plugs $A$ and $q$ into the explicit factored formula.
 
@@ -64,9 +64,9 @@ $$
 
 | File | Replacement |
 |------|-------------|
-| [`folio-assistant/computations/full-derivation-verified.py`](../../folio-assistant/computations/full-derivation-verified.py) line 263 | A=1 free neutron: `char_sum_n = sum_p - sum_n` → `sigma_all_closed(1, q0)` (assertion confirms agreement to $10^{-12}$) |
-| [`folio-assistant/computations/full-derivation-verified.py`](../../folio-assistant/computations/full-derivation-verified.py) line 277 | A=3 tritium ³H→³He: 64-config sum → `sigma_all_closed(3, q0)` |
-| [`folio-assistant/computations/full-derivation-verified.py`](../../folio-assistant/computations/full-derivation-verified.py) line 297 | A=6 ⁶He→⁶Li: 4096-config $\Sigma_{\rm all}$ sum → `sigma_all_closed(6, q0)`. The $\Sigma_{\rm FP}$ Frobenius-positivity-filtered path is genuinely different (no closed form yet) and still enumerates. |
+| [`computations/full-derivation-verified.py`](../../computations/full-derivation-verified.py) line 263 | A=1 free neutron: `char_sum_n = sum_p - sum_n` → `sigma_all_closed(1, q0)` (assertion confirms agreement to $10^{-12}$) |
+| [`computations/full-derivation-verified.py`](../../computations/full-derivation-verified.py) line 277 | A=3 tritium ³H→³He: 64-config sum → `sigma_all_closed(3, q0)` |
+| [`computations/full-derivation-verified.py`](../../computations/full-derivation-verified.py) line 297 | A=6 ⁶He→⁶Li: 4096-config $\Sigma_{\rm all}$ sum → `sigma_all_closed(6, q0)`. The $\Sigma_{\rm FP}$ Frobenius-positivity-filtered path is genuinely different (no closed form yet) and still enumerates. |
 
 After wiring, the script reproduces the previous Q-values exactly:
 - $n \to p$: $0.781575$ MeV (vs. exp $0.782333$, error −0.10%)
@@ -75,18 +75,18 @@ After wiring, the script reproduces the previous Q-values exactly:
 
 ### Intentionally not wired
 
-- [`folio-assistant/computations/frob_filter_cancellation_test.py`](../../folio-assistant/computations/frob_filter_cancellation_test.py)
+- [`computations/frob_filter_cancellation_test.py`](../../computations/frob_filter_cancellation_test.py)
   — this **is** the test driver for the cancellation diagnostic;
   swapping it to the closed form would defeat its purpose
   (measuring the f64 precision-budget crossover).
-- [`folio-assistant/computations/sigma_all_symbolic_decay.py`](../../folio-assistant/computations/sigma_all_symbolic_decay.py)
+- [`computations/sigma_all_symbolic_decay.py`](../../computations/sigma_all_symbolic_decay.py)
   — symbolic-derivation reference. Per the task specification, this
   file is the source of truth for the closed form and was not
   modified.
 
 A repo-wide grep for `cartesian.*ch_names` / `product.*ch_names` /
 `sigma_all` confirmed no other production callers existed in
-`folio-assistant/computations/`. (`mass_endomorphism.py`,
+`computations/`. (`mass_endomorphism.py`,
 `binding_canonical.py`, `markov_peel.py` contain no $\Sigma_{\rm
 all}$ enumeration; `markov_peel.py`'s use of `sigma` refers to the
 Hecke generator $\sigma_i$, unrelated.)
@@ -116,7 +116,7 @@ The audit's precision schedule for the **raw** config-sum route
 
 ## Tests
 
-[`folio-assistant/computations/test_sigma_all_evaluator.py`](../../folio-assistant/computations/test_sigma_all_evaluator.py)
+[`computations/test_sigma_all_evaluator.py`](../../computations/test_sigma_all_evaluator.py)
 — 11 tests, all passing:
 
 1. `test_a_exponent_table` — $a(A)$ matches verified $\{2,4,5,7,8,10\}$
@@ -133,12 +133,12 @@ The audit's precision schedule for the **raw** config-sum route
 
 ## Witness
 
-[`folio-assistant/computations/sigma-all-evaluator.witness.json`](../../folio-assistant/computations/sigma-all-evaluator.witness.json)
+[`computations/sigma-all-evaluator.witness.json`](../../computations/sigma-all-evaluator.witness.json)
 — reference table $A=1..10$ at $q_0$, asymptotic ratios, decay rate,
 precision schedule, list of pipeline callers updated and
 intentionally unwired.
 
-Builder: [`folio-assistant/computations/build_sigma_all_evaluator_witness.py`](../../folio-assistant/computations/build_sigma_all_evaluator_witness.py).
+Builder: [`computations/build_sigma_all_evaluator_witness.py`](../../computations/build_sigma_all_evaluator_witness.py).
 
 ## Status
 

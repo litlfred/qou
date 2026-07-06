@@ -8,7 +8,7 @@ export default algorithm({
   ],
   computation: {
     engine: "python+numpy+cvxpy",
-    script: "folio-assistant/computations/lp_dual_witness_validator.py",
+    script: "computations/lp_dual_witness_validator.py",
     status: "verified",
   },
   tags: [

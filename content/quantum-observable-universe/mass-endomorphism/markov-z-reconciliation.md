@@ -43,7 +43,7 @@ $$
 since $z_{\mathrm{m}}^2 = 1/(q^{1/2}+q^{-1/2})^2$ by definition.
 Equivalently, $z_{\mathrm{m}} = z_{\mathrm{J}}^{1/2}\,(q - 1)^{-1/2}$.
 
-**Why two conventions.**
+**Origin of the two conventions.**
 Convention 1 is the natural normalisation for the Jones polynomial
 as a *link invariant*: the factor $(q-1)$ absorbs the writhe
 correction and makes $J_L(q)$ independent of braid representative.

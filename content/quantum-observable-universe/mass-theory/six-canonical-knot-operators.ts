@@ -14,17 +14,17 @@ export default proposition({
     "s3-galois",
     "braid-group",
     "garside-element",
-    "coral-sectors",
+    "color-sectors",
   ],
   uses: [
-    "def:q-reeb-flow-on-coral-coords",
+    "def:q-reeb-flow-on-color-coords",
     "rem:rho-s3-holonomy-exposition",
     "prop:vertex-is-exceptional-divisor",
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/reeb_flow_garside_closed_form_verification.py",
-    witness: "folio-assistant/computations/reeb-flow-garside-closed-form-verification.witness.json",
+    script: "computations/reeb_flow_garside_closed_form_verification.py",
+    witness: "computations/reeb-flow-garside-closed-form-verification.witness.json",
     status: "verified",
   },
 });

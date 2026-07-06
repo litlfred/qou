@@ -1,0 +1,36 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prf:jonquiere-cyclotomic-tate-rationality",
+  "kind": "proof",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/jonquiere-cyclotomic-tate-rationality-proof.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-theory/jonquiere-cyclotomic-tate-rationality-proof.md"
+  },
+  "source_hashes": {
+    "md": "1f42afb4d6d7",
+    "ts": "87f8d1c960ba"
+  },
+  "criteria": {
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "1f42afb4d6d7",
+          "ts": "87f8d1c960ba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.534Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-07-03T00:52:56.534Z"
+}

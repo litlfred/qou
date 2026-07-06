@@ -1,0 +1,222 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-05T12:44:04.083583+00:00",
+  "commitSha": "21820303069c6916aea57d30f460b8c4fbd8d01a",
+  "assertions": [
+    {
+      "name": "frobenius_variants_preserve_binding_sign",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "no_frobenius_variant_closes_magnitude",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "frobenius-gram-delta-lambda",
+  "scriptFile": "frobenius_gram_delta_lambda_probe.py",
+  "scriptHash": "fd124339c930",
+  "scriptCommitSha": "21820303069c6916aea57d30f460b8c4fbd8d01a",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Frobenius Gram norm ‖ρ_λ‖²_F (gram_transfer_quadratic) as a parameter-free Δ_λ weight in the sign-solved counit defect, on D/T/³He/⁴He. Every Frobenius variant explodes with A (≈d_λ² scale) — REFUTED as the closing weight (scope-(a)); brackets GAP-A between Option-E and the target. audit-only, no fit.",
+  "tier": "structural-exact (committed χ^λ atom/free + exact 50-dps Frobenius Gram norms)",
+  "result": {
+    "free_parameters": 0,
+    "per_isotope": {
+      "D": {
+        "target_minus_B_over_me": "-4.353277041",
+        "n": 6,
+        "variants": {
+          "ref_trM  Σ y·dχ": {
+            "S": "-0.5951688238",
+            "abs_miss": "3.75811",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frob  Σ ‖ρa‖²·dχ": {
+            "S": "-1908.007058",
+            "abs_miss": "1903.65",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frob  Σ y·‖ρa‖²·dχ": {
+            "S": "-29.19406689",
+            "abs_miss": "24.8408",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frobRatio  Σ (‖ρa‖²/‖ρf‖²)·dχ": {
+            "S": "-31.05123136",
+            "abs_miss": "26.698",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frobDefect Σ (‖ρa‖²−‖ρf‖²)·dχ": {
+            "S": "-54.7193414",
+            "abs_miss": "50.3661",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "sqrtFrob  Σ ‖ρa‖·dχ": {
+            "S": "-236.2930778",
+            "abs_miss": "231.94",
+            "within_tol": false,
+            "sign_negative": true
+          }
+        }
+      },
+      "T": {
+        "target_minus_B_over_me": "-16.59846853",
+        "n": 9,
+        "variants": {
+          "ref_trM  Σ y·dχ": {
+            "S": "-0.8039528264",
+            "abs_miss": "15.7945",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frob  Σ ‖ρa‖²·dχ": {
+            "S": "-1196189.74",
+            "abs_miss": "1.19617e+6",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frob  Σ y·‖ρa‖²·dχ": {
+            "S": "-608.979702",
+            "abs_miss": "592.381",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frobRatio  Σ (‖ρa‖²/‖ρf‖²)·dχ": {
+            "S": "-708.6170299",
+            "abs_miss": "692.019",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frobDefect Σ (‖ρa‖²−‖ρf‖²)·dχ": {
+            "S": "-12923.96702",
+            "abs_miss": "12907.4",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "sqrtFrob  Σ ‖ρa‖·dχ": {
+            "S": "-27880.87604",
+            "abs_miss": "27864.3",
+            "within_tol": false,
+            "sign_negative": true
+          }
+        }
+      },
+      "3He": {
+        "target_minus_B_over_me": "-15.10382749",
+        "n": 9,
+        "variants": {
+          "ref_trM  Σ y·dχ": {
+            "S": "-0.8411778444",
+            "abs_miss": "14.2626",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frob  Σ ‖ρa‖²·dχ": {
+            "S": "-1588438.893",
+            "abs_miss": "1.58842e+6",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frob  Σ y·‖ρa‖²·dχ": {
+            "S": "-842.1174706",
+            "abs_miss": "827.014",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frobRatio  Σ (‖ρa‖²/‖ρf‖²)·dχ": {
+            "S": "-892.8819446",
+            "abs_miss": "877.778",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frobDefect Σ (‖ρa‖²−‖ρf‖²)·dχ": {
+            "S": "-105670.092",
+            "abs_miss": "105655.0",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "sqrtFrob  Σ ‖ρa‖·dχ": {
+            "S": "-34993.31273",
+            "abs_miss": "34978.2",
+            "within_tol": false,
+            "sign_negative": true
+          }
+        }
+      },
+      "4He": {
+        "target_minus_B_over_me": "-55.37324482",
+        "n": 12,
+        "variants": {
+          "ref_trM  Σ y·dχ": {
+            "S": "-0.9119650045",
+            "abs_miss": "54.4613",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frob  Σ ‖ρa‖²·dχ": {
+            "S": "-2752769948.0",
+            "abs_miss": "2.75277e+9",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frob  Σ y·‖ρa‖²·dχ": {
+            "S": "-19044.35481",
+            "abs_miss": "18989.0",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frobRatio  Σ (‖ρa‖²/‖ρf‖²)·dχ": {
+            "S": "-30266.79859",
+            "abs_miss": "30211.4",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "frobDefect Σ (‖ρa‖²−‖ρf‖²)·dχ": {
+            "S": "-163011613.7",
+            "abs_miss": "1.63012e+8",
+            "within_tol": false,
+            "sign_negative": true
+          },
+          "sqrtFrob  Σ ‖ρa‖·dχ": {
+            "S": "-8376270.152",
+            "abs_miss": "8.37621e+6",
+            "within_tol": false,
+            "sign_negative": true
+          }
+        }
+      }
+    },
+    "verdict": "‖ρ_λ‖²_F REFUTED as the GAP-A closing weight (scope-(a)): every variant over-shoots and EXPLODES with A, amplifying high-dim partitions. Durable: brackets the answer — closing Δ_λ is a MILD dim-enhancement between Option-E (sgn·f^λ, −2.40 on D) and |target| (−4.35), NOT a d²-scale norm."
+  },
+  "context": {
+    "axis": "Δ_λ per-isotope binding closure (GAP-A) — Frobenius Gram weight",
+    "sign_solved_by": "rho_k_counit_defect_form.py (defect ε(β_K)−ε(β_K^vac) < 0 all isotopes)",
+    "weight_source": "gram_transfer_quadratic.gram_norm_zn (exact doubled-Bratteli tr_M(W·W^♯))",
+    "chi_source": "atom-chi-rust-{d,t,3he,4he}.witness.json (data.atom + data.free)"
+  },
+  "auditOnly": true
+}

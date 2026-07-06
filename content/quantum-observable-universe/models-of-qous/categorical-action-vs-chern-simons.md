@@ -42,5 +42,5 @@ $\mathfrak{S}_q = \mathrm{tr}(\mathcal{L}_q)$ is
 Einstein--Hilbert + Yang--Mills + Dirac, not CS
 ([physicist translation](#rem:physicist-translation)).  Classical
 CS re-enters the framework elsewhere as a geometric *knot*
-invariant for non-hyperbolic torus knots (see the corresponding
-remark in the Descartes chapter).
+invariant for non-hyperbolic torus knots
+([classical Chern--Simons as a non-hyperbolic knot invariant](#rem:chern-simons-as-knot-invariant)).

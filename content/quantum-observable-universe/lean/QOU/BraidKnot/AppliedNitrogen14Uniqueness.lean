@@ -23,6 +23,8 @@ this module pre-provisions the uniqueness scaffolding.
 
 namespace QOU.BraidKnot
 
+noncomputable section
+
 /-- **¹⁴N empty-constraint SDP** at `heckeDim 42`. -/
 abbrev nitrogen14_emptySDP := nucleusEmptySDP 42
 
@@ -50,4 +52,5 @@ abbrev nitrogen14_optimum_is_zero := nucleus_optimum_is_zero 42
 /-- ¹⁴N objective at optimum equals 0. -/
 abbrev nitrogen14_objAt_optimum_eq_zero := nucleus_objAt_optimum_eq_zero 42
 
+end  -- noncomputable section
 end QOU.BraidKnot

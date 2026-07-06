@@ -7,7 +7,7 @@ every per-nucleus computational witness should include a
 the parameterised module landed in PR #1537.
 
 This audit:
-1. Walks every `*.witness.json` in `folio-assistant/computations/`.
+1. Walks every `*.witness.json` in `computations/`.
 2. Identifies per-nucleus witnesses by filename/content heuristics
    (matches H, p, n, deuteron, tritium, helium, lithium,
    beryllium, boron, carbon, nitrogen, oxygen, ... or generic

@@ -1,5 +1,7 @@
 import Mathlib.Data.List.Basic
+import Mathlib.Data.List.Infix
 import Mathlib.Data.Finset.Basic
+import Mathlib.Algebra.Ring.Defs
 
 
 /-!

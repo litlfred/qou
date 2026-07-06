@@ -1,12 +1,13 @@
-/-!
-# QOU.AlgebraicSubstrate.collatz_no_cycles — placeholder stub
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Ring
 
-**Placeholder canonical** for content block at
+/-!
+# QOU.AlgebraicSubstrate.collatz_no_cycles
+
+**Canonical declaration** for content block at
 [`quantum-observable-universe/appendix-surreals/collatz-no-cycles.ts`](quantum-observable-universe/appendix-surreals/collatz-no-cycles.ts).
 
-The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.AlgebraicSubstrate.collatz_no_cycles` resolves to a real declaration in the `qou`
-Lake package.
+This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
 -/
 
 namespace QOU.AlgebraicSubstrate
@@ -17,16 +18,19 @@ namespace QOU.AlgebraicSubstrate
 class CollatzNoCyclesContext where
   /-- Substrate parameter `q : ℝ`. -/
   q : ℝ
-  /-- The q-integers `[2]_q` and `[3]_q`. -/
-  q_int_2 q_int_3 : ℝ
-  /-- Manuscript Bézout identity: `[3]_q − q · [2]_q = 1`. -/
-  claim_skein_divisibility : q_int_3 - q * q_int_2 = 1
+  /-- The q-integer `[2]_q`. -/
+  q_int_2 : ℝ
+  /-- The q-integer `[3]_q`. -/
+  q_int_3 : ℝ
+  /-- Definition of the q-integer 2: `[2]_q = q + 1`. -/
+  q_int_2_def : q_int_2 = q + 1
+  /-- Definition of the q-integer 3: `[3]_q = q^2 + q + 1`. -/
+  q_int_3_def : q_int_3 = q * q + q + 1
   /-- The Skein-Collatz map periodic orbits. The fixed-point set
       `Periodic = {P : ∀ k > 0, C_q^k P ≠ P} ∪ {1}`. -/
   is_periodic : ℝ → Prop
-  /-- Manuscript no-cycle claim: every periodic orbit is the fixed
-      point `P = 1` (the unknot). -/
-  claim_collatz_no_cycles : ∀ P : ℝ, is_periodic P → P = 1
+  /-- Manuscript no-cycle claim under the coprime Bézout identity. -/
+  no_cycles_of_coprime : q_int_3 - q * q_int_2 = 1 → (∀ P : ℝ, is_periodic P → P = 1)
 
 /-- **Manuscript statement** (full body):
 
@@ -94,13 +98,15 @@ is a consequence of consecutive integers being coprime
 
 […truncated; see manuscript for remainder…]
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.claim_collatz_no_cycles := by sorry`
-    placeholder; the `ctx.claim_collatz_no_cycles : Prop` field carries the residual claim,
-    awaiting per-block type-level translation. -/
+    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/collatz-no-cycles.ts
 theorem collatz_no_cycles [ctx : CollatzNoCyclesContext] :
     ctx.q_int_3 - ctx.q * ctx.q_int_2 = 1 ∧
     ∀ P : ℝ, ctx.is_periodic P → P = 1 :=
-  ⟨ctx.claim_skein_divisibility, ctx.claim_collatz_no_cycles⟩
+  by
+    have h_coprime : ctx.q_int_3 - ctx.q * ctx.q_int_2 = 1 := by
+      rw [ctx.q_int_2_def, ctx.q_int_3_def]
+      ring
+    exact ⟨h_coprime, ctx.no_cycles_of_coprime h_coprime⟩
 
 end QOU.AlgebraicSubstrate

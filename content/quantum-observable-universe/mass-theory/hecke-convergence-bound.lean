@@ -7,6 +7,9 @@
   Ref: [manuscript] §5.10, prop:hecke-convergence-bound
 -/
 
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+
 namespace QOU.BraidKnot
 
 /-- The convergence rate constant. -/

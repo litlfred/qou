@@ -2,8 +2,8 @@
 
 **Date:** 2026-06-01
 **Branch:** `claude/qbeta-habiro-phi8-interference-2026-06-01` (PR #1625)
-**Probe script:** [`folio-assistant/computations/qbeta/qbeta_habiro_wenzl_tower_zeta_n.py`](../../folio-assistant/computations/qbeta/qbeta_habiro_wenzl_tower_zeta_n.py)
-**Witness:** [`folio-assistant/computations/qbeta/qbeta-habiro-wenzl-tower-zeta-n.witness.json`](../../folio-assistant/computations/qbeta/qbeta-habiro-wenzl-tower-zeta-n.witness.json)
+**Probe script:** [`computations/qbeta/qbeta_habiro_wenzl_tower_zeta_n.py`](../../computations/qbeta/qbeta_habiro_wenzl_tower_zeta_n.py)
+**Witness:** [`computations/qbeta/qbeta-habiro-wenzl-tower-zeta-n.witness.json`](../../computations/qbeta/qbeta-habiro-wenzl-tower-zeta-n.witness.json)
 **Master ledger entry:** [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md)
 **Status:** **FALSIFIED at levels k=4 and k=6** — the level-2 Wenzl pattern at q = ζ_4 (u = ζ_8, M=7) does **not** extend to a tower of categorical witnesses indexed by the level-k SU(2) Verlinde truncation.
 

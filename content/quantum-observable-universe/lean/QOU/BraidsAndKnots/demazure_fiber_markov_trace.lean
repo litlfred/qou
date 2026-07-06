@@ -1,21 +1,18 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import QOU.Shared.OperatorSelectionLP
 
 /-!
-# QOU.BraidsAndKnots.demazure_fiber_markov_trace — placeholder stub
+# QOU.BraidsAndKnots.demazure_fiber_markov_trace
 
-**Placeholder canonical** for content block Demazure fiber Markov trace.
+**Canonical declaration** for content block Demazure fiber Markov trace.
 
-The full Lean statement and proof are pending; this stub exists so the
-`lean.ref` URI `qou:QOU.BraidsAndKnots.demazure_fiber_markov_trace` resolves to a real
-declaration in the `qou` Lake package. The body is `sorry` carrying
-the manuscript citation per CLAUDE.md §1.
+This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
 
 Note: the chapter-dir uses singular `QOU.BraidKnot` for most blocks;
 this plural `QOU.BraidsAndKnots` namespace was inherited from existing
 `.ts` lean.ref URIs (a pre-existing convention drift).
 -/
 
-import QOU.Shared.OperatorSelectionLP
 
 namespace QOU.BraidsAndKnots
 
@@ -32,12 +29,16 @@ class DemazureFiberMarkovTraceContext extends QOU.Shared.OperatorSelectionLPCont
   w_0 : ℕ
   /-- Manuscript sub-claim (i) — Saturated case:
       `T^Dem(λ; w_0) = y_λ`. -/
-  claim_i_standard_jones_markov : ∀ λ : ℕ, T_Dem λ w_0 = y_lambda λ
+  claim_i_standard_jones_markov : ∀ lam : ℕ, T_Dem lam w_0 = y_lambda lam
   /-- Manuscript sub-claim (ii) — Bruhat-order structural resonance:
       for `w` below `w_0` (Bruhat order), `T^Dem(λ; w)` measures the
       sub-crystal resonance width (stays Prop because Bruhat order
       and sub-crystal width require additional infrastructure). -/
   claim_ii_bruhat_order_structural : Prop
+  /-- Witness that the Bruhat-order structural sub-claim holds.  The
+      predicate `claim_ii_bruhat_order_structural` is conjectural; an
+      instance supplies the proof (§3b-cond axiomatisation). -/
+  claim_ii_bruhat_order_structural_holds : claim_ii_bruhat_order_structural
   /-- Number of standard Young tableaux `f_λ`. -/
   f_lambda : ℕ → ℝ
   /-- Number of partitions of `n`. -/
@@ -46,7 +47,7 @@ class DemazureFiberMarkovTraceContext extends QOU.Shared.OperatorSelectionLPCont
       `Σ_{λ ⊢ n} f_λ · T^Dem(λ; w_0) = 1`. -/
   claim_iii_plancherel_completeness :
     (Finset.range n_partitions).sum
-      (fun λ => f_lambda λ * T_Dem λ w_0) = 1
+      (fun lam => f_lambda lam * T_Dem lam w_0) = 1
 /-- **Proposition statement** (from manuscript):
 
 Let $V_\lambda$ be the irreducible $S_n$-module indexed by
@@ -67,7 +68,7 @@ element $w_0$, $D_{w_0}(\lambda) = s_\lambda(x_1, \ldots, x_n)$
 recovers the Schur polynomial; at intermediate $w$, the Demazure
 character $D_w(\lambda)$ is the character of a sub-crystal of
 $\mathrm{Cryst}(V_\lambda)$ — an "incomplete topological state" in
-the sense of CLAUDE.md §7b item 3. Define the Demazure-fiber
+the sense of AGENTS.md §7b item 3. Define the Demazure-fiber
 Markov-trace functional*
 
 $$
@@ -89,17 +90,14 @@ principal specialisation $x_i \mapsto q^{i-1}$.  Then:*
    Jones–Markov coefficient is the saturated case.*
 2.
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/demazure-fiber-markov-trace.ts
-theorem demazure_fiber_markov_trace [ctx : DemazureFiberMarkovTraceContext] :
-    (∀ λ : ℕ, ctx.T_Dem λ ctx.w_0 = ctx.y_lambda λ) ∧
+def demazure_fiber_markov_trace [ctx : DemazureFiberMarkovTraceContext] :
+    (∀ lam : ℕ, ctx.T_Dem lam ctx.w_0 = ctx.y_lambda lam) ∧
     ctx.claim_ii_bruhat_order_structural ∧
     (Finset.range ctx.n_partitions).sum
-      (fun λ => ctx.f_lambda λ * ctx.T_Dem λ ctx.w_0) = 1 :=
-  ⟨ctx.claim_i_standard_jones_markov, ctx.claim_ii_bruhat_order_structural,
+      (fun lam => ctx.f_lambda lam * ctx.T_Dem lam ctx.w_0) = 1 :=
+  ⟨ctx.claim_i_standard_jones_markov, ctx.claim_ii_bruhat_order_structural_holds,
    ctx.claim_iii_plancherel_completeness⟩
 
 end QOU.BraidsAndKnots

@@ -22,16 +22,16 @@ mass table.**
 
 ## Pipeline status
 
-[`probe_sdp_canonical_paper_formula.py`](../../folio-assistant/computations/probe_sdp_canonical_paper_formula.py)
+[`probe_sdp_canonical_paper_formula.py`](../../computations/probe_sdp_canonical_paper_formula.py)
 runs Model B end-to-end:
 
 1. Read SDP-canonical braid words from
-   [`joint-tower-sdp-h6-h9.witness.json`](../../folio-assistant/computations/joint-tower-sdp-h6-h9.witness.json).
+   [`joint-tower-sdp-h6-h9.witness.json`](../../computations/joint-tower-sdp-h6-h9.witness.json).
 2. Compute $\tau_M(T_w(\beta))$ via the Wenzl-bridge $y_\lambda$ table from
-   [`y-lambda-wenzl-witness.json`](../../folio-assistant/computations/y-lambda-wenzl-witness.json).
+   [`y-lambda-wenzl-witness.json`](../../computations/y-lambda-wenzl-witness.json).
 3. Apply paper formula $B = m_e \cdot \rho \cdot \tau_M(T_w)$.
 4. Emit
-   [`probe-sdp-canonical-paper-formula.witness.json`](../../folio-assistant/computations/probe-sdp-canonical-paper-formula.witness.json)
+   [`probe-sdp-canonical-paper-formula.witness.json`](../../computations/probe-sdp-canonical-paper-formula.witness.json)
    with full per-$\lambda$ breakdown.
 
 ## New mass table (Model B canonical-knot at $q_0$)

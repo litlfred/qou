@@ -56,12 +56,12 @@ $\tilde w_\lambda$ holds **only** on the self-conjugate stratum. For
 non-self-conjugate $\lambda$, $y_\lambda$ is given by Wenzl's
 hook–content closed form [wenzl1988] and is, in general, distinct
 from $(-1)^{\kappa_\lambda} \tilde w_\lambda$ — see the
-[non-self-conjugate empirical witness](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/probe-wedderburn-weight-scheme.witness.json),
+[non-self-conjugate categorical witness](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/canonical evaluation-wedderburn-weight-scheme.witness.json),
 which records $|y_\lambda / \tilde w_\lambda|$ ratios from $0.14$ to
 $2.54$ at $q_0$ for $n \in \{2, 3\}$, confirming the two are
 distinct weight families away from self-conjugate $\lambda$.*
 
-## Why $\tilde w_\lambda$ is canonical
+## Canonicity of $\tilde w_\lambda$
 
 The Wedderburn–Artin decomposition
 ([Wedderburn mass formula](#thm:wedderburn-mass-formula))
@@ -167,7 +167,7 @@ For non-self-conjugate $\lambda$, $y_\lambda$ and $\tilde w_\lambda$ are
 **distinct**: $y_\lambda$ is given by Wenzl's content-distance
 closed form [wenzl1988] and is not, in general, a sign multiple of
 $\tilde w_\lambda$. The empirical witness
-[`probe-wedderburn-weight-scheme.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/probe-wedderburn-weight-scheme.witness.json)
+[`canonical evaluation-wedderburn-weight-scheme.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/computations/canonical evaluation-wedderburn-weight-scheme.witness.json)
 records $|y_\lambda / \tilde w_\lambda|$ ratios ranging from $\approx 0.14$
 to $\approx 2.54$ at $q_0$ for $n \in \{2, 3\}$, confirming that
 Markov $y_\lambda$ and Wedderburn $\tilde w_\lambda$ are distinct weight
@@ -186,7 +186,7 @@ general (definitional) and the Wenzl-bridge identity on the
 self-conjugate stratum. Witness:
 [`docs/audits/-p1-3a-bw-equivalence.witness.json`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/docs/audits/-p1-3a-bw-equivalence.witness.json).
 
-## Why each context picks a different form
+## Form selection by context
 
 | Context | Form chosen | Reason |
 |---------|-------------|--------|
@@ -200,7 +200,7 @@ $\tilde w_\lambda$ is exact on the self-conjugate stratum; off that
 stratum, the Markov coefficient $y_\lambda$ is a distinct weight
 family and must be obtained from the Wenzl closed form.
 
-## Consequences for downstream use
+## Corollaries for downstream use
 
 - Any new BW mass coefficient or LP shadow-price at a new
   partition can be derived in three steps: (1) compute $\tilde w_\lambda$

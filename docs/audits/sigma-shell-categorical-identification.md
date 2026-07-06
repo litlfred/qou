@@ -59,7 +59,7 @@ with:
 
 ## Numerical evidence
 
-At `A_magic = 8` (⁸Be, doubly magic): the SDP/LP optimum found by [`sdp_on_shadows.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/sdp_on_shadows.py) yields
+At `A_magic = 8` (⁸Be, doubly magic): the SDP/LP optimum found by [`sdp_on_shadows.py`](https://github.com/litlfred/qou/blob/main/computations/sdp_on_shadows.py) yields
 
 $$x_{(7, 1)} = x_{(2, 1^6)} = 35.24$$
 
@@ -134,8 +134,8 @@ but not numerically deployed.
 
 - [`prop:shell-schur-weyl-self-duality`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/shell-schur-weyl-self-duality.md)
 - [`prop:mass-coefficient-shadow-price`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/mass-coefficient-shadow-price.md)
-- [`folio-assistant/computations/sigma_shell_characterization.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/sigma_shell_characterization.py)
-- [`folio-assistant/computations/sdp_on_shadows.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/sdp_on_shadows.py)
+- [`computations/sigma_shell_characterization.py`](https://github.com/litlfred/qou/blob/main/computations/sigma_shell_characterization.py)
+- [`computations/sdp_on_shadows.py`](https://github.com/litlfred/qou/blob/main/computations/sdp_on_shadows.py)
 - The two falsifying probes:
-  - [`probe-atom-shell-self-duality.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-atom-shell-self-duality.witness.json)
-  - [`probe-per-nucleon-self-duality.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-per-nucleon-self-duality.witness.json)
+  - [`probe-atom-shell-self-duality.witness.json`](https://github.com/litlfred/qou/blob/main/computations/probe-atom-shell-self-duality.witness.json)
+  - [`probe-per-nucleon-self-duality.witness.json`](https://github.com/litlfred/qou/blob/main/computations/probe-per-nucleon-self-duality.witness.json)

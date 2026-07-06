@@ -14,7 +14,7 @@ For the T_{3,5} weak vertex: append (σ_k σ_{k+1})⁵ positive crossings
 at the converting generator, multiplied into the chain.
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 all-nuclei-transfer-matrix.py
 """
 

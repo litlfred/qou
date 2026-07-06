@@ -14,10 +14,10 @@ export default proposition({
   tags: ["CO2", "LP-dual", "linear", "geometry", "double-bond"],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/co_bond_order_active_set.py",
+    script: "computations/co_bond_order_active_set.py",
     witness: [
-      "folio-assistant/computations/co-bond-order-active-set.witness.json",
-      "folio-assistant/computations/molecular-experimental-refs.witness.json"
+      "computations/co-bond-order-active-set.witness.json",
+      "computations/molecular-experimental-refs.witness.json"
     ],
     status: "experimental",
   },

@@ -44,7 +44,7 @@ noncomputable def jonesHopf (q : ℝ) : ℝ := -q^2 * (1 + q^2)
 -- Ref: [jones1985] doi:10.2307/1971403
 -- Ref: [manuscript] prop:q-beta-c3-hopf-three-fold-markov §"Fact 4"
 /-- At q=1 (the classical / Kazhdan-Lusztig decategorification limit per
-    CLAUDE.md §7b), the Hopf-link Jones polynomial equals -2. -/
+    AGENTS.md §7b), the Hopf-link Jones polynomial equals -2. -/
 theorem jones_hopf_at_q_eq_one_eq_neg_two :
     jonesHopf 1 = -2 := by
   unfold jonesHopf
@@ -57,7 +57,7 @@ perturbative expansion of τ_M(β) around q = 1, the dominant contribution
 comes from 2-strand sub-braid Markov-closures, each of which is the
 Hopf link.
 
-We axiomatise this as a class to follow CLAUDE.md §3b's conditional-
+We axiomatise this as a class to follow AGENTS.md §3b's conditional-
 class pattern. The class instance encodes the open derivation step;
 downstream theorems use the class as a hypothesis. -/
 
@@ -85,7 +85,7 @@ The categorical-derivation result: under the axiomatic class hypothesis,
 
 -- Ref: [manuscript] prop:q-beta-c3-hopf-three-fold-markov
 -- Ref: [jones1985] doi:10.2307/1971403   (Jones polynomial)
--- Ref: [kashiwara1990-duke] Duke Math. J. 1990 (DOI 10.1215/S0012-7094-90-06120-X — distinct from kashiwara1990 = CMP BF02097367)   (KL crystal)
+-- Ref: [kashiwara1990-duke] Duke Math. J. 71 (1993) 839–858 (DOI 10.1215/S0012-7094-93-07131-1 — distinct from kashiwara1990 = CMP BF02097367)   (KL crystal)
 /-- **$Q_\beta$ precision-ladder $c_3$ structural derivation.** Under
     the `ThreeFoldMarkovHopfExtraction` class, the canonical `c_3`
     coefficient (carried by the class as a field) equals the

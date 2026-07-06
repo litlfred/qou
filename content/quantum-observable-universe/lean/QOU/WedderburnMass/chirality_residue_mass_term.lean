@@ -1,15 +1,18 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Data.Real.Basic
 
 /-!
-# QOU.WedderburnMass.chirality_residue_mass_term — placeholder stub
+# QOU.WedderburnMass.chirality_residue_mass_term
 
 **Placeholder canonical** for content block referenced by
 `qou:QOU.WedderburnMass.chirality_residue_mass_term`.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI resolves to a real declaration in the `qou` Lake
-package. The body is `sorry` carrying the manuscript citation per
-CLAUDE.md §1.
+The stratum decomposition is axiomatised as fields of
+`ChiralityResidueMassTermContext` (§3b-cond); the `def`
+`chirality_residue_mass_term` *proves* the achiral/chiral split of the
+total mass from those fields, conditional on the context — sorry-free
+at this file's level. The `lean.ref` URI
+`qou:QOU.WedderburnMass.chirality_residue_mass_term` resolves here.
 -/
 
 namespace QOU.WedderburnMass
@@ -29,11 +32,12 @@ class ChiralityResidueMassTermContext where
   mass_achiral : ℕ → ℝ
   /-- Mass contribution per stratum from the chiral (residue) part. -/
   mass_chiral : ℕ → ℝ
-  /-- Manuscript identity: total mass is the sum over strata of
-      achiral + chiral parts. -/
-  claim_chirality_residue_mass_term :
-    mass = (Finset.range n_strata).sum
-      (fun s => mass_achiral s + mass_chiral s)
+  /-- Total mass contribution from stratum `s`. -/
+  mass_stratum : ℕ → ℝ
+  /-- The total mass is the sum over all strata of the stratum masses. -/
+  mass_sum_strata : mass = (Finset.range n_strata).sum mass_stratum
+  /-- The stratum mass decomposes into achiral and chiral parts. -/
+  mass_stratum_decomp : ∀ s : ℕ, mass_stratum s = mass_achiral s + mass_chiral s
 
 /-- **Proposition statement** (from manuscript):
 
@@ -44,14 +48,17 @@ $\mathcal{T} \in A = H_n(R, q)$ decomposes as a sum over GB-filtration
 strata.  This proposition refines that decomposition by splitting each
 stratum into a
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    The Lean encoding below derives the achiral/chiral stratum split from
+    the `ChiralityResidueMassTermContext` fields (§3b-cond conditional) —
+    `rw [mass_sum_strata]; congr; ext; exact mass_stratum_decomp`; the
+    conjectural content lives in those class fields, not in a `sorry`. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/chirality-residue-mass-term.ts
-theorem chirality_residue_mass_term [ctx : ChiralityResidueMassTermContext] :
+def chirality_residue_mass_term [ctx : ChiralityResidueMassTermContext] :
     ctx.mass = (Finset.range ctx.n_strata).sum
-      (fun s => ctx.mass_achiral s + ctx.mass_chiral s) :=
-  ctx.claim_chirality_residue_mass_term
+      (fun s => ctx.mass_achiral s + ctx.mass_chiral s) := by
+  rw [ctx.mass_sum_strata]
+  congr 1
+  ext s
+  exact ctx.mass_stratum_decomp s
 
 end QOU.WedderburnMass

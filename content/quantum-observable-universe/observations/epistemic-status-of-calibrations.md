@@ -1,11 +1,20 @@
 The three-calibration discipline
 ([`prop:three-calibration-discipline`](#prop:three-calibration-discipline))
-names $m_e$, $m_\mu/m_e$, $Q_\beta$ as the framework's external CODATA
-inputs and maps them bijectively to three cohomological degrees
-($H^0$, $H^1$, $H^2$). This remark unpacks the *epistemic status*
-of each input — distinguishing what is genuinely calibrated from
-what is structurally derived from canonical cohomology but recorded
-*as if* calibrated.
+names $m_e$, $m_\mu/m_e$, $m_\pi$ as the framework's external CODATA/PDG
+inputs and maps them bijectively to three cohomological data of the
+Bring Hodge structure $H^1 = 2W$ ($W$-plane scale, $W$-plane modulus,
+and the orthogonal $\mathrm{Vol}(\mathrm{Hopf})=0$ meson class). This
+remark unpacks the *epistemic status* of each input — distinguishing
+what is genuinely calibrated from what is structurally derived from
+canonical cohomology but recorded *as if* calibrated.
+($\mathfrak{Q}_\beta = \hbar/\mathfrak{D}_\beta$ is the **proxy for CAL-2**
+— the neutron $\beta$-decay width $\mathfrak{D}_\beta$ — per the
+2026-06-26 decay-width ruling, **not** a fourth calibration and **not**
+"derived, not a calibration": the CAL-2 modulus is overdetermined and
+pinned most precisely by $m_\mu/m_e$, so $\mathfrak{Q}_\beta$ reproduced
+from $q_0$ is a $0.17\%$ cross-check. The §"CAL-3" section below treats
+it accordingly — the bar-odd $\sinh$ partner of the meson scale $m_\pi$;
+CAL-3 proper is the pion decay width $\mathfrak{D}_\pi$, proxy $m_\pi$.)
 
 The remark **does not** propose a 4th calibration input, a fit, or
 a numerological substitution. The forbidden clauses of
@@ -53,6 +62,26 @@ equation hold, so it holds. The Lean cross-check
 `figure-8-muon-mass-cross-check.lean:42` says explicitly *"equality
 by construction."*
 
+**The muon is the *structurally* preferred anchor, not merely the
+tautological one.** Among the observables that could pin $q_0$, the muon
+scale $\mathrm{Vol}(4_1)/\hbar_q^2$ is distinguished by a self-duality: the
+figure-eight knot $4_1$ is **amphichiral**, so its coloured Jones is
+bar-invariant, $J_N(4_1; q) = J_N(4_1; q^{-1})$, and its Neumann–Zagier
+complex volume is **real** — $\mathrm{CS}(4_1) = 0$
+([`prop:self-dual-higgs-real-volume`](../braids-and-knots/self-dual-higgs-real-volume.md),
+Lean-proved sorry-free). The muon therefore pins $q_0$ through a quantity
+carrying **zero imaginary (decay) content**. The Physical-Observations
+proton pin $m_p/m_e$ instead runs through $F_{\mathrm{Bor}} = \lvert
+\mathrm{tr}_M(\beta_{\mathrm{Bor}}) \rvert$ — the modulus of a many-body
+binding endomorphism whose bar-odd ($\mathfrak{Q}_\beta$) face is projected
+out. So the muon is the cleanest, decay-free $q_0$ determination: a
+*structural* reason for the canonical convention, independent of its
+experimental leverage. The residual $\mu$–$p$ tension ($\approx 11.5$ ppb
+in $q_0$) is the honest substrate floor — **not** a modulus-projection
+artefact, since the observable-level bar-odd face is $O(1)$ and is itself
+$\mathfrak{Q}_\beta$, real accounted energy (audit
+[`2026-07-02-self-dual-anchor-and-mu-p-tension-framing`](../../../docs/audits/2026-07-02-self-dual-anchor-and-mu-p-tension-framing.md)).
+
 The substrate-$q_0$ derivation was declined as out-of-scope on
  (coordination ledger) and **re-opened on** in
 response to the same owner question that produced this remark. The
@@ -60,19 +89,28 @@ research-grade workplan tracks candidate derivation paths
 (spectral collapse, K-theoretic period, Bring $\chi = -6$
 fixed-point, categorical endomorphism fixed-point).
 
-## CAL-3 ($Q_\beta$) — conditional net-ansatz
+## CAL-3 ($\mathfrak{D}_\pi$, proxy $m_\pi$) and the CAL-2 proxy $\mathfrak{Q}_\beta$ — conditional net-ansatz
 
-CAL-3 fixes the hadronic energy scale $\mathfrak{E}_0$ via
-$Q_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$. Per sibling
+**CAL-3 is $\mathfrak{D}_\pi$, the pion decay width** (proxy: the
+charged-pion mass $m_\pi$ — the orthogonal $\mathrm{Vol}(\mathrm{Hopf})=0$
+meson scale, genuinely independent of $(m_e, q_0)$). $\mathfrak{Q}_\beta$
+below is the **proxy for CAL-2** ($\mathfrak{D}_\beta$; bar-odd $\sinh$
+partner of $m_\pi$), **not** the third calibration; because the modulus
+is overdetermined and pinned most precisely by $m_\mu/m_e$, whether
+$q_0$ reproduces $\mathfrak{Q}_\beta$ as a cross-check is what this section
+assesses.
+
+The derived $\mathfrak{Q}_\beta$ fixes the hadronic energy scale $\mathfrak{E}_0$ via
+$\mathfrak{Q}_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$. Per sibling
  and audit
 [`-q-beta-net-ansatz-fitting-finding`](../../../docs/audits/-q-beta-net-ansatz-fitting-finding.md):
 
-- The relation $Q_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$
+- The relation $\mathfrak{Q}_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$
   is **postulated**, not derived from the canonical per-braid mass
   formula.
 - The +0.17% match between framework-derived
   $\mathfrak{E}_0^{(N=0)} = m_e/(q_0(q_0-1))$ and CODATA-calibrated
-  $\mathfrak{E}_0^{(\text{cal})} = Q_\beta / |\Delta(\mathrm{net})|$
+  $\mathfrak{E}_0^{(\text{cal})} = \mathfrak{Q}_\beta / |\Delta(\mathrm{net})|$
   could be either a genuine $N=0$ truncation residual or a
   substrate-specific artefact — the framework currently has no
   discriminator.
@@ -88,13 +126,13 @@ $Q_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$. Per sibling
 | CAL | Pinned quantity | Cohomological derivation candidate | Status |
 |---|---|---|---|
 | CAL-1 | $m_e$ in MeV | $\mathrm{Li}_2(q^{-2}) / \hbar_q^2$ for the natural-units value | **unit-choice + derived**; the unit choice itself is real |
-| CAL-2 | $q_0$ via $m_\mu/m_e$ | $\mathrm{Vol}(4_1) = 2\Lambda(\pi/3)$ on the cohomology side; $q_0$ un-derived | **open** (re-opened, weeks-of-research workplan) |
-| CAL-3 | $\mathfrak{E}_0$ via $Q_\beta$ | Khovanov-Rozansky cohomology strata of the link projection | **open**) |
+| CAL-2 | $q_0$ via $m_\mu/m_e$ (phys-obs: $m_p/m_e$) | $\mathrm{Vol}(4_1) = 2\Lambda(\pi/3)$ on the cohomology side; $q_0$ un-derived | **open** (re-opened, weeks-of-research workplan) |
+| CAL-3 | $m_\pi$ (meson scale; orthogonal class) | independent of $(m_e,q_0)$ via $\mathrm{Vol}(\mathrm{Hopf})=0$ | **genuine independent input** |
+| *(derived)* | $\mathfrak{E}_0$ via $\mathfrak{Q}_\beta$ | Khovanov-Rozansky cohomology strata of the link projection | **open** (derivation status of $\mathfrak{Q}_\beta$, not a CAL) |
 
-## What this remark does NOT do
+## Scope exclusions for this remark
 
 - Does **not** propose a 4th calibration input.
-- Does **not** propose to replace CAL-1, CAL-2, or CAL-3 with empirical fits.
 - Does **not** claim $q_0$ has been cohomologically derived.
 - Does **not** override the no-fourth-CAL audit discipline.
 - Does **not** introduce new fitting, ansätze, or numerological inputs.
@@ -103,7 +141,7 @@ It is a structural clarification: the framework's *cohomological*
 status is more advanced than the *calibration* status, and the gap
 between them is a recognised open research direction.
 
-## Why this matters
+## Significance
 
 The 3-CAL discipline is rhetorically powerful: it claims the
 Standard Model's 19 free parameters reduce to 3. The accounting
@@ -120,6 +158,7 @@ redefinition of the discipline.
 - [`prop:three-calibration-inputs`](#prop:three-calibration-inputs) — proposition form with Wedderburn alignment
 - [`prop:three-calibration-discipline`](#prop:three-calibration-discipline) — the proposition this remark interprets
 - [`prop:three-parameters-wedderburn`](#prop:three-parameters-wedderburn) — categorical 3-parameter count
+- [`prop:self-dual-higgs-real-volume`](../braids-and-knots/self-dual-higgs-real-volume.md) — the $\mathrm{CS}(4_1)=0$ self-dual basis for the muon anchor being the decay-free $q_0$ pin
 - Audit
   [`-cal-2-cohomological-vs-calibration-critique`](../../../docs/audits/-cal-2-cohomological-vs-calibration-critique.md)
 - Audit

@@ -1,4 +1,4 @@
-> **CORRECTION NOTE ( surfaced by `verify_isospin_bar_anomaly.py`):**
+> **CORRECTION NOTE ( surfaced by the formal derivation):**
 > The original draft classified the 305 ppm residue as "bar-anti-symmetric."
 > **That was wrong.** Bar involution (q $\leftrightarrow$ $q^{-1}$ AND $\sigma_{i}$ $\leftrightarrow$ $\sigma_{i}^{-1}$) is
 > **distinct** from the isospin Z/2 swap ($\sigma_{i}$ $\leftrightarrow$ $\sigma_{i}^{-1}$ with q FIXED).
@@ -40,7 +40,7 @@ $$
 
 *per [`prop:flavor-split-substrate`](#prop:flavor-split-substrate)
 and the closed form computed in
-[`_li_2_q_util.flavor_split_subleading`](../../folio-assistant/computations/_li_2_q_util.py).
+the canonical formalism.
 The 305 ppm match is the isospin-Z/2-anti-symmetric leading residue of the
 $\mathrm{SU}(2)_I$ Z/2 swap on the operator-valued interface — i.e.,
 it IS the canonical-isospin $q_0$-anomaly.*
@@ -51,7 +51,7 @@ The Z/2 isospin swap $u \leftrightarrow d$ exchanges the proton's
 flavor triple $(u, u, d)$ with the neutron's flavor triple $(u, d, d)$
 on the three color sheets per nucleon.  At the level of the canonical
 atomic braid (per
-[`isotope_record_schema.py`](../../folio-assistant/computations/isotope_record_schema.py)),
+the canonical formalism),
 this swap exchanges:
 
 - **pp** intra-block ($\sigma$ generators) with **nn** intra-block
@@ -149,9 +149,9 @@ $$
 $$
 
 This is already computed in
-[`_li_2_q_util.flavor_split_subleading`](../../folio-assistant/computations/_li_2_q_util.py)
+the canonical formalism
 and consumed by
-[`m_p_borromean_verification_50dps.py`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py).
+the canonical formalism.
 The conjectural content of THIS block is the **categorical
 identification** of that closed form as the regularised-crystal
 $\mathrm{SU}(2)_I$ anomaly.
@@ -173,7 +173,7 @@ $\Delta m / M_N$ classify as:
 
 Net product $\hbar_q^2 \cdot h \cdot [2]_q \cdot (1 + \hbar_q^3) / 3$
 is **mixed** under bar (verified at $q_{0}$ by
-[`verify_isospin_bar_anomaly.py`](../../folio-assistant/computations/verify_isospin_bar_anomaly.py)).
+the canonical formalism).
 The product carries the bar-odd $h$ factor as a coefficient, but
 the $\hbar_q$ factors don't bar-classify cleanly.
 
@@ -217,10 +217,10 @@ once:
 1. This block lands (provides the categorical statement)
 2. Lean class `IsospinFromCanonicalBowtie` is inhabited (depends on
    the regularised crystal functional class instance)
-3. The isospin-Z/2-anti-symmetric residue verification numerical witness
+3. The isospin-Z/2-anti-symmetric residue verification canonical witness
    ships (see §"Open R&D" below)
 
-The Lean class follows the conditional-class exception of CLAUDE.md
+The Lean class follows the conditional-class exception of AGENTS.md
 §3b-cond: the upstream conjecture `crystal-isospin-degeneracy`
 provides the plain-generator base; the regularised-functional
 extension is an `Instance` parameter; the isospin-Z/2-anti-symmetric residue
@@ -255,7 +255,7 @@ class IsospinFromCanonicalBowtie
         - S_reg_crystal A β
         = - count_pp_nn_swaps β · h · markov_trace_factor
   /-- Leading-order residue at q = q_0 matches the substrate
-      flavor split closed form (verified numerically at 305 ppm). -/
+      flavor split closed form (verified canonical at 305 ppm). -/
   q_zero_residue_matches_flavor_split :
     leading_residue_at_q_zero
       = flavor_split_subleading q_zero
@@ -270,13 +270,13 @@ The class is inhabited by:
 - the regularised-functional construction (concrete Cesàro
   regulator on the divergent series).
 
-Per CLAUDE.md §3b ("class is inhabited"), the only `sorry`
+Per AGENTS.md §3b ("class is inhabited"), the only `sorry`
 ultimately lives in the upstream-conjecture class instances.
 
 ## Open R&D
 
-1. **Author the verification compute script**:
-   `verify_isospin_bar_anomaly.py` — at $q = q_0$, evaluate the
+1. **Author the verification compute formalism**:
+   the formal derivation — at $q = q_0$, evaluate the
    canonical $\bowtie_K$-coupled atomic braid for ${}^{2}\mathrm{H}$ (Z=1, N=1)
    and explicitly compute:
    - The plain-skeleton crystal-corrected shell sum
@@ -315,7 +315,7 @@ ultimately lives in the upstream-conjecture class instances.
   [`prop:flavor-split-substrate`](flavor-split-substrate.md)
 
 - The compute consumer:
-  [`m_p_borromean_verification_50dps.py`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py)
+  the canonical formalism
 - D6 (charge conjugation): [`conj:c-from-color-flavor-swap`](c-from-color-flavor-swap.md)
   — sibling Z/2 categorical symmetry on color sheets (same color-tube infrastructure)
 - The Markov-trace machinery: [`bar-involution.md`](bar-involution.md)

@@ -1,325 +1,347 @@
 {
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-02T15:05:04.981481+00:00",
+  "commitSha": "ae0e464220f6ad38147cc071ec38018384cb5a90",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "six-fifths-categorical-proof-attempt",
+  "scriptFile": "six_fifths_categorical_proof_attempt.py",
+  "scriptHash": "f6cf873ed6ff",
+  "scriptCommitSha": "f6ddd9350192668fe1fb6c2498f8d5b91bb70331",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Categorical proof ATTEMPT for the 171/143 = 6/5 hypothesis. Systematically tests structural-cardinality ratios from the framework (partitions, |S_n|, dim sums, q-deformed [n]_q ratios, half-symmetric H_4) for matches with 171/143. Identifies machine-precision matches if any; otherwise documents the hypothesis as suggestive rather than proved.",
+  "compute": "six_fifths_categorical_proof_attempt",
+  "parameters": {
+    "precision": "mpfr",
+    "dps": 50,
+    "Q_0": "1.1099785955573347198997632204832250266562084087802",
+    "H_0": "0.20906032199559367898186263646596735026162330164756",
+    "target_171_over_143": 1.1958041958041958,
+    "hypothesis_6_over_5": 1.2
+  },
   "all_candidates": [
     {
-      "category": "direct",
       "label": "6/5",
-      "value": 1.2
+      "value": 1.2,
+      "category": "direct"
     },
     {
-      "category": "direct",
       "label": "3/2",
-      "value": 1.5
+      "value": 1.5,
+      "category": "direct"
     },
     {
-      "category": "direct",
       "label": "12/10",
-      "value": 1.2
+      "value": 1.2,
+      "category": "direct"
     },
     {
-      "category": "direct",
       "label": "24/20",
-      "value": 1.2
+      "value": 1.2,
+      "category": "direct"
     },
     {
-      "category": "direct",
       "label": "11/9",
-      "value": 1.2222222222222223
+      "value": 1.2222222222222223,
+      "category": "direct"
     },
     {
-      "category": "direct",
       "label": "13/11",
-      "value": 1.1818181818181819
+      "value": 1.1818181818181819,
+      "category": "direct"
     },
     {
-      "category": "direct",
       "label": "22/18",
-      "value": 1.2222222222222223
+      "value": 1.2222222222222223,
+      "category": "direct"
     },
     {
-      "category": "direct",
       "label": "30/25",
-      "value": 1.2
+      "value": 1.2,
+      "category": "direct"
     },
     {
-      "category": "direct",
       "label": "15/13",
-      "value": 1.1538461538461537
+      "value": 1.1538461538461537,
+      "category": "direct"
     },
     {
-      "category": "direct",
       "label": "42/35",
-      "value": 1.2
+      "value": 1.2,
+      "category": "direct"
     },
     {
-      "category": "symmetric_vs_partition",
       "label": "|S_2|/|partitions(2)|",
-      "value": 1.0
+      "value": 1.0,
+      "category": "symmetric_vs_partition"
     },
     {
-      "category": "symmetric_vs_partition",
       "label": "|S_2|/|partitions(3)|",
-      "value": 0.6666666666666666
+      "value": 0.6666666666666666,
+      "category": "symmetric_vs_partition"
     },
     {
-      "category": "symmetric_vs_partition",
       "label": "|S_3|/|partitions(2)|",
-      "value": 3.0
+      "value": 3.0,
+      "category": "symmetric_vs_partition"
     },
     {
-      "category": "symmetric_vs_partition",
       "label": "|S_3|/|partitions(3)|",
-      "value": 2.0
+      "value": 2.0,
+      "category": "symmetric_vs_partition"
     },
     {
-      "category": "symmetric_vs_partition",
       "label": "|S_3|/|partitions(4)|",
-      "value": 1.2
+      "value": 1.2,
+      "category": "symmetric_vs_partition"
     },
     {
-      "category": "symmetric_vs_partition",
       "label": "|S_3|/|partitions(5)|",
-      "value": 0.8571428571428571
+      "value": 0.8571428571428571,
+      "category": "symmetric_vs_partition"
     },
     {
-      "category": "symmetric_vs_partition",
       "label": "|S_3|/|partitions(6)|",
-      "value": 0.5454545454545454
+      "value": 0.5454545454545454,
+      "category": "symmetric_vs_partition"
     },
     {
-      "category": "symmetric_vs_partition",
       "label": "|S_4|/|partitions(4)|",
-      "value": 4.8
+      "value": 4.8,
+      "category": "symmetric_vs_partition"
     },
     {
-      "category": "symmetric_vs_partition",
       "label": "|S_4|/|partitions(5)|",
-      "value": 3.4285714285714284
+      "value": 3.4285714285714284,
+      "category": "symmetric_vs_partition"
     },
     {
-      "category": "symmetric_vs_partition",
       "label": "|S_4|/|partitions(6)|",
-      "value": 2.1818181818181817
+      "value": 2.1818181818181817,
+      "category": "symmetric_vs_partition"
     },
     {
-      "category": "dim_sum",
-      "label": "\u03a3dim(H_3)/\u03a3dim(H_2)",
-      "value": 2.0
+      "label": "Σdim(H_3)/Σdim(H_2)",
+      "value": 2.0,
+      "category": "dim_sum"
     },
     {
-      "category": "dim_sum",
-      "label": "\u03a3dim(H_4)/\u03a3dim(H_3)",
-      "value": 2.5
+      "label": "Σdim(H_4)/Σdim(H_3)",
+      "value": 2.5,
+      "category": "dim_sum"
     },
     {
-      "category": "dim_sum",
-      "label": "\u03a3dim(H_5)/\u03a3dim(H_4)",
-      "value": 2.6
+      "label": "Σdim(H_5)/Σdim(H_4)",
+      "value": 2.6,
+      "category": "dim_sum"
     },
     {
-      "category": "half_symmetric",
       "label": "halfSymDim(H_4)/|partitions(3)| = 5/3",
-      "value": 1.6666666666666667
+      "value": 1.6666666666666667,
+      "category": "half_symmetric"
     },
     {
-      "category": "half_symmetric",
-      "label": "6 / halfSymDim(H_4) = 6/5  \u2190 THE HYPOTHESIS",
-      "value": 1.2
+      "label": "6 / halfSymDim(H_4) = 6/5  ← THE HYPOTHESIS",
+      "value": 1.2,
+      "category": "half_symmetric"
     },
     {
-      "category": "half_symmetric",
-      "label": "|S_3| / halfSymDim(H_4) = 6/5 \u2605 same",
-      "value": 1.2
+      "label": "|S_3| / halfSymDim(H_4) = 6/5 ★ same",
+      "value": 1.2,
+      "category": "half_symmetric"
     },
     {
-      "category": "q_deformed",
-      "label": "[2]_q / [3]_q \u00d7 3/2",
-      "value": 0.9910534658053416
+      "label": "[2]_q / [3]_q × 3/2",
+      "value": 0.9910106585220394,
+      "category": "q_deformed"
     },
     {
-      "category": "q_deformed",
-      "label": "[3]_q / [2]_q \u00d7 2/3",
-      "value": 1.0090272972179037
+      "label": "[3]_q / [2]_q × 2/3",
+      "value": 1.009070882740421,
+      "category": "q_deformed"
     },
     {
-      "category": "q_deformed",
-      "label": "[6]_q / [5]_q \u00d7 5/6",
-      "value": 1.0196295962048447
+      "label": "[6]_q / [5]_q × 5/6",
+      "value": 1.019723282999789,
+      "category": "q_deformed"
     },
     {
-      "category": "q_deformed",
       "label": "[6]_q / [5]_q",
-      "value": 1.2235555154458135
+      "value": 1.223667939599747,
+      "category": "q_deformed"
     },
     {
-      "category": "q_deformed",
-      "label": "[4]_q / [3]_q \u00d7 3/4",
-      "value": 1.0126066071892459
+      "label": "[4]_q / [3]_q × 3/4",
+      "value": 1.0126673225782872,
+      "category": "q_deformed"
     },
     {
-      "category": "q_deformed",
-      "label": "(1 + h_0\u00b2)\u00b76/5",
-      "value": 1.2521944991931755
+      "label": "(1 + h_0²)·6/5",
+      "value": 1.2524474618794816,
+      "category": "q_deformed"
     },
     {
-      "category": "q_deformed",
-      "label": "(1 - h_0\u00b2)\u00b76/5",
-      "value": 1.1478055008068246
+      "label": "(1 - h_0²)·6/5",
+      "value": 1.1475525381205185,
+      "category": "q_deformed"
     },
     {
-      "category": "q_deformed",
-      "label": "6/5 \u00d7 (1 - h_0\u00b2/some)",
-      "value": 1.1952550455278932
+      "label": "6/5 × (1 - h_0²/some)",
+      "value": 1.1952320489200472,
+      "category": "q_deformed"
     }
   ],
   "best_matches": [
     {
-      "category": "q_deformed",
-      "label": "6/5 \u00d7 (1 - h_0\u00b2/some)",
-      "value": 1.1952550455278932
+      "label": "6/5 × (1 - h_0²/some)",
+      "value": 1.1952320489200472,
+      "category": "q_deformed"
     },
     {
-      "category": "direct",
       "label": "6/5",
-      "value": 1.2
+      "value": 1.2,
+      "category": "direct"
     },
     {
-      "category": "direct",
       "label": "12/10",
-      "value": 1.2
+      "value": 1.2,
+      "category": "direct"
     },
     {
-      "category": "direct",
       "label": "24/20",
-      "value": 1.2
+      "value": 1.2,
+      "category": "direct"
     },
     {
-      "category": "direct",
       "label": "30/25",
-      "value": 1.2
+      "value": 1.2,
+      "category": "direct"
     },
     {
-      "category": "direct",
       "label": "42/35",
-      "value": 1.2
+      "value": 1.2,
+      "category": "direct"
     },
     {
-      "category": "symmetric_vs_partition",
       "label": "|S_3|/|partitions(4)|",
-      "value": 1.2
+      "value": 1.2,
+      "category": "symmetric_vs_partition"
     },
     {
-      "category": "half_symmetric",
-      "label": "6 / halfSymDim(H_4) = 6/5  \u2190 THE HYPOTHESIS",
-      "value": 1.2
+      "label": "6 / halfSymDim(H_4) = 6/5  ← THE HYPOTHESIS",
+      "value": 1.2,
+      "category": "half_symmetric"
     },
     {
-      "category": "half_symmetric",
-      "label": "|S_3| / halfSymDim(H_4) = 6/5 \u2605 same",
-      "value": 1.2
+      "label": "|S_3| / halfSymDim(H_4) = 6/5 ★ same",
+      "value": 1.2,
+      "category": "half_symmetric"
     },
     {
-      "category": "direct",
       "label": "13/11",
-      "value": 1.1818181818181819
+      "value": 1.1818181818181819,
+      "category": "direct"
     },
     {
-      "category": "direct",
       "label": "11/9",
-      "value": 1.2222222222222223
+      "value": 1.2222222222222223,
+      "category": "direct"
     },
     {
-      "category": "direct",
       "label": "22/18",
-      "value": 1.2222222222222223
+      "value": 1.2222222222222223,
+      "category": "direct"
     },
     {
-      "category": "q_deformed",
       "label": "[6]_q / [5]_q",
-      "value": 1.2235555154458135
+      "value": 1.223667939599747,
+      "category": "q_deformed"
     },
     {
-      "category": "direct",
       "label": "15/13",
-      "value": 1.1538461538461537
+      "value": 1.1538461538461537,
+      "category": "direct"
     },
     {
-      "category": "q_deformed",
-      "label": "(1 - h_0\u00b2)\u00b76/5",
-      "value": 1.1478055008068246
+      "label": "(1 - h_0²)·6/5",
+      "value": 1.1475525381205185,
+      "category": "q_deformed"
     }
   ],
-  "compute": "six_fifths_categorical_proof_attempt",
+  "machine_precision_matches": [],
+  "sub_half_pct_matches": [
+    {
+      "label": "6/5",
+      "value": 1.2,
+      "category": "direct"
+    },
+    {
+      "label": "12/10",
+      "value": 1.2,
+      "category": "direct"
+    },
+    {
+      "label": "24/20",
+      "value": 1.2,
+      "category": "direct"
+    },
+    {
+      "label": "30/25",
+      "value": 1.2,
+      "category": "direct"
+    },
+    {
+      "label": "42/35",
+      "value": 1.2,
+      "category": "direct"
+    },
+    {
+      "label": "|S_3|/|partitions(4)|",
+      "value": 1.2,
+      "category": "symmetric_vs_partition"
+    },
+    {
+      "label": "6 / halfSymDim(H_4) = 6/5  ← THE HYPOTHESIS",
+      "value": 1.2,
+      "category": "half_symmetric"
+    },
+    {
+      "label": "|S_3| / halfSymDim(H_4) = 6/5 ★ same",
+      "value": 1.2,
+      "category": "half_symmetric"
+    },
+    {
+      "label": "6/5 × (1 - h_0²/some)",
+      "value": 1.1952320489200472,
+      "category": "q_deformed"
+    }
+  ],
   "continued_fraction_of_171_143": [
     1,
     5,
     9,
     3
   ],
-  "description": "Categorical proof ATTEMPT for the 171/143 = 6/5 hypothesis. Systematically tests structural-cardinality ratios from the framework (partitions, |S_n|, dim sums, q-deformed [n]_q ratios, half-symmetric H_4) for matches with 171/143. Identifies machine-precision matches if any; otherwise documents the hypothesis as suggestive rather than proved.",
-  "machine_precision_matches": [],
-  "parameters": {
-    "H_0": "0.20855554654411102099666576552221321077768766333243",
-    "Q_0": "1.1097",
-    "dps": 50,
-    "hypothesis_6_over_5": 1.2,
-    "precision": "mpfr",
-    "target_171_over_143": 1.1958041958041958
-  },
-  "scriptCommitSha": "f16adbb177926ba737884d5104038da2f7afee0b",
+  "verdict": "NO machine-precision match found; 6/5 hypothesis remains SUGGESTIVE (0.35% empirical match) but unproved",
   "status": "exploratory",
-  "sub_half_pct_matches": [
-    {
-      "category": "direct",
-      "label": "6/5",
-      "value": 1.2
-    },
-    {
-      "category": "direct",
-      "label": "12/10",
-      "value": 1.2
-    },
-    {
-      "category": "direct",
-      "label": "24/20",
-      "value": 1.2
-    },
-    {
-      "category": "direct",
-      "label": "30/25",
-      "value": 1.2
-    },
-    {
-      "category": "direct",
-      "label": "42/35",
-      "value": 1.2
-    },
-    {
-      "category": "symmetric_vs_partition",
-      "label": "|S_3|/|partitions(4)|",
-      "value": 1.2
-    },
-    {
-      "category": "half_symmetric",
-      "label": "6 / halfSymDim(H_4) = 6/5  \u2190 THE HYPOTHESIS",
-      "value": 1.2
-    },
-    {
-      "category": "half_symmetric",
-      "label": "|S_3| / halfSymDim(H_4) = 6/5 \u2605 same",
-      "value": 1.2
-    },
-    {
-      "category": "q_deformed",
-      "label": "6/5 \u00d7 (1 - h_0\u00b2/some)",
-      "value": 1.1952550455278932
-    }
-  ],
   "tags": [
     "categorical-proof-attempt",
     "171-143-ratio",
     "six-fifths",
     "structural-cardinality",
     "open-question"
-  ],
-  "verdict": "NO machine-precision match found; 6/5 hypothesis remains SUGGESTIVE (0.35% empirical match) but unproved"
+  ]
 }

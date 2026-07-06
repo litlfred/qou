@@ -1,10 +1,9 @@
 name: build
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  # CI auto-triggers disabled (owner directive 2026-06-30): GitHub Actions
+  # billing causes 2-3s setup-phase failures on every push/PR. Manual-only.
+  workflow_dispatch:
 
 jobs:
   publish:

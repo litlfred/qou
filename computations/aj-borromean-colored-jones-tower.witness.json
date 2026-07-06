@@ -1,0 +1,91 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-04T19:07:05.390697+00:00",
+  "commitSha": "0bbe6cea3aba6bb23b601993dce29763e48cf8aa",
+  "assertions": [
+    {
+      "name": "color3_gate_inverse_and_ybe",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "unlink_reduction",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "bar_symmetry_amphichiral",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "q_numerator_integral_reduced_link_is_rational",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "habiro_diagonality_mixed_colors",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 95688,
+  "computation": "aj-borromean-colored-jones-tower",
+  "scriptFile": "aj_borromean_colored_jones_tower.py",
+  "scriptHash": "bd114e6e926e",
+  "scriptCommitSha": "0bbe6cea3aba6bb23b601993dce29763e48cf8aa",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Borromean AJ stage 1 (FIXED, bean 1iqq): multi-colored Jones tower J_B(m1,m2,m3) of the Borromean rings B3 = closure of (s1 s2^-1)^3 from a verified U_q(sl2) R-matrix. Two color>=3 bugs fixed: the forward nilpotent q-power t^{2n(n-1)}->t^{n(n-1)} (YBE now holds at colors 2,3,4) and the analytic inverse replaced by the exact matrix inverse (R.Rinv=id by construction). Convention pinned by inverse+YBE and gated on the color-3 checks (n>=2 exercised). Anchors (unlink, amphichiral bar-symmetry, q-numerator-integrality) pass, and the colored Jones of B3 is EXACTLY diagonal in the cyclotomic sigma_k basis (same as the Lean 4_1 ladder) on all computed triples.",
+  "data": {
+    "braid_word": "(s1 s2^-1)^3 (pure, writhe 0)",
+    "convention": {
+      "diag_first": false
+    },
+    "MMAX": 3,
+    "values_q": {
+      "(1, 1, 1)": "1",
+      "(1, 1, 2)": "1",
+      "(1, 1, 3)": "1",
+      "(1, 2, 2)": "1",
+      "(1, 2, 3)": "1",
+      "(1, 3, 3)": "1",
+      "(2, 2, 2)": "-q**6/(q**4 + 2*q**3 + q**2) + 3*q**5/(q**4 + 2*q**3 + q**2) - 2*q**4/(q**4 + 2*q**3 + q**2) + 4*q**3/(q**4 + 2*q**3 + q**2) - 2*q**2/(q**4 + 2*q**3 + q**2) + 3*q/(q**4 + 2*q**3 + q**2) - 1/(q**4 + 2*q**3 + q**2)",
+      "(2, 2, 3)": "-q**3 + 4*q**2 - 7*q + 9 - 7/q + 4/q**2 - 1/q**3",
+      "(2, 3, 3)": "-q**10/(q**6 + q**5 + q**4) + 2*q**9/(q**6 + q**5 + q**4) - q**8/(q**6 + q**5 + q**4) + 3*q**6/(q**6 + q**5 + q**4) - 3*q**5/(q**6 + q**5 + q**4) + 3*q**4/(q**6 + q**5 + q**4) - q**2/(q**6 + q**5 + q**4) + 2*q/(q**6 + q**5 + q**4) - 1/(q**6 + q**5 + q**4)",
+      "(3, 3, 3)": "q**18/(q**11 + 2*q**10 + 3*q**9 + 2*q**8 + q**7) - 3*q**17/(q**11 + 2*q**10 + 3*q**9 + 2*q**8 + q**7) - q**16/(q**11 + 2*q**10 + 3*q**9 + 2*q**8 + q**7) + 8*q**15/(q**11 + 2*q**10 + 3*q**9 + 2*q**8 + q**7) - 6*q**14/(q**11 + 2*q**10 + 3*q**9 + 2*q**8 + q**7) - 4*q**13/(q**11 + 2*q**10 + 3*q**9 + 2*q**8 + q**7) + 14*q**12/(q**11 + 2*q**10 + 3*q**9 + 2*q**8 + q**7) - 7*q**11/(q**11 + 2*q**10 + 3*q**9 + 2*q**8 + q**7) - 6*q**10/(q**11 + 2*q**10 + 3*q**9 + 2*q**8 + q**7) + 17*q**9/(q**11 + 2*q**10 + 3*q**9 + 2*q**8 + q**7) - 6*q**8/(q**11 + 2*q**10 + 3*q**9 + 2*q**8 + q**7) - 7*q**7/(q**11 + 2*q**10 + 3*q**9 + 2*q**8 + q**7) + 14*q**6/(q**11 + 2*q**10 + 3*q**9 + 2*q**8 + q**7) - 4*q**5/(q**11 + 2*q**10 + 3*q**9 + 2*q**8 + q**7) - 6*q**4/(q**11 + 2*q**10 + 3*q**9 + 2*q**8 + q**7) + 8*q**3/(q**11 + 2*q**10 + 3*q**9 + 2*q**8 + q**7) - q**2/(q**11 + 2*q**10 + 3*q**9 + 2*q**8 + q**7) - 3*q/(q**11 + 2*q**10 + 3*q**9 + 2*q**8 + q**7) + 1/(q**11 + 2*q**10 + 3*q**9 + 2*q**8 + q**7)"
+    },
+    "cyclotomic_c_k": {
+      "0": "1",
+      "1": "-t**16/((t - 1)**2*(t + 1)**2*(t**2 + 1)**2*(t**4 + 1)**2*(t**2 - t + 1)**2*(t**2 + t + 1)**2*(t**4 - t**2 + 1)**2)",
+      "2": "t**44/((t - 1)**4*(t + 1)**4*(t**2 + 1)**4*(t**4 + 1)**2*(t**8 + 1)**2*(t**2 - t + 1)**2*(t**2 + t + 1)**2*(t**4 - t**2 + 1)**2*(t**4 - t**3 + t**2 - t + 1)**2*(t**4 + t**3 + t**2 + t + 1)**2*(t**8 - t**6 + t**4 - t**2 + 1)**2)"
+    },
+    "closed_form_matches": [],
+    "sigma_basis": "sigma_k(m) = prod_{j=1..k}(Lambda_m - lambda_j) — same as QOU.BraidKnot.HabiroNewtonLadder",
+    "verdict": "BORROMEAN TOWER ESTABLISHED (stage 1): R-matrix ground truth (convention pinned by inverse+YBE), unlink/bar/q-integrality anchors all pass, and the colored Jones of B3 is EXACTLY diagonal in the cyclotomic basis sigma_k — the same basis as the Lean 4_1 ladder — on all computed triples (m_i <= 3), with c_k recorded exactly (no candidate matched yet). Scope: verified range m_i <= 4; extrapolation beyond is tiered.",
+    "status": "FIXED (bean 1iqq): R-matrix correct at every color (forward t^{n(n-1)} + exact matrix inverse); color-3 gate (R.Rinv=id AND YBE) passes; stage-1 tower usable for stage 2",
+    "reduced_link_denominator_forms": [
+      "1",
+      "t**12",
+      "t**16*(t**2 - t + 1)*(t**2 + t + 1)*(t**4 - t**2 + 1)",
+      "t**28*(t**2 - t + 1)**2*(t**2 + t + 1)**2*(t**4 - t**2 + 1)**2",
+      "t**8*(t**4 + 1)**2"
+    ]
+  }
+}

@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-02T02:46:38.579526+00:00",
-  "commitSha": "e6e9dbb14c31840f7063552584a9a5d0d7ddd950",
+  "computedAt": "2026-06-22T13:20:26.493922+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "braiding_quadratic_matches_c_sq_minus_h_c_minus_1",
@@ -33,11 +33,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 17,
   "computation": "archimedean-knot-eigenbasis-probe",
   "scriptFile": "archimedean_knot_eigenbasis_probe.py",
   "scriptHash": "1691b864000e",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,15 +46,16 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
   "description": "I1 probe for cor:archimedean-knot-eigenbasis.  Verifies the two concrete algebraic claims of the corollary: (1) the R-matrix braiding eigenvalues `q` and `-q⁻¹` satisfy the quadratic `(c − q)(c + q⁻¹) = 0`, expanding to `c² − (q − q⁻¹)·c − 1 = 0`; (2) V^⊗n's Schur–Weyl decomposition has exactly ⌊n/2⌋ + 1 two-part partitions for n ∈ {2, …, 8}.  The Markov-trace-detection (claim 3) and combining-theorem completeness (claim 4) are structural assertions about an infinite limit and require Lean formalisation — not a concrete probe.",
   "contentBlock": "cor:archimedean-knot-eigenbasis",
   "parameters": {
-    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
-    "eigenvalue_plus_at_q_0": 1.1099785827513808,
-    "eigenvalue_minus_at_q_0": -0.9009182839557415,
+    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
+    "eigenvalue_plus_at_q_0": 1.1099785955573347,
+    "eigenvalue_minus_at_q_0": -0.900918273561741,
     "quadratic_expanded": "c**2 - c*q + c/q - 1"
   },
   "data": {

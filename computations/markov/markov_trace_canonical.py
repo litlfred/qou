@@ -111,7 +111,15 @@ def _tr_M_word_impl(word: tuple, n: int, z, h, *,
     if not word:
         return sp.Integer(1) if hasattr(z, "is_number") else 1
     max_gen = max(word)
-    if max_gen < n - 2:
+    # Normalize to the word's natural algebra H_{max_gen+2}: the Markov
+    # trace value is independent of the ambient n (the trace is consistent
+    # under the H_{n} ⊂ H_{n+1} embedding), so n is advisory. We already
+    # SHRINK when n is too large (max_gen < n-2); handle the symmetric
+    # PROMOTE case (max_gen > n-2, a generator above σ_{n-2}) the same way.
+    # Without this, top = n-2 is absent from the word, top_positions is
+    # empty, and `top_positions[-1]` below raised IndexError on any word
+    # whose highest generator exceeds σ_{n-2} (e.g. tr_M_word([1], 2)).
+    if max_gen != n - 2:
         return tr_M_word(word, max_gen + 2, z, h,
                           depth=depth + 1, max_depth=max_depth)
     top = n - 2
@@ -150,49 +158,154 @@ def _tr_M_word_impl(word: tuple, n: int, z, h, *,
                            depth=depth + 1, max_depth=max_depth)
         return h * term1 + term2
 
-    # Case B: segment contains top-1. Apply braid relation explicitly.
-    # The obstructing σ_{top-1} sits at some position in segment.
-    # Word structure near the two tops:
-    #   prefix + σ_top + alpha + σ_{top-1} + beta + σ_top  (+ already at end)
-    # Use braid σ_top σ_{top-1} σ_top = σ_{top-1} σ_top σ_{top-1}
-    # to move one top past the σ_{top-1}.
+    # Case B: segment contains σ_{top-1}.  The two adjacent tops bracket a
+    # top-free segment that uses σ_{top-1} (and possibly lower generators):
+    #
+    #   prefix · σ_top · segment · σ_top      (prefix = rest[:inner_pos];
+    #                                            segment is top-free)
+    #
+    # We must consume one σ_top so the word's length / top-count strictly
+    # drops, using only the braid relation, the Hecke quadratic, and
+    # far-commutativity — all exact in (z, h).
+    prefix = rest[:inner_pos]
     tm1_positions = [i for i, g in enumerate(segment) if g == top - 1]
-    # Take the FIRST top-1 in segment (closest to inner_top).
-    first_tm1_in_seg = tm1_positions[0]
-    # Word: rest[:inner_pos] + σ_top + segment[:first_tm1] + σ_{top-1}
-    #        + segment[first_tm1+1:] + σ_top
-    # We want to apply braid on the two tops with σ_{top-1} between them.
-    # If segment[:first_tm1] contains only commuting generators with top (i.e.
-    # none of them is top - 1), then we can slide σ_top to be directly adjacent
-    # to σ_{top-1}, giving σ_top · σ_{top-1} · ... · σ_top.
-    alpha = segment[:first_tm1_in_seg]  # commutes with top (we're in Case B
-                                         # and this alpha has no top-1)
-    if (top - 1) in alpha:
-        # Shouldn't happen since we took FIRST top-1, but safeguard.
-        raise NotImplementedError(
-            f"Unexpected top-1 in alpha segment for word {word}")
-    beta = segment[first_tm1_in_seg + 1:]
-    # Rebuild: (rest[:inner_pos]) · σ_top · alpha · σ_{top-1}
-    #           · beta · σ_top
-    # Commute σ_top past alpha (far-commute): ends up as alpha · σ_top · σ_{top-1} · beta · σ_top
-    # Now apply braid: σ_top · σ_{top-1} · σ_top = σ_{top-1} · σ_top · σ_{top-1}
-    # But we have σ_top · σ_{top-1} · (beta) · σ_top  — not directly.
-    # To apply braid we need σ_top · σ_{top-1} · σ_top adjacent.  Commute σ_top
-    # past beta if possible (beta must have no top-1).
-    if (top - 1) in beta:
-        # Both sides have top-1: cannot resolve cleanly.  Fall back: return 0
-        # conservatively (sentinel for complex case).  Caller should detect.
-        raise NotImplementedError(
-            f"Complex braid case (multiple top-1 in segment): word={word}")
-    # beta commutes with top.  After commutation:
-    #   (rest[:inner_pos]) · alpha · σ_top · σ_{top-1} · σ_top · beta
-    # Now apply braid: σ_top · σ_{top-1} · σ_top = σ_{top-1} · σ_top · σ_{top-1}
-    #   → (rest[:inner_pos]) · alpha · σ_{top-1} · σ_top · σ_{top-1} · beta
-    # Now only ONE σ_top in the entire word (we had two, braid consumed one).
-    new_word = (rest[:inner_pos] + alpha + (top - 1,) + (top,)
-                 + (top - 1,) + beta)
-    return tr_M_word(new_word, n, z, h,
-                      depth=depth + 1, max_depth=max_depth)
+
+    # ── Sub-case B1: exactly one σ_{top-1} in the segment ────────────
+    # segment = alpha · σ_{top-1} · beta with alpha, beta both top-1-free
+    # (hence commuting with σ_top).  Slide both σ_top inward and braid:
+    #   σ_top·alpha·σ_{top-1}·beta·σ_top
+    #     = alpha · (σ_top σ_{top-1} σ_top) · beta            (far-commute)
+    #     = alpha · (σ_{top-1} σ_top σ_{top-1}) · beta        (braid)
+    # The result has exactly ONE σ_top, so the next call hits the
+    # single-top Markov peel and descends.
+    if len(tm1_positions) == 1:
+        first_tm1 = tm1_positions[0]
+        alpha = segment[:first_tm1]
+        beta = segment[first_tm1 + 1:]
+        new_word = prefix + alpha + (top - 1, top, top - 1) + beta
+        return tr_M_word(new_word, n, z, h,
+                          depth=depth + 1, max_depth=max_depth)
+
+    # ── Sub-case B2: ≥2 occurrences of σ_{top-1} in the segment ──────
+    # A single braid here leaves the remaining σ_{top-1}'s wedged between
+    # two σ_top, so the top-count would not drop.  Instead, expand the
+    # bracketed block  B = σ_top · segment · σ_top  into a (z,h)-linear
+    # combination of words each carrying AT MOST ONE σ_top, via the
+    # dedicated reducer below (braid + Hecke + far-commute only).  Each
+    # resulting word descends through the single-top peel.
+    expansion = _reduce_two_top_block(top, segment, z, h)
+    total = sp.Integer(0)
+    for sub_word, coeff in expansion:
+        total += coeff * tr_M_word(prefix + sub_word, n, z, h,
+                                    depth=depth + 1, max_depth=max_depth)
+    return total
+
+
+def _reduce_two_top_block(top: int, segment: tuple, z, h):
+    """Reduce the bracketed block  B = σ_top · segment · σ_top  (where
+    ``segment`` is *top-free*, i.e. uses only generators ≤ top-1) into a
+    list of ``(word, coeff)`` pairs such that
+
+        B  =  Σ_i coeff_i · word_i      (equal in H_top+2, exact in h)
+
+    and every ``word_i`` contains AT MOST ONE occurrence of σ_top.
+
+    The block is rewritten by the generic Hecke word reducer
+    :func:`_hecke_normalize`, which applies the Hecke quadratic
+    σ_i² = h·σ_i + 1 and the braid / commutation relations to drive every
+    word to a unique Coxeter-reduced normal form (length-lexicographic
+    least word per permutation).  In any reduced word for an element of
+    H_{top+2}, the highest generator σ_top can appear at most once per
+    descent run; the seminormal/Gröbner–Shirshov normal form for S_{top+2}
+    in fact uses σ_top at most once.  We therefore obtain exactly the
+    ≤1-top words required by the single-top Markov peel.
+    """
+    block = (top,) + tuple(segment) + (top,)
+    return _hecke_normalize(block, h)
+
+
+# Generic Hecke-algebra word reducer (braid + Hecke quadratic), exact in h.
+_HECKE_NORM_CACHE: dict = {}
+
+
+def _hecke_normalize(word: tuple, h):
+    """Expand a Hecke word (tuple of non-negative generator indices) into
+    its T_w normal-form basis: a list of ``(reduced_word, coeff)`` pairs,
+    exact in ``h``.
+
+    Implements the standard right-multiplication recursion in the
+    Iwahori–Hecke algebra H_n(q) with σ_i² = h·σ_i + 1:
+
+        T_w · σ_i = T_{w·s_i}                if ℓ(w·s_i) > ℓ(w),
+                  = h·T_w + T_{w·s_i}        if ℓ(w·s_i) < ℓ(w).
+
+    Each basis key is the permutation ``w`` (as a tuple); the stored word
+    is the canonical reduced word, so every returned word is automatically
+    Coxeter-reduced (hence uses each generator the minimal number of
+    times).  Equal in H to the input word, independent of z.
+    """
+    try:
+        key = (tuple(word), h)
+        if key in _HECKE_NORM_CACHE:
+            return _HECKE_NORM_CACHE[key]
+    except TypeError:
+        key = None
+
+    n = (max(word) + 2) if word else 1
+    # State: dict perm(tuple) -> coeff.  Start at identity.
+    ident = tuple(range(n))
+    terms = {ident: sp.Integer(1)}
+    for g in word:
+        new_terms: dict = {}
+        for perm, coeff in terms.items():
+            # Apply s_g (swap positions g, g+1) on the RIGHT: w -> w·s_g.
+            lp = list(perm)
+            lp[g], lp[g + 1] = lp[g + 1], lp[g]
+            wsg = tuple(lp)
+            if _coxeter_len(wsg) > _coxeter_len(perm):
+                # length increases: T_w σ_g = T_{w s_g}
+                new_terms[wsg] = new_terms.get(wsg, sp.Integer(0)) + coeff
+            else:
+                # length decreases: T_w σ_g = h T_w + T_{w s_g}
+                new_terms[perm] = new_terms.get(perm, sp.Integer(0)) + h * coeff
+                new_terms[wsg] = new_terms.get(wsg, sp.Integer(0)) + coeff
+        terms = new_terms
+
+    result = []
+    for perm, coeff in terms.items():
+        c = sp.cancel(coeff) if isinstance(coeff, sp.Basic) else coeff
+        if c == 0:
+            continue
+        result.append((_reduced_word_for(perm), c))
+    if key is not None:
+        _HECKE_NORM_CACHE[key] = result
+    return result
+
+
+def _coxeter_len(perm: tuple) -> int:
+    """Number of inversions of ``perm`` = Coxeter length in S_n."""
+    nn = len(perm)
+    return sum(1 for i in range(nn) for j in range(i + 1, nn)
+               if perm[i] > perm[j])
+
+
+def _reduced_word_for(perm: tuple) -> tuple:
+    """Canonical reduced word (0-indexed generators) for ``perm`` ∈ S_n
+    via greedy bubble-sort descent.  Returns a tuple of generator indices
+    whose product (left-to-right) equals ``perm``."""
+    nn = len(perm)
+    p = list(perm)
+    word = []
+    changed = True
+    while changed:
+        changed = False
+        for i in range(nn - 1):
+            if p[i] > p[i + 1]:
+                p[i], p[i + 1] = p[i + 1], p[i]
+                word.append(i)
+                changed = True
+                break
+    return tuple(reversed(word))
 
 
 def tr_M_element(elem, n: int, z=Z_SYMB, h=H_SYMB,

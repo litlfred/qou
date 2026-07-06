@@ -73,6 +73,7 @@ if str(HERE) not in sys.path:
 from _precision import set_compute_dps, fmt  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
 from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV, M_D_MEV  # noqa: E402
+from experimental_constants import m_n_derived_3input  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 # Reuse the proven numeric Hoefsmit + character pipeline from sibling
@@ -134,7 +135,7 @@ def main() -> int:
     # ── Step 1: |tr_M(β_D)| and Δρ from Option A pipeline ──────
     tr_M = load_deuteron_tr_M()
     abs_tr_M = abs(tr_M)
-    rho_K_LO = (M_P_MEV + M_N_MEV) / (M_E_MEV * abs_tr_M)
+    rho_K_LO = (M_P_MEV + m_n_derived_3input) / (M_E_MEV * abs_tr_M)
     rho_K_codata = M_D_MEV / (M_E_MEV * abs_tr_M)
     delta_rho = rho_K_codata - rho_K_LO
     print(f"  |tr_M(β_D)|       = {mp.nstr(abs_tr_M, 25)}")
@@ -427,7 +428,7 @@ def main() -> int:
             "M_codata_MeV": str(M_D_MEV),
             "m_e_MeV": str(M_E_MEV),
             "m_p_MeV": str(M_P_MEV),
-            "m_n_MeV": str(M_N_MEV),
+            "m_n_MeV": str(m_n_derived_3input),
         },
         "data": {
             "abs_tr_M_at_q0": str(abs_tr_M),

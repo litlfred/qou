@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
 with $N$ particle knots in a region $U$.  A **phase
 transition** occurs at a critical temperature $T_q^{(c)}$

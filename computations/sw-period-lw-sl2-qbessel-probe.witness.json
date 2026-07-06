@@ -1,0 +1,123 @@
+{
+  "engine": "python+sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-25T21:55:50.441036+00:00",
+  "commitSha": "f2cf43b05580c0da42dc1304f576c7e32e06ca01",
+  "assertions": [
+    {
+      "name": "sl2_depth2_diverges_from_lw_by_n6",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "|sl2_extrap − lw|/|lw| first exceeds 1e-3 at n=5 (≤6 ⇒ SL₂ is the n≤4 effective fit, not the global period)."
+    },
+    {
+      "name": "lw_growth_ratio_exceeds_sl2_lambda_plus",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "lw ratio at n=8 = 3.099626 > λ₊ = 2.1846463 (SL₂ geometric cap) — super-exponential."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "sw-period-lw-sl2-qbessel-probe",
+  "scriptFile": "sw_period_lw_sl2_qbessel_probe.py",
+  "scriptHash": "db4a55db8760",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "auditOnly": "docs/audits/2026-06-25-sw-jet-prolongation-explicit-and-fork.md",
+  "parameters": {
+    "q_0": "1.1099785955573347198997632204832250266562084087802"
+  },
+  "data": {
+    "selection_rule": "a_D^(n) = lw(n−1) = (1/n) Σ_{λ⊢n} dim_q V_λ (canonical q-hook dim_q)",
+    "tau_anchored": "2.642386313301486",
+    "sl2_lambda_plus": "2.184646315299639",
+    "period_table_n2_to_n8": [
+      {
+        "n": 2,
+        "true_aD_lw": "1.0",
+        "sl2_extrap": "1.0",
+        "rel_resid": "0.0",
+        "true_ratio": null,
+        "sl2_ratio": null
+      },
+      {
+        "n": 3,
+        "true_aD_lw": "1.33696562304",
+        "sl2_extrap": "1.33696562304",
+        "rel_resid": "0.0",
+        "true_ratio": "1.33697",
+        "sl2_ratio": "1.33697"
+      },
+      {
+        "n": 4,
+        "true_aD_lw": "2.53277966367",
+        "sl2_extrap": "2.53277966367",
+        "rel_resid": "1.43e-71",
+        "true_ratio": "1.89442",
+        "sl2_ratio": "1.89442"
+      },
+      {
+        "n": 5,
+        "true_aD_lw": "5.37613776906",
+        "sl2_extrap": "5.35561669486",
+        "rel_resid": "0.003817",
+        "true_ratio": "2.12262",
+        "sl2_ratio": "2.11452"
+      },
+      {
+        "n": 6,
+        "true_aD_lw": "13.5598273276",
+        "sl2_extrap": "11.6188285901",
+        "rel_resid": "0.1431",
+        "true_ratio": "2.52222",
+        "sl2_ratio": "2.16947"
+      },
+      {
+        "n": 7,
+        "true_aD_lw": "37.3678083587",
+        "sl2_extrap": "25.3458169483",
+        "rel_resid": "0.3217",
+        "true_ratio": "2.75577",
+        "sl2_ratio": "2.18144"
+      },
+      {
+        "n": 8,
+        "true_aD_lw": "115.826229059",
+        "sl2_extrap": "55.3546112134",
+        "rel_resid": "0.5221",
+        "true_ratio": "3.09963",
+        "sl2_ratio": "2.18397"
+      }
+    ],
+    "first_sl2_divergence_n": 5,
+    "qbessel_correspondence": {
+      "ratio_def": "r_k = −q^k/[(1−q^{k+1})(1−a q^k)], a = q0^{ν+1}, ν = 1/2",
+      "coeff_ratios_k0_k6": [
+        "-53.6683",
+        "-16.0495",
+        "-7.60462",
+        "-4.40602",
+        "-2.8593",
+        "-1.99537",
+        "-1.46438"
+      ],
+      "note": "Hahn–Exton coefficient ratios at q0 — RECORDED for correspondence, NOT fit to lw. The q-Bessel coefficients c_k shrink (|r_k|<1) so the SUPER-EXP growth of a_D^(n)=lw(n−1) lives in the q-Bessel PERIOD / partial-sum object, not the coefficient sequence — the open z2bn correspondence (scope-(a): records, does not close)."
+    },
+    "residual_open": "a_D^(n)=lw(n−1) geometric↔algebraic identification (#1765) and the exact q-Bessel⇒period correspondence remain open (bean z2bn)."
+  }
+}

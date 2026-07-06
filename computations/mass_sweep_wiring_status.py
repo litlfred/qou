@@ -63,6 +63,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 
 # Substrate q_0 at 50 dps
 mp.mp.dps = 50
@@ -74,12 +75,12 @@ H_SQ_F = float(h ** 2)
 H_4_F = float(h ** 4)
 
 AME = [
-    ("2H",   1, 1, 2,   2.22456612),
-    ("3H",   1, 2, 3,   8.4817984),
-    ("3He",  2, 1, 3,   7.7180375),
-    ("4He",  2, 2, 4,  28.2956912),
+    ("2H",   1, 1, 2,   float(AME_B_DEUTERON_MEV_VALIDATION)),
+    ("3H",   1, 2, 3,   float(AME_B_TRITIUM_MEV_VALIDATION)),
+    ("3He",  2, 1, 3,   float(AME_B_HE3_MEV_VALIDATION)),
+    ("4He",  2, 2, 4,  float(AME_B_HE4_MEV_VALIDATION)),
     ("5Li",  3, 2, 5,  26.328),
-    ("6Li",  3, 3, 6,  31.99405),
+    ("6Li",  3, 3, 6,  float(AME_B_LI6_MEV_VALIDATION)),
     ("7Li",  3, 4, 7,  39.24453),
     ("8Be",  4, 4, 8,  56.49951),
     ("9Be",  4, 5, 9,  58.16500),

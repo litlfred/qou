@@ -130,7 +130,7 @@ integration improvement instead.
 
 - **I1. PROVEN-IN-LEAN, NO PROBE.** A `prop:`/`thm:`/`lem:` block has a
   `.lean` sibling with 0 sorrys (or §3b-cond conditional-class), but
-  no `folio-assistant/computations/probe_*` script and no
+  no `computations/probe_*` script and no
   `*.witness.json` referencing the label via `contentBlock`.  Fix:
   write a probe that exercises the claim at q₀ + emits a witness
   whose `contentBlock` field points at the prop.
@@ -156,7 +156,7 @@ integration improvement instead.
        unless the predecessor's narrative content already lives
        elsewhere.
     2. Calibration-count accounting update — if the predecessor was
-       a CAL input (CLAUDE.md §"three-cal discipline"), the
+       a CAL input (AGENTS.md §"three-cal discipline"), the
        substrate prop typically reduces the CAL count by one.  Update
        `canonical-script-input-audit.witness.json`'s classification
        AND the affected scripts' `calibration_inputs` metadata.
@@ -330,13 +330,13 @@ changed by the commit:
 2. For each label `L`:
    - **Step 1 — Lean status.** Read the `.lean` sibling; count
      sorrys, axioms, classes.  Skip blocks where the Lean side is
-     "conjecture-class" (CLAUDE.md §3b-cond) — those don't need a
+     "conjecture-class" (AGENTS.md §3b-cond) — those don't need a
      compute consumer.
    - **Step 2 — Probe presence.** Grep
-     `folio-assistant/computations/*.witness.json` for
+     `computations/*.witness.json` for
      `"contentBlock": "L"`.  Record producer script name.
    - **Step 3 — Production consumption.** Grep
-     `folio-assistant/computations/{derive_*,paper_six_term*,build_*_chain,atomic_mass_*}` for the
+     `computations/{derive_*,paper_six_term*,build_*_chain,atomic_mass_*}` for the
      producer witness file name OR for the prop label string.
    - **Step 4 — Apply I-patterns.** Walk I1–I12 in order; emit
      hits.
@@ -372,8 +372,8 @@ working?":
 
 | Question | Tool / file |
 |---------|-------------|
-| Which props have probes? | `grep '"contentBlock":' folio-assistant/computations/*.witness.json` |
-| Which probes have production consumers? | `grep -l '<witness-name>' folio-assistant/computations/derive_*.py paper_six_term_isotope_sweep.py atomic_mass_via_rho_k.py mass_table_ppb.py` |
+| Which props have probes? | `grep '"contentBlock":' computations/*.witness.json` |
+| Which probes have production consumers? | `grep -l '<witness-name>' computations/derive_*.py paper_six_term_isotope_sweep.py atomic_mass_via_rho_k.py mass_table_ppb.py` |
 | What's the canonical mass formula? | `paper_six_term_isotope_sweep.py` (per its own docstring) |
 | What's the m_p production chain? | `derive_m_p_hecke_full_tower_50dps.py` → `build_proton_mass_50dps_chain.py` → `atomic-tr-m-mpfr-50dps.witness.json` |
 | What's the m_n production chain? | `derive_m_n_hecke_full_tower_50dps.py` → `build_neutron_mass_50dps_chain.py` |
@@ -400,10 +400,10 @@ working?":
 
 - **Auto-fixing wiring on someone else's PR branch.** I-pattern hits
   on sibling PRs become a comment on that PR (one comment, batched),
-  not a force-push to its branch.  Per CLAUDE.md author-only-closes
+  not a force-push to its branch.  Per AGENTS.md author-only-closes
   rule, the sibling PR's owner accepts the recommendation.
 - **Generating new probes for conjecture-class props.** Conjectures
-  (CLAUDE.md §3b) don't need compute consumers — their witnesses are
+  (AGENTS.md §3b) don't need compute consumers — their witnesses are
   axiomatic.  Skip them in idle-sweep.
 - **Declaring "wired" based on docstring-only mention.** A line
   `# uses prop:foo` in a comment is *not* wiring; the consumer
@@ -457,13 +457,13 @@ prop:<label>     ━━━━━━━━━━━━━━━━━━━━━
   Action:      I2 fix — see docs/audits/<date>-compute-integration-sweep.md row K
 ```
 
-## CLAUDE.md interaction
+## AGENTS.md interaction
 
 This skill respects the same rules as `compute-audit`:
 
 - Never write to **protected files** (deploy/google-viewers.txt,
   deploy/github-collaborators.txt, .github/CODEOWNERS).
-- Never close / resolve TodoItems (human-only per CLAUDE.md §4a).
+- Never close / resolve TodoItems (human-only per AGENTS.md §4a).
 - Cite the matching I-pattern (I1–I12) for every recommended fix.
 - For dual paths (probe-only vs production), preserve the
   probe-only path as an opt-out — never delete it.

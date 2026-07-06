@@ -110,7 +110,7 @@ def tr_M_atomic_rust(Z: int, N: int, *,
     """Canonical Markov trace `tr_M(β_atomic(Z, N), q₀)` via the Rust path,
     **MPFR at `dps` decimal places** (NO f64).
 
-    Per CLAUDE.md §Precision goals L1 (compute precision ≤ 1 ppb),
+    Per AGENTS.md §Precision goals L1 (compute precision ≤ 1 ppb),
     the production trace must be at ≥ 50-dps precision to preserve
     the structural-zero distinction needed for categorical identities.
     The f64 path (`chi_lambda_all_partitions_f64`) is for
@@ -325,7 +325,7 @@ def tr_M_atomic_rust_full(Z: int, N: int, *,
     No back-and-forth Python ↔ Rust data shuttling.  No Python
     mpmath combine loop.  No per-word PyO3 calls.
 
-    Per CLAUDE.md §Precision goals L1 (50-dps compute floor): every
+    Per AGENTS.md §Precision goals L1 (50-dps compute floor): every
     intermediate is exact up to the final MPFR substitution.
 
     Cross-checks bit-identical to

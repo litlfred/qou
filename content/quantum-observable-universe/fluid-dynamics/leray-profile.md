@@ -165,7 +165,7 @@ discrete spectrum of solutions parametrised by the number
 of zeros of $R$ — exactly the
 [vortex intensity levels](#prop:discrete-vortex-spectrum).
 
-**What remains.**
+**Open question.**
 The existence of a nontrivial solution to the truncated
 Leray ODE with the specified boundary conditions is a
 **finite-dimensional shooting problem**: find the initial slope

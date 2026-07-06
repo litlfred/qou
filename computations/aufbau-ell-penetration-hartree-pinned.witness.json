@@ -1,0 +1,87 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-20T13:05:23.405280+00:00",
+  "commitSha": "5a256810e0a41137c2cd1f68231457c37179ae74",
+  "assertions": [
+    {
+      "name": "markov_weight_rises_with_ell",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "source": "[5]_q > [1]_q  => correct penetration sign"
+    },
+    {
+      "name": "pinned_eps_overshoots_not_noble",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "source": "flat [2l+1]_q at Hartree coupling != [2,10,18,36]"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "aufbau-ell-penetration-hartree-pinned",
+  "scriptFile": "aufbau_ell_penetration_hartree_pinned.py",
+  "scriptHash": "90c8b6d3a3d0",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "mpmath": "1.4.1"
+  },
+  "description": "Grades the e-e screening by the bar-even (involution-symmetric) Markov weight [2l+1]_q and pins its coupling to the derived Hartree scale (eps=E_Hartree, eps/Ry=2, no fit). Sign is correct (penetration), but at the physical Hartree coupling a FLAT [2l+1]_q screening overshoots; the noble-gas window sits far below the Hartree scale, localizing the remaining input as the radial core-overlap envelope (~1/n^3).",
+  "parameters": {
+    "q0": "1.1099785955573347",
+    "E_HARTREE_EV": "27.211463866713153",
+    "Ry_eV": "13.6057319333565765",
+    "eps_pinned_over_Ry": "2.0"
+  },
+  "data": {
+    "markov_weights_2l1_q": [
+      "1.0",
+      "3.04370621823",
+      "5.22044132468",
+      "7.62534217893",
+      "10.3635179026"
+    ],
+    "closures_at_pinned_eps": [
+      2,
+      4,
+      6,
+      14,
+      20,
+      26,
+      50,
+      60,
+      100
+    ],
+    "noble_gas_eps_window_eV": [],
+    "noble_gas_closures": [
+      2,
+      10,
+      18,
+      36,
+      54,
+      86
+    ],
+    "pure_2n2_closures": [
+      2,
+      10,
+      28,
+      60,
+      110
+    ]
+  },
+  "caveats": [
+    "Flat (n-independent) screening; omits the radial core-overlap envelope (~1/n^3 quantum defect). The bar-even angular weight [2l+1]_q supplies the correct penetration SIGN; the n-decay (radial overlap) that sets the MAGNITUDE without overshoot remains the open structural input.",
+    "Real-energy gap-detection closure detector (gap_factor=1.6x median)."
+  ]
+}

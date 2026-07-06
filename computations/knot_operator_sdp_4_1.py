@@ -37,6 +37,7 @@ sys.path.insert(0, str(HERE))
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from experimental_constants import MU_OVER_E  # noqa: E402
 from hecke_characters import build_seminormal_matrices  # noqa: E402
 
 
@@ -112,7 +113,7 @@ def main():
     print()
 
     ev_ratio = abs(eigvals[0] / eigvals[1])
-    m_mu_me = 206.768283
+    m_mu_me = MU_OVER_E
     m_K_mpi = 3.537118
 
     print(f"     |λ₀/λ₁| = {ev_ratio:.10f}")

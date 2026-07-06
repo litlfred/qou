@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-02T17:08:04.278554+00:00",
-  "commitSha": "0959c2e2d81e402179a1ba87a72963058dffecf2",
+  "computedAt": "2026-06-22T14:23:16.553892+00:00",
+  "commitSha": "858f41202339ad977e9ea3a8352ffaeea3b40863",
   "assertions": [
     {
       "name": "theta_carry_does_not_close_all_four_zero_or_one_param",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "probe-theta-carry-binding",
   "scriptFile": "probe_theta_carry_binding.py",
-  "scriptHash": "2246c34454da",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "87f0f324ebc5",
+  "scriptCommitSha": "2ee1eddd42e93090f831004dd65c95525b5255f7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,57 +28,55 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "description": "EXPLORATORY: per-block q-Reeb phase CARRY (preserve info until observation). B(K) = E·Σ_λ y_λ |Δθ_λ| over rotation channels (|χ/d|≤1), collapsed via the y_λ-weighted observation instead of the scalar tr_M. Tested with derived μ₀ (0 fit) + one global scale (1 param) on D/T/³He/⁴He. Δ_λ remains open (GAP-A-3/A-4).",
   "parameters": {
-    "mu0_derived_MeV": 1.6295105722568328,
-    "global_scale_MeV_per_rad": 511.49889755189474
+    "mu0_derived_MeV": 1.6295103914259104,
+    "global_scale_MeV_per_rad": 511.609320399887
   },
   "data": {
     "per_atom": {
       "D": {
         "n_rotation": 8,
         "n_growth": 3,
-        "sum_y_absDtheta": "0.014263149",
-        "scalar_dtr_M": "-0.59523971",
-        "B_mu0_MeV": 0.0232419517994117,
-        "err_mu0": -0.9895521419864188
+        "sum_y_absDtheta": "0.014260665",
+        "scalar_dtr_M": "-0.59516882",
+        "B_mu0_MeV": 0.023237901750698474,
+        "err_mu0": -0.9895539625879876
       },
       "T": {
         "n_rotation": 26,
         "n_growth": 4,
-        "sum_y_absDtheta": "0.0067272952",
-        "scalar_dtr_M": "-0.80397201",
-        "B_mu0_MeV": 0.010962198653446888,
-        "err_mu0": -0.998707562232846
+        "sum_y_absDtheta": "0.0067272054",
+        "scalar_dtr_M": "-0.80395284",
+        "B_mu0_MeV": 0.010962051127333625,
+        "err_mu0": -0.9987075790470733
       },
       "3He": {
         "n_rotation": 25,
         "n_growth": 5,
-        "sum_y_absDtheta": "0.0051119272",
-        "scalar_dtr_M": "-0.84121572",
-        "B_mu0_MeV": 0.008329939477249101,
-        "err_mu0": -0.9989207126875811
+        "sum_y_absDtheta": "0.0051117899",
+        "scalar_dtr_M": "-0.84117786",
+        "B_mu0_MeV": 0.008329714717689262,
+        "err_mu0": -0.9989207475870718
       },
       "4He": {
         "n_rotation": 68,
         "n_growth": 9,
-        "sum_y_absDtheta": "0.00043925449",
-        "scalar_dtr_M": "-0.91197543",
-        "B_mu0_MeV": 0.0007157698281430867,
-        "err_mu0": -0.9999747039005932
+        "sum_y_absDtheta": "0.00043925252",
+        "scalar_dtr_M": "-0.91196503",
+        "B_mu0_MeV": 0.0007157665476369405,
+        "err_mu0": -0.9999747040186754
       }
     },
-    "worst_err_mu0": 0.9999747039005932,
-    "worst_err_global_scale": 2.2795539634480964,
+    "worst_err_mu0": 0.9999747040186754,
+    "worst_err_global_scale": 2.2796907152920713,
     "t_he3_difference": {
-      "pred_MeV": 0.8262589329698541,
-      "ame_MeV": 0.7638,
-      "rel_err": 0.08177393685500668,
+      "pred_MeV": 0.826461646816238,
+      "ame_MeV": 0.7637548800000014,
+      "rel_err": 0.08210326173789755,
       "note": "SAME global scale, no isotope-specific fit — the signed phase-carry difference, NOT the fitted (1+q)/2."
     }
   }

@@ -171,6 +171,11 @@ def build_seminormal_matrices(shape, sparse=None, q=None):
 
     sigmas = []
 
+    # O(1) swap-partner lookup (the former linear scan made construction
+    # O(n·dim²) — the wall at dim ≳ 2·10⁴, e.g. n = 15 blocks). Depends only
+    # on `syts`, so build it once outside the per-generator loop.
+    syt_index = {tuple(sorted(t.items())): idx for idx, t in enumerate(syts)}
+
     for k in range(1, n):  # generator σ_k swaps entries k and k+1
         rows, cols, vals = [], [], []
         processed = set()
@@ -193,13 +198,9 @@ def build_seminormal_matrices(shape, sparse=None, q=None):
             swap_map[k + 1] = ci_k
 
             # Check if swap gives valid SYT
-            j = None
-            for jj in range(dim):
-                if jj == i:
-                    continue
-                if syts[jj] == swap_map:
-                    j = jj
-                    break
+            j = syt_index.get(tuple(sorted(swap_map.items())))
+            if j == i:
+                j = None
 
             if j is None:
                 # 1×1 block: eigenvalue is q (same row) or -q⁻¹ (same col)
@@ -608,6 +609,21 @@ def young_hooks(shape):
 def dim_q(shape):
     n = sum(shape)
     return qfac(n) / math.prod(q_int(hk) for hk in young_hooks(shape))
+
+
+def specht_dim(shape):
+    """Integer Specht-module dimension `f^λ = #SYT(λ) = n! / ∏ hook(c)`
+    (hook-length formula) — the `q → 1` specialisation of `dim_q`.
+
+    Centralised here (next to `young_hooks` / `dim_q`, reusing the single
+    `young_hooks` implementation) so binding / observe-last consumers share
+    one hook-length routine instead of re-deriving it (Gemini review, PR
+    #2408). Accepts any iterable partition (tuple or list)."""
+    n = sum(shape)
+    d = math.factorial(n)
+    for hk in young_hooks(shape):
+        d //= hk
+    return d
 
 
 # ════════════════════════════════════════════════════════════════════

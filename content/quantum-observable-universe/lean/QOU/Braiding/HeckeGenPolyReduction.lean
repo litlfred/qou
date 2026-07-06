@@ -1,4 +1,5 @@
 import QOU.Hecke.Algebra
+import Mathlib.Tactic.Module
 
 /-!
 # QOU.Braiding.HeckeGenPolyReduction — single-generator Hecke polynomial
@@ -17,7 +18,7 @@ by a DIVISION-FREE recursion driven only by the Hecke quadratic relation
 ```
 
 This is the algebraic core of the monotone-word fine-Bratteli transfer
-matrix for the atom character (`folio-assistant/computations/chi_monotone_transfer.py`).
+matrix for the atom character (`computations/chi_monotone_transfer.py`).
 The atom braid word has a monotone generator sequence, so each
 per-generator operator `O_g = ∏ⱼ(σ_g + dⱼ·1)` is a single-generator
 polynomial; by this reduction its seminormal *diagonal* entry is
@@ -26,7 +27,7 @@ alone. That is what removes the `d_λ`-dimensional Hoefsmit matrix from the
 χ compute (⁶Li/⁷Li in sub-second time, no `n!` wall).
 
 The reduction holds over ANY `CommRing R` — no archimedean / `q+q⁻¹ ≠ 0`
-hypothesis (per CLAUDE.md §7c the structural fact is stated generically).
+hypothesis (per AGENTS.md §7c the structural fact is stated generically).
 The eigenvalue closed form `α = (E₁−E₂)/(q+q⁻¹)`, `E₁=∏(q+dⱼ)`,
 `E₂=∏(−q⁻¹+dⱼ)` used in the compute for speed is a corollary that DOES
 need `2`-invertibility; only the division-free `heckeAB` recursion is

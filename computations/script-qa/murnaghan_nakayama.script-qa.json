@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/murnaghan_nakayama.py",
+  "script_path": "computations/murnaghan_nakayama.py",
   "language": "python",
   "source_hash": "938e0f27ab9b",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -100,7 +100,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/murnaghan_nakayama.py:1: script lacks both a module docstring and ≥10% comment density (got 23/267 = 8.6%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
+        "evidence": "computations/murnaghan_nakayama.py:1: script lacks both a module docstring and ≥10% comment density (got 23/267 = 8.6%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
       },
       {
         "field_hash": {
@@ -117,7 +117,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/murnaghan_nakayama.py:1: script lacks both a module docstring and ≥10% comment density (got 23/267 = 8.6%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
+        "evidence": "computations/murnaghan_nakayama.py:1: script lacks both a module docstring and ≥10% comment density (got 23/267 = 8.6%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
       }
     ],
     "variables_typed": [
@@ -136,7 +136,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/murnaghan_nakayama.py:35: `def partitions_of(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/murnaghan_nakayama.py:38: `def _gen(…)` has 2 parameters without type annotation: n, max_part — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/murnaghan_nakayama.py:47: `def dim_specht(…)` has 1 parameter without type annotation: partition — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/murnaghan_nakayama.py:66: `def dim_q_lambda(…)` has 2 parameters without type annotation: partition, q — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/murnaghan_nakayama.py:69: `def qint(…)` has 1 parameter without type annotation: k — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/murnaghan_nakayama.py:35: `def partitions_of(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped) | computations/murnaghan_nakayama.py:38: `def _gen(…)` has 2 parameters without type annotation: n, max_part — add `: type` (or `: Any` if the type genuinely is untyped) | computations/murnaghan_nakayama.py:47: `def dim_specht(…)` has 1 parameter without type annotation: partition — add `: type` (or `: Any` if the type genuinely is untyped) | computations/murnaghan_nakayama.py:66: `def dim_q_lambda(…)` has 2 parameters without type annotation: partition, q — add `: type` (or `: Any` if the type genuinely is untyped) | computations/murnaghan_nakayama.py:69: `def qint(…)` has 1 parameter without type annotation: k — add `: type` (or `: Any` if the type genuinely is untyped)"
       },
       {
         "field_hash": {
@@ -153,7 +153,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/murnaghan_nakayama.py:35: `def partitions_of(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/murnaghan_nakayama.py:38: `def _gen(…)` has 2 parameters without type annotation: n, max_part — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/murnaghan_nakayama.py:47: `def dim_specht(…)` has 1 parameter without type annotation: partition — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/murnaghan_nakayama.py:66: `def dim_q_lambda(…)` has 2 parameters without type annotation: partition, q — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/murnaghan_nakayama.py:69: `def qint(…)` has 1 parameter without type annotation: k — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/murnaghan_nakayama.py:35: `def partitions_of(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped) | computations/murnaghan_nakayama.py:38: `def _gen(…)` has 2 parameters without type annotation: n, max_part — add `: type` (or `: Any` if the type genuinely is untyped) | computations/murnaghan_nakayama.py:47: `def dim_specht(…)` has 1 parameter without type annotation: partition — add `: type` (or `: Any` if the type genuinely is untyped) | computations/murnaghan_nakayama.py:66: `def dim_q_lambda(…)` has 2 parameters without type annotation: partition, q — add `: type` (or `: Any` if the type genuinely is untyped) | computations/murnaghan_nakayama.py:69: `def qint(…)` has 1 parameter without type annotation: k — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -172,7 +172,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/murnaghan_nakayama.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/murnaghan_nakayama.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       },
       {
         "field_hash": {
@@ -189,7 +189,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/murnaghan_nakayama.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/murnaghan_nakayama.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       }
     ],
     "connected_to_ci_pipeline": [

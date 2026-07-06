@@ -26,7 +26,7 @@
 **Findings:**
 - All glossary blocks use `remark()` builder with `"glossary"` tag ✓
 - No violations detected (sample: glossary-braided-monoidal-category.ts uses `remark()` + `tags: ["glossary", ...]`)
-- **Status:** COMPLIANT per CLAUDE.md §4b
+- **Status:** COMPLIANT per AGENTS.md §4b
 
 ---
 
@@ -146,7 +146,7 @@ amc-calculations.md: $M_q = 938.8 - 0.0 = 938.8 \text{MeV}$
 **Grand Total Issues:**
 - **PASS:** 8/10 directories
 - **REVIEW REQUIRED:** 2/10 directories (appendix-surreals, appendix-nf-witnesses)
-  - Reason: Introduction of new notation definitions in reference material; verify alignment with CLAUDE.md §4b
+  - Reason: Introduction of new notation definitions in reference material; verify alignment with AGENTS.md §4b
 
 **Severity:** Low (cross-references present, likely supporting main chapter proofs)
 

@@ -1,4 +1,4 @@
-import QOU.Basic
+import QOU.ParticleInteractions.AtomKnot
 
 
 /-!
@@ -14,7 +14,6 @@ namespace QOU.BraidKnot
 /-- **Existence of the atom-knot of type (Z, N).** -/
 -- Ref: [manuscript] braids-and-knots/atom-knot
 theorem AtomKnot.exists (Z N : ℕ) : ∃ K : AtomKnot, K.Z = Z ∧ K.N = N := by
-  refine ⟨{ Z := Z, N := N, protonBlock := [], neutronBlock := [],
-           interBlock := [] }, ?_, ?_⟩ <;> rfl
+  exact ⟨{ Z := Z, N := N, protonBlock := [], neutronBlock := [], interBlock := [] }, rfl, rfl⟩
 
 end QOU.BraidKnot

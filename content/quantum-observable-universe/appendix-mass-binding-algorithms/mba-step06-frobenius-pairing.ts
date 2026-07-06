@@ -10,7 +10,7 @@ export default algorithm({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/audit_frobenius_pairing.py",
+    script: "computations/audit_frobenius_pairing.py",
     status: "verified",
   },
   tags: [

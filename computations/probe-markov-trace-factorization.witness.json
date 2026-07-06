@@ -1,0 +1,104 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-06-28T16:14:54.341811+00:00",
+  "commitSha": "5c29d9238d4604a75b6c26292ccb816bc5e8bd41",
+  "assertions": [
+    {
+      "name": "traced-volume(pp chain) == tr_M(sigma^k) for k=1..4 (symbolic, all q)",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "recurrence vs markov_trace_canonical.tr_M_word"
+    },
+    {
+      "name": "traced-volume(nn chain) == tr_M(sigma^-k) for k=1..3 (symbolic, all q)",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "recurrence vs markov_trace_canonical (sigma-h basis)"
+    },
+    {
+      "name": "fold(c1++c2) - fold(c1)*fold(c2) == 0 in Q(q) (Lean markov_trace_factorization_mul, Wenzl 1.7)",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "source": "sympy.simplify (exact, all q)"
+    },
+    {
+      "name": "fold(c1++c2) == fold(c1)*fold(c2) at q0 (<=1e-25)",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-25,
+      "source": "numerical at substrate q0"
+    },
+    {
+      "name": "asymptotic ratio 1/(1-1/q0) at full substrate q0 (~10.0927)",
+      "computed": "10.092678",
+      "expected": "10.092678",
+      "passed": true,
+      "tolerance": 1e-05,
+      "source": "1/hbar_q at full-precision q0"
+    },
+    {
+      "name": "Lean asymptoticRatio_at_q literal q=1.1097 reproduces ~10.116 (tol 0.01)",
+      "computed": "10.11577",
+      "expected": "10.116",
+      "passed": true,
+      "tolerance": 0.01,
+      "source": "1/hbar_q at the rounded Lean literal q=1.1097"
+    },
+    {
+      "name": "det(T_j) = -1 for pp and nn crossings (single-crossing unimodularity)",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "exact det of T_j per crossing type"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 819,
+  "computation": "probe-markov-trace-factorization",
+  "scriptFile": "probe_markov_trace_factorization.py",
+  "scriptHash": "76a4084ce51a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Verifies thm:markov-trace-factorization: the transfer-matrix factorization Pi(z*a_i+b_i) matches the canonical markov/markov_trace_canonical engine (pp -> sigma^k, nn -> sigma^-k, exact in Q(q)); Wenzl disjoint-multiplicativity markov_trace_factorization_mul; the 1/hbar_q ~ 10.116 asymptotic ratio at q0; and the crossing-determinant table.",
+  "contentBlock": "thm:markov-trace-factorization",
+  "parameters": {
+    "q0": "1.1099785955573347198997632204832250266562084087802",
+    "compute_dps": 85,
+    "tolerance": "1e-25"
+  },
+  "data": {
+    "engine_crosscheck_pp_all_match": true,
+    "engine_crosscheck_nn_all_match": true,
+    "multiplicativity_exact_Qq": true,
+    "multiplicativity_residual_at_q0": "0.0",
+    "asymptotic_ratio_at_full_q0": "10.0926783973948260772864635932424709295458323902073998154367",
+    "asymptotic_ratio_at_lean_literal_q_1p1097": "10.115770282588878760255241567912488605287146763901549680948",
+    "det_Tj_computed": {
+      "pp": "-1",
+      "nn": "-1",
+      "mixed": "(q**2*(-q**2 - 2) - 1)/(4*q**2)"
+    },
+    "det_mixed_matches_md_table_claim": false,
+    "det_mixed_md_table_claim": "(q**4 - 6*q**2 + 1)/(4*q**2)"
+  },
+  "caveats": [
+    "FINDING: the .md 'transfer matrix IS the polynomial' table lists det(T_mixed) = -1 + (1/4)(q-q^-1)^2, but the T_j matrix the same section writes ([[c h + d, c],[c, d]] with mixed (c,d)=(1,-h/2)) has det = -(q+q^-1)^2/4 = (q**2*(-q**2 - 2) - 1)/(4*q**2). The two disagree (the table value is exact only if det = -1 + h^2/4, which the written matrix does not give). This is a discrepancy in the .md exposition, NOT in the proved Lean theorem (which proves the fold, multiplicativity, and asymptotic ratio — not the det table). Recorded for the content authors; pp/nn unimodularity (det = -1) holds exactly and is the structural fact used.",
+    "The transfer-matrix recurrence IS the proposition's machinery, reproduced exactly; the load-bearing check is its agreement with the independent canonical markov_trace_canonical engine (arm 1) plus the proved structural lemmas (multiplicativity, asymptotic ratio). Symbolic arms are exact in Q(q); numerical arms are 50-dps evidence at q0. Probe, not a proof. Does not verify the full nuclear braid word for arbitrary (Z,N) — that requires the canonical atom_braid_word_3A pipeline; arm 1 establishes the per-generator factor against the engine, which the factorization multiplies."
+  ]
+}

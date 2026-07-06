@@ -7,7 +7,7 @@ import Mathlib.Tactic
 # SDP multiplicity ρ from the dominant Wedderburn summand (conjecture class)
 
 This file axiomatizes `conj:rho-prefactor-structural` as a Lean `class`
-following the §3b conditional-class pattern from CLAUDE.md.
+following the §3b conditional-class pattern from AGENTS.md.
 
 **Conjecture (informal):** The SDP multiplicity $\rho(\mathfrak{H})$
 appearing in the mass formula equals the quantum dimension of the dominant
@@ -24,7 +24,7 @@ $|y_\lambda(q_0) \cdot \chi_\lambda(T_w)|$ and $d_\lambda$ is the number
 of standard Young tableaux of shape $\lambda$ (hook-length formula).
 
 **Critical refinement (issue #604, deliverable 4 numerical evidence):** the
-B_3-level analysis (`folio-assistant/computations/rho_prefactor_structural_verifier.py`,
+B_3-level analysis (`computations/rho_prefactor_structural_verifier.py`,
 witness `rho-prefactor-structural-verifier.witness.json`) shows that
 **proton and ³He have identical χ_λ values in H_3(q_0)** — their
 braid words are mutual inverses ((σ_1 σ_2^{-1})^3 vs (σ_1^{-1} σ_2)^3),
@@ -67,7 +67,7 @@ namespace QOU.BraidKnot
     structure at the braid strand count (3) but distinct ρ — the
     embedding into H_{3(Z+N)} is what carries the multiplicity
     information.  Numerical evidence:
-    `folio-assistant/computations/rho-prefactor-structural-verifier.witness.json`
+    `computations/rho-prefactor-structural-verifier.witness.json`
     + `binding-k-solver.witness.json` (issue #604 deliverables 3 + 4). -/
 -- Ref: [manuscript] conj:rho-prefactor-structural
 -- Ref: [manuscript] prop:wedderburn-trace-identity
@@ -102,7 +102,7 @@ class RhoPrefactorStructural (Z N : ℕ) (q : ℝ) where
 /-! ### Per-particle instances (issue #604, deliverables 3 + 4)
 
 Numerical evidence is recorded in `binding-k-solver.witness.json` and
-`rho-prefactor-structural-verifier.witness.json`.  Per CLAUDE.md §3b-cond,
+`rho-prefactor-structural-verifier.witness.json`.  Per AGENTS.md §3b-cond,
 each instance below records:
 
   * the atomic mass number `A`

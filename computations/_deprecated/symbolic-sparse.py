@@ -14,7 +14,7 @@ Key insight: the DIFFERENCE Δme = me_dau - me_par cancels the sqrt
 terms (proven for dim=2). We verify this for dim=8.
 
 Usage:
-    cd folio-assistant/computations && python3 symbolic-sparse.py
+    cd computations && python3 symbolic-sparse.py
 """
 
 import sympy as sp

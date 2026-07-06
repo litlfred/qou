@@ -1,0 +1,48 @@
+{
+  "description": "s5-so3 keystone q-deformed closure: the E_lambda-projected H_5 Markov-trace shift between the muon home-block (3,2) and electron home-block (3,1,1), evaluating the Borromean braid embedded in B_5. Tests whether q-deformed home-block weights break the (2,1)/h^4 symmetry that the classical-multiplicity model (first-crack Model A) preserved. NOT a fit to 210 ppb.",
+  "computation": "docs/audits/scripts/keystone_qdeform_projector_shift_probe.py",
+  "tool": "pyhecke_native v0.9.0",
+  "q0": "1.1099785955541805",
+  "dps": 50,
+  "braid": "(s1^-1 s2)^3  (Borromean, generators 1,2 on 5 strands)",
+  "branching_cross_check": {
+    "chi_3_2_minus_branching_residual": "9.6e-50",
+    "chi_3_1_1_minus_branching_residual": "9.6e-50",
+    "note": "validates pyhecke_native 5-strand chi^lambda against the S5->S3 branching to machine zero"
+  },
+  "h3_borromean_characters": {
+    "(3)": "1.0",
+    "(2,1)": "1.9941858103812",
+    "(1,1,1)": "1.0"
+  },
+  "h5_home_block_weights": {
+    "(3,2)": "0.0617237153232",
+    "(3,1,1)": "0.0167666089588"
+  },
+  "projected_block_characters": {
+    "chi_(3,2)": "4.9883716207624",
+    "chi_(3,1,1)": "5.9883716207624"
+  },
+  "projected_traces": {
+    "T_muon_3_2": "0.30790082984625",
+    "T_electron_3_1_1": "0.10040468526556",
+    "delta": "0.20749614458069",
+    "delta_over_T_muon": "0.673905766",
+    "delta_over_T_electron": "2.066598227"
+  },
+  "magnitude_vs_210ppb": {
+    "delta_over_T_muon_ratio": "3.21e6 too large",
+    "delta_over_T_electron_ratio": "9.84e6 too large",
+    "target_is_fit": false,
+    "note": "210 ppb is a re-pin artifact, not a fit target"
+  },
+  "bar_parity": {
+    "delta_q0": "0.20749614458069",
+    "delta_inv_q0": "0.36549414693779",
+    "sum": "0.57299029",
+    "diff": "-0.157998",
+    "verdict": "bar-MIXED (neither even nor odd)"
+  },
+  "verdict": "Non-null mechanism (q-deformed home-block weighting breaks the (2,1) symmetry the classical model preserved), but the shift is O(1) (67% of T_mu), 6-7 orders too large to be 210 ppb, NOT the 207x generation ratio, and bar-MIXED -> fails the bar-even precondition. The q-deformed projector-weight object is REFUTED as the 210 ppb muon mechanism. Confirms anchor-shift framing.",
+  "discipline": "No fit; nothing wired; c_k/Delta_lambda cal-anchored. Owner closes bean s5bb (section 4a)."
+}

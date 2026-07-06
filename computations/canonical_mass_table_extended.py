@@ -69,6 +69,7 @@ from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 # mirrors low_isotopes_binding_sweep.py.
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools" / "qou-substrate" / "python"))
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 
 set_compute_dps()  # ensure mp.mp.dps = COMPUTE_DPS (consistent with infra)
 
@@ -76,12 +77,12 @@ set_compute_dps()  # ensure mp.mp.dps = COMPUTE_DPS (consistent with infra)
 B_AME_MEV: dict[tuple[int, int], float] = {
     (1, 0):  0.0,        # proton (no binding)
     (0, 1):  0.0,        # neutron (no binding; mass excess separate)
-    (1, 1):  2.22456589, # D
-    (1, 2):  8.4817983,  # T
-    (2, 1):  7.7180428,  # ³He
-    (2, 2): 28.295673,   # ⁴He
+    (1, 1):  float(AME_B_DEUTERON_MEV_VALIDATION), # D
+    (1, 2):  float(AME_B_TRITIUM_MEV_VALIDATION),  # T
+    (2, 1):  float(AME_B_HE3_MEV_VALIDATION),  # ³He
+    (2, 2): float(AME_B_HE4_MEV_VALIDATION),   # ⁴He
     (3, 2): 26.328,      # ⁵Li (unstable, half-life ~10⁻²² s)
-    (3, 3): 31.99405,    # ⁶Li
+    (3, 3): float(AME_B_LI6_MEV_VALIDATION),    # ⁶Li
     (3, 4): 39.24522,    # ⁷Li
     (4, 3): 37.6,        # ⁷Be
     (4, 4): 56.49951,    # ⁸Be
@@ -170,7 +171,7 @@ def compute_tr_m_canonical(
         try:
             from markov_peel_rust_bridge import tr_M_atomic_rust_full
             # Honor caller-provided dps when it exceeds the 50-dps
-            # production floor; never go below 50 (CLAUDE.md §L1
+            # production floor; never go below 50 (AGENTS.md §L1
             # mandates ≥ 50 dps for the production trace).  The
             # `dps=0` default from the function signature collapses
             # to 50, matching the implicit policy used in the
@@ -209,7 +210,7 @@ def compute_tr_m_canonical(
             from q_parameter import Q_50_DIGIT_STR
             t0 = time.time()
             zh = tr_M_atomic_lq(Z, N)
-            # MPFR-50dps evaluation — NEVER f64. Per CLAUDE.md §Precision
+            # MPFR-50dps evaluation — NEVER f64. Per AGENTS.md §Precision
             # goals L1, the production trace must be at 50-dps precision
             # to preserve the structural-zero distinction needed for
             # categorical identities.

@@ -19,7 +19,7 @@ This is the I9 antipattern in `local/compute-integration-watcher`:
   import the corresponding `M_*_MEV` / `Q_*_MEV` symbol.
 
 The audit walks every Python script under
-`folio-assistant/computations/`, harvests all numerical literals,
+`computations/`, harvests all numerical literals,
 and matches each against the registry.  Reports per-script
 violations.
 
@@ -36,7 +36,7 @@ Limitations:
 Emits `hardcoded-literal-audit.witness.json`.
 
 Usage:
-    python3 folio-assistant/computations/hardcoded_literal_audit.py [--strict]
+    python3 computations/hardcoded_literal_audit.py [--strict]
 """
 
 
@@ -236,7 +236,13 @@ def main() -> int:
     print(f"  {len(registry)} scalar constants in scope")
 
     rows: list[dict[str, Any]] = []
-    for py in sorted(HERE.glob("*.py")):
+    # Scan the compute tree (HERE.parent = computations/), not just audits/.
+    # Post-reorg HERE.glob saw only audits/ — which MISSED the compute tree
+    # AND false-flagged sibling audits (they legitimately reference the
+    # policed constants). Skip _deprecated and the audits/ dir.
+    for py in sorted((HERE.parent).rglob("*.py")):
+        if "_deprecated" in py.parts or HERE.name in py.parts:
+            continue
         if py.name.startswith("_"):
             continue
         if py.name == "codata_constants.py":

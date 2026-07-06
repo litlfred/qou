@@ -14,7 +14,7 @@ $$
 
 ## Status
 
-**Conjecture** (CLAUDE.md §3b axiom-class).
+**Conjecture** (AGENTS.md §3b axiom-class).
 
 The "$1$" is **proved** ([prop:n-equals-1-vacuous-magic](#prop:n-equals-1-vacuous-magic))
 — at every $q > 1$, including $q_0$, the integer $1$ is vacuously

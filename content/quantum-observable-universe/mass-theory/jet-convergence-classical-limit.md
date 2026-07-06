@@ -102,7 +102,7 @@ $$
 *where $C_q = O(h^2 \cdot [2]_q)$.  At $k = 9$:
 bound $\approx 0.11$, actual error $0.008$ (well within).*
 
-*Numerical verification ($k = 3 \ldots 9$): the
+*canonical structural verification ($k = 3 \ldots 9$): the
 $q$-deformed target $d_q/\Sigma d_q = (0.249, 0.501, 0.249)$
 matches within $0.008$ at $k = 9$, with monotone convergence
 from above for $f_{\mathrm{std}}^{(k)}$.*

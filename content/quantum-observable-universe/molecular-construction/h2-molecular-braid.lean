@@ -1,6 +1,8 @@
 -- Ref: [manuscript] Ch. 10, §h2-molecular-braid
 -- Hydrogen molecule H₂ as a braid in H₄(q)
 
+import Mathlib.Tactic.NormNum.Basic
+
 /-- **Hydrogen molecule H₂** as a molecular braid in H₄(q).
 
     H₂ consists of two hydrogen atoms sharing one electron pair.

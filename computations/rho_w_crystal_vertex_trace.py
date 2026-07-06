@@ -37,7 +37,7 @@ Substrate braid word β_D from ``atom_canonical_crossings(1,1)`` — the IDENTIC
 canonical deuteron word the χ-cache was built from (sigma / sigma_inv / averaged
 = interface σ_g − h/2·1).
 
-@module folio-assistant/computations/rho_w_crystal_vertex_trace
+@module computations/rho_w_crystal_vertex_trace
 """
 from __future__ import annotations
 
@@ -63,7 +63,7 @@ from canonical_braid_crossings import atom_canonical_crossings  # noqa: E402
 # ----------------------------------------------------------------------------
 # Substrate constants (canonical; from the deuteron χ cache header).
 # ----------------------------------------------------------------------------
-Q0_STR = "1.1099785827513808075916690956107688798744991218736"
+Q0_STR = "1.1099785955573347198997632204832250266562084087802"
 # CODATA electron mass (MeV); matches docs/audits gating residual −4.353.
 M_E_MEV_STR = "0.51099895069"
 # B_D AME (MeV) — used ONLY to report the honest residual, never to fit.
@@ -150,7 +150,7 @@ def swap_tableau(T: dict[int, tuple[int, int]], i: int) -> dict[int, tuple[int, 
 # ----------------------------------------------------------------------------
 # Hoefsmit / Young seminormal representation of H_n(q) — closed form.
 # ----------------------------------------------------------------------------
-# Convention (matches CLAUDE.md §7a Hecke relation (σ−q)(σ+q⁻¹)=0):
+# Convention (matches AGENTS.md §7a Hecke relation (σ−q)(σ+q⁻¹)=0):
 #   For a SYT basis {v_T}, generator σ_i acts:
 #     • i, i+1 same row     →  σ_i v_T = q · v_T
 #     • i, i+1 same column  →  σ_i v_T = −q⁻¹ · v_T

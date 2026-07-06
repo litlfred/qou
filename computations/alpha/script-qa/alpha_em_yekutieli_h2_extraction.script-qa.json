@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/alpha/alpha_em_yekutieli_h2_extraction.py",
+  "script_path": "computations/alpha/alpha_em_yekutieli_h2_extraction.py",
   "language": "python",
   "source_hash": "c4ea84d7bdd7",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -21,7 +21,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "major",
-        "evidence": "folio-assistant/computations/alpha/alpha_em_yekutieli_h2_extraction.py:195: bare float literal `137.035999084` — wrap in `mpmath.mpf(\"137.035999084\")` / `Decimal(\"137.035999084\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/alpha/alpha_em_yekutieli_h2_extraction.py:221: bare float literal `1.10998` — wrap in `mpmath.mpf(\"1.10998\")` / `Decimal(\"1.10998\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/alpha/alpha_em_yekutieli_h2_extraction.py:222: bare float literal `136.8232` — wrap in `mpmath.mpf(\"136.8232\")` / `Decimal(\"136.8232\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/alpha/alpha_em_yekutieli_h2_extraction.py:222: bare float literal `1552.7` — wrap in `mpmath.mpf(\"1552.7\")` / `Decimal(\"1552.7\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/alpha/alpha_em_yekutieli_h2_extraction.py:222: bare float literal `137.035999084` — wrap in `mpmath.mpf(\"137.035999084\")` / `Decimal(\"137.035999084\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/alpha/alpha_em_yekutieli_h2_extraction.py:195: bare float literal `137.035999084` — wrap in `mpmath.mpf(\"137.035999084\")` / `Decimal(\"137.035999084\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/alpha/alpha_em_yekutieli_h2_extraction.py:221: bare float literal `1.10998` — wrap in `mpmath.mpf(\"1.10998\")` / `Decimal(\"1.10998\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/alpha/alpha_em_yekutieli_h2_extraction.py:222: bare float literal `136.8232` — wrap in `mpmath.mpf(\"136.8232\")` / `Decimal(\"136.8232\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/alpha/alpha_em_yekutieli_h2_extraction.py:222: bare float literal `1552.7` — wrap in `mpmath.mpf(\"1552.7\")` / `Decimal(\"1552.7\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/alpha/alpha_em_yekutieli_h2_extraction.py:222: bare float literal `137.035999084` — wrap in `mpmath.mpf(\"137.035999084\")` / `Decimal(\"137.035999084\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       }
     ],
     "respects_archimedean_wall": [
@@ -91,7 +91,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/alpha/alpha_em_yekutieli_h2_extraction.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
+        "evidence": "computations/alpha/alpha_em_yekutieli_h2_extraction.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
       }
     ],
     "connected_to_ci_pipeline": [
@@ -110,7 +110,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/alpha/alpha_em_yekutieli_h2_extraction.py:1: script `alpha_em_yekutieli_h2_extraction.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+        "evidence": "computations/alpha/alpha_em_yekutieli_h2_extraction.py:1: script `alpha_em_yekutieli_h2_extraction.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
       }
     ],
     "deprecated": [

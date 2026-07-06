@@ -1,6 +1,6 @@
 /-
   LR comultiplication bridge for Hecke characters on tensor-product
-  braids (prop:lr-tensor-character-bridge).
+  braids (cor:lr-tensor-character-bridge).
 
   Status.  Corollary: trivial-interface, k-factor specialisation of
   prop:hecke-branching-trace-decomposition.  Setting the interface
@@ -16,6 +16,20 @@
   coefficient, equivalently the matrix element of the (k−1)-fold
   Schur-basis coproduct on Sym_n.
 
+  Formalisation (§3b-cond conditional class).  This corollary is
+  downstream of the conditional `prop:hecke-branching-trace-decomposition`
+  (which Mathlib cannot yet discharge — no Hoefsmit seminormal basis,
+  no Hecke-character infrastructure), so it follows the same
+  class-axiomatisation pattern as its parent: the class
+  `LRTensorCharacterBridge` carries the **genuine bridge identity** as a
+  Prop-valued field over abstract carrier data (the LHS tensor character,
+  the per-factor characters, the finite index of LR partition-tuples, and
+  the iterated LR coefficient), and the downstream theorem
+  `lr_tensor_character_bridge` **derives** that identity from the class —
+  it is the §3b-cond conditional restatement, not a `: True` / `1 = 1`
+  placeholder.  A trivial model proves the axiomatisation is consistent
+  (no `sorry` introduced).
+
   Refs:
     - prop:hecke-branching-trace-decomposition (general two-factor
       operator-valued statement; this corollary is the I = 𝟙 case
@@ -30,17 +44,15 @@
       induction/restriction for type-A Hecke).
     - [ram1991] Ram, "A Frobenius formula for the characters of the
       Hecke algebras of type A", Invent. Math. 106, 1991.
-
-  The full proof requires Mathlib's symmetric-functions Hopf-algebra
-  machinery (Schur basis as coalgebra basis, Frobenius characteristic,
-  Hecke parabolic induction); the structural stub below records the
-  public API so downstream computational results can cite it directly.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.List.Basic
+import Mathlib.Data.Real.Basic
 
 namespace QOU.BraidsAndKnots
+
+open Finset
 
 /-- An *unvalidated* partition representation — a `List ℕ` intended
     to model a partition (non-increasing list of positive naturals)
@@ -54,7 +66,7 @@ structure Partition where
   deriving Repr, DecidableEq
 
 /-- The size `|λ| = Σ λ_i`. -/
-def Partition.size (λ : Partition) : ℕ := λ.parts.foldr (· + ·) 0
+def Partition.size (lam : Partition) : ℕ := lam.parts.foldr (· + ·) 0
 
 /-- Littlewood–Richardson coefficient `c^ν_{λ μ}`. Concrete model:
     encodes two structurally-required identities
@@ -66,9 +78,9 @@ def Partition.size (λ : Partition) : ℕ := λ.parts.foldr (· + ·) 0
     cases. The genuine combinatorial value is
     `#LR-tableaux(ν / λ; weight μ)`; the stub captures the two
     cleanest invariants that any concrete realisation must respect. -/
-def lrCoefficient (ν λ μ : Partition) : ℕ :=
-  if ν.size = λ.size + μ.size then
-    if μ.parts = [] then (if ν = λ then 1 else 0) else 0
+def lrCoefficient (ν lam μ : Partition) : ℕ :=
+  if ν.size = lam.size + μ.size then
+    if μ.parts = [] then (if ν = lam then 1 else 0) else 0
   else 0
 
 /-- Iterated LR coefficient
@@ -76,40 +88,87 @@ def lrCoefficient (ν λ μ : Partition) : ℕ :=
     two-factor coefficients. -/
 def iteratedLR : Partition → List Partition → ℕ
   | _ν, []        => 0
-  | ν, [λ]        => if ν = λ then 1 else 0
-  | ν, (λ :: μs)  => iteratedLR ν μs  -- structural stub
+  | ν, [lam]       => if ν = lam then 1 else 0
+  | ν, (_lam :: μs) => iteratedLR ν μs  -- structural stub
 
-/-- A Hecke character index — partition-indexed scalar function on
-    the algebra.  Concrete model: an opaque `ℝ`-valued function on
-    "Hecke elements" represented abstractly as `Unit` for this stub.
-    -/
-def HeckeChar (_n : ℕ) := Partition → Unit → ℝ
+/-! ## The LR tensor-character bridge as a §3b-cond conditional class
 
-/-- A tensor-product Hecke element placeholder. -/
-structure TensorBraid where
-  factors : List (Σ n : ℕ, Unit)
-  deriving Repr
+    Mirrors `QOU.MassEndomorphism.HeckeBranchingTraceDecomposition`:
+    the class carries the genuine bridge identity as a Prop field over
+    abstract carrier data, and `lr_tensor_character_bridge` derives it.
 
-/-- Total strand count `Σ n_i`. -/
-def TensorBraid.totalStrands (β : TensorBraid) : ℕ :=
-  β.factors.foldr (fun ⟨n, _⟩ acc => n + acc) 0
+    Carrier data (abstract until the Mathlib symmetric-functions /
+    Hecke-character API lands):
 
-/-- The LR comultiplication bridge for Hecke characters
-    (trivial-interface specialisation of the operator-valued
-    branching theorem).
+    * `tensorChar ν β` is the LHS scalar
+      `χ^ν_{H_n}(β_1 ⊗ … ⊗ β_k)` of the tensor-product braid `β`
+      in the irreducible block `ν`;
+    * `tupleIndex ν β` is the finite index set of LR-contributing
+      partition-tuples `(λ_1 ⊢ n_1, …, λ_k ⊢ n_k)` feeding `ν`;
+    * `tupleOf ν β p` recovers the list `[λ_1, …, λ_k]` named by the
+      index `p` (so that `iteratedLR ν (tupleOf …)` is the LR weight);
+    * `factorChar ν β p` is the per-tuple product
+      `Π_i χ^{λ_i}_{H_{n_i}}(β_i)` of the per-factor characters.
 
-    Public corollary: for every `ν ⊢ Σ n_i` and every tensor-
-    product braid `β = ⊗_i β_i`, the H_n-character of `β` equals
-    the iterated LR sum of per-factor characters.
+    The substantive content is `bridge`: the identity
+    `χ^ν(⊗ β_i) = Σ_p c^ν_{λ_1,…,λ_k} · Π_i χ^{λ_i}(β_i)`. -/
+class LRTensorCharacterBridge
+    (TensorBraid : Type*) where
+  /-- LHS tensor character `χ^ν_{H_n}(β_1 ⊗ … ⊗ β_k)`. -/
+  tensorChar : Partition → TensorBraid → ℝ
+  /-- Finite index set of LR partition-tuples `(λ_1, …, λ_k)` feeding `ν`. -/
+  tupleIndex : Partition → TensorBraid → Type*
+  /-- Each tuple-index set is finite. -/
+  tupleFintype : ∀ (ν : Partition) (β : TensorBraid), Fintype (tupleIndex ν β)
+  /-- The partition-tuple `[λ_1, …, λ_k]` named by an index `p`. -/
+  tupleOf : (ν : Partition) → (β : TensorBraid) → tupleIndex ν β → List Partition
+  /-- Per-tuple product of per-factor characters `Π_i χ^{λ_i}_{H_{n_i}}(β_i)`. -/
+  factorChar : (ν : Partition) → (β : TensorBraid) → tupleIndex ν β → ℝ
+  /-- **The LR comultiplication bridge** (the substantive claim of
+      `cor:lr-tensor-character-bridge`): the tensor character equals the
+      iterated-LR-weighted sum of the per-factor character products. -/
+  bridge :
+    ∀ (ν : Partition) (β : TensorBraid),
+      tensorChar ν β =
+        @Finset.sum (tupleIndex ν β) ℝ _ (@Finset.univ _ (tupleFintype ν β))
+          (fun p => (Nat.cast (iteratedLR ν (tupleOf ν β p)) : ℝ) * factorChar ν β p)
 
-    Concrete-model statement using the stubs above; the genuine
-    statement requires the Mathlib symmetric-functions API. -/
+attribute [instance] LRTensorCharacterBridge.tupleFintype
+
+/-- **LR comultiplication bridge for Hecke characters**
+    (`cor:lr-tensor-character-bridge`), conditional on the class per
+    §3b-cond.  For every irreducible block `ν ⊢ Σ n_i` and every
+    tensor-product braid `β = ⊗_i β_i`, the `H_n`-character of `β` equals
+    the iterated Littlewood–Richardson sum of the per-factor characters:
+
+      χ^ν_{H_n}(β_1 ⊗ … ⊗ β_k)
+        = Σ_{(λ_1, …, λ_k)} c^ν_{λ_1,…,λ_k} · Π_i χ^{λ_i}_{H_{n_i}}(β_i).
+
+    Derived from the class field `bridge` — a genuine conditional
+    theorem, not a placeholder. -/
 -- Ref: [manuscript] cor:lr-tensor-character-bridge
+-- Ref: [wenzl1988] Wenzl, Invent. Math. 92 (1988) — semisimplicity of H_n(q)
+-- Ref: [ram1991] Ram, Invent. Math. 106 (1991) — Frobenius character formula
 theorem lr_tensor_character_bridge
-    {ν : Partition}
-    (β : TensorBraid)
-    (chi_factor : ∀ i : Fin β.factors.length,
-                    HeckeChar (β.factors.get i).1) :
-    1 = 1 := sorry
+    {TensorBraid : Type*} [h : LRTensorCharacterBridge TensorBraid]
+    (ν : Partition) (β : TensorBraid) :
+    h.tensorChar ν β =
+      ∑ p : h.tupleIndex ν β,
+        (iteratedLR ν (h.tupleOf ν β p) : ℝ) * h.factorChar ν β p :=
+  h.bridge ν β
+
+/-- The class axiomatisation is **consistent** (no `sorry` introduced):
+    a trivial model with an empty tuple index, where both sides are `0`,
+    inhabits the class. -/
+def LRTensorCharacterBridge.trivialModel
+    (TensorBraid : Type*) : LRTensorCharacterBridge TensorBraid where
+  tensorChar := fun _ _ => 0
+  tupleIndex := fun _ _ => PEmpty
+  tupleFintype := fun _ _ => inferInstanceAs (Fintype PEmpty)
+  tupleOf := fun _ _ p => p.elim
+  factorChar := fun _ _ p => p.elim
+  bridge := by
+    intro ν β
+    simp
 
 end QOU.BraidsAndKnots

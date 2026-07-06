@@ -43,13 +43,14 @@ theorem magic_crossing_Q_value
   sorry
 
 /-- **y_target extraction.**
-    y_target = [Σ (chain) Q - Σ (non-magic) Q^(3)] / (E_0 · A_magic · m_p) -/
+    y_target = [Σ (chain) Q - Σ (non-magic) Q^(3)] / (E_0 · A_magic) -/
 -- Ref: [manuscript] prop:compound-beta-shell-calibration
 theorem compound_beta_y_target_extraction
-    (chain : CompoundBetaChain) (m_p_MeV : Float) (non_magic_Q_sum : Float) :
+    (chain : CompoundBetaChain) (non_magic_Q_sum : Float) :
     ∃ y_target : Float,
       y_target = (chain.chain_Q_MeV.sum - non_magic_Q_sum) /
-                 (chain.reference_E_0_MeV * (chain.A_magic : Float) * m_p_MeV) := by
+                 (chain.reference_E_0_MeV * chain.A_magic.toFloat) := by
+  -- Ref: [manuscript] prop:compound-beta-shell-calibration
   sorry
 
 /-- **Single-calibration framework invariant.**

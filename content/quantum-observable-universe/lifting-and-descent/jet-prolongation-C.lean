@@ -1,5 +1,5 @@
 import Mathlib.Data.Real.Basic
-import Mathlib.Geometry.Manifold.SmoothManifoldWithCorners
+import Mathlib.Geometry.Manifold.IsManifold.Basic
 import Mathlib.Topology.Basic
 
 

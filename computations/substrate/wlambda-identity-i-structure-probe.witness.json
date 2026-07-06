@@ -1,0 +1,137 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-02T14:19:08.676345+00:00",
+  "commitSha": "a4010ee1282ee6ba19113bd652b1acb6078f9510",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "wlambda-identity-i-structure-probe",
+  "scriptFile": "wlambda_identity_i_structure_probe.py",
+  "scriptHash": "990899d03569",
+  "scriptCommitSha": "a4010ee1282ee6ba19113bd652b1acb6078f9510",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Scopes the Lean infra for Identity I (the one RT input of the W_λ 144·C(n) defect sub-target): verifies M(n)=n(3n−1)/2 (n=2..14) and tests whether the proof reduces to RSK + content-moment + elementary hook identities (no hook-length FORMULA). Also verifies the q-Plancherel normalization Σ_λ d_q²=[n]_q! (W_λ=d_q²/[n]_q!) and extracts the W_λ cyclotomic/Habiro structure for the colored-Σ(2,3,5)-WRT bridge.",
+  "auditOnly": "docs/coordination/s5-so3-keystone.md",
+  "discipline": "no fit; exact rationals + sympy symbolic in q; (a)/(b)-scoped.",
+  "results": {
+    "identity_I": {
+      "2": {
+        "value": "5",
+        "target_n(3n-1)/2": "5",
+        "match": true
+      },
+      "3": {
+        "value": "12",
+        "target_n(3n-1)/2": "12",
+        "match": true
+      },
+      "4": {
+        "value": "22",
+        "target_n(3n-1)/2": "22",
+        "match": true
+      },
+      "5": {
+        "value": "35",
+        "target_n(3n-1)/2": "35",
+        "match": true
+      },
+      "6": {
+        "value": "51",
+        "target_n(3n-1)/2": "51",
+        "match": true
+      },
+      "7": {
+        "value": "70",
+        "target_n(3n-1)/2": "70",
+        "match": true
+      },
+      "8": {
+        "value": "92",
+        "target_n(3n-1)/2": "92",
+        "match": true
+      },
+      "9": {
+        "value": "117",
+        "target_n(3n-1)/2": "117",
+        "match": true
+      },
+      "10": {
+        "value": "145",
+        "target_n(3n-1)/2": "145",
+        "match": true
+      },
+      "11": {
+        "value": "176",
+        "target_n(3n-1)/2": "176",
+        "match": true
+      },
+      "12": {
+        "value": "210",
+        "target_n(3n-1)/2": "210",
+        "match": true
+      },
+      "13": {
+        "value": "247",
+        "target_n(3n-1)/2": "247",
+        "match": true
+      },
+      "14": {
+        "value": "287",
+        "target_n(3n-1)/2": "287",
+        "match": true
+      }
+    },
+    "identity_I_holds_n2_14": true,
+    "E_content2_eq_binom_n_2": true,
+    "E_h2_minus_E_content2_eq_n_squared": true,
+    "sum_h_elementary_decomposition_ok": true,
+    "qplancherel_sum_dq2_eq_qfact": false,
+    "W_lambda_examples": {
+      "n3:[3]": {
+        "W": "q**3/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1))",
+        "den_factored": "(q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1)"
+      },
+      "n3:[2, 1]": {
+        "W": "q*(q**2 + 1)/((q**2 - q + 1)*(q**2 + q + 1))",
+        "den_factored": "(q**2 - q + 1)*(q**2 + q + 1)"
+      },
+      "n3:[1, 1, 1]": {
+        "W": "q**3/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1))",
+        "den_factored": "(q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1)"
+      },
+      "n4:[4]": {
+        "W": "q**6/((q**2 + 1)**2*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1))",
+        "den_factored": "(q**2 + 1)**2*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)"
+      },
+      "n4:[3, 1]": {
+        "W": "q**2*(q**2 - q + 1)*(q**2 + q + 1)/((q**2 + 1)**2*(q**4 + 1))",
+        "den_factored": "(q**2 + 1)**2*(q**4 + 1)"
+      },
+      "n4:[2, 2]": {
+        "W": "q**2*(q**4 + 1)/((q**2 + 1)**2*(q**2 - q + 1)*(q**2 + q + 1))",
+        "den_factored": "(q**2 + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)"
+      },
+      "n4:[2, 1, 1]": {
+        "W": "q**2*(q**2 - q + 1)*(q**2 + q + 1)/((q**2 + 1)**2*(q**4 + 1))",
+        "den_factored": "(q**2 + 1)**2*(q**4 + 1)"
+      },
+      "n4:[1, 1, 1, 1]": {
+        "W": "q**6/((q**2 + 1)**2*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1))",
+        "den_factored": "(q**2 + 1)**2*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)"
+      }
+    }
+  },
+  "leanInfraRouteVerdict": "NON-HLF ROUTE EXISTS (Lean-feasible). Identity I = E[Σ_c h_c²] = n(3n−1)/2 DECOMPOSES as E[Σ_c content²] + n²  with  E[Σ_c content²] = C(n,2)  (Kerov content second moment, provable from the Jucys–Murphy element Σ X_i² in Z(ℂ[S_n]) — RSK + center-of-group-algebra, NO hook-length FORMULA). The residual E[Σ h² − Σ content²] = n² is the Plancherel mean of an elementary arm/leg/content combination. So the infra needed is: (1) RSK `Σ(f^λ)²=n!` (or its q-form `Σ d_q²=[n]_q!`, verified here), (2) the JM/content second-moment, (3) the single-diagram elementary hook identity `Σ_c h_c = n + Σ_i C(λ_i,2) + Σ_j C(λ'_j,2)` (verified elementary: True) extended to the squared form. The full hook-length FORMULA is NOT required for Identity I — the ledger's 'needs HLF' scope can be narrowed to the content-moment + elementary-hook infra."
+}

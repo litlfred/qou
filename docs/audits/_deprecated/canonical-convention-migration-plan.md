@@ -16,7 +16,7 @@ The canonical convention adds **averaged crossings** `I_g := σ_g −
 (h/2)·1` (where `h = q − q⁻¹`) which encode the operator-valued
 interface of `prop:hecke-branching-trace-decomposition` and are
 SDP-confirmed canonical by PR #608's
-[`r5_full_canonical_knot_solver`](../../folio-assistant/computations/r5_full_canonical_knot_solver.py)
+[`r5_full_canonical_knot_solver`](../../computations/r5_full_canonical_knot_solver.py)
 for D and ³He.  These cannot be expressed in the legacy bare-int form.
 
 ## Current state (post-PR #606)
@@ -40,10 +40,10 @@ atomic-braid-recipe builders).
 
 | File | Convention | Blocker |
 |---|---|---|
-| [`atomic_braid_gb_filtration_extension.py`](../../folio-assistant/computations/atomic_braid_gb_filtration_extension.py) | bare-int `ATOMIC_BRAIDS` registry | `gb_filtration_jet_tracker.reduce_braid` accepts only bare-int |
-| [`term7_alpha5_crystal_derivation.py`](../../folio-assistant/computations/term7_alpha5_crystal_derivation.py) | bare-int `ATOMS` registry | `crystal_chi_lambda` defined only for σ / σ⁻¹ |
-| [`build_atomic_braid_recipe_4he_chain.py`](../../folio-assistant/computations/build_atomic_braid_recipe_4he_chain.py) | bare-int leaf | parity with above |
-| [`build_term7_s_crystal_4he_chain.py`](../../folio-assistant/computations/build_term7_s_crystal_4he_chain.py) | bare-int leaf | inherits from `crystal_chi_lambda` |
+| [`atomic_braid_gb_filtration_extension.py`](../../computations/atomic_braid_gb_filtration_extension.py) | bare-int `ATOMIC_BRAIDS` registry | `gb_filtration_jet_tracker.reduce_braid` accepts only bare-int |
+| [`term7_alpha5_crystal_derivation.py`](../../computations/term7_alpha5_crystal_derivation.py) | bare-int `ATOMS` registry | `crystal_chi_lambda` defined only for σ / σ⁻¹ |
+| [`build_atomic_braid_recipe_4he_chain.py`](../../computations/build_atomic_braid_recipe_4he_chain.py) | bare-int leaf | parity with above |
+| [`build_term7_s_crystal_4he_chain.py`](../../computations/build_term7_s_crystal_4he_chain.py) | bare-int leaf | inherits from `crystal_chi_lambda` |
 
 The two underlying tools — `gb_filtration_jet_tracker.reduce_braid`
 and `term7_alpha5_crystal_derivation.crystal_chi_lambda` — are

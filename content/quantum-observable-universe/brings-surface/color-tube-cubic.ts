@@ -1,10 +1,10 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "prop:coral-elliptic",
+  interprets: "prop:color-elliptic",
   label: "rem:color-tube-cubic",
   title: "Color tube cubic",
-  uses: ["prop:coral-elliptic", "def:color-tube-coordinates"],
+  uses: ["prop:color-elliptic", "def:color-tube-coordinates"],
 
   rendered: [
     { mime: "image/svg+xml", url: "rendered/color-tube-cubic-0.svg", blockIndex: 0, hash: "6fa069be7f96" },

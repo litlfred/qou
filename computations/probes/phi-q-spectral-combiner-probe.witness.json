@@ -1,12 +1,12 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T04:22:29.963961+00:00",
-  "commitSha": "8e4a4c861c2bfc438dc823c541dc1a4fc99d54ba",
+  "computedAt": "2026-06-22T13:26:49.163979+00:00",
+  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
   "assertions": [
     {
       "name": "li_2_q_measure_normalized_at_proton",
-      "computed": 9.055679078826712e-72,
+      "computed": 0.0,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
@@ -17,8 +17,8 @@
   "durationMs": 23,
   "computation": "phi-q-spectral-combiner-probe",
   "scriptFile": "phi_q_spectral_combiner_probe.py",
-  "scriptHash": "355edb121bac",
-  "scriptCommitSha": "8e4a4c861c2bfc438dc823c541dc1a4fc99d54ba",
+  "scriptHash": "3f2297a73e94",
+  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,7 +28,6 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
@@ -37,10 +36,10 @@
     "EMPIRICAL_C3_PROTON": "-2.06930000000000000000000000000000000000000000000000000000000",
     "EMPIRICAL_C3_MUON": "-2.00970000000000000000000000000000000000000000000000000000000",
     "anchor_q_proton": {
-      "q_at_this_anchor": "1.10997858275138080759166909561076887987449912187357873607281",
+      "q_at_this_anchor": "1.10997859555733471989976322048322502665620840878015368660798",
       "Σ_y_λ_(should_be_1_but_isnt)": "0.719070368968980268981061598765336384531110525131225585937500",
       "Σ_μ_λ_(should_be_1_by_construction)": "1.00000000000000000000000000000000000000000000000000000000000",
-      "Σ_μ_λ_deviation_from_1": "-9.05567907882671236750911929088779178068253119813913818958261e-72",
+      "Σ_μ_λ_deviation_from_1": "0.0",
       "per_block_χ_λ": {
         "(3)": "-0.260387641790120805129760128693305887281894683837890625000000",
         "(2,1)": "-0.106814457651578043062556844233768060803413391113281250000000",
@@ -52,16 +51,16 @@
         "(1,1,1)": "0.0227449425773471845813045177919775596819818019866943359375000"
       },
       "per_block_Li_2_q_neg_chi": {
-        "(3)": "-0.245221884418426100469310503131588021141259476243332712291482",
-        "(2,1)": "-0.104103624730634548292531702937865081133005498042723615205795",
-        "(1,1,1)": "-0.164727349135586480129216731101311681667972703570284102352456"
+        "(3)": "-0.245221884433802893862690867237511421467775550720368214799909",
+        "(2,1)": "-0.104103624733654387496406300946395342570684441059960105977628",
+        "(1,1,1)": "-0.164727349142867625955273318264564823196597721100671671855770"
       },
       "per_block_μ_λ_(Li_2_q_measure)": {
-        "(3)": "0.477036321199947654532819292599299004255144541991821451470373",
-        "(2,1)": "0.202515408781151292863306757418324244333733007344189925301876",
-        "(1,1,1)": "0.320448270018901052603873949982376751411122450663988623227751"
+        "(3)": "0.477036321206031776792185032291566971607924436895485414734361",
+        "(2,1)": "0.202515408776909887422471812838609047944397609292687381891347",
+        "(1,1,1)": "0.320448270017058335785343154869823980447677953811827203374292"
       },
-      "c3_candidate_Li_2_q_measure": "-1.79748459121884870713669324258167575566626699265581007469812",
+      "c3_candidate_Li_2_q_measure": "-1.79748459122309011257752818716139095205560239070731261810865",
       "c3_baseline_uniform_sum_(mech_5)": "-5.00000000000000000000000000000000000000000000000000000000000",
       "c3_baseline_y_lambda_weighted_(mech_6)": "-1.15721110690694083816820736387853685300797224044799804687500"
     },
@@ -69,8 +68,8 @@
       "note": "DEFERRED — q_muon cross-anchor evaluation requires Hoefsmit χ_λ(q) closed-form re-evaluation infrastructure not yet wired. Single-anchor refutation at q_proton is decisive (13% off empirical c_3 = -2.07). The fibre/observable distinction (user 2026-05-31) would matter here: a TRULY q-independent Li_2^q × spectral mechanism would close at both anchors; an empirical near-match would swing. Deferred to a future session that wires the Hoefsmit evaluator."
     },
     "single_anchor_summary": {
-      "c3_candidate_at_q_proton": "-1.79748459121884870713669324258167575566626699265581007469812",
-      "err_pct_vs_empirical_at_q_proton": "13.1356211656671962916593416816471388553488139633784335428348",
+      "c3_candidate_at_q_proton": "-1.79748459122309011257752818716139095205560239070731261810865",
+      "err_pct_vs_empirical_at_q_proton": "13.1356211654622281651994303792881190713960087610635181893080",
       "cross_anchor_status": "DEFERRED — Hoefsmit χ_λ(q) evaluator not wired; single-anchor refutation at q_proton is decisive without it"
     },
     "verdict": "REFUTED — candidate misses empirical c_3 at q_proton by +13.14% (> 5% threshold); decisive single-anchor refutation; q_muon adds no information",

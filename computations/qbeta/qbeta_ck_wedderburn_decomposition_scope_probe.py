@@ -59,7 +59,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 
 def main() -> int:
-    Q0_MP = mp.mpf("1.1099785827513808075916690956107688798744991218736")
+    Q0_MP = mp.mpf("1.1099785955573347198997632204832250266562084087802")
     Z_MARKOV = 1 / (mp.sqrt(Q0_MP) + 1 / mp.sqrt(Q0_MP))
 
     t0 = time.monotonic()

@@ -17,7 +17,7 @@ LaTeX label: `prop:torus-knot-shell-binding`
 ## References
 - [manuscript] §6/torus-knot-shell-binding
 - [jones1987] https://doi.org/10.2307/1971403
-- Computation: folio-assistant/computations/qvalue-representation-theory.py
+- Computation: computations/qvalue-representation-theory.py
 
 **Ground ring**: `ℝ` (archimedean realisation).
 Evaluates formal results at q₀ ≈ 1.1098 for comparison with
@@ -113,7 +113,7 @@ theorem inter_shell_preserves_normal_form (n : ℕ) (q : ℝ) (hq : q > 1)
     (h_nf : IsNormalForm (nf_A.map Prod.fst)) :
     ∃ nf_A1 : List (List ℕ × ℝ),
     IsNormalForm (nf_A1.map Prod.fst) :=
-  division_terminates_unique (n + 1) q hq _
+  division_terminates_unique (n + 1) q hq nf_A
 
 -- ═══════════════════════════════════════════════════════════════════
 -- PART II: Magic numbers as cumulative shell sizes
@@ -133,7 +133,7 @@ def magic_numbers : List ℕ := [2, 8, 20, 28, 50, 82, 126]
 -- Ref: [manuscript] §6/torus-knot-shell-binding
 theorem magic_from_shells :
     (shell_sizes.scanl (· + ·) 0).tail = magic_numbers := by
-  native_decide
+  decide
 
 -- ═══════════════════════════════════════════════════════════════════
 -- PART III: Shell energy gap
@@ -160,7 +160,7 @@ theorem eigenvalue_ratio_monotone (q : ℝ) (hq : q > 1) (n m : ℕ) (h : n < m)
   unfold shell_eigenvalue_ratio
   have hq1 : 1 ≤ q := le_of_lt hq
   have hnm : 2 * n < 2 * m := Nat.mul_lt_mul_of_pos_left h (by omega)
-  exact pow_lt_pow_right hq hnm
+  exact pow_lt_pow_right₀ hq hnm
 
 /-- First shell gap: He-4 → Li-5 gives ratio ≈ 14.8.
     This uses the witness data from sequential-nucleus-builder. -/

@@ -10,9 +10,9 @@ export default proposition({
   lean: { ref: "qou:QOU.BraidKnot.CrossedModuleEulerCharacteristic" },
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/hecke/hecke_crossed_module_q8.py",
+    script: "computations/hecke/hecke_crossed_module_q8.py",
     witness:
-      "folio-assistant/computations/hecke/hecke-crossed-module-q8.witness.json",
+      "computations/hecke/hecke-crossed-module-q8.witness.json",
     status: "verified",
   },
 });

@@ -9,7 +9,7 @@
 
 ## The question
 
-`linking_weight_family_a(q)` ([`_li_2_q_util.py:172`](../../folio-assistant/computations/_li_2_q_util.py)) appears in production as a global geometric multiplier:
+`linking_weight_family_a(q)` ([`_li_2_q_util.py:172`](../../computations/_li_2_q_util.py)) appears in production as a global geometric multiplier:
 
 > `vol_density_borromean(q) = Vol(𝓑₃) / ℏ_q² × linking_weight_family_a(q)`
 
@@ -23,7 +23,7 @@ PR #1808's literature-import audit ([`2026-06-04-h3-h4-jump-literature-import.md
 
 **Hypothesis** ([scoping doc](./2026-06-04-option-b-h3-h4-bratteli-scoping.md)). The H₃ → H₄ jump is the Bratteli induction `Ind_{H₃}^{H₄}` — adding one box to each of the 3 partitions of 3 reaches the 5 partitions of 4 (7 box-additions, multiplicity-free). Family-A might emerge as a Markov-weighted box-adding sum.
 
-**Three sub-hypotheses tested** (closed-form symbolic for B1/B3, numerical at q₀ for B2; see [Option B probe](../../folio-assistant/computations/probes/option_b_h3_h4_bratteli_probe.py)):
+**Three sub-hypotheses tested** (closed-form symbolic for B1/B3, numerical at q₀ for B2; see [Option B probe](../../computations/probes/option_b_h3_h4_bratteli_probe.py)):
 
 | Sub-hypothesis | Verdict | Evidence |
 |---|---|---|
@@ -39,13 +39,13 @@ PR #1808's literature-import audit ([`2026-06-04-h3-h4-jump-literature-import.md
 
 **Hypothesis** ([scoping doc](./2026-06-04-markov-stab-trace-axis-scope.md)). The H₃ → H₄ promotion is a Markov move `β ↦ β·g_n^{±1}` (with `g_n` the Hecke image of `σ_n` under `B_n → H_n`), under which the Markov/Ocneanu trace scales by the **stabilization parameter**
 
-  `z = 1 / (q^½ + q^{-½})`     ([`hecke_symbolic.py:46`](../../folio-assistant/computations/hecke/hecke_symbolic.py))
+  `z = 1 / (q^½ + q^{-½})`     ([`hecke_symbolic.py:46`](../../computations/hecke/hecke_symbolic.py))
 
 **Formalize-first narrowing** (PR #1826 discipline). Before running any probe, the cheap structural fact:
 
   `z(q₀) ≈ 0.4993 < 1 < linking_weight ≈ 2.5328`
 
-is a **direction obstruction**: a single stabilization scales the trace by z < 1, so it cannot produce a >1 multiplier. The naive "stabilization explains the jump" reading is structurally dead before any scan. What survives — the [probe](../../folio-assistant/computations/probes/markov_stab_trace_axis_probe.py) tests these two exactly:
+is a **direction obstruction**: a single stabilization scales the trace by z < 1, so it cannot produce a >1 multiplier. The naive "stabilization explains the jump" reading is structurally dead before any scan. What survives — the [probe](../../computations/probes/markov_stab_trace_axis_probe.py) tests these two exactly:
 
 | Surviving candidate | Verdict | Evidence |
 |---|---|---|
@@ -63,7 +63,7 @@ Neither of the two structurally-natural candidates derives `linking_weight_famil
 
 The remaining explanation is the one the production code itself documents:
 
-> *"the 2.53 is a CODATA-implied-λ near-match that lands near `λ = m_p / (m_e · Vol/ℏ²) ≈ 2.46` (the value that round-trips m_p)"* — [`_li_2_q_util.py:298-313`](../../folio-assistant/computations/_li_2_q_util.py)
+> *"the 2.53 is a CODATA-implied-λ near-match that lands near `λ = m_p / (m_e · Vol/ℏ²) ≈ 2.46` (the value that round-trips m_p)"* — [`_li_2_q_util.py:298-313`](../../computations/_li_2_q_util.py)
 
 So `(1/4)·Σ_{λ⊢4} dim_q` is the closed-form expression nearest to the CODATA-implied scaling λ — a numerical match dressed in categorical clothing, not a structural derivation. The H₄ count is a *post-hoc fit form*, not a *forward consequence of the H₃ proton braid*.
 
@@ -90,6 +90,6 @@ Two of the five attack options listed in [PR #1762 §5](https://github.com/litlf
 - [`docs/audits/2026-06-04-option-b-h3-h4-bratteli-scoping.md`](./2026-06-04-option-b-h3-h4-bratteli-scoping.md) — Option B scope
 - [`docs/audits/2026-06-04-markov-stab-trace-axis-scope.md`](./2026-06-04-markov-stab-trace-axis-scope.md) — Markov-stab scope
 - [`docs/audits/2026-06-04-h3-h4-jump-literature-import.md`](./2026-06-04-h3-h4-jump-literature-import.md) — Option E lit import
-- [`folio-assistant/computations/probes/option_b_h3_h4_bratteli_probe.py`](../../folio-assistant/computations/probes/option_b_h3_h4_bratteli_probe.py) + `.witness.json`
-- [`folio-assistant/computations/probes/markov_stab_trace_axis_probe.py`](../../folio-assistant/computations/probes/markov_stab_trace_axis_probe.py) + `.witness.json`
-- [`folio-assistant/computations/probes/option_a_vol_per_knot_light_series.py`](../../folio-assistant/computations/probes/option_a_vol_per_knot_light_series.py) + `.witness.json` (Option A diagnostic)
+- [`computations/probes/option_b_h3_h4_bratteli_probe.py`](../../computations/probes/option_b_h3_h4_bratteli_probe.py) + `.witness.json`
+- [`computations/probes/markov_stab_trace_axis_probe.py`](../../computations/probes/markov_stab_trace_axis_probe.py) + `.witness.json`
+- [`computations/probes/option_a_vol_per_knot_light_series.py`](../../computations/probes/option_a_vol_per_knot_light_series.py) + `.witness.json` (Option A diagnostic)

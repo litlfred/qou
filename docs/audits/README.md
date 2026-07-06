@@ -71,13 +71,13 @@ files with `path:line` references where exact.
 
 ## Corpus check **before** declaring "open" (STRICT)
 
-Per [`CLAUDE.md` §"Before declaring 'open' math / questions / gaps"](../../CLAUDE.md),
+Per [`AGENTS.md` §"Before declaring 'open' math / questions / gaps"](../../AGENTS.md),
 do **not** write an audit declaring an item "open" / "Open Math X" /
 "TODO" / "pending" before running the corpus-grep checklist:
 
 1. `grep -rln <topic> docs/audits/`
 2. `grep -rln <topic> content/` (whole tree)
-3. `grep -rln <topic> folio-assistant/computations/`
+3. `grep -rln <topic> computations/`
 4. `docs/coordination/<theme>.md`
 
 Source files' status notes (`## Status`, `Open math`, `Phase 3

@@ -8,8 +8,8 @@ export default algorithm({
   ],
   computation: {
     engine: "python+mpmath",
-    script: "folio-assistant/computations/q_beta_predicted.py",
-    witness: "folio-assistant/computations/q-beta-predicted.witness.json",
+    script: "computations/q_beta_predicted.py",
+    witness: "computations/q-beta-predicted.witness.json",
     status: "verified",
   },
   tags: [

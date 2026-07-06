@@ -81,3 +81,5 @@ globally regular.
 5. **Fluid dynamics:** Do colliding anti-parallel vortex
  filaments maintain tubular cores ($\kappa = O(1)$), or
  flatten into sheets ($\kappa \to \infty$)?
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

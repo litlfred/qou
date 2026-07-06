@@ -54,5 +54,5 @@ is self-contained.
    reconcile or document).
 3. Registry publication (npm + PyPI) — owner credentials.
 4. Once landed, remove the qou copies (`tools/block-qa-schema/`,
-   `folio-assistant/schemas/block-qa.ts`) and update qou's CLAUDE.md project-structure
+   `folio-assistant/schemas/block-qa.ts`) and update qou's AGENTS.md project-structure
    row — presumably as part of the broader migration's qou-side cleanup.

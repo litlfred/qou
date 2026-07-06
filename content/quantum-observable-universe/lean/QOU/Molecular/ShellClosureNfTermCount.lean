@@ -83,16 +83,55 @@ This has 2 nonzero terms. -/
 /-- Hydrogen atom NF: (−HA)·𝟏 + 1·σ₀. -/
 noncomputable def hydrogen_nf : H2_NF := h2_nuc_e_Z1
 
+/-! ## §3a  Nonzero certificates in `R_q = ℤ[q, q⁻¹]`
+
+`R_q` is an integral domain of characteristic zero.  Two facts drive the
+NF-term-count proofs: every `T n` is a unit (hence nonzero), and a Laurent
+polynomial that clears — after multiplying by a unit `T k` — to a nonzero
+ordinary polynomial under the injective ring map `Polynomial.toLaurent` is
+itself nonzero. -/
+
+/-- `(4 : R_q) ≠ 0`: the injective ring map `Polynomial.toLaurent` carries
+the nonzero constant `4 : ℤ[X]` to `4 : R_q`. -/
+theorem four_ne_zero_Rq : (4 : R_q) ≠ 0 := by
+  intro h
+  have h2 : (4 : Polynomial ℤ) = 0 :=
+    Polynomial.toLaurent_injective (by simp only [map_ofNat, map_zero]; exact h)
+  norm_num at h2
+
+/-- `T 2 − 1 = toLaurent(X² − 1) ≠ 0`. -/
+theorem T2_sub_one_ne_zero : (LaurentPolynomial.T 2 - 1 : R_q) ≠ 0 := by
+  have e : (LaurentPolynomial.T 2 - 1 : R_q) = Polynomial.toLaurent (Polynomial.X ^ 2 - 1) := by
+    rw [map_sub, map_one, map_pow, Polynomial.toLaurent_X, LaurentPolynomial.T_pow]
+    norm_num
+  rw [e, Ne, map_eq_zero_iff _ Polynomial.toLaurent_injective]
+  intro hP
+  have h0 := congrArg (Polynomial.eval 0) hP
+  simp at h0
+
+/-- `T 4 − T 2 + 1 = toLaurent(X⁴ − X² + 1) ≠ 0`. -/
+theorem T4_sub_T2_add_one_ne_zero :
+    (LaurentPolynomial.T 4 - LaurentPolynomial.T 2 + 1 : R_q) ≠ 0 := by
+  have e : (LaurentPolynomial.T 4 - LaurentPolynomial.T 2 + 1 : R_q)
+      = Polynomial.toLaurent (Polynomial.X ^ 4 - Polynomial.X ^ 2 + 1) := by
+    rw [map_add, map_sub, map_pow, map_pow, map_one, Polynomial.toLaurent_X, LaurentPolynomial.T_pow]
+    norm_num
+  rw [e, Ne, map_eq_zero_iff _ Polynomial.toLaurent_injective]
+  intro hP
+  have h0 := congrArg (Polynomial.eval 0) hP
+  simp at h0
+
 /-- HA = q − q⁻¹ is nonzero in ℤ[q, q⁻¹]. -/
 -- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
 theorem HA_ne_zero : HA ≠ 0 := by
-  unfold HA q q_inv
   intro h
-  -- T(1) - T(-1) = 0 means T(1) = T(-1)
-  have : LaurentPolynomial.T (1 : ℤ) = LaurentPolynomial.T (-1 : ℤ) := by linarith
-  -- But T is injective, and 1 ≠ -1
-  have : (1 : ℤ) = -1 := LaurentPolynomial.T_injective ℤ this
-  norm_num at this
+  have h_eval : HA 1 = (0 : LaurentPolynomial ℤ) 1 := congrArg (fun f => f 1) h
+  unfold HA q q_inv at h_eval
+  simp only [LaurentPolynomial.T] at h_eval
+  change (Finsupp.single 1 1 : ℤ →₀ ℤ) 1 - (Finsupp.single (-1) 1 : ℤ →₀ ℤ) 1 = (0 : ℤ →₀ ℤ) 1 at h_eval
+  simp only [Finsupp.single_apply, Finsupp.zero_apply, if_true] at h_eval
+  revert h_eval
+  decide
 
 /-- Hydrogen has 2 NF terms (both coefficients are nonzero). -/
 theorem hydrogen_terms_eq_two : hydrogen_nf 0 ≠ 0 ∧ hydrogen_nf 1 ≠ 0 := by
@@ -205,29 +244,61 @@ theorem helium_slot1_zero : helium_nf 1 = 0 := by
     This is 4·(q⁴ − q² + 1)/q² = 4·T(2) − 4 + 4·T(−2). -/
 -- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
 theorem helium_slot2_nonzero : helium_nf 2 ≠ 0 := by
-  unfold helium_nf helium_step3 helium_step2 helium_step1
-  unfold h3_mul_s1 h3_add h3_smul h3_mul_s0 h2_to_h3 h2_nuc_e_Z2 HA q q_inv
-  -- After unfolding, the expression is 4·T(2) − 4·T(0) + 4·T(−2)
-  -- This is nonzero because T(2) has coefficient 4 at degree 2,
-  -- while T(0) and T(−2) contribute 0 at degree 2.
   intro h
-  -- If the polynomial is 0, evaluating coefficients gives contradictions.
-  -- The expression contains T(2) with a nonzero coefficient.
-  ring_nf at h
-  linarith [LaurentPolynomial.T_ne_zero (R := ℤ) (2 : ℤ)]
+  have h_poly : helium_nf 2 = (4 : R_q) * LaurentPolynomial.T 2 - (4 : R_q) * LaurentPolynomial.T 0 + (4 : R_q) * LaurentPolynomial.T (-2) := by
+    unfold helium_nf helium_step3 helium_step2 helium_step1
+    unfold h3_mul_s1 h3_add h3_smul h3_mul_s0 h2_to_h3 h2_nuc_e_Z2 HA q q_inv
+    have h_ring : (2 * 2 + (-2 * (LaurentPolynomial.T 1 - LaurentPolynomial.T (-1))) * (-2 * (LaurentPolynomial.T 1 - LaurentPolynomial.T (-1))) : R_q)
+      = (4 : R_q) * (LaurentPolynomial.T 1 * LaurentPolynomial.T 1) - (8 : R_q) * (LaurentPolynomial.T 1 * LaurentPolynomial.T (-1)) + (4 : R_q) * (LaurentPolynomial.T (-1) * LaurentPolynomial.T (-1)) + (4 : R_q) * LaurentPolynomial.T 0 := by
+      rw [LaurentPolynomial.T_zero]
+      ring
+    rw [h_ring]
+    simp only [← LaurentPolynomial.T_add, Int.reduceAdd, Int.reduceNeg]
+    ring
+  rw [h] at h_poly
+  have h_mult : ((4 : R_q) * LaurentPolynomial.T 2 - (4 : R_q) * LaurentPolynomial.T 0 + (4 : R_q) * LaurentPolynomial.T (-2)) * LaurentPolynomial.T 2 = 0 := by
+    rw [← h_poly, zero_mul]
+  have h_simp : ((4 : R_q) * LaurentPolynomial.T 2 - (4 : R_q) * LaurentPolynomial.T 0 + (4 : R_q) * LaurentPolynomial.T (-2)) * LaurentPolynomial.T 2
+    = (4 : R_q) * (LaurentPolynomial.T 4 - LaurentPolynomial.T 2 + 1) := by
+    have h_ring2 : ((4 : R_q) * LaurentPolynomial.T 2 - (4 : R_q) * LaurentPolynomial.T 0 + (4 : R_q) * LaurentPolynomial.T (-2)) * LaurentPolynomial.T 2
+      = (4 : R_q) * (LaurentPolynomial.T 2 * LaurentPolynomial.T 2) - (4 : R_q) * (LaurentPolynomial.T 0 * LaurentPolynomial.T 2) + (4 : R_q) * (LaurentPolynomial.T (-2) * LaurentPolynomial.T 2) := by ring
+    rw [h_ring2]
+    simp only [← LaurentPolynomial.T_add, Int.reduceAdd, Int.reduceNeg]
+    simp only [LaurentPolynomial.T_zero]
+    ring
+  rw [h_simp] at h_mult
+  cases mul_eq_zero.mp h_mult with
+  | inl h4 => exact four_ne_zero_Rq h4
+  | inr h_poly2 => exact T4_sub_T2_add_one_ne_zero h_poly2
 
 /-- Helium NF has nonzero σ₀σ₁-coefficient (slot 3).
     This is −4·(q² − 1)/q = −4·(T(1) − T(−1)) = −4·HA. -/
 -- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
 theorem helium_slot3_nonzero : helium_nf 3 ≠ 0 := by
-  unfold helium_nf helium_step3 helium_step2 helium_step1
-  unfold h3_mul_s1 h3_add h3_smul h3_mul_s0 h2_to_h3 h2_nuc_e_Z2 HA q q_inv
-  -- After unfolding, the expression is −4·(T(1) − T(−1))
-  -- This is nonzero because T(1) ≠ T(−1) (T is injective, 1 ≠ −1)
-  -- and −4 ≠ 0, and ℤ[q,q⁻¹] is an integral domain.
   intro h
-  ring_nf at h
-  linarith [LaurentPolynomial.T_ne_zero (R := ℤ) (1 : ℤ)]
+  have h_poly : helium_nf 3 = (-4 : R_q) * LaurentPolynomial.T 1 + (4 : R_q) * LaurentPolynomial.T (-1) := by
+    unfold helium_nf helium_step3 helium_step2 helium_step1
+    unfold h3_mul_s1 h3_add h3_smul h3_mul_s0 h2_to_h3 h2_nuc_e_Z2 HA q q_inv
+    ring
+  rw [h] at h_poly
+  have h_mult : ((-4 : R_q) * LaurentPolynomial.T 1 + (4 : R_q) * LaurentPolynomial.T (-1)) * LaurentPolynomial.T 1 = 0 := by
+    rw [← h_poly, zero_mul]
+  have h_simp : ((-4 : R_q) * LaurentPolynomial.T 1 + (4 : R_q) * LaurentPolynomial.T (-1)) * LaurentPolynomial.T 1
+    = (-4 : R_q) * (LaurentPolynomial.T 2 - 1) := by
+    have h_ring2 : ((-4 : R_q) * LaurentPolynomial.T 1 + (4 : R_q) * LaurentPolynomial.T (-1)) * LaurentPolynomial.T 1
+      = (-4 : R_q) * (LaurentPolynomial.T 1 * LaurentPolynomial.T 1) + (4 : R_q) * (LaurentPolynomial.T (-1) * LaurentPolynomial.T 1) := by ring
+    rw [h_ring2]
+    simp only [← LaurentPolynomial.T_add, Int.reduceAdd, Int.reduceNeg]
+    simp only [LaurentPolynomial.T_zero]
+    ring
+  rw [h_simp] at h_mult
+  have h_mult2 : (4 : R_q) * (LaurentPolynomial.T 2 - 1) = 0 := by
+    calc (4 : R_q) * (LaurentPolynomial.T 2 - 1) = - ((-4 : R_q) * (LaurentPolynomial.T 2 - 1)) := by ring
+      _ = -0 := congrArg Neg.neg h_mult
+      _ = 0 := neg_zero
+  cases mul_eq_zero.mp h_mult2 with
+  | inl h4 => exact four_ne_zero_Rq h4
+  | inr h_poly2 => exact T2_sub_one_ne_zero h_poly2
 
 /-- Helium NF has zero σ₁σ₀-coefficient (slot 4). -/
 -- Ref: [iwahori1964] Iwahori, "On the structure of a Hecke ring of a Chevalley group over a finite field," J. Fac. Sci. Univ. Tokyo 10 (1964)
@@ -281,7 +352,7 @@ theorem helium_palindromic_histogram :
    ⟨helium_slot1_zero, helium_slot2_nonzero⟩,
    ⟨helium_slot3_nonzero, helium_slot4_zero, helium_slot5_zero⟩⟩
 
--- ── Conjecture class (CLAUDE.md §3b-cond axiomatisation) ───────
+-- ── Conjecture class (AGENTS.md §3b-cond axiomatisation) ───────
 
 /-- The seven nuclear magic numbers {2, 8, 20, 28, 50, 82, 126}. -/
 def magic_numbers : Finset ℕ := {2, 8, 20, 28, 50, 82, 126}
@@ -304,7 +375,7 @@ def magic_numbers : Finset ℕ := {2, 8, 20, 28, 50, 82, 126}
     `sorry` in any concrete instance is understood as **conjecture**,
     not missing proof. Downstream blocks may take
     `[ShellClosureNFTermCount]` as an explicit hypothesis to remain
-    `theorem`/`proposition` per CLAUDE.md §3b-cond.
+    `theorem`/`proposition` per AGENTS.md §3b-cond.
 
     Ref: [manuscript] §Shell closure NF term count, conj:shell-closure-nf-term-count -/
 class ShellClosureNFTermCount where
@@ -330,7 +401,7 @@ instance canonical : ShellClosureNFTermCount where
   helium_base := rfl
   shell_constant_between_magics := fun _ _ => rfl
 
-/-- **Downstream conditional theorem (CLAUDE.md §3b-cond).**
+/-- **Downstream conditional theorem (AGENTS.md §3b-cond).**
     Conditional on `[ShellClosureNFTermCount]`, the term-count
     function is constant on each shell. Fully verified by Lean
     once an instance is fixed. -/

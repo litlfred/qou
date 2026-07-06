@@ -1,0 +1,266 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-06-29T00:02:02.833900+00:00",
+  "commitSha": "beced4cb56d7a3f44336ff013f88f2337048962a",
+  "assertions": [
+    {
+      "name": "routes_agree_1_n2",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "routes_agree_11_n2",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "routes_agree_121_n3",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "routes_agree_12_n3",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "routes_agree_2121_n3",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "routes_agree_212_n3",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "routes_agree_12321_n4",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "routes_agree_1232_n4",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "routes_agree_12312_n4",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "routes_agree_2323_n4",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "routes_agree_1234321_n5",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "probe-markov-trace-recursive-reducer",
+  "scriptFile": "probe_markov_trace_recursive_reducer.py",
+  "scriptHash": "d7dc564ec969",
+  "scriptCommitSha": "f37483491b0c10d3e6c3d29f0417cf1b3f0c3124",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "I1 probe: the recursive Markov-trace reducer agrees with the canonical seminormal/Hoefsmit–Wedderburn engine, exact in ℚ(q), across single-top, multi-top, and H_2/H_3/H_4/H_5 words. Conventions reconciled (recursive 1-indexed (z_sym,q) ↔ canonical 0-indexed (z,h), h=q−1/q). The H_4 multi-top-1 words (e.g. [1,2,3,2,1], which recurses to the subword (1,0,0,1)) exercise the previously-unimplemented braid branch, now reduced via the generic Hecke word reducer; an H_5 word confirms the fix generalizes.",
+  "contentBlock": "prop:markov-trace-recursive-reducer",
+  "data": {
+    "words_checked": [
+      {
+        "rec_word": [
+          1
+        ],
+        "n": 2,
+        "can_word": [
+          0
+        ],
+        "agree": true
+      },
+      {
+        "rec_word": [
+          1,
+          1
+        ],
+        "n": 2,
+        "can_word": [
+          0,
+          0
+        ],
+        "agree": true
+      },
+      {
+        "rec_word": [
+          1,
+          2,
+          1
+        ],
+        "n": 3,
+        "can_word": [
+          0,
+          1,
+          0
+        ],
+        "agree": true
+      },
+      {
+        "rec_word": [
+          1,
+          2
+        ],
+        "n": 3,
+        "can_word": [
+          0,
+          1
+        ],
+        "agree": true
+      },
+      {
+        "rec_word": [
+          2,
+          1,
+          2,
+          1
+        ],
+        "n": 3,
+        "can_word": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "agree": true
+      },
+      {
+        "rec_word": [
+          2,
+          1,
+          2
+        ],
+        "n": 3,
+        "can_word": [
+          1,
+          0,
+          1
+        ],
+        "agree": true
+      },
+      {
+        "rec_word": [
+          1,
+          2,
+          3,
+          2,
+          1
+        ],
+        "n": 4,
+        "can_word": [
+          0,
+          1,
+          2,
+          1,
+          0
+        ],
+        "agree": true
+      },
+      {
+        "rec_word": [
+          1,
+          2,
+          3,
+          2
+        ],
+        "n": 4,
+        "can_word": [
+          0,
+          1,
+          2,
+          1
+        ],
+        "agree": true
+      },
+      {
+        "rec_word": [
+          1,
+          2,
+          3,
+          1,
+          2
+        ],
+        "n": 4,
+        "can_word": [
+          0,
+          1,
+          2,
+          0,
+          1
+        ],
+        "agree": true
+      },
+      {
+        "rec_word": [
+          2,
+          3,
+          2,
+          3
+        ],
+        "n": 4,
+        "can_word": [
+          1,
+          2,
+          1,
+          2
+        ],
+        "agree": true
+      },
+      {
+        "rec_word": [
+          1,
+          2,
+          3,
+          4,
+          3,
+          2,
+          1
+        ],
+        "n": 5,
+        "can_word": [
+          0,
+          1,
+          2,
+          3,
+          2,
+          1,
+          0
+        ],
+        "agree": true
+      }
+    ]
+  }
+}

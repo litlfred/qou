@@ -335,9 +335,11 @@ print("  Zero fitting parameters.")
 # ═══════════════════════════════════════════════════════════════
 # WRITE WITNESS
 # ═══════════════════════════════════════════════════════════════
-witness = {
-    "computation": "branching-qvalue-chain",
-    "description": "Full chain: γγ → e⁻ → quarks → nucleon → Q-values via S₃ᴬ branching",
+_p25_sys.path.insert(0, str(DIR))
+_p25_sys.path.insert(0, str(DIR / "substrate"))
+from witness_base import WitnessBuilder  # noqa: E402
+
+_data_payload = {
     "timestamp": datetime.now(timezone.utc).isoformat(),
     "git_sha": SHA,
     "q0": q0,
@@ -354,7 +356,13 @@ witness = {
     },
     "results": results,
 }
-
-WITNESS_PATH.write_text(json.dumps(witness, indent=2))
+_wb = WitnessBuilder.wrap_legacy(
+    "branching-qvalue-chain", _data_payload,
+    script_path=__file__, engine="python", output_dir=DIR)
+_wb.set_description(
+    "Full chain: γγ → e⁻ → quarks → nucleon → Q-values via S₃ᴬ branching")
+_wb.add_assertion("a<0 and b<0 (fermionic channel sums)",
+                  computed=int(bool(a_num < 0 and b_num < 0)), expected=1)
+_wb.save()
 print(f"\n  Witness written to {WITNESS_PATH.name}")
 print("=" * 70)

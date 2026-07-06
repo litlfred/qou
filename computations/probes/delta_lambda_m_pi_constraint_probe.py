@@ -39,6 +39,7 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from codata_constants import M_PI_PM_MEV_VALIDATION, M_P_MEV_VALIDATION  # noqa: E402 (codata sweep)
 del _sys, _Path, _bridge
 
 import json, time
@@ -84,7 +85,7 @@ chi_meson_std = (q0**6 + 1/q0**6) / 2  # trace of 2×2 = avg of eigenvalue power
 # H_3 meson mass equation (Frobenius pairing):
 # m_π / m_e = Σ_λ y_λ · χ^λ(M+) · Δ_λ^{meson}
 # This is 1 equation with 3 unknowns (Δ_sym, Δ_std, Δ_alt)
-m_pi_target = mpf('139.57039') / m_e  # m_π/m_e ≈ 273.13
+m_pi_target = mpf(M_PI_PM_MEV_VALIDATION) / m_e  # m_π/m_e ≈ 273.13
 
 print("=" * 70)
 print("Δ_λ CLOSURE PROBE: m_π AS CAL-3 CONSTRAINT")
@@ -132,7 +133,7 @@ proton_chi = {
     (1, 1, 1): mpf('-0.73922354697012288904'),
 }
 
-m_p_target = mpf('938.27208816') / m_e  # m_p/m_e
+m_p_target = mpf(M_P_MEV_VALIDATION) / m_e  # m_p/m_e
 
 coeffs_proton = {}
 for lam, y in y_lam_h3.items():

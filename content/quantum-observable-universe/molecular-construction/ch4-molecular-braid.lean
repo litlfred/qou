@@ -18,4 +18,4 @@ structure CH4Braid where
   bondOrder : Fin 4 → Nat := fun _ => 1
 
 /-- CH₄ strand count: carbon(18) + 4 × hydrogen(2). -/
-theorem ch4_strands : 18 + 4 * 2 = 26 := by norm_num
+theorem ch4_strands : 18 + 4 * 2 = 26 := by decide

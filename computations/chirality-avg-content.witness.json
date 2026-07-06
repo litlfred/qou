@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-02T17:03:30.228449+00:00",
-  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
+  "computedAt": "2026-06-22T14:26:25.028793+00:00",
+  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "chirality-avg-content",
   "scriptFile": "chirality_avg_content.py",
   "scriptHash": "2c7a0e537a52",
-  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,17 +17,17 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "First numerical computation of ⟨c⟩_β = Σ w_λ χ^λ(β) c(λ) / Σ w_λ χ^λ(β) for the figure-8 (4_1) and Borromean (B_3) braids at q_0. Inhabits ChiralityFactorClass with structural-content values.",
   "contentBlock": "prop:chirality-writhe-ribbon-derivation",
   "auditOnly": "docs/audits/2026-05-09-refocused-1ppb-workplan-v3.md",
   "precision_dps": 50,
-  "q_0": "1.10997858275138080759166909561",
+  "q_0": "1.10997859555733471989976322048",
   "cases": [
     {
       "name": "figure-8 4_1",
@@ -62,10 +62,10 @@
             1
           ],
           "dim_q": "1.0",
-          "wedderburn_weight": "0.141811507642269465675684892864",
+          "wedderburn_weight": "0.141811505031884548333261004544",
           "chi_lambda_beta": "1.0000000000000009",
           "content_c_lambda": 3,
-          "weighted_chi_c": "0.42543452292680877991812531272"
+          "weighted_chi_c": "0.42543451509565402789084659972"
         },
         {
           "shape": [
@@ -76,9 +76,9 @@
             2,
             1
           ],
-          "dim_q": "2.10997858275138080759166909561",
-          "wedderburn_weight": "0.63134619620322209932567396427",
-          "chi_lambda_beta": "-0.9106773502706684",
+          "dim_q": "2.10997859555733471989976322048",
+          "wedderburn_weight": "0.631346192245338912914108124172",
+          "chi_lambda_beta": "-0.9106773300219757",
           "content_c_lambda": 0,
           "weighted_chi_c": "0.0"
         },
@@ -92,15 +92,15 @@
             3
           ],
           "dim_q": "1.0",
-          "wedderburn_weight": "0.141811507642269465675684892864",
-          "chi_lambda_beta": "1.0000000000000013",
+          "wedderburn_weight": "0.141811505031884548333261004544",
+          "chi_lambda_beta": "1.0000000000000016",
           "content_c_lambda": -3,
-          "weighted_chi_c": "-0.425434522926808950091934483444"
+          "weighted_chi_c": "-0.425434515095654325695007166677"
         }
       ],
-      "numerator": "-1.70173809170723400345924669713e-16",
-      "denominator": "-0.291329665777276584311067154493",
-      "avg_content_c_beta": "5.84127979952520109093271804442e-16"
+      "numerator": "-2.97804160566957505617537819153e-16",
+      "denominator": "-0.291329654609756769479363811402",
+      "avg_content_c_beta": "1.02222398528523811264915139224e-15"
     },
     {
       "name": "Borromean B_3",
@@ -143,10 +143,10 @@
             1
           ],
           "dim_q": "1.0",
-          "wedderburn_weight": "0.141811507642269465675684892864",
+          "wedderburn_weight": "0.141811505031884548333261004544",
           "chi_lambda_beta": "1.0000000000000013",
           "content_c_lambda": 3,
-          "weighted_chi_c": "0.425434522926808950091934483444"
+          "weighted_chi_c": "0.425434515095654198064652637981"
         },
         {
           "shape": [
@@ -157,9 +157,9 @@
             2,
             1
           ],
-          "dim_q": "2.10997858275138080759166909561",
-          "wedderburn_weight": "0.63134619620322209932567396427",
-          "chi_lambda_beta": "1.9941858129799659",
+          "dim_q": "2.10997859555733471989976322048",
+          "wedderburn_weight": "0.631346192245338912914108124172",
+          "chi_lambda_beta": "1.9941858103805747",
           "content_c_lambda": 0,
           "weighted_chi_c": "0.0"
         },
@@ -173,15 +173,15 @@
             3
           ],
           "dim_q": "1.0",
-          "wedderburn_weight": "0.141811507642269465675684892864",
-          "chi_lambda_beta": "1.0000000000000022",
+          "wedderburn_weight": "0.141811505031884548333261004544",
+          "chi_lambda_beta": "1.0000000000000024",
           "content_c_lambda": -3,
-          "weighted_chi_c": "-0.425434522926809332983005117571"
+          "weighted_chi_c": "-0.4254345150956546660426192432"
         }
       ],
-      "numerator": "-3.82891070634127613800475574619e-16",
-      "denominator": "1.54264464283187095022562744802",
-      "avg_content_c_beta": "-2.48204323927281787431235401131e-16"
+      "numerator": "-4.67977966605218972615992698893e-16",
+      "denominator": "1.54264462807723090785314298027",
+      "avg_content_c_beta": "-3.03360837672971911269909883387e-16"
     },
     {
       "name": "trefoil 3_1 (σ_1^3 in H_2)",
@@ -211,10 +211,10 @@
             1
           ],
           "dim_q": "1.0",
-          "wedderburn_weight": "0.473938459932619229415038990104",
-          "chi_lambda_beta": "1.3675518369513862",
+          "wedderburn_weight": "0.473938457056175796317436245325",
+          "chi_lambda_beta": "1.3675518842842074",
           "content_c_lambda": 1,
-          "weighted_chi_c": "0.648135411482764373904588641648"
+          "weighted_chi_c": "0.648135429981923120729057576358"
         },
         {
           "shape": [
@@ -225,15 +225,15 @@
             2
           ],
           "dim_q": "1.0",
-          "wedderburn_weight": "0.473938459932619229415038990104",
-          "chi_lambda_beta": "-0.7312337075494344",
+          "wedderburn_weight": "0.473938457056175796317436245325",
+          "chi_lambda_beta": "-0.7312336822404466",
           "content_c_lambda": -1,
-          "weighted_chi_c": "0.346559777206798222714645089025"
+          "weighted_chi_c": "0.346559763108543198988884425696"
         }
       ],
-      "numerator": "0.994695188689562596619233730674",
-      "denominator": "0.301575634275966151189943552623",
-      "avg_content_c_beta": "3.298327436424574899923614395"
+      "numerator": "0.994695193090466319717942002054",
+      "denominator": "0.301575666873379921740173150662",
+      "avg_content_c_beta": "3.29832709450030248809854281503"
     },
     {
       "name": "T(2,3) torus knot in H_3 (writhe +6)",
@@ -276,10 +276,10 @@
             1
           ],
           "dim_q": "1.0",
-          "wedderburn_weight": "0.141811507642269465675684892864",
-          "chi_lambda_beta": "1.870198026749111",
+          "wedderburn_weight": "0.141811505031884548333261004544",
+          "chi_lambda_beta": "1.8701981562092858",
           "content_c_lambda": 3,
-          "weighted_chi_c": "0.795646805288666487504446293604"
+          "weighted_chi_c": "0.79564684571968301333267876211"
         },
         {
           "shape": [
@@ -290,8 +290,8 @@
             2,
             1
           ],
-          "dim_q": "2.10997858275138080759166909561",
-          "wedderburn_weight": "0.63134619620322209932567396427",
+          "dim_q": "2.10997859555733471989976322048",
+          "wedderburn_weight": "0.631346192245338912914108124172",
           "chi_lambda_beta": "2.0000000000000018",
           "content_c_lambda": 0,
           "weighted_chi_c": "0.0"
@@ -306,15 +306,15 @@
             3
           ],
           "dim_q": "1.0",
-          "wedderburn_weight": "0.141811507642269465675684892864",
-          "chi_lambda_beta": "0.5347027350564918",
+          "wedderburn_weight": "0.141811505031884548333261004544",
+          "chi_lambda_beta": "0.5347026980429225",
           "content_c_lambda": -3,
-          "weighted_chi_c": "-0.227481002996418216693608680241"
+          "weighted_chi_c": "-0.227480983062228445029111380381"
         }
       ],
-      "numerator": "0.568165802292248270810837613363",
-      "denominator": "1.60373499516814023647385275229",
-      "avg_content_c_beta": "0.354276613033988272681015606955"
+      "numerator": "0.56816586265745456830356738173",
+      "denominator": "1.60373499408464944837195900412",
+      "avg_content_c_beta": "0.354276650913726488924301260563"
     }
   ],
   "interpretation": "⟨c⟩_β values give the Wedderburn-weighted average content for each atomic braid; the chirality first-order factor is a_K(β) = 1 + w(β) · ⟨c⟩_β · h where w(β) is the writhe and h = q − q⁻¹."

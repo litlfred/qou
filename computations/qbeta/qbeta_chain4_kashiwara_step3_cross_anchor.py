@@ -1,7 +1,7 @@
 """qbeta_chain4_kashiwara_step3_cross_anchor — Step 3 of Chain 4.
 
 Cross-anchor validation of Step 2's `cocharge_(1,1,1,1) = 6` NEAR-1PCT
-candidate at q_proton (0.991805 ratio).  Per CLAUDE.md anti-pattern
+candidate at q_proton (0.991805 ratio).  Per AGENTS.md anti-pattern
 guards + the c_3 4-session flip-flop history, single-anchor near-
 matches must cross-anchor at q_muon BEFORE any structural claim.
 
@@ -26,7 +26,7 @@ ANCHORS (50-dps):
   (Cross-anchor difference: 1.28e-8 in q itself)
 
 Canonical: ℏ_q = (q - 1) / q
-   per folio-assistant/computations/qbeta/qbeta_residue_categorical_id_probe.py
+   per computations/qbeta/qbeta_residue_categorical_id_probe.py
    line 48: `hbar_q = (q - 1) / q`
 
 EXPECTED OUTCOME if cocharge-of-(1,1,1,1) is a true hit:

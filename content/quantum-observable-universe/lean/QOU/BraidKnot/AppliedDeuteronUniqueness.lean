@@ -24,6 +24,8 @@ multi-term cost from the mass formula) awaits PR #608 followup #1.
 
 namespace QOU.BraidKnot
 
+noncomputable section
+
 /-- **²H empty-constraint SDP** at `heckeDim 6 = 720`. -/
 abbrev deuteron_emptySDP := nucleusEmptySDP 6
 
@@ -52,4 +54,5 @@ abbrev deuteron_optimum_is_zero := nucleus_optimum_is_zero 6
 /-- ²H objective at optimum equals 0. -/
 abbrev deuteron_objAt_optimum_eq_zero := nucleus_objAt_optimum_eq_zero 6
 
+end  -- noncomputable section
 end QOU.BraidKnot

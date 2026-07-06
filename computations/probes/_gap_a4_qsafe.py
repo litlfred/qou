@@ -38,7 +38,7 @@ from partition_utils import hook_lengths
 # Authoritative source: T4-T8 use this exact 50-dps decimal; T9-T12
 # extend it without re-deriving.  Do not edit without updating the
 # whole probe series.
-Q_0_50DPS: str = "1.1099785827513808075916690956107688798744991218736"
+Q_0_50DPS: str = "1.1099785955573347198997632204832250266562084087802"
 
 
 def q_number(n: int, q: mp.mpf) -> mp.mpf:
@@ -67,7 +67,7 @@ def dim_q_partition(lam: tuple, q: mp.mpf) -> mp.mpf:
     """dim_q(V_λ) = [n]_q! / Π_{x∈λ} [h(x)]_q (q-hook formula).
 
     Q=1-safe wrapper around the canonical ``dim_q_lambda`` in
-    ``folio-assistant/computations/murnaghan_nakayama.py`` — same
+    ``computations/murnaghan_nakayama.py`` — same
     formula, same hook-length input (``partition_utils.hook_lengths``),
     but routes through this module's q=1-safe ``q_number`` so probes
     exercising the classical limit don't trip 0/0.

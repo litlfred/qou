@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-01T13:24:47.137314+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-07-05T11:18:50.175748+00:00",
+  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
   "assertions": [
     {
       "name": "all_a_m_have_integer_coefficients",
@@ -33,11 +33,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 20,
   "computation": "habiro-expansion-atomic-probe",
   "scriptFile": "habiro_expansion_atomic_probe.py",
-  "scriptHash": "bc66610b9f2c",
-  "scriptCommitSha": "c2211016e3b3e65af2e53fdd6cdf53b05cace026",
+  "scriptHash": "583e87c1e01d",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -45,7 +45,7 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",

@@ -17,7 +17,7 @@ element $w_0$, $D_{w_0}(\lambda) = s_\lambda(x_1, \ldots, x_n)$
 recovers the Schur polynomial; at intermediate $w$, the Demazure
 character $D_w(\lambda)$ is the character of a sub-crystal of
 $\mathrm{Cryst}(V_\lambda)$ — an "incomplete topological state" in
-the sense of CLAUDE.md §7b item 3. Define the Demazure-fiber
+the sense of AGENTS.md §7b item 3. Define the Demazure-fiber
 Markov-trace functional*
 
 $$
@@ -51,7 +51,7 @@ principal specialisation $x_i \mapsto q^{i-1}$.  Then:*
 The LP / SDP cost vector
 $c_\lambda = \tilde w_\lambda(q) = \dim_q(V_\lambda)^2 / [n]_q!$ used
 in
-[`sdp-dual-without-demand.md`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/sdp-dual-without-demand.md)
+[`sdp-dual-without-demand.md`](https://github.com/litlfred/qou/blob/main/computations/sdp-dual-without-demand.md)
 is the q-deformed Wedderburn-block weight (the classical Plancherel
 measure is the bare-symbol $w_\lambda = (\dim V_\lambda)^2/n!$; see
 [`prop:plancherel-weight-boundedness`](#prop:plancherel-weight-boundedness)). It is
@@ -70,7 +70,7 @@ two senses:
 | Per-partition complexity | $O(\dim V_\lambda^3)$ | $O(\ell(w_0)) = O(n^2)$ |
 | Crystal interpretation | none — empirical | sub-crystal projection |
 
-For the LP/SDP solvers in the QOU pipeline, this means the cost
+For the LP/SDP solvers in the QOU pipeline, the cost
 vector at $w = w_0$ is unchanged, but the dual variables and
 shadow prices acquire a structural interpretation: the active set
 $\{\lambda \mid u_\lambda^* > 0\}$ corresponds to the Demazure
@@ -99,7 +99,7 @@ this gives the Demazure-fiber resonance width of the alt block at
 each filtration depth — the exact analogue of a resonance width
 without phenomenological cutoffs.
 
-## Why the Demazure operator is the right functional
+## Structural justification of the Demazure operator
 
 By Kashiwara's refined Demazure character formula
 \cite{kashiwara1991}, $D_w(\lambda)$ is the character of the
@@ -120,19 +120,19 @@ blocks, indexed by Bruhat-comparable Weyl elements.
 
 ## Crystal-basis shortcut
 
-This is shortcut #3 from CLAUDE.md §7b: replace the manual
+This is shortcut #3 from AGENTS.md §7b: replace the manual
 Hecke-energy LP functional with Kashiwara weight-lattice
 projection. Resonance widths become structural Demazure
 multiplicities, not heuristic cutoffs. The shadow-price ordering
 discussed in
-[`sdp-dual-without-demand.md`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/sdp-dual-without-demand.md)
+[`sdp-dual-without-demand.md`](https://github.com/litlfred/qou/blob/main/computations/sdp-dual-without-demand.md)
 acquires a Bruhat-order interpretation: more-active LP blocks
 correspond to longer Bruhat-prefix Demazure sub-crystals.
 
-## Numerical verification
+## canonical structural verification
 
-The companion script
-[`demazure_markov_trace.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/demazure_markov_trace.py)
+The companion formalism
+the canonical formalism
 
 1. Implements the Demazure operator $\pi_i$ recursively on
    $\mathbb{Q}[x_1, \ldots, x_n]$ via sympy.
@@ -148,7 +148,7 @@ The companion script
    adds $5 \cdot 24 = 120$ further evaluations and is deferred to
    a follow-up witness.
 
-Output: [`demazure-markov-trace.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/demazure-markov-trace.witness.json).
+Output: [`demazure-markov-trace.witness.json`](https://github.com/litlfred/qou/blob/main/computations/demazure-markov-trace.witness.json).
 
 ## Lean formalisation
 
@@ -165,3 +165,5 @@ character `demazureCharacter`, the principal-specialisation ratio
   $x_i = q^{i-1}$, $D_{w_0}(\lambda)$ equals the Macdonald
   hook-content principal specialisation; deferred to a single
   `sorry` citing Kashiwara's refined character formula.
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

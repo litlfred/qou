@@ -2,7 +2,7 @@
 
 **Date:** 2026-06-09. **Status:** mechanism + direction + discreteness derived;
 exact threshold value open. **Compute:**
-[`hybridization_sp_gap_braid.py`](../../folio-assistant/computations/hybridization_sp_gap_braid.py)
+[`hybridization_sp_gap_braid.py`](../../computations/hybridization_sp_gap_braid.py)
 → witness `hybridization-sp-gap-braid`.
 
 ## The open item

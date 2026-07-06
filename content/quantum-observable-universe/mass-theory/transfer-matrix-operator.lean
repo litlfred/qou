@@ -48,9 +48,11 @@ structure TransferMatrixOp where
 noncomputable def ppCoeffs : CrossingCoeffs := ⟨1, 0⟩
 
 noncomputable def nnCoeffs (q : ℝ) : CrossingCoeffs :=
+  let q_half := Real.sqrt q
   ⟨q^2, -q * (q_half - 1 / q_half)⟩
 
 noncomputable def mixCoeffs (q : ℝ) : CrossingCoeffs :=
+  let q_half := Real.sqrt q
   ⟨(1 + q^2) / 2, -q * (q_half - 1 / q_half) / 2⟩
 
 /-- The photon-electron crossing has the same coefficients as pp.
@@ -119,9 +121,11 @@ theorem T_pp_eigenvalues_real (q : ℝ) (hq : 0 < q) :
 -- Ref: [manuscript] §6/transfer-matrix-operator
 -- det = (q-q⁻¹)·0 - 1·1 = -1
 theorem T_pp_det (q : ℝ) :
-    let t := TransferMatrixOp.mk q ppCoeffs
+    let t : TransferMatrixOp := { q := q, coeffs := ppCoeffs }
     t.m₁₁ * t.m₂₂ - t.m₁₂ * t.m₂₁ = -1 := by
-  simp [TransferMatrixOp.mk, ppCoeffs, CrossingCoeffs.mk]
+  intro t
+  show t.m₁₁ * t.m₂₂ - t.m₁₂ * t.m₂₁ = -1
+  simp only [t, ppCoeffs]
   ring
 
 end QOU.Archimedean

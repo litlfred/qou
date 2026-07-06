@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/hecke/hecke_engine.py",
+  "script_path": "computations/hecke/hecke_engine.py",
   "language": "python",
   "source_hash": "23f9263c4635",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -21,7 +21,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "major",
-        "evidence": "folio-assistant/computations/hecke/hecke_engine.py:209: bare `float(self.qr.traced_volume(i, ordering))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/hecke/hecke_engine.py:255: bare `float(tr_par)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/hecke/hecke_engine.py:256: bare `float(tr_dau)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/hecke/hecke_engine.py:261: bare `float(self.qr.traced_volume(i, ord_par))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/hecke/hecke_engine.py:263: bare `float(self.qr.traced_volume(i, ord_dau))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
+        "evidence": "computations/hecke/hecke_engine.py:209: bare `float(self.qr.traced_volume(i, ordering))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/hecke/hecke_engine.py:255: bare `float(tr_par)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/hecke/hecke_engine.py:256: bare `float(tr_dau)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/hecke/hecke_engine.py:261: bare `float(self.qr.traced_volume(i, ord_par))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/hecke/hecke_engine.py:263: bare `float(self.qr.traced_volume(i, ord_dau))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
       }
     ],
     "respects_archimedean_wall": [
@@ -74,7 +74,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/hecke/hecke_engine.py:58: `def __init__(…)` has 2 parameters without type annotation: p_num, p_den — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/hecke/hecke_engine.py:67: `def crossing(…)` has 2 parameters without type annotation: ti, tj — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/hecke/hecke_engine.py:76: `def traced_volume(…)` has 2 parameters without type annotation: gen_idx, ordering — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/hecke/hecke_engine.py:95: `def markov_trace(…)` has 1 parameter without type annotation: ordering — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/hecke/hecke_engine.py:104: `def eIeR(…)` has 3 parameters without type annotation: ordering_par, ordering_dau, conv_pos — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/hecke/hecke_engine.py:58: `def __init__(…)` has 2 parameters without type annotation: p_num, p_den — add `: type` (or `: Any` if the type genuinely is untyped) | computations/hecke/hecke_engine.py:67: `def crossing(…)` has 2 parameters without type annotation: ti, tj — add `: type` (or `: Any` if the type genuinely is untyped) | computations/hecke/hecke_engine.py:76: `def traced_volume(…)` has 2 parameters without type annotation: gen_idx, ordering — add `: type` (or `: Any` if the type genuinely is untyped) | computations/hecke/hecke_engine.py:95: `def markov_trace(…)` has 1 parameter without type annotation: ordering — add `: type` (or `: Any` if the type genuinely is untyped) | computations/hecke/hecke_engine.py:104: `def eIeR(…)` has 3 parameters without type annotation: ordering_par, ordering_dau, conv_pos — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -93,7 +93,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/hecke/hecke_engine.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
+        "evidence": "computations/hecke/hecke_engine.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
       }
     ],
     "connected_to_ci_pipeline": [
@@ -146,7 +146,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "major",
-        "evidence": "folio-assistant/computations/hecke/hecke_engine.py:364: script writes `.witness.json` (\"folio-assistant/computations/hecke-engine.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
+        "evidence": "computations/hecke/hecke_engine.py:364: script writes `.witness.json` (\"computations/hecke-engine.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
       }
     ],
     "compute_no_mpf_to_float_cast": [

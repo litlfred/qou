@@ -70,7 +70,7 @@ bun run scripts/lean-witness.ts stamp <file>  # create witness after build
 ### Python witness staleness
 
 ```bash
-cd folio-assistant/computations
+cd computations
 python3 witness_base.py check-all        # check all Python witnesses
 python3 witness_base.py check-stale <file>  # check single witness
 ```
@@ -113,7 +113,7 @@ Any `.lean` file not reachable from the root module won't be built.
 ### 3. Content Block → Lean Coverage
 
 Cross-reference content `.ts` manifests against `.lean` files.
-Per CLAUDE.md rules:
+Per AGENTS.md rules:
 
 | Block kind | `.lean` required? |
 |-----------|------------------|
@@ -185,11 +185,11 @@ List all `sorry` occurrences and verify each has a bibliographic citation:
 grep -rn 'sorry' content/*/lean/ --include='*.lean' | grep -v '.lake'
 ```
 
-Per CLAUDE.md: every `sorry` must have a `-- Ref: [key]` comment.
+Per AGENTS.md: every `sorry` must have a `-- Ref: [key]` comment.
 
 #### §3b-cond conditional-class carve-out (do NOT discharge these)
 
-Per CLAUDE.md §3b-cond, a `sorry` inside a Lean `class` body **is the
+Per AGENTS.md §3b-cond, a `sorry` inside a Lean `class` body **is the
 conjectural input** — it is permanent by design, NOT a missing-proof
 gap. The full catalogue lives at
 [`docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md`](../../../docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md):

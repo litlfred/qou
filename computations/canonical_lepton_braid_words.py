@@ -13,8 +13,13 @@ Per `mass-endomorphism-tower.md` §Application:
   electron = σ_1³ in H_2 (1 generator, 3 crossings = trefoil 3_1)
   proton   = [u,u,d] in H_3 (2 generators, 11 crossings via gluon)
 
-Per `skein-mass-relation.md` (canonical paper):
-  muon = figure-eight 4_1 = (σ_1 σ_2⁻¹)² in H_3 (2 generators)
+Muon IDENTITY knot = T(2,5) cinquefoil = σ_1⁵ in H_2 (per
+prop:s5-equivariant-torus-knots + lepton-meson-torus-knot-dictionary;
+owner-ruled 2026-06-30, docs/audits/2026-06-30-muon-knot-id-phi-q-evidence.md).
+The figure-eight 4_1 = (σ_1 σ_2⁻¹)² in H_3 is the HIGGS, not the muon;
+its volume is the Higgs-coupling mass scale in m_μ/m_e = Vol(4_1)/ℏ_q².
+Both braids are computed below only to PROBE the historical "muon=4_1"
+candidate against T(2,5) — NOT to assert muon = 4_1.
 
 Per `knot-volumes.py:84-91` (after PR #1127 fix):
   tau = septafoil 7_1 = σ_1⁷ in H_2 (1 generator)
@@ -43,6 +48,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import mpmath as mp
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import _path_bridge  # noqa: F401, E402
+from codata_2022_source import M_MU_OVER_M_E  # noqa: E402
 
 
 # ── Canonical lepton braid words (c, d, gen_idx) format ─────────
@@ -190,7 +199,7 @@ def main() -> int:
 
     # Substrate at q_0
     Vol_4_1 = mp.mpf("2.0298832128193072500115978049904475264466050157561096")
-    cal2_target = mp.mpf("206.7682830")
+    cal2_target = M_MU_OVER_M_E
     cal_tau_e   = mp.mpf("3477.23")
     hbar_q_sq = Vol_4_1 / cal2_target
     hbar_q = mp.sqrt(hbar_q_sq)
@@ -332,9 +341,11 @@ def main() -> int:
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
 
-    here = Path(__file__).resolve().parent
-    out = here / "canonical-lepton-braid-words.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
+    out = WitnessBuilder.wrap_legacy(
+        "canonical-lepton-braid-words", witness,
+        script_path=__file__, engine="mpmath",
+    ).save()
     print(f"\nWitness: {out}")
     return 0
 

@@ -3,8 +3,8 @@
 **Date:** 2026-05-05
 **Branch:** `claude/categorical-mass-divergence-audit` (PR #534)
 **Refs:**
-- [`folio-assistant/computations/factor_2_normalization_trace_probe.py`](../../folio-assistant/computations/factor_2_normalization_trace_probe.py)
-- [`folio-assistant/computations/factor-2-normalization-trace.witness.json`](../../folio-assistant/computations/factor-2-normalization-trace.witness.json)
+- [`computations/factor_2_normalization_trace_probe.py`](../../computations/factor_2_normalization_trace_probe.py)
+- [`computations/factor-2-normalization-trace.witness.json`](../../computations/factor-2-normalization-trace.witness.json)
 - [`prop:categorical-mass-markov`](../../content/quantum-observable-universe/braids-and-knots/categorical-mass-markov.md)
 - Sibling [PR #546](https://github.com/litlfred/qou/pull/546) — closed-form trace
 

@@ -20,9 +20,9 @@ This branch picks up Subgoal-1 from where the 2026-05-31 binding-magic-A-wireup 
 
 | Script | Role |
 |---|---|
-| `folio-assistant/computations/canonical_tr_m_via_branching.py` | Operator-valued Wenzl branching for tr_M via per-arc A operators |
-| `folio-assistant/computations/A_operator_extract_at_level.py` | Extract A^λ_ξν(I) operators from the substrate Hecke at each level |
-| `folio-assistant/computations/lr_coefficients.py` | Littlewood-Richardson coefficients for the branching combiner |
+| `computations/canonical_tr_m_via_branching.py` | Operator-valued Wenzl branching for tr_M via per-arc A operators |
+| `computations/A_operator_extract_at_level.py` | Extract A^λ_ξν(I) operators from the substrate Hecke at each level |
+| `computations/lr_coefficients.py` | Littlewood-Richardson coefficients for the branching combiner |
 
 ### Lean
 
@@ -60,7 +60,7 @@ This branch picks up Subgoal-1 from where the 2026-05-31 binding-magic-A-wireup 
 
 ## What this branch does NOT attempt
 
-- New ansatz fits (forbidden per CLAUDE.md §"Δ_λ gate")
+- New ansatz fits (forbidden per AGENTS.md §"Δ_λ gate")
 - Switching from H₄ to H₃ as the linking-weight basis (REGRESSES m_p by −57% per `linking_weight_canonical_object_lwfix.py`)
 - Re-introducing `λ_scale` as a separate object (purged 2026-05-23, see `lambda-scale-absorbed-into-vol-density.md`)
 - Subgoal-2 (research-grade < CAL-2 floor) — explicitly out of scope per the L2-100× audit
@@ -80,3 +80,94 @@ Owner is documented as "active" on this path per [`docs/audits/2026-05-30-l2-100
 - Operator-valued diagnosis: [`docs/audits/2026-05-17-structural-diagnosis-operator-valued.md`](../audits/2026-05-17-structural-diagnosis-operator-valued.md)
 - Binding-magic-A wireup: [`docs/audits/2026-05-31-binding-magic-A-wireup.md`](../audits/2026-05-31-binding-magic-A-wireup.md)
 - PR #1664 Bring extension audit: [`docs/audits/2026-06-01-bring-color-weighted-implementation-and-compute-audit.md`](../audits/2026-06-01-bring-color-weighted-implementation-and-compute-audit.md)
+
+## Update 2026-06-16 — closure path (b) operator construction implemented + verified (PR #2353)
+
+The operator-valued combiner's **interface operator `A^λ_{ξν}(I)` is now
+constructed analytically and verified exact**, on branch
+`claude/analytic-interface-operator-closure-b-2026-06-16` (PR #2353). This
+delivers the compute that the sibling workplan
+[`docs/workplans/2026-06-16-wenzl-branching-a3-unlock.md`](../workplans/2026-06-16-wenzl-branching-a3-unlock.md)
+(merged via `a9f5a79622`) scoped but explicitly deferred ("No compute landed —
+this container has no numpy/mpmath/pyhecke_native").
+
+**Consistent framing (no §6 conflict).** Both artifacts independently reach the
+same structural conclusion as closure path (b): `A^λ_{ξν}(I)` is **universal**
+(depends only on `(I, λ, ξ, ν)` via the seminormal/LR data, not on the inner
+braid word), so it must be built from representation theory, not least-squares
+fitted (the fit is rank-deficient at H₉⁺ → the 21–42 % A=3 error).
+
+**What #2353 proves (exact, 50 dps):**
+- `A^λ_{ξν}(I) = Π_{ξν} ρ_λ(I) Π_{ξν}` — the (ξ,ν)-isotypic block of the
+  seminormal interface-generator matrix; isotypic projectors from central `H_3`
+  class-sums (exact Lagrange spectral projectors).
+- Decomposition `χ^λ(W·I·β) = Σ_{ξν} Tr[ρ_λ(W)·(Π_{ξν} ρ_λ(I) Π_{ξν})·ρ_λ(β)]`
+  verified at the deuteron (H₆), pn interface: **891/891, residual ~1.5e-49**.
+- New exact-MPFR seminormal-matrix binding `pyhecke_native.seminormal_matrices_mpfr`
+  (validated: trace vs native χ ~1e-51, Hecke relation ~1e-50).
+
+**Remaining (PR #2353 follow-up):** the `ρ_ξ⊗ρ_ν` gauge alignment (a basis-change
+to feed the combiner) and H₉ universality — at which point
+`compute_chi_lambda_via_branching` (`canonical_tr_m_via_branching.py:263`, currently
+`return None` for A ≥ 3) closes, giving the polynomial-in-A speedup the workplan
+targets for the ¹⁶O feasibility wall. **Speedup to an already-validated value — not
+a production-value change, not wired, not a fit.**
+
+---
+
+## 2026-06-17 — Task B intertwiner + recursion-kernel A-operator (PR #2403)
+
+**Task B (merge-ready, #2403).** The O(r⁶)-time / O(r⁴)-memory null-space
+intertwiner inside `combiner_block` (`tools/pyhecke-native/src/lib.rs`) is
+replaced by an **O(r³) cyclic-vector construction** (`col0_matrix_units`), plus
+a bounded greedy-closure fix that resolved an intermittent r=64 OOM. All 4
+previously-OOM r=64 λ⊢9 — `(4,3,2)`, `(3,3,2,1)`, `(4,2,2,1)`, `(4,3,1,1)` —
+now complete (residuals 2.0e-51…7.8e-50 vs the 1e-25 gate, ~50 s each, 164 MB
+peak); the r=64 build dropped 16m49s → ~52s. So **all 30 λ⊢9 are feasible** —
+the speedup §4 of the handover noted Task A could not deliver alone.
+
+**Recursion-kernel A-operator (in progress, #2403) — extends past n=9.** Two new
+walls block the full-seminormal combiner at A=4 (λ⊢12): the `Π ρ_λ(I) Π` ambient
+needs ρ_λ at d_λ⊢12 ≤ 7700, and `col0_matrix_units` on the inner ξ⊢9 (d≤216) is
+O(d⁶). Both are sidestepped by building `A^λ_{ξν}(I)` directly in the **Young/GT
+standard-tableau basis**. Structural result (verified): the bridge generator's
+ξ→ξ block is **diagonal** in that basis (its off-diagonal partner always changes
+the inner shape ξ), hence `A^λ_{ξν}` is **block-diagonal in the V_ξ index** and
+assembles from SYT(ξ)×SkewSYT(λ/ξ) — **no d_λ ambient, no null-space
+intertwiner**; only a tiny (≤3-dim) block-S₃ change-of-basis aligns to standard
+ρ_ν. Validated: reproduces the verified Rust combiner at λ⊢9 (max |Δ| 5e-50) and
+satisfies the combiner identity at λ⊢12 / A=4 (1e-49 on (10,2),(11,1),(7,5)).
+
+**Intrinsic ceiling (honest framing, no §6 conflict).** Per the main-merged
+verdict `χ_eff(k)=p(3k) exactly — the p(3A) wall is intrinsic`, the recursion
+kernel **cannot beat the fine-Bratteli transfer asymptotically**. Its value is
+(a) making the operator-valued combiner *run* at A=4+ as an independent
+cross-check of the transfer, (b) preserving the A-operator's structural /
+shadow-price content the scalar transfer discards, (c) a constant-factor win.
+Validated against the transfer at 1e-25 — speedup-to-an-already-validated-value,
+not a production-value change, not a fit.
+
+**Coordination.** Intent posted on #2371 (recursion-wiring — owns the ³He/atomic
+assembly; consumes this kernel) and #2392 (exciting-rubin — Task A all-blocks;
+shares `combiner_block`, mechanical rebase expected). Division of labour: #2371
+owns assembly/wiring, #2403 owns the combiner kernel.
+
+### ⁴He end-to-end validation (A=4, PR #2403)
+
+The recursion kernel reproduces the production binding observable at A=4
+(`a_operator/a_operator_recursive_he4_crosscheck.py`), peeling the last nucleon
+off the canonical `atom_braid_word_3A(2,2)` (n-n bridge, `I = σ₈ − h·1`):
+
+- **(a) per-λ, airtight** — combiner χ^λ vs direct `chi_young` on the *same* ⁴He
+  word (8 λ⊢12, d≤120): **max |Δ| = 2.4e-47** ≪ 1e-25.
+- **(b) end-to-end tr_M** — `Σ_λ y_λ χ^λ` (all 77 λ⊢12) vs the fine-Bratteli
+  transfer: tr_M_comb = 0.0553584434002387**77**, tr_M_transfer =
+  0.0553584434002387**646**, **rel = 2.2e-16** (float64 floor of the atom
+  word's stored constants; the per-λ-vs-transfer gap 6.2e-15 is that convention
+  floor — (a) confirms the kernel itself is exact).
+
+Validates the operator-valued combiner as an **independent A≥4 cross-check** of
+the transfer — not a replacement (p(3A) verdict). Wiring target: closure path
+(b) at `canonical_tr_m_via_branching.py:263` (`return None` → operator-form A),
+retiring the rank-deficient fitted H_9+ extracts. That wiring + its MBA-appendix
+sync is a **separate follow-up PR** (keeps #2403 a clean kernel deliverable).

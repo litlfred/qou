@@ -537,14 +537,18 @@ ATOMS = [
     # (table tops out at n=11).  Add once that witness is regenerated.
 ]
 
-# CODATA reference masses (MeV/c²) at 1 ppb precision available.
+# CODATA reference masses (MeV/c²) — codata_constants registry (no inline literals)
+from codata_constants import (  # noqa: E402
+    M_P_MEV_VALIDATION, M_N_MEV_VALIDATION, M_D_MEV_VALIDATION,
+    M_T_MEV_VALIDATION, M_HE3_MEV_VALIDATION, M_HE4_MEV_VALIDATION,
+)
 CODATA_MASS = {
-    "p (proton)":   mp.mpf("938.27208816"),
-    "n (neutron)":  mp.mpf("939.56542052"),
-    "D (deuteron)": mp.mpf("1875.61294500"),  # binding-derived
-    "T (triton)":   mp.mpf("2808.92113298"),
-    "3He":          mp.mpf("2808.39160743"),
-    "4He":          mp.mpf("3727.37941"),
+    "p (proton)":   M_P_MEV_VALIDATION,
+    "n (neutron)":  M_N_MEV_VALIDATION,
+    "D (deuteron)": M_D_MEV_VALIDATION,
+    "T (triton)":   M_T_MEV_VALIDATION,
+    "3He":          M_HE3_MEV_VALIDATION,
+    "4He":          M_HE4_MEV_VALIDATION,
 }
 
 

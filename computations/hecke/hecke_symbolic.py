@@ -1091,8 +1091,8 @@ class SymbolicHeckeDivision:
                 f"implemented in Phase 2.  Phase 1.5 infrastructure "
                 f"(Kazhdan–Lusztig polynomials, T_w ↔ C_w change of "
                 f"basis) is shipped — see "
-                f"folio-assistant/computations/kazhdan_lusztig.py and "
-                f"folio-assistant/computations/crystal_basis.py."
+                f"computations/kazhdan_lusztig.py and "
+                f"computations/crystal_basis.py."
             )
         # Within scope: delegate to laurent (proven-equivalent) and tag
         # the witness so downstream regression diffs are aware.  When

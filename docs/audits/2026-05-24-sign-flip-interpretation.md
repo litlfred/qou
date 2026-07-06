@@ -6,7 +6,7 @@
 **Parent audit:** [`2026-05-24-low-isotope-mass-error-anatomy.md`](2026-05-24-low-isotope-mass-error-anatomy.md)
 **Status:** Interpretation only — no production change. Identifies the load-bearing categorical question and points to the Bring color-tube weighted averaging as the likely closure mechanism.
 
-## Diagnostic data (from [`low-isotope-sign-flip-diagnostic.witness.json`](../../folio-assistant/computations/low-isotope-sign-flip-diagnostic.witness.json))
+## Diagnostic data (from [`low-isotope-sign-flip-diagnostic.witness.json`](../../computations/low-isotope-sign-flip-diagnostic.witness.json))
 
 Per-isotope inter-nucleon channel count vs prediction error:
 
@@ -39,7 +39,7 @@ See [`2026-05-24-4he-magic-shell-color-tube-audit.md`](2026-05-24-4he-magic-shel
 
 ## The categorical reading — Bring color-tube weighted averaging
 
-The current production rule (per [`isotope_record_schema.py:176-178`](../../folio-assistant/computations/isotope_record_schema.py)) assigns inter-nucleon Hecke generators by **flavor only**:
+The current production rule (per [`isotope_record_schema.py:176-178`](../../computations/isotope_record_schema.py)) assigns inter-nucleon Hecke generators by **flavor only**:
 
 | Channel | Hecke generator | d-coefficient |
 |---------|-----------------|---------------|
@@ -59,7 +59,7 @@ Under color-weighting:
 | nn (udd × udd) | 4 same-color, 5 different | **closer to −h** but shifted by color-mix |
 | pn (uud × udd) | 3 same-color, 6 different | **closer to −h/2** but shifted by quark-content |
 
-The current uniform-averaging convention is a **flavor-only projection** of the color-weighted form — it loses the color-content distinction that empirically explains Δm_{n−p} to 0.14% (per [`probe_pn_flavor_asymmetry.py`](../../folio-assistant/computations/probe_pn_flavor_asymmetry.py) Scheme 4 finding referenced in the cheat-sheet).
+The current uniform-averaging convention is a **flavor-only projection** of the color-weighted form — it loses the color-content distinction that empirically explains Δm_{n−p} to 0.14% (per [`probe_pn_flavor_asymmetry.py`](../../computations/probe_pn_flavor_asymmetry.py) Scheme 4 finding referenced in the cheat-sheet).
 
 **Hypothesis:** the +2.23%/arc linear shift in the diagnostic above reflects a uniform-projection bias that color-weighting would resolve. Each color-pair contributes a different effective h-weight; the uniform σ_avg averages them but loses the per-pair structure. If the color-weighted form gives ANY per-channel weight refinement, the per-isotope corrections would no longer be uniform per arc.
 
@@ -90,7 +90,7 @@ The diagnostic localises the closure work to the **geometric** substrate — spe
 
 - Parent audit: [`2026-05-24-low-isotope-mass-error-anatomy.md`](2026-05-24-low-isotope-mass-error-anatomy.md)
 - Coordination ledger: [`docs/coordination/2026-05-24-low-isotope-mass-anatomy-ledger.md`](../coordination/2026-05-24-low-isotope-mass-anatomy-ledger.md)
-- Sign-flip diagnostic script: [`low_isotope_sign_flip_diagnostic.py`](../../folio-assistant/computations/low_isotope_sign_flip_diagnostic.py)
+- Sign-flip diagnostic script: [`low_isotope_sign_flip_diagnostic.py`](../../computations/low_isotope_sign_flip_diagnostic.py)
 - Color-tube infrastructure: `content/quantum-observable-universe/archimedean-universe/color-tube-*.md` (existing)
 - Color-tube weighting open finding: [`docs/canonical-derivation-cheat-sheet.md` §"Bring color-tube weighted averaging"](../canonical-derivation-cheat-sheet.md)
 - PR [#1063](https://github.com/litlfred/qou/pull/1063) — Family A gap audit (single-VolDensity refinement framing falsified for A ≥ 3 by this diagnostic)

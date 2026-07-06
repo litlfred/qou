@@ -1,76 +1,96 @@
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Tactic
+import Mathlib.Analysis.SpecialFunctions.Sqrt
 
 /-!
-# QOU.Observations.QPlancherelAsymptoticSkeleton — placeholder stub
+# QOU.Observations.QPlancherelAsymptoticSkeleton
 
-**Placeholder canonical** for content block
-[`prop:q-plancherel-asymptotic-skeleton`](../../../quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.md): *QOU.Observations.QPlancherelAsymptoticSkeleton*.
+**Proposition** ([`prop:q-plancherel-asymptotic-skeleton`](../../../quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.md)).
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.Observations.QPlancherelAsymptoticSkeleton` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
+The q-deformed Wedderburn weight `w̃_λ^{(n)} = dim_q²(λ)/[n]_q!` pushes
+forward to measures on the q-deformed Thoma simplex whose character
+fluctuations obey the Féray–Méliot variance bound `O(1/√(n − 3))`
+(clause 2 of the manuscript, established); the `q = 1` weak limit
+(clause 1) and the operator-algebra realisation of the generic-`q` limit
+(clause 3) are the literature/conjectural parts.
+
+## Disposition (derived, not projected)
+
+The previous encoding returned `ctx.constant_eq_one ▸ ctx.char_variance_bound`
+— i.e. it re-emitted the class field that **is** the variance-bound
+conclusion (after substituting `C = 1`); no derivation.
+
+Here the class carries the genuine **input**: the Féray–Méliot bound
+`char_variance n ≤ 1/√(n − 3)` (an established external theorem, cited
+[`feray2010`]) together with non-negativity of the variance. The theorem
+then **derives** the actual asymptotic content the manuscript needs — the
+character fluctuations **vanish in the large-`n` limit**,
+`char_variance n → 0` — by squeezing between `0` and the majorant
+`1/√(n − 3) → 0`. This vanishing is precisely what makes the pushforward
+measures concentrate (the measure-theoretic half of the convergence in
+clauses 1–2); it is a *consequence* of the bound, not a restatement of a
+field.
+
+The full measure-valued statement (existence of `Ω_q`, the pushforward
+maps `ι_n`, weak convergence, and the conjectural operator-algebra
+realisation 3a/3b) is not formalised here — those are the open
+literature/conjectural parts of the manuscript, honestly left unencoded
+rather than smuggled into a `True`/projection field.
+
+## Cross-references
+
+  - [content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.md]
+  - [content/quantum-observable-universe/lean/QOU/MathlibExt/QPlancherel.lean] (`HasQPlancherelCLT`)
 -/
 
 namespace QOU.Observations
 
+open Filter Topology
 
-/-- Abstract context for the `QPlancherelAsymptoticSkeleton` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
+/-- Established **inputs** for the q-Plancherel asymptotic skeleton. The
+    Féray–Méliot variance bound (clause 2) is a cited external theorem;
+    the theorem `QPlancherelAsymptoticSkeleton` **derives** the asymptotic
+    vanishing of the fluctuations from it, rather than re-emitting it. -/
 class QPlancherelAsymptoticSkeletonContext where
-  /-- The substrate parameter `q : ℝ`. -/
-  q : ℝ
-  /-- Variance of character fluctuations at strand count `n`. -/
+  /-- Variance of the character fluctuations `χ_λ − 𝔼_q[χ]` at strand
+      count `n`, measured under the pushforward measure `μ_n^{(q)}`. -/
   char_variance : ℕ → ℝ
-  /-- Manuscript identity (Féray-Méliot variance bound, established):
-      `Var(χ_λ - 𝔼[χ]) = O(1/√(n-3))` — encoded by
-      `char_variance n ≤ 1 / Real.sqrt (n - 3 : ℝ)` for `n ≥ 4`. -/
-  claim_q_plancherel_asymptotic_skeleton : ∀ n : ℕ, 4 ≤ n →
+  /-- The variance is non-negative (it is a variance). -/
+  variance_nonneg : ∀ n : ℕ, 0 ≤ char_variance n
+  /-- **Féray–Méliot bound** (clause 2, established): the character
+      fluctuations have variance `O(1/√(n − 3))`. Cited external input,
+      not proved here. -/
+  feray_meliot_bound : ∀ n : ℕ, 4 ≤ n →
     char_variance n ≤ 1 / Real.sqrt ((n : ℝ) - 3)
 
-/-- **Proposition statement** (from manuscript):
+/-- **q-Plancherel asymptotic skeleton — fluctuation vanishing**
+    ([`prop:q-plancherel-asymptotic-skeleton`]).
 
-Let $\tilde w_\lambda^{(n)} := \dim_q^2(\lambda) / [n]_q!$ be the
-q-deformed Wedderburn weight on partitions of $n$
-([Wedderburn weight canonical form](#prop:wedderburn-weight-canonical)).
-There exists a topological space $\Omega_q$ (the q-deformed Thoma
-simplex) and a sequence of pushforward maps*
-$$
-  \iota_n \colon \{\lambda \vdash n\}
-    \;\longrightarrow\; \Omega_q,
-  \qquad
-  n \in \mathbb{N},
-$$
-*such that the pushforward measures
-$\mu_n^{(q)} := (\iota_n)_*\,\tilde w_\lambda^{(n)}$ on $\Omega_q$
-satisfy:*
+    The character fluctuations vanish in the large-`n` limit:
+    `char_variance n → 0`.
 
-1. *(Existence of limit at $q = 1$, established.) For $q = 1$, the
-   sequence $\{\mu_n^{(1)}\}$ converges weakly to a measure
-   $\mu_\infty^{(1)}$ on the classical Thoma simplex* [`kerov1981`,
-   `biane1998`].
-2. *(Variance bound at generic $q$, established by Féray–Méliot.)
-   The character fluctuations $\chi_\lambda - \mathbb{E}_q[\chi]$
-   measured under $\mu_n^{(q)}$ have variance
-   $O(1/\sqrt{n - 3})$* [`feray2010`].
-3. *(Limit identification, conjectural.) For $q \neq 1$ in the
-   Wenzl positivity regime
-   ([algebraic GNS embedding](#prop:algebraic-gns-embedding)),
-   $\{\mu_n^{(q)}\}$ converges weakly to a limit measure
-   $\mu_\infty^{(q)}$ on $\Omega_q$. The identification of
-   $\mu_\infty^{(q)}$ with a measure on the GNS operator algebra
-   $\pi_{\mathrm{GNS}}(H_\infty(q))$ is conditional on the existence
-   of a continuous map $\Omega_q \to L(\mathcal{H})$ compatible with
-   $\iota_n$.*
-
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types and translating
-    the manuscript claim above. -/
--- Ref: [manuscript] quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts
+    **Derived** by squeezing the Féray–Méliot majorant `1/√(n − 3)` (which
+    itself tends to `0`, proved here via `Real.sqrt` continuity at `0`)
+    against the non-negative variance. This is the measure-concentration
+    content the manuscript's clauses 1–2 rest on — a consequence of the
+    cited bound, not a projection of it. -/
+-- Ref: [feray2010] https://doi.org/10.1016/j.aim.2010.05.007
+-- Ref: [manuscript] quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.md
 theorem QPlancherelAsymptoticSkeleton [ctx : QPlancherelAsymptoticSkeletonContext] :
-    ∀ n : ℕ, 4 ≤ n →
-      ctx.char_variance n ≤ 1 / Real.sqrt ((n : ℝ) - 3) :=
-  ctx.claim_q_plancherel_asymptotic_skeleton
+    Tendsto (fun n : ℕ => ctx.char_variance n) atTop (𝓝 0) := by
+  -- The Féray–Méliot majorant `1/√(n − 3)` tends to `0`.
+  have hden : Tendsto (fun n : ℕ => (n : ℝ) - 3) atTop atTop := by
+    simpa using tendsto_atTop_add_const_right atTop (-3 : ℝ) tendsto_natCast_atTop_atTop
+  have hinv : Tendsto (fun n : ℕ => ((n : ℝ) - 3)⁻¹) atTop (𝓝 0) :=
+    tendsto_inv_atTop_zero.comp hden
+  have hmaj : Tendsto (fun n : ℕ => 1 / Real.sqrt ((n : ℝ) - 3)) atTop (𝓝 0) := by
+    have h := (Real.continuous_sqrt.tendsto (0 : ℝ)).comp hinv
+    rw [Real.sqrt_zero] at h
+    refine h.congr (fun n => ?_)
+    simp only [Function.comp_apply, Real.sqrt_inv, one_div]
+  -- Squeeze `0 ≤ char_variance n ≤ 1/√(n − 3)`.
+  refine tendsto_of_tendsto_of_tendsto_of_le_of_le' tendsto_const_nhds hmaj
+    (Eventually.of_forall (fun n => ctx.variance_nonneg n)) ?_
+  filter_upwards [eventually_ge_atTop 4] with n hn
+  exact ctx.feray_meliot_bound n hn
 
 end QOU.Observations

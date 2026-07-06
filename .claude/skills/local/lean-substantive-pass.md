@@ -77,7 +77,7 @@ When a block uses standard QOU vocabulary, declare these fields:
 | classical Plancherel | `w_λ : PartitionIdx → ℝ` |
 | q-deformed Wedderburn | `w_tilde : PartitionIdx → ℝ` |
 
-Per CLAUDE.md §7c (archimedean wall), keep types generic unless the
+Per AGENTS.md §7c (archimedean wall), keep types generic unless the
 specific construction requires `ℝ`. `Matrix R d₁ d₂`,
 `Polynomial R`, `Finset.sum` are all generic-typeclass-friendly.
 

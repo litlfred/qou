@@ -1,7 +1,7 @@
-**Proposition (Q_β c_8, c_9, c_10 closed-form values at the silver ratio).**
+**Proposition ($\mathfrak{Q}_\beta$ c_8, c_9, c_10 closed-form values at the silver ratio).**
 
 *At the silver ratio $q = 1 + \sqrt{2}$ where the Hoefsmit parameter takes
-the exact rational value $b^2 = 7/8$, the closed-form Q_β precision-ladder
+the exact rational value $b^2 = 7/8$, the closed-form $\mathfrak{Q}_\beta$ precision-ladder
 coefficients $c_8$, $c_9$, $c_10$ extend the documented Pell-Lucas
 $\sigma$-action pattern:*
 
@@ -21,11 +21,11 @@ $$
 PURE σ-action rung with no averaging-resonance $\tfrac{1}{2}$
 fingerprint.*
 
-## Why these values matter
+## Significance of these values
 
 The Pell-Lucas-clean classification at the silver ratio is the
-**structural signal** for the Q_β c_k precision ladder. Per the
-SDP-extraction script's own caveat, the c_k values extracted at the
+**structural signal** for the $\mathfrak{Q}_\beta$ c_k precision ladder. Per the
+SDP-extraction formalism's own caveat, the c_k values extracted at the
 substrate anchor $q_0$ become noise-floor-dominated for $k \geq 8$;
 the silver ratio is where the algebraic structure is visible.
 
@@ -46,7 +46,7 @@ transcendental or symbolic-q machinery required.
 
 All three closed by `norm_num` after expanding the closed-form
 expression. The Lean theorems live as `Rat` equalities; they extend
-trivially to any field containing $\mathbb{Q}$.
+to any field containing $\mathbb{Q}$.
 
 ## q-usage discipline
 
@@ -62,7 +62,7 @@ are specialised here to the silver-ratio rational point.
 
 - SDP-extraction witness with the Pell-Lucas check at the silver
   ratio: `qbeta-decay-sdp-extended-ck.witness.json` on `main`.
-- Closed-form derivation probe + witness:
-  `probes/qbeta_c8_c10_closed_form_predictions.py`.
-- Closed-form wiring outcome at $q_0$ (companion empirical probe):
-  `probes/qbeta_closed_form_wiring_n4_to_n10.py`.
+- Closed-form derivation canonical evaluation + witness:
+  the formal derivation.
+- Closed-form wiring outcome at $q_0$ (companion categorical canonical evaluation):
+  the formal derivation.

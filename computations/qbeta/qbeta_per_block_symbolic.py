@@ -19,7 +19,7 @@ This is the foundational data for per-block c_k^(λ) extraction via
 Taylor expansion around q = 1.
 
 Run:
-    python3 folio-assistant/computations/qbeta_per_block_symbolic.py
+    python3 computations/qbeta_per_block_symbolic.py
 """
 from __future__ import annotations
 

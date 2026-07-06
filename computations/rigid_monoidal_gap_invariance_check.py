@@ -24,7 +24,7 @@ symbolically AND at substrate q_0 to 50 dps / 1e-40):
       exactly once), M3 tr(1) = 1, plus the Hecke quadratic — with
       no NF basis at all.
 
-Conventions (CLAUDE.md §7a): Hecke quadratic (s - q)(s + q^{-1}) = 0,
+Conventions (AGENTS.md §7a): Hecke quadratic (s - q)(s + q^{-1}) = 0,
 i.e. s_i^2 = h s_i + 1 with h = q - q^{-1}; Markov parameter
 z = 1/(sqrt(q) + 1/sqrt(q)).
 
@@ -59,7 +59,7 @@ from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
-# ── Shared symbols (CLAUDE.md §7a conventions) ───────────────────
+# ── Shared symbols (AGENTS.md §7a conventions) ───────────────────
 Q = sp.Symbol("q", positive=True)
 H = Q - 1 / Q                          # Hecke parameter: s^2 = h s + 1
 Z = 1 / (sp.sqrt(Q) + 1 / sp.sqrt(Q))  # Markov parameter
@@ -166,7 +166,7 @@ def main() -> int:
         "cyclicity + M2 peel + M3 + Hecke quadratic) — must agree "
         "symbolically (sympy simplify == 0) and at substrate q_0 to "
         "1e-40 (50 dps). No float64 anywhere. Includes the corrected "
-        "tr_M(s0 s1 s0) = h z^2 + z with h = q - q^{-1} per CLAUDE.md "
+        "tr_M(s0 s1 s0) = h z^2 + z with h = q - q^{-1} per AGENTS.md "
         "§7a (the deprecated lp-duality-check.py's z^3 claim used an "
         "invalid Markov-move chain and is superseded)."
     )
@@ -183,7 +183,7 @@ def main() -> int:
 
     print("=" * 72)
     print(" Markov-trace convention-invariance — NF algebra vs Markov axioms")
-    print(" (both routes fully symbolic; h = q - 1/q per CLAUDE.md §7a)")
+    print(" (both routes fully symbolic; h = q - 1/q per AGENTS.md §7a)")
     print("=" * 72)
 
     all_sym_ok = True
@@ -226,7 +226,7 @@ def main() -> int:
 
     w.add_data("results", results)
     w.add_data("hecke_convention",
-               "s^2 = (q - q^{-1}) s + 1 per CLAUDE.md §7a; "
+               "s^2 = (q - q^{-1}) s + 1 per AGENTS.md §7a; "
                "z = 1/(sqrt(q) + 1/sqrt(q))")
     w.add_data("tolerance_at_q0", "1e-40 (both routes symbolic, 50 dps)")
     w.add_data("superseded_producer",

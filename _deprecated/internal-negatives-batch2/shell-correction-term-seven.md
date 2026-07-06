@@ -202,9 +202,9 @@ $A = 1$ the sum reduces to those lower strata only, since no
 partition of $3$ can have exactly six parts.*
 
 *evaluated at the crystal limit $q \to 0$ (witness:
-[`term7-alpha5-crystal-derivation.witness.json`](../../../folio-assistant/computations/term7-alpha5-crystal-derivation.witness.json),
+[`term7-alpha5-crystal-derivation.witness.json`](../../../computations/term7-alpha5-crystal-derivation.witness.json),
 chain:
-[`term7-s-crystal-4he.derivation.json`](../../../folio-assistant/computations/term7-s-crystal-4he.derivation.json)).
+[`term7-s-crystal-4he.derivation.json`](../../../computations/term7-s-crystal-4he.derivation.json)).
 $\chi_\lambda^\mathrm{crystal}(\beta_A)$ is the trace of the
 crystal-limit signed-permutation action on $\mathrm{SYT}(\lambda)$,
 conditional on

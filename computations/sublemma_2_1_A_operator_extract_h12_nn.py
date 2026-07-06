@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
 """Sub-lemma 2.1 operator-valued A^λ_{ξν''}(I_nn) extraction at H_{12}.
 
+.. note::
+   **STATUS (2026-06-16): INERT in production + rank-deficient min-norm fit.**
+   The A≥3 path of ``canonical_tr_m_via_branching.py`` returns the value via the
+   lossless transfer matrix; this least-squares H_12 extract feeds no live value.
+   Non-fitted replacement: the categorical ``A^λ_{ξν}(I)=Π_{ξν} ρ_λ(I) Π_{ξν}``
+   (``a_operator_categorical.py``). See
+   ``docs/audits/2026-06-16-wenzl-a3-wireup-scope-and-deflag.md``.
+
 Phase-1 starter for the A = 4 (⁴He) extension of
 prop:mass-tower-operator-valued. Mirrors the H_9 extraction pattern
 in `sublemma_2_1_A_operator_extract_h9.py`, with H_{12} ↓ H_9 × H_3

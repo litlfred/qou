@@ -92,17 +92,17 @@ theorem deuteron_regime : regimeSwitchedBinding 1 1 = bindingSW 1 1 := by
 /-- Tritium (A=3) uses BW+χ. -/
 theorem tritium_regime : regimeSwitchedBinding 1 2 = bindingBW 1 2 := by
   unfold regimeSwitchedBinding
-  decide
+  simp
 
 /-- Helium-4 (A=4) uses BW+χ. -/
 theorem helium4_regime : regimeSwitchedBinding 2 2 = bindingBW 2 2 := by
   unfold regimeSwitchedBinding
-  decide
+  norm_num
 
 /-- Lithium-6 (A=6) uses BW+shell. -/
 theorem lithium6_regime :
     regimeSwitchedBinding 3 3 = bindingBWShell 3 3 := by
   unfold regimeSwitchedBinding
-  decide
+  simp
 
 end QOU.BraidKnot

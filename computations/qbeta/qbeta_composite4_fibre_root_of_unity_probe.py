@@ -4,7 +4,7 @@ reconnaissance for the Q_β c_3 residue A.
 
 EXPLORATORY probe (task ② of the 2026-06-04 Habiro follow-up, PR #1802
 scope doc `docs/scope/2026-06-04-habiro-fibre-composite4-mtau-scope.md`).
-NOT a wire decision and NOT a derivation — it operationalises CLAUDE.md
+NOT a wire decision and NOT a derivation — it operationalises AGENTS.md
 §"Im(q) at fibre vs observable" for the c_3 closure and tests the #1801
 verdict that the `/25` denominator is a **q-undeformed** constant.
 
@@ -13,7 +13,7 @@ verdict that the `/25` denominator is a **q-undeformed** constant.
 Uses only `mpmath` (no `pyhecke` / `q_parameter` / `witness_base` shims)
 so it runs in the web sandbox. The canonical q₀ (50 dps) and the
 cal-anchored c_3 are pinned as literals below — both verified against
-`folio-assistant/computations/qbeta/*.witness.json` on main.
+`computations/qbeta/*.witness.json` on main.
 
 ## Background
 
@@ -69,7 +69,7 @@ mp.dps = 60
 IM_TOL = mpf(10) ** (-40)
 
 # ── Pinned canonical constants (verified vs main witnesses) ──
-Q0_STR = "1.1099785827513808075916690956107688798744991218736"
+Q0_STR = "1.1099785955573347198997632204832250266562084087802"
 C3_CAL_STR = "-2.06934257711516783787971951725"
 
 

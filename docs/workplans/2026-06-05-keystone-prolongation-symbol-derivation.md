@@ -79,7 +79,7 @@ discipline) — consume its outputs. Coordination posted on #1765.
 ### 4a. How to run `sw_prolongation_symbol.py`
 
 ```bash
-cd folio-assistant/computations/substrate && python3 -u sw_prolongation_symbol.py
+cd computations/substrate && python3 -u sw_prolongation_symbol.py
 ```
 
 - **Input:** a sequence `seq = [a_D⁽²⁾, a_D⁽³⁾, a_D⁽⁴⁾, …]` of residue weights

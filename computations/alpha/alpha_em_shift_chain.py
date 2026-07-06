@@ -15,11 +15,11 @@ Composes:
 Cross-checks against:
   - q_parameter.Q_MP (50-digit canonical q₀)
   - The independent witness
-    folio-assistant/computations/alpha-shift-torus.witness.json
+    computations/alpha-shift-torus.witness.json
     (reads the recorded α_shift values and uses them as the
     q-integer indices, demonstrating the chain composes).
 
-@module folio-assistant/computations/alpha_em_shift_chain
+@module computations/alpha_em_shift_chain
 """
 
 from __future__ import annotations

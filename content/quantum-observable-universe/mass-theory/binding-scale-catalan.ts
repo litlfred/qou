@@ -9,8 +9,8 @@ export default proposition({
   uses: ["def:borromean-baryon"],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/catalan_binding.py",
-    witness: "folio-assistant/computations/catalan-binding.witness.json",
+    script: "computations/catalan_binding.py",
+    witness: "computations/catalan-binding.witness.json",
     status: "verified",
     requires: ["mpmath"],
   },

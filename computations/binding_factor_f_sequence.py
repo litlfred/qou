@@ -33,7 +33,7 @@ STATUS / DISCIPLINE:
     running separately). Flagged here, not wired to production.
   • f is AME-EXTRACTED, not derived. With 7 points the target for the
     open Barrier-1 derivation is now concrete: reproduce the ⁴He magic
-    peak from the Demazure crystal closure level (CLAUDE.md §7b), NOT a
+    peak from the Demazure crystal closure level (AGENTS.md §7b), NOT a
     fitted ansatz (forbidden, Δ_λ gate).
 """
 from __future__ import annotations
@@ -128,7 +128,7 @@ def main() -> int:
     print(f"  5Li valence drop: f(5Li)/f(⁴He) = {mp.nstr(f_5li / f_he4, 4)} (<1: "
           f"5th nucleon loosely bound, proton-unbound 5Li)")
     print("  ⇒ f is a magic-SHELL-closure quantity (#1417), NOT a bond/interface")
-    print("    count. Derive from Demazure crystal closure (CLAUDE.md §7b); do")
+    print("    count. Derive from Demazure crystal closure (AGENTS.md §7b); do")
     print("    NOT fit (forbidden ansatz, Δ_λ gate).")
 
     wb.set_description(

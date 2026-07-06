@@ -3,8 +3,8 @@
 **Date.** 2026-05-04
 **Branch.** `copilot/identify-multiplicative-chain`
 **Conjecture.** [`conj:confinement-nf-structure-forcing`](../../content/quantum-observable-universe/braids-and-knots/confinement-nf-structure-forcing.md)
-**Witness.** [`folio-assistant/computations/lp-confinement-nf-forcing.witness.json`](../../folio-assistant/computations/lp-confinement-nf-forcing.witness.json)
-**Probe.** [`folio-assistant/computations/lp_confinement_nf_forcing.py`](../../folio-assistant/computations/lp_confinement_nf_forcing.py)
+**Witness.** [`computations/lp-confinement-nf-forcing.witness.json`](../../computations/lp-confinement-nf-forcing.witness.json)
+**Probe.** [`computations/lp_confinement_nf_forcing.py`](../../computations/lp_confinement_nf_forcing.py)
 **Upstream.** [`docs/audits/2026-05-04-nh-basis-shift.md`](2026-05-04-nh-basis-shift.md), [`prop:operator-selection-lp`](../../content/quantum-observable-universe/braids-and-knots/operator-selection-lp.md)
 
 ## Question
@@ -19,9 +19,9 @@ inside $A$, with the deviation $\Delta = \mathrm{shift}_{\mathrm{NF}}(\beta)
 
 ## Method
 
-Per CLAUDE.md §LP/SDP duals, the LP probe must emit BOTH primal
+Per AGENTS.md §LP/SDP duals, the LP probe must emit BOTH primal
 and dual fields. The probe uses
-[`solve_operator_selection_lp`](../../folio-assistant/computations/lp_dual_solver.py)
+[`solve_operator_selection_lp`](../../computations/lp_dual_solver.py)
 on the data:
 
 - $t_\lambda = -\mathrm{tr}\,\rho_\lambda(T_\beta)|_{q=q_0}$
@@ -35,7 +35,7 @@ on the data:
 For each compound the witness records $(x^*, y_0^*, y_\lambda^*,
 \mathrm{primal\_obj}, \mathrm{dual\_obj}, \mathrm{duality\_gap})$,
 the active set $A$, and the seminormal pole order of $T_\beta$
-computed independently via [`shift_full`](../../folio-assistant/computations/nh_basis_shift.py).
+computed independently via [`shift_full`](../../computations/nh_basis_shift.py).
 
 ## Result — 6 / 6 compounds at $n \in \{3, 4\}$
 
@@ -108,10 +108,10 @@ empirical kernel at low rank:
   conjecture witnessed empirically; no formal proof is attempted.
   Downstream blocks that depend on this conjecture must be
   `remark` blocks with `interprets`, or carry the
-  conditional-class structure of CLAUDE.md §3b-cond.
+  conditional-class structure of AGENTS.md §3b-cond.
 
 ## Where it lands
 
 - **Conjecture block:** [`content/quantum-observable-universe/braids-and-knots/confinement-nf-structure-forcing.{ts,md}`](../../content/quantum-observable-universe/braids-and-knots/confinement-nf-structure-forcing.md)
-- **Probe + witness:** [`folio-assistant/computations/lp_confinement_nf_forcing.py`](../../folio-assistant/computations/lp_confinement_nf_forcing.py), [`folio-assistant/computations/lp-confinement-nf-forcing.witness.json`](../../folio-assistant/computations/lp-confinement-nf-forcing.witness.json)
+- **Probe + witness:** [`computations/lp_confinement_nf_forcing.py`](../../computations/lp_confinement_nf_forcing.py), [`computations/lp-confinement-nf-forcing.witness.json`](../../computations/lp-confinement-nf-forcing.witness.json)
 - **Builds on:** [`docs/audits/2026-05-04-nh-basis-shift.md`](2026-05-04-nh-basis-shift.md), [`prop:operator-selection-lp`](../../content/quantum-observable-universe/braids-and-knots/operator-selection-lp.md), [`prop:alpha-shift-torus-knot`](../../content/quantum-observable-universe/braids-and-knots/alpha-shift-torus-knot.md)

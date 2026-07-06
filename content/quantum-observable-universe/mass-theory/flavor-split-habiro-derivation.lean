@@ -1,5 +1,6 @@
 import Mathlib.Algebra.Ring.Basic
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.LinearCombination
 
 /-!
 # Flavor-Split Topological Derivation
@@ -34,7 +35,7 @@ theorem topological_flavor_split
     calc
       σ_inv = σ_inv * 1 := by ring
       _ = σ_inv * (σ^2 - h * σ) := by
-        have h1 : σ^2 - h * σ = 1 := by linarith [h_quad]
+        have h1 : σ^2 - h * σ = 1 := by linear_combination h_quad
         rw [h1]
       _ = σ_inv * σ * σ - h * (σ_inv * σ) := by ring
       _ = 1 * σ - h * 1 := by rw [h_inv2]
@@ -61,14 +62,9 @@ theorem alternating_projection_weak_vertex
     (h_def : h = q - q_inv)
     (h_inv : q * q_inv = 1) :
     q^2 = 1 + h * q := by
-  calc
-    q^2 = q * q := by ring
-    _ = (h + q_inv) * q := by
-      have h1 : q = h + q_inv := by linarith [h_def]
-      rw [h1]
-    _ = h * q + q_inv * q := by ring
-    _ = h * q + 1 := by
-      rw [mul_comm q_inv q, h_inv]
-    _ = 1 + h * q := by ring
+  -- Substitute h = q - q_inv and use q · q_inv = 1:
+  --   1 + h·q = 1 + (q - q_inv)·q = 1 + q² - q_inv·q = 1 + q² - 1 = q².
+  subst h_def
+  linear_combination h_inv
 
 end QOU.FlavorSplit

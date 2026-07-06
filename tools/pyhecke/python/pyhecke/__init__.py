@@ -1,6 +1,6 @@
 """pyhecke — Hecke algebra + Gram matrix + tower binding infrastructure.
 
-M1 carve-out of folio-assistant/computations/hecke_core.py. This module
+M1 carve-out of computations/hecke_core.py. This module
 exposes a stable import surface while delegating the heavy lifting to
 the legacy file so downstream scripts continue to work unchanged.
 

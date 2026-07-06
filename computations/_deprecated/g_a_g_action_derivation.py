@@ -44,7 +44,7 @@ OUTPUT
 
 USAGE
 =====
-    cd folio-assistant/computations && python3 g_a_g_action_derivation.py
+    cd computations && python3 g_a_g_action_derivation.py
 """
 from __future__ import annotations
 

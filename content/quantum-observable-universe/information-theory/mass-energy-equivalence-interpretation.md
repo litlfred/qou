@@ -1,0 +1,55 @@
+**Content of the theorem.**
+This is not a unit convention.  The crossing energy (an algebraic
+quantity: the Skein weight from $R$-matrix braiding) equals the
+categorical mass (an analytic quantity: the trace norm through
+the Frobenius pairing and comultiplication) multiplied by the
+**square of the information speed** --- the square of the ratio
+of spatial to temporal coupling in the $q$-connection.
+
+The factor $c_q^2 = 1/(q-1)^2$ has a direct information-theoretic
+interpretation: it converts the *resistance to vertical
+(Reeb) transport* (mass) into the *horizontal (spatial) crossing
+weight* (energy) by accounting for the mismatch between horizontal
+and vertical information rates in the $q$-connection.
+
+**Regime behaviour of $E = \mathfrak{m} \cdot c_q^2$.**
+
+| Regime          | $q$            | $c_q^2$         | Physics                                                          |
+| --------------- | -------------- | --------------- | ---------------------------------------------------------------- |
+| Deep-quantum    | $q \to \infty$ | $\to 0$         | Energy $\to 0$ for any mass: no spatial crossing weight          |
+| Deep quantum    | $\varphi^2$    | $\approx 0.382$ | Sub-relativistic: mass dominates energy                          |
+| Our universe    | $q_0$          | $\approx 83.2$  | $E \approx 83\mathfrak{m}$: large amplification                  |
+| Near-classical  | $1.01$         | $10{,}000$      | Extreme amplification: tiny mass $\to$ large energy              |
+| Classical limit | $q \to 1^+$    | $\to \infty$    | $E/\mathfrak{m} \to \infty$: classical $E = mc^2$ with $c$ large |
+
+At $q = q_0$, a vortex with categorical mass $\mathfrak{m}$
+carries crossing energy
+$E = \mathfrak{m}/(q-1)^2 \approx 83\mathfrak{m}$.
+This large amplification factor is the QOU explanation for why
+nuclear energy ($E = mc^2$) releases vastly more energy than the
+rest mass would suggest in everyday units.
+
+The concrete electron consistency check
+([electron consistency check](#rem:mass-energy-electron-check))
+and the pair-creation reinterpretation
+([pair creation reinterpreted](#rem:mass-energy-pair-creation))
+are worked separately.
+
+**Archimedean realisation.**
+Over $\mathbb{C}$, the categorical mass is realised as Yekutieli's
+nonabelian multiplicative integral \[yekutieli2015]
+([mass over $\mathbb{C}$](#cor:mass-identity-C)), and
+$E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$ becomes
+
+$$
+  \sum_{\text{crossings}} \epsilon_i
+  = 
+  \frac{1}{(q-1)^2}
+  \bigl\lVert
+  \mathrm{MI}\!\!\int_\Sigma
+  (\nabla_A q, L \wedge F^+)
+  \bigr\rVert,
+$$
+
+identifying the discrete Skein weight (spatial) with the rescaled
+continuous multiplicative-integral norm (temporal).

@@ -41,15 +41,16 @@ from _li_2_q_util import (  # noqa: E402
 )
 from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q as Q_CANONICAL  # noqa: E402
+from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
 
 set_compute_dps()
 
 q = mp.mpf(str(Q_CANONICAL))
 m_e = mp.mpf("0.51099895000")  # CAL-1 anchor (MeV)
 
-# CODATA targets
-m_p_codata = mp.mpf("938.27208816")
-m_n_codata = mp.mpf("939.56542052")
+# CODATA targets (codata_constants registry)
+m_p_codata = mp.mpf(M_P_MEV_VALIDATION)
+m_n_codata = mp.mpf(M_N_MEV_VALIDATION)
 m_avg_codata = (m_p_codata + m_n_codata) / 2
 
 print(f"=== bring_color_weighted base-scale probe at q_0 = {mp.nstr(q, 12)} ===\n")

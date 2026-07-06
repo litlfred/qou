@@ -55,19 +55,26 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import (  # noqa: E402
+    M_P_MEV_VALIDATION, M_N_MEV_VALIDATION, M_D_MEV_VALIDATION, M_T_MEV_VALIDATION,
+)
 
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
-Q_0_50DPS = "1.1099785827513808075916690956107688798744991218736"
+Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
 
-M_E_MEV = mp.mpf("0.51099895069")
-M_P_MEV = mp.mpf("938.27208816")
-M_N_MEV = mp.mpf("939.56542052")
-M_D_MEV = mp.mpf("1875.61294257")
-M_T_MEV = mp.mpf("2808.92113298")
-M_HE3_MEV = mp.mpf("2808.39160743")
-M_HE4_MEV = mp.mpf("3727.37941")
+# CODATA-2022 / AME-2020 masses (MeV) routed through the canonical
+# registry (I9 — no hardcoded literals). See codata_constants.py.
+from codata_constants import (  # noqa: E402
+    M_E_MEV,
+    M_P_MEV_VALIDATION as M_P_MEV,
+    M_N_MEV_VALIDATION as m_n_derived_3input,
+    M_D_MEV_VALIDATION as M_D_MEV,
+    M_T_MEV_VALIDATION as M_T_MEV,
+    M_HE3_MEV_VALIDATION as M_HE3_MEV,
+    M_HE4_MEV_VALIDATION as M_HE4_MEV,
+)
 
 VOL_BORROMEAN_8G = mp.mpf("7.32772475341775212043682811945907288619319499425")
 VOL_PHASE4_Z1 = mp.mpf("12.776")
@@ -122,7 +129,7 @@ def lambda_empirical(m_K: mp.mpf, vol_K: mp.mpf, q_0: mp.mpf) -> mp.mpf:
 # Light series + per-knot Vol (matches PR #1874 conventions)
 LIGHT_SERIES = [
     ("p",   1, 0, M_P_MEV,    VOL_BORROMEAN_8G),
-    ("n",   0, 1, M_N_MEV,    VOL_BORROMEAN_8G),
+    ("n",   0, 1, m_n_derived_3input,    VOL_BORROMEAN_8G),
     ("D",   1, 1, M_D_MEV,    VOL_PHASE4_Z1),
     ("T",   1, 2, M_T_MEV,    VOL_PHASE4_Z1),
     ("3He", 2, 1, M_HE3_MEV,  VOL_PHASE4_Z2),

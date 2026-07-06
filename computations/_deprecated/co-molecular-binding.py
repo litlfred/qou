@@ -23,7 +23,7 @@ The dressing level for atom (Z, N):
 Content block: prop:co-lp-dual-binding
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 co-molecular-binding.py
 """
 

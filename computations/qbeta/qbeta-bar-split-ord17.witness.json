@@ -1,0 +1,56 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-03T14:09:41.643638+00:00",
+  "commitSha": "46c886077e9d67295e0580709f64fd9046a16e9b",
+  "assertions": [
+    {
+      "name": "E_u_series_through_ORD",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 20,
+  "computation": "qbeta-bar-split-ord17",
+  "scriptFile": "qbeta_bar_split_ord17_probe.py",
+  "scriptHash": "d41eb7334d46",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "08ds: ORD=17 bar-split of the net-route log R — E(u~) persistence test (margin 9) and the h*D(u~)+h^3*F(u~) discriminant as a joint exact linear solve with explicit DOF accounting.",
+  "data": {
+    "ORD": 17,
+    "E_rungs_exact": {
+      "1": "3*sqrt(3)/4",
+      "2": "-2165/144",
+      "3": "-437041*sqrt(3)/12960",
+      "4": "-16725719/60480",
+      "5": "-822397949021*sqrt(3)/783820800",
+      "6": "-959974411053731/103464345600",
+      "7": "-105789090672195449*sqrt(3)/3012881743872",
+      "8": "-14509769665633858665527/40673903542272000"
+    },
+    "E_first_nonzero_residual": null,
+    "E_margin": 9,
+    "B_constraints": 17,
+    "B_unknowns": 16,
+    "B_margin": 1,
+    "B_solvable": false,
+    "B_free_params": 0,
+    "B_coefficients": {},
+    "verdict_A": "E(u~) holds through s^17 with margin 9",
+    "verdict_B": "h*D(u~) + h^3*F(u~) INCONSISTENT — exact refutation of the one-variable-F form at this order (scope (a))",
+    "scope": "(a); consistency-at-margin tier for (B); no wiring"
+  }
+}

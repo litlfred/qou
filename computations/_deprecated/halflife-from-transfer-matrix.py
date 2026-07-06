@@ -19,7 +19,7 @@ where:
 All from q + μ₀ + G_F (G_F open: to be derived from T_{3,5}).
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 halflife-from-transfer-matrix.py
 """
 

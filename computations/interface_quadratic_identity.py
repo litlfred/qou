@@ -63,38 +63,43 @@ print(f"  → R(extremal) ≈ ±{scalar_D * eig_plus:.6f}")
 print(f"  Observed R((6,)) = +1.005, R((1⁶)) = −1.005")
 print(f"  Match: {abs(scalar_D * eig_plus - 1.005) / 1.005 * 100:.1f}%")
 
-# Witness
-witness = {
-    "engine": "python3/mpmath",
-    "computedAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-    "computation": "interface-quadratic-identity",
-    "scriptFile": "interface_quadratic_identity.py",
-    "description": (
-        "PROVED: (sigma-h/2)^2 = 1+h^2/4 = [2]_q^2/4 (SCALAR). "
-        "From Hecke relation sigma^2 = h*sigma + 1. "
-        "Even powers are identity; odd powers are linear. "
-        "5 interface crossings = (1+h^2/4)^2 * (sigma-h/2). "
-        "Lean-proved in TwoRoutesProtonMass.lean."
-    ),
-    "data": {
-        "identity": "(sigma - h/2)^2 = 1 + h^2/4",
-        "scalar_value": str(scalar_sq),
-        "equals_two_q_sq_over_4": True,
-        "deuteron_5_crossings": {
-            "scalar_factor": scalar_D,
-            "linear_eigenvalues": [eig_plus, eig_minus],
-            "R_extremal_predicted": scalar_D * eig_plus,
-            "R_extremal_observed": 1.005,
-            "match_pct": abs(scalar_D * eig_plus - 1.005) / 1.005 * 100,
-        },
-    },
-    "assertions": [
-        {"label": "scalar = [2]_q^2/4", "passed": True},
-        {"label": "extremal R within 3%", "passed": abs(scalar_D * eig_plus - 1.005) < 0.03 * 1.005},
-    ],
-    "allPassed": True,
-}
+# Witness — routed through WitnessBuilder (cmiy/1j39: staleness-tracked,
+# replaces the hand-rolled dict + json.dump so the witness carries
+# scriptHash / commitSha / durationMs / engineVersion).
+from witness_base import WitnessBuilder  # noqa: E402
 
-with open(HERE / "interface-quadratic-identity.witness.json", "w", encoding="utf-8") as f:
-    json.dump(witness, f, indent=2, default=str)
-print(f"\nWitness: interface-quadratic-identity.witness.json")
+data_payload = {
+    "identity": "(sigma - h/2)^2 = 1 + h^2/4",
+    "scalar_value": str(scalar_sq),
+    "equals_two_q_sq_over_4": True,
+    "deuteron_5_crossings": {
+        "scalar_factor": scalar_D,
+        "linear_eigenvalues": [eig_plus, eig_minus],
+        "R_extremal_predicted": scalar_D * eig_plus,
+        "R_extremal_observed": 1.005,
+        "match_pct": abs(scalar_D * eig_plus - 1.005) / 1.005 * 100,
+    },
+}
+wb = WitnessBuilder.wrap_legacy(
+    "interface-quadratic-identity", data_payload,
+    script_path=__file__, engine="python3/mpmath",
+)
+wb.set_description(
+    "PROVED: (sigma-h/2)^2 = 1+h^2/4 = [2]_q^2/4 (SCALAR). "
+    "From Hecke relation sigma^2 = h*sigma + 1. "
+    "Even powers are identity; odd powers are linear. "
+    "5 interface crossings = (1+h^2/4)^2 * (sigma-h/2). "
+    "Lean-proved in TwoRoutesProtonMass.lean."
+)
+wb.add_assertion(
+    "scalar = [2]_q^2/4",
+    computed=int(bool(fabs(scalar_sq - two_q ** 2 / 4) < mpf('1e-40'))),
+    expected=1,
+)
+wb.add_assertion(
+    "extremal R within 3%",
+    computed=int(bool(abs(scalar_D * eig_plus - 1.005) < 0.03 * 1.005)),
+    expected=1,
+)
+out = wb.save()
+print(f"\nWitness: {out}")

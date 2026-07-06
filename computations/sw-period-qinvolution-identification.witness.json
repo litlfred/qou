@@ -1,0 +1,186 @@
+{
+  "engine": "python+sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-26T01:59:44.712248+00:00",
+  "commitSha": "7b25fc605812dc42f9214aa1b5aa6e52a49abf78",
+  "assertions": [
+    {
+      "name": "sum_dim_q_limit_is_involution_numbers",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Σ_{λ⊢n} dim_q(λ) → I(n) (A000085) as q→1 for n=1..12 ⇒ a_D^(n)=lw(n−1) is the q-deformed involution number."
+    },
+    {
+      "name": "naive_q_telephone_recurrence_fails_beyond_n3",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "T(n)=T(n−1)+[n−1]_q T(n−2) first exceeds rel 1e-3 at n=4 (exact at n=3) ⇒ exact q-coefficient ≠ bare [n−1]_q."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 21,
+  "computation": "sw-period-qinvolution-identification",
+  "scriptFile": "sw_period_qinvolution_identification_probe.py",
+  "scriptHash": "48141488a4f0",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "auditOnly": "docs/audits/2026-06-26-binding-period-qinvolution-qhermite-identification.md",
+  "parameters": {
+    "q_0": "1.1099785955573347198997632204832250266562084087802"
+  },
+  "data": {
+    "identity": "T_q(n)=Σ_{λ⊢n} dim_q(λ)=n·a_D^(n); a_D^(n)=lw(n−1). q→1: T_q(n)=Σ f^λ=I(n) (involutions, A000085).",
+    "q1_limit_table": [
+      {
+        "n": 1,
+        "lim_q1": "1",
+        "I_n": 1,
+        "match": true
+      },
+      {
+        "n": 2,
+        "lim_q1": "2",
+        "I_n": 2,
+        "match": true
+      },
+      {
+        "n": 3,
+        "lim_q1": "4",
+        "I_n": 4,
+        "match": true
+      },
+      {
+        "n": 4,
+        "lim_q1": "10",
+        "I_n": 10,
+        "match": true
+      },
+      {
+        "n": 5,
+        "lim_q1": "26",
+        "I_n": 26,
+        "match": true
+      },
+      {
+        "n": 6,
+        "lim_q1": "76",
+        "I_n": 76,
+        "match": true
+      },
+      {
+        "n": 7,
+        "lim_q1": "232",
+        "I_n": 232,
+        "match": true
+      },
+      {
+        "n": 8,
+        "lim_q1": "764",
+        "I_n": 764,
+        "match": true
+      },
+      {
+        "n": 9,
+        "lim_q1": "2620",
+        "I_n": 2620,
+        "match": true
+      },
+      {
+        "n": 10,
+        "lim_q1": "9496",
+        "I_n": 9496,
+        "match": true
+      },
+      {
+        "n": 11,
+        "lim_q1": "35696",
+        "I_n": 35696,
+        "match": true
+      },
+      {
+        "n": 12,
+        "lim_q1": "140152",
+        "I_n": 140152,
+        "match": true
+      }
+    ],
+    "structural_home": "a_D^(n)=I_q(n)/n is a q-involution number = q-Hermite/Rogers–Szegő moment (involutions are Hermite moments). Family: BindingQHermiteOscillator (#2800). Explains super-exp growth (I(n)~n^{n/2}e^{√n−n/2−1/4}/√2).",
+    "telephone_recurrence_table": [
+      {
+        "n": 3,
+        "T_q": "4.01089686912",
+        "telephone_pred": "4.01089686912",
+        "rel_resid": "9.043e-51",
+        "lw_period": "1.33696562304"
+      },
+      {
+        "n": 4,
+        "T_q": "10.1311186547",
+        "telephone_pred": "10.0983093056",
+        "rel_resid": "0.003238",
+        "lw_period": "2.53277966367"
+      },
+      {
+        "n": 5,
+        "T_q": "26.8806888453",
+        "telephone_pred": "26.6146310689",
+        "rel_resid": "0.009898",
+        "lw_period": "5.37613776906"
+      },
+      {
+        "n": 6,
+        "T_q": "81.3589639657",
+        "telephone_pred": "79.7695993355",
+        "rel_resid": "0.01954",
+        "lw_period": "13.5598273276"
+      },
+      {
+        "n": 7,
+        "T_q": "261.574658511",
+        "telephone_pred": "253.075134316",
+        "rel_resid": "0.03249",
+        "lw_period": "37.3678083587"
+      },
+      {
+        "n": 8,
+        "T_q": "926.60983247",
+        "telephone_pred": "881.964598072",
+        "rel_resid": "0.04818",
+        "lw_period": "115.826229059"
+      },
+      {
+        "n": 9,
+        "T_q": "3500.09251484",
+        "telephone_pred": "3266.57564826",
+        "rel_resid": "0.06672",
+        "lw_period": "388.899168316"
+      },
+      {
+        "n": 10,
+        "T_q": "14360.6591817",
+        "telephone_pred": "13103.0301023",
+        "rel_resid": "0.08757",
+        "lw_period": "1436.06591817"
+      }
+    ],
+    "telephone_first_fail_n": 4,
+    "scope_a_prune": "Naive depth-2 q-telephone T(n)=T(n−1)+[n−1]_q T(n−2) is exact at n=3, drifts for n≥4; no low-degree depth-2 q-holonomic model in q^n closes (separate guess, best held-out ≈1.5e-3). Exact q-coefficient ≠ bare [n−1]_q. NOT a structural exclusion of a depth-2 q-recurrence — the right q-statistic (Rogers–Szegő moment recurrence) is open (z2bn)."
+  }
+}

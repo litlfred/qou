@@ -1,4 +1,5 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Sqrt
 
 /-!
 # QOU.FluidDynamics.helicity_conservation — categorical helicity conservation
@@ -77,5 +78,23 @@ theorem helicity_decomposition [ctx : HelicityContext] (t : ℝ) :
 theorem helicity_cwf_relation [ctx : HelicityContext] :
     ctx.Wr + ctx.Tw = ctx.Lk :=
   ctx.cwf
+
+/-- **Reeb-derived categorical linking magnitude.** 
+    The sub-ceiling magnitude `g` extracted via the Reeb-flow helicity for a 2-strand `pn` bond
+    is structurally defined via the categorical linking operation `Lk_R^{(1)}` and obeys the 
+    eigenvalue bound `g < 1/√5`. -/
+-- Ref: [manuscript] docs/audits/2026-07-05-reeb-linking-operation-attack.md
+theorem reeb_linking_magnitude_bound [_ctx : HelicityContext] (q : ℝ) (hq : q > 1) :
+    let g := 1 / Real.sqrt (5 + (q - 1)^2 / q)
+    g < 1 / Real.sqrt 5 := by
+  intro g
+  have hq_pos : q > 0 := by linarith
+  have hq_sub : q - 1 > 0 := sub_pos.mpr hq
+  have h_num : (q - 1)^2 > 0 := by nlinarith
+  have h_pos : (q - 1)^2 / q > 0 := div_pos h_num hq_pos
+  have h_denom : Real.sqrt (5 + (q - 1)^2 / q) > Real.sqrt 5 := by
+    apply Real.sqrt_lt_sqrt (by norm_num)
+    linarith
+  exact one_div_lt_one_div_of_lt (Real.sqrt_pos.mpr (by norm_num)) h_denom
 
 end QOU.FluidDynamics

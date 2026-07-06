@@ -10,7 +10,7 @@ commute. This is the algebraic content closing audit GAP 17a /
 the "Pentagon → uv-commutation" subconjecture in
 `rem:mass-endomorphism-jet-tower`.
 
-Per CLAUDE.md §3b, this is a `lemma` (provable, not conjectural).
+Per AGENTS.md §3b, this is a `lemma` (provable, not conjectural).
 
 -- Ref: [manuscript] lem:vhat-pair-commutation-trace
 -- Ref: [manuscript] def:algebraic-quantum-volume

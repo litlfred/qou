@@ -17,7 +17,7 @@ Binding energy = α × (Φ₁(2 isolated H) − Φ₁(H₂ molecule)).
 Content block: prop:h2-lp-dual-binding
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 h2-molecular-binding.py
 """
 

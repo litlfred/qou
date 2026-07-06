@@ -33,21 +33,21 @@ of $\tau_M$.
 `atomic-tr-m-wenzl-bridge.witness.json` records 0.998367 for p, n, ³He
 — bit-exact identical, with identical per-block $\mathrm{Tr}(\rho_\lambda) = (1, 1.994, 1)$
 — a witness-generation bug surfaced by PR #487's audit. Direct
-re-computation via [`atomic_braid_to_crossings`](../folio-assistant/computations/hecke/hecke_character_symbolic.py)
-+ [`wenzl_y_lambda`](../folio-assistant/computations/from_scratch/wedderburn_markov.py)
+re-computation via [`atomic_braid_to_crossings`](../computations/hecke/hecke_character_symbolic.py)
++ [`wenzl_y_lambda`](../computations/from_scratch/wedderburn_markov.py)
 gives the parity-distinguishing values shown.
 
 For D, the SDP-canonical 6-strand atom braid reduced to H_3 gives
 $\tau_M = 0.288326$ (validated bit-exactly by the from-scratch
 chain on this branch and matching `atomic-tr-m-wenzl-bridge`'s
 deuteron entry which IS correct). The "hand-built H_6 atom" braid
-registered by PR #447's [`D-tau-M-q0.derivation.json`](../folio-assistant/computations/D-tau-M-q0.derivation.json)
+registered by PR #447's [`D-tau-M-q0.derivation.json`](../computations/D-tau-M-q0.derivation.json)
 chain gives $0.336821$ — same trace functional ($\tau_M$), different
 braid representative.
 
 ## D walkthrough — recomputed under canonical $\tau_M$
 
-[`probe_multi_term_tau_M_corrected.py`](../folio-assistant/computations/probe_multi_term_tau_M_corrected.py)
+[`probe_multi_term_tau_M_corrected.py`](../computations/probe_multi_term_tau_M_corrected.py)
 re-runs the multi-term assembly with $\tau_M$ in T1
 (everything else unchanged — T2+T3+T4+T5 don't depend on the trace
 functional):
@@ -84,10 +84,10 @@ requires.
 ## Wenzl-bridge witness audit (PR #487 follow-up)
 
 Direct re-computation of τ_M for free p, n via the canonical
-[`atomic_braid_to_crossings`](../folio-assistant/computations/hecke/hecke_character_symbolic.py)
-+ [`wenzl_y_lambda`](../folio-assistant/computations/from_scratch/wedderburn_markov.py)
+[`atomic_braid_to_crossings`](../computations/hecke/hecke_character_symbolic.py)
++ [`wenzl_y_lambda`](../computations/from_scratch/wedderburn_markov.py)
 flagged a **witness-generation bug** in
-[`atomic-tr-m-wenzl-bridge.witness.json`](../folio-assistant/computations/atomic-tr-m-wenzl-bridge.witness.json):
+[`atomic-tr-m-wenzl-bridge.witness.json`](../computations/atomic-tr-m-wenzl-bridge.witness.json):
 
   Witness's proton, neutron, ³He entries all share bit-exact
   $\tau_M = 0.998366751$. Per-block breakdown shows
@@ -95,7 +95,7 @@ flagged a **witness-generation bug** in
   three atoms — strongly suggesting the `dump-block-matrices` Rust
   binary used the same trivial / single-nucleon braid for all three.
 
-[`probe_wenzl_bridge_witness_audit.py`](../folio-assistant/computations/probe_wenzl_bridge_witness_audit.py)
+[`probe_wenzl_bridge_witness_audit.py`](../computations/probe_wenzl_bridge_witness_audit.py)
 documents the bug and computes corrected free-atom values:
 
 | atom | witness | direct τ_M (3-strand free) | match? |
@@ -108,7 +108,7 @@ documents the bug and computes corrected free-atom values:
 
 Round-6 trace-deficit hypothesis re-evaluated under the
 audit-corrected p, n values
-([`probe_round6_tau_M_canonical.py`](../folio-assistant/computations/probe_round6_tau_M_canonical.py)):
+([`probe_round6_tau_M_canonical.py`](../computations/probe_round6_tau_M_canonical.py)):
 
 | atom | deficit | $E_0 = m_p/\|\tau_M(p)\|$ | $E_0 = m_e$ |
 |------|--------:|---------------------------:|------------:|

@@ -113,8 +113,8 @@ character-weighted average $\langle c\rangle_\beta$ equals a
 specific non-zero number determined by the imbalance between
 $\chi^\lambda$ and $\chi^{\lambda^T}$.*
 
-**Numerical test at $H_6(R, q)$ (satellite $D$) — refuted (predicted $a_K = -2.164$ vs paper's $a_D = +1.209$).**
-*Script `ribbon_content_average.py` computes
+**canonical test at $H_6(R, q)$ (satellite $D$) — refuted (predicted $a_K = -2.164$ vs paper's $a_D = +1.209$).**
+*formalism the formal derivation computes
 $\langle c\rangle_\beta$ and the predicted
 $a_K = 1 + w(\beta) \cdot \langle c\rangle_\beta \cdot h$
 for the deuteron atomic braid. Results:*
@@ -135,7 +135,7 @@ crossings are included, while paper assigns $a_D = 1 + h \approx
 1.24$ is within $2.5\%$ of paper's $1 + h = 1.21$ — coincidentally
 close but without deeper structural justification at $A=1$.*
 
-**What this test establishes.**
+**Findings of the test.**
 *The **structural form** $a_K = 1 + w \cdot (\text{something}) \cdot h
 + O(h^2)$ is correct (linear in $h$ and writhe). The **coefficient
 "something"** is NOT the Wedderburn-averaged content
@@ -211,11 +211,11 @@ falsification here (for D) shows the specific form needs
 adjustment.*
 
 **Reference implementation.**
-*`folio-assistant/computations/ribbon_content_average.py` +
+*the formal derivation +
 `ribbon-content-average.witness.json`.*
 
-**Variant sweep — all fail.**
-*Script `chirality_variants_probe.py` tested 8 candidate writhe-
+**Variant sweep.**
+*formalism the formal derivation tested 8 candidate writhe-
 ribbon formulas (varying weighting, writhe convention, and
 normalisation) against paper's assigned factors for $D$, $T$.
 **No variant matches within $20\%$**.*

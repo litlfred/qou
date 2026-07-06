@@ -13,7 +13,7 @@ The *brane relation* is the following recursive structure:
    the $n$-th level connection, inherited from the Frobenius--Hopf
    structure by [jet prolongation](#prop:jet-prolongation).
 
-The *recursive brane tower* is the sequence
+The **recursive brane tower** is the sequence
 $A_0 \hookrightarrow A_1 \hookrightarrow A_2 \hookrightarrow \cdots$
 in $\mathbf{C}$, where each embedding is the canonical inclusion
 $A_n \hookrightarrow J^1(A_n) = A_{n+1}$ via the unit section.

@@ -7,7 +7,7 @@ The two are linked by a functorial composition: a categorical
 generating function whose evaluation at the substrate parameter
 $q_0$ collapses to the observed scalar.*
 
-## The polynomial is a generating function, not a number
+## The polynomial as generating function, not a number
 
 Let $\mathfrak{M}_K$ denote the stable highest-weight KLR module
 \cite{khovanovlauda2009, brundankleshchev2009} associated to the
@@ -30,7 +30,7 @@ decorative: an unbounded module would yield an infinite power series
 (formally an infinite mass tower); the bound truncates this to a
 genuine Laurent polynomial.
 
-## Reading the polynomial: spectrum, not a single value
+## Interpretation of the polynomial: spectrum, not a single value
 
 Each term $c_d q^d$ of $P_K(q)$ has an independent physical reading:
 
@@ -82,7 +82,7 @@ isomorphism information), $\mathrm{ev}_{q_0}$ is specialisation
 unified knot-mass formula), and
 $m_0\,|\cdot|$ is unit conversion.
 
-## Why the distinction matters
+## Significance of the distinction
 
 Conflating the polynomial with the mass produces three failure modes:
 

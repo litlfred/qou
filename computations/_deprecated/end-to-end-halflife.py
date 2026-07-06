@@ -11,7 +11,7 @@ Inputs: q = 1/(1 - √(Vol(4₁)/m_μ/m_e)), μ₀ = m_e/(3 E_×)
 Outputs: half-life predictions for all 6 verification nuclei
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 end-to-end-halflife.py
 """
 

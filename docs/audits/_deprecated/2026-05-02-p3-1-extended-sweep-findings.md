@@ -27,7 +27,7 @@ each as either:
   doesn't logically depend on the conjecture; the conjecture
   interprets the remark/definition. Fix: drop from `uses[]`,
   preserve as prose.
-- **Case (3) — legitimate dependency**: per CLAUDE.md §3b
+- **Case (3) — legitimate dependency**: per AGENTS.md §3b
   clarification, a definition can depend on a conjecture (e.g.
   "the X with property P" when P's uniqueness is conjectural).
   The propagation through the definition is structurally real;
@@ -75,7 +75,7 @@ remark-as-conduit bugs:
   of [`conj:baryon-period-ratio`](../../content/quantum-observable-universe/braids-and-knots/baryon-period-ratio.md),
   not a remark used by upstream propositions.
 
-Per CLAUDE.md §3b clarification ("Definitions and conjectures"):
+Per AGENTS.md §3b clarification ("Definitions and conjectures"):
 
 > The propagation rule above applies to **provable claims**
 > (`theorem`, `proposition`, `lemma`, `corollary`). It does **not**

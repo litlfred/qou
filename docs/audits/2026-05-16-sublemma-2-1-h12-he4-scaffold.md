@@ -6,7 +6,7 @@
 compute deferred — Hoefsmit cold-start at H_12 (77 partitions of 12,
 some dim ≥ 297) takes ~minutes per partition × ~5-25 min total per
 chi evaluation. F1's full sum took 221 s for canonical ⁴He
-([`he4-canonical-tr-m-block-fingerprint.witness.json`](../../folio-assistant/computations/he4-canonical-tr-m-block-fingerprint.witness.json)).
+([`he4-canonical-tr-m-block-fingerprint.witness.json`](../../computations/he4-canonical-tr-m-block-fingerprint.witness.json)).
 
 ## Background — three-fold iterated Sub-lemma 2.1
 
@@ -109,8 +109,8 @@ Once closed:
 - [PR #534](https://github.com/litlfred/qou/pull/534) — H_6 single-interface (deuteron), 11/11 at machine ε
 - [`docs/audits/2026-05-15-sublemma-2-1-h9-multi-interface-extension.md`](2026-05-15-sublemma-2-1-h9-multi-interface-extension.md) — H_9 scaffold (companion)
 - [`docs/audits/2026-05-04-sublemma-2-1-refined.md`](2026-05-04-sublemma-2-1-refined.md) — single-interface operator-valued
-- [`folio-assistant/computations/sublemma_2_1_h9_branching_basis.py`](../../folio-assistant/computations/sublemma_2_1_h9_branching_basis.py) — algorithm to extend
-- [`folio-assistant/computations/he4-canonical-tr-m-block-fingerprint.witness.json`](../../folio-assistant/computations/he4-canonical-tr-m-block-fingerprint.witness.json) — F1's canonical ⁴He compute (Path A reference)
+- [`computations/sublemma_2_1_h9_branching_basis.py`](../../computations/sublemma_2_1_h9_branching_basis.py) — algorithm to extend
+- [`computations/he4-canonical-tr-m-block-fingerprint.witness.json`](../../computations/he4-canonical-tr-m-block-fingerprint.witness.json) — F1's canonical ⁴He compute (Path A reference)
 
 ## CAL discipline
 

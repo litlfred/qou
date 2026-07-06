@@ -58,7 +58,7 @@ theorem beta_3_from_jonquiere : imLi3ZetaPredicted 4 = beta3 :=
     available); step (1) is the verified `beta_3_from_jonquiere`
     above.  Downstream propositions taking
     `[LValueDecomposition]` as a hypothesis become rigorous
-    conditional results per CLAUDE.md §3b-cond. -/
+    conditional results per AGENTS.md §3b-cond. -/
 class LValueDecomposition where
   /-- The full chain β(3) = L(χ_4, 3) = Im Li_3(i) = π³ / 32. -/
   full_decomposition : beta3 = Real.pi ^ 3 / 32

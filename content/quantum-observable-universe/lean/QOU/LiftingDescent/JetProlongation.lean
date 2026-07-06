@@ -1,6 +1,7 @@
 import QOU.Basic
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.Algebra.Module.LinearMap.Defs
+import QOU.Hecke.Generators
 
 /-!
 # Jet prolongation chain — descent involution + transient/descended decomposition
@@ -66,6 +67,7 @@ namespace QOU.LiftingDescent
 universe u v
 
 open CategoryTheory CategoryTheory.MonoidalCategory
+open QOU.Hecke  -- `Generator n` (braid-generator index) lives here
 
 /--
 **Jet prolongation chain** at a given category `C` over a base
@@ -82,7 +84,7 @@ would be the algebra `End_C(A_n)`; here we keep it abstract so the
 typeclass is reusable for both the categorical brane tower and the
 algebraic Hecke-chain instantiation.
 
-Per CLAUDE.md §3b, this is a structural typeclass; substantive
+Per AGENTS.md §3b, this is a structural typeclass; substantive
 proofs at instances are deferred until concrete chains are wired
 up. The fields encode the **algebraic content** of the chain
 (idempotent decomposition, retraction identity); category-level
@@ -275,10 +277,22 @@ end InterLevelLift
 with downstream code that hypothesised against this name during
 PR #506). New code should hypothesise against `InterLevelLift`
 instead. -/
-theorem pentagon_inter_level_placeholder (n : ℕ) :
-    True := by
+theorem pentagon_inter_level_placeholder
+    {R : Type u} [CommRing R]
+    {EndAlg : ℕ → Type v}
+    [∀ n, AddCommGroup (EndAlg n)] [∀ n, Module R (EndAlg n)]
+    [∀ n, Mul (EndAlg n)] {q : R}
+    [IL : InterLevelLift R EndAlg q]
+    (n : ℕ) (i j k : Generator n) (x : EndAlg n)
+    (h_transient : ∀ R_q : EndAlg (n + 1),
+      descendedPart (R := R) (EndAlg := EndAlg) n R_q = R_q →
+      R_q = 0) :
+    (IL.liftOperator n i x) * (IL.liftOperator n j x) *
+      (IL.liftOperator n k x) =
+    q • ((IL.liftOperator n k x) *
+          ((IL.liftOperator n i x) * (IL.liftOperator n j x))) := by
   -- Ref: [manuscript] superseded by InterLevelLift.pentagon_inter_level_on_transient.
-  trivial
+  exact InterLevelLift.pentagon_inter_level_on_transient n i j k x h_transient
 
 end JetChain
 

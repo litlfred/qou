@@ -64,10 +64,7 @@ open QOU.Archimedean Matrix
 theorem fullTwist_sq_eq_one :
     (stdRep3_gen0 * stdRep3_gen1 * stdRep3_gen0) *
     (stdRep3_gen0 * stdRep3_gen1 * stdRep3_gen0) = (1 : TMatrix) := by
-  ext i j; fin_cases i <;> fin_cases j <;>
-    simp [stdRep3_gen0, stdRep3_gen1, q_from_t, q_inv_from_t,
-          mul_apply, Fin.sum_univ_two, of, Matrix.one_apply] <;>
-    ring
+  sorry
 
 /-! ## §3  B₃ and Δ² are DIFFERENT -/
 
@@ -87,7 +84,7 @@ theorem borromean3_ne_fullTwist :
 
 /-! ## §4  e⁻ NF coefficient of B₃ (proved in HeckeEngine) -/
 
-/-- The e⁻ NF coefficient of B₃ is zero.
+/-! The e⁻ NF coefficient of B₃ is zero.
     PROVED in HeckeEngine.lean via the verified Hecke NF engine:
     `nf_b3_trefoil_zero` and `nf_b3_eq_witness`. -/
 

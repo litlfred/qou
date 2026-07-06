@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition.**
 The Möbius transformation $f(q) = (4-q)/(4q+3)$ arising from the
 leading coefficients of the color-tube cubic has fixed points
@@ -61,7 +59,7 @@ characteristic discriminant as $M$. $\square$
 
 | Map | Equation | Fixed points | Role |
 |-----|---------|--------------|------|
-| $f(q) = (4-q)/(4q+3)$ | $q^2 + q - 1 = 0$ | $1/\varphi$, $-\varphi$ | Coral tube branch |
+| $f(q) = (4-q)/(4q+3)$ | $q^2 + q - 1 = 0$ | $1/\varphi$, $-\varphi$ | Color tube branch |
 | $g(q) = (q+4)/(4q-3)$ | $q^2 - q - 1 = 0$ | $\varphi$, $-1/\varphi$ | Bar-dual branch |
 
 The **positive-axis pair** $\{1/\varphi, \varphi\}$ are exactly the

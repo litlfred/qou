@@ -8,7 +8,7 @@
 ## Result
 
 Script:
-[`qbeta_c3_complex_singularity_probe.py`](../../folio-assistant/computations/qbeta/qbeta_c3_complex_singularity_probe.py)
+[`qbeta_c3_complex_singularity_probe.py`](../../computations/qbeta/qbeta_c3_complex_singularity_probe.py)
 · witness `qbeta-c3-complex-singularity-probe.witness.json`.
 
 From the published anchors (`c_3(proton) = -2.0693`, `c_3(muon) = -2.0097`,
@@ -27,7 +27,7 @@ From the published anchors (`c_3(proton) = -2.0693`, `c_3(muon) = -2.0097`,
    function — so `c_3` is dominated by a singularity at distance `~b` from q₀
    and **cannot** be a smooth real-q `f(q)`. This independently confirms the
    cross-anchor rigidity falsification, and supports the fibre-level
-   complex-analytic Habiro framing (CLAUDE.md §"Im(q) at fibre vs observable
+   complex-analytic Habiro framing (AGENTS.md §"Im(q) at fibre vs observable
    level").
 
 2. **Root-of-unity mechanism — REFUTED.** For real q₀ ≈ 1.11 (just outside the

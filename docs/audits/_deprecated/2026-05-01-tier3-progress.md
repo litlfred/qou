@@ -1,6 +1,6 @@
 > **DEPRECATED on 2026-05-24.** Workplan executed / point-in-time status snapshot / PR-specific note that has been superseded by subsequent integration into main. Original audit preserved here for historical record. See [`docs/audits/INDEX.md`](../INDEX.md) §"5-tranche recommendation" T1 for the deprecation rationale.
 
-# Tier 3 progress — open conjecture classification (CLAUDE.md §3b)
+# Tier 3 progress — open conjecture classification (AGENTS.md §3b)
 
 **Branch**: `claude/tier3-math-audit-B0wyO`
 **Parent**: `claude/audit-math-framework-FXlp2` (PR
@@ -26,7 +26,7 @@ Bring → BB filtration / homological condensation):
 §P3.
 
 This branch executes **Tier 3** of the deep audit: resolving and
-classifying open conjectures per the CLAUDE.md §3b conjectural-
+classifying open conjectures per the AGENTS.md §3b conjectural-
 propagation rule.
 
 ## Summary
@@ -229,7 +229,7 @@ sharp only when the operator-level $uv = q\,vu$ identity is
 established). Deferred behind P3.2.
 
 The empirical evidence in
-[`adjacent-vs-full-probe.witness.json`](../../folio-assistant/computations/adjacent-vs-full-probe.witness.json)
+[`adjacent-vs-full-probe.witness.json`](../../computations/adjacent-vs-full-probe.witness.json)
 already shows that the all-pairs set $\mathcal{P}_n = \{(i,j): i<j\}$
 empirically matches mass on light atoms with sub-1% error — i.e.,
 the bound is empirically sharp. A formal sharpness proof is
@@ -245,7 +245,7 @@ the open piece.
 ### Finding — compute prerequisite missing
 
 The relevant compute module
-[`folio-assistant/computations/multi-level-jet-sum.witness.json`](../../folio-assistant/computations/multi-level-jet-sum.witness.json)
+[`computations/multi-level-jet-sum.witness.json`](../../computations/multi-level-jet-sum.witness.json)
 self-reports:
 
 ```json

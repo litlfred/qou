@@ -69,6 +69,6 @@ theorem blowup_truncation_non_adjacent {R : Type*} [Monoid R] (σ : ℕ → R)
     [BraidRelation R σ] (i j k : ℕ)
     (h_ij : j ≥ i + 2) :
     σ i * σ j * σ k = σ j * σ i * σ k := by
-  rw [← mul_assoc, BraidRelation.far_commute i j h_ij, mul_assoc]
+  rw [BraidRelation.far_commute i j h_ij]
 
 end QOU.BraidKnot

@@ -27,7 +27,7 @@ for $K \in \{D, T, {}^3\mathrm{He}, {}^4\mathrm{He}\}$:
 | rel. err. vs. empirical | **$0.022\%$** |
 
 Match to 5 significant digits at 50-dps precision in the `q_parameter`
-canonical pipeline. Cross-tested via [`delta_lambda_z4N_phase4.py`](../../../folio-assistant/computations/delta_lambda_z4N_phase4.py) on all 4 atoms with max-relative-error 2.51% (achieved at $^4\mathrm{He}$ when including the $\cosh(h)$ refinement; was 2.17% without).
+canonical pipeline. Cross-tested via [`delta_lambda_z4N_phase4.py`](../../../computations/delta_lambda_z4N_phase4.py) on all 4 atoms with max-relative-error 2.51% (achieved at $^4\mathrm{He}$ when including the $\cosh(h)$ refinement; was 2.17% without).
 
 ### Categorical reading
 
@@ -81,6 +81,6 @@ Kac-Sunada framing in [`prop:interface-knot-markov-z`](#prop:interface-knot-mark
 
 ### Implementation reference
 
-- Script: [`folio-assistant/computations/delta_lambda_z4N_phase4.py`](../../../folio-assistant/computations/delta_lambda_z4N_phase4.py) (Phase 4 zero-parameter closure)
-- Witness: `folio-assistant/computations/delta-lambda-z4N-phase4.witness.json` (3 assertions, all passed)
+- Script: [`computations/delta_lambda_z4N_phase4.py`](../../../computations/delta_lambda_z4N_phase4.py) (Phase 4 zero-parameter closure)
+- Witness: `computations/delta-lambda-z4N-phase4.witness.json` (3 assertions, all passed)
 - Phase 5b audit doc: `docs/audits/2026-05-19-delta-lambda-phase5-alpha-derivation-progress.md`

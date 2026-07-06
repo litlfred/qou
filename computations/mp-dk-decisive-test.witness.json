@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-02T17:01:06.245923+00:00",
-  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-22T13:19:50.905469+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "d4_drifts_with_q0",
@@ -10,15 +10,15 @@
       "expected": 1.0,
       "passed": true,
       "tolerance": 0.0,
-      "source": "d_4 drifts 99.9962% between muon-pin and m_p-pin q₀; a genuine categorical integer would not move with q₀."
+      "source": "d_4 drifts 0.0246% between muon-pin and m_p-pin q₀; a genuine categorical integer would not move with q₀."
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 10,
   "computation": "mp-dk-decisive-test",
   "scriptFile": "mp_dk_decisive_test.py",
-  "scriptHash": "e92f1897f006",
-  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "scriptHash": "a6b6419599aa",
+  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,9 +26,8 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
@@ -37,43 +36,43 @@
   "data": {
     "pins": {
       "stale_muon_pin_q0": "1.10997859555418057528159407960950937799328227995870",
-      "canonical_mp_pin_q0": "1.1099785827513808075916690956107688798744991218736",
+      "canonical_mp_pin_q0": "1.1099785955573347198997632204832250266562084087802",
       "Vol_constant": "2.0298832128",
       "formula": "m_p/m_e (N=0) = 2·Vol/ℏ_q² · F_Bor − 12; d_k = (codata/N0 − 1)/u^k"
     },
     "err_N0_ppb": {
       "stale_muon_pin": "242.1941601",
-      "canonical_mp_pin": "0.009169933347"
+      "canonical_mp_pin": "242.2538257"
     },
     "d_k_at_both_pins": {
       "d_3": {
         "stale_muon_pin": "0.391983401285",
-        "canonical_mp_pin": "1.48412457863e-5"
+        "canonical_mp_pin": "0.39207996804"
       },
       "d_4": {
         "stale_muon_pin": "46.0223698903",
-        "canonical_mp_pin": "0.00174249584169"
+        "canonical_mp_pin": "46.0337076918"
       },
       "d_5": {
         "stale_muon_pin": "5403.43933794",
-        "canonical_mp_pin": "0.204584696057"
+        "canonical_mp_pin": "5404.77049732"
       },
       "d_6": {
         "stale_muon_pin": "634412.281427",
-        "canonical_mp_pin": "24.0200847883"
+        "canonical_mp_pin": "634568.571454"
       },
       "d_7": {
         "stale_muon_pin": "74485696.5451",
-        "canonical_mp_pin": "2820.17415945"
+        "canonical_mp_pin": "74504046.3933"
       }
     },
     "d4_vs_claim": {
       "claimed_categorical": "46 (= J²·11 + 2)",
       "d4_stale_muon_pin": "46.022369890334",
-      "d4_canonical_mp_pin": "0.0017424958416877",
+      "d4_canonical_mp_pin": "46.03370769177",
       "pct_off_46_stale": "0.0486302",
-      "pct_off_46_canonical": "99.9962",
-      "pct_drift_between_pins": "99.996214"
+      "pct_off_46_canonical": "0.0732776",
+      "pct_drift_between_pins": "0.024635414"
     },
     "verdict": {
       "d_k_are_stale_q0_near_matches": true,

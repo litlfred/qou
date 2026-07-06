@@ -7,6 +7,7 @@ export default definition({
     validation: "not_checked",
   },
   uses: ["def:q-von-mangoldt-function"],
+  defines: ["q-chebyshev-function"],
   tags: [
     "chebyshev",
     "q-deformation",

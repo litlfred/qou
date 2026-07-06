@@ -22,7 +22,7 @@ Output: jet-tower-delta-max.witness.json
 Refs:
   - content/.../braids-and-knots/jet-tower-uniform-delta-max.md
   - content/.../braids-and-knots/jet-tower-convergence.md
-  - folio-assistant/computations/unified_lift.py
+  - computations/unified_lift.py
 """
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
@@ -39,6 +39,7 @@ DIR = Path(__file__).parent
 sys.path.insert(0, str(DIR))
 
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 
 try:
     from unified_lift import binding_unified
@@ -52,8 +53,8 @@ HBAR_Q_SQ = HBAR_Q * HBAR_Q
 ATOMS = [
     # (label, Z, N, AME-derived B_total in MeV — for sanity reporting)
     ("D",    1, 1,  2.22452),
-    ("T",    1, 2,  8.481821),
-    ("3He",  2, 1,  7.71804),
+    ("T",    1, 2,  float(AME_B_TRITIUM_MEV_VALIDATION)),
+    ("3He",  2, 1,  float(AME_B_HE3_MEV_VALIDATION)),
 ]
 
 # Force the unified-lift jet loop to run a fixed number of levels

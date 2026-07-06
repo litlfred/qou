@@ -1,24 +1,24 @@
-**Where this fits.** Three blocks in this paper address the
+**Placement in the paper.** Three blocks in this paper address the
 $q \to 1$ classical limit:
 
 | Block                                                                    | Scope                                                                                                 | Status                                                                                          |
 | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| [classical limit functor](#def\:classical-limit-functor)                 | Topological definition $\mathcal{L} : \mathbf{C}_q \to \mathbf{C}_1$                                  | Definition (with obstruction)                                                                   |
+| [classical limit functor](#def:classical-limit-functor)                 | Topological definition $\mathcal{L} : \mathbf{C}_q \to \mathbf{C}_1$                                  | Definition (with obstruction)                                                                   |
 | **This block**                                                           | Single-functor surreal replacement: $\mathcal{L} \cong \mathrm{St} \circ \mathrm{ev}_{1+\varepsilon}$ | Conjecture (open)                                                                               |
-| [archimedean QOU is standard-part of surreal](#conj\:archimedean-stpart) | Whole-tuple surreal replacement on $(\mathbf{C}, \varTheta, G, \mathcal{S})$                          | Conjecture (open); strategy in [archimedean-stpart strategy](#rem\:archimedean-stpart-strategy) |
+| [archimedean QOU is standard-part of surreal](#conj:archimedean-stpart) | Whole-tuple surreal replacement on $(\mathbf{C}, \varTheta, G, \mathcal{S})$                          | Conjecture (open); strategy in [archimedean-stpart strategy](#rem:archimedean-stpart-strategy) |
 
 The current block is the *single-functor* version; the
 whole-tuple version is the appendix companion. Both are likely
 equivalent modulo functoriality.
 
-The [classical limit functor](#def\:classical-limit-functor)
+The [classical limit functor](#def:classical-limit-functor)
 $\mathrm{cl} : \mathbf{C}_q \to \mathbf{C}_{q=1}$ takes the
 $q \to 1$ limit of categorical structures parametrised by the
 substrate parameter $q$. Classically, this requires either a
 topological notion of limit on the parameter space (which fails
 for surreal-valued $q$) or a careful Hochschild-cohomology
 construction
-([classical limit obstruction](#def\:classical-limit-obstruction)).
+([classical limit obstruction](#def:classical-limit-obstruction)).
 
 This conjecture proposes a clean replacement: the classical-limit
 functor is the **standard-part of evaluation at $q = 1 +
@@ -60,7 +60,7 @@ The novelty is that the right-hand side **always exists** as long
 as the structure constants are rational in $\varepsilon$ — even in
 cases where the left-hand side has obstructions. The
 classical-limit obstruction
-([classical limit obstruction](#def\:classical-limit-obstruction))
+([classical limit obstruction](#def:classical-limit-obstruction))
 $\mathrm{HH}^2(\mathcal{U}_q, \mathrm{Ad})$ becomes, on the
 The right-hand side, a *non-zero finite surreal* in
 $\mathbf{No}_{\mathrm{fin}}$ whose standard-part vanishes only
@@ -87,7 +87,7 @@ A first step would be to prove the conjecture for
 $\mathbf{C}_q = \mathrm{Rep}(\mathrm{SU}_q(2))$ — the case of
 direct interest for QOU.
 
-## Why this matters
+## Significance
 
 The paper treats the $q \to 1$ classical limit
 *archimedean-topologically*: as a limit of real numbers in a

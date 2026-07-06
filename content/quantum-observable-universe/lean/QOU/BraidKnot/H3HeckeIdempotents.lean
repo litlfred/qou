@@ -1,4 +1,4 @@
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Algebra.Field.Basic
 import Mathlib.Tactic
 
 
@@ -28,10 +28,18 @@ the three blocks listed above exhaust V = V_(3) ⊕ V_(2,1) ⊕ V_(1,1,1),
 with q-dimension sum matching the regular representation
 `dim_q H_3(q) = [3]_q!`.
 
+**Base ring (§7c).** All content here is algebraic in `q`: the scalar
+invariants are rational functions of `q`, so the file is stated over a
+generic field `{R : Type*} [Field R]` (e.g. `ℚ(q)`), never specialised
+to `ℝ`. There is no archimedean construct (no ordering, no `Real.*`);
+the substrate→archimedean evaluation at `q₀ ∈ ℝ` happens elsewhere.
+
 LaTeX label: `rem:h3-hecke-idempotents`
 -/
 
 namespace QOU.BraidKnot
+
+variable {R : Type*} [Field R]
 
 /-! ## q-integers (local) -/
 
@@ -41,12 +49,12 @@ namespace QOU.BraidKnot
     rational formula is `0/0` at `q = 1` (Lean division-by-zero
     convention returns 0, but the correct limit is `k`). The
     `q = 1` guard yields `[k]_1 = k` as expected. -/
-noncomputable def qInt (q : ℝ) (k : ℕ) : ℝ :=
-  if q = 1 then (k : ℝ)
+noncomputable def qInt [DecidableEq R] (q : R) (k : ℕ) : R :=
+  if q = 1 then (k : R)
   else (q ^ k - q⁻¹ ^ k) / (q - q⁻¹)
 
 /-- q-factorial `[k]_q! = [1]_q · [2]_q · ⋯ · [k]_q`. -/
-noncomputable def qFact (q : ℝ) : ℕ → ℝ
+noncomputable def qFact [DecidableEq R] (q : R) : ℕ → R
   | 0 => 1
   | (k+1) => qInt q (k+1) * qFact q k
 
@@ -61,13 +69,13 @@ For n=3 with hook-lengths h(x):
 -/
 
 /-- q-dimension of `V_(3)` in H_3(q): `1`. -/
-def dimQ_V3 (_q : ℝ) : ℝ := (1 : ℝ)
+def dimQ_V3 (_q : R) : R := (1 : R)
 
 /-- q-dimension of `V_(2,1)` in H_3(q): `[2]_q = q + q⁻¹`. -/
-noncomputable def dimQ_V21 (q : ℝ) : ℝ := q + q⁻¹
+noncomputable def dimQ_V21 (q : R) : R := q + q⁻¹
 
 /-- q-dimension of `V_(1,1,1)` in H_3(q): `1`. -/
-def dimQ_V111 (_q : ℝ) : ℝ := (1 : ℝ)
+def dimQ_V111 (_q : R) : R := (1 : R)
 
 /-! ## Sum-of-dim_q identity (Wedderburn completeness)
 
@@ -85,7 +93,7 @@ This is a non-trivial substantive scalar identity in `q`. -/
 -- Ref: [manuscript] rem:h3-hecke-idempotents
 -- Ref: [wenzl1988] doi:10.1007/BF01239526
 /-- The sum of the three q-dimensions at H_3 equals `q + q⁻¹ + 2`. -/
-theorem dimQ_sum_H3 (q : ℝ) :
+theorem dimQ_sum_H3 (q : R) :
     dimQ_V3 q + dimQ_V21 q + dimQ_V111 q = q + q⁻¹ + 2 := by
   unfold dimQ_V3 dimQ_V21 dimQ_V111
   ring
@@ -100,7 +108,7 @@ residual scalar is naturally `0` by the additive identity above. -/
 -- Ref: [wenzl1988] doi:10.1007/BF01239526
 /-- The residual `(dim_q V_(3) + dim_q V_(2,1) + dim_q V_(1,1,1))
     − (q + q⁻¹ + 2)` vanishes at every `q`. -/
-theorem qYoung_completeness_residual_H3 (q : ℝ) :
+theorem qYoung_completeness_residual_H3 (q : R) :
     (dimQ_V3 q + dimQ_V21 q + dimQ_V111 q) - (q + q⁻¹ + 2) = 0 := by
   rw [dimQ_sum_H3 q]
   ring
@@ -118,21 +126,22 @@ block:
 This is a concrete combinatorial assignment, not a vacuous Prop. -/
 
 /-- σ_i eigenvalue on V_(3): always `q`. -/
-def sigma_eigval_V3 (q : ℝ) (_i : Fin 2) : ℝ := q
+def sigma_eigval_V3 (q : R) (_i : Fin 2) : R := q
 
 /-- σ_i eigenvalue on V_(1,1,1): always `-q⁻¹`. -/
-noncomputable def sigma_eigval_V111 (q : ℝ) (_i : Fin 2) : ℝ := -q⁻¹
+noncomputable def sigma_eigval_V111 (q : R) (_i : Fin 2) : R := -q⁻¹
 
 -- Ref: [manuscript] rem:h3-hecke-idempotents
 -- Ref: [hoefsmit1974]
+omit [Field R] in
 /-- On V_(3), both generators have the same eigenvalue `q`. -/
-theorem sigma_eigval_V3_eq (q : ℝ) (i : Fin 2) :
+theorem sigma_eigval_V3_eq (q : R) (i : Fin 2) :
     sigma_eigval_V3 q i = q := rfl
 
 -- Ref: [manuscript] rem:h3-hecke-idempotents
 -- Ref: [hoefsmit1974]
 /-- On V_(1,1,1), both generators have the same eigenvalue `-q⁻¹`. -/
-theorem sigma_eigval_V111_eq (q : ℝ) (i : Fin 2) :
+theorem sigma_eigval_V111_eq (q : R) (i : Fin 2) :
     sigma_eigval_V111 q i = -q⁻¹ := rfl
 
 /-! ## Status

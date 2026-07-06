@@ -1,3 +1,5 @@
+Each row names a content block in which measure-theoretic language — Lebesgue, Haar, or Hausdorff — occurs, and records what the argument actually uses. Only `mobius-energy-proof.md` performs a genuine measure computation; every other reference invokes the language by analogy over an object that is categorical, algebraic, or given by a rational formula.
+
 | Reference | What is actually used |
 |---|---|
 | `frobenius-integration.md` | Calls $\int_A$ a "categorical Haar measure" *by analogy*. The actual object is the Frobenius counit $A \to \mathbf{1}$, purely categorical — survives over any field. |

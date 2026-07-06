@@ -23,7 +23,7 @@ Three identity checks:
 
   (2) **q-deformed normalisation drift at q_0.**  At q = q_0 ≠ 1,
       Σ_λ w̃_λ ≠ 1 in general — the non-probability-measure
-      property called out in CLAUDE.md's notation register.  Probe
+      property called out in AGENTS.md's notation register.  Probe
       documents the actual sum at q_0 for n = 3, 4, 5
       (informational `add_data`; not asserted to any value).  At
       q = 1 the sum collapses to the classical Plancherel
@@ -201,7 +201,7 @@ def main() -> int:
             "Wedderburn weights w̃_λ = dim_q(λ)² / [n]_q! do NOT sum "
             "to 1 — the deviation is recorded for n = 3, 4, 5 "
             "(empirical evidence for the 'not a probability measure "
-            "at q ≠ 1' property called out in CLAUDE.md's notation "
+            "at q ≠ 1' property called out in AGENTS.md's notation "
             "register).  Max residue on (1): "
             f"{float(max_classical_limit_residue):.2e} at "
             "q = 1+1e-13 — small enough to confirm the limit while "

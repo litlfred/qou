@@ -1,3 +1,5 @@
+**Table 10 — Quick-reference computation count.** Summary of the cost of the transfer-matrix worked examples above (Examples 1–5): for each nucleus it lists the number of braid generators $\sigma_i$ ($A-1$ in total), the number $\binom{A}{2}$ of transfer-matrix multiplications the nuclear Skein polynomial requires, and the degree bound $\deg P$ on that polynomial $P(q)$ as a polynomial in $q^{1/2}$. Every entry is a fixed, small computation.
+
 | Nucleus | $A$ | $Z$ | $N$ | Generators | $\binom{A}{2}$ multiplications | $\deg P \leq$ |
 |---------|-----|-----|-----|:----------:|:------------------------------:|:-------------:|
 | ${}^1\mathrm{H}$ | $1$ | $1$ | $0$ | $0$ | $0$ | — |

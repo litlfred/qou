@@ -1,0 +1,40 @@
+{
+ "computation": "interface-factor-enhancing-check",
+ "description": "Checks whether any canonical pairwise interface factor exceeds 1 (would escape productModel_3body_nonpos). None does at q0; z<=1/2 for all q (AM-GM, Lean markovParam_le_half). Enhancing escape foreclosed.",
+ "scriptFile": "computations/probes/interface_factor_enhancing_check_probe.py",
+ "parameters": {
+  "q_0": "1.109978582751380807591669095610768879874",
+  "free_parameters": 0
+ },
+ "data": {
+  "factors": [
+   {
+    "factor": "positive (z)",
+    "value": "0.49932033418369445241",
+    "in_0_1": true,
+    "enhances": false
+   },
+   {
+    "factor": "negative (z-h)",
+    "value": "0.29026003538805513698",
+    "in_0_1": true,
+    "enhances": false
+   },
+   {
+    "factor": "averaged (z-h/2)",
+    "value": "0.3947901847858747947",
+    "in_0_1": true,
+    "enhances": false
+   },
+   {
+    "factor": "bring pn (z-h(1/2-d/4))",
+    "value": "0.3948621563529464521",
+    "in_0_1": true,
+    "enhances": false
+   }
+  ],
+  "any_enhances": false,
+  "z_le_half_all_q": true,
+  "verdict": "enhancing_escape_foreclosed"
+ }
+}

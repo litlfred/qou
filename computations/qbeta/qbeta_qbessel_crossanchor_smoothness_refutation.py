@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+# ANCHOR NOTE (2026-06-22): q0 = 1.10997858275… occurrences below are the
+# RETIRED pre-2026-05-28 proton anchor (old re-pin #1422), kept as this
+# probe's historical / cross-anchor / pinned comparison value. The CURRENT
+# canonical proton q0 is q_at() ≈ 1.1099785955573347…; the muon anchor is
+# q_muon_at() ≈ 1.10997859555418…. This probe is preserved as-is by design.
 """qbeta_qbessel_crossanchor_smoothness_refutation.py
 ====================================================
 
@@ -51,7 +56,7 @@ PR #2279 uses is meaningless, and `x` is five orders of magnitude past the
   fibre / formal-`q` level**, and explicitly claims no `c_3` closure. This probe
   *confirms* that caution: the q-Bessel is the right **language** (a fibre object
   at formal `q`), not a real closed form `c_3(q₀)`.
-- It is the forward complement of the CLAUDE.md Im(q) rule: the resolution lives
+- It is the forward complement of the AGENTS.md Im(q) rule: the resolution lives
   in the **fibre** (a Habiro element evaluated per-anchor), where Im(q) is
   unconstrained, not in a real archimedean `f(q₀_real)`. A real-`x` q-Bessel is an
   archimedean object and inherits the #1821 smoothness obstruction.
@@ -153,7 +158,7 @@ check(
 # Authoritative variant reproduces ≈4.6e6 specifically.
 slope_auth = abs((C3_MUON_AUTH - C3_PROTON) / dq)
 check(
-    "authoritative dc_3/dq₀ ≈ 4.6e6 (matches CLAUDE.md / PR #1821 figure within 10%)",
+    "authoritative dc_3/dq₀ ≈ 4.6e6 (matches AGENTS.md / PR #1821 figure within 10%)",
     abs(slope_auth - mpf("4.6e6")) / mpf("4.6e6") < mpf("0.10"),
 )
 

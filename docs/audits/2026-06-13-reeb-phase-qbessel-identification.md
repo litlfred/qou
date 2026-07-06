@@ -21,10 +21,10 @@ respected throughout.
 
 Companion compute + Lean (this PR):
 
-- `folio-assistant/computations/qbeta/qbeta_reeb_tower_jacobi_anger.py`
+- `computations/qbeta/qbeta_reeb_tower_jacobi_anger.py`
   — verifies the bar-graded Jacobi–Anger identity and runs the falsifiable
   tower test.
-- `folio-assistant/computations/qbeta/qbeta_qbessel_contiguity_cfinite.py`
+- `computations/qbeta/qbeta_qbessel_contiguity_cfinite.py`
   — constructs the Hahn–Exton q-Bessel, verifies its q-difference
   equation + three-term contiguity + the `q → 1` limit, and derives the
   `c_k` coefficient recurrence from contiguity.

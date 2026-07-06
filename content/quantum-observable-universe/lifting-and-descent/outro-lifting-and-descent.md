@@ -1,5 +1,5 @@
 This closes the categorical lifting-and-descent chapter.  The
-Yekutieli brane tower has been built level by level, the descent
+brane tower has been built level by level, the descent
 involution recovers the physical algebra in the classical limit,
 and the cosimplicial crossed groupoid promotes the level-by-level
 arithmetic to a higher-categorical structure.  The

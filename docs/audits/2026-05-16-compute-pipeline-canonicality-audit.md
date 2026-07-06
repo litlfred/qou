@@ -69,7 +69,7 @@ $\operatorname{Binding}(K) = m_e \cdot \Sigma_\lambda y_\lambda(q) \chi^\lambda(
 ## 2  What's in the compute pipeline
 
 The main mass-table compute lives in
-[`paper_six_term_isotope_sweep.py`](../../folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py).
+[`paper_six_term_isotope_sweep.py`](../../computations/sweeps/paper_six_term_isotope_sweep.py).
 Two assembly paths:
 
 ### (a) `paper_six_term_mass(Z, N, ...)` — six-term form
@@ -162,7 +162,7 @@ The M4 / interface-type-resolved probe used $\kappa = -1.07$ MeV/excess as an **
 
 ### 3·f  Chirality V2 status
 
-The V2 chirality `a_K = τ(β · β_mirror⁻¹)` is now production-default in `paper_six_term_mass(..., chirality_source="v2")`. This matches `prop:chirality-dual-space-derivation` per CLAUDE.md §V2. Closed-form fallback (`Π(1 + sign·h)`) is retained for back-compat but not canonical.
+The V2 chirality `a_K = τ(β · β_mirror⁻¹)` is now production-default in `paper_six_term_mass(..., chirality_source="v2")`. This matches `prop:chirality-dual-space-derivation` per AGENTS.md §V2. Closed-form fallback (`Π(1 + sign·h)`) is retained for back-compat but not canonical.
 
 ✅ canonical.
 

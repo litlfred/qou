@@ -207,7 +207,7 @@ arranged in the **column-rich** configuration (`ν` strictly below
 $$\alpha_{\text{block}}(T_{(p, k)}; \lambda^*, \mu^*, \nu^*) \;=\; k \cdot (p - 1)$$
 
 matching the empirical formula `α_shift(T_{p, k}) = k(p-1)` from
-[`alpha_shift_torus.py`](../../folio-assistant/computations/alpha/alpha_shift_torus.py)
+[`alpha_shift_torus.py`](../../computations/alpha/alpha_shift_torus.py)
 (verified at six `(p, k)` test pairs in copilot's PR #543).
 
 ### Step 8: The atomic-braid corollary
@@ -265,7 +265,7 @@ proof.
 
 For the W-3 shift formula, the only λ that matters is the
 **maximizer** λ* := argmax_λ ord_(q=0) χ^λ(β).  Per
-[`alpha_shift_torus.py`](../../folio-assistant/computations/alpha/alpha_shift_torus.py)
+[`alpha_shift_torus.py`](../../computations/alpha/alpha_shift_torus.py)
 (landed via PR #543), the maximizer for torus-knot interfaces
 T_(p, k) is the column partition V_(1^p), which is **1-dimensional**
 (dim V_(1^p) = 1).  For the canonical pppnnn atomic braid with
@@ -287,7 +287,7 @@ input needed for the maximizer-driven argument).
 |---|---|
 | LR branching `ρ_λ ↓ H_{n_1} × H_{n_2}` | [Macdonald §I.5], [Mathas §3.4] |
 | Hoefsmit seminormal form for `H_n(q)` | [Hoefsmit 1974], [Mathas §3.4] |
-| `α_shift(T_{p, k}) = k(p-1)` | [`alpha_shift_torus.py`](../../folio-assistant/computations/alpha/alpha_shift_torus.py) (PR #543) |
+| `α_shift(T_{p, k}) = k(p-1)` | [`alpha_shift_torus.py`](../../computations/alpha/alpha_shift_torus.py) (PR #543) |
 | Per-new-nucleon (18, 21) decomposition | [AXKIA commit 2f186ebc9](https://github.com/litlfred/qou/commit/2f186ebc9) |
 | LP duality (Theorem T_3) | [Schrijver §7.2] |
 | Complementary slackness (Theorem T_1) | [Schrijver §7.4] |

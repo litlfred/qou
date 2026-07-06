@@ -1,4 +1,5 @@
 import QOU.Basic
+import QOU.ParticleInteractions.AtomKnot
 
 
 /-!

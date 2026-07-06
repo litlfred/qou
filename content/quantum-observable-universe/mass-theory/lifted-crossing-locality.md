@@ -28,7 +28,7 @@ $$
 $c$ alone, its sign $\varepsilon(c) \in \{\pm 1\}$, and the substrate
 parameter $q$ — but not on which other crossings are lifted.*
 
-## Consequence: exponential closed form
+## Corollary: exponential closed form
 
 Given locality, the crossing-graded expansion collapses:
 
@@ -44,7 +44,7 @@ $$
 For the homogeneous case $\eta(c) = 1$ for all $c$, this is 
 $(1 + \xi(q))^{c(\mathcal{K})}$.
 
-## Why locality is non-trivial
+## Non-triviality of locality
 
 Without locality, lifting two crossings $c_1, c_2$ could produce
 interference: the joint amplitude
@@ -76,7 +76,7 @@ and fails at special values:
  $z_q \to 0$ or $1$, and locality becomes vacuous since $\xi(q) = 0$.
 
 Locality holding at $q_0$ but **failing away from it** is what makes
-the substrate parameter physically distinguished: it sits in the
+the substrate parameter distinguished: it sits in the
 locality window where the crossing-graded expansion has its cleanest
 closed form.
 
@@ -89,3 +89,5 @@ quantify locality violations. For doubly-magic atoms the product form
 is within $\leq 6\%$ (see the
 [JSJ/$\alpha$-clustering witness](#conj:mass-volume-factorization)),
 consistent with approximate locality at $q_0$.
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

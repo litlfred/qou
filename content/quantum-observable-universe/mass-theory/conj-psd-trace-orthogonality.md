@@ -59,23 +59,25 @@ The negative-$y_\lambda$ sign on the deepest PSD-dominant partitions at A=6 is t
 
 ## Implications for the binding-energy Gap
 
-Per Probe (1) and Probe (1b) in [`docs/audits/-dominant-partition-nucleon-structure.md`](../../../docs/audits/-dominant-partition-nucleon-structure.md):
+Per canonical evaluation (1) and canonical evaluation (1b) in [`docs/audits/-dominant-partition-nucleon-structure.md`](../../../docs/audits/-dominant-partition-nucleon-structure.md):
 
 The binding-energy gap $|B_{\mathrm{pred}}(K) - B_{\mathrm{AME}}(K)|$ lives in the **trace-dominant family** (the 1/2-row long-string partitions), NOT in the PSD-dominant family. Therefore:
 
 1. Categorical refinement of the framework should focus on the **low-row partitions**, not the rectangular Schur-Weyl partner.
 2. The PSD-dominant block is the structural "obstruction fingerprint" but does NOT carry the residual mass deficit.
-3. The Δ_λ-gating problem (per CLAUDE.md "Precision goals" section) is concretely about which low-row 2-row partitions contribute to the cancellation/imbalance of $\mathrm{tr}_M$.
+3. The Δ_λ-gating problem (per AGENTS.md "Precision goals" section) is concretely about which low-row 2-row partitions contribute to the cancellation/imbalance of $\mathrm{tr}_M$.
 
-## What this conjecture does NOT claim
+## Non-claims of this conjecture
 
-- It does NOT predict the *specific* PSD-dominant shape at each $A$. At $A=4$ the dominant is the (A,A,A) rectangle; at $A=6$ it is the multi-step (3,3,3,3,2,2,2) (the rectangular-form conjecture was [empirically falsified at A=6](../../../docs/audits/-dominant-partition-nucleon-structure.md#gap-narrowing-probe-4c)).
+- It does NOT predict the *specific* PSD-dominant shape at each $A$. At $A=4$ the dominant is the (A,A,A) rectangle; at $A=6$ it is the multi-step (3,3,3,3,2,2,2) (the rectangular-form conjecture was [categorically falsified at A=6](../../../docs/audits/-dominant-partition-nucleon-structure.md#gap-narrowing-canonical evaluation-4c)).
 - It does NOT claim a categorical proof — only an empirical pattern across A=4 and A=6 supported by Lanczos LinearOperator probes.
 - It does NOT identify the bar-involution as the categorical mechanism — though the negative-$y_\lambda$ sign pattern is suggestive.
 
 ## Cross-references — empirical witnesses
 
-- [`folio-assistant/computations/probe_1_project_4he_on_dominant.py`](../../../folio-assistant/computations/probe_1_project_4he_on_dominant.py) — Probe (1) at A=4
-- [`folio-assistant/computations/probe_1b_li6_orthogonality.py`](../../../folio-assistant/computations/probe_1b_li6_orthogonality.py) — Probe (1b) at A=6
-- [`folio-assistant/computations/probe_4_li6_rectangular_python.py`](../../../folio-assistant/computations/probe_4_li6_rectangular_python.py) — Lanczos LinearOperator framework
-- [`folio-assistant/computations/probe_4c_li6_large_d_scan.py`](../../../folio-assistant/computations/probe_4c_li6_large_d_scan.py) — large-$d_\lambda$ scan that falsified the rectangular-form conjecture
+- the canonical formalism — canonical evaluation (1) at A=4
+- the canonical formalism — canonical evaluation (1b) at A=6
+- the canonical formalism — Lanczos LinearOperator framework
+- the canonical formalism — large-$d_\lambda$ scan that falsified the rectangular-form conjecture
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

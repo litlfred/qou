@@ -27,7 +27,6 @@ export default proposition({
     "bennett1973",
     "fredkin1982",
     "pena2022",
-    "thooft2016",
     "toffoli1980",
   ],
 });

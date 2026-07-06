@@ -10,7 +10,7 @@ Per 1ppQ ledger (cont. 5) following the Chain 1 α + β NEGATIVE:
      Kashiwara f̃₁² (crystal operator eigenvalue), not Markov-projector
      and not Kashaev-dilog."
 
-EXISTING SEARCH SPACE (do NOT re-explore, per CLAUDE.md §"Before
+EXISTING SEARCH SPACE (do NOT re-explore, per AGENTS.md §"Before
 declaring 'open' math"):
 
   - 38 candidates in 6 hypothesis families already exhausted by

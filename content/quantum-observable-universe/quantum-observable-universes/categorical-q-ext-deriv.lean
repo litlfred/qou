@@ -9,6 +9,7 @@ import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
+import QOU.QuantumObservableUniverse.CategoricalFoundations
 
 
 /-!
@@ -27,9 +28,10 @@ open scoped CategoryTheory CategoryTheory.MonoidalCategory
 
 namespace QOU
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -82,5 +84,7 @@ theorem CategoricalQExtDeriv.dq_classical {C : Type u}
     (cqd : CategoricalQExtDeriv C) (hq : cqd.q = 1) :
     cqd.dq = cqd.d_classical := by
   simp [dq, hq, inv_one, sub_self, zero_smul, one_smul, add_zero]
+
+end
 
 end QOU

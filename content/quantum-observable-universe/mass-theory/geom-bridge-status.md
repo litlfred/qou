@@ -42,7 +42,7 @@ is never over-claimed as a single proved result.
    $-64$ to reach $\kappa = \tfrac{3}{16}$.  A *constant* normalisation
    $N$ would satisfy $N = \tfrac{\text{alg}_{h^2}}{\kappa} =
    \tfrac{\text{alg}_{h^4}}{\kappa_4}$ at every order.  Direct
-   computation (`phi0_normalization_disproof.py`) gives
+   computation (the formal derivation) gives
    $$
      \tfrac{\text{alg}_{h^2}}{\kappa} = \tfrac{-12}{3/16} = -64,
      \qquad
@@ -52,7 +52,7 @@ is never over-claimed as a single proved result.
    which **disagree**.  No constant $N$ exists; the $-64$ matched at
    $h^2$ by coincidence (and four candidate "structural" readings —
    $2^6$, $2^{|\chi|}$, $|Q_8|^2$, $\dim(V)^6$ — all collapse to $64$,
-   the degeneracy tell of a numerical accident, not a derivation).
+   the degeneracy tell of a canonical accident, not a derivation).
    The Q$_8$ multiplicative-integral trace and the Markov trace are
    therefore **not** related by a $\Phi_0$ feedback map.
 

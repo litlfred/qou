@@ -4,7 +4,7 @@ against five classes of physical data.  Under independence
 ([mathematical and categorical consequences](#rem:implications-algebraic-independence)),
 each class should behave as follows.
 
-1. **Proton decay searches.** Non-collapse of the Yekutieli brane
+1. **Proton decay searches.** Non-collapse of the brane
    tower forbids any finite-order categorical channel for proton
    decay.  The predicted proton lifetime satisfies
    $\tau_{\mathfrak{p}} \gtrsim 10^{34}\;\mathrm{yr}$, consistent with

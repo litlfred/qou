@@ -63,6 +63,17 @@ Watch for a `holds : Prop` / `claim : Prop` field that is later **instantiated
 as `True`**, or a conclusion that `simp`/`tauto`/`trivial` closes with no use of
 the hypotheses.
 
+**The `theorem`→`def` dodge (STRICT — forbidden, 2026-06-23).** Re-declaring a
+vacuous `theorem X : True := trivial` as `def X : True := trivial` (or
+`abbrev`/`instance`) once hid it from every detector here (they keyed on the
+provable kinds). The scanner now flags a trivial-bodied `: True` `def` as
+pattern **`def-disguised-true`**. Carve-outs: a shadow-stub (real decl resolves
+elsewhere) or a `conjecture`-block Lean placeholder (sibling `.ts` is
+`conjecture(...)`) → exempt. Per **AGENTS.md §1a**, dodging an audit this way is
+a review failure; the honest dispositions are *prove it* / *state the real
+proposition with `sorry` + `-- Ref:`* / *demote to `conjecture`* — never a
+vacuous `def : True`.
+
 ### 3. False / unsatisfiable premise (vacuously true) — `proof-no-false-premise`
 
 A hypothesis can never hold, so the theorem is vacuously true and asserts
@@ -85,6 +96,34 @@ Agent judges intent.
 A non-trivial statement is closed by `decide`/`native_decide`, trusting the
 kernel/compiler evaluator instead of proving structure. `native_decide` adds
 `Lean.ofReduceBool` to the axiom set — an integrity concern in its own right.
+The runnable scanner (below) flags **only `native_decide`**; a plain `decide`
+on a small decidable goal (`(-1:ℤ)^6 = 1`, `seifertGenus_T2 11 = 5`) is
+idiomatic and not a defect.
+
+### 6. Axiom that is a candidate to prove — `proof-no-provable-axiom`
+
+An `axiom` carrying **no bibliographic `-- Ref:` justification** (and no
+`[cite]` / DOI / URL in its docstring) asserts content with nothing backing
+it — it should either be **proved** (converted to a `theorem`) or **cited**
+(marked a genuine external input). This is the dual of `proof-no-axiom-growth`
+(which guards against *adding* axioms): this guards against *leaving provable
+or unjustified content as a global axiom*.
+
+```lean
+axiom my_identity (x : R) : f x = g x          -- no -- Ref:, looks provable → flag
+```
+
+Tiers (agent-confirmed):
+
+- **provable** — Mathlib or a short argument discharges it ⇒ prove it (recipe-1).
+- **legitimate-but-uncited** — a genuine external/substrate input (deep theorem,
+  opaque postulated construction) ⇒ add a `-- Ref:` (recipe-3), do NOT pretend
+  to prove it.
+- **conditional input** — belongs as a `[Class]` hypothesis on downstream
+  consumers (recipe-2 / §3b-cond) rather than a global axiom.
+
+Do **not** flag an axiom that already carries a `-- Ref:` / citation — resting
+on a cited upstream result is sound.
 
 ## Why `proof-statement-integrity` misses all of these
 
@@ -105,7 +144,7 @@ Do **not** flag these legitimate patterns:
   fields or **applies lemmas** to *derive* the conclusion — `Iff.intro h.fwd
   h.bwd`, `h.step1.trans h.step2`, `by rw [h.a]; exact h.b`, `by linarith
   [h.x, h.y]`. The class fields encode *hypotheses*; the theorem *derives*. This
-  is exactly CLAUDE.md §3b-cond item 5's required shape. Verified exemplar:
+  is exactly AGENTS.md §3b-cond item 5's required shape. Verified exemplar:
   `QOU/FluidDynamics/q_bkm_criterion.lean`.
 - **Honest named axiom with `-- Ref:`** for a genuine external input (e.g.
   `em_spectral_completeness_axiom`, Jones 1987), where downstream theorems
@@ -132,7 +171,7 @@ silently bless a bare `: True`:
 
 - **Shadow** — the ref's decl-path resolves to a real library decl. The stub is
   pure shadowing: **delete it** (the block then resolves to the real proof). Do
-  NOT exempt. See the **no-shadowing-stubs** directive in CLAUDE.md §0a.
+  NOT exempt. See the **no-shadowing-stubs** directive in AGENTS.md §0a.
 - **Genuine placeholder** — no library formalisation exists. The block is an
   *unformalised* proposition asserting `: True` — **flag it** (honest fix: state
   the real proposition with `sorry` + `-- Ref:`, or demote to `conjecture`).
@@ -176,6 +215,17 @@ projecting it. That converts a *visible* gap (`sorry`) into an *invisible* one.
 
 ## Detection heuristic (candidate grep → agent confirmation)
 
+0. **Runnable scanner (preferred).** `bun run
+   content/pipeline/lean-vacuity-axiom-audit.ts` walks every `.lean` (library
+   trees + content-block siblings), strips comments/docstrings, and emits a
+   witness JSON (`docs/audits/<date>-lean-vacuity-axiom-audit.json`) keyed by
+   path, with one entry per category (#1–#6 above). It exempts sibling-stub
+   *shadows* (real formalisation resolvable via `lean.ref` / docstring) and
+   field *compositions* that derive. `--write-sidecars` upserts
+   `reviewer.kind="script"` candidate entries on the owning blocks' `.qa.json`.
+   This replaces the manual grep below in environments where the migrated
+   `qa-sweep.ts` / `qa-criteria-registry.ts` are unavailable.
+
 1. **Cheap candidate filter** (regex):
    - proof body `:=\s*\w+\.\w+\s*$`, `:=\s*⟨[^⟩]*\.\w+[^⟩]*⟩`, `:= by\s+exact\s+\w+\.\w+`, `:= ctx\.`, `:= d\.`, `:= h\.`
    - conclusion `: True`, `: .* = .*` where both sides identical, `holds : Prop`
@@ -185,6 +235,68 @@ projecting it. That converts a *visible* gap (`sorry`) into an *invisible* one.
    the carrier's definition, check whether the projected field's type unifies
    with the goal (up to bound variables), and whether sibling fields are used.
    Apply the legit-vs-anti discriminator above. Record verdict + evidence.
+
+### 7. `: True` carrier field — `proof-claims-unencoded` / pattern `true-class-field`
+
+A `class`/`structure` field typed literally `: True` (or `True ∧ … ∧ True`, or a
+`Prop := True` default) carries **zero** content — every instance satisfies it,
+so a downstream consumer that takes the field as a hypothesis assumes nothing.
+This is the *field-level* analogue of a `: True` conclusion, and it is the gap
+that the empty-prop-carrier (zero-field) and claims-unencoded (≥2 enumerated
+bullets) detectors both structurally miss: a **single** `: True` field on an
+otherwise-populated carrier. Exemplar: `mass-theory/confinement-categorical.lean`
+`hh_vanish : True`; worst case: a `Conjectures/*` carrier with `holds : True` that
+a trivial `instance … := ⟨⟩` then "closes" (fabricating a content-free instance of
+an open conjecture — the §3b-tax violation). **Honest fix:** encode the real
+property as the field type, or — for genuinely-open infrastructure Mathlib lacks
+— annotate the field `opaque marker` / `@marker` (then it is **exempt-but-tracked**,
+consistent with the empty-carrier opt-out), never leave a bare un-annotated `: True`.
+
+> **Escalation signal on trivial-true (2026-06-28).** A `placeholder-true` /
+> `def-disguised-true` whose docstring carries theorem-assertion language
+> (`**Theorem**` / `**Lemma**` / `**Proposition**`) and is **not** a conjecture
+> carrier is annotated *"docstring asserts a provable claim while the Lean
+> concludes `True`"* — the `q_gl_obstruction_calc` failure mode (a real claim
+> hidden behind a tautology), distinct from an honest open conjecture. This is
+> the heuristic that the 2026-06-26 triage missed on `q_gl_obstruction_calc`,
+> `confinement-categorical`, the fluid-dynamics conditionals, and others.
+
+## Agent-inspection ledger — making agent confirmation mandatory (2026-06-28)
+
+The detector is **high-recall by design**; the legit-vs-genuine call requires
+agent inspection (a `decide` on a true concrete fact is legit; a `: True` hiding
+a real theorem is not). For **content blocks** that verdict lands on the
+`<block>.qa.json` sidecar (above). But a **standalone library `.lean`**
+(`content/**/lean/QOU/**/*.lean` with no `.ts`/`.md` sibling) has **no sidecar**,
+so an agent verdict had nowhere durable to live — detection stayed purely
+machine, and a one-off triage doc could silently mis-call a candidate "legit"
+(as happened). The **review ledger** closes that gap:
+
+```bash
+# Seed/refresh: new + file-changed candidates become `needs-agent`.
+bun run content/pipeline/lean-vacuity-axiom-audit.ts content/quantum-observable-universe \
+  --review-ledger docs/audits/lean-vacuity-review-ledger.json
+# Enforce: exit 1 if ANY non-exempt candidate lacks a FRESH agent verdict.
+bun run content/pipeline/lean-vacuity-axiom-audit.ts content/quantum-observable-universe \
+  --check-ledger docs/audits/lean-vacuity-review-ledger.json
+```
+
+- **Ledger** (`lean-vacuity-review/v1`, committed): keyed by
+  `<relpath>::<decl>::<category>`; each entry records the agent `verdict`
+  (`genuine` | `legit` | `advisory` | `needs-agent`), optional `disposition` /
+  `evidence` / `reviewer`, and the **`.lean` sha at review time**.
+- **Staleness = re-review.** If the `.lean` changes after a verdict, `file_sha`
+  drifts and `--review-ledger` resets the entry to `needs-agent`
+  (preserving `stale_prev_verdict`). A verdict only counts while it matches the
+  file it was made against — the machine cannot bless a candidate, only an agent
+  verdict can, and only while fresh.
+- **Resolved candidates are pruned** automatically (a fixed file no longer
+  flags, so its key drops out).
+- **The agent workflow:** run `--review-ledger` to materialise the queue, inspect
+  each `needs-agent` entry per the legit-vs-anti discriminators above, write the
+  verdict (+ disposition/evidence) into the ledger, fix every `genuine` /
+  `advisory` candidate, then `--check-ledger` must pass. This is the
+  "agent inspection, not just machine" gate.
 
 ## QA criteria (sidecar params) — wiring
 
@@ -199,7 +311,8 @@ Mirrors the existing `proof-statement-integrity` model (Agent-checked,
 | `proof-no-trivial-true` | active | #2 tautological conclusion |
 | `proof-no-false-premise` | active | #3 vacuously true |
 | `proof-no-unused-hypotheses` | active | #4 weakened statement |
-| `proof-no-decide-masking` | active | #5 evaluator masking |
+| `proof-no-decide-masking` | active | #5 evaluator masking (`native_decide`) |
+| `proof-no-provable-axiom` | active | #6 uncited / provable axiom |
 
 **Minimal wiring (per Agent-A recon):**
 
@@ -226,7 +339,7 @@ marks the entry `needs-agent`; the agent then fills the verdict.
    Recipe-4 (demote to conjecture) items are claim changes — list them for owner
    sign-off, don't auto-demote.
 3. **Drain:** fix file-by-file (or small directory batches), microcommit per
-   CLAUDE.md branch+PR policy, verify each with `lean`-direct against the
+   AGENTS.md branch+PR policy, verify each with `lean`-direct against the
    restored `lake-cache/qou-<toolchain-slug>` oleans (per
    `lean-environment-setup.md`).
 4. **Backfill sidecars:** run `qa-sweep --only <criterion>` on the drained blocks
@@ -234,8 +347,15 @@ marks the entry `needs-agent`; the agent then fills the verdict.
 
 ## Current audit findings
 
-See `docs/audits/2026-06-14-lean-vacuous-proof-audit.md` for the live list. As of
-2026-06-14: **12 HIGH-confidence self-assuming-projection instances** (6 from the
-batch commit `e138518a`, 6 independent); `gauge-coupling-uniqueness` already
+See `docs/audits/2026-06-14-lean-vacuous-proof-audit.md` for the original list. As
+of 2026-06-14: **12 HIGH-confidence self-assuming-projection instances** (6 from
+the batch commit `e138518a`, 6 independent); `gauge-coupling-uniqueness` already
 superseded with a genuine proof; 6 legitimate conditional-class proofs correctly
 excluded.
+
+2026-06-17 (`docs/audits/2026-06-17-lean-vacuity-axiom-audit.md`, full corpus
+scan via the runnable scanner): 197 candidates / 178 files — 130 trivial-true (48
+genuine `placeholder-true` gaps, 73 `conclusion-True`, 9 reflexive), 22
+self-assuming-projection, 31 `native_decide`, 9 false-premise, **5
+`proof-no-provable-axiom`** (all `LinearJSJVolume`, resolved to cited inputs:
+`[thurston1978]` / `[manuscript]`). 39 sibling-stub shadows exempted.

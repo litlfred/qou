@@ -46,7 +46,7 @@ USAGE:
         | tee /tmp/qbeta_depth15.log
 
 Outputs:
-    folio-assistant/computations/qbeta-habiro-depth15-interpretation.witness.json
+    computations/qbeta-habiro-depth15-interpretation.witness.json
 """
 from __future__ import annotations
 

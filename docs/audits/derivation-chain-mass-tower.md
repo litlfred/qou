@@ -72,7 +72,7 @@ are too strong for arbitrary C. They need restatement with a
 
 **Files:**
 - `content/quantum-observable-universe/lifting-and-descent/motivic-galois-character.lean`
-  — axiomatic `class MotivicGaloisCharacter` (CLAUDE.md §3b: `sorry` on
+  — axiomatic `class MotivicGaloisCharacter` (AGENTS.md §3b: `sorry` on
   any field IS the conjecture).
 - `motivic-perpetual-obstruction.lean` — class with conditional
   theorems downstream.
@@ -205,7 +205,7 @@ of `0717c94b7`:
   `List.append_lt_append_left` lemma names. Deferred consistent with
   AlgOps.
 - 3 axioms (`descended_gs_inherited`, `jet_stratified_gs_criterion`,
-  `degree_filtered_reduction_correct`) — **deliberate** per CLAUDE.md
+  `degree_filtered_reduction_correct`) — **deliberate** per AGENTS.md
   §3b. Each represents a substantive Buchberger-style claim whose
   formalization requires Mathlib's incomplete `RewritingSystem`
   infrastructure.

@@ -1,7 +1,14 @@
 Interactive SVG visualization of the knot structure of light atoms
 ($Z \leq 4$): hydrogen, helium, lithium, and beryllium.
 
-Each atom is displayed as a composite knot diagram showing:
+Rendering each atom as a knot makes its particle content and internal
+linkage legible at a glance: one reads off which knot type carries each
+proton, neutron, and electron, and sees how the nuclear and electronic
+sub-links are joined.
+
+Each atom is displayed as a composite knot diagram in which a nuclear
+sub-link (protons and neutrons) and an electronic sub-link (electrons)
+are joined by Hopf links, with the following legend:
 
 - **Protons** as solid left trefoils $T_{2,3}$ (filled).
 - **Neutrons** as unknots $K_{0_1}$ (circles).

@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.ConfinementNfStructureForcing — conjectural class (placeholder)
 
@@ -6,7 +8,7 @@
 
 This is a **conjecture**: the class `ConfinementNfStructureForcing` carries a placeholder
 field; the `noncomputable instance` is the conjectural witness whose
-`sorry` represents the open conjecture itself (per CLAUDE.md §3b),
+`sorry` represents the open conjecture itself (per AGENTS.md §3b),
 NOT a missing proof.  Downstream theorems may take
 `[ConfinementNfStructureForcing]` as an explicit `[Instance]` hypothesis to derive
 unconditional Lean theorems modulo this single conjectural input
@@ -27,7 +29,7 @@ class ConfinementNfStructureForcing where
 
       Let $\beta = \beta_1 \star I \star \beta_2 \in B_n$ be a compound
 braid where
-  -- Witness: folio-assistant/computations/none $I$ is a basis interface braid (e.g. a torus-knot
+  -- Witness: computations/none $I$ is a basis interface braid (e.g. a torus-knot
 generator). Let $A := \{\lambda \vdash n : y_\lambda^* > 0\}$ be the
 LP/SDP
 
@@ -42,7 +44,5 @@ LP/SDP
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/confinement-nf-structure-forcing.ts
-noncomputable instance : ConfinementNfStructureForcing := by
-  trivial
-
+noncomputable instance : ConfinementNfStructureForcing := sorry
 end QOU.BraidKnot

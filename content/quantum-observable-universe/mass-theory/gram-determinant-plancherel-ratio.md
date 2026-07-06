@@ -2,7 +2,7 @@
 *Working over $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$, let
 $\beta_s = T_{2,9}$, $\beta_w = T_{3,5}$ be the unique pair of
 genus-$4$ torus knots
-([Bring uniqueness](#prop\:force-carrier-bring-uniqueness)).  Each
+([Bring uniqueness](#prop:force-carrier-bring-uniqueness)).  Each
 admits a Wedderburn decomposition into central idempotents of the
 ambient Hecke algebra $H_n(R, q)$:*
 
@@ -21,7 +21,7 @@ $$
 $$
 
 *appearing in the Chern-Simons :refterm[descent]{#descent}
-([CS coupling](#conj\:em-coupling-chern-simons)) is given by the
+(CS coupling) is given by the
 Plancherel-weighted character product*
 
 $$
@@ -37,21 +37,4 @@ $$
   \;}
 $$
 
-*Proof.*  The Gram matrix of the Markov pairing on $H_n(R, q)$ is
-block-diagonal in the central-idempotent basis with entries
-
-$$
-  G^{q}_{\lambda \mu}
-  \;=\;
-  \delta_{\lambda \mu} \cdot
-  \frac{\dim_q V_\lambda \cdot \dim V_\lambda}{[n]_q!}
-$$
-
-([Gram-spectral connection](#rem\:gram-matrix-spectral-connection)).
-The classical limit $q \to 1$ replaces $\dim_q \to \dim$ and $[n]_q!
-\to n!$.  For the 2-knot $(\beta_s, \beta_w)$ configuration, the
-relevant determinant projects onto the rank-$2$ sublattice spanned
-by $\beta_s, \beta_w$, factoring over the Wedderburn blocks weighted
-by character coefficients $c_\lambda^{(s)} \cdot c_\lambda^{(w)}$.
-Substituting and taking the ratio yields the displayed formula.
-$\square$
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

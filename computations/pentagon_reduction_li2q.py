@@ -58,7 +58,7 @@ as a formal-power-series identity. We don't analytically continue
 Li_2^q past its convergence disk; we REWRITE Li_2^q(uv) into a
 sum of Li_2^q(simpler args) that have convergent series. This is
 on the *algebraic side of the substrate-archimedean wall* per
-CLAUDE.md §7c.
+AGENTS.md §7c.
 
 Output: `pentagon-reduction-li2q.witness.json` with per-atom
 T3 contributions computed via pentagon reduction; comparison

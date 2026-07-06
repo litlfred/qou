@@ -19,7 +19,7 @@ LaTeX label: `prop:dq-squared`
 
 - [manuscript] §1-quantum-observable-universe/dq-squared
 
-**Base ring** (CLAUDE.md §7c): the archimedean realisation of the
+**Base ring** (AGENTS.md §7c): the archimedean realisation of the
 categorical `prop:categorical-dq-squared` obstruction. The formula
 `q⁻¹(1 - q⁻¹) · dθ · ℒ_ξ α` needs an inverse `q⁻¹`, so the carrier is a
 generic `{R : Type*} [Field R]` with `q : R`, `q ≠ 0`. The "archimedean"

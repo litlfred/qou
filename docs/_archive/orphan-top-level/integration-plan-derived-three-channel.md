@@ -109,10 +109,10 @@ mass lives in each irreducible sector.
 ## Dependencies from refine branch
 
 ### Files to merge/use:
-- `folio-assistant/computations/four-term-photon-to-atoms.py` — nucleon derivation
-- `folio-assistant/computations/he4-full-word.py` — full H_A(q) word analysis
-- `folio-assistant/computations/confinement-lp.py` — B₃ proof
-- `folio-assistant/computations/confinement-operator-selection.py` — exhaustive search
+- `computations/four-term-photon-to-atoms.py` — nucleon derivation
+- `computations/he4-full-word.py` — full H_A(q) word analysis
+- `computations/confinement-lp.py` — B₃ proof
+- `computations/confinement-operator-selection.py` — exhaustive search
 - `tools/hecke-engine/src/main.rs` — Rust NF engine for A > 10
 - Content blocks: `derived-atom.md`, `four-term-pair-nucleon.md`,
   `torus-knot-shell-binding.md`, `gram-weighted-qvalue.md`

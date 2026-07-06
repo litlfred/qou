@@ -19,8 +19,8 @@ export default corollary({
   ],
   computation: {
     engine: "sympy",
-    script: "folio-assistant/computations/probes/knot_factor_amphicheiral_BD_probe.py",
-    witness: "folio-assistant/computations/probes/knot-factor-amphicheiral-BD-probe.witness.json",
+    script: "computations/probes/knot_factor_amphicheiral_BD_probe.py",
+    witness: "computations/probes/knot-factor-amphicheiral-BD-probe.witness.json",
     status: "verified",
   },
 });

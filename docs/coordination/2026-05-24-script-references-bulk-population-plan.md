@@ -6,7 +6,7 @@
 
 ## Classification (filename heuristics)
 
-Heuristics applied to 541 active Python scripts under `folio-assistant/computations/`:
+Heuristics applied to 541 active Python scripts under `computations/`:
 
 | bucket | count | naming pattern | sidecar action |
 |---|---:|---|---|
@@ -43,7 +43,7 @@ y_lambda_at_q0_cache.py               y_lambda_pole_order_cache.py
 **Edit shape (per file):**
 
 ```jsonc
-// folio-assistant/computations/script-qa/<name>.script-qa.json
+// computations/script-qa/<name>.script-qa.json
 {
   "$schema": "script-qa/v1",
   "script_path": "...",
@@ -110,4 +110,4 @@ Filename doesn't match any pattern. Each needs a manual look at the module docst
 
 - [PR #1091](https://github.com/litlfred/qou/pull/1091) — `references` metadata schema (merged 2026-05-24)
 - [PR #1110](https://github.com/litlfred/qou/pull/1110) — `respects_archimedean_wall` probe/audit exemption (parallel pattern)
-- CLAUDE.md §7c — substrate-vs-archimedean wall (informs the infra bucket criteria)
+- AGENTS.md §7c — substrate-vs-archimedean wall (informs the infra bucket criteria)

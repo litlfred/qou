@@ -48,10 +48,10 @@ would require:*
    well-defined evaluation map at $u_0 = q_0^{1/2}$.*
 
 *See the
-[opaque-declarations audit](../../folio-assistant/computations/AUDIT-gb-residue-opaque-declarations.md)
+[opaque-declarations audit](../../computations/AUDIT-gb-residue-opaque-declarations.md)
 for the full Mathlib gap analysis.*
 
-**Why a conjecture and not a theorem.**
+**Conjectural status.**
 *Existence and reality of the residue are rigorous in the analytic
 literature (Kashaev, Habiro, Garoufalidis–Lê); a Lean proof requires
 the meromorphic-function infrastructure listed above.  Until that
@@ -59,8 +59,8 @@ lands, instances supply the value directly and downstream consequences
 are stated conditionally on this conjecture.*
 
 **Empirical witness.**
-*The numerical residue values at $q_0 = :val[q_0]{precision=6}\ldots$ for proton,
-neutron, deuteron are computed by `term6_full_pole_sum.py` and stored
-in `folio-assistant/computations/term6-full-pole-sum.witness.json`.
+*The canonical residue values at $q_0 = :val[q_0]{precision=6}\ldots$ for proton,
+neutron, deuteron are computed by the formal derivation and stored
+in `computations/term6-full-pole-sum.witness.json`.
 Agreement with the Habiro side at machine precision is recorded in
 `markov-pipeline-cross-validation.witness.json`.*

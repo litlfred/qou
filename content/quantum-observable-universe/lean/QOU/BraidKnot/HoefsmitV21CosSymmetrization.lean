@@ -208,7 +208,7 @@ noncomputable def eigenphase (q : ℝ) : ℝ := (markovZ_legacy q - 1) * heckeH 
     `prop:beta-decay-transfer-matrix`; we record it here as a class
     field since the underlying eigenvalue computation lives in the
     existing Python infrastructure
-    (`folio-assistant/computations/hecke_characters.build_seminormal_matrices`)
+    (`computations/hecke_characters.build_seminormal_matrices`)
     and is not yet machine-proved. -/
 class V21Eigenphase (q : ℝ) : Prop where
   /-- The Markov-traced V_(2,1) character on a typed braid at single

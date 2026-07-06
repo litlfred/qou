@@ -93,11 +93,20 @@ theorem embeddability_closure :
   · exact descendants_embeddable K hK
 
 /-- The Seifert genus bound: for T_{m,n} to be a generator,
-    (m-1)(n-1) ≤ 2g(Σ₄) = 8. -/
+    (m-1)(n-1) ≤ 2g(Σ₄) = 8.
+
+    The evenness hypothesis `heven` encodes coprimality of `m, n`:
+    a torus knot `T_{m,n}` requires `gcd(m, n) = 1`, so exactly one of
+    `m, n` is even and `(m-1)(n-1)` is even.  Without it the bound is only
+    `(m-1)(n-1) ≤ 9` (natural-number division by 2 rounds down), so the
+    clean `≤ 2g` statement genuinely needs the parity input. -/
 -- Ref: [manuscript] §3/torus-knot-generators
 theorem seifert_genus_bound (m n : ℕ) (hm : 2 ≤ m) (hn : m < n)
+    (heven : Even ((m - 1) * (n - 1)))
     (hembed : (m - 1) * (n - 1) / 2 ≤ brings_genus) :
     (m - 1) * (n - 1) ≤ 2 * brings_genus := by
+  unfold brings_genus at *
+  obtain ⟨k, hk⟩ := heven
   omega
 
 end QOU.Torsion

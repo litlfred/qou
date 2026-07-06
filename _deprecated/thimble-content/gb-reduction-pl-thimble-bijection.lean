@@ -3,7 +3,7 @@
 
 The conjecture: each Gröbner-Shirshov normal-form reduction step is
 the τ_arch-image of one step of the gradient-flow ODE on a Picard-
-Lefschetz thimble.  Class-based per CLAUDE.md §3b.
+Lefschetz thimble.  Class-based per AGENTS.md §3b.
 
 -- Ref: [manuscript] conj:gb-reduction-pl-thimble-bijection
 -- Ref: [witten2011] Witten, "Analytic Continuation of Chern-Simons Theory," arXiv:1001.2933

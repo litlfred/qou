@@ -26,7 +26,7 @@ This audit attempts that derivation.
 ## Method
 
 The probe script
-[`folio-assistant/computations/probes/v9_one_plus_q_categorical_derivation_probe.py`](../../folio-assistant/computations/probes/v9_one_plus_q_categorical_derivation_probe.py)
+[`computations/probes/v9_one_plus_q_categorical_derivation_probe.py`](../../computations/probes/v9_one_plus_q_categorical_derivation_probe.py)
 tests 7 candidate categorical derivations at 50 dps:
 
 | # | Candidate | Categorical narrative |
@@ -166,7 +166,7 @@ construction is over-determined.
 
 ## Status classification
 
-Per CLAUDE.md "Production-vs-Exploratory" discipline and PR #1581's
+Per AGENTS.md "Production-vs-Exploratory" discipline and PR #1581's
 TIERED reporting convention:
 
 | Tier | Claim |
@@ -182,17 +182,17 @@ The v9 formula remains in the **"near-match"** tier — promoted from
 ## Cross-references
 
 - Probe script:
-  [`folio-assistant/computations/probes/v9_one_plus_q_categorical_derivation_probe.py`](../../folio-assistant/computations/probes/v9_one_plus_q_categorical_derivation_probe.py)
+  [`computations/probes/v9_one_plus_q_categorical_derivation_probe.py`](../../computations/probes/v9_one_plus_q_categorical_derivation_probe.py)
 - Witness:
-  `folio-assistant/computations/probes/v9-one-plus-q-categorical-derivation-probe.witness.json`
+  `computations/probes/v9-one-plus-q-categorical-derivation-probe.witness.json`
 - v9 baseline:
-  [`folio-assistant/computations/option_e_v9_all_symmetries.py`](../../folio-assistant/computations/option_e_v9_all_symmetries.py)
+  [`computations/option_e_v9_all_symmetries.py`](../../computations/option_e_v9_all_symmetries.py)
   (commit `30c5393b7`)
 - #1581 audit (empirical uniqueness):
-  [`folio-assistant/computations/audits/option_e_v9_one_plus_q_structural_audit.py`](../../folio-assistant/computations/audits/option_e_v9_one_plus_q_structural_audit.py)
+  [`computations/audits/option_e_v9_one_plus_q_structural_audit.py`](../../computations/audits/option_e_v9_one_plus_q_structural_audit.py)
 - Canonical chain:
   [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md)
-- CLAUDE.md §7a (Hecke-Skein eigenvalue conventions)
+- AGENTS.md §7a (Hecke-Skein eigenvalue conventions)
 - Cheat-sheet §5q v2 (production averaging $\sigma_{\mathrm{avg}} = (\sigma + \sigma^{-1})/2$)
 - Audit
   [`2026-05-27-pion-half-figure-eight.md`](2026-05-27-pion-half-figure-eight.md)

@@ -11,7 +11,7 @@
 ## Executive Summary
 
 Chapter 4 is the largest chapter in QOU (~263 markdown blocks across 24 sections). This review exhaustively reads all blocks and checks:
-1. **Notation alignment** against CLAUDE.md §7a (Hecke-Skein) and §7aa (register)
+1. **Notation alignment** against AGENTS.md §7a (Hecke-Skein) and §7aa (register)
 2. **Section-to-content alignment** (do blocks match topic?)
 3. **Section-to-chapter alignment** (does content support core intent?)
 4. **One-voice consistency** (computational, concrete, no editorializing)
@@ -120,7 +120,7 @@ Chapter 4 is the largest chapter in QOU (~263 markdown blocks across 24 sections
 - Mass: $\mathfrak{m}(K) = \mathrm{Vol}(K)/\hbar_q^2$ where $\hbar_q = (q-1)/q$ (line 19 of `topological-mass-trefoil.md`)
 - Crossing energy: $\mathfrak{E}_{\times} = (q - q^{-1})$ per crossing (section "Crossing energy and Coulomb charge")
 - Binding energy: Derived from Hecke relation eigenvalues in `binding-scale-catalan.md`
-- Speed of light: $c_q = 1/(q-1)$ (stated in CLAUDE.md §7aa, used in multiple blocks)
+- Speed of light: $c_q = 1/(q-1)$ (stated in AGENTS.md §7aa, used in multiple blocks)
 
 ✓ **Electronic shells = torus knots:** Section "Atom, Isotope, and Confinement Levels" defines confinement levels and shows shells are indexed by torus knots $T_{2, 2k+1}$ in Gröbner bases. Blocks: `electron-shell`, `shell-closure-stability`, `level-sufficiency`. Verified in `topological-mass-trefoil.md` (muon as $T_{2,5}$).
 
@@ -151,7 +151,7 @@ The chapter does NOT explicitly enumerate or count the 7 transfer matrices on $\
 
 ## 5. Notational Alignment — CRITICAL FOR THIS CHAPTER
 
-### CLAUDE.md §7a (Hecke-Skein convention, STRICT):
+### AGENTS.md §7a (Hecke-Skein convention, STRICT):
 
 | Standard | Chapter Status | Evidence |
 |----------|---|---|
@@ -161,14 +161,14 @@ The chapter does NOT explicitly enumerate or count the 7 transfer matrices on $\
 | Jones polynomial = `$J_K(q)` (not `$V_K(t)$` or bracket with $A$) | ✓ CORRECT | Consistently `$J_L(q)`, `$J_K(q)` throughout. |
 | Braid generators = `$\sigma_i$`; Hecke image = `$T_i = \rho(\sigma_i)$` | ⚠️ **MIXED** | Braid generators correctly `$\sigma_i$`. Hecke images sometimes written as `$T_i$`, sometimes as `$\rho(\sigma_i)`. See notation violations below. |
 
-### CLAUDE.md §7aa (notation register, STRICT):
+### AGENTS.md §7aa (notation register, STRICT):
 
 | Register | Standard | Chapter Status | Evidence |
 |----------|----------|---|---|
 | Particles | fraktur `$\mathfrak{u}, \mathfrak{d}, ..., \mathfrak{H}$` | ✓ CORRECT | All hadron references use `$\mathfrak{H}$`, `$\mathfrak{H}_p$`. |
 | Mass | fraktur `$\mathfrak{m}$` (never plain `$m$` for categorical mass) | ✓ MOSTLY CORRECT | Categorical mass consistently `$\mathfrak{m}$`. Minor: `calibration-inputs.md` line 133 has `$m_\mu$` in context of muon, acceptable (denotes mass of particle, not categorical). |
 | Hadron mass | `$\mathfrak{m}_{\mathfrak{H}}$` (not `$\mathfrak{m}_H$`) | ✓ CORRECT | Verified in section headers and examples. |
-| Jones polynomial variable | `$q$` (never numerical values outside Ch 7) | ✓ CORRECT | `$q$` symbolic throughout except `topological-mass-trefoil.md` line 24 evaluates $q \approx 1.110$ in **archimedean context only** — acceptable per CLAUDE.md exception. |
+| Jones polynomial variable | `$q$` (never numerical values outside Ch 7) | ✓ CORRECT | `$q$` symbolic throughout except `topological-mass-trefoil.md` line 24 evaluates $q \approx 1.110$ in **archimedean context only** — acceptable per AGENTS.md exception. |
 | Hecke algebra | `$H_n(q)$` (always with subscript $n$) | ✓ CORRECT | Used correctly in 77 blocks. |
 | Shuffle Hopf algebra | `$\mathcal{H}_q$` (distinct from `$H_n(q)$`) | ⚠️ NOT USED | No shuffle-algebra references detected in this chapter; not a violation. |
 | $q$-Hamiltonian | `$\hat{H}_q$` (distinct from `$H_n(q)$`, `$\mathcal{H}_q$`) | ⚠️ NOT USED | No Hamiltonian operator references; not relevant to this chapter. |
@@ -178,7 +178,7 @@ The chapter does NOT explicitly enumerate or count the 7 transfer matrices on $\
 
 **BLOCKER 1–6: Hecke relation with `$\sigma_i^2$` (should be `$T_i^2$`)**
 
-Per CLAUDE.md §7a: "The Hecke algebra generator is **$T$** (never $\sigma$ for the Hecke relation)."
+Per AGENTS.md §7a: "The Hecke algebra generator is **$T$** (never $\sigma$ for the Hecke relation)."
 
 | File | Line | Offending text | Issue |
 |------|------|---|---|
@@ -214,7 +214,7 @@ This equation is the **chapter's defining claim** (per one-voice.md line 199–2
 
 ### `$\hbar_q$` constant check:
 
-CLAUDE.md §7aa: `$\hbar_q = (q-1)/q$` (Planck constant).
+AGENTS.md §7aa: `$\hbar_q = (q-1)/q$` (Planck constant).
 
 | Block | Expression | Status |
 |-------|-----------|--------|
@@ -377,7 +377,7 @@ This is currently **implicit** (referenced in `topological-mass-formula.md` line
 
 **Chapter 4 is well-structured and computationally rigorous.** The core narrative (discrete braids replace path integrals, particles = knots, mass from topology) is clearly developed across 263 blocks and 24 sections. **One-voice discipline is excellent** — no editorializing, consistent present-tense computational voice.
 
-**Critical issues are notation-based (6 violations of §7a Hecke convention).** These must be corrected before publication, as they contradict CLAUDE.md's explicit mandate and undermine the chapter's formal rigor.
+**Critical issues are notation-based (6 violations of §7a Hecke convention).** These must be corrected before publication, as they contradict AGENTS.md's explicit mandate and undermine the chapter's formal rigor.
 
 **Two major structural gaps:**
 1. The "7 transfer matrices on $\Sigma_4$" claim (one-voice.md line 185) is unsupported by enumeration.
@@ -389,5 +389,5 @@ Both are fixable with focused new blocks; neither affects current content accura
 
 ---
 
-**Report compiled:** 2026-04-25 (exhaustive read of 263 blocks, 24 sections, notation register cross-check vs. CLAUDE.md)
+**Report compiled:** 2026-04-25 (exhaustive read of 263 blocks, 24 sections, notation register cross-check vs. AGENTS.md)
 

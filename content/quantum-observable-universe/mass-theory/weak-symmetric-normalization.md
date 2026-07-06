@@ -1,28 +1,5 @@
-**Proposition (weak-sector cell-content trace; supersedes
-Plancherel-normalization framing).**
-
-> **DEMOTED.** Earlier drafts of this proposition
-> framed $\mathcal{N}_{\rm sym}(q)$ as a Plancherel-weighted
-> ratio with uniform $1/[2]_q$ weights — derived under the
-> dimensionally-inconsistent $H_2(q)$-only formulation. Per
-> [`thm:hoefsmit-ew-cell-content`](#thm:hoefsmit-ew-cell-content),
-> the operative structural quantity is the **direct cell-content
-> trace** of $\sigma_1^4 \sigma_3^6 \sigma_5^8$ on the
-> pure-eigenspace — bar-self-dual, derived without Plancherel
-> weights. The Plancherel-weighted form below is retained only
-> as a **degenerate special case** for backward reference; do
-> not use it for $N_v$ derivation.
->
-> **Upstream parallel.** The upstream block
-> `conj:n-sym-symmetric-channel-normalization`
-> (already on main) carries the Plancherel-weighted N_sym
-> framing with N_sym(q_0) = 213.11 numerically pinned from
-> CODATA G_F. That back-solve is a CAL-3 violation (N_v
-> functions as a fourth calibration). The bar-self-dual
-> $\mathrm{tr}_{\rm pure}$ derivation supersedes both this
-> proposition and the upstream conjecture for the structural
-> N_v ansatz; the upstream block should likewise be demoted in
-> a follow-up.
+**Proposition (weak-sector symmetric-channel normalization
+$\mathcal{N}_{\rm sym}(q)$).**
 
 *Let $R$ be the categorical coefficient ring with $q \in R$ generic
 (not a root of unity in $R$, $q \neq 1$). The
@@ -94,9 +71,9 @@ $[3]_{q^2} = 1 + q^2 + q^4$ is the $q^2$-integer.) This is a
 `conj:electroweak-higgs-torus-link-triplet`
 fixes $k \in \{2, 3, 4\}$.
 
-### Numerical evaluation (for cross-checks)
+### canonical evaluation (for cross-checks)
 
-At $q_0 \approx :val[q_0]{precision=6, witness=folio-assistant/computations/q-pinning-50-digit.witness.json}$ (50 dps):
+At $q_0 \approx :val[q_0]{precision=6, witness=computations/q-pinning-50-digit.witness.json}$ (50 dps):
 - $q^4 \approx 1.5170$
 - $q^6 \approx 1.8694$
 - $q^8 \approx 2.3035$

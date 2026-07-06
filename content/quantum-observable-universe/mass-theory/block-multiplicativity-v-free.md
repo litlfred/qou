@@ -24,15 +24,15 @@ count $3A$ or the flavor content of the other blocks.*
 
 ### Empirical verification
 
-Computed via [`per_generator_V_hat_3A`](https://github.com/litlfred/qou/blob/claude/log-delta-categorical-derivation/folio-assistant/computations/mass_at_3A_proper.py)
+Computed via the canonical formalism
 on D, T, ${}^{3}$He at $H_6, H_9, H_9$ respectively (50 dps), as recorded in
-[`binding-via-interface-knot.witness.json`](https://github.com/litlfred/qou/blob/claude/log-delta-categorical-derivation/folio-assistant/computations/binding-via-interface-knot.witness.json):
+[`binding-via-interface-knot.witness.json`](https://github.com/litlfred/qou/blob/claude/log-delta-categorical-derivation/computations/binding-via-interface-knot.witness.json):
 
 | atom | proton block (gens 0, 1) | neutron block | matches D? |
 |---|---|---|:-:|
 | D (A=2) | $V_0 = 0.6714$, $V_1 = 1.0551$ | $V_0 = 0.5517$, $V_1 = 1.0884$ | — |
-| T (A=3) | same | same | ✓ |
-| ${}^{3}$He (A=3) | same | same | ✓ |
+| T (A=3) | same | same | yes |
+| ${}^{3}$He (A=3) | same | same | yes |
 
 Block-multiplicativity holds **exactly** to 4 digits, the resolution
 of the recorded witness. The block factors evaluate to
@@ -105,7 +105,7 @@ $[3A]_q! / [3A-3]_q!$. Empirically it holds to 4 digits at $q_0 \approx
 duality for $H_n(q)$ acting on tensor products of $\mathrm{U}_q(\mathfrak{sl}_n)$-
 modules is pending.
 
-### Why this matters
+### Significance
 
 Block-multiplicativity reduces the $T_1^{\text{free}}$ term of the
 mass-endomorphism tower
@@ -132,7 +132,7 @@ in microseconds for any $(Z, N)$ — bypassing the $H_{3A}$ character
 sum entirely beyond the one-time $H_6$ calibration of
 $\{v_p, v_n, |\hat V^{pp}_{\text{inter}}|, |\hat V^{nn}_{\text{inter}}|\}$.
 
-[`binding_block_multiplicative.py`](https://github.com/litlfred/qou/blob/claude/log-delta-categorical-derivation/folio-assistant/computations/binding_block_multiplicative.py)
+the canonical formalism
 applies this to 16 atoms (D $\to$ ${}^{56}$Fe) in $< 1$ s total, all signs correct;
 finer agreement awaits the $T_3$ pair-term closure (see
 [`prop:mass-endomorphism-tower`](#prop:mass-endomorphism-tower)

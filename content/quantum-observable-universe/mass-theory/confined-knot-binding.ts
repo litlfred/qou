@@ -17,11 +17,11 @@ export default proposition({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/jet_knot_invariants.py",
+    script: "computations/jet_knot_invariants.py",
     witness: [
-      "folio-assistant/computations/confined-knot-binding.witness.json",
-      "folio-assistant/computations/intermediate-knot-detection.witness.json",
-      "folio-assistant/computations/jet-knot-invariants.witness.json",
+      "computations/confined-knot-binding.witness.json",
+      "computations/intermediate-knot-detection.witness.json",
+      "computations/jet-knot-invariants.witness.json",
     ],
     status: "experimental",
   },

@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition (conditional on [`conj:borromean-quark`](#conj:borromean-quark)).**
 The stability pairs $\{2, 8, 20, 28, 50, 82, 126\}$ arise from
 the harmonic oscillator shell structure of nucleons in the

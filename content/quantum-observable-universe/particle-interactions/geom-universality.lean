@@ -116,7 +116,7 @@ class GeomFullCanonicalSeed {Knot : Type} (G : GeomFullEval Knot)
     `PLCorrectnessHypotheses`, this gives the per-knot uniqueness
     backing the QOU mass formula `m(K) = m_e · VolDensity(K, q₀)`.
 
-    Per CLAUDE.md §3b-cond: the seed-uniqueness leg is proved
+    Per AGENTS.md §3b-cond: the seed-uniqueness leg is proved
     sorry-free conditional on the canonical-seed class; closing
     the seed itself (Family-A linking-weight extension to all
     knots) is the open `prop:hoefsmit-scattering-pipeline` work. -/
@@ -188,15 +188,40 @@ the conditional-on-class structure of the main theorem above. -/
 namespace QOU.BraidKnot.GeomUniversality.ConditionalAudit
 
 /-- Local stub of the conjecture's axiomatised class.  See the lake-
-    package sibling for the canonical declaration. -/
-class HyperbolicVolumeIndependence : Prop where
-  /-- Conjecture content is the class instance (sorry = conjecture
-      per CLAUDE.md §3b). -/
-  holds : True
+    package sibling for the canonical declaration.
+
+    Encodes the conjecture's content (geometric universality /
+    volume-form independence): the categorical volume-density value of
+    a knot is a property of the knot alone — any two functorial
+    evaluators that agree pointwise yield the same volume at every
+    substrate parameter `q`.  Stated in the shape of the claim, not as
+    a bare `True`.  `sorry` in any concrete instance is understood as
+    conjecture per §3b. -/
+class HyperbolicVolumeIndependence where
+  /-- The canonical (evaluator-independent) volume-density functional:
+      a function of the knot and the substrate parameter alone. -/
+  canonicalVol : ∀ {Knot : Type}, Knot → ℝ → ℝ
+  /-- **The conjecture itself**: every functorial volume-density
+      evaluator `G` that factors through the fibre functor equals the
+      canonical volume `canonicalVol` — the value is a property of the
+      knot, not of the chosen evaluator.  This is the well-definedness
+      backing `m(K) = m_e · VolDensity(K, q₀)`.  `sorry` in any
+      concrete instance is understood as conjecture per §3b. -/
+  volume_independent :
+    ∀ {Knot : Type} (G : QOU.BraidKnot.GeomFullEval Knot),
+      QOU.BraidKnot.GeomFullFunctorial G →
+      ∀ (k : Knot) (q : ℝ), G k q = canonicalVol k q
 
 /-- Witness theorem demonstrating the main proposition is conditional
-    on `[HyperbolicVolumeIndependence]` per CLAUDE.md §3b-cond. -/
+    on `[HyperbolicVolumeIndependence]` per CLAUDE.md §3b-cond: any two
+    functorial evaluators are equal pointwise, recovered from the class
+    (both equal the canonical volume). -/
 theorem conditional_on_HyperbolicVolumeIndependence
-    [_inst : HyperbolicVolumeIndependence] : True := trivial
+    [inst : HyperbolicVolumeIndependence]
+    {Knot : Type} (G G' : QOU.BraidKnot.GeomFullEval Knot)
+    (hG : QOU.BraidKnot.GeomFullFunctorial G)
+    (hG' : QOU.BraidKnot.GeomFullFunctorial G')
+    (k : Knot) (q : ℝ) : G k q = G' k q := by
+  rw [inst.volume_independent G hG k q, inst.volume_independent G' hG' k q]
 
 end QOU.BraidKnot.GeomUniversality.ConditionalAudit

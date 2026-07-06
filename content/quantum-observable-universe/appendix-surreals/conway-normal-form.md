@@ -53,7 +53,7 @@ $f, g$ in the Hahn field):
 | $f \sim g$ | $\ordw(f) = \ordw(g)$ and $\mathrm{lc}(f) = \mathrm{lc}(g)$ | $f \simeq g$ |
 | $f = g + O(h)$ | $\ordw(f - g) \leq \ordw(h)$ | $f \equiv g \pmod{\preceq h}$ |
 
-## Why this is better than classical Big-O
+## Advantages over classical Big-O
 
 Classical Big-O has three well-known pathologies:
 
@@ -97,7 +97,7 @@ classical:  ∫₀¹ e^{-x/ε} dx ∼ ε  as ε → 0⁺
 surreal:    ∫₀¹ e^{-x/ε} dx ≃ ε   (leading exponent and leading coeff agree)
 ```
 
-## Why it matters for QOU
+## Significance for QOU
 
 Three uses specific to the main paper:
 

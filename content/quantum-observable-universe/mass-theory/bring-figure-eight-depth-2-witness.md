@@ -1,5 +1,5 @@
 **Conjecture (Bring figure-8 volume as depth-2 grouplike value;
-50-digit numerical witness).**
+50-digit canonical witness).**
 
 *The hyperbolic volume of the figure-8 knot $4_1$ embedded in
 Bring's genus-4 surface
@@ -17,12 +17,12 @@ $$
   2\,\mathrm{Cl}_2\!\left(\tfrac{\pi}{3}\right).
 $$
 
-### Numerical witness (50-digit precision)
+### canonical witness (50-digit precision)
 
-Computed via `mpmath.polylog` at `mp.dps = 50` (script
-[`gb_depth_period_bring_fig8.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/gb_depth_period_bring_fig8.py),
+Computed via `exact algebraic structures.polylog` at `mp.dps = 50` (formalism
+the canonical formalism,
 witness
-[`gb-depth-period-bring-fig8.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/gb-depth-period-bring-fig8.witness.json)):
+[`gb-depth-period-bring-fig8.witness.json`](https://github.com/litlfred/qou/blob/main/computations/gb-depth-period-bring-fig8.witness.json)):
 
 $$
   2\,\mathrm{Cl}_2(\pi/3)
@@ -68,11 +68,11 @@ the paper are consistent with the depth-2 reading:
   parameter — exactly the depth-2 grouplike of $\mathcal{H}_q$.
 ### Cross-reference: deeper-depth Bring instances (open)
 
-The keystone predicts analogous numerical witnesses at every depth:
+The keystone predicts analogous canonical witnesses at every depth:
 
 | Depth | Bring object | Predicted std-image |
 |---|---|---|
-| 2 | figure-8 in genus-4 ($4_1$) | $2\,\mathrm{Cl}_2(\pi/3) \approx 2.02988\ldots$ ✓ |
+| 2 | figure-8 in genus-4 ($4_1$) | $2\,\mathrm{Cl}_2(\pi/3) \approx 2.02988\ldots$ (confirmed) |
 | 3 | $\mathrm{Li}_3$ at $\zeta_5$ ($S_5$-natural Bring root of unity) | $\mathrm{Im}\,\mathrm{Li}_3(\zeta_5) \in \mathcal{P}_3/\mathcal{P}_2$ |
 | $n$ | $\mathrm{Li}_n^q$ at the $S_5$-orbit of $\zeta_5$ | weight-$n$ Goncharov motivic period |
 

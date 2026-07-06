@@ -35,6 +35,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 import _path_bridge as _bridge  # noqa: E402, F401
+from codata_constants import M_MU_MEV_VALIDATION  # noqa: E402 (codata sweep)
 
 from mpmath import mp, mpf, sqrt, sin, cos, log  # noqa: E402
 
@@ -44,7 +45,7 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 VOL_4_1_STR = "2.0298832128193072500115970029"
 M_E_CODATA_MEV = "0.51099895069"
-M_MU_CODATA_MEV = "105.6583755"
+M_MU_CODATA_MEV = str(M_MU_MEV_VALIDATION)  # codata_constants registry (type+value preserving)
 M_MU_SIGMA_EXP_MEV = "2.3e-6"
 
 # Fine-structure constant CODATA 2022

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-20T02:27:47.227250+00:00",
-  "commitSha": "10a0e4fdceabfb1a521f406651ba0a7cf14ef74a",
+  "computedAt": "2026-06-22T03:21:28.110667+00:00",
+  "commitSha": "29241074626362f2015dce4f9b190a513278cbd6",
   "assertions": [
     {
       "name": "phase_5g_5i_completed",
@@ -11,19 +11,33 @@
       "passed": true,
       "tolerance": 0.0,
       "unit": "boolean",
-      "source": "5g best categorical match for 1.220358: q + q-1 (0.033% rel.err). 5i best Vol_hyp normaliser: per_A (+3.04% vs baseline)."
+      "source": "5g best categorical match for 1.220358: q + q-1 (0.033% rel.err). 5i best Vol_hyp normaliser: per_A (+3.05% vs baseline)."
     }
   ],
   "allPassed": true,
-  "durationMs": 6275,
+  "durationMs": 7265,
   "computation": "constit-factor-and-volhyp",
   "scriptFile": "constit_factor_and_volhyp_test.py",
-  "scriptHash": "13ec2d86084b",
-  "scriptCommitSha": "27c0761482fccb7f4526836be988d6436f148125",
+  "scriptHash": "329763b7beac",
+  "scriptCommitSha": "9e5351788e688a35cda7c6cbc9548a2568db655e",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
   "description": "Phase 5g + 5i: closing the residual 1.54× variance in the depth-stratified formula. (5g) Categorical search for the Markov-trace constit factor 1.220358 across substrate primitives; (5i) Vol_hyp normalisation sweep over 5 schemes (none, per_Z, per_A, vol_hyp_atom, vol_hyp_per_Z) to test whether Vol_hyp-based correction closes the residual.",
   "contentBlock": "conj:depth-stratified-frobenius-reciprocity",
   "parameters": {
-    "q_0": "1.1099785955541805",
+    "q_0": "1.1099785955573347",
     "K_3_star": "4_1"
   },
   "data": {
@@ -32,197 +46,197 @@
       "top_15": [
         [
           "q + q-1",
-          1.219957191108361,
-          0.000328976148404601
+          1.2199571911146694,
+          0.000328976143235301
         ],
         [
           "q-1 + q",
-          1.219957191108361,
-          0.000328976148404601
+          1.2199571911146694,
+          0.000328976143235301
         ],
         [
           "[6]_q / [5]_q",
-          1.2236679395984729,
-          0.0027117270577428475
+          1.223667939599747,
+          0.002711727058786922
         ],
         [
           "q + h/2",
-          1.2145087565491202,
-          0.004793593590657879
+          1.2145087565551316,
+          0.004793593585731983
         ],
         [
           "h/2 + q",
-          1.2145087565491202,
-          0.004793593590657879
+          1.2145087565551316,
+          0.004793593585731983
         ],
         [
           "1 + sinh(h)",
-          1.2105865260814423,
-          0.008007591734185417
+          1.2105865260872821,
+          0.008007591729400226
         ],
         [
           "sinh(h) + 1",
-          1.2105865260814423,
-          0.008007591734185417
+          1.2105865260872821,
+          0.008007591729400226
         ],
         [
           "z + q^-3",
-          1.2305540162802775,
-          0.008354393355374376
+          1.2305540162740067,
+          0.008354393350235913
         ],
         [
           "q^-3 + z",
-          1.2305540162802775,
-          0.008354393355374376
+          1.2305540162740067,
+          0.008354393350235913
         ],
         [
           "h + cosh(h)",
-          1.23099314021574,
-          0.008714225222722648
+          1.2309931402226577,
+          0.00871422522839121
         ],
         [
           "cosh(h) + h",
-          1.23099314021574,
-          0.008714225222722648
+          1.2309931402226577,
+          0.00871422522839121
         ],
         [
           "1 + h",
-          1.2090603219898792,
-          0.009258211032911157
+          1.2090603219955935,
+          0.009258211028228666
         ],
         [
           "h + 1",
-          1.2090603219898792,
-          0.009258211032911157
+          1.2090603219955935,
+          0.009258211028228666
         ],
         [
           "1 · q^2",
-          1.232052482588431,
-          0.009582283448073381
+          1.232052482595433,
+          0.009582283453811194
         ],
         [
           "1 / q^-2",
-          1.232052482588431,
-          0.009582283448073381
+          1.232052482595433,
+          0.009582283453811194
         ]
       ]
     },
     "phase_5g_best": {
       "expression": "q + q-1",
-      "value": 1.219957191108361,
-      "rel_err": 0.000328976148404601
+      "value": 1.2199571911146694,
+      "rel_err": 0.000328976143235301
     },
     "phase_5i_volhyp_sweep": {
       "results": {
         "none": {
-          "variance_max_min": 1.5507384494628647,
+          "variance_max_min": 1.550649409925878,
           "per_atom": {
             "D": {
-              "B_norm": 0.7068847906554043,
-              "ratio_normed_over_AME": 0.31776300114808653
+              "B_norm": 0.7068407754614703,
+              "ratio_normed_over_AME": 0.3177431966113079
             },
             "T": {
-              "B_norm": 2.6888323869684423,
-              "ratio_normed_over_AME": 0.3170120753840686
+              "B_norm": 2.688881548922573,
+              "ratio_normed_over_AME": 0.3170179388326464
             },
             "3He": {
-              "B_norm": 2.596035146248948,
-              "ratio_normed_over_AME": 0.33635925758910645
+              "B_norm": 2.5960835909060656,
+              "ratio_normed_over_AME": 0.33636559889602474
             },
             "4He": {
-              "B_norm": 13.910232969276889,
-              "ratio_normed_over_AME": 0.49160281424209534
+              "B_norm": 13.909685844595902,
+              "ratio_normed_over_AME": 0.49158367978676126
             }
           }
         },
         "per_Z": {
-          "variance_max_min": 1.8894262249577387,
+          "variance_max_min": 1.8892728486751507,
           "per_atom": {
             "D": {
-              "B_norm": 0.7068847906554043,
-              "ratio_normed_over_AME": 0.31776300114808653
+              "B_norm": 0.7068407754614703,
+              "ratio_normed_over_AME": 0.3177431966113079
             },
             "T": {
-              "B_norm": 2.6888323869684423,
-              "ratio_normed_over_AME": 0.3170120753840686
+              "B_norm": 2.688881548922573,
+              "ratio_normed_over_AME": 0.3170179388326464
             },
             "3He": {
-              "B_norm": 1.298017573124474,
-              "ratio_normed_over_AME": 0.16817962879455323
+              "B_norm": 1.2980417954530328,
+              "ratio_normed_over_AME": 0.16818279944801237
             },
             "4He": {
-              "B_norm": 6.955116484638444,
-              "ratio_normed_over_AME": 0.24580140712104767
+              "B_norm": 6.954842922297951,
+              "ratio_normed_over_AME": 0.24579183989338063
             }
           }
         },
         "per_A": {
-          "variance_max_min": 1.50355314113717,
+          "variance_max_min": 1.503431624948412,
           "per_atom": {
             "D": {
-              "B_norm": 0.35344239532770216,
-              "ratio_normed_over_AME": 0.15888150057404327
+              "B_norm": 0.35342038773073514,
+              "ratio_normed_over_AME": 0.15887159830565395
             },
             "T": {
-              "B_norm": 0.8962774623228141,
-              "ratio_normed_over_AME": 0.10567069179468955
+              "B_norm": 0.8962938496408577,
+              "ratio_normed_over_AME": 0.1056726462775488
             },
             "3He": {
-              "B_norm": 0.8653450487496495,
-              "ratio_normed_over_AME": 0.11211975252970215
+              "B_norm": 0.8653611969686885,
+              "ratio_normed_over_AME": 0.11212186629867492
             },
             "4He": {
-              "B_norm": 3.477558242319222,
-              "ratio_normed_over_AME": 0.12290070356052384
+              "B_norm": 3.4774214611489755,
+              "ratio_normed_over_AME": 0.12289591994669032
             }
           }
         },
         "vol_hyp_atom": {
-          "variance_max_min": 1.5781634327259917,
+          "variance_max_min": 1.5780728185148156,
           "per_atom": {
             "D": {
-              "B_norm": 0.05532870374210602,
-              "ratio_normed_over_AME": 0.02487168373565368
+              "B_norm": 0.05532525862112234,
+              "ratio_normed_over_AME": 0.024870133611273215
             },
             "T": {
-              "B_norm": 0.21045806803105144,
-              "ratio_normed_over_AME": 0.024812907361275456
+              "B_norm": 0.21046191599492495,
+              "ratio_normed_over_AME": 0.024813366300280228
             },
             "3He": {
-              "B_norm": 0.20678807075177402,
-              "ratio_normed_over_AME": 0.0267928121300097
+              "B_norm": 0.20679192962756696,
+              "ratio_normed_over_AME": 0.026793317248989146
             },
             "4He": {
-              "B_norm": 1.1080252914497195,
-              "ratio_normed_over_AME": 0.039158823057182504
+              "B_norm": 1.1079817100096785,
+              "ratio_normed_over_AME": 0.03915729889432376
             }
           }
         },
         "vol_hyp_per_Z": {
-          "variance_max_min": 3.1563268654519834,
+          "variance_max_min": 3.1561456370296312,
           "per_atom": {
             "D": {
-              "B_norm": 0.05532870374210602,
-              "ratio_normed_over_AME": 0.02487168373565368
+              "B_norm": 0.05532525862112234,
+              "ratio_normed_over_AME": 0.024870133611273215
             },
             "T": {
-              "B_norm": 0.21045806803105144,
-              "ratio_normed_over_AME": 0.024812907361275456
+              "B_norm": 0.21046191599492495,
+              "ratio_normed_over_AME": 0.024813366300280228
             },
             "3He": {
-              "B_norm": 0.41357614150354804,
-              "ratio_normed_over_AME": 0.0535856242600194
+              "B_norm": 0.4135838592551339,
+              "ratio_normed_over_AME": 0.05358663449797829
             },
             "4He": {
-              "B_norm": 2.216050582899439,
-              "ratio_normed_over_AME": 0.07831764611436501
+              "B_norm": 2.215963420019357,
+              "ratio_normed_over_AME": 0.07831459778864752
             }
           }
         }
       },
-      "baseline_variance": 1.5507384494628647,
+      "baseline_variance": 1.550649409925878,
       "best_normaliser": "per_A",
-      "best_variance": 1.50355314113717
+      "best_variance": 1.503431624948412
     }
   }
 }

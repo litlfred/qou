@@ -14,7 +14,7 @@ into a regime where new package adoption is visible — the audit counts
 will tick from 0 → 1 for both packages after this script merges.
 
 **Migration recipe** (for porting an existing
-`folio-assistant/computations/<probe>.py` to qou-mass):
+`computations/<probe>.py` to qou-mass):
 
   1. Replace the in-repo imports
 
@@ -55,7 +55,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 # Layer-3-alt path: consume the published-library API. Top-level imports
-# (per the existing folio-assistant/computations/ convention) — requires
+# (per the existing computations/ convention) — requires
 # both packages on PYTHONPATH (CI: smoke-test-libraries.sh; external
 # researchers: `pip install qou-mass witness-schema`).
 import qou_mass  # noqa: E402

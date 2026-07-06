@@ -1,3 +1,6 @@
+import Mathlib.Data.List.Basic
+import Mathlib.Tactic.Basic
+
 /-!
 # QOU.Aeon — Aeon (connected component of the observable subcategory)
 
@@ -15,12 +18,27 @@ Source declaration: `QOU.Aeon` in jet-horizon.lean
 - [manuscript] §9/aeon
 -/
 
--- Prerequisite types from jet-horizon.lean
--- (not independently compilable; see jet-horizon.lean for full context)
-
-import Mathlib.Data.List.Basic
-
 namespace QOU
+
+/-- Prerequisite type — the canonical declaration is `QOU.JetHorizon`
+    in `content/quantum-observable-universe/lean/QOU/JetHorizon.lean`
+    (Lake-built under the `qou` package).  Re-declared here as an
+    opaque carrier so this co-located content-block sibling is
+    independently checkable by `lean`-direct without importing the
+    full `qou` library cone. -/
+-- Ref: [manuscript] def:jet-horizon
+structure JetHorizon where
+  /-- Opaque carrier of the jet-horizon datum. -/
+  carrier : Type*
+
+/-- Prerequisite type — the canonical declaration is
+    `QOU.ObservableConfig` in `QOU/JetHorizon.lean`.  Re-declared
+    here as an opaque carrier for the same co-location reason as
+    `JetHorizon` above. -/
+-- Ref: [manuscript] def:observable-subcategory
+structure ObservableConfig where
+  /-- Opaque carrier of the observable configuration. -/
+  carrier : Type*
 
 /-- An aeon: a connected component of the observable subcategory
     Bun°(P(V)).  Maximal collection of observable configurations

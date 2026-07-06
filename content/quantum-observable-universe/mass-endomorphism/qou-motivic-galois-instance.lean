@@ -12,7 +12,7 @@ from the Habiro symbolic data via `habiro_frobenius_probe.py`.
 Per the queued-research roadmap §R6, the `MotivicGaloisCharacter`
 class is **fully determined** by the Habiro structure once the
 extraction map `Habiro → Frob_p ∈ Z[ζ_{2p}]` is written. The Python
-probe (`folio-assistant/computations/probes/habiro_frobenius_probe.py`)
+probe (`computations/probes/habiro_frobenius_probe.py`)
 implements the map for atoms {p, n, D} at primes {2, 3, 5, 7, 11, 13},
 emitting the witness `habiro-frobenius-probe.witness.json` with:
 
@@ -24,7 +24,7 @@ emitting the witness `habiro-frobenius-probe.witness.json` with:
                        ⇒ pure only at small primes per atom)
 
 This Lean file states the QOU instance abstractly. The `sorry` in
-`almost_everywhere_nontrivial` is a substrate axiom (CLAUDE.md §3b)
+`almost_everywhere_nontrivial` is a substrate axiom (AGENTS.md §3b)
 backed by the Python witness; the `frobenius_at` field is given
 abstractly via `Mhat`'s structure rather than as an explicit
 formula because Mhat is the dimension-completion `K_0(Var)[L^{-1}]`
@@ -75,7 +75,7 @@ The construction follows the three-step plan in queued-research §R6:
   the Frobenius eigenvalue is non-trivial. Backed by the witness
   for primes ≤ 13.
 
-`sorry` here is a substrate axiom (CLAUDE.md §3b), not a missing
+`sorry` here is a substrate axiom (AGENTS.md §3b), not a missing
 proof. -/
 /-- **External axiom (Yekutieli 2010 §3-4): QOU brane-tower local
     Frobenius character is almost-everywhere non-trivial.**

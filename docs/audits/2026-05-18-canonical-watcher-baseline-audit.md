@@ -6,7 +6,7 @@
 Baseline state of the canonical-derivation discipline across the
 codebase at the time the watcher armed, plus a comprehensive
 working queue. Cross-references the existing aggregator
-([`canonical-derivation-pipeline-compliance.witness.json`](../../folio-assistant/computations/canonical-derivation-pipeline-compliance.witness.json))
+([`canonical-derivation-pipeline-compliance.witness.json`](../../computations/canonical-derivation-pipeline-compliance.witness.json))
 and the sibling audits that landed during this session.
 
 ## 1  Scanner numbers (origin/main HEAD ≈ `f1275207..` then `dc0f9394`)
@@ -200,7 +200,7 @@ All have canonical replacements on main or are documented falsifications.
 | `braids-and-knots/delta-coupling-substrate-form.md` (full file) | **Conjecture REFUTED** at single-magic anchors | (open research; no replacement yet) |
 | `braids-and-knots/recomputed-low-isotope-mass-table.md` §Calibrated form (section) | 4th/5th-calibration injection; tautological p/n rows | `prop:neutron-qvalue-symbolic` (framework prediction) |
 | `braids-and-knots/rho-k-h3a-refinement.md` §pair-gen piece (section, ~lines 71-113) | Pair-coupling structure incomplete; six-term theorem requires Li₂^q form not log-formula | (open work; LO + single-gen remain) |
-| BW-shadow-price family (4 scripts) | Already moved to `folio-assistant/computations/_deprecated/` by `3befb7ca` | (already done) |
+| BW-shadow-price family (4 scripts) | Already moved to `computations/_deprecated/` by `3befb7ca` | (already done) |
 
 **Removal PR** (separate from this audit): 5 whole-file deletions + 2 section-level removals + `uses[]` rewires.
 

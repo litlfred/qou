@@ -75,7 +75,7 @@ coincides with the JSJ piecewise sum
 $\sum_{P \in \mathrm{JSJ}(K)} \rho_F(P) \cdot \mathrm{Vol}_{\mathrm{hyp}}(P)$
 that drives the canonical binding-energy pipeline.
 
-### Why this matters (rather than deprecating Φ$_q$)
+### Significance (rather than deprecating Φ$_q$)
 
 The conjecture says the **dilog form** and the **hyperbolic-volume
 form** of the tower are not two competing engines: they are two
@@ -83,7 +83,7 @@ presentations of the same archimedean number, evaluated through two
 different convergence schemes.
 
 - **JSJ pipeline.** For each piece $P$, evaluate
-  $\mathrm{Vol}_{\mathrm{hyp}}(P)$ numerically with SnapPy. Fast on
+  $\mathrm{Vol}_{\mathrm{hyp}}(P)$ canonical with SnapPy. Fast on
   finished hyperbolic atoms; opaque internally.
 - **Φ$_q$ pipeline.** For each $S$, evaluate
   $\Phi_q(\|V_S\|_F)$ as a Laurent polynomial in $q^{1/2}$.
@@ -97,11 +97,11 @@ target, and explains the empirical 0.15% Φ$_q$ floor on $D$ as a
 1ppb handover (pentagon-defect expansion) is intrinsically a
 Φ$_q$ computation — the pentagon identity is the Φ$_q$ five-term
 relation — so the dilog form earns its keep as a *theoretical* tool
-while JSJ remains the numerical workhorse.
+while JSJ remains the canonical workhorse.
 
 ### Conditional Lean theorem
 
-Per `CLAUDE.md` §3b, this conjecture is downstream of
+Per `AGENTS.md` §3b, this conjecture is downstream of
 [Kashaev volume conjecture](#conj:kashaev-volume-conjecture) and
 therefore cannot be a `theorem`/`proposition` block.  The Lean
 formalisation lives in the formal Lake package at

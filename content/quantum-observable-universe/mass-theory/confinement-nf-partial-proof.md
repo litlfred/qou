@@ -2,7 +2,7 @@
 
 **Proposition (partial proof, conditional on
 [`def:lp-duality-hypothesis-class`](lp-duality-hypothesis-class.md)
-per CLAUDE.md §3b-cond).**
+per AGENTS.md §3b-cond).**
 *The three claims of [`conj:confinement-nf-structure-forcing`](#conj:confinement-nf-structure-forcing)
 decompose as follows.*
 
@@ -108,9 +108,11 @@ Together with the empirical n-context shifts
 $\mathrm{shift}_{\mathrm{NF}}(\mathcal{B}_p \text{ in } H_{3A}) = 18$ and
 $\mathrm{shift}_{\mathrm{NF}}(\mathcal{B}_n \text{ in } H_{3A}) = 21$
 (stable for all $A = 2, \ldots, 6$ per
-[habiro-coefficients-extended.witness.json](../../../folio-assistant/computations/habiro-coefficients-extended.witness.json)),
+[habiro-coefficients-extended.witness.json](../../../computations/habiro-coefficients-extended.witness.json)),
 the formula yields
 
 $$\mathrm{shift}_{\mathrm{NF}}(\beta_{\mathrm{atomic}}(Z, N)) = 18Z + 21N + 1,$$
 
 matching the empirical W-3 closed form $D(u) = 2^{2A+1} \cdot u^{18Z + 21N + 1} \cdot (1+u^2)^{3A-1}$ exactly.
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

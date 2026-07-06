@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-06T04:39:29.650398+00:00",
-  "commitSha": "c092ee3e3a5ac6596865e3e8b345008638f233a3",
+  "computedAt": "2026-06-22T13:28:15.759899+00:00",
+  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
   "assertions": [
     {
       "name": "torus_tau_eq_2cosh2eta",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 10,
   "computation": "sl2-tau-solver",
   "scriptFile": "sl2_tau_solver.py",
   "scriptHash": "b4ae20b77621",
-  "scriptCommitSha": "c092ee3e3a5ac6596865e3e8b345008638f233a3",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,19 +34,16 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "auditOnly": "docs/workplans/2026-06-06-deriving-bring-M-abelianisation-scalar.md",
   "parameters": {
-    "q_0": "1.1099785827513808075916690956107688798744991218736"
+    "q_0": "1.1099785955573347198997632204832250266562084087802"
   },
   "data": {
-    "torus_tau_solved": "2.043706208532522",
-    "torus_tau_expected_2cosh2eta": "2.043706208532522",
+    "torus_tau_solved": "2.043706218232901",
+    "torus_tau_expected_2cosh2eta": "2.043706218232901",
     "binding_tau_status": "τ for the binding sector needs a_D^(2),a_D^(3) from #1765 (a_D^(4)=Family-A wired); then τ=(a_D^(2)+a_D^(4))/a_D^(3)"
   }
 }

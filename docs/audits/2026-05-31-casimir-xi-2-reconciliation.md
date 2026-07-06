@@ -3,7 +3,7 @@
 **Date.** 2026-05-31
 **Block.** [`conj:casimir-epsilon-vacuum`](../../content/quantum-observable-universe/appendix-surreals/casimir-epsilon-vacuum.md)
 **Supersedes.** [`2026-05-31-casimir-xi-2-equals-zero.md`](2026-05-31-casimir-xi-2-equals-zero.md)
-**Witness.** [`casimir-xi-2-dig-deeper.witness.json`](../../folio-assistant/computations/casimir-xi-2-dig-deeper.witness.json)
+**Witness.** [`casimir-xi-2-dig-deeper.witness.json`](../../computations/casimir-xi-2-dig-deeper.witness.json)
 **Result.** **ξ_2 is OPEN, gated on the N_⊙ construction (sub-problem 1).** The
 "ξ_k = 0 because Casimir isn't Hecke" closure is **retracted** — it is the third
 reversal of a flip-flop and contradicts the conjecture block's own framing.
@@ -19,7 +19,7 @@ inside PR #1540:
 | 2 | `ac3fae543` | `ξ_odd = 0` only; `ξ_{even≥2}` **OPEN** | bar-symmetry kills only odd ranks; retract #1 as overreach |
 | 3 | `665aa7eb1` | `ξ_k = 0` (again) | "Casimir doesn't go through Hecke at any order" |
 
-This is exactly the wire/un-wire flip-flop pattern that CLAUDE.md flags for the
+This is exactly the wire/un-wire flip-flop pattern that AGENTS.md flags for the
 Q_β `c_k` saga. Per the repo's anti-flip-flop discipline, the correct response is
 not a fourth claim but a **structural settlement** of why the coefficient keeps
 flipping.
@@ -99,7 +99,7 @@ numbers that cannot be reproduced from canonical primitives.
 
 ## Why step 1 was also not a derivation
 
-[`casimir_beta_2_derivation.py`](../../folio-assistant/computations/casimir_beta_2_derivation.py)
+[`casimir_beta_2_derivation.py`](../../computations/casimir_beta_2_derivation.py)
 imposes the calibration `ε = ε_0·ℏ_q²` *by hand* so the `1/ℏ_q²` in `Geom_ε` cancels.
 That is circular: the calibration is chosen to produce the cancellation. It is an
 assumption about N_⊙, not a derivation of ξ_2.

@@ -14,7 +14,7 @@ quantity. The answer (below) is the latter, and the Step-4 product
 formula is internally consistent with `nuclear-knot-classification`.
 
 Witness:
-[`folio-assistant/computations/knot-factor-skein-verification.witness.json`](../../folio-assistant/computations/knot-factor-skein-verification.witness.json)
+[`computations/knot-factor-skein-verification.witness.json`](../../computations/knot-factor-skein-verification.witness.json)
 (producer `knot_factor_skein_verification.py`, sympy, `all_ok = True`).
 
 ## Findings

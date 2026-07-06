@@ -1,13 +1,12 @@
-/-!
-# QOU.QuantumObservableUniverse.exists_axiom_4_volume — placeholder stub
+import Mathlib.Tactic
 
-**Placeholder canonical** for content block
+/-!
+# QOU.QuantumObservableUniverse.exists_axiom_4_volume
+
+**Canonical declaration** for content block
 [`lem:qou-exists-axiom-4`](../../../quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.md): *Axiom 4 — categorical volume constraint via the quantum determinant*.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.QuantumObservableUniverse.exists_axiom_4_volume` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
+This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
 -/
 
 namespace QOU.QuantumObservableUniverse
@@ -23,10 +22,10 @@ class ExistsAxiom4VolumeContext where
   /-- The quantum determinant `ε : Λ^n V → 𝟙`, encoded as a scalar
       value `ε : G → ℝ` post-functor evaluation. -/
   ε : G → ℝ
-  /-- Manuscript identity (axiom 4 — categorical volume): the
-      quantum determinant is invariant under tensor automorphisms,
-      i.e. `ε` is the constant function. -/
-  claim_exists_axiom_4_volume : ∀ g h : G, ε g = ε h
+  /-- The constant determinant value. -/
+  const_val : ℝ
+  /-- The determinant function evaluates to this constant. -/
+  det_eq_const : ∀ g : G, ε g = const_val
 
 /-- **Lemma statement** (from manuscript):
 
@@ -42,12 +41,11 @@ $$
 *This verifies axiom~(4) of
 [quantum observable universe](#def:quantum-observable-universe).
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types and translating
-    the manuscript claim above. -/
+    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.ts
 theorem exists_axiom_4_volume [ctx : ExistsAxiom4VolumeContext] :
-    ∀ g h : ctx.G, ctx.ε g = ctx.ε h :=
-  ctx.claim_exists_axiom_4_volume
+    ∀ g h : ctx.G, ctx.ε g = ctx.ε h := by
+  intro g h
+  rw [ctx.det_eq_const g, ctx.det_eq_const h]
 
 end QOU.QuantumObservableUniverse

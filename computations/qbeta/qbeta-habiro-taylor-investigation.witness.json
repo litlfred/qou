@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T13:37:08.824697+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-22T13:27:37.179306+00:00",
+  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
   "assertions": [
     {
       "name": "symbolic_delta_tr_loaded",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1625,
+  "durationMs": 1099,
   "computation": "qbeta-habiro-taylor-investigation",
   "scriptFile": "qbeta_habiro_taylor_investigation.py",
-  "scriptHash": "bdb80fe836c3",
-  "scriptCommitSha": "5819aebcd4c91c5e7b76de98b9d44eabbb822bab",
+  "scriptHash": "3d19aa6de238",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,9 +26,8 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
@@ -39,7 +38,7 @@
       "tr_M_proton_symbolic_in_q": "(q**(39/2) + q**(35/2) - q**(33/2) + q**(31/2) - q**(29/2) + q**(27/2) + q**(23/2) + q**(21/2) - q**(19/2) - q**(17/2) - q**(13/2) + q**(11/2) - q**(9/2) + q**(7/2) - q**(5/2) - sqrt(q) + q**20 - q**18 + 2*q**12 + 2*q**8 - q**2 + 1)/(4*q**(21/2) + 4*q**(19/2))",
       "tr_M_neutron_symbolic_in_q": "(q**(39/2) + q**(35/2) - q**(33/2) + q**(31/2) - q**(29/2) + q**(27/2) - q**(25/2) - q**(21/2) + q**(19/2) + q**(15/2) - q**(13/2) + q**(11/2) - q**(9/2) + q**(7/2) - q**(5/2) - sqrt(q) + q**20 - q**18 + 4*q**10 - q**2 + 1)/(4*q**(21/2) + 4*q**(19/2))",
       "Q_codata_MeV": "0.78233341",
-      "q_0_50dps": "1.1099785827513808075916690956107688798744991218736"
+      "q_0_50dps": "1.1099785955573347198997632204832250266562084087802"
     },
     "delta_tr_M_taylor_at_q_eq_1": {
       "basis": "ε = q - 1",
@@ -56,9 +55,9 @@
       "note": "These are the substrate-exact Taylor coefficients of Δtr_M(q) at q=1, computed symbolically from the Habiro-witness-cited rational tr_M expressions. The Q_β c_k will inherit from these via the (yet-undefined) categorical formula Q_β = m_e × f(Δtr_M, q)."
     },
     "numerical_sanity_at_q0": {
-      "tr_M_proton_at_q0": "1.06530614425445",
-      "tr_M_neutron_at_q0": "0.9232332299116371",
-      "delta_tr_M_at_q0": "-0.14207291434281288"
+      "tr_M_proton_at_q0": "1.0653062286131671",
+      "tr_M_neutron_at_q0": "0.9232332971861535",
+      "delta_tr_M_at_q0": "-0.1420729314270136"
     },
     "gap_identified": {
       "missing_categorical_formula": "Q_β = m_e × f(Δtr_M(q), q) for substrate-canonical f",

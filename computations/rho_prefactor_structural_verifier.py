@@ -41,7 +41,7 @@ disagreement, identifies the falsifying case).
 The script also emits an operator-selection LP whose channels are
 the candidate λ-classes (one per Wedderburn block).  The LP shadow
 prices y_λ-dual identify the saturating block (= dominant λ*) per
-particle, satisfying CLAUDE.md "LP/SDP duals — first-class infra".
+particle, satisfying AGENTS.md "LP/SDP duals — first-class infra".
 
 Cross-references:
   - prop:wedderburn-trace-identity (Markov-trace expansion)
@@ -354,7 +354,7 @@ def consistency_summary(per_atom: list[dict]) -> dict:
 
 
 # ───────────────────────────────────────────────────────────────────
-# Operator-selection LP (CLAUDE.md "LP/SDP duals — first-class infra").
+# Operator-selection LP (AGENTS.md "LP/SDP duals — first-class infra").
 # Channels = Wedderburn blocks per particle; t_λ = -|y_λ · χ_λ| (so
 # argmin t = dominant λ*); LP picks one channel per particle and the
 # dual y_star identifies the saturating (= dominant) channel.

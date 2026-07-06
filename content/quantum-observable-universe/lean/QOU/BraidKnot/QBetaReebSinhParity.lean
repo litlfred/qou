@@ -19,7 +19,7 @@ parity under the bar involution `q ↔ q⁻¹`, i.e. under `η ↦ -η` where
 
 This is the same parity wall that refuted the cos/cosh closed-form avatars
 (PR #1866: even ⇒ c_3 = 0). It is the formalize-first invariant
-(CLAUDE.md §3.3) that prunes the Reeb candidate class **before** any
+(AGENTS.md §3.3) that prunes the Reeb candidate class **before** any
 numerical scan: a c_3 source must be bar-antisymmetric, so among the Reeb
 components only the `sinh` part survives.
 

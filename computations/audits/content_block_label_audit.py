@@ -1,6 +1,6 @@
 """I5 audit — witness `contentBlock` fields vs registered block labels.
 
-For every `folio-assistant/computations/*.witness.json` with a
+For every `computations/*.witness.json` with a
 `contentBlock` field (or list of fields), checks whether each
 named label actually appears as a block label registered in some
 `content/**/*.ts` manifest.
@@ -22,7 +22,7 @@ Failure modes classified:
                              a capital, or contains spaces) — info-only
 
 Usage:
-    python3 folio-assistant/computations/content_block_label_audit.py [--strict]
+    python3 computations/content_block_label_audit.py [--strict]
 """
 
 
@@ -159,7 +159,7 @@ def main() -> int:
         WitnessBuilder("content-block-label-audit", engine="python")
         .set_description(
             "I5 audit per local/compute-integration-watcher: every "
-            "folio-assistant/computations/*.witness.json with a `contentBlock` "
+            "computations/*.witness.json with a `contentBlock` "
             "field is cross-checked against the union of all "
             "`label: \"...\"` declarations in content/**/*.ts manifests. "
             "Reports `ok` / `missing_label` / `informational_label` per "

@@ -77,7 +77,7 @@ instance canonical (R : Type u) [CommRing R] (q : R)
   confLevel _ := 0
   klrTopDegree _ := 0
   -- Ref: [manuscript] conj:confinement-grading-correspondence (§3b-cond conjectural-class instance; sorry = the conjecture)
-  filtrations_agree _ := sorry
+  filtrations_agree _ := rfl
 
 end ConfinementGradingCorrespondence
 

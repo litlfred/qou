@@ -40,8 +40,8 @@ import { definition } from "../../schema/builders";
  *     is always two-row.
  *
  * Verification:
- *   folio-assistant/computations/delta_lambda_2row_stratum_analysis.py
- *   folio-assistant/computations/probe_he4_canonical_tr_m_fingerprint.py
+ *   computations/delta_lambda_2row_stratum_analysis.py
+ *   computations/probe_he4_canonical_tr_m_fingerprint.py
  */
 export default definition({
   label: "def:two-row-stratum",

@@ -35,6 +35,7 @@ candidate is a Yekutieli-extension observable.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import M_D_MEV_VALIDATION, M_N_MEV_VALIDATION, M_P_MEV_VALIDATION, M_T_MEV_VALIDATION  # noqa: E402 (codata sweep)
 import sys
 from pathlib import Path
 
@@ -73,10 +74,10 @@ def main() -> int:
 
     # CODATA-anchored mass ratios (proton + 4He + deuteron + tritium)
     m_e_MeV = mp.mpf("0.51099895069")
-    m_p_MeV = mp.mpf("938.27208816")
-    m_n_MeV = mp.mpf("939.56542052")
-    m_d_MeV = mp.mpf("1875.61294257")   # deuteron
-    m_T_MeV = mp.mpf("2808.92113298")   # tritium
+    m_p_MeV = mp.mpf(M_P_MEV_VALIDATION)
+    m_n_MeV = mp.mpf(M_N_MEV_VALIDATION)
+    m_d_MeV = mp.mpf(M_D_MEV_VALIDATION)   # deuteron
+    m_T_MeV = mp.mpf(M_T_MEV_VALIDATION)   # tritium
     m_He3_MeV = mp.mpf("2808.39160743") # ³He
     m_He4_MeV = mp.mpf("3727.37941")    # ⁴He
 

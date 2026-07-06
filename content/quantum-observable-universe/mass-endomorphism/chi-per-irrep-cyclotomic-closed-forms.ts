@@ -22,10 +22,11 @@ export default remark({
   ],
   computation: {
     engine: "sympy",
-    script: "folio-assistant/computations/probe_per_wedderburn_block_ck.py",
+    script: "computations/probe_per_wedderburn_block_ck.py",
     status: "experimental",
   },
   authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "status",
       body: "**All three V_λ formally closed**, cyclotomic pattern documented,\ncompute wired, lit pointers in place. The substantive next R&D step\nis to derive the Hoefsmit-matrix-expansion formula for V_(2,1)\n**from the matrix algebra directly** in Lean (currently the closed\nform is recorded as a verified rational identity, with the\nmatrix-product derivation backed empirically by sympy in the probe).",

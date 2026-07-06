@@ -1,6 +1,9 @@
 import { proposition } from "../../schema/builders";
 
 export default proposition({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+  ],
   label: "prop:p-vs-np-boundary",
   lean: { ref: "qou:QOU.PvsNPBoundary.boundary_dichotomy" },
   title:
@@ -16,8 +19,8 @@ export default proposition({
   ],
   uses: [
     "prop:p-bandwidth-bound",
-    "def:observable-subcategory",
-    "def:skein-resolution-obstruction",
+    "def:polynomial-observable-subcategory",
+    "def:computational-boundary",
     "rem:substrate-gm-torsion",
   ],
   cites: ["cook1971", "freedman2003"],

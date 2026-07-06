@@ -24,7 +24,7 @@ $\pm 1$ shortcut available at intermediate steps. At generic $q$ the
 braid matrices accumulate genuine topological information; only the
 trace under $\tau$ collapses them onto a $\pm 1$ statistic.*
 
-**Why a conjecture and not a theorem.**
+**Conjectural status.**
 *The braid–Hecke surjection and the standard Schur–Weyl-style
 identification of $H_n(q)$-modules with anyon Hilbert spaces are
 classical \cite{kassel1995, kitaev2006, nayak2008}. What remains

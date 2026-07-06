@@ -20,7 +20,7 @@ approach explicitly: the ideal would be the full transcendence machinery
 which is out of reach; the reduction replaces that machinery with three
 QOU-native tools and one remaining QOU-native gap.
 
-**Why this is a finite, decidable claim.**  Each $J_K(q)$ has a
+**Finiteness and decidability of the claim.**  Each $J_K(q)$ has a
 canonical *jet-order* grading — the Habiro (cyclotomic) expansion
 $J_K(q) = \sum_{n \ge 0} c_n(K)\,(q;q)_n$, whose $n$-th term is the
 vertical/jet degree-$n$ part of the categorical generating function (the
@@ -49,8 +49,7 @@ condition on the truncated coefficient matrix, hence decidable.
    $(\tfrac12, 0, -\tfrac1{16})$, $(1, 0, 0)$ with elimination determinant
    $\tfrac1{16} \neq 0$ (LU pivots $(\tfrac14, 2, \tfrac18)$,
    `jetOrder3_certificate`) — so full rank $3$ holds at the Reid-1991 base
-   order, a finite decidable determinant test on real data
-   (`jet_order_pivots.py` $\to$ `jet-order-pivots.witness.json`).  Higher
+   order, a finite decidable determinant test on real data. Higher
    orders then need **no** further computation, by the following
    structural argument: the order-$N$ Jacobian ($3 \times (N+1)$) contains
    this non-singular $3\times3$ minor as a column-submatrix, so its rank is

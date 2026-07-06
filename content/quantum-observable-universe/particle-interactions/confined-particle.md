@@ -73,3 +73,5 @@ $\mathrm{GS}(P_1) = \mathrm{GS}(P_2)$.*
  the canonical ILP ground-state configuration for $(Z,N)=(2,2)$.*
 - *`\benzene`: $\ell = 3$, $n_0 = 6$ atom-strands (six C-atoms
  in aromatic ring).*
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

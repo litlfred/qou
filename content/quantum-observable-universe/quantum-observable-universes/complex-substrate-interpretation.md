@@ -27,7 +27,7 @@ $q$-equilibrium of the
 [$q$-Laplacian](#rem:q-laplacian-interpretation) is no longer
 self-adjoint — it mixes amplitudes with phases.
 
-**Why observability forces $\varTheta = 0$.**
+**Observability forces $\varTheta = 0$.**
 A [quantum observable universe](#def:quantum-observable-universe) carries
 a dagger structure $\dagger$ and a fibre functor $\tau$ satisfying
 positive-definiteness: $h_q(a^\dagger a) > 0$ for all $a \neq 0$.
@@ -43,7 +43,7 @@ $$
 i.e. $q \in \mathbb{R}_{>0}$.  The positivity axiom $q \geq 1$ then
 gives the Lean constraint `field_ge_one`.
 
-**What the imaginary part would mean.**
+**Interpretation of the imaginary part.**
 If one relaxes the observability axiom — passing to the "pre-observable"
 or algebraic sector — the phase $\varTheta$ has a geometric interpretation:
 

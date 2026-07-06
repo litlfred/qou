@@ -8,7 +8,7 @@ Hecke reduction step introduced it, and what it means physically.
 Output: protium-deep-trace.witness.json
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 protium-deep-trace.py
 """
 

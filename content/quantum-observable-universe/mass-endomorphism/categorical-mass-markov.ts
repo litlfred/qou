@@ -17,10 +17,17 @@ export default proposition({
   },
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/canonical_isospin_pyhecke.py",
+    script: "computations/canonical_isospin_pyhecke.py",
     witness:
-      "folio-assistant/computations/canonical-isospin-pyhecke.witness.json",
+      "computations/canonical-isospin-pyhecke.witness.json",
     status: "verified",
     requires: ["pyhecke"],
   },
+  authorNotes: [
+    {
+      kind: "note",
+      body:
+        "Lean sibling is archimedean by construction (AGENTS.md §7c): Term 1 of the unified mass formula is the real absolute value `term_one := |tr_M T_w|` (in MeV), so the Markov algebra is typed over `Module ℝ` with `tr_M : A →ₗ[ℝ] ℝ`. The ordering/absolute-value content lives on the observable side of the substrate→archimedean wall — the mass is a genuine real observable, not a gratuitous ℝ-specialisation of otherwise-generic Markov-trace combinatorics.",
+    },
+  ],
 });

@@ -33,7 +33,7 @@ The boxed Kashaev form is flagged "Markov-invariance-broken at $q_0$" producing 
 
 ### Canonical substrate-only predictor
 
-[`paper_six_term_isotope_sweep.py`](../../folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py) — **the working entry point**. Implements T1+T2+T3+T4+T5(+T6 if witness present) with 5 selectable `tower_mode`s:
+[`paper_six_term_isotope_sweep.py`](../../computations/sweeps/paper_six_term_isotope_sweep.py) — **the working entry point**. Implements T1+T2+T3+T4+T5(+T6 if witness present) with 5 selectable `tower_mode`s:
 
 | Mode | T2+T3 path | Mean \|err\| | Max \|err\| | Status |
 |------|-----------|-------------:|------------:|--------|
@@ -43,7 +43,7 @@ The boxed Kashaev form is flagged "Markov-invariance-broken at $q_0$" producing 
 | `r-side-bare` | **Path 1 (paper preferred)** | **36%** | **48%** | canonical for now |
 | `li2q` | corrected Kashaev (Li_2^q) | 22% | 31% | best empirical |
 
-Output: [`paper-six-term-isotope-sweep.witness.json`](../../folio-assistant/computations/sweeps/paper-six-term-isotope-sweep.witness.json).
+Output: [`paper-six-term-isotope-sweep.witness.json`](../../computations/sweeps/paper-six-term-isotope-sweep.witness.json).
 
 ### Five-mode side-by-side at $q_0$ (mean \|err\| vs CODATA, post-calibration)
 
@@ -62,11 +62,11 @@ The T − ³He isospin defect under `brane-legacy` is −737 MeV vs CODATA +19 k
 
 | Script | Status | Disposition |
 |--------|--------|-------------|
-| [`atomic_braid_mass_table.py`](../../folio-assistant/computations/atomic_braid_mass_table.py) | **⚠️ DEPRECATED 2026-05-08** (wrong multiplicative T1) | retained for witness compat; do not extend |
-| [`atomic_braid_mass_table_modes_sweep.py`](../../folio-assistant/computations/atomic_braid_mass_table_modes_sweep.py) | downstream of above | deprecate |
-| [`mass_formula_6term_mpfr_50dps.py`](../../folio-assistant/computations/mass_formula_6term_mpfr_50dps.py) | Phase A 50-dps; consumes registry $\tau_M$ | keep as 50-dps backend |
-| [`atomic_mass_via_rho_k.py`](../../folio-assistant/computations/atomic_mass_via_rho_k.py) | **CANONICAL GOING-FORWARD** per its own header, BUT it's single-term + $\rho_K$ post-calibration consuming CODATA $m_p$, $m_n$ | ⚠️ violates three-calibration discipline; rename or relabel as "post-calibration only" |
-| [`probe_sdp_canonical_paper_formula.py`](../../folio-assistant/computations/probe_sdp_canonical_paper_formula.py) | Single-term T1 only, on Model B SDP-canonical braids | keep as Model B T1 reference |
+| [`atomic_braid_mass_table.py`](../../computations/atomic_braid_mass_table.py) | **⚠️ DEPRECATED 2026-05-08** (wrong multiplicative T1) | retained for witness compat; do not extend |
+| [`atomic_braid_mass_table_modes_sweep.py`](../../computations/atomic_braid_mass_table_modes_sweep.py) | downstream of above | deprecate |
+| [`mass_formula_6term_mpfr_50dps.py`](../../computations/mass_formula_6term_mpfr_50dps.py) | Phase A 50-dps; consumes registry $\tau_M$ | keep as 50-dps backend |
+| [`atomic_mass_via_rho_k.py`](../../computations/atomic_mass_via_rho_k.py) | **CANONICAL GOING-FORWARD** per its own header, BUT it's single-term + $\rho_K$ post-calibration consuming CODATA $m_p$, $m_n$ | ⚠️ violates three-calibration discipline; rename or relabel as "post-calibration only" |
+| [`probe_sdp_canonical_paper_formula.py`](../../computations/probe_sdp_canonical_paper_formula.py) | Single-term T1 only, on Model B SDP-canonical braids | keep as Model B T1 reference |
 
 ### Pieces wired but not yet plugged in
 
@@ -94,7 +94,7 @@ These don't bridge — the ratios $0.388/0.288 = 1.35$, $0.104/0.0129 = 8.07$, $
 1. **Add `--t1-source=model-b` option** to `paper_six_term_isotope_sweep.py`, reading SDP-canonical $\tau_M$ from `probe-sdp-canonical-paper-formula.witness.json`. Re-run; compare to Model A column.
 2. **Run `term6_residues_at_roots.py`** to generate the missing T6 witness; re-run sweep with non-zero T6.
 3. **Add `tower_mode="path-2"`** (Path 2 Wedderburn-Heine) per
-   [`brane-tower-plancherel-scaffold.witness.json`](../../folio-assistant/computations/brane-tower-plancherel-scaffold.witness.json).
-4. **Add `tower_mode="habiro-single-trace"`** (Path 3) per [`path-b-habiro-mass-probe.witness.json`](../../folio-assistant/computations/probes/path-b-habiro-mass-probe.witness.json) — claims sub-1% error.
+   [`brane-tower-plancherel-scaffold.witness.json`](../../computations/brane-tower-plancherel-scaffold.witness.json).
+4. **Add `tower_mode="habiro-single-trace"`** (Path 3) per [`path-b-habiro-mass-probe.witness.json`](../../computations/probes/path-b-habiro-mass-probe.witness.json) — claims sub-1% error.
 5. **Relabel `atomic_mass_via_rho_k.py`** with explicit "post-calibration only" docstring (currently misleadingly tagged "canonical going-forward").
 6. **Deprecate** `atomic_braid_mass_table_modes_sweep.py` (already-flagged downstream of broken script).

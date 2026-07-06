@@ -187,7 +187,7 @@ q-Plancherel measure normalization.
 
 **Status.** Conjectural-level. The parity grading on
 self-conjugate $\lambda$ is computable
-([enumerate_self_conjugate_partitions.py](../../folio-assistant/computations/enumerate_self_conjugate_partitions.py)
+([enumerate_self_conjugate_partitions.py](../../computations/enumerate_self_conjugate_partitions.py)
 already enumerates them); the parity classification of each
 partition's "shape" is the missing piece.
 

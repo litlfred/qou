@@ -52,12 +52,12 @@ profile.*
 
 **Status.**
 *This proposition refines `prop:rho-k-scaling-structure`
-([2026-04 witness `rho-k-scaling-structure.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/rho-k-scaling-structure.witness.json))
+([2026-04 witness `rho-k-scaling-structure.witness.json`](https://github.com/litlfred/qou/blob/main/computations/rho-k-scaling-structure.witness.json))
 and complements
 `prop:six-term-mass-formula-complete`
 by giving the **exact** $\rho_K$ closed form rather than the
 narrative six-term decomposition.  Compute is stubbed in
-[`folio-assistant/computations/rho_k_h3a_refinement.py`](folio-assistant/computations/rho_k_h3a_refinement.py);
+the canonical formalism;
 full evaluation requires summing $p(3A)$ partitions
 ($p(3) = 3$, $p(6) = 11$, $p(9) = 30$, $p(12) = 77$,
 $p(30) = 5604$, $p(60) = 966\,467$) with Hoefsmit characters
@@ -142,26 +142,6 @@ $$
 $$
 
 *which is the refinement claim.  $\blacksquare$*
-
-**Interpretation.**
-
-- *The leading-order ansatz $(Z\cdot m_p + N\cdot m_n)/(m_e\cdot|\mathrm{tr}_M|)$
-  is the **$\Delta \equiv 0$ truncation** of the full Wedderburn-Schur
-  decomposition.  Its 0.1 %-level residuals on $D, T, {}^3\mathrm{He}$
-  are precisely the binding energies and reflect non-vanishing
-  $\Delta_\lambda$.*
-- *The block-binding correction $\Delta_\lambda$ is **block-local**:
-  different partitions $\lambda$ contribute independently.  This is
-  the categorical analogue of the **shell structure** picked up by
-  the SEMF asymmetry / pairing terms.*
-- *To reach 1 ppb mass-prediction accuracy, one must compute
-  $\Delta_\lambda(K)$ for every $\lambda \vdash 3A$ in the
-  Plancherel-dominant cone (per
-  [`conj:hoefsmit-scattering-pipeline`](#conj:hoefsmit-scattering-pipeline) §142 –
-  bound MAE$(k) \le C_0 \cdot [2]_q^{-2(k-3)}$).  At the substrate
-  $q_0 = 1.109978595554181\ldots$ (50 dps), $[2]_{q_0}^2 \approx 4.04$, so each level
-  reduces residual by $\sim 4\times$; nine levels suffice to drop
-  $0.3 \%$ to $0.3 \% / 4^9 \approx 1$ ppb.*
 
 **Connection to the six-term narrative.**
 

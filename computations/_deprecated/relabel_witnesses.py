@@ -14,7 +14,7 @@ Usage:
     python3 relabel_witnesses.py [--dry-run]
 
 Default: writes in place, prints a list of files modified.
-@module folio-assistant/computations/relabel_witnesses
+@module computations/relabel_witnesses
 """
 from __future__ import annotations
 import json

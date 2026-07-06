@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-30T20:07:17.263444+00:00",
-  "commitSha": "49fbff2149c23527433f7a316825531dc6c7ca90",
+  "computedAt": "2026-06-22T13:13:06.463817+00:00",
+  "commitSha": "cae0becd630ab3343b30c5ed3b32e038ed03e82e",
   "assertions": [
     {
       "name": "all_five_candidates_evaluated",
@@ -14,81 +14,78 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "alpha-em-habiro-torus-knot-jones",
   "scriptFile": "alpha_em_habiro_torus_knot_jones.py",
-  "scriptHash": "393f832e1d88",
-  "scriptCommitSha": "833f99e9814705a70682923e682998fc32e6f8ef",
+  "scriptHash": "e61fd7559070",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "description": "Option (1): Habiro-at-roots-of-unity for α_EM. Tests whether the EXACT closed-form Jones polynomials of T(2,9) and T(3,5) (the Habiro element at generic q) outperform the framework's [9]_q·[10]_q tree ansatz. Includes five candidate identifications + Bring zero-mode shift comparison. No fit; closed-form Jones from standard torus-knot formula V(T(p,k))(t) = t^((p-1)(k-1)/2)·(1−t^(p+1)−t^(k+1)+t^(p+k))/(1−t²).",
   "data": {
     "inputs": {
-      "q0": "1.10997858275138080759166909561",
+      "q0": "1.10997859555733471989976322048",
       "CODATA_alpha_inv": "137.035999084",
       "Bring_shift_2_over_3pi": "0.21220659078919"
     },
     "q_brackets": {
-      "[9]_q": "10.3635175881",
-      "[10]_q": "11.8942752282"
+      "[9]_q": "10.3635179026",
+      "[10]_q": "11.8942756693"
     },
     "full_jones_at_q0": {
-      "V_T29_jones": "0.361980032261",
-      "V_T35_jones": "0.54927810406"
+      "V_T29_jones": "0.361979840807",
+      "V_T35_jones": "0.549277976047"
     },
     "candidates_vs_CODATA": {
       "(A) q·[9]_q·[10]_q  (framework tree)": {
-        "alpha_inv": "136.823208854",
-        "alpha_inv_plus_bring": "137.035415444",
-        "err_no_shift_ppm": -1552.8053346550205,
-        "err_with_bring_ppm": -4.259024140541004
+        "alpha_inv": "136.823219657",
+        "alpha_inv_plus_bring": "137.035426248",
+        "err_no_shift_ppm": -1552.7264966878706,
+        "err_with_bring_ppm": -4.180186173391118
       },
       "(B) q·V(T29)·V(T35)  (full Jones product)": {
-        "alpha_inv": "0.220694495126",
-        "alpha_inv_plus_bring": "0.432901085915",
-        "err_no_shift_ppm": -998389.5144589638,
-        "err_with_bring_ppm": -996840.9681484493
+        "alpha_inv": "0.220694329511",
+        "alpha_inv_plus_bring": "0.432900920301",
+        "err_no_shift_ppm": -998389.5156675131,
+        "err_with_bring_ppm": -996840.9693569986
       },
       "(C) q·|V(T29)·V(T35)|  (abs Jones product)": {
-        "alpha_inv": "0.220694495126",
-        "alpha_inv_plus_bring": "0.432901085915",
-        "err_no_shift_ppm": -998389.5144589638,
-        "err_with_bring_ppm": -996840.9681484493
+        "alpha_inv": "0.220694329511",
+        "alpha_inv_plus_bring": "0.432900920301",
+        "err_no_shift_ppm": -998389.5156675131,
+        "err_with_bring_ppm": -996840.9693569986
       },
       "(D) q·[9]_q·V(T35)  (mixed: [n]_q for T29, full V for T35)": {
-        "alpha_inv": "6.31850123766",
-        "alpha_inv_plus_bring": "6.53070782845",
-        "err_no_shift_ppm": -953891.6687593262,
-        "err_with_bring_ppm": -952343.1224488118
+        "alpha_inv": "6.31850002968",
+        "alpha_inv_plus_bring": "6.53070662047",
+        "err_no_shift_ppm": -953891.6775743722,
+        "err_with_bring_ppm": -952343.1312638577
       },
       "(E) q·V(T29)·[10]_q  (mixed: full V for T29, [n]_q for T35)": {
-        "alpha_inv": "4.77900183346",
-        "alpha_inv_plus_bring": "4.99120842425",
-        "err_no_shift_ppm": -965125.938692002,
-        "err_with_bring_ppm": -963577.3923814874
+        "alpha_inv": "4.77899953818",
+        "alpha_inv_plus_bring": "4.99120612897",
+        "err_no_shift_ppm": -965125.9554414497,
+        "err_with_bring_ppm": -963577.4091309352
       }
     },
     "best": {
       "no_shift": {
         "id": "(A) q·[9]_q·[10]_q  (framework tree)",
-        "residual_ppm": -1552.8053346550205
+        "residual_ppm": -1552.7264966878706
       },
       "with_bring_shift": {
         "id": "(A) q·[9]_q·[10]_q  (framework tree)",
-        "residual_ppm": -4.259024140541004
+        "residual_ppm": -4.180186173391118
       }
     }
   }

@@ -1,6 +1,6 @@
 # Path to 1 ppb — Computational Engine
 
-*Canonical modules in `folio-assistant/computations/` for the JSJ pipeline. `★` = use this. `⚠` = deprecated or subsidiary.*
+*Canonical modules in `computations/` for the JSJ pipeline. `★` = use this. `⚠` = deprecated or subsidiary.*
 
 ## Substrate parameters
 
@@ -69,17 +69,17 @@
 
 ```bash
 # Quick sanity check: magic atoms match A·8G·2m_e
-python3 folio-assistant/computations/jsj_atom_volume.py
+python3 computations/jsj_atom_volume.py
 
 # Full atom-knot correspondence via census search
-python3 folio-assistant/computations/jsj_verification.py
+python3 computations/jsj_verification.py
 
 # α-cluster unfolding for doubly-magic
-python3 folio-assistant/computations/jsj_alpha_clustering.py
+python3 computations/jsj_alpha_clustering.py
 
 # 50-digit substrate pinning
-python3 folio-assistant/computations/q_pinning_50_digit.py
+python3 computations/q_pinning_50_digit.py
 
 # Canonical Markov + tower (production pipeline)
-python3 folio-assistant/computations/binding_full_pipeline.py
+python3 computations/binding_full_pipeline.py
 ```

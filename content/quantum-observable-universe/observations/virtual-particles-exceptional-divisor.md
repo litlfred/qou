@@ -43,7 +43,7 @@ $\mathrm{SU}(2)$), so the state space grows exponentially with
 virtual depth — but the projection back to $A_0$ collapses all
 higher-level structure.
 
-**Why virtual particles are never observed.**
+**Non-observability of virtual particles.**
 
 An excitation at level $A_n$ ($n \geq 1$) is invisible at $A_0$
 because the canonical projection $\pi_0 \colon A_n \to A_0$

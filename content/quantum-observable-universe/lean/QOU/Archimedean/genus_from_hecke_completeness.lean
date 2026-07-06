@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.Archimedean.genus_from_hecke_completeness — `g_min = 4`
 

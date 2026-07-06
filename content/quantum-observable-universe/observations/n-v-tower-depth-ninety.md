@@ -12,7 +12,7 @@ $$
 *equivalently $v / m_e = q_0^{90}$ to leading order in the
 sub-leading correction (see
 [N_v leading-order derivation](#conj:n-v-leading-order-derivation)).*
-## Why 90
+## Origin of the value 90
 
 The candidate factorisation $90 = 5 \cdot 18 = 5 \cdot (2 \cdot 3^2)$
 suggests:
@@ -41,7 +41,7 @@ has paper-side derivation.  The derivation needs to identify
 **which** structural invariant evaluates to $90$, then prove the
 identification.
 
-## What needs to be constructed
+## Constructions required
 
 To upgrade this conjecture to a theorem:
 

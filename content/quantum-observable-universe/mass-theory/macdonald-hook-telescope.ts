@@ -10,8 +10,8 @@ export default proposition({
   },
   computation: {
     engine: "sympy",
-    script: "folio-assistant/computations/y_lambda_macdonald_telescope.py",
-    witness: "folio-assistant/computations/y-lambda-macdonald-telescope.witness.json",
+    script: "computations/y_lambda_macdonald_telescope.py",
+    witness: "computations/y-lambda-macdonald-telescope.witness.json",
     status: "verified",
     requires: ["sympy", "mpmath"],
   },

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-31T22:29:16.157950+00:00",
-  "commitSha": "27ec6cac66c0742bbc8a059aa6427dd54d475bd3",
+  "computedAt": "2026-06-22T13:19:47.087227+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "reexam_completed",
@@ -14,37 +14,35 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 11,
   "computation": "meson-habiro-c4-truncation-reexam",
   "scriptFile": "meson_habiro_c4_truncation_reexam.py",
-  "scriptHash": "a71312b78691",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "698f3a7306f0",
+  "scriptCommitSha": "8b865dcadef3965e265e0b60f1a144359008e252",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
   },
   "description": "Re-examines audit 2026-05-29 Path 1 ruling on meson Habiro c=4 under the Q_β c_k truncation-order canonical framing. Tests whether the 0.77% miss is a bounded c_3·u³ truncation error (parallel to Q_β c_3 = -2 at tier=near-match) rather than evidence c=4 is wrong.",
   "parameters": {
-    "q_50dps": "1.1099785827513808075916690956107688798744991218736"
+    "q_50dps": "1.1099785955573347198997632204832250266562084087802"
   },
   "data": {
-    "C_correction": "0.0002897313496606652921420646",
-    "u_habiro": "0.008517234550156142189255574",
-    "C_over_u_squared": "3.993910010105138550271017",
+    "C_correction": "0.000289610889042146748881315",
+    "u_ladder": "0.008517236340484921439933113",
+    "C_over_u_squared": "3.992247797367766746527475",
     "c2_assumed": "4",
-    "c3_required_to_absorb_residual": "-0.7150196297869717581779597",
-    "c2_contribution_pct_to_C": "100.152481901",
-    "c3_contribution_pct_to_C": "0.15248190068",
+    "c3_required_to_absorb_residual": "-0.9101781754469770368132734",
+    "c2_contribution_pct_to_C": "100.194181399",
+    "c3_contribution_pct_to_C": "0.194181399194",
     "verdict": "**REOPENED**: the 0.77% residual on C/u² = 4.03 is consistent with a BOUNDED c_3·u³ truncation error (analog of Q_β c_3 wired at tier=near-match). The audit's binary 'ruled out' may have made the same framing error the Q_β deep audit made: treating an unmatched residual as evidence the leading c_2 = 4 is wrong, rather than as bounded higher-rung contribution."
   }
 }

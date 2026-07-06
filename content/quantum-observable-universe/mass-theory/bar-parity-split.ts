@@ -10,6 +10,7 @@ export default proposition({
   uses: [
     "prop:sl2-prolongation-recurrence",
     "def:bar-involution",
+    "conj:binding-qbeta-complex-volume",
   ],
   proofs: ["prf:bar-parity-split"],
 });

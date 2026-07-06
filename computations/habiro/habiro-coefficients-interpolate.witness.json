@@ -8,10 +8,10 @@
     "prop:full-pole-structure-mass-trace",
     "thm:knot-mass-formula-unified"
   ],
-  "timestamp": "2026-06-02T15:14:25.846023+00:00",
+  "timestamp": "2026-06-22T13:19:35.220678+00:00",
   "polynomial_q_not_applicable": true,
   "parameters": {
-    "q_0": 1.1099785827513808,
+    "q_0": 1.1099785955573347,
     "engine": "mpmath 60-digit; Hoefsmit numerical"
   },
   "results": {
@@ -19,22 +19,22 @@
       "Z": 1,
       "N": 0,
       "include_inter": false,
-      "tr_M_q0_numerical_60dps": "1.0653061442544502028447836788011517279335935986560743461909",
-      "walltime_sec": 0.10674476623535156
+      "tr_M_q0_numerical_60dps": "1.06541195515740305803510999834546047682012367628649717738189",
+      "walltime_sec": 0.04374980926513672
     },
     "n (neutron, A=1)": {
       "Z": 0,
       "N": 1,
       "include_inter": false,
-      "tr_M_q0_numerical_60dps": "0.923233229911637360373660689511003499728205325656798747427495",
-      "walltime_sec": 0.0009489059448242188
+      "tr_M_q0_numerical_60dps": "0.923413454683046278788924788645757193939918567596917303379039",
+      "walltime_sec": 0.000985860824584961
     },
     "D (deuteron, A=2)": {
       "Z": 1,
       "N": 1,
       "include_inter": true,
-      "tr_M_q0_numerical_60dps": "0.388286424074789043904353741134640683561139110710417533717686",
-      "walltime_sec": 0.45368051528930664
+      "tr_M_q0_numerical_60dps": "0.388471590720051045788905761767379042349223248309842072014072",
+      "walltime_sec": 0.42485690116882324
     }
   }
 }

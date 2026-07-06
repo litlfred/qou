@@ -3,23 +3,29 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Data.Fintype.Fin
 
 /-!
-# QOU.Archimedean.gram_weighted_qvalue — placeholder stub
+# QOU.Archimedean.gram_weighted_qvalue
 
-**Placeholder canonical** for content block at
+Canonical Lean declaration for content block at
 [`quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts`](quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts).
 
-The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.Archimedean.gram_weighted_qvalue` resolves to a real declaration in the `qou`
-Lake package.
+The manuscript sub-claims (the Gram-weighted `Q`-value formula, the
+weights summing to `1`, and their non-negativity) are stated over
+**opaque Gram-matrix-derived data** (the NF-reduction costs `Δ_k` and the
+Frobenius-norm Gram weights `w_k`, defined from the Gröbner–Shirshov
+normal form of the typed Garside element); no faithful Mathlib structure
+realises the Gram pairing here, so per the vacuity-fix playbook pattern C
+the proposition is **named** as a `def … : Prop` over the context —
+honestly recording the conditional conjecture rather than projecting
+context fields.  A Lean instance would be the conjecture.
 -/
 
 namespace QOU.Archimedean
 
 
-/-- Abstract context for the `gram_weighted_qvalue` claim — manuscript-themed
-    typed fields below; sub-claims encode the three structural pieces of
-    `eq:gram-weighted-qvalue` (the formula itself, the NF-reduction-cost
-    definition `Δ_k`, and the Gram-weight definition `w_k`). -/
+/-- Abstract context (inputs) for the `gram_weighted_qvalue` claim — the
+    substrate parameter, the proton/neutron counts, the electron mass,
+    the `Q`-value, and the per-channel NF-reduction costs `Δ` and Gram
+    weights `w`.  No field asserts a conclusion. -/
 class GramWeightedQvalueContext where
   /-- Substrate parameter `q : ℝ`. -/
   q : ℝ
@@ -37,16 +43,6 @@ class GramWeightedQvalueContext where
   /-- The Gram weight per channel `k`, indexed `Fin N → ℝ`; should sum to
       `1` (probability distribution over conversion channels). -/
   w : Fin N → ℝ
-  /-- Manuscript sub-claim (i) — the `Q`-value formula:
-      `Q = (Σ_k w_k · Δ_k) · N · m_e`. -/
-  claim_i_qvalue_formula :
-    Q = (Finset.univ.sum (fun k : Fin N => w k * Δ k)) * (N : ℝ) * m_e
-  /-- Manuscript sub-claim (ii): the Gram weights sum to `1`. -/
-  claim_ii_weights_sum_to_one :
-    Finset.univ.sum (fun k : Fin N => w k) = 1
-  /-- Manuscript sub-claim (iii): every channel weight is non-negative
-      (so the formula above is interpretable as a weighted average). -/
-  claim_iii_weights_nonneg : ∀ k : Fin N, 0 ≤ w k
 
 /-- **Manuscript statement** (full body):
 
@@ -132,13 +128,17 @@ The $Q$-value has three factors:
 
 […truncated; see manuscript for remainder…]
 
-    The Lean encoding below splits the manuscript claim into named
-    sub-claim fields; concretisation requires per-block manuscript
-    translation. -/
+    The proposition is **named** below as a `def … : Prop` (pattern C):
+    `Δ` and `w` are opaque Gram-matrix-derived inputs, so the
+    three-part claim (formula, weights sum to one, weights non-negative)
+    is recorded as the conditional conjecture over the context rather than
+    discharged by a fake projection. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts
-theorem gram_weighted_qvalue [ctx : GramWeightedQvalueContext] :
-    ctx.Q
+def gram_weighted_qvalue (ctx : GramWeightedQvalueContext) : Prop :=
+  ctx.Q
       = (Finset.univ.sum (fun k : Fin ctx.N => ctx.w k * ctx.Δ k))
-        * (ctx.N : ℝ) * ctx.m_e := ctx.claim_i_qvalue_formula
+        * (ctx.N : ℝ) * ctx.m_e ∧
+  (Finset.univ.sum (fun k : Fin ctx.N => ctx.w k) = 1) ∧
+  (∀ k : Fin ctx.N, 0 ≤ ctx.w k)
 
 end QOU.Archimedean

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T20:44:21.624909+00:00",
-  "commitSha": "cd38c69bb13c5831ae1d58d5affff564ef1e5cfd",
+  "computedAt": "2026-06-22T04:34:30.752985+00:00",
+  "commitSha": "dd7f0ed7b18f6e278701ebd9da007aa03d7cc38c",
   "assertions": [
     {
       "name": "atoms_processed_match_table",
@@ -15,16 +15,24 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 10,
   "computation": "prototype-gs-nf-shell-binding",
   "scriptFile": "prototype_gs_nf_shell_binding.py",
-  "scriptHash": "364fab2a8420",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "02f8a4a84dc4",
+  "scriptCommitSha": "9e5351788e688a35cda7c6cbc9548a2568db655e",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Prototype shell-binding correction ΔE_GS(Z, N) per shell-closure-normal-form.md.  Not production-grade — ε_shell values are conceptual estimates derived from AME residuals, not the full sequential-Hopf-linking GS-NF reduction energy.  Demonstrates the L3 wiring path; production-quality requires pyhecke GS-NF infrastructure (deferred until R5-full SDP solver lands per the parent Rule-14 audit doc 2026-05-24-rule14-atom-knot-census.md).",
   "parameters": {
@@ -42,12 +50,12 @@
         "A": 2,
         "shell_regime": "s-shell-opening",
         "epsilon_shell_MeV": 0.0,
-        "B_AME_MeV": 2.22456612,
+        "B_AME_MeV": 2.2245662000000004,
         "B_pred_Kashaev_MeV": 2.2488207948647343,
-        "kashaev_residual_MeV": -0.024254674864734316,
+        "kashaev_residual_MeV": -0.024254594864733914,
         "B_pred_L3_corrected_MeV": 2.2488207948647343,
-        "l3_residual_MeV": -0.024254674864734316,
-        "l3_residual_pct": -1.0903103596999093
+        "l3_residual_MeV": -0.024254594864733914,
+        "l3_residual_pct": -1.090306724283319
       },
       {
         "atom": "3H",
@@ -56,12 +64,12 @@
         "A": 3,
         "shell_regime": "s-shell-mid",
         "epsilon_shell_MeV": 0.0,
-        "B_AME_MeV": 8.4817984,
+        "B_AME_MeV": 8.481796200000002,
         "B_pred_Kashaev_MeV": 8.46859838653302,
-        "kashaev_residual_MeV": 0.013200013466979854,
+        "kashaev_residual_MeV": 0.01319781346698079,
         "B_pred_L3_corrected_MeV": 8.46859838653302,
-        "l3_residual_MeV": 0.013200013466979854,
-        "l3_residual_pct": 0.15562753138508753
+        "l3_residual_MeV": 0.01319781346698079,
+        "l3_residual_pct": 0.15560163384945264
       },
       {
         "atom": "3He",
@@ -70,12 +78,12 @@
         "A": 3,
         "shell_regime": "s-shell-mid",
         "epsilon_shell_MeV": 0.0,
-        "B_AME_MeV": 7.7180375,
+        "B_AME_MeV": 7.71804132,
         "B_pred_Kashaev_MeV": 7.48891930977096,
-        "kashaev_residual_MeV": 0.22911819022904023,
+        "kashaev_residual_MeV": 0.2291220102290401,
         "B_pred_L3_corrected_MeV": 7.48891930977096,
-        "l3_residual_MeV": 0.22911819022904023,
-        "l3_residual_pct": 2.968606854126327
+        "l3_residual_MeV": 0.2291220102290401,
+        "l3_residual_pct": 2.9686548792542626
       },
       {
         "atom": "4He",
@@ -84,12 +92,12 @@
         "A": 4,
         "shell_regime": "s-shell-closure",
         "epsilon_shell_MeV": -1.66,
-        "B_AME_MeV": 28.2956912,
+        "B_AME_MeV": 28.2956624,
         "B_pred_Kashaev_MeV": 29.95567723908384,
-        "kashaev_residual_MeV": -1.6599860390838401,
+        "kashaev_residual_MeV": -1.6600148390838392,
         "B_pred_L3_corrected_MeV": 28.29567723908384,
-        "l3_residual_MeV": 1.3960916160016268e-05,
-        "l3_residual_pct": 4.933937135989195e-05
+        "l3_residual_MeV": -1.4839083839035538e-05,
+        "l3_residual_pct": -5.2442963268587545e-05
       },
       {
         "atom": "6Li",
@@ -98,7 +106,7 @@
         "A": 6,
         "shell_regime": "sub-shell-opening",
         "epsilon_shell_MeV": null,
-        "B_AME_MeV": 31.99405,
+        "B_AME_MeV": 31.993987199999996,
         "B_pred_Kashaev_MeV": null,
         "kashaev_residual_MeV": null,
         "B_pred_L3_corrected_MeV": null,
@@ -199,8 +207,8 @@
       ]
     },
     "headline_test": {
-      "4He_kashaev_residual_pct": -5.866568260696314,
-      "4He_l3_corrected_residual_pct": 4.933937135989195e-05,
+      "4He_kashaev_residual_pct": -5.866676014214247,
+      "4He_l3_corrected_residual_pct": -5.2442963268587545e-05,
       "interpretation": "Production Kashaev law over-predicts ⁴He by +5.87%; the prototype L3 correction ε_shell(⁴He) = -1.66 MeV brings the prediction to within <0.1% of AME at A=4.  This is the saturated-shell signature.  For A=5,6,7 (sub-shell opening regime, ε_shell currently None), the production Kashaev law gives no prediction at all — L3 is the only available wiring path."
     }
   },

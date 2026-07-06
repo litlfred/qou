@@ -34,9 +34,9 @@ Residue magnitude at the proton-pinned `q₀`: `A ≈ 1.804e-15`
 | Odd-parity avatar (closed-form) | **SATURATED** (`c_3 = g`; 9 candidates NEGATIVE) | PR #1880 |
 | Single Markov-stabilization | **REFUTED at trace level** (z<1; identity-trace = 1 ≠ 2.53) | PR #1850 |
 | Demazure n ≤ 5 | **NEGATIVE** | chain-4 n=5 verdict |
-| **7th single-formula ansatz** | **FORBIDDEN** (3-calibration discipline) | CLAUDE.md §Δ_λ gate |
+| **7th single-formula ansatz** | **FORBIDDEN** (3-calibration discipline) | AGENTS.md §Δ_λ gate |
 
-## Critical framing — fibre vs observable (CLAUDE.md)
+## Critical framing — fibre vs observable (AGENTS.md)
 
 The `c_k` live in the **fibre** (formal `q`, potentially complex). Do **not**
 search for a real `f(q₀)` — that is the known-dead single-formula route. Search
@@ -49,7 +49,7 @@ the evaluation, **not** a fibre claim — do not conflate the two levels.)
 
 ## The honest KLR / crystal caveat — READ FIRST
 
-CLAUDE.md §7b lists Type-B folding / KL-decategorification / Demazure
+AGENTS.md §7b lists Type-B folding / KL-decategorification / Demazure
 sub-crystals as **authoring guidance, not a closure shortcut**. The
 [2026-05-30 KLR dialog assessment](../audits/2026-05-30-klr-dialog-assessment.md)
 found **0/6 candidate proofs would meaningfully shorten** with a KLR layer.
@@ -100,4 +100,4 @@ Markov trace / archimedean evaluation yields `c_3`. (This branch is based on
 - [`docs/audits/2026-06-03-qbeta-residue-a-cal-anchored-acceptance.md`](../audits/2026-06-03-qbeta-residue-a-cal-anchored-acceptance.md)
 - [`docs/audits/2026-05-30-klr-dialog-assessment.md`](../audits/2026-05-30-klr-dialog-assessment.md) — recurrent re-pitch failure modes
 - PRs: #1811 (Markov-trace machinery foundation), #1850, #1821, #1875, #1880
-- CLAUDE.md §7b (symmetric-crystal authoring guidance), §"Im(q) fibre vs observable", §Δ_λ gate
+- AGENTS.md §7b (symmetric-crystal authoring guidance), §"Im(q) fibre vs observable", §Δ_λ gate

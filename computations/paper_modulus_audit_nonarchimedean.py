@@ -5,7 +5,7 @@ usage in non-archimedean (categorical / pre-τ / fibre-level) sections.
 Per user 2026-06-01: "more general statements (even if char p) should be
 in paper, and then specialize when needed for archimedean."
 
-Per prop:li2q-phiq-bar-symmetrization + CLAUDE.md fibre/observable
+Per prop:li2q-phiq-bar-symmetrization + AGENTS.md fibre/observable
 distinction (PR #1616): the |...| modulus is an ARCHIMEDEAN operation
 (takes a signed real to a positive real, breaking bar-asymmetry). It
 should NOT appear in categorical / pre-τ definitions.

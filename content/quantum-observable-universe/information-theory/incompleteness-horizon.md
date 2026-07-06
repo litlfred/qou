@@ -3,7 +3,7 @@ a braid, every braid closes to a link, and the Skein polynomial
 is the output
 ([Skein Turing machine](#rem:skein-turing-machine)). By
 G\"{o}del's first incompleteness theorem \cite{goedel1931},
-any consistent formal system powerful enough to encode its own
+any consistent formal system expressive enough to encode its own
 arithmetic contains true statements that no finite derivation
 can prove. Turing's reformulation \cite{turing1936} sharpens
 this: there exist decision problems whose halting behaviour no
@@ -83,13 +83,13 @@ incompleteness framing, the answer is structural:
 
 This is neither "lost" nor "preserved" in the operational
 sense --- it is **incomplete**: the system is expressive
-enough to state the truth but not powerful enough to derive
+enough to state the truth but not strong enough to derive
 it from the accessible side of the boundary.
 
 **Self-reference and the necessity of horizons.**
 
 G\"{o}del's theorem requires self-reference: the system must
-be powerful enough to encode statements about itself. The QOU
+be expressive enough to encode statements about itself. The QOU
 satisfies this via Turing completeness --- the Skein-braid
 encoding allows the universe to simulate its own dynamics. But
 self-reference has a cost: any system that can model itself

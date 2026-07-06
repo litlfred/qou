@@ -11,7 +11,7 @@ partial product Φ_n(x; q) maps bijectively (via its denominator
 zeros) to the ideal-tetrahedron cusps of the hyperbolic Φ_q-piece,
 and its asymptotic recovers the Bloch-Wigner volume.
 
-Per CLAUDE.md §3b, downstream-of-conjecture statements are
+Per AGENTS.md §3b, downstream-of-conjecture statements are
 themselves conjectures.  We package the assertion as a typeclass
 that consumes `ArchimedeanLimit` and a `Kashaev`-style instance and
 exposes the bijective + volumetric content.
@@ -76,7 +76,7 @@ class AlgebraicGeometricEquivalence
 
 /-- Stated equivalence theorem (conjecture instance form). -/
 -- Ref: [manuscript] conj:algebraic-geometric-dilog-equivalence
-theorem algebraic_geometric_equivalence
+noncomputable def algebraic_geometric_equivalence
     (q x : ℝ) (n : ℕ) [h : AlgebraicGeometricEquivalence q x n] :
     (∃ z : Fin n → ℝ, ∀ k : Fin n, z k = q ^ (-(k : ℤ))) ∧
     (∀ ε > (0 : ℝ), ∃ N : ℕ, ∀ m, N ≤ m →

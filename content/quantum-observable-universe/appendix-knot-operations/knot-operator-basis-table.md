@@ -1,3 +1,10 @@
+The NF decomposition of a knot operator determines which
+particle channel it opens on a given incoming pair — in
+particular whether its $e^-$ coefficient is nonzero, i.e.
+whether it produces the electron channel. Tabulating these
+decompositions is therefore what realises the operator/channel
+selection that this appendix examines.
+
 This appendix gives the complete NF decomposition of
 $b_i \cdot \beta(T_{m,n}) \cdot b_j$ for every pair of NF basis
 elements and every torus knot operator, **symbolic in
@@ -21,11 +28,12 @@ See [Table 1](#tbl:knot-operator-basis-table-table1-data).
 
 **Key observations:**
 
-1. **$e^-$ channel universality under $T_{2,3}$**: When
-   $\beta = \sigma_0\sigma_1\sigma_0$ (trefoil) is inserted
-   between any pair, the $e^-$ coefficient is always nonzero.
-   For the identity operator ($T_{1,0}$), only 19/36 pairs
-   produce $e^-$.
+1. **$e^-$ channel universality under $T_{2,3}$**: When the
+   trefoil operator $T_{2,3}$ is inserted, the $e^-$ coefficient
+   is always nonzero (36/36 pairs).  In contrast, under the
+   identity operator $T_{1,0}$, only 19/36 pairs produce a nonzero
+   $e^-$ coefficient, leaving the channel closed for the remaining
+   pairs.
 
 2. **$e^- \cdot e^- = \gamma + h\sigma_0 + h\sigma_1 + h^2 L_+ + h^2 L_- + (h^3+h)e^-$**:
    the self-product of the electron populates all six basis

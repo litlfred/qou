@@ -27,7 +27,7 @@ export default proposition({
     },
     {
       kind: "note",
-      body: "Provides an explicit absolute-convergence bound for the Yekutieli brane-tower integration, tightening the linkage between exponential decay of the q-Laplacian eigenfunctions and the physical justification for non-local integration.",
+      body: "Provides an explicit absolute-convergence bound for the brane-tower integration, tightening the linkage between exponential decay of the q-Laplacian eigenfunctions and the physical justification for non-local integration.",
     },
   ],
 });

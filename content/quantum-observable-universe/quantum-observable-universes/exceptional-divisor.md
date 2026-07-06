@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be a QOU and let $p \in M$ be a brane point
 with outward normal $N(p) = p/\lvert p\rvert$ and positively-oriented
 tangent frame $(T_1, T_2)$.  Set $R = R_{\mathbb{P}^1(\mathbb{C})}$ and
@@ -8,7 +6,7 @@ $$
   O(p) =  p + RN(p).
 $$
 
-The *exceptional divisor* at $p$ is the fibre of the state bundle
+The **exceptional divisor** at $p$ is the fibre of the state bundle
 $\mathcal{S}$ at $p$ --- the $\mathbb{P}^1(\mathbb{C})$ fibre
 
 $$

@@ -58,9 +58,9 @@ theorem ratio_perturbation (A B C D : ℝ)
     |B * C - A * D| / (C * (C + D)) := by
   rw [div_sub_div _ _ (ne_of_gt hCD) (ne_of_gt hC)]
   rw [abs_div]
-  congr 1
-  · ring_nf
-  · rw [abs_of_pos (mul_pos hC hCD)]
+  rw [abs_of_pos (mul_pos hCD hC)]
+  rw [show (A + B) * C - (C + D) * A = B * C - A * D by ring]
+  rw [show (C + D) * C = C * (C + D) by ring]
 
 /-- Corollary: if the cross-term |B·C − A·D| is bounded by ε·C²,
     then |f − A/C| ≤ ε · C/(C+D) ≤ ε. -/
@@ -69,14 +69,16 @@ theorem ratio_perturbation_bound (A B C D ε : ℝ)
     (hε : |B * C - A * D| ≤ ε * C ^ 2) :
     |(A + B) / (C + D) - A / C| ≤ ε * C / (C + D) := by
   rw [ratio_perturbation A B C D hC hCD]
-  rw [div_le_div_iff (mul_pos hC hCD) hCD]
-  calc |B * C - A * D| ≤ ε * C ^ 2 := hε
-    _ = ε * C * C := by ring
-    _ ≤ ε * C * (C + D) := by nlinarith
+  have hden : C * (C + D) > 0 := mul_pos hC hCD
+  have hCDne : (C + D) ≠ 0 := ne_of_gt hCD
+  rw [div_le_iff₀ hden, div_mul_eq_mul_div, le_div_iff₀ hCD]
+  calc |B * C - A * D| * (C + D) ≤ ε * C ^ 2 * (C + D) := by
+        apply mul_le_mul_of_nonneg_right hε (le_of_lt hCD)
+    _ = ε * C * (C * (C + D)) := by ring
 
 /-! ## §2  Classical branching fraction (Fomin identity) -/
 
-/-- **Fomin identity** (Dual RSK / growth diagram identity).
+/-! **Fomin identity** (Dual RSK / growth diagram identity).
 
     For any partition μ ⊢ n and any k ≥ n:
 
@@ -139,9 +141,9 @@ theorem fomin_identity (k n : ℕ) (hn : n ≤ k)
     (mult_fn : List ℕ → ℕ)   -- m_μ^λ = #SYT(λ/μ) for fixed μ
     (dim_mu : ℕ)              -- dim(μ)
     -- Hypothesis: the sum satisfies the Fomin identity
-    (h_fomin : partitions_k.sum (fun λ => dim_fn λ * mult_fn λ) =
+    (h_fomin : partitions_k.sum (fun lam => dim_fn lam * mult_fn lam) =
       k.factorial / n.factorial * dim_mu) :
-    partitions_k.sum (fun λ => dim_fn λ * mult_fn λ) =
+    partitions_k.sum (fun lam => dim_fn lam * mult_fn lam) =
     k.factorial / n.factorial * dim_mu :=
   h_fomin
 
@@ -176,7 +178,7 @@ theorem fomin_k4_sym : 1 * 1 + 3 * 1 + 2 * 0 + 3 * 0 + 1 * 0 = 24 / 6 * 1 := by 
     k!/6 · 1 = 4. ✓ -/
 theorem fomin_k4_alt : 1 * 0 + 3 * 0 + 2 * 0 + 3 * 1 + 1 * 1 = 24 / 6 * 1 := by decide
 
-/-- **Precise classical branching**: for fixed n = 3, as k → ∞,
+/-! **Precise classical branching**: for fixed n = 3, as k → ∞,
 
     f_μ^{classical} = Σ (dim(λ)²/k!) m_μ^λ / Σ (dim(λ)²/k!) Σ_ν m_ν^λ
 
@@ -196,7 +198,7 @@ theorem fomin_k4_alt : 1 * 0 + 3 * 0 + 2 * 0 + 3 * 1 + 1 * 1 = 24 / 6 * 1 := by 
 
 /-! ## §3  The q-correction cross-term -/
 
-/-- The cross-term B·C − A·D measures the q-shift:
+/-! The cross-term B·C − A·D measures the q-shift:
 
     B_μ·C − A_μ·D = Σ_{λ,λ'} P_λ P_{λ'} δ_λ m_μ^λ Σm_ν^{λ'}
                    − Σ_{λ,λ'} P_λ P_{λ'} m_μ^λ δ_{λ'} Σm_ν^{λ'}
@@ -216,7 +218,7 @@ theorem fomin_k4_alt : 1 * 0 + 3 * 0 + 2 * 0 + 3 * 1 + 1 * 1 = 24 / 6 * 1 := by 
     The NET effect of the q-correction is to shift the limit by
     the FIRST-ORDER term in δ, which is proportional to d_q − dim. -/
 
-/-- **First-order q-shift**: the cross-term in the limit satisfies
+/-! **First-order q-shift**: the cross-term in the limit satisfies
 
     lim_{k→∞} (B_μ·C − A_μ·D)/C² = (d_q(μ) − dim(μ)) · K
 
@@ -230,7 +232,7 @@ theorem fomin_k4_alt : 1 * 0 + 3 * 0 + 2 * 0 + 3 * 1 + 1 * 1 = 24 / 6 * 1 := by 
 
     Choosing K such that Σ f_μ = 1 gives K = 1/(Σd_q · Σdim)... -/
 
-/-- Actually, the cleaner argument: write R² = 1 + 2(R−1) + (R−1)².
+/-! Actually, the cleaner argument: write R² = 1 + 2(R−1) + (R−1)².
     The first-order term 2(R−1) shifts each weight by
     2(d_q(λ)/dim(λ) − 1). Averaging over Plancherel:
 
@@ -247,7 +249,7 @@ theorem fomin_k4_alt : 1 * 0 + 3 * 0 + 2 * 0 + 3 * 1 + 1 * 1 = 24 / 6 * 1 := by 
 
 /-! ## §4  Main convergence theorem -/
 
-/-- **Convergence theorem** (Féray–Méliot + ratio perturbation).
+/-! **Convergence theorem** (Féray–Méliot + ratio perturbation).
 
     For the branching H_k(q) → H_n(q), the fraction f_μ^{(k)}
     converges to d_q(μ)/Σd_q(ν) as k → ∞.
@@ -300,7 +302,7 @@ noncomputable def hookWalkTransition (dq_lambda dq_lambda_minus_c hook_c : ℝ)
     (h_pos : dq_lambda > 0) : ℝ :=
   dq_lambda_minus_c ^ 2 * hook_c / dq_lambda ^ 2
 
-/-- The convergence follows from the mixing time of Kerov's q-hook walk.
+/-! The convergence follows from the mixing time of Kerov's q-hook walk.
 
     Féray–Méliot [feray2010] proved the q-Plancherel CLT:
     character fluctuations have variance O(1/k).
@@ -343,10 +345,7 @@ instance branchingConverges_refl (k : ℕ) (hk : k ≥ 4)
     (f : ℝ) (C_q : ℝ) (hC : C_q > 0) :
     BranchingConverges k hk f f C_q hC := by
   refine ⟨?_⟩
-  simp
-  have hk_real : (3 : ℝ) ≤ (k : ℝ) := by exact_mod_cast hk
-  have h_pos : (k : ℝ) - 3 ≥ 0 := by linarith
-  have h_sqrt_nonneg : Real.sqrt ((k : ℝ) - 3) ≥ 0 := Real.sqrt_nonneg _
+  simp only [sub_self, abs_zero]
   positivity
 
 /-- Per-instance form. -/
@@ -368,8 +367,8 @@ theorem finite_k_convergence (k : ℕ) (hk : 4 ≤ k) (hK : k ≤ 12)
     (f_k f_4 : ℝ)
     (hf : |f_k - f_4| ≤ (k - 4 : ℝ) * 0.01) :
     |f_k - f_4| ≤ 0.08 := by
-  have : (k - 4 : ℝ) ≤ 8 := by
-    have := hK; push_cast; omega
+  have hk12 : (k : ℝ) ≤ 12 := by exact_mod_cast hK
+  have : (k - 4 : ℝ) ≤ 8 := by linarith
   linarith [abs_nonneg (f_k - f_4)]
 
 /-- **Finite-k witness — numerical agreement class.**

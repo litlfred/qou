@@ -410,10 +410,29 @@ def verify_dual_present(witness_path: str | Path) -> dict:
 
     found = set()
 
+    def _meaningful(v) -> bool:
+        # A dual field is "present" only if it carries a real value.
+        # A null, or an empty list/dict, is a hollow placeholder that
+        # passed the old presence-only check while computing no dual
+        # (the devils-advocate class-3 / witness-hollowness pattern).
+        if v is None:
+            return False
+        if isinstance(v, (list, dict, str)) and len(v) == 0:
+            return False
+        return True
+
     def _scan(obj):
         if isinstance(obj, dict):
             for k, v in obj.items():
-                if k in REQUIRED or k in OPTIONAL_ALIASES:
+                if k in REQUIRED and _meaningful(v):
+                    found.add(k)
+                elif k in OPTIONAL_ALIASES and isinstance(v, list):
+                    # An EMPTY active_set is a legitimate dual result — it means
+                    # no Frobenius constraint is tight (all shadow prices y_star
+                    # are sub-tolerance, i.e. an interior SDP/LP optimum). Treat
+                    # any list (incl. []) as present; the hollowness check stays
+                    # strict for y_star/y0_star/objectives, which a genuinely
+                    # un-computed dual leaves null/empty.
                     found.add(k)
                 _scan(v)
         elif isinstance(obj, list):

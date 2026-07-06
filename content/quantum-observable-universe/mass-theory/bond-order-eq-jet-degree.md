@@ -37,3 +37,5 @@ nucleon raises the normal-form length by its block, so an $n$-cluster
 sub-word sits at degree $n$).
 
 Though the proof reduces to a standard jet-degree equivalence argument, projecting the structural hypothesis onto this geometric form to explicitly equate bond order with the jet-degree of the extracted $S$ field is a mathematically novel physical framing specific to the Quantum Observable Universe.
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

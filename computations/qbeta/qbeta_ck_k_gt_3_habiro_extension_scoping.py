@@ -52,6 +52,7 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 (codata sweep)
 del _sys, _Path, _bridge
 
 import time
@@ -70,7 +71,7 @@ mp.mp.dps = 65
 
 from witness_base import WitnessBuilder  # noqa: E402
 
-Q0_MP_PIN = "1.1099785827513808075916690956107688798744991218736"
+Q0_MP_PIN = "1.1099785955573347198997632204832250266562084087802"
 Q_BETA_CODATA_MEV = mp.mpf("0.78233")
 M_E_MEV = mp.mpf("0.51099895069")
 
@@ -285,7 +286,7 @@ def main() -> int:
     print(f"    qbeta_1ppq_achieved.py extracts c_4 by:")
     print(f"      (a) reading c_3 from q-beta-operator-valued-N3.witness")
     print(f"          where c_3 was fitted using rounded Q_AME =")
-    print(f"          mpf('939.5654205240') - mpf('938.27208816') - m_e")
+    print(f"          mpf('939.5654205240') - mpf(M_P_MEV_VALIDATION) - m_e")
     print(f"      (b) computing Q_N3 with that c_3")
     print(f"      (c) comparing to full-precision Q_codata = m_n - m_p - m_e")
     print(f"          using codata_constants values (different precision!)")

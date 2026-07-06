@@ -3,7 +3,7 @@
 **Date:** 2026-05-16
 **Branch:** `claude/crystal-and-he4-combined`
 **Status:** Proof of the empirical ordering-invariance finding from
-[`probe_ordering_dependence.witness.json`](../../folio-assistant/computations/ordering-dependence.witness.json)
+[`probe_ordering_dependence.witness.json`](../../computations/ordering-dependence.witness.json)
 (12/12 orderings of ⁴He, T, ³He give identical crystal q-pole and
 Habiro shift).
 
@@ -14,7 +14,7 @@ for nucleon ordering $\sigma$ of $Z$ protons and $N$ neutrons (any
 permutation of $p^Z n^N$). Let $\text{qpole}_{\text{crystal}}(\beta)
 = \max_{\lambda \vdash n} \max_{T \in \mathrm{SYT}(\lambda)} \sum_{j} \text{pole}_T(\text{factor}_j)$
 be the crystal q-pole counter from
-[`crystal_shift_nf`](../../folio-assistant/computations/crystal_shift_nf_atomic.py).
+[`crystal_shift_nf`](../../computations/crystal_shift_nf_atomic.py).
 
 Then for any two orderings $\sigma_1$, $\sigma_2$:
 $$\text{qpole}_{\text{crystal}}(\beta_{\sigma_1}) \;=\; \text{qpole}_{\text{crystal}}(\beta_{\sigma_2}) \;=\; 12A - 1,$$
@@ -33,7 +33,7 @@ Total: $11A + (A - 1) = 12A - 1$. This count depends only on $A = Z + N$, NOT on
 
 **Step 2 — Per-factor pole is at most 1 in any SYT.**
 
-Per [`crystal_shift_nf_atomic._pole_for_class`](../../folio-assistant/computations/crystal_shift_nf_atomic.py):
+Per [`crystal_shift_nf_atomic._pole_for_class`](../../computations/crystal_shift_nf_atomic.py):
 - $\sigma$ on column SYT (ρ = −1): pole 1
 - $\sigma$ on row SYT (ρ = +1): pole 0
 - $\sigma^{-1}$ on column: pole 0 (cancels via $-h \cdot I$ term)
@@ -93,7 +93,7 @@ qpole and the cancellation are functions of $(Z, N)$ alone). ∎
 ## Empirical evidence
 
 12 orderings tested (PR #670,
-[`probe_ordering_dependence.py`](../../folio-assistant/computations/probe_ordering_dependence.py)):
+[`probe_ordering_dependence.py`](../../computations/probe_ordering_dependence.py)):
 
 | atom | orderings tested | all give shift |
 |---|---|---|

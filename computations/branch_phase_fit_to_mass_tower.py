@@ -4,7 +4,7 @@
 #   the missing prefactor in the mass-tower compute. The math.sin
 #   calls are scalar but the entire script is exploratory branch-
 #   phase fitting (matches the probe/audit/experiment exemption
-#   spirit per CLAUDE.md §7c). Tagging avoids per-site swap cascade
+#   spirit per AGENTS.md §7c). Tagging avoids per-site swap cascade
 #   for what is effectively a numerical-experiment script.
 """
 BRANCH-PHASE FIT TO MASS-TOWER MISSING PREFACTOR
@@ -21,7 +21,7 @@ branch phases gives non-trivial commutative crossing weights.
 See content block: rem:commutative-crossing-energy.
 
 Usage:
-    python3 folio-assistant/computations/branch_phase_fit_to_mass_tower.py
+    python3 computations/branch_phase_fit_to_mass_tower.py
 """
 from __future__ import annotations
 

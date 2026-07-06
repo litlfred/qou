@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/probe_q_beta_operator_valued_N3.py",
+  "script_path": "computations/probe_q_beta_operator_valued_N3.py",
   "language": "python",
   "source_hash": "1d48a07d198c",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -21,7 +21,7 @@
         "reviewed_at": "2026-05-22T18:27:38.070Z",
         "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
         "severity": "major",
-        "evidence": "folio-assistant/computations/probe_q_beta_operator_valued_N3.py:164: bare `float(eps_N2_abs / eps_abs)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/probe_q_beta_operator_valued_N3.py:167: bare `float(eps_N2_abs / eps_abs)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/probe_q_beta_operator_valued_N3.py:172: bare `float(eps_abs / eps_N2_abs)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/probe_q_beta_operator_valued_N3.py:178: bare `float(eps)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/probe_q_beta_operator_valued_N3.py:188: bare `float(eps_N2_abs / mp.fabs(best_eps))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
+        "evidence": "computations/probe_q_beta_operator_valued_N3.py:164: bare `float(eps_N2_abs / eps_abs)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/probe_q_beta_operator_valued_N3.py:167: bare `float(eps_N2_abs / eps_abs)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/probe_q_beta_operator_valued_N3.py:172: bare `float(eps_abs / eps_N2_abs)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/probe_q_beta_operator_valued_N3.py:178: bare `float(eps)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/probe_q_beta_operator_valued_N3.py:188: bare `float(eps_N2_abs / mp.fabs(best_eps))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
       },
       {
         "field_hash": {
@@ -38,7 +38,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/probe_q_beta_operator_valued_N3.py:164: bare `float(eps_N2_abs / eps_abs)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/probe_q_beta_operator_valued_N3.py:167: bare `float(eps_N2_abs / eps_abs)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/probe_q_beta_operator_valued_N3.py:172: bare `float(eps_abs / eps_N2_abs)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/probe_q_beta_operator_valued_N3.py:178: bare `float(eps)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/probe_q_beta_operator_valued_N3.py:188: bare `float(eps_N2_abs / mp.fabs(best_eps))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
+        "evidence": "computations/probe_q_beta_operator_valued_N3.py:164: bare `float(eps_N2_abs / eps_abs)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/probe_q_beta_operator_valued_N3.py:167: bare `float(eps_N2_abs / eps_abs)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/probe_q_beta_operator_valued_N3.py:172: bare `float(eps_abs / eps_N2_abs)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/probe_q_beta_operator_valued_N3.py:178: bare `float(eps)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/probe_q_beta_operator_valued_N3.py:188: bare `float(eps_N2_abs / mp.fabs(best_eps))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
       }
     ],
     "respects_archimedean_wall": [
@@ -74,7 +74,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/probe_q_beta_operator_valued_N3.py:1: script lacks both a module docstring and ≥10% comment density (got 17/217 = 7.8%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
+        "evidence": "computations/probe_q_beta_operator_valued_N3.py:1: script lacks both a module docstring and ≥10% comment density (got 17/217 = 7.8%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
       }
     ],
     "variables_typed": [
@@ -110,7 +110,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/probe_q_beta_operator_valued_N3.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/probe_q_beta_operator_valued_N3.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       }
     ],
     "connected_to_ci_pipeline": [
@@ -129,7 +129,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/probe_q_beta_operator_valued_N3.py:1: script `probe_q_beta_operator_valued_N3.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+        "evidence": "computations/probe_q_beta_operator_valued_N3.py:1: script `probe_q_beta_operator_valued_N3.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
       }
     ],
     "deprecated": [
@@ -182,7 +182,7 @@
         "reviewed_at": "2026-06-09T03:37:13.209Z",
         "reviewed_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33",
         "severity": "critical",
-        "evidence": "folio-assistant/computations/probe_q_beta_operator_valued_N3.py:190: mpmath/sympy → float64 cast `float(eps_N2_abs / mp.fabs(best_eps))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | folio-assistant/computations/probe_q_beta_operator_valued_N3.py:230: mpmath/sympy → float64 cast `float(eps_N2_abs / mp.fabs(best_eps))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`)."
+        "evidence": "computations/probe_q_beta_operator_valued_N3.py:190: mpmath/sympy → float64 cast `float(eps_N2_abs / mp.fabs(best_eps))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | computations/probe_q_beta_operator_valued_N3.py:230: mpmath/sympy → float64 cast `float(eps_N2_abs / mp.fabs(best_eps))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`)."
       },
       {
         "field_hash": {
@@ -199,7 +199,7 @@
         "reviewed_at": "2026-06-09T03:47:37.719Z",
         "reviewed_sha": "3765bc9aa9274031018ed3d7696fc515f11274be",
         "severity": "critical",
-        "evidence": "folio-assistant/computations/probe_q_beta_operator_valued_N3.py:190: mpmath/sympy → float64 cast `float(eps_N2_abs / mp.fabs(best_eps))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | folio-assistant/computations/probe_q_beta_operator_valued_N3.py:230: mpmath/sympy → float64 cast `float(eps_N2_abs / mp.fabs(best_eps))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`)."
+        "evidence": "computations/probe_q_beta_operator_valued_N3.py:190: mpmath/sympy → float64 cast `float(eps_N2_abs / mp.fabs(best_eps))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | computations/probe_q_beta_operator_valued_N3.py:230: mpmath/sympy → float64 cast `float(eps_N2_abs / mp.fabs(best_eps))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`)."
       }
     ]
   }

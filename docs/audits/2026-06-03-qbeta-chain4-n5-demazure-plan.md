@@ -56,9 +56,9 @@ Candidate set: per-partition values + cross-partition sums +
 ratios suggested by Lean reference `f̃₁²` (continuing the
 square-shape thread from n=4).
 
-Script: [`folio-assistant/computations/qbeta/qbeta_chain4_kashiwara_step4_n5.py`](../../folio-assistant/computations/qbeta/qbeta_chain4_kashiwara_step4_n5.py).
+Script: [`computations/qbeta/qbeta_chain4_kashiwara_step4_n5.py`](../../computations/qbeta/qbeta_chain4_kashiwara_step4_n5.py).
 Witness JSON emitted to
-`folio-assistant/computations/qbeta/qbeta-chain4-kashiwara-step4-n5.witness.json`.
+`computations/qbeta/qbeta-chain4-kashiwara-step4-n5.witness.json`.
 
 Decision rule (per predecessor audit anti-pattern compliance):
 
@@ -81,20 +81,20 @@ and sl_4 (matching the n=4 negative result), compute:
 - Specialise at q₀ → numerical character coefficients
 - Compare against A / ℏ_q^15 ≈ 2.07
 
-Script: [`folio-assistant/computations/qbeta/qbeta_chain4_demazure_fund_weights.py`](../../folio-assistant/computations/qbeta/qbeta_chain4_demazure_fund_weights.py).
+Script: [`computations/qbeta/qbeta_chain4_demazure_fund_weights.py`](../../computations/qbeta/qbeta_chain4_demazure_fund_weights.py).
 Witness JSON emitted to
-`folio-assistant/computations/qbeta/qbeta-chain4-demazure-fund-weights.witness.json`.
+`computations/qbeta/qbeta-chain4-demazure-fund-weights.witness.json`.
 
 ### Step 6 — Cross-anchor sweep (only if a Step 4 or 5 candidate
 NEAR-1PCT at proton anchor)
 
 Re-compute the surviving candidate at muon-anchor q₀ ≈ 1.10997869.
-Per the c_k Im(q) fibre-vs-archimedean distinction (CLAUDE.md
+Per the c_k Im(q) fibre-vs-archimedean distinction (AGENTS.md
 §"Critical framing — Im(q)"), a real-valued ANCHOR-DEPENDENT
 near-match remains valid as a fibre-level diagnostic; what we
 flag is anchor-SWING > 1% (the c_3 flip-flop pattern).
 
-## Anti-pattern compliance (per CLAUDE.md "Before declaring open math")
+## Anti-pattern compliance (per AGENTS.md "Before declaring open math")
 
 - ✅ TIERED reporting; no ansatz at MISS or NEAR-FUZZY.
 - ✅ Cross-anchor BEFORE structural claim.

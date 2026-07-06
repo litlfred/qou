@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/_deprecated/fast_k6_characters.py",
+  "script_path": "computations/_deprecated/fast_k6_characters.py",
   "language": "python",
   "source_hash": "494f537339de",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -21,7 +21,7 @@
         "reviewed_at": "2026-05-22T18:27:38.070Z",
         "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
         "severity": "major",
-        "evidence": "folio-assistant/computations/_deprecated/fast_k6_characters.py:329: bare `float(m.subs(q, q0_num))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/fast_k6_characters.py:343: bare `float(total_markov.subs(q, q0_num))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/fast_k6_characters.py:366: bare `float(C.subs(q, q0_num))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/fast_k6_characters.py:265: bare float literal `0.915965594177219015054603514932` — wrap in `mpmath.mpf(\"0.915965594177219015054603514932\")` / `Decimal(\"0.915965594177219015054603514932\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/fast_k6_characters.py:347: bare float literal `1e-300` — wrap in `mpmath.mpf(\"1e-300\")` / `Decimal(\"1e-300\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/_deprecated/fast_k6_characters.py:329: bare `float(m.subs(q, q0_num))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/_deprecated/fast_k6_characters.py:343: bare `float(total_markov.subs(q, q0_num))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/_deprecated/fast_k6_characters.py:366: bare `float(C.subs(q, q0_num))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/_deprecated/fast_k6_characters.py:265: bare float literal `0.915965594177219015054603514932` — wrap in `mpmath.mpf(\"0.915965594177219015054603514932\")` / `Decimal(\"0.915965594177219015054603514932\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/_deprecated/fast_k6_characters.py:347: bare float literal `1e-300` — wrap in `mpmath.mpf(\"1e-300\")` / `Decimal(\"1e-300\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       },
       {
         "field_hash": {
@@ -38,7 +38,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/_deprecated/fast_k6_characters.py:329: bare `float(m.subs(q, q0_num))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/fast_k6_characters.py:343: bare `float(total_markov.subs(q, q0_num))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/fast_k6_characters.py:366: bare `float(C.subs(q, q0_num))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/fast_k6_characters.py:265: bare float literal `0.915965594177219015054603514932` — wrap in `mpmath.mpf(\"0.915965594177219015054603514932\")` / `Decimal(\"0.915965594177219015054603514932\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/fast_k6_characters.py:347: bare float literal `1e-300` — wrap in `mpmath.mpf(\"1e-300\")` / `Decimal(\"1e-300\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/_deprecated/fast_k6_characters.py:329: bare `float(m.subs(q, q0_num))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/_deprecated/fast_k6_characters.py:343: bare `float(total_markov.subs(q, q0_num))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/_deprecated/fast_k6_characters.py:366: bare `float(C.subs(q, q0_num))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/_deprecated/fast_k6_characters.py:265: bare float literal `0.915965594177219015054603514932` — wrap in `mpmath.mpf(\"0.915965594177219015054603514932\")` / `Decimal(\"0.915965594177219015054603514932\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/_deprecated/fast_k6_characters.py:347: bare float literal `1e-300` — wrap in `mpmath.mpf(\"1e-300\")` / `Decimal(\"1e-300\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       }
     ],
     "respects_archimedean_wall": [
@@ -57,7 +57,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/_deprecated/fast_k6_characters.py:349: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/`"
+        "evidence": "computations/_deprecated/fast_k6_characters.py:349: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/`"
       }
     ],
     "code_is_commented": [
@@ -76,7 +76,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/_deprecated/fast_k6_characters.py:1: script lacks both a module docstring and ≥10% comment density (got 24/305 = 7.9%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
+        "evidence": "computations/_deprecated/fast_k6_characters.py:1: script lacks both a module docstring and ≥10% comment density (got 24/305 = 7.9%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
       }
     ],
     "variables_typed": [
@@ -95,7 +95,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/_deprecated/fast_k6_characters.py:31: `def qint(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/fast_k6_characters.py:36: `def qfac(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/fast_k6_characters.py:50: `def __init__(…)` has 1 parameter without type annotation: dim — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/fast_k6_characters.py:56: `def eye(…)` has 1 parameter without type annotation: dim — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/fast_k6_characters.py:68: `def mul(…)` has 1 parameter without type annotation: other — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/_deprecated/fast_k6_characters.py:31: `def qint(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped) | computations/_deprecated/fast_k6_characters.py:36: `def qfac(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped) | computations/_deprecated/fast_k6_characters.py:50: `def __init__(…)` has 1 parameter without type annotation: dim — add `: type` (or `: Any` if the type genuinely is untyped) | computations/_deprecated/fast_k6_characters.py:56: `def eye(…)` has 1 parameter without type annotation: dim — add `: type` (or `: Any` if the type genuinely is untyped) | computations/_deprecated/fast_k6_characters.py:68: `def mul(…)` has 1 parameter without type annotation: other — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -114,7 +114,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/_deprecated/fast_k6_characters.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/_deprecated/fast_k6_characters.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       }
     ],
     "connected_to_ci_pipeline": [
@@ -150,7 +150,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/_deprecated/fast_k6_characters.py:1: script lives under `_deprecated/` — consumers must not depend on its output. Move to the canonical path if still active, or delete if truly retired"
+        "evidence": "computations/_deprecated/fast_k6_characters.py:1: script lives under `_deprecated/` — consumers must not depend on its output. Move to the canonical path if still active, or delete if truly retired"
       }
     ],
     "uses_library_framework_appropriately": [

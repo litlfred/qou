@@ -95,6 +95,6 @@ Topic 1 is genuinely multi-session, multi-person research. Closing the +2.89 % m
 - Canonical reference: [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md)
 - L2 100× status (3 failing shared root): [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](../audits/2026-05-30-l2-100x-status-3-failing-shared-root.md)
 - linking_weight-residual confirmation: [`docs/audits/2026-06-01-linking-weight-residual-fix.md`](../audits/2026-06-01-linking-weight-residual-fix.md)
-- bring_color_weighted implementation: [`folio-assistant/computations/closed_form_tau_M.py:178`](../../folio-assistant/computations/closed_form_tau_M.py)
+- bring_color_weighted implementation: [`computations/closed_form_tau_M.py:178`](../../computations/closed_form_tau_M.py)
 - SubstrateEWHypotheses Lean targets: [`content/quantum-observable-universe/lean/QOU/BraidKnot/SubstrateEWHypotheses.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/SubstrateEWHypotheses.lean)
 - Cheat sheet §5: [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md)

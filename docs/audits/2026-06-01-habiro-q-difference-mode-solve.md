@@ -1,7 +1,7 @@
 # Habiro q-difference equation — mode-by-mode solve (partial-fraction = Fourier modes)
 
 **Date:** 2026-06-01
-**Probe:** [`habiro_q_difference_mode_solve.py`](../../folio-assistant/computations/habiro/habiro_q_difference_mode_solve.py)
+**Probe:** [`habiro_q_difference_mode_solve.py`](../../computations/habiro/habiro_q_difference_mode_solve.py)
 → `habiro-q-difference-mode-solve.witness.json`
 **Goal arm:** 1ppQ-Q_β (`docs/coordination/1ppq-qbeta.md`)
 **Builds on:** the root-of-unity spectrum of PR #1622.

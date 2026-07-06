@@ -32,7 +32,7 @@ class KnotIndexedConvolutionGridContext where
 
 /-- **Proposition (`prop:knot-indexed-convolution-grid`).** -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/knot-indexed-convolution-grid.md
-theorem grid_placement [ctx : KnotIndexedConvolutionGridContext] :
+def grid_placement [ctx : KnotIndexedConvolutionGridContext] :
     ∀ k₁ k₂ : ctx.KnotConvolution,
       ctx.bar_class k₁ = ctx.bar_class k₂ → ctx.depth k₁ = ctx.depth k₂ →
         (ctx.bar_class k₁, ctx.depth k₁) = (ctx.bar_class k₂, ctx.depth k₂) :=

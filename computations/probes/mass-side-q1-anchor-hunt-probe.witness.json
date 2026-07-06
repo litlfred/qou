@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-05T19:12:14.485912+00:00",
-  "commitSha": "732844af7efdd7b31b77bef0b8dcfdf340559e0a",
+  "computedAt": "2026-07-05T11:21:32.827928+00:00",
+  "commitSha": "be738077a998aced47326c8de63ea658ce2849c4",
   "assertions": [
     {
       "name": "mass_side_q1_anchor_search_executed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 12,
   "computation": "mass-side-q1-anchor-hunt-probe",
   "scriptFile": "mass_side_q1_anchor_hunt_probe.py",
-  "scriptHash": "f2d35706f46c",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "3ffd8cf2fc37",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

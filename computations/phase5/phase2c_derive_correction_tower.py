@@ -3,7 +3,7 @@
 Phase 2c: derive (not fit) the ℏ_q correction tower.
 
 The "fitted" coefficients (c_F ≈ 1/4, c_X ≈ 5 or 3.2) are
-EMPIRICAL — matching CODATA backwards. Per CLAUDE.md Rule 14
+EMPIRICAL — matching CODATA backwards. Per AGENTS.md Rule 14
 (production-vs-exploratory discipline), we need to DERIVE them
 from categorical structure.
 
@@ -55,7 +55,7 @@ sys.path.insert(0, str(HERE.parent))
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
+from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION, M_MU_MEV_VALIDATION  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 
 q = Symbol("q", positive=True)
@@ -89,7 +89,7 @@ def main():
     h0 = q0 - 1/q0
     hbar0 = (q0 - 1) / q0
     m_e = mp.mpf(M_E_MEV)
-    m_mu = mp.mpf("105.6583755")
+    m_mu = mp.mpf(M_MU_MEV_VALIDATION)
     m_p_codata = mp.mpf(M_P_MEV_VALIDATION)
 
     trM = abs((4 + h0**2 - 3*h0**4 - h0**6) / (h0**2 + 4))

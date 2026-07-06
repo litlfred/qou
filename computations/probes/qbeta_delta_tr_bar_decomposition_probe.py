@@ -18,7 +18,7 @@ This probe is a STRUCTURAL OBSERVATION, not a derivation:
   - Factors the symmetric and antisymmetric parts
 
 DISCIPLINE: This probe does NOT propose a c_k closure candidate.
-Per CLAUDE.md "Don't propose a seventh fit-based ansatz" the bar-
+Per AGENTS.md "Don't propose a seventh fit-based ansatz" the bar-
 decomposition is recorded as a STRUCTURAL FACT for follow-up
 research, not as a wired derivation. If a future session uses
 this decomposition to derive c_k, it must pass the cross-anchor
@@ -68,7 +68,7 @@ def main() -> int:
         "Structural observation: Δtr_M(q) bar-decomposition under "
         "q → 1/q. Records the closed forms of the symmetric and "
         "antisymmetric components without proposing a c_k closure "
-        "candidate (per CLAUDE.md no-7th-ansatz discipline)."
+        "candidate (per AGENTS.md no-7th-ansatz discipline)."
     )
     # Audit-only: this probe documents a structural observation in the
     # paired audit doc; it is not expected to wire to any production

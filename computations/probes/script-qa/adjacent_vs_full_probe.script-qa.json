@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/probes/adjacent_vs_full_probe.py",
+  "script_path": "computations/probes/adjacent_vs_full_probe.py",
   "language": "python",
   "source_hash": "d01fa90770cb",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -21,7 +21,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "major",
-        "evidence": "folio-assistant/computations/probes/adjacent_vs_full_probe.py:108: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/probes/adjacent_vs_full_probe.py:110: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/probes/adjacent_vs_full_probe.py:111: bare float literal `1e-300` — wrap in `mpmath.mpf(\"1e-300\")` / `Decimal(\"1e-300\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/probes/adjacent_vs_full_probe.py:115: bare float literal `1e-14` — wrap in `mpmath.mpf(\"1e-14\")` / `Decimal(\"1e-14\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/probes/adjacent_vs_full_probe.py:132: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/probes/adjacent_vs_full_probe.py:108: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/probes/adjacent_vs_full_probe.py:110: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/probes/adjacent_vs_full_probe.py:111: bare float literal `1e-300` — wrap in `mpmath.mpf(\"1e-300\")` / `Decimal(\"1e-300\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/probes/adjacent_vs_full_probe.py:115: bare float literal `1e-14` — wrap in `mpmath.mpf(\"1e-14\")` / `Decimal(\"1e-14\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/probes/adjacent_vs_full_probe.py:132: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       }
     ],
     "respects_archimedean_wall": [
@@ -74,7 +74,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/probes/adjacent_vs_full_probe.py:73: `def phi_q_series(…)` has 3 parameters without type annotation: z, q, N — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/probes/adjacent_vs_full_probe.py:121: `def phi_q_noresonance(…)` has 3 parameters without type annotation: z, q, max_k — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/probes/adjacent_vs_full_probe.py:143: `def phi_q_residue(…)` has 2 parameters without type annotation: q, max_k — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/probes/adjacent_vs_full_probe.py:162: `def phi_q_resonance_sum(…)` has 3 parameters without type annotation: z, q, eps — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/probes/adjacent_vs_full_probe.py:181: `def mass_from_tower_probe(…)` has 3 parameters without type annotation: vols, cross_mode, phi_q_variant — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/probes/adjacent_vs_full_probe.py:73: `def phi_q_series(…)` has 3 parameters without type annotation: z, q, N — add `: type` (or `: Any` if the type genuinely is untyped) | computations/probes/adjacent_vs_full_probe.py:121: `def phi_q_noresonance(…)` has 3 parameters without type annotation: z, q, max_k — add `: type` (or `: Any` if the type genuinely is untyped) | computations/probes/adjacent_vs_full_probe.py:143: `def phi_q_residue(…)` has 2 parameters without type annotation: q, max_k — add `: type` (or `: Any` if the type genuinely is untyped) | computations/probes/adjacent_vs_full_probe.py:162: `def phi_q_resonance_sum(…)` has 3 parameters without type annotation: z, q, eps — add `: type` (or `: Any` if the type genuinely is untyped) | computations/probes/adjacent_vs_full_probe.py:181: `def mass_from_tower_probe(…)` has 3 parameters without type annotation: vols, cross_mode, phi_q_variant — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -93,7 +93,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/probes/adjacent_vs_full_probe.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
+        "evidence": "computations/probes/adjacent_vs_full_probe.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
       }
     ],
     "connected_to_ci_pipeline": [
@@ -112,7 +112,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/probes/adjacent_vs_full_probe.py:1: script `adjacent_vs_full_probe.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+        "evidence": "computations/probes/adjacent_vs_full_probe.py:1: script `adjacent_vs_full_probe.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
       }
     ],
     "deprecated": [
@@ -148,7 +148,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "major",
-        "evidence": "folio-assistant/computations/probes/adjacent_vs_full_probe.py:257: script writes `.witness.json` (\"confinement-level-walk.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
+        "evidence": "computations/probes/adjacent_vs_full_probe.py:257: script writes `.witness.json` (\"confinement-level-walk.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
       }
     ],
     "compute_no_mpf_to_float_cast": [

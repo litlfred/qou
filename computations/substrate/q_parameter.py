@@ -29,38 +29,17 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
-def _solve_q_proton_f64(mp_me, vol, iters=80):
-    """f64 Newton solve of  m_p/m_e = (2·(vol/ℏ_q²)·F_Bor(q) − 12) * habiro_ratio
-    for q, with |tr_M(β_Bor)| = (4+h²−3h⁴−h⁶)/(h²+4). Self-contained
-    (closed-form tr_M ⇒ no Hecke machinery)."""
-    def _mp_of_q(q):
-        h = q - 1.0 / q
-        hbar_q = 1.0 - 1.0 / q
-        hbar2 = hbar_q ** 2
-        trM = abs((4 + h**2 - 3 * h**4 - h**6) / (h**2 + 4))
-        qf3 = (q**2 + 1 + q**-2) * (q + 1.0 / q)
-        base_ratio = 2 * vol / hbar2 * (trM * qf3 / q**3) - 12
-        
-        b_val = ((q ** 4 + q ** 2 + 1) / (q ** 2 + 1) ** 2) ** 0.5
-        u_val = b_val * hbar2
-        habiro_ratio = (1 + 46 * u_val ** 4) * (1 + 4 * u_val ** 5) * (1 - 29 * u_val ** 6)
-        return base_ratio * habiro_ratio
-
-    q = 1.11
-    # f64 central difference: dq = q·1e-10 is the right scale for f64
-    # (machine ε ≈ 2.2e-16); a dps-scaled dq would underflow here. The
-    # arbitrary-precision path is q_at() (mpmath findroot, no manual dq).
-    for _ in range(iters):
-        f = _mp_of_q(q) - mp_me
-        dq = q * 1e-10
-        fp = (_mp_of_q(q + dq) - _mp_of_q(q - dq)) / (2 * dq)
-        if fp == 0:
-            break
-        step = f / fp
-        q -= step
-        if abs(step) < 1e-15:  # f64-converged in ~4-5 iters; skip the rest
-            break
-    return q
+# NOTE (2026-07-04): a local duplicate `_solve_q_proton_f64` used to live
+# here, but it was dead code (underscore-private, uncalled — `from … import *`
+# below does not re-export underscore names) and had drifted: it still
+# embedded the fitted `(1 + 46u⁴)(1 + 4u⁵)(1 − 29u⁶)` habiro tower that the
+# owner ruling 2026-07-03 stripped from the canonical solver and PR #3280
+# dropped from the m_p producer. Removed to leave a single source of truth —
+# the canonical `qou_substrate.constants._solve_q_proton_f64` (tower-free) —
+# which can be imported directly from the canonical module if needed. This does
+# NOT change `Q` / `Q_50_DIGIT_STR` (both are public names, so they DO come
+# through the `import *` below). A separate, owner-gated q₀ re-pin of the
+# canonical value is tracked outside this file (see PR #3302).
 
 import sys
 from pathlib import Path

@@ -1,7 +1,10 @@
-Let $(\mathbf{C}, A, \tau)$ be a
+Just as a jet of a section of a bundle records the section together
+with its first-order variation, the jet object packages an element of
+$A$ together with its infinitesimal (first-order) variation along the
+connection. Let $(\mathbf{C}, A, \tau)$ be a
 ([quantum universe](#def:quantum-universe)) with connection $\nabla$
-([categorical connection](#def:categorical-connection)). The *jet
-object* is
+([categorical connection](#def:categorical-connection)). The **jet
+object** is
 
 $$
   J^1(A) := A \otimes_{\mathbf{C}} \Omega^1(A),

@@ -1,67 +1,61 @@
-/-!
-# QOU.ArchimedeanUniverse.heisenberg_commutator — placeholder stub
+import Mathlib.Tactic
 
-**Placeholder canonical** for content block at
+/-!
+# QOU.ArchimedeanUniverse.heisenberg_commutator
+
+Content block at
 [`quantum-observable-universe/models-of-qous/heisenberg-commutator-prop.ts`](quantum-observable-universe/models-of-qous/heisenberg-commutator-prop.ts).
 
-The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.ArchimedeanUniverse.heisenberg_commutator` resolves to a real declaration in the `qou`
-Lake package.
+## Lean structure
+
+The genuine **inputs** are the substrate parameter `q : ℝ` and the
+complex-structure scalar `J : ℝ`.  The `q`-Planck constant `ℏ_q` and the
+`q`-deformed commutator `[X̂, P̂]_q` are **defined** by the manuscript
+identities
+
+```
+ℏ_q(q) = 1 − q⁻¹,        [X̂, P̂]_q = J · ℏ_q,
+```
+
+so all three claims are **derived**, not projected from a class field
+that already asserts them (pattern B):
+
+* `hbar_q = 1 − q⁻¹` and `commutator_q = J · ℏ_q` hold by definition;
+* the classical limit `q = 1 → commutator_q = 0` is computed:
+  `ℏ_q(1) = 1 − 1⁻¹ = 0`, hence `commutator_q = J · 0 = 0`.
+
+## References
+
+- [manuscript] quantum-observable-universe/models-of-qous/heisenberg-commutator-prop.ts.
 -/
 
 namespace QOU.ArchimedeanUniverse
 
+/-- The `q`-Planck constant `ℏ_q = 1 − q⁻¹` — **defined** from the
+    substrate parameter `q`. -/
+noncomputable def hbar_q (q : ℝ) : ℝ := 1 - q⁻¹
 
-/-- Abstract context for the `heisenberg_commutator` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
-class HeisenbergCommutatorContext where
-  /-- Substrate parameter `q : ℝ`. -/
-  q : ℝ
-  /-- q-Planck constant `ℏ_q = 1 − q⁻¹`. -/
-  hbar_q : ℝ
-  /-- Complex-structure scalar `J` (acts as `± i` on Levi distribution
-      eigenspaces; collapsed to ℝ for the limits). -/
-  J : ℝ
-  /-- q-Deformed commutator value `[X̂, P̂]_q`. -/
-  commutator_q : ℝ
-  /-- Manuscript identities:
-      `ℏ_q = 1 − q⁻¹`, `commutator_q = J · ℏ_q`, classical limit
-      `q = 1 → commutator_q = 0`. -/
-  claim_heisenberg_commutator :
-    hbar_q = 1 - q⁻¹ ∧ commutator_q = J * hbar_q ∧
-    (q = 1 → commutator_q = 0)
+/-- The `q`-deformed commutator `[X̂, P̂]_q = J · ℏ_q(q)` — **defined**
+    from `J` and `q` via the manuscript identity. -/
+noncomputable def commutator_q (q J : ℝ) : ℝ := J * hbar_q q
 
-/-- **Manuscript statement** (full body):
+/-- **Proposition** (heisenberg commutator):
 
-Let $\hat{X}, \hat{P}$ be position and momentum observables on the
-fibre $\mathbb{P}^1(\mathbb{C})$, let $J \colon H \to H$ be the
-complex structure on the Levi distribution ($J^2 = -\mathrm{Id}$),
-and let $q \in \mathrm{End}(\mathbf{1})$ be the substrate parameter
-([substrate parameter](#def:substrate-parameter)).  Then the
-$q$-deformed commutator is
+Let `q : ℝ` be the substrate parameter and `J : ℝ` the
+complex-structure scalar.  With `ℏ_q(q) = 1 − q⁻¹` and
+`[X̂, P̂]_q = J · ℏ_q`, the manuscript identities hold and the classical
+limit `q = 1 → [X̂, P̂]_q = 0` follows by computation.
 
-$$
-  [\hat{X}, \hat{P}]_q =  J\hbar_q(p),
-  \qquad
-  \hbar_q(p) =  1 - q(p)^{-1},
-$$
-
-where $\hbar_q$ is the quantum Planck constant
-([quantum Planck constant](#def:quantum-planck-constant)).
-In particular:
-
-1. As $q \to 1$, $[\hat{X}, \hat{P}]_q \to 0$ (classical limit).
-2. As $q \to \infty$, $[\hat{X}, \hat{P}]_q \to J$ (maximal
-   uncertainty).
-
-    The Lean encoding below is a `theorem foo [ctx] : ctx.claim_heisenberg_commutator := by sorry`
-    placeholder; the `ctx.claim_heisenberg_commutator : Prop` field carries the residual claim,
-    awaiting per-block type-level translation. -/
+* `hbar_q q = 1 − q⁻¹` — by definition;
+* `commutator_q q J = J · ℏ_q` — by definition;
+* `q = 1 → commutator_q q J = 0` — **derived**: `ℏ_q(1) = 0`. -/
 -- Ref: [manuscript] quantum-observable-universe/models-of-qous/heisenberg-commutator-prop.ts
-theorem heisenberg_commutator [ctx : HeisenbergCommutatorContext] :
-    ctx.hbar_q = 1 - ctx.q⁻¹ ∧
-    ctx.commutator_q = ctx.J * ctx.hbar_q ∧
-    (ctx.q = 1 → ctx.commutator_q = 0) :=
-  ctx.claim_heisenberg_commutator
+theorem heisenberg_commutator (q J : ℝ) :
+    hbar_q q = 1 - q⁻¹ ∧
+    commutator_q q J = J * hbar_q q ∧
+    (q = 1 → commutator_q q J = 0) := by
+  refine ⟨rfl, rfl, ?_⟩
+  intro hq
+  simp [commutator_q, hbar_q, hq]
 
 end QOU.ArchimedeanUniverse

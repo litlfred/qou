@@ -1,6 +1,7 @@
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 import Mathlib.Data.List.Basic
+import Mathlib.Tactic
 
 
 /-!
@@ -33,12 +34,15 @@ numerical evaluation.
 
 namespace QOU.Braiding
 
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
+-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+-- See `QOU.Archimedean.GroundRing` for the compiled definition.
 abbrev R_q := LaurentPolynomial ℤ
-def q_param : R_q := LaurentPolynomial.T 1
-def q_inv_param : R_q := LaurentPolynomial.T (-1)
+
+/-- The canonical indeterminate `q = T^1` of `R_q`. -/
+noncomputable def q_param : R_q := LaurentPolynomial.T 1
+
+/-- The formal Laurent inverse `q⁻¹ = T^{-1}` of `R_q`. -/
+noncomputable def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-! ## Hecke Algebra (minimal, for self-containment) -/
 
@@ -52,11 +56,11 @@ structure HeckeAlgebraData where
   carrier : Type*
   /-- Deformation parameter q. -/
   q : R_q
-  /-- q > 0. -/
+  -- q > 0.
   -- q_pos : 0 < q  -- (archimedean; not meaningful over R_q)
   /-- q ≠ 1. -/
   q_ne_one : q ≠ 1
-  /-- q is not a root of unity. -/
+  -- q is not a root of unity.
   -- q_not_root_of_unity : ∀ k : ℕ, k ≥ 1 → q ^ k ≠ 1  -- (archimedean; not meaningful over R_q)
   /-- Multiplication. -/
   mul : carrier → carrier → carrier
@@ -93,7 +97,7 @@ structure JonesMarkovTrace (H : HeckeAlgebraData) where
   /-- The trace functional tr_M : H_n(q) → ℝ. -/
   tr : H.carrier → R_q
 
-  /-! ### Property 1: Normalisation and trace axioms -/
+  -- ### Property 1: Normalisation and trace axioms
 
   /-- Normalisation: tr(1) = 1. -/
   tr_one : tr H.one = 1
@@ -111,12 +115,11 @@ structure JonesMarkovTrace (H : HeckeAlgebraData) where
   /-- **Markov property** (positive stabilisation):
       tr(x · T_{n-1}) = z · tr(x) for x ∈ H_n(q).
       This encodes vertical stabilisation in the Hecke tower. -/
-  -- markov_pos : H.n ≥ 2 →  -- (archimedean; not meaningful over R_q)
-    ∀ (x : H.carrier),
+  markov_pos : ∀ (hn : H.n ≥ 2) (x : H.carrier),
       let last : Fin (H.n - 1) := ⟨H.n - 2, by omega⟩
       tr (H.mul x (H.T last)) = z * tr x
 
-  /-! ### Property 2: Non-degeneracy on irreducibles -/
+  -- ### Property 2: Non-degeneracy on irreducibles
 
   /-- Number of irreducible summands at level n (= ⌊n/2⌋ + 1 for SU_q(2)). -/
   numIrreps : ℕ
@@ -130,18 +133,33 @@ structure JonesMarkovTrace (H : HeckeAlgebraData) where
   -- Ref: [jones1987] Corollary 5.3
   nondeg : ∀ (i : Fin numIrreps), ∃ (a : H.carrier), tr a ≠ 0
 
-  /-! ### Property 3: Link invariance -/
+  -- ### Property 3: Link invariance
+
+  /-- Formal inverse of the Markov parameter `z` in `R_q`.
+
+      `R_q = ℤ[q, q⁻¹]` is only a `CommRing` (no `Inv`), so the
+      multiplicative inverse `z⁻¹` appearing in Markov II is carried as
+      an explicit field together with its witnessing identity `z_inv`
+      below, rather than via a `(·)⁻¹` operation that `R_q` does not
+      provide. -/
+  z_inv : R_q
+
+  /-- `z_inv` is a two-sided inverse of `z`. -/
+  z_inv_spec : z * z_inv = 1
 
   /-- **Link invariance (Markov II)**: inverse stabilisation.
       tr(x · T_{n-1}⁻¹) = z⁻¹ · tr(x).
       Combined with tr_comm (Markov I) and markov_pos, this ensures the
       trace value depends only on the isotopy class of the braid closure,
-      yielding the Jones polynomial J_L(q). -/
+      yielding the Jones polynomial J_L(q).
+
+      Here `z_inv` is the formal inverse of `z` (field `z_inv` above),
+      since `R_q` carries no `Inv` instance. -/
   -- Ref: [jones1987] Theorem 5.1
   markov_neg : H.n ≥ 2 →
     ∀ (x : H.carrier) (T_inv : H.carrier),
       -- T_inv is the Hecke-algebra inverse of the last generator
-      tr (H.mul x T_inv) = z⁻¹ * tr x
+      tr (H.mul x T_inv) = z_inv * tr x
 
 /-! ## Existence Axiom -/
 

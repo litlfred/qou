@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/_deprecated/carbon-atom-nf.py",
+  "script_path": "computations/_deprecated/carbon-atom-nf.py",
   "language": "python",
   "source_hash": "a71680afa9b6",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -87,7 +87,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/_deprecated/carbon-atom-nf.py:111: `def crossing_element(…)` has 3 parameters without type annotation: type_i, type_j, gen — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/carbon-atom-nf.py:132: `def build_atom(…)` has 4 parameters without type annotation: types, div, label, verbose — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/carbon-atom-nf.py:185: `def word_length_histogram(…)` has 1 parameter without type annotation: elem — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/carbon-atom-nf.py:194: `def is_palindromic(…)` has 1 parameter without type annotation: hist — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/carbon-atom-nf.py:202: `def show_nf(…)` has 3 parameters without type annotation: elem, q0, name — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/_deprecated/carbon-atom-nf.py:111: `def crossing_element(…)` has 3 parameters without type annotation: type_i, type_j, gen — add `: type` (or `: Any` if the type genuinely is untyped) | computations/_deprecated/carbon-atom-nf.py:132: `def build_atom(…)` has 4 parameters without type annotation: types, div, label, verbose — add `: type` (or `: Any` if the type genuinely is untyped) | computations/_deprecated/carbon-atom-nf.py:185: `def word_length_histogram(…)` has 1 parameter without type annotation: elem — add `: type` (or `: Any` if the type genuinely is untyped) | computations/_deprecated/carbon-atom-nf.py:194: `def is_palindromic(…)` has 1 parameter without type annotation: hist — add `: type` (or `: Any` if the type genuinely is untyped) | computations/_deprecated/carbon-atom-nf.py:202: `def show_nf(…)` has 3 parameters without type annotation: elem, q0, name — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -106,7 +106,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/_deprecated/carbon-atom-nf.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/_deprecated/carbon-atom-nf.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       }
     ],
     "connected_to_ci_pipeline": [
@@ -142,7 +142,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/_deprecated/carbon-atom-nf.py:1: script lives under `_deprecated/` — consumers must not depend on its output. Move to the canonical path if still active, or delete if truly retired"
+        "evidence": "computations/_deprecated/carbon-atom-nf.py:1: script lives under `_deprecated/` — consumers must not depend on its output. Move to the canonical path if still active, or delete if truly retired"
       }
     ],
     "uses_library_framework_appropriately": [
@@ -161,7 +161,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/_deprecated/carbon-atom-nf.py:519: script writes `.witness.json` (\"carbon-atom-nf.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
+        "evidence": "computations/_deprecated/carbon-atom-nf.py:519: script writes `.witness.json` (\"carbon-atom-nf.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
       }
     ],
     "compute_no_mpf_to_float_cast": [

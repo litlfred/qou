@@ -12,6 +12,5 @@ export default proposition({
     "def:categorical-lagrangian",
     "sec:categorical-action-notation",
     "rem:yekutieli-stokes",
-    "def:yekutieli-lifting-condition",
   ],
 });

@@ -33,7 +33,7 @@ smallest API the QOU substrate consumes:
    `tr_M(σ_w) = Σ_λ y_λ · χ_λ(σ_w)` with closed-form
    `y_λ = dim_q(λ) · d_λ / [n]_q!`.
 
-**Class structure**: each is a `class` in CLAUDE.md §3b-cond
+**Class structure**: each is a `class` in AGENTS.md §3b-cond
 form so downstream theorems take `[Instance]` hypotheses and
 remain fully verified by Lean modulo the substrate-supplied
 class instances.
@@ -181,7 +181,7 @@ instance triv_wedderburn (R : Type u) [CommRing R] (n : ℕ) (q : R) :
     Callers that need `[MarkovTrace R n q z]` for a placeholder R
     can supply a one-off instance over a trivial `Subsingleton`
     ring; this is the §3b-cond escape hatch documented in
-    CLAUDE.md §3b. -/
+    AGENTS.md §3b. -/
 
 /-! ### Concrete instance hooks for small n
 

@@ -39,7 +39,7 @@ OPEN.
 **Critical guard against shape-probing.** Per
 [`production-vs-exploratory-discipline.md`](../../.claude/skills/local/production-vs-exploratory-discipline.md):
 this script is EXPLORATORY (records a tiered near-match, does not
-wire any production formula). The CLAUDE.md anti-pattern
+wire any production formula). The AGENTS.md anti-pattern
 "empirical-fit dressed as derivation" is avoided by:
 
   1. Reporting Δ% explicitly (0.17%, not "matches")
@@ -59,6 +59,7 @@ wire any production formula). The CLAUDE.md anti-pattern
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import M_MU_MEV_VALIDATION, M_P_MEV_VALIDATION  # noqa: E402 (codata sweep)
 import sys
 from pathlib import Path
 
@@ -103,8 +104,8 @@ def main() -> int:
     trM = abs(trM_borromean_closed(q))
     F_Bor = trM * qfact_3 / q ** 3
     m_e = mp.mpf("0.51099895069")
-    m_mu = mp.mpf("105.6583755")
-    m_p = mp.mpf("938.27208816")
+    m_mu = mp.mpf(M_MU_MEV_VALIDATION)
+    m_p = mp.mpf(M_P_MEV_VALIDATION)
     k_required = (2 * m_mu * F_Bor - m_p) / m_e
 
     print(f"[Setup recap]")

@@ -55,7 +55,7 @@ This is consistent with the magic-shell hypothesis: anomalous pairs (A=6 ⁶He(Z
 
 ## Connection to the existing magic-shell corpus
 
-(Per CLAUDE.md §"Before declaring 'open' math" corpus-grep — user correctly recalled this exists.)
+(Per AGENTS.md §"Before declaring 'open' math" corpus-grep — user correctly recalled this exists.)
 
 - [`prop:categorical-neutrality-saturated-shells`](../../content/quantum-observable-universe/mass-endomorphism/categorical-neutrality-saturated-shells.md): at magic n, full-twist Δ²_n acts as identity ⇒ Wedderburn support contracts to self-conjugates.
 - [`conj:diagrammatic-double-magic-lr-fusion`](../../content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.md): LR-fusion of two magic shells is rigid.
@@ -72,5 +72,5 @@ These propositions act at the **single-shell** level (the mass endomorphism Φ_n
 
 ## Probe script + witness
 
-- [`folio-assistant/computations/topic2_mirror_pair_phi8_boundary_scan.py`](../../folio-assistant/computations/topic2_mirror_pair_phi8_boundary_scan.py)
-- Witness: [`folio-assistant/computations/topic2-mirror-pair-phi8-boundary-scan.witness.json`](../../folio-assistant/computations/topic2-mirror-pair-phi8-boundary-scan.witness.json)
+- [`computations/topic2_mirror_pair_phi8_boundary_scan.py`](../../computations/topic2_mirror_pair_phi8_boundary_scan.py)
+- Witness: [`computations/topic2-mirror-pair-phi8-boundary-scan.witness.json`](../../computations/topic2-mirror-pair-phi8-boundary-scan.witness.json)

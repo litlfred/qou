@@ -38,6 +38,88 @@ productive directions are #1876 §4-2 (additive `S(K)`) and §4-4
 | [#1883](https://github.com/litlfred/qou/pull/1883) | merged | Cross-isotope extrapolation REFUTED (>1000 % worst rel_err) → ³He numerology CONFIRMED |
 | [#1886](https://github.com/litlfred/qou/pull/1886) | merged | T1 — additive `S(K)` sub-leading REFUTED under uniform-λ (100× swing across light series) |
 
+## Status — cont. 2 (2026-06-17)
+
+The parallel **Δ_λ-route** arc (#2405 / #2417 / #2426 / #2430 / #2433) closed
+its last two levers, and one of them touches this ledger:
+
+- **Dense Wedderburn-projector SDP closed structurally** (the
+  `claude/delta-lambda-open-levers-2026-06-17` branch,
+  [`docs/audits/2026-06-17-wedderburn-sdp-structural-bound.md`](../audits/2026-06-17-wedderburn-sdp-structural-bound.md)).
+  The `confinement-sdp.md` program reduces to `min⟨T,Φ⟩ s.t. Φ⪰0, trΦ=c` with
+  block-constant diagonal `T = μ_λ`; the per-block / 2×2-pair constraints are
+  redundant, and the optimum is a degenerate min-cost **face** (at `q₀`,
+  `μ_[2,1]=μ_[1,1,1]<μ_[3]` ⇒ 5-of-6-dim) that selects no unique operator and
+  excludes the trivial block — so it cannot select `𝓑₃`.
+- **GAP-A-3 stale-claim correction.** #2433 listed GAP-A-3 as a "non-refuted"
+  lever; per this ledger it is **already refuted** (#1868 scope + #1870 5/5
+  `P_λ` channels; part of the 18-closure saturating chain). The audit above
+  records the correction so the route is not re-opened.
+- **T3 stale-row correction.** This ledger's T3 task row still read "scope
+  landed; probe follow-up open" — also stale. The probe was built
+  (`computations/probes/gap_a4_T3_mass_pochhammer_probe.py`) and ran **NEGATIVE**
+  (R4, [#1897](https://github.com/litlfred/qou/pull/1897); 4 bar-symmetric
+  q-Pochhammer candidates refuted, worst −98% at the P3 Markov-trace ratio;
+  `2026-06-05-gap-a4-final-retrospective.md §2`). So **no nominally-open
+  per-atom-`λ(K)` numerical thread remains.** The one genuinely-open *direction*
+  is the owner-gated `conj:s5-so3-fiber-action` geometric fibre map (categorical
+  research — partition-of-5 ↦ A₅ rotation on Bring — NOT a numerical `λ(K)`
+  search; "no 7th fit ansatz").
+
+## Status — cont. 3 (2026-06-18)
+
+Two findings from the T/³He same-`n` differential test
+([#2466](https://github.com/litlfred/qou/pull/2466),
+[`docs/audits/2026-06-18-pauli-young-delta-lambda-the3-refutation.md`](../audits/2026-06-18-pauli-young-delta-lambda-the3-refutation.md)):
+
+- **Pauli-Young / Wigner-SU(4) Δ_λ closed — the 19th no-fit closure.** The
+  spin-isospin Young-symmetry projection proposed in
+  [#2461](https://github.com/litlfred/qou/pull/2461) is a multiplicity
+  (`Δ_λ ≥ 0`); on the sharp T/³He split `(B_T−B_³He)/m_e = +1.4947` the concrete
+  `Δ_λ = dim GL(4)(λ)` gives **−45** (wrong sign, ~30×). An isospin-*symmetric*
+  projection cannot supply the isospin-*breaking* split (the `h=q−q⁻¹` anomaly,
+  `2026-05-24-isospin-categorical-source.md`). Also **not novel** —
+  `wigner-su4-from-spin-isospin.md` + `schur-weyl-mass-decomposition.ts` already
+  carry it (a too-narrow corpus-grep in #2461). The saturation chain is now 19.
+- **Proved chirality sign is consistent with the T/³He split (structural plus).**
+  Diagnostic (not a fit) on the *existing* proved weight
+  `Δ_λ = sgn(w₀^{S_λ'})·dim` + its enumerated magnitude variants: the proved
+  **sign gets the differential sign RIGHT** (`sgn·dim → +0.436` MeV = 57 % of
+  target; `sgn·dimq → +0.596` = 78 %; undershoot, matching #2405's per-atom
+  result), unlike the refuted non-negative projection. The residual is a pure
+  **magnitude** question on an otherwise sign-correct structure; the **linear**
+  binding model reproduces the T/³He ordering, the `|·|` model does not. This
+  reaffirms the cont. 2 steer: the open frontier is the **owner-gated categorical
+  `s5-so3-fiber` magnitude/Vol question, NOT a numerical magnitude fit** — a new
+  fitted magnitude would be the gated 19th→20th ansatz.
+- **Refinement of the 2026-06-02 necessary condition.** Direct `v_λ` sign census
+  is 10+/20−, so the non-negative *cone* is **not** sign-blocked (correcting "a
+  positive per-block volume cannot reproduce even the sign"); the obstruction is
+  that the *principled symmetric shape* is wrong, and any sign-correct
+  non-negative weight is a free fit.
+- **Sparse interface-operator magnitude refuted (parameter-free).** The
+  "binding concentrates on one dominant Wedderburn block" magnitude reading
+  ([`binding-formula-closure`](../audits/2026-05-26-delta-lambda-binding-formula-closure.md)
+  §"LP-dual single partition") fails the T/³He mirror ratio: the trace is *not*
+  sparse (top block `[6,3]` only 34 %), the common dominant block's character
+  ratio is 0.633 vs AME 1.099, and the *only* block with ratio ≈1.099
+  (`[5,1,1,1,1]`) carries 0.1 % of the trace. ⇒ the magnitude is **irreducibly
+  multi-block**; single-dominant-block concentration cannot respect the mirror.
+  ([`2026-06-18-sparse-interface-magnitude-the3-prune.md`](../audits/2026-06-18-sparse-interface-magnitude-the3-prune.md)).
+- **Quantum dimension `dim_q` killed by bounded-across-A — the last chirality-invariant
+  magnitude candidate is closed.** The A-tower sweep
+  (`probes/chirality_delta_lambda_binding_sweep.py`, `sgn·dimq` column) shows `dim_q`
+  diverges at A≥6 just like `dim` — and *worse*: `B_pred` overshoots AME by 54× at ⁶Li
+  and 451× at ⁷Li (13×/42× worse than `dim`), because at `q₀=1.110>1` each `[k]_q≈q^{k-1}`
+  blows up. The signed sum does not rescue it. So the magnitude box row "bounded across A"
+  reads `dim ✗, dim_q ✗`: **no combinatorial-dimension chirality-invariant weight survives
+  bounded + multi-block**. The bounded `sgn`/raw candidates undershoot catastrophically
+  (`sgn` at ⁷Li is 666,000× too small). The target is squeezed to an *intermediate-growth*
+  (≈ linear-in-A) chirality-invariant multi-block object — the owner-gated categorical
+  **bounded geometric `Vol`** (`s5-so3-fiber`), not a numerical weight; a fitted one is the
+  gated 20th ansatz.
+  ([`2026-06-18-dimq-bounded-across-a-prune.md`](../audits/2026-06-18-dimq-bounded-across-a-prune.md)).
+
 ## Cross-axis hub
 
 The step-9 binding closure ledger
@@ -74,9 +156,15 @@ The two intersect on: (a) the per-knot Vol(K) convention (T2 here ≡ C2 there),
    a NEAR-MATCH (<5 %) with no categorical derivation is filed as
    coincidence pending derivation. Single-atom matches are
    numerology unless backed by cross-isotope structural rule.
-2. **18 no-fit closures form a saturating chain** — no per-partition
-   ansatz survives (single statistic, brane-tower content channel,
-   induction, stabilization, Bratteli, Kashiwara crystal, etc.).
+2. **18 fit-based per-partition ansätze refuted, forming a saturating
+   chain** — no *fitted* per-partition ansatz has survived (single
+   statistic, brane-tower content channel, induction, stabilization,
+   Bratteli, Kashiwara crystal, etc.). The signed / chirality
+   categorical-Vol route (kept open in this ledger above) and the
+   owner-gated `s5-so3` Vol are **not** in this refuted class.
+   *(Rescoped 2026-06-23: a finite refuted set is not a non-existence
+   proof over the whole ansatz class — see
+   [`2026-06-23-over-zealous-binding-closure-review.md`](../audits/2026-06-23-over-zealous-binding-closure-review.md).)*
 3. **Productive direction has shifted** from "derive per-partition
    Δ_λ" (closed) to "derive per-atom mass closure via Path B" (the
    `S(K)` sub-leading term + the `Vol(K)` convention question).
@@ -87,4 +175,4 @@ The two intersect on: (a) the per-knot Vol(K) convention (T2 here ≡ C2 there),
 |---|---|---|
 | T1 | Probe #1876 §4 direction 2 — additive `S(K)` sub-leading form | **closed NEGATIVE** ([#1886](https://github.com/litlfred/qou/pull/1886) merged) |
 | T2 | Probe #1876 §4 direction 4 — per-knot `Vol(K)` convention for compound atoms (cross-link with [#1871](https://github.com/litlfred/qou/pull/1871), [#1784](https://github.com/litlfred/qou/pull/1784)) | **closed NEGATIVE** ([#1891](https://github.com/litlfred/qou/pull/1891) merged); all 3 conventions REFUTED, best swing +132 % |
-| T3 | Derive `λ(K)` from a Path B-specific formulation (NOT a Phase-4 transplant; per #1876 O2) | **scope landed** ([`2026-06-05-gap-a4-T3-path-b-lambda-formulation-scope.md`](../audits/2026-06-05-gap-a4-T3-path-b-lambda-formulation-scope.md)); probe follow-up open |
+| T3 | Derive `λ(K)` from a Path B-specific formulation (NOT a Phase-4 transplant; per #1876 O2) | **closed NEGATIVE** ([#1897](https://github.com/litlfred/qou/pull/1897)); R4 — 4 bar-symmetric q-Pochhammer candidates REFUTED (worst −98% at the P3 Markov-trace ratio; `2026-06-05-gap-a4-final-retrospective.md §2`). Scope: [`2026-06-05-gap-a4-T3-path-b-lambda-formulation-scope.md`](../audits/2026-06-05-gap-a4-T3-path-b-lambda-formulation-scope.md) |

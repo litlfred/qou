@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T05:05:47.082073+00:00",
-  "commitSha": "9d88e02a575cfc67786de54b6195f7aea794540e",
+  "computedAt": "2026-07-05T11:17:34.504647+00:00",
+  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
   "assertions": [
     {
       "name": "three_hecke_natural_forms_all_match_upstream_sym",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 336,
+  "durationMs": 262,
   "computation": "qbeta-sym-part-hecke-natural-form",
   "scriptFile": "qbeta_sym_part_hecke_natural_form.py",
-  "scriptHash": "3e6138dfb16f",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "3c7bc152dece",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,11 +54,11 @@
     "upstream_witness_hashes": [
       {
         "path": "qbeta-delta-tr-bar-decomposition-probe.witness.json",
-        "sha256": "dd0adaf04ff24290cf6b6e1f408a6383d8349cef886b7aa939cd8d4b4a3596ce",
-        "size_bytes": 4026,
-        "commitSha": "250a78bc71292054209c3e7247f50843a7cc4b0e",
-        "scriptCommitSha": "250a78bc71292054209c3e7247f50843a7cc4b0e",
-        "computedAt": "2026-06-01T04:46:39.311653+00:00"
+        "sha256": "c1cfee8558a3ba55f93bf369ecfcefdc2ea043dabdaf7fc5945b65a40c5282a4",
+        "size_bytes": 3962,
+        "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
+        "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+        "computedAt": "2026-06-22T13:26:50.204197+00:00"
       }
     ]
   }

@@ -110,7 +110,7 @@ $q = 1/\varphi^2$ ([golden-ratio degeneration](#prop:descartes-elliptic-curve)) 
 The GB framework is the **real-axis degeneration** of the
 volumized theory.
 
-## Why this is a conjecture
+## Conjectural status
 
 This statement is a **conjecture** rather than a theorem because:
 
@@ -125,3 +125,5 @@ This statement is a **conjecture** rather than a theorem because:
 
 Each component is tracked separately as a conjecture so the status
 of the overall expansion can be refined as derivations mature.
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

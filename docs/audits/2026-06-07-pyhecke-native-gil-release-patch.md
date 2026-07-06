@@ -5,7 +5,7 @@
 > expected speedup on the `derived_chi_catalogue_sweep` heavy atoms
 > (⁷Li → ⁹Be): **~50-100×** wall-time. Without the patches, the
 > in-Python multiprocessing wrapper
-> ([`derived_chi_catalogue_parallel.py`](../../folio-assistant/computations/derived_chi_catalogue_parallel.py))
+> ([`derived_chi_catalogue_parallel.py`](../../computations/derived_chi_catalogue_parallel.py))
 > already delivers ~Nx (N = cpu_count) via ProcessPoolExecutor — but
 > threads give 0× because the current binding holds the GIL.
 
@@ -14,7 +14,7 @@
 `pyhecke_native.chi_q_via_gp(lambda, n, word)` is the catalogue's
 canonical character-derivation entry point. The Phase 3 production
 isotope sweep
-([`derived_chi_catalogue_sweep.py`](../../folio-assistant/computations/derived_chi_catalogue_sweep.py))
+([`derived_chi_catalogue_sweep.py`](../../computations/derived_chi_catalogue_sweep.py))
 calls it once per `(λ, n_strands, word)` triple — for ⁹Be (`n=27`),
 that's **3,010 calls** (p(27) = 3010 partitions).
 
@@ -190,7 +190,7 @@ Rust + 8 cores effective.)
 ## In-Python fallback (already landed)
 
 While the Rust patches are pending,
-[`derived_chi_catalogue_parallel.py`](../../folio-assistant/computations/derived_chi_catalogue_parallel.py)
+[`derived_chi_catalogue_parallel.py`](../../computations/derived_chi_catalogue_parallel.py)
 uses `ProcessPoolExecutor` to spawn N Python subprocesses (each with
 its own pyhecke_native), bypassing the GIL via process isolation. This
 gives ~Nx speedup (3× measured on 4 cores) with zero Rust changes —

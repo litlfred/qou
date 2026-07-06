@@ -2315,6 +2315,17 @@
         "reviewed_at": "2026-06-05T19:48:48.815Z",
         "reviewed_sha": "a7cca7f44ae79f745c5b5e6b3275ec74c5e1ce07",
         "notes": "Lean stub needs to be replaced with a proper statement matching the narrative's pair-partition moment decomposition."
+      },
+      {
+        "field_hash": {},
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "local/narrative-lean-rerate"
+        },
+        "reviewed_at": "2026-06-24T12:30:00.000Z",
+        "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
+        "notes": "lean.ref None resolves to no Lean declaration; narrative<->Lean criterion N/A."
       }
     ],
     "proof-lean-compiles": [
@@ -2874,5 +2885,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-06-24T12:30:00.000Z"
 }

@@ -47,7 +47,7 @@ y_λ from chi-*-at-q0-50dps, θ_λ/r_λ from the Reeb decomposition, ρ from
 
 ## Usage
 
-    cd folio-assistant/computations
+    cd computations
     python3 binding_a3plus_joint_ji_combiner.py
 
 Emits: binding-a3plus-joint-ji-combiner.witness.json

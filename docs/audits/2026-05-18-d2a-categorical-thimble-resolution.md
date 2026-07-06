@@ -67,7 +67,7 @@ re-entry; it is a **section of the $q$-moduli golden-wall family**.
 
 The current Step 3 claims the steepest-descent ODE re-entry on
 $\mathbb{R}$ produces $a(q) = (4-q)/(4q+3)$. The numerical witness
-([`derive-a-thimble-intersection.witness.json`](https://github.com/litlfred/qou/blob/claude/explore-d2a-categorical-8Eq2n/folio-assistant/computations/derive-a-thimble-intersection.witness.json))
+([`derive-a-thimble-intersection.witness.json`](https://github.com/litlfred/qou/blob/claude/explore-d2a-categorical-8Eq2n/computations/derive-a-thimble-intersection.witness.json))
 records descent crossing at $z \approx 3.86$, **off by $\sim 10\times$
 from $a(q_0) \approx 0.388$**. The claim is therefore unsupported.
 

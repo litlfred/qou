@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-31T20:29:24.200721+00:00",
-  "commitSha": "f7199a9bcbc065e004372e07193bd1cef2fa6e16",
+  "computedAt": "2026-06-22T13:13:40.581788+00:00",
+  "commitSha": "cae0becd630ab3343b30c5ed3b32e038ed03e82e",
   "assertions": [
     {
       "name": "audit_completed",
@@ -14,31 +14,29 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "m-k-m-pi-closure-pattern-audit",
   "scriptFile": "m_k_m_pi_closure_pattern_audit.py",
-  "scriptHash": "990e3ac90d99",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "2e96a2363b93",
+  "scriptCommitSha": "c0dd5c86f8d6a3f8c2cd3bef58ae4f99ba099930",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
   },
   "description": "Audits whether the m_K/m_π closure pattern (additive missing categorical EM correction) transfers to the 4 still-missing L2 dashboard observables (m_μ, Q_β, m_n, Δm_pn). Catalogs each observable's closure-blocker type. Finds NO transfer of the additive-correction pattern — each missing observable has a structurally different blocker. The META-lesson (identify specific categorical missing pieces, not fits) does transfer.",
   "parameters": {
-    "q_50dps": "1.1099785827513808075916690956107688798744991218736"
+    "q_50dps": "1.1099785955573347198997632204832250266562084087802"
   },
   "data": {
-    "m_K_m_pi_em_correction_at_q0": "1.094173122817120970933893",
+    "m_K_m_pi_em_correction_at_q0": "1.094173132181265966885246",
     "closure_pattern_catalog": [
       {
         "obs": "m_K/m_π",

@@ -50,7 +50,7 @@ the `m_p_borromean_verification_50dps.py` `muon_check` section emits as
 Borromean witness.
 
 **Where the 209.8 ppb lives.** Confirmed by the existing 100-dps audit
-[`mu_substrate_tension_audit_100dps.py`](../../folio-assistant/computations/mu_substrate_tension_audit_100dps.py)
+[`mu_substrate_tension_audit_100dps.py`](../../computations/mu_substrate_tension_audit_100dps.py)
 (witness verdict: **H1 SUPPORTED**) and reproduced independently by this
 branch's probe:
 
@@ -71,7 +71,7 @@ m_p (to sub-ppb) *and* m_μ (to sub-ppb).
 
 ## (b) The categorical object for the muon
 
-Per [`canonical_lepton_braid_words.py`](../../folio-assistant/computations/canonical_lepton_braid_words.py)
+Per [`canonical_lepton_braid_words.py`](../../computations/canonical_lepton_braid_words.py)
 and [`skein-mass-relation.md`]:
 
 - **Muon = figure-eight 4_1 = (σ₁ σ₂⁻¹)² in H_3** (2 generators).
@@ -100,7 +100,7 @@ indexes the generation:
 **Tower I — hyperbolic-volume tower (current de-facto).**
 The muon already uses `Vol/ℏ_q²`. The electron uses `m_e/m_e = 1`
 (the anchor), and the tau uses a *separate* knot-volume search
-([`m_tau_knot_prediction.py`](../../folio-assistant/computations/m_tau_knot_prediction.py),
+([`m_tau_knot_prediction.py`](../../computations/m_tau_knot_prediction.py),
 target m_τ/m_e = 3477.23). This is **not a uniform tower** — only the
 muon level uses Vol(4_1); e and τ are handled differently. A genuine
 tower would make `m_ℓ/m_e = Vol(K_ℓ)/ℏ_q²^{n_ℓ}` uniform across
@@ -214,12 +214,12 @@ Absent that derivation, the honest reporting is: **m_μ bare-categorical
 
 ## Cross-references
 
-- [`mu_substrate_tension_audit_100dps.py`](../../folio-assistant/computations/mu_substrate_tension_audit_100dps.py)
+- [`mu_substrate_tension_audit_100dps.py`](../../computations/mu_substrate_tension_audit_100dps.py)
   — prior H1 audit (this design extends it with the ratio-cancellation
   and torus-degeneracy analysis).
-- [`mmu_lepton_torus_tower_feasibility_probe.py`](../../folio-assistant/computations/mmu_lepton_torus_tower_feasibility_probe.py)
+- [`mmu_lepton_torus_tower_feasibility_probe.py`](../../computations/mmu_lepton_torus_tower_feasibility_probe.py)
   — this branch's probe + witness.
-- [`canonical_lepton_braid_words.py`](../../folio-assistant/computations/canonical_lepton_braid_words.py)
+- [`canonical_lepton_braid_words.py`](../../computations/canonical_lepton_braid_words.py)
   — canonical lepton braid words (e/μ/τ).
 - PR #1556 — m_μ convention reconciliation (ratio-anchored vs
   bare-categorical); this design uses the bare-categorical convention.

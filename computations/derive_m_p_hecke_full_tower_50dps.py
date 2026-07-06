@@ -90,7 +90,7 @@ without the electron's matching values would introduce an unbalanced
 residual.  Closure of T5/T6 for the electron is the next research
 step.
 
-Per CLAUDE.md three-cal discipline (CAL-1 m_e, CAL-2 q₀):
+Per AGENTS.md three-cal discipline (CAL-1 m_e, CAL-2 q₀):
 - Only q₀ (CAL-2) enters the dimensionless m_p / m_e ratio computation.
 - CAL-1 m_e converts the ratio to MeV: m_p_pred_MeV = (ratio) × M_E_MEV.
 - NO CODATA m_p / m_n injection.

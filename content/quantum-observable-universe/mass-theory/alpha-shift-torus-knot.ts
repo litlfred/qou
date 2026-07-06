@@ -25,8 +25,8 @@ import { proposition } from "../../schema/builders";
  * axial distance, so the b² = (1 − q^{2ρ−2})(1 − q^{2ρ+2})/
  * (1 − q^{2ρ})² zeroing on adjacent contents never fires).
  *
- * Verification: folio-assistant/computations/alpha/alpha_shift_torus.py
- * Witness:      folio-assistant/computations/alpha/alpha-shift-torus.witness.json
+ * Verification: computations/alpha/alpha_shift_torus.py
+ * Witness:      computations/alpha/alpha-shift-torus.witness.json
  * Audit:        docs/audits/2026-05-04-alpha-shift-torus-multiplicative-chain.md
  *
  * Test bench: (2, 3) → 3, (2, 5) → 5, (2, 9) → 9, (3, 4) → 8,
@@ -43,8 +43,8 @@ export default proposition({
   uses: ["prop:force-carrier-intertwining-correspondence"],
   computation: {
     engine: "sympy",
-    script: "folio-assistant/computations/alpha/alpha_shift_torus.py",
-    witness: "folio-assistant/computations/alpha/alpha-shift-torus.witness.json",
+    script: "computations/alpha/alpha_shift_torus.py",
+    witness: "computations/alpha/alpha-shift-torus.witness.json",
     status: "verified",
     requires: ["sympy", "numpy"],
   },

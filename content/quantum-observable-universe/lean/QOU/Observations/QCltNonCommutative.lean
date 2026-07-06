@@ -7,7 +7,7 @@ import QOU.Observations.AlgebraicGnsEmbedding
 # QOU.Observations.QCltNonCommutative
 
 Conditional q-Central Limit Theorem for Hecke transfer matrices,
-encoded as a typeclass per CLAUDE.md §3b-cond. The class fields
+encoded as a typeclass per AGENTS.md §3b-cond. The class fields
 carry concrete mathematical content (a real variance, a q-Gaussian
 measure, quantitative convergence statements) so that providing an
 instance requires actual mathematical input rather than four free

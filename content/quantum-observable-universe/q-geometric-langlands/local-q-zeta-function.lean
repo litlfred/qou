@@ -1,3 +1,6 @@
+import Mathlib.RingTheory.Polynomial.Basic
+import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
+
 /-!
 # QOU.AlgebraicSubstrate.LocalQZetaFunction
 
@@ -14,8 +17,6 @@ numerical evaluation.
 
 set_option autoImplicit false
 
-import Mathlib.RingTheory.Polynomial.Basic
-import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
 
 open Polynomial Complex
 

@@ -107,16 +107,16 @@
       ]
     },
     {
-      "label": "prop:coral-elliptic",
+      "label": "prop:color-elliptic",
       "object_type": "proposition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
         "line": 305,
         "chapter": 6
       },
-      "title": "{Coral fibre as an elliptic curve}",
+      "title": "{Color fibre as an elliptic curve}",
       "lean": {
-        "decl": "QOU.Brings.coral_elliptic",
+        "decl": "QOU.Brings.color_elliptic",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
         "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
@@ -140,7 +140,7 @@
       "title": "{Color tube cubic}",
       "formalization_status": "not_started",
       "uses": [
-        "prop:coral-elliptic",
+        "prop:color-elliptic",
         "def:color-tube-coordinates"
       ]
     },
@@ -167,14 +167,14 @@
       ]
     },
     {
-      "label": "rem:coral-bundles",
+      "label": "rem:color-bundles",
       "object_type": "remark",
       "latex": {
         "file": "chapters/descartes-universe.tex",
         "line": 421,
         "chapter": 6
       },
-      "title": "{Coral space as spectral curve and spinor bundle}",
+      "title": "{Color space as spectral curve and spinor bundle}",
       "formalization_status": "not_started",
       "uses": [
         "rem:t-duality-elliptic"
@@ -199,7 +199,7 @@
       },
       "formalization_status": "stated",
       "uses": [
-        "rem:coral-bundles",
+        "rem:color-bundles",
         "def:briggs-klein-chart"
       ]
     },
@@ -288,16 +288,16 @@
       ]
     },
     {
-      "label": "def:coral-sector-coords",
+      "label": "def:color-sector-coords",
       "object_type": "definition",
       "latex": {
         "file": "chapters/descartes-universe.tex",
         "line": 689,
         "chapter": 6
       },
-      "title": "{Coral sector coordinates $\\mathfrak{r},\\mathfrak{g},\\mathfrak{b}$}",
+      "title": "{Color sector coordinates $\\mathfrak{r},\\mathfrak{g},\\mathfrak{b}$}",
       "lean": {
-        "decl": "QOU.CoralSectorCoords",
+        "decl": "QOU.ColorSectorCoords",
         "file": "QOU/DescartesUniverse.lean",
         "gh_pages_url": "https://litlfred.github.io/qou/lean/QOU/DescartesUniverse.lean",
         "github_source_url": "https://github.com/litlfred/qou/blob/e97213a5cd3c30d14e37cbec8bff645370569ecd/lean/QOU/DescartesUniverse.lean",
@@ -331,7 +331,7 @@
       "formalization_status": "stated",
       "uses": [
         "prop:braid-action-tensor",
-        "def:coral-sector-coords",
+        "def:color-sector-coords",
         "rem:r-matrix-braiding",
         "ex:trefoil-operator-algebra",
         "prop:brings-is-qou",
@@ -2307,18 +2307,18 @@
       "relation": "uses"
     },
     {
-      "from": "prop:coral-elliptic",
+      "from": "prop:color-elliptic",
       "to": "rem:braid-group-action",
       "relation": "uses"
     },
     {
-      "from": "prop:coral-elliptic",
+      "from": "prop:color-elliptic",
       "to": "rem:holonomy-trefoil",
       "relation": "uses"
     },
     {
       "from": "rem:color-tube-cubic",
-      "to": "prop:coral-elliptic",
+      "to": "prop:color-elliptic",
       "relation": "uses"
     },
     {
@@ -2332,13 +2332,13 @@
       "relation": "uses"
     },
     {
-      "from": "rem:coral-bundles",
+      "from": "rem:color-bundles",
       "to": "rem:t-duality-elliptic",
       "relation": "uses"
     },
     {
       "from": "prop:brings-smoothness-resolution",
-      "to": "rem:coral-bundles",
+      "to": "rem:color-bundles",
       "relation": "uses"
     },
     {
@@ -2387,17 +2387,17 @@
       "relation": "uses"
     },
     {
-      "from": "def:coral-sector-coords",
+      "from": "def:color-sector-coords",
       "to": "def:exceptional-divisor",
       "relation": "uses"
     },
     {
-      "from": "def:coral-sector-coords",
+      "from": "def:color-sector-coords",
       "to": "def:substrate-parameter",
       "relation": "uses"
     },
     {
-      "from": "def:coral-sector-coords",
+      "from": "def:color-sector-coords",
       "to": "rem:chirality-trefoil",
       "relation": "uses"
     },
@@ -2408,7 +2408,7 @@
     },
     {
       "from": "cor:descartes-braid-structure",
-      "to": "def:coral-sector-coords",
+      "to": "def:color-sector-coords",
       "relation": "uses"
     },
     {

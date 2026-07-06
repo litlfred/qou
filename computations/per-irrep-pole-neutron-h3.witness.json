@@ -1,0 +1,159 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-06-23T12:01:04.092735+00:00",
+  "commitSha": "802516eed261bf13104f64fb082fc6be6a72167e",
+  "assertions": [
+    {
+      "name": "neutron_full_tr_M_u_pole_eq_shift_NF",
+      "computed": 19,
+      "expected": 22,
+      "passed": false
+    },
+    {
+      "name": "neutron_per_term_max_unique",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 31,
+  "computation": "per-irrep-pole-neutron-h3",
+  "scriptFile": "per_irrep_pole_atom.py",
+  "scriptHash": "e1b63069c0fd",
+  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Path A: per-term symbolic u-pole-order analysis of the neutron's tr_M = Σ_λ y_λ(q) · χ^λ_q(β_{0,1}) at q = u² (per the D(u) convention).  Loads cached symbolic y_λ from y-lambda-wenzl-bridge-symbolic-witness.json and cached chi_λ from chi-neutron-h3.witness.json (auto-emit on first run, multiprocessing).  Per-term ord_{u=0}(y_λ · χ^λ) avoids the sp.together bottleneck.  Verifies shift_NF(β_neutron) = 22 = 18·0 + 21·1 + 1, matching prop:per-nucleon-shift-additive-linearity.",
+  "auditOnly": "docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md",
+  "data": {
+    "per_term_u_pole_orders": [
+      {
+        "partition": [
+          2,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 19
+      },
+      {
+        "partition": [
+          3
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 2
+      },
+      {
+        "partition": [
+          1,
+          1,
+          1
+        ],
+        "ord_u_eq_0_y_lambda_times_chi": 0
+      }
+    ],
+    "max_term_lambda": {
+      "partition": [
+        2,
+        1
+      ],
+      "ord_u_eq_0": 19,
+      "unique_max": true,
+      "next_highest": 2
+    },
+    "full_tr_M_u_pole_inferred": {
+      "value": 19,
+      "rigorous": true,
+      "expected": 22,
+      "Z": 0,
+      "N": 1,
+      "formula": "shift_NF(β_neutron) = 18·0 + 21·1 + 1 = 22"
+    },
+    "per_generator_crossings": {
+      "atom": "neutron",
+      "Z": 0,
+      "N": 1,
+      "n_strands": 3,
+      "total_crossings": 11,
+      "by_generator": [
+        {
+          "gen_idx": 0,
+          "sigma": 5,
+          "sigma_inv": 0,
+          "averaged": 2,
+          "total": 7
+        },
+        {
+          "gen_idx": 1,
+          "sigma": 0,
+          "sigma_inv": 4,
+          "averaged": 0,
+          "total": 4
+        }
+      ],
+      "klr_canonical_class_by_generator": [
+        {
+          "gen_idx": 0,
+          "net_signed_power": 5,
+          "averaged_count": 2,
+          "cemetery_class_signed_power_projection": "σ_0^5",
+          "is_pure_power_in_cemetery": false
+        },
+        {
+          "gen_idx": 1,
+          "net_signed_power": -4,
+          "averaged_count": 0,
+          "cemetery_class_signed_power_projection": "σ_1^-4",
+          "is_pure_power_in_cemetery": true
+        }
+      ],
+      "note": "Canonical crossings from atom_canonical_crossings(Z, N), aggregated per generator index.  Provides structural baseline for GAP-C-1 (q-integer counting per generator) in derivation-audit-report.md.  KLR-canonical-class enrichment per AGENTS.md §7b (and PR #608 KLR cemetery infra): each per-generator sub-word σ_g^k (pure power) is a cemetery class trivially; the full atom's canonical class is the per-partition χ-fingerprint at q_0 (emitted as `atom_chi_fingerprint` below)."
+    },
+    "atom_chi_fingerprint": {
+      "q0": 1.1099785955573347,
+      "precision": 8,
+      "n_partitions": 3,
+      "fingerprint": [
+        [
+          [
+            1,
+            1,
+            1
+          ],
+          -0.91076221
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          1.70088885
+        ],
+        [
+          [
+            3
+          ],
+          1.12210684
+        ]
+      ],
+      "note": "Per-partition χ^λ(β_atom; q_0) tuple — heuristic comparison hash for braid/Markov-equivalence at q_0.  It is a NECESSARY but NOT SUFFICIENT condition for canonical-basis (KL) equivalence: identical fingerprints are evidence of equivalence, but two distinct canonical-basis classes can collide at the rounded-trace level (no iff guarantee).  Trace-only form because per-block matrices are not currently materialised at H_n>3 in Path A — full equivalence requires the per-block matrix entries (cf. r5_full_canonical_knot_solver.chi_fingerprint at H_3). Per Copilot review #r3213426336."
+    },
+    "lean_uniqueness_ref": {
+      "nucleus": "per-nucleus (H_6 deuteron / per-atom)",
+      "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
+    }
+  }
+}

@@ -82,7 +82,7 @@ def build() -> DerivationChain:
             "Hecke energy axiom: each braid generator σ_i carries "
             "the relation σ_i² = (q − q^{-1}) σ_i + 1; the prefactor "
             "h := q − q^{-1} is the per-crossing energy scale "
-            "(CLAUDE.md §7a)."
+            "(AGENTS.md §7a)."
         ),
         inputs=[FirstPrinciple.HECKE_ENERGY.value],
         output_name="h_hecke",

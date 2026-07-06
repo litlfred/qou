@@ -9,7 +9,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["prop:wenzl-qmn-synergy"],
-  cites: ["halverson-ram-1995", "ram1991", "macdonald1995"],
+  cites: ["halverson_ram_1998", "ram1991", "macdonald1995"],
   tags: [
     "q-murnaghan-nakayama",
     "recursive",

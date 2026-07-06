@@ -12,7 +12,7 @@ plan.md`, Identity 2 (F_2 = -h^2 alpha_EM), sub-claim:
          antisymmetric (singlet) channel.
 
 WHAT THIS PROBE VERIFIES (exact, in H_2(q) = R[sigma]/(sigma^2 - h sigma - 1),
-Hecke-Skein convention CLAUDE.md section 7a: eigenvalues q and -q^{-1}).
+Hecke-Skein convention AGENTS.md section 7a: eigenvalues q and -q^{-1}).
 
   1. The Bezout singlet projector e_- = (q - sigma)/(q + q^{-1}) is idempotent
      and sigma e_- = -q^{-1} e_-  (the singlet channel carries the UNIQUE
@@ -64,7 +64,7 @@ try:
     from qou_substrate.constants import q_at
     Q0 = str(q_at())
 except Exception:
-    Q0 = "1.1099785827513808075916690956107688798744991218736"
+    Q0 = "1.1099785955573347198997632204832250266562084087802"
 
 
 def reduce_word(poly: sp.Poly, q: sp.Symbol, s: sp.Symbol) -> sp.Expr:

@@ -16,15 +16,16 @@ allowed-tools: Read Edit Bash Grep Glob
 > On **any** Lean env/tool failure — `lean_run_code`/LSP "no valid project
 > path", `leansearch` SSL error, `lake exe cache get` 403, `elan toolchain
 > install` SSL/`failed to parse release data`, empty `~/.elan/toolchains/`,
-> `lake build` timeout — **do NOT conclude "Lean is unavailable."** Two of
-> these (cache-403, toolchain-host-firewalled) have **documented workarounds
-> in this very file** (§"Mathlib cache 403 fallback" + §"Web-sandbox
-> addendum"). The recurring failure mode is *agents re-deriving these
+> `lake build` timeout — **do NOT conclude "Lean is unavailable."** Several of
+> these (cache-403, toolchain-host-firewalled, leansearch/loogle SSL) have
+> **documented workarounds in this very file** (§"Mathlib cache 403 fallback"
+> + §"Web-sandbox addendum" + §"Offline Mathlib search"). The recurring
+> failure mode is *agents re-deriving these
 > workarounds — or giving up — instead of grepping for them.*
 >
 > **Discipline (generalises the corpus-grep / formalize-first rules):** when a
 > tool or environment operation fails, FIRST
-> `grep -ri "<error keyword>" .claude/skills/ CLAUDE.md docs/` (e.g. `release.lean-lang.org`,
+> `grep -ri "<error keyword>" .claude/skills/ AGENTS.md docs/` (e.g. `release.lean-lang.org`,
 > `cache get 403`, `insteadOf`, `elan toolchain`) **before** declaring the
 > capability unavailable. Only after the documented workarounds are tried and
 > hit a *hard* network block may you fall back to a rigorous hand-audit — and
@@ -43,7 +44,8 @@ on the PATH and enables Lean tools automatically.
 
 ## When to Use This Skill
 
-- At session start when `session-status.sh` reports Lean as unavailable
+- At session start when the Lean build status (`/tmp/qou-lean-build-status.json`,
+  written by `setup-lean-toolchain.sh` / `lean-build-bg.sh`) reports Lean as unavailable
 - When paper-assistant Lean tools fail with "No such file or directory: 'lake'"
 - When a user says "set up Lean" or "install Lean"
 
@@ -127,9 +129,42 @@ What agents **cannot** do without Lean:
 
 - Type-check proofs
 - Get goal states at positions
-- Search Mathlib (leansearch, loogle)
+- Search Mathlib via the hosted leansearch/loogle services — but the
+  **offline grep substitute** below works with or without Lean (see
+  *Offline Mathlib search*)
 - Verify axiom dependencies
 - Get autocompletions or hover info
+
+### Offline Mathlib search — when hosted leansearch/loogle are SSL-blocked
+
+In the Claude Code web sandbox the hosted search services
+(`loogle.lean-lang.org`, `leansearch.net`) fail with
+`SSL: CERTIFICATE_VERIFY_FAILED` (self-signed cert in the proxy chain), so
+the `lean_loogle` / `lean_leansearch` MCP tools error out. Use these
+**offline** substitutes — they need no network:
+
+1. **Grep the Mathlib source** (closest analogue to a loogle name/substring
+   search; works *with or without* Lean installed). The full source ships
+   with any clone and with the `lake-cache/*` restore — ~7 000 `.lean` files
+   under `.lake/packages/mathlib/Mathlib/`:
+   ```bash
+   grep -rn "theorem det_succ_row_zero" .lake/packages/mathlib/Mathlib/
+   grep -rn "det_fin" .lake/packages/mathlib/Mathlib/LinearAlgebra/Matrix/
+   ```
+2. **`lean_local_search` (MCP)** — offline; searches declarations in the
+   current project + imported modules (once a file is loaded).
+3. **`lean_hover_info` / `lean_declaration_file` (MCP)** — offline once a
+   file is loaded; type signature / source of a known name.
+
+**Why not run loogle locally?** loogle is a Lean exe that imports and indexes
+*all* of Mathlib, so it needs Mathlib oleans for **its own** toolchain.
+loogle HEAD pins a newer toolchain (e.g. `v4.30.0-rc1`) than the repo cache
+(`v4.24.0`), and `lake exe cache get` is network-blocked here — so standing
+up local loogle means a from-source Mathlib rebuild (~30–60 min) that
+**cannot reuse** the `lake-cache/*` oleans (they are Mathlib-commit-pinned;
+even a v4.24 loogle commit would need the repo's *exact* Mathlib commit).
+Not worth it for ad-hoc search — the grep route answers the same questions
+in seconds.
 
 ## Troubleshooting
 
@@ -152,7 +187,7 @@ GitHub Actions billing-blocked, etc.), `lake exe cache get` returns
 failures), and `lean_diagnostic_messages` MCP times out at 60 s
 because no prebuilt oleans are available.
 
-The CLAUDE.md "Local Mathlib cache" section documents the *intent*
+The AGENTS.md "Local Mathlib cache" section documents the *intent*
 that the build tools auto-detect a clone at `../mathlib4`, but in
 practice the auto-detection requires manual git redirect setup when
 elan / cache hosts are network-restricted.
@@ -183,10 +218,44 @@ elan / cache hosts are network-restricted.
 > goes to a `mktemp` file and extracts with `-C "$ROOT"` (repo root), not the
 > current directory. Full restore/seed details (incl. how to **SEED** after a
 > fresh build) are in the **🗄️ PRESERVE THE BUILD** section further down this file.
+>
+> **⚠ `FETCH_HEAD` is global — do NOT run another `git fetch` concurrently
+> during the restore.** The recipe resolves the parts via the mutable
+> `FETCH_HEAD` ref. If a second fetch (a background `git fetch origin main`, a
+> parallel agent) repoints `FETCH_HEAD` mid-loop, the `git show FETCH_HEAD:…part0N`
+> calls silently resolve against the wrong commit, the assembled tarball is
+> truncated, and `tar` fails (`gzip: not in gzip format` / `Child returned status
+> 1`) — looking exactly like a corrupt cache (cost a session 2026-06-22). The
+> recipe itself is correct (`git show` and `git cat-file blob` are byte-identical
+> here — the slug/loop are fine). Run the restore **serially**, or make it
+> race-proof by fetching into a private ref: `git fetch --depth=1 origin
+> "$BR:refs/restore-tmp"` then read `refs/restore-tmp:$p` in the loop instead of
+> `FETCH_HEAD:$p`.
+>
 > Only if the fetch fails (branch unseeded) or the oleans are a
 > toolchain/`lakefile.toml` **miss** do you fall back to the source-clone +
 > from-source build below — and **SEED the cache branch afterwards** so the
 > next agent restores in 2 min instead of rebuilding.
+>
+> **RepThy/Wedderburn addon (2026-06-28).** The base `lake-cache/qou-v4-24-0`
+> does **not** carry `Mathlib.RepresentationTheory.*` or
+> `RingTheory.SimpleModule.{WedderburnArtin,Isotypic,IsAlgClosed}` (they are
+> outside the QOU dependency closure). The 11 oleans those modules need — for
+> [`QOU/BraidKnot/MaschkeSnSemisimple.lean`](../../../content/quantum-observable-universe/lean/QOU/BraidKnot/MaschkeSnSemisimple.lean)
+> + [`WedderburnSn.lean`](../../../content/quantum-observable-universe/lean/QOU/BraidKnot/WedderburnSn.lean)
+> (and any rep-theory / OV-tower follow-up) — are preserved on the **addon**
+> orphan branch `lake-cache/qou-v4-24-0-repthy-wedderburn` (2.9 MB). Restore it
+> **after** the base restore above:
+>
+> ```bash
+> ROOT=$(git rev-parse --show-toplevel); T=$(mktemp)
+> git fetch --depth=1 origin lake-cache/qou-v4-24-0-repthy-wedderburn
+> git show FETCH_HEAD:addon-oleans.tgz > "$T"; tar xzf "$T" -C "$ROOT"
+> ```
+>
+> This saves the ~5-min from-source rebuild of those 11 modules. (If a future
+> base reseed folds them into `lake-cache/qou-v4-24-0` itself — bean `bnyo` —
+> this addon becomes redundant and can be ignored.)
 
 **Fallback workaround — source clone + from-source build (only when the
 cache-branch restore above misses; battle-tested on PR #1761 + PR #1772):**
@@ -205,6 +274,72 @@ git config --global url."file:///home/user/mathlib4".insteadOf \
 # The first query will still be slow (cold workspace) but should
 # return real diagnostics rather than timing out.
 ```
+
+> **🟦 When even the mathlib `git clone` 403s (repo-scoped git proxy) —
+> use the codeload tarball via the egress proxy (proven 2026-06-26, PR
+> #2858).** On stricter web sandboxes the git `insteadOf` rewrites
+> *every* `https://github.com/` to a **repo-scoped** git proxy that only
+> allows this repo, so Step 1's `git clone …/mathlib4` returns **403**
+> (and so does `lake exe cache get`). But the **HTTPS egress proxy still
+> reaches `codeload.github.com`** — only the *git* path is scoped — so
+> fetch the source tarball at the **pinned manifest rev** (must match the
+> restored cache oleans) directly:
+>
+> ```bash
+> REV=$(python3 -c "import json,sys; print(next(p['rev'] for p in json.load(open('lake-manifest.json'))['packages'] if p['name']=='mathlib'))")
+> curl -fsS --cacert /root/.ccr/ca-bundle.crt \
+>   "https://codeload.github.com/leanprover-community/mathlib4/tar.gz/$REV" \
+>   -o /tmp/mathlib-src.tar.gz
+> tar xzf /tmp/mathlib-src.tar.gz -C /tmp
+> cp -r "/tmp/mathlib4-$REV/Mathlib" .lake/packages/mathlib/   # stage source ALONGSIDE restored oleans
+> ```
+>
+> **Then build the missing delta with `lean`-direct — NOT `lake build`.**
+> With source staged next to restored oleans, `lake build <anything>`
+> sees the package dir differs from the manifest, prints
+> `mathlib: URL has changed; deleting … and cloning again`, **deletes the
+> restored oleans**, and re-clones (→ 403). Instead compute the
+> missing-olean closure of your target and compile each missing module
+> with `lean --root=<pkgRoot> -o <lib>/<Mod>.olean <src>` (set `LEAN_PATH`
+> to every `*/.lake/build/lib/lean`). For a QOU file pass
+> `-D autoImplicit=false` to match the package `leanOptions` — otherwise
+> you get spurious `Field ?m`/instance-diamond errors that look like real
+> bugs but are just the missing option. This staged + compiled the two
+> oleans absent from the `qou-v4-24-0` cache
+> (`Mathlib.Data.Nat.Dist`, `Mathlib.RingTheory.Idempotents`) plus the
+> `IwahoriHeckeAPI` cone in ~5 min total, verifying PR #2858 — after the
+> prior session wrongly declared that file "environmentally impossible"
+> to compile. Don't declare Lean verification impossible until codeload
+> is also blocked.
+
+> **🟦 Two egress regimes — check which one you're in (updated 2026-07-04,
+> PR #3295).** The git proxy is **not always repo-scoped**. Diagnose with
+> `curl -sS "$HTTPS_PROXY/__agentproxy/status"` (lists `recentRelayFailures`
+> by host) and a one-line probe `git ls-remote --heads
+> https://github.com/leanprover-community/mathlib4 | head -1`:
+> - **Regime A — full git egress (observed 2026-07-04):** `git ls-remote` /
+>   `git clone` of *any* github repo succeeds; only `release.lean-lang.org`
+>   (elan toolchain host **and** the `lake exe cache get` olean blob store)
+>   returns 403. Here you can `git clone` mathlib source directly (no need
+>   for the codeload tarball) — but a clone gives **source only, not
+>   oleans**, and `lake exe cache get` still 403s, so oleans still come from
+>   either the `lake-cache/qou-<slug>` orphan branch (QOU-only; §"PRESERVE
+>   THE BUILD") or the §278 stage-source + `lean`-direct compile-the-delta
+>   path. `lake build <Module>` from scratch *does* work in Regime A (it git-
+>   clones mathlib, cache-get 403s, then **builds Mathlib from source** — but
+>   that is the 30–60 min storm; prefer restore+delta).
+> - **Regime B — repo-scoped git proxy:** even `git clone …/mathlib4` 403s;
+>   use the codeload tarball above.
+>
+> **Bottom line:** the toolchain is pre-installed (`~/.elan/toolchains/`) and
+> is invoked directly (`~/.elan/toolchains/lean-v4.24.0/bin/lean`, bypassing
+> the elan wrapper, which itself tries `release.lean-lang.org` and 403s). The
+> only true blocker is **prebuilt Mathlib oleans** — never "github is
+> unreachable" (git egress usually works). For a **trivial `ring`/`field_simp`
+> extension of an already-compiling file**, a rigorous hand-audit + CI is an
+> acceptable fallback per AGENTS.md when the olean-restore path is
+> unavailable and a full source build would blow the session budget — state
+> the non-machine-verification explicitly.
 
 After Step 3 succeeds, `lean_diagnostic_messages` returns real error /
 warning items (not the `success: false, items: []` timeout sentinel),
@@ -500,9 +635,17 @@ main working tree is never disturbed — do NOT `git switch --orphan` in the
 main tree (it leaves every file untracked and traps you with "untracked
 working tree files would be overwritten" on switch-back; Copilot #1857).
 
-> **Seeded 2026-06-04:** `lake-cache/qou-v4-24-0` holds a real build
-> (1838-job from-source build of `QOU.Mass.MassVolDensity`'s dep cone).
-> RESTORE from it before rebuilding.
+> **Reseeded 2026-07-02:** `lake-cache/qou-v4-24-0` now holds a near-complete
+> library build @ main `c3a94315` — **859 QOU oleans (96% of the library;
+> the ~38 misses are the known pre-existing red files + their dependents),
+> 19 UGB, 1 Fred2005, and 2962 mathlib oleans (the RepThy/Wedderburn addon
+> is folded in — the separate addon branch above is now redundant, per
+> bean `bnyo`)**. 10 chunks (~930 MB), restore-checked in a clean temp dir.
+> Built lean-direct (topological orchestrator, no lake — this sandbox's git
+> proxy 403s package grafts, so lake would have deleted the restored
+> mathlib package on the URL mismatch). RESTORE from it before rebuilding.
+> (Prior seed 2026-06-04 held only the 1838-job `QOU.Mass.MassVolDensity`
+> dep cone / ~202 QOU oleans.)
 
 **RESTORE first (before any from-source build):**
 ```bash
@@ -557,7 +700,16 @@ instead of rebuilding in ~30+) — worktree-based, tarball created in-repo:
 WT=/tmp/lake-cache-wt
 # 1. Pack the built oleans (compressed). Create the tarball where the
 #    worktree can `git add` it — git cannot add a path outside its tree.
-tar czf /tmp/lake-oleans.tgz .lake/build .lake/packages/*/.lake/build 2>/dev/null
+#    ⚠ The QOU package build lives in the NESTED Lake dir
+#    `content/*/lean/.lake/build` — root `.lake/build` does NOT exist in
+#    this checkout, so the old glob `.lake/build .lake/packages/*/...`
+#    silently shipped a tarball with ZERO QOU oleans (only Mathlib). The
+#    restore-check (Step 4 below) is what catches this; ALWAYS run it.
+#    (2026-06-26: this is exactly why prior production reseeds held only
+#    the ~202-olean Mass cone — the QOU oleans were never packed.)
+# (No `2>/dev/null` — a missing path must fail LOUDLY; suppressing tar's
+#  "No such file or directory" is what made the old glob bug silent.)
+tar czf /tmp/lake-oleans.tgz content/*/lean/.lake/build .lake/packages/*/.lake/build
 # 2. Orphan branch in a SEPARATE worktree (main tree untouched, no trap).
 git worktree add --orphan -b lake-cache/qou-v4-24-0 "$WT" 2>/dev/null \
   || { git worktree add --detach "$WT"; git -C "$WT" checkout --orphan lake-cache/qou-v4-24-0; \
@@ -576,6 +728,23 @@ git worktree remove --force "$WT"                      # main branch never left
 > `git push` after each one (`--force` on the first push to replace
 > the old cache history). Restorers are unaffected — the restore
 > recipe reads the tip tree, which contains all chunks.
+
+> **Step 4 — VERIFY the seed in a clean temp dir (MANDATORY — catches the
+> QOU-oleans-missing bug).** A silent bad seed corrupts the cache for every
+> downstream session, so prove the pushed branch restores before trusting it:
+> ```bash
+> T=/tmp/restore-check; rm -rf "$T"; mkdir -p "$T"
+> git fetch --depth=1 origin lake-cache/qou-v4-24-0
+> git ls-tree --name-only FETCH_HEAD | grep '^lake-oleans\.tgz\.part' | sort \
+>   | while read -r p; do git cat-file -p "FETCH_HEAD:$p"; done > /tmp/rc.tgz
+> tar xzf /tmp/rc.tgz -C "$T"
+> # MUST be non-zero — if 0, the tar glob missed the nested QOU build dir:
+> find "$T" -path '*/lib/lean/QOU/*.olean' | wc -l
+> ```
+> Seeding to a `-test` branch suffix first (then a ref-only force-push
+> cutover to production — the blobs are already on the remote, so the
+> cutover uploads nothing and dodges the 413) is the safe path for the
+> load-bearing production branch.
 
 Keep ≤ 8 such branches (owner cap); the
 [`lake-cache-refresh.yml`](../../../.github/workflows/lake-cache-refresh.yml)

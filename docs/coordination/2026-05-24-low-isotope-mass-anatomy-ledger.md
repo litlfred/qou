@@ -32,14 +32,14 @@
 
 ## Open hidden-fitting candidates (from PR #1089 audit)
 
-Ranked by load-bearing-ness; per CLAUDE.md Rule 14, any h^k coefficient or weight not derivable from one of the 13 categorical drivers requires owner escalation before production adoption.
+Ranked by load-bearing-ness; per AGENTS.md Rule 14, any h^k coefficient or weight not derivable from one of the 13 categorical drivers requires owner escalation before production adoption.
 
 | Rank | Candidate | Location | Status |
 |------|-----------|----------|--------|
-| 🔴 | atom → knot census assignments (D↔6₂, T↔8₁₁, ³He↔L6a4) | [`mass_table_ppb.py:18-21`](../../folio-assistant/computations/mass_table_ppb.py) | explicit AME-driven by author admission |
-| 🔴 | Kashaev density rule `ρ_F ∈ {m_e, 2m_e}` | [`mass_table_ppb.py:23`](../../folio-assistant/computations/mass_table_ppb.py) | pending formal justification per script header |
-| 🟠 | pp/pn/nn channel-assignment convention | [`isotope_record_schema.py:176-178`](../../folio-assistant/computations/isotope_record_schema.py) | no `prop:` block; PR #1081 Task 3 may resolve |
-| 🟠 | ⁴He "magic A·8G shell" closure | [`isotope_record_schema.py:186`](../../folio-assistant/computations/isotope_record_schema.py) | labelled "magic"; biggest sign-flip magnitude (+5.87%) |
+| 🔴 | atom → knot census assignments (D↔6₂, T↔8₁₁, ³He↔L6a4) | [`mass_table_ppb.py:18-21`](../../computations/mass_table_ppb.py) | explicit AME-driven by author admission |
+| 🔴 | Kashaev density rule `ρ_F ∈ {m_e, 2m_e}` | [`mass_table_ppb.py:23`](../../computations/mass_table_ppb.py) | pending formal justification per script header |
+| 🟠 | pp/pn/nn channel-assignment convention | [`isotope_record_schema.py:176-178`](../../computations/isotope_record_schema.py) | no `prop:` block; PR #1081 Task 3 may resolve |
+| 🟠 | ⁴He "magic A·8G shell" closure | [`isotope_record_schema.py:186`](../../computations/isotope_record_schema.py) | labelled "magic"; biggest sign-flip magnitude (+5.87%) |
 | 🟡 | flavor-split (1+ℏ_q³) 3-loop factor | PR #690 / `_li_2_q_util.flavor_split_subleading` | partial Lean coverage |
 
 ## Lean-coverage matrix (production-chain ingredients)
@@ -123,3 +123,243 @@ Ranked by load-bearing-ness; per CLAUDE.md Rule 14, any h^k coefficient or weigh
   `Σ_λ y_λ χ^λ(β_D)·Vol_λ` for q-6j / JSJ-per-pair `Vol_λ` candidates vs D/T/³He/⁴He,
   no free params. Coordinate with Option E #1697/#1516 before authoring any prop block.
 - (Deferred) census/partial-shell → `deprecated/` move — coordinate with #1681 refactor.
+
+## 2026-06-16 — B_sym closed form + saturation (#2343) ↔ α-cluster frontier (#2349)
+
+- **#2343** (`claude/ecstatic-archimedes-7dkuiq`): low-isotope (²H–⁷Li) B_sym error
+  budget + decomposition. Tool `computations/m_sym_error_budget.py`
+  (`--decompose`/`--bonds`/`--rescore`). Audit
+  `docs/audits/2026-06-16-b-sym-linear-chain-closed-form.md`.
+  - **Closed form:** `B_sym = α·[(Z−1)L_pp + L_pn + (N−1)L_nn]`, exactly additive to
+    the 50-dps floor ⇒ the Markov trace carries **zero** cooperative binding; the
+    4-body α-unit is *entirely absent* (not under-weighted). Per-bond n-n>p-n>p-p.
+  - **Saturation:** chain `(A−1)` vs all-pairs `C(A,2)` — neither works (all-pairs
+    RMS 10.1→22.5 ↑, over-binds heavies); binding saturates ~linearly in A.
+    Residual `Δ = B_AME − B_sym` is 10⁵–10⁷σ real and **sign-changing** (D over,
+    ⁴He under) ⇒ shell structure, not a uniform/bond-count law.
+  - **Convergence with prior art (corpus-grep):** `derive_binding_chain_cooperative.py`
+    (signed-trace) is the sibling functor of this log-form chain — same structure,
+    same ⁴He residual; `observations/magic-numbers-from-q` already gives the shell
+    *positions* {2,8,20,28}. Only open lever = α-unit **magnitude** → α-cluster
+    recursion (⁴He as magic input, per #1706), **not** a 7th fit (Δ_λ gate).
+- **#2349** (`claude/lucid-curie-wmr42x`): same B_sym shell-structure problem, high
+  end — extends the residual probe to ¹²C (3α), establishes the ¹⁶O feasibility wall
+  (`tr_m_atom_zn` enumerates p(3A); ¹⁶O p(48)=147k infeasible; real unlock =
+  per-block `canonical_tr_m_via_branching` past A=2). AME witness + B_c12/B_o16.
+- **Relationship:** complementary, no file overlap. Intent posted on #2349
+  (cross-link audits → one low-closed-form→high-α-cluster story; AME C/O entries
+  auto-extend #2343's tool). No cherry-pick either way.
+
+## 2026-06-17 — B_sym closed form wired into the dashboard (#2405)
+
+- **#2405** (`claude/tender-brahmagupta-17txfq`): bottleneck analysis of the
+  "m_sym heavy at ¹⁶O" complaint + the wiring follow-up to #2343/#2349.
+  - **Bottleneck:** the heavy step is the Frobenius/Markov pairing
+    `Σ_{λ⊢3A} y_λ χ^λ` over p(3A) Wedderburn blocks (the categorical-action
+    pairing). Live 8Be profile: ~70 % mpmath arith, ~14 % Python overhead.
+    Exact wall ¹⁶O ~1.8 h, ⁴⁰Ca ~century. Measured gmpy2 lever only ~1.3× at
+    50 dps (not 3–8×). Confirms `61abcca9` (wall intrinsic, χ_eff=p(3k)).
+  - **Wiring:** `mass_binding_dashboard._row` now fills `B_sym`/`m_sym_atom`
+    for ALL A from the #2343 closed-form chain (exact p(3A) trace kept as the
+    A≤7 validator, max|Δ| float64 noise). ¹⁶O…⁵⁶Fe instant. Audit
+    `docs/audits/2026-06-17-bsym-p3a-bottleneck-and-closed-form-wiring.md`.
+  - **Discipline:** compute-speed only; B_sym under-binds ~2× (the α/shell
+    accuracy gap = Δ_λ, unchanged). Exploratory; no production rewire, no fit.
+  - **Coordination:** intent posted on **#2348** (atom→electron consumer — its
+    `m_atom` now all-A) and **#2371** (Wenzl A≥3 — binding factorizes, but the
+    general per-λ trace still needs the combiner; no overstep). No file overlap
+    with any sibling; no cherry-pick. Gemini quota-limited (24 h) on #2405.
+
+## 2026-06-17 — Δ_λ master-formula route: full derive-or-refute arc (#2417)
+
+Continues the #2405 binding thread. **#2417**
+(`claude/delta-lambda-bring-quadratic-2026-06-17`) systematically refuted the
+simple Δ_λ-closure attempts and *narrowed* the gate to a precise statement.
+Cross-ref `docs/coordination/option-e.md` (Δ_λ master ledger).
+
+- **Master-formula / LP (𝓑₃ selection).** The min-action operator-selection LP
+  returns the trivial `tr_M=0` state, not `𝓑₃`: the objective `Σ t_i x_i`
+  **coincides** with the `i=0` Frobenius row (`b₀=γ` ⇒ `G_{0j}=t_j`), so min-action
+  saturates the identity. Root = the **indefinite Gram** (eig −0.855 from
+  `tr_M(e⁻)=z³`; `prop:confinement-lp` §caveat: `𝓑₃` is only a *local* min).
+  Fix-1 (decouple objective from `i=0`) tested → REFUTED (1a neg obj −3.64; 1b
+  unbounded). Audits: `…master-formula-active-set-redesign.md`.
+- **Bring quadratic.** The `h₂=σb+rg` color quadric (indefinite sig (2,2)) + the
+  non-abelian-Stokes curvature exist; `𝓑₃`'s Stokes h²-action = **3/16** exactly
+  (refutes that script's κ=−Catalan). But no 1-1 NF↔color(W-plane) map ⇒ "`𝓑₃`
+  minimizes a Bring quadratic at z₀" has **no realization**. Audit:
+  `…bring-surface-b3-selection-quadratic.md`.
+- **Chirality-Δ_λ binding wired all-A.** Threaded the *proved* `Δ_λ=sgn(w₀^{S_λ'})
+  ·dim` (keystone #1305 / `585ca846d7`) through the #2405 all-A χ^λ transfer.
+  Cross-check D=0.380 ✓, but undershoots ≤⁴He → **divergent overshoot ≥⁶Li**
+  (bare `dim` explodes).
+- **Magnitude-variant sweep `{1, sgn, dim, dim_q}`.** NONE tracks AME — the trace
+  *decays* with A (`1`/`sgn`), any dim-like weight *explodes* (`dim`/`dim_q`). The
+  **linear** functional `Σ_λ y_λ χ^λ Δ_λ` is refuted at the **A-scaling** level;
+  the functional with correct A-scaling is the **LOG** one (`B_sym`, #2405,
+  additive chain, ~2× AME). Audit: `…chirality-delta-lambda-binding-sweep.md`.
+- **Net.** sign=chirality (**proved/closed**); linear-Δ_λ functional=**refuted**;
+  the cooperative α-term is a **correction to the log chain B_sym** — the open
+  Δ_λ-gate / α-unit magnitude (no-fit). Remaining non-fit directions (research-
+  scale): **α-cluster recursion** (⁴He magic input) or the **operator-valued
+  PROBE-2 `A^λ_{ξν}(I)` combiner** (`wenzl-a3-intertwiner-or3`, "the A≥4 unlock"
+  — an *operator* magnitude, exactly what the scalar-magnitude refutation says is
+  needed).
+---
+
+## 2026-06-16 — Level 6 atom→electron wiring (PR #2348)
+
+**Session branch:** `claude/zealous-hypatia-05xyp9` → PR
+[#2348](https://github.com/litlfred/qou/pull/2348)
+**Goal:** owner asked for 1 ppQ on `m_sym` + the AME/CODATA error decomposition,
+which drifted (prior session, different agent) into electron-binding. Picked up
+the stalled discussion; coordinate + extend the comparison to the neutral atom.
+
+### Scope map (this pass)
+| PR | Branch | Class | Relationship |
+|---|---|---|---|
+| **#2348** (this) | `claude/zealous-hypatia-05xyp9` | own | Level-6 atom→electron mass diagnostic + e-Hartree audit |
+| #2343 | `claude/ecstatic-archimedes-7dkuiq` | **DUPLICATE (done)** | m_sym error budget; #2348 is its atomic-level companion |
+| #2078 | `claude/atom-vhyp-workplan` | OVERLAP (B_sym frontier) | Δ_λ closure owns the residual; declared non-collision |
+| #2325 | `claude/vigilant-brown-x0tzat` | OVERLAP (B_sym frontier) | b-ladder slope derived; flagged e-Hartree non-distraction |
+
+### Findings
+- **The electron-binding scale was never open green-field.** It is the canonical
+  `hecke_core.E_HARTREE_EV = 27.21 eV` (Ry 13.6057, α_EM = 1/137.036, derived),
+  already wired, and is the 25-round `conj:e-hartree-categorical-derivation` —
+  a **conditional theorem** (α² scaling exact in R r20; capacity categorical via
+  `ElectronShell.bindingMultiplicity`; 1/n² spacing r8b; residual = CAL-1 unit,
+  owner-declined Subgoal-2). The prior session's "~25 MeV/electron, not derived"
+  was a ~6-orders scale blunder (used the nucleon `E₀` not `α²·m_e`).
+- **¹H atomic mass reproduces exactly** (Δ = 0.000 MeV) to the 13.6 eV level from
+  canonical constants alone. For all of ¹H–⁷Li, `Δ_total = Δ_nuclear (B_AME−B_sym)`
+  with the electron remainder **sub-keV** (−0.08 keV He, −0.23 keV Li from
+  no-screening over-binding). ⇒ the atomic-mass residual is **~100% the nuclear
+  B_sym error** — confirms #2343 at the atomic level.
+
+### Actions (PRs)
+- **#2348** — `computations/atom_electron_mass.py` + audit
+  `docs/audits/2026-06-16-level6-atom-electron-wiring.md`. Exploratory diagnostic;
+  no production rewire, no fit, no witness (mirrors `/dashboard-low` + #2343).
+
+### Coordination posted
+- #2343 — atomic-level companion + the e-Hartree scale correction.
+  [Link](https://github.com/litlfred/qou/pull/2343#issuecomment-4714362593)
+- #2325 — non-collision + sharpened target (electrons sub-keV ⇒ Δ_λ owns 100%) +
+  e-Hartree non-distraction.
+  [Link](https://github.com/litlfred/qou/pull/2325#issuecomment-4714362827)
+- #2078 — non-collision + full atomic-mass residual is theirs (no e-correction).
+  [Link](https://github.com/litlfred/qou/pull/2078#issuecomment-4714363018)
+
+### Watch state
+- `main` not advanced under this branch (0 behind; nothing landed in
+  `computations/` or `docs/audits/`). #2348 webhook subscription active; first
+  bot comment was a Gemini daily-quota notice (no action). CI 0 check-runs so far.
+
+### Next concrete task (non-overlapping)
+- (Optional, owner to choose) revive the deprecated `electron-shell-ilp` SDP for a
+  live "add electrons until infeasible" capacity demo — current scratch gave wrong
+  capacities (H=5). Screening (`Z_eff`) is the open e-Hartree magnitude piece;
+  eV-scale, never reaches the mass residual. Accuracy moves only on B_sym (#2078/#2325).
+
+### 2026-06-16/20 continuation — σ_F dual + shell-closure fixes (PR #2348)
+
+Scope expanded from the Level-6 mass diagnostic into the electron-shell /
+confinement-SDP domain. Added: the confinement-SDP **dual** σ_F at level 6
+(`electron_sigma_f_chain.py`; claim-1 monotonicity, gap≈1e-9); the SDP-capacity
+formalize-first correction (`electron_shell_sdp_capacity.py` — "add until
+infeasible" is wrong; σ_F monotone, raw-Gram is the excluded interlacing branch);
+the marginal-Δσ_F demo (`electron_sigma_f_marginal.py`).
+
+**Content corrections (owner-authorised "please resolve"):**
+- Resolved a real inconsistency in `prop:shell-closure-stability` — claim 1
+  (σ_F non-decreasing) vs claim 2 (σ_F strict local max) are contradictory; fixed
+  to "marginal Δσ_F = I₁ peaks; σ_F monotone" across the prop, its interprets
+  remark, and both `.lean` docstrings. Lean theorems were already the consistent
+  pair (monotone + μ≥2) — prose-only.
+- Softened the unsupported 2n²-"from-Hecke-dimension" overclaim in
+  `electron-shell-braid-capacity.md` (contradicted `electron-shells-hopf` open
+  problem 1).
+- Removed the vacuous shadowing stub `particle-interactions/shell-closure-stability.lean`
+  (σ_F≡0) so the ref resolves to the real `QOU.BraidKnot.ShellClosureStability`.
+
+**2n² diagnosis (genuinely open):** `2n² = 2·Σ(2ℓ+1)`; the 2×2 T_γe supplies the
+spin "2" but not the orbital n² — that needs an absent SO(4)/Runge-Lenz accidental
+degeneracy. QOU's V_ℓ reps are spent on lepton generations (s5-so3), not radial
+shells. Emergent shell peaks blocked on this; not faked.
+[`2026-06-16-2n2-shell-capacity-derivation-gap.md`](../audits/2026-06-16-2n2-shell-capacity-derivation-gap.md).
+
+**Watch state (corrected):** origin/main advanced **~479 commits** over the 4-day
+session (was 0 at session start). No main commit touched my edited content files;
+my 4 new scripts are collision-free; the only both-sides change is **this ledger**
+(benign append, resolve by keeping both). Rebase needed at `/prepare-merge` time.
+#2348 CI: 0 check-runs (Actions-billing pattern). Background Explore triage of
+siblings + s5-so3 main drift dispatched.
+
+### Next concrete task
+- Rebase #2348 onto current main at merge time (only the ledger append conflicts).
+- Open research: derive the SO(4)/Runge-Lenz n²-bundling, or accept 2n² as a
+  topological input — the blocker for emergent shell peaks (not a model tweak).
+
+### 2026-06-20 coordinate pass 4 — #2531 Aufbau ℓ-penetration overlap (#2348)
+
+- **main drift:** origin/main +48 since branch; **no conflict** on my edited
+  files (test-merge 0 changed-in-both). No rebase needed.
+- **#2346** (complex-volume / q-anchor lead) **MERGED** — its `bar-parity-split`
+  / `𝔙` work (which my 2n² self-square builds on) is now on main. No open sibling
+  there.
+- **#2531 `claude/amazing-fermat-35cgc9` (Aufbau ℓ-penetration probe) — DIRECT
+  OVERLAP, surfaced via their incoming intent on #2348.** They independently use
+  `[2ℓ+1]_q` as the ℓ-penetration (correct sign) + consume my `E_HARTREE_EV` as
+  the screening scale. Their open "next" (does it land 3d>4s without overshoot?)
+  is **answered by my (3') test**: at the canonical z² scale it OVERSHOOTS ~8.5×
+  (`s·[3]_q≈0.76` vs radial≈0.089) → ℓ-dominated, not the near-degeneracy. Posted
+  the finding + the sharpened "radial:angular balance is the crux, not the sign"
+  + the fitting flag (#2531#issuecomment-4758014286). No file overlap.
+- **#2348 CI:** `staleness` ✓; only bot comment is the Gemini quota notice. No
+  review threads to triage.
+- **Convergence note:** #2531 and I independently reached `[2ℓ+1]_q` (penetration
+  + 2n² capacity). The shared open piece is the scale balance.
+
+### 2026-06-28 coordinate pass — #3016 brane-tower m_can + Borromean per-knot binding
+
+**Branch:** `claude/deuteron-m-sym-error-rf9i4u` · **PR:** #3016 · **Bean:** `km42`.
+
+**Canonical (what landed / is settled):**
+- Dashboard headline mass is now **`m_can⁰ = m_unbnd,can − E₀·Δtr`** (brane-tower
+  level 0), replacing the exploratory log `m_sym`. Pure Markov × m_e; zero
+  AME/CODATA beyond CAL-1/CAL-2. Deuteron mass error 6× better than the log.
+- **Convergence law (derived, formalize-first):** the per-braid Li₂^q tower
+  converges iff the nucleon trace `<1`. The **atom-word** proton `tr_p=1.0653>1`
+  diverges the free pp pair for Z≥2 (= the superseded per-generator divergence
+  class). The **Borromean** nucleon `τ=|tr_M(β_Bor)|=0.9986<1` converges ∀Z.
+- **Conventions derived from the categorical action** (not chosen): binding
+  dilog sign `g(x)=−Li₂^q(−x)` (bar-even channel `bar-parity-split.md` + Hecke
+  −q⁻¹); A=2 pair included (distinct functional). Refs:
+  `docs/audits/2026-06-28-brane-tower-formalize-first-plan.md`.
+- **Single pipeline (ties in bean `ovud`):** nucleon mass (`F_Bor`) and binding
+  both flow from the one Borromean `τ`. `computations/borromean_binding_recompute.py`.
+
+**Gaps (the frontier — for siblings working Δ_λ / lever-1 / option-e):**
+- The Borromean tower has the **right shape** (binding grows with pair count:
+  ¹⁶O err 31×→2.3×) but the **wrong normalization** — under-binds mid-mass,
+  over-binds ⁵⁶Fe. This is exactly the **Δ_λ per-partition-weight frontier**:
+  my tower applies a *uniform* E₀ where the canonical `B=m_e·Σ_λ y_λ χ^λ Δ_λ`
+  carries a per-λ weight. NOT a truncation error.
+- Cross-link #2985 (z2bn Stage-6): the binding correction tower is **not** a
+  single low-order q-hypergeometric/Habiro element — consistent; I am not
+  re-chasing a single-element closure.
+- Open structural lever (per AGENTS.md Δ_λ gate — NOT a 7th fit): GAP-A-3/A-4
+  brane-tower level selection / ρ general rule.
+
+**Siblings flagged:** #3014 (same dashboard file, non-overlapping region — rebase
+heads-up), #2985 (binding-tower domain — finding cross-linked).
+
+## 2026-07-04 — Deuteron from-scratch ledger (PR #3266) coordination entry
+
+- **Delivered:** per-stage γγ→D error ledger (`deuteron_from_scratch_ledger.py`, 4/4) + 3 D probes; end-to-end m_D error is entirely binding-stage (routes −79%…+33%; best composed −12.9 ppm via m_e·Vol(6₂)).
+- **Exact reduction (sympy):** Q_β_proxy = E₀·h·(2−h)/2 ⟹ "Δ_λ(D)=1/h" ⟺ B_D = E₀·(1−h/2)·Δtr (+0.29% proxy / +0.12% Kashiwara). Cross-A discriminator: the dressing is D-specific (A≥3 −59%…−90%) — the extensive gap is a separate mechanism (jet-filtration thread, #3270/#3278).
+- **c₄ coordination (with #3280):** pin's 46 = fitted leftover (d27b0027); producer's 4143/90 label has no derivation trail (#3280) and c₄ is linear in the pin offset — both fit-tier; reconcile is among #3280's owner options. Bean `2i8g` re-scoped.
+- **MBA sync:** `alg:mass-identity` (step-9a) rewritten off `m_e·VolDensity`/`Geom_full` to the muon-anchored facade (raw-pin bare identity, per main's 2026-07-03 habiro-strip ruling `7b95577aae`); `C4_S5BB`/`habiro_ratio_s5bb` exposed at module level and relabeled **fit-tier** as the single owner-reconcile edit point (#3280 / bean `2i8g`).
+- **Raw-pin correction (Gemini+Copilot review):** rebased onto main after it stripped the fitted habiro tower from `q_at`; ledger S0/S2 rewritten to the honest ~11.5 ppb μ–p floor + bare-identity ratio round-trip (now 4/4 green); the earlier habiro-dressed facade fallback was reverted.
+- **Intent posted:** #3280 (c₄ history datum), #3285 (mba-9a/9b adjacency), #3278 (A=2 under-determination + dressing discriminator).

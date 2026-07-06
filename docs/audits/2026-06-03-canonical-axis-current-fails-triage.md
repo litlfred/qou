@@ -24,13 +24,13 @@ criteria — counts as 2 entries but 1 fix-site.
 ## Pattern A — `canonical-no-negative-result-in-paper` (7 blocks)
 
 Criterion: paper blocks should not carry the `scaffolding` or
-`negative-result` tag — per CLAUDE.md authoring discipline +
+`negative-result` tag — per AGENTS.md authoring discipline +
 [`2026-05-31-ck-exploratory-probes-removed.md`](2026-05-31-ck-exploratory-probes-removed.md),
 primary content of those kinds belongs under `docs/audits/`.
 
 ### A.1 `scaffolding` tag (5 blocks)
 
-Each block's **manifest** (`.ts` — source-of-truth for tags / `uses[]` / `interprets`) carries `tags: [..., "scaffolding", ...]`. The links below point to the **`.md` narrative** per house style (CLAUDE.md "Always provide GitHub links — default to `.md`"); the sibling `.ts` is at the same path with a `.ts` extension.
+Each block's **manifest** (`.ts` — source-of-truth for tags / `uses[]` / `interprets`) carries `tags: [..., "scaffolding", ...]`. The links below point to the **`.md` narrative** per house style (AGENTS.md "Always provide GitHub links — default to `.md`"); the sibling `.ts` is at the same path with a `.ts` extension.
 
 | block | label |
 |---|---|
@@ -86,7 +86,7 @@ disposes of both entries.
 Criterion: precision-ladder blocks must not use binary
 "negative result" framing without the tiered (proved / near-match
 / fitted) frame from
-[CLAUDE.md "Q_β c_k truncation order canonical framing"](./2026-05-31-qbeta-ck-truncation-order-canonical-framing.md)
+[AGENTS.md "Q_β c_k truncation order canonical framing"](./2026-05-31-qbeta-ck-truncation-order-canonical-framing.md)
 (Rule 4 — "report TIERED, never binary").
 
 | block | label | line(s) | fix-site phrase |
@@ -152,7 +152,7 @@ ledger item.
 
 This doc is **triage only** — no content edits. The actual fixes
 (11 blocks across two patterns) are in separate follow-up branches
-to keep reviews focused. Per CLAUDE.md "Combine related work into
+to keep reviews focused. Per AGENTS.md "Combine related work into
 one branch", Pattern B (4 mechanical rewrites) can go on one
 branch; Pattern A (7 with owner judgment) is better split.
 

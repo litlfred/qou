@@ -90,7 +90,7 @@ Verifies:
 - **No axiom injection.** `lean_verify` on the (sorry-free) declaration
   shows no `sorryAx` and no axioms beyond the declared set — no laundering a
   hole through a `Classical`-shaped placeholder or an axiomatised helper
-  that is not a registered conjecture class (CLAUDE.md §3b-cond).
+  that is not a registered conjecture class (AGENTS.md §3b-cond).
 - **No degenerate conditional-class projection.** A §3b-cond block must
   *derive* its conclusion from class-axiomatised **hypotheses** — it must not
   carry the conclusion itself as a class field and project it
@@ -98,7 +98,7 @@ Verifies:
   projection passes the conjectural-propagation audit (cone is
   class-axiomatised) but **fails integrity** — the Lean asserts the `.md`
   claim, it does not prove it. Fix: the class carries the genuine
-  sub-hypotheses / proof-chain steps; the theorem composes them (CLAUDE.md
+  sub-hypotheses / proof-chain steps; the theorem composes them (AGENTS.md
   §3b-cond condition 5; exemplar `QOU/FluidDynamics/q_bkm_criterion.lean`
   carries the two iff directions and derives the iff by `Iff.intro`).
 - **Base ring (§7c).** A statement-integrity fix stays over a generic

@@ -8,7 +8,7 @@ REQUIRED — same mechanism as the gluon.
 Then scan crossing operators to find the minimum-crossing restoration.
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 ch-bond-lp.py
 """
 

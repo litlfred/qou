@@ -35,7 +35,7 @@ The "six terms + Term 7" historical labelling maps onto the curvature-rank strat
 
 ## Compute-side: all references in `_deprecated/`
 
-A grep for `unified-curvature-rank-mass-formula` / `unified.curvature.rank` / `prop:unified-curvature-rank-mass-formula` in `folio-assistant/computations/` returns only:
+A grep for `unified-curvature-rank-mass-formula` / `unified.curvature.rank` / `prop:unified-curvature-rank-mass-formula` in `computations/` returns only:
 
 | File | Status |
 |---|---|

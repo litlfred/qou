@@ -4,11 +4,7 @@ through the two torus knots* $T(2, 3)$ *and* $T(2, 4)$ *as*
 $[\alpha_{\text{shift}}(T(2,3))]_q \cdot [\alpha_{\text{shift}}(T(2,4))]_q
 = [3]_q \cdot [4]_q$, *with the q-integer indices forced by the
 proved* $\alpha_{\text{shift}} = k \cdot (p - 1)$ *formula
-(`prop:alpha-shift-torus-knot`). The "fitted / derived-candidate"
-status of the GMOR fusion (203 ppm; extended to $\eta/\varphi$)
-is hereby converted to* **derived modulo the substrate q-character
-evaluation** *— the same smaller-scope open math shared with the
-α_EM closure (#1444) and the p-n averaging weight (the merged #1445).*
+(`prop:alpha-shift-torus-knot`).*
 
 ## The meson force-carrier pair $\{T(2, 3), T(2, 4)\}$
 
@@ -34,7 +30,7 @@ meson analogue of:
 ## Lean structure
 
 The uniqueness is staged via the [§3b-cond conditional-class
-pattern](../../../CLAUDE.md):
+pattern](../../../AGENTS.md):
 
 - `MesonGMORFactorization R mK2_over_mpi2 qChar m n` — substrate
   axiom that $m_K^2 / m_\pi^2 (q) = [m]_q \cdot [n]_q$ at the

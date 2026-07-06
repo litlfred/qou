@@ -3,7 +3,7 @@
 *Last updated: 2026-05-29 after paper-wide Tier-1 sweep.*
 
 Tracks the disposition of the largest logical-defect cluster surfaced
-by [`forward_ref_classifier.py`](../folio-assistant/computations/forward_ref_classifier.py)
+by [`forward_ref_classifier.py`](../computations/forward_ref_classifier.py)
 (see [`forward-ref-logical-analysis.md`](forward-ref-logical-analysis.md)).
 
 ## Triage result (read-only inspection)

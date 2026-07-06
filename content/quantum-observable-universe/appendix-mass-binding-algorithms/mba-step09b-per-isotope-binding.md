@@ -69,7 +69,7 @@ B = p.value   # MeV
 *Binding-energy is selected by the `observable` keyword on the
 unified `predict()` entry point; there is no separate
 `binding_energy(...)` function. The mass-table sweep is the
-script [`canonical_mass_table_extended.py`](../../../folio-assistant/computations/canonical_mass_table_extended.py).
+script [`canonical_mass_table_extended.py`](../../../computations/canonical_mass_table_extended.py).
 Its `--method auto` routes per-atom over the mixed nucleon+composite
 set: free nucleons ($A < 2$) use the direct $H_3$ Hoefsmit path
 `laurent_q_rust` (pyhecke-native Rust + MPFR); composites ($A \geq 2$)
@@ -81,13 +81,23 @@ the color-weighted p-n crossing handled internally). All routes are MPFR
 at the 50-dps floor; `auto` is the only setting that spans a table mixing
 free nucleons and composites in one run.*
 
+*The **graded-ρ_K atomic-mass route** ([`prop:rho-k-graded-expansion`](../mass-endomorphism/rho-k-graded-expansion.md))
+is realised by [`rho_k_graded_atomic_mass.py`](../../../computations/rho_k_graded_atomic_mass.py)
+(witness `rho-k-graded-atomic-mass.witness.json`): LO constituents from the
+canonical `canonical_mass` facade + the proved single-gen correction
+$\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$ ($0.19\%$ mean, $Z = 1..10$);
+the pair-gen tier is reported as the open residual only, never wired.*
+
 ### Witness contract
 
-*Canonical witness:
-[`canonical-mass-table-242ppb.witness.json`](../../../folio-assistant/computations/canonical-mass-table-242ppb.witness.json).
-Records per-isotope predicted $B(K)$, AME experimental anchor,
-the $\Delta_\lambda$ choice used, and a clear flag when
-$\Delta_\lambda$ is the open gate.*
+*Provisional witness:
+[`canonical-mass-table-242ppb.witness.json`](../../../computations/canonical-mass-table-242ppb.witness.json).
+Records per-isotope predicted $B(K)$, the AME experimental anchor,
+and an explicit `"open_gate": "delta_lambda"` flag marking
+$\Delta_\lambda$ as the open Track-A gate. It is a hand-authored
+summary (`auditOnly`, no producer run): the $B(K)$ values are not a
+derived $\Delta_\lambda$ result and await a producer-backed
+regeneration once the $\Delta_\lambda$ closure lands.*
 
 ### Notes
 
@@ -100,23 +110,24 @@ observables. See [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](../..
 averaged crossing is **color-weighted**, $\sigma - h\,(1/2 - \delta/4)\cdot\mathbf{1}$
 with $\delta = $ `flavor_split_subleading`$(q_0)$ (the substrate
 $(m_n - m_p)/M_N$ flavor split), set in
-[`mass_at_3A_proper.atom_braid_word_3A`](../../../folio-assistant/computations/mass_at_3A_proper.py)
+[`mass_at_3A_proper.atom_braid_word_3A`](../../../computations/mass_at_3A_proper.py)
 (`pn_convention="bring_color_weighted"`). The p-p ($\sigma$) and
 n-n ($\sigma^{-1}$) interfaces are isospin-distinct and carry no
 extra color weight. The color shift is at the $\Delta m_{pn}$ scale
 ($\delta/4 \approx 3.4\times10^{-4}$) — not the dominant binding
-residual, which is the inter-nucleon multiplicity (the $C(A,2)$
-bond count) plus per-bond growth. See
+residual, which is the inter-nucleon multiplicity (the linear-chain
+$A-1$ consecutive-bond count, [`prop:linear-chain-bond-count`](../mass-theory/linear-chain-bond-count.md))
+plus per-bond growth. See
 [`docs/audits/2026-06-03-color-averaging-wiring-audit.md`](../../../docs/audits/2026-06-03-color-averaging-wiring-audit.md)
 and [`docs/audits/2026-06-03-nuclear-a3-dpn-plan.md`](../../../docs/audits/2026-06-03-nuclear-a3-dpn-plan.md).*
 
 *Production wiring (atom-trace compute): the canonical color-weighted
 $\mathrm{tr}_M(\beta_{\text{atom}})$ feeding step 2b is assembled by
-[`tr_m_atom_via_transfer.tr_m_atom_zn`](../../../folio-assistant/computations/tr_m_atom_via_transfer.py),
+[`tr_m_atom_via_transfer.tr_m_atom_zn`](../../../computations/tr_m_atom_via_transfer.py),
 through which the binding consumers
-[`binding_canonical`](../../../folio-assistant/computations/binding_canonical.py)
+[`binding_canonical`](../../../computations/binding_canonical.py)
 (default path) and
-[`canonical_tr_m_via_branching`](../../../folio-assistant/computations/canonical_tr_m_via_branching.py)
+[`canonical_tr_m_via_branching`](../../../computations/canonical_tr_m_via_branching.py)
 ($A \geq 3$) now route — replacing the symbolic `tr_M_element` and
 the native `chi_lambda_all_partitions_mpfr` per-partition paths.
 Lossless (all $p(3A)$ partitions kept; the active-set truncation is a
@@ -124,3 +135,74 @@ $\sim10^{-3}$ error rejected for 1-ppQ per
 [`docs/audits/2026-06-10-binding-active-set-compute-optimization.md`](../../../docs/audits/2026-06-10-binding-active-set-compute-optimization.md)),
 validated $\mathrm{tr}_M$-transfer $\equiv$ full Hoefsmit
 (`char_fast`) to $4.7\times10^{-15}$.*
+
+*Extensive (log-free-energy) functional — the on-scale sibling.* The
+$\Delta_\lambda$ sum above is the (gated) Path-D binding. A complementary
+**extensive** functional on the *same* canonical $\mathrm{tr}_M$ is the
+q-heat-flow free energy
+$B(K) = E_0\,\log\!\big(|\mathrm{tr}_M(\beta_{\mathrm{free}})| /
+|\mathrm{tr}_M(\beta_{\mathrm{atom}})|\big)$, with
+$E_0 = m_e/(q_0(q_0-1)) \approx 4.186$ MeV (closed substrate form, **no fit**),
+computed by
+[`binding_log_free_energy.py`](../../../computations/binding_log_free_energy.py)
+$\to$ [`binding-log-free-energy.witness.json`](../../../computations/binding-log-free-energy.witness.json).
+It is **on-scale** ($0.57$–$2.36\times$ AME over D/T/³He/⁴He), wired onto the
+canonical lossless trace rather than the per-bond $f_{\mathrm{bond}}$ product
+of the exploratory probe. By contrast the canonical *linear* trace difference
+$Q_\beta(\mathrm{tr}_{\mathrm{free}}-\mathrm{tr}_{\mathrm{atom}})$ is
+**intensive** and saturates ($\sim0.78$ MeV, $4.8$–$39.7\times$ miss). This is
+**not** a closure: the chain-topology residual (edge-set / fractional
+occupancy, see
+[`docs/audits/2026-06-10-binding-bond-graph-compute-audit-and-derivation.md`](../../../docs/audits/2026-06-10-binding-bond-graph-compute-audit-and-derivation.md)
+§6) is the open piece. It is the on-scale sibling skipped by the 2026-06-16/17
+binding-closure docs.*
+
+*Body-order generating function — the depth-2 selection-rule kernel.* The
+body-order binding series $B(K)=\sum_n B_n$ has generating function
+$G(x;q)=\sum_n B_n x^n$ satisfying the fibre q-difference equation
+$G(qx)=R(q,x)\,G(x)$ with $R(q,x)=x^2-\tau x+1$ — depth 2 (S₅/A₅ Schur) and
+$\det=1$ (symplectic, `prop:sl2-prolongation-recurrence`, sorry-free). Its
+SW-period anchors are the SAME selection-rule values
+$a_D^{(n)}=\mathrm{lw}(n-1)$ that supply the
+[`mba-step09a`](mba-step09a-mass-identity.md) mass linking weight:
+$a_D^{(2)}{=}1$, $a_D^{(3)}{=}(q{+}1)^2/(3q)$, $a_D^{(4)}{=}$Family-A, giving
+$\tau(q_0)=2.6424$
+([`binding_selection_rule_tau_closure.py`](../../../computations/binding_selection_rule_tau_closure.py)).
+The **algebraic** half — that these wired anchors force the closed form
+$\tau=3(3q^4+8q^2+3)/(4q(q+1)^2)$ and $\tau>2$ for all $q>0$, hence the depth-2
+kernel is **extensive** ($\lambda_+>1$ via the spectral bridge
+`QOU.Mass.lambdaPlus_gt_one`) — is now sorry-free in Lean
+(`QOU.Mass.BindingTauAnchorClosure`: `tauAnchor_closed_form`, `tauAnchor_gt_two`,
+`binding_extensive_at_substrate`; lean-direct exit 0).
+**Residual (open):** the geometric↔algebraic identification
+$a_D^{(n)}=\mathrm{lw}(n-1)$ — that the SW prolonged period *equals* the
+selection-rule value (#1765) — is not closed.*
+
+*Body-order multiplicity — the linear-chain bond count (derived, Lean).* The
+per-body-order weight of the jet-filtration residue,
+$w_n(K)=M_n(A)\cdot\mathrm{Vol}_n(K)$, has its multiplicity **derived** as the
+inter-nucleon bond count $M_n=n-1$: the canonical atomic braid is a **linear
+chain** of $A$ nucleon blocks (joined at generators $3k-1$,
+[`mba-step08`](mba-step08-jet-prefix.md) / the atomic-braid recipe), so the
+consecutive $n$-clusters number $A-n+1$ and each carries $n-1$ bonds. The
+aggregate cluster measure is $\sum_{n=2}^{A}(A-n+1)(n-1)=\binom{A+1}{3}$, proved
+sorry-free in Lean ([`prop:linear-chain-bond-count`](../mass-theory/linear-chain-bond-count.md),
+`QOU.Mass.linear_chain_cluster_measure`). With the isospin-carrying hyperbolic
+sub-link volumes this reproduces the **tritium (p-n-n)** binding to within $0.16\%$
+with **no fitted constant** ([`theta_mn_bondcount_linearchain.py`](../../../computations/theta_mn_bondcount_linearchain.py));
+³He to $-3\%$; the deuteron 2-body bond is the Hopf link ($\mathrm{Vol}=0$) — a
+structural exception. This is a $\sim3\%$ *structural* result, not a ppQ closure.
+
+> **Convention resolved — linear chain, not all-pairs.** An earlier phrasing
+> attributed the binding multiplicity to the all-pairs $\binom{A}{2}$ bond count.
+> The atomic-braid recipe settles it: the *inter-nucleon crossing rule* places a
+> single interface crossing at generator $3k-1$ for $k=1..A-1$, so the bonds sit at
+> $\{2,5,8,\ldots\}$ — $A-1$ **consecutive** bonds (deuteron $1$; $^4$He $3$ at gens
+> $2,5,8$, **not** $\binom{4}{2}=6$; verified
+> [`theta_mn_linearchain_vs_allpairs.py`](../../../computations/theta_mn_linearchain_vs_allpairs.py)).
+> The structure is the path graph $P_A$, **not** the complete graph $K_A$; the
+> multiplicity is the linear-chain $A-1$ with the $\binom{A+1}{3}$ body-order
+> aggregate ([`prop:linear-chain-bond-count`](../mass-theory/linear-chain-bond-count.md),
+> Lean-proved), which reproduces $^3$H (p-n-n) to within $0.16\%$ with no fit. A
+> distinct all-pairs mean-field model, if wanted, would need its own derivation —
+> the canonical braid does not realise one.

@@ -1,7 +1,7 @@
 # Q_β heat-route — symbolic f-map exploration + literature situating
 
 **Date:** 2026-06-13
-**Probe:** [`folio-assistant/computations/qbeta/qbeta_heat_fmap_symbolic_explore.py`](../../folio-assistant/computations/qbeta/qbeta_heat_fmap_symbolic_explore.py)
+**Probe:** [`computations/qbeta/qbeta_heat_fmap_symbolic_explore.py`](../../computations/qbeta/qbeta_heat_fmap_symbolic_explore.py)
 **Follows:** [the a_1-gate probe](2026-06-13-qbeta-heat-kernel-a1-gate-probe.md) (heat-route bar-odd a_1; ε-order ε³).
 **Discipline:** STRUCTURAL only — no `c_3` value claimed or wired; flip-flop guard
 respected (`c_3` stays near-match per [`ck-dk-canonical-registry.md`](../coordination/ck-dk-canonical-registry.md)).

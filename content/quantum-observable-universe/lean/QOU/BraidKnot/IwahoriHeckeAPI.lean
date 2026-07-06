@@ -2,7 +2,6 @@ import Mathlib.Data.Nat.Dist
 import Mathlib.Algebra.Star.Basic
 import Mathlib.Algebra.Module.Basic
 import Mathlib.GroupTheory.GroupAction.Basic
-import Mathlib.RingTheory.Idempotents
 
 /-!
 # Iwahori--Hecke algebra API (scaffolding for QOU's graded-Mikusiński framework)
@@ -69,38 +68,49 @@ namespace IwahoriHeckeAlgebra
 
 variable {n : ℕ} {R : Type*} [CommRing R] {q : R} {h_unit : IsUnit q}
 
+/-- `H.carrier` is nonempty: it carries a `Ring` (the `ring` field), hence
+    has `0`.  Registered so `opaque`/placeholder constants valued in
+    `H.carrier` (`jucysMurphy`, `centralIdempotent`) elaborate (an `opaque`
+    constant of type `T` requires `Nonempty T`). -/
+instance instNonemptyCarrier (H : IwahoriHeckeAlgebra n R q h_unit) :
+    Nonempty H.carrier :=
+  letI : Ring H.carrier := H.ring
+  ⟨0⟩
+
 /-! ## Hecke relations (axioms)
 
 Note: These relation classes assume an `Algebra R H.carrier`
-instance providing the scalar action `R → H.carrier`, plus a
-`Field R` constraint so `q⁻¹` is well-defined. The instance is
-declared as a separate field on the structure.
+instance providing the scalar action `R → H.carrier`. The inverse
+`q⁻¹` is taken via the substrate unit witness `h_unit : IsUnit q`
+— i.e. `↑(h_unit.unit)⁻¹ : R` — so the whole API stays over a generic
+`[CommRing R]` (per AGENTS.md §7c base-ring convention); no `[Field R]`
+specialisation is needed, which also removes the `CommRing`/`Field`
+instance diamond on `R`.
 
 Per Copilot PR #634 review: the previous formulation used
 `Ring.inverse q` (incorrect — that's the standard `Ring` partial
 inverse, not the Hecke-algebra-natural inverse via `IsUnit`) and
 `(q : R) • (1 : H.carrier)` without an `SMul R H.carrier` instance.
-This rewrite restricts to `[Field R]` so `q⁻¹` is `R`'s field
-inverse and the scalar action comes from any algebra-style
-embedding `R → H.carrier`. -/
+This rewrite uses the `IsUnit`-natural inverse and an algebra-style
+embedding `R → H.carrier` for the scalar action. -/
 
 /-- Algebra hom from `R` to the Hecke-algebra carrier — provides
     the scalar embedding required to write `(q : R) ↪ H.carrier`. -/
-class HeckeRingHom {R : Type*} [Field R] {q : R} {h_unit : IsUnit q}
-    (H : IwahoriHeckeAlgebra n R q h_unit) where
+class HeckeRingHom (H : IwahoriHeckeAlgebra n R q h_unit) where
   scalarOf : R → H.carrier
   scalarOf_one :
     letI : Ring H.carrier := H.ring
     scalarOf 1 = (1 : H.carrier)
 
-/-- The quadratic Hecke relation: `(σ_i - q)(σ_i + q⁻¹) = 0`. -/
-class HeckeQuadratic [Field R]
+/-- The quadratic Hecke relation: `(σ_i - q)(σ_i + q⁻¹) = 0`, with `q⁻¹`
+    the `IsUnit`-natural inverse `↑(h_unit.unit)⁻¹`. -/
+class HeckeQuadratic
     (H : IwahoriHeckeAlgebra n R q h_unit) [HeckeRingHom H] : Prop where
   quadratic :
     ∀ i : Fin (n - 1),
       letI : Ring H.carrier := H.ring
       (H.sigma i - HeckeRingHom.scalarOf (R := R) q) *
-        (H.sigma i + HeckeRingHom.scalarOf (R := R) (q⁻¹ : R)) = 0
+        (H.sigma i + HeckeRingHom.scalarOf (R := R) (((h_unit.unit)⁻¹ : Rˣ) : R)) = 0
 
 /-- The braid relation: `σ_i σ_{i+1} σ_i = σ_{i+1} σ_i σ_{i+1}`. -/
 class HeckeBraid (H : IwahoriHeckeAlgebra n R q h_unit) : Prop where
@@ -144,15 +154,71 @@ class MarkovTraceCyclic (H : IwahoriHeckeAlgebra n R q h_unit) : Prop where
       letI : Ring H.carrier := H.ring
       H.markov_trace (a * b) = H.markov_trace (b * a)
 
-/-- Markov trace stabilisation: `tr_{M, n+1}(a · σ_n) = z · tr_{M, n}(a)`
-    for the Markov parameter `z = 1 / (q^{1/2} + q^{-1/2})`.
-    Stated here in skeleton form. -/
+/-- **Tower inclusion** `H_n ↪ H_{n+1}`: the unital ring hom that sends each
+    braid generator `σ_i` of `H_n` to the same-indexed generator of `H_{n+1}`,
+    realising `H_n` as the subalgebra of `H_{n+1}` on the first `n-1` strands.
+    The Markov stabilisation move is stated against this map. -/
+class HeckeInclusion
+    (H : IwahoriHeckeAlgebra n R q h_unit)
+    (H_succ : IwahoriHeckeAlgebra (n + 1) R q h_unit) where
+  /-- The underlying inclusion of carriers. -/
+  incl : H.carrier → H_succ.carrier
+  /-- The inclusion is unital. -/
+  map_one :
+    letI : Ring H.carrier := H.ring
+    letI : Ring H_succ.carrier := H_succ.ring
+    incl 1 = 1
+  /-- The inclusion is multiplicative (a ring hom). -/
+  map_mul :
+    letI : Ring H.carrier := H.ring
+    letI : Ring H_succ.carrier := H_succ.ring
+    ∀ a b, incl (a * b) = incl a * incl b
+  /-- The inclusion preserves generators: `σ_i ↦ σ_i`. -/
+  map_sigma :
+    ∀ i : Fin (n - 1), incl (H.sigma i) = H_succ.sigma ⟨i.val, by omega⟩
+
+/-- Markov trace stabilisation: with the tower inclusion `incl : H_n ↪ H_{n+1}`
+    (`HeckeInclusion`) and the new top generator `σ_n` of `H_{n+1}` (index `n-1`
+    of its `Fin n` generators), the Markov trace satisfies
+
+    `tr_{M, n+1}(incl a · σ_n) = z · tr_{M, n}(a)`
+
+    for the Markov parameter `z : R` (concretely `z = 1 / (q^{1/2} + q^{-1/2})`,
+    carried here as an abstract `R`-parameter since `q^{1/2}` need not lie in a
+    generic `R`).  Together with `MarkovTraceCyclic` this is the defining pair of
+    Markov moves characterising `tr_M` (Jones 1987 §3).  `hn : 0 < n` makes the
+    `σ_n` index `⟨n-1, _⟩ : Fin n` well-formed (stabilisation adds `σ_n` to
+    `H_n`, which requires `n ≥ 1`). -/
 class MarkovTraceStabilisation
     (H : IwahoriHeckeAlgebra n R q h_unit)
-    (H_succ : IwahoriHeckeAlgebra (n + 1) R q h_unit) : Prop where
-  stabilisation : True
+    (H_succ : IwahoriHeckeAlgebra (n + 1) R q h_unit)
+    [HeckeInclusion H H_succ] (z : R) (hn : 0 < n) : Prop where
+  stabilisation :
+    ∀ a : H.carrier,
+      letI : Ring H_succ.carrier := H_succ.ring
+      H_succ.markov_trace (HeckeInclusion.incl a * H_succ.sigma ⟨n - 1, by omega⟩)
+        = z * H.markov_trace a
   -- Ref: [jones1987] Jones, Hecke algebra representations of braid groups
   -- and link polynomials — §3 uniqueness of Markov trace on H_∞(q).
+
+/-- **Consumer (the two Markov moves compose).**  Cyclicity of `tr_{M, n+1}`
+    lets the stabilisation move be read in either order: the Markov trace of the
+    new generator times an included element equals `z · tr_{M, n}` regardless of
+    side.  A genuine derivation from the two axioms — `MarkovTraceStabilisation`
+    is not decorative. -/
+theorem markovTrace_stab_comm
+    {H : IwahoriHeckeAlgebra n R q h_unit}
+    {H_succ : IwahoriHeckeAlgebra (n + 1) R q h_unit}
+    [HeckeInclusion H H_succ] {z : R} {hn : 0 < n}
+    [MarkovTraceCyclic H_succ]
+    [MarkovTraceStabilisation H H_succ z hn]
+    (a : H.carrier) :
+    letI : Ring H_succ.carrier := H_succ.ring
+    H_succ.markov_trace (H_succ.sigma ⟨n - 1, by omega⟩ * HeckeInclusion.incl a)
+      = z * H.markov_trace a := by
+  letI : Ring H_succ.carrier := H_succ.ring
+  rw [MarkovTraceCyclic.cyclic (H_succ.sigma ⟨n - 1, by omega⟩) (HeckeInclusion.incl a)]
+  exact MarkovTraceStabilisation.stabilisation a
 
 /-! ## Wedderburn decomposition (axiomatic, generic q) -/
 
@@ -162,37 +228,50 @@ class MarkovTraceStabilisation
 def IsGeneric (n : ℕ) (q : R) : Prop :=
   ∀ k : ℕ, 2 ≤ k → k ≤ n → q ^ (2 * k) ≠ 1
 
-/-- **Theorem (Wedderburn at generic q).** When `q` is generic,
-    `H_n(q)` is finite-dimensional semisimple over its base field
-    `R`, decomposing as a direct sum of matrix algebras indexed by
-    partitions `λ ⊢ n`.
+/-- **Wedderburn decomposition at generic q** (named conditional conjecture,
+    §3b).  When `q` is generic, `H_n(q)` is finite-dimensional semisimple over
+    `R` and decomposes as a direct sum of matrix algebras indexed by the
+    partitions `λ ⊢ n` (here ranged over by the supplied list `parts`).
 
-    Stated axiomatically; cites `prop:wedderburn-weight-canonical`
-    and `prop:hoefsmit-seminormal-form` from the manuscript. -/
-theorem wedderburn_decomposition_generic
+    Honest disposition: the decomposition is *named* as a `Prop` over the
+    opaque carrier — it asserts the existence of a complete family of pairwise
+    orthogonal central idempotents `{e_λ}` that sum to `1` (the Wedderburn unit
+    resolution).  This is the structural content of semisimplicity; the proof
+    needs Mathlib's matrix-algebra / seminormal-form infrastructure and is the
+    open part (`prop:wedderburn-weight-canonical`, `prop:hoefsmit-seminormal-form`).
+    Replaces the previous `: True := trivial` (vacuous) projection. -/
+-- Ref: [kassel1995] §V.5 — Iwahori–Hecke algebra structure theorem at generic q.
+-- Ref: [manuscript] §prop:wedderburn-weight-canonical
+-- Ref: [manuscript] §prop:hoefsmit-seminormal-form
+def wedderburn_decomposition_generic
     (H : IwahoriHeckeAlgebra n R q h_unit)
-    [Field R] (h_gen : IsGeneric n q) :
-    True := by
-  -- Ref: [kassel1995] §V.5 — Iwahori–Hecke algebra structure
-  -- theorem at generic q; semisimplicity criterion via [k]_q.
-  -- Ref: [manuscript] §prop:wedderburn-weight-canonical.
-  -- Ref: [manuscript] §prop:hoefsmit-seminormal-form
-  -- (Hoefsmit's seminormal-form Wedderburn realisation).
-  trivial
+    (_h_gen : IsGeneric n q) (parts : List (List ℕ)) : Prop :=
+  letI : Ring H.carrier := H.ring
+  ∃ e : List ℕ → H.carrier,
+    -- each block is idempotent
+    (∀ lam ∈ parts, e lam * e lam = e lam) ∧
+    -- blocks are pairwise orthogonal
+    (∀ lam ∈ parts, ∀ mu ∈ parts, lam ≠ mu → e lam * e mu = 0) ∧
+    -- blocks are central
+    (∀ lam ∈ parts, ∀ x : H.carrier, e lam * x = x * e lam) ∧
+    -- the idempotents resolve the unit (complete decomposition)
+    (parts.map e).sum = 1
 
 /-! ## Central primitive idempotents and JM elements -/
 
 /-- The **Jucys–Murphy element** `J_k` of `H_n(q)`. Definition uses
     the formula `J_k = q^{1-k} Σ_{i < k} σ_{i, k}` from
     `prop:jucys-murphy-central-elements-qou`. Placeholder. -/
-opaque jucysMurphy
-    (H : IwahoriHeckeAlgebra n R q h_unit) (k : Fin n) : H.carrier
+noncomputable def jucysMurphy
+    (H : IwahoriHeckeAlgebra n R q h_unit) (_k : Fin n) : H.carrier :=
+  Classical.ofNonempty
 
 /-- The **central primitive idempotent** `e_λ` for partition
     `λ ⊢ n`. Constructed via Lagrange interpolation in JM elements
     per `prop:explicit-central-idempotent`. Placeholder. -/
-opaque centralIdempotent
-    (H : IwahoriHeckeAlgebra n R q h_unit) (lam : List ℕ) : H.carrier
+noncomputable def centralIdempotent
+    (H : IwahoriHeckeAlgebra n R q h_unit) (_lam : List ℕ) : H.carrier :=
+  Classical.ofNonempty
 
 /-- **External axiom (Murphy 1981; Dipper–James 1986):**
 
@@ -266,6 +345,7 @@ axiom bar_centralIdempotent_transpose_axiom :
     ∀ {n : ℕ} {R : Type*} [CommRing R] {q : R} {h_unit : IsUnit q}
       (H : IwahoriHeckeAlgebra n R q h_unit) [HeckeBar H]
       (lam : List ℕ),
+        letI : Ring H.carrier := H.ring
         letI : StarRing H.carrier := H.star_ring
         star (centralIdempotent H lam) =
           centralIdempotent H (partitionTranspose lam)
@@ -275,6 +355,7 @@ axiom bar_centralIdempotent_transpose_axiom :
 theorem bar_central_idempotent_transpose
     (H : IwahoriHeckeAlgebra n R q h_unit) [HeckeBar H]
     (lam : List ℕ) :
+    letI : Ring H.carrier := H.ring
     letI : StarRing H.carrier := H.star_ring
     star (centralIdempotent H lam) =
       centralIdempotent H (partitionTranspose lam) :=
@@ -290,21 +371,19 @@ theorem bar_central_idempotent_transpose
 
     Co-located with the Volume Conjecture asymptotic regime
     (`rem:vc-as-depth-2-instance`). -/
-def failureLocus (n : ℕ) (R : Type*) [Field R] : Set R :=
+def failureLocus (n : ℕ) (R : Type*) [CommRing R] : Set R :=
   { q : R | ∃ k : ℕ, 2 ≤ k ∧ k ≤ n ∧ q ^ (2 * k) = 1 }
 
 /-- A `q` outside the failure locus is generic. -/
 theorem not_in_failure_locus_iff_generic
-    [Field R] (q : R) :
+    (q : R) :
     q ∉ failureLocus n R ↔ IsGeneric n q := by
-  -- Direct definitional unfolding plus rearrangement.
+  -- Direct definitional unfolding: both sides reduce to the same
+  -- `∀ k, 2 ≤ k → k ≤ n → q ^ (2 * k) ≠ 1` after pushing negation
+  -- through the set-membership existential (HPow over the single
+  -- `[CommRing R]` instance — no Field/CommRing diamond).
   unfold failureLocus IsGeneric
   simp only [Set.mem_setOf_eq, not_exists, not_and]
-  constructor
-  · intro h k hk_2 hk_n hq
-    exact h k hk_2 hk_n hq
-  · intro h k hk_2 hk_n hq
-    exact h k hk_2 hk_n hq
 
 /-! ## Summary: API surface ready for downstream blocks -/
 

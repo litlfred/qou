@@ -11,6 +11,6 @@ $$
 
 The MISDP is solved by continuous SDP relaxation plus
 branch-and-cut (see
-`folio-assistant/computations/misdp_cross_channel.py`),
+`computations/misdp_cross_channel.py`),
 matching the confinement framework at every level of the
 hierarchy.

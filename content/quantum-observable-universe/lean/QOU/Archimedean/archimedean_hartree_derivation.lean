@@ -1,21 +1,29 @@
-/-!
-# QOU.Archimedean.archimedean_hartree_derivation — placeholder stub
+import Mathlib.Data.Real.Basic
 
-**Placeholder canonical** for content block
+/-!
+# QOU.Archimedean.archimedean_hartree_derivation
+
+Canonical Lean declaration for content block
 [`prop:archimedean-hartree-derivation`](../../../quantum-observable-universe/archimedean-universe/archimedean-hartree-derivation.md): *QOU.Archimedean.archimedean_hartree_derivation*.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.Archimedean.archimedean_hartree_derivation` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
+The manuscript identity is the archimedean factorisation of the
+realisation functor on molecular-binding `Φ₁` outputs.  This identity is
+genuinely **abstract over the opaque realisation functor `ρ_∞`** (no
+faithful Mathlib structure for `ρ_∞` exists), so per the vacuity-fix
+playbook pattern C it is **named** as a `def … : Prop` over the categorical
+context — honestly recording the conditional conjecture rather than faking
+a proof by projecting a context field.  The context class carries the
+genuine *inputs* (the substrate parameter, the CODATA constants and the
+categorical `Φ₁` data); a Lean *instance* would be the conjecture (none =
+honest open state).
 -/
 
 namespace QOU.Archimedean
 
 
-/-- Abstract context for the `archimedean_hartree_derivation` claim —
-    manuscript-themed typed fields below; the boxed manuscript identity
-    is encoded as `claim_archimedean_factorisation`. -/
+/-- Abstract context (inputs) for the `archimedean_hartree_derivation`
+    claim — the substrate parameter, the CODATA constants, and the
+    categorical `Φ₁` data.  No field asserts the conclusion. -/
 class ArchimedeanHartreeDerivationContext where
   /-- Substrate parameter `q : ℝ`. -/
   q : ℝ
@@ -28,13 +36,7 @@ class ArchimedeanHartreeDerivationContext where
   /-- The molecular-binding categorical input `Φ_1(M) : ℝ`. -/
   Phi_M : ℝ
   /-- The archimedean realisation of `Φ_1(M)`. -/
-  ρ_∞_Phi_M : ℝ
-  /-- Manuscript boxed identity:
-      `ρ_∞(Φ_1(M)) = Φ_1(M) · m_e · c² · α_EM² · (q + q⁻¹)⁻²` —
-      the Hartree-energy prefactor times the molecular `(q + q⁻¹)⁻²`
-      factor. -/
-  claim_archimedean_factorisation :
-    ρ_∞_Phi_M = Phi_M * m_e * c ^ 2 * α_EM ^ 2 * (q + q⁻¹) ^ (-(2 : ℤ))
+  rho_inf_Phi_M : ℝ
 
 /-- **Proposition statement** (from manuscript):
 
@@ -62,15 +64,15 @@ the Hartree energy.*
 >
 > This proposition
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    The proposition is **named** below as a `def … : Prop` (pattern C):
+    the realisation functor `ρ_∞` is opaque, so the identity is recorded
+    as the conditional conjecture over the categorical context rather than
+    discharged by a fake projection. -/
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/archimedean-hartree-derivation.ts
-theorem archimedean_hartree_derivation [ctx : ArchimedeanHartreeDerivationContext] :
-    ctx.ρ_∞_Phi_M
-      = ctx.Phi_M * ctx.m_e * ctx.c ^ 2 * ctx.α_EM ^ 2
-        * (ctx.q + ctx.q⁻¹) ^ (-(2 : ℤ)) :=
-  ctx.claim_archimedean_factorisation
+def archimedean_hartree_derivation (ctx : ArchimedeanHartreeDerivationContext) :
+    Prop :=
+  ctx.rho_inf_Phi_M
+    = ctx.Phi_M * ctx.m_e * ctx.c ^ 2 * ctx.α_EM ^ 2
+      * (ctx.q + ctx.q⁻¹) ^ (-(2 : ℤ))
 
 end QOU.Archimedean

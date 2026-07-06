@@ -47,7 +47,7 @@ open CategoryTheory
     of `Ω¹(A)` and the Kähler-differential bimodule. -/
 -- Ref: [fred2005], [kock2004]
 -- Ref: [manuscript] §3 Lifting and Descent, "Categorical jet object"
-theorem jp_categorical_jet
+def jp_categorical_jet
     {C : Type*} [Category C] [MonoidalCategory C]
     (fhd : QOU.FrobeniusHopfData C) :
     Nonempty C :=

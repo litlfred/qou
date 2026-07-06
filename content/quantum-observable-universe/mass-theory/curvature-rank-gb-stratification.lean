@@ -2,6 +2,7 @@ import Mathlib.RingTheory.Ideal.Basic
 import Mathlib.RingTheory.Ideal.Operations
 import Mathlib.Algebra.Algebra.Basic
 import Mathlib.Order.SuccPred.Basic
+import Mathlib.Data.ENat.Lattice
 
 
 /-!
@@ -59,24 +60,23 @@ theorem mem_J_zero (Φ : FilteredAlgebra R A) (T : A) : T ∈ Φ.J 0 := by
     `m ≤ k` then `T ∈ J m`. -/
 theorem mem_J_of_le (Φ : FilteredAlgebra R A) (T : A)
     {m k : ℕ} (hmk : m ≤ k) (hT : T ∈ Φ.J k) : T ∈ Φ.J m := by
-  induction hmk with
-  | refl => exact hT
-  | step hle ih =>
-    -- We now have m ≤ n and T ∈ J (n+1); decreasing gives T ∈ J n.
-    rename_i n
-    exact (Φ.J_decreasing n) (ih (Φ.J_decreasing n hT))
+  induction k, hmk using Nat.le_induction with
+  | base => exact hT
+  | succ n _hmn ih =>
+    -- T ∈ J (n+1); `J_decreasing` gives T ∈ J n, then the IH descends to J m.
+    exact ih (Φ.J_decreasing n hT)
 
 /-- The CURVATURE-RANK of `T` is the largest `n` such that `T ∈ J n`,
     extended to `ℕ∞` (∞ when T = 0, since 0 lives in every ideal). -/
 noncomputable def curvatureRank (Φ : FilteredAlgebra R A) (T : A) : ℕ∞ :=
-  sSup {n : ℕ | T ∈ Φ.J n}
+  sSup ((↑) '' {n : ℕ | T ∈ Φ.J n})
 
 /-- The curvature-rank of any element is at least 0 (since
     every element belongs to `J 0 = ⊤`). -/
 theorem curvatureRank_nonneg (Φ : FilteredAlgebra R A) (T : A) :
     (0 : ℕ∞) ≤ curvatureRank Φ T := by
-  unfold curvatureRank
-  exact le_sSup (mem_J_zero Φ T)
+  -- `0 = ⊥` in `ℕ∞`, so this is immediate.
+  exact bot_le
 
 /-- **Sub-additivity of curvature-rank** under the algebra
     multiplication.  This is the structural manifestation of

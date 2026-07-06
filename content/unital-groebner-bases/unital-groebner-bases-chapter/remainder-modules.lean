@@ -1,7 +1,7 @@
 import Mathlib.Order.WellFounded
 import Mathlib.Algebra.Ring.Basic
 import Mathlib.Algebra.Module.Basic
-import Mathlib.LinearAlgebra.Span
+import Mathlib.LinearAlgebra.Span.Basic
 
 
 /-!

@@ -2,14 +2,14 @@
 
 **Date:** 2026-06-09. **Status:** derivation (the ratio); kernel-conditional
 residual. **Compute:**
-[`h2o_angle_q2_symmetric_block.py`](../../folio-assistant/computations/h2o_angle_q2_symmetric_block.py)
+[`h2o_angle_q2_symmetric_block.py`](../../computations/h2o_angle_q2_symmetric_block.py)
 → witness `h2o-angle-q2-symmetric-block`.
 
 ## Context
 
 The trace-weighted VSEPR model gives a leading H–O–H angle of 107.19°
 (observed 104.5°). An inverse probe
-([`h2o_angle_gb_truncation_inverse.py`](../../folio-assistant/computations/h2o_angle_gb_truncation_inverse.py))
+([`h2o_angle_gb_truncation_inverse.py`](../../computations/h2o_angle_gb_truncation_inverse.py))
 found that the lone/bond weight ratio that lands on 104.5° is `r* ≈ 1.244`,
 with `q² = 1.232` a −0.98% **near-match** — which the kernel-robustness scan
 demoted to "Coulomb-conditional" (r* drifts at other repulsion exponents).

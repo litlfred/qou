@@ -13,7 +13,7 @@ This Lean file follows the QOU.Infra.Polylogarithm pattern:
 - Concrete `noncomputable def` for Rogers's α, β substitutions
   and the log² correction term (verified arithmetic).
 - `class` hypothesis for the q ≠ 1 substantive content
-  (per CLAUDE.md §3b-cond).
+  (per AGENTS.md §3b-cond).
 - Default instance discharging the q = 1 substitution algebra.
 
 Ref: [rogers1907] On Function Sum Theorems Connected with Σ x^n/n^2
@@ -22,9 +22,12 @@ Ref: [lewin1981] Polylogarithms and Associated Functions §1.6
 Ref: prop:q-rogers-pentagon-archimedean.md
 -/
 
-import Mathlib.Algebra.Ring.Defs
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Positivity
 
 namespace QOU.BraidKnot
 
@@ -51,7 +54,7 @@ theorem rogersAlpha_beta_symmetry (u v : ℝ) :
     1 - u·v ≠ 0). -/
 theorem rogersAlphaBeta_complement (u v : ℝ) (h : 1 - u * v ≠ 0) :
     (1 - rogersAlpha u v) * (1 - rogersBeta u v) =
-      (1 - u) * (1 - v) / (1 - u * v) := by
+      (1 - u) * (1 - v) / (1 - u * v) ^ 2 := by
   unfold rogersAlpha rogersBeta
   field_simp
   ring
@@ -74,6 +77,34 @@ theorem rogersLogCorrection_symmetric (u v : ℝ) :
   rw [mul_comm u v]
   exact mul_comm _ _
 
+/-! ## Mathlib-backed log structure of the Rogers correction
+
+  **Coverage finding (2026-06-25).** Mathlib has **no** dilogarithm /
+  polylogarithm `Li₂`, so the classical `q = 1` Rogers–Abel FIVE-TERM identity
+  (intrinsically a statement about `Li₂`) cannot yet be a Mathlib filler — it
+  stays class-axiomatised in `QRogersAnalyticContinuation` below.  What IS
+  provable now with Mathlib is the `log²`-correction skeleton of the five-term
+  relation (`Real.log_div`, `Real.log_one`): the additive-log form of the
+  correction term and its degenerate vertex.  These are the real,
+  machine-checked building blocks the eventual `Li₂` five-term proof composes. -/
+
+/-- **Mathlib filler.** The Rogers `log²` correction in additive-log form
+    (`Real.log_div`) — the algebraic skeleton of the five-term identity's
+    correction term; the full identity awaits a Mathlib `Li₂`. -/
+theorem rogersLogCorrection_eq_log_sub (u v : ℝ)
+    (hu : (1 : ℝ) - u ≠ 0) (hv : (1 : ℝ) - v ≠ 0) (huv : (1 : ℝ) - u * v ≠ 0) :
+    rogersLogCorrection u v
+      = (Real.log (1 - u) - Real.log (1 - u * v))
+        * (Real.log (1 - v) - Real.log (1 - u * v)) := by
+  unfold rogersLogCorrection
+  rw [Real.log_div hu huv, Real.log_div hv huv]
+
+/-- The degenerate pentagon vertex: the Rogers correction vanishes at
+    `u = v = 0` (both log arguments are `1`; `Real.log_one`).  Complements
+    `rogersAlphaBeta_at_zero`. -/
+theorem rogersLogCorrection_at_zero : rogersLogCorrection 0 0 = 0 := by
+  simp [rogersLogCorrection]
+
 /-- The q-Rogers analytic-continuation conjecture as a Lean class.
 
     At q = 1, the classical Rogers identity holds (provable via
@@ -82,7 +113,7 @@ theorem rogersLogCorrection_symmetric (u v : ℝ) :
     proposed extension; the conjectural content is encoded in the
     class field.
 
-    Per CLAUDE.md §3b-cond, downstream theorems consume the class
+    Per AGENTS.md §3b-cond, downstream theorems consume the class
     via [Instance]. -/
 class QRogersAnalyticContinuation where
   /-- The (u, v, q) configurations where the q-Rogers identity
@@ -97,14 +128,28 @@ instance : QRogersAnalyticContinuation where
   q_rogers_holds_at _ _ q := q = 1
   q_rogers_holds_classical _ _ := rfl
 
-/-- Empirical record at q_0 ≈ 1.110: the q-log² Rogers correction
-    matches the bare-pentagon residual to within 1-5%, with
-    1.5-5× improvement over classical log².
+/-- Best-match specialisation's pentagon-residual h⁴ coefficient
+    (`half_h_squared`), from the Pachner→h⁴ probe.
+    -- Ref: [manuscript] computations/pentagon-to-borromean-h4-probe.witness.json -/
+noncomputable def borromeanH4BestSpecCoeff : ℝ := 2.488024668336228e-07
 
-    Witness: `pentagon-reduction-li2q.witness.json`. -/
-theorem q_rogers_at_q0_empirical_residual_bound :
-    (4.0e-5 : ℝ) < 1.0e-3 := by
-  norm_num
+/-- **Witnessed negative — the Pachner→h⁴ chain does NOT close via a natural
+    `(u,v)` specialisation** (`computations/pentagon-to-borromean-h4-probe.witness.json`,
+    status `exploratory`).  The post-τ pentagon residual's h⁴ coefficient
+    (`c4_residual`) at every natural Borromean specialisation has
+    `matches_borromean_target_within_1pct = false`; the best match
+    (`half_h_squared`, `borromeanH4BestSpecCoeff ≈ 2.488e-7`) is **positive**
+    while the Borromean Markov-trace target `−3/4` is negative — wrong sign,
+    ~100 % relative miss.  So `conj:pachner-pentagon-borromean` is genuinely
+    un-exhibited (`QOU.BraidsAndKnots.PachnerPentagonBorromean` carries no
+    instance).  Concretely the absolute miss exceeds the 1 % tolerance band:
+    `c4 − (−3/4) > (1/100)·(3/4)`.
+
+    (Replaces a prior `4.0e-5 < 1.0e-3` placeholder that asserted a q-log²
+    "improvement" not present in any committed witness, citing the wrong file.) -/
+theorem borromeanH4BestSpec_misses_target_by_more_than_1pct :
+    borromeanH4BestSpecCoeff + 3 / 4 > 3 / 400 := by
+  unfold borromeanH4BestSpecCoeff; norm_num
 
 /-! ## Pentagon duplication-form identities (u = v case) -/
 
@@ -164,30 +209,12 @@ theorem rogers_correction_leading_h_order [c : RogersCorrectionLeadingOrderH4] :
     the denominator 1 - uv is non-zero).  Stated as a positivity
     bound for the well-definedness of the recursive pentagon. -/
 theorem rogersAlpha_bounded_under_convergence
-    (u v : ℝ) (hu : 0 ≤ u) (hv : 0 ≤ v) (huv_lt : u * v < 1) :
+    (u v : ℝ) (hu : 0 ≤ u) (hu1 : u ≤ 1) (hv : 0 ≤ v) (huv_lt : u * v < 1) :
     rogersAlpha u v ≤ u := by
   unfold rogersAlpha
-  -- α(u, v) = u(1-v)/(1-uv); for 0 ≤ v < 1 and 0 ≤ uv < 1,
-  -- we have (1-v) ≤ 1 and (1-uv) ≤ 1 (when uv ≤ 0 the inequality
-  -- flips, but in the convergence regime 0 ≤ uv < 1 both inputs
-  -- are positive).
-  --
-  -- The fine-grained chain requires positivity in 1-uv; full
-  -- proof tracked as a future structural lemma.  For now record
-  -- the structural shape via classical-limit witnesses elsewhere.
-  by_cases hv1 : v ≥ 1
-  · -- v ≥ 1: numerator (1-v) ≤ 0, so α ≤ 0 ≤ u
-    nlinarith [mul_nonneg hu hv]
-  · push_neg at hv1
-    -- 0 ≤ v < 1; numerator and denominator positive
-    have h_one_minus_v : 1 - v ≥ 0 := by linarith
-    have h_one_minus_uv : 1 - u * v > 0 := by linarith
-    have h_num_pos : u * (1 - v) ≤ u * 1 := by
-      apply mul_le_mul_of_nonneg_left _ hu
-      linarith
-    have h_div : u * (1 - v) / (1 - u * v) ≤ u * (1 - v) := by
-      apply div_le_self (mul_nonneg hu h_one_minus_v)
-      linarith
-    linarith
+  have hden : 0 < 1 - u * v := by linarith
+  rw [div_le_iff₀ hden]
+  -- u·(1−v) ≤ u·(1−u·v)  ⇔  u·v·(1−u) ≥ 0
+  nlinarith [mul_nonneg (mul_nonneg hu hv) (by linarith : (0:ℝ) ≤ 1 - u)]
 
 end QOU.BraidKnot

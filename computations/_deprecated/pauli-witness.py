@@ -10,7 +10,7 @@ All coefficients exact in ℤ[q^½, q^{-½}]. No numerical evaluation
 until the final step.
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 pauli-witness.py
 """
 

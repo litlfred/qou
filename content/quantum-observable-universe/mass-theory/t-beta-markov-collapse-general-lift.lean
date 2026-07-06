@@ -87,7 +87,7 @@ structure NormalizedTrace (R : Type u) [CommSemiring R]
     over `R = ℝ`, this follows from the q-hook-length formula
     `dim_q(λ) > 0` and the Wedderburn decomposition.
 
-    Class hypothesis per CLAUDE.md §3b-cond: the substantive analytic
+    Class hypothesis per AGENTS.md §3b-cond: the substantive analytic
     content is axiomatised here so the downstream min-norm theorem is
     sorry-free **conditional on the class instance**. -/
 class PSDTrace (R : Type u) [Field R] [LinearOrder R] [IsStrictOrderedRing R]

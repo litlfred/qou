@@ -1,4 +1,5 @@
 import QOU.Basic
+import Mathlib.Algebra.Polynomial.Laurent
 
 
 /-!
@@ -18,6 +19,34 @@ LaTeX: `\label{prop:q-logarithm-unique}`
 namespace QOU
 
 noncomputable section
+
+abbrev R_q := LaurentPolynomial ℤ
+
+/-- **q-Logarithm data**: an abstract primitive element of the
+    q-shuffle Hopf algebra, characterised by primitivity
+    `Δ_q(log_q) = log_q ⊗ 1 + 1 ⊗ log_q` and vanishing counit
+    `ε(log_q) = 0`.
+
+    Inlined here so this proposition's sibling compiles standalone
+    (the uniqueness statement quantifies over the structure); mirrors
+    the definition in the sibling `q-logarithm-exists.lean`. -/
+-- Ref: [manuscript] §2-quantum-observable-universes/q-logarithm
+structure QLogarithm (H : Type*) where
+  /-- The primitive element log_q ∈ H. -/
+  log_q : H
+  /-- Coproduct on H, encoded as `coprod : H → H × H`. -/
+  coprod : H → H × H
+  /-- Counit on H. -/
+  counit : H → R_q
+  /-- The unit / grouplike `1 ∈ H` against which primitivity is taken. -/
+  one : H
+  /-- Primitivity (left component): the first leg of
+      Δ_q(log_q) = log_q ⊗ 1 + 1 ⊗ log_q is `log_q`. -/
+  primitive_left : (coprod log_q).1 = log_q
+  /-- Primitivity (right component): the second leg is `log_q`. -/
+  primitive_right : (coprod log_q).2 = log_q
+  /-- Vanishing counit: ε(log_q) = 0. -/
+  counit_eq_zero : counit log_q = 0
 
 /-- **External axiom (Kassel 1995 §IV.3, Milnor–Moore uniqueness):
     q-logarithm primitive is unique under matching coproduct/counit/

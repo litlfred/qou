@@ -74,7 +74,7 @@ The discipline is **"no fitting in the production mass pipeline"**, not "no fits
 - `lp_dual_solver.py` (canonical entry point)
 - (+ 2 others)
 
-These are **LP solvers**, not regressions/fits. Per CLAUDE.md §"LP/SDP duals — first-class infra", they emit primal + dual variables in their witnesses.
+These are **LP solvers**, not regressions/fits. Per AGENTS.md §"LP/SDP duals — first-class infra", they emit primal + dual variables in their witnesses.
 
 ## §7. Open frontiers (queued, not blocking this PR)
 
@@ -99,4 +99,4 @@ The mass pipeline + knot atlas + three-calibration discipline are wired correctl
 - 1 Stage-1 operator-valued mass-tower chain through A=3 + A=4 framework
 - 0 fitting / numerology / CAL-4 introductions
 
-Future audits: re-run `grep -rln "CAL-4\|CAL4\|curve_fit\|scipy.optimize" folio-assistant/computations/*.py | grep -v _deprecated` as a smoke test before merging mass-pipeline changes.
+Future audits: re-run `grep -rln "CAL-4\|CAL4\|curve_fit\|scipy.optimize" computations/*.py | grep -v _deprecated` as a smoke test before merging mass-pipeline changes.

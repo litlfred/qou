@@ -26,8 +26,7 @@ def main():
     q = mp.mpf(Q_50_DIGIT_STR)
     h = q - 1/q
     hbar = (q-1)/q
-    m_e = mp.mpf("0.51099895")
-    m_mu = mp.mpf("105.6583755")
+    from codata_constants import M_E_MEV as m_e, M_MU_MEV_VALIDATION as m_mu  # registry (no literals)
     vol41 = mp.mpf("2.0298832128193072500424051085490405718833786150606")
 
     results = []

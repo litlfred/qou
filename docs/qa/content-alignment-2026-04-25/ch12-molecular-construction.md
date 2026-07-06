@@ -181,11 +181,11 @@ None detected. All language is objective.
 
 ## Notational Alignment
 
-### CLAUDE.md §7aa & §7ab Cross-check
+### AGENTS.md §7aa & §7ab Cross-check
 
 #### Notation register audit
 
-| Symbol | CLAUDE.md rule | Usage in chapter | Status |
+| Symbol | AGENTS.md rule | Usage in chapter | Status |
 |--------|---|---|---|
 | `$\mathfrak{p}$` | Particles (proton) fraktur | h2-molecular-braid.md, co-molecular-braid.md: ✓ used | ✓ Correct |
 | `$\mathfrak{n}$` | Particles (neutron) fraktur | molecular-crossing-table.md line 10: "$\mathfrak{n}_i\mathfrak{n}_j$" | ✓ Correct |
@@ -204,7 +204,7 @@ None detected. All language is objective.
    // To: $H_2 \to CO \to CO_2 \to CH_4 \to C_2H_6 \to C_6H_6$
    ```
 
-2. **MAJOR - Binding energy notation drift:** CLAUDE.md §7aa specifies `$\mathfrak{E}_{\mathrm{bind}}$` (bold) but the entire chapter uses `$E_{\text{bind}}$` (plain italic). This appears in:
+2. **MAJOR - Binding energy notation drift:** AGENTS.md §7aa specifies `$\mathfrak{E}_{\mathrm{bind}}$` (bold) but the entire chapter uses `$E_{\text{bind}}$` (plain italic). This appears in:
    - `molecular-braid.md` line 52: `$E_{\mathrm{bind}}$`
    - `ilp-covalent-bond.md` line 18: `$E_{\mathrm{bind}}$` (table)
    - `h2-binding-energy.md` line 4: `$E_{\mathrm{bind}}(H_2)$`
@@ -378,7 +378,7 @@ Add a remark block **after** `benzene-threading-emergence.md`:
 
 #### MAJOR (6)
 2. **Binding energy notation drift**
-   - Rule: CLAUDE.md §7aa specifies `$\mathfrak{E}_{\mathrm{bind}}$` (bold)
+   - Rule: AGENTS.md §7aa specifies `$\mathfrak{E}_{\mathrm{bind}}$` (bold)
    - Current: All files use `$E_{\mathrm{bind}}$` (plain italic)
    - Affected files:
      - `molecular-braid.md` lines 52–56 (3 instances)
@@ -445,6 +445,6 @@ No genuine minor issues found. Terminology and referent consistency is strong.
 ---
 
 **Report generated:** 2026-04-25  
-**Audit depth:** Comprehensive (all 25 blocks, all 7 sections, CLAUDE.md register)  
+**Audit depth:** Comprehensive (all 25 blocks, all 7 sections, AGENTS.md register)  
 **Status:** Ready for publication with critical fixes applied.
 

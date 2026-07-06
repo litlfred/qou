@@ -1,4 +1,5 @@
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Field.Basic
+import Mathlib.Data.Nat.Factorial.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 
@@ -80,14 +81,14 @@ namespace QOU.BraidsAndKnots
     `[0]_q = 0`, `[1]_q = 1`, `[2]_q = q + q⁻¹`, etc.
 
     Convention: `n : ℤ` so that `[-n]_q = -[n]_q`. -/
-noncomputable def qInt (q : ℝ) (n : ℤ) : ℝ :=
+noncomputable def qInt {R : Type*} [Field R] (q : R) (n : ℤ) : R :=
   (q ^ n - q ^ (-n)) / (q - q⁻¹)
 
 /-- q-factorial `[n]_q! := [n]_q · [n−1]_q · … · [1]_q`.
 
     Definition by recursion on `n : ℕ`:
     `[0]_q! = 1` (empty product), `[n+1]_q! = [n+1]_q · [n]_q!`. -/
-noncomputable def qFactorial (q : ℝ) : ℕ → ℝ
+noncomputable def qFactorial {R : Type*} [Field R] (q : R) : ℕ → R
   | 0 => 1
   | n + 1 => qInt q (n + 1) * qFactorial q n
 
@@ -103,15 +104,26 @@ but for y_λ alone the content sum suffices. -/
 
 /-- Closed-form q-Schur Markov-trace weight:
     `y_λ(q) := q^{c(λ)} / [n]_q!`. -/
-noncomputable def yLambdaQSchur (q : ℝ) (n : ℕ) (c : ℤ) : ℝ :=
+noncomputable def yLambdaQSchur {R : Type*} [Field R] (q : R) (n : ℕ) (c : ℤ) : R :=
   q ^ c / qFactorial q n
+
+
+lemma q_sq_sub_one_ne_zero {R : Type*} [Field R] (q : R) (hq : q ≠ 0) (h_neq : q - q⁻¹ ≠ 0) : q^2 - 1 ≠ 0 := by
+  intro h
+  apply h_neq
+  have h1 : (q - q⁻¹) * q = q^2 - 1 := by
+    calc (q - q⁻¹) * q = q^2 - q⁻¹ * q := by ring
+      _ = q^2 - 1 := by rw [inv_mul_cancel₀ hq]
+  calc q - q⁻¹ = (q^2 - 1) * q⁻¹ := by rw [← h1, mul_assoc, mul_inv_cancel₀ hq, mul_one]
+    _ = 0 * q⁻¹ := by rw [h]
+    _ = 0 := MulZeroClass.zero_mul q⁻¹
 
 /-! ## Structural identity: transpose-pair product -/
 
 /-- `q^c · q^{−c} = 1` for any non-zero real `q` and any integer `c`.
 
     Proof: `q^c · q^(-c) = q^(c + (-c)) = q^0 = 1`. -/
-lemma qPow_mul_qPow_neg (q : ℝ) (hq : q ≠ 0) (c : ℤ) :
+lemma qPow_mul_qPow_neg {R : Type*} [Field R] (q : R) (hq : q ≠ 0) (c : ℤ) :
     q ^ c * q ^ (-c) = 1 := by
   rw [← zpow_add₀ hq, add_neg_cancel, zpow_zero]
 
@@ -127,7 +139,7 @@ lemma qPow_mul_qPow_neg (q : ℝ) (hq : q ≠ 0) (c : ℤ) :
 
     This is the cleanest non-trivial identity satisfied by the
     closed-form y_λ. -/
-theorem yLambdaQSchur_transpose_pair (q : ℝ) (hq : q ≠ 0)
+theorem yLambdaQSchur_transpose_pair {R : Type*} [Field R] (q : R) (hq : q ≠ 0)
     (n : ℕ) (c : ℤ) :
     yLambdaQSchur q n c * yLambdaQSchur q n (-c) =
       1 / (qFactorial q n) ^ 2 := by
@@ -142,13 +154,143 @@ i.e. `y_λ = ±1/[n]_q!`.  This corresponds to the **bar-symmetric**
 y_λ values in the framework's q-Schur convention. -/
 
 /-- For self-conjugate partitions (c = 0), y_λ(q)² = 1 / [n]_q!². -/
-theorem yLambdaQSchur_selfconjugate_squared (q : ℝ) (hq : q ≠ 0)
+theorem yLambdaQSchur_selfconjugate_squared {R : Type*} [Field R] (q : R) (hq : q ≠ 0)
     (n : ℕ) :
     yLambdaQSchur q n 0 ^ 2 = 1 / (qFactorial q n) ^ 2 := by
   have := yLambdaQSchur_transpose_pair q hq n 0
   rw [neg_zero] at this
   rw [sq]
   exact this
+
+/-! ## Bar-involution and Mullineux symmetry
+
+The substrate has a bar-involution `q ↔ q⁻¹` which acts on
+partition combinatorics via the Mullineux involution (column-row
+swap / transpose `λ ↔ λᵀ`).  This section proves the bar-symmetry
+of q-integers and q-factorials, then lifts to y_λ.
+-/
+
+/-- **q-integer bar-symmetry**: `[n]_{q⁻¹} = [n]_q`.
+
+    Under bar (q ↔ q⁻¹), both numerator `q^n − q^{−n}` and denominator
+    `q − q⁻¹` flip sign in the same way, so the ratio is invariant.
+
+    This is the fundamental bar-symmetry that makes [n]_q a
+    "balanced" q-integer (vs the asymmetric `(q^n − 1)/(q − 1)`). -/
+theorem qInt_bar_inv {R : Type*} [Field R] (q : R) (hq : q ≠ 0) (h_neq : q - q⁻¹ ≠ 0)
+    (n : ℤ) :
+    qInt q⁻¹ n = qInt q n := by
+  unfold qInt
+  have h1 : ((q⁻¹ : R))^n = q^(-n) := by
+    rw [inv_zpow, ← zpow_neg]
+  have h2 : ((q⁻¹ : R))^(-n) = q^n := by
+    rw [inv_zpow, ← zpow_neg, neg_neg]
+  have h3 : ((q⁻¹ : R))⁻¹ = q := inv_inv q
+  rw [h1, h2, h3]
+  calc (q^(-n) - q^n) / (q⁻¹ - q) = -(q^n - q^(-n)) / -(q - q⁻¹) := by { congr 1 <;> ring }
+    _ = (q^n - q^(-n)) / (q - q⁻¹) := by rw [neg_div_neg_eq]
+
+/-- **q-factorial bar-symmetry**: `[n]_{q⁻¹}! = [n]_q!`.
+
+    Follows from `qInt_bar_inv` by induction on `n : ℕ`. -/
+theorem qFactorial_bar_inv {R : Type*} [Field R] (q : R) (hq : q ≠ 0) (h_neq : q - q⁻¹ ≠ 0)
+    (n : ℕ) :
+    qFactorial q⁻¹ n = qFactorial q n := by
+  induction n with
+  | zero => rfl
+  | succ k ih =>
+    unfold qFactorial
+    rw [qInt_bar_inv q hq h_neq ((k : ℤ) + 1), ih]
+
+/-! ## y_λ bar-Mullineux involution
+
+The y_λ in q-Schur convention satisfies the **bar-Mullineux
+identity**: substituting q ↔ q⁻¹ on the substrate sends y_λ to
+y_{λᵀ} (the y_λ of the transpose partition).  Proof: q^c → q^{-c}
+under bar (negates content sum), and `[n]_q!` is bar-symmetric. -/
+
+/-- **Bar-Mullineux identity for y_λ**:  `y_λ(q⁻¹) = y_{λᵀ}(q)`
+    in the q-Schur convention. -/
+theorem yLambdaQSchur_bar_mullineux {R : Type*} [Field R] (q : R) (hq : q ≠ 0)
+    (h_neq : q - q⁻¹ ≠ 0) (n : ℕ) (c : ℤ) :
+    yLambdaQSchur q⁻¹ n c = yLambdaQSchur q n (-c) := by
+  unfold yLambdaQSchur
+  rw [qFactorial_bar_inv q hq h_neq n]
+  -- Numerator: (q⁻¹)^c = q^(-c)
+  congr 1
+  rw [inv_zpow, ← zpow_neg]
+
+/-! ## Small q-integer identities -/
+
+/-- `[0]_q = 0`. -/
+theorem qInt_zero {R : Type*} [Field R] (q : R) (h_neq : q - q⁻¹ ≠ 0) :
+    qInt q 0 = 0 := by
+  unfold qInt
+  simp
+
+/-- `[1]_q = 1`. -/
+theorem qInt_one {R : Type*} [Field R] (q : R) (hq : q ≠ 0) (h_neq : q - q⁻¹ ≠ 0) :
+    qInt q 1 = 1 := by
+  change (q^1 - q^(-1:ℤ)) / (q - q⁻¹) = 1
+  rw [zpow_one, zpow_neg_one, div_self h_neq]
+
+/-- **q-integer anti-symmetry**: `[-n]_q = -[n]_q`. -/
+theorem qInt_neg {R : Type*} [Field R] (q : R) (n : ℤ) :
+    qInt q (-n) = -qInt q n := by
+  unfold qInt
+  rw [neg_neg]
+  ring
+
+/-! ## qFactorial small values -/
+
+/-- `[0]_q! = 1`. -/
+theorem qFactorial_zero {R : Type*} [Field R] (q : R) :
+    qFactorial q 0 = 1 := rfl
+
+/-- `[1]_q! = 1`. -/
+theorem qFactorial_one {R : Type*} [Field R] (q : R) (hq : q ≠ 0) (h_neq : q - q⁻¹ ≠ 0) :
+    qFactorial q 1 = 1 := by
+  change qInt q 1 * 1 = 1
+  rw [qInt_one q hq h_neq, mul_one]
+
+/-! ## Concrete value: [2]_q = q + q⁻¹
+
+This is the simplest non-trivial q-integer identity.  Its square
+`[2]_q² = (q + q⁻¹)² = q² + 2 + q⁻²` is the Markov-trace
+normalisation factor used in
+[`BorromeanMarkovTrace.lean`](BorromeanMarkovTrace.lean) — proving
+this identity narrows the unproven surface of that file too.
+
+The identity `[2]_q = q + q⁻¹` follows from the difference-of-squares
+factorisation
+`q² - q⁻² = (q - q⁻¹)(q + q⁻¹)`. -/
+
+/-- **`[2]_q = q + q⁻¹`** — the simplest non-trivial q-integer identity.
+
+    Proof: `(q² − q⁻²) / (q − q⁻¹) = (q − q⁻¹)(q + q⁻¹) / (q − q⁻¹)
+    = q + q⁻¹` by factoring the numerator as a difference of squares.
+
+    Requires `q ≠ 0` (for q⁻¹ well-defined) and `q − q⁻¹ ≠ 0` (for
+    the q-integer denominator non-zero — equivalent to `q ≠ ±1` at
+    the substrate range `q > 1`). -/
+theorem qInt_two_eq_q_plus_q_inv {R : Type*} [Field R] (q : R) (hq : q ≠ 0)
+    (h_neq : q - q⁻¹ ≠ 0) :
+    qInt q 2 = q + q⁻¹ := by
+  unfold qInt
+  field_simp [hq, h_neq, q_sq_sub_one_ne_zero q hq h_neq]
+  ring
+
+/-- **Corollary: `[2]_q² = q² + 2 + q⁻²`** — the Kauffman–Jones
+    Markov-trace normalisation, matching the convention used in
+    `BorromeanMarkovTrace.lean` (where `tr_M(β_Bor) = V(q²)/[2]_q²`).
+
+    This is precisely the normalisation that gives the proved
+    `trM_borromean h = (4 + h² − 3h⁴ − h⁶)/(h² + 4)` closed form. -/
+theorem qInt_two_squared {R : Type*} [Field R] (q : R) (hq : q ≠ 0)
+    (h_neq : q - q⁻¹ ≠ 0) :
+    (qInt q 2) ^ 2 = (q + q⁻¹) ^ 2 := by
+  rw [qInt_two_eq_q_plus_q_inv q hq h_neq]
+
 
 /-! ## Combined bar + Mullineux identities
 
@@ -165,7 +307,7 @@ that exploit BOTH symmetries simultaneously. -/
     Structurally: pairing the same partition with itself under bar
     yields the same product as pairing with its transpose under no
     bar — the framework's bar-Mullineux duality made explicit. -/
-theorem yLambdaQSchur_bar_self (q : ℝ) (hq : q ≠ 0)
+theorem yLambdaQSchur_bar_self {R : Type*} [Field R] (q : R) (hq : q ≠ 0)
     (h_neq : q - q⁻¹ ≠ 0) (n : ℕ) (c : ℤ) :
     yLambdaQSchur q n c * yLambdaQSchur q⁻¹ n c =
       1 / (qFactorial q n) ^ 2 := by
@@ -177,7 +319,7 @@ theorem yLambdaQSchur_bar_self (q : ℝ) (hq : q ≠ 0)
 
     Trivial corollary of `yLambdaQSchur_bar_mullineux` since
     `-c = 0 = c` when `c = 0`. -/
-theorem yLambdaQSchur_selfconjugate_bar_sym (q : ℝ) (hq : q ≠ 0)
+theorem yLambdaQSchur_selfconjugate_bar_sym {R : Type*} [Field R] (q : R) (hq : q ≠ 0)
     (h_neq : q - q⁻¹ ≠ 0) (n : ℕ) :
     yLambdaQSchur q⁻¹ n 0 = yLambdaQSchur q n 0 := by
   rw [yLambdaQSchur_bar_mullineux q hq h_neq n 0, neg_zero]
@@ -192,16 +334,16 @@ theorem yLambdaQSchur_selfconjugate_bar_sym (q : ℝ) (hq : q ≠ 0)
 
     Proof: `(q³ − q⁻³) = (q − q⁻¹)(q² + 1 + q⁻²)` by
     factoring as a difference of cubes. -/
-theorem qInt_three (q : ℝ) (hq : q ≠ 0) (h_neq : q - q⁻¹ ≠ 0) :
+theorem qInt_three {R : Type*} [Field R] (q : R) (hq : q ≠ 0) (h_neq : q - q⁻¹ ≠ 0) :
     qInt q 3 = q ^ 2 + 1 + q ^ (-2 : ℤ) := by
   unfold qInt
-  field_simp
+  field_simp [hq, h_neq, q_sq_sub_one_ne_zero q hq h_neq]
   ring
 
 /-! ## q-Factorial small-n closed forms -/
 
 /-- **`[2]_q! = q + q⁻¹`**. -/
-theorem qFactorial_two (q : ℝ) (hq : q ≠ 0) (h_neq : q - q⁻¹ ≠ 0) :
+theorem qFactorial_two {R : Type*} [Field R] (q : R) (hq : q ≠ 0) (h_neq : q - q⁻¹ ≠ 0) :
     qFactorial q 2 = q + q⁻¹ := by
   show qInt q (2 : ℕ) * qFactorial q 1 = q + q⁻¹
   rw [qFactorial_one q hq h_neq]
@@ -215,7 +357,7 @@ theorem qFactorial_two (q : ℝ) (hq : q ≠ 0) (h_neq : q - q⁻¹ ≠ 0) :
     Proof: chain `[3]_q!= [3]_q · [2]_q · [1]_q` with the just-
     proved `qInt_three` (gives `[3]_q`), `qFactorial_two` (gives
     `[2]_q!`), and `qFactorial_one` (gives `[1]_q! = 1`). -/
-theorem qFactorial_three (q : ℝ) (hq : q ≠ 0) (h_neq : q - q⁻¹ ≠ 0) :
+theorem qFactorial_three {R : Type*} [Field R] (q : R) (hq : q ≠ 0) (h_neq : q - q⁻¹ ≠ 0) :
     qFactorial q 3 = (q^2 + 1 + q^(-2 : ℤ)) * (q + q⁻¹) := by
   show qInt q (3 : ℕ) * qFactorial q 2 = (q^2 + 1 + q^(-2 : ℤ)) * (q + q⁻¹)
   rw [show ((3 : ℕ) : ℤ) = 3 from rfl]
@@ -257,7 +399,7 @@ or equivalently (clearing y_(3)):
       F_Bor := |tr_M| · [3]_q! / q^3
              = |tr_M| / (q^3 / [3]_q!)
              = |tr_M| / y_(3) -/
-theorem F_Bor_eq_trM_over_y_3 (q : ℝ) (h_trM : ℝ) (h_q3 : q^3 ≠ 0)
+theorem F_Bor_eq_trM_over_y_3 {R : Type*} [Field R] (q : R) (h_trM : R) (h_q3 : q^3 ≠ 0)
     (h_qfact : qFactorial q 3 ≠ 0) :
     h_trM * qFactorial q 3 / q^3 =
       h_trM / (q^3 / qFactorial q 3) := by
@@ -278,7 +420,7 @@ to three explicit identities. -/
 
     Specialisation of `yLambdaQSchur_bar_mullineux` with n=3, c=3
     (so λ=(3) has content sum 3, λᵀ=(1,1,1) has -3). -/
-theorem yLambdaQSchur_proton_bar_mullineux_3_to_111 (q : ℝ) (hq : q ≠ 0)
+theorem yLambdaQSchur_proton_bar_mullineux_3_to_111 {R : Type*} [Field R] (q : R) (hq : q ≠ 0)
     (h_neq : q - q⁻¹ ≠ 0) :
     yLambdaQSchur q⁻¹ 3 3 = yLambdaQSchur q 3 (-3) := by
   exact yLambdaQSchur_bar_mullineux q hq h_neq 3 3
@@ -289,7 +431,7 @@ theorem yLambdaQSchur_proton_bar_mullineux_3_to_111 (q : ℝ) (hq : q ≠ 0)
     Specialisation of `yLambdaQSchur_selfconjugate_bar_sym` with n=3.
     The (2,1) partition is its own transpose, so bar acts as
     identity on its y_λ. -/
-theorem yLambdaQSchur_proton_21_bar_sym (q : ℝ) (hq : q ≠ 0)
+theorem yLambdaQSchur_proton_21_bar_sym {R : Type*} [Field R] (q : R) (hq : q ≠ 0)
     (h_neq : q - q⁻¹ ≠ 0) :
     yLambdaQSchur q⁻¹ 3 0 = yLambdaQSchur q 3 0 :=
   yLambdaQSchur_selfconjugate_bar_sym q hq h_neq 3
@@ -300,25 +442,25 @@ theorem yLambdaQSchur_proton_21_bar_sym (q : ℝ) (hq : q ≠ 0)
     By definition.  Provides the explicit numerator for the
     "trivial" partition's y_λ contribution to the proton's
     Markov trace. -/
-theorem yLambdaQSchur_proton_3_explicit (q : ℝ) (hq : q ≠ 0)
+theorem yLambdaQSchur_proton_3_explicit {R : Type*} [Field R] (q : R) (hq : q ≠ 0)
     (h_neq : q - q⁻¹ ≠ 0) :
     yLambdaQSchur q 3 3 = q^(3 : ℤ) / qFactorial q 3 := by
-  unfold yLambdaQSchur
+  rw [yLambdaQSchur]
 
 /-- **Explicit closed form of y_(1,1,1) at the proton**:
     `y_(1,1,1)(q) = q^{-3} / [3]_q!`.
 
     The transpose pair of y_(3); content sum = -3. -/
-theorem yLambdaQSchur_proton_111_explicit (q : ℝ) (hq : q ≠ 0)
+theorem yLambdaQSchur_proton_111_explicit {R : Type*} [Field R] (q : R) (hq : q ≠ 0)
     (h_neq : q - q⁻¹ ≠ 0) :
     yLambdaQSchur q 3 (-3) = q^(-3 : ℤ) / qFactorial q 3 := by
-  unfold yLambdaQSchur
+  rw [yLambdaQSchur]
 
 /-- **Explicit closed form of y_(2,1) at the proton**:
     `y_(2,1)(q) = 1 / [3]_q!`.
 
     Content sum = 0 makes the numerator `q^0 = 1`. -/
-theorem yLambdaQSchur_proton_21_explicit (q : ℝ) (hq : q ≠ 0)
+theorem yLambdaQSchur_proton_21_explicit {R : Type*} [Field R] (q : R) (hq : q ≠ 0)
     (h_neq : q - q⁻¹ ≠ 0) :
     yLambdaQSchur q 3 0 = 1 / qFactorial q 3 := by
   unfold yLambdaQSchur
@@ -326,7 +468,7 @@ theorem yLambdaQSchur_proton_21_explicit (q : ℝ) (hq : q ≠ 0)
 
 /-- **y_(3) · y_(1,1,1) = 1/[3]_q!²** — the transpose-pair identity
     at the specific H_3 partitions. -/
-theorem yLambdaQSchur_proton_3_111_transpose_pair (q : ℝ) (hq : q ≠ 0)
+theorem yLambdaQSchur_proton_3_111_transpose_pair {R : Type*} [Field R] (q : R) (hq : q ≠ 0)
     (h_neq : q - q⁻¹ ≠ 0) :
     yLambdaQSchur q 3 3 * yLambdaQSchur q 3 (-3) =
       1 / (qFactorial q 3) ^ 2 :=
@@ -339,7 +481,7 @@ theorem yLambdaQSchur_proton_3_111_transpose_pair (q : ℝ) (hq : q ≠ 0)
     All three partitions of 3 thus satisfy `|y_λ| = 1/[3]_q!` in
     magnitude — a structural fact (per
     `yLambdaQSchur_selfconjugate_squared`). -/
-theorem yLambdaQSchur_proton_21_squared (q : ℝ) (hq : q ≠ 0) :
+theorem yLambdaQSchur_proton_21_squared {R : Type*} [Field R] (q : R) (hq : q ≠ 0) :
     (yLambdaQSchur q 3 0) ^ 2 = 1 / (qFactorial q 3) ^ 2 :=
   yLambdaQSchur_selfconjugate_squared q hq 3
 
@@ -358,7 +500,7 @@ Combined, all three partitions of 3 satisfy
 
     Squared form: `y_λ(q) · y_{λᵀ}(q) = 1/[3]_q!²` for the proton
     in H_3.  Stated as an explicit corollary specialised to n = 3. -/
-theorem yLambdaQSchur_proton_magnitude (q : ℝ) (hq : q ≠ 0)
+theorem yLambdaQSchur_proton_magnitude {R : Type*} [Field R] (q : R) (hq : q ≠ 0)
     (h_neq : q - q⁻¹ ≠ 0) (c : ℤ) :
     yLambdaQSchur q 3 c * yLambdaQSchur q 3 (-c) =
       1 / (qFactorial q 3) ^ 2 :=
@@ -370,139 +512,8 @@ At q = 1, the q-Schur formula reduces to the classical Markov
 weight: y_λ(1) = 1/[n]_1! = 1/n! (since q^c|_{q=1} = 1). -/
 
 /-- `q^c|_{q=1} = 1` for any integer c. -/
-lemma qPow_at_one (c : ℤ) : (1 : ℝ) ^ c = 1 := by
+lemma qPow_at_one {R : Type*} [Field R] (c : ℤ) : (1 : R) ^ c = 1 := by
   rw [one_zpow]
-
-/-! ## Bar-involution and Mullineux symmetry
-
-The substrate has a bar-involution `q ↔ q⁻¹` which acts on
-partition combinatorics via the Mullineux involution (column-row
-swap / transpose `λ ↔ λᵀ`).  This section proves the bar-symmetry
-of q-integers and q-factorials, then lifts to y_λ.
--/
-
-/-- **q-integer bar-symmetry**: `[n]_{q⁻¹} = [n]_q`.
-
-    Under bar (q ↔ q⁻¹), both numerator `q^n − q^{−n}` and denominator
-    `q − q⁻¹` flip sign in the same way, so the ratio is invariant.
-
-    This is the fundamental bar-symmetry that makes [n]_q a
-    "balanced" q-integer (vs the asymmetric `(q^n − 1)/(q − 1)`). -/
-theorem qInt_bar_inv (q : ℝ) (hq : q ≠ 0) (h_neq : q - q⁻¹ ≠ 0)
-    (n : ℤ) :
-    qInt q⁻¹ n = qInt q n := by
-  unfold qInt
-  have h1 : ((q⁻¹ : ℝ))^n = q^(-n) := by
-    rw [inv_zpow, ← zpow_neg]
-  have h2 : ((q⁻¹ : ℝ))^(-n) = q^n := by
-    rw [inv_zpow, ← zpow_neg, neg_neg]
-  have h3 : ((q⁻¹ : ℝ))⁻¹ = q := inv_inv q
-  rw [h1, h2, h3]
-  field_simp
-  ring
-
-/-- **q-factorial bar-symmetry**: `[n]_{q⁻¹}! = [n]_q!`.
-
-    Follows from `qInt_bar_inv` by induction on `n : ℕ`. -/
-theorem qFactorial_bar_inv (q : ℝ) (hq : q ≠ 0) (h_neq : q - q⁻¹ ≠ 0)
-    (n : ℕ) :
-    qFactorial q⁻¹ n = qFactorial q n := by
-  induction n with
-  | zero => rfl
-  | succ k ih =>
-    unfold qFactorial
-    rw [qInt_bar_inv q hq h_neq ((k : ℤ) + 1), ih]
-
-/-! ## y_λ bar-Mullineux involution
-
-The y_λ in q-Schur convention satisfies the **bar-Mullineux
-identity**: substituting q ↔ q⁻¹ on the substrate sends y_λ to
-y_{λᵀ} (the y_λ of the transpose partition).  Proof: q^c → q^{-c}
-under bar (negates content sum), and `[n]_q!` is bar-symmetric. -/
-
-/-- **Bar-Mullineux identity for y_λ**:  `y_λ(q⁻¹) = y_{λᵀ}(q)`
-    in the q-Schur convention. -/
-theorem yLambdaQSchur_bar_mullineux (q : ℝ) (hq : q ≠ 0)
-    (h_neq : q - q⁻¹ ≠ 0) (n : ℕ) (c : ℤ) :
-    yLambdaQSchur q⁻¹ n c = yLambdaQSchur q n (-c) := by
-  unfold yLambdaQSchur
-  rw [qFactorial_bar_inv q hq h_neq n]
-  -- Numerator: (q⁻¹)^c = q^(-c)
-  congr 1
-  rw [inv_zpow, ← zpow_neg]
-
-/-! ## Small q-integer identities -/
-
-/-- `[0]_q = 0`. -/
-theorem qInt_zero (q : ℝ) (h_neq : q - q⁻¹ ≠ 0) :
-    qInt q 0 = 0 := by
-  unfold qInt
-  simp
-
-/-- `[1]_q = 1`. -/
-theorem qInt_one (q : ℝ) (hq : q ≠ 0) (h_neq : q - q⁻¹ ≠ 0) :
-    qInt q 1 = 1 := by
-  unfold qInt
-  field_simp
-  ring
-
-/-- **q-integer anti-symmetry**: `[-n]_q = -[n]_q`. -/
-theorem qInt_neg (q : ℝ) (n : ℤ) :
-    qInt q (-n) = -qInt q n := by
-  unfold qInt
-  rw [neg_neg]
-  ring
-
-/-! ## qFactorial small values -/
-
-/-- `[0]_q! = 1`. -/
-theorem qFactorial_zero (q : ℝ) :
-    qFactorial q 0 = 1 := rfl
-
-/-- `[1]_q! = 1`. -/
-theorem qFactorial_one (q : ℝ) (hq : q ≠ 0) (h_neq : q - q⁻¹ ≠ 0) :
-    qFactorial q 1 = 1 := by
-  unfold qFactorial
-  rw [qInt_one q hq h_neq]
-  ring
-
-/-! ## Concrete value: [2]_q = q + q⁻¹
-
-This is the simplest non-trivial q-integer identity.  Its square
-`[2]_q² = (q + q⁻¹)² = q² + 2 + q⁻²` is the Markov-trace
-normalisation factor used in
-[`BorromeanMarkovTrace.lean`](BorromeanMarkovTrace.lean) — proving
-this identity narrows the unproven surface of that file too.
-
-The identity `[2]_q = q + q⁻¹` follows from the difference-of-squares
-factorisation
-`q² - q⁻² = (q - q⁻¹)(q + q⁻¹)`. -/
-
-/-- **`[2]_q = q + q⁻¹`** — the simplest non-trivial q-integer identity.
-
-    Proof: `(q² − q⁻²) / (q − q⁻¹) = (q − q⁻¹)(q + q⁻¹) / (q − q⁻¹)
-    = q + q⁻¹` by factoring the numerator as a difference of squares.
-
-    Requires `q ≠ 0` (for q⁻¹ well-defined) and `q − q⁻¹ ≠ 0` (for
-    the q-integer denominator non-zero — equivalent to `q ≠ ±1` at
-    the substrate range `q > 1`). -/
-theorem qInt_two_eq_q_plus_q_inv (q : ℝ) (hq : q ≠ 0)
-    (h_neq : q - q⁻¹ ≠ 0) :
-    qInt q 2 = q + q⁻¹ := by
-  unfold qInt
-  field_simp
-  ring
-
-/-- **Corollary: `[2]_q² = q² + 2 + q⁻²`** — the Kauffman–Jones
-    Markov-trace normalisation, matching the convention used in
-    `BorromeanMarkovTrace.lean` (where `tr_M(β_Bor) = V(q²)/[2]_q²`).
-
-    This is precisely the normalisation that gives the proved
-    `trM_borromean h = (4 + h² − 3h⁴ − h⁶)/(h² + 4)` closed form. -/
-theorem qInt_two_squared (q : ℝ) (hq : q ≠ 0)
-    (h_neq : q - q⁻¹ ≠ 0) :
-    (qInt q 2) ^ 2 = (q + q⁻¹) ^ 2 := by
-  rw [qInt_two_eq_q_plus_q_inv q hq h_neq]
 
 /-! ## The "2" in the proton mass identity = dim V_(2,1) of S_3
 
@@ -569,9 +580,12 @@ theorem dim_V_2_1_eq_two :
     `q - q⁻¹ ≠ 0`. The classical-limit specialisation `q = 1` is
     a degenerate case for this formula (since `q − q⁻¹ = 0`), but
     the corresponding classical-dim statement is the hook-length
-    result `dim V_(2,1) = 2` proved above. -/
-theorem dim_V_2_1_classical_eq_two :
-    (1 : ℝ) + 1 = 2 := by
+    result `dim V_(2,1) = 2` proved above.
+
+    Stated over a generic field `{R} [Field R]` (§7c): `1 + 1 = 2`
+    is an algebraic ring identity, not an archimedean one. -/
+theorem dim_V_2_1_classical_eq_two {R : Type*} [Field R] :
+    (1 : R) + 1 = 2 := by
   norm_num
 
 end QOU.BraidsAndKnots

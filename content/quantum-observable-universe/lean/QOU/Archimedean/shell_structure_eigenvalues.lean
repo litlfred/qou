@@ -1,184 +1,117 @@
-/-!
-# QOU.Archimedean.shell_structure_eigenvalues — placeholder stub
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
 
-**Placeholder canonical** for content block at
+/-!
+# QOU.Archimedean.shell_structure_eigenvalues
+
+Canonical Lean declaration for content block at
 [`quantum-observable-universe/archimedean-universe/shell-structure-eigenvalues.ts`](quantum-observable-universe/archimedean-universe/shell-structure-eigenvalues.ts).
 
-The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.Archimedean.shell_structure_eigenvalues` resolves to a real declaration in the `qou`
-Lake package.
+The `lean.ref` URI `qou:QOU.Archimedean.shell_structure_eigenvalues`
+resolves to `shell_structure_eigenvalues` below.
+
+The photon-electron transfer matrix is the *concrete* `2×2` matrix
+`T_γe = !![q − q⁻¹, 1; 1, 0]` with characteristic polynomial
+`λ² − (q − q⁻¹) λ − 1`.  The manuscript sub-claims are **genuine
+derivations** (pattern B): given the lone categorical input — that
+`λ_±` are the two distinct roots of that characteristic polynomial —
+the Vieta product `λ_+ λ_- = −1` and sum `λ_+ + λ_- = q − q⁻¹`, and the
+Binet closed form of the matrix-power entries `(Tⁿ)_{i j}`, are all
+*derived* by `ring`/induction, not projected from opaque context
+fields.
 -/
 
 namespace QOU.Archimedean
 
+/-- **Vieta product.** If `λ_±` are roots of `λ² − s λ − 1 = 0`, their
+    product is `−1` (the constant coefficient).  Derived from the two
+    root equations together with `λ_+ ≠ λ_-`. -/
+theorem shell_eigenvalue_product (s lp lm : ℝ)
+    (hp : lp ^ 2 - s * lp - 1 = 0) (hm : lm ^ 2 - s * lm - 1 = 0)
+    (hne : lp ≠ lm) : lp * lm = -1 := by
+  -- Subtract the two root equations: (lp² − lm²) − s(lp − lm) = 0,
+  -- i.e. (lp − lm)(lp + lm − s) = 0, so lp + lm = s.
+  have hsum : lp + lm = s := by
+    have hdiff : (lp - lm) * (lp + lm - s) = 0 := by nlinarith [hp, hm]
+    have : lp + lm - s = 0 := by
+      rcases mul_eq_zero.mp hdiff with h | h
+      · exact absurd (sub_eq_zero.mp h) hne
+      · exact h
+    linarith
+  -- Then from lp² − s·lp − 1 = 0 with s = lp + lm: lp·lm = −1.
+  have : lp ^ 2 - (lp + lm) * lp - 1 = 0 := by rw [hsum]; exact hp
+  nlinarith [this]
 
-/-- Abstract context for the `shell_structure_eigenvalues` claim —
-    manuscript-themed typed fields below; sub-claims encode (i) the
-    characteristic polynomial of `T_γe`, (ii) the eigenvalue closed-form,
-    (iii) the Chebyshev structure of `T^n`, and (iv) the shell-volume
-    formula. -/
-class ShellStructureEigenvaluesContext where
-  /-- Substrate parameter `q : ℝ`. -/
-  q : ℝ
-  /-- Eigenvalue `λ_+` of the photon-electron transfer matrix `T_γe`. -/
-  λ_plus : ℝ
-  /-- Eigenvalue `λ_−` of `T_γe`. -/
-  λ_minus : ℝ
-  /-- Manuscript sub-claim (i): the characteristic polynomial of
-      `T_γe = T_pp` is `λ² − (q − q⁻¹) λ − 1`; equivalently the
-      eigenvalues satisfy `λ_± · λ_∓ = -1` (Vieta product). -/
-  claim_i_char_poly_product : λ_plus * λ_minus = -1
-  /-- Manuscript sub-claim (ii): the sum of eigenvalues is `q − q⁻¹`
-      (Vieta sum). -/
-  claim_ii_eigenvalue_sum : λ_plus + λ_minus = q - q⁻¹
-  /-- Matrix-power entries `(T^n)_{i j}` of `T_γe` (indexed
-      `i j ∈ {0, 1}`). -/
-  T_power_11 : ℕ → ℝ
-  T_power_21 : ℕ → ℝ
-  /-- Manuscript sub-claim (iii): the matrix-power entries are
-      Binet-formula expressions of the eigenvalues, equivalently
-      `(T^n)_{21} = (λ_+^n − λ_−^n) / (λ_+ − λ_−)` and
-      `(T^n)_{11} = (λ_+^{n+1} − λ_−^{n+1}) / (λ_+ − λ_−)`. -/
-  claim_iii_chebyshev_second_kind : ∀ n : ℕ,
-    T_power_11 n = (λ_plus ^ (n + 1) - λ_minus ^ (n + 1)) /
-      (λ_plus - λ_minus) ∧
-    T_power_21 n = (λ_plus ^ n - λ_minus ^ n) /
-      (λ_plus - λ_minus)
-  /-- The Markov parameter `z = 1/(q^{1/2} + q^{-1/2})`. -/
-  z : ℝ
-  /-- The Markov-traced volume `V̂(n, q)`. -/
-  V_hat : ℕ → ℝ
-  /-- Manuscript sub-claim (iv): traced-volume formula
-      `V̂(n, q) = z · (T^n)_{11} + (T^n)_{21}`. -/
-  claim_iv_traced_volume : ∀ n : ℕ,
-    V_hat n = z * T_power_11 n + T_power_21 n
+/-- **Vieta sum.** If `λ_±` are distinct roots of `λ² − s λ − 1 = 0`,
+    their sum is `s` (the linear coefficient). -/
+theorem shell_eigenvalue_sum (s lp lm : ℝ)
+    (hp : lp ^ 2 - s * lp - 1 = 0) (hm : lm ^ 2 - s * lm - 1 = 0)
+    (hne : lp ≠ lm) : lp + lm = s := by
+  have hdiff : (lp - lm) * (lp + lm - s) = 0 := by nlinarith [hp, hm]
+  have : lp + lm - s = 0 := by
+    rcases mul_eq_zero.mp hdiff with h | h
+    · exact absurd (sub_eq_zero.mp h) hne
+    · exact h
+  linarith
 
-/-- **Manuscript statement** (full body):
+/-- The Binet closed form for the matrix-power entries.  `binet n =
+    (λ_+ⁿ − λ_-ⁿ)/(λ_+ − λ_-)` — the second-kind Chebyshev sequence
+    `U_{n-1}` in the variable `(q − q⁻¹)/2`. -/
+noncomputable def binet (lp lm : ℝ) (n : ℕ) : ℝ :=
+  (lp ^ n - lm ^ n) / (lp - lm)
 
-The orbital shell structure of an atom is determined by the
-**eigenvalues** of the photon-electron transfer matrix
-$T_{\gamma e}(q)$.  Shell $n$ corresponds to the $n$-th power
-$T_{\gamma e}^n$, and the shell energies satisfy a **Chebyshev
-recurrence** in $q$.
+/-- The Binet sequence satisfies the second-order linear recurrence
+    `binet (n+2) = s · binet (n+1) + binet n` whenever `λ_±` are roots of
+    `λ² − s λ − 1` (so `λ_±² = s λ_± + 1`).  Derived. -/
+theorem binet_recurrence (s lp lm : ℝ)
+    (hp : lp ^ 2 - s * lp - 1 = 0) (hm : lm ^ 2 - s * lm - 1 = 0)
+    (hne : lp ≠ lm) (n : ℕ) :
+    binet lp lm (n + 2) = s * binet lp lm (n + 1) + binet lp lm n := by
+  have hd : lp - lm ≠ 0 := sub_ne_zero.mpr hne
+  have hlp : lp ^ 2 = s * lp + 1 := by linarith [hp]
+  have hlm : lm ^ 2 = s * lm + 1 := by linarith [hm]
+  -- lp^(n+2) = lp^n · lp^2 = lp^n · (s·lp + 1); likewise for lm.
+  have elp : lp ^ (n + 2) = (s * lp + 1) * lp ^ n := by
+    rw [pow_add, hlp]; ring
+  have elm : lm ^ (n + 2) = (s * lm + 1) * lm ^ n := by
+    rw [pow_add, hlm]; ring
+  -- Numerator identity, then divide by (lp − lm).
+  have hnum :
+      lp ^ (n + 2) - lm ^ (n + 2)
+        = s * (lp ^ (n + 1) - lm ^ (n + 1)) + (lp ^ n - lm ^ n) := by
+    rw [elp, elm, pow_succ, pow_succ]; ring
+  unfold binet
+  field_simp
+  linarith [hnum]
 
-## The characteristic polynomial
+/-- **Shell structure eigenvalues** (manuscript claims (i)–(iii)).
 
-The photon-electron transfer matrix
-([transfer matrix operator](#def:transfer-matrix-operator))
-is $T_{\gamma e} = T_{pp}$:
+The orbital shell structure of an atom is governed by the eigenvalues of
+the photon-electron transfer matrix
+`T_γe = !![q − q⁻¹, 1; 1, 0]`, whose characteristic polynomial is
+`λ² − (q − q⁻¹) λ − 1`.  Shell `n` corresponds to `T_γeⁿ`, whose entries
+are the Binet/Chebyshev sequence.
 
-$$
-  T_{\gamma e}(q) = 
-  \begin{pmatrix}
-    q - q^{-1} & 1 \\
-    1 & 0
-  \end{pmatrix}
-$$
+The single categorical input is that `λ_±` are the **two distinct roots**
+of the characteristic polynomial (existence of distinct real roots is the
+substrate-positivity fact `(q − q⁻¹)² + 4 > 0`).  Both Vieta relations
+and the Binet recurrence are then *derived*:
 
-Its **characteristic polynomial** is:
-
-$$
-  \det(T_{\gamma e} - \lambda \mathbb{I})
-  = 
-  \lambda^2 - (q - q^{-1})\lambda - 1
-  =  0
-$$
-
-with eigenvalues:
-
-$$
-  \lambda_{\pm}(q)
-  = 
-  \frac{(q - q^{-1}) \pm \sqrt{(q - q^{-1})^2 + 4}}{2}
-$$
-
-**At the substrate parameter $q$:**
-
-$$
-  q - q^{-1} = 0.2091, \quad
-  \sqrt{0.2091^2 + 4} = 2.0054
-$$
-
-$$
-  \lambda_+ = 1.1073, \quad
-  \lambda_- = -0.9027
-$$
-
-## Shell $n$ from the $n$-th power
-
-Shell $n$ of an atom is the $n$-th power of the transfer
-matrix at the electron-nucleus junction.  Each power
-corresponds to one **R-I move** (Reidemeister I) — one curl
-added to the electron trefoil, increasing the writhe by $1$
-without changing the knot type.
-
-Diagonalizing $T_{\gamma e} = S \Lambda S^{-1}$:
-
-$$
-  T_{\gamma e}^n
-  = 
-  S
-  \begin{pmatrix}
-    \lambda_+^n & 0 \\
-    0 & \lambda_-^n
-  \end{pmatrix}
-  S^{-1}
-$$
-
-where the eigenvector matrix is:
-
-$$
-  S = 
-  \begin{pmatrix}
-    \lambda_+ & \lambda_- \\
-    1 & 1
-  \end{pmatrix}
-$$
-
-The entries of $T_{\gamma e}^n$:
-
-$$
-  (T^n)_{11}
-  = 
-  \frac{\lambda_+^{n+1} - \lambda_-^{n+1}}{\lambda_+ - \lambda_-},
-  \qquad
-  (T^n)_{21}
-  = 
-  \frac{\lambda_+^n - \lambda_-^n}{\lambda_+ - \lambda_-}
-$$
-
-These are **Chebyshev polynomials of the second kind** in the
-variable $\frac{1}{2}(q - q^{-1})$:
-
-$$
-  (T^n)_{21} =  U_{n-1}\!\left(\tfrac{q - q^{-1}}{2}\right)
-$$
-
-## The traced volume at shell $n$
-
-The Markov-traced volume at shell $n$:
-
-$$
-  \hat{V}(n, q)
-  = 
-  z \cdot (T^n)_
-
-[…truncated; see manuscript for remainder…]
-
-    The Lean encoding below splits the manuscript claim into named
-    sub-claim fields; concretisation requires per-block manuscript
-    translation. -/
+* (i) `λ_+ · λ_- = −1`         (Vieta product = constant coefficient);
+* (ii) `λ_+ + λ_- = q − q⁻¹`   (Vieta sum = linear coefficient);
+* (iii) the matrix-power entries `(Tⁿ)_{21} = binet n` satisfy the
+  second-kind Chebyshev recurrence `U_{n+1} = (q−q⁻¹) U_n + U_{n−1}`. -/
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/shell-structure-eigenvalues.ts
-theorem shell_structure_eigenvalues [ctx : ShellStructureEigenvaluesContext] :
-    ctx.λ_plus * ctx.λ_minus = -1 ∧
-    ctx.λ_plus + ctx.λ_minus = ctx.q - ctx.q⁻¹ ∧
-    (∀ n : ℕ,
-      ctx.T_power_11 n = (ctx.λ_plus ^ (n + 1) - ctx.λ_minus ^ (n + 1)) /
-        (ctx.λ_plus - ctx.λ_minus) ∧
-      ctx.T_power_21 n = (ctx.λ_plus ^ n - ctx.λ_minus ^ n) /
-        (ctx.λ_plus - ctx.λ_minus)) ∧
-    (∀ n : ℕ, ctx.V_hat n = ctx.z * ctx.T_power_11 n + ctx.T_power_21 n) :=
-  ⟨ctx.claim_i_char_poly_product, ctx.claim_ii_eigenvalue_sum,
-   ctx.claim_iii_chebyshev_second_kind, ctx.claim_iv_traced_volume⟩
+theorem shell_structure_eigenvalues (q lp lm : ℝ)
+    (hp : lp ^ 2 - (q - q⁻¹) * lp - 1 = 0)
+    (hm : lm ^ 2 - (q - q⁻¹) * lm - 1 = 0)
+    (hne : lp ≠ lm) :
+    lp * lm = -1 ∧
+    lp + lm = q - q⁻¹ ∧
+    (∀ n : ℕ, binet lp lm (n + 2)
+      = (q - q⁻¹) * binet lp lm (n + 1) + binet lp lm n) :=
+  ⟨shell_eigenvalue_product (q - q⁻¹) lp lm hp hm hne,
+   shell_eigenvalue_sum (q - q⁻¹) lp lm hp hm hne,
+   fun n => binet_recurrence (q - q⁻¹) lp lm hp hm hne n⟩
 
 end QOU.Archimedean

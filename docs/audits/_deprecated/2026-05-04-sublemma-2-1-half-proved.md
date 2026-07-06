@@ -6,8 +6,8 @@
 **Branch:** `claude/categorical-mass-divergence-audit` (PR #534)
 **Refs:**
 - [`docs/audits/2026-05-04-confinement-nf-structure-forcing-proof.md`](2026-05-04-confinement-nf-structure-forcing-proof.md) — the proof skeleton
-- [`folio-assistant/computations/sublemma_2_1_deuteron_branching.py`](../../folio-assistant/computations/sublemma_2_1_deuteron_branching.py)
-- [`folio-assistant/computations/sublemma-2-1-deuteron-branching.witness.json`](../../folio-assistant/computations/sublemma-2-1-deuteron-branching.witness.json)
+- [`computations/sublemma_2_1_deuteron_branching.py`](../../computations/sublemma_2_1_deuteron_branching.py)
+- [`computations/sublemma-2-1-deuteron-branching.witness.json`](../../computations/sublemma-2-1-deuteron-branching.witness.json)
 
 ## Sub-lemma 2.1 (restatement)
 
@@ -57,7 +57,7 @@ $$
 **Numerical verification** (`sublemma-2-1-deuteron-branching.witness.json`).
 Take $\beta_1 = \beta_{\mathfrak{p}}$ and $\beta_2 = \beta_{\mathfrak{n}}$
 in $H_3(q_0)$ (the per-nucleon braid words from
-[`atom_braid_word_3A`](../../folio-assistant/computations/mass_at_3A_proper.py)
+[`atom_braid_word_3A`](../../computations/mass_at_3A_proper.py)
 with `include_inter=False`). Form the disjoint $H_6(q_0)$ word
 $\beta_{\mathfrak{p}} \otimes \beta_{\mathfrak{n}}$ by re-indexing
 $\beta_{\mathfrak{n}}$'s generators $\sigma_0, \sigma_1$ to
@@ -86,7 +86,7 @@ Pieri-rule Schur expansions and the dimension identity
 $\sum_\lambda d_\lambda c^\lambda_{\mu,\nu} = \binom{n}{n_1} d_\mu d_\nu$
 (yielding $80$ for $\mu = \nu = (2,1)$, etc.). A quick reference
 implementation is included inline in the probe because the existing
-`lr_coefficient` in [`sdp_multi_level.py`](../../folio-assistant/computations/sdp_multi_level.py)
+`lr_coefficient` in [`sdp_multi_level.py`](../../computations/sdp_multi_level.py)
 returns $0$ for several non-trivial cases (e.g.
 $c^{(3,3)}_{(2,1),(2,1)} = 1$ but the function returns $0$ — a separate
 bug to fix).

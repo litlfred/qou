@@ -19,7 +19,7 @@
 
 `atomic_tr_m_helium4.direct_h12_recursion` (line 166) calls
 `markov_trace_of_word(HELIUM4_N, HELIUM4_WORD)` where
-[`HELIUM4_WORD`](../../folio-assistant/computations/atomic_tr_m_helium4.py)
+[`HELIUM4_WORD`](../../computations/atomic_tr_m_helium4.py)
 contains both positive and **negative** integers (negatives = σ_i⁻¹).
 The candidate Rust drop-in
 [`pyhecke_native.tr_m_word_lq`](../../tools/pyhecke-native/src/lib.rs)
@@ -46,7 +46,7 @@ guarantee is required.
 
 ## Item 2 — implementation details
 
-**Patch.** [`folio-assistant/computations/tr_m_wenzl_bridge_mpfr.py:350-389`](../../folio-assistant/computations/tr_m_wenzl_bridge_mpfr.py).
+**Patch.** [`computations/tr_m_wenzl_bridge_mpfr.py:350-389`](../../computations/tr_m_wenzl_bridge_mpfr.py).
 
 The partition sum `Σ_λ y_λ · χ_λ(W)` previously built Hoefsmit
 seminormal matrices in mpmath per partition and evaluated `χ_λ`
@@ -95,7 +95,7 @@ the user sees identical results but slower compute.
 
 ## Item 3 — implementation details
 
-**Patch.** [`folio-assistant/computations/mass_at_3A_proper.py:198,228`](../../folio-assistant/computations/mass_at_3A_proper.py).
+**Patch.** [`computations/mass_at_3A_proper.py:198,228`](../../computations/mass_at_3A_proper.py).
 
 Two-line change:
 
@@ -122,7 +122,7 @@ cache-miss; no migration step needed.
 **Launched.** Background compute:
 
 ```bash
-cd folio-assistant/computations
+cd computations
 python3 -u sublemma_2_1_A_operator_extract_h12_nn.py --interface nn --max-lambda-dim 55
 ```
 

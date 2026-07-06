@@ -54,7 +54,7 @@ The roadmap above was executed across three merged PRs by one session
 `b₁/Area` + n=2 Habiro regroup). The **carrier-role table for the 6
 cohomological force-knots** (the "α_EM is the trefoil — what are the
 other 5?" question) is in
-`folio-assistant/computations/alpha_k_per_force_assembly.py` +
+`computations/alpha_k_per_force_assembly.py` +
 witness: `T_{2,3}` EM (trefoil) · `T_{2,5}` 2nd generation ·
 `T_{2,7}` charm/3rd generation · `T_{2,9}` strong (force-carrier,
 `(2,1,1)`, `h[9]_q`) · `T_{3,4}` Hopf-squared/top · `T_{3,5}`
@@ -69,6 +69,6 @@ the step-3 per-force coupling *values* (α_s, α_W) gated on
 - **No π in the derivation** (pre-archimedean R); π only as the `τ_arch` image.
 - **No fitting** — each α_K and each correction must be a q-rational/sinh
   expression forced by the cohomological force structure, reported tiered.
-- Coordinate with the stalled `alpha-em-4pi-*` family (`todos/research-queue.json`
+- Coordinate with the stalled `alpha-em-4pi-*` family (`.beans/research-queue.json`
   `triage-alpha-em-4pi-sibling-family`) — they are the (π-carrying) α/(4π)
   attempts; this program reframes them pre-archimedean.

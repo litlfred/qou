@@ -65,7 +65,7 @@ inputs.
 |:---:|:---:|:---:|:---|
 | $\alpha_1$ | $(3)$ symmetric | $m_\mu/m_e$ | Substrate $q_0$ (all crossings $+q$) |
 | $\alpha_2$ | $(2,1)$ standard | $m_e$ | Mass scale (mixed eigenvalues) |
-| $\alpha_3$ | $(1{,}1{,}1)$ alternating | $Q_\beta(n)$ | Interaction scale (all crossings $-q^{-1}$) |
+| $\alpha_3$ | $(1{,}1{,}1)$ alternating | $\mathfrak{Q}_\beta(n)$ | Interaction scale (all crossings $-q^{-1}$) |
 
 The symmetric sector sees only $+q$ eigenvalues — it controls
 the **shape** of the universe (how far $q$ is from $1$).
@@ -75,7 +75,7 @@ channel that drives beta decay).  The standard sector mixes
 both eigenvalues — it controls the **mass scale** (the
 conversion between Hecke algebra units and MeV).
 
-## Why three suffices for all $A$
+## Sufficiency of three parameters for all $A$
 
 Nuclear computations at Level 0 use $H_A(R, q)$ (one strand per
 nucleon), which for $A > 3$ has more than three irreps.
@@ -109,7 +109,7 @@ For $H_2(R, q)$ (two strands, leptonic physics):
 - No standard representation $\to$ no interaction scale needed
 
 This is consistent: leptonic physics (electron, muon, tau)
-requires only two inputs.  The third input ($Q_\beta$) is
+requires only two inputs.  The third input ($\mathfrak{Q}_\beta$) is
 needed only when the alternating sector participates — i.e.,
 when matter and antimatter crossings coexist within a
 composite (hadrons).

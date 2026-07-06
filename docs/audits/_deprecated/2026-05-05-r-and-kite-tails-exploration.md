@@ -199,7 +199,7 @@ worth queuing as a follow-up.
 ### Verification result (2026-05-06 follow-up)
 
 The kite-tail conjecture in its naive form is **falsified** by direct
-verification. [`folio-assistant/computations/kite_tail_verification.py`](../../folio-assistant/computations/kite_tail_verification.py)
+verification. [`computations/kite_tail_verification.py`](../../computations/kite_tail_verification.py)
 runs the closed-form symbolic $\mathrm{tr}_M$ for proton, neutron,
 and deuteron (with bridge-numeric $y_\lambda$ at $n=6$ for tractability)
 and extracts the factorisation:

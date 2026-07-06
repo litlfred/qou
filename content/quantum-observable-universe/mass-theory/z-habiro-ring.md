@@ -38,7 +38,7 @@ exceptional-divisor variable.
 | $q$ | $(q;q)_n = \prod_{k=1}^{n}(1-q^k)$ | $\widehat{\mathbb{Z}[q]}$ | colored Jones $J_K$ |
 | $z$ (this block) | $P_n(q,z) = \prod_{k=1}^{n}(1-q^{-k}z)$ | $\widehat{\mathbb{Z}[q^{\pm 1}][z]}_z$ | brane-tower element $\widetilde{\Phi}_q^{\mathrm{tower}}$ (conjectural) |
 
-## Why this ideal
+## Choice of ideal
 
 The poles of the analytic quantum dilogarithm
 ([quantum dilogarithm](#cor:quantum-dilogarithm))
@@ -88,3 +88,5 @@ the brane-tower partial sums are Cauchy in this topology and that
 their limit recovers the empirical mass under cyclotomic projection
 at a canonically determined depth. See
 [brane tower in $z$-Habiro](#conj:brane-tower-z-habiro).
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

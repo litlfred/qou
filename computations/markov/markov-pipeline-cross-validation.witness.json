@@ -1,29 +1,22 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T15:16:56.736269+00:00",
-  "commitSha": "f8ba41365749e121076867e479b7de313607a304",
+  "computedAt": "2026-07-05T11:20:24.436713+00:00",
+  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
   "assertions": [
     {
-      "name": "tr_M_at_q0_archimedean[D (deuteron, A=2)]",
-      "computed": 0.38828642407478897,
-      "expected": 0.3882864240747888,
-      "passed": true,
-      "tolerance": 3.88286424074789e-10
-    },
-    {
       "name": "tr_M_at_q0_archimedean[n (neutron, A=1)]",
-      "computed": 0.9232332299116374,
+      "computed": 0.9232332971861534,
       "expected": 0.9232332299116376,
-      "passed": true,
-      "tolerance": 9.232332299116376e-10
+      "passed": false,
+      "tolerance": 9.232332971861535e-10
     },
     {
       "name": "tr_M_at_q0_archimedean[p (proton, A=1)]",
-      "computed": 1.0653061442544502,
+      "computed": 1.065306228613167,
       "expected": 1.0653061442544502,
-      "passed": true,
-      "tolerance": 1.0653061442544503e-09
+      "passed": false,
+      "tolerance": 1.065306228613167e-09
     },
     {
       "name": "no_atoms_only_in_realizer",
@@ -33,23 +26,23 @@
     },
     {
       "name": "no_atoms_only_in_term6",
-      "computed": 0,
+      "computed": 1,
       "expected": 0,
-      "passed": true
+      "passed": false
     },
     {
       "name": "atom_intersection_size",
-      "computed": 3,
-      "expected": 3,
+      "computed": 2,
+      "expected": 2,
       "passed": true
     }
   ],
-  "allPassed": true,
-  "durationMs": 9,
+  "allPassed": false,
+  "durationMs": 10,
   "computation": "markov-pipeline-cross-validation",
   "scriptFile": "markov_pipeline_cross_validator.py",
-  "scriptHash": "2ba19efaa410",
-  "scriptCommitSha": "0fd092af098ad97f907de89376fe0a570b24dc76",
+  "scriptHash": "b146c79f256a",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -61,8 +54,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.4.0"
+    "mpmath": "1.3.0"
   },
   "description": "Verifies archimedean tr_M(q_0) agreement between the polynomial-ring realization (markov_substrate_realizer.py) and the Mittag-Leffler full-pole-sum computation (term6_full_pole_sum.py).",
   "contentBlock": "prop:full-pole-structure-mass-trace",
@@ -81,31 +73,25 @@
     ],
     "checks": [
       {
-        "atom": "D (deuteron, A=2)",
-        "realizer_value": 0.38828642407478897,
-        "term6_value": 0.3882864240747888,
-        "abs_diff": 1.6653345369377348e-16,
-        "rel_diff": 4.288933204156965e-16,
-        "agree": true
-      },
-      {
         "atom": "n (neutron, A=1)",
-        "realizer_value": 0.9232332299116374,
+        "realizer_value": 0.9232332971861534,
         "term6_value": 0.9232332299116376,
-        "abs_diff": 2.220446049250313e-16,
-        "rel_diff": 2.4050759627259423e-16,
-        "agree": true
+        "abs_diff": 6.72745158469823e-08,
+        "rel_diff": 7.28683812120108e-08,
+        "agree": false
       },
       {
         "atom": "p (proton, A=1)",
-        "realizer_value": 1.0653061442544502,
+        "realizer_value": 1.065306228613167,
         "term6_value": 1.0653061442544502,
-        "abs_diff": 0.0,
-        "rel_diff": 0.0,
-        "agree": true
+        "abs_diff": 8.435871667877848e-08,
+        "rel_diff": 7.918729320544576e-08,
+        "agree": false
       }
     ],
     "atoms_only_in_realizer": [],
-    "atoms_only_in_term6": []
+    "atoms_only_in_term6": [
+      "D (deuteron, A=2)"
+    ]
   }
 }

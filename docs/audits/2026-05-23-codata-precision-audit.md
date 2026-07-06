@@ -37,7 +37,7 @@ known consequences (Q_β consistency vs absolute m_n).
 ## Deliverable: `codata_2022_source.py`
 
 New module
-[`folio-assistant/computations/codata_2022_source.py`](../../folio-assistant/computations/codata_2022_source.py)
+[`computations/codata_2022_source.py`](../../computations/codata_2022_source.py)
 is the vendored snapshot — single source of truth for high-precision
 CODATA-2022 values, with:
 
@@ -133,8 +133,8 @@ coord-ledger 2026-05-08).
   scripts that re-define M_E_MEV at higher precision
 - `docs/audits/codata-reconciliation.md` — existing CODATA-vs-
   prediction reconciliation infrastructure
-- `folio-assistant/computations/substrate/codata_constants.py` — existing
+- `computations/substrate/codata_constants.py` — existing
   storage (to be updated)
-- `folio-assistant/computations/codata_2022_source.py` — new
+- `computations/codata_2022_source.py` — new
   source-of-truth module (this PR)
 - NIST CODATA 2022: https://physics.nist.gov/cuu/Constants/

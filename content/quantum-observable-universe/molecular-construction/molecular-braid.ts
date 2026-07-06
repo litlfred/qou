@@ -22,12 +22,12 @@ export default definition({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/ch-bond-writhe-lp.py",
+    script: "computations/ch-bond-writhe-lp.py",
     witness: [
-      "folio-assistant/computations/ch-bond-writhe-lp.witness.json",
-      "folio-assistant/computations/molecular-frobenius-lp.witness.json",
-      "folio-assistant/computations/molecular-trefoil-scan.witness.json",
-      "folio-assistant/computations/unified-mass-molecular.witness.json",
+      "computations/ch-bond-writhe-lp.witness.json",
+      "computations/molecular-frobenius-lp.witness.json",
+      "computations/molecular-trefoil-scan.witness.json",
+      "computations/unified-mass-molecular.witness.json",
     ],
     status: "experimental",
   },

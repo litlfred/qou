@@ -1,44 +1,105 @@
+import Mathlib.Tactic
+
 /-!
-# QOU.TopologicalMass.cat_descended_is_base_mass — placeholder stub
+# QOU.TopologicalMass.cat_descended_is_base_mass — descended term equals base mass
 
-**Placeholder canonical** for content block
-[`lem:topological-mass-cat-descended`](../../../quantum-observable-universe/braids-and-knots/topological-mass-cat-descended.md): *Descended term equals the base-level mass*.
+**Lemma** ([`lem:topological-mass-cat-descended`](../../../quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.md)).
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.TopologicalMass.cat_descended_is_base_mass` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
+Let `α = (∫_A ⊗ id) ∘ Δ ∘ ϱ` be the categorical mass integrand of a
+closed cycle `ϱ` at level `n + 1`, and `ϱ₀` its base-level descent.
+Then
+
+    ‖tr(τ̂ₙ(α))‖ = 𝔪(ϱ₀).
+
+## Structure (hypotheses vs. derivation)
+
+The proof narrative has two genuine sub-claims, each stated as its own
+named proposition (honest `sorry` + citation per AGENTS.md §1, §1a
+item 2), and the main theorem *derives* the .md identity by composing
+them (`congrArg` + `trans`) — it does not assume its conclusion:
+
+1. `descended_trace_is_base_trace` — descent compatibility of the
+   Frobenius trace: the trace of the descended integrand `τ̂ₙ(α)` at
+   level `n + 1` equals the base-level trace `tr₀(α₀)` of the descent
+   of the cycle.
+2. `base_mass_is_norm_of_base_trace` — the base-level mass is the mass
+   norm of the base-level trace: `‖tr₀(α₀)‖ = 𝔪(ϱ₀)`.
+
+The intermediate object `tr₀(α₀)` (the base-level trace) is a genuine
+quantity of the proof narrative, not a laundering device: both steps
+are *visible* sorried gaps, and the conclusion is obtained only by
+composing them — per the lean-proof-vacuity-audit fix recipe and
+AGENTS.md §3b-cond item 5.  (An earlier revision carried both halves
+as fields of a data-only context class and universally quantified over
+arbitrary contexts, which made the statement false as stated; that
+carrier is removed.)
+
+## Model / base ring (§7c)
+
+The operators of the claim — the integrand `α`, the descent involution
+`τ̂ₙ`, the Frobenius trace `tr`, and the mass norm `‖·‖` — are carried
+as named `opaque` constants on `ℝ` (an `opaque` constant needs a
+concrete inhabited carrier; the mass norm is an archimedean real norm,
+so `ℝ` is the honest carrier here).
 -/
 
 namespace QOU.TopologicalMass
 
+namespace CatDescended
 
-/-- Abstract context for the `cat_descended_is_base_mass` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
-class CatDescendedIsBaseMassContext where
-  /-- The braid representative type. -/
-  Braid : Type
-  /-- Categorical mass integrand `α` at level `n + 1`. -/
-  α : ℝ
-  /-- Base-level descended mass. -/
-  base_mass : ℝ
-  /-- Manuscript identity: the level-`n+1` integrand `α` descends
-      to the base-level mass. -/
-  claim_cat_descended_is_base_mass : α = base_mass
+/-- Categorical mass integrand `α = (∫_A ⊗ id) ∘ Δ ∘ ϱ` at level
+    `n + 1` (modelled in the observation algebra, here `ℝ`). -/
+opaque alpha : ℝ
 
-/-- **Lemma statement** (from manuscript):
+/-- Descent involution `τ̂ₙ` on the level-`(n+1)` integrand. -/
+opaque tauHat : ℝ → ℝ
 
-Let $\alpha = (\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$
-be the categorical mass integrand of a closed cycle $\varrho$ at level
-$n+1$, and let $\varrho_0$ be its base-level descent.  Then
+/-- Frobenius categorical trace `tr` at level `n + 1`. -/
+opaque trFrob : ℝ → ℝ
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types and translating
-    the manuscript claim above. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass-cat-descended.ts
-theorem cat_descended_is_base_mass [ctx : CatDescendedIsBaseMassContext] :
-    ctx.α = ctx.base_mass :=
-  ctx.claim_cat_descended_is_base_mass
+/-- Mass norm `‖·‖` (archimedean). -/
+opaque mnorm : ℝ → ℝ
+
+/-- The base-level trace `tr₀(α₀)` of the descended cycle `ϱ₀`. -/
+opaque baseTrace : ℝ
+
+/-- The base-level mass `𝔪(ϱ₀)`. -/
+opaque baseMass : ℝ
+
+/-- **Open input 1 — descent compatibility of the trace.**  The
+    Frobenius trace of the descended integrand equals the base-level
+    trace of the descent: `tr(τ̂ₙ(α)) = tr₀(α₀)`.  Needs the
+    level-`(n+1)` → base descent / Frobenius-trace infrastructure (not
+    formalised); body is `sorry`. -/
+-- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.md
+theorem descended_trace_is_base_trace :
+    trFrob (tauHat alpha) = baseTrace := by
+  -- Needs: descent of the closed cycle ϱ to ϱ₀ intertwines the
+  -- level-(n+1) Frobenius trace with the base-level trace.
+  sorry
+
+/-- **Open input 2 — the base mass is the norm of the base trace.**
+    `‖tr₀(α₀)‖ = 𝔪(ϱ₀)`.  Needs the `*`-norm / mass infrastructure of
+    the base level (not formalised); body is `sorry`. -/
+-- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.md
+theorem base_mass_is_norm_of_base_trace :
+    mnorm baseTrace = baseMass := by
+  -- Needs: the base-level mass 𝔪(ϱ₀) is recovered as the mass norm of
+  -- the base-level Frobenius trace.
+  sorry
+
+end CatDescended
+
+open CatDescended in
+/-- **Descended term equals the base-level mass**
+    ([`lem:topological-mass-cat-descended`]).
+
+`‖tr(τ̂ₙ(α))‖ = 𝔪(ϱ₀)`.  *Derived* (not assumed): rewrite the trace of
+the descended integrand to the base-level trace (open input 1), then
+identify its mass norm with the base-level mass (open input 2). -/
+theorem cat_descended_is_base_mass :
+    mnorm (trFrob (tauHat alpha)) = baseMass := by
+  rw [descended_trace_is_base_trace]
+  exact base_mass_is_norm_of_base_trace
 
 end QOU.TopologicalMass

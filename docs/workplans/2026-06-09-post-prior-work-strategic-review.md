@@ -18,7 +18,7 @@ What I should pick up next is **not** continuation of the Wenzl path. The highes
 | Review fixes (Copilot/Gemini) | ~211 | Average ~5 fixes per PR. The discipline I installed in [#1543](https://github.com/litlfred/qou/pull/1543) (corpus-grep-before-declaring-open) should reduce the "Open Math A/B/N — already-implemented" review-comment churn I generated. |
 | Lean v4.24.0 repair | ~172 | 40+ fixes across EmCoupling, HeckeEngine, BringShellBinding, SDP (`λ → lam` keyword changes, heartbeats, recDepth raises). **Gates upstream KLR/crystal work.** Need to re-check whether my IwahoriHecke / LRCoefficientHecke / WenzlAOperator classes still typecheck on the post-v4.24.0 build. |
 | Cross-chapter detangler | ~14 | Quark sector moved Ch13→Ch9 (`104c46f9c`). My past audit-doc references to `predicted-spectra/` quark blocks may be stale. |
-| Substrate-subdir migration | (Phase 6) | `folio-assistant/computations/substrate/` — 11 modules; root-script shim via `_path_bridge`. My probe `binding_bring_enhancement_compare.py` already picked this up via auto-update. The post-merge linter-edits to my files (`lr-coefficient-hecke.md/.lean`, `binding_bring_enhancement_compare.py`, `2026-05-30-universal-branching-multinucleon-gap.md`) reflect the migration. |
+| Substrate-subdir migration | (Phase 6) | `computations/substrate/` — 11 modules; root-script shim via `_path_bridge`. My probe `binding_bring_enhancement_compare.py` already picked this up via auto-update. The post-merge linter-edits to my files (`lr-coefficient-hecke.md/.lean`, `binding_bring_enhancement_compare.py`, `2026-05-30-universal-branching-multinucleon-gap.md`) reflect the migration. |
 | Falsified-conjecture deprecation | (multiple R100) | E.g., `conj-chirality-ribbon-frobenius` → `_deprecated/falsified-conjectures/`. Honest falsification tracking — my "open math" audit-doc framing should align. |
 
 ## Status of my prior carry-forward items (PR #1543 reanalysis)
@@ -35,7 +35,7 @@ What I should pick up next is **not** continuation of the Wenzl path. The highes
 
 Per the Explore-agent triage + STATUS.md cross-check:
 
-1. **Option-E Phase 2** (Δ_λ closure via crystal vertex) — PR [#1516](https://github.com/litlfred/qou/pull/1516), [`option-e.md`](../coordination/option-e.md). All four single-vertex KL candidates **REFUTED**; next step is extending [`kazhdan_lusztig.py`](../../folio-assistant/computations/substrate/kazhdan_lusztig.py) past n ≤ 4 cap to full `n^w_λ` enumeration on S_6. **Adjacent to my Wenzl-branching scope; not duplicating.**
+1. **Option-E Phase 2** (Δ_λ closure via crystal vertex) — PR [#1516](https://github.com/litlfred/qou/pull/1516), [`option-e.md`](../coordination/option-e.md). All four single-vertex KL candidates **REFUTED**; next step is extending [`kazhdan_lusztig.py`](../../computations/substrate/kazhdan_lusztig.py) past n ≤ 4 cap to full `n^w_λ` enumeration on S_6. **Adjacent to my Wenzl-branching scope; not duplicating.**
 2. **1ppQ Q_β c_3** ([`1ppq-qbeta.md`](../coordination/1ppq-qbeta.md), cont. 9-16): 28 single-formula candidates **SATURATED NEGATIVE**; Option A (CAL-3-anchored c_3 permanently) reinforced. No agent re-pitches at this point are productive.
 3. **α_EM canonical chain**: Habiro element `[2]_q·(1−h²α)` merged (PR #1911); bar-EVEN vs bar-ODD residue distinction now wired.
 4. **Mass-sweep gap A ≥ 4**: PR #1756 (α-cluster wire-up) shipped 7 atoms from B=0 to B_pred, m_err ~+0.9% → ~−0.1%. Non-α-cluster A > 12 still gated on H_{3A} kernel.
@@ -57,7 +57,7 @@ The Lean repair sprint (40+ fixes this week) may have left subtle drift in the c
 
 ### 2. Option-E Phase 2 KL enumeration extension — half-to-full session
 
-Extend [`kazhdan_lusztig.py`](../../folio-assistant/computations/substrate/kazhdan_lusztig.py) past n ≤ 4 to S_6, then re-run the `n^w_λ` enumeration probe queued in PR [#1516](https://github.com/litlfred/qou/pull/1516). The witness `probe-option-e-phase2-crystal-vertex-candidates.witness.json` exists; the extension is mechanical.
+Extend [`kazhdan_lusztig.py`](../../computations/substrate/kazhdan_lusztig.py) past n ≤ 4 to S_6, then re-run the `n^w_λ` enumeration probe queued in PR [#1516](https://github.com/litlfred/qou/pull/1516). The witness `probe-option-e-phase2-crystal-vertex-candidates.witness.json` exists; the extension is mechanical.
 
 **Rationale:** Highest-closure-potential active probe in the Δ_λ neighbourhood — refutation outcome pivots to GAP-A-3/A-4; positive outcome closes Option-E. Either way actionable.
 
@@ -65,7 +65,7 @@ Extend [`kazhdan_lusztig.py`](../../folio-assistant/computations/substrate/kazhd
 
 ### 3. Sidecar staleness sweep — half session (idle backlog)
 
-Per CLAUDE.md §"5-minute idle trigger" + the new `## Refresh stale sidecars + witnesses` rule (added 2026-06-03 to CLAUDE.md): walk the cone of files I authored or modified across the past week's sessions; verify each `*.qa.json` sidecar has current `source_hashes` + `criteria.<crit>[-1].reviewer.script_hash`. Refresh up to 10 sidecars in one commit.
+Per AGENTS.md §"5-minute idle trigger" + the new `## Refresh stale sidecars + witnesses` rule (added 2026-06-03 to AGENTS.md): walk the cone of files I authored or modified across the past week's sessions; verify each `*.qa.json` sidecar has current `source_hashes` + `criteria.<crit>[-1].reviewer.script_hash`. Refresh up to 10 sidecars in one commit.
 
 **Rationale:** Aligns with the QA-cluster surge on main; defensive maintenance.
 
@@ -78,8 +78,8 @@ Per [`2026-06-07-lake-cache-restore-discipline.md`](../coordination/2026-06-07-l
 ## What I should NOT pick up
 
 - **Wenzl operator-valued combiner-convergence (gap #4 of #1543's scope).** Parked pending upstream KLR. Re-pitching this without owner direction would burn a session.
-- **Demazure-Lusztig variant for Q_β c_3.** Already refuted at the preflight stage (Composite 1 sign-flip at u²); proposing a v2 would violate CLAUDE.md §"Precision goals" no-new-ansatz rule.
-- **A new "Open Math X" framing on anything.** The corpus-grep discipline I installed should catch this; verify any "open" claim against the checklist (CLAUDE.md §"Before declaring 'open'").
+- **Demazure-Lusztig variant for Q_β c_3.** Already refuted at the preflight stage (Composite 1 sign-flip at u²); proposing a v2 would violate AGENTS.md §"Precision goals" no-new-ansatz rule.
+- **A new "Open Math X" framing on anything.** The corpus-grep discipline I installed should catch this; verify any "open" claim against the checklist (AGENTS.md §"Before declaring 'open'").
 
 ## Coordination
 

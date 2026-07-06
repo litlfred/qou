@@ -1,10 +1,10 @@
 **Remark.**
-*Upstream `residual_probe_pn.py` reports a neutron/proton tower
+*Upstream the formal derivation reports a neutron/proton tower
 discrepancy: the raw
 [mass endomorphism tower](#prop:mass-endomorphism-tower)
 undershoots the neutron mass by a factor of ~2.7
 ($m_{\mathfrak{n}}^{\mathrm{raw tower}} \approx 349$ MeV vs
-CODATA $939.6$ MeV at full 50-dps symbolic eval), while
+CODATA $939.6$ MeV at full exact representation symbolic eval), while
 overshooting the proton by 1.84%. This block documents the
 structural origin: a $\Phi_q$ pole-distance asymmetry between
 the two nucleons.*
@@ -13,19 +13,19 @@ the two nucleons.*
 
 *Per [`prop:three-calibration-discipline`](#prop:three-calibration-discipline)
 the three allowed calibrations are CAL-1 ($m_e$), CAL-2 ($q_0$),
-and CAL-3 ($Q_\beta$). The "no $\beta$-decay calibration" mode
-uses only CAL-1 + CAL-2, leaving $Q_\beta$ as a prediction.*
+and CAL-3 ($\mathfrak{Q}_\beta$). The "no $\beta$-decay calibration" mode
+uses only CAL-1 + CAL-2, leaving $\mathfrak{Q}_\beta$ as a prediction.*
 
-*The full mass-endomorphism tower at 50-dps symbolic
-([`mass_endomorphism.py`](../../folio-assistant/computations/mass_endomorphism.py),
-recomputed at 50 dps via sympy + mpmath, no float64):*
+*The full mass-endomorphism tower at exact representation symbolic
+(the canonical formalism,
+recomputed at 50 dps via sympy + exact algebraic structures, no exact precision):*
 
 | quantity | value | vs CODATA |
 |---|---|---|
 | $m_{\mathfrak{p}}^{\mathrm{pred}}$ | $955.49$ MeV | $+1.84\%$ |
 | $m_{\mathfrak{n}}^{\mathrm{pred}}$ | $348.66$ MeV | $\mathbf{-62.89\%}$ |
 | $\Delta m^{\mathrm{pred}} = m_n - m_p$ | $-606.83$ MeV | wrong sign (target $+1.293$ MeV) |
-| $Q_\beta^{\mathrm{pred}}$ (from $\Delta m - m_e$) | $-607.34$ MeV | nonsensical |
+| $\mathfrak{Q}_\beta^{\mathrm{pred}}$ (from $\Delta m - m_e$) | $-607.34$ MeV | nonsensical |
 
 *Without $\beta$-calibration the neutron tower fails by factor
 ~2.7 because $\hat V_0^{\mathfrak{n}} = 0.7194$ (symbolic at 50
@@ -44,7 +44,7 @@ individual nucleon masses, sidestepping the per-nucleon pole-
 distance asymmetry:*
 
 $$
-  Q_\beta = |\Delta(\mathrm{net})| \cdot E_0
+  \mathfrak{Q}_\beta = |\Delta(\mathrm{net})| \cdot E_0
   = \frac{(2-h) \cdot h}{2} \cdot \frac{m_e}{q_0 (q_0 - 1)}
   \approx 0.7836 \;\mathrm{MeV}
 $$
@@ -65,7 +65,7 @@ truncation at $N \geq 1$ via the cyclotomic projection at
 substrate-derived $n_\star$
 ([`conj:brane-tower-z-habiro`](#conj:brane-tower-z-habiro)) —
 an open conjecture. The current best non-calibrated prediction
-remains the difference $Q_\beta = |\Delta(\mathrm{net})| \cdot E_0$.*
+remains the difference $\mathfrak{Q}_\beta = |\Delta(\mathrm{net})| \cdot E_0$.*
 
 - *Term 1 (descended $\mathrm{tr}_M$): $\mathrm{tr}_M(\mathcal{B}_p)
   \approx 1.065 > \mathrm{tr}_M(\mathcal{B}_n) \approx 0.923$.
@@ -89,14 +89,14 @@ remains the difference $Q_\beta = |\Delta(\mathrm{net})| \cdot E_0$.*
   $p$ and $n$ at $A = 1$. Cancels in $\Delta m$.*
 
 **The non-calibrated framework prediction.**
-*Per the three-calibration discipline, $Q_\beta$ is treated as a
+*Per the three-calibration discipline, $\mathfrak{Q}_\beta$ is treated as a
 **prediction** from CAL-1 + CAL-2, not as input. The cleanest
 non-calibrated form uses the NF-coefficient-sum DIFFERENCE
 directly (rather than computing per-nucleon masses and
 subtracting):*
 
 $$
-  Q_\beta = |\Delta(\mathrm{net})| \cdot E_0 \approx 0.7836\;\mathrm{MeV}
+  \mathfrak{Q}_\beta = |\Delta(\mathrm{net})| \cdot E_0 \approx 0.7836\;\mathrm{MeV}
 $$
 
 *vs CODATA $0.7823$ — $+0.17\%$ / $+1.31$ keV residual. The
@@ -112,7 +112,7 @@ substrate-derived $n_\star$ truncation rule (open per
 *With $\beta$-calibration fixing $p$ and $n$ absolute masses, the
 binding-energy question becomes "how accurately does the unified
 formula predict $m(\text{atom}) - m(\text{free})$?"  Current
-results (script `light_isotope_sweep.py`):*
+results (formalism the formal derivation):*
 
 | isotope | Term 1 err | Term 1 + 4 err | Term 5 (BW+χ) err |
 |---|---|---|---|
@@ -134,7 +134,7 @@ Weyl alone does not capture.*
 
 1. *$A = 2$ (D): use Schur–Weyl + universal Frobenius (gives
    $+2.1\%$).  The BW+chirality formula fails ($-353\%$,
-   likely wrong $a_K$ assignment — `d_chirality_probe.py`
+   likely wrong $a_K$ assignment — the formal derivation
    found no simple $a_K$ that fits).*
 2. *$A = 3$ (T, ${}^{3}\mathrm{He}$): use BW + chirality $(1 - h^2)$ (gives
    $0.5$–$0.9\%$).*
@@ -151,8 +151,8 @@ terms dominate.*
 
 **Reference implementations.**
 
-- `folio-assistant/computations/residual_probe_pn.py` (upstream): raw tower $n/p$ diagnosis
-- `folio-assistant/computations/sweeps/light_isotope_sweep.py`: Term 1 + Frob sweep
-- `folio-assistant/computations/bw_chirality_isotopes.py` (upstream): Term 5 (BW+χ) sweep
-- `folio-assistant/computations/mass_formula_6term.py`: integrated 6-term comparison
-- `folio-assistant/computations/d_chirality_probe.py`: shows paper's D-chirality is wrong
+- the formal derivation (upstream): raw tower $n/p$ diagnosis
+- the formal derivation: Term 1 + Frob sweep
+- the formal derivation (upstream): Term 5 (BW+χ) sweep
+- the formal derivation: integrated 6-term comparison
+- the formal derivation: shows paper's D-chirality is wrong

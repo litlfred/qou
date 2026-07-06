@@ -17,7 +17,7 @@ This module provides:
   - `compose_chi_lambda_q(λ, factor_chis_q)`: same but for q-Laurent
     polynomial characters (returns LaurentPolyQ-as-list).
 
-@module folio-assistant/computations/chi_via_factorization
+@module computations/chi_via_factorization
 """
 from __future__ import annotations
 import argparse

@@ -50,7 +50,7 @@ Usage:
     python3 wedderburn_block_fingerprint_feeder.py --isotope D
     python3 wedderburn_block_fingerprint_feeder.py --all
 
-@module folio-assistant/computations/wedderburn_block_fingerprint_feeder
+@module computations/wedderburn_block_fingerprint_feeder
 """
 from __future__ import annotations
 import argparse

@@ -19,7 +19,7 @@ $$
   \bigr\}.
 $$
 
-**Why "observable".**
+**Observability of the subcategory.**
 The observability axioms of the QOU
 ([observation](#def:observation)) require a non-degenerate
 Frobenius pairing to define degree-$0$ measurements.  When

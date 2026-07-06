@@ -1,8 +1,8 @@
 {
   "engine": "python+numpy+scipy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T18:27:10.204452+00:00",
-  "commitSha": "89be32d364904d0e0517acd8b69e39063c55d7da",
+  "computedAt": "2026-07-05T11:21:17.404505+00:00",
+  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
   "assertions": [
     {
       "name": "stage_b_pass_regression_and_q_stability",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 156,
+  "durationMs": 254,
   "computation": "qbeta-hoefsmit-chi-cross-anchor-stage-b-unblocked-probe",
   "scriptFile": "qbeta_hoefsmit_chi_cross_anchor_stage_b_unblocked_probe.py",
-  "scriptHash": "c1937b01c50d",
-  "scriptCommitSha": "89be32d364904d0e0517acd8b69e39063c55d7da",
+  "scriptHash": "e0ee3da16d00",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,

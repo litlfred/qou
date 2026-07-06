@@ -15,7 +15,7 @@ where $[x_0 : x_1 : x_2 : x_3 : x_4]$ are homogeneous coordinates.
 This is a smooth algebraic curve of genus $g = 4$, and it serves as the
 spectral coordinate fiber of the algebraic substrate.
 
-The *non-commutative coordinate ring* of $\mathcal{B}$ is defined as the
+The :defterm[non-commutative coordinate ring]{#brings-coordinate-ring} of $\mathcal{B}$ is defined as the
 quotient
 
 $$

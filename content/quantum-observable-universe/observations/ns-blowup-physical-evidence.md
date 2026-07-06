@@ -10,7 +10,7 @@ for such blow-up events, treating the mathematical "infinity" not as
 a breakdown but as the moment where the classical approximation
 $q = 1$ reverts to the underlying quantum substrate $q > 1$.
 
-## What a blow-up means physically
+## Physical meaning of a blow-up
 
 At a finite-time singularity $T^\ast$ of the classical NS flow, the
 velocity gradient $|\nabla u|$ diverges in any $L^2_q$-bound sense.
@@ -110,7 +110,7 @@ particular, finite intermittency exponents inconsistent with any
 surreal-order scaling would disconfirm the NS-blowup reading of
 [NS surreal bound](#rem:ns-surreal-bound).
 
-## Why the mathematical blow-up is physically finite
+## Physical finiteness of the mathematical blow-up
 
 In classical PDE theory, blow-up means $|\nabla u| \to \infty$.  In
 the QOU framework this does not mean "the universe contains an

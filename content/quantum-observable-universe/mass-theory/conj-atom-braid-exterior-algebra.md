@@ -1,4 +1,4 @@
-**Conjecture (atom-braid exterior-algebra structure; partial-closure: verified at $A \leq 4$, general $A$ open).** *Let `A = Z + N` with $Z \geq 1$, $N \geq 0$, and let $T_w(Z, N) \in B_{3A}$ denote the canonical atom-braid word `atom_braid_word_3A(Z, N)` (`mass_at_3A_proper.py` recipe). Its image in the Iwahori–Hecke algebra $H_{3A}(q)$ under the standard $\sigma_i \mapsto T_i$ representation generates a sub-algebra whose GB-NF filtration shape is given by*
+**Conjecture (atom-braid exterior-algebra structure; partial-closure: verified at $A \leq 4$, general $A$ open).** *Let `A = Z + N` with $Z \geq 1$, $N \geq 0$, and let $T_w(Z, N) \in B_{3A}$ denote the canonical atom-braid word `atom_braid_word_3A(Z, N)` (the formal derivation recipe). Its image in the Iwahori–Hecke algebra $H_{3A}(q)$ under the standard $\sigma_i \mapsto T_i$ representation generates a sub-algebra whose GB-NF filtration shape is given by*
 
 $$
 \dim_R \bigl(F_k(T_w(Z, N))\bigr) \;=\; \binom{3A - Z}{\,k - (Z - 1)\,} \qquad (k = Z - 1, Z, \ldots, 3A - 1).
@@ -51,11 +51,11 @@ mechanical proofs for Steps 1–3.
 
 ## Falsified inference: LP/SDP under-determination implication
 
-**Status:** the inference below was **FALSIFIED** by direct computation in [`atom_braid_active_partitions.py`](../../../folio-assistant/computations/atom_braid_active_partitions.py). All `p(n_0)` partitions have non-trivial `χ_λ(T_w)` — the claimed "active set $\leq n^* + 1$" prediction does NOT hold on the Wedderburn basis. See [`docs/audits/-exterior-algebra-lp-claim-falsified.md`](../../../docs/audits/-exterior-algebra-lp-claim-falsified.md) for the full retraction.
+**Status:** the inference below was **FALSIFIED** by direct computation in the canonical formalism. All `p(n_0)` partitions have non-trivial `χ_λ(T_w)` — the claimed "active set $\leq n^* + 1$" prediction does NOT hold on the Wedderburn basis. See [`docs/audits/-exterior-algebra-lp-claim-falsified.md`](../../../docs/audits/-exterior-algebra-lp-claim-falsified.md) for the full retraction.
 
-**What's still valid:** the Pascal-row `C(n*, k)` filtration shape on the **NF basis** (permutation-indexed, ordered by Coxeter length) — the Rust solver's empirical finding from  stands.
+**Surviving claims:** the Pascal-row `C(n*, k)` filtration shape on the **NF basis** (permutation-indexed, ordered by Coxeter length) — the Rust solver's empirical finding from  stands.
 
-**Why the inference failed:** I conflated two different bases of `H_{3A}(q)` — the NF basis (where the Pascal-row shape lives) and the Wedderburn basis (where LP `y_λ` variables live). These are different decompositions of the same algebra; the filtration-shape claim does NOT directly imply Wedderburn-channel reduction.
+**Source of the inference failure:** I conflated two different bases of `H_{3A}(q)` — the NF basis (where the Pascal-row shape lives) and the Wedderburn basis (where LP `y_λ` variables live). These are different decompositions of the same algebra; the filtration-shape claim does NOT directly imply Wedderburn-channel reduction.
 
 The section below is retained as a historical record of the falsified inference; the structural-filtration-shape finding above remains the substantive contribution of this conjecture.
 
@@ -96,14 +96,14 @@ The exterior algebra $\Lambda^*(V)$ arises in Kashiwara–Lusztig theory as the 
 
 A categorical proof would likely use:
 1. Schur–Weyl duality $H_n(q) \otimes \mathrm{GL}_m \curvearrowright V^{\otimes n}$ at appropriate $V$ choice
-2. The specific structure of `_PROTON_G0 / _PROTON_G1 / _NEUTRON_G0 / _NEUTRON_G1` 3-strand patterns (cf. `mass_at_3A_proper.py`)
+2. The specific structure of `_PROTON_G0 / _PROTON_G1 / _NEUTRON_G0 / _NEUTRON_G1` 3-strand patterns (cf. the formal derivation)
 3. KLR diagrammatics to identify the fermion-sector subalgebra
 
 ## Cross-references
 
-- [`folio-assistant/computations/mass_at_3A_proper.py`](../../../folio-assistant/computations/mass_at_3A_proper.py) — canonical `atom_braid_word_3A` recipe
+- the canonical formalism — canonical `atom_braid_word_3A` recipe
 - [`tools/hecke-engine/src/gb_nf_reducer.rs`](../../../tools/hecke-engine/src/gb_nf_reducer.rs) — `BraidLetter` + `right_mul_t_avg` (R5-full extension supporting σ_avg)
 - [`tools/hecke-engine/src/bin/joint_tower_sdp.rs`](../../../tools/hecke-engine/src/bin/joint_tower_sdp.rs) — joint-tower SDP solver (registry with 4 canonical-3A test atoms + $^4$He)
-- [`folio-assistant/computations/joint-tower-sdp-rust.witness.json`](../../../folio-assistant/computations/joint-tower-sdp-rust.witness.json) — observed filtration shapes
+- [`computations/joint-tower-sdp-rust.witness.json`](../../../computations/joint-tower-sdp-rust.witness.json) — observed filtration shapes
 - [`prop:per-braid-mass-tower`](per-braid-mass-tower.md) — canonical mass formula that consumes this structure
 - [`prop:lepton-bring-surface-h3-3channel`](lepton-bring-surface-h3-3channel.md) — bring-surface analog for lepton sector

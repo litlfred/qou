@@ -21,10 +21,10 @@ crossing number, with coefficients controlled by the Hecke
 algebra structure constants
 ([Chapter](#chap:path-integrals-braiding)).  At a root of unity
 $q = \zeta_\ell$, divisibility patterns of $J_K(q)$ encode the
-modular-Hecke combinatorics of [tm-notation](#tm-notation).
+modular-Hecke combinatorics of [the modular Markov-trace conventions](#tm-notation).
 
-In the $\pp$-adic / Witt-vector lift of
-[witt-lift-qou](#rem:witt-lift-qou) the Jones polynomial is
+In the $\pp$-adic / Witt-vector lift of the substrate parameter
+([Witt-vector lift](#rem:witt-lift-qou)), the Jones polynomial is
 recovered by reducing the lifted $R$-matrix mod $\pp$; the
 modular Jones invariant agrees with the characteristic-zero one
 where both make sense, and in this sense the finite-field model
@@ -32,4 +32,4 @@ and the archimedean model both produce the same knot-theoretic
 output.  The detailed development, including the Markov trace
 realisation and the connection between Jones polynomials and the
 mass formula, lives in
-[topological-mass-formula](#prop:topological-mass-formula).
+[the topological mass formula](#prop:topological-mass-formula).

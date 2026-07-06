@@ -15,7 +15,7 @@ is overnight work; the cache lets that cost amortise across runs.
 
 ## File layout
 
-  folio-assistant/computations/.derived-chi-mn-cache.json
+  computations/.derived-chi-mn-cache.json
     { "<lambda_str>|<mu_str>": [[q_degree, "coeff"], …], … }
 
   Keys: `"2,1|3"` for (λ=(2,1), μ=(3,)).

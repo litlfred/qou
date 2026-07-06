@@ -1,8 +1,8 @@
 # Staircase EW-residual conjecture — generalization confirmed for ρ_4
 
 **Date**: 2026-05-06
-**Script**: `folio-assistant/computations/staircase_ew_residual_conjecture.py`
-**Witness**: `folio-assistant/computations/staircase-ew-residual-conjecture.witness.json`
+**Script**: `computations/staircase_ew_residual_conjecture.py`
+**Witness**: `computations/staircase-ew-residual-conjecture.witness.json`
 **Status**: ✓ 7/7 assertions pass
 
 Tests the generalization conjecture from
@@ -154,7 +154,7 @@ Pure combinatorics, **no `sorry`** — `arm(0,0) = leg(0,0) = k − 1` for
 
 ### Conjectural layer (spectral)
 
-Per `CLAUDE.md §3b-cond`, the spectral claim is encoded as
+Per `AGENTS.md §3b-cond`, the spectral claim is encoded as
 
 ```lean
 axiom StaircaseEWSpectralContent (k : ℕ) : Prop

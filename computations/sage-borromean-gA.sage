@@ -3,7 +3,7 @@
 g_A from the Iwahori-Hecke algebra H_3(q) — Sage computation.
 
 Run from repo root:
-    sage folio-assistant/computations/sage-borromean-gA.sage
+    sage computations/sage-borromean-gA.sage
 
 Target: g_A = 1.2754 +/- 0.0013 (PDG 2024)
 """

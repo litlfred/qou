@@ -29,7 +29,7 @@
 **I1 audit movement (session):** `i1_no_probe` 525 → 506 (–19), `wired` 53 → 67 (+14).
 **Audit movement (current PR alone):** `i1_no_probe` 520 → 506 (–14, all from PR #818).
 
-### Latent-bug fixes carried inline (per CLAUDE.md "small-moderate fixes" pattern)
+### Latent-bug fixes carried inline (per AGENTS.md "small-moderate fixes" pattern)
 
 | What | Where | Why |
 |---|---|---|
@@ -41,7 +41,7 @@
 
 | What | Where |
 |---|---|
-| CLAUDE.md rule "Small-moderate fixes for related bugs ride on the active PR" | `CLAUDE.md` §User accessibility — companion to the existing "combine related work into one branch" rule |
+| AGENTS.md rule "Small-moderate fixes for related bugs ride on the active PR" | `AGENTS.md` §User accessibility — companion to the existing "combine related work into one branch" rule |
 
 ## Pending — for the next session / agent
 
@@ -81,7 +81,7 @@
 - `cor:knot-factor-shell-closed` — needs ⁴He braid word in B_12 (intractable per PR #798's deferred-intractable taxonomy); may need to use a smaller analog at H_4 or H_6
 - `prop:wenzl-bridge-applicability-qou` — structural existence proof, not numerical; could probe via uniqueness check (compute tr_M two ways with different normalisations and verify they collapse to the same up-to-scale answer)
 
-**Non-Hecke I1 backlog (508 items):** the broader queue includes Plancherel-spectral, GB/NF, observation-theory, Brundan-Kleshchev, etc. Run `python3 folio-assistant/computations/audits/i1_no_probe_audit.py` and inspect `data.rows` for filtering.
+**Non-Hecke I1 backlog (508 items):** the broader queue includes Plancherel-spectral, GB/NF, observation-theory, Brundan-Kleshchev, etc. Run `python3 computations/audits/i1_no_probe_audit.py` and inspect `data.rows` for filtering.
 
 ### D. Sibling PR awareness
 
@@ -92,7 +92,7 @@
 
 ### E. Coordination ledger entries to file (optional)
 
-The pattern noted by the user this session — "small-moderate fixes ride on the active PR" — was added to `CLAUDE.md`. If the project keeps a separate coordination ledger of process-rule additions, file an entry there too (pattern: see `docs/coordination/` for the existing convention).
+The pattern noted by the user this session — "small-moderate fixes ride on the active PR" — was added to `AGENTS.md`. If the project keeps a separate coordination ledger of process-rule additions, file an entry there too (pattern: see `docs/coordination/` for the existing convention).
 
 ## How to resume
 
@@ -102,22 +102,22 @@ git fetch origin
 git checkout claude/i1-probe-knot-factor-borromean-composite-2026-05-19
 
 # Re-run all 12 probes + audits to confirm state
-python3 folio-assistant/computations/probes/knot_factor_borromean_composite_probe.py
-python3 folio-assistant/computations/probes/hecke_branching_trace_decomposition_probe.py
-python3 folio-assistant/computations/probes/hecke_1d_irrep_closed_form_character_probe.py
-python3 folio-assistant/computations/probes/symbolic_character_table_probe.py
-python3 folio-assistant/computations/probes/q_hecke_seminormal_character_closure_probe.py
-python3 folio-assistant/computations/probes/hecke_markov_transition_probe.py
-python3 folio-assistant/computations/probes/hecke_log_decomposition_probe.py
-python3 folio-assistant/computations/probes/hoefsmit_seminormal_form_probe.py
-python3 folio-assistant/computations/probes/plancherel_weight_boundedness_probe.py
-python3 folio-assistant/computations/probes/wedderburn_weight_canonical_probe.py
-python3 folio-assistant/computations/probes/three_parameters_wedderburn_probe.py
-python3 folio-assistant/computations/probes/frobenius_gram_matrix_probe.py
-python3 folio-assistant/computations/probes/jucys_murphy_central_elements_qou_probe.py
-python3 folio-assistant/computations/probes/explicit_central_idempotent_probe.py
+python3 computations/probes/knot_factor_borromean_composite_probe.py
+python3 computations/probes/hecke_branching_trace_decomposition_probe.py
+python3 computations/probes/hecke_1d_irrep_closed_form_character_probe.py
+python3 computations/probes/symbolic_character_table_probe.py
+python3 computations/probes/q_hecke_seminormal_character_closure_probe.py
+python3 computations/probes/hecke_markov_transition_probe.py
+python3 computations/probes/hecke_log_decomposition_probe.py
+python3 computations/probes/hoefsmit_seminormal_form_probe.py
+python3 computations/probes/plancherel_weight_boundedness_probe.py
+python3 computations/probes/wedderburn_weight_canonical_probe.py
+python3 computations/probes/three_parameters_wedderburn_probe.py
+python3 computations/probes/frobenius_gram_matrix_probe.py
+python3 computations/probes/jucys_murphy_central_elements_qou_probe.py
+python3 computations/probes/explicit_central_idempotent_probe.py
 
-python3 folio-assistant/computations/audits/i1_no_probe_audit.py
+python3 computations/audits/i1_no_probe_audit.py
 # Inspect data.by_result for current totals
 ```
 

@@ -56,7 +56,7 @@ At q_0 ≈ 1.11 (just outside |q|=1), the truncated sum gives a
 meaningful Term-6 contribution whose magnitude this script measures.
 
 Input:
-  folio-assistant/computations/habiro-coefficients-atomic.witness.json
+  computations/habiro-coefficients-atomic.witness.json
   (provides full polynomial tr_M(T_w, q) for proton, neutron, and
    deuteron; T, ³He, ⁴He+ pending — symbolic Hoefsmit at H_9+ requires
    the numerical-interpolation path of habiro_coefficients_interpolate.py)

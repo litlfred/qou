@@ -23,9 +23,11 @@
 
 set -uo pipefail
 
-# Acquire global lock to prevent parallel downloads/extracts across agent workspaces
-exec 200>"/tmp/qou-toolchain.lock"
-flock 200
+# Acquire global lock to prevent parallel downloads/extracts across agent workspaces (if flock is available)
+if command -v flock >/dev/null 2>&1; then
+  exec 200>"/tmp/qou-toolchain.lock"
+  flock 200
+fi
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 TOOLCHAIN_FILE="$REPO_ROOT/lean-toolchain"
@@ -78,7 +80,13 @@ if [ "$VERSION" = "$TOOLCHAIN_SPEC" ] || [ -z "$VERSION" ]; then
   echo "setup-lean-toolchain: unsupported toolchain spec '$TOOLCHAIN_SPEC'" >&2
   exit 0
 fi
-LINK_NAME="lean-$VERSION"
+
+OS_NAME="$(uname -s)"
+if [ "$OS_NAME" = "Darwin" ]; then
+  LINK_NAME="$TOOLCHAIN_SPEC"
+else
+  LINK_NAME="lean-$VERSION"
+fi
 EXTRACT_DIR="/tmp/lean-$VERSION"
 ZIP_URL="https://github.com/leanprover/lean4/releases/download/$VERSION/lean-${VERSION#v}-linux.zip"
 ZIP_PATH="/tmp/lean-$VERSION-linux.zip"
@@ -103,10 +111,23 @@ lake_ok() {
 }
 
 # 1. Fully-ready short-circuit: linked + override + lake works.
-if elan toolchain list 2>/dev/null | grep -qE "^$LINK_NAME( |$)" \
+if elan toolchain list 2>/dev/null | grep -qF "$LINK_NAME" \
    && override_ok && lake_ok
 then
   exit 0
+fi
+
+# On macOS, if not short-circuited, set override and check.
+if [ "$OS_NAME" = "Darwin" ]; then
+  echo "setup-lean-toolchain: macOS detected. Setting override to $TOOLCHAIN_SPEC..." >&2
+  (cd "$REPO_ROOT" && elan override set "$TOOLCHAIN_SPEC" 2>/dev/null) || true
+  if lake_ok; then
+    echo "setup-lean-toolchain: native macOS toolchain $TOOLCHAIN_SPEC is ready" >&2
+    exit 0
+  else
+    echo "setup-lean-toolchain: ERROR — native toolchain not working or not installed. Please run: elan toolchain install $TOOLCHAIN_SPEC" >&2
+    exit 1
+  fi
 fi
 
 # 2. Ensure the extracted toolchain exists on disk. Download if missing.

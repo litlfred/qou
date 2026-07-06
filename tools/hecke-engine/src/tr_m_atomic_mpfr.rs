@@ -15,7 +15,7 @@
 //! This is the user-directed "put all that in rust" / "stop back
 //! and forth rust and python of data" closure of Tier 1.A.
 //!
-//! Per CLAUDE.md §Precision goals L1 (50-dps compute floor): every
+//! Per AGENTS.md §Precision goals L1 (50-dps compute floor): every
 //! intermediate quantity is exact (BigRational / BigInt) up to the
 //! final MPFR substitution; precision is set by the `dps` argument
 //! (production default 50, research-grade 100+).
@@ -62,7 +62,7 @@ fn dps_to_prec(dps: u32) -> u32 {
 /// `chi_lambda_*_mpfr` API convention).
 ///
 /// `dps`: working precision in decimal places.  Production floor
-/// is 50 (CLAUDE.md §Precision goals L1); use 100+ for substrate-
+/// is 50 (AGENTS.md §Precision goals L1); use 100+ for substrate-
 /// derivation cross-checks.
 ///
 /// Returns `Err(message)` if the trace recursion hits Case C

@@ -204,6 +204,6 @@
     "top5_matches": 1,
     "n_atoms_tested": 5,
     "verdict": "NEGATIVE: D_q² rank does NOT predict empirical Δ_λ dominance. Only 1/5 are in top-5 by D_q². The Δ_λ-dominance criterion is structurally distinct from Dirac eigenvalue magnitude. Option E's ρ_w(K) needs a different selection mechanism.",
-    "implication_for_option_E": "If D_q² rank does NOT match empirical dominant λ*(K), Option E's ρ_w(K) construction needs a selection mechanism beyond Dirac eigenvalues. The Type-B folding bar-symmetry (CLAUDE.md §7b, PR #1288's transpose-pair theorems on main) may be the right structural input, since dominant pairs include both λ* and λ*^T (e.g. ⁴He: (4,4,4) ↔ (3,3,3,3))."
+    "implication_for_option_E": "If D_q² rank does NOT match empirical dominant λ*(K), Option E's ρ_w(K) construction needs a selection mechanism beyond Dirac eigenvalues. The Type-B folding bar-symmetry (AGENTS.md §7b, PR #1288's transpose-pair theorems on main) may be the right structural input, since dominant pairs include both λ* and λ*^T (e.g. ⁴He: (4,4,4) ↔ (3,3,3,3))."
   }
 }

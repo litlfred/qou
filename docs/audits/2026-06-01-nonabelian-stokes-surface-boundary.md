@@ -76,7 +76,7 @@ forms, multiplicative surface integral). It is carried as the single
 class hypothesis `stokes_reduction`, never as `:= True` or a fabricated
 proof. The two `surfaceOrderedExp_*` lemmas are derived *from* it and so
 are honestly conditional (they would be `sorry`-free modulo the one
-class instance, per CLAUDE.md §3b-cond).
+class instance, per AGENTS.md §3b-cond).
 
 The pre-existing CS/volume correspondence axiom
 `chernSimons_volume_correspondence` (in `NonAbelianStokes.lean`, added by

@@ -1,0 +1,102 @@
+{
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "computedAt": "2026-07-03T08:27:13.737679+00:00",
+  "commitSha": "c0ad389332e7617aa0193c99d0605c49766ad67d",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 626760,
+  "computation": "aj-figure-eight-operator-construct-verify",
+  "scriptFile": "aj_figure_eight_operator_construct_verify.py",
+  "scriptHash": "735187457de1",
+  "scriptCommitSha": "c0ad389332e7617aa0193c99d0605c49766ad67d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Figure-eight quantum A-polynomial: minimal-window exact construction of the order-2 inhomogeneous annihilator of J_N(4_1), exact symbolic verification, q->1 specialization vs the classical A-polynomial (AJ verification at the QOU muon anchor).",
+  "audit_only": true,
+  "context": {
+    "literature": "strong AJ proved for 4_1 [nguyen-tran-2021]; AJ statement [garoufalidis2004]",
+    "jones_object": "Lambda-Newton form; Lean: QOU/BraidKnot/HabiroNewtonLadder.lean",
+    "lean_statement": "QOU/BraidKnot/AJFigureEight.lean StrongAJFigureEight",
+    "classical_A_poly": "M^4 L^2 - (M^8 - M^6 - 2M^4 - M^2 + 1) L + M^4 (CCGLS)"
+  },
+  "operator": {
+    "form": "a2(q,m) J_{N+2} + a1(q,m) J_{N+1} + a0(q,m) J_N = b(q,m), m=q^N",
+    "window": [
+      -8,
+      -1
+    ],
+    "a2": "(m*q**2 - 1)*(m**2*q - 1)/m**6",
+    "a1": "-(m*q - 1)**2*(m*q + 1)*(m**4*q**4 - m**3*q**3 - m**2*q**3 - m**2*q - m*q + 1)/(m**8*q**2)",
+    "a0": "(m - 1)*(m**2*q**3 - 1)/m**6",
+    "b": "(m*q + 1)*(m**2*q - 1)*(m**2*q**3 - 1)/(m**7*q)"
+  },
+  "construction": {
+    "structure_prime": "2305843009213693951",
+    "q_samples": [
+      "2",
+      "3",
+      "5/2",
+      "7/3",
+      "4",
+      "9/4",
+      "5",
+      "11/5",
+      "3/2",
+      "8/3",
+      "7/2",
+      "13/6",
+      "6",
+      "10/3",
+      "12/5",
+      "9/2",
+      "11/4",
+      "13/4",
+      "15/4",
+      "17/6",
+      "19/6",
+      "7"
+    ],
+    "reconstruction_deg_q": 10
+  },
+  "verification": {
+    "symbolic_annihilation_N": {
+      "1": true,
+      "2": true,
+      "3": true,
+      "4": true,
+      "5": true,
+      "6": true,
+      "7": true,
+      "8": true,
+      "9": true,
+      "10": true,
+      "11": true,
+      "12": true
+    },
+    "all_verified": true
+  },
+  "specialization_q_to_1": {
+    "m->M": {
+      "classical_limit": "L**2/M**3 - L**2/M**4 - L**2/M**5 + L**2/M**6 - L/M + 2*L/M**2 + 2*L/M**3 - 3*L/M**4 - 3*L/M**5 + 2*L/M**6 + 2*L/M**7 - L/M**8 + M**(-3) - 1/M**4 - 1/M**5 + M**(-6)",
+      "ratio_to_A_classical": "(L**2*M**5 - L**2*M**4 - L**2*M**3 + L**2*M**2 - L*M**7 + 2*L*M**6 + 2*L*M**5 - 3*L*M**4 - 3*L*M**3 + 2*L*M**2 + 2*L*M - L + M**5 - M**4 - M**3 + M**2)/(L**2*M**12 - L*M**16 + L*M**14 + 2*L*M**12 + L*M**10 - L*M**8 + M**12)",
+      "matches_up_to_L_free_M_factor": false
+    },
+    "m->M^2": {
+      "classical_limit": "L**2/M**6 - L**2/M**8 - L**2/M**10 + L**2/M**12 - L/M**2 + 2*L/M**4 + 2*L/M**6 - 3*L/M**8 - 3*L/M**10 + 2*L/M**12 + 2*L/M**14 - L/M**16 + M**(-6) - 1/M**8 - 1/M**10 + M**(-12)",
+      "ratio_to_A_classical": "(M**6 - M**4 - M**2 + 1)/M**16",
+      "matches_up_to_L_free_M_factor": true
+    }
+  },
+  "verdict": "AJ VERIFIED for 4_1 (corpus-side): the minimal-window order-2 inhomogeneous operator annihilates J_N(4_1) exactly (symbolic q, N=1..12) and its q->1 homogeneous part matches the classical A-polynomial up to an L-free factor in M — independently reproducing [nguyen-tran-2021] at the QOU muon-anchor knot.",
+  "tier": "structural-exact annihilation; convention-sorted L-free-factor match at q=1"
+}

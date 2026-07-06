@@ -47,9 +47,9 @@ export default definition({
   computation: {
     engine: "python",
     script:
-      "folio-assistant/computations/interface_composition.py",
+      "computations/interface_composition.py",
     witness:
-      "folio-assistant/computations/canonical-braid-interface-composition.witness.json",
+      "computations/canonical-braid-interface-composition.witness.json",
     status: "verified",
   },
 });

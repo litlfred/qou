@@ -39,7 +39,7 @@ reducer; reference at `atomic-tr-m-mpfr-50dps.witness.json`) to
 Witness: tr-m-q-hecke-seminormal.witness.json
 Audit-only: docs/audits/2026-05-08-q-hecke-character-gap-closure.md
 
-@module folio-assistant/computations/tr_m_q_hecke_seminormal
+@module computations/tr_m_q_hecke_seminormal
 """
 
 from __future__ import annotations

@@ -1,24 +1,24 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-03T17:15:11.063039+00:00",
-  "commitSha": "801d69d2f292824064a216ba612f724b247641e9",
+  "computedAt": "2026-06-22T13:19:48.200971+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "q0_does_not_cancel_in_lepton_ratio",
-      "computed": true,
+      "computed": false,
       "expected": true,
-      "passed": true,
+      "passed": false,
       "tolerance": 0,
       "source": "m_μ/m_e ratio residual equals the mass residual because m_e is the q_0-independent CAL-1 anchor; the q_0 lever survives."
     }
   ],
-  "allPassed": true,
+  "allPassed": false,
   "durationMs": 16,
   "computation": "mmu-lepton-torus-tower-feasibility-probe",
   "scriptFile": "mmu_lepton_torus_tower_feasibility_probe.py",
-  "scriptHash": "5d7ca877361d",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "5e9ffac860f4",
+  "scriptCommitSha": "653d66e543fe6ba62d93eb249fcd7c0794fee2c7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,14 +28,12 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "description": "EXPLORATORY feasibility probe (PR #1753): bare-categorical m_μ residual, q_0 non-cancellation in m_μ/m_e, sensitivity lever, and one torus-tower candidate level. NO CODATA fit; audit-only.",
   "parameters": {
-    "q_canonical_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "q_canonical_50dps": "1.1099785955573347198997632204832250266562084087802",
     "m_e_CODATA_MeV": "0.51099895069",
     "m_mu_CODATA_MeV": "105.6583755",
     "m_mu_over_m_e_CODATA": "206.7682830",
@@ -43,13 +41,13 @@
     "label": "EXPLORATORY (audit-only; no production wiring)"
   },
   "data": {
-    "m_mu_pred_MeV": "105.6583978113418139261707",
-    "residual_ppb": "211.16491436",
-    "ratio_pred": "206.7683263706738902896096",
-    "ratio_residual_ppb": "209.754964645",
-    "q0_does_not_cancel_in_mmu_over_me": true,
-    "sensitivity_dlnmmu_dq": "-16.3835223444",
-    "amplification_dlnmmu_dlnq": "18.185359",
+    "m_mu_pred_MeV": "105.6583756435129638724802",
+    "residual_ppb": "1.35827342786",
+    "ratio_pred": "206.7682829893150438173168",
+    "ratio_residual_ppb": "-0.0516759922153",
+    "q0_does_not_cancel_in_mmu_over_me": false,
+    "sensitivity_dlnmmu_dq": "-16.3835202477",
+    "amplification_dlnmmu_dlnq": "18.185357",
     "dq0_ppb_from_repin": "-11.6118085259",
     "vol_4_1": "2.029883212819307250042405",
     "torus_knots_have_zero_volume": true,

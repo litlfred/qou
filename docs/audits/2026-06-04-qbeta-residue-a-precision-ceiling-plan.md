@@ -16,7 +16,7 @@ structural search.
 ## What A actually is (feasibility-critical)
 
 Define the tail terms `x_k := c_k · u_subst^k`. Step 1 of PR #1727
-([`qbeta_singularity_type_probe.py`](../../folio-assistant/computations/qbeta/qbeta_singularity_type_probe.py))
+([`qbeta_singularity_type_probe.py`](../../computations/qbeta/qbeta_singularity_type_probe.py))
 extracts the **asymptotic limit** of the simple-pole signature
 
 ```
@@ -46,7 +46,7 @@ of a sequence sampled only at k = 8, 9, 10, which agree to ~4 sig figs.
 
 1. **More rungs (c_11…c_15) are blocked.** The Step-1 method note states
    extracting c_k beyond 10 from R(q₀) requires a postulated canonical
-   form per rung — an ansatz fit, forbidden per CLAUDE.md.
+   form per rung — an ansatz fit, forbidden per AGENTS.md.
 2. **Extrapolation needs clean asymptotics.** If `x_k = L + B·ρ^k`
    (`L` the tail limit, ρ = u_subst/u_2 set by the second-nearest
    singularity), three points k=8,9,10 give a Shanks/Aitken estimate of
@@ -87,7 +87,7 @@ An honest **precision-ceiling analysis**, not a fabricated 30-digit A:
 docs/audits/
   2026-06-04-qbeta-residue-a-precision-ceiling-plan.md     # this file
   2026-06-04-qbeta-residue-a-precision-ceiling-verdict.md  # verdict
-folio-assistant/computations/qbeta/
+computations/qbeta/
   qbeta_residue_a_precision_ceiling.py
   qbeta-residue-a-precision-ceiling.witness.json           # auto-emitted
 ```

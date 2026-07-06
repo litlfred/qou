@@ -61,7 +61,7 @@ from pathlib import Path
 
 import mpmath as mp
 
-# Canonical sources (per CLAUDE.md "single source of truth for q_0"):
+# Canonical sources (per AGENTS.md "single source of truth for q_0"):
 #   - q_parameter.Q_50_DIGIT_STR  → substrate q_0 at 50-dps
 #   - experimental_constants.MU_OVER_E / TAU_OVER_E → CODATA m_ℓ/m_e
 # These imports replace the prior hardcoded P31 literals (cal2/cal_tau_e

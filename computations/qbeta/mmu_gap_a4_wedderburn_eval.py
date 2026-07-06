@@ -4,7 +4,7 @@ import mpmath as mp
 def main():
     mp.mp.dps = 60
     
-    q_val = mp.mpf("1.1099785827513808075916690956107688798744991218735787360728142402")
+    q_val = mp.mpf("1.1099785955573347198997632204832250266562084087801536866079811461")
     
     # Let's compute the (2,1) representation matrices of sigma_1, sigma_2
     q = sp.Symbol('q')

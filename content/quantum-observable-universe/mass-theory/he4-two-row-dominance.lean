@@ -2,8 +2,8 @@
 He-4 two-row stratum dominance.
 
 LaTeX label:        prop:he4-two-row-dominance
-Computational ref:  folio-assistant/computations/probe_he4_canonical_tr_m_fingerprint.py
-Witness:            folio-assistant/computations/he4-canonical-tr-m-block-fingerprint.witness.json
+Computational ref:  computations/probe_he4_canonical_tr_m_fingerprint.py
+Witness:            computations/he4-canonical-tr-m-block-fingerprint.witness.json
 Audit:              docs/audits/2026-05-15-three-pr-integration.md §F1 ⁴He
 
 For β_{⁴He} = canonical atomic braid word (mass_at_3A_proper.atom_braid_word_3A(2,2))
@@ -14,7 +14,7 @@ verifies
 
 at 50 dps, where Λ²(12) = {(12), (11,1), (10,2), (9,3), (8,4), (7,5), (6,6)}.
 
-Following CLAUDE.md §3b-cond (conditional class exception), the
+Following AGENTS.md §3b-cond (conditional class exception), the
 proposition is axiomatized as a Lean class `HasHe4TwoRowDominance`
 whose instance encodes the witness-verified ≥ 80 % bound.
 Downstream propositions take this class as a
@@ -99,7 +99,7 @@ theorem he4_complement_at_most_20_percent
 /-- The dominant block (9, 3) belongs to the two-row stratum
     Λ²(12).  Composes `dominant_is_two_row` and `dominant_sums_to_12`
     via `twoRow_of_length_le_two`. -/
-theorem dominant_in_two_row_stratum
+def dominant_in_two_row_stratum
     [h : HasHe4DominantBlock] :
     TwoRowStratum 12 h.dominant_partition :=
   ⟨h.dominant_sums_to_12, h.dominant_is_two_row⟩

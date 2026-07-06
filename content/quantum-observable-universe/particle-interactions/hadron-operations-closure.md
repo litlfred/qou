@@ -1,6 +1,6 @@
 **Proposition.**
 Let $\mathbf{C}$ be a rigid :refterm[braided monoidal category]{#braided-monoidal-category} and let
-$\mathfrak{H} \in \mathrm{Sym}^n(K)$ be a hadron ([hadron](#def\:hadron)) with
+$\mathfrak{H} \in \mathrm{Sym}^n(K)$ be a hadron ([hadron](#def:hadron)) with
 constituent knots $K_1, \ldots, K_n$.
 
 1. **Braiding closure.** The braiding $\beta_{K_i, K_j}$ descends to an

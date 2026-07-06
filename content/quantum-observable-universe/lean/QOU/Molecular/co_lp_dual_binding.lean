@@ -1,95 +1,88 @@
-import QOU.Shared.MarkovTraceClaim
+import Mathlib.Data.Real.Basic
 
 /-!
-# QOU.Molecular.co_lp_dual_binding — placeholder stub
+# QOU.Molecular.co_lp_dual_binding
 
-**Placeholder canonical** for content block
-[`prop:co-lp-dual-binding`](../../../quantum-observable-universe/molecular-construction/co-lp-dual-binding.md): *LP dual selects the triple bond as optimal for $CO$*.
+**Proposition (conditional on [`conj:q-integer-mass-formula`])**
+([`prop:co-lp-dual-binding`](../../../quantum-observable-universe/molecular-construction/co-lp-dual-binding.md)):
+*The LP dual of the CO molecular braid selects the triple-bond
+configuration (`k* = 3`) as optimal over single (`k = 1`) and double
+(`k = 2`) bonds.*
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.Molecular.co_lp_dual_binding` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
--/
+## Disposition (integrity)
+
+The class carries only **genuine data**: the selected bond order `k*`
+(definitional input), the `Φ₁`-functional on bond orders, and the three
+candidate bond orders.  It does **not** carry the conclusion as a
+projected field (the previous version carried a `Prop`-valued
+`co_lp_dual_bound` and an `impl_…` field handing back the conclusion —
+the self-assuming projection forbidden by AGENTS.md §3b-cond item 5).
+
+- `co_triple_beats_single` and `co_triple_beats_double` are **derived**
+  from the §3b-cond hypothesis: instantiating the
+  ground-state-minimisation hypothesis at `k = 1` and `k = 2` yields
+  `Φ₁(3) ≤ Φ₁(1)` and `Φ₁(3) ≤ Φ₁(2)` — genuine new inequalities (use
+  the hypothesis, do not restate it).
+- `co_lp_dual_binding` (the resolving decl) conjoins the *definitional*
+  selection `k* = 3` with the two *derived* minimality inequalities.
+  Neither inequality projects a conclusion field. -/
 
 namespace QOU.Molecular
 
-
-/-- Abstract context for the `co_lp_dual_binding` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
-class CoLpDualBindingContext extends QOU.Shared.MarkovTraceContext where
-  /-- The selected CO bond order `k* ∈ {1, 2, 3}`. -/
+/-- Data of the CO LP-dual-binding claim. All fields are *inputs*; none
+    is the conclusion. -/
+class CoLpDualBindingContext where
+  /-- The selected CO bond order `k* ∈ {1, 2, 3}` (definitional input). -/
   k_star : ℕ
-  /-- `Φ_1` at bond order `k`. -/
+  /-- The triple bond is selected: `k* = 3` (definitional input). -/
+  k_star_def : k_star = 3
+  /-- `Φ₁` at bond order `k`. -/
   Phi_1_k : ℕ → ℝ
-  /-- Manuscript identity: triple bond `k* = 3` is the LP-optimal
-      configuration (`Φ_1` minimum over `k ∈ {1, 2, 3}`). -/
-  claim_co_lp_dual_binding :
-    k_star = 3 ∧
-    Phi_1_k k_star ≤ Phi_1_k 1 ∧
-    Phi_1_k k_star ≤ Phi_1_k 2
-/-- **Proposition statement** (from manuscript):
 
-The LP dual of the $CO$ molecular braid selects the triple-bond
-configuration (3 shared pairs) as optimal over single ($k=1$) and
-double ($k=2$) bonds.*
+/-- §3b-cond conjecture class (non-degenerate per AGENTS.md §3b-cond
+    item 5): carries the conjectural LP-dual *hypothesis* — bond order
+    `3` minimises `Φ₁` over the candidate bond orders `{1, 2, 3}` — as a
+    field, NOT the conclusion (the minimality inequalities are *derived*
+    from it below). -/
+class QIntegerMassFormula (ctx : CoLpDualBindingContext) : Prop where
+  /-- Bond order 3 minimises `Φ₁` over the candidate orders (the
+      ground-state selection hypothesis). -/
+  triple_minimises : ∀ k : ℕ, k ≤ 3 → ctx.Phi_1_k 3 ≤ ctx.Phi_1_k k
 
-*The binding LP for $CO$ is:*
+/-- **Theorem (conditional on `QIntegerMassFormula`)** — the triple bond
+    beats the single bond: `Φ₁(3) ≤ Φ₁(1)`.  Derived by instantiating
+    the minimisation *hypothesis* at `k = 1`. -/
+-- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, bond-order optimum)
+-- Ref: [manuscript] quantum-observable-universe/molecular-construction/co-lp-dual-binding.md
+theorem co_triple_beats_single (ctx : CoLpDualBindingContext)
+    [hc : QIntegerMassFormula ctx] :
+    ctx.Phi_1_k 3 ≤ ctx.Phi_1_k 1 :=
+  hc.triple_minimises 1 (by omega)
 
-$$
-  \min_{k, \pi} \; \Phi_1\bigl(\mathcal{M}(C, O; k\text{-bond}, \pi)\bigr)
-$$
+/-- **Theorem (conditional on `QIntegerMassFormula`)** — the triple bond
+    beats the double bond: `Φ₁(3) ≤ Φ₁(2)`.  Derived by instantiating
+    the minimisation *hypothesis* at `k = 2`. -/
+-- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, bond-order optimum)
+-- Ref: [manuscript] quantum-observable-universe/molecular-construction/co-lp-dual-binding.md
+theorem co_triple_beats_double (ctx : CoLpDualBindingContext)
+    [hc : QIntegerMassFormula ctx] :
+    ctx.Phi_1_k 3 ≤ ctx.Phi_1_k 2 :=
+  hc.triple_minimises 2 (by omega)
 
-*over bond order $k \in \{1, 2, 3\}$ and strand ordering $\pi$.
-The dual:*
+/-- **Theorem (conditional on `QIntegerMassFormula`)** — the resolving
+    declaration for `lean.ref` `qou:QOU.Molecular.co_lp_dual_binding`.
 
-$$
-  \max_{y_1, y_2, y_3} \; \sum_{k} k \cdot y_k
-  \quad\text{s.t.}\quad
-  y_k \leq \Delta\Phi_1(k) - \Delta\Phi_1(k-1)
-  \;\;\forall\, k
-$$
-
-*where $\Delta\Phi_1(k) = \Phi_1^{\mathrm{sep}} - \Phi_1^{CO}(k)$
-is the $\Phi_1$ reduction from $k$ shared pairs.*
-
-*Corrected mechanism (2026-06-08, witness `co-bond-order-active-set`):
-the triple bond is three ORTHOGONAL orbital channels
-$\sigma \perp \pi_x \perp \pi_y$, each an independent $H_2$-scale covalent
-channel.  A single interleaved $(2k+2)$-strand chain is refuted by
-computation — only $\sigma$ binds; the $\pi$ pairs anti-bind as $e$–$e$
-repulsion accumulates in one orbital (active set $= 1$, not $3$).  Bond
-order $=$ number of occupied orthogonal channels $=$ valence budget
-$V_{CO} = 3$ (carbon: 3 of 4 open sites; oxygen: 2 + 1 dative).  The
-earlier "decreasing-but-positive marginal in one chain" mechanism does
-not occur.  The Lean claim below (`k_star = 3` is $\Phi_1$-optimal) is
-unchanged by this correction — only its justification is.
-
-The observed $CO$ bond dissociation energy is
-$D_0(CO) \approx 11.09$ eV (strongest diatomic).
-
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
--- Ref: [manuscript] quantum-observable-universe/molecular-construction/co-lp-dual-binding.ts
-theorem co_lp_dual_binding [ctx : CoLpDualBindingContext] :
+    Conjoins the *definitional* triple-bond selection `k* = 3` with the
+    two *derived* minimality inequalities `Φ₁(3) ≤ Φ₁(1)` and
+    `Φ₁(3) ≤ Φ₁(2)`.  The inequalities are derived from the §3b-cond
+    hypothesis, not projected. -/
+-- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, bond-order optimum)
+-- Ref: [manuscript] quantum-observable-universe/molecular-construction/co-lp-dual-binding.md
+theorem co_lp_dual_binding (ctx : CoLpDualBindingContext)
+    [hc : QIntegerMassFormula ctx] :
     ctx.k_star = 3 ∧
-    ctx.Phi_1_k ctx.k_star ≤ ctx.Phi_1_k 1 ∧
-    ctx.Phi_1_k ctx.k_star ≤ ctx.Phi_1_k 2 :=
-  ctx.claim_co_lp_dual_binding
+    ctx.Phi_1_k 3 ≤ ctx.Phi_1_k 1 ∧
+    ctx.Phi_1_k 3 ≤ ctx.Phi_1_k 2 :=
+  ⟨ctx.k_star_def, co_triple_beats_single ctx, co_triple_beats_double ctx⟩
 
 end QOU.Molecular
-
-
-/-! ## §3b-cond conditional-class hypothesis (audit-visibility stub) -/
-
-namespace QOU.Molecular.CoLpDualBinding.ConditionalAudit
-
-class QIntegerMassFormula : Prop where
-  holds : True
-
-theorem co_lp_dual_binding_conditional [_inst : QIntegerMassFormula] : True := trivial
-
-end QOU.Molecular.CoLpDualBinding.ConditionalAudit

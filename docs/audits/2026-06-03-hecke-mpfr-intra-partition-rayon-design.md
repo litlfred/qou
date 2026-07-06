@@ -3,7 +3,7 @@
 ## Status
 
 **Draft (stub, 2026-06-03).** Placeholder so PR opens immediately per
-CLAUDE.md ALWAYS-PR. Implementation follows in subsequent commits on
+AGENTS.md ALWAYS-PR. Implementation follows in subsequent commits on
 the same branch.
 
 ## Problem (gap-4 reframe)

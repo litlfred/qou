@@ -96,6 +96,6 @@ Phase 2 (Lean formalization) can follow Phase 1 once we know whether the math cl
 - `content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean` — real Lean foundation, sorry-free for constant case
 - `content/quantum-observable-universe/mass-theory/habiro-ring.lean` — cyclotomic-completion construction
 - `content/quantum-observable-universe/braids-and-knots/habiro-precision-ladder-equivalence.lean` — currently scaffolds (3 theorems all `True := by trivial`)
-- `folio-assistant/computations/habiro/habiro_exact_qbeta.py` — has the bug
-- `folio-assistant/computations/habiro/habiro-coefficients-atomic.witness.json` — exact integer a_m for p, n, D, ³He, ⁴He
-- `folio-assistant/computations/per_observable_100x_status.py` — Q_β row currently Q_N2 (honest, post-discipline-lock)
+- `computations/habiro/habiro_exact_qbeta.py` — has the bug
+- `computations/habiro/habiro-coefficients-atomic.witness.json` — exact integer a_m for p, n, D, ³He, ⁴He
+- `computations/per_observable_100x_status.py` — Q_β row currently Q_N2 (honest, post-discipline-lock)

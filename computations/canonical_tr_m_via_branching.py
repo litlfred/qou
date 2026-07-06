@@ -252,14 +252,26 @@ def compute_chi_lambda_via_branching(
         #   (b) Build a TRULY recursive ρ_ξ via the matrix-form Wenzl
         #       branching identity (requires the operator-form A^λ
         #       reconstruction, not just the trace form).
+        #       IMPLEMENTED (2026-06-17, PR #2403): the operator-form
+        #       A^λ_{ξν}(I) is built in the Young/GT basis by
+        #       a_operator/a_operator_recursive.py (no d_λ ambient, no
+        #       fit), and a_operator/canonical_tr_m_combiner_crosscheck.py
+        #       reconstructs tr_M this way — matching THIS transfer path at
+        #       7.8e-17 (D), 1.1e-16 (³He), 2.2e-16 (⁴He). It is a
+        #       *cross-check* of the transfer, not a replacement: per the
+        #       χ_eff(k)=p(3k) bond-dimension verdict the combiner cannot
+        #       beat the transfer asymptotically, so A≥3 production stays on
+        #       the transfer (below) and this branch keeps return None.
         #
         #   (c) Fall back to canonical markov_peel.tr_M_atomic for the
         #       inner — gives the correct |tr_M| symbolically at any q,
         #       at the cost of bypassing the branching combiner's
         #       speedup.
         #
-        # For now, return None with a clear diagnostic so callers
-        # don't get silently-wrong A=3 values.
+        # A≥3 production does NOT reach here — compute_tr_m_via_branching
+        # routes A≥3 through the transfer matrix directly (see below). This
+        # per-λ branching path is the A=2 route; return None for A≥3 so any
+        # stray caller fails loudly rather than using a fitted extract.
         return None
 
     # Outer interface: between nucleon (A-1) (=first nucleon for A=2)

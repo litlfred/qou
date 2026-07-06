@@ -56,9 +56,9 @@ This is a categorical/structural gap that is **unaffected by today's KLR-program
 
 This is a **separate research-grade item** with its own scope and timeline; today's KLR work doesn't progress it. Flagging for future-session prioritisation.
 
-## CLAUDE.md §Precision goals — count refresh
+## AGENTS.md §Precision goals — count refresh
 
-Current section states `3/7 met (m_p, m_e, m_K/m_π)`. With the L2-100× headline status now post-re-pin (m_μ ✗), the count is **3/7 met** — unchanged from CLAUDE.md's last edit. **No CLAUDE.md edit needed; the original audit's "follow-up: quick CLAUDE.md refresh PR" item is now obsolete** since the count stayed accurate post-re-pin.
+Current section states `3/7 met (m_p, m_e, m_K/m_π)`. With the L2-100× headline status now post-re-pin (m_μ ✗), the count is **3/7 met** — unchanged from AGENTS.md's last edit. **No AGENTS.md edit needed; the original audit's "follow-up: quick AGENTS.md refresh PR" item is now obsolete** since the count stayed accurate post-re-pin.
 
 ## Sibling-PR coordination
 
@@ -71,5 +71,5 @@ The Phase 2 IwahoriHecke sprint referenced in the original audit (`57783eebb`) i
 - cont. 9 master infra roadmap: [`2026-06-03-qbeta-residue-a-klr-crystal-infra-scope.md`](../scope/2026-06-03-qbeta-residue-a-klr-crystal-infra-scope.md).
 - KLR program kickoff scope: [`2026-06-05-qbeta-residue-a-klr-crystal-kernel-scope.md`](../scope/2026-06-05-qbeta-residue-a-klr-crystal-kernel-scope.md).
 - C-exotic Lusztig narrowing scope: [`2026-06-06-qbeta-klr-exotic-signed-lusztig-bounded-magnitude-scope.md`](../scope/2026-06-06-qbeta-klr-exotic-signed-lusztig-bounded-magnitude-scope.md).
-- m_μ Borromean formula source: [`m_p_borromean_verification_50dps.py`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py).
+- m_μ Borromean formula source: [`m_p_borromean_verification_50dps.py`](../../computations/m_p_borromean_verification_50dps.py).
 - Master Q_β ledger: [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md) (cont. 18 follow-up).

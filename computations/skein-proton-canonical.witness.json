@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-02T20:11:19.445126+00:00",
-  "commitSha": "41f1b2a404de0759b15e4ddd8dbfa55deca21f23",
+  "computedAt": "2026-06-22T12:43:22.426409+00:00",
+  "commitSha": "131f4165e3b9c33aa411dbc0daadb47f136eeb21",
   "assertions": [
     {
       "name": "atlas |tr_M| cross-check (this compute vs Layer-1 table)",
-      "computed": 7.102806438490926e-17,
+      "computed": 5.572602783306174e-17,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-12,
@@ -15,7 +15,7 @@
     },
     {
       "name": "Family_A_m_p_gap_within_5pct_of_CODATA",
-      "computed": 0.029605203711293503,
+      "computed": 0.029604990650819323,
       "expected": 0.0,
       "passed": true,
       "tolerance": 0.05,
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 316,
+  "durationMs": 327,
   "computation": "skein-proton-canonical",
   "scriptFile": "skein_proton_canonical.py",
-  "scriptHash": "a0eb77501c77",
-  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "scriptHash": "ea21a6ba8571",
+  "scriptCommitSha": "8fe05b474f1638b4af282b34ccfd0d734db2a2cc",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,9 +36,8 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
@@ -49,55 +48,61 @@
   },
   "data": {
     "substrate": {
-      "Q_50dps": "1.1099785827513808075916690956107688798744991218736",
+      "Q_50dps": "1.1099785955573347198997632204832250266562084087802",
       "G_catalan": "0.915965594177219015054603514932",
       "Vol(𝓑₃) = 8G": "7.32772475341775212043682811946",
-      "ℏ_q²": "0.00981718645427507381056905717956"
+      "ℏ_q²": "0.00981718851398598439370648689405"
     },
     "jones_borromean_at_q0": {
       "formula": "V(𝓑₃, t) = -t⁻³ + 3t⁻² - 2t⁻¹ + 4 - 2t + 3t² - t³",
-      "at_t_eq_q_squared": "4.037892021512486076130219",
-      "at_t_eq_q": "4.010539347682502506692997",
-      "at_t_eq_minus_q_inverse": "16.25169790351262942971912",
+      "at_t_eq_q_squared": "4.037892028613474349371673",
+      "at_t_eq_q": "4.010539349935900339509332",
+      "at_t_eq_minus_q_inverse": "16.25169795946150752180014",
       "note": "Kauffman 1987 standard t-convention. The Hecke/Jones original substitution is t = q²; the Kauffman bracket uses t = -A⁻², equivalent to t = -q⁻¹ in our convention. The proton's canonical closure is topologically 𝓑₃, so its standalone Jones polynomial equals V(𝓑₃) at any t."
     },
     "markov_trace_proton": {
-      "tr_M_q_0_canonical": "1.06530614425444997566663340374",
-      "abs_tr_M": "1.06530614425444997566663340374",
+      "tr_M_q_0_canonical": "1.06530622861316705936528454643",
+      "abs_tr_M": "1.06530622861316705936528454643",
       "compute_path": "markov_peel.tr_M_atomic(1, 0) symbolic, evaluated at q_0",
       "wall_sec": "0.09"
     },
     "atlas_cross_check": {
-      "atlas_layer_1_value": "1.0653061442544499",
-      "this_compute": "1.065306144254449975666633",
-      "diff": "7.56666334037445e-17",
-      "rel_diff": "7.10280643849e-17"
+      "atlas_layer_1_value": "1.065306228613167",
+      "this_compute": "1.065306228613167059365285",
+      "diff": "5.93652845464314e-17",
+      "rel_diff": "5.57260278331e-17"
     },
     "skein_hypothesis_panel": {
-      "Vol(𝓑₃)/ℏ_q²": "746.4180075979671389879351",
-      "λ_p_scale (Family A: 5/2 + 3h²/4)": "2.532779656399391492051515",
+      "Vol(𝓑₃)/ℏ_q²": "746.4178509945453023789024",
+      "λ_p_scale (Family A: 5/2 + 3h²/4)": "2.532779663674675982663684",
       "λ_fitted_AUDIT_ONLY (removed from production)": "2.4599527869",
       "m_p_CODATA / m_e (anchor)": "1836.152670945908317516745",
       "S(p) = 0 hypothesis": {
-        "tower_factor": "1890.5123448142975983",
-        "m_p_pred": "966.04982446659753566",
-        "delta_ppm": "29605.204",
+        "tower_factor": "1890.5119536027388629",
+        "m_p_pred": "966.04962455790152405",
+        "delta_ppm": "29604.991",
         "verdict": "Family A m_avg layer: ~29 000 ppm above CODATA m_p — this gap is in λ_scale, NOT in S(p).  S(p) ≈ 0 remains the production assumption (flavor split supplies the m_n − m_p split downstream)."
       },
       "S(p) = |tr_M(β_p, q_0)| hypothesis": {
-        "tower_factor": "1891.5776509585520483",
-        "m_p_pred": "966.59419478847516937",
-        "delta_ppm": "30185.388",
+        "tower_factor": "1891.57725983135203",
+        "m_p_pred": "966.59399492288637367",
+        "delta_ppm": "30185.175",
         "verdict": "Adds |tr_M(β_p)| ≈ 1.07 to the tower; m_p_pred shifts by ~580 ppm.  Negligible compared to the 29 000 ppm m_avg gap.  Does not discriminate between S(p) hypotheses at this layer."
       },
       "S(p) = V(𝓑₃, q²) hypothesis": {
-        "V_value": "4.0378920215124860761",
-        "tower_factor": "1894.5502368358100844",
-        "m_p_pred": "968.11318305258993895",
-        "delta_ppm": "31804.308",
+        "V_value": "4.0378920286134743494",
+        "tower_factor": "1894.5498456313523372",
+        "m_p_pred": "968.1129831475225249",
+        "delta_ppm": "31804.095",
         "verdict": "Adds V(𝓑₃, q²) ≈ 4.04 to the tower; ~2 200 ppm shift.  Still small vs the 29 000 ppm Family A gap — does not discriminate."
       },
       "interpretation": "Under the PROVED Family A λ_scale (replacing the prior fitted 2.4599527869, removed 2026-05-22), the bare Vol·λ_A/ℏ_q² tower lands m_p_pred ≈ 966 MeV — about 2.9 % above CODATA.  All three S(p) hypotheses produce shifts of <0.3 % vs that gap, so the m_avg residual is dominated by the λ_scale layer, NOT by S(p).  S(p) ≈ 0 remains the production assumption; the proton-neutron split is supplied separately by the substrate flavor-split formula (`prop:flavor-split-substrate`, PR #690 / #942).  The original 'S(p) = 0 forced by 1 ppb closure' argument was an artifact of the CAL-4 fitted λ_p; under Family A the S(p) discriminator becomes structural rather than 1-ppb-numerical."
+    },
+    "lean_uniqueness_ref": {
+      "nucleus": "proton",
+      "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     }
   }
 }

@@ -10,9 +10,9 @@ Enforces the canonical-only contract:
     no silent failure.
 
 Run with:
-  python folio-assistant/computations/test_six_term_consumer.py
+  python computations/test_six_term_consumer.py
 or:
-  python -m pytest folio-assistant/computations/test_six_term_consumer.py -v
+  python -m pytest computations/test_six_term_consumer.py -v
 """
 from __future__ import annotations
 import json

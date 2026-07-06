@@ -13,6 +13,7 @@ A derived-candidate must hit without any rounded integer coefficient.
 """
 from __future__ import annotations
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import M_K_PM_MEV_VALIDATION, M_PI_PM_MEV_VALIDATION  # noqa: E402 (codata sweep)
 import sys
 import time
 from pathlib import Path
@@ -35,8 +36,8 @@ def main():
     q = mp.mpf(Q_50_DIGIT_STR)
 
     # PDG masses (MeV) — used only as comparison targets, not inputs.
-    m_pi = mp.mpf("139.57039")
-    m_K = mp.mpf("493.677")
+    m_pi = mp.mpf(M_PI_PM_MEV_VALIDATION)
+    m_K = mp.mpf(M_K_PM_MEV_VALIDATION)
     m_eta = mp.mpf("547.862")
     m_phi = mp.mpf("1019.461")
 

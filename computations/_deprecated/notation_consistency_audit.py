@@ -29,8 +29,8 @@ CI on any violation. Whitelist file
 documents intentional exceptions.
 
 Run:
-    python3 folio-assistant/computations/notation_consistency_audit.py
-    python3 folio-assistant/computations/notation_consistency_audit.py --strict
+    python3 computations/notation_consistency_audit.py
+    python3 computations/notation_consistency_audit.py --strict
 """
 from __future__ import annotations
 
@@ -80,7 +80,7 @@ NUMERIC_Q_ALLOWED_PATHS = (
     "content/quantum-observable-universe/observations",
     "content/quantum-observable-universe/notation",  # notation register can mention q_0
     "docs/audits",                                    # audits can quote numerical
-    "folio-assistant/computations",                   # scripts compute numerically
+    "computations",                   # scripts compute numerically
     "folio-assistant/feedback",                       # session feedback may quote
 )
 NUMERIC_Q_PATTERN = r"\bq[\s_]*=[\s]*1\.1097\b|\bq_0\s*=\s*1\.1097"

@@ -45,10 +45,10 @@ archimedean_agreement :
 ```
 
 *on `HabiroResidueSumEquivalence`.  Each instance supplies it as a
-substrate axiom (`sorry` per CLAUDE.md §3b), backed by the empirical
+substrate axiom (`sorry` per AGENTS.md §3b), backed by the empirical
 cross-pipeline witness.*
 
-**Why a conjecture and not a theorem.**
+**Conjectural status.**
 *A Lean proof reduces to (and requires):*
 
 1. *[Spectral decomposition existence](#conj:gs-spectral-decomposition-existence)
@@ -61,11 +61,11 @@ cross-pipeline witness.*
    residues with the corresponding Habiro coefficients.*
 
 *Effort is "large" per the
-[opaque-declarations audit](../../folio-assistant/computations/AUDIT-gb-residue-opaque-declarations.md).*
+[opaque-declarations audit](../../computations/AUDIT-gb-residue-opaque-declarations.md).*
 
 **Empirical witness.**
 *Cross-pipeline validation
-(`folio-assistant/computations/markov/markov-pipeline-cross-validation.witness.json`)
+(`computations/markov/markov-pipeline-cross-validation.witness.json`)
 records $\mathrm{rel\_diff} \leq 10^{-9}$ to machine precision on
 every available atom (proton, neutron, deuteron), and rel\_diff = 0
 to 60 decimal places on the atomic-vs-interpolate checkpoint.*

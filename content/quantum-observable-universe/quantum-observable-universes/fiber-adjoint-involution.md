@@ -32,4 +32,3 @@ which:
 \qquad\text{(fibre--adjoint involution)}
 \end{equation}
 ```
-

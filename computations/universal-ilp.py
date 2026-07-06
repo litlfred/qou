@@ -12,7 +12,7 @@ Runs the same LP for:
   Level 4: H atom → H₂ molecular bond
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 universal-ilp.py
 """
 

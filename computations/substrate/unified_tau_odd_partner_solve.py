@@ -51,7 +51,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 from sl2_tau_solver import tau_from_three, verify_recurrence  # noqa: E402
 
 # Canonical substrate q_0 (proton-pinned, 50 dps)
-Q_0_50DPS = "1.1099785827513808075916690956107688798744991218736"
+Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
 
 
 def main() -> int:

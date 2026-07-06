@@ -1,0 +1,187 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-30T15:00:24.198595+00:00",
+  "commitSha": "1ddb43e1b72b34835e9f3c668ebe350d2b493763",
+  "assertions": [
+    {
+      "name": "he4_rectangular_anchor_c_lambda_near_one",
+      "computed": 0.944,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.1,
+      "source": "At the doubly-magic, RECTANGULAR SU(4) partition (3,3,3,3) (I_rect=0), c_lambda = B_AME/E_gate ~ 0.94 ~ 1 — the magic/rectangular = saturated anchor the shape hypothesis predicts."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 20,
+  "computation": "clambda-shape-invariant-probe",
+  "scriptFile": "clambda_shape_invariant_probe.py",
+  "scriptHash": "e3f9f2302c80",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Screens whether the binding residual c_lambda = B_AME/E_gate (E_gate = E0*ln(1/W_lambda)) is a parameter-free function of SU(4)-partition shape invariants (I_rect, contentVar, aspect, nDistinct) over 2H/3H/3He/4He/6Li/7Li. Formalize-first hypothesis screening, NOT a fit. Key control: 3H and 3He share the SAME partition (3,2,2,2) but differ in c_lambda (0.534 vs 0.486) -> c_lambda is NOT a function of lambda alone; a charge/Coulomb (Z) term is present. 4He (rectangular, I_rect=0) anchors c_lambda~1. Conclusion: a clean shape-only c_lambda does not close binding; the full keystone W_lambda match + a charge term is needed.",
+  "data": {
+    "q0": 1.1099785955573347,
+    "E0_MeV": 4.185980827582892,
+    "rows": [
+      {
+        "iso": "2H",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "lambda": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "B_AME": 2.2245662000000004,
+        "W_lam": 0.11145220242002736,
+        "E_gate": 9.184709423168984,
+        "c_lam": 0.24220322032054686,
+        "n": 6,
+        "m": 4,
+        "I_rect": 0.25,
+        "contentVar": 0.4166666666666667,
+        "aspect": 0.5,
+        "nDistinct": 0.5,
+        "content_sq": 15
+      },
+      {
+        "iso": "3H",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "lambda": [
+          3,
+          2,
+          2,
+          2
+        ],
+        "B_AME": 8.481796200000002,
+        "W_lam": 0.022496580645394164,
+        "E_gate": 15.883251966070732,
+        "c_lam": 0.5340087922875321,
+        "n": 9,
+        "m": 4,
+        "I_rect": 0.25,
+        "contentVar": 0.2962962962962963,
+        "aspect": 0.75,
+        "nDistinct": 0.5,
+        "content_sq": 24
+      },
+      {
+        "iso": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "lambda": [
+          3,
+          2,
+          2,
+          2
+        ],
+        "B_AME": 7.71804132,
+        "W_lam": 0.022496580645394164,
+        "E_gate": 15.883251966070732,
+        "c_lam": 0.48592324396080977,
+        "n": 9,
+        "m": 4,
+        "I_rect": 0.25,
+        "contentVar": 0.2962962962962963,
+        "aspect": 0.75,
+        "nDistinct": 0.5,
+        "content_sq": 24
+      },
+      {
+        "iso": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "lambda": [
+          3,
+          3,
+          3,
+          3
+        ],
+        "B_AME": 28.2956624,
+        "W_lam": 0.0007736733565687141,
+        "E_gate": 29.98987692300489,
+        "c_lam": 0.9435071198406528,
+        "n": 12,
+        "m": 4,
+        "I_rect": 0.0,
+        "contentVar": 0.18055555555555555,
+        "aspect": 0.75,
+        "nDistinct": 0.25,
+        "content_sq": 26
+      },
+      {
+        "iso": "6Li",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "lambda": [
+          5,
+          5,
+          4,
+          4
+        ],
+        "B_AME": 31.993987199999996,
+        "W_lam": 0.0008930602690346444,
+        "E_gate": 29.389170655515436,
+        "c_lam": 1.088631849296357,
+        "n": 18,
+        "m": 4,
+        "I_rect": 0.09999999999999998,
+        "contentVar": 0.2006172839506173,
+        "aspect": 1.25,
+        "nDistinct": 0.5,
+        "content_sq": 65
+      },
+      {
+        "iso": "7Li",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "lambda": [
+          6,
+          6,
+          5,
+          4
+        ],
+        "B_AME": 39.245080699999995,
+        "W_lam": 0.001655121573825133,
+        "E_gate": 26.806522310980125,
+        "c_lam": 1.4640123864155612,
+        "n": 21,
+        "m": 4,
+        "I_rect": 0.125,
+        "contentVar": 0.2494331065759637,
+        "aspect": 1.5,
+        "nDistinct": 0.75,
+        "content_sq": 110
+      }
+    ],
+    "pearson_c_lambda_vs_invariant": {
+      "I_rect": -0.7003685125788521,
+      "contentVar": -0.7460411162882721,
+      "aspect": 0.9256215971600574,
+      "nDistinct": 0.36352638627538997
+    },
+    "mirror_split_3H_3He_c_lambda": 0.0481
+  }
+}

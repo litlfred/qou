@@ -45,7 +45,7 @@ this proposition is the rung-selection layer (which $k$), while
 $c5$-involution is the magnitude-and-sign layer (the
 $\pm 1/2$ contribution at that $k$).
 
-## Why $k = 5$ specifically (the proton recipe)
+## The $k = 5$ selection (the proton recipe)
 
 For the proton typed-$\mathbf{B}_3$ braid with
 $n_{\mathrm{total}} = 9$ and a canonical

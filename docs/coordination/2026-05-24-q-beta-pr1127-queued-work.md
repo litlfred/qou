@@ -100,7 +100,7 @@ archimedean-universe/e-hartree-categorical-derivation.md
 
 Earlier in this session: 124 lift-eligible Lean files identified via `real_star_lift_candidate_scanner.py`; 1 (`symbolic-character-table.lean`) refactored as template; remaining 123 deferred to `lake`-verified follow-up branch.
 
-**Task**: batch refactor 123 Lean files from `(q : ℝ)` to `{R : Type*} [Field R] (q : R)` per CLAUDE.md §7c, with `lake build` verification per batch of 5-10.
+**Task**: batch refactor 123 Lean files from `(q : ℝ)` to `{R : Type*} [Field R] (q : R)` per AGENTS.md §7c, with `lake build` verification per batch of 5-10.
 
 **Estimated effort**: 4-8 hours with lake verification.
 

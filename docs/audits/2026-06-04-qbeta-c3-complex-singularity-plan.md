@@ -10,7 +10,7 @@
 The c_3 cross-anchor rigidity falsification
 ([`2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md`](2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md))
 proved **no real-q formula `c_3 = f(q)` can track the empirical c_3 swing**
-(`dc_3/dq ≈ 4.6×10⁶`). [`CLAUDE.md`](../../CLAUDE.md) §"Im(q) at fibre vs
+(`dc_3/dq ≈ 4.6×10⁶`). [`AGENTS.md`](../../AGENTS.md) §"Im(q) at fibre vs
 observable level" says the genuine object must be **complex-analytic /
 root-of-unity** at the fibre level. This probe tests that framing concretely —
 the only legitimate remaining direction for c_3 (and the residue-A precision
@@ -56,7 +56,7 @@ Inputs (published anchor values, from the falsification doc):
 docs/audits/
   2026-06-04-qbeta-c3-complex-singularity-plan.md      # this file
   2026-06-04-qbeta-c3-complex-singularity-verdict.md   # verdict
-folio-assistant/computations/qbeta/
+computations/qbeta/
   qbeta_c3_complex_singularity_probe.py
   qbeta-c3-complex-singularity-probe.witness.json      # auto-emitted
 ```

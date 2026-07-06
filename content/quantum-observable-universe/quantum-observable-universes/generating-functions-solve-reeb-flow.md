@@ -19,8 +19,8 @@ identity is the formal solution of the base Reeb-flow equation
 $L_{\xi_q} Z = J\,\hbar_q Z$: the categorical Reeb derivation
 $\xi_q$ is exponentiated by $\exp_q$, producing the
 one-parameter group $\phi^q_t$ that drives the
-coral-twist rotation
-([$q$-Reeb flow on coral coords](#def:q-reeb-flow-on-coral-coords)).
+color-twist rotation
+([$q$-Reeb flow on color coords](#def:q-reeb-flow-on-color-coords)).
 
 **2.  Categorical Fourier diagonalises the $q$-heat equation.**
 The $q$-heat equation $\partial_t u = -\Delta_q u$
@@ -55,8 +55,10 @@ $$
 $$
 
 with $V_0$ the bare crossing volume of the braid $\beta$.  Under
-the archimedean realisation $\tau_\infty$ (the limit $q \to 1$
-along the real ray) this collapses to the Bloch–Wigner
+the archimedean realisation functor $\tau_\infty \colon
+\widehat{\mathbb{Z}[q]} \to \mathbb{C}[\![q-1]\!]$ — the $q \to 1$
+limit along the real ray, which sends a Habiro-ring element to its
+convergent analytic germ at $q = 1$ — this collapses to the Bloch–Wigner
 dilogarithm
 $D(z) = \Im\,\mathrm{Li}_2(z) + \arg(1-z)\log|z|$ that gives the
 Thurston volume sum
@@ -74,9 +76,14 @@ $\widehat{\mathbb{Z}[q]} = \varprojlim_n \mathbb{Z}[q]/((q;q)_n)$
 "before the Archimedean wall" means concretely: the Reeb-flow
 solutions are formal series with integer coefficients in $q$,
 not $C^\infty$ functions of a real variable.  The wall is the
-realisation functor $\tau$ from $\widehat{\mathbb{Z}[q]}$ to the
-analytic completion $\mathbb{C}[\![q-1]\!]$
-([archimedean realisation functor](#def:archimedean-realization-functor)).
+archimedean realisation functor $\tau_\infty$ above (the $q \to 1$
+Taylor germ from $\widehat{\mathbb{Z}[q]}$ to the analytic
+completion $\mathbb{C}[\![q-1]\!]$).  This local $q \to 1$
+realisation is the archimedean-place shadow of the global adelic
+realization functor $\mathcal{R}_{\mathrm{top}}$ developed in the
+mass-theory chapter
+(cf. [archimedean realization functor](#def:archimedean-realization-functor));
+the two are not identified here.
 The categorical Reeb-flow PDE has an *exact* algebraic solution
 $\exp_q \cdot \mathrm{Li}_2^q \cdot \mathcal{F}_q$ in the Habiro
 ring; its analytic shadow at $q \to 1$ is the convergent
@@ -110,7 +117,8 @@ extend them, it bundles their proven content into a single
 joint-existence claim).  This is a ansatz for the full
 formalisation: the individual existence/uniqueness theorems are
 already in scope, so any instance of
-`HabiroFlowSolution` is conditional on the realisation functor
-$\tau_\infty$ commuting with the three Habiro-ring constructions
-(open conjecture; see
-[archimedean realisation functor](#def:archimedean-realization-functor)).
+`HabiroFlowSolution` is conditional on the archimedean realisation
+functor $\tau_\infty$ commuting with the three Habiro-ring
+constructions (open conjecture; cf. the global adelic
+[archimedean realization functor](#def:archimedean-realization-functor)
+of the mass-theory chapter).

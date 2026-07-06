@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-30T03:07:26.674764+00:00",
-  "commitSha": "f8d1f06dc0ecf415b9306156ea11055d520f6619",
+  "computedAt": "2026-06-22T13:13:06.889093+00:00",
+  "commitSha": "cae0becd630ab3343b30c5ed3b32e038ed03e82e",
   "assertions": [
     {
       "name": "framework_ansatz_residual_pinned",
-      "computed": -1552.8,
+      "computed": -1552.7,
       "expected": -1552.7,
       "passed": true,
       "tolerance": 2.0,
@@ -14,34 +14,40 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 11,
   "computation": "alpha-em-yekutieli-h2-extraction",
   "scriptFile": "alpha_em_yekutieli_h2_extraction.py",
-  "scriptHash": "0fd27665c54f",
-  "scriptCommitSha": "c21af592efc8e0e2949daa794ec07255b8615c18",
+  "scriptHash": "c4ea84d7bdd7",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Derive-or-refute: does the exact Markov-trace product for the FSC torus knots T(2,9) and T(3,5) close the ~500 ppm α_EM residual left by the bare q·[9]_q·[10]_q ansatz? Yekutieli h² extraction: T(2,9) vanishes (single generator); T(3,5)'s h² content is already in the closed-form Markov trace via central-full-twist factorisation (Δ₃² = I on (2,1), eigenvalues of σ₁σ₂ are cube roots of unity → χ_(2,1)((σ₁σ₂)⁵) = −1 EXACTLY, independent of q). No fit; no fitting.",
   "data": {
     "inputs": {
-      "q0": "1.10997858275138080759166909561",
+      "q0": "1.10997859555733471989976322048",
       "CODATA_alpha_inv": "137.035999084"
     },
     "bare_ansatz": {
       "formula": "q · [9]_q · [10]_q",
-      "value": "136.823208854",
-      "residual_ppm": -1552.8053346550205
+      "value": "136.823219657",
+      "residual_ppm": -1552.7264966878706
     },
     "canonical_exact": {
       "formula": "q · tr_M(T(2,9), Wenzl-H₂) · tr_M(T(3,5), Wenzl-H₃)",
-      "trM_T29": "1.19653667086",
-      "trM_T35": "0.602110861987",
-      "value": "0.799681546175",
-      "residual_ppm": -994164.4418144132
+      "trM_T29": "1.19653678768",
+      "trM_T35": "0.602110921707",
+      "value": "0.799681712791",
+      "residual_ppm": -994164.4405985578
     },
     "yekutieli_h2_status": {
       "T29": "vanishes (single generator, [σ₁,σ₁]=0)",

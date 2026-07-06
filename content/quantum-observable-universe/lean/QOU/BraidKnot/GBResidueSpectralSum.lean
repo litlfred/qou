@@ -10,7 +10,7 @@ Markov trace (E⁰ term) and a finite sum of residues at root-of-unity
 poles of the quantum dilogarithm, one per Gröbner–Shirshov
 filtration stratum that the braid's Hecke normal form occupies.
 
-**Conditional-class axiomatisation** (CLAUDE.md §3b).  The
+**Conditional-class axiomatisation** (AGENTS.md §3b).  The
 `gradedMarkovTrace` and `residueAtRoot` opaques are now class
 fields of `GBResidueSpectralSum`; concrete instances supply the
 graded trace and cyclotomic residue values.

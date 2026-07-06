@@ -55,4 +55,6 @@ def CategoricalLaplace.toFourier
     (A → A) → R_q → (A → A) :=
   fun f xi => L.transform f (i_elem * xi)
 
+end
+
 end QOU

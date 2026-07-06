@@ -6,7 +6,7 @@ $q = 1$ classical-limit shadows, and direction-sanity magnitude check.
 Instantiating `BarEvenKernel` for any candidate is equivalent to that
 candidate clearing all four §4 gates simultaneously.*
 
-## Why a unified typeclass
+## Motivation for a unified typeclass
 
 The four §4 formalize-first invariants from the
 [refuted-class map](../../../docs/audits/2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md)
@@ -19,7 +19,7 @@ were formalized separately as four parametric gate classes:
 | (c) $q = 1$ classical-limit shadow | `QOneShadowGateClass (c2 c3 : ℝ → ℝ)` | **yes** |
 | (d) Direction sanity at $q_0$ | `DirectionSanityGateClass (m : ℝ)` | **yes** |
 
-A future probe author evaluating a candidate $F(q)$ currently has to
+A future canonical evaluation author evaluating a candidate $F(q)$ currently has to
 instantiate four classes by hand. **`BarEvenKernel` is the single
 bundling typeclass** that makes the entire formalize-first chain a
 one-liner: instantiate `BarEvenKernel pole c2 c3 magnitude` and the
@@ -75,7 +75,7 @@ implicit in the constructor.
 This typeclass *operationalises* the 7-step Δ_λ pre-flight checklist
 (`docs/audits/2026-06-05-qbeta-formalize-first-gates-consolidation.md`
 $\S 3$): instead of running Steps 3–6 as separate sympy probes + Lean
-checks, a probe author writes:
+checks, a canonical evaluation author writes:
 
 ```python
 # Conceptual: at the formal level, the entire pre-flight reduces to:
@@ -85,7 +85,7 @@ pole, c2, c3, magnitude = extract_observables(candidate)
 #          If Lean accepts the instance → admit; else → REFUTE
 ```
 
-with each field hypothesis discharged by the corresponding probe.
+with each field hypothesis discharged by the corresponding canonical evaluation.
 
 ## Honest scope
 
@@ -97,3 +97,5 @@ with each field hypothesis discharged by the corresponding probe.
 - Subclasses of `BarEvenKernel` (e.g. extending to include the
   `CFinite.recurrence_step` engine for kernel-driven $c_k$
   generation) are natural follow-ups.
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

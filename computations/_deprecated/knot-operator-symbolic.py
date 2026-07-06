@@ -19,7 +19,7 @@ For 2×2 blocks: eigenvalues are q and -q⁻¹ (exact). The min-eigenvalue
 eigenvector is the -q⁻¹ eigenvector (antisymmetric channel).
 
 Usage:
-    cd folio-assistant/computations && python3 knot-operator-symbolic.py
+    cd computations && python3 knot-operator-symbolic.py
 """
 
 import sympy as sp

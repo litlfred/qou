@@ -324,7 +324,7 @@ class GaloisPairCharacterSum where
       right-of / below counts being swapped under transpose. -/
   holds : Prop
   -- Ref: [manuscript] conj:galois-pair-character-sum
-  -- Ref: [probe] folio-assistant/computations/metallic_q_symbolic_galois_proofs.py
+  -- Ref: [probe] computations/metallic_q_symbolic_galois_proofs.py
 
 /-- Conjectural witness: the n=2 LP active-set transition at δ_silver
     physically identifies the Color-Flavor-Locked transition density ρ_c.
@@ -393,7 +393,7 @@ class SDPDegeneracyDetectsMetallic where
       this set is S(n) ⊆ {δ_1, ..., δ_n}. -/
   holds : Prop
   -- Ref: [manuscript] conj:sdp-degeneracy-metallic-locus
-  -- Ref: [probe] folio-assistant/computations/two_quark_active_set_mahler_sweep.py
+  -- Ref: [probe] computations/two_quark_active_set_mahler_sweep.py
   --        (empirically confirmed: AT δ_silver active set is empty;
   --         degenerate-vertex signature directly observed)
 

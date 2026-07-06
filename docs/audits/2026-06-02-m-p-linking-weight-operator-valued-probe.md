@@ -54,7 +54,7 @@ All six × three n-values = 18 candidates. **No fits.**
 | **TARGET (CODATA)** | **2.461648** | — |
 | dim_q-weighted | 2.438529 | **−0.94 % below** target |
 
-The target sits **between** two canonical weights on the same H_4 partition lattice. A linear combination would close it empirically (`α ≈ 0.234` gives exact match), **but that's a fit** — explicitly forbidden per CLAUDE.md §"Δ_λ gate" / "Before declaring 'open' math".
+The target sits **between** two canonical weights on the same H_4 partition lattice. A linear combination would close it empirically (`α ≈ 0.234` gives exact match), **but that's a fit** — explicitly forbidden per AGENTS.md §"Δ_λ gate" / "Before declaring 'open' math".
 
 ## What this rules out
 
@@ -84,8 +84,8 @@ Direction (2) is the substantive Subgoal-1 next step — the operator-valued pat
 
 ## Files
 
-- Probe: [`folio-assistant/computations/m_p_linking_weight_operator_valued_probe.py`](../../folio-assistant/computations/m_p_linking_weight_operator_valued_probe.py)
-- Witness: [`folio-assistant/computations/m-p-linking-weight-operator-valued-probe.witness.json`](../../folio-assistant/computations/m-p-linking-weight-operator-valued-probe.witness.json)
+- Probe: [`computations/m_p_linking_weight_operator_valued_probe.py`](../../computations/m_p_linking_weight_operator_valued_probe.py)
+- Witness: [`computations/m-p-linking-weight-operator-valued-probe.witness.json`](../../computations/m-p-linking-weight-operator-valued-probe.witness.json)
 
 ## Cross-references
 

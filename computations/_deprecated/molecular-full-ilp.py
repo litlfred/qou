@@ -6,7 +6,7 @@ Enumerate all braid words up to length 6 between full atoms.
 3-channel vertex volumes per generator.
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 molecular-full-ilp.py
 """
 

@@ -2,7 +2,7 @@
 
 **Status:** design pass. No code changes yet.
 **Target:** witness
-[`folio-assistant/computations/low-isotope-mass-table.witness.json`](../../folio-assistant/computations/low-isotope-mass-table.witness.json)
+[`computations/low-isotope-mass-table.witness.json`](../../computations/low-isotope-mass-table.witness.json)
 currently reports `precision: "f64_numeric_fallback"`. The master
 proposition (`prop:alpha-k-derivation-procedure`) specifies "evaluated
 to ≥ 50 decimal digits via MPFR".  This plan migrates every step
@@ -16,13 +16,13 @@ needs to change.
 
 | Step | What | File | Today | Target |
 |------|------|------|-------|--------|
-| 1a | Substrate `q_0` | `folio-assistant/computations/substrate/q_parameter.py` | `float` | `mpf` (50 dps decimal string source) |
+| 1a | Substrate `q_0` | `computations/substrate/q_parameter.py` | `float` | `mpf` (50 dps decimal string source) |
 | 1b | Hoefsmit seminormal `ρ_λ(σ_i)` | `tools/hecke-engine/src/seminormal.rs` (f64) **and** `seminormal_mpfr.rs` (rug::Float, 167-bit) | mixed | drive everything through `seminormal_mpfr` |
 | 2  | `χ_λ(β)` characters | `tools/hecke-engine/src/seminormal.rs::chi_lambda_braid` (f64) **and** `seminormal_mpfr::chi_lambda_braid_mpfr` | mixed | exclusive MPFR path via `pyhecke_native.chi_lambda_braid_mpfr` |
-| 3  | `y_λ` Jones–Markov solve | `folio-assistant/computations/y_lambda_jones_markov_witness.py` (f64) **and** `y_lambda_mpfr_witness.py` (mpmath, 50 dps; n ≤ 11 only) | mixed | extend mpmath solver to n=12; fall back to symbolic Wenzl bridge for n ≥ 13 |
-| 4  | `tr_M(T_w)` Markov trace | `folio-assistant/computations/markov/markov_trace_canonical.py` (sympy, exact) | symbolic exact | OK — already exact rational in q.  Must evaluate with `q = mpf(q_0_str, 50)` |
+| 3  | `y_λ` Jones–Markov solve | `computations/y_lambda_jones_markov_witness.py` (f64) **and** `y_lambda_mpfr_witness.py` (mpmath, 50 dps; n ≤ 11 only) | mixed | extend mpmath solver to n=12; fall back to symbolic Wenzl bridge for n ≥ 13 |
+| 4  | `tr_M(T_w)` Markov trace | `computations/markov/markov_trace_canonical.py` (sympy, exact) | symbolic exact | OK — already exact rational in q.  Must evaluate with `q = mpf(q_0_str, 50)` |
 | 5  | Census-knot volumes (²H/³H/³He shortcut) | `low_isotope_binding_sweep.py` constants `VOL_6_2`, `VOL_8_11`, `VOL_BORROMEAN`, `VOL_7_2_1` | `float` literals from SnapPy | Plan G retires these.  Until then: pass through as `mpf` with reported uncertainty |
-| 6  | Mass-excess assembly `Δ = Z·Δ_H + N·Δ_n − B` and `M = A·u + Δ` | `folio-assistant/computations/low_isotope_mass_table.py` | `float` (CODATA constants) | `mpf` constants pinned at 50 dps from CODATA-2022 source |
+| 6  | Mass-excess assembly `Δ = Z·Δ_H + N·Δ_n − B` and `M = A·u + Δ` | `computations/low_isotope_mass_table.py` | `float` (CODATA constants) | `mpf` constants pinned at 50 dps from CODATA-2022 source |
 
 ## Where the f64 residual actually lives — ranking by dominance
 
@@ -103,7 +103,7 @@ but it is a prerequisite for a publishable witness.
 ## Smoke test / exit criterion
 
 A new artifact
-[`folio-assistant/computations/low-isotope-mass-table-mpfr.witness.json`](../../folio-assistant/computations/low-isotope-mass-table-mpfr.witness.json)
+[`computations/low-isotope-mass-table-mpfr.witness.json`](../../computations/low-isotope-mass-table-mpfr.witness.json)
 exists with:
 
 - `precision: "mpfr_50dps"`, `precision_bits: 167`,
@@ -118,7 +118,7 @@ exists with:
 ## First concrete step
 
 Create
-`folio-assistant/computations/q_parameter_mpf.py` (or extend
+`computations/q_parameter_mpf.py` (or extend
 `q_parameter.py`) with:
 
 ```python

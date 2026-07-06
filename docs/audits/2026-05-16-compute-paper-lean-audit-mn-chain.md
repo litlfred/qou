@@ -60,7 +60,7 @@ reading `m_n_Hecke` from
 **Note**: This file is the **Path A** assembly (T1+T4 only).
 This branch's PR #663 replaces this with the **full tower**
 (T1+T2+T3+T4+T5 at A_categorical) via
-[`derive_m_n_hecke_full_tower_50dps.py`](../../folio-assistant/computations/derive_m_n_hecke_full_tower_50dps.py).
+[`derive_m_n_hecke_full_tower_50dps.py`](../../computations/derive_m_n_hecke_full_tower_50dps.py).
 The Path A chain is preserved on main as backward-compat for the
 canonical 1 ppb workplan ledger but is **not the production
 m_n path** on this branch.

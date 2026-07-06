@@ -20,7 +20,7 @@ The quantum group U_q(sl₂) has:
 For the N-colored Jones, j₁ = j₂ = (N-1)/2 (the (N-1)/2-spin irrep).
 
 Usage:
-    python3 folio-assistant/computations/atom_rt_fusion.py
+    python3 computations/atom_rt_fusion.py
 """
 
 import math

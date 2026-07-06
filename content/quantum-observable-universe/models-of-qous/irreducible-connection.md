@@ -1,4 +1,6 @@
-In an archimedean quantum observable universe,
+Irreducibility is what is at stake here: in the archimedean regime an
+instanton cannot reduce to an abelian $\mathrm{U}(1)$ sub-bundle, so its
+gauge orbit stays free. With that as the point,
 [categorical irreducible](#lem:categorical-irreducible) specialises as follows:
 every instanton connection $A$ on $P$ is irreducible.
 The vanishing $H^0(M, \mathrm{Ad}(P)) = 0$

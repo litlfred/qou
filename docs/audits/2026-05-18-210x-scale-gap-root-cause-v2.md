@@ -136,7 +136,7 @@ The interim v2 claimed:
 > diff −1.79e-6 — so the Borromean form delivers m_p/m_e to ~1 ppm."
 
 This is **circular**. `λ_scale = 2.4599527869` is `LAMBDA_PROTON_DOC`
-in [`m_p_borromean_verification_50dps.py:100`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py),
+in [`m_p_borromean_verification_50dps.py:100`](../../computations/m_p_borromean_verification_50dps.py),
 and the script's own header (line 31) states:
 
 > "With λ_scale fixed at the CODATA closure target 2.4599527869"
@@ -239,9 +239,9 @@ For probe scripts that pair `|tr_M|` with an `E_0`:
   — Stage-1 unblock of SUPERSEDED `mass-endomorphism-tower`.
 - [`prop:atom-knot-mass-derivation`](../../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md)
   — cheat-sheet step 9 source.
-- [`folio-assistant/computations/m_p_borromean_verification_50dps.py`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py)
+- [`computations/m_p_borromean_verification_50dps.py`](../../computations/m_p_borromean_verification_50dps.py)
   — production verification using hardcoded `LAMBDA_PROTON_DOC` (line 100).
-- [`folio-assistant/computations/probe_neutron_gap_round2.py`](../../folio-assistant/computations/probe_neutron_gap_round2.py)
+- [`computations/probe_neutron_gap_round2.py`](../../computations/probe_neutron_gap_round2.py)
   — probe whose `E_0 = m_p / |tr_M(p)|` setup surfaces the 210×
   artifact.
 

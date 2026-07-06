@@ -74,7 +74,7 @@ yielding $(\dagger)$. $\square$
 ### Empirical verification (Phase 5l, 50 dps)
 
 Direct measurement at five $q$-values in the substrate window via
-[`rho_constit_equals_tau_M_proton_phase5l.py`](../../../folio-assistant/computations/rho_constit_equals_tau_M_proton_phase5l.py),
+[`rho_constit_equals_tau_M_proton_phase5l.py`](../../../computations/rho_constit_equals_tau_M_proton_phase5l.py),
 recomputing $y_\lambda(q)$ (Wenzl bridge) and
 $\chi_\lambda(\beta, q)$ (Hecke characters) at each $q$:
 
@@ -138,7 +138,7 @@ $|\Delta_\lambda^*|$-level conjecture
 
 ### Implementation reference
 
-- Script: [`folio-assistant/computations/rho_constit_equals_tau_M_proton_phase5l.py`](../../../folio-assistant/computations/rho_constit_equals_tau_M_proton_phase5l.py)
-- Witness: `folio-assistant/computations/rho-constit-equals-tau-M-proton-phase5l.witness.json` (1 assertion: max rel.err. $< 10^{-12}$, passes at $\sim 10^{-15}$)
-- Falsification audit (precursor): Phase 5k.2 in this PR — script [`constit_factor_varying_q_phase5k2.py`](../../../folio-assistant/computations/constit_factor_varying_q_phase5k2.py) + witness `constit-factor-varying-q-phase5k2.witness.json`
+- Script: [`computations/rho_constit_equals_tau_M_proton_phase5l.py`](../../../computations/rho_constit_equals_tau_M_proton_phase5l.py)
+- Witness: `computations/rho-constit-equals-tau-M-proton-phase5l.witness.json` (1 assertion: max rel.err. $< 10^{-12}$, passes at $\sim 10^{-15}$)
+- Falsification audit (precursor): Phase 5k.2 in this PR — script [`constit_factor_varying_q_phase5k2.py`](../../../computations/constit_factor_varying_q_phase5k2.py) + witness `constit-factor-varying-q-phase5k2.witness.json`
 - Companion proposition: [`prop:interface-knot-markov-z`](#prop:interface-knot-markov-z) (interface factor $z$, exact)

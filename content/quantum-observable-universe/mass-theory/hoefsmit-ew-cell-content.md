@@ -25,7 +25,7 @@ commuting generators (via far-commutativity $\sigma_i \sigma_j =
 $(\sigma_1, \sigma_3, \sigma_5)$ sym/alt eigenvalue patterns
 identify eight pairwise-orthogonal projectors in
 $\mathrm{End}_R(V^{\otimes 6})$ with pure-eigenspace tableaux
-multiplicities $(4, 3, 1, 2, 2, 1, 3, 4)$ (for the eight pure
+multiplicities $(4, 2, 1, 3, 3, 1, 2, 4)$ (for the eight pure
 patterns enumerated in lexicographic order, total dim $= 20$).*
 
 ### Statement (formal)
@@ -48,7 +48,7 @@ $$
 
 A tableau is **pure for $(\sigma_1, \sigma_3, \sigma_5)$** if all
 three of these generators act diagonally (no mixing). The
-[`hoefsmit-ew-cell-content.witness.json`](../../folio-assistant/computations/hoefsmit-ew-cell-content.witness.json)
+[`hoefsmit-ew-cell-content.witness.json`](../../computations/hoefsmit-ew-cell-content.witness.json)
 enumeration shows there are exactly **20 such pure tableaux**,
 distributed across the **eight** sym/alt eigenvalue patterns:
 
@@ -59,7 +59,7 @@ $\sigma_i^{2k_i}$. The multiplicities $(4, 2, 1, 3, 3, 1, 2, 4)$
 reflect non-trivial cell-content combinatorics — they are **not**
 uniform.)
 
-### Why $n = 6$ is the minimum
+### Minimality of $n = 6$
 
 Each EW carrier $T(2, 2k)$ acts non-by definition on a **single
 strand-pair** (the two endpoints of its 2-component link
@@ -81,7 +81,7 @@ The disjoint-product framing $\sigma_1^4 \cdot \sigma_3^6 \cdot
 \sigma_5^8$ — equivalent to a tensor product via far-commutativity
 $\sigma_i \sigma_j = \sigma_j \sigma_i$ for $|i - j| \geq 2$ —
 treats $W, Z, H$ as **independent** carriers. This is
-mathematically clean but **physically wrong**: the electroweak
+mathematically clean but does not match the physics: the electroweak
 symmetry breaking $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y \to
 \mathrm{U}(1)_{\rm em}$ is a *coupling* mediated by the Higgs
 vacuum-expectation value, not a disjoint sum.
@@ -141,7 +141,7 @@ interface generator $\sigma_3$ in $H_6(q)$ for the deuteron.
  inter-nucleon interface generalised to gauge-boson couplings.
 - Recompute the Hoefsmit pure-pattern enumeration under
  $\beta_{\rm EW}(\bowtie_K)$; extend
- [`hoefsmit-ew-cell-content.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/hoefsmit-ew-cell-content.witness.json)
+ [`hoefsmit-ew-cell-content.witness.json`](https://github.com/litlfred/qou/blob/main/computations/hoefsmit-ew-cell-content.witness.json)
  to include $\sigma_2, \sigma_4$ in the eigenvalue analysis.
 - Re-derive $\mathrm{tr}_{\rm pure}(\beta_{\rm EW}(\bowtie_K))$
  symbolically.
@@ -201,7 +201,7 @@ $$
   \sum_{(X_W, X_Z, X_H)} m(X_W, X_Z, X_H) \cdot \varepsilon(X_W, X_Z, X_H).
 $$
 
-Substituting the multiplicities $(4, 3, 1, 2, 2, 1, 3, 4)$ and
+Substituting the multiplicities $(4, 2, 1, 3, 3, 1, 2, 4)$ and
 collecting powers:
 
 $$
@@ -233,7 +233,7 @@ expression cannot be the substrate-level trace; it was a
 $H_2(q)$-only computation, which lost the cell-content structure
 that enforces bar-self-duality.
 
-Numerical comparison at $q_0 = 1.109978595554181\ldots$ (50 dps):
+canonical comparison at $q_0 = 1.109978595554181\ldots$ (50 dps):
 
 See [Table 2](#tbl:hoefsmit-ew-cell-content-table2-data).
 
@@ -260,7 +260,7 @@ content arithmetic — not the dimensionally-inconsistent uniform-
 weight expression.
 
 **Witness.**
-[`folio-assistant/computations/hoefsmit-ew-cell-content.witness.json`](../../folio-assistant/computations/hoefsmit-ew-cell-content.witness.json)
+[`computations/hoefsmit-ew-cell-content.witness.json`](../../computations/hoefsmit-ew-cell-content.witness.json)
 — enumerates standard Young tableaux of partitions of 6 with
 their $(\sigma_1, \sigma_3, \sigma_5)$ eigenvalue classes; reports
 pure-eigenspace counts and 8-pattern multiplicities.

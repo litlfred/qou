@@ -191,7 +191,7 @@ print(f"  Δnet = {delta_net:.10f}")
 
 # ── Write witness ────────────────────────────────────────────────
 # Canonical LP-dual extraction via lp_dual_solver — emits y0_star,
-# y_star, primal_obj, dual_obj, duality_gap (per CLAUDE.md
+# y_star, primal_obj, dual_obj, duality_gap (per AGENTS.md
 # §"LP / SDP duals — first-class infra"). Uses the same Markov
 # traces and Gram matrix; n_target = net_B3 (the realised B₃ net).
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402

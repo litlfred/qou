@@ -21,7 +21,7 @@ path double-counts.
 ## Candidate 1 — Per-SYT content-weighted $\hat V$, single-gen
 
 **Status.** Implemented as the JM cell tower in
-`folio-assistant/computations/syt_cell_tower.py`
+`computations/syt_cell_tower.py`
 (`Track 1`).  Tested only under proton-calibrated $E_0$, no Kähler;
 gives D / T / 3He = 0.10 / 0.28 / 0.22 %.  Untested under
 production (β-decay $E_0$ + Kähler + $\hbar_q^2$).

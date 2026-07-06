@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 The **$q$-momentum** of a particle is the writhe of its braid
 representative, weighted by the Hecke deformation parameter.
 
@@ -10,18 +8,20 @@ $\sigma_{i_1}^{\epsilon_1} \cdots \sigma_{i_k}^{\epsilon_k}$
 where $\epsilon_j = \pm 1$.  The **$q$-momentum** is:
 
 $$
-  p_q(\beta) =  \sum_{j=1}^{k} \epsilon_j 
-  \frac{q^{\epsilon_j} - q^{-\epsilon_j}}{q - q^{-1}}
-  =  \sum_{j=1}^{k} \frac{q^{2\epsilon_j} - 1}{q^2 - 1}
+  p_q(\beta) =  \sum_{j=1}^{k} [\epsilon_j]_q
+  =  \sum_{j=1}^{k} \frac{q^{\epsilon_j} - q^{-\epsilon_j}}{q - q^{-1}}
+  =  \sum_{j=1}^{k} \epsilon_j = w(\beta)
 $$
 
-At $q = 1$: $p_q(\beta) \to w(\beta)$, the classical writhe
-(sum of crossing signs).
-
-At the substrate parameter $q$: each positive crossing contributes
-$[1]_q = 1$ and each negative crossing contributes
-$[-1]_q = -1$, but with $q$-weighting that distinguishes
-the two.
+where $[\epsilon]_q = (q^{\epsilon} - q^{-\epsilon})/(q - q^{-1})$ is the
+$q$-integer, defined for $q \neq \pm 1$ (so that $q - q^{-1} \neq 0$).  On
+that domain $[+1]_q = 1$ and $[-1]_q = -1$ *exactly*, so each crossing
+contributes precisely its sign and the $q$-momentum coincides with the
+classical writhe $w(\beta)$ for all such $q$ — not only in the limit
+$q \to 1$ (where the removable $0/0$ singularity of $[\pm 1]_q$ takes the
+same values $\pm 1$).  (The $q$-deformation is trivial at single crossings;
+it would distinguish multi-strand contributions $|\epsilon| \geq 2$, which
+do not occur in a braid word.)
 
 **Equivalently**, the $q$-momentum is the trace of the braid
 in the fundamental representation of $H_n(R, q)$:
@@ -31,25 +31,6 @@ $$
 $$
 
 where $\rho: B_n \to H_n(R, q)$ is the Hecke representation.
-
-**Properties.**
-
-1. **Additivity under concatenation**:
-   $p_q(\beta_1 \beta_2) = p_q(\beta_1) + p_q(\beta_2)$
-   (from the trace being linear on the Iwahori--Hecke algebra).
-
-2. **Invariance under Markov I**: $p_q$ is conjugation-invariant
-   (cyclic property of the trace).
-
-3. **Shift under Markov II**: stabilization
-   $\beta \mapsto \beta \sigma_n^{\pm 1}$ shifts $p_q$ by
-   $\pm [1]_q$.  This is the $q$-analogue of adding one unit
-   of momentum.
-
-4. **Parity**: Under the mirror $\sigma: \beta \mapsto \beta^{\sigma}$
-   (reverse all crossings), $p_q(\beta^{\sigma}) = -p_{q^{-1}}(\beta)$.
-   Parity violation at $q \neq 1$ means
-   $p_q(\beta^{\sigma}) \neq -p_q(\beta)$.
 
 **Building block values.**
 

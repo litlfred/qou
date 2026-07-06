@@ -1,20 +1,25 @@
-/-!
-# QOU.Experimental.terminal_resolution — placeholder stub
+import Mathlib.Data.Real.Basic
 
-**Placeholder canonical** for content block referenced by
+/-!
+# QOU.Experimental.terminal_resolution
+
+Canonical Lean declaration for content block referenced by
 `qou:QOU.Experimental.terminal_resolution`.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI resolves to a real declaration in the `qou` Lake
-package. The body is `sorry` carrying the manuscript citation per
-CLAUDE.md §1.
+The manuscript claim — that the hadronic mass decomposes linearly into
+a neutrino-vacuum-drag term plus a pure strong-force binding term, and
+matches CODATA to sub-keV precision — is an *empirical* statement about
+opaque physical reals (the drag and binding contributions, the CODATA
+value).  No faithful Mathlib structure reduces it, so this is pattern C
+of the vacuity-fix playbook: the context class carries the physical
+data and `TerminalResolution` **names** the conditional conjecture as a
+`Prop` (it is honestly *not asserted* — no self-assuming projection;
+an instance discharging it is the open conditional claim).
 -/
 
 namespace QOU.Experimental
 
-
-/-- Abstract context for the `terminal_resolution` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- Physical data for the `terminal_resolution` claim. -/
 class TerminalResolutionContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
@@ -28,23 +33,23 @@ class TerminalResolutionContext where
   mass_codata : ℝ
   /-- Sub-keV tolerance threshold (`< 0.001` MeV). -/
   tol : ℝ
-  /-- Manuscript identity: hadronic mass decomposes linearly into
-      neutrino-drag + strong-binding, matching CODATA within `tol`. -/
-  claim_terminal_resolution :
-    mass = m_nu_drag + E_strong ∧ |mass - mass_codata| ≤ tol
 
-/-- **Content statement** (from manuscript):
+/-- **Content statement** (from manuscript), named as a `Prop`:
 
-Using the derived $q_0$, the hadronic mass collapses into a linear combination of the neutrino vacuum drag and the pure strong-force binding energy. All four rows match CODATA to sub-keV precision:
+Using the derived `q₀`, the hadronic mass collapses into a linear
+combination of the neutrino vacuum drag and the pure strong-force
+binding energy, matching CODATA to sub-keV precision:
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+  `mass = m_nu_drag + E_strong  ∧  |mass − mass_codata| ≤ tol`.
+
+This is the §3b "name the conditional conjecture" disposition (pattern
+C): `TerminalResolution ctx` is the proposition the manuscript
+conjectures for the physical data `ctx`; the open state is honestly
+represented by the absence of an instance.  It is *not* a self-assuming
+projection. -/
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/terminal-resolution.ts
-theorem terminal_resolution [ctx : TerminalResolutionContext] :
+def TerminalResolution (ctx : TerminalResolutionContext) : Prop :=
     ctx.mass = ctx.m_nu_drag + ctx.E_strong ∧
-    |ctx.mass - ctx.mass_codata| ≤ ctx.tol :=
-  ctx.claim_terminal_resolution
+    |ctx.mass - ctx.mass_codata| ≤ ctx.tol
 
 end QOU.Experimental

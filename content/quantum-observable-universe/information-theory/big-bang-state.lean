@@ -1,3 +1,6 @@
+import Mathlib.Data.Nat.Basic
+import Mathlib.Tactic.Basic
+
 /-!
 # QOU.BigBangState — Big bang state (degree-0 trivial configuration)
 
@@ -13,10 +16,18 @@ Source declaration: `QOU.BigBangState` in jet-horizon.lean
 - [manuscript] §9/big-bang-state
 -/
 
--- Prerequisite types from jet-horizon.lean
--- (not independently compilable; see jet-horizon.lean for full context)
-
 namespace QOU
+
+/-- Prerequisite type — the canonical declaration is `QOU.JetHorizon`
+    in `content/quantum-observable-universe/lean/QOU/JetHorizon.lean`
+    (Lake-built under the `qou` package).  Re-declared here as an
+    opaque carrier so this co-located content-block sibling is
+    independently checkable by `lean`-direct without importing the
+    full `qou` library cone. -/
+-- Ref: [manuscript] def:jet-horizon
+structure JetHorizon where
+  /-- Opaque carrier of the jet-horizon datum. -/
+  carrier : Type*
 
 /-- A big bang state: a bundle initial condition where A_0 = 0.
     Algebraically identical to a jet horizon but used as a

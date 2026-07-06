@@ -1,6 +1,6 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.Finset.Basic
-import Mathlib.Data.Set.Finite
+import Mathlib.Data.Set.Finite.Basic
 import QOU.Common.MagicNumbers
 
 
@@ -12,7 +12,7 @@ at level `n ∈ {2, 8, 20, 28, 50, 82, 126}` is a fixed point of the
 full-twist action on `H_n(q)`. Equivalently, `Φ_n` is supported on
 self-conjugate partitions `λ ⊢ n` (those with content-sum zero).
 
-We axiomatise the conjecture as a `class` per CLAUDE.md §3b: the
+We axiomatise the conjecture as a `class` per AGENTS.md §3b: the
 typeclass instance is the conjectural input; downstream results
 become conditional theorems parameterised on
 `[SaturatedShellConjecture n]`.

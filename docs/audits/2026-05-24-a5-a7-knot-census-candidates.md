@@ -8,14 +8,14 @@
 ## Purpose
 
 The parent gap audit identifies that
-[`mass_table_ppb.py`](../../folio-assistant/computations/mass_table_ppb.py)
+[`mass_table_ppb.py`](../../computations/mass_table_ppb.py)
 has no atom→knot rule for `A ∈ {5, 6, 7}`. This doc surveys the
 hyperbolic knot/link census (from memory of SnapPy's
 `HTLinkExteriors`, `OrientableCuspedCensus`, Rolfsen, Hoste–
 Thistlethwaite, and standard link families) for objects whose
 volumes sit near the Kashaev-law target windows.
 
-Per CLAUDE.md production-vs-exploratory discipline, this is a
+Per AGENTS.md production-vs-exploratory discipline, this is a
 **shape-probe**: census matching is the CAL-4-equivalent path
 already flagged in `mass_table_ppb.py:18–21`. Repeating it for
 A ∈ {5, 6, 7} extends the hidden-fitting surface, so no assignment
@@ -126,7 +126,7 @@ natural generalisation.
 
 ⁵Li lifetime ≈ 10⁻²² s. The Kashaev volume law as currently
 written produces a finite positive `B_pred`, which would predict
-a **bound** state. Per CLAUDE.md §7b, unstable intermediaries
+a **bound** state. Per AGENTS.md §7b, unstable intermediaries
 are properly modelled as **Demazure sub-crystals** of a larger
 crystal — incomplete topological states whose Macdonald
 evaluation reproduces broken-symmetry / short-lived behaviour.
@@ -203,7 +203,7 @@ in `mass_table_ppb.py:18–21`.
 ## Confidence statement
 
 Volumes for objects beyond the canonical anchors listed in
-[`knot_volumes.py`](../../folio-assistant/computations/substrate/knot_volumes.py)
+[`knot_volumes.py`](../../computations/substrate/knot_volumes.py)
 are **not** recalled with sufficient precision (better than 0.5)
 from memory. The "🟡 needs SnapPy census verification" markers
 above are honest gaps, not placeholders. Any next step in this
@@ -214,8 +214,8 @@ environment rather than rely on this scan.
 
 - Parent gap audit: [`2026-05-24-a5-a7-isotope-wiring-gap.md`](2026-05-24-a5-a7-isotope-wiring-gap.md)
 - Grandparent anatomy: [`2026-05-24-low-isotope-mass-error-anatomy.md`](2026-05-24-low-isotope-mass-error-anatomy.md)
-- Canonical knot-volume registry: [`folio-assistant/computations/substrate/knot_volumes.py`](../../folio-assistant/computations/substrate/knot_volumes.py)
-- Mass-table gap surface: [`folio-assistant/computations/mass_table_ppb.py`](../../folio-assistant/computations/mass_table_ppb.py) lines 80–180
-- CLAUDE.md §7b — Demazure sub-crystals for resonances (the ⁵Li reading)
-- CLAUDE.md production-vs-exploratory discipline — why this is a shape-probe
+- Canonical knot-volume registry: [`computations/substrate/knot_volumes.py`](../../computations/substrate/knot_volumes.py)
+- Mass-table gap surface: [`computations/mass_table_ppb.py`](../../computations/mass_table_ppb.py) lines 80–180
+- AGENTS.md §7b — Demazure sub-crystals for resonances (the ⁵Li reading)
+- AGENTS.md production-vs-exploratory discipline — why this is a shape-probe
 - PR [#1081](https://github.com/litlfred/qou/pull/1081) Task 3 — supplier for multi-knot VolDensity path

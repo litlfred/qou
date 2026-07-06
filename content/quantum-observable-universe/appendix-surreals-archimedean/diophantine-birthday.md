@@ -28,7 +28,11 @@ $$
 $$
 
 This is the birthday analogue of the classical continued-fraction
-convergent sequence.
+convergent sequence. Two regimes bracket the behaviour: a quadratic
+irrational has an eventually periodic continued fraction, so its
+birthday trajectory grows only logarithmically, whereas a Liouville
+number has unboundedly growing partial quotients and a trajectory
+that climbs toward $\omega$.
 
 ## Conjecture
 
@@ -58,7 +62,7 @@ The birthday trajectory discriminates algebraic from transcendental:
    algebraic); for transcendental $\alpha$, $a_j$ may grow
    unboundedly.
 
-## Why this is natural
+## Naturality of the construction
 
 Surreal construction is *exactly* the continued-fraction-like
 recursive construction of reals:
@@ -75,7 +79,7 @@ measures it algebraically (via birthday trajectory).
 The alignment is not coincidental — both are studying the same
 object: **how efficiently rationals approach a real**.
 
-## Consequences if true
+## Conjectural consequences
 
 1. **New proof strategy for Roth's theorem**: Roth's theorem
    becomes a statement about the birthday-growth rate of
@@ -151,9 +155,9 @@ algebraicity conjecture)**:
    giving $b_\alpha(n)$ super-polynomial.
 
 **Required infrastructure**:
-- Continued-fraction expansion in Lean (exists in mathlib).
-- Birthday function of rationals (straightforward).
-- Roth's theorem in Lean (does **not** exist; would be substantial).
+- The continued-fraction expansion machinery.
+- The birthday function of rationals.
+- Roth's theorem.
 
 **Falsification path**: find an algebraic number whose birthday
 trajectory grows super-logarithmically. This would either:
@@ -165,7 +169,7 @@ trajectory and bounded continued-fraction quotients — this would
 refute conjecture (2).
 
 **Provability assessment**: structurally clean once continued-
-fraction $\leftrightarrow$ birthday bijection is formalised. The deep content
+fraction $\leftrightarrow$ birthday bijection is established. The deep content
 (distinguishing algebraic from transcendental) depends on Roth's
 theorem, which is deep but classical.
 

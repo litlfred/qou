@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T00:10:41.179654+00:00",
-  "commitSha": "bb8bf155ff9eb1118f07b28d937665a910340fb0",
+  "computedAt": "2026-06-22T13:27:28.812399+00:00",
+  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
   "assertions": [
     {
       "name": "audit_completed",
@@ -14,39 +14,37 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 10,
   "computation": "qbeta-c3-jhopf-q0-vs-q1-comparison",
   "scriptFile": "qbeta_c3_jhopf_q0_vs_q1_comparison.py",
-  "scriptHash": "867d748d8055",
-  "scriptCommitSha": "99fb307c32eb0ca45a3699b74d49c08f90794633",
+  "scriptHash": "4182fda2ec9e",
+  "scriptCommitSha": "3f95b1ea0fc1c5cc29b33c1763b66e9cdd6f930e",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
   },
   "description": "Q_β c_3 evaluation comparison: J_Hopf(q=1)=-2 vs J_Hopf(q_0)=-(q_0²+q_0⁻²) at canonical substrate. Reaffirms that Rule A (constant -2) is the only structurally legitimate c_3 since Taylor coefficients of a q-series MUST be q-anchor-independent. The 3.47% 'm_p-pin swing' in PR #1479's deep audit is the c_4 truncation error, NOT evidence that c_3 = -2 is wrong.",
   "parameters": {
-    "q_canonical_50dps": "1.1099785827513808075916690956107688798744991218736"
+    "q_canonical_50dps": "1.1099785955573347198997632204832250266562084087802"
   },
   "data": {
-    "u_value": "0.001020631126062702206074016",
+    "u_value": "0.008517236340484921439933113",
     "J_Hopf_q_equals_1": "-2 (exact integer)",
-    "J_Hopf_q_0": "-2.043706208532521989402019",
+    "J_Hopf_q_0": "-2.043706218232901310218245",
     "delta_J_per_rung_3_ppb": {
-      "rule_A_c3_eq_neg2": "-2.12635817956",
-      "rule_B_c3_eq_J_q0": "-2.17282570656",
-      "difference_B_minus_A": "-0.0464675270052"
+      "rule_A_c3_eq_neg2": "-1235.7371155",
+      "rule_B_c3_eq_J_q0": "-1262.74181353",
+      "difference_B_minus_A": "-27.0046980244"
     },
-    "stability_J_ratio_q0_over_q1": "1.02185310427",
+    "stability_J_ratio_q0_over_q1": "1.02185310912",
     "interpretation": "Rule A (c_3 = J_Hopf(q=1) = -2) is q_0-INDEPENDENT — passes the Taylor-coefficient stability test required for a true Habiro coefficient. Rule B (c_3 = J_Hopf(q_0) = -2.044) is q_0-DEPENDENT — cannot be a Taylor coefficient (those are constants). The 3.47% 'swing' between A and B IS the c_4·u⁴ truncation error, BOUNDED per rule 2 of the canonical framing — NOT evidence c_3 is wrong. Per the framing's Rule 4, dashboard should report c_3 = -2 in the 'near-match' tier (still pending Habiro-element identification per the α_EM PR #1511 template)."
   }
 }

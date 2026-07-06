@@ -197,7 +197,7 @@ The `1/n²` framing-ladder family is realised by
 The DEEP CATEGORICAL CLAIM — that this family IS the T(2,n) cinquefoil
 framing factor at the substrate level, with the n=5 selection matching
 the muon's torus-knot assignment from
-[`lepton_t2n_torus_tower.py`](../../../../../folio-assistant/computations/lepton_t2n_torus_tower.py)
+[`lepton_t2n_torus_tower.py`](../../../../../computations/lepton_t2n_torus_tower.py)
 — is conjectural. It is captured by the `cinquefoil_framing_t25_origin`
 field of `UniversalHabiroStructure` below. -/
 theorem habiroT25_framing_family_exists (q : ℝ) :
@@ -208,8 +208,7 @@ theorem habiroT25_framing_family_exists (q : ℝ) :
   -- Ref: [habiro2004cyclotomic] arXiv:math/0209324 (Habiro ring of unity)
   refine ⟨fun n _ => quantumInt 3 q / (n : ℝ) ^ 2, ?_, fun _ => rfl⟩
   unfold habiroT25
-  have h25 : ((5 : ℕ) : ℝ) ^ 2 = (25 : ℝ) := by norm_num
-  simp [h25]
+  norm_num
 
 /-! ## Cross-observable identities (proved)
 
@@ -294,7 +293,7 @@ level (T(2,5) cinquefoil) suggests a general family:
     habiroT_{n²}(q) := [3]_q / n²
 
 with the lepton T(2,n) assignments (per
-[`lepton_t2n_torus_tower.py`](../../../../../folio-assistant/computations/lepton_t2n_torus_tower.py)):
+[`lepton_t2n_torus_tower.py`](../../../../../computations/lepton_t2n_torus_tower.py)):
 
 | Lepton | Knot   | n | Factor      |
 |--------|--------|---|-------------|
@@ -414,9 +413,8 @@ theorem habiroTnSq_times_n_sq_eq_quantumInt_three (n : ℕ) (hn : 0 < n) (q : �
     (n : ℝ) ^ 2 * habiroTnSq n q = quantumInt 3 q := by
   unfold habiroTnSq
   have hne : (n : ℝ) ^ 2 ≠ 0 := pow_ne_zero 2 (Nat.cast_ne_zero.mpr hn.ne')
-  -- `field_simp` clears the `/ n²`, leaving `n² * [3]_q = [3]_q * n²`; `ring` closes.
+  -- `field_simp` clears the `/ n²` and closes `n² * [3]_q = [3]_q * n²`.
   field_simp
-  ring
 
 /-- **Theorem 20 (proved).** Cross-rung product identity for Q_β c_3.
 
@@ -439,7 +437,7 @@ DEEP categorical claims (that those existence witnesses ARE the
 Markov-trace operator and cinquefoil framing respectively) remain
 conjectural. This class captures the deep claims as opaque marker
 fields (no constructive content yet) so downstream theorems can carry
-them as hypotheses per CLAUDE.md §3b-cond. -/
+them as hypotheses per AGENTS.md §3b-cond. -/
 
 /-- Conditional class axiomatizing the two open categorical claims:
 

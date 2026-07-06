@@ -11,9 +11,9 @@ export default proposition({
   computation: {
     engine: "python",
     status: "verified",
-    script: "folio-assistant/computations/rosso_jones_three_strand_delta_q.py",
+    script: "computations/rosso_jones_three_strand_delta_q.py",
     witness: [
-      "folio-assistant/computations/rosso-jones-three-strand-delta-q.witness.json",
+      "computations/rosso-jones-three-strand-delta-q.witness.json",
     ],
   },
   uses: [

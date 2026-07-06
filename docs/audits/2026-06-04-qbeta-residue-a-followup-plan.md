@@ -76,7 +76,7 @@ declare-open discipline).
 docs/audits/
   2026-06-04-qbeta-residue-a-followup-plan.md    # this file
   2026-06-04-qbeta-residue-a-followup-verdict.md # combined TIERED verdict
-folio-assistant/computations/qbeta/
+computations/qbeta/
   qbeta_residue_followup_sl6_demazure.py
   qbeta_residue_followup_residual_2x.py
   qbeta_residue_followup_pslq_periods.py

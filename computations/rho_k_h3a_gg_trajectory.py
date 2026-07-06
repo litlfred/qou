@@ -45,7 +45,7 @@ B_test = m_e · |tr_M(β_K)| (= the Schur–Weyl Markov-norm scaled to
 mass units), which gives a finite Δ_λ^G profile for each nucleon
 that can be compared structurally.
 
-LP / SDP DUAL INFRASTRUCTURE  (per CLAUDE.md § *LP / SDP duals*)
+LP / SDP DUAL INFRASTRUCTURE  (per AGENTS.md § *LP / SDP duals*)
 ================================================================
 
 For each nucleon at the full braid, also runs the canonical LP and SDP
@@ -70,7 +70,7 @@ REFERENCES
   - `hecke_core._PROTON_G0/G1` / `_NEUTRON_G0/G1` — the canonical
     gg-pair-production operator chains for the two nucleons.
   - `prop:operator-selection-lp` / `lp_dual_solver.py` — canonical
-    LP + SDP infrastructure (CLAUDE.md mandate for any operator-
+    LP + SDP infrastructure (AGENTS.md mandate for any operator-
     selection compute).
   - `rho_k_h3a_frobenius_pairing.py` — sibling deuteron compute
     (Δ_λ Option G).
@@ -174,7 +174,7 @@ def main() -> int:
     print("=" * 96)
     print("  Δ_λ Option G — gg-pair-production TRAJECTORY (proton + neutron, n=3)")
     print("  Sibling extension of rho_k_h3a_frobenius_pairing.py (deuteron @ n=6)")
-    print("  + LP/SDP dual infrastructure per CLAUDE.md § *LP / SDP duals — first-class infra*")
+    print("  + LP/SDP dual infrastructure per AGENTS.md § *LP / SDP duals — first-class infra*")
     print("=" * 96)
 
     # WitnessBuilder up front so durationMs measures full runtime.
@@ -196,7 +196,7 @@ def main() -> int:
             "decomposition. At the full braid, applies the Frobenius-"
             "pairing min-norm closure (Option G) AND routes through "
             "the canonical LP / SDP solvers from lp_dual_solver.py "
-            "(per CLAUDE.md § LP/SDP duals — first-class infra). "
+            "(per AGENTS.md § LP/SDP duals — first-class infra). "
             "Sibling of rho_k_h3a_frobenius_pairing.py (deuteron @ n=6)."
         )
     )

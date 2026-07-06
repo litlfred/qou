@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.AppendixSurreals.QBirchSwinnertonDyer — conjectural class (placeholder)
 
@@ -6,7 +8,7 @@
 
 This is a **conjecture**: the class `QBirchSwinnertonDyer` carries a placeholder
 field; the `noncomputable instance` is the conjectural witness whose
-`sorry` represents the open conjecture itself (per CLAUDE.md §3b),
+`sorry` represents the open conjecture itself (per AGENTS.md §3b),
 NOT a missing proof.  Downstream theorems may take
 `[QBirchSwinnertonDyer]` as an explicit `[Instance]` hypothesis to derive
 unconditional Lean theorems modulo this single conjectural input
@@ -23,7 +25,7 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:q-birch-swinnerton-dyer`](../../../quantum-observable-universe/appendix-surreals/q-birch-swinnerton-dyer.md). -/
 class QBirchSwinnertonDyer where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- **Content statement** (from manuscript):
 
       **Conjecture ($q$-BSD).**
@@ -44,7 +46,5 @@ $\mathbf{1}$-rational points:
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/q-birch-swinnerton-dyer.ts
-noncomputable instance : QBirchSwinnertonDyer := by
-  trivial
-
+noncomputable instance : QBirchSwinnertonDyer := sorry
 end QOU.AppendixSurreals

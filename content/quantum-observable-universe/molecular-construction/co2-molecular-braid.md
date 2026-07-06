@@ -1,7 +1,5 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Definition.**
-*Carbon dioxide $CO_2$ is the molecular braid of one carbon atom
+**Carbon dioxide** *$CO_2$ is the molecular braid of one carbon atom
 $C(6, 6)$ and two oxygen atoms $O_1(8, 8)$, $O_2(8, 8)$, with
 two double bonds (O=C=O).*
 
@@ -32,30 +30,3 @@ $O_1$ and 2 shared with $O_2$.  No lone pairs on carbon.*
 3. *Assemble $\mathcal{A}_{O_2}$: embed, apply inter-atomic
    crossings (including $O_1$-$O_2$ interactions), apply 2
    covalent bond operators, reduce to NF*
-
-*The key computational question: does the LP dual produce the
-**linear** geometry O=C=O, or could a bent geometry be lower
-in $\Phi_1$?*
-
-*In the braid framework, linearity emerges when the optimal
-strand ordering places $O_1$ and $O_2$ on opposite sides of $C$
-— maximising the distance (number of intervening strands)
-between the two oxygens' repulsive $\mathfrak{p}$-$\mathfrak{p}$
-crossings.  The LP dual selects:*
-
-$$
-  [\ldots O_1 \ldots, \ldots C \ldots, \ldots O_2 \ldots]
-$$
-
-*with the interleaved covalent electrons mediating each C=O bond,
-rather than:*
-
-$$
-  [\ldots C \ldots, \ldots O_1 \ldots, \ldots O_2 \ldots]
-$$
-
-*which would place the two oxygens adjacent (more repulsion).*
-
-*The observed $CO_2$ structure is linear with $D_0 \approx
-16.56 \;\mathrm{eV}$ (total of both C=O bonds, each
-$\approx :val[d0_co2_double_ev]{precision=3, witness=folio-assistant/computations/molecular-experimental-refs.witness.json} \;\mathrm{eV}$).*

@@ -28,10 +28,7 @@ downstream.
   contour-integral / Schwarz-integral axiomatisation.  Its sole field
   `pole_nonzero : 1 - h_q · q^n ≠ 0` records the **pole
   non-vanishing** — the substantive output any concrete contour route
-  must establish.  (Strengthened 2026-05-30 from an earlier
-  literal-`rfl` `equals_resolvent` field — the trivially-provable
-  loophole #1460 closed for `BringZeroModeBlochClass` — so the class
-  now carries genuine content.)
+  must establish.
 - `theorem bring_residue_equation` — sorry-free: given the class, the
   canonical resolvent $F_n(q) = (1 - h_q \cdot q^n)^{-1}$ satisfies the
   **resolvent equation** $(1 - h_q \cdot q^n) \cdot F_n(q) = 1$ (proof:
@@ -62,7 +59,7 @@ Closing `BringResidueAtOrder n q` requires either:
 Both routes converge on the same closed form
 $F_n(q) = 1 / (1 - h_q \cdot q^n)$.  Closing the class is a
 Mathlib-import follow-up; until then this file states the
-**conditional uniqueness** of the resolvent form per CLAUDE.md
+**conditional uniqueness** of the resolvent form per AGENTS.md
 §3b-cond.
 
 ## Downstream consequence

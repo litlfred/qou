@@ -71,7 +71,7 @@ This converts an unannotated `sorry` (proof gap with no audit trail)
 into a properly-cited external axiom whose:
 
 1. **Mathematical content** is named and stated explicitly.
-2. **Bibliographic source** is recorded via `-- Ref: [key]` per CLAUDE.md §1.
+2. **Bibliographic source** is recorded via `-- Ref: [key]` per AGENTS.md §1.
 3. **Discharge path** is clear: when the upstream Mathlib API lands
    or the QOU Hecke-algebra implementation matures, the axiom is
    replaced with a `theorem ... := by ...` derivation; consumer-side
@@ -87,7 +87,7 @@ documented via witness files:
   numerically against MPFR Hoefsmit-matrix witness, max |Δ| ≈ 2.5×10⁻⁵¹
   over 191 samples.
 - `centralIdempotent_central_axiom` etc. — empirically verified via
-  `folio-assistant/computations/hecke/hecke_characters.py` per-irrep
+  `computations/hecke/hecke_characters.py` per-irrep
   matrices satisfying centrality.
 - `phi_q_at_zero` / `li2_q_at_zero` — empty product/sum conventions
   empirically trivial.

@@ -34,7 +34,7 @@ constant, no MeV values) → rename + parametrize, math unchanged. Low cost.
   Disposition: sibling repo (or workspace member) of the new home; assess
   what is upstreamable to oxfordcontrol/Clarabel.rs.
 - folio-assistant/src: **zero** imports from tools/ (clean).
-- folio-assistant/computations: **221 of 778 scripts** consume
+- computations: **221 of 778 scripts** consume
   pyhecke/qou_substrate — but routed through the `hecke_core.py` sys.path
   bootstrap, which is the single choke point for the Phase 4 repoint.
 
@@ -72,5 +72,5 @@ point into the monorepo tree (`github.com/litlfred/qou/tree/main/tools/…`)
 - `tools/hecke-engine/src/gram.rs` — hardcoded Q_0 + nucleon-named fns
 - `tools/pyhecke/python/pyhecke/{constants,gram}.py` — conditional
   substrate import + import-time q₀ constants
-- `folio-assistant/computations/hecke_core.py` — consumer choke point
+- `computations/hecke_core.py` — consumer choke point
 - `.github/workflows/{pyhecke,pyhecke-native-wheels,hecke-engine-wasm,release-please}.yml`

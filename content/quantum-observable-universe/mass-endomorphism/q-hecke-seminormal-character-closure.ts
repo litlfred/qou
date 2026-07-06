@@ -51,9 +51,9 @@ export default proposition({
   ],
   computation: {
     engine: "numpy",
-    script: "folio-assistant/computations/tr_m_q_hecke_seminormal.py",
+    script: "computations/tr_m_q_hecke_seminormal.py",
     witness: [
-      "folio-assistant/computations/tr-m-q-hecke-seminormal.witness.json",
+      "computations/tr-m-q-hecke-seminormal.witness.json",
     ],
     status: "verified",
     requires: ["numpy", "sympy"],

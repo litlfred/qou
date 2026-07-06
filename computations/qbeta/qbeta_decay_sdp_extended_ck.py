@@ -40,7 +40,7 @@ Canonical c_k closed forms applied at each rung:
   c_7 = c_3³ = -8
 
 Run:
-    python3 folio-assistant/computations/qbeta_decay_sdp_extended_ck.py
+    python3 computations/qbeta_decay_sdp_extended_ck.py
 """
 from __future__ import annotations
 

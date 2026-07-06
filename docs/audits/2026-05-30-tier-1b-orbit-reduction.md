@@ -8,9 +8,9 @@ orbit-trace identity, #1483).
 [`2026-05-20-compute-optimization-roadmap.md`](2026-05-20-compute-optimization-roadmap.md)
 (the original — and partly mistaken — plan).
 **Deliverables:**
-[`atom_orbit_reduction.py`](../../folio-assistant/computations/atom_orbit_reduction.py)
+[`atom_orbit_reduction.py`](../../computations/atom_orbit_reduction.py)
 (API) +
-[`orbit_reduction_crosscheck.py`](../../folio-assistant/computations/orbit_reduction_crosscheck.py)
+[`orbit_reduction_crosscheck.py`](../../computations/orbit_reduction_crosscheck.py)
 → `tier-1b-orbit-reduction-crosscheck.witness.json`.
 
 ## TL;DR — what Tier 1.B actually is

@@ -1,6 +1,5 @@
 import Mathlib.Data.Real.Basic
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.Ring
+import Mathlib.Tactic
 
 
 /-!
@@ -29,7 +28,7 @@ LaTeX label: `conj:lambda-scale-substrate-form` (Family A theorem)
 ## References
 
 - Adams, "Hyperbolic Structures on Link Complements" (1985) — Vol(B_3) = 8G
-- `folio-assistant/computations/lambda_scale_all_c_i_family_a.py` (sympy proof)
+- `computations/lambda_scale_all_c_i_family_a.py` (sympy proof)
 - `docs/audits/2026-05-18-all-c-i-status.md` (full inventory)
 - `docs/audits/2026-05-18-conjecture-falsification.md` (Family B falsification)
 -/
@@ -59,6 +58,9 @@ noncomputable def lambdaA_hForm (h : ℝ) : ℝ :=
 theorem lambdaA_qForm_eq_hForm (q : ℝ) (hq : q ≠ 0) :
     lambdaA_qForm q = lambdaA_hForm (heckeDeformation q) := by
   unfold lambdaA_qForm lambdaA_hForm heckeDeformation
+  have hzp : (q ^ (-2 : ℤ)) = (q⁻¹) ^ 2 := by
+    rw [zpow_neg]; norm_num [zpow_ofNat, inv_pow]
+  rw [hzp]
   field_simp
   ring
 
@@ -100,10 +102,9 @@ theorem lambdaA_q_inv_symmetric (q : ℝ) (hq : q ≠ 0) :
     lambdaA_qForm q = lambdaA_qForm q⁻¹ := by
   unfold lambdaA_qForm
   have h1 : (q⁻¹)^2 = q^(-2 : ℤ) := by
-    rw [zpow_neg, zpow_two]
-    field_simp
+    rw [zpow_neg]; norm_num [zpow_ofNat, inv_pow]
   have h2 : (q⁻¹)^(-2 : ℤ) = q^2 := by
-    rw [zpow_neg, inv_inv, zpow_two]
+    rw [zpow_neg]; norm_num [zpow_ofNat, inv_pow]
   rw [h1, h2]
   ring
 
@@ -118,5 +119,6 @@ theorem lambdaA_all_c_i (q : ℝ) (hq : q ≠ 0) :
     lambdaA_qForm q = 5/2 + (3/4) * (heckeDeformation q)^2 := by
   rw [lambdaA_qForm_eq_hForm q hq]
   unfold lambdaA_hForm
+  ring
 
 end QOU.BraidKnot

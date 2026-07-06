@@ -31,6 +31,7 @@ Output: option-e-probe1-derive-1plusq-over-2.witness.json
 """
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import M_PI_PM_MEV_VALIDATION  # noqa: E402 (codata sweep)
 import json
 import math
 import sys
@@ -46,7 +47,7 @@ from q_parameter import q_at, q_muon_at  # noqa: E402
 DPS = 50
 mp.mp.dps = DPS
 
-M_PI_MEV = mp.mpf("139.57039")           # CAL-3 pion mass (input)
+M_PI_MEV = mp.mpf(M_PI_PM_MEV_VALIDATION)           # CAL-3 pion mass (input)
 STALE_Q0 = mp.mpf("1.1097090249")        # the v9 hardcoded muon-anchor literal
 
 # AME binding energies (MeV) — same source as the v9 script.
@@ -68,7 +69,7 @@ def transpose(lam):
 # ── load the canonical (proton-q₀) y_λ and χ_λ at 50 dps ─────────────────────
 def load_y_and_chi(atom):
     """Load y_λ AND χ_λ from the canonical chi-<atom>-h9-at-q0-50dps witness.
-    These are at the CURRENT canonical proton q₀ = 1.1099785827513808 (50dps)."""
+    These are at the CURRENT canonical proton q₀ = 1.1099785955573347 (50dps)."""
     name = {"T": "tritium-h9", "3He": "helium-3-h9"}[atom]
     fn = COMP / f"chi-{name}-at-q0-50dps.witness.json"
     data = json.load(fn.open())

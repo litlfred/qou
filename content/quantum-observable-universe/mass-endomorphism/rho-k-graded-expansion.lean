@@ -1,4 +1,6 @@
-import Mathlib.Algebra.Algebra.Basic
+import Mathlib.Algebra.Module.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
 
 /-!
 # Graded expansion of the categorical density ρ_K
@@ -30,7 +32,7 @@ This file axiomatizes:
      [Wenzl 1988] Theorem 5).
   3. `rho_k_single_gen_correction` — the single-gen piece is the
      α-weighted log-volume sum (proved at 0.18% empirical accuracy
-     via `prop:atomic-braid-mass`).
+     via `sec:atomic-braid-mass-foundations`).
   4. `rho_k_pair_gen_open` — the pair-gen piece's Wedderburn-
      coupling structure is OPEN; current naive log-additive form
      fails empirically.
@@ -85,7 +87,7 @@ theorem rhoKGradedExpansion (β_K : A) :
 /-- **Definition of ρ_K from the graded expansion.** Dividing
     through by `m_e · |tr_M(β_K)|` recovers the categorical density
     factor (when `|tr_M| ≠ 0`). -/
-def rhoK (m_e : ℝ) (β_K : A) (h : absTrM (A := A) β_K ≠ 0) (h_e : m_e ≠ 0) : ℝ :=
+noncomputable def rhoK (m_e : ℝ) (β_K : A) (h : absTrM (A := A) β_K ≠ 0) (h_e : m_e ≠ 0) : ℝ :=
   atomicMass (A := A) β_K / (m_e * absTrM (A := A) β_K)
 
 /-- **The LO piece is the constituent ratio.** When the single-gen

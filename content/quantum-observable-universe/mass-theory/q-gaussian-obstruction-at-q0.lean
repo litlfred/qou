@@ -1,4 +1,5 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecificLimits.Basic
 
 /-!
 # QOU.MassTheory.qGaussianObstructionAtQ0
@@ -26,7 +27,19 @@ theorem qGaussianObstructionAtQ0
     (q : ℝ) (hq : 1 < q) (T : ℕ → ℝ)
     (hT : ∀ m, q ^ (m * (m - 1) / 2) ≤ T m) :
     ∀ N : ℝ, ∃ m, N < T m := by
-  sorry -- Ref: [bozejko-speicher1991] https://doi.org/10.1007/BF02100489
-        -- + q-gaussian-obstruction-at-q0.md (super-exponential divergence)
+  -- Ref: [bozejko-speicher1991] https://doi.org/10.1007/BF02100489
+  --      + q-gaussian-obstruction-at-q0.md (super-exponential divergence)
+  intro N
+  -- `q > 1` is archimedean: some power `q ^ n` exceeds any `N`.
+  obtain ⟨n, hn⟩ := pow_unbounded_of_one_lt N hq
+  refine ⟨n + 1, ?_⟩
+  -- the triangular exponent at `m = n+1` dominates `n`, so `q ^ n ≤ q ^ (exp)`.
+  have hexp : n ≤ (n + 1) * ((n + 1) - 1) / 2 := by
+    simp only [Nat.add_sub_cancel]
+    rw [Nat.le_div_iff_mul_le (by norm_num)]
+    nlinarith [Nat.le_mul_of_pos_left n (Nat.succ_pos n)]
+  calc N < q ^ n := hn
+    _ ≤ q ^ ((n + 1) * ((n + 1) - 1) / 2) := pow_le_pow_right₀ (le_of_lt hq) hexp
+    _ ≤ T (n + 1) := hT (n + 1)
 
 end QOU.MassTheory

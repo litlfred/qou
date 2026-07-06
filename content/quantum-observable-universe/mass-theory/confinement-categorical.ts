@@ -10,8 +10,8 @@ export default proposition({
   uses: ["prop:unified-curvature-rank-mass-formula"],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/atomic_chirality_residue.py",
-    witness: "folio-assistant/computations/atomic-chirality-residue.witness.json",
+    script: "computations/atomic_chirality_residue.py",
+    witness: "computations/atomic-chirality-residue.witness.json",
     status: "verified",
     requires: ["mpmath", "numpy"],
   },

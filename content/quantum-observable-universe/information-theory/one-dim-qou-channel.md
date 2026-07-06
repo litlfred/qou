@@ -1,4 +1,4 @@
-*Lean sibling: structural, over a generic commutative ring $R$ (CLAUDE.md §7c) — the carried datum is the Markov-trace value.*
+*Lean sibling: structural, over a generic commutative ring $R$ (AGENTS.md §7c) — the carried datum is the Markov-trace value.*
 
 **Definition.** A **one-dimensional QOU channel** — physically an *optical fibre*, in the literal sense of a one-dimensional waveguide, **not** the categorical fibre functor $\tau$ — over a coefficient ring $R$ is a bounded braid carrier: a line along which $n$ strands, the **modes** of the fibre, propagate while carrying a braid word $\beta \in B_n$. Its transmitted, measurable datum is the Markov trace $\mathrm{tr}_M(\beta) \in R$, the same invariant that reads out particle content elsewhere in the framework.
 

@@ -8,7 +8,7 @@
 
 *The two perspectives are related by QOU duality (D17 DIM master Pentagon $\leftrightarrow$ D19 quantum-Langlands), which is exactly the AJ-conjecture machinery $\hat{A}_K \cdot J_N = 0$ in the q-Weyl algebra $\mathcal{A}_q$ over $\mathbb{Z}[q, q^{-1}]$.*
 
-## §1. What's PROVED (100%, no conjecture)
+## §1. Established results (100%, no conjecture)
 
 The following can be stated as theorems over $\mathbb{Z}[q, q^{\pm 1}]$:
 
@@ -20,7 +20,7 @@ The following can be stated as theorems over $\mathbb{Z}[q, q^{\pm 1}]$:
 
 4. **Wedderburn decomposition** of $H_n(q)$ over $\mathbb{Z}[q, q^{-1}]$ holds for the Plancherel weights $w_\lambda = d_q(\lambda)^2 / [n]_q!$ — proved for the framework's H_2, H_3, H_4 cases (PRs #1165, #1185, #1238).
 
-## §2. What's CONJECTURED (the gap)
+## §2. Conjectural content (the gap)
 
 The **specific algebraic identification** of $q_0$ as a particular invariant of $[\rho_{\mathrm{DF}}]$. Three candidate refinements (per [`docs/audits/-q0-into-character-variety-minimal-archimedean.md`](../../../docs/audits/-q0-into-character-variety-minimal-archimedean.md) §11):
 
@@ -93,7 +93,7 @@ The conjecture is exactly the gap at step A — promoting it from CONJECTURE to 
 
 ## §6. Lean formalization (conditional class per §3b-cond)
 
-[`q-zero-stokes-region-identification.lean`](q-zero-stokes-region-identification.lean) encodes this as a **conditional class structure** per CLAUDE.md §3b-cond:
+[`q-zero-stokes-region-identification.lean`](q-zero-stokes-region-identification.lean) encodes this as a **conditional class structure** per AGENTS.md §3b-cond:
 
 - Class `MostowPrasadDistinguished K` — axiomatizes Mostow-Prasad $\exists!$
 - Class `ReidTraceField K` — axiomatizes trace-field-in-number-field
@@ -113,18 +113,18 @@ The Lean `sorry` count is EXACTLY ONE per OPEN GAP — not per missing tactic.
 
 ## §8. Honest assessment
 
-**What's NEW in this conjecture (vs prior content blocks):**
+**Novel content of this conjecture (vs prior content blocks):**
 - Explicit identification of the structural gap (Option A from §11 of the audit)
 - Universal-base framing over $\mathbb{Z}[q, q^{\pm 1}]$
 - Duality between Stokes-asymptotic + Hom-functor views via AJ
 - Lean conditional-class structure for the 100%-proved track
 
-**What this does NOT claim:**
+**Limitations of the claim:**
 - A specific algebraic formula for $q_0$ (the GAP)
 - That all candidate identifications (a)/(b)/(c) from §2 reduce to the same thing
 - That AJ is proved for $\mathcal{B}_3$ specifically (needs literature verification)
 
-**What this enables:**
+**Consequences of the conjecture:**
 - Lean development can proceed with explicit class hypotheses
-- Future probes can target the conjecture-A gap directly (e.g., compute $A_{\mathcal{B}_3}(L, M)$ classical + identify q_0 on the curve)
+- Future analytic investigation can target the conjecture-A gap directly (e.g., compute $A_{\mathcal{B}_3}(L, M)$ classical + identify q_0 on the curve)
 - The framework's $q_0$ stays well-defined under different conjecture statuses

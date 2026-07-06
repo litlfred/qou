@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.FluidDynamics.p4_universality — universality of the critical exponent
 

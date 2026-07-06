@@ -38,7 +38,7 @@ References:
 Witness: `h-3a-vs-h-3-divergence.witness.json`
 Audit-only: docs/audits/2026-05-08-p3-h-3a-divergence.md
 
-@module folio-assistant/computations/h_3a_vs_h_3_divergence
+@module computations/h_3a_vs_h_3_divergence
 """
 
 from __future__ import annotations

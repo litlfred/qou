@@ -60,7 +60,7 @@
       "trust_basis": "script-cited",
       "jet_order": 0,
       "citation": "manuscript:§atomic-braid-recipe",
-      "notes": "script: folio-assistant/computations/atomic_braid_gb_filtration_extension.py (ATOMIC_BRAIDS table) + folio-assistant/computations/mass_at_3A_proper.py (`atom_braid_word_3A`).  Awaits Lean formalisation of the quark-content → Hecke-NF map (`uud → σ_1 σ_2 σ_1^{-1}`); once that lands, this step becomes LEAN_PROVEN and the atom mass-trace chains rebase to fully-trusted via this recipe."
+      "notes": "script: computations/atomic_braid_gb_filtration_extension.py (ATOMIC_BRAIDS table) + computations/mass_at_3A_proper.py (`atom_braid_word_3A`).  Awaits Lean formalisation of the quark-content → Hecke-NF map (`uud → σ_1 σ_2 σ_1^{-1}`); once that lands, this step becomes LEAN_PROVEN and the atom mass-trace chains rebase to fully-trusted via this recipe."
     },
     {
       "name": "Canonical neutron braid word in B_3",
@@ -77,7 +77,7 @@
       "trust_basis": "script-cited",
       "jet_order": 0,
       "citation": "manuscript:§atomic-braid-recipe",
-      "notes": "script: folio-assistant/computations/mass_at_3A_proper.py (`atom_braid_word_3A`).  Awaits Lean formalisation of the (udd) → `σ_1 σ_2^{-1} σ_1` map.  When closed jointly with the proton word (step 3), every atom mass chain becomes fully-trusted via this recipe."
+      "notes": "script: computations/mass_at_3A_proper.py (`atom_braid_word_3A`).  Awaits Lean formalisation of the (udd) → `σ_1 σ_2^{-1} σ_1` map.  When closed jointly with the proton word (step 3), every atom mass chain becomes fully-trusted via this recipe."
     },
     {
       "name": "Disjoint-block embedding B_3 ↪ B_{3A}",

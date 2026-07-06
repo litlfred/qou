@@ -1,8 +1,8 @@
 The mass $\mathfrak{m}(\varrho)$ of a vortex in any quantum observable universe
-([mass identity](#def\:mass-identity)) decomposes as a sum of a descended
+([mass identity](#def:mass-identity)) decomposes as a sum of a descended
 holonomy contribution and finitely many transient contributions localised
 at the exceptional divisors of the brane boundary
-([brane boundary](#def\:brane-boundary)):
+([brane boundary](#def:brane-boundary)):
 
 $$
   \mathfrak{m}(\varrho)
@@ -14,15 +14,15 @@ $$
 $$
 
 where $\Phi_q(z_i)$ is the quantum dilogarithm
-([quantum dilogarithm](#cor\:quantum-dilogarithm)) evaluated at the
+([quantum dilogarithm](#cor:quantum-dilogarithm)) evaluated at the
 $i$-th blow-up centre $z_i$, and $\varrho_0$ is the unknot core of $\varrho$.
 
 ## Relationship to the proved theorem
 
 The analogous decomposition for morphisms supported along the
 *recursive brane tower*
-([recursive brane tower](#def\:recursive-brane-tower)) has been proved as
-[Topological Decomposition of Mass](#thm\:topological-mass). That theorem
+([recursive brane tower](#def:recursive-brane-tower)) has been proved as
+[Topological Decomposition of Mass](#thm:topological-mass). That theorem
 uses the :refterm[descent]{#descent} involution $\hat\tau_n$ and Frobenius categorical traces
 to split $\mathfrak{m}(\varrho)$ into descended and transient parts.
 
@@ -34,20 +34,4 @@ replaces the :refterm[descent]{#descent}-trace part, while the quantum-dilogarit
 captures the transient blow-up contributions at the exceptional divisors of
 the brane boundary $\partial A$.
 
-## Proof obligations
-
-1. **Holonomy–trace identification.** Show that
- $\bigl\lVert\mathrm{Hol}_{\nabla_A}(\varrho_0;\mathfrak{G})\bigr\rVert = \bigl\lVert\mathrm{tr}_{\mathrm{desc}}(\varrho_0)\bigr\rVert$
- when $\varrho_0$ is an unknot core. This requires identifying the
- gauge holonomy with the categorical :refterm[descent]{#descent} trace for morphisms in
- the unknot class.
-
-2. **Finite blow-up locus.** Prove that the brane boundary
- $\partial A$ has only finitely many exceptional divisors
- $\{D_i\}_{i=1}^N$ contributing non-by definition to $\mathfrak{m}(\varrho)$.
- (For a vortex, $N$ is determined by the genus of $\varrho$'s brane.)
-
-3. **Quantum-dilogarithm evaluation.** Show that the transient
- contribution at $D_i$ equals $\bigl\lVert\Phi_q(z_i)\bigr\rVert$,
- where $z_i = |\hat{V}_i(q)|$ is the algebraic-volume magnitude of
- the generator at the $i$-th blow-up centre.
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

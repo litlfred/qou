@@ -72,7 +72,7 @@ contain the residue A:
   module Lean / Python infrastructure
 - **KLR canonical-basis-weighted Markov traces** — would need KLR
   algebra implementation
-- **Type-B folded crystal sums** (per CLAUDE.md §7b authoring
+- **Type-B folded crystal sums** (per AGENTS.md §7b authoring
   guidance) — would need Type-B Cartan datum + folded-crystal
   machinery
 

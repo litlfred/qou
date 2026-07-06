@@ -21,7 +21,7 @@ decomposition leaves on the table.
 ## SDP formulation
 
 Use `solve_psd_operator_selection_sdp(t, G, n_target)` from
-`lp_dual_solver.py` (CLAUDE.md §LP/SDP duals — first-class infra).
+`lp_dual_solver.py` (AGENTS.md §LP/SDP duals — first-class infra).
 
 - `t[i]` = channel-binding-residual for channel i:
   `t[i] = Δ_cat(⁴He) − sum-of-parts(i)`. Larger `t[i]` means the
@@ -98,7 +98,7 @@ def main() -> int:
     print(f"\nn_target = Δ_coupling(2,2) = {n_target:.6f} MeV")
 
     # G is diagonal (channels orthogonal at leading order); per
-    # CLAUDE.md §LP/SDP duals the SDP reduces to LP for diagonal G.
+    # AGENTS.md §LP/SDP duals the SDP reduces to LP for diagonal G.
     # Try SDP first (rigorous PSD), fall back to LP if cvxpy
     # unavailable — equivalent solution for this structure.
     solver_used = "sdp_cvxpy"

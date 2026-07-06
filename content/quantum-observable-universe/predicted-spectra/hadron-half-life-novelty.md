@@ -1,0 +1,1 @@
+**Remark.** While the resulting decay structure follows the standard weak-decay formulation, the novelty lies in successfully re-deriving this empirical structure purely categorically, unifying the Fermi golden rule and Sargent's rule within a fundamental Markov-trace matrix element.

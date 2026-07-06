@@ -80,7 +80,7 @@ phase-planned in the section "Extension plan" at end.
     skeleton only.
 
 18. **Notation drift**: T7 producers use bare `w_λ` for q-deformed
-    Wedderburn weight; per CLAUDE.md should be `tilde w_λ`
+    Wedderburn weight; per AGENTS.md should be `tilde w_λ`
     (distinct from Plancherel at q ≠ 1).  Math unaffected.
 
 ### From Batch D (atom braid + mass endomorphism) — DEEP DRIFT
@@ -203,7 +203,7 @@ categorical-A claim can be Lean-proven.
 | 7 | Other production compute (deepest review) | 1 PR, ~5 days |
 
 Total: ~2-3 weeks of focused audit work for the remaining ~400
-files. Per CLAUDE.md no-fitting / no-numerology — the procedure
+files. Per AGENTS.md no-fitting / no-numerology — the procedure
 is the same; only the scope changes.
 
 ## Cross-cutting observations
@@ -226,7 +226,7 @@ The framework's two-CAL (m_e + q_0) input boundary is
 Paper blocks (content blocks `.md` + `.ts`) **exist** for most math
 claims. Lean proofs are **sparser**: of 61+ math claims aggregated
 across phases 1+2+3a, ~9 are PROVEN, ~3 are conjecture-class
-(sorry-with-citation per CLAUDE.md §3b-cond), and ~30 are
+(sorry-with-citation per AGENTS.md §3b-cond), and ~30 are
 LEAN_MISSING (paper exists, Lean stub missing).
 
 This mirrors QOU's published roadmap: paper-first formalization
@@ -245,7 +245,7 @@ follow-up.**
 
 ## Anti-pattern audit
 
-Per CLAUDE.md "Don't add features beyond what the task requires":
+Per AGENTS.md "Don't add features beyond what the task requires":
 
 - ✓ No back-solving from observed values
 - ✓ No fit parameters introduced

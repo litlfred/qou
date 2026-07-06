@@ -48,7 +48,7 @@ universal Φ_8.
 DATA SOURCES
 ============
 
-  - folio-assistant/computations/habiro-coefficients-atomic.witness.json
+  - computations/habiro-coefficients-atomic.witness.json
     (p, n, D)
   - /tmp/he3.json, /tmp/he4.json (helium from PR #1618 branch)
 
@@ -59,7 +59,7 @@ USAGE
 
 OUTPUTS
 -------
-  folio-assistant/computations/qbeta-habiro-all-10-pairs-phi8-universality.witness.json
+  computations/qbeta-habiro-all-10-pairs-phi8-universality.witness.json
 
 Ref:
   docs/audits/2026-06-01-qbeta-habiro-all-10-pairs-phi8-universality.md

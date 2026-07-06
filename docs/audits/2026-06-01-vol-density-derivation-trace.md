@@ -65,7 +65,7 @@ read of what `main` actually computes.
 
 ### Canonical production implementation
 
-`folio-assistant/computations/_li_2_q_util.py:210-254` — `vol_density_borromean(q)`:
+`computations/_li_2_q_util.py:210-254` — `vol_density_borromean(q)`:
 
 ```python
 def vol_density_borromean(q, q_inv=None):
@@ -324,12 +324,12 @@ the production `Vol/ℏ_q² × λ_A` value (which currently reproduces ≈1890, 
 
 ## Files cited
 
-- `folio-assistant/computations/_li_2_q_util.py` (vol_density_borromean:210,
+- `computations/_li_2_q_util.py` (vol_density_borromean:210,
   linking_weight_family_a:172, li_2_q:69, yekutieli_correction_h2:309,
   borromean_markov_trace_h2:335)
-- `folio-assistant/computations/m_p_borromean_verification_50dps.py` (193, 313, 158)
-- `folio-assistant/computations/lambda_scale_all_c_i_family_a.py` (84-128)
-- `folio-assistant/computations/meson_vol_density.py` (59-62) — same `Vol/ℏ_q² × λ_A` baryon form
+- `computations/m_p_borromean_verification_50dps.py` (193, 313, 158)
+- `computations/lambda_scale_all_c_i_family_a.py` (84-128)
+- `computations/meson_vol_density.py` (59-62) — same `Vol/ℏ_q² × λ_A` baryon form
 - `content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.md` (Stage 1-4)
 - `content/quantum-observable-universe/particle-interactions/geom-universality.md` + `.lean` (74)
 - `content/quantum-observable-universe/mass-theory/geom-yekutieli-alignment.{md,lean}`

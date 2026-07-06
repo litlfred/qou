@@ -15,11 +15,6 @@ $w = q - 1$, to order 7:*
 | 6 | $111/4$ | catalogued from witness; formal proof deferred |
 | 7 | $-3665/81$ | catalogued from witness; formal proof deferred |
 
-*Source: SymPy computation in
-[`qbeta_c3_multiblock_recursion_attack.py`](../../../folio-assistant/computations/qbeta/qbeta_c3_multiblock_recursion_attack.py)
-(Step 2: Taylor expansion to 12 orders), serialised in
-[`qbeta-c3-multiblock-recursion-attack.witness.json`](../../../folio-assistant/computations/qbeta/qbeta-c3-multiblock-recursion-attack.witness.json)
-under `taylor_coeffs_w_expansion`.*
 
 ## Honest scope
 
@@ -42,9 +37,6 @@ under `taylor_coeffs_w_expansion`.*
   function is a degree-11/degree-7 quotient, so a finite-order
   linear recursion on $c_n$ exists, but extracting it is open work).
 
-**Why the witness values are reliable.** The SymPy script in
-[`qbeta_c3_multiblock_recursion_attack.py`](../../../folio-assistant/computations/qbeta/qbeta_c3_multiblock_recursion_attack.py)
-applies `sp.series(... w, 0, 12)` to the closed form
 
 $$
   \Delta\tau_M^{\text{surr}}(q) = \frac{-q^{11} + q^{10} - 2q^9 + q^8 + q^6 - q^5 - q^3 + 2q^2 - q + 1}{4 q^5 (q^2 + q + 1)}
@@ -61,6 +53,6 @@ Lean theorems above (orders 0 and 1).
   [`prop:qbeta-per-block-chi-closed-forms`](qbeta-per-block-chi-closed-forms.md)
   (`delta_tau_M_surrogate` definition + order-0/order-1 proofs).
 - Witness JSON:
-  [`qbeta-c3-multiblock-recursion-attack.witness.json`](../../../folio-assistant/computations/qbeta/qbeta-c3-multiblock-recursion-attack.witness.json).
+  [`qbeta-c3-multiblock-recursion-attack.witness.json`](../../../computations/qbeta/qbeta-c3-multiblock-recursion-attack.witness.json).
 - 1ppQ-Q$_\beta$ coordination ledger:
   [`docs/coordination/1ppq-qbeta.md`](../../../docs/coordination/1ppq-qbeta.md).

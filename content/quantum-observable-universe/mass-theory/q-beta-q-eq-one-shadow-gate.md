@@ -1,5 +1,5 @@
-**Proposition.** *In the $Q_\beta$ precision-ladder factorisation
-$Q_\beta(q) = Q_A(q) \cdot \cos(\alpha_{\text{eff}}(q)) \cdot \prod_{k \ge 2}(1 + c_k u^k)$
+**Proposition.** *In the $\mathfrak{Q}_\beta$ precision-ladder factorisation
+$\mathfrak{Q}_\beta(q) = Q_A(q) \cdot \cos(\alpha_{\text{eff}}(q)) \cdot \prod_{k \ge 2}(1 + c_k u^k)$
 with $u = b(q) \cdot \hbar_q^2$, any candidate Habiro element $F(q)$
 generating the ladder coefficients $c_k$ must satisfy the classical-limit
 shadows*
@@ -11,7 +11,7 @@ $$
 
 *A candidate failing either shadow is structurally REFUTED.*
 
-## Why this is the $\S 4(c)$ formalize-first gate
+## Role as the $\S 4(c)$ formalize-first gate
 
 The refuted-class map (`2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md`)
 $\S 4$ lists four structural invariants any candidate $F(q)$ must satisfy:
@@ -29,15 +29,6 @@ The q = 1 shadow invariant has **two canonical anchors** at the registry level:
 - **$c_3 \to J_{\text{Hopf}}(q = 1) = -2$** is the canonical Hopf-Jones limit (registry §3, [`canonical-derivation-chain.md`](../../../docs/canonical-derivation-cheat-sheet.md)) — the categorical anchor for the inter-block N=3 correction.
 
 A candidate $F(q)$ whose Taylor expansion at $q = 1$ disagrees with either anchor fails the $\S 4(c)$ invariant, regardless of how cleanly it passes (a), (b), or (d). The two are independent: candidates can satisfy (a) + (b) (anchor-stable + bar-even) while still failing (c) if their classical-limit expansion gives the wrong integers.
-
-## Proof sketch
-
-The $c_2$ anchor is the structural $N = 2$ result: the operator-valued $N = 2$ correction $(1 - b^2 \cdot \hbar_q^4)$ rewrites as $(1 - u^2)$ in CommRing R, so the ladder coefficient at $u^2$ is exactly $-1$ — independent of the underlying $F(q)$, as long as $F$ generates this $N=2$ factor.
-
-The $c_3$ anchor is conjectural at the value level (registry §3 records it as `EMPIRICAL — near-match`, refuted as a real-q fibre element by C1–C2) but **anchored as an integer shadow at q = 1**: the categorical interpretation is the Hopf-link Jones polynomial evaluated at $q = 1$, which is $-2$ in our normalization. A candidate whose $q \to 1$ limit gives anything other than $-2$ is structurally inconsistent with the registry anchor and is therefore REFUTED at the formalize-first level (before any numerical anchor sweep at $q_0$).
-
-**The gate (rejection lemma):** if a candidate's $q \to 1$ Taylor coefficient at $u^k$ disagrees with the canonical integer shadow $a_k \in \{-1, -2\}$ for $k \in \{2, 3\}$, the candidate fails the gate. $\blacksquare$
-
 ## Use in the formalize-first checklist
 
 This is **Step 5** of the 7-step Δ_λ pre-flight checklist (`docs/audits/2026-06-05-qbeta-formalize-first-gates-consolidation.md` $\S 3$). Concretely, for any candidate $F(q)$:
@@ -52,11 +43,13 @@ This is **Step 5** of the 7-step Δ_λ pre-flight checklist (`docs/audits/2026-0
 A candidate $F(q)$ must clear (in order):
 
 ```
-1. Bar-even check (§4b)        ✓ (q ↔ q⁻¹ Taylor-even-in-t)
-2. Radius-of-convergence (§4a) ✓ (simple pole at u_substrate)
-3. q = 1 shadow (§4c)          ✓ (c_2 → −1, c_3 → −2)
-4. Direction sanity (§4d)      ✓ (|F(q_0)| in target's magnitude)
-5. CFinite recurrence          ✓ (generates c_k from kernel)
+1. Bar-even check (§4b)        PASS (q ↔ q⁻¹ Taylor-even-in-t)
+2. Radius-of-convergence (§4a) PASS (simple pole at u_substrate)
+3. q = 1 shadow (§4c)          PASS (c_2 → −1, c_3 → −2)
+4. Direction sanity (§4d)      PASS (|F(q_0)| in target's magnitude)
+5. CFinite recurrence          PASS (generates c_k from kernel)
 ```
 
-With all four §4 invariants formalized, the formalize-first gate chain is complete; any future $F(q)$ candidate is evaluable as a Lean class-instance attempt rather than as a numerical fit.
+With all four §4 invariants formalized, the formalize-first gate chain is complete; any future $F(q)$ candidate is evaluable as a Lean class-instance attempt rather than as a canonical fit.
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

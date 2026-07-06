@@ -11,10 +11,10 @@ gives the shell correction scale λ_shell.
 where Φ_q = Σ log|V̂_i| is the quantum dilogarithm volume.
 
 Run from repo root:
-    python3 folio-assistant/computations/shell-correction-lambda.py
+    python3 computations/shell-correction-lambda.py
 
 Output:
-    folio-assistant/computations/shell-correction-lambda.witness.json
+    computations/shell-correction-lambda.witness.json
 """
 
 import json

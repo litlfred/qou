@@ -52,7 +52,7 @@ this speedup is NOT applicable; use `chi_lambda_braid` (Hoefsmit) instead.
   speedup on atomic braids requires the per-isotope canonical T_w
   decomposition, which is a separate research milestone.
 
-@module folio-assistant/computations/q_mn_canonical
+@module computations/q_mn_canonical
 """
 from __future__ import annotations
 import argparse

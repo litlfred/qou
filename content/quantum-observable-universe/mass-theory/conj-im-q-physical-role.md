@@ -15,10 +15,10 @@ testable against a specific observable class. Identifying
 which (if any) is the correct physical interpretation is open
 work.*
 
-## What Im(q) is NOT
+## Exclusions for Im(q)
 
 Per [`rem:im-q-vs-p-skew`](rem-im-q-vs-p-skew.md), Im(q) is **NOT**:
-- The EM / $P_{\mathrm{skew}}$ channel (that's a real-q mechanism)
+- The EM / $P_{\mathrm{skew}}$ channel (this is a real-q mechanism)
 - A fourth calibration input (the 3-CAL count is cohomologically forced)
 - An observable in the current framework (mass formula uses $|\cdot|$)
 - Equal to $\mathrm{Im}(\mathrm{tr}_M(\rho(\beta)))$ — Im(q) is a parameter; Im(tr_M) is the value induced
@@ -47,7 +47,7 @@ $\arg q \neq 0$?
 CAL-2 ($m_\mu/m_e = 206.7682830$) gives **one real equation** on
 two real unknowns ($\mathrm{Re}(q), \mathrm{Im}(q)$). The solution
 set is an **Apollonius circle** in the complex q-plane (center
-$\approx 1.010$, radius $\approx 0.100$ per `q_beta_complex_q_test1_phaseA_v2.py`).
+$\approx 1.010$, radius $\approx 0.100$ per the formal derivation).
 The framework's real-axis solution $q_0 \approx 1.10998$ is one
 point on this circle; Im(q) is the arc coordinate parametrizing
 the other admissible q values.
@@ -73,7 +73,7 @@ representations describe their non-Hermitian dynamics? Most decay
 widths in the Standard Model have categorical interpretations open
 in the QOU framework.
 
-## Why none is currently proved
+## Obstacles to a current proof
 
 Each candidate requires an observable the framework does not yet
 provide:
@@ -94,7 +94,7 @@ directly. The candidate roles are all in **non-mass observables**.
 - [`prop:rho-k-pair-gen-canonical-form`](conj-rho-k-pair-gen-canonical-form.md) —
   similarly Im(q)-robust at LO.
 - The complex-q machinery is **decoupled** from the mass-formula closure;
-  closing the Q_β residual or deriving F_ℓ does **not** require resolving
+  closing the $\mathfrak{Q}_\beta$ residual or deriving F_ℓ does **not** require resolving
   Im(q)'s role.
 
 ## Default value: Im(q) = 0
@@ -106,7 +106,7 @@ canonical choice is **$\mathrm{Im}(q_0) = 0$** (real q). This is:
 - **Empirically sufficient**: all known mass observables fit
   with real $q_0$ to the precision documented in `per-observable-100x-status.witness.json`.
 - **NOT structurally forced**: nothing in the QOU framework's
-  cohomological discipline requires $\mathrm{Im}(q) = 0$; it's a
+  cohomological discipline requires $\mathrm{Im}(q) = 0$; it is a
   convention pending an Im-sensitive measurement.
 
 ## Cross-references
@@ -118,3 +118,5 @@ canonical choice is **$\mathrm{Im}(q_0) = 0$** (real q). This is:
 - Audit: [`docs/audits/-m-mu-over-m-e-operator-rederivation.md`](../../../docs/audits/-m-mu-over-m-e-operator-rederivation.md) — Phase 3 finding
 - Audit: [`docs/audits/-complex-q-historical-trajectory.md`](../../../docs/audits/-complex-q-historical-trajectory.md) — historical context
 - Audit: [`docs/audits/-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/-q-beta-net-ansatz-fitting-finding.md) §Q3 — Apollonius parametrization
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

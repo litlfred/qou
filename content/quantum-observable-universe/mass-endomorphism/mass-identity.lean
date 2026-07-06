@@ -1,6 +1,7 @@
 import Mathlib.Algebra.Module.Basic
 import Mathlib.Algebra.Ring.Basic
 import Mathlib.CategoryTheory.Monoidal.Category
+import QOU.QuantumObservableUniverse.CategoricalFoundations
 
 
 /-!
@@ -39,8 +40,10 @@ namespace QOU
 
 universe u v
 
-/-- The inertial mass of a closed cycle `γ : 𝟙 → A` in a Frobenius–Hopf
-    object.  Defined as:
+/-! ## The inertial mass of a closed cycle
+
+    The inertial mass of a closed cycle `γ : 𝟙 → A` in a Frobenius–Hopf
+    object is
 
     `m(γ) = ‖tr((λ ⊗ id) ∘ Δ ∘ γ)‖_F`
 

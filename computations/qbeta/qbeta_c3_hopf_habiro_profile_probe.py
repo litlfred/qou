@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+# ANCHOR NOTE (2026-06-22): q0 = 1.10997858275… occurrences below are the
+# RETIRED pre-2026-05-28 proton anchor (old re-pin #1422), kept as this
+# probe's historical / cross-anchor / pinned comparison value. The CURRENT
+# canonical proton q0 is q_at() ≈ 1.1099785955573347…; the muon anchor is
+# q_muon_at() ≈ 1.10997859555418…. This probe is preserved as-is by design.
 """qbeta_c3_hopf_habiro_profile_probe.py — Step 4 (corrected) probe:
 the Q_β c_3 residue A on the **Hopf-link substructure**, via the Step 3
 `trace_formal` roots-of-unity machinery (PR #1811).
@@ -79,8 +84,8 @@ mp.dps = 50
 # ── Pinned anchor data (verified against the corpus) ──────────────────
 # Cross-anchor q₀ + empirical c_3, from
 # docs/audits/2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md
-Q0_PROTON = "1.10997858275"     # proton (production) anchor
-Q0_MUON = "1.10997859555"       # muon anchor
+Q0_PROTON = "1.10997858275"     # RETIRED pre-re-pin proton anchor (see top note); kept for this cross-anchor c_3 profile
+Q0_MUON = "1.10997859555"       # muon anchor (≈ current proton re-pin too, within ~3e-12)
 C3_PROTON = "-2.0693"           # empirical c_3 at proton anchor
 C3_MUON = "-2.0097"             # empirical c_3 at muon anchor
 C3_STRUCTURAL = -2              # proven J_Hopf(q=1) = -2 (production)

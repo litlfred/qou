@@ -6,7 +6,7 @@ for the canonical X(q) = (q-1)²(1-q⁻⁴)/3 of m_n/Δ_pn. Cross-anchor
 verdict: all 14 candidates were near-identical at q_proton and q_muon
 because Δq ≈ 1.28e-8 cannot discriminate.
 
-CLAUDE.md Im(q) framing: the right object is a FIBRE-LEVEL Habiro
+AGENTS.md Im(q) framing: the right object is a FIBRE-LEVEL Habiro
 element — a formal q-deformation H(q; α) whose archimedean evaluations
 at different q_0 give different real values. PARALLEL TO α_EM PR #1511
 template `H_α_EM = [2]_q · (1 - h²α)`.
@@ -35,7 +35,7 @@ CANDIDATES (Habiro forms):
   H6: [2]_q · α + (1 - [2]_q · α) [trivial bar-mix sanity]
   H7: 1 + α · h² + β · h⁴ (2-param; solve at both anchors then extrapolate)
 
-DISCIPLINE: this probe is DIAGNOSTIC. Per CLAUDE.md, do NOT wire any
+DISCIPLINE: this probe is DIAGNOSTIC. Per AGENTS.md, do NOT wire any
 TIER 1/2 result without structural derivation; the cross-anchor test
 is necessary but not sufficient.
 """

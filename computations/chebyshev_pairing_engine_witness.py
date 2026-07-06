@@ -118,7 +118,7 @@ def main():
             "dps": mp.mp.dps,
             "Zmax": ZMAX,
             "tolerance": mp.nstr(TOL, 2),
-            "script": "folio-assistant/computations/chebyshev_pairing_engine_witness.py",
+            "script": "computations/chebyshev_pairing_engine_witness.py",
         },
         "scriptCommitSha": git_sha_of(script_path),
         "scriptHash": file_hash(script_path),

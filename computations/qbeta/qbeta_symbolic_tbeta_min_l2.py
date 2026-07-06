@@ -56,8 +56,8 @@ and gives the bridge instance (Step 3) a concrete handle: the candidate
 Habiro element is S · F(q) where F(q) is the q-rational shape.
 
 Ref: docs/audits/2026-06-02-qbeta-prearchimedean-recursion-status.md
-Ref: folio-assistant/computations/qbeta/qbeta_per_block_symbolic.py
-Ref: folio-assistant/computations/y-lambda-cyclotomic-factor.witness.json
+Ref: computations/qbeta/qbeta_per_block_symbolic.py
+Ref: computations/y-lambda-cyclotomic-factor.witness.json
 """
 from __future__ import annotations
 

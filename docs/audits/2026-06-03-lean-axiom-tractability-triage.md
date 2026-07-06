@@ -1,6 +1,6 @@
 # Lean axiom landscape — tractability triage (2026-06-03)
 
-> Companion to the lean-discharge queue (`todos/lean-discharge-queue.json`).
+> Companion to the lean-discharge queue (`.beans/lean-discharge-queue.json`).
 > Snapshots the current state of every `axiom` declaration in
 > `content/quantum-observable-universe/lean/QOU/` and classifies them
 > by tractability so future discharge sessions can target the
@@ -39,7 +39,7 @@ even one axiom is impractical without precompiled oleans. **Either**:
 3. Defer all Lean-discharge work to a local environment.
 
 See follow-up todo `infra-lean-cache-host-bypass` (added to
-`todos/lean-discharge-queue.json` in this PR).
+`.beans/lean-discharge-queue.json` in this PR).
 
 ## Tractable axioms (8) — for a working Lean environment
 
@@ -105,7 +105,7 @@ Mathlib PRs. **Discharging these is not a feasible session-scale goal.**
 
 ## Cross-refs
 
-- [`todos/lean-discharge-queue.json`](../../todos/lean-discharge-queue.json) — work queue (10 items, 4 still open after this PR's findings)
+- [`.beans/lean-discharge-queue.json`](../../.beans/lean-discharge-queue.json) — work queue (10 items, 4 still open after this PR's findings)
 - [`docs/audits/2026-06-03-canonical-axis-current-fails-triage.md`](2026-06-03-canonical-axis-current-fails-triage.md) — parallel canonical-axis triage
 - [`scripts/setup-lean-toolchain.sh`](../../scripts/setup-lean-toolchain.sh) — toolchain-host workaround from PR #1755 (the cache-host bypass needs the same shape)
 - [PR #1755](https://github.com/litlfred/qou/pull/1755) — elan host bypass (toolchain only; cache host still blocked)

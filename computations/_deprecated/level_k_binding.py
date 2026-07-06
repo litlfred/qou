@@ -23,7 +23,7 @@ Usage:
     E = engine.molecular_binding(n_bonds=1)
     E_atom = engine.atom_binding(Z=6, N=6, n_bonds=1)
 
-@module folio-assistant/computations/level_k_binding
+@module computations/level_k_binding
 """
 
 import json

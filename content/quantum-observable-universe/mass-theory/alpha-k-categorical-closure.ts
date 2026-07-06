@@ -31,9 +31,9 @@ export default conjecture({
   ],
   computation: {
     engine: "python+mpmath",
-    script: "folio-assistant/computations/q_beta_form_a_n1_extension.py",
+    script: "computations/q_beta_form_a_n1_extension.py",
     witness: [
-      "folio-assistant/computations/q-beta-form-a-n1-extension.witness.json",
+      "computations/q-beta-form-a-n1-extension.witness.json",
     ],
     status: "experimental",
   },

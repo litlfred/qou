@@ -53,7 +53,7 @@ noncomputable def thurstonVolume (T : IdealTriangulation) : ℝ :=
   (T.shapes.map blochWigner).sum
 
 /-- Class-axiomatisation of Thurston's existence theorem
-    (CLAUDE.md §3b-cond): for every hyperbolic 3-manifold `M`
+    (AGENTS.md §3b-cond): for every hyperbolic 3-manifold `M`
     equipped with a hyperbolic-volume function `hypVol`, an ideal
     triangulation realising the volume exists.
 

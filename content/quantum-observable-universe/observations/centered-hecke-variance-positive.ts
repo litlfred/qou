@@ -16,4 +16,10 @@ export default proposition({
     "established",
   ],
   proofs: ["prf:centered-hecke-variance-positive"],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "**Provable arithmetic.** The proof in `prf:centered-hecke-variance-positive` is direct algebra plus the inequality $(q^{1/2}+q^{-1/2})^2 > 4$ ⟹ Wenzl regime ⟹ variance positive.",
+    },
+  ],
 });

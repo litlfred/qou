@@ -25,7 +25,7 @@ Plus one negative-control:
   R9: random_int_minus_5_to_5   — fitted-looking but uncalibrated
 
 Output:
-  folio-assistant/computations/option-e-deuteron-delta-lambda-probe-v2.witness.json
+  computations/option-e-deuteron-delta-lambda-probe-v2.witness.json
 """
 
 import json

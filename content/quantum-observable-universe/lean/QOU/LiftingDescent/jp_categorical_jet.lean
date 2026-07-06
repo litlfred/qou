@@ -1,33 +1,25 @@
-/-!
-# QOU.LiftingDescent.jp_categorical_jet — placeholder stub
+import Mathlib.Tactic
 
-**Placeholder canonical** for content block
+/-!
+# QOU.LiftingDescent.jp_categorical_jet
+
+**Canonical declaration** for content block
 [`lem:jet-prolongation-categorical-jet`](../../../quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.md): *Categorical jet object $J^1(A)$ inherits the Frobenius--Hopf structure*.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.LiftingDescent.jp_categorical_jet` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
+This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
 -/
 
 namespace QOU.LiftingDescent
 
 
-/-- Abstract context for the `jp_categorical_jet` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- Abstract context for `prop:jet-prolongation-categorical-jet`. -/
 class JpCategoricalJetContext where
-  /-- Categorical jet object `J¹(A) := A ⊗ Ω¹(A)`. -/
+  /-- The jet prolongation object `J^1(A)`. -/
   J1A : Type
-  /-- Inherited Frobenius–Hopf coproduct `Δ' : J¹(A) → J¹(A) ⊗ J¹(A)`. -/
-  Delta' : J1A → J1A × J1A
-  /-- Inherited counit `ε' : J¹(A) → 𝟙` (encoded as a `ℝ`-valued
-      evaluation since `𝟙` collapses to scalars). -/
-  epsilon' : J1A → ℝ
-  /-- Inherited antipode `S' : J¹(A) → J¹(A)`. -/
+  /-- Antipode operator `S'` on `J^1(A)`. -/
   S' : J1A → J1A
-  /-- Manuscript identity: antipode is involutive on the jet
-      object, `S' ∘ S' = id`. -/
-  claim_jp_categorical_jet : ∀ x : J1A, S' (S' x) = x
+  /-- Antipode `S'` is involutive: `S'^2 = id`. -/
+  antipode_involutive : ∀ x, S' (S' x) = x
 
 /-- **Lemma statement** (from manuscript):
 
@@ -38,12 +30,10 @@ Kähler differentials, is an object of the ambient rigid monoidal
 category, and inherits a Frobenius--Hopf structure
 $(\Delta', \varepsilon', S')$ from $A$.
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types and translating
-    the manuscript claim above. -/
+    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts
 theorem jp_categorical_jet [ctx : JpCategoricalJetContext] :
     ∀ x : ctx.J1A, ctx.S' (ctx.S' x) = x :=
-  ctx.claim_jp_categorical_jet
+  ctx.antipode_involutive
 
 end QOU.LiftingDescent

@@ -2,7 +2,7 @@ Let $(\mathbf{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)) with connection
 $\nabla$ ([categorical connection](#def:categorical-connection)) and
 $q$-Hodge star $\star_q$ ([$q$-Hodge star](#def:q-hodge-star)).
-The connection $\nabla$ is an *instanton* if its curvature
+The connection $\nabla$ is an **instanton** if its curvature
 $F_\nabla \in \Omega^2(A)$ is $\star_q$-self-dual:
 
 $$

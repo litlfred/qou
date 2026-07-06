@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# DEPRECATION-CANDIDATE: witness was moved to folio-assistant/computations/_deprecated/ in PR #554 (dead-exploratory).
+# DEPRECATION-CANDIDATE: witness was moved to computations/_deprecated/ in PR #554 (dead-exploratory).
 # This .py script is kept in place because it is still imported by live code; revisit when the live importer is itself retired or rewired.
 """
 CLASS-A acknowledged-anchor banner (per Workplan-0b, applies to
@@ -33,6 +33,12 @@ Isotopes tested: p, n, D, T, ³He, ⁴He, ⁶Li (optional).
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import (  # noqa: E402 (codata sweep)
+    M_N_MEV_VALIDATION, M_P_MEV_VALIDATION,
+    M_D_ATOMIC_MEV_VALIDATION, M_T_ATOMIC_MEV_VALIDATION,
+    M_HE3_ATOMIC_MEV_VALIDATION, M_HE4_ATOMIC_MEV_VALIDATION,
+    M_LI6_ATOMIC_MEV_VALIDATION, M_C12_ATOMIC_MEV_VALIDATION,
+)
 import sys
 import json
 import math
@@ -69,14 +75,14 @@ Z_SQ = Z_MP * Z_MP
 # CODATA masses (MeV) — atomic masses, neutral atom
 M_E_CODATA = mp.mpf(str(M_E_MEV))
 CODATA_ATOMIC = {
-    "p":     mp.mpf("938.27208816"),       # bare proton (not neutral H)
-    "n":     mp.mpf("939.56542052"),
-    "D":     mp.mpf("1876.12392"),         # ²H atomic mass (with e)
-    "T":     mp.mpf("2809.43215"),         # ³H atomic mass
-    "3He":   mp.mpf("2809.41347"),         # ³He atomic mass
-    "4He":   mp.mpf("3728.40133"),         # ⁴He atomic mass
-    "6Li":   mp.mpf("5603.05122"),
-    "12C":   mp.mpf("11177.92923"),
+    "p":     mp.mpf(M_P_MEV_VALIDATION),       # bare proton (not neutral H)
+    "n":     mp.mpf(M_N_MEV_VALIDATION),
+    "D":     M_D_ATOMIC_MEV_VALIDATION,    # ²H atomic mass (with e)
+    "T":     M_T_ATOMIC_MEV_VALIDATION,    # ³H atomic mass
+    "3He":   M_HE3_ATOMIC_MEV_VALIDATION,  # ³He atomic mass
+    "4He":   M_HE4_ATOMIC_MEV_VALIDATION,  # ⁴He atomic mass
+    "6Li":   M_LI6_ATOMIC_MEV_VALIDATION,
+    "12C":   M_C12_ATOMIC_MEV_VALIDATION,
 }
 
 
@@ -213,8 +219,8 @@ def main() -> int:
     print()
 
     ISOTOPES = [
-        ("p",     1, 0, M_E_CODATA * 0 + mp.mpf("938.27208816")),
-        ("n",     0, 1, mp.mpf("939.56542052")),
+        ("p",     1, 0, M_E_CODATA * 0 + mp.mpf(M_P_MEV_VALIDATION)),
+        ("n",     0, 1, mp.mpf(M_N_MEV_VALIDATION)),
         ("D",     1, 1, CODATA_ATOMIC["D"]),
         ("T",     1, 2, CODATA_ATOMIC["T"]),
         ("3He",   2, 1, CODATA_ATOMIC["3He"]),

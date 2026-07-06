@@ -1,0 +1,459 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-02T12:21:30.380297+00:00",
+  "commitSha": "03675bd4a98d04219715fbdc1a0d56fbd9f88100",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "lever1-binding-habiro-single-element-test",
+  "scriptFile": "lever1_binding_habiro_single_element_test.py",
+  "scriptHash": "a07b3e1a0aab",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Lever-1 binding correction tower (D(m), log-EGF L_m): single-q-hypergeometric-element guess-and-verify with held-out-m falsification + literal contiguity template test.",
+  "$schema": "https://litlfred.github.io/qou/witness-schema/v1.json",
+  "bean": "z2bn",
+  "params": {
+    "q0": "1.10997859555733",
+    "MMAX": 10
+  },
+  "D_nonzero_indices": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "L_nonzero_indices": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "qhypergeometric_guess_verify": {
+    "D_tower": [
+      {
+        "bidegree": {
+          "dq": 1,
+          "dX": 1
+        },
+        "n_unknowns": 12,
+        "n_constraints": 66,
+        "train_pairs": [
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            6,
+            7
+          ]
+        ],
+        "heldout_pairs": [
+          [
+            7,
+            8
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            9,
+            10
+          ]
+        ],
+        "train_nullspace_dim": 0,
+        "heldout_surviving": 0,
+        "is_single_qhyp_element": false
+      },
+      {
+        "bidegree": {
+          "dq": 2,
+          "dX": 2
+        },
+        "n_unknowns": 30,
+        "n_constraints": 87,
+        "train_pairs": [
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            6,
+            7
+          ]
+        ],
+        "heldout_pairs": [
+          [
+            7,
+            8
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            9,
+            10
+          ]
+        ],
+        "train_nullspace_dim": 0,
+        "heldout_surviving": 0,
+        "is_single_qhyp_element": false
+      },
+      {
+        "bidegree": {
+          "dq": 2,
+          "dX": 3
+        },
+        "n_unknowns": 40,
+        "n_constraints": 102,
+        "train_pairs": [
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            6,
+            7
+          ]
+        ],
+        "heldout_pairs": [
+          [
+            7,
+            8
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            9,
+            10
+          ]
+        ],
+        "train_nullspace_dim": 0,
+        "heldout_surviving": 0,
+        "is_single_qhyp_element": false
+      },
+      {
+        "bidegree": {
+          "dq": 3,
+          "dX": 3
+        },
+        "n_unknowns": 56,
+        "n_constraints": 108,
+        "train_pairs": [
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            6,
+            7
+          ]
+        ],
+        "heldout_pairs": [
+          [
+            7,
+            8
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            9,
+            10
+          ]
+        ],
+        "train_nullspace_dim": 0,
+        "heldout_surviving": 0,
+        "is_single_qhyp_element": false
+      }
+    ],
+    "L_tower": [
+      {
+        "bidegree": {
+          "dq": 1,
+          "dX": 1
+        },
+        "n_unknowns": 12,
+        "n_constraints": 41,
+        "train_pairs": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "heldout_pairs": [
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            9,
+            10
+          ]
+        ],
+        "train_nullspace_dim": 0,
+        "heldout_surviving": 0,
+        "is_single_qhyp_element": false
+      },
+      {
+        "bidegree": {
+          "dq": 2,
+          "dX": 2
+        },
+        "n_unknowns": 30,
+        "n_constraints": 53,
+        "train_pairs": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "heldout_pairs": [
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            9,
+            10
+          ]
+        ],
+        "train_nullspace_dim": 0,
+        "heldout_surviving": 0,
+        "is_single_qhyp_element": false
+      },
+      {
+        "bidegree": {
+          "dq": 2,
+          "dX": 3
+        },
+        "n_unknowns": 40,
+        "n_constraints": 59,
+        "train_pairs": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "heldout_pairs": [
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            9,
+            10
+          ]
+        ],
+        "train_nullspace_dim": 0,
+        "heldout_surviving": 0,
+        "is_single_qhyp_element": false
+      },
+      {
+        "bidegree": {
+          "dq": 3,
+          "dX": 3
+        },
+        "n_unknowns": 56,
+        "n_constraints": 65,
+        "train_pairs": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "heldout_pairs": [
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            9,
+            10
+          ]
+        ],
+        "train_nullspace_dim": 3,
+        "heldout_surviving": 0,
+        "is_single_qhyp_element": false
+      }
+    ]
+  },
+  "contiguity_template_test": {
+    "D_tower": {
+      "n_solutions": 1,
+      "solutions": [
+        {
+          "a": "(q**8 - 2*q**6 - 2*q**5 - 2*q**4 - 6*q**3 + 2*q**2 + 4*q + 1)/(q**13 + 4*q**12 + 2*q**11 - 6*q**10 - 2*q**9 - 2*q**8 - 2*q**7 + q**5)",
+          "Cc": "(2*q**18 + 8*q**17 + 10*q**16 - 2*q**15 + 8*q**13 - 4*q**12 - 14*q**11 - 8*q**10 - 8*q**8 - 14*q**7 - 4*q**6 + 8*q**5 - 2*q**3 + 10*q**2 + 8*q + 2)/(q**15 + 4*q**14 + 2*q**13 - 6*q**12 - 2*q**11 - 2*q**10 - 2*q**9 + q**7)",
+          "survives_heldout": false
+        }
+      ],
+      "any_survives_heldout": false,
+      "heldout_indices": [
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    "L_tower": {
+      "n_solutions": 1,
+      "solutions": [
+        {
+          "a": "(q**8 - 30*q**6 - 3*q**5 + 61*q**4 - 78*q**3 + 48*q**2 - 27*q + 4)/(4*q**10 - 27*q**9 + 48*q**8 - 78*q**7 + 61*q**6 - 3*q**5 - 30*q**4 + q**2)",
+          "Cc": "(-2*q**11 + 22*q**10 - 78*q**9 + 90*q**8 + 8*q**7 - 40*q**6 - 40*q**5 + 8*q**4 + 90*q**3 - 78*q**2 + 22*q - 2)/(4*q**10 - 27*q**9 + 48*q**8 - 78*q**7 + 61*q**6 - 3*q**5 - 30*q**4 + q**2)",
+          "survives_heldout": false
+        }
+      ],
+      "any_survives_heldout": false,
+      "heldout_indices": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    }
+  },
+  "verdict": "NEGATIVE (a)-scoped: NO single q-hypergeometric element of bidegree up to (q±3, X≤3), order 1, reproduces either the additive D(m) or the log-EGF L_m tower past the training window — every held-out test kills every fitted relation, and the literal contiguity template (one parameter a) fails held-out. This SHARPENS Stages 3-4: not only is S(m) not low-order q-holonomic, its Habiro CORRECTION towers are not single low-order q-hypergeometric elements either. The binding fibre kernel is a genuine cyclotomic-completion (Habiro-ring) object, not a ₂φ₁. Does NOT refute the Habiro class (per the AGENTS.md refuted-claim discipline): it constrains the element's order/shape.",
+  "scope": "(a) scope-limited negative on the single-low-order-q-hypergeometric ansatz; the Habiro q-difference class is NOT excluded (no proved invariant forbids a higher-order/cyclotomic element). Constrains the kernel order/shape; nothing wired; no fit."
+}

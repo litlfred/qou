@@ -58,8 +58,8 @@ Reference: thm:six-term-mass-formula-complete (Term 6),
            prop:full-pole-structure-mass-trace (pole structure)
 
 Usage:
-    python folio-assistant/computations/term6_residues_at_roots.py
-    python folio-assistant/computations/term6_residues_at_roots.py \
+    python computations/term6_residues_at_roots.py
+    python computations/term6_residues_at_roots.py \
         --atoms proton,neutron,deuteron,tritium,helium-3,helium-4
 """
 from __future__ import annotations

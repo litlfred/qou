@@ -1,0 +1,33 @@
+import { remark } from "../../schema/builders";
+
+export default remark({
+  label: "rem:branch-phase-mass-tower-witness",
+  title:
+    "Branch-phase localisation on $\\mathcal{X}_5$ and the mass-tower " +
+    "falsifiability witness",
+  interprets: "def:crossing-energy",
+  tags: [
+    "branch-phase",
+    "phase-tube",
+    "isospin",
+    "mass-tower",
+    "falsifiability",
+    "golden-ratio",
+  ],
+  uses: [
+    "def:crossing-energy",
+    "rem:commutative-crossing-energy",
+    "def:hyperelliptic-quintic",
+    "rem:u1-phase-tube",
+  ],
+  cites: ["satula1997"],
+  computation: {
+    engine: "python",
+    script: "computations/isospin_mass_tower_collapse.py",
+    witness: [
+      "computations/branch-phase-fit-to-mass-tower.witness.json",
+      "computations/isospin-mass-tower-collapse.witness.json",
+    ],
+    status: "verified",
+  },
+});

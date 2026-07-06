@@ -22,8 +22,8 @@ export default remark({
   ],
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/hyperbolic_volumes.py",
-    witness: "folio-assistant/computations/hyperbolic-volumes.witness.json",
+    script: "computations/hyperbolic_volumes.py",
+    witness: "computations/hyperbolic-volumes.witness.json",
     status: "verified",
   },
 });

@@ -78,13 +78,13 @@ which is exactly the inverse relation read off from $\sigma^2 = h\sigma+1$.
 
 ## Numerical witness
 
-[`folio-assistant/computations/chebyshev_pairing_engine_witness.py`](../../folio-assistant/computations/chebyshev_pairing_engine_witness.py)
+[`computations/chebyshev_pairing_engine_witness.py`](../../computations/chebyshev_pairing_engine_witness.py)
 builds the regular representation $M_\sigma = \begin{psmallmatrix}0&1\\1&h\end{psmallmatrix}$
 of $\sigma$ on $\{1,\sigma\}$, forms $M_\sigma^{-1}$, raises it to each
 $Z=0,\dots,12$ at the substrate $q_0$, and verifies $M_\sigma^{-Z} =
 c_Z M_\sigma + d_Z I$ against the closed forms above to $10^{-40}$,
 together with the sign-alternation corollary. Witness JSON:
-[`chebyshev-pairing-engine.witness.json`](../../folio-assistant/computations/chebyshev-pairing-engine.witness.json).
+[`chebyshev-pairing-engine.witness.json`](../../computations/chebyshev-pairing-engine.witness.json).
 
 ## What this does and does not close
 

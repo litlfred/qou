@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T13:37:10.578044+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-22T13:27:40.652520+00:00",
+  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
   "assertions": [
     {
       "name": "geometric_li2q_towers_wrong_direction",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 40,
+  "durationMs": 22,
   "computation": "qbeta-scaling-bridge-investigation",
   "scriptFile": "qbeta_scaling_bridge_investigation.py",
-  "scriptHash": "433df4e52bcf",
-  "scriptCommitSha": "07ca66e720e742fc58ac0664b9726decf5d0d96a",
+  "scriptHash": "0a58d5dea661",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,9 +26,8 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
@@ -36,26 +35,26 @@
   "contentBlock": "prop:q-beta-categorical-precision-ladder",
   "data": {
     "substrate": {
-      "q0": "1.1099785827513808075916690956107688798744991218736",
-      "hbar_q2": "0.00981718645427507381",
-      "z": "0.499320334183694452",
-      "b": "0.867584066965251156",
-      "alpha": "-0.0523361202682288388",
-      "u": "0.00851723455015614219"
+      "q0": "1.1099785955573347198997632204832250266562084087802",
+      "hbar_q2": "0.00981718851398598439",
+      "z": "0.499320334033561272",
+      "b": "0.867584067307142387",
+      "alpha": "-0.0523361260917949832",
+      "u": "0.00851723634048492144"
     },
     "residual_ladder": {
-      "Q_A_MeV": "0.78364582631647",
-      "Q_A_ppb": "1677566.5",
-      "Q_N1_cos_MeV": "0.78239116644634",
-      "Q_N1_ppb": "73825.872",
-      "Q_N2_c2_MeV": "0.78233440922146",
-      "Q_N2_ppb": "1277.2322"
+      "Q_A_MeV": "0.78364580283917",
+      "Q_A_ppb": "1677536.5",
+      "Q_N1_cos_MeV": "0.78239114270881",
+      "Q_N1_ppb": "73795.53",
+      "Q_N2_c2_MeV": "0.78233438546179",
+      "Q_N2_ppb": "1246.862"
     },
     "scaling_direction": {
-      "needed_factor_Qcodata_over_QA": "0.99832524302128",
-      "geometric_tower_factor": "1.0099145191372",
-      "li2q_tower_factor": "1.0097933257884",
-      "cos_eigenphase_factor": "0.99839894525308",
+      "needed_factor_Qcodata_over_QA": "0.99832527293018",
+      "geometric_tower_factor": "1.009914521238",
+      "li2q_tower_factor": "1.0097933278382",
+      "cos_eigenphase_factor": "0.99839894487304",
       "needed_is_negative_correction": true,
       "geometric_wrong_direction": true,
       "li2q_wrong_direction": true,
@@ -67,7 +66,7 @@
       "all_ck_wireable_as_derivations": false,
       "only_c2_taylor_exact": true,
       "ck_ge3_are_circular_if_extracted": true,
-      "production_residual_ppb": "1277.2322",
+      "production_residual_ppb": "1246.862",
       "conclusion": "Residual is in the scaling (eigenphase/E_0), per neutron-qvalue-symbolic.md. The cos eigenphase is the only closed-form scaling with the right direction; geometric/Li_2^q towers are refuted. Only c_2 wires (Taylor-exact); c_3+ are q₀-dependent and circular if extracted from Q_codata. All-c_k wiring needs the open Taylor-exact eigenphase refinement (the bridge). Production stays Q_N2."
     }
   }

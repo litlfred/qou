@@ -1,5 +1,5 @@
 Let $(\mathbf{C}, \otimes, \mathbf{1})$ be an $R$-linear rigid monoidal
-category. An *involutive structure* (also called a
+category. An **involutive structure** (also called a
 *$\ast$-structure* or *dagger structure*) on $\mathbf{C}$ is
 a contravariant endofunctor
 $\dagger \colon \mathbf{C}^{\mathrm{op}} \to \mathbf{C}$ satisfying:
@@ -11,10 +11,9 @@ $\dagger \colon \mathbf{C}^{\mathrm{op}} \to \mathbf{C}$ satisfying:
 
    ```tex
    \begin{equation}\label{eq:involutivity-cd}
-   \begin{tikzcd}[column sep=3em]
-     X \ar[r, "f"] \ar[rr, bend left=30, "f^{\dagger\dagger} = f"]
-     & Y \ar[r, "f^{\dagger}"{description}]
-     & X
+   \begin{tikzcd}[column sep=5em]
+     X \ar[r, bend left=30, "f = f^{\dagger\dagger}"]
+     & Y \ar[l, bend left=30, "f^{\dagger}"]
    \end{tikzcd}
    \end{equation}
    ```

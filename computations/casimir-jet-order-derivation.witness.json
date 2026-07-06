@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-02T16:58:48.751714+00:00",
-  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
+  "computedAt": "2026-06-22T13:18:26.271809+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "jet_rank_0_derivation_q_independent_and_matches_textbook",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 10,
   "computation": "casimir-jet-order-derivation",
   "scriptFile": "casimir_jet_order_derivation.py",
   "scriptHash": "7ceb72b63da8",
-  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,9 +27,8 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
@@ -50,7 +49,7 @@
         "expected_textbook_force": 0.04112335167120566
       },
       {
-        "q_input": 1.1099785827513808,
+        "q_input": 1.1099785955573347,
         "zeta_neg_3_used": 0.008333333333333333,
         "energy_prefactor_c_q": 0.013707783890401887,
         "force_prefactor_3c_q": 0.04112335167120566,

@@ -45,7 +45,7 @@ what is committed, filtering only the expected drift fields
 (`computedAt`, `commitSha`, `scriptCommitSha`, `engineVersion`, …).
 
 **The gap is in *which scripts the workflow re-runs*.** The runlist
-is a hardcoded `python3 folio-assistant/computations/<NAME>.py`
+is a hardcoded `python3 computations/<NAME>.py`
 sequence in the workflow YAML. Scripts not on the runlist are
 **never re-executed in CI**, so their `*.witness.json` outputs are
 not regenerated and the drift step has nothing to compare. Examples
@@ -101,7 +101,7 @@ The sha256 is the bytes-hash of the upstream witness file at the
 moment this script consumed it. The commit SHAs and `computedAt` are
 read from the upstream witness body and reproduce its provenance.
 
-A companion validator [`witness_dependency_drift.py`](../../folio-assistant/computations/witness_dependency_drift.py)
+A companion validator [`witness_dependency_drift.py`](../../computations/witness_dependency_drift.py)
 walks every `*.witness.json` looking for `upstream_witness_hashes`
 (in either `derivation_inputs.*` or `data.*`) and verifies each
 entry's sha256 against the current bytes of the named upstream

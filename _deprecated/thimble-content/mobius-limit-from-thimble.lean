@@ -21,7 +21,7 @@ LaTeX label: `conj:mobius-limit-from-thimble`
 
 ## Witness
 
-- [mobius-limit-from-thimble.witness.json](../../../folio-assistant/computations/mobius-limit-from-thimble.witness.json)
+- [mobius-limit-from-thimble.witness.json](../../../computations/mobius-limit-from-thimble.witness.json)
   — sympy closed-form `a(q) = (4 - q) / (4 q + 3)` evaluated at `q = q₀`.
 -/
 

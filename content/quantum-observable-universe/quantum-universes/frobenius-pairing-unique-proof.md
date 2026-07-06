@@ -1,4 +1,8 @@
-Each non-degenerate $\int_A^{(i)} \colon A \to \mathbf{1}$ factors
+Uniqueness reduces to the one-dimensionality of the relevant
+Hom-space: when $A$ is simple, a Schur-type argument forces a
+one-dimensional space of forms, so any two Frobenius forms must
+agree up to a unit scalar.  Concretely, each non-degenerate
+$\int_A^{(i)} \colon A \to \mathbf{1}$ factors
 uniquely through the isomorphism $A \xrightarrow{\sim} A^\vee$ as a
 morphism $A^\vee \to \mathbf{1}$.  The space
 $\mathrm{Hom}_{\mathbf{C}}(A^\vee, \mathbf{1}) \cong

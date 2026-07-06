@@ -1,0 +1,41 @@
+{
+  "computation": "d14-theta-bar-side",
+  "description": "D14 modular-S-transform: theta converges only on the bar image q0^{-1} (Im tau > 0); the Descartes/color elliptic curve E_q is NOT the Hecke modular torus (period-nome mismatch ~200-480x). Formalize-first probe for the Jacobi-triple-product/theta avenue (conj:modular-s-transform-q-q-tilde).",
+  "findings": {
+    "A_bar_side_convergence": "q0 > 1 -> Im(tau) < 0 -> theta diverges; q0^{-1} < 1 -> Im(tau) > 0 -> theta converges. The D14 premise 'tau in H' forces the q0^{-1} branch.",
+    "B_nome_conflation_trap": "E_q period nome ~ 0.002-0.004 (deep in fundamental domain, tau ~ i) vs Hecke modular nome q0^{-1} ~ 0.90 (near cusp, tau ~ 0.0166 i). Distinct elliptic structures; do not identify."
+  },
+  "objects": {
+    "q0": "1.10998",
+    "branches": {
+      "q0": {
+        "nome": "1.10998",
+        "tau": "(0.0 - 0.0166065446175j)",
+        "im_tau": "-0.016606545",
+        "in_upper_half_plane": false,
+        "theta_converges": false
+      },
+      "q0_inv": {
+        "nome": "0.900917133642",
+        "tau": "(0.0 + 0.0166065446175j)",
+        "im_tau": "0.016606545",
+        "in_upper_half_plane": true,
+        "theta_converges": true
+      }
+    },
+    "descartes_curve_E_q": {
+      "equation": "y^2 = x^3 + 0.7087 x + 0.8056",
+      "j_invariant": "129.85558",
+      "period_tau": "(0.3661005302 + 0.9305753069j)",
+      "period_nome": "0.002888618"
+    },
+    "nome_conflation": {
+      "hecke_modular_nome_bar_side": "0.90091713",
+      "descartes_period_nome": "0.002888618",
+      "ratio": "311.885",
+      "same_curve": false
+    }
+  },
+  "no_fit": true,
+  "precision_dps": 40
+}

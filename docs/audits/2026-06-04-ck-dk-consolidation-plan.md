@@ -36,7 +36,7 @@ want to keep coming back to this"*), and the disagreement is real:
    - `2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`.
    - `2026-06-03-l2-closure-habiro-3-q-25-universal-template.md`.
    - `2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md`.
-   - CLAUDE.md "c_3 SETTLED" note + the 6-entry flip-flop table in
+   - AGENTS.md "c_3 SETTLED" note + the 6-entry flip-flop table in
      `docs/coordination/1ppq-qbeta.md`.
 
 ## Authoritative current state (2026-06-04, to be encoded in the registry)

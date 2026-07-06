@@ -67,7 +67,7 @@ structure BringsIsQOU where
 theorem brings_euler_char_neg_six (data : BringsIsQOU) :
     data.euler_char = -6 := by
   rw [data.euler_char_eq, data.genus_eq]
-  norm_num
+  decide
 
 /-- Riemann–Hurwitz verification: for a degree-d covering of P¹ by a
     genus-g curve, 2g − 2 = d(2·0 − 2) + R_tot, i.e. R_tot = 2g − 2 + 2d.
@@ -94,7 +94,7 @@ def standardBringsIsQOU : BringsIsQOU where
   -- Obstruction H²(Σ₄, ℤ/2) = 0 vanishes; good cover with 9 patches exists
   yekutieli_lifting := by omega
   euler_char := -6
-  euler_char_eq := by norm_num
+  euler_char_eq := by decide
   branch_points := 6
   branch_points_eq := rfl
   total_ramification := 14

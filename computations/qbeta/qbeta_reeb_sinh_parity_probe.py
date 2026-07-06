@@ -54,7 +54,7 @@ A DIRECT Reeb scalar `S(η) = b·sinh(kη)·(bar-even factor)` has
   lead. (Per #1880's saturation this is not expected.)
 
 No fits: every candidate is a closed-form bar-odd scalar; we report sign,
-swing direction, and the magnitude ratio. CLAUDE.md no-seventh-ansatz
+swing direction, and the magnitude ratio. AGENTS.md no-seventh-ansatz
 respected — this prunes/locates a class, it does not fit a form.
 
 ## References

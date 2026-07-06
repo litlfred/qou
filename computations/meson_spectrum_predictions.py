@@ -29,6 +29,10 @@ sys.path.insert(0, str(HERE))
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import (  # noqa: E402 — canonical PDG registry
+    M_PI_PM_MEV_VALIDATION,
+    M_K_PM_MEV_VALIDATION,
+)
 from hecke_characters import build_seminormal_matrices, partitions_of  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 
@@ -52,7 +56,9 @@ def full_markov_trace(word, q_val):
         prod = np.eye(dim)
         I = np.eye(dim)
         for (c, d, g) in word:
-            h_val = q_f - 1.0/q_f; d = d_mult * h_val if d_mult != 0 else 0; prod = prod @ (c * sigmas_d[g] + d * I)
+            h_val = q_f - 1.0/q_f
+            d = d * h_val if d != 0 else 0
+            prod = prod @ (c * sigmas_d[g] + d * I)
         chi = float(np.trace(prod))
         y = float(y_lambda_wenzl_bridge_numeric(list(shape), q_val, dps=30))
         total += y * chi
@@ -64,12 +70,12 @@ def main():
     mp.mp.dps = 30
     q = mp.mpf(Q_50_DIGIT_STR)
 
-    m_pi = 139.57039  # MeV, PDG
+    m_pi = float(M_PI_PM_MEV_VALIDATION)  # MeV, PDG (codata_constants registry)
 
     # PDG meson masses for comparison
     pdg = {
-        "π±": 139.57039,
-        "K±": 493.677,
+        "π±": float(M_PI_PM_MEV_VALIDATION),
+        "K±": float(M_K_PM_MEV_VALIDATION),
         "η": 547.862,
         "η'": 957.78,
         "φ": 1019.461,

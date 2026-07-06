@@ -87,13 +87,13 @@ class sits an order of magnitude above that.
 
 These files carry banner comments warning against extension:
 
-- `folio-assistant/computations/binding_per_block_log.py`
-- `folio-assistant/computations/canonical_plus_multibrane.py`
-- `folio-assistant/computations/unified_lift.py`
-- `folio-assistant/computations/kahler_lift.py`
-- `folio-assistant/computations/binding_full_pipeline.py`
-- `folio-assistant/computations/binding_fast_pipeline.py`
-- `folio-assistant/computations/binding_full_content_pair.py`
+- `computations/binding_per_block_log.py`
+- `computations/canonical_plus_multibrane.py`
+- `computations/unified_lift.py`
+- `computations/kahler_lift.py`
+- `computations/binding_full_pipeline.py`
+- `computations/binding_fast_pipeline.py`
+- `computations/binding_full_content_pair.py`
 
 The `tower_mass_level(include_desc=...)` parameter introduced in
 this PR remains the structurally correct behaviour for the Φ_q

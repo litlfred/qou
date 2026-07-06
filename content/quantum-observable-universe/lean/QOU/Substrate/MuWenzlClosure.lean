@@ -24,12 +24,12 @@ namespace QOU.Substrate.MuWenzlClosure
 noncomputable def q_int_poly (n : ℕ) (q : ℝ) : ℝ :=
   if n = 1 then 1
   else if n = 2 then q + q⁻¹
-  else if n = 3 then q^2 + 1 + q⁻²
-  else if n = 4 then q^3 + q + q⁻¹ + q⁻³
-  else if n = 5 then q^4 + q^2 + 1 + q⁻² + q⁻⁴
-  else if n = 6 then q^5 + q^3 + q + q⁻¹ + q⁻³ + q⁻⁵
-  else if n = 7 then q^6 + q^4 + q^2 + 1 + q⁻² + q⁻⁴ + q⁻⁶
-  else if n = 8 then q^7 + q^5 + q^3 + q + q⁻¹ + q⁻³ + q⁻⁵ + q⁻⁷
+  else if n = 3 then q^2 + 1 + (q⁻¹)^2
+  else if n = 4 then q^3 + q + q⁻¹ + (q⁻¹)^3
+  else if n = 5 then q^4 + q^2 + 1 + (q⁻¹)^2 + (q⁻¹)^4
+  else if n = 6 then q^5 + q^3 + q + q⁻¹ + (q⁻¹)^3 + (q⁻¹)^5
+  else if n = 7 then q^6 + q^4 + q^2 + 1 + (q⁻¹)^2 + (q⁻¹)^4 + (q⁻¹)^6
+  else if n = 8 then q^7 + q^5 + q^3 + q + q⁻¹ + (q⁻¹)^3 + (q⁻¹)^5 + (q⁻¹)^7
   else 0
 
 /-- The Wenzl weight for the 8-strand sign block of H_8(q). -/
@@ -39,7 +39,7 @@ noncomputable def wenzl_sign_h8_poly (q : ℝ) : ℝ :=
 
 /-- The classical scalar linking weight of Family A (H_4 Wedderburn sum). -/
 noncomputable def linking_weight_family_a (q : ℝ) : ℝ :=
-  (3 * q^2 + 4 + 3 * q⁻²) / 4
+  (3 * q^2 + 4 + 3 * (q⁻¹)^2) / 4
 
 /-- **Theorem 1.** At the classical point `q=1`, the Family A linking weight
     exactly recovers the 5/2 scalar. -/

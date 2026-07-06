@@ -114,7 +114,7 @@ def main() -> int:
         if isinstance(r, dict) and "tr_M_q0_numerical_60dps" in r
     }
 
-    q_0 = mp.mpf(str(atomic.parameters.get("q_0", "1.1099785827513805")))
+    q_0 = mp.mpf(str(atomic.parameters.get("q_0", "1.1099785955573347")))
     mp.mp.dps = 70  # work above the 60 dps interpolate precision
     # Tie tolerance to the active precision (Gemini #472 medium).
     global AGREEMENT_RTOL

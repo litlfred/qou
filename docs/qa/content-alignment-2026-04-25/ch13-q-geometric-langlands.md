@@ -166,7 +166,7 @@ Passive constructions and object-centric phrasing throughout.
 
 ## Notational Alignment Audit
 
-**Reference:** CLAUDE.md §7aa (Notation register — STRICT)
+**Reference:** AGENTS.md §7aa (Notation register — STRICT)
 
 ### Categories (§7, §7aa)
 | Rule | Expected | Found | Status |
@@ -218,7 +218,7 @@ Passive constructions and object-centric phrasing throughout.
 
 ## Conjectural Propagation Audit
 
-**Rule (CLAUDE.md §3b):** Statements downstream of conjectures must themselves be conjectures.
+**Rule (AGENTS.md §3b):** Statements downstream of conjectures must themselves be conjectures.
 
 ### Conjecture dependency graph:
 

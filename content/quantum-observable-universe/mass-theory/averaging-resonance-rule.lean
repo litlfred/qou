@@ -1,3 +1,6 @@
+import Mathlib.Data.Nat.Basic
+import Mathlib.Tactic
+
 /-!
 # `thm:averaging-resonance-rule` — averaging-resonant rung selection (proton-recipe closure)
 
@@ -45,9 +48,6 @@ Refs:
 - [wenzl1988] DOI 10.1007/BF01404457
 - [jones1987] DOI 10.2307/2691504
 -/
-
-import Mathlib.Data.Nat.Basic
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot.AveragingResonanceRule
 
@@ -113,8 +113,5 @@ instance : AveragingResonanceRule where
   proton_recipe := by
     unfold QOU.BraidKnot.AveragingResonanceRule.kRes
     decide
-
-/-- Restatement marker. -/
-theorem rung_rule [AveragingResonanceRule] : True := trivial
 
 end QOU.BraidKnot.AveragingResonanceRule

@@ -1,7 +1,5 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 The brane-tower convergence proposition
-([prop:jet-tower-convergence](#prop\:jet-tower-convergence))
+([prop:jet-tower-convergence](#prop:jet-tower-convergence))
 gives a geometric tail bound for the mass series
 $\mathfrak{m}(\varrho) = \mathfrak{m}^{(0)}(\varrho) +
 \sum_{n \ge 1} \hbar_q^{2n} \cdot \Delta^{(n)}(\varrho)$
@@ -17,7 +15,7 @@ The audit
 flagged this hypothesis as open (GAP 14a). This block names the
 hypothesis as a conjecture, summarises the empirical evidence at
 $n = 1, 2, 3$ for D, T, ${}^{3}$He, and points to the measurement
-infrastructure (`unified_lift.py` + the new
+infrastructure (the formal derivation + the new
 `jet-tower-delta-max.witness.json`).
 
 ## Statement
@@ -47,10 +45,10 @@ but not on $n$).*
 
 ## Empirical evidence (path (b) deliverable)
 
-The measurement script
-[`folio-assistant/computations/jet_tower_delta_max.py`](../../../folio-assistant/computations/jet_tower_delta_max.py)
+The measurement formalism
+the canonical formalism
 runs `unified_lift.unified_atom_binding` (which already computes
-`delta_n` per jet level — see `unified_lift.py` line 158) for
+`delta_n` per jet level — see the formal derivation line 158) for
 $\mathrm{D}$, $\mathrm{T}$, $^3\mathrm{He}$ across
 $n = 1, \dots, N_{\max}$ and reports
 
@@ -72,11 +70,11 @@ T       3         <empirical> <empirical>      (yes)
 ³He     3         <empirical> <empirical>      (yes)
 ```
 
-(Concrete numerical entries are produced on each run; the
+(Concrete canonical entries are produced on each run; the
 witness JSON is the canonical record.)
 
 The empirical observation
-([rem:mass-endomorphism-jet-tower](#rem\:mass-endomorphism-jet-tower)
+([rem:mass-endomorphism-jet-tower](#rem:mass-endomorphism-jet-tower)
 §"Open subconjecture 1") that
 $|\hbar_q^{2n}\,\Delta^{(n)}|
   \le |\hbar_q^{2(n-1)}\,\Delta^{(n-1)}| \cdot \hbar_q^2$
@@ -85,9 +83,9 @@ with a uniform-bound
 $\Delta_{\max}$ that holds exactly, with the geometric decay
 coming entirely from the $\hbar_q^{2n}$ prefactor.
 
-## What the conjecture commits to
+## Commitments of the conjecture
 
-Per CLAUDE.md §3b, the formal status of `prop:jet-tower-convergence`
+Per AGENTS.md §3b, the formal status of `prop:jet-tower-convergence`
 is **conditional** on this conjecture: any provable result that
 quotes the geometric tail bound
 
@@ -103,7 +101,7 @@ is itself conjectural until the uniform bound is established.
 The current scoreboard:
 
 * *(provable)* The geometric tail bound itself is *proved* in
-  [prop:jet-tower-convergence](#prop\:jet-tower-convergence) §Proof
+  [prop:jet-tower-convergence](#prop:jet-tower-convergence) §Proof
   — assuming the bound on $\Delta^{(n)}$ as a hypothesis.
 * *(conjectural)* The uniform bound on $\Delta^{(n)}$ is conjectural (this
   block).
@@ -135,10 +133,10 @@ empirical motivation citable.
 
 ## Discussion
 
-**Status: conjectural** under CLAUDE.md §3b, with strong empirical
-support at $n = 1, 2, 3$ for D, T, ${}^{3}$He via `jet_tower_delta_max.py`.
+**Status: conjectural** under AGENTS.md §3b, with strong empirical
+support at $n = 1, 2, 3$ for D, T, ${}^{3}$He via the formal derivation.
 The downstream cone of this conjecture includes
-[prop:jet-tower-convergence](#prop\:jet-tower-convergence) — but
+[prop:jet-tower-convergence](#prop:jet-tower-convergence) — but
 that proposition's *statement* is provable in pure analysis (the
 conditional geometric-tail bound is unconditional once the
 hypothesis holds). Only the *unconditional* application of the

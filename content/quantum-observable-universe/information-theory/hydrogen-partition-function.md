@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Setup.**
 Consider a monatomic hydrogen gas: $N$ atoms of
 $\mathcal{A}(1,0)$
@@ -88,7 +86,7 @@ volume.  For a gas of unknots (hypothetical structureless
 particles with $\mathfrak{S}_q = 0$), the correction vanishes and
 we recover the exact leading-order law $P_q V_q = N \hbar_q$.
 
-**Why hydrogen is "easiest".**
+**Simplicity of hydrogen.**
 Among all atoms $\mathcal{A}(Z, N)$:
 
 - Hydrogen has the **simplest knot**: one Borromean link

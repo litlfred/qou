@@ -40,6 +40,7 @@ export default chapter({
             // Bloch–Suslin — theorem-level discharge of the keystone
             // at depth 2 over every Bring-natural number field.
             "depth-2-identification-bloch-suslin",
+            "depth-2-identification-bloch-suslin-proof",
             // QOU infra (Hecke NF + Bring S_5) potentially discharges
             // Goncharov's conjecture at F = Q(ζ_5) for depth 3.
             "qou-infra-discharges-goncharov-zeta5",
@@ -53,8 +54,11 @@ export default chapter({
           blocks: [
             // Soft-sharpness version of B1 is theorem-level (Borel + Lewin).
             "b1-soft-sharpness-theorem",
+            "b1-soft-sharpness-theorem-proof",
+            "b1-soft-sharpness-significance",
             // B1 at the figure-8 row is theorem (Bloch-Suslin + Murakami-Murakami).
             "b1-figure-8-row-theorem",
+            "b1-figure-8-row-theorem-proof",
             // B1 at torus-knot rows is theorem (Bloch-Suslin + Garoufalidis-Lê).
             "b1-torus-knot-rows-theorem",
             "b1-torus-knot-rows-theorem-table-data",
@@ -86,6 +90,7 @@ export default chapter({
         "surreal-construction-grading-intro",
         "birthday-grading",
         "hoefsmit-is-surreal-construction",
+        "hoefsmit-is-surreal-construction-proof",
         "sign-sequence-of-braid",
         "jones-birthday",
       ],
@@ -119,6 +124,7 @@ export default chapter({
       blocks: [
         "surreal-blowup-calculus",
         "surreal-blowup-calculus-table-data",
+        "surreal-blowup-examples",
         // Möbius energy renormalization as a difference of infinite surreals
         // (the surreal-essential showcase; interprets prop:mobius-energy).
         "mobius-surreal-renormalization",
@@ -160,7 +166,11 @@ export default chapter({
       label: "sec:surreal-rate-calculus",
       blocks: [
         "surreal-rate-calculus",
+        "surreal-rate-calculus-proof",
+        "surreal-rate-calculus-interpretation",
         "surreal-squeeze",
+        "surreal-squeeze-proof",
+        "surreal-squeeze-interpretation",
       ],
     },
     {
@@ -178,7 +188,10 @@ export default chapter({
           label: "sec:millennium-bsd-rh-ym",
           blocks: [
             // BSD
+            "categorical-mordell-weil",
             "q-birch-swinnerton-dyer",
+            "q-bsd-rank-zero",
+            "q-bsd-classical-limit",
             "bsd-surreal-bound",
             // RH
             "rh-surreal-bound",
@@ -196,8 +209,12 @@ export default chapter({
             "p-vs-np-surreal-bound",
             // Collatz family
             "q-collatz-conjecture",
+            "two-q-adic-valuation",
+            "collatz-contact-boundary-defn",
+            "collatz-parity-to-divisor",
             "collatz-contact-boundary",
             "collatz-no-cycles",
+            "collatz-no-cycles-proof",
             "collatz-three-forms",
             "q-collatz-interpretation",
             "collatz-surreal-bound",

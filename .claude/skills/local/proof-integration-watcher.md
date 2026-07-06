@@ -29,14 +29,14 @@ domain-specific slots A-I.
 
 **Setup:** use `NAME=proof-integration-watcher` everywhere the
 parent's §1 references `${NAME}`. Files land at
-`todos/proof-integration-watcher-queue.json` and
-`todos/proof-integration-watcher-ledger.md`.
+`.beans/proof-integration-watcher-queue.json` and
+`.beans/proof-integration-watcher-ledger.md`.
 
 ## Slot A — Goal statement
 
 No bare `sorry`, no new axioms beyond the accepted set
 (`Classical.choice`, `Quot.sound`, `propext`, and any
-`-- Ref:`-cited axiomatic conjectures per CLAUDE.md §3b-cond), and
+`-- Ref:`-cited axiomatic conjectures per AGENTS.md §3b-cond), and
 no naked `conjecture` blocks whose downstream scaffolding is
 actually provable. Conjectures that genuinely need axiomatisation
 as Lean classes per §3b-cond are fine.
@@ -91,7 +91,7 @@ batch.
 
 | Criterion | Reviewer kind | Routes to | Failure handler |
 |-----------|---------------|-----------|-----------------|
-| `proof-no-bare-sorries` | script | `proof-status-tracking` + `proof-gap-audit` | Add `-- Ref: [key] <url>` per CLAUDE.md §1 |
+| `proof-no-bare-sorries` | script | `proof-status-tracking` + `proof-gap-audit` | Add `-- Ref: [key] <url>` per AGENTS.md §1 |
 | `proof-no-axiom-growth` | script | `lean-witness-audit` | Investigate new axiom dep; usually demands a proof refactor or an `axiom` declaration with `-- Ref:` |
 | `proof-build-green` | script | `lean-build-fix` | Walk failure log → patch `.lean` → re-build |
 | `proof-lean-compiles` | script | `lean-build-fix` | Invoke `mcp__lean-lsp__lean_diagnostic_messages` on the `.lean` file; read compiler errors; patch → re-check |
@@ -163,7 +163,7 @@ stale + the sweep will populate fresh entries.
 
 | Finding | Severity | Description |
 |---------|----------|-------------|
-| `uncited-sorry` | critical | `sorry` with **no** `-- Ref:` anywhere within: (a) the 6 lines above the sorry, **OR** (b) the 6 lines above the enclosing decl header. CLAUDE.md §1 strictly requires the Ref **immediately above** the sorry; this finding catches the "no Ref reachable at all" case. The looser-but-not-strict case (Ref present somewhere in the enclosing decl but not adjacent to the sorry) is the **separate** `cite-position-hygiene` (minor) finding. The 2-tier split deliberately surfaces "missing entirely" as critical and "wrong position" as polish. |
+| `uncited-sorry` | critical | `sorry` with **no** `-- Ref:` anywhere within: (a) the 6 lines above the sorry, **OR** (b) the 6 lines above the enclosing decl header. AGENTS.md §1 strictly requires the Ref **immediately above** the sorry; this finding catches the "no Ref reachable at all" case. The looser-but-not-strict case (Ref present somewhere in the enclosing decl but not adjacent to the sorry) is the **separate** `cite-position-hygiene` (minor) finding. The 2-tier split deliberately surfaces "missing entirely" as critical and "wrong position" as polish. |
 | `hidden-axiom` | critical | New `axiom` declaration that isn't a §3b-cond class encoding |
 | `drift-class-A` | critical | Lean stub-weakening — `theorem foo : True := trivial` while narrative claims something substantive |
 | `conditional-class-violation` | critical | Theorem's `uses[]` transitively includes a `conj:` but the block isn't class-axiomatised per §3b-cond |
@@ -229,7 +229,7 @@ class-axiomatised `.lean` stub for a naked conjecture:
 
 4. **Cite the conjecture's source** in a `-- Ref:` immediately
    above the canonical instance's `sorry` field(s) per
-   CLAUDE.md §1. Use `[manuscript]` if no published source.
+   AGENTS.md §1. Use `[manuscript]` if no published source.
 
 5. **Verify locally** with `bun run validate <paper>` before
    pushing. The validate run won't catch Lean syntax errors

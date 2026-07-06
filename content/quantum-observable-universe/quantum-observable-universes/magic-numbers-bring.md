@@ -6,7 +6,7 @@ as "from Bring's surface — not derived". This block names the
 **algebraic claim** that explicates that footnote: each magic
 value is the rank of a distinguished $S_5$-stable period sub-
 lattice on Bring's surface
-([`def:brings-coordinate-ring`](#def\:brings-coordinate-ring))
+([`def:brings-coordinate-ring`](#def:brings-coordinate-ring))
 that closes a shell under the categorical :refterm[descent]{#descent} operator.
 
 This is workplan task **P1.4** path-(b): the conjecture provides
@@ -17,7 +17,7 @@ computation) is deferred.
 
 Let $\mathcal{B}$ be Bring's curve of genus $4$ with coordinate
 ring $\mathcal{O}_q(\mathcal{B})$
-([`def:brings-coordinate-ring`](#def\:brings-coordinate-ring))
+([`def:brings-coordinate-ring`](#def:brings-coordinate-ring))
 and $S_5$-action by algebra automorphisms.  The integer
 homology $H_1(\mathcal{B}, \mathbb{Z})$ has rank $2g = 8$ and
 carries a natural symplectic pairing under which $S_5$ acts.
@@ -28,7 +28,7 @@ isomorphism.  Each isomorphism class has a canonical rank, given
 by the dimension of the underlying $\mathbb{Q}[S_5]$-submodule.
 
 The **categorical :refterm[descent]{#descent} operator**
-$\hat\tau$ ([:refterm[descent]{#descent} involution](#def\:descent-involution)) acts
+$\hat\tau$ ([:refterm[descent]{#descent} involution](#def:descent-involution)) acts
 on the brane tower's level-$n$ jet algebra; restricting to the
 level-$0$ Reeb-orbit chart of Bring's surface gives an action on
 $H_1(\mathcal{B}, \mathbb{Z})$ that commutes with the $S_5$-action.
@@ -69,7 +69,7 @@ $H^1(A_1, \mathbb{Z})$ that close shells under
    is supported on a single self-conjugate partition associated
    to that lattice.*
 
-## Why $S_5$ and Bring
+## Role of $S_5$ and Bring
 
 Bring's curve is the unique (up to isomorphism) genus-$4$ curve
 with $S_5 \cong \mathrm{Aut}(\mathcal{B})$ acting maximally
@@ -130,7 +130,7 @@ computation.
 
 ## Discussion
 
-**Conjectural** under CLAUDE.md §3b. The conjecture's role is
+**Conjectural** under AGENTS.md §3b. The conjecture's role is
 to **name** the algebraic mechanism behind the magic-number
 sequence. Promotion to a theorem requires the
 representation-theory + period-lattice computation outlined in
@@ -148,7 +148,7 @@ ways.
 
 This block closes audit `MAG-1` (the "magic numbers from Bring's
 surface — not derived" flag in
-[`DERIVATION-STATUS.md`](../../../folio-assistant/computations/DERIVATION-STATUS.md))
+[`DERIVATION-STATUS.md`](../../../computations/DERIVATION-STATUS.md))
 as a path-(b) deliverable: the algebraic claim is now stated
 explicitly, with the empirical match documented. The path-(a)
 proof is workplan **P1.4** and remains open.

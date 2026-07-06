@@ -17,7 +17,7 @@ LaTeX label: `conj:phi-q-tower-jsj-bridge`
 The Lean statement is **conditional on `Kashaev.VolumeConjecture q`**,
 the typeclass axiomatising KVC.  Modulo that typeclass instance the
 bridge theorem is fully verified by Lean.  This is Workplan B from
-`CLAUDE.md` §3b ("Lean formalization of conjectures").
+`AGENTS.md` §3b ("Lean formalization of conjectures").
 
 ## References
 
@@ -119,7 +119,7 @@ instance skeletonRealisation (q : ℝ) : TowerSummandRealization q where
     field equates `0 = rho q * pieceVolume q β S`.  Since
     `pieceVolume` is itself `sorry` (the upstream Kashaev conjecture's
     deferred per-piece value), this equation is also a deferred
-    `sorry` — the conjectural input proper.  Per CLAUDE.md §3b, a
+    `sorry` — the conjectural input proper.  Per AGENTS.md §3b, a
     `sorry` inside an instance field is understood as the conjecture,
     not missing proof.  Discharges §3b-cond for downstream consumers. -/
 -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass / phi-q-tower-jsj-bridge

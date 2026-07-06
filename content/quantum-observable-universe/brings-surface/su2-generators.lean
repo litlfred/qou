@@ -54,6 +54,5 @@ theorem dic3_order : 2 * 2 * 3 = 12 := by norm_num
 theorem commutator_eq (d : Dic3Data) :
     d.beta * d.alpha * d.beta⁻¹ * d.alpha⁻¹ = d.alpha⁻¹ * d.alpha⁻¹ := by
   rw [d.dihedral]
-  ring
 
 end QOU

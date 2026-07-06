@@ -146,7 +146,7 @@ but not structural") is the conservative consensus across the
 extract is the next concrete blocker for migrating 14 SUPERSEDED-
 importer `.py` scripts to `mass_tower_operator_valued`.
 
-Launched: `python3 -u folio-assistant/computations/a_operator/A_operator_extract_general.py --A 4`
+Launched: `python3 -u computations/a_operator/A_operator_extract_general.py --A 4`
 
 **What happened.** Process started, printed the setup banner:
 

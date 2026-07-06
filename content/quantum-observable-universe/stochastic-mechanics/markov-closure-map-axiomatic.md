@@ -36,7 +36,7 @@ The companion file [`markov-closure-map-axiomatic.lean`](markov-closure-map-axio
 
 - Proves `track_C_c_3_eq_neg_two`: under both classes, $c_3 = -2$.
 
-## What this achieves
+## Result
 
 **Before**: the `ThreeFoldMarkovHopfExtraction` class had a single
 broad axiomatic field encoding "the substantive 2-strand sub-braid
@@ -51,3 +51,5 @@ representing a recorded knot-theoretic result:
 | `jones_at_one 2 = -2` | Jones 1985 | proved (`unfold + norm_num`) |
 
 The eventual full Track-A formalisation (defining $\text{Braid}_n \to \text{Link}$ explicitly in Lean and constructing the closure map) targets ONLY the first atom — the second is already closed.
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

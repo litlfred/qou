@@ -1,5 +1,8 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Finset.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Data.Fintype.Fin
+import Mathlib.Data.Fin.VecNotation
 
 
 /-!
@@ -58,10 +61,10 @@ def borromean_volume : ℝ := 7.32772
 
 /-- The baryon mass from the topological mass formula. -/
 -- Ref: [manuscript] Ch. 6, §3
-def baryon_mass (q : ℝ) (hq : q > 1) : ℝ :=
+def baryon_mass (q : ℝ) (_hq : q > 1) : ℝ :=
   borromean_volume / (1 - 1/q)^2
 
--- ── Conjecture class (CLAUDE.md §3b-cond axiomatisation) ───────
+-- ── Conjecture class (AGENTS.md §3b-cond axiomatisation) ───────
 
 /-- **Conjecture class.** An instance asserts that the Borromean
     link `B_3` is the canonical baryon model: nucleons (proton,
@@ -79,7 +82,7 @@ def baryon_mass (q : ℝ) (hq : q > 1) : ℝ :=
     `sorry` in any concrete instance is understood as **conjecture**,
     not missing proof. Downstream blocks may take `[BorromeanQuark]`
     as an explicit hypothesis to remain `theorem`/`proposition` per
-    CLAUDE.md §3b-cond.
+    AGENTS.md §3b-cond.
 
     Ref: [manuscript] Ch. 6 §3, conj:borromean-quark -/
 class BorromeanQuark where
@@ -96,7 +99,7 @@ class BorromeanQuark where
   is_baryon_realisation : Prop
   is_baryon_realisation_holds : is_baryon_realisation
 
-/-- **Downstream conditional theorem (CLAUDE.md §3b-cond).**
+/-- **Downstream conditional theorem (AGENTS.md §3b-cond).**
     Conditional on `[BorromeanQuark]`, baryon mass at every q > 1
     equals `borromean_volume / (1 − 1/q)²`. Fully verified by Lean
     once an instance is fixed. -/

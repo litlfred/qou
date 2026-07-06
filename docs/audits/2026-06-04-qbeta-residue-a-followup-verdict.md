@@ -13,7 +13,7 @@ prefactor `A/ℏ_q^15 ≈ 2.0717`.
 ## Direction 1 — sl_6 Demazure control → NEGATIVE
 
 Script:
-[`qbeta_residue_followup_sl6_demazure.py`](../../folio-assistant/computations/qbeta/qbeta_residue_followup_sl6_demazure.py)
+[`qbeta_residue_followup_sl6_demazure.py`](../../computations/qbeta/qbeta_residue_followup_sl6_demazure.py)
 · witness `qbeta-residue-followup-sl6-demazure.witness.json`.
 
 Extended the PR #1787 real-D_i Demazure probe to **sl_6** (720
@@ -32,7 +32,7 @@ the control closes the higher-rank Demazure door.
 ## Direction 2 — the 2×1.03 residual → NEGATIVE
 
 Script:
-[`qbeta_residue_followup_residual_2x.py`](../../folio-assistant/computations/qbeta/qbeta_residue_followup_residual_2x.py)
+[`qbeta_residue_followup_residual_2x.py`](../../computations/qbeta/qbeta_residue_followup_residual_2x.py)
 · witness `qbeta-residue-followup-residual-2x.witness.json`.
 
 The prefactor factors as `2 × 1.0359` (literal) or `[2]_q × 1.0303`
@@ -53,7 +53,7 @@ substrate factors at the 1ppQ scale.
 ## Direction 3 — transcendental / period reframe → INCONCLUSIVE (precision-capped)
 
 Script:
-[`qbeta_residue_followup_pslq_periods.py`](../../folio-assistant/computations/qbeta/qbeta_residue_followup_pslq_periods.py)
+[`qbeta_residue_followup_pslq_periods.py`](../../computations/qbeta/qbeta_residue_followup_pslq_periods.py)
 · witness `qbeta-residue-followup-pslq-periods.witness.json`.
 
 PSLQ probe of P and A against a 12-constant period basis (π, π², ζ(3),

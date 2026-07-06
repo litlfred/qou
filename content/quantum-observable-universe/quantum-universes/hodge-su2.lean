@@ -30,13 +30,6 @@ numerical evaluation.
 
 namespace QOU.Examples
 
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
-abbrev R_q := LaurentPolynomial ℤ
-def q_param : R_q := LaurentPolynomial.T 1
-def q_inv_param : R_q := LaurentPolynomial.T (-1)
-
 /-- **SU(2) Hodge star data**: the involutive Hodge operator on the
     3-dimensional de Rham complex.
 
@@ -57,8 +50,10 @@ structure SU2HodgeData where
   target_two : hodgeTarget 2 = 1
   /-- ⋆ maps Ω³ → Ω⁰. -/
   target_three : hodgeTarget 3 = 0
-  /-- ⋆² = id (involutivity): applying hodge twice returns to the same degree. -/
-  involutive : ∀ k, hodgeTarget (hodgeTarget k) = k
+  /-- ⋆² = id (involutivity): applying hodge twice returns to the same
+      degree, for every valid form-degree `k ≤ 3 = manifoldDim` of the
+      de Rham complex. (⋆ is only defined on `Ωᵏ` for `0 ≤ k ≤ 3`.) -/
+  involutive : ∀ k, k ≤ 3 → hodgeTarget (hodgeTarget k) = k
 
 /-- The Hodge star data for SU(2). -/
 -- Ref: [manuscript] §1
@@ -70,7 +65,7 @@ def su2Hodge : SU2HodgeData where
   target_one := rfl
   target_two := rfl
   target_three := rfl
-  involutive := fun k => by omega
+  involutive := fun k hk => by omega
 
 /-- Hodge star on a 3-manifold maps Ω¹ to Ω². -/
 theorem su2_hodge_one_to_two : su2Hodge.hodgeTarget 1 = 2 := rfl

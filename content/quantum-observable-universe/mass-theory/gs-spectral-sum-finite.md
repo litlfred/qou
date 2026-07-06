@@ -2,7 +2,7 @@
 *For every closed braid $K$ with normal form $T_w \in H_n(R, q)$ at
 $q = q_0$ in the generic locus, there exists a finite cutoff
 $N \in \mathbb{N}$ — namely the confinement level
-$N = \ell(K, q_0)$ ([confinement level exists](#prop\:confinement-level-exists))
+$N = \ell(K, q_0)$ ([confinement level exists](#prop:confinement-level-exists))
 — such that the cyclotomic residue vanishes for every filtration
 stratum at or above $N$:*
 
@@ -20,8 +20,8 @@ has only finitely many non-zero terms.*
 
 **Categorical statement.**
 *The confinement level $\ell(K, q_0)$ is finite by
-([confinement level exists](#prop\:confinement-level-exists)) and
-unique by ([confinement level unique](#prop\:confinement-level-unique));
+([confinement level exists](#prop:confinement-level-exists)) and
+unique by ([confinement level unique](#prop:confinement-level-unique));
 $T_w \in J^\ell(q_0)$ for $\ell > \ell(K, q_0)$ would force
 $T_w \equiv 0$ in $H_n(R, q_0)$, contradicting genericity.  The
 graded piece $J^\ell / J^{\ell+1}$ vanishes above $\ell(K, q_0)$,
@@ -44,7 +44,7 @@ the substantive content — that `levelBound` truly is the confinement
 level $\ell(K, q_0)$ and that residues above it vanish for the
 underlying analytic objects — is the conjectural part.*
 
-**Why a conjecture and not a theorem.**
+**Conjectural status rather than theorem.**
 *The Lean tautology relies on the instance supplying `levelBound`
 correctly.  A proof that the confinement level truly bounds the
 support of the residue function requires:*
@@ -54,20 +54,20 @@ support of the residue function requires:*
    (`QOU.BraidKnot.ConfinementLevel`).*
 2. *The vanishing $\mathrm{tr}_{M, \ell} \equiv 0$ for
    $\ell > \ell(K, q_0)$ — a corollary of
-   [confinement level unique](#prop\:confinement-level-unique) once
+   [confinement level unique](#prop:confinement-level-unique) once
    the GS-filtration is in Mathlib.*
 
 **Empirical witness.**
 *Witness scripts truncate the sum at $\ell = 6$ and observe vanishing
 contributions beyond, consistent with the proton/neutron/deuteron
 confinement levels.  See
-`folio-assistant/computations/term6-full-pole-sum.witness.json`.*
+`computations/term6-full-pole-sum.witness.json`.*
 
 **Structural shortcut.**
 *The vanishing of the residue strata above $\ell(K, q_0)$ is
 explained homologically by
-[cemetery-group emergence](#conj\:cemetery-group-emergence): the
+[cemetery-group emergence](#conj:cemetery-group-emergence): the
 strata that fall outside $J^{\ell(K, q_0)}(q_0)$ map under the
 observation functor $\tau$ into the
-[:refterm[cemetery group]{#cemetery-group}](#def\:cemetery-group), and so vanish without any
+[:refterm[cemetery group]{#cemetery-group}](#def:cemetery-group), and so vanish without any
 term-by-term polynomial cancellation.*

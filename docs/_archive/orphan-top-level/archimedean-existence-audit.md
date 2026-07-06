@@ -148,7 +148,7 @@ Three collisions on $H_q$ uncovered during this audit:
 | $q$-Hamiltonian | $H_q$ | $\hat{H}_q$ |
 | Hook-length product | $H_q(\lambda)$ | (unchanged; always with arg) |
 
-Notation register updated in `CLAUDE.md §7aa`. Rename applied across
+Notation register updated in `AGENTS.md §7aa`. Rename applied across
 all shuffle-Hopf-algebra `.md` files and Lean comments.
 
 ---

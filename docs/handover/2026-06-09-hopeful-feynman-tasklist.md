@@ -25,7 +25,7 @@ PR #2064 opened. Durable visibility per author request.
 Targets (author, across messages): **#2043, #2054, #2030, #2055, #2039,
 #2059, #2034**. Standing merge permission per session-handover.md §1.
 Per PR: rebase onto main → resolve threads → re-check CI → **rebase-merge**
-(CLAUDE.md §8) if clean; else record blocker.
+(AGENTS.md §8) if clean; else record blocker.
 
 **Sweep result: 5 of 7 merged; 2 flagged for author (not safe to blind-merge).**
 

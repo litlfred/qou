@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition (Magic-shell coupling slope — categorical closed form).**
 *The per-unit-excess magic-shell coupling slope $\kappa$, which
 controls the $(n_{pp} - n_{nn})$ excess contribution to atomic
@@ -27,26 +25,35 @@ $$
   \approx -1.0704239\;\text{MeV}
 $$
 
-Against the empirical fit from  v6 single-magic anchor data:
+Against the observed physical value from v6 single-magic anchor data:
 
 $$
-  \kappa_{\mathrm{empirical}} \approx -1.0707908\;\text{MeV}
+  \kappa_{\mathrm{observed}} \approx -1.0707908\;\text{MeV}
 $$
 
-The ratio is $0.999657$ — **within $0.034\%$**, at the precision
-floor of the empirical fit. No empirical input enters the
-categorical formula; all inputs are substrate parameters
-($m_e$, $q_0$) and structural q-brackets.
+The ratio is $0.999657$ — **within $0.034\%$** at the single-magic
+anchors. The *numerical* inputs are substrate parameters ($m_e$,
+$q_0$) and structural q-brackets; the *form* of the closed
+expression — the $E_0 \cdot \log(1/h)$ magic-shell quantum and the
+$[2]_q \cdot [3]_q$ normalization — was identified empirically against
+the $(2,2)$ doubly-magic anchor (an **acknowledged CAL-4 shape
+selection**; see §"Structural interpretation"). The $0.034\%$
+agreement at the single-magic $(2,1)$ / $(1,2)$ anchors is therefore a
+**near-match cross-check** of that anchor-identified form, not a
+zero-parameter prediction.
 
 ## Structural interpretation
 
 The closed form decomposes into two pieces:
 
-1. **H7a energy quantum** $E_0 \cdot \log(1/h)$ — the universal
-   per-shell magic-coupling magnitude, identified empirically in
-    at the doubly-magic anchor $(2, 2)$ and structurally as
-   the logarithm of the Hecke deformation. This is the natural
-   "magic-shell energy unit" of the categorical substrate.
+1. **H7a energy quantum** $E_0 \cdot \log(1/h)$ — the per-shell
+   magic-coupling magnitude, motivated structurally as the logarithm
+   of the Hecke deformation and identified empirically against the
+   doubly-magic anchor $(2, 2)$ (acknowledged CAL-4; the original
+   verifier `computations/probe_kappa_categorical_h7a_closed.py` is no
+   longer in the tree — a re-derivation / fresh witness is pending).
+   This is the candidate "magic-shell energy unit" of the categorical
+   substrate.
 
 2. **q-deformed dimension product** $[2]_q \cdot [3]_q$ — the
    quantum dimension of the $V_2 \otimes V_3$ Schur–Weyl tensor
@@ -67,8 +74,12 @@ $(n_{pp} - n_{nn})$ excess in
 
 ## Closure of the κ derivation work-item
 
-This proposition closes the open derivation requested in user
-work-list item #4 (κ derivation). The empirical $\kappa \approx -1.07\;\text{MeV}/\text{excess}$
-from  v6 is now a **prediction** of the categorical
-substrate, not an independently calibrated parameter — purely a
-function of $q_0$ via the q-bracket and Hecke deformation structure.
+This proposition supplies a categorical *form* for the κ derivation
+requested in user work-list item #4. The observed
+$\kappa \approx -1.07\;\text{MeV}/\text{excess}$ from v6 is reproduced
+to $0.034\%$ at the single-magic anchors by a structurally-motivated
+expression whose magic-shell quantum $E_0 \cdot \log(1/h)$ was
+identified at the $(2,2)$ doubly-magic anchor (acknowledged CAL-4).
+Full closure — a parameter-free derivation of that quantum purely from
+$q_0$, with a fresh verifying witness replacing the removed probe
+script — remains open.

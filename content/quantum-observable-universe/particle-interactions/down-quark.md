@@ -1,4 +1,4 @@
-The **down quark** is an unknot (neutrino) localized in a coral
+The **down quark** is an unknot (neutrino) localized in a color
 tube with **negative crossing orientation** within the
 Borromean link $\mathcal{B}_3$
 ([Borromean quark conjecture](#conj:borromean-quark)).

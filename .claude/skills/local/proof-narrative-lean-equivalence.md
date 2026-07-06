@@ -201,7 +201,7 @@ theorem <name> ... := ...
 - [B] Lean takes `h : n = 3`; narrative says "for any $n$"
 - [C] Lean hypothesis list misses `QuantumObservableUniverse C A τ`
 - [D] `γ` in paper is `gamma` in Lean (should be `ϱ` or `rho` per
-  CLAUDE.md §7 register conventions)
+  AGENTS.md §7 register conventions)
 
 **Fix options**:
 1. Strengthen Lean statement to match narrative; add sorry with -- Ref:
@@ -240,7 +240,7 @@ grep -rn ': True :=' content/**/*.lean
 Most Class-D notation drift is reported by comparing tags:
 
 ```bash
-# Blocks tagged "vortex" should use $\varrho$, not $\gamma$ (CLAUDE.md §7)
+# Blocks tagged "vortex" should use $\varrho$, not $\gamma$ (AGENTS.md §7)
 # Blocks tagged "energy" should use $\mathbf{E}_q$, not $E_q$
 # etc.
 ```
@@ -272,7 +272,7 @@ blocks and extrapolate.
 - [ ] Class-A stubs identified via bulk grep
 - [ ] Class-B/C/D findings produced with quoted statements
 - [ ] Each finding has verified file paths + line numbers
-- [ ] Class-D findings cross-checked against CLAUDE.md §7 register
+- [ ] Class-D findings cross-checked against AGENTS.md §7 register
 - [ ] Report includes per-class counts
-- [ ] GitHub blob URLs included (default `.md` per CLAUDE.md)
+- [ ] GitHub blob URLs included (default `.md` per AGENTS.md)
 - [ ] No edits made; fixes are proposed, not applied

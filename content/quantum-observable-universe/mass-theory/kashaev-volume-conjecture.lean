@@ -1,3 +1,5 @@
+import QOU.PhiQPiece -- expects sibling phi-q-piece.lean to be in scope
+
 /-!
 # QOU.Kashaev — Kashaev volume conjecture as a typeclass
 
@@ -24,8 +26,6 @@ etc.) where the conjecture is actually proved.
   kashaev-volume-conjecture
 -/
 
-import QOU.PhiQPiece -- expects sibling phi-q-piece.lean to be in scope
-
 namespace QOU.Kashaev
 
 open QOU.PhiQPiece
@@ -49,7 +49,7 @@ open QOU.PhiQPiece
 -- Ref: [kashaev1997] Kashaev, "The hyperbolic volume of knots from the quantum dilogarithm," Lett. Math. Phys. 39 (1997)
 -- Ref: [murakami-murakami2001] Murakami & Murakami, "The colored Jones polynomials and the simplicial volume of a knot," Acta Math. 186 (2001), arXiv:math/9905075
 class VolumeConjecture (q : ℝ) where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- Hyperbolic volume of `S³ \ K_β`, with the convention that
       non-hyperbolic complements contribute zero. -/
   hypVolume : Braid → ℝ
@@ -81,7 +81,7 @@ noncomputable def pieceVolume (q : ℝ) [VolumeConjecture q]
   -- limit, not the per-piece values.
   -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass /
   --                   kashaev-volume-conjecture
-  trivial
+  sorry
 
 theorem pieceVolume_nonneg (q : ℝ) [inst : VolumeConjecture q]
     (β : Braid) (S : Finset (Fin (β.n - 1))) :
@@ -103,7 +103,7 @@ end QOU.Kashaev
     muon mass formula m_μ/m_e = Vol(4₁)/ℏ_q². -/
 -- Ref: [thurston1978] Thurston's geometry and topology of three-manifolds — hyperbolic structure on figure-eight complement
 -- Ref: [kashaev1997] — original volume conjecture
-theorem figure_eight_volume_from_vc (q : ℝ) [VolumeConjecture q] :
+def figure_eight_volume_from_vc (q : ℝ) [VolumeConjecture q] :
     True :=
   trivial
 
@@ -112,7 +112,7 @@ theorem figure_eight_volume_from_vc (q : ℝ) [VolumeConjecture q] :
     enters the proton mass formula via the Borromean Markov trace. -/
 -- Ref: [adams1985hyperbolic] — hyperbolic volume of Borromean rings
 -- Ref: [manuscript] lean/QOU/Archimedean/BorromeanVolumeCatalan.lean
-theorem borromean_volume_from_vc (q : ℝ) [VolumeConjecture q] :
+def borromean_volume_from_vc (q : ℝ) [VolumeConjecture q] :
     True :=
   trivial
 

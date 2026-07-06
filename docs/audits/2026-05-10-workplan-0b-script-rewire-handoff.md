@@ -23,7 +23,7 @@ $m_p$, $m_n$ (and the light-nucleus masses $m_D$, $m_T$, $m_{^3\mathrm{He}}$,
 $m_{^4\mathrm{He}}$) as **CODATA inputs** rather than deriving them. This
 inflates the calibration count from 3 → 9 in practice. The diagnostic
 self-recommendation already exists in
-[`neutron-gap-probes-round3.witness.json`](../../folio-assistant/computations/neutron-gap-probes-round3.witness.json):
+[`neutron-gap-probes-round3.witness.json`](../../computations/neutron-gap-probes-round3.witness.json):
 > "the canonical 3-input Skein-pair scheme (m_μ/m_e, m_e, Q_β(n)) is
 > the theoretically-correct form of the n/p split: the Hecke trace
 > alone does NOT distinguish neutron from proton, so any framework
@@ -37,7 +37,7 @@ self-recommendation already exists in
 
 Surgical, non-destructive infrastructure cleanup. Backwards-compatible.
 
-1. [`folio-assistant/computations/substrate/codata_constants.py`](../../folio-assistant/computations/substrate/codata_constants.py)
+1. [`computations/substrate/codata_constants.py`](../../computations/substrate/codata_constants.py)
    refactored:
    - Adds DISCIPLINE banner (CAL-1/2/3 table).
    - Renames `M_P_MEV`, `M_N_MEV`, `M_D_MEV`, `M_T_MEV`, `M_HE3_MEV`,
@@ -49,9 +49,9 @@ Surgical, non-destructive infrastructure cleanup. Backwards-compatible.
    - Adds CAL-3 ↔ (m_n − m_p − m_e) consistency check (assertion
      warning if combined CODATA σ disagrees).
    - All values except $m_e$ now loaded from witness JSONs.
-2. [`folio-assistant/computations/codata-2022-validation-masses.witness.json`](../../folio-assistant/computations/codata-2022-validation-masses.witness.json)
+2. [`computations/codata-2022-validation-masses.witness.json`](../../computations/codata-2022-validation-masses.witness.json)
    created — source-of-truth for nucleon + light-nucleus CODATA masses.
-3. [`folio-assistant/computations/cal-3-q-beta.witness.json`](../../folio-assistant/computations/cal-3-q-beta.witness.json)
+3. [`computations/cal-3-q-beta.witness.json`](../../computations/cal-3-q-beta.witness.json)
    created — CAL-3 input with provenance.
 4. [`recomputed-low-isotope-mass-table.md`](../../content/quantum-observable-universe/braids-and-knots/recomputed-low-isotope-mass-table.md)
    line 79: corrected the misstatement ("3 CAL inputs are $m_e, m_p, m_n$").
@@ -70,7 +70,7 @@ Why risky:
    binding $\Delta = +2.225$ MeV at $0.119\%$ relative error. After
    rewire, $m_p$ becomes a genuine prediction with a ~$1.8\%$ residual
    from the $\Phi_q$-tower truncation
-   ([`mass_endomorphism.py:5,26`](../../folio-assistant/computations/mass_endomorphism.py)),
+   ([`mass_endomorphism.py:5,26`](../../computations/mass_endomorphism.py)),
    so the deuteron-binding number will move correspondingly.
 2. **~30 scripts touch the deprecated names.** Each one needs case-by-case
    review:
@@ -115,7 +115,7 @@ Why risky:
      ([`thm:frobenius-codim-universal`](../../content/quantum-observable-universe/braids-and-knots/frobenius-codim-universal.md)).
 
    The canonical Hecke element $T_w$ is built by
-   [`mass_at_3A_proper.atom_braid_word_3A(Z, N)`](../../folio-assistant/computations/mass_at_3A_proper.py)
+   [`mass_at_3A_proper.atom_braid_word_3A(Z, N)`](../../computations/mass_at_3A_proper.py)
    — the **β-decay-operator-unfolded** 3A-strand word. For the
    proton ($Z = 1$, $N = 0$): an 11-letter word in $H_3(q)$, since
    the β-decay operator $T_\beta = \sigma_0 \sigma_1^{-1}$ lives in
@@ -136,7 +136,7 @@ Why risky:
 
    **Caveat — the deprecated `atomic_braid_mass_table.py`.** That
    script (lines 5–22 of
-   [`atomic_braid_mass_table.py`](../../folio-assistant/computations/atomic_braid_mass_table.py)
+   [`atomic_braid_mass_table.py`](../../computations/atomic_braid_mass_table.py)
    carry their own deprecation banner) contains a literal
    `E_0 = (M_p_CODATA − t6) / total_hecke[p]` back-fit at line 441.
    That **is** a 4th-calibration violation, but it lives in a script
@@ -155,7 +155,7 @@ Why risky:
    1. Confirm the brane-tower component
       ([`prop:mass-endomorphism-tower`](../../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md))
       is callable from
-      [`mass_endomorphism.py`](../../folio-assistant/computations/mass_endomorphism.py).
+      [`mass_endomorphism.py`](../../computations/mass_endomorphism.py).
       Document the current ~1.8 % systematic residual (Φ_q
       truncation) and note it as Workplan 2's Phase 2 target.
    2. Add a Frobenius co-Casimir helper that returns
@@ -181,7 +181,7 @@ Why risky:
 Run the full audit:
 ```bash
 grep -rn -E 'from codata_constants import.*M_[PN]_MEV|M_[DT]_MEV|M_HE[34]_MEV|c\.M_[PN]_MEV' \
-  folio-assistant/computations/ --include='*.py' \
+  computations/ --include='*.py' \
   | tee /tmp/codata-deprecation-call-sites.txt
 ```
 
@@ -200,7 +200,7 @@ Expected counts (from agent #2's analysis):
 
 ### Phase 0b.2 — Build the derived-mass module (2–3 days)
 
-Create `folio-assistant/computations/derived_masses.py` that exposes:
+Create `computations/derived_masses.py` that exposes:
 ```python
 from derived_masses import M_P_DERIVED, M_N_DERIVED, M_D_DERIVED, ...
 ```
@@ -252,7 +252,7 @@ delete the `__getattr__` block from `codata_constants.py`.
 ## Coordination checklist for sibling agent
 
 - [ ] Read this doc start-to-finish.
-- [ ] Read [`neutron-gap-probes-round3.witness.json`](../../folio-assistant/computations/neutron-gap-probes-round3.witness.json)
+- [ ] Read [`neutron-gap-probes-round3.witness.json`](../../computations/neutron-gap-probes-round3.witness.json)
       `recommendation` field for the canonical 3-input form.
 - [ ] Confirm Workplan 2 (Phase 2 $m_e^{\mathrm{Hecke}}$) is **landed**
       before Phase 0b.4 begins. If not, queue 0b.4 behind it.
@@ -271,7 +271,7 @@ delete the `__getattr__` block from `codata_constants.py`.
 
 ## Acceptance criteria
 
-- All `*.py` scripts under `folio-assistant/computations/` import
+- All `*.py` scripts under `computations/` import
   cleanly under `python -W error::DeprecationWarning`.
 - All `*.witness.json` files for mass / binding predictions are
   regenerated; their numerical values may differ from the current

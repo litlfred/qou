@@ -156,8 +156,8 @@ above is the required work.
 
 ## Cross-references
 
-- [`probe_F_n_categorical_derivation.py`](../../folio-assistant/computations/probe_F_n_categorical_derivation.py) — this probe
-- [`probe_c3_categorical_consistency_check.py`](../../folio-assistant/computations/probe_c3_categorical_consistency_check.py) — F_3 ε^6 extraction from 1 - 2·b³·ℏ_q^6 ansatz
-- [`probe_hopf_markov_trace_genuine.py`](../../folio-assistant/computations/probe_hopf_markov_trace_genuine.py) — σ_1² Markov vs Plancherel comparison
+- [`probe_F_n_categorical_derivation.py`](../../computations/probe_F_n_categorical_derivation.py) — this probe
+- [`probe_c3_categorical_consistency_check.py`](../../computations/probe_c3_categorical_consistency_check.py) — F_3 ε^6 extraction from 1 - 2·b³·ℏ_q^6 ansatz
+- [`probe_hopf_markov_trace_genuine.py`](../../computations/probe_hopf_markov_trace_genuine.py) — σ_1² Markov vs Plancherel comparison
 - [`2026-05-17-pr-664-c3-c4-critical-review.md`](2026-05-17-pr-664-c3-c4-critical-review.md) — full critical review
 - [`2026-05-17-dual-tr-m-discrepancy.md`](2026-05-17-dual-tr-m-discrepancy.md) — dual-trace + production-scope correction

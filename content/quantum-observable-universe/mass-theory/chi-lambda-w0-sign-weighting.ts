@@ -29,10 +29,11 @@ export default proposition({
   ],
   computation: {
     engine: "python+mpmath",
-    script: "folio-assistant/computations/probe_per_wedderburn_block_ck.py",
+    script: "computations/probe_per_wedderburn_block_ck.py",
     status: "experimental",
   },
   authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "status",
       body: "**Sign-character weighting formalized as a proposition** (this\nblock) — the qualitative pattern (1, 0, −1) is now a theorem\nbacked by the per-irrep closed forms from  and the\nexplicit $S_3$ character values. **Magnitude closure remains\nopen** and is the natural next research question.",

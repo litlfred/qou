@@ -19,6 +19,6 @@ flow normalisation.
 
 The output is the explicit $\alpha_k$ table that drives the
 six-term mass formula's evaluation against CODATA.  This is the
-chapter's most concrete numerical content and is the natural
+chapter's most concrete canonical content and is the natural
 exit point for readers who want the substrate-level predictions
 without the full categorical apparatus.

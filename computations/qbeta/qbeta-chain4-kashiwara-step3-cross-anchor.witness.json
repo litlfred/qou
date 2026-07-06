@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-03T22:33:58.193325+00:00",
-  "commitSha": "b50ca7da7979699e6b5352a5d403698efc984fee",
+  "computedAt": "2026-06-22T13:27:30.309227+00:00",
+  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
   "assertions": [
     {
       "name": "step3_cross_anchor_verdict_recorded",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 9,
   "computation": "qbeta-chain4-kashiwara-step3-cross-anchor",
   "scriptFile": "qbeta_chain4_kashiwara_step3_cross_anchor.py",
-  "scriptHash": "0175f4ab82ff",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "57990b0ba423",
+  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,11 +34,8 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "description": "Step 3 of PR #1772 Chain 4 — cross-anchor validation of Step 2's NEAR-1PCT candidate cocharge_(1,1,1,1) = 6 at q_proton. The candidate is anchor-INDEPENDENT (combinatorial), but the target A / ℏ_q^15 differs between q_proton and q_muon by 1.573e-6 relative. Verdict: WIDE MISS — candidate refuted at cross-anchor.",
   "data": {

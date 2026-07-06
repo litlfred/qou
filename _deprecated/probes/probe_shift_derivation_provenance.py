@@ -42,29 +42,29 @@ from witness_base import WitnessBuilder  # noqa: E402
 # uses tr_M_atomic(Z, N), or references shift in D(u) form analysis.
 CONSUMERS = [
     # (script_path, role, currently_uses, recommendation)
-    ("folio-assistant/computations/per_nucleon_shift_derivation.py",
+    ("computations/per_nucleon_shift_derivation.py",
      "Closed-form empirical derivation (A=2..6 verified)",
      "EMPIRICAL_TABLE",
      "Could ALSO record via_crystal value for A=2..6 cross-check; "
      "use via_crystal for A>=7 extrapolation."),
-    ("folio-assistant/computations/d_u_closed_form_proof.py",
+    ("computations/d_u_closed_form_proof.py",
      "Habiro-form denominator D(u) shift exponent",
      "EMPIRICAL_CONJECTURE",
      "Replace empirical conjecture with shift_nf_atomic_via_crystal "
      "for categorical-derivation provenance."),
-    ("folio-assistant/computations/markov_peel.py",
+    ("computations/markov_peel.py",
      "Full atomic tr_M via Markov axiom ascent",
      "NOT_DIRECT",
      "Doesn't directly use shift; tr_M values are independent. "
      "But D(u) factorization downstream uses shift; cite via_crystal "
      "as the categorical pole-order derivation."),
-    ("folio-assistant/computations/atomic_braid_mass_table.py",
+    ("computations/atomic_braid_mass_table.py",
      "Mass prediction table for atoms",
      "NOT_DIRECT",
      "Mass = m_e · |τ_M| via tr_M_atomic; no direct shift consumption. "
      "But categorical provenance row could cite via_crystal as the "
      "derived shift exponent for D(u) downstream of mass."),
-    ("folio-assistant/computations/low_isotope_mass_table.py",
+    ("computations/low_isotope_mass_table.py",
      "Low-isotope mass table (PR #663)",
      "NOT_DIRECT",
      "Same as atomic_braid_mass_table; cite via_crystal in "

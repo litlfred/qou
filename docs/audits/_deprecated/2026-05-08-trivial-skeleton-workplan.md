@@ -442,7 +442,7 @@ remaining work is to grow them into genuine upstream theorems:
 
 ### Tier 3 — narrative-Lean equivalence audit
 
-CLAUDE.md §3b conditional-class pattern (Option B) is established
+AGENTS.md §3b conditional-class pattern (Option B) is established
 for the §3b-cond residual cone (3 instances, 53 axiomatised
 conjectures).  Open work:
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Demazure-fiber Markov-trace evaluator (CLAUDE.md §7b shortcut #3).
+"""Demazure-fiber Markov-trace evaluator (AGENTS.md §7b shortcut #3).
 
 Replaces the manual Hecke-energy LP functional in
 `sdp-primality-verifier-spec.md` by Kashiwara-graph weight-lattice

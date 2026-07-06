@@ -155,8 +155,8 @@ theoretical input.
 - `docs/d-error-budget.md` — initial precision audit
 - `docs/d-mass-eq-density-vol-rederivation.md` — formal chain audit
 - `docs/d-nf-knot-operators.md` — D's NF operators
-- `folio-assistant/computations/d_wedderburn_mass.py`
-- `folio-assistant/computations/d_wedderburn_profile.py` — per-partition
-- `folio-assistant/computations/d_knot_extended_search.py` — census ≤ 14
-- `folio-assistant/computations/binding_per_block_log.py` — paper-exact
-- `folio-assistant/computations/mass_table_ppb.py` — zero-param table
+- `computations/d_wedderburn_mass.py`
+- `computations/d_wedderburn_profile.py` — per-partition
+- `computations/d_knot_extended_search.py` — census ≤ 14
+- `computations/binding_per_block_log.py` — paper-exact
+- `computations/mass_table_ppb.py` — zero-param table

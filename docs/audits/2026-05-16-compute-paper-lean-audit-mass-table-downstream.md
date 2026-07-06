@@ -11,7 +11,7 @@ downstream files; full line-by-line audit is queued for follow-up.
 **`prop:atomic-mass-via-rho-k` is not a defined content block.**
 
 The script
-[`atomic_mass_via_rho_k.py`](../../folio-assistant/computations/atomic_mass_via_rho_k.py)
+[`atomic_mass_via_rho_k.py`](../../computations/atomic_mass_via_rho_k.py)
 references this label as its `contentBlock` field in the witness
 `atomic-mass-via-rho-k.witness.json`, but **no content block with
 this label exists** in
@@ -50,7 +50,7 @@ Paper backing: this formula is the explicit motivator of the
 the still-open compute frontier (PRs #602 / #603 / #613).
 
 **Lean status**: `rho-k-h3a-refinement.lean` exists; per
-CLAUDE.md §3b-cond it likely class-axiomatises the Δ_λ existence.
+AGENTS.md §3b-cond it likely class-axiomatises the Δ_λ existence.
 The script's role is to **consume** the Δ_λ catalog once
 available; currently reports `delta_lambda_unavailable` for every
 atom (catalog blocked on the derivation — per Phase 1 audit).

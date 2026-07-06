@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 The substrate parameter is a *field* $q \colon M \to k^\times$
 ([substrate parameter](#def:substrate-parameter)), not a background
 constant.  A hadron ([hadron](#def:hadron)) — a multi-component
@@ -49,7 +47,7 @@ $\ell_{\mathrm{net}} < 0$ and the local $q$ is slightly *reduced*.
 For proton-rich nuclei, $\ell_{\mathrm{net}} > 0$ and $q$ is
 slightly increased.
 
-**Why the net signed crossing.**
+**Net signed crossing.**
 The $q$-deformed wedge product $\wedge_q$ in the gauge sector of the
 canonical action
 ([canonical action](#prop:qou-canonical-action))
@@ -126,5 +124,3 @@ formula all receive analogous corrections when $q_0$ is replaced by
 $q_{\mathrm{eff}}$.
 
 **Formalization Goal Plausibility.** The intended Lean theorems (establishing `deltaQ <= 0` for neutron-rich nuclei, `differentialShift >= 0`, and `qEff > 1`) contain mathematically sound proof bodies relying on basic arithmetic, `omega`, and `positivity` tactics. Currently, the Lean file structure is technically broken because the theorem headers were commented out (due to their Archimedean/real-number nature not matching the generic `R_q` Laurent polynomial ring). However, closing this gap is highly plausible: it only requires separating the generic definitions from the Archimedean instantiations (e.g., via a ring homomorphism to $\mathbb{R}$) and restoring the theorem headers over the reals. The underlying inequalities are elementary, and the formalization gap is purely structural.
-
-**Remark on Mathematical Novelty:** Although the C(p,2)-C(n,2) signed-crossing excess is a natural back-reaction mechanism, framing it as a topological self-deformation of the substrate field by nuclear linking density (l_net/A^2) provides a genuinely novel geometric formalization of nuclear self-correction dynamics.

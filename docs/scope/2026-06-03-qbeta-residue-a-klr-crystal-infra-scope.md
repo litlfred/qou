@@ -61,7 +61,7 @@ where `τ` is the Markov trace and `deg(b)` is the KLR grading.
 `F(u) = Σ_{T ∈ B_{Type-B fold}(λ)} q^{c(T)} · u^{|T|}`
 
 where `B_{Type-B fold}(λ)` is the Type-B-folded Kashiwara crystal of
-the highest-weight rep V(λ), per CLAUDE.md §7b authoring guidance.
+the highest-weight rep V(λ), per AGENTS.md §7b authoring guidance.
 **Needs**:
 - Lean: Type-B Cartan datum + crystal folding
 - Python: crystal-graph node enumeration + content statistic
@@ -91,7 +91,7 @@ roughly half a small paper's infrastructure. Probability of landing
 within 10 ppm at both anchors: research-grade unknown.
 
 **Most principled**: Composite 3 (Type-B folded crystal). Aligns with
-CLAUDE.md §7b authoring guidance about Type-B folding for chirality /
+AGENTS.md §7b authoring guidance about Type-B folding for chirality /
 matter-antimatter. But highest cost.
 
 ## Recommended next-action options (owner direction needed)
@@ -111,5 +111,5 @@ The Δ_λ gate forbids me picking the option without explicit owner direction. T
 - [1ppQ Q_β master ledger](../coordination/1ppq-qbeta.md)
 - [Chain 1 scope (closed)](../coordination/2026-06-03-qbeta-habiro-chain-1-scope.md)
 - [Q_β truncation-order audit](../audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md)
-- CLAUDE.md §"Precision goals" — L2 status
-- CLAUDE.md §7b — symmetric-crystal authoring guidance
+- AGENTS.md §"Precision goals" — L2 status
+- AGENTS.md §7b — symmetric-crystal authoring guidance

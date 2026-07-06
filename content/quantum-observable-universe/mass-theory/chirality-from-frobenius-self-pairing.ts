@@ -8,7 +8,10 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.chirality_frobenius_self_pairing",
     validation: "not_checked",
   },
-  uses: ["prop:mass-formula-regime-switching"],
+  uses: [
+    "prop:mass-formula-regime-switching",
+    "def:frobenius-self-pairing-chirality",
+  ],
   tags: [
     "chirality",
     "frobenius",

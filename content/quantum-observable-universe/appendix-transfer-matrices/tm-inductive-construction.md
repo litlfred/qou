@@ -2,7 +2,12 @@ Given a nucleus with $A$ nucleons and its transfer matrix
 chains $\{M_i\}_{i=0}^{A-2}$, we describe precisely how
 adding one nucleon produces the $A+1$ nucleus.  This
 inductive step is the engine behind every nuclear Skein
-polynomial computation.
+polynomial computation.  The smallest non-trivial instance
+is the step to $^4\mathrm{He}$ $(2, 2)$: adding the fourth
+nucleon creates three new crossings and yields the
+palindromic word-length histogram $\{1, 3, 4, 3, 1\}$
+tabulated below.  The rules that follow are the general
+$A \to A+1$ pattern of which that step is the first case.
 
 ## The inductive step: $A \to A+1$
 
@@ -17,6 +22,11 @@ matrix products $M_i$ and Markov-traced volumes $\hat{V}_i$.
 **Result:** Nucleus $\mathcal{N}'$ with $A+1$ nucleons,
 generators $\sigma_0, \ldots, \sigma_{A-1}$, and updated
 transfer matrix products $M_i'$.
+
+Four rules make this Result precise: Rule 1 updates the
+existing generators, Rule 2 adds the one new generator,
+Rule 3 assembles the updated Skein polynomial, and Rule 4
+counts the crossings that grow in the process.
 
 ### Rule 1: Existing generators gain one crossing
 
@@ -54,9 +64,11 @@ $$
   T_{\tau_{A-1}, \tau_A}(q)
 $$
 
-This generator has chiral degree $k_{A-1} = 1$ — it sees
-only one crossing and contributes a single transfer matrix
-factor to the Skein polynomial.
+This generator has chiral degree $k_{A-1} = 1$, where the
+chiral degree $k_i$ counts the crossings borne by generator
+$\sigma_i$ — the new generator sees only one crossing and
+contributes a single transfer matrix factor to the Skein
+polynomial.
 
 ### Rule 3: Skein polynomial update
 
@@ -74,7 +86,9 @@ $$
   }_{\text{new generator}}
 $$
 
-where each updated volume is:
+where each updated Markov-traced volume $\hat{V}_i'$
+combines the matrix entries with the Markov-trace loop value
+$z(q)$:
 
 $$
   \hat{V}_i'(q)
@@ -97,6 +111,13 @@ goes from $\binom{A}{2}$ to $\binom{A+1}{2} = \binom{A}{2} + A$.
 | Transfer matrix multiplications | $\binom{A}{2}$ | $\binom{A+1}{2}$ | $+A$ |
 
 ## The recurrence at each generator
+
+Rule 1 appends one transfer-matrix factor per crossing; the
+recurrence below is the entry-level bookkeeping of that
+append, tracking how the column vector of $M_i$ evolves one
+crossing at a time.  Here $(c_j, d_j)$ are the crossing
+coefficients — the pair-type parameters of the general form
+$T(c, d)$ — for the crossing with nucleon $j$.
 
 At generator $\sigma_i$, the coefficients $(a_i, b_i)$ in
 $M_i = \bigl(\begin{smallmatrix} a_i \\ b_i \end{smallmatrix}\bigr)$
@@ -126,8 +147,13 @@ $T_{\tau_i, \tau_A}$ to the chain.
 
 ## Jet expansion interpretation
 
-The transfer matrix product at generator $\sigma_i$ admits
-a jet expansion in the crossing count:
+The recurrence just given composes crossings one at a time,
+which invites reading the finished product order by order in
+the crossing count.  So expanded, the transfer matrix
+product at generator $\sigma_i$ is not monolithic: it
+stratifies into jet orders, and the number of terms in each
+stratum is fixed by the chiral degree $k_i$.  The following
+table lists that stratification:
 
 | Jet order $r$ | Physical content | Multiplicity at chiral degree $k_i$ |
 |:---:|---|:---:|
@@ -137,13 +163,19 @@ a jet expansion in the crossing count:
 | $r$ | $(r+1)$-body correlations | $\binom{k_i}{r}$ |
 | $k_i$ | Full product (exact) | $1$ |
 
+The table therefore certifies that the crossing product is a
+genuine many-body object: jet order $r$ is the $(r+1)$-body
+correlation, present with multiplicity $\binom{k_i}{r}$, up
+to the exact full product at order $k_i$.
+
 Adding nucleon $A$ **increases the chiral degree at every
 existing generator by 1**: $k_i \to k_i + 1$.  Each generator
 gains access to one higher jet order — one more layer of
 many-body correlation.
 
 **Beta decay as the 1-jet variation.**  Single beta decay
-changes one nucleon type.  The $Q$-value is:
+changes one nucleon type, at position $p$ in the ordering.
+The $Q$-value is:
 
 $$
   \delta E =  \sum_{i=0}^{p} (\hat{V}_i^{\mathrm{dau}} - \hat{V}_i^{\mathrm{par}})
@@ -155,8 +187,12 @@ with $i > p$ are unaffected and cancel exactly.
 
 ## Gröbner--Shirshov normal form (inductive proof)
 
-The inductive construction produces a well-defined normal
-form at every step:
+So far the $A \to A+1$ construction has been described
+operationally.  We now show that the transfer-matrix chain
+it produces is itself the canonical normal form, so no
+hidden reordering of generators is being swept aside.  The
+inductive construction produces a well-defined normal form
+at every step:
 
 - **Base case.** $\bar{\mathcal{N}}(1, 0) = \mathbf{1}$
   (identity in $H_1(q)$).
@@ -195,8 +231,11 @@ normal form — no reordering of generators occurs.
 
 ## Shell closure signatures
 
-At doubly-magic configurations $(p, p)$, the Gröbner--Shirshov normal
-form exhibits special structure:
+The normal form just constructed carries visible fingerprints of
+shell closure.  At doubly-magic configurations $(p, p)$, the
+Gröbner--Shirshov normal form exhibits special structure — three
+signatures (i)--(iii) that will later certify the magic-shell
+folding optimization:
 
 **(i) Palindromic histogram.**  The word-length histogram
 $h(\ell) = \#\{w \in \mathrm{supp}(\bar{\mathcal{N}}) : |w| = \ell\}$
@@ -233,15 +272,20 @@ fits into the existing shell) and **jumps** at the next step
 | $3$ | $(2,2)$ | $0.095$ | closure |
 | $4$ | $(3,2)$ | $1.409$ | $\times 14.8$ (shell break) |
 
+The tabulated pair makes the pattern concrete: the closure step
+(to $(2,2)$) costs almost nothing, while the following step, which
+must open a new shell, jumps by $\times 14.8$.
+
 ## Complexity bound and magic-shell folding
 
 The pairwise inductive step is the engine of the heavy-atom
 algorithm; its cost determines whether the framework scales to
 nuclei of physical interest ($A \leq 250$).
 
-**Worst-case bound.** Without shell-folding optimizations, the
-total number of $2 \times 2$ transfer-matrix multiplications to
-build $\bar{\mathcal{N}}(A)$ from $\mathbf{1}$ is exactly
+**Worst-case bound.** Summing the per-step $+A$ crossing growth
+counted in Rule 4 from $\mathbf{1}$ upward, the total number of
+$2 \times 2$ transfer-matrix multiplications to build
+$\bar{\mathcal{N}}(A)$ without shell-folding is exactly
 
 $$
   C_{\mathrm{bare}}(A)  =  \binom{A}{2}  =  \tfrac{1}{2} A (A-1).

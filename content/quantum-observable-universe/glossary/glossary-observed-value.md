@@ -1,8 +1,8 @@
-Let $\mathbf{r}_z, \mathbf{g}_z, \mathbf{b}_z$ be the coral tube
+Let $\mathbf{r}_z, \mathbf{g}_z, \mathbf{b}_z$ be the color tube
 coordinates at a point of Bring's surface
 ([colour tube fibres](#def:color-tube-fibers)).  The
 :defterm[observed spacetime value]{#observed-value} is the element of $\mathbb{A}^1$
-recovered from the coral tube coordinates by the Vieta
+recovered from the color tube coordinates by the Vieta
 identity:
 
 ```tex
@@ -20,3 +20,5 @@ point $z_c$ where chiral sheets merge
 coordinatised by the limiting color vector; the observed spacetime
 value reads off $z_c$ from the color data via the identity above,
 providing a coordinate on the exceptional $\mathbb{P}^1(\mathbb{C})$.
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

@@ -53,6 +53,8 @@ concrete values follow.
 
 namespace QOU.BraidKnot.PerNucleusMassDerivation
 
+noncomputable section
+
 open QOU.HeckeAlgebra QOU.BraidKnot QOU.BraidKnot.MassFormulaCategorical
 
 /-- **Cat-units electron mass** placeholder.  Real value comes
@@ -116,4 +118,5 @@ theorem nucleusMassMeV_nonneg (n : LightNucleus) [_w : R5FullWitness n] :
   unfold nucleusMassMeV
   exact categoricalMassMeV_nonneg (le_of_lt m_e_cat_pos) _
 
+end  -- noncomputable section
 end QOU.BraidKnot.PerNucleusMassDerivation

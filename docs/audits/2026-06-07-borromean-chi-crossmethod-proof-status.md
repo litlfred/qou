@@ -28,7 +28,7 @@ with `β_Bor = (σ₁⁻¹σ₂)³`.
 > **Correction (2026-06-07, same day).** An earlier version of this audit said
 > Path A "has no `.lean` sibling (stub ref)". That was **wrong** — I checked
 > only the `.md` sibling path, not the package path (the precise corpus-grep
-> failure CLAUDE.md "Before declaring open/missing" warns against). The
+> failure AGENTS.md "Before declaring open/missing" warns against). The
 > declaration exists and is **fully proved** at
 > `content/quantum-observable-universe/lean/QOU/BraidsAndKnots/BorromeanMarkovTrace.lean`.
 > The table below is corrected.

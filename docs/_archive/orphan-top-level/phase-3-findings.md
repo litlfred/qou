@@ -73,7 +73,7 @@ invariant engine. The primary engine is:
 1. `atom_braid_word_3A` → braid word as a list of Hecke factors
    (block form: `σ_0^a · σ_1^b · …`). This IS the atom's data.
 2. Transfer-matrix chain in $\mathbb{Z}[q^{1/2}, q^{-1/2}]$ → per-gen
-   $\hat{V}_i(q)$. See `folio-assistant/computations/exact_binding_per_operation.py`
+   $\hat{V}_i(q)$. See `computations/exact_binding_per_operation.py`
    (method `compute_phi_mp`) for a working mpmath-precision implementation.
 3. Evaluate at $q_0$, take $\ln|\cdot|$, sum → $\Phi_1$.
 4. Apply $\mathcal{M} = M_{\text{free}} + \alpha \cdot \Phi_1 \cdot (\text{Wedderburn})$.
@@ -86,7 +86,7 @@ constant; it does not need to be recomputed per atom.
 ## What `atom_link_derivation.py` is, and is not
 
 The prototype at
-`folio-assistant/computations/atom_link_derivation.py`
+`computations/atom_link_derivation.py`
 closes the braid word and hands it to SnapPy. This is useful for
 diagnostic purposes — it lets us see what link class the braid
 closes to, and confirms (via block closure → non-hyperbolic) that
@@ -100,7 +100,7 @@ binding formula does not depend on hyperbolicity.
 
 ## The `jsj_atom_volume.py` discrepancy
 
-`folio-assistant/computations/jsj_atom_volume.py` uses the
+`computations/jsj_atom_volume.py` uses the
 Borromean-rings model `B = 2m_e · A · 8G` (one Borromean per
 nucleon). This implicitly assumes the atom braid IS
 $(\sigma_0 \sigma_1^{-1})^3$ per nucleon — a different model from
@@ -132,4 +132,4 @@ volume.
   algebraic volume pipeline, evaluated at 100-digit mpmath precision
   at $q_0$, applying the full Wedderburn-weighted formula from
   `def:algebraic-quantum-volume-specialization`. See
-  `folio-assistant/computations/mass_table_ppb.py`.
+  `computations/mass_table_ppb.py`.

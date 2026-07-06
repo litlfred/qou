@@ -22,7 +22,7 @@ hints at the bijection but doesn't construct the
 
 ## Empirical findings
 
-Computed via [`yekutieli_bijection_construction_h4.py`](../../folio-assistant/computations/yekutieli_bijection_construction_h4.py)
+Computed via [`yekutieli_bijection_construction_h4.py`](../../computations/yekutieli_bijection_construction_h4.py)
 using the Richardson-extrapolated q-hook formula at 50 dps:
 
 | Partition λ | dim V_λ | κ_λ (h² coeff) | Conjugate λ^T |
@@ -133,8 +133,8 @@ framing this audit warns against.
 
 ## Files
 
-- [`folio-assistant/computations/yekutieli_bijection_construction_h4.py`](../../folio-assistant/computations/yekutieli_bijection_construction_h4.py) — bijection construction attempt
-- [`folio-assistant/computations/yekutieli-bijection-construction-h4.witness.json`](../../folio-assistant/computations/yekutieli-bijection-construction-h4.witness.json) — emitted witness
+- [`computations/yekutieli_bijection_construction_h4.py`](../../computations/yekutieli_bijection_construction_h4.py) — bijection construction attempt
+- [`computations/yekutieli-bijection-construction-h4.witness.json`](../../computations/yekutieli-bijection-construction-h4.witness.json) — emitted witness
 
 ## Addendum: Yekutieli under the upstream q-locality gate
 

@@ -1,7 +1,7 @@
 **Definition (canonical-braid interface composition).** *Let
 $\beta(Z, N) \in H_{3A}(q)$ be the canonical atomic braid in the
 standard pppnnn ordering (built by
-[`mass_at_3A_proper.atom_braid_word_3A`](../../folio-assistant/computations/mass_at_3A_proper.py)).
+the canonical formalism).
 The* $A - 1$ *inter-nucleon interface generators
 $\sigma_{3k + 2}$ ($k = 0, \ldots, A - 2$) are classified by the
 flavour pair $(\text{nuc}_k, \text{nuc}_{k+1})$ they bridge:*
@@ -36,11 +36,11 @@ for the same atom — at $(Z=2, N=2)$ ${}^{4}$He:
 See [Table 3](#tbl:canonical-braid-interface-composition-table3-data).
 
 The canonical pppnnn ordering is fixed by
-[`atom_braid_word_3A`](../../folio-assistant/computations/mass_at_3A_proper.py);
+the canonical formalism;
 this definition is **ordering-specific**. Generalising to arbitrary
 orderings requires an additional `ordering: list[Nucleon]` argument,
 captured in the
-[`interface_composition.py`](../../folio-assistant/computations/interface_composition.py)
+the canonical formalism
 utility module's `interface_composition(ordering)` function.
 
 ### Role in substrate derivation
@@ -61,7 +61,7 @@ $$
 $$
 
 with $\alpha \approx +0.224$ MeV, $\beta \approx +1.093$ MeV,
-$\gamma \approx -1.295$ MeV closes the 4-atom probe set by definition
+$\gamma \approx -1.295$ MeV closes the 4-atom canonical evaluation set by definition
 (3 free parameters, 3 non-trivial equations). The fit is **not
 predictive** until extended to atoms with distinct $(n_{pp}, n_{nn})$
 combinations beyond the $\{$D, T, ${}^{3}$He, ${}^{4}$He$\}$ set. See

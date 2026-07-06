@@ -76,7 +76,7 @@ from pathlib import Path
 _HERE = Path(__file__).resolve().parent
 # substrate q_0 (proton-anchor re-pin, 2026-05-28); hardcoded fallback because
 # qou_substrate is not always importable in the sandbox.
-Q0 = 1.1099785827513808075916690956107688798744991218736
+Q0 = 1.1099785955573347198997632204832250266562084087802
 try:  # prefer the canonical constant when the package is present
     from qou_substrate.constants import q_at  # type: ignore
 

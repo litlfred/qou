@@ -31,13 +31,13 @@
     "tr_alt": { "$ref": "#/$defs/SparsePoly" },
     "net": { "$ref": "#/$defs/SparsePoly" },
     "observable": { "$ref": "#/$defs/SparsePoly" },
-    "coral": { "$ref": "#/$defs/SparsePoly" },
+    "color": { "$ref": "#/$defs/SparsePoly" },
     "pn_count": { "type": ["integer", "null"], "minimum": 0 },
     "f_pauli_f64": { "type": ["number", "null"] },
     "tr_alt_f64": { "type": ["number", "null"] },
     "net_f64": { "type": ["number", "null"] },
     "observable_f64": { "type": ["number", "null"] },
-    "coral_f64": { "type": ["number", "null"] },
+    "color_f64": { "type": ["number", "null"] },
     "strands": {
       "type": "array",
       "items": { "type": ["object", "null"] }

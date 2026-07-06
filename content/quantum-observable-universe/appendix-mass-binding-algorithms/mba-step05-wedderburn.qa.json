@@ -1,0 +1,142 @@
+{
+  "$schema": "block-qa/v1",
+  "criteria": {
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "797ca24e1c0a",
+          "ts": "5dcd405f7868"
+        },
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "mba-step05-wedderburn.md:14-16,25 'y_\u03bb(q) is the Wenzl-Markov q-weight ... Compute y_\u03bb via the Wenzl bridge' vs wedderburn.py:135-140 wedderburn_weight returns d_q^2/[n]_q!; wedderburn-weight-canonical.md states \u1ef9_\u03bb relates to y_\u03bb only on self-conjugate \u03bb.",
+        "rebuttal": "partial\u2192survived \u2014 for self-conjugate \u03bb the values coincide and prop:wenzl-bridge supplies the true y_\u03bb, but the .md's stated Python entry point calls wedderburn_weight not the Wenzl bridge, so the \u00a77aa weight-family conflation is live not cosmetic.",
+        "evidence": [
+          {
+            "text": "mba-step05-wedderburn.md:14-16,25; wedderburn.py:135-140"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:27:37Z",
+        "reviewed_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1",
+        "severity": "major"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "797ca24e1c0a",
+          "ts": "5dcd405f7868"
+        },
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "mba-step05-wedderburn.md:62-66 'Records the per-partition (d_\u03bb, y_\u03bb) table' vs wedderburn-lp-ew-wiring.witness.json (no y_lambda/d_lambda/chi keys; payload is LP duals + Weinberg-word probes); producer is wedderburn_lp_ew_wiring.py not wedderburn.py.",
+        "rebuttal": "partial\u2192survived \u2014 the witness exercises the Hoefsmit/Wedderburn Gram machinery (Wedderburn-adjacent, runs allPassed), but the .md's description of the witness contents is drift (appendix maintenance contract out of sync).",
+        "evidence": [
+          {
+            "text": "mba-step05-wedderburn.md:62-66; wedderburn-lp-ew-wiring.witness.json"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:27:37Z",
+        "reviewed_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1",
+        "severity": "major"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "797ca24e1c0a",
+          "ts": "5dcd405f7868"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "alg: block has no lean field; no Lean proof of H_n(q) \u2245 \u2295 M_{d_\u03bb}(R).",
+        "rebuttal": "rebutted \u2014 alg: blocks are not provable kinds; the decomposition is Lean-stubbed in QOU/Hecke/Wedderburn.lean and dep prop:wedderburn-trace-identity carries the statement+proof.",
+        "evidence": [
+          {
+            "text": "mba-step05-wedderburn.ts:11-16"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:27:37Z",
+        "reviewed_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1",
+        "severity": "minor"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "797ca24e1c0a",
+          "ts": "5dcd405f7868"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "wedderburn-trace-identity.md:8 regime 'q\u22600,\u00b11' is insufficient (misses roots of unity where H_n(q) is non-semisimple).",
+        "rebuttal": "rebutted \u2014 at substrate q_0 (real >1) H_n(q) is semisimple (Wenzl), so the algorithm is correct in-regime; the over-loose condition is an upstream-prop defect, moot at q_0 (scope-limited not structural).",
+        "evidence": [
+          {
+            "text": "wedderburn-trace-identity.md:8"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:27:37Z",
+        "reviewed_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "797ca24e1c0a",
+          "ts": "5dcd405f7868"
+        },
+        "result": "warn",
+        "verdict": "survivable-objection",
+        "referee_argument": "The .md Python-API + witness-contract sections misdescribe the wired code: wedderburn_weight() returns the Wedderburn-Plancherel weight w\u0303_\u03bb = dim_q^2/[n]_q!, NOT the 'Wenzl-Markov y_\u03bb' the .md claims (equal only on self-conjugate \u03bb per the canonical-weight prop, \u00a77aa 'never conflate'), and the named witness records LP/SDP Weinberg probes not the per-partition (d_\u03bb,y_\u03bb) table.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T04:27:37Z",
+        "reviewed_sha": "dac6ec352f10e755ecb8fc8907df8771ce5887a1"
+      }
+    ]
+  },
+  "source_hashes": {
+    "md": "797ca24e1c0a",
+    "ts": "5dcd405f7868"
+  },
+  "updated_at": "2026-06-24T04:27:37Z"
+}

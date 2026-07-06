@@ -16,7 +16,7 @@ $\iota_n : \mathbf{B}_n \hookrightarrow \mathbf{B}_{n+1}$
 
 with $z = 1/(\sqrt{q} + 1/\sqrt{q})$ the Markov-Jones parameter.
 
-## What this block provides
+## Contents of this block
 
 The Lean module
 `QOU.BraidKnot.markov_trace_inductive_limit` provides:
@@ -36,3 +36,5 @@ Without the bridge: every $n \in \{2, 3, 6, 12, \ldots\}$ requires
 its own `instance : MarkovTraceN n q` discharge. With the bridge: a
 single global witness `MarkovTraceInductiveLimit q` automatically
 elaborates every per-$n$ instance, eliminating per-$n$ duplication.
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

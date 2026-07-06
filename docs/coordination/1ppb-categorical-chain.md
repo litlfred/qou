@@ -163,7 +163,7 @@ Deuteron has $\bowtie_D = \sigma_3$ (the `+1` in $u_{\text{shift}} = 18Z + 21N +
 
 **Re-survey findings load-bearing for the 1 ppb / Δ_λ thread:**
 
-1. **No deprecated-script revivals** since #787 merged (`git log origin/main -- folio-assistant/computations/_deprecated/` returns zero). The systemic paper↔compute wiring gap persists.
+1. **No deprecated-script revivals** since #787 merged (`git log origin/main -- computations/_deprecated/` returns zero). The systemic paper↔compute wiring gap persists.
 2. **4 propositions wired to *alternate* scripts**, not the catalog's deprecated ones — supersession-disposition still owed:
    - `prop:mass-endomorphism-tower` → `habiro_exact_mass_endomorphism.py` (337 LoC); 4 deprecated towers orphaned.
    - `prop:atomic-mass-gb-nf` → `canonical_mass_table_extended.py` (507 LoC); `anti_self_reciprocity_universality_probe.py` orphaned.
@@ -322,7 +322,7 @@ Neither candidate substitution recovers ~1836. Confirms `mass-endomorphism-tower
 **Impact on owner's "remove the deprecated stuff completely" directive (2026-05-19):**
 - Stage 1 (Faddeev migration): deferred until operator-valued $\rho_K$ is formalised
 - Stages 2–4 (revival + orphan deletion + paper banners): can proceed independently, but were also paused pending the Stage-1 result (single-session scope limit). Re-queued.
-- `_phi_q_util.py` (42 active callers in `folio-assistant/computations/`) stays in the codebase — it is the legacy convention that actually produces 1.84% m_p/m_e, the best result currently available.
+- `_phi_q_util.py` (42 active callers in `computations/`) stays in the codebase — it is the legacy convention that actually produces 1.84% m_p/m_e, the best result currently available.
 
 **Where to look next** for the structural derivation:
 1. [`mass-endomorphism-tower.md`](../../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md) SUPERSEDED banner — text of the structural revision
@@ -481,7 +481,7 @@ Refined candidate: $\rho_Z^{\mathrm{constit}}(q) = (2q - 1) + h^5 + O(h^7)$ at $
 
 Updates `conj:constit-factor-2q-minus-1.md` with the refined boxed identity.
 
-Script: [`constit_factor_residual_phase5k.py`](https://github.com/litlfred/qou/blob/claude/post-819-ledger-update/folio-assistant/computations/constit_factor_residual_phase5k.py).
+Script: [`constit_factor_residual_phase5k.py`](https://github.com/litlfred/qou/blob/claude/post-819-ledger-update/computations/constit_factor_residual_phase5k.py).
 Witness: `constit-factor-residual-phase5k.witness.json` (1 assertion: residual/h^5 ≈ 1.016 ± 0.05, passes).
 
 **Open question (5k.2 queued):** is $c \equiv 1$ for $h^5$ across the substrate window, or does $c$ vary with $q$?  A single point $c(q_0) = 1.016$ is suggestive but not conclusive.  Phase 5k.2 needs varying-$q$ measurement of $\rho_Z^{\mathrm{constit}}(q)$ via `pyhecke_native` with q-dependent Wenzl $y_\lambda$ weights at multiple $q$ in the substrate window.  Defer as substantive compute work.
@@ -510,7 +510,7 @@ Fine scan around q_0 confirms the tangency is sharp: at q = 1.105 (just 0.005 be
 - Phase 5k.1's "unit-coefficient h⁵" interpretation is consequently also a coincidence at q_0 (not a global structural identity).
 - The actual closed form for $\rho_Z^{\mathrm{constit}}(q)$ is **open** — the measured ratio grows much more steeply than (2q − 1) suggests (factor 2.26× across $q \in [1.05, 1.17]$). Likely candidates: $\mathrm{tr}_M^3(\mathcal{B}_p)$ combined with a rank-jump z-factor.
 
-Script: [`folio-assistant/computations/constit_factor_varying_q_phase5k2.py`](../../folio-assistant/computations/constit_factor_varying_q_phase5k2.py) (relative repo link — see [PR #845](https://github.com/litlfred/qou/pull/845) for blob).
+Script: [`computations/constit_factor_varying_q_phase5k2.py`](../../computations/constit_factor_varying_q_phase5k2.py) (relative repo link — see [PR #845](https://github.com/litlfred/qou/pull/845) for blob).
 Witness: `constit-factor-varying-q-phase5k2.witness.json` (2 assertions: both FAIL as expected — the test was designed to confirm or refute the hypothesis; the refutation is the finding).
 
 Next on queue: **5l** — structural derivation of $\rho_Z^{\mathrm{constit}}(q)$ from the disjoint-product Markov trace formula. The empirical measurements suggest $\rho \approx \mathrm{tr}_M^3(\mathcal{B}_p) \cdot$ (z-factor for rank jump from H_6 to H_9), needing rigorous derivation.
@@ -550,7 +550,7 @@ at a p-* boundary, with $z(q)$ from [`prop:interface-knot-markov-z`](../../conte
 - NEW: [`prop:constit-factor-tau-M-proton-identity`](../../content/quantum-observable-universe/braids-and-knots/constit-factor-tau-M-proton-identity.md) — the structural identity, with Wenzl-derivation proof and 5-q empirical verification.
 - UPDATED: [`conj:constit-factor-2q-minus-1`](../../content/quantum-observable-universe/braids-and-knots/constit-factor-2q-minus-1.md) — RESOLVED banner pointing to the proposition above; conjecture preserved as a record of the historical Phase 5g categorical-search result.
 
-**Script:** [`folio-assistant/computations/rho_constit_equals_tau_M_proton_phase5l.py`](../../folio-assistant/computations/rho_constit_equals_tau_M_proton_phase5l.py).
+**Script:** [`computations/rho_constit_equals_tau_M_proton_phase5l.py`](../../computations/rho_constit_equals_tau_M_proton_phase5l.py).
 **Witness:** `rho-constit-equals-tau-M-proton-phase5l.witness.json` (1 assertion: max rel.err. < 1e-12, passes at ~1e-15).
 
 Next on queue: **5l.1** — extract closed form for $\mathrm{tr}_M^3(\mathcal{B}_p, q)$ as a Laurent rational expression in $q$ (the proton braid is a specific Hecke word, so $\mathrm{tr}_M^3(\mathcal{B}_p, q)$ is a specific algebraic function).

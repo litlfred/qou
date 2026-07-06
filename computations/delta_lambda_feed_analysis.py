@@ -12,7 +12,7 @@ binding energy B(A,Z), to FEED the Δ_λ gate
     B(K) = m_e · Σ_λ y_λ χ^λ(β_K) Δ_λ(K).
 
 KEY FINDING (a refutation + structural characterization — NOT a seventh
-fit ansatz, which CLAUDE.md's Δ_λ-gate note forbids):
+fit ansatz, which AGENTS.md's Δ_λ-gate note forbids):
 
   log10|tr_M(a)| grows QUADRATICALLY in A (R² ≈ 0.9999) because the atom
   crossing count is T = 11A + A(A−1)/2 + Z ≈ A²/2, so every Wedderburn

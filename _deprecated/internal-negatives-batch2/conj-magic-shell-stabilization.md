@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 The six-way refutation of the level-selection rule $n_\star$ in
 [`conj:brane-tower-z-habiro`](#conj:brane-tower-z-habiro)
 ([closure audit](../../../docs/audits/2026-05-11-brane-tower-n_star-closure-audit.md))
@@ -102,8 +100,8 @@ measured structural gaps that the conjecture obligates the
 framework to **predict** from substrate data, not free parameters
 to tune.
 
-[`probe_magic_shell_empirical_instantiation.py`](../../../folio-assistant/computations/probe_magic_shell_empirical_instantiation.py)
-([witness](../../../folio-assistant/computations/magic-shell-empirical-instantiation.witness.json))
+[`probe_magic_shell_empirical_instantiation.py`](../../../computations/probe_magic_shell_empirical_instantiation.py)
+([witness](../../../computations/magic-shell-empirical-instantiation.witness.json))
 extracts per-atom $\Delta_{\mathrm{cat}}(\mathfrak{H}) :=
 \mathrm{AME}(\mathfrak{H}) - m_e \cdot \rho \cdot
 |\tau(\beta_{\mathfrak{H}})|$ at 50dps using

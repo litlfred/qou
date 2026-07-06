@@ -40,8 +40,9 @@ from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 VOL_4_1_STR = "2.0298832128193072500115970029"
-M_E_CODATA_MEV = "0.51099895069"
-M_MU_CODATA_MEV = "105.6583755"
+from codata_constants import M_E_MEV, M_MU_MEV_VALIDATION  # noqa: E402
+M_E_CODATA_MEV = str(M_E_MEV)            # codata_constants registry (no literal)
+M_MU_CODATA_MEV = str(M_MU_MEV_VALIDATION)
 M_MU_SIGMA_EXP_MEV = "2.3e-6"
 
 

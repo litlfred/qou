@@ -14,7 +14,7 @@ g = \begin{pmatrix} \alpha & -\bar{\beta} \\ \beta & \bar{\alpha} \end{pmatrix},
 \qquad |\alpha|^2 + |\beta|^2 = 1,
 $$
 
-the inverse is $g^{-1} = g^\dagger = \bigl(\begin{smallmatrix} \bar{\alpha} & \bar{\beta} \\ -\beta & \alpha \end{smallmatrix}\bigr)$,
+the inverse is $g^{-1} = g^\dagger = \bigl(\begin{smallmatrix} \bar{\alpha} & \bar{\beta} \\ -\beta & \alpha \end{smallmatrix}\bigr)$.
 The Maurer--Cartan form evaluates to:
 
 $$
@@ -61,5 +61,3 @@ holonomy.
 Non-flat connections arise when we pass to quotients
 (e.g. $\mathrm{SO}(3) = \mathrm{SU}(2)/\mathbb{Z}_2$) or when an
 external gauge field is switched on — these are treated in Chapter 2.
-
-**Prerequisites:** matrix calculus, exterior derivatives, Lie algebras.

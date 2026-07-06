@@ -51,7 +51,7 @@ The empirical Z↔N asymmetry Δ_coupling(T) − Δ_coupling(³He) = h · E_0
 
 Witness: `interface-type-resolved-coupling-probe.witness.json`
 
-@module folio-assistant/computations/probe_interface_type_resolved_coupling
+@module computations/probe_interface_type_resolved_coupling
 """
 from __future__ import annotations
 

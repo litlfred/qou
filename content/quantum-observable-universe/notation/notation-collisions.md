@@ -11,7 +11,7 @@ paper to keep them disambiguated:
   for crossing energy.
 - **$\mathfrak{E}_0$ vs $Q_\beta(n)$** — two distinct hadronic-sector
   scalars that have been historically conflated in Python compute
-  scripts (see [`folio-assistant/computations/binding_canonical.py`](../../../folio-assistant/computations/binding_canonical.py)
+  scripts (see [`computations/binding_canonical.py`](../../../computations/binding_canonical.py)
   history). They are **not interchangeable**:
     - $\mathfrak{E}_0$ = **hadronic energy scale**, framework-derived as
       $\mathfrak{E}_0^{(N=0)} = m_e/(q_0(q_0-1)) \approx 4.186$ MeV (CAL-1
@@ -85,7 +85,33 @@ paper to keep them disambiguated:
 - **$\mathfrak{W}$** = confinement observable / $q$-Wilson loop
   $\mathfrak{W}(\mathcal{K}, \mathcal{T})$. Never the observation
   morphism (now $\mathfrak{O}$); the abstract Wilson-loop functional is
-  plain $W(\gamma)$.
+  plain $W(\gamma)$. **Distinct from $\mathfrak{V}$** (below).
+- **$\mathfrak{V}$** = the **complex-volume observable** (QOU analogue of
+  the Neumann–Zagier complex volume $\mathbb{V}=\operatorname{Vol}+i\,\mathrm{CS}$):
+  $\mathfrak{V}(K) = E_0\,\mathrm{tr}_M((\Pi_{\text{free}}-\mathbf{1})\circ\mathcal{M})$,
+  whose **real part is binding** $\mathfrak{E}_{\mathrm{bind}} = \operatorname{Re}\mathfrak{V}$
+  (bar-even / $\cosh$) and **imaginary part is the $\beta$-decay Q-value**
+  $\mathfrak{Q}_\beta = \operatorname{Im}\mathfrak{V}$ (bar-odd / $\sinh$)
+  ([`conj:binding-qbeta-complex-volume`](../mass-endomorphism/binding-qbeta-complex-volume.md)).
+  Not $\mathfrak{W}$ (Wilson loop), not $\mathbb{V}$ (the literal NZ symbol,
+  used only as the analogy reference).
+- **$\Pi_{\text{free}}$** = idempotent projector onto the factorized
+  sub-object (parabolic/Young subalgebra; constituents un-linked). The
+  "free" trace is $\mathrm{tr}_M\circ\Pi_{\text{free}}$.
+- **$\mathfrak{Q}_\beta$ (fraktur) = the $\beta$-decay Q-value as a
+  *trace-component*** ($\operatorname{Im}\mathfrak{V}$, derived). Promoted
+  to fraktur (observable register) from the older roman $Q_\beta$; the
+  measured/experimental value is $\mathfrak{Q}_\beta^{\,\mathrm{obs}}$
+  (CODATA).
+- **$\mathfrak{D}$ (decay width) vs $\mathcal{D}$ (operator)** — visually
+  close but **register-distinct**: $\mathfrak{D}$ (fraktur, a *decay-rate*
+  observable) **always** carries a decay subscript ($\mathfrak{D}_\beta$
+  neutron, $\mathfrak{D}_\pi$ pion) and is the *experimental face* of a
+  trace-component energy (NOT itself a $\mathrm{tr}_M$); $\mathcal{D}$
+  (calligraphic, an *operator*) is the categorical Dirac operator
+  $\mathcal{D}_\nabla$ or the path measure $\mathcal{D}\phi$. The subscript /
+  decoration disambiguates; never write a bare $\mathfrak{D}$ or bare
+  $\mathcal{D}$.
 - **$S_n$ vs $H_n(q)$** — $q$-deformed braiding decompositions
   (eigenvalues $\{q, -q^{-1}\}$) are actions of the Iwahori–Hecke
   algebra $H_n(q)$, **not** the symmetric group $S_n$, even when the
@@ -172,7 +198,7 @@ paper to keep them disambiguated:
   D(\check{q})$ with $\check{q}$ the spinor rate above
   (the two were always numerically identical; the dual name was a
   literature-debt that produced a $5\times10^{38}$ error in
-  [`habiro_q_difference_fourier.py`](../../../folio-assistant/computations/habiro/habiro_q_difference_fourier.py)
+  [`habiro_q_difference_fourier.py`](../../../computations/habiro/habiro_q_difference_fourier.py)
   by silent substitution between Habiro $u$ and ladder $u$).
   **Discipline:** when a compute script uses BOTH the ladder step
   and either the LP shadow-price $u_\lambda$ or the (retired)
@@ -241,7 +267,7 @@ parameter when only the algebraic structure matters, $q \in \mathbb{R}$
 only when an archimedean evaluation (numerical
 $q_0 = 1.109978595554181\ldots$ (50 dps), the substrate's archimedean realisation) is
 under discussion. See
-[`CLAUDE.md` §7c](https://github.com/litlfred/qou/blob/main/CLAUDE.md#7c-base-ring-convention-generic-r-vs-archimedean-r-strict)
+[`AGENTS.md` §7c](https://github.com/litlfred/qou/blob/main/AGENTS.md#7c-base-ring-convention-generic-r-vs-archimedean-r-strict)
 for the typeclass cheat-sheet and the archimedean-wall membership
 list.
 
@@ -285,7 +311,7 @@ not be conflated:
 |---|---|---|
 | **Fibre functor** $\tau$ | $\mathbf{C} \to \mathbf{Arch}$ | Tannakian fibre over a brane point; selects which substrate object becomes the observation. |
 | **Forgetful functor** $U$ | $\mathbf{Arch} \to \mathbf{Vec}_{\mathbb{R}}$ | Drops the archimedean enrichment, leaving the underlying real vector space. |
-| **Archimedean realisation** (informal "Arch") | $\mathbf{C}(R) \to \mathbf{C}(\mathbb{R})$ | Base-ring substitution (`R ↦ ℝ`) at the archimedean wall; **not** a functor between QOU categories — it lives at the Lean / compute level (CLAUDE.md §7c). |
+| **Archimedean realisation** (informal "Arch") | $\mathbf{C}(R) \to \mathbf{C}(\mathbb{R})$ | Base-ring substitution (`R ↦ ℝ`) at the archimedean wall; **not** a functor between QOU categories — it lives at the Lean / compute level (AGENTS.md §7c). |
 
 The category $\mathbf{Arch}$ is the target of $\tau$, not the name of
 a functor; "archimedean functor" in chat or commits usually means

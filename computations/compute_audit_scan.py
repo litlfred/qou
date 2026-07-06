@@ -12,7 +12,7 @@ violation.
 
 Static scanner for the 30-pattern compute-audit catalogue.
 
-Scans every .py file under folio-assistant/computations/ for the
+Scans every .py file under computations/ for the
 performance antipatterns P15-P31 from .claude/skills/local/compute-audit.md
 (extracted from the 50-commit review 2026-04 → 2026-05). Emits
 ``compute-audit-scan.witness.json`` next to this script and prints a
@@ -24,7 +24,7 @@ and are out of scope.
 
 Usage
 -----
-    python folio-assistant/computations/compute_audit_scan.py
+    python computations/compute_audit_scan.py
 
 Audit-only: results live in docs/audits/2026-05-08-compute-audit-workplan.md.
 """
@@ -314,7 +314,7 @@ def main() -> int:
     w = (
         WitnessBuilder("compute-audit-scan", engine="python")
         .set_description(
-            "Static scan of folio-assistant/computations/ for the "
+            "Static scan of computations/ for the "
             "performance patterns P11/P14/P15/P16/P21/P30/P31 from "
             ".claude/skills/local/compute-audit.md."
         )

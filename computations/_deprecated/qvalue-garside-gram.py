@@ -7,7 +7,7 @@ Q = (Σ w_k^G × Δ_k) × N × m_e
 starting from the typed Garside staircase (all C(A,2) crossings).
 
 Usage:
-    cd folio-assistant/computations && python3 qvalue-garside-gram.py
+    cd computations && python3 qvalue-garside-gram.py
 """
 import math
 import json

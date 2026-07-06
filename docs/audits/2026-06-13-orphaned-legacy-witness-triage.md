@@ -51,7 +51,7 @@ ledger, not a migration project. **No code change required.**
 | `proton-mass-spectral-correction.witness.json` | 0 docs, 0 code consumers; only reference is the `derivation-chain-audit` inventory witness (regenerates). |
 | `habiro-mirror-pair-li7-be7.witness.json` | 0 docs, 0 code consumers; same single inventory reference. |
 
-Both `git mv`-ed to `folio-assistant/computations/_deprecated/` (the
+Both `git mv`-ed to `computations/_deprecated/` (the
 established convention — that directory already holds deprecated witnesses).
 Per owner directive 2026-06-13: **deprecate now, delete later** (git history
 preserves them, so a future `git rm` loses nothing). Moving them out of the

@@ -1,0 +1,57 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:habiro-precision-ladder-equivalence",
+  "kind": "proposition",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/habiro-precision-ladder-equivalence.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-theory/habiro-precision-ladder-equivalence.md",
+    "lean": "../qou/content/quantum-observable-universe/mass-theory/habiro-precision-ladder-equivalence.lean"
+  },
+  "source_hashes": {
+    "md": "fc04cbc42dbf",
+    "ts": "1baac0216435",
+    "lean": "9549aabb0b76"
+  },
+  "criteria": {
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "d8ee48ab6999",
+          "ts": "1baac0216435",
+          "lean": "9549aabb0b76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.534Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "fc04cbc42dbf",
+          "ts": "1baac0216435",
+          "lean": "9549aabb0b76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "fd89dc9369e1",
+          "script_commit_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
+        },
+        "reviewed_at": "2026-07-06T04:11:11.478Z",
+        "reviewed_sha": "1804cf0916c26ee8a2f3d969adf8d59726f6c07c"
+      }
+    ]
+  },
+  "updated_at": "2026-07-06T04:11:11.478Z"
+}

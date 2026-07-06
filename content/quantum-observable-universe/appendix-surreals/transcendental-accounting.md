@@ -9,7 +9,7 @@ which periods, where, how related, and whether their post-archimedean
 relations are forced by pre-archimedean $q$-rational structure or
 are archimedean accidents.
 
-### Why this matters (the user's wall-crossing question)
+### Significance (the wall-crossing question)
 
 A relation $R(\alpha_1, \ldots, \alpha_m) = 0$ in $\mathbb{Z}[q^{\pm 1}]$
 on the algebraic side **survives** under the archimedean realization
@@ -59,10 +59,10 @@ i.e. Jones-faithfulness on this class) is open
 ([`rem:knot-exhaustiveness`](#rem:knot-exhaustiveness) Question 3).
 **A single Jones-coincident pair would yield a non-trivial
 post-archimedean equality forced by $q$-rational structure** —
-exactly the kind of "wall-crossing" prediction the keystone
+exactly the "wall-crossing" prediction the keystone
 framework should make explicit.
 
-### What does *not* survive: archimedean accidents
+### Non-surviving relations: archimedean accidents
 
 The 5-term Bloch–Wigner relation
 
@@ -73,7 +73,7 @@ $$
 
 holds among hyperbolic volumes (after $\tau_{\mathrm{arch}}$) but is
 **not** a $\mathbb{Q}(q)$-polynomial identity on the pre-archimedean
-side. It's an archimedean accident at depth 2 — a relation in
+side. It is an archimedean accident at depth 2 — a relation in
 $\mathcal{P}_2 / \mathcal{P}_1$ that has no $q$-polynomial witness.
 
 Similar wall-crossing accidents at depth 3:
@@ -83,7 +83,7 @@ Similar wall-crossing accidents at depth 3:
   a separate iterated integral that just happens to evaluate to
   the single zeta).
 
-### Open: post-archimedean structure forced by Bring's $S_5$
+### Open question: post-archimedean structure forced by Bring's $S_5$
 
 Because Bring's curve has $S_5$ symmetry, the cyclotomic field
 $\mathbb{Q}(\zeta_5)$ acts on the Bring-natural depth-3 grouplikes.
@@ -95,7 +95,7 @@ $$
 $$
 
 The orbit-sum identity proved by the
-[`bring-trilog-zeta5-depth-3.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/bring-trilog-zeta5-depth-3.witness.json)
+[`bring-trilog-zeta5-depth-3.witness.json`](https://github.com/litlfred/qou/blob/main/computations/bring-trilog-zeta5-depth-3.witness.json)
 is the **Galois-invariant trace** of this $S_5$-action. The
 **Galois-non-invariant** components — individual $\mathrm{Li}_3(\zeta_5^k)$
 values — give a 4-dim $\mathbb{Q}$-vector space of depth-3 periods

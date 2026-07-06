@@ -39,8 +39,8 @@ Plus a brief revisit of PR #701's central falsification of
 
 ### 1. Meson Habiro c=4 — **REOPENED**
 
-**Probe:** [`meson_habiro_c4_truncation_reexam.py`](../../folio-assistant/computations/meson_habiro_c4_truncation_reexam.py)
-([witness](../../folio-assistant/computations/meson-habiro-c4-truncation-reexam.witness.json))
+**Probe:** [`meson_habiro_c4_truncation_reexam.py`](../../computations/meson_habiro_c4_truncation_reexam.py)
+([witness](../../computations/meson-habiro-c4-truncation-reexam.witness.json))
 
 **Setup:** The path tested `R = 1 + c·u²` with `u = b·ℏ_q²`,
 `b² = (h² + 3)/(h² + 4)`. Audit 2026-05-29 measured `C/u² = 4.031`,
@@ -72,8 +72,8 @@ Hopf-link evaluation times the Bring scaling).
 
 ### 2. Ocneanu −1/12 — **STANDS + nuance**
 
-**Probe:** [`ocneanu_12_route_reexam.py`](../../folio-assistant/computations/ocneanu_12_route_reexam.py)
-([witness](../../folio-assistant/computations/ocneanu-12-route-reexam.witness.json))
+**Probe:** [`ocneanu_12_route_reexam.py`](../../computations/ocneanu_12_route_reexam.py)
+([witness](../../computations/ocneanu-12-route-reexam.witness.json))
 
 **Setup:** The proton-mass identity `m_p = 2·m_μ·F_Bor(q_0) − 12·m_e`
 originally attributed the "12" to the reciprocal of the Ocneanu
@@ -109,8 +109,8 @@ Borromean structure to the n=3 strand count.
 
 ### 3. Yekutieli natural reading +0.5 — **STANDS** unchanged
 
-**Probe:** [`yekutieli_natural_reading_precision_floor_check.py`](../../folio-assistant/computations/yekutieli_natural_reading_precision_floor_check.py)
-([witness](../../folio-assistant/computations/yekutieli-natural-reading-precision-floor-check.witness.json))
+**Probe:** [`yekutieli_natural_reading_precision_floor_check.py`](../../computations/yekutieli_natural_reading_precision_floor_check.py)
+([witness](../../computations/yekutieli-natural-reading-precision-floor-check.witness.json))
 
 **Setup:** Audit 2026-05-23 tested whether Reading-A's conjectural
 `−G·h²` could be recovered from a natural categorical π_HS
@@ -225,7 +225,7 @@ when re-classifying any "near-match" residual, ask explicitly:
    data. **Effort: ~1 session.**
 
    **Update 2026-06-01 — RESULT: NULL.**
-   [`meson_habiro_c3_categorical_search.py`](../../folio-assistant/computations/meson_habiro_c3_categorical_search.py)
+   [`meson_habiro_c3_categorical_search.py`](../../computations/meson_habiro_c3_categorical_search.py)
    scanned 40+ natural candidates (integer/rational fractions,
    Catalan-G variants, b-powers, J·b combinations, q-bracket ratios
    including the q-deformation `−[5]_q/[7]_q`). Only candidate
@@ -257,7 +257,7 @@ when re-classifying any "near-match" residual, ask explicitly:
      series gives (c_2, c_3) = (4, c_3_unknown) at q=1
 
    **Update 2026-06-01 — STEP 1b (PSLQ wider search): STRONG NULL.**
-   [`meson_habiro_c3_pslq_search.py`](../../folio-assistant/computations/meson_habiro_c3_pslq_search.py)
+   [`meson_habiro_c3_pslq_search.py`](../../computations/meson_habiro_c3_pslq_search.py)
    ran PSLQ integer-relation search over **24 natural substrate basis
    elements** (G, π, ln 2, h-powers, b-powers, q-brackets, ℏ_q-powers,
    J_Hopf, G·b, G/π, …) — pairwise, triples (top-12), and full-basis
@@ -294,7 +294,7 @@ when re-classifying any "near-match" residual, ask explicitly:
    block).
 
    **Update 2026-06-01 — STEP 2a (q-deformation discriminator): NULL.**
-   [`ocneanu_12_qdeformation_discriminator.py`](../../folio-assistant/computations/ocneanu_12_qdeformation_discriminator.py)
+   [`ocneanu_12_qdeformation_discriminator.py`](../../computations/ocneanu_12_qdeformation_discriminator.py)
    scanned 14 q-deformations of the 4 candidates against k_required
    = 11.99961221. The bare INTEGER 12 wins (32 ppm); every natural
    q-deformation (3! · [2]_q, [3]_q!·[2]_q, Σ d²_q·[2]_q, etc.)
@@ -303,7 +303,7 @@ when re-classifying any "near-match" residual, ask explicitly:
    Bring-zero-mode EM closure.
 
    **Update 2026-06-01 — STEP 2b (EM-correction candidate): NEAR-MATCH.**
-   [`ocneanu_12_em_correction_candidate.py`](../../folio-assistant/computations/ocneanu_12_em_correction_candidate.py)
+   [`ocneanu_12_em_correction_candidate.py`](../../computations/ocneanu_12_em_correction_candidate.py)
    tests `k = 12 − (α_em/π) / dim H_3`. Result:
 
    - `(α_em/π) / dim H_3 = (α_em/π) / 6 ≈ 3.871e-4`

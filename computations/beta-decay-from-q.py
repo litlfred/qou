@@ -41,14 +41,16 @@ from q_parameter import (Q as q, Q_INV as qi, HBAR_Q as hbar_q,
                          E_CROSS as E_cross, S_SKEIN as s,
                          TWO_Q as two_q, TANH_LN_Q as tanh_ln_q,
                          HBAR_Q_SQ as hbar_q_sq)
+# CODATA-2022 electron mass — centralised registry (bean 46ke)
+from codata_constants import M_E_MEV, M_E_MEV_ERR  # noqa: E402
 
 # ── Electron mass from crossing energy ───────────────────────────
 # The electron is trefoil T_{2,3} with 3 crossings.
 # m_e = 3 * E_cross * μ₀
 # Setting μ₀ so that m_e = 0.51100 MeV (this IS the unit choice):
 n_c_electron = 3
-m_e_MeV = 0.51099895000       # ± 0.00000000015 MeV (CODATA 2022)
-m_e_MeV_err = 0.00000000015
+m_e_MeV = float(M_E_MEV)       # ± 0.00000000015 MeV (CODATA 2022, registry)
+m_e_MeV_err = float(M_E_MEV_ERR)
 mu_0 = m_e_MeV / (n_c_electron * E_cross)         # MeV per Skein unit
 
 # ── G_F decomposition ───────────────────────────────────────────

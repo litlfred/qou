@@ -28,7 +28,7 @@ $P(\mathrm{Vol}(4_1), \mathrm{Vol}(5_2),
 
 **QOU-specific consequences.**
 
-1. **Yekutieli brane tower does not collapse.** By the bridge
+1. **Brane tower does not collapse.** By the bridge
    theorem ([Yekutieli transcendence
    shadow](#rem:yekutieli-transcendence-shadow)), independence is
    equivalent to non-vanishing of the obstruction classes

@@ -193,7 +193,7 @@ but the differential is small.
 ## Linkage
 
 - Parent plan: [`docs/workplans/2026-05-30-source-conjecture-closure-plan.md`](2026-05-30-source-conjecture-closure-plan.md)
-- §3b-cond reference: [`CLAUDE.md` §3b-cond](../../CLAUDE.md)
+- §3b-cond reference: [`AGENTS.md` §3b-cond](../../AGENTS.md)
 - Existing QOU §3b-cond placeholder using Iwahori-Hecke:
   [`prop:hecke-branching-trace-decomposition`](../../content/quantum-observable-universe/mass-endomorphism/hecke-branching-trace-decomposition.md)
 - Existing computational stack (Rust): `tools/hecke-engine/`

@@ -15,8 +15,8 @@ export default theorem({
   proofs: ["prf:topological-mass-categorical", "prf:topological-mass"],
   computation: {
     engine: "sympy",
-    script: "folio-assistant/computations/mass-from-q-symbolic.py",
-    witness: "folio-assistant/computations/mass-from-q-symbolic.witness.json",
+    script: "computations/mass-from-q-symbolic.py",
+    witness: "computations/mass-from-q-symbolic.witness.json",
     status: "verified",
   },
 });

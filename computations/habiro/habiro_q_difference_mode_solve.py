@@ -40,7 +40,7 @@ WHAT THIS PROBE COMPUTES (exact symbolic; no fitting):
      must be a bar-even (cancellation) construction; this assigns each
      mode to a symmetry sector, telling us which modes f keeps.
 
-DISCIPLINE (CLAUDE.md §7b, ck-tiered-not-binary): exact symbolic
+DISCIPLINE (AGENTS.md §7b, ck-tiered-not-binary): exact symbolic
 throughout. This is a CHARACTERIZATION of the q-difference solution
 structure — it decomposes Δtr_M into its exact Fourier modes, but does
 NOT yet bridge to the ladder c_k (that bridge is the remaining open

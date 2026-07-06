@@ -11,7 +11,7 @@ Also computes the FULL Markov trace M(q) = Σ w_λ χ_λ/dim_λ
 and extracts the spectral LP shadow prices for each partition.
 
 Usage:
-    cd folio-assistant/computations && python3 fast_k6_characters.py
+    cd computations && python3 fast_k6_characters.py
 """
 
 import sympy as sp

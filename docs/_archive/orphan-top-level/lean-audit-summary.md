@@ -182,7 +182,7 @@ have been replaced:
 
 | Category | Count | Notes |
 |----------|-------|-------|
-| Total `.py` scripts | 73 | in `folio-assistant/computations/` |
+| Total `.py` scripts | 73 | in `computations/` |
 | Witness JSONs | 52 | `.witness.json` sibling files |
 | **Structured format** | **1** | Only `knot-volumes.witness.json` |
 | With commit SHA | 4 | `git_sha` field |
@@ -192,7 +192,7 @@ have been replaced:
 
 ### New Infrastructure
 
-- **`folio-assistant/computations/substrate/witness_base.py`** — Unified `WitnessBuilder`
+- **`computations/substrate/witness_base.py`** — Unified `WitnessBuilder`
   class for Python computations. Auto-captures commitSha, scriptHash, and
   provides structured assertions with tolerances.
 - **`scripts/witness-audit.ts`** — Unified staleness checker for both Lean

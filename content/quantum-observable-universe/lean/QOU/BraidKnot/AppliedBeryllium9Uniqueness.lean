@@ -22,6 +22,8 @@ abstract-axiom dependency.
 
 namespace QOU.BraidKnot
 
+noncomputable section
+
 /-- **⁹Be empty-constraint SDP** at `heckeDim 27`. -/
 abbrev beryllium9_emptySDP := nucleusEmptySDP 27
 
@@ -49,4 +51,5 @@ abbrev beryllium9_optimum_is_zero := nucleus_optimum_is_zero 27
 /-- ⁹Be objective at optimum equals 0. -/
 abbrev beryllium9_objAt_optimum_eq_zero := nucleus_objAt_optimum_eq_zero 27
 
+end  -- noncomputable section
 end QOU.BraidKnot

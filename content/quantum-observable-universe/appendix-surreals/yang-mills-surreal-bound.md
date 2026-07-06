@@ -78,7 +78,7 @@ colour-singlet") is the surreal-order statement that every non-trivial
 Wilson loop has $\omega$-order $> 0$: its standard part is an
 exponentially suppressed real quantity.
 
-**Why QOU embeds Yang--Mills.** The Yang--Mills gauge theory on
+**Embedding of Yang--Mills in QOU.** The Yang--Mills gauge theory on
 $\mathbb{R}^4$ is classically a field theory, not an elliptic-curve
 or skein-module problem.  The QOU substrate encodes it via the
 fibre-functor $\tau : \mathbf{Rep}(\mathrm{SU}_q(N)) \to \mathbf{Vec}$:

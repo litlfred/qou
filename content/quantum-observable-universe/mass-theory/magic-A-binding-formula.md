@@ -1,7 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c).
-The underlying categorical content is generic; the formula is stated over
-$\mathbb{R}$ for the MeV comparison.*
-
 **Theorem (conditional on [`conj:magic-numbers-bring`](../quantum-observable-universes/magic-numbers-bring.md)
 and [`prop:gravity-spectral-prefactor`](gravity-spectral-prefactor.md)).**
 *For a light nucleus $^A_Z\mathfrak{X}$ that is doubly magic
@@ -34,7 +30,7 @@ which misses $^4_2\mathrm{He}$ by $-79\%$ ($5\times$ too small) because that
 formula assumes a single hyperbolic force-carrier knot per nucleus —
 an assumption that breaks for doubly-magic nuclei.*
 
-## Why doubly-magic requires a separate formula
+## Necessity of a separate doubly-magic formula
 
 The framework's two binding paths apply to **distinct categorical
 regimes**:
@@ -74,18 +70,18 @@ The doubly-magic case is exactly this rectangular-spike limit.
 
 The substrate-determined prefactor for $^4_2\mathrm{He}$ is
 $\rho_F = 2$, sourced from the canonical
-[`binding-ladder-catalog.py`](../../folio-assistant/computations/binding_ladder_catalog.py)
+the canonical formalism
 entry `2·m_e·4·Vol(L6a4)`. The categorical derivation of the integer
 $2$ — vs. $[2]_q$, $2\cos(\pi/3)$, or another natural candidate — is
 not closed in this proposition; the value is consumed as an input
 hypothesis on the
 [`MagicABindingFormula`](#prop:magic-A-binding-formula) instance per
-CLAUDE.md §3b-cond.
-## Numerical witness
+AGENTS.md §3b-cond.
+## canonical witness
 
-[`folio-assistant/computations/binding_alpha_shift_witness.py`](../../folio-assistant/computations/binding_alpha_shift_witness.py)
+the canonical formalism
 emits a comparison witness showing the alpha-shift vs.
 magic-A predictions side-by-side for $A \in \{2, 3, 4\}$. The
 output JSON
-[`binding-alpha-shift-witness.witness.json`](../../folio-assistant/computations/binding-alpha-shift-witness.witness.json)
+[`binding-alpha-shift-witness.witness.json`](../../computations/binding-alpha-shift-witness.witness.json)
 quantifies the 80$\times$ gap closure for $^4_2\mathrm{He}$.

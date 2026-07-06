@@ -1,3 +1,7 @@
+This remark gives the concrete archimedean realisation of the abstract
+[substrate parameter](#def:substrate-parameter) $q$, built from a quantity
+that measures a connection's departure from classicality (the vanishing
+$F_A^+ = 0$ of the self-dual curvature).  The ingredients are as follows.
 Let $A$ be an instanton connection on $P$
 ([instanton](#def:categorical-instanton)), $F_A^+$ its self-dual curvature
 ([self-dual curvature](#ex:self-dual-curvature)), and

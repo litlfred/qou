@@ -42,7 +42,7 @@ Closure pathway:
    extension (currently only on `claude/item3-mathlib-tier-a-batch`).
 2. For each atom A ∈ {2..6}, compute χ^λ(T_w) at the canonical
    T_w for the height-6 partitions enumerated by
-   [`term7_height6_partition_enum.py`](../../folio-assistant/computations/term7_height6_partition_enum.py).
+   [`term7_height6_partition_enum.py`](../../computations/term7_height6_partition_enum.py).
 3. Sum w_λ · χ^λ(T_w) to evaluate χ_5(T_w) per atom.
 4. Fit the single ratio α_5 = (Term-7 contribution) / χ_5 from the
    AME residual; verify constancy across A.

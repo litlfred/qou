@@ -91,9 +91,9 @@ def markov_trace_symbolic(Z, N, q, include_inter=True):
     classical Plancherel point is the only place where the two
     conventions agree.  Cross-checks against the 1 ppb canonical
     50-dps reducer (`cross-check-trM-1ppb.witness.json`) at q_0:
-      proton:   1.0653061442544499
-      neutron:  0.9232332299116371
-      deuteron: 0.388286424047713  (`include_inter=True`)
+      proton:   1.0653062286131670
+      neutron:  0.9232332971861535
+      deuteron: 0.388286471547713  (`include_inter=True`)
 
     Performance: y_λ has sqrt(q) factors that make `sp.cancel`
     catastrophic for the deuteron's n=6 partition sum.  Workaround:
@@ -327,6 +327,16 @@ if __name__ == "__main__":
     ]
     if os.environ.get("HABIRO_WITH_DEUTERON"):
         cases.append(("D (deuteron, A=2)", 1, 1, True))
+    # A=3 (tritium, helium-3): 35-crossing braids over partitions of 9
+    # (30 partitions) — substantially heavier than the deuteron's
+    # 23-crossing / 11-partition case.  Gated behind HABIRO_WITH_A3 so
+    # the default (p, n only) and the deuteron-only run stay cheap.  T and
+    # ³He let path_b_habiro_mass_probe.py fill the A=3 rows and test the
+    # sub-1% binding claim (bean t6ba follow-up).  Mirrors the
+    # HABIRO_WITH_DEUTERON gate above.
+    if os.environ.get("HABIRO_WITH_A3"):
+        cases.append(("T (tritium, A=3)", 1, 2, True))
+        cases.append(("3He (helium-3, A=3)", 2, 1, True))
 
     results = {}
     for label, Z, N, inter in cases:
@@ -346,11 +356,32 @@ if __name__ == "__main__":
               f"all integral: {r['all_integral']}, "
               f"reconstruction: {r['reconstruction_matches']}")
 
+    # Merge-preserve (bean t6ba follow-up): a DEFAULT run (no HABIRO_WITH_DEUTERON
+    # / HABIRO_WITH_A3) computes only p,n.  Writing `results` fresh would CLOBBER
+    # an existing D / T / ³He row, silently regressing the witness below its
+    # richest committed scope and re-breaking `path_b_habiro_mass_probe` (which
+    # calibrates α_M off D).  Load any on-disk witness and preserve entries for
+    # cases this run did not (re)compute; freshly computed cases always win.
+    # Habiro coefficients are exact integers (deterministic), so a preserved
+    # entry never goes stale unless the algorithm itself changes.
+    _out_path = Path(__file__).parent / "habiro-coefficients-atomic.witness.json"
+    if _out_path.exists():
+        try:
+            _prior = json.loads(_out_path.read_text()).get("results", {})
+            for _label, _entry in _prior.items():
+                if _label not in results and "error" not in _entry:
+                    results[_label] = _entry
+                    print(f"  [merge-preserve] kept prior witness entry: {_label}")
+        except (json.JSONDecodeError, OSError):
+            pass  # corrupt/unreadable prior — fall back to a fresh write
+
     witness = {
         "computation": "habiro-coefficients-atomic",
         "description": (
             "Habiro / cyclotomic expansion tr_M(T_w, q) = Σ_m a_m·(check_q;check_q)_m "
-            "(check_q = q^{1/2}) for atomic braids p, n, D. Verifies the integrality "
+            "(check_q = q^{1/2}) for atomic braids p, n (default), D "
+            "(HABIRO_WITH_DEUTERON=1), and T / ³He (HABIRO_WITH_A3=1). "
+            "Verifies the integrality "
             "and termination properties of the Habiro coefficients claimed "
             "in habiro-ring.md and full-pole-structure-mass-trace.md."
         ),

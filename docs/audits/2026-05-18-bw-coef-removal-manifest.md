@@ -113,7 +113,7 @@ Category-A removed blocks) in prose. For each:
 ## Cited-from-deprecated-folder check
 
 After Category A executes, also clean up:
-- `folio-assistant/computations/_deprecated/bw_wenzl_shadow_equivalence.py` — purge or leave (already deprecated; harmless to keep as historical artefact).
+- `computations/_deprecated/bw_wenzl_shadow_equivalence.py` — purge or leave (already deprecated; harmless to keep as historical artefact).
 - Other `_deprecated/` scripts with BW references: same call.
 
 Recommendation: **leave `_deprecated/` alone** — it is already

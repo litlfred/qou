@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-08T20:46:16.189665+00:00",
-  "commitSha": "ac7880c5e13a03a249ce411afc7164900e62a115",
+  "computedAt": "2026-07-05T11:22:58.019306+00:00",
+  "commitSha": "6949424f7a827fb6d8f76f8fd3f1d4a45e37cfa2",
   "assertions": [
     {
       "name": "jones_markov_finite_positive[proton]",
@@ -42,11 +42,24 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4081,
+  "durationMs": 26,
   "computation": "tr-m-jones-markov-cross-check",
   "scriptFile": "tr_m_jones_markov_cross_check.py",
-  "scriptHash": "5c9d5c009820",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f2c8c10123a0",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
   "description": "Cross-check: the new `wedderburn_jones_markov.global_wedderburn_sum_jones_markov` (canonical y_λ via Wenzl) should reproduce the canonical tr_M values from `atomic-tr-m-mpfr-50dps.witness.json` (computed via markov_trace_recursive, the canonical Markov-axiom reducer). If the values agree to 1e-6 relative, the new wiring in crt_markov.py is empirically validated.",
   "auditOnly": "docs/audits/2026-05-08-p3-h-3a-divergence.md",
   "data": {
@@ -57,11 +70,11 @@
         "Z": 1,
         "N": 0,
         "n_strands": 3,
-        "canonical_abs_tr_M": 1.0653062285923893,
-        "jones_markov_partition_sum": 0.4153957863345666,
-        "jones_markov_abs": 0.4153957863345666,
-        "rel_err_vs_canonical": 0.6100691283074188,
-        "elapsed_sec": 0.19268282600023667,
+        "canonical_abs_tr_M": 1.0653062286131671,
+        "jones_markov_partition_sum": 0.41539578633234286,
+        "jones_markov_abs": 0.41539578633234286,
+        "rel_err_vs_canonical": 0.6100691283171114,
+        "elapsed_sec": 0.0020665160000135074,
         "non_zero_terms": 1,
         "note": "Discrepancy is the q=1 classical-character limit in specht_character_atomic, not a y_λ bug. The y_λ weight fix removes the 2-var-Schur drop-out for ≥3-row partitions (see docs/audits/2026-05-08-p3-h-3a-divergence.md)."
       },
@@ -71,11 +84,11 @@
         "Z": 0,
         "N": 1,
         "n_strands": 3,
-        "canonical_abs_tr_M": 0.9232332971695837,
-        "jones_markov_partition_sum": 0.4153957863345666,
-        "jones_markov_abs": 0.4153957863345666,
-        "rel_err_vs_canonical": 0.5500641196455192,
-        "elapsed_sec": 0.03960080400065635,
+        "canonical_abs_tr_M": 0.9232332971861535,
+        "jones_markov_partition_sum": 0.41539578633234286,
+        "jones_markov_abs": 0.41539578633234286,
+        "rel_err_vs_canonical": 0.5500641196560031,
+        "elapsed_sec": 0.0004028639998523431,
         "non_zero_terms": 1,
         "note": "Discrepancy is the q=1 classical-character limit in specht_character_atomic, not a y_λ bug. The y_λ weight fix removes the 2-var-Schur drop-out for ≥3-row partitions (see docs/audits/2026-05-08-p3-h-3a-divergence.md)."
       },
@@ -85,11 +98,11 @@
         "Z": 1,
         "N": 1,
         "n_strands": 6,
-        "canonical_abs_tr_M": 0.3882864715477134,
-        "jones_markov_partition_sum": 0.07330859093712394,
-        "jones_markov_abs": 0.07330859093712394,
-        "rel_err_vs_canonical": 0.811199729300598,
-        "elapsed_sec": 3.830156078998698,
+        "canonical_abs_tr_M": 0.3882864715594089,
+        "jones_markov_partition_sum": 0.07330859093603527,
+        "jones_markov_abs": 0.07330859093603527,
+        "rel_err_vs_canonical": 0.8111997293090887,
+        "elapsed_sec": 0.0015218130001812824,
         "non_zero_terms": 2,
         "note": "Discrepancy is the q=1 classical-character limit in specht_character_atomic, not a y_λ bug. The y_λ weight fix removes the 2-var-Schur drop-out for ≥3-row partitions (see docs/audits/2026-05-08-p3-h-3a-divergence.md)."
       }

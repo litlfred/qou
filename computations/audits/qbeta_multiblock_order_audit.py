@@ -37,7 +37,7 @@ empirical c_3 swings 2.98%. The swing therefore lives ENTIRELY in the
 categorical map f: Δtr_M ↦ Q_β, which must bridge order √u to order u³ —
 not in the block structure (which is proved and anchor-invariant).
 
-DISCIPLINE (CLAUDE.md §7b, canonical-derivation, flip-flop framing,
+DISCIPLINE (AGENTS.md §7b, canonical-derivation, flip-flop framing,
 canonical-ck-tiered-not-binary): no fitting, no candidate guessing. Every
 quantity is a fixed symbolic function of q. The outcome is a TIERED
 characterization of the obstruction (proved block structure / open f-map

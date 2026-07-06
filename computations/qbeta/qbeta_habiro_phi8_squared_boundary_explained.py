@@ -41,7 +41,7 @@ boundary. Four candidate hypotheses:
 OUTPUT
 ======
 
-  folio-assistant/computations/qbeta-habiro-phi8-squared-boundary-explained.witness.json
+  computations/qbeta-habiro-phi8-squared-boundary-explained.witness.json
   docs/audits/2026-06-01-qbeta-habiro-phi8-squared-boundary-explained.md
 
 USAGE

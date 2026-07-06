@@ -2,7 +2,8 @@ Let $(\mathbf{C}, A, \tau)$ be a
 ([quantum observable universe](#def:quantum-observable-universe)) with maximal torus
 $T$ ([maximal torus](#def:maximal-torus)) and higher differential forms
 $\Omega^k(A)$ ([higher forms](#def:higher-forms)). The $T$-action on
-$\Omega^k(A)$ induces a $\mathbb{Z}$-grading by weights. Denoting by
+$\Omega^k(A)$ induces the **weight decomposition**, a
+$\mathbb{Z}$-grading by weights. Denoting by
 $\pi_H, \pi_V$ the projections onto the weight-$0$ and non-zero-weight
 summands, every $\alpha \in \Omega^k(A)$ decomposes uniquely:
 
@@ -17,7 +18,7 @@ summands, every $\alpha \in \Omega^k(A)$ decomposes uniquely:
 \end{equation}
 ```
 
-Here $\alpha_H = \pi_H(\alpha)$ is the *horizontal component*
+Here $\alpha_H = \pi_H(\alpha)$ is the **horizontal component**
 (weight-$0$ under $T$) and $\alpha_V = \pi_V(\alpha)$ is the
-*vertical component* (non-zero weight). A form is *purely
-horizontal* if and only if $\alpha_V = 0$.
+**vertical component** (non-zero weight). A form is **purely
+horizontal** if and only if $\alpha_V = 0$.

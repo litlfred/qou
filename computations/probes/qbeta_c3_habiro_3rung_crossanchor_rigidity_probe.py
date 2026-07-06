@@ -11,7 +11,7 @@ PR #1781 found a 3-rung Habiro closure that reproduces empirical c_3 to
 
 Is this a GENUINE fibre-level Habiro element (reproduces empirical c_3
 at EVERY q₀ anchor) or a PROTON-ANCHOR COINCIDENCE (matches at one q₀
-only)? Per CLAUDE.md §"Im(q) at fibre vs observable level":
+only)? Per AGENTS.md §"Im(q) at fibre vs observable level":
   ❌ a REAL formula c_3 = f(q_real) matching multiple anchors — known to fail
   ✓ a FIBRE Habiro element F(q) at roots of unity — different question
 
@@ -22,16 +22,19 @@ BOTH established anchors and compare its swing to the empirical c_3 swing.
 
 | anchor | q₀ | empirical c_3 |
 |--------|-----|---------------|
-| proton (m_p) | 1.10997858275… | -2.0693 |
+| proton (m_p) | 1.10997859556… | -2.0693 |
 | muon   (m_μ) | 1.10997859555… | -2.0097 |
 
-Anchor separation ≈ 1.3e-8, yet empirical c_3 swings ≈ 2.88% — c_3 is a
-hyper-sensitive EXTRACTED quantity (it's the tiny c_3·u³ ladder term, so
-minute q shifts get amplified ~4.6e6×).
+Anchor separation ≈ 3.2e-12 (proton re-pinned to the habiro-refined C value
+2026-05-28; it now nearly coincides with the muon anchor), yet empirical c_3
+swings ≈ 2.88% — c_3 is a hyper-sensitive EXTRACTED quantity (it's the tiny
+c_3·u³ ladder term, so minute q shifts get amplified ~1.9e10×). The two
+near-identical q₀ carrying different empirical c_3 is exactly that
+hyper-sensitivity, not a contradiction.
 
 ## Prediction
 
-A smooth real-q formula CANNOT have a derivative dc_3/dq ≈ 4.6e6 near the
+A smooth real-q formula CANNOT have a derivative dc_3/dq ≈ 1.9e10 near the
 anchor, so the 3-rung formula's swing should be MICROSCOPIC vs the 2.88%
 empirical swing — REFUTING it as a real-q fibre element and CONFIRMING it
 is a proton-anchor near-match. That sharpens the search: the genuine
@@ -150,7 +153,7 @@ def main() -> int:
         print(f"  {empirical_swing_pct:+.2f}% — a {mismatch_factor:.1e}× mismatch. At the muon")
         print(f"  anchor the formula misses empirical c_3 by {err_m_pct:+.2f}%.")
         print()
-        print("  INTERPRETATION (consistent with CLAUDE.md §Im(q) fibre-vs-observable):")
+        print("  INTERPRETATION (consistent with AGENTS.md §Im(q) fibre-vs-observable):")
         print("  empirical c_3 has dc_3/dq ~ 4.6e6 near the anchor — NO smooth real-q")
         print("  formula can track that. So [3]_q/25 is NOT a real-q fibre element;")
         print("  the genuine Habiro element (if any) is complex-analytic / evaluated")
@@ -189,7 +192,7 @@ def main() -> int:
         f"c_3 only at the proton anchor (miss {err_m_pct:+.2f}% at muon). This "
         "CONFIRMS [3]_q/25 is a proton-anchor NEAR-MATCH, not a real-q fibre "
         "element — consistent with the known impossibility of a real-q c_3=f(q) "
-        "matching multiple anchors (CLAUDE.md). The genuine Habiro element, if it "
+        "matching multiple anchors (AGENTS.md). The genuine Habiro element, if it "
         "exists, is complex-analytic / root-of-unity. Falsification test; no fit, "
         "no production change."
     ))

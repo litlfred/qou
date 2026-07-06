@@ -65,7 +65,10 @@ with Δ(net) = net(n) - net(p) the difference of GS-NF coefficient
 sums between the canonical neutron and proton braids
 (`free-neutron-decay.witness.json` typed crossings):
 
-    net(n) = +0.81083, net(p) = +0.99913  →  Δ(net) = -0.18829
+#     net(n) = +0.81083, net(p) = +0.99913  →  Δ(net) = -0.18829
+
+TARGET_NET_NEUTRON = 0.81083
+TARGET_NET_PROTON = 0.99913
 
 ══════════════════════════════════════════════════════════════════
  OBSERVABLE vs VIRTUAL DECOMPOSITION
@@ -136,8 +139,8 @@ import mpmath as mp
 from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: F401  (re-export)
 
 _HERE = Path(__file__).resolve().parent
-_BETA_DECAY_WITNESS = __pb.witness_path("beta-decay-energy-scale.witness.json", HERE)
-_Q_PINNING_WITNESS = __pb.witness_path("q-pinning-50-digit.witness.json", HERE)
+_BETA_DECAY_WITNESS = _pb.witness_path("beta-decay-energy-scale.witness.json", _HERE)
+_Q_PINNING_WITNESS = _pb.witness_path("q-pinning-50-digit.witness.json", _HERE)
 
 
 @lru_cache(maxsize=None)
@@ -390,6 +393,50 @@ def q_beta_predicted_mev() -> mp.mpf:
     """
     q0 = _q_0()
     return M_E_MEV * abs(q0 ** 2 - 2 * q0 - 1) * (q0 + 1) / (2 * q0 ** 3)
+
+
+@lru_cache(maxsize=None)
+def q_beta_kashiwara_n2_mev() -> mp.mpf:
+    """Q_β via the parameter-free Kashiwara b² truncation (N=2).
+
+    Canonical near-match Q_β used for the production neutron mass
+    (`m_n = m_p + Q_β + m_e`). Refines the single-wrap closed form
+    `q_beta_predicted_mev()` (= Q_A, +1677 ppm on Q_β) by the first two
+    parameter-free Kashiwara brane-tower corrections — all functions of
+    q_0 alone, NO experimental input:
+
+        Q_A   = m_e·|q²−2q−1|(q+1)/(2q³)            (= q_beta_predicted_mev)
+        z     = 1/(√q + 1/√q),  h = q − q⁻¹,  ℏ_q = (q−1)/q
+        α     = (z − 1)·h / 2
+        b     = √(1 − q²/(q²+1)²)                     (Hoefsmit b)
+        Q_N1  = Q_A · cos(α − b·ℏ_q²/2)               (N=1, +73.8 ppm on Q_β)
+        Q_N2  = Q_N1 · (1 − b²·ℏ_q⁴)                  (N=2, +1.25 ppm on Q_β)
+
+    TIER: **near-match** (not proved). The b^k recursion is the Kashiwara
+    crystal brane-tower of `prop:tau-M-asymptotic-rep-theory` (authorNote
+    status: experimental); N=2 is a truncation order chosen by target
+    precision — the same convergent-ladder discipline as the Q_β c_k
+    framing (`docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`).
+    The experimental Q_β (Q_AME) enters only the probe's *error metric*,
+    never the value. Exact closure is gated on the s5-so3 / Habiro-element
+    keystone (`conj:s5-so3-fiber-action`, bean s5bb).
+
+    On the neutron, Q_β is only ~0.083 % of m_n, so the 1.25 ppm Q-error
+    becomes ~1 ppb on m_n — vs the flavor-split route's −1.76 ppm.
+
+    Probe: `probe_q_beta_operator_valued_N3.py`
+    (witness `q-beta-operator-valued-N3.witness.json`: Q_N2, eps_N2 ≈ 1.25 ppm).
+    """
+    q = _q_0()
+    Q_A = q_beta_predicted_mev()
+    h = q - 1 / q
+    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    hbar_q = (q - 1) / q
+    alpha = (z - 1) * h / 2
+    q_sq = q ** 2
+    b = mp.sqrt(1 - q_sq / (q_sq + 1) ** 2)        # Hoefsmit b (= probe's d1·d2+1)
+    Q_N1 = Q_A * mp.cos(alpha - b * hbar_q ** 2 / 2)
+    return Q_N1 * (1 - b ** 2 * hbar_q ** 4)
 
 
 @lru_cache(maxsize=None)

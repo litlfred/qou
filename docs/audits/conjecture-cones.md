@@ -11,7 +11,7 @@ conjecture.  The cone tells us *exactly* what becomes conjectural-by-
 propagation if the named conjecture is left open — and conversely,
 *how much of the paper is unblocked* once it is closed.
 
-The cone respects the conjectural-propagation rule of CLAUDE.md §3b:
+The cone respects the conjectural-propagation rule of AGENTS.md §3b:
 any provable block (`theorem` / `proposition` / `lemma` /
 `corollary`) appearing in the cone of an open `conj:` block is a
 **propagation violation** and must be either demoted to `conjecture`
@@ -229,7 +229,7 @@ See workplan task **P3.1** (Conjectural-propagation sweep) for the action.
 
 ## Methodology — does propagation pass through remarks?
 
-CLAUDE.md §3b clarifies that the conjectural-propagation rule
+AGENTS.md §3b clarifies that the conjectural-propagation rule
 (downstream of a `conj:` ⇒ kind must be `conjecture`) applies to
 **provable kinds only** (`theorem`, `proposition`, `lemma`,
 `corollary`).  Remarks make no logical claim and so are exempt.

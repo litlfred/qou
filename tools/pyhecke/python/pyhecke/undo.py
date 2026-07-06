@@ -100,7 +100,7 @@ def undo_shell_magic(*args: Any, **kwargs: Any) -> Any:
     """
     raise NotImplementedError(
         "undo_shell_magic (level 4 → 3) is not yet implemented. "
-        "See folio-assistant/computations/INFRASTRUCTURE-AUDIT.md "
+        "See computations/INFRASTRUCTURE-AUDIT.md "
         "section 'Track B: Shortcut infrastructure'."
     )
 

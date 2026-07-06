@@ -26,7 +26,7 @@ $$
 is the trace of $b$ acting in the seminormal-basis representation
 $\rho_\lambda : H_n(q) \to \mathrm{End}(V_\lambda)$.*
 
-### Why the :defterm[q-dimension layer]{#q-dimension-layer} matters
+### Significance of the :defterm[q-dimension layer]{#q-dimension-layer}
 
 The Markov trace $\mathrm{tr}_M : H_n(q) \to R$ is the
 characteristic invariant used in operator-selection LP
@@ -81,11 +81,11 @@ Summing over $\lambda$ recovers the standard Markov trace.
 ### Computation
 
 A reusable Python implementation is available in
-[`folio-assistant/computations/delta_q_decoration.py`](folio-assistant/computations/delta_q_decoration.py),
+the canonical formalism,
 using the seminormal Hoefsmit representation matrices from
-[`hecke_characters.py`](folio-assistant/computations/hecke/hecke_characters.py).
+the canonical formalism.
 The witness data
-[`delta-q-decoration.witness.json`](folio-assistant/computations/delta-q-decoration.witness.json)
+[`delta-q-decoration.witness.json`](computations/delta-q-decoration.witness.json)
 caches the per-irrep characters for $H_2, H_3, H_4$ NF bases and
 the force-carrier knots $T_{2,9}, T_{3,5}$.
 

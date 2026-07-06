@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **V_(1,1,1) per-irrep character via sign-rep substitution.**
 
 Per the closure gap analysis (item 2 of ), V_(1,1,1) is the

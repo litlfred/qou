@@ -1,8 +1,7 @@
-The computation `tau-lepton-nf.py` evaluates the continuant
+Evaluating the continuant
 recurrence ([lepton continuant](#prop:lepton-continuant-recurrence))
-at $q_0 \approx 1.1100$ for $n = 0, 1, \ldots, 9$.  The witness
-file `tau-lepton-nf.witness.json` records every coefficient to
-machine precision; the recurrence residuals are all
+at $q_0 \approx 1.1100$ for $n = 0, 1, \ldots, 9$ yields coefficients where
+the recurrence residuals are all
 $< 10^{-12}$.
 
 ## Full NF table

@@ -8,7 +8,7 @@ with no remaining choice.*
 
 | form | $\tau(1)$ | $\tau(\sigma_i)$ | $w_\lambda$ | non-degenerate? |
 |---|---:|---:|---|:---:|
-| Jones–Markov $\tau_M$ | $1$ | $z = 1/[q^{1/2}+q^{-1/2}]$ | Wenzl-bridge $y_\lambda$ | ✓ on $H_n(q)$ |
+| Jones–Markov $\tau_M$ | $1$ | $z = 1/[q^{1/2}+q^{-1/2}]$ | Wenzl-bridge $y_\lambda$ | yes, on $H_n(q)$ |
 
 ## The chain: cat-action $\to$ Markov trace
 
@@ -109,22 +109,23 @@ non-degenerate Frobenius form on the Iwahori–Hecke algebra
 * $\tau_M$ *block-wise.  Therefore the QOU mass identity uniquely
 determines* $\tau_M$ *as the canonical Markov trace of the
 framework.*
+## Discussion
 
-**Proof sketch.**  Non-degeneracy is required by the Frobenius
-co-Casimir construction (Step 3).  $\tau_M$ is non-degenerate
-(Jones \cite{jones1987} Theorem 6.1; Wenzl \cite{wenzl1988} Lemma
-2.4).  Any other non-degenerate trace on $H_n(R, q)$ satisfying
-the Markov-peel + cyclic axioms equals $\tau_M$ by Wenzl's
-uniqueness corollary to Lemma 2.4 (equivalently Jones' Markov
-trace uniqueness).  Hence $\tau_M$ is the unique such trace. ∎
+This proposition is **proved** — a structural theorem about the
+representation theory of the Hecke algebra, with no fitting and no
+empirical input.  Uniqueness of $\tau_M$ as the non-degenerate
+Frobenius form on $H_n(R, q)$ is axiomatised via the
+`MarkovTraceUniqueness` class in the Lean file (citing Jones 1987 /
+Wenzl 1988); downstream Lean results are sorry-free **conditional on
+the class instance** per AGENTS.md §3b-cond.
 
 ## Computational consequence
 
 The QOU production stack computes $\tau_M$ on the
 **11-crossing canonical proton / neutron braid** via four
 independent paths — Hoefsmit seminormal matrices
-(`atomic_tr_m_mpfr_50dps.py`), `markov_peel`, the $\chi$-cache
-combiner (`canonical_tr_m_via_chi_cache.py`), and the Habiro
+(the formal derivation), `markov_peel`, the $\chi$-cache
+combiner (the formal derivation), and the Habiro
 integer-$a_m$ expansion — which agree to $\leq 2 \times 10^{-15}$
 at the proton-pinned $q_0$:
 
@@ -145,13 +146,3 @@ at the proton-pinned $q_0$:
 > different-braid framing (line 248-251); decision A' purges
 > $\tau_{\mathrm{SW}}$ and reads the from-scratch as a different
 > braid's $\tau_M$, not a competing form.
-
-## Discussion
-
-This proposition is **proved** — a structural theorem about the
-representation theory of the Hecke algebra, with no fitting and no
-empirical input.  Uniqueness of $\tau_M$ as the non-degenerate
-Frobenius form on $H_n(R, q)$ is axiomatised via the
-`MarkovTraceUniqueness` class in the Lean file (citing Jones 1987 /
-Wenzl 1988); downstream Lean results are sorry-free **conditional on
-the class instance** per CLAUDE.md §3b-cond.

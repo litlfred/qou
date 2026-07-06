@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-29T22:42:42.370456+00:00",
-  "commitSha": "5f5e7107d54440ae8bd5d2de9571831ac92a3508",
+  "computedAt": "2026-07-05T11:28:21.862976+00:00",
+  "commitSha": "6949424f7a827fb6d8f76f8fd3f1d4a45e37cfa2",
   "assertions": [
     {
       "name": "deuteron_rotational_energy_derived_within_10pct",
@@ -14,22 +14,29 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 11,
   "computation": "binding-qhamiltonian-rotational-scale",
   "scriptFile": "binding_qhamiltonian_rotational_scale.py",
-  "scriptHash": "2ed14944e7d9",
-  "scriptCommitSha": "5f5e7107d54440ae8bd5d2de9571831ac92a3508",
+  "scriptHash": "2f553c5f5686",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Derive-or-refute: is binding the q-Hamiltonian rotational energy E_rot = μ₀·ℏ_q·J_q²(j=n/2) with all factors derived? μ₀ = m_e/(3(q−q⁻¹)/2) ≈ 1.63 MeV (DERIVED, per-crossing scale; the earlier 249 MeV used the wrong spin-½ quantum). Result: D −9% (deuteron reproduced from fully-derived quantities, 0 free params), but T/³He/⁴He undershoot 44–72% — the same per-rep A≥3 deficit. So the gate is NOT the scale (μ₀ is derived) but the per-rep A≥3 structure: highest-weight j=n/2 collapses the per-block phase like the scalar trace. No fit.",
   "data": {
     "derived_scales": {
-      "mu0_MeV": "1.629510389",
-      "hbar_q": "0.09908172644",
+      "mu0_MeV": "1.629510572",
+      "hbar_q": "0.09908171604",
       "mu0_def": "m_e / (3*(q - q^-1)/2)  [per-crossing scale]"
     },
     "rotational_energy_vs_AME": {
@@ -38,31 +45,31 @@
         "j": 3.0,
         "Jq2": "12.508666",
         "E_rot_MeV": "2.0195829",
-        "B_AME_MeV": 2.224566,
+        "B_AME_MeV": 2.2245662,
         "err_pct": -9.2
       },
       "T": {
         "n": 9,
         "j": 4.5,
-        "Jq2": "27.003687",
+        "Jq2": "27.003686",
         "E_rot_MeV": "4.3598722",
-        "B_AME_MeV": 8.481798,
+        "B_AME_MeV": 8.4817962,
         "err_pct": -48.6
       },
       "3He": {
         "n": 9,
         "j": 4.5,
-        "Jq2": "27.003687",
+        "Jq2": "27.003686",
         "E_rot_MeV": "4.3598722",
-        "B_AME_MeV": 7.718043,
+        "B_AME_MeV": 7.71804132,
         "err_pct": -43.5
       },
       "4He": {
         "n": 12,
         "j": 6.0,
-        "Jq2": "48.711347",
-        "E_rot_MeV": "7.864676",
-        "B_AME_MeV": 28.295673,
+        "Jq2": "48.711345",
+        "E_rot_MeV": "7.8646758",
+        "B_AME_MeV": 28.2956624,
         "err_pct": -72.2
       }
     },
@@ -72,6 +79,11 @@
       "A3_deficit": "T −49%, ³He −44%, ⁴He −72% (same per-rep deficit)",
       "gate": "NOT the scale (μ₀ derived) — the per-rep A≥3 structure; j=n/2 highest-weight collapses the per-block phase",
       "prior_error_corrected": "earlier draft used spin-½ (j=½) → bogus 249 MeV; correct j=n/2 gives derived 1.63 MeV"
+    },
+    "lean_uniqueness_ref": {
+      "generic": "qou:QOU.BraidKnot.@nucleus_uniqueness_closed (3*A)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     }
   }
 }

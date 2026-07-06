@@ -1,6 +1,9 @@
 import { definition } from "../../schema/builders";
 
 export default definition({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+  ],
   label: "def:Q-value-transition",
   title:
     "$\\mathcal{Q}_q$-Value as Categorical Action Difference",
@@ -17,7 +20,6 @@ export default definition({
     validation: "not_checked",
   },
   uses: [
-    "def:q-energy",
-    "thm:parity-regime-selection",
+    "conj:q-integer-mass-formula",
   ],
 });

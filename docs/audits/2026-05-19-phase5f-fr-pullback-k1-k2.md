@@ -19,7 +19,7 @@
 
 ## This probe
 
-[`fr_pullback_k1_k2_test.py`](../../folio-assistant/computations/fr_pullback_k1_k2_test.py) extends #826's infrastructure (corrected canonical braid words; $S_{\text{uniform},k}$-preserving normalization) to a $6 \times 6$ grid over candidate $(K_1^*, K_2^*)$ pairs, with $K_3^* = 4_1$ fixed.
+[`fr_pullback_k1_k2_test.py`](../../computations/fr_pullback_k1_k2_test.py) extends #826's infrastructure (corrected canonical braid words; $S_{\text{uniform},k}$-preserving normalization) to a $6 \times 6$ grid over candidate $(K_1^*, K_2^*)$ pairs, with $K_3^* = 4_1$ fixed.
 
 Candidate sets at k=1 and k=2:
 
@@ -86,8 +86,8 @@ These are queued in the 1ppb ledger as Phase 5g-5i.
 
 ## Implementation reference
 
-- Script: [`folio-assistant/computations/fr_pullback_k1_k2_test.py`](../../folio-assistant/computations/fr_pullback_k1_k2_test.py)
-- Witness: `folio-assistant/computations/fr-pullback-k1-k2.witness.json` (3 assertions, all passed)
+- Script: [`computations/fr_pullback_k1_k2_test.py`](../../computations/fr_pullback_k1_k2_test.py)
+- Witness: `computations/fr-pullback-k1-k2.witness.json` (3 assertions, all passed)
 - Cross-reference (PR #826): infrastructure source for canonical braid words + weight normalization.
 - Cross-reference (PR #819 Phase 5d.5): torus-knot candidate set for K_k*.
 

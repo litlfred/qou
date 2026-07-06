@@ -1,4 +1,5 @@
 import QOU.Basic
+import QOU.ParticleInteractions.AtomKnot
 
 
 /-!
@@ -8,6 +9,14 @@ LaTeX: `\label{prop:isotope-knot-equivalence}`
 -/
 
 namespace QOU.BraidKnot
+
+/-- **Isotope relation** on atom-knots: same proton count and proton-quark
+    block.  Faithful copy of `AtomKnot.isIsotope` from the sibling content
+    block `def:isotope-knot` (`isotope-knot.lean`), inlined here so this
+    equivalence proof verifies standalone (the sibling has no library module
+    to import). -/
+def AtomKnot.isIsotope (K₁ K₂ : AtomKnot) : Prop :=
+  K₁.Z = K₂.Z ∧ K₁.protonBlock = K₂.protonBlock
 
 /-- **Isotope relation is reflexive.** -/
 theorem AtomKnot.isIsotope_refl (K : AtomKnot) : K.isIsotope K :=

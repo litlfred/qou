@@ -27,9 +27,10 @@ open scoped CategoryTheory CategoryTheory.MonoidalCategory
 
 namespace QOU
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -55,12 +56,14 @@ structure CRManifoldData where
   r : ℕ
   s : ℕ
   rs_sum : r + s = n
-  /-- The contact form `θ` as a continuous real-valued function.
-      Full type: a section of `T*M` (1-form), here modelled as `C(M, ℝ)`.
+  /-- The contact form `θ` as an `R_q`-valued function on `M`.
+      Full type: a section of `T*M` (1-form), here modelled as a map
+      `M → R_q` (the ground ring `R_q` carries no canonical topology, so
+      continuity is not imposed at this level of detail).
       The contact condition `θ ∧ (dθ)^n ≠ 0` is a non-degeneracy axiom
-      that requires differential forms; we record θ as a continuous function
+      that requires differential forms; we record θ as a function
       and state the non-degeneracy separately. -/
-  contactForm : C(M, R_q)
+  contactForm : M → R_q
   /-- The contact form is non-degenerate: there exists a point where θ ≠ 0. -/
   contact_nondeg : ∃ p : M, contactForm p ≠ 0
   /-- The Reeb vector field `ξ`, characterised by `ι_ξ dθ = 0` and `θ(ξ) = 1`.
@@ -69,5 +72,7 @@ structure CRManifoldData where
   reebField : C(M, M)
   /-- The Reeb field preserves the contact form: θ(ξ(p)) = θ(p) for all p. -/
   reeb_preserves_contact : ∀ p : M, contactForm (reebField p) = contactForm p
+
+end
 
 end QOU

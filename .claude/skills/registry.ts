@@ -123,8 +123,7 @@ export const registry: SkillRegistry = {
     {
       event: "SessionStart",
       commands: [
-        { type: "command", command: "./scripts/session-status.sh" },
-        { type: "command", command: "./scripts/open-assistant.sh" },
+        { type: "command", command: "./scripts/session-start-coord-sweep.sh" },
         { type: "command", command: "./scripts/lean-build-bg.sh &" },
       ],
     },

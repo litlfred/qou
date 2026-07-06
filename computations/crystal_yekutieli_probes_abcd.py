@@ -429,8 +429,13 @@ def main():
             .decode().strip()
         ),
     }
-    out_path = Path(__file__).parent / "crystal-yekutieli-probes-abcd.witness.json"
-    out_path.write_text(json.dumps(witness, indent=2, sort_keys=True) + "\n")
+    import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+    _sys.path.insert(0, str(Path(__file__).resolve().parent / "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
+    out_path = WitnessBuilder.wrap_legacy(
+        "crystal-yekutieli-probes-abcd", witness,
+        script_path=__file__, engine="sympy",
+    ).save()
     print(f"  Witness: {out_path.relative_to(Path.cwd())}")
 
 

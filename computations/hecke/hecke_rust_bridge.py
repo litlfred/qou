@@ -20,7 +20,7 @@ Usage:
         # falls back to Python
         result = compute_nucleus(6, 8)
 
-@module folio-assistant/computations/hecke_rust_bridge
+@module computations/hecke_rust_bridge
 """
 
 

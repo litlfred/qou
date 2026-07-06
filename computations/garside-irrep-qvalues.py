@@ -24,7 +24,7 @@ Fluid dynamics connection:
   - Q = |Σ_λ w_λ × Δtr_λ| × energy_scale
 
 Usage:
-    cd folio-assistant/computations && python3 garside-irrep-qvalues.py
+    cd computations && python3 garside-irrep-qvalues.py
 """
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir

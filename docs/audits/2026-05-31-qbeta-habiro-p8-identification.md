@@ -5,8 +5,8 @@
 > Sibling identifications: [`u^15`](2026-05-31-qbeta-habiro-depth15-interpretation.md) (braid-pair first-disagreement fingerprint, NOT (u;u)_5). This audit: the residual `P_8(u)`.
 >
 > Branch: `claude/brave-mendel-FPxFl` (PR #1579).
-> Probe scripts: [`qbeta_habiro_p8_identification_probe.py`](../../folio-assistant/computations/probes/qbeta_habiro_p8_identification_probe.py), [`qbeta_habiro_p8_deep_probe.py`](../../folio-assistant/computations/probes/qbeta_habiro_p8_deep_probe.py).
-> Witness: [`qbeta-habiro-p8-identification.witness.json`](../../folio-assistant/computations/probes/qbeta-habiro-p8-identification.witness.json).
+> Probe scripts: [`qbeta_habiro_p8_identification_probe.py`](../../computations/probes/qbeta_habiro_p8_identification_probe.py), [`qbeta_habiro_p8_deep_probe.py`](../../computations/probes/qbeta_habiro_p8_deep_probe.py).
+> Witness: [`qbeta-habiro-p8-identification.witness.json`](../../computations/probes/qbeta-habiro-p8-identification.witness.json).
 >
 > **Note:** the parent agent was truncated before writing this audit. The witness contains the full analysis; this doc summarizes the key numeric findings. A follow-up structural-match agent is needed to attempt categorical identification.
 
@@ -79,4 +79,4 @@ This symmetry is a STRUCTURAL FINGERPRINT — any categorical object that produc
   - [`u^15` interpretation](2026-05-31-qbeta-habiro-depth15-interpretation.md) (braid-pair first-disagreement fingerprint)
   - `(u−1)(u+1) = Φ_1·Φ_2` (classical-limit kill, identified in parent audit)
 - Master ledger: [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md) PROBE NEW
-- Per CLAUDE.md flip-flop discipline: do NOT promote a numerical near-match to "P_8 IS X categorically" without coefficient-level structural agreement.
+- Per AGENTS.md flip-flop discipline: do NOT promote a numerical near-match to "P_8 IS X categorically" without coefficient-level structural agreement.

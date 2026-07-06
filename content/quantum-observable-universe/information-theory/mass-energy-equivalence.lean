@@ -1,4 +1,9 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Sqrt
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Positivity
 
 
 /-!
@@ -55,9 +60,8 @@ theorem massEnergyEquivalence (q : ℝ) (hq : q ≠ 1)
     (E : ℝ) :
     E = categoricalMass q E * speedOfLightSq q := by
   unfold categoricalMass speedOfLightSq
-  have h : (q - 1) ^ 2 ≠ 0 := pow_ne_zero 2 (sub_ne_zero.mpr hq)
+  have h : q - 1 ≠ 0 := sub_ne_zero.mpr hq
   field_simp
-  ring
 
 /-- At q = 1 the speed of light diverges, recovering the classical
     limit where c → ∞ (Galilean regime). -/
@@ -73,17 +77,18 @@ theorem massEnergy_classical_limit :
   refine ⟨Real.sqrt ε, Real.sqrt_pos.mpr hε, ?_⟩
   intro q hq_ne hq_lt
   unfold speedOfLightSq
-  have h_sq_pos : (0 : ℝ) < (q - 1) ^ 2 := by positivity
-  rw [div_lt_div_iff hε h_sq_pos]
-  -- Need (q-1)² < ε, i.e., (q-1)² · 1 < 1 · ε
-  rw [one_mul, mul_one]
+  have h_sq_pos : (0 : ℝ) < (q - 1) ^ 2 := by
+    rw [← sq_abs]
+    exact pow_pos hq_ne 2
   -- |q-1| < √ε implies (q-1)² < ε
-  calc (q - 1) ^ 2 = |q - 1| ^ 2 := by rw [sq_abs]
-    _ < (Real.sqrt ε) ^ 2 := by
-        apply sq_lt_sq'
-        · linarith [abs_nonneg (q - 1)]
-        · exact hq_lt
-    _ = ε := Real.sq_sqrt (le_of_lt hε)
+  have hlt : (q - 1) ^ 2 < ε :=
+    calc (q - 1) ^ 2 = |q - 1| ^ 2 := by rw [sq_abs]
+      _ < (Real.sqrt ε) ^ 2 := by
+          apply sq_lt_sq'
+          · linarith [abs_nonneg (q - 1)]
+          · exact hq_lt
+      _ = ε := Real.sq_sqrt (le_of_lt hε)
+  exact one_div_lt_one_div_of_lt h_sq_pos hlt
 
 /-- Consistency check: the electron (left trefoil, 3 positive crossings)
     has crossing energy E = 3q and mass m = 3q(q-1)². -/

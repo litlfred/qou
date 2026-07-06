@@ -1,0 +1,86 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-30T18:14:43.660075+00:00",
+  "commitSha": "4620047615b91a5418d07c6051d6d9fa5a4df5fa",
+  "assertions": [
+    {
+      "name": "cs_core_plus_coulomb_beats_production_on_every_mirror_pair",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Charge-symmetric core + standard Coulomb has a SMALLER residual to ΔB_AME than the production sigma/sigma^-1 B_sym on every mirror pair (3H/3He, 7Li/7Be, 13C/13N) — the split is Coulomb, not strong CSB. CS+Coulomb worst-case error 37% (Nolen-Schiffer-scale) vs production's ~200-350%."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "coulomb-mirror-killswitch-probe",
+  "scriptFile": "coulomb_mirror_killswitch_probe.py",
+  "scriptHash": "d52d1cf46371",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Bean 754x step 4 kill-switch: tests whether a charge-symmetric strong core (gg result: mirror ΔB_sym=0) plus textbook uniform-sphere Coulomb E_C=(3/5)Z(Z-1)·alpha·hbar_c/(r0·A^1/3) (r0=1.2fm, alpha·hbar_c=1.43996 MeV·fm — standard, not fit) reproduces the AME mirror-nucleus binding splits for 3H/3He, 7Li/7Be, 13C/13N. CS-core+Coulomb matches ΔB_AME to ~20-40% (within the known Nolen-Schiffer / uniform-sphere over-estimate for light nuclei), while the production sigma/sigma^-1 B_sym over-splits by ~200-350%. Confirms the mirror split is Coulomb on a charge-symmetric core, not strong charge-symmetry breaking. (a) scope-limited; no production rewire (owner-gated).",
+  "data": {
+    "q0": 1.1099785955573347,
+    "E0_MeV": 4.185980827582892,
+    "alpha_hbar_c_MeV_fm": 1.43996,
+    "r0_fm": 1.2,
+    "rows": [
+      {
+        "pair": "3H-3He",
+        "lo": "3H",
+        "hi": "3He",
+        "A": 3,
+        "E_C_lo": 0.0,
+        "E_C_hi": 0.99841250061394,
+        "dE_coulomb": 0.99841250061394,
+        "dB_pred_cs_plus_coulomb": 0.99841250061394,
+        "dB_AME": 0.7637548800000014,
+        "dB_prod_sigma": 2.270772063769554,
+        "resid_cs_coulomb": 0.2346576206139387,
+        "resid_prod": 1.5070171837695527
+      },
+      {
+        "pair": "7Li-7Be",
+        "lo": "7Li",
+        "hi": "7Be",
+        "A": 7,
+        "E_C_lo": 2.258251650087719,
+        "E_C_hi": 4.516503300175438,
+        "dE_coulomb": 2.258251650087719,
+        "dB_pred_cs_plus_coulomb": 2.258251650087719,
+        "dB_AME": 1.644239799999994,
+        "dB_prod_sigma": 6.812316191308653,
+        "resid_cs_coulomb": 0.6140118500877252,
+        "resid_prod": 5.168076391308659
+      },
+      {
+        "pair": "13C-13N",
+        "lo": "13C",
+        "hi": "13N",
+        "A": 13,
+        "E_C_lo": 9.186016823890418,
+        "E_C_hi": 12.860423553446589,
+        "dE_coulomb": 3.6744067295561713,
+        "dB_pred_cs_plus_coulomb": 3.6744067295561713,
+        "dB_AME": 3.0028192999999987,
+        "dB_prod_sigma": 13.624632382617278,
+        "resid_cs_coulomb": 0.6715874295561726,
+        "resid_prod": 10.62181308261728
+      }
+    ]
+  }
+}

@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
 """Sub-lemma 2.1 operator-valued A^λ_{ξν}(I_2) extraction at H_9.
 
+.. note::
+   **STATUS (2026-06-16): INERT in production + rank-deficient min-norm fit.**
+   The A≥3 path of ``canonical_tr_m_via_branching.py`` returns the value via the
+   lossless transfer matrix; this least-squares H_9 extract feeds no live value.
+   Non-fitted replacement: the categorical ``A^λ_{ξν}(I)=Π_{ξν} ρ_λ(I) Π_{ξν}``
+   (``a_operator_categorical.py``). See
+   ``docs/audits/2026-06-16-wenzl-a3-wireup-scope-and-deflag.md``.
+
 Multi-interface extension of `sublemma_2_1_A_operator_extract.py`
 (deuteron / H_6 single-interface case, verified at machine ε for all
 11 λ ⊢ 6).

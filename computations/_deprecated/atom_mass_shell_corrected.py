@@ -21,7 +21,7 @@ Chebyshev recurrence:
   d_{n+1} = c_n
 
 Usage:
-    python3 folio-assistant/computations/atom_mass_shell_corrected.py
+    python3 computations/atom_mass_shell_corrected.py
 """
 
 import math, sys

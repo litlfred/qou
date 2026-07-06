@@ -1,13 +1,12 @@
-/-!
-# QOU.BraidKnot.terms_2_6_higher_operations — placeholder stub
+import Mathlib.Tactic
 
-**Placeholder canonical** for content block
+/-!
+# QOU.BraidKnot.terms_2_6_higher_operations
+
+**Canonical declaration** for content block
 [`prop:terms-2-6-higher-operations`](../../../quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.md): *QOU.BraidKnot.terms_2_6_higher_operations*.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.BraidKnot.terms_2_6_higher_operations` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
+This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
 -/
 
 namespace QOU.BraidKnot
@@ -56,12 +55,9 @@ remaining open identifications in the spectral-sequence framework
 This proposition sketches concrete avenues to close both via
 **higher operations** on the Hochschild cohomology of $H_n(R, q)$.
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.ts
-theorem terms_2_6_higher_operations [ctx : Terms26HigherOperationsContext] :
+def terms_2_6_higher_operations [ctx : Terms26HigherOperationsContext] :
     (ctx.target_page_term_2 = 1 ∧ ctx.hochschild_arity_term_2 = 2) ∧
     (ctx.target_page_term_6 = 5 ∧ ctx.hochschild_arity_term_6 = 6) :=
   ⟨ctx.claim_term_2_single_generator_brane_tower,

@@ -24,7 +24,7 @@ usage per script (verified against current `main`):
 | `deuteron_delta_i_audit` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 
 These per-term fields **do not exist** in the canonical
-[`atomic-mass-via-rho-k.witness.json`](../../folio-assistant/computations/atomic-mass-via-rho-k.witness.json),
+[`atomic-mass-via-rho-k.witness.json`](../../computations/atomic-mass-via-rho-k.witness.json),
 because the resolved formula `M(K) = ρ_K · m_e · |tr_M(K)|`
 (per `AUDIT-DEEP-2026-05.md` §3.3a Options A + C, landed via
 PR #564) is **not** an additive six-term sum. The canonical
@@ -44,7 +44,7 @@ consumers of the legacy witness, by design.
    - the specific legacy fields it depends on.
 
 2. **The legacy script's deprecation notice**
-   ([`atomic_braid_mass_table.py`](../../folio-assistant/computations/atomic_braid_mass_table.py))
+   ([`atomic_braid_mass_table.py`](../../computations/atomic_braid_mass_table.py))
    now explicitly lists the four audit-only retained consumers
    so future migration efforts don't redundantly re-triage them.
 
@@ -97,7 +97,7 @@ rayon-parallelized binary + Python wrapper:
 |-----------|------|------|
 | Rust module | [`tools/hecke-engine/src/wenzl_lr.rs`](../../tools/hecke-engine/src/wenzl_lr.rs) | `chi_via_lr_2way`, `chi_via_lr_kway`, `tr_m_via_lr` — rayon-parallelized over `λ ⊢ n` outer partition |
 | Rust binary | [`tools/hecke-engine/src/bin/hecke_tr_m_wenzl_lr.rs`](../../tools/hecke-engine/src/bin/hecke_tr_m_wenzl_lr.rs) | CLI with JSON stdin/stdout; `--all-partitions` mode for full Markov decomposition |
-| Python wrapper | [`folio-assistant/computations/markov/markov_trace_via_wenzl_lr.py`](../../folio-assistant/computations/markov/markov_trace_via_wenzl_lr.py) | `subprocess.run` driver; emits `markov-trace-via-wenzl-lr.witness.json` |
+| Python wrapper | [`computations/markov/markov_trace_via_wenzl_lr.py`](../../computations/markov/markov_trace_via_wenzl_lr.py) | `subprocess.run` driver; emits `markov-trace-via-wenzl-lr.witness.json` |
 
 **Benchmark (4-way decomposition, p ⊗ p ⊗ n ⊗ n at H_12):**
 **173 ms wall** for all `p(12)=77` partitions on a debug build

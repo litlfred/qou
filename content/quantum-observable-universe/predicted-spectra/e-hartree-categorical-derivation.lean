@@ -24,7 +24,7 @@ several closure paths and identified one tractable route: the
 **`q`-dimension decoration** `δ_q : NF basis → R`, dual to the
 GB filtration / jet expansion. No closure is claimed here; the
 class merely **axiomatises** the conjecture so downstream theorems
-can carry it as an `[Instance]` hypothesis (CLAUDE.md §3b-cond).
+can carry it as an `[Instance]` hypothesis (AGENTS.md §3b-cond).
 
 `sorry` in any concrete instance is understood as **conjecture**,
 not missing proof.
@@ -63,7 +63,7 @@ abbrev R_q : Type := LaurentPolynomial ℤ
 
     Downstream blocks may take `[EHartreeCategoricalDerivation]`
     as an explicit hypothesis to remain `theorem` / `proposition`
-    per CLAUDE.md §3b-cond.
+    per AGENTS.md §3b-cond.
 
     Ref: [manuscript] §Hartree-energy categorical derivation -/
 class EHartreeCategoricalDerivation where
@@ -85,7 +85,7 @@ class EHartreeCategoricalDerivation where
   hartree_identity : E_h_cat = c_2 * m_e_cat * c_q_sq * alpha_sq
 
 /-- **Faithful instance.** Trivial model discharging the structural dependence. -/
-instance canonical : EHartreeCategoricalDerivation where
+noncomputable instance canonical : EHartreeCategoricalDerivation where
   m_e_cat := 0
   c_q_sq := 0
   alpha_sq := 0
@@ -100,7 +100,7 @@ end QOU.Archimedean
 /-- **CONDITIONAL.** If the Hartree derivation holds, then
     the Bohr radius a₀ = ℏ/(m_e·c·α) is categorically derived
     (it's just E_h rearranged). -/
-theorem bohr_radius_from_hartree [EHartreeCategoricalDerivation] :
+def bohr_radius_from_hartree [QOU.Archimedean.EHartreeCategoricalDerivation] :
     True :=
   -- a₀ = 1/(m_e · c · α) in natural units.
   -- E_h = m_e · c² · α² ⟹ α² = E_h / (m_e · c²)
@@ -114,7 +114,7 @@ theorem bohr_radius_from_hartree [EHartreeCategoricalDerivation] :
     (prop:force-carrier-intertwining-correspondence) follows —
     the Hartree energy scale connects electromagnetic and
     strong-force scales through the categorical α_EM. -/
-theorem force_carrier_from_hartree [EHartreeCategoricalDerivation] :
+def force_carrier_from_hartree [QOU.Archimedean.EHartreeCategoricalDerivation] :
     True :=
   -- The intertwining maps Hecke σ_i ↔ gauge boson vertices.
   -- E_h provides the energy scale at which the intertwining is exact.
@@ -124,7 +124,7 @@ theorem force_carrier_from_hartree [EHartreeCategoricalDerivation] :
 /-- **STRUCTURAL (sorry-free).** The Hartree identity is consistent
     with dimensional analysis: E_h has units [mass · velocity² · (dimensionless)²]
     = [energy]. -/
-theorem hartree_dimensional_consistency [inst : EHartreeCategoricalDerivation] :
+theorem hartree_dimensional_consistency [inst : QOU.Archimedean.EHartreeCategoricalDerivation] :
     inst.E_h_cat = inst.c_2 * inst.m_e_cat * inst.c_q_sq * inst.alpha_sq :=
   inst.hartree_identity
 

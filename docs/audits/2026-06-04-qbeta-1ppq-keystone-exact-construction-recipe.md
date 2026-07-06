@@ -27,8 +27,8 @@ This doc pins that object precisely and gives the executable recipe with per-sta
 | u(q), u₀ | b·ℏ_q²; u₀ = u(q₀) ≈ 0.00852 | same |
 | Q_A(q) | m_e·(2q+1-q²)(q+1)/(2q³) [substrate branch] | `probe_q_beta_operator_valued_N3.py` |
 | 𝔈₀(q) | substrate energy scale = m_e/(q(q-1)) (leptonic) / Q_β/\|h(h-2)/2\| (hadronic) | cheat sheet Step 9 |
-| Δ(net)(q) | net(after) - net(before), GB-reduced | `free-neutron-decay.py` (`folio-assistant/computations/`) |
-| `free-neutron-decay.witness.json` | net coefficients at q₀ | `folio-assistant/computations/free-neutron-decay.witness.json` |
+| Δ(net)(q) | net(after) - net(before), GB-reduced | `free-neutron-decay.py` (`computations/`) |
+| `free-neutron-decay.witness.json` | net coefficients at q₀ | `computations/free-neutron-decay.witness.json` |
 
 Per the canonical chain Step 11 ([cheat sheet](../canonical-derivation-cheat-sheet.md)) and the canonical producer `free-neutron-decay.py`:
 

@@ -77,7 +77,7 @@ stages. Speedups beyond ~25 % require deeper parallelization —
 e.g. splitting `content-pipeline` per-paper (Phase D) and
 overlapping witness regeneration with bun-build.
 
-Per the repo's [Long-compute logging discipline](../../CLAUDE.md#agent-work-plan-policy-strict),
+Per the repo's [Long-compute logging discipline](../../AGENTS.md#agent-work-plan-policy-strict),
 any job expected to run > 5 minutes (notably `content-pipeline` at
 5-8 min) must emit periodic progress lines (units/sec + elapsed +
 ETA) so cold-start bottlenecks remain inspectable in the workflow log.

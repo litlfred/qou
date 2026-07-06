@@ -3,7 +3,7 @@
 **Date**: 2026-05-25
 **Branch**: `claude/vol-density-derivation-bug-squash-2026-05-25`
 **Status**: Audit. Catalogs every production script + active probe in
-`folio-assistant/computations/` that projects to a SINGLE Wedderburn
+`computations/` that projects to a SINGLE Wedderburn
 block (algebraic side) OR a SINGLE cell / fiber-orbit (geometric
 side), instead of the canonical multi-block × multi-fiber distribution
 required by `m(K) = m_e · VolDensity(K, q₀)`.
@@ -191,7 +191,7 @@ per-atom.
 
 ### §4.3 Combined
 
-**~35 scripts** in `folio-assistant/computations/` exhibit some form of
+**~35 scripts** in `computations/` exhibit some form of
 single-projection bug. The production-load-bearing subset is small
 (4 algebraic + 5 geometric = 9 scripts); the rest are probes /
 diagnostics that NEED to be single-projection for their per-block-or-

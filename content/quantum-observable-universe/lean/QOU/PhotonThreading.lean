@@ -86,12 +86,24 @@ noncomputable def categoricalMass {M : Type*} (sp : SubstrateParameter M)
 /-! ## Gauge invariance (definitional) -/
 
 /-- **Gauge invariance**: the crossing energy depends only on the hadron
-    braid word.  This is `rfl` — there is no reduction path in the
-    definition to vary over. -/
+    braid word — concretely, on its strand count and its generator list.
+    Two braid words that agree on `nStrands` and `generators` have equal
+    crossing energy, regardless of any other (witness-only) data.
+
+    This is the genuine content of "no reduction path to vary over":
+    `crossingEnergy` is a function of `(nStrands, generators)` alone, so
+    equality of those two fields forces equality of the energy.  The
+    proof rewrites along the two field equalities (the energy is *not*
+    `rfl`-equal for distinct `BraidWord` records, only for ones agreeing
+    on the data `crossingEnergy` reads). -/
 theorem crossing_energy_gauge_invariant {M : Type*}
-    (sp : SubstrateParameter M) (p : M) (hp : HeckeParams) (β : BraidWord) :
-    crossingEnergy sp p hp β = crossingEnergy sp p hp β :=
-  rfl
+    (sp : SubstrateParameter M) (p : M) (hp : HeckeParams)
+    (β₁ β₂ : BraidWord)
+    (hn : β₁.nStrands = β₂.nStrands)
+    (hg : β₁.generators = β₂.generators) :
+    crossingEnergy sp p hp β₁ = crossingEnergy sp p hp β₂ := by
+  unfold crossingEnergy
+  rw [hn, hg]
 
 /-- **Mass gauge invariance**: same hadron → same mass.  Same hadron
     means the same braid word: equal generator lists on the same

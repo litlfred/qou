@@ -22,8 +22,8 @@ law.
 
 ### Empirical support
 
-Numerical match at $q_0 = 1.10998\ldots$ for the four atoms in the table
-([per-atom δρ probe](../../../folio-assistant/computations/per-atom-rho-deviation.witness.json)):
+canonical exact match at $q_0 = 1.10998\ldots$ for the four atoms in the table
+([per-atom δρ canonical evaluation](../../../computations/per-atom-rho-deviation.witness.json)):
 
 | atom | err (Kashaev) | err (corrected) | improvement |
 |------|--------------:|----------------:|------------:|
@@ -56,7 +56,7 @@ correction has sign $-([A]_q - A) < 0$: the integer Kashaev law
 **overestimates** the binding by exactly the dimensional anomaly,
 scaled by $m_e \cdot \mathrm{Vol}_{\rm hyp}(K_A)$.
 
-### Why Z=N specifically
+### Restriction to the Z=N line
 
 The Z=N line has a Z$\leftrightarrow$N exchange symmetry of the substrate fluid
 that the formula respects. For $Z \neq N$ atoms (${}^{3}$H, ${}^{3}$He), the

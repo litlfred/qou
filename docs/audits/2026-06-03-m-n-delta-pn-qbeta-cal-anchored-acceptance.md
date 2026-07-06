@@ -55,7 +55,7 @@ By Path C derivation, **the same acceptance applies to m_n and Δ_pn**:
 
 1. **Production wiring unchanged.** m_n + Δ_pn are still computed via
    Path C in
-   [`per-observable-100x-status.witness.json`](../../folio-assistant/computations/per-observable-100x-status.witness.json).
+   [`per-observable-100x-status.witness.json`](../../computations/per-observable-100x-status.witness.json).
    No fitted form is wired; the 185.4× / 163.3× miss factors remain
    the honest production values.
 
@@ -87,7 +87,7 @@ By Path C derivation, **the same acceptance applies to m_n and Δ_pn**:
 - [Shared-root audit 2026-05-30](2026-05-30-l2-100x-status-3-failing-shared-root.md)
 - [CAL-3=m_π corroboration 2026-05-31](2026-05-31-l2-3-failing-shared-root-with-cal-3-m-pi.md)
 - [1ppQ Q_β master ledger](../coordination/1ppq-qbeta.md)
-- CLAUDE.md §"Precision goals" — L2 status table
+- AGENTS.md §"Precision goals" — L2 status table
 
 ## Open question — m_μ remains independent
 

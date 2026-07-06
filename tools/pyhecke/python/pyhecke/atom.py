@@ -284,7 +284,7 @@ def vertex_volume(chain):
 
 
 
-def nucleon_gen_chains(quarks):
+def nucleon_gen_chains(quarks, *, q=None):
     """Per-generator crossing chains for one nucleon.
 
     Derives chains from the quark content, matching build_nucleon_nf:
@@ -292,23 +292,33 @@ def nucleon_gen_chains(quarks):
       Quark pairs: (0,1)→gen=0, (0,2)→gen=0, (1,2)→gen=1
 
     Returns (g0_chain, g1_chain) as lists of (c, d) tuples.
+
+    Every crossing `d` is one of the templates {0 (σ), −h (σ⁻¹), −h/2 (avg)}
+    with `h = q − q⁻¹`. The structural pattern (which template at which gen)
+    is q-INDEPENDENT; only `h` carries q. Pass `q` to materialise the chains
+    at an arbitrary substrate value (q₀⁻¹, or an N-grid of q's for the
+    simulators); `q=None` (default) uses the canonical `pyhecke.gram.h` at q₀
+    and is byte-identical to the historical output, so every existing caller
+    that omits `q` is unaffected. (q-parameterised-braid-word core refactor;
+    docs/workplans/2026-06-17-q-parameterised-braid-word-core.md.)
     """
+    h_loc = h if q is None else (q - 1 / q)
     # B₃ confinement: (σ₀·σ₁⁻¹)³
     # gen 0 gets 3× σ₀ = (1, 0)
     # gen 1 gets 3× σ₁⁻¹ = (1, -h)
     g0 = [(1, 0)] * 3
-    g1 = [(1, -h)] * 3
+    g1 = [(1, -h_loc)] * 3
 
     # Quark pairwise crossings
     pairs = [(0, 1, 0), (0, 2, 0), (1, 2, 1)]  # (qi, qj, gen)
     for i, j, gen in pairs:
         qi_f, qj_f = quarks[i], quarks[j]
         if qi_f == qj_f == 'u':
-            cd = (1, 0)       # σ
+            cd = (1, 0)           # σ
         elif qi_f == qj_f == 'd':
-            cd = (1, -h)      # σ⁻¹
+            cd = (1, -h_loc)      # σ⁻¹
         else:
-            cd = (1, -h/2)    # mixed
+            cd = (1, -h_loc / 2)  # mixed
         if gen == 0:
             g0.append(cd)
         else:
@@ -447,7 +457,7 @@ def atom_per_generator_volumes(Z, N, include_inter=True, crossings_per_pair=1,
     wrong. See docs/audits/2026-05-25-h3-vs-h3a-legacy-bug-audit.md.
 
     The CANONICAL replacement is:
-        folio-assistant/computations/mass_at_3A_proper.py
+        computations/mass_at_3A_proper.py
             per_generator_V_hat_3A(Z, N, weight_scheme="normalized_plancherel")
     which sums over all partitions of 3A with proper Wedderburn weights.
 

@@ -4,7 +4,11 @@ weight decomposition $\pi_H, \pi_V$
 $q$-exterior derivative $d_q$
 ([categorical $q$-exterior derivative](#def:categorical-q-ext-deriv)).
 Under the fibre functor $\tau$, the categorical and geometric
-formulations of $d_q$ coincide:
+formulations of $d_q$ coincide. Concretely, applying the categorical
+vertical derivative $\pi_V \circ d$ and then realizing it geometrically
+through $\tau$ is the same as contracting with the Reeb vector field
+$\xi$ and wedging with the contact form $\varTheta$ — this
+is the content of the commuting square:
 
 ```tex
 \begin{equation}\label{eq:categorical-archimedean-bridge-diagram}

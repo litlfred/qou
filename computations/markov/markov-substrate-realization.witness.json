@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-02T15:16:39.723315+00:00",
-  "commitSha": "f8ba41365749e121076867e479b7de313607a304",
+  "computedAt": "2026-06-22T14:29:36.190609+00:00",
+  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
   "assertions": [
     {
       "name": "tail_in_ideal_mod_p[p (proton, A=1)/finite(2)]",
@@ -75,50 +75,14 @@
       "computed": true,
       "expected": true,
       "passed": true
-    },
-    {
-      "name": "tail_in_ideal_mod_p[D (deuteron, A=2)/finite(2)]",
-      "computed": true,
-      "expected": true,
-      "passed": true
-    },
-    {
-      "name": "tail_in_ideal_mod_p[D (deuteron, A=2)/finite(3)]",
-      "computed": true,
-      "expected": true,
-      "passed": true
-    },
-    {
-      "name": "tail_in_ideal_mod_p[D (deuteron, A=2)/finite(5)]",
-      "computed": true,
-      "expected": true,
-      "passed": true
-    },
-    {
-      "name": "tail_in_ideal_mod_p[D (deuteron, A=2)/finite(7)]",
-      "computed": true,
-      "expected": true,
-      "passed": true
-    },
-    {
-      "name": "tail_in_ideal_mod_p[D (deuteron, A=2)/finite(11)]",
-      "computed": true,
-      "expected": true,
-      "passed": true
-    },
-    {
-      "name": "tail_in_ideal_mod_p[D (deuteron, A=2)/finite(13)]",
-      "computed": true,
-      "expected": true,
-      "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 16,
   "computation": "markov-substrate-realization",
   "scriptFile": "markov_substrate_realizer.py",
-  "scriptHash": "4ec1351ba776",
-  "scriptCommitSha": "8d7ddaae9424252f9ebd195aea578be79ef3c1e4",
+  "scriptHash": "23130ffe0ffc",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -128,15 +92,14 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.4.0"
+    "pyhecke_native": "0.9.0"
   },
   "description": "Place-by-place realization of the Habiro Markov trace via the Lean MotivicSubstrate.realize map: Place.infty → ℝ (numerical at q_0), Place.finite(p) → 𝔽_p[u] (mod-p coefficient reduction).  Free consistency check: the tail_in_ideal axiom is re-verified in 𝔽_p[u].",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "parameters": {
-    "q_0": 1.1099785827513808,
+    "q_0": 1.1099785955573347,
     "finite_places": [
       2,
       3,
@@ -168,48 +131,48 @@
           {
             "place": "infty",
             "target": "ℝ",
-            "u_0": 1.0535552110598574,
-            "tr_M_at_q0": 1.0653061442544502
+            "u_0": 1.0535552171373528,
+            "tr_M_at_q0": 1.065306228613167
           },
           {
             "place": "finite(2)",
             "target": "𝔽_2[u]",
-            "p_in_u_mod_p": "check_q**40 + check_q**39 + check_q**36 + check_q**35 + check_q**33 + check_q**31 + check_q**29 + check_q**27 + check_q**23 + check_q**21 + check_q**19 + check_q**17 + check_q**13 + check_q**11 + check_q**9 + check_q**7 + check_q**5 + check_q**4 + check_q + 1",
+            "p_in_u_mod_p": "u**40 + u**39 + u**36 + u**35 + u**33 + u**31 + u**29 + u**27 + u**23 + u**21 + u**19 + u**17 + u**13 + u**11 + u**9 + u**7 + u**5 + u**4 + u + 1",
             "deg": 40,
             "tail_in_ideal_mod_p": true
           },
           {
             "place": "finite(3)",
             "target": "𝔽_3[u]",
-            "p_in_u_mod_p": "check_q**40 + check_q**39 - check_q**36 + check_q**35 - check_q**33 + check_q**31 - check_q**29 + check_q**27 - check_q**24 + check_q**23 + check_q**21 - check_q**19 - check_q**17 - check_q**16 - check_q**13 + check_q**11 - check_q**9 + check_q**7 - check_q**5 - check_q**4 - check_q + 1",
+            "p_in_u_mod_p": "u**40 + u**39 - u**36 + u**35 - u**33 + u**31 - u**29 + u**27 - u**24 + u**23 + u**21 - u**19 - u**17 - u**16 - u**13 + u**11 - u**9 + u**7 - u**5 - u**4 - u + 1",
             "deg": 40,
             "tail_in_ideal_mod_p": true
           },
           {
             "place": "finite(5)",
             "target": "𝔽_5[u]",
-            "p_in_u_mod_p": "check_q**40 + check_q**39 - check_q**36 + check_q**35 - check_q**33 + check_q**31 - check_q**29 + check_q**27 + 2*check_q**24 + check_q**23 + check_q**21 - check_q**19 - check_q**17 + 2*check_q**16 - check_q**13 + check_q**11 - check_q**9 + check_q**7 - check_q**5 - check_q**4 - check_q + 1",
+            "p_in_u_mod_p": "u**40 + u**39 - u**36 + u**35 - u**33 + u**31 - u**29 + u**27 + 2*u**24 + u**23 + u**21 - u**19 - u**17 + 2*u**16 - u**13 + u**11 - u**9 + u**7 - u**5 - u**4 - u + 1",
             "deg": 40,
             "tail_in_ideal_mod_p": true
           },
           {
             "place": "finite(7)",
             "target": "𝔽_7[u]",
-            "p_in_u_mod_p": "check_q**40 + check_q**39 - check_q**36 + check_q**35 - check_q**33 + check_q**31 - check_q**29 + check_q**27 + 2*check_q**24 + check_q**23 + check_q**21 - check_q**19 - check_q**17 + 2*check_q**16 - check_q**13 + check_q**11 - check_q**9 + check_q**7 - check_q**5 - check_q**4 - check_q + 1",
+            "p_in_u_mod_p": "u**40 + u**39 - u**36 + u**35 - u**33 + u**31 - u**29 + u**27 + 2*u**24 + u**23 + u**21 - u**19 - u**17 + 2*u**16 - u**13 + u**11 - u**9 + u**7 - u**5 - u**4 - u + 1",
             "deg": 40,
             "tail_in_ideal_mod_p": true
           },
           {
             "place": "finite(11)",
             "target": "𝔽_11[u]",
-            "p_in_u_mod_p": "check_q**40 + check_q**39 - check_q**36 + check_q**35 - check_q**33 + check_q**31 - check_q**29 + check_q**27 + 2*check_q**24 + check_q**23 + check_q**21 - check_q**19 - check_q**17 + 2*check_q**16 - check_q**13 + check_q**11 - check_q**9 + check_q**7 - check_q**5 - check_q**4 - check_q + 1",
+            "p_in_u_mod_p": "u**40 + u**39 - u**36 + u**35 - u**33 + u**31 - u**29 + u**27 + 2*u**24 + u**23 + u**21 - u**19 - u**17 + 2*u**16 - u**13 + u**11 - u**9 + u**7 - u**5 - u**4 - u + 1",
             "deg": 40,
             "tail_in_ideal_mod_p": true
           },
           {
             "place": "finite(13)",
             "target": "𝔽_13[u]",
-            "p_in_u_mod_p": "check_q**40 + check_q**39 - check_q**36 + check_q**35 - check_q**33 + check_q**31 - check_q**29 + check_q**27 + 2*check_q**24 + check_q**23 + check_q**21 - check_q**19 - check_q**17 + 2*check_q**16 - check_q**13 + check_q**11 - check_q**9 + check_q**7 - check_q**5 - check_q**4 - check_q + 1",
+            "p_in_u_mod_p": "u**40 + u**39 - u**36 + u**35 - u**33 + u**31 - u**29 + u**27 + 2*u**24 + u**23 + u**21 - u**19 - u**17 + 2*u**16 - u**13 + u**11 - u**9 + u**7 - u**5 - u**4 - u + 1",
             "deg": 40,
             "tail_in_ideal_mod_p": true
           }
@@ -224,105 +187,49 @@
           {
             "place": "infty",
             "target": "ℝ",
-            "u_0": 1.0535552110598574,
-            "tr_M_at_q0": 0.9232332299116374
+            "u_0": 1.0535552171373528,
+            "tr_M_at_q0": 0.9232332971861534
           },
           {
             "place": "finite(2)",
             "target": "𝔽_2[u]",
-            "p_in_u_mod_p": "check_q**40 + check_q**39 + check_q**36 + check_q**35 + check_q**33 + check_q**31 + check_q**29 + check_q**27 + check_q**25 + check_q**21 + check_q**19 + check_q**15 + check_q**13 + check_q**11 + check_q**9 + check_q**7 + check_q**5 + check_q**4 + check_q + 1",
+            "p_in_u_mod_p": "u**40 + u**39 + u**36 + u**35 + u**33 + u**31 + u**29 + u**27 + u**25 + u**21 + u**19 + u**15 + u**13 + u**11 + u**9 + u**7 + u**5 + u**4 + u + 1",
             "deg": 40,
             "tail_in_ideal_mod_p": true
           },
           {
             "place": "finite(3)",
             "target": "𝔽_3[u]",
-            "p_in_u_mod_p": "check_q**40 + check_q**39 - check_q**36 + check_q**35 - check_q**33 + check_q**31 - check_q**29 + check_q**27 - check_q**25 - check_q**21 + check_q**20 + check_q**19 + check_q**15 - check_q**13 + check_q**11 - check_q**9 + check_q**7 - check_q**5 - check_q**4 - check_q + 1",
+            "p_in_u_mod_p": "u**40 + u**39 - u**36 + u**35 - u**33 + u**31 - u**29 + u**27 - u**25 - u**21 + u**20 + u**19 + u**15 - u**13 + u**11 - u**9 + u**7 - u**5 - u**4 - u + 1",
             "deg": 40,
             "tail_in_ideal_mod_p": true
           },
           {
             "place": "finite(5)",
             "target": "𝔽_5[u]",
-            "p_in_u_mod_p": "check_q**40 + check_q**39 - check_q**36 + check_q**35 - check_q**33 + check_q**31 - check_q**29 + check_q**27 - check_q**25 - check_q**21 - check_q**20 + check_q**19 + check_q**15 - check_q**13 + check_q**11 - check_q**9 + check_q**7 - check_q**5 - check_q**4 - check_q + 1",
+            "p_in_u_mod_p": "u**40 + u**39 - u**36 + u**35 - u**33 + u**31 - u**29 + u**27 - u**25 - u**21 - u**20 + u**19 + u**15 - u**13 + u**11 - u**9 + u**7 - u**5 - u**4 - u + 1",
             "deg": 40,
             "tail_in_ideal_mod_p": true
           },
           {
             "place": "finite(7)",
             "target": "𝔽_7[u]",
-            "p_in_u_mod_p": "check_q**40 + check_q**39 - check_q**36 + check_q**35 - check_q**33 + check_q**31 - check_q**29 + check_q**27 - check_q**25 - check_q**21 - 3*check_q**20 + check_q**19 + check_q**15 - check_q**13 + check_q**11 - check_q**9 + check_q**7 - check_q**5 - check_q**4 - check_q + 1",
+            "p_in_u_mod_p": "u**40 + u**39 - u**36 + u**35 - u**33 + u**31 - u**29 + u**27 - u**25 - u**21 - 3*u**20 + u**19 + u**15 - u**13 + u**11 - u**9 + u**7 - u**5 - u**4 - u + 1",
             "deg": 40,
             "tail_in_ideal_mod_p": true
           },
           {
             "place": "finite(11)",
             "target": "𝔽_11[u]",
-            "p_in_u_mod_p": "check_q**40 + check_q**39 - check_q**36 + check_q**35 - check_q**33 + check_q**31 - check_q**29 + check_q**27 - check_q**25 - check_q**21 + 4*check_q**20 + check_q**19 + check_q**15 - check_q**13 + check_q**11 - check_q**9 + check_q**7 - check_q**5 - check_q**4 - check_q + 1",
+            "p_in_u_mod_p": "u**40 + u**39 - u**36 + u**35 - u**33 + u**31 - u**29 + u**27 - u**25 - u**21 + 4*u**20 + u**19 + u**15 - u**13 + u**11 - u**9 + u**7 - u**5 - u**4 - u + 1",
             "deg": 40,
             "tail_in_ideal_mod_p": true
           },
           {
             "place": "finite(13)",
             "target": "𝔽_13[u]",
-            "p_in_u_mod_p": "check_q**40 + check_q**39 - check_q**36 + check_q**35 - check_q**33 + check_q**31 - check_q**29 + check_q**27 - check_q**25 - check_q**21 + 4*check_q**20 + check_q**19 + check_q**15 - check_q**13 + check_q**11 - check_q**9 + check_q**7 - check_q**5 - check_q**4 - check_q + 1",
+            "p_in_u_mod_p": "u**40 + u**39 - u**36 + u**35 - u**33 + u**31 - u**29 + u**27 - u**25 - u**21 + 4*u**20 + u**19 + u**15 - u**13 + u**11 - u**9 + u**7 - u**5 - u**4 - u + 1",
             "deg": 40,
-            "tail_in_ideal_mod_p": true
-          }
-        ]
-      },
-      {
-        "atom": "D (deuteron, A=2)",
-        "Z": 1,
-        "N": 1,
-        "deg_p_u": 86,
-        "realizations": [
-          {
-            "place": "infty",
-            "target": "ℝ",
-            "u_0": 1.0535552110598574,
-            "tr_M_at_q0": 0.38828642407478897
-          },
-          {
-            "place": "finite(2)",
-            "target": "𝔽_2[u]",
-            "p_in_u_mod_p": "check_q**86 + check_q**72 + check_q**71 + check_q**70 + check_q**67 + check_q**66 + check_q**64 + check_q**62 + check_q**60 + check_q**58 + check_q**56 + check_q**55 + check_q**54 + check_q**51 + check_q**50 + check_q**46 + check_q**40 + check_q**36 + check_q**35 + check_q**32 + check_q**31 + check_q**30 + check_q**28 + check_q**26 + check_q**24 + check_q**22 + check_q**20 + check_q**19 + check_q**16 + check_q**15 + check_q**14 + 1",
-            "deg": 86,
-            "tail_in_ideal_mod_p": true
-          },
-          {
-            "place": "finite(3)",
-            "target": "𝔽_3[u]",
-            "p_in_u_mod_p": "-u**86 + check_q**85 + check_q**84 + check_q**81 - check_q**80 + check_q**78 - check_q**75 - check_q**74 + check_q**73 + check_q**72 - check_q**69 - check_q**67 + check_q**66 - check_q**65 + check_q**61 - check_q**60 + check_q**59 + check_q**58 - check_q**55 - check_q**54 - check_q**53 + check_q**50 + check_q**48 + check_q**46 - check_q**45 - check_q**41 - check_q**40 - check_q**38 - check_q**36 - check_q**33 + check_q**32 - check_q**31 - check_q**28 + check_q**27 + check_q**26 + check_q**25 - check_q**21 - check_q**20 - check_q**19 - check_q**17 - check_q**14 + check_q**13 + check_q**12 - check_q**11 - check_q**8 + check_q**6 + check_q**5 - check_q**2 + check_q + 1",
-            "deg": 86,
-            "tail_in_ideal_mod_p": true
-          },
-          {
-            "place": "finite(5)",
-            "target": "𝔽_5[u]",
-            "p_in_u_mod_p": "-u**86 - 2*check_q**85 - 2*check_q**84 + check_q**82 - check_q**81 + 2*check_q**80 - 2*check_q**78 + check_q**77 - check_q**76 + check_q**75 + 2*check_q**74 - check_q**73 + check_q**72 + check_q**71 + 2*check_q**70 - 2*check_q**69 - 2*check_q**67 + check_q**66 - 2*check_q**65 - 2*check_q**64 - check_q**63 - check_q**60 + check_q**59 - check_q**58 + 2*check_q**57 + 2*check_q**55 + 2*check_q**54 - check_q**53 + 2*check_q**52 + 2*check_q**50 + 2*check_q**49 + check_q**48 - 2*check_q**47 + 2*check_q**46 + check_q**44 - check_q**42 - 2*check_q**40 - 2*check_q**39 - check_q**38 + 2*check_q**37 - 2*check_q**36 - 2*check_q**34 - check_q**33 - 2*check_q**32 + 2*check_q**31 + 2*check_q**29 + check_q**28 + check_q**27 + check_q**26 - check_q**23 + 2*check_q**22 - 2*check_q**21 - check_q**20 - 2*check_q**19 - 2*check_q**17 - 2*check_q**16 + check_q**15 - check_q**14 - check_q**13 - 2*check_q**12 + check_q**11 + check_q**10 + check_q**9 + 2*check_q**8 - 2*check_q**6 - check_q**5 - check_q**4 + 2*check_q**2 - 2*check_q + 1",
-            "deg": 86,
-            "tail_in_ideal_mod_p": true
-          },
-          {
-            "place": "finite(7)",
-            "target": "𝔽_7[u]",
-            "p_in_u_mod_p": "-u**86 - 2*check_q**85 - 2*check_q**84 - check_q**82 - 3*check_q**81 + 2*check_q**80 - 2*check_q**78 - check_q**77 + check_q**76 + 3*check_q**75 + 2*check_q**74 - 3*check_q**73 + check_q**72 - 2*check_q**71 - 3*check_q**70 + check_q**69 + check_q**66 + check_q**65 + 3*check_q**64 + check_q**63 + check_q**62 + 3*check_q**61 - check_q**60 - 2*check_q**58 - 2*check_q**57 - check_q**56 + check_q**55 + 3*check_q**54 + 3*check_q**52 - check_q**51 - 2*check_q**49 + 2*check_q**47 - check_q**45 - check_q**44 + check_q**42 - check_q**41 + 2*check_q**39 - 2*check_q**37 - check_q**35 - 3*check_q**34 - 3*check_q**32 + check_q**31 + check_q**30 - 2*check_q**29 + 2*check_q**28 + check_q**26 + 3*check_q**25 - check_q**24 + check_q**23 - 3*check_q**22 + check_q**21 - check_q**20 + check_q**17 + 3*check_q**16 - 2*check_q**15 - check_q**14 - 3*check_q**13 - 2*check_q**12 + 3*check_q**11 - check_q**10 - check_q**9 + 2*check_q**8 - 2*check_q**6 - 3*check_q**5 + check_q**4 + 2*check_q**2 - 2*check_q + 1",
-            "deg": 86,
-            "tail_in_ideal_mod_p": true
-          },
-          {
-            "place": "finite(11)",
-            "target": "𝔽_11[u]",
-            "p_in_u_mod_p": "-u**86 - 2*check_q**85 - 2*check_q**84 - 5*check_q**82 + 4*check_q**81 + 2*check_q**80 - 2*check_q**78 - 5*check_q**77 + 5*check_q**76 - 4*check_q**75 + 2*check_q**74 + 4*check_q**73 + check_q**72 + 2*check_q**71 - 3*check_q**70 - 3*check_q**69 + 4*check_q**67 + check_q**66 - 3*check_q**65 + 3*check_q**64 + 5*check_q**63 + 4*check_q**62 - check_q**61 - check_q**60 - 3*check_q**59 - 3*check_q**58 + check_q**57 - 4*check_q**56 - 2*check_q**55 - 5*check_q**54 + 3*check_q**53 + 4*check_q**52 - 4*check_q**51 - 4*check_q**50 + check_q**49 - 3*check_q**48 - check_q**47 - 4*check_q**46 - 2*check_q**45 - 5*check_q**44 + 5*check_q**42 - 2*check_q**41 + 4*check_q**40 - check_q**39 + 3*check_q**38 + check_q**37 + 4*check_q**36 - 4*check_q**35 - 4*check_q**34 + 3*check_q**33 + 5*check_q**32 - 2*check_q**31 + 4*check_q**30 + check_q**29 + 3*check_q**28 - 3*check_q**27 + check_q**26 - check_q**25 - 4*check_q**24 + 5*check_q**23 - 3*check_q**22 - 3*check_q**21 - check_q**20 + 4*check_q**19 - 3*check_q**17 + 3*check_q**16 + 2*check_q**15 - check_q**14 + 4*check_q**13 - 2*check_q**12 - 4*check_q**11 - 5*check_q**10 - 5*check_q**9 + 2*check_q**8 - 2*check_q**6 + 4*check_q**5 + 5*check_q**4 + 2*check_q**2 - 2*check_q + 1",
-            "deg": 86,
-            "tail_in_ideal_mod_p": true
-          },
-          {
-            "place": "finite(13)",
-            "target": "𝔽_13[u]",
-            "p_in_u_mod_p": "-u**86 - 2*check_q**85 - 2*check_q**84 + 6*check_q**82 + 4*check_q**81 + 2*check_q**80 - 2*check_q**78 + 6*check_q**77 - 6*check_q**76 - 4*check_q**75 + 2*check_q**74 + 4*check_q**73 + check_q**72 + 4*check_q**71 - 3*check_q**70 - 5*check_q**69 + 6*check_q**67 + check_q**66 - 5*check_q**65 + 3*check_q**64 - 6*check_q**63 + 2*check_q**62 - 3*check_q**61 - check_q**60 - check_q**59 + 6*check_q**58 - check_q**57 - 2*check_q**56 + 4*check_q**54 + check_q**53 - 5*check_q**52 - 2*check_q**51 - 6*check_q**50 - check_q**49 - check_q**48 + check_q**47 - 6*check_q**46 - 6*check_q**45 + 6*check_q**44 - 6*check_q**42 - 6*check_q**41 + 6*check_q**40 + check_q**39 + check_q**38 - check_q**37 + 6*check_q**36 - 2*check_q**35 + 5*check_q**34 + check_q**33 - 4*check_q**32 + 2*check_q**30 - check_q**29 - 6*check_q**28 - check_q**27 + check_q**26 - 3*check_q**25 - 2*check_q**24 - 6*check_q**23 - 3*check_q**22 - 5*check_q**21 - check_q**20 + 6*check_q**19 - 5*check_q**17 + 3*check_q**16 + 4*check_q**15 - check_q**14 + 4*check_q**13 - 2*check_q**12 - 4*check_q**11 + 6*check_q**10 + 6*check_q**9 + 2*check_q**8 - 2*check_q**6 + 4*check_q**5 - 6*check_q**4 + 2*check_q**2 - 2*check_q + 1",
-            "deg": 86,
             "tail_in_ideal_mod_p": true
           }
         ]

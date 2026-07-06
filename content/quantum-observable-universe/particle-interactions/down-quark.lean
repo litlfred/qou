@@ -25,12 +25,29 @@ numerical evaluation.
 
 namespace QOU.Archimedean
 
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
+/- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+   See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
+
+-- Honest mirrors of sibling content-extract types (standalone files, no
+-- importable module path); only the fields referenced below are mirrored,
+-- with the same default values as the canonical declarations.
+-- canonical decl: QOU.Archimedean.Neutrino (predicted-spectra/neutrino-knot.lean)
+-- Ref: [manuscript] Ch. 5, §neutrino
+structure Neutrino where
+  /-- Crossing number of the underlying unknot. -/
+  crossing_number : ℕ := 0
+  /-- Seifert genus (trivial knot). -/
+  genus : ℕ := 0
+
+-- canonical decl: QOU.Archimedean.UpQuark (particle-interactions/up-quark.lean)
+-- Ref: [manuscript] Ch. 5, §up-quark
+structure UpQuark where
+  /-- Crossing orientation: +1 for positive (contributes +q to Skein). -/
+  crossing_orientation : ℤ := 1
 
 /-- The down quark: unknot K_{0₁} with negative crossing orientation
     in the Borromean link B₃.  Contributes q⁻¹ to the Skein polynomial
@@ -61,22 +78,24 @@ structure DownQuark where
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
 theorem down_quark_is_unknot :
-    DownQuark.mk.crossing_number = Neutrino.mk.crossing_number ∧
-    DownQuark.mk.genus = Neutrino.mk.genus := ⟨rfl, rfl⟩
+    ({} : DownQuark).crossing_number = ({} : Neutrino).crossing_number ∧
+    ({} : DownQuark).genus = ({} : Neutrino).genus := ⟨rfl, rfl⟩
 
 /-- The down quark has negative crossing orientation. -/
 -- Ref: [manuscript] Ch. 5, §down-quark
 theorem down_quark_negative_orientation :
-    DownQuark.mk.crossing_orientation = -1 := rfl
+    ({} : DownQuark).crossing_orientation = -1 := rfl
 
 /-- Up and down quarks have opposite crossing orientations. -/
 -- Ref: [manuscript] Ch. 5, §down-quark
 theorem quark_crossing_asymmetry :
-    DownQuark.mk.crossing_orientation = -UpQuark.mk.crossing_orientation := by
+    ({} : DownQuark).crossing_orientation = -({} : UpQuark).crossing_orientation := by
   decide
 
 /-- The down quark is color-confined. -/
 -- Ref: [manuscript] Ch. 5, §down-quark
-theorem down_quark_confined : DownQuark.mk.confined = true := rfl
+theorem down_quark_confined : ({} : DownQuark).confined = true := rfl
+
+end
 
 end QOU.Archimedean

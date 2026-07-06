@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/_deprecated/certificate-to-mass.py",
+  "script_path": "computations/_deprecated/certificate-to-mass.py",
   "language": "python",
   "source_hash": "cb9b58ac0869",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -21,7 +21,7 @@
         "reviewed_at": "2026-05-22T18:27:38.070Z",
         "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
         "severity": "major",
-        "evidence": "folio-assistant/computations/_deprecated/certificate-to-mass.py:61: bare float literal `0.0000` — wrap in `mpmath.mpf(\"0.0000\")` / `Decimal(\"0.0000\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/certificate-to-mass.py:62: bare float literal `1.1121` — wrap in `mpmath.mpf(\"1.1121\")` / `Decimal(\"1.1121\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/certificate-to-mass.py:63: bare float literal `2.8273` — wrap in `mpmath.mpf(\"2.8273\")` / `Decimal(\"2.8273\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/certificate-to-mass.py:64: bare float literal `1.7200` — wrap in `mpmath.mpf(\"1.7200\")` / `Decimal(\"1.7200\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/certificate-to-mass.py:65: bare float literal `0.5700` — wrap in `mpmath.mpf(\"0.5700\")` / `Decimal(\"0.5700\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/_deprecated/certificate-to-mass.py:61: bare float literal `0.0000` — wrap in `mpmath.mpf(\"0.0000\")` / `Decimal(\"0.0000\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/_deprecated/certificate-to-mass.py:62: bare float literal `1.1121` — wrap in `mpmath.mpf(\"1.1121\")` / `Decimal(\"1.1121\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/_deprecated/certificate-to-mass.py:63: bare float literal `2.8273` — wrap in `mpmath.mpf(\"2.8273\")` / `Decimal(\"2.8273\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/_deprecated/certificate-to-mass.py:64: bare float literal `1.7200` — wrap in `mpmath.mpf(\"1.7200\")` / `Decimal(\"1.7200\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/_deprecated/certificate-to-mass.py:65: bare float literal `0.5700` — wrap in `mpmath.mpf(\"0.5700\")` / `Decimal(\"0.5700\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       },
       {
         "field_hash": {
@@ -38,7 +38,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/_deprecated/certificate-to-mass.py:61: bare float literal `0.0000` — wrap in `mpmath.mpf(\"0.0000\")` / `Decimal(\"0.0000\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/certificate-to-mass.py:62: bare float literal `1.1121` — wrap in `mpmath.mpf(\"1.1121\")` / `Decimal(\"1.1121\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/certificate-to-mass.py:63: bare float literal `2.8273` — wrap in `mpmath.mpf(\"2.8273\")` / `Decimal(\"2.8273\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/certificate-to-mass.py:64: bare float literal `1.7200` — wrap in `mpmath.mpf(\"1.7200\")` / `Decimal(\"1.7200\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/_deprecated/certificate-to-mass.py:65: bare float literal `0.5700` — wrap in `mpmath.mpf(\"0.5700\")` / `Decimal(\"0.5700\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/_deprecated/certificate-to-mass.py:61: bare float literal `0.0000` — wrap in `mpmath.mpf(\"0.0000\")` / `Decimal(\"0.0000\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/_deprecated/certificate-to-mass.py:62: bare float literal `1.1121` — wrap in `mpmath.mpf(\"1.1121\")` / `Decimal(\"1.1121\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/_deprecated/certificate-to-mass.py:63: bare float literal `2.8273` — wrap in `mpmath.mpf(\"2.8273\")` / `Decimal(\"2.8273\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/_deprecated/certificate-to-mass.py:64: bare float literal `1.7200` — wrap in `mpmath.mpf(\"1.7200\")` / `Decimal(\"1.7200\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/_deprecated/certificate-to-mass.py:65: bare float literal `0.5700` — wrap in `mpmath.mpf(\"0.5700\")` / `Decimal(\"0.5700\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       }
     ],
     "respects_archimedean_wall": [
@@ -91,7 +91,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/_deprecated/certificate-to-mass.py:137: `def mass_codata_ame(…)` has 3 parameters without type annotation: Z, N, B_per_A — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/certificate-to-mass.py:153: `def mass_topological(…)` has 1 parameter without type annotation: vol_knot — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/certificate-to-mass.py:162: `def mass_from_net(…)` has 2 parameters without type annotation: net_f64, scale_E0 — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/_deprecated/certificate-to-mass.py:137: `def mass_codata_ame(…)` has 3 parameters without type annotation: Z, N, B_per_A — add `: type` (or `: Any` if the type genuinely is untyped) | computations/_deprecated/certificate-to-mass.py:153: `def mass_topological(…)` has 1 parameter without type annotation: vol_knot — add `: type` (or `: Any` if the type genuinely is untyped) | computations/_deprecated/certificate-to-mass.py:162: `def mass_from_net(…)` has 2 parameters without type annotation: net_f64, scale_E0 — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -110,7 +110,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/_deprecated/certificate-to-mass.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/_deprecated/certificate-to-mass.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       }
     ],
     "connected_to_ci_pipeline": [
@@ -146,7 +146,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/_deprecated/certificate-to-mass.py:1: script lives under `_deprecated/` — consumers must not depend on its output. Move to the canonical path if still active, or delete if truly retired"
+        "evidence": "computations/_deprecated/certificate-to-mass.py:1: script lives under `_deprecated/` — consumers must not depend on its output. Move to the canonical path if still active, or delete if truly retired"
       }
     ],
     "uses_library_framework_appropriately": [

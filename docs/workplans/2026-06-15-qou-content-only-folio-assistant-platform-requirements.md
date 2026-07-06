@@ -23,7 +23,7 @@ the end-state and the work to get there.
 
 **Relationship:** qou *depends on / consumes* folio-assistant. qou's only
 root CI is a **thin caller** that invokes folio-assistant's reusable workflows
-against qou's content. (CLAUDE.md already frames `folio-assistant/` as the
+against qou's content. (AGENTS.md already frames `folio-assistant/` as the
 "platform package" and `content/schema/` as *re-exporting* from
 `folio-assistant/schemas/` — this finishes that separation.)
 

@@ -231,9 +231,9 @@ exactly the framework PR #681 audits.**
 
 ### Concrete next-session scope (single sibling PR)
 
-1. Cherry-pick / re-use [`canonical_tr_m_via_chi_cache.py`](../../folio-assistant/computations/canonical_tr_m_via_chi_cache.py) (PR #671 Step 2 combiner).
+1. Cherry-pick / re-use [`canonical_tr_m_via_chi_cache.py`](../../computations/canonical_tr_m_via_chi_cache.py) (PR #671 Step 2 combiner).
 2. Compute per-block $\chi^\lambda(\beta_{\text{atom}})$ for $\{T, {}^3\text{He}, {}^4\text{He}\}$ once those chi caches complete (tritium cache running on PR #671 branch; ETA minutes).
-3. Apply operator-valued $A^\lambda_{\mu,\nu}(I)$ from [`sublemma-2-1-A-operator-extract.witness.json`](../../folio-assistant/computations/sublemma-2-1-A-operator-extract.witness.json) (deuteron interface) to extract per-block corrections.
+3. Apply operator-valued $A^\lambda_{\mu,\nu}(I)$ from [`sublemma-2-1-A-operator-extract.witness.json`](../../computations/sublemma-2-1-A-operator-extract.witness.json) (deuteron interface) to extract per-block corrections.
 4. Re-derive $\Delta_{\text{coupling}}$ at $(2,1), (1,2), (2,2)$ and check Z↔N asymmetry +0.796 MeV / T5 asymmetry -0.325 MeV reproduce.
 5. If reproduced: promote `conj:delta-coupling-substrate-form` to a conditional proposition (Lean class instance pending the operator-valued $A^\lambda_{\mu,\nu}$ class).
 

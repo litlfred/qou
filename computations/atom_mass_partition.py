@@ -16,7 +16,7 @@ This is the COMPLETE Markov trace — no approximation.
 No NF expansion. No stripping. No memory explosion.
 
 Usage:
-    python3 folio-assistant/computations/atom_mass_partition.py
+    python3 computations/atom_mass_partition.py
 """
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir

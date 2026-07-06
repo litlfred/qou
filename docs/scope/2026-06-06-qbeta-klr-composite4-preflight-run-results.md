@@ -4,7 +4,7 @@
 
 ## Result
 
-[`qbeta_klr_composite4_preflight_run.py`](../../folio-assistant/computations/qbeta/qbeta_klr_composite4_preflight_run.py) computes `A_k = tr_M(p_k^JW) · Q_k` for `Q_k ∈ {(q;q)_k, Y_k}` at both anchors (mp 65-dps) and tests against the proved `c_2 = -1` target:
+[`qbeta_klr_composite4_preflight_run.py`](../../computations/qbeta/qbeta_klr_composite4_preflight_run.py) computes `A_k = tr_M(p_k^JW) · Q_k` for `Q_k ∈ {(q;q)_k, Y_k}` at both anchors (mp 65-dps) and tests against the proved `c_2 = -1` target:
 
 | anchor | `(q;q)_2` | `Y_2 = q^{-3/2}(q;q)_2` | `A_2 = tr_M(p_2^JW)·Y_2` | `A_2 / c_2_target` |
 |---|---|---|---|---|
@@ -41,7 +41,7 @@ So Composite 4 in either of its non-fit forms **cannot source c_2 = -1**, let al
 **Redirect (per cont. 9 menu, master infra scope §97-104):**
 
 - **Option C — Composite 1 (Demazure × q-Pochhammer), 5-7 sessions**. Demazure character `D_w(λ)` is genuinely useful beyond Q_β (mass-formula crystal-multiplicity work). Same preflight pattern should apply before committing to the build: derive the analogous A_2 = D_w(λ)·(q;q)_k product and check c_2 magnitude.
-- **Option D — Composite 3 (Type-B folded crystal), 12-17 sessions**. Aligns with CLAUDE.md §7b §"symmetric-crystal techniques" authoring guidance; highest theoretical value.
+- **Option D — Composite 3 (Type-B folded crystal), 12-17 sessions**. Aligns with AGENTS.md §7b §"symmetric-crystal techniques" authoring guidance; highest theoretical value.
 - **Option A — accept residue A as inherently CAL-3-anchored permanently**. Now reinforced by *three* corpus-side closures + a preflight refutation; the absolute c_3 closure is research-grade unknown.
 
 ## Cross-refs
@@ -49,5 +49,5 @@ So Composite 4 in either of its non-fit forms **cannot source c_2 = -1**, let al
 - Preflight SCOPE (PR #1914 — the prediction this RUN now resolves): [`2026-06-06-qbeta-klr-composite4-wenzl-qpoch-preflight.md`](2026-06-06-qbeta-klr-composite4-wenzl-qpoch-preflight.md).
 - Master KLR-infra roadmap: [`2026-06-03-qbeta-residue-a-klr-crystal-infra-scope.md`](2026-06-03-qbeta-residue-a-klr-crystal-infra-scope.md).
 - Proved `c_2 = -1` / `Φ₁ = √2`: PR #1887, ledger cont. 14.
-- Wenzl chain α NEGATIVE alone (cont. 5): [`qbeta_wenzl_habiro_chain_alpha.py`](../../folio-assistant/computations/qbeta/qbeta_wenzl_habiro_chain_alpha.py), [`qbeta-wenzl-habiro-chain-alpha.witness.json`](../../folio-assistant/computations/qbeta/qbeta-wenzl-habiro-chain-alpha.witness.json).
-- Witness: [`qbeta-klr-composite4-preflight-run.witness.json`](../../folio-assistant/computations/qbeta/qbeta-klr-composite4-preflight-run.witness.json).
+- Wenzl chain α NEGATIVE alone (cont. 5): [`qbeta_wenzl_habiro_chain_alpha.py`](../../computations/qbeta/qbeta_wenzl_habiro_chain_alpha.py), [`qbeta-wenzl-habiro-chain-alpha.witness.json`](../../computations/qbeta/qbeta-wenzl-habiro-chain-alpha.witness.json).
+- Witness: [`qbeta-klr-composite4-preflight-run.witness.json`](../../computations/qbeta/qbeta-klr-composite4-preflight-run.witness.json).

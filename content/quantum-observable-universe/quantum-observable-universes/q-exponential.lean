@@ -52,17 +52,13 @@ structure QExponential (H : Type*) where
   /-- Flow equation: D_q e_q = e_q. -/
   flow_invariant : D_q e_q = e_q
 
-/-- **Uniqueness**: any two q-exponentials in the same Hopf algebra
-    with the same `D_q` coincide.  (Conjecture — depends on
-    non-degeneracy of the flow equation on grouplikes.) -/
--- Ref: [manuscript] §2
 /-- **External axiom (§3b-cond pattern): QExponential.unique.**
 
-    Auto-extracted from the single-sorry theorem body in this file.
-    Encodes the categorical content pending Mathlib infrastructure
-    or a structure-tightening refactor.
-
-    See the theorem docstring below for the cited reference. -/
+    Any two q-exponentials in the same Hopf algebra with the same
+    `D_q` coincide.  (Depends on non-degeneracy of the flow equation
+    on grouplikes — encodes the categorical content pending Mathlib
+    infrastructure or a structure-tightening refactor.) -/
+-- Ref: [manuscript] §2
 axiom QExponential.unique_axiom {H : Type*} (e₁ e₂ : QExponential H)
     (h_coprod : e₁.coprod = e₂.coprod)
     (h_counit : e₁.counit = e₂.counit)
@@ -74,6 +70,8 @@ theorem QExponential.unique {H : Type*} (e₁ e₂ : QExponential H)
     (h_counit : e₁.counit = e₂.counit)
     (h_Dq : e₁.D_q = e₂.D_q) :
     e₁.e_q = e₂.e_q :=
-  QExponential.unique_axiom H e₁ e₂ h_coprod h_counit h_Dq
+  QExponential.unique_axiom e₁ e₂ h_coprod h_counit h_Dq
+
+end
 
 end QOU

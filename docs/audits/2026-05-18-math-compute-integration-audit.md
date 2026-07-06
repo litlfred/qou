@@ -147,7 +147,7 @@ introspection scripts that walk `d["data"]["rows"]`.  Flagged as
 | #688 | `claude/multi-nucleon-delta-m` | **closed without merge** | — | unsubscribed |
 
 > **Branch-discipline note.** All four still-open PRs are on
-> non-`claude/audit-math-compute-gRube` branches.  Per CLAUDE.md and
+> non-`claude/audit-math-compute-gRube` branches.  Per AGENTS.md and
 > the per-session branch directive, this audit does **not** push
 > fixes directly to them; it surfaces them for the author or each
 > PR's owning agent to address.

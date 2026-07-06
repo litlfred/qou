@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:three-calibration-inputs",
   title:
-    "Exactly three calibration inputs ($m_e$, $m_\\mu/m_e$, $Q_\\beta(n)$), aligned to the three Wedderburn channels of $H_3(R, q)$",
+    "Exactly three calibration inputs ($m_e$, $m_\\mu/m_e$, $\\mathfrak{Q}_\\beta(n)$), aligned to the three Wedderburn channels of $H_3(R, q)$",
   lean: {
     ref: "qou:QOU.BraidKnot.three_calibration_inputs",
     validation: "not_checked",

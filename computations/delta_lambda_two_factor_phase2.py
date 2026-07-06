@@ -196,7 +196,7 @@ def main() -> int:
     builder.add_assertion(
         "tr_M_data_loaded",
         computed=float(atoms["D"]["abs_tr_M"]),
-        expected=0.3882864240747888,
+        expected=0.3882864715477132,
         tolerance=1e-10,
         unit="tr_M(D) at q_0",
         source="delta-lambda-empirical-tabulation.witness.json",

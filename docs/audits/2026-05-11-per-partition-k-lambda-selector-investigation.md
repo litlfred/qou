@@ -4,9 +4,9 @@
 **Author:** coordination agent on
 `claude/q-beta-spectral-bridge-handoff-QqMlK`
 **Witness:**
-[`folio-assistant/computations/probe-phiq-per-partition-n-sweep.witness.json`](../../folio-assistant/computations/probe-phiq-per-partition-n-sweep.witness.json)
+[`computations/probe-phiq-per-partition-n-sweep.witness.json`](../../computations/probe-phiq-per-partition-n-sweep.witness.json)
 **Probe:**
-[`folio-assistant/computations/probe_phiq_per_partition_n_sweep.py`](../../folio-assistant/computations/probe_phiq_per_partition_n_sweep.py)
+[`computations/probe_phiq_per_partition_n_sweep.py`](../../computations/probe_phiq_per_partition_n_sweep.py)
 **§:** `/coordinate` skill §6 — investigated discrepancy, **partial
 escalation** (selector mislabel + binding-closure overstatement, NOT
 empirical-claim refutation).
@@ -195,6 +195,6 @@ For **future probes**:
 
 | Path | Content |
 |---|---|
-| `folio-assistant/computations/probe_phiq_per_partition_n_sweep.py` | Joint probe (#638 infra + #639 rule, both selectors A and B) |
-| `folio-assistant/computations/probe-phiq-per-partition-n-sweep.witness.json` | Per-atom eigenvalue spectra + per-selector sweep results |
+| `computations/probe_phiq_per_partition_n_sweep.py` | Joint probe (#638 infra + #639 rule, both selectors A and B) |
+| `computations/probe-phiq-per-partition-n-sweep.witness.json` | Per-atom eigenvalue spectra + per-selector sweep results |
 | `docs/audits/2026-05-11-per-partition-k-lambda-selector-investigation.md` | This audit |

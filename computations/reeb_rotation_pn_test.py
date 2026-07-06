@@ -20,7 +20,7 @@ compute per Wedderburn block λ ⊢ 3:
   • their MODULI |λ_i| (writhe / growth channel), and
   • their PHASES arg(λ_i) — the q-Reeb ROTATION angle (per
     figure-eight-reeb-rotation.md: the Reeb phase only carries signal on
-    UNIT-MODULUS eigenvalues, where it equals the accumulated coral-sector
+    UNIT-MODULUS eigenvalues, where it equals the accumulated color-sector
     rotation; growth reps have |λ| ≠ 1 and carry amplitude, not phase).
 
 Then ask: does the Reeb rotation DIFFER for p vs n? Report raw p and n

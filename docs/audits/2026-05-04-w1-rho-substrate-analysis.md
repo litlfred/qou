@@ -167,7 +167,7 @@ regression is resolved.  **Not wired yet**: pending C4 Milnor-μ̄ probe.
 
 ## 8  Witness File
 
-`folio-assistant/computations/probes/rho-f-categorical-probe.witness.json`
+`computations/probes/rho-f-categorical-probe.witness.json`
 
 Computed at q₀ = 1.1099785955541805 using tr_M from
 `markov-peel-atomic-tr-m.witness.json` (50 dps, Hoefsmit bridge

@@ -92,7 +92,7 @@ moves from §3b-cond conjecture to derived theorem. At that point:
   predicts `c_4 ≈ −3.28`, observed `≈ −0.97`, sign-preserving factor-3 gap).
 - ❌ **Symbolic search for `Φ₂` without the SW-residue derivation.** The H₃(q)
   kernel is the *cause*; a numerical fit without the kernel is the
-  fit-based-ansatz trap. CLAUDE.md applies the explicit *"do not
+  fit-based-ansatz trap. AGENTS.md applies the explicit *"do not
   propose a seventh fit-based ansatz"* rule to the Δ_λ gate (six
   closure ansätze refuted on the deuteron); the same discipline
   applies here — symbolic-search fits without a structural derivation
@@ -107,7 +107,7 @@ moves from §3b-cond conjecture to derived theorem. At that point:
 
 - Standing scope: [`2026-06-05-qbeta-phi2-ckrecursion-kernel-constraints.md`](2026-06-05-qbeta-phi2-ckrecursion-kernel-constraints.md)
 - Refutation commit: `89616febbe`
-- Refutation witness: [`folio-assistant/computations/qbeta/qbeta-alpha-eff-ladder-reconciliation-probe.witness.json`](../../folio-assistant/computations/qbeta/qbeta-alpha-eff-ladder-reconciliation-probe.witness.json)
+- Refutation witness: [`computations/qbeta/qbeta-alpha-eff-ladder-reconciliation-probe.witness.json`](../../computations/qbeta/qbeta-alpha-eff-ladder-reconciliation-probe.witness.json)
 - Refutation scope: [`2026-06-06-qbeta-alpha-eff-hoefsmit-symbolic-finding.md`](2026-06-06-qbeta-alpha-eff-hoefsmit-symbolic-finding.md)
 - Q_β master ledger: [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md)
-- CLAUDE.md Φ₂ context: §"Q_β c_k is a TRUNCATION ORDER"
+- AGENTS.md Φ₂ context: §"Q_β c_k is a TRUNCATION ORDER"

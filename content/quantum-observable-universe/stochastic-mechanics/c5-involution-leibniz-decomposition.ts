@@ -24,13 +24,14 @@ export default proposition({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/qbeta/qbeta_silver_ratio_pell_lucas_ck.py",
+    script: "computations/qbeta/qbeta_silver_ratio_pell_lucas_ck.py",
     witness: [
-      "folio-assistant/computations/qbeta/qbeta-silver-ratio-pell-lucas-ck.witness.json",
+      "computations/qbeta/qbeta-silver-ratio-pell-lucas-ck.witness.json",
     ],
     status: "experimental",
   },
   authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "refined-framing",
       body:

@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T10:55:05.025417+00:00",
-  "commitSha": "5270f87ec15bdcbd0acdc7f0199a382c85ccccfe",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-06-28T23:06:15.565655+00:00",
+  "commitSha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4",
   "assertions": [
     {
       "name": "hypB_decisively_resolved",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 328,
+  "durationMs": 1734,
   "computation": "qbeta-rung2-hyp-b-wenzl-p3-probe",
   "scriptFile": "qbeta_rung2_hypB_wenzl_p3_probe.py",
-  "scriptHash": "5a86efcd20d0",
-  "scriptCommitSha": "08fd1dd1ffa18fe3f901dfc7101827ef8c120f9f",
+  "scriptHash": "71f052e2cb6c",
+  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -26,9 +26,12 @@
     "truncation_bound": "1e-50"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Definitive test of Hyp-B: does rung_2 = hbar_q^3/[2]_q equal tr_M(Wenzl p_3) / TL_loop = [4]_q/[2]_q? By Wenzl-projector identity tr_M(p_k) = [k+1]_q, the Hyp-B prediction = q^2 + q^-2 = -J_Hopf. Classical-limit cross-check independently confirms verdict.",
   "contentBlock": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
@@ -46,8 +49,8 @@
     },
     "verdict": "REFUTED",
     "numerical_at_q0": {
-      "rung_2_actual": "0.0004837163440454520352282205",
-      "hypB_pred": "2.043706208532521989402019"
+      "rung_2_actual": "0.0004837164956956220627765728",
+      "hypB_pred": "2.043706218232901310218245"
     }
   }
 }

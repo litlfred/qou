@@ -25,6 +25,8 @@ uniqueness scaffolding for when that witness lands.
 
 namespace QOU.BraidKnot
 
+noncomputable section
+
 /-- **¹²C empty-constraint SDP** at `heckeDim 36`. -/
 abbrev carbon12_emptySDP := nucleusEmptySDP 36
 
@@ -52,4 +54,5 @@ abbrev carbon12_optimum_is_zero := nucleus_optimum_is_zero 36
 /-- ¹²C objective at optimum equals 0. -/
 abbrev carbon12_objAt_optimum_eq_zero := nucleus_objAt_optimum_eq_zero 36
 
+end  -- noncomputable section
 end QOU.BraidKnot

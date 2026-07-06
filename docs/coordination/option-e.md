@@ -1,14 +1,14 @@
 # Δ_λ closure (Option-E) — master ledger
 
 > Single source of truth for the **Δ_λ closure / per-isotope binding**
-> goal. Per CLAUDE.md L2 Subgoal-1: this is the closure path
+> goal. Per AGENTS.md L2 Subgoal-1: this is the closure path
 > ("per-isotope Borromean-tower extension + operator-valued branching
 > combiner") that unlocks the 100× targets above the CAL-2 floor.
 
 ## Why this ledger exists
 
 Six prior Δ_λ ansätze failed (Frobenius co-Casimir, Demazure-fibre,
-LP-Plancherel, LP-Frobenius, crystal-graph, augmented Markov). CLAUDE.md
+LP-Plancherel, LP-Frobenius, crystal-graph, augmented Markov). AGENTS.md
 §Precision goals records that any 7th fit-based ansatz "will be caught
 by the three-calibration discipline review". The productive direction
 is **Option-E** (Kashiwara crystal) — the §L2 Δ_λ-gate context doc
@@ -28,18 +28,30 @@ re-discover already-tried directions.
 
 | Sub-goal | Status | Evidence | Open question |
 |----------|--------|----------|---------------|
-| **Deuteron Δ_λ closure** | **CLOSED** (+0.91% via E₀ × q⁻¹) | PR #1367, audit `2026-05-26-delta-lambda-binding-formula-closure.md` | none — the only honestly-closed light nucleus |
+| **Deuteron Δ_λ closure** | **NOT closed** (corrected 2026-06-17) — "+0.91% via E₀×q⁻¹" unsubstantiated: E₀×q⁻¹=3.771 (+69.5%), bare Σ=0.380 (−82.9%), apparent closure was Σ×fitted C_knot=5.852; best parameter-free = interface-knot+T3, −31% | `2026-06-17-deuteron-closure-overclaim-corrected.md` | the Δ_λ assembly gate (main `1f08f61a`: both directions blocked) |
 | **Per-nucleon binding (T, ³He, ⁴He, ⁶Li+)** | NOT derived | retraction PR #1386 documents the backhanded-fit attempt | structural derivation required |
 | **A=3 mirror pair (T − ³He)** | NEAR-MATCH at 0.11% | v9 commit `30c5393b7` | is `(1+q)/2` correction Taylor-exact / structurally-derived, or another near-match? |
 | **A=4 (⁴He)** | NOT derived | various probes 2026-05-25 thread | requires multi-nucleon extension of the v9 mirror-pair formula |
 | **A ≥ 5 (⁶Li, etc.)** | NOT derived | — | depends on lower-A closures |
 
-**Reading:** the deuteron is closed by a STRUCTURAL formula
-(`B(D) = m_e × |Σ_λ y_λ · χ^λ(β_D) · sgn(w_0^{S_{λ'}}) · f^λ|` with
-`f^λ = dim(V_λ)`, the regular-rep dimension). The A=3 mirror pair is
+**Reading (corrected 2026-06-17 — the deuteron is NOT closed):** the prior
+"closed by `E₀×q⁻¹` (+0.91%)" reading was itself wrong. Re-verified, no compute
+reproduces the claimed 2.24 / +0.91%: the *stated* `E₀×q⁻¹` (E₀=4.186) gives
+**3.771 MeV, +69.5%**; the per-block **Δ_λ Σ-formula**
+`B = m_e × |Σ_λ y_λ · χ^λ(β_D) · sgn(w_0^{S_{λ'}}) · f^λ|` (f^λ=dim(V_λ)) gives
+`B(D)=0.380 MeV`, **−82.9%**; and the apparent "closure" was that Σ value × a
+**fitted single-isotope constant C_knot=5.852** back-solved to AME
+(`binding_energy_categorical_deuteron.py:99` itself labels C_knot "FITTED …
+not a derived layer; Δ_λ gate remains open"). Best **parameter-free** deuteron
+prediction = interface-knot+T3 = **1.526 MeV (−31%)**. So the deuteron is NOT
+honestly closed, and no light nucleus is (Δ_λ directions blocked, main
+`1f08f61a`). Cross-checks:
+`docs/audits/2026-06-17-deuteron-closure-overclaim-corrected.md`,
+`docs/audits/2026-06-16-deuteron-closure-crosscheck-and-correction.md`.
+The A=3 mirror pair is
 near-matched but not closed. **Critical:** the v9 (1+q)/2 factor was
 selected from a substrate-candidate list, NOT derived. Treat as
-near-match per CLAUDE.md "Don't propose a seventh fit-based ansatz"
+near-match per AGENTS.md "Don't propose a seventh fit-based ansatz"
 discipline.
 
 ## v1..v9 progression (DO NOT REPEAT failed paths)
@@ -57,7 +69,7 @@ discipline.
 | **v9** | **+ (1+q)/2 correction** | **0.11% (stale) → +0.12% (canonical q₀, PR #1707)** | **NEAR-MATCH (fit) — PROBE 1 tested; structural derivation REFUTED; A=3 closure OPEN** |
 
 Each version's witness lives at
-`folio-assistant/computations/option-e-v{N}-*.witness.json`.
+`computations/option-e-v{N}-*.witness.json`.
 The witness commitSha pins which session produced the value.
 
 ## v9 canonical closure formula (NEAR-MATCH, not yet derived)
@@ -133,13 +145,56 @@ near-match. Do NOT wire as a derivation.
     (#1707 refuted (1+q)/2 separately); PROBE 4 is now framed as
     Δ_λ closure via crystal-vertex weights rather than as a
     cross-check on (1+q)/2.
+  - **(2026-06-16) KL-POSITIVITY PRUNE — full n^w_λ sum DE-PRIORITISED.**
+    The target Δ_λ = sgn(w_0^{S_{λ'}})·dim is **mixed-sign** (n=3: 1+/2−;
+    n=6: 6+/5−), but KL multiplicities n^w_λ are **non-negative** (KL
+    positivity). So Σ_w n^w_λ·X_w supplies at most the *magnitude*
+    |Δ_λ|=dim (already the deuteron f^λ); the chirality *sign* must come
+    exogenously, as the closed formula already does. ⇒ extending
+    `kazhdan_lusztig.py` to S_6 to run the full sum would hit a positivity
+    wall — PROBE 4 is not a new closure mechanism. Honest frontier is
+    PROBE 2 (A=4 interface operator), the sibling A≥3 cluster's scope
+    (#2369/#2371/#2372). Audit:
+    `docs/audits/2026-06-16-option-e-probe4-kl-positivity-prune.md`.
+  - **(2026-06-17, PR #2416) PRUNE PREMISE NOW LEAN-PROVED.** The
+    mixed-sign premise behind the positivity prune is machine-checked
+    sorry-free: `PartitionOf5.deltaSign_mixed` (both ±1 occur) +
+    `PartitionOf5.binding_magnitude_eq_dim` (|Δ_λ|² = dim²) in
+    `QOU/BraidsAndKnots/S5SO3FiberAction.lean`. So the prune now rests on a
+    Lean fact, not just a Python check: a non-negative (KL) weight sum can
+    supply the magnitude |Δ_λ|=dim but never the mixed chirality sign. The
+    McKay 2I↔E₈ + A₅-branching anchors behind the chirality pairing are
+    likewise Lean-proved (PR #2424). No new closure mechanism — theory-ledger
+    tightening only.
+  - **(2026-06-25, this PR) MAGNITUDE LEG CLOSED — `B_λ` (KL left-cell Betti
+    sum) is NOT cell-invariant, so it cannot supply `|Δ_λ|` either.** The
+    2026-06-16/-17 prune closes the *sign*; this closes the *magnitude* leg it
+    explicitly left open (cf. `2026-06-16-delta-lambda-sign-is-icosahedral-chirality.md`:
+    "positive KL data could in principle contribute on the magnitude side").
+    Direct S_6 enumeration of **all** left cells (literature-validated pure-Python
+    KL, `kazhdan_lusztig._self_test` green): distinct cells of the *same* shape
+    give *different* `B_λ = Σ_{w∈Γ_λ} P_{e,w}(1)` — (3,3): 6..23; (3,2,1): 22..54;
+    (4,2): 9..20; **even hooks vary** ((4,1,1): 10..26). Only the three trivial
+    shapes (6,),(5,1),(1^6) are invariant. ⇒ `B_λ` is not a function of λ; it has
+    no canonical value without an arbitrary cell-selection rule. Resolves the
+    prior on-main disagreement (`kl_betti_extrapolation.py` first-cell vs
+    `probe_option_e_probe4_kl_batch.py` `canonical_Q` — each silently picks *a*
+    cell; the batch-results doc's "hooks match f^λ" was a `canonical_Q` artifact,
+    now corrected in that doc). Deuteron: the f^λ→B_λ swing is
+    `B_pred ∈ 0.457..0.817 MeV` (×1.20..×2.15), none reaching 2.2245 (needs ×5.85).
+    **(a)-scope** negative (this construction alone), **not** a structural
+    exclusion of KL data from every closure. Probe:
+    `kl_betti_cell_dependence_probe.py`; witness: `kl-betti-cell-dependence.witness.json`.
+    Cross-checked against the canonical Rust engine: 76/76 S_6 left cells match
+    `pyhecke_native.kl_betti_sum_rust` (zero mismatches; per-shape ranges agree
+    exactly) — `kl_betti_rust_parity_crosscheck.py`.
 
 ## Anti-patterns (DO NOT repeat)
 
 - ❌ Q-factorial ratio (`q⁻^A · δ_tr · A(A-1)/2`) — RETRACTED per PR #1386 as backhanded fit. The actual `Δtr(⁴He)/Δtr(D) = 0.67`, not the 12.7 the q-factorial implied.
 - ❌ Single-nucleon Δ_λ derivation (audit `2026-05-26-...`): misses the multi-nucleon interface operator.
 - ❌ q-dependent algebraic Δ_λ at the Cat layer (audit ibid): mixes Cat and Alg layers. The Cat-layer Δ_λ is q-independent (sign × dim).
-- ❌ Seventh fit-based ansatz (CLAUDE.md §L2 explicit ban). The v9
+- ❌ Seventh fit-based ansatz (AGENTS.md §L2 explicit ban). The v9
   `(1+q)/2` factor is borderline — it's clean enough to look canonical
   but was SEARCHED for, not derived. Treat as near-match.
 
@@ -163,6 +218,21 @@ near-match. Do NOT wire as a derivation.
 | 2026-06-02 | Claude / `claude/option-e-derive-1plusq-over-2-2026-06-02` | Open **PROBE 1** — derive `(1+q)/2` structurally or falsify as near-match. Per ledger §"Open probes" line 85. | in flight (PR #1707, stub-only commit; coord posts cross-published on #1697 and #1707; canonical q_0 confirmed not stale; can consume #1697's `option-e-phase1-gram-h6.witness.json::data.h6.blocks["5_1"]` data for the half-trace hypothesis test). |
 | 2026-06-02 | Claude / `claude/option-e-phase2-gram-probe-2026-05-30` (PR #1516) | **PROBE 4 (cheap pass)** — test single-vertex KL candidate rules for Δ_λ closure at H_6/deuteron, mirroring PR #1709's "cheap proxy first" strategy. Also extends Phase 2 entry-point probe H_3 → H_6 consuming #1697's just-merged Gram. | **VERDICT: ALL FOUR SINGLE-VERTEX CANDIDATES REFUTED** (miss ≥ 66%): A χ^λ(w_0) 99.83%, B \|χ^λ(w_0)\| 120.73%, C sgn·dim_λ 66.47%, D peak \|ρ_λ(w_0) diag\| 117.46%. Symmetric to #1709's geometric Vol_λ refutation. Remaining in-Option-E direction: full `n^w_λ` enumeration across multiple vertices (extend `kazhdan_lusztig.py` past n ≤ 4 cap to S_6). Otherwise: pivot to GAP-A-3/A-4. Witness: `probe-option-e-phase2-crystal-vertex-candidates.witness.json`. |
 
+| 2026-06-16 | Claude / `claude/option-e-probe4-kl-positivity-prune-2026-06-16` | Formalize-first prune of PROBE 4 (the remaining in-Option-E path) before committing to the S_6 KL extension | **PRUNED.** Target Δ_λ=sgn·dim is mixed-sign (verified n=3,6); KL multiplicities are non-negative (KL positivity) ⇒ a Σ_w n^w_λ·X_w sum supplies at most \|Δ_λ\|=dim (already f^λ), never the chirality sign. PROBE 4 not a new closure mechanism; de-prioritise the S_6 KL extension. Frontier = PROBE 2 (A=4 interface), sibling cluster #2369/#2371/#2372. No fit. Audit `2026-06-16-option-e-probe4-kl-positivity-prune.md`. |
+| 2026-06-16 | Claude / `...probe4-kl-engine-validation` (PR #2381) | Engine-verify the PROBE-4 prune on real KL data | Located the KL engine at `computations/kazhdan_lusztig.py`; KL positivity at S_4 confirmed (all 576 P_{x,w} coeffs ≥0; 6 non-trivial = q+1) → prune now engine-verified, not theorem-cited. |
+| 2026-06-16 | Claude / `...delta-lambda-sign-chirality` (PR #2386) | Decompose the Δ_λ per-block factor | Δ_λ = sgn(w₀^{S_λ'})·dim = **magnitude (Wedderburn dim, chirality-invariant) × chirality sign** (= transpose = sign-twist = keystone's T₁↔T₂ parity; self-conj (3,1,1) ↔ A₅-split). Explains the PROBE-4 prune (sign exogenous). **NOTE (corrected #2388-era):** this is the Δ_λ *factor* structure, NOT a deuteron closure — see next row. |
+| 2026-06-16 | Claude / `...deuteron-closure-crosscheck` (this PR) | Run the canonical deuteron compute; reconcile closure framing | **CORRECTION.** `binding_energy_categorical_deuteron.py` → B(D)=0.380 MeV, **−82.9%** off: the Δ_λ Σ-formula does NOT close the deuteron. The closure is **E₀×q⁻¹ (+0.91%)** (PR #1367), a separate object. Corrected #2386 (banner) + the §Status "Reading" prose (above) which had conflated the two. No math retracted — the chirality decomposition + PROBE-4 prune stand. Audit `2026-06-16-deuteron-closure-crosscheck-and-correction.md`. |
+| 2026-06-16 | Claude / (infra) | doc-currency | Compute path `folio-assistant/computations/` → `computations/` swept (3675 files, PR #2388); the canonical compute is qou-top-level `computations/`. |
+| 2026-06-17 | Claude / `...keystone-lean-delta-lambda-chirality` (PR #2416) | Lean-prove the Δ_λ magnitude×chirality split | **LANDED (sorry-free).** `S5SO3FiberAction.lean`: `deltaSign`/`deltaLambda`, `deltaSign_sq_one`, `binding_magnitude_eq_dim` (|Δ_λ|=dim), `deltaSign_mixed` (the PROBE-4 prune premise), `electron_block`. Verified core-only (lean v4.24.0, exit 0); Mathlib build CI-deferred. The PROBE-4 KL-positivity prune now rests on a machine-checked mixed-sign fact. No fit, no compute rewire. |
+| 2026-06-24 | Claude / `claude/brave-hawking-tjdu2p` | Owner Q: "KL not sufficient ≠ wrong — can it be *contributive* to the magnitude?" Measure on the deuteron oracle (S₆, exact). | **CONTRIBUTIVE, NOT CLOSING (×2.0).** With the canonical y_λ·χ^λ·sgn primitives, swapping f^λ→ KL left-cell Betti B_λ gives Σ: −0.7439 (f^λ, reproduces canonical) → −1.4894 (Betti); B(D): 0.380 (−82.9%) → **0.761 MeV (−65.8%)**. Needs ×5.85 to close, KL-Betti delivers ×2.0 (lift all from bulk; dominant (5,1) is a hook, unchanged). **Refines** the prune's incidental "KL at most re-derives \|Δ_λ\|=dim": Betti ≠ dim on bulk and *does* move the number — PROBE-4 is **(a) scope-limited**, not (b) excluded. The *sign* prune (deltaSign_mixed) still stands; **not** a production rewire (non-closing ansatz swap). Witness `option-e-kl-betti-contributive-deuteron`; audit `2026-06-24-kl-betti-deuteron-contributive-measurement.md`. |
+| 2026-06-28 | Claude / `claude/option-e-a4-reconcile-2026-06-28` | Reconcile #2839's A=4 "closure" empirically + record durably (anti-rechase). | **A=4 Option-E closure UNSUBSTANTIATED.** Only runnable A=4 script `a4_option_e_color_tube_closure.py` = **−79.1%** (5.91 MeV via the ×10³ color-tube numerology, not Betti). No full Σ_λ exists: `chi-helium-4-h12` is **17/77** (`partial`; Rust-gated producer — bean **b0vf**, no non-Rust route: `pyhecke_native` absent + pure-Python matrix-M "infeasible for n=12") and only `B_{(10,2)}` of 77 `B_λ` computed (#2839 Rust). So "B_{(10,2)}=584 closes A=4" is a **single-partition scalar, not a full sum**. Both computable fronts (A=2 ×2.0; A=4 −79%) = contributive/insufficient, **not closing**. Don't re-chase until b0vf (χ complete) + 77 `B_λ` land, then run the deuteron harness. Audit `…2026-06-24…` §A=4. (t6ba verified resolved on main.) |
+| 2026-06-28 | Claude / `claude/option-e-a4-computed-2026-06-28` | Built `pyhecke_native` (owner direction) → compute the REAL A=4 binding; correct the prior "χ 17/77 / can't compute". | **A=4 f^λ COMPUTED — does NOT close.** Full 77-partition signed sum (the complete χ was already on main in the `…-matrix-m` witness; the 17/77 was a stale sibling file = b0vf): Σ_f=−10.867 → **B(⁴He)_f = 5.55 MeV (−80.4%)**, needs ×5.10. Full **Betti** sum infeasible even with pyhecke (`kl_betti_sum_rust`: (10,2)~100s; column shapes = w₀ over all S₁₂) — which is why #2839 has only B_(10,2). Verdict: A=4 not closing (deuteron Betti uplift is only ×2.0 → ~11 MeV ceiling). **#2839's "584 closes A=4" refuted.** Script `option_e_a4_full_reconciliation.py` + witness `option-e-a4-full-reconciliation`; audit §A=4 Update. |
+| 2026-06-17 | Claude / `...keystone-lean-mckay-e8-anchors` (PR #2424) | Lean-prove the McKay 2I↔E₈ + A₅-branching anchors | **LANDED (sorry-free).** `binaryIcosahedralIrrepDims` (affine E₈ marks) with Σdim²=120, Σmarks=h(E₈)=30, \|2I\|=4·h, dimE₈=248=8·31; `so3_to_a5_dim_splits`; `s5_to_a5_electron_block_splits` (6=3+3, T₁⊕T₂). Pins the spacetime-face arithmetic behind the chirality split. Verified core-only (exit 0). |
+| 2026-06-17 | Claude / `...deuteron-closure-overclaim-fix` | Re-verify the deuteron "closure" claim (row 2026-06-16 above asserted "+0.91% via E₀×q⁻¹ is the correct closure") | **CORRECTION — the deuteron is NOT closed.** No compute reproduces 2.24/+0.91%: stated E₀×q⁻¹ (E₀=4.186)=3.771 (+69.5%); Σ-formula=0.380 (−82.9%); the apparent closure was Σ×**fitted** C_knot=5.852 (the compute itself labels it fitted, gate open). Best parameter-free = interface-knot+T3 = 1.526 (−31%). The 2026-06-16 "Reading" + Status row were themselves wrong (kept E₀×q⁻¹ as "correct closure"); both fixed. No light nucleus honestly closed (Δ_λ blocked, main `1f08f61a`). Audit `2026-06-17-deuteron-closure-overclaim-corrected.md`. |
+| 2026-06-28 | Claude / `claude/delta-lambda-l1-ceiling-prune-2026-06-28` | Formalize-first attempt at the Δ_λ closure: characterize the residual structure of the proven `sgn·dim` form rather than fit a 7th ansatz | **NEW PRUNE — sign-only fixes structurally excluded (b, invariant cited).** For the Σ-formula with proven Δ_λ=sgn(w₀^{S_λ'})·dim, the triangle inequality bounds **any** sign/chirality reassignment by ‖c‖₁=Σ\|y_λ χ^λ dim_λ\|. Measured ‖c‖₁/\|target\| = {D 0.52, T 0.36, ³He 0.59, ⁴He 0.41} — **< 1 for all four** ⟹ no sign-only re-derivation closes the deficit; a *magnitude-adding* ingredient is necessary (re-derived \|Δ_λ\|, re-weighted y_λ, or a new term T2–T6 / A=4). **Magnitude-side mirror of the PROBE-4 KL prune** (PROBE-4: signs can't supply magnitude-of-dim → never the sign; this: the sign structure → never the magnitude). Does NOT exclude magnitude-side levers z2bn/w5tg/thb7/PROBE-2 (all add ℓ¹ mass). thb7 note: ceiling ratios non-constant (0.36–0.59) ⇒ universal scalar on the summed vector can't hit all four (consistent with C_knot 2.8× spread) — informative, not a refutation. Witness `delta-lambda-l1-ceiling-sign-prune.witness.json`; audit `2026-06-28-delta-lambda-l1-ceiling-sign-only-prune.md`. No fit, no compute rewire. |
+| 2026-06-28 (cont.) | Claude / `claude/delta-lambda-l1-ceiling-prune-2026-06-28` | Machine-check the prune core + profile the deficit + probe route (i) | **(1) Lean** `DeltaLambdaL1Ceiling.lean` sorry-free (`abs_weighted_sum_le_l1` / `weighted_sum_below_target` / `chirality_sum_below_target`; generic `[Field R][LinearOrder R][IsStrictOrderedRing R]`; lean-direct exit 0; wired to QOU.lean). **(2) Deficit profile** `delta-lambda-magnitude-deficit-profile.witness.json`: irreducible shortfall `|target|−‖c‖₁` = 40–64% of target; ℓ¹ mass concentrates in few-row near-rectangular blocks ([5,1]/[4,2]/[3,3] for D). **(3) Route-(i) q-dim probe** (scope (a)) `delta-lambda-qdim-route-probe.witness.json`: tested 3 q-dim conventions — ceiling `‖c_q‖₁/|target|` is **wildly convention-dependent** (⁴He spans **0.41→5.62**: balanced 0.80, unbalanced 2.54, fake-degree 5.62). ⟹ route (i) **escapes the sign-only prune** and is **under-constrained** — the q-dim convention is a **hidden DOF** (Rule 14); magnitude-matching via q-dim is NOT a derivation. Real discriminators: an independent principle fixing the convention + the sign/cancellation structure (net −82.9% vs fake-degree ℓ¹ +462% on ⁴He ⟹ near-total cancellation required). Caution for z2bn/thb7/PROBE-2. No fit. |
+| 2026-06-28 (cont.2) | Claude / `claude/delta-lambda-l1-ceiling-prune-2026-06-28` | Cancellation / A-scaling probe — the SIGNED net (closure ⇒ +1) under classic + 3 q-dim conventions | **No flat q-dim convention reproduces binding's A-scaling.** `delta-lambda-cancellation-ascaling-probe.witness.json`: as the convention grows the net grows **non-uniformly in A** — heavy isotopes overshoot (³He 1.27, ⁴He 1.31 at fake-degree) while light undershoot (D 0.28, T 0.91); no single convention lands all four near +1 (isotope spread 2.2–4.7×, *widens* with the convention). ⟹ the closure object must be **A-/λ-structured** (route (ii)/(iii) or a structured kernel whose effective dim_q bends the A-scaling — directly the z2bn S(m)=Σ_λ dim_q q-Gaussian/Habiro EGF, #2899). Sharpens the hidden-DOF finding: it's not just ℓ¹ freedom — the signed family fails the A-scaling test for every flat convention. Scope (a). No fit. |
+
 ## Cross-refs
 
 - `docs/audits/2026-05-26-delta-lambda-binding-formula-closure.md` — deuteron closure (PR #1305 + #1367)
@@ -170,7 +240,98 @@ near-match. Do NOT wire as a derivation.
 - `docs/audits/2026-05-25-option-e-crystal-weight-delta-lambda.md` — original Option-E motivation (Kashiwara crystal)
 - `docs/audits/2026-05-19-delta-lambda-phase4-z4N-closure.md` — early Z⊕N closure attempts
 - `docs/audits/2026-05-19-delta-lambda-thread-closure.md` — six-ansatz failure record
-- `folio-assistant/computations/option-e-v9-all-symmetries.witness.json` — v9 witness
-- `folio-assistant/computations/option_e_v9_all_symmetries.py` — v9 source
-- CLAUDE.md §Precision goals (L2 Δ_λ gate; Track A blocker; Subgoal-1 closure path)
+- `computations/option-e-v9-all-symmetries.witness.json` — v9 witness
+- `computations/option_e_v9_all_symmetries.py` — v9 source
+- AGENTS.md §Precision goals (L2 Δ_λ gate; Track A blocker; Subgoal-1 closure path)
 - `docs/coordination/1ppq-qbeta.md` — parallel flip-flop saga (c_k near-matches)
+
+## 2026-06-28 — z2bn fibre-kernel structure ↔ #2925 ℓ¹-ceiling (coordination)
+
+PR #2925 (Δ_λ ℓ¹-ceiling) proves sign-only Δ_λ re-derivation is capped at
+`‖c‖₁/|target| = 36–59 %` for D/T/³He/⁴He (scope (b), triangle inequality), so a
+**magnitude-adding** ingredient is necessary — and lists **z2bn (fibre R(q,x))**
+as an active magnitude-side lever that escapes the ceiling. PR #2899 (z2bn) pins
+the structure of that magnitude object: the binding period `S(m)=Σ_λ dim_q(λ)`
+has an exact q-Gaussian generating function
+`Ŝ(z)=Σ S(m)z^m/[m]_q! = exp(z + L₂(q)z² + Σ_{m≥3} L_m z^m)`, with a `(q−1)²·Φ_d`
+cyclotomic (Habiro) correction tower (sorry-free Lean
+`QOU.Mass.BindingQGaussianHabiro`), not q-holonomic of order ≤3 (held-out
+falsified). **Honest scope (a):** right *kind* of object (magnitude-side
+generating function, exact data), structure pinned; does **not** yet show it
+adds the 41–64 % ℓ¹ mass to close the deficit — closure is downstream. The
+ℓ¹-ceiling sets the bar the kernel's mass contribution must clear.
+Audit: `docs/audits/2026-06-27-lever1-qinvolution-cyclotomic-kernel.md`.
+
+## 2026-07-05 — PROBE-2 (A=4 interface operator) class-D gate landed + s5-so3 coordination
+
+The A=4 interface-operator lever (PROBE 2 / GAP-A-4 class D) got its
+**formalize-first gate + a confirmed locality prediction** (PRs #3375 scoping,
+#3385 gate+probe; the I-1/I-6/I-2 gate trio landed earlier via #3351/#3366):
+
+- **Scoping map** `docs/scope/2026-07-05-gap-a4-interface-operator-attack-scoping.md`
+  synthesizes the ~40-probe graveyard (T2–T18 + interface/a_operator). The ×5.10
+  ⁴He gap is pinned as a **missing higher-order term** — not a weight (bond
+  factors Lean-exact, `deltaSign_mixed`) and not sign-fixable (the ℓ¹-ceiling
+  0.41 < 1, row 2026-06-28 above). It is **≥4-body and ⁴He-LOCAL**.
+- **Gate (sorry-free)** `QOU/MassTheory/SU4SupermultipletGate.lean`: the Wigner
+  SU(4) [1^A] supermultiplet has dim `C(4,A)`, **zero iff A>4** — the α (A=4) is
+  the top closed shell. The degree/orbit-count vanishing that *predicts* the
+  ⁴He-locality.
+- **Narrow probe (scope-(a))** `su4-supermultiplet-locality.witness.json`: the
+  **measured super-pairwise excess peaks at ⁴He (2.093×) and returns to ~pairwise
+  by ⁶Li (0.944×) where `C(4,6)=0`** — a clean LOCALITY MATCH. Not ∝ `C(4,A)`
+  (that peaks at A=2); peaks at the unique maximally-bound α singlet. **Magnitude
+  leg (2.093× ↔ the [1^4] connected-operator value) is the multi-session
+  follow-on** — this is locality-consistency, not a magnitude closure.
+
+**Coordination:** posted intent on #2503 (the class-C geometric `W_λ` route) —
+the two ⁴He-magnitude attacks (class-C geometric vs class-D interface operator)
+now share a proved A=4-local / A>4-vanishing signature any candidate index can be
+cross-checked against, alongside the existing defect-cubic / `f_pn`-bracket gates.
+Earlier same-day: I-6 trace-convention unblock posted on #3205 (per-knot axis).
+
+## 2026-07-06 — [1⁴] value-leg writhe derivation + Wigner phys-lit (coordination)
+
+The ⁴He magnitude value leg narrowed to a single object across ~10 PRs
+(#3395 I-par … #3420 Perron–Frobenius … #3422 antisym-Hecke): `b₄` = the
+connected 4-body cumulant (9.243 MeV, exact) of a nucleon-flavor `Λ⁴(4)`
+operator (gate-verified), Lean-proved orthogonal to existing forms, functional
+form `−ln det(I+G)` (sign-unique), `G` a **sign-carrying (bar-odd) exchange**
+(Perron–Frobenius excludes the positive binding factors). PR #3423 adds the
+**lit anchor** (the α binding IS the Wigner SU(4) supermultiplet closed-shell
+energy — nuclear physics *fits* it; `b₄` derives it), a phys-lit **remark**
+(`rem:alpha-wigner-supermultiplet-context` on `conj:wigner-su4-from-spin-isospin`),
+and the **§4a structural finding** (the committed atom word is a linear CHAIN,
+not the [1⁴] complete graph — why `B_sym` under-binds ⁴He). The one open object
+is the **per-pair writhe sign** `sgn(w_{ij})` of the six [1⁴] block crossings,
+read from the [1⁴] link-diagram framing (never fitted).
+
+**Coordination posted:**
+- **#3417** (Elliott SU(3) + q-deformed nuclear) — overlaps on
+  `wigner-su4-from-spin-isospin`; flagged the new phys-lit remark so bean 1ict
+  builds on it rather than duplicating (Wigner SU(4) ⊃ Elliott SU(3), complementary).
+- **#3407** (Reeb-flow `Lk_R^{(k)}` categorical linking operation) — possible
+  **dependency**: their bar-odd-A₋ linking operation may supply the `w_{ij}`
+  linking numbers my writhe leg reads as open. Both independently land in the
+  bar-odd sector. Watching #3407; will consume `Lk_R^{(k)}` if it closes.
+
+### 2026-07-06 (later) — [1⁴] writhe signs read off; the open sharpens to sign **+** magnitude (#3426)
+
+Built the [1⁴] complete-graph exchange matrix explicitly
+([`b4_1four_complete_graph_writhe_signs.py`](../../computations/probes/b4_1four_complete_graph_writhe_signs.py),
+PR #3426). **Two of the three pair-signs are DERIVED** off the framework's own
+crossing convention (`atom_braid_word_3A`): **pp → σ = +1**, **nn → σ⁻¹ = −1**
+(nn = bar-mirror of pp — the p↔n bar-odd asymmetry). Only the **pn** sign is
+open. Enumerating `w_pn ∈ {−1,0,+1}` at the derived bond-factor magnitude
+`z ≈ 0.499`: pn=±1 give det<0 (unphysical), pn=0 gives 2.40 MeV (0.26×) **and**
+block-diagonally decouples the pn-dominated shell (excluded). **Decisive bound
+(not a fit):** the read-off sign pattern's most-negative eigenvalue is exactly
+**−√5**, capping the physical per-pair magnitude at `g < 1/√5 ≈ 0.447`; the naive
+`z ≈ 0.499` exceeds it by ~12% (why the mixed-sign det went negative). Since
+`−ln det → +∞` at the ceiling, the value **form** `b₄ = −ln det(I+G)` is **not
+refuted (scope-(a))** — the failure is the *naive uniform magnitude z*, not the
+form. **Open object sharpened:** the [1⁴] framing must supply the pn sign **and**
+a sub-`1/√5` per-pair magnitude. Posted the exact spec on **#3407**
+([comment](https://github.com/litlfred/qou/pull/3407#issuecomment-4892386760)):
+their `Lk_R^{(k)}` must land the pn linking amplitude below `1/√5`, mixed-sign,
+in the bar-odd A₋ sector — supplying both open inputs at once.

@@ -110,45 +110,6 @@ See [Table 3](#tbl:schrodinger-color-falsifiability-table3-data).
 The remaining empirical lever is the *magnitude* of $\eta$, which
 the falsifiability protocol above turns into a single-number test.
 
-**Numerical fit on \cite{bujack2022} Gray-experiment dataset.**
-
-The protocol was executed against the open-source Gray-experiment
-triad-choice data released by \cite{bujack2022}
-($N = 91{,}896$ responses; $75$ unique triads on the achromatic
-$L^{*}$ axis). The QOU model
-$\Delta E_{\mathrm{perc}}(d) = \operatorname{arsinh}(\eta d)/\eta$,
-paired with a Thurstonian probit choice rule with observer noise
-$\sigma$, was fitted by maximum likelihood (two free parameters):
-
-See [Table 4](#tbl:schrodinger-color-falsifiability-table4-data).
-
-The non-Riemannian alternative beats the Riemannian null by $200\sigma$ —
-the single-parameter $\operatorname{arsinh}$ form captures variance
-that Riemannian additivity cannot. The point estimate
-$\hat{\eta} = 0.126$ sits $\sim 20\%$ above the bare-$q_{0}$
-prediction $0.104$, with the bootstrap CI not strictly bracketing
-the prediction. Two non-exclusive interpretations:
-
-1. *Faithful identification with modest renormalization.* The
-   ratio $\hat{\eta}/\eta_{\mathrm{QOU}} \approx 1.20$ is consistent
-   with a small multiplicative renormalization from the
-   chromaticity-projection step (the affine shift $w_{k} - z$ in
-   [the color-tube coordinates](#def:color-tube-coordinates)
-   contracts the simplex by an $O(1)$ factor that has not been
-   computed categorically).
-2. *Spline-vs-rigid $\psi$ misspecification.* \cite{bujack2022}
-   model both the perceptual coordinate $\psi(L)$ and the
-   difference-scaling function $f$ as splines; the fit above pins
-   $\psi(L) = L$ and lets only $f$ deform. A non-linear $\psi$
-   would absorb some apparent $f$-curvature, tightening
-   $\hat{\eta}$ toward $\eta_{\mathrm{QOU}}$.
-
-The witness JSON
-[`schrodinger-color-falsifiability-fit.witness.json`](../../../folio-assistant/computations/schrodinger-color-falsifiability-fit.witness.json)
-records the full fit, bootstrap, and assertion outcomes; the script
-[`schrodinger_color_falsifiability_fit.py`](../../../folio-assistant/computations/schrodinger_color_falsifiability_fit.py)
-is reproducible from the LANL public release.
-
 **Connection to confinement.**
 
 The same deformation parameter $q - q^{-1}$ (equal to $2\eta$ in
@@ -157,7 +118,7 @@ $(q^{1/2} - q^{-1/2})$ coefficient of the Jones-form Skein
 relation $q[L_+] - q^{-1}[L_-] = (q^{1/2} - q^{-1/2})[L_0]$)
 governs the magnitude of the forced negative coefficient that
 drives [color confinement](#rem:q-chromaticity). So a successful
-color-perception fit of $\eta \approx 0.10$ would constitute an
+color-perception observation of $\eta \approx 0.10$ would constitute an
 *independent macroscopic measurement of the same underlying
 substrate deformation that governs quark confinement* — a
 non-trivial cross-scale consistency check on the framework.

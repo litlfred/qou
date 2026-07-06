@@ -1,0 +1,85 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-04T16:50:35.284474+00:00",
+  "commitSha": "a63d7029a88acfe16dd792a1a6d4d1f14f7d0d6e",
+  "assertions": [
+    {
+      "name": "both_isotopes_computed",
+      "computed": 2.0,
+      "expected": 2.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "unit": "isotopes with finite parity data (compute validity)",
+      "source": "A=5 mirror pair at n=15 via Hutchinson quadratic trace."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11037053,
+  "computation": "gram-qtrace-hutchinson-probe",
+  "scriptFile": "gram_qtrace_hutchinson_probe.py",
+  "scriptHash": "e764bedd76ff",
+  "scriptCommitSha": "daa907f78a04f900d3937b3c49dc19ca62382ddd",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Stochastic Hutchinson quadratic trace tr_M(W·W^sharp) beyond n=12: A=5 mirror pair bar-parity split (Gram level).",
+  "auditOnly": "docs/audits/2026-07-03-qbar-norm-repitch-assessment.md",
+  "parameters": {
+    "q0": 1.1099785827513808,
+    "samples": 200,
+    "exact_dim": 3000,
+    "rng_seed": 20260704,
+    "precision": "float64 + stochastic (LOSSY, exploratory)"
+  },
+  "data": {
+    "rows": [
+      {
+        "iso": "5He",
+        "Z": 2,
+        "N": 3,
+        "n": 15,
+        "G_atom_q0": 56.2499970420738,
+        "se_atom_q0": 0.05018531308249653,
+        "G_free_q0": 57.12674280553366,
+        "se_free_q0": 0.07154127710462121,
+        "G_atom_qi": 13.016969605373536,
+        "se_atom_qi": 0.5743790708620077,
+        "G_free_qi": 11.04856609296067,
+        "se_free_qi": 0.6500754904167445,
+        "parity_atom": 0.6241507247855428,
+        "parity_free": 0.6758777841575814,
+        "delta_parity": -0.051727059372038586
+      },
+      {
+        "iso": "5Li",
+        "Z": 3,
+        "N": 2,
+        "n": 15,
+        "G_atom_q0": 75.05985494723751,
+        "se_atom_q0": 0.06436652598193886,
+        "G_free_q0": 64.81983075642378,
+        "se_free_q0": 0.0729434246105,
+        "G_atom_qi": 9.102369383990668,
+        "se_atom_qi": 0.5103521478480115,
+        "G_free_qi": 10.019411253695854,
+        "se_free_qi": 0.6798805889871399,
+        "parity_atom": 0.7836946573995609,
+        "parity_free": 0.7322417762504585,
+        "delta_parity": 0.0514528811491024
+      }
+    ],
+    "a5_mirror_opposite_signed": true
+  }
+}

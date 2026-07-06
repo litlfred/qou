@@ -7,7 +7,10 @@ prediction of m_p and m_n from (m_e, m_μ, q_0) at MPFR 50 dps.
 
    m_p = 2 · m_μ · |tr_M(β_Bor, q_0)| · [3]_q! / q_0^3  −  12 · m_e
 
-   m_n = m_p · (1 + X/(1 - X/2))  where  X = (q-1)²(1 - q^{-4})/3
+   m_n = m_p + Q_β + m_e   with Q_β the parameter-free Kashiwara b² truncation
+                           (derived_masses.q_beta_kashiwara_n2_mev; ~+1 ppb on m_n).
+                           The flavor-split X = (q-1)²(1 - q^{-4})/3 is retained
+                           as a SECONDARY diagnostic ratio (−1.76 ppm), not the route.
 
 Both Lean-proved closed forms underlie the formula:
 
@@ -48,14 +51,15 @@ calibration input.
 
 ## Empirical performance
 
-At q_0 = 1.1099785827513808... (50 dps, m_p-pinned re-pin #1422):
+At q_0 = 1.1099785955573347... (50 dps, m_p-pinned re-pin #1422):
   m_p_pred  = 938.27209 MeV   vs CODATA 938.27209  →  0.0004 ppb  (ANCHOR
                                           round-trip, not a prediction)
   m_μ_pred  = 105.65840 MeV   vs CODATA 105.65838  →  +0.21 ppm   (9.5σ
                                           PREDICTION — the μ-p tension)
-  m_n_pred  = 939.56377 MeV   vs CODATA 939.56542  →  -1.76 ppm
-  Q_β_pred  = 0.78068 MeV     vs CODATA 0.78233    →  2113 ppm
-                                                       (bottlenecked by m_n)
+  m_n_pred  = 939.56542 MeV   vs CODATA 939.56542  →  +1.0 ppb   (n→p+e+ν̄
+                                          chain; Kashiwara b² Q_β, near-match)
+  Q_β_pred  = 0.78233 MeV     vs CODATA 0.78233    →  +1.25 ppm on Q_β
+                                          (only ~+1 ppb on m_n; gated on s5bb)
 
 Class-A acknowledged-anchor banner (per Workplan-0b): m_e, m_μ are
 CAL-1/CAL-2 anchors (CODATA inputs). q_0 is the substrate parameter
@@ -97,7 +101,9 @@ from experimental_constants import M_E_MEV  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_P_MEV_VALIDATION,
     M_N_MEV_VALIDATION,
+    M_MU_MEV_VALIDATION,
 )
+from derived_masses import q_beta_kashiwara_n2_mev  # noqa: E402
 
 
 def q_int(q, n):
@@ -115,8 +121,13 @@ def trM_borromean(q):
 
         tr_M(β_Bor, q) = (4 + h² - 3h⁴ - h⁶) / (h² + 4)
 
-    where h = q - q⁻¹. This is the Lean-proved canonical Wenzl
-    Markov trace of the Borromean braid β_Bor = (σ₁σ₂⁻¹)³ in H_3(q).
+    where h = q - q⁻¹ (Lean-proved: BorromeanMarkovTrace.lean). Trace
+    CONVENTION: this is the SU(2)/Temperley-Lieb (Jones) decomposition
+    — convention D in the trace-convention registry — NOT the Wenzl
+    z-trace (convention C differs exactly; gap 1.955e-4 at q0; see
+    docs/audits/2026-06-09-binding-trace-convention-split.md addendum,
+    probe_convention_d_vs_c_borromean.py (the D != C proof), and
+    probe_trace_convention_production_impact.py (production impact).
     """
     h = q - 1 / q
     return abs((4 + h ** 2 - 3 * h ** 4 - h ** 6) / (h ** 2 + 4))
@@ -125,6 +136,33 @@ def trM_borromean(q):
 def F_Bor(q):
     """The natural categorical observable F_Bor(q) := |tr_M(β_Bor, q)| · [3]_q! / q^3."""
     return trM_borromean(q) * qfact_three(q) / q ** 3
+
+
+#: Habiro 4-loop coefficient — FIT-TIER, RETAINED-BUT-NOT-APPLIED
+#  (owner ruling 2026-07-03 "drop" + PR #3280 option 1; bean `2i8g`
+#  reconcile CLOSED as drop): the exact c₄ needed is linear in the q₀
+#  pin offset (c₄ ≈ 46 is the muon-calibration convention, the μ–p
+#  tension reparametrized), `4143` has no derivation trail in the corpus,
+#  and the fitted tower was STRIPPED from the pin (`q_at`) — the raw
+#  proton pin is canonical. This constant + `habiro_ratio_s5bb` are kept
+#  as the documented record of the fitted dressing, but are NO LONGER
+#  applied to production m_p (they over-added +242 ppb at the proton
+#  pin). See docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md.
+with mp.workdps(70):
+    C4_S5BB = +(mpf("4143") / mpf("90"))
+
+
+def habiro_ratio_s5bb(q, c4=None):
+    """Habiro 4-loop dressing (1 + c₄u⁴)(1 + 4u⁵)(1 − 29u⁶) with
+    u = b·ℏ_q², b = √((q⁴+q²+1)/(q²+1)²). FIT-TIER (see C4_S5BB note):
+    NOT part of the raw proton pin and NO LONGER applied to production m_p
+    (owner ruling drop, #3280). Kept as the documented record of the
+    fitted dressing; callers must not multiply it into a production mass."""
+    c4 = C4_S5BB if c4 is None else c4
+    hbar_q_sq = ((q - 1) / q) ** 2
+    b_val = ((q ** 4 + q ** 2 + 1) / (q ** 2 + 1) ** 2) ** mpf("0.5")
+    u = b_val * hbar_q_sq
+    return (1 + c4 * u ** 4) * (1 + 4 * u ** 5) * (1 - 29 * u ** 6)
 
 
 def flavor_split_X(q):
@@ -154,39 +192,61 @@ def main():
     from q_parameter import vol_4_1_at  # noqa: E402
     hbar_q_sq = ((q - 1) / q) ** 2
     m_mu = m_e * vol_4_1_at(50) / hbar_q_sq          # muon FORMULA (pure-q)
-    m_mu_measured = mpf("105.6583755")               # CODATA — 9.5σ cross-check
+    m_mu_measured = mpf(M_MU_MEV_VALIDATION)         # CODATA — 9.5σ cross-check (registry)
     m_mu_over_m_e = m_mu / m_e
 
     # ── PREDICTIONS ────────────────────────────────────────────────
     F = F_Bor(q)
-    b_val = ((q ** 4 + q ** 2 + 1) / (q ** 2 + 1) ** 2) ** mp.mpf("0.5")
-    u_val = b_val * hbar_q_sq
-    habiro_ratio = (1 + 46 * u_val ** 4) * (1 + 4 * u_val ** 5) * (1 - 29 * u_val ** 6)
-    m_p_pred = (2 * m_mu * F - 12 * m_e) * habiro_ratio
-    X = flavor_split_X(q)
-    Delta_m_pred = m_p_pred * X / (1 - X / 2)
-    m_n_pred = m_p_pred + Delta_m_pred
-    Q_beta_pred = m_n_pred - m_p_pred - m_e
+    # m_p = 2·m_μ·F_Bor − 12·m_e — the exact N=0 substrate formula.
+    #
+    # The fitted Habiro precision tower (`habiro_ratio_s5bb`, module-level
+    # FIT-TIER helper) is DEFINED but NO LONGER APPLIED here (owner ruling
+    # "drop", PR #3280 option 1; bean 2i8g reconcile). It closed the
+    # −242 ppb formula→CODATA residual to sub-ppb, but at the current raw
+    # proton pin the base already lands m_p at +1.35 ppb, so applying the
+    # muon-era tower over-added +242 ppb (m_p → +243.8 ppb — a live
+    # regression). The u⁴ coefficient is affine in the q₀ pin (≈0 at the
+    # proton pin, 46 at the muon pin, slope 3.99/ppb): it measures the
+    # muon↔proton calibration gap, not a derived constant; the old
+    # `4143/90` "s5bb colour Reeb index" provenance cited a refuted route
+    # (2026-06-16-s5so3-reeb-resonance-probe-negative). F_Bor is already the
+    # exact Borromean Markov-trace (Habiro) evaluation, so no a_m tail is
+    # added. Consistent with the 2026-07-03 owner ruling that stripped the
+    # same tower from the q₀ solver + the 2026-05-28 floor audit rec #1.
+    # Full analysis: docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md.
+    m_p_pred = 2 * m_mu * F - 12 * m_e
+    # Canonical neutron: n → p + e⁻ + ν̄, with Q_β the parameter-free
+    # Kashiwara b² truncation (q_0-only; derived_masses.q_beta_kashiwara_n2_mev).
+    # Q_β is ~0.083 % of m_n, so its +1.25 ppm lands m_n at ~+1 ppb.
+    # TIER: near-match; exact Q_β gated on the s5bb Habiro keystone.
+    Q_beta_pred = q_beta_kashiwara_n2_mev()            # absolute MeV (no E_0 scaling)
+    Delta_m_pred = Q_beta_pred + m_e                   # = m_n − m_p, computed directly
+    m_n_pred = m_p_pred + Delta_m_pred                 # avoids large-number subtraction
     M_N_pred = (m_p_pred + m_n_pred) / 2
+    # SECONDARY diagnostic — the canonical flavor-split RATIO
+    # X = ℏ_q²·h·[2]_q/3 (prop:flavor-split-substrate); a derived u↔d
+    # split (−1.76 ppm on m_n), NOT the production neutron route.
+    X = flavor_split_X(q)
+    m_n_flavor_split = m_p_pred * (1 + X / (1 - X / 2))
+    Delta_m_flavor_split = m_n_flavor_split - m_p_pred
 
-    # ── PATH C: m_n via categorical Q_β (bypasses flavor-split) ────
-    # Uses the N=3 categorical ladder Q_β (6 ppb) instead of the
-    # flavor-split (2000 ppb). Path C: m_n = m_p + Q_β(N=3) + m_e.
-    # Gives m_n at 0.24 ppm (same as m_p) and Δ_pn at 3.5 ppb
-    # (BEATS the 100× target of 4.7 ppb).
-    Q_beta_N3 = None
-    m_n_pathC = None
-    Delta_m_pathC = None
+    # ── ROUND-TRIP CHECK (transparency — NOT a prediction) ────────
+    # Feeding the EXPERIMENTAL Q_β (Q_AME = m_n−m_p−m_e from CODATA)
+    # back through m_n = m_p + Q_AME + m_e recovers CODATA m_n BY
+    # CONSTRUCTION — a circular consistency check, NOT a prediction
+    # (reporting it as a prediction would violate the 3-input
+    # over-count discipline). The canonical neutron above instead uses
+    # the parameter-free Kashiwara b² Q_β.
+    Q_beta_ame = None
+    m_n_roundtrip = None
     try:
         qb_witness = json.loads(
             (COMPUTE_DIR / "q-beta-operator-valued-N3.witness.json").read_text()
         )
-        qb_data = qb_witness.get("data", {})
-        qb_val = qb_data.get("Q_AME")
+        qb_val = qb_witness.get("data", {}).get("Q_AME")
         if qb_val is not None:
-            Q_beta_N3 = mpf(str(qb_val))
-            m_n_pathC = m_p_pred + Q_beta_N3 + m_e
-            Delta_m_pathC = m_n_pathC - m_p_pred
+            Q_beta_ame = mpf(str(qb_val))
+            m_n_roundtrip = m_p_pred + Q_beta_ame + m_e
     except (FileNotFoundError, json.JSONDecodeError, KeyError):
         pass
 
@@ -230,7 +290,7 @@ def main():
     print(f"    m_p_codata                    = {mp.nstr(m_p_codata, 18)} MeV")
     print(f"    Δ                              = {mp.nstr(res_m_p_ppm, 8)} ppm")
     print()
-    print(f"    m_n_pred = m_p · (1 + X/(1-X/2)) = {mp.nstr(m_n_pred, 18)} MeV")
+    print(f"    m_n_pred = m_p + Q_β + m_e       = {mp.nstr(m_n_pred, 18)} MeV")
     print(f"    m_n_codata                       = {mp.nstr(m_n_codata, 18)} MeV")
     print(f"    Δ                                = {mp.nstr(res_m_n_ppm, 8)} ppm")
     print()
@@ -246,7 +306,9 @@ def main():
     w.set_description(
         "Production substrate-categorical prediction of m_p and m_n from "
         "(m_e, m_μ, q_0) using Lean-proved closed forms for |tr_M(β_Bor)| "
-        "and [3]_q!, plus the canonical Hecke-skein flavor-split formula. "
+        "and [3]_q!. The neutron uses the 3-input chain m_n = m_p + Q_β + m_e "
+        "with Q_β the parameter-free Kashiwara b² truncation (near-match, "
+        "~+1 ppb on m_n); the Hecke-skein flavor-split is a secondary ratio. "
         "CAL-3 (Q_β) is NOT used as input — Q_β becomes a DERIVED quantity. "
         "Substrate identity: m_p = 2·m_μ·|tr_M|·[3]_q!/q^3 - 12·m_e where "
         "the '12' is the Ocneanu cancellation reciprocal."
@@ -275,19 +337,41 @@ def main():
         "Delta_m_pn_MeV": mp.nstr(Delta_m_pred, 25),
     })
 
-    if m_n_pathC is not None:
-        m_n_C_codata_ppm = (m_n_pathC - m_n_codata) / m_n_codata * mpf("1e6")
-        Delta_C = m_n_pathC - m_p_pred
-        Delta_codata = m_n_codata - m_p_codata
-        Delta_C_ppb = float((Delta_C - Delta_codata) / Delta_codata * mpf("1e9"))
-        w.add_data("predictions_pathC", {
-            "m_n_MeV": mp.nstr(m_n_pathC, 25),
-            "m_n_residual_ppm": mp.nstr(m_n_C_codata_ppm, 12),
-            "Delta_m_pn_MeV": mp.nstr(Delta_C, 25),
-            "Delta_m_pn_ppb": str(Delta_C_ppb),
-            "Q_beta_N3_MeV": mp.nstr(Q_beta_N3, 25),
-            "derivation": "m_n = m_p + Q_beta(N=3) + m_e (bypasses flavor-split)",
-        })
+    # predictions_pathC retained for backward-compat: it now carries the
+    # SAME canonical neutron (Kashiwara b² Q_β) — no longer the circular
+    # Q_AME path. (predictions == predictions_pathC by construction now.)
+    m_n_C_ppm = (m_n_pred - m_n_codata) / m_n_codata * mpf("1e6")
+    Delta_codata = m_n_codata - m_p_codata
+    Delta_ppb = float((Delta_m_pred - Delta_codata) / Delta_codata * mpf("1e9"))
+    w.add_data("predictions_pathC", {
+        "m_n_MeV": mp.nstr(m_n_pred, 25),
+        "m_n_residual_ppm": mp.nstr(m_n_C_ppm, 12),
+        "Delta_m_pn_MeV": mp.nstr(Delta_m_pred, 25),
+        "Delta_m_pn_ppb": str(Delta_ppb),
+        "Q_beta_N3_MeV": mp.nstr(Q_beta_pred, 25),
+        "derivation": "m_n = m_p + Q_β(Kashiwara b², parameter-free) + m_e",
+    })
+
+    # Secondary diagnostics — the flavor-split RATIO route + the explicit
+    # circular round-trip check (experimental Q_β). Neither is the
+    # canonical neutron; both kept for transparency.
+    m_n_fs_ppm = (m_n_flavor_split - m_n_codata) / m_n_codata * mpf("1e6")
+    diagnostics = {
+        "m_n_flavor_split_MeV": mp.nstr(m_n_flavor_split, 25),
+        "m_n_flavor_split_residual_ppm": mp.nstr(m_n_fs_ppm, 12),
+        "Delta_m_pn_flavor_split_MeV": mp.nstr(Delta_m_flavor_split, 25),
+        "flavor_split_note": (
+            "flavor-split is a derived u↔d RATIO (prop:flavor-split-substrate), "
+            "−1.76 ppm on m_n; NOT the production neutron route."
+        ),
+    }
+    if m_n_roundtrip is not None:
+        diagnostics["roundtrip_check_experimental_qbeta_MeV"] = mp.nstr(m_n_roundtrip, 25)
+        diagnostics["roundtrip_note"] = (
+            "m_p + Q_AME(experimental) + m_e recovers CODATA m_n BY "
+            "CONSTRUCTION — circular, NOT a prediction (3-input over-count)."
+        )
+    w.add_data("neutron_diagnostics", diagnostics)
 
     w.add_data("codata_comparison", {
         "m_p_codata_MeV": mp.nstr(m_p_codata, 25),
@@ -334,15 +418,15 @@ def main():
         ),
     )
     w.add_assertion(
-        name="m_n_matches_codata_within_10ppm",
-        computed=float(abs(res_m_n_ppm)),
+        name="m_n_matches_codata_within_10ppb",
+        computed=float(abs(res_m_n_ppm) * 1000),      # ppm → ppb
         expected=0.0,
         tolerance=10.0,
-        unit="ppm",
+        unit="ppb",
         source=(
-            "m_n via canonical flavor-split should match CODATA m_n within "
-            "10 ppm — observed 2.0 ppm (bottlenecked by flavor-split's "
-            "0.10% residual at q_0)."
+            "m_n via the parameter-free Kashiwara b² Q_β (n→p+e+ν̄) should "
+            "match CODATA m_n within 10 ppb — observed ~1 ppb. TIER: "
+            "near-match; exact Q_β gated on the s5bb Habiro keystone."
         ),
     )
 

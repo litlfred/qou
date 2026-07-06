@@ -16,8 +16,8 @@ in the repo but is not wired into the live mass-tower compute.
 
 ## (A) The H_3 weight derivation — correct at n = 3
 
-In both [`mass_endomorphism.py`](../../folio-assistant/computations/mass_endomorphism.py)
-and [`crt_markov.py`](../../folio-assistant/computations/crt_markov.py):
+In both [`mass_endomorphism.py`](../../computations/mass_endomorphism.py)
+and [`crt_markov.py`](../../computations/crt_markov.py):
 
 ```python
 nf3   = qfact(3)                       # = [1]_q · [2]_q · [3]_q  (always n=3)
@@ -87,7 +87,7 @@ not just inaccurate.
 
 ## (C) The correct H_{3A} derivation — `schur_weyl_symbolic.py`
 
-[`schur_weyl_symbolic.py`](../../folio-assistant/computations/schur_weyl_symbolic.py)
+[`schur_weyl_symbolic.py`](../../computations/schur_weyl_symbolic.py)
 implements the proper formulation:
 
 $$
@@ -156,7 +156,7 @@ polynomial reconstruction") as **two sub-tasks**:
   implemented; the wiring isn't.
 - **P2.2b — CRT polynomial reconstruction at H_{3A}.** When
   symbolic Schur–Weyl gets too slow at high $A$ (per
-  [`tower_binding_symbolic.py`](../../folio-assistant/computations/tower_binding_symbolic.py)
+  [`tower_binding_symbolic.py`](../../computations/tower_binding_symbolic.py)
   hitting polynomial explosion at A=4), use CRT polynomial
   reconstruction (evaluate at multiple rational $q_i$, reconstruct
   $\mathbb{Z}[q^{\pm 1}]$ coefficients) to scale beyond.

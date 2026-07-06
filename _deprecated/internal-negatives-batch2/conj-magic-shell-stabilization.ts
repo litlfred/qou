@@ -1,6 +1,9 @@
 import { conjecture } from "../../schema/builders";
 
 export default conjecture({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+  ],
   label: "conj:magic-shell-stabilization",
   title: "Magic-shell stabilization term $\\Delta_{\\mathrm{shell}}(Z, N)$ in the brane-tower binding formula",
   lean: { ref: "qou:QOU.BraidKnot.MagicShellStabilization" },
@@ -21,11 +24,11 @@ export default conjecture({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/probe_phiq_pair_knot_magic_shell.py",
+    script: "computations/probe_phiq_pair_knot_magic_shell.py",
     witness: [
-      "folio-assistant/computations/probe-phiq-pair-knot-magic-shell.witness.json",
-      "folio-assistant/computations/probe-phiq-pair-knot-markov-trace.witness.json",
-      "folio-assistant/computations/tr-m-he4-canonical.witness.json",
+      "computations/probe-phiq-pair-knot-magic-shell.witness.json",
+      "computations/probe-phiq-pair-knot-markov-trace.witness.json",
+      "computations/tr-m-he4-canonical.witness.json",
     ],
     status: "experimental",
   },

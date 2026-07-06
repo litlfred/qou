@@ -3,7 +3,7 @@
 witness suitable for downstream consumption by the canonical
 mass / β / Q / binding pipeline.
 
-Source file: ``folio-assistant/computations/data/ame2020.mas20.txt``
+Source file: ``computations/data/ame2020.mas20.txt``
   — uploaded via PR; copy of W.J.Huang, M.Wang, F.G.Kondev, G.Audi,
     S.Naimi, *The Ame2020 atomic mass evaluation (I)*, Chinese
     Physics C45, 030002 (March 2021); plus part II at 030003.
@@ -20,7 +20,7 @@ Special markers:
   - ``#`` in place of decimal point → estimated (non-experimental)
   - ``*`` in place of value → not calculable
 
-Output: ``folio-assistant/computations/data/ame2020.json``
+Output: ``computations/data/ame2020.json``
 
 CLI:
     python3 vendor_ame2020.py             # parse + emit
@@ -200,7 +200,7 @@ def main(argv: list[str] | None = None) -> int:
                 "W.J.Huang, M.Wang, F.G.Kondev, G.Audi, S.Naimi, "
                 "Chinese Physics C45, 030002, March 2021)"
             ),
-            "source_path_in_repo": "folio-assistant/computations/data/ame2020.mas20.txt",
+            "source_path_in_repo": "computations/data/ame2020.mas20.txt",
             "fortran_format": (
                 "a1,i3,i5,i5,i5,1x,a3,a4,1x,f14.6,f12.6,f13.5,1x,"
                 "f10.5,1x,a2,f13.5,f11.5,1x,i3,1x,f13.6,f12.6"
@@ -220,7 +220,7 @@ def main(argv: list[str] | None = None) -> int:
             },
             "vendored_at": "2026-05-19",
             "vendored_by": (
-                "folio-assistant/computations/vendor_ame2020.py — "
+                "computations/vendor_ame2020.py — "
                 "repo-owner directive: provide AME 2020 mass data "
                 "as the canonical reference for the recursive "
                 "atom-knot atlas across all isotopes"

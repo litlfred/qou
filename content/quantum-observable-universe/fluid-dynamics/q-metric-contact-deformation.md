@@ -46,7 +46,7 @@ isotropic "padding" that prevents the Levi eigenvalues from
 crossing zero — which is the metric-change face of the
 deformation.
 
-**Where this lives in the proof strategy.**
+**Location in the proof strategy.**
 Two consequences for the
 [q-NS research programme](#rem:q-ns-research-programme):
 

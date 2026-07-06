@@ -1,6 +1,6 @@
 # Thread 2 — deuteron per-knot `VolDensity` is GATED (not clean engineering)
 
-**Date:** 2026-06-06 · **Probe:** [`vol_density_deuteron_perknot_probe.py`](../../folio-assistant/computations/vol_density_deuteron_perknot_probe.py) · **Follows:** the next-threads handover (#1908) + the vol-usage audit (2026-06-02).
+**Date:** 2026-06-06 · **Probe:** [`vol_density_deuteron_perknot_probe.py`](../../computations/vol_density_deuteron_perknot_probe.py) · **Follows:** the next-threads handover (#1908) + the vol-usage audit (2026-06-02).
 
 ## Finding
 
@@ -95,7 +95,7 @@ available, that is the clean next step.
 
 First in-sandbox SnapPy run (3.3.2 — every earlier audit was sandbox-blocked and relied
 on literature/witness values). Script:
-[`audits/snappy_census_volume_verification.py`](../../folio-assistant/computations/audits/snappy_census_volume_verification.py),
+[`audits/snappy_census_volume_verification.py`](../../computations/audits/snappy_census_volume_verification.py),
 witness `snappy-census-volume-verification.witness.json` (16/16 assertions), PR #2192.
 
 1. **The historical-table mismatch is NOT deuteron-only.** All three rows of

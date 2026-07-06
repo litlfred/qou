@@ -1,0 +1,173 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-03T18:54:29.352823+00:00",
+  "commitSha": "24559ba9b493b943fe2f9a6161b1fb48aed2f27a",
+  "assertions": [
+    {
+      "name": "all_isotopes_computed_finite_parity",
+      "computed": 7.0,
+      "expected": 7.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "unit": "isotopes with finite parity ratios (compute validity)",
+      "source": "transfer-engine evaluation at q0 and 1/q0, 50 dps."
+    },
+    {
+      "name": "a3_mirror_magnitude_asymmetry_present",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "unit": "boolean (0 = |Δ(3H)| > 5×|Δ(3He)| at equal n)",
+      "source": "the surviving (magnitude-level) mirror asymmetry at A=3."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 22,
+  "computation": "mirror-parity-linear-trace-probe",
+  "scriptFile": "mirror_parity_linear_trace_probe.py",
+  "scriptHash": "c74b994b507c",
+  "scriptCommitSha": "b46d407f17cb2d64f8f5574c87ea13b7fc12840e",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Bar-parity loading of the linear Markov trace under binding: N=Z controls vs the A=3 and A=7 mirror pairs (second test of the Gram-probe isospin-asymmetry pattern).",
+  "auditOnly": "docs/audits/2026-07-03-qbar-norm-repitch-assessment.md",
+  "parameters": {
+    "q0": "1.1099785955573347",
+    "dps": 50,
+    "parity_def": "(tr(q0) - tr(1/q0)) / (tr(q0) + tr(1/q0)), signed"
+  },
+  "data": {
+    "rows": [
+      {
+        "iso": "2H",
+        "Z": 1,
+        "N": 1,
+        "n": 6,
+        "class": "N=Z",
+        "parity_atom": 0.960778055753107,
+        "parity_free": 0.9741809695247754,
+        "delta_parity": -0.013402913771668344,
+        "tr_atom_q0": "0.38835718872378090449",
+        "tr_atom_qi": "0.0077684080354284501921",
+        "tr_free_q0": "0.98352618195548024654",
+        "tr_free_qi": "0.012862900036566856402",
+        "wall_sec": 0.09
+      },
+      {
+        "iso": "3H",
+        "Z": 1,
+        "N": 2,
+        "n": 9,
+        "class": "mirror A=3",
+        "parity_atom": 0.9802629538209252,
+        "parity_free": 0.9946739649761661,
+        "delta_parity": -0.014411011155240835,
+        "tr_atom_q0": "0.10407106930208712111",
+        "tr_atom_qi": "0.0010372640142349146238",
+        "tr_free_q0": "0.90802411983566671752",
+        "tr_free_qi": "0.0024245407267791320464",
+        "wall_sec": 0.04
+      },
+      {
+        "iso": "3He",
+        "Z": 2,
+        "N": 1,
+        "n": 9,
+        "class": "mirror A=3",
+        "parity_atom": 0.9974405398071339,
+        "parity_free": 0.9983258548247013,
+        "delta_parity": -0.0008853150175673337,
+        "tr_atom_q0": "0.2065784750874029088",
+        "tr_atom_qi": "0.00026470344080442193773",
+        "tr_free_q0": "1.0477565676413000388",
+        "tr_free_qi": "0.00087778306944747920728",
+        "wall_sec": 0.03
+      },
+      {
+        "iso": "4He",
+        "Z": 2,
+        "N": 2,
+        "n": 12,
+        "class": "N=Z",
+        "parity_atom": 0.9987238963867285,
+        "parity_free": 0.9996579720031362,
+        "delta_parity": -0.0009340756164076106,
+        "tr_atom_q0": "0.05535842626678307842",
+        "tr_atom_qi": "0.00003534409525586224088",
+        "tr_free_q0": "0.96732375059192443771",
+        "tr_free_qi": "0.00016545419735071163577",
+        "wall_sec": 0.18
+      },
+      {
+        "iso": "6Li",
+        "Z": 3,
+        "N": 3,
+        "n": 18,
+        "class": "N=Z",
+        "parity_atom": 0.9999592444524285,
+        "parity_free": 0.9999955260829138,
+        "delta_parity": -3.6281630485312545e-05,
+        "tr_atom_q0": "0.0078910741135128698938",
+        "tr_atom_qi": "1.6080580007620138953e-7",
+        "tr_free_q0": "0.95138823513453074502",
+        "tr_free_qi": "2.1282208011526085753e-6",
+        "wall_sec": 3.14
+      },
+      {
+        "iso": "7Li",
+        "Z": 3,
+        "N": 4,
+        "n": 21,
+        "class": "mirror A=7",
+        "parity_atom": 0.9999796928121139,
+        "parity_free": 0.9999990865856416,
+        "delta_parity": -1.9393773527779257e-05,
+        "tr_atom_q0": "0.0021146319542430444557",
+        "tr_atom_qi": "2.1471332213576033767e-8",
+        "tr_free_q0": "0.87835329722736826297",
+        "tr_free_qi": "4.0115043989335233337e-7",
+        "wall_sec": 7.24
+      },
+      {
+        "iso": "7Be",
+        "Z": 4,
+        "N": 3,
+        "n": 21,
+        "class": "mirror A=7",
+        "parity_atom": 0.9999973892285503,
+        "parity_free": 0.999999713408913,
+        "delta_parity": -2.3241803626821265e-06,
+        "tr_atom_q0": "0.0041974916507354671834",
+        "tr_atom_qi": "5.4793528335990468429e-9",
+        "tr_free_q0": "1.0135198127181038223",
+        "tr_free_qi": "1.4523289320347664205e-7",
+        "wall_sec": 2.3
+      }
+    ],
+    "prediction_checks": {
+      "mirror_pairs_opposite_signed": {
+        "A=3": false,
+        "A=7": false
+      },
+      "nz_controls_more_neutral_than_mirrors": false,
+      "verdict": "REFUTED at the linear-trace level (scope (a): this observable, alone; the Gram-level observation stands)",
+      "max_abs_delta_nz": 0.013402913771668344,
+      "min_abs_delta_mirror": 2.3241803626821265e-06,
+      "a3_magnitude_asymmetry": 16.277834295457197
+    }
+  }
+}

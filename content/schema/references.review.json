@@ -1,7 +1,13 @@
 {
   "_meta": {
     "purpose": "Per-reference HUMAN-REVIEW status for content/schema/references.ts. Phase 1 of the bib-human-review workflow (docs/workplans/2026-06-08-bib-human-review-workflow-design.md).",
-    "statusEnum": ["unreviewed", "source-in-repo", "issue-open", "photo-uploaded", "validated"],
+    "statusEnum": [
+      "unreviewed",
+      "source-in-repo",
+      "issue-open",
+      "photo-uploaded",
+      "validated"
+    ],
     "default": "unreviewed",
     "convention": "Any references.ts id NOT listed under `reviews` defaults to 'unreviewed'. The bib-human-review audit flags every reference whose effective status is not 'validated'.",
     "staleness": "An entry is stale when its `entryHash` (12-char SHA-256 prefix of the canonical-JSON-serialized references.ts entry, recursively key-sorted) drifts from the current entry; re-review is required after drift. Computed by content/pipeline/validate-references-human-review.ts.",
@@ -22,6 +28,14 @@
       "source": "issue#2042",
       "page": "241-247 (definition + lower bound, ~p.241-243)",
       "entryHash": "c6aefdff481b"
+    },
+    "leitnerpawloski2004": {
+      "status": "validated",
+      "by": "agent-backfill",
+      "date": "2026-06-12",
+      "source": "uploads/0409565v2.pdf",
+      "page": "auto-identified",
+      "entryHash": "bc4b9215fa90"
     }
   }
 }

@@ -16,7 +16,7 @@ It also computes alternative calibration scenarios:
   - Observable-only Q_≥2 (only ℓ ≥ 2 terms: L₊, L₋, e⁻)
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 beta-decay-energy-scale.py
 """
 

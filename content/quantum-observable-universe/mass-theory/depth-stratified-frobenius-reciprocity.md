@@ -51,7 +51,7 @@ $$
          \dim_q^2 V_\mu \cdot \chi^\mu(e_{K_k^*})}.
 $$
 
-### Why FR
+### Categorical content of the FR refinement
 
 The Frobenius integral $\int_{A_\lambda} \rho(\beta_\mathcal{K}) \cdot \mathcal{T}$
 at low curvature-rank "factors through specific hyperbolic-knot
@@ -76,7 +76,7 @@ $\dim_q^2 / [n]_q!$ is correct.
 
 ### Empirical falsifications recorded
 
-[`binding_depth_stratified_knot_weighted.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/binding_depth_stratified_knot_weighted.py)
+the canonical formalism
 tested two simple empirical forms of "ideal restriction at low $k$" —
 *both falsified* on D, T, ${}^{3}$He, ${}^{4}$He:
 
@@ -190,23 +190,23 @@ A concrete computation requires:
  inside the atomic braid.
 3. $\chi^\lambda(4_1^{(n)})$ for each $\lambda \vdash n$ of depth 3 —
  computable via the Rust kernel
- ([`compute_atom_chi_rust.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/compute_atom_chi_rust.py))
- or the symbolic Hoefsmit pipeline. The script
- [`fr_pullback_k3_test.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/fr_pullback_k3_test.py)
+ (the canonical formalism)
+ or the symbolic Hoefsmit pipeline. the formalism
+ the canonical formalism
  (from ) carries this end-to-end with KnotInfo cross-validation.
 
 ### Lean formalisation
 
 [`qou:QOU.BraidKnot.depth_stratified_frobenius_reciprocity`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/lean/QOU/BraidKnot/DepthStratifiedFrobeniusReciprocity.lean)
 axiomatises the FR refinement as a class hypothesis (per
-CLAUDE.md §3b-cond). Downstream theorems depending on the
+AGENTS.md §3b-cond). Downstream theorems depending on the
 FR-corrected mass formula consume this class as an explicit
 `[Instance]` hypothesis. The classical-limit case ($k = 0, 1, 2, 3$
 at $q = 1$) reduces to standard Frobenius reciprocity for $S_n$ —
 provable in Mathlib via `Representation.induced` and
 `Representation.restricted`.
 
-### Why this is "the final key"
+### Role as the final structural ingredient
 
 Per the structural narrative on  and
 [`docs/audits/-variance-per-depth-diagnosis.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-variance-per-depth-diagnosis.md):
@@ -235,7 +235,7 @@ at $k = 3$.
 
 If true, this conjecture **closes the unified mass formula** to
 universal precision — all atomic binding energies follow from
-$(m_e, q_0, Q_\beta)$ + the three distinguished knots
+$(m_e, q_0, \mathfrak{Q}_\beta)$ + the three distinguished knots
 $\{K_1^*, K_2^*, K_3^* = 4_1\}$ (with $K_3^* = 4_1$ empirically
 resolved per ).
 

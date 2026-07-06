@@ -1,0 +1,66 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-20T19:00:38.697500+00:00",
+  "commitSha": "3f2b58737bfa5d512476cb11743e121dfc2a7bd6",
+  "assertions": [
+    {
+      "name": "reeb_level_collides_T2_G",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "source": "T₂,G both at ℓ=3, Casimir 12"
+    },
+    {
+      "name": "reeb_plus_chirality_separates",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "source": "chirality +1/-1 splits the ℓ=3 pair"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "keystone-reeb-casimir-chirality-step3",
+  "scriptFile": "keystone_reeb_casimir_chirality_step3.py",
+  "scriptHash": "02d529e38e02",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "mpmath": "1.4.1"
+  },
+  "description": "Look-to-Reeb structural result. The Reeb-spin eigenvalue μ_λ (prop:q-heat-kernel-peter-weyl, content-Casimir) indexes partitions; its A₅-irrep pullback (Casimir at first-ℓ) collides T₂,G at ℓ=3. The chirality (the (3,1,1)=T₁⊕T₂ split, deltaSign, already Lean-proved) is the separator. So irrepToRotation = Reeb-Casimir level ⊕ chirality — a composite of two on-main canonical structures, not a heuristic. Exact angles still need the Seifert Reeb weights (#2524) + #2488 bijection (unmerged). NOT wired.",
+  "data": {
+    "reeb_casimir_at_first_ell": {
+      "A": 0,
+      "T1": 2,
+      "T2": 12,
+      "G": 12,
+      "H": 6
+    },
+    "chirality": {
+      "A": 0,
+      "T1": 1,
+      "T2": -1,
+      "G": 0,
+      "H": 0
+    },
+    "reeb_level_alone_injective": false,
+    "reeb_plus_chirality_injective": true,
+    "collision": [
+      "G",
+      "T2"
+    ]
+  },
+  "caveats": [
+    "Structure-pinning, NOT a closure. The composite (Reeb level ⊕ chirality) is grounded on on-main canonical structures (μ_λ content-Casimir, icosBranchingMult, deltaSign) but the exact rotation angles need the open Seifert-S¹ Reeb weights on S³/2I (#2524) and #2488's A5IrrepToClass bijection (unmerged). No instance wired; BringFiberAction stays conditional."
+  ]
+}

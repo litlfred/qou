@@ -15,7 +15,7 @@ $$
    \longrightarrow  1.
 $$
 
-The *quantum characteristic classes* (Yekutieli obstruction classes)
+The **quantum characteristic classes** (Yekutieli obstruction classes)
 are the cohomology classes
 
 $$

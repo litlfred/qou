@@ -10,7 +10,7 @@ import QOU.HeckeAlgebra.Common
 Abstract framework for the Hoefsmit seminormal matrix
 representation of the Iwahori-Hecke algebra `H_n(q)`.  This is
 the categorical Lean-side analogue of the Python implementation
-in `folio-assistant/computations/hecke/hecke_characters.py` (function
+in `computations/hecke/hecke_characters.py` (function
 `build_seminormal_matrices`).
 
 ## What this module provides
@@ -93,7 +93,7 @@ axiom seminormalDim_pos : ∀ {n : ℕ} (lam : Nat.Partition n) (hn : 0 < n),
 
     Axiomatised at the type level pending the Mathlib port of
     Hoefsmit (1974); the concrete construction is in
-    `folio-assistant/computations/hecke/hecke_characters.py`
+    `computations/hecke/hecke_characters.py`
     (function `build_seminormal_matrices`). -/
 opaque HoefsmitMatrix : ∀ {n : ℕ} (lam : Nat.Partition n) (_q : ℝ) (_i : Fin (n - 1)),
     Matrix (Fin (seminormalDim lam)) (Fin (seminormalDim lam)) ℝ

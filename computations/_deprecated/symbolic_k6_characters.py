@@ -11,7 +11,7 @@ This avoids the O(dim³) dense sympy Matrix multiply and gives
 O(dim × nnz) per crossing — critical for dim=16 ([3,2,1]).
 
 Usage:
-    cd folio-assistant/computations && python3 symbolic_k6_characters.py
+    cd computations && python3 symbolic_k6_characters.py
 """
 
 import sympy as sp

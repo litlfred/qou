@@ -51,11 +51,10 @@ theorem phaseSpace_at_zero : phaseSpace 0 = 1 := by
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/tau-leptonic-universality.md
 theorem phaseSpace_at_one : phaseSpace 1 = 0 := by
   simp [phaseSpace, Real.log_one]
-  ring
 
 /-- Abstract context for the tau-leptonic-universality claim. -/
 class TauLeptonicContext where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- Electron rest mass (MeV). -/
   m_e : ℝ
   /-- Muon rest mass (MeV). -/
@@ -94,7 +93,9 @@ theorem tau_leptonic_universality [ctx : TauLeptonicContext] :
   -- The factorisation step requires Lean-translation of the Markov
   -- trace `tr_Markov : Hecke H_3 q → ℝ` and the Hecke-quadratic
   -- structure of the weak vertex `T_{3,5}`.
+  -- The Markov-trace factorisation is a genuinely open Lean-translation step,
+  -- not derivable from the abstract `TauLeptonicContext` masses alone.
   -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/tau-leptonic-universality.md
-  trivial
+  sorry
 
 end QOU.Archimedean

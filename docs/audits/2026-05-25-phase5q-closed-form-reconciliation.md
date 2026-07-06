@@ -9,14 +9,14 @@
 
 Earlier framing of Track C said the Phase 5q closed form
 `closed_form_tau_M(Z, N, q, tau_p, tau_n)` (in
-[`folio-assistant/computations/closed_form_tau_M.py`](../../folio-assistant/computations/closed_form_tau_M.py))
+[`computations/closed_form_tau_M.py`](../../computations/closed_form_tau_M.py))
 "disagrees with the production pipeline by ~21% relative for atoms
 with at least one p-n interface" — phrasing inherited from the
 script's own docstring on the `"strict_averaged"` pn_convention
 bullet (now reframed per this PR).
 
 Per
-[`per-observable-100x-status.witness.json`](../../folio-assistant/computations/per-observable-100x-status.witness.json),
+[`per-observable-100x-status.witness.json`](../../computations/per-observable-100x-status.witness.json),
 the framework still misses 100× targets on m_p, m_n, Δ_pn by
 ~10⁹ — a 21% structural disagreement on tr_M would be a major
 correctness concern if confirmed.
@@ -26,7 +26,7 @@ correctness concern if confirmed.
 The closed form is **machine-precision validated** against the full
 slow-path empirical computation at all four anchor atoms
 (D, T, ³He, ⁴He). Existing
-[`closed-form-tau-M-verification-phase5q.witness.json`](../../folio-assistant/computations/closed-form-tau-M-verification-phase5q.witness.json):
+[`closed-form-tau-M-verification-phase5q.witness.json`](../../computations/closed-form-tau-M-verification-phase5q.witness.json):
 
 | atom | tau_M (empirical, 50 dps) | tau_M (closed form) | rel_err | speedup |
 |---|---|---|---:|---:|
@@ -50,7 +50,7 @@ production default. `closed_form_tau_M.py` exposes three
 | `"bring_color_weighted"` (queued research) | z − h·(1/2 − δ/4) | not yet implemented |
 
 Production uses `chi_lambda_braid`-marshalled words (per
-[`canonical_braid_marshalling.marshal_to_chi_lambda_braid`](../../folio-assistant/computations/canonical_braid_marshalling.py),
+[`canonical_braid_marshalling.marshal_to_chi_lambda_braid`](../../computations/canonical_braid_marshalling.py),
 which maps `(c=1, d=-h/2)` to `(sign=+1, gen)` — collapsing the
 averaged interface to positive σ). The closed form's default
 `pn_convention="chi_lambda_braid"` mirrors this collapse exactly,
@@ -79,11 +79,11 @@ is the gap between production and the mathematically-strict form
    for a 22-million× speedup at ⁴He. Slow-path consumers
    identified by `grep -L closed_form_tau_M $(grep -l atom_braid_word_3A *.py)`:
 
-   - [`canonical_tr_m_helium4_stub.py`](../../folio-assistant/computations/canonical_tr_m_helium4_stub.py)
+   - [`canonical_tr_m_helium4_stub.py`](../../computations/canonical_tr_m_helium4_stub.py)
      (156 LOC; ⁴He-specific stub)
-   - [`atomic_tr_m_helium4.py`](../../folio-assistant/computations/atomic_tr_m_helium4.py)
+   - [`atomic_tr_m_helium4.py`](../../computations/atomic_tr_m_helium4.py)
      (390 LOC; full H_12 path)
-   - [`build_atomic_braid_recipe_4he_chain.py`](../../folio-assistant/computations/build_atomic_braid_recipe_4he_chain.py)
+   - [`build_atomic_braid_recipe_4he_chain.py`](../../computations/build_atomic_braid_recipe_4he_chain.py)
      (307 LOC; recipe builder)
    - others under
      `grep -L closed_form_tau_M $(grep -l atom_braid_word_3A *.py)`

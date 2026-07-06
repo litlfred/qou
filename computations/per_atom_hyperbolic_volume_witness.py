@@ -38,7 +38,7 @@ ATLAS = {
 
 
 def compute_vol(snappy_id: str, atom: str) -> float:
-    \"\"\"Compute Vol(K) via rigorous per-crossing Q-CLT functional.\"\"\"
+    """Compute Vol(K) via rigorous per-crossing Q-CLT functional."""
     # Map atom string to Z, N
     zn_map = {"p": (1, 0), "n": (0, 1), "D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}
     if atom not in zn_map:

@@ -137,7 +137,7 @@ Propose updating to:
 ## Reproducibility
 
 ```bash
-cd folio-assistant/computations
+cd computations
 python3 binding_a3plus_full_theta_assembly.py
 # Outputs: binding-a3plus-full-theta-assembly.witness.json
 ```

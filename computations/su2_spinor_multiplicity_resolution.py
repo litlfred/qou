@@ -11,7 +11,7 @@ eigenbasis of the multiplicity space -- and specifically the SU(2) spinor
 provides a FORCED selection of a single (2,1) copy, resolving the multiplicity by
 spin.
 
-DISCIPLINE (CLAUDE.md production-vs-exploratory, the FIT EPICENTER):
+DISCIPLINE (AGENTS.md production-vs-exploratory, the FIT EPICENTER):
   - The JM elements and the GT basis are CANONICAL (defined by the
     chain H1 < H2 < ... < H5). Computing them is rigorous, NO fit.
   - SELECTING which eigenvector = the h^4 = -3/4 carrier needs a rule FORCED by

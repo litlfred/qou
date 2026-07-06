@@ -84,7 +84,7 @@ def c_3_closure(base, h_pieces):
 def main() -> int:
     # Constants defined inside main() per Gemini review (avoid
     # module-level magic numbers).
-    Q0_MP = mp.mpf("1.1099785827513808075916690956107688798744991218736")
+    Q0_MP = mp.mpf("1.1099785955573347198997632204832250266562084087802")
     C3_TARGET = mp.mpf("-2.069342577")
 
     t0 = time.monotonic()
@@ -230,7 +230,7 @@ def main() -> int:
         print(f"  This is a (5+ archimedean) × (1 fibre) tensor product.")
         print(f"  Consistent with PR #1811's identification of /25 as the")
         print(f"  unique fibre piece. The 'fibre vs observable' split per")
-        print(f"  CLAUDE.md §'Im(q) at fibre vs observable level' is real")
+        print(f"  AGENTS.md §'Im(q) at fibre vs observable level' is real")
         print(f"  but minimal in this closure.")
     print()
 

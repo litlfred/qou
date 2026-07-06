@@ -6,7 +6,7 @@ the paper's "$R$-linear" is Mathlib's `Linear R` (which refines
 
 When $R = \mathbb{Z}$, an $R$-linear category is a preadditive
 category. The quantum universe axioms
-([Definition](#def\:quantum-universe)) require $R$-linearity for the
+([Definition](#def:quantum-universe)) require $R$-linearity for the
 hom-spaces of the underlying rigid :refterm[monoidal category]{#monoidal-category}.
 
 **Mathlib reference.**

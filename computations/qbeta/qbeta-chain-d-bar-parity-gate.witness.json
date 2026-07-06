@@ -1,0 +1,57 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-20T15:20:35.437071+00:00",
+  "commitSha": "cd22a3164a7d02df76ed3a0280c8e7ed2f15e720",
+  "assertions": [
+    {
+      "name": "c3_not_bar_invariant",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "source": "c₃(1/q0) ≠ c₃(q0): bar-covariant ℏ_q² tail"
+    },
+    {
+      "name": "hbar_sq_bar_covariant",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "source": "ℏ_q²(1/q) = q²·ℏ_q²(q)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "qbeta-chain-d-bar-parity-gate",
+  "scriptFile": "qbeta_chain_d_bar_parity_gate.py",
+  "scriptHash": "0110d6ac80b8",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "mpmath": "1.4.1"
+  },
+  "description": "Bar-parity gate for Q_β chain D (Type-B folded crystal). Type-B content is bar-involution invariant; tests whether the c_k are. c₂ even/constant (bar-invariant ✓); c₃ = -2 - ℏ_q² is bar-MIXED (invariant -2 Jones core + bar-covariant -ℏ_q² tail), so a uniformly bar-invariant Type-B crystal cannot reproduce c₃. REFUTE D as the single kernel; the ladder is parity-split (crystal even rungs × Jones-Hopf odd rungs). No fit.",
+  "parameters": {
+    "q0": "1.1099785955573347"
+  },
+  "data": {
+    "hbar_sq_is_bar_covariant_times_q2": true,
+    "c2_bar_invariant": true,
+    "c3_q0": "-2.00981718851398598119302644534",
+    "c3_bar_image": "-2.01209529148076379981211496782",
+    "c3_bar_invariant": false,
+    "c3_bar_swing_pct": 0.11334876524079272,
+    "verdict": "REFUTE-D-as-single-kernel; ladder is parity-split (crystal even × Jones-Hopf odd)"
+  },
+  "caveats": [
+    "c₄ even-rung is flagged a normalisation artifact (PR #1786); the gate rests on c₂ (constant) and c₃ (= -2-ℏ_q², fully determined, no Hoefsmit b). The c₁=cos rung needs α(q) and is not tested here.",
+    "Structural-constraint (prune) result: refutes Type-B as the c₃ kernel and redirects to a parity-split kernel. Nothing wired; c_k stay cal-anchored."
+  ]
+}

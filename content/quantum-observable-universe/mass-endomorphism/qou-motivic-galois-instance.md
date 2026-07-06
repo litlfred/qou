@@ -17,13 +17,6 @@ after a finite number of terms.
 
 ## Construction (three steps)
 
-1. **Extraction**
-   ([`folio-assistant/computations/probes/habiro_frobenius_probe.py`](../../../folio-assistant/computations/probes/habiro_frobenius_probe.py)).
-   For each atom in
-   `habiro-coefficients-atomic.witness.json` (proton, neutron,
-   deuteron) and each prime $p \in \{2, 3, 5, 7, 11, 13\}$, evaluate
-   $f$ at $u = \zeta_{2p}$. Witness:
-   `habiro-frobenius-probe.witness.json` field `frob_p_complex`.
 
 2. **Compatibility verification.** Two finite-place coherence
    checks pass on every $(p, \text{atom})$ cell:
@@ -48,7 +41,7 @@ after a finite number of terms.
    for the QOU substrate. The `frobenius_at` field maps each prime
    to its extracted Frobenius eigenvalue; the
    `almost_everywhere_nontrivial` field is a substrate axiom
-   (CLAUDE.md §3b) backed by the numerical witness for primes
+   (AGENTS.md §3b) backed by the numerical witness for primes
    $\leq 13$.
 
 ## Per-cell summary (from witness)

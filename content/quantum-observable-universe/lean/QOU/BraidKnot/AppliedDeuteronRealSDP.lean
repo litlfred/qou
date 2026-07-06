@@ -11,7 +11,7 @@ constraints) with the **real** deuteron SDP whose cost and constraints
 come from the mass-formula assembly.
 
 The numeric assembly + dual certificate live in
-`folio-assistant/computations/deuteron_real_sdp.py` →
+`computations/deuteron_real_sdp.py` →
 `deuteron-real-sdp.witness.json` (Phase A cost, Phase B branching
 constraints, Phase C strong-duality solve).  This file is the Lean
 **type-level** wiring: it states the real SDP as an `SDPPrimal` over the
@@ -40,6 +40,8 @@ clarabel/cvxpy dual) is the final wiring step, tracked as a follow-up.
 namespace QOU.BraidKnot
 
 open Matrix
+open QOU.MathlibExt.SDP
+open QOU.MathlibExt.SDPRealUniqueness
 
 /-- Number of Wedderburn blocks for ²H at `H_6` — the partitions
     `λ ⊢ 6`.  `heckeDim 6` is the full algebra dimension; the real SDP

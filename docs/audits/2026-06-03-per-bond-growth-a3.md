@@ -5,7 +5,7 @@ closes A=3 to −15% (PR #1754); the residual is **per-bond growth** — bonds
 inside the dense A-nucleon braid being stronger than the isolated 2-nucleon
 bond. This probe measures it directly via the Rust kernel.
 
-Probe: [`per_bond_growth_a3.py`](../../folio-assistant/computations/per_bond_growth_a3.py)
+Probe: [`per_bond_growth_a3.py`](../../computations/per_bond_growth_a3.py)
 (witness `per-bond-growth-a3.witness.json`).
 
 ## Method (no fit)

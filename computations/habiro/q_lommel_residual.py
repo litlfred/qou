@@ -2,7 +2,7 @@ import sympy as sp
 import json
 
 def main():
-    with open("folio-assistant/computations/habiro/habiro-coefficients-atomic.witness.json") as f:
+    with open("computations/habiro/habiro-coefficients-atomic.witness.json") as f:
         data = json.load(f)
         
     proton = data['results']['p (proton, A=1)']

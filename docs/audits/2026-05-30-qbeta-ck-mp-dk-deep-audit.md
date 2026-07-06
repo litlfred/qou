@@ -22,7 +22,7 @@
 >   0.004%. At the **current canonical (m_p-pin) q₀** the empirical
 >   c_3 is **−2.0693** and J − ℏ_q² is **2.6% off** — NOT Taylor-exact.
 > - The item-1 decisive test (2026-05-31,
->   `folio-assistant/computations/qbeta/qbeta-delta-tr-vs-formA.witness.json`)
+>   `computations/qbeta/qbeta-delta-tr-vs-formA.witness.json`)
 >   independently confirms: the Habiro Δtr_M is not Form A's slot, and
 >   no simple bridge closes Q_β.
 > - **Honest production = Q_N2 only** (c_2 = −1 Taylor-exact). Dashboard

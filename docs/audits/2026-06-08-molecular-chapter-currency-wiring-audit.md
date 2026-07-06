@@ -38,7 +38,7 @@ hash-fresh.
    "LP dual"; `cvxpy` is an optional import that falls back when
    absent, and there is no `linprog`/`clarabel` solve. The witnesses
    only assert "binding positive." This is a direct violation of
-   CLAUDE.md §"LP / SDP duals — first-class infra."
+   AGENTS.md §"LP / SDP duals — first-class infra."
 
 2. **Four referenced witnesses do not exist (HIGH/MED).**
    `co-molecular-binding.witness.json`,
@@ -113,12 +113,12 @@ direct `grep` instead. Witness freshness checked by recomputing the
 
 | Script | Path | Imports canonical pkgs? | Emits witness? | Witness fresh? | LP dual emitted? | Issue | Severity |
 |---|---|---|---|---|---|---|---|
-| `h2-molecular-binding.py` | `folio-assistant/computations/` | ✗ — `q_parameter`, `hecke_core` (substrate), `witness_base`; no `pyhecke`/`qou_substrate`/`pyhecke_native` | ✓ `h2-molecular-binding.witness.json` | ✓ FRESH (`e36a50636d2c`) | ✗ no `y_star`/`dual_obj`/`active_set` | transfer-matrix enumeration; only `scriptHash`/`scriptCommitSha` in witness | HIGH (dual) |
-| `h2-integer-lp.py` | `folio-assistant/computations/` | ✗ — same substrate imports | ✓ `h2-integer-lp.witness.json` | ✓ FRESH (`ce19e30d82cc`) | ✗ none | "integer LP" is a crossing-operator scan, not a dual-emitting LP; no `lp_dual_solver` | HIGH (dual) |
-| `molecular-frobenius-lp.py` | `folio-assistant/computations/` | ◐ partial — uses `pyhecke.gram` (`z`, `NF_BASIS`, `TR_M`) **but** also 3 local impls (`reduce_nf_dict`, `np.linalg.eigvals` Gram) | ✓ `molecular-frobenius-lp.witness.json` | ✓ FRESH (`2fca5a777687`) | ✗ — `cvxpy` optional, falls back; no `y_star`/gap | "Frobenius LP dual" in description but no dual fields emitted; not routed via `lp_dual_solver` | HIGH (dual) |
-| `molecular-trefoil-scan.py` | `folio-assistant/computations/` | ✗ — substrate imports only | ✓ `molecular-trefoil-scan.witness.json` | ✓ FRESH (`bab7f99afedf`) | ✗ none (scan, not LP) | knot-operator scan; fine as a scan but no canonical-pkg wiring | MED |
-| `unified-mass-molecular.py` | `folio-assistant/computations/` | ✗ — `q_parameter`, `experimental_constants`, `hecke_core` | ✓ `unified-mass-molecular.witness.json` | ✓ FRESH (`cad39184f169`) | ✗ none | clean of `λ_scale`/`Geom_full`/`mass_endomorphism`; just not canonical-pkg-wired | MED |
-| `ch-bond-writhe-lp.py` | `folio-assistant/computations/` | ✗ — substrate imports only | ✓ `ch-bond-writhe-lp.witness.json` | ✓ FRESH (`5fc24bf4e87f`) | ✗ none | this is `def:molecular-braid`'s primary `computation.script`; "lp" in name but no dual | HIGH (dual) |
+| `h2-molecular-binding.py` | `computations/` | ✗ — `q_parameter`, `hecke_core` (substrate), `witness_base`; no `pyhecke`/`qou_substrate`/`pyhecke_native` | ✓ `h2-molecular-binding.witness.json` | ✓ FRESH (`e36a50636d2c`) | ✗ no `y_star`/`dual_obj`/`active_set` | transfer-matrix enumeration; only `scriptHash`/`scriptCommitSha` in witness | HIGH (dual) |
+| `h2-integer-lp.py` | `computations/` | ✗ — same substrate imports | ✓ `h2-integer-lp.witness.json` | ✓ FRESH (`ce19e30d82cc`) | ✗ none | "integer LP" is a crossing-operator scan, not a dual-emitting LP; no `lp_dual_solver` | HIGH (dual) |
+| `molecular-frobenius-lp.py` | `computations/` | ◐ partial — uses `pyhecke.gram` (`z`, `NF_BASIS`, `TR_M`) **but** also 3 local impls (`reduce_nf_dict`, `np.linalg.eigvals` Gram) | ✓ `molecular-frobenius-lp.witness.json` | ✓ FRESH (`2fca5a777687`) | ✗ — `cvxpy` optional, falls back; no `y_star`/gap | "Frobenius LP dual" in description but no dual fields emitted; not routed via `lp_dual_solver` | HIGH (dual) |
+| `molecular-trefoil-scan.py` | `computations/` | ✗ — substrate imports only | ✓ `molecular-trefoil-scan.witness.json` | ✓ FRESH (`bab7f99afedf`) | ✗ none (scan, not LP) | knot-operator scan; fine as a scan but no canonical-pkg wiring | MED |
+| `unified-mass-molecular.py` | `computations/` | ✗ — `q_parameter`, `experimental_constants`, `hecke_core` | ✓ `unified-mass-molecular.witness.json` | ✓ FRESH (`cad39184f169`) | ✗ none | clean of `λ_scale`/`Geom_full`/`mass_endomorphism`; just not canonical-pkg-wired | MED |
+| `ch-bond-writhe-lp.py` | `computations/` | ✗ — substrate imports only | ✓ `ch-bond-writhe-lp.witness.json` | ✓ FRESH (`5fc24bf4e87f`) | ✗ none | this is `def:molecular-braid`'s primary `computation.script`; "lp" in name but no dual | HIGH (dual) |
 
 **Missing witnesses referenced by chapter prose/manifests:**
 
@@ -149,7 +149,7 @@ direct `grep` instead. Witness freshness checked by recomputing the
 (`appendix-mass-binding-algorithms/`) **does not reference any
 molecular block or script** (only `mba-step10-confinement-sdp.md`
 matched on the generic "LP" hint, unrelated to Ch 12). So per
-CLAUDE.md §"🟧 Mass-and-Binding-Algorithms appendix sync," the
+AGENTS.md §"🟧 Mass-and-Binding-Algorithms appendix sync," the
 molecular binding compute is outside the contract — flag for the
 LP/SDP-dual sidecar (`mba-sidecar-lp-sdp-dual-emission.md`) once the
 duals are wired.

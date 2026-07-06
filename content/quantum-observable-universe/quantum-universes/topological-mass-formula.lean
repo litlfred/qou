@@ -1,3 +1,7 @@
+import QOU.QuantumObservableUniverse
+import QOU.Torsion
+import Mathlib.Data.Real.Basic
+
 /-!
 # Proposition: Archimedean Topological Mass Formula
 
@@ -20,32 +24,25 @@ via two evaluation identities on top of the proved
 
 Given these, the closed-form formula is a one-line algebraic consequence.
 
+## Base ring (§7c)
+
+This is an **archimedean** object: division `1/ℏ_q²`, the ordering
+`q > 1`, and positivity `0 < Vol(K)` are all used, and the parent
+`TopologicalMassDecomposition` already types `totalMass`,
+`baselineHolonomy`, and `exceptionalContribution` over `ℝ`.  The
+formula therefore lives over `ℝ` (the substrate parameter is evaluated
+at `q₀ ≈ 1.1097` post-`τ`-functor).
+
 ## References
 
 - [turaev2010] https://doi.org/10.1515/9783110221831
 - [yekutieli2015] Nonabelian multiplicative integration on surfaces
-
-**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-Part of the formal proof chain. The parameter `q` is the canonical
-indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
-numerical evaluation.
 -/
 
-import QOU.QuantumObservableUniverse
-import QOU.Torsion
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
 
 open QOU QOU.Torsion
 
 namespace QOU.Torsion
-
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
-abbrev R_q := LaurentPolynomial ℤ
-def q_param : R_q := LaurentPolynomial.T 1
-def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-! ## The Archimedean Mass Formula -/
 
@@ -63,20 +60,20 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
     LaTeX: `\label{prop:topological-mass-formula}` -/
 structure ArchimedeanMassFormula (M : Type*) extends TopologicalMassDecomposition M where
-  /-- The substrate parameter `q > 1` at the evaluation point. -/
-  q : R_q
-  /-- The substrate parameter exceeds classicality. -/
-  -- q_gt_one : q > 1  -- (archimedean; not meaningful over R_q)
+  /-- The substrate parameter `q` at the evaluation point. -/
+  q : ℝ
+  /-- The substrate parameter exceeds classicality (`q > 1`). -/
+  q_gt_one : q > 1
   /-- The quantum Planck constant `ℏ_q = 1 − 1/q`. -/
-  h_q : R_q := 1 - q_inv_param  -- ℏ_q = 1 − q⁻¹ in R_q
+  h_q : ℝ := 1 - 1 / q
   /-- The quantum Planck constant satisfies its defining equation.
       This constraint ensures `h_q` cannot be overridden to an
       inconsistent value. -/
-  h_q_def : h_q = 1 - q_inv_param := by rfl
+  h_q_def : h_q = 1 - 1 / q := by rfl
   /-- The hyperbolic volume of the knot `K`. -/
-  knotVolume : R_q
+  knotVolume : ℝ
   /-- The knot volume is positive. -/
-  -- knotVolume_pos : 0 < knotVolume  -- (archimedean; not meaningful over R_q)
+  knotVolume_pos : 0 < knotVolume
   /-- **Hypothesis 1 (Chern–Simons/Volume correspondence).**
       The baseline holonomy of the QOU connection evaluates to the
       hyperbolic volume of the knot complement. -/
@@ -88,11 +85,15 @@ structure ArchimedeanMassFormula (M : Type*) extends TopologicalMassDecompositio
   exceptional_sum_eq : (Finset.univ.sum fun i => exceptionalContribution i) =
     knotVolume * (1 / h_q ^ 2 - 1)
 
-/-- The quantum Planck constant is non-zero when `q > 1`. -/
+/-- The quantum Planck constant is non-zero when `q > 1`
+    (then `1/q < 1`, so `ℏ_q = 1 − 1/q > 0`). -/
 theorem ArchimedeanMassFormula.h_q_ne_zero {M : Type*}
     (amf : ArchimedeanMassFormula M) : amf.h_q ≠ 0 := by
   rw [amf.h_q_def]
-  intro h; linarith [amf.q_gt_one]
+  have hq : (0 : ℝ) < amf.q := by linarith [amf.q_gt_one]
+  have hlt : 1 / amf.q < 1 := by rw [div_lt_one hq]; exact amf.q_gt_one
+  have hpos : (0 : ℝ) < 1 - 1 / amf.q := by linarith
+  exact ne_of_gt hpos
 
 /-- **Theorem.** Given the two evaluation hypotheses, the total mass
     equals `Vol(K) / ℏ_q²`.
@@ -111,7 +112,10 @@ theorem ArchimedeanMassFormula.mass_pos {M : Type*}
     (amf : ArchimedeanMassFormula M) :
     0 < amf.totalMass := by
   rw [amf.mass_eq_vol_div_h_q_sq]
-  exact div_pos amf.knotVolume_pos (sq_pos_of_ne_zero _ amf.h_q_ne_zero)
+  have hsq : 0 < amf.h_q ^ 2 := by
+    have := amf.h_q_ne_zero
+    positivity
+  exact div_pos amf.knotVolume_pos hsq
 
 /-- The mass formula is consistent with the `MassDerivation` module:
     `h_q_def` guarantees `h_q = 1 - 1/q`, so we recover exactly

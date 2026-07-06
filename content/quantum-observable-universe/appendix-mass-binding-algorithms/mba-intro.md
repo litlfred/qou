@@ -31,7 +31,7 @@ accuracy, target $\sigma_{\mathrm{pred}} \leq \sigma_{\mathrm{exp}} / 100$).
 *Status flags* mirror the canonical derivation table: *proved*
 (sorry-free Lean), *derived* (categorical, no fit),
 *conditional* (conjecture-conditional), *open* (open gate).
-*Witness JSON* paths are relative to `folio-assistant/computations/`
+*Witness JSON* paths are relative to `computations/`
 unless stated otherwise.
 
 **Reading order.**
@@ -59,7 +59,7 @@ file moved; and (iii) the *Algorithm* / *Correctness* /
 *Python API* subsections of the `.md` body if the algorithm
 signature or its correctness conditions changed.
 
-The enforcement points are listed in CLAUDE.md
+The enforcement points are listed in AGENTS.md
 ("Mass-and-Binding-Algorithms appendix sync — STRICT") and the
 relevant agent skills: `local/coordinate.md §2-bis`,
 `local/compute-author.md §8`, `local/compute-audit.md`

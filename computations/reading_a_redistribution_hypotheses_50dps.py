@@ -169,7 +169,7 @@ def main() -> int:
     print(f"  (The residual ~8% is the h⁴+ tower — distinguishes hypotheses)")
 
     print(f"\n[3/3] Bar-symmetry constraint analysis:")
-    print(f"  CLAUDE.md §7b: Type-B folding for bar-invariance — partitions")
+    print(f"  AGENTS.md §7b: Type-B folding for bar-invariance — partitions")
     print(f"  paired by λ ↔ λ^T should have IDENTICAL h-coefficients.")
     print(f"  At H_4: (3,1)^T = (2,1,1), and (2,2)^T = (2,2) (self-conj).")
     print(f"  Bar-symmetric hypotheses (a = c_(3,1) = c_(2,1,1)):")

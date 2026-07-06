@@ -1,4 +1,6 @@
-**Algebraic step.** The braid group $B_n$ acts on $A^{\otimes n}$. Its
+**Algebraic step.** To turn the categorical action into a computable
+knot invariant, one passes from braids to a trace-carrying quotient.
+The braid group $B_n$ acts on $A^{\otimes n}$. Its
 quotient by the Hecke relation
 $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$ is the Iwahori--Hecke algebra
 $H_n(q)$, which controls the combinatorics of the categorical action.

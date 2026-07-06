@@ -38,7 +38,7 @@ and records the two hard blockers that gate the rigorous promotion:
 EXPLORATORY / DIAGNOSTIC — no production path, no content block, no fit.
 Records research status + the cusp-structure data; promotes nothing.
 
-Ref: folio-assistant/computations/probes/difference_knot_binding_probe.py
+Ref: computations/probes/difference_knot_binding_probe.py
 Ref: docs/audits/2026-06-13-difference-knot-binding-geometric-probe.md
 Ref: content/quantum-observable-universe/mass-theory/binding-error-amplification.md
 """

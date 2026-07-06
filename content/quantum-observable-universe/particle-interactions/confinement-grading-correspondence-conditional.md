@@ -21,7 +21,7 @@ $$
   \;\iff\;
   (\mathfrak{M}_K)_d = 0 \;\;\text{for}\;\; d > \ell.
 $$
-## Why the upstream class is a single conjecture
+## Single-conjecture status of the upstream class
 
 The Brundan–Kleshchev cyclotomic-Hecke / KLR isomorphism is proved
 in \cite{brundankleshchev2009} for the abstract algebras over a
@@ -38,7 +38,7 @@ data into a single field.
 
 For every atomic knot $K$ at $k_{\max} \leq 7$, the LP/SDP active
 set $\{\lambda \mid y_\lambda^* > 0\}$ produced by
-[`confinement-operator-selection.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/confinement_operator_selection.py)
+[`confinement-operator-selection.py`](https://github.com/litlfred/qou/blob/main/computations/confinement_operator_selection.py)
 matches the KLR-graded support predicted by the conditional
 theorem.
 
@@ -51,9 +51,9 @@ theorem.
 | 7 | $3_1, 4_1, 5_{1,2}, 6_{1,2,3}, 7_{1,\ldots,7}$ | yes |
 
 Witnesses:
-[`lp-confinement-nf-forcing.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/lp-confinement-nf-forcing.witness.json),
-[`confined-knot-binding.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/confined-knot-binding.witness.json),
-[`confinement-operator-selection.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/confinement-operator-selection.witness.json).
+[`lp-confinement-nf-forcing.witness.json`](https://github.com/litlfred/qou/blob/main/computations/lp-confinement-nf-forcing.witness.json),
+[`confined-knot-binding.witness.json`](https://github.com/litlfred/qou/blob/main/computations/confined-knot-binding.witness.json),
+[`confinement-operator-selection.witness.json`](https://github.com/litlfred/qou/blob/main/computations/confinement-operator-selection.witness.json).
 
 These are *empirical evidence* for the upstream conjecture
 [`conj:crystal-graph-realization`](#conj:crystal-graph-realization),
@@ -63,7 +63,7 @@ KLR-grading on the QOU cyclotomic quotient), the conditional
 hypothesis will be discharged and this block becomes an
 unconditional theorem.
 
-## Computational consequence
+## Computational corollary
 
 The conditional theorem licenses the existing engine optimisation:
 the KLR grading bound is enforced before any crystal step. Given a
@@ -75,10 +75,12 @@ application of $\tilde f_i$ that would push a state into degree
 $\ell + 1$ is geometrically forbidden — the heuristic confinement
 cutoff in the engine is justified up to the upstream conjecture.
 
-This is symmetric-crystal shortcut #1 + #3 (CLAUDE.md §7b)
+This is symmetric-crystal shortcut #1 + #3 (AGENTS.md §7b)
 reducing engine-side combinatorics to a Bruhat-prefix Demazure
 filtration.  The Demazure-fiber Markov-trace functional
 $T^{\mathrm{Dem}}(\lambda;\, w)$ from
 [`prop:demazure-fiber-markov-trace`](#prop:demazure-fiber-markov-trace)
 provides the explicit quantitative form of the resonance widths
 that arise inside each KLR-graded layer.
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

@@ -41,7 +41,7 @@ that exceeds a single-session scope.
 
 ### 1. Compute pipeline infrastructure (P2.1–P2.5)
 
-Multi-week mechanical refactors of `folio-assistant/computations/`.
+Multi-week mechanical refactors of `computations/`.
 None can be closed in a single session because each requires
 running scripts, validating outputs, and iterating numerically.
 
@@ -93,7 +93,7 @@ identified ~3000 transitive provable blocks in 18 case-(3)
 legitimate-dependency cones (definitions / remarks where the
 conjecture is structurally essential to the named construction).
 
-Per CLAUDE.md §3b clarification, these are **not** propagation
+Per AGENTS.md §3b clarification, these are **not** propagation
 violations — but a per-block acknowledgement audit would confirm
 each prose body explicitly notes the conjectural upstream
 dependency. Estimated **1–2 days, manual triage**, with most
@@ -102,7 +102,7 @@ blocks already correctly framed.
 ### 5. P0.1 follow-up — sweep heuristic refinement
 
 The wall-violation sweep
-([`wall_violations_sweep.py`](../../folio-assistant/computations/sweeps/wall_violations_sweep.py))
+([`wall_violations_sweep.py`](../../computations/sweeps/wall_violations_sweep.py))
 over-flags 3 hits in `atom-knot-mass-derivation-proof.md` because
 its triage heuristic doesn't recognise the
 "Post-Archimedean naming (borrowed, not part of derivation)"

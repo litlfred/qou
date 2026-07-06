@@ -2,6 +2,10 @@
 """mp_dk_decisive_test.py — are the m_p brane-tower d_k stable
 derivations or stale-q₀ near-matches? (item 2 of 'fo 1 and 2')
 
+CLASS-A acknowledged-anchor (Workplan-0b): M_P_MEV_VALIDATION builds the
+`m_p_codata / m_e` comparison TARGET this decisive test scores against,
+never a prediction input. Verified 2026-06-17 (I11 adjudication).
+
 CONTEXT. The deep audit (docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-
 audit.md, body — now superseded by its addendum) claimed the proton
 brane-tower coefficients are categorical derivations:
@@ -18,7 +22,7 @@ q₀, and degrade at the canonical m_p-pin q₀.
 THIS TEST applies the same decisive check to the d_k. The proton
 brane-tower witness (proton-brane-tower-correction-probe.witness.json)
 was computed at q₀ = 1.10997859555… — the STALE muon-pin. The canonical
-q₀ is now 1.10997858275… (m_p-pin, post-#1422). We recompute the d_k at
+q₀ is now 1.10997859556… (m_p-pin, post-#1422). We recompute the d_k at
 BOTH pins from the SAME substrate formula
 
     m_p/m_e (N=0) = 2·Vol/ℏ_q² · F_Bor(q) − 12,   d_k = (codata/N0 − 1)/u^k

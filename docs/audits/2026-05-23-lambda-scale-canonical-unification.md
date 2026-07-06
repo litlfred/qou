@@ -254,7 +254,7 @@ source of higher-order coefficients.
 
 ### (xiii) Crystal-graph / Kashiwara q → 0 limit
 
-Per CLAUDE.md §7b, KLR canonical bases at q → 0 reduce to crystal
+Per AGENTS.md §7b, KLR canonical bases at q → 0 reduce to crystal
 graphs (Kashiwara). The crystal structure is fully combinatorial
 (no q dependence), and the q-deformation back from q → 0 to
 q = q_0 gives explicit h^k expansions of crystal-basis matrix
@@ -324,7 +324,7 @@ The author may then either:
 - Direct the agent to wait until the underlying categorical
   derivation lands.
 
-This rule supplements the existing CLAUDE.md three-calibration
+This rule supplements the existing AGENTS.md three-calibration
 discipline (no CAL-4 fits) and the `Δ_λ gate` anti-pattern. It
 makes the escalation step explicit and traceable: every h^k
 coefficient in the framework is either (a) derivable from a named
@@ -370,7 +370,7 @@ recursion / Φ_q power series / Rogers pentagon**, NOT fit to close
 the CODATA residual.
 
 The h^4 refinement probe
-[`lambda_scale_refinement_h4_correction_bring.py`](../../folio-assistant/computations/lambda_scale_refinement_h4_correction_bring.py)
+[`lambda_scale_refinement_h4_correction_bring.py`](../../computations/lambda_scale_refinement_h4_correction_bring.py)
 was retired in commit `38afcf12` because its α = (3/4 + 1 − G)
 empirically fits to the CODATA m_p residual; the "+1" leading h^4
 coefficient has no canonical derivation.
@@ -394,10 +394,10 @@ coefficient has no canonical derivation.
 
 ## Witness / probe
 
-- [`lambda_scale_refinements_composed_predictions.py`](../../folio-assistant/computations/lambda_scale_refinements_composed_predictions.py)
+- [`lambda_scale_refinements_composed_predictions.py`](../../computations/lambda_scale_refinements_composed_predictions.py)
   — composes the three canonical-only options with the proved
   flavor-split from PR #942.
-- [`lambda_scale_refinement_h4_correction_bring.py`](../../folio-assistant/computations/lambda_scale_refinement_h4_correction_bring.py)
+- [`lambda_scale_refinement_h4_correction_bring.py`](../../computations/lambda_scale_refinement_h4_correction_bring.py)
   — RETIRED (empirical fitting); preserved as documented dead-end.
 
 ## Cross-references

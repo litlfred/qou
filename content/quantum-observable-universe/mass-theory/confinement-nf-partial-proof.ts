@@ -14,7 +14,7 @@ import { proposition } from "../../schema/builders";
  * is REDUCED to a single sub-lemma — the Hecke-branching block
  * decomposition of ρ_λ(I) (Sub-lemma 2.1 in the audit doc).
  *
- * Per CLAUDE.md §3b-cond (conditional-class exception), the Lean
+ * Per AGENTS.md §3b-cond (conditional-class exception), the Lean
  * file encodes Sub-lemma 2.1 as a class `HasBranchingBlockLemma`
  * and proves T2 conditionally on its instance.  T1 and T3 are
  * proved unconditionally (modulo Mathlib's LP-duality library,
@@ -44,8 +44,8 @@ export default proposition({
   ],
   computation: {
     engine: "sympy",
-    script: "folio-assistant/computations/shift_from_nf_basis.py",
-    witness: "folio-assistant/computations/shift-from-nf-basis.witness.json",
+    script: "computations/shift_from_nf_basis.py",
+    witness: "computations/shift-from-nf-basis.witness.json",
     status: "verified",
   },
   authorNotes: [

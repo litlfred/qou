@@ -1,0 +1,20 @@
+{
+  "description": "Cross-atom extension of the GAP-A-3 binding flat-baseline/overshoot analysis (D, 3He, 4He). For each atom: A(K) (Phase-4 derived), tr_M(beta_K) (canonical y_lambda_at q0 + chi_all_lambda), flat baseline A*tr_M vs -B/m_e, overshoot factor, and bar-mix (max|w_lambda - w_lambda^T|). No fit; no P_lambda proposed.",
+  "computation": "computations/gap_a3_cross_atom_overshoot_probe.py",
+  "q0": "1.1099785955541805",
+  "dps": 18,
+  "atoms": [
+    {"atom": "D", "n": 6, "A": 2, "A_K": "22.975", "tr_M": "0.38836", "flat": "8.923", "minus_B_over_me": "4.353", "overshoot": "2.050", "bar_mix": "0.18942"},
+    {"atom": "3He", "n": 9, "A": 3, "A_K": "209.15", "tr_M": "0.20658", "flat": "43.206", "minus_B_over_me": "15.10", "overshoot": "2.861", "bar_mix": "0.07160"},
+    {"atom": "4He", "n": 12, "A": 4, "A_K": "3364.6", "tr_M": "0.05536", "flat": "186.26", "minus_B_over_me": "55.37", "overshoot": "3.364", "bar_mix": "0.01605"}
+  ],
+  "trends": {
+    "overshoot_vs_A": "GROWS monotonically 2.05 -> 2.86 -> 3.36 (atom-dependent; deuteron ~2x is NOT universal)",
+    "overshoot_over_A": "1.02, 0.95, 0.84 (decreasing => NOT overshoot=A; sub-linear; no closed form fitted)",
+    "bar_mix_vs_A": "SHRINKS 0.189 -> 0.072 -> 0.016 (flat trace more bar-symmetric for heavier atoms)",
+    "required_suppression": "effective trace -> 1/overshoot of flat: 0.488, 0.350, 0.297"
+  },
+  "verdict": "The binding overshoot is atom-DEPENDENT (grows with A); the deuteron ~2x is D-specific, not universal. So P_lambda must carry an A-GROWING net suppression and an A-SHRINKING bar-symmetrisation. Rules out constant P_lambda, atom-independent scalar suppression, and any universal factor-1/2. The productive P_lambda must have explicit A-dependence. No P_lambda proposed; no fit.",
+  "critical_distance": "A(K) carries A's <=2.5% uncertainty (steep exponents, possible compounding); the monotone overshoot trend is far larger than that noise and robust, but precise values carry the A-uncertainty.",
+  "discipline": "No fit; no 7th ansatz; no P_lambda proposed; nothing wired; c_k/Delta_lambda cal-anchored."
+}

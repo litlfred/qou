@@ -51,7 +51,7 @@ For each chosen axis:
   once, but only one is on the user-attention surface at a time.
 - After each merge, `/integration-audit <axis>` is invoked
   automatically to refresh sidecar state.
-- Progress is logged to `todos/<axis>-integration-backlog-ledger.md`.
+- Progress is logged to `.beans/<axis>-integration-backlog-ledger.md`.
 
 ## Sibling commands
 

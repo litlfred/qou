@@ -5,12 +5,12 @@ script emits both a `polynomial_q` symbolic form and a numerical
 evaluation at $q_0$).
 **Branch**: `claude/tier3-math-audit-B0wyO`.
 **Helper**:
-[`folio-assistant/computations/witness_polynomial.py`](../../folio-assistant/computations/witness_polynomial.py)
+[`computations/witness_polynomial.py`](../../computations/witness_polynomial.py)
 (cherry-picked from parent's `ab064d7d1`).
 
 ## Survey
 
-A walk over `folio-assistant/computations/*.py` for sympy-using
+A walk over `computations/*.py` for sympy-using
 scripts classifies them by ease of `expose_polynomial` adoption:
 
 | Category | Count | Definition |

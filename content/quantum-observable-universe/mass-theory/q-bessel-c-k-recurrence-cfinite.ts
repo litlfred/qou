@@ -1,7 +1,7 @@
 import { proof } from "../../schema/builders";
 
 export default proof({
-  label: "proof:q-bessel-c-k-recurrence-cfinite",
+  label: "prf:q-bessel-c-k-recurrence-cfinite",
   of: "prop:q-beta-c-k-recursion-from-habiro-q-difference",
   lean: {
     ref: "qou:QOU.QBeta.qbessel_coeff_closed_form",
@@ -9,8 +9,8 @@ export default proof({
   },
   computation: {
     engine: "sympy",
-    script: "folio-assistant/computations/qbeta/qbeta_qbessel_contiguity_cfinite.py",
-    witness: "folio-assistant/computations/qbeta/qbeta-qbessel-contiguity-cfinite.witness.json",
+    script: "computations/qbeta/qbeta_qbessel_contiguity_cfinite.py",
+    witness: "computations/qbeta/qbeta-qbessel-contiguity-cfinite.witness.json",
     status: "verified",
   },
   authorNotes: [

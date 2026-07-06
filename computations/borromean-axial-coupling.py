@@ -49,11 +49,11 @@ Pipeline (Item 4b of the workplan)
 
 Usage
 -----
-    python3 folio-assistant/computations/borromean-axial-coupling.py
+    python3 computations/borromean-axial-coupling.py
 
 Output
 ------
-    folio-assistant/computations/borromean-axial-coupling.witness.json
+    computations/borromean-axial-coupling.witness.json
 """
 from __future__ import annotations
 

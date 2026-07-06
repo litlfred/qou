@@ -27,7 +27,7 @@ probe definition.
 ## §1. Source trace for `Geom_leading = Vol(K)/ℏ_q²`
 
 The current canonical mass formula is anchored in
-[`derive_m_baryon_volume_form.py:12-15`](../../folio-assistant/computations/derive_m_baryon_volume_form.py)
+[`derive_m_baryon_volume_form.py:12-15`](../../computations/derive_m_baryon_volume_form.py)
 (PR #487 + PR #640):
 
 ```
@@ -200,6 +200,6 @@ explicit at the proof level.
 - [`docs/audits/2026-05-24-family-a-gap-audit.md`](2026-05-24-family-a-gap-audit.md) — Family A +2.89% gap re-amended
 - [`content/quantum-observable-universe/braids-and-knots/borromean-markov-trace-closed-form.md`](../../content/quantum-observable-universe/braids-and-knots/borromean-markov-trace-closed-form.md) — exact closed form, h² = 0
 - [`content/quantum-observable-universe/braids-and-knots/knot-operator-bring-action.md`](../../content/quantum-observable-universe/braids-and-knots/knot-operator-bring-action.md) — S_3 ⊂ SO(3) gap
-- [`folio-assistant/computations/derive_m_baryon_volume_form.py`](../../folio-assistant/computations/derive_m_baryon_volume_form.py) — source of `Vol/ℏ_q²`
-- [`folio-assistant/computations/probes/vol_density_borromean_q_locality_probe.py`](../../folio-assistant/computations/probes/vol_density_borromean_q_locality_probe.py) — q-locality probe (commit `ae70f99af`)
-- [`folio-assistant/computations/vol-density-borromean-q-locality-probe.witness.json`](../../folio-assistant/computations/vol-density-borromean-q-locality-probe.witness.json) — witness data
+- [`computations/derive_m_baryon_volume_form.py`](../../computations/derive_m_baryon_volume_form.py) — source of `Vol/ℏ_q²`
+- [`computations/probes/vol_density_borromean_q_locality_probe.py`](../../computations/probes/vol_density_borromean_q_locality_probe.py) — q-locality probe (commit `ae70f99af`)
+- [`computations/vol-density-borromean-q-locality-probe.witness.json`](../../computations/vol-density-borromean-q-locality-probe.witness.json) — witness data

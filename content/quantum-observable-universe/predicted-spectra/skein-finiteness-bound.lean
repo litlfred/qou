@@ -1,4 +1,6 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Sqrt
+import Mathlib.Tactic.Linarith
 
 
 /-!
@@ -29,6 +31,11 @@ namespace QOU.Archimedean
 -- The stability condition: P(q) > 0
 -- ═══════════════════════════════════════════════════════════════════
 
+/-- The Skein polynomial P(q) of N(p,n) — axiomatized as computed
+    by the transfer matrix product ∏ V̂_i. -/
+-- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
+axiom skeinPolynomial (q : ℝ) (p n : ℕ) : ℝ
+
 /-- A nuclear configuration (p,n) is stable at substrate parameter q
     if its Skein polynomial is positive. -/
 -- Ref: [manuscript] §6/skein-finiteness-bound
@@ -36,18 +43,13 @@ structure IsStable (q : ℝ) (p n : ℕ) where
   q_gt_one : 1 < q
   skein_positive : (0 : ℝ) < skeinPolynomial q p n
 
-/-- The Skein polynomial P(q) of N(p,n) — axiomatized as computed
-    by the transfer matrix product ∏ V̂_i. -/
--- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
-axiom skeinPolynomial (q : ℝ) (p n : ℕ) : ℝ
-
 -- ═══════════════════════════════════════════════════════════════════
 -- The closed-form bound
 -- ═══════════════════════════════════════════════════════════════════
 
-/-- The finiteness bound: [A-1]_q! > [2]_q^{A-1}.
-    q-factorial beats q-exponential at A = 5 for all q > 1.
-    No classical e or π — purely q-combinatorial. -/
+/- The finiteness bound: [A-1]_q! > [2]_q^{A-1}.
+   q-factorial beats q-exponential at A = 5 for all q > 1.
+   No classical e or π — purely q-combinatorial. -/
 -- Ref: [manuscript] §6/skein-finiteness-bound
 
 /-- The q-integer [n]_q = (q^n - q^{-n})/(q - q^{-1}). -/
@@ -61,14 +63,20 @@ noncomputable def qFactorial (q : ℝ) (n : ℕ) : ℝ :=
 /-- The critical condition: [A-1]_q! > [2]_q^{A-1}.
     At A = 5: [4]_q! > [2]_q⁴ for q = 1.110. -/
 -- Ref: [manuscript] §6/skein-finiteness-bound
--- Ref: folio-assistant/computations output: [4]! = 25.15 > [2]⁴ = 16.35
+-- Ref: computations output: [4]! = 25.15 > [2]⁴ = 16.35
 axiom q_factorial_exceeds_at_5 (q : ℝ) (hq : 1 < q) (hq2 : q < 2) :
     qFactorial q 4 > (qInt q 2) ^ 4
 
 /-- Below A = 5: [A-1]_q! ≤ [2]_q^{A-1}. -/
--- Ref: [manuscript] folio-assistant/computations output
+-- Ref: [manuscript] computations output
 axiom q_factorial_bounded_below_5 (q : ℝ) (hq : 1 < q) (hq2 : q < 2) :
     qFactorial q 3 < (qInt q 2) ^ 3
+
+/-- The closed-form bound A_max(q) ~ π / √(4 ln q) — axiomatized as an
+    opaque approximation function (its asymptotics are the content of the
+    divergence/vanishing axioms below). -/
+-- Ref: [manuscript] §6/skein-finiteness-bound
+axiom A_max_approx (q : ℝ) : ℝ
 
 /-- **External axiom (manuscript §6/skein-finiteness-bound):
     A_max diverges as q → 1⁺.** -/
@@ -96,8 +104,8 @@ theorem A_max_vanishes_strong_deformation :
 -- Transfer matrix eigenvalue ratio = q²
 -- ═══════════════════════════════════════════════════════════════════
 
-/-- The pp transfer matrix T_pp has eigenvalues q and -q⁻¹.
-    Their ratio is -q². -/
+/- The pp transfer matrix T_pp has eigenvalues q and -q⁻¹.
+   Their ratio is -q². -/
 -- Ref: [manuscript] §6/skein-finiteness-bound
 /-- **Proven**: product of eigenvalues = det = −1 for the pp transfer
     matrix (Vieta's formula).
@@ -166,6 +174,13 @@ theorem particle_finiteness :
   apply Set.Finite.subset (Set.Finite.prod (Set.finite_Icc 2 4) (Set.finite_Icc 3 9))
   intro ⟨m, n⟩ ⟨hm, hmn, hemb⟩
   unfold torusEmbeddable at hemb
-  constructor <;> constructor <;> omega
+  have hn3 : 3 ≤ n := by omega
+  have hm4 : m ≤ 4 := by
+    nlinarith [hemb, hm, hmn, Nat.sub_add_cancel (show 1 ≤ m by omega),
+      Nat.sub_add_cancel (show 1 ≤ n by omega)]
+  have hn9 : n ≤ 9 := by
+    nlinarith [hemb, hm, hmn, Nat.sub_add_cancel (show 1 ≤ m by omega),
+      Nat.sub_add_cancel (show 1 ≤ n by omega)]
+  exact ⟨⟨hm, hm4⟩, ⟨hn3, hn9⟩⟩
 
 end QOU.Archimedean

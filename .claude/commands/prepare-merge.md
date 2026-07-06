@@ -6,7 +6,7 @@ Prepare the current branch's PR for merge. Execute the steps **in order**,
 with the exception of requesting external reviews (Step 6), which may be
 started in parallel with the Lean build (Step 4) to save time.
 
-**Workflow precondition** (per CLAUDE.md §Branch + PR workflow,
+**Workflow precondition** (per AGENTS.md §Branch + PR workflow,
 STRICT, supersedes default "no auto-PR" guidance for this repo):
 you should already be on a feature branch with a PR open. If
 you're on `main` or a stale branch with uncommitted work, STOP —
@@ -24,7 +24,7 @@ cleanly; bulk commits are reserved for integration-watcher sweeps.
 
 ### 1·a Witness-drift conflicts — auto-resolve, do NOT prompt
 
-`folio-assistant/computations/*.witness.json` files are **machine-generated**
+`computations/*.witness.json` files are **machine-generated**
 by the validators that run during the witness-pipeline CI. Conflicts on
 these files during rebase are almost always **drift** caused by both branches
 re-running the same validator at different times — the underlying *content*
@@ -44,11 +44,11 @@ counter that bumps when new Python files land on either branch.
 # NOTE (2026-06-02 reorg): e0-calibration + fitted-labelled-canonical
 # witnesses moved with their scripts into computations/audits/.
 WITNESS_REGEN_TARGETS=(
-  "folio-assistant/computations/compute-audit-scan.witness.json"
-  "folio-assistant/computations/derivation-chain-audit.witness.json"
-  "folio-assistant/computations/cross-check-trM-1ppb.witness.json"
-  "folio-assistant/computations/audits/e0-calibration-audit.witness.json"
-  "folio-assistant/computations/audits/fitted-labelled-canonical-audit.witness.json"
+  "computations/compute-audit-scan.witness.json"
+  "computations/derivation-chain-audit.witness.json"
+  "computations/cross-check-trM-1ppb.witness.json"
+  "computations/audits/e0-calibration-audit.witness.json"
+  "computations/audits/fitted-labelled-canonical-audit.witness.json"
 )
 cnt=0
 loop_break=""
@@ -59,19 +59,19 @@ while git status 2>/dev/null | grep -q "rebase in progress"; do
   # spaces are preserved correctly.
   while IFS= read -r f; do
     case "$f" in
-      folio-assistant/computations/*.witness.json) : ;;
+      computations/*.witness.json) : ;;
       *) echo "MANUAL: $f"; loop_break=1; break ;;
     esac
   done < <(git status --short | grep "^UU" | cut -c 4-)
   [ -n "$loop_break" ] && break
-  # NOTE: the two audit/ scripts moved to folio-assistant/computations/audits/
+  # NOTE: the two audit/ scripts moved to computations/audits/
   # (2026-06-02). Path resolved per-script below.
   for s in compute_audit_scan derivation_chain_validator \
            cross_check_trM_1ppb audits/e0_calibration_audit \
            audits/fitted_labelled_canonical_audit; do
     args=()
     case "$s" in cross_check_trM_1ppb|audits/e0_calibration_audit) args=(--strict);; esac
-    if ! python3 "folio-assistant/computations/${s}.py" "${args[@]}" \
+    if ! python3 "computations/${s}.py" "${args[@]}" \
            >/dev/null 2>&1; then
       echo "FAIL: ${s}.py exited non-zero — halting auto-resolve"
       loop_break=1; break
@@ -101,11 +101,11 @@ if all four succeed:
 
 ```bash
 set -e
-python3 folio-assistant/computations/compute_audit_scan.py >/dev/null 2>&1
-python3 folio-assistant/computations/derivation_chain_validator.py >/dev/null 2>&1
-python3 folio-assistant/computations/cross_check_trM_1ppb.py --strict >/dev/null 2>&1
-python3 folio-assistant/computations/audits/e0_calibration_audit.py --strict >/dev/null 2>&1
-python3 folio-assistant/computations/audits/fitted_labelled_canonical_audit.py >/dev/null 2>&1
+python3 computations/compute_audit_scan.py >/dev/null 2>&1
+python3 computations/derivation_chain_validator.py >/dev/null 2>&1
+python3 computations/cross_check_trM_1ppb.py --strict >/dev/null 2>&1
+python3 computations/audits/e0_calibration_audit.py --strict >/dev/null 2>&1
+python3 computations/audits/fitted_labelled_canonical_audit.py >/dev/null 2>&1
 set +e
 git add "${WITNESS_REGEN_TARGETS[@]}" 2>/dev/null
 git diff --cached --quiet || git commit -m "fix(witness-pipeline): post-rebase drift refresh"
@@ -125,7 +125,7 @@ inventory entries.
   `cd content && bun run migrate-lean-refs`. The script is idempotent
   (no-op when there is nothing to migrate) — running it unconditionally
   is the standardized post-rebase workflow described in
-  CLAUDE.md §0b.
+  AGENTS.md §0b.
 - This catches blocks that landed on `origin/main` while the branch was
   in flight and still use the legacy `lean: { decl: "...", file? }`
   shape (Zod will hard-fail validation on those).
@@ -205,7 +205,7 @@ computation the branch added or modified:
    claim audit) and `local/readability-editing` (for prose
    tightening).
 4. **Can I simplify the computation?** Inspect every script under
-   `folio-assistant/computations/` and every fenced ``` ```python ```
+   `computations/` and every fenced ``` ```python ```
    block this branch added. If main shipped a faster routine, a
    prebuilt witness, a SnapPy/SymPy primitive, or a cached
    computation that supersedes a hand-rolled loop, swap it in and
@@ -229,7 +229,7 @@ cycle.
 
 - Run `lake build` from the **repo root** (the standardized root Lake
   workspace builds every paper package — `qou`, `ugb`, `fred2005` —
-  in one pass; see CLAUDE.md §0).
+  in one pass; see AGENTS.md §0).
 - If the build fails, route to `lean-build-fix` and resolve.
 - Run `lean-completeness-audit`: every `sorry` must carry a `-- Ref:`
   citation, every `definition` block must have its `.lean` sibling,
@@ -268,7 +268,7 @@ doing this step. You can fire off the review requests while the build runs.
 - **Merge method: ALWAYS `merge` (merge-commit), NEVER `squash`, unless
   the user EXPLICITLY requests squash on the merge command itself.**
   Small structured commits are a deliberate authoring discipline in this
-  repo (CLAUDE.md §"Branch + PR workflow" rule 4) — they exist so
+  repo (AGENTS.md §"Branch + PR workflow" rule 4) — they exist so
   cherry-pick, `git bisect`, focused review attention, and granular
   rollback all work. Squashing destroys that record. The default for
   `mcp__github__merge_pull_request` must be `merge_method: "merge"`.

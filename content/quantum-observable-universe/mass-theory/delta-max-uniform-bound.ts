@@ -20,8 +20,8 @@ export default proposition({
   cites: ["kassel1995", "leitner2026"],
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/gram-matrix-dual.py",
-    witness: "folio-assistant/computations/gram-matrix-dual.witness.json",
+    script: "computations/gram-matrix-dual.py",
+    witness: "computations/gram-matrix-dual.witness.json",
     status: "verified",
   },
 });

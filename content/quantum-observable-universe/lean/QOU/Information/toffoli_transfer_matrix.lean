@@ -1,18 +1,15 @@
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import QOU.Shared.MarkovTraceClaim
 
 /-!
-# QOU.Information.toffoli_transfer_matrix — placeholder stub
+# QOU.Information.toffoli_transfer_matrix
 
-**Placeholder canonical** for content block
+**Canonical declaration** for content block
 [`prop:toffoli-transfer-matrix`](../../../quantum-observable-universe/information-theory/toffoli-transfer-matrix.md): *QOU.Information.toffoli_transfer_matrix*.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.Information.toffoli_transfer_matrix` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
+This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
 -/
 
-import QOU.Shared.MarkovTraceClaim
 
 namespace QOU.Information
 
@@ -38,10 +35,15 @@ class ToffoliTransferMatrixContext extends QOU.Shared.MarkovTraceContext where
   z_real : ℝ
   /-- Traced volume `V̂₁(k)` at generator `σ₁` for control type `k`. -/
   V_hat_1 : ℕ × ℕ → ℝ
-  /-- Manuscript sub-claim (ii) — Single-crossing type-blindness:
-      `V̂₁(k) = z` for every control type `k` (the traced volume at
-      a single crossing is independent of type). -/
-  claim_ii_generator_crossing_traced : ∀ k : ℕ × ℕ, V_hat_1 k = z_real
+  /-- Affine offset `d_{k₁k₂}` of the σ₁ transfer: `0` for `𝔭𝔭`,
+      `−(q − q⁻¹)/2` for mixed, `−(q − q⁻¹)` for `𝔫𝔫`. -/
+  d : ℕ × ℕ → ℝ
+  /-- Manuscript sub-claim (ii) — σ₁ control-crossing transfer:
+      `V̂₁(k) = z·c(k) + d(k)`, which is **type-dependent** (NOT `= z`;
+      the `d` offset distinguishes the control types). A target-flip
+      fixes the control pair `k`, so the target-flip difference
+      `Δ₁ = 0` — the control crossing is unchanged, not type-blind. -/
+  claim_ii_generator_crossing_traced : ∀ k : ℕ × ℕ, V_hat_1 k = z_real * c k + d k
   /-- The target-flip amplitude `P_{7,6}(q) = 1 · Φ(q) = Φ(q)`
       (governor / q-AND choice). -/
   P_7_6 : ℝ
@@ -76,14 +78,11 @@ Then:*
 
 1.
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
 -- Ref: [manuscript] quantum-observable-universe/information-theory/toffoli-transfer-matrix.ts
-theorem toffoli_transfer_matrix [ctx : ToffoliTransferMatrixContext] :
+noncomputable def toffoli_transfer_matrix [ctx : ToffoliTransferMatrixContext] :
     (∀ k : ℕ × ℕ, ctx.P_flip k = ctx.c k * ctx.Phi) ∧
-    (∀ k : ℕ × ℕ, ctx.V_hat_1 k = ctx.z_real) ∧
+    (∀ k : ℕ × ℕ, ctx.V_hat_1 k = ctx.z_real * ctx.c k + ctx.d k) ∧
     ctx.P_7_6 = ctx.Phi ∧
     ctx.P_6_7 = - ctx.P_7_6 ∧
     (∀ k : ℕ × ℕ, ctx.q_real = 1 → ctx.P_flip k = 0) ∧

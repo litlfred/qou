@@ -12,7 +12,7 @@ The Q_β precision-ladder Habiro element `F(u) = Π_{k=2..} (1 + c_k u^k)` has *
 lim_{k→∞} c_{k+1} / c_k  =  1 / u_substrate  ≈  117.409001
 ```
 
-Empirical (SDP-extracted c_k at 50 dps, [`qbeta-decay-sdp-extended-ck.witness.json`](../../folio-assistant/computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json)):
+Empirical (SDP-extracted c_k at 50 dps, [`qbeta-decay-sdp-extended-ck.witness.json`](../../computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json)):
 
 | k → k+1 | c_{k+1} / c_k |
 |---|---|
@@ -29,7 +29,7 @@ Asymptotic value at k=8,9,10 matches `1/u_substrate = 117.40900` to 4 significan
 
 ## Why this matters
 
-**The Q_β precision ladder is evaluated AT the boundary of its own analyticity.** Per CLAUDE.md §"Im(q) fibre vs observable" (2026-06-01):
+**The Q_β precision ladder is evaluated AT the boundary of its own analyticity.** Per AGENTS.md §"Im(q) fibre vs observable" (2026-06-01):
 
 > The c_k Taylor coefficients live in the FIBRE (formal q-deformation, potentially complex). Each q_0 anchor is a different archimedean evaluation of the SAME fibre object.
 
@@ -43,7 +43,7 @@ This finding sharpens that framing: the fibre-level F(u) has a singularity at th
 
 ## What this confirms (and sharpens)
 
-- ✓ **CLAUDE.md fibre-vs-observable framing**: the Q_β c_k do live in the fibre; their archimedean evaluation at q_0 hits a singularity of the underlying analytic structure.
+- ✓ **AGENTS.md fibre-vs-observable framing**: the Q_β c_k do live in the fibre; their archimedean evaluation at q_0 hits a singularity of the underlying analytic structure.
 - ✓ **The 4-session c_3 flip-flop**: searching for a REAL formula `c_3 = f(q_0_real)` matching multiple anchors was always going to fail near a singularity — the function value is well-defined fibre-side but anchor-dependent observable-side.
 - ✓ **The "accidental cross-order coincidence" of c_3 = −2 with the per-block Δtr_M leading −2** (2026-05-31 audit `qbeta-c3-order-audit-accidental-coincidence.md`): the per-block forms have a smooth leading term; the c_3 value is set by the singular structure of F at u_substrate. Different objects, different orders, coincident value to first significant figure only.
 
@@ -71,13 +71,13 @@ This finding may be relevant to PR #1521 (α_em Habiro categorical ID) — if α
 
 ## Files
 
-- Probe: [`folio-assistant/computations/qbeta/qbeta_habiro_q_difference_recurrence_probe.py`](../../folio-assistant/computations/qbeta/qbeta_habiro_q_difference_recurrence_probe.py)
-- Witness: [`folio-assistant/computations/qbeta/qbeta-habiro-q-difference-recurrence-probe.witness.json`](../../folio-assistant/computations/qbeta/qbeta-habiro-q-difference-recurrence-probe.witness.json)
+- Probe: [`computations/qbeta/qbeta_habiro_q_difference_recurrence_probe.py`](../../computations/qbeta/qbeta_habiro_q_difference_recurrence_probe.py)
+- Witness: [`computations/qbeta/qbeta-habiro-q-difference-recurrence-probe.witness.json`](../../computations/qbeta/qbeta-habiro-q-difference-recurrence-probe.witness.json)
 
 ## Cross-references
 
 - Scope: [`docs/coordination/2026-06-02-qbeta-habiro-element-scope.md`](../coordination/2026-06-02-qbeta-habiro-element-scope.md)
-- Fibre-vs-observable framing: CLAUDE.md §"Im(q) at fibre vs observable level (2026-06-01)"
+- Fibre-vs-observable framing: AGENTS.md §"Im(q) at fibre vs observable level (2026-06-01)"
 - c_3 cross-anchor swing: [`docs/audits/2026-05-31-qbeta-c3-q0-stability-verdict.md`](2026-05-31-qbeta-c3-q0-stability-verdict.md)
 - Accidental-coincidence audit: [`docs/audits/2026-05-31-qbeta-c3-order-audit-accidental-coincidence.md`](2026-05-31-qbeta-c3-order-audit-accidental-coincidence.md)
-- SDP c_k extraction: [`folio-assistant/computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json`](../../folio-assistant/computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json)
+- SDP c_k extraction: [`computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json`](../../computations/qbeta/qbeta-decay-sdp-extended-ck.witness.json)

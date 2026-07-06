@@ -63,7 +63,7 @@ projection by definition of $k_\star$). The analytic infinite product
 truncates to a finite product as a Frobenius-paired identity, with
 the truncation depth structurally determined by $T_w$'s NF support.*
 
-## Why this resolves Step 4 of [$\Phi_q$ categorical truncation](#prop:phi-q-categorical-truncation)
+## Resolution of Step 4 of [$\Phi_q$ categorical truncation](#prop:phi-q-categorical-truncation)
 
 [Cor: quantum dilogarithm](#cor:quantum-dilogarithm) gives the
 analytic identity $\mathrm{tr}_{\mathrm{trans}}(\varrho, p_i) = \Phi_q(z_i)$ as

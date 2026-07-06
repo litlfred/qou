@@ -18,7 +18,7 @@ identified by:
 
 ```bash
 grep -lE "from mass_endomorphism|import mass_endomorphism" \
-  folio-assistant/computations/*.py | grep -v _deprecated
+  computations/*.py | grep -v _deprecated
 ```
 
 For each, classify by import target:

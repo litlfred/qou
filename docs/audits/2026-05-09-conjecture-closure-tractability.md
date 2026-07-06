@@ -1,6 +1,6 @@
 # Conjecture closure-tractability triage (2026-05-09)
 
-Per CLAUDE.md §3b-cond, the QOU paper has **65 class-axiomatized
+Per AGENTS.md §3b-cond, the QOU paper has **65 class-axiomatized
 conjectures** (down from 258 §3b violators in the original
 2026-05-08 audit). Each is a Lean `class` whose `sorry`-bearing
 instance encodes the conjectural content; downstream theorems take

@@ -64,7 +64,6 @@ theorem double_slit_massive_pattern_classical_phase
     interference_phase 1 one_ne_zero d_slit lambda_ theta Delta_phi_Reeb
     = 2 * Real.pi * d_slit * Real.sin theta / lambda_ := by
   simp [interference_phase, inv_one]
-  ring
 
 /-- At q = 1 the envelope parameter reduces to the Fraunhofer form:
     β₁ = π a sin θ / λ. -/
@@ -74,9 +73,8 @@ theorem double_slit_massive_pattern_classical_envelope
     envelope_param 1 one_ne_zero a_slit lambda_ theta beta_Reeb
     = Real.pi * a_slit * Real.sin theta / lambda_ := by
   simp [envelope_param, inv_one]
-  ring
 
-/-- For q ≠ 1 the envelope is wider than Fraunhofer by a factor
+/- For q ≠ 1 the envelope is wider than Fraunhofer by a factor
     involving (1 − q⁻¹)². This is the main proposition content:
     the excess width is of order (1 − q⁻¹)², consistent with
     precision diffraction experiments. -/

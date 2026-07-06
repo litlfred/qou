@@ -1,7 +1,7 @@
 # Q_beta H_4(q) Sign-Block Hypothesis (Audit Note)
 
 **Date:** 2026-06-13
-**Probe:** `folio-assistant/computations/qbeta/qbeta_h4_sign_block_exact.py`
+**Probe:** `computations/qbeta/qbeta_h4_sign_block_exact.py`
 **Status:** Hypothesis (Unproven)
 
 ## 1. The Hypothesis

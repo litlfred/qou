@@ -9,9 +9,9 @@ non-Brunnian) that escapes BOTH Borromean obstructions. DERIVE its braid
 word, Markov trace, and writhe; test (1) the 5↔3 Markov-destabilization
 bridge and (2) the U(1)_framing.
 **Compute:**
-[`inter_nucleon_linked_channel.py`](../../folio-assistant/computations/inter_nucleon_linked_channel.py),
+[`inter_nucleon_linked_channel.py`](../../computations/inter_nucleon_linked_channel.py),
 witness
-[`inter-nucleon-linked-channel.witness.json`](../../folio-assistant/computations/inter-nucleon-linked-channel.witness.json)
+[`inter-nucleon-linked-channel.witness.json`](../../computations/inter-nucleon-linked-channel.witness.json)
 (audit-only, RAW @ 60 dps + symbolic-in-q, 10 assertions pass). **No tuning
 to m_n−m_p, B_AME, hypercharge, spin, or any h^k.**
 
@@ -158,7 +158,7 @@ flavor-cusp audits name. **The 5↔3 bridge stays OPEN.**
 
 The Reidemeister-I framing anomaly multiplies the trace by `q^{w·c}` (`w` =
 writhe, `c` = per-crossing framing coupling). At the observable level
-`Im(q₀)=0` (CLAUDE.md), so `q^{w·c}` is a real framing FACTOR, not a complex
+`Im(q₀)=0` (AGENTS.md), so `q^{w·c}` is a real framing FACTOR, not a complex
 phase. With `c=1` (SET, not fitted):
 
 | Channel | writhe `w` | framing `q^{w·c}` (q₀, c=1) |

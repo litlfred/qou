@@ -1,6 +1,9 @@
 import { proposition } from "../../schema/builders";
 
 export default proposition({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+  ],
   label: "prop:vertex-algebra-jet-relations",
   lean: { ref: "qou:QOU.VertexAlgebra.JetRelations.euler_level_stable",
     validation: "not_checked",

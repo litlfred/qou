@@ -43,7 +43,7 @@ Probes (all sympy symbolic):
      (Catalan-like? Fibonacci-like? signed binomial?)
 
 OUTPUT:
-    folio-assistant/computations/qbeta-habiro-p8-identification.witness.json
+    computations/qbeta-habiro-p8-identification.witness.json
 
 USAGE:
     python3 -u qbeta_habiro_p8_identification_probe.py 2>&1 | tee /tmp/p8_id.log
@@ -89,7 +89,7 @@ P8_coeffs_desc = [1, 2, 2, 2, 4, -2, 2, -2, 1]   # u^8 ... u^0
 P8 = sum(c * u**(8 - i) for i, c in enumerate(P8_coeffs_desc))
 P8 = sp.expand(P8)
 
-# Canonical substrate q_0 (use proton-pin per 2026-05-28 re-pin in CLAUDE.md).
+# Canonical substrate q_0 (use proton-pin per 2026-05-28 re-pin in AGENTS.md).
 # We use the prior probe's documented value u_0 ≈ 1.05356473 (sqrt of q_0).
 # For sensitivity, also compute at q_0 itself.
 U0_STR = "1.05356473"
@@ -385,7 +385,7 @@ def categorical_family_match():
     # For type A_3 Hecke H_4(q), characters of irreducibles have degree
     # related to the Frame–Robinson–Thrall hook lengths.
     # χ^(2,2) and χ^(3,1) are common candidates; explicit forms in
-    # Hoefsmit basis live in folio-assistant/computations/.
+    # Hoefsmit basis live in computations/.
     # We do a quick check on dimension polynomials [n]_q!/Π[h(λ)_ij]_q
     # for λ ⊢ 4 — these are q-integers (Gaussian polynomials), and they
     # have specific u-form when u = q^{1/2}.

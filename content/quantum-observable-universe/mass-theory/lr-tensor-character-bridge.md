@@ -31,18 +31,6 @@ $$
 
 *the structure constant of the Schur basis of $\mathrm{Sym}$ under
 the iterated coproduct.*
-
-## Proof
-
-Setting $I = \mathbf{1}$ in
-[`prop:hecke-branching-trace-decomposition`](hecke-branching-trace-decomposition.md)
-collapses the operator-valued coefficient $A^\lambda_{\mu,\nu}(\mathbf{1})$
-to the identity on $V_\mu \otimes V_\nu$, so the trace splits across
-the tensor factors and the scalar prefactor reduces to the
-two-factor LR coefficient $c^\lambda_{\mu,\nu}$. Iterating $k-1$
-times across the parabolic chain stacks the LR coefficients into
-the iterated form $c^\nu_{\lambda_1, \ldots, \lambda_k}$. ∎
-
 ## Algebraic context
 
 The ring $\mathrm{Sym}$ of symmetric functions is a self-dual graded
@@ -157,17 +145,17 @@ constructing the $H_n$ seminormal matrices.
 
 ## Witness
 
-[`folio-assistant/computations/markov/markov_trace_via_wenzl_lr.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/markov/markov_trace_via_wenzl_lr.py)
+the canonical formalism
 is the Python entry point; the per-partition LR sum is dispatched to
 the Rust implementation in
 [`tools/hecke-engine/src/wenzl_lr.rs`](https://github.com/litlfred/qou/blob/main/tools/hecke-engine/src/wenzl_lr.rs)
 for cache locality at large $A$.
-[`folio-assistant/computations/cross_check_trM_wenzl_lr_1ppb.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/cross_check_trM_wenzl_lr_1ppb.py)
+the canonical formalism
 verifies the bridge against the direct Hoefsmit path on $H_6$ (D, T)
 and the self-conjugate sub-stratum of $H_9$ ($^3\mathrm{He}$):
 per-partition $\chi^\nu$ agreement is at the machine-precision limit
 ($\sim 10^{-14}$ relative). The convention adapter
-[`folio-assistant/computations/wenzl_lr_convention_adapter.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/wenzl_lr_convention_adapter.py)
+the canonical formalism
 splits a $(Z, N)$ specification into the LR-compatible per-nucleon
 factor list and the interface residue and records the partition of
 the canonical word that this corollary strictly governs.

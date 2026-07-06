@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-07T03:31:00.185783+00:00",
-  "commitSha": "b73901bf35a1183e41598ccbd1fd69b56763f088",
+  "computedAt": "2026-06-22T14:26:20.720750+00:00",
+  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
   "assertions": [
     {
       "name": "two_methods_agree",
@@ -16,8 +16,8 @@
   "durationMs": 6,
   "computation": "borromean-chi-independent-crosscheck",
   "scriptFile": "borromean_chi_independent_crosscheck.py",
-  "scriptHash": "4fcb5784fe01",
-  "scriptCommitSha": "b73901bf35a1183e41598ccbd1fd69b56763f088",
+  "scriptHash": "4296c5b3da10",
+  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,11 +27,9 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0"
   },
   "contentBlock": "prop:borromean-markov-trace-closed-form",
   "parameters": {
@@ -68,14 +66,14 @@
         "pass": true
       },
       {
-        "q": "1.10997858275",
-        "chi_3_minus_1": "0.0",
-        "chi_1cubed_minus_1": "9.355e-51",
-        "chi_21_vs_qform": "3.742e-50",
-        "chi_21_vs_hform": "3.742e-50",
+        "q": "1.10997859556",
+        "chi_3_minus_1": "9.355e-51",
+        "chi_1cubed_minus_1": "0.0",
+        "chi_21_vs_qform": "3.475e-50",
+        "chi_21_vs_hform": "3.475e-50",
         "pass": true
       }
     ],
-    "worst_deviation": "3.74187e-50"
+    "worst_deviation": "3.47459e-50"
   }
 }

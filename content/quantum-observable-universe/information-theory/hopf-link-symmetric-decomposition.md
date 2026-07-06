@@ -1,4 +1,4 @@
-*Lean sibling: a field $R$ carrying the $q$-data (CLAUDE.md §7c); the identity is purely algebraic modulo the Hecke relation.*
+*Lean sibling: a field $R$ carrying the $q$-data (AGENTS.md §7c); the identity is purely algebraic modulo the Hecke relation.*
 
 **Proposition (Hopf-link symmetric decomposition).** *The Hopf element
 $\sigma_1^2$ of $H_2(q)$ weights the two blocks of
@@ -18,15 +18,17 @@ $$
 *which follows from the Hecke relation $\sigma_1^2 = (q-q^{-1})\sigma_1 + 1$
 (Lean `hopf_symmetric_decomposition`, sorry-free, verified Lean 4.24.0).*
 
-Thus the van der Waals correlation — the Hopf link
-([`prop:trm-hopf-sigma1-sq-closed-form`](#prop:trm-hopf-sigma1-sq-closed-form)) —
-is **dominantly the symmetric $e_+$ block**: its symmetric fraction
-$q^2/(q^2+q^{-2})$ is $\approx :val[vdw_sigma1sq_pct_symmetric]{precision=1, witness=folio-assistant/computations/hbond-vdw-sdp.witness.json}$
-at $q_0$. The operator-selection SDP (witness `hbond-vdw-sdp`) confirms the
-independent-channel reading: the symmetric block $e_+$ has Markov
-$q$-dimension $\approx :val[vdw_e_plus_qdim]{precision=3, witness=folio-assistant/computations/hbond-vdw-sdp.witness.json}$
-— the genuine van der Waals channel, distinct from the directional
-hydrogen-bond block $e_-$ ($q$-dimension $\approx 0.304$).
+Thus the Hopf element $\sigma_1^2$
+([`prop:trm-hopf-sigma1-sq-closed-form`](#prop:trm-hopf-sigma1-sq-closed-form))
+splits between the symmetric $e_+$ and antisymmetric $e_-$ blocks, with symmetric
+weight fraction $q^2/(q^2+q^{-2}) \approx :val[vdw_sigma1sq_pct_symmetric]{precision=1, witness=computations/hbond-vdw-sdp.witness.json}\%$
+at $q_0$ — a $\approx 60/40$ split, not a dominant one. The **van der Waals**
+force is **not** this $e_+$ block but the **bar-odd residual**
+$\sinh(2\lambda)(e_+-e_-)$ that the canonical $P_{\mathrm{avg}}$ projection
+discards (the canonical `prop:vdw-pskew-isolation`). The symmetric block $e_+$
+(Markov $q$-dimension $\approx :val[vdw_e_plus_qdim]{precision=3, witness=computations/hbond-vdw-sdp.witness.json}$)
+is the retained $\cosh$ carrier, distinct from the antisymmetric block $e_-$
+($q$-dimension $\approx 0.304$) — **neither block alone is van der Waals**.
 
 This is the structural identification; the molecular dispersion **energy** scale
 is a separate, archimedean (inter-molecular-separation) question — the bare $e_+$

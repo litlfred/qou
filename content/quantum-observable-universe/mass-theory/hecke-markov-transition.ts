@@ -17,8 +17,8 @@ export default proposition({
   uses: ["prop:feynman-categorical-trace"],
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/probes/hecke_markov_transition_probe.py",
-    witness: "folio-assistant/computations/probes/hecke-markov-transition-probe.witness.json",
+    script: "computations/probes/hecke_markov_transition_probe.py",
+    witness: "computations/probes/hecke-markov-transition-probe.witness.json",
     status: "verified",
   },
 });

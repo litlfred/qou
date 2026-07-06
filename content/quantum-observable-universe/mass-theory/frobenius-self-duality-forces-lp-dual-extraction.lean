@@ -6,7 +6,13 @@ class FrobeniusTraceAlgebra (R : Type) where
   algebra : Type
   trace : algebra → R
 
+-- Ref: [manuscript] prop:frobenius-self-duality-forces-lp-dual-extraction —
+--   the observation frame as the τ-mate map; placeholder pending the
+--   Frobenius pairing construction on the trace algebra.
 def observationFrame {R : Type} (FA : FrobeniusTraceAlgebra R) : FA.algebra → (FA.algebra → R) := sorry
+-- Ref: [manuscript] prop:frobenius-self-duality-forces-lp-dual-extraction —
+--   the Frobenius self-duality map `x ↦ trace (x · −)`; placeholder pending
+--   the Frobenius pairing construction on the trace algebra.
 def frobeniusSelfDualityMap {R : Type} (FA : FrobeniusTraceAlgebra R) : FA.algebra → (FA.algebra → R) := sorry
 
 -- Ref: [manuscript] prop:frobenius-self-duality-forces-lp-dual-extraction

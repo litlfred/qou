@@ -14,7 +14,7 @@ class HasFiniteLPDuality (lp : OperatorSelectionLP) : Type where
 *The two fields encode the Schrijver §7.2 strong-duality theorem and
 the Schrijver §7.4 complementary-slackness theorem respectively.*
 
-## Why this exists
+## Motivation
 
 The two routine LP-theory inputs are currently **two free-standing
 top-level `sorry`s** in
@@ -32,7 +32,7 @@ theorem complementary_slackness (lp : OperatorSelectionLP) (λ : lp.Λ) :
   sorry
 ```
 
-Per CLAUDE.md §3b-cond, the proper locale for routine-but-not-yet-
+Per AGENTS.md §3b-cond, the proper locale for routine-but-not-yet-
 formalised inputs is a **conditional-class hypothesis** with a
 trivial model carrying the `sorry` + bibliographic citation. This
 block provides that class.
@@ -54,7 +54,7 @@ two consumer theorems, making the existing top-level `sorry`s
 disappear (the `sorry` lives only in the trivial-model class
 instance, with proper Schrijver citation).
 
-## When this becomes unconditional
+## Conditions for an unconditional result
 
 When Mathlib lands a finite-dim LP-duality library
 (`Mathlib.Analysis.Convex.LinearProgramming` or similar — none

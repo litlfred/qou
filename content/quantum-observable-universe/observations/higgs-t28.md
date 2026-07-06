@@ -5,7 +5,7 @@ spans all three exceptional divisors simultaneously.*
 
 **The three exceptional divisors.**
 
-The Bring's surface ($\chi = -6$, genus $4$) has three coral
+The Bring's surface ($\chi = -6$, genus $4$) has three color
 tubes $(r, g, b)$
 ([color tube coordinates](#def:color-tube-coordinates)).  The
 brane tower blow-up produces three exceptional divisors
@@ -27,10 +27,10 @@ to their genus:
 
 The torus link $T(2,8)$ is the **first and only** link whose Seifert surface
 has genus large enough to span all three exceptional divisors.
-Its genus $3$ exactly matches the number of coral tubes on the
+Its genus $3$ exactly matches the number of color tubes on the
 Bring's surface.
 
-**Why $T(2,8)$ is scalar (spin $0$).**
+**Scalar (spin $0$) character of $T(2,8)$.**
 
 The two components of $T(2,8)$ each wind $4$ times around
 the torus longitude and $1$ time around the meridian.  By the
@@ -78,7 +78,7 @@ under Markov closure; see
 [confined-particle](#def:confined-particle)) has zero crossings
 with $T(2, 8)$ and remains massless.
 
-**Why the Higgs is massive.**
+**Mass of the Higgs.**
 
 The torus link $T(2,8)$ is itself a link with genus $3$ and Seifert surface
 area proportional to the product of the three exceptional
@@ -91,11 +91,20 @@ $$
   \cdot \lambda_{\mathrm{scale}}
 $$
 
+Here $\lambda_{\mathrm{scale}}$ is the conjectural common Borromean
+scale of [`conj:borromean-baryon-mass-formula`](#conj:borromean-baryon-mass-formula),
+recorded as an acknowledged-CAL-4 near-form rather than a derived
+quantity: the canonical production mass shape absorbs it into the
+per-block density, $m = m_e\,\mathrm{Vol}(K)\,\varrho(K)/\hbar_q^2$
+(no standalone $\lambda_{\mathrm{scale}}$ factor). This heuristic
+$\sim 125$ GeV estimate is therefore exploratory, conditional on that
+open closure.
+
 The Higgs mass is set by the genus-$3$ Seifert surface volume,
-which in turn is set by the three coral tube volumes of the
+which in turn is set by the three color tube volumes of the
 Bring's surface.
 
-**Why the Higgs is unique.**
+**Uniqueness of the Higgs.**
 
 On the Bring's surface (genus $4$), the Seifert surface of
 $T(2,8)$ has genus $3$ — it fills $3$ of the $4$ available

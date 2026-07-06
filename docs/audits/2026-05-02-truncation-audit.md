@@ -13,7 +13,7 @@ a geometric-series tail bound from
 This audit identifies every compute script and content block that
 uses the **truncated** form (level 0 only, no jet sum).
 
-## Compute (`folio-assistant/computations/`)
+## Compute (`computations/`)
 
 ### Truncated (level 0 only — needs jet-level extension)
 

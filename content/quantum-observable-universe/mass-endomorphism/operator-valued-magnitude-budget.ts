@@ -38,9 +38,9 @@ export default remark({
   computation: {
     engine: "python",
     script:
-      "folio-assistant/computations/probe_operator_valued_ansatze_from_mass_endo.py",
+      "computations/probe_operator_valued_ansatze_from_mass_endo.py",
     witness: [
-      "folio-assistant/computations/operator-valued-ansatze-from-mass-endo.witness.json",
+      "computations/operator-valued-ansatze-from-mass-endo.witness.json",
     ],
     status: "verified",
     requires: ["python"],

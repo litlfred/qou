@@ -1,0 +1,114 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-25T00:39:08.949624+00:00",
+  "commitSha": "4ae066535eb362eac0b67e699760485a4ea0a6ed",
+  "assertions": [
+    {
+      "name": "collective_4body_term_required_he4_spike_absent_from_additive_chain",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "⁴He local excess: AME=0.9774 vs B_sym=0.04051; F rises 0.935→2.11"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 25,
+  "computation": "probe-collective-binding-residual",
+  "scriptFile": "probe_collective_binding_residual.py",
+  "scriptHash": "75a33fbfaccb",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "EXPLORATORY: structural form of the collective binding residual. The additive per-bond chain shows NO ⁴He local spike and under-binds by a factor growing with A ⇒ the missing term is non-additive (collective), with a 4-body ⁴He α-core component.",
+  "auditOnly": "docs/audits/2026-06-25-sdp-interface-selection-fit-vs-derivation.md",
+  "parameters": {
+    "compute_dps": 50,
+    "alpha_E0_MeV": "4.185980827582892",
+    "tower": [
+      "2H",
+      "3H",
+      "3He",
+      "4He",
+      "6Li",
+      "7Li",
+      "9Be",
+      "12C",
+      "16O"
+    ]
+  },
+  "data": {
+    "per_nucleon": {
+      "2H": {
+        "A": 2,
+        "B_sym_per_A": "1.944845572",
+        "B_AME_per_A": "1.1122831",
+        "F_AME_over_sym": "0.5719133263"
+      },
+      "3H": {
+        "A": 3,
+        "B_sym_per_A": "3.022552675",
+        "B_AME_per_A": "2.8272654",
+        "F_AME_over_sym": "0.9353899516"
+      },
+      "3He": {
+        "A": 3,
+        "B_sym_per_A": "2.265628653",
+        "B_AME_per_A": "2.57268044",
+        "F_AME_over_sym": "1.135526087"
+      },
+      "4He": {
+        "A": 4,
+        "B_sym_per_A": "2.99371321",
+        "B_AME_per_A": "7.0739156",
+        "F_AME_over_sym": "2.362923601"
+      },
+      "6Li": {
+        "A": 6,
+        "B_sym_per_A": "3.343335756",
+        "B_AME_per_A": "5.3323312",
+        "F_AME_over_sym": "1.59491346"
+      },
+      "7Li": {
+        "A": 7,
+        "B_sym_per_A": "3.605425917",
+        "B_AME_per_A": "5.6064401",
+        "F_AME_over_sym": "1.555000776"
+      },
+      "9Be": {
+        "A": 9,
+        "B_sym_per_A": "3.702571457",
+        "B_AME_per_A": "6.4626693",
+        "F_AME_over_sym": "1.745454308"
+      },
+      "12C": {
+        "A": 12,
+        "B_sym_per_A": "3.692958303",
+        "B_AME_per_A": "7.6801446",
+        "F_AME_over_sym": "2.07967271"
+      },
+      "16O": {
+        "A": 16,
+        "B_sym_per_A": "3.780363939",
+        "B_AME_per_A": "7.9762072",
+        "F_AME_over_sym": "2.109904583"
+      }
+    },
+    "he4_local_excess_AME": "0.97737598",
+    "he4_local_excess_Bsym": "0.040505341",
+    "F_collective_rise": {
+      "3H": "0.93538995",
+      "16O": "2.1099046"
+    }
+  }
+}

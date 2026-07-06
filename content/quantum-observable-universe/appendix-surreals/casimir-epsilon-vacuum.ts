@@ -35,11 +35,11 @@ export default conjecture({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/probes/casimir_hoefsmit_additivity_probe.py",
+    script: "computations/probes/casimir_hoefsmit_additivity_probe.py",
     witness: [
-      "folio-assistant/computations/probes/casimir-epsilon-vacuum-probe.witness.json",
-      "folio-assistant/computations/probes/casimir-hoefsmit-additivity-probe.witness.json",
-      "folio-assistant/computations/probes/casimir-q-zeta-probe.witness.json",
+      "computations/probes/casimir-epsilon-vacuum-probe.witness.json",
+      "computations/probes/casimir-hoefsmit-additivity-probe.witness.json",
+      "computations/probes/casimir-q-zeta-probe.witness.json",
     ],
     status: "experimental",
   },

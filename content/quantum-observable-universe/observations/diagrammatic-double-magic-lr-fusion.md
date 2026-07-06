@@ -67,7 +67,7 @@ diagonal Wedderburn capacity to absorb crossing energy beyond the
 Coulomb / Casimir / pairing terms already present at $\lambda_Z$
 and $\mu_N$.*
 
-## Why "rigidity"
+## Meaning of "rigidity"
 
 The classical LR rule \cite{ariki1996} typically produces a sum
 over many $\nu$, with multiplicities counting LR tableaux. The
@@ -121,14 +121,14 @@ and the algebraic prediction of the binding-per-nucleon peak is a
 
 *The dominant component $V_{\lambda_A}$ in the LR decomposition need
 **not** itself be self-conjugate — empirical Yamanouchi enumeration
-([`lr_fusion_self_conj_test.py`](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/folio-assistant/computations/lr_fusion_self_conj_test.py))
+([`lr_fusion_self_conj_test.py`](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/computations/lr_fusion_self_conj_test.py))
 finds the dominant $\nu$ is non-self-conjugate at every tested
 $(Z, N)$. The criterion is **content additivity** on the LR-fusion,
 not self-conjugacy of the dominant component.*
 
 ## Discussion
 
-**Conjectural** under CLAUDE.md §3b. The conjecture is
+**Conjectural** under AGENTS.md §3b. The conjecture is
 *conditional* on
 [`prop:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md)
 and

@@ -1,0 +1,36 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-07-06T15:53:03.065831+00:00",
+  "commitSha": "6f6cf1d3c4ce431ca7501f0ddd057b187927cdbd",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "categorical_linking_reeb_flow_attack",
+  "scriptFile": "categorical_linking_reeb_flow_probe.py",
+  "scriptHash": "e22d82bb5f1a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Cross-validation of the pn-bond sub-ceiling magnitude via Reeb-flow helicity (Routes A, B, C).",
+  "inputs": {
+    "q0": "1.109978583"
+  },
+  "data": {
+    "ceiling": "0.4472136",
+    "z_naive": "0.49932033",
+    "g_derived": "0.44672707"
+  }
+}

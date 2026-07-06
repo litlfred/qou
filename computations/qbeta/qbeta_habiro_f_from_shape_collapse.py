@@ -89,7 +89,7 @@ import sympy as sp
 
 HERE = Path(__file__).resolve().parent
 # Single sys.path insertion in the _path_bridge import above already adds
-# `__file__.parent.parent` (= folio-assistant/computations/), which is the
+# `__file__.parent.parent` (= computations/), which is the
 # same dir as `HERE.parent`. No second insertion needed for the
 # `_precision` / `witness_base` imports below.
 
@@ -104,7 +104,7 @@ mp.mp.dps = 80
 
 from witness_base import WitnessBuilder  # noqa: E402
 
-Q0_MP_PIN = "1.1099785827513808075916690956107688798744991218736"
+Q0_MP_PIN = "1.1099785955573347198997632204832250266562084087802"
 S_TARGET = "0.186893691885"  # per audit doc (12 digits)
 
 

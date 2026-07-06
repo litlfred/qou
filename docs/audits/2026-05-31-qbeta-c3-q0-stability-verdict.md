@@ -2,7 +2,7 @@
 
 **Date:** 2026-05-31
 **PR:** #1580 (claude/coord-infra-1ppq-2026-05-31)
-**Probe ID:** `probe-c3-q0-stability` in `todos/1ppq-qbeta-queue.json`
+**Probe ID:** `probe-c3-q0-stability` in `.beans/1ppq-qbeta-queue.json`
 **Status:** SETTLED
 
 ## TL;DR
@@ -31,7 +31,7 @@ The flip-flop history is documented in
 
 ### Diagnostic rerun (2026-05-31, 65 dps default)
 
-Ran [`folio-assistant/computations/qbeta/qbeta_ck_truncation_order_analysis.py`](../../folio-assistant/computations/qbeta/qbeta_ck_truncation_order_analysis.py)
+Ran [`computations/qbeta/qbeta_ck_truncation_order_analysis.py`](../../computations/qbeta/qbeta_ck_truncation_order_analysis.py)
 at 65 dps default compute precision. The script's Part D output:
 
 ```
@@ -93,7 +93,7 @@ formula.
 
 ### Compute precision floor
 
-Per `folio-assistant/computations/substrate/_precision.py`: default is 65 dps
+Per `computations/substrate/_precision.py`: default is 65 dps
 compute / 50 dps serialization, truncation to 10⁻⁵⁰ absolute. The
 2.98% swing at 10⁻² scale dwarfs this floor by 10⁴⁸ — there is no
 plausible compute-precision explanation for the swing.
@@ -118,7 +118,7 @@ categorical-1-loop interpretation of `[2]_q · (1 - h²α)` may
 extend to Q_β.
 
 This becomes the **new keystone probe**:
-[`probe-qbeta-habiro-element-search`](../../todos/1ppq-qbeta-queue.json)
+[`probe-qbeta-habiro-element-search`](../../.beans/1ppq-qbeta-queue.json)
 in the queue.
 
 Until the Q_β Habiro element is identified:
@@ -159,9 +159,9 @@ it's a sixth near-match, not a derivation.
 ## Cross-refs
 
 - [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md) — master ledger (flip-flop history table now shows 5 entries)
-- [`folio-assistant/computations/qbeta/qbeta_ck_truncation_order_analysis.py`](../../folio-assistant/computations/qbeta/qbeta_ck_truncation_order_analysis.py) — the diagnostic (rerun at 65 dps as part of this verdict)
-- [`folio-assistant/computations/qbeta/qbeta-ck-truncation-order-analysis.witness.json`](../../folio-assistant/computations/qbeta/qbeta-ck-truncation-order-analysis.witness.json) — the witness (unchanged on disk; rerun confirmed same conclusions)
-- [`todos/1ppq-qbeta-queue.json`](../../todos/1ppq-qbeta-queue.json) — queue with this probe `status: done`, new keystone `probe-qbeta-habiro-element-search` added
+- [`computations/qbeta/qbeta_ck_truncation_order_analysis.py`](../../computations/qbeta/qbeta_ck_truncation_order_analysis.py) — the diagnostic (rerun at 65 dps as part of this verdict)
+- [`computations/qbeta/qbeta-ck-truncation-order-analysis.witness.json`](../../computations/qbeta/qbeta-ck-truncation-order-analysis.witness.json) — the witness (unchanged on disk; rerun confirmed same conclusions)
+- [`.beans/1ppq-qbeta-queue.json`](../../.beans/1ppq-qbeta-queue.json) — queue with this probe `status: done`, new keystone `probe-qbeta-habiro-element-search` added
 - PR #1511 — α_EM Habiro element (the canonical template)
 - PR #1521 — Habiro categorical 1-loop (in-flight, hints at Q_β extension)
-- CLAUDE.md §Q_β c_k truncation order canonical framing (already documents this; this audit is the per-coefficient settlement record)
+- AGENTS.md §Q_β c_k truncation order canonical framing (already documents this; this audit is the per-coefficient settlement record)

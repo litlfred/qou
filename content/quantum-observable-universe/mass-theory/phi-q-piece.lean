@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Finset.Card
+
 /-!
 # QOU.PhiQPiece — Φ_q-piece sub-link of a braid closure
 

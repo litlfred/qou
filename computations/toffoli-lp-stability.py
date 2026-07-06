@@ -40,7 +40,7 @@ from pyhecke.gram import NF_BASIS as _PG_NF_BASIS  # noqa: E402
 # ── constants ─────────────────────────────────────────────────
 PHI = (1.0 + float(mp.sqrt(5))) / 2.0          # golden ratio (substrate-precision sqrt, coerced to float for downstream float math)
 Q_STAR = 1.0 / (PHI ** 2)                   # ≈ 0.38197
-Q0 = 1.1099785827513805                     # physical substrate q
+Q0 = 1.1099785955573347                     # physical substrate q
 
 NF_BASIS_NAMES = ["γ", "σ₀", "σ₁", "L₊", "L₋", "e⁻"]
 NF_BASIS = _PG_NF_BASIS  # moved to pyhecke.gram

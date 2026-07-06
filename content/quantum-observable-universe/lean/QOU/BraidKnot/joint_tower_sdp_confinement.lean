@@ -1,5 +1,7 @@
+import Mathlib.Tactic
+
 /-!
-# QOU.BraidKnot.joint_tower_sdp_confinement — placeholder stub
+# QOU.BraidKnot.joint_tower_sdp_confinement
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.ts`](quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.ts).
@@ -29,6 +31,8 @@ class JointTowerSdpConfinementContext where
       hadron `H ∈ R` and every Wedderburn block `λ ⊢ n_0(H)`, the block
       projection `ρ_λ(T_w(H))` is positive semidefinite. -/
   claim_i_wedderburn_positivity : Prop
+  /-- Axiomatised proof that sub-claim (i) holds (§3b-cond conditional class). -/
+  claim_i_holds : claim_i_wedderburn_positivity
   /-- SDP coefficient `c_{H, w}` indexed by hadron index `H : ℕ` and
       word index `w : ℕ`. -/
   coefficient : ℕ → ℕ → ℝ
@@ -91,7 +95,7 @@ embeds via the strand-augmentation $H_{12} \hookrightarrow H_{18}$).
 A solution $(c_{\mathfrak{H}, w}(q_0))$ is a **structured certificate**
 of the canonical Hecke elements $\{T_w(\mathfrak{H})\}_{\mathfrak{H} \in \mathcal{R}}$
 together with the **GB-filtration certificate** and **jet-order log**
-([gb-filtration-jet-order.witness.json](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb-filtration-jet-order.witness.json))
+([gb-filtration-jet-order.witness.json](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/gb-filtration-jet-order.witness.json))
 on each
 
 […truncated; see manuscript for remainder…]
@@ -100,14 +104,14 @@ on each
     sub-claim fields; concretisation requires per-block manuscript
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.ts
-theorem joint_tower_sdp_confinement [ctx : JointTowerSdpConfinementContext] :
+def joint_tower_sdp_confinement [ctx : JointTowerSdpConfinementContext] :
     ctx.claim_i_wedderburn_positivity ∧
     (∀ H w : ℕ, ctx.coefficient H w ≠ 0 →
       ctx.word_length w ≤ ctx.gb_filtration_length H) ∧
     (∀ i j : ℕ, i ≤ j → ctx.jet_order i ≤ ctx.jet_order j) ∧
     (∀ n n' : ℕ, n < n' →
       ctx.embedding n n' (ctx.T_w_value n) = ctx.T_w_value n') :=
-  ⟨ctx.claim_i_wedderburn_positivity, ctx.claim_ii_gb_filtration_grading,
+  ⟨ctx.claim_i_holds, ctx.claim_ii_gb_filtration_grading,
    ctx.claim_iii_jet_order_ordering, ctx.claim_iv_cross_level_compatibility⟩
 
 end QOU.BraidKnot

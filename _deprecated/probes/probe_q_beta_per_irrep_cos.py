@@ -201,7 +201,7 @@ def main() -> int:
     print(f"  encode q-deformed structure, but the Markov-trace sum")
     print(f"    τ_M = Σ_λ y_λ · χ^λ_q")
     print(f"  appears to RE-CLASSICALIZE the angular content via the y_λ weights —")
-    print(f"  consistent with CLAUDE.md §7b's Kazhdan-Lusztig decategorification:")
+    print(f"  consistent with AGENTS.md §7b's Kazhdan-Lusztig decategorification:")
     print(f"  the y_λ y-Markov weights are the KL canonical basis, and summing")
     print(f"  against them decategorifies q-rotations to classical rotations.")
 
@@ -215,7 +215,7 @@ def main() -> int:
                 "per-irrep level (χ^λ_q on V_(2,1)) before the Markov "
                 "trace sum decategorifies it to classical cos. "
                 "Finding: τ_M-level prediction uses CLASSICAL cos "
-                "(consistent with CLAUDE.md §7b KL decategorification); "
+                "(consistent with AGENTS.md §7b KL decategorification); "
                 "the per-irrep χ^(2,1)_q values themselves do not match "
                 "either classical cos((z-1)h/2) or cos_q((z-1)h/2) "
                 "directly — the cos structure emerges only AFTER the "

@@ -119,7 +119,7 @@ Suggested PR slicing: 4-5 PRs by category (single-hit, multi-hit,
 - [PR #1093](https://github.com/litlfred/qou/pull/1093) — display-
   context exemption pattern (merged; the model this PR mirrors for
   `respects_archimedean_wall`)
-- CLAUDE.md §7c — substrate-vs-archimedean wall directive
+- AGENTS.md §7c — substrate-vs-archimedean wall directive
 - Author direction (2026-05-24): "float NEVER in production"
 - 2026-05-24 — `applied_uniqueness_mass_table.py` bug (separate
   cascade pattern — fixed in [PR #1114](https://github.com/litlfred/qou/pull/1114))

@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T13:56:48.160238+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-22T13:27:23.494485+00:00",
+  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
   "assertions": [
     {
       "name": "denominator_factors_as_cyclotomic_product",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13239,
+  "durationMs": 13699,
   "computation": "y-lambda-cyclotomic-factorization-probe",
   "scriptFile": "y_lambda_cyclotomic_factorization_probe.py",
-  "scriptHash": "bfad467bb355",
-  "scriptCommitSha": "03b5ebbd143745ffafb2421edfde30b56e64a1a4",
+  "scriptHash": "0bddb3aa589a",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,16 +36,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
   "description": "I1 probe for prop:y-lambda-cyclotomic-factorization.  Verifies (a) the denominator of y_λ(r) factors as a product of cyclotomic polynomials Φ_d matching the proposition's explicit list, (b) the numerator matches the proposition's P_λ(r), and (c) numerical evaluation at r = √q_0 agrees with sympy direct subs.  Tested at n = 2 (both partitions) and n = 3 (the (2,1) partition, which has the cleanest factorisation).  All three cases pass structurally + numerically.",
   "contentBlock": "prop:y-lambda-cyclotomic-factorization",
   "parameters": {
-    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
     "num_cases": 3,
     "cyclotomic_factor_check_failures": 0,
     "max_evaluation_residue": 0.0
@@ -65,8 +64,8 @@
         ],
         "denominator_match": true,
         "numerator_polynomial_match": true,
-        "y_lambda_at_q0_via_r": 0.6963254263916331,
-        "y_lambda_at_q0_direct": 0.6963254263916331,
+        "y_lambda_at_q0_via_r": 0.6963254203129334,
+        "y_lambda_at_q0_direct": 0.6963254203129334,
         "evaluation_residue": 0.0
       },
       {
@@ -82,8 +81,8 @@
         ],
         "denominator_match": true,
         "numerator_polynomial_match": true,
-        "y_lambda_at_q0_via_r": 0.3036745736083669,
-        "y_lambda_at_q0_direct": 0.3036745736083669,
+        "y_lambda_at_q0_via_r": 0.30367457968706657,
+        "y_lambda_at_q0_direct": 0.30367457968706657,
         "evaluation_residue": 0.0
       },
       {
@@ -105,8 +104,8 @@
         ],
         "denominator_match": true,
         "numerator_polynomial_match": true,
-        "y_lambda_at_q0_via_r": 0.2809296310310197,
-        "y_lambda_at_q0_direct": 0.2809296310310197,
+        "y_lambda_at_q0_via_r": 0.28092963398059057,
+        "y_lambda_at_q0_direct": 0.28092963398059057,
         "evaluation_residue": 0.0
       }
     ]

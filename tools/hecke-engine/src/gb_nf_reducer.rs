@@ -1,7 +1,7 @@
 //! GB-NF reducer for the Iwahori-Hecke algebra H_n(q).
 //!
 //! Rust port of the Python proof-of-concept
-//! [`gb_filtration_jet_tracker.py`](../../../folio-assistant/computations/gb_filtration_jet_tracker.py).
+//! [`gb_filtration_jet_tracker.py`](../../../computations/gb_filtration_jet_tracker.py).
 //!
 //! Generators T_1, ..., T_{n-1} satisfy:
 //!   T_i^2 = (q - q^{-1}) T_i + 1                       (Hecke quadratic)
@@ -371,7 +371,7 @@ impl HeckeElement {
     /// `atom_braid_word_3A(Z, N)` for the QOU mass-formula at
     /// `n_0 = 3·A`, where each nucleon's intra-G0 / intra-G1 pattern
     /// includes σ_avg crossings at specific positions (see
-    /// `folio-assistant/computations/mass_at_3A_proper.py:_PROTON_G0`).
+    /// `computations/mass_at_3A_proper.py:_PROTON_G0`).
     ///
     /// Without this method, the Rust SDP solver couldn't represent
     /// the canonical ⁴He braid (9 of its 47 crossings are σ_avg);

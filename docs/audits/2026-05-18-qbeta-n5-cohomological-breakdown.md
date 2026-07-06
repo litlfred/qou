@@ -131,6 +131,6 @@ This is genuine research, not a one-session task. The audit's deliverable is the
 
 - [`docs/audits/2026-05-18-qbeta-n4-sign-investigation.md`](2026-05-18-qbeta-n4-sign-investigation.md) — the N=4 sign issue this builds on
 - [`content/quantum-observable-universe/braids-and-knots/q-beta-categorical-precision-ladder.{md,lean}`](../../content/quantum-observable-universe/braids-and-knots/q-beta-categorical-precision-ladder.md) — the precision-ladder content block + Lean
-- [`folio-assistant/computations/sweeps/binding_q_target_sweep.py`](../../folio-assistant/computations/sweeps/binding_q_target_sweep.py) — reproduces the ladder at 50 dps; ready to extend with N=5 candidates
-- [`folio-assistant/computations/crystal_basis.py`](../../folio-assistant/computations/crystal_basis.py) — Type-A Kashiwara crystal primitives (intra-block side)
-- [`folio-assistant/computations/demazure_markov_trace.py`](../../folio-assistant/computations/demazure_markov_trace.py) — Demazure characters (b^k power-series side)
+- [`computations/sweeps/binding_q_target_sweep.py`](../../computations/sweeps/binding_q_target_sweep.py) — reproduces the ladder at 50 dps; ready to extend with N=5 candidates
+- [`computations/crystal_basis.py`](../../computations/crystal_basis.py) — Type-A Kashiwara crystal primitives (intra-block side)
+- [`computations/demazure_markov_trace.py`](../../computations/demazure_markov_trace.py) — Demazure characters (b^k power-series side)

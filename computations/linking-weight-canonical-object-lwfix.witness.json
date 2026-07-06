@@ -1,37 +1,37 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T13:10:30.992677+00:00",
-  "commitSha": "aa9c7857f685534c2ae255bad5f4488441853866",
+  "computedAt": "2026-06-22T13:19:40.567076+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "production_factor_near_2p533",
-      "computed": "2.5327796564",
+      "computed": "2.53277966367",
       "expected": "2.53278",
       "passed": true,
       "tolerance": 0.0001
     },
     {
       "name": "H3_bare_borromean_factor_near_0p9986",
-      "computed": "0.998562163837",
+      "computed": "0.998562163197",
       "expected": "0.998562",
       "passed": true,
       "tolerance": 0.0001
     },
     {
       "name": "ratio_prod_over_atomic_proton_reproduces_2p38_gate",
-      "computed": "2.37750481681",
+      "computed": "2.37750482364",
       "expected": "2.37751",
       "passed": true,
       "tolerance": 0.001
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 9,
   "computation": "linking-weight-canonical-object-lwfix",
   "scriptFile": "linking_weight_canonical_object_lwfix.py",
-  "scriptHash": "be27de88c6e5",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "2ee081f78d64",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,48 +41,46 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "description": "CONFIRM/REFUTE: canonical linking_weight object for VolDensity(𝓑₃). RAW m_avg for each candidate factor (A=H₄ average, B=H₃ per-block trace, C=bare). No fit, no tuning to m_p/CODATA. Independent reproduction of PR #1613 / #1623 verdicts.",
   "auditOnly": "docs/audits/2026-06-01-linking-weight-residual-fix.md",
   "data": {
-    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "q0": "1.1099785955573347198997632204832250266562084087802",
     "vol_b3_8catalan": "7.3277247534177521204368281194590728861931949942534",
-    "geom_leading_vol_over_hbarq2": "746.41800759796713898793510926457481421512410754164",
+    "geom_leading_vol_over_hbarq2": "746.41785099454530237890242843397096776847441816109",
     "m_e_MeV": "0.51099895069",
     "m_avg_codata_MeV": "938.91875434",
     "candidates": {
       "A_production_H4_average": {
-        "factor": "2.53277965639939149",
-        "m_avg_MeV": "966.049824467",
-        "rel_err_vs_codata": "0.028896079",
-        "rel_err_pct": "2.8896079"
+        "factor": "2.53277966367467598",
+        "m_avg_MeV": "966.049624558",
+        "rel_err_vs_codata": "0.028895866",
+        "rel_err_pct": "2.8895866"
       },
       "B_H3_bare_borromean_trace_wenzl": {
-        "factor": "0.998562163836787266",
-        "m_avg_MeV": "380.870400888",
-        "rel_err_vs_codata": "-0.59435212",
-        "rel_err_pct": "-59.435212"
+        "factor": "0.998562163197412556",
+        "m_avg_MeV": "380.870320735",
+        "rel_err_vs_codata": "-0.59435221",
+        "rel_err_pct": "-59.435221"
       },
       "B2_H3_atomic_proton_trace_ref_PR1623": {
         "factor": "1.06531",
-        "m_avg_MeV": "406.329281705",
-        "rel_err_vs_codata": "-0.56723702",
-        "rel_err_pct": "-56.723702"
+        "m_avg_MeV": "406.329196455",
+        "rel_err_vs_codata": "-0.56723711",
+        "rel_err_pct": "-56.723711"
       },
       "C_bare_linking_weight_1": {
         "factor": "1.0",
-        "m_avg_MeV": "381.418818659",
-        "rel_err_vs_codata": "-0.59376803",
-        "rel_err_pct": "-59.376803"
+        "m_avg_MeV": "381.418738634",
+        "rel_err_vs_codata": "-0.59376811",
+        "rel_err_pct": "-59.376811"
       }
     },
-    "lambda_codata_implied_audit_only": "2.46164769122261247145403965918",
-    "residual_A_vs_target_pct": "2.8896078602316286179",
-    "ratio_production_over_H3_bare_trace": "2.53642662232230202524964399443",
+    "lambda_codata_implied_audit_only": "2.46164820769264502493147143038",
+    "residual_A_vs_target_pct": "2.8895865688584307173",
+    "ratio_production_over_H3_bare_trace": "2.536426631232124422984260525",
     "H3_trace_source": "documented_closed_form_(4+h2-3h4-h6)/(h2+4)",
     "atomic_proton_trM_ref_PR1623": "1.06531",
     "family_a_h_coeffs": {

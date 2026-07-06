@@ -190,4 +190,4 @@ speedups should be read as indicative of pair-screening and
 reduction-structure savings, not as faithful GS verification
 runtimes.
 
-Witness: `folio-assistant/computations/jet-stratified-benchmark.witness.json`.
+Witness: `computations/jet-stratified-benchmark.witness.json`.

@@ -8,11 +8,14 @@ $\mathfrak{D}_\nabla = q^{-1}\nabla + \hbar_q \, \iota_\xi \nabla$,
 and [categorical instanton](#def:categorical-instanton) condition
 $\star_q F_\nabla = F_\nabla$ — is in close structural alignment
 with the canonical quantum-gravity programmes (ADM, Ashtekar,
-Smolin–Rovelli loop quantum gravity). The substantive differences
-are not which structures appear but where they live: QOU treats them
-as native categorical data, while canonical LQG bolts them onto a
-continuous background and recovers algebraic data as a
-regularisation patch.
+Smolin–Rovelli loop quantum gravity). To take the first dictionary
+entry concretely: the ADM 3+1 foliation reappears as the contact
+affine chart $H = \ker \varTheta_A$ (the spatial slice), with the
+Reeb flow $\phi_t = \exp(t\xi)$ in the role of lapse-and-shift. The
+substantive differences are then not which structures appear but
+where they live: QOU treats them as native categorical data, while
+canonical LQG bolts them onto a continuous background and recovers
+algebraic data as a regularisation patch.
 
 ## Dictionary
 
@@ -21,9 +24,9 @@ regularisation patch.
 | **ADM 3+1 foliation** with lapse $N$ and shift $N^i$ \cite{ashtekar1986} | [contact affine chart](#def:contact-affine-chart) $H = \ker \varTheta_A$ as the spatial slice; [Reeb flow](#thm:categorical-reeb-exists) $\phi_t = \exp(t\xi)$ as the canonical lapse-and-shift |
 | **Wheeler–DeWitt** $\hat H \Psi = 0$ | Variational minimum $\delta \mathfrak{S}_q / \delta \nabla = 0 \Rightarrow \star_q F_\nabla = F_\nabla$ ([categorical instanton](#def:categorical-instanton)) on adelic states |
 | **Ashtekar connection** $A = \Gamma + \gamma K$ | [Categorical Dirac](#def:categorical-dirac-operator) $\mathfrak{D}_\nabla = q^{-1}\nabla + \hbar_q \iota_\xi \nabla$; the role of $\gamma K$ is played by $\hbar_q \iota_\xi \nabla$ |
-| **Barbero–Immirzi parameter** $\gamma$ (fitted to $\approx 0.274$ to match $S_{BH} = A/4$ \cite{rovelli1995}) | Substrate parameter $q_0 \approx 1.11$, **derived** from the substrate Reeb flow; not a free fit |
-| **Horizon (Bekenstein–Hawking) entropy** $S_{BH} = A/4\ell_p^2$ \cite{rovelli1995} | The archimedean ($\mathrm{std}$) statistical limit of the $q$-dimension (Markov-trace) partition function — the log-count of trace-closed ($\sum_p m_p = 0$, i.e. landing in $\mathcal{O}(\mathbb{P}(V)) = A^{\mathrm{co}T}$, [projective line object](#def:projective-line-object)) boundary states; horizon area = the non-abelian-Stokes surface measure |
-| **Horizon Hilbert subspaces** (per-puncture $U(1)$ labels — *scalar* abelian reps) | **Wedderburn blocks** $M_{d_\lambda}(\mathbb{Q}(q))$, $\lambda \vdash n$ ([Wedderburn decomposition](#prop:three-parameters-wedderburn)); QOU carries *more* — each block is a $d_\lambda \times d_\lambda$ matrix algebra (full non-abelian intertwiner data), of which the LQG $U(1)$/scalar treatment retains only the $T_q$-weight (Cartan) projection. The $U(1)$-vs-$\mathrm{SU}(2)$ count distinction is precisely scalar-projection vs full-block |
+| **Barbero–Immirzi parameter** $\gamma$ \cite{rovelli1995} | Substrate parameter $q_0 \approx 1.11$, **derived** from the substrate Reeb flow, not a free fit (see the second structural advantage below) |
+| **Horizon (Bekenstein–Hawking) entropy** $S_{BH} = A/4\ell_p^2$ \cite{rovelli1995} | The archimedean ($\mathrm{std}$) statistical limit of the $q$-dimension (Markov-trace) partition function — the log-count of trace-closed boundary states, those with $\sum_p m_p = 0$ landing in the [projective line object](#def:projective-line-object) $\mathcal{O}(\mathbb{P}(V)) = A^{\mathrm{co}T}$; horizon area = the non-abelian-Stokes surface measure |
+| **Horizon Hilbert subspaces** (per-puncture $U(1)$ labels — *scalar* abelian reps) | **Wedderburn blocks** $M_{d_\lambda}(\mathbb{Q}(q))$, $\lambda \vdash n$ ([Wedderburn decomposition](#prop:three-parameters-wedderburn)); QOU carries *more* — each $d_\lambda \times d_\lambda$ block is full non-abelian intertwiner data, of which the LQG $U(1)$/scalar treatment retains only the $T_q$-weight (Cartan) projection — precisely the $U(1)$-vs-$\mathrm{SU}(2)$ count distinction |
 | **Densitised triad** $E^i_a$ | Bring-curve coordinates under the $S_5$ action ([categorical Reeb on Bring](#ex:categorical-reeb-brings)); area discretisation is innate to the algebraic slices |
 | **Spin networks** of arbitrary $\mathrm{SU}(2)$ representations | Knot operators as Reeb-$U(1)$ Wilson loops ([chart-swap–Reeb identification](#prop:reeb-u1-chart-swap)); torus knots $T_{m,n}$ are $(m,n)$-cables of Reeb fibres, with framings = integer ambiguity in the $U(1)$ lift |
 | **Spin foams** as 2-complex path integrals \cite{rovelli2004} | Frobenius-pairing cobordism amplitudes via $\mathrm{tr}_M(\mathcal{B}_K)$ — categorical state sum, not a regularised foam triangulation |
@@ -36,7 +39,7 @@ regularisation patch.
 | **Diffeomorphism constraint** | built in: $\mathrm{tr}_M(\mathcal{B}_K)$ is an ambient-isotopy (knot) invariant by construction — no separate constraint to impose |
 | **Hamiltonian constraint** (Thiemann's *rigorous* operator) | the concrete [categorical Dirac](#def:categorical-dirac-operator) / Reeb generator $\mathfrak{D}_\nabla$ — the **sharp** operator realising the *formal* Wheeler–DeWitt row above; QOU sidesteps the constraint-algebra-closure / problem-of-time issue (the Reeb flow *is* time, §1) |
 | **Coherent / semiclassical states** | the archimedean ($\mathrm{std}$, $q\to1$) limit of the categorical state |
-| **LQC big bounce** & **Penrose CCC aeons** (singularity-free cosmology) | **One mechanism in QOU**: cosmic time $=$ the $q$-flow, with both as *endpoints of a single surreal trajectory* — Big Bang $= q\to1^+$ ($c_q\to\infty$; the $1+\varepsilon^\omega$ end), heat death $= q\to\infty=\omega$ ($\hbar_q\to1$). LQC's bounce and CCC's conformal rescaling are the two *ends*, not two mechanisms (*highly speculative*: the named-surreal evaluation is clean, the cosmological reading is bracketed) |
+| **LQC big bounce** & **Penrose CCC aeons** (singularity-free cosmology) | **One mechanism in QOU**: cosmic time $=$ the $q$-flow, with both as *endpoints of a single surreal trajectory* — Big Bang $= q\to1^+$ ($c_q\to\infty$; the $1+\varepsilon^\omega$ end), heat death $= q\to\infty=\omega$ ($\hbar_q\to1$). LQC's bounce and CCC's conformal rescaling are the two *ends*, not two mechanisms. *Highly speculative*: the named-surreal evaluation is clean, the cosmological reading is bracketed |
 | **Quantum-geometry discreteness** (discrete area/volume spectra) | algebraic discreteness — finite Wedderburn blocks $\bigoplus_\lambda M_{d_\lambda}$ + finite GS-filtration slices ([GB spectral sequence](#prop:gb-spectral-sequence)); discreteness is *innate to the algebra*, not a quantisation output |
 
 ## Three structural advantages
@@ -80,7 +83,7 @@ well-known obstructions of the canonical programmes:
    produces the real Lorentzian archimedean projection without
    imposing reality conditions by hand.
 
-## What QOU does not claim
+## Limitations of the claim
 
 The dictionary does not claim that QOU *derives* LQG from first
 principles; canonical loop quantum gravity is a self-contained

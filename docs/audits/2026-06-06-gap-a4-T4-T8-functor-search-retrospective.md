@@ -155,7 +155,7 @@ This is the **formalize-first discipline** in action:
   forbids. The probes are designed to REFUTE rather than fit, so
   every "fail" is a derivation route closed.
 
-- **No 6th ansatz.** Per CLAUDE.md's Δ_λ-gate rule and "do not
+- **No 6th ansatz.** Per AGENTS.md's Δ_λ-gate rule and "do not
   propose a 7th fit-based ansatz" guidance, the next move is NOT
   to invent a 6th candidate functor that gives −3/4 by tuning.
   The right move is to characterise the OPEN OBJECT structurally
@@ -200,8 +200,8 @@ probes the Klein-invariant h-expansion.
 - The SAME missing object on K_1 (inter-nucleon-color-tube):
   [`inter-nucleon-channel-color-tube.md`](../../content/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.md).
 - Probes (PR #1904, this branch):
-  - T4 [Schur-Weyl character bridge](../../folio-assistant/computations/probes/gap_a4_T4_schur_weyl_icosahedral_probe.py)
-  - T5 [candidate functor F1/F2/F3](../../folio-assistant/computations/probes/gap_a4_T5_candidate_functor_probe.py)
-  - T6 [q-deformed icosahedral matrix](../../folio-assistant/computations/probes/gap_a4_T6_q_deformed_icosahedral_probe.py)
-  - T7 [Bratteli/Markov stabilization](../../folio-assistant/computations/probes/gap_a4_T7_bratteli_stabilization_probe.py)
-  - T8 [RT / q-Schur duality](../../folio-assistant/computations/probes/gap_a4_T8_rt_q_schur_probe.py)
+  - T4 [Schur-Weyl character bridge](../../computations/probes/gap_a4_T4_schur_weyl_icosahedral_probe.py)
+  - T5 [candidate functor F1/F2/F3](../../computations/probes/gap_a4_T5_candidate_functor_probe.py)
+  - T6 [q-deformed icosahedral matrix](../../computations/probes/gap_a4_T6_q_deformed_icosahedral_probe.py)
+  - T7 [Bratteli/Markov stabilization](../../computations/probes/gap_a4_T7_bratteli_stabilization_probe.py)
+  - T8 [RT / q-Schur duality](../../computations/probes/gap_a4_T8_rt_q_schur_probe.py)

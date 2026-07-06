@@ -265,7 +265,7 @@ replace with a different approach.
 **Fix**: A previous tactic closed the goal completely. Remove the
 subsequent tactic(s) that have nothing left to prove.
 
-### Spurious ℝ-specialisation (CLAUDE.md §7c)
+### Spurious ℝ-specialisation (AGENTS.md §7c)
 
 **Pattern**: A categorical / algebraic identity is declared over `ℝ`
 without needing any archimedean operation (no `Real.sqrt`, `Real.rpow`,

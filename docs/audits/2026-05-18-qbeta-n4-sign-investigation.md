@@ -143,7 +143,7 @@ categorical (-1.253).
 ## Cross-references
 
 - [`content/quantum-observable-universe/braids-and-knots/q-beta-categorical-precision-ladder.md`](../../content/quantum-observable-universe/braids-and-knots/q-beta-categorical-precision-ladder.md) — the precision-ladder content block (needs fixes per §"Recommended fixes" above)
-- [`folio-assistant/computations/q-beta-operator-valued-N3.witness.json`](../../folio-assistant/computations/q-beta-operator-valued-N3.witness.json) — source values for N=2, N=3 reproduction
-- [`folio-assistant/computations/sweeps/binding_q_target_sweep.py`](../../folio-assistant/computations/sweeps/binding_q_target_sweep.py) — reproduces the full ladder at 50 dps
+- [`computations/q-beta-operator-valued-N3.witness.json`](../../computations/q-beta-operator-valued-N3.witness.json) — source values for N=2, N=3 reproduction
+- [`computations/sweeps/binding_q_target_sweep.py`](../../computations/sweeps/binding_q_target_sweep.py) — reproduces the full ladder at 50 dps
 - [`docs/audits/2026-05-18-1ppb-workplan-v7-100x-experimental.md`](2026-05-18-1ppb-workplan-v7-100x-experimental.md) — workplan
 - [`docs/precision-goals.md`](../precision-goals.md) — Q_β 100×-experimental row now reflects N=3 categorical

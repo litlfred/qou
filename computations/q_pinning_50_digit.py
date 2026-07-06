@@ -76,6 +76,7 @@ R_P = mpf(MASS_RATIO_P_E_STR)
 # CODATA 2022 muon-electron mass ratio (now a 9.5σ PREDICTION, kept for
 # the cross-check print; q₀ is no longer pinned from it — see below).
 M_MU_OVER_E_STR = "206.7682830"
+M_MU_OVER_E_ERR_STR = "0.0000046"
 M_MU_OVER_E = mpf(M_MU_OVER_E_STR)
 
 # ── Substrate parameter q₀ — canonical single source ─────────
@@ -251,7 +252,7 @@ if __name__ == "__main__":
     print(f"  → CODATA-bounded relative precision: ~{rel_prec:.2e} ({ppq:.0f} ppQ)")
     # muon cross-check (now a 9.5σ prediction, not the anchor)
     DQ_DR_MU = Q ** 2 * HBAR_Q / (mpf(2) * M_MU_OVER_E)
-    Q_ERR_MU = DQ_DR_MU * mpf("0.0000046")
+    Q_ERR_MU = DQ_DR_MU * mpf(M_MU_OVER_E_ERR_STR)
     print(f"  (muon-anchor cross-check would give σ(q₀)/q₀ ≈ "
           f"{float(Q_ERR_MU / Q):.2e} — {float(Q_ERR_MU / Q_ERR):.0f}× looser)")
 

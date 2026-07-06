@@ -10,6 +10,12 @@ export default proposition({
   },
   uses: ["prop:b1-torus-knot-rows-theorem"],
   cites: ["thurston1978"],
+  computation: {
+    engine: "python",
+    script: "computations/two_filtration_bridge_small_cases.py",
+    witness: "computations/two-filtration-bridge-small-cases.witness.json",
+    status: "verified",
+  },
   tags: [
     "two-filtration-bridge",
     "bridge-verification",

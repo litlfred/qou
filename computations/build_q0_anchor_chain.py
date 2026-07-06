@@ -10,7 +10,7 @@ landed on main (`m_p_breakdown_derived_vs_guessed.py`,
 `atom_colored_jones_volume.py`); the third (`alpha_em_pslq_uniqueness`)
 is a real witness but its 2000 dps variant was never written.
 
-Per CLAUDE.md, every step in a chain must be either a real
+Per AGENTS.md, every step in a chain must be either a real
 derivation or a script-cited debt with a reference to a script that
 exists.  Enumerating speculative future-paths in a chain is not
 methodological — those belong in a workplan document, not a
@@ -102,7 +102,7 @@ def build() -> DerivationChain:
         jet_order=0,
         spectral_stratum="archimedean (q_0 ∈ ℝ_{>1})",
         notes=(
-            "script: folio-assistant/computations/q_parameter.py.  "
+            "script: computations/q_parameter.py.  "
             "This SCRIPT_CITED step is the open frontier of the "
             "chain — the candidate derivations on the horizon are "
             "(A) closure of the α-FSC ↔ q_0 algebraic relation via "

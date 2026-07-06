@@ -43,10 +43,10 @@ def cellContent (i j : ℕ) : ℤ := (j : ℤ) - (i : ℤ)
 
     Iterates over rows `i ∈ [0, length λ)` and within each row over
     columns `j ∈ [0, λ_i)`, summing `cellContent i j`. -/
-def contentSum (λ : Partition) : ℤ :=
-  (List.range λ.length).foldl
+def contentSum (lam : Partition) : ℤ :=
+  (List.range lam.length).foldl
     (fun acc i =>
-      acc + (List.range ((λ.get? i).getD 0)).foldl
+      acc + (List.range ((lam.get? i).getD 0)).foldl
         (fun a j => a + cellContent i j)
         0)
     0
@@ -69,14 +69,14 @@ suffices for the macdonald hook telescope identity. -/
     infrastructure in Mathlib (this is a known gap). -/
 -- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see content/bib-qa-verifications.json
 -- Ref: [macdonald1995] §I.3 ex. 1
-noncomputable def schurElement (Q X : ℝ) (λ : Partition) : ℝ :=
-  Q ^ (contentSum λ) *
-    (List.range λ.length).foldl
+noncomputable def schurElement (Q X : ℝ) (lam : Partition) : ℝ :=
+  Q ^ (contentSum lam) *
+    (List.range lam.length).foldl
       (fun acc i =>
-        acc * (List.range ((λ.get? i).getD 0)).foldl
+        acc * (List.range ((lam.get? i).getD 0)).foldl
           (fun a j =>
             a * (1 - X * Q ^ (cellContent i j)) /
-                (1 - Q ^ (Partition.hookLength λ i j)))
+                (1 - Q ^ (Partition.hookLength lam i j)))
           1)
       1
 
@@ -113,8 +113,8 @@ noncomputable def wenzlNormalisation (n : ℕ) (Q X : ℝ) : ℝ :=
       y_λ = Q^{n(λ)} · (1 − Q)^n / (1 − X)^n
               · ∏_x (1 − X·Q^{c(x)}) / (1 − Q^{h(x)}). -/
 -- Ref: [wenzl1988] Theorem 2.1
-noncomputable def jonesMarkovCoeff (Q X : ℝ) (λ : Partition) : ℝ :=
-  schurElement Q X λ / wenzlNormalisation λ.size Q X
+noncomputable def jonesMarkovCoeff (Q X : ℝ) (lam : Partition) : ℝ :=
+  schurElement Q X lam / wenzlNormalisation lam.size Q X
 
 /-- **Connection theorem** — y_λ is well-defined for `Q ≠ 1`,
     `X ≠ 1`, since the denominator `Z_n = ((1−X)/(1−Q))^n` is then

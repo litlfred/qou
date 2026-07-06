@@ -2,8 +2,11 @@ import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 import Mathlib.Data.Nat.Basic
 import Mathlib.Data.Nat.Factorial.Basic
+import Mathlib.Data.Nat.Prime.Basic
+import Mathlib.Data.Fintype.Perm
 import Mathlib.GroupTheory.Perm.Basic
 import Mathlib.GroupTheory.OrderOfElement
+import Mathlib.Tactic
 
 
 /-!
@@ -29,11 +32,16 @@ numerical evaluation.
 
 namespace QOU.Archimedean
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
+
+/-- The canonical indeterminate `q` of `R_q`. -/
 def q_param : R_q := LaurentPolynomial.T 1
+
+/-- The inverse indeterminate `q⁻¹` of `R_q`. -/
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 -- ═══════════════════════════════════════════════════════════════════
@@ -46,22 +54,20 @@ def seifertGenus_T2 (p : ℕ) : ℕ := (p - 1) / 2
 
 /-- Seifert genus of T_{2,11} is 5. -/
 -- Ref: [manuscript] §4/t211-ideal-annihilation
-theorem t2_11_genus : seifertGenus_T2 11 = 5 := by native_decide
+theorem t2_11_genus : seifertGenus_T2 11 = 5 := by decide
 
 /-- T_{2,11} does not embed in genus 4. -/
 -- Ref: [manuscript] §4/t211-ideal-annihilation
-theorem t2_11_not_embeddable : ¬ (seifertGenus_T2 11 ≤ 4) := by
-  simp [seifertGenus_T2]; omega
+theorem t2_11_not_embeddable : ¬ (seifertGenus_T2 11 ≤ 4) := by decide
 
 /-- T_{2,9} saturates genus 4. -/
 -- Ref: [manuscript] §4/t211-ideal-annihilation
-theorem t2_9_saturates : seifertGenus_T2 9 = 4 := by native_decide
+theorem t2_9_saturates : seifertGenus_T2 9 = 4 := by decide
 
 /-- T_{2,11} is the first excluded: T_{2,9} fits, T_{2,11} does not. -/
 -- Ref: [manuscript] §4/t211-ideal-annihilation
 theorem t2_11_is_first_excluded :
-    seifertGenus_T2 9 ≤ 4 ∧ ¬ (seifertGenus_T2 11 ≤ 4) := by
-  constructor <;> simp [seifertGenus_T2] <;> omega
+    seifertGenus_T2 9 ≤ 4 ∧ ¬ (seifertGenus_T2 11 ≤ 4) := by decide
 
 -- ═══════════════════════════════════════════════════════════════════
 -- Section 2: D₁₁ symmetry (not S₁₁)
@@ -78,7 +84,7 @@ theorem t2_11_symmetry_order : dihedralOrder 11 = 22 := by rfl
 /-- D₁₁ is much smaller than S₁₁. -/
 -- Ref: [manuscript] §4/t211-ideal-annihilation
 theorem dihedral_vs_symmetric : dihedralOrder 11 < Nat.factorial 11 := by
-  simp [dihedralOrder]; norm_num
+  decide
 
 -- ═══════════════════════════════════════════════════════════════════
 -- Section 3: Z₁₁ does not embed in S₅
@@ -86,8 +92,7 @@ theorem dihedral_vs_symmetric : dihedralOrder 11 < Nat.factorial 11 := by
 
 /-- 11 does not divide 5! = 120. -/
 -- Ref: [manuscript] §4/t211-ideal-annihilation
-theorem eleven_not_dvd_factorial_5 : ¬ (11 ∣ Nat.factorial 5) := by
-  norm_num [Nat.factorial]
+theorem eleven_not_dvd_factorial_5 : ¬ (11 ∣ Nat.factorial 5) := by decide
 
 /-- The order of any element of a finite group divides the group order.
     For S_n, |S_n| = n!, so orderOf σ ∣ n!.
@@ -130,15 +135,18 @@ private def theCycle5 : Equiv.Perm (Fin 5) where
   left_inv i := by fin_cases i <;> rfl
   right_inv i := by fin_cases i <;> rfl
 
-/-- Z₃ embeds in S₅ via the 3-cycle (0 1 2). -/
+/-- Z₃ embeds in S₅ via the 3-cycle (0 1 2): it has prime order 3
+    (`theCycle3 ^ 3 = 1` and `theCycle3 ≠ 1`). -/
 -- Ref: [manuscript] §4/t211-ideal-annihilation
 theorem z3_in_s5 : ∃ (σ : Equiv.Perm (Fin 5)), orderOf σ = 3 :=
-  ⟨theCycle3, by native_decide⟩
+  ⟨theCycle3, orderOf_eq_prime (by decide) (by decide)⟩
 
-/-- Z₅ embeds in S₅ via the 5-cycle (0 1 2 3 4). -/
+/-- Z₅ embeds in S₅ via the 5-cycle (0 1 2 3 4): it has prime order 5
+    (`theCycle5 ^ 5 = 1` and `theCycle5 ≠ 1`). -/
 -- Ref: [manuscript] §4/t211-ideal-annihilation
 theorem z5_in_s5 : ∃ (σ : Equiv.Perm (Fin 5)), orderOf σ = 5 :=
-  ⟨theCycle5, by native_decide⟩
+  haveI : Fact (Nat.Prime 5) := ⟨by norm_num⟩
+  ⟨theCycle5, orderOf_eq_prime (by decide) (by decide)⟩
 
 -- ═══════════════════════════════════════════════════════════════════
 -- Section 4: Transfer matrix is identity (null force)
@@ -161,20 +169,19 @@ theorem trivial_eigenvalue_flat (k : ℕ) : (1 : R_q) ^ k = 1 := one_pow k
 
 /-- The knot operator F(T_{m,n}, N) = 1 for non-embeddable torus knots.
     The transfer matrix has eigenvalues (1, 1), giving degenerate
-    Chebyshev recurrence with no shell structure. -/
--- Ref: [manuscript] §4/t211-ideal-annihilation
+    Chebyshev recurrence with no shell structure.
+
+    The transfer matrix eigenvalues for a non-embeddable knot are both 1.
+    Formally: λ₊(T_{m,n}) = 1 ∧ λ₋(T_{m,n}) = 1.
+    The consequence V̂(k) = 1^k = 1 is proved above (trivial_eigenvalue_flat).
+    Full statement requires the transfer matrix type from
+    spectral-decomposition-qvalue; the eigenvalue = 1 claim is the
+    content of embeddability-closure Theorem 2 (spectral filter). -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
-axiom non_embeddable_eigenvalues_trivial (m n : ℕ) (hne : notEmbeddable m n 4)
-    -- (q : R_q) (hq : q > 1) :  -- (archimedean; not meaningful over R_q)
-    -- The transfer matrix eigenvalues for a non-embeddable knot are both 1.
-    -- Formally: λ₊(T_{m,n}) = 1 ∧ λ₋(T_{m,n}) = 1.
-    -- The consequence V̂(k) = 1^k = 1 is proved above (trivial_eigenvalue_flat).
-    -- Full statement requires the transfer matrix type from
-    -- spectral-decomposition-qvalue; the eigenvalue = 1 claim is the
-    -- content of embeddability-closure Theorem 2 (spectral filter).
+axiom non_embeddable_eigenvalues_trivial (m n : ℕ) (hne : notEmbeddable m n 4) :
     ∀ (k : ℕ), (1 : R_q) ^ k = 1
 
 -- ═══════════════════════════════════════════════════════════════════
@@ -185,6 +192,8 @@ axiom non_embeddable_eigenvalues_trivial (m n : ℕ) (hne : notEmbeddable m n 4)
     The genus depends only on the winding number p, not the level. -/
 -- Ref: [manuscript] §4/t211-ideal-annihilation
 theorem t2_11_in_ideal_all_levels (n : ℕ) : seifertGenus_T2 11 > 4 := by
-  simp [seifertGenus_T2]; omega
+  decide
+
+end
 
 end QOU.Archimedean

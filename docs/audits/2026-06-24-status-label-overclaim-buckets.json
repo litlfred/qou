@@ -1,0 +1,840 @@
+{
+  "B_provable_vacuous": [
+    {
+      "block": "content/quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem",
+      "kind": "proposition",
+      "lean": "lean:: True",
+      "labels": [
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/appendix-surreals/b1-hyperbolic-rows-theorem",
+      "kind": "proposition",
+      "lean": "lean:: True",
+      "labels": [
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary",
+      "kind": "proposition",
+      "lean": "lean::=   trivial",
+      "labels": [
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/appendix-surreals/depth-2-identification-bloch-suslin",
+      "kind": "proposition",
+      "lean": "lean:: True",
+      "labels": [
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl",
+      "kind": "proposition",
+      "lean": "lean::     True",
+      "labels": [
+        "closed-form"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-endomorphism/markov-trace-axiomatic-closed-form",
+      "kind": "proposition",
+      "lean": "lean::     True",
+      "labels": [
+        "closed form",
+        "closed-form"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/crystal-r-matrix-sub-lemma",
+      "kind": "proposition",
+      "lean": "lean::= trivial",
+      "labels": [
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character",
+      "kind": "proposition",
+      "lean": "lean::= trivial",
+      "labels": [
+        "closed form",
+        "closed-form"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/wenzl-bridge-applicability-qou",
+      "kind": "proposition",
+      "lean": "lean::     True",
+      "labels": [
+        "closed form",
+        "closed-form"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/y-lambda-closed-form-wenzl-bridge",
+      "kind": "proposition",
+      "lean": "lean:: True",
+      "labels": [
+        "closed form",
+        "closed-form"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/observations/flavor-split-substrate",
+      "kind": "proposition",
+      "lean": "lean:: True",
+      "labels": [
+        "closed-form",
+        "no-fit"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/particle-interactions/confinement-topological",
+      "kind": "proposition",
+      "lean": "lean:: True",
+      "labels": [
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/particle-interactions/q-beta-cos-resummation",
+      "kind": "proposition",
+      "lean": "lean::= trivial",
+      "labels": [
+        "closed-form"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/q-geometric-langlands/cyclotomic-l-value-decomposition",
+      "kind": "proposition",
+      "lean": "lean:: True",
+      "labels": [
+        "closed form"
+      ]
+    }
+  ],
+  "C1_sorry_free_contradiction": [
+    {
+      "block": "content/quantum-observable-universe/braids-and-knots/pontryagin-dual-coxeter-character",
+      "kind": "theorem",
+      "lean": "lean:sorry",
+      "labels": [
+        "sorry-free"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "sorry-free"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/information-theory/vdw-pskew-isolation",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "no fit",
+        "sorry-free"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-endomorphism/binding-qbeta-complex-volume",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "proved",
+        "sorry-free"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-endomorphism/chi-per-irrep-cyclotomic-closed-forms",
+      "kind": "remark",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "closed-form",
+        "proved",
+        "sorry-free"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation",
+      "kind": "remark",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "closed-form",
+        "proved",
+        "sorry-free"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-endomorphism/qbeta-per-block-chi-closed-forms",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "closed-form",
+        "sorry-free"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-endomorphism/u-coordinate-discharges",
+      "kind": "remark",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed-form",
+        "proved",
+        "sorry-free"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/binding-alpha-shift-extension",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "no-fitting",
+        "proved",
+        "sorry-free"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "closed-form",
+        "sorry-free"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/bring-residue-resolvent",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "closed-form",
+        "no-fitting",
+        "proved",
+        "sorry-free"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/crystal-basis-resolves-mass-tower-open-problems",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "sorry-free"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/interface-knot-markov-z",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "proved",
+        "sorry-free"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/lr-coefficient-hecke",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "sorry-free"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "no fitting",
+        "no-fitting",
+        "proved",
+        "sorry-free"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "closed-form",
+        "no-fitting",
+        "proved",
+        "sorry-free"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/torus-knot-delta-q-writhe",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "sorry-free"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/particle-interactions/brunnian-property-of-borromean",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "sorry-free"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/predicted-spectra/bloch-group-quotient-construction",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "sorry-free"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/predicted-spectra/bring-hyperbolic-knot-bloch-decomposition",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "proved",
+        "sorry-free"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "sorry-free"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "proved",
+        "sorry-free"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/quantum-observable-universes/q-harmonic-flow",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "sorry-free"
+      ]
+    }
+  ],
+  "C2_conjecture_or_sorry_legit": [
+    {
+      "block": "content/quantum-observable-universe/appendix-qvalues/qbeta-ck-truncation-canonical",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/appendix-surreals-archimedean/wenzl-positivity-implies-substrate-positivity",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/braids-and-knots/bar-involution",
+      "kind": "definition",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed-form"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/braids-and-knots/habiro-precision-ladder-equivalence",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed-form",
+        "no fitting"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/brings-surface/bring-trefoil-cinquefoil-channel",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/brings-surface/c-from-color-flavor-swap",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/fluid-dynamics/hyperbolic-overlap-saturation",
+      "kind": "remark",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed-form"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "closed-form",
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-endomorphism/markov-trace-antipode-polynomial-symmetry",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "closed-form"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-endomorphism/topological-mass-conjecture",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/alpha-k-categorical-closure",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "no fitting"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/binding-manybody-jet-filtration",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "closed-form",
+        "no fit"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/borromean-bloch-group-element",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "closed-form"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/categorical-linking-operation",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/chi-lambda-w0-sign-weighting",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/confinement-nf-partial-proof",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "closed-form",
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/dim-master-pentagon",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed-form"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/gb-depth-period-correspondence",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/gram-determinant-plancherel-ratio",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed-form"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/gs-archimedean-agreement-trace",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed-form"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/h3-markov-wenzl-weights",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "closed-form"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/isospin-from-canonical-bowtie",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/jucys-murphy-central-elements-qou",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "closed-form"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/kashaev-volume-conjecture",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/knot-mass-formula-unified",
+      "kind": "theorem",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed-form"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/magic-A-binding-formula",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "closed-form",
+        "no-fitting"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers",
+      "kind": "remark",
+      "lean": "lean:sorry",
+      "labels": [
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/mass-volume-factorization",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed-form",
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/pachner-pentagon-borromean",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "closed-form",
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/partition-sum-proton-residual",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "closed-form"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/phi-q-tower-jsj-bridge",
+      "kind": "remark",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed-form"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/weak-spectral-completeness",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed-form"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/wedderburn-bratteli-recursion",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "no fit"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/observations/color-superconductivity-borromean",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "no fitting"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional",
+      "kind": "theorem",
+      "lean": "lean:sorry",
+      "labels": [
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "closed-form"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "closed-form"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/particle-interactions/q-zero-stokes-region-identification",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "closed-form",
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/particle-interactions/qbeta-trace-counit-convergence",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "closed-form",
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/particle-interactions/spin-from-so3-fiber",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "closed-form"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/predicted-spectra/e-hartree-categorical-derivation",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "rigorously derived"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons",
+      "kind": "remark",
+      "lean": "lean:sorry",
+      "labels": [
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence",
+      "kind": "conjecture",
+      "lean": "lean:sorry",
+      "labels": [
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/quantum-observable-universes/reeb-u1-chart-swap",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/stochastic-mechanics/c5-involution-leibniz-decomposition",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/stochastic-mechanics/polynomial-bar-involution",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "closed form",
+        "proved"
+      ]
+    }
+  ],
+  "other": [
+    {
+      "block": "content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form",
+      "kind": "conjecture",
+      "lean": "lean::=   trivial",
+      "labels": [
+        "closed form",
+        "closed-form",
+        "proved"
+      ]
+    },
+    {
+      "block": "content/quantum-observable-universe/mass-theory/mass-coefficient-shadow-price",
+      "kind": "proposition",
+      "lean": "lean:sorry",
+      "labels": [
+        "no fit"
+      ]
+    }
+  ]
+}

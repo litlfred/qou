@@ -1,9 +1,11 @@
+import Mathlib.Tactic
+
 /-
 Copyright (c) 2026 litlfred. All rights reserved.
 
 # λ_scale absorbed into VolDensity — formal documentation (2026-06-04)
 
-> **⚠ Critical framing reminder.** Per CLAUDE.md §"Mass-and-Binding-
+> **⚠ Critical framing reminder.** Per AGENTS.md §"Mass-and-Binding-
 > Algorithms appendix sync" + [`docs/lambda-scale-absorbed-into-vol-density.md`](../../../../../docs/lambda-scale-absorbed-into-vol-density.md):
 > the numerical factor previously called `λ_scale` was **absorbed**
 > into the canonical per-knot `VolDensity(K)` evaluation on 2026-05-23
@@ -37,7 +39,7 @@ introduce a numerical constant.
 ## Cross-refs
 
 - Canonical doc: [`docs/lambda-scale-absorbed-into-vol-density.md`](../../../../../docs/lambda-scale-absorbed-into-vol-density.md)
-- CLAUDE.md §"⚠ Critical framing — do NOT treat `λ_scale` as a separate object"
+- AGENTS.md §"⚠ Critical framing — do NOT treat `λ_scale` as a separate object"
 -/
 
 namespace QOU.Machinery
@@ -67,8 +69,16 @@ class SeparateLambdaScale_Antipattern : Prop where
   is "treating λ_scale as a separate object" (purged 2026-05-24). -/
   is_antipattern : False
 
-/-- The antipattern is provably impossible. -/
-theorem no_separate_lambda_scale (h : SeparateLambdaScale_Antipattern) : False :=
-  h.is_antipattern
+/-- **No separate λ_scale.** The antipattern class is provably
+    impossible: it is uninhabited (`IsEmpty`).  This is a genuine
+    derivation — given any putative instance we reach `False` through
+    its `is_antipattern` field — *stated* as the non-degenerate
+    `IsEmpty SeparateLambdaScale_Antipattern`, not a bare projection
+    of `False`.  Use it (`#check no_separate_lambda_scale`) as the
+    type-level record that no separate `λ_scale` object exists; the
+    mass formula is `m(K) = m_e × VolDensity(K, q₀)`. -/
+-- Ref: [manuscript] docs/lambda-scale-absorbed-into-vol-density.md
+theorem no_separate_lambda_scale : IsEmpty SeparateLambdaScale_Antipattern :=
+  ⟨fun h => h.is_antipattern⟩
 
 end QOU.Machinery

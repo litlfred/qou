@@ -16,8 +16,8 @@ export default remark({
   interprets: "rem:particle-nf-table",
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/hadron_knot_table.py",
-    witness: "folio-assistant/computations/hadron-knot-table.witness.json",
+    script: "computations/hadron_knot_table.py",
+    witness: "computations/hadron-knot-table.witness.json",
     status: "verified",
   },
 });

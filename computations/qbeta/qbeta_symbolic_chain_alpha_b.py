@@ -71,7 +71,7 @@ import sympy as sp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
 
-Q0_MP_PIN = "1.1099785827513808075916690956107688798744991218736"
+Q0_MP_PIN = "1.1099785955573347198997632204832250266562084087802"
 Q_BETA_CODATA_MEV = mp.mpf("0.78233")  # CODATA Q_β = m_n - m_p - m_e
 M_E_MEV = mp.mpf("0.51099895069")  # CODATA m_e
 

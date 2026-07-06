@@ -1,7 +1,7 @@
 # Habiro → ladder bridge — the unifying structural statement
 
 **Date:** 2026-06-01
-**Probe:** [`habiro_ladder_bridge.py`](../../folio-assistant/computations/habiro/habiro_ladder_bridge.py)
+**Probe:** [`habiro_ladder_bridge.py`](../../computations/habiro/habiro_ladder_bridge.py)
 → `habiro-ladder-bridge.witness.json`
 **Goal arm:** 1ppQ-Q_β.
 **Unifies:** the order audit (#1593), eigenphase≠f (#1602), and the

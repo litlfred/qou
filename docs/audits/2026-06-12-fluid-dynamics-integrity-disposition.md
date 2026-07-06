@@ -172,7 +172,7 @@ Each NS block has up to two defects; both are mechanical once seen
    (per-module — `lake build QOU` is red on ~50 pre-existing failures and is
    not the gate), then re-rate `proof-statement-integrity` via `qa-agent-write`.
 
-Agent guidance updated to match: CLAUDE.md §3b-cond (condition 5 + base-ring
+Agent guidance updated to match: AGENTS.md §3b-cond (condition 5 + base-ring
 note) and `local/lean-proof-review.md` Review Type 4.
 
 **Env (durable this container):**

@@ -31,7 +31,7 @@ This probe measures:
 
 q-usage discipline: all evaluations at real q₀; b, ℏ_q taken from the
 provenance witness (Hoefsmit-derived at q₀); closed-form c_k are
-fibre-level Laurent forms realised at q₀. CLAUDE.md §7c compliant.
+fibre-level Laurent forms realised at q₀. AGENTS.md §7c compliant.
 
 EXPLORATORY. Documents the wiring outcome; no production-script edit
 made (the existing `qbeta_decay_sdp_full_ck.py` is the canonical N=4

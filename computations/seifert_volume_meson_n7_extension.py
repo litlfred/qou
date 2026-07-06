@@ -64,9 +64,11 @@ def main():
     u = b * hbar**2
 
     # PDG masses (MeV)
-    m_pi = mp.mpf("139.57039")
-    m_K = mp.mpf("493.677")
-    m_eta = mp.mpf("547.862")
+    from codata_constants import (  # registry (no inline literal)
+        M_PI_PM_MEV_VALIDATION as m_pi,
+        M_K_PM_MEV_VALIDATION as m_K,
+    )
+    m_eta = mp.mpf("547.862")  # η not in registry — left inline
     m_phi = mp.mpf("1019.461")
 
     # Quark crossing assignments from knot-particle dictionary:

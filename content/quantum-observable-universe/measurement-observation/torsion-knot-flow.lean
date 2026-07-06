@@ -1,5 +1,7 @@
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import QOU.KnotTheory
 
 
@@ -23,9 +25,10 @@ numerical evaluation.
 
 namespace QOU
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -41,7 +44,7 @@ structure ParticleState where
   /-- Angular velocity in φ direction. -/
   vPhi : R_q
   /-- The knot type (invariant under evolution). -/
-  knot : KnotTheory.PlanarDiagram
+  knot : KnotTheory.BraidWord
 
 /-- A bundle state at time t: collection of evolving particles. -/
 structure BundleState where
@@ -49,12 +52,20 @@ structure BundleState where
   time : R_q
   /-- Current particle states. -/
   particles : List ParticleState
-  /-- Time is non-negative. -/
+  -- A `time_nonneg : time ≥ 0` field is intentionally omitted: the
+  -- combinatorial ground ring `R_q` carries no order, so the
+  -- non-negativity constraint is archimedean and lives in the ℝ
+  -- specialisation, not here.
   -- Ref: [manuscript] §3, Definition: Torsion-driven knot flow
-  -- time_nonneg : time ≥ 0  -- (archimedean; not meaningful over R_q)
 
-/-- Intrinsic angular momentum of a knot type, proportional to crossing number. -/
-noncomputable def intrinsicAngularMomentum (pd : KnotTheory.PlanarDiagram) : R_q :=
-  (pd.crossingCount : R_q) * (2 * Real.pi)
+/-- Intrinsic angular momentum of a knot type, proportional to crossing
+    number: `ω_K = c(K) · 2π`.  Archimedean specialisation over `ℝ`
+    (AGENTS.md §7c) — the `2π` factor is genuinely real-valued, so this
+    observable lands in `ℝ` rather than the combinatorial ground ring `R_q`. -/
+-- Ref: [manuscript] §3 Lifting of Quantum Torsion
+noncomputable def intrinsicAngularMomentum (pd : KnotTheory.BraidWord) : ℝ :=
+  (pd.crossingCount : ℝ) * (2 * Real.pi)
+
+end
 
 end QOU

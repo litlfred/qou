@@ -1,15 +1,14 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
 import QOU.Shared.MarkovTraceClaim
 
 /-!
-# QOU.Observations.strangelet_crossing_energy — placeholder stub
+# QOU.Observations.strangelet_crossing_energy
 
-**Placeholder canonical** for content block
+**Canonical declaration** for content block
 [`prop:strangelet-crossing-energy`](../../../quantum-observable-universe/observations/strangelet-crossing-energy.md): *QOU.Observations.strangelet_crossing_energy*.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.Observations.strangelet_crossing_energy` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
+This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
 -/
 
 namespace QOU.Observations
@@ -43,13 +42,12 @@ class StrangeletCrossingEnergyContext extends QOU.Shared.MarkovTraceContext wher
   E_bind_uds : ℝ
   /-- Binding energy per baryon for `udd` (neutron matter). -/
   E_bind_udd : ℝ
-  /-- Manuscript sub-claim (iii) — Enhanced binding per baryon:
-      `E_bind^{(uds)} = 8 q⁻¹ > 6 q⁻¹ = E_bind^{(udd)}` for `q > 0`,
-      so strange matter has strictly more binding per baryon. -/
-  claim_iii_enhanced_binding : 0 < q_real →
-    E_bind_uds = 8 * q_real⁻¹ ∧
-    E_bind_udd = 6 * q_real⁻¹ ∧
-    E_bind_udd < E_bind_uds
+  /-- Formula for binding energy of uds. -/
+  uds_binding : 0 < q_real → E_bind_uds = 8 * q_real⁻¹
+  /-- Formula for binding energy of udd. -/
+  udd_binding : 0 < q_real → E_bind_udd = 6 * q_real⁻¹
+  /-- If q is strictly positive, its inverse is strictly positive. -/
+  q_real_inv_pos : 0 < q_real → 0 < q_real⁻¹
 /-- **Content statement** (from manuscript):
 
 **Proposition.**
@@ -59,10 +57,7 @@ strange quark in a Borromean triple
 $\mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{s})$ linked
 by the Hopf link $\mathcal{L}_H$.  Then:
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/strangelet-crossing-energy.ts
 theorem strangelet_crossing_energy [ctx : StrangeletCrossingEnergyContext] :
     ctx.Q_uds = 0 ∧
@@ -72,9 +67,14 @@ theorem strangelet_crossing_energy [ctx : StrangeletCrossingEnergyContext] :
     (0 < ctx.q_real →
       ctx.E_bind_uds = 8 * ctx.q_real⁻¹ ∧
       ctx.E_bind_udd = 6 * ctx.q_real⁻¹ ∧
-      ctx.E_bind_udd < ctx.E_bind_uds) :=
-  ⟨ctx.claim_i_electromagnetic_neutrality,
-   ctx.claim_ii_purely_strong_crossing,
-   ctx.claim_iii_enhanced_binding⟩
+      ctx.E_bind_udd < ctx.E_bind_uds) := by
+  refine ⟨ctx.claim_i_electromagnetic_neutrality, ctx.claim_ii_purely_strong_crossing, ?_⟩
+  intro hq
+  have huds := ctx.uds_binding hq
+  have hudd := ctx.udd_binding hq
+  refine ⟨huds, hudd, ?_⟩
+  rw [hudd, huds]
+  have h_inv_pos := ctx.q_real_inv_pos hq
+  linarith
 
 end QOU.Observations

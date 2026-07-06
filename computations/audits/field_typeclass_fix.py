@@ -31,7 +31,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from field_typeclass_audit import DECL_OPEN_RE  # reuse decl-boundary logic
 
-WITNESS = Path("folio-assistant/computations/audits/field-typeclass-audit.witness.json")
+WITNESS = Path("computations/audits/field-typeclass-audit.witness.json")
 RELAX = {"Field": "CommRing", "DivisionRing": "Ring"}
 
 

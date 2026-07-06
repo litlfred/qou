@@ -38,7 +38,7 @@ entry yet; every "verified-clean" / "fixed" / "partial" tag is an
 **agent claim** awaiting human adjudication. The schema does not record
 this distinction.
 
-For honest reporting to readers (and per the CLAUDE.md "Every proof in
+For honest reporting to readers (and per the AGENTS.md "Every proof in
 this paper..." authors-note now refreshed to "385 of 567 provable claims
 carry full Lean proofs; **human adjudication of every line is not
 complete**"), the bib QA structure should make agent-only verifications

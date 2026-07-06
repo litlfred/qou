@@ -2,10 +2,9 @@ import { remark } from "../../schema/builders";
 export default remark({
   interprets: "rem:schrodinger-jet-coaction",
   label: "rem:madelung-fluid",
-  title: "Madelung transformation: quantum fluid, geodesics, and divisor topology",
+  title: "Madelung transformation: quantum fluid and vortex filaments",
   uses: [
     "rem:schrodinger-jet-coaction",
-    "rem:gr-substrate-geometry",
     "def:mass-identity",
     "rem:algebraic-filter",
   ],

@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.Archimedean.metallic_character_knot — metallic atom iff 3 incompleteness conditions
 

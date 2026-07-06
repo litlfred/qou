@@ -20,7 +20,7 @@ Used by:
 Witness: `canonical-braid-interface-composition.witness.json`
 (emitted by the sweep probe, not this utility).
 
-@module folio-assistant/computations/interface_composition
+@module computations/interface_composition
 """
 from __future__ import annotations
 

@@ -1,7 +1,5 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Definition.**
-*Methane $CH_4$ is the molecular braid of one carbon atom
+**Methane** *$CH_4$ is the molecular braid of one carbon atom
 $C(6, 6)$ and four hydrogen atoms $H_1, H_2, H_3, H_4$,
 each sharing one electron pair (four single bonds).*
 
@@ -32,26 +30,3 @@ $\sigma^{-1}$ crossings.*
 not affect the final NF (confluence), but affects intermediate
 complexity. The LP dual optimises the assembly ordering to
 minimise intermediate word count.*
-
-### Tetrahedral symmetry
-
-*The LP dual selects a strand ordering with $S_4$ symmetry
-(permuting the four hydrogens). In the optimal ordering, the
-four H atoms are distributed **symmetrically** around carbon's
-strands, maximising the inter-hydrogen distance (number of
-intervening strands). This is the braid-theoretic origin of
-the tetrahedral geometry of methane.*
-
-*The $H$-$H$ interactions are:*
-- *$\mathfrak{p}_{H_i}\mathfrak{p}_{H_j}$: EM repulsion ($\sigma$)*
-- *$e_{H_i} e_{H_j}$: EM repulsion ($\sigma$)*
-- *$\mathfrak{p}_{H_i} e_{H_j}$: EM attraction ($\sigma^{-1}$) —
- but this is a **non-bonding** attraction (no shared pair)*
-
-*Minimising $\Phi_1$ over strand orderings accordingly distributes
-the 4 H atoms to maximise separation of repulsive crossings,
-producing the $S_4$-symmetric (tetrahedral) arrangement.*
-
-*The observed C--H bond dissociation energy is
-$D_0 \approx 4.48 \;\mathrm{eV}$ per bond (total
-atomisation energy $\approx 17.9 \;\mathrm{eV}$).*

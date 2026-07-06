@@ -284,7 +284,7 @@ if __name__ == "__main__":
     )
 
     # ── Canonical LP-dual record ─────────────────────────────────
-    # Per CLAUDE.md §"LP / SDP duals — first-class infra": every
+    # Per AGENTS.md §"LP / SDP duals — first-class infra": every
     # operator-selection witness MUST emit primal AND dual variables
     # (y0_star, y_star, active_set, primal_obj, dual_obj,
     # duality_gap). The canonical H_3 knot-operator-selection LP

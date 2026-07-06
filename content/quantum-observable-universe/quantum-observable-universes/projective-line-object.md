@@ -1,6 +1,6 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 maximal torus $T \subset G$ ([maximal torus](#def:maximal-torus)).
-The *projective line object* is the quotient
+The **projective line object** is the quotient
 
 $$
   \mathbb{P}(V) = G / T,

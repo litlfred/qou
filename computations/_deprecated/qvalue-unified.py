@@ -27,7 +27,7 @@ For the LP dual, the shadow price y₀ depends on:
 - y₀ jumps at shell boundaries (this is the shell correction)
 
 Usage:
-    cd folio-assistant/computations && python3 qvalue-unified.py
+    cd computations && python3 qvalue-unified.py
 """
 import math
 import json

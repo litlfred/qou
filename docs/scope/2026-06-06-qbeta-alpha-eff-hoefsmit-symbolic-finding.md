@@ -9,7 +9,7 @@
 ## 1. Finding — the symbolic α_eff is NOT open; it is on `main`
 
 The KLR residue-A scope doc lists, under "the remaining work", *"Symbolic α(q) — extract from the operator-valued N=3 witness or derive from the Hoefsmit seminormal blocks of H₃(q)."* A corpus-grep shows this is **already done** in
-[`probe_q_beta_operator_valued_N3.py`](../../folio-assistant/computations/probe_q_beta_operator_valued_N3.py)
+[`probe_q_beta_operator_valued_N3.py`](../../computations/probe_q_beta_operator_valued_N3.py)
 (on `main`), in closed symbolic form:
 
 ```
@@ -21,7 +21,7 @@ Q_β/Q_A = cos( alpha − u/2 − u²/2 − u³/2 − … )       (N=3 candidate
 ```
 
 The companion probe
-[`qbeta_alpha_eff_hoefsmit_symbolic_probe.py`](../../folio-assistant/computations/qbeta/qbeta_alpha_eff_hoefsmit_symbolic_probe.py)
+[`qbeta_alpha_eff_hoefsmit_symbolic_probe.py`](../../computations/qbeta/qbeta_alpha_eff_hoefsmit_symbolic_probe.py)
 re-derives `alpha` from these closed forms and reproduces the on-main N=3
 witness value **exactly** (`alpha = −0.05233612…` at the proton anchor),
 confirming the lift is faithful.
@@ -43,7 +43,7 @@ The #1887/#1900 reframe wrote `Q_β/Q_A = cos(Φ(u))`, `Φ(u) = Φ₁u + Φ₂u�
 with (proved) **`c_1 = 0`** (ladder starts at `k=2`) and `c_2 = −1`, hence
 `Φ₁ = √2`. The natural question: does `Φ₂` then drop out of the symbolic
 `alpha = (z−1)·h/2`? A second probe
-([`qbeta_alpha_eff_ladder_reconciliation_probe.py`](../../folio-assistant/computations/qbeta/qbeta_alpha_eff_ladder_reconciliation_probe.py))
+([`qbeta_alpha_eff_ladder_reconciliation_probe.py`](../../computations/qbeta/qbeta_alpha_eff_ladder_reconciliation_probe.py))
 answers it decisively using the producer's **canonical** N=1/N=2 model
 (`probe_q_beta_operator_valued_N3.py` lines 75–78), not the earlier line-144
 exploratory candidate:
@@ -55,7 +55,7 @@ G(u) = Q_N2 / [Q_A·cos(alpha)] = cos(alpha − u/2)(1 − u²)/cos(alpha)
 ```
 
 Taylor expansion gives (both anchors identical; full precision in
-[`qbeta-alpha-eff-ladder-reconciliation-probe.witness.json`](../../folio-assistant/computations/qbeta/qbeta-alpha-eff-ladder-reconciliation-probe.witness.json)):
+[`qbeta-alpha-eff-ladder-reconciliation-probe.witness.json`](../../computations/qbeta/qbeta-alpha-eff-ladder-reconciliation-probe.witness.json)):
 
 | coeff | canonical α_eff model | #1887 ladder (proved) |
 |-------|------------------------|------------------------|
@@ -98,7 +98,7 @@ reparametrisation. The easy path is formally closed.
 
 ## 4. References
 
-- α_eff symbolic source (on `main`): [`probe_q_beta_operator_valued_N3.py`](../../folio-assistant/computations/probe_q_beta_operator_valued_N3.py).
+- α_eff symbolic source (on `main`): [`probe_q_beta_operator_valued_N3.py`](../../computations/probe_q_beta_operator_valued_N3.py).
 - ladder reframe + kernel constraints (merged): PR #1887, PR #1900; [`docs/scope/2026-06-05-qbeta-phi2-ckrecursion-kernel-constraints.md`](2026-06-05-qbeta-phi2-ckrecursion-kernel-constraints.md).
 - KLR residue-A program: [`docs/scope/2026-06-05-qbeta-residue-a-klr-crystal-kernel-scope.md`](2026-06-05-qbeta-residue-a-klr-crystal-kernel-scope.md).
 - Ledger: [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md).

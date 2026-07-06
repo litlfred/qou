@@ -8,8 +8,8 @@ export default remark({
   interprets: "rem:knot-particle-dictionary",
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/basis_knot_tables.py",
-    witness: "folio-assistant/computations/basis-knot-tables.witness.json",
+    script: "computations/basis_knot_tables.py",
+    witness: "computations/basis-knot-tables.witness.json",
     status: "verified",
   },
 });

@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/unified_low_isotope_predictor.py",
+  "script_path": "computations/unified_low_isotope_predictor.py",
   "language": "python",
   "source_hash": "4e8e493c653b",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -21,7 +21,7 @@
         "reviewed_at": "2026-05-22T18:27:38.070Z",
         "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
         "severity": "major",
-        "evidence": "folio-assistant/computations/unified_low_isotope_predictor.py:95: bare `float(val)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/unified_low_isotope_predictor.py:70: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/unified_low_isotope_predictor.py:72: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/unified_low_isotope_predictor.py:125: bare float literal `2.05` — wrap in `mpmath.mpf(\"2.05\")` / `Decimal(\"2.05\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/unified_low_isotope_predictor.py:140: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/unified_low_isotope_predictor.py:95: bare `float(val)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/unified_low_isotope_predictor.py:70: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/unified_low_isotope_predictor.py:72: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/unified_low_isotope_predictor.py:125: bare float literal `2.05` — wrap in `mpmath.mpf(\"2.05\")` / `Decimal(\"2.05\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/unified_low_isotope_predictor.py:140: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       },
       {
         "field_hash": {
@@ -38,7 +38,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/unified_low_isotope_predictor.py:95: bare `float(val)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/unified_low_isotope_predictor.py:70: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/unified_low_isotope_predictor.py:72: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/unified_low_isotope_predictor.py:125: bare float literal `2.05` — wrap in `mpmath.mpf(\"2.05\")` / `Decimal(\"2.05\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/unified_low_isotope_predictor.py:140: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/unified_low_isotope_predictor.py:95: bare `float(val)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/unified_low_isotope_predictor.py:70: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/unified_low_isotope_predictor.py:72: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/unified_low_isotope_predictor.py:125: bare float literal `2.05` — wrap in `mpmath.mpf(\"2.05\")` / `Decimal(\"2.05\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/unified_low_isotope_predictor.py:140: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       },
       {
         "field_hash": {
@@ -55,7 +55,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "major",
-        "evidence": "folio-assistant/computations/unified_low_isotope_predictor.py:95: bare `float(val)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/unified_low_isotope_predictor.py:70: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/unified_low_isotope_predictor.py:72: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/unified_low_isotope_predictor.py:125: bare float literal `2.05` — wrap in `mpmath.mpf(\"2.05\")` / `Decimal(\"2.05\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/unified_low_isotope_predictor.py:140: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/unified_low_isotope_predictor.py:95: bare `float(val)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/unified_low_isotope_predictor.py:70: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/unified_low_isotope_predictor.py:72: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/unified_low_isotope_predictor.py:125: bare float literal `2.05` — wrap in `mpmath.mpf(\"2.05\")` / `Decimal(\"2.05\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/unified_low_isotope_predictor.py:140: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       }
     ],
     "respects_archimedean_wall": [
@@ -74,7 +74,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/unified_low_isotope_predictor.py:162: archimedean call `np.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/`"
+        "evidence": "computations/unified_low_isotope_predictor.py:162: archimedean call `np.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/`"
       },
       {
         "field_hash": {
@@ -91,7 +91,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "major",
-        "evidence": "folio-assistant/computations/unified_low_isotope_predictor.py:162: archimedean call `np.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/`"
+        "evidence": "computations/unified_low_isotope_predictor.py:162: archimedean call `np.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/`"
       }
     ],
     "code_is_commented": [
@@ -142,7 +142,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/unified_low_isotope_predictor.py:59: `def term1_descended(…)` has 3 parameters without type annotation: Z, N, E_0 — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/unified_low_isotope_predictor.py:102: `def term4_frobenius(…)` has 2 parameters without type annotation: Z, N — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/unified_low_isotope_predictor.py:126: `def term5_bw_chirality(…)` has 2 parameters without type annotation: Z, N — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/unified_low_isotope_predictor.py:146: `def qi_n(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/unified_low_isotope_predictor.py:189: `def term6_habiro_residue(…)` has 2 parameters without type annotation: Z, N — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/unified_low_isotope_predictor.py:59: `def term1_descended(…)` has 3 parameters without type annotation: Z, N, E_0 — add `: type` (or `: Any` if the type genuinely is untyped) | computations/unified_low_isotope_predictor.py:102: `def term4_frobenius(…)` has 2 parameters without type annotation: Z, N — add `: type` (or `: Any` if the type genuinely is untyped) | computations/unified_low_isotope_predictor.py:126: `def term5_bw_chirality(…)` has 2 parameters without type annotation: Z, N — add `: type` (or `: Any` if the type genuinely is untyped) | computations/unified_low_isotope_predictor.py:146: `def qi_n(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped) | computations/unified_low_isotope_predictor.py:189: `def term6_habiro_residue(…)` has 2 parameters without type annotation: Z, N — add `: type` (or `: Any` if the type genuinely is untyped)"
       },
       {
         "field_hash": {
@@ -159,7 +159,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/unified_low_isotope_predictor.py:59: `def term1_descended(…)` has 3 parameters without type annotation: Z, N, E_0 — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/unified_low_isotope_predictor.py:102: `def term4_frobenius(…)` has 2 parameters without type annotation: Z, N — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/unified_low_isotope_predictor.py:126: `def term5_bw_chirality(…)` has 2 parameters without type annotation: Z, N — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/unified_low_isotope_predictor.py:146: `def qi_n(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/unified_low_isotope_predictor.py:189: `def term6_habiro_residue(…)` has 2 parameters without type annotation: Z, N — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/unified_low_isotope_predictor.py:59: `def term1_descended(…)` has 3 parameters without type annotation: Z, N, E_0 — add `: type` (or `: Any` if the type genuinely is untyped) | computations/unified_low_isotope_predictor.py:102: `def term4_frobenius(…)` has 2 parameters without type annotation: Z, N — add `: type` (or `: Any` if the type genuinely is untyped) | computations/unified_low_isotope_predictor.py:126: `def term5_bw_chirality(…)` has 2 parameters without type annotation: Z, N — add `: type` (or `: Any` if the type genuinely is untyped) | computations/unified_low_isotope_predictor.py:146: `def qi_n(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped) | computations/unified_low_isotope_predictor.py:189: `def term6_habiro_residue(…)` has 2 parameters without type annotation: Z, N — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -178,7 +178,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/unified_low_isotope_predictor.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/unified_low_isotope_predictor.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       },
       {
         "field_hash": {
@@ -195,7 +195,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/unified_low_isotope_predictor.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/unified_low_isotope_predictor.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       }
     ],
     "connected_to_ci_pipeline": [
@@ -214,7 +214,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/unified_low_isotope_predictor.py:1: script `unified_low_isotope_predictor.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+        "evidence": "computations/unified_low_isotope_predictor.py:1: script `unified_low_isotope_predictor.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
       },
       {
         "field_hash": {

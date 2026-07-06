@@ -15,7 +15,7 @@ the dim-768 spectrum?**
 
 ## Probe
 
-[`probe_staircase_ew_k4_pairwise_readings.py`](../../folio-assistant/computations/probe_staircase_ew_k4_pairwise_readings.py)
+[`probe_staircase_ew_k4_pairwise_readings.py`](../../computations/probe_staircase_ew_k4_pairwise_readings.py)
 runs the literal-conjecture reading + a coincidence-by-chance test:
 
 1. Build 768×768 Hoefsmit `V_(4,3,2,1)` matrices at float64 via
@@ -23,7 +23,7 @@ runs the literal-conjecture reading + a coincidence-by-chance test:
 2. Compute the canonical β_EW word image
    `M = σ_1⁴ · Δ_I · σ_3⁶ · Δ_I · σ_5⁸ · Δ_I · σ_7⁶ · Δ_I · σ_9⁴ · Δ_I`
    (43 generators from
-   [`staircase_ew_predictions.beta_ew_word(10)`](../../folio-assistant/computations/staircase_ew_predictions.py)).
+   [`staircase_ew_predictions.beta_ew_word(10)`](../../computations/staircase_ew_predictions.py)).
 3. Full float64 eigendecomposition of `M` (`np.linalg.eigvals`).
 4. **Literal-conjecture pairwise search**: scan all
    `(i, j)` pairs of positive-real eigenvalues for the best
@@ -67,7 +67,7 @@ identity in the V_(4,3,2,1) spectrum.
 
 ### 2. Consistent with the k=3 falsification
 
-[`probe_staircase_ew_k3_categorical.py`](../../folio-assistant/computations/probe_staircase_ew_k3_categorical.py)
+[`probe_staircase_ew_k3_categorical.py`](../../computations/probe_staircase_ew_k3_categorical.py)
 (PR #680) showed at 50 dps that the literal conjecture for k=3 is
 falsified (best pairwise off by 6.95 %). The k=4 finding here
 strengthens that conclusion: **the literal conjecture fails at every
@@ -135,7 +135,7 @@ literal conjecture.
 
 ## Provenance
 
-* Probe: `folio-assistant/computations/probe_staircase_ew_k4_pairwise_readings.py`
-* Witness: `folio-assistant/computations/staircase-ew-k4-pairwise-readings.witness.json`
-* Float64 baseline (existing): `folio-assistant/computations/staircase_ew_residual_conjecture.py`
+* Probe: `computations/probe_staircase_ew_k4_pairwise_readings.py`
+* Witness: `computations/staircase-ew-k4-pairwise-readings.witness.json`
+* Float64 baseline (existing): `computations/staircase_ew_residual_conjecture.py`
 * k=3 50-dps companion: `docs/audits/2026-05-17-staircase-ew-k3-mpfr-spectral.md`

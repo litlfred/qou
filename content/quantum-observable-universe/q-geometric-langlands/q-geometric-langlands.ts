@@ -126,6 +126,7 @@ export default chapter({
         "weil-bound-intro",
         "local-q-zeta-function",
         "hasse-weil-bound",
+        "hasse-weil-bound-proof",
         "spectral-half-line",
         // P3 reorder (2026-05-19): unitary-stability moved before
         // geometric-rh-exposition. unitary-stability uses

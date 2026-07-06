@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition (conditional on [`conj:borromean-quark`](#conj:borromean-quark) — Hoefsmit V_(2,1) Markov-symmetrized cos resummation, non-trivial Markov machinery for the 2-dimensional irrep).**
 
 The 1-d Hecke irreps admit the universal closed form
@@ -99,7 +97,7 @@ Hoefsmit matrix and Markov-symmetrized cos analog.
 ## Empirical anchor
 
 At $q_0$, the Hoefsmit V_(2,1) matrix entries (from
-[`probe_q_beta_per_irrep_cos.py`](../../folio-assistant/computations/probe_q_beta_per_irrep_cos.py)
+the canonical formalism
 and the existing `hecke_characters.build_seminormal_matrices` infrastructure):
 
 | quantity | value at $q_0$ |
@@ -111,5 +109,5 @@ and the existing `hecke_characters.build_seminormal_matrices` infrastructure):
 | Markov-symmetrized factor $\cos\alpha$ | $0.99863..$ |
 
 After symmetrization the V_(2,1) contribution combines with the 1-d
-contributions to give $Q_\beta = Q_\beta^A \cdot \cos((z-1)h/2)$ at
+contributions to give $\mathfrak{Q}_\beta = \mathfrak{Q}_\beta^A \cdot \cos((z-1)h/2)$ at
 the cos-resummation level (305 ppm residual against CODATA).

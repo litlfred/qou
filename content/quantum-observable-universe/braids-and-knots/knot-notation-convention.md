@@ -45,8 +45,8 @@ $$
 $$
 
 **Hecke / Skein conventions for worked examples.**
-Per [CLAUDE.md §7a Hecke-Skein
-convention](https://github.com/litlfred/qou/blob/main/CLAUDE.md), the
+Per [AGENTS.md §7a Hecke-Skein
+convention](https://github.com/litlfred/qou/blob/main/AGENTS.md), the
 Hecke generator is **$\sigma_i$** (the same symbol serves both as
 braid generator in $B_n$ and its image in $H_n(R, q)$; context
 disambiguates), satisfying the Hecke relation

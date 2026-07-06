@@ -143,7 +143,7 @@ Two routes, both PAPER-STATES / ASSERTED:
    normalisation (dilog hypothesis, lines 84-89).
 
 2. **q-Reeb rotation → volume** (`figure-eight-reeb-rotation.md:38-74`):
-   the q-Reeb flow advances the coral angular coordinate by `q·t` per
+   the q-Reeb flow advances the color angular coordinate by `q·t` per
    crossing; the alternating figure-eight braid accumulates net Reeb
    phase `2hπ`, manifest as the `V_(2,1)` eigenvalue phase θ; θ in the
    Kashaev `N→∞` limit yields `Vol(4₁)` via the Volume Conjecture. This

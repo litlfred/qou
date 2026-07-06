@@ -27,7 +27,7 @@ Honest scope: this is a NUMEROLOGY hunt at the q=1 limit. Any positive
 match identifies a CANDIDATE anchor, not a derivation. A derivation
 requires showing why the matching partition/statistic is structurally
 relevant to the linking_weight construction — which is the open
-research question. Per CLAUDE.md §"Before declaring open math", this
+research question. Per AGENTS.md §"Before declaring open math", this
 probe formalizes the search; the structural derivation is owner-gated.
 """
 from __future__ import annotations
@@ -192,7 +192,7 @@ def main() -> int:
         print(f"    Pairwise ratios:                    {len(pairwise_matches)}")
         print(f"    Sums/products with small denominator: {len(sum_matches)}")
         print()
-        print(f"  HONEST CAVEAT (per CLAUDE.md): a numerical match is NOT a")
+        print(f"  HONEST CAVEAT (per AGENTS.md): a numerical match is NOT a")
         print(f"  derivation. For Family A's q=1 shadow 5/2 to anchor at one")
         print(f"  of these candidates, there must be a STRUCTURAL reason the")
         print(f"  matching partition/statistic appears in the linking_weight")

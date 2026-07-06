@@ -11,10 +11,10 @@ export default proposition({
   uses: ["prop:schur-weyl-mass-decomposition"],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/proton_residual_rootcause.py",
+    script: "computations/proton_residual_rootcause.py",
     witness: [
-      "folio-assistant/computations/proton-residual-rootcause.witness.json",
-      "folio-assistant/computations/codata-masses.witness.json",
+      "computations/proton-residual-rootcause.witness.json",
+      "computations/codata-masses.witness.json",
     ],
     status: "verified",
   },

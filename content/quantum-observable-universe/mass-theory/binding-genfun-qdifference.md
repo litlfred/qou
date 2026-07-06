@@ -31,5 +31,5 @@ makes term data unmeasurable beyond low order — $R$ **cannot** be fixed by
 fitting the $B_n$; it must be derived from the fibre root-of-unity
 singularity structure of the Seiberg--Witten differential
 ([`prop:sw-period-residue-sum`](#prop:sw-period-residue-sum)). This is the
-same $q$-difference machinery as the $Q_\beta$ precision ladder, applied to
+same $q$-difference machinery as the $\mathfrak{Q}_\beta$ precision ladder, applied to
 the binding series.

@@ -61,7 +61,7 @@ that at the QOU substrate $q_0 > 1$ the denominator zeros $q_0^{-k}$
 land in $(0, 1]$ — the cusp-shape range used by the Newton-Raphson
 seeding pipeline.*
 
-## Why a partial product
+## Rationale for the partial product
 
 The categorical Markov trace of a transient crossing word $T_w$ at
 GB-depth $k_\star(T_w) = n$ pairs to zero with every centre stratum
@@ -112,7 +112,7 @@ and the asymptotic $\Phi_n \to \mathrm{Li}_2$ as $n \to \infty$ is
 the content of
 ([dilogarithm Archimedean limit](#conj:dilogarithm-archimedean-limit)).
 
-## Numerical extraction (for the solver pipeline)
+## canonical extraction (for the solver pipeline)
 
 Given a Hecke normal-form word $T_w$ of GB-depth $n$ and a fixed
 substrate $q = q_0$, the algebraic engine computes $\Phi_n(x; q_0)$
@@ -123,5 +123,5 @@ passed across the WASM boundary to the SnapPy kernel as the
 Thurston gluing equations
 ([cusp-holonomy seeding](#conj:shared-denominator-cusp-holonomy)).
 The witness
-[q-pochhammer-seed.witness.json](../../../folio-assistant/computations/q-pochhammer-seed.witness.json)
+[q-pochhammer-seed.witness.json](../../../computations/q-pochhammer-seed.witness.json)
 records the seed extraction for a sample nucleon word.

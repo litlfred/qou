@@ -19,7 +19,7 @@ Test candidate generating functions:
   - p(n) · q-binomial(n, k)
   - σ(n) — divisor function
 
-OUTPUT: folio-assistant/computations/qbeta-habiro-delta6-partition.witness.json
+OUTPUT: computations/qbeta-habiro-delta6-partition.witness.json
 """
 from __future__ import annotations
 

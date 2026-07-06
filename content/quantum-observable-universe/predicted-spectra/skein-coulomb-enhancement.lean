@@ -1,6 +1,7 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Analysis.SpecialFunctions.Exp
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 
 
 /-!
@@ -46,15 +47,16 @@ theorem skeinCoulombFactor_ge_one (eta : ℝ) (heta : 0 < eta) :
     1 ≤ skeinCoulombFactor eta := by
   unfold skeinCoulombFactor
   -- Let x = 2πη > 0.  We need x/(1 - e^{-x}) ≥ 1, i.e. x ≥ 1 - e^{-x}.
+  rw [show (-2 * Real.pi * eta) = -(2 * Real.pi * eta) by ring]
   set x := 2 * Real.pi * eta with hx_def
   have hpi : 0 < Real.pi := Real.pi_pos
-  have hx_pos : 0 < x := by positivity
+  have hx_pos : 0 < x := by rw [hx_def]; exact mul_pos (mul_pos (by norm_num) hpi) heta
   -- Denominator: 1 - e^{-x} > 0 since e^{-x} < 1 for x > 0
   have hexp_neg : Real.exp (-x) < 1 := by
-    rw [Real.exp_lt_one_iff_neg]; linarith
+    rw [Real.exp_lt_one_iff]; linarith
   have hdenom_pos : 0 < 1 - Real.exp (-x) := by linarith
   -- Rewrite: 1 ≤ x/(1-e^{-x}) ↔ 1-e^{-x} ≤ x (since denom > 0)
-  rw [le_div_iff hdenom_pos]
+  rw [le_div_iff₀ hdenom_pos]
   -- Need: 1 - e^{-x} ≤ x, equivalently 1 - x ≤ e^{-x}.
   -- Mathlib: add_one_le_exp gives t + 1 ≤ e^t. Set t = -x:
   -- -x + 1 ≤ e^{-x}, i.e. 1 - x ≤ e^{-x}, i.e. 1 - e^{-x} ≤ x.
@@ -94,9 +96,9 @@ theorem skeinCoulombFactor_limit_one :
   intro eta heta heta_lt
   set x := 2 * Real.pi * eta with hx_def
   have hpi : 0 < Real.pi := Real.pi_pos
-  have hx_pos : 0 < x := by positivity
+  have hx_pos : 0 < x := by rw [hx_def]; exact mul_pos (mul_pos (by norm_num) hpi) heta
   have hexp_neg : Real.exp (-x) < 1 := by
-    rw [Real.exp_lt_one_iff_neg]; linarith
+    rw [Real.exp_lt_one_iff]; linarith
   have hdenom_pos : 0 < 1 - Real.exp (-x) := by linarith
   have hF_ge_one : 1 ≤ skeinCoulombFactor eta := skeinCoulombFactor_ge_one eta heta
   rw [abs_of_nonneg (by linarith)]
@@ -104,7 +106,7 @@ theorem skeinCoulombFactor_limit_one :
   have hx_pos' : 0 < 1 + x := by linarith
   have hx_ne : (1 : ℝ) + x ≠ 0 := ne_of_gt hx_pos'
   have hbound : (1 + x) * Real.exp (-x) ≤ 1 := by
-    have h1 := Real.add_one_le_exp x
+    have h1 : (1 : ℝ) + x ≤ Real.exp x := by have := Real.add_one_le_exp x; linarith
     have h2 : Real.exp (-x) * (1 + x) ≤ Real.exp (-x) * Real.exp x :=
       mul_le_mul_of_nonneg_left h1 (le_of_lt (Real.exp_pos (-x)))
     rw [← Real.exp_add, neg_add_cancel, Real.exp_zero] at h2
@@ -113,18 +115,23 @@ theorem skeinCoulombFactor_limit_one :
   have hdenom_ge : x / (1 + x) ≤ 1 - Real.exp (-x) := by
     -- From hbound: (1+x)*e^{-x} ≤ 1, so e^{-x} ≤ 1/(1+x)
     have hexp_le_inv : Real.exp (-x) ≤ 1 / (1 + x) := by
-      rw [le_div_iff hx_pos']
+      rw [le_div_iff₀ hx_pos']
       linarith [mul_comm (1 + x) (Real.exp (-x))]
     -- x/(1+x) = 1 - 1/(1+x) ≤ 1 - e^{-x}
-    have : x / (1 + x) = 1 - 1 / (1 + x) := by field_simp
+    have hne : (1 : ℝ) + x ≠ 0 := ne_of_gt hx_pos'
+    have : x / (1 + x) = 1 - 1 / (1 + x) := by
+      field_simp
+      ring
     linarith
   -- F ≤ 1 + x
   have hF_le : skeinCoulombFactor eta ≤ 1 + x := by
     unfold skeinCoulombFactor
-    rw [hx_def, div_le_iff hdenom_pos]
+    rw [show (-2 * Real.pi * eta) = -x by rw [hx_def]; ring,
+        show (2 * Real.pi * eta) = x from hx_def.symm,
+        div_le_iff₀ hdenom_pos]
     -- Need: x ≤ (1+x) * (1 - e^{-x})
     -- From hdenom_ge: x/(1+x) ≤ 1-e^{-x}, multiply by (1+x) > 0
-    rw [div_le_iff hx_pos'] at hdenom_ge
+    rw [div_le_iff₀ hx_pos'] at hdenom_ge
     linarith
   -- x = 2πη < 2π · ε/(2π+1) < ε
   have hx_lt : x < ε := by
@@ -132,7 +139,7 @@ theorem skeinCoulombFactor_limit_one :
       _ < 2 * Real.pi * (ε / (2 * Real.pi + 1)) :=
           mul_lt_mul_of_pos_left heta_lt (by positivity)
       _ = 2 * Real.pi * ε / (2 * Real.pi + 1) := by ring
-      _ < ε := by rw [div_lt_iff (by linarith [Real.pi_pos])]; nlinarith [Real.pi_pos]
+      _ < ε := by rw [div_lt_iff₀ (by linarith [Real.pi_pos])]; nlinarith [Real.pi_pos]
   linarith
 
 /-- The Sommerfeld parameter is positive when q > 1, Z > 0, β_e > 0. -/
@@ -142,14 +149,14 @@ theorem sommerfeldParam_pos (q : ℝ) (hq : 1 < q) (lambda_alpha : ℝ)
     (hb : 0 < beta_e) :
     0 < sommerfeldParam q lambda_alpha Z beta_e := by
   unfold sommerfeldParam
+  have hq0 : (0 : ℝ) < q := by linarith
+  have hqq : 0 < q - 1 / q := by
+    have h1q : 1 / q < 1 := by rw [div_lt_one hq0]; linarith
+    have : (1 : ℝ) / q < q := by linarith
+    linarith
+  have hZ' : (0 : ℝ) < (Z : ℝ) := Nat.cast_pos.mpr hZ
   apply div_pos
-  · apply mul_pos
-    apply mul_pos
-    · apply mul_pos
-      · rw [sub_pos, div_lt_one (by linarith : (0 : ℝ) < q)]
-        nlinarith
-      · exact hla
-    · exact Nat.cast_pos.mpr hZ
+  · exact mul_pos (mul_pos hqq hla) hZ'
   · exact hb
 
 /-- The enhancement factor grows with Z (more protons = stronger
@@ -166,20 +173,22 @@ theorem skeinCoulombFactor_monotone_eta (eta1 eta2 : ℝ)
   -- LHS > x1 (since e^{x1}-1 > x1 by add_one_lt_exp(x1)).
   -- Ref: [manuscript] §6/skein-coulomb-enhancement
   unfold skeinCoulombFactor
+  rw [show (-2 * Real.pi * eta1) = -(2 * Real.pi * eta1) by ring,
+      show (-2 * Real.pi * eta2) = -(2 * Real.pi * eta2) by ring]
   set x1 := 2 * Real.pi * eta1 with hx1_def
   set x2 := 2 * Real.pi * eta2 with hx2_def
   have hpi : 0 < Real.pi := Real.pi_pos
-  have hx1_pos : 0 < x1 := by positivity
-  have hx2_pos : 0 < x2 := by positivity
+  have hx1_pos : 0 < x1 := by rw [hx1_def]; exact mul_pos (mul_pos (by norm_num) hpi) h1
+  have hx2_pos : 0 < x2 := by rw [hx2_def]; exact mul_pos (mul_pos (by norm_num) hpi) (lt_trans h1 h2)
   have hx_lt : x1 < x2 := by
     simp only [hx1_def, hx2_def]
     exact mul_lt_mul_of_pos_left h2 (by positivity)
   have hdiff_pos : 0 < x2 - x1 := by linarith
-  have hexp1 : Real.exp (-x1) < 1 := by rw [Real.exp_lt_one_iff_neg]; linarith
-  have hexp2 : Real.exp (-x2) < 1 := by rw [Real.exp_lt_one_iff_neg]; linarith
+  have hexp1 : Real.exp (-x1) < 1 := by rw [Real.exp_lt_one_iff]; linarith
+  have hexp2 : Real.exp (-x2) < 1 := by rw [Real.exp_lt_one_iff]; linarith
   have hd1 : 0 < 1 - Real.exp (-x1) := by linarith
   have hd2 : 0 < 1 - Real.exp (-x2) := by linarith
-  rw [div_lt_div_iff hd1 hd2]
+  rw [div_lt_div_iff₀ hd1 hd2]
   -- Need: x1 * (1 - exp(-x2)) < x2 * (1 - exp(-x1))
   set d := x2 - x1 with hd_def
   -- e^{x1} - 1 > x1 (strict exp bound for x1 > 0)
@@ -206,7 +215,7 @@ theorem skeinCoulombFactor_monotone_eta (eta1 eta2 : ℝ)
   -- Multiply by d > 0: x1*(1-e^{-d}) < d*(e^{x1}-1)
   have hstep6 : x1 * (1 - Real.exp (-d)) < d * (Real.exp x1 - 1) := by
     -- From hkey: x1*(1-e^{-d})/d < e^{x1}-1, multiply by d > 0
-    rw [div_lt_iff hdiff_pos] at hkey; linarith
+    rw [div_lt_iff₀ hdiff_pos] at hkey; linarith
   -- Multiply by e^{-x1} > 0: x1*e^{-x1}*(1-e^{-d}) < d*(1-e^{-x1})
   have hexp_x1_pos : 0 < Real.exp (-x1) := Real.exp_pos _
   have hstep7 : x1 * Real.exp (-x1) * (1 - Real.exp (-d)) <

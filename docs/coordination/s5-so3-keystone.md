@@ -1,0 +1,535 @@
+# Coordination ledger — `conj:s5-so3-fiber-action` (the s5-so3 fibre-action keystone)
+
+**Goal.** Discharge the keystone the QOU framework's open derivation math reduces to: the geometric
+fibre map `S₅ ⊃ A₅ ≅ I ⊂ SO(3)` tying the partition-wise Wedderburn action on `H₅(q)` (combinatorial)
+to icosahedral rotations on Bring's quintic surface (geometric). It is the single open object for
+m_τ (lepton tower), GAP-A-3 binding Δ_λ, and GAP-A-4 mass λ(K).
+
+**Status (2026-06-16).** Reduced — by formalize-first pruning — to **one differential-geometry
+problem**. Everything combinatorial / representation-theoretic / algebraic is done or refuted; no fit
+was introduced anywhere.
+
+**Status (2026-06-22).** The single open object is **not** differential geometry — it is the
+colored Σ(2,3,5) WRT / `E_q(2)` q-Bessel q-series whose `q₀`-evaluation must reproduce `W_λ`
+(the Markov-trace surface is now exhausted — projector-weight shift refuted, [#2584](https://github.com/litlfred/qou/pull/2584)).
+See the 2026-06-22 update banner below.
+
+> **⚠ Corrections (2026-06-16, late session) — the "OPEN" row + the colour-arena framing are superseded.**
+> Three findings (mine + sibling) refine the open object below; read them over the "Current state" table:
+> - **No finite colour-SU(3) arena** (#2406, reconciling sibling #2389). The "colour ℂ³ ✅ forced" row is a
+>   *lower* bound only (spinor ℂ² can't host the electron). The full production trace needs **>3-row** blocks
+>   too (SU_q(3)/colour-ℂ³ misses 3.4% @⁴He) — it is the **full Hecke / Wenzl principal specialization**
+>   `s_λ(1,q,q²,…)`, *not* a finite ℂ^N. So there is **no finite colour-SU(3) Sasakian arena**.
+> - **SU(3)/SO(3) (Wu-manifold) arena ruled out** (#2398): the spacetime SO(3) is the *isotropy* and has no
+>   continuous centralizer in SU(3) (Schur) — no spacetime-fixing Reeb exists there. ⇒ **spacetime ⊥ colour**
+>   (= corpus `S5 = S2×S3`), confirmed.
+> - **`W_λ` is the q-Plancherel measure, NOT the production trace weight** (sibling `e269ca12ea`); the production
+>   weight is the Wenzl principal specialization. So the "OPEN: W_λ via SU(3)/SO(3) Sasakian" row's *both* the
+>   arena and the weight are corrected.
+>
+> **Corrected open object:** does the **full-Hecke principal-specialization trace** (infinite-variable,
+> intrinsically `p(3A)`-dimensional) admit *any* geometric realization whose index reproduces the canonical
+> Markov weights? A finite-dimensional Sasakian is ruled out. The Δ_λ magnitude×chirality decomposition and the
+> PROBE-4 prune (abstract `H_n(q)`) are unaffected. Audits: `2026-06-16-{keystone-arena-is-full-hecke-not-su3,
+> keystone-wu-manifold-reeb-obstruction}.md`; sibling `2026-06-16-s5-s3-symmetry-review-and-suq3-trace-question.md`.
+
+> **⚠ Update (2026-06-22) — the arena is the non-compact `E_q(2)` contraction, NOT a compact Sasakian; the Markov-trace surface is exhausted.** Four 2026-06-22 sessions (bean `s5bb`, all merged) supersede the "Wu-manifold Sasakian / differential-geometry" framing above:
+> - **q-deformed projector-weight shift REFUTED as the 210 ppb mechanism** ([#2584](https://github.com/litlfred/qou/pull/2584), merged). The E_λ-projected H₅ Markov trace gives `δ = T_μ − T_e = 0.2075` — non-null, so the q-deformed home-block weighting *does* break the (2,1) symmetry classical multiplicity preserved — but it is 6–7 orders too large for the 209.8 ppb gap and **bar-mixed** (fails the bar-even precondition). The Markov-trace surface (multiplicity / home-block weight / projected trace) is now **exhausted**; any surviving q-closure must leave the trace-weighting entirely. ([`2026-06-22-keystone-qdeform-projector-shift.md`](../audits/2026-06-22-keystone-qdeform-projector-shift.md))
+> - **No compact Sasakian / compact MTC can host `W_λ`** at the substrate anchor: `q₀ ≈ 1.10998` is real `> 1` (growth regime, `[m]_q = sinh(mη)/sinh(η)`, `η = log q₀` real), not a root of unity. The `W_λ`-producing structure is the non-compact `SU_q(2) → E_q(2)` contraction whose matrix coefficients are **Hahn–Exton q-Bessel** functions (already named in the corpus, `2026-06-13-reeb-phase-qbessel-identification.md`). ([`2026-06-22-keystone-modular-category-identification.md`](../audits/2026-06-22-keystone-modular-category-identification.md))
+> - **Sharpened open object:** pin the **colored Σ(2,3,5) WRT / Habiro-ring q-series** whose evaluation at `q₀` reproduces the `W_λ` family — reached from the convergent WRT series via the `q ↦ q⁻¹` bar involution (`q₀ ↔ 1/q₀ ≈ 0.901`, inside the disk). The bare `Σ(2,3,5)` Lawrence–Zagier false-theta `Ψ(1/q₀) = 2.32958` is operational but is **one** number vs a **λ-family** (type mismatch — *not* claimed equal to `W_λ`; the numerology trap the discipline forbids). ([`2026-06-22-keystone-habiro-wrt-s3-2i.md`](../audits/2026-06-22-keystone-habiro-wrt-s3-2i.md), [`2026-06-22-keystone-geometric-level-route-reduction.md`](../audits/2026-06-22-keystone-geometric-level-route-reduction.md))
+> - **Falsifiable, `q₀`-free sub-target:** any index realizing `W_λ` must reproduce the heat-kernel defect coefficient `144·C(n) = −n(n−1)(2n−13)` exactly (the `n = 7` sign change). The algebra is Lean-proved sorry-free ([`WLambdaDefectClosedForm.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/WLambdaDefectClosedForm.lean), `n144C_closed_form` / `n144C_pos` / `n144C_neg`); the **one** carried representation-theoretic input is **Identity I** `M(n) = (1/n!) Σ_{λ⊢n} dim(λ)² Σ_{c} h_c² = n(3n−1)/2`, held as a `def twoM` (compute-verified `n = 2..14`). Proving Identity I from the partition squared-hook sum needs SYT-dimension / hook-length infrastructure **not currently in Mathlib** — a multi-session infra fill, not a single-session lemma. ([`2026-06-20-keystone-wlambda-C-n-closed-form.md`](../audits/2026-06-20-keystone-wlambda-C-n-closed-form.md))
+>
+> **Active open work (unmerged — this ledger reports merged facts; the live geometric frontier is these PRs, consistent with the E_q(2)/colored-WRT reframing above since WRT(S³/2I) = colored Σ(2,3,5) WRT is the same object):** [#2524](https://github.com/litlfred/qou/pull/2524) supplies a candidate **index mechanism** — `W_λ` as the MTC Plancherel measure `d_q²/D²` from **Beasley–Witten non-abelian Chern–Simons localization** on the Seifert 3-manifold `S³/2I` (Reeb = Seifert `S¹`) — and proposes the C1 normalization answer `d_q²/D²` (Σ = 1). [#2503](https://github.com/litlfred/qou/pull/2503) is the formalize-first DG attack plan (a *finite-dimensional* Sasakian is ruled out ⇒ the construction is infinite-dimensional WRT(S³/2I) = Lawrence–Zagier). [#2603](https://github.com/litlfred/qou/pull/2603)/[#2608](https://github.com/litlfred/qou/pull/2608) work the λ-coloured WRT colour-resolution + Schur–Weyl.
+>
+> **Owner-decisions to confirm (some now addressed by the open PRs):** (1) `W_λ` normalization — `d_q²/[n]_q!` (Σ ≈ 0.982) vs `d_q²/D²` (Σ = 1); **#2524 proposes `d_q²/D²`**. (2) **Gate status — CONFIRMED REVERSED (2026-06-22, owner).** The owner reversed the subgoal-2 geometric-derivation gate (2026-06-19; #2503/#2524) **for the keystone geometric `W_λ` DG construction** — now recorded in [`AGENTS.md §Precision-goals`](../../AGENTS.md) + [`docs/precision-goals.md`](../precision-goals.md). The reversal is **narrow**: it does not reopen fit-based q_0 derivation, and the Δ_λ "no seventh fit-based ansatz" rule stands. (3) Identity-I Mathlib infra fill scope. Outside-view (critical-distance): a Beasley–Witten/RT *reduction* gives `W_λ` a categorical *name*, not a new mass prediction — watch the tautology risk that the "geometric origin" is the harmonic analysis of the same `SU_q(2)` the framework already postulates.
+
+> **Update (2026-06-30) — the localization obligation's necessary conditions are now pinned at the *physical* blocks.** [`WLambdaMTCLocalizationObligation.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/WLambdaMTCLocalizationObligation.lean) derives the keystone's C1 (normalization `Σ W_λ = 1`), C2 (chirality-blindness `W_{λ′} = W_λ`), C6 (full support `W_λ > 0`) as falsifiable necessary conditions any `S³/2I` gauge datum must satisfy, but its only worked model was the trivial `n = 2` (all `d_q = 1`). [`KeystoneWLambdaPhysicalBlocks.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneWLambdaPhysicalBlocks.lean) ([#3155](https://github.com/litlfred/qou/pull/3155)) supplies the named `n = 4`/`n = 5` witnesses via `heckeLocalizationOfPos`: at **n = 5** (the keystone `S₅`) C1/C2/C6 hold for the seven blocks `λ ⊢ 5`, including the **electron** `(3,1,1)` (self-conjugate) and **muon** `(3,2)` — `keystone_muon_transpose_eq` gives `W_{(3,2)} = W_{(2,2,1)}` (a genuine non-self-conjugate C2 pair), `keystone_{electron,muon}_pos` give `W_λ > 0`. lean-direct EXIT 0, sorry-free, axioms `[propext, Classical.choice, Quot.sound]`. So the geometric `W_λ` realization is now bound, at the physical electron/muon blocks, by three Lean-proved consistency obligations (C1/C2/C6) on top of the defect-cubic (`144·C(n)`) and `f_pn`-bracket gates. No fit; formalize-first.
+
+## Current state
+
+| Layer | Status |
+|---|---|
+| Combinatorial backbone `Res^{S₅}_{S₃}` + `SO(3)↓A₅↪S₅` bridge | ✅ verified |
+| Geometry: 2I spin lift; geometric A₅ forced to icosahedral T₁; chirality = T₁/T₂ | ✅ verified |
+| Algebraic functor target (Bratteli = box removal; Ocneanu trace) | ✅ forced |
+| Strand fibre = colour ℂ³ (Schur–Weyl: spinor ℂ² kills the electron (3,1,1)) | ✅ forced |
+| Static coupling `V_ℓ→E_λ` (Schur: dim Hom = 1) | ✅ forced |
+| **Generation selection ℓ→λ = the Hopf moment map μ** (spatial SO(3)-equivariance) | ✅ **realized** |
+| 210 ppb muon mechanism (Wedderburn-projector correction) | ❌ refuted (6–8 orders too coarse) |
+| colour⊗spin = (3,1,1) dim-6 shortcut | ❌ refuted (spin-parity mismatch) |
+| Reeb-eigenvalue resonance | ❌ refuted (no parameter-free ≥3-anchor match) |
+| q-deformed projector-weight as the 210 ppb mechanism | ❌ refuted (#2584: `δ=0.2075` non-null but 6–7 orders too large, bar-mixed) |
+| **OPEN:** `W_λ` geometric origin — colored Σ(2,3,5) WRT / `E_q(2)` q-Bessel q-series (**NOT** a compact Sasakian; see the 2026-06-22 banner) | ⛔ q-series (owner-gated) |
+
+**The single open object.** Does the SU(3)/SO(3) (Wu-manifold) Sasakian with spatial-SO(3)_colour Reeb
+admit a structure whose S¹-equivariant index reproduces the Ocneanu weights `W_λ = d_q(λ)²/[n]_q!`?
+(dim 5 odd ✓; χ(Wu)=0 ✓ — Boothby–Wang necessary conditions met, not obstructed at that level.) The
+sibling A≥3 operator-branching compute (#2369/#2371/#2372) produces `W_λ` algebraically; the open piece
+is its *geometric origin*.
+
+> **Superseded (2026-06-22).** This paragraph's Wu-manifold/Sasakian framing is retained for history but
+> **superseded** — at the substrate anchor `q₀ ≈ 1.10998` (real `> 1`, growth regime) **no** compact Sasakian /
+> MTC hosts `W_λ`; the arena is the non-compact `SU_q(2) → E_q(2)` Hahn–Exton q-Bessel contraction and the
+> sharpened object is the colored Σ(2,3,5) WRT q-series. See the 2026-06-22 update banner above.
+
+## Refutations not to re-walk (canonical-no-negative-result discipline)
+
+1. **210 ppb muon via (1,1,1) sign-block / Wedderburn projector** — the correction is O(16 %) (sign-block)
+   to ×15 (channel ratio), 6–8 orders too large for the 209.8 ppb gap; the bare `m_e·Vol(4₁)/ℏ_q²` is
+   already good to 209.8 ppb. The structural identity `χ^{(1,1,1)}(β_Bor)=1` is exact but magnitude-wrong.
+2. **electron block (3,1,1) = colour ℂ³ ⊗ spin ℂ²** — refuted on the central character (spin parity): (3,1,1)
+   is an A₅ rep (central +1), ℂ³⊗ℂ² has central −1. dim-6 = chirality T₁⊕T₂, not a tensor.
+3. **Reeb-eigenvalue resonance** — the ℓ=1,2 content matches (`c(λ)=ℓ(ℓ−1)`) are non-unique and fail at ℓ=3
+   (tau, multi-block). No parameter-free ≥3-anchor resonance.
+4. **Cyclotomic-Galois / `Li₃(ζ₅)` period as a keystone "falsifier"** — recorded 2026-06-20 after a fresh
+   agent (`claude/kind-ptolemy-acladr`) independently re-derived the cyclotomic-Galois / fifth-root-of-unity
+   period angle and mis-aimed it at the keystone coupling as a falsifier. That angle lives on the **period /
+   z-Habiro axis**, which the 2026-06-17 sessions-log note flags as **orthogonal to the keystone coupling — "do
+   not conflate"**: the z-side completion `varprojlim ℤ[q^±1][z]/(P_n)` (quantum-dilog Φ_q tower) is parallel-
+   but-independent of the q-side Habiro/full-Hecke Markov trace. Forcing the period↔knot bridge is exactly the
+   **unfalsifiable correspondence-chain the Habiro lead refused**
+   ([`2026-06-16-keystone-habiro-coupling-lead-and-ck-exposition.md`](../audits/2026-06-16-keystone-habiro-coupling-lead-and-ck-exposition.md)).
+   Inoculation for the next agent: a period-axis cyclotomic-Galois result is **not** an s5-so3 keystone
+   constraint; the keystone's single open object is the q-Plancherel-measure geometric-realization problem
+   (below), not a period identity. Verify the axis (period/z vs coupling/q) before treating any Galois fact as
+   keystone-bearing.
+   **Twice-demonstrated recurrence (strengthened 2026-06-20, PR #2506 / bean `wlk9`).** A *second*, independent
+   agent (`claude/tender-darwin-sw4zo1`, the #2506 hyperbolic-hurdle audit) re-derived the identical
+   cyclotomic-Galois / `Li₃(ζ₅)` angle from scratch and again mis-aimed it at the keystone as a falsifier — with
+   no knowledge of the #2517 record (it was 475 commits stale). Two agents re-walking the same dead end within
+   one day is exactly the recurrence the canonical-no-negative-result discipline exists to stop; treat this item
+   as high-priority inoculation, not a one-off footnote.
+5. **Finite-colour Schur–Weyl *multiplicity* → `W_λ`** — refuted 2026-06-22 (PR #2608). After the #2603
+   colour-resolution and the #2604 SU(2) row-count split, the tempting next step is "use a higher colour
+   ℂ³/ℂ^d Schur–Weyl weighting to land the Plancherel `W_λ`." Foreclosed for **all** `d`: the gl_d
+   colour-multiplicity `m_d(λ) = #SSYT(λ,≤d)` (i) has support `{rows≤d}`, missing `W_λ`'s 4-/5-row blocks
+   for `d<5`, and (ii) is strongly conjugation-**asymmetric** (`m₅(5)=126` vs `m₅(1⁵)=1`) while
+   `W_λ = W_{λ'}` — so no `d` makes it match. `W_λ` is the **symmetric-pairing** (`d_q²`, `d→∞` full
+   Hecke) measure, the production/principal-spec `y_λ` is the colour-multiplicity side; the colour functor
+   lands the *wrong weight system*. Inoculation: do not re-attempt a finite-colour-multiplicity → `W_λ`
+   map. A colored-WRT-*invariant* route (#2604) is not refuted but is **constrained** — it must reproduce
+   the conjugation-symmetric Plancherel measure. Audits:
+   [`2026-06-22-keystone-wrt-schurweyl-{plancherel-4count,higher-colour-foreclosure}.md`](../audits/2026-06-22-keystone-wrt-schurweyl-higher-colour-foreclosure.md).
+
+## Sessions log
+
+| Date | PR | What landed |
+|---|---|---|
+| 2026-06-26 | (trB/L2 refresh) | lever-1 `tr B` is `[2]_q`-rational: with `s=[2]_q`, `tr B = 3(3s²+2)/(4(s+2))`, `tr B(q₀)=2.6424` (50-dps symbolic+numeric). `det B=1` + non-integer trace ⇒ hyperbolic q-difference connection, **not** `SL₂(ℤ)` topological monodromy. Rank-2 `W` forced by `A₅`-irreducibility of `H^{1,0}(Bring)` (Sage-free). Target restated; Sage/owner-gated. (Salvaged clean part of the stale #2722.) |
+| 2026-06-16 | #2352 | S₅↓S₃ backbone + SO(3)↓A₅↪S₅ bridge verified; ing-4/5 close-out (210 ppb **refuted**) |
+| 2026-06-16 | #2361 | propagate refutation to the GAP-A-4 doc; ingredient-4 geometric-leg formalize-first prune |
+| 2026-06-16 | #2364 | Schur–Weyl: strand fibre forced to colour ℂ³ (spinor kills electron) |
+| 2026-06-16 | #2367 | two-Sasakian decomposition; static coupling Schur-forced |
+| 2026-06-16 | #2368 | Reeb-eigenvalue resonance **refuted** (numerology-guarded negative) |
+| 2026-06-16 | #2370 | canonical coupling = Hopf moment map μ; round-S⁵ colour Reeb transverse; **selection realized by μ** |
+| 2026-06-16 | #2373 | Markov-weighting scope: forced `W_λ` + Wu-manifold Sasakian handoff |
+| 2026-06-16 | #2369 (sibling) | coordination note: A≥3 `tr_M` compute = algebraic realization of the open weighting |
+| 2026-06-16 | #2398 | **derive-attempt:** SU(3)/SO(3) Wu-manifold arena ruled out — spacetime-fixed Schur-centralizer obstruction ⇒ spacetime ⊥ colour |
+| 2026-06-16 | #2406 | **correction:** no finite colour-SU(3) arena — production trace is full-Hecke principal specialization, not SU_q(3) ≤3-row (reconciles sibling #2389) |
+| 2026-06-17 | #2416 | **Lean:** Δ_λ = chirality sign × Wedderburn magnitude (sorry-free); `deltaSign_mixed` = the PROBE-4 KL-positivity-prune premise machine-checked |
+| 2026-06-17 | #2424 | **Lean:** McKay 2I↔E₈ anchors (Σdim²=120, Σmarks=h=30, \|2I\|=4h, dimE₈=8·31) + A₅ branching content (V₁→T₁, V₂→H, V₃→T₂⊕G; (3,1,1) self-conj T₁⊕T₂) |
+| 2026-06-17 | #2431 | **Lean:** S₅↓S₃ restriction dimension-consistency for all 7 blocks (the branching backbone, embedding-independent) |
+| 2026-06-17 | #2436 | **Lean:** S₃-rotation branching dimension-consistency (ℓ≤4) — completes the dim-check for the `s3RotBranchingMult` table |
+| 2026-06-17 | #2442 | **Lean (full Mathlib):** z-Habiro `c_n` localisation pinned — `eulerCoeff` (Euler `b_n` in `S^{-1}ℤ[q^±1]`, `S=⟨1-q^{-j}⟩`) + `braneMonic_coords_unique` (coordinates unique); analytic↔algebraic identification stays open |
+| 2026-06-17 | (this PR) | **Lean (full Mathlib):** z-Habiro `braneMonic_coords_exist` — monic basis spans `R[X]_{≤n}`; with #2442's uniqueness, cyclotomic coordinates are a bijection `R[X]_{≤n} ≅ R^{n+1}` staying in the localised `R` (item 2(i) base-ring half) |
+| 2026-06-17 | (coord note) | **z-Habiro on main is ORTHOGONAL to the keystone coupling — do not conflate.** The z-Habiro Lean work (#2417-era: `ZHabiroCompletion`, `zHabiroLimit`, `cyclotomicPartialSum_isCauchy`) builds the **z-side** completion `varprojlim ℤ[q^±1][z]/(P_n)` for the quantum-dilog Φ_q truncation tower. The keystone coupling is the **q-side** Habiro element (full-Hecke Markov trace = WRT(S³/2I) = Lawrence–Zagier). These are parallel-but-independent completions; bridging them needs a simultaneous (q,z)-bicompletion, which the z-Habiro file itself flags "construction open." No fit-free Lean bridge exists yet — forcing one is the unfalsifiable correspondence-chain the Habiro lead (`2026-06-16-keystone-habiro-coupling-lead-and-ck-exposition.md`) explicitly refused. The keystone coupling stays OPEN. |
+| 2026-06-20 | (this PR) | **Construction (mechanism, no fit):** the geometric W_λ index = **Beasley–Witten Seifert–CS localization on S³/2I** (Reeb=Seifert S¹). The RT/Verlinde Plancherel weight `d_q²/D²` it produces meets all of C1–C7 (arithmetic verified at q₀,n=5). **Resolves C1**: the geometric normalization is `D²=Σd_q²` (Σ=1 true Plancherel), not `[n]_q!` (Σ=0.98222); gap = `D²/[n]_q!=0.98222`. Reduces the owner-gated build to instantiating a published localization; residual = MTC-matching + Lean Reeb=restriction. 210 ppb untouched (refuted). |
+| 2026-06-20 | #2520 | **Scope (consumer side, no fit):** what the mass-ratio needs from the W_λ frontier. Since #2516/#2519 prove the knot layer is null on the generation difference, the geometric frontier carries the **entire O(1) generation skeleton** (consumer weight `y_(3,2)/y_(3,1,1)=3.68` at q₀) and **none** of the 210 ppb fine shift (2.1e-7, anchor artifact). Forward necessary condition complementing producer-side C1–C7; no edit to producer docs. |
+| 2026-06-20 | #2519 | **Probe (no fit):** the (2,1)/h⁴ cancellation is **robust to q-deformation**. Generic-q Hecke branching H₃⊂H₅ carries classical multiplicities → `χ_μ^H5(β)=Σ m·χ` exactly (max |Δ|=8.9e-16) and `χ_(3,1,1)−χ_(3,2)=χ_(1,1,1)=1` identically, h-indep up to h⁴≈0.9. Closes the q-deformed-Wenzl escape #2516 left at the **character** level — only surviving μ/e asymmetry is the O(1) `W`/`y` block-weight ratio (#2488 frontier). |
+| 2026-06-20 | #2516 | **Probe (no fit):** ran the functor-resolution §4 object via `pyhecke_native` (built in-sandbox, #2511) — the H₃ Borromean Markov-trace shift between muon `E_(3,2)` and electron `E_(3,1,1)` projectors via the classical `S₅→S₃` branchings. The h⁴-bearing `(2,1)` block enters both with the **same** multiplicity 2 (classical, q-indep) → **cancels exactly** in the μ/e difference (6.9e-18). Classical-multiplicity baseline is **null**; residual split is the `(1,1,1)` sign channel (h-indep, ~1.5e-2). Sharpens the W_λ frontier (#2488): the q-deformed `W_λ = d_q(λ)²/[n]_q!` weights are **necessary**, not optional — pure multiplicity counting cannot produce a generation shift. |
+| 2026-06-20 | #2517 | **Lead + inoculation:** (a) §Refutations item 4 — cyclotomic-Galois / `Li₃(ζ₅)` period is period-axis, NOT a keystone falsifier; (b) **q-heat-kernel / q-Bessel(2nd-kind) geometric-realization lead** — precheck found `W_λ=d_q²/[n]!` is **sub-normalized** (`Z=0.98222` at q_0, P1 fail; symmetry P2 + audit P3 pass); the mass defect `1−Z` is the geometric quantity to explain. Bridges the existing q-Bessel infra (2026-06-13) to the keystone target. `2026-06-20-keystone-qbessel-heat-kernel-lead.md` + `scripts/keystone_qbessel_plancherel_precheck.py`. NOT a closure. |
+| 2026-06-20 | #2506 | **Inoculation + corpus trace:** (a) §Refutations item 4 strengthened — the cyclotomic-Galois falsifier was re-walked a **second** time independently (`claude/tender-darwin`, #2506), now a twice-demonstrated recurrence; (b) pieces-1–3 corpus-object trace consolidated into [`docs/audits/2026-06-20-s5so3-pieces-1-3-corpus-trace.md`](../audits/2026-06-20-s5so3-pieces-1-3-corpus-trace.md) — every settled ingredient mapped to its verified `.md`/`.lean`/checker source. No new math; reporting only. |
+| 2026-06-20 | #2528 | **Probe (no fit) — binding-side target for the Step-1 gate:** wired the owner-gated deuteron `f_pn = 0.588` (reproduces AME `B(²H)` exactly) against the gate's `W_λ = d_q²/[n]_q!`. The pn std-channel block is the standard rep `λ=(2,1)` at `n=3`; gate `W_(2,1)=0.661` UNDER-binds (E 1.74), the bare std channel `0.395` OVER-binds (E 3.89) → required `0.58776` (E 2.2246) is **strictly bracketed** `0.395 < 0.588 < 0.661`. REFUTE the naive direct-weight map; algebraic `W_λ` does not land 0.588 but brackets it. Hands the geometric `W_λ` (WRT(S³/2I)) a sharp **second** binding-side target alongside the m_τ tower: any index reproducing `W_λ` must land `f_pn` in `(0.395, 0.661)`. Harness `deuteron_fpn_from_Wmap` consumes any future geometric `W_λ` unchanged. `2026-06-20-deuteron-fpn-wlambda-wiring.md`. |
+| 2026-06-18 | #2480 | **Lean (formalization fix):** de-vacuify `BringFiberAction` — remove the provably-false `respects_conjugate` (angle sign-flip) + vacuous `hits_five_conjugacy_classes : True` + trivial instance; correct the fibre-map domain to the 5 A₅ irreps (new `A5Irrep` + `conjugate_same_a5_irrep`), substantive `five_distinct_classes`. Per `2026-06-13-bring-fiber-action-falsification.md`. Formalization correction, **not** a closure — the geometric map stays open. |
+| 2026-06-22 | #2605 (re-land #2500) | **colour-arena block-count THEOREM** (`ColourArenaBlockCount.lean`, sorry-free): the colour-`ℂ^N`-missed Wedderburn blocks contain an injected copy of *every* partition of size `n−(N+1)` (`appendUnitRows`/`missedEmbedding`) ⇒ missed-block count **unbounded + monotone** in `A` (verifier `colour_arena_missed_block_count.py`, B1–B5). Upgrades #2406's *weighted* 3.4%→6.0% from data points to a **block-count theorem**; gives **C6 (full support)** quantitative teeth (no finite-`N` Sasakian). Weighted-share monotonicity stays **empirical** (q₀/braid-dependent). Audit `2026-06-19-colour-arena-block-count-theorem.md`. |
+| 2026-06-22 | #2605 (re-land #2500) | **combiner branching completeness / non-degeneracy** (`CombinerBranchingCompleteness.lean`, sorry-free): `exists_subpartition_of_size` — every `λ⊢n` (`n≥k`) has a sub-partition of size `n−k`, so `interface_blocks` returns ≥1 child for every block and the operator combiner drops none (Frobenius reciprocity; verifier `combiner_branching_completeness.py` over splits 6/9/12, self-contained). Formalizes the **dual** non-degeneracy of the already-corpus-established per-λ completeness — a correctness guarantee, not a new derivation. Audit `2026-06-19-combiner-branching-completeness.md`. |
+| 2026-06-22 | #2605 (re-land #2500) | **C2 chirality involution formalized** (`KeystoneChiralityInvolution.lean`, sorry-free): facets of C2 (`W_λ=W_{λ'}`) — content negates under transpose `c(j,i)=−c(i,j)`, electron `(3,1,1)` self-conjugate (`c=0`, central A₅ rep `T₁⊕T₂`), `[2]↔[1,1]` flip. The strongest pruning lever now machine-checked at the cell/example level; global `W_λ=W_{λ'}` stays cited + witnessed. |
+| 2026-06-22 | #2584 | **Probe (no fit) — q-deformed projector shift REFUTED:** E_λ-projected H₅ Markov trace `T_g = y_{λ_g}^{H5}·χ^{λ_g}(ι(β_Bor))` gives non-null `δ = T_μ − T_e = 0.2075` (the q-deformed home-block weighting breaks the (2,1) symmetry classical multiplicity preserved) but 6–7 orders too large + **bar-mixed** → not the 210 ppb mechanism. Markov-trace surface (multiplicity / home-block weight / projected trace) **exhausted**; branching cross-check to 9.6e-50. |
+| 2026-06-22 | (audits) | **Reframe + route reduction (no fit):** at real `q₀ > 1` no compact Sasakian / MTC hosts `W_λ` → arena = non-compact `SU_q(2) → E_q(2)` Hahn–Exton q-Bessel contraction; sharpened object = colored Σ(2,3,5) WRT q-series via the `q ↦ q⁻¹` bar involution. `Ψ(1/q₀) = 2.32958` operational (one number, **not** the λ-family — no numerology match). On-main (level,chirality) Lean gives class *separation*, not a mass functional. Falsifiable `q₀`-free sub-target `144·C(n) = −n(n−1)(2n−13)` Lean-proved (`WLambdaDefectClosedForm.lean`); the one carried input **Identity I** `M(n) = n(3n−1)/2` needs SYT/hook-length infra not in Mathlib. Docs: `2026-06-22-keystone-{modular-category-identification,habiro-wrt-s3-2i,geometric-level-route-reduction,geometric-angles-preflight}.md`. |
+| 2026-06-22 | `fe3a83d6b4` (capstone) | **Schur–Weyl dual-sides — deflationary capstone (no fit):** WRT↔`W_λ` is a Schur–Weyl **DUALITY**, **not** an equality. Corpus `W_λ` = Hecke (S_n-side) hook-content `d_q(λ)`; WRT/Poincaré modular data = SU(2) (V_λ-side) `[2j+1]_q`. They DIFFER (muon (3,2): `[5]_q=5.22` vs `[2]_q=2.01`; coincide only at (4,1)) ⇒ paired, **not** equal. A direct `WRT=W_λ` equality is a category error; the Poincaré sphere is the icosahedral *selector*, `W_λ` the dual S_n-side q-dims. Deflationary terminus of the WRT line — structural gains, **no closure / no mass prediction**; reinforces the banner's tautology-risk read. Doc: `2026-06-22-keystone-schurweyl-dual-sides.md`. |
+| 2026-06-23 | [#2634](https://github.com/litlfred/qou/pull/2634) | **Identity I content decomposition (no fit) — sharpens the line-133 "needs SYT/hook-length infra" note.** The one carried RT input `M(n)=n(3n−1)/2` (to the falsifiable defect `144·C(n)=−n(n−1)(2n−13)`) factors as `binom(n,2)+n²` via **(A)** per-partition `Σ_c h_c²=Σ_c c(c)²+n²` (a single-Young-diagram fact, no dims; exhaustively verified — all 4507 partitions, `n≤22`) + **(B)** the Jucys–Murphy / Plancherel content-square mean `binom(n,2)` (**proved**: `Σ_k X_k²` central, identity-coeff `Σ(k−1)`). Net: the hard **Frame–Robinson–Thrall hook-length FORMULA is OFF the critical path** — residual fill is (A) `YoungDiagram` defs + a combinatorial identity, (B) standard `ℂ[S_n]` Wedderburn/JM (the SYT-*dimension* part of line 133 stands; the *formula* does not). Lean `twoM_content_decomposition` sorry-free (lean-direct exit 0). Docs: `2026-06-23-keystone-identity-I-content-decomposition.md`. |
+| 2026-06-24 | [#2655](https://github.com/litlfred/qou/pull/2655) | **Identity-(A) PROVED sorry-free for ALL partitions (closes the (A) half of the line-135 residual fill).** Per-partition `Σ_c h_c² = Σ_c c(c)² + n²` is now Lean-proved for every weakly-decreasing partition (was exhaustive-only `n≤22`) — **merged to main**, superseding the prior `fd724f18` length-≤1 partial. Self-contained `List ℕ` model (no Mathlib `YoungDiagram`): hook-square expansion `H²=P²+Q²+1+2PQ−2P−2Q` → nine cell sums → row forms via reflection / the Fubini cell-transpose / K-moment + λ- and j-weighted min-sums; the `+n²` is the λ-weighted min-sum residue. **Residual for the full carried `twoM` (Identity I) is now ONLY (B)** — the Plancherel content-square mean `binom(n,2)` + `Σ_λ dim(λ)²=n!` (the SYT-*dimension* / `ℂ[S_n]`-Wedderburn infra of line 133 still stands; the (A) combinatorial half is DONE). **Wiring caveat:** (A) is per-partition; `WLambdaDefectClosedForm.twoM` is the *Plancherel-weighted* `M(n)`, so connecting (A) to `twoM` still needs the (B)/`Σdim²=n!` infra — (A) firms the per-partition step, not the weighted mean. `IdentityIContentDecomposition.lean` sorry-free (lean-direct exit 0). **Dedup:** sibling #2689 is a *full* alternative (A) proof (`cellSum_swap`+`abel_tri`, six reduction lemmas) with **no** keystone-consumer delta (3 files = bean + Identity proof + audit doc) → fully superseded by #2655, advised to close; #2700 (`YoungDiagram` scaffold, still sorry'd) closed as superseded. Docs: `2026-06-23-keystone-identity-I-content-decomposition.md`. |
+| 2026-06-24 | [#2709](https://github.com/litlfred/qou/pull/2709) | **(B) Plancherel mean made conditional-rigorous (§3b-cond, merged).** `IdentityIPlancherelConditional.lean`: `class PlancherelSnData n` axiomatises the two standard facts the pinned Mathlib lacks — (i) `Σ_λ dim²=n!`, (ii) the JM/OV content-square mean `2·Σ dim²·Σc²=n(n−1)·n!`. `two_sum_dim_sq_hooks` proves Identity I `2·Σ_λ dim²·Σ_c h_c² = n(3n−1)·n!` from (i)+(ii)+the proved (A); `twoM_eq_plancherel_hook_sum` wires it to `WLambdaDefect.twoM`. Non-vacuity instance `PlancherelSnData 2` decide-checked. So `twoM` (Identity I) is no longer a bare carried `def` — it's a theorem modulo two named axioms. Companion scope doc `docs/scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md` plans the multi-PR Specht/JM build to discharge them (honest: rigor hygiene, not frontier). Lean sorry-free (lean-direct exit 0). |
+| 2026-06-24 | [#2717](https://github.com/litlfred/qou/pull/2717) | **Step-1 gate RUN (no fit) — SU(2)/WRT(S³/2I) does NOT reproduce `W_λ`; full-Hecke arena forced.** Ran the #2503 gate systematically at n=3,4,5 (was n=5 spot-check only, #2608): compares SU(2)-side `[2j+1]_q` to S_n-side `d_q(λ)` per block. **(b) structural exclusion of the SU(2) sub-route**, two grounds: COVERAGE — all ≥3-row blocks (incl. electron `(3,1,1)`) are outside the GL₂ Schur–Weyl image, no SU(2) weight (rigorous form of #2406); VALUE — `d_q=[2j+1]_q` ONLY on the standard rep `(n−1,1)` ∀n (both `=[n−1]_q`), sharpening #2608's single-point `(4,1)` to the `(n−1,1)` family. ⇒ geometric index must live full-Hecke side (the open object is **unchanged**, just the SU(2) branch pruned). Normalization (owner Q): per-block ratios within fixed n are normalization-invariant; only `Z(n)` (defect `1−Z(n)`) is sensitive → the defect is the fixed falsifiable content; `Z(5)=0.98222` reproduced. Docs: `2026-06-24-keystone-step1-gate-wrt-vs-wlambda.md`. |
+| 2026-06-24 | [#2727](https://github.com/litlfred/qou/pull/2727) | **SU(2)-route foreclosure machine-checked + full-Hecke program scoped.** (b) `Su2SchurWeylForeclosure.lean` (sorry-free): `gl2_image_eq_le2row` (GL₂ Schur–Weyl image = `{(5),(4,1),(3,2)}`), `electron_not_in_gl2_image`, capstone `su2_index_ne_wlambda` (any GL₂-supported index ≠ any `W` nonzero on `(3,1,1)`) — the prose/Python foreclosure of #2406/#2608/#2717 now Lean-proved as a **(b) structural exclusion** (row-count invariant; abstract codomain, no q₀). (c)+(d) `docs/scope/2026-06-24-keystone-fullhecke-geometric-index-program.md`: the multi-PR full-Hecke geometric-index program (phases G1–G4 on #2524's Beasley–Witten mechanism; falsifiable targets defect-cubic / `a_D=lw` / `f_pn`-bracket / conjugation-symmetry; foreclosed sub-routes catalogued; **(d)** Bring/Jacobian sub-lead cites #2710/#2722 under a STRICT numerology guardrail — formalize the monodromy *operator*, never fit `τ=2.6424`). Honest: rigor frontier, not a new prediction; the open full-Hecke object is **unchanged**. |
+| 2026-06-24 | [#2704](https://github.com/litlfred/qou/pull/2704) | **Residual (ii) DISCHARGED (Lean, no fit):** `Reeb = Res^{S₅}_{S₃}` scaffold formalized sorry-free + axiom-free (`S5SO3FiberAction.lean`: `s3SignTwist`, `restriction_intertwines_conjugation` = `Res(λ')=s3SignTwist(Res(λ))` ∀λ⊢5, `std_irrep_conjugation_fixed` = the `(2,1)`/h⁴-carrier multiplicity is conjugation-fixed, capstone `reeb_eq_restriction_scaffold [BringFiberAction]`). The *algebraic* restriction-commutes-with-conjugation identity only; conjunct (i) still **uses** `BringFiberAction` (geometric map stays open). Residual (i) (MTC-matching) stays owner-gated; **210 ppb stays refuted**. Audit `2026-06-24-keystone-reeb-restriction-lean-formalization.md`. |
+| 2026-06-24 | [#2744](https://github.com/litlfred/qou/pull/2744) | **Falsifiable target (1) PINNED EXACTLY (no fit, q₀-free):** cross-checked the `W_λ` defect cubic `C(n) = −n(n−1)(2n−13)/144` (`WLambdaDefectClosedForm.lean`, from Identity I) against the **directly-computed** `1−Z(n)=1−Σ_λ d_q²/[n]_q!` for n=2..10 via Richardson `h=q−1/q→0` (60 dps). Empirical small-h coefficient matches the closed form to **<4e-14** ∀n, **n=7 sign flip identical** (empirical 7 = closed-form 7). Closes the loop the empirical defect script (`keystone_wlambda_Z_defect_n_scaling.py`) left open — it disclaimed a closed form, having refuted a *different* (hook-moment) ansatz; the Identity-I cubic is the real one. Hardens phase-**G2** gate from "Lean derivation" to "exact number cross-checked against direct `W_λ` compute". **Plus a SECOND target:** the sub-leading h⁴ coefficient `D(n)` is *also* an exact degree-6 polynomial — `D(n)=n(n−1)(−100n⁴+1472n³−5273n²−203n−828)/1036800` (`1036800=50·144²`), Taylor-extracted (method-validated: h² coeff reproduces exact `C(n)` to 0.0; Δ⁶ constant to ~1e-120; held-out validated n=9,10). Both `C(n)` and `D(n)` carry the `n(n−1)` factor (vanish for the single-box partition). So G2 now gates on **two** q₀-free polynomial targets (2nd + 4th heat-kernel coeff). `D(n)`'s closed form is now **partially Lean-formalized** (`WLambdaDefectSubleadingD.lean`, sorry-free, lean-direct exit 0: factored↔expanded `ring` identity confirming the witness coeffs, `n(n−1)` vanishing, `1036800=50·144²` + the `144^k` denom ladder, and the `1036800·D(n)` value table n=2..10 incl. held-out 9,10); the *derivation* of `D(n)` from the defect stays deferred — parallel to `C(n)`'s general-`n` Identity I — since the `h⁴`-order moment collapse is not yet symbolic (`D(n)` was numerically Taylor-extracted + interpolated). **And a LADDER:** the h^{2k} coefficient `c_{2k}(n)` is polynomial of degree **3k** (C deg 3, D deg 6, E deg 9; each held-out validated), denominator `m_k·144^k` (m_k∈{1,50,7350}) — so the index's *entire* heat-kernel expansion is polynomial-in-n (unbounded target family, not just two). Expected from Plancherel-moment / Kerov-polynomial theory; QOU content = the sharp `3k` ladder + `144^k` denom. Degree-3k law is a CONJECTURE (k≤3 evidence). Probes `keystone_wlambda_defect_cn_closedform_crosscheck.py` + `keystone_wlambda_defect_dn_subleading.py` + `keystone_wlambda_defect_coeff_ladder.py` + witnesses; audit `2026-06-24-wlambda-defect-cn-closedform-crosscheck.md`. |
+| 2026-06-25 | [#2794](https://github.com/litlfred/qou/pull/2794) | **C2 conjugation symmetry PROVED in the genuine q-model — `d_q(λ)=d_q(λ′)` sorry-free (Lean, no fit, q₀-free):** the keystone's necessary condition C2 (the q-Plancherel weight `W_λ=d_q(λ)²/[n]_q!` is **chirality-blind**, `W_λ=W_{λ′}`) is now machine-checked at the **global q-dimension** level, not just the cell/example level (#2605) or the `q=1` Frame–Robinson–Thrall dimension. Culminates a three-PR transpose-invariance build: **#2778** (Σ-core — squared-content `Σc²` and squared-hook `Σh_c²` sums transpose-invariant, via the `colLen`-duality `cell_fubini` + the `colLen (conj l) c = λ_c` involution), **#2785** (`q=1` capstone `dimHLF_conj`: `f^λ=f^{λ′}` from `prodHooks_conj`+`sz_conj`), **#2794** (genuine `qDim_conj`: `qDim q (conjugate λ) = qDim q λ`). The genuine q-version **bridges** the two partition models rather than rebuilding duality: `conjugate_eq_conj` (the `QPartitionCombinatorics` `Partition.conjugate` = the merged `colLen`-conjugate on sorted λ), `hookLength_eq` (`Partition.hookLength` = the `colLen`-hook `(λ_i−j)+(colLen j−i)−1` via a `leg_count` take/drop/filter argument), `qDim_eq_prod` (`qDim`'s nested `foldl` = a `Finset` double product), then `qHookProd_conj` (the `qBracket`-weighted hook product is transpose-invariant) + `sz_conj` ⇒ `qDim_conj`. So C2 is no longer cited/witnessed but **Lean-proved for the actual q-weight** at any real q. **Weight-level capstone:** `qPlancherelWeight q λ := d_q(λ)²/[|λ|]_q!` is defined and `qPlancherelWeight_conj` proves the keystone's literal C2 statement **`W_λ = W_{λ′}`** directly (corollary of `qDim_conj` + `sz_conj`). `#print axioms qDim_conj = [propext, Classical.choice, Quot.sound]` (no sorryAx/custom axiom); transpose combinatorics in `ℕ`, q-dimension in `ℝ`. The remaining keystone object (geometric `W_λ` realization / defect cubic) is **unchanged** — this firms the *necessary condition*, not the open geometric index. `KeystoneC2{ContentTranspose,DimTranspose,QDimTranspose}.lean`. |
+| 2026-06-25 | [#2760](https://github.com/litlfred/qou/pull/2760) | **Identity I unconditional at n=3..12 + defect-coeff grounding (Lean, no fit):** the two `PlancherelSnData` axioms (i) `Σ_λ dim²=n!`, (ii) the JM/OV content-square mean were already kernel-`decide`-verified for `n≤12` in `IdentityIContentDecomposition` (`dim_validated_le12`/`idB_verified_le12`) but never instanced — so #2709's Identity I carried the class hypothesis everywhere. Wired them into explicit `PlancherelSnData {3,…,12}` (`dim:=dimHLF`, both axioms by `decide`), collapsing `twoM_eq_plancherel_hook_sum` to **unconditional** at **every `n=3..12`** (incl. deuteron `n=3`, keystone `n=5`, **defect sign-flip `n=7`**). So the keystone's carried Identity I (`WLambdaDefect.twoM`, the input to the falsifiable defect cubic `144·C(n)=−n(n−1)(2n−13)`) rests on proved inputs through `n≤12`. **Plus (option 2):** `n144C_eq_twelve_plancherel` / `defect_closedform_plancherel` ground the keystone defect coeff `n144C` (built from the carried `def twoM`) directly in the genuine Plancherel squared-hook sum, generic in `[PlancherelSnData n]` — so the defect cubic incl. the n=7 sign flip is grounded in real S_n rep theory, not a `def` (the Lean complement to #2744's numerical cross-check). Capstones `twoM_plancherel_{three..seven}`; `#print axioms` = `[propext, Classical.choice, Quot.sound]`. General-`n` stays the multi-session P1–P5 infra program (`docs/scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md`). `IdentityIPlancherelInstances.lean`. |
+| 2026-06-25 | [#2811](https://github.com/litlfred/qou/pull/2811) | **Geometric `W_λ` tranche — the tractable slices around the owner-gated G1 (Lean, no fit).** The hard core **G1** (the differential-geometric S³/2I Seifert–CS equivariant-index construction) stays owner-gated/out-of-scope; this PR lands three on-target pieces. **(B) G2 falsifiable gate** (`KeystoneG2Gate.lean`, sorry-free): the program's decisive gate — a candidate index's cleared 2nd heat-kernel coefficient `a₂(n)` must equal the proved cubic `n144C` — formalized as `PassesDefectGate` with **teeth**: `defectGate_unique` (no free constant), `defectGate_forces_cubic`, and `defectGate_forces_sign_flip` (passing ⇒ `a₂ 6 > 0 ∧ a₂ 7 < 0`, the falsifiable **n=7 discriminant** any geometric index must exhibit); `canonicalCandidate_passes` (satisfiable, non-vacuous). Records that target-4 (per-λ `W_λ=W_{λ′}`, #2794) is **independent** (a summed-defect match ≠ per-λ symmetry). **(A) de-vacuify `Cl3Zeta5GeometricRealization`** (bean 5e79/T1): the §3b class carried a *free* `cl3Zeta5 : ℝ` (vacuous `exists_realization`); re-anchored to the **proved** K=5 orbit-sum `Cl₃(2π/5)+Cl₃(4π/5)=−(24/25)ζ(3)` (`realize_orbit_sum` field; `realize_orbit_sum_eq` sorry-free). Residual flagged not faked: no closed Clausen `Cl₃` value in infra (Mathlib gap). **(C) Bring W-plane monodromy** (`BringWPlaneMonodromy.lean`, sorry-free; §(d), numerology-guarded): `unimodular_two_recurrence` proves `det M = 1 ⇒ M² = (tr M)·M − I` — so the depth-2 recurrence kernel `x²−τx+1`'s monic/unit-constant form is **forced** by unimodularity (Cayley–Hamilton, τ = tr M), the *operator-level* content, **never** the value `τ≈2.6424`; `BringWPlaneMonodromy` (§3b-cond class) carries the open geometric identification. All lean-direct EXIT 0 (B/C sorry-free; A one §3b conjectural sorry). G1 unchanged. `docs/workplans/2026-06-25-keystone-geometric-wlambda-tranche.md`. |
+| 2026-06-26 | #2819 / #2825 / (f_pn) | **Falsifiable-target gate suite completed (Lean, no fit) + G1-framing correction + sibling coordination.** Extends the #2811 gate work across the program's falsifiable targets. **#2819** (merged, `BringWPlaneMonodromyTower.lean`, sorry-free): the depth-2 SL₂ **power-trace tower** of the Bring monodromy matrix — `unimodular_pow_recurrence` (`M^{n+2}=(tr M)·M^{n+1}−Mⁿ`) + `powTrace_recurrence` (`t_n:=tr(Mⁿ)` obeys the Chebyshev depth-2 *linear* recurrence). The Lean grounding of *why* the depth-2 SL₂ is only the `n≤4` effective fit (linear ⇒ exponential, vs the super-exponential global `a_D=lw`); scope-(a), complements the merged sibling #2800 (`BindingHyperbolicRecurrence`) + #2822 (z2bn: `a_D` = q-involution number). **#2825** (merged, `KeystoneG2LadderGate.lean`, sorry-free): the **full C/D/E heat-kernel ladder gate** — `PassesLadderGate` (match `n144C`/`n1036800D`/`n21946982400E` at every order), `ladderGate_subsumes_G2`, `ladderGate_forces_vanishing` (the `n(n−1)` factor at every order), `ladder_clearing_factors` (the `m_k·144^k` law). **(f_pn)** `KeystoneFpnBracket.lean` (sorry-free): **target-3**, the deuteron `f_pn ∈ (0.39479…, 0.66067…)` bracket gate — `PassesFpnBracket` + `ame_strictly_bracketed` (the AME-exact `0.58776` strictly inside) + non-degeneracy. Archimedean (bounds q₀-derived from the algebraic `W_(2,1)` — lower = LP-dual `a_K/R` ratio, witness `a-K-via-lp-dual`; cited, **not** Lean-derived). So the program's falsifiable targets are now Lean gates: **(1)** defect cubic + ladder (#2811/#2825), **(3)** `f_pn` bracket (this), **(4)** conjugation `W_λ=W_{λ′}` (#2794); **(2)** `a_D=lw` is the sibling z2bn line (#2800/#2822). **G1-framing correction:** G1 (the S³/2I Beasley–Witten DG build, live in **#2524**) is owner-**authorized** (2026-06-19 narrow reversal), **not** owner-gated — the blocker is research-level DG, not authorization; the gates here are the machine-checkable spec #2524's construction must pass (coordination intent posted on #2524 + #2822). |
+| 2026-06-29 | (coordination + assist; [#3079](https://github.com/litlfred/qou/pull/3079) / [#2986](https://github.com/litlfred/qou/pull/2986)) | **Identity-I tractable path funnels to ONE Mathlib lemma — race de-conflicted (no fit).** Corpus sweep of the SYT hook-length cone: the *entire* general-`n` Frame–Robinson–Thrall HLF (`numSYTenum_eq_dimHLF`, the carried RT input to the falsifiable defect cubic via Identity I) is now isolated — by [#3079](https://github.com/litlfred/qou/pull/3079) (det_vandermonde route, owner-preferred: `det_vandermonde` is cached, `Mathlib.LinearAlgebra.Lagrange` is not) — to the single lemma `SYTVandermonde.cof_mul_vWeight : cof β i · vWeight β i = (vandermonde β).det` (the Vandermonde cofactor product-split). `powSum`, `interp_leadingCoeff`, the (i) hook side, the (B) corner-deletion bijection ([#2986](https://github.com/litlfred/qou/pull/2986), sorry-free), and the whole composition are sorry-free *given* it. **Dedup:** [#2986](https://github.com/litlfred/qou/pull/2986)'s hand-rolled Lagrange `interp_leadingCoeff` is superseded by [#3079](https://github.com/litlfred/qou/pull/3079)'s det version (both reduce to the same Vandermonde fact); advised [#2986](https://github.com/litlfred/qou/pull/2986) keep its (B)+composition+`decide` n≤7 backstops and yield (A) to [#3079](https://github.com/litlfred/qou/pull/3079) (comments on both). **Assist (no duplicate commit):** verified against restored `v4.24.0` oleans (lean-direct EXIT 0) the reindex sub-lemma `(vandermonde β).submatrix i.succAbove (Fin.last k).succAbove = vandermonde (β ∘ i.succAbove)` + `Fin.card_Ioi i = k − i`, and handed [#3079](https://github.com/litlfred/qou/pull/3079) the full API-matched reduction (peel outer at `i` via `Fin.prod_univ_succAbove`; per-row `Ioi (σ a)` image split; sign close-out `(-1)^{i+k} = (-1)^{k−i}`). **CLOSED + MERGED TO MAIN same session** (`00bd7995`, 2026-06-29 14:57): [#3079](https://github.com/litlfred/qou/pull/3079) landed `cof_mul_vWeight` sorry-free (commit `8d4fd10`) and **merged**, so the keystone Identity-I bottleneck is now **on `main`**; I (a) **independently re-proved the identical statement from scratch sorry-free + axiom-clean** (structurally convergent — same outer peel / per-row split / sign argument), and (b) **independently compiled #3079's `SYTVandermondeKeystone.lean` on a clean restored-olean env** (lean-direct EXIT 0; `cof_mul_vWeight` + `interp_leadingCoeff` `#print axioms` = `[propext, Classical.choice, Quot.sound]`, no `sorryAx`/custom). So the **entire tractable Identity-I path → the falsifiable defect cubic now rests on a verified, axiom-clean lemma** (two independent formalizations agree). Geometric residual (i) unchanged (live in [#3059](https://github.com/litlfred/qou/pull/3059)). No fit, nothing wired. |
+| 2026-07-02 | [#3193](https://github.com/litlfred/qou/pull/3193) / [#3220](https://github.com/litlfred/qou/pull/3220) (both merged) | **Abstract (unlabelled) form of `PlancherelSnData` (i)+(ii) PROVED sorry-free (Lean, no fit).** `IdentityBWedderburn.identityB_via_wedderburn_unconditional`: for `ℂ[Sₙ]` there exist Wedderburn block data `(N,d,ω)` with `∑dᵢ² = n!` **and** `∑dᵢ²·ωᵢ = n!·binom(n,2)` — the generic semisimple trace identity (Artin–Wedderburn `exists_algEquiv_pi_matrix_of_isAlgClosed` + `Matrix.center_eq_range` Schur + a Pi-trace decomposition; **no Sₙ-specific OV data**), evaluated on the regular-rep trace `trace(mulLeft C₂) = n!·binom(n,2)`. The one classical input — **Jucys centrality `C₂ = ∑ₖ Xₖ² ∈ Z(ℂ[Sₙ])` — is machine-checked** (`IdentityBCentrality`: the coefficient of `C₂` is a class function — `binom(n,2)` at `1`, exactly `1` at each 3-cycle via the `k=max(supp σ)` unique-triple count, `0` elsewhere — plus general `MonoidAlgebra` class-function⇒center helpers, reusable). `#print axioms` = `[propext, Classical.choice, Quot.sound]` on the whole chain (#3220 closed the last sorry, the 3-cycle count). **Sharpens the P1–P5 program:** the residual content of the two class axioms is now exactly the **partition labelling** of the abstract blocks (blocks ↔ `λ⊢n`, `d = #SYT`, `ω = Σc²`) — the brick-5 OV cores (`seminormalVector_data_exists`, `exists_indep_seminormal_family`) — **not** the trace identity / block / center machinery, which is done. Cross-refs wired into `IdentityIPlancherelConditional.lean` docstrings; scope doc updated. No fit, nothing physical wired. |
+
+## Key artifacts
+
+- Audit docs: `docs/audits/2026-06-16-s5so3-*.md` (branching-backbone-verified, ingredient4-fibre-schur-weyl-constraint,
+  two-sasakian-construction-attempt, reeb-resonance-probe-negative, hopf-coupling-and-reeb-obstruction,
+  markov-weighting-sasakian-scope) + the corrected `2026-06-13-gap-a4-operator-valued-muon-branching.md`.
+- Verifiers (all exit 0): `docs/audits/scripts/s5so3_*.py` (branching backbone, ingredient 4/5 markov shift,
+  fibre Schur–Weyl, coupling Schur, Reeb resonance, Hopf coupling obstruction, markov weighting facts).
+- Lean scaffold: `content/quantum-observable-universe/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean` (open `irrepToRotation` on the corrected A₅-irrep domain — de-vacuified in #2480; was the falsified `partition_to_rotation`).
+
+## Cross-references
+
+- Synthesis: [`2026-06-16-mtau-and-binding-converge-on-s5so3-keystone.md`](../audits/2026-06-16-mtau-and-binding-converge-on-s5so3-keystone.md)
+- Construction program: [`docs/scope/2026-06-16-icosahedral-reeb-fiber-map-construction.md`](../scope/2026-06-16-icosahedral-reeb-fiber-map-construction.md)
+- Sibling A≥3 compute cluster: #2369 / #2371 / #2372 (produces `W_λ` algebraically)
+
+## qbk2 q-Bessel "quadratic action" binding direction — FORECLOSED (2026-06-20, double-sourced)
+
+Two independent routes agree the q-Bessel 2nd-kind "quadratic action" is **not** the
+binding mechanism:
+
+- **#2521** (session 01Q34jUc): retired via the `2026-06-14` joint-J⊕I combiner (³He
+  +17.4%→+117.9% NO-GO); the legitimate "quadratic action" is the content-Casimir `μ_λ`
+  already wired into `prop:q-heat-kernel-peter-weyl`; the precheck "P1 fail" is a
+  normalizer artifact (`Z(0)=Σd²`, not `[n]_q!`).
+- **#2549** (this session, fresh rigorous arc #2530→#2549): forced `y_λ` Markov weighting
+  collapses the rigorous reduction-of-order correction from `2.23×` (unweighted) to
+  **1–6%** of `B(D)` (~20–80× too small). Refuted by its own forced weighting.
+
+**Convergent negative** (different methods) ⇒ do not re-walk the q-Bessel binding probe.
+**Machinery that stands** (additive, from #2549): the resonance-free reduction-of-order
+2nd-solution construction + sorry-free Lean lemma `QOU/QBeta/QCasoratianAbel.lean`
+(q-Casoratian/Abel law, axioms `[propext, Quot.sound]` only). The C(n) defect closed
+form `−n(n−1)(2n−13)/144` (#2527) is the falsifiable sub-leading target for the
+*geometric* W_λ index continuation (#2503/#2524/#2488). bean `qbk2` carries both notes;
+owner closes.
+
+---
+
+**`a_D=lw` bridge (2026-06-24, #2674).** Merged #2612 lever-1 established the binding
+kernel's SW-period anchors as selection-rule values `a_D^(n)=lw(n−1)`,
+`lw(c)=(1/(c+1))·Σ_{λ⊢c+1} dim_q` (canonical q-hook `dim_q`), confirmed c=1,2,3 +
+the proved depth-2 `det=1` recurrence `R=x²−τx+1`, τ(q₀)=2.6424
+(`binding_selection_rule_tau_closure.py`). The open residual — **SW-period =
+selection-rule value** — IS this ledger's W_λ geometric-origin frontier: the
+Seifert–CS index (#2524) at q₀ on the partition blocks must reproduce the Hecke
+q-hook `lw(c)`. Per #2608, this is a **functional-level** identification (same W_λ
+family), NOT a naive ~8%-off number-match. Shared validation target: the
+`144·C(n)=−n(n−1)(2n−13)` defect. Coordinated on #2488. c=2 status: `lw(2)=(q+1)²/(3q)`
+is derivation-tight but **untested** (no independent c=2 observable; Hopf-diquark the
+candidate) — `docs/audits/2026-06-24-lw2-c2-prediction-untested-status.md`.
+
+**Geometric `W` constraint — `H^{1,0}(Bring)` is A₅-irreducible (2026-06-24, #2701).**
+Working the `a_D=lw` bridge above, the relevant Bring fact is now computed exactly in
+Sage (character theory, no numerics): Bring is the canonical genus-4 curve in
+`P³ = P(`std 4-dim S₅ rep`)`, so `H^{1,0}(Bring)` **is** the standard rep — verified
+irreducible over S₅ (`⟨χ,χ⟩=1`) and **A₅-irreducible** (`χ|_{A₅}=[4,0,1,−1,−1]`,
+`⟨·,·⟩=1`). Two consequences for the geometric `W_λ`/`W` build:
+1. **No A₅-invariant rank-2 subspace of the holomorphic differentials** ⇒ the
+   cheat-sheet `H¹(Bring)=2W` cannot be an A₅-subrep of the forms; `W` must be an
+   **isogeny/CM factor of `Jac(Bring)`** (Riera–Rodríguez decomposition), realized at
+   the de Rham / abelian-variety level.
+2. **`tr B` (= τ(q₀)=2.6424, the `a_D=lw` recurrence trace) is a q-_family_
+   Gauss–Manin _monodromy_ trace**, not a fixed-curve period — so the Seifert–CS index
+   at q₀ must come from the q-family matrix `M` (this keystone), confirming the
+   "functional-level, not naive number-match" framing. The torus shortcut is separately
+   refuted: `τ_torus = 2cosh2η₀ = 2.0437 ≠ 2.6424`. Probe/audit only, no fit:
+   [`computations/substrate/lever1_bring_period_trB.sage`](../../computations/substrate/lever1_bring_period_trB.sage),
+   audit `docs/audits/2026-06-24-lever1-trB-geometric-target.md`. Coordinated on #2608/#2488.
+
+**The rank-2 `W` is the elliptic curve `Bring/S₄`; `Jac(Bring) ~ E⁴` (2026-06-24, #2710).**
+Exact extension of the A₅-irreducibility above (character theory, `genus(Bring/H) =
+dim std^H`, no fit): `Bring/S₄` is an **elliptic curve** `E` (8 subgroup classes give
+genus-1 quotients). Since `H^{1,0}(Bring) = std` is irreducible, `Jac(Bring)` is
+isotypic ⟹ a power of one simple factor; the elliptic quotient pins it: **`Jac(Bring)
+~ E⁴`** (Riera–Rodríguez). So the framework's **rank-2 "W-plane" is literally
+`E = Bring/S₄`** (period = scale + modulus, 2 real DOF), and `H¹(Bring) = H¹(E)⊗std =
+2·std`. **Keystone reduction:** the q-family Gauss–Manin monodromy `M` drops from
+genus-4 (`Sp(8)`) to a **2×2 `SL₂` monodromy on a q-family `E(q)`**, with the lever-1
+target `tr B = 2.6424` literally `tr M` — and the lever-1 depth-2 `det=1` kernel
+`R = x²−τx+1` *is* the `SL₂` characteristic polynomial. **Open keystone, now genus-1:**
+identify `E(q)` (the q-deformation of `Bring/S₄`; candidate = the elliptic fibre of the
+`S³/2I` Seifert build #2524) and test `tr M(q₀) = 2.6424`. `E ≠` substrate torus
+(`τ_torus = 2.0437 ≠ 2.6424`). Probe/audit only, no fit:
+[`computations/substrate/bring_jacobian_isogeny_factors.sage`](../../computations/substrate/bring_jacobian_isogeny_factors.sage),
+audit `docs/audits/2026-06-24-keystone-bring-jacobian-E4-elliptic-W-plane.md`. Coordinated on #2524/#2608.
+---
+
+**Residual (ii) DISCHARGED — `Reeb = Res^{S₅}_{S₃}` Lean formalization (2026-06-24, [#2704](https://github.com/litlfred/qou/pull/2704), merged `83edee35`).**
+[#2524](https://github.com/litlfred/qou/pull/2524)'s honest scope left residual (ii) — the Lean
+formalization of the *"Reeb = Res^{S₅}_{S₃}"* identity at the keystone-scaffold level — open. It now
+lands sorry-free + axiom-free in
+[`S5SO3FiberAction.lean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean):
+
+- **The identity.** The Seifert fibration `S³/2I → S²(2,3,5)` has Reeb = the Seifert `S¹` fibre;
+  localization restricts along it, algebraic shadow `Res^{S₅}_{S₃}`. The geometric Reeb symmetry
+  (conjugate partitions share a fibre, `conjugate_same_a5_irrep`) matches the exact algebraic symmetry
+  **restriction commutes with conjugation**: `V_{λ'}=V_λ⊗sgn_{S₅}`, `sgn_{S₅}|_{S₃}=sgn_{S₃}`, so
+  `Res(λ')=s3SignTwist(Res(λ))` — swapping `S₃` triv↔sign, **fixing the standard `(2,1)`** (the
+  Borromean `h⁴`-carrier).
+- **Decls.** `def s3SignTwist`; `restriction_intertwines_conjugation` (∀λ⊢5);
+  `std_irrep_conjugation_fixed`; capstone `reeb_eq_restriction_scaffold [BringFiberAction]`. All three
+  theorems `#print axioms` = *does not depend on any axioms*.
+- **Scope (honest — this is NOT a keystone closure).** Discharges residual (ii) ONLY: the *algebraic*
+  restriction-commutes-with-conjugation identity. The capstone's conjunct (i) still **uses** the
+  `BringFiberAction` class (the geometric fibre map stays open). **Residual (i) — MTC-matching: pin the
+  Beasley–Witten gauge datum on `S³/2I` to the Hecke `Rep U_q(sl_N)` blocks so the localization
+  `W_λ = d_q²/D²` is provably OUR Hecke category's Plancherel measure, not "some MTC's" — stays
+  owner-gated**, and IS the live `W_λ` geometric-origin frontier in the banners above. **210 ppb stays
+  refuted** (the keystone delivers the O(1) generation skeleton, not the 2×10⁻⁷ fine shift). No fit, no
+  production wiring, no registry tier change. Audit
+  [`docs/audits/2026-06-24-keystone-reeb-restriction-lean-formalization.md`](../audits/2026-06-24-keystone-reeb-restriction-lean-formalization.md).
+---
+
+**Owner reversal extended to the λ_SW side; color E_q Gauss–Manin connection derived (2026-06-25, [#2757](https://github.com/litlfred/qou/pull/2757)).**
+**Reversal.** The narrow 2026-06-19 reversal (W_λ-index DG build) is **extended by explicit owner
+sign-off (2026-06-25)** to the **λ_SW Seiberg–Witten-period side** of the same keystone — the color
+`E_q` elliptic factor. Scope unchanged otherwise: a parameter-free geometric computation, **not** a
+fit-based q₀ derivation; the "no 7th fit-based Δ_λ ansatz" rule still stands.
+**Result (no fit, nothing wired).** First explicit write-down of the family's Picard–Fuchs / Gauss–Manin
+connection `N(q)` for `E_q: y²=x³+p(q)x+r(q)` (Griffiths–Dwork; the object the M-workplan + prior probes
+named but never computed):
+- `N(q) = −1/(2D)·[[A,Bc],[Cc,−A]]`, `D=(4a³+27b²)/6`, validated: **`tr N=0`** (re-derives `det B=1`
+  geometrically) and **`ω=∮dx/y` satisfies the implied 2nd-order PF ODE to `1.2×10⁻⁵`**; `−det N>0`
+  (hyperbolic) on `[1,q₀]`.
+- **(a)-negative:** the abelianised **transport** integral `θ_spec=∫₁^{q₀}√(−det N)dq = 0.0141 ≠
+  θ_binding=0.7815` (undershoots **~55×**, below even `θ_torus=2log q₀=0.2087`) — a *short transport
+  cannot source the large rapidity*. Scope (a): rules out the transport reading, does **not** exclude the
+  curve or the keystone; `N(q)` is a permanent correct contribution.
+- **Keystone REDIRECTED:** all three natural geometric candidates on the color-`E_q`/`λ_SW` side miss —
+  loop monodromy (`SL₂(ℤ)` integer trace; prior), path transport (`θ=0.0141`, ~55× small), and intrinsic
+  Tate period `2π Im τ_E` (`5.847`, 6.5× large + 6× too q-flat; `τ_E` Klein-`j`-validated). So `θ_binding`
+  is **not** a color-`E_q` period at all — its geometric origin is the **`W_λ`-side Plancherel/MTC
+  localization (residual i)**, the #2744 frontier. The color `E_q` is the right *curve* (rank-2 `W`); the
+  rapidity is the rep-theoretic `tr B`, whose geometric face is the `W_λ` index, not an elliptic period.
+Probes `lever1_color_eq_lambda_sw_rapidity.py` + `lever1_color_eq_intrinsic_tau_rapidity.py`; audit
+[`docs/audits/2026-06-25-lever1-color-eq-lambda-sw-rapidity.md`](../audits/2026-06-25-lever1-color-eq-lambda-sw-rapidity.md).
+
+---
+
+## Binding-side test routed in (2026-06-29, #3128)
+
+The Δ_λ binding residual's **isovector** coefficient (`b ≈ −1.747` constant,
+`κ = b/4`, #3114) is the **chiral residue** of the categorical mass
+(`QOU.WedderburnMass.chirality_residue_mass_term`'s `mass_chiral`), homed on the
+Bring surface via the Reeb involution `ξ↦−ξ` (`archimedean-chirality`) and the
+A₅ Galois `√5↦−√5` twist. **The framing-exponent route for `κ` is refuted**
+(audit `2026-06-29-kappa-framing-route-refuted.md`): the canonical `tr_M`
+captures the writhe exactly (`σ⁻¹ = σ−h`), so there is no normalization DOF.
+
+**Routing.** `κ` is the chiral weight of the `W_λ` Plancherel measure
+`μ(λ)=d_q²/D²`, so its value is the content of **the same single open keystone
+conjecture `BWVacuumRowIsHecke`** (#3106). Lean (`BindingIsovectorChiralResidue.lean`,
+sorry-free): the §3b-cond class `WLambdaChiralBinding` carries the identification;
+`binding_isovector_mirror_from_chiral` derives `b = 4κ` from it. Paper:
+`prop:isovector-chiral-residue` (conditional).
+
+**Gift to the keystone program — a binding-side falsification test.** When
+`BWVacuumRowIsHecke` is derived and its chiral weight supplied to the binding
+`mass_chiral` residue, the isovector residual must vanish: **`residual b → 0`**
+(the achiral part already works for light nuclei). A candidate chiral derivation
+that leaves `b ≈ −1.7` is wrong. **No fit; CAL-1/2/3 only; the test is `b→0`,
+never `b=−√3` (that reproduces the error). Not wired.**
+
+## λ-colored Σ(2,3,5) → E₈-exponent family, 4↔4 to bwS0 (2026-06-30)
+
+The residual frontier's "λ-colored insertions" step (bare probe pinpointed it; only
+the closed-manifold number `Ψ(1/q₀)=2.3296` existed) is **taken**. Coloring the
+order-5 icosahedral/A₅ fibre of Σ(2,3,5) by SU(2) colour α shifts the Lawrence–Zagier
+false-theta support `30(1±1/2±1/3±1/5)→30(1±1/2±1/3±α/5)`: α=1 reproduces the bare
+`{1,11,19,29}`; α=2 gives the complementary E₈ exponents `{7,13,17,23}`; together the
+two lowest colours generate **all 8 E₈ exponents** (P=30=h(E₈)). The 8 exponents pair
+under the Coxeter involution `e↔30−e` into 4 dual pairs, matching the 4 conjugation
+classes of `bwS0` at n=5 **monotone in magnitude** (wall `{1,29}`↔(5)/(1⁵) smallest;
+center `{13,17}`↔self-conj (3,1,1) largest). The Coxeter ℤ₂ mirrors the transpose/
+chirality ℤ₂ `λ↔λ′` of `S_{0λ}=S_{0λ′}` — supplying the very `W_λ=W_{λ′}` symmetry the
+bosonic-colour foreclosure showed `m_d` violates. (a) structural advance, no fit; the
+exact pair→class normalization (the `D` realizing `bwS0=d_q/D`) is the remaining value
+step, now on an explicit colored family. Audit:
+[`docs/audits/2026-06-30-keystone-colored-sigma235-e8-family.md`](../audits/2026-06-30-keystone-colored-sigma235-e8-family.md);
+probe `computations/probes/keystone_colored_sigma235_wrt.py`.
+
+## Value step SETTLED at the false-theta level — D=2, golden row; bwS0 identification refuted (2026-07-02)
+
+The owner uploaded the primary sources (commit `ece271823`: Hikami math-ph/0405028,
+Andersen–Mistegård 1811.05376, Murakami 2205.01282, Lawrence–Zagier 1999). The genuine
+per-block amplitude of Σ(2,3,5) is now transcribed and **machine-validated end-to-end**
+(Theorem 10 exact to 1e−38 at N=3..11; S²=1; Cor 12 weights reproduced): the
+vector-valued modular family has **D(2,3,5)=2** components — every colouring of the
+order-5 fibre lands in span{(1,1,1),(1,1,2)} (α=4≡α=1, α=3≡α=2) — and the vacuum row is
+`(2/√5)(sin π/5, sin 2π/5)`, **ratio = φ** (golden; √Reidemeister-torsion magnitudes,
+CS = −1/120, −49/120). The n=5 target `bwS0 = d_q/D` has 4 classes, ratios
+(1, 4.11, 5.22, 6.22): **type (2≠4) + value (φ∉targets) mismatch ⇒ the identification
+"bwS0 = vacuum row of the Σ(2,3,5) false-theta S-matrix" is REFUTED** (scope (a): this
+geometric object). The 2026-06-30 "4↔4" correspondence survives at SUPPORT level only.
+Hikami's χ^{(111)}/χ^{(112)} equal the 2026-07-02 sympy-derived colored characters
+exactly (eq. 5.6 = the derived identity) — the two independent validations agree.
+Consequence: the geometric route cannot close on S³/2I itself; redirects = larger-D
+Seifert data / colored Ẑ-blocks (Murakami now in uploads/) / non-geometric
+`BWVacuumRowIsHecke`. Audit:
+[`docs/audits/2026-07-02-keystone-valuemap-genuine-smatrix.md`](../audits/2026-07-02-keystone-valuemap-genuine-smatrix.md);
+probe `computations/probes/keystone_valuemap_genuine_smatrix_s013.py`; also the round-2
+prune set [`2026-07-02-keystone-valuemap-qbessel-gate.md`](../audits/2026-07-02-keystone-valuemap-qbessel-gate.md)
+(residue weights are pure signs; channel amplitudes are the L-value family; single-argument
+q-Bessel rows fail the 1-dof gate).
+
+## T1 DONE — conjecture classes de-abstracted, factor-2 anchor fixed (2026-07-04, bean 5e79)
+
+Tier-1 of the keystone de-abstraction epic (bean `08a2`) is complete on
+`claude/cheat-sheet-derivation-gaps-if9d38`. `BringTrilogDepth3Witness` is no
+longer the `residual : ℝ + residual_eq_zero` placeholder (§3b-tax
+`proof-claims-unencoded`): the class now carries the four archimedean
+components Cl₃/S₃ at 2π/5, 4π/5, the **K=5 distribution relation (real part)**
+tied to the PROVED `Cl3Zeta5OrbitSum.orbit_sum_identity`, and witness-pinned
+sign non-degeneracies; derived sorry-free `pair_sum_eq` and `cl3_4pi5_neg`.
+`Cl3Zeta5GeometricRealization` is now a **dependent conjecture**
+(`[W : BringTrilogDepth3Witness]` binder — the derived `conjecture_graph`
+edge) whose candidate invariants must realise the witnessed values;
+derived sorry-free `realize_pair_sum`, `cl3Zeta5_pos`.
+
+**Factor-2 bug fixed in passing:** the old `realize_orbit_sum` anchored the
+Clausen PAIR Cl₃(2π/5)+Cl₃(4π/5) to the full 4-term orbit sum −(24/25)ζ(3);
+each value appears twice in the k=1..4 orbit (Cl₃ even, 2π-periodic), so the
+pair sum is **−(12/25)ζ(3)** ≈ −0.577 (the old anchor would force
+Cl₃(4π/5) ≈ −1.34, outside Clausen range |·| ≤ ζ(3)). Both modules wired into
+the `QOU.BraidKnot` aggregator; lean-direct EXIT 0 (only the intended §3b
+open-conjecture `sorry` instances remain).
+
+## Redirect (i) CLOSED — larger-D Seifert (Σ(3,4,5)) refuted; compact-modular route exhausted (2026-07-04)
+
+The 2026-07-02 Σ(2,3,5) refutation listed three redirects; **(i) larger-D
+Seifert** is now closed. Σ(3,4,5) — smallest pairwise-coprime Brieskorn sphere
+with D=6, γ=4 flat connections (= the 4 bwS0 classes) — was tested by extending
+the validated Hikami eq.3.1/3.8 machinery (S²=I to 4.4e-50, unit-row anchors
+pass). Its D=6 vacuum row ratios are (1,1,√2,φ,φ,2.288), bounded by ~2.29 and
+structurally unable to reach the target's 6.22; best 4-subset 69% off. Scope (a).
+
+**Structural softener (not a hard exclusion):** the modular S-matrix is
+rational-angle sines, **q₀-independent**, while bwS0=d_q/D moves with q₀
+(∂/∂q₀ = 0,1.91,3.85,3.85). No compact Seifert modular row can *track* the
+q₀-dependent target — confirming the redirect to the **non-compact q-Bessel**
+(q₀-dependent) vacuum row as the sole viable geometric object. Redirects (ii)
+Ẑ/GPPV colored blocks (Murakami 2205.01282) and (iii) non-geometric
+`BWVacuumRowIsHecke` stand. Audit:
+[`docs/audits/2026-07-04-keystone-sigma345-largerD-seifert-refuted.md`](../audits/2026-07-04-keystone-sigma345-largerD-seifert-refuted.md);
+probe `computations/probes/keystone_valuemap_sigma345_dm6.py` (PR #3290).
+
+## Value map GROUNDED: target is compact Hecke quantum-dimension data; redirect (ii)-via-Murakami closed (2026-07-04)
+
+Two machine-verified facts consolidate the whole refutation series. **(1)** bwS0=d_q/D
+at n=5 is *exactly* the compact SU_q(2)/Hecke quantum-dimension vector — 3 balanced
+q-integers [1],[4],[5] (Laurent polynomials in q₀) + the product [4][3]/[2] = the
+Verlinde ratio S₀λ/S₀₀. **(2)** The owner-uploaded Murakami GPPV paper
+(`uploads/2205.01282v2.pdf`) has **0** colored/decorated/wilson/refined terms — its
+Σ(2,3,5) homological block is the undecorated D=2 golden false theta (already refuted).
+
+**Type argument (why every geometric route failed):** the target is compact-algebraic
+(Laurent poly); compact modular S-matrices are q₀-independent rational sines (redirect i);
+the non-compact q-Bessel J_ν(x;q) is a transcendental ₁φ₁ series — its single-argument
+(falsifiable) form is refuted (qbessel-gate §4) and the multi-argument form is an
+unfalsifiable ≥4-dof fit without the un-uploaded Koelink–Swarttouw Plancherel kernel.
+
+**Honest resolution:** the value map *is* the compact Verlinde/Hecke identity
+S₀λ/S₀₀=d_q (redirect iii, BWVacuumRowIsHecke) — near-definitional. It closes the
+value-map *question* but does NOT supply the manifold-side geometric derivation the
+Subgoal-2 reversal targeted: the manifold WRT category (D=2 golden) is a *different*
+category from the n=5 Hecke category (4-class), so the identity holds tautologically on
+the Hecke side and adds no q₀/D constraint. The geometric route is stalled at the
+compact-vs-geometric **type mismatch**. Owner fork: (a) upload Koelink–Swarttouw to test
+the last disciplined q-Bessel form, (b) accept redirect (iii), or (c) pivot. Audit:
+[`docs/audits/2026-07-04-keystone-valuemap-target-is-compact-hecke.md`](../audits/2026-07-04-keystone-valuemap-target-is-compact-hecke.md);
+probe `computations/probes/keystone_valuemap_target_is_compact_hecke.py`.
+
+## q-Bessel Tricomi sub-route refuted WITH a source (2026-07-04, bean s013)
+
+Owner uploaded `uploads/014-026.pdf` (Raza–Fadel–Cesarano 2025, 2-variable
+q-Legendre) in response to the redirect-(ii) source ask. It is a q-Bessel paper
+but **not** the Koelink–Swarttouw Plancherel source — it cites Koornwinder–
+Swarttouw [22] but contains no q-Hankel kernel / E_q(2) measure (scan: 0
+`plancherel`/`E_q(2)`/`measure`/`vacuum`). What it gives is the entire, 0-dof
+0th-order q-Bessel Tricomi `C_{0,q}(x) = Σ (-1)^k x^k/([k]_q!)²` (eq. 11). Its
+positive zeros / q-integer-node values are fixed by q alone, so a falsifiable
+check is constructible. Result (`keystone_qbessel_tricomi_c0q_nodes.py`): **no
+parameter-free quantity** (zeros ξ_j, √ξ_j, ξ_j/ξ_1, gaps, C_{0,q} at [n]_q)
+reproduces the compact target {1,[4]_q,[5]_q,[4][3]/[2]} within 1% (nearest
+ξ₂/ξ₁=5.35 vs [5]_q=5.22, 2.4%; √ξ₄=6.30 vs 6.22, 1.3%); 4-vector no-match.
+**Scope-(a) refutation, now sourced** — closes the q-Bessel-Tricomi sub-route
+with a citation but does NOT exclude a Plancherel-fixed E_q(2) row (still needs
+Koornwinder–Swarttouw 1992, TAMS 333, ref [22] — cited by the upload, not
+contained). Audit:
+[`docs/audits/2026-07-04-keystone-qbessel-tricomi-c0q-sourced-refutation.md`](../audits/2026-07-04-keystone-qbessel-tricomi-c0q-sourced-refutation.md).
+
+## LAST disciplined q-Bessel form REFUTED — E_q(2) q-Hankel vacuum row, fully sourced (2026-07-04, bean s013)
+
+Owner uploaded the decisive source: Koornwinder–Swarttouw 1992 (arXiv:1208.2521 =
+TAMS 333), `uploads/1208.2521v1.pdf` — the third (Hahn–Exton) q-Bessel eq.(1.2)
++ Hansen–Lommel orthogonality (roots μ_j of C_α(q;μ)=0 = the Plancherel nodes).
+This is the one form #3292 named as still-testable. Probe
+`keystone_qhankel_eq2_vacuum_row.py` (α∈{0,½,1,2}, 112-candidate parameter-free
+menu): **no coherent (α,form) pair reproduces the ORDERED d_q vector
+{1,[4],[5],[4][3]/[2]} within 1%**; the 4 scattered single-index 1% grazes
+(different α/j/form, none co-locating in one ordered vector) are large-menu
+coincidences (PSLQ/entropy caution), recorded as the sharpener. **Scope-(a),
+sourced, decisive** for redirect (ii): all four realisation routes now refuted
+with sources (Σ(2,3,5) golden D=2; Σ(3,4,5) D=6; colored LR pure-sign; q-Bessel
+Tricomi + Hahn–Exton). Does NOT structurally exclude (scope a) a different node
+convention. **Standing value-step answer = redirect (iii), the NON-geometric
+"why":** S_0λ/S_00 = d_q (Verlinde vacuum row) selected by Markov-trace
+uniqueness / Wenzl bridge / Perron–Frobenius (state positivity = confinement
+SDP) — already in the corpus (`y-lambda-closed-form-wenzl-bridge.md`,
+`wenzl-bridge-applicability-qou.lean`, `intro-markov-axioms-braid-link.md`); a
+categorical "why" that needs no geometry, so the geometric program's exhaustion
+leaves nothing unexplained. Audit:
+[`docs/audits/2026-07-04-keystone-qhankel-eq2-vacuum-row-sourced-refutation.md`](../audits/2026-07-04-keystone-qhankel-eq2-vacuum-row-sourced-refutation.md).
+
+## REFRAME — self-duality narrows the eigenfunction class; node screens retired (2026-07-05, bean s013)
+
+Owner redirect: stop screening off-the-shelf q-Bessel families against `d_q`;
+instead use the framework's own structure to narrow the orthogonal-eigenfunction
+class. Two inputs settled first:
+
+- **1208.2521 vs Step-9b: NO** (wrong gap). 9b's open legs (per-λ FR weight, κ,
+  IMME Δ³=0) are compact algebraic Hecke/Markov objects; the q-Hankel transform
+  is a non-compact E_q(2) Plancherel kernel — no mechanism. 1208.2521 is keystone
+  redirect-(ii), not 9b.
+- **math/9805023 (big q-Bessel / q-Laguerre, Ciccoli–Koelink–Koornwinder)** —
+  identified from owner upload `9805023v1.pdf` (commit `8e311cb`). Its discrete
+  orthogonality is supported on `{c·q^k : k∈ℤ}` for ANY `c>0` (§4): the scale `c`
+  is a FREE parameter ⇒ a node screen is a fit, not 0-dof. **Not run** (would
+  violate the discipline). This is diagnostic that the node-screen frame is wrong.
+
+**The (A)+(B)+(C) narrowing** (replaces node screens): (A) Frobenius pairing
+supplies the orthogonal system (`χ_λ`, quantum-dimension measure); (B) Verlinde/PF
+pins `d_q` as the unique PF-positive fusion ground state (Wenzl); (C) self-duality
+`S=Sᵀ`, `S²=C`. The (C) leg is now **Lean-formalized sorry-free**
+([`KeystoneSelfDualSpectralNarrowing.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneSelfDualSpectralNarrowing.lean)):
+`S⁴=1` (self-reciprocality = the categorical avatar of the self-reciprocal
+q-Hankel transform), eigenvalues are 4th roots of unity — `ζ⁴=1` over a field on a
+nonzero eigenvector (`ζ⁴•v=v` over any CommRing) — the class narrowing, and the
+vacuum row is C-fixed (self-dual sector, where the PF-positive `+1` state is `d_q`).
+**Narrowing, not closure** — the value step already has redirect (iii); leg (C) is
+the constraint any geometric realisation must meet, and the structural reason a
+free-scale q-Bessel family cannot be it. PR #3358; audit
+[`docs/audits/2026-07-05-keystone-selfduality-spectral-narrowing.md`](../audits/2026-07-05-keystone-selfduality-spectral-narrowing.md).
+
+## Value-step reframe FORMALIZED across three legs (2026-07-05, bean s013)
+
+The self-duality reframe (owner redirect, 2026-07-05) is formalized as three
+sorry-free Lean legs — legs (B) and (C) **merged** (#3380, #3362); leg (A)
+pre-existing — plus a capstone introduced by **this PR** (#3391, not yet on
+`main` at time of writing):
+
+- **(C) Self-duality** — `KeystoneSelfDualSpectralNarrowing.lean` (**PR #3362**,
+  merged): `S²=C ⇒ S⁴=1` (self-reciprocality), eigenvalues 4th-roots-of-unity
+  (`ζ⁴=1` over a field on a nonzero eigenvector), sector tightening `ζ²=1` on the
+  `C=+1` self-dual sector, vacuum row `C`-fixed.
+- **(B) PF selection** — `KeystonePerronFrobeniusGroundState.lean` (**PR #3380**,
+  merged): §3b-cond `Prop`-class over explicit `(N, rho, d)` carrying the cited
+  PF/Ocneanu–Wenzl up-to-scale uniqueness (`pf_proportional`); derived
+  `eq_d_of_normalized` pins a normalised positive ground eigenvector uniquely to
+  `d_q`.
+- **(A) Frobenius** — the quantum-dimension measure `d²/D²`
+  (`KeystoneVerlindeSMatrixBridge.verlindeMeasure_eq_plancherel`, pre-existing);
+  its self-duality `d(λ′)=d(λ)` is the `C`-fixed hypothesis of the capstone.
+- **Capstone** — `KeystoneValueMapSynthesis.lean` (this PR):
+  `keystone_value_map_pinned` composes (A)+(B)+(C) — a positive, `k`-normalised
+  fusion-ground `S`-eigenvector is **`= d_q` and its `S`-eigenvalue is `±1`**.
+
+**Status: the value-step narrowing is formalized.** Redirect (iii) (the categorical
+"why") remains the standing answer; leg (B) stays conditional on the owner-gated
+physical instance (the fusion category whose PF eigenvector is the Hecke `d_q`).
+Both q-Bessel uploads (1208.2521, math/9805023) are retired as redirect-(ii)
+node-screen material — superseded by this structural narrowing.

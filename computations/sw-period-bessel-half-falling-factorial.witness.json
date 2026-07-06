@@ -1,0 +1,131 @@
+{
+  "engine": "python+sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-26T01:48:16.713313+00:00",
+  "commitSha": "7b25fc605812dc42f9214aa1b5aa6e52a49abf78",
+  "assertions": [
+    {
+      "name": "bessel_half_falling_factorial_bridge_does_not_close",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "max |succ_ratio − 1| = 0.617005 ≫ 0.01 over n=2..10 ⇒ lw ≠ scale·|qfall½| (no rescaling closes the falling-factorial bridge)."
+    },
+    {
+      "name": "qfall_half_outgrows_lw_monotonically",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "lw/|qfall½| successive ratios strictly decreasing ⇒ the single-product falling factorial outgrows the partition-sum lw at every step."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 22,
+  "computation": "sw-period-bessel-half-falling-factorial",
+  "scriptFile": "sw_period_bessel_half_falling_factorial_probe.py",
+  "scriptHash": "24f850437f85",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "auditOnly": "docs/audits/2026-06-26-bessel-half-falling-factorial-bridge-pruned.md",
+  "parameters": {
+    "q_0": "1.1099785955573347198997632204832250266562084087802"
+  },
+  "data": {
+    "bridge_hypothesis": "lw(n−1) =? scale · |∏_{k=0}^{n-1} [1/2−k]_q|  (q-Bessel-½ falling factorial)",
+    "constant_ratio_criterion": "lw = scale·|qfall½|  ⟺  lw/|qfall½| constant  ⟺  all succ_ratio = 1",
+    "table_n2_to_n10": [
+      {
+        "n": 2,
+        "lw": "1.0",
+        "qfall_half": "0.249320795979",
+        "lw_over_qfall": "4.010896869",
+        "succ_ratio": null,
+        "lw_over_cfall": "4.0"
+      },
+      {
+        "n": 3,
+        "lw": "1.33696562304",
+        "qfall_half": "0.374829390904",
+        "lw_over_qfall": "3.566864433",
+        "succ_ratio": "0.889293",
+        "lw_over_cfall": "3.5652417"
+      },
+      {
+        "n": 4,
+        "lw": "2.53277966367",
+        "qfall_half": "0.946019193729",
+        "lw_over_qfall": "2.677302618",
+        "succ_ratio": "0.750604",
+        "lw_over_cfall": "2.7016316"
+      },
+      {
+        "n": 5,
+        "lw": "5.37613776906",
+        "qfall_half": "3.37902201865",
+        "lw_over_qfall": "1.59103366",
+        "succ_ratio": "0.594267",
+        "lw_over_cfall": "1.638442"
+      },
+      {
+        "n": 6,
+        "lw": "13.5598273276",
+        "qfall_half": "15.7419191908",
+        "lw_over_qfall": "0.8613833652",
+        "succ_ratio": "0.541399",
+        "lw_over_cfall": "0.91833751"
+      },
+      {
+        "n": 7,
+        "lw": "37.3678083587",
+        "qfall_half": "91.246052378",
+        "lw_over_qfall": "0.4095279454",
+        "succ_ratio": "0.475431",
+        "lw_over_cfall": "0.46013271"
+      },
+      {
+        "n": 8,
+        "lw": "115.826229059",
+        "qfall_half": "638.465963285",
+        "lw_over_qfall": "0.1814133184",
+        "succ_ratio": "0.442982",
+        "lw_over_cfall": "0.21942143"
+      },
+      {
+        "n": 9,
+        "lw": "388.899168316",
+        "qfall_half": "5282.82912908",
+        "lw_over_qfall": "0.07361570076",
+        "succ_ratio": "0.40579",
+        "lw_over_cfall": "0.098230843"
+      },
+      {
+        "n": 10,
+        "lw": "1436.06591817",
+        "qfall_half": "50934.2922198",
+        "lw_over_qfall": "0.02819448068",
+        "succ_ratio": "0.382995",
+        "lw_over_cfall": "0.04267429"
+      }
+    ],
+    "max_succ_ratio_deviation_from_1": "0.617005",
+    "succ_ratio_monotone_decreasing": true,
+    "scope_a_finding": "Bessel-½ FALLING-FACTORIAL form alone does not reproduce lw (ratio non-constant, monotone-decaying). NOT a structural exclusion of q-Bessel: order ν=1/2 correct, growth class matches.",
+    "structural_reason": "lw(n−1)=(1/n)Σ_{λ⊢n} dim_q is a SUM over p(n) partitions; a Bessel-½ falling factorial is a SINGLE product. Per prop:sw-period-residue-sum (residues = per-block Wedderburn weights, summed), the falling factorial is the PER-BLOCK period; lw is the residue SUM over blocks.",
+    "z2bn_narrowing": "Kernel target R(q,x) generates the PER-BLOCK period (single branch point); lw aggregates over the Wedderburn decomposition. Prunes the 'lw = single falling factorial' shortcut; q-Bessel-per-block stays open."
+  }
+}

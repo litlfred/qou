@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.three_parameters_wedderburn — `#calibration_inputs = #(partitions of 3) = 3`
 

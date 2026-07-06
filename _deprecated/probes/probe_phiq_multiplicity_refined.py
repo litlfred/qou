@@ -24,7 +24,7 @@ from substrate data alone:
        `n_⋆(𝔥) = floor(k_Hecke(𝔥) / m_max(𝔥))`
        (alternative simple shift).
 
-  (R3) **Type-B-folded-crystal depth** (CLAUDE.md §7b)
+  (R3) **Type-B-folded-crystal depth** (AGENTS.md §7b)
        `n_⋆(𝔥) = depth_of_dominant_self_dual_partition(𝔥)`
        where `λ_⋆(𝔥) = argmax_{λ = λ^T} |y_λ(q_0) · χ^λ_q(β_𝔥)|`
        and `depth(λ) = #{cells of λ above the main diagonal}`.

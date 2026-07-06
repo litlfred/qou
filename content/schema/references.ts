@@ -138,6 +138,53 @@ export const references: CSLData[] = [
     URL: "https://doi.org/10.4310/JDG/1090425531",
   }),
 
+  // ── Nguyen–Tran 2021 — strong AJ conjecture proved for the figure-eight ──
+  ref({
+    id: "nguyen-tran-2021",
+    type: "article-journal",
+    title: "The Strong AJ Conjecture for the Figure 8 Knot",
+    author: [
+      { family: "Nguyen", given: "Hoang-An" },
+      { family: "Tran", given: "Anh T." },
+    ],
+    "container-title": "Acta Mathematica Vietnamica",
+    issued: { "date-parts": [[2021]] },
+    volume: "46",
+    DOI: "10.1007/s40306-020-00401-2",
+    URL: "https://doi.org/10.1007/s40306-020-00401-2",
+    note: "Proves the strong AJ conjecture (Sikora) — the recurrence ideal equals the A-ideal — for the figure-eight knot $4_1$. In QOU $4_1$ is the Higgs (the simplest hyperbolic knot); this is the literature anchor that the AJ operator $\\hat A_{4_1}$ is explicit and the colored-Jones $q$-difference recurrence is known, underwriting the AJ-saddle identification ($\\Phi_q$ at root-of-unity vs $\\mathrm{Li}_2^q$ at real $q$) in phi-q-aj-machinery-identification.md. arXiv:2006.02042.",
+  }),
+
+  // ── Koelink–Stokman 2003 — Askey-Wilson functions & quantum groups ──
+  ref({
+    id: "koelink-stokman-2003",
+    type: "article",
+    title: "Askey-Wilson functions and quantum groups",
+    author: [
+      { family: "Koelink", given: "Erik" },
+      { family: "Stokman", given: "Jasper V." },
+    ],
+    issued: { "date-parts": [[2003]] },
+    URL: "https://arxiv.org/abs/math/0301330",
+    note: "The non-compact ($|q|=1$ / modular-double) face of the $q$-Askey scheme: Askey-Wilson functions as matrix coefficients of the modular double of $U_q(\\mathfrak{sl}_2)$, with the Faddeev quantum dilogarithm / Ruijsenaars hyperbolic gamma as kernel. In QOU this is the HYPERBOLIC-knot side of the Askey dictionary (torus $\\to$ Rogers $q$-ultraspherical / real-$q$ saddle; hyperbolic $\\to$ non-compact Askey-Wilson / root-of-unity $\\Phi_q$ saddle); the $q \\leftrightarrow \\tilde q$ modular S-transform is the two-saddle structure of one $\\hat A_K$.",
+  }),
+
+  // ── Avrin 2012 — knots-on-a-torus elementary-particle model ──
+  ref({
+    id: "avrin-2012",
+    type: "article-journal",
+    title: "Knots on a Torus: A Model of the Elementary Particles",
+    author: [{ family: "Avrin", given: "Jack S." }],
+    "container-title": "Symmetry",
+    issued: { "date-parts": [[2012]] },
+    volume: "4",
+    issue: "1",
+    page: "39-115",
+    DOI: "10.3390/sym4010039",
+    URL: "https://doi.org/10.3390/sym4010039",
+    note: "Independent prior art for the QOU torus-knot particle skeleton: $(2,n)$ torus knots model fermions and bosons, leptons and hadrons, with spin/isospin/charge/CPT, and — notably — the conjecture that the knot HYPERBOLIC-VOLUME hierarchy controls the physical mass hierarchy (the QOU Higgs$=4_1$ / $\\mathrm{Vol}(4_1)$ mass mechanism). QOU's Hecke / Markov-trace + complex-volume ($\\mathfrak{V}$) + Askey-scheme formalization is the novel content; the torus-knot generational skeleton has precedent here.",
+  }),
+
   // ── Zagier 2010 — Quantum modular forms ───────────────────────
   ref({
     id: "zagier2010",
@@ -151,7 +198,7 @@ export const references: CSLData[] = [
     page: "659-675",
     "collection-title": "Clay Mathematics Proceedings",
     "collection-number": 11,
-    note: "Foundational definition of quantum modular forms — functions on ℚ whose obstruction to modularity under SL₂(ℤ) (esp. x↦−1/x) extends analytically; for knots the Kashaev / colored-Jones asymptotics near roots of unity are quantum-modular. The q↦q̃ modular-partner transformation + the √(2π/ℏ) radial-asymptotic prefactor are the conjectural frame for the QOU Q_β c_k √u/ε bar-involution (the bar-odd a_1 as the odd part under the modular S-transform). See docs/audits/2026-06-13-qbeta-heat-fmap-symbolic-and-literature.md.",
+    note: "Foundational definition of quantum modular forms — functions on ℚ whose obstruction to modularity under SL₂(ℤ) (esp. $x \\mapsto -1/x$) extends analytically; for knots the Kashaev / colored-Jones asymptotics near roots of unity are quantum-modular. The $q \\mapsto \\tilde{q}$ modular-partner transformation + the $\\sqrt{2\\pi/\\hbar}$ radial-asymptotic prefactor are the conjectural frame for the QOU $Q_\\beta$ $c_k$ $\\sqrt{u}/\\varepsilon$ bar-involution (the bar-odd $a_1$ as the odd part under the modular S-transform). See docs/audits/2026-06-13-qbeta-heat-fmap-symbolic-and-literature.md.",
   }),
 
   // ── Vaksman–Korogodsky 1989 — q-Bessel = E_q(2) matrix coefficients ──
@@ -186,7 +233,7 @@ export const references: CSLData[] = [
     page: "483-508",
     DOI: "10.1215/S0012-7094-94-07617-0",
     URL: "https://doi.org/10.1215/S0012-7094-94-07617-0",
-    note: "Theorem: matrix coefficients of E_q(2) are Hahn–Exton q-Bessel functions J_ν^(3)(x;q); the q-Bessel satisfies a second-order q-difference equation and the q-analogue of Bessel's three-term contiguity. Canonical reference for the QOU c_k q-difference kernel = q-Bessel operator identification (#1839/#1880).",
+    note: "Theorem: matrix coefficients of $E_q(2)$ are Hahn–Exton q-Bessel functions $J_\\nu^{(3)}(x;q)$; the q-Bessel satisfies a second-order q-difference equation and the q-analogue of Bessel's three-term contiguity. Canonical reference for the QOU $c_k$ q-difference kernel = q-Bessel operator identification (\\#1839/\\#1880).",
   }),
 
   // ── Koelink–Swarttouw 1994 — q-Bessel zeros, q-Hankel transform ──
@@ -207,6 +254,25 @@ export const references: CSLData[] = [
     DOI: "10.1006/jmaa.1994.1330",
     URL: "https://doi.org/10.1006/jmaa.1994.1330",
     note: "q-Hankel (q-Fourier–Bessel) transform built from the orthogonality of the Hahn–Exton q-Bessel zeros; the q-Lommel three-term recurrence. Reference for the q-Bessel contiguity ⟹ coefficient-recurrence derivation (QBesselContiguityRecurrence.lean).",
+  }),
+
+  // ── Koornwinder–Swarttouw 1992 — q-Fourier / q-Hankel transforms on E_q(2) ──
+  ref({
+    id: "koornwinderswarttouw1992",
+    type: "article-journal",
+    title: "On q-analogues of the Fourier and Hankel transforms",
+    author: [
+      { family: "Koornwinder", given: "T. H." },
+      { family: "Swarttouw", given: "R. F." },
+    ],
+    "container-title": "Transactions of the American Mathematical Society",
+    issued: { "date-parts": [[1992]] },
+    volume: "333",
+    issue: "1",
+    page: "445-461",
+    DOI: "10.1090/S0002-9947-1992-1069750-0",
+    URL: "https://arxiv.org/abs/1208.2521",
+    note: "The self-reciprocal q-Hankel transform on E_q(2); third (Hahn–Exton) q-Bessel eq. (1.2) with Hansen–Lommel orthogonality at the roots of C_α(q;μ)=0. Source for the keystone value-map q-Bessel node screens (KeystoneSelfDualSpectralNarrowing.lean; docs/audits/2026-07-04-keystone-qhankel-eq2-vacuum-row-sourced-refutation.md).",
   }),
 
   // ── Koornwinder 1990 — orthogonal polynomials & quantum groups ──
@@ -1419,15 +1485,15 @@ export const references: CSLData[] = [
   ref({
     id: "leitnerpawloski2004",
     type: "article-journal",
-    title: "On the morphisms of non-commutative formal groups",
+    title: "Unital Gröbner Bases over Arbitrary Commutative Ground Rings",
     author: [
-      { family: "Leitner", given: "Fred" },
-      { family: "Paw\u0142owski", given: "Jan" },
+      { family: "Leitner", given: "Frederick" },
+      { family: "Pawloski", given: "Robert" },
     ],
     "container-title": "arXiv preprint",
     issued: { "date-parts": [[2004]] },
     URL: "https://arxiv.org/abs/math/0409565",
-    note: "arXiv:math/0409565. The Gröbner-bases paper. Distinct from pawlowski-leitner-rep (below) which is the inner-product / SU(2)-intertwiner work that QOU's pawlowski-leitner-inner-product.lean + RepresentationTheory.lean actually cite.",
+    note: "Corrected 2026-06-23 (doth, author-confirmed arXiv id): title was a fabricated 'On the morphisms of non-commutative formal groups' — the actual paper at arXiv:math/0409565v2 is 'Unital Gröbner Bases over Arbitrary Commutative Ground Rings' (verified vs local uploads/0409565v2.pdf + bib-qa-verifications.json; matches the unital-groebner-bases folio paper). Given-name corrected Jan Pawłowski → Robert Pawloski. This is the Gröbner paper; PDF-verified to contain NO inner products / intertwiners — The agent-fabricated separate pawlowski-leitner-rep entry (a 2026-05-19 wrong-work-split) is DEPRECATED per author 2026-06-24: there is ONE Pawloski-Leitner paper (this one), and its inner-product / intertwiner citation sites (pawlowski-leitner-inner-product.lean, RepresentationTheory.lean) were rewired to this key; inline .lean titles corrected. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §B.",
   }),
 
   // ── Pawlowski-Leitner inner product / rep-theory (NEW 2026-05-19)
@@ -1439,13 +1505,13 @@ export const references: CSLData[] = [
   ref({
     id: "pawlowski-leitner-rep",
     type: "manuscript",
-    title: "TODO: verify exact title — Pawlowski-Leitner inner product / SU(2) intertwiner basis",
+    title: "[DEPRECATED agent-mistake duplicate — the single Pawloski–Leitner paper is leitnerpawloski2004 = arXiv:math/0409565; all citation sites rewired there]",
     author: [
-      { family: "Pawłowski", given: "Jan" },
+      { family: "Pawloski", given: "Robert" },
       { family: "Leitner", given: "Fred" },
     ],
     issued: { "date-parts": [[2009]] },
-    note: "TODO: bib metadata to be filled in. Cited in QOU for: (1) the 'PL inner product' construction on intertwiner spaces ⟨φ,ψ⟩_PL = tr_Ad(φ† ∘ ψ); (2) the intertwiner-space dimension formula dim = (2j+1)·n!/((n/2+j+1)!·(n/2-j)!). The exact paper id needs research — possibly Pawłowski's PhD thesis or a separate joint follow-up to LP2004. URL/DOI/container-title intentionally TODO until verified.",
+    note: "DEPRECATED (author 2026-06-24): agent-mistake duplicate. The separate inner-product / SU(2)-intertwiner Pawloski-Leitner work does not exist as a distinct paper -- there is one Pawloski-Leitner paper, arXiv:math/0409565 = leitnerpawloski2004 (Unital Gröbner Bases; local uploads/0409565v2.pdf). This entry was a 2026-05-19 wrong-work-split; all citation sites were rewired to leitnerpawloski2004. Retained as a no-cite stub; physically remove in a follow-up cleanup.",
   }),
 
   // ── Bergman 1978 ──────────────────────────────────────────────
@@ -1732,6 +1798,56 @@ export const references: CSLData[] = [
     publisher: "Wiley",
     "publisher-place": "New York",
     issued: { "date-parts": [[1955]] },
+  }),
+
+  ref({
+    id: "elliott1958",
+    type: "article-journal",
+    title:
+      "Collective motion in the nuclear shell model. I. Classification schemes for states of mixed configurations",
+    author: [{ family: "Elliott", given: "J. P." }],
+    "container-title": "Proceedings of the Royal Society of London A",
+    issued: { "date-parts": [[1958]] },
+    volume: "245",
+    issue: "1240",
+    page: "128-145",
+    DOI: "10.1098/rspa.1958.0072",
+  }),
+
+  ref({
+    id: "minkov1996",
+    type: "article-journal",
+    title:
+      "Nuclear beta- and gamma- collective bands in the SU_q(2) rotator model",
+    author: [
+      { family: "Minkov", given: "N." },
+      { family: "Drenska", given: "S. B." },
+      { family: "Raychev", given: "P. P." },
+      { family: "Roussev", given: "R. P." },
+      { family: "Bonatsos", given: "D." },
+    ],
+    "container-title": "arXiv preprint nucl-th/9605013",
+    issued: { "date-parts": [[1996]] },
+    URL: "https://arxiv.org/abs/nucl-th/9605013",
+  }),
+
+  ref({
+    id: "raychev1998",
+    type: "article-journal",
+    title:
+      "An application of the three-dimensional q-deformed harmonic oscillator to the nuclear shell model",
+    author: [
+      { family: "Raychev", given: "P. P." },
+      { family: "Roussev", given: "R. P." },
+      { family: "Lo Iudice", given: "N." },
+      { family: "Terziev", given: "P. A." },
+    ],
+    "container-title": "Journal of Physics G: Nuclear and Particle Physics",
+    issued: { "date-parts": [[1998]] },
+    volume: "24",
+    issue: "10",
+    page: "1931-1943",
+    URL: "https://arxiv.org/abs/nucl-th/9709034",
   }),
 
   // ── BEC vortex experiments ──────────────────────────────────────
@@ -2031,6 +2147,74 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2016]] },
     DOI: "10.1007/978-3-319-41285-6",
     note: "arXiv:1405.1548. Proposes that QM emerges from a deterministic Planck-scale cellular automaton via information loss; the reversible (Toffoli-based) CA tick is the direct precursor of the QOU Planck step and q-Game of Life construction.",
+  }),
+
+  // ── Amelino-Camelia 2001: doubly special relativity ────────────
+  ref({
+    id: "amelinocamelia2001",
+    type: "article-journal",
+    title: "Testable scenario for relativity with minimum length",
+    author: [{ family: "Amelino-Camelia", given: "Giovanni" }],
+    "container-title": "Physics Letters B",
+    volume: "510",
+    issue: "1-4",
+    page: "255-263",
+    issued: { "date-parts": [[2001]] },
+    DOI: "10.1016/S0370-2693(01)00506-8",
+    note: "arXiv:hep-th/0012238. Founding paper of doubly special relativity (DSR): a second observer-independent (Planckian) scale deforms the photon dispersion relation while preserving a relativity principle, realised through quantum-group (kappa-Poincare) symmetry — the structural parallel to the QOU substrate's q-deformation with derived light speed $c_q$.",
+  }),
+
+  // ── Amelino-Camelia et al. 1998: GRB tests of quantum gravity ──
+  ref({
+    id: "amelinocamelia1998",
+    type: "article-journal",
+    title: "Tests of quantum gravity from observations of gamma-ray bursts",
+    author: [
+      { family: "Amelino-Camelia", given: "Giovanni" },
+      { family: "Ellis", given: "John" },
+      { family: "Mavromatos", given: "Nick E." },
+      { family: "Nanopoulos", given: "Dimitri V." },
+      { family: "Sarkar", given: "Subir" },
+    ],
+    "container-title": "Nature",
+    volume: "393",
+    page: "763-765",
+    issued: { "date-parts": [[1998]] },
+    DOI: "10.1038/31647",
+    note: "arXiv:astro-ph/9712103. Proposes gamma-ray-burst time-of-flight measurements as a probe of Planck-scale-induced, energy-dependent photon dispersion — the observational channel constraining any archimedean residue of the QOU q-deformed dispersion.",
+  }),
+
+  // ── Fermi collaborations 2009: GRB 090510 dispersion bound ─────
+  ref({
+    id: "abdo2009",
+    type: "article-journal",
+    title:
+      "A limit on the variation of the speed of light arising from quantum gravity effects",
+    author: [
+      { family: "Abdo", given: "Aous A." },
+      { family: "Fermi LAT Collaboration" },
+      { family: "Fermi GBM Collaboration" },
+    ],
+    "container-title": "Nature",
+    volume: "462",
+    page: "331-334",
+    issued: { "date-parts": [[2009]] },
+    DOI: "10.1038/nature08574",
+    note: "GRB 090510 time-of-flight bound: linear-in-energy photon dispersion is excluded up to roughly 1.2 times the Planck energy — the sharpest experimental constraint any surviving archimedean q-dispersion must satisfy.",
+  }),
+
+  // ── Amelino-Camelia 2013: quantum-spacetime phenomenology ──────
+  ref({
+    id: "amelinocamelia2013",
+    type: "article-journal",
+    title: "Quantum-Spacetime Phenomenology",
+    author: [{ family: "Amelino-Camelia", given: "Giovanni" }],
+    "container-title": "Living Reviews in Relativity",
+    volume: "16",
+    page: "5",
+    issued: { "date-parts": [[2013]] },
+    DOI: "10.12942/lrr-2013-5",
+    note: "arXiv:0806.0339. Authoritative survey of Planck-scale phenomenology: Lorentz-invariance-violation vs DSR-deformation scenarios, in-vacuo dispersion, and the observational bounds relevant to the QOU dispersive predictions.",
   }),
 
   // ── Cook 1971: NP-completeness ─────────────────────────────────
@@ -3581,6 +3765,22 @@ export const references: CSLData[] = [
     DOI: "10.1007/BF02392716",
   }),
 
+  // ── Champanerkar 2003 — A-polynomial & Bloch invariants (thesis) ─
+  ref({
+    id: "champanerkar2003",
+    type: "thesis",
+    title:
+      "A-polynomial and Bloch invariants of hyperbolic 3-manifolds",
+    author: [
+      { family: "Champanerkar", given: "Abhijit" },
+    ],
+    publisher: "Columbia University",
+    genre: "Ph.D. thesis",
+    issued: { "date-parts": [[2003]] },
+    URL: "https://www.semanticscholar.org/paper/26afbffed31d6b00ffefc92c178ddeceed14bc00",
+    note: "Added 2026-06-28 (bib-cite-resolves): corrects the phantom key 'champanerkar-kofman-mullen2008' cited in phi-q-aj-machinery-identification — no such Champanerkar–Kofman–Mullen 2008 A-polynomial paper exists (the 2008 Champanerkar–Kofman paper is on Khovanov homology). Champanerkar's A-polynomial work is this 2003 Columbia Ph.D. thesis, the verifiable source for classical A-polynomials/Bloch invariants of hyperbolic 3-manifolds. If a specific multi-author paper was intended, redirect this entry.",
+  }),
+
   // ── Kerov 1996 (q-hook walk on Young diagrams) ────────────────
   ref({
     id: "kerov1996",
@@ -4799,12 +4999,13 @@ export const references: CSLData[] = [
   ref({
     id: "chlouveraki2016-hdr",
     type: "thesis",
-    title: "Hecke algebras and their representations (HDR)",
+    title: "Hecke algebras, generalisations and representation theory",
     author: [{ family: "Chlouveraki", given: "Maria" }],
     issued: { "date-parts": [[2016]] },
     genre: "Habilitation à Diriger des Recherches",
     publisher: "Université de Versailles Saint-Quentin",
-    note: "TODO: verify exact title + URL — Chlouveraki's HDR thesis (2016). Cited in QOU for Theorem 6.20 in Hecke-algebra structure context. Find at chlouveraki's institutional page or theses.fr.",
+    URL: "https://theses.hal.science/tel-01411063",
+    note: "Verified 2026-06-23 (doth): HDR thesis, UVSQ, defended 25 Nov 2016; HAL handle tel-01411063 (https://theses.hal.science/tel-01411063). Title corrected from 'Hecke algebras and their representations'. Cited in QOU for Theorem 6.20. HAL theses carry no DOI. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §C.",
   }),
 
   ref({
@@ -4866,24 +5067,32 @@ export const references: CSLData[] = [
   ref({
     id: "kashiwara1990-duke",
     type: "article-journal",
-    title: "Crystal bases and Littelmann's refined Demazure character formula",
+    title: "The crystal base and Littelmann's refined Demazure character formula",
     author: [{ family: "Kashiwara", given: "Masaki" }],
     "container-title": "Duke Mathematical Journal",
-    issued: { "date-parts": [[1990]] },
-    DOI: "10.1215/S0012-7094-90-06120-X",
-    note: "TODO: verify exact title + volume/pages — placeholder per the Duke DOI cited in QOU .lean inline-DOI comments. The Duke 1990 Kashiwara paper is one of his crystal-basis series.",
+    volume: "71",
+    issue: "3",
+    page: "839-858",
+    issued: { "date-parts": [[1993]] },
+    DOI: "10.1215/S0012-7094-93-07131-1",
+    URL: "https://doi.org/10.1215/S0012-7094-93-07131-1",
+    note: "Corrected 2026-06-23 (doth): the prior DOI 10.1215/S0012-7094-90-06120-X was a spurious 1990 Duke vol-61 slot (not Kashiwara); the intended paper is Kashiwara, Duke MJ 71(3) (1993) 839-858, DOI 10.1215/S0012-7094-93-07131-1. Title corrected 'Crystal bases and' → 'The crystal base and'. Id 'kashiwara1990-duke' retained for cross-ref stability despite the corrected 1993 year. Identification at link-title confidence (sandbox 403'd DOI pages); resolve the DOI directly before publication. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §A.",
   }),
 
   // ── Kashiwara 1990 (CMP 2nd) — added 2026-05-19 per split.
   ref({
     id: "kashiwara1990-cmp2",
     type: "article-journal",
-    title: "Crystal bases of modified quantum enveloping algebras",
+    title: "Crystal bases of the modified quantized enveloping algebra",
     author: [{ family: "Kashiwara", given: "Masaki" }],
-    "container-title": "Communications in Mathematical Physics",
-    issued: { "date-parts": [[1990]] },
-    DOI: "10.1007/BF02100009",
-    note: "TODO: verify exact title — placeholder per the CMP DOI cited in QOU .lean inline-DOI comments (distinct from kashiwara1990 which has DOI BF02097367).",
+    "container-title": "Duke Mathematical Journal",
+    volume: "73",
+    issue: "2",
+    page: "383-413",
+    issued: { "date-parts": [[1994]] },
+    DOI: "10.1215/S0012-7094-94-07317-1",
+    URL: "https://doi.org/10.1215/S0012-7094-94-07317-1",
+    note: "Corrected 2026-06-23 (doth): the prior DOI 10.1007/BF02100009 resolves to a WITTEN paper ('On quantum gauge theories in two dimensions', CMP 141, 1991) — wrong on every field. The intended paper is Kashiwara, 'Crystal bases of the modified quantized enveloping algebra', Duke MJ 73(2) (1994) 383-413, DOI 10.1215/S0012-7094-94-07317-1 (Duke, not CMP; 1994, not 1990). Genuinely distinct from kashiwara1990 (CMP 133, BF02097367). Id retained for cross-ref stability. Identification at link-title confidence (sandbox 403'd DOI pages); resolve the DOI directly before publication. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §A.",
   }),
 
   ref({
@@ -4960,16 +5169,16 @@ export const references: CSLData[] = [
   // bib entry. All have verified-clean title-page metadata.
 
   ref({
-    id: "carter-leal-saliola-2000",
+    id: "marsh2000",
     type: "article",
     title: "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A",
     author: [
-      { family: "Carter", given: "R. W." },
+      { family: "Marsh", given: "R. J." },
     ],
     issued: { "date-parts": [[2000]] },
     "container-title": "arXiv preprint",
     URL: "https://arxiv.org/abs/math/0008040",
-    note: "arxiv:math/0008040 — added 2026-05-19 from uploads/ gap audit. TODO: confirm authors (only Carter visible from title page; co-authors likely Leal & Saliola or similar). Potential citation target in QOU crystal-basis / Lusztig-cone content.",
+    note: "Corrected 2026-06-23 (doth): id was 'carter-leal-saliola-2000' with author 'R. W. Carter' — a misidentification. arXiv:math/0008040 is single-author R. J. Marsh (per arXiv author listing; sandbox 403'd the page, so link-title confidence). No Carter/Leal/Saliola. Renamed to marsh2000; do not conflate with the distinct Marsh paper math/0008035. Journal publication (possibly J. Algebra) UNVERIFIED. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §B.",
   }),
 
   ref({
@@ -5143,7 +5352,7 @@ export const references: CSLData[] = [
     author: [{ literal: "QOU project (litlfred/qou)" }],
     issued: { "date-parts": [[2026]] },
     URL: "https://github.com/litlfred/qou/pull/1786",
-    note: "Internal QOU pull request #1786. The bias-corrected value ĉ_k − ĉ_{k+1}·u equals c_alg(k) − c_alg(k+2)·u², recovering the algebraic ladder coefficient modulo an order-u² residual. Cited by q-beta-c-k-leading-bias-correction-identity.lean; empirical core in folio-assistant/computations/qbeta/qbeta_ck_truncation_bias_correction_probe.py.",
+    note: "Internal QOU pull request #1786. The bias-corrected value ĉ_k − ĉ_{k+1}·u equals c_alg(k) − c_alg(k+2)·u², recovering the algebraic ladder coefficient modulo an order-u² residual. Cited by q-beta-c-k-leading-bias-correction-identity.lean; empirical core in computations/qbeta/qbeta_ck_truncation_bias_correction_probe.py.",
   }),
 
   ref({
@@ -5449,7 +5658,7 @@ export const references: CSLData[] = [
     volume: "2",
     page: "101-181",
     issued: { "date-parts": [[1827]] },
-    note: "PLACEHOLDER: Crelle vol 2 (1827) is the canonical first installment; the QOU Lean Ref cites '1826' which may refer to the manuscript submission year. Verify date-of-record + page range before publication.",
+    note: "Verified 2026-06-23 (doth): Crelle vol 2 carries the canonical first installment; pages 101–181. Pre-DOI archival source (1820s Crelle has no DOI). The QOU Lean Ref '1826' is the manuscript-submission year; the journal date-of-record is 1827. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §F.",
   }),
 
   // ── Adams 1985 — already covered by adams1985hyperbolic (re-keyed) ─
@@ -5467,7 +5676,8 @@ export const references: CSLData[] = [
     publisher: "Athena Scientific",
     "publisher-place": "Belmont, MA",
     issued: { "date-parts": [[1997]] },
-    note: "PLACEHOLDER: Bertsimas–Tsitsiklis 1997 is the canonical LP textbook cited in BindingConcentration.lean for concentration / duality. ISBN 1-886529-19-1. Verify whether the QOU citation intends the textbook or a contemporaneous Bertsimas paper.",
+    note: "Verified 2026-06-23 (doth): Introduction to Linear Optimization, Bertsimas & Tsitsiklis, Athena Scientific 1997, ISBN 1-886529-19-1 (978-1-886529-19-9) — confirmed via publisher (athenasc.com) + ISBN registries. Cited in BindingConcentration.lean for LP concentration/duality. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §D.",
+    ISBN: "978-1-886529-19-9",
   }),
 
   // ── Brundan–Kleshchev 2009 — KLR / cyclotomic Hecke ───────────
@@ -5515,7 +5725,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1995]] },
     DOI: "10.1007/BF01872779",
     URL: "https://doi.org/10.1007/BF01872779",
-    note: "PLACEHOLDER: Faddeev 1995 LMP paper introducing the modular quantum dilogarithm. Distinct from faddeev1994 (which is in references.ts) and faddeev_kashaev1994; verify the QOU Lean Ref intends this 1995 paper vs the contemporaneous 1995 Faddeev–Volkov 'Abelian current algebra'.",
+    note: "Verified 2026-06-23 (doth): L. D. Faddeev, 'Discrete Heisenberg–Weyl group and modular group', Lett. Math. Phys. 34, 249 (1995), DOI 10.1007/BF01872779 — confirmed via ADS bibcode 1995LMaPh..34..249F + arXiv hep-th/9504111. (The earlier note's 'modular quantum dilogarithm' description was a wrong title-guess; entry data is correct.) Distinct from faddeev1994 / faddeev_kashaev1994. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §A.",
   }),
 
   // ── Frobenius 1898 — original character-theory paper ──────────
@@ -5528,7 +5738,7 @@ export const references: CSLData[] = [
     "container-title": "Sitzungsberichte der Königlich Preußischen Akademie der Wissenschaften zu Berlin",
     page: "501-515",
     issued: { "date-parts": [[1898]] },
-    note: "PLACEHOLDER: Frobenius's original paper on the character relations now known as Frobenius reciprocity. Cited in DepthStratifiedFrobeniusReciprocity.lean as the foundational source. No DOI for 1898 Sitzungsberichte; venue + page may need archival verification.",
+    note: "Verified 2026-06-23 (doth): Frobenius's original paper on the character relations now called Frobenius reciprocity; Sitzungsberichte Preuß. Akad. (Berlin) 1898, pp. 501–515. Pre-DOI archival source (1898 Sitzungsberichte has no DOI). Cited in DepthStratifiedFrobeniusReciprocity.lean. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §F.",
   }),
 
   // ── Habiro 2000 / 2002 / 2004 — cyclotomic-completion ring ────
@@ -5559,10 +5769,44 @@ export const references: CSLData[] = [
     volume: "348",
     issue: "10",
     page: "3967-3995",
-    issued: { "date-parts": [[1998]] },
+    issued: { "date-parts": [[1996]] },
     DOI: "10.1090/S0002-9947-96-01622-1",
     URL: "https://doi.org/10.1090/S0002-9947-96-01622-1",
-    note: "PLACEHOLDER: Halverson–Ram TAMS paper on Hecke-algebra character formulae. Verify vol/issue/page (the standard reference is 1996; the QOU citation key uses '1998' which may be the journal-issue year).",
+    note: "Verified 2026-06-23 (doth): Halverson & Ram, 'Murnaghan–Nakayama rules…', Trans. Amer. Math. Soc. 348(10), 3967–3995 — year corrected 1998→1996 (the '-96-' DOI segment + Arun Ram's author-site filename 1996TAMSv348n10p3967.pdf both confirm 1996). The id 'halverson_ram_1998' is retained for cross-ref stability despite the corrected year. DOI→page binding not landing-page-confirmed (sandbox 403). See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §C.",
+  }),
+
+  // ── Juyumaya 2004 — Markov trace on the Yokonuma–Hecke algebra ─
+  ref({
+    id: "juyumaya2004",
+    type: "article-journal",
+    title: "Markov trace on the Yokonuma–Hecke algebra",
+    author: [
+      { family: "Juyumaya", given: "Jesús" },
+    ],
+    "container-title": "Journal of Knot Theory and Its Ramifications",
+    volume: "13",
+    issue: "1",
+    page: "25-39",
+    issued: { "date-parts": [[2004]] },
+    DOI: "10.1142/S0218216504003020",
+    URL: "https://doi.org/10.1142/S0218216504003020",
+    note: "Verified 2026-06-28 (bib-cite-resolves): Juyumaya, 'Markov trace on the Yokonuma–Hecke algebra', JKTR 13(1), 25–39. Proves the Yokonuma–Hecke algebra supports a Markov trace. DOI from the World Scientific landing page (web search); not landing-page-confirmed in sandbox.",
+  }),
+
+  // ── Orellana 1999 — weights of Markov traces on Hecke algebras ─
+  ref({
+    id: "orellana1998",
+    type: "article-journal",
+    title: "Weights of Markov traces on Hecke algebras",
+    author: [
+      { family: "Orellana", given: "Rosa C." },
+    ],
+    "container-title": "Journal für die reine und angewandte Mathematik",
+    volume: "508",
+    page: "157-178",
+    issued: { "date-parts": [[1999]] },
+    URL: "https://arxiv.org/abs/math/9806163",
+    note: "Verified 2026-06-28 (bib-cite-resolves): Orellana, 'Weights of Markov traces on Hecke algebras', Crelle's J. 508 (1999), 157–178; arXiv:math/9806163 (1998). Computes Markov-trace weights for Hecke algebras of type B and D. The id 'orellana1998' (arXiv submission year) is retained for cross-ref stability though the journal version is 1999. Journal DOI not captured in sandbox; arXiv URL is authoritative.",
   }),
 
   // ── James 1984 — representation theory of S_n ─────────────────
@@ -5580,7 +5824,7 @@ export const references: CSLData[] = [
     "collection-title": "Encyclopedia of Mathematics and its Applications",
     "collection-number": 16,
     issued: { "date-parts": [[1984]] },
-    note: "PLACEHOLDER: James–Kerber 1984 encyclopedia volume on S_n representation theory. Cited in S5SO3FiberAction.lean / S4S3HalfSymmetricProjection.lean. The QOU citation key is 'james1984representation' suggesting James alone; verify whether James–Kerber (joint) is the intended reference vs James 1978 LNM-682 'Representation Theory of Symmetric Groups'.",
+    note: "Partially verified 2026-06-23 (doth): confirmed authors James & Kerber, 'The Representation Theory of the Symmetric Group', Encyclopedia of Mathematics and its Applications vol. 16 (Cambridge Core review link title). PLACEHOLDER — EDITION/YEAR unresolved: the ORIGINAL is Addison-Wesley 1981; CUP issued a later paperback reprint (current entry shows CUP/1984). Author to confirm which edition the QOU Lean Refs (S5SO3FiberAction.lean / S4S3HalfSymmetricProjection.lean) cite, then fix publisher/year. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §C.",
   }),
 
   // ── Klein 1884 — Vorlesungen über das Ikosaeder ───────────────
@@ -5593,7 +5837,7 @@ export const references: CSLData[] = [
     publisher: "B. G. Teubner",
     "publisher-place": "Leipzig",
     issued: { "date-parts": [[1884]] },
-    note: "PLACEHOLDER: Klein's Vorlesungen — the original treatise on the icosahedral group and the quintic. Cited in S5SO3FiberAction.lean. English translation by G. G. Morrice published as 'Lectures on the Icosahedron' (Dover reprint 1956); verify whether the QOU Lean Ref intends the 1884 German original or the translation.",
+    note: "Verified 2026-06-23 (doth): Klein's Vorlesungen — original treatise on the icosahedral group and the quintic, B. G. Teubner (Leipzig) 1884. Pre-DOI archival source. Cited in S5SO3FiberAction.lean. (An English translation by G. G. Morrice, 'Lectures on the Icosahedron', exists as a Dover reprint; this entry records the 1884 German original.) See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §F.",
   }),
 
   // ── Lusztig 1990 — canonical bases / Hecke algebras ───────────
@@ -5622,7 +5866,7 @@ export const references: CSLData[] = [
     "publisher-place": "Cambridge",
     issued: { "date-parts": [[1995]] },
     ISBN: "978-0-521-46032-7",
-    note: "PLACEHOLDER: Majid's foundational quantum-group textbook. Cited in QuaternionFromHecke.lean. ISBN verified; verify page citations in the QOU Lean Ref against the printed edition.",
+    note: "Verified 2026-06-23 (doth): Majid, Foundations of Quantum Group Theory, CUP 1995, ISBN 0521460328 (978-0-521-46032-7) — confirmed via ISBN registries. Cited in QuaternionFromHecke.lean. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §D.",
   }),
 
   // ── Murasugi 1996 — Knot Theory and Its Applications ──────────
@@ -5635,7 +5879,7 @@ export const references: CSLData[] = [
     "publisher-place": "Boston",
     issued: { "date-parts": [[1996]] },
     ISBN: "978-0-8176-3817-4",
-    note: "PLACEHOLDER: Murasugi's knot-theory textbook (translated by Kurpita from the Japanese original). Cited in BorromeanMarkovTrace.lean. Verify whether the QOU Lean Ref intends the 1996 Birkhäuser edition or a subsequent reprint.",
+    note: "Verified 2026-06-23 (doth): Murasugi, Knot Theory and Its Applications, Birkhäuser (Boston) 1996, ISBN 0817638172 (978-0-8176-3817-4) — confirmed via ISBN registries. Cited in BorromeanMarkovTrace.lean. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §D.",
   }),
 
   // ── Ram 1997 — Hecke-algebra characters / seminormal forms ────
@@ -5666,10 +5910,347 @@ export const references: CSLData[] = [
     volume: "4",
     page: "169-189",
     issued: { "date-parts": [[1907]] },
-    note: "PLACEHOLDER: Rogers's original paper on dilogarithm functional equations (later named the 'Rogers pentagon' / 'Rogers L-function'). Cited in QRogersPentagonArchimedean.lean alongside abel1826. No reliable DOI for 1907 PLMS volumes; verify page range.",
+    note: "Verified 2026-06-23 (doth): Rogers's original paper on dilogarithm functional equations (later the 'Rogers pentagon' / 'Rogers L-function'), Proc. London Math. Soc. (2) 4, 169–189 (1907). Pre-DOI archival source (1907 PLMS volumes have no DOI). Cited in QRogersPentagonArchimedean.lean. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §F.",
   }),
 
   // ── Rolfsen 1976 — already covered by rolfsen (re-keyed) ──────
+
+  // ── Classical antecedents of the involutive (Re/Im, modulus/phase)
+  //    reading of observables — cited from
+  //    mass-endomorphism/mass-modulus-em-phase-color-grading.md
+  //    (zagier2010 already present above) ───────────────────────────
+  ref({
+    id: "frobenius-schur1906",
+    type: "article-journal",
+    title:
+      "Über die reellen Darstellungen der endlichen Gruppen",
+    author: [
+      { family: "Frobenius", given: "G." },
+      { family: "Schur", given: "I." },
+    ],
+    "container-title":
+      "Sitzungsberichte der Königlich Preußischen Akademie der Wissenschaften zu Berlin",
+    page: "186-208",
+    issued: { "date-parts": [[1906]] },
+    note: "Frobenius-Schur indicator: the involution χ ↦ χ(g⁻¹) sorts irreps real/quaternionic/complex. No DOI (1906 Sitzungsberichte).",
+  }),
+  ref({
+    id: "takesaki1970",
+    type: "book",
+    title:
+      "Tomita's Theory of Modular Hilbert Algebras and its Applications",
+    author: [{ family: "Takesaki", given: "M." }],
+    "collection-title": "Lecture Notes in Mathematics",
+    volume: "128",
+    publisher: "Springer-Verlag",
+    "publisher-place": "Berlin, Heidelberg",
+    issued: { "date-parts": [[1970]] },
+    DOI: "10.1007/BFb0065832",
+  }),
+  ref({
+    id: "weil1958",
+    type: "book",
+    title: "Introduction à l'étude des variétés kählériennes",
+    author: [{ family: "Weil", given: "André" }],
+    publisher: "Hermann",
+    "publisher-place": "Paris",
+    issued: { "date-parts": [[1958]] },
+    note: "Source of the Weil operator on a polarised Hodge structure (the complex structure packaging real periods). No DOI (Hermann monograph).",
+  }),
+  ref({
+    id: "gamow1928",
+    type: "article-journal",
+    title: "Zur Quantentheorie des Atomkernes",
+    author: [{ family: "Gamow", given: "G." }],
+    "container-title": "Zeitschrift für Physik",
+    volume: "51",
+    issue: "3-4",
+    page: "204-212",
+    issued: { "date-parts": [[1928]] },
+    DOI: "10.1007/BF01343196",
+  }),
+  ref({
+    id: "breit-wigner1936",
+    type: "article-journal",
+    title: "Capture of Slow Neutrons",
+    author: [
+      { family: "Breit", given: "G." },
+      { family: "Wigner", given: "E." },
+    ],
+    "container-title": "Physical Review",
+    volume: "49",
+    issue: "7",
+    page: "519-531",
+    issued: { "date-parts": [[1936]] },
+    DOI: "10.1103/PhysRev.49.519",
+  }),
+  ref({
+    id: "kronig1926",
+    type: "article-journal",
+    title: "On the theory of dispersion of X-rays",
+    author: [{ family: "Kronig", given: "R. de L." }],
+    "container-title": "Journal of the Optical Society of America",
+    volume: "12",
+    issue: "6",
+    page: "547-557",
+    issued: { "date-parts": [[1926]] },
+    DOI: "10.1364/JOSA.12.000547",
+  }),
+
+  // ── Swampland Program — foundational literature ───────────────
+  // Cited by the "Connections to the Swampland Program" remark
+  // cluster (information-theory / Horizons and Aeons).
+  ref({
+    id: "vafa2005",
+    type: "report",
+    title: "The String Landscape and the Swampland",
+    author: [{ family: "Vafa", given: "Cumrun" }],
+    issued: { "date-parts": [[2005]] },
+    note: "Term-origin paper; e-print only (report no. HUTP-05-A043), no journal DOI.",
+    URL: "https://arxiv.org/abs/hep-th/0509212",
+  }),
+  ref({
+    id: "ooguri-vafa2007",
+    type: "article-journal",
+    title: "On the Geometry of the String Landscape and the Swampland",
+    author: [
+      { family: "Ooguri", given: "Hirosi" },
+      { family: "Vafa", given: "Cumrun" },
+    ],
+    "container-title": "Nuclear Physics B",
+    volume: "766",
+    issue: "1-3",
+    page: "21-33",
+    issued: { "date-parts": [[2007]] },
+    DOI: "10.1016/j.nuclphysb.2006.10.033",
+    URL: "https://doi.org/10.1016/j.nuclphysb.2006.10.033",
+  }),
+  ref({
+    id: "arkani-hamed2007",
+    type: "article-journal",
+    title:
+      "The String Landscape, Black Holes and Gravity as the Weakest Force",
+    author: [
+      { family: "Arkani-Hamed", given: "Nima" },
+      { family: "Motl", given: "Lubos" },
+      { family: "Nicolis", given: "Alberto" },
+      { family: "Vafa", given: "Cumrun" },
+    ],
+    "container-title": "Journal of High Energy Physics",
+    volume: "2007",
+    issue: "06",
+    page: "060",
+    issued: { "date-parts": [[2007]] },
+    DOI: "10.1088/1126-6708/2007/06/060",
+    URL: "https://doi.org/10.1088/1126-6708/2007/06/060",
+  }),
+  ref({
+    id: "banks-seiberg2011",
+    type: "article-journal",
+    title: "Symmetries and Strings in Field Theory and Gravity",
+    author: [
+      { family: "Banks", given: "Tom" },
+      { family: "Seiberg", given: "Nathan" },
+    ],
+    "container-title": "Physical Review D",
+    volume: "83",
+    issue: "8",
+    page: "084019",
+    issued: { "date-parts": [[2011]] },
+    DOI: "10.1103/PhysRevD.83.084019",
+    URL: "https://doi.org/10.1103/PhysRevD.83.084019",
+  }),
+  ref({
+    id: "harlow-ooguri2021",
+    type: "article-journal",
+    title: "Symmetries in Quantum Field Theory and Quantum Gravity",
+    author: [
+      { family: "Harlow", given: "Daniel" },
+      { family: "Ooguri", given: "Hirosi" },
+    ],
+    "container-title": "Communications in Mathematical Physics",
+    volume: "383",
+    issue: "3",
+    page: "1669-1804",
+    issued: { "date-parts": [[2021]] },
+    DOI: "10.1007/s00220-021-04040-y",
+    URL: "https://doi.org/10.1007/s00220-021-04040-y",
+  }),
+  ref({
+    id: "heidenreich2018",
+    type: "article-journal",
+    title:
+      "Emergence of Weak Coupling at Large Distance in Quantum Gravity",
+    author: [
+      { family: "Heidenreich", given: "Ben" },
+      { family: "Reece", given: "Matthew" },
+      { family: "Rudelius", given: "Tom" },
+    ],
+    "container-title": "Physical Review Letters",
+    volume: "121",
+    issue: "5",
+    page: "051601",
+    issued: { "date-parts": [[2018]] },
+    DOI: "10.1103/PhysRevLett.121.051601",
+    URL: "https://doi.org/10.1103/PhysRevLett.121.051601",
+  }),
+  ref({
+    id: "palti2019",
+    type: "article-journal",
+    title: "The Swampland: Introduction and Review",
+    author: [{ family: "Palti", given: "Eran" }],
+    "container-title": "Fortschritte der Physik",
+    volume: "67",
+    issue: "6",
+    page: "1900037",
+    issued: { "date-parts": [[2019]] },
+    DOI: "10.1002/prop.201900037",
+    URL: "https://doi.org/10.1002/prop.201900037",
+  }),
+
+  // ── Askey 1989 (continuous q-Hermite at q > 1 — the odd/non-compact channel) ──
+  ref({
+    id: "askey1989qhermite",
+    type: "chapter",
+    title: "Continuous q-Hermite polynomials when q > 1",
+    author: [{ family: "Askey", given: "Richard" }],
+    "container-title":
+      "q-Series and Partitions (IMA Volumes in Mathematics and Its Applications 18)",
+    publisher: "Springer",
+    page: "151-158",
+    issued: { "date-parts": [[1989]] },
+    note: "The q > 1 continuation of continuous q-Hermite: orthogonality moves off the compact locus; the channel-rotation lit-home together with Ismail-Masson 1994.",
+  }),
+
+  // ── Ismail–Masson 1994 (q⁻¹-Hermite: the x ↦ ix, q ↦ q⁻¹ rotation identity) ──
+  ref({
+    id: "ismail-masson1994",
+    type: "article-journal",
+    title:
+      "q-Hermite polynomials, biorthogonal rational functions, and q-beta integrals",
+    author: [
+      { family: "Ismail", given: "Mourad E. H." },
+      { family: "Masson", given: "David R." },
+    ],
+    "container-title": "Transactions of the American Mathematical Society",
+    volume: "346",
+    page: "63-116",
+    issued: { "date-parts": [[1994]] },
+    DOI: "10.1090/S0002-9947-1994-1264148-6",
+    URL: "https://doi.org/10.1090/S0002-9947-1994-1264148-6",
+    note: "$h_n(x|q) = i^{-n} H_n(ix|q^{-1})$: same eigenfunctions after the 90-degree variable rotation composed with the bar involution; the odd-channel (non-compact) orthogonality is an indeterminate moment problem.",
+  }),
+
+  // ── Atakishiyev–Suslov 1990 (q-oscillator: difference analogue of the harmonic oscillator) ──
+  ref({
+    id: "atakishiyev-suslov1990",
+    type: "article-journal",
+    title: "Difference analogs of the harmonic oscillator",
+    author: [
+      { family: "Atakishiyev", given: "Natig M." },
+      { family: "Suslov", given: "Sergei K." },
+    ],
+    "container-title": "Theoretical and Mathematical Physics",
+    volume: "85",
+    page: "1055-1062",
+    issued: { "date-parts": [[1990]] },
+    DOI: "10.1007/BF01017247",
+    URL: "https://doi.org/10.1007/BF01017247",
+    note: "The q-harmonic oscillator: second-order q-difference eigenproblem replacing the Schrodinger operator, with continuous q-Hermite bound states and q-integer spectrum — the QOU analogue home of the oscillator equation (parabolic-cylinder channel-interpolation audit, 2026-07-03).",
+  }),
+
+  // ── DLMF ch. 12 (parabolic cylinder functions D_nu: Weber equation, Gamma-pole parity selection) ──
+  ref({
+    id: "dlmf-ch12",
+    type: "chapter",
+    title: "Parabolic Cylinder Functions (Chapter 12)",
+    author: [{ family: "Temme", given: "Nico M." }],
+    "container-title":
+      "NIST Digital Library of Mathematical Functions (release 1.2.x)",
+    publisher: "National Institute of Standards and Technology",
+    URL: "https://dlmf.nist.gov/12",
+    issued: { "date-parts": [[2024]] },
+    note: "Canonical reference for D_nu(z): Weber equation, the even/odd solution pair, and the connection formula whose 1/Gamma((1-nu)/2), 1/Gamma(-nu/2) coefficients implement parity selection by pole-vanishing at integer nu — the classical mechanism transported to the QOU even/odd (bar-parity) channel interpolation.",
+  }),
+
+  // ── Deligne 2007 (Rep(S_t) at non-integer t: interpolated tensor categories) ──
+  ref({
+    id: "deligne2007",
+    type: "chapter",
+    title:
+      "La catégorie des représentations du groupe symétrique S_t, lorsque t n'est pas un entier naturel",
+    author: [{ family: "Deligne", given: "Pierre" }],
+    "container-title":
+      "Algebraic Groups and Homogeneous Spaces (TIFR Studies in Mathematics)",
+    publisher: "Tata Institute of Fundamental Research / Narosa",
+    page: "209-273",
+    issued: { "date-parts": [[2007]] },
+    note: "Interpolated tensor category Rep(S_t) at non-integer t; with generic-parameter Temperley-Lieb, the categorical machine for a continuous tower level nu — the categorical face of the parabolic-cylinder D_nu interpolation of the even/odd channel towers (2026-07-03 audit §8).",
+  }),
+
+  // ── Zhedanov 1991 (AW(3): hidden symmetry of Askey–Wilson polynomials) ──
+  ref({
+    id: "zhedanov1991",
+    type: "article-journal",
+    title: "'Hidden symmetry' of Askey-Wilson polynomials",
+    author: [{ family: "Zhedanov", given: "Alexei S." }],
+    "container-title": "Theoretical and Mathematical Physics",
+    volume: "89",
+    page: "1146-1157",
+    issued: { "date-parts": [[1991]] },
+    DOI: "10.1007/BF01015906",
+  }),
+
+  // ── Terwilliger 2001 (Leonard pairs: classification via two tridiagonal ops) ──
+  ref({
+    id: "terwilliger2001",
+    type: "article-journal",
+    title:
+      "Two linear transformations each tridiagonal with respect to an eigenbasis of the other",
+    author: [{ family: "Terwilliger", given: "Paul" }],
+    "container-title": "Linear Algebra and its Applications",
+    volume: "330",
+    page: "149-203",
+    issued: { "date-parts": [[2001]] },
+    DOI: "10.1016/S0024-3795(01)00242-7",
+    note: "Leonard-pair classification: overlap coefficients of a self-dual tridiagonal pair are forced into the terminating Askey-Wilson (q-Racah) family.",
+  }),
+
+  // ── Ponsot–Teschner 2001 (non-compact 6j / modular double: b ↔ 1/b) ──
+  ref({
+    id: "ponsot-teschner2001",
+    type: "article-journal",
+    title:
+      "Clebsch-Gordan and Racah-Wigner coefficients for a continuous series of representations of U_q(sl(2,R))",
+    author: [
+      { family: "Ponsot", given: "Bénédicte" },
+      { family: "Teschner", given: "Jörg" },
+    ],
+    "container-title": "Communications in Mathematical Physics",
+    volume: "224",
+    page: "613-655",
+    issued: { "date-parts": [[2001]] },
+    DOI: "10.1007/PL00005590",
+    URL: "https://arxiv.org/abs/math/0007097",
+    note: "Non-compact Askey-Wilson/Racah level of the modular double (q = e^{i pi b^2}, q~ = e^{-i pi/b^2}); the b <-> 1/b duality is the 6j-level form of the channel rotation.",
+  }),
+
+  // ── Creutzig–Milas 2014 (false theta functions: the log-VOA character side) ──
+  ref({
+    id: "creutzig-milas2014",
+    type: "article-journal",
+    title: "False theta functions and the Verlinde formula",
+    author: [
+      { family: "Creutzig", given: "Thomas" },
+      { family: "Milas", given: "Antun" },
+    ],
+    "container-title": "Advances in Mathematics",
+    volume: "262",
+    page: "520-545",
+    issued: { "date-parts": [[2014]] },
+    DOI: "10.1016/j.aim.2014.05.018",
+    note: "False theta functions as (1,p) singlet log-VOA characters; their quantum modularity is the disk-interior vs root-of-unity rotation (the Lawrence-Zagier Psi already used at the keystone).",
+  }),
 
 ];
 

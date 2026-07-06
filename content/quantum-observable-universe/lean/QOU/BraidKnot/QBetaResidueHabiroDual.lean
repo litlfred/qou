@@ -23,7 +23,7 @@ the **bar-ANTIsymmetric** sector:
 Exactly as in the α_EM file, the bar involution is modelled at the **fibre
 level** by treating `q` and its inverse `qi` as **independent** ring variables
 and taking "bar" to be the **swap** `q ↔ qi` (generic `CommRing`; no reality, no
-archimedean evaluation — per CLAUDE.md "Im(q) fibre vs observable"). The
+archimedean evaluation — per AGENTS.md "Im(q) fibre vs observable"). The
 genuine `q ↦ q⁻¹` involution, the ζ₄ root of unity, and the literal `q + q⁻¹ = 0`
 condition are all recovered **only after specialising `qi = q⁻¹`** (a
 group-of-units / field structure). The lemmas below are therefore stated in the

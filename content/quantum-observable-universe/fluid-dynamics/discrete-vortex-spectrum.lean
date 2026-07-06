@@ -88,7 +88,7 @@ class DiscreteVortexSpectrumContext where
     bundled here so the `lean.ref` target states the complete proposition,
     not just the eigenvalue spectrum. -/
 -- Ref: [manuscript] prop:discrete-vortex-spectrum
-theorem discrete_vortex_spectrum [ctx : DiscreteVortexSpectrumContext] :
+def discrete_vortex_spectrum [ctx : DiscreteVortexSpectrumContext] :
     (∀ k, ctx.lam k = (ctx.qInt k) ^ 2 * ctx.hbar / ctx.Lq ^ 2) ∧
     (∀ n, ctx.energy n = ctx.hbar / (2 * ctx.Iq) * (ctx.qInt n * ctx.qInt (n + 1))) ∧
     (∀ n m, (n + 1 = m ∨ m + 1 = n) → ctx.deltaE n m = ctx.energy m - ctx.energy n) ∧

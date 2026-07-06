@@ -51,7 +51,7 @@ literature `Vol(7²_1)` in `alpha_cluster_recursion.py`.
 
 ## Status: EXPLORATORY
 
-Per CLAUDE.md production-vs-exploratory discipline, this is a
+Per AGENTS.md production-vs-exploratory discipline, this is a
 probe surfacing a research-grade question (what's the categorically-
 exact derivation of c_αα at the substrate level?), NOT a wired
 production change. The α-cluster recursion's existing
@@ -62,13 +62,13 @@ production change. The α-cluster recursion's existing
 - `prop:atom-knot-mass-derivation` (the canonical formula)
 - `docs/audits/2026-05-25-track-b-r5-full-sdp-extension-design.md`
   (Phase B-4 in the execution plan)
-- `folio-assistant/computations/alpha_cluster_recursion.py`
+- `computations/alpha_cluster_recursion.py`
   (the current consumer of c_αα)
-- `folio-assistant/computations/knot_volumes.py` (the literature
+- `computations/knot_volumes.py` (the literature
   Vol(7²_1) source)
-- `folio-assistant/computations/knot_braid_database.py` (7²_1
+- `computations/knot_braid_database.py` (7²_1
   braid word; PR #1263)
-- `folio-assistant/computations/markov_trace_for_knot.py`
+- `computations/markov_trace_for_knot.py`
   (common-infra evaluator; PR #1263)
 """
 from __future__ import annotations

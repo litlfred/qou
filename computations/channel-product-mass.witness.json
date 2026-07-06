@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-02T16:58:57.590128+00:00",
-  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-05T11:17:41.160034+00:00",
+  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
   "assertions": [
     {
       "name": "He-4 mass",
@@ -294,11 +294,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 18,
   "computation": "channel-product-mass",
   "scriptFile": "channel_product_mass.py",
-  "scriptHash": "a8968837f709",
-  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "scriptHash": "b57b83d70b02",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -306,7 +306,7 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
@@ -316,7 +316,7 @@
   "contentBlock": "rem:q-integer-mass-table",
   "parameters": {
     "q₀": 1.1099785827513808,
-    "α (MeV)": 3.74445965488548,
+    "α (MeV)": 3.7444596599416102,
     "a (proton sum)": -0.10453014939781968,
     "b (neutron sum)": -0.6340338211481932,
     "ln|a|": -2.2582797382046413,

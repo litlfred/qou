@@ -38,7 +38,7 @@ $q$-Pochhammer and $(\alpha, r)$ are partition-by-partition
 parameters of the binding ladder.
 
 **Compute**:
-[`folio-assistant/computations/binding_ladder_catalog.py`](../../folio-assistant/computations/binding_ladder_catalog.py).
+[`computations/binding_ladder_catalog.py`](../../computations/binding_ladder_catalog.py).
 
 **What it exposes**: per-partition contribution structure
 (D / T / ³He / ⁴He / ⁶Li / ⁷Li receive distinct ladder corrections).
@@ -67,7 +67,7 @@ $q \cdot z = Q^r (1 - Q) / (1 - Q^r)$.
 [`prop:wenzl-bridge-applicability-qou`](../../content/quantum-observable-universe/braids-and-knots/wenzl-bridge-applicability-qou.md).
 
 **Compute**:
-[`y_lambda_wenzl_bridge_extended.py`](../../folio-assistant/computations/y_lambda_wenzl_bridge_extended.py),
+[`y_lambda_wenzl_bridge_extended.py`](../../computations/y_lambda_wenzl_bridge_extended.py),
 extending to $n = 12$ via $O(p(n) \cdot \max\text{hooks})$
 specialization rather than $O(p(n)^3)$ linear-system solve.
 
@@ -97,8 +97,8 @@ trace-per-dim identity (Wigner-2) gives the direct closed form.
 [`prop:wigner-coefficient-derivation`](../../content/quantum-observable-universe/braids-and-knots/wigner-coefficient-derivation.md).
 
 **Compute**:
-[`shadow_price_c_321_q0.py`](../../folio-assistant/computations/shadow_price_c_321_q0.py),
-[`paper_six_term_shadow_price_sweep.py`](../../folio-assistant/computations/sweeps/paper_six_term_shadow_price_sweep.py).
+[`shadow_price_c_321_q0.py`](../../computations/shadow_price_c_321_q0.py),
+[`paper_six_term_shadow_price_sweep.py`](../../computations/sweeps/paper_six_term_shadow_price_sweep.py).
 
 **What it exposes**: the BW coefficients as **shadow prices** —
 i.e., what would change in the optimal LP value per unit relaxation
@@ -113,7 +113,7 @@ additional structure to fit this template.
 ## Per-coefficient pathway map
 
 Status flags from
-[`folio-assistant/computations/DERIVATION-STATUS.md`](../../folio-assistant/computations/DERIVATION-STATUS.md)
+[`computations/DERIVATION-STATUS.md`](../../computations/DERIVATION-STATUS.md)
 lines 45–55. Pathway columns mark which derivation has been
 explicitly worked out for that term (✓), partial (~), or absent (·).
 
@@ -140,7 +140,7 @@ first non-trivial test of pathway equivalence.
 ## Known equivalences
 
 - **A ≡ B** at $n = 3, 4$: verified at floating-point precision in
-  [`y_lambda_wenzl_bridge_extended.py`](../../folio-assistant/computations/y_lambda_wenzl_bridge_extended.py)
+  [`y_lambda_wenzl_bridge_extended.py`](../../computations/y_lambda_wenzl_bridge_extended.py)
   ("at $n = 3, 4$, the Wenzl-bridge values agree with the
   y-lambda-symbolic-witness.json values to floating-point
   precision").

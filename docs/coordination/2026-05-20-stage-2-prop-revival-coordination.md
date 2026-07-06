@@ -63,6 +63,6 @@ No file overlap with #840 scope.
 
 ## Notes
 
-- The `b-over-a-witness.json` → `b-over-a.witness.json` rename is **already reflected in the file diff** (marked as "renamed" in folio-assistant/computations/); only the .ts manifest pointer needs updating.
+- The `b-over-a-witness.json` → `b-over-a.witness.json` rename is **already reflected in the file diff** (marked as "renamed" in computations/); only the .ts manifest pointer needs updating.
 - All witness provenance fields were correctly added during the PR's work (WitnessBuilder.wrap_legacy applied to all deprecated scripts).
 - No blocker PRs identified; merge order is flexible.

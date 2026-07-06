@@ -1,3 +1,20 @@
+**Table L.1 — normal-form (NF) basis multiplication.** This table
+records the raw product $b_i \cdot b_j$ of the NF basis operators —
+the case of the identity operator $\beta(T_{1,0}) = \mathbf{1}$ —
+re-expanded in the same basis. Reading the row $b_i$ against the
+column $b_j$ gives the coefficient of that column operator in the
+product $b_i \cdot b_j$; every entry is exact in $h$, and "—" marks a
+vanishing coefficient.
+
+**Notation.** $h = q - q^{-1}$ (Hecke amplitude). The NF basis is
+$\{\ \gamma,\ \sigma_0,\ \sigma_1,\ L_+,\ L_-,\ e^-\ \}$, with
+$e^- = \sigma_0\sigma_1\sigma_0$ (the trefoil). The operator $\gamma$
+is the two-sided identity: $\gamma \cdot b_j = b_j$ and
+$b_i \cdot \gamma = b_i$. The identity rows below (the header row
+$\gamma \cdot b_j$ and the right-multiply rows $b_i \cdot \gamma$)
+therefore list the single surviving operator directly and leave the
+remaining cells empty.
+
 | $b_i \cdot b_j$ | $\gamma$ | $\sigma_0$ | $\sigma_1$ | $L_+$ | $L_-$ | $e^-$ |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|
 | $\gamma \cdot b_j$ | $\gamma$ | $\sigma_0$ | $\sigma_1$ | $L_+$ | $L_-$ | $e^-$ |

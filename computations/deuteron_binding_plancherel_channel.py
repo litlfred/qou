@@ -5,8 +5,8 @@ deuteron sub-braid) close the deuteron binding-energy ratio?
 
 ## Setup
 
-Deuteron: B(d) = 2.22456611 MeV. The binding-fraction ratio:
-  B(d) / M_d_avg = 2.22456611 / 1875.612... = 0.001186
+Deuteron: B(d) = float(AME_B_DEUTERON_MEV_VALIDATION) MeV. The binding-fraction ratio:
+  B(d) / M_d_avg = float(AME_B_DEUTERON_MEV_VALIDATION) / 1875.612... = 0.001186
 
 In the framework, this corresponds to Δ_λ for partition λ at the
 deuteron's Wedderburn channel.
@@ -41,6 +41,7 @@ import experimental_constants as _ec  # noqa: E402
 from q_parameter import q_at, q_str  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
 
 
 def main() -> int:
@@ -53,15 +54,16 @@ def main() -> int:
     print("=" * 78)
     print(f"\nq_0 = {q_str(60)} (display)\n")
 
-    M_N_MEV = M_P_MEV + M_E_MEV + mp.mpf(repr(_ec.Q_NEUTRON_MEV))
-    # Deuteron CODATA
-    M_D_MEV = mp.mpf("1875.61294257")
-    B_d = M_P_MEV + M_N_MEV - M_D_MEV
+    m_n_derived_3input = M_P_MEV + M_E_MEV + mp.mpf(repr(_ec.Q_NEUTRON_MEV))
+    # Deuteron CODATA from the codata_constants registry (no inline literal).
+    from codata_constants import M_D_MEV_VALIDATION
+    M_D_MEV = M_D_MEV_VALIDATION
+    B_d = M_P_MEV + m_n_derived_3input - M_D_MEV
     print(f"[CODATA]")
     print(f"  B(d) = {mp.nstr(B_d, 12)} MeV (= 2.22... )")
     print(f"  B(d) / M_d = {mp.nstr(B_d / M_D_MEV, 18)}")
     print(f"  B(d) / m_e = {mp.nstr(B_d / M_E_MEV, 18)}")
-    print(f"  (m_p+m_n)/2 = {mp.nstr((M_P_MEV+M_N_MEV)/2, 12)}")
+    print(f"  (m_p+m_n)/2 = {mp.nstr((M_P_MEV+m_n_derived_3input)/2, 12)}")
 
     # Substrate
     h = q - 1 / q

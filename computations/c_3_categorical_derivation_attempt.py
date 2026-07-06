@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+# ANCHOR NOTE (2026-06-22): q0 = 1.10997858275… occurrences below are the
+# RETIRED pre-2026-05-28 proton anchor (old re-pin #1422), kept as this
+# probe's historical / cross-anchor / pinned comparison value. The CURRENT
+# canonical proton q0 is q_at() ≈ 1.1099785955573347…; the muon anchor is
+# q_muon_at() ≈ 1.10997859555418…. This probe is preserved as-is by design.
 """c_3_categorical_derivation_attempt.py — hard structural attempt to
 promote the Q_β precision-ladder coefficient c_3 from "q₀-dependent
 near-match" to "Taylor-exact / proved".
@@ -45,7 +50,7 @@ WHAT IS NOT DONE HERE.
   permanent fix per the truncation-order audit. This probe is the
   structural ruling-out at the c_3 level alone.
 
-50-dps mpmath throughout. WitnessBuilder + tee log per CLAUDE.md
+50-dps mpmath throughout. WitnessBuilder + tee log per AGENTS.md
 long-compute discipline.
 """
 

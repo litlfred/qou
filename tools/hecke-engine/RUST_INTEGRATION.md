@@ -5,8 +5,8 @@ at H_18 (⁶Li), H_21 (⁷Li), and the α-cluster scale H_24 → H_120
 (⁸Be → ⁴⁰Ca).
 
 The Python reference implementation in
-[`folio-assistant/computations/joint_tower_sdp_solver.py`](../../folio-assistant/computations/joint_tower_sdp_solver.py)
-+ [`joint_tower_sdp_solver_v2.py`](../../folio-assistant/computations/joint_tower_sdp_solver_v2.py)
+[`computations/joint_tower_sdp_solver.py`](../../computations/joint_tower_sdp_solver.py)
++ [`joint_tower_sdp_solver_v2.py`](../../computations/joint_tower_sdp_solver_v2.py)
 is enough for Phase 3a/3b (H_3 ground truth + H_3 historical entries
 6_2, L6a4 with cvxpy) but does **not** scale.  The Rust extension takes
 over from Phase 3c onward.
@@ -165,7 +165,7 @@ and adds the joint-tower-SDP layer on top.
 ### Phase R2 — GB-NF reducer (port of Python PoC)
 
 Add `src/gb_nf_reducer.rs` (~250 LOC).  This is the Rust port of
-[`gb_filtration_jet_tracker.py`](../../folio-assistant/computations/gb_filtration_jet_tracker.py)
+[`gb_filtration_jet_tracker.py`](../../computations/gb_filtration_jet_tracker.py)
 — the proof-of-concept locked the algorithm; this reimplements it in
 Rust at production scale.
 
@@ -232,7 +232,7 @@ Add `src/bin/joint_tower_sdp.rs` (~150 LOC).
 
 Reads atom registry from `confined-particle.md`, runs the full pipeline
 per atom, emits one JSON per atom into
-`folio-assistant/computations/joint-tower-sdp-{atom}.witness.json` —
+`computations/joint-tower-sdp-{atom}.witness.json` —
 matching the Python reference implementation's output schema.
 
 The atlas renderer (`recursive_atom_knot_atlas_render.py`) will then
@@ -242,7 +242,7 @@ derivation is available.
 
 ### Phase R7 — Wire into staleness tracker + build
 
-Update [`witness_staleness_tracker.py`](../../folio-assistant/computations/witness_staleness_tracker.py):
+Update [`witness_staleness_tracker.py`](../../computations/witness_staleness_tracker.py):
 
 ```python
 "joint-tower-sdp-rust": [
@@ -300,10 +300,10 @@ Once Phase R5 lands and successfully solves the SDP for ⁶Li / ⁷Li:
 
 1. The new principled derivations ⁶Li, ⁷Li get methodology tag
    `principled-derivation` instead of `deprecated-volume-match`.
-2. [`methodology-deprecation.witness.json`](../../folio-assistant/computations/methodology-deprecation.witness.json)
+2. [`methodology-deprecation.witness.json`](../../computations/methodology-deprecation.witness.json)
    is updated: ⁶Li, ⁷Li move out of the deprecated list.
 3. The atlas renderer
-   ([`recursive_atom_knot_atlas_render.py`](../../folio-assistant/computations/recursive_atom_knot_atlas_render.py))
+   ([`recursive_atom_knot_atlas_render.py`](../../computations/recursive_atom_knot_atlas_render.py))
    stops quarantining them and renders them in the principled section.
 4. Phase 3c of the workplan is complete.
 
@@ -313,10 +313,10 @@ Once Phase R5 lands and successfully solves the SDP for ⁶Li / ⁷Li:
   — design spec.
 - [`prop:atom-knot-mass-derivation`](../../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md)
   — consumer of the certificate.
-- [`gb-filtration-jet-order.witness.json`](../../folio-assistant/computations/gb-filtration-jet-order.witness.json)
+- [`gb-filtration-jet-order.witness.json`](../../computations/gb-filtration-jet-order.witness.json)
   — Python PoC of the certificate format.
-- [`joint-tower-sdp-h3.witness.json`](../../folio-assistant/computations/joint-tower-sdp-h3.witness.json)
+- [`joint-tower-sdp-h3.witness.json`](../../computations/joint-tower-sdp-h3.witness.json)
   — Phase 3a output, schema reference.
-- [`joint-tower-sdp-h6-h9.witness.json`](../../folio-assistant/computations/joint-tower-sdp-h6-h9.witness.json)
+- [`joint-tower-sdp-h6-h9.witness.json`](../../computations/joint-tower-sdp-h6-h9.witness.json)
   — Phase 3b output (schema with cvxpy SDP-feasibility extension).
 - [Clarabel.rs](https://clarabel.org/stable/rust/) — recommended Rust SDP solver.

@@ -8,8 +8,8 @@
 - [`prop:rho-k-graded-expansion`](../../content/quantum-observable-universe/braids-and-knots/rho-k-graded-expansion.md)
 - [`prop:atomic-braid-mass`](../../content/quantum-observable-universe/particle-interactions/atomic-braid-mass.md)
 - [`thm:knot-mass-formula-unified`](../../content/quantum-observable-universe/braids-and-knots/knot-mass-formula-unified.md)
-- [`folio-assistant/computations/wedderburn_pair_volumes.py`](../../folio-assistant/computations/wedderburn_pair_volumes.py)
-- [`folio-assistant/computations/rho-k-pair-gen-v2-wedderburn.witness.json`](../../folio-assistant/computations/rho-k-pair-gen-v2-wedderburn.witness.json)
+- [`computations/wedderburn_pair_volumes.py`](../../computations/wedderburn_pair_volumes.py)
+- [`computations/rho-k-pair-gen-v2-wedderburn.witness.json`](../../computations/rho-k-pair-gen-v2-wedderburn.witness.json)
 
 ## Setup
 

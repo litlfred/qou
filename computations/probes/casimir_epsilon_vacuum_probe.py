@@ -60,7 +60,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 # Derived from registry's HBAR_MEV_S + the CODATA 2018 / SI-exact
 # values for c (defined exactly since 2019) and eV → J conversion
-# (defined exactly since 2019).  Per `folio-assistant/computations/
+# (defined exactly since 2019).  Per `computations/
 # README.md:85-89`, this is the right way to use repository
 # constants — derive SI-form ℏc from the MeV-form HBAR registry entry.
 _C_M_S_SI_EXACT = 299_792_458            # exact by SI definition

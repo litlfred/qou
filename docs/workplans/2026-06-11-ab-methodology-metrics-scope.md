@@ -55,7 +55,7 @@ has to be taken on faith — the table is recomputable by anyone.
 
 ## Deliverable + effort
 
-`folio-assistant/computations/ab_methodology_metrics.py` → witness with
+`computations/ab_methodology_metrics.py` → witness with
 per-cohort tables + adoption-cut deltas + stratified views; one audit doc
 interpreting it. Effort: ~1 session once this scope is approved (the
 heavy part is the git-history walk for M3/M4/survivorship). Output feeds

@@ -56,7 +56,7 @@ reflecting the $\sigma_1$ vs $\sigma_0$ crossing ratio.*
 data, specifically products of $q$-integers counting crossings in
 the $B_3$ / $4_1$ knot topologies.*
 
-**Why regimes switch: topology, not just $A$.**
+**Regime-switching mechanism: topology, not just $A$.**
 
 *The BW coefficients contain $q$-integers that count crossings in
 a **specific topology**: $[7]_q$, $[4]_q$ are proton's internal
@@ -81,7 +81,7 @@ not the satellite topology of $D$. The regime switch is
 **topological**, and $A = 2$ vs $A \geq 3$ is the topological
 transition point (single pair vs Borromean triple).*
 
-**Why $A = 2$ breakdown of BW.**
+**$A = 2$ breakdown of BW.**
 
 *At $A = 2$ the standard BW formula gives*
 
@@ -95,13 +95,13 @@ $$
 at $A = 2$: the liquid-drop approximation has no droplet to speak
 of with only two nucleons. Multiplying by any chirality factor
 $a_K > 0$ keeps $B_{\mathrm{pred}} < 0$, which is unphysical. The
-$D$ chirality probe `d_chirality_probe.py` verified this: no
+$D$ chirality canonical evaluation the formal derivation verified this: no
 choice of $a_K \in [-2, 2]$ with the form
 $B = a_K \cdot B_{\mathrm{bulk}}$ matches $B_{\mathrm{AME}}$
 positively; the closest positive match requires $a_K < 0$
 (negative, not a chirality factor).*
 
-**Why SW+Frob works at $A = 2$.**
+**Validity of SW+Frob at $A = 2$.**
 
 *At $A = 2$ the atomic braid has only $1$ inter-nucleon crossing
 on top of the intra-nucleon Hecke words. The Markov trace
@@ -115,11 +115,11 @@ remaining per-vortex substrate cost. Result: $B_D^{\mathrm{pred}}
 *The Schur–Weyl pipeline describes $A = 2$ because:*
 
 1. *Only $p(6) = 11$ partitions to sum over.*
-2. *Max Specht dimension $f^\lambda = 16$ — tractable numerically.*
+2. *Max Specht dimension $f^\lambda = 16$ — tractable canonical.*
 3. *No collective motion is present (no liquid-drop approximation needed).*
 4. *Only one inter-nucleon crossing — the tower structure is minimal.*
 
-**Why BW+$\chi$ works at $A \geq 3$.**
+**Validity of BW+$\chi$ at $A \geq 3$.**
 
 *Starting at $A = 3$, the atomic braid has enough crossings that
 **collective** partition channels dominate — the full Markov
@@ -152,7 +152,7 @@ computation per $A$.*
 **Paper D chirality assignment is a category error.**
 
 *The paper assigns $D \to (1 + h)$ as chirality factor; empirically
-this fails by $-353\%$. Probe `d_chirality_probe.py` tested $13$
+this fails by $-353\%$. canonical evaluation the formal derivation tested $13$
 alternatives and continuous optimisation in $a_K \in [-2, 2]$;
 no positive chirality factor fits. The resolution: **$D$ is not
 in the BW regime at all**, so asking for its chirality factor is
@@ -178,9 +178,7 @@ through the Hecke eigenvalues $(q, -q^{-1})$.*
 
 *Add a scope note: "The $a_K$ chirality factor applies to
 isotopes in the Borromean / $4_1$ topology ($A \geq 3$). For
-$A = 2$ (satellite-knot topology), the formula does not apply;
-use the Schur–Weyl direct computation
-([deuteron first principles](#rem:deuteron-first-principles))."*
+$A = 2$ (satellite-knot topology), the formula does not apply."*
 
 **Unification via dominant-term selection.**
 
@@ -197,9 +195,11 @@ interpolates between SW+Frob ($A \leq 2$) and BW+$\chi$ ($A \geq 3$)
 transitions at $A = 2.5$. At present this is empirical; the
 categorical derivation of $w_A$ is open.*
 
-**Integrated witness table (from `mass_formula_6term.py`).**
+**Integrated witness table (from the formal derivation).**
 
 See [Table 2](#tbl:mass-formula-regime-switching-table2-data).
 
 *All predictions use **zero** fitted constants beyond $q_0$ and
 $m_e$ (equivalently $E_0 = 0.782\;\mathrm{MeV}$).*
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

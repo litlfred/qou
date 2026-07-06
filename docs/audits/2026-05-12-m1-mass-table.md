@@ -11,7 +11,7 @@ $\Delta_{\mathrm{coupling}}$ + ⁴He Model B knot) is unchanged.
 
 ## 1  Source
 
-- Witness: `folio-assistant/computations/sweeps/paper-six-term-isotope-sweep.witness.json`
+- Witness: `computations/sweeps/paper-six-term-isotope-sweep.witness.json`
 - Generator: `paper_six_term_isotope_sweep.py` (run on this commit)
 - Default `e0_mode = "substrate"` (P1.A, no calibration leak)
 - Default `tower_mode` is iterated over all 8 modes; the row

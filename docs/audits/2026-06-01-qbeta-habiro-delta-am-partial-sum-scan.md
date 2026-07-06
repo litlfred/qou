@@ -5,8 +5,8 @@
 > the partial sums `S_M = Σ_{m=0..M} Δa_m·(u;u)_m` for the three
 > atomic-step Habiro elements (D−n), (³He−D), (⁴He−³He).
 >
-> Probe: [`folio-assistant/computations/qbeta/qbeta_habiro_delta_am_partial_sum_scan.py`](../../folio-assistant/computations/qbeta/qbeta_habiro_delta_am_partial_sum_scan.py)
-> Witness: [`folio-assistant/computations/qbeta/qbeta-habiro-delta-am-partial-sum-scan.witness.json`](../../folio-assistant/computations/qbeta/qbeta-habiro-delta-am-partial-sum-scan.witness.json)
+> Probe: [`computations/qbeta/qbeta_habiro_delta_am_partial_sum_scan.py`](../../computations/qbeta/qbeta_habiro_delta_am_partial_sum_scan.py)
+> Witness: [`computations/qbeta/qbeta-habiro-delta-am-partial-sum-scan.witness.json`](../../computations/qbeta/qbeta-habiro-delta-am-partial-sum-scan.witness.json)
 
 ## TL;DR
 

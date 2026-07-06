@@ -25,7 +25,7 @@ full bridge cannot be proved here.  This file provides:
 2. an explicit injectivity proof at small sizes (`n ≤ 2`), the
    first non-trivial cases of the bridge proposition;
 3. a typeclass formulation of the bridge in general (per
-   CLAUDE.md §3b), with the witness deferred to a future
+   AGENTS.md §3b), with the witness deferred to a future
    entry-aware refactor of `TwoRowTableau` plus a YJM-tree
    formalisation.
 
@@ -156,13 +156,16 @@ theorem hoefsmit_bridge_two :
     simp at h1 h2
     subst h1; subst h2
     congr <;> omega
-  · -- t₁ = (2,0), t₂ = (1,1): hoefsmitDyadic gives 1 and -1.
-    -- After simp, heq becomes `1 = -1` in ℚ; close via norm_num.
-    simp [hoefsmitDyadic, h1, h2] at heq
-    exact absurd heq (by norm_num)
-  · -- Symmetric: t₁ = (1,1), t₂ = (2,0); heq : -1 = 1 in ℚ.
-    simp [hoefsmitDyadic, h1, h2] at heq
-    exact absurd heq (by norm_num)
+  · -- t₁ = (2,0), t₂ = (1,1): hoefsmitDyadic gives 1 and -1, so the
+    -- hypothesis `heq : f t₁ = f t₂` reduces to the genuinely false
+    -- numeric equation `(1 : ℚ) = -1`. This contradiction is exactly
+    -- the injectivity content (distinct tableaux ⇒ distinct images);
+    -- `norm_num` discharges the goal from the now-false `heq`.
+    rw [hoefsmitDyadic, hoefsmitDyadic, if_pos h1, if_neg (by omega)] at heq
+    norm_num at heq
+  · -- Symmetric: t₁ = (1,1), t₂ = (2,0); heq reduces to `(-1 : ℚ) = 1`.
+    rw [hoefsmitDyadic, hoefsmitDyadic, if_neg (by omega), if_pos h2] at heq
+    norm_num at heq
   · -- Both row2 = 1: same tableau (1, 1).
     obtain ⟨r1₁, r2₁, sz₁, ord₁⟩ := t₁
     obtain ⟨r1₂, r2₂, sz₂, ord₂⟩ := t₂
@@ -182,7 +185,7 @@ theorem hoefsmit_bridge_two :
 
     The general-`n` extension requires an entry-aware tableau type
     plus a YJM-tree formalisation in Mathlib (see the file-level
-    docstring); per CLAUDE.md §3b we **do not** assert it as an
+    docstring); per AGENTS.md §3b we **do not** assert it as an
     axiom.  The proposition here is the genuine `n ≤ 2` statement,
     proved unconditionally. -/
 -- Ref: [conway1976] §0

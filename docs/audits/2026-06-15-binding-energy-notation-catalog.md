@@ -9,7 +9,7 @@ collision. This doc is the authoritative reference; the concise canonical table
 (exact) vs `B_lin` (linear) as **distinct**, rename `B_canonical`/`B_pred` →
 `B_lin`; record here + in the register.
 
-**Notation constraint.** `𝔅` (fraktur B) is **bandwidth** (CLAUDE.md §7aa), so
+**Notation constraint.** `𝔅` (fraktur B) is **bandwidth** (AGENTS.md §7aa), so
 binding stays **plain `B` + systematic subscripts**.
 
 ## Full catalogue
@@ -46,7 +46,7 @@ binding stays **plain `B` + systematic subscripts**.
 
 - Always subscript `B`. Bare `B` in prose denotes the production `B_lin`.
 - `Δ_λ = B_AME / B_lin` (the residual ≈ `q₀^(5·sites)`); the exact target is `B_sym`.
-- No 7th `Δ_λ` ansatz (CLAUDE.md Δ_λ gate); the rejected/deprecated forms (#15–17) must not be reused.
+- No 7th `Δ_λ` ansatz (AGENTS.md Δ_λ gate); the rejected/deprecated forms (#15–17) must not be reused.
 - **Follow-up (bean):** the *code-level* rename of `B_canonical`/`B_pred` →
   `B_lin` in `binding_canonical.py` + callers is a separate refactor (this doc
   + the register establish the *terminology*; the variable rename is downstream).

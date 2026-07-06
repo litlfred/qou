@@ -90,7 +90,7 @@ For each λ ⊢ n (n ∈ {3,4,5}):
 
 Total ≈ 100–200 candidates per n — manageable in one PR.
 
-## Anti-pattern guards (STRICT — CLAUDE.md compliance)
+## Anti-pattern guards (STRICT — AGENTS.md compliance)
 
 - **TIERED reporting only**: NEAR-1PPM / NEAR-0.1PCT / NEAR-1PCT /
   NEAR-FUZZY / NEAR-CLOSE / MISS / ZERO. No ansatz at NEAR-FUZZY or
@@ -113,7 +113,7 @@ Total ≈ 100–200 candidates per n — manageable in one PR.
 docs/audits/
   2026-06-04-qbeta-mixed-chains-plan.md      # this file
   2026-06-04-qbeta-mixed-chains-verdict.md   # final TIERED verdict
-folio-assistant/computations/qbeta/
+computations/qbeta/
   qbeta_chain4_mixed_wenzl_kashaev_kashiwara.py
   qbeta-chain4-mixed-wenzl-kashaev-kashiwara.witness.json  # auto-emitted
 ```

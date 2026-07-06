@@ -8,7 +8,7 @@ link that interpolates between the parent `N(Z, N)` and daughter
 `N(p+1, n-1)` nuclear configurations.
 
 -- Ref: [manuscript]
-Per `CLAUDE.md §3b-cond`, opaque Prop + class field + sorry
+Per `AGENTS.md §3b-cond`, opaque Prop + class field + sorry
 instance.
 
 The numerical claim (Skein-smoothing identification reproduces
@@ -41,7 +41,7 @@ class ShellThreadingEnergy : Prop where
 
 -- Ref: [manuscript] conj:shell-threading-energy
 instance shell_threading_energy_conjecture : ShellThreadingEnergy where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   smoothing_identification := sorry
 
 end QOU.ShellThreadingEnergy

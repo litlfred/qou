@@ -3101,13 +3101,13 @@
       "evidence": "content/quantum-observable-universe/mass-theory/q-pochhammer-partial-product.md:1 — detected regime [mod-lt-1, symbolic] is disjoint from chapter 'mass-theory' expected [fixed-q0, na, real-gt-1, real-positive]"
     },
     {
-      "label": "def:q-reeb-flow-on-coral-coords",
+      "label": "def:q-reeb-flow-on-color-coords",
       "kind": "definition",
       "chapter": "mass-theory",
       "criterion": "q-usage-narrative-chapter-mismatch",
       "result": "warn",
       "severity": "minor",
-      "evidence": "content/quantum-observable-universe/mass-theory/q-reeb-flow-on-coral-coords.md:1 — detected regime [symbolic] is disjoint from chapter 'mass-theory' expected [fixed-q0, na, real-gt-1, real-positive]"
+      "evidence": "content/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.md:1 — detected regime [symbolic] is disjoint from chapter 'mass-theory' expected [fixed-q0, na, real-gt-1, real-positive]"
     },
     {
       "label": "def:staircase-partition",

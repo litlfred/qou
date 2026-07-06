@@ -1,10 +1,4 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Formal proof of the $V_{(3)}$ per-irrep character difference closed form.**
-
-Following the user direction "first prove formally V" + "V_3 ε^k
-pattern" on the per-Wedderburn-block probe (#672), this block
-delivers a **complete formal proof** of the V_(3) component:
 
 $$
   \boxed{
@@ -70,8 +64,6 @@ $$
   [\varepsilon^k]\;\bigl(\chi_{(3)}(\mathcal{B}_n) - \chi_{(3)}(\mathcal{B}_p)\bigr)\big|_{q = 1 + \varepsilon}
    \;=\; \frac{(-1)^k}{4}.
 $$
-
-This matches the probe output `+1/4, -1/4, +1/4, ...` for $k = 6, 7, 8, ...$ exactly.
 
 ## Lean theorems exported
 

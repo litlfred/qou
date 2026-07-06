@@ -20,14 +20,14 @@ $$
 
 **Step 8 (motivic-Galois reading).** *Steps 4 and 5 lift to a single
 algebraic statement at the level of the
-[motivic substrate](#def\:motivic-substrate): $\chi(A) = -6$ controls
+[motivic substrate](#def:motivic-substrate): $\chi(A) = -6$ controls
 the value of the substrate's motivic $L$-function at the boundary
 of analytic continuation, and the Yekutieli non-vanishing
 $\kappa_n \neq 0$ at every level becomes the non-vanishing of the
 Frobenius character at every finite place $p \nmid 6$ — the
-content of [motivic perpetual obstruction](#conj\:motivic-perpetual-obstruction)
+content of [motivic perpetual obstruction](#conj:motivic-perpetual-obstruction)
 applied with $\chi(A) = -6$
-([Kummer tower](#rem\:kummer-tower) §motivic-Galois). The "$g \geq 1$"
+([Kummer tower](#rem:kummer-tower) §motivic-Galois). The "$g \geq 1$"
 condition (Step 4) is the cyclotomic-place criterion
 $H^1_{\mathrm{Gal}}(\mathrm{Gal}(\bar{\mathbb{Q}}_p/\mathbb{Q}_p), \mu_n(1)) \neq 0$,
 realised at every $p$. The Riemann–Roch derivation above is the

@@ -91,7 +91,7 @@ $$
  Planck steps (one Toffoli per triple, three Planck steps
  each). The substrate bandwidth
  $\mathfrak{B}(q) = q \eta_q / (q - 1)^2$
- ([bandwidth](#def:information-speed-of-light)) bounds the
+ ([bandwidth](#def:information-bandwidth)) bounds the
  number of generations per unit time:*
 
 $$
@@ -118,55 +118,3 @@ root of $\Phi$), and $q = 1$ (classical limit, $\Phi$ by definition
 vanishes). See [Toffoli LP-stability](#prop:toffoli-lp-stability)
 for the full table. The physical substrate value $q_0 \approx 1.110$
 is safely inside the stable regime $q > 1$.*
-
-*Proof sketch.*
-The operator $\mathcal{U}_{\mathrm{q\text{-}GoL}}$ is built
-from $q$-Toffoli generators which, by
-[Toffoli transfer matrix](#prop:toffoli-transfer-matrix), act
-as elements of $H_3(q) \otimes \cdots \otimes H_3(q)$ on the
-tensor product of Reeb bundles $\bigotimes_i \mathcal{S}_{p_i}$.
-Each generator is unitary with respect to the Markov trace
-form (involution $\sigma_i \mapsto \sigma_i^{-1}$), and the
-composition of unitaries is unitary — so
-$\mathcal{U}_{\mathrm{q\text{-}GoL}}^\dagger
-\mathcal{U}_{\mathrm{q\text{-}GoL}} = \mathbb{I}$. Reversibility
-is immediate from $\sigma_i^{-1} = \sigma_i$ up to Hecke
-relations.
-
-Universality follows from Bennett \cite{bennett1973}: any
-reversible computation is simulated by Toffoli gates, and the
-addition of Hadamard $H$ promotes this to universal quantum
-computation \cite{fredkin1982, toffoli1980}.
-
-The bandwidth bound follows by counting: each
-$\mathrm{Toff}_q$ in the $3$-strand Hecke algebra requires
-three elementary crossings (one per strand pair), hence three
-Planck steps. A generation applies one Toffoli per neighbour
-triple, giving the stated bound.
-
-The stability condition reduces to requiring
-$P_{7,7}(q) \neq 0$ and $\Phi(q) \neq 0$; both hold for
-$q > 1/\varphi^2$ by direct evaluation
-([Toffoli LP-stability](#prop:toffoli-lp-stability)). $\square$
-
-**Remark (reference to Peña et al. and 't Hooft).**
-Peña et al. \cite{pena2022} formalise $q$-GoL as a reversible
-quantum circuit acting on a 2D lattice of qubits, with
-neighbour counts implemented by Toffoli-based adder circuits.
-The QOU framework subsumes this construction: their "Toffoli
-gate" is the classical limit $q \to 1$ of our $q$-Toffoli, and
-their "unitary tick" is $3$ Planck steps at substrate
-parameter $q$. The QOU contribution is to identify the
-$q$-deformed amplitude $\Phi(q)$ as the physical AND
-amplitude, and to locate the golden-ratio threshold
-$q = 1/\varphi^2$ as the boundary of the stability region.
-
-The underlying philosophical motivation — that quantum mechanics
-emerges from a deterministic Planck-scale cellular automaton via
-information loss and coarse-graining — is developed systematically
-in 't Hooft \cite{thooft2016}. The $q$-GoL construction
-is the QOU realisation of that programme: the ontological CA
-states are the Reeb bundle fibres $\mathcal{S}_p$, the CA tick
-is the Planck step $t_P(q)$, and the $q$-deformation replaces
-the information-loss mechanism with a categorical coarse-graining
-via the Markov trace.

@@ -98,7 +98,7 @@ theorem frobenius_codim_universal {Λ : Type*} [Fintype Λ]
     cancels τ.
 
     Computational verification:
-    `folio-assistant/computations/probe_term4_conventions.py`.
+    `computations/probe_term4_conventions.py`.
 
     Consequence: the Plancherel-vs-Wenzl-Schur convention disagreement
     affecting `tr_M(T_w)` (Term 1 of the unified mass formula) does
@@ -143,7 +143,7 @@ theorem frobenius_codim_tau_invariant {Λ : Type*} [Fintype Λ]
       1 ↦ λ = (2,1)   (mixed)            : dim_q = [2]_q = q + q⁻¹
       2 ↦ λ = (1,1,1) (alternating)      : dim_q = 1
 
-    Computed in `folio-assistant/computations/frobenius_partition_sum.py`
+    Computed in `computations/frobenius_partition_sum.py`
     via the q-hook-length formula `dim_q(λ) = [n]_q!/H_q(λ)` with
     H_q((3)) = [3]_q[2]_q[1]_q, H_q((2,1)) = [3]_q·[1]_q²,
     H_q((1,1,1)) = [3]_q[2]_q[1]_q. -/
@@ -178,7 +178,7 @@ noncomputable def heckeH3DimQ (q : ℝ) (i : Fin 3) : ℝ :=
     indices and conclude.
 
     Ref: [manuscript] `prop:partition-sum-proton-residual`,
-    `folio-assistant/computations/frobenius_partition_sum.py`. -/
+    `computations/frobenius_partition_sum.py`. -/
 theorem hecke_n3_frobenius_codim (q : ℝ) :
     ∑ i : Fin 3, 1 / heckeH3DimQ q i = 2 + 1 / (q + q⁻¹) := by
   rw [Fin.sum_univ_three]

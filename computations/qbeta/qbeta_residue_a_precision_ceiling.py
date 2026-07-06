@@ -10,7 +10,7 @@ asymptotic limit
 
 extracted in Step 1 of PR #1727 from the simple-pole signature, sampled
 only at k = 8, 9, 10 (the c_k beyond 10 require an ansatz fit, forbidden
-per CLAUDE.md). The c_k are already 50 dps — so the limiter is the
+per AGENTS.md). The c_k are already 50 dps — so the limiter is the
 ASYMPTOTIC CONVERGENCE, not the arithmetic precision.
 
 This script quantifies the achievable precision honestly:
@@ -29,7 +29,7 @@ c_2..c_10. The extrapolated A is reported WITH its error bar — no
 over-claiming.
 
 Usage:
-  python3 folio-assistant/computations/qbeta/qbeta_residue_a_precision_ceiling.py
+  python3 computations/qbeta/qbeta_residue_a_precision_ceiling.py
 Emits: qbeta-residue-a-precision-ceiling.witness.json
 """
 

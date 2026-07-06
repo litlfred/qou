@@ -17,7 +17,7 @@ import { proposition } from "../../schema/builders";
  *
  * Combined with prop:flavor-split-substrate (canonically-derived
  * Hecke-skein flavor split), this gives a full m_p + m_n derivation
- * from only (m_e, m_μ, q_0) — CAL-3 (Q_β) becomes a DERIVED quantity,
+ * from only (m_e, m_μ, q_0) — CAL-3 (𝔔_β) becomes a DERIVED quantity,
  * not an input.
  *
  * Authoring history: split out 2026-06-01 from a previously-combined
@@ -39,9 +39,15 @@ export default proposition({
     "wenzl1988c",
     "chlouveraki2016hdr",
   ],
+  computation: {
+    engine: "python",
+    script: "computations/m_p_substrate_identity_50dps.py",
+    witness: "computations/m-p-substrate-identity-50dps.witness.json",
+    status: "verified",
+  },
   // lean ref deferred: this block's uses[] cone transitively touches
   // conjectural categorical derivations (the "2" structural integer,
-  // the "12" via Ocneanu, F_Bor categoricity). Per CLAUDE.md §3b-cond,
+  // the "12" via Ocneanu, F_Bor categoricity). Per AGENTS.md §3b-cond,
   // declaring a `lean:` field on a provable kind whose uses[] cone
   // touches `conj:` requires either downgrade to `remark`/`conjecture`
   // OR the conditional-class banner + [Class] Lean hypothesis pattern.

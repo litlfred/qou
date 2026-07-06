@@ -1,23 +1,24 @@
-Interactive periodic table organized by knot-theoretic nuclear
-structure.  Elements are arranged by nuclear shell rows (stability
-pairs) and proton sub-shell filling order (Mayer--Jensen), revealing
-the shell structure predicted by the topological mass formula and
-Borromean binding conditions.  Controls allow switching between
-nuclear sub-shell, electron block, and fill-order column modes.
+Interactive periodic table visualizing the knot-theoretic nuclear
+shell structure predicted by the topological mass formula and
+Borromean binding conditions.  Elements are arranged by nuclear shell
+rows (stability pairs) and proton sub-shell filling order
+(Mayer--Jensen).  Controls allow switching between nuclear sub-shell,
+electron block, and fill-order column modes.
 
 Each element tile displays the knot-particle identification per the
 GB-NF / confinement source of truth
-([confined-particle](#def:confined-particle)) at $q_0$:
+([confined-particle](#def:confined-particle)) at $q_0$, all at shell
+level $\ell = 1$ except the neutrino at $\ell = 0$:
 **protons** as Borromean baryons $B_3(\mathrm{uud})$ (3-strand
-flavored Borromean rings, level $\ell = 1$),
-**neutrons** as $B_3(\mathrm{udd})$ (level $\ell = 1$),
+flavored Borromean rings),
+**neutrons** as $B_3(\mathrm{udd})$,
 **electrons** as trefoil knots $T_{2,3} = 3_1$ (closure of
-$\sigma_1^3$ in $B_2$, level $\ell = 1$),
-and **neutrinos** as unknots $0_1$ (vacuum drag, level $\ell = 0$).
-The fermion--boson decomposition
-([fermions are knots, bosons are links](#prop:fermion-boson-knot-link))
-classifies all entries: fermions are single-component knots
-(odd-$n$ torus knots), bosons are 2-component links (even-$n$).
+$\sigma_1^3$ in $B_2$),
+and **neutrinos** as unknots $0_1$ (vacuum drag).
+The fermion--boson decomposition classifies all entries via
+[fermions are knots, bosons are links](#prop:fermion-boson-knot-link):
+fermions are single-component odd-$n$ torus knots, bosons are
+even-$n$ 2-component links.
 Building-block data including Jones polynomials and hyperbolic
 volumes is in
 ([building-block knots](#rem:building-block-knots)).

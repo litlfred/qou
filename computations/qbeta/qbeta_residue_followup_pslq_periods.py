@@ -22,7 +22,7 @@ no claim of closure from a high-height relation; diagnostic-only;
 ℏ_q from (q-1)/q.
 
 Usage:
-  python3 folio-assistant/computations/qbeta/qbeta_residue_followup_pslq_periods.py
+  python3 computations/qbeta/qbeta_residue_followup_pslq_periods.py
 Emits: qbeta-residue-followup-pslq-periods.witness.json
 """
 

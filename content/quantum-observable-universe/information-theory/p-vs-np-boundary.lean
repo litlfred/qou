@@ -1,9 +1,8 @@
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
-import Mathlib.Data.Nat.Defs
+import Mathlib.Data.Nat.Basic
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.Omega
 
 
 /-!
@@ -39,9 +38,10 @@ numerical evaluation.
 
 namespace QOU.PvsNPBoundary
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -56,7 +56,7 @@ structure ComplexityClass where
 
 /-- The class P: problems where the computational boundary is empty. -/
 def classP : ComplexityClass where
-  decidable_in_poly := fun c =>
+  decidable_in_poly := fun _c =>
     ∃ d : ℕ, d > 0 ∧ True  -- ∃ polynomial bound that suffices
 
 /-- The class NP: problems where a witness can be verified in poly time,
@@ -64,23 +64,35 @@ def classP : ComplexityClass where
 structure NPProblem where
   /-- Number of crossings (problem size). -/
   crossings : ℕ
-  -- crossings_pos : crossings > 0  -- (archimedean; not meaningful over R_q)
-  /-- There exists a polynomial-time verifier. -/
-  has_verifier : True  -- Abstractly: verification is always poly
+  /-- The problem is non-trivial: at least one crossing. -/
+  crossings_pos : crossings > 0
+  /-- The cost (in Planck steps) of verifying a proposed witness. -/
+  verify_steps : ℕ
+  /-- **There exists a polynomial-time verifier**: the verification
+      cost is bounded by a polynomial in the problem size — `∃ d`,
+      `verify_steps ≤ (crossings + 1) ^ d`. This encodes the genuine
+      "poly-time verifier" content of NP (replacing a vacuous
+      `: True` field per AGENTS.md §3b-tax). -/
+  has_verifier : ∃ d : ℕ, verify_steps ≤ (crossings + 1) ^ d
   /-- The witness space is exponential. -/
   witness_space_size : ℕ := 3 ^ crossings
 
-/-- The witness space grows exponentially. -/
-theorem np_witness_exponential (p : NPProblem) :
-    p.witness_space_size ≥ 3 := by
-  unfold NPProblem.witness_space_size
-  calc 3 ^ p.crossings ≥ 3 ^ 1 :=
-        Nat.pow_le_pow_right (by norm_num) p.crossings_pos
+/-- The witness space grows exponentially. Stated for the canonical
+    (default-field) problem `⟨c, hc⟩`, whose `witness_space_size` takes
+    its default value `3 ^ c`; for an arbitrary `NPProblem` the field may
+    be overridden, so the bound is asserted of the default construction. -/
+theorem np_witness_exponential (c : ℕ) (hc : c > 0) :
+    ({ crossings := c, crossings_pos := hc,
+       verify_steps := 1, has_verifier := ⟨0, by norm_num⟩ :
+       NPProblem }).witness_space_size ≥ 3 := by
+  show 3 ^ c ≥ 3
+  calc 3 ^ c ≥ 3 ^ 1 :=
+        Nat.pow_le_pow_right (by norm_num) hc
     _ = 3 := by norm_num
 
 /-! ## The boundary emptiness formulation -/
 
-/-- The P vs NP question formalized as boundary emptiness.
+/-! The P vs NP question formalized as boundary emptiness.
 
     We model the "boundary" as a predicate: for a given problem size c
     and polynomial exponent d, is the answer extractable?
@@ -100,6 +112,7 @@ def boundaryNonempty (extractable : ℕ → ℕ → Prop) : Prop :=
 theorem boundary_dichotomy (extractable : ℕ → ℕ → Prop)
     [∀ c d, Decidable (extractable c d)] :
     boundaryEmpty extractable ↔ ¬ boundaryNonempty extractable := by
+  unfold boundaryEmpty boundaryNonempty
   constructor
   · intro h_empty ⟨c, hc, h_all⟩
     obtain ⟨d, hd, h_ext⟩ := h_empty c hc
@@ -116,7 +129,7 @@ theorem boundary_dichotomy (extractable : ℕ → ℕ → Prop)
 /-- **Ideal-theoretic criterion**: the horizon ideal h_c is nontrivial
     iff there exist polynomial-time algorithms that reach the boundary
     and return 0. -/
--- def idealNontrivial (c : ℕ) (d : ℕ) (hd : d > 0)  -- (archimedean; not meaningful over R_q)
+def idealNontrivial (_c : ℕ) (_d : ℕ) (_hd : _d > 0)
     (algorithm_returns_zero : Prop) : Prop :=
   algorithm_returns_zero
 
@@ -155,20 +168,18 @@ theorem obstruction_implies_boundary
     Key point: the obstruction ALWAYS vanishes over finite fields
     because the computation can be done by lookup table. -/
 theorem finite_field_always_decidable
-    -- (p : ℕ) (hp : p > 1) (c : ℕ) (hc : c > 0) :  -- (archimedean; not meaningful over R_q)
+    (p : ℕ) (hp : p > 1) (c : ℕ) :
     ∃ (steps : ℕ), steps = p * 3 ^ c ∧ steps > 0 := by
   use p * 3 ^ c
   constructor
   · rfl
   · apply Nat.mul_pos
-    · omega
+    · linarith
     · positivity
 
 /-- Over a finite field, the asymptotic complexity class is P = NP:
     for any fixed p, the lookup table has constant size (dependent on p). -/
-theorem finite_field_p_eq_np
-    -- (p : ℕ) (hp : p > 1)  -- (archimedean; not meaningful over R_q)
-    -- (c : ℕ) (hc : c > 0) :  -- (archimedean; not meaningful over R_q)
+theorem finite_field_p_eq_np (c : ℕ) :
     ∃ bound : ℕ, 3 ^ c ≤ bound := by
   use 3 ^ c
 
@@ -192,14 +203,12 @@ theorem torsion_effective_tree_bounded (t : TorsionPoint) (n : ℕ) :
 structure NonTorsionReal where
   /-- The substrate parameter value. -/
   q : R_q
-  /-- q > 1 (strict). -/
-  -- q_gt_one : q > 1  -- (archimedean; not meaningful over R_q)
-  /-- Not a root of unity. -/
+  -- q_gt_one : q > 1  -- (archimedean; q > 1 strict — not meaningful over R_q)
   -- not_root_of_unity : ∀ k : ℕ, k ≥ 1 → q ^ k ≠ 1  -- (archimedean; not meaningful over R_q)
 
 /-- At non-torsion q, the Hecke algebra is semisimple: trivial radical.
     No resolution paths are pruned; the full 3^c tree survives. -/
--- theorem nontorsion_full_tree (qt : NonTorsionReal) (c : ℕ) (hc : c > 0) :  -- (archimedean; not meaningful over R_q)
+theorem nontorsion_full_tree (_qt : NonTorsionReal) (c : ℕ) (hc : c > 0) :
     ∀ (effective : ℕ), effective = 3 ^ c → effective ≥ 3 := by
   intro eff h_eff
   rw [h_eff]
@@ -247,5 +256,7 @@ theorem both_topologically_obstructed :
     nsParallel.topological_invariant ≠ 0 ∧
     computationalParallel.topological_invariant ≠ 0 :=
   ⟨nsParallel.top_nonzero, computationalParallel.top_nonzero⟩
+
+end
 
 end QOU.PvsNPBoundary

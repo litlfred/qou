@@ -13,7 +13,7 @@ sys.path.insert(0, str(HERE))
 
 from mass_at_3A_proper import atom_braid_word_3A
 
-HA = 1.10997858275138080759166 - (1 / 1.10997858275138080759166)
+HA = 1.10997859555733471989976 - (1 / 1.10997859555733471989976)
 
 def _classify_factor(c: float, d: float) -> str:
     if abs(c - 1.0) > 1e-6:

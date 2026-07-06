@@ -1,0 +1,36 @@
+{
+  "computation": "frakV_zeta4_fibre_vs_observable_probe",
+  "description": "Distinguishes the fibre-level (exact, Lean-certified) \u03b6\u2084 coupling of Re \ud835\udd19 (binding) and Im \ud835\udd19 (Q_\u03b2) from the observable-level test, which is DEGENERATE at the real anchor q\u2080 (Im(q\u2080)=0). Guards against closing conj:binding-qbeta-complex-volume via a numerology observable match; records that the descent from one fibre \ud835\udd19 stays open.",
+  "discipline": "no fit; sympy symbolic + mpmath at q\u2080; Lean-certified fibre core; numerology-guard (a)-scoped.",
+  "auditOnly": "docs/audits/2026-06-28-frakV-zeta4-fibre-vs-observable.md",
+  "results": {
+    "observable_level": {
+      "q0_real_Im_zero": true,
+      "Re(zeta4_rotate_of_cosh_channel)_symbolic": "0",
+      "Re(zeta4_rotate)_numeric_at_q0": "8.52462181864419542830904854579e-32",
+      "degenerate": true,
+      "reading": "\u03b6\u2084-rotation sends a real (Re-channel) quantity to pure imaginary; its real part is 0, so the two real observables \ud835\udd08_bind, \ud835\udd14_\u03b2 are NOT observable-level \u03b6\u2084-rotates. Numerology trap avoided."
+    },
+    "fibre_level": {
+      "zeta4_moderator_cosh_to_i_sinh_exact": true,
+      "phi4_vanishes_at_zeta4": true,
+      "lean_cert": "QOU/Mass/Zeta4ComplexVolumeModerator.lean (sorry-free)",
+      "reading": "cosh \u2194 i\u00b7sinh under \u03b7\u21a6\u03b7+i\u03c0/2 is the exact 'Q_\u03b2 is the bar-odd sinh partner of the bar-even cosh scale' assertion at the fibre/generator level; \u03a6\u2084 = \u03b6\u2084 locus is the shared binding-L\u2082 / Q_\u03b2-a\u2081 residue."
+    }
+  },
+  "assertions": {
+    "observable_zeta4_rotation_degenerate_ImQ0_zero": true,
+    "fibre_zeta4_moderator_exact": true,
+    "phi4_root_is_zeta4": true
+  },
+  "allPassed": true,
+  "verdict": "\u03b6\u2084 COUPLING IS FIBRE-LEVEL (generator-exact, Lean-certified); OBSERVABLE-LEVEL \u03b6\u2084-rotation is DEGENERATE (Im(q\u2080)=0 \u21d2 the rotate of a real Re-channel is pure imaginary, real part 0), so the two real observables \ud835\udd08_bind and \ud835\udd14_\u03b2 are NOT observable-level \u03b6\u2084-rotates. This GUARDS against closing conj:binding-qbeta-complex-volume by a numerical observable match (a numerology trap / fibre-vs-observable level conflation, per the AGENTS.md Im(q) banner). What IS established: the \u03b6\u2084 moderator cosh\u21a6i\u00b7sinh is the exact fibre-level form of the corpus 'Q_\u03b2 = bar-odd sinh partner of the bar-even cosh scale' assertion, with \u03a6\u2084 = q\u00b2+1 the shared \u03b6\u2084 = i residue locus. The full descent of binding (Re) and Q_\u03b2 (Im) from ONE fibre \ud835\udd19 remains the OPEN conjecture \u2014 advanced (generator-level coupling proved) but not closed; closure needs the fibre-level kernel identification, not an observable match.",
+  "scriptHash": "38ae6ad0b3eb",
+  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "commitSha": "3643c51f7c72d61278d2c27d19b68ec35126dffb",
+  "engine": "sympy",
+  "computedAt": "2026-07-02T12:09:37.075210+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "frakV_zeta4_fibre_vs_observable_probe.py"
+}

@@ -94,6 +94,12 @@ theorem explicit_central_idempotent_via_murphy
     `conj:bring-figure-eight-depth-2-witness`. The `e_{(2,2)}`
     formula is concrete and finite (sum over 2 SYTs × product
     over 4 boxes × Lagrange factor). -/
-example : centralIdempotent [2, 2] q * centralIdempotent [2, 2] q = centralIdempotent [2, 2] q := sorry
+example : centralIdempotent [2, 2] q * centralIdempotent [2, 2] q = centralIdempotent [2, 2] q :=
+  -- Ref: [manuscript] §prop:explicit-central-idempotent — concrete (2,2)
+  -- instance of `explicit_central_idempotent_via_murphy`; the e_{(2,2)}
+  -- idempotency is the finite Lagrange computation witnessed in
+  -- conj:bring-figure-eight-depth-2-witness. `centralIdempotent` is `opaque`,
+  -- so this is asserted from the cited construction, not computed.
+  sorry
 
 end QOU.BraidKnot.ExplicitCentralIdempotent

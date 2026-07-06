@@ -33,6 +33,7 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 (codata sweep)
 del _sys, _Path, _bridge
 
 import json
@@ -50,7 +51,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 # Constants
 M_E_MEV = mpf("0.510998950")
-M_P_CODATA_MEV = mpf("938.27208816")
+M_P_CODATA_MEV = mpf(M_P_MEV_VALIDATION)
 Q_0 = mpf(Q_50_DIGIT_STR)  # canonical 50-digit substrate pin
 VOL_B3 = 8 * mp.catalan
 G_CATALAN = mp.catalan

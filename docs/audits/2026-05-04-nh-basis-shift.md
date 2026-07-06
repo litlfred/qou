@@ -2,8 +2,8 @@
 
 **Date.** 2026-05-04
 **Branch.** `copilot/identify-multiplicative-chain`
-**Witness.** [`folio-assistant/computations/nh-basis-shift.witness.json`](../../folio-assistant/computations/nh-basis-shift.witness.json)
-**Script.** [`folio-assistant/computations/nh_basis_shift.py`](../../folio-assistant/computations/nh_basis_shift.py)
+**Witness.** [`computations/nh-basis-shift.witness.json`](../../computations/nh-basis-shift.witness.json)
+**Script.** [`computations/nh_basis_shift.py`](../../computations/nh_basis_shift.py)
 **Upstream.** [`docs/audits/2026-05-04-alpha-shift-torus-multiplicative-chain.md`](2026-05-04-alpha-shift-torus-multiplicative-chain.md)
 
 ## Question
@@ -152,7 +152,7 @@ which is the *clean* (no-cancellation) regime of the GS-NF basis.
 
 ## Where it lands
 
-- **Witness:** [`folio-assistant/computations/nh-basis-shift.witness.json`](../../folio-assistant/computations/nh-basis-shift.witness.json)
-- **Script:** [`folio-assistant/computations/nh_basis_shift.py`](../../folio-assistant/computations/nh_basis_shift.py)
+- **Witness:** [`computations/nh-basis-shift.witness.json`](../../computations/nh-basis-shift.witness.json)
+- **Script:** [`computations/nh_basis_shift.py`](../../computations/nh_basis_shift.py)
 - **Strengthens:** [`prop:alpha-shift-torus-knot`](../../content/quantum-observable-universe/braids-and-knots/alpha-shift-torus-knot.md)
 - **Feeds:** Step 5 audit (`docs/audits/2026-05-04-nh-knots-confinement-shift.md`) — provides the baseline shift_NF(b) table that the LP/SDP confinement comparison post-projects against.

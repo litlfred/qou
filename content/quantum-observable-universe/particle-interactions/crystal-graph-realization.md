@@ -24,7 +24,7 @@ The plactic-monoid bridge of Lecouvey \cite{lecouvey2007}
 certifies that the GS irreducible forms and crystal highest-weight
 vertices are in bijection.*
 
-**Why a conjecture and not a theorem.**
+**Conjectural status.**
 *The literature establishes the Brundan–Kleshchev isomorphism and
 the GS$\leftrightarrow$crystal bijection at the level of generic Hecke and KLR
 algebras.  What remains conjectural in this manuscript is that the

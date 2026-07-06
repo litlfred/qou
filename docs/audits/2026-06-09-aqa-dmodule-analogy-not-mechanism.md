@@ -80,6 +80,6 @@ holonomicity/Bernstein–Sato argument.
    arriving with "we can use D-modules / algebraic analysis to derive X" should
    read this note first and the surreal ledger second before spending compute.
 
-**Cross-refs:** the corpus-grep / formalize-first disciplines (CLAUDE.md) apply —
+**Cross-refs:** the corpus-grep / formalize-first disciplines (AGENTS.md) apply —
 the productive home for any such idea is the existing surreal-calculus blocks
 above, extended by `prop:adelic-reeb-restricted-product`, not a new mechanism.

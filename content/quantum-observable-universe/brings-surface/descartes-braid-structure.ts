@@ -1,6 +1,9 @@
 import { corollary } from "../../schema/builders";
 
 export default corollary({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+  ],
   label: "cor:descartes-braid-structure",
   lean: { ref: "qou:QOU.Archimedean.descartes_braid_structure",
     validation: "not_checked",
@@ -9,7 +12,7 @@ export default corollary({
   tags: ["archimedean-universe", "braid-group", "dic3"],
   uses: [
     "prop:braid-action-tensor",
-    "def:coral-sector-coords",
+    "def:color-sector-coords",
     "rem:r-matrix-braiding",
     "ex:trefoil-operator-algebra",
     "prop:brings-is-qou",
@@ -18,8 +21,8 @@ export default corollary({
   proofs: ["prf:descartes-braid-structure"],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/probes/archimedean_knot_eigenbasis_probe.py",
-    witness: "folio-assistant/computations/probes/archimedean-knot-eigenbasis-probe.witness.json",
+    script: "computations/probes/archimedean_knot_eigenbasis_probe.py",
+    witness: "computations/probes/archimedean-knot-eigenbasis-probe.witness.json",
     status: "verified",
   },
 });

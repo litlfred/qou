@@ -6,7 +6,7 @@ currently specialized to (q : ℝ) (hq : 1 < q) or similar, but whose
 proof body uses NO archimedean tactic — no Real.sqrt, no Real.rpow,
 no Real.cos/sin/cosh/exp/log/pi, no linarith / norm_num on q's
 ordering, no CODATA value comparison. Such files are eligible to be
-refactored to the generic ground ring R per CLAUDE.md §7c:
+refactored to the generic ground ring R per AGENTS.md §7c:
 
     (q : ℝ) (hq : 1 < q)
       ↓
@@ -127,7 +127,7 @@ def main() -> int:
     )
     w.set_description(
         "Per-file inventory of QOU Lean files classified by lift "
-        "eligibility under CLAUDE.md §7c base-ring discipline. "
+        "eligibility under AGENTS.md §7c base-ring discipline. "
         "CANDIDATE = ℝ-specialized signature `(q : ℝ)` present, "
         "but no archimedean tactic in the file body (Real.sqrt, "
         "Real.rpow, Real.cos/sin/cosh/exp/log/pi, CODATA literals). "

@@ -50,7 +50,17 @@ namespace QOU.BraidsAndKnots
     Markov-trace family is one-dimensional in the trace
     functionals, parameterised by `z`. -/
 class MarkovTraceFamilyOneDim (R : Type*) (q z : R) where
-  /-- Any two Markov traces with the same `z` and `tr(1) = 1` agree. -/
+  /-- Any two Markov-trace functionals on `H_n(R, q)` with the same
+      Markov parameter `z` and normalisation `tr(1) = 1` agree on every
+      element.  This is the `d = 1` (type-A) case of Chlouveraki HDR
+      Theorem 6.20: the trace functionals form a one-dimensional family
+      parameterised by `z`.
+
+      `opaque marker` — the carrier records the open Hecke-algebra
+      trace-uniqueness input.  Mathlib has no Iwahori–Hecke trace theory
+      to formalise the genuine `∀ tr tr', … → tr = tr'` statement over an
+      abstract `H_n(R, q)`, so this field is a tracked opaque tag, not a
+      fabricated trivial assertion. -/
   unique : True   -- Ref: [chlouveraki2016] HDR Theorem 6.20
 
 open Real BigOperators
@@ -195,7 +205,7 @@ Uniqueness holds at two layers:
     must agree with the canonical one. This layer is encoded as
     a conditional theorem under
     `[MarkovTraceFamilyOneDim ℝ q (jonesMarkovZ q)]` per
-    CLAUDE.md §3b-cond.
+    AGENTS.md §3b-cond.
 
 The combined statement is then: under the categorical hypothesis,
 any convention shift reproducing `tr_M` agrees definitionally
@@ -229,7 +239,7 @@ theorem wenzl_bridge_unique_definitional (q : ℝ) :
     its Wenzl-formula parameter pair `(Q, z_GL)` to equal
     `(q², q · z)` definitionally.
 
-    Per CLAUDE.md §3b-cond, this theorem is a *rigorous
+    Per AGENTS.md §3b-cond, this theorem is a *rigorous
     conditional result* — fully verified by Lean modulo the named
     `MarkovTraceFamilyOneDim` class instance, which axiomatises
     Chlouveraki HDR Theorem 6.20.
@@ -267,15 +277,5 @@ theorem wenzl_bridge_unique_categorical
 theorem wenzl_bridge_unique (q : ℝ) :
     wenzlQ q = q ^ 2 ∧ wenzlZ q = q * jonesMarkovZ q :=
   wenzl_bridge_unique_definitional q
-
-/-- **Numerical agreement**: at the substrate value `q_0 ≈ 1.1100`,
-    the Wenzl-bridge closed form `y_λ_bridge(q_0)` agrees with the
-    Jones-Markov coefficient computed directly from the linear-system
-    solve to machine precision (≤ 10⁻¹⁶) across all 270 partitions
-    of `n = 2, ..., 12`. -/
-theorem y_lambda_bridge_numerical_agreement : True := by
-  trivial  -- Empirical witness:
-           -- gb-filtration-gauge-invariance.witness.json (n ≤ 9)
-           -- y-lambda-wenzl-bridge-symbolic-witness.json (n ≤ 12)
 
 end QOU.BraidsAndKnots

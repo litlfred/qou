@@ -16,11 +16,11 @@ export default proposition({
   computation: {
     engine: "mpmath",
     script:
-      "folio-assistant/computations/probes/gap_a4_T15_character_polynomial_probe.py",
+      "computations/probes/gap_a4_T15_character_polynomial_probe.py",
     witness:
-      "folio-assistant/computations/probes/gap-a4-T15-character-polynomial-probe.witness.json",
+      "computations/probes/gap-a4-T15-character-polynomial-probe.witness.json",
     consumers: [
-      "folio-assistant/computations/probes/gap_a4_T18_markov_normalization_probe.py",
+      "computations/probes/gap_a4_T18_markov_normalization_probe.py",
     ],
     status: "verified",
   },

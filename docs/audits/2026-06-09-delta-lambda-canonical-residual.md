@@ -3,9 +3,9 @@
 **Status:** exploratory / **near-match tier** (c_k tiering discipline —
 an observation of structure in the canonical residual, NOT a wired
 closure, NOT a fit ansatz). Probe:
-[`delta_lambda_canonical_residual.py`](../../folio-assistant/computations/delta_lambda_canonical_residual.py),
+[`delta_lambda_canonical_residual.py`](../../computations/delta_lambda_canonical_residual.py),
 witness
-[`delta-lambda-canonical-residual.witness.json`](../../folio-assistant/computations/delta-lambda-canonical-residual.witness.json).
+[`delta-lambda-canonical-residual.witness.json`](../../computations/delta-lambda-canonical-residual.witness.json).
 
 ## Context — the trace-convention reconciliation (recap)
 
@@ -16,12 +16,12 @@ found the binding effort scattered across ≥3 trace conventions
 archimedean #1742) — while the codebase's **canonical** path already
 exists and is witnessed:
 
-- **Trace:** `folio-assistant/computations/markov/markov_trace_canonical.py::tr_M_element`
+- **Trace:** `computations/markov/markov_trace_canonical.py::tr_M_element`
   — the Jones–Markov trace (`z = 1/(√q+1/√q)`), forced by the four
   Markov axioms
   ([`markov-axioms-primitive`](../../content/quantum-observable-universe/braids-and-knots/markov-axioms-primitive.md),
   `prop:categorical-mass-markov`).
-- **Binding:** [`binding_canonical.py`](../../folio-assistant/computations/binding_canonical.py):
+- **Binding:** [`binding_canonical.py`](../../computations/binding_canonical.py):
   `B_pred(Z,N) = E_0·(tr_M(W_free) − tr_M(W_atom))` — a free−bound
   **difference** of canonical traces.
 

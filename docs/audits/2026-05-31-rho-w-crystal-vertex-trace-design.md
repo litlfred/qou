@@ -203,5 +203,5 @@ interface operator" — but that is a different object than ρ_w).
 - [`docs/audits/2026-05-25-option-e-crystal-weight-delta-lambda.md`](2026-05-25-option-e-crystal-weight-delta-lambda.md) — original `ρ_w` formula; lists it (NOT EXIST).
 - [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](2026-05-18-delta-lambda-gating-context.md) — Δ_λ gate, six ansätze, 2026-05-29 retraction (D −82.9%).
 - [`docs/audits/2026-05-30-klr-dialog-assessment.md`](2026-05-30-klr-dialog-assessment.md) — KLR/crystal relaunch criteria.
-- `folio-assistant/computations/rho_w_crystal_vertex_trace.py` — the parameter-free compute (this PR).
-- `folio-assistant/computations/chi-deuteron-h6-at-q0-50dps.witness.json` — the χ^λ cache `Δ_λ^{ρ_w}` collapses to.
+- `computations/rho_w_crystal_vertex_trace.py` — the parameter-free compute (this PR).
+- `computations/chi-deuteron-h6-at-q0-50dps.witness.json` — the χ^λ cache `Δ_λ^{ρ_w}` collapses to.

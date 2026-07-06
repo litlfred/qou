@@ -17,7 +17,7 @@ $\mathrm{INN}(G_q)$ takes values in
 $\mathfrak{g}_q = \mathfrak{su}_q(2)$. Quantum
 flatness sets $B = F_A$, so $B$ inherits the
 tracelessness forced by the determinant constraint
-$\det(g_V) = 1$ of [$\mathrm{SU}(2)$ emergence](#thm\:su2-emergence): $B$ is
+$\det(g_V) = 1$ of [$\mathrm{SU}(2)$ emergence](#thm:su2-emergence): $B$ is
 $\mathrm{Ad}(P)$-valued with $\mathrm{tr}B = 0$, i.e.
 $\mathfrak{su}_q(2)$-valued rather than $\mathfrak{gl}_q(2)$-valued.
 
@@ -25,7 +25,7 @@ $\mathfrak{su}_q(2)$-valued rather than $\mathfrak{gl}_q(2)$-valued.
 equation.*
 Imposing the simplicity constraint
 $B \in \Gamma(\Lambda^+\!H^* \otimes \mathrm{Ad}(P))$
-([self-dual 2-group](#rem\:self-dual-2group)) and combining with $F_A = B$
+([self-dual 2-group](#rem:self-dual-2group)) and combining with $F_A = B$
 yields $F_A = F_A^+$, hence $F_A^- = 0$. Step 1 guarantees the
 structure group is $\mathrm{SU}_q(2)$---not a quotient of
 $\mathrm{GL}_q(2)$---so the instanton moduli space carries the

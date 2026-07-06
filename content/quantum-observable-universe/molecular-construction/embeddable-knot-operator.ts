@@ -5,6 +5,9 @@ import { definition } from "../../schema/builders";
  * the categorical expression of σ > π bond strength, reusable downstream.
  */
 export default definition({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). The structure and overlap-weighted sum are generic to any ordered field." },
+  ],
   label: "def:embeddable-knot-operator",
   lean: {
     ref: "qou:QOU.Molecular.EmbeddableKnotOperator",
@@ -13,12 +16,17 @@ export default definition({
   title: "Embeddable knot operator with geometric overlap weight",
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/embeddable_knot_operator.py",
+    script: "computations/embeddable_knot_operator.py",
     witness: [
-      "folio-assistant/computations/embeddable-knot-operator.witness.json",
+      "computations/embeddable-knot-operator.witness.json",
     ],
     status: "verified",
   },
-  uses: ["def:covalent-bond-types"],
+  // Detangler forward-ref demote (bean foxn): this generic, "reusable
+  // downstream" operator does not logically depend on the specific
+  // def:covalent-bond-types (organic-chemistry, a later chapter) — that block
+  // is a downstream *application*. The .md carries no reference to it; the edge
+  // was a spurious cross-chapter forward dependency.
+  uses: [],
   tags: ["knot-operator", "embedding", "overlap-weight", "sigma-pi", "reusable"],
 });

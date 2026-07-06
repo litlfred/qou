@@ -6,27 +6,28 @@
   - Liquid-solid: T_q^{l→s} = S_q^{∂} / ([2]_q · [n_K]_q)
   - Sublimation: when Ext¹_{H_n(q)}(V_asym, V_sym) ≠ 0
 
-**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-Part of the formal proof chain. The parameter `q` is the canonical
-indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
-numerical evaluation.
+**Ground ring**: archimedean specialisation over `ℝ` (AGENTS.md §7c).
+The critical-temperature proofs use ordering, division, and positivity,
+so they live over `ℝ`; the underlying combinatorial content stays generic
+to any commutative ring with the same `q`-data.  `R_q := ℝ` is the
+substrate specialisation `ι : ℤ[q, q⁻¹] → ℝ, q ↦ q₀`.
 -/
 import QOU.QuantumObservableUniverse
 import QOU.MathConstants
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
+import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Positivity
+import Mathlib.Tactic.GCongr
 
 namespace QOU.Information
 
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
-abbrev R_q := LaurentPolynomial ℤ
-def q_param : R_q := LaurentPolynomial.T 1
-def q_inv_param : R_q := LaurentPolynomial.T (-1)
+
+/-- Ground ring: archimedean specialisation `R_q := ℝ` (AGENTS.md §7c).
+    The numerical substrate value `q₀ ≈ 1.1097` lives in `ℝ`. -/
+abbrev R_q := ℝ
 
 /-- **S³ boundary action**: the restriction of the categorical action
     to ∂(S³_q) ≅ S².  This is the energy cost of threading a knot
@@ -34,7 +35,6 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
     Label: prop:phase-transition-boundary -/
 noncomputable def s3BoundaryAction {M : Type*} (sp : SubstrateParameter M)
     (p : M) : R_q :=
-  let q := sp.field p
   let eta := operationalEntropy sp p
   let hbar := quantumPlanckConstant sp p
   -- Surface integral of adjoint connection wedged with *η_q over S²
@@ -67,8 +67,7 @@ theorem gasLiquidCriticalTemp_pos {M : Type*} (sp : SubstrateParameter M)
     have heta : 0 < (2 * sp.field p - 1) / sp.field p ^ 3 :=
       div_pos h2q1 hq3
     have hhbar : 0 < 1 - (sp.field p)⁻¹ := by
-      have : (sp.field p)⁻¹ < 1 := by
-        rw [inv_lt_one_iff_of_pos hq_pos]; linarith
+      have : (sp.field p)⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
       linarith
     exact mul_pos heta hhbar
   · -- [2]_q = q + q⁻¹ > 0
@@ -79,8 +78,7 @@ theorem gasLiquidCriticalTemp_pos {M : Type*} (sp : SubstrateParameter M)
 /-- The liquid-solid critical temperature is below the gas-liquid
     critical temperature when [n_K]_q > 1. -/
 theorem liquidSolid_lt_gasLiquid {M : Type*} (sp : SubstrateParameter M)
-    (p : M) (qIntNK : R_q) (hq : sp.field p > 1)
-    -- (hnk : 1 < qIntNK) :  -- (archimedean; not meaningful over R_q)
+    (p : M) (qIntNK : R_q) (hq : sp.field p > 1) (hnk : 1 < qIntNK) :
     liquidSolidCriticalTemp sp p qIntNK <
     gasLiquidCriticalTemp sp p := by
   unfold liquidSolidCriticalTemp gasLiquidCriticalTemp
@@ -90,10 +88,10 @@ theorem liquidSolid_lt_gasLiquid {M : Type*} (sp : SubstrateParameter M)
   have hinv : (0 : R_q) < (sp.field p)⁻¹ := inv_pos.mpr hq_pos
   have h2q : 0 < sp.field p + (sp.field p)⁻¹ := by linarith
   have hnum : 0 < s3BoundaryAction sp p := by
-    calc 0 < s3BoundaryAction sp p / (sp.field p + (sp.field p)⁻¹) := hS
-         _ ≤ s3BoundaryAction sp p := by
-            rw [div_le_iff h2q]; nlinarith [le_of_lt h2q]
-  rw [div_lt_div_iff (mul_pos h2q (by linarith : (0 : R_q) < qIntNK)) h2q]
+    have := mul_pos hS h2q
+    rwa [div_mul_cancel₀ _ (ne_of_gt h2q)] at this
+  -- s/([2]q · nK) < s/[2]q  since nK > 1, s > 0, [2]q > 0
+  gcongr
   nlinarith
 
 /-- **Sublimation condition** (type-level): the liquid phase is
@@ -118,5 +116,7 @@ structure SublimationCondition (M : Type*) where
     2 * valenceElectrons = shellCapacity →
     crossingNumber % 2 = 1 →
     extensionNonSplit
+
+end
 
 end QOU.Information

@@ -8,7 +8,7 @@ For each word, compute 3-channel vertex volume Φ₁.
 Find the word with maximum binding (minimum Φ₁ with bind > 0).
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 ch-valence-ilp.py
 """
 

@@ -67,7 +67,7 @@ sys.path.insert(0, str(HERE))
 import mpmath as mp
 
 from witness_base import WitnessBuilder
-from codata_constants import M_E_MEV
+from codata_constants import M_E_MEV, AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION
 from mass_at_3A_proper import per_generator_V_hat_3A, E_0_CALIBRATION_MEV
 from _li_2_q_util import load_q_50dps, li_2_q
 # Pentagon-reduced Li_2^q (with POST-τ Rogers log² correction).
@@ -81,10 +81,10 @@ from pentagon_reduction_li2q import li_2_q_pentagon
 
 
 B_AME = {
-    "D":   mp.mpf("2.22456607"),
-    "T":   mp.mpf("8.481798"),
-    "3He": mp.mpf("7.7180428"),
-    "4He": mp.mpf("28.295674"),
+    "D":   AME_B_DEUTERON_MEV_VALIDATION,
+    "T":   AME_B_TRITIUM_MEV_VALIDATION,
+    "3He": AME_B_HE3_MEV_VALIDATION,
+    "4He": AME_B_HE4_MEV_VALIDATION,
 }
 
 ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}

@@ -1,7 +1,7 @@
 //! Laurent polynomial in `q` with `BigRational` coefficients.
 //!
 //! Port of the Python `LaurentQ` class
-//! (`folio-assistant/computations/laurent_q.py`) — the inner
+//! (`computations/laurent_q.py`) — the inner
 //! arithmetic kernel of the Markov-peel reduce loop on atomic
 //! braids in `H_{3A}(q)`.  Tier 1.A from
 //! [`docs/audits/2026-05-20-compute-optimization-roadmap.md`].
@@ -21,7 +21,7 @@
 //! Both types coexist in the same crate so module boundaries can
 //! convert between them when needed.
 //!
-//! Per CLAUDE.md §Precision goals L1 (50-dps compute floor): every
+//! Per AGENTS.md §Precision goals L1 (50-dps compute floor): every
 //! coefficient is an exact `BigRational`; no `f64` anywhere in the
 //! arithmetic kernel.
 

@@ -37,7 +37,7 @@ USAGE:
         | tee /tmp/cross_pair.log
 
 Outputs:
-    folio-assistant/computations/qbeta-habiro-cross-pair-factorization.witness.json
+    computations/qbeta-habiro-cross-pair-factorization.witness.json
 """
 from __future__ import annotations
 
@@ -418,7 +418,7 @@ def main() -> int:
         print("\n  ERROR: helium-3 and/or helium-4 Habiro coefficient "
               "auxiliary witness JSON files not found.")
         print("  Generate via:")
-        print("    python3 -u folio-assistant/computations/"
+        print("    python3 -u computations/"
               "_helium_habiro_helper.py")
         return 2
 

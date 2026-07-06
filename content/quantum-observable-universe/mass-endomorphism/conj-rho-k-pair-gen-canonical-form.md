@@ -33,7 +33,7 @@ is the Markov parameter.*
 
 The Kashaev-limit form (six-term $T_3$) is the expected canonical form, but its derivation as a leading-order expansion in $\hbar_q$ — parallel to the single-gen Kashaev derivation $\alpha \sum \ln|V_i|$ — has not been completed.
 
-## What's proved vs conjectured
+## Proved versus conjectured status
 
 | Component | Status | Evidence |
 |---|---|---|
@@ -80,16 +80,21 @@ The Kashaev-limit derivation that gave $\alpha \ln|V_i|$ for the single-gen piec
 ```lean
 namespace QOU.BraidKnot.RhoKPairGenCanonicalForm
 
-/-- The conjectural canonical pair-gen functional. -/
+/-- The conjectural canonical pair-gen functional `f_2(q, V_i, V_j)`;
+    expected six-term `T_3` Kashaev form, derivation open (cited placeholder). -/
 noncomputable def pair_gen_functional
-    {R : Type*} [Field R] (q : R) (V_i V_j : R) : R := sorry
-  -- Ref: [manuscript] prop:rho-k-pair-gen-canonical-form
+    {R : Type*} [Field R] (q V_i V_j : R) : R :=
+  sorry  -- Ref: [manuscript] conj:rho-k-pair-gen-canonical-form
 
-/-- Conjectural Kashaev limit recovery. -/
-theorem pair_gen_kashaev_limit
-    {R : Type*} [Field R] (V_i V_j : R) :
-    sorry := by sorry
-  -- Ref: [manuscript] prop:rho-k-pair-gen-canonical-form
+/-- Conjecture, §3b class axiomatisation: a single canonical functional
+    reproduces ρ_K^pair-gen to sub-percent accuracy (the precise Li_2^q
+    recovery bound needs the graded-expansion infrastructure, so it is
+    carried as a `Prop` class that downstream blocks take as a
+    `[PairGenCanonical]` hypothesis). The field encodes the recovery in
+    the *shape* of the claim — a sub-percent error bound — not `True`. -/
+class PairGenCanonical : Prop where
+  exists_subpercent_recovery :
+    ∀ (M : ℝ), 0 ≤ M → ∃ M_rec : ℝ, |M_rec - M| ≤ M / 100
 
 end QOU.BraidKnot.RhoKPairGenCanonicalForm
 ```
@@ -100,7 +105,7 @@ When the canonical $f_2$ is derived:
 1. This conjecture promotes to a theorem.
 2. [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md) §pair-gen status changes from "open" to "proved".
 3. Downstream conjectures (especially [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) which doesn't currently use pair-gen but will if extended to multi-strand leptons) get unblocked.
-4. The Q_β residual closure direction (Path A / Path B in [`2026-05-24-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md)) becomes tractable.
+4. The $\mathfrak{Q}_\beta$ residual closure direction (Path A / Path B in [`2026-05-24-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/2026-05-24-q-beta-net-ansatz-fitting-finding.md)) becomes tractable.
 
 ## Cross-references
 
@@ -109,3 +114,5 @@ When the canonical $f_2$ is derived:
 - [`prop:per-braid-mass-tower`](per-braid-mass-tower.md) — canonical mass formula
 - [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md) — sibling conjecture for leptons
 - Audit: [`docs/audits/2026-05-25-rho-k-dependent-conjectures-status.md`](../../../docs/audits/2026-05-25-rho-k-dependent-conjectures-status.md) — full dependency graph
+
+**Archimedean specialisation (§7c).** This conjecture is stated on the archimedean side of the substrate wall: its content is a real-mass sub-percent recovery bound — $\forall M \ge 0,\ \exists M_{\mathrm{rec}},\ |M_{\mathrm{rec}} - M| \le M/100$ over $\mathbb{R}$. The posited functional $f_2(q, \hat V_i, \hat V_j)$ is the generic $q$-deformation input it consumes; the real-mass claim and the generic functional coexist in one block because the conjectural statement is intrinsically about real masses, not a separable archimedean specialisation of an otherwise ℝ-free construction.

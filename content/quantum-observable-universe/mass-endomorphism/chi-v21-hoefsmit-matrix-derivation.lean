@@ -127,7 +127,6 @@ theorem chi_V21_laurent_decomposition (q : ℝ) (hq : q ≠ 0) :
       = -q^3/4 + q/4 - q⁻¹/4 + q⁻¹^3/4 := by
   unfold chi_V21_difference_polynomial
   field_simp
-  ring
 
 /-! ## Cross-checks against the probe -/
 
@@ -225,7 +224,7 @@ noncomputable def chi_v21_on_word (q : ℝ) (w : TypedB3Word) : ℝ :=
 
 -- Ref: [manuscript] rem:chi-v21-hoefsmit-matrix-derivation §"matrix-product trace"
 -- Ref: [manuscript] empirical sympy verification in
---   folio-assistant/computations/probe_per_wedderburn_block_ck.py
+--   computations/probe_per_wedderburn_block_ck.py
 --   (q_character_on_braid_word + sympy.cancel + sympy.factor)
 /-- **Full V_(2,1) Hoefsmit matrix-product trace identity.**
     The trace of the matrix product on the canonical typed-B_3
@@ -247,7 +246,7 @@ theorem chi_v21_matrix_trace_identity (q : ℝ) (hq : q ≠ 0) :
   -- Symbolic matrix-product trace evaluation; backed empirically by
   -- PROOF STRATEGY: unfold chi_v21_on_word, foldl 11 matrices,
   -- take trace, use sigma1_v21_param (sqrt-free), field_simp + ring.
-  -- Ref: [manuscript] folio-assistant/computations/probe_per_wedderburn_block_ck.py
+  -- Ref: [manuscript] computations/probe_per_wedderburn_block_ck.py
   sorry
 
 /-! ## u = q² coordinate: sqrt-free trace identity

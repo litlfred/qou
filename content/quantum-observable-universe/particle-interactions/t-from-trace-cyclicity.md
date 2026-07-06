@@ -33,7 +33,7 @@ $$
 (the reversed word produces the **mirror-orientation** link, which
 has the same Jones polynomial as the original by trace cyclicity).
 
-## Why this disentangles D8 from CPT
+## Disentanglement of D8 from CPT
 
 The composite bar-involution acts on $q$ AND $\sigma_i$ AND, when
 followed by Markov closure, AND the trace orientation.  Separating

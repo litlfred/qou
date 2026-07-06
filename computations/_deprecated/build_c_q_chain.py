@@ -128,7 +128,7 @@ def build() -> DerivationChain:
         notes=(
             "Nonabelian Stokes is the integrability obstruction; in the "
             "QOU framework it forces the q-connection coefficients to be "
-            "exactly (q^{-1}, ℏ_q).  CLAUDE.md §7 lists this as one of "
+            "exactly (q^{-1}, ℏ_q).  AGENTS.md §7 lists this as one of "
             "the seven first-principles entrypoints."
         ),
     ))

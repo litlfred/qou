@@ -1,8 +1,8 @@
 {
   "engine": "python+pyhecke-native",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T06:20:27.255853+00:00",
-  "commitSha": "3b3f3ec8000baa55426981f9074deb4f31823765",
+  "computedAt": "2026-06-22T04:34:28.309110+00:00",
+  "commitSha": "dd7f0ed7b18f6e278701ebd9da007aa03d7cc38c",
   "assertions": [
     {
       "name": "all_audits_processed",
@@ -15,22 +15,30 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 12,
   "computation": "per-atom-audit-witnesses",
   "scriptFile": "per_atom_audit_witnesses.py",
-  "scriptHash": "bb229975916e",
-  "scriptCommitSha": "3b3f3ec8000baa55426981f9074deb4f31823765",
+  "scriptHash": "5f11b91fcf88",
+  "scriptCommitSha": "9e5351788e688a35cda7c6cbc9548a2568db655e",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Per-atom audit witnesses (item 6 from author 2026-05-25 multi-select). For each KLR-violating atom: bug type (per PR #1228 §3 taxonomy), squash path (per §5 options), canonical-formula candidate using the new Rust upstream pn.trace_weights_n (PR #1251 commit 0592a22c5). First production-grade use of the n-generic Rust ABI; demonstrates the migration path for 15+ legacy H_3-locked callers.",
   "parameters": {
-    "q_0_f64": 1.1099785955541805,
-    "h_f64": 0.20906032198987945,
-    "h_sq_f64": 0.04370621823051207,
+    "q_0_f64": 1.1099785827513808,
+    "h_f64": 0.20906029879563937,
+    "h_sq_f64": 0.04370620853252201,
     "klr_positivity_violations": 8
   },
   "data": {
@@ -41,9 +49,9 @@
         "Z": 1,
         "N": 1,
         "n_strands": 6,
-        "B_AME_MeV": 2.22456612,
+        "B_AME_MeV": 2.2245662000000004,
         "B_prod_MeV": 2.2488,
-        "rel_err_pct": 1.0893755767529245,
+        "rel_err_pct": 1.089371941369951,
         "klr_positivity_violates": true,
         "jet_order_classification": "between h^4 and h^2/2",
         "bug_type": "Type 3 (census-assigned, no canonical β)",
@@ -54,9 +62,9 @@
         "canonical_candidate": {
           "n_strands": 6,
           "num_partitions": 11,
-          "tr_M_via_rust_atlas": 0.9967359116012303,
-          "B_atlas_corrected_MeV": 14.92894963026523,
-          "elapsed_seconds": 0.0059583187103271484
+          "tr_M_via_rust_atlas": 0.9967359130932111,
+          "B_atlas_corrected_MeV": 14.928949652611877,
+          "elapsed_seconds": 0.0006499290466308594
         }
       },
       {
@@ -65,9 +73,9 @@
         "Z": 1,
         "N": 2,
         "n_strands": 9,
-        "B_AME_MeV": 8.4817984,
+        "B_AME_MeV": 8.481796200000002,
         "B_prod_MeV": 8.4686,
-        "rel_err_pct": -0.15560850868608567,
+        "rel_err_pct": -0.1555826111455167,
         "klr_positivity_violates": false,
         "jet_order_classification": "≈ h^4 (1.91e-03)",
         "bug_type": "(KLR-consistent — clean h^4 closure)",
@@ -77,9 +85,9 @@
         "canonical_candidate": {
           "n_strands": 9,
           "num_partitions": 30,
-          "tr_M_via_rust_atlas": 0.9951078649304431,
-          "B_atlas_corrected_MeV": 22.356847514947642,
-          "elapsed_seconds": 0.1597461700439453
+          "tr_M_via_rust_atlas": 0.9951078671647595,
+          "B_atlas_corrected_MeV": 22.35684756514549,
+          "elapsed_seconds": 0.01871967315673828
         }
       },
       {
@@ -88,9 +96,9 @@
         "Z": 2,
         "N": 1,
         "n_strands": 9,
-        "B_AME_MeV": 7.7180375,
+        "B_AME_MeV": 7.71804132,
         "B_prod_MeV": 7.4889,
-        "rel_err_pct": -2.96885704429397,
+        "rel_err_pct": -2.9689050692980756,
         "klr_positivity_violates": false,
         "jet_order_classification": "≈ h^2 (4.37e-02)",
         "bug_type": "Type 3 (census-assigned, no canonical β)",
@@ -101,9 +109,9 @@
         "canonical_candidate": {
           "n_strands": 9,
           "num_partitions": 30,
-          "tr_M_via_rust_atlas": 0.9951078649304431,
-          "B_atlas_corrected_MeV": 22.356847514947642,
-          "elapsed_seconds": 0.11821341514587402
+          "tr_M_via_rust_atlas": 0.9951078671647595,
+          "B_atlas_corrected_MeV": 22.35684756514549,
+          "elapsed_seconds": 0.019464731216430664
         }
       },
       {
@@ -112,9 +120,9 @@
         "Z": 2,
         "N": 2,
         "n_strands": 12,
-        "B_AME_MeV": 28.2956912,
+        "B_AME_MeV": 28.2956624,
         "B_prod_MeV": 29.9557,
-        "rel_err_pct": 5.866648700209168,
+        "rel_err_pct": 5.866756453808973,
         "klr_positivity_violates": true,
         "jet_order_classification": "≈ h^2 (4.37e-02)",
         "bug_type": "Type 1 (SDP single-block, magic A·8G with ν=2 extrap)",
@@ -126,9 +134,9 @@
         "canonical_candidate": {
           "n_strands": 12,
           "num_partitions": 77,
-          "tr_M_via_rust_atlas": 0.9934824774755344,
-          "B_atlas_corrected_MeV": 29.760440437942492,
-          "elapsed_seconds": 259.2059180736542
+          "tr_M_via_rust_atlas": 0.9934824804497567,
+          "B_atlas_corrected_MeV": 29.760440527037336,
+          "elapsed_seconds": 99.9042739868164
         }
       },
       {

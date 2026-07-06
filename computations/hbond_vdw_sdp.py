@@ -2,7 +2,8 @@
 # polynomial_q_not_applicable: operator-selection LP/SDP over inter-molecular
 # sub-braid channels; Markov traces are inputs, not a Jones evaluation here.
 """
-What does the operator-selection SDP say about van der Waals = the Hopf link?
+What does the operator-selection SDP say about the Hopf symmetric block — and
+where does van der Waals actually sit?
 
 Owner question: vdW isn't yet an explicit object — "hopf link I suppose? what
 does SDP say?" This runs the canonical operator-selection LP/SDP
@@ -12,9 +13,17 @@ sub-braid channels and reads off the DUAL shadow prices / active set — the
 
 CHANNELS (the inter-molecular braid in H_2(q), 2 molecules = 2 strands):
   b0 = 1     — no interaction (trivial)
-  b1 = σ₁    — single crossing = the directional H-bond channel
+  b1 = σ₁    — single crossing = the directional H-bond channel (antisym e₋)
   b2 = σ₁²   — the HOPF LINK 𝓛_H = T_{2,2}, linking number 1, Vol = 0
-               = the van der Waals / diquark (symmetric-block) channel.
+               = the symmetric (Hopf / [2]_q / diquark) CARRIER block e₊.
+
+CORRECTED FRAMING (2026-06-30, per prop:vdw-pskew-isolation): the symmetric
+block e₊ is the RETAINED cosh carrier of the Hopf weighting — it is NOT van
+der Waals. Van der Waals is the DISCARDED bar-odd residual sinh(2λ)·(e₊−e₋)
+(the P_skew channel) that the canonical P_avg projection throws away; that is
+why dispersion is small and absent from the main mass/binding formula. This
+script's e₊/e₋ q-dimensions and σ₁² block weights are all correct; only the
+earlier label "e₊ = van der Waals" is superseded.
 
 Markov traces (canonical, closed form; σ₁² = hσ₁ + 1 with h = q − q⁻¹):
   T_k := tr_M(σ₁^k):  T0=1, T1=z=1/(√q+1/√q),
@@ -28,9 +37,9 @@ The LP/SDP min Σ t_i x_i s.t. Σ x_i = n_target, Gx ≽ 0 returns the dual:
   y_i* = saturation price of channel i (>0 ⇒ "receptive"/active),
   active_set = {i : y_i* > 0}.
 
-The question this answers: is the Hopf/vdW channel b2 ACTIVE (a load-bearing,
-distinct channel) — i.e. does the SDP confirm vdW as the symmetric-block
-σ₁² channel, separate from the directional H-bond b1?
+The question this answers: is the Hopf σ₁² channel ACTIVE (a load-bearing,
+distinct channel) — i.e. does the SDP confirm the symmetric Hopf carrier
+e₊ as a genuine channel, separate from the directional H-bond b1?
 
 CAVEAT (honest): the operator-selection SDP is canonically the magic-A
 binding selector; applying it to the inter-molecular cohesion is off-label,
@@ -79,7 +88,7 @@ def main() -> None:
     q = Q0
     T = sigma1_power_traces(q)
     T0, T1, T2, T3, T4 = T
-    labels = ["1 (trivial)", "σ₁ (H-bond)", "σ₁² (Hopf/vdW)"]
+    labels = ["1 (trivial)", "σ₁ (H-bond)", "σ₁² (Hopf link)"]
 
     # t_i = tr_M(b_i) for b = {1, σ₁, σ₁²}; G = moment (Hankel) matrix.
     t = np.array([T0, T1, T2])
@@ -89,7 +98,7 @@ def main() -> None:
     n_target = 1.0
 
     print("=" * 74)
-    print("Operator-selection SDP over inter-molecular sub-braids — vdW = Hopf?")
+    print("Operator-selection SDP over inter-molecular sub-braids — Hopf block?")
     print("=" * 74)
     print(f"  q₀ = {q:.6f}")
     print(f"  Markov traces  tr_M(σ₁^k): "
@@ -107,26 +116,26 @@ def main() -> None:
     rank = int((eig > 1e-9).sum())
     print(f"  ⇒ naive basis {{1, σ₁, σ₁²}} has Gram RANK {rank} (one zero "
           f"eigenvalue): σ₁² = hσ₁+1 is NOT independent in H_2(q).")
-    print(f"    So 'vdW = σ₁²' is not a separate channel at 2 strands — it lives")
+    print(f"    So the Hopf σ₁² channel is not separate at 2 strands — it lives")
     print(f"    in the same 2-dim space as {{1, σ₁}}. The SDP needs the")
     print(f"    independent Wedderburn idempotents.")
     print()
 
     # ---- The INDEPENDENT channels: Wedderburn idempotents of H_2(q) ----
-    #   e_+ = (σ₁ + q⁻¹)/[2]_q   symmetric (trivial rep, σ₁→q)   = Hopf/vdW block
+    #   e_+ = (σ₁ + q⁻¹)/[2]_q   symmetric (trivial rep, σ₁→q)   = Hopf carrier
     #   e_- = (q − σ₁)/[2]_q      antisymmetric (sign, σ₁→−q⁻¹)  = directional
     # Orthogonal idempotents ⇒ G = diag(tr_M e_+, tr_M e_-).  The Hopf link
     #   σ₁² = q²·e_+ + q⁻²·e_-   (block eigenvalues squared).
     inv_q, two_q, z = 1.0 / q, q + 1.0 / q, T1
-    tr_ep = (z + inv_q) / two_q       # q-dim of symmetric (Hopf/vdW) block
+    tr_ep = (z + inv_q) / two_q       # q-dim of symmetric (Hopf carrier) block
     tr_em = (q - z) / two_q           # q-dim of antisymmetric (directional) block
     w_sym, w_asym = q * q, inv_q * inv_q   # weights of e_± inside σ₁²
-    idem_labels = ["e₊ symmetric (Hopf/vdW)", "e₋ antisym (directional)"]
+    idem_labels = ["e₊ symmetric (Hopf carrier)", "e₋ antisym (directional)"]
     print("  INDEPENDENT Wedderburn-idempotent channels of H_2(q):")
-    print(f"    tr_M(e₊) [symmetric/Hopf/vdW] = {tr_ep:.5f}   "
+    print(f"    tr_M(e₊) [symmetric/Hopf carrier] = {tr_ep:.5f}   "
           f"tr_M(e₋) [antisym/directional] = {tr_em:.5f}   (sum={tr_ep+tr_em:.4f})")
     print(f"    Hopf link σ₁² = q²·e₊ + q⁻²·e₋ = {w_sym:.4f}·e₊ + {w_asym:.4f}·e₋ "
-          f"⇒ {100*w_sym/(w_sym+w_asym):.1f}% symmetric (vdW-dominated)")
+          f"⇒ {100*w_sym/(w_sym+w_asym):.1f}% symmetric (carrier-dominated)")
 
     t2 = np.array([tr_ep, tr_em])
     G2 = np.diag([tr_ep, tr_em])
@@ -136,21 +145,22 @@ def main() -> None:
     hopf_active = True   # the symmetric block e₊ is a genuine independent channel
     hopf_price = float(tr_ep)
     print()
-    print(f"  ⇒ vdW = the SYMMETRIC-BLOCK idempotent e₊ (q-dim {tr_ep:.3f}), a")
-    print(f"    genuine independent channel — and the Hopf link σ₁² is "
-          f"{100*w_sym/(w_sym+w_asym):.0f}% e₊.")
-    print(f"    NOT a separate σ₁² channel (rank-deficient); it IS the symmetric")
-    print(f"    (Vol=0, [2]_q) projection. That is the SDP's verdict.")
+    print(f"  ⇒ the Hopf SYMMETRIC CARRIER is e₊ (q-dim {tr_ep:.3f}), a genuine")
+    print(f"    independent channel — and σ₁² is "
+          f"{100*w_sym/(w_sym+w_asym):.0f}% e₊. Van der Waals itself is NOT e₊:")
+    print(f"    it is the discarded bar-odd residual sinh(2λ)(e₊−e₋), small")
+    print(f"    (prop:vdw-pskew-isolation). e₊ is the retained cosh carrier.")
 
     w.set_description(
         "Operator-selection LP/SDP (prop:operator-selection-lp; lp_dual_solver) "
         "over the inter-molecular sub-braid channels {1, σ₁ (H-bond), σ₁² (Hopf "
-        "link 𝓛_H = T_{2,2}, Vol=0, = van der Waals)} with canonical Markov "
+        "link 𝓛_H = T_{2,2}, Vol=0, symmetric carrier e₊)} with canonical Markov "
         "traces t_i=tr_M(b_i) and Frobenius moment Gram G_{ij}=tr_M(b_i b_j). "
         "Reads the dual: y0*=binding-energy density, y_i*=channel saturation "
-        "prices, active_set='receptive sub-braids'. Answers whether the Hopf/vdW "
-        "channel σ₁² is a distinct load-bearing channel separate from the "
-        "directional H-bond σ₁. EXPLORATORY / off-label: the operator-selection "
+        "prices, active_set='receptive sub-braids'. Computes the e₊/e₋ q-dims and "
+        "σ₁² block weights. NOTE (per prop:vdw-pskew-isolation): e₊ is the retained "
+        "cosh CARRIER, NOT van der Waals; vdW is the discarded bar-odd residual "
+        "sinh(2λ)(e₊−e₋). EXPLORATORY / off-label: the operator-selection "
         "SDP is canonically the magic-A binding selector; the verdict reflects "
         "this inter-molecular channel/target choice."
     )
@@ -175,7 +185,7 @@ def main() -> None:
     w.add_data("hopf_vdw_channel_active", bool(hopf_active))
     w.add_data("hopf_vdw_shadow_price", float(hopf_price))
     w.add_data("naive_basis_gram_rank", rank)
-    w.add_data("tr_M_e_plus_symmetric_vdw", float(tr_ep))
+    w.add_data("tr_M_e_plus_symmetric", float(tr_ep))
     w.add_data("tr_M_e_minus_antisym_directional", float(tr_em))
     w.add_data("sigma1sq_symmetric_weight_q2", float(w_sym))
     w.add_data("sigma1sq_antisym_weight_qinv2", float(w_asym))
@@ -193,18 +203,19 @@ def main() -> None:
     )
     w.add_data(
         "finding",
-        f"The operator-selection SDP's verdict on vdW = Hopf link, in two parts. "
+        f"The operator-selection SDP on the Hopf channel, in two parts. "
         f"(1) The naive sub-braid basis {{1, σ₁, σ₁²}} is RANK-DEFICIENT (Gram rank "
         f"{rank}, one zero eigenvalue): σ₁² = hσ₁+1 is not independent in H_2(q), "
-        f"so 'vdW = the σ₁² channel' is NOT a separate channel at 2 strands. "
+        f"so 'the Hopf σ₁² channel' is NOT separate from {{1, σ₁}} at 2 strands. "
         f"(2) The independent Wedderburn idempotents ARE the channels: the "
-        f"symmetric block e₊ (trivial rep, q-dim {tr_ep:.4f}) is the Hopf/[2]_q/vdW "
-        f"channel (Vol=0); the antisymmetric block e₋ (q-dim {tr_em:.4f}) is the "
+        f"symmetric block e₊ (trivial rep, q-dim {tr_ep:.4f}) is the Hopf/[2]_q "
+        f"CARRIER (Vol=0); the antisymmetric block e₋ (q-dim {tr_em:.4f}) is the "
         f"directional H-bond channel. The Hopf link decomposes σ₁² = q²·e₊ + q⁻²·e₋ "
-        f"= {100*w_sym/(w_sym+w_asym):.1f}% symmetric — i.e. van der Waals IS the "
-        f"symmetric-block (e₊, Vol=0) projection, NOT an algebraically new object. "
-        f"So the framework already CONTAINS vdW as the H_2(q) symmetric block; it "
-        f"is the same [2]_q channel as the Hopf diquark. Exploratory/off-label: the "
+        f"= {100*w_sym/(w_sym+w_asym):.1f}% symmetric. CORRECTED FRAMING (per "
+        f"prop:vdw-pskew-isolation): e₊ is the RETAINED cosh carrier, NOT van der "
+        f"Waals — vdW is the DISCARDED bar-odd residual sinh(2λ)(e₊−e₋) (small, "
+        f"absent from the main mass/binding formula). The earlier 'vdW = the "
+        f"symmetric block e₊' label is superseded. Exploratory/off-label: the "
         f"operator-selection SDP is canonically the magic-A binding selector; the "
         f"channel/target setup is the modelling input."
     )

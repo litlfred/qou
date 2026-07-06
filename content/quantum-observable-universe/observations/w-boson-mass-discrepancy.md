@@ -43,7 +43,7 @@ depends on two factors:
      \qquad |\chi(\Sigma_4)| = 6.
    $$
 
-   A single production channel couples to one coral tube out
+   A single production channel couples to one color tube out
    of $|\chi|$ total curvature units, giving a geometric
    projection factor $1/|\chi(\Sigma_4)| = 1/6$.
 
@@ -80,7 +80,7 @@ $$
   \cdot m.
 $$
 
-## Why CDF differs from ATLAS and CMS
+## CDF–LHC discrepancy
 
 The CDF~II experiment collided **protons with antiprotons**
 ($pp^{\sigma}$) at $\sqrt{s} \approx 1.96$ TeV.  $W$ bosons were

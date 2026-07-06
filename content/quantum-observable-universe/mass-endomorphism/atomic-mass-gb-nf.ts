@@ -24,9 +24,9 @@ export default proposition({
   },
   computation: {
     engine: "python+mpmath",
-    script: "folio-assistant/computations/canonical_mass_table_extended.py",
+    script: "computations/canonical_mass_table_extended.py",
     witness: [
-      "folio-assistant/computations/canonical-mass-table-extended.witness.json",
+      "computations/canonical-mass-table-extended.witness.json",
     ],
     status: "experimental",
   },

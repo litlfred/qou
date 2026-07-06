@@ -1,4 +1,7 @@
 import Mathlib.Data.Nat.GCD.Basic
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.IntervalCases
+import Mathlib.Tactic.NormNum.Basic
 
 
 /-!
@@ -54,14 +57,28 @@ theorem torus_embeddable_complete (m n : ℕ) (hm : 2 ≤ m) (hmn : m < n)
   simp only [embeddablePairs, List.mem_cons, List.mem_singleton, List.mem_nil_iff, or_false]
   -- Derive explicit bounds for interval_cases:
   -- (m-1)(n-1) ≤ 8 with m ≥ 2 forces m ≤ 9 and n ≤ 9.
-  have hm_le : m ≤ 9 := by nlinarith
-  have hn_le : n ≤ 9 := by nlinarith
+  -- Since n > m ≥ 2, both (m-1) ≥ 1 and (n-1) ≥ 1, so each factor is
+  -- bounded by the product.
+  have h1m : 1 ≤ m - 1 := by omega
+  have h1n : 1 ≤ n - 1 := by omega
+  have hm_le : m ≤ 9 := by
+    have : m - 1 ≤ (m - 1) * (n - 1) := Nat.le_mul_of_pos_right _ (by omega)
+    omega
+  have hn_le : n ≤ 9 := by
+    have : n - 1 ≤ (m - 1) * (n - 1) := Nat.le_mul_of_pos_left _ (by omega)
+    omega
   interval_cases m <;> interval_cases n <;> simp_all [Nat.Coprime] <;> omega
 
 /-- No torus knot with m ≥ 4 and m < n satisfies the genus bound. -/
 -- Ref: [manuscript] §5/torus-embeddable-complete
 theorem no_m_ge_4 (m n : ℕ) (hm : 4 ≤ m) (hmn : m < n) :
     ¬ ((m - 1) * (n - 1) ≤ 8) := by
+  -- m ≥ 4 ⟹ m-1 ≥ 3; n > m ≥ 4 ⟹ n-1 ≥ 4; so (m-1)(n-1) ≥ 12 > 8.
+  have h3 : 3 ≤ m - 1 := by omega
+  have h4 : 4 ≤ n - 1 := by omega
+  have : 12 ≤ (m - 1) * (n - 1) := by
+    calc 12 = 3 * 4 := by norm_num
+    _ ≤ (m - 1) * (n - 1) := Nat.mul_le_mul h3 h4
   omega
 
 /-- The completeness is number-theoretic: the Descartes value g = 4

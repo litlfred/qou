@@ -1,4 +1,4 @@
-**Why the threshold is $N = 3$.**
+**Threshold value $N = 3$.**
 
 The Borromean link $\mathcal{B}_3$ has crossing number $3$.
 The spin-orbit coupling is mediated by the interaction between

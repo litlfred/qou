@@ -272,5 +272,5 @@ If any of these shift unexpectedly, re-audit the diff.
 - [ ] Diff produced; author sees exact changes
 - [ ] No mathematical content removed
 - [ ] GitHub blob URL for the affected `.md` (default `.md` per
-      CLAUDE.md)
+      AGENTS.md)
 - [ ] Edits applied only after author approves

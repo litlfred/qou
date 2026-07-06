@@ -62,8 +62,6 @@ $|v| = c_s$.  Three conditions must hold simultaneously:
 
 **Surface gravity and Hawking temperature.**
 
-**Mathematical Novelty.** While the underlying construction of an acoustic metric and its associated Unruh/Hawking temperature is standard in analogue gravity, the mathematical novelty here is instantiating this framework natively over the $q$-deformed categorical substrate. The acoustic horizon conditions, rather than being ad-hoc physical analogies, become exact geometric constraints on the $q$-Navier-Stokes fluid, where the Hawking temperature is rigorously suppressed by the specific cyclotomic factor $\hbar_q = (q-1)/q$.
-
 At an acoustic horizon, the surface gravity is
 
 $$
@@ -125,16 +123,4 @@ $[1/2]_q[3/2]_q = (q^2 + q^{-2} - q - q^{-1})/(q - q^{-1})^2
 \approx 0.75$ at $q \approx 1.110$.  The horizon radius $r_H$
 is of order $\ell_q = (q-1)/q$.
 
-**Connection to gravitational emergence.**
-The [GR substrate geometry](#rem:gr-substrate-geometry) identifies
-the acoustic metric with the physical spacetime metric in the
-archimedean realisation.  Acoustic horizons are therefore
-**gravitational horizons**: black holes are regions where the
-brane fluid flows supersonically.  The Einstein field equations
-emerge as the long-wavelength limit of the
-[q-Navier--Stokes equation](#def:q-navier-stokes), with the
-stress-energy tensor $T_{\mu\nu}$ encoding the fluid momentum
-flux.  Singularity theorems (Penrose--Hawking) translate into
-statements about the breakdown of smooth transonic flow — the
-classical singularity is the $q \to 1$ limit of a smooth
-$q$-deformed vortex core.
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

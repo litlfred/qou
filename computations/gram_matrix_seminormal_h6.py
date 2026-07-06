@@ -5,7 +5,7 @@
 (deuteron) and H_3 (cross-check).**
 
 The canonical 6×6 Hoefsmit-seminormal Gram for H_3(q) exists on main
-(`content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.lean`)
+(`content/quantum-observable-universe/lean/QOU/Interactions/GramMatrixH3Symbolic.lean`)
 but uses the NF basis (6 specific braid-word elements). For larger
 H_n, this basis grows as n! (720 for H_6, 362,880 for H_9) and is
 intractable.

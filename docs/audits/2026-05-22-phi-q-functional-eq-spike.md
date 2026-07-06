@@ -35,7 +35,7 @@ substrate-natural `z_* ∈ (0, 1)`, then `λ_p = 1/(1 − z_*)`, so
 
 ## Method
 
-Script: [`phi_q_functional_eq_spike.py`](../../folio-assistant/computations/phi_q_functional_eq_spike.py).
+Script: [`phi_q_functional_eq_spike.py`](../../computations/phi_q_functional_eq_spike.py).
 
 Three tests at dps = 80:
 
@@ -128,11 +128,11 @@ remaining genuinely-open directions (per cumulative audit):
    basis at ppb tolerance.
 3. **Retire `conj:lambda-scale-bring-bloch-identity`** in favour of
    an explicit acknowledged CAL-4 anchor if all empirical
-   directions exhaust. (Per CLAUDE.md three-calibration discipline,
+   directions exhaust. (Per AGENTS.md three-calibration discipline,
    only `m_e`, `q_0`, and `Q_β` are calibration inputs; CAL-4
    anchors are documented as falsifiable predictions that
    numerically agree with CODATA but are not derived.)
 
 ## Witness
 
-[`folio-assistant/computations/phi-q-functional-eq-spike.witness.json`](../../folio-assistant/computations/phi-q-functional-eq-spike.witness.json)
+[`computations/phi-q-functional-eq-spike.witness.json`](../../computations/phi-q-functional-eq-spike.witness.json)

@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   interprets: "def:borromean-baryon",
   label: "rem:borromean-topological-confinement",
-  title: "Topological mechanism of color confinement",
+  title: "Topological three-body inseparability",
   tags: [
     "borromean",
     "color-confinement",

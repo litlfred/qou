@@ -3,7 +3,7 @@
 > form below is **STRUCTURALLY WRONG** per the inline SUPERSEDED
 > note (lines 28-51). The correct dimensional factor is the
 > operator-valued $A^\lambda_{\mu, \nu}(I)$ from
-> [`prop:hecke-branching-trace-decomposition`](#prop\:hecke-branching-trace-decomposition);
+> [`prop:hecke-branching-trace-decomposition`](#prop:hecke-branching-trace-decomposition);
 > the corrected graded expansion is [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md).
 > The corrected canonical form of the mass tower uses
 > $-\mathrm{Li}_2^q(-|\hat V_i|)$ in place of $\Phi_q(|\hat V_i|)$
@@ -15,15 +15,15 @@
 
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
 substrate parameter $q$
-([quantum observable universe](#def\:quantum-observable-universe)).
+([quantum observable universe](#def:quantum-observable-universe)).
 Let $\hat{V}_i^{\mathrm{full}}$ denote the additive Wedderburn traced
 volume at generator $i$
-([three-invariant mass formula](#sec\:atomic-braid-mass)).
+([three-invariant mass formula](#sec:atomic-braid-mass-foundations)).
 
 ### Algebraic form
 
 Via the Kashaev volume--density reading
-([Kashaev volume--density](#rem\:kashaev-volume-density)), the tower
+([Kashaev volume--density](#rem:kashaev-volume-density)), the tower
 admits a compact algebraic statement: *for every braid
 $\beta \in B_{n}$ with $n - 1$ generators,*
 
@@ -38,16 +38,16 @@ $$
 $$
 
 *where $\rho_{q} = 1/\hbar_{q}^{2}$ is the substrate density
-([quantum Planck constant](#def\:quantum-planck-constant)) and*
+([quantum Planck constant](#def:quantum-planck-constant)) and*
 
 **SUPERSEDED.** *The substrate-only ansatz
 $\rho_q = 1/\hbar_q^2 \approx 102$ is **structurally wrong**: it is
 braid-class-independent, but the categorical density $\rho_K$
 varies $\sim 30\times$ across atoms ($A = 1$ to $A = 3$;
-[graded ρ\_K expansion](#prop\:rho-k-graded-expansion)). The
+[graded ρ\_K expansion](#prop:rho-k-graded-expansion)). The
 correct dimensional factor is the **operator-valued**
 $A^\lambda_{\mu, \nu}(I) \in \mathrm{End}(V_\mu \otimes V_\nu)$
-from [hecke branching trace decomp](#prop\:hecke-branching-trace-decomposition),
+from [hecke branching trace decomp](#prop:hecke-branching-trace-decomposition),
 which depends on the specific braid through its LR-block decomposition.
 The iterated $(Z+N)$-factor extension to atomic braids — explicitly
 replacing the scalar Wedderburn-volume tower with the operator-trace
@@ -55,7 +55,7 @@ form — is stated in [`prop:mass-tower-operator-valued`](mass-tower-operator-va
 (authored as the Stage-1 unblock).
 The graded expansion
 $\mathcal{M}(K)/(m_e \cdot |\!\operatorname{tr}_M(\mathcal{B}_K)|) = \rho_K^{\mathrm{LO}} + \rho_K^{\text{single-gen}} + \rho_K^{\text{pair-gen}} + \dots$
-([prop:rho-k-graded-expansion](#prop\:rho-k-graded-expansion))
+([prop:rho-k-graded-expansion](#prop:rho-k-graded-expansion))
 replaces the $\rho_q$ ansatz with a categorically-derived series
 where the LO piece is the constituent-mass ratio (Markov
 multiplicativity, \[Wenzl 1988] Theorem 5) and the single-gen
@@ -77,7 +77,7 @@ $$
 
 *with each $\mathrm{Vol}_{q}^{(S)}(\beta) \in \mathbb{Z}[q^{1/2}, q^{-1/2}]$
 a Markov trace over the transfer-matrix chain supported on $S$
-([Markov trace product](#thm\:markov-trace-product)), and
+([Markov trace product](#thm:markov-trace-product)), and
 $z = 1/(q^{1/2} + q^{-1/2})$ the Markov parameter.*
 
 Every per-generator contribution is a finite Laurent polynomial in $q$;
@@ -90,7 +90,7 @@ expanded form below.
 
 Let $\Phi_q(z) = \prod_{k=1}^{\infty}(1 - q^{-k}z)^{-1}$ denote
 the non-perturbative quantum dilogarithm
-([quantum Bloch group](#def\:quantum-bloch-group)).
+([quantum Bloch group](#def:quantum-bloch-group)).
 
 **Kashaev-integration-identity audit (added).**
 *The proof step claims*
@@ -100,12 +100,12 @@ $$
               \;=\; \prod_{k\geq 1}(1 - q^{-k} z_p)^{-1}.
 $$
 
-*Numerical probe (`kashaev-integration-identity.witness.json`): the
+*canonical canonical evaluation (`kashaev-integration-identity.witness.json`): the
 left integral at $q_0 \approx 1.110$ for $V \in (0, 1)$ is bounded
 in $[0.1, 0.82]$, while the right-hand product $\Phi_q(V)$ grows
 unboundedly (e.g. $\Phi_q(0.989) \approx 6.7 \times 10^5$).  The
 two sides differ by 6 orders of magnitude at $V = 0.989$ — the
-identity does NOT hold numerically.*
+identity does NOT hold canonical.*
 
 *The integral is a $q$-deformed dilogarithm $-\mathrm{Li}_2^q(-V)$,
 not the quantum dilogarithm $\Phi_q$.  These are distinct functions
@@ -119,17 +119,17 @@ the Kashaev limit of the R-side algebraic form.  Its empirical
 consequence is the $-737$ MeV mirror-nucleus pathology
 (`brane-tower-isospin-diagnosis.witness.json`).*
 
-*The paper's `prop:atomic-braid-mass` uses the alternative form
+*The paper's `sec:atomic-braid-mass-foundations` uses the alternative form
 $\tfrac{\alpha}{2} \cdot \sum_i \ln(\hat V_i^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}}})$ (with $\alpha = m_e \cdot 8G$,
 the Borromean binding scale `prop:binding-scale-catalan`), which gives
 0.19% mean atomic-mass error across $Z = 1$..$10$ with zero fitted
-parameters — but the integration probe shows the
+parameters — but the integration canonical evaluation shows the
 $\int (\ln_q(1+t)/t)\,dt = -\mathrm{Li}_2^q(-V)$ identity doesn't
 reduce to $\alpha \cdot \ln|V|$ either.*
 
 *Both forms above are concrete evaluations of the abstract GB-NF
 statement
-([atomic mass via GB-NF](#prop\:atomic-mass-gb-nf))
+([atomic mass via GB-NF](#prop:atomic-mass-gb-nf))
 $\mathcal{M}(K) = m_e \cdot \rho_K \cdot \lvert\!\operatorname{tr}_M\!(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K))\!\rvert$.
 The substrate density $\rho_q = 1/\hbar_q^2$ above is a substrate-only
 ansatz for the categorical density $\rho_K$; empirically
@@ -149,14 +149,14 @@ the correct specialisation; this needs paper-side verification.*
 the mass-endomorphism tower uses $-\mathrm{Li}_2^q(-|\hat V_i|)$ in
 place of $\Phi_q(|\hat V_i|)$; see the proposition statement below.
 The production compute pipeline at
-[`canonical_plus_multibrane.py`](folio-assistant/computations/canonical_plus_multibrane.py)
+the canonical formalism
 and
-[`paper_six_term_isotope_sweep.py`](folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py)
+the canonical formalism
 use `tower_mode="li2q"` and evaluate $-\mathrm{Li}_2^q(-|V|)$ via the
 symmetric q-dilogarithm series
 $\mathrm{Li}_2^q(z) = \sum_{n \geq 1} z^n / (n \cdot [n]_q)$. The
 $\Phi_q$ product form survives only in
-[`brane_tower_isospin_diagnosis.py`](folio-assistant/computations/brane_tower_isospin_diagnosis.py)
+the canonical formalism
 as a **diagnostic** that exposes the $-737$ MeV mirror-nucleus
 pathology — it documents the bug, not the corrected mass formula.
 The Lean stub
@@ -192,10 +192,10 @@ With $z = |\hat V_i^{\mathrm{full}}|$ and the standard recognition of
 $|\hat V_i|^n$ as the $n$-th power evaluation of the per-generator
 transfer-matrix chain, each $z^n$ summand factors through
 $\mathrm{tr}_M(\sigma_i^n)$ — which IS Markov-invariant.  See
-`brane_tower_plancherel_scaffold.py` for a numerical scaffold; the
+the formal derivation for a canonical scaffold; the
 production wiring depends on the term-trace infrastructure noted
 above. An equivalent Kähler-derivative reformulation is available
-via `kahler_lift.py` (recursion-fixed).
+via the formal derivation (recursion-fixed).
 
 **Proposition.**
 *The mass of a vortex $\varrho$ with braid representative
@@ -215,7 +215,7 @@ $$
 $$
 
 *where $z = 1/(q^{1/2} + q^{-1/2})$ is the Markov parameter
-([Jones--Markov trace](#thm\:jones-markov-trace)) and
+([Jones--Markov trace](#thm:jones-markov-trace)) and
 $\mathrm{Li}_2^q$ is the symmetric q-dilogarithm
 $\mathrm{Li}_2^q(z) = \sum_{n \geq 1} z^n / (n \cdot [n]_q)$ with
 $[n]_q = (q^n - q^{-n})/(q - q^{-1})$.*
@@ -226,7 +226,7 @@ $\Phi_q(\lvert\hat V_i\rvert)$ (Faddeev quantum dilogarithm) where this
 revision uses $-\mathrm{Li}_2^q(-\lvert\hat V_i\rvert)$ (symmetric
 q-dilogarithm).  Both are q-deformations of the classical dilogarithm
 but use different q-integer conventions
-(asymmetric $(q^n - 1)$ vs symmetric $[n]_q$).  Numerical probe
+(asymmetric $(q^n - 1)$ vs symmetric $[n]_q$).  canonical canonical evaluation
 `kashaev-integration-identity.witness.json` shows the literal Briggs–Klein
 integration evaluates to $-\mathrm{Li}_2^q(-z_p)$ in the symmetric
 convention (see proof below).  The Faddeev $\Phi_q$ form is empirically
@@ -235,11 +235,15 @@ incompatible with isospin symmetry at $q_0$
 
 *The three sums correspond to the three types of blow-up centre
 in the brane tower
-([topological decomposition](#thm\:topological-mass)):*
+([topological decomposition](#thm:topological-mass)):*
 
-1. *The **descended term** $\lvert\prod \hat{V}_i\rvert$ is the
-   base-level Markov trace
-   ([categorical mass as Markov trace](#prop\:categorical-mass-markov)).*
+1. *The **descended term** $\lvert\prod \hat{V}_i^{\mathrm{full}}\rvert$ is the
+   base-level **regular-representation (Wedderburn) trace** — the trace of the
+   left-multiplication endomorphism
+   ([Hecke mass element](#def:hecke-mass-element)) — distinct from the
+   single-channel Jones--Markov trace $\prod \hat{V}_i^{\mathrm{std}}$ of the
+   categorical-mass reading
+   ([categorical mass as Markov trace](#prop:categorical-mass-markov)).*
 2. *Each **single-generator blow-up** at generator $i$ contributes
    $\Phi_q(\lvert\hat{V}_i\rvert)$.  (The Markov weight
    $\mathrm{tr}_M(\sigma_i) = z$ is already absorbed into the
@@ -252,7 +256,7 @@ in the brane tower
 
 *The weight $z^2$ holds for every pair $(i, j)$ with $i < j$ by
 the Markov-trace factorization theorem
-([Markov trace factorization](#thm\:markov-trace-factorization)):
+([Markov trace factorization](#thm:markov-trace-factorization)):
 for adjacent generators ($\lvert i - j\rvert = 1$) it reduces
 $\sigma_i\sigma_j$ via the Hecke braid relation and applies the
 Markov property $\mathrm{tr}_M(x\sigma_{n-2}) = z\,\mathrm{tr}_M(x)$;
@@ -268,97 +272,8 @@ coordinate $\hat{V}_i\hat{V}_j$.*
 ($\lvert i - j\rvert = 1$) reduces via the Yang--Baxter relation
 to $\sigma_j\sigma_i\sigma_j$ and does not contribute an independent
 order-3 centre; such triple interactions ascend to the next jet
-level ([jet-tower reformulation](#rem\:mass-endomorphism-jet-tower))
+level ([jet-tower reformulation](#rem:mass-endomorphism-jet-tower))
 rather than appearing as explicit cubic terms.*
-
-*Proof.*
-The Hecke mass element $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$
-([Hecke mass element](#def\:hecke-mass-element)) decomposes via the
-:refterm[descent]{#descent} involution into descended and transient contributions.  The
-transient trace localises to blow-up centres $p$ in the brane tower
-([topological decomposition](#thm\:topological-mass)); integrating the
-$q$-deformed expansion flow $\ln_q(1+t)/t$ along the radial
-coordinate of the Briggs--Klein chart
-([Briggs--Klein chart](#def\:briggs-klein-chart)) over each resolved
-defect $E_i \cong \mathbb{P}^1(\mathbb{C})$ yields the symmetric
-q-dilogarithm:
-
-$$
-  \int_0^{V} \frac{\ln_q(1+t)}{t}\,dt
-  \;=\; -\mathrm{Li}_2^q(-V),
-  \qquad
-  \mathrm{Li}_2^q(z) := \sum_{n \geq 1} \frac{z^n}{n \cdot [n]_q},
-$$
-
-*where $[n]_q = (q^n - q^{-n})/(q - q^{-1})$ is the symmetric
-q-integer.*
-
-*Subproof.*  The q-deformed natural log has Taylor series
-$\ln_q(1-z) = -\sum_{n\geq 1} z^n/[n]_q$ (\[definition of q-log]).
-Termwise differentiation of $\mathrm{Li}_2^q$ gives\*
-
-$$
-  \frac{d}{dz}\mathrm{Li}_2^q(z)
-  = \sum_{n \geq 1} \frac{z^{n-1}}{[n]_q}
-  = -\frac{\ln_q(1-z)}{z}.
-$$
-
-*Integrating from $0$ to $z$ (with $\mathrm{Li}_2^q(0) = 0$):
-$\mathrm{Li}_2^q(z) = -\int_0^z (\ln_q(1-u)/u)\,du$.  Substituting
-$u = -t$, $z = -V$:*
-
-$$
-  \mathrm{Li}_2^q(-V)
-  = -\int_0^{-V}\!\frac{\ln_q(1-u)}{u}du
-  = -\int_0^{V}\!\frac{\ln_q(1+t)}{t}dt
-$$
-
-*so $\int_0^V (\ln_q(1+t)/t)\,dt = -\mathrm{Li}_2^q(-V)$.  $\square_{\text{sub}}$*
-
-*Numerical verification: the integration value matches
-$-\mathrm{Li}_2^q(-V)$ to all displayed digits at $q_0 \approx 1.110$
-for $V \in \{0.1, 0.3, 0.5, 0.7, 0.85, 0.95, 0.989\}$
-(`kashaev-integration-identity.witness.json`).*
-
-*Earlier versions of this proof identified the integral with the
-Faddeev quantum dilogarithm $\Phi_q(V) = \prod_{k\geq 1}(1 - q^{-k}V)^{-1}$,
-whose logarithm uses asymmetric q-integers $(q^n - 1)$.  Both
-$\mathrm{Li}_2^q$ and $\log\Phi_q$ are q-deformations of the
-classical dilogarithm, but they use different q-integer conventions;
-the Hecke setting requires the symmetric form $[n]_q$, so
-$\mathrm{Li}_2^q$ is the correct identification.*
-
-The NF basis of $H_n(R, q)$ decomposes by generator content.  Each
-subset $S \subseteq \{0,\dots,n-2\}$ contributes a blow-up centre
-with spectral coordinate $\prod_{i\in S}\hat{V}_i$ and Markov
-weight $z^{|S|}$; triples and higher generator subsets are not
-independent at level $n$ (they ascend to jet level $n+1$ via the
-pentagon closure of $\Phi_q$, see
-[quantum Bloch group](#def\:quantum-bloch-group)).  The independent
-order-1 and order-2 subsets enumerate exactly the singleton and
-pair sums above.
-
-For the adjacent pair $\{i, i+1\}$ the NF elements
-$\sigma_i\sigma_{i+1}$ and $\sigma_{i+1}\sigma_i$ share the same
-spectral support $\hat{V}_i\hat{V}_{i+1}$ (the same blow-up centre,
-distinct elements of $H_n(R, q)$ modulo Yang--Baxter); their combined
-weight is $z^2$, not $2z^2$.  For a non-adjacent pair
-$\{i, j\}$ with $\lvert i-j\rvert\geq 2$ far-commutativity gives
-$\sigma_i\sigma_j = \sigma_j\sigma_i$ and
-$\mathrm{tr}_M(\sigma_i\sigma_j) = z \cdot z = z^2$ — a single NF
-element supporting a single blow-up centre.  In every case the
-combined pair weight is $z^2$.  Summing over all pairs $i<j$ gives
-the claimed quadratic term.
-
-The element $\sigma_0\sigma_1\sigma_0$ is not an independent blow-up
-centre: it decomposes as $\sigma_1\sigma_0\sigma_1$ via Yang--Baxter,
-the same transient support as the adjacent pair.  Higher-order
-subsets of size $\geq 3$ are similarly subsumed — not into level-$n$
-singletons and pairs, but into the level-$(n{+}1)$ jet contribution
-via the pentagon identity of the quantum dilogarithm (for the
-explicit ascension see [jet-tower reformulation](#rem\:mass-endomorphism-jet-tower)).
-$\square$
-
 ## Application to the proton--electron mass ratio
 
 For the electron (trefoil $\sigma_1^3$ on $2$ strands,
@@ -388,7 +303,7 @@ $$
 
 The proton's $11$ crossings (from the $4$-channel production vertex
 $\gamma\gamma \to \mathfrak{q}\bar{\mathfrak{q}}$,
-[photon channel chain](#rem\:photon-channel-wedderburn-chain)) produce
+[photon channel chain](#rem:photon-channel-wedderburn-chain)) produce
 spectral coordinates near $1$, where $\Phi_q$ diverges.  The
 electron's $3$ crossings produce $\hat{V}_e \approx 0.594$, well
 below the singularity.  The mass ratio is:
@@ -437,13 +352,13 @@ action.
 truncated at subset size $|S| \leq 2$.  Higher subset sizes
 $|S| \geq 3$ are accessible — but only on the archimedean side of
 $\tau \colon R \hookrightarrow \mathbb{C}$ — via the
-([jet-GB-PL correspondence](#prop\:jet-gb-pl-correspondence)).
+(jet-GB-PL correspondence).
 The $|S| = 3$ contribution corresponds to the simultaneous product
 of three colour-sheet prolongations on the color-tube cubic
-([baryon product from Alt](#prop\:baryon-product-from-alt)), which
+([baryon product from Alt](#prop:baryon-product-from-alt)), which
 under the fibre functor becomes the baryon Picard–Lefschetz period
 $\Pi^{(3)}$
-([SW-period thimble equivalence](#prop\:sw-period-thimble-equivalence)).
+(SW-period thimble equivalence).
 Higher $|S| \geq 4$ contributions correspond to higher-jet bundles
 $J^p\mathcal{S}$ for $p \geq 4$ and their PL evaluations.*
 
@@ -452,3 +367,5 @@ maximal $R$-side statement available without invoking PL machinery
 (which is intrinsically $\mathbb{C}$-side); the extension to
 $|S| \geq 3$ requires moving across $\tau$ and so is recorded as an
 archimedean addendum, not as part of the $R$-side tower formula.*
+
+**Archimedean specialisation (§7c).** The proton–electron ratio is stated over $\mathbb{R}$ (a real Frobenius-norm map $\mathbb{R}\to\mathbb{R}$ and real $q, v$); it is the archimedean numerical evaluation of the generic mass-endomorphism tower, acknowledged here.

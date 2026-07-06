@@ -1,4 +1,4 @@
-**What is CP violation?**
+**Definition of CP violation.**
 CP symmetry is the combined operation of charge conjugation C
 (swap particle $\leftrightarrow$ antiparticle) and parity P
 (mirror spatial coordinates).  If physics were CP-symmetric,

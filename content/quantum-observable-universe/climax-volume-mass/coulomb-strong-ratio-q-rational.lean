@@ -15,7 +15,7 @@
 #
 # LaTeX label: `prop:coulomb-strong-ratio-q-rational`
 #
-# CLAUDE.md §7c compliant: stated over ℝ for the archimedean realization;
+# AGENTS.md §7c compliant: stated over ℝ for the archimedean realization;
 # generic-ring version of the algebraic half stays over a CommRing.
 -/
 

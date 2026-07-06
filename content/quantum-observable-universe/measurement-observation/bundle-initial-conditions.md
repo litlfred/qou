@@ -1,6 +1,9 @@
-A **bundle initial condition** over the projective line $\mathbb{P}(V)$
-at a reference point in an affine chart is a formal sum of localized
-hadrons and photons at base points:
+A measurement records where each constituent sits on the fibre while
+leaving its momentum entirely free; a **bundle initial condition** is
+the object that encodes exactly this position-only data. Over the
+projective line $\mathbb{P}(V)$ at a reference point in an affine
+chart it is a formal sum of localized hadrons and photons at base
+points:
 
 $$
   \mathcal{S}_0 =  \sum_{i \in I} (p_i, H_i)
@@ -8,10 +11,11 @@ $$
 
 where each $(p_i, H_i)$ is a localized hadron
 ([Definition](#def:localized-hadron)) or a photon
-($H_i = \mathbf{1}_{B_4}$, 4-strand identity in $B_4$ — knot-trivial
-under Markov closure but carries 4 internal polarisation$\times$chirality
-components on the exceptional divisor; see
-[confined-particle](#def:confined-particle) registry).
+($H_i = \mathbf{1}_{B_4}$; see
+[confined-particle](#def:confined-particle)).
+The photon identity $\mathbf{1}_{B_4}$, the 4-strand identity in $B_4$,
+is knot-trivial under Markov closure yet carries four internal
+polarisation$\times$chirality components on the exceptional divisor.
 The index set $I$ may be infinite, and multiple constituents may share
 the same base point (bosonic and fermionic statistics are determined by
 the Skein algebra, not by a support constraint).

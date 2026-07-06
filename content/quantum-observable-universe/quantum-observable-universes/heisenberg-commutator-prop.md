@@ -1,20 +1,12 @@
-Let $\hat{X}, \hat{P}$ be position and momentum observables on the
-fibre $\mathbb{P}^1(\mathbb{C})$, let $J \colon H \to H$ be the
-complex structure on the Levi distribution ($J^2 = -\mathrm{Id}$),
-and let $q \in \mathrm{End}(\mathbf{1})$ be the substrate parameter
-([substrate parameter](#def:substrate-parameter)).  Then the
-$q$-deformed commutator is
+Let $[\hat{X}, \hat{P}]_q = J\hbar_q(p)$ be the $q$-deformed commutator
+([$q$-deformed commutator](#def:q-deformed-commutator)) of the fibre
+observables $\hat{X}, \hat{P}$ on $\mathbb{P}^1(\mathbb{C})$, with
+$\hbar_q(p) = 1 - q(p)^{-1}$ the quantum Planck constant
+([quantum Planck constant](#def:quantum-planck-constant)).  Then the
+commutator interpolates between the classical and maximally-uncertain
+regimes:
 
-$$
-  [\hat{X}, \hat{P}]_q =  J\hbar_q(p),
-  \qquad
-  \hbar_q(p) =  1 - q(p)^{-1},
-$$
-
-where $\hbar_q$ is the quantum Planck constant
-([quantum Planck constant](#def:quantum-planck-constant)).
-In particular:
-
-1. As $q \to 1$, $[\hat{X}, \hat{P}]_q \to 0$ (classical limit).
+1. As $q \to 1$, $[\hat{X}, \hat{P}]_q \to 0$ (classical limit,
+   $\hbar_q \to 0$).
 2. As $q \to \infty$, $[\hat{X}, \hat{P}]_q \to J$ (maximal
-   uncertainty).
+   uncertainty, $\hbar_q \to 1$).

@@ -1,0 +1,16 @@
+{
+  "description": "Robustness check on the cross-atom binding-overshoot trend (#2635). Confirms the overshoot O(K)=A(K)*tr_M/(−B/m_e) is EXACT given canonical inputs (A(K) factors are exact q-integers + Vol_hyp), correcting the earlier '≤2.5% value-band' framing (the 2.5% is Phase-4 modeling accuracy A(K)≈|Delta_lambda*|, not value-uncertainty). Tests trend robustness under per-atom and exponent-amplified per-factor modeling error, and Vol_hyp/knot-ID sensitivity. No fit; no P_lambda.",
+  "computation": "computations/gap_a3_overshoot_robustness_check.py",
+  "q0": "1.1099785955541805",
+  "exact_overshoots": {"D": "2.04978", "3He": "2.86131", "4He": "3.36395"},
+  "framing_correction": "A(K)=Vol_hyp/[8]_q·[3]_q^{2(Z-1)}·(q^{1/2}+q^{-1/2})^{4N} has EXACT factors at q0; overshoot is exact. The <=2.5% is Phase-4 modeling accuracy (A(K)≈|Delta_lambda*|), NOT a value-uncertainty band (corrects #2631/#2635).",
+  "robustness": {
+    "per_atom_2.5pct": "bands [2.00,2.10]/[2.79,2.93]/[3.28,3.45] disjoint -> trend robust",
+    "per_factor_independent": "±6.1/7.1/8.7%; D<3He<4He both disjoint -> robust",
+    "per_factor_worst_linear": "±15/20/30%; D->3He robust; 3He->4He marginal (overlap)",
+    "vol_hyp_to_flatten": {"3He": "-28%", "4He": "-39%"},
+    "knot_id_verdict": "flattening needs -28%/-39% Vol_hyp shifts, far beyond knot-ID ambiguity (<20%); trend robust"
+  },
+  "verdict": "The overshoot growth with A is a REAL structural feature, not a calibration artifact: exact given canonical inputs; robust D->3He under every error model and against Vol_hyp; only 3He->4He marginal under worst-case per-factor amplification. A future P_lambda derivation has a genuine A-growing-suppression trend to explain; fitting it remains the forbidden 7th ansatz.",
+  "discipline": "No fit; no P_lambda proposed; nothing wired; c_k/Delta_lambda cal-anchored. Self-corrects the #2631/#2635 value-band framing."
+}

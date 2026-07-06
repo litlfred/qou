@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+
 /-!
 # QOU.WeakSpectralCompleteness — `conj:weak-spectral-completeness` axiomatised
 
@@ -15,7 +18,7 @@ Conjectural Plancherel completeness: the three torus-knot idempotents T(2,4), T(
 
 ## Status
 
-Class-axiomatised per CLAUDE.md §3b-cond. The conjecture sits in
+Class-axiomatised per AGENTS.md §3b-cond. The conjecture sits in
 the residual §3b-violator cone identified in
 [`AUDIT-DEEP-2026-05.md`](../../../../AUDIT-DEEP-2026-05.md) §1A
 (P1.b sweep). Class declaration here lets downstream
@@ -56,17 +59,15 @@ class WeakSpectralCompleteness where
   weak_spectral_completeness_holds : completenessIndex = 1
 
 /-- **Structural skeleton** of `conj:weak-spectral-completeness`
-    (kept for `uses` cone bookkeeping under §3b-cond — see CLAUDE.md).
-    A `WeakSpectralCompleteness R EWModule` instance implies the
+    (kept for `uses` cone bookkeeping under §3b-cond — see AGENTS.md).
+    A `WeakSpectralCompleteness` instance implies the
     skeleton via the writhe assignment `4, 6, 8`. -/
 class WeakSpectralCompletenessSkeleton : Prop where
   three_torus_writhes : ∃ (w : Fin 3 → ℕ),
     w 0 = 4 ∧ w 1 = 6 ∧ w 2 = 8 ∧ Function.Injective w
 
 instance instWeakSpectralCompletenessCanonical
-    {R : Type*} [Ring R] {EWModule : Type*}
-    [AddCommGroup EWModule] [Module R EWModule]
-    [WeakSpectralCompleteness R EWModule] :
+    [WeakSpectralCompleteness] :
     WeakSpectralCompletenessSkeleton where
   three_torus_writhes := by
     refine ⟨![4, 6, 8], rfl, rfl, rfl, ?_⟩

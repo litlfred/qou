@@ -1,5 +1,5 @@
-Continuing the [brane tower for SU(2)](#ex\:recursive-brane-tower-su2),
-we verify the [:refterm[descent]{#descent} lemma](#lem\:descent) at the first level.
+Continuing the [brane tower for SU(2)](#ex:recursive-brane-tower-su2),
+we verify the [:refterm[descent]{#descent} lemma](#lem:descent) at the first level.
 
 **The :refterm[descent]{#descent} map.** The :refterm[descent]{#descent}
 $\mathfrak{d}_1 \colon \mathrm{End}(J^1\mathcal{O}(\mathrm{SU}(2))) \to \mathrm{End}(\mathcal{O}(\mathrm{SU}(2)))$ sends a jet-level

@@ -34,7 +34,7 @@ assignees: ["litlfred"]
 
 ## QOU context — where this reference is used
 
-<!-- Blob links on the current branch, per CLAUDE.md "Always provide GitHub links". -->
+<!-- Blob links on the current branch, per AGENTS.md "Always provide GitHub links". -->
 
 - **Content block(s)** (`.md` + label): …
 - **Lean `-- Ref:` site(s)**: …

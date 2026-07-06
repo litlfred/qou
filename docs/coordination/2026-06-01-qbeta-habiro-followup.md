@@ -36,7 +36,7 @@ After Tracks 1 + 3 jointly established that Φ_8² is convention-invariant and
 universal across atomic-step pairs (NOT strand-doubling), a follow-up probe
 tested the conjecture that Φ_8² arises from the `z(q)²` interface factor.
 
-**Probe:** [`folio-assistant/computations/probes/qbeta_habiro_phi8_squared_from_z_squared_probe.py`](../../folio-assistant/computations/probes/qbeta_habiro_phi8_squared_from_z_squared_probe.py)
+**Probe:** [`computations/probes/qbeta_habiro_phi8_squared_from_z_squared_probe.py`](../../computations/probes/qbeta_habiro_phi8_squared_from_z_squared_probe.py)
 **Audit:** [`docs/audits/2026-06-01-qbeta-habiro-phi8-squared-mechanism.md`](../audits/2026-06-01-qbeta-habiro-phi8-squared-mechanism.md)
 
 **Verdict: FROM-POCHHAMMER-BOUNDARY (not z(q)²).**
@@ -59,3 +59,37 @@ The categorical content of the universal Φ_8² Δa_m signature remains
 **open** — neither z(q)^k nor the m=8 Pochhammer boundary alone explains
 its appearance at M=7. Probable next directions: study the Δa_m algebraic
 configuration directly for a categorical witness of `ζ_8 = e^{iπ/4}`.
+
+---
+
+## 2026-06-27 — binding-side cyclotomic tower (lever-1 / z2bn, PR #2899)
+
+A second, independent cyclotomic signature on the **binding** side (not Q_β),
+worth cross-linking here because both live in the Habiro / cyclotomic-completion
+ring.
+
+Probe `computations/substrate/lever1_qinvolution_kernel_test.py` q-deforms the
+proved identity `Σ_λ f^λ = #involutions`. The binding selection-rule period
+`lw(c) = S(c+1)/(c+1)` with `S(m) = Σ_{λ⊢m} dim_q(λ)` satisfies the q-involution
+recurrence `S(m) = S(m−1) + [m−1]_q·S(m−2)` exactly at the seed `m=2,3`
+(q=1 → involution numbers). The correction
+`D(m) = S(m) − (S(m−1)+[m−1]_q·S(m−2))` carries a **universal `(q−1)²`** prefactor
+(deviation `O(h²)`, pure fibre effect) and a **cyclotomic factor tower**:
+`D₄∋Φ₃`, `D₆∋Φ₅`, `D₇∋Φ₃²Φ₅`, `D₈∋Φ₃Φ₅Φ₇`.
+
+**Resonance + distinction with the Q_β Δa_m Φ₈ signature above.** Both sides
+exhibit cyclotomic structure in their Habiro expansion. But the *cyclotomics
+differ*: the Q_β Δa_m side sees `Φ₈` (ζ₈ = e^{iπ/4}, a ζ-fibre/complex
+phenomenon); the binding `D(m)` tower is `Φ₃/Φ₅/Φ₇` over **real-q `ℤ[q]`**.
+Per #2452 + the AGENTS.md *Im(q) at fibre vs observable level* banner, these are
+the **same ring class, distinct localisations** — the binding kernel is real-q
+integral, the Q_β c_k Habiro element is ζ-localised. So this is corroboration at
+the *ring-class* level, **not** a claim that the two cyclotomic towers are the
+same element. Independent corroboration of the period's identity also landed on
+the q-Bessel side (#2325 / #2822: `lw` = q-deformed involution / Rogers–Szegő
+moment).
+
+Audit: `docs/audits/2026-06-27-lever1-qinvolution-cyclotomic-kernel.md`.
+Open next: fit `D(m)` to a single Habiro element (real-q), verify held-out `m`;
+separately, test whether #2409's full-Hecke trace Ohtsuki coefficients match
+`Σ_λ dim_q(λ)` (the rung-linking cross-check).

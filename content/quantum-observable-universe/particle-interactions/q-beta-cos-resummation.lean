@@ -183,15 +183,3 @@ theorem q_beta_cos_resummation (q : ℝ) [TransferMatrixEigenphase q] :
   ring
 
 end QOU.Interactions
-
-
-/-! ## §3b-cond conditional-class hypothesis (audit-visibility stub) -/
-
-namespace QOU.ParticleInteractions.QBetaCos.ConditionalAudit
-
-class BorromeanQuark : Prop where
-  holds : True
-
-theorem q_beta_cos_conditional [_inst : BorromeanQuark] : True := trivial
-
-end QOU.ParticleInteractions.QBetaCos.ConditionalAudit

@@ -38,7 +38,7 @@ combinatorial post-conditions into intrinsic invariants of the
 crystal traversal — no custom $\mathbb{Z}/2\mathbb{Z}$ rules required
 in the engine code.*
 
-**Why a conjecture and not a theorem.**
+**Conjectural status.**
 *The Type B folding of $\mathfrak{sl}_n$ Kashiwara crystals into
 $\mathfrak{so}_{2n+1}$ symmetric crystals is established at the level
 of generic quantum-group representations
@@ -51,7 +51,7 @@ the bar-conjugate pair on a single Type B crystal node corresponds to
 a CPT pair of QOU particles.  The empirical evidence is the
 $\det \rho_\lambda(w) \cdot \det \rho_{\lambda'}(w) = \pm 1$
 identity for every conjugate-partition pair $(\lambda, \lambda')$
-([conjugate-pair det law](folio-assistant/computations/det_pair_law.py));
+([conjugate-pair det law](computations/det_pair_law.py));
 this identity is the bar-involution acting on Wedderburn blocks and
 is the strongest available shadow of the conjecture without a full
 KLR-folding proof.*

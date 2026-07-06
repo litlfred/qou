@@ -4,7 +4,7 @@ EXPLORATORY numerical observation (NOT a derivation): m_K/m_π ≈ 7(q₀+q₀�
 
 STATUS: NUMEROLOGICAL FIT — found by scanning simple fractions near the
 [2]_q² = 4.044 candidate. The 7/8 factor has NO categorical derivation.
-Per CLAUDE.md "What is forbidden": coefficient fits to PDG data are
+Per AGENTS.md "What is forbidden": coefficient fits to PDG data are
 not permitted as framework claims. This script documents the numerical
 coincidence for future investigation; it is NOT a framework prediction
 until a categorical proof of the 7/8 factor is provided.
@@ -35,6 +35,7 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from codata_constants import M_K_PM_MEV_VALIDATION, M_PI_PM_MEV_VALIDATION, M_P_MEV_VALIDATION  # noqa: E402 (codata sweep)
 del _sys, _Path, _bridge
 
 import json, time
@@ -49,8 +50,8 @@ q0 = mpf(Q_50_DIGIT_STR)
 qi = 1/q0
 two_q = q0 + qi
 two_q_sq = two_q**2
-m_pi = mpf('139.57039')
-m_K_pdg = mpf('493.677')
+m_pi = mpf(M_PI_PM_MEV_VALIDATION)
+m_K_pdg = mpf(M_K_PM_MEV_VALIDATION)
 
 mk_mpi_pdg = m_K_pdg / m_pi
 
@@ -91,7 +92,7 @@ hbar_q = 1 - qi
 lw = mpf(5)/2 + mpf(3)*mp.power(q0-qi, 2)/4
 geom_p = vol_b3 / hbar_q**2 * lw
 m_p_pred = m_e * geom_p
-print(f"  m_p (VolDensity)= {float(m_p_pred):.3f} MeV  (vs 938.272 CODATA, {float(fabs(m_p_pred-mpf('938.27208816'))/mpf('938.27208816')*1e6):.0f} ppm)")
+print(f"  m_p (VolDensity)= {float(m_p_pred):.3f} MeV  (vs 938.272 CODATA, {float(fabs(m_p_pred-mpf(M_P_MEV_VALIDATION))/mpf(M_P_MEV_VALIDATION)*1e6):.0f} ppm)")
 
 # m_K (this formula)
 print(f"  m_K (7/8×[2]²) = {float(m_K_pred):.3f} MeV  (vs {float(m_K_pdg):.3f} PDG, {err_ratio:.0f} ppm)")
@@ -116,7 +117,7 @@ witness = {
         "m_K/m_π ≈ 7(q₀+q₀⁻¹)²/8 at 318 ppm. The 7/8 factor is a "
         "NUMEROLOGICAL FIT found by scanning fractions — no categorical "
         "derivation exists. Recorded for future investigation, not as a "
-        "framework prediction. Per CLAUDE.md: fits to PDG are forbidden "
+        "framework prediction. Per AGENTS.md: fits to PDG are forbidden "
         "as framework claims."
     ),
     "parameters": {"q0": str(q0), "m_pi_MeV": str(m_pi), "m_K_pdg_MeV": str(m_K_pdg)},

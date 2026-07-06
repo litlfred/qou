@@ -16,7 +16,7 @@
   the alpha-shift formula (prop:binding-alpha-shift-extension)
   which misses ⁴He by -79%.
 
-  Per CLAUDE.md §3b-cond: the categorical derivation of ρ_F = 2
+  Per AGENTS.md §3b-cond: the categorical derivation of ρ_F = 2
   is axiomatised as a class hypothesis; the formula is a
   rigorous-conditional theorem modulo that class.
 
@@ -37,8 +37,8 @@
        [manuscript] prop:gravity-spectral-prefactor
        [manuscript] rem:strutinsky-from-graded-trace
        [audit] docs/audits/2026-05-31-binding-magic-A-wireup.md
-       [compute] folio-assistant/computations/magic_A_formula.py
-       [compute] folio-assistant/computations/binding_alpha_shift_witness.py
+       [compute] computations/magic_A_formula.py
+       [compute] computations/binding_alpha_shift_witness.py
 -/
 
 import Mathlib.Data.Real.Basic
@@ -54,6 +54,11 @@ universe u
     standalone for the sibling-trace convention. -/
 def isMagic (n : ℕ) : Prop :=
   n = 2 ∨ n = 8 ∨ n = 20 ∨ n = 28 ∨ n = 50 ∨ n = 82 ∨ n = 126
+
+/-- `isMagic` is decidable: a finite disjunction of decidable
+    equalities on `ℕ`. Needed for the `bindingRegime` dispatch. -/
+instance instDecidableIsMagic (n : ℕ) : Decidable (isMagic n) := by
+  unfold isMagic; infer_instance
 
 /-- A light nucleus (Z, N) is *doubly magic* if both Z and N lie in
     the magic-number set. The canonical doubly-magic light example
@@ -172,7 +177,10 @@ theorem bindingRegime_doublyMagic_iff (Z N : ℕ) :
   unfold bindingRegime isDoublyMagic
   by_cases h : isMagic Z ∧ isMagic N
   · rw [if_pos h]; exact ⟨fun _ => h, fun _ => rfl⟩
-  · rw [if_neg h]; exact ⟨fun hc => absurd hc (by decide), fun hd => absurd hd h⟩
+  · rw [if_neg h]
+    constructor
+    · intro hc; cases hc
+    · intro hd; exact (h hd).elim
 
 /-- The classifier selects `AlphaShift` exactly when the nucleus is
     *not* doubly magic. -/
@@ -180,7 +188,10 @@ theorem bindingRegime_alphaShift_iff (Z N : ℕ) :
     bindingRegime Z N = BindingRegime.AlphaShift ↔ ¬ isDoublyMagic Z N := by
   unfold bindingRegime isDoublyMagic
   by_cases h : isMagic Z ∧ isMagic N
-  · rw [if_pos h]; exact ⟨fun hc => absurd hc (by decide), fun hn => absurd h hn⟩
+  · rw [if_pos h]
+    constructor
+    · intro hc; cases hc
+    · intro hn; exact (hn h).elim
   · rw [if_neg h]; exact ⟨fun _ => h, fun _ => rfl⟩
 
 /-- **⁴He dispatches to the doubly-magic regime.** `Z = N = 2` are

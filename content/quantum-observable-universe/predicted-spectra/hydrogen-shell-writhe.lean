@@ -1,4 +1,5 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
 
 
 /-!
@@ -35,7 +36,6 @@ theorem hydrogen_shell_writhe :
   refine ⟨by decide, fun n _ => rfl, ?_⟩
   intro n hn
   simp [shellFromWrithe]
-  omega
 
 end QOU.BringsSurface
 
@@ -50,14 +50,27 @@ below mirrors that class name so the §3b-cond audit
 conditional-on-class structure; downstream consumers should import the
 canonical class from the sibling stub file instead. -/
 
-/-- Local stub of `conj:borromean-quark`'s axiomatised class.
-    See `borromean-quark.lean` (sibling) for the canonical declaration. -/
-class BorromeanQuark : Prop where
-  /-- The conjecture's content is the class instance (sorry = conjecture
-      per CLAUDE.md §3b). -/
-  holds : True
+/-- Local mirror of `conj:borromean-quark`'s axiomatised class.
+    See `borromean-quark.lean` (canonical declaration, namespace
+    `QOU.Archimedean`) for the full content.  The field carries the
+    genuine conjectural content — the positive baryon (proton-anchor)
+    mass scale set by the Borromean volume — not a bare `True`. -/
+class BorromeanQuark where
+  /-- The bare baryon mass scale (the proton anchor for the electron
+      trefoil), as a function of the substrate parameter `q`. -/
+  bareMass : ℝ → ℝ
+  /-- **Conjectural positivity.**  The baryon mass scale is strictly
+      positive for every physical `q > 1` (a genuine `q`-quantified
+      property in the shape of the claim, per §3b-tax). -/
+  bareMass_pos : ∀ q : ℝ, q > 1 → 0 < bareMass q
 
 /-- Witness theorem: this file's proposition is conditional on
-    `BorromeanQuark` per CLAUDE.md §3b-cond. -/
+    `BorromeanQuark` per CLAUDE.md §3b-cond.  Conditional on the
+    Borromean-baryon model, the proton anchor of the electron trefoil
+    has a strictly positive mass scale at the substrate value
+    `q = 11/10 > 1` — derived from the class field, not asserted as
+    `True`. -/
 theorem hydrogen_shell_writhe_conditional_on_borromean_quark
-    [_inst : BorromeanQuark] : True := trivial
+    [inst : BorromeanQuark] : 0 < inst.bareMass (11 / 10 : ℝ) := by
+  have hq : (11 / 10 : ℝ) > 1 := by norm_num
+  exact inst.bareMass_pos (11 / 10 : ℝ) hq

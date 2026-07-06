@@ -57,7 +57,7 @@ form that interpolates them):*
    CODATA-calibrated $E_0^{(\text{cal})} \approx 4.155$ MeV instead
    of overshooting it.*
 
-## Why the naive geometric recursion fails
+## Failure of the naive geometric recursion
 
 A naive bridging would assert $\alpha_k = \hbar_q^{2(k-1)} \cdot \alpha_{k-1}$
 for $k \geq 1$, so that $\sum_k \alpha_k \cdot \hbar_q^{2k} = \alpha_0 / (1 - \hbar_q^2)$.
@@ -79,7 +79,7 @@ but the actual value is $z^2 \neq 0$. So the geometric closure
 (a) is **not** the naive substitution; if it holds, it does so as
 a non-obvious resummation identity over the $\alpha_k$ family.
 
-## Why the bounded Li_2^q candidate is plausible
+## Plausibility of the bounded Li_2^q candidate
 
 The mass-endomorphism tower
 ([`prop:mass-endomorphism-tower`](#prop:mass-endomorphism-tower)
@@ -87,7 +87,7 @@ lines 162–183) **proves** that the brane-tower integral evaluates
 to $-\mathrm{Li}_2^q(-V)$ (symmetric q-dilogarithm), not
 $\Phi_q(V)$ (Faddeev quantum dilogarithm — empirically off by
 $10^6$ per
-[`kashaev-integration-identity.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/kashaev-integration-identity.witness.json)).
+[`kashaev-integration-identity.witness.json`](https://github.com/litlfred/qou/blob/main/computations/kashaev-integration-identity.witness.json)).
 At the substrate level (single Planck-tick variable $x = \hbar_q^2$)
 the bounded analog $\mathcal{F}_{\mathrm{Li}_2^q}(x)$ matches the
 geometric form $1 + x + O(x^2)$ at leading order and stays
@@ -102,10 +102,10 @@ $|\hat V_i^{\text{full}}|$) may give a different and possibly
 correct closure; that evaluation requires atomic-braid input and
 is not a substrate-only computation.
 
-## Numerical evidence (substrate level)
+## canonical evidence (substrate level)
 
 Computed in
-[`folio-assistant/computations/derived_masses.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/derived_masses.py)
+the canonical formalism
 at $q_0 \approx 1.110$:
 
 - $E_0^{(N=0)} \approx :val[E_0_N0_MeV]{precision=4}$ MeV — single Planck-tick (CAL-1 + CAL-2)

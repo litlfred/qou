@@ -17,17 +17,4 @@ $$
 
 *The result is exact algebraic cancellation, not approximation.*
 
-*Proof.* Under $Z = N$ even-even, every neutron crossing is matched
-by a proton crossing of opposite sign, and the Wigner pairing
-([Wigner $np$ pairing](#prop:wigner-np-pairing)) annihilates all
-non-trivial $\lambda$-block contributions.  The only surviving
-projection is onto the trivial irrep $e_{(n)}$, on which
-$\chi_{(n)}(\beta_\mathcal{K} \cdot \beta_\mathcal{K}^*) =
-\chi_{(n)}(\mathbf{1})^2$.  The ratio in
-([knot factor](#prop:knot-factor-spectral-form)) is therefore $1$.
-$\square$
-
-**Application.** ${}^4\mathrm{He}$, ${}^{12}\mathrm{C}$,
-${}^{16}\mathrm{O}$, ${}^{40}\mathrm{Ca}$, ${}^{56}\mathrm{Fe}$,
-${}^{208}\mathrm{Pb}$ all sit in this regime; each has
-$a_\mathcal{K} = 1$ by Markov-chain equilibrium.
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

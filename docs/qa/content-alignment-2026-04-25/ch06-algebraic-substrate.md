@@ -201,7 +201,7 @@ No observer-perspective drift.
 
 ## Notational alignment
 
-### Cross-check against CLAUDE.md §7aa
+### Cross-check against AGENTS.md §7aa
 
 The Hopf algebra collision (§7aa line 583) is the highest-risk issue in this chapter:
 
@@ -219,7 +219,7 @@ The Hopf algebra collision (§7aa line 583) is the highest-risk issue in this ch
 | `tannaka-krein-isomorphism.md` | 18 | Hopf algebra | `$H_\xi$` | `$\mathcal{H}_\xi$` | **MAJOR** |
 | `tannaka-krein-su2.md` | 6 | Hopf algebra | `$H_\xi$` | `$\mathcal{H}_\xi$` | **MAJOR** |
 
-These five lines use plain `$H_\xi$` for the reconstructed Hopf algebra, violating the notational register. The correct notation is `$\mathcal{H}_\xi$` (calligraphic, as specified in CLAUDE.md §7aa line 565).
+These five lines use plain `$H_\xi$` for the reconstructed Hopf algebra, violating the notational register. The correct notation is `$\mathcal{H}_\xi$` (calligraphic, as specified in AGENTS.md §7aa line 565).
 
 #### All other notational registers checked
 
@@ -299,7 +299,7 @@ These five lines use plain `$H_\xi$` for the reconstructed Hopf algebra, violati
 
 The **Algebraic Substrate** chapter is **structurally sound**, **logically complete**, and **well-voiced**. The five-step program is executed flawlessly: substrate definition → defect theory → spectral equivalence → stability → classical limit unification.
 
-**Critical action required:** Fix 5 notational violations (`$H_\xi$` → `$\mathcal{H}_\xi$`) in tannaka-krein blocks to comply with CLAUDE.md §7aa.
+**Critical action required:** Fix 5 notational violations (`$H_\xi$` → `$\mathcal{H}_\xi$`) in tannaka-krein blocks to comply with AGENTS.md §7aa.
 
 **Recommended enhancements:** Factor redundant Frobenius/obstruction setups to improve readability and reduce line count in early sections.
 

@@ -149,7 +149,7 @@ The available T_{3,5} structural inputs (already computed):
 
 - $W(q) := \mathrm{tr}_M((\sigma_1\sigma_2)^5) \approx 0.7035538$ in
   $H_3(q_0)$
-  ([`t35-weak-vertex.witness.json`](../../folio-assistant/computations/t35-weak-vertex.witness.json)).
+  ([`t35-weak-vertex.witness.json`](../../computations/t35-weak-vertex.witness.json)).
 - 10 crossings split as electron(3) + neutrino(0) + re-reduction(7).
 - Trefoil and unknot Markov traces on the embedded sub-braids.
 
@@ -165,7 +165,7 @@ constrain a closed form well enough to PSLQ at CODATA tolerance.
   reports the **deuteron** symbolic Markov trace leading coefficient
   as $+1/128 = +2^{-7}$ (positive), in the
   $\mathrm{tr}_M / [6]_q!$ normalization
-  ([`deuteron_tr_M_symbolic.witness.json`](https://github.com/litlfred/qou/blob/claude/hoefsmit-2x2-fix/folio-assistant/computations/deuteron_tr_M_symbolic.witness.json)).
+  ([`deuteron_tr_M_symbolic.witness.json`](https://github.com/litlfred/qou/blob/claude/hoefsmit-2x2-fix/computations/deuteron_tr_M_symbolic.witness.json)).
   This **further contradicts** PR #546's universal $-1/8$
   conjecture. The $A=2$ value is positive, not negative, and three
   orders of magnitude smaller than $-1/8$. The reconciliation is
@@ -201,6 +201,6 @@ constrain a closed form well enough to PSLQ at CODATA tolerance.
 - Falsification of candidate (a″):
   [`docs/audits/2026-05-03-nv1-candidate-a-doubleprime-test.md`](2026-05-03-nv1-candidate-a-doubleprime-test.md)
 - Existing T_{3,5} weak-vertex compute:
-  [`folio-assistant/computations/t35-weak-vertex.witness.json`](../../folio-assistant/computations/t35-weak-vertex.witness.json)
+  [`computations/t35-weak-vertex.witness.json`](../../computations/t35-weak-vertex.witness.json)
 - Existing N_v numerology probe:
-  [`folio-assistant/computations/probes/nv-categorical-derivation-probe.witness.json`](../../folio-assistant/computations/probes/nv-categorical-derivation-probe.witness.json)
+  [`computations/probes/nv-categorical-derivation-probe.witness.json`](../../computations/probes/nv-categorical-derivation-probe.witness.json)

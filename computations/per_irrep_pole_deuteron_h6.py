@@ -37,7 +37,7 @@ Witness: per-irrep-pole-deuteron-h6.witness.json (CI-integrated)
 Chi cache: chi-deuteron-h6.witness.json (auto-emit on first run)
 Audit doc: docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md
 
-@module folio-assistant/computations/per_irrep_pole_deuteron_h6
+@module computations/per_irrep_pole_deuteron_h6
 """
 from __future__ import annotations
 

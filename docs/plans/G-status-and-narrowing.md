@@ -15,15 +15,15 @@ Of the four entries Plan G originally targeted, only **³He is unblocked** — i
 
 ## Existing infrastructure that already does most of the work
 
-- `folio-assistant/computations/markov/markov_trace_canonical.py` — symbolic `tr_M_element(braid_word)` in `H_n(q)`. Works on any word over σ_0..σ_{n−2}, returns a sympy expression in q.
-- `folio-assistant/computations/atom_nf_symbolic_D.py` — already runs the full categorical pipeline for ²H (D = deuteron): GB-NF reduction → symbolic Markov trace → Jones polynomial. Witness `atom-nf-symbolic-D.witness.json` reports `markov_trace = 0` for D's atom braid (suspicious; the reported Jones polynomial `q − 1 + 2/q − 2/q² + 2/q³ − 2/q⁴ + 1/q⁵` is the standard `J_{6_2}(q)`). The discrepancy is exactly what Plan G needs to investigate — does D's atom braid actually close to 6_2, or is the historical ID wrong (which the α\* = 0.546 already suggests)?
-- `folio-assistant/computations/q_mn_recursive_memoized.py` + `y_lambda_wenzl_bridge_extended.py` — supply χ_λ(T_w) and y_λ(q) for the Wedderburn-block decomposition.
+- `computations/markov/markov_trace_canonical.py` — symbolic `tr_M_element(braid_word)` in `H_n(q)`. Works on any word over σ_0..σ_{n−2}, returns a sympy expression in q.
+- `computations/atom_nf_symbolic_D.py` — already runs the full categorical pipeline for ²H (D = deuteron): GB-NF reduction → symbolic Markov trace → Jones polynomial. Witness `atom-nf-symbolic-D.witness.json` reports `markov_trace = 0` for D's atom braid (suspicious; the reported Jones polynomial `q − 1 + 2/q − 2/q² + 2/q³ − 2/q⁴ + 1/q⁵` is the standard `J_{6_2}(q)`). The discrepancy is exactly what Plan G needs to investigate — does D's atom braid actually close to 6_2, or is the historical ID wrong (which the α\* = 0.546 already suggests)?
+- `computations/q_mn_recursive_memoized.py` + `y_lambda_wenzl_bridge_extended.py` — supply χ_λ(T_w) and y_λ(q) for the Wedderburn-block decomposition.
 
 The existing scripts emit `precision: f64_numeric_fallback`. Migrating them to mpmath @ 50 dps is Plan F (orthogonal).
 
 ## Concrete next steps (in dependency order)
 
-1. **(unblocked)** Write `folio-assistant/computations/tr_m_canonical_3he_borromean.py` — applies `markov_trace_canonical.tr_M_element` to the Borromean braid σ_1 σ_2^{-1} σ_1 σ_2^{-1} σ_1 σ_2^{-1} on B_3, evaluates at q_0 to 50 dps, compares against `2 m_e × Vol_hyp(L_6a4) ≈ 2 × 0.51100 × 7.32772 = 7.4889 MeV` (current shortcut). Goal: replace the shortcut for ³He.
+1. **(unblocked)** Write `computations/tr_m_canonical_3he_borromean.py` — applies `markov_trace_canonical.tr_M_element` to the Borromean braid σ_1 σ_2^{-1} σ_1 σ_2^{-1} σ_1 σ_2^{-1} on B_3, evaluates at q_0 to 50 dps, compares against `2 m_e × Vol_hyp(L_6a4) ≈ 2 × 0.51100 × 7.32772 = 7.4889 MeV` (current shortcut). Goal: replace the shortcut for ³He.
 2. **(unblocked)** Audit `atom_nf_symbolic_D.witness.json`'s `markov_trace = 0` claim. Either confirm it is genuinely zero (which would falsify the 6_2 ID and validate the α\* = 0.546 anomaly), or find the bug.
 3. **(blocked on R5-full)** Once R5-full produces canonical T_w for ²H and ³H, re-run `markov_trace_canonical.tr_M_element` on those T_w and emit the symbolic-tr_M witnesses.
 4. **(blocked on R5-full)** Update `low_isotope_binding_sweep.py` to read tr_M from the symbolic witnesses instead of the SnapPy `VOL_*` constants, gated by whether each entry has a symbolic-tr_M witness yet.

@@ -42,9 +42,10 @@ def main():
     mp.mp.dps = 50
     q = mp.mpf(Q_50_DIGIT_STR)
     h = q - 1/q
+    from codata_constants import M_PI_PM_MEV_VALIDATION, M_K_PM_MEV_VALIDATION  # registry (no literals)
     m_e = mp.mpf(M_E_MEV)
-    m_pi = mp.mpf("139.57039")
-    m_K = mp.mpf("493.677")
+    m_pi = M_PI_PM_MEV_VALIDATION
+    m_K = M_K_PM_MEV_VALIDATION
 
     print("=" * 70)
     print("  CAL-3 as meson decay: Hoefsmit binding amplitude")
@@ -178,7 +179,7 @@ def main():
 
     # The remaining energy goes to the muon + neutrino:
     # m_π = m_μ + E_ν + E_bind (roughly)
-    m_mu = mp.mpf("105.6583755")
+    from codata_constants import M_MU_MEV_VALIDATION as m_mu  # registry (no inline literal)
     E_remaining = m_pi - E_bind
     print(f"     m_π - E_bind = {mp.nstr(E_remaining, 10)} MeV")
     print(f"     vs m_μ = {mp.nstr(m_mu, 10)} MeV")

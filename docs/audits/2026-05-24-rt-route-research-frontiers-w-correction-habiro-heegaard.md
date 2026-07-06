@@ -13,7 +13,7 @@ structural framing for future research-grade probes.
 
 ## §1. W ≈ √2 correction finding (this session's probe)
 
-Per [`rt_route_w_specific_correction_probe.py`](../../folio-assistant/computations/probes/rt_route_w_specific_correction_probe.py):
+Per [`rt_route_w_specific_correction_probe.py`](../../computations/probes/rt_route_w_specific_correction_probe.py):
 
 **Direct-solve** for the multiplicative W-only correction needed to
 match SM ratios:
@@ -157,7 +157,7 @@ coherence is automatic.
 
 The **Heegaard state-sum** formulation reproduces the colored Jones
 $J_N$ as the SUM over $j = 0, 1/2, \ldots, k/2$ weighted by quantum
-dimensions. This is EXACTLY what the [`rt_route_root_of_unity_level_scan.py`](../../folio-assistant/computations/rt_route_root_of_unity_level_scan.py)
+dimensions. This is EXACTLY what the [`rt_route_root_of_unity_level_scan.py`](../../computations/rt_route_root_of_unity_level_scan.py)
 probe (PR #1119) computes implicitly — the state-sum framing makes
 the Pentagon coherence explicit but doesn't add NEW structure.
 
@@ -226,9 +226,9 @@ Layer 3: Pentagon coherence (PR #1100 T2b NEGATIVE; this PR §3)
 - [`docs/audits/2026-05-24-rt-level-selection-bring-genus-or-embedding-max.md`](2026-05-24-rt-level-selection-bring-genus-or-embedding-max.md) — level selection (sibling)
 - [`docs/audits/2026-05-24-pentagon-identity-broad-context.md`](2026-05-24-pentagon-identity-broad-context.md) — Pentagon's 8 literatures
 - [`docs/audits/2026-05-24-single-knot-vs-multi-nucleon-reconciliation.md`](2026-05-24-single-knot-vs-multi-nucleon-reconciliation.md) — L1/L2/L3 framework
-- [`folio-assistant/computations/probes/rt_route_w_specific_correction_probe.py`](../../folio-assistant/computations/probes/rt_route_w_specific_correction_probe.py) — W ≈ √2 finding (this PR)
-- [`folio-assistant/computations/rt_route_root_of_unity_level_scan.py`](../../folio-assistant/computations/rt_route_root_of_unity_level_scan.py) — k=9 best (PR #1119)
-- [`folio-assistant/computations/rt_route_cross_particle_ratio_quantum_dim.py`](../../folio-assistant/computations/rt_route_cross_particle_ratio_quantum_dim.py) — Z/H match (PR #1119)
-- [`folio-assistant/computations/probes/pentagon_rt_torus_knot_higgs_probe.py`](../../folio-assistant/computations/probes/pentagon_rt_torus_knot_higgs_probe.py) — Q2 absolute mass (PR #1116)
+- [`computations/probes/rt_route_w_specific_correction_probe.py`](../../computations/probes/rt_route_w_specific_correction_probe.py) — W ≈ √2 finding (this PR)
+- [`computations/rt_route_root_of_unity_level_scan.py`](../../computations/rt_route_root_of_unity_level_scan.py) — k=9 best (PR #1119)
+- [`computations/rt_route_cross_particle_ratio_quantum_dim.py`](../../computations/rt_route_cross_particle_ratio_quantum_dim.py) — Z/H match (PR #1119)
+- [`computations/probes/pentagon_rt_torus_knot_higgs_probe.py`](../../computations/probes/pentagon_rt_torus_knot_higgs_probe.py) — Q2 absolute mass (PR #1116)
 - Garoufalidis–Zagier 2310.20308 — Habiro ring of number fields
 - Habiro 2008 (Inv. Math.) — original Habiro ring construction

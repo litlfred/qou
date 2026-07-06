@@ -7,5 +7,9 @@ export default proposition({
     ref: "qou:QOU.WedderburnMass.curvature_rank_gb_stratification",
     validation: "not_checked",
   },
-  uses: ["prop:frobenius-s-classification"],
+  uses: [
+    "prop:frobenius-s-classification",
+    "def:hecke-curvature-2-cocycle",
+    "def:curvature-rank",
+  ],
 });

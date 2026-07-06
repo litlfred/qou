@@ -1,6 +1,7 @@
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 import Mathlib.Data.Complex.Basic
+import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 
 
 /-!
@@ -20,9 +21,10 @@ numerical evaluation.
 
 namespace QOU.Brings
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -70,7 +72,10 @@ theorem c5_preserves_normSq (k : ℕ) (w : ℂ) :
     Complex.normSq (c5_phase_rotation k w) =
     Complex.normSq w := by
   unfold c5_phase_rotation
-  rw [map_mul]
-  simp [Complex.normSq_exp_ofReal_mul_I]
+  have h : Complex.normSq (Complex.exp (↑(↑k * zeta_angle) * Complex.I)) = 1 := by
+    rw [Complex.normSq_eq_norm_sq, Complex.norm_exp_ofReal_mul_I, one_pow]
+  rw [Complex.normSq_mul, h, one_mul]
+
+end
 
 end QOU.Brings

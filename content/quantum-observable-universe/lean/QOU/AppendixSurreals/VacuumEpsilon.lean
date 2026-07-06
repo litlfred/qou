@@ -8,7 +8,7 @@ import Mathlib.Data.Real.Basic
 
 This is a **conjecture**: the class `VacuumEpsilon` carries a placeholder
 field and is trivially inhabited (`residual := 0`), so the instance is
-total (per CLAUDE.md §3b the conjectural content lives in the narrative
+total (per AGENTS.md §3b the conjectural content lives in the narrative
 block `conj:vacuum-epsilon`, refined into class fields as the
 formalisation matures).  Downstream theorems may take
 `[VacuumEpsilon]` as an explicit `[Instance]` hypothesis to derive
@@ -25,7 +25,7 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:vacuum-epsilon`](../../../quantum-observable-universe/appendix-surreals/vacuum-epsilon.md). -/
 class VacuumEpsilon where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- **Content statement** (from manuscript):
 
       The Hoefsmit scattering pipeline assigns to each link $L$ a

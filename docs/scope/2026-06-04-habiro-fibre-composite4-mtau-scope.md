@@ -18,7 +18,7 @@ next agent away from two dead ends.
   This branch therefore carries **no Lean changes** — only this scope
   doc + the web-sandbox toolchain addendum to `lean-environment-setup.md`.
 - **`/25` framing² conjecture REFUTED** by
-  [`qbeta_rung1_div25_framing_squared_test.py`](../../folio-assistant/computations/qbeta/qbeta_rung1_div25_framing_squared_test.py)
+  [`qbeta_rung1_div25_framing_squared_test.py`](../../computations/qbeta/qbeta_rung1_div25_framing_squared_test.py)
   (#1801): the q-deformed `/[5]_q²` gives **worse** c_3 precision than
   the q-undeformed `/25`, so `/25` is **not** a categorical framing²
   that q-deforms. Verdict: `/25` is a q-undeformed empirical constant;

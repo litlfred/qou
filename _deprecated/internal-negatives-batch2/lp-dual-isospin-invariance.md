@@ -1,7 +1,7 @@
 **Remark.**
 
 The LP-dual + crystal-bases probe
-[`alpha-5-lp-dual-crystal.witness.json`](folio-assistant/computations/alpha-5-lp-dual-crystal.witness.json)
+[`alpha-5-lp-dual-crystal.witness.json`](computations/alpha-5-lp-dual-crystal.witness.json)
 solves the operator-selection LP per-atom on
 $\{D, T, {}^3\mathrm{He}\}$ at $q_0$ + a $q$-sweep, with cost
 $t_\lambda = c_5(\lambda)$ from the Murphy central element

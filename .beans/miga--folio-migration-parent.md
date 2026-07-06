@@ -1,9 +1,11 @@
 ---
-id: miga
-type: parent
+# miga
+title: ""
 status: completed
-created_at: 2026-06-14
-updated_at: 2026-06-14
+type: parent
+priority: normal
+created_at: 2026-06-14T00:00:00Z
+updated_at: 2026-06-21T19:39:07Z
 ---
 
 # Folio-Assistant Infrastructure Migration (Parent)

@@ -1,91 +1,109 @@
+import Mathlib.Tactic
+import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+
 /-!
-# QOU.ParticleInteractions.confinement_frobenius_reciprocity — placeholder stub
+# QOU.ParticleInteractions.confinement_frobenius_reciprocity
 
-**Placeholder canonical** for content block
-[`prop:confinement-frobenius-reciprocity`](../../../quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.md): *QOU.ParticleInteractions.confinement_frobenius_reciprocity*.
+**Proposition** ([`prop:confinement-frobenius-reciprocity`](../../../quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.md)):
+*confinement Frobenius reciprocity.*
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.ParticleInteractions.confinement_frobenius_reciprocity` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
+Let `T ∈ H_n(q)` be a confined bound-state operator selected by the
+operator-selection LP with primal optimum `T = ∑ᵢ x*ᵢ bᵢ` and dual optimum
+`(y₀*, y*)`, where `{b₁, …, b_d}` is the NF basis, `G_{ij} = tr_M(bᵢ bⱼ)`
+is the Frobenius Gram matrix, and the LP-active set is
+`A*(T) = {i : y*ᵢ > 0}`.  Then for every observable `O ∈ H_n(q)` the physical
+expectation value is the **Gram-inverse dual pairing weighted by LP-active
+shadow prices**:
+
+    ⟨O⟩_T = O(T) = ∑_{i,j ∈ A*(T)} u*ᵢ (G⁻¹)_{ij} ⟨O, bⱼ⟩ .
+
+## Disposition (integrity)
+
+The class carries only the **LP + Frobenius data** — the NF-basis size `d`,
+the Gram matrix `G` and its active-subspace dual `Ginv = G⁻¹`, the LP-active
+set `A_star`, the primal coefficients `x_star`, the dual shadow prices
+`u_star = y*`, the net-constraint dual `y_0_star`, the primal/dual objective
+values, and the observable pairing (`pairing O j = ⟨O, bⱼ⟩`) and physical
+expectation (`physExp O = O(T)`) maps.  It does **not** carry the reciprocity
+formula or the LP sub-claims as fields (the previous versions did — first a
+`theorem := ⟨ctx.claim_*⟩` self-assuming projection, then a `def … : Prop`
+that dropped the master formula entirely — both forbidden / weaker than the
+`.md`).
+
+`confinement_frobenius_reciprocity` now states the genuine `.md` claim — the
+**master reciprocity formula** together with the LP supporting facts (primal
+optimum nontrivial, positive net dual, active set nonempty, active ⇔ positive
+shadow price, strong duality) — over that data, and ends in `sorry`
+(disposition B).  Establishing it requires the two-part argument of the
+manuscript: (1) non-degeneracy of the Markov trace as a Frobenius form on
+`H_n(q)` giving the dual basis `T^∨ = ∑ x*ᵢ (G⁻¹)_{ij} bⱼ`, and (2) the
+LP-active reduction via complementary slackness / KKT stationarity
+(`x*ᵢ = (G⁻¹ u*)ᵢ` on `A*(T)`) — neither present in the `QOU` library / Mathlib.
 -/
 
 namespace QOU.ParticleInteractions
 
+open Finset
 
-/-- Abstract context for the `confinement_frobenius_reciprocity` claim
-    — manuscript-themed typed fields below; sub-claims encode the
-    Frobenius-reciprocity decomposition of physical expectation values
-    in bound states selected by the operator-selection LP. -/
+/-- LP + Frobenius data of the confinement-reciprocity claim. All fields are
+    *inputs* (LP primal/dual data, the Frobenius Gram matrix and its
+    active-subspace inverse, and the observable pairing); none asserts the
+    reciprocity conclusion. -/
 class ConfinementFrobeniusReciprocityContext where
-  /-- The categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- Partition / Young-diagram indexing. -/
-  PartitionIdx : Type
-  /-- The Hecke algebra `H_n(q)`. -/
-  HeckeAlgebra : Type
-  /-- The bound-state operator `T ∈ H_n(q)`. -/
-  T : HeckeAlgebra
   /-- NF basis size `d`. -/
   d : ℕ
-  /-- LP-active set `A*(T) ⊆ {1, ..., d}` (membership predicate). -/
-  A_star : Fin d → Prop
-  /-- Primal-optimum coefficients `x*_i` and dual shadow prices `y*_i`. -/
+  /-- The Frobenius Gram matrix `G_{ij} = tr_M(bᵢ bⱼ)`. -/
+  G : Fin d → Fin d → ℝ
+  /-- The Frobenius dual-basis matrix `(G⁻¹)_{ij}` on the active subspace. -/
+  Ginv : Fin d → Fin d → ℝ
+  /-- LP-active set `A*(T) = {i : y*ᵢ > 0}`. -/
+  A_star : Finset (Fin d)
+  /-- Primal-optimum coefficients `x*ᵢ` (`T = ∑ x*ᵢ bᵢ`). -/
   x_star : Fin d → ℝ
-  y_star : Fin d → ℝ
-  /-- Dual `y_0*`. -/
+  /-- Dual shadow prices `u*ᵢ = y*ᵢ` on the active channels. -/
+  u_star : Fin d → ℝ
+  /-- The net-constraint dual variable `y₀*`. -/
   y_0_star : ℝ
-  /-- Primal/dual objective values. -/
-  primal_obj dual_obj : ℝ
-  /-- Manuscript sub-claim (i) — LP primal optimum exists with
-      a finite non-zero coefficient. -/
-  claim_i_primal_optimum : ∃ i : Fin d, x_star i ≠ 0
-  /-- Manuscript sub-claim (ii) — Dual optimum non-trivial:
-      `y_0* > 0`. -/
-  claim_ii_dual_optimum : 0 < y_0_star
-  /-- Manuscript sub-claim (iii) — LP-active set non-empty:
-      `∃ i, A_star i`. -/
-  claim_iii_active_set_nonempty : ∃ i : Fin d, A_star i
-  /-- Manuscript sub-claim (iv) — Active-set characterisation:
-      `A_star i ↔ 0 < y_star i`. -/
-  claim_iv_active_iff_dual_positive :
-    ∀ i : Fin d, A_star i ↔ 0 < y_star i
-  /-- Manuscript sub-claim (v) — Strong duality
-      `primal_obj = dual_obj`. -/
-  claim_v_strong_duality : primal_obj = dual_obj
+  /-- Primal objective value `∑ᵢ tᵢ x*ᵢ`. -/
+  primal_obj : ℝ
+  /-- Dual objective value `n_target · y₀*`. -/
+  dual_obj : ℝ
+  /-- Observables `O ∈ H_n(q)`. -/
+  Observable : Type
+  /-- Frobenius pairing `⟨O, bⱼ⟩ = tr_M(O · bⱼ)`. -/
+  pairing : Observable → Fin d → ℝ
+  /-- Physical expectation value `⟨O⟩_T = O(T)`. -/
+  physExp : Observable → ℝ
 
-/-- **Proposition statement** (from manuscript):
+/-- **Confinement Frobenius reciprocity** ([`prop:confinement-frobenius-reciprocity`]).
 
-Let $T \in H_n(q)$ be a confined bound-state operator selected by the
-operator-selection LP ([operator-selection LP](#prop:operator-selection-lp))
-with primal optimum $T = \sum_i x_i^* b_i$ and dual optimum
-$(y_0^*, y^*)$, where $\{b_1, \ldots, b_d\}$ is the NF basis, $G_{ij} =
-\mathrm{tr}_M(b_i b_j)$ is the Frobenius Gram matrix
-([Frobenius Gram matrix](#prop:frobenius-gram-matrix)), and the
-LP-active set is*
+The master claim: for every observable `O`, the physical expectation value in
+the confined bound state `T` is the Gram-inverse dual pairing weighted by the
+LP-active shadow prices,
 
-$$
-  A^*(T) \;=\; \{\, i \in \{1, \ldots, d\} \;:\; y_i^* > 0 \,\}.
-$$
+    ⟨O⟩_T = ∑_{i,j ∈ A*(T)} u*ᵢ (G⁻¹)_{ij} ⟨O, bⱼ⟩ ,
 
-*Then for every observable $O \in H_n(q)$ — interpreted as a linear
-functional $b \mapsto \langle O, b\rangle = \mathrm{tr}_M(O \cdot b)$ on
-the algebra — the physical expectation value of $O$ in the bound state
-$T$ is the
-
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts
-theorem confinement_frobenius_reciprocity [ctx : ConfinementFrobeniusReciprocityContext] :
+together with the LP supporting facts: (i) nontrivial primal optimum,
+(ii) positive net dual `y₀* > 0`, (iii) nonempty active set, (iv) active ⇔
+positive shadow price, (v) strong duality `primal_obj = dual_obj`. -/
+-- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP strong duality + complementary slackness / KKT)
+-- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.md
+theorem confinement_frobenius_reciprocity
+    [ctx : ConfinementFrobeniusReciprocityContext] :
+    (∀ O : ctx.Observable,
+      ctx.physExp O
+        = ∑ i ∈ ctx.A_star, ∑ j ∈ ctx.A_star,
+            ctx.u_star i * ctx.Ginv i j * ctx.pairing O j) ∧
     (∃ i : Fin ctx.d, ctx.x_star i ≠ 0) ∧
     0 < ctx.y_0_star ∧
-    (∃ i : Fin ctx.d, ctx.A_star i) ∧
-    (∀ i : Fin ctx.d, ctx.A_star i ↔ 0 < ctx.y_star i) ∧
-    ctx.primal_obj = ctx.dual_obj :=
-  ⟨ctx.claim_i_primal_optimum, ctx.claim_ii_dual_optimum,
-   ctx.claim_iii_active_set_nonempty,
-   ctx.claim_iv_active_iff_dual_positive, ctx.claim_v_strong_duality⟩
+    ctx.A_star.Nonempty ∧
+    (∀ i : Fin ctx.d, i ∈ ctx.A_star ↔ 0 < ctx.u_star i) ∧
+    ctx.primal_obj = ctx.dual_obj := by
+  -- Missing infra: Frobenius non-degeneracy of tr_M giving the dual basis
+  -- `T^∨ = ∑ x*ᵢ (G⁻¹)_{ij} bⱼ`, plus the LP complementary-slackness / KKT
+  -- reduction `x*ᵢ = (G⁻¹ u*)ᵢ` on `A*(T)`. Not yet formalised in QOU/Mathlib.
+  -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199
+  sorry
 
 end QOU.ParticleInteractions

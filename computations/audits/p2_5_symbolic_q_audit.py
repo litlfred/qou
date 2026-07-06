@@ -14,7 +14,7 @@ del _sys, _Path, _bridge
 # polynomial_q_not_applicable: mpmath/numerical-only output; sympy use is intermediate or absent.
 """
 P2.5 audit: scan every witness-emitting Python script under
-`folio-assistant/computations/` and triage each as
+`computations/` and triage each as
 
   * **compliant**: uses sympy.Symbol('q') symbolically and
     substitutes q₀ only at final reporting; emits a `polynomial_q`
@@ -145,7 +145,7 @@ def main() -> int:
         "computation": "p2-5-symbolic-q-audit",
         "purpose": (
             "P2.5 audit: triage every Python script in "
-            "folio-assistant/computations/ as compliant / "
+            "computations/ as compliant / "
             "mpmath-only / partial / early-substitution / "
             "no-q-dependence. Emits the prioritised refactor "
             "target list (top-20 by witness-JSON visibility)."

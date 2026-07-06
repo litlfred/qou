@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/_deprecated/tritium-he3-groebner-nf.py",
+  "script_path": "computations/_deprecated/tritium-he3-groebner-nf.py",
   "language": "python",
   "source_hash": "197b2a318bad",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -21,7 +21,7 @@
         "reviewed_at": "2026-05-22T18:27:38.070Z",
         "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
         "severity": "major",
-        "evidence": "folio-assistant/computations/_deprecated/tritium-he3-groebner-nf.py:145: bare `float(c.subs(q, q_val))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/tritium-he3-groebner-nf.py:189: bare `float(c_simplified.subs(q, q0))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/tritium-he3-groebner-nf.py:329: bare `float(tr_3H.subs(q, q0))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/tritium-he3-groebner-nf.py:362: bare `float(tr_He3.subs(q, q0))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/tritium-he3-groebner-nf.py:395: bare `float(tr_T35.subs(q, q0))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
+        "evidence": "computations/_deprecated/tritium-he3-groebner-nf.py:145: bare `float(c.subs(q, q_val))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/_deprecated/tritium-he3-groebner-nf.py:189: bare `float(c_simplified.subs(q, q0))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/_deprecated/tritium-he3-groebner-nf.py:329: bare `float(tr_3H.subs(q, q0))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/_deprecated/tritium-he3-groebner-nf.py:362: bare `float(tr_He3.subs(q, q0))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/_deprecated/tritium-he3-groebner-nf.py:395: bare `float(tr_T35.subs(q, q0))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
       },
       {
         "field_hash": {
@@ -38,7 +38,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/_deprecated/tritium-he3-groebner-nf.py:145: bare `float(c.subs(q, q_val))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/tritium-he3-groebner-nf.py:189: bare `float(c_simplified.subs(q, q0))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/tritium-he3-groebner-nf.py:329: bare `float(tr_3H.subs(q, q0))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/tritium-he3-groebner-nf.py:362: bare `float(tr_He3.subs(q, q0))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/_deprecated/tritium-he3-groebner-nf.py:395: bare `float(tr_T35.subs(q, q0))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
+        "evidence": "computations/_deprecated/tritium-he3-groebner-nf.py:145: bare `float(c.subs(q, q_val))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/_deprecated/tritium-he3-groebner-nf.py:189: bare `float(c_simplified.subs(q, q0))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/_deprecated/tritium-he3-groebner-nf.py:329: bare `float(tr_3H.subs(q, q0))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/_deprecated/tritium-he3-groebner-nf.py:362: bare `float(tr_He3.subs(q, q0))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/_deprecated/tritium-he3-groebner-nf.py:395: bare `float(tr_T35.subs(q, q0))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
       }
     ],
     "respects_archimedean_wall": [
@@ -57,7 +57,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/_deprecated/tritium-he3-groebner-nf.py:597: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | folio-assistant/computations/_deprecated/tritium-he3-groebner-nf.py:597: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | folio-assistant/computations/_deprecated/tritium-he3-groebner-nf.py:629: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | folio-assistant/computations/_deprecated/tritium-he3-groebner-nf.py:630: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | folio-assistant/computations/_deprecated/tritium-he3-groebner-nf.py:631: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/`"
+        "evidence": "computations/_deprecated/tritium-he3-groebner-nf.py:597: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | computations/_deprecated/tritium-he3-groebner-nf.py:597: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | computations/_deprecated/tritium-he3-groebner-nf.py:629: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | computations/_deprecated/tritium-he3-groebner-nf.py:630: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | computations/_deprecated/tritium-he3-groebner-nf.py:631: archimedean call `math.log` — use the mpmath equivalent (`mp.log`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/`"
       }
     ],
     "code_is_commented": [
@@ -76,7 +76,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/_deprecated/tritium-he3-groebner-nf.py:1: script lacks both a module docstring and ≥10% comment density (got 98/1004 = 9.8%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
+        "evidence": "computations/_deprecated/tritium-he3-groebner-nf.py:1: script lacks both a module docstring and ≥10% comment density (got 98/1004 = 9.8%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
       }
     ],
     "variables_typed": [
@@ -95,7 +95,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/_deprecated/tritium-he3-groebner-nf.py:98: `def particle_name(…)` has 1 parameter without type annotation: w — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/tritium-he3-groebner-nf.py:103: `def particle_knot(…)` has 1 parameter without type annotation: w — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/tritium-he3-groebner-nf.py:108: `def word_str(…)` has 1 parameter without type annotation: w — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/tritium-he3-groebner-nf.py:115: `def particle_word_str(…)` has 1 parameter without type annotation: w — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/_deprecated/tritium-he3-groebner-nf.py:122: `def show_element(…)` has 3 parameters without type annotation: name, elem, indent — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/_deprecated/tritium-he3-groebner-nf.py:98: `def particle_name(…)` has 1 parameter without type annotation: w — add `: type` (or `: Any` if the type genuinely is untyped) | computations/_deprecated/tritium-he3-groebner-nf.py:103: `def particle_knot(…)` has 1 parameter without type annotation: w — add `: type` (or `: Any` if the type genuinely is untyped) | computations/_deprecated/tritium-he3-groebner-nf.py:108: `def word_str(…)` has 1 parameter without type annotation: w — add `: type` (or `: Any` if the type genuinely is untyped) | computations/_deprecated/tritium-he3-groebner-nf.py:115: `def particle_word_str(…)` has 1 parameter without type annotation: w — add `: type` (or `: Any` if the type genuinely is untyped) | computations/_deprecated/tritium-he3-groebner-nf.py:122: `def show_element(…)` has 3 parameters without type annotation: name, elem, indent — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -114,7 +114,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/_deprecated/tritium-he3-groebner-nf.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/_deprecated/tritium-he3-groebner-nf.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       }
     ],
     "connected_to_ci_pipeline": [
@@ -150,7 +150,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/_deprecated/tritium-he3-groebner-nf.py:1: script lives under `_deprecated/` — consumers must not depend on its output. Move to the canonical path if still active, or delete if truly retired"
+        "evidence": "computations/_deprecated/tritium-he3-groebner-nf.py:1: script lives under `_deprecated/` — consumers must not depend on its output. Move to the canonical path if still active, or delete if truly retired"
       }
     ],
     "uses_library_framework_appropriately": [
@@ -169,7 +169,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/_deprecated/tritium-he3-groebner-nf.py:1163: script writes `.witness.json` (\"tritium-he3-groebner-nf.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
+        "evidence": "computations/_deprecated/tritium-he3-groebner-nf.py:1163: script writes `.witness.json` (\"tritium-he3-groebner-nf.witness.json\") but does not import `WitnessBuilder` from `witness_base` — add `from witness_base import WitnessBuilder` and stamp the payload via `WitnessBuilder.stamp_staleness_metadata(...)` for provenance / staleness tracking"
       }
     ],
     "compute_no_mpf_to_float_cast": [

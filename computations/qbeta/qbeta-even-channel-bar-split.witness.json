@@ -1,0 +1,61 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-03T15:04:52.826041+00:00",
+  "commitSha": "d94131acded9750ba61ba5fc765011a6c14180fc",
+  "assertions": [
+    {
+      "name": "bar_involution_sanity",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 25,
+  "computation": "qbeta-even-channel-bar-split",
+  "scriptFile": "qbeta_even_channel_bar_split_probe.py",
+  "scriptHash": "d9e42f92f37d",
+  "scriptCommitSha": "aaa764dae3996a20cdcd03f812c6d32995aa6bec",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "ai81: exact bar-involution split of the net-route log R (sigma: s -> -s/(1+s)); tests the two-variable hypothesis log R = E(u~) + h*D(u~), u~ = q*u bar-even (h = q - 1/q companion bar-odd variable) by exact u-adic matching of the bar-even part and of (bar-odd)/h.",
+  "data": {
+    "sigma": "s -> -s/(1+s) (q -> 1/q)",
+    "u_weight_finding": "u o sigma = q^2 u exactly; bar-even variable is u~ = q*u",
+    "u_tilde_bar_even_exact": true,
+    "h_bar_odd_exact": true,
+    "E_u_coefficients_exact": {
+      "1": "3*sqrt(3)/4",
+      "2": "-2165/144",
+      "3": "-437041*sqrt(3)/12960",
+      "4": "-16725719/60480",
+      "5": "-822397949021*sqrt(3)/783820800"
+    },
+    "E_first_nonzero_residual_order": null,
+    "E_residuals_nonzero": {},
+    "D_u_coefficients_exact": {
+      "1": "1/8 - sqrt(3)",
+      "2": "-97/6 + 5*sqrt(3)/288",
+      "3": "373/34560 - 676*sqrt(3)/27",
+      "4": "-59195/162 + 15055*sqrt(3)/1741824",
+      "5": "-252241*sqrt(3)/243 - 836891/139345920"
+    },
+    "OoverH_first_nonzero_residual_order": 11,
+    "OoverH_residuals_nonzero": {
+      "11": "-13000.7533612133"
+    },
+    "two_variable_form_holds_to_ORD": false,
+    "verdict": "TWO-VARIABLE FORM FAILS exactly at order {'E': None, 'O/h': 11} — the h-companion hypothesis as-is does not absorb the residual; the failing exact residuals sharpen the constraint for the next candidate (zeta4-residue route). Scope (a).",
+    "scope": "(a) — truncation order ORD, net route; no wiring"
+  }
+}

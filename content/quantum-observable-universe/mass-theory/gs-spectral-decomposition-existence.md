@@ -38,9 +38,9 @@ spectral_decomposition :
 
 *on `GBResidueSpectralSum`. It is the analytic content of the
 `noncomputable opaque` block: instances must supply this identity as
-input, currently as `sorry` per CLAUDE.md §3b.*
+input, currently as `sorry` per AGENTS.md §3b.*
 
-**Why a conjecture and not a theorem.**
+**Conjectural status.**
 *A Lean proof requires:*
 
 1. *[graded Markov trace existence](#conj:gs-graded-markov-trace-existence)
@@ -53,7 +53,7 @@ input, currently as `sorry` per CLAUDE.md §3b.*
  elliptic curve.*
 
 *Effort is "very large" per the
-[audit](../../folio-assistant/computations/AUDIT-gb-residue-opaque-declarations.md);
+[audit](../../computations/AUDIT-gb-residue-opaque-declarations.md);
 the empirical witness (machine-precision agreement on every available
 atom) is the working substitute.*
 
@@ -61,4 +61,4 @@ atom) is the working substitute.*
 *Cross-pipeline validation at `proton`, `neutron`, `deuteron` records
 relative difference $\le$ $10^{-9}$ to machine precision on every
 checkpoint. See
-`folio-assistant/computations/markov/markov-pipeline-cross-validation.witness.json`.*
+`computations/markov/markov-pipeline-cross-validation.witness.json`.*

@@ -2,7 +2,7 @@
 
 **Date:** 2026-05-17
 **Scope:** Ten computation scripts in
-[`folio-assistant/computations/`](../../folio-assistant/computations/)
+[`computations/`](../../computations/)
 that carry the f64 reference for the proton–electron mass ratio
 (`mass_endomorphism.py`), the canonical 3A-strand atomic braid +
 H_{3A} Wedderburn-character per-generator volume
@@ -62,7 +62,7 @@ mirrors the **older** Φ_q + adjacent-pairs form (lines 100–108),
 not the new `Li_2^q` + all-pairs form in the .md. The headline
 theorem `proton_electron_ratio` is **conditional on a
 `MassEvaluation q` class** (axiomatized numerical input) — a
-canonical example of CLAUDE.md §3b-cond. No `sorry`; the class
+canonical example of AGENTS.md §3b-cond. No `sorry`; the class
 instance is the only unproved input. The Lean and the .md
 **diverge** on (a) which q-dilogarithm and (b) adjacent-only vs
 all-pairs — a documented drift that the script's f64 form
@@ -215,7 +215,7 @@ The integrated 6-term mass formula per `thm:knot-mass-formula-unified`:
   at q_0 and predicts the −737 MeV mirror-nucleus pathology that
   `brane_tower_isospin_diagnosis.py` then documents in full.
 - The `.ts` for the unified theorem points at
-  [`mass_formula_6term_mpfr_50dps.py`](../../folio-assistant/computations/mass_formula_6term_mpfr_50dps.py)
+  [`mass_formula_6term_mpfr_50dps.py`](../../computations/mass_formula_6term_mpfr_50dps.py)
   as the *current* canonical computation, demoting this file
   to a reference / fallback. (Witness:
   `mass-formula-6term-mpfr-50dps.witness.json`.)
@@ -521,7 +521,7 @@ script's name.
 [`jet-tower-uniform-delta-max.lean`](../../content/quantum-observable-universe/braids-and-knots/jet-tower-uniform-delta-max.lean)
 declares `class JetTowerUniformDeltaMax (ρ : Type*)` with fields
 `delta`, `delta_max`, `delta_max_nonneg`, `uniform_bound` — a clean
-**conditional-class** (CLAUDE.md §3b-cond) axiomatisation of the
+**conditional-class** (AGENTS.md §3b-cond) axiomatisation of the
 conjecture. `geometric_tail_bound_abstract` is the conditional
 theorem under the class. A trivial-delta `canonical` instance is
 provided (zero delta everywhere), discharging the §3b-cond
@@ -581,7 +581,7 @@ mirror-nucleus pathology in `brane_tower_isospin_diagnosis.py`.
 
 **Operator-selection LP duals.** None of the ten scripts in scope
 emit LP/SDP dual fields (none of them solve an LP). The
-LP-dual baseline rule in CLAUDE.md applies to operator-selection
+LP-dual baseline rule in AGENTS.md applies to operator-selection
 scripts (`crt_markov.py`, `multi_level_sdp.py`,
 `misdp_cross_channel.py`, etc.), not to this set. No CI hint
 collisions expected.

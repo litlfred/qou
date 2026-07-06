@@ -22,7 +22,7 @@ For each point, compute the bonded NF and check all constraints.
 Among feasible points, pick minimum Φ₁.
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 molecular-ilp.py
 """
 

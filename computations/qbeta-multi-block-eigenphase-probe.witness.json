@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-09T03:34:03.898117+00:00",
-  "commitSha": "15377a21b5fb742175d2b26f345c0f9cb4bd81fe",
+  "computedAt": "2026-06-22T13:27:27.948906+00:00",
+  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
   "assertions": [
     {
       "name": "q0_stability_test_completed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 10,
   "computation": "qbeta-multi-block-eigenphase-probe",
   "scriptFile": "qbeta_multi_block_eigenphase_probe.py",
   "scriptHash": "4b68821825e7",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,7 +28,6 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
@@ -36,32 +35,32 @@
   "contentBlock": "prop:q-beta-categorical-precision-ladder",
   "data": {
     "pins": {
-      "canonical_mp_pin_q0": "1.1099785827513808075916690956107688798744991218736",
+      "canonical_mp_pin_q0": "1.1099785955573347198997632204832250266562084087802",
       "stale_muon_pin_q0": "1.10997859555418057528159407960950937799328227995870"
     },
     "fundamental_rep_decomposition": {
       "dim_qFR_block": {
         "(3)": "1.0",
-        "(2,1)": "2.01089686670712229975249197809",
+        "(2,1)": "2.0108968691190757608176638045",
         "(1,1,1)": "1.0"
       },
-      "Z_q_normaliser": "4.01089686670712229975249197809",
+      "Z_q_normaliser": "4.0108968691190757608176638045",
       "alpha_block_LO_canonical": {
-        "(3)": "-0.219957165502761615183338191222",
-        "(2,1)": "-0.109978582751380807591669095611",
-        "(1,1,1)": "-0.219957165502761615183338191222"
+        "(3)": "-0.219957191114669439799526440966",
+        "(2,1)": "-0.109978595557334719899763220483",
+        "(1,1,1)": "-0.219957191114669439799526440966"
       },
-      "alpha_eff_LO_canonical": "-0.164818478368877121962398066443",
+      "alpha_eff_LO_canonical": "-0.164818497527434299827224759342",
       "alpha_eff_LO_stale": "-0.164818497522715490091453961383"
     },
     "residuals": {
       "Q_codata_MeV": "0.78233341",
-      "Q_A_MeV": "0.783645826316467066",
-      "Q_bridge_canonical_MeV": "0.773025979109133288",
+      "Q_A_MeV": "0.783645802839167435",
+      "Q_bridge_canonical_MeV": "0.773025953486676423",
       "Q_bridge_stale_MeV": "0.77302595349298731",
-      "err_canonical_ppb": "-11897013.1812",
+      "err_canonical_ppb": "-11897045.9325",
       "err_stale_ppb": "-11897045.9245",
-      "q0_drift_pct": 0.0002752225214249148
+      "q0_drift_pct": 6.780464029013325e-08
     },
     "verdict": {
       "classification": "open (q₀-stable but not Taylor-exact)",

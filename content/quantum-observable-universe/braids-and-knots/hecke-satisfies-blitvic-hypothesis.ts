@@ -18,4 +18,11 @@ export default proposition({
     "established",
   ],
   proofs: ["prf:hecke-satisfies-blitvic-hypothesis"],
+  authorNotes: [
+    {
+      kind: "status",
+      body:
+        "**provable.** The decomposition is a direct consequence of: (1) the Hecke quadratic relation (algebra-level, no analysis); (2) the Markov property of $\\mathrm{tr}_M$ (`thm:jones-markov-trace`); (3) Wenzl's product factorisation (`prop:trace-locality-meets-gs-non-locality`). No new mathematics introduced; the proof in `prf:hecke-satisfies-blitvic-hypothesis` is an explicit reduction.",
+    },
+  ],
 });

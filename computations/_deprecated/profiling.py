@@ -27,7 +27,7 @@ The profile JSON survives across runs (read on init, written on exit)
 so optimization decisions can be made from accumulated data, not
 single runs.
 
-@module folio-assistant/computations/profiling
+@module computations/profiling
 """
 from __future__ import annotations
 import contextlib

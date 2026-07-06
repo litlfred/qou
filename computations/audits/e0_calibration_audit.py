@@ -37,7 +37,7 @@ Q_β(n) = 0.78233341 MeV (PDG 2022, derived from m_n − m_p − m_e),
 so E_0 inherits the PDG precision floor of ~7.7×10⁻⁷ relative.
 
 This audit:
-  1. Scans every `*.py` in `folio-assistant/computations/` for
+  1. Scans every `*.py` in `computations/` for
      E_0-related literals: `0.782`, `0.78233341`, `Q_BETA*`,
      `E_0_CALIBRATION_MEV`, etc.
   2. Categorises each occurrence by (file, anchor, sig-figs).
@@ -52,7 +52,7 @@ This audit:
 Output: `e0-calibration-audit.witness.json`
 
 Usage:
-    python3 folio-assistant/computations/e0_calibration_audit.py
+    python3 computations/e0_calibration_audit.py
 """
 from __future__ import annotations
 
@@ -253,7 +253,7 @@ def main() -> int:
         "computation": "e0-calibration-audit",
         "description": (
             "Audit of E_0 / Q_β(n) calibration constants across "
-            "folio-assistant/computations. Reports value-precision "
+            "computations. Reports value-precision "
             "drift, anchor-of-pinning violations vs CAL-3, and the "
             "PDG-derived uncertainty floor on every E_0-dependent "
             "quantity."

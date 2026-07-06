@@ -30,7 +30,7 @@ $\mathtt{def:universal-ilp-algorithm}$).*
               x ≥ 0.
 2. Solve via Clarabel (default) or a sibling SDP backend.
 3. Recover dual variables y_0*, y*.
-4. Emit the LP-dual witness (per CLAUDE.md "LP/SDP duals —
+4. Emit the LP-dual witness (per AGENTS.md "LP/SDP duals —
    first-class infra").
 ```
 
@@ -50,7 +50,7 @@ LP in milliseconds.*
 ### Python API entry point
 
 *Canonical compute is the script
-[`folio-assistant/computations/confinement-operator-selection.py`](../../../folio-assistant/computations/confinement-operator-selection.py),
+[`computations/confinement-operator-selection.py`](../../../computations/confinement-operator-selection.py),
 which solves the LP with primal + dual emission and writes
 `confinement-operator-selection.witness.json`. The reusable
 solver helpers are exposed as
@@ -60,11 +60,11 @@ solver helpers are exposed as
 ### Witness contract
 
 *Canonical witness:
-[`confinement-operator-selection.witness.json`](../../../folio-assistant/computations/confinement-operator-selection.witness.json).
+[`confinement-operator-selection.witness.json`](../../../computations/confinement-operator-selection.witness.json).
 **Must emit all of** `y0_star`, `y_star`, `active_set`,
 `primal_obj`, `dual_obj`, `duality_gap` — enforced in CI by
-[`lp_dual_witness_validator.py`](../../../folio-assistant/computations/lp_dual_witness_validator.py)
-(see CLAUDE.md "LP/SDP duals — first-class infra").*
+[`lp_dual_witness_validator.py`](../../../computations/lp_dual_witness_validator.py)
+(see AGENTS.md "LP/SDP duals — first-class infra").*
 
 ### Notes
 

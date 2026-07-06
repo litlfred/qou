@@ -27,10 +27,10 @@ export default proposition({
   cites: ["wenzl1988", "hoefsmit1974"],
   computation: {
     engine: "numpy",
-    script: "folio-assistant/computations/sublemma_2_1_A_operator_extract.py",
+    script: "computations/sublemma_2_1_A_operator_extract.py",
     witness: [
-      "folio-assistant/computations/sublemma-2-1-A-operator-extract.witness.json",
-      "folio-assistant/computations/sublemma-2-1-deuteron-branching.witness.json",
+      "computations/sublemma-2-1-A-operator-extract.witness.json",
+      "computations/sublemma-2-1-deuteron-branching.witness.json",
     ],
     status: "verified",
     requires: ["numpy", "sympy"],

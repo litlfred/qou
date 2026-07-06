@@ -9,7 +9,7 @@ H_{3A} CRT reconstruction (§3·B) flagged research-grade; not started.
 
 ## 1. Current state of `crt_markov.py`
 
-[`folio-assistant/computations/crt_markov.py`](../../folio-assistant/computations/crt_markov.py)
+[`computations/crt_markov.py`](../../computations/crt_markov.py)
 (592 lines) holds **two** Markov-trace evaluators that diverge in
 ambition:
 
@@ -41,7 +41,7 @@ V_full = w_sym * sp + w_std * Vs + w_alt * ap
 
 So **all three channels** (sym, std, alt) are already implemented at
 H_3 weights inside `tower_mass_symbolic_eval`. What the audit
-[`AUDIT-crt-k-level.md`](../../folio-assistant/computations/AUDIT-crt-k-level.md)
+[`AUDIT-crt-k-level.md`](../../computations/AUDIT-crt-k-level.md)
 calls "missing" is the **per-channel breakdown** at the witness
 level: the function returns a single aggregated number (`desc`,
 `single`, `cross`, `total`) without exposing the contribution of
@@ -76,7 +76,7 @@ is **not** addressed here.
 
 ## 3. Proposed architecture (v2)
 
-New file: `folio-assistant/computations/crt_markov_v2.py` (≤ 500
+New file: `computations/crt_markov_v2.py` (≤ 500
 lines). Re-imports helpers from `crt_markov` (`_build_crossings`,
 `_Phi_q_mp`) and `mass_endomorphism` (`proton_cross`,
 `neutron_cross`, `electron_cross`).
@@ -199,7 +199,7 @@ weights) is unchanged. v2 is honest about that.
 
 | Step | File | LOC est. | Status |
 |------|------|----------|--------|
-| 1. v2 module | `folio-assistant/computations/crt_markov_v2.py` | ~350 | done |
+| 1. v2 module | `computations/crt_markov_v2.py` | ~350 | done |
 | 2. Witness emit | same file (`__main__` block) | ~80 | done |
 | 3. Test (H_3 consistency + single-block cross-check) | inline `if __name__` test, plus standalone assertions | ~50 | done |
 | 4. H_{3A} (research-grade) | not started | — | flagged |
@@ -208,8 +208,8 @@ Total LOC: ~480 of new Python. Below the 500-line cap.
 
 ## 7. References
 
-- [`folio-assistant/computations/crt_markov.py`](../../folio-assistant/computations/crt_markov.py) — current code
-- [`folio-assistant/computations/AUDIT-crt-k-level.md`](../../folio-assistant/computations/AUDIT-crt-k-level.md) — gap statement
-- [`folio-assistant/computations/mass_endomorphism.py`](../../folio-assistant/computations/mass_endomorphism.py) — per-particle Wedderburn vols (the canonical implementation)
-- [`folio-assistant/computations/alpha-k-jones-markov-h3.witness.json`](../../folio-assistant/computations/alpha-k-jones-markov-h3.witness.json) — expected H_3 weights for cross-check
+- [`computations/crt_markov.py`](../../computations/crt_markov.py) — current code
+- [`computations/AUDIT-crt-k-level.md`](../../computations/AUDIT-crt-k-level.md) — gap statement
+- [`computations/mass_endomorphism.py`](../../computations/mass_endomorphism.py) — per-particle Wedderburn vols (the canonical implementation)
+- [`computations/alpha-k-jones-markov-h3.witness.json`](../../computations/alpha-k-jones-markov-h3.witness.json) — expected H_3 weights for cross-check
 - [`docs/audits/2026-05-01-math-framework-deep-audit.md`](2026-05-01-math-framework-deep-audit.md) §3·A

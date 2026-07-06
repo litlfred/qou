@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.NS.NSCounterexample — `conj:ns-counterexample` axiomatised
 
@@ -14,7 +16,7 @@ Conjectural NS-counterexample: existence of a smooth initial datum whose q-defor
 
 ## Status
 
-Class-axiomatised per CLAUDE.md §3b-cond. The conjecture sits in
+Class-axiomatised per AGENTS.md §3b-cond. The conjecture sits in
 the residual §3b-violator cone identified in
 [`AUDIT-DEEP-2026-05.md`](../../../../AUDIT-DEEP-2026-05.md) §1A
 (P1.b sweep). Class declaration here lets downstream
@@ -51,12 +53,5 @@ class NSCounterexample where
   -- Ref: [manuscript] fluid-dynamics/p5-counterexample
   ns_counterexample_holds :
     ∀ M : ℝ, ∃ t x : ℝ, t < singularityTime ∧ M < velocityProfile t x
-
-    Ref: [manuscript] §Counter-example to Navier–Stokes regularity via q → 1 degeneration, `conj:ns-counterexample` -/
-class NSCounterexample : Prop where
-  /-- The q-deformed Navier-Stokes equation admits a
-      counterexample (initial data + finite blowup time) at some
-      specific dimension . -/
-  counterexample_data : ∃ d : ℕ, d ≥ 3
 
 end QOU.FluidDynamics

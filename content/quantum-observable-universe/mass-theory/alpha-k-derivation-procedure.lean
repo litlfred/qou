@@ -62,7 +62,7 @@ theorem alpha_k_derivation_procedure {p : ℕ}
   · -- uniqueness: multiply by A⁻¹ on the left to show injectivity
     intro y hy
     have h1 : A⁻¹ *ᵥ (A *ᵥ y) = A⁻¹ *ᵥ b := by rw [hy]
-    rw [← Matrix.mulVec_mulVec] at h1
+    rw [Matrix.mulVec_mulVec] at h1
     rw [Matrix.inv_mul_of_invertible] at h1
     rw [Matrix.one_mulVec] at h1
     -- Ref: [manuscript] prop:alpha-k-derivation-procedure

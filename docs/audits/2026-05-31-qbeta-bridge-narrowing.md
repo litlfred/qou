@@ -71,7 +71,7 @@ the **Khovanov–Rozansky / KLR-canonical-basis route** (Path 2 of
 operates at the **link-Markov-closure level** (the full Markov trace of
 the β-decay tangle) rather than per-block.
 
-**Skeptical prior (CLAUDE.md §7b audit precedent, 2026-05-30 KLR dialog
+**Skeptical prior (AGENTS.md §7b audit precedent, 2026-05-30 KLR dialog
 assessment):** the KLR/crystal techniques are *authoring guidance, not
 proof-restructure triggers*; the assessment found 0/6 candidate proofs
 would meaningfully shorten with a KLR layer. So the KR/KLR route is the
@@ -94,10 +94,10 @@ failure modes the §7b audit flags).
 
 ## Witnesses / files
 
-- `folio-assistant/computations/qbeta/qbeta-delta-tr-vs-formA.witness.json` (item 1)
-- `folio-assistant/computations/qbeta/qbeta-scaling-bridge-investigation.witness.json`
-- `folio-assistant/computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json`
-- `folio-assistant/computations/qbeta/qbeta_per_block_uniform_rule_verify.py`
-- `folio-assistant/computations/qbeta/qbeta-ck-cache.witness.json` (cal-anchored tier)
+- `computations/qbeta/qbeta-delta-tr-vs-formA.witness.json` (item 1)
+- `computations/qbeta/qbeta-scaling-bridge-investigation.witness.json`
+- `computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json`
+- `computations/qbeta/qbeta_per_block_uniform_rule_verify.py`
+- `computations/qbeta/qbeta-ck-cache.witness.json` (cal-anchored tier)
 - `content/.../mass-theory/q-beta-categorical-precision-ladder.lean` (§3b-cond `QbetaC3StructuralFormClass`)
 - `content/.../braids-and-knots/habiro-precision-ladder-equivalence.lean` (§3b-cond `QbetaHabiroTaylorBridgeClass`)

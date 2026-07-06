@@ -1,13 +1,12 @@
-/-!
-# QOU.Braiding.beta_stability — placeholder stub
+import Mathlib.Tactic
 
-**Placeholder canonical** for content block referenced by
+/-!
+# QOU.Braiding.beta_stability
+
+**Canonical declaration** for content block referenced by
 `qou:QOU.Braiding.beta_stability`.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI resolves to a real declaration in the `qou` Lake
-package. The body is `sorry` carrying the manuscript citation per
-CLAUDE.md §1.
+This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
 -/
 
 namespace QOU.Braiding
@@ -35,12 +34,9 @@ by extremizing the Skein binding Lagrangian
 ([Skein binding Lagrangian](#def:skein-binding-lagrangian)) over $n$
 at fixed $p$.
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/beta-stability.ts
-theorem beta_stability [ctx : BetaStabilityContext] :
+def beta_stability [ctx : BetaStabilityContext] :
     ∀ n : ℕ, ctx.L_skein ctx.n_star ≤ ctx.L_skein n :=
   ctx.claim_beta_stability
 

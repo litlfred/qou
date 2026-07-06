@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 The [Biot–Savart prediction](#rem:townsend-biot-savart-strain)
 that the squared core ratio $\kappa^2 \to 0$ at the collision
 holds only while the cores remain well separated. Once the
@@ -14,7 +12,7 @@ flattening $\kappa \to 0$ is reversed: the squared Levi
 condition number **locks** to a strictly positive constant
 $\kappa^2 = \pi\nu/\Gamma$.
 
-**Why the kernel changes.**
+**Mechanism of the kernel change.**
 The singular Biot–Savart strain $\alpha(t) = \Gamma/(2\pi d^2)$
 diverges *only* because $d \to 0$ while the cores are held
 small. Once $V_1 \gtrsim d^2$ the filaments are no longer two

@@ -30,13 +30,43 @@ import QOU.MathlibExt.PosSemidefDiagZero
 import QOU.MathlibExt.FrobeniusInnerProduct
 import QOU.MathlibExt.QPlancherel
 import QOU.MathlibExt.MonoidalCalcVar
+import QOU.MathlibExt.QGaussianBinomialPascal
 import QOU.HeckeAlgebra
 import QOU.Glossary
+import QOU.Knot.FigureEightSelfDuality
+import QOU.Knot.FigureEightVolume
+import QOU.Knot.PerNeutronLadder
 import QOU.KnotTheory
 import QOU.KnotTheory.Brunnian
 import QOU.KnotRegistry
 import QOU.MassDerivation
+import QOU.MassTheory.TraceConventionGate
+import QOU.MassTheory.BarParityExclusion
+import QOU.MassTheory.SU4SupermultipletGate
+import QOU.MassTheory.BodyOrderCumulant
 import QOU.Mass.MassVolDensity
+import QOU.Mass.BindingRecurrenceSpectral
+import QOU.Mass.Lever1Depth2Exclusion
+import QOU.Mass.Lever1TauClosedForm
+import QOU.Mass.BindingTauAnchorClosure
+import QOU.Mass.ColorCubicPowerSums
+import QOU.Mass.TauQuantumIntegerForm
+import QOU.Mass.ColorSpectralCubicGeometry
+import QOU.Mass.HeckeStokesEigenvalues
+import QOU.Mass.NaStokesKeystone
+import QOU.Mass.BindingHyperbolicRecurrence
+import QOU.Mass.BindingQBesselKernel
+import QOU.Mass.BindingJacobiAngerBridge
+import QOU.Mass.BindingQHermiteOscillator
+import QOU.Mass.QWeberInterpolation
+import QOU.Mass.PaddedShapeLevelRational
+import QOU.Mass.AdditiveCorrectionConfinement
+import QOU.Mass.QBetaProxyHReduction
+import QOU.Mass.RogersSzegoInhabited
+import QOU.Mass.SelectionRuleQuantumIntegerForm
+import QOU.Mass.JetFiltrationExtensive
+import QOU.Mass.LinearChainBondCount
+import QOU.Mass.KappaWritheAsymptote
 import QOU.Calculations
 import QOU.HadronicMass
 import QOU.AtomicMass
@@ -46,6 +76,8 @@ import QOU.QuantumObservableUniverses.QIntegralTransforms
 import QOU.QuantumObservableUniverses.QDifferentialGeometry
 import QOU.LiftingDescent.QuantumCharacteristicClassDisplay
 import QOU.ParticleInteractions.HadronDisplay
+import QOU.ParticleInteractions.AtomKnot
+import QOU.ParticleInteractions.WignerSU4FromSpinIsospin
 import QOU.Elaboration
 import QOU.PathIntegrals
 import QOU.MobiusEnergy
@@ -108,15 +140,46 @@ import QOU.frobenius_dagger_positive_definite
 import QOU.volume_from_rigidity
 import QOU.substrate_radial_coordinate
 import QOU.Braiding.non_self_intersection
+-- Keystone geometric-angle fingerprint: the ℓ=1 icosahedral character on the
+-- 5-fold rotation is the golden ratio (parameter-free; validates irrepToRotation).
+import QOU.BraidsAndKnots.IcosahedralCharacterGoldenRatio
+-- D15 Pachner–Pentagon (conj:pachner-pentagon-borromean): §3b conjecture-class
+-- with sorry-free consumer theorems. Wired so CI type-checks it (not an orphan).
+import QOU.BraidsAndKnots.PachnerPentagonBorromean
+-- Δ_λ ℓ¹-ceiling: sign-only fixes structurally excluded (Option-E prune, PR #2925).
+-- Triangle bound on the per-block binding closure; sorry-free, generic base ring.
+import QOU.BraidsAndKnots.DeltaLambdaL1Ceiling
+-- Borromean brane-tower convergence: the TRUE Li₂^q radius bound (|tr_M(β_Bor)|<1
+-- ⇒ pair traces < q ∀q>1); sorry-free, over ℚ. Wired so CI type-checks it.
+import QOU.BraidsAndKnots.BorromeanTowerConvergence
+-- Trace-convention split: convention D (TL/Jones pipeline) ≠ convention C
+-- (canonical Wenzl z-trace) at β_Bor, exactly; sorry-free. Wired so CI
+-- type-checks it (not an orphan).
+import QOU.BraidsAndKnots.BorromeanTraceConventionSplit
+-- Canonical trC(β_Bor) derived from the Markov-forced values (rational
+-- seminormal (2,1) rep + Cayley–Hamilton + unique weights); sorry-free.
+import QOU.BraidsAndKnots.BorromeanCanonicalTraceDerivation
+-- Post-τ q-Rogers pentagon: α/β substitution algebra, the log² correction
+-- term, and the q≠1 analytic-continuation conjecture-class.
+import QOU.BraidKnot.QRogersPentagonArchimedean
 import QOU.Information.p_bandwidth_bound
 import QOU.ParticleInteractions.atomic_lp_stability
 import QOU.ParticleInteractions.silver_ratio_beta_decay_null
 import QOU.ParticleInteractions.delta_pre_archimedean
 import QOU.FluidDynamics.q_bkm_criterion
+import QOU.FluidDynamics.TwoVortexChannelAlgebra
 import QOU.QBeta.RationalCoeffRecurrence
+import QOU.QBeta.SilverAnchorGrounding
 import QOU.QBeta.ReebTowerJacobiAnger
 import QOU.QBeta.QBesselContiguityRecurrence
+import QOU.QBeta.QBesselBarCovariance
+import QOU.QBeta.QBesselQuadraticActionTerm
+import QOU.QBeta.QCasoratianAbel
+import QOU.QBeta.QCasoratianBarParity
+import QOU.QBeta.H4RouteBBranchingPrune
 import QOU.QBeta.QLommelOrderRecurrence
+import QOU.QBeta.HoefsmitBBarParity
+import QOU.QBeta.StageCSigma3LiftObligation
 -- Concrete H₃(q) Markov-trace functional (NF model: linearity, cyclicity,
 -- Hecke σ₀²=hσ₀+1, Markov reduction tr(x·σ₁)=z·tr(x)); cross-checked vs
 -- `gram.py` / `pyhecke.trace_formal`. Was an orphan under `Machinery/`.
@@ -126,11 +189,13 @@ import QOU.Machinery.MarkovTraceOnHecke
 -- §3b-cond R-matrix-derivation provenance classes; 0 sorries. Was an
 -- orphan under `Machinery/` (not imported ⇒ never built by CI).
 import QOU.Machinery.DerivedCharacterCatalogue
+import QOU.HyperellipticQuintic.zeta5_residue_monodromy
 
 import QOU.Archimedean.BorromeanQuark
 import QOU.Interactions.QIntegerMassFormula
 import QOU.Archimedean.EmCouplingBringZeroMode
 import QOU.Molecular.PalindromicityOrbitalType
+import QOU.Molecular.ShellCapacitySelfSquare
 import QOU.Molecular.ShellClosureNfTermCount
 
 import QOU.Conjectures.ShellTransitionKnot
@@ -138,3 +203,16 @@ import QOU.Conjectures.KnotFactorFrobeniusPairing
 import QOU.Conjectures.WeakSpectralCompleteness
 import QOU.Conjectures.MagicNumbersBring
 import QOU.Conjectures.QuantumLanglandsDual
+
+-- Identity-I / RSK infrastructure (verified library files; wired in for CI build coverage).
+import QOU.Mathlib.PartitionListBridge
+import QOU.Mathlib.StandardYoungTableau
+import QOU.Mathlib.RSKBurnsideTarget
+import QOU.Mathlib.SchenstedInsertion
+import QOU.Mathlib.SYTEnumeration
+import QOU.Mathlib.SYTEnumerationBridge
+import QOU.Mathlib.SYTEnumerationFintype
+import QOU.Mathlib.SYTHookFormula
+import QOU.Mathlib.SYTHookFormulaBeta
+import QOU.Mathlib.SYTHookFormulaBetaProd
+import QOU.Mathlib.SYTHookFormulaRows

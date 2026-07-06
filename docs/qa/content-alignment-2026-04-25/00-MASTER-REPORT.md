@@ -14,10 +14,10 @@ For each chapter directory, a sub-agent performed:
 2. **Section-to-content alignment** — does each block in a section match the section's stated topic?
 3. **Section-to-chapter alignment** — does each section serve the chapter's stated intent (per the manifest header and the Ch-context snippets in `.claude/skills/local/one-voice.md`)?
 4. **One-voice audit** — full Pre-Commit Checklist (person/referent/tense/editorializing-blacklist/sentence-start/reader-address) per `.claude/skills/local/one-voice.md`.
-5. **Notational alignment** — full notation register check per `CLAUDE.md §7aa` (STRICT) and §7ab (approximation convention).
+5. **Notational alignment** — full notation register check per `AGENTS.md §7aa` (STRICT) and §7ab (approximation convention).
 6. **Expository simplification** — concrete spots where prose is verbose, repetitive, or could be split/factored.
 
-The largest chapters (Ch 4 Braids 263 .md, Ch 9 Descartes 184 .md, Ch 2 QOU 205 .md, Ch 11 Obs 108 .md) used grep-driven sample audits. Smaller chapters were reviewed exhaustively. CLAUDE.md notation rules were unchanged in the 26-commit pull from `main` performed mid-audit.
+The largest chapters (Ch 4 Braids 263 .md, Ch 9 Descartes 184 .md, Ch 2 QOU 205 .md, Ch 11 Obs 108 .md) used grep-driven sample audits. Smaller chapters were reviewed exhaustively. AGENTS.md notation rules were unchanged in the 26-commit pull from `main` performed mid-audit.
 
 ## Grand totals
 
@@ -31,7 +31,7 @@ The largest chapters (Ch 4 Braids 263 .md, Ch 9 Descartes 184 .md, Ch 2 QOU 205 
 
 Plus 2 back-matter directories flagged for §4b notation-introduction review (low severity).
 
-> **Convention update (2026-04-25, post-audit):** CLAUDE.md §7a was flipped
+> **Convention update (2026-04-25, post-audit):** AGENTS.md §7a was flipped
 > to use **σ_i** (was **T**) for Hecke generators, matching standard
 > knot-theory convention. The 6 Ch 4 "blockers" (B-1..B-6) and the Ch 11
 > Hecke-σ major (M-14) recorded in the original audit were written
@@ -136,7 +136,7 @@ Two chapters are publication-ready as-is (Ch 1, Ch 13 Langlands). One blocker re
 | ~~B-7~~ | Ch 12 | `molecular-construction.ts` | 12 | ~~Molecular formulas in JSDoc not TeX-rendered~~ — **declined**: JSDoc Unicode subscripts (H₂, CO₂) render fine in TypeDoc HTML; not a real LaTeX target. False positive. |
 
 > ~~B-1..B-6 (Ch 4 Hecke `\sigma_i^2`)~~ — **resolved by convention flip**.
-> CLAUDE.md §7a was changed to use `σ_i` for Hecke generators, matching
+> AGENTS.md §7a was changed to use `σ_i` for Hecke generators, matching
 > standard knot-theory convention. The paper was already correct.
 
 ### Majors
@@ -172,7 +172,7 @@ Drift findings, none structural:
 
 ## Notational alignment summary (paper-wide)
 
-CLAUDE.md §7aa rules applied:
+AGENTS.md §7aa rules applied:
 
 | Register | Status | Notes |
 |---|---|---|
@@ -210,7 +210,7 @@ Plus 45 chapter-local simplifications listed in the per-chapter reports.
 ## Recommended remediation sequence
 
 1. **Day 1 — Blockers** (7 fixes, all mechanical text replacements):
-   - 6 × `\sigma_i^2` → `T_i^2` in Ch 4 (per CLAUDE.md §7a)
+   - 6 × `\sigma_i^2` → `T_i^2` in Ch 4 (per AGENTS.md §7a)
    - 1 × wrap molecular formulas in `$...$` in Ch 12 manifest
 2. **Day 2 — Majors** (23 fixes):
    - Ch 6 `H_\xi` → `\mathcal{H}_\xi` (5 lines, 2 files)

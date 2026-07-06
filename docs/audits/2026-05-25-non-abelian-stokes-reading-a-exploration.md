@@ -50,8 +50,8 @@ correction banner above); the actual gap is the multiplicative
 `ρ_K ≈ 1724` factor.
 
 Status of the 6-term structural terms at proton (q₀, from
-[`mass-formula-6term-mpfr-50dps.witness.json`](../../folio-assistant/computations/mass-formula-6term-mpfr-50dps.witness.json)
-and [`term6-full-pole-sum.witness.json`](../../folio-assistant/computations/term6-full-pole-sum.witness.json)):
+[`mass-formula-6term-mpfr-50dps.witness.json`](../../computations/mass-formula-6term-mpfr-50dps.witness.json)
+and [`term6-full-pole-sum.witness.json`](../../computations/term6-full-pole-sum.witness.json)):
 
 | Term | Value (dimensionless ÷ m_e) | Lean coverage |
 |---|---:|---|
@@ -347,7 +347,7 @@ Reading-A leg; PR #1249 is the q₀ leg.
    exists, the structural theorem can be stated as a class with
    axioms encoding `Vol(𝓑₃) = 8·G`, the 8-octahedron decomposition,
    and the Yekutieli theorem.  Downstream results (the 92% gap
-   closure) become **conditional-on-class** per CLAUDE.md §3b-cond.
+   closure) become **conditional-on-class** per AGENTS.md §3b-cond.
    Multi-session.
 
 ## See also

@@ -23,7 +23,7 @@ NO fitting of c_k to experiment; the recurrence is extracted from the c_k
 themselves and validated by the equations it does not use. Diagnostic-only.
 
 Usage:
-  python3 folio-assistant/computations/qbeta/qbeta_ck_recurrence_first_cut.py
+  python3 computations/qbeta/qbeta_ck_recurrence_first_cut.py
 Emits: qbeta-ck-recurrence-first-cut.witness.json
 """
 

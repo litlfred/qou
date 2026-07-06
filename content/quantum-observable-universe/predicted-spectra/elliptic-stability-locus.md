@@ -1,13 +1,13 @@
-The stability curve and the coral fibration of Bring's surface
+The stability curve and the color fibration of Bring's surface
 share the same algebraic origin.  We conjecture that the
 nuclear degeneracy locus — the curve in the $(p, A)$-plane where
 adjacent nuclei have equal energy — is an elliptic curve
-isogenous to the coral fiber $\mathcal{E}_z$.
+isogenous to the color fiber $\mathcal{E}_z$.
 
 **The two cubics.**
 
-The coral elliptic curve
-([coral elliptic](#prop:coral-elliptic)) at spacetime ratio
+The color elliptic curve
+([color elliptic](#prop:color-elliptic)) at spacetime ratio
 $z$ is
 
 $$
@@ -137,7 +137,7 @@ locus would intersect the stability curve.
 
 If the conjecture holds, then:
 
-- The **three coral tubes** $(r, g, b)$ of the color
+- The **three color tubes** $(r, g, b)$ of the color
   fibration correspond to the **three sectors** of nuclear
   binding: volume (strong), Coulomb (electromagnetic), and
   Pauli (exclusion).
@@ -190,7 +190,7 @@ is the exact integer minimiser of the convex quadratic $E(p, A)$
 approximation — the integer minimiser of a convex quadratic is
 determined exactly.
 
-**Open question: pairing lift to genus $1$.**
+**Pairing lift to genus $1$ (open).**
 
 The genus-$0$ stability cubic accounts for all stable nuclei
 via lattice-point enumeration.  Whether the pairing energy
@@ -202,7 +202,7 @@ stability cubic and the color cubic (identical algebraic origin
 in the Bring's surface, coefficient matching at $p \approx 68$)
 is suggestive but not yet proven.
 
-**What is proven:**
+**Established results:**
 
 - The stable nuclei are lattice points on the stability cubic
   (exact, from the Skein binding Lagrangian).
@@ -213,5 +213,5 @@ is suggestive but not yet proven.
 - The golden ratio degeneration at $q = 1/\varphi^2$ holds
   (exact, from the $(s^2 + s - 1)$ factor).
 
-**Witness data**: see `folio-assistant/computations/elliptic-stability.json`
+**Witness data**: see `computations/elliptic-stability.json`
 for the full numerical computation at 100-digit precision.

@@ -263,7 +263,7 @@ def main() -> int:
     Q_A_over_me = (2 * q + 1 - q ** 2) * (q + 1) / (2 * q ** 3)
 
     # Substrate point
-    Q0_str = "1.1099785827513808075916690956107688798744991218736"
+    Q0_str = "1.1099785955573347198997632204832250266562084087802"
     q0_sp = sp.Float(Q0_str, 50)
 
     # ---- Step 1: Taylor of each piece in t = q - q_0, separately in sympy ----

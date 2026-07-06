@@ -1,10 +1,8 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **3-fold Markov closure $\to$ Hopf-link substructure $\to$ $c_3 = -2$.**
 
 This proposition formalizes the Track C direction: **proving** the
 categorical identification $c_3 = J_{\text{Hopf}}(q=1) = -2$ in the
-$Q_\beta$ precision ladder, not just observing it empirically.
+$\mathfrak{Q}_\beta$ precision ladder, not just observing it empirically.
 
 ## Structural claim
 
@@ -59,7 +57,7 @@ unknot contribution is trivial.
 
 ### Fact 4 — KL decategorification at $q = 1$
 
-Per CLAUDE.md §7b's Kazhdan-Lusztig decategorification principle, the
+Per AGENTS.md §7b's Kazhdan-Lusztig decategorification principle, the
 mass observable lives in the classical limit. At $q = 1$ the Jones
 polynomial of the Hopf link evaluates to:
 
@@ -84,7 +82,7 @@ giving $c_3 = -2$ as a **structural prediction**, not an empirical fit.
 
 ## Empirical confirmation
 
-Per [`probe_q_beta_gamma_gamma_derivation.py`](../../folio-assistant/computations/probe_q_beta_gamma_gamma_derivation.py),
+Per the canonical formalism,
 the prediction is empirically observable:
 
 - N=2 (Kashiwara $b^2$ alone): residual $+1.25$ ppm (above CODATA's
@@ -94,6 +92,20 @@ the prediction is empirically observable:
 
 This 112$\times$ residual reduction is **observable above CODATA noise**,
 empirically validating the categorical-chain prediction.
+
+**Near-match tier (not Taylor-exact).** The identification
+$c_3 = J_{\text{Hopf}}(q=1) = -2$ is a **classical-limit near-match**, not
+a Taylor-exact coefficient — only $c_2 = -1$ is proved exact (per the
+$c_k$ truncation-order framing). Measured against the empirical $c_3$
+extracted from the operator-valued $N=3$ tower
+([`q-beta-operator-valued-N3.witness.json`](../../computations/q-beta-operator-valued-N3.witness.json),
+$c_3^{\text{emp}} \approx -2.0216$), the best simple model
+$c_3 = J_{\text{Hopf}}(q=1) - \hbar_q^2$ now sits at a residual
+$\approx 0.58\%$ (witness
+[`c3-hopf-habiro-analysis.witness.json`](../../computations/c3-hopf-habiro-analysis.witness.json)).
+This residual was $\approx 0.004\%$ against the pre-drift upstream input;
+the $\approx 0.58\%$ value reflects the refreshed $N=3$ operator-valued
+$c_3$, and is the size of the near-match gap — not evidence of exactness.
 
 ## Open formalization steps
 
@@ -108,5 +120,5 @@ encodes the chain at three levels:
    pure-arithmetic theorem (closed by `ring` / `norm_num`).
 3. **Top-level export** $c_3 = -2$ conditional on (1) and (2).
 
-The class-axiomatization pattern follows CLAUDE.md §3b's conditional-
+The class-axiomatization pattern follows AGENTS.md §3b's conditional-
 class rule for results downstream of an unproved structural input.

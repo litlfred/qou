@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 The Tannaka--Krein self-duality manifests as a discrete Fourier transform
 over the spectral-geometric space. The explicit formula equates the
 geometric sum (over defects) to the spectral trace (over Reeb eigenvalues):

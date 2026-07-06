@@ -26,6 +26,7 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from codata_constants import M_MU_MEV_VALIDATION  # noqa: E402 (codata sweep)
 del _sys, _Path, _bridge
 
 import sys
@@ -52,7 +53,7 @@ def main():
     q = mp.mpf(Q_50_DIGIT_STR)
     h = q - 1/q
     m_e = mp.mpf(M_E_MEV)
-    m_mu = mp.mpf("105.6583755")
+    m_mu = mp.mpf(M_MU_MEV_VALIDATION)
     m_p_codata = mp.mpf(M_P_MEV_VALIDATION)
     m_n_codata = mp.mpf(M_N_MEV_VALIDATION)
 

@@ -1,4 +1,5 @@
 import Mathlib.Data.Nat.Choose.Basic
+import Mathlib.Data.Nat.Choose.Sum
 import Mathlib.Tactic.NormNum
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
@@ -24,7 +25,7 @@ space over any field of characteristic 0) to the **exterior algebra**
 
 ## Status
 
-Per CLAUDE.md §3b-cond, axiomatised as a Lean `class`
+Per AGENTS.md §3b-cond, axiomatised as a Lean `class`
 `AtomBraidExteriorAlgebraStructure` whose instance encodes the
 filtration-shape claim. The 4 verified atom cases (D, T, ³He, ⁴He)
 are provided as concrete instances; the general conjecture remains
@@ -32,9 +33,9 @@ open (categorical proof would use Schur-Weyl duality + KLR
 diagrammatics).
 
 Ref: [manuscript] conj:atom-braid-exterior-algebra
-Ref: [manuscript] folio-assistant/computations/mass_at_3A_proper.py
+Ref: [manuscript] computations/mass_at_3A_proper.py
 Ref: [manuscript] tools/hecke-engine/src/gb_nf_reducer.rs (BraidLetter)
-Ref: [manuscript] folio-assistant/computations/joint-tower-sdp-rust.witness.json
+Ref: [manuscript] computations/joint-tower-sdp-rust.witness.json
 -/
 
 namespace QOU.BraidKnot.AtomBraidExteriorAlgebra
@@ -49,7 +50,7 @@ namespace QOU.BraidKnot.AtomBraidExteriorAlgebra
 
     for k in [Z − 1, 3A − 1], with total dim 2^(3A − Z).
 
-    Per CLAUDE.md §3b-cond, this is the sole `sorry`-equivalent
+    Per AGENTS.md §3b-cond, this is the sole `sorry`-equivalent
     input for downstream propositions; the empirical verification
     is recorded in `joint-tower-sdp-rust.witness.json` for D, T,
     ³He, ⁴He. -/
@@ -140,18 +141,19 @@ theorem binomial_sum_pow_two (n_star : ℕ) :
     distribution is internally consistent — its grade-wise sum matches
     the total dim claimed. -/
 theorem filtration_shape_sum_eq_total_dim
-    [h : AtomBraidExteriorAlgebraStructure Z N] :
+    [h : AtomBraidExteriorAlgebraStructure Z N]
+    (hn : h.n_star = 3 * (Z + N) - Z)
+    (hd : h.total_dim = 2 ^ (3 * (Z + N) - Z)) :
     (Finset.range (h.n_star + 1)).sum (fun k => Nat.choose h.n_star k) = h.total_dim := by
-  show (Finset.range (h.n_star + 1)).sum (fun k => Nat.choose h.n_star k)
-       = 2 ^ (3 * (Z + N) - Z)
-  rw [Nat.sum_range_choose]
-  -- h.n_star = 3 * (Z + N) - Z by definition
-  rfl
+  -- The class fields `n_star` / `total_dim` carry canonical defaults but
+  -- are opaque per-instance; the hypotheses `hn`/`hd` pin them to those
+  -- defaults (provable by `rfl` for any instance taking the defaults).
+  rw [hn, hd, Nat.sum_range_choose]
 
 /-- **THEOREM (verified-cases enumeration).** The conjecture has been
     empirically verified by direct GB-NF reduction in the Rust solver
     for D, T, ³He, ⁴He. This theorem records the verified-atom list. -/
-theorem verified_atoms : List (ℕ × ℕ × ℕ) :=
+def verified_atoms : List (ℕ × ℕ × ℕ) :=
   -- (Z, N, total_dim = 2^(3A−Z))
   [(1, 1, 32), (1, 2, 256), (2, 1, 128), (2, 2, 1024)]
 
@@ -163,7 +165,7 @@ theorem helium4_pascal_row :
     (Nat.choose 10 0, Nat.choose 10 1, Nat.choose 10 2, Nat.choose 10 3,
      Nat.choose 10 4, Nat.choose 10 5, Nat.choose 10 6, Nat.choose 10 7,
      Nat.choose 10 8, Nat.choose 10 9, Nat.choose 10 10) =
-    (1, 10, 45, 120, 210, 252, 210, 120, 45, 10, 1) := by decide
+    (1, 10, 45, 120, 210, 252, 210, 120, 45, 10, 1) := by rfl
 
 /-- **Pascal-row checks for the 3 lighter verified atoms** (D, T, ³He).
     Each is the observed filtration shape from the Rust solver
@@ -179,12 +181,12 @@ theorem tritium_pascal_row :
     (Nat.choose 8 0, Nat.choose 8 1, Nat.choose 8 2, Nat.choose 8 3,
      Nat.choose 8 4, Nat.choose 8 5, Nat.choose 8 6, Nat.choose 8 7,
      Nat.choose 8 8) =
-    (1, 8, 28, 56, 70, 56, 28, 8, 1) := by decide
+    (1, 8, 28, 56, 70, 56, 28, 8, 1) := by rfl
 
 theorem helium3_pascal_row :
     (Nat.choose 7 0, Nat.choose 7 1, Nat.choose 7 2, Nat.choose 7 3,
      Nat.choose 7 4, Nat.choose 7 5, Nat.choose 7 6, Nat.choose 7 7) =
-    (1, 7, 21, 35, 35, 21, 7, 1) := by decide
+    (1, 7, 21, 35, 35, 21, 7, 1) := by rfl
 
 /-! ## Structural proof argument (sketch)
 
@@ -282,7 +284,7 @@ This is the **only** step in the 5-step argument that requires
 genuine new Hecke representation theory; Steps 1-3 are mechanical
 G0/G1 pattern reductions, Step 5 is `Nat.sum_range_choose`.
 
-Per CLAUDE.md §3b-cond, codified here as a `class` field so it
+Per AGENTS.md §3b-cond, codified here as a `class` field so it
 can be axiomatised at the namespace level: any concrete proof
 discharges the `sorry` in `AtomBraidStep4Hypothesis` and unlocks
 the structural conclusion via the existing
@@ -291,7 +293,7 @@ the structural conclusion via the existing
 
 /-- **The Step 4 categorical claim, as a named opaque Prop.**
 
-    Per CLAUDE.md §3b-cond + the audit
+    Per AGENTS.md §3b-cond + the audit
     `docs/audits/2026-05-30-atom-braid-categorical-proof-feasibility.md`'s
     failure-mode #4 ("axiomatising more just relocates the sorry"),
     Step 4 must be a *specific* Prop, not a `Prop`-typed slot, so
@@ -315,7 +317,7 @@ opaque AvgCrossingPreservesGradeHolds (Z N : ℕ) : Prop
 
 /-- **PR-D Step 4 hypothesis** — the inter-nucleon Avg-crossing
     Boolean-grading preservation claim, axiomatised as a class
-    field per CLAUDE.md §3b-cond.
+    field per AGENTS.md §3b-cond.
 
     The field `avg_crossing_preserves_grade` carries a proof of
     the *specific* named Prop `AvgCrossingPreservesGradeHolds Z N`,
@@ -494,7 +496,7 @@ theorem conjugate_3_2_2_2_involutive :
     partition (4, 4, 4) AND its transpose (3, 3, 3, 3) both appear in
     the top-5 most-negative min_eig list. This is the Wedderburn-level
     manifestation of the bar-involution Δ_λ = Δ_{λ^T} structure
-    (CLAUDE.md §7b Type-B folding).
+    (AGENTS.md §7b Type-B folding).
 
     The structural meaning: the bar-anti-symmetric content of the
     canonical atom-braid σ_avg crossings populates **transpose-paired**

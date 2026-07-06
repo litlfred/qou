@@ -83,10 +83,21 @@ from witness_base import WitnessBuilder  # noqa: E402
 def hoefsmit_b(q):
     """Hoefsmit b(q) — the Habiro substrate parameter for Q_β.
 
-    Per docs/audits, b = (q - q⁻¹) / (q + q⁻¹) at the Hoefsmit-seminormal
-    convention. This is the 'small parameter' driving the c_k expansion.
+    Canonical form (matches the mainstream c_k probes and the substrate
+    value u = b·ℏ_q² ≈ 0.00852):
+
+        b(q) = √( (h²+3)/(h²+4) ) = √(q⁴+q²+1)/(q²+1),   h = q − q⁻¹.
+
+    This is BAR-EVEN (b(q⁻¹) = b(q)), since b² is a function of h² and h is
+    bar-odd. Verified in Lean: QOU.QBeta.hoefsmitBSq_bar_even. See
+    docs/audits/2026-06-20-hoefsmit-b-bar-parity-correction.md.
+
+    NOTE: this previously read `(q − q⁻¹)/(q + q⁻¹)` (bar-ODD), which gives
+    u ≈ 0.00102 — wrong by ~8× and the source of the criterion-2b prune's
+    incorrect "b bar-odd / u ↦ −q²u" mechanism.
     """
-    return (q - 1 / q) / (q + 1 / q)
+    h = q - 1 / q
+    return mp.sqrt((h ** 2 + 3) / (h ** 2 + 4))
 
 
 def hbar_q_squared(q):

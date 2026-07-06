@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 Every finite subgroup of $\mathrm{SO}(3)$ lifts, via the double cover
 $\mathrm{SU}(2)\twoheadrightarrow\mathrm{SO}(3)$, to a binary subgroup of
 $\mathrm{SU}(2)$.  For $S_3\cong D_3$ the lift is the binary dihedral group

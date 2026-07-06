@@ -130,7 +130,7 @@ numerical probe runs.
 
 ## §5. What T3 does NOT do
 
-- **Does not propose a 7th fit ansatz.** Per CLAUDE.md, no per-partition
+- **Does not propose a 7th fit ansatz.** Per AGENTS.md, no per-partition
   closure. The candidate space (Habiro-bar-symmetric q-Pochhammer
   combinations) is closed by I1 + I2 before any probe runs.
 - **Does not touch production.** All work is exploratory.

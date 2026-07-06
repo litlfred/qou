@@ -43,6 +43,7 @@ from gb_filtration_jet_tracker import HeckeElement, perm_to_canonical_word
 from joint_tower_sdp_solver import REGISTRY as REGISTRY_PHASE_3A
 from joint_tower_sdp_solver import solve_per_atom
 from q_parameter import Q as Q_FLOAT
+from codata_constants import AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 
 # Substrate parameter q_0 (canonical witnessed value, ~1.10998).
 q_0_NUMERIC = Q_FLOAT
@@ -75,7 +76,7 @@ REGISTRY_PHASE_3B = [
         "constituents": ["proton", "neutron", "neutron"],
         "binding_link": "T_3 trefoil-like",
         "rho_factor": 2,
-        "B_AME_MeV": 8.4818,
+        "B_AME_MeV": float(AME_B_TRITIUM_MEV_VALIDATION),
         "methodology": "manual-historical-volume-match",
     },
     {

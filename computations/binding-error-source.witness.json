@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-29T14:40:36.414380+00:00",
-  "commitSha": "4f207588745f901d68703c022c9e38a1d134bb5f",
+  "computedAt": "2026-07-05T11:25:17.941571+00:00",
+  "commitSha": "6949424f7a827fb6d8f76f8fd3f1d4a45e37cfa2",
   "assertions": [
     {
       "name": "deuteron_below_ceiling",
@@ -22,70 +22,82 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": 34,
   "computation": "binding-error-source",
   "scriptFile": "binding_error_source.py",
-  "scriptHash": "bca9a598d0d4",
-  "scriptCommitSha": "d001bdd580afd4b028db07d787bfd2af47d94184",
+  "scriptHash": "88b5200bbe55",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Error-source diagnosis for the A≥3 binding undershoot: Δtr is an intensive, saturating observable (≤ |tr_free| ≈ 1), capping B = m_e·Vol·Δtr at ~3.74 MeV for any A, while physical binding is extensive. Deuteron sits below the ceiling (+0.2%); A≥3 is clipped (−59%/−88%). Structural pointer: the extensive analog is -log(tr), which grows with A — but no recalibrated formula is claimed (fitting).",
   "data": {
     "ceiling_MeV": "3.74445966",
     "isotopes": {
       "2H": {
-        "tr_free": "0.983526015189",
-        "tr_atom": "0.388286417278",
-        "delta_tr": "0.595239597911",
+        "tr_free": "0.983526015185",
+        "tr_atom": "0.388286417276",
+        "delta_tr": "0.595239597908",
         "B_cat_MeV": "2.228850662",
-        "B_AME_MeV": "2.224566",
-        "clip_pct": 0.19260666470616097,
+        "B_AME_MeV": "2.2245662",
+        "clip_pct": 0.19259765644086488,
         "neg_log_ratio": "0.929400832963",
-        "B_over_dtr": "3.737261445",
-        "B_over_log": "2.393548533"
+        "B_over_dtr": "3.737261781",
+        "B_over_log": "2.393548748"
       },
       "3H": {
-        "tr_free": "0.908023891874",
+        "tr_free": "0.908023891869",
         "tr_atom": "0.104052104023",
-        "delta_tr": "0.803971787851",
+        "delta_tr": "0.803971787846",
         "B_cat_MeV": "3.010439927",
-        "B_AME_MeV": "8.481798",
-        "clip_pct": -64.50705466766112,
+        "B_AME_MeV": "8.4817962",
+        "clip_pct": -64.50704713560515,
         "neg_log_ratio": "2.16637891698",
-        "B_over_dtr": "10.54987019",
-        "B_over_log": "3.915195968"
+        "B_over_dtr": "10.54986795",
+        "B_over_log": "3.915195137"
       },
       "3He": {
-        "tr_free": "1.04775629771",
-        "tr_atom": "0.206540811571",
-        "delta_tr": "0.841215486139",
+        "tr_free": "1.0477562977",
+        "tr_atom": "0.20654081157",
+        "delta_tr": "0.841215486134",
         "B_cat_MeV": "3.149897453",
-        "B_AME_MeV": "7.718043",
-        "clip_pct": -59.18787375030138,
+        "B_AME_MeV": "7.71804132",
+        "clip_pct": -59.1878648669174,
         "neg_log_ratio": "1.62390826989",
-        "B_over_dtr": "9.174870324",
-        "B_over_log": "4.752757987"
+        "B_over_dtr": "9.174868327",
+        "B_over_log": "4.752756953"
       },
       "4He": {
-        "tr_free": "0.967323422553",
-        "tr_atom": "0.0553483332261",
-        "delta_tr": "0.911975089327",
+        "tr_free": "0.967323422545",
+        "tr_atom": "0.0553483332256",
+        "delta_tr": "0.911975089319",
         "B_cat_MeV": "3.414853933",
-        "B_AME_MeV": "28.295673",
-        "clip_pct": -87.9315330903853,
+        "B_AME_MeV": "28.2956624",
+        "clip_pct": -87.93152856945194,
         "neg_log_ratio": "2.86088635391",
-        "B_over_dtr": "31.02680471",
-        "B_over_log": "9.890526746"
+        "B_over_dtr": "31.02679309",
+        "B_over_log": "9.890523041"
       }
     },
     "conclusion": {
       "error_source": "Δtr is intensive/saturating (bounded by |tr_free|≈1); binding is extensive — mismatch caps B at ~3.74 MeV.",
       "structural_fix_direction": "binding observable must be log(tr)-based (free-energy / additive over subsystems), not Δtr",
       "not_done": "scale recalibration for the log observable (would be a fit)"
+    },
+    "lean_uniqueness_ref": {
+      "generic": "qou:QOU.BraidKnot.@nucleus_uniqueness_closed (3*A)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     }
   }
 }

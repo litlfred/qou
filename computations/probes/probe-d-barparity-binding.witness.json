@@ -1,0 +1,57 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-07-04T22:48:35.118056+00:00",
+  "commitSha": "efd6690ed8ff57c82f04066ab067f2b3165f7589",
+  "assertions": [
+    {
+      "name": "binding_scalar_is_bar_even",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-09,
+      "source": "Σ_λ a^odd_λ = 0 (bar-odd projection of the binding coefficient vector sums to zero) ⇒ the A=2 binding scalar Σ a_λ = tr_M is bar-even ⇒ bar-symmetric Δ_λ ansätze are NOT structurally excluded"
+    },
+    {
+      "name": "even_projection_recovers_trM",
+      "computed": 4.7957214796783364e-52,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-09,
+      "source": "Σ_λ a^even_λ = tr_M (the full binding scalar lives in the bar-even subspace)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "probe-d-barparity-binding",
+  "scriptFile": "probe_d_barparity_binding.py",
+  "scriptHash": "12b9c2a8741e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Bar-parity decomposition of the deuteron binding coefficient vector a_λ = y_λ·χ^λ(β_D) under the partition involution λ↔λ'. Tests whether the 2.6e-4 bar-conjugate-law breaking structurally (scope-b) excludes bar-symmetric Δ_λ ansätze. Finding: the bar-odd projection sums to exactly 0, so the A=2 binding scalar Σ a_λ = tr_M is a purely bar-EVEN functional; a bar-symmetric Δ_λ (uniform δ, dim/hook ansätze) satisfies binding with zero obstruction. The 2.6e-4 is a q↔q⁻¹ decay-sector effect, not a λ↔λ' binding-sector constraint. No scope-(b) exclusion exists; the six refuted ansätze stay scope-(a) numerical. Audit-only, not a closure ansatz (Δ_λ gate).",
+  "auditOnly": "docs/audits/2026-07-04-deuteron-dressing-is-proton-net.md",
+  "parameters": {
+    "compute_dps": 70,
+    "beta_D_word_length": 23
+  },
+  "data": {
+    "bar_conjugate_max_rel_resid": 0.0002626566775102883,
+    "a_l2_norm": "0.22994526283241554566",
+    "a_even_l2_norm": "0.16259682380569360421",
+    "a_odd_l2_norm": "0.16259488548957773355",
+    "a_odd_fraction_of_norm": 0.707102566440245,
+    "sum_a_even": "0.38835720735922143664",
+    "sum_a_odd": "0.0",
+    "tr_M": "0.38835720735922143664",
+    "uniform_delta_magnitude": "11.209699136832691541"
+  }
+}

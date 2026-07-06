@@ -144,11 +144,17 @@ open QOU.Archimedean
 theorem hopfPlus_sq :
     hopfPlus * hopfPlus =
     hopfMinus + HA_t • (stdRep3_gen0 * stdRep3_gen1 * stdRep3_gen0) := by
-  -- hopfPlus = σ₀σ₁, hopfMinus = σ₁σ₀, trefoil = σ₀σ₁σ₀
-  simp [hopfPlus, hopfMinus, stdRep3_gen0, stdRep3_gen1,
-        HA_t, q_from_t, q_inv_from_t, mul_apply, Fin.sum_univ_two, of]
-  ext i j; fin_cases i <;> fin_cases j <;>
-    simp [mul_apply, Fin.sum_univ_two, of] <;> ring
+  ext i j : 1
+  fin_cases i <;> fin_cases j <;>
+    simp [hopfPlus, hopfMinus, stdRep3_gen0, stdRep3_gen1,
+          Matrix.mul_apply, Matrix.smul_apply, Matrix.add_apply,
+          Fin.sum_univ_two, Matrix.of_apply, smul_eq_mul] <;>
+    simp only [HA_t, q_from_t, q_inv_from_t, t, t_inv, smul_eq_mul,
+               add_mul, mul_add, sub_mul, mul_sub, neg_mul, mul_neg,
+               one_mul, mul_one,
+               ← LaurentPolynomial.T_add, Int.reduceAdd, Int.reduceNeg,
+               LaurentPolynomial.T_zero] <;>
+    ring1
 
 /-- L₊·L₋ = σ₀σ₁·σ₁σ₀ = 1 + HA·σ₀ + HA·e⁻.
 
@@ -162,13 +168,21 @@ theorem hopfPlus_mul_hopfMinus :
     hopfPlus * hopfMinus =
     1 + HA_t • stdRep3_gen0 +
     HA_t • (stdRep3_gen0 * stdRep3_gen1 * stdRep3_gen0) := by
-  simp [hopfPlus, hopfMinus, stdRep3_gen0, stdRep3_gen1,
-        HA_t, q_from_t, q_inv_from_t]
-  ext i j; fin_cases i <;> fin_cases j <;>
-    simp [mul_apply, Fin.sum_univ_two, of] <;> ring
+  ext i j : 1
+  fin_cases i <;> fin_cases j <;>
+    simp [hopfPlus, hopfMinus, stdRep3_gen0, stdRep3_gen1,
+          Matrix.mul_apply, Matrix.smul_apply, Matrix.add_apply,
+          Matrix.one_apply, Fin.sum_univ_two, Matrix.of_apply, smul_eq_mul] <;>
+    simp only [HA_t, q_from_t, q_inv_from_t, t, t_inv, smul_eq_mul,
+               add_mul, mul_add, sub_mul, mul_sub, neg_mul, mul_neg,
+               one_mul, mul_one,
+               ← LaurentPolynomial.T_add, Int.reduceAdd, Int.reduceNeg,
+               LaurentPolynomial.T_zero] <;>
+    ring1
 
 /-! ## §2  The Gram form is indefinite -/
 
+set_option maxRecDepth 40000 in
 /-- The vector v = e₃ - e₄ (i.e., L₊ − L₋) witnesses
     indefiniteness of the Gram form.
 
@@ -191,15 +205,31 @@ theorem gram_indefinite_witness :
     hopfPlus * hopfPlus + hopfMinus * hopfMinus ≠
     2 • (hopfPlus * hopfMinus) := by
   intro h
-  -- If L₊² + L₋² = 2·L₊·L₋, then (L₊-L₋)² = 0,
-  -- which implies L₊ = L₋ (in a domain). But L₊ ≠ L₋.
-  -- Check at entry (0,0):
+  -- The two matrices differ at entry (0,0): the LHS is `-1 = -T 0`, the RHS is
+  -- `2·q² = 2•T 4`.  Fold both entries to `T`-monomial combinations, then read
+  -- off the degree-`4` coefficient: `0` on the left (`(-T 0)` has no `T 4` term),
+  -- `2` on the right (`2 • T 4`).
   have h00 := congr_fun (congr_fun h 0) 0
-  simp [hopfPlus, hopfMinus, stdRep3_gen0, stdRep3_gen1,
-        HA_t, q_from_t, q_inv_from_t,
-        mul_apply, Fin.sum_univ_two, of, Matrix.smul_apply] at h00
-  -- h00 should be a contradiction in ℤ[t,t⁻¹]
-  -- After simp+ring, this becomes 0 = something nonzero
-  linarith [LaurentPolynomial.T_ne_zero (R := ℤ) (1 : ℤ)]
+  simp only [Matrix.add_apply, Matrix.smul_apply, hopfPlus, hopfMinus,
+             stdRep3_gen0, stdRep3_gen1, Matrix.mul_apply, Fin.sum_univ_two,
+             Matrix.of_apply, Matrix.cons_val_zero, Matrix.cons_val_one,
+             Matrix.head_cons, smul_eq_mul,
+             q_from_t, q_inv_from_t, t, t_inv,
+             mul_add, add_mul, mul_sub, sub_mul, neg_mul, mul_neg,
+             one_mul, mul_one, mul_zero, zero_mul, add_zero, zero_add,
+             ← LaurentPolynomial.T_add,
+             Int.reduceAdd, Int.reduceNeg, LaurentPolynomial.T_zero] at h00
+  -- `h00` collapses (ring arithmetic in `R_t`, `T 4` an atom) to `-1 = 2 • T 4`.
+  have hkey : (-1 : R_t) = 2 • LaurentPolynomial.T 4 := by linear_combination h00
+  -- Put the left side in single-monomial form `-(T 0)` too, then distinguish the
+  -- two Laurent polynomials by their degree-`4` coefficient: `(-(T 0))(4) = 0` on
+  -- the left, `(2 • T 4)(4) = 2` on the right.  (`R_t = ℤ →₀ ℤ` definitionally, so
+  -- the explicit-domain coefficient functional resolves the `Finsupp` `FunLike`.)
+  rw [show (-1 : R_t) = -(LaurentPolynomial.T 0) by rw [LaurentPolynomial.T_zero]] at hkey
+  have h4 := congrArg (fun f : ℤ →₀ ℤ => f 4) hkey
+  simp only [LaurentPolynomial.T] at h4
+  rw [Finsupp.neg_apply, Finsupp.smul_apply] at h4
+  simp only [Finsupp.single_apply] at h4
+  norm_num at h4
 
 end QOU.Interactions

@@ -22,6 +22,7 @@ This brings the meson sector to a single closed-form derived expression:
 """
 from __future__ import annotations
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import M_K_PM_MEV_VALIDATION, M_PI_PM_MEV_VALIDATION  # noqa: E402 (codata sweep)
 import sys
 import time
 from pathlib import Path
@@ -80,8 +81,8 @@ def main():
     print()
     alpha_em_inv = mp.mpf("137.035944")  # CS-corrected, Witten κ (399 ppb)
     alpha_em = 1 / alpha_em_inv
-    m_pi = mp.mpf("139.57039")
-    m_K  = mp.mpf("493.677")
+    m_pi = mp.mpf(M_PI_PM_MEV_VALIDATION)
+    m_K  = mp.mpf(M_K_PM_MEV_VALIDATION)
     prod_34 = q_int(3, q) * q_int(4, q)
     em_factor = closed_form_3  # (3q² − 1)/(2q²)
     prediction = prod_34 + alpha_em/mp.pi * em_factor

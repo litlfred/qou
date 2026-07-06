@@ -1,9 +1,14 @@
+# ANCHOR NOTE (2026-06-22): q0 = 1.10997858275… occurrences below are the
+# RETIRED pre-2026-05-28 proton anchor (old re-pin #1422), kept as this
+# probe's historical / cross-anchor / pinned comparison value. The CURRENT
+# canonical proton q0 is q_at() ≈ 1.1099785955573347…; the muon anchor is
+# q_muon_at() ≈ 1.10997859555418…. This probe is preserved as-is by design.
 """qbeta_c3_complex_singularity_probe — the genuine non-real-q direction.
 
 After the c_3 cross-anchor rigidity falsification (PR-merged 2026-06-04:
 docs/audits/2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md),
 no real-q formula c_3 = f(q) can track the empirical c_3 swing
-(dc_3/dq ≈ 4.6e6). Per CLAUDE.md §"Im(q) at fibre vs observable level" the
+(dc_3/dq ≈ 4.6e6). Per AGENTS.md §"Im(q) at fibre vs observable level" the
 genuine object is complex-analytic / root-of-unity at the fibre level.
 
 This probe makes that concrete and falsifiable. A function whose value
@@ -29,7 +34,7 @@ This is a FEASIBILITY / GEOMETRY probe, NOT a closure attempt: it pins the
 singularity geometry; it does not produce a categorical c_3 formula.
 
 Usage:
-  python3 folio-assistant/computations/qbeta/qbeta_c3_complex_singularity_probe.py
+  python3 computations/qbeta/qbeta_c3_complex_singularity_probe.py
 Emits: qbeta-c3-complex-singularity-probe.witness.json
 """
 

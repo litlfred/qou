@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.Archimedean.integer_stability — convex-quadratic binding `E(p, A)`
 
@@ -33,8 +35,8 @@ class IntegerStabilityContext where
   q : ℝ
   q_gt_one : 1 < q
   /-- Coulomb scale `λ_C > 0`. -/
-  λ_C : ℝ
-  λ_C_pos : 0 < λ_C
+  lam_C : ℝ
+  lam_C_pos : 0 < lam_C
   /-- Pauli asymmetry coefficient `a_A > 0`. -/
   a_A : ℝ
   a_A_pos : 0 < a_A
@@ -47,7 +49,7 @@ class IntegerStabilityContext where
 /-- The Coulomb coefficient `a_C = (q − q⁻¹) · λ_C`.  Positive at
     `q > 1` since both factors are positive. -/
 noncomputable def coulombCoeff (ctx : IntegerStabilityContext) : ℝ :=
-  (ctx.q - ctx.q⁻¹) * ctx.λ_C
+  (ctx.q - ctx.q⁻¹) * ctx.lam_C
 
 /-- The quadratic-leading coefficient `α(A) = a_C / A^{1/3} + a_A / A`. -/
 noncomputable def alphaCoeff (ctx : IntegerStabilityContext) : ℝ :=
@@ -63,12 +65,11 @@ theorem coulombCoeff_pos (ctx : IntegerStabilityContext) :
     0 < coulombCoeff ctx := by
   unfold coulombCoeff
   -- `q − q⁻¹ > 0` since `q > 1`, and `λ_C > 0` by hypothesis.
-  have h_q_pos : 0 < ctx.q := by linarith [ctx.q_gt_one]
   have h_q_sub_inv : 0 < ctx.q - ctx.q⁻¹ := by
     rw [sub_pos]
-    have : ctx.q⁻¹ < 1 := (inv_lt_one_iff_of_pos h_q_pos).mpr ctx.q_gt_one
+    have : ctx.q⁻¹ < 1 := inv_lt_one_of_one_lt₀ ctx.q_gt_one
     linarith [ctx.q_gt_one]
-  exact mul_pos h_q_sub_inv ctx.λ_C_pos
+  exact mul_pos h_q_sub_inv ctx.lam_C_pos
 
 /-- **Convex-quadratic binding energy** ([`prop:integer-stability`]).
 

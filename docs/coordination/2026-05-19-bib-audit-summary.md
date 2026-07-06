@@ -46,7 +46,7 @@ End-of-day summary of the bibliography verification + cleanup work on
 | `.claude/skills/local/bib-qa.md` | 169 → 380 lines: verification workflow, arxiv mirror check, paper-mismatch class, PDF/HTML rendering of status |
 | `.claude/skills/local/editor.md` | New "Bibliography workflow" section pointing at tools |
 | `.claude/skills/local/integration-watcher.md` | New §0c (sibling coord), §0d (multiSelect+🟡), §0b (5-min idle trigger) |
-| `CLAUDE.md` | New rules: multiSelect/🟡 for AskUserQuestion, sibling coord at workplan start, structured branch names, 5-min idle trigger with backlog priority order |
+| `AGENTS.md` | New rules: multiSelect/🟡 for AskUserQuestion, sibling coord at workplan start, structured branch names, 5-min idle trigger with backlog priority order |
 | `.gitignore` | Whitelist `uploads/*` for intake files (was blocked by `*.pdf` global rule) |
 
 ## Rendered-bibliography verification marker
@@ -114,7 +114,7 @@ Decision pending: keep as forward-ref / remove / find a use site.
 
 ## Sibling coordination during this work
 
-Per the new CLAUDE.md sibling-coord rule (commit `eb716c725`), the
+Per the new AGENTS.md sibling-coord rule (commit `eb716c725`), the
 following sibling-PR overlaps were observed but not actively
 coordinated (sibling agents working on disjoint scopes):
 

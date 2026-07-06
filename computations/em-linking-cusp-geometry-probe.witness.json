@@ -1,0 +1,54 @@
+{
+  "engine": "snappy",
+  "engineVersion": "snappy 3.3.2",
+  "computedAt": "2026-07-04T19:06:39.047314+00:00",
+  "commitSha": "95b7bca4a34470c4307aeb4d1ddd754b5a1d1a58",
+  "assertions": [
+    {
+      "name": "borromean_cusps_identical_S3_symmetric",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "³He L6a4=Borromean has 3 geometrically identical cusps (shape 2i) — S₃-symmetric complement, so within-link cusp separations carry no pp-vs-pn distinction (structural exclusion of the within-link route)."
+    },
+    {
+      "name": "none_match",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0,
+      "source": "no natural cross-link cusp-geometry ratio matches 3.2149 to <1% (best longitude(8_11)/longitude(L6a4) = 3.3535, 4.3% off); the cusp/horoball length-scale lever is closed, gap stays owner-gated."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 45,
+  "computation": "em-linking-cusp-geometry-probe",
+  "scriptFile": "em_linking_cusp_geometry_probe.py",
+  "scriptHash": "99e3b3b8f129",
+  "scriptCommitSha": "95b7bca4a34470c4307aeb4d1ddd754b5a1d1a58",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Owner-authorised Subgoal-2 probe: is the pp-Coulomb 3.213× length ratio a cusp-geometry ratio of the mirror links? NO. (b) ³He=L6a4=Borromean is S₃-symmetric (3 identical cusps, shape 2i) so within-link cusp separations are all equal — no charge asymmetry; structurally cannot give 3.213. (a) cross-link 8_11-vs-Borromean ratios miss (best longitude(8_11)/longitude(L6a4) 3.353, 4.3%; >1% gate). The audit's cusp/horoball lever is closed; magnitude stays open/owner-gated. No fit.",
+  "data": {
+    "target_ratio": 3.214854111405835,
+    "borromean_symmetric": true,
+    "cross_link_ratios": {
+      "longitude(8_11)/longitude(L6a4)": 3.3534505008078686,
+      "|shape|(8_11)/|shape|(L6a4)": 3.7163,
+      "vol(8_11)/vol(L6a4)": 1.130818317293783
+    }
+  }
+}

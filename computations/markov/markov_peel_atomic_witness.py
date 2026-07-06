@@ -24,8 +24,8 @@ Witness: `markov-peel-atomic-tr-m.witness.json`
 Reference: prop:markov-pair-z2 (QOU narrative)
 
 Usage:
-    python folio-assistant/computations/markov_peel_atomic_witness.py
-    python folio-assistant/computations/markov_peel_atomic_witness.py --include-li
+    python computations/markov_peel_atomic_witness.py
+    python computations/markov_peel_atomic_witness.py --include-li
 """
 from __future__ import annotations
 
@@ -58,14 +58,27 @@ from markov_peel import incremental_reduced_element  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A     # noqa: E402
 from markov_trace_canonical import tr_M_element       # noqa: E402
 from hecke_symbolic import q as q_sym                  # noqa: E402
-from q_parameter import Q as Q0                        # noqa: E402
+from q_parameter import Q_50_DIGIT_STR                 # noqa: E402  (50-digit q₀, NOT float64 Q)
 from witness_base import WitnessBuilder                # noqa: E402
 
-# Per CLAUDE.md / Gemini-flagged precision policy: pin a high-precision
+# Per AGENTS.md / Gemini-flagged precision policy: pin a high-precision
 # floor at the module level so all symbolic→numeric casts respect it.
 # 50 dps matches the Hoefsmit + Wenzl bridge witness this script
 # cross-checks against (`atomic-tr-m-mpfr-50dps.witness.json`).
 mpmath.mp.dps = 50
+
+# Substitute the FULL 50-digit q₀ into the exact symbolic trace — NOT the
+# float64 `q_parameter.Q` (only 17 digits). The atomic tr_M is built as an
+# EXACT sympy expression in q (zero Float atoms); injecting a float64 q₀ at
+# the final `.subs` truncates it to ~16 good digits, which made the L1
+# cross-check (`cross_check_trM_1ppb.py`) read peel_vs_chi ≈ 1.5e-15 (the
+# float64 floor) and DIVERGE at the 1 ppQ (1e-15) gate. Substituting the
+# 50-digit q₀ is float-clean and peel agrees with the chi-cache leg at
+# ~1e-19. NB: `Q_MP` is ALSO only float64-precision — `Q_50_DIGIT_STR` is
+# the sole 50-dps source. See
+# docs/audits/2026-06-29-l1-peel-float64-q0-substitution-fix.md.
+_DPS_GUARD = mpmath.mp.dps + 8
+Q0_SYMPY_HP = sp.Float(Q_50_DIGIT_STR, _DPS_GUARD)
 
 
 # Atom spectrum.  Beyond ⁴He is gated by `--include-li` since GS reduce
@@ -113,9 +126,10 @@ def compute_atom(Z: int, N: int) -> dict:
     # Evaluate at the current mpmath precision floor (50 dps), then
     # convert to mpf so the full precision survives.  Casting to a
     # Python float here would silently truncate to ~15-17 digits and
-    # defeat the high-precision evaluation.
+    # defeat the high-precision evaluation. Substitute the 50-digit q₀
+    # (`Q0_SYMPY_HP`), NOT the float64 `q_parameter.Q` — see module header.
     tr_at_q0_mpf = mpmath.mpf(
-        str(tr_sym.subs(q_sym, Q0).evalf(mpmath.mp.dps))
+        str(tr_sym.subs(q_sym, Q0_SYMPY_HP).evalf(_DPS_GUARD))
     )
     t_eval = time.time() - t0
 
@@ -192,10 +206,23 @@ def main() -> int:
                 diff = abs(got - bridge_val)
                 row["bridge_witness_value"] = bridge[label]
                 row["abs_diff_vs_bridge"] = mpmath.nstr(diff, 6)
-                # Tolerance scales with the precision floor — at 50 dps
-                # we expect agreement to ~10^{-(dps − 5)}.
+                # The bridge (`atomic-tr-m-mpfr-50dps`, Hoefsmit) is
+                # COLOR-BLIND. This producer's trace is the canonical
+                # COLOR-WEIGHTED (bring_color_weighted) one. They are equal
+                # only for A=1 (no inter-nucleon crossing); for A≥2 they
+                # differ by the color-weighting amount (δ·h/4 ~ 1e-5), which
+                # is EXPECTED, not an error. Only A=1 gets the tight 1 ppQ
+                # bridge gate; A≥2 reports the gap informationally as the
+                # color-weighting magnitude. (Same color-blind-vs-weighted
+                # split as cross_check_trM_1ppb.py; see
+                # docs/audits/2026-06-23-trM-crosscheck-colorweighting-split-at-C.md.)
                 tol = mpmath.mpf(10) ** -(mpmath.mp.dps - 5)
-                tag = "OK" if diff < tol else "MISMATCH"
+                if row["A"] == 1:
+                    tag = "OK" if diff < tol else "MISMATCH"
+                else:
+                    tag = ("color-weighting Δ (expected; bridge is "
+                           "color-blind)")
+                row["bridge_is_color_blind"] = bool(row["A"] >= 2)
                 print(
                     f"    bridge = {bridge[label]}  "
                     f"|diff| = {mpmath.nstr(diff, 3)}  {tag}",
@@ -233,7 +260,7 @@ def main() -> int:
         "beyond are first-time computations enabled by this rewrite."
     )
     w.set_content_block("prop:markov-pair-z2")
-    w.add_parameter("q0", str(Q0))
+    w.add_parameter("q0", Q_50_DIGIT_STR)
     w.add_data(
         "method",
         "incremental_reduced_element + tr_M_element(simplify=False)",

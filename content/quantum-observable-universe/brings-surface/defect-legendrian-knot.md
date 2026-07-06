@@ -7,8 +7,9 @@ $$
 \varTheta\big|_{\mathrm{supp}(\mathrm{Li}_q)} = 0
 $$
 
-This means the defect is maximally tangent to the contact
-distribution --- it is a Legendrian submanifold. Since
+The vanishing of $\varTheta$ on the support makes the defect
+maximally tangent to the contact distribution --- it is a
+Legendrian submanifold. Since
 $\dim_{\mathbb{R}} L_q = 3$, Legendrian curves in $L_q$ are knots,
 and the unit particle inherits a knot type from its embedding in the
 $q$-torsion leaf. The Legendrian condition ensures that the defect

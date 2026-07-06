@@ -33,7 +33,7 @@ False positives:
 Emits `legacy-formula-audit.witness.json`.
 
 Usage:
-    python3 folio-assistant/computations/legacy_formula_audit.py [--strict]
+    python3 computations/legacy_formula_audit.py [--strict]
 """
 
 
@@ -177,7 +177,11 @@ def main() -> int:
     strict = "--strict" in sys.argv
 
     rows: list[dict[str, Any]] = []
-    for py in sorted(HERE.glob("*.py")):
+    # Scan the compute tree (computations/), not just audits/ (reorg
+    # scan-root fix). Skip _deprecated and the audits/ dir itself.
+    for py in sorted((HERE.parent).rglob("*.py")):
+        if "_deprecated" in py.parts or HERE.name in py.parts:
+            continue
         if py.name.startswith("_"):
             continue
         if py.name == "legacy_formula_audit.py":

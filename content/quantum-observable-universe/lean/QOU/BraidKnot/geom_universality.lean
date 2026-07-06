@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.geom_universality — `Geom(K)` is the unique additive/functorial volume
 

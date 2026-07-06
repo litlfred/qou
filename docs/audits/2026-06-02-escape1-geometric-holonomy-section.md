@@ -14,9 +14,9 @@ holonomy / Bring color-tube cross-ratio acting on the dim-5 ℓ=2 fiber.
 **Scope:** Does the icosahedral geometry FORCE a canonical line (a section) in the
 2-dim Hom-space, or does selecting a line still require a free parameter (a fit)?
 **Compute:**
-[`escape1_geometric_holonomy_section.py`](../../folio-assistant/computations/escape1_geometric_holonomy_section.py),
+[`escape1_geometric_holonomy_section.py`](../../computations/escape1_geometric_holonomy_section.py),
 witness
-[`escape1-geometric-holonomy-section.witness.json`](../../folio-assistant/computations/escape1-geometric-holonomy-section.witness.json)
+[`escape1-geometric-holonomy-section.witness.json`](../../computations/escape1-geometric-holonomy-section.witness.json)
 (audit-only; exact permutation-group combinatorics + explicit numerical rep
 matrices for the ℂ² realization + RAW golden-ratio cross-ratios @ the canonical
 `compute_dps`; 15 assertions pass). **No tuning to h⁴ = −3/4, m_n − m_p, B_AME,
@@ -162,7 +162,7 @@ against `h⁴ = −3/4`. Assigning a line or a cross-ratio value to reproduce `�
 would be exactly the fit the discipline review catches, so it is **not performed**
 (witness `task5_h4_falsification.fit_performed = false`). `h⁴ = −3/4` remains the
 RAW invariant of the **(2,1) block itself**
-([`borromean_h3_2_1_irrep_derivation.py`](../../folio-assistant/computations/borromean_h3_2_1_irrep_derivation.py)) —
+([`borromean_h3_2_1_irrep_derivation.py`](../../computations/borromean_h3_2_1_irrep_derivation.py)) —
 a block invariant, not a per-copy quantity (#1687), so even a chosen copy would
 not change it. No closure, no fit.
 
@@ -235,7 +235,7 @@ form.
 - The mult-2 Hom-space source (`Res^{A₅}_{S₃}(H) = triv ⊕ 2·(2,1)`):
   [`2026-06-02-h5-h3-functor-keystone.md`](2026-06-02-h5-h3-functor-keystone.md)
   (#1684, Candidate 4),
-  [`h5_h3_functor_keystone.py`](../../folio-assistant/computations/h5_h3_functor_keystone.py).
+  [`h5_h3_functor_keystone.py`](../../computations/h5_h3_functor_keystone.py).
 - The icosahedral A₅ fiber + the dim-5 ℓ=2 irrep:
   [`2026-06-01-s5-so3-su2-u1-fiber-action.md`](2026-06-01-s5-so3-su2-u1-fiber-action.md)
   (#1672).
@@ -246,6 +246,6 @@ form.
   (#1670).
 - The h⁴ = −3/4 block invariant (falsification reference):
   [`borromean-markov-trace-closed-form.md`](../../content/quantum-observable-universe/mass-theory/borromean-markov-trace-closed-form.md),
-  [`borromean_h3_2_1_irrep_derivation.py`](../../folio-assistant/computations/borromean_h3_2_1_irrep_derivation.py).
+  [`borromean_h3_2_1_irrep_derivation.py`](../../computations/borromean_h3_2_1_irrep_derivation.py).
 - Escape 2 (falsified, for the both-escapes-fail delimitation): the native-5-strand
   probe (#1694).

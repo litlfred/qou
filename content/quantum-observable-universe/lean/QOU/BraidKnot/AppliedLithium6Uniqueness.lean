@@ -23,6 +23,8 @@ abstract-axiom dependency.
 
 namespace QOU.BraidKnot
 
+noncomputable section
+
 /-- **⁶Li empty-constraint SDP** at `heckeDim 18`. -/
 abbrev lithium6_emptySDP := nucleusEmptySDP 18
 
@@ -50,4 +52,5 @@ abbrev lithium6_optimum_is_zero := nucleus_optimum_is_zero 18
 /-- ⁶Li objective at optimum equals 0. -/
 abbrev lithium6_objAt_optimum_eq_zero := nucleus_objAt_optimum_eq_zero 18
 
+end  -- noncomputable section
 end QOU.BraidKnot

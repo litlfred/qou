@@ -113,7 +113,7 @@ operations per Planck time. The first brane level alone
 provides $74\%$ of the electron mass; the remaining
 $26\%$ comes from higher jet prolongations.
 
-## What is known
+## Established results
 
 **Step 1 (Categorical $\to$ Markov, proved).**
 $\mathfrak{m}(\varrho)|_{\text{single level}} = |\mathrm{tr}_M(\rho(\beta))|$.
@@ -171,7 +171,7 @@ specialisation of the same Habiro element — not through roots
 of unity, but through direct evaluation at the substrate
 parameter.
 
-## What $\Phi_{\mathrm{mass}}$ would need to encode
+## Encoding requirements for $\Phi_{\mathrm{mass}}$
 
 The brane tower $\{A_n\}$ provides the categorical version of
 $N \to \infty$: each brane level $n$ contributes a transient
@@ -243,19 +243,6 @@ sit at* $|\hat{V}_i| \in [0.85, 1.0]$ *— at the boundary of the
 *Two partial mitigations are documented but neither universally
 closes the gap:*
 
-1. *Yekutieli finite-slice truncation
- ([atom-knot-mass-derivation §Architecture](#prop:atom-knot-mass-derivation)).
- The non-abelian Stokes theorem at finite slice depth gives a
- finite multiplicative integral; per-atom max slice depth equals
- the GB filtration* $\mathrm{max\_grade}$ *recorded in
- `joint-tower-sdp-h6-h9.witness.json`. Truncating the* $\Phi_q$
- *product at this depth reduces* $\Phi_q(0.989)$ *from* $6.7 \times 10^5$
- *to* $46.5$ *for* $\mathrm{max\_grade}=2$ *(D's filtration depth).*
- *Empirical test in*
- [`probe_phiq_yekutieli_truncation.py`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/probe_phiq_yekutieli_truncation.py):
- *the free-minus-atom subtraction* $E_0 \cdot (\mathrm{tower}^{\mathrm{free}}_{\leq k_{\max}} - \mathrm{tower}^{\mathrm{atom}}_{\leq k_{\max}})$
- *gives* $B(D) \approx +1.74 \mathrm{MeV}$ *(error* $-22\%$*) but
- fails for* $T$ *(deeper filtration* $k_{\max}=9$ *gives* $B(T) \approx 1449 \mathrm{MeV}$, *grossly off).*
 
 2. *The [$z$-Habiro completion](#def:z-habiro-ring) — analogous to the
  $q$-Habiro one above but in the $z$-variable. The cyclotomic
@@ -278,29 +265,7 @@ closes the gap:*
  level-selection rule $n_\star(\mathfrak{H})$ derivable from
  substrate data.*
 
-**Status ( PR [#638](https://github.com/litlfred/qou/pull/638)):**
-Claim (b) is **refuted across six probed families** — scalar
-uniform-$k$, scalar $\ell n_0 + k$, per-eigenvalue operator-valued,
-multiplicity / Type-B-folded-crystal, pair-knot product-volume, and
-pair-knot Markov-trace + full Frobenius Gram + LP/SDP duals — by
-the conjecture's own $\sim 5\%$ falsifiability criterion. See
-[`docs/audits/-brane-tower-n_star-closure-audit.md`](../../../docs/audits/-brane-tower-n_star-closure-audit.md)
-for the consolidated landscape. Claim (a) (algebraic Cauchy-limit)
-is **untouched** by the refutation; partial progress in
-[`PhiQConvergence.lean`](../lean/QOU/MassEndomorphism/PhiQConvergence.lean)
-(PR [#637](https://github.com/litlfred/qou/pull/637) +
-[#639](https://github.com/litlfred/qou/pull/639)).
 
-**Implication for this conjecture's open path.** The brane-tower
-contribution to the multi-term mass formula is **not** going to be
-closed by a level-selection rule alone — the ${}^3\mathrm{He}$
-residual survives every operator-volume convention probed, pointing
-at a structural deficit of the brane-tower formula itself at the
-$A=3$ / $n_0=9$ regime (positive LP-dual finding: pair-knot
-operators $\sigma_{pp}/\sigma_{nn}$ ARE structurally selected at
-magic shells; $\mathrm{tr}_M(\sigma_{pp}) = \mathrm{tr}_M(\sigma_{nn})
-= 0.0622$ exactly under Hoefsmit seminormal). The path forward is
-either:
 
 1. **Algebraic Cauchy-limit (claim a) without `n_\star`:** prove
  convergence in the $z$-Habiro topology and use the cyclotomic

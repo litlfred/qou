@@ -4,7 +4,7 @@
 proof level).
 **Branch**: `claude/tier3-math-audit-B0wyO`.
 **Witness**:
-[`folio-assistant/computations/wall-violations.witness.json`](../../folio-assistant/computations/wall-violations.witness.json).
+[`computations/wall-violations.witness.json`](../../computations/wall-violations.witness.json).
 **Tool**: `/tmp/wall-sweep.ts` (kept off the repo as ad-hoc; see
 `pipeline/conjectural-propagation-sweep.ts` for the standard
 audit-tool pattern if this needs promotion).
@@ -96,6 +96,6 @@ Each candidate is one of:
 
 ## Output
 
-[`folio-assistant/computations/wall-violations.witness.json`](../../folio-assistant/computations/wall-violations.witness.json) —
+[`computations/wall-violations.witness.json`](../../computations/wall-violations.witness.json) —
 machine-readable list with file/line/pattern/triage for each hit.
 Re-run the sweep tool to regenerate after content edits.

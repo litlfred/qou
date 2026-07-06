@@ -11,24 +11,6 @@ $$
   \;=\;
   \frac{3 q^2 - 1}{2 q^2}.
 $$
-
-## Proof
-
-The four expressions are equal as rational functions of $q$ over any
-field with $q \ne 0$. Starting from the leftmost, expand
-$\hbar_q^2 = (1 - q^{-1})^2 = 1 - 2 q^{-1} + q^{-2}$, so
-
-$$
-  1 + \hbar_q - \tfrac{1}{2}\hbar_q^2
-  = 1 + (1 - q^{-1}) - \tfrac{1}{2}(1 - 2 q^{-1} + q^{-2})
-  = \tfrac{3}{2} - \tfrac{1}{2} q^{-2}
-  = \frac{3 - q^{-2}}{2}.
-$$
-
-Multiplying numerator and denominator by $q^2$ gives
-$(3 q^2 - 1)/(2 q^2)$. The Lean formalisation closes each step with
-`field_simp; ring`. $\square$
-
 ## Significance: the meson $m_K^2/m_\pi^2$ closure form
 
 Substituting the closed form into the meson mass-squared ratio gives
@@ -65,7 +47,7 @@ Diophantine uniqueness that fixes the force-carrier set), and $q^2$
 is the substrate's squared coupling. The denominator $2 q^2$
 contributes the standard EM-self-energy halving (Casimir) and puts
 the correction on the substrate-natural scale. Per
-[`prop:cosh-sinh-q-bridge`](#prop:cosh-sinh-q-bridge) (#1417, $[n]_q
+`prop:cosh-sinh-q-bridge` (#1417, $[n]_q
 = \sinh(n\lambda)/\sinh(\lambda)$ with $\sinh$ = Coulomb channel),
 this is the sinh-side categorical-action correction on the qq̄ pair,
 modulo a rigorous first-principles derivation of the

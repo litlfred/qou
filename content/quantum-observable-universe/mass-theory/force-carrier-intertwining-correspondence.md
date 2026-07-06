@@ -58,14 +58,14 @@ ordering).  The two force-carrier predictions:
 | $T_{3,5}$ | $p = 3$ | $\lambda = (3, 1)$ |
 
 Computational verification at $q_0 \approx 1.110$ (witness
-[`delta-q-decoration.witness.json`](folio-assistant/computations/delta-q-decoration.witness.json)):
+[`delta-q-decoration.witness.json`](computations/delta-q-decoration.witness.json)):
 
 | $\lambda \vdash 4$ | $\delta_q$-component on bare braid $\sigma_1\sigma_2\sigma_3$ | interpretation |
 |---|---:|---|
 | $(4)$ | $+1.368$ | all 4 together (no intertwining channel) |
-| $(3, 1)$ | $-1.110$ | **$T_{3,5}$ channel** ✓ |
+| $(3, 1)$ | $-1.110$ | **$T_{3,5}$ channel** (confirmed) |
 | $(2, 2)$ | $0.000$ | impossible (would require simultaneous 2-strand pair) |
-| $(2, 1, 1)$ | $+0.901$ | **$T_{2,9}$ channel** ✓ |
+| $(2, 1, 1)$ | $+0.901$ | **$T_{2,9}$ channel** (confirmed) |
 | $(1, 1, 1, 1)$ | $-0.731$ | all 4 free (no intertwining) |
 
 The dominant non-trivial channels $(3,1)$ and $(2,1,1)$ match

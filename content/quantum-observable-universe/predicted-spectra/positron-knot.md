@@ -6,7 +6,7 @@ $$
 $$
 
 The positron is the same knot as the down quark, distinguished
-by environment (orbital vs. coral tube).  It carries reversed
+by environment (orbital vs. color tube).  It carries reversed
 crossing chirality: where the electron has Coulomb charge
 $Q = -1$, the positron has $Q = +1$.
 

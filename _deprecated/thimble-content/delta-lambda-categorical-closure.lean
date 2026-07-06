@@ -26,7 +26,7 @@ to AME 2020 binding holds at ≤ 1 ppm, the conjecture upgrades to a
 proposition with full Lean proof using the PR #779 A2.4 machinery
 extended to per-block residues.
 
-Per CLAUDE.md §3b, this is axiomatised as a `class` so downstream
+Per AGENTS.md §3b, this is axiomatised as a `class` so downstream
 results depending on Δ_λ can be stated conditionally without
 committing to a specific concrete value until the closure is verified.
 

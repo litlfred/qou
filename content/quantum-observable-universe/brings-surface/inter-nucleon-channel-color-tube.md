@@ -3,7 +3,7 @@ canonical inter-nucleon Hecke channel assignment for the atomic
 braid word — currently realised as the uniform-flavor map
 $\mathrm{pp} \mapsto \sigma$, $\mathrm{nn} \mapsto \sigma^{-1}$,
 $\mathrm{pn} \mapsto \sigma_{\mathrm{avg}} = (\sigma + \sigma^{-1})/2$ in
-[`isotope_record_schema.py:65{-}70, 176{-}178`](../../folio-assistant/computations/isotope_record_schema.py) — is the
+[`isotope_record_schema.py:65{-}70, 176{-}178`](../../computations/isotope_record_schema.py) — is the
 **flavor-only projection** of a categorically-refined
 *color-tube weighted* assignment derived from the Bring color-tube
 structure on the quintic.
@@ -20,7 +20,7 @@ The atomic braid word (per [`prop:atom-knot-exists`](#prop:atom-knot-exists))
 places one inter-nucleon Hecke generator at every position $3k + 2$
 for each adjacent nucleon pair $k, k+1$ with $k = 0, \ldots, A - 2$
 (giving $A - 1$ inter-nucleon arcs total; matches
-[`isotope_record_schema.build_knot_operator_catalogue`](../../folio-assistant/computations/isotope_record_schema.py)
+[`isotope_record_schema.build_knot_operator_catalogue`](../../computations/isotope_record_schema.py)
 lines 248-262 and
 [`def:canonical-braid-interface-composition`](canonical-braid-interface-composition.md)).
 The current production assignment treats each such generator as a
@@ -78,10 +78,10 @@ $\mathrm{nn} \mapsto \sigma^{-1}$ via majority opposite-flavor pairs;
 $\mathrm{pn} \mapsto \sigma_{\mathrm{avg}}$ via the bar-symmetric
 mixed-flavor average).
 
-## Why color-tube weighting is the load-bearing missing structure
+## Color-tube weighting as the load-bearing missing structure
 
 The low-isotope sign-flip diagnostic
-([`low-isotope-sign-flip-diagnostic.witness.json`](../../folio-assistant/computations/low-isotope-sign-flip-diagnostic.witness.json),
+([`low-isotope-sign-flip-diagnostic.witness.json`](../../computations/low-isotope-sign-flip-diagnostic.witness.json),
 PR [#1089](https://github.com/litlfred/qou/pull/1089))
 shows that the per-isotope error correlates with inter-nucleon arc
 **count** at $R^2 = 0.83$, not with the signed-h weight ($R^2 = 0.26$).
@@ -98,14 +98,46 @@ evidence that 10-fold color-tube averaging (9 color pairs + 1 diagonal)
 is the categorical structure behind the historical numerology.
 
 The probe scripts
-[`probe_pn_flavor_asymmetry.py`](../../folio-assistant/computations/probe_pn_flavor_asymmetry.py)
-and [`probe_per_sheet_flavor_nonin.py`](../../folio-assistant/computations/probe_per_sheet_flavor_nonin.py)
+[`probe_pn_flavor_asymmetry.py`](../../computations/probe_pn_flavor_asymmetry.py)
+and [`probe_per_sheet_flavor_nonin.py`](../../computations/probe_per_sheet_flavor_nonin.py)
 (referenced in the cheat-sheet, Phase 5q open finding) report that
 Scheme 4 (per-sheet PL integration on Bring's surface with quark-content
 weighting) reproduces $\Delta m_{n-p}$ to ${\sim}0.14\%$ — far better
 than the uniform-flavor projection's ${\sim}305\,\mathrm{ppm}$ flavor
 split ratio. This is third-line evidence that the categorical structure
 exists and resolves residuals the uniform-flavor form does not.
+
+The **gg-production collapse** is fourth-line evidence and quantifies the
+*cost* of the projection directly. Decomposing the production binding
+$B_{\mathrm{sym}} = \alpha\,\ln(\mathrm{tr}_{\mathrm{free}}/\mathrm{tr}_{\mathrm{atom}})$
+into its per-bond log-suppressions
+$L_{\mathrm{pp}}, L_{\mathrm{pn}}, L_{\mathrm{nn}}$ at $q_0$ gives
+$L_{\mathrm{nn}}/L_{\mathrm{pp}} - 1 \approx 78\%$
+([`charge-symmetry-bond-probe.witness.json`](../../computations/probes/charge-symmetry-bond-probe.witness.json)) —
+roughly $570\times$ the substrate-derived $p/n$ flavor split
+$\delta_{\mathrm{lead}} = $ `flavor_split_leading`$(q_0) \approx 0.14\%$ and
+$78\times$ the experimental charge-symmetry-breaking bound (${\sim}1\%$,
+nn vs pp scattering lengths). This over-break is *entirely* the
+$\sigma$-vs-$\sigma^{-1}$ inter-crossing sign of the flavor-only projection:
+gluons couple color, not flavor, so the leading gg interface is the single
+flavor-blind color-average $\sigma_{\mathrm{avg}} = \sigma - (h/2)\cdot 1$
+for every bond type. Forcing all inter-nucleon crossings to
+$\sigma_{\mathrm{avg}}$ makes
+$L_{\mathrm{pp}} = L_{\mathrm{pn}} = L_{\mathrm{nn}} = 0.9294$ **exactly**
+(the intra-nucleon $uud$ / $udd$ chains cancel in the
+$L = \ln(\mathrm{tr}_{\mathrm{free}}/\mathrm{tr}_{\mathrm{atom}})$ ratio), so
+the $78\%$ asymmetry collapses to $0$ and the spurious mirror-nucleus splits
+$\Delta B_{\mathrm{sym}}({}^{3}\mathrm{H}/{}^{3}\mathrm{He},
+{}^{7}\mathrm{Li}/{}^{7}\mathrm{Be}, {}^{13}\mathrm{C}/{}^{13}\mathrm{N})$
+collapse to $0$, leaving the genuine mirror split to the (unwired) Coulomb
+energy
+([`gg-production-bond-probe.witness.json`](../../computations/probes/gg-production-bond-probe.witness.json)).
+The leading flavor-blind term is exactly charge-symmetric; the sub-leading
+flavor weighting $W_{c_1 c_2}$ is what reintroduces the correct
+$\delta_{\mathrm{lead}}$-scale split. This isolates the load-bearing role of
+$W_{c_1 c_2}$: the uniform-flavor projection does not under-resolve a small
+correction — it *manufactures* an $O(1)$ charge asymmetry the color-tube
+average removes.
 
 ## Conditional structure
 
@@ -116,7 +148,7 @@ formalised as a Lean class. Once that class is available, the
 weight matrix $W_{c_1 c_2}$ should be derivable as a tensor in the
 SO(3)-fiber data over Bring, with no remaining degrees of freedom —
 the conjecture would then promote to a `proposition` block under
-the CLAUDE.md §3b-cond conditional-class convention.
+the AGENTS.md §3b-cond conditional-class convention.
 
 The block remains a `conjecture` until then.
 
@@ -140,17 +172,23 @@ class InterNucleonChannelColorTube
 
 The class is *inhabited* by the $S_{5}$/SO(3) fiber data once
 `conj:s5-so3-fiber-action` lands; until
-then the instance carries an explicit `sorry` per CLAUDE.md §3b
+then the instance carries an explicit `sorry` per AGENTS.md §3b
 ("class is inhabited") policy.
 
 ## Consumers
 
-- [`isotope_record_schema.py`](../../folio-assistant/computations/isotope_record_schema.py)
+- [`probes/charge_symmetry_bond_probe.py`](../../computations/probes/charge_symmetry_bond_probe.py)
+  — quantifies the flavor-only projection's $78\%$ charge-symmetry over-break
+  vs the derived ($0.14\%$) and experimental (${\sim}1\%$) scales
+- [`probes/gg_production_bond_probe.py`](../../computations/probes/gg_production_bond_probe.py)
+  — flavor-blind gg leading term collapses the $78\%$ to $0$ exactly;
+  isolates $W_{c_1 c_2}$ as the load-bearing sub-leading structure
+- [`isotope_record_schema.py`](../../computations/isotope_record_schema.py)
   — current uniform-flavor rule lives in
   `build_knot_operator_catalogue` lines 190-262
-- [`mass_table_comprehensive.py`](../../folio-assistant/computations/mass_table_comprehensive.py)
+- [`mass_table_comprehensive.py`](../../computations/mass_table_comprehensive.py)
   — would replace per-channel canonical-form labels with color-tube-weighted forms
-- [`closed_form_tau_M.py`](../../folio-assistant/computations/closed_form_tau_M.py)
+- [`closed_form_tau_M.py`](../../computations/closed_form_tau_M.py)
   — currently raises `NotImplementedError` when invoked with
   `pn_convention="bring_color_weighted"`; this conjecture supplies
   the categorical infrastructure that, once formalised, lets that
@@ -173,7 +211,7 @@ then the instance carries an explicit `sorry` per CLAUDE.md §3b
 3. **${}^{4}\mathrm{He}$ magic-shell saturation.** Does the color-tube weighting
    saturate at $A = 4$ (filled-shell analogue), producing the
    $A \cdot 8G$ closure observed in
-   [`isotope_record_schema.py:186`](../../folio-assistant/computations/isotope_record_schema.py)?
+   [`isotope_record_schema.py:186`](../../computations/isotope_record_schema.py)?
    See [`docs/audits/-4he-magic-shell-color-tube-audit.md`](../../docs/audits/-4he-magic-shell-color-tube-audit.md).
 4. **Cross-check $\rho_F$ density rule.** Does color-tube weighting
    give a categorical reading of the Kashaev density factor
@@ -237,5 +275,5 @@ representation-theoretic level structure is unconditional; the
   [`MassVolDensity.lean`](../lean/QOU/Mass/MassVolDensity.lean) §6
   (`so3_adjoint_eq_chebyshev`)
 - Empirical probe scripts:
-  [`probe_pn_flavor_asymmetry.py`](../../folio-assistant/computations/probe_pn_flavor_asymmetry.py),
-  [`probe_per_sheet_flavor_nonin.py`](../../folio-assistant/computations/probe_per_sheet_flavor_nonin.py)
+  [`probe_pn_flavor_asymmetry.py`](../../computations/probe_pn_flavor_asymmetry.py),
+  [`probe_per_sheet_flavor_nonin.py`](../../computations/probe_per_sheet_flavor_nonin.py)

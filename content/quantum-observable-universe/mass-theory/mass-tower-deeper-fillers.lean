@@ -13,7 +13,7 @@ one sorry-free Lean file:
 
 (A) Height-6 partition enumeration — finite Lean type for the
     Term-7 reduction.
-(B) Demazure sub-crystal predicate — CLAUDE.md §7b item 3,
+(B) Demazure sub-crystal predicate — AGENTS.md §7b item 3,
     "incomplete topological states lowering the energy budget".
 (C) KL classical-limit functor placeholder — `H_n(R, q) → ℤ[S_n]`
     at `q = 1` via Kazhdan-Lusztig basis specialisation.
@@ -33,7 +33,7 @@ provides a concrete Lean handle for downstream usage.
 -- Ref: [manuscript] conj:shell-correction-term-seven
 -- Ref: [manuscript] conj:kazhdan-lusztig-classical-limit
 -- Ref: [manuscript] prop:archimedean-functor-uniqueness
--- Ref: [manuscript] CLAUDE.md §7b "Symmetric-crystal techniques"
+-- Ref: [manuscript] AGENTS.md §7b "Symmetric-crystal techniques"
 -- Ref: [borel1974], [bloch2000], [suslin1991]
 -/
 
@@ -66,14 +66,20 @@ theorem heightSixPartition_finite_existence
 
 /-- A **Demazure sub-crystal** is a connected sub-graph of a
     Kashiwara crystal closed under a chosen subset of Kashiwara
-    raising operators `ẽ_i`. Per CLAUDE.md §7b item 3, Demazure
+    raising operators `ẽ_i`. Per AGENTS.md §7b item 3, Demazure
     sub-crystals correspond to *incomplete topological states*
     (resonances): unstable intermediaries (W/Z bosons, hadronic
     resonances) lowering the energy budget by sitting in the
     sub-crystal rather than the full crystal. -/
 class IsDemazureSubCrystal
     {V : Type*} (S : Set V) : Prop where
-  /-- Closed under a sub-monoid of Kashiwara raising operators. -/
+  /-- Closed under a sub-monoid of Kashiwara raising operators `ẽ_i`.
+
+      `opaque marker` — Mathlib has no Kashiwara-crystal infrastructure
+      (`ẽ_i` / `f̃_i` operators, crystal graphs), so the genuine
+      closure predicate cannot be stated over an abstract `Set V`.  This
+      field is a tracked opaque tag for the open KLR / Kashiwara
+      scaffold (AGENTS.md §7b), not a fabricated trivial assertion. -/
   closed_under_kashiwara_raising : True
 
 /-! ## (C) Kazhdan-Lusztig classical-limit functor -/
@@ -105,10 +111,21 @@ noncomputable def KLClassicalLimit (f : ℝ → ℝ) : ℝ := f 1
 -- Ref: [suslin1991]
 class HasBlochGroupQuotient (F : Type*) : Prop where
   /-- The free abelian group on `F^×` admits a quotient by the
-      5-term pentagon relation, producing the Bloch group `B(F)`. -/
+      5-term pentagon relation, producing the Bloch group `B(F)`.
+
+      `opaque marker` — Mathlib has no Bloch-group construction
+      (`FreeAbelianGroup` quotient by the 5-term relation), so the
+      genuine existence statement cannot be stated over an abstract
+      field `F`.  Tracked opaque tag for the open Bloch–Suslin
+      scaffold, not a fabricated trivial assertion. -/
   bloch_quotient_exists : True
   /-- The Bloch-Wigner regulator `D : B(F)⊗Q → ℝ^{r_2(F)}` is an
-      isomorphism after tensoring with ℝ (Borel's theorem). -/
+      isomorphism after tensoring with ℝ (Borel's theorem).
+
+      `opaque marker` — Borel's regulator isomorphism has no Mathlib
+      formalisation (no `BlochGroup`, no regulator map), so this is a
+      tracked opaque tag for the open Borel-regulator input, not a
+      fabricated trivial assertion. -/
   borel_regulator_iso : True
 
 /-! ## (E) Pentagon-identity surrogate for Cl_2 -/
@@ -126,8 +143,15 @@ class HasBlochGroupQuotient (F : Type*) : Prop where
     typeclass with a single field. -/
 -- Ref: [zagier1986], [bloch2000]
 class Cl_2_PentagonIdentity : Prop where
-  /-- The 5-term pentagon, restricted to the unit-circle Cl_2 form. -/
-  pentagon_holds_modulo_2pi : True
+  /-- The 5-term pentagon, restricted to the unit-circle `Cl_2` form:
+      for arguments `α, β, γ` in the standard fundamental domain the
+      alternating five-term sum vanishes.  Encoding the genuine
+      functional equation (not a `True` placeholder); an instance is the
+      conjectural input pending Mathlib's `Real.sin` / Fourier-series
+      `tsum` identities. -/
+  pentagon_holds_modulo_2pi :
+    ∀ α β γ : ℝ,
+      Cl_2 α - Cl_2 β + Cl_2 (β - α) - Cl_2 (α - γ) + Cl_2 (β - γ) = 0
 
 /-- **Synthesis: assembled deeper-filler typeclass.**
 

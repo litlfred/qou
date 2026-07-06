@@ -20,7 +20,7 @@ contractions: for any Hecke elements b, c,
     tr_M(b · c) = Σ_λ y_λ · tr(ρ_λ(b) · ρ_λ(c)).
 
 The H_3 NF-basis 6×6 Gram from
-`content/quantum-observable-universe/particle-interactions/gram-matrix-h3-symbolic.lean`
+`content/quantum-observable-universe/lean/QOU/Interactions/GramMatrixH3Symbolic.lean`
 is reproduced by this script via the per-block reassembly (cross-check
 below).
 

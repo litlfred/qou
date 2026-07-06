@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:q-beta-bar-even-kernel-typeclass",
   title:
-    "$Q_\\beta$ formalize-first unified typeclass — `BarEvenKernel` bundles all four $\\S 4$ invariants (bar-even, radius-of-convergence, q=1 shadow, direction sanity) into one parametric Lean typeclass so any future kernel candidate $F(q)$ becomes a single class-instance attempt",
+    "$\\mathfrak{Q}_\\beta$ formalize-first unified typeclass — `BarEvenKernel` bundles all four $\\S 4$ invariants (bar-even, radius-of-convergence, q=1 shadow, direction sanity) into one parametric Lean typeclass so any future kernel candidate $F(q)$ becomes a single class-instance attempt",
   lean: {
     ref: "qou:QOU.QBeta.BarEvenKernelTypeclass.BarEvenKernel",
     validation: "not_checked",

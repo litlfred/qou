@@ -32,7 +32,7 @@ provable blocks:
 
 These ~9 provable blocks are the **structural bridges**.
 They legitimately derive content from open conjectures (their
-proofs use the conjectural results). Per CLAUDE.md §3b, each
+proofs use the conjectural results). Per AGENTS.md §3b, each
 must be `conjecture` (or remarks with `interprets:`), not
 `proposition`/`theorem`.
 

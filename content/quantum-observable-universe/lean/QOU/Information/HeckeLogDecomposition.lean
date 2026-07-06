@@ -18,9 +18,12 @@ Taking 1/h and log gives the decomposition.
 Ref: [manuscript] prop:boltzmann-constant
 Ref: probe_delta_coupling_q_edgeworth.py (numerical verification to 50 dps)
 -/
+import QOU.HeckeAlgebra.QSubstrate
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
 namespace QOU.Information
+
+open QOU.HeckeAlgebra.QSubstrate  -- q_0, q_0_gt_one live in the QSubstrate sub-namespace
 
 /-- The Hecke deformation h := q - q⁻¹ factors as ℏ_q · (q + 1) where
     ℏ_q = (q - 1)/q is the QOU quantum Planck constant. -/
@@ -50,27 +53,19 @@ theorem hecke_log_decomposition (q : ℝ) (hq : 1 < q) :
     rw [hecke_skein_factorization q hq_pos]
     field_simp
   rw [heq, Real.log_mul (one_div_ne_zero hhbar_ne) (one_div_ne_zero hqp1_ne)]
-  rw [Real.log_one_div, h1p_q_eq]
+  -- `simp only` (not `rw`) so the inverse-log rewrite fires on *every*
+  -- `log (1/·)` — the LHS carries two, the RHS one; `rw` hits only the first and
+  -- leaves the goal not `ring`-closable. (`Real.log_one_div` does not exist; use
+  -- `one_div` to expose `·⁻¹`, then `Real.log_inv : log x⁻¹ = -log x`.)
+  simp only [one_div, Real.log_inv, h1p_q_eq]
   ring
 
 /-- Numerical equality at the QOU substrate parameter q_0:
     log(1/h(q_0)) = log(1/ℏ_q(q_0)) - log(1 + q_0) ≈ 1.56513...
-    Verified to 50 dps in probe_delta_coupling_q_edgeworth.py.
-
-    This is a witnessed-value lemma stated as a propositional equality
-    of the canonical 50-dps decimal representation. -/
-theorem hecke_log_decomposition_at_q0 :
-    -- Witnessed at probe_delta_coupling_q_edgeworth.py:
-    -- log(1/h(q_0)) ≈ 1.5651324466994860066... is the canonical value
-    -- of the substrate skein-log factor. Equality with the
-    -- decomposition follows from `hecke_log_decomposition` applied at
-    -- q = q_0 ≈ 1.10998.
-    True := by
-  -- Witnessed-value theorem: stated as `True` here per QOU's witness-
-  -- file pattern (the actual 50-dps value lives in
-  -- probe_delta_coupling_q_edgeworth.py + its witness JSON; Lean does
-  -- not carry the decimal). Keeping as `True` is consistent with the
-  -- pattern other QOU witnessed-value theorems use.
-  trivial
+    Verified to 50 dps in probe_delta_coupling_q_edgeworth.py. -/
+noncomputable def hecke_log_decomposition_at_q0 :
+    Real.log (1 / (q_0 - q_0⁻¹)) =
+      Real.log (1 / ((q_0 - 1) / q_0)) - Real.log (1 + q_0) :=
+  hecke_log_decomposition q_0 q_0_gt_one
 
 end QOU.Information

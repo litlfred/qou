@@ -41,7 +41,7 @@ prediction uses only {q_0, m_e}. Output is a comparison witness, not
 a calibration.
 
 Run:
-    python folio-assistant/computations/probe_h7a_cross_anchor_a3.py
+    python computations/probe_h7a_cross_anchor_a3.py
 
 CLASS-A acknowledged-anchor banner (per Workplan-0b, applies to
 hardcoded CODATA-precision literals in this file as well — see

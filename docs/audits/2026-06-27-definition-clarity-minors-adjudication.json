@@ -1,0 +1,3026 @@
+[
+ {
+  "label": "def:witness-12c",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The principal defined term \"Pauli witness\" appears only as plain text in \"The Pauli witness for ${}^{12}\\mathrm{C}$...\" (line 1) and is never bolded or :defterm'd.",
+  "fix": "Wrap at the definition site: :defterm[Pauli witness]{#pauli-witness}."
+ },
+ {
+  "label": "def:witness-4he",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The principal defined term \"Pauli witness\" appears only as plain text in \"The Pauli witness for ${}^4\\mathrm{He}$...\" (line 1) with no bold or :defterm markup.",
+  "fix": "Wrap at the definition site: :defterm[Pauli witness]{#pauli-witness} (or :refterm if defined canonically in witness-4he/12c)."
+ },
+ {
+  "label": "def:witness-8be",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The principal defined term \"Pauli witness\" appears only as plain text in \"The Pauli witness for ${}^8\\mathrm{Be}$...\" (line 1) with no bold or :defterm markup.",
+  "fix": "Wrap at the definition site: :defterm[Pauli witness]{#pauli-witness} (or :refterm if defined canonically elsewhere)."
+ },
+ {
+  "label": "prop:b1-soft-sharpness-theorem",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "confirmed",
+  "rationale": "The actual statement is the short boxed Theorem (lines 22-29), but it is preceded by a 122-word two-formulations preamble (lines 1-19) and the block mixes in a full proof plus four discussion sub-sections.",
+  "fix": "Move the two-formulations table/preamble and the proof into separate remark/proof blocks, leaving the boxed soft-sharpness statement."
+ },
+ {
+  "label": "prop:b1-torus-knot-rows-theorem",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "confirmed",
+  "rationale": "The 3-point statement (lines 42-54) is genuine but is wrapped in 397 words of scope, CS-formula derivation, and significance discussion that bloat the proposition block.",
+  "fix": "Trim the \"Why torus-knot rows are less informative\" and \"Significance\" exposition into a sibling remark."
+ },
+ {
+  "label": "def:birthday-grading",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The principal defined term \"birthday grading\" IS bolded at the definition site (line 27: \"A **birthday grading** on $\\mathbf{C}$\"); the scanner's title-derived token soup just missed it.",
+  "fix": ""
+ },
+ {
+  "label": "def:birthday-grading",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The 47-word preamble genuinely defines the surreal birthday function $b(x)$ that the grading depends on, and the length is real definitional content (filtration axioms plus archimedean subcategory), not padding.",
+  "fix": ""
+ },
+ {
+  "label": "prop:borel-partial-resolution",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "confirmed",
+  "rationale": "The proposition records explicit Borel dimensions in a short opening (lines 1-13) but is followed by 89 words of preamble and ~500 words of cited theorem, worked depth-2/depth-3 examples, and honest-summary exposition.",
+  "fix": "Split the worked examples and honest-summary discussion into a sibling remark, keeping the Borel-rank statement tight."
+ },
+ {
+  "label": "prop:collatz-contact-boundary",
+  "criterion": "clarity-defn-misplaced",
+  "verdict": "confirmed",
+  "rationale": "This proposition block carries genuine promotable definitions bolded inline \u2014 the \"$[2]_q$-adic valuation\" (line 50), the \"orbit contact average\" (line 104), and the \"Collatz contact boundary\" (line 174) \u2014 none registered in defines/defterm.",
+  "fix": "Extract the $[2]_q$-adic valuation and Collatz-contact-boundary definitions into definition blocks and reference them from the proposition."
+ },
+ {
+  "label": "prop:collatz-no-cycles",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement proper (lines 9-11) is one tight sentence; the flagged 3 bold headers are the standard Proof / classical-limit / full-family discussion of a proposition, not a rambling statement.",
+  "fix": ""
+ },
+ {
+  "label": "conj:q-birch-swinnerton-dyer",
+  "criterion": "clarity-defn-misplaced",
+  "verdict": "confirmed",
+  "rationale": "The conjecture block defines genuine promotable objects in bold \u2014 the \"categorical Mordell\u2013Weil group\" (line 5), the \"$q$-Tate\u2013Shafarevich group\" (line 178), and the \"$q$-height pairing\" \u2014 that carry definitional content beyond stating the conjecture.",
+  "fix": "Promote the categorical Mordell\u2013Weil and $q$-Tate\u2013Shafarevich constructions into definition blocks and have the conjecture use[] them."
+ },
+ {
+  "label": "def:sign-sequence-of-braid",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The definition's principal constructions are bolded (\"sign-sequence presentation\" line 2, \"multiplicative monoid map\" line 65, \"stronger braid invariant\" line 104) and the named map $\\mathrm{surr}(\\beta,t)$ is given via $:=$; the scanner's title token-soup just failed to overlap.",
+  "fix": ""
+ },
+ {
+  "label": "def:surreal-blowup-calculus",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The principal term is bolded at its definition site (line 24: \"A **blow-up of a divergent expression** is...\"); the scanner's title token soup \"surreal blow up calculus named infinite surreals renormalisation\" simply did not match.",
+  "fix": ""
+ },
+ {
+  "label": "def:surreal-blowup-calculus",
+  "criterion": "clarity-defn-tight",
+  "verdict": "confirmed",
+  "rationale": "The definition (\"A blow-up... is...\", line 24) does not begin until after a 210-word motivation-plus-named-surreals preamble (lines 1-21), and is then padded with extensive examples and a \"why this matters for QOU\" section.",
+  "fix": "Move the named-surreals motivation and the examples/why-it-matters sections out of the definition block, opening with the blow-up definition."
+ },
+ {
+  "label": "prop:surreal-rate-calculus",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "confirmed",
+  "rationale": "The clean 4-inequality statement (lines 36-54) is preceded by a 316-word preamble (setup of $\\varepsilon$, asymptotic symbols, and a full rate table) before the proposition even begins.",
+  "fix": "Move the rate-table and asymptotic-symbol setup into a preceding definition/prose block so the proposition opens at its statement."
+ },
+ {
+  "label": "lem:surreal-squeeze",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The lemma statement is a single tight inequality $\\delta^2\\varepsilon^{-1}>\\varepsilon^3$ (lines 8-18); the flagged 4 bold headers are the conditional banner, proof, interpretation, and downstream pointers \u2014 normal lemma structure, not a rambling statement.",
+  "fix": ""
+ },
+ {
+  "label": "prop:a-8-partition-function-identity",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is two tight equations defining $a_8$ and its closed form (lines 1-19); the 387-word count is the proof table plus categorical-interpretation and convention-stability exposition, not a rambling statement.",
+  "fix": ""
+ },
+ {
+  "label": "prop:alpha-em-habiro-bar-involution",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is two tight numbered facts \u2014 bar-fixed point and special values (lines 1-9); the flagged sub-sections (Significance, Lean structure, Mathematical Novelty) are exposition outside the statement.",
+  "fix": ""
+ },
+ {
+  "label": "def:bar-involution",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The principal term \"bar-involution\" is bolded at its definition site (line 3: \"*The* **bar-involution** *...is the ring anti-involution...*\"); the scanner's 43-span title token soup missed the exact match.",
+  "fix": ""
+ },
+ {
+  "label": "def:braid-group",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined term \"braid group on three strands\" appears only in italic emphasis (line 1: \"The *braid group on three strands* is...\"), which \u00a74c no longer permits for defined terms \u2014 it is never bolded or :defterm'd.",
+  "fix": "Wrap at the definition site: :defterm[braid group on three strands]{#braid-group}."
+ },
+ {
+  "label": "def:braid-twist-flip",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The block names two involutions 'twist' (\u03c3\u2081) and 'flip' (\u03c3\u2082) but only labels them with \\text{(twist)}/\\text{(flip)} inside the align environment, never bolding or :defterm-marking the definienda.",
+  "fix": "Bold or :defterm the named involutions, e.g. ':defterm[twist]{#braid-twist}' and ':defterm[flip]{#braid-flip}' at their definition site."
+ },
+ {
+  "label": "prop:cyclotomic-strand-doubling",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The proposition statement itself (lines 1-10) is a tight one-line cyclotomic identity \u03a6\u2088(X)=\u03a6\u2084(X\u00b2); the 431-word count is dominated by the proof, empirical-context table, and historical refutation note that follow the statement.",
+  "fix": ""
+ },
+ {
+  "label": "def:f-bor-borromean-observable",
+  "criterion": "clarity-defn-tight",
+  "verdict": "confirmed",
+  "rationale": "The core definition is the F_Bor formula in lines 1-35, but the block then appends 'Cleaner form', 'Exact rational h-expansion', 'Structural-integer identifications', and 'open categorical step' sections that pad it to 340 words beyond the definitional content.",
+  "fix": "Move the h-expansion, integer-identification, and open-step discussion into a sibling remark, leaving the definition with just the F_Bor formula and the y\u208d\u2083\u208e identification."
+ },
+ {
+  "label": "prop:figure-eight-reeb-rotation",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The proposition statement (lines 1-13, the unit-modulus eigenvalue claim) is tight; the 581-word count comes from the proof sketch and the q-Reeb-flow / mass-scale / Lean interpretive sections after the statement.",
+  "fix": ""
+ },
+ {
+  "label": "prop:habiro-precision-ladder-equivalence",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement (lines 1-5 plus the finite Habiro-expansion formula lines 9-21) is genuine hypotheses+conclusion; the flagged 114-word 'preamble' is a Mathematical-Novelty paragraph inserted between the two statement halves, not rambling within the statement.",
+  "fix": ""
+ },
+ {
+  "label": "prop:hoefsmit-binding-amplitude",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The proposition statement (lines 1-9, the b\u00b2 and 1\u2212b\u00b2 identities) is tight; the three sub-sections flagged are the pion-decay interpretation and q-integer structure that follow the proof.",
+  "fix": ""
+ },
+ {
+  "label": "thm:jones-markov-trace",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The entire 296 words are the genuine statement of Jones' theorem \u2014 its three numbered properties (existence with normalisation/trace/Markov axioms, non-degeneracy on irreducibles, link invariance) \u2014 which are the actual hypotheses and conclusions, not preamble.",
+  "fix": ""
+ },
+ {
+  "label": "thm:pontryagin-dual-coxeter-character",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The theorem statement (lines 1-8, Pontryagin self-duality of S_n^ab) is tight; the 468-word figure is the whole file including the two-step proof, Lean closure, and tracker discussion, not the statement.",
+  "fix": ""
+ },
+ {
+  "label": "def:q-casimir",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "At 266 words the block's sub-sections (the C_q formula, its eigenvalue [j]_q[j+1]_q on V_j, centrality, and categorical role) are all genuine definitional content of the q-Casimir element, not preamble padding.",
+  "fix": ""
+ },
+ {
+  "label": "def:quantum-su2",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The definiendum 'quantum group' U_q(su(2)) is set in italics (*quantum group*, line 2) rather than bolded or :defterm-marked at its definition site.",
+  "fix": "Replace the italic *quantum group* with a bold/:defterm mark, e.g. ':defterm[quantum group]{#quantum-group}'."
+ },
+ {
+  "label": "def:skein-resolution-obstruction",
+  "criterion": "clarity-defn-tight",
+  "verdict": "confirmed",
+  "rationale": "A 78-word interpretive preamble (lines 3-7, motivating the obstruction as a fourth evaluation of \u03c7(A)) precedes the actual **Definition.**, and Kummer-reduction / field-dependence sections inflate the block past the definitional formula.",
+  "fix": "Move the 'fourth evaluation' motivation and the Kummer/field-dependence analysis into a remark, leaving the definition leading with the \u03ba_c^comp formula."
+ },
+ {
+  "label": "def:so3-generators",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The flagged term 'so' is a degenerate stem of the all-mathematical title 'SO(3) generators'; the block defines the rotation matrices R_\u03b1, R_\u03b2 with no prose definiendum to bold.",
+  "fix": ""
+ },
+ {
+  "label": "def:su2-basis",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The flagged term 'su' is a degenerate stem of the all-mathematical title 'SU(2) basis'; the block just fixes the basis e_a=\u2212(i/2)\u03c4_a with no prose definiendum to bold.",
+  "fix": ""
+ },
+ {
+  "label": "prop:trm-hopf-sigma1-sq-closed-form",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The proposition statement (lines 1-18, the boxed closed form for tr_M(\u03c3\u2081\u00b2) plus n-independence) is tight; the 584-word count is the proof, Taylor expansion, Q_\u03b2-ladder implication, and remarks.",
+  "fix": ""
+ },
+ {
+  "label": "def:archimedean-condition",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The definienda 'Descartes condition' (line 5) and 'Descartes universe' (line 17) are set in italics rather than bolded or :defterm-marked.",
+  "fix": "Replace the italic *Descartes condition* / *Descartes universe* with bold/:defterm marks at their definition sites."
+ },
+ {
+  "label": "def:briggs-klein-chart",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The definiendum 'Briggs\u2013Klein affine chart' is set in italics (*Briggs--Klein affine chart*, line 7) rather than bolded or :defterm-marked.",
+  "fix": "Replace the italic *Briggs--Klein affine chart* with a bold/:defterm mark."
+ },
+ {
+  "label": "def:briggs-klein-chart",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The block is a single short definition (~80 words total); the flagged 'preamble' (the 'Let r=|w\u2081|\u00b2' setup) is genuine definitional content establishing the coordinates that the chart restricts.",
+  "fix": ""
+ },
+ {
+  "label": "prop:bring-trefoil-cinquefoil-channel",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement's length is genuine mathematical content \u2014 it identifies two distinct torus knots (trefoil T_{2,3}, cinquefoil T_{2,5}) with their Seifert genera and the \u221a5 Gauss-sum source \u2014 and the 171-word 'preamble' is the bulleted hypotheses themselves, not rambling.",
+  "fix": ""
+ },
+ {
+  "label": "prop:brings-is-qou",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The flagged 135-word preamble is the proposition's genuine content \u2014 the five numbered conditions (quantum universe, observability, Yekutieli lifting, Euler characteristic, geometric descent) verifying Bring's surface is a QOU \u2014 not filler before a statement.",
+  "fix": ""
+ },
+ {
+  "label": "prop:brings-smoothness-resolution",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 108-word 'preamble' is the setup (S and the color projection \u03c0) plus the three numbered sub-claims (smoothness, intrinsic resolution, Briggs\u2013Klein regularity) that constitute the genuine statement.",
+  "fix": ""
+ },
+ {
+  "label": "def:brings-surface",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The definiendum \"Bring's surface\" appears only in italics (*Bring's surface*) at its definition site, never bolded or :defterm'd.",
+  "fix": "Wrap the term as **Bring's surface** or :defterm[Bring's surface] at line 5."
+ },
+ {
+  "label": "def:color-sector-coords",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined terms (*red*/*green*/*blue* sector embeddings, *color twist*) are only italicized, never bolded or :defterm'd.",
+  "fix": "Bold/:defterm the principal term (e.g. the sector embeddings) at its definition site."
+ },
+ {
+  "label": "def:color-tube-coordinates",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "\"*color tube coordinates*\" is only italicized at line 4, never bolded or :defterm'd.",
+  "fix": "Mark as **color tube coordinates** or :defterm[color tube coordinates]."
+ },
+ {
+  "label": "def:color-tube-fibers",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "\"*color tube*\" is only italicized at line 1, never bolded or :defterm'd.",
+  "fix": "Mark as **color tube** or :defterm[color tube] at the definition site."
+ },
+ {
+  "label": "cor:descartes-braid-structure",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 132 words are a setup line plus a four-item numbered list of genuine corollary claims, not rambling preamble.",
+  "fix": ""
+ },
+ {
+  "label": "cor:descartes-knot-eigenbasis",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 231 words are the genuine four-step structured statement (Hecke instantiation, Schur-Weyl, braid rep, completeness), each a substantive claim.",
+  "fix": ""
+ },
+ {
+  "label": "thm:descartes",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 86 words define the category C_{-6} (genuine hypothesis) and assert Bring's surface is terminal with a unique morphism (genuine conclusion).",
+  "fix": ""
+ },
+ {
+  "label": "thm:embeddability-closure",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "Of the 550 words, the Theorem statement itself (lines 10-28) is tight; the bulk is genuine proof (\"Why each operation...\") and physical-consequence discussion, not statement padding.",
+  "fix": ""
+ },
+ {
+  "label": "def:hyperelliptic-quintic",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The curve X_5 is defined but neither \"hyperelliptic quintic\" nor X_5 is bolded/:defterm'd; the one bold span is the header \"**Relation to Bring's surface.**\".",
+  "fix": "Mark the principal definiendum (e.g. **hyperelliptic quintic** / $\\mathcal{X}_5$) at the definition site."
+ },
+ {
+  "label": "def:levi-form-defect",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The principal definiendum is bolded as **matter locus** at line 7; the scanner's token-soup \"matter frobenius failure levi form\" missed the match.",
+  "fix": ""
+ },
+ {
+  "label": "def:local-cohomology-group",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "\"local cohomology group\" is introduced in plain text (\"Define the local cohomology group...\") with no bold or :defterm and zero bold spans in the block.",
+  "fix": "Mark as **local cohomology group** or :defterm[local cohomology group]."
+ },
+ {
+  "label": "def:maximal-ideal-defect",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "\"maximal ideal\" / m_1 is introduced in plain text with no bold or :defterm and zero bold spans.",
+  "fix": "Mark the principal definiendum (e.g. **maximal ideal** $\\mathfrak{m}_1$) at the definition site."
+ },
+ {
+  "label": "def:maximal-ideal-defect",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The whole 69-word block is one tight definition of m_1 as the evaluation kernel plus a one-sentence justification of why z=1 is distinguished; the length is genuine definitional content.",
+  "fix": ""
+ },
+ {
+  "label": "def:quaternionic-spectral-resolvents",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "\"*quaternionic spectral resolvents*\" is only italicized at line 17, never bolded or :defterm'd.",
+  "fix": "Mark as **quaternionic spectral resolvents** or :defterm at the definition site."
+ },
+ {
+  "label": "def:su2-generators",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The block is a structural definition giving the explicit binary-dihedral generators alpha,beta with no nameable verbal definiendum; the title (SU(2) generators) is genuinely mathematical.",
+  "fix": ""
+ },
+ {
+  "label": "prop:torus-embeddable-complete",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The Proposition statement (lines 8-18) is a tight iff with an explicit six-element set; the remaining words are a genuine Proof and Remark, the standard structure.",
+  "fix": ""
+ },
+ {
+  "label": "prop:torus-knot-generators",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The Proposition proper (lines 13-27) is tight; the 465-word total is dominated by the genus-bound derivation and a four-point physical interpretation, i.e. genuine proof/commentary, not statement rambling.",
+  "fix": ""
+ },
+ {
+  "label": "def:unit-particle-state",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "\"unit particle state\" Li_q(z) is introduced in plain text (\"Define the unit particle state...\") with no bold or :defterm and zero bold spans.",
+  "fix": "Mark as **unit particle state** or :defterm[unit particle state]."
+ },
+ {
+  "label": "prop:x5-bring-weight-identification",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 84-word \"preamble\" is the Proposition's own hypotheses (eigenvector setup) leading to the canonical equivariant identification; the rest is genuine Proof and Remark.",
+  "fix": ""
+ },
+ {
+  "label": "def:coulomb-charge",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "\"*Coulomb charge*\" is only italicized at line 5, never bolded or :defterm'd.",
+  "fix": "Mark as **Coulomb charge** or :defterm[Coulomb charge]."
+ },
+ {
+  "label": "def:crossing-energy",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "\"*crossing energy*\" is only italicized at line 3; the single bold span is the phrase \"**two eigenvalues of the Hecke generator**\", not the definiendum.",
+  "fix": "Mark as **crossing energy** or :defterm[crossing energy] at line 3."
+ },
+ {
+  "label": "def:crossing-energy",
+  "criterion": "clarity-defn-tight",
+  "verdict": "confirmed",
+  "rationale": "The definition proper ends by line 23; the remaining ~200 words (\"### Categorical origin\" with a four-item justification) are supporting prose padding the definition block to 316 words.",
+  "fix": "Move the \"Categorical origin\" justification into a sibling remark interpreting the definition."
+ },
+ {
+  "label": "lem:jones-mobius-diagonal",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The Lemma statement is genuine mathematical content; the four sub-sections are Lemma/Proof plus interpretive \"Surreal reading\" and \"Scope\" commentary, normal structure rather than a rambling statement.",
+  "fix": ""
+ },
+ {
+  "label": "prop:knot-operator-energy-exists",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 114-word \"preamble\" is the Proposition statement itself (existence of E in |R| with a per-base-ring case analysis); the scanner's preamble detection misfired.",
+  "fix": ""
+ },
+ {
+  "label": "prop:knot-operator-energy-unique",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 116 words are the genuine uniqueness statement with its three determining inputs and the LP-duality/Ostrowski justification, not padding.",
+  "fix": ""
+ },
+ {
+  "label": "def:local-shadow-ordering",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The principal definiendum is bolded as **local shadow-price ordering** at line 3; the scanner's overlap missed it among the nine bold spans.",
+  "fix": ""
+ },
+ {
+  "label": "def:q-momentum",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The principal term **$q$-momentum** is bolded at lines 3 and 10; the scanner's overlap missed it.",
+  "fix": ""
+ },
+ {
+  "label": "def:q-momentum",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The 219 words and four sub-sections are genuine definitional content: the formula, an equivalent trace characterization, four properties, and a building-block value table.",
+  "fix": ""
+ },
+ {
+  "label": "prop:skein-bar-antisymmetry",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The Proposition statement (lines 1-29) is tight; the extra headers are Proof plus a refactoring corollary and categorical-statement commentary, not a rambling statement.",
+  "fix": ""
+ },
+ {
+  "label": "prop:discrete-vortex-spectrum",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "confirmed",
+  "rationale": "A promotional \"**Mathematical Novelty.**\" paragraph (line 6) is wedged between the setup and \"Then:\", padding the statement preamble with non-hypothesis prose.",
+  "fix": "Move the Mathematical-Novelty paragraph out of the statement (to authorNotes or a remark)."
+ },
+ {
+  "label": "def:ns-obstruction",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The principal definiendum is bolded as **NS obstruction class** at lines 2-3; the scanner's overlap missed it.",
+  "fix": ""
+ },
+ {
+  "label": "def:ns-obstruction",
+  "criterion": "clarity-defn-tight",
+  "verdict": "confirmed",
+  "rationale": "The definition proper ends by line 22; the \"### Algebraic reading: spectral-gap closure\" section (~150 words) is interpretive prose padding the block to 251 words.",
+  "fix": "Move the algebraic-reading section into a sibling remark interpreting the definition."
+ },
+ {
+  "label": "def:ns-regular-qou",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The definienda **NS obstruction**, **NS-regular**, and **NS-singular** are all bolded (lines 7, 23, 29); the scanner's overlap missed them.",
+  "fix": ""
+ },
+ {
+  "label": "def:observable-mtc",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "\"*observable modular tensor category*\" is only italicized at line 11; the three bold spans are section headers (**Definition.** etc.), not the term.",
+  "fix": "Mark as **observable modular tensor category** or :defterm at line 11."
+ },
+ {
+  "label": "def:observable-mtc",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The 104-word \"preamble\" is the genuine setup constructing the truncated category C_any(N) that the definition names, and the sub-sections are substantive related content.",
+  "fix": ""
+ },
+ {
+  "label": "prop:q-ns-nonlinear-uniqueness",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The four headers are the genuine statement parts (a) q-Ladyzhenskaya, (b) enstrophy bound, (c) uniqueness; the trailing \"Mathematical Novelty\" paragraph is a separate one-voice matter, not statement rambling.",
+  "fix": ""
+ },
+ {
+  "label": "conj:q-aubin-lions",
+  "criterion": "clarity-defn-misplaced",
+  "verdict": "false-positive",
+  "rationale": "The \"Define\" lead-ins introduce proof-internal objects (the ambient space H, the truncated solution v_q^N, the limit modes) inside a conjecture's proof sketch, not a promotable standalone definition; the .ts carries no defines[].",
+  "fix": ""
+ },
+ {
+  "label": "def:big-bang-state",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "At 221 words the sub-sections are genuine definitional content: relation to the jet horizon (comparison table) and an explicit existence-not-assumed caveat, both substantive.",
+  "fix": ""
+ },
+ {
+  "label": "def:cmb-boundary-datum",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The principal definiendum is bolded as **cosmic microwave background** (CMB) at line 7; the scanner's overlap missed it.",
+  "fix": ""
+ },
+ {
+  "label": "def:cmb-boundary-datum",
+  "criterion": "clarity-defn-tight",
+  "verdict": "confirmed",
+  "rationale": "The definition core ends by line 29; the \"What the CMB contains/does not contain\" tables and \"Role in aeon structure\" prose expand the block past 250 words.",
+  "fix": "Move the aeon-role and contains tables into a sibling remark."
+ },
+ {
+  "label": "def:cmb-functor",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "At 197 words the three sub-sections (component table, relation to the pointwise CMB, conformal invariance) are genuine content characterizing the functor being defined.",
+  "fix": ""
+ },
+ {
+  "label": "def:computational-horizon",
+  "criterion": "clarity-defn-tight",
+  "verdict": "confirmed",
+  "rationale": "The definition's three conditions are genuine, but the appended \"Structural parallel with the jet horizon\" table is supplementary and pushes the block to 348 words.",
+  "fix": "Move the structural-parallel table into a sibling remark."
+ },
+ {
+  "label": "def:gravitational-constant",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The definiendum \"gravitational constant\" / G is introduced in plain prose (line 1) and never bolded or :defterm'd; the 19 bold spans are all section headers and emphasis.",
+  "fix": "Mark **gravitational constant** $G$ at the definition site."
+ },
+ {
+  "label": "prop:horizon-conformal-invariance",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The Proposition statement (lines 1-19) is tight; the additional headers are a Proof sketch and an Interpretation (CCC analogue), the standard structure.",
+  "fix": ""
+ },
+ {
+  "label": "prop:incompleteness-implies-horizon",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement defines a Turing-complete resolution system (genuine hypotheses) and concludes a non-computable function exists; the remaining words are the diagonal Proof and a necessity discussion.",
+  "fix": ""
+ },
+ {
+  "label": "def:information-speed-of-light",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The principal term is bolded as **speed of light** at line 2 (and italicized again in the Definition); the scanner's overlap missed the bold occurrence.",
+  "fix": ""
+ },
+ {
+  "label": "def:observable-subcategory",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "At only 160 words the three sub-sections (Why \"observable\", Complement, Connected components) are concise, substantive characterizations of the subcategory being defined.",
+  "fix": ""
+ },
+ {
+  "label": "def:operational-entropy",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "\"*operational entropy*\" is only italicized at line 5; the 15 bold spans are all section headers, not the definiendum.",
+  "fix": "Mark as **operational entropy** or :defterm at line 5."
+ },
+ {
+  "label": "prop:phase-transition-boundary",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 90-word \"preamble\" is the genuine statement defining the phase transition and the S^3 boundary action that fixes the critical temperatures; the whole block is substantive statement content.",
+  "fix": ""
+ },
+ {
+  "label": "prop:q-exponential-taylor",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 3 sub-sections (Special values, Relation to physical constants, plus the proof) are post-statement tables/remarks, not statement rambling; the statement itself (ring + invertibility hypothesis + series) is tight and load-bearing.",
+  "fix": ""
+ },
+ {
+  "label": "prop:q-gaussian-solves-q-heat",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 350 words and 3 sub-sections are the proof plus interpretive remarks (time-rescaling, existence at q>0); the bare statement (Gaussian formula + fundamental-solution claim) is concise.",
+  "fix": ""
+ },
+ {
+  "label": "def:quantum-temperature",
+  "criterion": "clarity-defn-tight",
+  "verdict": "confirmed",
+  "rationale": "A 79-word preamble (superseded-note banner + Lean-sibling note + setup) precedes the one-line temperature definition T_q := \u210f_q = (q-1)/q.",
+  "fix": "Move the SUPERSEDED-\u03c1_q banner to authorNotes and the Lean-sibling note out of the lead so the definition opens nearer the top."
+ },
+ {
+  "label": "prop:reeb-operations-per-planck",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 331 words and 3 sub-sections are regime tables, physical-meaning discussion, and the information-rate corollary after the statement; the proposition statement n_R(q)=t_P(q)=q/(q-1) is one tight formula.",
+  "fix": ""
+ },
+ {
+  "label": "prop:toffoli-lp-stability",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "confirmed",
+  "rationale": "The 113-word preamble setting up T_q, G, and the NF coordinates before the four-part claim is genuine but mildly verbose, and the four labelled parts could state hypotheses more compactly.",
+  "fix": "Compress the pre-claim setup (Toffoli element, Gram matrix, NF expansion) into a single sentence before part (1)."
+ },
+ {
+  "label": "prop:algebraic-filter-classification",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "confirmed",
+  "rationale": "The 114 words are almost entirely the two-clause physical gloss ('entangled with curvature, sees SO(3) holonomy, geodesics trapped...') padding the binary [F_A,\u03b1]\u22600 vs =0 classification.",
+  "fix": "Trim the fermionic/bosonic interpretive clauses to the commutator condition plus a one-word label, moving the gloss to a remark."
+ },
+ {
+  "label": "def:arc-space",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The 3 sub-sections (brane-tower identification, 'why arc spaces', motivic-measure motivation) follow the actual definition (jet scheme + arc-space inverse limit), which is tight; the rest is connective exposition, not definitional bloat.",
+  "fix": ""
+ },
+ {
+  "label": "prop:brane-boundary",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "All 146 words are the genuine content: four numbered structural properties (codimension, exceptional object, involution symmetry, chirality interface) each carrying a distinct mathematical claim, not preamble.",
+  "fix": ""
+ },
+ {
+  "label": "def:brane-boundary",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined term 'defining boundary'/\u2202A_n is written in plain italics ('*defining boundary*') and never bolded or :defterm'd at its definition site.",
+  "fix": "Mark the term at its definition site, e.g. :defterm[defining boundary]{#brane-boundary}."
+ },
+ {
+  "label": "def:categorical-q-reeb-flow",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "'q-deformed Reeb derivation' and 'q-Reeb flow' are introduced only in plain italics ('*q-deformed Reeb derivation*', '*q-Reeb flow*'), never bolded or :defterm'd.",
+  "fix": "Mark the principal term, e.g. :defterm[q-Reeb flow]{#categorical-q-reeb-flow} at its definition site."
+ },
+ {
+  "label": "def:ccg-cosimplicial-identities",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "This block defines an identity/relation (the cosimplicial identities among coface/codegeneracy maps), not a noun-term; the bold-headed 'Definition.' names a statement, and the scanner's mangled token 'cosimplicial identities jet descent...' is not a genuine principal defined term.",
+  "fix": ""
+ },
+ {
+  "label": "def:direct-limit-algebra",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "'direct limit algebra of the quantum observable universe' appears only in plain italics, never bolded or :defterm'd at its introduction.",
+  "fix": "Mark the term, e.g. :defterm[direct limit algebra]{#direct-limit-algebra}."
+ },
+ {
+  "label": "prop:global-gluing",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 104 words are the genuine single-sentence statement (unique global gluing via Yekutieli quantization, A_\u221e a global section, vacuum state globally well-defined) plus its archimedean instantiation, not detachable preamble.",
+  "fix": ""
+ },
+ {
+  "label": "def:localized-knot",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "'localized knot' is introduced only in plain italics ('A *localized knot* is a pair'), never bolded or :defterm'd.",
+  "fix": "Mark the term, e.g. :defterm[localized knot]{#localized-knot}."
+ },
+ {
+  "label": "def:motivic-galois-character",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The principal term 'motivic Galois character of the Frobenius\u2013Hopf substrate' / 'motivic Galois character of A' IS bolded at both the lead and the definition site (**motivic Galois character...**); the scanner's token-overlap missed the multi-word match.",
+  "fix": ""
+ },
+ {
+  "label": "def:motivic-galois-character",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The bolded 'Definition.' gives the character homomorphism plus its local components compactly; the extra sub-sections ('why this is the right level', 'Lean axiomatization') are motivation/formalization notes, not definitional rambling.",
+  "fix": ""
+ },
+ {
+  "label": "prop:ordering-jet-compatibility",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The flagged 460-word 'preamble' is actually the four numbered claims (extension, multiplication-compatibility, well-foundedness, direct limit) plus the proof; the statement is genuinely four distinct hypotheses+conclusions, not preamble.",
+  "fix": ""
+ },
+ {
+  "label": "thm:qu-to-qou",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 247 words are the genuine theorem: hypotheses (quantum universe + observability) and five distinct structural conclusions (descent terminates, obstruction=Euler class, perpetual obstruction, branch-point formula, terminal fiber data), all load-bearing.",
+  "fix": ""
+ },
+ {
+  "label": "def:quantum-characteristic-classes",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "'quantum characteristic classes' (the \u03ba_n) is given only in plain italics ('The *quantum characteristic classes* ... are'), never bolded or :defterm'd.",
+  "fix": "Mark the term, e.g. :defterm[quantum characteristic classes]{#quantum-characteristic-classes}."
+ },
+ {
+  "label": "def:quantum-characteristic-classes",
+  "criterion": "clarity-defn-tight",
+  "verdict": "confirmed",
+  "rationale": "A 64-word preamble building the gerbe central-extension setup precedes the actual definition of the \u03ba_n classes; it is mildly verbose for a definition.",
+  "fix": "Compress the central-extension setup to one sentence before the \u03ba_n \u2208 H\u00b2(S,B) definition."
+ },
+ {
+  "label": "def:recursive-brane-tower",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "'recursive brane tower' appears only in plain italics ('The *recursive brane tower* is the sequence'), never bolded or :defterm'd.",
+  "fix": "Mark the term, e.g. :defterm[recursive brane tower]{#recursive-brane-tower}."
+ },
+ {
+  "label": "def:recursive-brane-tower",
+  "criterion": "clarity-defn-tight",
+  "verdict": "confirmed",
+  "rationale": "A long trailing paragraph (224 words) of terminology justification ('we use the term brane... we reserve Yekutieli... we accordingly write simply...') dilutes the actual recursive definition A_{n+1}=J\u00b9(A_n).",
+  "fix": "Move the brane/Yekutieli naming-rationale paragraph to a remark or authorNotes."
+ },
+ {
+  "label": "def:yekutieli-lifting-condition",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "'Yekutieli Lifting Condition' is given only in plain italics ('satisfies the *Yekutieli Lifting Condition*'), never bolded or :defterm'd.",
+  "fix": "Mark the term, e.g. :defterm[Yekutieli Lifting Condition]{#yekutieli-lifting-condition}."
+ },
+ {
+  "label": "def:yekutieli-triple",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "'Yekutieli triple' is introduced only in plain italics ('The *Yekutieli triple* at level n ... is the datum'), never bolded or :defterm'd.",
+  "fix": "Mark the term, e.g. :defterm[Yekutieli triple]{#yekutieli-triple}."
+ },
+ {
+  "label": "def:yekutieli-triple",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The 151 words are the genuine definitional content: the triple's three numbered components (objects, 1-morphisms, 2-morphisms) plus the functoriality clause, not preamble before the definition.",
+  "fix": ""
+ },
+ {
+  "label": "prop:categorical-chain-convergence-mechanisms",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "confirmed",
+  "rationale": "The block is an extended exposition (two mechanisms, combined picture, 'why this works', pre-archimedean home) with no crisp single statement; the 77-word lead and 332 words ramble before/around the boxed result.",
+  "fix": "Add a tight one-sentence Proposition statement of the truncation+factorisation result, demoting the surrounding mechanism prose to the proof/discussion."
+ },
+ {
+  "label": "prop:categorical-mass-markov",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 330 words and 4 sub-sections are the proof (three steps), explicit value table, and role-in-formula discussion; the bolded Proposition statement (single-level categorical mass = |\u222b_A \u03c1(\u03b2)|) is itself tight.",
+  "fix": ""
+ },
+ {
+  "label": "prop:color-spacetime-s5-factorization",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 399 'preamble' words are the proposition's three numbered claims plus the post-statement explanatory sections; the statement itself (S_2\u00d7S_3\u21aaS_5 faithful, orthogonal, trivial R\u2192finite hom) is three genuine conclusions.",
+  "fix": ""
+ },
+ {
+  "label": "prop:qbeta-c-k-closed-forms",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "confirmed",
+  "rationale": "The block (a conjecture file) buries its content in 447 words of motivation, residual tables, and research-path discussion with no crisp statement of the four conjectured closed forms up front.",
+  "fix": "Lead with a one-line statement of the c_4..c_7 conjectured closed forms (table), moving the motivation and research paths below."
+ },
+ {
+  "label": "prop:explicit-central-idempotent",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 485 words are the boxed Lagrange-interpolation formula plus a scope-correction note, four cross-checks, examples, significance, and provenance; the proposition statement (JM diagonalisation + e_\u03bb formula) is genuine dense content.",
+  "fix": ""
+ },
+ {
+  "label": "prop:hecke-branching-trace-decomposition",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 351 words are the statement (block decomposition with operator-valued A^\u03bb_{\u03bc,\u03bd}), proof via Wenzl, a downstream corollary, and remarks; the statement itself is one identity with its multiplicity definition, load-bearing.",
+  "fix": ""
+ },
+ {
+  "label": "prop:markov-trace-antipode-polynomial-symmetry",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 349 words are the proof-by-expansion, categorical interpretation, and a generalization conjecture; the Proposition statement (p(q) anti-self-reciprocal of degree 20) is two tight boxed identities.",
+  "fix": ""
+ },
+ {
+  "label": "def:mass-identity",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined term 'inertial mass' is given only in plain italics ('The *inertial mass* of a morphism \u03f1 ... is'), never bolded or :defterm'd (the scanner's 'mass' token reflects this).",
+  "fix": "Mark the term, e.g. :defterm[inertial mass]{#mass-identity} at its definition site."
+ },
+ {
+  "label": "prop:q-hecke-seminormal-character-closure",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "confirmed",
+  "rationale": "An 81-word setup naming B_K, \u03c1_\u03bb^q, and y_\u03bb via three compute-file cross-refs precedes the partition-sum statement; the citation-laden setup is mildly verbose for a statement.",
+  "fix": "Trim the inline compute-file references in the setup to the bare definitions of B_K, \u03c1_\u03bb^q, y_\u03bb."
+ },
+ {
+  "label": "prop:qbeta-canonical-markov-weights-explicit-instance",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 334 words and 4 sub-sections are the explicit numerical instance data and verification; the proposition's core identity is concise, the bulk being genuine worked values.",
+  "fix": ""
+ },
+ {
+  "label": "prop:qbeta-delta-tau-surrogate-taylor-coefficients",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "confirmed",
+  "rationale": "A 288-word preamble precedes the statement, which is mildly verbose setup for the Taylor-coefficient claim.",
+  "fix": "Compress the surrogate/\u0394\u03c4 setup preamble into one or two sentences before the coefficient statement."
+ },
+ {
+  "label": "def:qou-motivic-galois-instance",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "This block instantiates an existing definition (def:motivic-galois-character) via the Habiro evaluation map; it introduces no new principal noun-term to bold, so 'qou instance habiro' is not a genuine defined term.",
+  "fix": ""
+ },
+ {
+  "label": "def:qou-motivic-galois-instance",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The 418 words are a three-step construction, per-cell witness table, downstream-consumer and coherence notes for a concrete instance \u2014 not a single definition padded with preamble; the content is the instance data itself.",
+  "fix": ""
+ },
+ {
+  "label": "prop:rho-k-graded-expansion",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 525 words and 3 sub-sections are the boxed graded-expansion identity plus the LO/single-gen/pair-gen analysis, six-term identification, and witnesses; the proposition statement is one boxed equation, the rest genuine derivation.",
+  "fix": ""
+ },
+ {
+  "label": "def:adelic-substrate",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The bolded 'Definition.' gives the adele ring compactly; the 3 sub-sections ('why adeles', Tate integration, 'global stitch') are motivation following the definition, not preamble bloating it.",
+  "fix": ""
+ },
+ {
+  "label": "def:algebraic-quantum-volume",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The bolded 'Definition.' states Vol_q(\u03b2) tightly; the 398 words are the archimedean-shadow construction (\u03a6_1) and the three-invariant correspondence table, which are genuine definitional structure, not rambling preamble.",
+  "fix": ""
+ },
+ {
+  "label": "prop:alpha-shift-torus-knot",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 403 words are the conditional banner, the statement (shift exponent definition + two claims), and the proof on V_(1^p); the statement itself is tight (\u03b1_shift = k(p-1) with the maximizing channel).",
+  "fix": ""
+ },
+ {
+  "label": "thm:averaging-resonance-rule",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "confirmed",
+  "rationale": "The statement embeds a parenthetical worked proton example ('proton recipe: n_total=9, half-fill rung k=\u230a9/2\u230b=4 \u2295 1 wrap = 5') inside the hypotheses, mildly cluttering the rung-selection formula.",
+  "fix": "Move the inline proton-recipe numerical example out of the theorem statement into the structural-content discussion."
+ },
+ {
+  "label": "prop:beta-decay-transfer-matrix",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 91-word lead plus the transfer-matrix definitions are genuine content (the universal \u0394_\u03b2(q) construction and the three crossing matrices), and the 417 words are the full derivation, not detachable preamble.",
+  "fix": ""
+ },
+ {
+  "label": "prop:binding-error-amplification",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The Proposition statement (mass-defect error amplification by A=M_atom/B) is tight; the 332 words are the short proof and the light-nuclei amplification-factor discussion, genuine content.",
+  "fix": ""
+ },
+ {
+  "label": "lem:bond-order-eq-jet-degree",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 105-word lead sets up B_K and the GS filtration that the two numbered claims (jet vertical degree n; gr_n = n-body contribution) require; the words are the genuine hypotheses, not rambling.",
+  "fix": ""
+ },
+ {
+  "label": "prop:bring-residue-resolvent",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 438 'preamble' words are the proposition statement plus the \u00a73b-cond Lean-class scaffolding and three specialisations; the core statement (F_n(q)=1/(1-h_q q^n)) is one tight closed form.",
+  "fix": ""
+ },
+ {
+  "label": "prop:bring-trilog-imaginary-tate-rational",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 363 words and 4 sub-sections are the Kummer-reflection proof and closed form; the proposition statement (Im Li_3(\u03b6_5)=4\u03c0\u00b3/125, Tate-rational) is one boxed identity, load-bearing.",
+  "fix": ""
+ },
+ {
+  "label": "prop:calibration-cohomology-alignment",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "confirmed",
+  "rationale": "A 205-word preamble precedes the statement, mildly verbose setup before the cohomology-alignment claim.",
+  "fix": "Compress the pre-statement setup so the calibration\u2194cohomology claim appears nearer the top."
+ },
+ {
+  "label": "def:canonical-braid-interface-composition",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The 255 words consist of the genuine interface-classification definition plus boxed closed forms and empirical/asymmetry tables; the definitional content (the (n_pp,n_pn,n_nn) closed forms) is load-bearing, not verbose filler.",
+  "fix": ""
+ },
+ {
+  "label": "prop:cl3-zeta5-pslq-independence",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The bolded statement is the tight one-sentence PSLQ-certification claim with its boxed X; the 424 words are the PSLQ search tables, certification interpretation, and caveats \u2014 all legitimate post-statement exposition.",
+  "fix": ""
+ },
+ {
+  "label": "cor:commutative-chirality-vanishes",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The corollary statement (q\u21921 limit vanishing + two-term reduction) is tight; the word count and sub-sections are the proof, significance, companion-reading, and diagnostic sections that follow.",
+  "fix": ""
+ },
+ {
+  "label": "prop:confinement-nf-partial-proof",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 243-word 'preamble' is the genuine three-claim decomposition (T1/T2/T3) that IS the proposition's content; the bulk is the full proof of each theorem, not rambling lead-in.",
+  "fix": ""
+ },
+ {
+  "label": "prop:confinement-sdp",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 101-word preamble is the SDP setup (idempotents, cost operator) the primal/dual programs genuinely require; the 504 words are the displayed primal/dual SDP, companion remarks, and proof sketch.",
+  "fix": ""
+ },
+ {
+  "label": "prop:content-scaling-correspondence",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 85-word statement is the genuine Schur-Weyl content=magnetic-quantum-number identification plus the BW scaling table; it is hypotheses+conclusion, not padding.",
+  "fix": ""
+ },
+ {
+  "label": "prop:crystal-r-matrix-sub-lemma",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 86-word preamble is the genuine Hecke/LR-block setup the boxed pole-order formula needs; the 422 words are the conditional-class hypothesis, witness, and bridge sections after the tight statement.",
+  "fix": ""
+ },
+ {
+  "label": "prop:cyclotomic-cl3-orbit-sum-general",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the tight boxed orbit-sum identity plus its odd-N parity halving; the 341 words are the three-step proof, small-N verifications, and asymptotics.",
+  "fix": ""
+ },
+ {
+  "label": "prop:cyclotomic-dimension-synthesis-all-depths",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the tight boxed parity-dependent dimension formula; the 533 words are the upper-bound proof, Beilinson lower bound, depth-2 theorem, and prediction tables.",
+  "fix": ""
+ },
+ {
+  "label": "def:delta-q-decoration",
+  "criterion": "clarity-defn-single",
+  "verdict": "confirmed",
+  "rationale": "The block carries two distinct defterm directives \u2014 :defterm[delta_q-decoration] (the map) and :defterm[q-dimension layer] (the codomain layer) \u2014 matching its defines:[\"delta-q-decoration\",\"q-dimension-layer\"], so two definienda live in one definition block.",
+  "fix": "Split the q-dimension-layer defterm into its own definition block or demote it to a :refterm if it is defined elsewhere."
+ },
+ {
+  "label": "def:delta-q-decoration",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The definition proper (the \u03b4_q map and its per-irrep character formula) is tight with preambleWords=0; the 410 words are the Why-it-matters / Wedderburn / Computation / force-carrier example sections after the definition.",
+  "fix": ""
+ },
+ {
+  "label": "prop:eigenvalue-product-expansion",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement gives the eigenvalue product, its boxed four-term log expansion, and the origin table \u2014 genuine hypotheses+conclusion; the 323 words include the full Hoefsmit proof.",
+  "fix": ""
+ },
+ {
+  "label": "prop:electron-period-base",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 148-word block is a tight single-claim proposition (m_e is the n=0 base period propagating through the recurrence) with its cohomological interpretation; no rambling statement.",
+  "fix": ""
+ },
+ {
+  "label": "prop:feynman-classical-limit",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The whole block is the statement: five enumerated genuine degenerations of the q\u21921 limit (Hecke\u2192S_n, trace\u2192augmentation, etc.) \u2014 each is load-bearing mathematical content, not preamble.",
+  "fix": ""
+ },
+ {
+  "label": "prop:figure-eight-branching-rule",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the tight boxed branching-multiplicity character formula plus its two-component breakdown; the 319 words are the proof and combinatorial-structure discussion.",
+  "fix": ""
+ },
+ {
+  "label": "def:flavor-dressing-functor",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The definition (the functor \u03bc:Flavor\u2192\u211d_{>0}) is tight with preambleWords=2; the 309 words are Scope / Categorical role / Composition / Lean-encoding exposition after the definition.",
+  "fix": ""
+ },
+ {
+  "label": "thm:flavor-mass-splitting-bound",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The theorem statement is the tight two-sided substrate bound with its factor glossary; the 489 words are the why-splitting-only, slack-ratio, proof, and tightness sections.",
+  "fix": ""
+ },
+ {
+  "label": "prop:force-carrier-intertwining-correspondence",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the tight boxed dominant-Wedderburn-weight partition \u03bb=(p,1^{n-p}); the 577 words are the combinatorial principle, worked H_4 example tables, and significance.",
+  "fix": ""
+ },
+ {
+  "label": "prop:graded-hecke-energy-truncation-bound",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement (P_K(q) has at most \u2113(K,q_0)+1 nonzero terms) is tight after a genuine generating-function definition; the 311 words are the proof, computational consequence, and cache sections.",
+  "fix": ""
+ },
+ {
+  "label": "prop:graded-markov-trace-from-gs-filtration",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 99-word preamble is the genuine GS-filtration Setup the trace statement requires; the statement itself (unique tr_{M,\u2113} with two equivalent characterizations) is tight.",
+  "fix": ""
+ },
+ {
+  "label": "cor:habiro-expansion-atomic",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The corollary statement is the finite Habiro expansion with four crisply-enumerated properties (integrality, degree, termination, uniqueness); the 432 words are the constructive proof and witness table.",
+  "fix": ""
+ },
+ {
+  "label": "prop:he4-channel-active-set",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The Proposition (lines 55-71) is a tight three-claim statement (unique primal optimum, active set, dual ordering); the 320 words are the Setup, LP-formulation, solution tables, and interpretation.",
+  "fix": ""
+ },
+ {
+  "label": "prop:hecke-1d-irrep-closed-form-character",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the tight boxed pair of universal closed forms for the two 1-d irreps with its w/m glossary; the 390 words are the multiplicative proof and \u03c4_M decomposition role.",
+  "fix": ""
+ },
+ {
+  "label": "prop:hecke-generator-poly-reduction",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the tight single-generator collapse formula plus its division-free recursion; the 364 words are the inductive proof and the Markov-trace transfer-matrix consequence.",
+  "fix": ""
+ },
+ {
+  "label": "prop:hoefsmit-V21-cos-symmetrization",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement gives the explicit Hoefsmit V_(2,1) matrices and the Markov-symmetrized cos character; the 359 words are the symmetrization derivation, decomposition, and empirical anchor.",
+  "fix": ""
+ },
+ {
+  "label": "prop:hoefsmit-seminormal-form",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the tight Hoefsmit seminormal action with explicit a_\u03c1, b matrix entries and Hecke/braid relations; the 412 words are the proof and R-matrix/figure-eight applications.",
+  "fix": ""
+ },
+ {
+  "label": "def:hq-bi-filtration",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The definition (the knot-K-localised depth-n stratum H_q^{(n,K)} and the bi-filtration) is tight with preambleWords=0; the 322 words are the axes, compatibility table, and grid examples.",
+  "fix": ""
+ },
+ {
+  "label": "prop:jet-tower-convergence",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement (absolute convergence + boxed truncation-error bound + the N-count) is tight after the genuine brane-tower setup; the 494 words are the proof, hypothesis remark, and engineering/SDP sections.",
+  "fix": ""
+ },
+ {
+  "label": "cor:knot-factor-amphicheiral",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The corollary statement (Markov-amphicheiral \u21d2 sum-of-positive-squares knot factor) is tight; the words are the proof, worked 4_1 example, and a historical-formulation correction note.",
+  "fix": ""
+ },
+ {
+  "label": "prop:knot-indexed-convolution-grid",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement (each non-tensor convolution sits at a specific (n,K) stratum) is tight; the 394 words are the grid tables, two structural observations, and significance.",
+  "fix": ""
+ },
+ {
+  "label": "prop:knot-operator-lp-selection",
+  "criterion": "clarity-defn-misplaced",
+  "verdict": "false-positive",
+  "rationale": "The 'Define the demand/supply profile' lead-ins are auxiliary setup internal to the LP statement (defines[] is empty, no defterm directives), not a promotable standalone definition hiding in a proposition.",
+  "fix": ""
+ },
+ {
+  "label": "def:lp-duality-hypothesis-class",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The principal term is in fact bolded \u2014 '**finite LP strong-duality + complementary-slackness hypothesis class**' on line 4-5; the scanner's token-overlap missed the multi-word bold span.",
+  "fix": ""
+ },
+ {
+  "label": "def:lp-duality-hypothesis-class",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The definition (the HasFiniteLPDuality class with its two named fields) is tight; the 310 'preamble' words are actually the Why-this-exists / Bridge / When-unconditional / trivial-model exposition that follows the definition.",
+  "fix": ""
+ },
+ {
+  "label": "prop:lr-coefficient-hecke",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the tight LR-coefficient multiplicity definition plus the Yamanouchi-tableau characterization and non-negativity; the 247 words are the categorical interpretation and Wenzl-branching role.",
+  "fix": ""
+ },
+ {
+  "label": "prop:lusztig-vs-hermitian-bar",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement (\u03b2_L=\u03b2_H iff Im(q)=0) is a tight one-line iff; the 415 words are the proof, three-regime table, decomposition law, and CAL-4 caveat.",
+  "fix": ""
+ },
+ {
+  "label": "prop:magic-A-binding-formula",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The theorem statement is the tight closed form B=\u03c1_F\u00b7m_e\u00b7A\u00b78G with its He-4 specialization; the 387 words are the regime-dispatch discussion, \u03c1_F derivation, and witness.",
+  "fix": ""
+ },
+ {
+  "label": "def:markov-axiom-recursive-ascent",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The definition is the genuine four-step recursive-ascent algorithm (preambleWords=1, defterm marked); the 364 words are the Why-it-matters, Lean-status, and scope sections.",
+  "fix": ""
+ },
+ {
+  "label": "prop:markov-pair-z2",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement (tr_M(\u03c3_i\u03c3_j)=z^2, adjacent or not) is a tight one-line identity; the 432 words are the two-step-peel proof, why-adjacency-doesn't-matter, and operator interpretation.",
+  "fix": ""
+ },
+ {
+  "label": "thm:markov-trace-product",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement (tr_M factors as the product of vertex volumes V\u0302_i) is tight; the 323 words are the peeling proof, the non-adjacency caveat, and the corrected trefoil example.",
+  "fix": ""
+ },
+ {
+  "label": "prop:markov-trace-ratio-exact",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement (Jones-normalization cancels in tr_M ratios, so Gram/LP/shadow-prices are scale-exact) is tight; the 237 words are the proof and HOMFLYPT-engine consequence.",
+  "fix": ""
+ },
+ {
+  "label": "prop:mass-categorical-descent",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement (B decomposes into descended-central + transient-divisor components) is tight; the 419 words are the BW-term tables, mass/coupling parallel, and proof sketch.",
+  "fix": ""
+ },
+ {
+  "label": "prop:mass-element-nf",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the tight NF decomposition of \u03a6_mass with a_0=0; the 340 words are the photon-masslessness explanation, degree-filtration table, and electron worked example.",
+  "fix": ""
+ },
+ {
+  "label": "prop:meson-color-tube-uniqueness",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "confirmed",
+  "rationale": "The italicized statement packs the genuine factorization (lines 2-7) together with provenance meta-commentary ('the fitted/derived-candidate status \u2026 is hereby converted to derived modulo \u2026' plus #1444/#1445 cross-refs), which is rambling lead-in that belongs in prose, not the statement.",
+  "fix": "Trim the statement to the m_K^2/m_pi^2 = [3]_q\u00b7[4]_q factorization claim and move the 'fitted\u2192derived' status note and #1444/#1445 references into a following remark or authorNotes."
+ },
+ {
+  "label": "prop:meson-kaon-pion-hecke-seifert",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the tight m_K/m_pi closed form with its three enumerated factors (Hecke character, Seifert-volume ratio, two-quark exponent); the 475 words are the proof, witness, and Lean status/gap tables.",
+  "fix": ""
+ },
+ {
+  "label": "def:motivic-mass-measure",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The 311-word definition genuinely builds the Grothendieck ring, Lefschetz motive, the KDL measure map, and the volume formula \u2014 that layered construction IS the definitional content, not padding.",
+  "fix": ""
+ },
+ {
+  "label": "prop:operator-valued-combiner-convergence",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the tight boxed one-step recursion cv(A+1)=w(A)\u00b7cv(A) plus its product unwinding; the 451 words are the categorical interpretation, conditional-class hypothesis, and production wiring.",
+  "fix": ""
+ },
+ {
+  "label": "prop:pentagon-uv-commutation",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement (pentagon identity applies to the operator lift across adjacent jet levels, giving the ascension rule) is tight; the 442 words are the level-internal lemma, derivation sketch, and mass-tower role.",
+  "fix": ""
+ },
+ {
+  "label": "def:phi-q-piece",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The principal term is bolded \u2014 '**\u03a6$_q$-piece $K_S \\subseteq S^3$**' on line 5; the scanner's token-overlap missed it because of the \u03a6_q/K_S notation in the bold span.",
+  "fix": ""
+ },
+ {
+  "label": "def:phi-q-piece",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The 84-word lead-in is the genuine braid/crossing-smoothing setup the K_S definition requires; the 429 words are the three structural properties and the motivic (Faddeev-Kashaev) interpretation after the definition.",
+  "fix": ""
+ },
+ {
+  "label": "prop:pn-averaging-uniqueness",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The opening bolded statement is a tight uniqueness claim with three explicitly labeled hypotheses (a)(b)(c) and conclusion; the high word count comes from the Setting/Derivation/Lean exposition sections that follow, not from a rambling statement.",
+  "fix": ""
+ },
+ {
+  "label": "prop:prolonged-periods-fixed-depth",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The Cayley-Hamilton existence argument is the genuine derivation of the depth-d recurrence; the statement (bolded lead + boxed recurrence) is the actual hypotheses and conclusion, not preamble padding.",
+  "fix": ""
+ },
+ {
+  "label": "prop:q-beta-bar-even-kernel-invariant",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The bolded Proposition states a clean iff (clean integer-u Taylor representation iff R is bar-even); the word count is from the discriminant motivation, proof, and contrast-table sections that follow the statement.",
+  "fix": ""
+ },
+ {
+  "label": "prop:q-beta-bar-even-kernel-typeclass",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is a tight definition+composition claim about the BarEvenKernel typeclass bundling four gates; the length is the class-field listing and composition-theorem exposition, which is the genuine content.",
+  "fix": ""
+ },
+ {
+  "label": "prop:q-beta-c-2-eq-neg-one-structural",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the single structural identity c_2 = -1 over any commutative ring; the word count is from the one-line proof and the 'why structural not fit' / numerical-impact sections.",
+  "fix": ""
+ },
+ {
+  "label": "prop:q-beta-c-k-leading-bias-correction-identity",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is a precise bias-correction identity with an explicit hypothesis (leading-order-linear bias) and conclusion modulo u_0^2; the length is the proof, numerical-confirmation table, and implications, not statement rambling.",
+  "fix": ""
+ },
+ {
+  "label": "prop:q-beta-c3-hopf-three-fold-markov",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The structural claim c_3 = J_Hopf(q=1) = -2 is stated in a boxed equation with its scope; the four-fact categorical chain that follows is the genuine derivation, not preamble.",
+  "fix": ""
+ },
+ {
+  "label": "prop:q-beta-direction-sanity-gate",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The bolded Proposition gives the direction-sanity invariant as a clean magnitude criterion (>10x refutes); the word count is from the refutation-precedent, target-magnitude, and checklist sections.",
+  "fix": ""
+ },
+ {
+  "label": "prop:q-beta-q-eq-one-shadow-gate",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the two classical-limit shadows (c_2->-1, c_3->-2) with a one-line refutation rule; the length is the gate-table, proof sketch, and composition exposition.",
+  "fix": ""
+ },
+ {
+  "label": "prop:q-beta-radius-of-convergence-gate",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the simple-pole / ratio-test radius-of-convergence claim with its refutation corollary; the word count is the proof sketch, numerical-anchor table, and checklist, all genuine content.",
+  "fix": ""
+ },
+ {
+  "label": "prop:q-gaussian-obstruction-at-q0",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the non-existence of the q-Gaussian at q_0>1 plus the super-exponential moment witness; the length is the three-step proof and consequence, which is the genuine argument.",
+  "fix": ""
+ },
+ {
+  "label": "def:q-reeb-flow-on-color-coords",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The principal term 'q-Reeb flow' appears only as a linked reference at the definition site and the bolded spans are secondary terms (signed rate multiplier, Color-twist accumulation), so the defined flow-on-color-coords term is never bolded/defterm'd.",
+  "fix": "Wrap the principal definiendum at its definition site, e.g. :defterm[q-Reeb flow on color coordinates]{#q-reeb-flow-on-color-coords}."
+ },
+ {
+  "label": "def:q-reeb-flow-on-color-coords",
+  "criterion": "clarity-defn-tight",
+  "verdict": "confirmed",
+  "rationale": "The definition opens with no statement lead and spreads the flow's defining action across four narrative sub-sections (Color-twist accumulation, Composition, Two-strand localisation) before the rate-multiplier axiom, which is mildly preambly for a definition.",
+  "fix": "Lead with the rate-multiplier axiom flow t k psi = psi + k*q*t, then demote the accumulation/composition prose to a remark."
+ },
+ {
+  "label": "prop:q-zero-complex-extension",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement names the substrate identities transferred polymorphically to R=C with |q|>1 and is the genuine hypotheses+conclusion; the length is the proof and CAL-4-caveat / unit-circle-relation discussion.",
+  "fix": ""
+ },
+ {
+  "label": "prop:qbeta-c4-from-c3-c8-product-identity",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the product identity c_8 = c_3*c_4 with its rational instance at the silver ratio; the word count comes from the 'why this matters', companion-identity, and honest-caveats sections.",
+  "fix": ""
+ },
+ {
+  "label": "prop:qbeta-c8-c10-silver-rationals",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement gives the three closed-form c_8/c_9/c_10 values at the silver ratio in a single display; the length is the significance, Lean-proof, and q-usage sections, not statement rambling.",
+  "fix": ""
+ },
+ {
+  "label": "prop:qmn-recursive-memoized",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the q-MN recursion plus the memoisation complexity table (the genuine speed/storage claim); the long word count is the atom-knot motivation and infrastructure discussion.",
+  "fix": ""
+ },
+ {
+  "label": "def:quantum-bloch-group",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The definition of the quantum Bloch group via the pentagon identity is stated compactly at the top; the sub-sections (pre-archimedean refinement, Kashaev invariant) are the genuine surrounding content, and the definition proper is not verbose.",
+  "fix": ""
+ },
+ {
+  "label": "prop:quantum-dilogarithm-stratified",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the centre-stratified expansion of Phi_q with its Frobenius-dual coefficient identity plus a corollary; every clause is a genuine hypothesis or conclusion, not preamble.",
+  "fix": ""
+ },
+ {
+  "label": "prop:ramified-disc-fusion",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement enumerates three precise conclusions (Fusion, Monodromy, Lagrange-resolvent comparison) for the branched cover; the word count is the per-part proof sketch, which is genuine content.",
+  "fix": ""
+ },
+ {
+  "label": "prop:reeb-bundle-complement-equals-volume",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The conditional Proposition states the JSJ-graded trace=volume identity with its sum over hyperbolic pieces; the length is the 'why conditional', corollaries, and cross-links, all genuine.",
+  "fix": ""
+ },
+ {
+  "label": "def:reeb-bundle",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The principal term is bolded at its definition site ('The **Reeb bundle** at p is the principal U(1)-bundle'), so the scanner's token-overlap simply missed the marked occurrence.",
+  "fix": ""
+ },
+ {
+  "label": "prop:residue-at-root",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The bolded Proposition (algebraic cyclotomic residue) gives a tight well-definedness statement via cyclotomic projection; the word count is the Setup, 'why this replaces the class field', and proof-sketch sections.",
+  "fix": ""
+ },
+ {
+  "label": "prop:s4-s3-half-symmetric-projection",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The conditional statement claims the half-symmetric H_4 projection extracts exactly one octahedral cell; the length is the branching-table proof and the VolDensity-refinement discussion, which is genuine.",
+  "fix": ""
+ },
+ {
+  "label": "prop:six-term-per-derivation-weights",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the per-term weighted binding-energy decomposition with its explicit five-term formula; the word count is the per-term derivations, empirical verification, and open-questions sections.",
+  "fix": ""
+ },
+ {
+  "label": "prop:skein-generation",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "This is a very short block (no bolded Proposition header) stating the Skein module is generated by torus-knot generators plus the Hopf link with a finite-polynomial resolution; the words are the genuine generating-set statement.",
+  "fix": ""
+ },
+ {
+  "label": "prop:spectral-sequence-collapse",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the HH^k=0 vanishing collapsing the spectral sequence to Z(A); the word count is the proof plus three corollary blocks (mass functional, Frobenius duality, practical consequence), all genuine content.",
+  "fix": ""
+ },
+ {
+  "label": "prop:t-beta-markov-frobenius-collapse-general",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is a precise min-Frobenius-norm collapse with typeclass hypotheses, PSD/non-degeneracy conditions, and equality case; the length is the substrate-relation table, proof steps, and Hecke application.",
+  "fix": ""
+ },
+ {
+  "label": "prop:t-beta-markov-frobenius-collapse",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement gives T_beta = S*1_H as the unique min-Frobenius-norm constraint solution; the word count is the completing-the-square proof, c_k-invariance corollary, and categorical-reading sections.",
+  "fix": ""
+ },
+ {
+  "label": "prop:terminal-resolution",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "This block is essentially a four-row results table (proton/neutron/deuteron/binding vs CODATA) with a one-line lead; there is no rambling statement, only the genuine numerical comparison.",
+  "fix": ""
+ },
+ {
+  "label": "prop:three-halves-structural-factor",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement lists five concrete q-bracket identities (muon and tau sets) that are exactly the proved content; the word count is the Lean and role-in-framework sections, not statement padding.",
+  "fix": ""
+ },
+ {
+  "label": "prop:three-parameters-wedderburn",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The opening is a one-sentence claim (number of inputs = number of partitions of 3); the length is the Wedderburn decomposition, projection tables, and 'why three suffices' exposition, which is genuine derivation.",
+  "fix": ""
+ },
+ {
+  "label": "prop:thurston-volume-additivity",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The cited Thurston Proposition states the Bloch-Wigner volume-sum tightly; the word count is the braid-theoretic consequence and extremality (Lobachevsky) sections, all genuine content.",
+  "fix": ""
+ },
+ {
+  "label": "prop:topological-mass-formula-algebraic",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement gives the algebraic-side closed form m_alg = Phi_1/hbar_q^2 in Q(q) with the descended+tower decomposition; the length is the 'why algebraic-side', compatibility, and proof sections.",
+  "fix": ""
+ },
+ {
+  "label": "prop:topological-mass-formula",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the archimedean mass formula m(K)=Vol(K)/hbar_q^2 with its setup; the word count is the three-step derivation (holonomy, dilogarithm sum, combine), which is the genuine proof.",
+  "fix": ""
+ },
+ {
+  "label": "prop:tower-binding-energy",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement gives the per-channel vertex volumes, the brane-tower Phi_q, and the closed binding/mass formulas; the length is the derivation and per-channel breakdown, all genuine hypotheses and content.",
+  "fix": ""
+ },
+ {
+  "label": "lem:tower-pair-equality-fixed-level",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The Lemma states the pair contribution is an exact equality (no upper-bound slack); the word count is the 'why equality not bound', proof, and residual-discussion sections, not statement rambling.",
+  "fix": ""
+ },
+ {
+  "label": "def:transfer-matrix-operator",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The defined term 'transfer matrix' is bolded both in the lead paragraph and at the Definition site ('the **transfer matrix** of the crossing is'), so the term is genuinely marked.",
+  "fix": ""
+ },
+ {
+  "label": "def:two-row-stratum",
+  "criterion": "clarity-defn-single",
+  "verdict": "confirmed",
+  "rationale": "The .ts defines two distinct definienda, 'two-row-stratum' and 'two-row-projection', each introduced with its own :defterm directive, so the block bundles two definitions.",
+  "fix": "Split the two-row projection into its own definition block (or demote it to a derived construction of the stratum)."
+ },
+ {
+  "label": "def:two-row-stratum",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The definition proper (stratum + projection + trace split) is tight in the opening Definition section; the word count comes from the Structural-significance, Indexing, and Empirical-use sections, which are genuine surrounding content.",
+  "fix": ""
+ },
+ {
+  "label": "prop:unified-curvature-rank-mass-formula",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the boxed single-sum-over-strata mass formula with its weight definitions; the length is the proof, the historical-term mapping, and the chirality refinement, all genuine content.",
+  "fix": ""
+ },
+ {
+  "label": "prop:unified-iterative-correction",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement gives the unified per-partition accumulator with its component list and per-step formulation; the large word count is the proof, legacy-mechanism specialisations, and algorithm summary, which are the genuine content.",
+  "fix": ""
+ },
+ {
+  "label": "prop:unit-modulus-eigenvalue",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is a tight two-sentence claim (even-length braids give unit-modulus eigenvalues; Borromean gives lambda=-1); the word count is the proof, eigenvalue table, and baryon-meson duality discussion.",
+  "fix": ""
+ },
+ {
+  "label": "prop:universal-braid-branching",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the branching character formula with its three base-character table; the word count is the proof, symbolic base-character computations, and convergence bound, all genuine derivation.",
+  "fix": ""
+ },
+ {
+  "label": "prop:vertex-is-exceptional-divisor",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement enumerates three precise conclusions (Localisation, Confinement, Completeness) for the Hecke action on the Reeb bundle; each is a genuine claim, and the block is short with no preamble padding.",
+  "fix": ""
+ },
+ {
+  "label": "prop:vol-through-tau",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the factor-through-tau claim with its commuting diagram and uniqueness; the word count is the identification, sketch (both directions), and consequence sections, which are genuine content.",
+  "fix": ""
+ },
+ {
+  "label": "prop:wedderburn-trace-identity",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The bolded Proposition states the sum-of-squared-q-dimensions = q-factorial identity tightly; the word count is the consequence-for-mass, explicit-values table, and proof sections.",
+  "fix": ""
+ },
+ {
+  "label": "prop:wenzl-qmn-synergy",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement combines the Wenzl-bridge and q-MN complexity results into the tr_M formula with its time bound; the length is the speedup tables, cross-validation, implications, and code references, all genuine.",
+  "fix": ""
+ },
+ {
+  "label": "prop:wigner-np-pairing",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement gives the (2,2) Wigner-energy term with its q-hook scale and binding increment formula; the word count is the proof, mass-table improvement, and unified-correction subsumption note, all genuine content.",
+  "fix": ""
+ },
+ {
+  "label": "prop:y-lambda-cyclotomic-factorization",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The flagged words are the genuine hypotheses (\u03c3_i Hecke generators, Markov parameter z, \u03bb\u22a2n at n\u2208{2,3,4}) and the closed-form conclusion y_\u03bb = P_\u03bb/D_n; the 'preamble' is just the Lean-sibling note plus the statement itself.",
+  "fix": ""
+ },
+ {
+  "label": "def:z-habiro-ring",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The block is a single genuine inverse-limit definition with its required q-Pochhammer ideal data; the length is the actual definitional content, not padding.",
+  "fix": ""
+ },
+ {
+  "label": "def:bundle-isotopy-equivalence",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The defined term is bolded as **isotopy equivalent**; the scanner's token form 'bundle isotopy equivalence' simply failed to overlap-match the wrapped phrase.",
+  "fix": ""
+ },
+ {
+  "label": "prop:sorting-color-energy",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The four numbered parts are the genuine hypotheses and conclusions (eigenspace decomposition, sorting=projection, energy-per-crossing, total sorting energy), not rambling.",
+  "fix": ""
+ },
+ {
+  "label": "def:torsion-knot-flow",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The defined term is bolded as **torsion-driven knot flow**; the scanner's reduced form 'torsion knot flow' missed the wrapped phrase.",
+  "fix": ""
+ },
+ {
+  "label": "def:q-yang-mills-levi",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The principal defined term '$q$-weighted Yang\u2013Mills\u2013Levi functional' is only italicized (*...*), never bolded or :defterm'd, which the register no longer permits for defined terms.",
+  "fix": "Wrap the term as **$q$-weighted Yang\u2013Mills\u2013Levi functional** (or :defterm) at its definition site."
+ },
+ {
+  "label": "prop:skew-poisson-integration",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The words are the genuine hypothesis (smooth commutative formal group H, skew-Poisson structure) and the three-clause existence conclusion, not preamble.",
+  "fix": ""
+ },
+ {
+  "label": "def:spatial-realization-functor",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined term 'spatial realization' is only italicized (*spatial realization*), never bolded or :defterm'd.",
+  "fix": "Bold the term as **spatial realization** at its definition site."
+ },
+ {
+  "label": "def:witt-vector-lift",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined term 'Witt vector lift' is only italicized (*Witt vector lift*), never bolded or :defterm'd.",
+  "fix": "Bold the term as **Witt vector lift** at its definition site."
+ },
+ {
+  "label": "def:witt-vector-lift",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The 88-word 'preamble' is the Lean-note plus the genuine setup of the formal-group data the lift requires, and the block is a single concise definition sentence.",
+  "fix": ""
+ },
+ {
+  "label": "prop:assembly-projector-exists",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is a tight existence-and-idempotence claim for e_{\u03bb,(N)}; the remaining words are clarifying 'what this does not assert' prose, not the flagged statement.",
+  "fix": ""
+ },
+ {
+  "label": "def:benzene-molecular-braid",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The principal defined object 'benzene molecular braid' is never bolded/:defterm'd \u2014 only the 'Definition.' label is bold, and 'Benzene C6H6' sits in plain italic body text.",
+  "fix": "Bold the defined term, e.g. **Benzene** (benzene molecular braid), at its definition site."
+ },
+ {
+  "label": "def:benzene-molecular-braid",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The strand-count, bond-structure, and iterative-construction sections are the genuine constructive content of a molecular-braid definition, not verbosity.",
+  "fix": ""
+ },
+ {
+  "label": "prop:benzene-threading-emergence",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The flagged words are the genuine conditional statement (LP dual selects T(2,6)) plus the candidate-configuration table that constitutes the proposition's content.",
+  "fix": ""
+ },
+ {
+  "label": "def:ch4-molecular-braid",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined object 'methane molecular braid' is never bolded/:defterm'd \u2014 only 'Definition.' is bold and 'Methane CH4' is plain italic body text.",
+  "fix": "Bold the defined term, e.g. **Methane** (ch4 molecular braid), at its definition site."
+ },
+ {
+  "label": "def:ch4-molecular-braid",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The multi-stage constituent/assembly/construction content is the genuine definitional substance of the molecular braid, not rambling.",
+  "fix": ""
+ },
+ {
+  "label": "prop:co-lp-dual-binding",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The words are the genuine conditional statement (LP active set of cardinality 2, orthogonal \u03c3\u22a5\u03c0 channels, dative third bond) plus its supporting refutation, the actual proposition content.",
+  "fix": ""
+ },
+ {
+  "label": "def:co-molecular-braid",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined object 'carbon monoxide molecular braid' is never bolded/:defterm'd \u2014 only 'Definition.' is bold and 'Carbon monoxide CO' is plain italic.",
+  "fix": "Bold the defined term, e.g. **Carbon monoxide** (co molecular braid), at its definition site."
+ },
+ {
+  "label": "def:co-molecular-braid",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The three-stage atom/assembly/construction content is the genuine constructive definition of the CO molecular braid.",
+  "fix": ""
+ },
+ {
+  "label": "prop:co2-lp-dual-binding",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The words are the genuine conditional statement (LP selects symmetric linear O=C=O) plus its shadow-price and configuration content, the actual proposition.",
+  "fix": ""
+ },
+ {
+  "label": "def:co2-molecular-braid",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined object 'carbon dioxide molecular braid' is never bolded/:defterm'd \u2014 only 'Definition.' is bold and 'Carbon dioxide CO2' is plain italic.",
+  "fix": "Bold the defined term, e.g. **Carbon dioxide** (co2 molecular braid), at its definition site."
+ },
+ {
+  "label": "def:co2-molecular-braid",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The constituent/assembly/construction sections are the genuine constructive definition of the CO2 molecular braid.",
+  "fix": ""
+ },
+ {
+  "label": "def:covalent-bond-shared-trefoil",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The defined term is bolded as **covalent bond of order $k$**; the scanner's form 'covalent bond shared trefoil' failed to overlap-match it.",
+  "fix": ""
+ },
+ {
+  "label": "def:covalent-bond-shared-trefoil",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The bond-operator formula, lone-vs-shared table, and bond-order list are the genuine definitional content, not padding.",
+  "fix": ""
+ },
+ {
+  "label": "def:electron-shell-braid-capacity",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The defined term is bolded as **shell capacity**; the scanner's form 'electron shell braid capacity' failed to overlap-match it.",
+  "fix": ""
+ },
+ {
+  "label": "def:electron-shell-braid-capacity",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The capacity/valence formulas and atom tables are the genuine definitional content of the shell-capacity rule.",
+  "fix": ""
+ },
+ {
+  "label": "def:embeddable-knot-operator",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The block is a tight definition (term bolded, binding-contribution formula) followed by genuine axial/transverse, composite, and dimension-bound content.",
+  "fix": ""
+ },
+ {
+  "label": "def:h2-molecular-braid",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The term 'hydrogen molecule' is bolded and the three-stage transfer-matrix construction is the genuine definitional substance.",
+  "fix": ""
+ },
+ {
+  "label": "def:h2o-molecular-braid",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined object 'water molecular braid' is never bolded/:defterm'd \u2014 only 'Definition.' is bold and 'Water H2O' is plain italic.",
+  "fix": "Bold the defined term, e.g. **Water** (h2o molecular braid), at its definition site."
+ },
+ {
+  "label": "def:h2o-molecular-braid",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The block is a single concise definition sentence plus two short interpretive lines; the flagged 'preamble' is just the Lean-note and the definition's required strand-partition data.",
+  "fix": ""
+ },
+ {
+  "label": "def:molecular-assembly-projector",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The defined term is bolded as **assembly projector**; the scanner's reduced form missed the wrapped phrase.",
+  "fix": ""
+ },
+ {
+  "label": "def:molecular-assembly-projector",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The block is a genuine idempotent-projector definition plus the benzene specialisation interpretation, concise for its content.",
+  "fix": ""
+ },
+ {
+  "label": "def:parabolic-hecke-subalgebra",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The defined term is bolded as **parabolic (Young) Hecke subalgebra**; the scanner's token form failed to overlap-match it.",
+  "fix": ""
+ },
+ {
+  "label": "prop:shell-filling-rule",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The numbered aufbau clauses and the LP-dual electronegativity statement are the genuine proposition content, not rambling.",
+  "fix": ""
+ },
+ {
+  "label": "prop:symmetric-block-domain-weight",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The flagged words are the genuine statement (every \u03c3_i acts as scalar q on the symmetric block; weight law q^\u2113; lone/bond ratio q^2), the actual hypotheses and conclusion.",
+  "fix": ""
+ },
+ {
+  "label": "prop:borromean-hopf-energy-crossover",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The two-phase setup and four-part mass/binding/crossover/compression statement are the genuine proposition content, not preamble.",
+  "fix": ""
+ },
+ {
+  "label": "prop:centered-hecke-variance-positive",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The words are the genuine hypothesis (Wenzl positivity regime, centred generator) and the explicit positive-variance conclusion.",
+  "fix": ""
+ },
+ {
+  "label": "def:double-slit-q-phase",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined term '$q$-deformed path phase' is only italicized (*$q$-deformed path phase*), never bolded or :defterm'd.",
+  "fix": "Bold the term as **$q$-deformed path phase** at its definition site."
+ },
+ {
+  "label": "def:double-slit-q-phase",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The phase-decomposition formula and the labelled geometric/Reeb/Planck components are the genuine definitional content.",
+  "fix": ""
+ },
+ {
+  "label": "prop:gravity-spectral-prefactor",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The flagged words are the genuine statement (\u03b1 = m_e\u00b78G prefactor and the G_q residue-ratio formula), the actual hypotheses and conclusion.",
+  "fix": ""
+ },
+ {
+  "label": "def:hopf-diquark",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined term 'Hopf diquark' is only italicized (*Hopf diquark*), never bolded or :defterm'd.",
+  "fix": "Bold the term as **Hopf diquark** at its definition site."
+ },
+ {
+  "label": "def:hopf-diquark",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The crossing-energy, color-representation, and flavor-antisymmetric-channel sections are the genuine definitional content of the diquark, not padding.",
+  "fix": ""
+ },
+ {
+  "label": "prop:magic-numbers-from-q",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The words are the genuine statement (magic numbers from q_0 via the cumulative Wedderburn-weighted \u03a6(Z) and its second-difference peaks), the actual proposition.",
+  "fix": ""
+ },
+ {
+  "label": "prop:neutron-prediction-comparison",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The flagged words are the genuine beta-stability prediction formula and its AME2020 comparison statement, the real proposition content.",
+  "fix": ""
+ },
+ {
+  "label": "prop:q-plancherel-asymptotic-skeleton",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The three numbered clauses (limit existence, variance bound, conjectural limit identification) are the genuine hypotheses and conclusions, not rambling.",
+  "fix": ""
+ },
+ {
+  "label": "prop:s5-equivariant-torus-knots",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The words are the genuine iff statement (T_{2,s} admits an equivariant Bring-surface embedding iff s\u2208{3,5}) plus its corollary and comparison, the actual content.",
+  "fix": ""
+ },
+ {
+  "label": "prop:substrate-consistency-window",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The flagged words are the genuine empirical claim (one free parameter q, overdetermined consistency window [1.109,1.112]) and its derived-quantity content, not preamble.",
+  "fix": ""
+ },
+ {
+  "label": "def:molecular-hopf-chain",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The term 'molecular Hopf chain' is bolded and the composite/linking-matrix/boundary/crossing-energy sections are the genuine definitional content.",
+  "fix": ""
+ },
+ {
+  "label": "def:molecular-hopf-ring",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The term 'molecular Hopf ring' is bolded and the threading-link definition with Alexander-weight and rigidity content is the genuine definitional substance.",
+  "fix": ""
+ },
+ {
+  "label": "prop:atom-knot-exists",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is a tight one-sentence existence claim (lines 1-4); the 138 words counted are the constructive proof's numbered NF-construction steps, which are genuine proof content, not a rambling statement.",
+  "fix": ""
+ },
+ {
+  "label": "prop:atom-knot-unique",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is a concise Markov-equivalence uniqueness claim with one display equation; the flagged sub-sections are the proof's Reidemeister-move list and a legitimate Scope caveat, not statement rambling.",
+  "fix": ""
+ },
+ {
+  "label": "def:atom-knot",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The principal term is bolded as **atom of type $(Z,N)$** on line 2; the scanner's slug 'atom knot grobner normal form' just failed token-overlap against the rendered bold span.",
+  "fix": ""
+ },
+ {
+  "label": "def:atom-knot",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The 236 words are the genuine definitional content \u2014 the block decomposition formula plus the required explanation of each of the three quark-block terms and the Markov-closure well-definedness clause.",
+  "fix": ""
+ },
+ {
+  "label": "prop:atomic-lp-stability",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "confirmed",
+  "rationale": "The 'statement' runs as three discursive paragraphs mixing the LP-instability claim with its dressing-stabilisation explanation and the composite-nuclei aside, reading more like exposition than a tight hypothesis-conclusion.",
+  "fix": "Split into a one-sentence instability claim plus a separate proof/remark for the dressing and composite-nuclei discussion."
+ },
+ {
+  "label": "prop:atomic-nf-witness",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement enumerates the genuine verified content of the NF-witness construction (ground-state ordering, electron insertion, GS reduction, stripping thresholds, certificates) \u2014 these are the actual claims, not padding.",
+  "fix": ""
+ },
+ {
+  "label": "prop:bar-involution-invariance",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the three numbered bar-invariance claims (Plancherel-weight, transpose-pair, folded-NF); the 504 words come from the separate proof, witness-rationale and worked-example sections that follow.",
+  "fix": ""
+ },
+ {
+  "label": "prop:c-equals-bar-iff-all-1dim",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The iff statement plus the H2/H3 instantiation (lines 1-9) is tight; the 439 words are the two-direction proof and the 'Why H2 is unique' Artin-Wedderburn discussion, all genuine proof content.",
+  "fix": ""
+ },
+ {
+  "label": "def:confined-particle",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The 365 words are the genuine definitional content \u2014 the 4-tuple plus required explanation of each component, the q-indexed confinement predicate, canonical representative, and a worked examples list, none of it filler.",
+  "fix": ""
+ },
+ {
+  "label": "def:confinement-category",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The 223 words define a category, which intrinsically requires objects, the three morphism families, composition, identity, plus the trace-functor extension \u2014 all structural definitional content.",
+  "fix": ""
+ },
+ {
+  "label": "thm:confinement-grading-correspondence-conditional",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The conditional-on-conjecture banner and the iff statement with its display equation are the genuine hypotheses+conclusion; the 90-word lead is the required \u00a73b-cond conditional framing, not rambling.",
+  "fix": ""
+ },
+ {
+  "label": "prop:confinement-level-exists",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is a single tight existence-and-finiteness sentence (lines 2-5); the 116 words counted are the finiteness proof, genuine content.",
+  "fix": ""
+ },
+ {
+  "label": "prop:confinement-level-unique",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The uniqueness statement with the min-definition is concise; the 111 words are the three numbered well-definedness justifications (monotone, upward-closed, nonempty) plus the local-in-q note \u2014 genuine proof content.",
+  "fix": ""
+ },
+ {
+  "label": "def:confinement-level",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The principal term is bolded as **confinement filtration** $J^\\bullet(q)$ on line 11 and 'confined at level $\\ell$' on line 28; the scanner's slug 'confinement level shadow price filtration' missed it on token-overlap.",
+  "fix": ""
+ },
+ {
+  "label": "prop:confinement-lp",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "confirmed",
+  "rationale": "A four-line motivational paragraph precedes the bold **Proposition** (lines 1-6) before the actual LP statement begins, so the block opens with framing prose rather than the statement.",
+  "fix": "Move the opening 'can be recast as a linear program...' paragraph into an intro/remark so the Proposition leads."
+ },
+ {
+  "label": "prop:delta-pre-archimedean",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "confirmed",
+  "rationale": "A 106-word motivational paragraph (lines 1-9) about order-of-operations and 'what is proved vs expository' precedes the bold **Proposition (delta is pre-archimedean)**, so the statement is buried under a preamble.",
+  "fix": "Relocate the opening order-of-operations paragraph below the statement as motivation, letting the Proposition lead."
+ },
+ {
+  "label": "prop:demand-stability",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The flagged sub-sections are two distinct provable blocks (a demand-profile definition and a three-part stability proposition) each stated tightly; the headers are legitimate structure, not statement rambling.",
+  "fix": ""
+ },
+ {
+  "label": "def:dressed-particle",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The principal term is bolded as **dressed particle** (line 13) and **dressing morphism** (line 6); the scanner's slug 'dressed particle shell attachment morphism' just failed token-overlap.",
+  "fix": ""
+ },
+ {
+  "label": "prop:frobenius-positivity-filter",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the tight iff with two non-negativity conditions (lines 10-25); the flagged sub-sections are the LP-connection and complexity discussion, genuine surrounding content.",
+  "fix": ""
+ },
+ {
+  "label": "prop:gram-weighted-qvalue",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the Gram-weighted Q-value formula with its three required component definitions (Delta_k, w_k^G, the Gram norm); the 403 words are these genuine formula components plus the structure/verification discussion.",
+  "fix": ""
+ },
+ {
+  "label": "def:hadron-fibre-embedding",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The principal term is bolded as **fibre-compatible hadron embedding** on lines 5-6; the scanner's slug 'fibre compatible hadron embedding' missed the rendered bold span on token-overlap.",
+  "fix": ""
+ },
+ {
+  "label": "prop:hadron-operations-closure",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 110 words are the four genuine closure claims (braiding, Hopf-linking, Skein, fusion) each with its defining equation \u2014 these are the proposition's actual content, not preamble.",
+  "fix": ""
+ },
+ {
+  "label": "thm:hyperelliptic-z5-classification",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The theorem statement is tight (two hypotheses (i),(ii) and the genus-2 / X_5 conclusion, lines 1-13); the 462 words are the Riemann-Hurwitz proof and remarks that follow.",
+  "fix": ""
+ },
+ {
+  "label": "prop:isotope-knot-equivalence",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is a one-line equivalence-relation claim (lines 2-3); the flagged sub-sections are the reflexivity/symmetry/transitivity proof and the quotient-structure remark, genuine content.",
+  "fix": ""
+ },
+ {
+  "label": "def:isotope-knot",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The principal term is bolded as **isotopes** on line 4; the scanner's slug 'isotope knot variant fixed proton block' failed token-overlap against the actual bold defined term.",
+  "fix": ""
+ },
+ {
+  "label": "def:isotope-knot",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The 161 words are genuine definitional content \u2014 the proton-block-equality criterion with its two NF formulas plus the required equivalence-relation, knot-distinctness, and per-isotope-stability clarifications.",
+  "fix": ""
+ },
+ {
+  "label": "prop:knot-particle-correspondence",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 121 words are the genuine setup (faithful B_n action, q-Schur-Weyl decomposition) and the bijection conclusion between irreducible summands and knot types \u2014 actual hypotheses+conclusion, not rambling.",
+  "fix": ""
+ },
+ {
+  "label": "def:knot-particle-generation",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The defined terms are italic-emphasised (torus knot *generators*, *linking operations*, *torus knot generators* on line 15) per this block's authoring; the scanner's slug failed and no single bold span matches, but the definienda are genuinely marked.",
+  "fix": ""
+ },
+ {
+  "label": "def:knot-particle-generation",
+  "criterion": "clarity-defn-tight",
+  "verdict": "confirmed",
+  "rationale": "A 109-word descriptive lead plus a Notation aside precede the actual generator-set definition, making the opening mildly preambly before the definiendum is pinned.",
+  "fix": "Tighten the opening lead-in so the generator-set definition appears sooner."
+ },
+ {
+  "label": "prop:lepton-meson-torus-knot-dictionary",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the dictionary table plus the lepton/meson correspondence rule (lines 1-15); the 351 words are the proof and the structural-duality discussion, genuine content.",
+  "fix": ""
+ },
+ {
+  "label": "prop:level-sufficiency",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the trace-preservation claim under the k_max hypothesis with its display equations; the 312 words are the Markov-property proof, converse, and corollary \u2014 all genuine proof content.",
+  "fix": ""
+ },
+ {
+  "label": "prop:meson-scale-independence",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is a tight two-sentence non-derivability claim (lines 1-5); the 262 words are the representation-theoretic+topological proof and the calibration-structure discussion.",
+  "fix": ""
+ },
+ {
+  "label": "prop:n-equals-1-vacuous-magic",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the tight vacuous-primality claim at n=1 (lines 3-9); the 348 words are the vacuous-truth proof and the remarks contextualising magic-number conventions.",
+  "fix": ""
+ },
+ {
+  "label": "prop:neutron-qvalue-symbolic",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The conditional-on-conjecture statement of the free-neutron Q_beta derivation is concise (lines 1-7); the 424 words are the single-wrap NF computation, symbolic Delta, closed form and numerical evaluation \u2014 genuine content.",
+  "fix": ""
+ },
+ {
+  "label": "def:per-nucleon-channel-decomposition",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The principal term is bolded as **per-nucleon contributions** (line 4) and the four channels are bold; the scanner's slug 'per nucleon channel decomposition branching' failed token-overlap.",
+  "fix": ""
+ },
+ {
+  "label": "def:per-nucleon-channel-decomposition",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The 349 words are genuine definitional content \u2014 the S_3^A branching factorisation, the four T_{2,3} eigenchannels, and the per-nucleon Garside-factor data tables required to define the decomposition.",
+  "fix": ""
+ },
+ {
+  "label": "prop:q-beta-spectral-bridge",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement (lines 1-54) is a long but genuine Let-block defining z, the two Q-value forms A and B, the bridge ratio, identity and remainder bound \u2014 these are the actual hypotheses and conclusions, not rambling.",
+  "fix": ""
+ },
+ {
+  "label": "def:quantum-dilogarithm-disambiguation",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The 279 words are the genuine content of a disambiguation definition \u2014 the two-function comparison table, the false historical identity, and the discipline pointing to the corrected canonical form, none of it padding.",
+  "fix": ""
+ },
+ {
+  "label": "def:skein-binding-lagrangian",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The 479 words are genuine definitional content \u2014 the five binding terms (volume, surface, Coulomb, Pauli, pairing) each with its formula plus the required Bethe-Weizsacker translation and canonical-action derivation table.",
+  "fix": ""
+ },
+ {
+  "label": "prop:stable-atom-decidable",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is a tight decidability claim (lines 1-5); the flagged sub-sections are the four-step decidability proof and the complexity remark, genuine content.",
+  "fix": ""
+ },
+ {
+  "label": "def:stable-atom",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The 207 words are genuine definitional content \u2014 the ILP-feasibility stability criterion plus the required clarifications on fixed-q independence, LP-vs-ILP strengthening, and confinement-filtration restriction.",
+  "fix": ""
+ },
+ {
+  "label": "def:typed-garside-element",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The 236 words are genuine definitional content \u2014 the Garside-staircase construction formula, the typed-crossing coefficients, and the required comparison with the adjacent-only construction plus verified term counts.",
+  "fix": ""
+ },
+ {
+  "label": "def:universal-ilp-algorithm",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The 475 words are the genuine algorithmic definition \u2014 input, algorithm, the per-level instantiation table, the topological-hierarchy upgrade, and the consistency energy-functional, all definitional content for a 'universal' algorithm.",
+  "fix": ""
+ },
+ {
+  "label": "def:unstable-atom",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The 318 words are genuine definitional content \u2014 the ILP-infeasibility criterion plus the required decay-channel construction, phase-boundary characterisation, and phase-interior computational shortcut.",
+  "fix": ""
+ },
+ {
+  "label": "rem:alpha-em-derivation-exploration-options",
+  "criterion": "clarity-defn-misplaced",
+  "verdict": "false-positive",
+  "rationale": "This is an interpretive exploration roadmap (interprets prop:em-coupling-bring-zero-mode, tagged 'open-problem'); its 'define the depth-l coupling functional' lead-ins are proposed future work, not a promotable definition.",
+  "fix": ""
+ },
+ {
+  "label": "def:antineutrino-knot",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The principal term is bolded as **antineutrino** on line 1; the scanner's slug 'antineutrino mirror unknot' just failed token-overlap against the single-word bold defined term.",
+  "fix": ""
+ },
+ {
+  "label": "prop:bar-apply-transfer",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the bar-transfer principle with its three numbered transfer rules (lines 1-26); the flagged sub-sections are the proof, reuse-pattern, and application discussion, genuine content.",
+  "fix": ""
+ },
+ {
+  "label": "def:beta-decay-skein",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The two definienda (beta- and beta+ decay) appear under bold '## Definition' headers (lines 80, 111) with bold lead-ins; the scanner's long slug 'beta decay skein crossing change grobner normal form' failed token-overlap.",
+  "fix": ""
+ },
+ {
+  "label": "prop:bloch-group-quotient-construction",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement is the concrete BlochGroup quotient construction with its definition and AddCommGroup-structure claim (lines 1-18); the 368 words are the 'what this closes' and 'what's still open' Lean-status discussion.",
+  "fix": ""
+ },
+ {
+  "label": "prop:categorical-neutron-exists",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The actual proposition (lines 1-3, the categorical neutron exists as an LP-stable element of H_3(q)) is a tight one-sentence claim; the 196 'preamble' words are trailing Strategy + Formalization-Plausibility prose, not the statement.",
+  "fix": ""
+ },
+ {
+  "label": "prop:categorical-neutron-unique",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The statement (lines 1-6: the neutron is uniquely determined up to isotopy with unique Hecke normal form) is genuine hypotheses+conclusion; the 138 counted words are mostly the trailing Strategy/novelty paragraph.",
+  "fix": ""
+ },
+ {
+  "label": "prop:categorical-proton-exists",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The proposition body (lines 1-5, proton exists with Frobenius stability G x[\u03b3]\u22650) is tight; the inflated word count comes from the Strategy + Formalization-Goal-Plausibility prose after the statement.",
+  "fix": ""
+ },
+ {
+  "label": "prop:categorical-proton-unique",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "Lines 1-7 state the uniqueness claim compactly (uniquely determined up to isotopy, unique normal form, S_3 independence); the counted words include the trailing Strategy/novelty paragraph, not the statement.",
+  "fix": ""
+ },
+ {
+  "label": "prop:cl2-pentagon-and-faddeev-partial",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The proposition (lines 3-13: two boundary-case identities, all-zero pentagon and Faddeev limit at x=0) is exactly its two displayed equations; the 285 'preamble' words are the What-this-closes/What-remains/Significance discussion sections that follow.",
+  "fix": ""
+ },
+ {
+  "label": "prop:cs-evaluation-faithfulness",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The proposition (lines 6-17: \u03ba_n\u22600 \u21d2 \u03a6_n(K)\u22600) is tight; the sub-sections counted (Consequences, Relation to Mostow rigidity) are genuine downstream discussion, not a rambling statement.",
+  "fix": ""
+ },
+ {
+  "label": "prop:em-coupling-bring-zero-mode",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The conditional proposition statement (lines 1-26) is the displayed 1/\u03b1_EM additive identity plus its conditional banner; the 378-word total is dominated by the two geometric identifications, numerical-match table, and physical-interpretation prose, not statement rambling.",
+  "fix": ""
+ },
+ {
+  "label": "prop:force-carrier-bring-uniqueness",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The proposition (lines 1-10: torus knot saturates H_1(\u03a3_4) only if g(K)=4, forcing {T_2,9,T_3,5}) is a compact hypotheses+conclusion; the counted words include the proof, a novelty remark, and a separate corollary.",
+  "fix": ""
+ },
+ {
+  "label": "thm:gauge-conformal-invariance",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The theorem statement (line 2: eigenspace ratio of T_\u03b3e is invariant under q\u2192q' up to a global conformal factor) is a single tight sentence; the 204 counted words are the proof plus two physical-interpretation paragraphs.",
+  "fix": ""
+ },
+ {
+  "label": "cor:gauge-coupling-uniqueness",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The corollary (lines 1-6: any R-linear braid-invariant scalar coupling is a multiple of tr_\u03c4(e_-)\u00b7e_-) is genuine hypotheses+conclusion; the word count is inflated by the proof and a novelty remark.",
+  "fix": ""
+ },
+ {
+  "label": "prop:photon-ir-zero-mode-bring",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The proposition statement (lines 3-14: the IR zero-mode equals dim H^1(M_g)/Area = 2g/4\u03c0(g-1)) is its single displayed equation; the 515 words are the Mechanism, failed-attempt, and jet-order-placement derivation sections, not the statement.",
+  "fix": ""
+ },
+ {
+  "label": "prop:reidemeister-action-table",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "This block is inherently a table proposition: its content is the complete move table plus reading-rules for mass/energy, so the 439 words are the genuine tabulated content, not a rambling statement.",
+  "fix": ""
+ },
+ {
+  "label": "prop:shell-structure-eigenvalues",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The proposition statement (lines 3-8: shell structure is determined by eigenvalues of T_\u03b3e, satisfying a Chebyshev recurrence) is tight; the 407 words are the characteristic-polynomial / diagonalization / Rydberg derivation sections after the statement.",
+  "fix": ""
+ },
+ {
+  "label": "prop:spectrahedral-phase-collapse",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "confirmed",
+  "rationale": "The theorem statement itself (line 4) is one sentence, but the block then sprawls into 'Cosmological Melt' narrative paragraphs (lines 10-18, e.g. 'massive, dust-free cocoon', 'the universe melts into a pure continuum') that ramble well beyond the hypotheses+conclusion.",
+  "fix": "Cut the 'Cosmological Melt' narrative paragraphs (or migrate to a remark/authorNotes); keep the theorem statement plus the proof-tracker."
+ },
+ {
+  "label": "prop:tau-leptonic-universality",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The block has a clearly demarcated tight Statement section (lines 8-48, the phase-space ratio and factorized matrix element); the 343 words are mostly the Proof-sketch and Physical-significance sections, not statement rambling.",
+  "fix": ""
+ },
+ {
+  "label": "lem:tilting-module-rigidity",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The lemma statement (lines 3-4: spectrahedron vertices are determined by Cemetery tilting modules, forcing eigenvalues to be words in q,q^-1) is a tight single sentence; the counted 'preamble' is a one-line lead-in plus a trailing physical-interpretation paragraph.",
+  "fix": ""
+ },
+ {
+  "label": "prop:torus-knot-genus-four-unique",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The proposition (lines 1-12: genus-4 torus knots are exactly {T_2,9,T_3,5}) is compact with a solution table that is the genuine content; the 113 counted words are the statement plus its short Diophantine proof.",
+  "fix": ""
+ },
+ {
+  "label": "prop:upstream-mathlib-additions",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "confirmed",
+  "rationale": "This is a meta/status block whose 'statement' opens with the verbatim user prompt 'User: \"work on adding\".' (line 7) and lists three Lean additions as a What-this-advances narrative rather than a mathematical hypotheses+conclusion, making the proposition genuinely rambling/non-statement.",
+  "fix": "Strip the 'User: \"work on adding\"' line and convert the advancement narrative to a remark/authorNotes; state a single concrete proposition (the three sorry-free additions) tightly."
+ },
+ {
+  "label": "prop:cyclotomic-l-value-decomposition",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The proposition (lines 1-12) and its Statement section (lines 14-32, the L(\u03c7,n)\u2194Cl_n decomposition) are the genuine claim; the 413 words are the worked \u03b2(3)=\u03c0^3/32 instance, numerical verification, and bridge discussion.",
+  "fix": ""
+ },
+ {
+  "label": "def:local-q-zeta-function",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The principal term 'local q-zeta function' (line 1) is in plain text with no bold or :defterm marking; the only bold span ('fundamental eigenvalues', line 12) is a different term.",
+  "fix": "Wrap the defined term as :defterm[local $q$-zeta function]{#local-q-zeta-function} at its definition site on line 1."
+ },
+ {
+  "label": "def:q-chebyshev-function",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The principal term 'q-Chebyshev function' (line 1) appears in plain prose with no bold/defterm marking anywhere in the block.",
+  "fix": "Wrap the defined term as :defterm[$q$-Chebyshev function]{#q-chebyshev-function} on line 1."
+ },
+ {
+  "label": "def:q-local-system",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "The principal term IS bolded at its definition site: line 6 reads 'A **$q$-local system** on $X$ ...'; the scanner's token-overlap missed the $q$- math prefix.",
+  "fix": ""
+ },
+ {
+  "label": "def:q-von-mangoldt-function",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The principal term 'q-von Mangoldt function' (line 1) is plain text; the only bold span is 'fundamental defect' (line 13), a secondary term, so the definiendum itself is never marked.",
+  "fix": "Wrap the defined term as :defterm[$q$-von Mangoldt function]{#q-von-mangoldt-function} on line 1."
+ },
+ {
+  "label": "prop:braiding-eigenvalue-extraction",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The block is a structured five-item proposition (spectral decomposition, eigenvalue definition of q, Hecke relation, classical-vs-quantum, substrate connection); the 364 words are the genuine enumerated content plus a Summary, not a rambling preamble.",
+  "fix": ""
+ },
+ {
+  "label": "prop:braiding-induced-ordering",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The proposition statement (lines 1-7: a non-symmetric braiding determines a canonical admissible well-ordering \u227a_c on H_n(q)) is tight; the 499 words are the Construction, two embedded definitions, the well-ordering proof, and CPT discussion.",
+  "fix": ""
+ },
+ {
+  "label": "def:brings-coordinate-ring",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The principal term 'non-commutative coordinate ring' (line 18) is in italics (*non-commutative coordinate ring*), not bold or :defterm; the two bold spans (Symmetry, Spectral modes) are section headers, not the definiendum.",
+  "fix": "Change the italic *non-commutative coordinate ring* on line 18 to :defterm[non-commutative coordinate ring]{#brings-coordinate-ring}."
+ },
+ {
+  "label": "def:categorical-action",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined term 'categorical action' (line 3) is italicized (*categorical action*), not bolded or :defterm'd; the QOU \u00a74c convention requires bold/defterm marking.",
+  "fix": "Change *categorical action* on line 3 to :defterm[categorical action]{#categorical-action}."
+ },
+ {
+  "label": "def:categorical-dirac-operator",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined term 'categorical Dirac operator' (line 6) is in italics (*categorical Dirac operator*), with no bold or :defterm marking in the block.",
+  "fix": "Change *categorical Dirac operator* on line 6 to :defterm[categorical Dirac operator]{#categorical-dirac-operator}."
+ },
+ {
+  "label": "def:categorical-instanton",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined term 'instanton' (line 5) is italicized (*instanton*), never bolded or :defterm'd.",
+  "fix": "Change *instanton* on line 5 to :defterm[categorical instanton]{#categorical-instanton}."
+ },
+ {
+  "label": "def:categorical-lagrangian",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined term 'categorical Lagrangian' (line 7) is in italics (*categorical Lagrangian*), with no bold/defterm marking anywhere.",
+  "fix": "Change *categorical Lagrangian* on line 7 to :defterm[categorical Lagrangian]{#categorical-lagrangian}."
+ },
+ {
+  "label": "def:categorical-point",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined term 'categorical point' (line 3) is italicized (*categorical point*), never bolded or :defterm'd.",
+  "fix": "Change *categorical point* on line 3 to :defterm[categorical point]{#categorical-point}."
+ },
+ {
+  "label": "def:categorical-q-connection",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined term 'q-deformed connection' (line 4) is in italics (*$q$-deformed connection*), with no bold/defterm marking.",
+  "fix": "Change *$q$-deformed connection* on line 4 to :defterm[$q$-deformed connection]{#categorical-q-connection}."
+ },
+ {
+  "label": "def:categorical-q-ext-deriv",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined term 'q-deformed exterior derivative' (lines 5-6) is italicized (*$q$-deformed exterior derivative*), never bolded or :defterm'd.",
+  "fix": "Change *$q$-deformed exterior derivative* to :defterm[$q$-deformed exterior derivative]{#categorical-q-ext-deriv}."
+ },
+ {
+  "label": "def:categorical-q-lie-bracket",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined term 'q-deformed Lie bracket' (line 4) is in italics (*$q$-deformed Lie bracket*), with no bold/defterm marking.",
+  "fix": "Change *$q$-deformed Lie bracket* on line 4 to :defterm[$q$-deformed Lie bracket]{#categorical-q-lie-bracket}."
+ },
+ {
+  "label": "def:categorical-reeb-derivation",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined term 'categorical Reeb derivation' (line 2) is italicized (*categorical Reeb derivation*); the two bold spans (Normalization, Derivation property) are field headers, not the definiendum.",
+  "fix": "Change *categorical Reeb derivation* on line 2 to :defterm[categorical Reeb derivation]{#categorical-reeb-derivation}."
+ },
+ {
+  "label": "def:categorical-reeb",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined term 'categorical Reeb derivation' (line 2) is in italics (*categorical Reeb derivation*); the three bold spans (Vertical generator, Normalisation, Kernel) are property headers, not the term.",
+  "fix": "Change *categorical Reeb derivation* on line 2 to :defterm[categorical Reeb derivation]{#categorical-reeb}."
+ },
+ {
+  "label": "def:categorical-reeb",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The 95-word 'preamble' is the substrate/torus/weight setup needed to state the endomorphism plus the three defining properties; it is genuine definitional content, not padding.",
+  "fix": ""
+ },
+ {
+  "label": "def:commutative-qou",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined term 'strictly commutative' (line 2) is italicized (*strictly commutative*); the one bold span (Scope, line 17) is a section header.",
+  "fix": "Change *strictly commutative* on line 2 to :defterm[strictly commutative QOU]{#commutative-qou}."
+ },
+ {
+  "label": "def:commutative-qou",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The 143 'preamble' words are the genuine definition (commutativity + cocommutativity conditions and their q\u21921 equivalence); the Scope paragraph is a brief legitimate placement note, not rambling.",
+  "fix": ""
+ },
+ {
+  "label": "def:contact-affine-chart",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined term 'contact affine chart' (line 8) is italicized (*contact affine chart*), with no bold/defterm marking anywhere in the block.",
+  "fix": "Change *contact affine chart* on line 8 to :defterm[contact affine chart]{#contact-affine-chart}."
+ },
+ {
+  "label": "def:exceptional-divisor",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined term 'exceptional divisor' (line 11) is in italics (*exceptional divisor*), never bolded or :defterm'd.",
+  "fix": "Change *exceptional divisor* on line 11 to :defterm[exceptional divisor]{#exceptional-divisor}."
+ },
+ {
+  "label": "def:fermion-boson-decomposition",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined terms 'boson' (line 19) and 'fermion' (line 21) are italicized (*boson*, *fermion*), with no bold or :defterm marking.",
+  "fix": "Change *boson* and *fermion* to :defterm[boson]{#boson} / :defterm[fermion]{#fermion} at their definition sites."
+ },
+ {
+  "label": "prop:fibre-functor-atlas",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The proposition is an inherently four-part structured statement (Charts, Transitions, Cocycle, Atlas) each a genuine clause; the 314 words are the enumerated hypotheses+conclusions plus their proof, not a rambling preamble.",
+  "fix": ""
+ },
+ {
+  "label": "def:frobenius-hopf-substrate",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined term 'Frobenius--Hopf substrate' (lines 1-2) is italicized (*Frobenius--Hopf substrate*); the four bold spans (Algebra/Coalgebra structure, Frobenius relation, Non-degeneracy) are axiom headers, not the definiendum.",
+  "fix": "Change *Frobenius--Hopf substrate* on line 2 to :defterm[Frobenius--Hopf substrate]{#frobenius-hopf-substrate}."
+ },
+ {
+  "label": "def:maximal-torus",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined term 'maximal torus' (line 8) is italicized (*maximal torus*, split as *weight subcategory*...*maximal torus*), never bolded or :defterm'd.",
+  "fix": "Change *maximal torus* on line 8 to :defterm[maximal torus]{#maximal-torus}."
+ },
+ {
+  "label": "def:maximal-torus",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The 62-word 'preamble' is the fundamental-object and weight-subcategory setup required to define T = Aut^\u2297(\u03c4|_\u27e8V\u27e9); it is necessary definitional content, only marginally over the 60-word threshold.",
+  "fix": ""
+ },
+ {
+  "label": "def:observation",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined term 'intent on U' (line 9) is italicized (*intent on $U$*); the four bold spans (direction, Frobenius compatibility, Adjoint backreaction, point) are field/property labels, not the definiendum.",
+  "fix": "Change *intent on $U$* on line 9 to :defterm[observation]{#observation} (or :defterm[intent]) at the definition site."
+ },
+ {
+  "label": "def:projective-line-object",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined term 'projective line object' (line 3) is in italics (*projective line object*), with no bold or :defterm marking.",
+  "fix": "Change *projective line object* on line 3 to :defterm[projective line object]{#projective-line-object}."
+ },
+ {
+  "label": "def:q-harmonic-form",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The defined term 'particle' (line 5, *particle*) is italicized, never bolded or :defterm'd; the scanner's term 'particle' matches the actual definiendum which is genuinely unmarked.",
+  "fix": "Change *particle* on line 5 to :defterm[particle]{#particle} (and :defterm the *$q$-Laplacian* it co-defines)."
+ },
+ {
+  "label": "def:q-heat-equation",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The definiendum is written \"The *$q$-heat equation* is the evolution equation\" in italic, never bolded or :defterm'd; the 8 bold spans are all sub-section headers (Two times, Categorical formulation, etc.).",
+  "fix": "Mark the term at its definition site: \":defterm[$q$-heat equation]{#q-heat-equation}\"."
+ },
+ {
+  "label": "def:q-heat-equation",
+  "criterion": "clarity-defn-tight",
+  "verdict": "confirmed",
+  "rationale": "At 324 prose words with four labelled sub-sections (Two times / Categorical formulation / Decomposition / Base-ring independence), the block bundles the definition with extended motivation and limit discussion that could move to a remark.",
+  "fix": "Split the categorical-formulation, decomposition, and base-ring discussion into a sibling remark; keep the evolution equation as the definition."
+ },
+ {
+  "label": "def:q-hodge-star",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The term is given as \"The *$q$-Hodge star* is the $q$-deformed involution\" in italic only, with zero bold spans in the block.",
+  "fix": "Mark the definiendum: \":defterm[$q$-Hodge star]{#q-hodge-star}\"."
+ },
+ {
+  "label": "prop:q-laplacian-spectral-tower",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The italicised statement is a tight two-sentence proposition (eigenvalue tower plus root-of-unity truncation); the 396 words and two headers are the explanatory \"One tower, four consumers\" / truncation discussion that follows the statement, not preamble before it.",
+  "fix": ""
+ },
+ {
+  "label": "prop:qou-canonical-action",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 490 words are the genuine content of a canonical-action proposition \u2014 the three-term decomposition, both trace/integral forms, and the uniqueness-up-to-scalar argument are all load-bearing hypotheses and conclusions, not rambling preamble.",
+  "fix": ""
+ },
+ {
+  "label": "def:quantum-gauge-group",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The definiendum appears as \"The *quantum gauge group* is the Hopf algebra\" in italic only, with no bold spans.",
+  "fix": "Mark the definiendum: \":defterm[quantum gauge group]{#quantum-gauge-group}\"."
+ },
+ {
+  "label": "def:quantum-gauge-group",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "At only 98 words total, the \"preamble\" the scanner counts is the Tannaka\u2013Krein setup that the definition genuinely requires (the gauge group IS the reconstructed Hopf algebra), so the length is essential definitional content.",
+  "fix": ""
+ },
+ {
+  "label": "def:quantum-observable-universe",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "This is the keystone definition; the term \"observable\" is set in italic (\"is *observable* if ...\") and the title is the chapter/paper name itself, so the defterm convention is satisfied by the italicised property word.",
+  "fix": ""
+ },
+ {
+  "label": "def:quantum-observable-universe",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The 304 words are the four defining axioms (non-degenerate integration, observability, measurability/anomaly-free Chern classes, categorical volume constraint), which are the irreducible content of this central definition.",
+  "fix": ""
+ },
+ {
+  "label": "def:quantum-planck-constant",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The term is \"The *quantum Planck constant* is the element $\\hbar_q = 1 - q^{-1}$\" in italic only, no bold spans.",
+  "fix": "Mark the definiendum: \":defterm[quantum Planck constant]{#quantum-planck-constant}\"."
+ },
+ {
+  "label": "def:rigid-dualizing-complex",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The term is \"A *rigid dualizing complex* for $A$ is a complex $\\omega_A^\\bullet$\" in italic; the 3 bold spans are property headers (Finite injective dimension, Rigidifying isomorphism, Van den Bergh duality).",
+  "fix": "Mark the definiendum: \":defterm[rigid dualizing complex]{#rigid-dualizing-complex}\"."
+ },
+ {
+  "label": "def:rigid-dualizing-complex",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "At 161 words the three sub-sections each state one defining condition (finite injective dimension, rigidifying isomorphism, Van den Bergh duality) that the structure must satisfy, so the length is the genuine definition.",
+  "fix": ""
+ },
+ {
+  "label": "def:substrate-parameter-planck",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "Both definienda are italic \u2014 \"The *substrate parameter* $q$\" and \"The *quantum Planck constant* associated to $q$\" \u2014 neither is bolded or :defterm'd.",
+  "fix": "Mark both definienda with :defterm at their definition sites."
+ },
+ {
+  "label": "def:substrate-parameter",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The definiendum is \"The *substrate parameter* is the unique element $q$\" in italic only, with zero bold spans.",
+  "fix": "Mark the definiendum: \":defterm[substrate parameter]{#substrate-parameter}\"."
+ },
+ {
+  "label": "def:substrate-parameter",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "The 65-word \"preamble\" is the de Rham / d_q one-parameter-family setup the definition needs to characterise q as the unique element acting as q\u207b\u00b9d on horizontal and d on vertical forms; it is essential, not padding.",
+  "fix": ""
+ },
+ {
+  "label": "def:weight-decomposition",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The block defines \"*horizontal component*\" and \"*vertical component*\" in italic and never bolds/:defterm's the head term \"weight decomposition\" (it appears only in the opening cross-ref).",
+  "fix": "Add a :defterm-marked occurrence of \"weight decomposition\" (or the H/V components) at the definition site."
+ },
+ {
+  "label": "def:categorical-connection",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The definienda \"*connection*\", \"*Leibniz triangle*\", and \"*curvature*\" are all in italic with no bold spans in the block.",
+  "fix": "Mark \"connection\" (and curvature) with :defterm at their definition sites."
+ },
+ {
+  "label": "def:categorical-hodge-star",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The term is \"The *categorical Hodge star* is the involution $\\star$\" in italic only, with zero bold spans.",
+  "fix": "Mark the definiendum: \":defterm[categorical Hodge star]{#categorical-hodge-star}\"."
+ },
+ {
+  "label": "def:categorical-jet",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The term is \"The *jet object* is $J^1(A) := ...$\" in italic only, no bold spans.",
+  "fix": "Mark the definiendum: \":defterm[jet object]{#categorical-jet}\"."
+ },
+ {
+  "label": "def:frobenius-pairing",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The term is \"The *Frobenius pairing* is the composite\" in italic only, with zero bold spans.",
+  "fix": "Mark the definiendum: \":defterm[Frobenius pairing]{#frobenius-pairing}\"."
+ },
+ {
+  "label": "def:higher-forms",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The term is \"The *higher differential forms* are the graded $A$-bimodule\" in italic only, no bold spans.",
+  "fix": "Mark the definiendum: \":defterm[higher differential forms]{#higher-forms}\"."
+ },
+ {
+  "label": "def:involutive-structure",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The definiendum is \"An *involutive structure* ... is a contravariant endofunctor\" in italic; the 4 bold spans are the numbered axiom labels (Identity on objects, Involutivity, Monoidal compatibility, Contravariance).",
+  "fix": "Mark the definiendum: \":defterm[involutive structure]{#involutive-structure}\"."
+ },
+ {
+  "label": "def:poisson-object",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The definiendum is \"An *internal Poisson object* on $A$ is a morphism\" in italic; the 4 bold spans are construction/axiom headers (Construction via pullback, Axioms, Jacobi identity, Leibniz rule).",
+  "fix": "Mark the definiendum: \":defterm[internal Poisson object]{#poisson-object}\"."
+ },
+ {
+  "label": "def:quantum-universe",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The definiendum is \"A *quantum universe over $R$* is a triple\" in italic; the 2 bold spans are the (H) and (F) axiom labels, not the term.",
+  "fix": "Mark the definiendum: \":defterm[quantum universe]{#quantum-universe}\"."
+ },
+ {
+  "label": "def:quantum-universe",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "At 128 words the \"preamble\" counted is the four-part defining data of the triple (braided category, Frobenius\u2013Hopf object with H/F axioms, fibre functor, differential calculus), all of which is the definition itself.",
+  "fix": ""
+ },
+ {
+  "label": "def:classical-limit-functor",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The block opens \"Define the classical limit as a monoidal functor\" with the term unmarked; the 11 bold spans are exposition headers (Quantum gap collapse, Adelic-assembly perspective, etc.), none marking the definiendum.",
+  "fix": "Mark the definiendum: \"Define the :defterm[classical limit functor]{#classical-limit-functor} ...\"."
+ },
+ {
+  "label": "def:classical-limit-functor",
+  "criterion": "clarity-defn-tight",
+  "verdict": "confirmed",
+  "rationale": "At 403 words with four bold sub-sections, the block buries the one-line functor definition under extended adelic-assembly, decoherence, and surreal-reformulation prose that belongs in remarks.",
+  "fix": "Move the adelic-assembly / phase-decoherence / topology-free sub-sections into sibling remarks; keep the functor definition tight."
+ },
+ {
+  "label": "def:classical-riemann-zeta",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The block opens \"Define the classical Riemann zeta function $\\zeta(s)$ as the adelic global limit\" with the term in plain prose, never bolded or :defterm'd (zero bold spans).",
+  "fix": "Mark the definiendum: \"Define the :defterm[classical Riemann zeta function]{#classical-riemann-zeta} ...\"."
+ },
+ {
+  "label": "thm:macroscopic-stability-equivalence",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The bold \"**Theorem.**\" states a tight three-way equivalence (macroscopic stability \u21d4 RH \u21d4 spectral persistence) as a numbered list; the 173 words counted as preamble are actually the proof-sketch and conditional-framework discussion after the statement.",
+  "fix": ""
+ },
+ {
+  "label": "prop:phi-q-aj-machinery-identification",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "confirmed",
+  "rationale": "The italicised statement runs to a 112-word single sentence interleaving the conditional banner, cusp-coordinate setup, the AJ identification, and the algebraic-over-Z[q\u00b11] caveat, which reads as mildly rambling for a proposition statement.",
+  "fix": "Tighten the italic statement to the core identification; defer the AJ-machinery and saddle-context detail to the Statement section below."
+ },
+ {
+  "label": "def:q-from-epsilon",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The definiendum is \"The *substrate parameter associated to $\\varepsilon$* is $q := 1 + \\varepsilon$\" in italic; the 9 bold spans are exposition headers (Definition, Consistency with prior usage, Why pull \u03b5 out first, etc.).",
+  "fix": "Mark the definiendum with :defterm at its definition site."
+ },
+ {
+  "label": "def:q-from-epsilon",
+  "criterion": "clarity-defn-tight",
+  "verdict": "confirmed",
+  "rationale": "At 291 words with four bold sub-sections, the one-line definition q := 1 + \u03b5 is surrounded by extended consistency, motivation, and notational-convention prose that could be a remark.",
+  "fix": "Move the \"Consistency\", \"Why pull \u03b5 out first\", and \"Notational convention\" sub-sections into a sibling remark."
+ },
+ {
+  "label": "thm:quantum-gap-collapse",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The block is a tight four-item list of simultaneous degenerations under the classical-limit functor (\u210f_q\u21920, d_q\u2192d, braiding\u2192symmetric, Reeb period\u2192\u221e) plus the two-line descent statement; the 115 words are the genuine content, not preamble.",
+  "fix": ""
+ },
+ {
+  "label": "def:reeb-epsilon",
+  "criterion": "clarity-defn-tight",
+  "verdict": "confirmed",
+  "rationale": "At 292 words with three bold sub-sections, the short definition of the Reeb infinitesimal \u03b5 is padded with extended primitivity, positivity, and archimedean-independence discussion plus a summary table that reads as remark material.",
+  "fix": "Move the Primitivity / Positivity / archimedean-independence prose into a sibling remark; keep the \u03b5 := d/dt|\u2080 \u03a6_t definition."
+ },
+ {
+  "label": "prop:two-filtration-bridge-small-cases",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The italic statement is a tight one-sentence claim (verifies the bridge map for all \u03bb\u22a2n, n\u22644); the 461 words are the per-partition verification tables and case analysis that constitute the proof, not preamble before the statement.",
+  "fix": ""
+ },
+ {
+  "label": "thm:ugb-buchberger",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "The 83-word \"preamble\" is the standard ring/algebra/admissible-system/ideal hypothesis chain that the Buchberger-criterion theorem genuinely requires, followed immediately by the iff conclusion; these are the real hypotheses, not rambling.",
+  "fix": ""
+ },
+ {
+  "label": "thm:ugb-main",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "At 85 words the entire block is hypotheses (R, A free, admissible system, ideal with unital GS basis, definition of \u00d5(G)) plus the two-part conclusion; every word is load-bearing for the main decomposition theorem.",
+  "fix": ""
+ },
+ {
+  "label": "def:admissible-system",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The definienda \"*monomial ordering*\", \"*admissible system*\", and \"*divides*\" are all italic; the single bold span is the \"**Divisibility.**\" header, not the term.",
+  "fix": "Mark \"admissible system\" (and monomial ordering) with :defterm at their definition sites."
+ },
+ {
+  "label": "def:admissible-system",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "At only 80 words the block is the two-axiom definition of a monomial ordering plus the one-line admissible-system and divisibility definitions; nothing is preambly padding.",
+  "fix": ""
+ },
+ {
+  "label": "def:division-algorithm",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The term \"division algorithm\" is never bolded/:defterm'd; the 5 bold spans are the Input/Output/While/If/Else algorithm-structure labels, and only \"*remainder*\" is italicised.",
+  "fix": "Mark \"division algorithm\" with :defterm in the Input/Output framing."
+ },
+ {
+  "label": "def:division-algorithm",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "At 106 words the block is the Input/Output specification plus the three-step algorithm body and a one-line non-uniqueness note; this is the irreducible procedural content of an algorithm definition.",
+  "fix": ""
+ },
+ {
+  "label": "def:groebner-basis",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "At 144 words the three sub-sections each define a distinct required notion (Gr\u00f6bner\u2013Shirshov basis, unital, S-polynomial) that the GS-basis definition depends on; the length is genuine definitional content.",
+  "fix": ""
+ },
+ {
+  "label": "thm:unital-groebner-decomposition",
+  "criterion": "clarity-stmt-tight",
+  "verdict": "false-positive",
+  "rationale": "At 88 words the block is the full hypothesis chain (R, A free without quasi-zeros, admissible system, ideal with unital GS basis, definition of \u00d5(G)) plus the two-part isomorphism/direct-sum conclusion; all hypotheses are required.",
+  "fix": ""
+ },
+ {
+  "label": "def:monomial-basis",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The definienda \"*monomial*\", \"*monomial basis*\", \"*leading monomial/coefficient/term*\" are all italic; the 3 bold spans are the \"**Monomials.**\"/\"**Monomial basis.**\"/\"**Leading terms.**\" headers, not the terms themselves.",
+  "fix": "Mark \"monomial basis\" (and leading terms) with :defterm at their definition sites."
+ },
+ {
+  "label": "def:monomial-basis",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "At 127 words the three sub-sections define monomials, the monomial basis, and the LM/LC/LT leading-term data \u2014 a cluster of mutually dependent definitions, all genuine content.",
+  "fix": ""
+ },
+ {
+  "label": "def:remainder-module",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "The block defines O(I) and \u00d5(I) but the head term \"remainder module(s)\" is never written, bolded, or :defterm'd anywhere (zero bold spans).",
+  "fix": "Add a :defterm-marked occurrence naming the remainder module(s) O(I)/\u00d5(I) at the definition site."
+ },
+ {
+  "label": "def:remainder-modules",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "confirmed",
+  "rationale": "This near-duplicate block likewise defines O(I) and \u00d5(I) without ever writing or marking the term \"remainder modules\" (zero bold spans).",
+  "fix": "Add a :defterm-marked occurrence naming the remainder modules O(I)/\u00d5(I) at the definition site (and consider deduplicating with def:remainder-module)."
+ },
+ {
+  "label": "def:viz-brings-surface",
+  "criterion": "clarity-defterm-bold",
+  "verdict": "false-positive",
+  "rationale": "This is a visualizer/UI-config block, not a mathematical definition; its head term \"Bring's surface visualizer\" is a tool name and the bold spans (Mode, Camera, Viewport parameters) are UI-parameter labels, so there is no defterm to mark.",
+  "fix": ""
+ },
+ {
+  "label": "def:viz-brings-surface",
+  "criterion": "clarity-defn-tight",
+  "verdict": "false-positive",
+  "rationale": "At only 74 words the block is a compact list of viewport parameters (q, Mode, Camera) plus the two display equations; this is the genuine content of a visualizer-state spec, not rambling preamble.",
+  "fix": ""
+ }
+]

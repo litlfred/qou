@@ -248,7 +248,15 @@ summing to zero that is not multiset-symmetric.
     endomorphism `Φ_n` is built into `Saturated`: if a state is
     saturated, the brane-tower contribution is governed entirely by
     the multiset `λ.contents`. Concrete instances expose `λ` as the
-    dominant irreducible label of the Hecke module `V_λ`. -/
+    dominant irreducible label of the Hecke module `V_λ`.
+
+    `@marker` — intentional opaque structural predicate. The full
+    saturation condition is a statement about the Young-lattice
+    structure of `λ` and awaits the `H_n(q)` Hecke-algebra import
+    (exactly as `fullTwistTrivial` below does); until then it is a
+    deliberate empty-`Prop` tag, not an accidental vacuous carrier.
+    It is a *hypothesis* gate on the reverse implication
+    `κ_λ = 0 → self-conjugate`, never discharged by an instance. -/
 class Saturated (lam : YoungDiagram) : Prop
 
 /-! ## §3  Hecke folklore — exposed as typeclass fields -/

@@ -1,4 +1,4 @@
-*Lean sibling: a field $R$ carrying the $q$-data (CLAUDE.md §7c); the identity is purely algebraic, pre-archimedean.*
+*Lean sibling: a field $R$ carrying the $q$-data (AGENTS.md §7c); the identity is purely algebraic, pre-archimedean.*
 
 **Proposition (q-dimension decoration of the basis knots).** *For the basis
 torus knot $T_{2,k}$, the q-dimension decoration factors as the Hecke
@@ -23,4 +23,4 @@ antisymmetric $e_-$ (sinh) coupling of the Hopf 2-strand operation, with
 $\alpha_{EM} := \alpha_{T_{2,3}}$. Each $\delta_q(T_{2,k})$ above is one such
 $h\,[k]_q$ factor. Symbolic cross-check (basis-knot exponents $\{3,5,7,9,10\}$,
 all exact):
-[`delta_q_h_bracket_identity.py`](../../folio-assistant/computations/delta_q_h_bracket_identity.py).
+the canonical formalism.

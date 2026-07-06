@@ -1,3 +1,6 @@
+import Mathlib.Analysis.SpecialFunctions.Complex.Circle
+import Mathlib.Analysis.SpecialFunctions.Complex.Log
+
 /-!
 # The q-Laplacian spectral tower and its root-of-unity truncation
 
@@ -17,7 +20,7 @@ finite set `{[1]_q², …, [κ−1]_q²}`, exact in the cyclotomic field.
 
 This is a **fibre-level** statement: `q` is a formal/complex variable
 with `Im(q)` unconstrained (the operative structure is the root of
-unity / bar involution, not a reality assumption — cf. CLAUDE.md
+unity / bar involution, not a reality assumption — cf. AGENTS.md
 "Im(q) at fibre vs observable level"). It is stated over `ℂ` because
 the root of unity `exp(iπ/κ)` is genuinely complex.
 
@@ -30,8 +33,6 @@ The vanishing `[κ]_q = 0` is the numerator identity
 -- Ref: [reshetikhin1991] https://doi.org/10.1007/BF01239527
 -/
 
-import Mathlib.Analysis.SpecialFunctions.Complex.Circle
-import Mathlib.Analysis.SpecialFunctions.Complex.Log
 
 namespace QOU.QuantumObservableUniverses
 

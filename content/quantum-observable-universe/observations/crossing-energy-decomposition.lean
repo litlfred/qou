@@ -48,8 +48,8 @@ theorem q_inv_decomposition (q : ℝ) (hq : 0 < q) :
 -- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
 theorem symmetricWeight_eq_cosh (q : ℝ) (hq : 0 < q) :
     symmetricWeight q = Real.cosh (Real.log q) := by
-  unfold symmetricWeight Real.cosh
-  rw [Real.exp_log hq, Real.exp_neg, Real.exp_log hq]
+  unfold symmetricWeight
+  rw [Real.cosh_eq, Real.exp_log hq, Real.exp_neg, Real.exp_log hq]
 
 /-- The antisymmetric weight (q - q⁻¹)/2 equals sinh(ln q), for q > 0.
     The "Coulomb / sinh channel" is therefore a derived identity — the
@@ -58,8 +58,8 @@ theorem symmetricWeight_eq_cosh (q : ℝ) (hq : 0 < q) :
 -- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
 theorem antisymmetricWeight_eq_sinh (q : ℝ) (hq : 0 < q) :
     antisymmetricWeight q = Real.sinh (Real.log q) := by
-  unfold antisymmetricWeight Real.sinh
-  rw [Real.exp_log hq, Real.exp_neg, Real.exp_log hq]
+  unfold antisymmetricWeight
+  rw [Real.sinh_eq, Real.exp_log hq, Real.exp_neg, Real.exp_log hq]
 
 /-- General identity: q = cosh(ln q) + sinh(ln q), for any q > 0.
     This is `eˣ = cosh x + sinh x` at x = ln q (so the RHS is e^{ln q} = q).
@@ -122,8 +122,9 @@ noncomputable def emStrongRatio (q : ℝ) : ℝ :=
 theorem em_strong_ratio_tanh (q : ℝ) (hq : 1 < q) :
     emStrongRatio q = Real.tanh (Real.log q) := by
   have hq0 : 0 < q := by linarith
-  unfold emStrongRatio antisymmetricWeight symmetricWeight Real.tanh Real.sinh Real.cosh
-  rw [Real.exp_log hq0, Real.exp_neg, Real.exp_log hq0]
+  unfold emStrongRatio
+  rw [antisymmetricWeight_eq_sinh q hq0, symmetricWeight_eq_cosh q hq0,
+    Real.tanh_eq_sinh_div_cosh]
 
 /-- Symmetric weight is positive for q > 0. -/
 -- Ref: [manuscript] Ch. 7, §crossing-energy-decomposition
@@ -138,7 +139,7 @@ theorem symmetric_pos (q : ℝ) (hq : 0 < q) :
 theorem antisymmetric_pos (q : ℝ) (hq : 1 < q) :
     0 < antisymmetricWeight q := by
   unfold antisymmetricWeight
-  have : q⁻¹ < 1 := by rw [inv_lt_one_iff_of_pos (by linarith)]; exact hq
+  have : q⁻¹ < 1 := (inv_lt_one₀ (by linarith)).mpr hq
   linarith
 
 end QOU.Braiding

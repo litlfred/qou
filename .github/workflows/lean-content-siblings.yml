@@ -1,0 +1,139 @@
+name: lean-content-siblings
+
+# Two gates for content-block `.lean` siblings (content/<paper>/<chapter>/*.lean),
+# which live OUTSIDE the CI-built `lake build QOU` target (the qou lakefile globs
+# srcDir="." = the lean/ tree only). They are never compile-checked by the
+# library build and accumulate latent breakage: a type-erroring `:= trivial`
+# value (trivial : True cannot inhabit a data type), an `import` after a `/-!`
+# module docstring (illegal Lean-4 import order), or — the class this gate's
+# compile job catches — a sibling that *never compiled standalone at all* (bad
+# imports, orphaned bodies, renamed Mathlib modules). None of these is caught by
+# the vacuity audit (which keys on a True *conclusion*) nor by the library build.
+#
+# Jobs:
+#   gate — bun-only, no Lean toolchain:
+#     (a) diff-scoped lean-vacuity-axiom-audit `--fail-on` on the two
+#         guaranteed-error (compile-validity) classes for the .lean files a PR
+#         changes. Diff-scoping is deliberate: ~40 pre-existing import-order
+#         defects exist tree-wide (docs/audits/2026-06-07-conjecture-triage.md
+#         §K); a whole-tree gate would block every PR. This blocks NEW drift.
+#         The high-recall vacuity categories stay warn-only (agent-adjudicated).
+#     (b) agent-inspection ledger gate (`--check-ledger`): fails if a .lean
+#         file THIS PR changes carries a vacuity candidate lacking a fresh
+#         agent verdict in docs/audits/lean-vacuity-review-ledger.json (a
+#         verdict goes stale the moment the .lean changes). Diff-scoped (not
+#         whole-corpus) so main's pre-existing inspection backlog never blocks
+#         an unrelated PR.
+#
+#   content-sibling-compile — `lean`-direct type-check of the content-sibling
+#     .lean files a PR changes (outside the lean/ library tree). Catches the
+#     "never compiled standalone" class at PR time instead of months later.
+#     Infra failures (no toolchain / no olean cache) are NEUTRAL-SKIPPED so a
+#     cold runner never false-blocks; only a genuine `lean` type error fails.
+
+on:
+  # CI auto-triggers disabled (owner directive 2026-06-30): Actions billing.
+  workflow_dispatch:
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: oven-sh/setup-bun@v2
+      - name: Compute changed .lean files
+        id: changed
+        run: |
+          base="origin/${{ github.base_ref }}"
+          git fetch origin "${{ github.base_ref }}" --depth=1 || true
+          files=$(git diff --name-only --diff-filter=d "$base"...HEAD -- '*.lean' | tr '\n' ' ')
+          echo "files=$files" >> "$GITHUB_OUTPUT"
+          echo "changed .lean files: ${files:-<none>}"
+      - name: Compile-validity gate (changed files only)
+        if: steps.changed.outputs.files != ''
+        run: |
+          bun run content/pipeline/lean-vacuity-axiom-audit.ts \
+            ${{ steps.changed.outputs.files }} \
+            --quiet \
+            --fail-on proof-no-trivial-type-mismatch,lean-import-after-content
+      - name: Agent-inspection ledger gate (changed files only)
+        if: steps.changed.outputs.files != ''
+        run: |
+          # Diff-scoped (like the compile-validity gate above): fail only if a
+          # .lean file THIS PR changes carries a vacuity candidate lacking a
+          # fresh agent verdict. A whole-corpus check would couple every PR's
+          # CI to the global inspection backlog (main may carry uninspected
+          # candidates at any time), blocking unrelated PRs — the same reason
+          # the compile-validity gate is diff-scoped.
+          bun run content/pipeline/lean-vacuity-axiom-audit.ts \
+            ${{ steps.changed.outputs.files }} \
+            --quiet \
+            --check-ledger docs/audits/lean-vacuity-review-ledger.json
+
+  content-sibling-compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Compute changed content-sibling .lean files
+        id: changed
+        run: |
+          base="origin/${{ github.base_ref }}"
+          git fetch origin "${{ github.base_ref }}" --depth=1 || true
+          # content/**/*.lean siblings, EXCLUDING the lean/ library tree
+          # (which the lake build owns).
+          files=$(git diff --name-only --diff-filter=d "$base"...HEAD -- 'content/**/*.lean' \
+                  | grep -v '/lean/' | tr '\n' ' ' || true)
+          echo "files=$files" >> "$GITHUB_OUTPUT"
+          echo "changed content-sibling .lean files: ${files:-<none>}"
+      - name: Install elan
+        if: steps.changed.outputs.files != ''
+        run: |
+          set -o pipefail
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+      - name: Cache oleans (mathlib + QOU)
+        if: steps.changed.outputs.files != ''
+        uses: actions/cache@v4
+        with:
+          path: |
+            .lake
+            content/quantum-observable-universe/lean/.lake
+          key: lean-cache-${{ runner.os }}-${{ hashFiles('lean-toolchain') }}
+          restore-keys: |
+            lean-cache-${{ runner.os }}-
+      - name: Restore olean cache from lake-cache branch (best-effort)
+        if: steps.changed.outputs.files != ''
+        run: |
+          export PATH="$HOME/.elan/bin:$PATH"
+          ./scripts/lean-cache-restore.sh \
+            || echo "cache restore unavailable — compile step will neutral-skip if oleans missing"
+      - name: lean-direct type-check changed content siblings
+        if: steps.changed.outputs.files != ''
+        run: |
+          export PATH="$HOME/.elan/bin:$PATH"
+          # Neutral-skip on infra failure (no toolchain / no olean cache) — that
+          # is a runner problem, not a PR defect. Only a real `lean` type error
+          # from lean-verify.sh (exit 1) fails the gate.
+          if ! command -v lean >/dev/null 2>&1; then
+            echo "::warning::lean toolchain unavailable — skipping content-sibling compile check"
+            exit 0
+          fi
+          # Root Lake workspace: the restore lands oleans under $REPO_ROOT/.lake
+          # (NOT the QOU package subdir), matching lean-cache-restore.sh's own
+          # success count.
+          mathlib_oleans=$(find .lake/packages/mathlib \
+                            -name '*.olean' 2>/dev/null | wc -l | tr -d ' ')
+          if [ "${mathlib_oleans:-0}" -lt 2000 ]; then
+            echo "::warning::olean cache unavailable (${mathlib_oleans:-0} mathlib oleans) — skipping content-sibling compile check"
+            exit 0
+          fi
+          # lean-verify-siblings.sh fails ONLY on genuine errors (parse /
+          # elaboration / type). A file importing a Mathlib or QOU module
+          # outside the cached olean cone (the cache ships only QOU's
+          # dependency subset, not all of Mathlib) is neutral-skipped with a
+          # ::warning so a cache-subset miss never false-blocks the PR.
+          scripts/lean-verify-siblings.sh ${{ steps.changed.outputs.files }}

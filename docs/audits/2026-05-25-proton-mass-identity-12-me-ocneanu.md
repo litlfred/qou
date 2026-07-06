@@ -90,7 +90,7 @@ Per [PR #1288](https://github.com/litlfred/qou/pull/1288) and
 - Mass deficit lives in **trace-dominant** partitions, NOT PSD-dominant
   rectangles. For the proton's H_3, the (2,1) standard rep contributes
   **49% of T1** per per-Wedderburn-block diagnostic
-  ([`proton_wedderburn_block_diagnostic.py`](../../folio-assistant/computations/proton_wedderburn_block_diagnostic.py)).
+  ([`proton_wedderburn_block_diagnostic.py`](../../computations/proton_wedderburn_block_diagnostic.py)).
 
 The **clean structural interpretation of the factor 2**:
 
@@ -220,7 +220,7 @@ N=3 categorical ladder formula:
 
 with `c_3 = J_Hopf(q=1) = -2` (Hopf-link Jones evaluation).  See
 [`docs/precision-goals.md`](../precision-goals.md) and
-[`q-beta-operator-valued-N3.witness.json`](../../folio-assistant/computations/q-beta-operator-valued-N3.witness.json).
+[`q-beta-operator-valued-N3.witness.json`](../../computations/q-beta-operator-valued-N3.witness.json).
 
 The existing N=3 derivation matches Q_β CODATA to **6 ppb** —
 beating CAL-3's 100× target.
@@ -256,7 +256,7 @@ This session does NOT change CAL-3 status.
   — Lean closed form for |tr_M(β_Bor, q)|
 - [`YLambdaQSchur.lean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/YLambdaQSchur.lean)
   — Lean closed form for [3]_q!
-- [`proton_mu_mass_ratio_substrate_identity.py`](../../folio-assistant/computations/proton_mu_mass_ratio_substrate_identity.py)
+- [`proton_mu_mass_ratio_substrate_identity.py`](../../computations/proton_mu_mass_ratio_substrate_identity.py)
   — empirical verification of the identity
 - PR #546 (Hoefsmit symbolic) — pending 2×2 bug fix for full
   categorical proof of −1/12

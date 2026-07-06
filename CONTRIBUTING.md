@@ -9,6 +9,11 @@ Thanks for your interest in the **Quantum Observable Universe** repository. This
 git clone https://github.com/litlfred/qou.git
 cd qou
 
+# 1b. Wire up the Folio Assistant platform (separate repo litlfred/folio-assistant).
+#     Clones it as a sibling (../folio-assistant) + symlinks ./folio-assistant -> it,
+#     so the content pipeline + schema imports resolve. Idempotent; re-runnable.
+./scripts/setup-folio-assistant.sh
+
 # 2. Install content-pipeline deps (TypeScript via bun)
 cd content && bun install && cd ..
 
@@ -28,12 +33,24 @@ cd content && bun run validate
 | Path | What |
 |---|---|
 | `content/` | Authoritative content objects (`.ts` + `.md` + `.lean` triples) |
-| `folio-assistant/` | Platform package — MCP server, viewer, computations |
+| `folio-assistant/` | **Symlink** to the external platform repo [`litlfred/folio-assistant`](https://github.com/litlfred/folio-assistant) (pipeline, schemas, viewer, compute) — created by `scripts/setup-folio-assistant.sh`; not tracked |
 | `tools/` | Reusable libraries (see below) |
 | `chapters/` | LaTeX rendered from content (generated; do not edit) |
 | `docs/` | Design docs, audits, workplans |
 | `.github/workflows/` | CI/CD pipelines |
 | `.claude/` | Skill definitions, settings, decision log |
+
+### The Folio Assistant platform (external repo)
+
+`qou` is **content only**. The platform it consumes — content pipeline, schemas, LaTeX rendering, viewer, computations — lives in the separate repo [`litlfred/folio-assistant`](https://github.com/litlfred/folio-assistant). Local checkouts wire it through a single in-repo path, `./folio-assistant`, a symlink to a sibling clone created by `scripts/setup-folio-assistant.sh`:
+
+| Consumer | Path it resolves through |
+|---|---|
+| `content/schema/*.ts` shims + content blocks | `folio-assistant/schemas/…` |
+| `package.json` scripts (`validate`, `build:content`, `export-json`, `test`, `lint`) | `folio-assistant/content/pipeline/…` (and `folio-assistant/` for tests) |
+| CI ([`.github/workflows/build.yml`](.github/workflows/build.yml)) | the platform's reusable workflow on GitHub — **no local clone needed** |
+
+Re-run the setup script any time to update the platform clone or repair the symlink. Override the source via env vars: `FOLIO_ASSISTANT_REPO`, `FOLIO_ASSISTANT_REF`, `FOLIO_ASSISTANT_DIR`.
 
 ### `tools/` packages
 
@@ -52,20 +69,20 @@ cd content && bun run validate
 
 | If you're working on… | Start here |
 |---|---|
-| Paper content (definitions, theorems, proofs) | [`.github/copilot-instructions.md`](.github/copilot-instructions.md) §"Content-object architecture" + [`CLAUDE.md`](CLAUDE.md) §"Content-object architecture" |
-| A Lean formalization | [`CLAUDE.md`](CLAUDE.md) §"Writing `.lean` proofs — rules for agents" + [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) §"Lean workspace" |
-| A new compute script | [`CLAUDE.md`](CLAUDE.md) §"LP / SDP duals — first-class infra" + `.claude/skills/local/compute-author.md` |
+| Paper content (definitions, theorems, proofs) | [`.github/copilot-instructions.md`](.github/copilot-instructions.md) §"Content-object architecture" + [`AGENTS.md`](AGENTS.md) §"Content-object architecture" |
+| A Lean formalization | [`AGENTS.md`](AGENTS.md) §"Writing `.lean` proofs — rules for agents" + [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) §"Lean workspace" |
+| A new compute script | [`AGENTS.md`](AGENTS.md) §"LP / SDP duals — first-class infra" + `.claude/skills/local/compute-author.md` |
 | A pyhecke / hecke-engine change | [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) §"Tools packages" |
 | A CI / publish workflow change | [`docs/workplans/2026-05-24-publish-yml-parallelization-plan.md`](docs/workplans/2026-05-24-publish-yml-parallelization-plan.md) (the current plan) |
 
 ## Branching + commits
 
-Per [`CLAUDE.md`](CLAUDE.md) §"Branch + PR workflow" (**STRICT**):
+Per [`AGENTS.md`](AGENTS.md) §"Branch + PR workflow" (**STRICT**):
 
 - **Always create a branch + PR at the start of every work tranche.** No commits direct to `main`.
 - **Branch naming**: `claude/<theme>-<utc-ymd>` (e.g. `claude/lean-cache-hybrid-2026-05-24`).
 - **Commit early + commit often**: small structured commits (1 logical unit per commit) so cherry-pick, bisect, and focused review work cleanly.
-- **Default merge method: rebase-merge** (preserves the per-commit structure). The skill docs say "merge-commit" but `CLAUDE.md` §"Branch + PR workflow" rule 7 overrides that.
+- **Default merge method: rebase-merge** (preserves the per-commit structure). The skill docs say "merge-commit" but `AGENTS.md` §"Branch + PR workflow" rule 7 overrides that.
 - **Don't squash** unless the branch has noisy `wip` / `oops` commits the owner explicitly asks to collapse.
 
 ## CI gates
@@ -82,8 +99,8 @@ Run validators locally before pushing:
 
 ```bash
 # Substrate-precision smoke
-python3 folio-assistant/computations/hyperbolic_volumes.py
-python3 folio-assistant/computations/codata_masses.py
+python3 computations/hyperbolic_volumes.py
+python3 computations/codata_masses.py
 
 # Content validation
 cd content && bun run validate
@@ -107,7 +124,7 @@ The high-leverage ones for contributors:
 | `/code-review` | Review the current diff |
 | `/verify` | Run the app and verify a change works |
 
-Full routing table is in [`CLAUDE.md`](CLAUDE.md) §"Skill routing".
+Full routing table is in [`AGENTS.md`](AGENTS.md) §"Skill routing".
 
 ## Code style
 
@@ -116,10 +133,10 @@ Full routing table is in [`CLAUDE.md`](CLAUDE.md) §"Skill routing".
 | Python | `ruff` (recommended), `black` style | Substrate-precision discipline: prefer `mpmath.mpf("...")` / `Decimal("...")` over bare `float` — see `.claude/skills/local/compute-author.md` |
 | Rust | `cargo fmt` + `cargo clippy` | `hecke-engine`'s `mpfr` feature gates rug; default builds are mpfr-on |
 | TypeScript | Bun's default (tab=2-space) | Content pipeline + assistant UI |
-| Lean | `lake build` + `lake test` | Always carries `-- Ref:` citation on every `sorry`; see [`CLAUDE.md`](CLAUDE.md) §"Writing `.lean` proofs" |
+| Lean | `lake build` + `lake test` | Always carries `-- Ref:` citation on every `sorry`; see [`AGENTS.md`](AGENTS.md) §"Writing `.lean` proofs" |
 
 ## Questions?
 
 - Open an issue: https://github.com/litlfred/qou/issues
 - See [`docs/`](docs/) for design docs, audits, workplans
-- Check [`CLAUDE.md`](CLAUDE.md) for the comprehensive agent / contributor guide (it's exhaustive)
+- Check [`AGENTS.md`](AGENTS.md) for the comprehensive agent / contributor guide (it's exhaustive)

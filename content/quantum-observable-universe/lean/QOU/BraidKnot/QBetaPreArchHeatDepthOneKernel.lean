@@ -22,14 +22,14 @@ eigenvalue `μ_λ(q)`, `prop:q-heat-kernel-peter-weyl`) carries the exact
 per-mode kernel `1 - (q-1)·μ_λ·t`, and finite sums of modes (heat-trace
 truncations `Z_q`) satisfy explicit division-free depth-2 compositions.
 
-Everything here is generic-`R` commutative algebra (CLAUDE.md §7c): no
+Everything here is generic-`R` commutative algebra (AGENTS.md §7c): no
 ordering, no `Real.*`, no archimedean constructs — the statements live at
 the fibre level where the Habiro kernel hunt operates. The candidate family
 these lemmas back is UNGATED: per
 `QOU.BraidKnot.QBetaCKRecursionKernelConstraints` it must still produce a
 bar-odd leading coefficient `a₁ = -c₃` and survive the constant-depth-2
 `c₄` refutation. Gate evaluation happens in the Stage-B probe
-(`folio-assistant/computations/qbeta/`), not here.
+(`computations/qbeta/`), not here.
 
 ## References
 - `def:q-exponential`, `prop:q-exponential-taylor` (information-theory).

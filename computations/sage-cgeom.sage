@@ -6,7 +6,7 @@ alpha = tanh(ln q) / C_geom
 Target: C_geom ~ 14.25
 
 Run from repo root:
-    sage folio-assistant/computations/sage-cgeom.sage
+    sage computations/sage-cgeom.sage
 """
 
 import json

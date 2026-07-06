@@ -66,7 +66,7 @@ noncomputable def proton4_nf : Fin 6 → R_t
 -- We state the theorem and leave it as sorry — the sympy witness
 -- provides the numerical verification.
 
-/-- 4× proton matrix = NF-reconstructed matrix.
+/- 4× proton matrix = NF-reconstructed matrix.
     This is the same approach as b3_nf_correct but with a longer
     matrix chain (6 multiplications instead of 3). -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
@@ -85,12 +85,12 @@ noncomputable def proton4_nf : Fin 6 → R_t
 
 /-! ## §3  Key property: proton and neutron e⁻ signs -/
 
-/-- The proton e⁻ coefficient (after typed crossings) is:
+/- The proton e⁻ coefficient (after typed crossings) is:
     c_e(proton) = (q-1)²(q+1)²(q⁸-3q⁶-3q²+1) / (4q⁶)
 
     Sign: NEGATIVE for q ∈ (1, 3/2]  (ProtonTrefoilSign.lean) -/
 
-/-- The neutron e⁻ coefficient (after typed crossings) is:
+/- The neutron e⁻ coefficient (after typed crossings) is:
     c_e(neutron) = -(q-1)²(q+1)²(q²+1)² / (4q⁴)
 
     Sign: ALWAYS NEGATIVE for q > 1  (ProtonTrefoilSign.lean)

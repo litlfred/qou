@@ -105,20 +105,20 @@ one ($\sigma_0$ or $\sigma_1$).
 
 ## Cancellation conditions
 
-**When does nothing happen?**
+**Trivial-output condition.**
 If $\varphi_0 = \varphi_1 = \varphi_{01} = \psi_0 = \psi_1 =
 \psi_{01} = 0$ (two bare photons), then
 $\gamma_1 \cdot \gamma_2 = \mathbf{1}$. Light passes through
 light. All channels except $\gamma$ vanish.
 
-**When do the Hopf links vanish?**
+**Vanishing of the Hopf links.**
 $L_+$ and $L_-$ both vanish when the photons are co-polarized on a
 single axis (e.g., $\varphi_1 = \psi_1 = \varphi_{01} = \psi_{01}
 = 0$). Co-polarized photons reinforce their shared polarization
 and feed the vacuum, but they cannot link. Linear plus linear
 produces more linear --- never circular.
 
-**When does the electron channel vanish?**
+**Vanishing of the electron channel.**
 $e^- = 0$ whenever $\varphi_{01} = \psi_{01} = 0$ (no Hopf
 dressing on either photon). The trivial knot operator **cannot
 produce electrons from photons that carry only linear
@@ -127,7 +127,7 @@ essential pre-condition: it supplies two of the three crossings
 needed for a trefoil, and the remaining single crossing comes from
 the other photon's linear polarization.
 
-**When does the $L_+/L_-$ asymmetry vanish?**
+**Vanishing of the $L_+/L_-$ asymmetry.**
 For two photons that each carry only Hopf dressing and no linear
 polarization ($\varphi_0 = \varphi_1 = \psi_0 = \psi_1 = 0$,
 $\varphi_{01}, \psi_{01} \neq 0$), the $L_+$ coefficient is

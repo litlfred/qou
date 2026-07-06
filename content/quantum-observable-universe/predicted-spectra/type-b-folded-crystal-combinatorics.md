@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition (Type-B folded crystal cancellation, sorry-free).**
 *For every partition $\lambda$ realised as a list of cells with
 contents $c(r, \mathrm{col}) := \mathrm{col} - r$, the cell-level
@@ -61,7 +59,7 @@ identifies as the structural reduction of the chirality factor.
 ## Significance
 
 The proposition closes a small but genuine structural gap: the
-"why does Type-B folding help?" claim from CLAUDE.md §7b is now
+"why does Type-B folding help?" claim from AGENTS.md §7b is now
 backed by a sorry-free Lean theorem demonstrating the cell-level
 cancellation that drives the folded-crystal symmetry. The full
 chirality first-order coefficient computation still requires the

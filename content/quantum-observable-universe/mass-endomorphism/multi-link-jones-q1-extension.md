@@ -1,8 +1,6 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Multi-link Jones values at $q = 1$ — Lean infrastructure for the $c_5 / c_6$ candidate investigation.**
 
-The $Q_\beta$ precision ladder
+The $\mathfrak{Q}_\beta$ precision ladder
 ([`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder))
 closed $c_1, c_2$ from Kashiwara ($b, b^2$), $c_3$ from
 $J_{\mathrm{Hopf}}(q{=}1) = -2$ at the 3-fold Markov closure, $c_4$
@@ -11,15 +9,12 @@ alternating Kashiwara $\times$ Jones pattern at odd $k = 3$ suggests trying
 multi-link Jones values for $c_5, c_7, \ldots$ — Borromean rings,
 double-Hopf, etc.
 
-**Empirically this fails**: at $q_0$ at 50 dps via
-[`probe_q_beta_c5_c6_multilink.py`](../../folio-assistant/computations/probe_q_beta_c5_c6_multilink.py),
-
 | coefficient | empirical | closest simple multi-link Jones candidate |
 |:---:|---:|---:|
 | $c_5$ | $\approx -395.4$ | $-J_{\mathrm{Borromean}} = +8$ (50$\times$ off in scale and sign) |
 | $c_6$ | $\approx -45{,}485$ | $J_{\mathrm{Hopf}} \cdot J_{\mathrm{Borromean}} = 16$ (3000$\times$ off) |
 
-## What this block provides
+## Contents of this block
 
 This is **infrastructure, not closure**. The Lean module
 `QOU.BraidKnot.multi_link_jones_q1_extension` exports:
@@ -41,14 +36,7 @@ This is **infrastructure, not closure**. The Lean module
    docstrings noting the empirical mismatch** — they are not
    closures.
 
-4. **A `MultiLinkJonesAtOne` class** with fields `c5_candidate`,
-   `c6_candidate` for downstream consumers to plug in any specific
-   candidate values they want to test. The default instance uses the
-   probe's "best simple integer" candidates ($c_5 = +8$, $c_6 = 16$),
-   **explicitly flagged as exploratory placeholders, not closure
-   values**.
-
-## Why the simple multi-link pattern fails
+## Failure of the simple multi-link pattern
 
 Three structural hypotheses for the 50–3000$\times$ mismatch:
 
@@ -67,8 +55,6 @@ Three structural hypotheses for the 50–3000$\times$ mismatch:
 3. **New categorical input at $k \geq 5$**: a higher-rank irrep
    coupling, a Mostow rigidity gap correction, or a non-trivial
    Habiro residue contribution may enter only at orders $k \geq 5$.
-
-## Concrete next probe
 
 Test whether the **per-Wedderburn-block contribution at $k = 5, 6$**
 matches empirical when properly weighted by the $q$-deformed

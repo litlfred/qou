@@ -1,7 +1,5 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 The vertex operator algebra $(V, Y, |0\rangle)$
-([vertex operator](#def\:vertex-operator)) inherits every QU and QUO
+([vertex operator](#def:vertex-operator)) inherits every QU and QUO
 axiom as a relation on the Hecke generators $\sigma_1, \ldots, \sigma_{n-1}$
 of $H_n(R, q)$. Below we list each axiom and its explicit
 translation into **knot coordinates** — braid words in $\sigma_i$,
@@ -19,7 +17,7 @@ $\cap\colon V \otimes V^{\vee} \to \mathbf{1}$.
 The braiding $c_{V,V}$ acts on $V^{\otimes n}$ via the Hecke
 representation $\rho_n\colon B_n \to H_n(R, q)$, where we write
 $\sigma_i$ both for the braid generator in $B_n$ and for its image
-$\rho_n(\sigma_i)$ in $H_n(R, q)$ (CLAUDE.md §7a). Rigidity and
+$\rho_n(\sigma_i)$ in $H_n(R, q)$ (AGENTS.md §7a). Rigidity and
 braiding are encoded by three families of relations:
 
 **(QU-1a) Hecke relation** (quadratic):
@@ -193,7 +191,7 @@ acts as a unit for splitting.
 
 The fibre functor $\tau\colon \mathbf{C} \to R\text{-Mod}$
 realises as the Jones--Markov trace
-([Jones--Markov trace](#thm\:jones-markov-trace)). Its defining
+([Jones--Markov trace](#thm:jones-markov-trace)). Its defining
 relation on Hecke generators is:
 
 **(QU-3a) Markov property I** (conjugation invariance):
@@ -301,7 +299,7 @@ $$
 $$
 
 Equivalently: the only braid word commuting with all generators
-is the identity. In the vertex algebra, this means there is no
+is the identity. In the vertex algebra, there is no
 nontrivial state $a \in V$ with $Y(a, z) = \lambda\mathrm{id}$
 for all $z$ — every state produces a genuinely $z$-dependent
 operator.
@@ -417,7 +415,7 @@ centre of $H_n(R, q)$).
 ### C-2: $q$-Deformed obstruction to nilpotence ($d_q^2 \neq 0$)
 
 The $q$-exterior derivative $d_q = q^{-1}d + (1 - q^{-1})\pi_V \circ d$ satisfies
-([categorical $d_q^2$](#prop\:categorical-dq-squared)):
+([categorical $d_q^2$](#prop:categorical-dq-squared)):
 
 $$
   d_q^2\alpha
@@ -456,7 +454,7 @@ curvature.
 ### C-3: Hodge star and Poincar'e duality
 
 The categorical Hodge star
-([categorical Hodge star](#def\:categorical-hodge-star))
+([categorical Hodge star](#def:categorical-hodge-star))
 $\star\colon \Omega^k(A) \to \Omega^{n-k}(A)$ satisfies
 $\star^2 = \mathrm{id}$. In knot coordinates, $\star$ acts on
 modes via the antipode:
@@ -531,7 +529,7 @@ embeddable torus knots to the 7 generators $\mathcal{G}$.
 ### C-5: Yekutieli obstruction classes
 
 The quantum characteristic classes $\kappa_n \in H^2(\mathcal{S}, \mathcal{B})$
-([quantum characteristic classes](#def\:quantum-characteristic-classes))
+([quantum characteristic classes](#def:quantum-characteristic-classes))
 obstruct lifting from brane level $n$ to $n+1$. In knot
 variables, the obstruction is detected by the failure of
 Markov stabilisation at the jet level:
@@ -602,7 +600,7 @@ with $\mathrm{Alt}_k = \sum_{\pi \in S_k} \mathrm{sgn}(\pi) q^{-\ell(\pi)} T_\pi
 ### C-7: Instanton constraint (self-dual curvature)
 
 The categorical instanton condition $\star_q F_\nabla = F_\nabla$
-([instanton on-shell](#rem\:instanton-on-shell)) becomes a
+([instanton on-shell](#rem:instanton-on-shell)) becomes a
 relation on the curvature 2-form in Hecke generators. The
 curvature $F_\nabla = \nabla^2$ has components:
 
@@ -651,7 +649,7 @@ is flat. For the fundamental representation, $c_2(A)$ is the
 ### C-8: Hodge--Laplacian and harmonic braid words
 
 The $q$-Laplacian $\Delta_q = d_q \delta_q + \delta_q d_q$
-([Hodge--Laplacian](#rem\:hodge-laplacian-relation)) is
+([Hodge--Laplacian](#rem:hodge-laplacian-relation)) is
 self-adjoint. In knot coordinates:
 
 $$
@@ -690,7 +688,7 @@ space.
 ### C-9: Cohomological embedding (knot basis for $H^*$)
 
 The cohomology of the moduli surface $\Sigma_g$
-([cohomological embedding](#prop\:cohomological-embedding))
+([cohomological embedding](#prop:cohomological-embedding))
 admits a knot basis. In knot coordinates, each cohomology
 generator is a specific Hecke word:
 

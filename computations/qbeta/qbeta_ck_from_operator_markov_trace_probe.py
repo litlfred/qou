@@ -154,8 +154,8 @@ def main() -> int:
     # 1 + c_2 u^2 + ...).
 
     # Substrate evaluation point + leading-order test below.
-    print(f"  Substituting numerically at q_0 = 1.10997858275... :")
-    Q0_str = "1.1099785827513808075916690956107688798744991218736"
+    print(f"  Substituting numerically at q_0 = 1.10997859556... :")
+    Q0_str = "1.1099785955573347198997632204832250266562084087802"
     q0_sp = sp.Float(Q0_str, 50)
     u0 = sp.N(u_q.subs(q, q0_sp), 50)
     print(f"    u(q_0) = {u0}")

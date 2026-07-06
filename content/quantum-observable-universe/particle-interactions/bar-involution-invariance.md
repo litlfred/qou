@@ -20,7 +20,7 @@ Then:*
  image of the folded crystal-step operator
  $(\tilde f_i, \tilde f_{\bar i})$ is fixed by the bar-involution.*
 
-## Why this is a witness against hand-rolled CPT violations
+## Significance: a witness against hand-rolled CPT violations
 
 The conditions $\overline{T_w} = T_w$ and
 $w_\lambda(q^{-1}) = w_\lambda(q)$ are *necessary* consequences of
@@ -73,7 +73,7 @@ unreachable.
 Steps (1) and (2) are unconditional; step (3) is conditional on
 [`conj:symmetric-crystal-pair-production`](#conj:symmetric-crystal-pair-production)
 and is registered as such in the Lean file (class-conditional, per
-CLAUDE.md §3b-cond).
+AGENTS.md §3b-cond).
 
 ## Worked example: $n = 3$
 
@@ -107,5 +107,7 @@ on every factor.
  `plancherel_weight_bar_invariant` and
  `plancherel_weight_transpose_eq` (parts 1 and 2 above).
 - Records part 3 as a conditional theorem under the class
- `SymmetricCrystalPairProduction n` (per CLAUDE.md §3b-cond),
+ `SymmetricCrystalPairProduction n` (per AGENTS.md §3b-cond),
  citing the upstream conjecture.
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

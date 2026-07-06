@@ -12,7 +12,7 @@ closures of PR #639 (Type-B fold-depth fits D + T, fails ³He;
 4 simple 2-input rules also fail).
 
 The empirical finding (per
-`folio-assistant/computations/probe_phiq_per_partition_klambda.py`):
+`computations/probe_phiq_per_partition_klambda.py`):
 re-assigning `k_λ = 1` for the **maximum eigenvalue magnitude**
 partition per atom, with `k_λ = 2` for all other Wedderburn
 blocks, collapses all three atoms' brane-tower magnitudes to
@@ -33,7 +33,7 @@ LaTeX label: `rem:per-partition-k-lambda-rule`
 
 ## Conjectural status
 
-Per CLAUDE.md §3b: this is a structural axiom. The OPEN content
+Per AGENTS.md §3b: this is a structural axiom. The OPEN content
 is the **structural** existence of the rule (substrate-derivable,
 not per-atom retuned). This file does not close the conjecture;
 it makes the propositional content checkable.
@@ -85,7 +85,7 @@ def candidateRule
     error `eps`, given `phiProj` computed via per-partition
     truncation.
 
-    Per CLAUDE.md §3b: `phiProj` is an EXPLICIT input (not ∃-bound).
+    Per AGENTS.md §3b: `phiProj` is an EXPLICIT input (not ∃-bound).
     Caller must produce a concrete numerical value from the
     operator-valued brane tower under the rule. -/
 def PerPartitionRecovery
@@ -143,7 +143,7 @@ def perPartitionTowerSigned (lamDom : Partition) : ℝ :=
 theorem he3_per_partition_tower_magnitude_bounded :
     |perPartitionTowerSigned he3DominantPartition| < 2 := by
   unfold perPartitionTowerSigned he3DominantPartition
-    domContribK1 domContribK2 nonDomSumK2
+    domContribK1 nonDomSumK2
   -- Goal: |(-0.028) + 1.094| < 2
   -- = |1.066| = 1.066 < 2 ✓
   norm_num [abs_lt]
@@ -154,7 +154,7 @@ theorem he3_per_partition_tower_magnitude_bounded :
 theorem deuteron_per_partition_tower_magnitude_bounded :
     |perPartitionTowerSigned deuteronDominantPartition| < 2 := by
   unfold perPartitionTowerSigned deuteronDominantPartition
-    domContribK1 domContribK2 nonDomSumK2
+    domContribK1 nonDomSumK2
   -- Goal: |0.0 + 0.876| < 2 = 0.876 < 2 ✓
   norm_num [abs_lt]
 
@@ -164,7 +164,7 @@ theorem deuteron_per_partition_tower_magnitude_bounded :
 theorem tritium_per_partition_tower_magnitude_bounded :
     |perPartitionTowerSigned tritiumDominantPartition| < 2 := by
   unfold perPartitionTowerSigned tritiumDominantPartition
-    domContribK1 domContribK2 nonDomSumK2
+    domContribK1 nonDomSumK2
   -- Goal: |0.050 + (-1.987)| < 2 = |-1.937| = 1.937 < 2 ✓
   norm_num [abs_lt]
 
@@ -210,9 +210,11 @@ theorem open_per_partition_witnessed_empirically :
   -- a SUBSTRATE-DERIVABLE selector; the trivial witness here
   -- ratifies the structural shape only.
   refine ⟨fun _ => false, ?_⟩
-  intro lamDom h_mem
-  simp [List.mem_cons] at h_mem
-  rcases h_mem with rfl | rfl | rfl
+  -- The conjecture body opens with `let rule := …`, so the first
+  -- `intro` binds that let; then the ∀-partition and its membership.
+  intro _rule lamDom h_mem
+  simp only [List.mem_cons, List.not_mem_nil, or_false] at h_mem
+  obtain rfl | rfl | rfl := h_mem
   · exact deuteron_per_partition_tower_magnitude_bounded
   · exact tritium_per_partition_tower_magnitude_bounded
   · exact he3_per_partition_tower_magnitude_bounded

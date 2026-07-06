@@ -1,6 +1,9 @@
 import { proposition } from "../../schema/builders";
 
 export default proposition({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+  ],
   label: "prop:local-substrate-q",
   lean: { ref: "qou:QOU.Experimental.local_substrate_q",
     validation: "not_checked",
@@ -19,8 +22,8 @@ export default proposition({
   proofs: ["prf:local-substrate-q"],
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/q_pinning_50_digit.py",
-    witness: "folio-assistant/computations/q-pinning-50-digit.witness.json",
+    script: "computations/q_pinning_50_digit.py",
+    witness: "computations/q-pinning-50-digit.witness.json",
     status: "verified",
   },
   tags: ["substrate", "mass", "observation"],

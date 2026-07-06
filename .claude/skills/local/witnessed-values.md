@@ -140,7 +140,7 @@ Concretely, the rule is:
 ### Adding a new entry
 
 1. Identify the canonical witness JSON in
-   `folio-assistant/computations/*.witness.json`.
+   `computations/*.witness.json`.
 2. Pick a stable, snake-case `name` mirroring the symbol when possible
    (`q_0`, `m_n_MeV`, `inv_alpha`).
 3. Set `defaultPrecision` no larger than the underlying witness

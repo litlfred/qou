@@ -250,3 +250,5 @@ $q_n \to 1$ such that:
 4. $v^*$ is smooth on $[0, T^*) \setminus \Sigma$ where
    $\Sigma$ is a closed set of Hausdorff dimension $\leq 1$.
 
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

@@ -1,3 +1,5 @@
+*QOU threading predictions for the $T(2,6)$ ring, compared against experiment across six observables.*
+
 | Prediction | QOU (threading) | Experiment | Match |
 |------------|---:|---:|:---:|
 | Ring-closure barrier | 193–386 kJ/mol | 200–400 kJ/mol | yes |

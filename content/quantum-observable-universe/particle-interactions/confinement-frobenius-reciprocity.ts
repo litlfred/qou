@@ -19,8 +19,8 @@ export default proposition({
   cites: ["yekutieli2015", "kassel1995"],
   computation: {
     engine: "numpy",
-    script: "folio-assistant/computations/borromean-axial-coupling.py",
-    witness: "folio-assistant/computations/borromean-axial-coupling.witness.json",
+    script: "computations/borromean-axial-coupling.py",
+    witness: "computations/borromean-axial-coupling.witness.json",
     status: "verified",
   },
 });

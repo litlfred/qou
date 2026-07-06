@@ -8,14 +8,4 @@ $$
   a_{\mathrm{Bor}_k} \;=\; (a_{4_1})^k \;=\; (1 - h^2)^k.
 $$
 
-*Proof.* Brunnian-ness decouples the Hecke pairings of distinct
-components: $\chi_\lambda(\beta_{\mathrm{Bor}_k}) =
-\prod_{i=1}^{k}\chi_\lambda(\beta_{4_1}^{(i)})$ on each Wedderburn
-block.  Substituting in
-([knot factor](#prop:knot-factor-spectral-form)) and applying the
-amphicheiral corollary
-([amphicheiral](#cor:knot-factor-amphicheiral)) componentwise gives
-$(1 - h^2)^k$.  $\square$
-
-**Application.** ${}^4\mathrm{He}$ is a Borromean-$2$ configuration;
-its knot factor is $(1 - h^2)^2$ — derived, not fit.
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

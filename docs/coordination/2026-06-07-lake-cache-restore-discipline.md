@@ -26,7 +26,7 @@ avoidable**: a usable preserved cache exists.
 - **Artifacts:** `lake-oleans.tgz.part00`..`part04` (all 5 present).
 - **Verdict:** ready for restore; ~2 min vs ~30+ min cold rebuild.
 
-**Restore (CLAUDE.md §"Mathlib cache 403 fallback" Step 0):**
+**Restore (AGENTS.md §"Mathlib cache 403 fallback" Step 0):**
 ```bash
 ROOT=$(git rev-parse --show-toplevel); TGZ=$(mktemp)
 SLUG=$(cut -d: -f2 "$ROOT/lean-toolchain" | tr -d '\r' | tr . -)   # v4.24.0 -> v4-24-0
@@ -57,12 +57,12 @@ of using the oleans — defeating the whole point. The mitigation is to
 1. Run the Step 0 restore above.
 2. If Lake still tries to fetch Mathlib: re-apply the local redirect
    `git config --global url."file:///home/user/mathlib4".insteadOf
-   "https://github.com/leanprover-community/mathlib4"` (CLAUDE.md
+   "https://github.com/leanprover-community/mathlib4"` (AGENTS.md
    §"Mathlib cache 403 fallback" Step 2) — or shallow-clone Mathlib locally.
 3. Verify via the LSP on a Mathlib-importing file (first query is slow/cold but
    must return real diagnostics, not the timeout sentinel).
 4. **Do NOT** declare Lean unavailable until both the restore and the redirect
-   have been tried (CLAUDE.md STRICT "route, don't give up").
+   have been tried (AGENTS.md STRICT "route, don't give up").
 
 ## SEED after a successful build (so the next session restores)
 

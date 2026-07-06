@@ -5,14 +5,14 @@
 **KLR tranche 2 — Composite-3 (Type-B folded crystal) preflight RUN.**
 Companion to the Composite-4 + Composite-1 preflights. Same template, applied
 to cont. 9 [Option D / Composite 3 (Type-B folded crystal sum)](../../../docs/scope/2026-06-03-qbeta-residue-a-klr-crystal-infra-scope.md#composite-3-type-b-folded-crystal-sum)
-(12-17 session infra build, highest cost; CLAUDE.md §7b authoring guidance).
+(12-17 session infra build, highest cost; AGENTS.md §7b authoring guidance).
 
 ## What Composite 3 is
 
     F(u) = Σ_{T ∈ B_{Type-B fold}(λ)} q^{c(T)} · u^{|T|}
 
 where `B_{Type-B fold}(λ)` is the σ-fixed subset of the sl_n Kashiwara crystal
-under the Dynkin automorphism σ (CLAUDE.md §7b: "Type B folding for chirality /
+under the Dynkin automorphism σ (AGENTS.md §7b: "Type B folding for chirality /
 CPT"; σ-fixed crystals are bar-involution invariant by construction).
 `c(T)` is the q-content statistic (a sum of positive integers in the standard
 crystal model from
@@ -32,7 +32,7 @@ Same structural argument as Composite 1 (PR #1914 RUN):
    you pick** — folded or unfolded, the positivity of the q-monomial basis sum
    is fundamental.
 
-The CLAUDE.md §7b "bar-involution invariant" property of folded crystals
+The AGENTS.md §7b "bar-involution invariant" property of folded crystals
 *means* the basis sum is bar-invariant; it does NOT mean the sum is negative.
 Bar-invariance and sign-positivity are orthogonal properties.
 
@@ -54,7 +54,7 @@ So at |T|=2 σ-fixed: A_2 = q^3 + q^3 = 2q^3 (positive at q > 0).
 ## References
 - Composite-3 ansatz: [`2026-06-03-qbeta-residue-a-klr-crystal-infra-scope.md`](../../../docs/scope/2026-06-03-qbeta-residue-a-klr-crystal-infra-scope.md) §Composite 3.
 - Sibling preflights (Composite 4 magnitude, Composite 1 standard sign): same scope docs in `docs/scope/2026-06-06-qbeta-klr-composite*-preflight-run-results.md`.
-- §7b authoring guidance: CLAUDE.md (Type-B folding).
+- §7b authoring guidance: AGENTS.md (Type-B folding).
 - Proved `c_2 = -1`: PR #1887, ledger cont. 14.
 """
 from __future__ import annotations
@@ -141,7 +141,7 @@ def main() -> int:
         print(f"    sign-flip factor), [u^k]F > 0 at ALL u^k rungs. CANNOT source")
         print(f"    NEGATIVE c_k for any k (c_2, c_3, c_4 all negative at q₀).")
         print(f"  cont. 9 Option D (12-17 session Composite-3 build) NOT AUTHORISED.")
-        print(f"  CLAUDE.md §7b bar-invariance is preserved by the folding but does NOT")
+        print(f"  AGENTS.md §7b bar-invariance is preserved by the folding but does NOT")
         print(f"    rescue: bar-invariance and sign-negativity are orthogonal.")
         verdict = "TYPEB_FOLDED_CRYSTAL_SIGN_REFUTED_AT_U2"
     else:
@@ -156,7 +156,7 @@ def main() -> int:
         "folding, ω_2. σ-fixed 2-subsets at |T|=2 are {1,4} and {2,3} (the only "
         "fixed pairs under σ = 1↔4, 2↔3). [u²]F = q^3 + q^3 = 2q^3 > 0 at q > 0, "
         "sign-incompatible with c_2 = -1 < 0. cont. 9 Option D (12-17 sessions) "
-        "NOT authorised. CLAUDE.md §7b bar-invariance of folded crystals does NOT "
+        "NOT authorised. AGENTS.md §7b bar-invariance of folded crystals does NOT "
         "rescue (bar-invariance and sign-negativity are orthogonal)."
     )
     wb.set_content_block("conj:qbeta-precision-ladder")
@@ -165,7 +165,7 @@ def main() -> int:
     wb.add_data("interpretation", (
         "Same structural refutation pattern as Composite 1 standard: positivity "
         "of q-monomial sums at q > 0 is convention-robust. Folded crystals "
-        "(CLAUDE.md §7b) inherit positivity from the unfolded sl_n crystal — the "
+        "(AGENTS.md §7b) inherit positivity from the unfolded sl_n crystal — the "
         "σ-fixed subset is a SUBSET of positive basis elements, so its q-weight "
         "sum is bounded above by the full sum but still positive. The Composite-3 "
         "ansatz has NO q-Pochhammer factor to flip the sign at u², so the "

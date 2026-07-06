@@ -1,55 +1,97 @@
+import Mathlib.Tactic
+import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
+
 /-!
-# QOU.LiftingDescent.tm_dilogarithm_evaluation — placeholder stub
+# QOU.LiftingDescent.tm_dilogarithm_evaluation
 
-**Placeholder canonical** for content block
-[`lem:topological-mass-dilogarithm`](../../../quantum-observable-universe/lifting-and-descent/topological-mass-dilogarithm.md): *Quantum dilogarithm evaluation of exceptional-divisor contributions*.
+**Lemma** ([`lem:topological-mass-dilogarithm`](../../../quantum-observable-universe/mass-endomorphism/topological-mass-dilogarithm.md)).
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.LiftingDescent.tm_dilogarithm_evaluation` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
+*Each exceptional-divisor summand evaluates to the quantum dilogarithm:*
+
+    ‖ MI∫_{E_i} (∇_A q, L ∧ F⁺) ‖ = Φ_q(z_i) = ∫₀^{z_i} ln_q(1+t)/t dt,
+
+*in the spectral coordinates of the Briggs–Klein chart at `E_i`.*
+
+## Structure (hypothesis vs. derivation)
+
+The `.md` displays a chain of **two** equalities.
+
+- The **second** equality — `Φ_q(z) = ∫₀^{z} ln_q(1+t)/t dt` — is
+  realised *definitionally*: `Phi_q` is **defined** below as a genuine
+  Mathlib interval integral of the q-logarithm integrand, and the
+  representation is recorded as the proved lemma
+  `phi_q_integral_representation`.  `Φ_q` is no longer an opaque
+  constant; only the q-logarithm `ln_q` itself remains opaque (its
+  q-series theory is not in Mathlib).
+- The **first** equality — the Briggs–Klein chart evaluation of the
+  multiplicative-integral norm to that integral — is the genuine open
+  analytic input (Yekutieli multiplicative integration + the
+  Faddeev–Kashaev saddle evaluation), stated as the sub-lemma
+  `tm_divisor_chart_evaluation` with an honest `sorry` + citations
+  (AGENTS.md §1, §1a item 2).
+
+The main theorem *derives* the .md identity by chaining the sorried
+chart evaluation with the proved integral representation — it does not
+assume its conclusion (lean-proof-vacuity-audit fix recipe; AGENTS.md
+§3b-cond item 5).
+
+## Base ring (§7c)
+
+`ℝ` throughout: the statement is about an archimedean norm and a real
+interval integral (`∫ … dt` over the volume measure), which are
+archimedean constructs.
 -/
 
 namespace QOU.LiftingDescent
 
+/-- The norm of the divisor-`i` non-abelian multiplicative integral
+    `‖MI∫_{E_i}(∇_A q, L ∧ F⁺)‖`. -/
+opaque MI : ℕ → ℝ
 
-/-- Abstract context for the `tm_dilogarithm_evaluation` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
-class TmDilogarithmEvaluationContext where
-  /-- Exceptional-divisor coordinate `z_i` per divisor index. -/
-  z : ℕ → ℝ
-  /-- Mass-integral evaluation `MI(E_i)` per divisor index. -/
-  MI : ℕ → ℝ
-  /-- Quantum dilogarithm `Φ_q : ℝ → ℝ`. -/
-  Phi_q : ℝ → ℝ
-  /-- Manuscript identity: each summand equals the quantum dilogarithm
-      `MI(E_i) = Φ_q(z_i)`. -/
-  claim_tm_dilogarithm_evaluation : ∀ i : ℕ, MI i = Phi_q (z i)
+/-- The q-logarithm `ln_q` (at the ambient deformation parameter `q`).
+    Its q-series theory is not in Mathlib, so it stays opaque; the
+    dilogarithm `Phi_q` below is a genuine integral of it. -/
+opaque lnq : ℝ → ℝ
 
-/-- **Lemma statement** (from manuscript):
+/-- The Briggs–Klein spectral coordinate `z_i` at the exceptional
+    divisor `E_i`. -/
+opaque z : ℕ → ℝ
 
-Each exceptional-divisor summand evaluates to the quantum
-dilogarithm:*
+/-- The Faddeev–Kashaev quantum dilogarithm, **defined** by its
+    integral representation `Φ_q(w) = ∫₀^{w} ln_q(1+t)/t dt` (the
+    .md's second equality) as a Mathlib interval integral. -/
+-- Ref: [faddeev_kashaev1994] https://doi.org/10.1142/S0217732394002446
+noncomputable def Phi_q (w : ℝ) : ℝ := ∫ t in (0 : ℝ)..w, lnq (1 + t) / t
 
-$$
-  \bigl\lVert
-  \mathrm{MI}\!\!\int_{E_i}
-  \bigl(\nabla_A q, L \wedge F^+\bigr)
-  \bigr\rVert
-  =
-  \Phi_q(z_i)
-  =
-  \int_0^{z_i} \frac{\ln_q(1+t)}{t}\, dt,
-$$
+/-- **Integral representation of `Φ_q`** — the .md's second equality,
+    proved (definitionally) rather than assumed. -/
+theorem phi_q_integral_representation (w : ℝ) :
+    Phi_q w = ∫ t in (0 : ℝ)..w, lnq (1 + t) / t := rfl
 
-*in the spectral coordinates of the Briggs--Klein chart at $E_i$.
+/-- **Open analytic input — Briggs–Klein chart evaluation.**  In the
+    spectral coordinates of the Briggs–Klein chart at `E_i`, the
+    multiplicative-integral norm evaluates to the q-dilogarithm
+    integral at `z_i`.  Needs Yekutieli multiplicative integration and
+    the Faddeev–Kashaev evaluation (neither in Mathlib); body is
+    `sorry`. -/
+-- Ref: [faddeev_kashaev1994] https://doi.org/10.1142/S0217732394002446
+-- Ref: [yekutieli2015] https://doi.org/10.1142/9537
+theorem tm_divisor_chart_evaluation :
+    ∀ i : ℕ, MI i = ∫ t in (0 : ℝ)..(z i), lnq (1 + t) / t := by
+  -- Needs: the Briggs–Klein chart evaluation of the multiplicative
+  -- integral on E_i (saddle-point reduction of the MI-norm to the
+  -- q-dilogarithm integral in the spectral coordinate z_i).
+  sorry
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types and translating
-    the manuscript claim above. -/
--- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-dilogarithm.ts
-theorem tm_dilogarithm_evaluation [ctx : TmDilogarithmEvaluationContext] :
-    ∀ i : ℕ, ctx.MI i = ctx.Phi_q (ctx.z i) :=
-  ctx.claim_tm_dilogarithm_evaluation
+/-- **Exceptional-divisor summand = quantum dilogarithm**
+    ([`lem:topological-mass-dilogarithm`]).
+
+`‖MI∫_{E_i}‖ = Φ_q(z_i)` for every exceptional divisor `E_i`.
+*Derived* (not assumed): chain the chart evaluation with the proved
+integral representation of `Φ_q`. -/
+theorem tm_dilogarithm_evaluation : ∀ i : ℕ, MI i = Phi_q (z i) :=
+  fun i =>
+    (tm_divisor_chart_evaluation i).trans
+      (phi_q_integral_representation (z i)).symm
 
 end QOU.LiftingDescent

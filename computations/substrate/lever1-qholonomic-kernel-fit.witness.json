@@ -1,0 +1,83 @@
+{
+  "computation": "lever1_qholonomic_kernel_fit",
+  "description": "Stage 3 of the lever-1 fibre-kernel hunt: tests whether the binding period S(m)=\u03a3_{\u03bb\u22a2m} dim_q(\u03bb) satisfies a general (non-monic) order-2 q-holonomic recurrence P2(q,q^m)S(m)+P1 S(m-1)+P0 S(m-2)=0, by bounded-bidegree guess-and-verify with HELD-OUT falsification (fit m=2..6, verify m=7,8,9). Follows the C-finite SL\u2082 falsification (Stage 0) and the monic-form non-closure at m=6 (Stage 2).",
+  "discipline": "no fit; sympy symbolic exact in q; held-out m never used in the linear fit, so a verifying nullspace solution is a genuine q-holonomic certificate not an overfit; (a)/(b)-scoped verdict per AGENTS.md.",
+  "auditOnly": "docs/audits/2026-06-27-lever1-qinvolution-cyclotomic-kernel.md",
+  "results": {
+    "S_symbolic_degrees": {
+      "2": 0,
+      "3": 1,
+      "4": 2,
+      "5": 4,
+      "6": 7,
+      "7": 10,
+      "8": 14,
+      "9": 19
+    },
+    "fit_indices": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "heldout_indices": [
+      7,
+      8,
+      9
+    ],
+    "attempts": [
+      {
+        "A": 1,
+        "B": 1,
+        "unknowns": 27,
+        "constraints": 83,
+        "fit_nullspace_dim": 0,
+        "n_certified": 0
+      },
+      {
+        "A": 2,
+        "B": 1,
+        "unknowns": 45,
+        "constraints": 93,
+        "fit_nullspace_dim": 0,
+        "n_certified": 0
+      },
+      {
+        "A": 2,
+        "B": 2,
+        "unknowns": 75,
+        "constraints": 133,
+        "fit_nullspace_dim": 0,
+        "n_certified": 0
+      },
+      {
+        "A": 3,
+        "B": 2,
+        "unknowns": 105,
+        "constraints": 143,
+        "fit_nullspace_dim": 0,
+        "n_certified": 0
+      },
+      {
+        "A": 3,
+        "B": 3,
+        "unknowns": 147,
+        "constraints": 183,
+        "fit_nullspace_dim": 0,
+        "n_certified": 0
+      },
+      {
+        "A": 4,
+        "B": 3,
+        "unknowns": 189,
+        "constraints": 193,
+        "fit_nullspace_dim": 18,
+        "n_certified": 0
+      }
+    ],
+    "certified": null
+  },
+  "certified": false,
+  "verdict": "NO order-2 q-holonomic recurrence found up to q-deg \u00b14, X-deg 3 (X=q^m, bar-symmetric) that predicts the held-out m=[7, 8, 9] (scope-limited (a)). So the binding period S(m)=\u03a3 dim_q(\u03bb) is q-holonomic of HIGHER q-shift order (\u22653) or non-order-2; a small-bidegree order-2 closed form is excluded. This MIRRORS the Q_\u03b2 c_k result (no clean low-order holonomic recurrence; kernel must be depth \u22653 or non-constant q-rational \u2014 ck-dk-canonical-registry). The cyclotomic (q-1)\u00b2\u00b7\u03a6_d tower (Stage 1) + the partition-sum denominator onset at m=6 (Stage 2) remain the sharp constraints; this rules out the small-bidegree order-2 closed form, not the q-holonomic/Habiro class."
+}

@@ -8,7 +8,7 @@ T16 enumerates a small set of natural counting candidates on the (2,1)
 Young diagram and the Borromean braid structure, checks which match the
 T15 coefficient 4-tuple (h⁰, h², h⁴, h⁶) = (2, 0, −3, −1), and records
 the matches as STRUCTURAL OBSERVATIONS — explicitly NOT as a derivation
-attempt.  Per CLAUDE.md `no-7th-ansatz` / formalize-first discipline,
+attempt.  Per AGENTS.md `no-7th-ansatz` / formalize-first discipline,
 the probe enumerates candidates and reports their matches without
 proposing any single one as the answer.
 

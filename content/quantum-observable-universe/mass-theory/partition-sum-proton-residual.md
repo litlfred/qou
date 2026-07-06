@@ -1,10 +1,34 @@
+**Proposition (proton tower residual = Frobenius co-Casimir trace).**
+*Let $\mathfrak{m}^{\mathrm{tower}}(\mathfrak{p}, q_0)$ be the
+pure-tower proton mass and $m_{\mathfrak{p}}^{\mathrm{CODATA}}$ the
+experimental proton mass. The proton tower residual equals the
+electron-scaled Frobenius co-Casimir trace at $n = 3$:*
+
+$$
+  \boxed{
+    \Delta m_{\mathfrak{p}}
+    \;:=\;
+    m_{\mathfrak{p}}^{\mathrm{CODATA}}
+    - \mathfrak{m}^{\mathrm{tower}}(\mathfrak{p}, q_0)
+    \;=\;
+    m_e \cdot \mathrm{tr}_M\bigl(C_{\mathrm{Frob}}^{(n=3)}\bigr)
+    \;=\;
+    m_e\Bigl(2 + \frac{1}{[2]_q}\Bigr),
+  }
+$$
+
+*where $C_{\mathrm{Frob}}$ is the Frobenius co-Casimir central
+element defined below.*
+
+---
+
 Let $\mathfrak{m}^{\mathrm{tower}}(\mathfrak{p}, q_0)$ be the
 pure-tower proton mass computed via the
 [mass endomorphism tower](#prop:mass-endomorphism-tower) at
 $q_0$, in Hecke units, converted to MeV via the electron-trefoil
 calibration and corrected by $(1 + [2]_q \hbar_q^2)$
 ([quantum Planck constant](#def:quantum-planck-constant)).
-Let $m_{\mathfrak{p}}^{\mathrm{CODATA}} \approx :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json}\;\mathrm{MeV}$
+Let $m_{\mathfrak{p}}^{\mathrm{CODATA}} \approx :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json}\;\mathrm{MeV}$
 denote the experimental proton mass.
 
 **Derivation via the Frobenius co-Casimir.**
@@ -81,11 +105,11 @@ $1.2761$ MeV and the observed $1.2779$ MeV may come from:*
 
 1. *Hecke-algebra finite-size corrections beyond the co-Casimir
    trace (higher-order Frobenius invariants).*
-2. *The numerical proton-mass calibration itself has uncertainty
+2. *The canonical proton-mass calibration itself has uncertainty
    at this precision.*
 
 **GB-filtration decomposition (witness).**
-*Script `folio-assistant/computations/frobenius_partition_sum.py`
+*formalism the formal derivation
 decomposes $\sum_\lambda 1/\dim_q(\lambda)$ by confinement
 filtration level $\ell(\lambda) = \mathrm{height}(\lambda) - 1$:*
 
@@ -113,7 +137,7 @@ See [Table 3](#tbl:partition-sum-proton-residual-table3-data).
 self-dual pattern (top+bottom levels = $1 + 1$, plus middle
 $q$-dependent) holds for all $n$.*
 
-**Numerical witness at $q_0 \approx 1.11$.**
+**canonical witness at $q_0 \approx 1.11$.**
 
 See [Table 4](#tbl:partition-sum-proton-residual-table4-data).
 
@@ -122,18 +146,18 @@ See [Table 4](#tbl:partition-sum-proton-residual-table4-data).
 **inverse-dimension partition sum** at level $n = 3$, the
 expectation of $1/d_\lambda$ under the uniform-endpoint measure
 on the Young lattice. The Kerov-walk variant has been ruled out
-upstream (`kerov_walk_verify.py` confirms the reciprocal-dim
+upstream (the formal derivation confirms the reciprocal-dim
 distribution $(2/5, 1/5, 2/5)$ is a valid probability but **not**
 the stationary measure of any simple local-update Kerov walk).
 Plausible algebraic origins remain open — most natural is the
 centraliser-algebra reading $1/d_\lambda = \dim Z(\mathrm{End}_{H_n}(S^\lambda))$
 normalised, with the partition sum reflecting the trace of the
-identity on the full Wedderburn decomposition. Numerical match
+identity on the full Wedderburn decomposition. canonical exact match
 to $0.03\%$ at canonical $q_0$ is a strong structural clue;
 rigorous derivation is open.*
 
 **Extension failure for neutron-containing configurations.**
-*Upstream `tower_isotope_absolute.py` tested whether the same
+*Upstream the formal derivation tested whether the same
 $\sum_\lambda 1/d_\lambda$ hypothesis extends to higher
 partitions $n = 3A$ for isotopes.  Result: **fails for every
 configuration containing at least one neutron**.  The neutron
@@ -145,7 +169,7 @@ pole of $\Phi_q$, so $\Phi_q(\hat V_0^{\mathfrak{n}}) \sim
 0.989)$, undershooting the tower mass of the neutron by factor
 $\sim 2.3$.*
 
-**Consequences.**
+**Corollaries.**
 
 1. *The $\frac{5}{2} \cdot m_e$ closed form identifies the
    **single missing term** in the proton's pure-tower
@@ -161,8 +185,7 @@ $\sim 2.3$.*
    pure-tower formula misses.*
 3. *Every isotope binding ($^2$H, $^3$H, $^3$He, $^4$He, ...)
    inherits the neutron tower failure through its neutron
-   components — explaining the $-55\%$ deuteron residual in
-   ([deuteron first principles](#rem:deuteron-first-principles)).*
+   components.*
 
 **Deuteron-gap and $q$-variant probes.**
 *Two upstream probes tested closed-form corrections against the
@@ -189,12 +212,12 @@ See [Table 5](#tbl:partition-sum-proton-residual-table5-data).
    ([Habiro completion](#prop:full-pole-structure-mass-trace)),
    or non-default inter-nucleon multiplicities.*
 
-*Witnesses: `deuteron-residual-probe.witness.json`,
+*Witnesses: `deuteron-residual-canonical evaluation.witness.json`,
 `q-variant-partition-sum.witness.json`.*
 
 **Reference implementations.**
 *Scripts
 (both on branch `claude/1ppb-handover-docs-cyFlQ`):*
-- [residual_partition_sum.py](https://github.com/litlfred/qou/blob/claude/1ppb-handover-docs-cyFlQ/folio-assistant/computations/residual_partition_sum.py)
-- [tower_isotope_absolute.py](https://github.com/litlfred/qou/blob/claude/1ppb-handover-docs-cyFlQ/folio-assistant/computations/tower_isotope_absolute.py)
-- [kerov_walk_verify.py](https://github.com/litlfred/qou/blob/claude/1ppb-handover-docs-cyFlQ/folio-assistant/computations/kerov_walk_verify.py)
+- the canonical formalism
+- the canonical formalism
+- the canonical formalism

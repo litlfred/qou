@@ -21,7 +21,7 @@ unproved input is exactly the class instance, and the conditional
 results are verified by Lean.
 
 This pattern (axiomatize the conjecture as a class, prove conditional
-downstream results) follows §3b of `CLAUDE.md`.
+downstream results) follows §3b of `AGENTS.md`.
 
 -- Ref: [manuscript] conj:mass-endomorphism
 -- Ref: [manuscript] conj:brane-tower-z-habiro
@@ -121,12 +121,11 @@ theorem transient_unique {R : Type*} [CommRing R] (β : Type*)
     the algebraic content of the physical expectation that the tower
     always contributes positively to mass. -/
 -- Ref: [manuscript] conj:mass-endomorphism §"Tower convergence"
-theorem transient_nonneg {R : Type*} [OrderedRing R] (β : Type*)
+theorem transient_nonneg {R : Type*} [CommRing R] [PartialOrder R] [IsOrderedRing R] (β : Type*)
     [M : MassEndomorphism R β]
     (h : M.tr_descended ≤ M.vol_identity) :
     0 ≤ M.tr_transient := by
-  have hrw : M.tr_transient = M.vol_identity - M.tr_descended := by
-    linear_combination -M.vol_eq
+  have hrw : M.tr_transient = M.vol_identity - M.tr_descended := M.vol_eq
   rw [hrw]; exact sub_nonneg.mpr h
 
 /-- **In the flat case (tr_transient = 0), fullMass equals the descended part.**
@@ -164,12 +163,12 @@ theorem descended_eq_vol_minus_transient {R : Type*} [CommRing R] (β : Type*)
     Under the natural physical conditions (positive volume, non-negative
     descended trace), the full categorical mass is positive. -/
 -- Ref: [manuscript] conj:mass-endomorphism §"What is known"
-theorem fullMass_pos_of_vol_pos {R : Type*} [OrderedRing R] (β : Type*)
+theorem fullMass_pos_of_vol_pos {R : Type*} [CommRing R] [PartialOrder R] [IsOrderedRing R] (β : Type*)
     [M : MassEndomorphism R β]
     (hvol : 0 < M.vol_identity)
     (hdesc : 0 ≤ M.tr_descended) :
-    0 < fullMass β := by
-  rw [fullMass_eq_volume]
+    0 < fullMass (R := R) β := by
+  rw [show fullMass (R := R) β = M.vol_identity from fullMass_eq_volume β]
   exact hvol
 
 end QOU.WedderburnMass

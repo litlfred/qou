@@ -7,7 +7,7 @@ Authoritative source for:
   Internals   _hm_dict, _reduce_nf, _build_gram
 
 Moved here (with inversion in M2b) from the 3425-line
-folio-assistant/computations/hecke_core.py so there is a single
+computations/hecke_core.py so there is a single
 source of truth that downstream code can depend on. `hecke_core.py`
 now imports these back for backward compatibility.
 
@@ -24,7 +24,7 @@ import numpy as np
 
 from . import _legacy  # noqa: F401  — adjusts sys.path
 
-# Prefer the in-repo folio-assistant/computations/q_parameter shim (which
+# Prefer the in-repo computations/q_parameter shim (which
 # _legacy puts on sys.path).  Fall back to the published qou_substrate
 # package when pyhecke is used outside the repo (e.g. inside a Sage
 # docker, on PyPI installs, in Pyodide, …).  Same fallback chain the
@@ -311,6 +311,9 @@ __all__ = [
     "hm", "hm_exact", "nf_tr", "nf_net", "nf_of_word", "markov_trace_combo",
     # Gram matrix
     "G", "G_INV", "gram_matrix", "gram_inverse",
+    # 50-dps mpmath Gram / trace (NO float64)
+    "z_mp", "tr_m_mp", "gram_matrix_mp",
+    "gram_matrix_mp_strings", "tr_m_mp_strings",
     # Native-dispatched atom kernels
     "build_atom_nf", "atom_per_generator_volumes", "has_native",
     # Exact-rational internals (rarely used externally)
@@ -320,13 +323,150 @@ __all__ = [
 
 
 def gram_matrix() -> np.ndarray:
-    """Return the 6x6 Gram matrix on the NF basis at q = q_0."""
+    """Return the 6x6 Gram matrix on the NF basis at q = q_0.
+
+    NOTE: float64.  For a high-precision (50-dps) Gram with NO float64,
+    use `gram_matrix_mp()` / `tr_m_mp()` instead — see the rationale in
+    their docstrings (the irrational `z = 1/(q^½+q^−½)` makes an exact
+    Fraction Gram impossible, so mpmath at 50 dps is the faithful path).
+    """
     return G
 
 
 def gram_inverse() -> np.ndarray:
-    """Return G^{-1}."""
+    """Return G^{-1} (float64). See `gram_matrix_mp` for the 50-dps path."""
     return G_INV
+
+
+# ══════════════════════════════════════════════════════════════
+# 50-dps mpmath Gram / Markov trace — NO float64
+# ══════════════════════════════════════════════════════════════
+# `z = 1/(q^{1/2} + q^{-1/2})` is irrational (q^{1/2} is irrational at
+# q = 111/100), so an *exact* rational Gram is impossible — the Fraction
+# path approximates z by `_Z_FRAC = 4993/10000` (4 digits, ~1e-4).  The
+# faithful high-precision path is mpmath at 50 dps: the NF reduction is
+# exact in ℚ (via `nf_of_word(..., exact=True)`), and only the irrational
+# Markov weight `z` is evaluated numerically at 50 dps.  Consumers that
+# need a float64-free Gram (e.g. the clarabel-MPFR LP dual, which marshals
+# 50-dps decimal strings across the FFI boundary) should source the Gram
+# and trace here, not from the float64 `G` / `TR_M`.
+
+import mpmath as _mp  # noqa: E402
+
+_GRAM_MP_DPS = 60  # 50-dps target + 10 guard digits (compute-author §1)
+
+
+def _q0_50dps_str() -> str:
+    """Canonical 50-digit substrate q_0 as a decimal string (no float)."""
+    try:
+        from q_parameter import Q_50_DIGIT_STR  # type: ignore[import-not-found]
+        return Q_50_DIGIT_STR
+    except ImportError:
+        from qou_substrate import Q_50_DIGIT_STR  # type: ignore[import-not-found]
+        return Q_50_DIGIT_STR
+
+
+def z_mp(dps: int = _GRAM_MP_DPS) -> "_mp.mpf":
+    """z = 1/(q^½ + q^−½) at 50-dps mpmath (irrational; no float64)."""
+    with _mp.workdps(dps):
+        q = _mp.mpf(_q0_50dps_str())
+        qi_ = 1 / q
+        return +(1 / (_mp.sqrt(q) + _mp.sqrt(qi_)))  # unary + pins precision
+
+
+def tr_m_mp(dps: int = _GRAM_MP_DPS) -> list:
+    """Markov trace TR_M on the NF basis at 50-dps mpmath (NO float64).
+
+    Mirrors the float64 `TR_M` exactly: [1, z, z, z², z², h·z²+z] with
+    h = q − q⁻¹ and z the irrational Markov weight at 50 dps.
+    """
+    with _mp.workdps(dps):
+        q = _mp.mpf(_q0_50dps_str())
+        qi_ = 1 / q
+        hh = q - qi_
+        z_ = 1 / (_mp.sqrt(q) + _mp.sqrt(qi_))
+        return [_mp.mpf(1), +z_, +z_, +(z_ ** 2), +(z_ ** 2),
+                +(hh * z_ ** 2 + z_)]
+
+
+def _hm_mp(nf, c, d, gen, h_mp):
+    """mpmath left-fold NF × (c·σ_gen + d·I), at the TRUE substrate q_0.
+
+    Same structure-constant tables as the float64 `hm`, but with all
+    coefficients in `mpmath.mpf` and `h = q_0 − q_0⁻¹` evaluated at the
+    true 50-dps substrate q_0 (NOT the 111/100 rational of `hm_exact`).
+    """
+    r = [_mp.mpf(0)] * 6
+    if gen == 0:
+        tables = [
+            (0, [(1, c), (0, d)]),
+            (1, [(1, c * h_mp), (0, c), (1, d)]),
+            (2, [(3, c), (2, d)]),
+            (3, [(3, c * h_mp), (2, c), (3, d)]),
+            (4, [(5, c), (4, d)]),
+            (5, [(5, c * h_mp), (4, c), (5, d)]),
+        ]
+    else:
+        tables = [
+            (0, [(2, c), (0, d)]),
+            (1, [(4, c), (1, d)]),
+            (2, [(2, c * h_mp), (0, c), (2, d)]),
+            (3, [(5, c), (3, d)]),
+            (4, [(4, c * h_mp), (1, c), (4, d)]),
+            (5, [(5, c * h_mp), (3, c), (5, d)]),
+        ]
+    for si, tgts in tables:
+        if nf[si] == 0:
+            continue
+        for ti, co in tgts:
+            r[ti] += nf[si] * co
+    return r
+
+
+def _nf_of_word_mp(word, h_mp):
+    nf = [_mp.mpf(1)] + [_mp.mpf(0)] * 5
+    for g in word:
+        nf = _hm_mp(nf, _mp.mpf(1), _mp.mpf(0), g, h_mp)
+    return nf
+
+
+def gram_matrix_mp(dps: int = _GRAM_MP_DPS) -> list:
+    """6×6 Gram matrix G_{ij} = tr_M(b_i·b_j) at 50-dps mpmath — NO float64.
+
+    Computed entirely at the TRUE substrate q_0 (Q_50_DIGIT_STR): the NF
+    of the product word b_i·b_j is built by the left-fold `_hm_mp` with
+    h = q_0 − q_0⁻¹ at 50 dps, and contracted with the 50-dps Markov
+    weights `tr_m_mp` (which carry the irrational z).  Returns a
+    list-of-lists of `mpmath.mpf`.
+
+    This is the float64-free analogue of the canonical `G`: it agrees with
+    `G` to ~1e-15 (both are at q_0).  Do NOT confuse with the
+    `nf_of_word(..., exact=True)` / `hm_exact` Fraction path, which uses
+    the *approximate* rational q = 111/100 (≈ 2e-4 from q_0) — see the
+    `gram.py` 111/100-approximation audit note.
+    """
+    with _mp.workdps(dps):
+        q = _mp.mpf(_q0_50dps_str())
+        h_mp = q - 1 / q
+        trm = tr_m_mp(dps)
+        Gm = [[_mp.mpf(0)] * 6 for _ in range(6)]
+        for i in range(6):
+            for j in range(6):
+                nf = _nf_of_word_mp(NF_BASIS[i] + NF_BASIS[j], h_mp)
+                Gm[i][j] = +_mp.fsum(nf[k] * trm[k] for k in range(6))
+        return Gm
+
+
+def gram_matrix_mp_strings(dps: int = _GRAM_MP_DPS) -> list:
+    """`gram_matrix_mp` as decimal strings — ready to marshal across the
+    PyO3 / CLI boundary to the clarabel-MPFR solver without any float64."""
+    Gm = gram_matrix_mp(dps)
+    return [[_mp.nstr(Gm[i][j], dps - 5) for j in range(6)] for i in range(6)]
+
+
+def tr_m_mp_strings(dps: int = _GRAM_MP_DPS) -> list:
+    """`tr_m_mp` as decimal strings (no float64) for FFI marshalling."""
+    return [_mp.nstr(v, dps - 5) for v in tr_m_mp(dps)]
 
 
 # ══════════════════════════════════════════════════════════════

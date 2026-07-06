@@ -24,7 +24,7 @@ Engine: hecke-engine 0.8.0
 
 ### Symbolic Pauli witnesses: A=2..12 exact in q
 - hecke-engine 0.8.0 with inductive quotient chaining
-- tr_alt(q), net(q), observable(q), coral(q) as LaurentPolynomial ℤ
+- tr_alt(q), net(q), observable(q), color(q) as LaurentPolynomial ℤ
 - Checkpoint/resume system for long computations
 - ¹²C (A=12): 45 seconds, coefficients ~10¹⁷, within i128
 
@@ -44,15 +44,15 @@ Engine: hecke-engine 0.8.0
 - Evaluate at q₀ with error propagation from Q_ERR in q_parameter.py
 - Format: `content/quantum-observable-universe/appendix-qvalues/`
 
-### 2. NF appendix with coral content
-- Each nucleus: observable(q), coral(q), tr_alt(q), net(q)
-- The coral content IS the degree ≥ 1 interaction information
+### 2. NF appendix with color content
+- Each nucleus: observable(q), color(q), tr_alt(q), net(q)
+- The color content IS the degree ≥ 1 interaction information
 - Per-length distribution net(ℓ)(q) for each word length
 - **Witness files moved: DONE** (session 5). 21 witness Lean files
   copied to `content/.../lean/QOU/Descartes/PauliWitness/` with
   namespace and import. Originals preserved in `tools/hecke-engine/`.
 - **Remaining**: create content block .ts manifests for each witness;
-  add coral content to appendix layout
+  add color content to appendix layout
 
 ### 3. Algorithm optimizations
 - **Mid-crossing stripping: DONE** (session 5). v8 now strips after each
@@ -146,9 +146,9 @@ Engine: hecke-engine 0.8.0
 | `tools/hecke-engine/checkpoint-*.json` | Resumable checkpoints |
 | `content/.../kummer-shell-closure.ts/md` | Kummer↔shell content |
 | `content/.../groebner-nf-computation.ts/md` | NF computation remark |
-| `folio-assistant/computations/pauli-witness.py` | Symbolic (Python) |
-| `folio-assistant/computations/transfer_matrix_6x6.py` | 6×6 analysis |
-| `folio-assistant/computations/isotope-abundance.py` | Abundance model |
+| `computations/pauli-witness.py` | Symbolic (Python) |
+| `computations/transfer_matrix_6x6.py` | 6×6 analysis |
+| `computations/isotope-abundance.py` | Abundance model |
 
 ### Modified files
 | File | Changes |
@@ -172,7 +172,7 @@ hecke-engine 0.8.0 (src/bin/v8.rs)
 │   ├── tr_alt(q): alternating trace
 │   ├── net(q): total amplitude
 │   ├── observable(q): net(0) + net(1)
-│   └── coral(q): Σ_{ℓ≥2} net(ℓ)
+│   └── color(q): Σ_{ℓ≥2} net(ℓ)
 ├── Inductive stripping: accumulate stripped terms' Pauli data
 ├── Batch witness: `witness A_min A_max`
 ├── Checkpoint resume: skip existing checkpoints

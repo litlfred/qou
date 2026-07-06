@@ -44,17 +44,28 @@ namespace QOU.ParticleInteractions
     `cpt-orbit-closure-density.lean` (deduplication tracked as a
     follow-up: `Mathlib.Combinatorics.Young.YoungDiagram` is the
     long-term target). -/
-constant PartitionMVF (n : ℕ) : Type
+-- Ref: [manuscript] prop:cpt-orbit-closure-density
+axiom PartitionMVF (n : ℕ) : Type
 
 /-- The Type-B fold involution on partitions (transpose). -/
-constant partitionTransposeMVF {n : ℕ} : PartitionMVF n → PartitionMVF n
+-- Ref: [manuscript] prop:cpt-orbit-closure-density
+axiom partitionTransposeMVF {n : ℕ} : PartitionMVF n → PartitionMVF n
+
+/-- Equality on the abstract partition carrier is decidable.  Supplied
+    classically because `PartitionMVF` is opaque here (the concrete
+    `Mathlib.Combinatorics.Young.YoungDiagram` carrier has a genuine
+    `DecidableEq`); used so list-membership in `isCPTSaturatedMVF`
+    is decidable. -/
+noncomputable instance instDecidableEqPartitionMVF {n : ℕ} :
+    DecidableEq (PartitionMVF n) :=
+  Classical.decEq _
 
 /-- A populated Wedderburn-block list is **CPT-saturated** iff
     closed under the Type-B fold involution. -/
 def isCPTSaturatedMVF {n : ℕ} (Λ : List (PartitionMVF n)) : Prop :=
   ∀ lam ∈ Λ, partitionTransposeMVF lam ∈ Λ
 
-instance isCPTSaturatedMVF_decidable {n : ℕ}
+noncomputable instance isCPTSaturatedMVF_decidable {n : ℕ}
     (Λ : List (PartitionMVF n)) :
     Decidable (isCPTSaturatedMVF Λ) := by
   unfold isCPTSaturatedMVF
@@ -87,7 +98,7 @@ noncomputable def FrobeniusPackingDensity.value
     list.  Provided so any downstream code that branches on
     `cptSaturated` continues to compile after the structural
     refactor; the Boolean is now a *consequence*, not a primitive. -/
-def FrobeniusPackingDensity.cptSaturated
+noncomputable def FrobeniusPackingDensity.cptSaturated
     {n : ℕ} (ρ : FrobeniusPackingDensity n) : Bool :=
   decide (isCPTSaturatedMVF ρ.populatedBlocks)
 
@@ -135,7 +146,7 @@ class MassVolumeFactorization
 noncomputable def bindingFromJSJ
     {K : Type*} {n : ℕ} [MassVolumeFactorization K n]
     (pieces : List K) : ℝ :=
-  (pieces.map MassVolumeFactorization.mass).sum
+  (pieces.map (MassVolumeFactorization.mass (n := n))).sum
 
 /-- **Faithful-density skeleton instance.**  Pins
     `density.scaleMe := 0.51099895` (the CODATA 2022 electron mass
@@ -147,8 +158,8 @@ noncomputable def bindingFromJSJ
     Frobenius scale. -/
 -- Ref: [manuscript] Ch 11 §8 / mass-volume-factorization
 -- Ref: [codata2022] CODATA 2022 electron rest energy
-instance canonical (K : Type*) : MassVolumeFactorization K where
-  density := fun _ => { scaleMe := 0.51099895, cptSaturated := false }
+instance canonical (K : Type*) : MassVolumeFactorization K 0 where
+  density := fun _ => { scaleMe := 0.51099895, populatedBlocks := [] }
   volume := fun _ => 0
   mass := fun _ => 0
   factorization := by

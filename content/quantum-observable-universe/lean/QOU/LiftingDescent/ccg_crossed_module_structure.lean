@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.LiftingDescent.ccg_crossed_module_structure — `(SU_{q_n}(2), 𝓞_M^×)` crossed module
 

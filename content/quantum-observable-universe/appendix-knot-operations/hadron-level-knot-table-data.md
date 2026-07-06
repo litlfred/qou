@@ -1,3 +1,5 @@
+Per-atom knot-table data, ordered by increasing mass number $A$: the Markov trace $\mathrm{tr}_M$, its net value, the binding energy $B$ in MeV, and the Frobenius positivity check. Every atom listed passes the positivity check ($\checkmark$), and $\mathrm{tr}_M$ grows by many orders of magnitude across the range.
+
 | Atom | $A$ | $\mathrm{tr}_M$ | net | $B$ (MeV) | Frobenius |
 |------|-----|-----------------|-----|-----------|-----------|
 | Proton | 1 | $0.4380$ | $0.999$ | — | $\checkmark$ |

@@ -25,7 +25,7 @@ CANDIDATES — bar-symmetric forms near 2:
   C6: (1 + b²) where b² = (h²+3)/(h²+4) Hoefsmit (bar-symmetric)
   C7: 2 · cos(α/2) where α is some Reeb phase (bar-symmetric if α is)
 
-DISCIPLINE GUARD: per CLAUDE.md, do NOT propose a NEW fit candidate.
+DISCIPLINE GUARD: per AGENTS.md, do NOT propose a NEW fit candidate.
 This probe enumerates EXISTING substrate factors + reports each
 candidate's residual; verdict is either MATCH or NO MATCH, not a new
 ansatz wire.
@@ -204,7 +204,7 @@ def main() -> int:
         "bar-symmetric ρ_F either closes the gap (worth investigating) "
         "or doesn't (confirms structural-operator direction). Fishing "
         "for sub-1% matches in a 6-parameter family would be the 8th-"
-        "ansatz trap per CLAUDE.md."
+        "ansatz trap per AGENTS.md."
     ))
 
     builder.add_assertion(

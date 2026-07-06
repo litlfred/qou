@@ -3,7 +3,7 @@
 """Shared per-nucleus real-SDP **assembly** layer.
 
 The LP/SDP *solve* is already centralised in
-[`lp_dual_solver.py`](lp_dual_solver.py) (CLAUDE.md §LP/SDP duals — first-class
+[`lp_dual_solver.py`](lp_dual_solver.py) (AGENTS.md §LP/SDP duals — first-class
 infra). This module centralises the *assembly* that sits on top of it and was
 duplicated across ~67 per-nucleus compute scripts (the `t_λ = y_λ·χ^λ` cost,
 the Frobenius Gram diagonal, forbidden-block detection, the canonical
@@ -166,7 +166,7 @@ def build_cost_gram(
 def solve_real_sdp_arrays(t, G, n_target: float) -> dict:
     """LP + SDP operator-selection solve from raw cost `t` + Gram `G` through
     the canonical dual-emitting entry point. Returns `{'lp': ..., 'sdp': ...}`
-    with primal + dual + gap (CLAUDE.md §LP/SDP duals — always emit BOTH)."""
+    with primal + dual + gap (AGENTS.md §LP/SDP duals — always emit BOTH)."""
     solve_lp, solve_sdp = _solver()
     t = np.asarray(t, dtype=float)
     G = np.asarray(G, dtype=float)

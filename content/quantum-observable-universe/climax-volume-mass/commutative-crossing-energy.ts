@@ -12,26 +12,11 @@ export default remark({
     "commutative-limit",
     "complex-structure",
     "u1",
-    "phase-tube",
-    "branch-phase",
-    "isospin",
-    "mass-tower",
   ],
   uses: [
-    "rem:u1-phase-tube",
     "rem:sqrt-q-ribbon-structure",
     "rem:archimedean-realisations",
     "prop:categorical-coordinate-ring",
   ],
   interprets: "def:crossing-energy",
-  cites: ["satula1997"],
-  computation: {
-    engine: "python",
-    script: "folio-assistant/computations/isospin_mass_tower_collapse.py",
-    witness: [
-      "folio-assistant/computations/branch-phase-fit-to-mass-tower.witness.json",
-      "folio-assistant/computations/isospin-mass-tower-collapse.witness.json",
-    ],
-    status: "verified",
-  },
 });

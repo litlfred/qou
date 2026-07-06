@@ -42,7 +42,7 @@ References:
     _nf_matrices_in_block(), _y_lambda_n3().
 
 Usage:
-  python3 folio-assistant/computations/qbeta/qbeta_markov_trace_steps_4_5.py
+  python3 computations/qbeta/qbeta_markov_trace_steps_4_5.py
 
 Emits: qbeta-markov-trace-steps-4-5.witness.json (>= 3 assertions).
 """
@@ -223,7 +223,7 @@ def main() -> None:
     print(f"  q_0 = {sp.N(q_0, 12)} (50-dps)")
 
     # The c_k extraction depends on Q_beta(q) and E_0(q) closed forms.
-    # We do NOT propose a new c_k value — per CLAUDE.md anti-pattern, no
+    # We do NOT propose a new c_k value — per AGENTS.md anti-pattern, no
     # new ansätze. Step 4 here records:
     #   (a) S(q_0) at the substrate anchor (from the SDP witness).
     #   (b) A pointer to the canonical c_k witness for side-by-side
@@ -247,7 +247,7 @@ def main() -> None:
     print("  re-extracted from the existing per-anchor witness data.")
     print()
     print("  This script does NOT propose a new c_k value (forbidden by")
-    print("  CLAUDE.md anti-pattern §c_k ladder). It records the STRUCTURAL")
+    print("  AGENTS.md anti-pattern §c_k ladder). It records the STRUCTURAL")
     print("  observation that the c_k extraction site has moved.")
     print()
 
@@ -297,7 +297,7 @@ def main() -> None:
                 "coefficients of S(q), not of a 6-channel L2 projection. "
                 "Re-extracting c_k from S(q) directly is the runnable "
                 "next-probe; this script does NOT propose c_k values "
-                "(forbidden ansatz pattern per CLAUDE.md)."
+                "(forbidden ansatz pattern per AGENTS.md)."
             ),
         },
     )
