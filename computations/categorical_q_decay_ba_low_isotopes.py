@@ -216,9 +216,12 @@ def load_canonical_b(sym: str):
         g_true = float(mp.mpf(1) / mp.sqrt(mp.mpf(5) + (q0 - mp.mpf(1))**2 / q0))
         # Binding is strictly 5*g
         B_pred = 5.0 * g_true
+        # This tier applies only to D; err vs AME(²H) is +0.41 %, not 0
+        # (B_pred ≈ 2.2336 vs 2.22457).
+        b_ame = float(AME_B_DEUTERON_MEV_VALIDATION)
         return {
             "B_pred_MeV": B_pred,
-            "err_pct": 0.0,
+            "err_pct": 100.0 * (B_pred - b_ame) / b_ame,
             "tier": tier,
         }
 
