@@ -1,9 +1,8 @@
 **Proof.**
 
-*Form A side.* The normal form counit reads $\lvert\Delta(\mathrm{net})\rvert = h(2 - h)/2 = h - h^2/2 + O(h^3)$, via direct expansion of the single-wrap symbolic closed form ([prop:neutron-qvalue-symbolic](#prop:neutron-qvalue-symbolic)).
+*Form A side.* The normal form counit reads $\lvert\Delta(\mathrm{net})\rvert = h(2 - h)/2 = h - h^2/2 + O(h^3)$, obtained via direct expansion of the single-wrap symbolic closed form ([prop:neutron-qvalue-symbolic](#prop:neutron-qvalue-symbolic)).
 
 *Form B side.* The Hecke perturbation carries the half-factor $\Delta_\beta(q) = \tfrac{1}{2}(q - q^{-1})\,\mathbb{I} = \tfrac{h}{2}\,\mathbb{I}$ ([prop:beta-decay-transfer-matrix](#prop:beta-decay-transfer-matrix)). The change in Markov-traced volume per generator incorporates this factor:
-
 $$
   \Delta \hat V_i
   \;=\;
@@ -13,7 +12,6 @@ $$
 $$
 
 At single wrap with $A = 1$, the proton-to-neutron conversion affects two generators, $\sigma_0$ and $\sigma_1$ ([prop:neutron-qvalue-symbolic](#prop:neutron-qvalue-symbolic)). The total log-ratio is:
-
 $$
   \ln\!\frac{V_{\mathrm{pp}}}{V_{\mathrm{nn}}}
   \;=\;
@@ -28,7 +26,6 @@ $$
 $$
 
 *Ratio.* We form the dimensionless ratio $\mathfrak{Q}_\beta^{\mathrm{A}} / \mathfrak{Q}_\beta^{\mathrm{B}}$ and divide by $E_0$ to cancel $h$ in the leading term:
-
 $$
 \begin{aligned}
 \frac{\mathfrak{Q}_\beta^{\mathrm{A}}}{\mathfrak{Q}_\beta^{\mathrm{B}}}
@@ -43,21 +40,19 @@ $$
 \end{aligned}
 $$
 
-The intermediate identity $\mathfrak{Q}_\beta^{\mathrm{B}}/E_0 \cdot z = z h - (z h)^2/2 + O(h^3)$ isolates the dimensional content of the $1/z$ factor. Form B requires $z$ to normalize the eigenfunction basis to the Markov-traced volume; it does not indicate that Form A and Form B measure different observables.
+The intermediate identity $\mathfrak{Q}_\beta^{\mathrm{B}}/E_0 \cdot z = z h - (z h)^2/2 + O(h^3)$ isolates the dimensional content of the $1/z$ factor. Form B requires $z$ to normalize the eigenfunction basis to the Markov-traced volume. This does not mean that Form A and Form B measure different observables.
 
 *Exponential remainder.* Both truncations inhabit the spectral decomposition of the q-Hamiltonian along the Gröbner basis filtration of the free-neutron sector $K \subset H_3(q)$ at $q = q_0$. Following conj:archimedean-remainder-exponential-decay, each finite-depth truncation $\mathfrak{Q}_\beta^{(N)}$ incurs an error bounded by $C(K) \cdot e^{-c(K) N}$, where $C, c > 0$ are structural constants. At $N = 0$, this yields the observed $+1.31$ keV residual. At $N \geq 1$, the bound is sub-keV. $\square$
 
 ## Reading
 
-The bridge formula
-
+The bridge formula:
 $$
   \mathfrak{Q}_\beta^{\mathrm{A}}
   \;=\;
   \mathfrak{Q}_\beta^{\mathrm{B}} \cdot \bigl(1 + \tfrac{(z-1)\,h}{2} + O(h^2)\bigr)
 $$
-
-demonstrates that Form A and Form B represent a single observable in two bases: the normal form counit basis (where $\Delta(\mathrm{net})$ is discrete) and the transfer-matrix basis (where $\ln V_{\mathrm{pp}}/V_{\mathrm{nn}}$ is the natural eigenfunction). The $1/z$ factor in Form B is the required Markov–Jones normalization to map eigenfunction space onto MeV.
+demonstrates that Form A and Form B represent a single observable in two bases: the normal form counit basis (where $\Delta(\mathrm{net})$ is discrete) and the transfer-matrix basis (where $\ln V_{\mathrm{pp}}/V_{\mathrm{nn}}$ is the natural eigenfunction). The $1/z$ factor in Form B is the required Markov–Jones normalization mapping the eigenfunction space onto MeV.
 
 The exponential-remainder bound dampens the eigenfunction (conj:archimedean-remainder-exponential-decay). Finite-depth truncations recover the exact $\mathfrak{Q}_\beta$ exponentially fast in depth $N$. This rapid convergence explains why the single-wrap symbolic form (Form A at $N = 0$) achieves $+0.168\%$ accuracy.
 
