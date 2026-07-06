@@ -939,3 +939,211 @@ fabricated closure.
   `content/quantum-observable-universe/braids-and-knots/alpha-em-habiro-bar-involution.md`,
   `computations/alpha_em_4pi_fixed_point_solve.py`,
   `computations/bring_mapping_torus_residue_weight_probe.py`
+
+---
+
+## Session-4: perturbative CS 2-loop on UT(M_Bring)
+
+**Date:** 2026-07-06 (RESEARCH bean `9un2`, continuation)
+**Scope:** the **sole remaining lead** named by every prior session — the
+*perturbative Chern–Simons 2-loop invariant* of the canonical auxiliary
+3-manifold `UT(M_Bring)`. Sessions §C / 2 / 3 excluded every classical route and
+concluded "the answer must be a genuine 2-loop weight-3 object; perturbative CS
+carries `ζ(3)` at two loops even at zero classical volume — evaluate it on
+`UT(M_Bring)`." Session-4 does exactly that evaluation, as far as it is honestly
+pinnable. Companion compute:
+[`computations/bring_perturbative_cs_2loop_probe.py`](../../computations/bring_perturbative_cs_2loop_probe.py)
+(standalone mpmath, 60 dps; emits no witness — records an open structural finding).
+
+**Verdict: OPEN — and the sole surviving lead is RE-SCOPED.** The
+perturbative-CS-2-loop-on-`UT(M_Bring)` route *as posed* does **not** carry a
+Bring-specific weight-3 `ζ(3)` coefficient. The lead rested on a genuine physics
+fact ("`ζ(3)` first enters QED at two loops") conflated with a *different*
+CS/topological-string object; examined concretely on the actual Seifert data,
+the route fails at **three** cited levels. This closes the last standing avenue as
+written and redirects the open step. No fit; no fabricated closure.
+
+### S4.1 Seifert data of UT(M_Bring) (explicit) + the Lawrence–Rozansky integrand
+
+`UT(M_Bring) = UT(Σ₄) = \mathrm{PSL}_2(ℝ)/Γ_{Bring}` is the unit tangent bundle of
+Bring's genus-4 surface (`\mathrm{Aut} = S₅`, order 120). Its Seifert data is
+choice-free:
+
+| datum | value |
+|---|---:|
+| base genus `g` | `4` |
+| # exceptional fibres `n` | `0` (an honest `S¹`-bundle, not an orbifold fibration) |
+| Euler number `e = χ(Σ₄) = 2−2g` | `−6` (the UT bundle of a surface has `e = χ`) |
+| `b₁ = dim H¹(Σ₄) = 2g` | `8` |
+| geometry | `\widetilde{\mathrm{SL}_2}` (Seifert-fibered, Gromov volume 0) |
+
+For SU(2) CS on a genus-`g` Seifert circle-bundle of Euler number `e`, the
+**trivial-connection ("perturbative") contribution** to `Z` is the
+Lawrence–Rozansky / Verlinde Gaussian contour integral (Lawrence–Rozansky 1999,
+*Comm. Math. Phys.* 205; Beasley–Witten 2005 non-abelian localization,
+*J. Diff. Geom.* 70; Blau–Thompson):
+
+```tex
+Z^{\mathrm{triv}}(M) \;\sim\; \int dy \; \exp\!\Big( \tfrac{i\,e\,y^{2}}{2\hbar} \Big)\,
+      \big( 2\sinh(y/2) \big)^{\,2-2g},
+      \qquad \hbar = \frac{2\pi i}{k+2}.
+```
+
+The base-genus power is the Verlinde S-matrix factor `(S_{0j})^{2-2g}`. At `g=4`
+the exponent is `2−2g = −6`: a **negative** power, i.e. an **order-6 pole at
+`y=0`** (the trivial connection). This single sign is the crux of the whole
+finding.
+
+**Level / gauge dictionary.** The substrate gauge group is the categorical SU(2);
+the level enters only through `\hbar = 2\pi i/(k+2)` with `q = \exp(\hbar)`, and the
+q₀-analytic continuation puts the substrate `q₀` in the *fibre-level* formal
+variable. Crucially, **the level/`q₀` dictionary never has to be pinned for this
+verdict**: the obstructions below are all at the level of *which transcendental
+constants the integral can produce*, independent of the value of `k` or `q₀`.
+(This is the honest place the dictionary would matter — and it turns out not to
+rescue the route, so it is not the blocker.)
+
+### S4.2 (O1) `b₁ = 8` — UT(M_Bring) is not a rational homology sphere, so the 2-loop invariant is not even defined
+
+`H₁(UT(Σ_g);ℤ) = ℤ^{2g} ⊕ ℤ/|e|`, so `b₁(UT(Σ₄)) = 2g = 8 ≠ 0`. The negative
+integrand power `2−2g = −6` is precisely the analytic signature: the WRT
+genus-`g` sum `Σ_j (S_{0j})^{2-2g}` **diverges** at the trivial connection
+`j → 0` for every `g ≥ 1`, because the moduli space of flat SU(2) connections has
+**positive dimension** — the `2g = 8`-dimensional Jacobian-torus directions
+`H¹(Σ₄;ℝ) ⊗ \mathfrak{t}`. The perturbative Gaussian's Hessian is therefore
+**degenerate** (8 zero modes), and the standard perturbative-CS 2-loop / LMO /
+Ohtsuki invariant — whose construction *requires a rational homology sphere*
+(Aarhus integral, `b₁ = 0`) — is **not defined** for `UT(M_Bring)`. This is the
+same `b₁ = 8` that grounds the *derived* `n=1` term `b₁/\mathrm{Area}` and the
+`n=2` denominator `π·b₁`; here the very same Betti number **obstructs** the
+perturbative expansion the lead wanted to run.
+
+*Cited invariants:* the Verlinde `(S_{0j})^{2-2g}` divergence at `j→0`
+(reducible-connection non-isolation), and `\dim \mathcal M_{\mathrm{flat}} > 0`
+for a genus-`g ≥ 1` base.
+
+### S4.3 (O2) The Seifert fibre-sum produces only EVEN zetas — all rational, no ζ(3)
+
+Even granting a regularization of (O1), the *content* the integral can generate
+is fixed by the expansion of its integrand. Writing `x = y/2` and using
+`\sinh x / x = \prod_{n\ge1}(1 + x^2/n^2\pi^2)`:
+
+```tex
+\log\!\frac{2\sinh(y/2)}{y}
+   \;=\; \sum_{m\ge 1} \frac{(-1)^{m-1}}{m}\,
+         \frac{\zeta(2m)}{(4\pi^{2})^{m}}\; y^{2m},
+   \qquad \frac{\zeta(2m)}{\pi^{2m}} = \frac{|B_{2m}|\,2^{2m-1}}{(2m)!}\in\mathbb Q.
+```
+
+Every coefficient is a **rational number** (verified `m=1..5`: `ζ(2)/π²=1/6`,
+`ζ(4)/π⁴=1/90`, …; the even-zeta series reproduces
+`\log(2\sinh(y/2)/y)` to `|{\rm diff}| = 0` at `y=0.5`). Only **even** zeta
+values appear, and each is rational-times-`π^{2m}`. Hence the
+**manifold-specific perturbative series** of the trivial-connection integral is a
+power series in `\hbar` with **rational** coefficients: the "2-loop" term is a
+rational (Dedekind-sum / framing) number — **weight ≤ 2**, exactly the
+Session-2 / §C weight verdict — and contains **no `ζ(3)`** (no odd zeta) at all.
+The Seifert data of `UT(M_Bring)` therefore cannot supply a weight-3 coefficient
+by this expansion, whatever the level.
+
+### S4.4 (O3) The genuine 2-loop CS invariant is θ-graph = rational·Casson; the only ζ(3) in CS is a *universal* constant-map term
+
+Two more precise facts finish the route:
+
+1. **The genuine perturbative 2-loop CS invariant** (Axelrod–Singer configuration
+   integral / the θ-graph, = the degree-1 part of the LMO invariant) of a
+   *rational homology sphere* is a **rational multiple of the Casson–Walker
+   invariant** (times a universal group factor). It is **not** `ζ(3)` — a 2-loop
+   3-manifold invariant is a rational/Casson number. So the phrase "the 2-loop CS
+   invariant carries `ζ(3)`" does **not** describe a manifold 2-loop invariant.
+
+2. **The `ζ(3)` that genuinely appears "in Chern–Simons theory"** is the
+   **constant-map / group-volume** term of the topological-string dual
+   (Gopakumar–Vafa; the resolved-conifold constant map), whose arithmetic home is
+   `ζ'(-2) = -ζ(3)/(4\pi^2)` (verified to 63 dps). This term is **universal**:
+   it is proportional to the Euler characteristic / `\dim G`, it sits at
+   **genus-0 order `g_s^{-2}`** in the topological-string counting (a *different*
+   loop-count than the QED two-loop `g-2` `(3/4)ζ(3)`), and its overall
+   normalization into `δ(1/α)` is exactly the **unfixed** piece. It therefore
+   carries **no Bring-`b₁`-specific data** — the same "normalization is unfixed"
+   wall as §B.3.2 / §S3.4, now seen to be the *only* place `ζ(3)` lives in the CS
+   framework at all.
+
+So the lead conflated (i) a genuine QED physical fact — `ζ(3)` at two loops in
+`g-2` — with (ii) a CS/top-string `ζ(3)` that is a genus-0 *universal constant*,
+and (iii) a "2-loop CS manifold invariant" that is actually rational·Casson. None
+of the three is a Bring-specific weight-3 coefficient.
+
+### S4.5 Structural-form diagnostic (constant-map shape; NOT a fit)
+
+Granting the universal constant-map shape `∝ (2−2g)/2 · ζ(3)` = `3·ζ(3)` (with
+`|χ|/2 = 3`) and testing only the **structurally-motivated** numerators
+`{|χ|·ζ(3), (|χ|/2)·ζ(3), (4/5)ζ(3), ζ(3)}` over the **derived** denominators
+`{4π, 8π=π·b₁, π², π³, (4π)², (4π)³}` against
+`C_data = 0.0784992 = 0.98645·(1/4π)`: the nearest candidate is
+`(4/5)ζ(3)/(4π) = 0.076525`, ratio `0.9749` — **2.51 % low**, `≈ 5×` the
+`~0.49 %` q₀ noise floor. **No parameter-free constant-map form is forced.** (This
+repeats §S3.2's null with the specific `|χ|=6` / `2−2g=−6` constant-map factor
+added; it remains a null — reported honestly, not promoted.)
+
+### S4.6 Refutation-scope discipline (AGENTS.md §"Before declaring refuted")
+
+- **(b) Structural exclusions — two, each with a cited invariant.**
+  **(b-i)** *The manifold-specific perturbative trivial-connection series of
+  `UT(M_Bring)` cannot produce `ζ(3)`.* Cited invariant: the even-zeta rationality
+  `\zeta(2m)/\pi^{2m} = |B_{2m}|2^{2m-1}/(2m)! \in \mathbb Q` (Euler; a proved
+  arithmetic identity) — the `\sinh` fibre-sum generates only rational-weight-≤2
+  coefficients, and a weight-1/2 object equals a weight-3 object only if its
+  coefficient is zero (transcendence-weight grading). **(b-ii)** *The genuine
+  perturbative 2-loop CS invariant of a QHS is rational·Casson, not `ζ(3)`.* Cited
+  invariant: the Axelrod–Singer / LMO degree-1 identification of the θ-graph with
+  the Casson–Walker invariant (a proved theorem). Both exclude the *route as
+  posed* (this Seifert manifold, this classical perturbative object), **not** the
+  weight-3 ingredient: the `K₅(ℚ(√5))` class `{ζ(3), L(3,χ₅)}` still exists (§B.1).
+- **(a) Scope-limited negatives.** (i) `b₁ = 8` obstructs the standard
+  perturbative construction (regularization-dependent, not a permanent
+  impossibility of *some* equivariant/family invariant); (ii) no parameter-free
+  constant-map form hits `C_data` at current precision.
+- **No wide scan / no single-point fit.** §S4.5 tests only the finitely many
+  structurally-motivated constant-map candidates and reports the null. The whole
+  section is a structural evaluation of the *named* lead, not a search.
+
+### S4.7 Net of the session — the lead is closed as posed; where the open step now points
+
+- The **sole remaining lead is re-scoped from "compute it" to "(a)-refuted as
+  posed, with two cited (b)-exclusions."** Perturbative CS 2-loop on
+  `UT(M_Bring)` does not carry a Bring-specific `ζ(3)`: (O1) `b₁=8` ⇒ not a QHS ⇒
+  the invariant is undefined; (O2) the fibre-sum is even-zeta/rational; (O3) the
+  genuine 2-loop invariant is rational·Casson and the only CS `ζ(3)` is a
+  universal constant-map term.
+- **The weight ladder is now closed on the CS side too.** Every object the
+  framework's *geometry* offers — surface (`weight 1`), classical 3-manifold
+  period (`weight 2`), `λ_SW` residue (`weight 1`), Habiro self-coupling `O(α²)`
+  (`weight 1`), **and now the Seifert perturbative CS series (`weight ≤ 2`,
+  rational)** — sits at weight `≤ 2`. The weight-3 `ζ(3)` target is a genuine loop
+  rung above all of them, and it does **not** descend from the classical or
+  perturbative-Seifert geometry of `UT(M_Bring)`.
+- **The one surviving *ingredient* (not route) unchanged:** the real weight-3
+  `K₅(ℚ(√5))` class `{ζ(3), L(3,χ₅)}` with `𝓛₃(1/φ²) = (4/5)ζ(3)`. Its only
+  admissible homes are now (a) the **Goncharov weight-3 configuration polylog on
+  the five golden `S₅` points** (a `K₅`/higher-Grassmannian regulator, *not* any
+  3-manifold or Seifert-CS object), or (b) a genuinely **equivariant / family**
+  2-loop invariant of the *non-isolated* flat-connection moduli (the `b₁=8`
+  Jacobian torus) — an object outside the standard QHS perturbative theory. Both
+  require the `n=2` `a_D^{(2)}` normalization to be fixed from first principles,
+  and both need q₀ pinned `~10²–10³×` tighter before any candidate is numerically
+  discriminable (`~0.49 %` floor, `2.8σ` deficit). Until then the coefficient is
+  **OPEN**.
+
+No content block is changed by this attempt; the session records the explicit
+Seifert data, the LR trivial-connection integrand, the `b₁=8` non-QHS
+obstruction, the even-zeta/rational fibre-sum, the θ-graph/constant-map placement
+of `ζ(3)`, and the re-scoping of the last standing lead — and rules out a
+fabricated closure.
+
+### S4.8 Files added / read (Session-4)
+- **Added:** [`computations/bring_perturbative_cs_2loop_probe.py`](../../computations/bring_perturbative_cs_2loop_probe.py)
+- Read: `computations/bring_aux_3manifold_weight_probe.py`,
+  `computations/wenzl-lr-convention-adapter.witness.json`,
+  `content/quantum-observable-universe/predicted-spectra/photon-ir-zero-mode-bring.md`,
+  `docs/coordination/alpha-em.md`
