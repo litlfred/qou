@@ -252,6 +252,23 @@ symmetry operator. The $\mathcal{P}$ / $\mathcal{T}$ / $\mathcal{CP}$
 companions are likewise CPT operators; they do not collide with any
 categorical or geometric reservation.
 
+**Dirac bra–ket $\lvert\psi\rangle$ / $\langle\phi\vert\psi\rangle$ — not
+native notation.** The framework's states are objects and morphisms of
+$\mathbf{C}$ and vectors of its Hecke modules; the native scalar-valued
+form is the **Frobenius pairing**, written in comma form
+$\langle x, y\rangle_F$. Matrix elements are written
+$\langle v,\, \Phi\, v\rangle_F$, never $\langle v \vert \Phi \vert
+v\rangle$; seminormal / Young basis vectors are written $v_T$ (SYT
+$T$), $v_c$ (channel $c$), never kets $\lvert T\rangle$,
+$\lvert\psi_N\rangle$. Bra–ket notation is reserved for **quoted
+standard-QM material only**: the Feynman-dictionary blocks (where
+$\langle\psi_f\vert\psi_i\rangle$ is deliberately the standard-QM
+column of the QM $\to$ Markov-trace translation table), the
+vertex-operator-algebra vacuum $\lvert 0\rangle$ of $(V, Y, \lvert
+0\rangle)$ (literature-standard), and citations of external results
+(Berry connection, Stark vanishing, spin bases). A ket carrying
+framework-native mathematics is an audit flag.
+
 **Base ring convention (Lean).** In Lean source the generic ground
 ring is **$R$** with the weakest typeclass that admits the
 construction (`[CommRing R]`, `[Field R]`, `[GroupWithZero R]`,
