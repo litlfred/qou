@@ -318,7 +318,53 @@ Per formalize-first discipline (narrow before scanning):
   The value of this direction is structural (which eigenspace, which decay,
   which quantization mechanism), not a new closed form to fit.
 
-## 7. Corpus-grep record
+## 7. Probe results (2026-07-06, owner-approved "p1 p2 p3")
+
+**P1 — PASSED, and stronger than asked.** Probe:
+[`computations/substrate/hoefsmit_toroidal_ladder_probe.py`](../../computations/substrate/hoefsmit_toroidal_ladder_probe.py)
+(witness `hoefsmit-toroidal-ladder-probe.witness.json`, 8/8 assertions,
+sympy exact). The audit asked whether the Hoefsmit mixing structure
+*degenerates to* the toroidal-Legendre ladder; the probe shows the toroidal
+locus is **forced**:
+
+- The classical Young-orthogonal eigencolumns at axial distance $d$ are
+  $(\sqrt{d+1}, \sqrt{d-1})$ (eigenvalue $+1$) and $(\sqrt{d-1}, -\sqrt{d+1})$
+  ($-1$); the mixing amplitude is $\sqrt{d^2-1}/d$.
+- Matching $d^2 - 1 = (n-\mu)(n+\mu+1)$ (the associated-Legendre order-ladder
+  factor) **identically in $d$** has exactly the solutions
+  $(n, \mu) = (d - \tfrac12, \tfrac12)$ up to the Legendre reflection
+  $\mu \mapsto -\mu - 1$. The **half-integer degree shift $\nu - \tfrac12$ —
+  the toroidal signature — is derived, not imposed.**
+- The corpus Hoefsmit convention ($a_\rho = h/(1-q^{-2\rho})$,
+  $b = \sqrt{a_\rho a_{-\rho} + 1}$, $h = q - q^{-1}$) satisfies
+  $b^2 = [\rho-1]_q[\rho+1]_q/[\rho]_q^2$ exactly, and the forcing computation
+  $q$-deforms verbatim ($q^{2\alpha+1} = 1 \Rightarrow \alpha = -\tfrac12$).
+  The half-integer shift survives $q$-deformation.
+- **Scope (a):** ladder-coefficient identification only — structural support
+  for the §5 conjecture shape; not a full eigenfunction transform, nothing
+  wired, no numerical claim.
+
+**P2 — PASSED (sorry-free, `lean`-direct exit 0).**
+[`QOU/Mass/HeckeTowerMackey.lean`](../../content/quantum-observable-universe/lean/QOU/Mass/HeckeTowerMackey.lean):
+the decategorified Mackey/oscillator relation
+$R_{n+1\to n} R_{n+1\to n}^{\mathsf T} = R_{n\to n-1}^{\mathsf T} R_{n\to n-1} + \mathrm{Id}_n$
+proved at levels 1 and 2 (`mackey_level1`, `mackey_level2`), plus
+`level2_gram`: $R_{32}R_{32}^{\mathsf T} = \bigl[\begin{smallmatrix}2&1\\1&2\end{smallmatrix}\bigr]$
+— the off-diagonal $1$ is the meson bridge (inducing a lepton channel to
+$H_3$ and restricting reaches the *other* lepton channel exactly once,
+through the entangled $(2,1)$ block only). Dependency-free ℕ-combinatorics
+(§7c clean); upgrades the bridge proposition's reciprocity element to the
+full oscillator commutation relation of §3c.
+
+**P3 — DONE.** Bibliography intake in `content/schema/references.ts`: the
+$q$-oscillator cluster (`askey1989`, `ismail-masson1994`,
+`atakishiyev-suslov1990`, `dlmf-ch12`, `deligne2007`, `zhedanov1991`) had
+already landed 2026-07-03; this pass adds **`whipple1917`** (the Whipple
+transformation — degree/order exchange at hyperbolic argument, the
+structural home of $P^\mu_{\nu-1/2}(\cosh\eta)$) and **`lebedev1965`**
+(standard toroidal-coordinates reference).
+
+## 8. Corpus-grep record
 
 - `parabolic cylinder|Weber equation|Hermite`: hits are the Askey/channel
   cluster cited above + bibliography; no prior parabolic-cylinder treatment.
