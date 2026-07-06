@@ -54,3 +54,5 @@ This orthogonality has two consequences for the QOU framework:
 The algebraic foundations (PBW bases over commutative rings) are
 established in \cite{leitnerpawloski2004}; norm formulas follow from
 the Temperley--Lieb calculus and $6j$-symbols.
+
+**Archimedean specialisation (§7c).** This block is stated over the real field $\mathbb{R}$ — the archimedean side of the substrate wall: its constructs are real-valued (physical observables, real-analytic bounds, or numerical evaluations at the substrate parameter $q_0$) rather than generic-ring $q$-deformation data. The generic categorical / $q$-deformation machinery it draws on is stated over an abstract coefficient ring in its own blocks; only the archimedean realisation is specialised here.

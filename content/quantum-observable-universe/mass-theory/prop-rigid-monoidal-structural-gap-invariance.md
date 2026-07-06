@@ -96,3 +96,5 @@ theory (Jones 1985, Wenzl 1988, Kassel 1995).  Lean class
 axiomatizes the conjectural content per §3b conditional-class
 pattern; downstream conditional theorems are unconditional Lean
 theorems whenever the class is in scope.
+
+**Archimedean specialisation (§7c).** This block is stated over the real field $\mathbb{R}$ — the archimedean side of the substrate wall: its constructs are real-valued (physical observables, real-analytic bounds, or numerical evaluations at the substrate parameter $q_0$) rather than generic-ring $q$-deformation data. The generic categorical / $q$-deformation machinery it draws on is stated over an abstract coefficient ring in its own blocks; only the archimedean realisation is specialised here.

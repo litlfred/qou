@@ -47,3 +47,5 @@ $\sum_\lambda \dim_q(V_\lambda) \cdot \mathrm{tr}_{S_\lambda}(\rho(\beta))$
 degenerates to the standard discrete trace
 $\sum_\lambda (2j+1) \cdot \mathrm{tr}_{S_\lambda}(\pi(\beta))$
 over the finite-dimensional angular momentum eigenbasis of the symmetric group.*
+
+**Archimedean specialisation (§7c).** This block is stated over the real field $\mathbb{R}$ — the archimedean side of the substrate wall: its constructs are real-valued (physical observables, real-analytic bounds, or numerical evaluations at the substrate parameter $q_0$) rather than generic-ring $q$-deformation data. The generic categorical / $q$-deformation machinery it draws on is stated over an abstract coefficient ring in its own blocks; only the archimedean realisation is specialised here.

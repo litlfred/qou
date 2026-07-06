@@ -51,3 +51,5 @@ representing a recorded knot-theoretic result:
 | `jones_at_one 2 = -2` | Jones 1985 | proved (`unfold + norm_num`) |
 
 The eventual full Track-A formalisation (defining $\text{Braid}_n \to \text{Link}$ explicitly in Lean and constructing the closure map) targets ONLY the first atom — the second is already closed.
+
+**Archimedean specialisation (§7c).** This block is stated over the real field $\mathbb{R}$ — the archimedean side of the substrate wall: its constructs are real-valued (physical observables, real-analytic bounds, or numerical evaluations at the substrate parameter $q_0$) rather than generic-ring $q$-deformation data. The generic categorical / $q$-deformation machinery it draws on is stated over an abstract coefficient ring in its own blocks; only the archimedean realisation is specialised here.

@@ -82,3 +82,5 @@ $T^{\mathrm{Dem}}(\lambda;\, w)$ from
 [`prop:demazure-fiber-markov-trace`](#prop:demazure-fiber-markov-trace)
 provides the explicit quantitative form of the resonance widths
 that arise inside each KLR-graded layer.
+
+**Archimedean specialisation (§7c).** This block is stated over the real field $\mathbb{R}$ — the archimedean side of the substrate wall: its constructs are real-valued (physical observables, real-analytic bounds, or numerical evaluations at the substrate parameter $q_0$) rather than generic-ring $q$-deformation data. The generic categorical / $q$-deformation machinery it draws on is stated over an abstract coefficient ring in its own blocks; only the archimedean realisation is specialised here.

@@ -109,3 +109,5 @@ on every factor.
 - Records part 3 as a conditional theorem under the class
  `SymmetricCrystalPairProduction n` (per AGENTS.md §3b-cond),
  citing the upstream conjecture.
+
+**Archimedean specialisation (§7c).** This block is stated over the real field $\mathbb{R}$ — the archimedean side of the substrate wall: its constructs are real-valued (physical observables, real-analytic bounds, or numerical evaluations at the substrate parameter $q_0$) rather than generic-ring $q$-deformation data. The generic categorical / $q$-deformation machinery it draws on is stated over an abstract coefficient ring in its own blocks; only the archimedean realisation is specialised here.

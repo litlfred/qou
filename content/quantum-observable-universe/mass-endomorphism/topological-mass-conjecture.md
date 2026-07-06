@@ -33,3 +33,5 @@ along $\varrho_0$ (the flat gauge-field holonomy of the base-level connection)
 replaces the :refterm[descent]{#descent}-trace part, while the quantum-dilogarithm sum
 captures the transient blow-up contributions at the exceptional divisors of
 the brane boundary $\partial A$.
+
+**Archimedean specialisation (§7c).** This block is stated over the real field $\mathbb{R}$ — the archimedean side of the substrate wall: its constructs are real-valued (physical observables, real-analytic bounds, or numerical evaluations at the substrate parameter $q_0$) rather than generic-ring $q$-deformation data. The generic categorical / $q$-deformation machinery it draws on is stated over an abstract coefficient ring in its own blocks; only the archimedean realisation is specialised here.

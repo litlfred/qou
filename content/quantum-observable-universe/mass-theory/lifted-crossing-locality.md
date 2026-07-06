@@ -89,3 +89,5 @@ quantify locality violations. For doubly-magic atoms the product form
 is within $\leq 6\%$ (see the
 [JSJ/$\alpha$-clustering witness](#conj:mass-volume-factorization)),
 consistent with approximate locality at $q_0$.
+
+**Archimedean specialisation (§7c).** This block is stated over the real field $\mathbb{R}$ — the archimedean side of the substrate wall: its constructs are real-valued (physical observables, real-analytic bounds, or numerical evaluations at the substrate parameter $q_0$) rather than generic-ring $q$-deformation data. The generic categorical / $q$-deformation machinery it draws on is stated over an abstract coefficient ring in its own blocks; only the archimedean realisation is specialised here.

@@ -15,3 +15,5 @@ Hopf-linked to a proton anchor, with writhe $w$ in its minimal diagram.
 3. **Energy scaling.** The Seifert surface of the Hopf link at level $n$
    has area $\propto n^2$.  The crossing energy per Reidemeister I curl
    scales as $1/n^2$, yielding $E_n = -E_{\mathrm{ion}} / n^2$.
+
+**Archimedean specialisation (§7c).** This block is stated over the real field $\mathbb{R}$ — the archimedean side of the substrate wall: its constructs are real-valued (physical observables, real-analytic bounds, or numerical evaluations at the substrate parameter $q_0$) rather than generic-ring $q$-deformation data. The generic categorical / $q$-deformation machinery it draws on is stated over an abstract coefficient ring in its own blocks; only the archimedean realisation is specialised here.

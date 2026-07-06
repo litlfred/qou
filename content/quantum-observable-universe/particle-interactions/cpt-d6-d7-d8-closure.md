@@ -48,3 +48,5 @@ Class-axiomatised per AGENTS.md §3b-cond. Downstream blocks that
 need CPT-closure as an explicit hypothesis take
 `[CPTD6D7D8Closure]` as a class hypothesis; the three
 component-instances live in their respective `.lean` files.
+
+**Archimedean specialisation (§7c).** This block is stated over the real field $\mathbb{R}$ — the archimedean side of the substrate wall: its constructs are real-valued (physical observables, real-analytic bounds, or numerical evaluations at the substrate parameter $q_0$) rather than generic-ring $q$-deformation data. The generic categorical / $q$-deformation machinery it draws on is stated over an abstract coefficient ring in its own blocks; only the archimedean realisation is specialised here.

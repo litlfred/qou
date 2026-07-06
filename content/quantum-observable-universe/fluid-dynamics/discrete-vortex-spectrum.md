@@ -46,3 +46,5 @@ Then:
      the rigid-rotor spectrum of angular momentum theory.
    - The selection rule $\Delta j = \pm 1$ reduces to the
      standard dipole selection rule.
+
+**Archimedean specialisation (§7c).** This block is stated over the real field $\mathbb{R}$ — the archimedean side of the substrate wall: its constructs are real-valued (physical observables, real-analytic bounds, or numerical evaluations at the substrate parameter $q_0$) rather than generic-ring $q$-deformation data. The generic categorical / $q$-deformation machinery it draws on is stated over an abstract coefficient ring in its own blocks; only the archimedean realisation is specialised here.

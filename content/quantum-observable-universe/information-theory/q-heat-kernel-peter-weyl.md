@@ -45,3 +45,5 @@ base manifold $M$ and contributes a *separate* eigenvalue
 $q^{-2}|\mathbf{k}|^2$ depending on the spatial wavenumber
 $\mathbf{k}$, not on the partition $\lambda$.  Coriolis cross-terms
 vanish on Hecke-representation spaces by Schur's lemma.
+
+**Archimedean specialisation (§7c).** This block is stated over the real field $\mathbb{R}$ — the archimedean side of the substrate wall: its constructs are real-valued (physical observables, real-analytic bounds, or numerical evaluations at the substrate parameter $q_0$) rather than generic-ring $q$-deformation data. The generic categorical / $q$-deformation machinery it draws on is stated over an abstract coefficient ring in its own blocks; only the archimedean realisation is specialised here.
