@@ -1,0 +1,71 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "50dps",
+  "computedAt": "2026-07-06T10:52:50.596200+00:00",
+  "computation": "su4-connected-1111-magnitude",
+  "scriptFile": "su4_connected_1111_magnitude_probe.py",
+  "description": "PROBE 2 magnitude leg: the single connected 4-body [1^4] SU(4)-supermultiplet interface operator, realized as the irreducible connected (Ursell/Mayer) A-body cluster b_A^c of the canonical zero-fit interface graph (g_ij=1\u2212f_ij; f_pp=z, f_nn=z\u2212h, f_pn=z\u2212h(\u00bd\u2212\u03b4/4)), gated by SU(4) dim C(4,A). Tests whether it supplies the measured 2.093\u00d7 super-pairwise excess at \u2074He and vanishes at \u2076Li (C(4,6)=0). Audit-only, no fit, single operator.",
+  "tier": "structural (zero-fit canonical bond factors + proved SU(4) gate)",
+  "data": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "z": "0.49932033418369445241344268025766630375194816404153",
+    "h": "0.20906029879563931543084621312967494385975749526306",
+    "f_pn": "0.39486208641396816339560861396766065962394816341301",
+    "per_atom": {
+      "D": {
+        "A": 2,
+        "gate_C4A": 6,
+        "b_conn_abs": "0.60513791358603183660439138603233934037605183658699",
+        "b_pair_2body": "0.60513791358603183660439138603233934037605183658699",
+        "conn_over_pair": "1.0",
+        "gated_conn_abs": "3.6308274815161910196263483161940360422563110195219",
+        "super_pairwise_needed": "1.0"
+      },
+      "4He": {
+        "A": 4,
+        "gate_C4A": 1,
+        "b_conn_abs": "1.9614006852755823835777278323045424251117170344167",
+        "b_pair_2body": "3.6309712847723777570215263967436996978600685135279",
+        "conn_over_pair": "0.54018622882018764976486502997719331138210773093827",
+        "gated_conn_abs": "1.9614006852755823835777278323045424251117170344167",
+        "super_pairwise_needed": "2.0925232110400819137288285466360342788940424165471"
+      },
+      "6Li": {
+        "A": 6,
+        "gate_C4A": 0,
+        "b_conn_abs": "22.218547982083365114105764034172006366435956190952",
+        "b_pair_2body": "9.0775001135590377612514050321340810724520500308229",
+        "conn_over_pair": "2.4476505319890416883079139468755393688177060212858",
+        "gated_conn_abs": "0.0",
+        "super_pairwise_needed": "0.94398388688669734078608144143699010891597758679925"
+      }
+    },
+    "he4_delivered_enhancement": 1.5401862288201875,
+    "he4_needed_enhancement": 2.0925232110400818,
+    "he4_delivered_over_needed": 0.736042601914386,
+    "verdict": "PARTIAL",
+    "verdict_note": "PARTIAL / scope-(a): the connected [1^4] cluster is right-KIND (irreducible 4-body), right-LOCALITY (A=6 vanishing supplied by the PROVED gate C(4,6)=0 \u2014 the ungated cluster overshoots to 22.2, so the gate is load-bearing), and right-ORDER at A=4 (\u00d71.54 delivered vs \u00d72.09 needed, 74%). It does NOT close the magnitude parameter-free: the exact value is convention-dependent (\u03a3g-normalization hidden DOF). Does NOT exclude the ingredient; constrains the magnitude."
+  },
+  "assertions": [
+    {
+      "name": "a6_vanishes_via_gate",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "a4_right_order_of_magnitude",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "auditOnly": true,
+  "context": {
+    "axis": "GAP-A-4 class-D \u2014 A=4 interface operator (\u0394_\u03bb magnitude leg)",
+    "gate_lean": "qou:QOU.MassTheory.SU4SupermultipletGate",
+    "locality_witness": "probes/su4-supermultiplet-locality.witness.json",
+    "scoping": "docs/scope/2026-07-05-gap-a4-interface-operator-attack-scoping.md \u00a73"
+  }
+}
