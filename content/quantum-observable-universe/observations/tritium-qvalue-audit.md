@@ -41,9 +41,9 @@ $-q$, sign $-q^{-3}$).  The typed Garside element is projected onto
 each eigenspace via Young's seminormal form:
 
 $$
-  G_P(c) = \langle v_c | \Delta_3(uud) | v_c \rangle,
+  G_P(c) = \langle v_c,\, \Delta_3(uud)\, v_c \rangle_F,
   \quad
-  G_N(c) = \langle v_c | \Delta_3(udd) | v_c \rangle
+  G_N(c) = \langle v_c,\, \Delta_3(udd)\, v_c \rangle_F
 $$
 
 **Independently verified** using the repo's seminormal form implementation:
