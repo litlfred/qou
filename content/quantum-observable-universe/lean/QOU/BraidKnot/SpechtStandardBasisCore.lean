@@ -640,6 +640,43 @@ theorem sum_sign_rep_eq_zero_of_fixed (t : Specht.Tableau μ)
   · intro g hg; exact hGclosed g hg
   · intro g _; show (g * τ) * τ = g; rw [mul_assoc, hτ2, mul_one]
 
+omit [CharZero k] in
+/-- **Coset antisymmetriser collapse (sorry-free) — Garnir piece 2, bridge step 1.**
+Factoring the representation of a fixed `π` out of an inner signed sum over a set
+`H ⊆ C_t`: since every `ρ ∈ H` fixes `e_t` up to its sign
+(`rep_polytabloid_of_mem_colStab`), the signed sum over the *left-translated* family
+`{π·ρ : ρ ∈ H}` collapses to `sgn(π)·|H|·(π·e_t)`.
+
+This is the inner-antisymmetriser step of the Garnir coset decomposition
+`S_{A∪B} = ⊔_π π·(S_A × S_B)`: within each coset the `S_A × S_B` factor (a subgroup of
+`C_t`) collapses via `sum_sign_rep_polytabloid`, leaving a single `±π·e_t` per coset
+representative `π`. Summing this identity over a transversal is the next bridge step. -/
+theorem sum_sign_rep_coset_collapse (t : Specht.Tableau μ)
+    (H : Finset (Equiv.Perm (Fin (Specht.nOf μ))))
+    (π : Equiv.Perm (Fin (Specht.nOf μ)))
+    (hH : ∀ ρ ∈ H, ρ ∈ Specht.colStab t) :
+    ∑ ρ ∈ H, (Equiv.Perm.sign (π * ρ) : ℤ) •
+        Specht.Mtab.rep μ (π * ρ) (Specht.polytabloid (k := k) t)
+      = (Equiv.Perm.sign π : ℤ) • H.card •
+          Specht.Mtab.rep μ π (Specht.polytabloid (k := k) t) := by
+  classical
+  -- Rewrite each term `sgn(π*ρ) • rep(π*ρ) e_t` as `sgn π • rep π (sgn ρ • rep ρ e_t)`.
+  have hterm : ∀ ρ ∈ H, (Equiv.Perm.sign (π * ρ) : ℤ) •
+      Specht.Mtab.rep μ (π * ρ) (Specht.polytabloid (k := k) t)
+      = (Equiv.Perm.sign π : ℤ) • Specht.Mtab.rep μ π
+          ((Equiv.Perm.sign ρ : ℤ) • Specht.Mtab.rep μ ρ (Specht.polytabloid (k := k) t)) := by
+    intro ρ _
+    have hsign : (Equiv.Perm.sign (π * ρ) : ℤ)
+        = (Equiv.Perm.sign π : ℤ) * (Equiv.Perm.sign ρ : ℤ) := by
+      rw [map_mul]; push_cast; ring
+    have hrep : Specht.Mtab.rep μ (π * ρ) (Specht.polytabloid (k := k) t)
+        = Specht.Mtab.rep μ π (Specht.Mtab.rep μ ρ (Specht.polytabloid (k := k) t)) := by
+      rw [map_mul, Module.End.mul_apply]
+    rw [hsign, hrep, map_zsmul, mul_smul]
+  rw [Finset.sum_congr rfl hterm, ← Finset.smul_sum, ← map_sum]
+  -- Inner sum collapses: `∑_{ρ∈H} sgn ρ • rep ρ e_t = |H| • e_t`.
+  rw [sum_sign_rep_polytabloid t H hH, map_nsmul]
+
 /-! #### The self-contained dominance weight (sorry-free)
 
 The straightening induction needs a well-founded measure that strictly increases
