@@ -91,7 +91,7 @@ def kashaev_faddeev_real(n: int, q: mpf) -> mpf:
     """Faddeev-Kashaev real-q quantum dilog at level n.
 
     Real-q analog: L_q(x) = (1/log q) · Σ_{k=1}^∞ x^k / (k · [k]_q)
-    evaluated at x = q^{-n} (Faddeev's q-dilog for level-n contribution).
+    evaluated at x = q^{-n} (compact q-dilog for level-n contribution).
     """
     x = q ** (-n)
     # Truncate sum at sufficient precision (50 dps)

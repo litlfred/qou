@@ -1,5 +1,5 @@
 /-
-Symmetric q-dilogarithm as bar-symmetrization of Faddeev Φ_q.
+Symmetric q-dilogarithm as bar-symmetrization of compact q-dilog Φ_q.
 
   Li_2^q(z) = (log Φ_q(z) + log Φ_{q^{-1}}(z)) / 2
 
@@ -92,7 +92,7 @@ instance : Li2qPhiqBarSymmetrization where
   bar_holds_at q _ := q = 1
   bar_holds_at_classical _ := rfl
 
-/-- Empirical record: m_p/m_e under Faddeev Φ_q vs symmetric
+/-- Empirical record: m_p/m_e under compact q-dilog Φ_q vs symmetric
     Li_2^q. The 99.82% gap (vs 1.84% with Faddeev) reflects the
     bar-symmetric projection killing the singular-braid mass scale.
 

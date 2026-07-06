@@ -2,7 +2,7 @@
 
 Coordinates with [PR #1272](https://github.com/litlfred/qou/pull/1272)
 (γγ̄ pair-production decomposition) and
-[PR #1276](https://github.com/litlfred/qou/pull/1276) (Bring + Faddeev
+[PR #1276](https://github.com/litlfred/qou/pull/1276) (Bring + compact-q-dilog
 h⁴ candidate).
 
 Per author 2026-05-25: use the just-merged precision-fixed
@@ -47,7 +47,7 @@ same machinery and should return a_0 = 5/2, a_2 = 3/4, a_{4+} = 0.
 - [`linking_weight_family_a`](https://github.com/litlfred/qou/blob/main/computations/_li_2_q_util.py#L172) — production Family A (PROVED, h²-truncated)
 - [`docs/canonical-derivation-cheat-sheet.md §5`](https://github.com/litlfred/qou/blob/main/docs/canonical-derivation-cheat-sheet.md) — refinement routes
 - [PR #1272](https://github.com/litlfred/qou/pull/1272) — γγ̄ localisation (92% h² coefficient / 8% h⁴+ tower)
-- [PR #1276](https://github.com/litlfred/qou/pull/1276) — Bring + Faddeev h⁴ candidate
+- [PR #1276](https://github.com/litlfred/qou/pull/1276) — Bring + compact-q-dilog h⁴ candidate
 """
 from __future__ import annotations
 
@@ -180,7 +180,7 @@ def main() -> int:
         "markov_trace_for_knot to compute tr_M(β_𝓑, q) at 5 sampled "
         "q values, then fits Σ_{j even} a_j · h^j via mpf-precision "
         "linear algebra. Compares against PR #1272's f64 'via_jones' "
-        "coefficients and PR #1276's 'Bring + Faddeev h⁴' candidate. "
+        "coefficients and PR #1276's 'Bring + compact-q-dilog h⁴' candidate. "
         "EXPLORATORY — does not change production linking_weight or "
         "any blocks."
     )
@@ -213,10 +213,10 @@ def main() -> int:
     for k, val in fA_coeffs.items():
         print(f"  a_{k} = {mp.nstr(val, 12)}")
 
-    # === 3. Bring + Faddeev h⁴ candidate ===
-    print("\n[3/4] Fitting PR #1276 Bring+Faddeev h⁴ candidate h-expansion...")
+    # === 3. Bring + compact-q-dilog h⁴ candidate ===
+    print("\n[3/4] Fitting PR #1276 Bring+compact-q-dilog h⁴ candidate h-expansion...")
     bf_coeffs = bring_faddeev_h_expansion(dps=50)
-    print("\nBring + Faddeev h⁴ candidate h-expansion (50 dps):")
+    print("\nBring + compact-q-dilog h⁴ candidate h-expansion (50 dps):")
     for k, val in bf_coeffs.items():
         print(f"  a_{k} = {mp.nstr(val, 12)}")
 

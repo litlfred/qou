@@ -160,7 +160,7 @@ files are changed by this audit. Requested owner ruling:
 
 Until then, the lepton ξ_ℓ work
 ([`lepton-mass-tower-canonical.md`](../../content/quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.md)
-§"Faddeev Φ_q probe") treats the muon knot as **unresolved and gating**.
+§"compact q-dilog Φ_q probe") treats the muon knot as **unresolved and gating**.
 
 ## Cross-references
 

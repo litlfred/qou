@@ -142,12 +142,12 @@ from `m_p / (m_e · Vol(𝓑₃)/ℏ_q²)` inversion.)
 
 | Form | value @ q₀ | Δ vs target | match | bar-symmetric? | Lean? |
 |---|---:|---:|---:|---|---|
-| **Sibling Bring+Faddeev** `1/(1−h·q¹⁰)+1/(1−h⁴)−1` | 2.4493 | −0.0026 | **−0.106 %** | **NO** | — |
+| **Sibling Bring + compact-q-dilog** `1/(1−h·q¹⁰)+1/(1−h⁴)−1` | 2.4493 | −0.0026 | **−0.106 %** | **NO** | — |
 | **Reading-A** `5/2 − G·h²` | 2.4601 | +0.0082 | +0.33 % | yes | — |
 | **Lean tr_M bridge** `5/2 + 4·(tr_M(β_Bor) − 1)` | 2.4943 | +0.0424 | +1.73 % | yes | bridge inconsistency theorems on this branch |
 | **Family A** `5/2 + (3/4)·h²` (PROVED) | 2.5327 | +0.0808 | +2.89 % | yes | `lambda-scale-substrate-form.lean` |
 
-The bar-asymmetric Bring+Faddeev form is the **closest match by an
+The bar-asymmetric Bring+compact-q-dilog form is the **closest match by an
 order of magnitude** but contradicts Family A's proved bar-symmetry.
 The bar-symmetric average `(1/(1−h·q¹⁰) + 1/(1+h·q⁻¹⁰))/2` lands at
 **1.691** (−31 % off target) — i.e. the bar-asymmetry is load-bearing
@@ -189,7 +189,7 @@ target's own q-slope (≈ 40.25 from `m_p · ℏ_q²(q) / (8G · m_e)`):
 | Family A (PROVED) | 0.57 | 0.014 |
 | Lean tr_M bridge | −0.20 | −0.005 |
 | Reading-A `5/2−G·h²` | ~0 | ~0 |
-| Sibling Bring+Faddeev | 62.74 | 1.56 |
+| Sibling Bring + compact-q-dilog | 62.74 | 1.56 |
 | `1/(1−h²·(q²⁵+q⁻²⁵))` (this session) | 140.99 | 3.50 |
 
 The **target's q-slope** (≈ 40) is much faster than the slow-q-varying
@@ -204,7 +204,7 @@ at q₀**:
 - The PROVED slow-q-varying forms (Family A, Lean tr_M) cannot track
   the target's q-flow even in principle — they're approximately
   q-invariant.
-- The fast-q-varying forms either fail q-locality (sibling Bring+Faddeev
+- The fast-q-varying forms either fail q-locality (sibling Bring + compact-q-dilog
   at q = q₀ ± 1% deviates by 1.05% vs target 0.001% rel change; N=25
   form by 4.2%) or contain bar-asymmetry.
 

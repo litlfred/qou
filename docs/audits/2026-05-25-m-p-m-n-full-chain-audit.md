@@ -217,7 +217,7 @@ raises `NotImplementedError`.
 | **h^{2k} for k ≥ 2 in linking_weight** | Family A says TERMINATES at h² (all h^{2k} ≡ 0 for k ≥ 2) | Bring color-tube + α·h^4 evidence says **non-zero**; α ≈ 1.011 (empirical) |
 | **σ_avg for pn pairs** | Uniform `σ − h/2` (collapse 9 color pairs to 1) | Color-sheet weighted sum `Σ W_{c_1 c_2} σ^{ε}` |
 | **Vol(𝓑₃) Lean formalization** | Literature value `8·G` (Adams 1985) cited — NOT in Lean | Should be Lean-proved (depends on Catalan's constant + Lobachevsky) |
-| **h^4 residual coefficient α ≈ 1** | EXPLORATORY only (`lambda_scale_refinement_h4_correction_bring.py`), retired as empirical fit per Rule 14 | Must be derived from one of the 13 categorical drivers (Faddeev recursion / Rogers pentagon / partition-algebra at H_4 / 6j / KLR / …) |
+| **h^4 residual coefficient α ≈ 1** | EXPLORATORY only (`lambda_scale_refinement_h4_correction_bring.py`), retired as empirical fit per Rule 14 | Must be derived from one of the 13 categorical drivers (compact-q-dilog recursion / Rogers pentagon / partition-algebra at H_4 / 6j / KLR / …) |
 | **Yekutieli per-cell `−G·h²`** | PURGED — Reading A is q₀ coincidence | Conjectured equivalent to resummed Bring color-tube `1/(1−h·q^{10})` (cell-↔-projection bijection load-bearing) |
 | **VolDensity per-knot decomposition (`prop:geom-universality`)** | Narrative only, no Lean theorem | Should be Lean-proved |
 | **flavor_split `(1+ℏ_q³)` 3-loop correction** | In production, no Lean backing | Should be Lean-proved |
@@ -256,7 +256,7 @@ channels). This includes brane-tower contributions `Φ_q` or `Li_2^q`
 - **Reading-A geometrised form** of `VolDensity` (purged 2026-05-24
   as q₀ coincidence — not categorical)
 
-## §4a. Update 2026-05-25 — Bring + Faddeev h⁴ candidate identified (RULE 14 compliant)
+## §4a. Update 2026-05-25 — Bring + compact-q-dilog h⁴ candidate identified (RULE 14 compliant)
 
 Follow-up probes on this branch (after the user picked Option A —
 derive h⁴ from the 13 categorical drivers + the h² concrete test):
@@ -290,7 +290,7 @@ Bring base, NOT inside Yekutieli.
 
 | Driver | α_proxy | Off target | Categorical anchor |
 |---|---|---|---|
-| **(i) Faddeev iterated `1/(1−h⁴) − 1`** | **1.0019** | **0.90 %** | Φ_q functional equation Φ_q(qz)/Φ_q(z) = 1/(1−z) at z = h⁴ |
+| **(i) iterated compact-q-dilog `1/(1−h⁴) − 1`** | **1.0019** | **0.90 %** | Φ_q functional equation Φ_q(qz)/Φ_q(z) = 1/(1−z) at z = h⁴ |
 | **(xiii) KLR positivity `+1·h⁴`** | **1.0** | 1.09 % | smallest non-trivial non-negative integer in canonical basis |
 | (vii) 6j Biedenharn-Elliott `G·h⁴` | 0.916 | 9.4 % | residual orthogonality at H_4 |
 | (xi) Lobachevsky `G²·h⁴` | 0.839 | 17.0 % | Clausen Cl_2 identity |
@@ -312,7 +312,7 @@ Faddeev iteration (1/(1−h⁴) ≈ 1 + h⁴ at leading order) agree.
 |---|---|---|---|
 | **Production (Family A)** | 965.4 MeV | **+28,890 ppm (+2.89 %)** | 1× (baseline) |
 | Bring color-tube only | 937.6 MeV | -670 ppm | 43× tighter |
-| **Bring + Faddeev h⁴ ADDITIVE** | **938.4 MeV** | **+108 ppm** | **267× tighter** |
+| **Bring + compact-q-dilog h⁴ ADDITIVE** | **938.4 MeV** | **+108 ppm** | **267× tighter** |
 | Bring × Faddeev MULTIPLICATIVE | 939.4 MeV | +1,243 ppm | 23× tighter |
 
 The **additive composition** wins by an order of magnitude over
@@ -379,7 +379,7 @@ in priority order:
 
 ### Path A: pure Family A + h^4 categorical derivation
 - Stay with Family A canonical (no new conjectures), DERIVE the h^4
-  term canonically from one of the 13 drivers (Faddeev recursion /
+  term canonically from one of the 13 drivers (compact-q-dilog recursion /
   Rogers pentagon / partition algebra at H_4 / Yang-Baxter higher
   iter / hexagon / Frobenius reciprocity / 6j / modular dual / KLR /
   MacMahon / Lobachevsky-Catalan / Chern-Simons-Ohtsuki / crystal
@@ -405,7 +405,7 @@ After "go" + "build more infra" + "please continue until it's completed" sequenc
 | [`AdditiveCompositionConjecture.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/AdditiveCompositionConjecture.lean) | 195 | 0 | `class AdditiveCompositionRule` per AGENTS.md §3b-cond + 3 conditional theorems + substrate instance |
 | [`HExpansionPolynomial.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/HExpansionPolynomial.lean) | 260 | 0 | Degree-4 Taylor polynomials + 12+ coefficient theorems |
 | [`HExpansionDegree8.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/HExpansionDegree8.lean) | 284 | 0 | Extended to degree 8 + via-Jones cross-PR comparison + 3-way distinctness |
-| [`HExpansionDegree8Combined.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/HExpansionDegree8Combined.lean) | 188 | 0 | Combined Bring + Faddeev at degree 8 + polynomial-level distinctness |
+| [`HExpansionDegree8Combined.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/HExpansionDegree8Combined.lean) | 188 | 0 | Combined Bring + compact-q-dilog at degree 8 + polynomial-level distinctness |
 | [`TruncationErrorBound.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/TruncationErrorBound.lean) | 191 | 3 (with Refs) | Faddeev truncation PROVED (closed form); Bring + combined sorry'd |
 | [`AdditiveCompositionCategoricalProof.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/AdditiveCompositionCategoricalProof.lean) | 247 | 0 | 4 categorical-hypothesis classes + multiplicative-falsification theorem |
 
@@ -416,7 +416,7 @@ After "go" + "build more infra" + "please continue until it's completed" sequenc
 1. **3 categorical-distinctness proofs**:
    - At q=1: `categorically_distinct_from_familyA_at_q_one` (sorry-free)
    - At q=q₀: `familyA_distinct_from_BringFaddeevH4_at_q_0` (sorry-free)
-   - At polynomial level: `three_way_polynomial_distinct` (Family A, via-Jones, Bring + Faddeev pairwise distinct as `Polynomial ℚ`)
+   - At polynomial level: `three_way_polynomial_distinct` (Family A, via-Jones, Bring + compact-q-dilog pairwise distinct as `Polynomial ℚ`)
 
 2. **3-way h^k coefficient comparison**:
    - h⁰: Family A=5/2, via-Jones=5/2, Bring=1 (Bring NOT in linking_weight class)
@@ -424,7 +424,7 @@ After "go" + "build more infra" + "please continue until it's completed" sequenc
    - h⁴: Family A=0, via-Jones=-3, Bring=693/8 (all different)
    - All proved sorry-free via `simp [coeff_*]`.
 
-3. **Bring + Faddeev numerical bound at q₀**: linking_weight ∈ (2.46, 2.465) via rational q₀ literal + `norm_num` (sorry-free).
+3. **Bring + compact-q-dilog numerical bound at q₀**: linking_weight ∈ (2.46, 2.465) via rational q₀ literal + `norm_num` (sorry-free).
 
 4. **Faddeev truncation error**: closed-form identity `1/(1−h⁴) − (1 + h⁴ + h⁸) = h¹² / (1−h⁴)` proved by `field_simp + ring`.
 

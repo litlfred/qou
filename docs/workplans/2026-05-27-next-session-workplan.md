@@ -23,7 +23,7 @@
 
 ## Priority 4: Stale PR cleanup
 - #1259 (q-Schur): superseded by Habiro-exact. Close or heavy rebase.
-- #1276 (Bring+Faddeev): findings absorbed into main. Close or merge audit doc.
+- #1276 (Bring + compact-q-dilog): findings absorbed into main. Close or merge audit doc.
 - #1224 (Δ_λ synthesis): Δ_λ = sgn×dim now proved. Close.
 - #1317 (integration-watch): needs rebase, mechanical fixes.
 

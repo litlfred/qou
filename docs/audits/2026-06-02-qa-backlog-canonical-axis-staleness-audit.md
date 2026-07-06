@@ -35,7 +35,7 @@ present at the current path / content. Real = still reproducible.
 
 1. **Re-run the canonical-watcher QA sweep** (`/integration-audit canonical` or `bun run pipeline/qa-sweep.ts content/ --only 'canonical-*'`) to refresh entries #1-7 to `result: "pass"`.
 2. **Triage #8 + #9** — decide whether `authorNotes`-only CAL-4 acknowledgment counts as an "acknowledgment banner" per the `canonical-cal4-acknowledged` checker, OR add an explicit `.md`-prose banner per §3b-cond pattern. Per AGENTS.md §4d the latter is the correct route when the conditional is part of the statement (not author tracking).
-3. **Triage #10 + #11** — per-line audit of `Φ_q` occurrences in the two `borromean-*` / `pachner-*` blocks against the [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md) Φ_q (Faddeev, free spectrum) vs `Li_2^q` (Rogers, binding) context-sorting rule.
+3. **Triage #10 + #11** — per-line audit of `Φ_q` occurrences in the two `borromean-*` / `pachner-*` blocks against the [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md) Φ_q (compact-q-dilog, free spectrum) vs `Li_2^q` (Rogers, binding) context-sorting rule.
 
 ## Pattern observation (cross-session)
 

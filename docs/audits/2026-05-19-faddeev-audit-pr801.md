@@ -1,7 +1,7 @@
-# Faddeev Φ_q audit on PR #801
+# compact q-dilog Φ_q audit on PR #801
 
 **Date**: 2026-05-19
-**Question**: Are any of PR #801's scripts using Faddeev Φ_q (which gives the
+**Question**: Are any of PR #801's scripts using compact q-dilog Φ_q (which gives the
 −737 MeV mirror-nucleus pathology per `prop:mass-endomorphism-tower` SUPERSEDED banner)?
 
 ## Audit result on PR #801 scripts (11 scripts, all clean)
@@ -29,7 +29,7 @@ uses Hoefsmit seminormal character (no q-dilog).
 ## Upstream / downstream of Faddeev (broader repo state)
 
 **Upstream (defines Faddeev)**:
-- `_phi_q_util.py` (Faddeev infrastructure)
+- `_phi_q_util.py` (compact-q-dilog infrastructure)
 - `mass_endomorphism.py:Phi_q` (legacy mass-tower form, gives m_p/m_e ≈ 1870)
 
 **Downstream (consumes Faddeev)**: 46 scripts including:
@@ -52,7 +52,7 @@ and propagate through downstream mass-table outputs). This is tracked as a
 for PR #801.
 
 The structural rationale for full deprecation:
-- Faddeev Φ_q has convergence radius |z| < q ≈ 1.11 → diverges for atomic
+- compact q-dilog Φ_q has convergence radius |z| < q ≈ 1.11 → diverges for atomic
   pair products in H_{3A>3}
 - Faddeev gives −737 MeV mirror-nucleus pathology on ³He
 - Symmetric Li_2^q has wider convergence and avoids the pathology

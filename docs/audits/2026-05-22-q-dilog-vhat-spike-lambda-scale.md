@@ -121,7 +121,7 @@ exhaustion. Remaining open:
    values does not capture it.
 4. **Non-PSLQ structural identities.** $\lambda_p$ might satisfy a
    transcendental functional equation (e.g. via $\Phi_q$'s
-   pentagon identity or the Faddeev quantum-dilog modular
+   pentagon identity or the compact quantum dilogarithm modular
    transformation) that is not captured by linear PSLQ over
    numerical values.
 

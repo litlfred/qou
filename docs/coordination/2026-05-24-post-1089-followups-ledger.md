@@ -51,7 +51,7 @@ The per-isotope error is dominated by the **count** of inter-nucleon arcs (linea
 The Kashaev density rule `ρ_F ∈ {m_e, 2m_e}` matches `ν_SDP` (Wedderburn-decomposition multiplicity of canonical T_w element) exactly on the three SDP-confirmed atoms: D:1, T:2, ³He:2. Strong categorical-derivation candidate.
 
 ### Item #7 — ⁴He magic-shell as color-tube saturation
-The "magic A·8G shell" closure (`A=4` for ⁴He) is hypothesised as the categorical realisation of color-tube saturation — the 12-sheet (4 nucleons × 3 colors) system fills the `SU(3)_color × S_4` 12-dim irrep, ending the per-arc additive correction regime. Quantitative cross-check pending the `1/(1 − h_q · q_0^{10}) ≈ 2.45` Faddeev resummation factor.
+The "magic A·8G shell" closure (`A=4` for ⁴He) is hypothesised as the categorical realisation of color-tube saturation — the 12-sheet (4 nucleons × 3 colors) system fills the `SU(3)_color × S_4` 12-dim irrep, ending the per-arc additive correction regime. Quantitative cross-check pending the `1/(1 − h_q · q_0^{10}) ≈ 2.45` compact-q-dilog resummation factor.
 
 ### Item #5 — atom→knot census admits PSD-cone fragility
 Per the existing `atom-knot-mass-derivation.md`, ²H ↔ 6₂ is NOT PSD-feasible alone (α* = 0.89, only top 45%) while ³He ↔ L6a4 is PSD-top-17%. The census map is scaffolding — R5-full SDP solver supersedes it when it lands.

@@ -288,7 +288,7 @@ Gemini and Copilot will run on every PR. Triage protocol per
   reject it.
 - Do not introduce a 4th calibration parameter. Three only: `m_e`,
   `m_μ/m_e`, `Q_β`.
-- Do not use `Φ_q` (Faddeev) in a binding-context script — use
+- Do not use `Φ_q` (compact-q-dilog) in a binding-context script — use
   `Li_2^q` (Rogers / Kashaev). See cheat sheet §4 for the context-sort
   table.
 - Do not write a new symbol convention without updating

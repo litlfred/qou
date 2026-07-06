@@ -159,7 +159,7 @@ relevant to QOU is *not* Carlitz/KKW. Two possible follow-ups:
     Carlitz at higher orders.
 
 (b) **Non-q-zeta route entirely** — the QOU prefactor may come
-    from a Markov-trace identity or a Φ_q (Faddeev) evaluation
+    from a Markov-trace identity or a Φ_q (compact q-dilog) evaluation
     rather than a q-zeta. The fact that all "obvious" q-zetas
     fail at 17%+ is evidence the right derivation is *not*
     through this family.
@@ -176,7 +176,7 @@ to cover the audit's two follow-up directions in a single sweep:
 - Heine ζ_q(-3) at substrate = 2.396
 - Tsumura-style Σ [n]_q³·q^{-7n} = 26.23
 
-**Route B — Φ_q (Faddeev) + Markov-trace:**
+**Route B — Φ_q (compact q-dilog) + Markov-trace:**
 - Φ_q(1) at substrate ≈ 9.01 × 10⁵
 - Φ_q(q^{1/2}) ≈ 4.98 × 10⁶
 - Φ_q(q⁻¹) ≈ 8.93 × 10⁴
@@ -278,7 +278,7 @@ Witness:
 | Macdonald arm-leg norms | none | 100%+ |
 
 **The verdict is firm.** Across four independent approaches —
-substrate q-rationals, Carlitz q-Bernoulli, Faddeev Φ_q + Markov
+substrate q-rationals, Carlitz q-Bernoulli, compact q-dilog Φ_q + Markov
 parameters, and Macdonald norms — **no obvious low-degree primitive
 at `q_0` recovers π²/720**.
 
@@ -471,7 +471,7 @@ candidate range) is large enough to be measurable.
 
 If the prefactor IS substrate-derivable, the derivation must
 involve a more elaborate structure (Macdonald operators / Cherednik
-q-zeta / Φ_q Faddeev dilog evaluation), not a closed-form
+q-zeta / Φ_q compact-q-dilog dilog evaluation), not a closed-form
 substitution in already-known q-rationals.
 
 ## Route B — Hoefsmit additivity on plate-bounded links (sub-problem 1)

@@ -206,7 +206,7 @@ the **same** proper Plancherel-weighted Wedderburn $\hat V_i$
    symmetric $\mathrm{Li}_2^q$ ($\mu\,T(2,5)$: $1.64\!\to\!1.85$; $\tau$:
    $2.29\!\to\!3.01$); $\Phi_q$-direct far more. The Phase-4 claim — that
    the missing $\sim10^2$ is a Kashaev $1/\hbar$ effect absent in the
-   symmetric (Rogers) dilog — is borne out: the Faddeev form *does* inject
+   symmetric (Rogers) dilog — is borne out: the compact-q-dilog form *does* inject
    it.
 
 2. **But it does not reproduce CODATA.** $\Phi_q$-direct **overshoots

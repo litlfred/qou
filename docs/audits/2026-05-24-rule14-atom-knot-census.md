@@ -29,7 +29,7 @@ Per AGENTS.md §production-vs-exploratory and the Rule-14 escalation protocol (�
 
 | # | Driver | Does it give a substrate-pure (Z, N) → K rule? | Verdict |
 |---|--------|------------------------------------------------|---------|
-| (i)   | Faddeev recursion Φ_q(qz) = (1−z)⁻¹·Φ_q(z) | Constrains q-deformation coefficients on a fixed link; does not select the link from (Z, N). | ❌ |
+| (i)   | compact-q-dilog recursion Φ_q(qz) = (1−z)⁻¹·Φ_q(z) | Constrains q-deformation coefficients on a fixed link; does not select the link from (Z, N). | ❌ |
 | (ii)  | Φ_q power-series log Φ_q(z) = Σ z^n / (n·(1−q^{2n})) | Same as (i) — coefficient machinery on a fixed object. | ❌ |
 | (iii) | Rogers Li_2^q pentagon | 5-term relation between Li_2^q values; no topology-selection content. | ❌ |
 | (iv)  | Yang-Baxter R₁₂ R₁₃ R₂₃ = R₂₃ R₁₃ R₁₂ | Constrains braid-group representations; does not pick which braid the atom maps to. | ❌ |

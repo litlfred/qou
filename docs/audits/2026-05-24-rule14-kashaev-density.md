@@ -58,7 +58,7 @@ predicted binding energy. It is therefore in scope.
 Candidate substrate-derived readings of `ρ_F ∈ {1, 2}`, against each
 driver from the canonical-menu doc:
 
-- **(i) Faddeev recursion / (ii) Φ_q power series / (iii) Rogers
+- **(i) compact-q-dilog recursion / (ii) Φ_q power series / (iii) Rogers
   pentagon / (iv) Yang-Baxter / (v) hexagon / (vi) Frobenius
   reciprocity / (xi) Lobachevsky / Cl_2 / Catalan-G.** All produce
   q-deformed continuous prefactors; none naturally produce the

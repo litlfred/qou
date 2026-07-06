@@ -30,7 +30,7 @@ correct real-q archimedean face of the merged `eulerCoeff` limit is still open
 
 | Thread | Finding | Lean | Probe witness | Production consumer | Verdict |
 |---|---|---|---|---|---|
-| **z-Habiro Φ_q** (#2447/#2460/#2475/#2609, #2481) | Faddeev Φ_q per-generator brane-tower term | §3b-cond merged (`ZHabiroCauchy`) | ✓ `zhabiro-phiq-production-crosscheck`, `zhabiro-physical-z-pin` | ✗ none — production uses `li2q`; Φ_q regresses (−737 MeV) | **REFUTED-DIAGNOSTIC** |
+| **z-Habiro Φ_q** (#2447/#2460/#2475/#2609, #2481) | compact q-dilog Φ_q per-generator brane-tower term | §3b-cond merged (`ZHabiroCauchy`) | ✓ `zhabiro-phiq-production-crosscheck`, `zhabiro-physical-z-pin` | ✗ none — production uses `li2q`; Φ_q regresses (−737 MeV) | **REFUTED-DIAGNOSTIC** |
 | **z-Habiro Rogers** (#2609) | real-q saddle = `li2q` (the open justification lemma) | ✗ open (formalize-first) | ✗ (direction doc only) | `li2q` term *is* in production (predates this week) | **OPEN PROOF** — code correct, lemma unproven |
 | **A=3 ³He combiner** (#2371, merged: `5890366e`/`8cf8015c`) | operator-form `A^λ` combiner reconstructs ³He χ^λ @50dps | §3b-cond stub | ✓ `binding-a3plus-joint-ji-combiner` | ✗ canonical sweep reads `atomic-tr-m-mpfr-50dps` (T1), not the A=3 result | **PROBE-ONLY** (merged ≠ wired) |
 | **Pauli → Δ_λ** (#2461) | weighted-channel / Δ_λ binding decomposition | §3b-cond candidate | ✓ `probe-pauli-young-delta-lambda-*` (diagnostic) | ✗ sweep uses baseline form | **PROBE-ONLY** |
@@ -60,7 +60,7 @@ Production already runs the bounded Rogers `li2q`; the missing deliverable is
 the *proof* that it is the correct real-`q` archimedean saddle of the merged
 `eulerCoeff` (Faddeev) limit. Now scaffolded as a formalize-first conjecture
 class `QOU.BraidKnot.ZHabiroRogersSaddle` in `QuantumDilogarithm.lean`, reusing
-the file's existing `phi_q` (Faddeev face) and `towerTerm = -li2_q(-|·|)`
+the file's existing `phi_q` (compact-q-dilog face) and `towerTerm = -li2_q(-|·|)`
 (Rogers production face), with two **non-vacuous** conditional corollaries
 (`realQSaddle_phi_q_at_zero`, `realQSaddle_phi_q_ne_phi_q_at_zero`) that compose
 the conjecture with the proven `towerTerm_at_zero` / `phi_q_at_zero`. The

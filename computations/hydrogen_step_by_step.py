@@ -174,7 +174,7 @@ def main() -> int:
     print(f"  Convention-mismatch  : V̂_i computation in")
     print(f"                         additive_wedderburn_volumes mirrors")
     print(f"                         mass_endomorphism.py — a chain matched")
-    print(f"                         to the now-retired Faddeev Φ_q form.")
+    print(f"                         to the now-retired compact q-dilog Φ_q form.")
     print(f"                         Under Li_2^q the V̂_i values may need")
     print(f"                         re-derivation to give correct magnitudes.")
     print(f"  Faddeev-pole artifact: PRE-revision T2 was ~10^6 cat-units for")
@@ -219,7 +219,7 @@ def main() -> int:
          "doc": "tower truncation at T6 pre-2026-05; T7+T8 design pending"},
         {"name": "V_hat_i_convention_mismatch",
          "kind": "structural",
-         "doc": "additive_wedderburn_volumes was tuned to Faddeev Φ_q (now retired); Li_2^q may need re-derived V̂_i"},
+         "doc": "additive_wedderburn_volumes was tuned to compact q-dilog Φ_q (now retired); Li_2^q may need re-derived V̂_i"},
         {"name": "Faddeev_pole_artifact_pre_revision",
          "kind": "documented_now_resolved",
          "doc": "previous 1.50% closure was T2≈1M cat-units from Φ_q near-pole at |V̂|=0.989 > q^{-1}=0.901; Li_2^q gives finite T2≈1.6"},

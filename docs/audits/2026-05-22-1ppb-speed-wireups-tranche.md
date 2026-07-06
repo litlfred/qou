@@ -150,7 +150,7 @@ See [`docs/agent-briefs/2026-05-22-lambda-scale-qdilog-tower-direct.md`](../agen
 
 Briefly: the Bring-Bloch 6-tier negative is decisive (52 hyperbolic
 volumes searched; no integer relation found). The
-q-dilog tower path (Rogers `Li_2^q` and/or Faddeev `Φ_q` evaluated
+q-dilog tower path (Rogers `Li_2^q` and/or compact-q-dilog `Φ_q` evaluated
 at algebraic substrate points) is the next-best lead. Five
 strategies are scoped (A–E); recommended start is Strategy A
 (Rogers PSLQ at `ℚ(q_0)` algebraic locus). See the brief for

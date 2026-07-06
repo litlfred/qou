@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Sweep — Bring color-tube + Faddeev h⁴ candidate vs Family A production
+"""Sweep — Bring color-tube + compact-q-dilog h⁴ candidate vs Family A production
 across the full 65-isotope mass table.
 
 Per the user-picked next step (audit `2026-05-25-m-p-m-n-full-chain-audit.md`
@@ -16,12 +16,12 @@ binding-energy column (binding is computed separately via Kashaev
 `ρ_F · Vol_hyp` in `mass_table_ppb.py`, independent of linking_weight).
 
 The mass shift propagates linearly per nucleon:
-  Δm_p = m_p_Bring+Faddeev − m_p_FamilyA  ≈ −27.0 MeV per proton
+  Δm_p = m_p_Bring + compact-q-dilog − m_p_FamilyA  ≈ −27.0 MeV per proton
   Δm_n ≈ −27.0 MeV per neutron
   Δm_atom ≈ Z·Δm_p + N·Δm_n  (linear, since B is unchanged)
 
 Output: `mass-table-bring-faddeev-h4-sweep.witness.json` — per-isotope
-column of m_pred (Family A) vs m_pred (Bring + Faddeev h⁴) + delta + rel
+column of m_pred (Family A) vs m_pred (Bring + compact-q-dilog h⁴) + delta + rel
 err vs CODATA.
 
 This is PROBE/EXPLORATORY (per Rule 14): the categorical proof of the
@@ -63,12 +63,12 @@ mp.mp.dps = 80
 
 
 def linking_weight_bring_plus_faddeev_h4(q: mp.mpf, q_inv: mp.mpf | None = None) -> mp.mpf:
-    """Candidate: Bring color-tube + Faddeev h⁴ additive composition.
+    """Candidate: Bring color-tube + compact-q-dilog h⁴ additive composition.
 
       linking_weight(q) = 1/(1 − h_q · q^{10}) + 1/(1 − h_q⁴) − 1
 
     Both factors are Φ_q functional-equation ratios at substrate-natural
-    z values (z_1 = h·q^{10} for Bring; z_2 = h⁴ for Faddeev recursion
+    z values (z_1 = h·q^{10} for Bring; z_2 = h⁴ for compact-q-dilog recursion
     at the even-substrate KLR-canonical-basis vector).
     Rule-14 compliant (driver (i) + driver (xiii) of the 13-driver menu).
     """
@@ -102,7 +102,7 @@ def main() -> int:
     m_n_BF = m_avg_BF * (1 + dm_over_Mn / 2)
 
     print("=" * 80)
-    print("Mass-table sweep — Bring + Faddeev h⁴ vs Family A production")
+    print("Mass-table sweep — Bring + compact-q-dilog h⁴ vs Family A production")
     print("=" * 80)
     print()
     print(f"linking_weight Family A      = {mp.nstr(lam_A, 15)}")
@@ -149,7 +149,7 @@ def main() -> int:
         if m_pred_A is None or m_codata is None:
             continue
 
-        # Bring + Faddeev shift: each nucleon's mass is scaled, but the
+        # Bring + compact-q-dilog shift: each nucleon's mass is scaled, but the
         # binding energy B is unchanged. So:
         #   m_pred_BF_atom = Z * m_p_BF + N * m_n_BF − B_pred
         # Substituting m_pred_A_atom = Z * m_p_A + N * m_n_A − B_pred:
@@ -163,7 +163,7 @@ def main() -> int:
         err_A = (m_pred_A_mp - m_codata_mp) / m_codata_mp
         err_BF = (m_pred_BF_mp - m_codata_mp) / m_codata_mp
 
-        # Improvement factor (FamilyA error / Bring+Faddeev error)
+        # Improvement factor (FamilyA error / Bring + compact-q-dilog error)
         if abs(err_BF) > 1e-15:
             improve_factor = abs(err_A) / abs(err_BF)
         else:
@@ -212,7 +212,7 @@ def main() -> int:
     # ── Witness ──────────────────────────────────────────────────
     w = WitnessBuilder("mass-table-bring-faddeev-h4-sweep", engine="mpmath")
     w.set_description(
-        "Sweep of the Bring color-tube + Faddeev h⁴ candidate "
+        "Sweep of the Bring color-tube + compact-q-dilog h⁴ candidate "
         "linking_weight `1/(1 − h·q^{10}) + 1/(1 − h⁴) − 1` against "
         "the Family A production output across the full isotope mass "
         "table (mass-table-comprehensive.witness.json). The candidate "
@@ -220,7 +220,7 @@ def main() -> int:
         "+108 ppm); the shift propagates linearly to atomic masses as "
         "Z·Δm_p + N·Δm_n (binding unchanged). RULE 14 compliance: both "
         "factors are Φ_q functional-equation ratios at substrate-natural "
-        "z values (driver i Faddeev iterated + driver xiii KLR positivity). "
+        "z values (driver i iterated compact-q-dilog + driver xiii KLR positivity). "
         "Open load-bearing step: additive-vs-multiplicative composition "
         "categorical proof at H_4."
     )
@@ -248,7 +248,7 @@ def main() -> int:
             expected=1,
             tolerance=None,
             source=(
-                "Bring + Faddeev h⁴ candidate strictly tightens the "
+                "Bring + compact-q-dilog h⁴ candidate strictly tightens the "
                 "worst-case atomic mass error vs Family A across all "
                 "isotopes (both reductions are linear shifts; binding "
                 "energy column unchanged)."

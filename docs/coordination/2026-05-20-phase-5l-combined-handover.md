@@ -47,7 +47,7 @@ A one-page-up map of the substrate → observables chain, with per-step:
 - Witness file
 
 Plus:
-- **Φ_q (Faddeev) vs Li_2^q (Rogers) context sorting** — confirms binding pipeline is Φ_q-free per stage-1b audit (`126699b8c`); mass-anchor scripts correctly use Φ_q
+- **Φ_q (compact q-dilog) vs Li_2^q (Rogers) context sorting** — confirms binding pipeline is Φ_q-free per stage-1b audit (`126699b8c`); mass-anchor scripts correctly use Φ_q
 - **Phase 5 findings** highlighted (5b, 5c.1, 5g, 5k.1, 5l, 5l.1, 5n) with status (proved, falsified, conjectured)
 - **Pipeline-discipline migration backlog** — 5 actions identified from the 10-day deep review:
   1. λ-scale categorical derivation → m_p production

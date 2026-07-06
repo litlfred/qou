@@ -1,7 +1,7 @@
 """
-m_p_m_e_li2q.py — m_p/m_e under symmetric Li_2^q instead of Faddeev Φ_q.
+m_p_m_e_li2q.py — m_p/m_e under symmetric Li_2^q instead of compact q-dilog Φ_q.
 
-Tests whether replacing the legacy Faddeev Φ_q with symmetric Li_2^q
+Tests whether replacing the legacy compact q-dilog Φ_q with symmetric Li_2^q
 in mass_endomorphism.py's mass-tower formula preserves the m_p/m_e ≈
 1836 (CODATA) prediction. If yes, full Faddeev deprecation is safe;
 if no, downstream impact must be tracked separately.

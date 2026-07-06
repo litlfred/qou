@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-ξ_ℓ probe — Faddeev Φ_q tower vs symmetric (Rogers) Li_2^q tower.
+ξ_ℓ probe — compact q-dilog Φ_q tower vs symmetric (Rogers) Li_2^q tower.
 
 Tests the Phase-4 obstruction's indicated resolution
 (`content/quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.md`
 §"Two-constraint obstruction"): the symmetric Li_2^q tower gives
 O(1) lepton mass ratios because Li_2^q(z) = Σ z^n/(n[n]_q) → Li_2(z)
-as q→1 — NO 1/ℏ enhancement. The Faddeev quantum dilogarithm
+as q→1 — NO 1/ℏ enhancement. The compact quantum dilogarithm
 (q-Pochhammer) Φ_q(z) = ∏_{k≥1}(1 - q^{-k} z)^{-1} has
 log Φ_q ~ Li_2/ℏ, an O(1/ℏ) enhancement, so its tower can in
 principle supply the ~100× the ratios are missing while staying
@@ -215,18 +215,18 @@ def main() -> int:
     print()
     print("=== Reading ===")
     print("(a) symmetric Li_2^q: O(1) ratios — reproduces the Phase-4 obstruction.")
-    print("(b)/(c) Faddeev Φ_q bare arg: 1/ℏ enhancement; (b) overshoots knot-sensitively.")
+    print("(b)/(c) compact q-dilog Φ_q bare arg: 1/ℏ enhancement; (b) overshoots knot-sensitively.")
     print("(d)/(e) Φ_q on rescaled arg V̂/q_0: tames the near-radius singularity.")
     print("    Closest-to-CODATA column = the candidate normalization (honest report).")
 
     witness = {
-        "description": "ξ_ℓ Faddeev Φ_q vs symmetric Li_2^q per-braid tower probe (proper Wedderburn V̂_i)",
+        "description": "ξ_ℓ compact q-dilog Φ_q vs symmetric Li_2^q per-braid tower probe (proper Wedderburn V̂_i)",
         "computation": "xi_ell_faddeev_phi_q_probe",
         "audit_only": True,
         "precision_dps": 50,
         "context": {
             "tests": "lepton-mass-tower-canonical.md §Two-constraint obstruction (Phase 4)",
-            "hypothesis": "Faddeev Φ_q (log Φ_q ~ Li_2/ℏ) supplies the ~100× the symmetric Li_2^q tower lacks while staying nonzero on torus knots",
+            "hypothesis": "compact q-dilog Φ_q (log Φ_q ~ Li_2/ℏ) supplies the ~100× the symmetric Li_2^q tower lacks while staying nonzero on torus knots",
             "V_hat_source": "per_generator_V_hat_general (proper Plancherel Wedderburn, NOT crude |tr_M|^(1/n))",
             "q0_pin": "muon-anchored canonical (matches per-generator-V-hat-general.witness.json)",
         },

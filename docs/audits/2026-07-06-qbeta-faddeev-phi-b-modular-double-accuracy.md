@@ -107,6 +107,32 @@ observed simple dominant pole at `u_substrate` (PR #1727). This replaces the
 compact-`Φ_q` inputs of the deprecated probes. **No c_k value / no picked
 root-of-unity — flip-flop guard respected.**
 
+## 4a. Terminology ruling + corpus sweep (2026-07-06)
+
+**Ruling.** Two distinct objects, name each correctly:
+
+| object | correct name | wrong name (do not use) |
+|---|---|---|
+| `∏_{k≥1}(1−q^{-k}z)^{-1}` (single q-Pochhammer, `phi_q`) | **compact quantum dilogarithm** / q-exponential | ~~Faddeev Φ_q~~ |
+| modular-double ratio, `sinh(zb)sinh(zb^{-1})` kernel | **Faddeev (non-compact) quantum dilogarithm `Φ_b`** | — |
+
+"Faddeev" belongs to the modular-double `Φ_b` only. The Lean lemma file
+[`QOU/QBeta/FaddeevModularDouble.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/FaddeevModularDouble.lean)
+(sorry-free, `lean`-direct exit 0) axiomatises `Φ_b` and proves the
+bar-parity (sinh/cosh) decomposition.
+
+**Sweep.** A conservative codemod corrected **238 mislabel lines across 92
+source files** (`.py`/`.md`/`.lean`/`.ts`), rewriting "Faddeev Φ_q",
+"Faddeev recursion/iterated/functional equation/resummation", "Bring +
+Faddeev h⁴", etc. → "compact q-dilog / compact-q-dilog …". Protected
+(unchanged): bibliographic keys (`faddeev-kashaev`, `andersen-kashaev`),
+`Kashaev` volume, genuine `Φ_b` references, and the two hand-corrected
+utilities. **Intentionally not changed** (separate follow-up): file *names*
+containing `faddeev` (`xi_ell_faddeev_phi_q_probe.py`,
+`m_p_bring_plus_faddeev_h4_probe.py`, `mass_table_bring_faddeev_h4_sweep.py`)
+— renaming breaks references; and auto-regenerating `*.witness.json`
+(will pick up the corrected script strings on next run).
+
 ## 5. Coordination
 
 - Complements the [two-saddle scope](../scope/2026-07-06-qbeta-fmap-torus-knot-cs-phase-geometry.md)

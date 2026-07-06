@@ -18,7 +18,7 @@
 |-------|----------------|-----------------|
 | Lean discharges | last-10-day commits under `content/**/*.lean` | did the proof show up? does it have a downstream consumer? |
 | New propositions | `prop:flavor-split-substrate`, `prop:hopf-jones-c3-categorical`, `prop:chi-lambda-w0-sign-weighting`, `prop:kashiwara-jones-c4-categorical` | does the production chain use the derived constant? |
-| Canonical-form refactors | T2/T3 Faddeev Φ_q → symmetric Li_2^q (PR #687, merged) | did all consumers migrate? |
+| Canonical-form refactors | T2/T3 compact q-dilog Φ_q → symmetric Li_2^q (PR #687, merged) | did all consumers migrate? |
 | Mass-table sweep | `paper_six_term_isotope_sweep.py` | does it run end-to-end? what's the isotope coverage? |
 | Active PRs | #683 / #689 / #679 / #690 (#686 / #688 closed) | tractable CI / review issues? |
 
@@ -64,7 +64,7 @@ discharges are wired transitively via the existing primitives.
 
 | Change | Commit / PR | Wiring status |
 |--------|-------------|---------------|
-| T2/T3 Faddeev Φ_q → symmetric Li_2^q + wire T6 | 32b717ed | **WIRED** ✓ — verified in `derive_m_p_hecke_full_tower_50dps.py:299` (`T2_single_Li2q_50dps`, `T3_pair_Li2q_50dps`) and `paper_six_term_isotope_sweep.py` `tower_mode=li2q` default |
+| T2/T3 compact q-dilog Φ_q → symmetric Li_2^q + wire T6 | 32b717ed | **WIRED** ✓ — verified in `derive_m_p_hecke_full_tower_50dps.py:299` (`T2_single_Li2q_50dps`, `T3_pair_Li2q_50dps`) and `paper_six_term_isotope_sweep.py` `tower_mode=li2q` default |
 | `compute T2/T3 locally via Li_2^q in derive_m_p/m_n consumers` | 27303e67 (PR #687) | **WIRED** ✓ — explicit comment "T2/T3 computed locally via Li_2^q since the producer (post-2026-05-17 …)" at `derive_m_n_hecke_full_tower_50dps.py:131` |
 | Li_2^q helpers centralization | 08070cc4 (PR #687) | **WIRED** ✓ — single source of truth via `derived_masses.li2q_symmetric` |
 
