@@ -1359,6 +1359,58 @@ theorem garnirHSub_coe (t : Specht.Tableau μ) (i j : ℕ) :
     fun h => ⟨h.1.2, h.2.2⟩⟩
 
 omit [CharZero k] in
+/-- **Garnir transversal existence (sorry-free).** A left transversal `T` of `H` in `G`
+whose product family `{π·ρ}` covers `garnirG` bijectively — the exact hypotheses
+`sum_over_garnirG_reindex` consumes.  Built from Mathlib's `exists_left_transversal_of_le`
+through the subgroup-carrier bridges `garnirGSub_coe`/`garnirHSub_coe`. -/
+theorem garnir_transversal_exists (t : Specht.Tableau μ) (i j : ℕ) :
+    ∃ T : Finset (Equiv.Perm (Fin (Specht.nOf μ))),
+      garnirG t i j ⊆ (T ×ˢ garnirH t i j).image (fun p => p.1 * p.2) ∧
+      (T ×ˢ garnirH t i j).image (fun p => p.1 * p.2) ⊆ garnirG t i j ∧
+      (garnirG t i j).card = (T ×ˢ garnirH t i j).card := by
+  classical
+  obtain ⟨S, hSH, hScard⟩ := Subgroup.exists_left_transversal_of_le (garnirHSub_le t i j)
+  rw [garnirHSub_coe, garnirGSub_coe] at hSH
+  have h1H : (1 : Equiv.Perm (Fin (Specht.nOf μ))) ∈ garnirH t i j := by
+    rw [garnirH, Finset.mem_inter]
+    exact ⟨by rw [garnirG, Finset.mem_filter]; exact ⟨Finset.mem_univ _, fun l _ => rfl⟩,
+      by rw [Finset.mem_filter]; exact ⟨Finset.mem_univ _, Subgroup.one_mem _⟩⟩
+  have hGsub : ∀ σ, σ ∈ garnirG t i j ↔ σ ∈ garnirGSub t i j := by
+    intro σ; rw [mem_garnirGSub, garnirG, Finset.mem_filter]
+    exact ⟨fun h => h.2, fun h => ⟨Finset.mem_univ _, h⟩⟩
+  have hHsubG : ∀ h ∈ garnirH t i j, h ∈ garnirGSub t i j := by
+    intro h hh; rw [← hGsub]; exact (Finset.mem_inter.mp hh).1
+  have hSfin : S.Finite := Set.toFinite S
+  haveI : Fintype S := hSfin.fintype
+  refine ⟨S.toFinset, ?_, ?_, ?_⟩
+  · -- cover: garnirG ⊆ image
+    intro σ hσ
+    have hσS : σ ∈ (↑(garnirG t i j) : Set _) := Finset.mem_coe.mpr hσ
+    rw [← hSH] at hσS
+    obtain ⟨s, hs, h, hh, rfl⟩ := hσS
+    exact Finset.mem_image.mpr ⟨(s, h),
+      Finset.mem_product.mpr ⟨Set.mem_toFinset.mpr hs, Finset.mem_coe.mp hh⟩, rfl⟩
+  · -- closed: image ⊆ garnirG
+    intro σ hσ
+    rw [Finset.mem_image] at hσ
+    obtain ⟨⟨s, h⟩, hsh, rfl⟩ := hσ
+    rw [Finset.mem_product] at hsh
+    have hsG : s ∈ garnirGSub t i j := by
+      rw [← hGsub, ← Finset.mem_coe, ← hSH]
+      exact ⟨s, Set.mem_toFinset.mp hsh.1, 1, Finset.mem_coe.mpr h1H, mul_one s⟩
+    rw [hGsub]
+    exact Subgroup.mul_mem _ hsG (hHsubG h hsh.2)
+  · -- card: |garnirG| = |T ×ˢ garnirH|
+    rw [Finset.card_product]
+    have e1 : Nat.card S = S.toFinset.card := by
+      rw [Nat.card_coe_set_eq, Set.ncard_eq_toFinset_card']
+    have e2 : Nat.card (garnirHSub t i j) = (garnirH t i j).card := by
+      rw [← SetLike.coe_sort_coe, Nat.card_coe_set_eq, garnirHSub_coe, Set.ncard_coe_finset]
+    have e3 : Nat.card (garnirGSub t i j) = (garnirG t i j).card := by
+      rw [← SetLike.coe_sort_coe, Nat.card_coe_set_eq, garnirGSub_coe, Set.ncard_coe_finset]
+    rw [← e3, ← hScard, e1, e2]
+
+omit [CharZero k] in
 /-- **Coset reindexing (sorry-free) — Garnir bridge, reindex step.** For any transversal
 `T` whose product family `{π·ρ : π ∈ T, ρ ∈ H}` covers `garnirG` bijectively (encoded by
 the two inclusions + the cardinality match), a sum over `garnirG` reindexes as the double
