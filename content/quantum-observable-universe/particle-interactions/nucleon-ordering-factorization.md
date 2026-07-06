@@ -1,15 +1,9 @@
-The Wedderburn--Artin decomposition of $H_3(q)$ into irreducible
-representations, combined with jet-descended confinement of hadrons,
-yields a factorization of the nuclear Markov trace that makes the
-ground-state ordering search trivial in two of three channels.
+The Wedderburn--Artin decomposition of $H_3(q)$ into irreducible representations, combined with the jet-descended confinement of hadrons, factorizes the nuclear Markov trace. This factorization renders the ground-state ordering search trivial in two of the three channels.
 
 ## Statement
 
 **Proposition.**
-*Let $\mathcal{N}(Z, N)$ be a nuclear braid in $H_A(q)$ with
-nucleon ordering $\pi = (t_1, \ldots, t_A)$ where
-$t_k \in \{\mathfrak{p}, \mathfrak{n}\}$.  Then the Markov trace
-decomposes as:*
+*Let $\mathcal{N}(Z, N)$ be a nuclear braid in $H_A(q)$ with nucleon ordering $\pi = (t_1, \ldots, t_A)$ where $t_k \in \{\mathfrak{p}, \mathfrak{n}\}$. The Markov trace decomposes as:*
 
 $$
   \mathrm{tr}_M(\mathcal{N})
@@ -22,10 +16,7 @@ $$
 *where:*
 
 **(i) Ordering independence of scalar channels.**
-*The symmetric product $S(\pi) = \prod_k s_k$ and alternating
-product $A(\pi) = \prod_k a_k$ are products of commutative
-scalars.  Since scalar multiplication commutes, $S$ and $A$ are
-independent of the nucleon ordering $\pi$:*
+*The symmetric product $S(\pi) = \prod_k s_k$ and alternating product $A(\pi) = \prod_k a_k$ are products of commutative scalars. Because scalar multiplication commutes, $S$ and $A$ remain independent of the nucleon ordering $\pi$:*
 
 $$
   S(\pi) = S(\pi') = \prod_{k} (q + d_k),
@@ -33,12 +24,10 @@ $$
   A(\pi) = A(\pi') = \prod_{k} (-q^{-1} + d_k)
 $$
 
-*for any two orderings $\pi, \pi'$ with the same nucleon
-composition $(Z, N)$.*
+*for any two orderings $\pi, \pi'$ with the same nucleon composition $(Z, N)$.*
 
 **(ii) Standard-channel factorization.**
-*The standard-channel state $(a_\pi, b_\pi) \in \mathbb{R}^2$
-is the result of a $2 \times 2$ matrix product:*
+*The standard-channel state $(a_\pi, b_\pi) \in \mathbb{R}^2$ emerges from a $2 \times 2$ matrix product:*
 
 $$
   \begin{pmatrix} a_\pi \\ b_\pi \end{pmatrix}
@@ -54,19 +43,10 @@ $$
   \end{pmatrix}
 $$
 
-*where $K$ is the total number of crossings (nucleon-internal
-$+$ inter-nucleon $+$ electron).*
+*where $K$ totals the number of crossings (nucleon-internal $+$ inter-nucleon $+$ electron).*
 
 **(iii) Jet-descended nucleon blocks.**
-*By the confinement theorem
-([confinement-topological](#prop:confinement-topological)),
-proton and neutron are topologically stable normal forms in
-$H_3(q)$.  By the ordering-jet compatibility theorem
-([ordering-jet-compatibility](#prop:ordering-jet-compatibility)),
-the admissible ordering propagates through jet levels.  This
-means the intra-nucleon crossings
-($\mathcal{B}_3$ $+$ quark pairs $+$ gluon dressing) produce
-fixed $2 \times 2$ transfer matrices:*
+*The confinement theorem ([confinement-topological](#prop:confinement-topological)) establishes the proton and neutron as topologically stable normal forms in $H_3(q)$. The ordering-jet compatibility theorem ([ordering-jet-compatibility](#prop:ordering-jet-compatibility)) ensures the admissible ordering propagates through jet levels. Thus, the intra-nucleon crossings ($\mathcal{B}_3$ $+$ quark pairs $+$ gluon dressing) yield fixed $2 \times 2$ transfer matrices:*
 
 $$
   T_\mathfrak{p}^{\mathrm{std}}
@@ -82,15 +62,10 @@ $$
   \in \mathbb{R}^{2 \times 2}
 $$
 
-*These are precomputed once and reused for every nucleus.*
+*We precompute these once and reuse them for every nucleus.*
 
 **(iv) Inter-nucleon crossings (transient).**
-*In the jet-stratified language
-([jet-stratified-reduction](#unital-groebner-bases:prop:jet-stratified-reduction)),
-the nucleon blocks are **descended** (resolved at the quark level).
-The inter-nucleon crossings are **transient** (new at the nuclear
-level).  Each has a $2 \times 2$ matrix determined by the nucleon
-pair type:*
+*In the jet-stratified language ([jet-stratified-reduction](#unital-groebner-bases:prop:jet-stratified-reduction)), the nucleon blocks are **descended** (resolved at the quark level). The inter-nucleon crossings are **transient** (new at the nuclear level). Each carries a $2 \times 2$ matrix dictated by the nucleon pair type:*
 
 $$
   T_{\mathfrak{p}\mathfrak{p}}^{\mathrm{std}}
@@ -111,8 +86,7 @@ $$
 
 ## Computational consequence
 
-The ground-state ordering search for $\mathcal{N}(Z, N)$ tests
-$\binom{A}{Z}$ nucleon permutations.  For each permutation:
+The ground-state ordering search for $\mathcal{N}(Z, N)$ tests $\binom{A}{Z}$ nucleon permutations. For each permutation:
 
 | Component | Cost (original) | Cost (factorized) |
 |-----------|----------------|-------------------|
@@ -123,23 +97,11 @@ $\binom{A}{Z}$ nucleon permutations.  For each permutation:
 
 **Effective speedup factors:**
 
-1. **Channel elimination**: Symmetric and alternating products
-   computed once per $(Z, N)$, not per ordering.  Saves $2/3$ of
-   per-crossing work.
+1. **Channel elimination**: We compute symmetric and alternating products once per $(Z, N)$, not per ordering. This saves $2/3$ of the per-crossing work.
+2. **Nucleon precomputation**: Each nucleon contributes $n_p$ crossings to the chain. Precomputing $T_\mathfrak{p}$ and $T_\mathfrak{n}$ collapses these to a single $2 \times 2$ matrix per nucleon per generator.
+3. **$2 \times 2$ vs $6 \times 6$**: The standard-channel matrix multiplication requires $O(4)$ rather than $O(36)$ operations per crossing.
 
-2. **Nucleon precomputation**: Each nucleon contributes $n_p$
-   crossings to the chain.  With precomputed $T_\mathfrak{p}$ and
-   $T_\mathfrak{n}$, these collapse to a single $2 \times 2$
-   matrix per nucleon per generator.
-
-3. **$2 \times 2$ vs $6 \times 6$**: The standard-channel matrix
-   multiply is $O(4)$ instead of $O(36)$ per crossing.
-
-Combined: the ordering search cost drops from
-$\binom{A}{Z} \times O(A^2) \times O(36)$ to
-$\binom{A}{Z} \times O(A^2) \times O(4)$, a **$\sim 9 \times$
-reduction per ordering** plus elimination of redundant channel
-computation.
+Combined, the ordering search cost drops from $\binom{A}{Z} \times O(A^2) \times O(36)$ to $\binom{A}{Z} \times O(A^2) \times O(4)$. This provides a $\sim 9 \times$ reduction per ordering and eliminates redundant channel computations.
 
 ## Compact nucleon notation
 
@@ -167,16 +129,6 @@ $$
   \mathfrak{t}_1 \cdot \mathfrak{t}_2 \cdots \mathfrak{t}_A
 $$
 
-where each $\mathfrak{t}_k \in \{\mathfrak{p}, \mathfrak{n}\}$ and
-inter-nucleon crossings are encoded in the multiplication rule.
-The full $H_3(q)$ normal form is recovered by evaluating the
-$2 \times 2$ product and combining with the precomputed scalar
-channels.
+Here, each $\mathfrak{t}_k \in \{\mathfrak{p}, \mathfrak{n}\}$ and the multiplication rule encodes the inter-nucleon crossings. Evaluating the $2 \times 2$ product and combining it with the precomputed scalar channels recovers the full $H_3(q)$ normal form.
 
-This is the **hadronic Hecke alphabet**: six NF coefficients per
-nucleon collapse to a $2 \times 2$ matrix (4 numbers) in the
-standard channel, plus two precomputed scalars.  For
-${}^{56}\mathrm{Fe}$: $6 \times 56 = 336$ NF coefficients reduce
-to $56 \times (4 + 2) = 336$ hadronic parameters — no size
-reduction, but the multiplication is $9\times$ faster and
-$2/3$ of the per-ordering work vanishes.
+This constitutes the **hadronic Hecke alphabet**. Six normal-form coefficients per nucleon collapse to a $2 \times 2$ matrix (4 numbers) in the standard channel, plus two precomputed scalars. For ${}^{56}\mathrm{Fe}$, the $6 \times 56 = 336$ normal-form coefficients reduce to $56 \times (4 + 2) = 336$ hadronic parameters. While this yields no size reduction, the multiplication executes $9\times$ faster and $2/3$ of the per-ordering work vanishes.
