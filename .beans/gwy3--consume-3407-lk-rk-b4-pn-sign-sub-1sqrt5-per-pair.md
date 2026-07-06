@@ -45,7 +45,7 @@ Reconciliation: det form needs g_eff=0.642>ceiling for ²H ⇒ linear 5g
 law is a separate assertion; q→1 limit B(²H)=√5 MeV — unit implicit.
 Remaining: sine-normalization derivation; Lean I1/I2; ²H unit anchor;
 pn sign.
-2026-07-06 (tranche 3, PR #3443): ALL THREE remaining opens dispositioned.
+2026-07-06 (tranche 3, PR #3448): ALL THREE remaining opens dispositioned.
 (1) tangent identification DERIVED from the TL Markov property
 (tr(x·eₙ)=δ⁻¹tr(x) ⇒ channel direction (1,z), tanθ=z) — §2d; one residual
 postulate remains (linking = CWF functional on channel direction).
