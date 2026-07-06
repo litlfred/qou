@@ -1,3 +1,5 @@
-Large-scale intermittency hints at a substrate parameter approaching a critical value; here we examine the same boundary inside the nucleus. Remark: Representative stable isotopes: Coulomb ratio and Diophantine error tabulates the Coulomb-to-strong ratio along the valley of stability and reports the Diophantine residue, Remark: The golden ratio as the boundary of stable chiral structure identifies $q_{\mathrm{gold}} = 1/\varphi^2$ as the wall where chiral structure dissolves, Example: Hydrogen: the simplest atom in knot form works the calculation out explicitly for hydrogen, and Proposition: Discrete regime switches in SDP cross-channel couplings across isotopes records the discrete regime changes the SDP coupling exhibits as isotope number increases. These four blocks supply the chart-reading skills the strangelet-stability section will use when pushing density up past nuclear saturation.
-
-_(draft.)_
+Large-scale intermittency suggests a substrate parameter approaching a critical value. We examine this boundary inside the nucleus. The following blocks provide the computational tools for pushing density beyond nuclear saturation in the strangelet-stability section:
+- Representative stable isotopes: Coulomb ratio and Diophantine error tabulates the Coulomb-to-strong ratio along the valley of stability and reports the Diophantine residue.
+- The golden ratio as the boundary of stable chiral structure identifies $q_{\mathrm{gold}} = 1/\varphi^2$ as the threshold where chiral structure dissolves.
+- Hydrogen: the simplest atom in knot form performs the explicit calculation for hydrogen.
+- Discrete regime switches in SDP cross-channel couplings across isotopes records the discrete regime changes the SDP coupling exhibits as isotope number increases.
