@@ -961,6 +961,65 @@ theorem exists_row_descent_of_colMax (t : Specht.Tableau μ)
         show Specht.rowPattern t b = i from by show (t b : ℕ × ℕ).1 = i; rw [htb]] at hrow
     omega
 
+omit [CharZero k] in
+/-- **Garnir assembly (sorry-free) — Garnir piece 2, final bookkeeping.**
+Given a transversal `T ∋ 1` for which (i) the signed representation sum vanishes
+(`hann` — the output of `transversal_sum_eq_zero`), and (ii) every *non-identity*
+representative `π` strictly raises the dominance measure
+(`hdom : domWeight t < domWeight (π • t)`), the polytabloid `e_t` is a `k`-linear
+combination of polytabloids of strictly `domWeight`-greater tabloids.
+
+Pure bookkeeping: isolate the identity term `sgn(1)·(1·e_t) = e_t` from `hann`, giving
+`e_t = ∑_{π ∈ T, π ≠ 1} (−sgn π)·e_{π·t}` (via equivariance `polytabloid_rep_smul`),
+then reindex the permutation sum to a sum over the tableaux `{π·t}` with fibrewise-
+aggregated coefficients. This is the interface that closes `straightening_step_colMax`
+once the Garnir set supplies `hann` and `hdom`. -/
+theorem garnir_assembly (t : Specht.Tableau μ)
+    (T : Finset (Equiv.Perm (Fin (Specht.nOf μ)))) (h1 : (1 : Equiv.Perm (Fin (Specht.nOf μ))) ∈ T)
+    (hdom : ∀ π ∈ T, π ≠ 1 →
+      domWeight t < domWeight ((π : Equiv.Perm (Fin (Specht.nOf μ))) • t))
+    (hann : ∑ π ∈ T, (Equiv.Perm.sign π : ℤ) •
+        Specht.Mtab.rep μ π (Specht.polytabloid (k := k) t) = 0) :
+    ∃ (s : Finset (Specht.Tableau μ)) (c : Specht.Tableau μ → k),
+      (∀ t' ∈ s, domWeight t < domWeight t') ∧
+      Specht.polytabloid (k := k) t = ∑ t' ∈ s, c t' • Specht.polytabloid (k := k) t' := by
+  classical
+  -- Abbreviations: the non-identity part of the transversal, and the coefficient sum.
+  set E := T.erase (1 : Equiv.Perm (Fin (Specht.nOf μ))) with hE
+  -- Isolate the identity term of `hann`: `e_t + ∑_{π ∈ E} sgn(π)·(π·e_t) = 0`.
+  rw [← Finset.add_sum_erase T _ h1] at hann
+  simp only [map_one, Module.End.one_apply, Units.val_one, one_smul] at hann
+  -- Hence `e_t = ∑_{π ∈ E} (−sgn π : k) · e_{π·t}` (equivariance turns `π·e_t` into `e_{π·t}`).
+  have hexp : Specht.polytabloid (k := k) t
+      = ∑ π ∈ E, (-(Equiv.Perm.sign π : k)) •
+          Specht.polytabloid (k := k) ((π : Equiv.Perm (Fin (Specht.nOf μ))) • t) := by
+    have hneg : Specht.polytabloid (k := k) t
+        = - ∑ π ∈ E, (Equiv.Perm.sign π : ℤ) •
+            Specht.Mtab.rep μ π (Specht.polytabloid (k := k) t) := by
+      rw [eq_neg_iff_add_eq_zero]; exact hann
+    rw [hneg, ← Finset.sum_neg_distrib]
+    refine Finset.sum_congr rfl (fun π _ => ?_)
+    rw [← polytabloid_rep_smul, ← neg_smul, ← Int.cast_smul_eq_zsmul k, Int.cast_neg]
+  -- Reindex the permutation sum to a sum over tableaux `{π·t}`, aggregating coefficients.
+  refine ⟨E.image (fun π => (π : Equiv.Perm (Fin (Specht.nOf μ))) • t),
+    fun t' => ∑ π ∈ E.filter (fun π => (π : Equiv.Perm (Fin (Specht.nOf μ))) • t = t'),
+      (-(Equiv.Perm.sign π : k)), ?_, ?_⟩
+  · -- dominance: every image tableau strictly dominates `t`
+    intro t' ht'
+    rw [Finset.mem_image] at ht'
+    obtain ⟨π, hπ, rfl⟩ := ht'
+    exact hdom π (Finset.mem_of_mem_erase hπ) (Finset.ne_of_mem_erase hπ)
+  · -- the linear combination, via fibrewise summation over `π ↦ π·t`
+    rw [hexp]
+    rw [← Finset.sum_fiberwise_of_maps_to
+          (g := fun π => (π : Equiv.Perm (Fin (Specht.nOf μ))) • t)
+          (t := E.image (fun π => (π : Equiv.Perm (Fin (Specht.nOf μ))) • t))
+          (fun π _ => Finset.mem_image_of_mem _ (by assumption))]
+    refine Finset.sum_congr rfl (fun t' _ => ?_)
+    rw [Finset.sum_smul]
+    refine Finset.sum_congr rfl (fun π hπ => ?_)
+    rw [(Finset.mem_filter.mp hπ).2]
+
 /-! #### The single residual straightening core + the induction skeleton -/
 
 omit [CharZero k] in
