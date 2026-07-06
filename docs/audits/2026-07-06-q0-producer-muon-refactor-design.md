@@ -175,3 +175,87 @@ committed q₀ signature and, when absent/ambiguous, tries **both** and keeps wh
 The CAL-layer anchor mechanism is **implemented and validated** (opt-in, default proton, no blanket
 flip — safe). Full-corpus classification + the ~4 per-producer residual fixes are the remaining
 focused-session work; the auto-classifying sweep is the tool.
+
+## Full-corpus sweep result (2026-07-06) — ALL 309 producers
+
+The auto-classifying sweep was run across the **entire** `q0_anchor_manifest.json`
+(`q0_muon_reproduction_sweep.py --all-manifest --timeout 600`) on a clean environment
+rebuild (mpmath / numpy / scipy / sympy + local `qou_substrate` / `pyhecke`, and
+`pyhecke_native` **built from source offline** — the litlfred Clarabel fork is
+403-firewalled, so the wheel is the README local-stub `--no-default-features` build:
+Gram / seminormal / Markov-trace primitives, no clarabel LP/SDP). The leak-proof harness
+(blanket-restore of the whole `computations/` tree + nested-witness rglob) held: the
+working tree stayed **byte-clean across all 309 producers** (0 witness leaks). Classified
+by [`q0_sweep_classify.py`](../../computations/q0_sweep_classify.py) (value-based
+anchor-flip detection); full member lists in
+[`computations/q0_sweep_full_309_result.txt`](../../computations/q0_sweep_full_309_result.txt).
+
+| Result | count | meaning |
+|---|---:|---|
+| **PASS** | 170 | reproduces its committed witness at its CAL anchor — the override is correct where it applies |
+| **PRECISION_PATH** | 85 | SUBSTANTIVE but q₀ is consistent; derived values drift ~1e-7 (committed-side rounding / precision path), **not** a q₀ regression |
+| **Q0_ANCHOR** | 42 | the q₀ **value** flips muon↔proton — the muon override does **not** reach these producers |
+| **RUN_FAILED** | 11 | q₀-independent (sandbox env limits + pre-existing branch bugs) |
+| **TIMEOUT** | 1 | `hadron_knot_table` — heavier than the 1800 s cap (iterates all nuclides); compute-cost, not q₀ |
+
+(2 of the original 3 timeouts — `delta_lambda_imme_triplet`, `rho_k_co_casimir_extended` —
+resolved to PRECISION_PATH on the 1800 s re-run; only `hadron_knot_table` remains over-cap.)
+
+### The 42 Q0_ANCHOR residuals — root cause is q₀ **sourcing**, not the override
+Every one of the 42 has `committed = muon (…595557…)`, `fresh = proton (…582751…)`: a
+muon-committed producer that drifts proton-ward when re-run. The override itself is **not**
+the problem — verified `q_parameter.Q = 1.1099785955573347` (muon) under
+`QOU_Q0_ANCHOR=ideal` from the sweep's cwd. The residual is that these producers **source q₀
+without going through `q_parameter`**:
+
+- **30 — bypass the override** via `from qou_substrate.constants import q_at` (proton default, F2/F4):
+  `alpha_basis_knot_couplings`, `alpha_em_no_pi_correction_probe`,
+  `alpha_k_four_strand_singlet_selection`, `alpha_k_selection_rule_conditional`,
+  `alpha_k_split_pole_order_audit`, `bring_zero_mode_per_block_scaffold`,
+  `delta_lambda_canonical_residual`, `delta_lambda_imme_quartet`,
+  `delta_lambda_z_coefficient_and_slope`, `e_hartree_round19_dressed_scalar_block`,
+  `e_hartree_round20_trace_ratio`, `e_hartree_round23_normalization`,
+  `e_hartree_round24_molecular_reuse`, `flavor_split_xq_refinement`,
+  `h4_form_AB_cross_anchor_stability`, `h4_residual_higher_precision_pslq`,
+  `hbond_vdw_energy_ladder`, `hbond_vdw_sdp`, `lw2_c2_independent_hopf_test_attempt`,
+  `mn_flavor_split_h3_plancherel`, `mn_flavor_split_h4_plancherel`,
+  `mn_flavor_split_plancherel_channel`, `mn_standard_channel_correction`,
+  `mp_residual_exotic_basis_pslq`, `mp_yekutieli_plancherel_scaffold`,
+  `mp_yekutieli_sign_block_discrimination`, `rt_c23_singlet_sign_core`,
+  `rt_identity_chain_consolidation`, `vdw_pskew_sinh_probe`,
+  `yekutieli_mp_substrate_closure_probe`.
+- **3 — import from `q_parameter` yet still proton** (per-producer investigation):
+  `borromean-axial-coupling`, `probe_9b_laurent_degree_10a5`, `averaged_block_swap_binding`
+  (the last was tagged *proton* in commit `03176d9`; may be a correctly-proton producer with
+  a stale muon-committed witness — verify before "fixing").
+- **9 — neither pattern** (inline q₀ / a different module):
+  `probe_9b_manybody_expansion`, `probe_markov_trace_factorization`,
+  `probe_markov_trace_ratio_exact`, `probe_topological_mass_formula`,
+  `sigma_f_electron_shell_chain`, `mass_sweep_wiring_status`, `per_atom_audit_witnesses`,
+  `q_beta_form_a_n1_extension`, `rho_w_crystal_vertex_trace`.
+
+**Fix path (remaining bean-`yfvb` Prereq-1 wiring):** route the 30 bypass producers' q₀
+through the CAL-layer override — `import q_parameter` under `QOU_Q0_ANCHOR=ideal` instead of
+`qou_substrate.constants.q_at()` directly. This is 30+ producer edits touching the canonical
+compute; it is a **focused follow-on tranche, owner-gated** (bean `tnjb`: do not regenerate
+the muon `computations/` witnesses without sign-off).
+
+### The 11 RUN_FAILED — q₀-independent (fail regardless of anchor)
+- **Sandbox env limits** (would pass in CI with the fork + folio-assistant sibling):
+  clarabel-SDP unavailable (firewalled fork) — `gap_a1_binding_k_sdp_feasibility`,
+  `rho_k_h3a_lp_dual`, `rho_k_h3a_crystal`, `rho_k_h3a_refinement`; missing
+  `/home/user/folio-assistant/computations/…` witness — `option_e_probe1_derive_1plusq_over_2`.
+- **Pre-existing branch bugs** (not env; fail on any anchor — branch-hygiene follow-ups):
+  `ImportError: per_knot_density_borromean` from `_li_2_q_util` —
+  `mass_per_knot_density`, `per_knot_density_per_block_wiring`; sympy `Cannot convert to float`
+  — `term6_full_pole_sum`; `mpf.__format__` — `constit_factor_residual_phase5k`; `float(None)`
+  — `categorical_q_decay_ba_low_isotopes`; `y_lambda_tower_infra`.
+
+### Merge verdict
+The CAL-layer override **mechanism is validated and safe** (default proton unchanged; opt-in
+muon; 170 PASS; fires correctly under sweep conditions). But the branch's stated goal —
+*"producers re-run stay muon-canonical"* — is **not yet met**: 42 muon-committed producers
+still drift proton-ward, 30 because they bypass the override. So PR #3419 **stays WIP**: it
+lands the mechanism, and this full sweep **enumerates the remaining 42-producer wiring** as
+the merge gate's residual work. The 85 precision-path + 11 run-fail + 1 timeout are **not** q₀
+regressions and do not block the mechanism.

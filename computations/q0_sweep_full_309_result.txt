@@ -1,0 +1,360 @@
+=== q0 sweep classification (309 producers) ===
+  PASS             170
+  PRECISION_PATH   83
+  Q0_ANCHOR        42
+  RUN_FAILED       11
+  TIMEOUT          3
+  SKIPPED          0
+  OTHER            0
+
+--- Q0_ANCHOR ---
+  alpha_basis_knot_couplings.py
+      alpha_basis_knot_couplings.data.q0: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  alpha_em_no_pi_correction_probe.py
+      alpha_em_no_pi_correction_probe.data.q0: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  alpha_k_four_strand_singlet_selection.py
+      alpha_k_four_strand_singlet_selection.data.q0: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  alpha_k_selection_rule_conditional.py
+      alpha_k_selection_rule_conditional.data.q0: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  alpha_k_split_pole_order_audit.py
+      alpha_k_split_pole_order_audit.data.q0: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  borromean-axial-coupling.py
+      borromean-axial-coupling.parameters.q: committed=1.1099785955573347 fresh=1.1099785827513808
+  bring_zero_mode_per_block_scaffold.py
+      bring_zero_mode_per_block_scaffold.parameters.q_80dps: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  delta_lambda_canonical_residual.py
+      delta_lambda_canonical_residual.data.q0: committed=1.1099785955573347 fresh=1.1099785827513808
+  delta_lambda_imme_quartet.py
+      delta_lambda_imme_quartet.data.q0: committed=1.1099785955573347 fresh=1.1099785827513808
+  delta_lambda_z_coefficient_and_slope.py
+      delta_lambda_z_coefficient_and_slope.data.q0: committed=1.1099785955573347 fresh=1.1099785827513808
+  e_hartree_round19_dressed_scalar_block.py
+      e_hartree_round19_dressed_scalar_block.data.q0: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  e_hartree_round20_trace_ratio.py
+      e_hartree_round20_trace_ratio.data.q0: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  e_hartree_round23_normalization.py
+      e_hartree_round23_normalization.data.q0: committed=1.10997859555733 fresh=1.10997858275138
+  e_hartree_round24_molecular_reuse.py
+      e_hartree_round24_molecular_reuse.data.q0: committed=1.1099785955573347 fresh=1.1099785827513808
+  flavor_split_xq_refinement.py
+      flavor_split_xq_refinement.parameters.q_80dps: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  h4_form_AB_cross_anchor_stability.py
+      h4_form_AB_cross_anchor_stability.parameters.q_proton: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  h4_residual_higher_precision_pslq.py
+      h4_residual_higher_precision_pslq.parameters.q_120dps: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  hbond_vdw_energy_ladder.py
+      hbond_vdw_energy_ladder.parameters.q: committed=1.1099785955573347 fresh=1.1099785827513808
+  hbond_vdw_sdp.py
+      hbond_vdw_sdp.parameters.q: committed=1.1099785955573347 fresh=1.1099785827513808
+  lw2_c2_independent_hopf_test_attempt.py
+      lw2_c2_independent_hopf_test_attempt.parameters.q_0: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  mn_flavor_split_h3_plancherel.py
+      mn_flavor_split_h3_plancherel.parameters.q_80dps: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  mn_flavor_split_h4_plancherel.py
+      mn_flavor_split_h4_plancherel.parameters.q_80dps: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  mn_flavor_split_plancherel_channel.py
+      mn_flavor_split_plancherel_channel.parameters.q_80dps: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  mn_standard_channel_correction.py
+      mn_standard_channel_correction.parameters.q_80dps: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  mp_residual_exotic_basis_pslq.py
+      mp_residual_exotic_basis_pslq.parameters.q_120dps: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  mp_yekutieli_plancherel_scaffold.py
+      mp_yekutieli_plancherel_scaffold.parameters.q_80dps: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  mp_yekutieli_sign_block_discrimination.py
+      mp_yekutieli_sign_block_discrimination.parameters.q_80dps: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  probe_9b_laurent_degree_10a5.py
+      probe_9b_laurent_degree_10a5.parameters.q0: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  probe_9b_manybody_expansion.py
+      probe_9b_manybody_expansion.parameters.q0: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  probe_markov_trace_factorization.py
+      probe_markov_trace_factorization.parameters.q0: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  probe_markov_trace_ratio_exact.py
+      probe_markov_trace_ratio_exact.parameters.q0: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  probe_topological_mass_formula.py
+      probe_topological_mass_formula.parameters.q0: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  rt_c23_singlet_sign_core.py
+      rt_c23_singlet_sign_core.data.q0: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  rt_identity_chain_consolidation.py
+      rt_identity_chain_consolidation.data.q0: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  sigma_f_electron_shell_chain.py
+      sigma_f_electron_shell_chain.parameters.q_0: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  vdw_pskew_sinh_probe.py
+      vdw_pskew_sinh_probe.parameters.q: committed=1.1099785955573347 fresh=1.1099785827513808
+  yekutieli_mp_substrate_closure_probe.py
+      yekutieli_mp_substrate_closure_probe.data.q_proton: committed=1.10997859555733471989976322 fresh=1.10997858275138080759166909
+  averaged_block_swap_binding.py
+      averaged_block_swap_binding.parameters.q0: committed=1.10997858275138080759166909 fresh=1.10997859555733471989976322
+  mass_sweep_wiring_status.py
+      mass_sweep_wiring_status.parameters.q_0: committed=1.1099785827513808 fresh=1.1099785955573347
+  per_atom_audit_witnesses.py
+      per_atom_audit_witnesses.parameters.q_0_f64: committed=1.1099785827513808 fresh=1.1099785955573347
+  q_beta_form_a_n1_extension.py
+      q_beta_form_a_n1_extension.parameters.q_0_50dps: committed=1.10997858275138080759166909 fresh=1.10997859555733471989976322
+  rho_w_crystal_vertex_trace.py
+      rho_w_crystal_vertex_trace.q_0_50dps: committed=1.10997858275138080759166909 fresh=1.10997859555733471989976322
+
+--- PRECISION_PATH ---
+  alpha_k_per_force_assembly.py
+      alpha_k_per_force_assembly.data.force_knots.T_2_9.delta_q_value_at_q0: committed=2.16660038971502908536755776 fresh=2.16660008355141824995324379
+      alpha_k_per_force_assembly.data.force_knots.T_2_5.delta_q_value_at_q0: committed=1.09138714429602047540449756 fresh=1.09138701286492971705513224
+  atom_level_wedderburn_tower.py
+      atom_level_wedderburn_tower.results.p: committed=<missing> fresh={'Z': 1, 'N': 0, 'A': 1, 'n_
+      atom_level_wedderburn_tower.results.n: committed=<missing> fresh={'Z': 0, 'N': 1, 'A': 1, 'n_
+  atomic_tr_m_mpfr_50dps.py
+      atomic_tr_m_mpfr_50dps.results[0].n_crossings_canonical: committed=11 fresh=None
+      atomic_tr_m_mpfr_50dps.results[0].bridge_elapsed_sec: committed=0.02710747718811035 fresh=0.00461125373840332
+  b_over_m_order_probe.py
+      b_over_m_order_probe.data.empirical_inputs_MeV.d.B: committed=2.224566 fresh=2.2245662
+      b_over_m_order_probe.data.empirical_inputs_MeV.He3.B: committed=7.718043 fresh=7.71804132
+  binding_a3plus_joint_ji_combiner.py
+      binding_a3plus_joint_ji_combiner.assertions[1].expected: committed=17.375371831784033 fresh=17.37537199027557
+      binding_a3plus_joint_ji_combiner.assertions[1].computed: committed=117.89851074566428 fresh=117.89851103989184
+  binding_block_multiplicative.py
+      binding_block_multiplicative.data.block_factors.V_nn_inter: committed=0.10453016099779683000000000 fresh=0.10453014939781968000000000
+      binding_block_multiplicative.data.block_factors.v_p: committed=0.70838620866847720836018868 fresh=0.70838611123302707042683714
+  binding_canonical.py
+      binding_canonical.data.results[0].wall_sec: committed=0.002947568893432617 fresh=0.0026450157165527344
+      binding_canonical.data.results[1].wall_sec: committed=0.015197038650512695 fresh=0.012746810913085938
+  binding_combiner_markov_peel_fallback.py
+      binding_combiner_markov_peel_fallback.data.total_wall_sec: committed=79.6 fresh=71.0
+      binding_combiner_markov_peel_fallback.data.results[0].free_config.elapsed_reduce_sec: committed=0.331 fresh=0.294
+  binding_k_solver.py
+      binding_k_solver.parameters.m_e_MeV: committed=0.51099895 fresh=0.51099895069
+  binding_observe_last.py
+      binding_observe_last.data.atoms[0].B_late_signed: committed=-0.0664607345516761788967373 fresh=-0.0664607340065874885121942
+      binding_observe_last.data.atoms[0].B_pred: committed=0.46562045436965480373733963 fresh=0.46562045506629312306421674
+  binding_perblock_bond_type_a3.py
+      binding_perblock_bond_type_a3.assertions[0].computed: committed=0.03608383027520412 fresh=0.03608360118191714
+      binding_perblock_bond_type_a3.data.results.bonds_MeV.nn: committed=2.2497284245307685 fresh=2.249727484827445
+  block_swap_binding.py
+      block_swap_binding.data.binding_signal_log_Sfree_over_Satom: committed=-0.35790300900914485 fresh=-0.3579030105985924
+      block_swap_binding.data.S_atom: committed=0.5352578968316513 fresh=0.535257887673724
+  branching-qvalue-chain.py
+      branching-qvalue-chain.numeric.delta_err: committed=1.800387544992124e-11 fresh=1.8003875242208403e-11
+      branching-qvalue-chain.numeric.a_err: committed=2.868298880283106e-12 fresh=2.8682988471912036e-12
+  canonical_isospin_pyhecke.py
+  canonical_mass_table_extended.py
+      canonical_mass_table_extended.parameters.dps: committed=50 fresh=0
+      canonical_mass_table_extended.data.upstream_witness_hashes[1].size_bytes: committed=9112 fresh=10359
+  canonical_tr_m_via_chi_cache.py
+      canonical_tr_m_via_chi_cache.results[5].tr_M_q0: committed=0.05541409356422250310235746 fresh=0.05535842626678310646480845
+      canonical_tr_m_via_chi_cache.results[5].partitions_used: committed=27 fresh=77
+  charge_coulomb_tn3he_derived.py
+      charge_coulomb_tn3he_derived.data.derived_coulomb_dHe_MeV: committed=0.23767022531485302 fresh=0.23767017702660315
+      charge_coulomb_tn3he_derived.data.remaining_factor: committed=3.2136966209720126 fresh=3.213697273909572
+  d_density_derivation.py
+      d_density_derivation.parameters.m_e_MeV: committed=0.51099895 fresh=0.51099895069
+      d_density_derivation.data.reading_II_weight.rho_F_MeV: committed=0.51099895 fresh=0.51099895069
+  delta_lambda_extended_tower.py
+      delta_lambda_extended_tower.data.rows[0].Delta_lambda: committed=0.989214 fresh=0.989215
+      delta_lambda_extended_tower.data.rows[0].B_AME_MeV: committed=2.22456612 fresh=2.2245662000000004
+  derived_chi_catalogue_consumer_q0.py
+      derived_chi_catalogue_consumer_q0.data.isotopes[0].catalogue_secs: committed=0.0011208790000409863 fresh=0.0010096169999087579
+      derived_chi_catalogue_consumer_q0.data.isotopes[0].mpfr_secs: committed=0.039851597999927435 fresh=0.03490248400021301
+  derived_chi_catalogue_matrix_m_mpfr.py
+      derived_chi_catalogue_matrix_m_mpfr.data.isotopes[0].total_rust_secs: committed=0.004270552000207317 fresh=0.0029131429996596125
+      derived_chi_catalogue_matrix_m_mpfr.data.isotopes[0].total_precompute_secs: committed=0.0024462609997044638 fresh=0.0020504630001596524
+  derived_chi_catalogue_matrix_m_multi_a_benchmark.py
+      derived_chi_catalogue_matrix_m_multi_a_benchmark.data.isotopes[0].total_rust_secs: committed=0.01313203099994098 fresh=0.013997145999837812
+      derived_chi_catalogue_matrix_m_multi_a_benchmark.data.isotopes[0].total_precompute_secs: committed=0.01035910500013415 fresh=0.010310179999578395
+  derived_chi_catalogue_matrix_m_numerical.py
+      derived_chi_catalogue_matrix_m_numerical.data.cases[0].rust_secs: committed=0.0008178369999995994 fresh=0.0005969999997432751
+      derived_chi_catalogue_matrix_m_numerical.data.cases[0].precompute_secs: committed=0.0015947079999705238 fresh=0.0014350619999277114
+  e0_lambda_composite.py
+      e0_lambda_composite.parameters.m_e_MeV: committed=0.51099895 fresh=0.51099895069
+      e0_lambda_composite.atoms.deuteron.sum_c_composite: committed=-2.9846567322153551135765371 fresh=-2.9846565588922620608343356
+  e0_lambda_tryall.py
+      e0_lambda_tryall.candidates[0].C_global_pinned_from_proton: committed=1.4233128688720291774e-9 fresh=1.4233123975102277103e-9
+      e0_lambda_tryall.candidates[0].struct_neutron: committed=146759083010.49294752 fresh=146759121766.02412035
+  e_hartree_round22_arch_bridge.py
+      e_hartree_round22_arch_bridge.data.sibling_deltas.T2_9: committed=2.16660038971492 fresh=2.1666000835514
+      e_hartree_round22_arch_bridge.data.sibling_deltas.T3_4: committed=1.87018883898099 fresh=1.87018858625582
+  gram_h3_symbolic_regression.py
+      gram_h3_symbolic_regression.assertions[0].computed: committed=0.00000000001074468001933531 fresh=0.00000004362298158001933531
+  he3_pairknot_clambda_coulomb_probe.py
+      he3_pairknot_clambda_coulomb_probe.data.three_parameter_free_estimates_MeV.derived_tanh_B_pp: committed=0.23767022531485302 fresh=0.23767017702660315
+      he3_pairknot_clambda_coulomb_probe.data.B_pp_strong_MeV: committed=2.2860880888652635 fresh=2.2860876243931454
+  he3_tritium_cosh_asymmetry_diagnosis.py
+      he3_tritium_cosh_asymmetry_diagnosis.data.per_mode_mirror_mismatch.full.sum_abs_diff: committed=18.812887971406614 fresh=18.812888530823564
+      he3_tritium_cosh_asymmetry_diagnosis.data.per_mode_mirror_mismatch.full.max_abs_diff: committed=3.235344042971109 fresh=3.2353444998085146
+  iterative_lp_dual_h6_deuteron.py
+      iterative_lp_dual_h6_deuteron.data.u_levels_deuteron_MeV.0: committed=0.00023657702423382783 fresh=0.0002365770128816063
+      iterative_lp_dual_h6_deuteron.data.u_levels_deuteron_MeV.6: committed=0.002212528022852601 fresh=0.0022125278993082365
+  iterative_lp_dual_levels.py
+      iterative_lp_dual_levels.parameters.M_e_codata: committed=0.51099895 fresh=0.51099895069
+      iterative_lp_dual_levels.data.sum_u_levels_proton_MeV: committed=1.4449155331789603 fresh=1.4449155351300245
+  lambda_scale_proof_step4_h4_remainder.py
+      lambda_scale_proof_step4_h4_remainder.data.c4_solved: committed=0.00723473694129589175043285 fresh=0.00723647582042390905091628
+      lambda_scale_proof_step4_h4_remainder.data.FSC_analogy.baryon_correction_scale: committed=5.618e-06 relative (c_4·h^4/ fresh=5.619e-06 relative (c_4·h^4/
+  lambda_scale_proof_step5_skein_anchor.py
+      lambda_scale_proof_step5_skein_anchor.parameters.Q_neutron_MeV_CAL3: committed=0.78233341 fresh=0.78233340931
+      lambda_scale_proof_step5_skein_anchor.parameters.m_e_MeV_CODATA: committed=0.51099895 fresh=0.51099895069
+  lambda_scale_rd_c4_pslq_search.py
+      lambda_scale_rd_c4_pslq_search.data.c4_value: committed=0.00723473694129589175043285 fresh=0.00723647582042390905091628
+      lambda_scale_rd_c4_pslq_search.data.ansatz_scan_top10[0].abs_diff: committed=1.1157747e-5 fresh=9.4188675e-6
+  landauer_crossing_energy_probe.py
+      landauer_crossing_energy_probe.hadrons.proton.m_H_MeV: committed=938.2720881603788 fresh=938.2720894273243
+      landauer_crossing_energy_probe.hadrons.proton.E_H_MeV: committed=95574.4189717531423305797434 fresh=95574.4191008069440575259007
+  li2q_fbor_expansion_probe.py
+      li2q_fbor_expansion_probe.data.step23_layer_sizes.m_p_full_mev: committed=938.272088160378814235888817 fresh=938.272089427324263727356670
+      li2q_fbor_expansion_probe.data.step23_layer_sizes.m_p_F_Bor_only_mev: committed=938.271860868979810321390560 fresh=938.271862135924952902094137
+  linking_weight_canonical_object_lwfix.py
+      linking_weight_canonical_object_lwfix.allPassed: committed=True fresh=False
+      linking_weight_canonical_object_lwfix.data.H3_trace_source: committed=documented_closed_form_(4+h2 fresh=rust_kernel_markov_trace_for
+  lp_confinement_nf_forcing.py
+      lp_confinement_nf_forcing.data.lp_dual_summary[0].y_star[1]: committed=1.1160262412977113 fresh=1.116026227083382
+      lp_confinement_nf_forcing.data.lp_dual_summary[0].y_star[2]: committed=0.42039874695794766 fresh=0.42039869980100586
+  m_p_borromean_verification_50dps.py
+      m_p_borromean_verification_50dps.data.canonical_mass_reference.m_n_MeV: committed=939.565421496897 fresh=939.5654227645324
+      m_p_borromean_verification_50dps.data.canonical_mass_reference.m_p_MeV: committed=938.2720881603788 fresh=938.2720894273243
+  m_p_spectral_corrected_50dps.py
+      m_p_spectral_corrected_50dps.assertions[0].computed: committed=3.622271631530685e-71 fresh=0.0
+      m_p_spectral_corrected_50dps.data.borromean_character.residual: committed=3.62227e-71 fresh=0.0
+  mass_formula_6term_mpfr_50dps.py
+      mass_formula_6term_mpfr_50dps.data.results[0].term1_descended: committed=1.06530623807587821568804041 fresh=1.06530622861316705936528454
+      mass_formula_6term_mpfr_50dps.data.results[1].term1_descended: committed=0.92323330514983772546573530 fresh=0.92323329718615355710525339
+  mass_table_comprehensive.py
+      mass_table_comprehensive.data.summary.m_p_pred_MeV: committed=938.2720881603788 fresh=938.2720894273243
+      mass_table_comprehensive.data.summary.m_n_pred_MeV: committed=939.5637681169239 fresh=939.5654227645324
+  mass_table_ppb.py
+      mass_table_ppb.parameters.c_alpha_derived_MeV: committed=2.426989503762857 fresh=2.4269895070400125
+      mass_table_ppb.parameters.m_e_MeV: committed=0.51099895 fresh=0.51099895069
+  meson_habiro_c3_pslq_search.py
+      meson_habiro_c3_pslq_search.data.verdict: committed=NULL — no clean PSLQ integer fresh=NULL — no clean PSLQ integer
+  meson_per_knot_density.py
+      meson_per_knot_density.data.proton_pion_ratio.geom: committed=6.722572661438997 fresh=6.722572670516463
+      meson_per_knot_density.data.baryon_geom.err_ppm: committed=4.037208447102443e-07 fresh=0.0013507002030565445
+  meson_vol_density.py
+      meson_vol_density.data.proton_pion_ratio.geom: committed=6.722572661438997 fresh=6.722572670516463
+      meson_vol_density.data.baryon_geom.err_ppm: committed=4.037208447102443e-07 fresh=0.0013507002030565445
+  mp_dk_decisive_test.py
+      mp_dk_decisive_test.data.d_k_at_both_pins.d_3.canonical_mp_pin: committed=0.39207996804 fresh=0.389894557022
+      mp_dk_decisive_test.data.d_k_at_both_pins.d_3.stale_muon_pin: committed=0.391983401285 fresh=0.389797990267
+  mp_habiro_c4_keystone_probe.py
+      mp_habiro_c4_keystone_probe.data.required_c4.diff_from_46: committed=0.0318884779906 fresh=-0.224698392495
+      mp_habiro_c4_keystone_probe.data.required_c4.cross_anchor_swing_rel: committed=-3.8020602575e-5 fresh=-0.00651022528243
+  native_5_strand_baryon.py
+      native_5_strand_baryon.data.raw_trM_w5_at_H5.trM_w5_raw_at_q0: committed=0.008799428305998447 fresh=0.008799426757573848
+  ocneanu_12_alt_knot_geometries.py
+      ocneanu_12_alt_knot_geometries.data.baseline_dim_H_3_ppb: committed=4807.82813768 fresh=4807.82814545
+      ocneanu_12_alt_knot_geometries.data.best_ppb: committed=1259.63518531 fresh=1259.63519308
+  ocneanu_12_bring_zero_mode_variants.py
+      ocneanu_12_bring_zero_mode_variants.data.best_variant_ppb: committed=1611.19626877 fresh=1611.19627654
+      ocneanu_12_bring_zero_mode_variants.data.residual_target: committed=0.00044482837657716855792448 fresh=0.00044482837667042520527447
+  ocneanu_12_em_correction_candidate.py
+      ocneanu_12_em_correction_candidate.data.improvement_over_bare_12: committed=7.71042651357 fresh=7.71042650273
+      ocneanu_12_em_correction_candidate.data.residual_to_k_required_ppb: committed=4807.82813768 fresh=4807.82814545
+  ocneanu_12_route_reexam.py
+      ocneanu_12_route_reexam.data.delta_k_minus_12: committed=-0.0004448283765771685579244 fresh=-0.0004448283766704252052744
+      ocneanu_12_route_reexam.data.relative_pct: committed=-0.00370690313814 fresh=-0.00370690313892
+  ocneanu_54ppb_residual_exploration.py
+      ocneanu_54ppb_residual_exploration.data.f_target: committed=1.149021824168290195141113 fresh=1.149021824409178431360274
+      ocneanu_54ppb_residual_exploration.data.f_minus_1: committed=0.1490218241682901951411128 fresh=0.149021824409178431360274
+  per_bond_growth_a3.py
+      per_bond_growth_a3.data.results.3He.bond1_pn.B_emb_MeV: committed=2.6717865346700886 fresh=2.6717868142551353
+      per_bond_growth_a3.data.results.3He.bond1_pn.growth: committed=1.1592270629425931 fresh=1.1592271842481496
+  per_irrep_pole_deuteron_h6.py
+      per_irrep_pole_deuteron_h6.scriptFile: committed=per_irrep_pole_atom.py fresh=per_irrep_pole_deuteron_h6.p
+      per_irrep_pole_deuteron_h6.description: committed=Path A: per-term symbolic u- fresh=Path A: per-term symbolic u-
+  per_irrep_pole_proton_h3.py
+      per_irrep_pole_proton_h3.scriptFile: committed=per_irrep_pole_atom.py fresh=per_irrep_pole_proton_h3.py
+      per_irrep_pole_proton_h3.description: committed=Path A: per-term symbolic u- fresh=Path A: symbolic Hoefsmit se
+  per_knot_mass_table_demonstration.py
+      per_knot_mass_table_demonstration.data.summary.mean_abs_err_per_block_pct: committed=80.34019701081762 fresh=80.34019759661844
+      per_knot_mass_table_demonstration.data.summary.worst_abs_err_per_block_pct: committed=96.93371600455443 fresh=96.93371654766278
+  prearchimedean_bond_factor.py
+      prearchimedean_bond_factor.data.archimedean_eval.f_pn_at_q0: committed=0.39486214463401825 fresh=0.3948620746949877
+  probe_k_ud_fractional_and_alt_ansatz.py
+      probe_k_ud_fractional_and_alt_ansatz.data.scan_results[0].pdg_residual_pct: committed=4.287683934625041e-29 fresh=-8.775958818833888e-30
+      probe_k_ud_fractional_and_alt_ansatz.data.scan_results[2].pdg_residual_pct: committed=-2.4763013533578329e-29 fresh=-3.296473436050466e-29
+  proton_residual_rootcause.py
+      proton_residual_rootcause.parameters.M_E_CODATA_MeV: committed=0.51099895 fresh=0.51099895069
+      proton_residual_rootcause.data.branch_a_legacy_f64.m_p_MeV: committed=955.4916893962247 fresh=955.4916906864217
+  q_pinning_50_digit.py
+      q_pinning_50_digit.quantum_integers.[4]_q: committed=4.10968243564372783032773993 fresh=4.10968241120794116176056878
+      q_pinning_50_digit.quantum_integers.[5]_q: committed=5.22044132467672854601923694 fresh=5.22044127532689824496043325
+  qbeta_multi_block_eigenphase_full_eps_probe.py
+      qbeta_multi_block_eigenphase_full_eps_probe.data.order_by_order_convergence_canonical[0].err_lin_ppb: committed=-163417450.085 fresh=-163417448.955
+      qbeta_multi_block_eigenphase_full_eps_probe.data.order_by_order_convergence_canonical[0].err_exp_ppb: committed=-150529756.329 fresh=-150529755.182
+  qbeta_multi_block_eigenphase_probe.py
+      qbeta_multi_block_eigenphase_probe.data.residuals.err_stale_ppb: committed=-11897045.9245 fresh=-11897044.5902
+      qbeta_multi_block_eigenphase_probe.data.residuals.Q_bridge_canonical_MeV: committed=0.773025953486676423 fresh=0.773025954530490607
+  r5_full_canonical_knot_solver.py
+      r5_full_canonical_knot_solver.data.per_atom_results[0].top_k_candidates[0].B_pred_MeV: committed=2.2452917812551547 fresh=2.21770375536522
+      r5_full_canonical_knot_solver.data.per_atom_results[0].top_k_candidates[0].abs_markov_trace: committed=1.4646421342766265 fresh=0.921323718988483
+  reeb_flow_garside_closed_form_verification.py
+      reeb_flow_garside_closed_form_verification.data.garside_sigma1_sigma2_sigma1.centre_of_mass_sum: committed=1.81114e-71 fresh=-1.81114e-71
+      reeb_flow_garside_closed_form_verification.assertions[7].source: committed=Sum of Δψ^(r) + Δψ^(g) + Δψ^ fresh=Sum of Δψ^(r) + Δψ^(g) + Δψ^
+  rho_prefactor_structural_verifier.py
+      rho_prefactor_structural_verifier.parameters.m_e_MeV: committed=0.51099895 fresh=0.51099895069
+  sigma_shell_from_beta_chain.py
+      sigma_shell_from_beta_chain.data.rows[0].ratio_pct: committed=17.5881027615586032905025491 fresh=17.5880883813862670525830319
+      sigma_shell_from_beta_chain.data.rows[0].y_target_computed: committed=0.00139395875794657150637188 fresh=0.00139395858747552300644657
+  skein_proton_canonical.py
+      skein_proton_canonical.data.markov_trace_proton.wall_sec: committed=0.09 fresh=0.10
+  spectral_selector_validate.py
+  tau-lepton-nf.py
+      tau-lepton-nf.parameters.q₀_err: committed=3.1664979061507416e-12 fresh=3.166497869618482e-12
+  term6_residues_at_roots.py
+      term6_residues_at_roots.data.results[2].error: committed=ValueError: LaurentQ.from_sy fresh=ValueError: LaurentQ.from_sy
+      term6_residues_at_roots.data.results[3].error: committed=ValueError: LaurentQ.from_sy fresh=ValueError: LaurentQ.from_sy
+  term7_height6_partition_enum.py
+      term7_height6_partition_enum.results[3].top_5_partitions_by_weight[3].partition[1]: committed=3 fresh=4
+      term7_height6_partition_enum.results[3].top_5_partitions_by_weight[3].partition[3]: committed=2 fresh=1
+  three_body_joint_trace_a3.py
+      three_body_joint_trace_a3.data.results.3He.B_bond_a_MeV: committed=2.2001871035452343 fresh=2.200187097838824
+      three_body_joint_trace_a3.data.results.3He.pair_sum_err: committed=-0.3687517960332569 fresh=-0.36875176054755643
+  yekutieli_natural_reading_precision_floor_check.py
+      yekutieli_natural_reading_precision_floor_check.data.difference_from_half: committed=4.276423536147513033824858e- fresh=4.142785300642903251517832e-
+      yekutieli_natural_reading_precision_floor_check.assertions[0].computed: committed=4.27642353615e-50 fresh=4.14278530064e-50
+  binding_k_enumerator.py
+      binding_k_enumerator.parameters.m_e_MeV: committed=0.51099895 fresh=0.51099895069
+  convergence_safe_vhat_tower.py
+      convergence_safe_vhat_tower.vhat_std_derived.proton.g0: committed=1.14610143246416131871008044 fresh=1.14610152107941409818184973
+      convergence_safe_vhat_tower.vhat_std_derived.proton.g1: committed=0.92950424288712524751607712 fresh=0.92950424462385066324528505
+  gram_transfer_quadratic.py
+      gram_transfer_quadratic.parameters.max_n_reached: committed=15 fresh=12
+      gram_transfer_quadratic.parameters.isotopes[len]: committed=5 fresh=4
+  gs_filtration_binding_components.py
+      gs_filtration_binding_components.data.rows[0].compute_sec: committed=1.2 fresh=1.0
+      gs_filtration_binding_components.data.rows[1].length_grading_atom.2.trace: committed=-0.027676 fresh=-0.027677
+  probe_option_e_h6_entry_point.py
+      probe_option_e_h6_entry_point.timestamp_utc: committed=2026-06-22T14:20:31.739065+0 fresh=2026-07-06T18:48:08.249174+0
+  rho_k_h3a_co_casimir.py
+      rho_k_h3a_co_casimir.parameters.occam_schur_weyl_match_1e_40: committed=True fresh=False
+      rho_k_h3a_co_casimir.data.rho_K_LO: committed=9464.23994762224026449365900 fresh=9464.23993455763877743803020
+  tr_m_atom_via_transfer.py
+      tr_m_atom_via_transfer.data.host.cpu.model: committed=Intel(R) Xeon(R) Processor @ fresh=Intel(R) Xeon(R) Processor @
+      tr_m_atom_via_transfer.data.host.cpu.mhz: committed=2799.998 fresh=2100.0
+  vhat_tower_im_cancellation.py
+      vhat_tower_im_cancellation.complex_tower_minus_i0.electron.total.abs: committed=5.24229134347806473918009479 fresh=5.24229139904347294613111969
+      vhat_tower_im_cancellation.complex_tower_minus_i0.electron.total.re: committed=5.24229134347806473918009479 fresh=5.24229139904347294613111969
+
+--- RUN_FAILED ---
+  categorical_q_decay_ba_low_isotopes.py
+      RUN_FAILED (exit 1): anonical"]),
+  mass_per_knot_density.py
+      RUN_FAILED (exit 1): i_2_q_util import (  # noqa: E402
+  per_knot_density_per_block_wiring.py
+      RUN_FAILED (exit 1): i_2_q_util import (  # noqa: E402
+  constit_factor_residual_phase5k.py
+      RUN_FAILED (exit 1):     = {result_5k2['exp_h']:.10f}")
+  gap_a1_binding_k_sdp_feasibility.py
+      RUN_FAILED (exit 1): hecke/lp_dual_solver.py", line 598, in solve_psd_operator_selection_sdp
+  option_e_probe1_derive_1plusq_over_2.py
+      RUN_FAILED (exit 1): ^^^^^^^^^^^^^^^^^^^^^^
+  rho_k_h3a_crystal.py
+      RUN_FAILED (exit 2): ation-inputs.md and docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md.
+  rho_k_h3a_lp_dual.py
+      RUN_FAILED (exit 2): ation-inputs.md and docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md.
+  rho_k_h3a_refinement.py
+      RUN_FAILED (exit 2): ation-inputs.md and docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md.
+  term6_full_pole_sum.py
+      RUN_FAILED (exit 1): ist-packages/sympy/core/expr.py", line 375, in __float__
+  y_lambda_tower_infra.py
+      RUN_FAILED (exit 1): ionError: closed-form y_λ disagrees with symbolic source at n=2: max_rel_err=2.00e-08 > gate 1e-40.
+
+--- TIMEOUT ---
+  delta_lambda_imme_triplet.py
+  hadron_knot_table.py
+  rho_k_co_casimir_extended.py
