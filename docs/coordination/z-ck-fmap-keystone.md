@@ -62,6 +62,16 @@ change any registry tier.
   **for this tranche only** by the explicit owner instruction opening the
   z→c_k f-map keystone (2026-07-06). The s5-so3 keystone (`W_λ`) remains a
   distinct, parallel item.
+- **Live sibling inputs (2026-07-06):**
+  [PR #3429](https://github.com/litlfred/qou/pull/3429) is pruning the
+  pure-power non-linear class `f = A\cdot(\Delta\mathrm{tr}_M)^m` (odd $m$
+  → half-integer rung; $m=2$ → forbidden $c_1$; $m=4,6$ generically killed)
+  — if it lands, the `ea56` hypothesis class starts from
+  {compositional / operator-level} only; cite, do not re-derive.
+  [PR #3447](https://github.com/litlfred/qou/pull/3447) falsifies the
+  main-landed "c₃ = −2 exact for all q" claim (2.375% cross-anchor swing;
+  registry near-match tier stands) — this ledger uses c₃ only as the q=1
+  shadow gate, consistent with that verdict.
 
 ## 4. Plan of attack
 
@@ -89,4 +99,5 @@ change any registry tier.
 
 | date | event |
 |---|---|
-| 2026-07-06 | Tranche opened; beans `uz9i`/`3iwu`/`ea56`/`c4qz`/`iw8o`; this ledger landed as first commit. |
+| 2026-07-06 | Tranche opened; beans `uz9i`/`3iwu`/`ea56`/`c4qz`/`iw8o`; this ledger landed as first commit. PR [#3449](https://github.com/litlfred/qou/pull/3449). |
+| 2026-07-06 | Intent posted on overlapping siblings [#3429](https://github.com/litlfred/qou/pull/3429) (f-map power-class pincer — same axis; C15 row/probe-id collision flagged) and [#3447](https://github.com/litlfred/qou/pull/3447) (c₃-not-exact verdict — framing here confirmed consistent). Gemini reviewer at daily quota; Copilot reviewer check failed (bot-side) — docs-only PR, no code CI. |
