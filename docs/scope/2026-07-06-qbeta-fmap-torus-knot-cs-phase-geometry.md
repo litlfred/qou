@@ -69,8 +69,16 @@ saddle.
 
 ## 4. The singularity: a Faddeev-`Φ_q` pole lattice ⇒ the observed simple pole
 
-The Faddeev quantum dilogarithm `Φ_q` has its zeros/poles on a **lattice
-of simple poles** at root-of-unity points. So the ladder generating
+The Faddeev quantum dilogarithm `Φ_b` has its zeros/poles on a **lattice
+of simple poles** at `c_b + ibℕ + ib^{−1}ℕ` (the modular-double lattice).
+
+> **Accuracy caveat (2026-07-06).** The corpus `_phi_q_util.py` "Φ_q" is the
+> *compact* single product `∏(1−q^{−k}z)^{−1}`, **missing the `b^{−1}`
+> modular-dual factor** that carries the bar-odd/CS structure. The true
+> object for the decay face is the modular-double `Φ_b` with the
+> `sinh(zb)sinh(zb^{−1})` kernel. Prior compact-`Φ_q` probes are therefore
+> unreliable on the Q_β (bar-odd) face — see
+> [`2026-07-06-qbeta-faddeev-phi-b-modular-double-accuracy.md`](../audits/2026-07-06-qbeta-faddeev-phi-b-modular-double-accuracy.md). So the ladder generating
 function `g(u) = Σ c_k u^k` inherits **simple** poles, and its dominant
 one is the nearest Faddeev pole. This matches the measured structure:
 PR #1727 found `g(u)` has a **simple pole at `u_substrate`**, fibre-level,
