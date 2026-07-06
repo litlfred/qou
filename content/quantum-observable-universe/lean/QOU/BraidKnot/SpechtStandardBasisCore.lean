@@ -192,6 +192,93 @@ noncomputable def standardPolytabloidS (T : StandardYoungTableau μ) :
     Specht.SpechtSubmodule (k := k) μ :=
   ⟨standardPolytabloid (k := k) T, standardPolytabloid_mem (k := k) T⟩
 
+/-! ### 2a. Row/column-descent existence (SYT recognition, sorry-free)
+
+The first layer of the Garnir core `straightening_step_colMax`: a polytabloid that is
+*not* a standard polytabloid comes from a tableau with a **descent** — either a row
+descent (a right-neighbour label `≤` its left) or a column descent (a lower-neighbour
+label `≤` its upper). Proved via the SYT-recognition bridge: a filling strict along
+rows and down columns *is* the `sytToTableau` image of an honest `StandardYoungTableau`,
+so a non-standard polytabloid must fail strictness somewhere. `hmax` later kills the
+column disjunct (a column descent would give a `domWeight`-raising `colStab` swap),
+leaving a pure row descent to feed the Garnir coset-sum.
+
+Ref: [sagan2001] §2.5-2.6; [james1984representation] §8 (standard tableaux). -/
+
+/-- The label a `Tableau μ = Fin n ≃ μ.cells` assigns to a cell `(i, j) ∈ μ` — the
+"entry at a cell" view, dual to `rowPattern`/`colPattern` (which report the row/column
+of a *label*): `labelAt t h = (t.symm ⟨(i,j),…⟩).val`. -/
+def labelAt (t : Specht.Tableau μ) {i j : ℕ} (h : (i, j) ∈ μ) : ℕ :=
+  (t.symm ⟨(i, j), (YoungDiagram.mem_cells (i, j)).2 h⟩ : Fin (Specht.nOf μ)).val
+
+/-- A `Tableau` filling that is strictly increasing along rows and down columns is an
+honest `StandardYoungTableau`. -/
+noncomputable def sytOfStrict (t : Specht.Tableau μ)
+    (hrow : ∀ i j (hij : (i, j) ∈ μ) (hij1 : (i, j + 1) ∈ μ), labelAt t hij < labelAt t hij1)
+    (hcol : ∀ i j (hij : (i, j) ∈ μ) (hi1j : (i + 1, j) ∈ μ), labelAt t hij < labelAt t hi1j) :
+    StandardYoungTableau μ where
+  entry := fun i j => if h : (i, j) ∈ μ then labelAt t h else 0
+  lt_card := fun i j h => by rw [dif_pos h]; exact (t.symm _).isLt
+  zero_off := fun i j h => by simp only [dif_neg h]
+  inj_on := fun i j i' j' hij hij' he => by
+    rw [dif_pos hij, dif_pos hij'] at he
+    simp only [labelAt] at he
+    exact Prod.ext_iff.mp (Subtype.ext_iff.mp (t.symm.injective (Fin.val_injective he)))
+  row_strict := fun i j hj1 => by
+    have hij : (i, j) ∈ μ := μ.up_left_mem (le_refl i) (Nat.le_succ j) hj1
+    rw [dif_pos hij, dif_pos hj1]; exact hrow i j hij hj1
+  col_strict := fun i j hi1 => by
+    have hij : (i, j) ∈ μ := μ.up_left_mem (Nat.le_succ i) (le_refl j) hi1
+    rw [dif_pos hij, dif_pos hi1]; exact hcol i j hij hi1
+
+/-- `sytToTableau` inverts `sytOfStrict`: the honest SYT built from a strict filling
+maps back to the original tableau. -/
+theorem sytToTableau_sytOfStrict (t : Specht.Tableau μ)
+    (hrow : ∀ i j (hij : (i, j) ∈ μ) (hij1 : (i, j + 1) ∈ μ), labelAt t hij < labelAt t hij1)
+    (hcol : ∀ i j (hij : (i, j) ∈ μ) (hi1j : (i + 1, j) ∈ μ), labelAt t hij < labelAt t hi1j) :
+    sytToTableau (sytOfStrict t hrow hcol) = t := by
+  set T := sytOfStrict t hrow hcol with hT
+  have key : cellLabel T = t.symm := by
+    funext c
+    apply Fin.ext
+    show T.entry c.1.1 c.1.2 = (t.symm c).val
+    have hc : (c.1.1, c.1.2) ∈ μ := (YoungDiagram.mem_cells _).1 c.2
+    have hcell : (⟨(c.1.1, c.1.2), (YoungDiagram.mem_cells _).2 hc⟩ : μ.cells) = c :=
+      Subtype.ext rfl
+    show (if h : (c.1.1, c.1.2) ∈ μ then labelAt t h else 0) = (t.symm c).val
+    rw [dif_pos hc]
+    simp only [labelAt, hcell]
+  unfold sytToTableau
+  rw [show (Equiv.ofBijective (cellLabel T) (cellLabel_bijective T)) = t.symm from
+        Equiv.ext (fun c => by rw [Equiv.ofBijective_apply, key]),
+      Equiv.symm_symm]
+
+omit [CharZero k] in
+/-- **SYT recognition:** a tableau strict along rows and down columns has a standard
+polytabloid. -/
+theorem mem_range_standardPolytabloid_of_strict (t : Specht.Tableau μ)
+    (hrow : ∀ i j (hij : (i, j) ∈ μ) (hij1 : (i, j + 1) ∈ μ), labelAt t hij < labelAt t hij1)
+    (hcol : ∀ i j (hij : (i, j) ∈ μ) (hi1j : (i + 1, j) ∈ μ), labelAt t hij < labelAt t hi1j) :
+    Specht.polytabloid (k := k) t ∈ Set.range (standardPolytabloid (k := k) (μ := μ)) := by
+  refine ⟨sytOfStrict t hrow hcol, ?_⟩
+  show Specht.polytabloid (k := k) (sytToTableau (sytOfStrict t hrow hcol))
+      = Specht.polytabloid (k := k) t
+  rw [sytToTableau_sytOfStrict t hrow hcol]
+
+omit [CharZero k] in
+/-- **Descent existence (sorry-free).** A non-standard polytabloid comes from a tableau
+with a row descent (right neighbour `≤`) or a column descent (lower neighbour `≤`) —
+the contrapositive of SYT recognition. This is the entry point of the column-maximal
+Garnir core `straightening_step_colMax`. -/
+theorem exists_descent_of_not_mem_range (t : Specht.Tableau μ)
+    (h : Specht.polytabloid (k := k) t ∉ Set.range (standardPolytabloid (k := k) (μ := μ))) :
+    (∃ i j, ∃ (hij : (i, j) ∈ μ) (hij1 : (i, j + 1) ∈ μ), labelAt t hij1 ≤ labelAt t hij) ∨
+      (∃ i j, ∃ (hij : (i, j) ∈ μ) (hi1j : (i + 1, j) ∈ μ), labelAt t hi1j ≤ labelAt t hij) := by
+  by_contra hcon
+  push_neg at hcon
+  obtain ⟨hnrow, hncol⟩ := hcon
+  exact h (mem_range_standardPolytabloid_of_strict (k := k) t hnrow hncol)
+
 /-! ## 3. The two genuine content obligations
 
 The linear-independence half (§3a) is **reduced**, sorry-free, to a single
