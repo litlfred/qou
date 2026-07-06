@@ -6359,6 +6359,33 @@ export const references: CSLData[] = [
     note: "Canonical reference for D_nu(z): Weber equation, the even/odd solution pair, and the connection formula whose 1/Gamma((1-nu)/2), 1/Gamma(-nu/2) coefficients implement parity selection by pole-vanishing at integer nu — the classical mechanism transported to the QOU even/odd (bar-parity) channel interpolation.",
   }),
 
+  // ── Whipple 1917 (toroidal transformation: Legendre functions at cosh vs coth argument) ──
+  ref({
+    id: "whipple1917",
+    type: "article-journal",
+    title:
+      "A symmetrical relation between Legendre's functions with parameters cosh α and coth α",
+    author: [{ family: "Whipple", given: "Francis J. W." }],
+    "container-title": "Proceedings of the London Mathematical Society",
+    volume: "s2-16",
+    page: "301-314",
+    issued: { "date-parts": [[1917]] },
+    DOI: "10.1112/plms/s2-16.1.301",
+    URL: "https://doi.org/10.1112/plms/s2-16.1.301",
+    note: "The Whipple transformation exchanging degree and order of associated Legendre functions at hyperbolic argument — the structural home of the half-integer-degree toroidal family P^mu_{nu-1/2}(cosh eta) used as the 3-d channel carrier in the toroidal channel-interpolation audit (2026-07-06).",
+  }),
+
+  // ── Lebedev 1965 (toroidal coordinates and toroidal harmonics: standard reference) ──
+  ref({
+    id: "lebedev1965",
+    type: "book",
+    title: "Special Functions and Their Applications",
+    author: [{ family: "Lebedev", given: "Nikolai N." }],
+    publisher: "Prentice-Hall (Dover reprint 1972)",
+    issued: { "date-parts": [[1965]] },
+    note: "Standard reference for toroidal coordinates and the separated harmonics sqrt(cosh eta - cos theta) P^mu_{nu-1/2}(cosh eta) e^{i mu theta} e^{i nu phi}: the two phase windings are the two local 1-d channel oscillations and the half-integer-degree Legendre factor is the decaying radial profile off the core torus (toroidal channel-interpolation audit, 2026-07-06).",
+  }),
+
   // ── Deligne 2007 (Rep(S_t) at non-integer t: interpolated tensor categories) ──
   ref({
     id: "deligne2007",
