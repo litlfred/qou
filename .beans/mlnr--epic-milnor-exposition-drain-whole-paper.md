@@ -39,10 +39,10 @@ appendix-knot-operations #3373 · appendix-surreals-archimedean #3382 ·
 appendix-knot-periodic-table #3406 · appendix-transfer-matrices #3416+#3421.
 
 ## In progress
-models-of-qous b1 (22/51) — committed, awaiting PR and merge.
+q-geometric-langlands (50/50) — committed to claude/milnor-drain-q-geometric-langlands, awaiting PR and merge.
 
 ## Remaining queue (≤22-block batches)
-models-of-qous(51/3) · q-geometric-langlands(50/3) · climax-volume-mass(62/3)
+climax-volume-mass(62/3)
 · molecular-construction(73/4) · stochastic-mechanics(74/4) ·
 appendix-surreals(92/5) · fluid-dynamics(94/5) · braids-and-knots(103/5) ·
 lifting-and-descent(116/6) · mass-endomorphism(116/6) · brings-surface(161/8)

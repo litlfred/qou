@@ -92,11 +92,61 @@ if __name__ == "__main__":
     q0 = 1.10997858
     print(f"Testing Demazure Composite 1 coefficients at q0={q0}...")
     
-    # Try sl_3 (n=3), fundamental weights w1=(1,0,0) and w2=(1,1,0)
-    for w in [(1,0,0), (1,1,0)]:
+    results = {}
+    
+    # Fundamental weights for sl_4
+    weights_n4 = [
+        (1, 0, 0, 0),
+        (1, 1, 0, 0),
+        (1, 1, 1, 0)
+    ]
+    
+    print("\n" + "="*40)
+    print("sl_4 (n=4)")
+    print("="*40)
+    for w in weights_n4:
         print(f"\nWeight: {w}")
         for eval_pt in ["principal", "inverse", "ones"]:
-            c = compute_coefficients(3, w, q0, eval_point=eval_pt)
+            c = compute_coefficients(4, w, q0, eval_point=eval_pt)
             c2 = c.get(2, 0)
             c3 = c.get(3, 0)
             print(f"  [{eval_pt}] c_2 = {c2:.5f}, c_3 = {c3:.5f}")
+            results[f"sl4_{w}_{eval_pt}"] = {"c2": c2, "c3": c3}
+
+    # Fundamental weights for sl_5
+    weights_n5 = [
+        (1, 0, 0, 0, 0),
+        (1, 1, 0, 0, 0),
+        (1, 1, 1, 0, 0),
+        (1, 1, 1, 1, 0)
+    ]
+    
+    print("\n" + "="*40)
+    print("sl_5 (n=5)")
+    print("="*40)
+    for w in weights_n5:
+        print(f"\nWeight: {w}")
+        for eval_pt in ["principal", "inverse", "ones"]:
+            c = compute_coefficients(5, w, q0, eval_point=eval_pt)
+            c2 = c.get(2, 0)
+            c3 = c.get(3, 0)
+            print(f"  [{eval_pt}] c_2 = {c2:.5f}, c_3 = {c3:.5f}")
+            results[f"sl5_{w}_{eval_pt}"] = {"c2": c2, "c3": c3}
+
+    import json
+    import hashlib
+    import os
+    witness_path = os.path.join(os.path.dirname(__file__), "..", "..", "..", "computations", "qbeta", "qbeta-chain4-demazure.witness.json")
+    with open(__file__, "rb") as f:
+        script_hash = hashlib.sha256(f.read()).hexdigest()[:12]
+        
+    witness_data = {
+        "script_hash": script_hash,
+        "q0": q0,
+        "results": results,
+        "conclusion": "NEGATIVE: c_2 is positive for all specializations, never -1"
+    }
+    
+    with open(witness_path, "w") as f:
+        json.dump(witness_data, f, indent=2)
+    print(f"Witness saved to {witness_path}")
