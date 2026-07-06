@@ -1,6 +1,7 @@
 import Mathlib.LinearAlgebra.Matrix.Notation
 import Mathlib.Algebra.Field.Basic
 import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
+import Mathlib.LinearAlgebra.Matrix.Trace
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 
@@ -110,6 +111,51 @@ theorem pn_sign_det_invariant (a w : R) :
   have hdetD : (parityD : Matrix (Fin 4) (Fin 4) R).det = 1 := by
     simp [parityD, Matrix.det_diagonal, Fin.prod_univ_four]
   rw [hconj, Matrix.det_mul, Matrix.det_mul, hdetD, one_mul, mul_one]
+
+/-- Conjugation by an involution distributes over powers:
+`(D M D)^k = D M^k D` whenever `D * D = 1`. -/
+theorem conj_pow (D M : Matrix (Fin 4) (Fin 4) R) (hD : D * D = 1) (k : ℕ) :
+    (D * M * D) ^ k = D * M ^ k * D := by
+  have hDD : ∀ X : Matrix (Fin 4) (Fin 4) R, D * (D * X) = X := fun X => by
+    rw [← Matrix.mul_assoc, hD, Matrix.one_mul]
+  induction k with
+  | zero => rw [pow_zero, pow_zero, Matrix.mul_one, hD]
+  | succ n ih =>
+      rw [pow_succ, pow_succ, ih]
+      simp only [Matrix.mul_assoc, hDD]
+
+/-- `pn_sign_conjugation` extended to powers:
+`S(a, −w)^k = D · S(a, w)^k · D`. -/
+theorem pn_sign_conjugation_pow (a w : R) (k : ℕ) :
+    exchangeMatrix a (-w) ^ k = parityD * exchangeMatrix a w ^ k * parityD := by
+  rw [← pn_sign_conjugation, conj_pow _ _ parityD_sq]
+
+/-- **pn-sign blindness of charge-diagonal observables** — for any operator
+`T` commuting with the p/n grading `D` (every charge-diagonal / isospin-
+diagonal observable does), all mixed traces are pn-sign invariant:
+`tr(T · S(a, w)^k) = tr(T · S(a, −w)^k)`.
+
+Consequence: the [1⁴] pn writhe sign is invisible not just to the
+determinant (`pn_sign_det_invariant`) but to the ENTIRE spectral/mixed-trace
+observable class built from grading-commuting operators.  Sign-sensitivity
+requires an operator that fails to commute with `D` — i.e. one that mixes
+the p and n blocks, which in the framework is the weak/β sector (isospin
+raising/lowering).  The "open pn sign" of PR #3426 is therefore a
+weak-sector observable, not a binding-sector one. -/
+theorem pn_sign_trace_blind (a w : R) (k : ℕ)
+    (T : Matrix (Fin 4) (Fin 4) R) (hT : T * parityD = parityD * T) :
+    (T * exchangeMatrix a w ^ k).trace = (T * exchangeMatrix a (-w) ^ k).trace := by
+  rw [pn_sign_conjugation_pow]
+  have hmove : T * (parityD * exchangeMatrix a w ^ k * parityD)
+      = parityD * (T * exchangeMatrix a w ^ k) * parityD := by
+    calc T * (parityD * exchangeMatrix a w ^ k * parityD)
+        = T * parityD * exchangeMatrix a w ^ k * parityD := by
+          simp only [Matrix.mul_assoc]
+      _ = parityD * T * exchangeMatrix a w ^ k * parityD := by rw [hT]
+      _ = parityD * (T * exchangeMatrix a w ^ k) * parityD := by
+          simp only [Matrix.mul_assoc]
+  rw [hmove, Matrix.trace_mul_cycle, ← Matrix.mul_assoc, parityD_sq,
+    Matrix.one_mul]
 
 end ReebPnMagnitude
 end MassTheory

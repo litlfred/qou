@@ -107,6 +107,32 @@ identification is natural (it is what the Markov-peel factor counts) but is
 the honest remaining assumption. The three vague #3407 "routes" have
 collapsed to this single named premise.
 
+## 2d. The tangent identification from the Markov property (tranche 3)
+
+The §2c residue — *why is the bond factor $z$ a tangent?* — reduces to the
+Temperley–Lieb **Markov property**, which is a theorem, not a choice:
+
+1. The bond factor is $z = 1/[2]_v = \delta^{-1}$, and $\delta^{-1}$ is
+   exactly the **Markov conditional-expectation weight** of the TL exchange
+   generator: $\mathrm{tr}(x\,e_n) = \delta^{-1}\,\mathrm{tr}(x)$ — the
+   defining Markov property of the trace tower.
+2. One inter-block crossing decomposes into the two TL channels, *direct*
+   ($1$) and *exchange* ($e$). Under the Markov trace the channel amplitudes
+   are $(1, \delta^{-1}) = (1, z)$: the bond strand's direction **in channel
+   space** is the vector $(1, z)$.
+3. The inclination of that direction is $\tan\theta = z$ **by definition of
+   channel-space angle** — the tangent identification is the Markov weight,
+   derived, not postulated.
+
+Composing §2c + §2d: sine normalization from the CWF unit-tangent integrand,
+tangent from the Markov property. The full derivation chain for
+$g = z/\sqrt{1+z^2}$ now has **one residual postulate**, stated precisely:
+*the Reeb linking amplitude of the pn bond is the CWF (unit-tangent,
+arc-length) functional evaluated on the channel-space direction $(1, z)$* —
+i.e. physical linking reads the TL channel decomposition through the Gauss
+integrand. Everything downstream of that sentence is proved
+(§2b I1–I3 + [`ReebPnMagnitude.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/ReebPnMagnitude.lean)).
+
 ## 3. [1⁴] extension at the landed magnitude (new probe)
 
 [`b4_1four_reeb_flow_magnitude.py`](../../computations/probes/b4_1four_reeb_flow_magnitude.py)
@@ -203,24 +229,53 @@ graph; a framing assigning per-pair non-uniform magnitudes (or entering
 through sign-sensitive, non-conjugation-invariant observables) can still make
 the sign physical.
 
+## 3f. ²H tier status — owner-decision flag (tranche 3)
+
+After §2b–§2d (structure of $g$ derived), §3c (linear-vs-det
+irreconcilability) and §3d (unit-anchor negative), the honest status of the
+**production ²H reeb-flow tier** is: $B(^2\mathrm{H}) = 5g$ [MeV] is a
+**near-match, not a derivation** — its $q\to1$ limit is $B = \sqrt5$ MeV
+(matching AME to 0.52 %) with the MeV unit implicit and no canonical anchor
+found. Per the tiered-reporting discipline (the c_k precedent: proved /
+near-match / fitted, never silently wired), the tier should carry the
+**near-match** label until either (a) a unit anchor + derivation of the
+linear law lands, or (b) the owner re-tiers ²H (e.g. back to
+`term-1-plus-4`, +75 %, canonical-but-worse, or to a counit-sector form).
+This is a framework choice, not an agent call — flagged for owner ruling;
+the tier is left untouched.
+
+## 3g. pn sign fully routed to the weak sector (tranche 3)
+
+§3e closed the sign for determinants; tranche 3 closes it for the **entire
+spectral / mixed-trace observable class**: for any operator $T$ commuting
+with the p/n grading $D$ (every charge-diagonal observable),
+$\mathrm{tr}(T\,S(a,w)^k) = \mathrm{tr}(T\,S(a,-w)^k)$ for all $k$ —
+Lean-proved sorry-free (`conj_pow`, `pn_sign_conjugation_pow`,
+`pn_sign_trace_blind`). Since any function of $S$ alone is similarity-blind
+and any grading-commuting probe is trace-blind, **the pn sign is observable
+only through operators that mix the p and n blocks** — isospin
+raising/lowering, i.e. the weak/β sector. The #3426 "open pn sign" is
+thereby *re-classified*: it is not a binding-sector open at all; it is a
+weak-sector observable, to be read off β-decay-type couplings (consistent
+with the framework's bar-odd ↔ decay-width assignment).
+
 ## 4. Open objects (sharpened)
 
-1. ~~Substantiate the deformation~~ — **done at the structure level (§2b)**,
-   **Lean-formalized (§3e)**; the sine normalization is now **derived from
-   the CWF unit-tangent integrand (§2c)** modulo one geometric
-   identification: *$z$ = per-unit-Reeb-time crossing density (tangent) of
-   the bond inclination*.
+1. ~~Substantiate the deformation~~ — **done (§2b–§2d, Lean §3e/§3g)**. The
+   derivation chain for $g$ now has exactly **one residual postulate**:
+   *linking amplitude = CWF unit-tangent functional on the TL channel-space
+   direction $(1, z)$* (§2d); tangent = Markov weight (derived), sine =
+   CWF unit-tangent (derived).
 2. ~~Reconcile linear vs det~~ — **resolved as irreconcilable at uniform $g$
-   (§3c)**; the unit-anchor scan is a bounded **negative (§3d)** — the ²H
-   linear law still needs a derivation or a re-tier of ²H out of the
-   exchange sector.
+   (§3c)**; unit anchor **negative (§3d)**; ²H tier flagged **near-match,
+   owner ruling requested (§3f)**.
 3. **Convention pinned** (Q3): $b_4 = 9.2431$ is the connected Ursell
    cumulant; the det form at $g_{\text{reeb}}$ overshoots it (1.63×) while its
    $b_3$ matches (1.04×) and $b_2$ under-binds (0.42×) — any further magnitude
    work should target the full cumulant *profile*, not the aggregate.
-4. ~~The pn sign~~ — **closed for determinant-class observables (§3e,
-   Lean-proved)**; remains open only for sign-sensitive observables or
-   non-uniform per-pair framings.
+4. ~~The pn sign~~ — **closed for the full grading-commuting observable
+   class (§3e + §3g, Lean-proved); re-classified as a weak-sector
+   observable.** Binding-sector work can drop it.
 
 ## 5. Cross-references
 
