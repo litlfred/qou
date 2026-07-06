@@ -6,8 +6,8 @@ $q$-exterior derivative $d_q$
 Under the fibre functor $\tau$, the categorical and geometric
 formulations of $d_q$ coincide. Concretely, applying the categorical
 vertical derivative $\pi_V \circ d$ and then realizing it geometrically
-through $\tau$ is the same as contracting with the contact form
-$\varTheta$ and Lie-differentiating along the Reeb field $\xi$ — this
+through $\tau$ is the same as contracting with the Reeb vector field
+$\xi$ and wedging with the contact form $\varTheta$ — this
 is the content of the commuting square:
 
 ```tex

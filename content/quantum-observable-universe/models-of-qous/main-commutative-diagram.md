@@ -11,7 +11,8 @@ $\mathfrak{E}$ denote the Euler--Lagrange operator of the
 $q$-weighted Yang--Mills--Levi functional $\mathfrak{S}_q$
 ([$q$-Yang--Mills--Levi functional](#def:q-yang-mills-levi)), and let $\nabla^A$ denote
 parallel transport along $A$.  The upper-left object $J^1\mathcal{S}$
-is the space of $1$-jets — first-order gauge perturbations of $A$.
+is the space of $1$-jets of sections of the state bundle $\mathcal{S}$
+(the state and its first-order derivatives).
 The following diagram commutes:
 
 ```tex
