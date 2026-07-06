@@ -1334,6 +1334,30 @@ for the (future) coset-transversal reindexing. -/
 theorem garnirHSub_le (t : Specht.Tableau μ) (i j : ℕ) :
     garnirHSub t i j ≤ garnirGSub t i j := inf_le_left
 
+omit [CharZero k] in
+/-- **Coset reindexing (sorry-free) — Garnir bridge, reindex step.** For any transversal
+`T` whose product family `{π·ρ : π ∈ T, ρ ∈ H}` covers `garnirG` bijectively (encoded by
+the two inclusions + the cardinality match), a sum over `garnirG` reindexes as the double
+sum `∑_{π∈T} ∑_{ρ∈H}`. Purely `Finset`-level (image + injectivity-from-cardinality); this
+turns `garnir_full_annihilation` into `transversal_sum_eq_zero`'s `hann`. -/
+theorem sum_over_garnirG_reindex {M : Type*} [AddCommMonoid M] (t : Specht.Tableau μ)
+    (i j : ℕ) (T : Finset (Equiv.Perm (Fin (Specht.nOf μ))))
+    (hcover : garnirG t i j ⊆ (T ×ˢ garnirH t i j).image (fun p => p.1 * p.2))
+    (hclosed : (T ×ˢ garnirH t i j).image (fun p => p.1 * p.2) ⊆ garnirG t i j)
+    (hcard : (garnirG t i j).card = (T ×ˢ garnirH t i j).card)
+    (F : Equiv.Perm (Fin (Specht.nOf μ)) → M) :
+    ∑ σ ∈ garnirG t i j, F σ = ∑ π ∈ T, ∑ ρ ∈ garnirH t i j, F (π * ρ) := by
+  classical
+  have himg : garnirG t i j = (T ×ˢ garnirH t i j).image (fun p => p.1 * p.2) :=
+    Finset.Subset.antisymm hcover hclosed
+  have hinj := Finset.injOn_of_card_image_eq (f := fun p => p.1 * p.2)
+    (s := T ×ˢ garnirH t i j) (by rw [← himg, hcard])
+  calc ∑ σ ∈ garnirG t i j, F σ
+      = ∑ p ∈ (T ×ˢ garnirH t i j), F (p.1 * p.2) := by
+        rw [himg, Finset.sum_image
+          (fun a ha b hb => hinj (Finset.mem_coe.mpr ha) (Finset.mem_coe.mpr hb))]
+    _ = ∑ π ∈ T, ∑ ρ ∈ garnirH t i j, F (π * ρ) := by rw [Finset.sum_product]
+
 /-! #### The single residual straightening core + the induction skeleton -/
 
 omit [CharZero k] in
