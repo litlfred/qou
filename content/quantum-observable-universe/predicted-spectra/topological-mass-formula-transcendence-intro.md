@@ -1,3 +1,3 @@
-This section develops topological mass and volume-tower transcendence. The blocks below trace the construction from `hyperbolic-volumes-prose` onward.
+This section develops topological mass and volume-tower transcendence. The subsequent blocks trace the construction starting from hyperbolic volumes.
 
-The hyperbolic-volumes prose block records the substrate-level transcendence of the topological mass formula: the formula's value at $q_0$ is the categorical hyperbolic-volume tied to specific knot complements.  The closing knot-formula table tabulates the substrate-level predictions against SnapPy's independent computations for the small-crossing knots that drive every mass prediction downstream.
+The hyperbolic volumes record the substrate-level transcendence of the topological mass formula: its value at $q_0$ is the categorical hyperbolic volume tied to specific knot complements. The closing table compares these substrate-level predictions against independent SnapPy computations for the small-crossing knots that drive downstream mass predictions.

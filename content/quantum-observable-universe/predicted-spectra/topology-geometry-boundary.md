@@ -1,39 +1,15 @@
-The categorical action $\mathfrak{S}_q = \mathrm{tr}(\mathcal{L}_q)$
-([canonical action](#prop:qou-canonical-action)) evaluated on a nuclear
-link $\mathcal{N}(Z, N)$ produces observables at two levels.
+The categorical action $\mathfrak{S}_q = \mathrm{tr}(\mathcal{L}_q)$ evaluated on a nuclear link $\mathcal{N}(Z, N)$ produces observables at two levels.
 
 **Observables determined by $q$ alone.**
 
-These are computed from the Iwahori--Hecke algebra $H_A(q)$ at the single
-parameter the substrate $q$, the Descartes condition $\chi(A) = -6$,
-and the categorical definitions:
+These derive from the Iwahori--Hecke algebra $H_A(q)$ evaluated at the substrate $q$, subject to the Descartes condition $\chi(A) = -6$:
 
 See [Table](#tbl:topology-geometry-boundary-table-data).
 
 **Observables not yet computed from $q$ alone.**
 
-The **$Q$-value** for nuclei beyond the deuteron.  The $Q$-value
-is the mass difference $M(\text{parent}) - M(\text{daughter}) - m_e$.
-Each nuclear mass requires the terminal resolution of the full
-composite link $L_{3A}$ — the pair Skein mass formula applied to
-all crossings with Hecke compounding.  This computation is set up
-(braid registry, SnapPy, Singular/Hecke engine) but not yet
-evaluated for $A > 2$.
+The $Q$-value for nuclei beyond the deuteron is the mass difference $M(\text{parent}) - M(\text{daughter}) - m_e$. It requires the terminal resolution of the full composite link $L_{3A}$. The pair Skein mass formula must be applied to all crossings with Hecke compounding. This computation is configured (braid registry, SnapPy, Singular/Hecke engine) but un-evaluated for $A > 2$.
 
-The mass formula for individual hadrons:
-$\mathfrak{m} = \mathrm{Vol}(K) / \hbar_q^2$ (hyperbolic volume normalised
-by $\hbar_q^2 = (1 - q^{-1})^2$) gives sub-keV masses for the
-electron, muon, proton, and neutron.  For multi-nucleon links
-(satellite links with $\mathrm{Vol} = A \times \mathrm{Vol}(\mathcal{B}_3)$
-exactly), the nuclear binding comes from the pair Skein mass
-$\mathcal{S}_{ab}(q) = (q\mu_a + q^{-1}\mu_b)/(q^{1/2}+q^{-1/2})$
-evaluated at the inter-nucleon crossings.
+The hadron mass formula $\mathfrak{m} = \mathrm{Vol}(K) / \hbar_q^2$ provides masses for the electron, muon, proton, and neutron. For multi-nucleon satellite links, the volume scales as $\mathrm{Vol} = A \times \mathrm{Vol}(\mathcal{B}_3)$. The nuclear binding energy emerges from the pair Skein mass $\mathcal{S}_{ab}(q) = (q\mu_a + q^{-1}\mu_b)/(q^{1/2}+q^{-1/2})$ evaluated at inter-nucleon crossings.
 
-The $Q$-value is a $\sim 0.001\%$ mass difference ($\sim 0.1$--$1$ MeV
-on $\sim 10{,}000$--$200{,}000$ MeV total mass).  Computing it
-requires the composite pair Skein weights to high precision — the
-terminal resolution applied to the full $3A$-strand link.
-
-The framework gives the correct **structure** of the $Q$-value
-(which nuclei decay, in which direction, with which shell
-blocking and sensitivity) from $q$ alone.
+The $Q$-value represents a minute mass difference ($\sim 0.1$--$1$ MeV on a $\sim 10{,}000$--$200{,}000$ MeV background). Computing it demands high precision composite pair Skein weights. However, the framework already determines the structural properties of the $Q$-value (decay direction, shell blocking, and sensitivity) strictly from $q$.
