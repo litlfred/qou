@@ -23,22 +23,35 @@ bar-conjugate `tr_M(q⁻¹)` needed for the I-par bar-even projection. The
 `-free-` sibling gives the disjoint-nucleon vacuum word (for the connected
 subtraction).
 
-## 2. The construction (four steps)
+## 2. The construction (three steps)
 
-**Step A — Schur–Weyl SU(4) ↔ S₁₂ branching.** By Schur–Weyl duality on
-`(ℂ⁴)^{⊗12}` (4 = the SU(4) spin-flavor fundamental; 12 = 3 quarks × 4 nucleons),
-`(ℂ⁴)^{⊗12} = ⊕_{λ ⊢ 12, ℓ(λ)≤4} S^λ(ℂ⁴) ⊗ V_λ` with `V_λ` the S₁₂ Specht module.
-Only partitions with **≤ 4 rows** carry SU(4) content — the first filter on the
-77 (partitions with ℓ(λ) > 4 have `S^λ(ℂ⁴) = 0` and drop out).
+> **CORRECTION (2026-07-06, gate-verified — supersedes the earlier
+> quark-plethysm framing).** The [1^A] projector acts at the **nucleon** level,
+> not the quark level. Its dimension must equal the proved gate `C(4,A)`
+> (`su4_supermultiplet_dim_vanishes_iff`). Checked directly:
+>
+> | A | gate `C(4,A)` | nucleon `Λ^A(4)` | quark `e_A[h₃] = Λ^A(Sym³ℂ⁴) = C(20,A)` |
+> |---|---|---|---|
+> | 3 | 4 | **4 ✓** | 1140 ✗ |
+> | 4 | 1 | **1 ✓** | 4845 ✗ |
+> | 5 | 0 | **0 ✓** | 15504 ✗ (does not vanish!) |
+>
+> So the projector is **`Λ^A` of the nucleon's SU(4) FUNDAMENTAL 4** (the 4
+> single-particle spin-flavor states p↑,p↓,n↑,n↓) — a Slater determinant of A
+> nucleons — **not** the quark plethysm `e_A[h₃]` (which is `C(20,A)`, non-zero
+> for A>4, inconsistent with the gate). The 3-quark `h₃` content is the
+> INTRA-nucleon structure, already carried by `τ_p`/`τ_n` (the intra-nucleon
+> Markov trace); it is **not** a flavor tensor factor. This eliminates the hard
+> quark-level Schur–Weyl S₁₂ branching (Step A below is deleted) and makes the
+> value a nucleon-flavor computation.
 
-**Step B — the [1⁴] nucleon-antisymmetric projector `P_{[1⁴]}`.** The 4 nucleons
-(each a 3-quark block) are exchanged by an `S₄ ⊂ S₁₂` (permuting the four blocks
-of 3). The connected 4-body [1⁴] supermultiplet is the **fully antisymmetric**
-`S₄`-isotype (the `sgn` rep of block-exchange). `P_{[1⁴]}` = the Young
-antisymmetrizer over block-exchange, restricted to the ≤4-row partitions of
-Step A. Its image is the `C(4,4)=1`-dimensional α singlet — the gate's proved
-`C(4,A)` counts this dimension, so `P_{[1⁴]}` is rank-0 for A>4 (the locality is
-structural, not imposed).
+**Step A′ — the nucleon-flavor Slater/antisymmetrizer `P_{[1^A]} = Λ^A(4)`.**
+Each nucleon carries one of the 4 SU(4) single-particle states. `P_{[1^A]}` is
+the Young antisymmetrizer over the A nucleon FLAVOR indices (the `sgn` rep of the
+`S_A` that permutes nucleons), acting on `(ℂ⁴)^{⊗A}` — NOT on the 3A quark
+strands. Its rank is `C(4,A)` (gate), zero for A>4: locality is structural. The
+intra-nucleon 3-quark content enters only through the scalar traces `τ_p, τ_n`
+(and their pairwise dressings `z, z−h, z−h/2`).
 
 **Step C — the projected trace and its connected part.** Compute
 `τ_{[1⁴]}(q) = tr_M(P_{[1⁴]} · β_{⁴He})` as the `y_λ χ_λ`-sum restricted to the
@@ -73,10 +86,10 @@ gate needed; the projector construction is *licensed*.
 
 ## 5. Infrastructure to build (the deliverable of the next sessions)
 
-- `computations/su4_block_antisymmetrizer.py` — Step B: the `S₄`-block Young
-  antisymmetrizer over the ≤4-row partitions of `n=3A`; expose
-  `p1A_partitions(A) -> list[partition]` + weights. **Unit-test against the gate:
-  rank = `C(4,A)`.**
+- `computations/su4_slater_antisymmetrizer.py` — Step A′: the nucleon-flavor
+  `Λ^A(4)` Slater antisymmetrizer over the 4 SU(4) single-particle states; expose
+  `slater_dim(A) -> C(4,A)` + the antisymmetrized flavor-index structure. **Unit-test
+  against the gate: rank = `C(4,A)`** (already verified in the §2 correction table).
 - extend `interface_4body_assembly_probe.py` with a `connected_b4(Z,N)` using
   Steps C–D and the `by_partition` witness reads (q₀ and q⁻¹).
 - emit `b4-connected-value.witness.json` with the A=4 value, the A=6 check, and
@@ -84,12 +97,13 @@ gate needed; the projector construction is *licensed*.
 
 ## 6. Risks / open sub-questions (flag before executing)
 
-- **The block-exchange `S₄ ⊂ S₁₂` embedding.** The 3-quark blocks are not
-  interchangeable strand-for-strand under a naive `S₄` (intra-block braiding
-  matters). The antisymmetrizer must act on the *nucleon* tensor factors after
-  the intra-nucleon trace, i.e. on the `τ_p/τ_n`-carrying block indices — verify
-  the embedding against the ³He/³H connected `b₃` (target `1.426 MeV`) as a
-  smaller, cheaper first cross-check **before** ⁴He.
+- **The block-exchange embedding — RESOLVED by the §2 correction.** The earlier
+  worry (does `S_A` act strand-for-strand on the 3A quarks, entangling
+  intra-block braiding?) is moot: the antisymmetrizer acts on the A **nucleon
+  flavor** indices `(ℂ⁴)^{⊗A}`, and the intra-nucleon braiding is already summed
+  into the scalars `τ_p, τ_n`. Still verify against the ³He/³H connected `b₃`
+  (target `1.426 MeV`) as the cheaper first cross-check **before** ⁴He — now a
+  `Λ³(4)` (dim-4) computation, not an S₉ branching.
 - **Convention lock (I-6).** Use the dim-λ-normalised chi-cache convention
   (pinned canonical in `TraceConventionGate`); do not mix in the F_Bor framing.
 - **Feasibility.** n=12 dense is at the wall; use `gram_transfer_quadratic` if a
