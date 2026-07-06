@@ -1,4 +1,5 @@
 import Mathlib.Tactic
+import QOU.Archimedean.TransferMatrixOperator
 
 /-!
 # QOU.Archimedean.BreitWheelerPairProduction
@@ -50,5 +51,23 @@ theorem BreitWheelerPairProduction.net_gt_one (P : BreitWheelerPairProduction) :
     rw [inv_eq_one_div]; exact (div_lt_one hq0).mpr P.hq
   rw [P.net_def, P.nfConst_def, P.nfSigma_def]
   linarith [h1, P.hq]
+
+/-- **De-axiomatisation (bean `h2yz`).** The bare-pair NF coefficients are not
+    free: they are the Hecke reduction of `σ₀·σ₀` computed by a
+    `TransferMatrixOperator` `T` at the same `q`. `T.reduce_sigma_squared`
+    proves `reduceA 1 0 1 0 = q − q⁻¹` and `reduceB 1 0 1 0 = 1`, so `γγ = σ₀²`
+    genuinely reduces to `(q−q⁻¹)σ₀ + 1` — the coefficients are derived, not
+    asserted. -/
+noncomputable def BreitWheelerPairProduction.ofHecke
+    (q : ℝ) (hq : 1 < q) (T : TransferMatrixOperator ℝ) (hT : T.q = q) :
+    BreitWheelerPairProduction where
+  q := q
+  hq := hq
+  nfSigma := T.reduceA 1 0 1 0
+  nfConst := T.reduceB 1 0 1 0
+  net := T.reduceB 1 0 1 0 + T.reduceA 1 0 1 0
+  nfSigma_def := by rw [(T.reduce_sigma_squared).1, hT]
+  nfConst_def := (T.reduce_sigma_squared).2
+  net_def := rfl
 
 end QOU.Archimedean
