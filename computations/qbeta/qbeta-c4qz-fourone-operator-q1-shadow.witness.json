@@ -1,0 +1,59 @@
+{
+  "computation": "qbeta-c4qz-fourone-operator-q1-shadow",
+  "description": "c4qz I-A gate: q=1 shadow of the 4_1 order-2 qZeilberger operator slotted into the c_k depth-2 kernel constraints (alpha_2 <-> c_2 = -1 identity; alpha_1 <-> -c_3 = 2 locus; slot bar-parities). Exact symbolic; kill criteria pre-stated in ledger SS4-bis (commit c9b873b6) before the run.",
+  "audit_only": true,
+  "tier": "structural-exact (symbolic q=1 shadow + bar-parity; no fit, no anchors)",
+  "computedAt": "2026-07-06T23:18:57.342392+00:00",
+  "commitSha": "c9b873b623b3164e085f65fa5983b4ba56e59fee",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "qbeta_c4qz_fourone_operator_q1_shadow_probe.py",
+  "scriptHash": "ea360cf9805c",
+  "assertions": [
+    {
+      "name": "K1a_alpha2_q1_identically_minus_one",
+      "passed": true
+    },
+    {
+      "name": "K1b_alpha1_q1_eq_2_has_real_positive_root",
+      "passed": true
+    },
+    {
+      "name": "locus_roots_bar_conjugate_pair_product_one",
+      "passed": true
+    },
+    {
+      "name": "K2_alpha1_bar_odd_up_to_monomial_twist",
+      "passed": false
+    },
+    {
+      "name": "K2_alpha2_bar_even_up_to_monomial_twist",
+      "passed": true
+    }
+  ],
+  "allPassed": false,
+  "result": {
+    "alpha1": "(q**5*x**5 - q**5*x**4 + q**5*x**3 - q**4*x**5 - 2*q**4*x**4 + 2*q**4*x**3 - q**4*x**2 + q**3*x**5 + q**3*x**3 - q**3*x - q**2*x**4 + 2*q**2*x**3 + q**2*x**2 - 2*q**2*x + q**2 - q*x**3 - 2*q*x + q + x**2 - x + 1)/(q**3*x**3 - q**2*x - q*x**2 + 1)",
+    "alpha2": "(-q**3*x**3 + q**3*x**2 + x - 1)/(q**3*x**3 - q**2*x - q*x**2 + 1)",
+    "alpha2_q1": "-1",
+    "alpha1_q1": "x**2 - 3*x + 3",
+    "locus_alpha1_eq_2_solutions": [
+      "3/2 - sqrt(5)/2",
+      "sqrt(5)/2 + 3/2"
+    ],
+    "locus_real_positive": [
+      "3/2 - sqrt(5)/2",
+      "sqrt(5)/2 + 3/2"
+    ],
+    "inhomogeneity_caveat": "operator is inhomogeneous (=b); homogeneous part tested",
+    "verdict": "KILL -- a pre-stated criterion failed; record a scope-(a) refutation row for I-A in the ledger and fall back to I-B / Z3 carriers. Do NOT run any anchor sweep."
+  },
+  "context": {
+    "axis": "z->c_k f-map keystone, bean c4qz (I-A q=1 shadow gate)",
+    "ledger_prestatement": "docs/coordination/z-ck-fmap-keystone.md SS4-bis (commit c9b873b6)",
+    "operator_source": "computations/aj_figure_eight_certificate.py (via P-C15 probe)",
+    "kernel_constraints": "QOU/BraidKnot/QBetaCKRecursionKernelConstraints.lean",
+    "pc15": "docs/audits/2026-07-03-qbeta-pc15-casoratian-bar-parity.md",
+    "ea56_exclusion": "QOU/QBeta/ZBarParity.lean + qbeta-z-bar-parity-fmap-class.witness.json"
+  }
+}
