@@ -1174,7 +1174,25 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/transfer-matrix-operator.lean:51:14: error(lean.unknownIdentifier): Unknown identifier `q_half`"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "1fa30a3539fb",
+          "ts": "7e97d20258ef",
+          "lean": "8fcabdecf94c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'def:transfer-matrix-operator' → expected 'transfer_matrix_operator'; Lean declares: CrossingCoeffs, TransferMatrixOp, ppCoeffs, nnCoeffs, mixCoeffs.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

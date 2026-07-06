@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-universes/categorical-connection.lean"
   },
   "source_hashes": {
-    "md": "37ce47b009cb",
+    "md": "1f8c011ac81a",
     "ts": "60c3a861796a",
     "lean": "f539f2fa815d"
   },
@@ -1175,7 +1175,25 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe over R with' are consistent."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "1f8c011ac81a",
+          "ts": "60c3a861796a",
+          "lean": "f539f2fa815d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.710Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'def:categorical-connection' → expected 'categorical_connection'; Lean declares: CategoricalConnection, ModuleAction. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-06T04:41:29.710Z"
 }

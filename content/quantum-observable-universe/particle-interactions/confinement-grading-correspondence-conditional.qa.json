@@ -1362,6 +1362,22 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "7a8f9d406419",
+          "ts": "1128c70fab45",
+          "lean": "f7939c40239a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'thm:confinement-grading-correspondence-conditional' aligns with Lean declaration. Sorry-free."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2082,5 +2098,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T05:15:12.693Z"
+  "updated_at": "2026-07-06T04:41:29.802Z"
 }

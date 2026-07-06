@@ -1159,6 +1159,22 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "85788b0c2909",
+          "ts": "a7b6e37c99ea",
+          "lean": "824f63be21f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:magic-shell-coupling-kappa' → expected 'magic_shell_coupling_kappa'; Lean declares: qBracket, hParam, E0, kappaClosed, HasMagicShellCouplingKappaClosedForm.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1859,5 +1875,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T04:39:43.766Z"
+  "updated_at": "2026-07-06T04:41:29.802Z"
 }

@@ -2158,7 +2158,25 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Numerical cross-check of CAL-2: $\\\\mathrm{Vol}(4_1)/\\\\hbar_q^2 = m_\\\\mu/m_e$ at 50 dps' are consistent."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "5569cd0cce4d",
+          "ts": "22f09cf20633",
+          "lean": "90213848aac6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'rem:figure-8-muon-mass-cross-check' → expected 'figure_8_muon_mass_cross_check'; Lean declares: vol_4_1, hbarQ, hbarQSq, muonRatioFromVol, cal2_identity_pinned.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-06T04:41:29.802Z"
 }

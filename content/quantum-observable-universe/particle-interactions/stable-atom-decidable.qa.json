@@ -2305,6 +2305,22 @@
         "reviewed_at": "2026-06-22T02:57:20.792Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "803cad2b2df9",
+          "ts": "a834a728b15a",
+          "lean": "1da4cdce9ac3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:stable-atom-decidable' → expected 'stable_atom_decidable'; Lean declares: StableAtom, StableAtom.decidable. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2778,5 +2794,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-06T04:41:29.802Z"
 }

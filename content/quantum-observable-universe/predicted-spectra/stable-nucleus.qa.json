@@ -1173,7 +1173,25 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/stable-nucleus.lean contains compilation errors: content/quantum-observable-universe/predicted-spectra/stable-nucleus.lean:26:13: error: unexpected token 'section'; expected 'lemma', invalidating the claimed formalization."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "9df21831cd45",
+          "ts": "83a1ae13998b",
+          "lean": "1a74c3fa3908"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:30.359Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'def:stable-nucleus' → expected 'stable_nucleus'; Lean declares: StableNucleus. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-06T04:41:30.359Z"
 }

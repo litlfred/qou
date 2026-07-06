@@ -51,7 +51,25 @@
         "reviewed_at": "2026-07-06T04:11:11.478Z",
         "reviewed_sha": "1804cf0916c26ee8a2f3d969adf8d59726f6c07c"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "7e1ff619b107",
+          "ts": "dd81eb3ca86e",
+          "lean": "8b5f8a519de1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:hecke-mass-trace' \u2192 expected 'hecke_mass_trace'; Lean declares: MarkovMassData, categoricalMassSquaredFromMarkov, MarkovMassData, categoricalMassFromMarkov, mass_markov_upper_bound.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-06T04:11:11.478Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

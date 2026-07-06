@@ -1125,6 +1125,22 @@
         "reviewed_at": "2026-06-22T02:56:21.834Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "898b8b2a7a29",
+          "ts": "02418d7f4d7b",
+          "lean": "b8fd0f21c0b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:30.202Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'thm:topological-charge-quantization' aligns with Lean declaration. Sorry-free."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1579,5 +1595,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.404Z"
+  "updated_at": "2026-07-06T04:41:30.202Z"
 }

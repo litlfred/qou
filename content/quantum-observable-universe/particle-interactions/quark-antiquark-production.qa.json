@@ -1275,7 +1275,25 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Quark--antiquark production from pair creation' are consistent."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "6ea6cd2b86b4",
+          "ts": "36609bcac7a5",
+          "lean": "e3202a418306"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'def:quark-antiquark-production' → expected 'quark_antiquark_production'; Lean declares: heckeH, hopfTrefoilNFCoeffs, quarkAntiquarkProduction, quark_antiquark_production_witness, QuarkAntiquarkProduction. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-06T04:41:29.802Z"
 }

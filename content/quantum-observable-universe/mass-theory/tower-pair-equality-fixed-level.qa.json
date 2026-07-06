@@ -1195,6 +1195,22 @@
         },
         "reviewed_at": "2026-06-28T22:34:58.468Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "eb95c0af3fe5",
+          "ts": "7b2eea85c89c",
+          "lean": "a774e36eb26c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'lem:tower-pair-equality-fixed-level' → expected 'tower_pair_equality_fixed_level'; Lean declares: JetLevelPairData, pairContribTotal, TowerPairEqualityFixedLevel, TowerPairEqualitySymmetric. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1975,5 +1991,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

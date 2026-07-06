@@ -1261,6 +1261,22 @@
         "severity": "major",
         "evidence": "generator-volume-decomposition.lean:127-131 'theorem generator_volume_decomposition_prop (q : ℝ) (A : ℕ) (nuclear_energy : ℝ) ... : nuclear_energy = generator_volume_decomposition q crossings_per_gen := by sorry'",
         "notes": "The ref decl's top-level statement equates a FREE variable nuclear_energy with the computed sum — it does not encode 'the nuclear energy decomposes as Σ generator volumes' (nuclear_energy is unconstrained, the claim is true only because of sorry), so it diverges from the narrative's substantive decomposition claim. Hypothesis h_len is unused (sorry). The proved sub-lemmas (energy_additive, beta_decay_locality) are genuine, but the manifest-referenced generator_volume_decomposition_prop is a sorry stub with a vacuous free-variable conclusion. (Note also crossingNN/crossingMixed reference an undefined q_half at lean:60,65 — a probable build error.)"
+      },
+      {
+        "field_hash": {
+          "md": "8d30490ffc3b",
+          "ts": "e96257a9059d",
+          "lean": "801e74fdc5b5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:generator-volume-decomposition' aligns with Lean declaration. Sorry-free."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2015,5 +2031,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-06T04:41:29.802Z"
 }

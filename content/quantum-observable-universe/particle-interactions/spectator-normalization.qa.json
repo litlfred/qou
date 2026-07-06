@@ -1171,7 +1171,25 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/spectator-normalization.lean for 'Spectator normalization factor' fails compilation with error: content/quantum-observable-universe/particle-interactions/spectator-normalization.lean:13:57: error: failed to synthesize. This invalidates the claim of formal verification."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "450e3c497604",
+          "ts": "0acba1f366a8",
+          "lean": "06907c55bc73"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'def:spectator-normalization' → expected 'spectator_normalization'; Lean declares: protonChannelSum', neutronChannelSum, spectatorNorm, spectatorSign, neg_pow_pos_iff.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-05T04:39:43.766Z"
+  "updated_at": "2026-07-06T04:41:29.802Z"
 }

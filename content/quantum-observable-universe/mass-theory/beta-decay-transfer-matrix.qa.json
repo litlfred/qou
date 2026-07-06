@@ -8,8 +8,8 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/beta-decay-transfer-matrix.lean"
   },
   "source_hashes": {
-    "md": "8b1dfd38c9f3",
-    "ts": "1e95851efe5a",
+    "md": "4b816c843889",
+    "ts": "51e566ac5e60",
     "lean": "71c0aed8e9bb"
   },
   "criteria": {
@@ -1231,6 +1231,22 @@
         },
         "reviewed_at": "2026-06-28T22:34:58.468Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "4b816c843889",
+          "ts": "51e566ac5e60",
+          "lean": "71c0aed8e9bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:beta-decay-transfer-matrix' → expected 'beta_decay_transfer_matrix'; Lean declares: TM, tm, T_pp, T_nn, T_mix.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1991,5 +2007,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

@@ -1991,7 +1991,25 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'The confinement category $\\\\mathbf{Conf}$' are consistent."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "2a1927800384",
+          "ts": "c89b37695e8e",
+          "lean": "01064a942ff1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'def:confinement-category' → expected 'confinement_category'; Lean declares: ConfinedParticleTy, ConfMorphism, ConfId, ConfComp, ConfComp_right_id.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-06T04:41:29.802Z"
 }

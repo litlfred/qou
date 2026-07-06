@@ -1635,7 +1635,25 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/universal-ilp-algorithm.lean for 'Universal ILP algorithm for operator selection' fails compilation with error: content/quantum-observable-universe/particle-interactions/universal-ilp-algorithm.lean:29:2: error: failed to synthesize. This invalidates the claim of formal verification."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "92bff9b83b3e",
+          "ts": "3fd308363d37",
+          "lean": "19c8ad5eb010"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'def:universal-ilp-algorithm' → expected 'universal_ilp_algorithm'; Lean declares: KnotOperator, gram_matrix, frobenius_positive, universal_ilp, universal_ilp_selects_minimum. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-06T04:41:29.802Z"
 }

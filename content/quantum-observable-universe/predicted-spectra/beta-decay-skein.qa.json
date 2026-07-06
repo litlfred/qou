@@ -1172,7 +1172,25 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean contains compilation errors: content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean:153:31: error: failed to synthesize, invalidating the claimed formalization."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "0fd3b29bf157",
+          "ts": "75a0a292bc7a",
+          "lean": "d4eb5fae6f9f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:30.359Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'def:beta-decay-skein' → expected 'beta_decay_skein'; Lean declares: WeakVertex, weakVertex, weak_vertex_crossings, crossing_budget_correct, NuclearLink.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-06T04:41:30.359Z"
 }

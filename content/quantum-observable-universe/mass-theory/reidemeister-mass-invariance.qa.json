@@ -1294,7 +1294,25 @@
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured algebraic or physical relations are unproven and remain as sorry stubs in the Lean file."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "4a3415a2b718",
+          "ts": "0ef709563107",
+          "lean": "cfa3901fc8d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'conj:reidemeister-mass-invariance' → expected 'reidemeister_mass_invariance'; Lean declares: R_q, ReidemeisterMove, IsKnotInvariant, IsRegularInvariant, knot_invariant_is_regular.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-04T00:30:14.885Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

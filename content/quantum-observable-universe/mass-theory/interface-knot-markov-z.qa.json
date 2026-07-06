@@ -184,7 +184,25 @@
         "reviewed_at": "2026-07-05T05:27:20.305Z",
         "reviewed_sha": "e28e45e2256ea73187107f230cc7beeb37a6c301"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "e261df7797ac",
+          "ts": "1b90654eae98",
+          "lean": "dae5a5208a2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:interface-knot-markov-z' aligns with Lean declaration. Sorry-free."
+      }
     ]
   },
-  "updated_at": "2026-07-05T05:27:20.305Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

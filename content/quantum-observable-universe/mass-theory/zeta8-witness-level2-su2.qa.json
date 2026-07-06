@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "b228f7a7c59d",
     "ts": "a7c34f50136e",
-    "lean": "039419ccded8"
+    "lean": "21b690eda41c"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1143,6 +1143,22 @@
         "reviewed_at": "2026-06-24T18:30:00.000Z",
         "reviewed_sha": "4d477bc4504f79f8842039c16381ccf7b2a1db54",
         "notes": "Narrative already documents the Lean sorry deferral in its '## Lean formalization' section (cites Wenzl 1987 / Jones 1987 / Witten 1989); narrative<->Lean consistent -- prior fail was stale."
+      },
+      {
+        "field_hash": {
+          "md": "b228f7a7c59d",
+          "ts": "a7c34f50136e",
+          "lean": "21b690eda41c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:zeta8-witness-level2-su2' → expected 'zeta8_witness_level2_su2'; Lean declares: qPoch, qPoch_seven_eq_eight, zeta_pow_ne_one, hecke_eigenvalues, qInt.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1867,5 +1883,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

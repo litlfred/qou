@@ -2203,6 +2203,22 @@
         "severity": "major",
         "evidence": "nuclear-groebner-reduction.lean:49-52 'theorem nuclear_groebner_reduction (Z N : ℕ) : ∃ (uniqueForm : HeckeElement... ), nuclearBraidNormalForm Z N = uniqueForm := by sorry' vs md:5-6 '...produces a unique normal form'",
         "notes": "Resolution per §0a takes the block sibling FIRST: the sibling stub theorem proves only ∃ uniqueForm, nuclearBraidNormalForm Z N = uniqueForm — a trivial existence (closable by ⟨_, rfl⟩), NOT the uniqueness / path-independence the narrative asserts. (The richer library decl at lean/QOU/Archimedean/NuclearGroebnerReduction.lean states a Prop with reducedness+uniqueness via the normal_form_exists_unique axiom, but that is a different declaration the ref does not resolve to first.) Conclusion divergence: narrative=uniqueness, resolved Lean=trivial existence stub."
+      },
+      {
+        "field_hash": {
+          "md": "9af042539bd6",
+          "ts": "cc5a3e015b3d",
+          "lean": "5df091a2aa14"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Lean sibling is a stub/re-exporter; canonical formalisation lives in a Lake package and is audited by lean-compile-audit."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2957,5 +2973,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-06T04:41:29.802Z"
 }

@@ -431,6 +431,22 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "sl2Invariant_succ / sl2Invariant_eq_zeroth (the .ts ref resolves to sl2Invariant_eq_zeroth) faithfully encode H_{n+1}=H_n and H_n=H_0 under the recurrence hypothesis ∀n, a(n+2)=τ·a(n+1)−a(n)."
+      },
+      {
+        "field_hash": {
+          "md": "e63c7bd508b2",
+          "ts": "22ae8ded8568",
+          "lean": "ec6c282a3323"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:sl2-period-conserved-quantity' → expected 'sl2_period_conserved_quantity'; Lean declares: sl2Invariant, sl2Invariant_succ, sl2Invariant_eq_zeroth. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -912,5 +928,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

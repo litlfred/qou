@@ -1215,6 +1215,22 @@
         "reviewed_at": "2026-06-28T22:44:56.705Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "158f1e3d877b",
+          "ts": "8836d62e2abb",
+          "lean": "d856c0487df4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'cor:habiro-expansion-atomic' aligns with Lean declaration. Sorry-free."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2182,5 +2198,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T05:15:13.679Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

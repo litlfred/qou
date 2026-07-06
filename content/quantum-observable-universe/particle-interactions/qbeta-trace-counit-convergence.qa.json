@@ -2315,7 +2315,25 @@
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured relations in 'Trace–counit convergence of the $\\\\mathfrak{Q}_\\\\beta$ mass difference' remain unproven and are represented only by sorry stubs in the formalization content/quantum-observable-universe/particle-interactions/qbeta-trace-counit-convergence.lean."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "e97163394dce",
+          "ts": "a5045a26f4f1",
+          "lean": "5d81f8abaa07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Conjecture with class/axiom axiomatisation — structural match."
+      }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-06T04:41:29.802Z"
 }

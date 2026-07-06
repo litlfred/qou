@@ -2712,6 +2712,22 @@
         "severity": "major",
         "evidence": "q-beta-spectral-bridge.lean:228-241 'theorem q_beta_spectral_bridge : (∀ h z, (h(2-h)/2)·z = (1-h/2)(zh)) ∧ ... (two more polynomial identities)' vs md:31-43 full bridge ratio + exp-remainder bound",
         "notes": "The ref decl q_beta_spectral_bridge faithfully encodes only the three polynomial identities (the algebraic core of the proof), not the full narrative conclusion (the 1+(z-1)h/2+O(h²) bridge ratio with Real.log, plus the conj-conditional exponential remainder). The docstring acknowledges this scope split; the analytic part lives in separate (axiom-backed) lemmas. Reconcilable scope gap rather than a theorem-changing divergence → warn."
+      },
+      {
+        "field_hash": {
+          "md": "336d7234f2f8",
+          "ts": "060bdf70f453",
+          "lean": "7cb711834ffe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:q-beta-spectral-bridge' aligns with Lean declaration. Sorry-free."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -3615,5 +3631,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-06T04:41:29.802Z"
 }

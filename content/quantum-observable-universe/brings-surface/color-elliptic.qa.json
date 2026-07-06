@@ -1239,6 +1239,22 @@
         "severity": "major",
         "evidence": "lean/QOU/Brings/color_elliptic.lean:48-52: `theorem color_elliptic [ctx : ColorEllipticContext] : ctx.X^3 + ... = 0 := ctx.claim_color_elliptic`",
         "notes": "lean.ref resolves to the library stub QOU.Brings.color_elliptic (candidate 2; the sibling color-elliptic.lean is a different namespace of ring-identity helpers). The resolved theorem encodes only the cubic identity X^3+...=0, and does so by ASSUMING it as a class field — the .md's headline claim ('for generic z this defines an elliptic curve; j-invariant varies rationally') is not derived. Conclusion (cubic equation) does match the displayed .md equation, hence warn not fail, but the elliptic-curve result is unformalised and assumed."
+      },
+      {
+        "field_hash": {
+          "md": "93e9c72aceec",
+          "ts": "9da0df7b86b8",
+          "lean": "4687b1a43a85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:30.202Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:color-elliptic' → expected 'color_elliptic'; Lean declares: R_q, q_param, q_inv_param, ColorEllipticFibre, colorCubic.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1863,5 +1879,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-06T04:41:30.202Z"
 }

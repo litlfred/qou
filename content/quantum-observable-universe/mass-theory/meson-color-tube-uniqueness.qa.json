@@ -1171,6 +1171,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean proof is incomplete and fails to compile, so equivalence cannot be verified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "acafff604d09",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:meson-color-tube-uniqueness' → expected 'meson_color_tube_uniqueness'; Lean declares: alphaShift, alphaShift_T_2_3, alphaShift_T_2_4, QChar, MesonGMORFactorization.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1822,5 +1838,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

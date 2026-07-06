@@ -1171,7 +1171,25 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/borromean-baryon.lean for 'Borromean baryon' fails compilation with error: content/quantum-observable-universe/particle-interactions/borromean-baryon.lean:13:16: error: failed to synthesize. This invalidates the claim of formal verification."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "42198fa35594",
+          "ts": "e41f2b94872e",
+          "lean": "561c7772855a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'def:borromean-baryon' → expected 'borromean_baryon'; Lean declares: BorromeanBaryon, BorromeanBaryon.charge, borromean_volume_pos. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-05T04:39:43.766Z"
+  "updated_at": "2026-07-06T04:41:29.802Z"
 }

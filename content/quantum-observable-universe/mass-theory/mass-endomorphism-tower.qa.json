@@ -51,7 +51,25 @@
         "reviewed_at": "2026-07-06T04:11:11.478Z",
         "reviewed_sha": "1804cf0916c26ee8a2f3d969adf8d59726f6c07c"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "83a47f59e02c",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:mass-endomorphism-tower' \u2192 expected 'mass_endomorphism_tower'; Lean declares: quantumDilogPoly, markovParamPoly, massPoly, proton_electron_ratio. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-06T04:11:11.478Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

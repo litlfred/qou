@@ -2361,6 +2361,22 @@
         "reviewed_at": "2026-06-22T02:57:20.755Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "e2343a14966d",
+          "ts": "080bf3a55a04",
+          "lean": "a88417ddfd6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:atom-knot-exists' → expected 'atom_knot_exists'; Lean declares: AtomKnot.exists. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2814,5 +2830,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-06T04:41:29.802Z"
 }

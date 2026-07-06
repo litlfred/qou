@@ -1454,7 +1454,25 @@
         "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.lean is missing, leading to complete divergence.",
         "severity": "minor"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "001619590869",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'def:q-reeb-flow-on-color-coords' → expected 'q_reeb_flow_on_color_coords'; Lean declares: qReebFlowSector, qReebFlowSector_comp, qReebFlowSector_spectator. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

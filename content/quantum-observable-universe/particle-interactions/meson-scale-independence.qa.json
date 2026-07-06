@@ -2732,6 +2732,22 @@
         "severity": "major",
         "evidence": "meson-scale-independence.lean:8-16: 'theorem meson_scale_independence : ¬ ∃ (f : ℝ→ℝ→ℝ), ∀ (m_e q_0 m_pi : ℝ), m_pi = f m_e q_0' proved by exhibiting f 0 0 = 0 and = 1 (witness m_e=q_0=0, m_pi∈{0,1}). The .md states the substantive rep-theoretic/topological claim that m_π is not determined by (m_e,q_0) because Vol(Hopf-complement)=0.",
         "notes": "Theorem-changing divergence. The Lean encodes a logical triviality: ¬∃f.∀ m_pi. m_pi=f(m_e,q_0) is false for ANY two-argument f (a function of (m_e,q_0) cannot equal every real m_pi), provable with zero QOU content and no Hecke/Hopf input. It does not capture the narrative claim that the QOU substrate map specifically fails to fix m_π. The .md even says (line 50) the Lean 'defers its proof via sorry' — but the actual Lean is a non-sorry vacuous restatement, contradicting the .md's own description. Routes to proof-narrative-lean-equivalence / lean-proof-review."
+      },
+      {
+        "field_hash": {
+          "md": "600add212d72",
+          "ts": "bbfb4081d610",
+          "lean": "a6d255d37038"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:meson-scale-independence' aligns with Lean declaration. Sorry-free."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -3485,5 +3501,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T10:57:47.156Z"
+  "updated_at": "2026-07-06T04:41:29.802Z"
 }

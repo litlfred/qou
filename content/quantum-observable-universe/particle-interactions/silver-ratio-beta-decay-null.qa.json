@@ -1357,6 +1357,22 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "c88d232a39c9",
+          "ts": "0637e45a9241",
+          "lean": "35517d44d4a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:silver-ratio-beta-decay-null' → expected 'silver_ratio_beta_decay_null'; Lean declares: heckeSkein, deltaNet, silver_ratio_polynomial_root, beta_decay_null_iff_h_zero_or_two, hecke_quadratic_silver_ratio_self_referential.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2850,5 +2866,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T04:39:43.766Z"
+  "updated_at": "2026-07-06T04:41:29.802Z"
 }

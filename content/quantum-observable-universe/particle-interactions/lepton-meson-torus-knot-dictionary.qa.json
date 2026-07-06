@@ -2300,6 +2300,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean proof is incomplete and fails to compile, so equivalence cannot be verified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "1444b7b14067",
+          "ts": "038c8f53fedb",
+          "lean": "19294c152ec2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:lepton-meson-torus-knot-dictionary' → expected 'lepton_meson_torus_knot_dictionary'; Lean declares: leptonTorusKnotIndex, mesonCrossingCount, lepton_meson_crossing_match, meson_crossing_is_sum. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2753,5 +2769,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-06T04:41:29.802Z"
 }

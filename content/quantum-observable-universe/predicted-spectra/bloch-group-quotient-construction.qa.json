@@ -51,7 +51,25 @@
         "reviewed_at": "2026-07-06T04:11:13.442Z",
         "reviewed_sha": "1804cf0916c26ee8a2f3d969adf8d59726f6c07c"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "4e5c1f370998",
+          "ts": "61a6947286a9",
+          "lean": "54f4c0126d5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:30.359Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:bloch-group-quotient-construction' \u2192 expected 'bloch_group_quotient_construction'; Lean declares: PentagonShape, pentagonGenerator, RogersPair, RogersPair.shape, one_sub_inv_ne_zero.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-06T04:11:13.442Z"
+  "updated_at": "2026-07-06T04:41:30.359Z"
 }

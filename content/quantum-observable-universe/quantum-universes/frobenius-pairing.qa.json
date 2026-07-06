@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-universes/frobenius-pairing.lean"
   },
   "source_hashes": {
-    "md": "d6c1283c2966",
+    "md": "bea2ef79d338",
     "ts": "5e442650695a",
     "lean": "175aaf598049"
   },
@@ -1175,7 +1175,25 @@
         "reviewed_at": "2026-07-05T11:55:26.473Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "bea2ef79d338",
+          "ts": "5e442650695a",
+          "lean": "175aaf598049"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.710Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'def:frobenius-pairing' → expected 'frobenius_pairing'; Lean declares: FrobeniusPairing, FrobeniusHopfData.canonicalPairing, FrobeniusPairing.symmetric_of_comm, FrobeniusPairing.NonDegenerate, FrobeniusHopfData.hasNonDegeneratePairing. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-06T04:41:29.710Z"
 }

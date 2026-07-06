@@ -1139,6 +1139,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean proof is incomplete and fails to compile, so equivalence cannot be verified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "6a876178cc6b",
+          "ts": "3392f004fab7",
+          "lean": "039595d7d0b9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:degree-two-baryon-weight' → expected 'degree_two_baryon_weight'; Lean declares: qInt, qInt3_approx, beta2, beta2_approx. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1605,5 +1621,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T04:39:43.766Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

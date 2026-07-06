@@ -1172,6 +1172,22 @@
         "notes": "The Lean proof is a structural stub, which does not fully capture the narrative proof.",
         "evidence": "content/quantum-observable-universe/mass-theory/binding-genfun-qdifference.lean:1 — sorry present",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a",
+          "lean": "94e6ef3b8fac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:binding-genfun-qdifference' → expected 'binding_genfun_qdifference'; Lean declares: BindingQDifferenceRecurrence, binding_qdifference_recurrence. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1732,5 +1748,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

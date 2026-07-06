@@ -1125,6 +1125,22 @@
         "reviewed_at": "2026-06-22T02:57:19.297Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "65e17e00639b",
+          "ts": "d9cbb64c5605",
+          "lean": "0406533cff0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.710Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:frobenius-pairing-unique' → expected 'frobenius_pairing_unique'; Lean declares: FrobeniusHopfData.frobeniusForm_unique_axiom, FrobeniusHopfData.frobeniusForm_unique. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1602,5 +1618,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-06T04:41:29.710Z"
 }

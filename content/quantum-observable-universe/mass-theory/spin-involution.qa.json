@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/spin-involution.lean"
   },
   "source_hashes": {
-    "md": "bed5eb072c48",
+    "md": "548cd89b51ad",
     "ts": "6a140f246da8",
-    "lean": "0d16c4296710"
+    "lean": "1c6111a52c7a"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -32,7 +32,25 @@
         "reviewed_at": "2026-07-03T00:52:56.534Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "548cd89b51ad",
+          "ts": "6a140f246da8",
+          "lean": "1c6111a52c7a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'def:spin-involution' → expected 'spin_involution'; Lean declares: SpinInvolution, spin_involution_bijective, SpinInvolution.map_zero, SpinInvolution.map_neg, SpinInvolution.map_sub.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

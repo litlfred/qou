@@ -1346,6 +1346,22 @@
         "reviewed_at": "2026-06-22T02:57:21.824Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "4463fde7c3b9",
+          "ts": "7f74fbf6f8a9",
+          "lean": "c05762810c54"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:c-equals-bar-iff-all-1dim' → expected 'c_equals_bar_iff_all_1dim'; Lean declares: h2_all_one_dim, two_only_unit_squares, h3_has_multidim, factorial_exceeds_two_squares, exactly_two_one_dim_irreps.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1819,5 +1835,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T05:15:12.693Z"
+  "updated_at": "2026-07-06T04:41:29.802Z"
 }

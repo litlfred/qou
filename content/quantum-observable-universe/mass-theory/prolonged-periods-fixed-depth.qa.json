@@ -1459,6 +1459,22 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Lean theorem takes M, d, c, hCH (the Cayley-Hamilton relation M^d=Sum c_j M^j) and n, concluding M^(n+d)=Sum c_j M^(n+j) for every n. Narrative states the same operator recurrence with n-independent kernel, with the finite-rank/Cayley-Hamilton premise (= hCH) cited as the structural input and the scalar period recurrence following by applying phi(.,v0). Quantifiers, the CH hypothesis, and conclusion match."
+      },
+      {
+        "field_hash": {
+          "md": "5bbb164e6e5a",
+          "ts": "9940887f0b9e",
+          "lean": "de8bea51bf0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:prolonged-periods-fixed-depth' → expected 'prolonged_periods_fixed_depth'; Lean declares: prolongation_fixed_depth_recurrence. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2036,5 +2052,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }
