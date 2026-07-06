@@ -43,6 +43,10 @@ _PROVENANCE = {
     "computedAt", "commitSha", "scriptCommitSha", "scriptHash", "durationMs",
     "engineVersion", "engine", "engine_version", "generatedAt", "timestamp",
     "scipy", "numpy", "mpmath", "python", "hostname", "wall_seconds",
+    # tool/binding versions — added to witnesses after they were committed;
+    # a version string appearing/changing is provenance, not a q₀ regression.
+    "pyhecke_native", "pyhecke", "hecke_engine", "hecke-engine", "clarabel",
+    "sympy", "snappy", "platform", "git_commit", "gitCommit",
 }
 
 

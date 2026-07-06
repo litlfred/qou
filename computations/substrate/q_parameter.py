@@ -141,22 +141,37 @@ if _anchor in ("ideal", "muon", "canonical"):
         denom_corr = (_Q**n - _QI**n) * (1 + _QI**2) / _HA
         return abs(num_deriv / _HA - denom_corr / _HA) * _QE
 
+    # ── derived uncertainty family, recomputed over the muon Q ──
+    # The `import *` above brought PROTON-era Q_INV_ERR/HA_ERR/… (constants.py
+    # lines 116-121); leaving them bound to the proton Q while Q itself is now
+    # muon makes uncertainty propagation inconsistent for the ~6 downstream
+    # importers (e.g. mass-from-q-symbolic.py imports HA_ERR/S_SKEIN_ERR/…).
+    # Q_ERR stays the anchor's absolute q-uncertainty (~3.2e-12); only the
+    # Q-dependent derivatives are re-evaluated at the muon point.
+    Q_INV_ERR     = Q_ERR / Q**2
+    HA_ERR        = Q_ERR * (1 + Q_INV**2)
+    E_CROSS_ERR   = 0.5 * HA_ERR
+    S_SKEIN_ERR   = Q_ERR * 0.5 * (Q**(-0.5) + Q**(-1.5))
+    TWO_Q_ERR     = Q_ERR * abs(1 - Q_INV**2)
+    TANH_LN_Q_ERR = Q_ERR * 2.0 / TWO_Q**2
+
     # ── mpmath _MP family (mirror constants.py lines 249-266, muon base) ──
     try:
         import mpmath as _mp
-        _prev = _mp.mp.dps
-        _mp.mp.dps = max(_prev, 60)
-        Q_MP         = _mp.mpf(_d["q"])
-        Q_INV_MP     = _mp.mpf(1) / Q_MP
-        HBAR_Q_MP    = _mp.mpf(1) - Q_INV_MP
-        HBAR_Q_SQ_MP = HBAR_Q_MP ** 2
-        HA_MP        = Q_MP - Q_INV_MP
-        E_CROSS_MP   = HA_MP / 2
-        S_SKEIN_MP   = _mp.sqrt(Q_MP) - _mp.mpf(1) / _mp.sqrt(Q_MP)
-        TWO_Q_MP     = Q_MP + Q_INV_MP
-        TANH_LN_Q_MP = HA_MP / TWO_Q_MP
-        LN_Q_MP      = _mp.log(Q_MP)
-        _mp.mp.dps = _prev
+        # workdps() restores mp.dps on ANY exit path (the manual save/restore
+        # leaked the elevated dps to downstream compute if a witness key/type
+        # was unexpected — the swallowing `except` below would hide it).
+        with _mp.workdps(max(_mp.mp.dps, 60)):
+            Q_MP         = _mp.mpf(_d["q"])
+            Q_INV_MP     = _mp.mpf(1) / Q_MP
+            HBAR_Q_MP    = _mp.mpf(1) - Q_INV_MP
+            HBAR_Q_SQ_MP = HBAR_Q_MP ** 2
+            HA_MP        = Q_MP - Q_INV_MP
+            E_CROSS_MP   = HA_MP / 2
+            S_SKEIN_MP   = _mp.sqrt(Q_MP) - _mp.mpf(1) / _mp.sqrt(Q_MP)
+            TWO_Q_MP     = Q_MP + Q_INV_MP
+            TANH_LN_Q_MP = HA_MP / TWO_Q_MP
+            LN_Q_MP      = _mp.log(Q_MP)
     except ImportError:
         pass
   except Exception as _exc:  # leave proton values if witness unreadable
