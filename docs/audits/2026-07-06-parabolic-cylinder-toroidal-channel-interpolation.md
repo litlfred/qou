@@ -2,7 +2,8 @@
 
 **Date:** 2026-07-06
 **Branch:** `claude/parabolic-cylinder-channel-interpolation-5m9scj`
-**Status:** EXPLORATORY (per `local/production-vs-exploratory-discipline`). Nothing
+**Status:** EXPLORATORY (per
+[`local/production-vs-exploratory-discipline`](../../.claude/skills/local/production-vs-exploratory-discipline.md)). Nothing
 here wires to production compute. Leads are marked as leads; the only claims
 stated as fact are (i) classical special-function facts and (ii) corpus results
 cited by file path.
