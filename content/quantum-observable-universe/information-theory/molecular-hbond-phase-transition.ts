@@ -8,9 +8,9 @@ export default remark({
   computation: {
     engine: "python",
     status: "verified",
-    script: "folio-assistant/computations/hbond_categorical_action.py",
+    script: "computations/hbond_categorical_action.py",
     witness: [
-      "folio-assistant/computations/hbond-categorical-action.witness.json",
+      "computations/hbond-categorical-action.witness.json",
     ],
   },
   uses: [

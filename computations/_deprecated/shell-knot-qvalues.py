@@ -20,7 +20,7 @@ For small nuclei (A <= 6), the torus knots are trivial because
 they have fewer crossings than the knot requires. We check this.
 
 Usage:
-    cd folio-assistant/computations && python3 shell-knot-qvalues.py
+    cd computations && python3 shell-knot-qvalues.py
 """
 import math
 import json

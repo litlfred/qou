@@ -28,7 +28,7 @@ References:
 - prop:hecke-branching-trace-decomposition (operator-valued interface)
 - prop:q-hecke-seminormal-character-closure (this PR's closure)
 
-@module folio-assistant/computations/canonical_braid_crossings
+@module computations/canonical_braid_crossings
 """
 
 from __future__ import annotations

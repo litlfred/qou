@@ -1,5 +1,5 @@
 import Mathlib.Data.Real.Basic
-import Mathlib.Data.Nat.Defs
+import Mathlib.Data.Nat.Basic
 
 /-!
 # Chirality as continuous phase rotation (conjectural)
@@ -11,7 +11,7 @@ the particle/antiparticle distinction is governed by the phase
 rotation upon projection to the observable sector.
 
 -- Ref: [manuscript]
-Per `CLAUDE.md §3b-cond`, opaque Props + class fields + sorry
+Per `AGENTS.md §3b-cond`, opaque Props + class fields + sorry
 instance per claim.
 
 ## References
@@ -50,7 +50,7 @@ class ComplexChiralityRotation : Prop where
 
 -- Ref: [manuscript] conj:complex-chirality-rotation
 instance complex_chirality_rotation_conjecture : ComplexChiralityRotation where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   crossing_energy_phase := fun _ => sorry
   -- Ref: [manuscript]
   chirality_interpolation := fun _ => sorry

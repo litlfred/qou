@@ -154,12 +154,12 @@ WOULD be a productive next probe" below — now revised).
 | **[#1712](https://github.com/litlfred/qou/pull/1712)** | m_p linking_weight (2.532780 → 2.461648) + ²H/³H binding-link canonical object | **direct overlap on A=2, A=3 levels**. Will post intent comment. |
 | **[#1709](https://github.com/litlfred/qou/pull/1709)** | volume-Wedderburn Δ_λ probe; q-6j saddle isolated | adjacent — Δ_λ closure path runs in parallel to f(Z, N) derivation |
 | **[#1713](https://github.com/litlfred/qou/pull/1713)** | Q_β Habiro fibre F(q) categorical ID | upstream — closes the same Hecke-block structure that A≥4 derivation needs |
-| **[#1714](https://github.com/litlfred/qou/pull/1714)** | KL recursion H_5 / H_6 scaffold (Iwahori-Hecke; the PR's title uses S_n but the q-deformed object is the Hecke algebra per CLAUDE.md §7a) | upstream for Option-E PROBE 4; Demazure crystal closure path |
+| **[#1714](https://github.com/litlfred/qou/pull/1714)** | KL recursion H_5 / H_6 scaffold (Iwahori-Hecke; the PR's title uses S_n but the q-deformed object is the Hecke algebra per AGENTS.md §7a) | upstream for Option-E PROBE 4; Demazure crystal closure path |
 | **[#1516](https://github.com/litlfred/qou/pull/1516)** | Option-E Phase 2 H_3 + H_6 + PROBE 4 | parallel Δ_λ path |
 
 ## What WOULD be a productive next probe (next session, not this one)
 
-Per CLAUDE.md Δ_λ gate ("**do not propose a seventh fit-based
+Per AGENTS.md Δ_λ gate ("**do not propose a seventh fit-based
 ansatz**") and the 2026-05-30 retraction (selection-bias fitting is
 forbidden), the productive directions — **revised in light of the
 17:00–17:35Z Δ_λ landings above** — are:
@@ -205,8 +205,8 @@ upstream pieces.
 
 ## Cross-refs
 
-- [`CLAUDE.md`](../../CLAUDE.md) §Precision goals (L2 trio shared root)
-- [`CLAUDE.md`](../../CLAUDE.md) §Δ_λ gate (no 7th ansatz)
-- [`CLAUDE.md`](../../CLAUDE.md) §"Before declaring open math" checklist (corpus-grep)
+- [`AGENTS.md`](../../AGENTS.md) §Precision goals (L2 trio shared root)
+- [`AGENTS.md`](../../AGENTS.md) §Δ_λ gate (no 7th ansatz)
+- [`AGENTS.md`](../../AGENTS.md) §"Before declaring open math" checklist (corpus-grep)
 - [`docs/coordination/2026-05-30-a567-and-alpha-em-coupling.md`](2026-05-30-a567-and-alpha-em-coupling.md)
 - [`docs/workplans/2026-05-29-a567-atom-knot-sdp.md`](../workplans/2026-05-29-a567-atom-knot-sdp.md)

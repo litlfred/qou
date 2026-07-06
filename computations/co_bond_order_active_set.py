@@ -5,7 +5,7 @@ CO bond order from the LP active set.
 Tests the hypothesis (owner, 2026-06-08): the bond order of a covalent
 bond equals the cardinality of the active set of the bond-selection LP —
 the number of shared-pair channels whose marginal binding shadow price is
-strictly positive ("SDP active-set = bond order", CLAUDE.md).
+strictly positive ("SDP active-set = bond order", AGENTS.md).
 
 For each candidate shared pair k = 1..K_MAX we compute the reduced
 covalent-channel Phi_1 (interleaved (2k+2)-strand channel, B3-dressed pe
@@ -26,7 +26,7 @@ O 2+dative) also limits the order; this script isolates the *energetic*
 active set and flags whether energy alone reproduces 3 or whether the
 valence cap is the binding constraint.
 
-Emits primal + dual (y_star, active_set, duality_gap) per the CLAUDE.md
+Emits primal + dual (y_star, active_set, duality_gap) per the AGENTS.md
 LP/SDP-dual rule.  Zero hardcoded constants: the molecular energy scale
 E_MOL = E_hartree / [2]_q^2 is derived from q0.
 
@@ -276,7 +276,7 @@ def main():
     w.add_data("marginals_eV", [m * E_MOL for m in marginals])
     w.add_data("sigma_channel_eV", marginals[0] * E_MOL)   # the one bound pair
     w.add_data("observed_D0_CO_eV", D0_CO_EV)              # from experimental_constants (not inline)
-    # LP primal + dual (CLAUDE.md LP-dual schema)
+    # LP primal + dual (AGENTS.md LP-dual schema)
     w.add_data("y_star", y_star)
     w.add_data("y0_star", 0.0)                # no net-conservation constraint in box LP
     w.add_data("active_set", active_set)

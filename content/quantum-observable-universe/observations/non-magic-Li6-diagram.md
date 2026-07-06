@@ -54,7 +54,7 @@ relative strengths of the three frayed components. The resulting
 $\Phi_6$ has *non-zero off-diagonal full-twist flux vectors* — it is
 not a fixed point of $\Delta_6^2$.
 
-## What the diagram shows
+## Content of the diagram
 
 The diagrammatic illustration in this example block is, schematically:
 
@@ -71,7 +71,7 @@ Where the $^{40}\mathrm{Ca}$ diagram has a single arrow to a single
 $\nu$, the $^{6}\mathrm{Li}$ diagram has a fan of arrows producing
 the full Wedderburn spread.
 
-## Why $^{6}\mathrm{Li}$ is loosely bound
+## Loose binding of $^{6}\mathrm{Li}$
 
 The empirical $^{6}\mathrm{Li}$ binding energy is $31.99$ MeV
 ($5.33$ MeV/nucleon) — far below the $8.55$ MeV/nucleon of

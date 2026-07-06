@@ -8,7 +8,7 @@ prop:
 
 at q = q_0 and M_N = (m_p + m_n)/2.
 
-CLASS-A acknowledged-stub status (CLAUDE.md §canonical-discipline):
+CLASS-A acknowledged-stub status (AGENTS.md §canonical-discipline):
 M_N is anchored on CODATA m_p + m_n (the `_VALIDATION` constants in
 `codata_constants`), which is acknowledged to be a CAL-3-ish
 calibration input pending its own substrate derivation.  This is

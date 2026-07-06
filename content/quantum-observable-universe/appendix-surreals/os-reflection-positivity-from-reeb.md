@@ -35,7 +35,7 @@ Euclidean Wightman correlation functions
 $\tau_{\mathrm{arch}}\bigl(\langle \phi_1 \cdots \phi_n \rangle_F\bigr)$
 on the $\varepsilon \to 0$ standard manifold $\mathbb{R}^4$.*
 
-## Why $\mathbb{Z}_2 \subset U(1)_{\xi}$ is the OS reflection
+## Identification of $\mathbb{Z}_2 \subset U(1)_{\xi}$ as the OS reflection
 
 The Osterwalder–Schrader reflection $\theta_{\mathrm{OS}}$ on
 Euclidean spacetime is reflection in the $\tau = 0$ hyperplane,
@@ -55,7 +55,7 @@ There is therefore no separate OS reflection to construct: it is
 already present in the categorical infrastructure as the
 $\mathbb{Z}_2$ subgroup of the Reeb circle.
 
-## Why the Frobenius pairing automatically respects it
+## Automatic respect by the Frobenius pairing
 
 The Frobenius pairing is by construction symmetric:
 $\Psi = S^2 = \mathrm{id}_A$, so
@@ -76,7 +76,7 @@ needed is that the antipode-twisted pairing $\langle \theta(\cdot),
 \cdot \rangle_F$ descends through $\tau_{\mathrm{arch}}$ to a
 positive-definite inner product on the half-line $L^2(\mathbb{R}_{>0})$.
 
-## Why the surreal bound + this conjecture $\Rightarrow$ Wightman
+## The surreal bound + this conjecture $\Rightarrow$ Wightman
 
 The Osterwalder–Schrader theorem
 [`osterwalder1973`, `osterwalder1975`] states: a family of Euclidean
@@ -104,7 +104,7 @@ the Yang–Mills millennium statement that
 [`yang-mills-surreal-bound`](#rem:yang-mills-surreal-bound) flagged
 as outstanding.
 
-## Why it is conjectural
+## Conjectural status
 
 The positivity statement involves three open ingredients:
 
@@ -213,7 +213,7 @@ $\phi$ in the positive-time Reeb half.*
 The three steps chain: granting the substrate axiom, OS reflection
 positivity follows. $\square$ (proof sketch)
 
-**What's actually open.** The status of OS reflection positivity in
+**The remaining open input.** The status of OS reflection positivity in
 the QOU framework is therefore equal to the status of this single
 $C^*$-Frobenius positivity axiom. The axiom is well-formulated
 inside the existing Müger / BKLR theory of unitary fusion categories

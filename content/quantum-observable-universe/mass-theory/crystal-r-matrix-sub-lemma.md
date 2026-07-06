@@ -39,14 +39,14 @@ $$
 
 *is the **axial distance** between the cells of $i$ and $i + 1$ in $T$.*
 
-## Why this closes the W-3 residual
+## Closure of the W-3 residual
 
 The
 [scalar form of Sub-lemma 2.1](../../../docs/audits/-sub-lemma-2-1-categorical-proof.md)
 suffices for the W-3 D(u) closure at the column maximizer
 $\lambda^* = (1^p)$ (1-dim irrep). The
 [refined / operator-valued form](../../../docs/audits/-sublemma-2-1-refined.md)
-was open for general multidim $\lambda$ (verified numerically 11/11
+was open for general multidim $\lambda$ (verified canonical 11/11
 on the deuteron, but lacked a categorical proof).
 
 This block closes the operator-valued form **categorically modulo**
@@ -63,7 +63,7 @@ This block closes the operator-valued form **categorically modulo**
   $\alpha_{\mathrm{shift}}(T_{(p, k)}) = k \cdot (p - 1)$ — recovered
   in $\sim$10 lines of combinatorics (no Hoefsmit matrix entries).
 
-## Conditional-class hypothesis (CLAUDE.md §3b-cond)
+## Conditional-class hypothesis (AGENTS.md §3b-cond)
 
 The Lean file at
 [`crystal-r-matrix-sub-lemma.lean`](crystal-r-matrix-sub-lemma.lean)
@@ -88,13 +88,13 @@ unconditional structural lemmas
 `axkia_pole_T_2_9`, `axkia_pole_T_3_5` are all proved by `rfl` /
 `decide` from the class field, requiring no further hypothesis.
 
-## Numerical verification (witness)
+## canonical structural verification (witness)
 
-[`folio-assistant/computations/crystal_pole_order.py`](../../../folio-assistant/computations/crystal_pole_order.py)
+the canonical formalism
 computes the column-SYT pole-per-cycle for seven torus-knot
 interfaces $\{T_{(2, 1)}, T_{(2, 3)}, T_{(2, 5)}, T_{(2, 9)}, T_{(3, 4)}, T_{(3, 5)}, T_{(3, 7)}\}$
 plus six non-column $\lambda$ shapes for $n \in \{2, 3, 4\}$.
-[`crystal-pole-order.witness.json`](../../../folio-assistant/computations/crystal-pole-order.witness.json)
+[`crystal-pole-order.witness.json`](../../../computations/crystal-pole-order.witness.json)
 records 21 / 21 passing assertions, including the
 [AXKIA chain](alpha-em-categorical-trace.md) values
 $\alpha_{\mathrm{shift}}(T_{(2, 9)}) = 9$ and

@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 Let $d_q$ be the categorical $q$-deformed exterior derivative
 ([categorical $q$-exterior derivative](#def:categorical-q-ext-deriv)).  The composition
 $d_q^2 = d_q \circ d_q \colon \Omega^k(A) \to \Omega^{k+2}(A)$ is
@@ -34,6 +32,5 @@ In particular, $d_q^2 \neq 0$ for generic $\alpha$ whenever
 $q \neq 1$: the $q$-deformed de Rham complex is *not* a cochain
 complex.  On $\xi$-invariant forms (the horizontal subcomplex
 $\Omega^k_H(A)$), $d_q$ does reduce to $q^{-1} d$ and $d_q^2 = 0$.
-
 
 While the case analysis resolving the vanishing conditions of $d_q^2$ relies on standard algebraic properties, identifying this specific $q$-curvature obstruction and demonstrating its explicit role in breaking the cochain property for generic non-invariant forms represents a mathematically novel application within the framework of categorical $q$-deformations.

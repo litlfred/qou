@@ -193,6 +193,6 @@ For **Group VI** (`delta-max-uniform-bound.md:50`), author guidance is needed: s
 - This PR's executed edits (16 sites)
 - PR #1641 — Φ_q signed-vs-|...| sensitivity (92% per-term)
 - PR #1626 — complex-c_3 fibre diagnostic
-- PR #1616 — Im(q) fibre/observable framing in CLAUDE.md
+- PR #1616 — Im(q) fibre/observable framing in AGENTS.md
 - `prop:li2q-phiq-bar-symmetrization`
-- CLAUDE.md §7c — base ring convention (analogous discipline)
+- AGENTS.md §7c — base ring convention (analogous discipline)

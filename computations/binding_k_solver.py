@@ -51,7 +51,7 @@ list:
 The natural Wedderburn-PSD constraint at the atomic strand count
 becomes: ρ_λ(K(𝔥)) is the linking matrix in block λ; PSD-feasibility
 of K is the "binding stability" certificate.  The witness emits per-
-block primal/dual via the operator-selection LP per CLAUDE.md.
+block primal/dual via the operator-selection LP per AGENTS.md.
 
 Output: `binding-k-solver.witness.json`.
 """
@@ -580,7 +580,7 @@ def main():
             "the atomic strand count becomes ρ_λ(K) ⪰ 0 — the 'binding "
             "stability' certificate; per-atom witnesses include LP "
             "primal/dual (y0_star, y_star, active_set, primal_obj, "
-            "dual_obj, duality_gap) per CLAUDE.md 'LP/SDP duals — "
+            "dual_obj, duality_gap) per AGENTS.md 'LP/SDP duals — "
             "first-class infra' rule."
         )
         .set_content_block("conj:rho-prefactor-structural")

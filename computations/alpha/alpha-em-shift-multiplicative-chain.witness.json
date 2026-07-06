@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-29T14:34:29.937443+00:00",
-  "commitSha": "4f207588745f901d68703c022c9e38a1d134bb5f",
+  "computedAt": "2026-06-22T14:24:09.813764+00:00",
+  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
   "assertions": [
     {
       "name": "chain_equals_bare_to_mpmath_precision",
@@ -28,13 +28,20 @@
   "durationMs": 10,
   "computation": "alpha-em-shift-multiplicative-chain",
   "scriptFile": "alpha_em_shift_chain.py",
-  "scriptHash": "25de9c69a689",
-  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+  "scriptHash": "13fca49f5828",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Numerical re-evaluation of the multiplicative-chain identity α_EM⁻¹ = q · [α_shift(T_{2,9})]_q · [α_shift(T_{3,5})]_q at q₀, composing prop:em-coupling-projection with prop:alpha-shift-torus-knot. α_shift values are read from alpha-shift-torus.witness.json (not recomputed here) — the witness validates that composition is exact.",
   "contentBlock": "prop:alpha-em-shift-multiplicative-chain",
@@ -45,11 +52,11 @@
   },
   "data": {
     "upstream_witness": "alpha-shift-torus.witness.json",
-    "q0": "1.1099785827513808075916690956107688798744991218736",
-    "inv_alpha_chain": "136.8232088535825843080461054044414784949",
-    "inv_alpha_bare": "136.8232088535825843080461054044414784949",
+    "q0": "1.1099785955573347198997632204832250266562084087802",
+    "inv_alpha_chain": "136.8232196572221784442158538912135031325",
+    "inv_alpha_bare": "136.8232196572221784442158538912135031325",
     "delta_chain_minus_bare": "0.0",
     "inv_alpha_codata": "137.035999083999996628335793502628803253173828125",
-    "delta_chain_minus_codata": "0.2127902304"
+    "delta_chain_minus_codata": "0.2127794268"
   }
 }

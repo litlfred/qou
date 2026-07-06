@@ -29,7 +29,7 @@ shift(σ) = 1, shift(σ⁻¹) = 4, shift(avg) = 0  (intra-nucleon)
 plus  +1 for each (p,n) interface (inter-nucleon, A ≥ 2).
 
 Run:
-    python3 folio-assistant/computations/kite_tail_verification.py
+    python3 computations/kite_tail_verification.py
 """
 from __future__ import annotations
 
@@ -65,7 +65,7 @@ def kite_tail_predict(Z: int, N: int) -> dict:
     # We don't have per-crossing intra/inter labels in the (gen_idx, ctype)
     # form, so use the structural rule: shift = 18·Z + 21·N + 1 (for A ≥ 1)
     # per `prop:per-nucleon-shift` derivation in
-    # folio-assistant/computations/per_nucleon_shift_derivation.py.
+    # computations/per_nucleon_shift_derivation.py.
     shift_total = 18 * Z + 21 * N + 1
     # Averaged crossing count (intra + inter).
     for _, ctype in word:

@@ -410,8 +410,12 @@ def main() -> None:
             "is in place (via the AB_TABLE encoding).",
         ],
     }
-    out = HERE / "metallic-q-symbolic-galois-proofs.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str) + "\n")
+    import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+    _sys.path.insert(0, str(Path(__file__).resolve().parent / "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
+    out = WitnessBuilder.wrap_legacy(
+        "metallic-q-symbolic-galois-proofs", witness, script_path=__file__, engine="sympy",
+    ).save()
     print(f"\nWitness: {out}", file=sys.stderr)
 
     # Print summary

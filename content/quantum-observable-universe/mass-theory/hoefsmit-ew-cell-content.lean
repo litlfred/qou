@@ -18,7 +18,7 @@
        of Finite Groups with BN-pairs of Classical Type," UBC
        PhD thesis, 1974.
     docs/audits/2026-05-05-path-alpha-bring-refinement.md
-    folio-assistant/computations/hoefsmit-ew-cell-content.witness.json
+    computations/hoefsmit-ew-cell-content.witness.json
 -/
 
 import Mathlib.Algebra.Algebra.Basic
@@ -69,7 +69,7 @@ theorem totalPureMultiplicity :
     + purePatternMultiplicity .saa
     + purePatternMultiplicity .aaa
     = 20 := by
-  -- Ref: [manuscript] folio-assistant/computations/hoefsmit-ew-cell-content.witness.json
+  -- Ref: [manuscript] computations/hoefsmit-ew-cell-content.witness.json
   decide
 
 /-- The six "physical" EW patterns (single-flip + double-flip),

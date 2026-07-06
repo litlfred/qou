@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-
 Copyright (c) 2026 litlfred. All rights reserved.
 

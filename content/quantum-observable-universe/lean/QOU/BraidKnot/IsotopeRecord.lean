@@ -5,7 +5,7 @@ Released under MIT license. Authors: Claude (Anthropic).
 # IsotopeRecord — per-(Z, N) atomic record with knot-operator catalogue
 
 Lean mirror of the Python dataclass schema in
-[`isotope_record_schema.py`](../../../../folio-assistant/computations/isotope_record_schema.py).
+[`isotope_record_schema.py`](../../../../computations/isotope_record_schema.py).
 
 Per-isotope record carrying:
   - Atom identification (Z, N, A, n_strands)
@@ -77,9 +77,6 @@ structure KnotOperatorCatalogue where
 structure IsotopeRecord where
   Z : Nat
   N : Nat
-  -- Derived fields
-  A : Nat := Z + N
-  n_strands : Nat := 3 * (Z + N)
   -- Optional spectroscopy
   spin_J : Option Float := none
   parity : Option String := none
@@ -97,6 +94,13 @@ structure IsotopeRecord where
   err_pct : Option Float := none
   err_ppb : Option Float := none
   deriving Repr
+
+/-- Mass number `A = Z + N` — derived (computed), not a stored/overridable
+    field, so `A = Z + N` holds definitionally for every record. -/
+def IsotopeRecord.A (r : IsotopeRecord) : Nat := r.Z + r.N
+
+/-- Strand count `n_strands = 3·A` — derived (computed), not stored. -/
+def IsotopeRecord.n_strands (r : IsotopeRecord) : Nat := 3 * (r.Z + r.N)
 
 /-- A=Z+N derivation is by `rfl`. -/
 theorem IsotopeRecord.A_eq_Z_plus_N (r : IsotopeRecord) :

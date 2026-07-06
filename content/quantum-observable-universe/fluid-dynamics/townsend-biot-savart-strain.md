@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 The
 [Levi degeneracy conjecture](#conj:levi-degeneracy) reduces the
 $q \to 1$ Navier–Stokes regularity question to the asymptotic
@@ -112,7 +110,7 @@ maintains global regularity. This is the
 [branch (B) outcome](#conj:levi-degeneracy) of the conjecture
 — **NS globally regular** — under the point-vortex assumption.
 
-**Where the approximation fails.**
+**Breakdown of the approximation.**
 The Biot–Savart strain rate
 $\alpha(t) = \Gamma / (2\pi d(t)^2)$ assumes a point-vortex
 geometry: the cores are much smaller than the separation,

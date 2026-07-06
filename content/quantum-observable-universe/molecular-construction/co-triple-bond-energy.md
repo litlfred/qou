@@ -33,4 +33,4 @@ file `co-molecular-binding.witness.json` should record:*
 - *$\Phi_1$ for isolated C and O atoms*
 - *$\Phi_1$ for the CO molecular braid at each bond order $k = 1, 2, 3$*
 - *The LP dual shadow prices $y_1, y_2, y_3$*
-- *Comparison with observed $D_0 \approx :val[observed_D0_CO_eV]{precision=4, witness=folio-assistant/computations/co-bond-order-active-set.witness.json} \;\mathrm{eV}$*
+- *Comparison with observed $D_0 \approx :val[observed_D0_CO_eV]{precision=4, witness=computations/co-bond-order-active-set.witness.json} \;\mathrm{eV}$*

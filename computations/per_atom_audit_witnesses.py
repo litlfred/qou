@@ -56,6 +56,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 
 mp.mp.dps = 30
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
@@ -68,13 +69,13 @@ VOL_BOR = float(8 * mp.catalan)
 
 # Per-atom data: (sym, A, Z, N, B_AME, B_prod, bug_type, squash_paths)
 ATOM_AUDITS = [
-    ("2H",  2, 1, 1,   2.22456612,  2.2488, "Type 3 (census-assigned, no canonical β)",
+    ("2H",  2, 1, 1,   float(AME_B_DEUTERON_MEV_VALIDATION),  2.2488, "Type 3 (census-assigned, no canonical β)",
      ["Canonical β_2H from H_6 SDP", "Replace knot 6_2 with derived assignment"]),
-    ("3H",  3, 1, 2,   8.4817984,   8.4686, "(KLR-consistent — clean h^4 closure)",
+    ("3H",  3, 1, 2,   float(AME_B_TRITIUM_MEV_VALIDATION),   8.4686, "(KLR-consistent — clean h^4 closure)",
      ["Already at h^4 scale; minor refinement only"]),
-    ("3He", 3, 2, 1,   7.7180375,   7.4889, "Type 3 (census-assigned, no canonical β)",
+    ("3He", 3, 2, 1,   float(AME_B_HE3_MEV_VALIDATION),   7.4889, "Type 3 (census-assigned, no canonical β)",
      ["Canonical β_3He from H_9 SDP", "Replace link L6a4 with derived assignment"]),
-    ("4He", 4, 2, 2,  28.2956912, 29.9557, "Type 1 (SDP single-block, magic A·8G with ν=2 extrap)",
+    ("4He", 4, 2, 2,  float(AME_B_HE4_MEV_VALIDATION), 29.9557, "Type 1 (SDP single-block, magic A·8G with ν=2 extrap)",
      ["Option F (Wigner SU(4) singlet projection)", "Option H (Bloch h² regulator)",
       "Atlas H_12 multi-block correction"]),
     ("8Be", 8, 4, 4,  56.49951,   62.3383, "Type 2 (α-cluster recursion non-multiplicative h²)",

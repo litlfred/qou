@@ -1,21 +1,27 @@
+import Mathlib.Tactic
+
 /-!
-# QOU.Interactions.inductiveGBReduction — placeholder stub
+# QOU.Interactions.inductiveGBReduction
 
 **Placeholder canonical** for content block
 [`prop:inductive-gb-reduction`](../../../quantum-observable-universe/particle-interactions/inductive-gb-reduction.md): *Inductive Gröbner--Shirshov reduction (polynomial scaling)*.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.Interactions.inductiveGBReduction` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
--/
+The complexity bound is *named* as a `Prop` over a primitive-data
+carrier (pattern C of the vacuity-fix playbook) rather than asserted
+via a self-assuming projection; the `lean.ref` URI
+`qou:QOU.Interactions.inductiveGBReduction` resolves to it.  An
+instance of the proposition is the open complexity claim. -/
 
 namespace QOU.Interactions
 
 
-/-- Abstract context for the `inductiveGBReduction` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
+/-- Carrier for the `inductiveGBReduction` data — only the
+    primitive, non-conclusory fields (pattern C): mass number,
+    cumulative normal-form size, and the multiplication / reduction
+    step counts.  The three bounds (the manuscript's `≤ binom`,
+    `≤ A²`, `≤ A³`) are **not** fields here — they are the named
+    proposition `inductiveGBReduction` below, so the claim is
+    stated, not self-assumed. -/
 class InductiveGBReductionContext where
   /-- Proton number `Z`. -/
   Z : ℕ
@@ -31,13 +37,6 @@ class InductiveGBReductionContext where
   n_multiplications : ℕ
   /-- Number of Hecke reduction steps performed. -/
   n_reduction_steps : ℕ
-  /-- Manuscript identity: NF size at step `k` is bounded by the
-      central binomial coefficient `C(A-1, (A-1)/2)`. Total
-      multiplications scale as `O(A²)` and reduction steps as `O(A³)`. -/
-  claim_inductiveGBReduction :
-    NF_size A ≤ Nat.choose (A - 1) ((A - 1) / 2) ∧
-    n_multiplications ≤ A ^ 2 ∧
-    n_reduction_steps ≤ A ^ 3
 
 /-- **Proposition statement** (from manuscript):
 
@@ -73,16 +72,18 @@ at most $|\mathcal{N}_{\leq k}| \times 2 \times 6$ terms
 $\sigma_i^2$ via the Hecke relation and sorts via Yang--Baxter,
 producing a normal form of bounded size.
 
-The key identity enabling this is the
+The key identity enabling this is the nuclear Gröbner reduction.
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types and translating
-    the manuscript claim above. -/
+We **name** the resulting bound (pattern C of the vacuity-fix
+playbook) as a `Prop` over the context's primitive step-count data,
+rather than projecting it from self-assuming `h_*` fields: the
+normal form has at most $\binom{A-1}{\lfloor(A-1)/2\rfloor}$ terms,
+with $O(A^2)$ multiplications and $O(A^3)$ Hecke reduction steps.
+An instance of this proposition is the open complexity claim. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/inductive-gb-reduction.ts
-theorem inductiveGBReduction [ctx : InductiveGBReductionContext] :
+def inductiveGBReduction [ctx : InductiveGBReductionContext] : Prop :=
     ctx.NF_size ctx.A ≤ Nat.choose (ctx.A - 1) ((ctx.A - 1) / 2) ∧
     ctx.n_multiplications ≤ ctx.A ^ 2 ∧
-    ctx.n_reduction_steps ≤ ctx.A ^ 3 :=
-  ctx.claim_inductiveGBReduction
+    ctx.n_reduction_steps ≤ ctx.A ^ 3
 
 end QOU.Interactions

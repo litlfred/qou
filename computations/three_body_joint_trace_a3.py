@@ -34,7 +34,7 @@ import pyhecke_native  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
-from codata_constants import M_E_MEV  # noqa: E402
+from codata_constants import AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -60,7 +60,7 @@ def _word_with(full, free, iface_gens):
 
 def main() -> int:
     print(f"E_0 = {float(E0):.4f} MeV   q₀ = {float(q0):.6f}\n")
-    AME = {"T": mp.mpf("8.4818"), "3He": mp.mpf("7.7180")}
+    AME = {"T": AME_B_TRITIUM_MEV_VALIDATION, "3He": mp.mpf("7.7180")}
     results = {}
     for name, (Z, N) in {"T": (1, 2), "3He": (2, 1)}.items():
         full = atom_braid_word_3A(Z, N, include_inter=True)

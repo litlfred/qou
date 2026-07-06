@@ -1,4 +1,4 @@
-import QOU.Basic
+import QOU.QuantumObservableUniverses.QAnalysis
 
 
 /-!
@@ -21,18 +21,19 @@ namespace QOU
     normalised q-dilogarithm.**
 
     Recorded as an axiom pending a Mathlib-style shuffle-recursion
-    construction of iterated primitives in 𝓗_q. -/
+    construction of iterated primitives in 𝓗_q. The carrier `H` must
+    support `+` (the pentagon relation is additive). -/
 -- Ref: [kassel1995] Quantum Groups (Springer GTM 155), §IV
 axiom QDilogarithm.exists_axiom :
-    ∀ (H : Type*) [Nonempty H], Nonempty (QDilogarithm H)
+    ∀ (H : Type*) [Add H], Nonempty (QDilogarithm H)
 
 /-- **Existence of the q-dilogarithm.**
 
-    For any type `H` (representing 𝓗_q), a `QDilogarithm H` term
-    exists — the level-2 iterated primitive with pentagon-identity
+    For any additive type `H` (representing 𝓗_q), a `QDilogarithm H`
+    term exists — the level-2 iterated primitive with pentagon-identity
     normalisation. -/
 -- Ref: [kassel1995]
-theorem QDilogarithm.exists (H : Type*) [Nonempty H] :
+theorem QDilogarithm.exists (H : Type*) [Add H] :
     Nonempty (QDilogarithm H) :=
   QDilogarithm.exists_axiom H
 

@@ -18,7 +18,7 @@ claim falsifiable rather than circular.
    2$, scaled by the molecular energy unit, is the ring-closure/resonance
    energy ([ring-closure barrier](#prop:ring-closure-barrier)).
 
-**Why breaking the ring releases a large, concentrated energy.**  The
+**Energy released by breaking the ring.**  The
 ring's projector $e_{(2,2,2),(6)}$ is *irreducible* over all six strands:
 the delocalised $\pi$-system is a single object, not six separable bonds.
 One cannot open the ring a single bond at a time — breaking it collapses

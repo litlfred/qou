@@ -1,3 +1,5 @@
+import Mathlib.Algebra.Group.Defs
+
 /-!
 # QOU.AlgebraicSubstrate.ClassicalLimitObstruction
 

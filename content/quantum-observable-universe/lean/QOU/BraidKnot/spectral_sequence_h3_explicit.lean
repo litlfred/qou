@@ -1,13 +1,12 @@
-/-!
-# QOU.BraidKnot.spectral_sequence_h3_explicit — placeholder stub
+import Mathlib.Tactic
 
-**Placeholder canonical** for content block
+/-!
+# QOU.BraidKnot.spectral_sequence_h3_explicit
+
+**Canonical declaration** for content block
 [`prop:spectral-sequence-h3-explicit`](../../../quantum-observable-universe/braids-and-knots/spectral-sequence-h3-explicit.md): *QOU.BraidKnot.spectral_sequence_h3_explicit*.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.BraidKnot.spectral_sequence_h3_explicit` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
+This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
 -/
 
 namespace QOU.BraidKnot
@@ -32,11 +31,17 @@ class SpectralSequenceH3ExplicitContext where
   /-- Manuscript sub-claim (i): explicit `d_1`-differential of the
       GB-filtered Hochschild spectral sequence on `H_3(R, q)`. -/
   claim_i_d1_differential : Prop
+  /-- Axiomatised proof of the sub-claim (§3b-cond conditional class). -/
+  claim_i_d1_differential_holds : claim_i_d1_differential
   /-- Manuscript sub-claim (ii): explicit `d_2`-differential. -/
   claim_ii_d2_differential : Prop
+  /-- Axiomatised proof of the sub-claim (§3b-cond conditional class). -/
+  claim_ii_d2_differential_holds : claim_ii_d2_differential
   /-- Manuscript sub-claim (iii): the `E_∞` page identifications are
       *concretised* on `H_3(R, q)` for the single-nucleon case. -/
   claim_iii_page_identifications_concretised : Prop
+  /-- Axiomatised proof of the sub-claim (§3b-cond conditional class). -/
+  claim_iii_page_identifications_concretised_holds : claim_iii_page_identifications_concretised
 
 /-- **Content statement** (from manuscript):
 
@@ -48,18 +53,15 @@ making the page identifications
 ([$E_\infty$ page identifications](#prop:e-infinity-page-identifications))
 concrete for the single-nucleon case.
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/spectral-sequence-h3-explicit.ts
-theorem spectral_sequence_h3_explicit [ctx : SpectralSequenceH3ExplicitContext] :
+def spectral_sequence_h3_explicit [ctx : SpectralSequenceH3ExplicitContext] :
     ctx.n_strands = 3 ∧
     ctx.claim_i_d1_differential ∧
     ctx.claim_ii_d2_differential ∧
     ctx.claim_iii_page_identifications_concretised :=
-  ⟨ctx.claim_strand_count, ctx.claim_i_d1_differential,
-   ctx.claim_ii_d2_differential,
-   ctx.claim_iii_page_identifications_concretised⟩
+  ⟨ctx.claim_strand_count, ctx.claim_i_d1_differential_holds,
+   ctx.claim_ii_d2_differential_holds,
+   ctx.claim_iii_page_identifications_concretised_holds⟩
 
 end QOU.BraidKnot

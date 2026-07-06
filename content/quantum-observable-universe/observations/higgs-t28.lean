@@ -7,7 +7,7 @@ surface whose Seifert surface spans all three exceptional
 divisors `D_r ∪ D_g ∪ D_b` simultaneously.
 
 -- Ref: [manuscript]
-Per `CLAUDE.md §3b-cond`, opaque Props + class fields + sorry
+Per `AGENTS.md §3b-cond`, opaque Props + class fields + sorry
 instance per claim. This is the **algebraic/topological** tier;
 the numerical Higgs mass evaluation (crossing energy of T(2,8)
 at q_0 vs. observed mass) belongs to a future Archimedean tier
@@ -24,7 +24,7 @@ per gemini review on #721 (algebraic vs. numerical separation).
 namespace QOU.HiggsT28
 
 /-- **Sub-claim (genus)**: `T(2, 8)` has Seifert-surface genus 3,
-    matching the count of coral tubes / exceptional divisors. -/
+    matching the count of color tubes / exceptional divisors. -/
 opaque T28GenusHolds : Prop
 
 /-- **Sub-claim (spanning)**: the Seifert surface of `T(2, 8)`
@@ -46,7 +46,7 @@ class HiggsAsT28 : Prop where
 
 -- Ref: [manuscript] conj:higgs-t28
 instance higgs_t28_conjecture : HiggsAsT28 where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   t28_genus := sorry
   -- Ref: [manuscript]
   spans_three := sorry

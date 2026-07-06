@@ -16,10 +16,10 @@ The crossing types are:
   u-d (1,0) → mixed crossing                   [= p-n at Level 0]
 
 Run from repo root:
-    python3 folio-assistant/computations/level1-qvalues.py
+    python3 computations/level1-qvalues.py
 
 Output:
-    folio-assistant/computations/level1-qvalues.witness.json
+    computations/level1-qvalues.witness.json
 """
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir

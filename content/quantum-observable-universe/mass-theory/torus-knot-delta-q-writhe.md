@@ -1,4 +1,4 @@
-*Lean sibling: a field $R$ carrying the $q$-data (CLAUDE.md §7c); the identity is purely algebraic, pre-archimedean.*
+*Lean sibling: a field $R$ carrying the $q$-data (AGENTS.md §7c); the identity is purely algebraic, pre-archimedean.*
 
 **Proposition (writhe exponent of the torus-knot $\delta_q$ decoration).** *For the
 torus knot $T_{m,p}$ — the closure of the standard positive braid
@@ -40,7 +40,7 @@ in $\alpha_{EM} = h^2/\bigl(q\,\delta_q(T_{2,9})\,\delta_q(T_{3,5})\bigr)$. The
 writhe exponents are rigidly tied to the leading twist $-q^{2p}$ of the Jones
 polynomial of $T_{3,p}$ (cross-checked against the knot tables
 $8_{19} = T_{3,4}$, $10_{124} = T_{3,5}$). Symbolic cross-check:
-[`rosso_jones_three_strand_delta_q.py`](../../folio-assistant/computations/rosso_jones_three_strand_delta_q.py).
+the canonical formalism.
 
 The same writhe $w$ governs the chirality mass-factor $a_K = 1 + w\,h$ of
 [`prop:chirality-writhe-ribbon-derivation`](#prop:chirality-writhe-ribbon-derivation),

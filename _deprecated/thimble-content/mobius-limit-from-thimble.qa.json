@@ -764,7 +764,7 @@
         "reviewed_at": "2026-05-23T20:16:40.535Z",
         "reviewed_sha": "d2b0f09a6b4a12ce6752903c607c601c7ed9fc6e",
         "severity": "major",
-        "evidence": "folio-assistant/computations/mobius_limit_from_thimble.py:1: computation script imports deprecated module: LAMBDA_PROTON_FITTED"
+        "evidence": "computations/mobius_limit_from_thimble.py:1: computation script imports deprecated module: LAMBDA_PROTON_FITTED"
       }
     ],
     "canonical-dilogarithm-context": [

@@ -1,3 +1,7 @@
+The Frobenius form promotes the multiplication into a non-degenerate
+pairing, yielding the self-duality $A \cong A^\vee$ used throughout.
+Concretely, it sends a pair $(a, b)$ to the scalar
+$\int_A(\mu(a, b))$ — the Frobenius form evaluated on their product.
 Let $(\mathbf{C}, A, \tau)$ be a
 [quantum universe](#def:quantum-universe) with multiplication
 $\mu \colon A \otimes A \to A$ and Frobenius form

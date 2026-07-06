@@ -49,7 +49,7 @@ def main() -> None:
         "provenance",
         "All experimental (NIST Chemistry WebBook / standard organic-chemistry "
         "references); comparison targets only, not derivation inputs. Pulled "
-        "from folio-assistant/computations/substrate/experimental_constants.py.",
+        "from computations/substrate/experimental_constants.py.",
     )
     w.save()
     for k, v in refs.items():

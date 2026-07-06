@@ -1,6 +1,9 @@
 import { proposition } from "../../schema/builders";
 
 export default proposition({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+  ],
   label: "prop:parity-violation-skein",
   title:
     "Parity non-conservation from the Skein relation at $q \\neq 1$",

@@ -39,7 +39,7 @@ structure ShellCoefficients (R : Type u) [CommRing R] where
     `shell_self_duality` provable as `rfl`.
 
     Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589 — Young-diagram conjugate (§7.1) -/
-def conjugatePartition (λ : List ℕ) : List ℕ := λ
+def conjugatePartition (part : List ℕ) : List ℕ := part
 
 
 /-- **Shell self-duality.**
@@ -56,22 +56,10 @@ def conjugatePartition (λ : List ℕ) : List ℕ := λ
 theorem shell_self_duality
     {R : Type u} [CommRing R]
     (sc : ShellCoefficients R)
-    (λ : List ℕ) :
-    sc.coeff λ = sc.coeff (conjugatePartition λ) := by
+    (part : List ℕ) :
+    sc.coeff part = sc.coeff (conjugatePartition part) := by
   -- With conjugatePartition := id, this is reflexivity.
   -- Ref: [manuscript] prop:shell-schur-weyl-self-duality
   rfl
-
-
-/-- **Constrained ILP formulation.**
-
-    Imposing x_λ = x_{λ*} reduces the ILP variable count from
-    p(A_magic) to ⌈p(A_magic)/2⌉ (one per conjugate-equivalence class).
-    The constrained ILP is NP-hard in general but tractable at
-    small A_magic via enumeration. -/
-structure ConstrainedShellILP (R : Type u) [CommRing R] where
-  A_magic : ℕ
-  /-- Number of conjugate-equivalence classes of partitions of A_magic. -/
-  n_classes : ℕ
 
 end QOU.BraidKnot

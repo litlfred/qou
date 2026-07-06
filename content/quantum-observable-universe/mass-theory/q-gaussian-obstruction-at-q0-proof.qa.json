@@ -1,0 +1,74 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prf:q-gaussian-obstruction-at-q0",
+  "kind": "proof",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0-proof.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0-proof.md"
+  },
+  "source_hashes": {
+    "md": "d3d5e92f9e0d",
+    "ts": "d011a02c52d5"
+  },
+  "criteria": {
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "d3d5e92f9e0d",
+          "ts": "d011a02c52d5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-27",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:43:02.109Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "q-gaussian-obstruction-at-q0-proof.md",
+        "notes": "scope: structural\nruling: surviving\nreferee_argument: The obstruction at q0 relies heavily on the specific chosen cutoff for the gaussian approximation. If the truncation ladder is shifted by one term, the obstruction vanishes entirely. This looks like overfitting to the desired no-go theorem.\nrebuttal: Tried to rebut using the convergence bounds, but the bounds are loose at q0."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d3d5e92f9e0d",
+          "ts": "d011a02c52d5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-27",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:43:02.109Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "critical",
+        "evidence": "N/A",
+        "notes": "verdict: open-objection\nreferee_argument: The obstruction is an artifact of the truncation choice, not a structural feature of the Q-Gaussian."
+      }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "d3d5e92f9e0d",
+          "ts": "d011a02c52d5"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.534Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-07-03T00:52:56.534Z"
+}

@@ -111,8 +111,8 @@ These three tasks remain the canonical refinement work. Reframed under the canon
 - commit `71d674da1` (on main) — purge of Yekutieli per-cell from production
 - [`content/quantum-observable-universe/braids-and-knots/s4-s3-half-symmetric-projection.md`](../../content/quantum-observable-universe/braids-and-knots/s4-s3-half-symmetric-projection.md) — bijection block (TOP is sound combinatorics; "Application to λ_scale" stale per PR #1080)
 - [`content/quantum-observable-universe/braids-and-knots/geom-universality.md`](../../content/quantum-observable-universe/braids-and-knots/geom-universality.md) — `prop:geom-universality` (CONDITIONAL, §3b-cond)
-- [`folio-assistant/computations/m_p_borromean_verification_50dps.py`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py) — production m_p formula (Family A only; +2.89 %)
-- [`CLAUDE.md §3b-cond`](../../CLAUDE.md) — conditional-class theorem conventions
+- [`computations/m_p_borromean_verification_50dps.py`](../../computations/m_p_borromean_verification_50dps.py) — production m_p formula (Family A only; +2.89 %)
+- [`AGENTS.md §3b-cond`](../../AGENTS.md) — conditional-class theorem conventions
 
 ## §6. Sibling: canonical-discipline paper sweep findings (parallel run)
 

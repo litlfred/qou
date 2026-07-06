@@ -7,7 +7,7 @@
 explicitly in the Hoefsmit seminormal basis for general $\lambda, \mu, \nu$."*
 **Conditional on** [`conj:crystal-graph-realization`](../../content/quantum-observable-universe/braids-and-knots/crystal-graph-realization.md)
 (Brundan–Kleshchev isomorphism + GS↔crystal bijection — already a
-content block on main; CLAUDE.md §3b-cond conditional-class pattern).
+content block on main; AGENTS.md §3b-cond conditional-class pattern).
 
 **Companion:**
 [`2026-05-04-sub-lemma-2-1-categorical-proof.md`](2026-05-04-sub-lemma-2-1-categorical-proof.md)
@@ -252,12 +252,12 @@ proof did not reach.
 
 ## Numerical verification (witness)
 
-[`folio-assistant/computations/crystal_pole_order.py`](../../folio-assistant/computations/crystal_pole_order.py)
+[`computations/crystal_pole_order.py`](../../computations/crystal_pole_order.py)
 runs the combinatorial pole-order count of Step 2 against the
 column-SYT axial distances for the test bench
 $\{T_{(2,1)}, T_{(2,3)}, T_{(2,5)}, T_{(2,9)}, T_{(3,4)}, T_{(3,5)}, T_{(3,7)}\}$.
 
-[`folio-assistant/computations/crystal-pole-order.witness.json`](../../folio-assistant/computations/crystal-pole-order.witness.json)
+[`computations/crystal-pole-order.witness.json`](../../computations/crystal-pole-order.witness.json)
 records 15 / 15 passing assertions:
 
 - For each $(p, k)$: predicted pole order $= k(p-1) =$ published
@@ -269,7 +269,7 @@ records 15 / 15 passing assertions:
   envelopes $[9]_q, [10]_q$ in $\alpha_{\mathrm{EM}}^{-1} = q [9]_q [10]_q$.
 
 The witness is audit-only (no content block) — `prop:alpha-shift-torus-knot`
-already has its own seminormal-trace witness ([`alpha-shift-torus.witness.json`](../../folio-assistant/computations/alpha/alpha-shift-torus.witness.json));
+already has its own seminormal-trace witness ([`alpha-shift-torus.witness.json`](../../computations/alpha/alpha-shift-torus.witness.json));
 the crystal route here is a complementary independent verification.
 
 ## Status of the residual after this audit

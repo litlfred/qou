@@ -31,8 +31,9 @@ LaTeX label: `thm:markov-trace-product`
 
 namespace QOU.Hecke
 
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ). -/
 noncomputable section
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ). -/
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -136,5 +137,7 @@ theorem chainProduct_append (z : R_q) (cs ds : List GeneratorChain) :
   | nil => simp [chainProduct]
   | cons c cs ih =>
     simp [chainProduct, ih, mul_assoc]
+
+end
 
 end QOU.Hecke

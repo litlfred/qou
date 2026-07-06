@@ -54,8 +54,10 @@ open QOU.Torsion QOU.AlgebraicSubstrate
     categorical gap bound at the classical point. -/
 -- Ref: [manuscript] models-of-qous/yang-mills-mass-gap.md §G_m-torsion
 theorem kummer_vanishes_at_two [ctx : QouObstructionReductionContext]
-    (hchi : ctx.chi_A = -6) : ctx.kappa_vanishes 2 :=
-  (ctx.claim_c_kummer_vanishing 2 (by norm_num)).mpr (by rw [hchi]; decide)
+    (hchi : ctx.chi_A = -6) : ctx.kappa_vanishes 2 := by
+  -- `kappa_vanishes 2 ↔ (2:ℤ) ∣ obstruction_class = chi_A = -6`, and `2 ∣ 6`.
+  rw [ctx.kappa_vanishes_iff, ctx.obstruction_class_eq, hchi]
+  norm_num
 
 /-- **Kummer persistence above 3 at χ(A) = −6** — the obstruction
     does NOT vanish at any prime `p > 3`: such a prime does not
@@ -65,13 +67,13 @@ theorem kummer_vanishes_at_two [ctx : QouObstructionReductionContext]
 theorem kummer_persists_above_three [ctx : QouObstructionReductionContext]
     (hchi : ctx.chi_A = -6) {p : ℕ} (hp : Nat.Prime p) (hp3 : 3 < p) :
     ¬ ctx.kappa_vanishes p := by
-  intro hvan
-  have h := (ctx.claim_c_kummer_vanishing p (by omega)).mp hvan
-  rw [hchi] at h
-  have h6 : (p : ℤ) ∣ 6 := (dvd_neg).mp h
-  have h6n : p ∣ 6 := by exact_mod_cast h6
-  have hle : p ≤ 6 := Nat.le_of_dvd (by norm_num) h6n
-  interval_cases p <;> revert h6n hp <;> decide
+  -- `kappa_vanishes p ↔ (p:ℤ) ∣ -6 ↔ p ∣ 6`; a prime `p > 3` does not divide 6.
+  rw [ctx.kappa_vanishes_iff, ctx.obstruction_class_eq, hchi]
+  intro hdvd
+  rw [Int.dvd_neg] at hdvd
+  have hpn : p ∣ 6 := by exact_mod_cast hdvd
+  have hple : p ≤ 6 := Nat.le_of_dvd (by norm_num) hpn
+  interval_cases p <;> revert hp hpn <;> decide
 
 /-- **Step 3, mass-gap arm (combined statement).**  Conditional on the
     obstruction-reduction context with χ(A) = −6:

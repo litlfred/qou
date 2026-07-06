@@ -12,6 +12,6 @@ export default remark({
   ],
   uses: [
     "prop:six-canonical-knot-operators",
-    "def:q-reeb-flow-on-coral-coords",
+    "def:q-reeb-flow-on-color-coords",
   ],
 });

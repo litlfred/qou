@@ -1,4 +1,5 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.NormNum
 
 
 /-!
@@ -54,10 +55,10 @@ noncomputable def proton_mass (q : ℝ) : ℝ :=
   let hbar_q := 1 - q⁻¹
   vol_borromean / hbar_q ^ 2
 
-/-- The proton mass derived from the substrate parameter q₀.
+/- The proton mass derived from the substrate parameter q₀.
     At the CODATA value q₀, the Borromean volume formula yields
-    m_𝔭(q₀) ≈ 938.272 MeV. -/
--- Ref: [manuscript] Ch. 5, §Categorical proton
+    m_𝔭(q₀) ≈ 938.272 MeV.
+    Ref: [manuscript] Ch. 5, §Categorical proton -/
 /-- **External axiom (§3b-cond pattern): proton_mass_from_substrate.**
 
     Auto-extracted from the single-sorry theorem body in this file.

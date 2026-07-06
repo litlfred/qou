@@ -17,10 +17,10 @@ structure CovalentBond where
   sharedElectrons : Nat := order
 
 /-- Single bond has 2 attractive crossings. -/
-theorem single_bond_crossings : 2 * 1 = 2 := by norm_num
+theorem single_bond_crossings : 2 * 1 = 2 := by decide
 
 /-- Double bond has 4 attractive crossings. -/
-theorem double_bond_crossings : 2 * 2 = 4 := by norm_num
+theorem double_bond_crossings : 2 * 2 = 4 := by decide
 
 /-- Triple bond has 6 attractive crossings. -/
-theorem triple_bond_crossings : 2 * 3 = 6 := by norm_num
+theorem triple_bond_crossings : 2 * 3 = 6 := by decide

@@ -1,5 +1,6 @@
 import Mathlib.Combinatorics.Enumerative.Partition
 import Mathlib.Data.Fintype.Card
+import QOU.Mathlib.RSKBurnsideTarget
 
 /-!
 # QOU.Mathlib.RSKBridge — Robinson–Schensted–Knuth bridge to Burnside
@@ -30,7 +31,7 @@ above has not yet landed.  This file:
      `Fintype.card_congr RSK.bijection`,
      `Fintype.card_sigma`, and `Fintype.card_prod`.
 
-The class shape is the §3b-cond pattern from CLAUDE.md: the
+The class shape is the §3b-cond pattern from AGENTS.md: the
 upstream Mathlib theorem is the only sorry/instance the
 downstream chain depends on; once it lands, the whole chain
 becomes fully verified.
@@ -63,15 +64,15 @@ class RSKBijection (n : ℕ) where
   dim : Nat.Partition n → ℕ
   /-- The Burnside identity: `n! = Σ_λ (dim λ)²`. -/
   n_factorial_eq_sum_squares :
-    ∑ λ : Nat.Partition n, (dim λ) ^ 2 = n.factorial
+    ∑ Λ : Nat.Partition n, (dim Λ) ^ 2 = n.factorial
 
 /-- **Bridge theorem**: from the RSK upstream class instance,
     derive the abstract `BurnsideIdentity` predicate. -/
 theorem BurnsideFromRSK (n : ℕ) [R : RSKBijection n] :
-    ∑ λ : Nat.Partition n, (R.dim λ) ^ 2 = n.factorial :=
+    ∑ Λ : Nat.Partition n, (R.dim Λ) ^ 2 = n.factorial :=
   R.n_factorial_eq_sum_squares
 
-/-- **Trivial canonical instance** (audit-level §3b-cond hook):
+/-! **Trivial canonical instance** (audit-level §3b-cond hook):
     pinning the supplied dim function to constant `0` AND the
     Burnside-identity field to a vacuous `0 = n.factorial`,
     which only holds when `n.factorial = 0`.  Since `n.factorial`
@@ -88,16 +89,26 @@ theorem BurnsideFromRSK (n : ℕ) [R : RSKBijection n] :
 -- requires the upstream theorem; a constant-zero dim would
 -- give `0 = n.factorial` which fails for every `n : ℕ`.
 
-/-- **Substrate axiom** (S-RSK-bijection).  The RSK
-    bijection's cardinality consequence holds for every `n : ℕ`.
-    Stated as an axiom pending Mathlib's
-    `Combinatorics.RSK.cardinality_eq` theorem; once that lands,
-    this becomes a derived consequence. -/
+/-- **Substrate axiom** (S-RSK-bijection).  The RSK bijection's cardinality consequence holds for
+    every `n : ℕ`, stated with the **genuine `#SYT` count** (`QOU.Mathlib.RSKBurnsideHolds n`
+    `:= ∑_{p ⊢ n} (dimSYT p)² = n!`), not a hollow existential.  Pending Mathlib's
+    `Combinatorics.RSK.cardinality_eq` (and the in-repo RSK proof under construction in
+    `SchenstedInsertion.lean`), this is assumed; once either lands it becomes a derived consequence.
+
+    (Earlier this axiom asserted only `∃ dimFn, ∑ dimFn² = n!`, which is satisfiable for trivial
+    reasons and did **not** pin `dimFn` to the SYT count — a vacuity flag from the 2026-06-28 review.
+    It now asserts the genuine identity; `rsk_substrate_exists` recovers the old existential form.) -/
 -- Ref: [stanley1999] Enumerative Combinatorics II §7.11 (RSK bijection cardinality Σ_λ (f^λ)² = n!);
 --      Mathlib.Combinatorics.RSK (partial; cardinality_eq is the upstream target).
-axiom RSK_substrate_axiom (n : ℕ) :
-    ∃ dimFn : Nat.Partition n → ℕ,
-      ∑ λ : Nat.Partition n, (dimFn λ) ^ 2 = n.factorial
+axiom RSK_substrate_axiom (n : ℕ) : QOU.Mathlib.RSKBurnsideHolds n
+
+/-- The old existential form `∃ dimFn, ∑ dimFn² = n!` is now a *derived* consequence of the
+    genuine identity (instantiate the witness with the concrete `dimSYT`), not the axiom itself.
+    `RSK_substrate_axiom n : RSKBurnsideHolds n` is by definition `∑ p, (dimSYT p)² = n!`, so
+    `⟨dimSYT, RSK_substrate_axiom n⟩` is exactly the existential. -/
+theorem rsk_substrate_exists (n : ℕ) :
+    ∃ dimFn : Nat.Partition n → ℕ, ∑ Λ : Nat.Partition n, (dimFn Λ) ^ 2 = n.factorial :=
+  ⟨QOU.Mathlib.dimSYT, RSK_substrate_axiom n⟩
 
 /-! ### Cohort-based RSKBijection (concrete via explicit cohort lists)
 
@@ -112,9 +123,11 @@ axiom RSK_substrate_axiom (n : ℕ) :
 structure CohortRSKWitness (n : ℕ) where
   /-- The cohort entries: SYT counts indexed by some opaque label. -/
   syt_counts : List ℕ
-  /-- Length of the cohort matches the partition count `p(n)`. -/
-  matches_partition_count : syt_counts.length ≥ 0
   /-- Σ d_λ² = n!. -/
   burnside_holds : (syt_counts.map (· ^ 2)).sum = n.factorial
+  -- (The former `matches_partition_count : syt_counts.length ≥ 0` field was removed
+  --  2026-06-28: `length ≥ 0` is `Nat.zero_le`, provably vacuous — it constrained nothing.
+  --  `burnside_holds` carries the real content; cohort/partition-count alignment, if needed,
+  --  belongs as a separate proved lemma, not a trivially-true structure field.)
 
 end QOU.Mathlib.RSKBridge

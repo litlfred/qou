@@ -32,7 +32,7 @@ i.e. u_λ^* > 0 iff x_λ^* = 0 (block is binding-active).
 ## Output
 
 Witness `a-K-via-lp-dual-full.witness.json` with required LP-dual
-fields per CLAUDE.md §LP/SDP duals.
+fields per AGENTS.md §LP/SDP duals.
 """
 from __future__ import annotations
 
@@ -174,7 +174,7 @@ def solve_atom_lp(atom: str) -> dict:
         "atom": atom,
         "Z": Z, "N": N, "A": A,
         "tr_M_atom": tr_M_atom,
-        # LP fields per CLAUDE.md §LP/SDP duals first-class infra
+        # LP fields per AGENTS.md §LP/SDP duals first-class infra
         "x_star": list(result.x_star),
         "y0_star": result.y0_star,
         "y_star": list(result.y_star),
@@ -206,7 +206,7 @@ def main() -> int:
         "via lp_dual_solver.solve_operator_selection_lp) and extracts "
         "literal u_λ^* dual variables. Compares the chirality-active "
         "dual sum to closed-form C = (1+h, 1-h², (1-h²)²) at A=2,3,4. "
-        "Emits witness with all required LP-dual fields per CLAUDE.md "
+        "Emits witness with all required LP-dual fields per AGENTS.md "
         "§LP/SDP duals first-class infra. Note: this is f64-precision "
         "verification; MPFR-50dps follow-on would be a future iteration."
     )
@@ -244,7 +244,7 @@ def main() -> int:
     w.add_data("rows", rows)
 
     # Aggregate the y0_star, y_star, active_set fields at the top
-    # level for the witness validator (per CLAUDE.md infra rule).
+    # level for the witness validator (per AGENTS.md infra rule).
     w.add_data("y0_star", [r.get("y0_star") for r in rows])
     w.add_data("y_star", [r.get("y_star") for r in rows])
     w.add_data("active_set", [r.get("active_set") for r in rows])

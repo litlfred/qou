@@ -14,7 +14,7 @@ Using the Lusztig $q$-exponential and $q$-logarithm,
 \end{equation}
 ```
 
-we define the *quaternionic spectral resolvents*
+we define the **quaternionic spectral resolvents**
 $\omega_k\colon\mathcal{S}\to J^\infty E$ by
 
 ```tex

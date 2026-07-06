@@ -1,5 +1,7 @@
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Category.Basic
+import Mathlib.CategoryTheory.Preadditive.Basic
+import Mathlib.CategoryTheory.Linear.Basic
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 
@@ -23,9 +25,10 @@ open CategoryTheory MonoidalCategory
 
 namespace QOU
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -55,6 +58,11 @@ structure CategoricalQLieBracket (C : Type u) [Category.{v} C]
   /-- The deformation parameter `q`, non-zero. -/
   q : R_q
   q_ne_zero : q ≠ 0
+  /-- The inverse `q⁻¹ ∈ R_q`. -/
+  qinv : R_q
+  /-- `q` is a unit: `q · q⁻¹ = 1` (`qinv` + `q_unit` encode `q⁻¹`
+      without needing an `Inv` instance on the Laurent ring `R_q`). -/
+  q_unit : q * qinv = 1
 
 /-- The q-deformed bracket evaluated on two derivations.
 
@@ -65,14 +73,21 @@ noncomputable def CategoricalQLieBracket.q_bracket {C : Type u}
     [Category.{v} C] [MonoidalCategory C] [Preadditive C] [Linear R_q C]
     (qlb : CategoricalQLieBracket C) (X Y : qlb.A ⟶ qlb.A) :
     qlb.A ⟶ qlb.A :=
-  qlb.q⁻¹ • qlb.bracket X Y +
-    (1 - qlb.q⁻¹) • (qlb.bracket qlb.xi Y - qlb.bracket qlb.xi X)
+  qlb.qinv • qlb.bracket X Y +
+    (1 - qlb.qinv) • (qlb.bracket qlb.xi Y - qlb.bracket qlb.xi X)
 
 /-- At `q = 1`, the q-bracket reduces to the classical bracket. -/
 theorem CategoricalQLieBracket.q_bracket_classical {C : Type u}
     [Category.{v} C] [MonoidalCategory C] [Preadditive C] [Linear R_q C]
     (qlb : CategoricalQLieBracket C) (hq : qlb.q = 1) (X Y : qlb.A ⟶ qlb.A) :
     qlb.q_bracket X Y = qlb.bracket X Y := by
-  simp [q_bracket, hq, inv_one, sub_self, zero_smul, one_smul, add_zero]
+  -- At `q = 1`, the unit law `q · q⁻¹ = 1` forces `qinv = 1`.
+  have hqinv : qlb.qinv = 1 := by
+    have := qlb.q_unit
+    rw [hq, one_mul] at this
+    exact this
+  simp [q_bracket, hqinv, sub_self, zero_smul, one_smul, add_zero]
+
+end
 
 end QOU

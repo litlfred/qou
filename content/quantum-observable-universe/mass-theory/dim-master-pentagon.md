@@ -23,7 +23,7 @@ used elsewhere in the QOU framework:*
 *The DIM master Pentagon is therefore the **unified algebraic
 ancestor** of all five Pentagon manifestations in the framework.*
 
-## Why this matters
+## Significance
 
 The five Pentagon manifestations are currently treated separately
 in the framework. D17 conjectures they are **specialisations of a
@@ -54,7 +54,7 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
 
 1. Identify the explicit DIM specialisation map producing each of
    the five Pentagons above.
-2. Verify numerically at $q_0$ that the DIM master Pentagon's
+2. Verify canonical at $q_0$ that the DIM master Pentagon's
    restriction to Φ_q matches the Faddeev–Volkov–Kashaev identity.
 3. D17 to closed requires substantial Lean infrastructure for the DIM
    algebra (not currently in Mathlib).

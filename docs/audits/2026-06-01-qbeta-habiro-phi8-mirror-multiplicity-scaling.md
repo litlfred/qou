@@ -56,7 +56,7 @@ The original 3-point hypothesis (n−p, ³He−³H, ⁷Be−⁷Li) `mult = A −
 
 Even-A pairs are the discriminating tests: the two laws differ by 1 for every even A. ⁸B−⁸Li and ¹⁰C−¹⁰Be have already discharged the discrimination in favour of the refined formula; ⁶Be−⁶Li, ¹²N−¹²B, ¹⁴O−¹⁴C remain open and are the next falsification targets.
 
-Testable via the [`_habiro_coefficient_extract.py`](../../folio-assistant/computations/_habiro_coefficient_extract.py) general (Z, N) → canonical Phase 5q Habiro infrastructure (this commit).
+Testable via the [`_habiro_coefficient_extract.py`](../../computations/_habiro_coefficient_extract.py) general (Z, N) → canonical Phase 5q Habiro infrastructure (this commit).
 
 ## Connection to level-2 SU(2) Wenzl
 
@@ -72,5 +72,5 @@ This connects the structural finding back to the Phase 5q closed forms: the `z(q
 - Level-2 SU(2) Wenzl identification: [`docs/audits/2026-06-01-qbeta-habiro-zeta8-categorical-witness.md`](2026-06-01-qbeta-habiro-zeta8-categorical-witness.md)
 - 10-pair Φ_8 universality (proton-conditional): [`docs/audits/2026-06-01-qbeta-habiro-all-10-pairs-phi8-universality.md`](2026-06-01-qbeta-habiro-all-10-pairs-phi8-universality.md)
 - Phase 5q convention test: [`docs/audits/2026-06-01-qbeta-habiro-phase5q-dn-convention-test.md`](2026-06-01-qbeta-habiro-phase5q-dn-convention-test.md)
-- Mass-table infrastructure: [`folio-assistant/computations/_habiro_coefficient_extract.py`](../../folio-assistant/computations/_habiro_coefficient_extract.py)
+- Mass-table infrastructure: [`computations/_habiro_coefficient_extract.py`](../../computations/_habiro_coefficient_extract.py)
 - Master ledger: [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md)

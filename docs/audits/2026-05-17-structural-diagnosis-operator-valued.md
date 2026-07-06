@@ -23,7 +23,7 @@ anchors** by +8.74% (³He) and -3.95% (T) — opposite directions with a
 **Z↔N asymmetry of +0.796 MeV** that the symmetric (A-2) leading form
 cannot capture.
 
-Probe: [`probe_delta_coupling_cross_anchor.py`](../../folio-assistant/computations/probe_delta_coupling_cross_anchor.py)
+Probe: [`probe_delta_coupling_cross_anchor.py`](../../computations/probe_delta_coupling_cross_anchor.py)
 
 ### Finding 2: V_(2,2,2) is NOT the order-h^6 channel for c_3
 
@@ -33,7 +33,7 @@ $\mathrm{contribution}(ε) \approx +0.0261 \cdot ε + O(ε²)$ — **leading
 order is ε^1, not ε^6**. V_(2,2,2) contributes 5 Taylor orders BELOW
 what the framework F_3 ansatz requires.
 
-Probes: [`probe_V_222_projection.py`](../../folio-assistant/computations/probe_V_222_projection.py) (numerical at q_0), [`probe_V_222_projection_symbolic.py`](../../folio-assistant/computations/probe_V_222_projection_symbolic.py) (Taylor-order extraction).
+Probes: [`probe_V_222_projection.py`](../../computations/probe_V_222_projection.py) (numerical at q_0), [`probe_V_222_projection_symbolic.py`](../../computations/probe_V_222_projection_symbolic.py) (Taylor-order extraction).
 
 ### Finding 3: T5 categorical attribution resists symmetric substrate forms
 
@@ -44,7 +44,7 @@ has +3.2% / +7.7% gap vs T5(proton) / T5(neutron) — none of the 20
 candidates matches both anchors within 5% AND captures the empirical
 **Z↔N asymmetry of -0.325 MeV** (T5_p - T5_n).
 
-Probe: [`probe_T5_categorical_attribution.py`](../../folio-assistant/computations/probe_T5_categorical_attribution.py)
+Probe: [`probe_T5_categorical_attribution.py`](../../computations/probe_T5_categorical_attribution.py)
 
 ### Finding 4: Habiro residue at A=1 cannot close m_p chain alone
 
@@ -55,7 +55,7 @@ different small-q expansion tail, bounded by ~0.3 MeV. **Item C alone
 cannot close the 1571× m_p chain shortfall** (m_p_pred 0.5974 MeV vs
 CODATA 938.27 MeV).
 
-Probe: [`probe_habiro_residue_a1.py`](../../folio-assistant/computations/probe_habiro_residue_a1.py)
+Probe: [`probe_habiro_residue_a1.py`](../../computations/probe_habiro_residue_a1.py)
 
 ## Convergent structural diagnosis
 
@@ -96,7 +96,7 @@ where `I ∈ H_n(q)` is the inter-nucleon **interface operator** — exactly
 the structure that PR #679's pure-LR consumer missed and that PR #681's
 audit confirms is needed.
 
-The witness [`sublemma-2-1-A-operator-extract.witness.json`](../../folio-assistant/computations/sublemma-2-1-A-operator-extract.witness.json)
+The witness [`sublemma-2-1-A-operator-extract.witness.json`](../../computations/sublemma-2-1-A-operator-extract.witness.json)
 verifies the `A^λ_{μ,ν}(I)` matrices to ~10⁻¹⁵ for all 11 partitions
 of H_6 (deuteron interface); **19 of 35 (μ,ν) blocks are non-scalar
 operators** (per Gemini-corrected count). Pure-LR / symmetric-scalar
@@ -139,7 +139,7 @@ chi caches for T/³He/⁴He complete.
 
 ### Quantitative magnitude budget
 
-The probe [`probe_operator_valued_ansatze_from_mass_endo.py`](../../folio-assistant/computations/probe_operator_valued_ansatze_from_mass_endo.py)
+The probe [`probe_operator_valued_ansatze_from_mass_endo.py`](../../computations/probe_operator_valued_ansatze_from_mass_endo.py)
 quantifies the operator-valued correction Frobenius norm
 
 $$
@@ -164,7 +164,7 @@ the magnitude. This is the unambiguous quantitative case that the
 4 negatives converge on operator-valued, not scalar-substrate-with-
 better-coefficients.
 
-Witness: [`operator-valued-ansatze-from-mass-endo.witness.json`](../../folio-assistant/computations/operator-valued-ansatze-from-mass-endo.witness.json).
+Witness: [`operator-valued-ansatze-from-mass-endo.witness.json`](../../computations/operator-valued-ansatze-from-mass-endo.witness.json).
 
 ## Next-PR scope (concrete)
 
@@ -193,9 +193,9 @@ to:
 ## Cross-references
 
 - [PR #681 audit](https://github.com/litlfred/qou/pull/681) — operator-valued Wenzl framework
-- [PR #671 combiner](../../folio-assistant/computations/canonical_tr_m_via_chi_cache.py) — Step 2 of PR #681's plan
+- [PR #671 combiner](../../computations/canonical_tr_m_via_chi_cache.py) — Step 2 of PR #681's plan
 - [PR #664 critical review](2026-05-17-pr-664-c3-c4-critical-review.md) — the c_3/c_4/κ analysis
 - [PR #663](https://github.com/litlfred/qou/pull/663) — `a = z_markov` MILP/SDP finding (relevant to operator-valued LP)
 - [`prop:atom-knot-mass-derivation`](../../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md) — single-pipeline mass formula
 - [`prop:hecke-branching-trace-decomposition`](../../content/quantum-observable-universe/braids-and-knots/hecke-branching-trace-decomposition.md) — operator-valued Wenzl
-- [`sublemma-2-1-A-operator-extract.witness.json`](../../folio-assistant/computations/sublemma-2-1-A-operator-extract.witness.json) — A operator extracts for H_6
+- [`sublemma-2-1-A-operator-extract.witness.json`](../../computations/sublemma-2-1-A-operator-extract.witness.json) — A operator extracts for H_6

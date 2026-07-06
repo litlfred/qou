@@ -59,7 +59,7 @@ def main() -> int:
     w.set_description(
         "CODATA 2022 / AME 2020 proton, neutron, electron masses "
         "(MeV/c^2), re-exported from "
-        "folio-assistant/computations/codata_constants.py so the "
+        "computations/codata_constants.py so the "
         "values registry can pin Lean and Markdown literals via "
         ":leanval[m_e_MeV] / :leanval[m_p_MeV] / :leanval[m_n_MeV]."
     )
@@ -90,7 +90,7 @@ def main() -> int:
     w.add_data("m_n_MeV", m_n)
     w.add_data(
         "source_module",
-        "folio-assistant/computations/codata_constants.py",
+        "computations/codata_constants.py",
     )
     w.save()
 

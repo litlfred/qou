@@ -41,7 +41,7 @@ derivation chain is genuine — the binomial pattern is a STRUCTURAL
 CONSEQUENCE of the Chebyshev polynomial structure of cosh-quotients
 at odd indices, NOT an empirical fit.
 
-Per CLAUDE.md "structural ≠ empirical": this is a real derivation,
+Per AGENTS.md "structural ≠ empirical": this is a real derivation,
 not pattern matching.
 
 Status: EXPLORATORY VERIFICATION of a genuine derivation.

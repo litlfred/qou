@@ -1,11 +1,4 @@
-import QOU.Basic
-import QOU.Glossary
-import QOU.KnotTheory
-import Mathlib.Data.Real.Basic
-import Mathlib.GroupTheory.SpecificGroups.Dihedral
-import Mathlib.GroupTheory.PresentedGroup
-import Mathlib.GroupTheory.FreeGroup.Basic
-import Mathlib.Algebra.Algebra.Basic
+import QOU.BraidKnot.CasimirShared
 
 
 /-!
@@ -13,9 +6,16 @@ import Mathlib.Algebra.Algebra.Basic
 
 Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
 Source: content/quantum-observable-universe/lean/QOU/PathIntegrals.lean (monolithic)
+
+The shared carrier structures (`SchurWeylDecomposition`, `AlexanderSurjectivity`,
+`MarkovTrace`, `HeckeAlgebra`, `BoundedPartition`) are promoted into the
+`QOU.Braiding` namespace by the library module `QOU.BraidKnot.CasimirShared`;
+they are opened below rather than re-declared.
 -/
 
 namespace QOU.PathIntegrals
+
+open QOU.Braiding
 
 /-- **Completeness of the knot-type eigenbasis** (Proposition 4.x).
 
@@ -44,18 +44,17 @@ structure KnotEigenbasisComplete where
   /-- Consistency: the Markov trace is on the same Hecke algebra
       as the decomposition. -/
   consistent : markov.hecke = decomposition.hecke
-  /-- The braid-closure map labels irreducible summands:
-      for each partition `λ` in the decomposition, there exists
-      a braid `β` whose closure detects `λ` — the Markov trace of the
-      Hecke-algebra image of `β`, restricted to the `S_λ` summand,
-      is non-zero.  Encoded via the representation map `ρ`. -/
+  -- The braid-closure map labels irreducible summands: for each partition `λ`
+  -- in the decomposition, there exists a braid `β` whose closure detects `λ` —
+  -- the Markov trace of the Hecke-algebra image of `β`, restricted to the `S_λ`
+  -- summand, is non-zero.  Encoded via the representation map `ρ` below.
   /-- Representation map: braid → Hecke algebra element. -/
   braid_rep : alexander.Braid → decomposition.hecke.carrier
   /-- For each partition `λ`, there exists a braid whose trace on the
       corresponding Hecke-summand is non-zero. -/
-  summands_detected : ∀ λ ∈ decomposition.partitions,
+  summands_detected : ∀ μ ∈ decomposition.partitions,
     ∃ (β : alexander.Braid),
-    markov.tr (braid_rep β) ≠ 0
+    markov.tr (consistent ▸ braid_rep β) ≠ 0
   /-- The algebraic direct-limit type `V_phys = colim V^{⊗n}`. -/
   V_phys : Type*
   /-- The level-`n` embedded subspace: `embed n` is the image of

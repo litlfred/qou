@@ -1,20 +1,20 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T02:46:58.841150+00:00",
-  "commitSha": "7562af8c8eebf8e4e9f5f99d640fbc901b082f66",
+  "computedAt": "2026-06-22T13:19:40.279740+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "trM_T2_3_symbolic_eq_numeric",
-      "computed": "0.7302040316296948854982990113729730199144168821985122138",
-      "expected": "0.730204031629694885498299011372973019914416882198512213835999",
+      "computed": "0.7302040595165509590261489264300173746541857237901831856",
+      "expected": "0.73020405951655095902614892643001737465418572379018318556188",
       "passed": true,
       "tolerance": "1.0e-45"
     },
     {
       "name": "trM_hopf_wenzl_eq_census",
-      "computed": "1.10438805825918163783311715934980660263366086125024088408243",
-      "expected": "1.10438805825918163783311715934980660263366086125024088408243",
+      "computed": "1.10438806981200371260011417216709836755230417584313751539734",
+      "expected": "1.10438806981200371260011417216709836755230417584313751539734",
       "passed": true,
       "tolerance": "1.0e-50"
     },
@@ -134,11 +134,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 75,
+  "durationMs": 58,
   "computation": "lepton-t2n-torus-tower",
   "scriptFile": "lepton_t2n_torus_tower.py",
-  "scriptHash": "0fc29033baba",
-  "scriptCommitSha": "7562af8c8eebf8e4e9f5f99d640fbc901b082f66",
+  "scriptHash": "5ac1040be0e7",
+  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -148,22 +148,20 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "description": "Engine: python+mpmath (60 dps numeric) with sympy for the symbolic q trace cross-check. EXPLORATORY group-action map of the lepton T(2,n) torus tower: H_2(q) Markov trace J_{T(2,n)}(q) (symbolic + @ q0 60dps), writhe=n, genus=(n-1)/2, cyclic Z_n, B_2->H_2->Z_2 fermion/boson statistics; S_5-equivariance selection n in {3,5}; RAW direct-trace mass-ratio falsification comparison (miss factors, fit-flags); U(1)-framing ladder q^{n.c}. All RAW; no tuning to any lepton mass ratio, charge, or h^k.",
   "auditOnly": "docs/audits/2026-06-02-lepton-t2n-torus-tower.md",
   "parameters": {
-    "q0": "1.10997858275138080759166909561076887987449912187357763605672",
+    "q0": "1.10997859555733471989976322048322502665620840878015405145269",
     "dps": 60,
     "Vol_4_1_ref": "2.02988321281930725004240510854904057188337861506059958403498",
     "CODATA_m_mu_over_m_e": "206.768283",
     "CODATA_m_tau_over_m_e": "3477.23"
   },
   "data": {
-    "markov_z_at_q0": "0.499320334183694452413442680257666303751948164041532207464352",
+    "markov_z_at_q0": "0.499320334033561271768966386275737140161175797899895606169859",
     "lepton_tower_table": {
       "T(2,3)": {
         "particle": "electron",
@@ -179,8 +177,8 @@
         "components": 1,
         "knot_or_link": "knot (1-cpt)",
         "statistics": "fermion (odd n)",
-        "tr_M_at_q0": "0.730204031629694885498299011372973019914416882198512213835999",
-        "abs_tr_M_at_q0": "0.730204031629694885498299011372973019914416882198512213835999"
+        "tr_M_at_q0": "0.73020405951655095902614892643001737465418572379018318556188",
+        "abs_tr_M_at_q0": "0.73020405951655095902614892643001737465418572379018318556188"
       },
       "T(2,5)": {
         "particle": "muon",
@@ -196,8 +194,8 @@
         "components": 1,
         "knot_or_link": "knot (1-cpt)",
         "statistics": "fermion (odd n)",
-        "tr_M_at_q0": "0.993002178753391045818100354318943285009224236339912810876562",
-        "abs_tr_M_at_q0": "0.993002178753391045818100354318943285009224236339912810876562"
+        "tr_M_at_q0": "0.993002242979321479294723531735736182936024173332160190184874",
+        "abs_tr_M_at_q0": "0.993002242979321479294723531735736182936024173332160190184874"
       },
       "T(2,7)": {
         "particle": "tau",
@@ -213,8 +211,8 @@
         "components": 1,
         "knot_or_link": "knot (1-cpt)",
         "statistics": "fermion (odd n)",
-        "tr_M_at_q0": "1.29920068617493159160206053795813338123903710607104593970347",
-        "abs_tr_M_at_q0": "1.29920068617493159160206053795813338123903710607104593970347"
+        "tr_M_at_q0": "1.29920079917950671706897594487211768107487106418269342338153",
+        "abs_tr_M_at_q0": "1.29920079917950671706897594487211768107487106418269342338153"
       },
       "T(2,9)": {
         "particle": "T(2,9) ghost",
@@ -230,8 +228,8 @@
         "components": 1,
         "knot_or_link": "knot (1-cpt)",
         "statistics": "fermion (odd n)",
-        "tr_M_at_q0": "1.66218232971202935594869460256443157347699447219836301241155",
-        "abs_tr_M_at_q0": "1.66218232971202935594869460256443157347699447219836301241155"
+        "tr_M_at_q0": "1.66218250903699126491740757080624866152573824149315117923749",
+        "abs_tr_M_at_q0": "1.66218250903699126491740757080624866152573824149315117923749"
       },
       "T(2,11)": {
         "particle": "T(2,11) ghost",
@@ -247,14 +245,14 @@
         "components": 1,
         "knot_or_link": "knot (1-cpt)",
         "statistics": "fermion (odd n)",
-        "tr_M_at_q0": "2.09781166077059429639566145662059963920747643566636769442324",
-        "abs_tr_M_at_q0": "2.09781166077059429639566145662059963920747643566636769442324"
+        "tr_M_at_q0": "2.09781193037735800723098043195656812463558269747598494506343",
+        "abs_tr_M_at_q0": "2.09781193037735800723098043195656812463558269747598494506343"
       }
     },
     "trM_T2_3_symbolic": "(q**(15/2) + q**(3/2) + q**7 + q**6 - q**3 - q**2)/(q**6 + q**5 + q**4 + q**3)",
     "trM_T2_5_symbolic": "(q**(23/2) + q**(3/2) + q**11 + q**10 - q**3 - q**2)/(q**8 + q**7 + q**6 + q**5)",
-    "trM_hopf_wenzl_at_q0": "1.10438805825918163783311715934980660263366086125024088408243",
-    "trM_hopf_census_at_q0": "1.10438805825918163783311715934980660263366086125024088408243",
+    "trM_hopf_wenzl_at_q0": "1.10438806981200371260011417216709836755230417584313751539734",
+    "trM_hopf_census_at_q0": "1.10438806981200371260011417216709836755230417584313751539734",
     "S5_element_orders": [
       1,
       2,
@@ -272,39 +270,39 @@
       "method": "DIRECT operator-level |tr_M(T(2,n))| / |tr_M(T(2,3))| in H_2(q)",
       "is_production_path": false,
       "production_path_note": "Production reads m_mu/m_e from the Skein/Kashaev identity Vol(4_1)/hbar_q^2 (calibrated to CODATA, conj:lepton-mass-tower-canonical). The direct trace ratio below is NOT that path -- it is the RAW operator-level ratio, reported as a falsification reference.",
-      "ratio_mu_e_direct": "1.35989687229906697204502891153435357865419479513925350535824",
+      "ratio_mu_e_direct": "1.35989690832006923577686774381615491235481765378892558830927",
       "CODATA_mu_e": "206.768283",
-      "miss_factor_mu": "152.047031809429556940932289322867086735826143573971133691482",
-      "ratio_tau_e_direct": "1.77922968088156139119447102603129647650312499157450156628207",
+      "miss_factor_mu": "152.047027782001857464088364032028661461375121447242918087519",
+      "ratio_tau_e_direct": "1.77922976768942320305717750999063300814679512430858894746009",
       "CODATA_tau_e": "3477.23",
-      "miss_factor_tau": "1954.3457696125686395166895102762728448447666862331584287759",
+      "miss_factor_tau": "1954.34567426087175247340076652526209337688143879338887379698",
       "fit_flag": "NONE -- no coupling tuned; both ratios miss CODATA by ~10^2-10^3x"
     },
     "u1_framing_ladder_c1": {
       "T(2,3)": {
         "particle": "electron",
         "writhe": 3,
-        "framing_q_pow_n_c1_at_q0": "1.36755183695138518796672402990936100071109752077276381077332"
+        "framing_q_pow_n_c1_at_q0": "1.36755188428420657086804465632413106596397609339967382215176"
       },
       "T(2,5)": {
         "particle": "muon",
         "writhe": 5,
-        "framing_q_pow_n_c1_at_q0": "1.68489559691622032007890931933453654876143904310339393945169"
+        "framing_q_pow_n_c1_at_q0": "1.68489569411041935382093890178477227137229541270317836879205"
       },
       "T(2,7)": {
         "particle": "tau",
         "writhe": 7,
-        "framing_q_pow_n_c1_at_q0": "2.07587975519540389127881851565233872480080841124047842901098"
+        "framing_q_pow_n_c1_at_q0": "2.07587992284309785586274639289892637702948727790339673722746"
       },
       "T(2,9)": {
         "particle": "T(2,9) ghost",
         "writhe": 9,
-        "framing_q_pow_n_c1_at_q0": "2.55759274694359848259100250398142520844017905503730091229061"
+        "framing_q_pow_n_c1_at_q0": "2.55759301250885512647413066236759937863989718852135659882798"
       },
       "T(2,11)": {
         "particle": "T(2,11) ghost",
         "writhe": 11,
-        "framing_q_pow_n_c1_at_q0": "3.15108842063097573113437369850435938970605994337703899955712"
+        "framing_q_pow_n_c1_at_q0": "3.15108882053026790979195170928295225290488655236273162341986"
       }
     },
     "lepton_electric_charge_all": -1

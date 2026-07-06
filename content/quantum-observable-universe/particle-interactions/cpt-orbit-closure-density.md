@@ -89,7 +89,7 @@ Then:
 In every case the original Boolean flag is recovered as the orbit-
 closure check, with no per-link case analysis.
 
-## Why the fold is the right involution
+## Correctness of the fold involution
 
 The Type-B Cartan datum is obtained from the $A_{n-1}$ datum by
 folding along the Dynkin involution $i \mapsto n - i$
@@ -110,7 +110,7 @@ a fundamental domain of $\sigma$ or is invariant.
 
 ## Crystal-basis shortcut
 
-This is shortcut #1 from CLAUDE.md §7b applied at the
+This is shortcut #1 from AGENTS.md §7b applied at the
 density-rule level: instead of the per-link Boolean flag and its
 case analysis, the Type-B fold gives the rule structurally. The
 Boolean is now a *consequence* of the orbit count, not an
@@ -143,3 +143,5 @@ The density-value lemmas
 `cpt_orbit_closure_density_single_chirality` (not CPT-saturated
 $\to$ $m_e$) are unconditional and proved directly by `if_pos` /
 `if_neg` on the decidable predicate.
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

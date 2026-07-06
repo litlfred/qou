@@ -117,8 +117,8 @@ If A-polynomial machinery is wired:
 - [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md) §Φ_q vs Li_2^q context-sorting
 - [`docs/audits/2026-05-24-crystal-yekutieli-correspondence-chain.md`](2026-05-24-crystal-yekutieli-correspondence-chain.md) §11 (Mostow-Prasad)
 - [`docs/duality-tracker.md`](../duality-tracker.md) D17 (DIM master Pentagon), D19 (quantum-Langlands)
-- [`folio-assistant/computations/alpha/alpha_k_jones_markov_h3.py`](../../folio-assistant/computations/alpha/alpha_k_jones_markov_h3.py) — colored Jones via Markov
-- [`folio-assistant/computations/alpha/alpha_k_jones_markov_h4.py`](../../folio-assistant/computations/alpha/alpha_k_jones_markov_h4.py) — H_4 extension (this PR)
+- [`computations/alpha/alpha_k_jones_markov_h3.py`](../../computations/alpha/alpha_k_jones_markov_h3.py) — colored Jones via Markov
+- [`computations/alpha/alpha_k_jones_markov_h4.py`](../../computations/alpha/alpha_k_jones_markov_h4.py) — H_4 extension (this PR)
 
 ## §8. Honest verdict
 

@@ -3,8 +3,8 @@
 # Path B: Schützenberger Evacuation Bar-Pairing for V_{(3,2,1)}
 
 **Date**: 2026-05-06  
-**Script**: `folio-assistant/computations/path_b_evacuation.py`  
-**Witness**: `folio-assistant/computations/path-b-evacuation.witness.json`  
+**Script**: `computations/path_b_evacuation.py`  
+**Witness**: `computations/path-b-evacuation.witness.json`  
 **Status**: ✓ All 10 assertions pass
 
 ---

@@ -1,6 +1,6 @@
 """I11 audit — CODATA `_VALIDATION` constants used as production inputs.
 
-`folio-assistant/computations/codata_constants.py` exposes a family
+`computations/codata_constants.py` exposes a family
 of `M_*_MEV_VALIDATION` constants (M_P, M_N, M_D, M_T, M_HE3, …)
 explicitly tagged in the source as "DO NOT USE AS PREDICTION INPUTS
 — retained only for `err = pred - M_X_VALIDATION` comparisons".
@@ -13,7 +13,7 @@ The I11 antipattern in `local/compute-integration-watcher` is:
   the comparison target, or multiplies it with a derived quantity.
 
 This audit walks every Python script under
-`folio-assistant/computations/`, looks for `_VALIDATION` imports,
+`computations/`, looks for `_VALIDATION` imports,
 and classifies the usage:
 
   - `ok_comparison_only`     — value only appears in `pred - ...`,
@@ -37,7 +37,7 @@ Emits `validation-as-input-audit.witness.json` with the per-script
 classification.
 
 Usage:
-    python3 folio-assistant/computations/validation_as_input_audit.py [--strict]
+    python3 computations/validation_as_input_audit.py [--strict]
 """
 
 
@@ -55,6 +55,7 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import ast
 import json
 import re
 import sys
@@ -112,6 +113,22 @@ COMPARISON_LINE_INDICATORS = (
     "residual", "err", "delta", "diff",
 )
 
+# Recording / display context — storing the anchor for provenance or
+# printing it is NOT a computation input (refinement, 2026-06-16: these
+# were the dominant false-positive class). `add_parameter`/`add_data`/
+# `add_assertion` write the reference value into the witness JSON;
+# print/f-strings display it.
+RECORDING_INDICATORS = (
+    "add_parameter", "add_data", "add_assertion", "add_caveat",
+    ".nstr(", "print(", 'f"', "f'", "logging.", "logger.",
+)
+
+# Dict-value recording — `"key": str(M_X_VALIDATION)` stores the anchor into a
+# (string-keyed) data structure (e.g. an `ATOMS = {…}` roster used later in
+# `B = M_codata − pred` comparisons), not a derivation input (refinement,
+# 2026-06-16 — the dict-roster false-positive class, parallel to the I8 fix).
+DICT_VALUE_RX = re.compile(r"""["'][^"']*["']\s*:\s*""")
+
 
 def _classify_script(path: Path) -> dict[str, Any] | None:
     """Audit one Python script for validation-constant usage."""
@@ -133,23 +150,44 @@ def _classify_script(path: Path) -> dict[str, Any] | None:
         "validation_constants_imported": found,
     }
 
-    # Check the module docstring for an anchor banner.
-    # The docstring is the leading `"""..."""` of the module.
-    docstring_match = re.search(r'^"""(.*?)"""', text, re.DOTALL)
-    docstring = docstring_match.group(1) if docstring_match else ""
+    # Check the module docstring for an anchor banner. Use ast.get_docstring
+    # (not a `^"""` regex) so a shebang or leading `#` comments before the
+    # docstring don't defeat detection — that bug was silently dropping the
+    # CLASS-A banners that scripts like binding_K_direct.py already carry.
+    try:
+        docstring = ast.get_docstring(ast.parse(text)) or ""
+    except SyntaxError:
+        docstring = ""
     has_banner = any(
         re.search(p, docstring, re.IGNORECASE) for p in ANCHOR_BANNER_PATTERNS
     )
 
     # Walk usage lines (any line containing one of the constants).
     lines = text.splitlines()
+    # Track multi-line `from … import (…)` continuation lines — the names
+    # listed across them are imports, not uses, but they don't start with
+    # `from`/`import` so the single-line skip misses them (refinement,
+    # 2026-06-16: the import-continuation false-positive class).
+    import_cont: set[int] = set()
+    _in_import_paren = False
+    for i, line in enumerate(lines, start=1):
+        if _in_import_paren:
+            import_cont.add(i)
+            if ")" in line:
+                _in_import_paren = False
+        elif re.match(r"\s*(from|import)\b", line) and "(" in line and ")" not in line:
+            _in_import_paren = True
     usage_lines: list[tuple[int, str]] = []
     for i, line in enumerate(lines, start=1):
         # Strip Python comments (# ...) from the line for
         # classification — comments may explain the constant but
         # don't count as USE.
         code_part = re.sub(r"#.*$", "", line)
-        if any(v in code_part for v in found):
+        # Also strip string literals: the constant NAME appearing inside a
+        # quoted string (e.g. `"source": "... M_P_MEV_VALIDATION (reference)"`)
+        # is documentation, not a use (refinement, 2026-06-16).
+        code_no_str = re.sub(r'"[^"]*"|\'[^\']*\'', "", code_part)
+        if any(v in code_no_str for v in found):
             usage_lines.append((i, code_part))
 
     # The IMPORT line itself doesn't count as usage.
@@ -162,19 +200,53 @@ def _classify_script(path: Path) -> dict[str, Any] | None:
         return row
 
     # Classify each non-import usage line.
+    # Two-step comparison (refinement, 2026-06-16): an anchor aliased to a
+    # local (`m_p = mp.mpf(str(M_P_MEV_VALIDATION))`) whose local is later
+    # used in a comparison is comparison-reference, not a derivation input.
+    # Collect pure-alias assignments (RHS is ONLY the anchor + conversions,
+    # no arithmetic), then mark those whose alias var appears in a comparison.
+    alias_vars: dict[str, int] = {}
+    for n, line in usage_lines:
+        am = re.match(r"\s*([A-Za-z_]\w*)\s*=\s*(.+)$", line)
+        if not am:
+            continue
+        lhs, rhs = am.group(1), am.group(2)
+        core = rhs
+        for v in found:
+            core = core.replace(v, "")
+        core = re.sub(r"(?:mpmath\.mpf|mp\.mpf|mpf|float|str|Decimal)\s*\(",
+                      "(", core)
+        core = re.sub(r"[()\s]", "", core)
+        if core == "":  # RHS was only the anchor wrapped in conversions
+            alias_vars[lhs] = n
+    compared_aliases: set[str] = set()
+    for line in lines:
+        for var in alias_vars:
+            if re.search(rf"\b{re.escape(var)}\b", line) and any(
+                ind in line for ind in COMPARISON_LINE_INDICATORS
+            ):
+                compared_aliases.add(var)
+
     violation_lines: list[int] = []
     comparison_lines: list[int] = []
     for n, line in usage_lines:
-        if re.match(r"\s*(from|import)\b", line):
+        if re.match(r"\s*(from|import)\b", line) or n in import_cont:
             continue
-        # Comparison-context hints?
-        is_comparison = (
+        # Comparison-context, recording/display, or two-step alias-to-comparison?
+        is_ok = (
             any(ind in line for ind in COMPARISON_LINE_INDICATORS)
             or any(
                 m.group(1) in found for m in COMPARISON_KW_PATTERN.finditer(line)
             )
+            or any(ind in line for ind in RECORDING_INDICATORS)
+            or DICT_VALUE_RX.search(line)  # `"key": str(M_X_VALIDATION)` roster
         )
-        if is_comparison:
+        if not is_ok:
+            am = re.match(r"\s*([A-Za-z_]\w*)\s*=", line)
+            if (am and am.group(1) in compared_aliases
+                    and alias_vars.get(am.group(1)) == n):
+                is_ok = True  # this is the alias-assignment; alias is compared
+        if is_ok:
             comparison_lines.append(n)
         else:
             violation_lines.append(n)
@@ -196,7 +268,13 @@ def main() -> int:
     strict = "--strict" in sys.argv
 
     rows: list[dict[str, Any]] = []
-    for py in sorted(HERE.glob("*.py")):
+    # Scan the compute tree (HERE.parent = computations/), not just audits/.
+    # Post-reorg HERE.glob saw only audits/ — missing the compute tree and
+    # false-flagging sibling audits (which legitimately import validation
+    # constants to police them). Skip _deprecated and the audits/ dir.
+    for py in sorted((HERE.parent).rglob("*.py")):
+        if "_deprecated" in py.parts or HERE.name in py.parts:
+            continue
         if py.name.startswith("_"):
             continue
         if py.name == "codata_constants.py":

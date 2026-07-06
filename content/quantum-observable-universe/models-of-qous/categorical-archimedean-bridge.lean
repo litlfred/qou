@@ -1,4 +1,5 @@
 import QOU.Basic
+import QOU.QuantumObservableUniverse.CategoricalFoundations
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Functor.Basic
 
@@ -61,6 +62,7 @@ structure CategoricalArchimedeanBridge (C : Type u) [Category.{v} C]
 theorem categorical_archimedean_bridge {C : Type u} [Category.{v} C]
     [MonoidalCategory C]
     (cab : CategoricalArchimedeanBridge C) :
+    letI := cab.catD
     cab.fibreFunctor.map (cab.proj_V ≫ cab.d_classical) = cab.contactOp :=
   cab.bridge
 

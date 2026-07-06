@@ -15,7 +15,7 @@ Two consequences follow:
    tuned to reproduce the terms. This is forced by the precision-floor
    obstruction (the $c_k$ information bound makes term data unable to fix $R$
    beyond low order), and it is the same fibre-level / root-of-unity
-   singularity structure that governs the $Q_\beta$ ladder.
+   singularity structure that governs the $\mathfrak{Q}_\beta$ ladder.
 2. **It closes the binding program.** Given $R$, the recurrence of
    [`prop:binding-genfun-qdifference`](#prop:binding-genfun-qdifference)
    determines every body term from the deuteron base case (fixing the
@@ -31,4 +31,4 @@ closure: the residue form (D), the body-order = jet-degree coincidence (C), and
 the recurrence machinery (L3) are all proved; only the identification of $R$
 with the prolongation symbol remains. It is stated here as a precise,
 falsifiable structural claim — to be *derived* from the prolonged connection's
-local monodromy, not searched numerically.
+local monodromy, not searched canonical.

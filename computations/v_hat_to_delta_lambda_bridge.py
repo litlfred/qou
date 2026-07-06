@@ -44,7 +44,7 @@ ratio table and a per-atom verdict
 {`bridge_closed`, `bridge_partial`, `bridge_inconclusive`}.
 
 Usage:
-    python3 folio-assistant/computations/v_hat_to_delta_lambda_bridge.py
+    python3 computations/v_hat_to_delta_lambda_bridge.py
 """
 from __future__ import annotations
 

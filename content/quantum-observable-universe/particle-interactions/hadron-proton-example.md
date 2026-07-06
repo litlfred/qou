@@ -64,12 +64,12 @@ $\mathfrak{E}_{\mathrm{cross}}(\mathfrak{p}) < 0$.  At the substrate
 parameter $q \approx 1.110$, the full computation yields
 
 $$
-  \mathfrak{m}_{\mathfrak{p}}(q)  \approx  :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json}  \text{MeV},
+  \mathfrak{m}_{\mathfrak{p}}(q)  \approx  :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json}  \text{MeV},
 $$
 
 matching the experimental proton mass to high precision.
 
-**Why the proton is stable.**
+**Stability of the proton.**
 The proton is the lightest baryon and cannot decay into lighter
 baryons.  Topologically, this corresponds to the fact that the
 Borromean link of three unknots is the simplest non-trivial

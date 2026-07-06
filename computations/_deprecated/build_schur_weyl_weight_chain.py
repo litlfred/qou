@@ -68,7 +68,7 @@ def build() -> DerivationChain:
         jet_order=0,
         notes=(
             "Hecke energy axiom underwrites the (q - q^{-1}) normalisation "
-            "(CLAUDE.md §7a).  q-integers are the canonical replacement "
+            "(AGENTS.md §7a).  q-integers are the canonical replacement "
             "for ordinary integers in every Hecke-algebra trace formula."
         ),
     ))

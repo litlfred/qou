@@ -49,6 +49,6 @@ $$
 \text{meson: } (\sigma\sigma^{-1})^k \cdot \sigma
 $$
 
-The lepton probes the **top** of the Hecke spectrum ($q$-eigenvalue),
-the meson probes the **full spectrum** through binding (both $q$ and
+The lepton evaluates the **top** of the Hecke spectrum ($q$-eigenvalue),
+the meson evaluates the **full spectrum** through binding (both $q$ and
 $-q^{-1}$ eigenvalues participate).

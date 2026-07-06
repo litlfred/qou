@@ -16,7 +16,7 @@
 //! returned as a decimal string (the caller decides the float
 //! type to deserialize into).
 
-use crate::seminormal::standard_young_tableaux;
+use crate::seminormal::{partitions_of, standard_young_tableaux};
 use rayon::prelude::*;
 use rug::{ops::Pow, Assign, Float};
 
@@ -298,6 +298,223 @@ pub fn chi_lambda_braid_mpfr(
         // pressure win at zero math cost.
         .reduce(|| Float::with_val(prec, 0), |mut a, b| { a += b; a });
     trace.to_string_radix(10, Some(dps as usize))
+}
+
+// ──────────────────────────────────────────────────────────────────
+// §S0b-MPFR — atomic q-character on `c·σ + d·I` Hecke factors.
+//
+// MPFR analogue of [`crate::seminormal::chi_q_atomic`] /
+// [`crate::seminormal::apply_factor_left`]. Each factor is a linear
+// combination `c·σ_g + d·I` of a Hecke generator and the identity;
+// `(c, d)` are decimal strings (avoid the lossy f64 boundary), q is a
+// decimal string, dps is the requested decimal precision.
+// ──────────────────────────────────────────────────────────────────
+
+/// Apply `v ← (c · σ + d · I) · v` in-place at MPFR precision.
+///
+/// rug::Float analogue of [`crate::seminormal::apply_factor_left`].
+/// Same One/Two block formulas; indices NOT covered by any block are
+/// identity for σ and scale by `c + d`. Fast paths for `c == 0`
+/// (pure identity scaling by `d`) and `d == 0` (pure σ scaling by `c`).
+fn apply_factor_left_mpfr(v: &mut [Float], blocks: &[BlockMpfr], c: &Float, d: &Float, prec: u32) {
+    if c.is_zero() {
+        // Pure identity scaling: v ← d · v.
+        if !(d.is_integer() && *d == 1) {
+            for x in v.iter_mut() {
+                let scaled = Float::with_val(prec, &*x) * d;
+                *x = scaled;
+            }
+        }
+        return;
+    }
+    if d.is_zero() {
+        // Pure σ scaling: v ← c · σ(v).
+        if !(c.is_integer() && *c == 1) {
+            for x in v.iter_mut() {
+                let scaled = Float::with_val(prec, &*x) * c;
+                *x = scaled;
+            }
+        }
+        apply_sigma_mpfr(v, blocks, prec);
+        return;
+    }
+    // General case: v ← c·σ(v) + d·v, computed in-place per block.
+    //   Block::One { i, a }: new v[i] = (c·a + d) · v[i]
+    //   Block::Two { i, j, a, ap, b }:
+    //     new v[i] = (c·a + d)·v[i] + (c·b)·v[j]
+    //     new v[j] = (c·b)·v[i] + (c·ap + d)·v[j]
+    //   Uncovered index k: new v[k] = (c + d) · v[k].
+    let n = v.len();
+    let mut covered = vec![false; n];
+    for block in blocks {
+        match block {
+            BlockMpfr::One { i, a } => {
+                // coef = c·a + d
+                let coef = Float::with_val(prec, c) * a + d;
+                let new_vi = Float::with_val(prec, &v[*i]) * &coef;
+                v[*i] = new_vi;
+                covered[*i] = true;
+            }
+            BlockMpfr::Two { i, j, a, ap, b } => {
+                let coef_a = Float::with_val(prec, c) * a + d; // c·a + d
+                let coef_ap = Float::with_val(prec, c) * ap + d; // c·ap + d
+                let cb = Float::with_val(prec, c) * b; // c·b
+                let vi = v[*i].clone();
+                let vj = v[*j].clone();
+                v[*i] = Float::with_val(prec, &coef_a) * &vi + Float::with_val(prec, &cb) * &vj;
+                v[*j] = Float::with_val(prec, &cb) * &vi + Float::with_val(prec, &coef_ap) * &vj;
+                covered[*i] = true;
+                covered[*j] = true;
+            }
+        }
+    }
+    // Identity action on uncovered indices: σ = I → scale by (c + d).
+    let scale = Float::with_val(prec, c) + d;
+    if !(scale.is_integer() && scale == 1) {
+        for k in 0..n {
+            if !covered[k] {
+                let scaled = Float::with_val(prec, &v[k]) * &scale;
+                v[k] = scaled;
+            }
+        }
+    }
+}
+
+/// **MPFR analogue of [`crate::seminormal::chi_q_atomic`].**
+///
+/// Computes `χ_λ(Π_i (c_i · σ_{g_i} + d_i · I))` for partition
+/// `shape ⊢ n` at MPFR precision `dps`. `factors` is a list of
+/// `(c_str, d_str, gen_1based)` triples (decimal strings to avoid the
+/// lossy f64 boundary), applied **left-to-right** (position 0 is the
+/// rightmost in the matrix product). `q_str` is the substrate parameter
+/// as a decimal string. Returns `χ_λ` as a decimal string with `dps`
+/// significant digits.
+pub fn chi_q_atomic_mpfr(
+    shape: &[usize],
+    factors: &[(String, String, u32)],
+    q_str: &str,
+    dps: u32,
+) -> String {
+    let prec = dps_to_bits(dps);
+    let n: usize = shape.iter().sum();
+    if n == 0 {
+        return Float::with_val(prec, 1).to_string_radix(10, Some(dps as usize));
+    }
+
+    let q = Float::parse(q_str)
+        .map(|p| Float::with_val(prec, p))
+        .unwrap_or_else(|e| {
+            panic!(
+                "chi_q_atomic_mpfr: invalid q_str {:?}: {} \
+                 (a silent fallback to q=1 would trigger divide-by-zero \
+                 in the Hoefsmit coefficients via 1 - q^{{-2ρ}} = 0)",
+                q_str, e
+            )
+        });
+
+    let (dim, all_blocks) = build_blocks_mpfr(shape, &q, prec);
+    if dim == 0 {
+        return Float::with_val(prec, 0).to_string_radix(10, Some(dps as usize));
+    }
+
+    // Pre-marshal factors: parse (c, d) to Float, resolve generator
+    // blocks. For n = 1 there are no generators; any nontrivial gen
+    // would be an invalid index (mirrors the f64 path's placeholder).
+    let resolved: Vec<(Float, Float, &[BlockMpfr])> = factors
+        .iter()
+        .map(|(c_str, d_str, gen)| {
+            assert!(
+                (*gen != 0 && (*gen as usize) <= all_blocks.len()) || all_blocks.is_empty(),
+                "chi_q_atomic_mpfr: invalid generator index {} for n = {} \
+                 (valid range: 1..={})",
+                gen,
+                n,
+                all_blocks.len()
+            );
+            let c = Float::parse(c_str)
+                .map(|p| Float::with_val(prec, p))
+                .unwrap_or_else(|e| {
+                    panic!("chi_q_atomic_mpfr: invalid c_str {:?}: {}", c_str, e)
+                });
+            let d = Float::parse(d_str)
+                .map(|p| Float::with_val(prec, p))
+                .unwrap_or_else(|e| {
+                    panic!("chi_q_atomic_mpfr: invalid d_str {:?}: {}", d_str, e)
+                });
+            let blocks: &[BlockMpfr] = if all_blocks.is_empty() {
+                &[]
+            } else {
+                let idx = *gen as usize - 1;
+                all_blocks[idx].as_slice()
+            };
+            (c, d, blocks)
+        })
+        .collect();
+
+    // Per-basis-vector iterative trace, parallel over basis vectors with
+    // per-worker buffer reuse (mirrors `chi_lambda_braid_mpfr`'s pattern).
+    let trace = (0..dim)
+        .into_par_iter()
+        .fold(
+            || {
+                let buf: Vec<Float> = (0..dim).map(|_| Float::with_val(prec, 0)).collect();
+                (buf, Float::with_val(prec, 0))
+            },
+            |(mut buf, mut partial), i| {
+                for k in 0..dim {
+                    buf[k].assign(0u32);
+                }
+                buf[i].assign(1u32);
+                // Apply factors right-to-left (factor at index 0 is the
+                // rightmost in the matrix product → applied first to e_i).
+                for (c, d, blocks) in resolved.iter().rev() {
+                    apply_factor_left_mpfr(&mut buf, blocks, c, d, prec);
+                }
+                partial += &buf[i];
+                (buf, partial)
+            },
+        )
+        .map(|(_, p)| p)
+        .reduce(|| Float::with_val(prec, 0), |mut a, b| {
+            a += b;
+            a
+        });
+    trace.to_string_radix(10, Some(dps as usize))
+}
+
+/// **Batch [`chi_q_atomic_mpfr`] over all partitions of `n_strands`** —
+/// returns `Vec<(partition, chi_decimal_string)>` for every λ ⊢
+/// n_strands.
+///
+/// MPFR analogue of
+/// [`crate::seminormal::chi_q_atomic_all_partitions`]; collapses the
+/// Python-side `for shape in partitions_of(n)` ping-pong to a single
+/// PyO3 crossing.
+///
+/// **Parallelism is on the *inner* basis-vector axis, serial over
+/// partitions.** `chi_q_atomic_mpfr`'s per-basis-vector trace is already
+/// rayon-parallel over the dim ≤ 7700 basis vectors. The large λ ⊢ 12
+/// (dim up to 7700) dominate wall time — an O(dim²·k) serial sweep of
+/// one is ~minutes on a single core. Parallelising the *outer* partition
+/// axis as well (nested rayon) starves those huge-dim characters: each
+/// gets a single worker while the many tiny λ saturate the pool. A
+/// serial outer loop hands the full threadpool to whichever character
+/// is running, so the expensive λ get all cores. (rayon nesting is safe,
+/// just slower here.)
+pub fn chi_q_atomic_all_partitions_mpfr(
+    n_strands: usize,
+    factors: &[(String, String, u32)],
+    q_str: &str,
+    dps: u32,
+) -> Vec<(Vec<usize>, String)> {
+    let shapes = partitions_of(n_strands);
+    shapes
+        .iter()
+        .map(|shape| {
+            let chi = chi_q_atomic_mpfr(shape, factors, q_str, dps);
+            (shape.clone(), chi)
+        })
+        .collect()
 }
 
 // ──────────────────────────────────────────────────────────────────

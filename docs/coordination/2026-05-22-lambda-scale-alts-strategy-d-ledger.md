@@ -57,7 +57,7 @@ magnitude off. The H_3 Markov trace and the H_4-Wedderburn-
 derived Family A measure different invariants of the Borromean
 substrate; no consequence for Family A. Strategy F closed.
 
-**Witness:** [`lambda-scale-alt-f-markov-trace-beta-bor.witness.json`](../../folio-assistant/computations/lambda-scale-alt-f-markov-trace-beta-bor.witness.json)
+**Witness:** [`lambda-scale-alt-f-markov-trace-beta-bor.witness.json`](../../computations/lambda-scale-alt-f-markov-trace-beta-bor.witness.json)
 
 ### 2. Strategy G (Skein-family polynomial direct eval) — no single-polynomial match
 
@@ -68,7 +68,7 @@ same numerical-coincidence basin as PR #701's falsified
 basin). Closed for single-polynomial; multi-orientation
 HOMFLYPT (Strategy J) is the remaining Skein direction.
 
-**Witness:** [`lambda-scale-alt-g-skein-polynomial-direct.witness.json`](../../folio-assistant/computations/lambda-scale-alt-g-skein-polynomial-direct.witness.json)
+**Witness:** [`lambda-scale-alt-g-skein-polynomial-direct.witness.json`](../../computations/lambda-scale-alt-g-skein-polynomial-direct.witness.json)
 
 ### 3. Strategy H (Wedderburn variant scan) — V_3, V_4 are refinement candidates; V_7 is a coincidence
 
@@ -95,7 +95,7 @@ on H_4 character data:
   is in the same coincidence basin — not a substrate-pure
   candidate.
 
-**Witness:** [`family-a-variants-investigation.witness.json`](../../folio-assistant/computations/family-a-variants-investigation.witness.json)
+**Witness:** [`family-a-variants-investigation.witness.json`](../../computations/family-a-variants-investigation.witness.json)
 
 ### 4. Brief addendum (§Alternatives to Strategy D) appended
 
@@ -124,9 +124,9 @@ Strategy D is the last resort.
   [`docs/agent-briefs/2026-05-22-lambda-scale-qdilog-tower-direct.md`](../agent-briefs/2026-05-22-lambda-scale-qdilog-tower-direct.md)
   §Alternatives to Strategy D
 - Family A theorem:
-  [`folio-assistant/computations/lambda_scale_all_c_i_family_a.py`](../../folio-assistant/computations/lambda_scale_all_c_i_family_a.py)
+  [`computations/lambda_scale_all_c_i_family_a.py`](../../computations/lambda_scale_all_c_i_family_a.py)
 - Family A variant scan:
-  [`folio-assistant/computations/probe_family_a_variants.py`](../../folio-assistant/computations/probe_family_a_variants.py)
+  [`computations/probe_family_a_variants.py`](../../computations/probe_family_a_variants.py)
 - Predecessor ledger:
   [`docs/coordination/2026-05-18-lambda-scale-falsification.md`](2026-05-18-lambda-scale-falsification.md)
 - Predecessor ledger:

@@ -1,5 +1,6 @@
 import Mathlib.Algebra.Ring.Defs
 import Mathlib.Algebra.Field.Defs
+import Mathlib.Tactic
 
 /-!
 # QOU.BraidKnot.BarInvolution (definition block)
@@ -61,9 +62,10 @@ noncomputable def barSkewProjection {R : Type*} [Field R] [BarInvolution R]
     (x : R) : R := (x - BarInvolution.bar x) / 2
 
 /-- Every element decomposes as `x = P_avg(x) + P_skew(x)`. -/
-theorem decompose {R : Type*} [Field R] [BarInvolution R] (x : R) :
+theorem decompose {R : Type*} [Field R] [CharZero R] [BarInvolution R] (x : R) :
     x = barSymmetricProjection x + barSkewProjection x := by
   unfold barSymmetricProjection barSkewProjection
+  field_simp
   ring
 
 /-! ## Bar-grading algebraic structure (all PROVED, no `sorry`)
@@ -130,7 +132,7 @@ theorem bar_neg (x : R) : BarInvolution.bar (-x) = -BarInvolution.bar x := by
   have h0 : BarInvolution.bar x + BarInvolution.bar (-x) = 0 := by
     rw [← BarInvolution.bar_add, add_neg_cancel]
     exact BarInvolution.bar_zero
-  exact eq_neg_of_add_eq_zero_left h0
+  linear_combination h0
 
 /-- Negation of bar-symmetric is bar-symmetric. -/
 theorem IsBarSymmetric.neg {x : R} (hx : IsBarSymmetric x) :
@@ -142,7 +144,7 @@ theorem IsBarSymmetric.neg {x : R} (hx : IsBarSymmetric x) :
 theorem IsBarAntiSymmetric.neg {x : R} (hx : IsBarAntiSymmetric x) :
     IsBarAntiSymmetric (-x) := by
   unfold IsBarAntiSymmetric at *
-  rw [bar_neg, hx]; ring
+  rw [bar_neg, hx]
 
 /-- **Even powers of a bar-anti-symmetric element are bar-symmetric.**
     Direct corollary: `h^(2n)` is bar-symmetric for any bar-anti-sym `h`. -/
@@ -188,8 +190,7 @@ theorem bar_two : BarInvolution.bar (2 : R) = 2 := by
 theorem bar_natCast (n : ℕ) : BarInvolution.bar ((n : R)) = (n : R) := by
   induction n with
   | zero =>
-    show BarInvolution.bar (0 : R) = 0
-    exact BarInvolution.bar_zero
+    simpa using BarInvolution.bar_zero
   | succ k ih =>
     have hstep : ((k + 1 : ℕ) : R) = (k : R) + 1 := by push_cast; ring
     rw [hstep, BarInvolution.bar_add, BarInvolution.bar_one, ih]
@@ -206,7 +207,7 @@ end BarOnScalars
 `P_skew` is the complementary projection. -/
 
 section Projections
-variable {R : Type*} [Field R] [BarInvolution R]
+variable {R : Type*} [Field R] [CharZero R] [BarInvolution R]
 
 /-- `bar (x⁻¹) = (bar x)⁻¹` over a field. From `bar(x · x⁻¹) = bar 1 = 1`
     and the multiplicativity of bar. -/
@@ -223,18 +224,18 @@ theorem bar_inv (x : R) :
       exact hbb
     have h1 : BarInvolution.bar x * BarInvolution.bar x⁻¹ = 1 := by
       rw [← BarInvolution.bar_mul, mul_inv_cancel₀ hx, BarInvolution.bar_one]
-    exact (eq_inv_of_mul_eq_one_right h1).symm
+    exact eq_inv_of_mul_eq_one_left (by rw [mul_comm]; exact h1)
 
 /-- `bar(1/2) = 1/2`. Foundation for `barSymmetricProjection` idempotency. -/
 theorem bar_half : BarInvolution.bar ((1 : R) / 2) = 1 / 2 := by
-  rw [one_div, bar_inv, bar_two, one_div]
+  rw [one_div, bar_inv, bar_two]
 
 /-- Every integer scalar is bar-symmetric (over a CommRing — restated
     here in the Field section for convenient downstream consumption). -/
 theorem isBarSymmetric_intCast (n : ℤ) : IsBarSymmetric ((n : R)) := by
   unfold IsBarSymmetric
-  induction n with
-  | ofNat k => exact_mod_cast bar_natCast (R := R) k
+  induction n using Int.rec with
+  | ofNat k => simpa using bar_natCast (R := R) k
   | negSucc k =>
     have hstep : (Int.negSucc k : R) = -((k + 1 : ℕ) : R) := by push_cast; ring
     rw [hstep, bar_neg, bar_natCast]

@@ -150,8 +150,8 @@ def build_chain(slug: str, label: str, Z: int, N: int) -> DerivationChain:
         citation="manuscript:§atomic-braid-recipe",
         jet_order=0,
         notes=(
-            "script: folio-assistant/computations/mass_at_3A_proper.py "
-            "(`atom_braid_word_3A`) + folio-assistant/computations/canonical_braid_crossings.py "
+            "script: computations/mass_at_3A_proper.py "
+            "(`atom_braid_word_3A`) + computations/canonical_braid_crossings.py "
             "(`atom_canonical_crossings(1, 0)`).  Awaits Lean "
             "formalisation of the (uud) → canonical-NF map; closes "
             "when `conj:canonical-knot-id-sdp` (issue #604, GAP-A-1) "
@@ -181,7 +181,7 @@ def build_chain(slug: str, label: str, Z: int, N: int) -> DerivationChain:
         citation="manuscript:§atomic-braid-recipe",
         jet_order=0,
         notes=(
-            "script: folio-assistant/computations/canonical_braid_crossings.py "
+            "script: computations/canonical_braid_crossings.py "
             "(`atom_canonical_crossings(0, 1)`).  Same closure path "
             "as the proton word (step 3): when `conj:canonical-knot-"
             "id-sdp` becomes a theorem, both step 3 and step 4 "
@@ -211,7 +211,7 @@ def build_chain(slug: str, label: str, Z: int, N: int) -> DerivationChain:
         citation="manuscript:§Hecke-branching-trace-decomposition",
         jet_order=0,
         notes=(
-            "script: folio-assistant/computations/mass_at_3A_proper.py "
+            "script: computations/mass_at_3A_proper.py "
             "(`atom_braid_word_3A` inter-block insertion logic).  "
             "Paper-cited under "
             "`prop:hecke-branching-trace-decomposition`; awaits Lean "

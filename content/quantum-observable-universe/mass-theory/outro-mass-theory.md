@@ -17,7 +17,7 @@ chapter.
 The next chapter (predicted spectra) consumes this mass-theory
 machinery to produce per-particle, per-isotope, and per-shell
 predictions tabulated against PDG / CODATA / SnapPy
-benchmarks.  Readers focused on the numerical predictions can
+benchmarks.  Readers focused on the structural consequences can
 take the substrate-level closed forms recorded here as the
 chapter's input; readers focused on the structural arithmetic
 can work through the proofs in any order, since the substrate-

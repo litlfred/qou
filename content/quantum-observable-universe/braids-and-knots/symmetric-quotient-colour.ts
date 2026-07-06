@@ -7,6 +7,6 @@ export default remark({
   tags: ["braid-group", "colour", "symmetric-group"],
   uses: [
     "prop:braid-action-tensor",
-    "def:coral-sector-coords",
+    "def:color-sector-coords",
   ],
 });

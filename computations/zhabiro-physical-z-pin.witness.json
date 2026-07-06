@@ -1,0 +1,189 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-06-18T03:00:17.381036+00:00",
+  "computation": "zhabiro-physical-z-pin",
+  "scriptFile": "zhabiro_physical_z_pin.py",
+  "scriptHash": "e9e8528cbdff",
+  "contentBlock": "prop:mass-endomorphism-tower",
+  "description": "Pins the physical brane-tower variable z = |V\u0302_i^full| (additive Wedderburn traced volume per generator) from production witnesses and compares the SUPERSEDED Faddeev \u03a6_q (brane-legacy) against the PRODUCTION symmetric \u2212Li\u2082^q(\u2212z) (li2q) at each physical z_i. At every z_i (all < 1) \u03a6_q is convergent-but-enormous (10\u00b2\u201310\u2076) while \u2212Li\u2082^q(\u2212z) is O(1): wiring per-generator \u03a6_q regresses the mass table (the \u2212737 MeV isospin pathology); the production li2q form is bounded. The z-Habiro / \u03a6_q bridge has no non-regressing production continuation \u2014 the n\u22c6 level-selection rule is refuted across all six probed families.",
+  "parameters": {
+    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "hbar_q_squared": "0.00981718851347867143648141194145",
+    "phi_q_at_hbar_q_sq_correction_pct": "9.3597875",
+    "production_tower_mode": "li2q",
+    "superseded_tower_mode": "brane-legacy (Faddeev \u03a6_q)"
+  },
+  "data": {
+    "atoms": {
+      "electron": {
+        "z_i_physical": [
+          "0.5938490006705097"
+        ],
+        "phi_q_per_gen": [
+          "629.935419096"
+        ],
+        "neg_li2q_neg_per_gen": [
+          "0.523556717644"
+        ],
+        "max_z": "0.5938490006705097",
+        "max_phi_q": "629.935419096",
+        "max_neg_li2q": "0.523556717644",
+        "phi_over_li2_ratio": "1203.18467487",
+        "all_z_below_one": true
+      },
+      "proton": {
+        "z_i_physical": [
+          "0.989007315929259773732709087343",
+          "0.971070158652743696444677296062"
+        ],
+        "phi_q_per_gen": [
+          "671221.410374",
+          "425756.985802"
+        ],
+        "neg_li2q_neg_per_gen": [
+          "0.815411238588",
+          "0.802894091708"
+        ],
+        "max_z": "0.989007315929259773732709087343",
+        "max_phi_q": "671221.410374",
+        "max_neg_li2q": "0.815411238588",
+        "phi_over_li2_ratio": "823169.191948",
+        "all_z_below_one": true
+      },
+      "neutron": {
+        "z_i_physical": [
+          "0.854210312825838960676944299791",
+          "0.975509471107745943156879482472"
+        ],
+        "phi_q_per_gen": [
+          "36047.913151",
+          "475250.3602"
+        ],
+        "neg_li2q_neg_per_gen": [
+          "0.719755623739",
+          "0.805997864288"
+        ],
+        "max_z": "0.975509471107745943156879482472",
+        "max_phi_q": "475250.3602",
+        "max_neg_li2q": "0.805997864288",
+        "phi_over_li2_ratio": "589642.207824",
+        "all_z_below_one": true
+      },
+      "deuteron": {
+        "z_i_physical": [
+          "0.989007315929259773732709087343",
+          "0.971070158652743696444677296062",
+          "0.264145115591029655372978855879",
+          "0.854210312825838960676944299791",
+          "0.975509471107745943156879482472"
+        ],
+        "phi_q_per_gen": [
+          "671221.410374",
+          "425756.985802",
+          "13.0873221233",
+          "36047.913151",
+          "475250.3602"
+        ],
+        "neg_li2q_neg_per_gen": [
+          "0.815411238588",
+          "0.802894091708",
+          "0.248560526454",
+          "0.719755623739",
+          "0.805997864288"
+        ],
+        "max_z": "0.989007315929259773732709087343",
+        "max_phi_q": "671221.410374",
+        "max_neg_li2q": "0.815411238588",
+        "phi_over_li2_ratio": "823169.191948",
+        "all_z_below_one": true
+      },
+      "tritium": {
+        "z_i_physical": [
+          "0.989007315929259773732709087343",
+          "0.971070158652743696444677296062",
+          "0.264145115591029655372978855879",
+          "0.854210312825838960676944299791",
+          "0.975509471107745943156879482472",
+          "0.15961495459608992482217464473",
+          "0.854210312825838960676944299791",
+          "0.975509471107745943156879482472"
+        ],
+        "phi_q_per_gen": [
+          "671221.410374",
+          "425756.985802",
+          "13.0873221233",
+          "36047.913151",
+          "475250.3602",
+          "4.52789537921",
+          "36047.913151",
+          "475250.3602"
+        ],
+        "neg_li2q_neg_per_gen": [
+          "0.815411238588",
+          "0.802894091708",
+          "0.248560526454",
+          "0.719755623739",
+          "0.805997864288",
+          "0.153689678044",
+          "0.719755623739",
+          "0.805997864288"
+        ],
+        "max_z": "0.989007315929259773732709087343",
+        "max_phi_q": "671221.410374",
+        "max_neg_li2q": "0.815411238588",
+        "phi_over_li2_ratio": "823169.191948",
+        "all_z_below_one": true
+      },
+      "helium3": {
+        "z_i_physical": [
+          "0.989007315929259773732709087343",
+          "0.971070158652743696444677296062",
+          "0.368675276585969385923783067028",
+          "0.989007315929259773732709087343",
+          "0.971070158652743696444677296062",
+          "0.264145115591029655372978855879",
+          "0.854210312825838960676944299791",
+          "0.975509471107745943156879482472"
+        ],
+        "phi_q_per_gen": [
+          "671221.410374",
+          "425756.985802",
+          "40.5329199575",
+          "671221.410374",
+          "425756.985802",
+          "13.0873221233",
+          "36047.913151",
+          "475250.3602"
+        ],
+        "neg_li2q_neg_per_gen": [
+          "0.815411238588",
+          "0.802894091708",
+          "0.339452171704",
+          "0.815411238588",
+          "0.802894091708",
+          "0.248560526454",
+          "0.719755623739",
+          "0.805997864288"
+        ],
+        "max_z": "0.989007315929259773732709087343",
+        "max_phi_q": "671221.410374",
+        "max_neg_li2q": "0.815411238588",
+        "phi_over_li2_ratio": "823169.191948",
+        "all_z_below_one": true
+      }
+    }
+  },
+  "cross_checks": {
+    "phi_q_hbar_sq_matches_pr2460_9_36pct": true,
+    "phi_q_electron_matches_witness_629_9354": true,
+    "all_physical_z_below_one": true,
+    "phi_q_blows_up_li2q_bounded": true
+  },
+  "allPassed": true,
+  "provenance": [
+    "terms-2-3-atom-per-gen-mpfr-50dps.witness.json",
+    "mass-endomorphism.witness.json",
+    "vhat-std-vs-full-tower-compare.witness.json"
+  ]
+}

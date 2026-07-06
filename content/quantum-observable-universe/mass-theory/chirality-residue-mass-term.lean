@@ -41,10 +41,10 @@ theorem mass_tower_split_by_predicate
     (n : ℕ) (P : List ℕ → Prop) [DecidablePred P]
     (alpha : ℕ → R) (m_lambda : List ℕ → R)
     (parts : Finset (List ℕ)) :
-    ∑ λ ∈ parts, alpha (λ.length - 1) * m_lambda λ
+    ∑ lam ∈ parts, alpha (lam.length - 1) * m_lambda lam
       =
-    ∑ λ ∈ parts.filter P, alpha (λ.length - 1) * m_lambda λ
-    + ∑ λ ∈ parts.filter (fun λ => ¬ P λ), alpha (λ.length - 1) * m_lambda λ
+    ∑ lam ∈ parts.filter P, alpha (lam.length - 1) * m_lambda lam
+    + ∑ lam ∈ parts.filter (fun lam => ¬ P lam), alpha (lam.length - 1) * m_lambda lam
     := by
   -- Ref: [manuscript] prop:chirality-residue-mass-term, Step 1.
   -- Structural refinement; no analytic content beyond the unified
@@ -60,7 +60,7 @@ def chirality_residue
     {R : Type*} [CommRing R]
     (alpha : ℕ → R) (m_lambda : List ℕ → R)
     (parts : Finset (List ℕ)) : R :=
-  ∑ λ ∈ parts.filter (fun λ => signed_content λ = 0),
-    alpha (λ.length - 1) * m_lambda λ
+  ∑ lam ∈ parts.filter (fun lam => signed_content lam = 0),
+    alpha (lam.length - 1) * m_lambda lam
 
 end QOU.WedderburnMass

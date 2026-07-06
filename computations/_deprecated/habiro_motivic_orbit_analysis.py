@@ -20,7 +20,7 @@ This is **R6 step 3 reconnaissance** — the next step toward the
 explicit `MotivicGaloisCharacter` instance for the QOU substrate.
 
 Usage:
-    python3 folio-assistant/computations/habiro_motivic_orbit_analysis.py
+    python3 computations/habiro_motivic_orbit_analysis.py
 
 Output: `habiro-motivic-orbit-relations.witness.json`
 """

@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-02T20:08:41.415000+00:00",
-  "commitSha": "41f1b2a404de0759b15e4ddd8dbfa55deca21f23",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-22T14:29:37.630694+00:00",
+  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
   "assertions": [
     {
       "name": "H₂",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 6,
   "computation": "molecular-trefoil-scan",
   "scriptFile": "molecular-trefoil-scan.py",
-  "scriptHash": "bab7f99afedf",
-  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "scriptHash": "0bf20659e12f",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -58,63 +58,63 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Integer LP: scan inverse trefoil count per bond until marginal gain exhausts. Uses 3-channel vertex volumes.",
   "contentBlock": "def:molecular-braid",
   "parameters": {
-    "q": 1.1099785827513808,
-    "E_mol_eV": 6.729338575040661
+    "q": 1.1099785955573347,
+    "E_mol_eV": 6.729337493415771
   },
   "data": {
     "bond_HH": {
       "k_trefoils": 1,
-      "E_eV": 4.469444477429534
+      "E_eV": 4.469442986954559
     },
     "bond_CH": {
       "k_trefoils": 6,
-      "E_eV": 4.210925995217567
+      "E_eV": 4.210925785915879
     },
     "bond_CC": {
       "k_trefoils": 5,
-      "E_eV": 3.5107248203346857
+      "E_eV": 3.5107246442241538
     },
     "bond_CO": {
       "k_trefoils": 5,
-      "E_eV": 3.5107205510229007
+      "E_eV": 3.510720374920299
     },
     "bond_OH": {
       "k_trefoils": 7,
-      "E_eV": 4.914733304686821
+      "E_eV": 4.914733058531289
     },
     "molecules": [
       {
         "name": "H₂",
-        "pred_eV": "4.46944447742953",
+        "pred_eV": "4.46944298695456",
         "obs_eV": 4.478
       },
       {
         "name": "CO",
-        "pred_eV": "10.5321608062199",
+        "pred_eV": "10.5321602779139",
         "obs_eV": 11.09
       },
       {
         "name": "CO₂",
-        "pred_eV": "14.0428806838858",
+        "pred_eV": "14.0428799794786",
         "obs_eV": 16.56
       },
       {
         "name": "CH₄",
-        "pred_eV": "16.8510651090659",
+        "pred_eV": "16.8510642641552",
         "obs_eV": 17.9
       },
       {
         "name": "C₆H₆",
-        "pred_eV": "56.8736667696874",
+        "pred_eV": "56.8736639168383",
         "obs_eV": 57.4
       }
     ]

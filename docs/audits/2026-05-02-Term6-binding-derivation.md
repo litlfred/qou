@@ -51,7 +51,7 @@ $z^3$ reflecting the cubic stratum index.
 
 ## Empirical validation
 
-[`gs_filtration_e2_probe.py`](../../folio-assistant/computations/gs_filtration_e2_probe.py)
+[`gs_filtration_e2_probe.py`](../../computations/gs_filtration_e2_probe.py)
 computes Term 6 from the $H_9(q)$ Markov traces of the four
 9-strand sub-braids (ppp, ppn, pnn, nnn), evaluated via the
 Schur-Weyl `markov_trace_mpmath`. Output for the test isotope
@@ -71,7 +71,7 @@ Term 6 grows combinatorially as $\binom{A}{3} \sim A^3$.
 
 ## Per-nucleon normalization
 
-[`gs_term6_normalization.py`](../../folio-assistant/computations/gs_term6_normalization.py)
+[`gs_term6_normalization.py`](../../computations/gs_term6_normalization.py)
 fits binding-energy-per-nucleon against various normalizations:
 
 | normalization | $R^2$ | residual $\sigma$ |
@@ -121,7 +121,7 @@ The $+2.54$ MeV outlier at 4He is the **magic-shell enhancement**.
 
 ## Tier-2 magic correction
 
-[`magic_residual_probe.py`](../../folio-assistant/computations/magic_residual_probe.py)
+[`magic_residual_probe.py`](../../computations/magic_residual_probe.py)
 correlates the residual against five candidate structural
 variables:
 

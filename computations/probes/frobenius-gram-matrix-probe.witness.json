@@ -1,12 +1,12 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T13:38:49.452120+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-22T13:20:30.723709+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "single_element_traces_match_closed_forms",
-      "computed": 9.036693901603673e-41,
+      "computed": 1.8911325004052471e-41,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-30,
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 679,
+  "durationMs": 696,
   "computation": "frobenius-gram-matrix-probe",
   "scriptFile": "frobenius_gram_matrix_probe.py",
-  "scriptHash": "3e050aee2643",
-  "scriptCommitSha": "6ddb5f8bef53fed344fe0dcfec7234eeb1697b57",
+  "scriptHash": "f71989f918b7",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,21 +54,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
   "description": "I1 probe for prop:frobenius-gram-matrix.  Verifies the 6×6 Markov-trace Gram matrix G_{ij} = tr_M(b_i · b_j) over the NF basis {𝟙, σ_0, σ_1, L_+, L_-, e^-} of H_3(R, q): (1) the six single-element traces match the corrected closed forms (1, z, z, z², z², hz² + z) at q_0; (2) G is symmetric to ~1e-40; (3) det G ≠ 0 (non-degenerate); (4) signature is indefinite (G has both positive and negative eigenvalues).  Reproduces the corrected Gram-matrix structure after the Markov-bug fix in audit 2026-05-19-trm5-markov-bug (stale `tr_M(e^-) = z³` replaced by `hz² + z`).",
   "contentBlock": "prop:frobenius-gram-matrix",
   "parameters": {
-    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
-    "z_at_q0": 0.4993203341836944,
-    "h_at_q0": 0.2090602987956393,
-    "max_single_trace_residue": 9.036693901603673e-41,
+    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
+    "z_at_q0": 0.4993203340335613,
+    "h_at_q0": 0.20906032199559368,
+    "max_single_trace_residue": 1.8911325004052471e-41,
     "symmetry_residue": 0.0,
-    "det_G_at_q0": -0.18920521914403676,
+    "det_G_at_q0": -0.18920525307968047,
     "num_positive_eigenvalues": 5,
     "num_negative_eigenvalues": 1,
     "num_zero_eigenvalues": 0,
@@ -87,46 +86,46 @@
       {
         "basis_element": "σ_0",
         "expected_closed_form": "sqrt(q)/(q + 1)",
-        "expected_at_q0": 0.4993203341836944,
-        "computed_at_q0": 0.4993203341836944,
+        "expected_at_q0": 0.4993203340335613,
+        "computed_at_q0": 0.4993203340335613,
         "residue": 0.0
       },
       {
         "basis_element": "σ_1",
         "expected_closed_form": "sqrt(q)/(q + 1)",
-        "expected_at_q0": 0.4993203341836944,
-        "computed_at_q0": 0.4993203341836944,
+        "expected_at_q0": 0.4993203340335613,
+        "computed_at_q0": 0.4993203340335613,
         "residue": 0.0
       },
       {
         "basis_element": "L_+ = σ_0 σ_1",
         "expected_closed_form": "q/(q**2 + 2*q + 1)",
-        "expected_at_q0": 0.24932079612931632,
-        "computed_at_q0": 0.24932079612931632,
-        "residue": 9.036693901603673e-41
+        "expected_at_q0": 0.2493207959793872,
+        "computed_at_q0": 0.2493207959793872,
+        "residue": 1.8911325004052471e-41
       },
       {
         "basis_element": "L_- = σ_1 σ_0",
         "expected_closed_form": "q/(q**2 + 2*q + 1)",
-        "expected_at_q0": 0.24932079612931632,
-        "computed_at_q0": 0.24932079612931632,
-        "residue": 9.036693901603673e-41
+        "expected_at_q0": 0.2493207959793872,
+        "computed_at_q0": 0.2493207959793872,
+        "residue": 1.8911325004052471e-41
       },
       {
         "basis_element": "e^- = σ_0 σ_1 σ_0",
         "expected_closed_form": "(q**(5/2) - sqrt(q) + q**2 + q)/(q**(5/2) + 2*q**(3/2) + sqrt(q))",
-        "expected_at_q0": 0.551443414318456,
-        "computed_at_q0": 0.551443414318456,
-        "residue": 4.471169652270873e-42
+        "expected_at_q0": 0.5514434199212097,
+        "computed_at_q0": 0.5514434199212097,
+        "residue": 1.0702368036185566e-41
       }
     ],
     "gram_matrix_eigenvalues": [
-      -0.8550672621298653,
-      3.4769498054701455,
-      0.1017966708498729,
-      0.8550672621298653,
-      0.8550672621298653,
-      0.8550672621298653
+      -0.8550672738326165,
+      3.4769498654951074,
+      0.10179668177772717,
+      0.8550672738326165,
+      0.8550672738326165,
+      0.8550672738326165
     ],
     "notes": {
       "errata_fix_propagated": "tr_M(e^-) corrected from stale z³ to canonical hz² + z",

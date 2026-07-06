@@ -1,55 +1,8 @@
-**Notation.** The prefactor previously written
-$\rho$ in this block is the **SDP-solution multiplicity** in the
-Wedderburn decomposition, an integer $\in \mathbb{Z}_{>0}$. To
-disambiguate from the distinct **categorical density** $\rho_K \in
-\mathbb{R}_{>0}$ used in
-[`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md) (CODATA-fit
-scalar, e.g. $\rho_K^{\mathfrak{p}} \approx 1723.6$), this block
-uses **$\nu_{\mathrm{SDP}} \in \mathbb{Z}_{>0}$** throughout. The
-old symbol $\rho$ is reserved (i) for the Hoefsmit irrep
-representation $\rho_\lambda \colon H_n(q) \to \mathrm{GL}_{d_\lambda}$
-and (ii) for $\rho_K$ in `prop:atomic-mass-gb-nf`. See
-[`docs/audits/-rho-notation-fix-recommendation.md`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/docs/audits/-rho-notation-fix-recommendation.md)
-for the full notation audit.
-
-**Caveat (structural form).** The multi-term formula below is the
-**first-principles structural form** of the mass invariant. At the
-substrate value $q_0$ it predicts $m_{\mathfrak{p}} \approx 5\,\mathrm{MeV}$
-(off CODATA $938\,\mathrm{MeV}$ by $\approx 173\times$). The remaining
-factor is the **categorical density $\rho_K$** of
-[`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md), whose
-substrate-only derivation is an **open problem** ("Open question:
-categorical derivation of $\rho_K$",
-[`atomic-mass-gb-nf.md` §Open](atomic-mass-gb-nf.md)). This block
-formalises what the brane-tower contributes; closure of the nucleon-
-mass anchors requires the additional categorical content in
-$\rho_K$.
-
-**Class-A discipline status.** The 173$\times$ shortfall is captured by
-$\rho_K$ in [`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md), which
-admits a **graded substrate expansion**
-([`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md)) — the
-LO piece $Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e$ is
-**proved** (Wenzl 1988 Markov multiplicativity); the single-gen
-piece $\tfrac{\alpha}{2} \sum_i \ln(\hat V_i^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}}})$ closes
-empirically to $0.18\%$; the pair-gen piece is open. On the
-nucleon-anchor side, $m_{\mathfrak{p}}$ has a **conjectural
-substrate form**
-([`prop:lambda-scale-substrate-form`](lambda-scale-substrate-form.md))
-at $\lambda_{\mathrm{scale}} \approx 5/2 - h^2 G$ matching CODATA
-to ~5.4 ppm; ${}^1\mathrm{H}$ lifts to `derived` once the Borromean
-tower wiring lands. Per
-[`docs/audits/-lambda-scale-derivation-search.md`](../../../docs/audits/-lambda-scale-derivation-search.md)
-§13, the current state is **justification** (5.4 ppm structural match)
-rather than full derivation. This proposition is therefore a Class-A
-opt-out (conditional on the substrate forms above) per the
-[three-calibration discipline](three-calibration-inputs.md); the
-structural form (this block) is correct and independent of the open
-pieces. Tracked under
-[Workplan 0b](../../../docs/audits/-workplan-0b-script-rewire-handoff.md)
-and the [m_p chain closure gap](../../../docs/audits/-m-p-chain-closure-gap-analysis.md).
-$\rho_K$ closure; only its numerical instantiation is currently
-empirical.
+The prefactor $\nu_{\mathrm{SDP}} \in \mathbb{Z}_{>0}$ used throughout
+this block is the **SDP-solution multiplicity** in the Wedderburn
+decomposition; it is distinct from the categorical density $\rho_K \in
+\mathbb{R}_{>0}$ of
+[`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md).
 
 **Statement (categorical, pre-Archimedean form).** Let
 $\mathcal{U} = (\mathbf{C}, \varTheta, G, \mathcal{S})$ be a quantum
@@ -84,11 +37,11 @@ form, bar-invariant under $q \mapsto q^{-1}$ and living in the Habiro
 ring $\widehat{\mathbb{Z}[q]}[\![z]\!]$. The post-Archimedean
 realization under $\tau_{\mathrm{arch}}$ is the bar-pair
 $\tfrac{1}{2}(\log \Phi_q(z) + \log \Phi_{q^{-1}}(z))$, **not**
-naive numerical substitution of $\mathrm{Li}_2^q$ at $q = q_0$; the
+naive canonical substitution of $\mathrm{Li}_2^q$ at $q = q_0$; the
 naive substitution kills the dimensional mass scale by the
 bar-symmetric projection (empirical: $m_{\mathfrak{p}}/m_e \approx
 3.31$ vs CODATA $1836$; see
-[`m-p-m-e-li2q.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/m-p-m-e-li2q.witness.json)).
+[`m-p-m-e-li2q.witness.json`](https://github.com/litlfred/qou/blob/main/computations/m-p-m-e-li2q.witness.json)).
 The $\sim 173\times$ shortfall flagged below is consistent with this
 bar-projection structure; the $\rho_K$ closure path of
 [`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md) and the Faddeev
@@ -101,22 +54,6 @@ multiplicity of $T_w$'s SDP solution in the Wedderburn
 decomposition (see algorithm step below). This expression is
 **finite, exact, and entirely pre-Archimedean** — every quantity
 on the right-hand side lives in $\mathbb{Q}(q)$.
-
-**Historical note — single-term shorthand retired.** An earlier
-wording wrote $M(\mathfrak{H}) = \nu_{\mathrm{SDP}} \cdot \mathrm{tr}_M(T_w)$
-(single term, dropping the tower and Frobenius co-Casimir). That
-single-term form is **shorthand** for the multi-term sum above
-and is structurally inadequate as a mass formula on its own,
-verified empirically in
-[`probe-sdp-canonical-paper-formula.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/probe-sdp-canonical-paper-formula.witness.json):
-single-term fails by 87--100% on $D$, $T$, ${}^3\mathrm{He}$ under
-both Plancherel and Wenzl-Schur conventions; multi-term without
-the brane tower reduces error to 36--63%; the multi-term form
-with the canonical Li_2^q brane tower (above) reaches $\approx 5\,
-\mathrm{MeV}$ for $\mathfrak{p}$ at $q_0$, with the remaining
-$\sim 170 \times$ shortfall captured by $\rho_K$. **This block uses
-the multi-term form throughout; the single-term shorthand should
-not appear elsewhere in the paper.**
 
 **Mass identity (structural form).** After applying the
 Archimedean realization functor
@@ -164,7 +101,7 @@ slice depth (= filtration grade $\leq$ some $k$), the surviving
 $E_\infty$-classes already account for all of $\mathrm{tr}_M(T_w)$
 because $d_r = 0$ for $r \geq 3$. No higher slices contribute. The
 GB-filtration tracker's certificate
-([gb-filtration-jet-order.witness.json](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb-filtration-jet-order.witness.json))
+([gb-filtration-jet-order.witness.json](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/gb-filtration-jet-order.witness.json))
 records exactly the data the $E_2 \Rightarrow E_\infty$ collapse needs:
 filtration-graded coefficients per term, in jet order.
 
@@ -172,7 +109,7 @@ The *finite slice* is essential: at every finite resolution Yekutieli's
 multiplicative integral is a finite product / finite sum in $\mathbb{Q}(q)$,
 exact, with no asymptotic limit. This is exactly the categorical
 content captured by the GB-filtration + jet-order certificate
-([gb-filtration-jet-order.witness.json](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb-filtration-jet-order.witness.json)).
+([gb-filtration-jet-order.witness.json](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/gb-filtration-jet-order.witness.json)).
 
 ### Pipeline
 
@@ -293,7 +230,6 @@ with methodology tag and high-precision certificate.
         earlier work, GB-NF derivation pending),
         \texttt{magic-A-formula} (algebraic shell-closure rule),
         \texttt{recursive-on-${}^{4}$He} (cluster recursion).
-        Quarantine separately if \texttt{deprecated-volume-match}.
 \end{enumerate}
 \textbf{Optional post-Archimedean naming (borrowed, not in derivation):}
 \begin{enumerate}
@@ -312,9 +248,9 @@ with methodology tag and high-precision certificate.
 The categorical pipeline is now implemented in two parallel
 implementations:
 
-- **Python prototypes** ([`gb_filtration_jet_tracker.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb_filtration_jet_tracker.py),
- [`joint_tower_sdp_solver.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/joint_tower_sdp_solver.py),
- [`joint_tower_sdp_solver_v2.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/joint_tower_sdp_solver_v2.py)) — design-spec
+- **Python prototypes** (the canonical formalism,
+ the canonical formalism,
+ the canonical formalism) — design-spec
  reference, exact in $q$ via SymPy + cvxpy SDP feasibility for $H_3$.
 - **Rust production scaling** ([`tools/hecke-engine/src/{gb_nf_reducer,joint_tower_sdp_certificate,wedderburn_psd,cross_level_embedding,sdp_verifier}.rs`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/tools/hecke-engine/src/),
  binary [`joint-tower-sdp`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/tools/hecke-engine/src/bin/joint_tower_sdp.rs)) — bit-for-bit
@@ -345,13 +281,12 @@ conjecture commits both quantities to the same number, but the
 *principled* path (Step 1a $\to$ Step 5) does not depend on this
 substitution.
 
-The quarantined provisional ${}^{6}$Li, ${}^{7}$Li entries
-([prop:recursive-atom-knot-atlas](#prop:recursive-atom-knot-atlas)
-§"Provisional / deprecated methodology") run *backwards* from Step
-6 to a candidate knot, bypassing Step 1a entirely. Such shortcuts
-are forbidden by this proposition.
+Running *backwards* from Step 6 to a candidate knot — a brute-force
+volume-match search that bypasses Step 1a entirely — is forbidden by
+this proposition: it reverse-engineers the knot from the AME target
+rather than deriving it from the categorical pipeline.
 
-## Where the gaps actually are
+## Location of the remaining gaps
 
 After the pre-Archimedean / post-Archimedean simplification (Yekutieli
 at finite slices replaces the geometric leg with finite-categorical
@@ -378,17 +313,17 @@ Markov-trace computation) and the production-scale Rust port
 
  **Status ( issue #604 deliverable 1).** A first-pass
  Python R5-full prototype landed at
- [`folio-assistant/computations/r5_full_canonical_knot_solver.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/r5_full_canonical_knot_solver.py)
+ the canonical formalism
  with witness
- [`r5-full-canonical-knot-solver.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/r5-full-canonical-knot-solver.witness.json).
+ [`r5-full-canonical-knot-solver.witness.json`](https://github.com/litlfred/qou/blob/main/computations/r5-full-canonical-knot-solver.witness.json).
  It enumerates $B_3$ braid words up to length $L_{\max} = 8$,
  filters via a KLR canonical-basis "cemetery" prune (drops $\sigma_i^{\pm k}$
- pure-power Demazure-trivial classes per CLAUDE.md §7b symmetric-
+ pure-power Demazure-trivial classes per AGENTS.md §7b symmetric-
  crystal guidance) plus a $\chi$-fingerprint dedup that collapses
  Markov-equivalent words to a single canonical-basis-class
  representative, and emits an operator-selection LP with strong-
  duality dual fields ($y_0^*$, $y_\lambda^*$, active set) per the
- CLAUDE.md "LP / SDP duals — first-class infra" rule.
+ AGENTS.md "LP / SDP duals — first-class infra" rule.
 
  The cemetery + dedup pass compresses the search space by **99 %**
  ($13088 \to 138$ canonical-basis classes at $L_{\max} = 8$). The
@@ -399,14 +334,14 @@ Markov-trace computation) and the production-scale Rust port
  on the standard $(2,1)$ block) and ranks in the top 45 %. The
  single-term shorthand $B = m_e \cdot \nu_{\mathrm{SDP}} \cdot \mathrm{tr}_M(T_w)$
  (retired — see Statement above) has the known structural offset documented in
- [`probe-sdp-canonical-paper-formula.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-sdp-canonical-paper-formula.witness.json),
+ [`canonical evaluation-sdp-canonical-paper-formula.witness.json`](https://github.com/litlfred/qou/blob/main/computations/canonical evaluation-sdp-canonical-paper-formula.witness.json),
  which prevents the historical $T_w$ from being the unique global
  winner; wiring the multi-term tower (T2--T6 of
  [`thm:knot-mass-formula-unified`](#thm:knot-mass-formula-unified))
  into the cost is the next-session deliverable. ${}^{3}$H ($8_{11}$ in
  $B_5$) is also next-session work — needs Hoefsmit seminormal at
  $H_5$, consistent with the deferred-to-Rust posture in
- [`joint_tower_sdp_solver_v2.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/joint_tower_sdp_solver_v2.py).
+ the canonical formalism.
 
 A second item — the structural prefactor rule $\nu_{\mathrm{SDP}}(Z, N)$ — is a
 downstream consequence: once the SDP-solver returns canonical $T_w$

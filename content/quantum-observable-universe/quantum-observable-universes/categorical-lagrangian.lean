@@ -1,4 +1,4 @@
-import QOU.QuantumObservableUniverse.GaugeTheory
+import QOU.QuantumObservableUniverses.QDifferentialGeometry
 import Mathlib.CategoryTheory.Linear.Basic
 
 
@@ -13,7 +13,21 @@ Stated over an `R`-linear monoidal category `C` (the `k`-linearity of the
 The matter term `ψ* ⊗ 𝒟_∇ψ` is the rank-one endomorphism
 `A --ψ*--> 𝟙 --𝒟_∇ψ--> A`, i.e. `costate ≫ (state ≫ 𝒟_∇)`.
 
+The authoritative, importable structure `QOU.CategoricalLagrangian` — the
+target of this block's `lean.ref` (`qou:QOU.CategoricalLagrangian`) — lives
+in the `QOU` Lake library at
+[`QOU.QuantumObservableUniverses.QDifferentialGeometry`].  Its `lagrangian`
+morphism is pinned by the `lagrangian_formula` law field to
+`dirac.dirac ≫ dirac.dirac + costate ≫ state ≫ dirac.dirac`.  Rather than
+re-declare a shadowing copy (forbidden by the no-shadowing-stub rule, and a
+duplicate-declaration error against the import below), this display sibling
+imports the real structure and pins down its identity with the
+`re_export` definitional equation, so the narrative `.md` retains a
+type-checked `.lean` sibling that genuinely refers to the library object.
+
 LaTeX: `\label{def:categorical-lagrangian}`
+
+Ref: [manuscript] §1-quantum-observable-universe
 -/
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
@@ -22,32 +36,16 @@ namespace QOU
 
 universe u v
 
-/-- **Categorical Lagrangian** `ℒ_q = 𝒟_∇² + ψ* ⊗ 𝒟_∇ψ`.
-
-    The endomorphism of `A` whose categorical trace yields the categorical
-    action.  The `lagrangian` morphism is pinned by `lagrangian_formula` to:
-
-    - `𝒟_∇²` — `dirac.dirac ≫ dirac.dirac`, the bosonic sector (gravity + gauge);
-    - `ψ* ⊗ 𝒟_∇ψ` — `costate ≫ state ≫ dirac.dirac`, the rank-one fermionic
-      coupling (apply `𝒟_∇` to the state, then pair against the costate `ψ*`).
-
-    Ref: [manuscript] §1-quantum-observable-universe -/
--- Ref: [manuscript] §1-quantum-observable-universe
-structure CategoricalLagrangian (R : Type*) [CommRing R]
+/-- The `def:categorical-lagrangian` block's structure is the library
+    `QOU.CategoricalLagrangian`.  This abbreviation records that the display
+    sibling's referent is precisely that importable structure (with its
+    `lagrangian_formula` law field), without re-declaring it. -/
+abbrev CategoricalLagrangian.re_export
+    (R : Type*) [CommRing R]
     (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     [CategoryTheory.Preadditive C] [CategoryTheory.Linear R C]
-    (fh : FrobeniusHopfData C) where
-  /-- The Dirac operator `𝒟_∇`. -/
-  dirac : CategoricalDiracOperator R C fh
-  /-- The state `ψ : 𝟙 → A`. -/
-  state : (𝟙_ C) ⟶ fh.obj
-  /-- The costate `ψ* : A → 𝟙` (Frobenius mate of the state). -/
-  costate : fh.obj ⟶ (𝟙_ C)
-  /-- The Lagrangian endomorphism `ℒ_q ∈ End(A)`. -/
-  lagrangian : fh.obj ⟶ fh.obj
-  /-- **Defining formula**: `ℒ_q = 𝒟_∇² + ψ* ⊗ 𝒟_∇ψ`. -/
-  lagrangian_formula :
-    lagrangian = dirac.dirac ≫ dirac.dirac + costate ≫ state ≫ dirac.dirac
+    (fh : FrobeniusHopfData C) : Type _ :=
+  CategoricalLagrangian R C fh
 
 end QOU

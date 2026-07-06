@@ -1,0 +1,77 @@
+{
+  "id": "c4-mu-p-tension-pin-dependence",
+  "kind": "audit-probe-result",
+  "description": "c\u2084 ('46 u\u2074' Habiro dressing on F_Bor) is the \u03bc\u2013p tension in disguise: exact c\u2084 is affine in the q\u2080 pin offset, \u2248 0 at the proton pin, 46.04 at the muon pin, slope 3.98/ppb. No categorical constant; the value 46 is the muon-pin calibration choice.",
+  "verdict": "scope-a: c\u2084 not derivable as a fixed categorical constant at current substrate precision (pin-dependent, sweeps 0\u219246). Does not structurally exclude closure via a derived q\u2080 or \u03bc\u2013p splitting.",
+  "data": {
+    "q_muon": "1.1099785956402395783775060672867905833417555643376",
+    "q_proton": "1.1099785828227838307142973710427025888751629837331",
+    "mu_p_q0_spread_ppb": 11.547480236120563,
+    "c4_at_proton_pin": -0.03196518298277995,
+    "c4_at_muon_pin": 46.04134393581333,
+    "affine_intercept_c4": -0.03196518298277995,
+    "affine_slope_c4_per_ppb_q0": 3.9899015349408105,
+    "max_deviation_from_affine": 8.945842391485885e-06,
+    "pin_window_samples": [
+      {
+        "t": 0.0,
+        "q_offset_ppb": 0.0,
+        "c4": -0.03196518298277995
+      },
+      {
+        "t": 0.1,
+        "q_offset_ppb": 1.1547480236120564,
+        "c4": 4.575368949400679
+      },
+      {
+        "t": 0.2,
+        "q_offset_ppb": 2.309496047224113,
+        "c4": 9.182702366116356
+      },
+      {
+        "t": 0.3,
+        "q_offset_ppb": 3.4642440708361693,
+        "c4": 13.790035067164347
+      },
+      {
+        "t": 0.4,
+        "q_offset_ppb": 4.618992094448226,
+        "c4": 18.39736705254475
+      },
+      {
+        "t": 0.5,
+        "q_offset_ppb": 5.773740118060282,
+        "c4": 23.004698322257667
+      },
+      {
+        "t": 0.6,
+        "q_offset_ppb": 6.9284881416723385,
+        "c4": 27.612028876303192
+      },
+      {
+        "t": 0.7,
+        "q_offset_ppb": 8.083236165284395,
+        "c4": 32.21935871468142
+      },
+      {
+        "t": 0.8,
+        "q_offset_ppb": 9.237984188896451,
+        "c4": 36.826687837392456
+      },
+      {
+        "t": 0.9,
+        "q_offset_ppb": 10.392732212508507,
+        "c4": 41.43401624443639
+      },
+      {
+        "t": 1.0,
+        "q_offset_ppb": 11.547480236120563,
+        "c4": 46.04134393581333
+      }
+    ],
+    "production_c4_value": 46.03333333333333,
+    "production_c4_source_comment": "4-loop anomaly derived geometrically from s5bb 5-manifold U(1) colour Reeb index",
+    "production_c4_derivation_trail": "none found (git -S, docs, witnesses)",
+    "cited_route_status": "honest-negative \u2014 docs/audits/2026-06-16-s5so3-reeb-resonance-probe-negative.md"
+  }
+}

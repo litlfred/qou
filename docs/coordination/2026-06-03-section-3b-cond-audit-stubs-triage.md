@@ -161,8 +161,8 @@ For Candidate 1 (`neutron_qvalue_conditional`) and Candidate 2 (`Q_borromean_eq_
 - PR [#1720](https://github.com/litlfred/qou/pull/1720) — the
   `QSchurYLambdaClosedFormClaim` strengthening that established the
   precedent (genuinely buggy placeholder, not an audit stub)
-- CLAUDE.md §3b-cond — the conditional-class convention
-- `todos/lean-discharge-queue.json` item `lean-section-3b-cond-classes-permanent`
+- AGENTS.md §3b-cond — the conditional-class convention
+- `.beans/lean-discharge-queue.json` item `lean-section-3b-cond-classes-permanent`
   — the source of the "~80-100" figure (broader scope than this triage)
 - [`docs/audits/2026-06-02-lean-discharge-queue-staleness-audit.md`](../audits/2026-06-02-lean-discharge-queue-staleness-audit.md)
   — the queue staleness audit that surfaced the registry pattern

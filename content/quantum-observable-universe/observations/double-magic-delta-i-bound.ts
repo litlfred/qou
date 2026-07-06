@@ -14,9 +14,9 @@ export default conjecture({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/optimised_magic_verifier.py",
+    script: "computations/optimised_magic_verifier.py",
     witness:
-      "folio-assistant/computations/optimised-magic-verifier.witness.json",
+      "computations/optimised-magic-verifier.witness.json",
     status: "verified",
   },
   cites: [

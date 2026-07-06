@@ -68,7 +68,7 @@ equivalent predictions for dimensionless ratios such as
 $m_\mu/m_e$ and $m_n - m_p$, but require independent calibration of
 the leptonic sector to match observed masses.
 
-## Why the separation matters
+## Significance of the separation
 
 The two tiers commute with disjoint operations:
 

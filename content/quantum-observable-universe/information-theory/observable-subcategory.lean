@@ -1,3 +1,6 @@
+import Mathlib.Data.Nat.Basic
+import Mathlib.Tactic.Basic
+
 /-!
 # QOU.ObservableSubcategory — Observable subcategory Bun°(P(V))
 
@@ -13,10 +16,23 @@ Source declaration: `QOU.ObservableSubcategory` in jet-horizon.lean
 - [manuscript] §9/observable-subcategory
 -/
 
--- Prerequisite types from jet-horizon.lean
--- (not independently compilable; see jet-horizon.lean for full context)
+-- Prerequisite type mirrored from the `QOU.JetHorizon` library module so this
+-- co-location extract compiles standalone. The canonical definition lives in
+-- `content/quantum-observable-universe/lean/QOU/JetHorizon.lean` (Lake-built
+-- under the `qou` package); this copy keeps the file independently checkable by
+-- `lean`-direct without depending on the (uncached) library olean.
 
 namespace QOU
+
+/-- Prerequisite type — canonical decl: `QOU.GradedJetAlgebra` in
+    `QOU/JetHorizon.lean`. A graded jet algebra: type family indexed by
+    degree k ∈ ℕ, with sections at each degree. -/
+-- Ref: [manuscript] def:graded-jet-algebra
+structure GradedJetAlgebra where
+  /-- The type of sections at degree k. -/
+  sections : ℕ → Type*
+  /-- The zero section at each degree. -/
+  zero : ∀ k, sections k
 
 /-- The observable subcategory Bun°(P(V)): configurations where
     the degree-0 algebra is non-trivial (Frobenius pairing

@@ -14,7 +14,7 @@ Uses Python transfer matrix (fast, scalar), not Rust NF.
 Then for small atoms, also compute exact NF via Rust engine.
 
 Usage:
-    python3 folio-assistant/computations/atom_electron_insert.py
+    python3 computations/atom_electron_insert.py
 """
 
 import math, sys, subprocess, json

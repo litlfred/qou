@@ -2,22 +2,27 @@ import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 
 /-!
-# QOU.Archimedean.eos_borromean_cfl — placeholder stub
+# QOU.Archimedean.eos_borromean_cfl
 
-**Placeholder canonical** for content block at
+Canonical Lean declaration for content block at
 [`quantum-observable-universe/observations/eos-borromean-cfl.ts`](quantum-observable-universe/observations/eos-borromean-cfl.ts).
 
-The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.Archimedean.eos_borromean_cfl` resolves to a real declaration in the `qou`
-Lake package.
+The three manuscript sub-claims (the two-phase equations of state and
+their stiffness ratio) relate **opaque physical quantities** (the
+energy densities, pressures, chemical potential — derived from
+many-body Fermi-gas physics, with no faithful Mathlib structure), so per
+the vacuity-fix playbook pattern C the proposition is **named** as a
+`def … : Prop` over the context — honestly recording the conditional
+conjecture rather than projecting context fields.  The context class
+carries the genuine *inputs*; a Lean instance would be the conjecture.
 -/
 
 namespace QOU.Archimedean
 
 
-/-- Abstract context for the `eos_borromean_cfl` claim — manuscript-themed
-    typed fields below; sub-claims encode (i) Borromean-phase EOS, (ii)
-    CFL-phase EOS, and (iii) the stiffness ratio between them. -/
+/-- Abstract context (inputs) for the `eos_borromean_cfl` claim — the
+    substrate parameter, the two phase masses, the densities, pressures,
+    gap and chemical potential.  No field asserts a conclusion. -/
 class EosBorromeanCflContext where
   /-- Substrate parameter `q : ℝ`. -/
   q : ℝ
@@ -41,27 +46,6 @@ class EosBorromeanCflContext where
   hbar_q : ℝ
   /-- Quark chemical potential `μ_q`. -/
   μ_q : ℝ
-  /-- Manuscript sub-claim (i) — Borromean-phase EOS:
-      `ε_B = M_B · n_B + (3/5)·(ℏ_q²(3π²)^{2/3}/(2 M_B))·n_B^{5/3}`
-      and `P_B = (ℏ_q²(3π²)^{2/3}/(5 M_B))·n_B^{5/3}`. -/
-  claim_i_borromean_eos :
-    ε_B = M_B * n_B +
-      (3 / 5) * (hbar_q ^ 2 * (3 * Real.pi ^ 2) ^ ((2 : ℝ) / 3) /
-        (2 * M_B)) * n_B ^ ((5 : ℝ) / 3) ∧
-    P_B = (hbar_q ^ 2 * (3 * Real.pi ^ 2) ^ ((2 : ℝ) / 3) /
-        (5 * M_B)) * n_B ^ ((5 : ℝ) / 3)
-  /-- Manuscript sub-claim (ii) — CFL-phase pressure includes the
-      gap contribution `3 Δ_CFL² μ_q² / π²` on top of the cold quark
-      Fermi-gas term. -/
-  claim_ii_cfl_eos :
-    P_D = (hbar_q ^ 2 * (3 * Real.pi ^ 2) ^ ((2 : ℝ) / 3) /
-        (5 * M_D)) * (3 * n_B) ^ ((5 : ℝ) / 3) +
-      3 * Δ_CFL ^ 2 * μ_q ^ 2 / Real.pi ^ 2
-  /-- Manuscript sub-claim (iii) — Stiffness ratio:
-      `P_D / P_B = (M_B / M_D) · 3^{5/3} + 3 Δ_CFL² μ_q² / (π² P_B)`. -/
-  claim_iii_stiffness_ratio :
-    P_D / P_B = (M_B / M_D) * (3 : ℝ) ^ ((5 : ℝ) / 3) +
-      3 * Δ_CFL ^ 2 * μ_q ^ 2 / (Real.pi ^ 2 * P_B)
 
 /-- **Manuscript statement** (full body):
 
@@ -158,22 +142,22 @@ $q =
 
 […truncated; see manuscript for remainder…]
 
-    The Lean encoding below splits the manuscript claim into named
-    sub-claim fields; concretisation requires per-block manuscript
-    translation. -/
+    The proposition is **named** below as a `def … : Prop` (pattern C):
+    the energy densities, pressures and chemical potential are opaque
+    many-body inputs, so the three-part EOS claim is recorded as the
+    conditional conjecture over the context rather than discharged by a
+    fake projection. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/eos-borromean-cfl.ts
-theorem eos_borromean_cfl [ctx : EosBorromeanCflContext] :
-    (ctx.ε_B = ctx.M_B * ctx.n_B +
-      (3 / 5) * (ctx.hbar_q ^ 2 * (3 * Real.pi ^ 2) ^ ((2 : ℝ) / 3) /
-        (2 * ctx.M_B)) * ctx.n_B ^ ((5 : ℝ) / 3) ∧
-     ctx.P_B = (ctx.hbar_q ^ 2 * (3 * Real.pi ^ 2) ^ ((2 : ℝ) / 3) /
-        (5 * ctx.M_B)) * ctx.n_B ^ ((5 : ℝ) / 3)) ∧
-    ctx.P_D = (ctx.hbar_q ^ 2 * (3 * Real.pi ^ 2) ^ ((2 : ℝ) / 3) /
-      (5 * ctx.M_D)) * (3 * ctx.n_B) ^ ((5 : ℝ) / 3) +
-      3 * ctx.Δ_CFL ^ 2 * ctx.μ_q ^ 2 / Real.pi ^ 2 ∧
-    ctx.P_D / ctx.P_B = (ctx.M_B / ctx.M_D) * (3 : ℝ) ^ ((5 : ℝ) / 3) +
-      3 * ctx.Δ_CFL ^ 2 * ctx.μ_q ^ 2 / (Real.pi ^ 2 * ctx.P_B) :=
-  ⟨ctx.claim_i_borromean_eos, ctx.claim_ii_cfl_eos,
-   ctx.claim_iii_stiffness_ratio⟩
+def eos_borromean_cfl (ctx : EosBorromeanCflContext) : Prop :=
+  (ctx.ε_B = ctx.M_B * ctx.n_B +
+    (3 / 5) * (ctx.hbar_q ^ 2 * (3 * Real.pi ^ 2) ^ ((2 : ℝ) / 3) /
+      (2 * ctx.M_B)) * ctx.n_B ^ ((5 : ℝ) / 3) ∧
+   ctx.P_B = (ctx.hbar_q ^ 2 * (3 * Real.pi ^ 2) ^ ((2 : ℝ) / 3) /
+      (5 * ctx.M_B)) * ctx.n_B ^ ((5 : ℝ) / 3)) ∧
+  ctx.P_D = (ctx.hbar_q ^ 2 * (3 * Real.pi ^ 2) ^ ((2 : ℝ) / 3) /
+    (5 * ctx.M_D)) * (3 * ctx.n_B) ^ ((5 : ℝ) / 3) +
+    3 * ctx.Δ_CFL ^ 2 * ctx.μ_q ^ 2 / Real.pi ^ 2 ∧
+  ctx.P_D / ctx.P_B = (ctx.M_B / ctx.M_D) * (3 : ℝ) ^ ((5 : ℝ) / 3) +
+    3 * ctx.Δ_CFL ^ 2 * ctx.μ_q ^ 2 / (Real.pi ^ 2 * ctx.P_B)
 
 end QOU.Archimedean

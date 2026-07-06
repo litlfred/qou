@@ -1,15 +1,12 @@
 import QOU.Shared.SobolevHkRegularity
 
 /-!
-# QOU.FluidDynamics.core_levi_form — placeholder stub
+# QOU.FluidDynamics.core_levi_form
 
-**Placeholder canonical** for content block referenced by
+**Canonical declaration** for content block referenced by
 `qou:QOU.FluidDynamics.core_levi_form`.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI resolves to a real declaration in the `qou` Lake
-package. The body is `sorry` carrying the manuscript citation per
-CLAUDE.md §1.
+This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
 -/
 
 namespace QOU.FluidDynamics
@@ -27,29 +24,28 @@ class CoreLeviFormContext extends QOU.Shared.SobolevHkRegularityContext where
   /-- The supremum-over-time `sup_{t<T*} cond(L|_{N_p})` of the Levi-
       form condition number on the horizontal normal plane. -/
   cond_sup : ℝ
-  /-- Manuscript sub-claim (i) — Bounded core aspect ratio: the
-      supremum is finite. -/
-  claim_i_core_aspect_ratio : aspect_sup ≤ C
-  /-- Manuscript sub-claim (ii) — Bounded Levi-form condition number
-      (squared aspect-ratio bound). -/
-  claim_ii_levi_form_condition : cond_sup ≤ C ^ 2
   /-- The minimum Levi eigenvalue `min(λ_∥, λ_⊥)` on the collision
       locus `Σ`. -/
   lambda_min : ℝ
-  /-- Manuscript sub-claim (iii) — Non-degenerate contact structure
-      at `Σ`: both Levi eigenvalues are strictly positive. -/
-  claim_iii_contact_structure_remains : 0 < lambda_min
   /-- Dimension of `Hom_C(𝟙, Ad(A))` locally at each `p ∈ Σ`. -/
   hom_dim_at_p : ℕ
-  /-- Manuscript sub-claim (iv) — Observability axiom holds locally:
-      `dim Hom_C(𝟙, Ad(A)) = 0` at every `p ∈ Σ`. -/
-  claim_iv_observability_axiom_holds : hom_dim_at_p = 0
   /-- Dimension of the maximal integral submanifold of `ker(Θ)` at `Σ`. -/
   integral_submfd_dim : ℕ
-  /-- Manuscript sub-claim (v) — No 2-dimensional integral submanifold
-      of `ker(Θ)` forms at `Σ` (Frobenius integrability fails):
-      `integral_submfd_dim < 2`. -/
-  claim_v_no_integral_submanifold : integral_submfd_dim < 2
+  /-- Levi form regularity proposition. -/
+  levi_form_regular : Prop
+  /-- Hypothesis that the Levi form is regular. -/
+  levi_form_active : levi_form_regular
+  /-- (i) Bounded core aspect ratio: the supremum is finite. -/
+  impl_core_aspect_ratio : levi_form_regular → aspect_sup ≤ C
+  /-- (ii) Bounded Levi-form condition number (squared aspect-ratio bound). -/
+  impl_levi_form_condition : levi_form_regular → cond_sup ≤ C ^ 2
+  /-- (iii) Non-degenerate contact structure at `Σ`: both Levi eigenvalues are strictly positive. -/
+  impl_contact_structure_remains : levi_form_regular → 0 < lambda_min
+  /-- (iv) Observability axiom holds locally: `dim Hom_C(𝟙, Ad(A)) = 0` at every `p ∈ Σ`. -/
+  impl_observability_axiom_holds : levi_form_regular → hom_dim_at_p = 0
+  /-- (v) No 2-dimensional integral submanifold of `ker(Θ)` forms at `Σ` (Frobenius integrability fails): `integral_submfd_dim < 2`. -/
+  impl_no_integral_submanifold : levi_form_regular → integral_submfd_dim < 2
+
 /-- **Content statement** (from manuscript):
 
 Let $\varrho$ be a [geodesic vortex](#rem:geodesic-vortices) in
@@ -60,10 +56,7 @@ $\mathcal{L}_\varTheta(V, W) = -id\varTheta(V, \bar{W})$.  At each
 point $p \in \varrho$, let $N_p\varrho \subset \ker(\varTheta_p)$ be
 the horizontal normal plane.  Define:
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/core-levi-form.ts
 theorem core_levi_form [ctx : CoreLeviFormContext] :
     ctx.aspect_sup ≤ ctx.C ∧
@@ -71,8 +64,6 @@ theorem core_levi_form [ctx : CoreLeviFormContext] :
     0 < ctx.lambda_min ∧
     ctx.hom_dim_at_p = 0 ∧
     ctx.integral_submfd_dim < 2 :=
-  ⟨ctx.claim_i_core_aspect_ratio, ctx.claim_ii_levi_form_condition,
-   ctx.claim_iii_contact_structure_remains,
-   ctx.claim_iv_observability_axiom_holds, ctx.claim_v_no_integral_submanifold⟩
+  ⟨ctx.impl_core_aspect_ratio ctx.levi_form_active, ctx.impl_levi_form_condition ctx.levi_form_active, ctx.impl_contact_structure_remains ctx.levi_form_active, ctx.impl_observability_axiom_holds ctx.levi_form_active, ctx.impl_no_integral_submanifold ctx.levi_form_active⟩
 
 end QOU.FluidDynamics

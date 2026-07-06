@@ -40,21 +40,21 @@ sub-braid V̂ values can turn negative (pair joints, jets).
 ## Where Φ_q(|v|) is used
 
 ```
-folio-assistant/computations/mass_formula_6term.py:141:        single += Phi_q(abs(v))
-folio-assistant/computations/mass_formula_6term.py:143:        pair += Phi_q(abs(vols[i] * vols[i + 1]))
-folio-assistant/computations/mass_endomorphism.py:145,255,264,273
-folio-assistant/computations/multi_level_jet_sum.py:68
-folio-assistant/computations/sweeps/paper_six_term_isotope_sweep.py:291
-folio-assistant/computations/brane_tower_isospin_diagnosis.py:178
-folio-assistant/computations/atom_level_wedderburn_tower.py:120
-folio-assistant/computations/mass_formula_6term_mpfr_50dps.py:254
+computations/mass_formula_6term.py:141:        single += Phi_q(abs(v))
+computations/mass_formula_6term.py:143:        pair += Phi_q(abs(vols[i] * vols[i + 1]))
+computations/mass_endomorphism.py:145,255,264,273
+computations/multi_level_jet_sum.py:68
+computations/sweeps/paper_six_term_isotope_sweep.py:291
+computations/brane_tower_isospin_diagnosis.py:178
+computations/atom_level_wedderburn_tower.py:120
+computations/mass_formula_6term_mpfr_50dps.py:254
 ```
 
 Li_2^q context (binding — Q_β, Δ_λ) also uses `|...|` in places:
 ```
-folio-assistant/computations/_li_2_q_util.py:143,147
-folio-assistant/computations/binding_via_interface_knot.py:119  (Li_2_q(-mp.fabs(v)))
-folio-assistant/computations/hydrogen_qshuffle_compound.py:145
+computations/_li_2_q_util.py:143,147
+computations/binding_via_interface_knot.py:119  (Li_2_q(-mp.fabs(v)))
+computations/hydrogen_qshuffle_compound.py:145
 ```
 
 ## Categorical context
@@ -111,8 +111,8 @@ Out of scope for this diagnostic. Recorded as FOLLOW-UP.
 
 ## Files
 
-- `folio-assistant/computations/qbeta/qbeta_signed_vs_abs_tower_diagnostic.py`
-- `folio-assistant/computations/qbeta/qbeta-signed-vs-abs-tower-diagnostic.witness.json`
+- `computations/qbeta/qbeta_signed_vs_abs_tower_diagnostic.py`
+- `computations/qbeta/qbeta-signed-vs-abs-tower-diagnostic.witness.json`
 - `docs/audits/2026-06-01-qbeta-signed-vs-abs-tower-diagnostic.md` (this file)
 
 ## Cross-refs
@@ -122,4 +122,4 @@ Out of scope for this diagnostic. Recorded as FOLLOW-UP.
 - PR #1630 — Li_2^q × spectral cross-anchor completion
 - `prop:li2q-phiq-bar-symmetrization` — the bar-asymmetric Φ_q vs bar-symmetric Li_2^q split
 - `content/quantum-observable-universe/mass-theory/per-braid-mass-tower.md`
-- `folio-assistant/computations/_phi_q_util.py` — Φ_q implementation + convention
+- `computations/_phi_q_util.py` — Φ_q implementation + convention

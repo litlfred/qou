@@ -15,8 +15,8 @@ export default definition({
   ],
   computation: {
     engine: "sympy",
-    script: "folio-assistant/computations/markov/markov_peel.py",
-    witness: "folio-assistant/computations/markov/markov-peel-atomic-tr-m.witness.json",
+    script: "computations/markov/markov_peel.py",
+    witness: "computations/markov/markov-peel-atomic-tr-m.witness.json",
     status: "verified",
   },
   tags: ["markov-trace", "computation", "algorithm"],

@@ -1,28 +1,37 @@
-All predictions use $\approx$ (derived from $q$, zero fitting parameters).
+All predictions use $\approx$ (derived from $q$).
 Experimental values from NNDC/ENSDF with stated uncertainties.
 Crossing convention: $(1, -\mathrm{HA})$ throughout (unimodular, $\det T = -1$).
 
-**Table 1 --- $q$-weighted Q-values: $2 \times 2 = 6 \times 6$ formula, MAE $\approx 4.4\%$, zero fitting.**
+**Table 1 --- $q$-weighted Q-values: $2 \times 2$ block with $6 \times 6$ shell factors, zero fitting.**
 
-This is the primary method.  Each generator log-ratio is classified as
-unbinding ($u$), rebinding ($r$), or spectator ($uc$), then $q$-weighted:
+The six benchmarks span the mass range, from light nuclei that need no
+shell corrections to heavy nuclei that do, so a single $q$-derived
+formula is tested across regimes.  This is the primary method.  Each
+generator log-ratio is classified as unbinding ($u$), rebinding ($r$),
+or spectator ($uc$), then $q$-weighted:
 
 $$
 Q = |q \cdot \Sigma_u + q^{-1} \cdot \Sigma_r + \Sigma_{uc}| \times \kappa_q \times F_{\mathrm{shell}}(q) \times F_{I_{10}}(Z,N;q)
 $$
 
+Here the $q$-weighted generator sum
+$|q \cdot \Sigma_u + q^{-1} \cdot \Sigma_r + \Sigma_{uc}|$ is multiplied
+by the $q$-dependent factors $\kappa_q$, $F_{\mathrm{shell}}(q)$, and
+$F_{I_{10}}(Z,N;q)$, of which $F_{\mathrm{shell}}(q)$ is the
+shell-correction factor detailed below.
+
 See [Table](#tbl:qvalue-benchmark-table-table-data).
 
 **MAE $\approx 4.4\%$, RMS $\approx 5.4\%$, max $|\delta| \approx 10.3\%$.**
 
-All six benchmarks are within $11\%$ with zero fitting parameters.
+All six benchmarks are within $11\%$.
 Light nuclei (${}^3\mathrm{H}$, ${}^{14}\mathrm{C}$) are within $2.2\%$ and
 need no shell corrections; heavy nuclei (${}^{60}\mathrm{Co}$, ${}^{90}\mathrm{Sr}$,
 ${}^{137}\mathrm{Cs}$, ${}^{210}\mathrm{Bi}$) require the shell factors
 $F_{\mathrm{deg2}}$ and $F_{\mathrm{Pauli}}$ from the $6 \times 6$ regular
 representation of $H_3(q)$.
 
-**Shell correction factors (derived from $q$, not fitted):**
+**Shell correction factors (derived from $q$):**
 
 - $F_{\mathrm{deg2}} = 0.5904$: Rosso--Jones weighted degree-2 torus knot
   suppression for shells $\geq 5$ ($N > 28$), computed as the
@@ -42,7 +51,7 @@ representation of $H_3(q)$.
   in the $6 \times 6$ regular representation of $H_3(q)$, which decomposes as
   $1(\mathrm{sym}) \oplus 2(\mathrm{std}) \oplus 1(\mathrm{alt})$.
 
-**Error propagation note.** The prediction uncertainty $\deltaQ$
+**Error propagation note.** The prediction uncertainty $\delta Q$
 from $\delta q_0 \approx 1.4 \times 10^{-9}$ is negligible
 ($\sim 10^{-9} \text{MeV}$).  The dominant theoretical uncertainty is
 *structural* (model approximations in $F_{\mathrm{shell}}$), not

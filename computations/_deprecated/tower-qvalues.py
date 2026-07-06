@@ -18,7 +18,7 @@ For |V| > 1, use the reflection formula:
     Li_{2,q}(1/x) = -Li_{2,q}(x) - (1/2) ln_q^2(-x) - pi^2/6
 
 Usage:
-    cd folio-assistant/computations && python3 tower-qvalues.py
+    cd computations && python3 tower-qvalues.py
 """
 import math
 import json

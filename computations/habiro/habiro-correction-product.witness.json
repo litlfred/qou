@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-27T22:47:16.346205+00:00",
-  "commitSha": "ea74dd1679037823e104c5152b5af16774247d9d",
+  "computedAt": "2026-06-22T13:00:01.669370+00:00",
+  "commitSha": "8013e77237e09ab3d980ed3fef1c74676b2e9944",
   "assertions": [
     {
       "name": "residual_under_10ppm",
@@ -22,16 +22,22 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 16,
   "computation": "habiro-correction-product",
   "scriptFile": "habiro_correction_product_verify.py",
-  "scriptHash": "4447058f7bca",
-  "scriptCommitSha": "ea74dd1679037823e104c5152b5af16774247d9d",
+  "scriptHash": "6850d9e1774a",
+  "scriptCommitSha": "8fe05b474f1638b4af282b34ccfd0d734db2a2cc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Habiro correction product: S ≈ (1+ℏ²)(1−ℏ²/p(n)) where p(9)=30. Closes from 319 ppm to 7.8 ppm (41× improvement). c₂ = 29/30, c₄ = −1/30. The 1/p(n) factor suggests block-averaging between Habiro (cyclotomic) and Wenzl (seminormal) bases.",
   "auditOnly": "docs/audits/2026-05-28-habiro-product-correction-7ppm.md",
@@ -41,7 +47,7 @@
     "correction_formula": "(1 + ℏ²)(1 − ℏ²/p(n))",
     "c2": "29/30",
     "c4": "-1/30",
-    "residual_ppm": 7.818080505939115,
+    "residual_ppm": 7.818138439114336,
     "improvement_from_319": "41×"
   }
 }

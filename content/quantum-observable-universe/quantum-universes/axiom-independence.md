@@ -15,12 +15,12 @@ explicitly \cite{woronowicz1988}.  In our generality, Axiom 3 is
 independent.
 
 **Axiom 2 (Frobenius--Hopf object).**
-A Hopf algebra need not carry a non-degenerate Frobenius form.  The
-Frobenius condition $A \cong A^{\vee}$ (self-duality) is strictly
-stronger than the Hopf axioms alone.  For finite group algebras the
-Frobenius form exists (it is the trace of the regular
-representation), but for general Hopf algebras in a braided category
-it is genuinely additional data.
+For finite group algebras a non-degenerate Frobenius form exists ---
+it is the trace of the regular representation.  A general Hopf
+algebra, however, need not carry one: the Frobenius condition
+$A \cong A^{\vee}$ (self-duality) is strictly stronger than the Hopf
+axioms alone, so for Hopf algebras in a braided category it is
+genuinely additional data.
 
 **Axiom 4 (differential calculus).**
 For a commutative Hopf algebra $\mathcal{O}(G)$ with $G$ a smooth

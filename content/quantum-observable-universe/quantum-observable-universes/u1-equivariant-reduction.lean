@@ -44,9 +44,15 @@ def polarFixedPoints : Set U1OrbitSpace :=
     This file records the signature only; the full bundle-theoretic
     formalisation (connection to `Mathlib.Topology.FiberBundle`) is
     deferred.  The honest content here is the *structural asymmetry*
-    between polar and interior points. -/
+    between polar and interior points.
+
+    `polarFixedPoints` is membership in a set cut out by real-number
+    equalities (`x.val = 0 ∨ x.val = Real.pi`), which is not
+    algorithmically decidable; the case split is justified classically,
+    hence the `Classical` instance and `noncomputable`. -/
 -- Ref: [manuscript] Chapter 3, §Varying Euler + mirror bundle
-def PhaseFiber (φ : U1OrbitSpace) : Type :=
+noncomputable def PhaseFiber (φ : U1OrbitSpace) : Type :=
+  open Classical in
   if φ ∈ polarFixedPoints then Unit else Unit  -- interior placeholder
 
 /-- The polar fixed-point fibre is `Unit` (collapsed). -/

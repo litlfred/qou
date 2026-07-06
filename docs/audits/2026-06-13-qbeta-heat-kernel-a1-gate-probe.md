@@ -1,7 +1,7 @@
 # Q_β heat-route — the bar-odd `a_1` gate (structural prune/support)
 
 **Date:** 2026-06-13
-**Probe:** [`folio-assistant/computations/qbeta/qbeta_heat_kernel_a1_gate_probe.py`](../../folio-assistant/computations/qbeta/qbeta_heat_kernel_a1_gate_probe.py)
+**Probe:** [`computations/qbeta/qbeta_heat_kernel_a1_gate_probe.py`](../../computations/qbeta/qbeta_heat_kernel_a1_gate_probe.py)
 **Scope:** tests the ONE gate for the §3-bis q-heat-kernel candidate for the open
 `c_k`-recursion kernel `R(q,ξ)`
 ([`2026-06-10-qbeta-ck-state-of-play-synthesis.md`](2026-06-10-qbeta-ck-state-of-play-synthesis.md) §3-bis;

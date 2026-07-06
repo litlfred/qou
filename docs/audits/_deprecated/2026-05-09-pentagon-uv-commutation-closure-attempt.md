@@ -92,7 +92,7 @@ namespace QOU.BraidKnot.PentagonUVCommutation
     Encodes the open content of `conj:pentagon-uv-commutation` as a
     type class so downstream theorems (the explicit triple-absorption
     rule, the all-orders mass tower closure) can be stated as
-    *conditional* theorems per CLAUDE.md §3b-cond.
+    *conditional* theorems per AGENTS.md §3b-cond.
 
     To CLOSE the conjecture, an instance must be constructed showing
     that at every jet level n there exist operators Û_i, V̂_j on
@@ -125,7 +125,7 @@ class BraneTowerQCommutation (R : Type*) [CommRing R] (q : R) where
 
     This is the algebraic content of the "ascension rule" claimed
     informally in `mass-endomorphism-jet-tower.md`. The theorem is
-    `conditional` per CLAUDE.md §3b-cond: provable from the class
+    `conditional` per AGENTS.md §3b-cond: provable from the class
     instance + the unconditional pentagon identity for q-commuting
     operators. -/
 theorem triple_absorption_under_q_commutation
@@ -160,7 +160,7 @@ on the brane-tower algebras) that is not currently in the paper.
 
 The best we can do today: make the conditional dependency explicit via
 the class hypothesis above, and route any all-orders mass-tower
-extension through it (per CLAUDE.md §3b-cond).
+extension through it (per AGENTS.md §3b-cond).
 
 ## Implications for the all-orders mass tower
 

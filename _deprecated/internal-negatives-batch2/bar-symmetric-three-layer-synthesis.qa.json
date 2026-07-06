@@ -397,7 +397,7 @@
         "reviewed_at": "2026-05-20T16:40:02.947Z",
         "reviewed_sha": "014b38cd6d8f9cb6fb2293b02f1e84f00772b503",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/bar-symmetric-three-layer-synthesis.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
+        "evidence": "quantum-observable-universe/braids-and-knots/bar-symmetric-three-layer-synthesis.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per AGENTS.md §7c."
       },
       {
         "field_hash": {
@@ -416,7 +416,7 @@
         "reviewed_at": "2026-05-23T11:28:20.680Z",
         "reviewed_sha": "d6f532a1c2c2e525ad2431b47fa647eb1e54d143",
         "severity": "critical",
-        "evidence": "quantum-observable-universe/braids-and-knots/bar-symmetric-three-layer-synthesis.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
+        "evidence": "quantum-observable-universe/braids-and-knots/bar-symmetric-three-layer-synthesis.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per AGENTS.md §7c."
       }
     ],
     "voice-title-scholarly": [
@@ -630,7 +630,7 @@
         "reviewed_at": "2026-05-24T00:49:59.352Z",
         "reviewed_sha": "051a7ba0281d930043bcb0d2f3303b3b3b8e3e24",
         "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/bar-symmetric-three-layer-synthesis.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/braids-and-knots/bar-symmetric-three-layer-synthesis.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per AGENTS.md compute-integration §B"
       }
     ],
     "bib-cite-resolves": [
@@ -671,7 +671,7 @@
         "reviewed_at": "2026-05-24T01:26:29.756Z",
         "reviewed_sha": "69799cb0c69f393932d69695d0bcfd80db7b25de",
         "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/bar-symmetric-three-layer-synthesis.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/braids-and-knots/bar-symmetric-three-layer-synthesis.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per AGENTS.md compute-integration §B (I2-I13)"
       }
     ],
     "canonical-no-hardcoded-observable": [

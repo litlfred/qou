@@ -95,6 +95,23 @@ Ref: probe_pn_flavor_asymmetry.py (Bring-surface flavor-weighted averaging)
 Ref: probe_per_sheet_flavor_nonin.py (per-sheet Picard-Lefschetz integration)
 Ref: docs/canonical-derivation-cheat-sheet.md §5 action #4
 Ref: docs/audits/2026-06-01-bring-color-weighted-implementation-and-compute-audit.md
+
+## Derivation of the per-interface factors (categorical, 0 free params)
+
+The three factors below are NOT independent heuristics: positive=z is the
+Markov axiom tr(alpha sigma)=z tr(alpha); negative=z-h and averaged=z-h/2
+follow by trace-linearity from that SINGLE Markov move plus the Hecke skein
+sigma^{-1}=sigma-h.  The averaged (bar-invariant p-n) factor's division-free
+form tr(alpha (sigma+sigma^{-1}))=(2z-h) tr(alpha) is Lean-proved sorry-free as
+`QOU.BraidKnot.interface_knot_markov_z_bar_symmetric`
+(content/quantum-observable-universe/mass-theory/interface-knot-markov-z.lean),
+and `interface_factor()` below is cross-checked against the derived z, z-h,
+z-h/2 by
+`computations/probes/interface_factor_categorical_derivation_probe.py`.
+
+Ref: QOU.BraidKnot.interface_knot_markov_z_bar_symmetric (Lean: averaged pn factor derived)
+Ref: prop:interface-knot-markov-z §"Averaged (bar-invariant) interface"
+Ref: computations/probes/interface_factor_categorical_derivation_probe.py
 """
 from __future__ import annotations
 
@@ -258,10 +275,14 @@ def closed_form_ratio(
     asymmetry.
     """
     if pn_convention == "bring_color_weighted":
-        from _li_2_q_util import flavor_split_subleading
+        # DE-WIRED 2026-06-29 (owner directive): canonical color-weighting δ
+        # uses the PROVEN leading flavor split, not the posited (1+ℏ_q³)-
+        # corrected subleading (unproven, 76%-insufficient — see audit
+        # 2026-06-29-color-weighting-coverage-and-flavor-split-closed-form.md).
+        from _li_2_q_util import flavor_split_leading
         z = markov_z(q)
         h = hecke_h(q)
-        delta_m_over_M = flavor_split_subleading(q)
+        delta_m_over_M = flavor_split_leading(q)
         A = Z + N
         if A < 2:
             return mp.mpf(1)
@@ -349,7 +370,7 @@ def compute_tau_M_nucleon_H3(
     else:
         raise ValueError(f"nucleon must be 'p' or 'n', got {nucleon!r}")
 
-    h_val = float(Q0 - 1 / Q0)
+    h_val = float(Q0 - 1 / Q0)  # noqa: I8 — sign-classification param for marshal_to_chi_lambda_braid (matched vs d within eps=1e-10), not a precision coefficient
     chain_with_gens = (
         [(c, d, 0) for c, d in g0]
         + [(c, d, 1) for c, d in g1]

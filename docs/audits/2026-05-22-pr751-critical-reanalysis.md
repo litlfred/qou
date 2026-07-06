@@ -122,7 +122,7 @@ narrative fails the triple-check.
 > shows descent crossing at $z \approx 3.86$, an order of magnitude
 > larger than $a(q_0)$) and is **not** required for the derivation."
 > The witness
-> [`derive-a-thimble-intersection.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/derive-a-thimble-intersection.witness.json)
+> [`derive-a-thimble-intersection.witness.json`](https://github.com/litlfred/qou/blob/main/computations/derive-a-thimble-intersection.witness.json)
 > labels the (4-q)/(4q+3) entry as **"← post-hoc"** in its own
 > output.
 >
@@ -362,7 +362,7 @@ acknowledged in the merged narrative.
 2026-05-22) independently catches the **literal** face of the
 same CAL-4: `LAMBDA_PROTON_DOC = 2.4599527869` and
 `LAMBDA_NEUTRON_DOC = 2.4633436333` hardcoded in
-`folio-assistant/computations/m_p_borromean_verification_50dps.py`,
+`computations/m_p_borromean_verification_50dps.py`,
 both literally solved against CODATA m_p / m_n. The cheat sheet
 [`docs/canonical-derivation-cheat-sheet.md`](https://github.com/litlfred/qou/blob/claude/210x-scale-gap-root-cause-v2/docs/canonical-derivation-cheat-sheet.md)
 §5 Migration Backlog #1 + §8 Common Pitfalls already track this

@@ -88,7 +88,7 @@ With typed crossings at $q_0 \approx 1.1100$:
 | Proton $\mathfrak{p}$ | $\mathfrak{u}\mathfrak{u}\mathfrak{d}$ | $+0.9991$ |
 | Neutron $\mathfrak{n}$ | $\mathfrak{u}\mathfrak{d}\mathfrak{d}$ | $+0.8108$ |
 
-## Why $\mathfrak{E}_0 = Q / |\Delta\mathrm{net}|$
+## The scale $\mathfrak{E}_0 = Q / |\Delta\mathrm{net}|$
 
 The NF coefficients are dimensionless Laurent polynomials in $q$.
 To convert to physical energies (MeV), a single scale
@@ -114,24 +114,24 @@ observable**: the beta decay $Q$-value.
 
 2. **Calibration.**  Beta decay
    $\mathfrak{n} \to \mathfrak{p} + e^- + \bar\nu_e$ releases
-   $Q_\beta = \mathfrak{m}_{\mathfrak{n}} - \mathfrak{m}_{\mathfrak{p}}
+   $\mathfrak{Q}_\beta = \mathfrak{m}_{\mathfrak{n}} - \mathfrak{m}_{\mathfrak{p}}
    - \mathfrak{m}_e \approx 0.782 \text{MeV}$.  This is the energy
    equivalent of the dimensionless transition $\Delta\mathrm{net}$:
 
    $$
      \mathfrak{E}_0
      = 
-     \frac{Q_\beta}{|\Delta\mathrm{net}|}
+     \frac{\mathfrak{Q}_\beta}{|\Delta\mathrm{net}|}
      = 
      \frac{0.782}{0.1883}
       \approx  4.155 \text{MeV}.
    $$
 
-3. **Why this works.**  The ratio is well-defined because:
+3. **Well-definedness.**  The ratio is well-defined because:
    - $q_0$ is already fixed (substrate parameter), so all NF
      coefficients are determined — no remaining free parameters
      in the algebra.
-   - $Q_\beta$ is the best-measured nuclear transition energy
+   - $\mathfrak{Q}_\beta$ is the best-measured nuclear transition energy
      ($\pm 0.6$ eV precision from CODATA 2022).
    - The sign $\Delta\mathrm{net} < 0$ (neutron net $<$ proton net)
      is a consequence of typed crossings: the extra down quark in
@@ -140,7 +140,7 @@ observable**: the beta decay $Q$-value.
 
 Once $\mathfrak{E}_0$ is set, every other NF coefficient difference
 $\Delta_i$ contributes $\Delta_i \times \mathfrak{E}_0$ MeV to the
-decay energy budget — and the six terms sum exactly to $Q_\beta$
+decay energy budget — and the six terms sum exactly to $\mathfrak{Q}_\beta$
 ([energy scale](#rem:beta-decay-energy-scale)).
 
 **Full derivation.**

@@ -12,7 +12,7 @@ exists because the expensive failure mode is **acting on a remembered or
 assumed branch name / scope** and then re-discovering reality mid-task.
 The cure is: resolve ground truth first, in one batch, then dispatch.
 
-> Read repo-root `CLAUDE.md` first. This skill operates under the
+> Read repo-root `AGENTS.md` first. This skill operates under the
 > branch/PR workflow, production-vs-exploratory + canonical-derivation
 > discipline, witnessed-values, and CI-billing-failure rules. It does
 > not override them.
@@ -47,7 +47,7 @@ The cure is: resolve ground truth first, in one batch, then dispatch.
    without committing loses everything. Brief sub-agents to commit after
    the first substantive edit and push after each commit.
 
-5. **Classify CI before diagnosing it.** Per CLAUDE.md: multiple jobs
+5. **Classify CI before diagnosing it.** Per AGENTS.md: multiple jobs
    failing in ≤5 s with identical `started_at` is the GitHub Actions
    **billing** signature, not a code failure. Do not push retrigger
    commits; note it and move on. Real failures take ≥30 s.
@@ -116,7 +116,7 @@ contain (filled from Step 1, not assumed):
 - the **resolved** branch name (`git fetch origin <ref>` +
   `git checkout -B <ref> origin/<ref>`; "do NOT create a new branch");
 - the literal PR title + the unchecked checklist items;
-- the relevant CLAUDE.md discipline pointers for that PR's domain
+- the relevant AGENTS.md discipline pointers for that PR's domain
   (canonical / precision-goals / Lean / Δ_λ-gate / LP-SDP-dual);
 - **commit-early-and-push** instruction (Hard Rule 4) with the session
   URL line for commit bodies and 4× exp-backoff push retry;
@@ -145,12 +145,12 @@ git worktree remove --force /tmp/pick-wt
 ```
 
 Commit message: `style(<area>): <fix> — address <reviewer> review`.
-Commit body ends with the session URL line (CLAUDE.md).
+Commit body ends with the session URL line (AGENTS.md).
 
 ### Step 5 — Reply frugally + report
 
 - Reply to a review **only** if it resolves the thread or raises a
-  question (CLAUDE.md "be frugal"). For "already fixed in a later
+  question (AGENTS.md "be frugal"). For "already fixed in a later
   commit" nits, one short note is enough; don't reply per-nit.
 - If Copilot's review errored ("unable to review"),
   `request_copilot_review` to re-trigger.

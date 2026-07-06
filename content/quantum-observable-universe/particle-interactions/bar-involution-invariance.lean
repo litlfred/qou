@@ -12,7 +12,7 @@
   lemma).  Step (3) — bar-invariance of folded normal forms — is
   conditional on conj:symmetric-crystal-pair-production
   (axiomatised here as the class `SymmetricCrystalPairProduction n`,
-  per CLAUDE.md §3b-cond) and has no `sorry` in its proof body.
+  per AGENTS.md §3b-cond) and has no `sorry` in its proof body.
 
   Refs: prop:bar-involution-invariance (this block),
         prop:cpt-orbit-closure-density,
@@ -26,7 +26,7 @@
 -/
 
 import Mathlib.Data.Real.Basic
-import Mathlib.Algebra.GroupPower.Basic
+import Mathlib.Algebra.Group.Basic
 import Mathlib.Algebra.Order.Field.Basic
 
 namespace QOU.ParticleInteractions
@@ -161,7 +161,7 @@ theorem plancherel_weight_transpose_eq
 The third invariance — that any Hecke normal form produced by the
 symmetric-crystal pair-production engine is bar-invariant — is
 conditional on conj:symmetric-crystal-pair-production.  We
-axiomatise that conjecture as a class (per CLAUDE.md §3b-cond)
+axiomatise that conjecture as a class (per AGENTS.md §3b-cond)
 and the theorem below has no `sorry` in its proof body. -/
 
 /-- The Hecke normal form carrier (from `hecke-normal-form.lean`). -/
@@ -196,7 +196,7 @@ theorem normal_form_bar_invariant_conditional
 /-! ## Empirical witness pointer
 
 Numerical bar-invariance test: at `q_0 ≈ 1.1097`, the Plancherel
-weights computed in `folio-assistant/computations/sdp-dual-without-demand.md`
+weights computed in `computations/sdp-dual-without-demand.md`
 satisfy `w_λ(q_0) = w_{λᵀ}(q_0)` to machine precision for every
 λ ⊢ n at n ≤ 9.  Bar-invariance under `q_0 ↦ 1/q_0` is verified
 indirectly by the same data: `[k]_q` is bar-invariant exactly,

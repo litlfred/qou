@@ -1,0 +1,42 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-28T22:45:57.518558+00:00",
+  "commitSha": "c831148234ebd0bc6ebb1a38b18846a7e9bcadf6",
+  "assertions": [
+    {
+      "name": "multiterm_t4_cannot_rescue_l6a4",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "T1+T4 offset leaves a 4.88 MeV gap, so L6a4 loses to higher-|tr_M| braids."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 31,
+  "computation": "multiterm-cost-he3-l6a4-probe",
+  "scriptFile": "multiterm_cost_he3_l6a4_probe.py",
+  "scriptHash": "3ccc82f8aca8",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Refutes the hypothesis that wiring the T4 Frobenius offset into the SDP cost makes He3's historical L6a4 the winner. L6a4's T1+T4 binding prediction is 2.83 MeV, far short of the 7.718 MeV B_AME. Other candidates hit 4.6 MeV and win on relative residual.",
+  "data": {
+    "b_pred_l6a4": "2.8304154313",
+    "cost_l6a4": "0.158318208145",
+    "cost_alt_winner": "0.100799171871"
+  }
+}

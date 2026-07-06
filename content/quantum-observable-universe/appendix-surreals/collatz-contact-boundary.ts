@@ -6,6 +6,9 @@ export default proposition({
   title:
     "The $[2]_q$-contact boundary on the Reeb bundle",
   uses: [
+    "def:two-q-adic-valuation",
+    "def:collatz-contact-boundary",
+    "conj:q-collatz",
     "prop:root-of-unity-truncation",
   ],
   tags: [

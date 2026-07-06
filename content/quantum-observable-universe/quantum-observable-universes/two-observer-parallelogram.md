@@ -48,7 +48,7 @@ boson at $p$).  Generically, the non-cocommutativity of the Hopf
 structure ensures $[q_1'(p), q_2'(p)] \neq 0$: independent
 observations of a fermion at the same point necessarily disagree.
 
-**Why germs, not global morphisms.**
+**Germs rather than global morphisms.**
 The categorical algebra $A$ carries no intrinsic topology (it is an
 object in $\mathbf{C}$, not a topological ring).  Working with germs
 $A / \mathfrak{m}_p^2$ at a point $p$ plays the role of localisation:

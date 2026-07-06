@@ -65,6 +65,7 @@ def figure_eight_crossings : ℕ := 4
 theorem strangelet_double_beta (q : ℝ) (hq : 1 < q) :
     double_beta_rate q = (skein_amplitude q) ^ 4 := by
   unfold double_beta_rate
+  rfl
 
 /-- The descent path goes cinquefoil → figure-eight → trefoil:
     5 → 4 → 3 crossings. -/

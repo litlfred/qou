@@ -72,7 +72,7 @@ class RMatrixBraidingContext where
 -- Ref: [drinfeld1985] V. Drinfeld, Hopf algebras and the quantum Yang–Baxter equation, 1985
 -- Ref: [kassel1995] Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories)
 -- Ref: [manuscript] Ch. 4, §enveloping-algebras
-theorem r_matrix_braiding_structure
+def r_matrix_braiding_structure
     [ctx : RMatrixBraidingContext] :
     ctx.comp (ctx.comp ctx.R12 ctx.R13) ctx.R23
       = ctx.comp (ctx.comp ctx.R23 ctx.R13) ctx.R12 :=
@@ -87,7 +87,7 @@ theorem r_matrix_braiding_structure
     `U_q(𝔰𝔲(2))`-module. -/
 -- Ref: [kassel1995] Ch. XIII (Braided categories)
 -- Ref: [manuscript] Ch. 4, §enveloping-algebras
-theorem braid_rep_from_R_check
+def braid_rep_from_R_check
     [ctx : RMatrixBraidingContext] :
     ctx.comp (ctx.comp ctx.Rcheck1 ctx.Rcheck2) ctx.Rcheck1
       = ctx.comp (ctx.comp ctx.Rcheck2 ctx.Rcheck1) ctx.Rcheck2 :=

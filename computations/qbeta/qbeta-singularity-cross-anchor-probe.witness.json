@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-03T12:15:23.592066+00:00",
-  "commitSha": "82e723a48b92bbb2127246f610780c188af4015f",
+  "computedAt": "2026-06-22T13:27:41.614758+00:00",
+  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
   "assertions": [
     {
       "name": "cross_anchor_u_subst_compared",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 10,
   "computation": "qbeta-singularity-cross-anchor-probe",
   "scriptFile": "qbeta_singularity_cross_anchor_probe.py",
-  "scriptHash": "cac8a2fa92bd",
-  "scriptCommitSha": "e534e9d55aa57111f3a9e9b567e86304f2b95b13",
+  "scriptHash": "f6bbc37f0b5a",
+  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,19 +28,16 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "description": "Step 2 of PR #1727 / Q_β 1ppQ closure: cross-anchor test of Step 1's SIMPLE_POLE verdict at q_muon. Tests whether u_subst (singularity location of F(u)) is fibre-level (same at both anchors) or anchor-dependent. Uses q_proton-extracted c_k evaluated at q_muon's u value (partial test; full re-extraction at q_muon is out of scope for one session).",
   "data": {
-    "q_proton": "1.10997858275138080759166909561",
+    "q_proton": "1.10997859555733471989976322048",
     "q_muon": "1.10997859555418057528159407961",
-    "u_proton": "0.00851723455015614218925557360331",
+    "u_proton": "0.0085172363404849214399331129023",
     "u_muon": "0.00851723634004395810711354481101",
-    "delta_u_relative_ppb": "210.148940408",
+    "delta_u_relative_ppb": "-0.0517730535107",
     "fibre_level_within_1ppm": "True",
     "verdict": "FIBRE_LEVEL_CONFIRMED — singularity at same u across anchors"
   }

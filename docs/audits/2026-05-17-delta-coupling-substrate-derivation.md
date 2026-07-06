@@ -153,4 +153,4 @@ derivation is:
 - [`def:operational-entropy`](../../content/quantum-observable-universe/information-theory/operational-entropy.md) — η_q = (2q-1)/q³
 - [`conj:magic-shell-stabilization`](../../content/quantum-observable-universe/braids-and-knots/conj-magic-shell-stabilization.md) — the conjecture stating Δ_coupling exists
 - [`2026-05-12-delta-coupling-leading-term-followup.md`](2026-05-12-delta-coupling-leading-term-followup.md) — original leading-form analysis
-- [`probe_delta_coupling_q_edgeworth.py`](../../folio-assistant/computations/probe_delta_coupling_q_edgeworth.py) — q-Edgeworth attempt
+- [`probe_delta_coupling_q_edgeworth.py`](../../computations/probe_delta_coupling_q_edgeworth.py) — q-Edgeworth attempt

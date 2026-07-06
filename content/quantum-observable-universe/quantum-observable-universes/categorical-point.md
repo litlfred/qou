@@ -1,5 +1,5 @@
 Let $(\mathbf{C}, A, \tau)$ be a
-([quantum universe](#def:quantum-universe)).  A *categorical point*
+([quantum universe](#def:quantum-universe)).  A **categorical point**
 of $A$ is a morphism
 
 ```tex

@@ -37,7 +37,7 @@ from the kite-power artefact and likely come from a different
 braid encoding.
 
 Run:
-    python3 folio-assistant/computations/kite_tail_reconciliation.py
+    python3 computations/kite_tail_reconciliation.py
 """
 from __future__ import annotations
 

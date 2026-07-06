@@ -12,7 +12,7 @@ Laurent polynomial in the substrate parameter $q$, and the
 support $\mathrm{supp} \subset S_A$ consists of reduced words in
 the symmetric group.
 
-## What the NF encodes
+## Content of the NF
 
 Each reduced word $w$ of length $\ell(w)$ represents a configuration
 of $\ell(w)$ **simultaneously active crossings** in the nuclear braid.
@@ -72,7 +72,7 @@ coefficient at $\sigma_j$. Collapsing the chain to a single term
 $\hat{V}_i = z \cdot (M_i)_{00} + (M_i)_{10}$ is exactly the
 Markov-traced volume.
 
-**Why $I_9$ needs $d \neq 0$ (the valley of stability).** When
+**Necessity of $d \neq 0$ for $I_9$ (the valley of stability).** When
 multiplying the NF by $(c \cdot \sigma_k + d)$, the $d$-term
 preserves every existing word (scales it by $d$), while the $c$-term
 extends each word by $\sigma_k$. For every extended word $w \cdot
@@ -196,7 +196,7 @@ See [Table 3](#tbl:groebner-nf-computation-table3-data).
 
 For each nucleus through $A = 12$, the symbolic witnesses are
 **exact in $q$**: the polynomials $\mathrm{tr}_{\mathrm{alt}}(\check{q})$,
-$\mathrm{net}(\check{q})$, $\mathrm{observable}(\check{q})$, and $\mathrm{coral}(\check{q})$
+$\mathrm{net}(\check{q})$, $\mathrm{observable}(\check{q})$, and $\mathrm{color}(\check{q})$
 are elements of $\mathbb{Z}[\check{q}, \check{q}^{-1}]$ (Laurent polynomials over
 $\mathbb{Z}$ in $\check{q} = q^{1/2}$, the spinor information rate). The denominator $2^{p_n}$ is
 tracked separately (from the doubled pn crossing convention).

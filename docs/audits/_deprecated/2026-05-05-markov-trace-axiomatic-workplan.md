@@ -26,8 +26,8 @@ This is the **categorical-mass anchor for the proton** required by
 | item                                                     | location |
 |----------------------------------------------------------|----------|
 | Factor-of-2 audit: traces are *different*, not normalised | [`docs/audits/2026-05-05-factor-2-resolved-different-traces.md`](2026-05-05-factor-2-resolved-different-traces.md) |
-| Hecke-quadratic + Markov axiom reduction (H_3 basis)     | `folio-assistant/computations/markov/markov_trace_axiomatic_proton.py` |
-| Hecke-power recurrence (a_k, b_k for k=0..7)             | `folio-assistant/computations/markov/markov_trace_atomic_proton_full.py` |
+| Hecke-quadratic + Markov axiom reduction (H_3 basis)     | `computations/markov/markov_trace_axiomatic_proton.py` |
+| Hecke-power recurrence (a_k, b_k for k=0..7)             | `computations/markov/markov_trace_atomic_proton_full.py` |
 | Closed form $\operatorname{tr}_M(\sigma_1^7\sigma_2^4) = (\dots)/q^{10}(q+1)^3$ | same script, witness JSON |
 | `prop:markov-trace-antipode-polynomial-symmetry` (.ts/.md/.lean) | content/quantum-observable-universe/braids-and-knots/ |
 | `prop:markov-trace-axiomatic-closed-form` (.ts/.md/.lean)  | content/quantum-observable-universe/braids-and-knots/ |

@@ -10,7 +10,7 @@ The Kummer-tower perpetuity result lifts to a single statement
 about the motivic Galois character: if χ(A) ≠ 0 then χ^mot_A is
 non-trivial at every finite place p ∤ χ(A).
 
-**Block kind: `conjecture` (CLAUDE.md §3b conditional-class
+**Block kind: `conjecture` (AGENTS.md §3b conditional-class
 pattern).**  The conjectural content is concentrated in the field
 `MotivicGaloisCharacter.almost_everywhere_nontrivial` (which any
 instance is required to populate).  The Lean theorem below is
@@ -50,7 +50,7 @@ open QOU.AlgebraicSubstrate
 
     Concrete instances of `MotivicGaloisCharacter` provide either
     a constructive `S = ∅`/small witness or a `sorry` substrate
-    axiom (CLAUDE.md §3b).
+    axiom (AGENTS.md §3b).
 
     Downstream blocks (Kummer tower, Descartes-Yekutieli, chi=-6
     derivation, Hochschild–Kummer connection) all become

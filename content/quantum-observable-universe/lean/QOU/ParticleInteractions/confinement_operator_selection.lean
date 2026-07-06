@@ -1,73 +1,208 @@
+import Mathlib.Tactic
+
 /-!
-# QOU.ParticleInteractions.confinement_operator_selection — placeholder stub
+# QOU.ParticleInteractions.confinement_operator_selection — topological Brunnian selection
 
-**Placeholder canonical** for content block
-[`prop:confinement-operator-selection`](../../../quantum-observable-universe/particle-interactions/confinement-operator-selection.md): *Confinement operator selection via minimum action*.
+**Canonical** for content block
+[`prop:confinement-operator-selection`](../../../quantum-observable-universe/particle-interactions/confinement-operator-selection.md):
+*Confinement operator selection via topological Brunnian minimality*.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.ParticleInteractions.confinement_operator_selection` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
+The confinement operator is selected by a **topological** principle: a confined
+`n`-quark state is the closure of the **crossing-minimal nontrivial Brunnian**
+`n`-braid (confinement ⇔ no proper subset of quarks can be isolated ⇔ every
+proper sublink is trivial). This replaces the earlier *minimum-action on the
+6×6 Frobenius Gram matrix* framing, which was **refuted**: `NF(𝓑₃)` is ≈ 99.8%
+the identity `γ` (the maximum-cost channel), so any cost-minimising
+operator-space program selects the smallest-cost mesonic `L±` instead — never
+`𝓑₃` (see `docs/audits/2026-06-17-b3-dense-sdp-lever-closed.md` and
+`computations/probes/b3_dense_sdp_wedderburn_projector.py`).
+
+The general statement yields the **baryon/meson dichotomy as a theorem**:
+nontrivial Brunnian links require ≥ 3 components, so confinement (a nontrivial
+Brunnian braid) exists iff `n ≥ 3` — `n = 2` (mesons) has none and falls back to
+pairwise `L±` binding, while `n = 3` (baryons) selects the minimal Brunnian link,
+the Borromean braid `𝓑₃ = (σ₀σ₁⁻¹)³`.
+
+This is a **placeholder context-class**: the Brunnian predicate, the existence
+dichotomy, and crossing-minimality are axiomatised as class fields carrying the
+computational witnesses (`computations/probes/b3_brunnian_selection_scope.py`,
+`b3_brunnian_minimality_enumeration.py`); the theorem composes them. Minimality
+is witnessed *among 3-braid closures* (the framework's setting), not proved as
+full link-theoretic uniqueness. Upgrading to a closed Lean proof requires
+formalising the Brunnian predicate over an actual braid-group model and the
+finite enumeration.
 -/
 
 namespace QOU.ParticleInteractions
 
+/-! ## Braid-group word model — the Borromean linking signature is machine-proved
 
-/-- Abstract context for the `confinement_operator_selection` claim —
-    manuscript-themed typed fields below; sub-claims encode (i) the
-    Borromean braid identity `𝓑_3 = (σ_0 σ_1⁻¹)^3`, (ii) selection via
-    minimum-action on the 6×6 Frobenius Gram matrix, (iii) consistency
-    with the operator-selection LP. -/
-class ConfinementOperatorSelectionContext where
-  /-- The braid representative type. -/
-  Braid : Type
-  /-- The Hecke algebra `H_3(q)` carrier. -/
+A concrete 3-strand braid-word model. A letter is a generator index
+(`0` = σ₀ swapping the strands at positions 0,1; `1` = σ₁ swapping positions 1,2)
+with a sign. Tracking strand positions through the word, `signedCrossings`
+accumulates the signed crossing count per unordered strand pair (`= 2·lk`), and
+`crossingCounts` the unsigned count. For the Borromean braid `(σ₀σ₁⁻¹)³` both are
+proved by `decide`: every pairwise linking number vanishes (the Brunnian
+*signature* — a necessary condition for Brunnian) while every pair still crosses
+twice (geometrically interwoven). Moreover `borromean_sublinks_trivial` proves
+the **full Brunnian property's decidable core**: deleting any strand leaves a
+2-braid trivial in `B₂ ≅ ℤ` (exponent sum 0), hence each 2-sublink closes to the
+unlink — no general unknot recognition needed, because `B₂` is free abelian on
+one generator. **Crossing-minimality** at `n = 3` is now also machine-proved, by
+`native_decide`, in `QOU.Knots.TL.borromean_crossing_minimal`
+(`../Knots/KauffmanTL3.lean`): enumerating every 3-braid word of length `< 6`,
+none is simultaneously Brunnian (the `B₂` test above) and nontrivial (the
+writhe-normalised Kauffman/`TL₃` bracket = Jones invariant), while the Borromean
+`(σ₁σ₂⁻¹)³` at length 6 is — cross-checking the Python enumeration oracle. So the
+general-`n` `is_minimal_brunnian` field below remains an abstraction, but its
+`n = 3` (baryon) instance is a closed Lean proof, not merely witnessed. -/
+namespace BraidModel
+
+/-- A 3-braid letter: generator index (`0`/`1`) and sign (`true` = positive). -/
+abbrev Letter := Nat × Bool
+
+/-- The Borromean braid word `(σ₀ σ₁⁻¹)³`. -/
+def borromean : List Letter :=
+  [(0, true), (1, false), (0, true), (1, false), (0, true), (1, false)]
+
+/-- Strand occupying each of the 3 positions. -/
+abbrev Pos := Nat × Nat × Nat
+
+/-- Add signed crossing `s` to the accumulator slot for the unordered pair {x,y}. -/
+def addPair (acc : Int × Int × Int) (x y : Nat) (s : Int) : Int × Int × Int :=
+  let (c01, c02, c12) := acc
+  if (x = 0 ∧ y = 1) ∨ (x = 1 ∧ y = 0) then (c01 + s, c02, c12)
+  else if (x = 0 ∧ y = 2) ∨ (x = 2 ∧ y = 0) then (c01, c02 + s, c12)
+  else (c01, c02, c12 + s)
+
+/-- One braid letter: cross the two strands at the generator's positions
+    (recording the signed crossing) then swap them. -/
+def step (state : Pos × (Int × Int × Int)) (L : Letter) : Pos × (Int × Int × Int) :=
+  let (pos, acc) := state
+  let (p0, p1, p2) := pos
+  let s : Int := if L.2 then 1 else -1
+  match L.1 with
+  | 0 => ((p1, p0, p2), addPair acc p0 p1 s)
+  | _ => ((p0, p2, p1), addPair acc p1 p2 s)
+
+/-- The three pairwise signed crossing sums (`= 2·lk` per pair). -/
+def signedCrossings (w : List Letter) : Int × Int × Int :=
+  (w.foldl step ((0, 1, 2), (0, 0, 0))).2
+
+/-- The three pairwise unsigned crossing counts. -/
+def crossingCounts (w : List Letter) : Nat × Nat × Nat :=
+  (w.foldl (fun (st : Pos × (Nat × Nat × Nat)) L =>
+      let (pos, acc) := st
+      let (p0, p1, p2) := pos
+      let (n01, n02, n12) := acc
+      let add := fun (x y : Nat) =>
+        if (x = 0 ∧ y = 1) ∨ (x = 1 ∧ y = 0) then (n01 + 1, n02, n12)
+        else if (x = 0 ∧ y = 2) ∨ (x = 2 ∧ y = 0) then (n01, n02 + 1, n12)
+        else (n01, n02, n12 + 1)
+      match L.1 with
+      | 0 => ((p1, p0, p2), add p0 p1)
+      | _ => ((p0, p2, p1), add p1 p2))
+    ((0, 1, 2), (0, 0, 0))).2
+
+/-- **Brunnian linking signature** (machine-proved): every pairwise linking
+    number of the Borromean braid vanishes (`2·lk = 0` per pair). -/
+theorem borromean_linking_signature : signedCrossings borromean = (0, 0, 0) := by
+  decide
+
+/-- **Geometric nontriviality** (machine-proved): every pair of strands crosses
+    twice — pairwise unlinked (`lk = 0`) yet interwoven, the Borromean hallmark. -/
+theorem borromean_crossing_counts : crossingCounts borromean = (2, 2, 2) := by
+  decide
+
+/-- The 2-braid induced on the surviving strands by deleting strand `k`, as the
+    list of signed crossings between the two survivors. Since `B₂ ≅ ℤ` (one
+    generator), this 2-braid is determined up to braid equivalence by its
+    exponent sum (`b2class`). -/
+def deleteStrand (k : Nat) (w : List Letter) : List Int :=
+  (w.foldl (fun (st : Pos × List Int) L =>
+      let (pos, out) := st
+      let (p0, p1, p2) := pos
+      let s : Int := if L.2 then 1 else -1
+      match L.1 with
+      | 0 => ((p1, p0, p2), if p0 = k ∨ p1 = k then out else out ++ [s])
+      | _ => ((p0, p2, p1), if p1 = k ∨ p2 = k then out else out ++ [s]))
+    ((0, 1, 2), ([] : List Int))).2
+
+/-- `B₂ ≅ ℤ` class (exponent sum) of the induced 2-braid after deleting strand `k`. -/
+def b2class (k : Nat) (w : List Letter) : Int := (deleteStrand k w).foldl (· + ·) 0
+
+/-- **Brunnian property — decidable core, machine-proved.** Deleting any one of
+    the three strands from the Borromean braid leaves a 2-braid that is trivial
+    in `B₂ ≅ ℤ` (exponent sum `0`; concretely each induced word is `σ σ⁻¹`).
+    Because `B₂` is free abelian on one generator, exponent-sum-`0` is exactly
+    triviality, so each 2-sublink closure is the 2-component **unlink** — i.e.
+    removing any quark frees the other two. This proves the *full* Brunnian
+    property modulo the textbook facts `B₂ ≅ ℤ` and "a trivial 2-braid closes to
+    the unlink"; only crossing-minimality (the finite enumeration,
+    `b3_brunnian_minimality_enumeration.py`) remains witnessed-not-proved. -/
+theorem borromean_sublinks_trivial :
+    b2class 0 borromean = 0 ∧ b2class 1 borromean = 0 ∧ b2class 2 borromean = 0 := by
+  decide
+
+end BraidModel
+
+/-- General topological confinement selection. A confined `n`-quark bound state
+    is the closure of the crossing-minimal nontrivial **Brunnian** `n`-braid. -/
+class BrunnianConfinement where
+  /-- Braids on `n` strands. -/
+  Braid : Nat → Type
+  /-- The closure is a nontrivial link (not the unlink). -/
+  Nontrivial : (n : Nat) → Braid n → Prop
+  /-- Every proper sublink of the closure is the unlink (Brunnian). -/
+  Brunnian : (n : Nat) → Braid n → Prop
+  /-- Diagram crossing number. -/
+  crossings : (n : Nat) → Braid n → Nat
+  /-- The selected confinement braid on `n` strands, when one exists. -/
+  confine : (n : Nat) → Option (Braid n)
+  /-- Confinement exists only if n >= 3. -/
+  exists_impl_three_le : ∀ n, (∃ b : Braid n, confine n = some b) → 3 ≤ n
+  /-- Confinement exists if n >= 3. -/
+  three_le_impl_exists : ∀ n, 3 ≤ n → (∃ b : Braid n, confine n = some b)
+  /-- The selected confinement braid is nontrivial. -/
+  is_nontrivial : ∀ n (b : Braid n), confine n = some b → Nontrivial n b
+  /-- The selected confinement braid is Brunnian. -/
+  is_brunnian : ∀ n (b : Braid n), confine n = some b → Brunnian n b
+  /-- The selected confinement braid is crossing-minimal among Brunnian ones. -/
+  is_minimal : ∀ n (b : Braid n), confine n = some b → ∀ b' : Braid n, Nontrivial n b' → Brunnian n b' → crossings n b ≤ crossings n b'
+
+/-- The `n = 3` (baryon) specialisation: the confinement operator is the
+    Borromean braid `𝓑₃ = (σ₀σ₁⁻¹)³` in the Hecke algebra `H₃(q)`. -/
+class BorromeanConfinement extends BrunnianConfinement where
+  /-- The Hecke algebra `H₃(q)` carrier. -/
   HeckeAlgebra : Type
-  /-- The Borromean braid `𝓑_3 ∈ H_3(q)`. -/
+  /-- Image of a braid under the Hecke representation. -/
+  rep : {n : Nat} → Braid n → HeckeAlgebra
+  /-- The Borromean operator `𝓑₃ ∈ H₃(q)`. -/
   B3 : HeckeAlgebra
-  /-- The braid word `(σ_0 σ_1⁻¹)^3 ∈ H_3(q)`. -/
+  /-- The braid word `(σ₀σ₁⁻¹)³ ∈ H₃(q)`. -/
   borromean_word : HeckeAlgebra
-  /-- Manuscript sub-claim (i) — Definitional identity:
-      `𝓑_3 = (σ_0 σ_1⁻¹)^3` in `H_3(q)`. -/
-  claim_i_borromean_word : B3 = borromean_word
-  /-- The 6-element NF basis index. -/
-  NF_basis : Fin 6 → HeckeAlgebra
-  /-- The Frobenius-quadratic action `S(b) = b · G · b` for each basis
-      element. -/
-  S_quad : Fin 6 → ℝ
-  /-- Manuscript sub-claim (ii) — Minimum-action selection: there
-      exists an index `i₀` such that `S_quad(i₀) ≤ S_quad(j)` for
-      all `j`, and `B3 = NF_basis i₀`. -/
-  claim_ii_min_action_selection :
-    ∃ i₀ : Fin 6, (∀ j : Fin 6, S_quad i₀ ≤ S_quad j) ∧ B3 = NF_basis i₀
-  /-- LP primal objective at the selected operator. -/
-  primal_obj_at_B3 : ℝ
-  /-- LP primal objective at the optimal LP solution. -/
-  primal_obj_LP_optimum : ℝ
-  /-- Manuscript sub-claim (iii) — LP consistency: the minimum-action
-      selection equals the LP optimum value. -/
-  claim_iii_LP_consistency : primal_obj_at_B3 = primal_obj_LP_optimum
+  /-- Sub-claim — definitional identity `𝓑₃ = (σ₀σ₁⁻¹)³`. -/
+  borromean_identity : B3 = borromean_word
+  /-- Sub-claim — the `n = 3` topological selection is the Borromean braid. -/
+  confine_three : ∃ b : Braid 3, confine 3 = some b ∧ rep b = B3
 
-/-- **Content statement** (from manuscript):
-
-The Borromean braid $\mathcal{B}_3 = (\sigma_0\sigma_1^{-1})^3$ is not
-asserted as the confinement operator — it is **selected** by the
-minimum-action principle
-([knot operator selection](#prop:knot-operator-selection))
-acting on the $6 \times 6$ Gram matrix
-([Frobenius Gram matrix](#prop:frobenius-gram-matrix)).
-
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+/-- **Content statement.** The confinement operator is the crossing-minimal
+    nontrivial Brunnian `n`-braid: it exists iff `n ≥ 3` (baryon/meson
+    dichotomy), is the unique-by-minimality Brunnian selection, and at `n = 3`
+    equals the Borromean braid `𝓑₃ = (σ₀σ₁⁻¹)³`. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-operator-selection.ts
-theorem confinement_operator_selection [ctx : ConfinementOperatorSelectionContext] :
+theorem confinement_operator_selection [ctx : BorromeanConfinement] :
+    (∀ n, (∃ b : ctx.Braid n, ctx.confine n = some b) ↔ 3 ≤ n) ∧
+    (∀ n (b : ctx.Braid n), ctx.confine n = some b →
+        ctx.Nontrivial n b ∧ ctx.Brunnian n b ∧
+        (∀ b' : ctx.Braid n, ctx.Nontrivial n b' → ctx.Brunnian n b' →
+            ctx.crossings n b ≤ ctx.crossings n b')) ∧
     ctx.B3 = ctx.borromean_word ∧
-    (∃ i₀ : Fin 6, (∀ j : Fin 6, ctx.S_quad i₀ ≤ ctx.S_quad j) ∧
-                   ctx.B3 = ctx.NF_basis i₀) ∧
-    ctx.primal_obj_at_B3 = ctx.primal_obj_LP_optimum :=
-  ⟨ctx.claim_i_borromean_word, ctx.claim_ii_min_action_selection,
-   ctx.claim_iii_LP_consistency⟩
+    (∃ b : ctx.Braid 3, ctx.confine 3 = some b ∧ ctx.rep b = ctx.B3) := by
+  refine ⟨?_, ?_, ctx.borromean_identity, ctx.confine_three⟩
+  · intro n
+    exact ⟨ctx.exists_impl_three_le n, ctx.three_le_impl_exists n⟩
+  · intro n b hb
+    exact ⟨ctx.is_nontrivial n b hb, ctx.is_brunnian n b hb, ctx.is_minimal n b hb⟩
 
 end QOU.ParticleInteractions

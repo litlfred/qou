@@ -60,7 +60,7 @@ production. Cross-PR coordination tracked in
 
 ### Notes
 
-*Per CLAUDE.md "Δ_λ gate (Track A blocker)" rule: **do not
+*Per AGENTS.md "Δ_λ gate (Track A blocker)" rule: **do not
 propose a seventh fit-based ansatz**. The three-calibration
 discipline review will catch it. Productive directions: GAP-A-3,
 GAP-A-4 (categorical brane-tower level selection / ρ general

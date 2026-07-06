@@ -1,3 +1,12 @@
+In the $\mathrm{SU}(2)$ realisation the notion of "adjoint" is
+unambiguous: all three candidate adjoints coincide, with
+$f^{\dagger} = \overline{f \circ \mathrm{inv}}$, and the
+Frobenius adjoint reproduces the Hilbert-space adjoint on each
+representation $V_j$
+([dagger on SU(2)](#ex:dagger-su2)).  This concrete anchor fixes
+the intended meaning; the three notations below only diverge once
+one leaves it.
+
 Three notations for "adjoint" coexist in the literature and in this
 book.  To prevent confusion:
 
@@ -14,10 +23,6 @@ book.  To prevent confusion:
   operator $A$ on a Hilbert space $\mathcal{H}$ satisfies
   $\langle A^{\dagger}_{\mathrm{phys}} v, w \rangle = \langle v, A w \rangle$.
 
-In the $\mathrm{SU}(2)$ realisation all three coincide:
-$f^{\dagger} = \overline{f \circ \mathrm{inv}}$, and the
-Frobenius adjoint reproduces the Hilbert-space adjoint on each
-representation $V_j$
-([dagger on SU(2)](#ex:dagger-su2)).  In the general categorical
-setting, only $\dagger$ is defined; $\ast$ requires an archimedean
-structure and $A^{\dagger}_{\mathrm{phys}}$ requires a Hilbert space.
+In the general categorical setting only $\dagger$ is defined;
+$\ast$ requires an archimedean structure and
+$A^{\dagger}_{\mathrm{phys}}$ requires a Hilbert space.

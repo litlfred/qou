@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-09T20:28:49.728576+00:00",
-  "commitSha": "3465f7e523081cf22f17e948dd2f008e4783ad24",
+  "computedAt": "2026-06-22T14:45:00.160830+00:00",
+  "commitSha": "073cc38ed6e6afb21c117f46b1317e6d0aeb0143",
   "assertions": [
     {
       "name": "CH₄ (no lone pairs) reproduces the tetrahedral reference",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7137,
+  "durationMs": 9844,
   "computation": "molecular-angle-symmetric-block-general",
   "scriptFile": "molecular_angle_symmetric_block_general.py",
   "scriptHash": "622bbc4b5797",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,13 +35,15 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "mpmath": "1.4.1"
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "General symmetric-Wedderburn-block bond angles for AX_nE_m hydrides. One DERIVED lone/bond weight ratio q² (trivial-rep q³/q, no central-atom input, no fit) plugged into a weighted points-on-a-sphere VSEPR; molecule variation carried entirely by domain counts (n bonds + m lone pairs). Predicts CH₄/NH₃/H₂O second-row angles; H₂S (third row) deviates as expected. Generalises h2o_angle_q2_symmetric_block.py.",
   "contentBlock": "prop:h2o-bond-angle-shift",
   "parameters": {
-    "q": 1.1099785827513808,
-    "w_lone_over_w_bond_q2": 1.232052454166764
+    "q": 1.1099785955573347,
+    "w_lone_over_w_bond_q2": 1.232052482595433
   },
   "data": {
     "molecules": {
@@ -55,26 +57,26 @@
       "NH3": {
         "n_bond": 3,
         "n_lone": 1,
-        "predicted_deg": 106.8802332838822,
+        "predicted_deg": 106.88023252335343,
         "observed_deg": 107.0,
-        "miss_deg": -0.11976671611779466
+        "miss_deg": -0.11976747664657239
       },
       "H2O": {
         "n_bond": 2,
         "n_lone": 2,
-        "predicted_deg": 104.71945805926475,
+        "predicted_deg": 104.7194579217447,
         "observed_deg": 104.5,
-        "miss_deg": 0.2194580592647526
+        "miss_deg": 0.2194579217447057
       },
       "H2S": {
         "n_bond": 2,
         "n_lone": 2,
-        "predicted_deg": 104.71945805926475,
+        "predicted_deg": 104.7194579217447,
         "observed_deg": 92.1,
-        "miss_deg": 12.619458059264758
+        "miss_deg": 12.619457921744711
       }
     },
-    "second_row_max_abs_miss_deg": 0.2194580592647526,
+    "second_row_max_abs_miss_deg": 0.2194579217447057,
     "finding": "The q² lone/bond ratio derived for H₂O generalises: with ONE derived ratio (q²=1.2321) and only the domain counts, the weighted VSEPR predicts the second-row hydride angles CH₄/NH₃/H₂O within 0.2° (CH₄ exact by symmetry). H₂S (third row) misses by +12.6° — the q² second-row electron structure does not capture the heavier-atom, less-hybridised lone-pair effect, which is a separate (honest) correction, not a fit knob."
   }
 }

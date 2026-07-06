@@ -1,4 +1,4 @@
-# folio-assistant/computations/
+# computations/
 
 This directory contains **524 Python compute scripts** (per
 [`canonical-script-input-audit.witness.json`](./canonical-script-input-audit.witness.json)).

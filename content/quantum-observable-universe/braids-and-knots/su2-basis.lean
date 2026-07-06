@@ -26,10 +26,9 @@ namespace QOU
 
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
-def q_param : R_q := LaurentPolynomial.T 1
-def q_inv_param : R_q := LaurentPolynomial.T (-1)
+noncomputable def q_param : R_q := LaurentPolynomial.T 1
+noncomputable def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **𝔰𝔲(2) basis data**: three generators e₁, e₂, e₃ with
     structure constants given by the Levi-Civita symbol. -/
@@ -52,8 +51,10 @@ structure Su2Basis where
     ⟨eₐ, eₐ⟩ = −½ for the standard normalisation. -/
 -- Ref: [manuscript] Chapter 4
 structure Su2KillingForm extends Su2Basis where
-  /-- The Killing form. -/
-  killing : LieAlg → LieAlg → R_q
+  /-- The Killing form. Codomain `ℚ`: the 𝔰𝔲(2) Killing form is
+      q-independent and rational (the normalisation `-1/2` is not an
+      element of `R_q = ℤ[q, q⁻¹]`). -/
+  killing : LieAlg → LieAlg → ℚ
   /-- Normalisation: ⟨eₐ, eₐ⟩ = -1/2. -/
   normalised : ∀ a : Fin 3, killing (basis a) (basis a) = -1/2
   /-- Orthogonality: ⟨eₐ, e_b⟩ = 0 for a ≠ b. -/

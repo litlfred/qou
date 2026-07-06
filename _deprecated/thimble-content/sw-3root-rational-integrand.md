@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition.** *The Schur-Weyl 3-root product `λ_{SW}^{(1)}(z)`
 appearing in the categorical action
 ([def:categorical-action](#def:categorical-action))
@@ -100,7 +98,7 @@ At $z = 0.1$:
 | Quantity | Value |
 |----------|-------|
 | Symbolic $-P(0.1)/D(0.1)$ | $-2.4900888950\ldots$ |
-| Production [`sw_3root_product_degree1(0.1)`](../../../folio-assistant/computations/picard_lefschetz_thimble.py) | $-2.4900888950\ldots$ |
+| Production [`sw_3root_product_degree1(0.1)`](../../../computations/picard_lefschetz_thimble.py) | $-2.4900888950\ldots$ |
 
 Match to machine precision.
 

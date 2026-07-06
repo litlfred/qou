@@ -11,7 +11,7 @@ LP found k=2 for proton by checking when Frobenius stabilizes.
 Here we find k by checking when marginal binding exhausts.
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 molecular-trefoil-scan.py
 """
 

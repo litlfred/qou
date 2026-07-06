@@ -48,7 +48,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Convention-invariance of the categorical Markov trace (prop:rigid-monoidal-structural-gap-invariance): tr_M of canonical H_3 braid words evaluated through two structurally independent FULLY SYMBOLIC routes — NF-algebra right-multiplication table vs Markov-axiom derivation (M1 cyclicity + M2 peel + M3 + Hecke quadratic) — must agree symbolically (sympy simplify == 0) and at substrate q_0 to 1e-40 (50 dps). No float64 anywhere. Includes the corrected tr_M(s0 s1 s0) = h z^2 + z with h = q - q^{-1} per CLAUDE.md §7a (the deprecated lp-duality-check.py's z^3 claim used an invalid Markov-move chain and is superseded).",
+  "description": "Convention-invariance of the categorical Markov trace (prop:rigid-monoidal-structural-gap-invariance): tr_M of canonical H_3 braid words evaluated through two structurally independent FULLY SYMBOLIC routes — NF-algebra right-multiplication table vs Markov-axiom derivation (M1 cyclicity + M2 peel + M3 + Hecke quadratic) — must agree symbolically (sympy simplify == 0) and at substrate q_0 to 1e-40 (50 dps). No float64 anywhere. Includes the corrected tr_M(s0 s1 s0) = h z^2 + z with h = q - q^{-1} per AGENTS.md §7a (the deprecated lp-duality-check.py's z^3 claim used an invalid Markov-move chain and is superseded).",
   "contentBlock": "prop:rigid-monoidal-structural-gap-invariance",
   "data": {
     "results": {
@@ -81,7 +81,7 @@
         "abs_diff_at_q0": "0.0"
       }
     },
-    "hecke_convention": "s^2 = (q - q^{-1}) s + 1 per CLAUDE.md §7a; z = 1/(sqrt(q) + 1/sqrt(q))",
+    "hecke_convention": "s^2 = (q - q^{-1}) s + 1 per AGENTS.md §7a; z = 1/(sqrt(q) + 1/sqrt(q))",
     "tolerance_at_q0": "1e-40 (both routes symbolic, 50 dps)",
     "superseded_producer": "lp-duality-check.py (z^3 claim via invalid Markov-move chain; see pyhecke fix be773569, 2026-05-19 catalog)",
     "z3_superseded_value": "0.124490943242234972573248044324"

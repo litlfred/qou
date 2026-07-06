@@ -39,15 +39,17 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
+from closed_form_tau_M import compute_tau_M_nucleon_H3, closed_form_tau_M  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
-Q_0_50DPS = "1.1099785827513808075916690956107688798744991218736"
+Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
 
 M_E_MEV = mp.mpf("0.51099895069")
-M_P_MEV = mp.mpf("938.27208816")
-M_N_MEV = mp.mpf("939.56542052")
+M_P_MEV = mp.mpf(M_P_MEV_VALIDATION)  # CODATA validation (codata_constants registry)
+M_N_MEV = mp.mpf(M_N_MEV_VALIDATION)  # CODATA validation (codata_constants registry)
 M_HE3_MEV = mp.mpf("2808.39160743")
 VOL_BORROMEAN_8G = mp.mpf("7.32772475341775212043682811945907288619319499425")
 VOL_PHASE4_Z2 = mp.mpf("12.554")
@@ -112,6 +114,10 @@ def main() -> int:
     lambda_emp_he3 = M_HE3_MEV * hbar_q_sq(q_0) / (M_E_MEV * VOL_PHASE4_Z2)
     residual_ratio = lambda_emp_he3 / L1b_he3
 
+    tau_p_H3 = compute_tau_M_nucleon_H3("p", q_0)
+    tau_n_H3 = compute_tau_M_nucleon_H3("n", q_0)
+    tr_M_he3 = closed_form_tau_M(2, 1, q_0, tau_p_H3, tau_n_H3)
+
     print("=" * 78)
     print("GAP-A-4 §4 direction 3 — ³He L1b residual structural probe")
     print("=" * 78)
@@ -139,6 +145,7 @@ def main() -> int:
     print("-" * 78)
 
     candidates = [
+        ("tr_M(³He)",                        tr_M_he3),
         ("q_0",                              q_sym),
         ("q_0**2",                           q_sym ** 2),
         ("q_0**(1/2)",                       sp.sqrt(q_sym)),
@@ -176,7 +183,10 @@ def main() -> int:
     best_label = ""
     best_rel = mp.mpf("inf")
     for label, expr in candidates:
-        val = evaluate(expr, q_0)
+        if isinstance(expr, mp.mpf):
+            val = expr
+        else:
+            val = evaluate(expr, q_0)
         rel = (val - residual_ratio) / residual_ratio
         if abs(rel) < mp.mpf("5e-3"):
             verdict = "EXACT-MATCH (<0.5%)"

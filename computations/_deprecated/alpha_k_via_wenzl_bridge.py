@@ -8,7 +8,7 @@ identity tr_M = Σ_µ y_µ χ_µ collapses to
 
 The Wenzl bridge gives closed-form y_λ ∈ Q(q^{1/2}) at every n
 through n = 12 (witness:
-folio-assistant/computations/y-lambda-wenzl-bridge-symbolic-witness.json,
+computations/y-lambda-wenzl-bridge-symbolic-witness.json,
 prop:y-lambda-closed-form-wenzl-bridge). This script promotes those
 y_λ to α_λ closed forms with the natural-normalization convention
 and tabulates numerical values at q_0.

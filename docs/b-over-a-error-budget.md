@@ -73,7 +73,7 @@ in A), so:
 **Implication for any v5 implementation:** the constructive `build_atom`
 path is intractable beyond ⁴He.  v5 must use partition-by-partition
 Markov trace
-([`atom_mass_partition.py`](../folio-assistant/computations/atom_mass_partition.py)),
+([`atom_mass_partition.py`](../computations/atom_mass_partition.py)),
 which costs Σ_λ dim(λ)² · L = polynomial in p(n) · L.
 
 ### 1.2  GB-filtration page-truncation bound (mostly trivial after E_2 collapse)
@@ -92,7 +92,7 @@ also exact in ℚ(q).
 
 ### 1.3  Jet-order scaling
 
-Per [`gb_filtration_jet_tracker.py`](https://github.com/litlfred/qou/blob/da3fd4c36ac84c4aa157dcb5663087276e5f3ade/folio-assistant/computations/gb_filtration_jet_tracker.py)
+Per [`gb_filtration_jet_tracker.py`](https://github.com/litlfred/qou/blob/da3fd4c36ac84c4aa157dcb5663087276e5f3ade/computations/gb_filtration_jet_tracker.py)
 (commit `e81e9c12` on watched branch), each Hecke firing increments jet
 order by 1.  Maximum jet order in `build_atom(Z, N)` ≤ Z(Z+N) +
 N(N-1)/2 = O(A²).
@@ -106,7 +106,7 @@ SDP solution.
 
 ### 2.1  GB-filtration jet-order witness
 
-[`gb-filtration-jet-order.witness.json`](https://github.com/litlfred/qou/blob/da3fd4c36ac84c4aa157dcb5663087276e5f3ade/folio-assistant/computations/gb-filtration-jet-order.witness.json)
+[`gb-filtration-jet-order.witness.json`](https://github.com/litlfred/qou/blob/da3fd4c36ac84c4aa157dcb5663087276e5f3ade/computations/gb-filtration-jet-order.witness.json)
 (commit `e81e9c12`, watched-branch only as of 2026-04-27): three test cases
 with measured jet-order growth and Hecke-firing counts during NF reduction.
 
@@ -114,16 +114,16 @@ Use to verify Tier 1.3 jet-order growth empirically per (Z, N).
 
 ### 2.2  Cross-witness sanity at q_0
 
-- [`qbeta-gb-filtration-residues.witness.json`](../folio-assistant/computations/qbeta-gb-filtration-residues.witness.json) — per-level Markov-trace decomposition for proton/neutron.
-- [`gb-filtration-gauge-invariance.witness.json`](../folio-assistant/computations/gb-filtration-gauge-invariance.witness.json) — stratum partition gauge invariance proof.
+- [`qbeta-gb-filtration-residues.witness.json`](../computations/qbeta-gb-filtration-residues.witness.json) — per-level Markov-trace decomposition for proton/neutron.
+- [`gb-filtration-gauge-invariance.witness.json`](../computations/gb-filtration-gauge-invariance.witness.json) — stratum partition gauge invariance proof.
 
 Provide page-distribution and gauge-invariance data for level-3 nucleons.
 
 ### 2.3  Wenzl-bridge y_λ witness (canonical input)
 
-[`y-lambda-wenzl-witness.json`](../folio-assistant/computations/y-lambda-wenzl-witness.json) — y_λ values at 100 dps for n = 2..12.
+[`y-lambda-wenzl-witness.json`](../computations/y-lambda-wenzl-witness.json) — y_λ values at 100 dps for n = 2..12.
 Cross-checked against MPFR linear-system witness in
-[`y-lambda-wenzl-vs-mpfr-cross-check.json`](../folio-assistant/computations/y-lambda-wenzl-vs-mpfr-cross-check.json) (max |Δ| ≤ 5 × 10⁻⁵¹).
+[`y-lambda-wenzl-vs-mpfr-cross-check.json`](../computations/y-lambda-wenzl-vs-mpfr-cross-check.json) (max |Δ| ≤ 5 × 10⁻⁵¹).
 
 These are the canonical y_λ inputs to step (5) of the chain.
 
@@ -164,7 +164,7 @@ for those atoms — error is undefined.
 ### 3.3  Wenzl-bridge y_λ + q-MN χ_λ accuracy
 
 Both are computed in ℚ(q) symbolically (or at high MPFR dps).  Validation
-suite ([y_lambda_symbolic_validate.py](../folio-assistant/computations/y_lambda_symbolic_validate.py))
+suite ([y_lambda_symbolic_validate.py](../computations/y_lambda_symbolic_validate.py))
 confirms agreement to ≤ 10⁻³⁰ at 50 dps for n = 2..12 across 5 q-probes.
 
 **Bound:** at 50 dps MPFR, the per-step error in step (5) is ≤ 10⁻⁴⁰.
@@ -217,8 +217,8 @@ status table.
 This PR (#442) originally contained:
 
 - `content/quantum-observable-universe/braids-and-knots/b-over-a-spectral-decomposition.{md,ts,lean}`
-- `folio-assistant/computations/b_over_a_evaluator_v2.py`
-- `folio-assistant/computations/b-over-a-witness-v2.json`
+- `computations/b_over_a_evaluator_v2.py`
+- `computations/b-over-a-witness-v2.json`
 
 implementing a q-deformed Wedderburn-weighted log-of-Markov-trace-ratio
 formula `(E_0/A) Σ_λ \tilde w_λ log|Λ_λ^free / Λ_λ^nuc|` (with
@@ -234,7 +234,7 @@ v5 work against the canonical chain (with family specializations).
 
 ## Appendix A: structural hypotheses for GAPs 4 and 5
 
-Per the watched-branch's [methodology-deprecation.witness.json](https://github.com/litlfred/qou/blob/da3fd4c36ac84c4aa157dcb5663087276e5f3ade/folio-assistant/computations/methodology-deprecation.witness.json), atoms fall into **four formula families**, each with a distinct structural derivation route:
+Per the watched-branch's [methodology-deprecation.witness.json](https://github.com/litlfred/qou/blob/da3fd4c36ac84c4aa157dcb5663087276e5f3ade/computations/methodology-deprecation.witness.json), atoms fall into **four formula families**, each with a distinct structural derivation route:
 
 | Family | Atoms | Method tag | Formula form |
 |---|---|---|---|
@@ -249,7 +249,7 @@ Per the watched-branch's [methodology-deprecation.witness.json](https://github.c
 
 Per [`recursive-atom-knot-atlas.md:26`](https://github.com/litlfred/qou/blob/da3fd4c36ac84c4aa157dcb5663087276e5f3ade/content/quantum-observable-universe/braids-and-knots/recursive-atom-knot-atlas.md#L26): *"`magic-A-formula`: algebraic shell-closure formula `A · 8G` for double-magic light nuclei; **no single hyperbolic knot**. Used for: ⁴He."*
 
-The ⁴He formula `B = 2 · m_e · 4 · Vol(L6a4)` in [`binding_ladder_catalog.py:63`](../folio-assistant/computations/binding_ladder_catalog.py#L63) writes `Vol(L6a4)` because **`Vol(L6a4) = 8G` is an exact identity** ([`building-block-knots.lean:62`](../content/quantum-observable-universe/observations/building-block-knots.lean#L62) and standard hyperbolic geometry: the Borromean rings complement = 2 ideal octahedra each of volume 4G, total 8G where G = Catalan's constant).
+The ⁴He formula `B = 2 · m_e · 4 · Vol(L6a4)` in [`binding_ladder_catalog.py:63`](../computations/binding_ladder_catalog.py#L63) writes `Vol(L6a4)` because **`Vol(L6a4) = 8G` is an exact identity** ([`building-block-knots.lean:62`](../content/quantum-observable-universe/observations/building-block-knots.lean#L62) and standard hyperbolic geometry: the Borromean rings complement = 2 ideal octahedra each of volume 4G, total 8G where G = Catalan's constant).
 
 The structural content of the ⁴He formula is `α = m_e · 8G` (universal residue prefactor from [`binding-scale-catalan.md`](../content/quantum-observable-universe/braids-and-knots/binding-scale-catalan.md), `prop:gravity-spectral-prefactor`), which derives from the hyperbolic volume of the proton/neutron's internal Borromean three-quark topology — **not** from L6a4 as ³He's atomic-level knot. Both happen to numerically equal 8G because both reduce to the same hyperbolic Borromean structure (the proton/neutron internal vs the ³He-body link).
 
@@ -310,7 +310,7 @@ GAP 4 (T_w for ℓ ≥ 2) and GAP 5 (ρ for ℓ ≥ 2) reduce to: **derive the f
 
 ## Appendix B: empirical residuals from the canonical pipeline
 
-Per [`mass-table-ppb.witness.json`](../folio-assistant/computations/mass-table-ppb.witness.json) on the watched branch (commit `7fbbec14`), the canonical pipeline produces predictions for 10 light atoms.  The residuals reveal a structural signature:
+Per [`mass-table-ppb.witness.json`](../computations/mass-table-ppb.witness.json) on the watched branch (commit `7fbbec14`), the canonical pipeline produces predictions for 10 light atoms.  The residuals reveal a structural signature:
 
 | Atom | A | Family | B_AME (MeV) | B_pred (MeV) | err (MeV) | err % |
 |---|---:|:---:|---:|---:|---:|---:|
@@ -360,7 +360,7 @@ picture:
 
 ### C.1  binding_canonical.py — Term-1-only baseline
 
-[`binding_canonical.py`](../folio-assistant/computations/binding_canonical.py)
+[`binding_canonical.py`](../computations/binding_canonical.py)
 implements `B = E_0 · (|tr_M(W_free)| − |tr_M(W_atom)|)` directly via the
 canonical Jones–Markov trace.  Run on the 4-atom family-1+2 set:
 
@@ -379,9 +379,9 @@ The ~5–19% residuals in `mass-table-ppb.witness.json` come from a
 
 ### C.2  atomic_tr_m_mpfr_50dps.py + markov_peel.py — two-path validation
 
-[`atomic_tr_m_mpfr_50dps.py`](../folio-assistant/computations/atomic_tr_m_mpfr_50dps.py)
+[`atomic_tr_m_mpfr_50dps.py`](../computations/atomic_tr_m_mpfr_50dps.py)
 computes `tr_M` at MPFR 50-dps via the Hoefsmit-bridge.
-[`markov_peel.py`](../folio-assistant/computations/markov/markov_peel.py)
+[`markov_peel.py`](../computations/markov/markov_peel.py)
 (PR #508) computes the same trace via the Markov-axiom recursion
 `tr_M^{(n)}(x · σ_{n−1}) = z · tr_M^{(n−1)}(x)` without materialising
 Wedderburn blocks.  Independent validation:
@@ -402,7 +402,7 @@ tests pass for {p, n, D, T, ³He}; ⁴He smoke check also passes.
 
 ### C.3  Mass-table-ppb status — unchanged since PR #442
 
-[`mass-table-ppb.witness.json`](../folio-assistant/computations/mass-table-ppb.witness.json)
+[`mass-table-ppb.witness.json`](../computations/mass-table-ppb.witness.json)
 last computed 2026-04-25; numbers identical to those in Appendix B
 (⁴He +5.87%, ¹²C +5.41%, ⁴⁰Ca +19.51%).  6 atoms still in
 `atoms_no_assignment` list (⁶Li, ⁷Li, ⁹Be, ¹¹B, ¹⁴N, ¹⁹F).  The

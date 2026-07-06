@@ -18,7 +18,7 @@ numpy = pytest.importorskip("numpy")
 try:
     from pyhecke import gram as pyhecke_gram  # needs hecke_core path
 except ImportError:  # pragma: no cover
-    pytest.skip("pyhecke.gram requires folio-assistant/computations on path",
+    pytest.skip("pyhecke.gram requires computations on path",
                 allow_module_level=True)
 
 

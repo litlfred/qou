@@ -19,7 +19,7 @@ Per user directive (HYBRID): existing 33 scripts continue to work
 unchanged; this script is a thin feeder that extracts factorizations
 from `atom_per_generator_volumes` and emits cache entries.
 
-@module folio-assistant/computations/wedderburn_discovery_feeder
+@module computations/wedderburn_discovery_feeder
 """
 from __future__ import annotations
 import argparse

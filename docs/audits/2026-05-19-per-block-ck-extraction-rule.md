@@ -8,7 +8,7 @@
 
 This audit's original §"Correct rule" section claimed that `c_k = Σ_λ y_λ · c_k^(λ)` with **uniform** `c_k^(λ) ≡ c_k` is the correct rule. **That claim is partially retracted.**
 
-Verified empirically at q_0 across c_2..c_7 in `folio-assistant/computations/qbeta/qbeta_per_block_uniform_rule_verify.py` (commit `9146e85f3`):
+Verified empirically at q_0 across c_2..c_7 in `computations/qbeta/qbeta_per_block_uniform_rule_verify.py` (commit `9146e85f3`):
 
 - The uniform rule works **at q=1** (where Σ y_λ = 1 by Plancherel measure).
 - **At q_0 the rule FAILS for all c_k tested** (c_2 through c_7): `Σ y_λ(q_0) ≈ 0.71907 ≠ 1`, so the y_λ-weighted sum of uniform c_k^(λ) = c_k gives `0.719·c_k`, off by ~28%.

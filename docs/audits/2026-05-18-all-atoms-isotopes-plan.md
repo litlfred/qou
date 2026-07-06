@@ -105,7 +105,7 @@ Phase 2 — extend the atlas content block:
 
 Phase 3 — registry script:
 
-1. New `folio-assistant/computations/atom_knot_atlas_registry.py`
+1. New `computations/atom_knot_atlas_registry.py`
 2. Iterates over all real (Z, N) pairs (chart-of-nuclides slice)
 3. Routes each to the appropriate Layer
 4. Emits `atom-knot-atlas-registry.witness.json` with per-atom records

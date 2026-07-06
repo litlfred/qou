@@ -1,66 +1,78 @@
+import Mathlib.Tactic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 /-!
-# QOU.ParticleInteractions.mass_categorical_descent — placeholder stub
+# QOU.ParticleInteractions.mass_categorical_descent
 
-**Placeholder canonical** for content block
-[`prop:mass-categorical-descent`](../../../quantum-observable-universe/particle-interactions/mass-categorical-descent.md): *QOU.ParticleInteractions.mass_categorical_descent*.
+Canonical Lean for content block
+[`prop:mass-categorical-descent`](../../../quantum-observable-universe/mass-theory/mass-categorical-descent.md):
+*QOU mass formula as descent decomposition of the mass endomorphism.*
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.ParticleInteractions.mass_categorical_descent` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
+**Proposition.** The nuclear binding energy `B(Z,N)` splits as
+`B(Z,N) = B^{desc}(Z,N) + B^{trans}(Z,N)`, where the *descended* (central)
+component lies in the centre `Z(H_n(q))` (Casimir operators indexed by
+partitions `λ ⊢ n`) and the *transient* component localises to the
+exceptional divisors of the brane blow-up.
+
+## Disposition (integrity)
+
+The previous revision either projected the two class fields
+`⟨ctx.claim_i_descent_decomposition, ctx.claim_ii_BW_recovery⟩` back as the
+conclusion (self-assuming projection, AGENTS.md §3b-cond item 5), or named
+the proposition as a `def … : Prop` whose second conjunct
+`|m − m_BW| ≤ rel_err` was trivially satisfiable by the free `rel_err`
+field.  Corrected:
+
+- `MassCategoricalDescentContext` carries the total binding `B` and its two
+  categorical components `B_desc` (central) and `B_trans` (exceptional
+  divisor) as genuine independent data fields — none is the conclusion.
+- `mass_categorical_descent` states the **real** additive descent
+  decomposition `B = B_desc + B_trans` (the .md's central identity); it is
+  unproved (`sorry` + citation), since the claim that these two specific
+  categorical pieces reconstruct the total binding is the open,
+  manuscript-level descent statement, not a Mathlib identity.  No class
+  conclusion field hands it back.
 -/
 
 namespace QOU.ParticleInteractions
 
-
-/-- Abstract context for the `mass_categorical_descent` claim —
-    manuscript-themed typed fields below; the QOU-mass-formula
-    descent identity, together with its recovery of the Bethe–
-    Weizsäcker liquid-drop phenomenology, is captured. -/
+/-- Data of the mass-categorical-descent claim.  All fields are genuine
+    inputs: the categorical object, the mass endomorphism, and the total
+    binding `B` together with its two descent components.  None is the
+    conclusion. -/
 class MassCategoricalDescentContext where
   /-- The categorical object `A` of the QOU `(C, A, τ)`. -/
   CategoricalObj : Type
   /-- The mass endomorphism `𝔪 : A → A` (abstract carrier). -/
   m_endo : CategoricalObj → CategoricalObj
-  /-- The categorical mass value `m : ℝ`. -/
-  m : ℝ
-  /-- Decomposition components from the brane-tower descent (per-level
-      contributions). -/
-  m_level : ℕ → ℝ
-  /-- Number of brane-tower levels in the descent. -/
-  n_levels : ℕ
-  /-- Manuscript sub-claim (i): descent decomposition of `m` as a
-      sum over brane-tower levels. -/
-  claim_i_descent_decomposition :
-    m = (Finset.range n_levels).sum (fun ℓ => m_level ℓ)
-  /-- The BW liquid-drop formula value `m_BW : ℝ`. -/
-  m_BW : ℝ
-  /-- Relative deviation between categorical and BW values. -/
-  rel_err : ℝ
-  /-- Manuscript sub-claim (ii): BW liquid-drop recovery: the
-      categorical mass approximates BW within `rel_err`. -/
-  claim_ii_BW_recovery : |m - m_BW| ≤ rel_err
+  /-- The total nuclear binding energy `B(Z,N)`. -/
+  B : ℝ
+  /-- The **descended** (central) component — Casimir operators in the
+      centre `Z(H_n(q))`, indexed by partitions `λ ⊢ n`. -/
+  B_desc : ℝ
+  /-- The **transient** component — localised to the exceptional divisors
+      `E_i` of the brane blow-up. -/
+  B_trans : ℝ
+  /-- The Bethe–Weizsäcker liquid-drop value, recovered as one
+      phenomenology of the descent decomposition. -/
+  B_BW : ℝ
 
-/-- **Content statement** (from manuscript):
+/-- **Mass formula as descent decomposition**
+    ([`prop:mass-categorical-descent`]) — the real manuscript identity,
+    stated over the class's data fields:
 
-The QOU mass formula is the descent
-decomposition of the mass endomorphism
-$\mathfrak{m} \colon A \to A$ under the brane tower blow-up.
-The empirical Bethe–Weizsäcker liquid-drop ansatz is recovered
-as one phenomenology of this descent decomposition; see
-[`conj:q-integer-mass-formula`](#conj:q-integer-mass-formula)
-for the recovered coefficients.
+      `B(Z,N) = B^{desc}(Z,N) + B^{trans}(Z,N)`.
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/mass-categorical-descent.ts
+    The descended component lies in the centre of `H_n(q)`; the transient
+    component localises to the exceptional divisors of the brane blow-up.
+    Unproved: the assertion that these two specific categorical pieces
+    reconstruct the total binding is the open descent statement.  Stated
+    with `sorry` + citation per AGENTS.md §1a disposition 2 — no class
+    conclusion field hands it back. -/
+-- Ref: [manuscript] quantum-observable-universe/mass-theory/mass-categorical-descent.ts
 theorem mass_categorical_descent [ctx : MassCategoricalDescentContext] :
-    ctx.m = (Finset.range ctx.n_levels).sum (fun ℓ => ctx.m_level ℓ) ∧
-    |ctx.m - ctx.m_BW| ≤ ctx.rel_err :=
-  ⟨ctx.claim_i_descent_decomposition, ctx.claim_ii_BW_recovery⟩
+    ctx.B = ctx.B_desc + ctx.B_trans := by
+  -- Ref: [manuscript] quantum-observable-universe/mass-theory/mass-categorical-descent.ts
+  sorry
 
 end QOU.ParticleInteractions

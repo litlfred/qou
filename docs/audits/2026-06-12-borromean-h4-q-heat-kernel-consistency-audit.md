@@ -157,7 +157,7 @@ the closed-form weights of Finding 3, the corresponding h² split is
 $(+16/128, -16/128, 0)$ — both sum to zero (consistent with
 $h^2(\mathrm{tr}_M) = 0$) but the per-partition attribution differs.
 The merged block therefore uses one of the repo's *other* partition-
-weight families ($w_\lambda$ or $\tilde w_\lambda$ per the CLAUDE.md
+weight families ($w_\lambda$ or $\tilde w_\lambda$ per the AGENTS.md
 notation-collision register: "three partition-weight families are
 distinct at $q \neq 1$ — never conflate"). **Open question** for a
 follow-up: identify which family the h²-budget table uses and label it

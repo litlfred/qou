@@ -58,7 +58,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 def main() -> int:
     # Substrate constants (PR #1727 / PR #1786 chain) — defined inside main()
     # per Gemini review (avoid module-level magic constants).
-    Q0_PIN = "1.1099785827513808075916690956107688798744991218736"
+    Q0_PIN = "1.1099785955573347198997632204832250266562084087802"
     Q_BETA_CODATA_MEV = "0.78233410277840137760143636388"
     M_E_MEV = "0.51099895069"
     # Direction-sanity threshold (10× order-of-magnitude check)

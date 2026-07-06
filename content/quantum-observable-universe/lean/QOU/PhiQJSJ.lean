@@ -1,5 +1,6 @@
 import QOU.PhiQPiece
 import QOU.Kashaev
+import Mathlib.Tactic.Linarith
 
 /-!
 # QOU.PhiQJSJ — Φ_q tower equals ρ_q · Σ_S Vol(K_S) (archimedean bridge)
@@ -21,7 +22,7 @@ LaTeX label: `conj:phi-q-tower-jsj-bridge`
 The Lean statement is **conditional on `Kashaev.VolumeConjecture q`**,
 the typeclass axiomatising KVC.  Modulo that typeclass instance the
 bridge theorem is fully verified by Lean.  This is Workplan B from
-`CLAUDE.md` §3b ("Lean formalization of conjectures").
+`AGENTS.md` §3b ("Lean formalization of conjectures").
 
 ## References
 
@@ -73,7 +74,7 @@ class TowerSummandRealization (q : ℝ) where
 class PerPieceBridge (q : ℝ) [VolumeConjecture q] [TowerSummandRealization q] where
   bridge_per_piece :
     ∀ (β : Braid) (S : Finset (Fin (β.n - 1))),
-      TowerSummandRealization.realisation β S =
+      TowerSummandRealization.realisation (q := q) β S =
         rho q * pieceVolume q β S
 
 /-- **Master conditional bridge theorem.**
@@ -93,7 +94,7 @@ class PerPieceBridge (q : ℝ) [VolumeConjecture q] [TowerSummandRealization q] 
 theorem bridge {q : ℝ} [VolumeConjecture q] [TowerSummandRealization q]
     [inst : PerPieceBridge q]
     (β : Braid) (S : Finset (Fin (β.n - 1))) :
-    TowerSummandRealization.realisation β S =
+    TowerSummandRealization.realisation (q := q) β S =
       rho q * pieceVolume q β S :=
   inst.bridge_per_piece β S
 

@@ -1,34 +1,63 @@
 **Proposition (Three-calibration discipline).**
 *The QOU framework admits **categorically exactly three** external
-calibration inputs, aligning to three distinct (co)homological
-degrees of the substrate:*
+calibration inputs — the three real degrees of freedom of the first
+cohomology of Bring's curve, $H^1 = 2W$:*
 
-|        (Co)homology degree | Calibration                   | Role                                      | Source                         |
-| -------------------------: | ----------------------------- | ----------------------------------------- | ------------------------------ |
-|       $H^0$ — *mass scale* | $m_e$ (electron mass)         | Sets the dimensional unit                 | CODATA                         |
-|  $H^1$ — *substrate ratio* | $m_\mu / m_e \approx 206.768$ | Fixes the substrate parameter $q_0$       | CODATA (lepton ratio)          |
-| $H^2$ — *weak/decay scale* | $Q_\beta$                     | Fixes the beta-decay sector normalisation | PDG (representative $Q$-value) |
+| DOF of $H^1(\text{Bring}) = 2W$ | Canonical observable | What it fixes | Numerical proxy (source) |
+| ------------------------------- | -------------- | ------------- | ------ |
+| $W$-plane **scale** ($h^0$)     | $m_e$ (leptonic mass scale) | the dimensional unit (scale) | $m_e$, CODATA (electron mass) |
+| $W$-plane **modulus** ($h^2$)   | $\mathfrak{D}_\beta$ (neutron $\beta$-decay width) | $q_0$ via $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ | $\mathfrak{Q}_\beta = \hbar/\mathfrak{D}_\beta$; modulus pinned most precisely by $m_\mu/m_e$ (CODATA muon mass) |
+| **orthogonal class** (meson sector, $h^3$) | $\mathfrak{D}_\pi$ (pion decay width) | the $\mathrm{Vol}(\mathrm{Hopf})=0$ meson scale (independent of $m_e, q_0$) | $m_\pi$, PDG (charged-pion mass) |
+
+All three are the three real degrees of freedom of the single first
+cohomology $H^1(\text{Bring}) = 2W$ — **not** three distinct degrees
+$H^0/H^1/H^2$. The Hodge structure of shape $2W$ has exactly $2+1=3$
+real DOF (the rank-2 $W$-plane's scale and modulus, plus one orthogonal
+class), matching the three calibrations
+([calibration-cohomology-alignment](../mass-theory/calibration-cohomology-alignment.md),
+Lean witness `QOU.Mass.calibrations_eq_cohomology`).
+
+The three canonical inputs are **weak-sector observables** — a leptonic
+mass scale and two decay widths $(m_e, \mathfrak{D}_\beta, \mathfrak{D}_\pi)$,
+entering at successive orders $h^0, h^2, h^3$. They are read off their
+most precise **proxies** — the masses $m_e, m_\pi$ and the $Q$-value
+$\mathfrak{Q}_\beta = \hbar/\mathfrak{D}_\beta$. $m_e$ sets the unit; since
+$q_0$ is dimensionless it is pinned by $m_\mu$ *relative to that unit* —
+i.e. by the ratio $m_\mu/m_e$ through the figure-eight identity
+$m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ with $\hbar_q = 1 - q_0^{-1}$
+(inverted for $q_0 \approx 1.10998$), the most precise anchor for CAL-2
+($\mathfrak{D}_\beta$); $m_\pi$ is the proxy for the orthogonal meson scale
+($\mathfrak{D}_\pi$). $\mathfrak{Q}_\beta$ is the **measured proxy for CAL-2**
+(see below), not a fourth input.
 
 *For every confined hadronic state $X$ the mass functional defined
 by the algebraic-side chain
-([categorical action](#def\:categorical-action),
-[Frobenius pairing](#def\:frobenius-pairing),
-[mass identity](#def\:mass-identity),
-[mass-endomorphism tower](#prop\:mass-endomorphism-tower),
-[Jones–Markov trace](#thm\:jones-markov-trace))
+([categorical action](#def:categorical-action),
+[Frobenius pairing](#def:frobenius-pairing),
+[mass identity](#def:mass-identity),
+[mass-endomorphism tower](#prop:mass-endomorphism-tower),
+[Jones–Markov trace](#thm:jones-markov-trace))
 factors as*
 
 $$
   \mathfrak{m}(X) \;=\;
-  m_e^{\,a(X)}\;Q_\beta^{\,c(X)}\;Q_X(q_0),
+  m_e^{\,a(X)}\;m_\pi^{\,c(X)}\;Q_X(q_0),
   \qquad
   Q_X(q) \in \mathbb{Q}(q),
 $$
 
 *with non-negative integer exponents $a(X), c(X)$ determined by the
-(co)homological grading of the observable $X$ supplies. Concretely:
-$a$ counts mass-scale insertions ($H^0$), $c$ counts beta-decay
-insertions ($H^2$), and $q_0$ is fixed by the lepton ratio ($H^1$).*
+(co)homological grading the observable $X$ supplies. Concretely:
+$a$ counts mass-scale insertions ($H^0$ — the $W$-plane scale), $c$
+counts meson-sector insertions (the orthogonal $m_\pi$ class; $c = 0$
+in the baryon sector), and $q_0$ is fixed by the lepton ratio
+$m_\mu/m_e$ (the $H^1$ $W$-plane modulus, CAL-2 = $\mathfrak{D}_\beta$).
+$\mathfrak{Q}_\beta$ is the **CAL-2 proxy** — the bar-odd ($\sinh$) partner
+of the bar-even ($\cosh$) meson scale $m_\pi$ under the bar-involution
+$q \mapsto q^{-1}$
+([substrate cohomology calibration story](../mass-theory/substrate-cohomology-calibration-story.md)),
+the experimental face of the modulus CAL-2 pins — not a separate
+dimensional mass-formula factor like $m_e$ or $m_\pi$.*
 
 ## Discussion
 
@@ -36,92 +65,62 @@ This proposition crystallises a discipline that is implicit
 elsewhere in the paper:
 
 1. **Three calibration inputs, no more, no less.** The QOU
-   framework reads three CODATA / PDG values (lepton ratio, $m_e$,
-   $Q_\beta$) and spends them on three distinct
-   (co)homological degrees of the substrate. Every other physical
+   framework reads three CODATA / PDG values ($m_e$, the lepton
+   ratio $m_\mu/m_e$, and $m_\pi$) and spends them on three distinct
+   (co)homological data of the substrate. Every other physical
    prediction in the paper is the product of these three with a
    $\mathbb{Q}(q_0)$-valued algebraic expression — a Markov trace,
    a Wedderburn-block sum, a $\Phi_q$-tower contribution, etc.
 2. **(Co)homological alignment.** The three calibrations are not
-   interchangeable: they pin distinct cohomological data of the
-   substrate sheaf. $H^0$ supplies a single dimensional scale
-   (length / mass / time become inter-convertible only after the
-   $H^0$ choice is made). $H^1$ supplies the local Frobenius
-   eigenvalue spectrum (the substrate parameter $q$ — a single
-   $\mathbb{Q}_p$-period for each prime $p$). $H^2$ supplies the
-   normalisation of the :refterm[descent]{#descent} obstruction class — the weak
-   sector's overall scale.
-3. **Overdetermination.** Within each cohomological degree, the
-   choice of input is itself overdetermined: $H^1$ can equally well
-   be fixed by $\alpha_{\mathrm{EM}}^{-1}$ or by tritium
-   $t_{1/2}$, which agree on $q_0$ to within 0.3% (per
-   [substrate-consistency window](#prop\:substrate-consistency-window)).
-   The three sectors (strong / EM / weak) supply consistency
-   cross-checks but are *not* additional calibrations: they
-   re-determine the same $H^1$ datum.
+   interchangeable: they are precisely the three real degrees of
+   freedom of the Bring Hodge structure $H^1 = 2W$
+   ([calibration-cohomology-alignment](../mass-theory/calibration-cohomology-alignment.md)).
+   The rank-2 $W$-Hodge plane carries two invariants — a **scale**
+   (the $h^0$ prefactor *channel*, pinned by $m_e$) and a **modulus** (the
+   $\mathrm{SL}_2$ trace $\tau = 2\cosh\theta$, pinned by $q_0$ via
+   the lepton ratio $m_\mu/m_e$). The meson sector — whose Hopf-link complement
+   has $\mathrm{Vol}(\mathrm{Hopf}) = 0$, hence no geometric scale
+   derivable from $(m_e, q_0)$ — contributes a third, **orthogonal**
+   scale, pinned by $m_\pi$. The count $2 + 1 = 3$ matches the three
+   calibrations exactly.
+3. **Overdetermination (and the physical-observations anchor).** The
+   canonical $H^1$ modulus is pinned by the lepton ratio $m_\mu/m_e$
+   through the figure-eight volume identity
+
+   $$
+     \frac{m_\mu}{m_e} \;=\; \frac{\mathrm{Vol}(4_1)}{\hbar_q^2},
+     \qquad \hbar_q = 1 - q_0^{-1},
+     \qquad \mathrm{Vol}(4_1) = 2\Lambda(\pi/3) \approx 2.0299,
+   $$
+
+   inverted for $q_0$ — so CAL-1 and CAL-2 together *coordinatize* the
+   single modulus $q_0$ one-to-one (the ratio **determines** $q_0$; note
+   $q_0 \approx 1.110$ while $m_\mu/m_e \approx 206.77$, so $q_0$ is the
+   *root* of the identity, not the ratio itself). This is why CAL-1 +
+   CAL-2 are **one** dimensionless $H^1$ datum, not two. The modulus is
+   itself overdetermined: it can equally be
+   fixed by $\alpha_{\mathrm{EM}}^{-1}$ or by tritium $t_{1/2}$, which
+   agree on $q_0$ to within 0.3% (per
+   [substrate-consistency window](#prop:substrate-consistency-window)).
+   In the **Physical-Observations** chapter one may instead anchor
+   $q_0$ on a *derived* quantity with smaller experimental error —
+   the proton ratio $m_p/m_e$ (0.06 ppb vs the muon ratio's 22 ppb;
+   the re-pin). This is a precision substitution within
+   the same overdetermined $H^1$ datum, **not** a change to the
+   canonical calibration: $m_\mu/m_e$ remains CAL-2; $m_p/m_e$ is the
+   numerical anchor, with $m_\mu/m_e$ then a $9.5\sigma$ cross-check
+   prediction (the $\mu$–$p$ substrate tension). They re-determine the
+   **same** $H^1$ datum — consistency cross-checks, not additional
+   calibrations.
 4. **Audit consequence.** Any content block or compute output that
    quotes a numerical mass / binding energy / Q-value not of the
-   form $m_e^a Q_\beta^c \cdot \text{rational}(q_0)$ has either (a)
+   form $m_e^a m_\pi^c \cdot \text{rational}(q_0)$ has either (a)
    introduced a fourth calibration — a discipline violation that
    must be flagged and either derived or named — or (b) is
    reporting a $\tau$-image quantity from the Archimedean side
    (volume, length, etc.), which is an honest cross-domain
    comparison but does not participate in algebraic-side
    derivations.
-
-## Proof sketch
-
-Induction along the 19-link derivation chain (compiled in
-[derivation-audit-](../../../docs/derivation-audit-.md)
-and refreshed in
-[-math-framework-deep-audit](../../../docs/audits/-math-framework-deep-audit.md)).
-At each step:
-
-* **Base.** The categorical action $\mathfrak{S} = \mathrm{tr}(\Phi)$
-  is a $\mathbb{Q}(q)$-valued endomorphism trace
-  ([categorical-action](#def\:categorical-action)) — dimensionless,
-  living in $H^1$.
-* **Frobenius pairing.** Preserves $\mathbb{Q}(q)$-rationality
-  ([frobenius-pairing](#def\:frobenius-pairing)); identifies
-  $A \cong A^\vee$ in $H^0 \oplus H^1$.
-* **Mass identity.** Introduces the *Frobenius norm* $\|\cdot\|$
-  on $A$ ([mass-identity](#def\:mass-identity)) — the norm is
-  itself a $\mathbb{Q}(q)$-valued Markov-trace expression in
-  $H^0$, not an Archimedean absolute value. The single $H^0$
-  insertion is multiplied by $m_e$ at the reporting step.
-* **Hecke :refterm[descent]{#descent}.** $\Phi_{\mathrm{mass}}(\beta) \in H_n(q)$ is a
-  $\mathbb{Q}(q)$-element of the Hecke algebra
-  ([hecke-mass-element](#def\:hecke-mass-element)).
-* **Markov trace.** $\mathrm{tr}_M : H_n(q) \to \mathbb{Q}(q)$
-  ([jones-markov-trace](#thm\:jones-markov-trace)).
-* **Tower.** The mass-tower formula
-  ([mass-endomorphism-tower](#prop\:mass-endomorphism-tower)) is
-  built from Markov-trace expressions, $\Phi_q$-tower terms, and
-  rational coefficients in $z$ — all in $\mathbb{Q}(q)$.
-* **Beta-decay sector.** Q-values enter via the :refterm[descent]{#descent}
-  obstruction class
-  ([motivic-perpetual-obstruction](#conj\:motivic-perpetual-obstruction))
-  whose normalisation supplies the single $H^2$ scale.
-
-The dimensional factors $m_e$ and $Q_\beta$ enter only at the final
-reporting step
-([tower-binding-energy](#prop\:tower-binding-energy)),
-multiplying the dimensionless tower expression to give a value in
-energy units. The composite functional is therefore
-$\mathfrak{m}(X) = m_e^a Q_\beta^c \cdot Q_X(q_0)$ with
-$Q_X \in \mathbb{Q}(q_0)$ and $a, c \in \mathbb{Z}_{\geq 0}$.
-
-The proposition is **conditional** on the chain being realised.
-Open conjectures along the chain
-([motivic-perpetual-obstruction](#conj\:motivic-perpetual-obstruction),
-[mass-endomorphism](#conj\:mass-endomorphism),
-[phi-q-tower-jsj-bridge](#conj\:phi-q-tower-jsj-bridge))
-do not affect the dimensional-discipline statement: every step
-that *is* realised respects $m_e^a Q_\beta^c \cdot \mathbb{Q}(q_0)$
-homogeneity, and any future closure of the chain inherits this.
-
-∎
-
 ## Audit hook
 
 This proposition serves as the **calibration-discipline hook** for

@@ -17,12 +17,17 @@ theorem physical_units_gap_linear (q : ℝ) (h0 : q ≠ 0) (h1 : q ≠ 1) :
     (crossingEnergyGap q * (q - 1) ^ 2) / ((q - 1) / q) ^ 2
       = q * (q - 1) * (q + 1) / 2 := by
   -- Ref: [manuscript] models-of-qous/physical-units-gap-linear.md
-  sorry
+  -- Direct field computation: ((q−q⁻¹)/2·(q−1)²)·q²/(q−1)² = q(q²−1)/2.
+  have hq1 : q - 1 ≠ 0 := sub_ne_zero.mpr h1
+  unfold crossingEnergyGap
+  field_simp
+  ring
 
 /-- At the symmetric point the categorical bound vanishes identically. -/
 theorem gap_bound_vanishes_at_one :
     crossingEnergyGap 1 * ((1 : ℝ) - 1) ^ 2 = 0 := by
   -- Ref: [manuscript] models-of-qous/physical-units-gap-linear.md
-  sorry
+  -- The `(q−1)²` factor vanishes at q = 1.
+  norm_num
 
 end QOU

@@ -1,7 +1,7 @@
 # Q_β eigenphase Taylor-in-u — "eigenphase = f" falsified at u¹
 
 **Date:** 2026-06-01
-**Probe:** [`qbeta_eigenphase_taylor_in_u.py`](../../folio-assistant/computations/qbeta/qbeta_eigenphase_taylor_in_u.py)
+**Probe:** [`qbeta_eigenphase_taylor_in_u.py`](../../computations/qbeta/qbeta_eigenphase_taylor_in_u.py)
 → `qbeta-eigenphase-taylor-in-u.witness.json`
 **Goal arm:** 1ppQ-Q_β (`docs/coordination/1ppq-qbeta.md`)
 **Probe claim:** `probe-qbeta-habiro-element-search` sub-attack — derive the

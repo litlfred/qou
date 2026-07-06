@@ -88,7 +88,7 @@ Inputs derived vs fitted
   -E_C/A in MeV.
 
 ──────────────────────────────────────────────────────────────────
-Output: folio-assistant/computations/b-over-a.witness.json
+Output: computations/b-over-a.witness.json
 ──────────────────────────────────────────────────────────────────
 
 Per nucleus columns:
@@ -309,7 +309,7 @@ def build_witness() -> dict:
     return {
         "schema_version": "1.0.0",
         "computedAt": datetime.now(timezone.utc).isoformat(),
-        "generator": "folio-assistant/computations/b_over_a_evaluator.py",
+        "generator": "computations/b_over_a_evaluator.py",
         "block": "prop:b-over-a-spectral-decomposition",
         "constants": {
             "q_0": Q0,

@@ -18,9 +18,9 @@ have been demoted to conjectures pending derivation:
 |------|-----------|-------------------|--------|
 | Bare | $q[9]_q[10]_q$ | $-1.55\times 10^{-3}$ | Derived |
 | Form A (CS) | $\cdot(1+\delta_{CS}+\kappa\,\delta_{CS}^2)$ with $\kappa=1.722$ | $-4.0\times 10^{-7}$ | Conj.; $\kappa$ unproved (Lean `sorry`); $\kappa \approx 1.888$ needed for exact match |
-| Form B (gluon-octet) | $45[3]_q\,(1+\hbar_q^4[5]_q+8q(\hbar_q^4[5]_q)^2)$ | $+6.7\times 10^{-9}$ | Conj.; PSLQ-empirical; only $45$ rigorously derived; disagrees with Form A at $q\ne q_0$ |
+| Form B (gluon-octet) | $45[3]_q\,(1+\hbar_q^4[5]_q+8q(\hbar_q^4[5]_q)^2)$ | $+6.7\times 10^{-9}$ | Conj.; only $45$ rigorously derived; disagrees with Form A at $q\ne q_0$ |
 
-## Why both prior attempts fail audit
+## Audit failure of both prior attempts
 
 **Form A's $\kappa$ is wrong.** The Witten-1988 Gram-determinant
 identification gives $\kappa \approx 1.722$, but matching CODATA at $q_0$
@@ -71,7 +71,7 @@ correction in any natural q-arithmetic basis at low degree.
 See [`alpha-em-correction-derivation-attempts.witness.json`](#) for
 the full attempt log.
 
-## Why block-diagonal Gram deformations cannot close the gap
+## Insufficiency of block-diagonal Gram deformations
 
 A natural ansatz (cf. external review note, May 2026) is to deform the
 Gram matrix by a *framing correction* $\mathcal{A}$ induced by a chiral
@@ -137,7 +137,7 @@ anomalies): identify the precise Bloch-group class on Bring's
 surface, and lift the next-order $\alpha/(4\pi)$ term to a higher
 Bloch group $B_n(\mathbb{C})$.
 
-## What this implies
+## Implications
 
 Either:
 
@@ -202,6 +202,5 @@ $S^1 \to S^3 \to S^2$) gave the strictly smaller $9/(24\pi^2)$ and is
 the Gauss–Bonnet factor $(g-1)=3$ (not a Lie-algebra or sphere-volume artifact).
 
 The next-order term $\alpha/(4\pi)$ is suggestive of a Schwinger-like
-1-loop self-coupling. The numerical fit places this coefficient at
-$\sim 1.4\%$ off from exactly $1/(4\pi)$; the true coefficient may
+1-loop self-coupling. The true coefficient may
 be $1/(2\pi\cdot[2]_q)$ or another small $q$-correction.

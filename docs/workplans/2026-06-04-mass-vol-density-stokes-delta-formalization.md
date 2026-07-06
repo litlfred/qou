@@ -13,7 +13,7 @@ by the curvature, not chosen).
 
 > **Discipline.** Statements first: write each Lean `def`/`theorem`
 > signature with `sorry` (+ `-- Ref:`) before any proof. Where a step is a
-> genuine conjecture, axiomatize it as a `class` per CLAUDE.md §3b-cond and
+> genuine conjecture, axiomatize it as a `class` per AGENTS.md §3b-cond and
 > carry it as an explicit `[Instance]` hypothesis downstream — so the
 > chain's logical status is auditable (what's proved vs what's assumed).
 > NO step may close numerically against Δm_np / CODATA (that is a fit, not

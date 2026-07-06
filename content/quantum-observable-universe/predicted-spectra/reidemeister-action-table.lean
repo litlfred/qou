@@ -31,8 +31,8 @@ numerical evaluation.
 
 namespace QOU.Archimedean
 
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
+/- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+   See `QOU.Archimedean.GroundRing` for the compiled definition. -/
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
@@ -98,22 +98,30 @@ def BraidMove.preservesTrace : BraidMove → Prop
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
 -- Ref: [manuscript] §5/reidemeister-action-table
--- theorem reidemeister_action_table (q : R_q) (hq : 1 < q)  -- (archimedean; not meaningful over R_q)
-    (T : R_q)
-    (h_hecke : T ^ 2 = (q - q⁻¹) * T + 1) :
+-- Note: the archimedean hypothesis `1 < q` is dropped — it is not
+-- meaningful over `R_q` (Laurent polynomials carry no order). The ring
+-- `R_q = ℤ[q,q⁻¹]` carries no `Inv` instance, so the inverse of the
+-- indeterminate is named explicitly by `q_inv_param = T (-1)` rather
+-- than written `q⁻¹`. The algebraic content is the gauge-sector
+-- decomposition below.
+theorem reidemeister_action_table (T : R_q)
+    (h_hecke : T ^ 2 = (q_param - q_inv_param) * T + 1) :
     -- The gauge sector change from one R2 application is (q - q⁻¹)·T + 1.
     -- The (q - q⁻¹)·T term is the electromagnetic (Coulomb) contribution
     -- and the 1 term is the strong (volume binding) contribution.
-    T ^ 2 - T * (q - q⁻¹) = 1 := by
-  linarith
+    T ^ 2 - T * (q_param - q_inv_param) = 1 := by
+  rw [h_hecke]; ring
 
 /-- At q = 1, the Hecke relation degenerates to T² = 1 (involution),
-    and all nuclear configurations at fixed A are degenerate. -/
+    and all nuclear configurations at fixed A are degenerate.
+
+    The classical limit sets both the parameter and its inverse to `1`
+    (`q⁻¹` is named explicitly since `R_q` has no `Inv` instance). -/
 -- Ref: [manuscript] §5/reidemeister-action-table
-theorem classical_hecke_involution (T : R_q) (q : R_q) (hq : q = 1)
-    (h_hecke : T ^ 2 = (q - q⁻¹) * T + 1) :
+theorem classical_hecke_involution (T : R_q) (q qi : R_q) (hq : q = 1) (hqi : qi = 1)
+    (h_hecke : T ^ 2 = (q - qi) * T + 1) :
     T ^ 2 = 1 := by
-  subst hq; simp at h_hecke ⊢; linarith
+  subst hq hqi; simpa using h_hecke
 
 /-- R3 (Yang-Baxter) and far-commutativity preserve volume and trace. -/
 -- Ref: [manuscript] §5/reidemeister-action-table
@@ -122,5 +130,7 @@ theorem r3_preserves_volume : BraidMove.R3_YangBaxter.preservesVolume := by
 
 theorem far_comm_preserves_volume : BraidMove.farCommutativity.preservesVolume := by
   exact trivial
+
+end
 
 end QOU.Archimedean

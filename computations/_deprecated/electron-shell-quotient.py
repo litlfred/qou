@@ -22,7 +22,7 @@ We explore THREE models:
 Question: Does the NF naturally split into {1s²} ⊕ {2s²2p²} for carbon?
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 electron-shell-quotient.py
 """
 

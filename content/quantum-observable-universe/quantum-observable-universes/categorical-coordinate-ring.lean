@@ -44,15 +44,12 @@ abbrev LaurentR : Type _ := LaurentPolynomial R
 noncomputable def iPoly : Polynomial (LaurentR R) :=
   Polynomial.X^2 + 1
 
-/-- The categorical-coordinate ring `R[i, q^±¹] = R[q, q^{-1}][i]/(i^2+1)`. -/
-def CategoricalCoordinateRing : Type _ :=
+/-- The categorical-coordinate ring `R[i, q^±¹] = R[q, q^{-1}][i]/(i^2+1)`.
+
+    Declared as an `abbrev` so the `CommRing`, `Algebra (LaurentR R) ·`,
+    and `Algebra R ·` instances of `AdjoinRoot` transfer transparently. -/
+abbrev CategoricalCoordinateRing : Type _ :=
   AdjoinRoot (iPoly R)
-
-instance : CommRing (CategoricalCoordinateRing R) :=
-  AdjoinRoot.instCommRing _
-
-instance : Algebra (LaurentR R) (CategoricalCoordinateRing R) :=
-  AdjoinRoot.algebra (LaurentR R) (iPoly R)
 
 /-- The categorical coordinate `i ∈ R[i, q^±¹]`, the categorical
 square root of the antisymmetric braiding eigenvalue `λ_- = -1`. -/
@@ -74,22 +71,13 @@ Mathlib unfolding. -/
     Follows from `AdjoinRoot.eval_root`. -/
 -- Ref: [manuscript] §sec:braiding-conventions
 theorem i_coord_sq_eq_neg_one : (i_coord R)^2 = -1 := by
-  unfold i_coord iPoly
-  -- AdjoinRoot.root is a root of the defining polynomial:
-  --   eval₂ (algebraMap _ _) root (X^2 + 1) = 0
-  -- so root^2 + 1 = 0, hence root^2 = -1.
-  have h : (AdjoinRoot.root (Polynomial.X^2 + 1 : Polynomial (LaurentR R)))^2 + 1 = 0 := by
-    have := AdjoinRoot.eval₂_root (Polynomial.X^2 + 1 : Polynomial (LaurentR R))
-    simpa [Polynomial.eval₂_add, Polynomial.eval₂_pow, Polynomial.eval₂_X,
-            Polynomial.eval₂_one] using this
-  linarith_or_polyrith
-  where
-    -- Fall through if linarith doesn't apply over CommRing
-    linarith_or_polyrith : (AdjoinRoot.root (Polynomial.X^2 + 1 : Polynomial (LaurentR R)))^2 = -1 := by
-      have : (AdjoinRoot.root (Polynomial.X^2 + 1 : Polynomial (LaurentR R)))^2 + 1 = 0 := by
-        have := AdjoinRoot.eval₂_root (Polynomial.X^2 + 1 : Polynomial (LaurentR R))
-        simpa using this
-      linear_combination this
+  -- `AdjoinRoot.root` is a root of the defining polynomial `X^2 + 1`,
+  -- so `root^2 + 1 = 0`, hence `root^2 = -1`.
+  have h : (i_coord R)^2 + 1 = 0 := by
+    have hmap := AdjoinRoot.isRoot_root (iPoly R)
+    simpa [i_coord, iPoly, Polynomial.IsRoot, AdjoinRoot.aeval_eq,
+      map_add, map_pow] using hmap
+  linear_combination h
 
 /-- The categorical coordinate `q` is a unit in `R[i, q^±¹]`.
     Witnessed explicitly by `q^{-1}` = image of `T (-1)`. -/
@@ -108,26 +96,19 @@ admits a unique `R`-algebra map `R[i, q^±¹] → S`. -/
 /-- Universal property of `R[i, q^±¹]`: for any commutative `R`-algebra
     `S` equipped with a unit `qS : S^×` and an element `iS : S` with
     `iS^2 = -1`, there is a unique `R`-algebra homomorphism
-    `R[i, q^±¹] → S` sending `q ↦ qS` and `i ↦ iS`. -/
--- Ref: [manuscript] §sec:braiding-conventions, [kassel1995] §IV
-/-- **External axiom (§3b-cond pattern): categorical_coordinate_ring_universal.**
+    `R[i, q^±¹] → S` sending `q ↦ qS` and `i ↦ iS`.
 
-    Auto-extracted from the single-sorry theorem body in this file.
-    Encodes the categorical content pending Mathlib infrastructure
-    or a structure-tightening refactor.
-
-    See the theorem docstring below for the cited reference. -/
-axiom categorical_coordinate_ring_universal_axiom (S : Type*) [CommRing S] [Algebra R S]
-    (qS : Sˣ) (iS : S) (hiS : iS^2 = -1) :
-    ∃! (φ : CategoricalCoordinateRing R →ₐ[R] S),
-        φ (q_coord R) = qS ∧ φ (i_coord R) = iS
-
+    The existence direction is the universal property of `AdjoinRoot`
+    (factoring through `LaurentPolynomial`'s universal property for the
+    unit `qS`); uniqueness is generation by `i_coord`, `q_coord`. The
+    full Mathlib assembly is deferred. -/
 theorem categorical_coordinate_ring_universal
     (S : Type*) [CommRing S] [Algebra R S]
     (qS : Sˣ) (iS : S) (hiS : iS^2 = -1) :
     ∃! (φ : CategoricalCoordinateRing R →ₐ[R] S),
-        φ (q_coord R) = qS ∧ φ (i_coord R) = iS :=
-  categorical_coordinate_ring_universal_axiom S qS iS hiS
+        φ (q_coord R) = qS ∧ φ (i_coord R) = iS := by
+  -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 §IV
+  sorry
 
 end
 

@@ -82,7 +82,7 @@ Partial observation: the bare-z coefficients `a_n` have **dyadic denominators** 
 
 ## Cross-references
 
-- Recursion probe: `folio-assistant/computations/qbeta/qbeta_prearchimedean_z_recursion.py`
+- Recursion probe: `computations/qbeta/qbeta_prearchimedean_z_recursion.py`
 - Lean: `content/quantum-observable-universe/lean/QOU/BraidKnot/MarkovParameterRecursion.lean`
 - Habiro-ladder Lean (bridge target): `content/quantum-observable-universe/braids-and-knots/habiro-precision-ladder-equivalence.lean`
 - Scope: `docs/coordination/2026-06-02-qbeta-habiro-recursion-prearchimedean-scope.md`

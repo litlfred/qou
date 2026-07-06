@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-31T03:01:30.056636+00:00",
-  "commitSha": "b62a152d0280b9378a2bb12001a3ad8bdff1787d",
+  "computedAt": "2026-06-22T14:18:18.764653+00:00",
+  "commitSha": "56e0d96d0785b62b4f6c46c89955d32d3ccf3517",
   "assertions": [
     {
       "name": "phase_1_symbolic_identity_confirmed",
@@ -14,21 +14,20 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 445,
+  "durationMs": 360,
   "computation": "alpha-em-rt-shadow-world-symbolic-phase1",
   "scriptFile": "alpha_em_rt_shadow_world_symbolic_phase1.py",
   "scriptHash": "c4411c747c0e",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
@@ -42,10 +41,10 @@
       "match": true
     },
     "numerical_verification_at_q0": {
-      "q_0": "1.1099785827513808076",
-      "predicted_val_at_q0_alpha_CODATA": "0.00058368257931721517008",
-      "predicted_times_8pi_div_alpha": "2.010255512038413512",
-      "bra2_times_schwinger": "2.010255512038413512"
+      "q_0": "1.1099785955573347199",
+      "predicted_val_at_q0_alpha_CODATA": "0.0005836825799759779956",
+      "predicted_times_8pi_div_alpha": "2.010255514307252172",
+      "bra2_times_schwinger": "2.010255514307252172"
     },
     "phase_1_status": "ESTABLISHED — symbolic identity confirmed",
     "remaining_phases": [

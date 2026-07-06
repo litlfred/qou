@@ -1,5 +1,5 @@
-import Mathlib.Data.Real.Basic
-import Mathlib.Algebra.Group.Basic
+import Mathlib.Algebra.Module.LinearMap.Defs
+import Mathlib.Algebra.Module.LinearMap.Basic
 
 
 /-!
@@ -31,10 +31,14 @@ namespace QOU.Torsion
 structure WeakEquivalence (R : Type*) [CommRing R] where
   /-- The algebra at each brane level. -/
   AlgAtLevel : ℕ → Type*
+  /-- Each level is an additive abelian group. -/
+  [instAddCommGroup : ∀ n, AddCommGroup (AlgAtLevel n)]
   /-- Each level carries a module structure. -/
   [instModule : ∀ n, Module R (AlgAtLevel n)]
   /-- The direct limit algebra A_∞. -/
   DirectLimit : Type*
+  /-- The direct limit is an additive abelian group. -/
+  [instDLAddCommGroup : AddCommGroup DirectLimit]
   /-- The direct limit carries a module structure. -/
   [instDL : Module R DirectLimit]
   /-- Canonical embedding of level n into A_∞. -/
@@ -48,11 +52,12 @@ structure WeakEquivalence (R : Type*) [CommRing R] where
   /-- The zigzag map connecting level n to level m. -/
   zigzag : AlgAtLevel srcLevel →ₗ[R] AlgAtLevel tgtLevel
 
-attribute [instance] WeakEquivalence.instModule WeakEquivalence.instDL
+attribute [instance] WeakEquivalence.instAddCommGroup WeakEquivalence.instModule
+attribute [instance] WeakEquivalence.instDLAddCommGroup WeakEquivalence.instDL
 
 /-- **Vacuum state**: a linear functional τ : A_∞ → R. -/
 -- Ref: [manuscript] §3
-structure VacuumState (R : Type*) [CommRing R] (DL : Type*) [Module R DL] where
+structure VacuumState (R : Type*) [CommRing R] (DL : Type*) [AddCommGroup DL] [Module R DL] where
   /-- The vacuum state as a linear functional. -/
   tau : DL →ₗ[R] R
 

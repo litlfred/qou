@@ -85,7 +85,7 @@ Searched for direct consumers of `aK_closed_form` /
 
 ```bash
 grep -rln "aK_closed_form\|closed_form_aK" \
-  folio-assistant/computations/ docs/audits/ 2>/dev/null
+  computations/ docs/audits/ 2>/dev/null
 ```
 
 Result: the only direct consumer is `term5_aK_audit.py` itself
@@ -165,9 +165,9 @@ code reads from Lean directly.
 
 ## Files modified by this branch
 
-- [`folio-assistant/computations/audits/term5_aK_audit.py`](https://github.com/litlfred/qou/blob/claude/chirality-pn-counting-finding2/folio-assistant/computations/audits/term5_aK_audit.py)
+- [`computations/audits/term5_aK_audit.py`](https://github.com/litlfred/qou/blob/claude/chirality-pn-counting-finding2/computations/audits/term5_aK_audit.py)
   — `aK_closed_form` uses canonical `chirality_signs_for_isotope_inferred`
-- [`folio-assistant/computations/audits/term5-aK-audit.witness.json`](https://github.com/litlfred/qou/blob/claude/chirality-pn-counting-finding2/folio-assistant/computations/audits/term5-aK-audit.witness.json)
+- [`computations/audits/term5-aK-audit.witness.json`](https://github.com/litlfred/qou/blob/claude/chirality-pn-counting-finding2/computations/audits/term5-aK-audit.witness.json)
   — T and ³He `closed_form_aK` updated from `1.209` to `0.956`
 - [`docs/audits/2026-05-18-chirality-pn-counting-finding2.md`](https://github.com/litlfred/qou/blob/claude/chirality-pn-counting-finding2/docs/audits/2026-05-18-chirality-pn-counting-finding2.md)
   (this file)

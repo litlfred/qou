@@ -145,6 +145,4 @@ $$
   }
 $$
 
-**This is the contact-geometric form of the millennium problem:**
-does the contact structure of the brane remain non-degenerate
-at the collision point of two vortex filaments?
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

@@ -34,8 +34,8 @@ from interface generators. For typical atom braids, multiple interface
 contributions multiply — explaining why the binding formula's T1 is
 small (~10⁻¹⁶ in PR #801's data) for atoms with mixed-flavor interfaces.
 
-  Ref: PR #801 ([binding_via_interface_knot.py](folio-assistant/computations/binding_via_interface_knot.py))
-  Ref: PR #819 Phase 5c.1 ([delta_lambda_fr_identity_phase5c.py](folio-assistant/computations/delta_lambda_fr_identity_phase5c.py))
+  Ref: PR #801 ([binding_via_interface_knot.py](computations/binding_via_interface_knot.py))
+  Ref: PR #819 Phase 5c.1 ([delta_lambda_fr_identity_phase5c.py](computations/delta_lambda_fr_identity_phase5c.py))
 """
 from __future__ import annotations
 

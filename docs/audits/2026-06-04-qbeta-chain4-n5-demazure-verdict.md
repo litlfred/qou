@@ -13,9 +13,9 @@ Target: **A / ℏ_q^15 ≈ 2.072**.
 ## Step 4 — n=5 partition Kashiwara crystal
 
 Script:
-[`folio-assistant/computations/qbeta/qbeta_chain4_kashiwara_step4_n5.py`](../../folio-assistant/computations/qbeta/qbeta_chain4_kashiwara_step4_n5.py).
+[`computations/qbeta/qbeta_chain4_kashiwara_step4_n5.py`](../../computations/qbeta/qbeta_chain4_kashiwara_step4_n5.py).
 Witness:
-[`folio-assistant/computations/qbeta/qbeta-chain4-kashiwara-step4-n5.witness.json`](../../folio-assistant/computations/qbeta/qbeta-chain4-kashiwara-step4-n5.witness.json).
+[`computations/qbeta/qbeta-chain4-kashiwara-step4-n5.witness.json`](../../computations/qbeta/qbeta-chain4-kashiwara-step4-n5.witness.json).
 
 ### Implementation honesty notes
 
@@ -55,9 +55,9 @@ crystal invariant for n ≤ 5.
 ## Step 5 — Demazure characters at fundamental weights (REAL D_i wiring)
 
 Script:
-[`folio-assistant/computations/qbeta/qbeta_chain4_demazure_fund_weights.py`](../../folio-assistant/computations/qbeta/qbeta_chain4_demazure_fund_weights.py).
+[`computations/qbeta/qbeta_chain4_demazure_fund_weights.py`](../../computations/qbeta/qbeta_chain4_demazure_fund_weights.py).
 Witness:
-[`folio-assistant/computations/qbeta/qbeta-chain4-demazure-fund-weights.witness.json`](../../folio-assistant/computations/qbeta/qbeta-chain4-demazure-fund-weights.witness.json).
+[`computations/qbeta/qbeta-chain4-demazure-fund-weights.witness.json`](../../computations/qbeta/qbeta-chain4-demazure-fund-weights.witness.json).
 
 ### Real D_i wiring (replaces the q-binomial stub)
 

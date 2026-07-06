@@ -59,4 +59,4 @@ The verification nuclei and their experimental data are tabulated in
 [Table: Verification nuclei](#tbl:beta-decay-simulator-table-data).
 
 Witness data from
-`folio-assistant/computations/all-nuclei-transfer-matrix.py`.
+`computations/all-nuclei-transfer-matrix.py`.

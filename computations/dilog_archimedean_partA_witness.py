@@ -110,7 +110,7 @@ def main():
             "engine": "python+mpmath",
             "dps": mp.mp.dps,
             "C_n_eps": str(C),
-            "script": "folio-assistant/computations/dilog_archimedean_partA_witness.py",
+            "script": "computations/dilog_archimedean_partA_witness.py",
         },
         "scriptCommitSha": git_sha_of(script_path),
         "scriptHash": file_hash(script_path),

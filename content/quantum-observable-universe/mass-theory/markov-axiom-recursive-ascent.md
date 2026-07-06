@@ -26,7 +26,7 @@ $\mathrm{tr}_M^{(n)}(T_w) \in \mathbb{Z}[q^{1/2}, q^{-1/2}]$ by
    $H_n \supset H_{n-1} \supset \cdots \supset H_1$ terminates
    at the base case $\mathrm{tr}_M^{(1)}(\mathbf{1}) = 1$.
 
-**Why this matters.** The naive Hoefsmit per-Wedderburn-block path
+**Significance.** The naive Hoefsmit per-Wedderburn-block path
 materialises symbolic matrices of dimension up to $\dim_\lambda \leq 462$
 for every partition $\lambda \vdash 3A$ and multiplies along the
 braid word — for $A \geq 4$ this is computationally infeasible
@@ -35,7 +35,7 @@ materialises a matrix representation: the cost is bounded by the
 braid length and the depth of the Hecke-quadratic branching tree.
 
 The production implementation
-(`folio-assistant/computations/markov/markov_peel.py`) completes
+(the formal derivation) completes
 $\mathfrak{m}({}^{4}\mathrm{He})$ end-to-end in ~60 s and
 $\mathfrak{m}({}^{6}\mathrm{Li})$ within minutes, with all
 $A \leq 3$ atoms cross-checked against the Hoefsmit + Wenzl

@@ -5,10 +5,10 @@ staircase EW-residual at $k=4$).** Companion to
 ($V_{(4,3,2,1)}$, $\dim = 768$).
 
 The existing
-[`staircase_ew_residual_conjecture.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/staircase_ew_residual_conjecture.py)
+[`staircase_ew_residual_conjecture.py`](https://github.com/litlfred/qou/blob/main/computations/staircase_ew_residual_conjecture.py)
 cites a $0.14\%$ pairwise match at $k=4$ as evidence for the literal
 conjecture.
-[`probe_staircase_ew_k4_pairwise_readings.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe_staircase_ew_k4_pairwise_readings.py)
+[`probe_staircase_ew_k4_pairwise_readings.py`](https://github.com/litlfred/qou/blob/main/computations/probe_staircase_ew_k4_pairwise_readings.py)
 adds a **coincidence-by-chance** test: among $\sim 147\,072$ ordered
 pairs of positive-real eigenvalues (eigenvalue magnitudes spanning
 $[0.018,\ 56]$), the expected best ratio match by *random search* is

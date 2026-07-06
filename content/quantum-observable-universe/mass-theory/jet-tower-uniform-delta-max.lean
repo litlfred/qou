@@ -15,7 +15,7 @@ the uniform-boundedness hypothesis
 
   ∀ n ≥ 1, |Δ⁽ⁿ⁾(ρ)| ≤ Δ_max(ρ).
 
-This file axiomatizes the hypothesis as a class per CLAUDE.md §3b.
+This file axiomatizes the hypothesis as a class per AGENTS.md §3b.
 The conditional geometric-tail bound is then provable from the
 class instance plus standard real analysis.
 

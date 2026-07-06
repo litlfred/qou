@@ -1,9 +1,9 @@
 # 1ppb readiness dashboard
 
 **Status.** Tracking audit. **Witness:**
-[`onepb-status-dashboard.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/onepb-status-dashboard.witness.json).
+[`onepb-status-dashboard.witness.json`](https://github.com/litlfred/qou/blob/main/computations/onepb-status-dashboard.witness.json).
 
-**Script.** [`onepb_status_dashboard.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/onepb_status_dashboard.py).
+**Script.** [`onepb_status_dashboard.py`](https://github.com/litlfred/qou/blob/main/computations/onepb_status_dashboard.py).
 
 Single source of truth for the "is QOU at 1ppb?" question.
 
@@ -113,7 +113,7 @@ the LP active set + GB NF data is the prediction proper.
 ## How to update
 
 ```bash
-cd folio-assistant/computations
+cd computations
 # Refresh sub-witnesses in dependency order:
 python3 atom_mass_additive_baseline.py
 python3 rho_f_volume_binding_gap.py

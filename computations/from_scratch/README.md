@@ -16,7 +16,7 @@
 > `derivation_chain.py` (escalation block, RESOLVED).
 
 Self-contained derivation of the categorical mass formula for atoms,
-without any dependencies on the existing `folio-assistant/computations/`
+without any dependencies on the existing `computations/`
 infrastructure.
 
 Every step is derived from the **algebraic axioms** and traced

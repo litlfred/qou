@@ -1,0 +1,92 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-02T16:45:53.136152+00:00",
+  "commitSha": "dbe953a9e4005a3820a802f3c8c0c2b813687d5c",
+  "assertions": [
+    {
+      "name": "b_total_consistent_with_synthesis_band",
+      "computed": -1.7619,
+      "expected": -1.75,
+      "passed": true,
+      "tolerance": 0.15,
+      "unit": "mean b over A=6..12",
+      "source": "2026-06-29-delta-lambda-residual-synthesis.md (b constant −1.747±0.03; A=9 quartet −1.84)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "kappa-writhe-side-decomposition-probe",
+  "scriptFile": "kappa_writhe_side_decomposition_probe.py",
+  "scriptHash": "aa923c445740",
+  "scriptCommitSha": "1f56defc5fda3d6617c4525dff39d60610912f12",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Location probe for the writhe coefficient κ = b/4 of the canonical residual's bar-odd term: exact decomposition b_total = b_AME − b_pred using the per-member B_pred/B_AME already recorded in the IMME triplet (A=6,8,10,12) and quartet (A=9, same-T) witnesses. Answers WHERE κ lives (framework interface asymmetry z vs z−h, or experimental Coulomb) before any derivation attempt — the bar-odd analogue of the 2026-06-13 H1 location refutation. Post-processing only; no fit; not wired.",
+  "parameters": {
+    "q0": "1.10997859555733470000000000000000000000000000000000000000000",
+    "swap_exponent_log_q0_z_over_z_minus_h": "5.19903126604131553217020575171854940870671368212222335208229"
+  },
+  "data": {
+    "rows": [
+      {
+        "A": 6,
+        "source": "triplet",
+        "delta_T3": 2,
+        "b_total": -1.727,
+        "b_pred_framework": 1.3261,
+        "b_AME_experimental": -0.4009
+      },
+      {
+        "A": 8,
+        "source": "triplet",
+        "delta_T3": 2,
+        "b_total": -1.795,
+        "b_pred_framework": 1.3652,
+        "b_AME_experimental": -0.4298
+      },
+      {
+        "A": 9,
+        "source": "quartet(inner, same-T)",
+        "delta_T3": 1,
+        "b_total": -1.8435,
+        "b_pred_framework": 1.3694,
+        "b_AME_experimental": -0.4741
+      },
+      {
+        "A": 10,
+        "source": "triplet",
+        "delta_T3": 2,
+        "b_total": -1.727,
+        "b_pred_framework": 1.3709,
+        "b_AME_experimental": -0.3561
+      },
+      {
+        "A": 12,
+        "source": "triplet",
+        "delta_T3": 2,
+        "b_total": -1.717,
+        "b_pred_framework": 1.3717,
+        "b_AME_experimental": -0.3453
+      }
+    ],
+    "framework_share_b_pred_over_b_total": [
+      -0.7679,
+      -0.7606,
+      -0.7428,
+      -0.7938,
+      -0.7989
+    ],
+    "location_verdict": "FRAMEWORK-SIDE: the interface asymmetry in B_pred carries |b| — κ is derivable from the canonical trace."
+  }
+}

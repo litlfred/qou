@@ -44,7 +44,7 @@ OUTPUT
 
 WITNESS
 
-  folio-assistant/computations/affine-light-cone-figure.witness.json
+  computations/affine-light-cone-figure.witness.json
   emitted via WitnessBuilder (standard ComputationWitness shape per
   PR #1108 review).
 """

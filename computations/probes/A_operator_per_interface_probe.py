@@ -20,7 +20,7 @@ Output: `A-operator-per-interface.witness.json` with per-(λ, I)
 operator residuals + per-λ linearity-identity errors.
 
 Usage:
-    python3 folio-assistant/computations/A_operator_per_interface_probe.py
+    python3 computations/A_operator_per_interface_probe.py
 """
 from __future__ import annotations
 

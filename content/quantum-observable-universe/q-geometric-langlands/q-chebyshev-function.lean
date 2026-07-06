@@ -20,14 +20,14 @@ set_option autoImplicit false
 
 namespace QOU.AlgebraicSubstrate
 
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
+-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+-- See `QOU.Archimedean.GroundRing` for the compiled definition.
 noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
-/-- The q-Chebyshev function ψ_q(X).
+/- The q-Chebyshev function ψ_q(X).
 
     Sums the q-von Mangoldt weights Λ_q(𝔪) over all maximal ideals
     𝔪 ∈ MaxSpec(𝒪_q(ℬ)) with N(𝔪) ≤ X.
@@ -39,5 +39,7 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
 --     (ideals : List MaxIdeal) (X : R_q) : R_q :=
 --   (ideals.filter (fun m => decide (m.norm ≤ X))).foldl
 --     (fun acc m => acc + QVonMangoldtFunction hbar_q hbar_pos m) 0
+
+end
 
 end QOU.AlgebraicSubstrate

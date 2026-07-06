@@ -189,12 +189,12 @@ def build() -> DerivationChain:
         gb_filtration_level=5,
         spectral_stratum="q = 0 (crystal limit)",
         notes=(
-            "script: folio-assistant/computations/term7_alpha5_crystal_derivation.py "
+            "script: computations/term7_alpha5_crystal_derivation.py "
             "(crystal_chi_lambda).  CONDITIONAL on "
             "`conj:crystal-graph-realization` per the witness's "
             "`conditional_on` field; closes when either the "
             "crystal-graph realisation conjecture is proved (or "
-            "axiomatised as a class per CLAUDE.md §3b-cond) or a "
+            "axiomatised as a class per AGENTS.md §3b-cond) or a "
             "Lean formalisation of the q → 0 functor lands."
         ),
     ))
@@ -216,7 +216,7 @@ def build() -> DerivationChain:
         citation="manuscript:§atomic-braid-recipe",
         jet_order=0,
         notes=(
-            "script: folio-assistant/computations/atomic_braid_gb_filtration_extension.py.  "
+            "script: computations/atomic_braid_gb_filtration_extension.py.  "
             "Inherits the open `atomic_braid_recipe` frontier already "
             "noted in `DERIVATION-CHAIN-METHODOLOGY.md` (Open frontier "
             "item 1)."
@@ -283,7 +283,7 @@ def build() -> DerivationChain:
             "derived: 2, script-cited: 2, computational: 1}; the "
             "two SCRIPT_CITED frontiers are (a) crystal-limit "
             "characters (closes when `conj:crystal-graph-realization` "
-            "is proven or class-axiomatised per CLAUDE.md §3b-cond), "
+            "is proven or class-axiomatised per AGENTS.md §3b-cond), "
             "and (b) atomic braid words (inherits the open "
             "`atomic_braid_recipe` frontier).  α_5 itself becomes "
             "the AME-calibrated proportionality "

@@ -26,7 +26,7 @@ class and its importers are untouched.
 
 Build-verified 2026-06-07: `lake build QOU.BraidKnot.GSReductionOrder`
 exit 0 (2244/2244 targets), sorry-free (the single conjectural input is
-the `order_match` class field per CLAUDE.md §3b).
+the `order_match` class field per AGENTS.md §3b).
 
 -- Ref: [manuscript] particle-interactions/crystal-graph-realization
 -- Ref: [brundankleshchev2009] Brundan & Kleshchev, "Blocks of cyclotomic Hecke algebras and Khovanov-Lauda algebras," Invent. Math. 178 (2009), arXiv:0808.2032
@@ -125,7 +125,7 @@ instance canonical (R : Type u) [CommRing R] (q : R) : GSOrderMatch R q where
   confinementLevel _ := 0
   crystalDeg _ := 0
   -- Ref: [manuscript] conj:crystal-graph-realization (§3b-cond; order-match (★) realises the KLR grading, sorry = the conjecture)
-  order_match _ := sorry
+  order_match _ := rfl
 
 end GSOrderMatch
 

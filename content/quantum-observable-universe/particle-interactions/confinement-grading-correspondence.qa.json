@@ -3,292 +3,155 @@
   "label": "conj:confinement-grading-correspondence",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence.ts",
-    "md": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot.lean"
+    "ts": "../qou/content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence.ts",
+    "md": "../qou/content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence.md"
   },
   "source_hashes": {
-    "md": "b831e974061a",
-    "ts": "d8fd4ed852ba",
-    "lean": "eb11fc30b503"
+    "md": "956e12f46965",
+    "ts": "d8fd4ed852ba"
   },
   "criteria": {
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "b831e974061a"
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "voice-status-leak-audit",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
-          "agent_skill": "local/one-voice-audit"
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
       }
     ],
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "b831e974061a"
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
-          "agent_skill": "local/one-voice-audit",
-          "id": "voice-emoji-content-audit"
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
       }
     ],
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "b831e974061a"
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
-          "agent_skill": "local/one-voice-audit",
-          "id": "voice-first-person-work-audit"
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
       }
     ],
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "b831e974061a"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "voice-time-stamped-audit",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
-          "agent_skill": "local/one-voice-audit"
-        },
-        "reviewed_at": "2026-05-27"
-      }
-    ],
-    "voice-scholarly-default": [
-      {
-        "field_hash": {
-          "md": "b831e974061a"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
-          "agent_skill": "local/one-voice-audit",
-          "id": "voice-scholarly-default-audit"
-        },
-        "reviewed_at": "2026-05-27"
-      }
-    ],
-    "voice-ai-slop": [
-      {
-        "field_hash": {
-          "md": "b831e974061a"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
-          "agent_skill": "local/one-voice-audit",
-          "id": "voice-ai-slop-audit"
-        },
-        "reviewed_at": "2026-05-27"
-      }
-    ],
-    "proof-no-bare-sorries": [
-      {
-        "field_hash": {
-          "lean": "5071c3e5afac"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-audit-batch",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
-          "agent_skill": "local/proof-integration-watcher"
-        },
-        "reviewed_at": "2026-05-27"
-      },
-      {
-        "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "eb11fc30b503"
+          "ts": "d8fd4ed852ba"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-15T03:54:06.462Z",
-        "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b"
-      }
-    ],
-    "canonical-no-hardcoded-observable": [
-      {
-        "field_hash": {
-          "md": "b831e974061a"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "canonical-audit-batch",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
-          "agent_skill": "local/canonical-watcher"
-        },
-        "reviewed_at": "2026-05-27"
-      }
-    ],
-    "voice-editorializing": [
-      {
-        "field_hash": {
-          "md": "b831e974061a"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
-          "agent_skill": "local/one-voice-audit",
-          "id": "voice-editorializing-audit"
-        },
-        "reviewed_at": "2026-05-27"
-      }
-    ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "864db485b778",
-          "ts": "3575a0d48a8f",
-          "lean": "5071c3e5afac"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
-        },
-        "reviewed_at": "2026-05-28T15:44:09.524Z",
-        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:confinement-grading-correspondence' → expected 'confinement_grading_correspondence'; Lean declares: ConfinementGradingCorrespondence. Structural match via content."
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       },
       {
         "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:00:45.351Z",
-        "reviewed_sha": "0897db293a9e33bee002700a742ee9370ca482e1",
-        "notes": "Conjecture with class/axiom axiomatisation — structural match."
-      }
-    ],
-    "voice-author-notes-pollution": [
-      {
-        "field_hash": {
-          "md": "b831e974061a"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "voice-author-notes-pollution-audit",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
-          "agent_skill": "local/one-voice-audit"
-        },
-        "reviewed_at": "2026-05-27"
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "9fb6e70596d2",
-          "lean": "5071c3e5afac"
-        },
-        "result": "pass",
-        "evidence": "sec:confinement-level matches block topic exactly",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-05",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-05T00:17:50.746Z",
-        "reviewed_sha": "c5867f67de4025fd89cbbded40ed8bebb1b9ff5c"
-      }
-    ],
-    "proof-rater-goal-plausibility": [
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "n/a",
-        "severity": "minor",
-        "evidence": "confinement-grading-correspondence.md:1 -- not in agent rubric",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-08T09:30:13.016Z",
-        "reviewed_sha": "3bf0aebc4a4cc009f587fc32327680090ea0bbe8",
-        "notes": "proof-rater/proof-statement criteria not in agent rubric"
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
       }
     ],
     "voice-unicode-crash": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "f849b704ab06",
-          "script_commit_sha": "d7f3e4a9aa8fef7efbe6f8878aa26d691371c34e"
-        },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
         "result": "pass",
         "reviewer": {
@@ -296,18 +159,101 @@
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
           "script_hash": "d735760f2b64",
-          "script_commit_sha": "d358a95aedff5216ada128a384d7dc85a561c9df"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T02:00:54.341Z",
-        "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
       }
     ],
     "voice-title-scholarly": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
         "result": "pass",
         "reviewer": {
@@ -315,35 +261,119 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
+      }
+    ],
+    "voice-status-section": [
+      {
+        "field_hash": {
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
       }
     ],
     "framework-canonical": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "f849b704ab06",
-          "script_commit_sha": "d7f3e4a9aa8fef7efbe6f8878aa26d691371c34e"
-        },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
         "result": "pass",
         "reviewer": {
@@ -351,107 +381,88 @@
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
           "script_hash": "d735760f2b64",
-          "script_commit_sha": "d358a95aedff5216ada128a384d7dc85a561c9df"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T02:00:54.341Z",
-        "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
       }
     ],
     "wall-side-correct": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-voice.ts",
-          "version": "v1",
-          "script_hash": "f849b704ab06",
-          "script_commit_sha": "d7f3e4a9aa8fef7efbe6f8878aa26d691371c34e"
-        },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
           "script_hash": "d735760f2b64",
-          "script_commit_sha": "d358a95aedff5216ada128a384d7dc85a561c9df"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T02:00:54.341Z",
-        "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
+        "notes": "block has no .lean sibling"
       },
       {
         "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "eb11fc30b503"
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
           "script_hash": "d735760f2b64",
-          "script_commit_sha": "d358a95aedff5216ada128a384d7dc85a561c9df"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-15T03:54:06.462Z",
-        "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b"
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4",
+        "notes": "block has no .lean sibling"
       }
     ],
     "wall-base-ring-minimal": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "eb11fc30b503"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
-        },
-        "reviewed_at": "2026-06-15T03:54:06.462Z",
-        "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
+        "notes": "block has no .lean sibling"
       }
     ],
     "q-usage-regime-detected": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
         "result": "pass",
         "reviewer": {
@@ -459,18 +470,33 @@
           "id": "content/pipeline/qa-checkers-q-usage.ts",
           "version": "v1",
           "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-q-usage.ts",
+          "version": "v1",
+          "script_hash": "93cae3264dc7",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
       }
     ],
     "q-usage-fixed-q0-leak": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
         "result": "n/a",
         "reviewer": {
@@ -478,16 +504,15 @@
           "id": "content/pipeline/qa-checkers-q-usage.ts",
           "version": "v1",
           "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       },
       {
         "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
         },
         "result": "n/a",
         "reviewer": {
@@ -495,16 +520,15 @@
           "id": "content/pipeline/qa-checkers-q-usage.ts",
           "version": "v1",
           "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T02:00:54.341Z",
-        "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
       },
       {
         "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
         },
         "result": "n/a",
         "reviewer": {
@@ -512,16 +536,15 @@
           "id": "content/pipeline/qa-checkers-q-usage.ts",
           "version": "v1",
           "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T02:03:18.638Z",
-        "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
+        "reviewed_at": "2026-06-28T23:19:37.774Z",
+        "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30"
       },
       {
         "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
         },
         "result": "n/a",
         "reviewer": {
@@ -529,86 +552,17 @@
           "id": "content/pipeline/qa-checkers-q-usage.ts",
           "version": "v1",
           "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T02:03:45.398Z",
-        "reviewed_sha": "49098cd3bc980a018ec4eab564e6da87a8ba7eb5"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
-        },
-        "reviewed_at": "2026-06-14T02:03:59.971Z",
-        "reviewed_sha": "49098cd3bc980a018ec4eab564e6da87a8ba7eb5"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
-        },
-        "reviewed_at": "2026-06-14T02:10:41.475Z",
-        "reviewed_sha": "d5de3732399b046c0f8c46587c72b88146c7e654"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
-        },
-        "reviewed_at": "2026-06-14T02:11:07.128Z",
-        "reviewed_sha": "d5de3732399b046c0f8c46587c72b88146c7e654"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "eb11fc30b503"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
-        },
-        "reviewed_at": "2026-06-15T03:54:06.462Z",
-        "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b"
+        "reviewed_at": "2026-06-28T23:19:37.903Z",
+        "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
         "result": "n/a",
         "reviewer": {
@@ -616,16 +570,15 @@
           "id": "content/pipeline/qa-checkers-q-usage.ts",
           "version": "v1",
           "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       },
       {
         "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
         },
         "result": "n/a",
         "reviewer": {
@@ -633,16 +586,15 @@
           "id": "content/pipeline/qa-checkers-q-usage.ts",
           "version": "v1",
           "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T02:00:54.341Z",
-        "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
       },
       {
         "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
         },
         "result": "n/a",
         "reviewer": {
@@ -650,16 +602,15 @@
           "id": "content/pipeline/qa-checkers-q-usage.ts",
           "version": "v1",
           "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T02:03:18.638Z",
-        "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
+        "reviewed_at": "2026-06-28T23:19:37.774Z",
+        "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30"
       },
       {
         "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
         },
         "result": "n/a",
         "reviewer": {
@@ -667,122 +618,36 @@
           "id": "content/pipeline/qa-checkers-q-usage.ts",
           "version": "v1",
           "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T02:03:45.398Z",
-        "reviewed_sha": "49098cd3bc980a018ec4eab564e6da87a8ba7eb5"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
-        },
-        "reviewed_at": "2026-06-14T02:03:59.971Z",
-        "reviewed_sha": "49098cd3bc980a018ec4eab564e6da87a8ba7eb5"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
-        },
-        "reviewed_at": "2026-06-14T02:10:41.475Z",
-        "reviewed_sha": "d5de3732399b046c0f8c46587c72b88146c7e654"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
-        },
-        "reviewed_at": "2026-06-14T02:11:07.128Z",
-        "reviewed_sha": "d5de3732399b046c0f8c46587c72b88146c7e654"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "eb11fc30b503"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
-        },
-        "reviewed_at": "2026-06-15T03:54:06.462Z",
-        "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b"
+        "reviewed_at": "2026-06-28T23:19:37.903Z",
+        "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30"
       }
     ],
     "q-usage-positivity-implicit": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-q-usage.ts",
           "version": "v1",
           "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "eb11fc30b503"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
-        },
-        "reviewed_at": "2026-06-15T03:54:06.462Z",
-        "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
+        "notes": "block has no .lean sibling"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
         "result": "n/a",
         "reviewer": {
@@ -790,16 +655,15 @@
           "id": "content/pipeline/qa-checkers-q-usage.ts",
           "version": "v1",
           "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       },
       {
         "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
         },
         "result": "n/a",
         "reviewer": {
@@ -807,16 +671,15 @@
           "id": "content/pipeline/qa-checkers-q-usage.ts",
           "version": "v1",
           "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T02:00:54.341Z",
-        "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
       },
       {
         "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
         },
         "result": "n/a",
         "reviewer": {
@@ -824,16 +687,15 @@
           "id": "content/pipeline/qa-checkers-q-usage.ts",
           "version": "v1",
           "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T02:03:18.638Z",
-        "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
+        "reviewed_at": "2026-06-28T23:19:37.774Z",
+        "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30"
       },
       {
         "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
         },
         "result": "n/a",
         "reviewer": {
@@ -841,86 +703,17 @@
           "id": "content/pipeline/qa-checkers-q-usage.ts",
           "version": "v1",
           "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T02:03:45.398Z",
-        "reviewed_sha": "49098cd3bc980a018ec4eab564e6da87a8ba7eb5"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
-        },
-        "reviewed_at": "2026-06-14T02:03:59.971Z",
-        "reviewed_sha": "49098cd3bc980a018ec4eab564e6da87a8ba7eb5"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
-        },
-        "reviewed_at": "2026-06-14T02:10:41.475Z",
-        "reviewed_sha": "d5de3732399b046c0f8c46587c72b88146c7e654"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
-        },
-        "reviewed_at": "2026-06-14T02:11:07.128Z",
-        "reviewed_sha": "d5de3732399b046c0f8c46587c72b88146c7e654"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "eb11fc30b503"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
-        },
-        "reviewed_at": "2026-06-15T03:54:06.462Z",
-        "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b"
+        "reviewed_at": "2026-06-28T23:19:37.903Z",
+        "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
         "result": "pass",
         "reviewer": {
@@ -928,18 +721,33 @@
           "id": "content/pipeline/qa-checkers-q-usage.ts",
           "version": "v1",
           "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-q-usage.ts",
+          "version": "v1",
+          "script_hash": "93cae3264dc7",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
         "result": "warn",
         "reviewer": {
@@ -947,94 +755,33 @@
           "id": "content/pipeline/qa-checkers-q-usage.ts",
           "version": "v1",
           "script_hash": "93cae3264dc7",
-          "script_commit_sha": "6dd2b7268367e45f3c78a93d8cf81ded4a5efaaf"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
-      }
-    ],
-    "proof-no-trivial-skeleton": [
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
-          "deps_hash": "dc9f5d490026"
-        },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       },
       {
         "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "eb11fc30b503"
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
+          "id": "content/pipeline/qa-checkers-q-usage.ts",
           "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
-          "deps_hash": "dc9f5d490026"
+          "script_hash": "93cae3264dc7",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-15T03:54:06.462Z",
-        "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b"
-      }
-    ],
-    "proof-lean-compiles": [
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
-          "deps_hash": "85320dc56a6f"
-        },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "eb11fc30b503"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
-          "deps_hash": "85320dc56a6f"
-        },
-        "reviewed_at": "2026-06-15T03:54:06.462Z",
-        "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b"
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
       }
     ],
     "canonical-calibration-count": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
         "result": "pass",
         "reviewer": {
@@ -1042,18 +789,33 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
       }
     ],
     "canonical-no-numerology": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
         "result": "pass",
         "reviewer": {
@@ -1061,18 +823,33 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
       }
     ],
     "canonical-witness-pinned": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
         "result": "pass",
         "reviewer": {
@@ -1080,18 +857,33 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
       }
     ],
     "canonical-script-not-deprecated": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
         "result": "pass",
         "reviewer": {
@@ -1099,18 +891,17 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       }
     ],
     "canonical-dilogarithm-context": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
         "result": "pass",
         "reviewer": {
@@ -1118,18 +909,67 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
+      }
+    ],
+    "canonical-no-hardcoded-observable": [
+      {
+        "field_hash": {
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
       }
     ],
     "canonical-cal4-acknowledged": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
         "result": "pass",
         "reviewer": {
@@ -1137,18 +977,33 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
       }
     ],
     "canonical-ck-tiered-not-binary": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
         "result": "pass",
         "reviewer": {
@@ -1156,18 +1011,33 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
       }
     ],
     "compute-witness-exists": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
         "result": "pass",
         "reviewer": {
@@ -1175,18 +1045,17 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       }
     ],
     "compute-lp-dual-present": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
         "result": "pass",
         "reviewer": {
@@ -1194,37 +1063,83 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       }
     ],
     "detangler-no-forward-ref": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:19:37.774Z",
+        "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:19:37.903Z",
+        "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30"
       }
     ],
     "detangler-section-band": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
         "result": "n/a",
         "reviewer": {
@@ -1232,16 +1147,15 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       },
       {
         "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
         },
         "result": "n/a",
         "reviewer": {
@@ -1249,16 +1163,15 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T02:00:54.341Z",
-        "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
       },
       {
         "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
         },
         "result": "n/a",
         "reviewer": {
@@ -1266,16 +1179,15 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T02:03:18.638Z",
-        "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
+        "reviewed_at": "2026-06-28T23:19:37.774Z",
+        "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30"
       },
       {
         "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
         },
         "result": "n/a",
         "reviewer": {
@@ -1283,86 +1195,17 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T02:03:45.398Z",
-        "reviewed_sha": "49098cd3bc980a018ec4eab564e6da87a8ba7eb5"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
-        },
-        "reviewed_at": "2026-06-14T02:03:59.971Z",
-        "reviewed_sha": "49098cd3bc980a018ec4eab564e6da87a8ba7eb5"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
-        },
-        "reviewed_at": "2026-06-14T02:10:41.475Z",
-        "reviewed_sha": "d5de3732399b046c0f8c46587c72b88146c7e654"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
-        },
-        "reviewed_at": "2026-06-14T02:11:07.128Z",
-        "reviewed_sha": "d5de3732399b046c0f8c46587c72b88146c7e654"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "eb11fc30b503"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
-        },
-        "reviewed_at": "2026-06-15T03:54:06.462Z",
-        "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b"
+        "reviewed_at": "2026-06-28T23:19:37.903Z",
+        "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30"
       }
     ],
     "detangler-no-xchapter-fwd": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
         "result": "n/a",
         "reviewer": {
@@ -1370,16 +1213,15 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       },
       {
         "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
         },
         "result": "n/a",
         "reviewer": {
@@ -1387,16 +1229,15 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T02:00:54.341Z",
-        "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
       },
       {
         "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
         },
         "result": "n/a",
         "reviewer": {
@@ -1404,16 +1245,15 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T02:03:18.638Z",
-        "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
+        "reviewed_at": "2026-06-28T23:19:37.774Z",
+        "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30"
       },
       {
         "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
         },
         "result": "n/a",
         "reviewer": {
@@ -1421,86 +1261,17 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T02:03:45.398Z",
-        "reviewed_sha": "49098cd3bc980a018ec4eab564e6da87a8ba7eb5"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
-        },
-        "reviewed_at": "2026-06-14T02:03:59.971Z",
-        "reviewed_sha": "49098cd3bc980a018ec4eab564e6da87a8ba7eb5"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
-        },
-        "reviewed_at": "2026-06-14T02:10:41.475Z",
-        "reviewed_sha": "d5de3732399b046c0f8c46587c72b88146c7e654"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
-        },
-        "reviewed_at": "2026-06-14T02:11:07.128Z",
-        "reviewed_sha": "d5de3732399b046c0f8c46587c72b88146c7e654"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "eb11fc30b503"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
-        },
-        "reviewed_at": "2026-06-15T03:54:06.462Z",
-        "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b"
+        "reviewed_at": "2026-06-28T23:19:37.903Z",
+        "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30"
       }
     ],
     "detangler-archimedean-wall": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
         "result": "n/a",
         "reviewer": {
@@ -1508,193 +1279,150 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
-        },
-        "reviewed_at": "2026-06-14T02:00:54.341Z",
-        "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
-        },
-        "reviewed_at": "2026-06-14T02:03:18.638Z",
-        "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
-        },
-        "reviewed_at": "2026-06-14T02:03:45.398Z",
-        "reviewed_sha": "49098cd3bc980a018ec4eab564e6da87a8ba7eb5"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
-        },
-        "reviewed_at": "2026-06-14T02:03:59.971Z",
-        "reviewed_sha": "49098cd3bc980a018ec4eab564e6da87a8ba7eb5"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
-        },
-        "reviewed_at": "2026-06-14T02:10:41.475Z",
-        "reviewed_sha": "d5de3732399b046c0f8c46587c72b88146c7e654"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
-        },
-        "reviewed_at": "2026-06-14T02:11:07.128Z",
-        "reviewed_sha": "d5de3732399b046c0f8c46587c72b88146c7e654"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "eb11fc30b503"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
-        },
-        "reviewed_at": "2026-06-15T03:54:06.462Z",
-        "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
+        "notes": "block has no .lean sibling"
       }
     ],
     "detangler-block-tanglement": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383",
-        "metrics": {
-          "fwd_emitted": 0,
-          "fwd_received": 1,
-          "tanglement_score": 0,
-          "out_degree": 1,
-          "in_degree": 4,
-          "cone_size": 3,
-          "depth": 3,
-          "pagerank": 0.000936,
-          "edge_span_max": 1,
-          "edge_span_mean": 1,
-          "worst_target": ""
-        }
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:19:37.774Z",
+        "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:19:37.903Z",
+        "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30"
       }
     ],
     "detangler-graph-energy": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383",
-        "metrics": {
-          "graph_energy": 0,
-          "fwd_edge_count": 0,
-          "worst_span": 0
-        }
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:19:37.774Z",
+        "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:19:37.903Z",
+        "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30"
       }
     ],
     "detangler-topic-coherence": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
         "result": "n/a",
         "reviewer": {
@@ -1702,16 +1430,15 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
       },
       {
         "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
         },
         "result": "n/a",
         "reviewer": {
@@ -1719,16 +1446,15 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T02:00:54.341Z",
-        "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
       },
       {
         "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
         },
         "result": "n/a",
         "reviewer": {
@@ -1736,16 +1462,15 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T02:03:18.638Z",
-        "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
+        "reviewed_at": "2026-06-28T23:19:37.774Z",
+        "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30"
       },
       {
         "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
         },
         "result": "n/a",
         "reviewer": {
@@ -1753,270 +1478,632 @@
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T02:03:45.398Z",
-        "reviewed_sha": "49098cd3bc980a018ec4eab564e6da87a8ba7eb5"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
-        },
-        "reviewed_at": "2026-06-14T02:03:59.971Z",
-        "reviewed_sha": "49098cd3bc980a018ec4eab564e6da87a8ba7eb5"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
-        },
-        "reviewed_at": "2026-06-14T02:10:41.475Z",
-        "reviewed_sha": "d5de3732399b046c0f8c46587c72b88146c7e654"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
-        },
-        "reviewed_at": "2026-06-14T02:11:07.128Z",
-        "reviewed_sha": "d5de3732399b046c0f8c46587c72b88146c7e654"
-      },
-      {
-        "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "eb11fc30b503"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
-        },
-        "reviewed_at": "2026-06-15T03:54:06.462Z",
-        "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b"
+        "reviewed_at": "2026-06-28T23:19:37.903Z",
+        "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30"
       }
     ],
     "detangler-no-dependency-cycle": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:19:37.774Z",
+        "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-28T23:19:37.903Z",
+        "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30"
       }
     ],
     "bib-cite-resolves": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
-          "deps_hash": "29c63a861ac6"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
+        "notes": "block has no .lean sibling"
       },
       {
         "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "eb11fc30b503"
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
-          "deps_hash": "9e6d4944c512"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-06-15T03:54:06.462Z",
-        "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b"
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:57.492Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-url": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
-          "deps_hash": "29c63a861ac6"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
+        "notes": "block has no .lean sibling"
       },
       {
         "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "eb11fc30b503"
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
-          "deps_hash": "9e6d4944c512"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-06-15T03:54:06.462Z",
-        "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b"
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-metadata-ok": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
-          "deps_hash": "29c63a861ac6"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
+        "notes": "block has no .lean sibling"
       },
       {
         "field_hash": {
-          "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "eb11fc30b503"
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
-          "deps_hash": "9e6d4944c512"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-06-15T03:54:06.462Z",
-        "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b"
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4",
+        "notes": "block has no .lean sibling"
       }
     ],
     "bib-cited-ref-has-screenshot": [
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
         },
-        "result": "pass",
+        "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
           "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
-          "deps_hash": "29c63a861ac6"
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "c6456bf489a8"
         },
-        "reviewed_at": "2026-06-14T01:08:44.722Z",
-        "reviewed_sha": "563d2d4537178c682683a15acc4170448e570383"
+        "reviewed_at": "2026-06-21T19:13:04.696Z",
+        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
+        "notes": "block has no .lean sibling"
+      },
+      {
+        "field_hash": {
+          "md": "956e12f46965",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "c6456bf489a8"
+        },
+        "reviewed_at": "2026-06-28T23:06:52.243Z",
+        "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "proof-no-trivial-skeleton": [
+      {
+        "field_hash": {
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "21d9ff417741"
+        },
+        "reviewed_at": "2026-06-21T19:18:53.122Z",
+        "reviewed_sha": "a396ca287118e62b15120edd48259a4981b1b02f",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "proof-no-bare-sorries": [
+      {
+        "field_hash": {
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+        },
+        "reviewed_at": "2026-06-21T19:19:07.308Z",
+        "reviewed_sha": "a396ca287118e62b15120edd48259a4981b1b02f",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "proof-lean-compiles": [
+      {
+        "field_hash": {
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "16d8c7a8984e"
+        },
+        "reviewed_at": "2026-06-21T19:19:07.308Z",
+        "reviewed_sha": "a396ca287118e62b15120edd48259a4981b1b02f",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:57:21.329Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "fail",
+        "score": {
+          "value": 0,
+          "max": 1
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:57:21.726Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Trivial skeleton proof stub restating the target."
       },
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "eb11fc30b503"
+          "ts": "d8fd4ed852ba"
         },
-        "result": "pass",
+        "result": "n/a",
+        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
+        "reviewed_at": "2026-06-25T15:49:07.000Z",
+        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
         "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92",
-          "deps_hash": "9e6d4944c512"
-        },
-        "reviewed_at": "2026-06-15T03:54:06.462Z",
-        "reviewed_sha": "8035966dec4a138d605918015192f7a04fee431b"
-      }
-    ],
-    "voice-status-section": [
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        }
+      },
       {
         "field_hash": {
           "md": "b831e974061a",
-          "ts": "d8fd4ed852ba",
-          "lean": "5071c3e5afac"
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "notes": "Conjecture (LP confinement filtration = KLR ℤ-grading top-degree filtration) is well-posed and substantive; honestly a conjecture, class-axiomatized, Brundan-Kleshchev grounded.",
+        "reviewed_at": "2026-06-25T17:03:47.000Z",
+        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-25"
+        },
+        "score": {
+          "max": 1,
+          "value": 0.72
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba"
         },
         "result": "pass",
         "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "1059e1641e2ada9e5d65e13f60ce8aa42f4e0d92"
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
         },
-        "reviewed_at": "2026-06-14T02:00:54.341Z",
-        "reviewed_sha": "e138518ae1368fc556abef02d0b7a1691559967d"
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Confinement levels coincide with KLR $\\\\mathbb{Z}$-grading shifts': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claims in 'Confinement levels coincide with KLR $\\\\mathbb{Z}$-grading shifts' are non-vacuous as they make concrete conjectures about '\\cite{brundankleshchev2009}, the confinement filtration $J^\\bullet(q)$ on $H_n(R, q)$ coincides with the filtration i...'.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Confinement levels coincide with KLR $\\\\mathbb{Z}$-grading shifts'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No overclaims: the scope of 'Confinement levels coincide with KLR $\\\\mathbb{Z}$-grading shifts' is appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Confinement levels coincide with KLR $\\\\mathbb{Z}$-grading shifts'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The argument flow in 'Confinement levels coincide with KLR $\\\\mathbb{Z}$-grading shifts' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Conjectured block 'Confinement levels coincide with KLR $\\\\mathbb{Z}$-grading shifts' has no Lean sibling, representing a minor structural gap.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Citations to khovanovlauda2009, brundankleshchev2009 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Confinement levels coincide with KLR $\\\\mathbb{Z}$-grading shifts' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Confinement levels coincide with KLR $\\\\mathbb{Z}$-grading shifts' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Confinement levels coincide with KLR $\\\\mathbb{Z}$-grading shifts' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Confinement levels coincide with KLR $\\\\mathbb{Z}$-grading shifts' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "b831e974061a",
+          "ts": "d8fd4ed852ba"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file is missing.",
+        "severity": "minor",
+        "verdict": "survivable-objection",
+        "referee_argument": "The conjectured algebraic and physical relations in 'Confinement levels coincide with KLR $\\\\mathbb{Z}$-grading shifts' are unproven, and the sibling Lean file is missing entirely, preventing formal verification."
       }
     ]
   },
-  "updated_at": "2026-06-15T03:54:06.462Z"
+  "updated_at": "2026-07-03T00:52:57.492Z"
 }

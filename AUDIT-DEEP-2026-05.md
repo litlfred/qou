@@ -525,7 +525,7 @@ on this branch.
 | C3 | $[2]_q$ | `q_parameter.py:45` | `TWO_Q = q + q⁻¹` | mixed elsewhere | sometimes `2*math.cos(...)` shortcut | cosmetic | Use `TWO_Q` (or `[2]_q` symbolic) only. |
 | C4 | $q_0$ numeric | `q_parameter.py:88` | string literal `"1.10997859555…"` (50 dps) | 20+ scripts/witnesses | hard‑coded `1.1097…` (4 dps) | numerical | Pin to the `Q0_FLOAT` import; CI rule via `witnessed-values` skill. |
 | C5 | Markov weights $w_\lambda$ | `hoefsmit_symbolic.py` | Plancherel‑style $\dim_q^2/[n]_q!$ at $H_{n}$ | `crt_markov.py` (deprecated) | Plancherel at $H_3$ extrapolated | structural | Compute `H_{3A}` per atom (audit flag F10). |
-| C6 | Hecke generator eigenvalues | CLAUDE.md §7a, all `.lean` | $(q, -q^{-1})$ | `_deprecated/chi_via_factorization.py` | $(q^{1/2}, -q^{-1/2})$ Kauffman | cosmetic in deprecated code | Delete deprecated copies. |
+| C6 | Hecke generator eigenvalues | AGENTS.md §7a, all `.lean` | $(q, -q^{-1})$ | `_deprecated/chi_via_factorization.py` | $(q^{1/2}, -q^{-1/2})$ Kauffman | cosmetic in deprecated code | Delete deprecated copies. |
 | C7 | Generator count for atoms | `atomic_braid_mass_table.py:226` | `n_gens = 3A − 1` | various propositions | `3A` or `3A + 1` (no consensus) | structural | Add `def:atom-generator-count` with proof; pick one. |
 | C8 | Content sum sign $c(\lambda)$ | none in compute | not used at compute time | `DERIVATION-STATUS.md §76` | $c(\lambda) = \sum (j-i)$ | latent | Document in notation block; add a unit test. |
 | C9 | Partition order | mostly weakly decreasing | OK | `_deprecated/notation_consistency_audit.witness.json` | mixed | cosmetic | Keep weakly decreasing (English). |
@@ -706,7 +706,7 @@ violators.** Nothing in this plan derives `Q_β`.
 | `HANDOVER-STATUS.md §3b` | CRT uses only `V_s` — missing `V_sym`, `V_alt` | Still missing. **Action P7.** |
 | `HANDOVER-STATUS.md §3c` | Shell σ magnitude requires β‑chain calibration | Still not implemented. **Action P8.** |
 | `HANDOVER-STATUS.md §3f` | `H_{3A}(q)` Wedderburn weights approximated | Still approximated. **Action P3.** |
-| `INFRASTRUCTURE-AUDIT.md` | LP/SDP dual not emitted on every witness | CI lint added (`lp_dual_witness_validator.py`); 58 of 58 LP witnesses missing dual on `main` (CLAUDE.md). **Carry forward.** |
+| `INFRASTRUCTURE-AUDIT.md` | LP/SDP dual not emitted on every witness | CI lint added (`lp_dual_witness_validator.py`); 58 of 58 LP witnesses missing dual on `main` (AGENTS.md). **Carry forward.** |
 | `PREEXISTING-ISSUES.md` | Plancherel truncation manual | Still manual. **Action P3 / Quick Win #2.** |
 
 ---

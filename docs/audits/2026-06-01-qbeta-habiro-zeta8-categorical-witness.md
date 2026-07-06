@@ -5,8 +5,8 @@
 > `S_6(ζ_8) + Δa_7(ζ_8)·(ζ_8;ζ_8)_7 = 0` discovered in Track 1
 > ([`docs/audits/2026-06-01-qbeta-habiro-delta-am-partial-sum-scan.md`](2026-06-01-qbeta-habiro-delta-am-partial-sum-scan.md)).
 >
-> Probe: [`folio-assistant/computations/qbeta/qbeta_habiro_zeta8_categorical_witness.py`](../../folio-assistant/computations/qbeta/qbeta_habiro_zeta8_categorical_witness.py)
-> Witness: [`folio-assistant/computations/qbeta/qbeta-habiro-zeta8-categorical-witness.witness.json`](../../folio-assistant/computations/qbeta/qbeta-habiro-zeta8-categorical-witness.witness.json)
+> Probe: [`computations/qbeta/qbeta_habiro_zeta8_categorical_witness.py`](../../computations/qbeta/qbeta_habiro_zeta8_categorical_witness.py)
+> Witness: [`computations/qbeta/qbeta-habiro-zeta8-categorical-witness.witness.json`](../../computations/qbeta/qbeta-habiro-zeta8-categorical-witness.witness.json)
 
 ## TL;DR
 

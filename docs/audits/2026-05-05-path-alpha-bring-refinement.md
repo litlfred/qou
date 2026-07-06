@@ -50,7 +50,7 @@ not a separate surface assumption.
 The QOU framework works over a **categorical coefficient ring
 $R$** (typically $\mathbb{Z}[q, q^{-1}]$ or its localization
 $R = \mathbb{Q}(q)$ — see
-[Hecke-Skein convention §7a](https://github.com/litlfred/qou/blob/main/CLAUDE.md)),
+[Hecke-Skein convention §7a](https://github.com/litlfred/qou/blob/main/AGENTS.md)),
 **not** the real numbers. The eigenvalue analysis in
 [`prop:even-twist-torus-link-psd-feasibility`](../../content/quantum-observable-universe/descartes-universe/electroweak-higgs-torus-link-triplet.md)
 states $\sigma_1^{2k}$ has block eigenvalues $(q^{2k}, q^{-2k})$.
@@ -81,13 +81,13 @@ and
 blocks, both of which state eigenvalue expressions over an
 unspecified $q$-domain and silently use $q_0$-specific values.
 The
-[Hecke-Skein convention §7a](https://github.com/litlfred/qou/blob/main/CLAUDE.md)
+[Hecke-Skein convention §7a](https://github.com/litlfred/qou/blob/main/AGENTS.md)
 is generic in $q \in R$; per-block statements must inherit this
 generality.
 
 ## 3. LP/SDP selection of operators per confinement
 
-The existing infra ([CLAUDE.md §LP/SDP duals — first-class infra](https://github.com/litlfred/qou/blob/main/CLAUDE.md))
+The existing infra ([AGENTS.md §LP/SDP duals — first-class infra](https://github.com/litlfred/qou/blob/main/AGENTS.md))
 mandates that every operator-selection compute emit primal +
 dual variables. The Gram-inverse basis on $H_3(q)$ supplies the
 **dual basis** for knot operators:
@@ -105,9 +105,9 @@ the witness data already records:
 
 | witness file | content |
 |--------------|---------|
-| [`gram-matrix-dual.witness.json`](../../folio-assistant/computations/gram-matrix-dual.witness.json) | Full $G^{-1}$ at $q_0$, plus dual coordinates of $\{e^+, d, \gamma, e^-\}$ |
-| [`knot-operator-table.witness.json`](../../folio-assistant/computations/knot-operator-table.witness.json) | NF decomposition $b_i \cdot \beta(T_{m,n}) \cdot b_j$ for $T_{m,n} \in \{T_{1,0}, T_{2,1}, T_{2,2}, T_{2,3}, T_{2,5}\}$ |
-| [`confinement-operator-selection.witness.json`](../../folio-assistant/computations/confinement-operator-selection.witness.json) | Per-particle (proton, neutron) candidate operator NF + crossing energy + demand profile |
+| [`gram-matrix-dual.witness.json`](../../computations/gram-matrix-dual.witness.json) | Full $G^{-1}$ at $q_0$, plus dual coordinates of $\{e^+, d, \gamma, e^-\}$ |
+| [`knot-operator-table.witness.json`](../../computations/knot-operator-table.witness.json) | NF decomposition $b_i \cdot \beta(T_{m,n}) \cdot b_j$ for $T_{m,n} \in \{T_{1,0}, T_{2,1}, T_{2,2}, T_{2,3}, T_{2,5}\}$ |
+| [`confinement-operator-selection.witness.json`](../../computations/confinement-operator-selection.witness.json) | Per-particle (proton, neutron) candidate operator NF + crossing energy + demand profile |
 
 The observed **channel-supply fingerprint** (count of NF basis
 pairs producing each output channel) shows monotone opening as
@@ -255,6 +255,6 @@ Six action items in **dependency order** with parallelizable phases:
 - Existing block (to refine):
   [`content/quantum-observable-universe/braids-and-knots/weak-spectral-completeness.md`](../../content/quantum-observable-universe/braids-and-knots/weak-spectral-completeness.md)
 - Witness inputs:
-  [`gram-matrix-dual.witness.json`](../../folio-assistant/computations/gram-matrix-dual.witness.json),
-  [`knot-operator-table.witness.json`](../../folio-assistant/computations/knot-operator-table.witness.json),
-  [`confinement-operator-selection.witness.json`](../../folio-assistant/computations/confinement-operator-selection.witness.json)
+  [`gram-matrix-dual.witness.json`](../../computations/gram-matrix-dual.witness.json),
+  [`knot-operator-table.witness.json`](../../computations/knot-operator-table.witness.json),
+  [`confinement-operator-selection.witness.json`](../../computations/confinement-operator-selection.witness.json)

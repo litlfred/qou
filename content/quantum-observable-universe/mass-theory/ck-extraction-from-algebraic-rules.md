@@ -1,8 +1,6 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **$c_k$ extraction from four algebraic reduction rules on the typed-$\mathbf{B}_3$ word.**
 
-The $Q_\beta$ categorical precision ladder
+The $\mathfrak{Q}_\beta$ categorical precision ladder
 ([`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder))
 displays per-rung coefficients
 
@@ -43,7 +41,7 @@ agreement equality by `rfl` against the inline coefficients used in
 The synthesis theorem `ckFromReduction_matches_ladder` records the
 joint statement under all four class instances.
 
-## Why this reframing matters
+## Significance of the reframing
 
 The earlier framing (alternating Kashiwara $\times$ Jones at even/odd $k$)
 captured the *empirical pattern* but underspecified the *derivation*.

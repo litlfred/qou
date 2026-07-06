@@ -18,9 +18,9 @@ export default proposition({
   computation: {
     engine: "python",
     script:
-      "folio-assistant/computations/m_p_m_e_li2q.py",
+      "computations/m_p_m_e_li2q.py",
     witness:
-      "folio-assistant/computations/m-p-m-e-li2q.witness.json",
+      "computations/m-p-m-e-li2q.witness.json",
     status: "verified",
   },
   tags: [

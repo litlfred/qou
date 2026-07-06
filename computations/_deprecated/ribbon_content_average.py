@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# DEPRECATION-CANDIDATE: witness was moved to folio-assistant/computations/_deprecated/ in PR #554 (dead-exploratory).
+# DEPRECATION-CANDIDATE: witness was moved to computations/_deprecated/ in PR #554 (dead-exploratory).
 # This .py script is kept in place because it is still imported by live code; revisit when the live importer is itself retired or rewired.
 """
 Compute ⟨c(λ)⟩_β for the deuteron atomic braid at H_6(q).

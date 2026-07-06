@@ -43,7 +43,7 @@ def test_full_witness_validates():
         "commitSha": "abc123",
         "scriptCommitSha": "def456",
         "scriptHash": "a1b2c3d4e5f6",
-        "scriptFile": "folio-assistant/computations/hyperbolic_volumes.py",
+        "scriptFile": "computations/hyperbolic_volumes.py",
         "name": "hyperbolic-volumes",
         "description": "Vol(4_1) at 50 dps via Clausen-function identity.",
         "contentBlock": "prop:vol-4-1-mostow",

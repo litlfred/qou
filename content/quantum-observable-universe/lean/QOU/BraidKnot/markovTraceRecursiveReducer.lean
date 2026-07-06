@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.markovTraceRecursiveReducer — symbolic Markov-trace reducer
 

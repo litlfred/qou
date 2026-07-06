@@ -1,23 +1,23 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-03T20:38:57.405173+00:00",
-  "commitSha": "285c228058a7a2f8d5f7568086af4aabc5ddcd0b",
+  "computedAt": "2026-06-22T13:18:18.341701+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "deuteron_recovers_perblock_bond",
-      "computed": 0.0360837727855825,
+      "computed": 0.03608383027520412,
       "expected": 0.0,
       "passed": true,
       "tolerance": 0.05
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 20,
   "computation": "binding-perblock-bond-type-a3",
   "scriptFile": "binding_perblock_bond_type_a3.py",
   "scriptHash": "3b057c3fad0d",
-  "scriptCommitSha": "856057ac0f7fd3a381dfbb5a3ccf2abdfee4130c",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,53 +27,50 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "data": {
-    "q_0": "1.1099785827513808",
-    "E0_MeV": 4.185981363294476,
+    "q_0": "1.1099785955573347",
+    "E0_MeV": 4.185980827582892,
     "results": {
       "bonds_MeV": {
-        "pn": 2.3048369413072867,
-        "pp": 2.2860879768761904,
-        "nn": 2.2497282947635777
+        "pn": 2.304837069196756,
+        "pp": 2.2860880888652635,
+        "nn": 2.2497284245307685
       },
       "isotopes": {
         "D": {
           "n_pp": 0,
           "n_pn": 1,
           "n_nn": 0,
-          "B_pred_MeV": 2.3048369413072867,
+          "B_pred_MeV": 2.304837069196756,
           "AME_MeV": 2.2245662,
-          "err": 0.0360837727855825
+          "err": 0.03608383027520412
         },
         "T": {
           "n_pp": 0,
           "n_pn": 2,
           "n_nn": 1,
-          "B_pred_MeV": 6.859402177378151,
+          "B_pred_MeV": 6.85940256292428,
           "AME_MeV": 8.4818,
-          "err": -0.19127989608595453
+          "err": -0.1912798506302577
         },
         "3He": {
           "n_pp": 1,
           "n_pn": 2,
           "n_nn": 0,
-          "B_pred_MeV": 6.895761859490763,
+          "B_pred_MeV": 6.895762227258775,
           "AME_MeV": 7.718,
-          "err": -0.10653513092889823
+          "err": -0.10653508327821004
         },
         "4He": {
           "n_pp": 1,
           "n_pn": 4,
           "n_nn": 1,
-          "B_pred_MeV": 13.755164036868914,
+          "B_pred_MeV": 13.755164790183056,
           "AME_MeV": 28.29566,
-          "err": -0.5138772505441147
+          "err": -0.5138772239211576
         }
       }
     },

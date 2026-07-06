@@ -69,8 +69,8 @@ For each resolved child watcher:
 3. The watcher runs continuously per §3-§5.
 
 When multiple watchers run in parallel, each gets its OWN Monitor
-task, its OWN `todos/<name>-queue.json` and
-`todos/<name>-ledger.md`, and resume prompts surface one watcher
+task, its OWN `.beans/<name>-queue.json` and
+`.beans/<name>-ledger.md`, and resume prompts surface one watcher
 at a time (not bundled).
 
 See the dispatcher skill for the full anti-pattern list — in

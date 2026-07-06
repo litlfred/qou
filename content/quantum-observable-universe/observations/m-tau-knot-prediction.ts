@@ -21,7 +21,7 @@ export default remark({
     {
       kind: "status",
       date: "2026-06-03",
-      body: "**Primary content moved to [`docs/audits/2026-06-03-m-tau-knot-prediction-falsification.md`](../../../docs/audits/2026-06-03-m-tau-knot-prediction-falsification.md).** Per CLAUDE.md canonical-no-negative-result-in-paper discipline (PR #1758): the simple-knot-prediction empirical search is a falsified ansatz, not a substrate derivation; the audit doc carries the full search table + 5 queued extensions. This block remains in the paper as an interpretive forward-reference.",
+      body: "**Primary content moved to [`docs/audits/2026-06-03-m-tau-knot-prediction-falsification.md`](../../../docs/audits/2026-06-03-m-tau-knot-prediction-falsification.md).** Per AGENTS.md canonical-no-negative-result-in-paper discipline (PR #1758): the simple-knot-prediction empirical search is a falsified ansatz, not a substrate derivation; the audit doc carries the full search table + 5 queued extensions. This block remains in the paper as an interpretive forward-reference.",
       see: "https://github.com/litlfred/qou/pull/1758",
     },
   ],

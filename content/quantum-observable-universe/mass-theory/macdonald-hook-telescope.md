@@ -40,7 +40,7 @@ The Lean module axiomatises the principal-specialisation identity as
 the class `StanleyHookTelescope`; the proposition's theorem
 `macdonald_hook_telescope` carries this class as an explicit
 `[Instance]` hypothesis and is discharged by `telescope_holds`.
-This follows CLAUDE.md §3b-cond (conditional-on-class). The
+This follows AGENTS.md §3b-cond (conditional-on-class). The
 `wenzlNormalizationOfShape` value is kept `opaque` so the class
 field captures substantive (non-tautological) mathematical content.
 
@@ -48,14 +48,14 @@ The substantive content of the identity is Stanley's
 principal-specialisation result (Stanley 1999 Cor. 7.12.5;
 Macdonald 1995 I.3 ex. 1). It is backed empirically by symbolic
 verification at $n = 0, \ldots, 8$ in
-`y_lambda_macdonald_telescope.py` (every partition closes via
-`sympy.cancel` to 0) and 191-sample numerical cross-check to
+the formal derivation (every partition closes via
+`sympy.cancel` to 0) and 191-sample canonical cross-check to
 $\approx 10^{-51}$ against the MPFR Hoefsmit-matrix witness. A
 future Mathlib lift of Schur / principal-specialisation
 infrastructure would supply a constructive instance, with the
 downstream API unchanged.
 
-## Why this is the right shortcut
+## Justification of the shortcut
 
 The classical principal-specialisation identity (Stanley,
 *Enumerative Combinatorics II* Cor. 7.12.5; Macdonald, *Symmetric
@@ -87,7 +87,7 @@ extends analytically.
 ## Comparison with the previous "open structural project"
 
 The earlier hand-derivation in
-[`y-lambda-clean-closed-forms.md`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/y-lambda-clean-closed-forms.md)
+[`y-lambda-clean-closed-forms.md`](https://github.com/litlfred/qou/blob/main/computations/y-lambda-clean-closed-forms.md)
 recorded the $n = 2$ collapse $Z_2 = (1 - X)^2 / (1 - Q)^2$,
 flagged the $n \geq 3$ unsimplified sympy expressions as
 "degree $\sim 25$ polynomials", and listed the general identity as
@@ -113,10 +113,10 @@ $n \geq 5$ and the "degree $\sim 80$ in $q^{1/2}$" denominator
 explosion at $n = 12$. The compute path is now O($p(n) \cdot n$)
 work for the entire table.
 
-## Numerical verification
+## canonical structural verification
 
-The companion script
-[`y_lambda_macdonald_telescope.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/y_lambda_macdonald_telescope.py)
+The companion formalism
+the canonical formalism
 
 1. Verifies $Z_n = ((1-X)/(1-Q))^n$ symbolically for $n = 0, \ldots, 6$
    (the difference reduces to $0$ via `sympy.cancel`).
@@ -130,9 +130,9 @@ The companion script
    (`y-lambda-mpfr-witness.json`): max
    $|y_\lambda^{\text{telescope}} - y_\lambda^{\text{MPFR}}|
      \approx 2.5 \times 10^{-51}$ across 191 samples (limited only
-   by the witness's 50-dps precision).
+   by the witness's exact representation precision).
 
-Output: [`y-lambda-macdonald-telescope.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/y-lambda-macdonald-telescope.witness.json).
+Output: [`y-lambda-macdonald-telescope.witness.json`](https://github.com/litlfred/qou/blob/main/computations/y-lambda-macdonald-telescope.witness.json).
 
 ## Crystal-basis interpretation
 
@@ -145,7 +145,7 @@ the multiplicity $f_\lambda$ is the dimension of the corresponding
 KLR canonical-basis component. The telescope is thus the
 **decategorified Kashiwara crystal count** for the regular
 representation — exactly the symmetric-crystal shortcut flagged in
-the project's authoring guidance (CLAUDE.md §7b, item 2: "decategorifying
+the project's authoring guidance (AGENTS.md §7b, item 2: "decategorifying
 KLR canonical basis to KL basis of $S_n$"). The previous
 hand-rolled sympy approach reinvented this combinatorial count
 without naming the crystal structure; naming it removes the
@@ -161,3 +161,5 @@ Frobenius identity — currently a single `sorry` with a citation to
 [stanley1999] Cor. 7.12.5, plus an empirical witness link to
 `y-lambda-macdonald-telescope.witness.json` recording symbolic
 verification through $n = 8$.
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

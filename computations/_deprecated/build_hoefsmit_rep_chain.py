@@ -138,7 +138,7 @@ def build() -> DerivationChain:
             "Categorical action axiom: the braid generator σ_i acts on "
             "V^{⊗n} via the R-matrix; the Hoefsmit matrix is the projection "
             "of that action onto the λ-isotypic block.  Hecke energy axiom "
-            "fixes the eigenvalues +q and −q^{-1} of σ_i (CLAUDE.md §7a)."
+            "fixes the eigenvalues +q and −q^{-1} of σ_i (AGENTS.md §7a)."
         ),
     ))
 

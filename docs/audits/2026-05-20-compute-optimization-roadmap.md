@@ -179,7 +179,7 @@ results doc to close the remaining gap to the 60 s gate.
 If you pick this up: **start with Tier 1.A (Rust LaurentQ reduce loop)**. The user has explicitly approved the scope ("sympy Rational arithmetic inside LaurentQ.__mul__ -> rust? that would be large but worth it"). The implementation pattern is:
 
 1. Add `LaurentRationalQ` (or extend `LaurentPolyQ` to support `BigRational` coefs) in `tools/hecke-engine/src/`.
-2. Port `reduce_laurent_rules` from `folio-assistant/computations/hecke/hecke_laurent_fast.py:119` to Rust 1:1.
+2. Port `reduce_laurent_rules` from `computations/hecke/hecke_laurent_fast.py:119` to Rust 1:1.
 3. PyO3 binding `incremental_reduced_element_rust(word, max_iter)` returning a serialised LaurentHeckeElement.
 4. Python bridge in `markov_peel_rust_bridge.py` to compose with the existing `pyhecke_native.tr_m_word_lq`.
 5. Cross-check at MPFR-50dps on ⁴He → ⁷Li (must match `laurent_q_trace.tr_M_atomic_lq.evaluate_mpf` bit-for-bit).

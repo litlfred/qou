@@ -130,14 +130,14 @@ succeeding):
  correct calibration constant for translating Markov-trace
  tower terms (depth-1 + depth-2) into MeV mass corrections.
  The naïve calibration $\alpha_{\rm bind} = 8 \cdot m_e \cdot G$
- used in [`v4-mass-pipeline.witness.json`](../../folio-assistant/computations/v4-mass-pipeline.witness.json)
+ used in [`v4-mass-pipeline.witness.json`](../../computations/v4-mass-pipeline.witness.json)
  evaluates to zero correction; the correct scale is
  $\alpha_{\rm bind}^{\rm EW} = m_e \cdot \mathcal{N}_{\rm sym}(q_0)
    \approx 108.9$ MeV — a categorical EW-sector binding scale.
 3. **SHELL-7-SCALE reweighting** informed: the q-deformed
  Wedderburn-block weight
  $\tilde w_\lambda = \dim_q^2/[n]_q!$ used in
- [`shell7-bb-stratum.witness.json`](../../folio-assistant/computations/shell7-bb-stratum.witness.json)
+ [`shell7-bb-stratum.witness.json`](../../computations/shell7-bb-stratum.witness.json)
  blew up because it has no $q_0 > 1$ damping. $\mathcal{N}_{\rm sym}(q)$ likely
  provides the correct $q_0$-bounded q-deformed weight (its closed
  form is bounded above by the simple $\dim_q^2$ growth — needs the
@@ -164,7 +164,7 @@ succeeding):
 ### Empirical anchors recorded (NOT ansatz-fits)
 
 Two zero-free-parameter q-arithmetic forms have been **probed numerically**
-([`n-sym-goldstone-phase-space-probe.witness.json`](../../folio-assistant/computations/n-sym-goldstone-phase-space-probe.witness.json)):
+([`n-sym-goldstone-phase-space-probe.witness.json`](../../computations/n-sym-goldstone-phase-space-probe.witness.json)):
 
 | Structural form | Match to $\mathcal{N}_{\rm sym}(q_0)$ |
 |-----------------|-----:|
@@ -181,7 +181,7 @@ categorical derivation pipeline above, not further empirical sweeping.
 ### Falsified candidates
 
 Candidate (a) Gram determinant of the EW Wedderburn block: probed in 9
-forms ([`n-sym-gram-determinant-probe.witness.json`](../../folio-assistant/computations/n-sym-gram-determinant-probe.witness.json));
+forms ([`n-sym-gram-determinant-probe.witness.json`](../../computations/n-sym-gram-determinant-probe.witness.json));
 best fit (3$\times$3 Cartan with diag $[2k]_q$) is 6.16% off — falsified.
 
 ### Required next step (single-target)
@@ -201,6 +201,6 @@ remains *open* — the numerical value is pinned, the closed form is not.
 
 ### Witness
 
-[`n-sym-numerical-anchor.witness.json`](../../folio-assistant/computations/n-sym-numerical-anchor.witness.json)
+[`n-sym-numerical-anchor.witness.json`](../../computations/n-sym-numerical-anchor.witness.json)
 — numerical pinning of $\mathcal{N}_{\rm sym}(q_0) = 213.111807\ldots$,
 all tested ansatze, and the PSLQ negative result.

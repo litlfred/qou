@@ -3,7 +3,7 @@
 > Per user directive 2026-06-03: *"scan for banners in content.
 > I generally don't want them."* Comprehensive scan across all
 > `content/quantum-observable-universe/**/*.md` (2571 files) for
-> banner / status-leak / inline-PR-ref / emoji patterns per CLAUDE.md
+> banner / status-leak / inline-PR-ref / emoji patterns per AGENTS.md
 > §4d (authorNotes vs. scholarly prose).
 
 ## Headline
@@ -79,7 +79,7 @@ are this single pattern.
 - `mass-endomorphism/mass-endomorphism-conjecture.md` — **4** banner instances
   - `audit_url_inline` × 4: lines 255, 281, 291, 292
 
-## Per-pattern action map (per CLAUDE.md §4d)
+## Per-pattern action map (per AGENTS.md §4d)
 
 - **`caveat_banner`** (2 instances) — Migrate to `authorNotes: [{kind:'caveat', body}]` OR keep in prose if scholarly mathematical caveat
 - **`author_note_banner`** (1 instances) — Migrate to `authorNotes: [{kind:'note', body}]`
@@ -87,7 +87,7 @@ are this single pattern.
 - **`pr_ref_inline`** (23 instances) — Drop the inline PR ref; cite the audit-doc link instead, OR move to authorNotes.see field
 - **`audit_url_inline`** (322 instances) — Replace branch-specific GitHub URL with `docs/audits/...` relative path (the audit doc has merged to main)
 - **`status_section_h2`** (72 instances) — JUDGMENT: legit if the block has a Status section per content convention; status-leak if it duplicates authorNotes content
-- **`checkmark_emoji`** (21 instances) — Replace with textual label (`proved`/`derived`/etc.) per CLAUDE.md emoji rule
+- **`checkmark_emoji`** (21 instances) — Replace with textual label (`proved`/`derived`/etc.) per AGENTS.md emoji rule
 
 ## Methodology
 
@@ -119,7 +119,7 @@ patterns = [
 - `checkmark_emoji` includes the deliberate mass-binding-algorithms
   status tables (mba-chain-map.md = 16 of the 21 instances) — those use
   emoji as a status-table legend and are arguably a separate convention.
-  Per CLAUDE.md "no emoji" the right fix is textual labels.
+  Per AGENTS.md "no emoji" the right fix is textual labels.
 
 ## Suggested migration order (highest-leverage first)
 
@@ -132,7 +132,7 @@ patterns = [
    `authorNotes.see`. ~1 hour.
 3. **Explicit banners (6 instances)**: 3 `errata_banner` + 2
    `caveat_banner` + 1 `author_note_banner`. Migrate to `authorNotes`
-   per CLAUDE.md §4d. ~30 min.
+   per AGENTS.md §4d. ~30 min.
 4. **`checkmark_emoji` (21 instances, 3 files)** — the 3 mba-* files
    carry tables with status emoji; replace with textual labels.
    ~30 min.
@@ -146,12 +146,12 @@ reviewable.
 ## What this PR does NOT do
 
 This is **triage only**. No `.md` content edits. The actual migrations
-land on follow-up branches (per CLAUDE.md "Combine related work" —
+land on follow-up branches (per AGENTS.md "Combine related work" —
 each pattern is its own theme).
 
 ## Cross-refs
 
-- [CLAUDE.md §4d](../../CLAUDE.md) — Author notes vs. scholarly prose convention
+- [AGENTS.md §4d](../../AGENTS.md) — Author notes vs. scholarly prose convention
 - [`local/one-voice-audit`](../../.claude/skills/local/one-voice-audit.md) — the skill that handles Category H "Banner-in-prose"
 - [`docs/audits/2026-06-03-proof-axis-629-fails-stale-diagnostics.md`](2026-06-03-proof-axis-629-fails-stale-diagnostics.md) — companion audit (proof axis)
-- [PR #1098](https://github.com/litlfred/qou/pull/1098) — the original `authorNotes` schema landing (per CLAUDE.md §4d implementation tracking note)
+- [PR #1098](https://github.com/litlfred/qou/pull/1098) — the original `authorNotes` schema landing (per AGENTS.md §4d implementation tracking note)

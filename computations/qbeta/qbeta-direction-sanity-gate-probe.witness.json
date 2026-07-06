@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-05T17:59:28.920839+00:00",
-  "commitSha": "60d3fefe54c08b2fe4a8f97b21a38eaccb7048cc",
+  "computedAt": "2026-06-22T13:27:34.009462+00:00",
+  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
   "assertions": [
     {
       "name": "direction_sanity_gate_verified",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 107,
+  "durationMs": 90,
   "computation": "qbeta-direction-sanity-gate-probe",
   "scriptFile": "qbeta_direction_sanity_gate_probe.py",
-  "scriptHash": "19ea919ddb79",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "26c85c4e2e49",
+  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -28,28 +28,27 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
   "description": "Verifies the §4(d) direction-sanity gate from prop:q-beta-direction-sanity-gate. Computes the target magnitude at q_0 (Q_β^CODATA / [Q_A · cos(α_eff)] ≈ 0.998), demonstrates ACCEPT on a synthetic-passing candidate (|F(q_0)| = 1.001) and REJECT on a PR #1850-style failing candidate (z < 1 multiplier against target > 1).",
   "contentBlock": "prop:q-beta-direction-sanity-gate",
   "data": {
-    "q0": "1.1099785827513808075916690956107688798744991218736",
-    "target_magnitude": "0.9999270636904257117936762825097363064536268891461934907867413552",
+    "q0": "1.1099785955573347198997632204832250266562084087802",
+    "target_magnitude": "0.99992709402793437680661057498726639192850227348070758495849442801",
     "target_close_to_unity": "0.998 — ladder corrections ~0.18% of bare Q_A·cos",
     "direction_threshold": "10.0",
     "gate_passing_candidate": {
       "form": "F(q_0) = 1.001 (close to target ~0.998)",
       "magnitude": "1.001",
-      "rel_distance_from_target": "0.0010730145712972380638234965860566194413828053321026759030060488464",
+      "rel_distance_from_target": "0.0010729841990216639218963043908365245860548376086056771371906284283",
       "gate_accepted": true
     },
     "gate_failing_candidate": {
       "form": "F(q_0) = 1/z(q_0)^5 (PR #1850-style wild-scaling pattern)",
-      "z_q0": "0.4993203341836944524134426802576663037519481640415319452761702967",
-      "magnitude": "32.218382817637610967149949517484306646204809909733174284006508271",
-      "rel_distance_from_target": "31.220732878985583106137432197439455298880300488853738466275653526",
+      "z_q0": "0.49932033403356127176896638627573714016117579789989506748278081502",
+      "magnitude": "32.218382866073934914423058171857305710812242788477791303767303578",
+      "rel_distance_from_target": "31.220731949857405151130893494317308639894346395420208738203394346",
       "gate_rejected": true
     }
   }

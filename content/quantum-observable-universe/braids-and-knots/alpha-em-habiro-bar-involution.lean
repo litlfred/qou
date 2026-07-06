@@ -1,3 +1,6 @@
+import Mathlib.Algebra.Ring.Basic
+import Mathlib.Tactic.Ring
+
 /-!
 # α_EM Habiro element: bar-involution fixed point + special values
 
@@ -8,7 +11,7 @@ The α_EM next-order factor is the **Habiro element**
 
 This file formalises the **fibre-level** structural facts about `H`
 that hold over a *generic commutative ring* — i.e. with `q` a formal
-variable and **no reality or archimedean assumption** (per CLAUDE.md
+variable and **no reality or archimedean assumption** (per AGENTS.md
 "Im(q) at fibre vs observable level", the Habiro element lives at the
 fibre/categorical level where the operative symmetry is the bar
 involution `q ↦ q⁻¹`, not a reality constraint).
@@ -29,8 +32,6 @@ subject to `q · qi = 1` keeps everything inside `CommRing` + a single
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -/
 
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Tactic.Ring
 
 namespace QOU.BraidKnot
 

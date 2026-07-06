@@ -9,7 +9,7 @@ The binding energy = Φ₁(unbonded) - Φ₁(unlock + bond + relock)
 using 3-channel vertex volumes on full atom tower.
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 frobenius-bond-all.py
 """
 

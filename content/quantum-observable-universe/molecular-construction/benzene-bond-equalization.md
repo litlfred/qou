@@ -9,8 +9,8 @@ that all six C--C bonds are identical. Each bond has:*
 
 *This is the braid-theoretic derivation of the experimentally
 observed bond order 1.5 in benzene, with equal bond lengths
-of $:val[bond_len_benzene_ang]{precision=3, witness=folio-assistant/computations/molecular-experimental-refs.witness.json}\;\text{\AA}$ (between the C--C single bond length
-$:val[bond_len_cc_single_ang]{precision=3, witness=folio-assistant/computations/molecular-experimental-refs.witness.json}\;\text{\AA}$ and double bond length $:val[bond_len_cc_double_ang]{precision=3, witness=folio-assistant/computations/molecular-experimental-refs.witness.json}\;\text{\AA}$).*
+of $:val[bond_len_benzene_ang]{precision=3, witness=computations/molecular-experimental-refs.witness.json}\;\text{\AA}$ (between the C--C single bond length
+$:val[bond_len_cc_single_ang]{precision=3, witness=computations/molecular-experimental-refs.witness.json}\;\text{\AA}$ and double bond length $:val[bond_len_cc_double_ang]{precision=3, witness=computations/molecular-experimental-refs.witness.json}\;\text{\AA}$).*
 
 *The construction proves that bond equalization is not an axiom
 of molecular orbital theory but a **theorem** of the LP dual:

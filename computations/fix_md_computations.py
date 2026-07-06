@@ -4,23 +4,23 @@ content_dir = "/home/litlfred/space_cats/qou/content/quantum-observable-universe
 
 missing_computations = {
     "ilp-covalent-bond.ts": [
-        "folio-assistant/computations/molecular-experimental-refs.witness.json"
+        "computations/molecular-experimental-refs.witness.json"
     ],
     "co-triple-bond-energy.ts": [
-        "folio-assistant/computations/co-bond-order-active-set.witness.json"
+        "computations/co-bond-order-active-set.witness.json"
     ],
     "co2-molecular-braid.ts": [
-        "folio-assistant/computations/molecular-experimental-refs.witness.json"
+        "computations/molecular-experimental-refs.witness.json"
     ],
     "co2-lp-dual-binding.ts": [
-        "folio-assistant/computations/co-bond-order-active-set.witness.json",
-        "folio-assistant/computations/molecular-experimental-refs.witness.json"
+        "computations/co-bond-order-active-set.witness.json",
+        "computations/molecular-experimental-refs.witness.json"
     ],
     "benzene-threading-emergence.ts": [
-        "folio-assistant/computations/molecular-experimental-refs.witness.json"
+        "computations/molecular-experimental-refs.witness.json"
     ],
     "benzene-bond-equalization.ts": [
-        "folio-assistant/computations/molecular-experimental-refs.witness.json"
+        "computations/molecular-experimental-refs.witness.json"
     ]
 }
 

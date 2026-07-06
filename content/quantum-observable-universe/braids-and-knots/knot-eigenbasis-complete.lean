@@ -1,6 +1,7 @@
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 import Mathlib.Data.List.Basic
+import Mathlib.Tactic
 
 
 /-!
@@ -37,10 +38,9 @@ namespace QOU.Braiding
 
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
-def q_param : R_q := LaurentPolynomial.T 1
-def q_inv_param : R_q := LaurentPolynomial.T (-1)
+noncomputable def q_param : R_q := LaurentPolynomial.T 1
+noncomputable def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-! ## Hecke Algebra H_n(q) -/
 
@@ -59,7 +59,12 @@ structure HeckeAlgebra where
   q : R_q
   /-- q ≠ 0. -/
   q_ne_zero : q ≠ 0
-  /-- q is not a root of unity: q^k ≠ 1 for all k ≥ 1. -/
+  /-- Inverse parameter q⁻¹ (the ring `R_q = ℤ[q, q⁻¹]` has no native
+      `Inv`, so the inverse is carried as data). -/
+  q_inv : R_q
+  /-- Defining relation `q · q⁻¹ = 1`. -/
+  q_mul_inv : q * q_inv = 1
+  -- q is not a root of unity: q^k ≠ 1 for all k ≥ 1.
   -- q_not_root_of_unity : ∀ (k : ℕ), k ≥ 1 → q ^ k ≠ 1  -- (archimedean; not meaningful over R_q)
   /-- Multiplication. -/
   mul : carrier → carrier → carrier
@@ -81,7 +86,7 @@ structure HeckeAlgebra where
   /-- Quadratic relation: T_i² − (q − q⁻¹)·T_i − 1 = 0.
       Equivalently (T_i − q)(T_i + q⁻¹) = 0: eigenvalues are q and −q⁻¹. -/
   quadratic : ∀ (i : Fin (n - 1)),
-    sub (sub (mul (T i) (T i)) (smul (q - q⁻¹) (T i))) one = zero
+    sub (sub (mul (T i) (T i)) (smul (q - q_inv) (T i))) one = zero
 
 /-! ## Young Diagrams (Partition Labels) -/
 
@@ -102,38 +107,42 @@ structure BoundedPartition where
   sorted : rows.Pairwise (· ≥ ·)
 
 /-- The spin label j = (λ₁ − λ₂)/2 for a two-part partition.
-    This is the spin of the irreducible SU_q(2)-module V_λ. -/
-noncomputable def BoundedPartition.spin (bp : BoundedPartition) : R_q :=
+    This is the spin of the irreducible SU_q(2)-module V_λ — a
+    q-independent half-integer, hence valued in `ℚ`. -/
+def BoundedPartition.spin (bp : BoundedPartition) : ℚ :=
   match bp.rows with
   | [] => 0
-  | [a] => (a : R_q) / 2
-  | a :: b :: _ => ((a : R_q) - (b : R_q)) / 2
+  | [a] => (a : ℚ) / 2
+  | a :: b :: _ => ((a : ℚ) - (b : ℚ)) / 2
 
 /-- Spin labels are non-negative for single-part partitions. -/
 theorem spin_nonneg_single (a : ℕ) :
-    (0 : R_q) ≤ (a : R_q) / 2 := by positivity
+    (0 : ℚ) ≤ (a : ℚ) / 2 := by positivity
 
 /-- The maximum spin of a partition of n is n/2 (the fully symmetric case). -/
 theorem max_spin_bound (bp : BoundedPartition) (h : bp.maxParts = 2) :
-    bp.spin ≤ (bp.n : R_q) / 2 := by
+    bp.spin ≤ (bp.n : ℚ) / 2 := by
   unfold BoundedPartition.spin
   match hr : bp.rows with
   | [] =>
     simp [hr]
     exact div_nonneg (Nat.cast_nonneg bp.n) (by norm_num)
   | [a] =>
-    simp [hr]
-    have : a = bp.n := by
+    have ha : a = bp.n := by
       have := bp.size_eq; simp [hr] at this; exact this
-    linarith [this ▸ (le_refl (a : R_q))]
+    subst ha
+    simp [hr]
   | a :: b :: rest =>
     simp [hr]
     -- (a - b)/2 ≤ n/2 since a + b + rest.sum = n and b, rest.sum ≥ 0
     have hsum : (a : ℕ) + b + rest.sum = bp.n := by
       have := bp.size_eq; simp [hr, List.sum_cons] at this; linarith
-    -- In ℝ: a - b ≤ a ≤ a + b + rest.sum = n
-    have hab : (a : R_q) - (b : R_q) ≤ (bp.n : R_q) := by
-      push_cast [← hsum]; linarith [Nat.cast_nonneg b, Nat.cast_nonneg rest.sum]
+    -- In ℚ: a - b ≤ a ≤ a + b + rest.sum = n
+    have hsumQ : (a : ℚ) + (b : ℚ) + (rest.sum : ℚ) = (bp.n : ℚ) := by
+      exact_mod_cast hsum
+    have hb : (0 : ℚ) ≤ (b : ℚ) := Nat.cast_nonneg b
+    have hrest : (0 : ℚ) ≤ (rest.sum : ℚ) := Nat.cast_nonneg rest.sum
+    have hab : (a : ℚ) - (b : ℚ) ≤ (bp.n : ℚ) := by linarith
     linarith
 
 /-! ## Part 1: q-Schur–Weyl Decomposition -/
@@ -232,7 +241,7 @@ structure MarkovTrace (H : HeckeAlgebra) where
   tr_one_ne_zero : tr H.one ≠ 0
   /-- **Markov property** (Markov II / stabilisation):
       tr(x · T_{n-1}) = z · tr(x). -/
-  markov_stab : H.n ≥ 2 → ∀ (x : H.carrier),
+  markov_stab : ∀ (hn : H.n ≥ 2) (x : H.carrier),
     let last : Fin (H.n - 1) := ⟨H.n - 2, by omega⟩
     tr (H.mul x (H.T last)) = z * tr x
 

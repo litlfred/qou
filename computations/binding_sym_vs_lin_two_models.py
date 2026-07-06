@@ -39,8 +39,8 @@ HERE = pathlib.Path(__file__).resolve().parent
 def main() -> int:
     t0 = time.monotonic()
     from q_parameter import Q
+    from codata_constants import M_E_MEV as m_e  # registry (no inline literal)
     q0 = mp.mpf(str(Q() if callable(Q) else Q))
-    m_e = mp.mpf("0.51099895000")
 
     d = json.loads((HERE / "binding-canonical.witness.json").read_text())
     res = {r["atom"]: r for r in d.get("witness", d).get("data", {}).get("results", [])}

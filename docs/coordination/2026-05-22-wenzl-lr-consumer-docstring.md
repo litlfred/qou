@@ -5,7 +5,7 @@
 **Goal:** discharge canonical-watcher queue item
 `wenzl-lr-consumer-docstring-fix-2026-05-22` — align the docstring
 Status section + witness `description` of
-[`rho_k_full_via_wenzl_lr.py`](../../folio-assistant/computations/rho_k_full_via_wenzl_lr.py)
+[`rho_k_full_via_wenzl_lr.py`](../../computations/rho_k_full_via_wenzl_lr.py)
 with the file-top consumer-bug banner (lines 7-26).
 
 **Scope:** documentation-only. No numerical behaviour change.

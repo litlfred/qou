@@ -22,7 +22,7 @@ $$
 \right).
 $$
 
-## Why $\mathrm{st}$ does not annihilate
+## Non-annihilation of $\mathrm{st}$
 
 A naive reading would assert $\mathrm{st}(\varepsilon) = 0$ and
 conclude the force vanishes. The conjecture is precisely that this
@@ -64,7 +64,7 @@ $\mathrm{Geom}_\varepsilon(N_\unicode{9737} \cdot \unicode{9737})
 = N_\unicode{9737} \cdot \varepsilon / \hbar^{2}_{q}$
 (disjoint-union additivity of $\mathrm{Vol}$, linking_weight = 1
 on disjoint unknots, per the
-[Hoefsmit-additivity probe](../../../folio-assistant/computations/probes/casimir-hoefsmit-additivity-probe.witness.json)).
+[Hoefsmit-additivity probe](../../../computations/probes/casimir-hoefsmit-additivity-probe.witness.json)).
 The $\hbar^{2}_{q}$ in the denominator cancels the same factor in
 $N_\unicode{9737}$'s formula above, leaving a finite real energy:
 
@@ -130,7 +130,7 @@ the Lean formulation in `CasimirEpsilonVacuum.lean` takes
 `[VacuumEpsilon]` and the plate-mode-count class as explicit
 instance hypotheses.
 
-## What is open (the actual conjecture)
+## Open conjecture
 
 The conjecture has three sub-problems, in decreasing tractability:
 
@@ -210,7 +210,7 @@ killed — analogous to the "Round-8" partial results in
 where shell-spacing ratios match but the absolute scale is
 transported.
 
-## Why this matters
+## Significance
 
 Three reasons:
 

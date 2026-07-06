@@ -1,6 +1,9 @@
 import { proposition } from "../../schema/builders";
 
 export default proposition({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+  ],
   label: "prop:full-pole-structure-mass-trace",
   title:
     "Habiro completion of the mass trace",
@@ -18,12 +21,12 @@ export default proposition({
   ],
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/markov/markov_substrate_realizer.py",
+    script: "computations/markov/markov_substrate_realizer.py",
     witness: [
-      "folio-assistant/computations/habiro/habiro-interpolate-cross-validation.witness.json",
-      "folio-assistant/computations/markov/markov-substrate-realization.witness.json",
-      "folio-assistant/computations/d-from-scratch.witness.json",
-      "folio-assistant/computations/proton-mass-codata-50dps.witness.json",
+      "computations/habiro/habiro-interpolate-cross-validation.witness.json",
+      "computations/markov/markov-substrate-realization.witness.json",
+      "computations/d-from-scratch.witness.json",
+      "computations/proton-mass-codata-50dps.witness.json",
     ],
     status: "experimental",
   },

@@ -4,6 +4,19 @@
 **Branch:** `claude/m-avg-subgoal-1-operator-combiner-2026-06-02` (PR #1698)
 **Trigger:** Owner pushback on Phase B: "thought we determined this knot-dependent and should not be uniform: Production mass-table uses uniform Vol(𝓑₃)/ℏ² for ALL atoms".
 
+> **🛑 Currency banner (owner ruling 2026-06-24 — added 2026-07-02, PR #3200).**
+> This audit predates the muon-anchor ruling: **absolute** nucleon/atom masses
+> now route through the [`canonical_mass.py`](../../computations/canonical_mass.py)
+> facade ($m_p \approx 938.27$ MeV, CODATA), and every vol-density form
+> (`vol_density_borromean`, `mass_vol_density`, λ_A) is **deprecated for
+> absolute mass** — see
+> [`canonical-mass-formula-guardrail.md`](../canonical-mass-formula-guardrail.md)
+> and the [λ_A refutation audit](2026-06-24-lambda-a-refutation-artifact-audit.md).
+> The uniform-vs-per-knot **finding below stands**, re-scoped: it is the
+> **binding-side** per-knot density question (`vol_density_per_block` is valid
+> where the scale cancels), the 9b ρ/Δ_λ leg. Consumer-lane migration of the
+> 87 uniform scripts: PR #3199 (bean `4f2d`).
+
 ## TL;DR
 
 **Production compute is overwhelmingly uniform-Vol(𝓑₃).**
@@ -41,8 +54,8 @@ VolDensity(K, q) = Vol(K) / ℏ_q² · linking_weight(K, q)
 
 The CANONICAL function already exists:
 
-- [`_li_2_q_util.py::vol_density_per_block(vol_K, tr_M_K, q)`](../../folio-assistant/computations/_li_2_q_util.py) — takes `vol_K` explicitly, returns the paper-faithful VolDensity(K, q) × Σ_λ factor
-- [`vol_density_per_block_wiring.py`](../../folio-assistant/computations/vol_density_per_block_wiring.py) — the only consumer; documented in PR #1080+ as the alternative to `vol_density_borromean(q)` (which the function's own docstring labels a "SHORTCUT — global-scalar collapse, NOT the paper's per-block sum")
+- [`_li_2_q_util.py::vol_density_per_block(vol_K, tr_M_K, q)`](../../computations/_li_2_q_util.py) — takes `vol_K` explicitly, returns the paper-faithful VolDensity(K, q) × Σ_λ factor
+- [`vol_density_per_block_wiring.py`](../../computations/vol_density_per_block_wiring.py) — the only consumer; documented in PR #1080+ as the alternative to `vol_density_borromean(q)` (which the function's own docstring labels a "SHORTCUT — global-scalar collapse, NOT the paper's per-block sum")
 
 ## Acknowledged in production but unfixed
 
@@ -112,7 +125,7 @@ The owner-active Subgoal-1 path is exactly this: per-atom Vol(β_K) + per-atom t
 - Phase B: [`docs/audits/2026-06-02-subgoal-1-phase-b-per-atom-trM-comparison.md`](2026-06-02-subgoal-1-phase-b-per-atom-trM-comparison.md)
 - Scope: [`docs/coordination/2026-06-02-m-avg-subgoal-1-operator-combiner-scope.md`](../coordination/2026-06-02-m-avg-subgoal-1-operator-combiner-scope.md)
 - Canonical reference (purged λ_scale, refuted routes): [`docs/lambda-scale-absorbed-into-vol-density.md`](../lambda-scale-absorbed-into-vol-density.md)
-- Per-block canonical function: [`folio-assistant/computations/_li_2_q_util.py::vol_density_per_block`](../../folio-assistant/computations/_li_2_q_util.py)
-- Atom braid words: [`folio-assistant/computations/mass_at_3A_proper.py::atom_braid_word_3A`](../../folio-assistant/computations/mass_at_3A_proper.py)
-- Existing per-knot vol witness (proton only): [`folio-assistant/computations/knot-volumes.witness.json`](../../folio-assistant/computations/knot-volumes.witness.json)
-- Per-binding-link vol witness (A=2,3 already): [`folio-assistant/computations/binding-link-volumes.witness.json`](../../folio-assistant/computations/binding-link-volumes.witness.json)
+- Per-block canonical function: [`computations/_li_2_q_util.py::vol_density_per_block`](../../computations/_li_2_q_util.py)
+- Atom braid words: [`computations/mass_at_3A_proper.py::atom_braid_word_3A`](../../computations/mass_at_3A_proper.py)
+- Existing per-knot vol witness (proton only): [`computations/knot-volumes.witness.json`](../../computations/knot-volumes.witness.json)
+- Per-binding-link vol witness (A=2,3 already): [`computations/binding-link-volumes.witness.json`](../../computations/binding-link-volumes.witness.json)

@@ -53,14 +53,15 @@ from q_mpmath import set_q, qint, qfac
 set_q(Q0_FLOAT)
 
 import pyhecke_native
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 
 
 # ATOMS with (Z, N, n_strands, B_AME)
 ATOMS = [
-    ("D",   1, 1, 6,  mp.mpf("2.22456607")),
-    ("T",   1, 2, 9,  mp.mpf("8.481798")),
-    ("3He", 2, 1, 9,  mp.mpf("7.7180428")),
-    ("4He", 2, 2, 12, mp.mpf("28.295674")),
+    ("D",   1, 1, 6,  AME_B_DEUTERON_MEV_VALIDATION),
+    ("T",   1, 2, 9,  AME_B_TRITIUM_MEV_VALIDATION),
+    ("3He", 2, 1, 9,  AME_B_HE3_MEV_VALIDATION),
+    ("4He", 2, 2, 12, AME_B_HE4_MEV_VALIDATION),
 ]
 
 

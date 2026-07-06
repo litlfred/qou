@@ -48,13 +48,13 @@ def eulerCharacteristic (g : ℕ) : ℤ := 2 - 2 * (g : ℤ)
 -- Ref: [edge1978] Edge, "Bring's curve," J. London Math. Soc. (2) 18 (1978)
 theorem brings_euler_char : eulerCharacteristic 4 = -6 := by
   unfold eulerCharacteristic
-  norm_num
+  decide
 
 /-- The Euler characteristic of any genus-g surface equals 2 − 2g. -/
 -- Ref: [edge1978] Edge, "Bring's curve," J. London Math. Soc. (2) 18 (1978)
-theorem euler_char_formula (Σ : BringsSurface) :
-    eulerCharacteristic Σ.genus = -6 := by
-  rw [Σ.genus_eq]
+theorem euler_char_formula (S : BringsSurface) :
+    eulerCharacteristic S.genus = -6 := by
+  rw [S.genus_eq]
   exact brings_euler_char
 
 /-- The canonical instance of Bring's surface. -/
@@ -77,9 +77,8 @@ theorem hurwitz_bound_genus_4 : 84 * (4 - 1) = (252 : ℕ) := by norm_num
 
 /-- The dimension of the curve: ambient_dim − num_equations − 1 = 1. -/
 -- Ref: [edge1978] Edge, "Bring's curve," J. London Math. Soc. (2) 18 (1978)
-theorem brings_is_curve (Σ : BringsSurface) :
-    Σ.ambient_dim - Σ.num_equations - 1 = 1 := by
-  rw [Σ.ambient_dim_eq, Σ.num_equations_eq]
-  norm_num
+theorem brings_is_curve (S : BringsSurface) :
+    S.ambient_dim - S.num_equations - 1 = 1 := by
+  rw [S.ambient_dim_eq, S.num_equations_eq]
 
 end QOU.Brings

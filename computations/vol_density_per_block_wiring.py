@@ -21,7 +21,7 @@ braid → H₃ → partitions of 3 (NOT H₄ / partitions of 4).  The paper's
 per-block factor for 𝓑₃ is the canonical H₃ Markov trace
 tr_M(β_K) = Σ_λ y_λ χ_λ, loaded from the chi-cache witnesses.
 
-## The discipline gate (CLAUDE.md production-vs-exploratory)
+## The discipline gate (AGENTS.md production-vs-exploratory)
 
 Does `m_e · [Vol/ℏ_q²] · tr_M(K)` reproduce production's
 `m_e · [Vol/ℏ_q²] · linking_weight` AT ALL ORDERS with NO fudge?
@@ -63,6 +63,7 @@ from _li_2_q_util import (  # noqa: E402
     linking_weight_family_a,
 )
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV  # noqa: E402
+from experimental_constants import m_n_derived_3input  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -97,7 +98,7 @@ def main() -> int:
     q0 = mp.mpf(Q_50_DIGIT_STR)
     me = mp.mpf(repr(M_E_MEV))
     mpc = mp.mpf(repr(M_P_MEV))
-    mnc = mp.mpf(repr(M_N_MEV))
+    mnc = mp.mpf(repr(m_n_derived_3input))
 
     gl = geom_leading(VOL_B3, q0)            # Vol(𝓑₃)/ℏ_q²
     lw = linking_weight_family_a(q0)         # global H₄ scalar ≈ 2.53

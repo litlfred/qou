@@ -10,8 +10,8 @@ export default corollary({
   uses: ["rem:commutative-crossing-energy"],
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/probes/commutative_chirality_vanishes_probe.py",
-    witness: "folio-assistant/computations/probes/commutative-chirality-vanishes-probe.witness.json",
+    script: "computations/probes/commutative_chirality_vanishes_probe.py",
+    witness: "computations/probes/commutative-chirality-vanishes-probe.witness.json",
     status: "verified",
   },
 });

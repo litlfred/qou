@@ -94,7 +94,7 @@ adds:
 For `recursive-atom-knot-atlas` (4926 lines of .md, 12+ tables),
 that's ~36 new files + 12 cross-refs + 12 manifest entries — large
 enough that the "mechanical sweep" exception applies (single bulk
-commit > 50 files acceptable for uniform changes per CLAUDE.md
+commit > 50 files acceptable for uniform changes per AGENTS.md
 §"Exception: batch audit-job runs").
 
 **Recommendation.** Execute on a dedicated follow-up branch
@@ -211,7 +211,7 @@ survey doc.
 5. **Cluster 3 R1 re-audit** → run after cluster 1 lands; only the
    residual goes to its own discharge cycle.
 
-This survey-first sequence follows the CLAUDE.md guidance to
+This survey-first sequence follows the AGENTS.md guidance to
 combine related work and minimise their creation: each follow-up
 PR is dedicated to one cluster, so review burden per PR stays
 low. Survey doc lands first so the asks are durable across

@@ -13,7 +13,7 @@ import Mathlib.Analysis.Calculus.Deriv.Mul
 [`conj:casimir-epsilon-vacuum`](../../../quantum-observable-universe/appendix-surreals/casimir-epsilon-vacuum.md):
 *Casimir force as $\mathrm{st}$-image of $\varepsilon$-vacuum density gradient*.
 
-This is a **conjecture**. Per CLAUDE.md §3b-cond, the conjecture is
+This is a **conjecture**. Per AGENTS.md §3b-cond, the conjecture is
 axiomatised as a Lean `class` whose single field carries the open
 content (the surreal coefficient of the plate-constrained unknot
 density). A downstream consumer that takes both `VacuumEpsilon` and

@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:archimedean-stpart",
   title:
     "Archimedean QOU is the standard-part of surreal QOU",
-  lean: { ref: "qou:QOU.AppendixSurreals.ArchimedeanStpart", validation: "stub" },
+  lean: { ref: "qou:QOU.AppendixSurreals.ArchimedeanIsStandardPart", validation: "stub" },
   tags: [
     "tier:P",
     "surreal-numbers",

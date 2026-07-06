@@ -3,7 +3,7 @@
 **Date:** 2026-06-08
 **Branch:** `claude/vigilant-fermat-SROph`
 **Status:** formalize-first structural probe. No fit, no numerical search yet —
-this doc *prunes the hypothesis class* before any search, per CLAUDE.md
+this doc *prunes the hypothesis class* before any search, per AGENTS.md
 §"Formalize-first probe discipline".
 
 ## Question
@@ -147,7 +147,7 @@ real-analysis escape:
    truncation ladder** (`jet-tower-convergence.md`, `hecke-convergence-bound.md`;
    `Q_β = Q_base · Π(1 + c_k u^k)`, `u = b·ℏ_q²`). These are the production
    towers whose convergence the surreal grading would track. **Caveat
-   (CLAUDE.md):** the `c_k` ladder is a *truncation order*, not a wire/un-wire
+   (AGENTS.md):** the `c_k` ladder is a *truncation order*, not a wire/un-wire
    gate — surreals would **track** its convergence, never **derive** `c_k`.
 
 **Formal statement to settle the probe (Lean target, conditional `class`):**
@@ -159,7 +159,7 @@ real-analysis escape:
 > a non-degenerate (perpetual) page ⇒ an `ε^ω` class ⇒ surreal-necessary.
 
 Lean is currently unbuildable in-sandbox (elan release server firewalled — the
-`release.lean-lang.org` parse error in the session log); per CLAUDE.md
+`release.lean-lang.org` parse error in the session log); per AGENTS.md
 formalize-first this probe is discharged as a **rigorous symbolic argument
 first**, Lean `class` stub to follow when the cache-restore path
 (`lake-cache/qou-*`) is available.

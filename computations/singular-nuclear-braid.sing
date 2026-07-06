@@ -1,5 +1,5 @@
 // Nuclear braid Gröbner reduction in Singular (letterplace).
-// Run: Singular folio-assistant/computations/singular-nuclear-braid.sing
+// Run: Singular computations/singular-nuclear-braid.sing
 //
 // Manual letterplace multiplication (no lpMult dependency).
 // Variable convention: var((pos-1)*ngens + gen) = x(gen) at position pos

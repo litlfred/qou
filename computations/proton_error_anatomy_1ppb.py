@@ -177,7 +177,7 @@ def main():
             "Same structural layer as Q_beta N=3 (b^3*hbar^6 order). "
             "A candidate (2/5)*J_{3_1}*b^3*hbar^6 matches to 0.02% "
             "but is NOT DERIVED — flagged as numerical fit per "
-            "CLAUDE.md anti-pattern (no fit-based ansatz)."
+            "AGENTS.md anti-pattern (no fit-based ansatz)."
         ),
     })
 

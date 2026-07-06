@@ -3,7 +3,7 @@
 *Let $R$ be the categorical coefficient ring with $q \in R$ generic
 (not a root of unity in $R$ — note $q = 1$ IS excluded), and let
 $H_n(q)$ be the Iwahori-Hecke algebra over $R$ in the standard
-generators ([Hecke-Skein convention](https://github.com/litlfred/qou/blob/main/CLAUDE.md) §7a).
+generators ([Hecke-Skein convention](https://github.com/litlfred/qou/blob/main/AGENTS.md) §7a).
 Let $\{b_i\}$ be a Frobenius-non-degenerate basis (e.g. the
 Gröbner-Shirshov NF basis $\{\gamma, \sigma_0, \sigma_1, L_+, L_-,
 e^-\}$ for $H_3(q)$ on three strands). Then for any confinement
@@ -20,9 +20,9 @@ $$
 
 *where $S = (s_{i,(m, m')})$ is the supply matrix encoding which
 NF channel each torus knot $T_{m,m'}$ produces (computed by
-[`knot-operator-table.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/knot-operator-table.witness.json)
+[`knot-operator-table.witness.json`](https://github.com/litlfred/qou/blob/main/computations/knot-operator-table.witness.json)
 for $H_3(q)$ matter operators and
-[`knot-operator-table-h2.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/knot-operator-table-h2.witness.json)
+[`knot-operator-table-h2.witness.json`](https://github.com/litlfred/qou/blob/main/computations/knot-operator-table-h2.witness.json)
 for $H_2(q)$ EW even-twist links), $t_{(m, m')}$ is the crossing
 energy ($q$-rational expression in $R$), and $G^{-1}$ is the
 Frobenius co-Casimir Gram-inverse.*
@@ -62,7 +62,7 @@ $$
   \end{aligned}
 $$
 
-is feasible iff the bound state $T$ is **physically realisable** —
+is feasible iff the bound state $T$ is **realisable** —
 i.e. iff the demand profile lies in the positive cone spanned by
 the supply profiles. The Frobenius pairing
 $\langle \cdot, \cdot \rangle_F$ on $H_n(q)$ provides the natural
@@ -92,14 +92,14 @@ operator-selection equivalents.*
 
 ### Existing instances (from witness data)
 
-Per [`confinement-operator-selection.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/confinement-operator-selection.witness.json):
+Per [`confinement-operator-selection.witness.json`](https://github.com/litlfred/qou/blob/main/computations/confinement-operator-selection.witness.json):
 
 | Confinement | Active operator (LP-optimal) | NF demand | Crossing energy $t_{(m,m')}$ |
 |-------------|------------------------------|-----------|-----------------------------:|
 | Proton | $L_+ = \sigma_0\sigma_1$ | 0 | $\approx 0.152$ at $q_0$ |
 | Neutron | $L_+ = \sigma_0\sigma_1$ | 0 | $\approx 0.106$ at $q_0$ |
 
-Per [`knot-operator-table-h2.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/knot-operator-table-h2.witness.json):
+Per [`knot-operator-table-h2.witness.json`](https://github.com/litlfred/qou/blob/main/computations/knot-operator-table-h2.witness.json):
 
 - **EW carriers** $T(2,4), T(2,6), T(2,8)$ in $H_2(q)$ select the
   Wedderburn-(sym, alt) projector pair as the LP-active set,
@@ -110,7 +110,7 @@ Per [`knot-operator-table-h2.witness.json`](https://github.com/litlfred/qou/blob
 The EW-sector instance of this proposition draws its supply
 matrix from the Wedderburn-block-decomposed pair amplitude
 $|V_i V_j|_{\rm Wedderburn}$ defined in
-[`wedderburn_pair_volumes.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/wedderburn_pair_volumes.py)
+the canonical formalism
 (integrated from  commit `06305f30c`):
 
 $$
@@ -156,9 +156,9 @@ the activation rule becomes a **derived consequence** of
 LP/SDP duality, not an empirical fit per atomic mass.*
 
 **Witness inputs.**
-[`gram-matrix-dual.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/gram-matrix-dual.witness.json),
-[`knot-operator-table.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/knot-operator-table.witness.json),
-[`knot-operator-table-h2.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/knot-operator-table-h2.witness.json),
-[`confinement-operator-selection.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/confinement-operator-selection.witness.json).
+[`gram-matrix-dual.witness.json`](https://github.com/litlfred/qou/blob/main/computations/gram-matrix-dual.witness.json),
+[`knot-operator-table.witness.json`](https://github.com/litlfred/qou/blob/main/computations/knot-operator-table.witness.json),
+[`knot-operator-table-h2.witness.json`](https://github.com/litlfred/qou/blob/main/computations/knot-operator-table-h2.witness.json),
+[`confinement-operator-selection.witness.json`](https://github.com/litlfred/qou/blob/main/computations/confinement-operator-selection.witness.json).
 
 **Audit doc.** [`docs/audits/-path-alpha-bring-refinement.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-path-alpha-bring-refinement.md).

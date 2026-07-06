@@ -7,8 +7,8 @@
 > unchanged; only the name of the symbol was updated.
 
 **Branch.** `claude/hoefsmit-2x2-fix` (PR #546 round-3).
-**Witness.** [`y_lambda_equivalence_proof.witness.json`](../../folio-assistant/computations/y_lambda_equivalence_proof.witness.json)
-**Script.** [`y_lambda_equivalence_proof.py`](../../folio-assistant/computations/y_lambda_equivalence_proof.py)
+**Witness.** [`y_lambda_equivalence_proof.witness.json`](../../computations/y_lambda_equivalence_proof.witness.json)
+**Script.** [`y_lambda_equivalence_proof.py`](../../computations/y_lambda_equivalence_proof.py)
 
 ## Setup — base ring
 
@@ -146,10 +146,10 @@ exist in this codebase:
   $\mathrm{tr}_M(\beta) = \sum_\lambda y_\lambda(q) \cdot \chi^\lambda(\beta)$
   using closed-form $y_\lambda$ (either path A or B above) and
   symbolic seminormal Hoefsmit $\chi^\lambda$
-  ([`hoefsmit_symbolic.chi_lambda_symbolic`](../../folio-assistant/computations/hoefsmit_symbolic.py)).
+  ([`hoefsmit_symbolic.chi_lambda_symbolic`](../../computations/hoefsmit_symbolic.py)).
 
 - **Markov-peel recursive ascent.**
-  [`markov_peel.tr_M_element`](../../folio-assistant/computations/markov/markov_peel.py)
+  [`markov_peel.tr_M_element`](../../computations/markov/markov_peel.py)
   recursively reduces $\beta$ via $\mathrm{tr}_M(x \sigma_n) = z \mathrm{tr}_M(x)$
   until reaching the constant term $\mathrm{tr}_M(1) = 1$.
 
@@ -195,9 +195,9 @@ canonical basis of reduced braid words $\sigma_{i_1} \cdots \sigma_{i_k}$).
 
 ## Files
 
-- [`folio-assistant/computations/markov/markov_weights_symbolic.py`](../../folio-assistant/computations/markov/markov_weights_symbolic.py)
+- [`computations/markov/markov_weights_symbolic.py`](../../computations/markov/markov_weights_symbolic.py)
   — both paths.
-- [`folio-assistant/computations/y_lambda_equivalence_proof.py`](../../folio-assistant/computations/y_lambda_equivalence_proof.py)
+- [`computations/y_lambda_equivalence_proof.py`](../../computations/y_lambda_equivalence_proof.py)
   — equivalence verification script.
-- [`folio-assistant/computations/y_lambda_equivalence_proof.witness.json`](../../folio-assistant/computations/y_lambda_equivalence_proof.witness.json)
+- [`computations/y_lambda_equivalence_proof.witness.json`](../../computations/y_lambda_equivalence_proof.witness.json)
   — sympy-symbolic identity witness.

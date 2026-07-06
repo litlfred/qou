@@ -7,6 +7,6 @@ export default lemma({
   },
   title: "Cartan reduction recovers the Seiberg--Witten differential",
   tags: ["weight-space", "cartan", "seiberg-witten-differential", "exceptional-divisor"],
-  uses: ["rem:weight-space-decomposition", "rem:coral-bundles"],
+  uses: ["rem:weight-space-decomposition", "rem:color-bundles"],
   proofs: ["prf:mi-sw-abelianisation-cartan"],
 });

@@ -27,6 +27,15 @@ $G_q$ is the gravitational constant
 Planck-normalised units (varies with $q$ in the table; equal to
 $G_{\mathrm{Planck}} = 1$ exactly when $q = q_0$).
 
+**Observational caveat.**  The dispersive columns ($\hbar_q$, $c_q$)
+are substrate-level quantities. Any residue of the $q$-dispersion
+surviving to archimedean photon propagation is tightly bounded by
+gamma-ray-burst time-of-flight limits \cite{abdo2009}, surveyed in
+the Planck-scale-phenomenology literature \cite{amelinocamelia2013};
+the required suppression is recorded in
+[the DSR remark](#rem:dsr-planck-scale-phenomenology) and
+[the suppression-scale conjecture](#conj:dispersion-suppression-scale).
+
 **Use.**  When a downstream block needs to cite a regime value, it
 should reference this table (`[regime-table](#rem:regime-table)`)
 rather than re-tabulate.  When a new derived quantity is added, it

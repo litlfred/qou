@@ -1,16 +1,16 @@
-/-!
-# QOU.ParticleInteractions.SpectatorNormalization — placeholder stub
+import Mathlib.Tactic
 
-**Placeholder canonical** for content block referenced by
+/-!
+# QOU.ParticleInteractions.SpectatorNormalization
+
+**Canonical declaration** for content block referenced by
 `qou:QOU.ParticleInteractions.SpectatorNormalization`.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI resolves to a real declaration in the `qou` Lake
-package. The body is `sorry` carrying the manuscript citation per
-CLAUDE.md §1.
+This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
 -/
 
 namespace QOU.ParticleInteractions
+
 
 
 /-- Abstract context for the `SpectatorNormalization` claim —
@@ -27,10 +27,6 @@ class SpectatorNormalizationContext where
   spectator_p : ℕ
   /-- Number of spectator neutrons (always `N − 1` for `β⁻` decay). -/
   spectator_n : ℕ
-  /-- Manuscript sub-claim — spectator counts:
-      `converting = 1`, `spectator_p = Z`, `spectator_n = N − 1`. -/
-  claim_spectator_counts :
-    converting = 1 ∧ spectator_p = Z ∧ spectator_n = N - 1
 
 /-- **Content statement** (from manuscript):
 
@@ -40,12 +36,15 @@ decay ${}^A_Z X \to {}^A_{Z+1} Y + e^- + \bar\nu$, only one
 neutron converts to a proton; the remaining $Z$ protons and
 $N - 1$ neutrons are spectators.
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types and translating
-    the manuscript claim above. -/
+    The Lean encoding **names** the conditional conjecture as a `Prop`
+    (pattern C of the vacuity-fix playbook): the context class is the
+    carrier of the spectator-count data, and `SpectatorNormalization`
+    is the proposition that the spectator decomposition holds for that
+    data.  It is *not* asserted (no `theorem … := ⟨ctx.claim_*⟩`
+    self-assuming projection); an instance discharging it is the open
+    conditional claim. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/spectator-normalization.ts
-theorem SpectatorNormalization [ctx : SpectatorNormalizationContext] :
-    ctx.converting = 1 ∧ ctx.spectator_p = ctx.Z ∧ ctx.spectator_n = ctx.N - 1 :=
-  ctx.claim_spectator_counts
+def SpectatorNormalization (ctx : SpectatorNormalizationContext) : Prop :=
+    ctx.converting = 1 ∧ ctx.spectator_p = ctx.Z ∧ ctx.spectator_n = ctx.N - 1
 
 end QOU.ParticleInteractions

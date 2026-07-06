@@ -1,5 +1,6 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Algebra.BigOperators.Fin
 import Mathlib.Algebra.Module.Basic
 
 

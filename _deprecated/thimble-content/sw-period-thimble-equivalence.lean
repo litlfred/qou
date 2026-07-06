@@ -16,7 +16,7 @@ LaTeX label: `prop:sw-period-thimble-equivalence`
 Conditional on five hypotheses (A2.1–A2.5; see `.md` sibling).
 A2.4 (real-axis = thimble sum) is open; under its conjectural
 hypothesis, downstream usage (e.g. `conj:baryon-period-ratio`)
-remains a `conjecture` per CLAUDE.md §3b.
+remains a `conjecture` per AGENTS.md §3b.
 
 ## References
 
@@ -26,7 +26,7 @@ remains a `conjecture` per CLAUDE.md §3b.
 
 ## Witness
 
-- [sw-period-thimble-equivalence.witness.json](../../../folio-assistant/computations/sw-period-thimble-equivalence.witness.json)
+- [sw-period-thimble-equivalence.witness.json](../../../computations/sw-period-thimble-equivalence.witness.json)
   — per-degree PLT vs GB/jet cross-validation for `k ∈ {0,1,2,3}`.
   A2.4 (`k = 1`, proton word) is verified empirically only.
 -/
@@ -47,7 +47,7 @@ inductive VerticalDegree
 
 /-- **The five hypotheses A2.1–A2.5 needed to derive PL-correctness.**
     Bundled as a Lean class so downstream theorems can take it as an
-    `[instance]` hypothesis (per CLAUDE.md §3b conjecture-class
+    `[instance]` hypothesis (per AGENTS.md §3b conjecture-class
     pattern).
 
     The current `True` payloads are deliberate placeholders: each of

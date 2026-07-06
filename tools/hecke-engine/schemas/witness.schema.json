@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://folio.litlfred.org/schemas/hecke-engine/witness.schema.json",
   "title": "Computation witness",
-  "description": "Output of folio-assistant/computations/witness_base.py::WitnessBuilder. Generalises the ComputationWitness interface in folio-assistant/schemas/types.ts.",
+  "description": "Output of computations/witness_base.py::WitnessBuilder. Generalises the ComputationWitness interface in folio-assistant/schemas/types.ts.",
   "type": "object",
   "required": ["engine", "computedAt", "assertions", "allPassed"],
   "properties": {

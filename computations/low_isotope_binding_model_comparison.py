@@ -47,7 +47,7 @@ def main() -> int:
     depth = _load("binding-depth-stratified.witness.json").get("per_atom", {})  # dict by atom
 
     # B_magic for ⁴He: 2·m_e·A·8G  (G = Catalan)
-    m_e = mp.mpf("0.51099895000")
+    from codata_constants import M_E_MEV as m_e  # registry (no inline literal)
     G = mp.catalan
     B_magic_4He = 2 * m_e * 4 * (8 * G)
 

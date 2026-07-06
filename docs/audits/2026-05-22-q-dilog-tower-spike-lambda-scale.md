@@ -28,7 +28,7 @@ Two PSLQ sweeps:
 
 ### Sweep A — 23-element basis, coefficient ≤ 10²⁰, dps 60
 
-Script: [`q_dilog_tower_spike_lambda_scale.py`](../../folio-assistant/computations/q_dilog_tower_spike_lambda_scale.py)
+Script: [`q_dilog_tower_spike_lambda_scale.py`](../../computations/q_dilog_tower_spike_lambda_scale.py)
 
 Basis:
 - `Li_2^q(z)` and `Φ_q(z)` evaluated at 8 substrate-natural arguments:
@@ -100,5 +100,5 @@ need to either (a) propose a non-substrate-natural basis or
 
 ## Witness
 
-[`folio-assistant/computations/q-dilog-tower-spike-lambda-scale.witness.json`](../../folio-assistant/computations/q-dilog-tower-spike-lambda-scale.witness.json)
+[`computations/q-dilog-tower-spike-lambda-scale.witness.json`](../../computations/q-dilog-tower-spike-lambda-scale.witness.json)
 records sweep A's basis names, parameters, and per-target results.

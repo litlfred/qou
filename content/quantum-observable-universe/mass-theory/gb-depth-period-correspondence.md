@@ -35,7 +35,7 @@ $\mathcal{P}_n / \mathcal{P}_{n-1}$.*
 | 2 | $\mathrm{Li}_2^q$ | hyperbolic 3-mfld volumes (Bloch–Wigner regulator) |
 | $n$ | $\mathrm{Li}_n^q$ | weight-$n$ multiple polylogs (Goncharov motivic) |
 
-### Why this is the right structural statement
+### Structural content of the statement
 
 The classical Mikusiński operational calculus on $C[0,\infty)$ takes
 $f * g \mapsto \tilde f \cdot \tilde g$ under Laplace, turning ODEs
@@ -85,7 +85,7 @@ the figure-8 knot, embedded in Bring's surface, has hyperbolic
 volume $2\,\mathrm{Cl}_2(\pi/3) = 2\,\mathrm{Im}\,\mathrm{Li}_2(e^{i\pi/3})$.
 One $\mathrm{Li}_2$ factor $\Rightarrow$ iterated-integral depth $2$,
 matching the Bloch-regulator class of the archimedean image. See the
-explicit numerical witness in
+explicit canonical witness in
 [`conj:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eight-depth-2-witness).
 
 ### Discharge targets

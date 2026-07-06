@@ -43,7 +43,7 @@ RESIDUE_A = mp.mpf("1.804e-15")
 # Proton-pinned q_0 (post 2026-05-28 re-pin)
 Q_PROTON_50 = mp.mpf("1.10997858275138080759166909561")
 # Muon-pinned q_0 for cross-anchor (Step 5b)
-Q_MUON_50 = mp.mpf("1.10997868769193107842185960213")
+Q_MUON_50 = mp.mpf("1.1099785955541805752815940796095093779932822799587")
 
 
 def h_q(q: mp.mpf) -> mp.mpf:

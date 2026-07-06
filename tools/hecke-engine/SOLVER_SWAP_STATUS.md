@@ -77,8 +77,8 @@ emits certificates that quantify the PSD gap (α\*) but do not
 recover the c\_w solution for unknown `T_w`. The mass-table-ppb
 witness pipeline still produces `B_pred` for known-`T_w` atoms via
 the existing symbolic Markov-trace path
-([`y_lambda_mpfr_witness.py`](../../folio-assistant/computations/y_lambda_mpfr_witness.py),
-[`q_mn_recursive_memoized.py`](../../folio-assistant/computations/q_mn_recursive_memoized.py)).
+([`y_lambda_mpfr_witness.py`](../../computations/y_lambda_mpfr_witness.py),
+[`q_mn_recursive_memoized.py`](../../computations/q_mn_recursive_memoized.py)).
 
 ## Smoke-test recipe
 

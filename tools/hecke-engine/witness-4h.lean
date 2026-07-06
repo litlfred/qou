@@ -16,9 +16,9 @@ noncomputable def F_Pauli_4h_denom : ℕ := 8
 noncomputable def observable_4h : LaurentPolynomial ℤ :=
   LaurentPolynomial.T -1 - 4 • LaurentPolynomial.T 1 - 3 • LaurentPolynomial.T 2 + 8 • LaurentPolynomial.T 3 + 13 • LaurentPolynomial.T 4 - 9 • LaurentPolynomial.T 5 - 28 • LaurentPolynomial.T 6 + 6 • LaurentPolynomial.T 7 + 34 • LaurentPolynomial.T 8 + 4 • LaurentPolynomial.T 9 - 27 • LaurentPolynomial.T 10 - 17 • LaurentPolynomial.T 11 + 17 • LaurentPolynomial.T 12 + 19 • LaurentPolynomial.T 13 - 5 • LaurentPolynomial.T 14 - 7 • LaurentPolynomial.T 15 - 14 • LaurentPolynomial.T 17 + 2 • LaurentPolynomial.T 18 + 24 • LaurentPolynomial.T 19 - 4 • LaurentPolynomial.T 20 - 11 • LaurentPolynomial.T 21 - 3 • LaurentPolynomial.T 22 + LaurentPolynomial.T 23 + 4 • LaurentPolynomial.T 24 - LaurentPolynomial.T 25
 
-/-- Coral content: Σ_{ℓ≥2} net(ℓ) — the degree ≥ 1 interaction content.
+/-- Color content: Σ_{ℓ≥2} net(ℓ) — the degree ≥ 1 interaction content.
     This is the "M" in the CMB analogy — the multi-body correlations
     that the transfer matrix cannot capture per-generator. -/
-noncomputable def coral_4h : LaurentPolynomial ℤ :=
+noncomputable def color_4h : LaurentPolynomial ℤ :=
   2 • LaurentPolynomial.T 2 - 5 • LaurentPolynomial.T 4 - 5 • LaurentPolynomial.T 5 + 10 • LaurentPolynomial.T 6 + 18 • LaurentPolynomial.T 7 - 11 • LaurentPolynomial.T 8 - 27 • LaurentPolynomial.T 9 - 2 • LaurentPolynomial.T 10 + 35 • LaurentPolynomial.T 11 + 25 • LaurentPolynomial.T 12 - 39 • LaurentPolynomial.T 13 - 31 • LaurentPolynomial.T 14 + 22 • LaurentPolynomial.T 15 + 32 • LaurentPolynomial.T 16 + LaurentPolynomial.T 17 - 22 • LaurentPolynomial.T 18 - 6 • LaurentPolynomial.T 19 - 3 • LaurentPolynomial.T 20 + 18 • LaurentPolynomial.T 21 + 3 • LaurentPolynomial.T 22 - 10 • LaurentPolynomial.T 23 + 5 • LaurentPolynomial.T 24 - 4 • LaurentPolynomial.T 25 + 4 • LaurentPolynomial.T 26 - 3 • LaurentPolynomial.T 27 + LaurentPolynomial.T 28
 

@@ -8,9 +8,9 @@ export default conjecture({
   computation: {
     engine: "mpmath",
     script:
-      "folio-assistant/computations/bring_trilog_zeta5_depth_3.py",
+      "computations/bring_trilog_zeta5_depth_3.py",
     witness:
-      "folio-assistant/computations/bring-trilog-zeta5-depth-3.witness.json",
+      "computations/bring-trilog-zeta5-depth-3.witness.json",
     status: "verified",
   },
   uses: ["conj:two-filtration-bridge"],

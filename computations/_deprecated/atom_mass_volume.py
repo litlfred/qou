@@ -15,7 +15,7 @@ actual knot/link invariant (hyperbolic volume) rather than
 algebraic proxies (L¹, E_hecke, tr_M).
 
 Usage:
-    python3 folio-assistant/computations/atom_mass_volume.py
+    python3 computations/atom_mass_volume.py
 """
 
 import math

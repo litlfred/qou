@@ -10,7 +10,7 @@ entries in Z[q^±½].  Beta decay is the difference:
 This script computes all matrices symbolically (in q) and numerically
 (at q = 1.110), then works the tritium example.
 
-Output: folio-assistant/computations/beta-decay-matrix.witness.json
+Output: computations/beta-decay-matrix.witness.json
 """
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir

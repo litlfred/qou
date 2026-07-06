@@ -1,4 +1,5 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
 
 
 /-!
@@ -20,6 +21,7 @@ noncomputable def qInt (q : ℝ) (n : ℕ) : ℝ :=
 theorem qInt3_approx :
     abs (qInt 1.10998 3 - 3.044) < 0.001 := by
   unfold qInt
+  rw [abs_lt]
   norm_num
 
 /-- β₂ = -2[3]_q arises from the baryon quantum number:
@@ -32,6 +34,7 @@ noncomputable def beta2 (q : ℝ) : ℝ := -2 * qInt q 3
 theorem beta2_approx :
     abs (beta2 1.10998 - (-6.087)) < 0.01 := by
   unfold beta2 qInt
+  rw [abs_lt]
   norm_num
 
 end QOU.BaryonWeight

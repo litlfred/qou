@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Tactic
+
 /-!
 # Wigner-2 coefficient from self-conjugate trace pairing
 
@@ -17,7 +21,7 @@ The proof has two parts:
 namespace QOU.BraidKnot
 
 /-- Seminormal diagonal entry: a_ρ = h/(1 - q^{-2ρ}).
-    Archimedean specialisation per CLAUDE.md §7c — q : ℝ throughout
+    Archimedean specialisation per AGENTS.md §7c — q : ℝ throughout
     this block (sibling .md narrative carries the §7c banner). -/
 noncomputable def a_rho (q : ℝ) (h : ℝ) (ρ : ℤ) : ℝ :=
   h / (1 - q ^ (-2 * ρ))
@@ -30,9 +34,20 @@ theorem paired_sum_identity (q : ℝ) (hq_pos : 0 < q) (hq_ne_one : q ≠ 1)
     (h1 : q ^ (-2 * ρ) ≠ 1) (h2 : q ^ (2 * ρ) ≠ 1) :
     a_rho q (q - q⁻¹) ρ + a_rho q (q - q⁻¹) (-ρ) = q - q⁻¹ := by
   unfold a_rho
-  have hd1 : (1 : ℝ) - q ^ (-2 * ρ) ≠ 0 := sub_ne_zero.mpr (Ne.symm h1)
-  have hd2 : (1 : ℝ) - q ^ (2 * ρ) ≠ 0 := sub_ne_zero.mpr (Ne.symm h2)
-  rw [show (-2 : ℤ) * (-ρ) = 2 * ρ by ring]
+  -- Keep `q - q⁻¹` opaque (avoid field_simp expanding the `q⁻¹`),
+  -- and abstract `t = q^{2ρ}`, so `q^{-2ρ} = t⁻¹` and the two
+  -- denominators are `1 - t⁻¹` and `1 - t`.
+  set H : ℝ := q - q⁻¹ with hH
+  have hqne : q ≠ 0 := ne_of_gt hq_pos
+  set t : ℝ := q ^ (2 * ρ) with ht
+  have htne : t ≠ 0 := by rw [ht]; exact zpow_ne_zero _ hqne
+  have key1 : q ^ (-2 * ρ) = t⁻¹ := by rw [ht, ← zpow_neg]; ring_nf
+  have key2 : q ^ (-2 * (-ρ)) = t := by rw [ht]; ring_nf
+  rw [key1, key2]
+  have hd_t : (1 : ℝ) - t ≠ 0 := sub_ne_zero.mpr (Ne.symm h2)
+  have hd_ti : (1 : ℝ) - t⁻¹ ≠ 0 := by
+    rw [key1] at h1; exact sub_ne_zero.mpr (Ne.symm h1)
+  rw [div_add_div _ _ hd_ti hd_t, div_eq_iff (mul_ne_zero hd_ti hd_t)]
   field_simp
   ring
 
@@ -46,10 +61,9 @@ theorem sum_involution_double {n : ℕ} (f : Fin n → ℝ) (c : ℝ)
     (h_pair : ∀ i, f i + f (σ i) = c) :
     2 * Finset.univ.sum f = n * c := by
   have hσ_bij : Function.Bijective σ := hσ_invol.bijective
-  -- Σ (f ∘ σ) = Σ f by reindexing
-  have h_reindex : Finset.univ.sum (f ∘ σ) = Finset.univ.sum f := by
-    exact Finset.sum_equiv (Equiv.ofBijective σ hσ_bij)
-      (fun _ _ => Finset.mem_univ _) (fun _ _ => rfl)
+  -- Σ (f ∘ σ) = Σ f by reindexing along the bijection σ.
+  have h_reindex : Finset.univ.sum (f ∘ σ) = Finset.univ.sum f :=
+    Equiv.sum_comp (Equiv.ofBijective σ hσ_bij) f
   -- 2·Σf = Σf + Σ(f∘σ) = Σ(f + f∘σ) = Σc = n·c
   calc 2 * Finset.univ.sum f
       = Finset.univ.sum f + Finset.univ.sum f := by ring

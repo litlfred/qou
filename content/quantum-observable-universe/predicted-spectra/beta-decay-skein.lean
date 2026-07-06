@@ -1,4 +1,7 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Analysis.SpecialFunctions.Sqrt
+import Mathlib.Tactic
 
 
 /-!
@@ -112,12 +115,14 @@ structure BetaMinusDecay where
   m_e : ℝ
   /-- Electron mass is positive. -/
   m_e_pos : 0 < m_e
-  /-- The 𝒬_q-value: categorical action difference (NOT classical energy conservation).
-      𝒬_q = S_q(parent) - S_q(daughter) - S_q(electron).
-      This differs from T_e + T_ν̄ + T_recoil by the q-anomaly δ_q. -/
-  Q_q : ℝ := parent.action - daughter.action - m_e
   /-- The Skein relation: q[parent] - q⁻¹[daughter] = (q^½ - q^⁻½)[L₀]. -/
   skein_coefficient : ℝ  -- = q^½ - q^⁻½
+
+/-- The 𝒬_q-value: categorical action difference (NOT classical energy conservation).
+    𝒬_q = S_q(parent) - S_q(daughter) - S_q(electron).
+    This differs from T_e + T_ν̄ + T_recoil by the q-anomaly δ_q. -/
+def BetaMinusDecay.Q_q (d : BetaMinusDecay) : ℝ :=
+  d.parent.action - d.daughter.action - d.m_e
 
 /-- A beta-plus decay: conjugate T̄_{3,5} insertion at the converting u-quark.
     Mirror of β⁻ under q ↔ q⁻¹.
@@ -138,8 +143,10 @@ structure BetaPlusDecay where
   /-- The positron mass (mirror trefoil σ(T_{2,3})); same as electron mass. -/
   m_e : ℝ
   m_e_pos : 0 < m_e
-  /-- The Q-value. -/
-  Q : ℝ := parent.action - daughter.action - m_e
+
+/-- The Q-value: categorical action difference. -/
+def BetaPlusDecay.Q (d : BetaPlusDecay) : ℝ :=
+  d.parent.action - d.daughter.action - d.m_e
 
 -- ═══════════════════════════════════════════════════════════════════
 -- The Z/2 symmetry: q ↔ q⁻¹ exchanges β⁻ ↔ β⁺
@@ -165,15 +172,14 @@ theorem weakAsymmetry_equal_mass (q mu : ℝ) (hq : 0 < q) :
     weakAsymmetry q mu mu hq = 0 := by
   unfold weakAsymmetry
   ring_nf
-  simp [sub_self]
 
 /-- The Q-value of β⁻ decay is positive when the parent action exceeds
     the daughter action plus the electron mass. -/
 -- Ref: [manuscript] §6/beta-decay-skein
 theorem beta_minus_Q_pos (d : BetaMinusDecay)
     (h : d.daughter.action + d.m_e < d.parent.action) :
-    0 < d.Q := by
-  unfold BetaMinusDecay.Q
+    0 < d.Q_q := by
+  unfold BetaMinusDecay.Q_q
   linarith
 
 /-- Top-level alias matching the manifest declaration. -/
@@ -198,7 +204,14 @@ theorem pair_skein_Z2_symmetry (q mu_a mu_b : ℝ) (hq : 0 < q) :
     pairSkeinMass q mu_b mu_a hq := by
   unfold pairSkeinMass
   congr 1
-  ring
+  · -- numerator: (1/q)·μ_a + q·μ_b = q·μ_b + (1/q)·μ_a
+    have hq' : q ≠ 0 := ne_of_gt hq
+    field_simp
+    ring
+  · -- denominator: (1/q)^±½ = q^∓½, so the sum is unchanged
+    rw [one_div, Real.inv_rpow hq.le, Real.inv_rpow hq.le,
+      ← Real.rpow_neg hq.le, ← Real.rpow_neg hq.le]
+    ring_nf
 
 /-- The weak asymmetry is antisymmetric: A(q, μ_a, μ_b) = -A(q, μ_b, μ_a). -/
 -- Ref: [manuscript] §6/beta-decay-skein

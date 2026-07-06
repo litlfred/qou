@@ -2,8 +2,9 @@
 carried by $4_1$).**
 *Assume the plate-constrained mode-count of
 [`conj:casimir-epsilon-vacuum`](#conj:casimir-epsilon-vacuum), whose
-leading $1/d^{4}$ term is built from disjoint (free-photon) unknot
-modes and is therefore independent of the substrate deformation. The
+leading $1/d^{4}$ term is built from disjoint free-photon modes (the
+bare photon being the identity $\mathbf{1}$, $q$-independent) and is
+therefore independent of the substrate deformation. The
 first contribution carrying substrate-$q$ dependence arises from the
 interacting sector — vacuum modes whose braid words have degree
 $\geq 2$ and whose closures are hyperbolic — and its minimal carrier
@@ -16,7 +17,7 @@ J_{4_1}(q) \;=\; q^{-2} - q^{-1} + 1 - q + q^{2}
 \qquad h = q - q^{-1}.
 $$
 
-## Why the leading term carries no $q$
+## Absence of $q$ in the leading term
 
 The leading parallel-plate term is assembled from free photon modes:
 each is the identity braid, whose Markov closure is a disjoint union
@@ -66,7 +67,7 @@ knot that defines the framework's one calibrated deformation
 parameter is also the carrier of the vacuum's first substrate
 correction — the correction introduces no independent scale.
 
-## What is open (the actual conjecture)
+## Open conjecture
 
 Two items, both requiring the interacting-mode mode-sum — the
 Yekutieli-homotopy lift of the parent conjecture's mode-count

@@ -25,6 +25,7 @@ export default chapter({
       label: "sec:ugb-definitions",
       blocks: [
         "monomial-basis",
+        "leading-term-data",
         "admissible-system",
         "remainder-module",
       ],
@@ -36,6 +37,8 @@ export default chapter({
       blocks: [
         "division-algorithm",
         "groebner-basis",
+        "unital",
+        "s-polynomial",
       ],
     }),
 

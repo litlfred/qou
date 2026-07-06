@@ -1,6 +1,9 @@
 import { proposition } from "../../schema/builders";
 
 export default proposition({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+  ],
   label: "prop:y-lambda-closed-form-wenzl-bridge",
   title:
     "Closed form for Jones-Markov $y_\\lambda$ via Wenzl Schur-element bridge ($Q = q^2$, $z_{\\mathrm{GL}} = q z$)",

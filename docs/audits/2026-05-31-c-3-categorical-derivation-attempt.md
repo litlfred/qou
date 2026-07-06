@@ -5,7 +5,7 @@ structural candidate reproduces the empirical c_3 at both q₀ anchors to
 the Taylor-exact threshold (≤ 10 ppm).
 
 **Compute reference:**
-[`c_3_categorical_derivation_attempt.py`](../../folio-assistant/computations/c_3_categorical_derivation_attempt.py)
+[`c_3_categorical_derivation_attempt.py`](../../computations/c_3_categorical_derivation_attempt.py)
 → `c-3-categorical-derivation-attempt.witness.json` (15 candidates, 0
 passing).
 
@@ -168,10 +168,10 @@ The combined verdict: **c_3 = −2 IS the correct Taylor coefficient (Rule A), a
 - Canonical framing: [`2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](2026-05-31-qbeta-ck-truncation-order-canonical-framing.md)
 - Sibling reframing (Rule A is legitimate; swing is c_4 truncation): PR [#1581](https://github.com/litlfred/qou/pull/1581) Finding B
 - Bridge narrowing (6 mechanisms ruled out at the Q_β chain level): [`2026-05-31-qbeta-bridge-narrowing.md`](2026-05-31-qbeta-bridge-narrowing.md)
-- Cached cal-anchored c_3: [`qbeta-ck-cache.witness.json`](../../folio-assistant/computations/qbeta/qbeta-ck-cache.witness.json)
-- α_EM Habiro precedent: PR #1511 (merged), [`alpha_em_habiro_taylor_investigation.py`](../../folio-assistant/computations/alpha/alpha_em_habiro_taylor_investigation.py)
+- Cached cal-anchored c_3: [`qbeta-ck-cache.witness.json`](../../computations/qbeta/qbeta-ck-cache.witness.json)
+- α_EM Habiro precedent: PR #1511 (merged), [`alpha_em_habiro_taylor_investigation.py`](../../computations/alpha/alpha_em_habiro_taylor_investigation.py)
 - Original c_3 derivation (Track-C structural prediction): [`q-beta-c3-hopf-three-fold-markov.md`](../../content/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.md)
-- Truncation analysis: [`qbeta_ck_truncation_order_analysis.py`](../../folio-assistant/computations/qbeta/qbeta_ck_truncation_order_analysis.py)
+- Truncation analysis: [`qbeta_ck_truncation_order_analysis.py`](../../computations/qbeta/qbeta_ck_truncation_order_analysis.py)
 - Probe witness: `c-3-categorical-derivation-attempt.witness.json`
 - Run log: `/tmp/c3_categorical_derivation_attempt.log`
 

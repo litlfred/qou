@@ -1,4 +1,5 @@
 import Mathlib.Tactic
+import QOU.BraidKnot.BraidLinkTypes
 
 /-!
 # QOU.BraidKnot.multi_link_jones_q1_extension
@@ -35,7 +36,6 @@ LaTeX label: `rem:multi-link-jones-q1-extension`
 -- `jonesAtOne` cases for `trefoil`, `borromean`, `doubleHopf` from
 -- `braid-link-types.lean`.
 -- Ref: [manuscript] rem:braid-link-types
-import QOU.BraidKnot.BraidLinkTypes
 
 namespace QOU.BraidKnot
 

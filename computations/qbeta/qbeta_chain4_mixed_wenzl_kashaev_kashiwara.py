@@ -41,14 +41,14 @@ at x = ℏ_q.
 Mixed candidate = W_λ · K_λ, plus ratios W_λ / K_λ, conjugate-pair
 products W_λ · W_{λ'}, and ℏ_q-normalised forms.
 
-ANTI-PATTERN GUARDS (CLAUDE.md):
+ANTI-PATTERN GUARDS (AGENTS.md):
   - TIERED reporting; NO ansatz at NEAR-FUZZY or coarser.
   - Cross-anchor BEFORE structural claim (proton + muon targets emitted).
   - ℏ_q from (q − 1)/q, never hard-coded.
   - Diagnostic-only; no production wiring.
 
 Usage:
-  python3 folio-assistant/computations/qbeta/qbeta_chain4_mixed_wenzl_kashaev_kashiwara.py
+  python3 computations/qbeta/qbeta_chain4_mixed_wenzl_kashaev_kashiwara.py
 Emits: qbeta-chain4-mixed-wenzl-kashaev-kashiwara.witness.json
 """
 
@@ -67,7 +67,7 @@ mp.mp.dps = 50
 
 RESIDUE_A = mp.mpf("1.804e-15")
 Q_PROTON_50 = mp.mpf("1.10997858275138080759166909561")
-Q_MUON_50 = mp.mpf("1.10997868769193107842185960213")
+Q_MUON_50 = mp.mpf("1.1099785955541805752815940796095093779932822799587")
 
 # Kashaev series truncation (p = q^-1 ≈ 0.90; p^120 ≈ 4e-6, p^200 ≈ 8e-10).
 KASHAEV_TRUNC = 400

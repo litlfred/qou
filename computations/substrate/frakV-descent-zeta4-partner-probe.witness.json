@@ -1,0 +1,48 @@
+{
+  "computation": "frakV_descent_zeta4_partner_probe",
+  "description": "Verifies the ζ₄-partner relation V₀(η+iπ/2)=−conj V₀(η) of the complex-volume model (Lean-certified) and maps the remaining gap for conj:binding-qbeta-complex-volume, confirming the descent stays open (gated on the Q_β keystone).",
+  "discipline": "no fit; sympy symbolic exact; Lean-certified core; descent-OPEN (a)-scoped.",
+  "auditOnly": "docs/audits/2026-06-28-frakV-descent-zeta4-partner.md",
+  "results": {
+    "V0(eta+i*pi/2)": "I*sinh(eta) - cosh(eta)",
+    "neg_conj_V0(eta)": "I*sinh(eta) - cosh(eta)",
+    "explicit_-cosh+i*sinh": "I*sinh(eta) - cosh(eta)",
+    "partner_eq_neg_conj": true,
+    "partner_eq_explicit": true,
+    "lean_cert": "QOU/Mass/ComplexVolumeZeta4Partner.vModel_zeta4_partner (sorry-free)",
+    "descent_gap_map": {
+      "Re_V_binding": "characterized: q-Hermite/Rogers-Szegő MOMENT, Habiro (q-1)·cyclotomic log-coeff tower (PR #2899/#2929) — NOT closed (no finite low-order q-difference operator; Stages 3-4)",
+      "Im_V_qbeta": "GATED: the c_k Habiro element / SW-residue jet-prolongation symbol R(q,ξ) (conj:qdifference-kernel-prolongation-symbol); fitting Φ₂ is the forbidden 'seventh ansatz' (2026-06-09 scope)",
+      "single_fibre_V": "OPEN: that Re and Im descend from ONE 𝔙 = E₀·tr_M((Π_free−1)∘ℳ). Established: ζ₄ generator coupling + ζ₄-partner relation + bar-parity class. Missing: both fibre kernels AND their assembly into one trace object.",
+      "observable_level": "DEGENERATE (Im(q₀)=0) — must NOT be used to claim closure (numerology guard, #2951)."
+    },
+    "zeta4_orbit_isotypic": {
+      "zeta4_sq_eq_neg_V0": true,
+      "zeta4_cube_eq_channel_conj": true,
+      "orbit_sum_zero_trivial_isotype": true,
+      "sign_isotype_zero": true,
+      "faithful_sum_(1+i)/2*exp+(1-i)/2*exp(-)": true,
+      "lean_cert": "QOU/Mass/ComplexVolumeZeta4Partner: vModel_zeta4_sq, vModel_zeta4_cube, vModel_orbit_sum_zero, vModel_sign_isotype_zero, vModel_eq_faithful_sum (sorry-free)",
+      "assembly_constraint": "the open single-𝔙 assembly must be ζ₄-FAITHFUL: a nonzero orbit sum (trivial isotype) or sign-isotype component falsifies a candidate assembly"
+    }
+  },
+  "assertions": {
+    "zeta4_partner_eq_neg_conj": true,
+    "zeta4_partner_eq_explicit_form": true,
+    "zeta4_sq_eq_neg_V0": true,
+    "zeta4_cube_eq_channel_conj": true,
+    "zeta4_orbit_sum_zero": true,
+    "zeta4_sign_isotype_zero": true,
+    "zeta4_faithful_sum_eq": true
+  },
+  "allPassed": true,
+  "verdict": "ζ₄-PARTNER RELATION VERIFIED (Lean-certified): V₀(η+iπ/2) = −conj V₀(η) = −cosh η + i·sinh η — the ζ₄=i rotation negates the bar-even (binding/Re) channel and keeps the bar-odd (Q_β/Im) channel, the fibre-level coupling of 𝔙 = Vol + i·CS. ORBIT/ISOTYPIC LAYER (2026-07-02, Lean-certified): the ζ₄ orbit closes (ζ₄²=−1, ζ₄³=channel conjugation), the trivial and sign isotypes BOTH vanish, and V₀ = (1+i)/2·e^η + (1−i)/2·e^{−η} is exactly the sum of the two FAITHFUL ±i eigencomponents — so any candidate single-𝔙 assembly must be ζ₄-faithful (falsifiable structural constraint on the OPEN assembly). DESCENT STILL OPEN: closing conj:binding-qbeta-complex-volume needs (i) the binding fibre kernel (characterized, not a finite low-order operator), (ii) the Q_β fibre kernel (GATED on the SW-residue keystone; Φ₂ fit forbidden), and (iii) their assembly into one trace object 𝔙. The generator coupling + ζ₄-partner relation + bar-parity class are proved; the kernel descent is not, and the observable-level test is degenerate (must not be used to claim closure). Advanced, not closed.",
+  "scriptHash": "18b098c71e69",
+  "scriptCommitSha": "c5992e0c400137cfceb51d7c1ec363ca366c72e5",
+  "commitSha": "c5992e0c400137cfceb51d7c1ec363ca366c72e5",
+  "engine": "sympy",
+  "computedAt": "2026-07-03T00:19:50.465697+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "frakV_descent_zeta4_partner_probe.py"
+}

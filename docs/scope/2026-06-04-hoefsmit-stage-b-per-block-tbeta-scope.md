@@ -39,7 +39,17 @@ harder, motivates the KLR/crystal upstream infra scope).
 
 ## Infra blocker
 
-The Python fallback in `folio-assistant/computations/hecke/hecke_characters.py::chi_lambda_braid` only supports `q_value == q_0`:
+> **⚠ CORRECTION (2026-06-20): this blocker is RESOLVED in the current web
+> sandbox.** `pyhecke_native` **builds here** in ≈ 42 s (`cargo`/`rustc` are on
+> PATH; `pip install maturin`; `maturin build --release -m
+> tools/pyhecke-native/Cargo.toml`; `rug` compiles GMP+MPFR from source via `cc`).
+> Arbitrary-q `chi_lambda_braid` (plus `trace_weights_n`, `lagrange_projectors_mpfr`,
+> …) are now available, so the cross-anchor per-block c_3-localization probe below is
+> runnable without re-deriving the projection in-script. Recipe + 1e-15 validation:
+> [`docs/audits/2026-06-20-pyhecke-native-build-unblocked.md`](../audits/2026-06-20-pyhecke-native-build-unblocked.md).
+> Original blocker text retained below for the historical record.
+
+The Python fallback in `computations/hecke/hecke_characters.py::chi_lambda_braid` only supports `q_value == q_0`:
 
 ```
 ValueError: chi_lambda_braid() Python fallback only supports q_value == q_0;
@@ -61,7 +71,7 @@ witness values do not match naive matrix-trace formulas
 ≈ 1.110), so the projection is non-trivial and must mirror the
 canonical convention exactly.
 
-Per CLAUDE.md "don't iterate Lean / compute blind when verification
+Per AGENTS.md "don't iterate Lean / compute blind when verification
 is unavailable", a re-implementation here would be doing exactly that
 in the numeric domain. The honest move is to scope the probe + leave
 it for a session with `pyhecke_native` available.
@@ -116,8 +126,8 @@ natural sequencing.
 
 ## References
 
-- Stage A producer: [`folio-assistant/computations/qbeta/qbeta_hoefsmit_tbeta_matrix_build_probe.py`](../../folio-assistant/computations/qbeta/qbeta_hoefsmit_tbeta_matrix_build_probe.py)
-- Cross-anchor c_3 inversion: [`folio-assistant/computations/qbeta/qbeta_utils.py::c3_target_at`](../../folio-assistant/computations/qbeta/qbeta_utils.py)
+- Stage A producer: [`computations/qbeta/qbeta_hoefsmit_tbeta_matrix_build_probe.py`](../../computations/qbeta/qbeta_hoefsmit_tbeta_matrix_build_probe.py)
+- Cross-anchor c_3 inversion: [`computations/qbeta/qbeta_utils.py::c3_target_at`](../../computations/qbeta/qbeta_utils.py)
 - Saturation context: [`docs/audits/2026-06-04-three-paths-refuted-roadmap-update.md`](../audits/2026-06-04-three-paths-refuted-roadmap-update.md)
 - Coordination ledger: [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md)
 - Rust kernel home: [`tools/pyhecke-native/`](../../tools/pyhecke-native/)

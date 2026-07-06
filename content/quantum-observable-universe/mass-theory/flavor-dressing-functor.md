@@ -65,7 +65,7 @@ where $\Phi$ is the quark-content functor (e.g. $\Phi(\mathfrak{p})
 \mathfrak{u}\mathfrak{d}\mathfrak{d}$) and the right-vertical
 arrow lifts a bare hadron mass to its electron-dressed atomic mass.
 
-## Why a functor, not a function
+## Functor versus function
 
 The discrete-category framing makes the dressing assignment
 **accordingly** compatible with the chapter's other categorical
@@ -84,3 +84,5 @@ the substrate parameter (e.g. $q = q_0$) are provided by sibling
 files; the canonical instance at $q_0$ uses the derivation in
 [`prop:flavor-dressed-mass-from-substrate-split`](flavor-dressed-mass-from-substrate-split.md)
 plus a chosen value of the nucleon-mass average $M_N$.
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

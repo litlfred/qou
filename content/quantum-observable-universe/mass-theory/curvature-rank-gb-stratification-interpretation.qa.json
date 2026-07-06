@@ -1,0 +1,299 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:curvature-rank-gb-stratification-interpretation",
+  "kind": "remark",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/curvature-rank-gb-stratification-interpretation.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-theory/curvature-rank-gb-stratification-interpretation.md"
+  },
+  "source_hashes": {
+    "md": "e65086709d64",
+    "ts": "5f6aa8b2074f"
+  },
+  "criteria": {
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e65086709d64",
+          "ts": "5f6aa8b2074f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:55.634Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Block placement and kind 'remark' match validated structurally for 'Geometric reading: curvature-rank strata as Seifert-surface blow-up loci'.",
+        "severity": "minor"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e65086709d64",
+          "ts": "5f6aa8b2074f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:55.640Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No false claims identified in 'Geometric reading: curvature-rank strata as Seifert-surface blow-up loci': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/curvature-rank-gb-stratification-interpretation.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e65086709d64",
+          "ts": "5f6aa8b2074f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:55.646Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The block 'Geometric reading: curvature-rank strata as Seifert-surface blow-up loci' presents substantial mathematical content: ([topological mass](#prop:topological-mass-formula)), the Markov trace becomes a...",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e65086709d64",
+          "ts": "5f6aa8b2074f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:55.652Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Geometric reading: curvature-rank strata as Seifert-surface blow-up loci'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/curvature-rank-gb-stratification-interpretation.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e65086709d64",
+          "ts": "5f6aa8b2074f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:55.658Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No overclaims: the scope of 'Geometric reading: curvature-rank strata as Seifert-surface blow-up loci' is appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e65086709d64",
+          "ts": "5f6aa8b2074f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:55.664Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Geometric reading: curvature-rank strata as Seifert-surface blow-up loci'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/curvature-rank-gb-stratification-interpretation.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e65086709d64",
+          "ts": "5f6aa8b2074f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:55.670Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The argument flow in 'Geometric reading: curvature-rank strata as Seifert-surface blow-up loci' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/curvature-rank-gb-stratification-interpretation.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e65086709d64",
+          "ts": "5f6aa8b2074f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:55.676Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e65086709d64",
+          "ts": "5f6aa8b2074f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:55.682Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No citations are present in 'Geometric reading: curvature-rank strata as Seifert-surface blow-up loci', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/curvature-rank-gb-stratification-interpretation.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e65086709d64",
+          "ts": "5f6aa8b2074f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:55.688Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in 'Geometric reading: curvature-rank strata as Seifert-surface blow-up loci' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/curvature-rank-gb-stratification-interpretation.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e65086709d64",
+          "ts": "5f6aa8b2074f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:55.694Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The algebraic and logical relations in 'Geometric reading: curvature-rank strata as Seifert-surface blow-up loci' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/curvature-rank-gb-stratification-interpretation.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e65086709d64",
+          "ts": "5f6aa8b2074f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:55.700Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Geometric reading: curvature-rank strata as Seifert-surface blow-up loci' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/curvature-rank-gb-stratification-interpretation.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e65086709d64",
+          "ts": "5f6aa8b2074f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:55.706Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The derivation steps and formal definitions in 'Geometric reading: curvature-rank strata as Seifert-surface blow-up loci' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/curvature-rank-gb-stratification-interpretation.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e65086709d64",
+          "ts": "5f6aa8b2074f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:55.711Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Geometric reading: curvature-rank strata as Seifert-surface blow-up loci' are consistent."
+      }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "e65086709d64",
+          "ts": "5f6aa8b2074f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.534Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-07-03T00:52:56.534Z"
+}

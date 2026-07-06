@@ -1,8 +1,11 @@
 import { definition } from "../../schema/builders";
 
 export default definition({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over a field $R$ carrying the $q$-data (AGENTS.md §7c)." },
+  ],
   label: "def:van-der-waals-hopf-channel",
-  title: "The van der Waals channel — the Hopf symmetric block",
+  title: "The Hopf symmetric block $e_+$ — retained cosh carrier (not van der Waals)",
   lean: {
     ref: "qou:QOU.VanDerWaals.vdwSymmetricBlock",
     validation: "not_checked",
@@ -10,8 +13,8 @@ export default definition({
   computation: {
     engine: "python",
     status: "verified",
-    script: "folio-assistant/computations/hbond_vdw_sdp.py",
-    witness: ["folio-assistant/computations/hbond-vdw-sdp.witness.json"],
+    script: "computations/hbond_vdw_sdp.py",
+    witness: ["computations/hbond-vdw-sdp.witness.json"],
   },
   uses: [
     "def:hopf-diquark",

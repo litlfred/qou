@@ -1,7 +1,7 @@
 -- Ref: [manuscript] Ch. 3, §algebraic-quantum-volume
 -- Algebraic quantum volume Vol_q(β) as product of traced volumes
 
-noncomputable section
+import Mathlib.Data.Real.Basic
 
 /-- The **algebraic quantum volume** of a braid word β:
     Vol_q(β) = ∏ᵢ V̂ᵢ(q) ∈ ℤ[q^{1/2}, q^{-1/2}]
@@ -21,8 +21,6 @@ structure AlgebraicQuantumVolume where
   /-- The product of all traced volumes. -/
   totalVolume : ℝ
 
-/-- The algebraic quantum volume is positive for q > 1
-    (assuming totalVolume = product of tracedVolumes). -/
+-- The algebraic quantum volume is positive for q > 1
+-- (assuming totalVolume = product of tracedVolumes).
 -- Proof requires: totalVolume = ∏ tracedVolume i (not yet axiomatized)
-
-end

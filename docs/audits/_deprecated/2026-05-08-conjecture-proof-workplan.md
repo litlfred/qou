@@ -197,7 +197,7 @@ These improvements help all classes:
 
 - **Witness-backed instances**: each numerical conjecture should
   have at least one `.witness.json` cross-checking the predicted
-  value at $q_0$ — already required by CLAUDE.md LP/SDP infra
+  value at $q_0$ — already required by AGENTS.md LP/SDP infra
   rules.  Apply this to every INSTANCE row.
 
 - **Class-vs-class coherence**: when one conjecture's class refers
@@ -207,7 +207,7 @@ These improvements help all classes:
   derived consequence of the cone's "root" classes.
 
 - **Class instances from existing witnesses**: many conjectures have
-  numerical witnesses under `folio-assistant/computations/`.  An
+  numerical witnesses under `computations/`.  An
   instance constructor `instance fromWitness : C` would let any
   `.witness.json` ground a concrete class instance — turning
   computational evidence into a Lean-side anchor.

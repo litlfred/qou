@@ -19,7 +19,7 @@ Definition of c_lambda(q)
 =========================
 
 The Kashiwara symmetric-crystal carries a NATURAL q-deformed weight on
-each connected component B(lambda). Per CLAUDE.md sec.7b shortcut #3
+each connected component B(lambda). Per AGENTS.md sec.7b shortcut #3
 ("Demazure-fiber Markov-trace functional"), the canonical structural
 weight on B(lambda) at the longest Weyl element w_0 is the principal
 q-specialisation of the Schur polynomial:
@@ -99,6 +99,7 @@ from rho_k_h3a_refinement import (  # noqa: E402
     _per_partition_symbolic,
 )
 from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV, M_D_MEV  # noqa: E402
+from experimental_constants import m_n_derived_3input  # noqa: E402
 from crystal_basis import crystal_B  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
 from partition_utils import hook_lengths_with_cells as hook_lengths  # noqa: E402
@@ -221,7 +222,7 @@ def main() -> int:
     print(f"\n  q_0 = {mp.nstr(Q_MP, 25)}")
     print(f"  m_e = {mp.nstr(M_E_MEV, 8)} MeV (CODATA)")
     print(f"  m_p = {mp.nstr(M_P_MEV, 8)} MeV (CODATA)")
-    print(f"  m_n = {mp.nstr(M_N_MEV, 8)} MeV (CODATA)")
+    print(f"  m_n = {mp.nstr(m_n_derived_3input, 8)} MeV (CODATA)")
     print(f"  M(D) = {mp.nstr(M_D_MEV, 12)} MeV (CODATA)")
 
     # ---- Step 1: |tr_M(beta_D)|  (reused from Occam baseline) ----
@@ -230,7 +231,7 @@ def main() -> int:
     print(f"\n  |tr_M(beta_D)| (50 dps) = {mp.nstr(abs_tr_M, 30)}")
 
     # ---- Step 2: rho_K^LO and the residual to be explained ----
-    rho_K_LO = (M_P_MEV + M_N_MEV) / (M_E_MEV * abs_tr_M)
+    rho_K_LO = (M_P_MEV + m_n_derived_3input) / (M_E_MEV * abs_tr_M)
     M_pred_LO = rho_K_LO * M_E_MEV * abs_tr_M  # = m_p + m_n by construction
     rho_K_codata = M_D_MEV / (M_E_MEV * abs_tr_M)
     delta_rho = rho_K_codata - rho_K_LO
@@ -495,7 +496,7 @@ def main() -> int:
             "M_codata_MeV": str(M_D_MEV),
             "m_e_MeV": str(M_E_MEV),
             "m_p_MeV": str(M_P_MEV),
-            "m_n_MeV": str(M_N_MEV),
+            "m_n_MeV": str(m_n_derived_3input),
         },
         "data": {
             "abs_tr_M_at_q0_50dps": str(abs_tr_M),
@@ -597,7 +598,7 @@ def main() -> int:
             "dim V_lambda for sl_n = |B(lambda, n)| from "
             "crystal_basis.crystal_B (Weyl dimension formula). "
             "We report BOTH the q-deformed (q_0) and the q -> 1 "
-            "variants, since CLAUDE.md sec.7b shortcut #3 leaves the "
+            "variants, since AGENTS.md sec.7b shortcut #3 leaves the "
             "choice open for the symmetric-crystal case (the Type-B "
             "fold-orbit closure work uses crystal *cardinality* at q=1, "
             "while the Demazure-fiber Markov-trace functional uses the "

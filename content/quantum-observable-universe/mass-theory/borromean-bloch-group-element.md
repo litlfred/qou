@@ -92,7 +92,7 @@ $$
 where $r_2^{(2)}$ is the order-$h^2$ correction to the leading
 $r_2$ regulator.  Equivalently: $r_2^{(2)}[\mathcal{B}_3] = -6G$.
 
-## Why this is high-value
+## Significance
 
 Per
 [`docs/audits/-pentagon-identity-broad-context.md`](../../docs/audits/-pentagon-identity-broad-context.md)
@@ -110,7 +110,7 @@ Closing D16 ties $h^4$ to the K-theoretic structure of $K_3(\mathbb{C})$
 also closes the loop:
 
 - $r_2$ at order $h^0$ = $8G$ (the bare hyperbolic volume = production
-  $\mathrm{Vol}(\mathcal{B}_3)$ in [`mass_table_ppb.py`](../../folio-assistant/computations/mass_table_ppb.py)),
+  $\mathrm{Vol}(\mathcal{B}_3)$ in the canonical formalism),
 - $r_2^{(2)}$ at order $h^4$ = $-6G$ (the Markov-trace coefficient),
 - $r_2^{(k)}$ at higher orders — the full Markov-trace closed form.
 
@@ -151,7 +151,7 @@ class BorromeanBlochGroupElement
 
 ## Open R&D
 
-1. **Compute prototype**: at $q = q_0$, numerically evaluate both
+1. **Compute prototype**: at $q = q_0$, canonical evaluate both
    sides of the conjectural identity
    $r_2^{(2)}[\mathcal{B}_3] = -6G$.  The left side requires
    extending the Bloch-Wigner regulator to order $h^2$ via the

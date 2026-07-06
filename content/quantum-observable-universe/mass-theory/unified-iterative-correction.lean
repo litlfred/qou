@@ -33,6 +33,7 @@ open scoped BigOperators
 
 variable {F : Type*} [Field F]
 
+open scoped Classical in
 /-- Quantum integer [n]_q = (q^n - q^(-n)) / (q - q^(-1)) over a field F. -/
 noncomputable def qInt (q : F) (n : ℕ) : F :=
   if hq : q - q⁻¹ = 0 then n

@@ -4,7 +4,7 @@ between each object and its double dual. This makes left and right
 traces (and hence quantum dimensions) coincide.
 
 In the paper, the involutive structure
-([Definition](#def\:involutive-structure)) on a quantum universe plays
+([Definition](#def:involutive-structure)) on a quantum universe plays
 a role analogous to a pivotal structure.
 
 **Mathlib reference.**

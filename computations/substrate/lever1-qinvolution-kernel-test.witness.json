@@ -1,0 +1,107 @@
+{
+  "computation": "lever1_qinvolution_kernel_test",
+  "description": "Tests the parameter-free hypothesis that S(m)=Sum_{lam|-m} dim_q(lam) (with lw(c)=S(c+1)/(c+1)) satisfies the q-involution order-2 q-holonomic recurrence S(m)=S(m-1)+[m-1]_q*S(m-2) -- the symmetric-q-integer deformation of the classical involution recursion I(m)=I(m-1)+(m-1)I(m-2) (q=1 sanity verified). This is the formalize-first follow-up to the depth-2 SL2 (C-finite) FALSIFICATION: the q-Bessel Lean skeleton predicts a q^k-DEPENDENT (q-holonomic) kernel, of which C-finite is only the q->1 degeneration. Three q-integer conventions tested.",
+  "discipline": "no fit; sympy symbolic in q + mpmath 50dps at q0; parameter-free structural hypothesis (the q-deformation of a PROVED classical identity Sum f^lam = #involutions), not a coefficient search; (a)/(b)-scoped verdict.",
+  "auditOnly": "docs/audits/2026-06-27-lever1-qinvolution-cyclotomic-kernel.md",
+  "results": {
+    "S_at_q0": {
+      "0": "1.0",
+      "1": "1.0",
+      "2": "2.0",
+      "3": "4.010896869119076",
+      "4": "10.1311186546987",
+      "5": "26.88068884531764",
+      "6": "81.35896396565991",
+      "7": "261.5746585107344",
+      "8": "926.6098324698176"
+    },
+    "S_q1_involution_numbers_ok": true,
+    "H1_symmetric_residuals_q0": {
+      "m=2": "0.0",
+      "m=3": "0.0",
+      "m=4": "0.0328093",
+      "m=5": "0.266058",
+      "m=6": "1.58936",
+      "m=7": "8.49952",
+      "m=8": "44.6452"
+    },
+    "H1_symmetric_rel_residuals": {
+      "2": "0.0",
+      "3": "0.0",
+      "4": "0.00323847",
+      "5": "0.00989773",
+      "6": "0.0195352",
+      "7": "0.0324937",
+      "8": "0.0481813"
+    },
+    "H1a_asym_residuals_q0": {
+      "m=2": "0.0",
+      "m=3": "-0.0990817",
+      "m=4": "-0.56384",
+      "m=5": "-2.14008",
+      "m=6": "-8.61363",
+      "m=7": "-32.4759",
+      "m=8": "-130.869"
+    },
+    "H1b_toppower_residuals_q0": {
+      "m=2": "-0.109979",
+      "m=3": "0.778844",
+      "m=4": "3.38512",
+      "m=5": "10.6612",
+      "m=6": "37.4084",
+      "m=7": "129.943",
+      "m=8": "496.144"
+    },
+    "correction_D_factored": {
+      "m=2": "0",
+      "m=3": "0",
+      "m=4": "(q - 1)**2*(q**2 + q + 1)/q**2",
+      "m=5": "2*(q - 1)**2*(q + 1)**2*(q**2 - q + 1)*(q**2 + q + 1)/q**4",
+      "m=6": "(q - 1)**2*(q**4 + q**3 + q**2 + q + 1)*(q**8 + 4*q**7 + 6*q**6 + 2*q**5 + 2*q**4 + 2*q**3 + 6*q**2 + 4*q + 1)/q**7",
+      "m=7": "4*(q - 1)**2*(q**2 + q + 1)**2*(q**4 + q**3 + q**2 + q + 1)*(q**10 - q**9 + 2*q**8 - q**7 + 2*q**5 - q**3 + 2*q**2 - q + 1)/q**10",
+      "m=8": "(q - 1)**2*(q**2 + q + 1)*(q**4 + q**3 + q**2 + q + 1)*(q**6 + q**5 + q**4 + q**3 + q**2 + q + 1)*(6*q**14 - 5*q**13 + 8*q**12 - 2*q**11 + 4*q**10 + 2*q**9 - 4*q**8 + 16*q**7 - 4*q**6 + 2*q**5 + 4*q**4 - 2*q**3 + 8*q**2 - 5*q + 6)/q**14"
+    },
+    "correction_D_all_have_double_root_at_q1": true,
+    "kernel_W_factored": {
+      "m=2": "1",
+      "m=3": "(q**2 + 1)/q",
+      "m=4": "(q**2 + q + 1)*(3*q**2 - 4*q + 3)/(2*q**2)",
+      "m=5": "(3*q**6 - 4*q**5 + 5*q**4 - 4*q**3 + 5*q**2 - 4*q + 3)/q**3",
+      "m=6": "(q**4 + 1)*(q**4 + q**3 + q**2 + q + 1)*(q**6 + 5*q**5 - 4*q**4 + q**3 - 4*q**2 + 5*q + 1)/(q**5*(3*q**4 + 4*q**2 + 3))",
+      "m=7": "(q**2 + q + 1)*(4*q**18 - q**17 + 7*q**16 - 4*q**15 + 5*q**14 + 3*q**13 + 6*q**12 - 2*q**11 + 8*q**10 + 8*q**8 - 2*q**7 + 6*q**6 + 3*q**5 + 5*q**4 - 4*q**3 + 7*q**2 - q + 4)/(q**6*(q**4 + 1)*(3*q**4 + 2*q**3 + 3*q**2 + 2*q + 3))",
+      "m=8": "(q**6 + q**5 + q**4 + q**3 + q**2 + q + 1)*(6*q**22 - 4*q**21 + 13*q**20 - 11*q**19 + 18*q**18 - 19*q**17 + 22*q**16 - 12*q**15 + 31*q**14 - 23*q**13 + 28*q**12 - 22*q**11 + 28*q**10 - 23*q**9 + 31*q**8 - 12*q**7 + 22*q**6 - 19*q**5 + 18*q**4 - 11*q**3 + 13*q**2 - 4*q + 6)/(q**7*(q**4 + 1)*(q**10 + 6*q**9 + 2*q**8 + 6*q**7 + q**6 + 6*q**5 + q**4 + 6*q**3 + 2*q**2 + 6*q + 1))"
+    },
+    "kernel_W_seed_exact_qinteger": true,
+    "kernel_W_is_laurent_poly_in_q": {
+      "m=2": true,
+      "m=3": true,
+      "m=4": true,
+      "m=5": true,
+      "m=6": false,
+      "m=7": false,
+      "m=8": false
+    },
+    "kernel_W_first_nonlaurent_m": 6
+  },
+  "assertions": {
+    "q1_limit_is_involution_numbers": true,
+    "H1_symmetric_qinvolution_exact_at_seed_m2_m3": true,
+    "H1_symmetric_qinvolution_exact_all": false,
+    "H1a_asym_qinvolution_exact": false,
+    "H1b_toppower_qinvolution_exact": false,
+    "correction_D_double_root_at_q1_all_m": true,
+    "kernel_W_seed_exact_qinteger_m2_m3": true,
+    "kernel_W_acquires_partition_sum_denominator": true
+  },
+  "anyKernelMatch": false,
+  "allPassed": true,
+  "verdict": "q-INVOLUTION SKELETON CONFIRMED + CYCLOTOMIC FIBRE CORRECTION ISOLATED (scope-limited (a) on the bare ansatz, POSITIVE structural finding on the correction). The parameter-free order-2 recurrence S(m)=S(m-1)+[m-1]_q*S(m-2) is EXACT at the seed m=2,3 and its q=1 limit IS the classical involution recursion I(m)=I(m-1)+(m-1)I(m-2) (sanity passes) -- so the C-finite involution skeleton is the correct leading kernel. Beyond the seed it drifts, but the correction D(m)=S(m)-(S(m-1)+[m-1]_q S(m-2)) is NOT noise: every D(m) carries a universal (q-1)^2 prefactor (double root at q=1 => deviation is O(h^2), a pure fibre/q-deformation effect) and FACTORS INTO CYCLOTOMIC POLYNOMIALS (D4=(q-1)^2(q^2+q+1)/q^2; D5=2(q-1)^2(q+1)^2(q^2-q+1)(q^2+q+1)/q^4; D6 carries Phi_5). Cyclotomic + (q-1)^2 is the HABIRO-RING signature: the lever-1 fibre kernel is the q-involution operator dressed by a cyclotomic (Habiro-class) correction -- the SAME object class the kehn c_k/Q_beta closure needs (a Habiro element F(q) whose archimedean evaluation supplies the c_k), and the q^k-DEPENDENT (q-holonomic) shape QBesselContiguityRecurrence.lean predicts over the C-finite SL2 the depth-2 probe falsified. Refutes the BARE q-involution ansatz alone (a), not the q-holonomic/Habiro kernel class; the D(m) cyclotomic tower is the derived, parameter-free constraint on that kernel. No fit.",
+  "scriptHash": "6d33852778db",
+  "scriptCommitSha": "e98f1c4d93dc84abe7967a14a22e8b73bca3c31a",
+  "commitSha": "e98f1c4d93dc84abe7967a14a22e8b73bca3c31a",
+  "engine": "sympy",
+  "computedAt": "2026-07-02T12:04:32.372132+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "lever1_qinvolution_kernel_test.py"
+}

@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-11T04:31:25.611612+00:00",
-  "commitSha": "58af3db6fd9d530a50b6be301228b09f754c3df7",
+  "computedAt": "2026-06-22T13:27:26.248470+00:00",
+  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 86,
+  "durationMs": 90,
   "computation": "q-block-rmatrix-spectrum",
   "scriptFile": "q_block_rmatrix_spectrum.py",
   "scriptHash": "ef8af568e821",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,14 +19,12 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
   },
   "description": "Full-matrix spectrum of the block-swap braid β (two 3-strand blocks) on the H₆ seminormal rep, per λ⊢6. β is a BRAID (β²=full twist≠id) on a reducible module, so it has more than the Hecke {q,−q⁻¹} eigenvalues — 22 distinct across all blocks. The exact q-correct spectral projector is therefore a degree-21 polynomial in β, needing tr_M(W·β^k) for k=0..21; the #2120 {id,β} scalar reweighting (k≤1) is insufficient. Quantifies the owner's 'don't assume scalar' correction and sets the power-set for the exact block-swap S_atom.",
   "parameters": {
-    "q0": 1.1099785827513808,
+    "q0": 1.1099785955573347,
     "n_strands": 6
   },
   "data": {
@@ -96,7 +94,7 @@
           ],
           [
             -1.232052,
-            -0.0
+            0.0
           ],
           [
             -1.232052,
@@ -104,11 +102,11 @@
           ],
           [
             0.900918,
-            -0.0
+            0.0
           ],
           [
             1.232052,
-            -0.0
+            0.0
           ],
           [
             1.232052,
@@ -120,11 +118,11 @@
           ],
           [
             1.684896,
-            -0.0
+            0.0
           ],
           [
             1.684896,
-            -0.0
+            0.0
           ]
         ]
       },
@@ -316,11 +314,11 @@
           ],
           [
             0.731234,
-            -0.0
+            0.0
           ],
           [
             0.731234,
-            -0.0
+            0.0
           ],
           [
             1.0,
@@ -354,7 +352,7 @@
           ],
           [
             0.731234,
-            -0.0
+            0.0
           ],
           [
             1.367552,
@@ -433,7 +431,7 @@
           ],
           [
             0.534703,
-            0.0
+            -0.0
           ],
           [
             0.731234,
@@ -474,7 +472,7 @@
       },
       {
         "re": -1.23205,
-        "im": -0.0
+        "im": 0.0
       },
       {
         "re": -1.10998,
@@ -522,7 +520,7 @@
       },
       {
         "re": 0.90092,
-        "im": -0.0
+        "im": 0.0
       },
       {
         "re": 1.0,
@@ -530,7 +528,7 @@
       },
       {
         "re": 1.23205,
-        "im": -0.0
+        "im": 0.0
       },
       {
         "re": 1.36755,

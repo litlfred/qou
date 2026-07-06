@@ -1,0 +1,51 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-03T22:55:51.126895+00:00",
+  "commitSha": "8e4cc4f329f9fcd7f739ca31edb36898baa1acb6",
+  "assertions": [
+    {
+      "name": "universal_scalar_wn_kernel_refuted_by_mirror_split",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "³H/³He mirror split in extracted w3 = 13.0% (> 2%) ⇒ no universal scalar kernel; w_n(K) is isospin-dependent (IMME T₃), closure ⇒ option 1 (per-sub-link hyperbolic volume)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "theta-wn-kernel-derive-or-refute",
+  "scriptFile": "theta_wn_kernel_derive_or_refute.py",
+  "scriptHash": "57c77f4e7c56",
+  "scriptCommitSha": "8e4cc4f329f9fcd7f739ca31edb36898baa1acb6",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Closure option 2: extract per-body-order weights w_n from the AME anchors; the ³H/³He mirror split refutes a universal scalar q-difference kernel R(q,x) and shows w_n(K) carries isospin (T₃) structure (IMME degree-2). Points closure to option 1 (per-sub-link hyperbolic volume). No fit, no production wiring.",
+  "data": {
+    "a_D": {
+      "2": 1.0,
+      "3": 1.336965623039692,
+      "4": 2.5327796636746758
+    },
+    "weights": {
+      "w2": 4.3533674521174195,
+      "w3_T": 9.158869477830988,
+      "w3_He": 8.040941695253638,
+      "w4": 15.604233140615488
+    },
+    "mirror_split_frac": 0.12999302972892574
+  }
+}

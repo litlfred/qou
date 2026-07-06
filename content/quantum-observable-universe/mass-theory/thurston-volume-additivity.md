@@ -61,3 +61,5 @@ $V(4_1) = 2 v_3 \approx :val[Vol_4_1]{precision=6}$ — the minimum volume among
 hyperbolic knots.  This is the normalization used to pin the
 substrate parameter $q_0$ via
 [$\hbar_q^2 = V(4_1) / (m_\mu / m_e)$](#prop:local-substrate-q).
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

@@ -1,7 +1,7 @@
 # Ocneanu cancellation — numerical verification at 200 dps (round 2)
 
 **Branch.** `claude/improve-charge-precision-AXKIA`
-**Witness.** [`ocneanu-cancellation-derivation.witness.json`](../../folio-assistant/computations/ocneanu-cancellation-derivation.witness.json)
+**Witness.** [`ocneanu-cancellation-derivation.witness.json`](../../computations/ocneanu-cancellation-derivation.witness.json)
 **Cross-references.**
 [2026-05-04-per-nucleon-shift-derivation.md](2026-05-04-per-nucleon-shift-derivation.md),
 [2026-05-03-w3-habiro-unblocked.md](2026-05-03-w3-habiro-unblocked.md)
@@ -70,7 +70,7 @@ The deuteron (n=6) probe at q ≈ 0.01 detected pole 14, not the expected
 
 Round-1 hypothesised that q-pole vs u-pole conventions might differ.
 Confirmed: the substitution is **q = u²** (per
-[`habiro_coefficients_atomic_fast.py`](../../folio-assistant/computations/habiro_coefficients_atomic_fast.py):
+[`habiro_coefficients_atomic_fast.py`](../../computations/habiro_coefficients_atomic_fast.py):
 
 ```python
 p_u = sp.cancel(p_q.subs(q, u ** 2))

@@ -61,9 +61,9 @@ See [Table 2](#tbl:chirality-dual-space-derivation-table2-data).
 *Symbolic verification: the per-crossing product $\prod_{pn}(1 + \mathrm{sign}\cdot h)$
 **exactly equals** paper's
 $\{1+h, 1-h^2, (1-h^2)^2\}$ for $\{D, T/^3\mathrm{He}, ^4\mathrm{He}\}$.
-Numerical match at $q_0 \approx 1.11$ confirmed.*
+canonical exact match at $q_0 \approx 1.11$ confirmed.*
 
-**Why "dual space".**
+**The dual-space formulation.**
 
 *The pairing $\tau_\lambda(\sigma) - \tau_\lambda(\sigma^{-1})$ is
 the **Frobenius-dual pairing** of the deviation $\sigma - \sigma^{-1}$
@@ -126,5 +126,7 @@ channel is sufficient.*
 See [Table 3](#tbl:chirality-dual-space-derivation-table3-data).
 
 *Six of six. Computation infrastructure complete (scripts +
-witness files for all terms in `folio-assistant/computations/`).
+witness files for all terms in `computations/`).
 Paper-side completeness achieved.*
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

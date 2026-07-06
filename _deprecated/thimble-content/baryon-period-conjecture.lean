@@ -9,14 +9,14 @@ This conjecture axiomatizes the three-color simultaneous prescription:
 the baryon integrand is the product ∏_k dc_k/dz of all three color
 prolongations, integrated over [−a, a] with a = (4 − q)/(4q + 3).
 
-## Dependent wiring (CLAUDE.md §3b)
+## Dependent wiring (AGENTS.md §3b)
 
 This conjecture is **downstream of** `prop:sw-period-thimble-equivalence`,
 which is itself conditional on the five hypotheses A2.1–A2.5 bundled
 in the typeclass `PLCorrectnessHypotheses` (defined in
 `sw-period-thimble-equivalence.lean`).  In particular A2.4
 (real-axis = thimble sum) is open; under its conjectural status,
-this whole block remains a `conjecture` per CLAUDE.md §3b.
+this whole block remains a `conjecture` per AGENTS.md §3b.
 
 To make the dependence visible at the type level — and to avoid an
 unresolved cross-file `import` until the sibling `.lean` files are
@@ -86,7 +86,7 @@ instance plCorrectnessHypotheses_placeholder : PLCorrectnessHypotheses where
     - The Borromean link volume Vol(𝔅₃)
     - The mass ratio identity m_p/m_e = Vol(𝔅₃)/ℏ_q² × 𝒜(q₀)
 
-    **Dependent on `[PLCorrectnessHypotheses]`** per CLAUDE.md §3b:
+    **Dependent on `[PLCorrectnessHypotheses]`** per AGENTS.md §3b:
     the identification of `𝒜(q₀)` with a ratio of thimble periods
     requires the keystone `prop:sw-period-thimble-equivalence`,
     which in turn requires A2.1–A2.5.  Until A2.4 is closed for the
@@ -124,7 +124,7 @@ class BaryonPeriodRatio (q : ℝ) [PLCorrectnessHypotheses] where
 
     Conditional on `[PLCorrectnessHypotheses]` (placeholder instance
     in scope above): `BaryonPeriodRatio q₀` is a *downstream conjecture*
-    of `swPeriodThimbleEquivalence`, per CLAUDE.md §3b. -/
+    of `swPeriodThimbleEquivalence`, per AGENTS.md §3b. -/
 -- Ref: [manuscript] §5/baryon-period-conjecture
 noncomputable instance : BaryonPeriodRatio (1.1100 : ℝ) where
   q_pos := by norm_num

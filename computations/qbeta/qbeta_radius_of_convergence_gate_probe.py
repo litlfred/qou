@@ -162,7 +162,7 @@ def main() -> int:
     print()
 
     # Load canonical SDP c_k from the pinned witness if available.
-    # Note (per CLAUDE.md): only use canonical c_k values; do NOT fit.
+    # Note (per AGENTS.md): only use canonical c_k values; do NOT fit.
     sdp_witness = (HERE / "qbeta-decay-sdp-extended-ck.witness.json")
     if sdp_witness.exists():
         with sdp_witness.open() as fh:

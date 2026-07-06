@@ -124,4 +124,4 @@ since $[k]_q \sim q^k$ for large $k$, high modes decay
 **doubly exponentially** in $k$ — the exponential UV cutoff
 noted in the [q-Navier--Stokes definition](#def:q-navier-stokes).
 
-**Mathematical Novelty.** While the mechanical process of $q$-deforming operators is a standard procedure, the mathematical novelty is observing that applying the exact $q$-derivative $D_q$ to classical Kelvin-wave dispersion immediately generates an exact, analytically rigorous doubly-exponential UV suppression mechanism ($\tau_k \sim q^{-2k}$) in the fluid bulk, bypassing the need for ad-hoc phenomenological regularization or arbitrary cutoffs.
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

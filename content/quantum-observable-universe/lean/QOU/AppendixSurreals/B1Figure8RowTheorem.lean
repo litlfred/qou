@@ -20,14 +20,17 @@ class B1Figure8RowContext where
   bloch_wigner_4_1 : ℝ
   /-- The Mikusinski filtration depth assigned to the figure-8 row. -/
   depth_4_1 : ℕ
-  /-- Manuscript claim — figure-8 row sits at depth 2 (Bloch-Suslin /
-      Bloch-Wigner level) and the volume is non-zero (Murakami-Murakami). -/
-  claim_figure_8 : depth_4_1 = 2 ∧ bloch_wigner_4_1 ≠ 0
+  /-- Figure-8 row sits at depth 2 (Bloch-Suslin / Bloch-Wigner level) -/
+  depth_eq_2 : depth_4_1 = 2
+  /-- and the volume is non-zero (Murakami-Murakami). -/
+  bloch_wigner_ne_zero : bloch_wigner_4_1 ≠ 0
 
 /-- **Proposition (`prop:b1-figure-8-row-theorem`).** -/
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/b1-figure-8-row-theorem.md
 theorem b1_figure_8_row [ctx : B1Figure8RowContext] :
-    ctx.depth_4_1 = 2 ∧ ctx.bloch_wigner_4_1 ≠ 0 :=
-  ctx.claim_figure_8
+    ctx.depth_4_1 = 2 ∧ ctx.bloch_wigner_4_1 ≠ 0 := by
+  constructor
+  · exact ctx.depth_eq_2
+  · exact ctx.bloch_wigner_ne_zero
 
 end QOU.AppendixSurreals.B1Figure8RowTheorem

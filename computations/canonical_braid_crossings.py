@@ -28,7 +28,7 @@ References:
 - prop:hecke-branching-trace-decomposition (operator-valued interface)
 - prop:q-hecke-seminormal-character-closure (this PR's closure)
 
-@module folio-assistant/computations/canonical_braid_crossings
+@module computations/canonical_braid_crossings
 """
 
 from __future__ import annotations
@@ -55,9 +55,10 @@ def _avg_color_delta():
     global _AVG_COLOR_DELTA
     if _AVG_COLOR_DELTA is None:
         import mpmath as _mp
-        from _li_2_q_util import flavor_split_subleading
+        # DE-WIRED 2026-06-29: proven leading δ, not posited subleading
+        from _li_2_q_util import flavor_split_leading
         from q_parameter import Q as _Q0
-        _AVG_COLOR_DELTA = flavor_split_subleading(_mp.mpf(str(_Q0)))  # mp.mpf
+        _AVG_COLOR_DELTA = flavor_split_leading(_mp.mpf(str(_Q0)))  # mp.mpf
     return _AVG_COLOR_DELTA
 
 

@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/probe_option_e_h6_entry_point.py",
+  "script_path": "computations/probe_option_e_h6_entry_point.py",
   "language": "python",
   "source_hash": "a705b6ddc1ef",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -21,7 +21,7 @@
         "reviewed_at": "2026-06-09T03:37:13.209Z",
         "reviewed_sha": "76a167e10467a2b0f41dbbd968ea8245d5b4ba33",
         "severity": "critical",
-        "evidence": "folio-assistant/computations/probe_option_e_h6_entry_point.py:201: mpmath/sympy → float64 cast `float(mp.mpf(t[ ]))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | folio-assistant/computations/probe_option_e_h6_entry_point.py:202: mpmath/sympy → float64 cast `float(mp.mpf(t[ ]))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | folio-assistant/computations/probe_option_e_h6_entry_point.py:203: mpmath/sympy → float64 cast `float(mp.mpf(t[ ]))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`)."
+        "evidence": "computations/probe_option_e_h6_entry_point.py:201: mpmath/sympy → float64 cast `float(mp.mpf(t[ ]))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | computations/probe_option_e_h6_entry_point.py:202: mpmath/sympy → float64 cast `float(mp.mpf(t[ ]))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`). | computations/probe_option_e_h6_entry_point.py:203: mpmath/sympy → float64 cast `float(mp.mpf(t[ ]))` — GUARANTEED precision loss; keep the value in mpmath (`mp.mpf(str(...))`) or sympy (`sp.N(..., dps)` without the outer `float()`)."
       },
       {
         "field_hash": {

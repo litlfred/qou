@@ -54,3 +54,15 @@ The first two coordinates of Bring's surface map smoothly into the computational
 Because spacetime distance from the observer is derived directly from the coordinates of Bring's surface under involution, physical distance is fundamentally **relative computational time**. The physical separation between two events is simply the number of discrete lattice applications of the $R$-matrix (dependent on the local substrate parameter $q$) that must be computed to connect their state spaces. 
 
 Crucially, while this spacetime computational distance is relative to the observer, it must remain consistent across observers. The algebraic consistency of the state space (guaranteed by the Yang-Baxter equations on the $R$-matrix) ensures that the computational distance agrees across different observers, recovering macroscopic symmetries like Lorentz covariance as an emergent property of information-theoretic agreement.
+
+## The Substrate Parameter as the Mass Ratio
+
+In the QOU framework, particle masses are mathematically derived from the Markov trace of their respective topological knots:
+$$ m(K) = \mathrm{tr}_M(K, q) \times E_0 $$
+
+When we examine the ratio between two fundamental flavor generations (e.g., the muon $m_\mu$ and the electron $m_e$), the scaling energy $E_0$ cancels, leaving an exact algebraic equation:
+$$ \frac{m_\mu}{m_e} = \frac{\mathrm{tr}_M(K_\mu, q)}{\mathrm{tr}_M(K_e, q)} $$
+
+This structural identity exposes the physical reality of the substrate parameter $q$: **$q$ is not a hidden, unobservable background parameter; it is mathematically synonymous with the mass ratio itself.** 
+
+Because $q$ is a local field $q(p)$ that evolves dynamically in response to local interactions (e.g., in regions of extreme EMF or gravity), the topological deformation of the local geometry physically manifests as a shift in the local mass ratio $m_\mu(p)/m_e(p)$. Thus, tracking the evolution of $q(p)$ over the spacetime lattice is observationally identical to tracking the dynamic shifting of the fundamental flavor mass hierarchy.

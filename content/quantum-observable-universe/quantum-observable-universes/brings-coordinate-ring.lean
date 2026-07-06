@@ -1,3 +1,6 @@
+import Mathlib.GroupTheory.Perm.Basic
+import Mathlib.Algebra.Ring.Basic
+
 /-!
 # QOU.AlgebraicSubstrate.BringsCoordinateRing
 
@@ -9,8 +12,6 @@ LaTeX label: `def:brings-coordinate-ring`
 
 set_option autoImplicit false
 
-import Mathlib.GroupTheory.Perm.Basic
-import Mathlib.Algebra.Ring.Basic
 
 namespace QOU.AlgebraicSubstrate
 

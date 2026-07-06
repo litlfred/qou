@@ -24,7 +24,7 @@ Verifies the paper's closed forms numerically + emits witness with
 per-block Taylor coefficients ready for c_k^(λ) extraction.
 
 Run:
-    python3 folio-assistant/computations/qbeta_per_block_paper_closed_forms.py
+    python3 computations/qbeta_per_block_paper_closed_forms.py
 """
 from __future__ import annotations
 

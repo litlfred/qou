@@ -21,5 +21,5 @@ Search for the strict $Q_\beta$ residual extension via categorical multi-block p
 - **Precision**: The ansatz $Q_{\beta} = Q_A \cos(\alpha_{N_1}) (1 - b^2 \hbar_q^4) \left(1 + (-2 - \frac{3}{2}W_4) b^3 \hbar_q^6\right)$ yields an error of **-0.0005 ppm** (compared to the N=2 baseline error of 1.27 ppm and N=3 bound of 0.0094 ppm).
 - **Physical Meaning**: The $-2$ scalar originates from the $F_3$ truncation (Habiro braiding projection). The $-\frac{3}{2} W_4$ explicitly involves the Wenzl weight over 4-strands, closing the residual mass generation analogously to how $H_4(q)$ trace factored into the $m_n-m_p$ mass split (which isolated the identical Wenzl weight $1/[4]_q!$).
 - **Formalization**: The exact scalar is defined in `QOU.BraidKnot.QBetaWenzlDecomposition`.
-- **Witness Data**: Witness written to `folio-assistant/computations/q-beta-c3-wenzl-decomposition.witness.json`.
+- **Witness Data**: Witness written to `computations/q-beta-c3-wenzl-decomposition.witness.json`.
 - **Status**: Structural decomposition identified. Proceeding to formal derivation.

@@ -5,7 +5,7 @@ Copyright (c) 2026 litlfred. All rights reserved.
 
 The algebraic skeleton of the "derive the `c_k` recurrence from q-Bessel
 contiguity" result (compute:
-`folio-assistant/computations/qbeta/qbeta_qbessel_contiguity_cfinite.py`;
+`computations/qbeta/qbeta_qbessel_contiguity_cfinite.py`;
 audit: `docs/audits/2026-06-13-reeb-phase-qbessel-identification.md`).
 
 The Hahn–Exton q-Bessel function `J_ν(x;q)` (the matrix coefficient of `E_q(2)`,
@@ -33,7 +33,7 @@ geometric). The order-2 C-finite pole structure is in
 `RationalCoeffRecurrence.pole_reciprocal_is_char_root`.
 
 Generic base ring `[Field K]` (no archimedean structure — `q`, `a` are formal
-fibre parameters; cf. CLAUDE.md §7c). Sorry-free.
+fibre parameters; cf. AGENTS.md §7c). Sorry-free.
 -/
 import Mathlib.Algebra.BigOperators.Ring.Finset
 import Mathlib.Algebra.Field.Basic
@@ -70,8 +70,8 @@ theorem qbessel_coeff_closed_form (q a : K) (c : ℕ → K)
     (k : ℕ) :
     c k = c 0 * ∏ j ∈ Finset.range k, qbesselRatio q a j := by
   refine first_order_solution (qbesselRatio q a) c (fun n => ?_) k
-  rw [qbesselRatio, mul_div_assoc, eq_div_iff (hD n)]
-  exact hrec n
+  rw [qbesselRatio, div_mul_eq_mul_div, eq_div_iff (hD n)]
+  linear_combination hrec n
 
 /-- **C-finite degeneration.** When the ratio is a *constant* `ρ` (the rational /
 `q → 1` limit), the sequence is geometric `c_k = c_0 · ρ^k` — C-finite of order 1
@@ -99,7 +99,7 @@ theorem qbessel_second_order_factor (q a : K) (k : ℕ) :
 q-Bessel generating function `g(w) = Σ c_k w^k` satisfies
 `q^ν·g(q²w) − (1+q^ν−w)·g(qw) + g(w) = 0` (the function-level q-Bessel equation;
 verified to 60 dps in
-`folio-assistant/computations/qbeta/qbessel_second_order_qdifference_equation.py`).
+`computations/qbeta/qbessel_second_order_qdifference_equation.py`).
 Its `w^{k+1}` coefficient is the relation below, which follows from the
 first-order `★` via `qbessel_second_order_factor`. The "second order" is the
 q-difference order (three q-shifts `w, qw, q²w`); on the coefficients it collapses
@@ -126,8 +126,8 @@ theorem qbessel_first_kind_coeff_closed_form (q a : K) (c : ℕ → K)
     (k : ℕ) :
     c k = c 0 * ∏ j ∈ Finset.range k, qbesselFirstKindRatio q a j := by
   refine first_order_solution (qbesselFirstKindRatio q a) c (fun n => ?_) k
-  rw [qbesselFirstKindRatio, mul_div_assoc, eq_div_iff (hD n)]
-  exact hrec n
+  rw [qbesselFirstKindRatio, div_mul_eq_mul_div, eq_div_iff (hD n)]
+  linear_combination hrec n
 
 /-- **Jackson's Second Kind q-Bessel coefficient ratio.**
 Also associated with `SU_q(1,1)`, its ratio is
@@ -143,7 +143,44 @@ theorem qbessel_second_kind_coeff_closed_form (q a : K) (c : ℕ → K)
     (k : ℕ) :
     c k = c 0 * ∏ j ∈ Finset.range k, qbesselSecondKindRatio q a j := by
   refine first_order_solution (qbesselSecondKindRatio q a) c (fun n => ?_) k
-  rw [qbesselSecondKindRatio, mul_div_assoc, eq_div_iff (hD n)]
-  exact hrec n
+  rw [qbesselSecondKindRatio, div_mul_eq_mul_div, eq_div_iff (hD n)]
+  linear_combination hrec n
+
+/--
+**Lever-1 Fibre Kernel — Hahn-Exton contiguity ratio (shared Habiro-ring class).**
+The correction to the binding period `S(m)` relative to the order-2 q-involution
+skeleton is the cyclotomic Habiro sequence `D(m)`. This alias names the Hahn-Exton
+q-Bessel ratio `qbesselRatio` for use in the conditional product form below.
+
+SCOPE (per `docs/audits/2026-06-28-lever1-binding-correction-not-single-qhypergeometric.md`):
+`D(m)` shares the *Hahn-Exton / Habiro-ring class* with the Q_β `c_k` ladder — both
+are cyclotomic-completion objects with `ζ₄` residues — but this is a shared-CLASS
+analogy, NOT a literal contiguity identity. `D(m)` does **not** satisfy the
+single-parameter Hahn-Exton recurrence: the literal contiguity template was tested
+with held-out-`m` falsification and FAILS (no single `a` fit on `m=4,5` predicts
+`m=6,7,8`), and `D(m)` factors as a product of pairwise-coprime irreducible
+bar-symmetric cores of growing degree (Stages 7-9), not a single q-hypergeometric
+element. The bare Hahn-Exton ratio is likewise structurally excluded for the parallel
+`c_k` (2026-06-20 audit, `r₂ = +2` in the forbidden gap). So `lever1HabiroRatio` is
+the q-Bessel ratio re-exported as the class representative, not a claim that `D(m)` is
+governed by it.
+-/
+def lever1HabiroRatio (q a : K) (k : ℕ) : K :=
+  qbesselRatio q a k
+
+/--
+**Lever-1 Kernel Product Form (CONDITIONAL).**
+*If* a sequence `D` satisfies the Hahn-Exton q-Bessel recurrence `hrec` for some `(q, a)`,
+*then* it has the q-Bessel product form. This is a sound conditional alias of
+`qbessel_coeff_closed_form`; it does NOT assert that the binding correction `D(m)`
+satisfies `hrec` (it does not — held-out falsified, see `lever1HabiroRatio` scope note).
+-/
+theorem lever1_habiro_closed_form (q a : K) (D : ℕ → K)
+    (hD : ∀ k, (1 - q ^ (k + 1)) * (1 - a * q ^ k) ≠ 0)
+    (hrec : ∀ k, D (k + 1) * ((1 - q ^ (k + 1)) * (1 - a * q ^ k)) = -q ^ k * D k)
+    (k : ℕ) :
+    D k = D 0 * ∏ j ∈ Finset.range k, lever1HabiroRatio q a j := by
+  -- Follows identically since lever1HabiroRatio is qbesselRatio
+  exact qbessel_coeff_closed_form q a D hD hrec k
 
 end QOU.QBeta

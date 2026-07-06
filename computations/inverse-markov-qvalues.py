@@ -29,7 +29,7 @@ tube network. Narrower tubes → smaller product → larger 1/|tr_M|
 Both nucleon-level (A strands) and quark-level (3A strands) computed.
 
 Usage:
-    cd folio-assistant/computations && python3 inverse-markov-qvalues.py
+    cd computations && python3 inverse-markov-qvalues.py
 """
 import math
 import json

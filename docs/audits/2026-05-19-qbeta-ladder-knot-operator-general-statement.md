@@ -29,7 +29,7 @@ For typed-B_3 braids of the form arising in QOU β-decay (proton uud / neutron u
 | 1 — Hecke quadratic | σ_i² = h·σ_i + 1 in H_n(q); each crossing generates a Laurent polynomial in q with leading derivative ∂/∂q ~ ℏ_q |
 | 2 — Markov cyclicity | τ_M(xy) = τ_M(yx) — at the k-th order of the ℏ_q² expansion, the combinatorial contribution gathers cyclic permutations of k crossings, i.e. k-fold cyclic substructures |
 | 3 — k-strand sub-braid extraction | At order ℏ_q^(2k), the dominant contribution from τ_M(β_p) − τ_M(β_n) comes from **k-strand sub-braids**, whose Markov closure is a specific link L_k |
-| 4 — KL decategorification | Per CLAUDE.md §7b, the mass observable lives in the KL classical limit. At q=1, Jones invariants enter. |
+| 4 — KL decategorification | Per AGENTS.md §7b, the mass observable lives in the KL classical limit. At q=1, Jones invariants enter. |
 
 **Combining Facts 1–4:** the k-th order ℏ_q^(2k) coefficient factors as
 

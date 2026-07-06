@@ -19,8 +19,8 @@ export default corollary({
   },
   computation: {
     engine: "sympy",
-    script: "folio-assistant/computations/probes/habiro_expansion_atomic_probe.py",
-    witness: "folio-assistant/computations/probes/habiro-expansion-atomic-probe.witness.json",
+    script: "computations/probes/habiro_expansion_atomic_probe.py",
+    witness: "computations/probes/habiro-expansion-atomic-probe.witness.json",
     status: "verified",
   },
 });

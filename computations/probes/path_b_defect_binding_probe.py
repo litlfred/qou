@@ -92,7 +92,7 @@ from codata_constants import (
 Q0 = Q_MP
 M_E_MEV = float(_M_E_MEV_MP)
 M_P_MEV = float(_M_P_MEV_MP)
-M_N_MEV = float(_M_N_MEV_MP)
+m_n_derived_3input = float(_M_N_MEV_MP)
 
 
 # Canonical Markov traces from the Hoefsmit+Wenzl bridge witness.
@@ -102,7 +102,7 @@ M_N_MEV = float(_M_N_MEV_MP)
 TR_M = {
     "p":   1.0653062286,
     "n":   0.9232332972,
-    "D":   0.3882864240,
+    "D":   0.3882864715,
     "T":   0.1040521187,
     "3He": 0.2065408586,
     "4He": 0.0553483459,
@@ -121,7 +121,7 @@ M_AME = {
 
 def constituent_sum(Z: int, N: int) -> float:
     """Atomic constituent sum: Z·m_p + N·m_n + Z·m_e."""
-    return Z * M_P_MEV + N * M_N_MEV + Z * M_E_MEV
+    return Z * M_P_MEV + N * m_n_derived_3input + Z * M_E_MEV
 
 
 def tr_M_free(Z: int, N: int) -> float:

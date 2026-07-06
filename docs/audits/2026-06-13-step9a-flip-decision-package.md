@@ -8,6 +8,20 @@ itself is owner-gated per
 `probes/option-a-vol-per-knot-light-series.witness.json` (2026-06-04, all
 chi-caches present) — no new compute, no fit.
 
+> **🛑 Currency banner (owner ruling 2026-06-24 — added 2026-07-02, PR #3200).**
+> For **absolute** mass the flip question is now moot: neither the uniform
+> shortcut nor the per-knot vol-density form is canonical — absolute
+> nucleon/atom masses route through the muon-anchored
+> [`canonical_mass.py`](../../computations/canonical_mass.py) facade
+> ($m_p \approx 938.27$ MeV, CODATA;
+> [guardrail](../canonical-mass-formula-guardrail.md)), and λ_A was excised as
+> a CODATA-implied fit
+> ([refutation audit](2026-06-24-lambda-a-refutation-artifact-audit.md)).
+> The `R(K)` analysis below **stands** as evidence on the **binding-side**
+> per-knot density (the 9b ρ/Δ_λ leg): the 2.3→63× spread is exactly the
+> per-λ weight the binding series is missing. The "flip is a derivation
+> milestone, not a wiring choice" gate is unchanged for that leg.
+
 ## The question
 
 Production (`mass_table_comprehensive.py:208`) evaluates absolute masses with

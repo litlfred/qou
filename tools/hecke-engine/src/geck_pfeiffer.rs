@@ -414,7 +414,7 @@ pub fn chi_lambda_via_gp_hoefsmit(
 /// **`q` is supplied as a decimal string** (not `f64`) to preserve
 /// arbitrary precision through the FFI; the caller passes the
 /// canonical 50-dps `Q_50_DIGIT_STR` (or higher) from
-/// `folio-assistant/computations/q_parameter.py`. This matches the
+/// `computations/q_parameter.py`. This matches the
 /// convention of `chi_lambda_canonical_h_n_mpfr` in `wenzl_lr.rs`.
 ///
 /// **Averaged-crossing handling**: same as the f64 variant — uses

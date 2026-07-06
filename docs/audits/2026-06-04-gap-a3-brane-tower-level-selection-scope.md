@@ -87,7 +87,7 @@ $$
 
 The remaining unknown is the **per-partition projection** `P_λ(K)`. The Phase-4 closure says `A(K)` is known to ≤ 2.5 %; the per-partition decomposition is whatever distribution of `P_λ(K)` reproduces `B(K)` consistently across atoms.
 
-**Why this isn't the seventh fit ansatz.** Per CLAUDE.md, *"do not propose a seventh fit-based ansatz."* The pivot is not a new closed-form for `Δ_λ`; it is a **factorisation** that takes the per-atom layer as already-derived (Phase 4) and asks what the per-partition layer must structurally be. A fit-based candidate for `P_λ(K)` would still be a fit; a brane-tower-derived candidate would be a derivation. The next sub-section identifies which sub-categories of `P_λ(K)` are categorical-derivation candidates (not fits) and which are not.
+**Why this isn't the seventh fit ansatz.** Per AGENTS.md, *"do not propose a seventh fit-based ansatz."* The pivot is not a new closed-form for `Δ_λ`; it is a **factorisation** that takes the per-atom layer as already-derived (Phase 4) and asks what the per-partition layer must structurally be. A fit-based candidate for `P_λ(K)` would still be a fit; a brane-tower-derived candidate would be a derivation. The next sub-section identifies which sub-categories of `P_λ(K)` are categorical-derivation candidates (not fits) and which are not.
 
 ## §4. The cheapest formalize-first probe for `P_λ(K)`
 
@@ -123,7 +123,7 @@ Either way, the framework's open math advances by one structural step.
 - **No probe in this PR.** This is a scoping doc that frames the precise question GAP-A-3 names, gives the two-layer factorisation, and identifies the three cheapest formalize-first content channels. A follow-up branch would implement the probe.
 - **No production code changes.** No content blocks, no Lean files, no witnesses.
 - **No closed-form for `Δ_λ`.** The factorisation `A(K) · P_λ(K)` is the structural pivot; `P_λ(K)` itself is what GAP-A-3 must derive.
-- **No 7th fit ansatz.** Per CLAUDE.md, this PR is built to **pass** the Δ_λ-gate discipline review.
+- **No 7th fit ansatz.** Per AGENTS.md, this PR is built to **pass** the Δ_λ-gate discipline review.
 
 ## §7. Discipline
 

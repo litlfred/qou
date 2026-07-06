@@ -1,7 +1,12 @@
-/-!
-# Monomials, monomial bases, and leading terms
+import Mathlib.Data.List.Basic
+import Mathlib.Data.Finset.Basic
+import Mathlib.Algebra.Ring.Basic
 
-Content block for `def:monomial-basis`.
+/-!
+# Monomials and monomial bases
+
+Content block for `def:monomial-basis`. The leading-term data (LM/LC/LT)
+is split into `def:leading-term-data`.
 
 The authoritative formalization lives in
 `content/unital-groebner-bases/lean/QOU/GrobnerShirshov/Basic.lean`, which defines:
@@ -22,9 +27,6 @@ The paper's Definition 3.1–3.3 corresponds to these declarations.
 -- Re-export the relevant types for documentation purposes.
 -- In the Lean build these are imported via QOU.GrobnerShirshov.
 
-import Mathlib.Data.List.Basic
-import Mathlib.Data.Finset.Basic
-import Mathlib.Algebra.Ring.Basic
 
 namespace QOU.GrobnerShirshov.ContentBlock
 

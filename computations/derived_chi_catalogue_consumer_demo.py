@@ -101,7 +101,7 @@ def main() -> int:
 
     # ── Numeric Schur-Weyl cross-check at two test q-values ──
     # V⊗³ trace = 4·χ^(3) + 2·χ^(2,1) at U_q(sl_2); (1,1,1) doesn't appear.
-    Q_TEST_VALUES = ["1.10997858275", "1.05"]
+    Q_TEST_VALUES = ["1.10997859556", "1.05"]
     all_consistent = True
     for q_str in Q_TEST_VALUES:
         q = mp.mpf(q_str)
@@ -160,7 +160,7 @@ def main() -> int:
     wb.add_data(
         "schur_weyl_identity_under_catalogue_lookup",
         "4·χ^(3) + 2·χ^(2,1) = tr_{V⊗³}(β_Bor) = 8 − 6h⁴ − 2h⁶  "
-        "(verified to 1e-40 at q = 1.10997858275 and 1.05)",
+        "(verified to 1e-40 at q = 1.10997859556 and 1.05)",
     )
     wb.add_data(
         "phase_3_next_step",

@@ -27,7 +27,7 @@ Mass: M = Z·m_p + N·m_n + Z·m_e + m_e × Φ₁
 Binding: E = (Φ₁_unbonded - Φ₁_bonded) × E_mol
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 unified-mass-molecular.py
 """
 
@@ -37,6 +37,7 @@ from mpmath import mp
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0, Q_INV as qi, HA as h, q_int
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
+from experimental_constants import m_n_derived_3input  # noqa: E402
 from witness_base import WitnessBuilder
 
 z = 1.0/(q0**0.5+qi**0.5)
@@ -239,7 +240,7 @@ mass_errors = []
 for Z, N, sym, m_obs in isotopes:
     o = atom_ordering(Z, N)
     phi = compute_phi1(o, gluon=True)
-    m_const = Z*M_P_MEV + N*M_N_MEV + Z*M_E_MEV
+    m_const = Z*M_P_MEV + N*m_n_derived_3input + Z*M_E_MEV
     m_pred = m_const + M_E_MEV * phi
     err = (m_pred - m_obs) / m_obs * 100
     mass_errors.append(abs(err))
@@ -365,7 +366,7 @@ w.add_data("molecular_mae_pct", float(mae_mol))
 
 for Z, N, sym, obs in isotopes:
     phi = atom_phi[sym]
-    mc = Z*M_P_MEV + N*M_N_MEV + Z*M_E_MEV
+    mc = Z*M_P_MEV + N*m_n_derived_3input + Z*M_E_MEV
     mp = mc + M_E_MEV * phi
     w.add_data("mass_"+sym, {
         "Z": Z, "N": N, "Phi1": float(phi),

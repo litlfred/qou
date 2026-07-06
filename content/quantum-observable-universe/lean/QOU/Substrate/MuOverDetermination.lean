@@ -48,6 +48,8 @@ namespace QOU
 namespace Substrate
 namespace MuOverDetermination
 
+noncomputable section
+
 /-- The q-deformed Planck constant ℏ_q := 1 - 1/q. -/
 def hbarQ (q : ℝ) : ℝ := 1 - 1 / q
 
@@ -167,7 +169,7 @@ theorem substrate_over_determination
   at 100 dps with 12-significant-figure match.
 
 - Does NOT prove the framework's choice of q₀ anchor. The class
-  `ReadingAValidAtH2` pattern (CLAUDE.md §3b-cond) is the right
+  `ReadingAValidAtH2` pattern (AGENTS.md §3b-cond) is the right
   way to formalise such structural choices; this module only
   proves the INJECTIVITY structure that makes the choice
   consequential.
@@ -176,6 +178,7 @@ theorem substrate_over_determination
   lives in `per_observable_100x_status.py`).
 -/
 
+end  -- noncomputable section
 end MuOverDetermination
 end Substrate
 end QOU

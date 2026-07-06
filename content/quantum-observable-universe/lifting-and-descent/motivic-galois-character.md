@@ -38,7 +38,7 @@ is the image of $\chi^{\mathrm{mot}}_A$ under the
 [HKR comparison](#rem:hochschild-kummer-connection) to
 $H^2(\mathcal{S}, \mathbb{G}_m)$.*
 
-**Why this is the right level.**
+**Choice of level.**
 *Working with $\chi^{\mathrm{mot}}_A$ directly (rather than with each
 $\kappa_n$ at every level $n$) means the perpetual obstruction
 phenomenon ([Kummer tower](#rem:kummer-tower)) becomes a single
@@ -56,6 +56,6 @@ is the dual of two such realizations.*
 [`MotivicGaloisCharacter`](../../lean/QOU/LiftingDescent/MotivicGaloisCharacter.lean)
 takes a `MotivicSubstrate K0 Mhat Target` instance as an explicit
 hypothesis and exposes the character $\chi^{\mathrm{mot}}_A$ + its
-compatibility with each local realization $\rho_p$. Per CLAUDE.md §3b,
+compatibility with each local realization $\rho_p$. Per AGENTS.md §3b,
 `sorry` in any concrete instance is a substrate axiom, not a missing
 proof.*

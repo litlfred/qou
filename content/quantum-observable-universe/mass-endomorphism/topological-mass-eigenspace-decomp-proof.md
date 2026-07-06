@@ -1,5 +1,5 @@
 **Proof.**
-By the ([mass identity](#def\:mass-identity)), the mass of
+By the ([mass identity](#def:mass-identity)), the mass of
 the vortex $\varrho$ is
 
 $$
@@ -17,10 +17,10 @@ connection--curvature bundle over $\Sigma$, and as such it is an element
 of the section algebra $\Gamma(J^1 \mathcal{S}_{n+1}, \mathrm{SU}_{q_{n+1}}(2))$
 at whatever level $n{+}1$ accommodates the vortex.
 
-The :refterm[descent]{#descent} involution $\hat{\tau}_n$ ([:refterm[descent]{#descent} involution](#def\:descent-involution))
+The :refterm[descent]{#descent} involution $\hat{\tau}_n$ ([:refterm[descent]{#descent} involution](#def:descent-involution))
 decomposes this section algebra into the direct sum
 $\mathcal{A}_{n+1}^{\mathrm{desc}} \oplus \mathcal{A}_{n+1}^{\mathrm{trans}}$
-([:refterm[descent]{#descent} eigenspaces](#prop\:descent-eigenspaces)).  Since $\hat{\tau}_n$ is an
+([:refterm[descent]{#descent} eigenspaces](#prop:descent-eigenspaces)).  Since $\hat{\tau}_n$ is an
 idempotent $*$-endomorphism, the Killing-form norm
 $\lVert\cdot\rVert$ on $\mathfrak{su}(2)$ respects the orthogonal
 decomposition:

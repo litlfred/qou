@@ -35,10 +35,10 @@ Expr-level simplification.
 
 Usage:
     # Single atom
-    python3 folio-assistant/computations/habiro_coefficients_atomic_fast.py \\
+    python3 computations/habiro_coefficients_atomic_fast.py \\
         --atom 3He
     # Full sweep with N workers
-    python3 folio-assistant/computations/habiro_coefficients_atomic_fast.py \\
+    python3 computations/habiro_coefficients_atomic_fast.py \\
         --atom T --workers 8
 
 Output: appends to `habiro-coefficients-atomic-fast.witness.json`

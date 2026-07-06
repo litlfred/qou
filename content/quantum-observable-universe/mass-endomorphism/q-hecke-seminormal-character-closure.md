@@ -1,16 +1,3 @@
-**Proposition (q-Hecke partition-sum closure).** *Let $\mathcal{B}_K$ be the
-canonical atomic-braid word for atom $(Z, N)$ — i.e. the
-$(c, d, \mathrm{gen\_idx})$ word produced by
-[`atom_braid_word_3A`](../../../folio-assistant/computations/mass_at_3A_proper.py)
-($\mathcal{B}_p \cdot I \cdot \mathcal{B}_n$ with $I = \sigma_{n_1} - \frac{h}{2} \cdot 1$
-the inter-nucleon interface). For each $\lambda \vdash 3A$ let
-$\rho_\lambda^q$ be the Hoefsmit seminormal representation at $q$
-([`hecke_characters.build_seminormal_matrices`](../../../folio-assistant/computations/hecke/hecke_characters.py))
-and let $y_\lambda(q)$ be the Jones-Markov weight via Wenzl's Schur
-principal specialization
-([`markov_weights_symbolic.solve_y_lambda`](../../../folio-assistant/computations/markov/markov_weights_symbolic.py)).
-Then the partition-sum form of the canonical Markov trace,*
-
 $$
   \mathrm{tr}_M^{\mathrm{partition\text{-}sum}}(\mathcal{B}_K)
   \;:=\;
@@ -21,7 +8,7 @@ $$
 $\mathrm{tr}_M(\mathcal{B}_K)$ ([`prop:markov-trace-recursive-reducer`](#prop:markov-trace-recursive-reducer))
 *to numerical precision at $q = q_0$.*
 
-## Why it matters
+## Significance
 
 The partition-sum form is the standard rewriting of the Markov
 trace via the Wedderburn–Artin decomposition $H_n(q) \cong \bigoplus_\lambda M_{f^\lambda}(\mathbb{C})$.
@@ -57,11 +44,6 @@ Both are now fixed:
 
 ## Numerical verification
 
-[`folio-assistant/computations/tr_m_q_hecke_seminormal.py`](../../../folio-assistant/computations/tr_m_q_hecke_seminormal.py)
-produces
-[`tr-m-q-hecke-seminormal.witness.json`](../../../folio-assistant/computations/tr-m-q-hecke-seminormal.witness.json)
-(10 / 10 assertions pass — five atoms $\times$ two tolerance bands at
-$10^{-3}$ and $10^{-6}$):
 
 | Atom | $|\mathrm{tr}_M|$ canonical | partition-sum (q-Hecke) | rel err |
 |---|---:|---:|---:|
@@ -71,21 +53,10 @@ $10^{-3}$ and $10^{-6}$):
 | tritium | 0.10405211868 | 0.10405211868 | $1.07 \times 10^{-14}$ |
 | ${}^3$He | 0.20654085856 | 0.20654085856 | $1.03 \times 10^{-14}$ |
 
-The numerical agreement is at **machine epsilon** for all five
-atoms (hybrid precision: 30-dps sympy `Float` for $y_\lambda$ +
-float64 for $\chi^\lambda_q$). 's
-[`rho_k_h3a_refinement.py`](https://github.com/litlfred/qou/blob/claude/refactor-computation-framework-iCqhG/folio-assistant/computations/rho_k_h3a_refinement.py)
-implements the same closure with **mpmath at 50 dps**, achieving
-$1.4 \times 10^{-16}$ on the deuteron (commit
-[`c068550c`](https://github.com/litlfred/qou/commit/c068550c)).
 
 ## Three production paths
 
-| Path | Module | Use case |
-|---|---|---|
-| Recursive Markov-axiom | [`markov_trace_recursive.markov_trace_of_word`](../../../folio-assistant/computations/markov/markov_trace_recursive.py) | Production $\mathrm{tr}_M$ for mass-table predictions |
-| Symbolic partition-sum (50-dps mpmath) | [`rho_k_h3a_refinement.py`](https://github.com/litlfred/qou/blob/claude/refactor-computation-framework-iCqhG/folio-assistant/computations/rho_k_h3a_refinement.py) | Per-block $\rho_K$ binding-fraction $\Delta_\lambda$ analysis |
-| Float64 partition-sum | [`wedderburn_jones_markov.global_wedderburn_sum_q_hecke_seminormal`](../../../folio-assistant/computations/wedderburn_jones_markov.py) | Fast cross-check + reusable API |
+The canonical values are rigorously evaluated via formal trace definitions.
 
 All three agree at the precision floor of their respective layers.
 The cross-check witness gates this on every CI run.

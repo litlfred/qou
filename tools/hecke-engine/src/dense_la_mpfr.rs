@@ -270,3 +270,170 @@ mod tests {
         assert!((v[2].to_f64() - 3.0).abs() < 1e-15);
     }
 }
+
+// ──────────────────────────────────────────────────────────────────
+// §S6 — Gauss-elimination primitives for the categorical interface-
+// operator combiner (closure-b Rust port). `rug` provides no SVD /
+// null-space, so the intertwiner pipeline (kron → null-space → inverse
+// → similarity) is built from a single RREF routine. Each is
+// cross-checked against the mpmath oracle at 1e-25.
+// ──────────────────────────────────────────────────────────────────
+
+/// Kronecker product `A ⊗ B` at MPFR precision.
+pub fn kron_mpfr(a: &[Vec<Float>], b: &[Vec<Float>], prec: u32) -> Vec<Vec<Float>> {
+    let ra = a.len();
+    let ca = if ra == 0 { 0 } else { a[0].len() };
+    let rb = b.len();
+    let cb = if rb == 0 { 0 } else { b[0].len() };
+    let mut out: Vec<Vec<Float>> = (0..ra * rb)
+        .map(|_| (0..ca * cb).map(|_| Float::with_val(prec, 0)).collect())
+        .collect();
+    for i in 0..ra {
+        for j in 0..ca {
+            for k in 0..rb {
+                for l in 0..cb {
+                    out[i * rb + k][j * cb + l] =
+                        Float::with_val(prec, &a[i][j]) * &b[k][l];
+                }
+            }
+        }
+    }
+    out
+}
+
+/// Reduced row-echelon form (Gauss-Jordan, partial pivoting) of an
+/// `nrows × ncols` matrix at MPFR precision. Returns `(rref, pivot_cols)`.
+/// `tol` is the absolute threshold below which a candidate pivot is zero.
+pub fn rref_mpfr(
+    m: &[Vec<Float>],
+    prec: u32,
+    tol: &Float,
+) -> (Vec<Vec<Float>>, Vec<usize>) {
+    let nrows = m.len();
+    let ncols = if nrows == 0 { 0 } else { m[0].len() };
+    let mut a: Vec<Vec<Float>> = m
+        .iter()
+        .map(|row| row.iter().map(|v| Float::with_val(prec, v)).collect())
+        .collect();
+    let mut pivots: Vec<usize> = Vec::new();
+    let mut pr = 0usize;
+    for col in 0..ncols {
+        if pr >= nrows {
+            break;
+        }
+        // partial pivot: row (≥ pr) with the largest |a[r][col]|
+        let mut best = pr;
+        let mut bestval = Float::with_val(prec, &a[pr][col]).abs();
+        for r in (pr + 1)..nrows {
+            let v = Float::with_val(prec, &a[r][col]).abs();
+            if v > bestval {
+                bestval = v;
+                best = r;
+            }
+        }
+        if bestval <= *tol {
+            continue; // no pivot in this column
+        }
+        a.swap(pr, best);
+        let piv = Float::with_val(prec, &a[pr][col]);
+        for c in 0..ncols {
+            a[pr][c] = Float::with_val(prec, &a[pr][c] / &piv);
+        }
+        for r in 0..nrows {
+            if r == pr {
+                continue;
+            }
+            let factor = Float::with_val(prec, &a[r][col]);
+            if factor.is_zero() {
+                continue;
+            }
+            for c in 0..ncols {
+                let sub = Float::with_val(prec, &factor * &a[pr][c]);
+                a[r][c] = Float::with_val(prec, &a[r][c] - &sub);
+            }
+        }
+        pivots.push(col);
+        pr += 1;
+    }
+    (a, pivots)
+}
+
+/// Right null space of an `nrows × ncols` matrix: basis vectors (each
+/// `Vec<Float>` of length `ncols`) spanning `{x : M x = 0}`, via RREF.
+pub fn nullspace_mpfr(m: &[Vec<Float>], prec: u32, tol: &Float) -> Vec<Vec<Float>> {
+    let ncols = if m.is_empty() { 0 } else { m[0].len() };
+    let (rref, pivots) = rref_mpfr(m, prec, tol);
+    let pivot_set: std::collections::BTreeSet<usize> = pivots.iter().copied().collect();
+    // pivot column -> its rref row index
+    let pivot_row: Vec<(usize, usize)> =
+        pivots.iter().enumerate().map(|(r, &c)| (c, r)).collect();
+    let mut basis: Vec<Vec<Float>> = Vec::new();
+    for free in 0..ncols {
+        if pivot_set.contains(&free) {
+            continue;
+        }
+        let mut x: Vec<Float> = (0..ncols).map(|_| Float::with_val(prec, 0)).collect();
+        x[free] = Float::with_val(prec, 1);
+        for &(pcol, prow) in &pivot_row {
+            x[pcol] = Float::with_val(prec, -(&rref[prow][free]));
+        }
+        basis.push(x);
+    }
+    basis
+}
+
+/// Inverse of a square matrix at MPFR precision via Gauss-Jordan on `[M | I]`.
+/// Returns `None` if singular (a pivot ≤ `tol`).
+pub fn inverse_mpfr(m: &[Vec<Float>], prec: u32, tol: &Float) -> Option<Vec<Vec<Float>>> {
+    let n = m.len();
+    if n == 0 {
+        return Some(Vec::new());
+    }
+    let mut aug: Vec<Vec<Float>> = (0..n)
+        .map(|i| {
+            let mut row: Vec<Float> =
+                m[i].iter().map(|v| Float::with_val(prec, v)).collect();
+            for j in 0..n {
+                row.push(Float::with_val(prec, if i == j { 1 } else { 0 }));
+            }
+            row
+        })
+        .collect();
+    for col in 0..n {
+        let mut best = col;
+        let mut bestval = Float::with_val(prec, &aug[col][col]).abs();
+        for r in (col + 1)..n {
+            let v = Float::with_val(prec, &aug[r][col]).abs();
+            if v > bestval {
+                bestval = v;
+                best = r;
+            }
+        }
+        if bestval <= *tol {
+            return None;
+        }
+        aug.swap(col, best);
+        let piv = Float::with_val(prec, &aug[col][col]);
+        for c in 0..(2 * n) {
+            aug[col][c] = Float::with_val(prec, &aug[col][c] / &piv);
+        }
+        for r in 0..n {
+            if r == col {
+                continue;
+            }
+            let factor = Float::with_val(prec, &aug[r][col]);
+            if factor.is_zero() {
+                continue;
+            }
+            for c in 0..(2 * n) {
+                let sub = Float::with_val(prec, &factor * &aug[col][c]);
+                aug[r][c] = Float::with_val(prec, &aug[r][c] - &sub);
+            }
+        }
+    }
+    Some(
+        (0..n)
+            .map(|i| (n..(2 * n)).map(|j| Float::with_val(prec, &aug[i][j])).collect())
+            .collect(),
+    )
+}

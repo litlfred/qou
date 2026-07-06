@@ -8,8 +8,8 @@ export default algorithm({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/gb_filtration_jet_tracker.py",
-    witness: "folio-assistant/computations/gb-filtration-jet-order.witness.json",
+    script: "computations/gb_filtration_jet_tracker.py",
+    witness: "computations/gb-filtration-jet-order.witness.json",
     status: "verified",
   },
   tags: [

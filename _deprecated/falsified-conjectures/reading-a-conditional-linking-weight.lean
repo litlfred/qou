@@ -14,7 +14,7 @@ with `-G` (Catalan's constant).
 
 At substrate q_0, this matches the m_p-anchored target to ~5.6 ppm
 (measured at mp.mpf 50 dps in
-[reading_a_residual_at_50dps.py](../../../folio-assistant/computations/reading_a_residual_at_50dps.py)).
+[reading_a_residual_at_50dps.py](../../../computations/reading_a_residual_at_50dps.py)).
 
 ## Why this is conjectural
 
@@ -35,7 +35,7 @@ requires a NEW categorical principle that:
 - Does not arise from any Σ_{λ⊢N} dim_q V_λ Wedderburn-sum form
   ([PR #701](https://github.com/litlfred/qou/pull/701) falsified 5 structural routes)
 - Does not arise from higher-N Wedderburn limit
-  ([Path C1 probe](../../../folio-assistant/computations/probes/higher_n_wedderburn_h2_drift_probe.py)
+  ([Path C1 probe](../../../computations/probes/higher_n_wedderburn_h2_drift_probe.py)
   shows h² coefficient grows factorially with N, drifts AWAY from -G)
 - Does not arise from the natural reading of the Yekutieli per-cell
   half-symmetric projection (audit
@@ -54,7 +54,7 @@ research.
 
 2. A **class** `ReadingAValidAtH2` axiomatising the conjecture
    "the actual linking-weight equals `linkingWeightReadingA`."
-   Per CLAUDE.md §3b-cond, this is the SOLE `sorry` in the
+   Per AGENTS.md §3b-cond, this is the SOLE `sorry` in the
    downstream chain.
 
 3. A **conditional theorem** `mp_prediction_under_reading_a` deriving
@@ -90,7 +90,7 @@ namespace QOU.BraidKnot
 noncomputable def linkingWeightReadingA (q G : ℝ) : ℝ :=
   5/2 + (-G) * (q - q⁻¹)^2
 
-/-- **The Reading-A conjecture as a class** (per CLAUDE.md §3b-cond).
+/-- **The Reading-A conjecture as a class** (per AGENTS.md §3b-cond).
 
     Asserts that the actual physical linking-weight `actualLW`
     equals the Reading-A formula at every q. The single field
@@ -173,7 +173,7 @@ theorem m_p_pred_reading_a_factored
     to ~5.6 ppm at q_0.**
 
     This is a NUMERICAL claim (proved at 50 dps in
-    [reading_a_residual_at_50dps.py](../../../folio-assistant/computations/reading_a_residual_at_50dps.py))
+    [reading_a_residual_at_50dps.py](../../../computations/reading_a_residual_at_50dps.py))
     that is HARD to state directly in Lean without committing to
     specific numerical values of m_e, m_p, q_0, G, Vol(𝓑₃). The
     Lean-level theorem only encodes the ALGEBRAIC structure; the

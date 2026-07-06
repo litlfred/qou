@@ -36,7 +36,7 @@ the categorical Pentagon → h⁴ derivation. Otherwise, the
 specialization is open and the Pentagon → −3/4 chain needs deeper
 analysis.
 
-Per CLAUDE.md three-calibration discipline: this probe does not
+Per AGENTS.md three-calibration discipline: this probe does not
 propose production wiring.
 """
 

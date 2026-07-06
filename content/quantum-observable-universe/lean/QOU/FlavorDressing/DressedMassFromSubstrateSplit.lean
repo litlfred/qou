@@ -29,7 +29,7 @@ open Flavor
     that multiplies `M_N` to give the dressed-quark splitting at
     substrate parameter `q ∈ ℝ`, `0 < q`.  Defined as a function on
     `ℝ` (we are at the archimedean / numerical layer here per
-    CLAUDE.md §7c). -/
+    AGENTS.md §7c). -/
 noncomputable def substrate_split_factor (q : ℝ) : ℝ :=
   ((q - 1)^2 * (1 - q^(-4 : ℤ)) / 3) *
     ((Real.sqrt q + Real.sqrt q⁻¹) / (q + q⁻¹))

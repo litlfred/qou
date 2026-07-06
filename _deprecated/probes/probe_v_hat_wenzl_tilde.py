@@ -11,7 +11,7 @@ measure).  The q-deformed Wenzl tilde weight is
     tilde w_λ := dim_q²(λ) / [n]_q!
 
 which is NOT a probability measure at q ≠ 1 (Σ tilde w_λ ≈ 0.987
-at n=3, q=q_0; 1.51 at n=12 per CLAUDE.md note).
+at n=3, q=q_0; 1.51 at n=12 per AGENTS.md note).
 
 This probe computes V̂_i and m_p_pred under both conventions:
   - normalized (current): w_λ / Σ w_λ
@@ -76,7 +76,7 @@ def wedderburn_weights_n3_unnormalized() -> tuple[mpf, mpf, mpf]:
     """Wenzl tilde y_λ = dim_q²(λ) / [3]_q! — NOT normalized.
 
     At q = 1: y_(3) = 1/6, y_(2,1) = 4/6, y_(1,1,1) = 1/6, sum = 1.
-    At q_0: sum slightly less than 1 (~0.987 per CLAUDE.md note).
+    At q_0: sum slightly less than 1 (~0.987 per AGENTS.md note).
     """
     q_fact_3 = _q_int(1) * _q_int(2) * _q_int(3)
     dim_q_3 = mpf(1)

@@ -1,25 +1,32 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-29T14:46:47.676829+00:00",
-  "commitSha": "4f207588745f901d68703c022c9e38a1d134bb5f",
+  "computedAt": "2026-06-29T15:51:16.551748+00:00",
+  "commitSha": "2bfeb6134ad67611ad2873e0c92a5c47af4f65cd",
   "assertions": [],
   "allPassed": true,
   "durationMs": 23,
   "computation": "markov-peel-atomic-tr-m",
   "scriptFile": "markov_peel_atomic_witness.py",
-  "scriptHash": "f4acadfe437b",
-  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+  "scriptHash": "4e2c1341b27a",
+  "scriptCommitSha": "472e8b34f36379a2a0a3510be349e7bbba5986df",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Production atomic Markov trace tr_M(β_atom) at q = q₀ via the Markov-axiom recursive-ascent path (markov_peel + markov_trace_canonical, #508 / PR #516).  Cross-checks against atomic-tr-m-mpfr-50dps.witness.json (Hoefsmit + Wenzl bridge) for the atoms it covers (proton, neutron, D, T, ³He); ⁴He and beyond are first-time computations enabled by this rewrite.",
   "contentBlock": "prop:markov-pair-z2",
   "parameters": {
-    "q0": "1.1099785827513808"
+    "q0": "1.1099785955573347198997632204832250266562084087802"
   },
   "data": {
     "method": "incremental_reduced_element + tr_M_element(simplify=False)",
@@ -32,13 +39,14 @@
         "word_length": 11,
         "reduced_term_count": 4,
         "trace_sympy_ops": 75,
-        "tr_M_at_q0": "1.0653061442544502490648028469877317547798156738281",
-        "elapsed_reduce_sec": 0.052,
-        "elapsed_trace_sec": 0.001,
-        "elapsed_evalf_sec": 0.005,
+        "tr_M_at_q0": "1.0653062286131670593652845464313725576506616741351",
+        "elapsed_reduce_sec": 0.049,
+        "elapsed_trace_sec": 0.0,
+        "elapsed_evalf_sec": 0.004,
         "atom": "proton",
-        "bridge_witness_value": "1.0653061347940691446210109087824504288691905784894",
-        "abs_diff_vs_bridge": "9.46038e-9"
+        "bridge_witness_value": "1.06530622861316705936528454643137255765066167413520000000000",
+        "abs_diff_vs_bridge": "9.88923e-50",
+        "bridge_is_color_blind": false
       },
       {
         "Z": 0,
@@ -48,13 +56,14 @@
         "word_length": 11,
         "reduced_term_count": 4,
         "trace_sympy_ops": 63,
-        "tr_M_at_q0": "0.92323322991163736528363870093016885221004486083984",
-        "elapsed_reduce_sec": 0.046,
+        "tr_M_at_q0": "0.92323329718615355710525339599068604013866212190134",
+        "elapsed_reduce_sec": 0.034,
         "elapsed_trace_sec": 0.0,
         "elapsed_evalf_sec": 0.001,
         "atom": "neutron",
-        "bridge_witness_value": "0.92323322194991388429946102725642998317708342596368",
-        "abs_diff_vs_bridge": "7.96172e-9"
+        "bridge_witness_value": "0.923233297186153557105253395990686040138662121901370000000000",
+        "abs_diff_vs_bridge": "3.07368e-50",
+        "bridge_is_color_blind": false
       },
       {
         "Z": 1,
@@ -63,14 +72,15 @@
         "n_strands": 6,
         "word_length": 23,
         "reduced_term_count": 32,
-        "trace_sympy_ops": 1449,
-        "tr_M_at_q0": "0.38828642407478919373886583343846723437309265136719",
-        "elapsed_reduce_sec": 0.888,
+        "trace_sympy_ops": 2765,
+        "tr_M_at_q0": "0.38835718872378100730177249496534606587836263700872",
+        "elapsed_reduce_sec": 1.917,
         "elapsed_trace_sec": 0.006,
-        "elapsed_evalf_sec": 0.035,
+        "elapsed_evalf_sec": 0.085,
         "atom": "deuteron",
-        "bridge_witness_value": "0.38828640544517857590525490438198497087663728414512",
-        "abs_diff_vs_bridge": "1.86296e-8"
+        "bridge_witness_value": "0.388286471559408882668623506562459052329338141416570000000000",
+        "abs_diff_vs_bridge": "7.07172e-5",
+        "bridge_is_color_blind": true
       },
       {
         "Z": 1,
@@ -79,14 +89,15 @@
         "n_strands": 9,
         "word_length": 35,
         "reduced_term_count": 256,
-        "trace_sympy_ops": 12164,
-        "tr_M_at_q0": "0.10405210674205159215865990063321078196167945861816",
-        "elapsed_reduce_sec": 12.779,
-        "elapsed_trace_sec": 0.205,
-        "elapsed_evalf_sec": 0.19,
+        "trace_sympy_ops": 20864,
+        "tr_M_at_q0": "0.10407106930208715571593073165688859407758241976544",
+        "elapsed_reduce_sec": 19.64,
+        "elapsed_trace_sec": 0.148,
+        "elapsed_evalf_sec": 0.479,
         "atom": "tritium",
-        "bridge_witness_value": "0.10405209642368468115418070350893929444122661935424",
-        "abs_diff_vs_bridge": "1.03184e-8"
+        "bridge_witness_value": "0.104052118678465629313373882370944682484880060724050000000000",
+        "abs_diff_vs_bridge": "1.89506e-5",
+        "bridge_is_color_blind": true
       },
       {
         "Z": 2,
@@ -95,14 +106,15 @@
         "n_strands": 9,
         "word_length": 35,
         "reduced_term_count": 128,
-        "trace_sympy_ops": 5420,
-        "tr_M_at_q0": "0.20654081702073978643596774418256245553493499755859",
-        "elapsed_reduce_sec": 5.445,
-        "elapsed_trace_sec": 0.07,
-        "elapsed_evalf_sec": 0.065,
+        "trace_sympy_ops": 9788,
+        "tr_M_at_q0": "0.20657847508740299947588410513714093687525942386618",
+        "elapsed_reduce_sec": 8.991,
+        "elapsed_trace_sec": 0.048,
+        "elapsed_evalf_sec": 0.185,
         "atom": "helium-3",
-        "bridge_witness_value": "0.20654080025233304137512409425196731053387398162610",
-        "abs_diff_vs_bridge": "1.67684e-8"
+        "bridge_witness_value": "0.206540858572496952178887701303563993714774065537880000000000",
+        "abs_diff_vs_bridge": "3.76165e-5",
+        "bridge_is_color_blind": true
       },
       {
         "Z": 2,
@@ -111,11 +123,11 @@
         "n_strands": 12,
         "word_length": 47,
         "reduced_term_count": 1024,
-        "trace_sympy_ops": 38840,
-        "tr_M_at_q0": "0.055348335163768344613366423345723887905478477478027",
-        "elapsed_reduce_sec": 59.44,
-        "elapsed_trace_sec": 2.311,
-        "elapsed_evalf_sec": 0.821,
+        "trace_sympy_ops": 63496,
+        "tr_M_at_q0": "0.055358426266783106469852047498437740316331036735298",
+        "elapsed_reduce_sec": 96.819,
+        "elapsed_trace_sec": 1.734,
+        "elapsed_evalf_sec": 1.823,
         "atom": "helium-4",
         "bridge_witness_value": null,
         "abs_diff_vs_bridge": null

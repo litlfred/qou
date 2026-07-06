@@ -1,15 +1,28 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-20T00:45:28.390632+00:00",
-  "commitSha": "15f43a4e60d3c6a99a322e8e2b0220417213ff6c",
+  "computedAt": "2026-07-05T11:23:23.156872+00:00",
+  "commitSha": "6949424f7a827fb6d8f76f8fd3f1d4a45e37cfa2",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "wenzl-lr-convention-adapter",
   "scriptFile": "wenzl_lr_convention_adapter.py",
-  "scriptHash": "061019cfcc5c",
-  "scriptCommitSha": "a70c22a01bdad6d80cc338f9c08615684e287091",
+  "scriptHash": "258b74f8a97a",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
   "description": "Convention adapter splitting canonical (Z, N) atomic braids into LR-compatible tensor-product factors and the inter-nucleon interface residue, per prop:lr-tensor-character-bridge. Six smoke-test atoms (p, n, D, T, ³He, ⁴He) verified for self-consistent splitting: intra + interface = full canonical word; interface has length A-1, each entry at gen 3k+2 with ctype ∈ {sigma (pp), sigma_inv (nn), averaged (mixed pn / np)}.",
   "auditOnly": "docs/coordination/2026-05-19-refreshed-workplan.md",
   "binary_built": null,

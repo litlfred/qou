@@ -130,7 +130,7 @@ Deliver a single markdown document with the structure shown under
 - Concrete suggested edits (diffs, new lemma statements, etc.)
 - Dispatch table: which skill to invoke for each fix
 - Links to affected files (GitHub blob URLs on the current branch, per
-  CLAUDE.md)
+  AGENTS.md)
 
 ### Phase 5 — Handoff
 
@@ -211,7 +211,7 @@ If the author says "apply all" or "go ahead":
   `.lean` files. Dispatch skills do that, under author approval.
 - **Honest confidence**: if a specialist reports low confidence
   (< 0.7), surface that to the author — don't smooth it over.
-- **Link every finding** to a GitHub blob URL per the CLAUDE.md
+- **Link every finding** to a GitHub blob URL per the AGENTS.md
   "always provide GitHub links" rule. Default to `.md` for block
   citations; include `.lean` sibling when the finding is Lean-specific.
 - **MBA-appendix sync (mass / binding / compute scope).** When a

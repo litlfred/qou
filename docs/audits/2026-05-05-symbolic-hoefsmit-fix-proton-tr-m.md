@@ -1,7 +1,7 @@
 # Symbolic Hoefsmit + canonical Jones–Markov weights → closed-form proton/neutron/deuteron tr_M
 
 **Branch.** `claude/hoefsmit-2x2-fix`
-**Module.** [`folio-assistant/computations/hoefsmit_symbolic.py`](../../folio-assistant/computations/hoefsmit_symbolic.py)
+**Module.** [`computations/hoefsmit_symbolic.py`](../../computations/hoefsmit_symbolic.py)
 **Continues.** [PR #544](https://github.com/litlfred/qou/pull/544) open item:
 "closed-form leading coefficient for higher atoms requires symbolic
 2×2 Hoefsmit fix" — now closed for $A = 1$ (proton + neutron).
@@ -198,11 +198,11 @@ deuteron weights.
 
 ### Code
 
-[`folio-assistant/computations/markov/markov_weights_symbolic.py`](../../folio-assistant/computations/markov/markov_weights_symbolic.py)
+[`computations/markov/markov_weights_symbolic.py`](../../computations/markov/markov_weights_symbolic.py)
 implements both paths (`solve_y_lambda` for $n \le 3$ via the
 linear system; `y_lambda_symbolic` for any $n$ via Schur principal
 specialisation). Witness:
-[`markov_weights_symbolic.witness.json`](../../folio-assistant/computations/markov/markov_weights_symbolic.witness.json).
+[`markov_weights_symbolic.witness.json`](../../computations/markov/markov_weights_symbolic.witness.json).
 
 The earlier closed forms in §"Closed-form Markov trace for proton
 standalone" (and the deuteron $-1/8 / +1/128$ leading-coefficient
@@ -251,9 +251,9 @@ into the six-term mass formula.
 
 ## Files
 
-- [`folio-assistant/computations/hoefsmit_symbolic.py`](../../folio-assistant/computations/hoefsmit_symbolic.py)
+- [`computations/hoefsmit_symbolic.py`](../../computations/hoefsmit_symbolic.py)
   — reusable module with symbolic q-int, q-fac, dim_q, seminormal
   matrices, χ^λ, tr_M, and pole_order_at_zero.
-- [Self-test](../../folio-assistant/computations/hoefsmit_symbolic.py#__main__):
+- [Self-test](../../computations/hoefsmit_symbolic.py#__main__):
   cross-validates against numerical at $q_0$ + prints closed-form
   proton tr_M.

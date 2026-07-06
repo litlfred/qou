@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# DEPRECATION-CANDIDATE: witness was moved to folio-assistant/computations/_deprecated/ in PR #554 (dead-exploratory).
+# DEPRECATION-CANDIDATE: witness was moved to computations/_deprecated/ in PR #554 (dead-exploratory).
 # This .py script is kept in place because it is still imported by live code; revisit when the live importer is itself retired or rewired.
 """
 CLASS-A acknowledged-anchor banner (per Workplan-0b, applies to
@@ -47,6 +47,7 @@ Key design decisions:
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 — full-precision m_p per-nucleon scale
 import sys
 import math
 import json
@@ -254,7 +255,8 @@ def _cached_seminormal(shape: tuple[int, ...]):
 
 def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
                          m_nn: int = 1, include_inter: bool = True,
-                         pn_convention: str = "bring_color_weighted"):
+                         pn_convention: str = "bring_color_weighted",
+                         q=None):
     """Full 3A-strand braid word as a list of (c, d, gen_idx) triples.
 
     Matches the chain-walk convention of
@@ -272,13 +274,39 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
     include_inter) the appropriate pp/nn/pn crossing at gen 3k+2.
 
     gen_idx is 0-based (σ_0 = sigmas[0] in build_seminormal_matrices).
+
+    `q` (keyword-only) materialises the word at an arbitrary substrate value
+    rather than the baked q₀ — the q-parameterised-braid-word core refactor
+    (docs/workplans/2026-06-17-q-parameterised-braid-word-core.md). Every
+    crossing is a template {0, −h, −h/2, −h(½−δ/4)} with `h=q−q⁻¹`,
+    `δ=flavor_split_subleading(q)` the only q-dependent quantities; the intra
+    chains come from `nucleon_gen_chains(quarks, q=q)`. `q=None` (default)
+    uses the canonical q₀ data (`pyhecke.gram.h`, `_avg_color_delta`) and is
+    byte-identical to the historical word — all existing callers omitting `q`
+    are unaffected. Used by `tr_m_atom_zn(q=…)` and the N-grid simulators
+    (multiple q at once).
     """
     A = Z + N
+    h_loc = h if q is None else (q - 1 / q)
+    if q is None:
+        p_g0, p_g1, n_g0, n_g1 = _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1
+    else:
+        from pyhecke.atom import nucleon_gen_chains
+        p_g0, p_g1 = nucleon_gen_chains(['u', 'u', 'd'], q=q)
+        n_g0, n_g1 = nucleon_gen_chains(['u', 'd', 'd'], q=q)
+    # color-weighted p-n δ: canonical _avg_color_delta() at q₀, else at q.
+    if q is None:
+        from canonical_braid_crossings import _avg_color_delta
+        delta = float(_avg_color_delta())
+    else:
+        # DE-WIRED 2026-06-29: proven leading δ, not posited subleading
+        from _li_2_q_util import flavor_split_leading
+        delta = float(flavor_split_leading(q))
     word: list[tuple[float, float, int]] = []
     ordering = ['p'] * Z + ['n'] * N
     for k, nuc in enumerate(ordering):
-        intra = _PROTON_G0 if nuc == 'p' else _NEUTRON_G0
-        intra_g1 = _PROTON_G1 if nuc == 'p' else _NEUTRON_G1
+        intra = p_g0 if nuc == 'p' else n_g0
+        intra_g1 = p_g1 if nuc == 'p' else n_g1
         base_g0 = 3 * k
         base_g1 = 3 * k + 1
         for c, d in intra:
@@ -292,18 +320,14 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
                 base_cross = (1.0, 0.0)
                 m_this = m_pp
             elif nuc == 'n' and next_nuc == 'n':
-                base_cross = (1.0, -h)
+                base_cross = (1.0, float(-h_loc))
                 m_this = m_nn
             else:
                 if pn_convention == "bring_color_weighted":
                     # color-weighted p-n averaged crossing: σ − h·(1/2 − δ/4).
-                    # Single δ source (centralized in canonical_braid_crossings);
-                    # float() for the float-valued braid word.
-                    from canonical_braid_crossings import _avg_color_delta
-                    delta = float(_avg_color_delta())
-                    base_cross = (1.0, -h * (0.5 - delta / 4.0))
+                    base_cross = (1.0, float(-h_loc * (0.5 - delta / 4.0)))
                 elif pn_convention == "strict_averaged":
-                    base_cross = (1.0, -h / 2)        # color-blind (validation)
+                    base_cross = (1.0, float(-h_loc / 2))   # color-blind (validation)
                 else:
                     raise ValueError(
                         f"unknown pn_convention: {pn_convention!r} "
@@ -749,7 +773,7 @@ if __name__ == "__main__":
             print(f"  {name:>6} {A:>3} {3*A:>3} ERR: {e}")
             continue
         dt = time.time() - t0
-        M_total = A * 938.272
+        M_total = A * float(M_P_MEV_VALIDATION)
         dm = abs(r["B_MeV"] - B_AME) / M_total * 100
         print(f"  {name:>6} {A:>3} {3*A:>3} {r['n_partitions']:>6} "
               f"{abs(r['tr_M_atom']):>14.6e} "
@@ -776,7 +800,7 @@ if __name__ == "__main__":
             print(f"  {name:>6} {A:>3} {3*A:>3} ERR: {e}")
             continue
         dt = time.time() - t0
-        M_total = A * 938.272
+        M_total = A * float(M_P_MEV_VALIDATION)
         dm = abs(r["B_MeV"] - B_AME) / M_total * 100
         print(f"  {name:>6} {A:>3} {3*A:>3} "
               f"{r['m_atom_tower_H3A']:>12.3e} "

@@ -5,7 +5,7 @@ dimension $d_H$), particle masses, atomic-mass ratios, hyperbolic
 volumes, $\beta$-decay $Q$-values — has been evaluated at the
 substrate parameter $q_0 \approx 1.1097$ and compared against
 CODATA / NIST measurements with the 100× per-observable accuracy
-target spelled out in CLAUDE.md §Precision goals.  The interactive
+target spelled out in AGENTS.md §Precision goals.  The interactive
 simulators distributed with the paper expose the same numerical
 machinery in a browser, so a reader can perturb $q$ and watch the
 predictions track the substrate parameter live.

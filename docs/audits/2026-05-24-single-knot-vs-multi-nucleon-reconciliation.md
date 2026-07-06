@@ -19,7 +19,7 @@ gives $m_p \approx 965.4\;\text{MeV}$, a **+2.89 % gap** vs CODATA $938.27\;\tex
 The framing in PR #1063 (now on `main` as `docs/audits/2026-05-24-family-a-gap-audit.md`):
 this is a `VolDensity(\mathcal{B}_3)` **categorical-exactness refinement gap** at $h^2$ order.
 
-The PR #1081 finding (now on `main` as `folio-assistant/computations/probes/vol_density_borromean_h4_probe.py`):
+The PR #1081 finding (now on `main` as `computations/probes/vol_density_borromean_h4_probe.py`):
 **replacing Family A's `5/2 + (3/4)·h²` linking weight with the exact
 Markov-trace × 5/2** (closed form `5/2·(4+h²−3h⁴−h⁶)/(h²+4)`) shrinks
 the gap to **+1.948 %** — a 1.5× single-knot improvement using only
@@ -107,7 +107,7 @@ Neither framing is wrong; they are diagnosing different layers of the same chain
 
 ### L2 (inter-nucleon channel weights)
 
-- **Current**: pp → σ, pn → averaged, nn → σ⁻¹ (per [`isotope_record_schema.py:65-70`](../../folio-assistant/computations/isotope_record_schema.py))
+- **Current**: pp → σ, pn → averaged, nn → σ⁻¹ (per [`isotope_record_schema.py:65-70`](../../computations/isotope_record_schema.py))
 - **Open** (per PR #1089's Lean-coverage matrix): no `prop:` block formalizing the channel assignment rule (medium risk)
 - **Sign-flip evidence**: the ³H − vs ⁴He + sign change suggests the current channels are correct in magnitude (L1's overshoot is captured) but possibly wrong in sign for one of {pp, pn, nn}, OR a missing per-pair coupling constant
 - **Closure path**: derive channel assignment from CPT-symmetry categorical argument; cross-check via the sign-flip diagnostic table
@@ -149,5 +149,5 @@ The per-layer attribution above is **qualitative**; the L2 sign and L3 magnitude
 - [`docs/audits/2026-05-24-derivation-chain-gb-jet-orders-and-pentagon.md`](2026-05-24-derivation-chain-gb-jet-orders-and-pentagon.md) — L1 per-step jet-order analysis
 - [`docs/audits/2026-05-24-pentagon-identity-broad-context.md`](2026-05-24-pentagon-identity-broad-context.md) — L1 Pentagon literature
 - PR [#1089](https://github.com/litlfred/qou/pull/1089) — L2+L3 sign-flip diagnostic (open)
-- [`folio-assistant/computations/isotope_record_schema.py`](../../folio-assistant/computations/isotope_record_schema.py) — L2 channel assignment (current production)
-- [`folio-assistant/computations/probes/vol_density_borromean_h4_probe.py`](../../folio-assistant/computations/probes/vol_density_borromean_h4_probe.py) — L1 structural Markov × 5/2 probe (+1.948 % at L1)
+- [`computations/isotope_record_schema.py`](../../computations/isotope_record_schema.py) — L2 channel assignment (current production)
+- [`computations/probes/vol_density_borromean_h4_probe.py`](../../computations/probes/vol_density_borromean_h4_probe.py) — L1 structural Markov × 5/2 probe (+1.948 % at L1)

@@ -86,7 +86,7 @@ tower formula's `Φ_q` is the wrong analytic function.  The right
 function is `Li₂_q`, which is bounded and so won't drive tower_MeV
 into the GeV regime.
 
-Witness: `folio-assistant/computations/kashaev-integration-identity.witness.json`
+Witness: `computations/kashaev-integration-identity.witness.json`
 (on `claude/categorical-mass-divergence-audit`, not yet on `main`).
 
 ### Follow-up commit (`841cab890`, same audit branch)
@@ -203,7 +203,7 @@ This audit is documentation only — no code changes.  The data
 points are reproducible via:
 
 ```bash
-python3 folio-assistant/computations/binding_full_pipeline.py \
+python3 computations/binding_full_pipeline.py \
   > binding_sweep.log 2>&1
 ```
 

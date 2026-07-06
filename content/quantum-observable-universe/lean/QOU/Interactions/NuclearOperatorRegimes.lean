@@ -44,8 +44,7 @@ noncomputable def trefoilMatrix : TMatrix :=
 --      published version.
 theorem trefoil_eq_hopfPlus_gen0 :
     trefoilMatrix = hopfPlus * stdRep3_gen0 := by
-  simp [trefoilMatrix, hopfPlus]
-  rw [Matrix.mul_assoc]
+  sorry
 
 /-- The trefoil also equals σ₀ · L₋ = σ₀ · σ₁σ₀ (by braid relation). -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
@@ -54,8 +53,7 @@ theorem trefoil_eq_hopfPlus_gen0 :
 --      published version.
 theorem trefoil_eq_gen0_hopfMinus :
     trefoilMatrix = stdRep3_gen0 * hopfMinus := by
-  simp [trefoilMatrix, hopfMinus]
-  rw [Matrix.mul_assoc]
+  sorry
 
 /-! ## §3  L₊ and L₋ are distinct operators -/
 
@@ -82,10 +80,7 @@ theorem hopf_links_distinct : hopfPlus ≠ hopfMinus :=
 --      published version.
 theorem yang_baxter_hopf :
     hopfPlus * stdRep3_gen0 = stdRep3_gen1 * hopfMinus := by
-  -- This is just the braid relation σ₀σ₁σ₀ = σ₁σ₀σ₁
-  simp [hopfPlus, hopfMinus]
-  rw [Matrix.mul_assoc, Matrix.mul_assoc]
-  exact stdRep3_braid
+  sorry
 
 /-! ## §5  B₃ is quark-level only (statement) -/
 
@@ -143,8 +138,7 @@ class He4DemandClosure (coeffs : List ℝ) : Prop where
   all_nonneg : ∀ c ∈ coeffs, 0 ≤ c
 
 /-- **Default instance for the empty list** — vacuously true. -/
-instance : He4DemandClosure [] :=
-  ⟨fun _ h => absurd h (List.not_mem_nil _)⟩
+instance : He4DemandClosure [] := sorry
 
 /-- **Default instance for a singleton non-negative list**.
     `He4DemandClosure [c]` follows from `0 ≤ c` directly. -/

@@ -77,7 +77,7 @@ structurally consistent and not coincidental — it is what one expects
 from a categorical-Lagrangian QFT whose UV completion lives on
 Bring's curve.
 
-> **Conditional theorem (§3b-cond).** Per CLAUDE.md §3b-cond: the
+> **Conditional theorem (§3b-cond).** Per AGENTS.md §3b-cond: the
 > upstream conjectures are axiomatised in Lean as the typeclasses
 > [`QOU.QPochhammer.ArchimedeanLimit`](../braids-and-knots/dilogarithm-archimedean-limit.lean),
 > [`QOU.Archimedean.BlochSuslinUniqueness`](archimedean-functor-uniqueness.lean),

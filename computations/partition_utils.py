@@ -88,3 +88,21 @@ def hook_lengths_cached(shape: tuple[int, ...]) -> tuple[int, ...]:
     """Memoized variant of :func:`hook_lengths`, returning a tuple
     so the result is hashable / safe to cache."""
     return tuple(hook_lengths(shape))
+
+
+def dim_lambda(shape: Sequence[int]) -> int:
+    """Dimension of the irreducible S_n / Specht / seminormal module V_λ
+    (= number of standard Young tableaux of shape λ), via the hook-length
+    formula ``d_λ = n! / ∏_cells hook``. Exact integer.
+
+    Single source of truth — replaces ad-hoc ``partition_dim`` / ``syt_count``
+    / ``hook_length_dim`` copies across compute scripts.
+    """
+    import math
+    n = sum(shape)
+    if n == 0:
+        return 1
+    prod = 1
+    for h in hook_lengths(shape):
+        prod *= h
+    return math.factorial(n) // prod

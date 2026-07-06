@@ -27,7 +27,7 @@ Key quantities per atom:
   M_obs:    observed mass (AME2020)
 
 Usage:
-    python3 folio-assistant/computations/atom_vol_hecke_unified.py
+    python3 computations/atom_vol_hecke_unified.py
 """
 
 import math

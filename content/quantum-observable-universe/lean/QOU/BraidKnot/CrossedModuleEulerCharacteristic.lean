@@ -91,7 +91,7 @@ def signs : Fin 6 → ℤ
 /-- Compute the h² curvature sum: Σ_{k<l} s_k s_l c_k c_l. -/
 def h2Sum : M2 :=
   let pairs : List (Fin 6 × Fin 6) :=
-    List.join (List.ofFn fun k =>
+    List.flatten (List.ofFn fun k =>
       List.ofFn fun l =>
         (k, l))
   pairs.foldl (fun acc ⟨k, l⟩ =>
@@ -111,9 +111,9 @@ def dim_V : ℤ := 2
 /-- The trace of the h² curvature sum equals (−12, 0) as a
     Gaussian integer, i.e. −12 ∈ ℤ ⊂ ℤ[i]. -/
 theorem h2_curvature_trace :
-    m2_trace h2Sum = ((-12 : ℤ), (0 : ℤ)) := by native_decide
+    m2_trace h2Sum = ((-12 : ℤ), (0 : ℤ)) := by decide
 
 /-- The main identity: tr(h² curvature) = dim(V) · χ(Σ₄).
     Both sides are −12 (as a real integer, imaginary part 0). -/
 theorem crossed_module_euler_characteristic :
-    m2_trace h2Sum = ((dim_V * euler_bring : ℤ), (0 : ℤ)) := by native_decide
+    m2_trace h2Sum = ((dim_V * euler_bring : ℤ), (0 : ℤ)) := by decide

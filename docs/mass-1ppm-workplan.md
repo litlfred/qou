@@ -4,7 +4,7 @@
 table (AME2020 reference).
 
 **Current ceiling:** 0.018 % on D (unified_lift order 0), 0.06 % on T,
-0.03 % on 3He (`folio-assistant/computations/unified_lift.py`).  The
+0.03 % on 3He (`computations/unified_lift.py`).  The
 JM-cell path (`syt_cell_tower.py`) peaks at 0.10 % on D, 0.28 % on T
 and 0.22 % on 3He — slower asymptote than unified_lift on light
 nuclei but no Kähler-tower dependence.  Both are ~200× off the 1-ppm
@@ -29,7 +29,7 @@ and there are ~385 partitions.  Without this the AME test (6Li / 9Be /
 Tasks:
 
 - **P1.a** Offline-precompute seminormal matrices for n = 18 in
-  batches, persist to `folio-assistant/computations/.cache/seminormal/`.
+  batches, persist to `computations/.cache/seminormal/`.
   Run as a single long-running job; resume-on-failure.
 - **P1.b** Add a `--dim-cap N` audit mode to `syt_cell_tower.py` so
   the weight-dominant partitions alone give a quick estimate while

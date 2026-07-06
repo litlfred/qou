@@ -26,7 +26,7 @@ The Hecke ratio sits at `m_p/m_e − 1` to 3 decimal places.
 
 ## 2 — The mechanism: magic literals
 
-`folio-assistant/computations/derivation_chain.py:73-76`:
+`computations/derivation_chain.py:73-76`:
 
 ```python
 M_HECKE_PIPELINE_AT_Q0: dict[str, float] = {
@@ -185,7 +185,7 @@ in progress.
 - **Risk:** lowest of the four.
 
 ### Option E — Defer; treat 544k ppb as known-floor
-Document the placeholder behavior in CLAUDE.md and the precision dashboard,
+Document the placeholder behavior in AGENTS.md and the precision dashboard,
 then focus 1ppb work on chains that don't depend on the placeholder
 (e.g. T1 / T3 / T2 in the action queue, which improve binding-energy
 predictions for A ≥ 2 nuclei without touching `M_HECKE_PIPELINE_AT_Q0`).
@@ -268,10 +268,10 @@ rebase re-emits the registry block as `+` in its merge diff.
 ### 8.3 No commit computes `1.4283` programmatically
 
 ```bash
-git show 1861df6:folio-assistant/computations/mass_endomorphism.py | grep -c '1\.4283'
+git show 1861df6:computations/mass_endomorphism.py | grep -c '1\.4283'
 # -> 0
 
-git show 1861df6:folio-assistant/computations/proton_mass_tower_derivation.py | grep -c '1\.4283'
+git show 1861df6:computations/proton_mass_tower_derivation.py | grep -c '1\.4283'
 # -> 0
 ```
 
@@ -330,7 +330,7 @@ E_0         = (M_p − T6_MeV[p]) / total_hecke[p]   (proton-calibrated)
 ```
 
 with documented unit conventions in
-[`atomic_braid_mass_terms.py`](../../folio-assistant/computations/atomic_braid_mass_terms.py):
+[`atomic_braid_mass_terms.py`](../../computations/atomic_braid_mass_terms.py):
 
 > **Dimensionality conventions:**
 > - Hecke-unit terms (T1, T2, T3, T4) are returned in cat units —
@@ -447,8 +447,8 @@ the **real precision frontier**.  These trace primarily to:
 - Six-term per-weight derivation:
   `docs/audits/2026-05-04-six-term-per-weight-derivation.md`
 - Δ_n² verification:
-  `folio-assistant/computations/full_twist_delta_n2_verification.py`
+  `computations/full_twist_delta_n2_verification.py`
 - Strategy-3 canonical chain:
-  `folio-assistant/computations/atomic_braid_mass_table.py`
+  `computations/atomic_braid_mass_table.py`
 - Shared term utilities:
-  `folio-assistant/computations/atomic_braid_mass_terms.py`
+  `computations/atomic_braid_mass_terms.py`

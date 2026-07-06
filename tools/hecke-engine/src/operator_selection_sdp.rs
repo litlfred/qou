@@ -174,7 +174,7 @@ pub struct MomentSdpResult {
 
 /// Lasserre moment-matrix SDP — the canonical QOU **dense lift** of the
 /// operator-selection LP (`prop:confinement-sdp`, mirrors the cvxpy
-/// reference in `folio-assistant/computations/sdp_moment_lift.py`).
+/// reference in `computations/sdp_moment_lift.py`).
 ///
 /// At q₀ the Gram `G` has a negative eigenvalue, so the componentwise LP
 /// `G x ≥ 0` is strictly weaker than the quadratic Frobenius positivity

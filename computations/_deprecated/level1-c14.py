@@ -13,7 +13,7 @@ Uses the transfer matrix chain approach (not full Hecke reduction)
 to keep computation tractable: O(A²) per generator, A-1 generators.
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 level1-c14.py
 """
 

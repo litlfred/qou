@@ -62,6 +62,7 @@ Compute at 50 dps:
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from codata_constants import M_K_PM_MEV_VALIDATION, M_PI_PM_MEV_VALIDATION  # noqa: E402 (codata sweep)
 import sys
 from pathlib import Path
 
@@ -84,8 +85,8 @@ def main() -> int:
     print("=" * 78)
 
     # PDG anchors (per audit 2026-05-29)
-    m_K = mp.mpf("493.677")
-    m_pi = mp.mpf("139.57039")
+    m_K = mp.mpf(M_K_PM_MEV_VALIDATION)
+    m_pi = mp.mpf(M_PI_PM_MEV_VALIDATION)
     target = m_K / m_pi  # = 3.5371...
     print(f"\nq_0 = {Q_50_DIGIT_STR}")
     print(f"target m_K/m_π = {mp.nstr(target, 18)}")

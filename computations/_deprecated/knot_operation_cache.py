@@ -36,7 +36,7 @@ Hecke algebra Wedderburn decomposition of atomic braids.
   - Composer: STUB — chi_via_factorization() raises NotImplementedError
   - HYBRID feeders: deferred (per F4.3 todo)
 
-@module folio-assistant/computations/knot_operation_cache
+@module computations/knot_operation_cache
 """
 from __future__ import annotations
 import hashlib

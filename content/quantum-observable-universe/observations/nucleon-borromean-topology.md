@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Lemma.**
 *The proton and neutron are each modelled as a Borromean
 configuration ($6_2^3$) of three quark vortices, bound internally by

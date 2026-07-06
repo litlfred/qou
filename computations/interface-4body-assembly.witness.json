@@ -1,0 +1,70 @@
+{
+ "computation": "interface-4body-assembly",
+ "description": "Task 2: linear-chain vs complete-graph (tetrahedral) interface topology for B=E0*tau_vac*(1-PROD f). Many-body topology moves the 4He/D binding ratio only marginally; the interface deficit saturates.",
+ "scriptFile": "computations/probes/interface_4body_assembly_probe.py",
+ "parameters": {
+  "q_0": "1.1099785827513808075916690956107688798744991218736",
+  "E0_MeV": "4.1859813632944758969450621587590084101434868908797",
+  "tau_p": "1.22036288908669305595736107223",
+  "tau_n": "1.1948624254133771065332385697605928646986009643795",
+  "free_parameters": 0
+ },
+ "data": {
+  "atoms": [
+   {
+    "atom": "D",
+    "Z": 1,
+    "N": 1,
+    "n_chain": 1,
+    "n_complete": 1,
+    "B_chain_MeV": "3.05607593259",
+    "B_complete_MeV": "3.05607593259",
+    "B_AME_MeV": "2.224566",
+    "err_chain_pct": "37.3785",
+    "err_complete_pct": "37.3785"
+   },
+   {
+    "atom": "T",
+    "Z": 1,
+    "N": 2,
+    "n_chain": 2,
+    "n_complete": 3,
+    "B_chain_MeV": "6.23623353278",
+    "B_complete_MeV": "6.76546851269",
+    "B_AME_MeV": "8.481798",
+    "err_chain_pct": "-26.4751",
+    "err_complete_pct": "-20.2354"
+   },
+   {
+    "atom": "3He",
+    "Z": 2,
+    "N": 1,
+    "n_chain": 2,
+    "n_complete": 3,
+    "B_chain_MeV": "5.59174765316",
+    "B_complete_MeV": "6.52159496121",
+    "B_AME_MeV": "7.718043",
+    "err_chain_pct": "-27.5497",
+    "err_complete_pct": "-15.502"
+   },
+   {
+    "atom": "4He",
+    "Z": 2,
+    "N": 2,
+    "n_chain": 3,
+    "n_complete": 6,
+    "B_chain_MeV": "8.25632670018",
+    "B_complete_MeV": "8.82024667153",
+    "B_AME_MeV": "28.295673",
+    "err_chain_pct": "-70.8212",
+    "err_complete_pct": "-68.8283"
+   }
+  ],
+  "self_consistent": true,
+  "scaling_4He_over_D": {
+   "chain": "2.70161045808",
+   "complete": "2.88613465964",
+   "AME": "12.7196374484"
+  }
+ }
+}

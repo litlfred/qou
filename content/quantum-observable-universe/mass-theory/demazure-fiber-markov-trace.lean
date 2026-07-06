@@ -24,6 +24,7 @@
 
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Tactic.Ring
 
 namespace QOU.BraidsAndKnots
 
@@ -69,7 +70,7 @@ noncomputable def demazureRatio
 /-- Jones-Markov central coefficient `y_λ` (referenced from
     `y-lambda-closed-form-wenzl-bridge.lean`).  Stub here; the full
     closed form lives in `prop:macdonald-hook-telescope`. -/
-constant yLambda (lam : Partition n) (q : ℝ) : ℝ
+opaque yLambda (lam : Partition n) (q : ℝ) : ℝ
 
 /-- **Demazure-fiber Markov-trace functional**:
 
@@ -103,11 +104,11 @@ recovers the Macdonald hook-content formula (cf.
 /-- Macdonald hook-content principal specialisation
     `s_λ(1, q, …, q^{n−1})` (axiomatised here; the explicit closed
     form is in `prop:macdonald-hook-telescope`). -/
-constant macdonaldHookPrincipal
+opaque macdonaldHookPrincipal
     (Partition : ℕ → Type) (n : ℕ) (lam : Partition n) (q : ℝ) : ℝ
 
-/-- Demazure character at `w_0` equals the Macdonald hook-content
-    principal specialisation. -/
+-- Demazure character at `w_0` equals the Macdonald hook-content
+-- principal specialisation.
 /-- **External axiom (§3b-cond pattern): demazure_principal_specialization_eq_schur.**
 
     Auto-extracted from the single-sorry theorem body in this file.

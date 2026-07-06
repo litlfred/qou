@@ -25,7 +25,7 @@ substrate-only, no CODATA m_p input.**
 
 ## How Picard-Lefschetz derives m_p
 
-Per [`picard_lefschetz_thimble.py`](../../folio-assistant/computations/picard_lefschetz_thimble.py) lines 887-924 + content block
+Per [`picard_lefschetz_thimble.py`](../../computations/picard_lefschetz_thimble.py) lines 887-924 + content block
 [`def:picard-lefschetz-thimble`](../../content/quantum-observable-universe/descartes-universe/picard-lefschetz-thimble.md):
 
 ```
@@ -74,7 +74,7 @@ from substrate axioms alone.
 |---|---|---:|---:|
 | `m-n-difference-formula.witness.json` | `m_n_difference_formula.py` | 939.5654 | **< 1 ppb** (by construction — 1-param fit) |
 
-The m_n chain at [`m_n_difference_formula.py`](../../folio-assistant/computations/m_n_difference_formula.py) is **NOT a substrate derivation**.  Its own
+The m_n chain at [`m_n_difference_formula.py`](../../computations/m_n_difference_formula.py) is **NOT a substrate derivation**.  Its own
 description says:
 
 > "Calibrates μ_d − μ_u against CODATA Δm; predicts m_n via

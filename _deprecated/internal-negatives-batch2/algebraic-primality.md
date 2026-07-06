@@ -62,7 +62,7 @@ intervals separated by critical $q^*$ values where some
 $\psi_n(q)$ crosses into or out of a tensor-product span. The
 existence of finitely many critical $q^*$ in any compact subinterval
 follows from the rationality structure of the SDP cost in $q$
-(see [qdim-argmax-theory](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/folio-assistant/computations/qdim-argmax-theory.md)).
+(see [qdim-argmax-theory](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/computations/qdim-argmax-theory.md)).
 
 ## Connection to existing framework conjectures
 
@@ -86,9 +86,9 @@ ladder.
 Three previous candidates (partition statistics, LR self-fusion
 self-conjugacy, q-dim argmax) have all been *empirically refuted*
 as magic-ladder selectors — see
-[magic-ladder pattern investigation](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/folio-assistant/computations/magic-ladder-pattern-investigation.md)
+[magic-ladder pattern investigation](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/computations/magic-ladder-pattern-investigation.md)
 and
-[q-dim argmax theory](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/folio-assistant/computations/qdim-argmax-theory.md).
+[q-dim argmax theory](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/computations/qdim-argmax-theory.md).
 
 Algebraic primality is the working candidate that:
 

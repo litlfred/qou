@@ -1,0 +1,26 @@
+{
+  "description": "lambda-coloured WRT(S3/2I): colour-resolved decomposition of the Poincare-sphere false theta at the bar image 1/q0, plus the Schur-Weyl index obstruction to a direct colour<->W_lambda identity. Residual keystone frontier (bean s5bb). No fit; no component=W_lambda match asserted (counts forbid a naive one).",
+  "computation": "docs/audits/scripts/keystone_wrt_color_schurweyl_probe.py",
+  "q0": "1.1099785955541805",
+  "bar_image_inv_q0": "0.900918273564",
+  "dps": 50,
+  "colour_components_at_inv_q0": {
+    "Psi_30_1": "0.98999965222313",
+    "Psi_30_11": "0.78861465023608",
+    "Psi_30_19": "0.50299993214087",
+    "Psi_30_29": "0.04796281223285",
+    "sum": "2.32957704683293",
+    "cross_check_vs_bare_Psi": "1.4e-15"
+  },
+  "index_obstruction": {
+    "wrt_colour_components": 4,
+    "colour_index": "SU(2)-spin / flat-connection (residues {1,11,19,29})",
+    "partitions_lambda_vdash_5": 7,
+    "physical_wedderburn_blocks": 3,
+    "naive_bijection_possible": false,
+    "reason": "4 != 7 and 4 != 3; counting forbids a direct component=W_lambda equality",
+    "required_map": "Schur-Weyl duality SU(2)-colours -> S5-blocks (NOT identity), the same colour-C3 vs spin-C2 bridge as #2364"
+  },
+  "verdict": "Colour-resolution computed (well-anchored split of the validated bare invariant). A direct colour<->W_lambda identity is impossible by index counting; the map is Schur-Weyl duality. Residual frontier (rep-theoretic, finitely stated): push SU(2)-coloured WRT data through Schur-Weyl, compare S5-resolved weights to W_lambda via the bar/Habiro bridge. Not differential geometry.",
+  "discipline": "No fit; nothing wired; c_k/Delta_lambda cal-anchored. Owner closes bean s5bb (section 4a)."
+}

@@ -17,7 +17,7 @@ object over a generic base ring `R`; the archimedean regulator
 `𝔅(q) → ℝ` recovering the hyperbolic volume is a separate specialisation
 (see the `observations` / archimedean blocks).
 
-Base ring: generic `R` (CLAUDE.md §7c) — the construction is purely
+Base ring: generic `R` (AGENTS.md §7c) — the construction is purely
 algebraic, with no `ℝ`-specific (ordering / radical / analytic) content.
 -/
 

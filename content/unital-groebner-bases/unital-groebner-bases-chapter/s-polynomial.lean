@@ -1,0 +1,41 @@
+import Mathlib.Data.List.Basic
+import Mathlib.Data.Finset.Basic
+import Mathlib.Algebra.Ring.Basic
+
+/-!
+# S-polynomial
+
+Content block for `def:s-polynomial`.
+
+Split out of `def:groebner-basis`. An **S-polynomial** `S(f, f')` is the
+cancellation combination `λ·u·f·v − λ'·u'·f'·v'` formed when the leading
+terms of admissible left/right multiples of `f` and `f'` coincide up to
+a unit scalar. The authoritative formalization lives in
+`content/unital-groebner-bases/lean/QOU/GrobnerShirshov/Basic.lean`
+(`OverlapComposition` / `InclusionComposition`) and the concrete
+`UGB.UnitalGroebner.sPolynomial`.
+
+## References
+
+- [leitnerpawloski2004] https://arxiv.org/abs/math/0409565, Definition 5
+- content/unital-groebner-bases/lean/QOU/GrobnerShirshov/Basic.lean §§4–5
+-/
+
+namespace QOU.GrobnerShirshov.ContentBlock
+
+/-- An **S-polynomial** combination of two elements `f₁, f₂` of the free
+    algebra `k⟨G⟩` with cancellation scalars `a₁, a₂`. This mirrors the
+    `λ·u·f·v − λ'·u'·f'·v'` construction of the paper once the
+    admissible multiples have been absorbed into `f₁, f₂`. -/
+-- Ref: [leitnerpawloski2004] Leitner & Pawloski, "Unital Gröbner Bases over Arbitrary Commutative Ground Rings," arXiv:math/0409565
+structure SPolynomial (G : Type*) (k : Type*) [Ring k] where
+  /-- The cancellation scalar for the first element. -/
+  scalar₁ : k
+  /-- The cancellation scalar for the second element. -/
+  scalar₂ : k
+  /-- Witness that the two scaled leading terms cancel: a flag recording
+      that the construction is applicable (the leading-term equality
+      `λ·LT(u·LT(f)·v) = λ'·LT(u'·LT(f')·v')`). -/
+  leadingTermsAgree : Prop
+
+end QOU.GrobnerShirshov.ContentBlock

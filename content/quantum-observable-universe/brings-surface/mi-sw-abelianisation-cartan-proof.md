@@ -19,7 +19,7 @@ $$
 where $H, E_\pm$ are the standard generators of $\mathfrak{su}(2)$.
 The Cartan component $A^0$ is a $\mathrm{U}(1)$-valued $1$-form on
 $\mathcal{S}_c$.  Since $\mathcal{S}_c \cong \mathbb{P}^1(\mathbb{C})$ the spectral curve
-([coral bundles](#rem:coral-bundles)) restricts to a single sheet, and the
+([color bundles](#rem:color-bundles)) restricts to a single sheet, and the
 Higgs-field eigenvalue is the color coordinate $X$.  The abelian
 component therefore satisfies $A^0 = X\, dz = \lambda_{\mathrm{SW}}$,
 recovering the Seiberg--Witten differential.  $\square$

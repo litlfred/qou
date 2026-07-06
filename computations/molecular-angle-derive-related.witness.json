@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-09T21:03:45.912263+00:00",
-  "commitSha": "f69611b5f2a8676a991f2fce80306f63ee6dc357",
+  "computedAt": "2026-06-22T14:44:41.261084+00:00",
+  "commitSha": "073cc38ed6e6afb21c117f46b1317e6d0aeb0143",
   "assertions": [
     {
       "name": "double-bond control: 3 equal single bonds give trigonal 120°",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 285,
+  "durationMs": 371,
   "computation": "molecular-angle-derive-related",
   "scriptFile": "molecular_angle_derive_related.py",
   "scriptHash": "1e2a4333d9b0",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,23 +35,25 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "mpmath": "1.4.1"
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Derive-related extensions of prop:symmetric-block-domain-weight, all from the q^ℓ weight rule, no new fit. [2] Double bond = σ² ⇒ weight q²; ethylene C₂H₄ trigonal C with C=C(q²)+2C–H(q) predicts H–C–H ≈ 117.2° (obs 116.6°). [1] The sp³↔pure-p base flip is DISCRETE at n=2→3: group-16 hydrides O 104.5° (sp³) vs S/Se/Te ~90° (pure-p, flat) — a base flip, not a smooth weight drift. [3] H₂S +2° residual is bond-pair repulsion opening the pure-p 90° (right sign+scale; exact value needs the p-orbital stiffness).",
   "contentBlock": "prop:symmetric-block-domain-weight",
   "parameters": {
-    "q": 1.1099785827513808
+    "q": 1.1099785955573347
   },
   "data": {
     "bond_order_weights": {
-      "single_q": 1.1099785827513808,
-      "double_q2": 1.232052454166764,
-      "triple_q3": 1.3675518369513853
+      "single_q": 1.1099785955573347,
+      "double_q2": 1.232052482595433,
+      "triple_q3": 1.3675518842842065
     },
-    "ethylene_HCH_control_equal_deg": 119.99999963873987,
-    "ethylene_HCH_pred_deg": 117.23219127734058,
+    "ethylene_HCH_control_equal_deg": 119.99999988290098,
+    "ethylene_HCH_pred_deg": 117.2321894503862,
     "ethylene_HCH_obs_deg": 116.6,
-    "ethylene_CCH_pred_deg": 121.38390436132971,
+    "ethylene_CCH_pred_deg": 121.38390527480689,
     "group16_trend": {
       "H2O (O,n2)": 104.5,
       "H2S (S,n3)": 92.1,

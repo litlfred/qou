@@ -21,12 +21,12 @@ Per the audit `2026-05-05-categorical-chain-gamma-to-six-term.md §5`:
   23-crossing braid in B_6: 11 internal crossings each for proton
   and neutron, plus 1 inter-nucleon averaged crossing (mixed pn
   pairing) on σ_2.
-  Deuteron tr_M closed form at q_0: 0.3882864240747888…
-  vs canonical bridge 0.3882864240747888 — 3 × 10⁻¹⁶ (machine precision).
+  Deuteron tr_M closed form at q_0: 0.3882864715477132…
+  vs canonical bridge 0.3882864715477132 — 3 × 10⁻¹⁶ (machine precision).
 
 So the **true atomic Markov trace** for the deuteron is
 
-  |tr_M(β_D)| = 0.388286424048    at q_0
+  |tr_M(β_D)| = 0.388286471547    at q_0
 
 But Strategy-3's `t1_atomic_with_coupling` uses the
 **disjoint-product** formula
@@ -111,7 +111,7 @@ from q_parameter import Q_MP
 # cached constants — NOT a substrate derivation in this script.
 TR_M_PROTON_AT_Q0   = mp.mpf("1.6331535640480814257473330892701240938276544598183")
 TR_M_NEUTRON_AT_Q0  = mp.mpf("1.2482482717548397202242497985371807788067261625718")
-TR_M_DEUTERON_AT_Q0 = mp.mpf("0.3882864240747888")  # from categorical chain audit
+TR_M_DEUTERON_AT_Q0 = mp.mpf("0.3882864715477132")  # from categorical chain audit
 
 
 def main() -> int:
@@ -157,7 +157,8 @@ def main() -> int:
     p_t1 = mp.mpf(rows["p"]["term1_atomic_total"])
     p_t6 = mp.mpf(rows["p"]["term6_cyclotomic_tail_MeV"])
     p_total = mp.mpf(rows["p"]["total_hecke"])
-    M_p_codata = mp.mpf("938.27208816")
+    from codata_constants import M_P_MEV_VALIDATION  # registry (no inline literal)
+    M_p_codata = mp.mpf(M_P_MEV_VALIDATION)
     # Audit-only consumer of the deprecated Conv-C "proton back-fit"
     # E_0 pattern (≈ 200 MeV; flagged as DISCIPLINE VIOLATION in
     # derivation_chain.E_0_CONVENTIONS["C_proton_back_fit"]). This

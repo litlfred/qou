@@ -3,13 +3,13 @@
 **Date:** 2026-05-03
 **Branch:** `claude/w3-w4-followups`
 **Ref:**
-- [`habiro_coefficients_extended.py`](../../folio-assistant/computations/habiro/habiro_coefficients_extended.py)
-- [`habiro-coefficients-extended.witness.json`](../../folio-assistant/computations/habiro-coefficients-extended.witness.json)
+- [`habiro_coefficients_extended.py`](../../computations/habiro/habiro_coefficients_extended.py)
+- [`habiro-coefficients-extended.witness.json`](../../computations/habiro-coefficients-extended.witness.json)
 
 ## Background
 
 The previous symbolic-q pipeline,
-[`habiro_coefficients_atomic.py`](../../folio-assistant/computations/habiro/habiro_coefficients_atomic.py),
+[`habiro_coefficients_atomic.py`](../../computations/habiro/habiro_coefficients_atomic.py),
 took 10+ minutes per atom even for the deuteron (A = 2) and was
 documented as **intractable for A ≥ 3** (it builds Hoefsmit-symbolic
 matrices over partitions of 3·A and runs simplification on the full
@@ -20,7 +20,7 @@ binding constraint for:
   [`docs/audits/2026-05-03-next-session-plan-to-1ppb.md`](2026-05-03-next-session-plan-to-1ppb.md))
 - The “analytical D(u)” research question raised in the W-3 explore
   pass (see PR #521,
-  [`habiro-coefficients-interpolate.witness.json`](../../folio-assistant/computations/habiro/habiro-coefficients-interpolate.witness.json)).
+  [`habiro-coefficients-interpolate.witness.json`](../../computations/habiro/habiro-coefficients-interpolate.witness.json)).
 
 ## Resolution
 
@@ -68,9 +68,9 @@ found for yet — it is left as an open observation.
 
 ## Proof of the closed form (2^(2A+1) and (1+u²)^(3A-1))
 
-See [`d_u_closed_form_proof.py`](../../folio-assistant/computations/d_u_closed_form_proof.py)
+See [`d_u_closed_form_proof.py`](../../computations/d_u_closed_form_proof.py)
 and its witness
-[`d-u-closed-form-proof.witness.json`](../../folio-assistant/computations/d-u-closed-form-proof.witness.json).
+[`d-u-closed-form-proof.witness.json`](../../computations/d-u-closed-form-proof.witness.json).
 
 ### `(1 + u²)^(3A − 1)` factor
 
@@ -92,10 +92,10 @@ in D(u).  ∎
 ### `2^(2A + 1)` factor
 
 Inspection of `atomic_braid_to_crossings(Z, N, include_inter=True)`
-(see [`folio-assistant/computations/hecke/hecke_character_symbolic.py`](../../folio-assistant/computations/hecke/hecke_character_symbolic.py)
+(see [`computations/hecke/hecke_character_symbolic.py`](../../computations/hecke/hecke_character_symbolic.py)
 together with the per-nucleon crossing tables `proton_cross` /
 `neutron_cross` in
-[`mass_endomorphism.py`](../../folio-assistant/computations/mass_endomorphism.py))
+[`mass_endomorphism.py`](../../computations/mass_endomorphism.py))
 shows three classes of crossings, each tagged "sigma", "sigma_inv",
 or "averaged".  The "averaged" generator represents the operator
 (σ + σ<sup>−1</sup>) / 2; its 1/2 prefactor becomes a factor of 2 in
@@ -268,7 +268,7 @@ for the deuteron.
 ### DP probe + cross-partition cancellation finding
 
 The DP framework
-([`dp_pole_probe.py`](../../folio-assistant/computations/dp_pole_probe.py))
+([`dp_pole_probe.py`](../../computations/dp_pole_probe.py))
 implements the cycle-additive upper bound on q=0 pole order per
 partition.  Direct computation of χ^λ for one DP-optimal partition
 on the deuteron reveals **two distinct cancellation mechanisms**:
@@ -317,7 +317,7 @@ independent of starting (Z, N). Hence the closed form generalises
 the per-nucleon increments are universal because each new nucleon
 contributes the same set of intra-nucleon generators (cf. the
 fixed `proton_cross` / `neutron_cross` dictionaries in
-[`mass_endomorphism.py`](../../folio-assistant/computations/mass_endomorphism.py))
+[`mass_endomorphism.py`](../../computations/mass_endomorphism.py))
 and the canonical pppnnn ordering keeps the inter-nucleon coupling
 structure invariant (exactly one mixed (p, n) interface).
 
@@ -406,7 +406,7 @@ partial-fraction split on the u-plane lift of `tr_M(u²)` (computed
 via the same `markov_peel.tr_M_atomic` symbolic pipeline) and reads
 off the denominator structure as a side-effect.  Its witness for
 ⁵Li
-([`term6-residues-at-roots.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/term6-residues-at-roots.witness.json))
+([`term6-residues-at-roots.witness.json`](https://github.com/litlfred/qou/blob/main/computations/term6-residues-at-roots.witness.json))
 contains:
 
 ```
@@ -441,7 +441,7 @@ and `Dprime = 2^(2A+1) · (1+u²)^(3A-1)`.  Deferred as a follow-up.
    provides them. The previous interpolate-path note that the
    “analytical D(u) is the next step” is superseded.
 2. **No D(u) sampling needed.** The numerical-interpolation path
-   ([`habiro_coefficients_interpolate.py`](../../folio-assistant/computations/habiro/habiro_coefficients_interpolate.py))
+   ([`habiro_coefficients_interpolate.py`](../../computations/habiro/habiro_coefficients_interpolate.py))
    was scaffolded as a fallback; with markov_peel symbolic available,
    sampling D(u) by Vandermonde + rounding is no longer required.
 3. **Closed-form D(u) is a structural finding.** The 2^(2A+1) ·
@@ -458,7 +458,7 @@ and `Dprime = 2^(2A+1) · (1+u²)^(3A-1)`.  Deferred as a follow-up.
   structural prefactor in the categorical-mass identity
   `B = m_e · ρ_t · tr_M(T_w)`. The implied ρ_t values are now
   exposed per-atom in
-  [`b-over-a-v5-unified.witness.json`](../../folio-assistant/computations/b-over-a-v5-unified.witness.json)
+  [`b-over-a-v5-unified.witness.json`](../../computations/b-over-a-v5-unified.witness.json)
   as a research diagnostic but admit no clean closed form so far
   (D = 11.21, T = 159.5, ³He = 73.1, ⁴He = 1000.5; no obvious A·c^A
   fit). This is the W-1 / GAP-A residue.
@@ -545,11 +545,11 @@ of 2026-05-04) **independently derived `α_shift(T_(p,k)) = k(p-1)`**
 for torus-knot interfaces, with maximizer at the column partition
 V_(1^p).  Their files:
 
-- [`alpha_shift_torus.py`](https://github.com/litlfred/qou/blob/copilot/identify-multiplicative-chain/folio-assistant/computations/alpha/alpha_shift_torus.py) —
+- [`alpha_shift_torus.py`](https://github.com/litlfred/qou/blob/copilot/identify-multiplicative-chain/computations/alpha/alpha_shift_torus.py) —
   symbolic seminormal computation of `α_shift(T_(p,k))` for torus
   knots, verified at (p, k) ∈ {(2, 3), (2, 5), (2, 9), (3, 4),
   (3, 5), (3, 7)}.
-- [`nh_basis_shift.py`](https://github.com/litlfred/qou/blob/copilot/identify-multiplicative-chain/folio-assistant/computations/nh_basis_shift.py) —
+- [`nh_basis_shift.py`](https://github.com/litlfred/qou/blob/copilot/identify-multiplicative-chain/computations/nh_basis_shift.py) —
   per-NF-letter shift accounting for NH_n basis braids; verifies
   `shift_full(T_w) = length(w) − gb_reduction_count(T_w)` for every
   w ∈ S_n at n = 2, 3, 4, 5 (153 basis braids).
@@ -594,7 +594,7 @@ provides the machinery.
 
 - `markov_peel.tr_M_atomic` — PR #520 / PR #516 (#508).
 - W-3 explore note from PR #521:
-  [`habiro-coefficients-interpolate.witness.json`](../../folio-assistant/computations/habiro/habiro-coefficients-interpolate.witness.json).
+  [`habiro-coefficients-interpolate.witness.json`](../../computations/habiro/habiro-coefficients-interpolate.witness.json).
 - 1-ppb workplan:
   [`docs/audits/2026-05-03-next-session-plan-to-1ppb.md`](2026-05-03-next-session-plan-to-1ppb.md).
 

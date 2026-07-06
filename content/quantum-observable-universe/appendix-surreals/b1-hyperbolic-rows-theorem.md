@@ -1,98 +1,48 @@
-**Proposition (B1 at additional hyperbolic-knot rows is theorem-level —
-Borromean rings, Whitehead link, twist knots — combining Bloch–Suslin
-with published Volume Conjecture results).**
+**Conjecture (B1 conditionally reduces to Volume Conjecture at Borromean rings, Whitehead link, and twist knots).**
 
 Beyond the figure-8 row ([`prop:b1-figure-8-row-theorem`](#prop:b1-figure-8-row-theorem))
 and the seven torus-knot rows ([`prop:b1-torus-knot-rows-theorem`](#prop:b1-torus-knot-rows-theorem)),
-*several additional Bring-embeddable hyperbolic-knot rows of B1
-([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence))
-are theorem-level via published Volume Conjecture discharges.*
+B1 ([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence))
+holds for additional Bring-embeddable hyperbolic-knot rows, conditional on Volume Conjecture discharges.
 
-### Discharged rows
+### Conditionally discharged rows
 
 See [Table 1](#tbl:b1-hyperbolic-rows-theorem-table1-data).
 
 (Twist knot $K_n$ has $n$ half-twists; $K_2 = 4_1$ is the figure-8.
 Genus of $K_n$ is 1 for all $n$, so all twist knots are Bring-embeddable.)
 
-### Per-row proof
-
-#### Borromean rings row
-
-**Step 1 (Bloch–Suslin depth-2 ID).**  Over $F = \mathbb{Q}(i)$:
-$\dim_\mathbb{Q} K_3^{\mathrm{ind}}(\mathbb{Q}(i)) \otimes \mathbb{Q} = 1$
-([`prop:borel-partial-resolution`](#prop:borel-partial-resolution),
-since $\mathbb{Q}(i)$ has $r_1 = 0, r_2 = 1$). The Bloch–Suslin
-regulator's image is the line spanned by $D(i) = \mathrm{Cl}_2(\pi/2) = G$
-(Catalan's constant).
-
-**Step 2 (cell pairing).**  The Borromean rings have braid
-representation $(\sigma_1 \sigma_2^{-1})^3 \in B_3$ closure. Its
-dominant cell in $H_3(q)$ pairs with $\mathrm{Li}_2^q(i)$ via
-Markov trace, producing $8 \cdot D(i) = 8 G = \mathrm{Vol}(L_{6a4})$
-(Lobachevsky decomposition of the Borromean rings complement into
-8 ideal regular octahedra, each contributing $G$).
-
-**Step 3 (VC discharge — van der Veen 2008).**  van der Veen's
-asymptotic analysis of the coloured Jones polynomial of the
-Borromean rings gives:
-
-$$
-  \lim_{N \to \infty} \frac{2 \pi}{N} \log\bigl|J_{L_{6a4}}^{(N)}(e^{2 \pi i / N})\bigr|
-  \;=\;
-  \mathrm{Vol}(L_{6a4})
-  \;=\;
-  8\,\mathrm{Cl}_2(\pi/2).
-$$
-
-**Step 4.** Steps 1–3 combine to give: B1 at Borromean rings row is
-**theorem-level**.
-
-#### Whitehead link row
-
-**Steps 1–2 (Bloch–Suslin + cell pairing).** Over $\mathbb{Q}(i)$
-again. Whitehead link complement = 4 ideal regular octahedra,
-volume $4 G = 4\,\mathrm{Cl}_2(\pi/2) \approx 3.66386$.
-
-**Step 3 (VC discharge — Murakami 2002).** Murakami's analysis
-generalised the figure-8 calculation to the Whitehead link's
-coloured Jones, giving the asymptotic match.
-
-**Step 4.** Combine: B1 at Whitehead link row is **theorem-level**.
+*(Explicit cell pairing and Volume Conjecture discharge steps for the Borromean rings and Whitehead link are recorded in the `audit/b1-hyperbolic-rows-theorem-audit` block.)*
 
 ### Coverage via the Bloch–Suslin chain
 
 For *any* hyperbolic Bring-embeddable knot or link $K$ with shape
 parameter in some number field $F = \mathbb{Q}(z_K)$:
 
-- **Step 1 (Bloch–Suslin)** is theorem-level for any $F$.
-- **Step 2 (cell pairing computation)** is theorem-level — explicit
-  Markov-trace + Hoefsmit + Lobachevsky.
-- **Step 3 (VC asymptotic)** is **knot-specific** — requires a
-  published proof.
+- **Step 1 (Bloch–Suslin)** is unconditionally established for any $F$.
+- **Step 2 (cell pairing computation)** uses explicit Markov-trace and Lobachevsky geometry.
+- **Step 3 (VC asymptotic)** is **knot-specific** — it requires a published proof.
 
-So **B1 at a depth-2 row is theorem-level iff VC is discharged
-for that knot**. The rate-limiting step is the VC discharge per
-knot, *not* the Bloch–Suslin chain.
+So **B1 at a depth-2 row conditionally reduces to the VC discharge for that knot**. 
+The rate-limiting step is the VC discharge per knot, *not* the Bloch–Suslin chain.
 
 ### Bring-embeddable hyperbolic knots awaiting VC discharge
 
 See [Table 2](#tbl:b1-hyperbolic-rows-theorem-table2-data).
 
-Each of these would become a B1 theorem-row upon VC discharge.
+Each of these would become a conditionally established B1 row upon VC discharge.
 
 ### Significance
 
-**Three additional B1 rows are now theorem-level** (Borromean,
-Whitehead — both proved here; figure-8 in [`prop:b1-figure-8-row-theorem`](#prop:b1-figure-8-row-theorem)).
+**Three additional B1 rows are conditionally supported by the literature** (Borromean,
+Whitehead; figure-8 in [`prop:b1-figure-8-row-theorem`](#prop:b1-figure-8-row-theorem)).
 Combined with the seven torus-knot rows
 ([`prop:b1-torus-knot-rows-theorem`](#prop:b1-torus-knot-rows-theorem)),
-**eleven total B1 rows are theorem-level**.
+**eleven total B1 rows are supported by the literature**.
 
 The pattern: B1 at depth 2 reduces to per-knot VC discharge via the
 Bloch–Suslin chain + Borel-rank computation. *Every published VC
-discharge for a Bring-embeddable hyperbolic knot adds a B1 row to
-the theorem column.*
+discharge for a Bring-embeddable hyperbolic knot yields a conditional B1 row.*
 
 ### Cross-references
 

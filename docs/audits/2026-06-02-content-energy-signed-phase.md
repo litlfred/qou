@@ -1,7 +1,7 @@
 # content-energy × phase — binding A-scaling is LINEAR content, but the factorization does not jointly close
 
 **Date:** 2026-06-02
-**Probe:** [`probe_content_energy_signed_phase.py`](../../folio-assistant/computations/probe_content_energy_signed_phase.py)
+**Probe:** [`probe_content_energy_signed_phase.py`](../../computations/probe_content_energy_signed_phase.py)
 → `probe-content-energy-signed-phase.witness.json`
 **Status:** EXPLORATORY; asserts the refutation. A≥3-absolute binding open.
 

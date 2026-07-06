@@ -2,6 +2,10 @@ import QOU.Mathlib.SpectralSequence
 import QOU.Mathlib.HeckeAlgebra
 import QOU.Mathlib.WenzlBridgeConcrete
 import QOU.Mathlib.RSKBridge
+import QOU.Mathlib.PartitionListBridge
+import QOU.Mathlib.StandardYoungTableau
+import QOU.Mathlib.RSKBurnsideTarget
+import QOU.Mathlib.SchenstedInsertion
 import QOU.Mathlib.ArchimedeanRealization
 import QOU.Mathlib.NonAbelianStokes
 import QOU.Mathlib.PermutationEnumeration

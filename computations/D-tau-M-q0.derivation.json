@@ -3,7 +3,7 @@
   "target_value": 0.3882864715477134,
   "target_tolerance": 1e-06,
   "content_block": "prop:atom-knot-mass-derivation",
-  "description": "Step-by-step derivation of D's CANONICAL Jones-Markov trace τ_M(D, q_0) ≈ 0.336821 from the seven first-principles entrypoints. This is the trace satisfying the Markov axioms τ(1)=1, τ(σ_i)=z=1/(q^(1/2)+q^(-1/2)), τ(xy)=τ(yx), τ(x σ_n)=z·τ(x). The QOU mass formula uses THIS trace (not τ_SW): see prop:markov-trace-frobenius-selection — Frobenius co-Casimir requires non-degenerate τ, and τ_M is the unique non-degenerate Frobenius pairing on H_n(q). Validated bit-exactly via the from-scratch chain at folio-assistant/computations/from_scratch/ for D, T, ³He.",
+  "description": "Step-by-step derivation of D's CANONICAL Jones-Markov trace τ_M(D, q_0) ≈ 0.336821 from the seven first-principles entrypoints. This is the trace satisfying the Markov axioms τ(1)=1, τ(σ_i)=z=1/(q^(1/2)+q^(-1/2)), τ(xy)=τ(yx), τ(x σ_n)=z·τ(x). The QOU mass formula uses THIS trace (not τ_SW): see prop:markov-trace-frobenius-selection — Frobenius co-Casimir requires non-degenerate τ, and τ_M is the unique non-degenerate Frobenius pairing on H_n(q). Validated bit-exactly via the from-scratch chain at computations/from_scratch/ for D, T, ³He.",
   "steps": [
     {
       "name": "Hecke algebra H_6(q) presentation",
@@ -63,7 +63,7 @@
       "gb_filtration_level": 0,
       "lean_ref": "qou:QOU.BraidKnot.tau_M_non_degenerate",
       "citation": "wenzl1988",
-      "notes": "From-scratch validation in folio-assistant/computations/from_scratch/wenzl_y_axiomatic.py — y_λ at H_3 matches y-lambda-wenzl-witness.json bit-exactly (4dp); at H_5 matches all 7 partitions to 6dp."
+      "notes": "From-scratch validation in computations/from_scratch/wenzl_y_axiomatic.py — y_λ at H_3 matches y-lambda-wenzl-witness.json bit-exactly (4dp); at H_5 matches all 7 partitions to 6dp."
     },
     {
       "name": "Categorical action B_6 → ⊕_λ M_{f_λ}",
@@ -94,7 +94,7 @@
       "jet_order": 0,
       "gb_filtration_level": 0,
       "citation": "manuscript",
-      "notes": "Script: folio-assistant/computations/hecke/hecke_character_symbolic.py (function `atomic_braid_to_crossings`)."
+      "notes": "Script: computations/hecke/hecke_character_symbolic.py (function `atomic_braid_to_crossings`)."
     },
     {
       "name": "Characters χ^λ_q(T_w) via Hoefsmit",

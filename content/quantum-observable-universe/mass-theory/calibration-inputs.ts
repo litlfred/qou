@@ -35,7 +35,7 @@ export default remark({
     {
       kind: "caveat",
       date: "2026-05-25",
-      body: "**CAL-3 parallel finding.** Sibling PR #1127 found $Q_\\beta = |\\Delta(\\mathrm{net})| \\cdot \\mathfrak{E}_0$ is **postulated**, not derived from the canonical per-braid mass formula. The pattern of *\"calibration that's actually an open derivation\"* is not unique to CAL-2. Higher-order $Q_\\beta$ rungs are being recast cohomologically as Khovanov-Rozansky strata in [`2026-05-18-qbeta-n5-cohomological-breakdown.md`](../../../docs/audits/2026-05-18-qbeta-n5-cohomological-breakdown.md). See also [`rem:epistemic-status-of-calibrations`](../observations/epistemic-status-of-calibrations.md) for the unified accounting.",
+      body: "**CAL-3 parallel finding.** Sibling PR #1127 found $\\mathfrak{Q}_\\beta = |\\Delta(\\mathrm{net})| \\cdot \\mathfrak{E}_0$ is **postulated**, not derived from the canonical per-braid mass formula. The pattern of *\"calibration that's actually an open derivation\"* is not unique to CAL-2. Higher-order $\\mathfrak{Q}_\\beta$ rungs are being recast cohomologically as Khovanov-Rozansky strata in [`2026-05-18-qbeta-n5-cohomological-breakdown.md`](../../../docs/audits/2026-05-18-qbeta-n5-cohomological-breakdown.md). See also [`rem:epistemic-status-of-calibrations`](../observations/epistemic-status-of-calibrations.md) for the unified accounting.",
       see: "https://github.com/litlfred/qou/pull/1127",
     },
   ],

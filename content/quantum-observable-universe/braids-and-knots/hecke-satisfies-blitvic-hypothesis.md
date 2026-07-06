@@ -13,7 +13,7 @@ must decompose as a sum over pair-partitions $\pi$ of
 $\{1, \ldots, k\}$ of weights $W(\pi, q)$ depending only on $\pi$
 and the deformation parameter $q$.
 
-**Why Hecke generators satisfy it.** The Hecke quadratic relation
+**Satisfaction of the hypothesis by Hecke generators.** The Hecke quadratic relation
 $$
   \sigma_i^2 \;=\; (q - q^{-1})\,\sigma_i + 1
 $$
@@ -48,24 +48,18 @@ weighted by powers of $(q - q^{-1})$. The weight function $W(\cdot;
 q)$ is Blitvić's $(q, t)$-Gaussian moment kernel at parameter $t = 1$,
 $q = $ the QOU substrate.
 
-**Status: provable.** The decomposition above is a direct
-consequence of:
-1. The Hecke quadratic relation (algebra-level, no analysis).
-2. The Markov property of $\mathrm{tr}_M$ ([`thm:jones-markov-trace`](#thm:jones-markov-trace)).
-3. Wenzl's product factorisation
-   ([`prop:trace-locality-meets-gs-non-locality`](#prop:trace-locality-meets-gs-non-locality)).
-
-No new mathematics introduced; the proof in
-[`prf:hecke-satisfies-blitvic-hypothesis`](#prf:hecke-satisfies-blitvic-hypothesis)
-is an explicit reduction.
-
-**Consequence: the q-CLT input is verified.** With this proposition
-established, Blitvić's CLT
-[`blitvic2012`, Theorem 1.1] applies directly: the rescaled centred
+**Corollary: the q-CLT input (partially established).** Only the
+*odd-length* face of the proposition is proved (odd-word moments
+vanish — Lean `sorry`-free); the full even-length pair-partition
+decomposition with the crossing-weighted $W(\pi; q)$ kernel remains
+open, carried as an honest `sorry` (it needs non-commutative-probability
+pair-partition machinery absent from Mathlib). *Conditional on* that
+full decomposition, Blitvić's CLT
+[`blitvic2012`, Theorem 1.1] applies: the rescaled centred
 sum $S_n = n^{-1/2} \sum_i \tilde\sigma_i$ has joint moments
 converging to a $(q, t)$-Gaussian process at parameter $(q, 1)$.
 The QOU q-CLT
 (`conj:q-clt-non-commutative`)
-is therefore conditional only on the *parameter-identification*
-step (Blitvić's $q$ $\leftrightarrow$ QOU's $q$ $\leftrightarrow$ Tsallis's $q$), not on the
-underlying CLT.
+is therefore conditional on **both** the full pair-partition
+decomposition **and** the *parameter-identification*
+step (Blitvić's $q$ $\leftrightarrow$ QOU's $q$ $\leftrightarrow$ Tsallis's $q$).

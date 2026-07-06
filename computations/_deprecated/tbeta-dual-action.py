@@ -19,7 +19,7 @@ This script:
 Key identity: tr_M(T_beta^vee) = 0  (the dual action is traceless)
 
 Usage:
-    cd folio-assistant/computations && python3 tbeta-dual-action.py
+    cd computations && python3 tbeta-dual-action.py
 """
 import math
 import json

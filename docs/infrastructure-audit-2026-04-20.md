@@ -4,7 +4,7 @@
 
 ## Scope
 
-Compare what the paper content blocks prescribe vs what the computational modules (`folio-assistant/computations/*.py`) actually compute. Flag inconsistencies.
+Compare what the paper content blocks prescribe vs what the computational modules (`computations/*.py`) actually compute. Flag inconsistencies.
 
 ## Summary table
 
@@ -99,7 +99,7 @@ Between session modules:
 
 These are all **different** definitions of "free baseline". Cross-witness comparisons (as in the session summary) are therefore apples-to-oranges unless explicitly aligned.
 
-**Fix**: document a single baseline convention in `folio-assistant/computations/README.md` or a module docstring, then align all probes.
+**Fix**: document a single baseline convention in `computations/README.md` or a module docstring, then align all probes.
 
 ## Items where code is AHEAD of paper
 

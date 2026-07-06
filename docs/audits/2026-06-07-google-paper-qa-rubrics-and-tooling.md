@@ -45,7 +45,7 @@ This is the **symbiotic inversion** of their loop (assessment §3): they rate to
 | **SafeVerify / `verify_integrity`** (no statement-weakening, no `sorryAx`) | `proof-statement-integrity` (signature-diff vs prior commit + axiom sweep) | skill landed (#1913 Review Type 4); **promote to a criterion** here |
 | **Disproof path** (numeric counterexample → formalized `≠`) | `canonical-refutation-formalized` (a refuted ansatz cited in prose must have a Lean `≠`) | discipline landed (compute-author §3.4, #1923 lemma); **add criterion** |
 | **`EVOLVE-VALUE` markers** (tunable knobs) | `compute-evolve-value-fenced` (tunable literals sit inside a fence; canonical values do not) | discipline landed (#1913); **add criterion** |
-| **"lessons-learned" episode comments** | `authorNotes` (CLAUDE.md §4d) — already the home for working-draft notes | no new criterion (existing) |
+| **"lessons-learned" episode comments** | `authorNotes` (AGENTS.md §4d) — already the home for working-draft notes | no new criterion (existing) |
 | **Rater rubric** | Part 1 | this PR |
 
 The three new criteria (`proof-statement-integrity`, `canonical-refutation-formalized`, `compute-evolve-value-fenced`) are mostly **`automated: true`** (git-diff + grep/AST), unlike the rater rubric.
@@ -83,7 +83,7 @@ The three new criteria (`proof-statement-integrity`, `canonical-refutation-forma
 | **B. Mirror via an exporter (recommended)** | Keep QOU `conj:*` as source of truth; build `conj-block → formal-conjectures` exporter (Lean decl + map docstring/refs/AMS from manifest) | single source of truth; auditable; regenerable; preserves QOU provenance internally | build + maintain the exporter; map `uses[]`→their refs |
 | **C. Dual-tag in place** | Add their `@[category …]`/AMS attributes inside QOU `.lean` conjecture files so they're dual-compatible | minimal divergence | their attributes/macros may not resolve in QOU's Lean toolchain; couples QOU build to their conventions |
 
-**Recommendation:** **Option B.** It matches QOU's "content object is the authoritative source, everything else is a render target" architecture (CLAUDE.md) — `formal-conjectures` becomes another *render target* of the `conj:*` blocks, like LaTeX or the blueprint. Candidate conjectures to seed: the genuinely-open QOU `conj:*` (e.g. `conj:rho-prefactor-structural` / GAP-A-4, `conj:kashaev-density-equals-sdp-multiplicity`). This remains an **owner decision** (outward-facing contribution).
+**Recommendation:** **Option B.** It matches QOU's "content object is the authoritative source, everything else is a render target" architecture (AGENTS.md) — `formal-conjectures` becomes another *render target* of the `conj:*` blocks, like LaTeX or the blueprint. Candidate conjectures to seed: the genuinely-open QOU `conj:*` (e.g. `conj:rho-prefactor-structural` / GAP-A-4, `conj:kashaev-density-equals-sdp-multiplicity`). This remains an **owner decision** (outward-facing contribution).
 
 ---
 

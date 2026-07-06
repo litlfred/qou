@@ -66,7 +66,7 @@ def marshal_intra(chain_g0, chain_g1, h_val: float):
 def compute_tau_M_nucleon_H3(g0, g1, q_val: mp.mpf,
                               dps: int = 50) -> mp.mpf:
     """tr_M^3(nucleon, q) — proton or neutron H_3 Markov trace."""
-    h_val = float(Q0 - 1 / Q0)
+    h_val = float(Q0 - 1 / Q0)  # noqa: I8 — sign-classification param for marshal_to_chi_lambda_braid (matched vs d within eps=1e-10), not a precision coefficient
     word = marshal_intra(g0, g1, h_val)
     q_str = mp.nstr(q_val, dps, strip_zeros=False)
     total = mp.mpf(0)
@@ -89,7 +89,7 @@ def compute_tau_M_full(Z: int, N: int, q_val: mp.mpf,
     periodic progress lines for n ≥ 12 (4He and beyond) including units/sec
     metric, wall elapsed time, and ETA so bottlenecks are visible.
     """
-    h_val = float(Q0 - 1 / Q0)
+    h_val = float(Q0 - 1 / Q0)  # noqa: I8 — sign-classification param for marshal_to_chi_lambda_braid (matched vs d within eps=1e-10), not a precision coefficient
     word = atom_braid_word_3A(Z, N, include_inter=True)
     word_m = marshal_to_chi_lambda_braid(word, h_val)
     n = 3 * (Z + N)

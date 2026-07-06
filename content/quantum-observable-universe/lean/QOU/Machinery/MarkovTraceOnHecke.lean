@@ -21,7 +21,7 @@ A type-level scaffold for:
 
 - `QBetaCategoricalPrecisionLadder.lean` (`τ_M(T_β)` is the canonical Q_β source)
 - Audit: [`docs/scope/2026-06-03-qbeta-residue-a-klr-crystal-infra-scope.md`](../../../../../docs/scope/2026-06-03-qbeta-residue-a-klr-crystal-infra-scope.md)
-- CLAUDE.md §"Hecke-Skein convention"
+- AGENTS.md §"Hecke-Skein convention"
 - [wenzl1988] doi:10.1007/BF01239526 (Markov trace on H_n(q))
 -/
 
@@ -37,7 +37,7 @@ namespace QOU.Machinery
 
 The Iwahori-Hecke algebra is presented as a quotient of the braid
 group algebra of `B_n` by the relation `(σ_i - q)(σ_i + q⁻¹) = 0`
-(CLAUDE.md §7a Hecke-Skein convention). Mathlib has only a basic
+(AGENTS.md §7a Hecke-Skein convention). Mathlib has only a basic
 stub; here we axiomatise the structure for downstream consumers. -/
 
 /-- The **Iwahori-Hecke algebra** `H_n(q)` as an abstract type-class
@@ -110,7 +110,7 @@ This realizes the `MarkovTrace` intent above for `n = 3` with an explicit
 linear functional on the NF free module `Fin 6 → R`, replacing the
 `True` marker with proved laws. The NF basis order is
 `[γ, σ₀, σ₁, L₊, L₋, e⁻]`, identical to `gram.NF_BASIS`; the data mirror
-`folio-assistant/computations/.../gram.py` (`hm`, `TR_M`) and the
+`computations/.../gram.py` (`hm`, `TR_M`) and the
 symbolic `pyhecke.trace_formal`. The mathematics is cross-verified in
 Python against `gram.py` (randomized) and over ℚ(s) by
 `tools/pyhecke/tests/test_trace_formal.py`. -/

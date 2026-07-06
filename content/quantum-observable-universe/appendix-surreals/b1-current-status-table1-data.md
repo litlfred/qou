@@ -5,8 +5,8 @@
 | **Strong sharpness, depth 2**, any $F$ | **theorem** | [`prop:depth-2-identification-bloch-suslin`](#prop:depth-2-identification-bloch-suslin) (Bloch–Suslin) |
 | **B1 figure-8 row** | **theorem** | [`prop:b1-figure-8-row-theorem`](#prop:b1-figure-8-row-theorem) (+ Murakami–Murakami 2001) |
 | **B1 7 torus-knot rows** | **theorem** | [`prop:b1-torus-knot-rows-theorem`](#prop:b1-torus-knot-rows-theorem) (+ Garoufalidis–Lê 2005) |
-| **B1 Borromean row** | **theorem** | [`prop:b1-hyperbolic-rows-theorem`](#prop:b1-hyperbolic-rows-theorem) (+ van der Veen 2008) |
-| **B1 Whitehead row** | **theorem** | [`prop:b1-hyperbolic-rows-theorem`](#prop:b1-hyperbolic-rows-theorem) (+ Murakami 2002) |
+| **B1 Borromean row** | **theorem** | [`conj:b1-hyperbolic-rows-theorem`](#conj:b1-hyperbolic-rows-theorem) (+ van der Veen 2008) |
+| **B1 Whitehead row** | **theorem** | [`conj:b1-hyperbolic-rows-theorem`](#conj:b1-hyperbolic-rows-theorem) (+ Murakami 2002) |
 | **Hecke-Baer-* at generic $q$** | **theorem** | [`prop:hecke-baer-star-generic`](#prop:hecke-baer-star-generic) (+ exact failure locus) |
 | **Bridge map at $n \leq 4$** | **theorem** | [`prop:two-filtration-bridge-small-cases`](#prop:two-filtration-bridge-small-cases) |
 | **Joint Galois $\times$ braid action, all cells** | **theorem** | [`prop:joint-galois-braid-discharged`](#prop:joint-galois-braid-discharged) (round 11) |

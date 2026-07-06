@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition (conditional on [`conj:borromean-quark`](#conj:borromean-quark) — composite-crossing parity for stable atoms).**
 Let $\mathcal{A}(Z, N)$ be a stable atom with electron
 configuration occupying shells $S_1, \ldots, S_k$.  The

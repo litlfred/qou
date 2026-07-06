@@ -29,10 +29,10 @@ $2/(3\pi) = \mathrm{Vol}(S^2)/(3\cdot\mathrm{Vol}(S^3))$. The
 "category of base" is $\mathcal{S}_p \cong S^2$ and the "category of
 total space" is $S^3$.
 
-### 2. Three coral tubes / chromaticity primaries on Bring's surface
+### 2. Three color tubes / chromaticity primaries on Bring's surface
 
 [`rem:q-chromaticity`](#rem:q-chromaticity) identifies three
-colour primaries on Bring's surface (the three coral tubes /
+colour primaries on Bring's surface (the three color tubes /
 three $S_3$ subgroups of the Bring automorphism group). This is
 the **natural source of the "$/3$" denominator** in $2/(3\pi)$:
 photon coupling averaged over three independent chromaticity channels.
@@ -83,7 +83,7 @@ $$
 with the $1/3$ factor from chromaticity averaging across the three
 colour primaries on Bring's surface.
 
-**What's needed:** explicit formula for the vacuum-polarisation 1PI
+**Requirements:** explicit formula for the vacuum-polarisation 1PI
 graph in the categorical-Lagrangian framework, including:
 1. Photon two-point function on $S^3$ (Hodge-decomposed; harmonic
    1-forms vanish because $H^1(S^3) = 0$, leaving only the
@@ -111,7 +111,7 @@ should be expressible as a Plancherel-weighted Markov pairing on
 the depth-$\ell$ stratum for $\ell \ge 1$, computed via the
 Wenzl-bridge closed form.
 
-**What's needed:**
+**Requirements:**
 1. Identify the "coupling-side analog" of the mass functional
    $\mathfrak{m}^{(k)}$ — specifically, define a depth-$k$
    contribution to $1/\alpha_{EM}$.
@@ -129,7 +129,7 @@ $e^{2\pi i / [2]_q}$. Integrating the photon over the fibre and
 averaging over the base gives a finite phase-volume factor that
 equals $2/(3\pi)$ at $q = q_0$ for $g = 4$.
 
-**What's needed:**
+**Requirements:**
 1. Define the photon holonomy integral over the U(1) fibre:
    $\oint_{U(1)} A_\mu d\theta = 2\pi/[2]_q$.
 2. Square / take modulus and average over $\mathcal{S}_p$ with the
@@ -157,7 +157,7 @@ $$
 with the constant emerging from the universal $k \to \infty$
 asymptotics rather than the substrate-dependent finite-$k$ value.
 
-**What's needed:** evaluation of CS partition functions on the
+**Requirements:** evaluation of CS partition functions on the
 relevant 3-manifolds, taking the appropriate limit. The Witten
 formulas give explicit closed forms for SU(2)$_k$ on $S^3$ and
 related geometries; the $k \to \infty$ limit produces $1/k$ factors

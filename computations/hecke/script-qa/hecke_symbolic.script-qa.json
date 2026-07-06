@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/hecke/hecke_symbolic.py",
+  "script_path": "computations/hecke/hecke_symbolic.py",
   "language": "python",
   "source_hash": "2e4593ae5e8c",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -21,7 +21,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "major",
-        "evidence": "folio-assistant/computations/hecke/hecke_symbolic.py:134: bare `float(c.subs(q, q_val))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/hecke/hecke_symbolic.py:135: bare `float(c.subs(q, q_val))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/hecke/hecke_symbolic.py:135: bare float literal `1e-15` — wrap in `mpmath.mpf(\"1e-15\")` / `Decimal(\"1e-15\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/hecke/hecke_symbolic.py:1063: bare float literal `1.5` — wrap in `mpmath.mpf(\"1.5\")` / `Decimal(\"1.5\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/hecke/hecke_symbolic.py:1071: bare float literal `2.` — wrap in `mpmath.mpf(\"2.\")` / `Decimal(\"2.\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/hecke/hecke_symbolic.py:134: bare `float(c.subs(q, q_val))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/hecke/hecke_symbolic.py:135: bare `float(c.subs(q, q_val))` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/hecke/hecke_symbolic.py:135: bare float literal `1e-15` — wrap in `mpmath.mpf(\"1e-15\")` / `Decimal(\"1e-15\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/hecke/hecke_symbolic.py:1063: bare float literal `1.5` — wrap in `mpmath.mpf(\"1.5\")` / `Decimal(\"1.5\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/hecke/hecke_symbolic.py:1071: bare float literal `2.` — wrap in `mpmath.mpf(\"2.\")` / `Decimal(\"2.\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       }
     ],
     "respects_archimedean_wall": [
@@ -74,7 +74,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/hecke/hecke_symbolic.py:83: `def __init__(…)` has 1 parameter without type annotation: terms — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/hecke/hecke_symbolic.py:98: `def _clean(…)` has 1 parameter without type annotation: threshold — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/hecke/hecke_symbolic.py:110: `def __add__(…)` has 1 parameter without type annotation: other — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/hecke/hecke_symbolic.py:116: `def __mul__(…)` has 1 parameter without type annotation: other — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/hecke/hecke_symbolic.py:125: `def scale(…)` has 1 parameter without type annotation: s — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/hecke/hecke_symbolic.py:83: `def __init__(…)` has 1 parameter without type annotation: terms — add `: type` (or `: Any` if the type genuinely is untyped) | computations/hecke/hecke_symbolic.py:98: `def _clean(…)` has 1 parameter without type annotation: threshold — add `: type` (or `: Any` if the type genuinely is untyped) | computations/hecke/hecke_symbolic.py:110: `def __add__(…)` has 1 parameter without type annotation: other — add `: type` (or `: Any` if the type genuinely is untyped) | computations/hecke/hecke_symbolic.py:116: `def __mul__(…)` has 1 parameter without type annotation: other — add `: type` (or `: Any` if the type genuinely is untyped) | computations/hecke/hecke_symbolic.py:125: `def scale(…)` has 1 parameter without type annotation: s — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -93,7 +93,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/hecke/hecke_symbolic.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
+        "evidence": "computations/hecke/hecke_symbolic.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
       }
     ],
     "connected_to_ci_pipeline": [

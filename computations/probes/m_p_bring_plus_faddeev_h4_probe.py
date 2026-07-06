@@ -68,7 +68,7 @@ sys.path.insert(0, str(HERE.parent))
 
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-from codata_constants import M_E_MEV  # CODATA-2022
+from codata_constants import M_E_MEV, M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # CODATA-2022
 
 mp.mp.dps = 80
 
@@ -84,8 +84,8 @@ def main() -> int:
     INV_HBAR2 = 1 / (HBAR_Q ** 2)
 
     M_E = M_E_MEV
-    M_P_CODATA = mp.mpf("938.27208816")
-    M_N_CODATA = mp.mpf("939.56542052")
+    M_P_CODATA = mp.mpf(M_P_MEV_VALIDATION)
+    M_N_CODATA = mp.mpf(M_N_MEV_VALIDATION)
     M_AVG_CODATA = (M_P_CODATA + M_N_CODATA) / 2
 
     # ── Two Faddeev ratios at substrate-natural z values ─────────

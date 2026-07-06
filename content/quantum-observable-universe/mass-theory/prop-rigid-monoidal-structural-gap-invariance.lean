@@ -7,7 +7,7 @@ import Mathlib.Tactic
 # Rigid monoidal structural-gap invariance
 
 Lean axiomatization of `prop:rigid-monoidal-structural-gap-invariance`
-following the §3b conditional-class pattern from CLAUDE.md.
+following the §3b conditional-class pattern from AGENTS.md.
 
 **Unification of PR #638 closure findings (1)–(3).**  The three
 load-bearing positive findings of the brane-tower `n_⋆`
@@ -22,7 +22,7 @@ refutation —
 — are consequences of a single categorical fact: the brane-tower
 formula factors through the canonical Markov trace τ on the
 **rigid monoidal Type-B-folded Hecke category**
-`Rep(SU_q(2))` (CLAUDE.md §7b).  The categorical τ is **unique**
+`Rep(SU_q(2))` (AGENTS.md §7b).  The categorical τ is **unique**
 (Jones 1985, Wenzl 1988) and **convention-independent**.
 
 This file axiomatizes the unification as a class with structural
@@ -54,7 +54,7 @@ namespace QOU.BraidKnot
     Markov-trace value it agrees on.  Different conventions vary
     `regularizer`; all share the same `markov_trace`. -/
 structure OperatorVolumeConvention (α : Type*) where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- The categorical Markov trace value τ(β_𝔥) — convention-
       INDEPENDENT (unique per Jones-Wenzl). -/
   markov_trace : α → ℝ
@@ -141,105 +141,15 @@ theorem convention_equivalence_trans
     OperatorVolumeConvention.agree_on_trace c₁ c₃ :=
   fun β => (h12 β).trans (h23 β)
 
--- Ref: [manuscript] prop:rigid-monoidal-structural-gap-invariance §"Falsifiable prediction 2"
-
 /-- **(3) Convention-independence of the structural gap.**  Define
     the categorical structural gap as `Δ_cat(β) := B_AME -
     coefficient · |categorical_trace β|`.  Different conventions
     yield the SAME Δ_cat per braid `β` — the convention-dependent
     regularizers cancel because they all factor through the
-    categorical trace. -/
+    categorical trace.  The body is a one-line rewrite via
+    `trace_convention_independence`, which itself follows from
+    `R.convention_factorisation`. -/
 -- Ref: [manuscript] prop:rigid-monoidal-structural-gap-invariance §"Falsifiable prediction 2"
-/-- **Convention-independence of the structural gap (theorem).**
-    Promoted from the auto-extracted axiom — the body is a one-line
-    rewrite via `trace_convention_independence`, which itself follows
-    from `R.convention_factorisation`. -/
-theorem structural_gap_convention_independent_axiom
-    [R : RigidMonoidalStructuralGapInvariance α]
-    (c₁ c₂ : OperatorVolumeConvention α)
-    (β : α) (B_AME coefficient : ℝ) :
-    (B_AME - coefficient * |c₁.markov_trace β|)
-      = (B_AME - coefficient * |c₂.markov_trace β|) := by
-  rw [trace_convention_independence c₁ c₂ β]
-
--- ────────────────────────────────────────────────────────────────────────────
--- §3b skeleton instance (TAUTOLOGICAL)
---
--- Sets `categorical_trace ≡ 0`.  Encodes no conjectural content,
--- but discharges the §3b-cond hypothesis so downstream conditional
--- theorems become unconditional Lean theorems.
--- ────────────────────────────────────────────────────────────────────────────
-
--- Ref: [manuscript] prop:rigid-monoidal-structural-gap-invariance §"Status"
-
-/-! ### Mathlib LP-duality integration sketch
-
-The `convention_factorisation` axiom of
-`RigidMonoidalStructuralGapInvariance` requires that every
-operator-volume convention's `markov_trace` agrees with the
-categorical Markov trace `τ` on `H_n(q)`.  In Lean, the genuine
-discharge proceeds in three structural layers:
-
-  **Layer 1 — Markov trace uniqueness (Jones 1985, Wenzl 1988).**
-  Any functional `τ : H_n(q) → ℂ_q` satisfying M1 (cyclicity), M2
-  (Markov axiom `τ^(n)(x σ_{n-1}) = z · τ^(n-1)(x)`), and M3
-  (`τ(1) = 1`) on the Iwahori-Hecke algebra is uniquely
-  determined.  Mathlib's `LinearAlgebra.Trace` infrastructure
-  provides cyclicity (M1); the Hecke quadratic + Markov axiom
-  recursion would need an additional `MarkovTraceAxiomatic` typeclass
-  (proposed but not in Mathlib).  Concretely: `MarkovTrace H_n(q)`
-  becomes a singleton up to scaling, and the operator-selection
-  LP machinery (`prop:operator-selection-lp`) extends to its
-  PSD-cone formulation via Mathlib's `Matrix.PosSemidef`.
-
-  **Layer 2 — Spin-involution invariance (S = Hopf antipode).**
-  `pair_knot_Z_N_trace_invariance` in
-  `spin-involution-lp-dual-invariance.lean` (this branch) proves
-  `τ ∘ S = τ` directly from the `SpinInvolution.trace_invariant`
-  field — already discharged, no Mathlib infrastructure needed.
-
-  **Layer 3 — Convention factorisation.**  Given Layer 1, any
-  operator-volume convention whose `markov_trace` satisfies M1-M3
-  + Hecke quadratic relation must equal `τ`.  The skeleton
-  instance below records the §3b `sorry` for the Layer-1
-  uniqueness step; Layers 2-3 follow.
-
-The Mathlib-LP integration is therefore staged: Layer 2 is
-production-Lean; Layer 1 needs the proposed `MarkovTraceAxiomatic`
-typeclass; Layer 3 then follows by structural induction on the
-Hecke quadratic relation. -/
-
-/-- **§3b-cond canonical skeleton instance.**  Sets
-    `categorical_trace ≡ 0`.  The `sorry` in
-    `convention_factorisation` is the **§3b-cond conjectural input**:
-    Layer-1 Jones-Wenzl uniqueness of the categorical Markov trace
-    τ on `H_n(q)` (Jones 1985, Wenzl 1988).  Per CLAUDE.md §3b-cond,
-    this `sorry` is allowed — it encodes the conjectural axiom; all
-    downstream theorems carrying `[R : RigidMonoidalStructuralGapInvariance α]`
-    as an explicit hypothesis are unconditional Lean theorems
-    modulo this single conjectural input.
-
-    The data field `categorical_trace _ := 0` is the **weakest**
-    content-bearing canonical pick (per the trivial-skeleton
-    workplan `docs/audits/2026-05-08-trivial-skeleton-workplan.md`,
-    pattern A upgrade would pin to a substrate-derived τ value
-    once `MarkovTraceAxiomatic` lands in upstream Mathlib —
-    handover doc §2 P4.A long-term path).
-
-    See the "Mathlib LP-duality integration sketch" comment block
-    above for the staged-discharge plan (Layer 1: `MarkovTraceAxiomatic`
-    typeclass; Layer 2: `pair_knot_Z_N_trace_invariance` — done;
-    Layer 3: structural induction on the Hecke quadratic).
-
-    Companion: `docs/audits/2026-05-12-lean-p4-canonical-instance-review.md`. -/
--- Ref: [manuscript] prop:rigid-monoidal-structural-gap-invariance §"Skeleton"
--- Ref: [jones1985] V. Jones, BAMS 12.1 (1985)
--- Ref: [wenzl1988] H. Wenzl, Invent. Math. 92 (1988)
-instance canonical (α : Type*) :
-    RigidMonoidalStructuralGapInvariance α where
-  categorical_trace _ := (0 : ℝ)
-  convention_factorisation _ _
-
 theorem structural_gap_convention_independent
     [R : RigidMonoidalStructuralGapInvariance α]
     (c₁ c₂ : OperatorVolumeConvention α)
@@ -299,7 +209,7 @@ Hecke quadratic relation. -/
     `categorical_trace ≡ 0`.  The `sorry` in
     `convention_factorisation` is the **§3b-cond conjectural input**:
     Layer-1 Jones-Wenzl uniqueness of the categorical Markov trace
-    τ on `H_n(q)` (Jones 1985, Wenzl 1988).  Per CLAUDE.md §3b-cond,
+    τ on `H_n(q)` (Jones 1985, Wenzl 1988).  Per AGENTS.md §3b-cond,
     this `sorry` is allowed — it encodes the conjectural axiom; all
     downstream theorems carrying `[R : RigidMonoidalStructuralGapInvariance α]`
     as an explicit hypothesis are unconditional Lean theorems

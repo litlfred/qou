@@ -1,0 +1,484 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-02T18:04:36.703949+00:00",
+  "commitSha": "49a93a93b102c7b3f69005ab5f4756d9c9900f02",
+  "assertions": [
+    {
+      "name": "closed_form_B_matches_transfer_D",
+      "computed": 5.944940336724712e-20,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-18,
+      "source": "B from the closed form vs B from the independent transfer-path traces (residual ≈9e-20 = f64-q₀-baked δ in the canonical word vs 50-digit δ(q₀) here)"
+    },
+    {
+      "name": "expansion_sums_exactly_to_B_pred_D",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "finite inclusion–exclusion identity 1 − ∏(1−g_i) = Σ_k (−1)^{k+1} e_k(g); exact at 50+ dps"
+    },
+    {
+      "name": "closed_form_B_matches_transfer_T",
+      "computed": 1.1793854855348219e-20,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-18,
+      "source": "B from the closed form vs B from the independent transfer-path traces (residual ≈9e-20 = f64-q₀-baked δ in the canonical word vs 50-digit δ(q₀) here)"
+    },
+    {
+      "name": "expansion_sums_exactly_to_B_pred_T",
+      "computed": 8.043058733543795e-87,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "finite inclusion–exclusion identity 1 − ∏(1−g_i) = Σ_k (−1)^{k+1} e_k(g); exact at 50+ dps"
+    },
+    {
+      "name": "closed_form_B_matches_transfer_3He",
+      "computed": 2.2374511543831966e-20,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-18,
+      "source": "B from the closed form vs B from the independent transfer-path traces (residual ≈9e-20 = f64-q₀-baked δ in the canonical word vs 50-digit δ(q₀) here)"
+    },
+    {
+      "name": "expansion_sums_exactly_to_B_pred_3He",
+      "computed": 8.043058733543795e-87,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "finite inclusion–exclusion identity 1 − ∏(1−g_i) = Σ_k (−1)^{k+1} e_k(g); exact at 50+ dps"
+    },
+    {
+      "name": "closed_form_B_matches_transfer_4He",
+      "computed": 5.53046768836383e-21,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-18,
+      "source": "B from the closed form vs B from the independent transfer-path traces (residual ≈9e-20 = f64-q₀-baked δ in the canonical word vs 50-digit δ(q₀) here)"
+    },
+    {
+      "name": "expansion_sums_exactly_to_B_pred_4He",
+      "computed": 8.043058733543795e-87,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-40,
+      "source": "finite inclusion–exclusion identity 1 − ∏(1−g_i) = Σ_k (−1)^{k+1} e_k(g); exact at 50+ dps"
+    },
+    {
+      "name": "he4_4body_cross_term_far_below_magic_A",
+      "computed": 34.403011183807266,
+      "expected": 34.403011183807266,
+      "passed": true,
+      "source": "informational: magic-A / T_3 ratio at the E_0 scale — the exact 4-body cross-term of the closed form is ~this factor below the magic-A α-volume value 2·m_e·4·8G ≈ 29.96 MeV"
+    },
+    {
+      "name": "he4_2body_fraction_matches_ceiling_audit_26pct",
+      "computed": 0.25981202484525034,
+      "expected": 0.26,
+      "passed": true,
+      "tolerance": 0.03,
+      "source": "order-1 (pairwise) fraction of B_AME(⁴He) at the E_0 scale vs the 26% pairwise ceiling in docs/audits/2026-06-02-binding-many-body-ceiling.md"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 243,
+  "computation": "probe-9b-manybody-expansion",
+  "scriptFile": "probe_9b_manybody_expansion.py",
+  "scriptHash": "fbbe2b122555",
+  "scriptCommitSha": "e78113f1ba7196978ab98f58fb4f66deff4c740c",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "PROBE 3 (9b, bean iv3r): exact finite inclusion–exclusion many-body expansion of the Phase-5q closed form B = Q_β·tr_free·(1 − ∏(1−g_i)) in the interface deficits g_i, for D/T/³He/⁴He at 50-dps (no new constants). Orders sum EXACTLY to B_pred (≤1e-40); order-1 at the E_0 scale reproduces the many-body-ceiling audit's ≈26% pairwise figure for ⁴He. VERDICT: the connected 4-body cross-term at ⁴He is ~2 orders of magnitude below the magic-A value 2·m_e·4·8G ≈ 29.96 MeV (REFUTED scope-(a): the interface chain product alone cannot supply the α cooperativity at any order, at either canonical scale). Exploratory; NOT wired.",
+  "auditOnly": "docs/audits/2026-07-02-9b-probes-laurent-degree-manybody.md",
+  "parameters": {
+    "compute_dps": 85,
+    "q0": "1.1099785955573347198997632204832250266562084087802",
+    "Q_beta_n_MeV": 0.7823334093100222,
+    "E0_full_MeV": "4.18598082758289091428987618582",
+    "pn_convention": "bring_color_weighted (proven leading δ)"
+  },
+  "data": {
+    "magic_A_4He_MeV_2_me_4_8G": "29.9556772795328825980939333878",
+    "nucleon_traces": {
+      "tr_p": "1.0653062286131670593652845464313725576506616741352",
+      "tr_n": "0.92323329718615355710525339599068604013866212190137"
+    },
+    "isotope_results": [
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "interface_kinds": [
+          "averaged"
+        ],
+        "g_values": [
+          "0.605137925305012299928309500095"
+        ],
+        "tr_free": "0.98352618195548050569232970261262953513066814133045",
+        "B_pred_MeV_Qbeta_scale": "0.465620587590568996092951221898",
+        "B_pred_MeV_E0_scale": "2.49136599483970546751020028112",
+        "B_AME_MeV": "2.2245662",
+        "B_pred_over_B_AME_Qbeta_scale": 0.20930848791578735,
+        "B_pred_over_B_AME_E0_scale": 1.1199334031235868,
+        "orders": [
+          {
+            "interface_order_k": 1,
+            "nucleon_body_counts": [
+              2
+            ],
+            "T_k_MeV": "0.465620587590568996092951221898",
+            "cumulative_MeV": "0.465620587590568996092951221898",
+            "frac_of_B_pred": 1.0,
+            "cumulative_frac_of_B_pred": 1.0,
+            "frac_of_B_AME_Qbeta_scale": 0.20930848791578735,
+            "cumulative_frac_of_B_AME_Qbeta_scale": 0.20930848791578735,
+            "frac_of_B_AME_E0_scale": 1.1199334031235868,
+            "cumulative_frac_of_B_AME_E0_scale": 1.1199334031235868,
+            "subsets": [
+              {
+                "interfaces": [
+                  "0:averaged"
+                ],
+                "nucleon_body_count": 2,
+                "connected": true,
+                "signed_MeV": "0.4656205875905689960929512"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "interface_kinds": [
+          "averaged",
+          "negative"
+        ],
+        "g_values": [
+          "0.605137925305012299928309500095",
+          "0.70973998796203240721289625019"
+        ],
+        "tr_free": "0.90802411983566707176671820142944112197096404749756",
+        "B_pred_MeV_Qbeta_scale": "0.628959330949128138121077997812",
+        "B_pred_MeV_E0_scale": "3.36533205581034457693251933554",
+        "B_AME_MeV": "8.4817962",
+        "B_pred_over_B_AME_Qbeta_scale": 0.07415402541140144,
+        "B_pred_over_B_AME_E0_scale": 0.39677115276718683,
+        "orders": [
+          {
+            "interface_order_k": 1,
+            "nucleon_body_counts": [
+              2
+            ],
+            "T_k_MeV": "0.934059823428893274875778833224",
+            "cumulative_MeV": "0.934059823428893274875778833224",
+            "frac_of_B_pred": 1.4850877910012952,
+            "cumulative_frac_of_B_pred": 1.4850877910012952,
+            "frac_of_B_AME_Qbeta_scale": 0.11012523779207208,
+            "cumulative_frac_of_B_AME_Qbeta_scale": 0.11012523779207208,
+            "frac_of_B_AME_E0_scale": 0.5892399947960589,
+            "cumulative_frac_of_B_AME_E0_scale": 0.5892399947960589,
+            "subsets": [
+              {
+                "interfaces": [
+                  "0:averaged"
+                ],
+                "nucleon_body_count": 2,
+                "connected": true,
+                "signed_MeV": "0.4298764303189952290102981"
+              },
+              {
+                "interfaces": [
+                  "1:negative"
+                ],
+                "nucleon_body_count": 2,
+                "connected": true,
+                "signed_MeV": "0.5041833931098980458654807"
+              }
+            ]
+          },
+          {
+            "interface_order_k": 2,
+            "nucleon_body_counts": [
+              3
+            ],
+            "T_k_MeV": "-0.305100492479765136754700835412",
+            "cumulative_MeV": "0.628959330949128138121077997812",
+            "frac_of_B_pred": -0.48508779100129523,
+            "cumulative_frac_of_B_pred": 1.0,
+            "frac_of_B_AME_Qbeta_scale": -0.035971212380670636,
+            "cumulative_frac_of_B_AME_Qbeta_scale": 0.07415402541140144,
+            "frac_of_B_AME_E0_scale": -0.1924688420288721,
+            "cumulative_frac_of_B_AME_E0_scale": 0.39677115276718683,
+            "subsets": [
+              {
+                "interfaces": [
+                  "0:averaged",
+                  "1:negative"
+                ],
+                "nucleon_body_count": 3,
+                "connected": true,
+                "signed_MeV": "-0.3051004924797651367547008"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "interface_kinds": [
+          "positive",
+          "averaged"
+        ],
+        "g_values": [
+          "0.500679665966438728231033613724",
+          "0.605137925305012299928309500095"
+        ],
+        "tr_free": "1.0477565676413004582450360499088079712009749821854",
+        "B_pred_MeV_Qbeta_scale": "0.658081724984591998000670493734",
+        "B_pred_MeV_E0_scale": "3.52115536801336129398104844093",
+        "B_AME_MeV": "7.71804132",
+        "B_pred_over_B_AME_Qbeta_scale": 0.08526537986772427,
+        "B_pred_over_B_AME_E0_scale": 0.4562239591655051,
+        "orders": [
+          {
+            "interface_order_k": 1,
+            "nucleon_body_counts": [
+              2
+            ],
+            "T_k_MeV": "0.90643311474804844865763030539",
+            "cumulative_MeV": "0.90643311474804844865763030539",
+            "frac_of_B_pred": 1.3773868508037832,
+            "cumulative_frac_of_B_pred": 1.3773868508037832,
+            "frac_of_B_AME_Qbeta_scale": 0.11744341305859302,
+            "cumulative_frac_of_B_AME_Qbeta_scale": 0.11744341305859302,
+            "frac_of_B_AME_E0_scale": 0.6283968823762088,
+            "cumulative_frac_of_B_AME_E0_scale": 0.6283968823762088,
+            "subsets": [
+              {
+                "interfaces": [
+                  "0:positive"
+                ],
+                "nucleon_body_count": 2,
+                "connected": true,
+                "signed_MeV": "0.4104046026172925765832566"
+              },
+              {
+                "interfaces": [
+                  "1:averaged"
+                ],
+                "nucleon_body_count": 2,
+                "connected": true,
+                "signed_MeV": "0.4960285121307558720743737"
+              }
+            ]
+          },
+          {
+            "interface_order_k": 2,
+            "nucleon_body_counts": [
+              3
+            ],
+            "T_k_MeV": "-0.248351389763456450656959811655",
+            "cumulative_MeV": "0.658081724984591998000670493734",
+            "frac_of_B_pred": -0.3773868508037831,
+            "cumulative_frac_of_B_pred": 1.0,
+            "frac_of_B_AME_Qbeta_scale": -0.032178033190868746,
+            "cumulative_frac_of_B_AME_Qbeta_scale": 0.08526537986772427,
+            "frac_of_B_AME_E0_scale": -0.1721729232107037,
+            "cumulative_frac_of_B_AME_E0_scale": 0.4562239591655051,
+            "subsets": [
+              {
+                "interfaces": [
+                  "0:positive",
+                  "1:averaged"
+                ],
+                "nucleon_body_count": 3,
+                "connected": true,
+                "signed_MeV": "-0.2483513897634564506569598"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "interface_kinds": [
+          "positive",
+          "averaged",
+          "negative"
+        ],
+        "g_values": [
+          "0.500679665966438728231033613724",
+          "0.605137925305012299928309500095",
+          "0.70973998796203240721289625019"
+        ],
+        "tr_free": "0.96732375059192494747999458356500059134669333837104",
+        "B_pred_MeV_Qbeta_scale": "0.713460941351808337056994802679",
+        "B_pred_MeV_E0_scale": "3.81746936304545676222048435921",
+        "B_AME_MeV": "28.2956624",
+        "B_pred_over_B_AME_Qbeta_scale": 0.025214498648803794,
+        "B_pred_over_B_AME_E0_scale": 0.13491358884199356,
+        "orders": [
+          {
+            "interface_order_k": 1,
+            "nucleon_body_counts": [
+              2
+            ],
+            "T_k_MeV": "1.37395894225085116739779651659",
+            "cumulative_MeV": "1.37395894225085116739779651659",
+            "frac_of_B_pred": 1.9257661668872643,
+            "cumulative_frac_of_B_pred": 1.9257661668872643,
+            "frac_of_B_AME_Qbeta_scale": 0.048557228412890986,
+            "cumulative_frac_of_B_AME_Qbeta_scale": 0.048557228412890986,
+            "frac_of_B_AME_E0_scale": 0.25981202484525034,
+            "cumulative_frac_of_B_AME_E0_scale": 0.25981202484525034,
+            "subsets": [
+              {
+                "interfaces": [
+                  "0:positive"
+                ],
+                "nucleon_body_count": 2,
+                "connected": true,
+                "signed_MeV": "0.378899194454736131322162"
+              },
+              {
+                "interfaces": [
+                  "1:averaged"
+                ],
+                "nucleon_body_count": 2,
+                "connected": true,
+                "signed_MeV": "0.4579500387528197108361008"
+              },
+              {
+                "interfaces": [
+                  "2:negative"
+                ],
+                "nucleon_body_count": 2,
+                "connected": true,
+                "signed_MeV": "0.5371097090432953252395337"
+              }
+            ]
+          },
+          {
+            "interface_order_k": 2,
+            "nucleon_body_counts": [
+              3,
+              4
+            ],
+            "T_k_MeV": "-0.823231637134846177684554284168",
+            "cumulative_MeV": "0.550727305116004989713242232426",
+            "frac_of_B_pred": -1.15385662959356,
+            "cumulative_frac_of_B_pred": 0.7719095372937042,
+            "frac_of_B_AME_Qbeta_scale": -0.02909391642780012,
+            "cumulative_frac_of_B_AME_Qbeta_scale": 0.019463311985090867,
+            "frac_of_B_AME_E0_scale": -0.155670938907594,
+            "cumulative_frac_of_B_AME_E0_scale": 0.10414108593765631,
+            "subsets": [
+              {
+                "interfaces": [
+                  "0:positive",
+                  "1:averaged"
+                ],
+                "nucleon_body_count": 3,
+                "connected": true,
+                "signed_MeV": "-0.2292862724320794436724435"
+              },
+              {
+                "interfaces": [
+                  "0:positive",
+                  "2:negative"
+                ],
+                "nucleon_body_count": 4,
+                "connected": false,
+                "signed_MeV": "-0.2689199097111281980653386"
+              },
+              {
+                "interfaces": [
+                  "1:averaged",
+                  "2:negative"
+                ],
+                "nucleon_body_count": 3,
+                "connected": true,
+                "signed_MeV": "-0.3250254549916385359467722"
+              }
+            ]
+          },
+          {
+            "interface_order_k": 3,
+            "nucleon_body_counts": [
+              4
+            ],
+            "T_k_MeV": "0.162733636235803347343752570253",
+            "cumulative_MeV": "0.713460941351808337056994802679",
+            "frac_of_B_pred": 0.22809046270629582,
+            "cumulative_frac_of_B_pred": 1.0,
+            "frac_of_B_AME_Qbeta_scale": 0.0057511866637129285,
+            "cumulative_frac_of_B_AME_Qbeta_scale": 0.025214498648803794,
+            "frac_of_B_AME_E0_scale": 0.03077250290433726,
+            "cumulative_frac_of_B_AME_E0_scale": 0.13491358884199356,
+            "subsets": [
+              {
+                "interfaces": [
+                  "0:positive",
+                  "1:averaged",
+                  "2:negative"
+                ],
+                "nucleon_body_count": 4,
+                "connected": true,
+                "signed_MeV": "0.1627336362358033473437526"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "he4_4body_vs_magic_A": {
+      "connected_4body_cross_term_MeV_Qbeta_scale": "0.162733636235803347343752570253",
+      "connected_4body_cross_term_MeV_E0_scale": "0.870728353384146606496313644808",
+      "magic_A_value_MeV": "29.9556772795328825980939333878",
+      "magic_over_4body_Qbeta_scale": 184.07796920439165,
+      "magic_over_4body_E0_scale": 34.403011183807266,
+      "order2_disconnected_2plus2_subset": [
+        {
+          "interfaces": [
+            "0:positive",
+            "2:negative"
+          ],
+          "nucleon_body_count": 4,
+          "connected": false,
+          "signed_MeV": "-0.2689199097111281980653386"
+        }
+      ]
+    },
+    "verdict": {
+      "question_1": "What fraction of B_AME does each exact order capture?",
+      "answer_1": "The FULL closed form captures only 20.9% (D) → 2.5% (⁴He) of B_AME on the Q_β scale (the 10A−5 residual), so every order is bounded by that ceiling. The expansion is ALTERNATING with g_i ≈ 0.5–0.7 (not small): order-1 overshoots B_pred, order-2 corrects down, order-3 up — the many-body 'hierarchy' of the interface product is NOT perturbative.",
+      "question_2": "Does the ⁴He 4-body cross-term land near the magic-A value 2·m_e·4·8G ≈ 29.96 MeV?",
+      "answer_2_tier": "REFUTED — scope (a) ONLY",
+      "answer_2": "No. The exact connected 4-body cross-term is 0.162734 MeV (Q_β scale) / 0.870728 MeV (E_0 scale) — a factor ≈184× / ≈34× below the magic-A value. Scope-(a): the multiplicative interface product of the Phase-5q closed form, ALONE, at either canonical scale, does not generate the 4-body α-cooperativity; the probe MEASURES the missing higher-order term (it does not exclude the closed-form factors from a larger closure — no proved invariant, scope-(b) not claimed). Consistent with the many-body-ceiling audit: the α-binding is not reachable from the A−1-interface chain product at any expansion order."
+    }
+  }
+}

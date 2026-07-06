@@ -1,6 +1,10 @@
 import Mathlib.Algebra.Ring.Basic
+import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Positivity
+import Mathlib.Tactic.FieldSimp
 import QOU.AlgebraicSubstrate.ConditionalClasses
 
 /-!
@@ -94,19 +98,82 @@ instance surrealRateCalculus_classicalLimit (F : Type u) [CommRing F] :
   enstrophy_order := by norm_num
   rogueZero_order := fun δ => by ring
 
-/-- **Conditional surreal rate calculus.**  The four leading-order
-    rate equations hold under the §3b-cond conditional dependencies
-    on the q-NS conjecture cone, packaged as five
-    `[Instance]` hypotheses on the upstream conjecture classes.
+/-- **Surreal rate calculus — the four strict inequalities**
+    ([`prop:surreal-rate-calculus`]).
 
-    The conditional discharges to the unconditional
-    `surrealRateCalculus_classicalLimit` for `F` carrying any
-    `[CommRing F]` structure. -/
+    Working in an ordered field `F` carrying the rate data
+    `[SurrealRateCalculus F]` (so the leading-coefficient equations
+    `Δ = ε³`, `Ω · ε = 1`, … hold) and treating `ε` as a *strictly
+    positive infinitesimal* — `0 < ε` together with `hε_inf`: every
+    positive power `ε^(n+1)` lies below every standard real `λ > 0` —
+    the four claims of the proposition are **derived**, not assumed:
+
+    1. **Positivity** — `0 < Δ` and `0 < Ω`.
+    2. **Infinitesimal gap** — `Δ < λ` for every standard real `λ > 0`.
+    3. **Transfinite period** — `λ < Ω` for every standard real `λ > 0`.
+    4. **Squeeze** — `Δ < δ² · Ω` for every standard real `δ > 0`
+       (the mechanism underlying every millennium-problem squeeze:
+       a standard-scale cost `δ² · ε⁻¹` strictly exceeds the
+       infinitesimal dissipation `ε³`).
+
+    The proof is purely order-theoretic — items (1)–(3) follow from
+    the rate equations and the positivity/archimedean-smallness of
+    `ε`; item (4) reduces, after multiplying by `ε > 0`, to
+    `ε⁴ < δ²`, which is the `n = 3` instance of `hε_inf`.  No
+    cancellation in an ordered field is possible because the cost is
+    transfinite and the dissipation infinitesimal.
+
+    The five §3b-cond conjecture-class hypotheses
+    (`[QAubinLions]`, …, `[RegularityBreakdown]`) record the
+    conditional dependency of the rate *table* on the q-NS conjecture
+    cone (`conj:q-aubin-lions`, …, `conj:regularity-breakdown`), per
+    the `.md` banner; the inequalities themselves are unconditional
+    given the rate data and the infinitesimality of `ε`. -/
+-- Ref: [conway1976] On Numbers and Games §III
+-- Ref: [manuscript] Chapter 8 §5 (Surreal rate calculus)
 theorem surreal_rate_calculus_conditional
+    {F : Type u} [Field F] [LinearOrder F] [IsStrictOrderedRing F]
+    [S : SurrealRateCalculus F]
     [QAubinLions] [NSCounterexample] [CriticalExponent]
     [BlowupYekutieli] [RegularityBreakdown]
-    (F : Type u) [CommRing F] :
-    Nonempty (SurrealRateCalculus F) :=
-  ⟨surrealRateCalculus_classicalLimit F⟩
+    (hε_pos : 0 < S.epsilon)
+    (hε_inf : ∀ (n : ℕ) (lam : F), 0 < lam → S.epsilon ^ (n + 1) < lam) :
+    (0 < S.massGap ∧ 0 < S.reebPeriod)
+    ∧ (∀ lam : F, 0 < lam → S.massGap < lam)
+    ∧ (∀ lam : F, 0 < lam → lam < S.reebPeriod)
+    ∧ (∀ δ : F, 0 < δ → S.massGap < δ ^ 2 * S.reebPeriod) := by
+  have hΔ := S.massGap_order
+  have hΩ := S.reebPeriod_order
+  -- (1) Ω > 0 from `Ω · ε = 1` and `ε > 0`.
+  have hΩpos : 0 < S.reebPeriod := by
+    rcases lt_trichotomy S.reebPeriod 0 with h | h | h
+    · exfalso; nlinarith [mul_pos (neg_pos.mpr h) hε_pos]
+    · exfalso; rw [h] at hΩ; simp at hΩ
+    · exact h
+  -- (1) Δ > 0 from `Δ = ε³` and `ε > 0`.
+  have hΔpos : 0 < S.massGap := by rw [hΔ]; positivity
+  refine ⟨⟨hΔpos, hΩpos⟩, ?_, ?_, ?_⟩
+  · -- (2) Δ = ε³ < λ — the `n = 2` infinitesimality instance.
+    intro lam hlam; rw [hΔ]; exact hε_inf 2 lam hlam
+  · -- (3) λ < Ω: from `ε < λ⁻¹` (the `n = 0` instance) we get
+    --     `λ · ε < 1 = Ω · ε`, hence `λ < Ω` since `ε > 0`.
+    intro lam hlam
+    have hεlt : S.epsilon ^ (0 + 1) < lam⁻¹ := hε_inf 0 lam⁻¹ (by positivity)
+    simp only [zero_add, pow_one] at hεlt
+    have hle : lam * S.epsilon < 1 := by
+      have := (mul_lt_mul_left hlam).mpr hεlt
+      rwa [mul_inv_cancel₀ (ne_of_gt hlam)] at this
+    nlinarith [mul_pos hlam hε_pos]
+  · -- (4) Squeeze Δ < δ² · Ω.  Multiply by `ε > 0`:
+    --     `δ² · Ω · ε = δ²` and `ε³ · ε = ε⁴`, reducing to `ε⁴ < δ²`,
+    --     the `n = 3` infinitesimality instance.
+    intro δ hδ
+    rw [hΔ, ← mul_lt_mul_right hε_pos]
+    have lhs : δ ^ 2 * S.reebPeriod * S.epsilon = δ ^ 2 := by
+      rw [mul_assoc, hΩ, mul_one]
+    have rhs : S.epsilon ^ 3 * S.epsilon = S.epsilon ^ 4 := by ring
+    rw [rhs, lhs]
+    have := hε_inf 3 (δ ^ 2) (by positivity)
+    simpa using this
 
 end QOU.AlgebraicSubstrate

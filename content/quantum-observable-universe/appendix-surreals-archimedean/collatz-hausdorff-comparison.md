@@ -89,7 +89,7 @@ the orbit expands, at $v = 2$ it contracts by $3/4$,
 and at $v \geq 3$ it contracts even faster.  There is
 no critical slowing-down and no superattraction.
 
-### What this means for the conjecture
+### Implications for the conjecture
 
 The Hausdorff recurrence converges **unconditionally**
 because $F'(q) < 1$ for all $q > 3/4$ — the derivative
@@ -105,12 +105,6 @@ no-periodic-cycles theorem
 ([no cycles](#prop:collatz-no-cycles)) eliminates the
 main alternative to convergence; and the classical
 average $\mathbb{E}[v_2] = 2$ saturates the threshold.
-
-The gap between the Hausdorff proof and the Collatz
-conjecture is precisely the difference between a
-**smooth contraction** (derivative $< 1$ everywhere)
-and a **discrete contraction** (ratio $< 1$ only when
-$v \geq 2$, which must be verified orbit by orbit).
 
 ### Connection via Planck steps
 
@@ -135,6 +129,5 @@ $$
 Each Collatz cycle (at $v = 2$) covers about $3$ Planck
 steps worth of Lyapunov decrease.  The Collatz orbit is
 a discrete walk on the same parameter space that the
-Hausdorff recurrence traverses smoothly — both headed
-toward $q = 1$, both using the substrate parameter as
-their natural scale.
+Hausdorff recurrence traverses smoothly, both using the
+substrate parameter as their natural scale.

@@ -1,5 +1,5 @@
 **Interpretation: the Kashiwara $\leftrightarrow$ Jones alternation in the
-$Q_\beta$ precision ladder.**
+$\mathfrak{Q}_\beta$ precision ladder.**
 
 The categorical-derivation precision ladder from
 [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder)
@@ -34,7 +34,7 @@ sits at the **crossroads**: it computes the Markov closure of a typed braid,
 which simultaneously lives in $H_n(q)$ (Kashiwara side) and produces an
 invariant of $\widehat\beta$ (Jones side).
 
-## Why even $k$ $\to$ Kashiwara, odd $k$ $\to$ Jones
+## Parity rule: even $k$ $\to$ Kashiwara, odd $k$ $\to$ Jones
 
 The structural rule (empirically validated through $k = 4$):
 
@@ -56,7 +56,7 @@ The mechanism:
   **2-component link** ($(k+1)$ is even, so the closure has even crossing
   number and is topologically link-like). The Jones polynomial of this
   link emerges as the τ_M trace. At $q = 1$ (the KL classical-limit
-  decategorification per CLAUDE.md §7b), the Jones value is an integer,
+  decategorification per AGENTS.md §7b), the Jones value is an integer,
   contributing the inter-block coefficient.
 
 ## The "GeomK with jet-order twist" interpretation
@@ -83,9 +83,9 @@ to **distinct jet orders**:
 The precision ladder is essentially:
 
 $$
-  Q_\beta^{\text{cat}}
+  \mathfrak{Q}_\beta^{\text{cat}}
    \;=\;
-   Q_\beta^A \cdot \prod_{k \geq 1}
+   \mathfrak{Q}_\beta^A \cdot \prod_{k \geq 1}
      F_k\bigl(b,\, J_{\text{closure}_k}(q{=}1)\bigr)\,
      \hbar_q^{2k},
 $$
@@ -115,9 +115,9 @@ The closure is **hyperbolic** ($\mathrm{Vol}(\mathcal{B}_3) \approx 7.328$);
 its sub-link structure (Hopf at 3-fold closure, full Borromean at higher
 orders) drives the Jones contributions in the precision ladder.
 
-## Why $c_5, c_6$ break the simple alternating pattern
+## Breakdown of the alternating pattern at $c_5, c_6$
 
-Per [`probe_q_beta_c5_c6_multilink.py`](../../folio-assistant/computations/probe_q_beta_c5_c6_multilink.py),
+Per the canonical formalism,
 the empirical $c_5, c_6$ don't fit simple integer Jones values or simple
 Kashiwara $b^k$ alone. Two structural reasons:
 

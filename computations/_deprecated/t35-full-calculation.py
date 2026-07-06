@@ -15,7 +15,7 @@ For tritium (A=3, 9 quark strands):
 Also computes the Level 0 (nucleon-level) traces for comparison.
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 t35-full-calculation.py
 
 Output:

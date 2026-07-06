@@ -25,8 +25,8 @@ export default proposition({
   ],
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/rho_k_h3a_refinement.py",
-    witness: "folio-assistant/computations/rho-k-h3a-refinement.witness.json",
+    script: "computations/rho_k_h3a_refinement.py",
+    witness: "computations/rho-k-h3a-refinement.witness.json",
     status: "experimental",
   },
 });

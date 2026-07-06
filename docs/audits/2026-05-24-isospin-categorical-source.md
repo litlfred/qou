@@ -26,7 +26,7 @@
 
 **Short answer:** Isospin SU(2)_I is **the flavor swap `u ↔ d`** between proton and neutron color-sheet flavor triples. The proton's `(u, u, d)` and neutron's `(u, d, d)` are exchanged by a Z/2 action that lifts to SU(2)_I after q-deforming and bar-symmetrising over the color sheets.
 
-**Long answer:** the framework already has [`crystal-isospin-degeneracy.md`](../../content/quantum-observable-universe/braids-and-knots/crystal-isospin-degeneracy.md), which proves a **partial** version of this: at the `q → 0` crystal limit (Kashiwara), the shell-correction sum `S_crystal(A)` is invariant under exponent inversion of every plain Hecke generator `σᵢ ↔ σᵢ⁻¹` in the atomic braid word. **But this proposition only holds for plain generators** — the canonical atomic braid uses operator-valued inter-nucleon interfaces `⋈_K = σ_g − h/2 · 𝟙` (the "averaged" crossing for unlike-isospin pairs), `σ_g⁻¹` for nn pairs, `σ_g` for pp pairs (per [`isotope_record_schema.py:176-178`](../../folio-assistant/computations/isotope_record_schema.py)), and `crystal-isospin-degeneracy.md` explicitly flags this as **open work**:
+**Long answer:** the framework already has [`crystal-isospin-degeneracy.md`](../../content/quantum-observable-universe/braids-and-knots/crystal-isospin-degeneracy.md), which proves a **partial** version of this: at the `q → 0` crystal limit (Kashiwara), the shell-correction sum `S_crystal(A)` is invariant under exponent inversion of every plain Hecke generator `σᵢ ↔ σᵢ⁻¹` in the atomic braid word. **But this proposition only holds for plain generators** — the canonical atomic braid uses operator-valued inter-nucleon interfaces `⋈_K = σ_g − h/2 · 𝟙` (the "averaged" crossing for unlike-isospin pairs), `σ_g⁻¹` for nn pairs, `σ_g` for pp pairs (per [`isotope_record_schema.py:176-178`](../../computations/isotope_record_schema.py)), and `crystal-isospin-degeneracy.md` explicitly flags this as **open work**:
 
 > "Extending the proposition to canonical $\bowtie_K$-coupled words requires a regularised (or renormalised) crystal functional and is left as separate work."
 
@@ -49,7 +49,7 @@ In the canonical Hecke regime (q = q₀ ≈ 1.11), the inter-nucleon `⋈_K` int
 
 The exponent-inversion symmetry of `crystal-isospin-degeneracy.md` swaps `pp ↔ nn` (σ ↔ σ⁻¹) and **fixes pn** (since σ_avg is bar-symmetric). At q = 0 (0-Hecke quotient) the swap is exact via the idempotent relation; at q = q₀ ≈ 1.11 the operator-valued residue introduces a **isospin-Z/2-anti-symmetric anomaly** carrying a factor `h(q₀) ≈ 0.209` (since `h = q − q⁻¹` is bar-anti-symmetric).
 
-**This is the source of the +0.030% (305 ppm) substrate flavor split** `Δm/M_N = ℏ_q² · h · [2]_q · (1 + ℏ_q³)/3` (per [`_li_2_q_util.flavor_split_subleading`](../../folio-assistant/computations/_li_2_q_util.py)). Bar-symmetry parity of the leading term:
+**This is the source of the +0.030% (305 ppm) substrate flavor split** `Δm/M_N = ℏ_q² · h · [2]_q · (1 + ℏ_q³)/3` (per [`_li_2_q_util.flavor_split_subleading`](../../computations/_li_2_q_util.py)). Bar-symmetry parity of the leading term:
 
 - `ℏ_q² = (q-1)²/q²` → bar-symmetric (anti-sym squared)
 - `h = q − q⁻¹` → bar-**anti-symmetric**
@@ -123,5 +123,5 @@ This proposition would close D9 from ⏳ to ✅. Lean axiomatisation would carry
 - [`crystal-isospin-degeneracy.md`](../../content/quantum-observable-universe/braids-and-knots/crystal-isospin-degeneracy.md) — existing partial formalisation (D9 ⏳)
 - [`docs/audits/2026-05-24-h4-coefficient-source-trace-and-so3-gap.md`](2026-05-24-h4-coefficient-source-trace-and-so3-gap.md) — D10 closure path (full SO(3))
 - [`isospin-mass-split-em-localisation.md`](../../content/quantum-observable-universe/braids-and-knots/isospin-mass-split-em-localisation.md) — mass-split mechanism
-- [`_li_2_q_util.flavor_split_subleading`](../../folio-assistant/computations/_li_2_q_util.py) — the 305 ppm anomaly (already verified)
+- [`_li_2_q_util.flavor_split_subleading`](../../computations/_li_2_q_util.py) — the 305 ppm anomaly (already verified)
 - [`option-e-isospin-test.md`](../../content/quantum-observable-universe/braids-and-knots/option-e-isospin-test.md) — earlier isospin test in the Δ_λ-gating context

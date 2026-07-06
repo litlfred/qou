@@ -27,8 +27,8 @@ export default proposition({
   ],
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/probes/explicit_central_idempotent_probe.py",
-    witness: "folio-assistant/computations/probes/explicit-central-idempotent-probe.witness.json",
+    script: "computations/probes/explicit_central_idempotent_probe.py",
+    witness: "computations/probes/explicit-central-idempotent-probe.witness.json",
     status: "verified",
   },
 });

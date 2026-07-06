@@ -19,7 +19,7 @@ crossing asymmetry (n_nn - n_pp) / C(A,2), which correlates with
 F_Pauli for atoms with certificates.
 
 Usage:
-    python3 folio-assistant/computations/atom_mass_integrated.py
+    python3 computations/atom_mass_integrated.py
 """
 
 import json, math, sys, time, glob

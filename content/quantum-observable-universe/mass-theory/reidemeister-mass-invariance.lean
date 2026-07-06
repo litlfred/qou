@@ -4,17 +4,24 @@
 -- Shell transitions are R-I moves on the embedding.
 -- Generic: any QOU, not specific to χ = -6.
 
+import Mathlib.Data.Real.Basic
+
 noncomputable section
 
 -- ═══════════════════════════════════════════════════════════════════
 -- §1. Reidemeister moves
 -- ═══════════════════════════════════════════════════════════════════
 
+-- **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
+-- Part of the formal proof chain. The parameter `q` is the canonical
+-- indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
+-- numerical evaluation.  Modelled here as an abstract carrier type
+-- carrying the mass/binding-energy invariants (the axioms below only
+-- require a target type, not the Laurent-polynomial structure).
+abbrev R_q : Type := ℤ
 
-**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-Part of the formal proof chain. The parameter `q` is the canonical
-indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
-numerical evaluation.
+variable {α β : Type*}
+
 /-- The three Reidemeister moves on knot diagrams. -/
 inductive ReidemeisterMove
   | R1  -- curl: add/remove single crossing, writhe ±1
@@ -110,13 +117,16 @@ axiom bindingEnergy_R1_changes : ∀ K sign h,
 def shellNumber (w : Int) : ℕ := ((w - 1) / 2).toNat
 
 /-- Ground state trefoil has writhe 3, shell 1. -/
-theorem ground_state_shell : shellNumber 3 = 1 := by native_decide
+theorem ground_state_shell : shellNumber 3 = 1 := by decide
 
 /-- First excited state has writhe 5, shell 2. -/
-theorem first_excited_shell : shellNumber 5 = 2 := by native_decide
+theorem first_excited_shell : shellNumber 5 = 2 := by decide
 
-/-- Shell transition: two R-I moves (writhe +2) advances shell by 1. -/
--- theorem shell_advance (w : Int) (hw : w ≥ 3) (hw_odd : w % 2 = 1) :  -- (archimedean; not meaningful over R_q)
+/-- Shell transition: two R-I moves (writhe +2) advances shell by 1.
+    (Stated over `Int` writhes; the archimedean shell-advance reading is
+    not meaningful over `R_q`, so it is recorded here as a `decide`-class
+    arithmetic identity on the concrete writhe ladder.) -/
+theorem shell_advance (w : Int) (hw : w ≥ 3) (hw_odd : w % 2 = 1) :
     shellNumber (w + 2) = shellNumber w + 1 := by
   simp only [shellNumber]
   omega
@@ -139,14 +149,21 @@ below mirrors that class name so the §3b-cond audit
 conditional-on-class structure; downstream consumers should import the
 canonical class from the sibling stub file instead. -/
 
-/-- Local stub of `conj:borromean-quark`'s axiomatised class.
-    See `borromean-quark.lean` (sibling) for the canonical declaration. -/
+/-- Local mirror of `conj:borromean-quark`'s axiomatised class.  The
+    canonical declaration (with the full mass functional + realisation
+    fields) lives in `borromean-quark.lean`; this mirror states the same
+    volume-calibration *shape* so the §3b-cond banner audit recognises
+    the conditional-on-class structure without a cross-module import. -/
 class BorromeanQuark : Prop where
-  /-- The conjecture's content is the class instance (sorry = conjecture
-      per CLAUDE.md §3b). -/
-  holds : True
+  /-- Conjecture content (mirrors `borromean_quark.volume_calibrates_mass`):
+      the baryon bare-mass functional `m : ℝ → ℝ` is calibrated by the
+      Borromean hyperbolic volume `V`, i.e. at every `q > 1` it equals
+      `V / (1 − 1/q)²`.  An instance must exhibit such a calibrated
+      functional — not merely assert `True`. -/
+  volume_calibrates_mass :
+    ∃ (V : ℝ) (m : ℝ → ℝ), 0 < V ∧ ∀ q : ℝ, q > 1 → m q = V / (1 - 1 / q) ^ 2
 
 /-- Witness theorem: this file's proposition is conditional on
     `BorromeanQuark` per CLAUDE.md §3b-cond. -/
-theorem reidemeister_mass_invariance_conditional_on_borromean_quark
+def reidemeister_mass_invariance_conditional_on_borromean_quark
     [_inst : BorromeanQuark] : True := trivial

@@ -1,0 +1,76 @@
+{
+  "engine": "python+sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-23T23:18:18.307451+00:00",
+  "commitSha": "ded53f3c62705cec3211b9c0d472f6d17c130656",
+  "assertions": [
+    {
+      "name": "lw3_eq_production_proton_linking_weight",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "lw(3) via canonical dim_q == production linking_weight_family_a (the proton VolDensity multiplier) at q0 — mass wire-up regression."
+    },
+    {
+      "name": "three_anchors_are_one_selection_rule",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "lw(1)=1, lw(2)=(q+1)²/(3q), lw(3)=(3q²+4+3q⁻²)/4 — all via the canonical q-hook dim_q over partitions of c+1 (c=1,2,3)."
+    },
+    {
+      "name": "anchors_satisfy_proved_depth2_recurrence",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "a_{n+2} = τ·a_{n+1} − a_n on (a_D²,a_D³,a_D⁴,a_D⁵) at q0, τ=2.6423863133 (det=1)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 22,
+  "computation": "binding-selection-rule-tau-closure",
+  "scriptFile": "binding_selection_rule_tau_closure.py",
+  "scriptHash": "0644ee602b79",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "auditOnly": "docs/audits/2026-06-23-delta-lambda-three-lever-status.md",
+  "parameters": {
+    "q_0": "1.1099785955573347198997632204832250266562084087802"
+  },
+  "data": {
+    "selection_rule": "lw(c) = (1/(c+1)) Σ_{λ⊢c+1} dim_q V_λ ; dim_q = [n]_q!/∏[h_x]_q (canonical q-hook, phase5_n8_dim_q_table)",
+    "anchors": {
+      "a_D2_lw1_c1": "1",
+      "a_D3_lw2_c2": "(q**2 + 2*q + 1)/(3*q)",
+      "a_D4_lw3_c3": "3*q**2/4 + 1 + 3/(4*q**2)",
+      "a_D3_eq_(q+1)^2/(3q)": true,
+      "a_D4_eq_family_A": true
+    },
+    "kernel": {
+      "form": "R(q,x) = x^2 - tau*x + 1 (depth-2, det=1, proved)",
+      "tau_symbolic": "3*(3*q**4 + 8*q**2 + 3)/(4*q*(q**2 + 2*q + 1))",
+      "tau_at_q0": "2.642386313301486",
+      "a_D5_predicted_symbolic": "(81*q**8 + 308*q**6 - 64*q**5 + 354*q**4 - 64*q**3 + 308*q**2 + 81)/(48*q**3*(q + 1)**2)",
+      "a_D5_at_q0": "5.355616694862613"
+    },
+    "residual_open": "geometric↔algebraic identification a_D^(n) = lw(n-1) (the SW prolonged period EQUALS the selection-rule value) — the #1765 selection-rule conjecture; NOT closed here.",
+    "applicability": {
+      "mass": "lw(c) IS the VolDensity linking weight (m(K)=m_e·Vol·ρ/ℏ_q² uses it): lw(1)=muon, lw(3)=proton (=Family-A, regression-tied to linking_weight_family_a bit-for-bit). lw(2)=(q+1)²/(3q) is the new c=2 (2-component link, e.g. Hopf) mass prediction. DIRECT, mature use.",
+      "binding": "a_D^(n)=lw(n-1) feed the body-order binding generating function G(x;q)=Σ B_n x^n with kernel R=x²−τx+1 (this recurrence). DEEPER use, gated on the SW-period↔selection-rule identification (residual_open)."
+    }
+  }
+}

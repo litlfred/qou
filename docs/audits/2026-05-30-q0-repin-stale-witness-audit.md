@@ -66,7 +66,7 @@ stale witnesses as "fresh". This is why the re-pin silently left a
 two-month staleness window.
 
 **Detector landed this PR:**
-[`witness_constant_staleness.py`](../../folio-assistant/computations/substrate/witness_constant_staleness.py)
+[`witness_constant_staleness.py`](../../computations/substrate/witness_constant_staleness.py)
 scans every `*.witness.json` for q₀-shaped decimals (`1.10997…`) that
 differ from the live `Q_50_DIGIT_STR` and flags them. Confirmed it
 detects **392** stale witnesses (`1.109978595554` muon vs
@@ -93,7 +93,7 @@ witness so future drift is attributable.
 `--force` runs the *dependency cascade* (one producer pulled in 13
 downstream witnesses before timing out at 2m30s; that partial run was
 reverted). At ~2.5 min × 392 that is a **~15-hour** job — a dedicated
-batch/CI run with progress logging (per CLAUDE.md "Long-compute logging
+batch/CI run with progress logging (per AGENTS.md "Long-compute logging
 discipline"), **not** an interactive session task. Recommended shape:
 a `q0-repin-regen.yml` workflow (or an overnight `nohup` batch) that
 walks `witness_constant_staleness.py --list`, regenerates in dependency
@@ -101,6 +101,6 @@ order, and re-runs the detector with `--strict` as the green gate.
 
 Quick triage list (or use the detector's `--list`):
 ```bash
-python3 folio-assistant/computations/substrate/witness_constant_staleness.py --list
-grep -rl '1.1099785955541805' folio-assistant/computations/*.witness.json
+python3 computations/substrate/witness_constant_staleness.py --list
+grep -rl '1.1099785955541805' computations/*.witness.json
 ```

@@ -6,7 +6,7 @@ the latitude range $\phi \in \{0, \pi\}$).  Let
 $\widetilde{D} \subset \mathcal{R}_p$ denote the preimage
 $\pi_H^{-1}(D)$ together with the three colour-tube sections
 $\mathfrak{r}, \mathfrak{g}, \mathfrak{b}$ restricted to $D$
-([coral-sector coordinates](#def:coral-sector-coords)).  Then:*
+([color-sector coordinates](#def:color-sector-coords)).  Then:*
 
 1. **Fusion.** *$\widetilde{D}$ is a single connected topological
    disc with degree-$3$ ramification at the centre $\pi_H^{-1}(p)$.
@@ -32,7 +32,7 @@ $\mathfrak{r}, \mathfrak{g}, \mathfrak{b}$ restricted to $D$
 
 **Sketch of proof.**
 
-For (1): the three coral-sector embeddings
+For (1): the three color-sector embeddings
 $\mathfrak{r}(\phi,\psi),\mathfrak{g}(\phi,\psi),\mathfrak{b}(\phi,\psi)$
 tile the exceptional divisor with shared meridian boundaries at
 $\psi = 0, 2\pi/3, 4\pi/3$ (each sector covers an angular sector
@@ -50,7 +50,7 @@ action embedded in the symmetric group $S_3$.  Going around
 $\partial D$ once therefore implements the cyclic permutation
 $(rgb)$.  Adjoining the cover's transpositions (orientation
 reversals on $D$ — equivalently, the involution that exchanges
-the $\pm N$ poles in the coral parametrisation) yields the
+the $\pm N$ poles in the color parametrisation) yields the
 full $S_3$.
 
 For (3): the Lagrange resolvents $w_1, w_2, w_3$ are obtained
@@ -62,16 +62,3 @@ ramified disc with the cyclic Galois generator on the resolvents
 therefore matches the geometric monodromy of (1)–(2) with the
 algebraic $S_3$ action of
 [$\rho$ as $S_3$ holonomy on Lagrange resolvents](#rem:rho-s3-holonomy-exposition). $\square$
-
-**Why this matters.**  The proposition closes the geometric
-chain "internal Reeb flow $\to$ boundary observable" in a precise
-sense: the $S_3$ Galois action that appears in the algebraic
-braid-group representation $\rho \colon B_3 \to \mathrm{SU}(2)$ is
-not posited — it is read off as the monodromy of the
-ramified-disc cover at the foundry boundary, which in turn is
-the topological shadow of the Reeb-flow trajectories on the
-interior.  Combined with
-[six canonical knot operators](#prop:six-canonical-knot-operators),
-this gives the explicit dictionary
-$\text{Reeb trajectory} \longmapsto \text{boundary Galois permutation}$
-that the motivating discussion proposed.

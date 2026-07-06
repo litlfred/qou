@@ -7,7 +7,7 @@
 --                                + Skein-correction mass identity.
 --
 -- Both classes are axiomatic (the `sorry` is the conjecture, per
--- the §3b conditional-class exception in CLAUDE.md).  Downstream
+-- the §3b conditional-class exception in AGENTS.md).  Downstream
 -- substrate identities — in particular the proton/neutron Skein
 -- difference ΔS(n − p) — take both classes as `[Instance]` hypotheses
 -- and are then fully verified by Lean.
@@ -133,13 +133,21 @@ class MassFormula where
   /-- Predicted neutron mass over m_e at the substrate parameter
       (k = 1 / orientation partition (1, 2)). -/
   neutron_mass_over_me : ℝ
-  /-- The predicted proton mass matches CODATA to within the Q_β
-      residual.  This is the conjectural content; consumers see it
-      as a hypothesis. -/
-  proton_matches_codata : True
-  /-- The predicted neutron mass matches CODATA to within the Q_β
-      residual. -/
-  neutron_matches_codata : True
+  /-- The maximal admissible relative residual (the substrate Q_β
+      formula's 1015 ppm floor); the CODATA-agreement claims are
+      stated to within this band. -/
+  qbeta_residual : ℝ
+  /-- The residual band is strictly positive. -/
+  qbeta_residual_pos : qbeta_residual > 0
+  /-- The predicted proton mass matches the CODATA proton/electron mass
+      ratio (≈ 1836.15267) to within the Q_β residual band.  This is the
+      conjectural content; consumers see it as a hypothesis. -/
+  proton_matches_codata :
+    |proton_mass_over_me - 1836.15267343| ≤ qbeta_residual * 1836.15267343
+  /-- The predicted neutron mass matches the CODATA neutron/electron
+      mass ratio (≈ 1838.68366) to within the Q_β residual band. -/
+  neutron_matches_codata :
+    |neutron_mass_over_me - 1838.68366173| ≤ qbeta_residual * 1838.68366173
 
 end Borromean
 end QOU

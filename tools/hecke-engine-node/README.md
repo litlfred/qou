@@ -1,6 +1,6 @@
 # hecke-engine-node
 
-> *Part of the [QOU library stack](../../docs/ARCHITECTURE.md#two-axes-of-organisation-domain-vs-workflow). See the two-axis explanation for how this package fits relative to the in-repo `folio-assistant/computations/` clusters.*
+> *Part of the [QOU library stack](../../docs/ARCHITECTURE.md#two-axes-of-organisation-domain-vs-workflow). See the two-axis explanation for how this package fits relative to the in-repo `computations/` clusters.*
 
 napi-rs Node.js native bindings for [`hecke-engine`](../hecke-engine) — Gram + Markov-trace primitives for the Iwahori-Hecke algebra H_n(q). **Tier-3 sibling** of [`pyhecke-native`](../pyhecke-native) (PyO3 → Python) and [`hecke-engine-wasm`](../hecke-engine-wasm) (wasm-bindgen → browser).
 

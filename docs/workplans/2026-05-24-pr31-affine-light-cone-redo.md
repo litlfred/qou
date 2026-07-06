@@ -12,8 +12,8 @@ PR #31 was authored 2026-03-13 against a substantially different math + repo sta
 | Blocker | Detail |
 |---------|--------|
 | **B1. Target chapter is gone** | PR #31 modifies `chapters/descartes-universe.tex`. No `content/quantum-observable-universe/descartes-universe/` directory exists today; Ch 3 was reorganized. Reeb work lives in `quantum-observable-universes/` (Ch 4); Bring's surface work lives in `braids-and-knots/` + `archimedean-universe/` (Chs 6, 8). |
-| **B2. Architecture mismatch** | Direct edits to `chapters/*.tex` get **overwritten on the next build** — per CLAUDE.md, `chapters/` is a *rendering target* generated from `content/.../*.md` blocks. Figures must be expressed as `diagram` content blocks (the schema defines `diagram` for figures/diagrams; there is no `figure` kind) — optionally paired with a `remark` block for interpretation. |
-| **B3. Math framework drift** | PR #31 uses old notation: `(M, Θ, G, P, E)` 5-tuple (deprecated; current archimedean tuple is `(C, Θ, G, S)` per CLAUDE.md §7); `q_p → 0/1` "big bang / heat death" framing (current framework: derived substrate `q_0` from `q_parameter.py`, not `q_p`); ‖L ∧ F⁺‖ as visible annotation (gauge-field conventions have shifted). |
+| **B2. Architecture mismatch** | Direct edits to `chapters/*.tex` get **overwritten on the next build** — per AGENTS.md, `chapters/` is a *rendering target* generated from `content/.../*.md` blocks. Figures must be expressed as `diagram` content blocks (the schema defines `diagram` for figures/diagrams; there is no `figure` kind) — optionally paired with a `remark` block for interpretation. |
+| **B3. Math framework drift** | PR #31 uses old notation: `(M, Θ, G, P, E)` 5-tuple (deprecated; current archimedean tuple is `(C, Θ, G, S)` per AGENTS.md §7); `q_p → 0/1` "big bang / heat death" framing (current framework: derived substrate `q_0` from `q_parameter.py`, not `q_p`); ‖L ∧ F⁺‖ as visible annotation (gauge-field conventions have shifted). |
 | **B4. Visual style misaligned** | PR #31's SVGs use artistic gradients (brown viscosity gradient, two-step "you are here → Milky Way spiral" pointer, decorative effects). Author directive 2026-05-24: **formal math-book style; no color/gradients unless carrying meaning; natural Bring coordinates only**. |
 
 **Decision:** Close PR #31 with this workplan as the salvage path. The four figure SUBJECTS are valuable; the SVG files themselves are not cherry-pickable.
@@ -38,7 +38,7 @@ All four are useful pedagogy. None contradict the current math framework when re
 | Bring chiral fibre at $q \to 0$ | **`braids-and-knots/`** (Ch 6) or **`archimedean-universe/`** (Ch 8) | candidates: `bring-z5-descent.md`, `bring-figure-eight-depth-2-witness.md`, `x5-bring-prym-jacobian.md`; new `diagram` block (optionally paired with a `remark` for interpretation) reads naturally near the cubic's discriminant locus |
 | Bring chiral fibre at $q = \tfrac{1}{2}$ | same as above (paired with the $q \to 0$ figure) | same — paired `diagram` block |
 
-Per CLAUDE.md §3a (remark authoring convention): the figure itself is a `diagram` block (the only figure-bearing kind in the schema). When an interpretive note is needed, pair it with a sibling `remark` block whose `interprets:` field points at the parent definition/proposition. The `remark` carries no new mathematical content, so it does not trip propagation rules even if it sits downstream of a conjecture.
+Per AGENTS.md §3a (remark authoring convention): the figure itself is a `diagram` block (the only figure-bearing kind in the schema). When an interpretive note is needed, pair it with a sibling `remark` block whose `interprets:` field points at the parent definition/proposition. The `remark` carries no new mathematical content, so it does not trip propagation rules even if it sits downstream of a conjecture.
 
 ## Per-figure recipe
 
@@ -75,7 +75,7 @@ Per CLAUDE.md §3a (remark authoring convention): the figure itself is a `diagra
 
 ## Compute infrastructure to use
 
-- **Python**: `folio-assistant/computations/` is the conventional location for figure-generation scripts. New scripts go alongside (`bring_chiral_fibre_figure.py`, `affine_light_cone_figure.py`).
+- **Python**: `computations/` is the conventional location for figure-generation scripts. New scripts go alongside (`bring_chiral_fibre_figure.py`, `affine_light_cone_figure.py`).
 - **Parameter source**: `q_parameter.py` provides $q_0$, $h$, derived constants. Import from there; never hardcode.
 - **Witness emission**: each figure-generator emits a `.witness.json` with the parameters used (q value, branch point coordinates, sheet values at sample points) for reproducibility. This makes the figures auditable by `compute-integration-watcher`.
 - **CODATA / experimental constants**: for calibration inputs (e.g. $m_e$, $m_\mu/m_e$, $Q_\beta$), import from `experimental_constants.py` (the canonical module for upstream calibration inputs). `codata_constants.py` re-exports these and additionally provides `*_VALIDATION` names (e.g. `M_P_MEV_VALIDATION`) for **comparison only** — its module docstring explicitly warns against using its non-`*_VALIDATION` exports as upstream inputs to mass / binding predictions.
@@ -85,10 +85,10 @@ Per CLAUDE.md §3a (remark authoring convention): the figure itself is a `diagra
 | File | Purpose | New / modify |
 |------|---------|--------------|
 | `docs/workplans/2026-05-24-pr31-affine-light-cone-redo.md` | This workplan | **new** (committed in the workplan PR) |
-| `folio-assistant/computations/affine_light_cone_figure.py` | F1 generator | new (later commit) |
-| `folio-assistant/computations/reeb_dimension_figure.py` | F2 generator | new (later commit) |
-| `folio-assistant/computations/bring_chiral_fibre_figure.py` | F3 + F4 generator | new (later commit) |
-| `folio-assistant/computations/*.witness.json` | per-figure witnesses | new |
+| `computations/affine_light_cone_figure.py` | F1 generator | new (later commit) |
+| `computations/reeb_dimension_figure.py` | F2 generator | new (later commit) |
+| `computations/bring_chiral_fibre_figure.py` | F3 + F4 generator | new (later commit) |
+| `computations/*.witness.json` | per-figure witnesses | new |
 | `figures/affine-light-cone.{svg,pdf}` | F1 output | new |
 | `figures/reeb-dimension.{svg,pdf}` | F2 output | new |
 | `figures/bring-fibre-q0.{svg,pdf}` | F3 output | new |

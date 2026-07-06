@@ -3,7 +3,8 @@ let $V$ be an object with dual $V^{\vee}$, evaluation
 $\mathrm{ev} \colon V \otimes V^{\vee} \to \mathbf{1}$, and
 coevaluation $\mathrm{coev} \colon \mathbf{1} \to V^{\vee} \otimes V$.
 The **snake identities** (also called *zig-zag identities*) are the
-two commutative diagrams:
+equations that make $(\mathrm{ev}, \mathrm{coev})$ exhibit $V^{\vee}$
+as a dual of $V$; they are the two commutative diagrams:
 
 ```tex
 \begin{equation}\label{eq:snake-identities}
@@ -39,8 +40,7 @@ two commutative diagrams:
 
 These identities express the fact that $(\mathrm{ev}, \mathrm{coev})$
 exhibit $V^{\vee}$ as a :refterm[right dual]{#right-dual} of $V$ (equivalently, that the pair
-forms an :defterm[exact pairing]{#exact-pairing} in the sense of
-[`CategoryTheory.ExactPairing`](#rem\:glossary-exact-pairing)). The
+forms an :defterm[exact pairing]{#exact-pairing}). The
 terminology "snake" comes from the graphical calculus, where the
 composites trace out an S-shaped curve that straightens to a vertical
 line.

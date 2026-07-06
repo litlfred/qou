@@ -69,7 +69,7 @@ theorem denomPoly_root_iff (q x : ℝ) (n : ℕ) (k : ℕ) (hk : k < n) :
   intro hroot
   -- Induction on n peels off the (k+1)th factor.
   induction n with
-  | zero => exact (Nat.not_lt_zero k hk).elim
+  | zero => omega
   | succ m ih =>
     rcases Nat.lt_succ_iff_lt_or_eq.mp hk with hlt | heq
     · rw [denomPoly_succ]
@@ -90,11 +90,11 @@ theorem denomPoly_root_iff (q x : ℝ) (n : ℕ) (k : ℕ) (hk : k < n) :
 def AlgebraicCuspComplete (q x : ℝ) (n : ℕ) : Prop :=
   denomPoly q x n = 0
 
-/-- Asymptotic equivalence with the Bloch–Wigner / classical
+/- Asymptotic equivalence with the Bloch–Wigner / classical
     dilogarithm `Li₂` is **not stated here**. The genuine asymptotic
     identity (Faddeev's saddle-point analysis) lives in the
     `ArchimedeanLimit` typeclass of `dilogarithm-archimedean-limit.lean`,
-    where it is packaged as a class hypothesis (CLAUDE.md §3b). -/
--- Ref: [manuscript] conj:dilogarithm-archimedean-limit
+    where it is packaged as a class hypothesis (AGENTS.md §3b).
+    -- Ref: [manuscript] conj:dilogarithm-archimedean-limit -/
 
 end QOU.QPochhammer

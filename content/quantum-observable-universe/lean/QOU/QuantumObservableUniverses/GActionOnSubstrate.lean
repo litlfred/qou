@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.QuantumObservableUniverses.GActionOnSubstrate — conjectural class (placeholder)
 
@@ -6,7 +8,7 @@
 
 This is a **conjecture**: the class `GActionOnSubstrate` carries a placeholder
 field; the `noncomputable instance` is the conjectural witness whose
-`sorry` represents the open conjecture itself (per CLAUDE.md §3b),
+`sorry` represents the open conjecture itself (per AGENTS.md §3b),
 NOT a missing proof.  Downstream theorems may take
 `[GActionOnSubstrate]` as an explicit `[Instance]` hypothesis to derive
 unconditional Lean theorems modulo this single conjectural input
@@ -23,8 +25,8 @@ namespace QOU.QuantumObservableUniverses
 
     Conjectural class — see [`conj:g-action-on-substrate`](../../../quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md). -/
 class GActionOnSubstrate where
-  -- Witness: folio-assistant/computations/none
-  /-- **Conjecture statement** (from manuscript):
+  -- Witness: computations/none
+  /- **Conjecture statement** (from manuscript):
 
       Let $A$ be a Frobenius–Hopf substrate
 ([substrate axioms](#def:frobenius-hopf-substrate)) in $\mathbf{C} =
@@ -90,7 +92,7 @@ end GActionOnSubstrate
 The conjecture is the *existence* of a `GActionOnSubstrate` instance:
 that the substrate admits the unique `G`-equivariant structure of
 Axioms (G-1)–(G-4), from which `N_sym(q)` follows in closed form.  Per
-`CLAUDE.md §3b-cond` we provide **no global instance** (which would
+`AGENTS.md §3b-cond` we provide **no global instance** (which would
 require a `sorry`); downstream theorems take `[GActionOnSubstrate]` as
 an explicit hypothesis.  This removes the naked `sorry` while keeping the
 conjecture's content faithfully encoded in the class fields above.

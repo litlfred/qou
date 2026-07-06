@@ -12,7 +12,7 @@ push and what remains genuinely Mathlib-upstream.
 
 ## 1. Item 3 — `gb_filtration_jet_tracker` H_n for n ≥ 4 (DONE)
 
-[`folio-assistant/computations/gb_filtration_jet_tracker.py`](../../folio-assistant/computations/gb_filtration_jet_tracker.py)
+[`computations/gb_filtration_jet_tracker.py`](../../computations/gb_filtration_jet_tracker.py)
 extended with five new test cases:
 
 | Case | n | word | filtration shape |
@@ -23,12 +23,12 @@ extended with five new test cases:
 | `ascending σ_1 σ_2 σ_3 σ_4 in H_5` | 5 | `[1,2,3,4]` | `{4:1}` ✓ |
 | `²H disjoint mock (σ_1σ_2^{-1})^3 ⊗ σ_3..σ_5 in H_6` | 6 | `[1,-2,1,-2,1,-2,3,4,5]` | `{3:1, 4:2, 5:2}` |
 
-Run: `python3 folio-assistant/computations/gb_filtration_jet_tracker.py`
+Run: `python3 computations/gb_filtration_jet_tracker.py`
 — **11 cases total**, max steps 31, max grade 6.
 
 This is the gateway compute for Term-7 χ_5 evaluation: with H_n
 canonical T_w available through n = 6, the Wedderburn-weight
-evaluation in [`term7_chi5_basis.py`](../../folio-assistant/computations/term7_chi5_basis.py)
+evaluation in [`term7_chi5_basis.py`](../../computations/term7_chi5_basis.py)
 becomes structural rather than fit. The "α_5 currently a fit"
 status is now flagged as a workplan item rather than a hidden
 assumption.
@@ -93,6 +93,6 @@ is now reachable via Term-7 χ_5 + canonical T_w through H_6.
 
 Affected files (relative paths):
 
-- [`folio-assistant/computations/gb_filtration_jet_tracker.py`](../../folio-assistant/computations/gb_filtration_jet_tracker.py)
-- [`folio-assistant/computations/gb-filtration-jet-order.witness.json`](../../folio-assistant/computations/gb-filtration-jet-order.witness.json)
+- [`computations/gb_filtration_jet_tracker.py`](../../computations/gb_filtration_jet_tracker.py)
+- [`computations/gb-filtration-jet-order.witness.json`](../../computations/gb-filtration-jet-order.witness.json)
 - [`docs/audits/2026-05-09-item3-tier-a-batch-status.md`](2026-05-09-item3-tier-a-batch-status.md)

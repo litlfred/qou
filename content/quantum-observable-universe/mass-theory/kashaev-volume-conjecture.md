@@ -37,7 +37,7 @@ remark.
 
 ### Lean axiomatisation
 
-Per `CLAUDE.md` §3b ("Lean formalization of conjectures"), KVC is
+Per `AGENTS.md` §3b ("Lean formalization of conjectures"), KVC is
 encoded in Lean as a **typeclass**
 
 ```
@@ -58,10 +58,10 @@ verified** by Lean — the only unproved input is the class instance.
 
 This is the same pattern used for `MassEvaluation` in
 [mass endomorphism tower](#prop:mass-endomorphism-tower): the
-numerical computation is axiomatised so that the algebraic tower
+canonical computation is axiomatised so that the algebraic tower
 identities are machine-checked.
 
-### Why a class, not an axiom
+### Rationale for a class rather than an axiom
 
 Three reasons:
 

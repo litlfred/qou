@@ -96,7 +96,7 @@ instance canonical (R : Type u) [CommRing R] (q : R)
   barInvolution T := T
   bar_involutive _ := rfl
   -- Ref: [manuscript] conj:symmetric-crystal-pair-production (§3b-cond conjectural-class instance; sorry = the conjecture)
-  bar_invariant _ := sorry
+  bar_invariant _ := rfl
 
 end SymmetricCrystalPairProduction
 

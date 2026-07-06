@@ -128,14 +128,14 @@ calibration remains the *primary* blocker.
 ## Files affected on this branch
 
 Code:
-- `folio-assistant/computations/term6_residues_at_roots.py` — partial-fraction polar split on u-plane lift
-- `folio-assistant/computations/laurent_q.py` — sparse Laurent polynomial class (new)
-- `folio-assistant/computations/hecke/hecke_laurent_fast.py` — LaurentQ-coefficient GS reducer + tr_M_atomic_fast (new)
-- `folio-assistant/computations/markov/markov_peel.py` — `tr_M_atomic` defaults to fast path
-- `folio-assistant/computations/binding_full_pipeline.py` — T6 wired in with module-level cache
+- `computations/term6_residues_at_roots.py` — partial-fraction polar split on u-plane lift
+- `computations/laurent_q.py` — sparse Laurent polynomial class (new)
+- `computations/hecke/hecke_laurent_fast.py` — LaurentQ-coefficient GS reducer + tr_M_atomic_fast (new)
+- `computations/markov/markov_peel.py` — `tr_M_atomic` defaults to fast path
+- `computations/binding_full_pipeline.py` — T6 wired in with module-level cache
 
 Witnesses:
-- `folio-assistant/computations/term6-residues-at-roots.witness.json` — full A ≤ 5 spectrum
+- `computations/term6-residues-at-roots.witness.json` — full A ≤ 5 spectrum
 
 ## Next steps (out of scope of this audit)
 

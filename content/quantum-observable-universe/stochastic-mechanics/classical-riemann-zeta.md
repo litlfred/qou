@@ -1,4 +1,4 @@
-Define the classical Riemann zeta function $\zeta(s)$ as the adelic
+Define the **classical Riemann zeta function** $\zeta(s)$ as the adelic
 global limit of the local $q$-geometries. As $q \to 1$, the local
 zeta functions $Z(\mathcal{B}, q^{-s})$ at each prime fiber assemble
 into the Euler product:

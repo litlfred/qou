@@ -76,7 +76,7 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.SpinInvolutionLPDualInvariance",
     validation: "not_checked",
   },
-  uses: ["prop:jucys-murphy-central-elements-qou"],
+  uses: ["prop:jucys-murphy-central-elements-qou", "def:spin-involution"],
   cites: ["kassel1995", "murphy1992"],
   tags: [
     "lp-duality",

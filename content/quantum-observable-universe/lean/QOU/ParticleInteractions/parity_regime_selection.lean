@@ -1,22 +1,25 @@
-/-!
-# QOU.ParticleInteractions.parity_regime_selection — placeholder stub
+import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Group.Even
 
-**Placeholder canonical** for content block
+/-!
+# QOU.ParticleInteractions.parity_regime_selection
+
+**Canonical declaration** for content block
 [`thm:parity-regime-selection`](../../../quantum-observable-universe/particle-interactions/parity-regime-selection.md): *QOU.ParticleInteractions.parity_regime_selection*.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.ParticleInteractions.parity_regime_selection` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
+This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
 -/
 
 namespace QOU.ParticleInteractions
 
 
 /-- Abstract context for the `parity_regime_selection` claim —
-    manuscript-themed typed fields below; the sign-identity
-    `sign(a^Z · b^{N−1}) = (−1)^{A−1}` is captured along with the
-    three Q-value regimes. -/
+    manuscript-themed typed fields carrying the substrate parameter,
+    the proton/neutron counts, the channel amplitudes, the sign value,
+    the Q-value, and the mass-asymmetry / Frobenius-positive sums.
+    These are the **data**; nothing here asserts the regime identities
+    (they are named below as a `Prop`, not projected from class
+    fields). -/
 class ParityRegimeSelectionContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
@@ -35,50 +38,40 @@ class ParityRegimeSelectionContext where
   /-- The sign of `a^Z · b^{N − 1}` as `±1` (encoded as `ℝ` with value
       `±1`). -/
   sign_val : ℝ
-  /-- Manuscript sub-claim (i) — sign identity:
-      `sign(a^Z · b^{N − 1}) = (−1)^{A − 1}`. -/
-  claim_i_sign_identity :
-    sign_val = (-(1 : ℝ)) ^ (A - 1)
   /-- Electron rest mass (MeV). -/
   m_e : ℝ
   /-- The Q-value `Q(Z, N)` (MeV) of the decay. -/
   Q_value : ℝ
   /-- Mass-asymmetry product `S · Δ = a^Z · b^{N-1} · (a − b)`. -/
   S_Delta : ℝ
-  /-- Manuscript sub-claim (ii) — Odd-`A`, `A ≥ 3`: `Q = |S · Δ| · m_e`. -/
-  claim_ii_odd_A_regime : Odd A → 3 ≤ A → Q_value = |S_Delta| * m_e
   /-- Sum of Frobenius-positive Markov-trace configurations
       (`Σ_FP`) used in the even-`A` regime. -/
   Sigma_FP : ℝ
-  /-- Manuscript sub-claim (iii) — Even-`A`: `Q = (Σ_FP + 1) · m_e`. -/
-  claim_iii_even_A_regime : Even A → Q_value = (Sigma_FP + 1) * m_e
-  /-- Manuscript sub-claim (iv) — `A = 1` neutron decay:
-      `Q = (S · Δ + 1) · m_e`. -/
-  claim_iv_A_one_neutron_decay : A = 1 → Q_value = (S_Delta + 1) * m_e
 
-/-- **Theorem statement** (from manuscript):
+/-- **Parity regime selection** (from manuscript):
 
-For all $q > 1$:*
+For all $q > 1$ the parent decay obeys the sign identity
 
 $$
   \operatorname{sign}(a^Z \cdot b^{N-1}) = (-1)^{A-1}
 $$
 
-*The Q-value regimes are:*
+and the Q-value falls into one of three regimes by the parity of $A$.
 
-1.
-
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+The Lean encoding **names** the conditional conjecture as a `Prop`
+(pattern C of the vacuity-fix playbook): the context class carries the
+decay data, and `ParityRegimeSelection` is the proposition that the
+four manuscript sub-claims hold — (i) the sign identity
+`sign(a^Z·b^{N−1}) = (−1)^{A−1}`; (ii) odd-`A`, `A ≥ 3`:
+`Q = |S·Δ|·m_e`; (iii) even-`A`: `Q = (Σ_FP + 1)·m_e`; (iv) `A = 1`
+neutron decay: `Q = (S·Δ + 1)·m_e`.  It is *not* asserted (no
+`theorem … := ⟨ctx.claim_*⟩` self-assuming projection); an instance
+discharging it is the open conditional claim. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/parity-regime-selection.ts
-theorem parity_regime_selection [ctx : ParityRegimeSelectionContext] :
+def ParityRegimeSelection (ctx : ParityRegimeSelectionContext) : Prop :=
     ctx.sign_val = (-(1 : ℝ)) ^ (ctx.A - 1) ∧
     (Odd ctx.A → 3 ≤ ctx.A → ctx.Q_value = |ctx.S_Delta| * ctx.m_e) ∧
     (Even ctx.A → ctx.Q_value = (ctx.Sigma_FP + 1) * ctx.m_e) ∧
-    (ctx.A = 1 → ctx.Q_value = (ctx.S_Delta + 1) * ctx.m_e) :=
-  ⟨ctx.claim_i_sign_identity, ctx.claim_ii_odd_A_regime,
-   ctx.claim_iii_even_A_regime, ctx.claim_iv_A_one_neutron_decay⟩
+    (ctx.A = 1 → ctx.Q_value = (ctx.S_Delta + 1) * ctx.m_e)
 
 end QOU.ParticleInteractions

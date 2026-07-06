@@ -42,7 +42,7 @@ OUTPUTS:
   - habiro-coefficients-helium-3.witness.json
   - habiro-coefficients-helium-4.witness.json
 
-Per CLAUDE.md long-compute discipline:
+Per AGENTS.md long-compute discipline:
     python3 -u _helium_habiro_coefficient_extract.py 2>&1 | tee /tmp/helium_habiro.log
 
 Ref: prop:full-pole-structure-mass-trace

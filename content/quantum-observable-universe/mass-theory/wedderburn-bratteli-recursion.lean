@@ -39,6 +39,7 @@
 -/
 
 import Mathlib.Algebra.Field.Basic
+import Mathlib.Tactic.Ring
 
 namespace QOU.BraidsAndKnots
 
@@ -69,7 +70,7 @@ structure Partition where
   parts : List ℕ
 
 /-- The height of λ — number of rows. -/
-def Partition.height (λ : Partition) : ℕ := λ.parts.length
+def Partition.height (lam : Partition) : ℕ := lam.parts.length
 
 /-- A Bratteli edge `μ ↗ λ` decorated with the q-content `c` of the
     added cell. The content is carried as a structure field rather
@@ -107,7 +108,7 @@ def SatisfiesWedderburnBratteliRecursion {R : Type u} [Field R]
     `y e.lam = z · F · y e.mu` is satisfied vacuously since both
     sides reduce to 0. The intended Jones–Markov witness is
     constructed numerically in
-    `folio-assistant/computations/y-lambda-jones-markov-witness.json`
+    `computations/y-lambda-jones-markov-witness.json`
     (n=2..12) and symbolically in `y-lambda-symbolic-witness.json`;
     porting that construction into Lean (with the Hoefsmit seminormal
     eigenvalues + Markov property) is the meaningful next step.
@@ -146,14 +147,14 @@ theorem y_base_case_singleton {R : Type u} [Field R] (y : Partition → R)
   -- Ref: [manuscript] thm:jones-markov-trace base case;
   -- H_1(R, q) = R, tr_M = identity character on V_(1).
 
-/-- Plancherel completeness at every level: `Σ y_λ · d_λ = 1` where
-    `d_λ = dim V_λ` (hook-length formula), summed over all partitions
-    of n.  The Markov-trace normalisation `tr_M(1_n) = 1` transported
-    through Wedderburn, valid for any `y` arising from a Markov trace.
-
-    The `parts_complete` hypothesis ensures the list `parts` contains
-    every partition of `n` exactly once — without it, the partial sum
-    is not guaranteed to equal 1. -/
+-- Plancherel completeness at every level: `Σ y_λ · d_λ = 1` where
+-- `d_λ = dim V_λ` (hook-length formula), summed over all partitions
+-- of n.  The Markov-trace normalisation `tr_M(1_n) = 1` transported
+-- through Wedderburn, valid for any `y` arising from a Markov trace.
+--
+-- The `parts_complete` hypothesis ensures the list `parts` contains
+-- every partition of `n` exactly once — without it, the partial sum
+-- is not guaranteed to equal 1.
 /-- **External axiom (§3b-cond pattern): plancherel_completeness.**
 
     Auto-extracted from the single-sorry theorem body in this file.
@@ -164,20 +165,20 @@ theorem y_base_case_singleton {R : Type u} [Field R] (y : Partition → R)
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 Lemma 3.2 (Plancherel completeness Σ_λ y_λ·d_λ = 1 from Markov-trace normalisation)
 axiom plancherel_completeness_axiom {R : Type u} [Field R] (q v : R) (n : ℕ)
     (parts : List Partition)
-    (_parts_complete : ∀ λ : Partition, λ.parts.sum = n → λ ∈ parts)
+    (_parts_complete : ∀ lam : Partition, lam.parts.sum = n → lam ∈ parts)
     (_parts_nodup : parts.Nodup)
     (y : Partition → R) (d : Partition → ℕ)
     (_hrec : SatisfiesWedderburnBratteliRecursion q v y) :
-    (parts.map (fun λ => y λ * (d λ : R))).sum = (1 : R)
+    (parts.map (fun lam => y lam * (d lam : R))).sum = (1 : R)
 
 theorem plancherel_completeness
     {R : Type u} [Field R] (q v : R) (n : ℕ)
     (parts : List Partition)
-    (_parts_complete : ∀ λ : Partition, λ.parts.sum = n → λ ∈ parts)
+    (_parts_complete : ∀ lam : Partition, lam.parts.sum = n → lam ∈ parts)
     (_parts_nodup : parts.Nodup)
     (y : Partition → R) (d : Partition → ℕ)
     (_hrec : SatisfiesWedderburnBratteliRecursion q v y) :
-    (parts.map (fun λ => y λ * (d λ : R))).sum = (1 : R) :=
-  plancherel_completeness_axiom R q v n parts _parts_complete _parts_nodup y d _hrec
+    (parts.map (fun lam => y lam * (d lam : R))).sum = (1 : R) :=
+  plancherel_completeness_axiom q v n parts _parts_complete _parts_nodup y d _hrec
 
 end QOU.BraidsAndKnots

@@ -1,7 +1,7 @@
 *Proof.*
 We exhibit the triple $(\mathbf{C}, A, \tau)$ and verify the four
 axioms of
-[quantum observable universe](#def\:quantum-observable-universe).
+[quantum observable universe](#def:quantum-observable-universe).
 
 ### Construction
 
@@ -18,10 +18,10 @@ $\int_{A} := h$ the unique faithful invariant Haar state
 ### Verification of axioms
 
 The four axioms hold by
-([axiom 1: Frobenius pairing](#lem\:qou-exists-axiom-1)),
-([axiom 2: observability](#lem\:qou-exists-axiom-2)),
-([axiom 3: Chern classes](#lem\:qou-exists-axiom-3)), and
-([axiom 4: volume constraint](#lem\:qou-exists-axiom-4)) respectively.
+([axiom 1: Frobenius pairing](#lem:qou-exists-axiom-1)),
+([axiom 2: observability](#lem:qou-exists-axiom-2)),
+([axiom 3: Chern classes](#lem:qou-exists-axiom-3)), and
+([axiom 4: volume constraint](#lem:qou-exists-axiom-4)) respectively.
 
 ### Conclusion
 
@@ -29,7 +29,7 @@ All four axioms hold for
 $(\mathbf{Rep}(U_{q}(\mathfrak{g})), \mathcal{O}_{q}(G), \mathrm{forget})$
 under the Chern-class hypothesis, establishing existence.  The triple
 specialises to the archimedean realisation
-([$\mathbb{C}$-QOU](#ex\:c-quantum-observable-universe)) upon choosing a
+([$\mathbb{C}$-QOU](#ex:c-quantum-observable-universe)) upon choosing a
 fibre functor landing in a module category over a contact CR manifold.
 
 **Non-uniqueness.**  Any $(\mathbf{C}', A', \tau')$ with $\mathbf{C}'$

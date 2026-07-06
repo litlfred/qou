@@ -21,7 +21,7 @@ $$
 the CMB of an aeon produces an object with $A_0 \neq 0$,
 landing back inside $\mathrm{Bun}^{\circ}$.*
 
-**What the conjecture says.**
+**Content of the conjecture.**
 
 1. **The CMB regenerates particles.**  The degree-$1$ transport
    data (winding modes) in $\mathrm{CMB}(\mathcal{A})$, when

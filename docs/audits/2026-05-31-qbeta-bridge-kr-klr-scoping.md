@@ -49,7 +49,7 @@ Requirement 3 is the discriminating test. Any candidate `f` whose
 Taylor coefficients drift with q₀ is the same failure mode the
 narrowing-doc mechanisms hit.
 
-## Why the prior is skeptical (CLAUDE.md §7b precedent)
+## Why the prior is skeptical (AGENTS.md §7b precedent)
 
 The 2026-05-30 audit
 [`2026-05-30-klr-dialog-assessment.md`](2026-05-30-klr-dialog-assessment.md)

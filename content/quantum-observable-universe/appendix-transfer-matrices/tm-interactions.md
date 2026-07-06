@@ -1,4 +1,9 @@
-An **interaction** that changes the crossing type from
+This appendix collects the transfer-matrix changes induced by the
+elementary nuclear and electromagnetic processes. Each such process
+is, at bottom, a local rewrite of crossing type, and the quantity we
+care about is the difference between the transfer matrix after the
+rewrite and the transfer matrix before it. Concretely, an
+**interaction** that changes the crossing type from
 $(K_1, K_2)$ to $(K_1', K_2')$ is encoded by the
 $\Delta$ operator:
 
@@ -7,6 +12,11 @@ $$
   = 
   T_{K_1', K_2'}(q) - T_{K_1, K_2}(q)
 $$
+
+The sections below work this out process by process. Beta decay
+(§1) is the worked instance from which the others are built: every
+subsequent case is either the same matrix, its negation, or a
+composition of copies of it.
 
 ## 1. The universal beta decay matrix
 
@@ -52,6 +62,10 @@ See [Table 1](#tbl:tm-interactions-table1-data).
 
 ## 2. Reverse beta decay ($\beta^+$)
 
+Positron emission runs $\beta^-$ backwards, so it undoes exactly the
+crossing-type change of §1. Its transfer-matrix difference is
+therefore the same operator with the opposite sign:
+
 $$
   \boxed{
     \Delta_{\beta^+}(q) =  -\Delta_\beta(q)
@@ -89,6 +103,10 @@ the energy scales as $\lambda_+^n$ where $\lambda_+$ is
 the larger eigenvalue of $T_{pp}$.
 
 ## 4. Pair creation ($\gamma\gamma \to e^- e^+$)
+
+Pair creation is a chirality-changing crossing replacement of the
+same form as $\beta^+$, so its transfer-matrix difference lands on
+the same operator as §2:
 
 $$
   \boxed{

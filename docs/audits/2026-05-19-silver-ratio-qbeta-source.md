@@ -110,6 +110,6 @@ If $q_0$ were the silver ratio instead, β-decay would be categorically forbidde
 
 - [`prop:neutron-qvalue-symbolic`](../../content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md) — Form A derivation (Δ(net) = h(h-2)/2)
 - [`prop:q-beta-categorical-precision-ladder`](../../content/quantum-observable-universe/braids-and-knots/q-beta-categorical-precision-ladder.md) — c_k precision ladder
-- [`folio-assistant/computations/qbeta/qbeta_fsc_g_pattern_comparison.py`](../../folio-assistant/computations/qbeta/qbeta_fsc_g_pattern_comparison.py) — FSC/G algebraic comparison
+- [`computations/qbeta/qbeta_fsc_g_pattern_comparison.py`](../../computations/qbeta/qbeta_fsc_g_pattern_comparison.py) — FSC/G algebraic comparison
 - [`prop:alpha-em-categorical-trace-ratio`](../../content/quantum-observable-universe/descartes-universe/alpha-em-categorical-trace-ratio.md) — FSC derivation (cyclotomic)
 - [`rem:g-q-closed-form`](../../content/quantum-observable-universe/observations/g-q-closed-form.ts) — G(q) = q²/(q-1)⁴ derivation

@@ -5,7 +5,7 @@ Reeb decomposition ([Reeb decomposition](#ex:reeb-decomposition)),
 every form splits as
 $\alpha = \alpha_H + \varTheta \wedge \iota_\xi \alpha$.
 
-The *contact affine chart* $U_\xi \subset \mathbb{P}(V)$ is the open
+The **contact affine chart** $U_\xi \subset \mathbb{P}(V)$ is the open
 dense subset of states with non-vanishing Reeb component:
 
 $$

@@ -12,12 +12,11 @@ See [Table](#tbl:tm-interaction-completeness-table-data).
 Double beta decay ($2\beta$) is **not** a fresh operator: it is the
 quadratic composite $\Delta_\beta \cdot C \cdot \Delta_\beta$ at two
 positions, with $C$ a product of unchanged transfer matrices between
-them ([tm-interactions §5](#tm-interactions)).  Higher $n$-fold
-processes decompose similarly.  The Toffoli transfer matrix
+them ([tm-interactions §5](#tm-interactions)).  The Toffoli transfer matrix
 ([tm-interactions §6](#tm-interactions)) is a *gate construction* on
 three strands, not a fresh interaction at a single crossing.
 
-## Why exactly seven
+## Exactly seven interactions
 
 The count follows from three constraints:
 

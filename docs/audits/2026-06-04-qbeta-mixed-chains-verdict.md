@@ -18,9 +18,9 @@
 ## What was probed
 
 Script:
-[`folio-assistant/computations/qbeta/qbeta_chain4_mixed_wenzl_kashaev_kashiwara.py`](../../folio-assistant/computations/qbeta/qbeta_chain4_mixed_wenzl_kashaev_kashiwara.py).
+[`computations/qbeta/qbeta_chain4_mixed_wenzl_kashaev_kashiwara.py`](../../computations/qbeta/qbeta_chain4_mixed_wenzl_kashaev_kashiwara.py).
 Witness:
-[`folio-assistant/computations/qbeta/qbeta-chain4-mixed-wenzl-kashaev-kashiwara.witness.json`](../../folio-assistant/computations/qbeta/qbeta-chain4-mixed-wenzl-kashaev-kashiwara.witness.json).
+[`computations/qbeta/qbeta-chain4-mixed-wenzl-kashaev-kashiwara.witness.json`](../../computations/qbeta/qbeta-chain4-mixed-wenzl-kashaev-kashiwara.witness.json).
 
 **480 mixed candidates** for λ ⊢ n, n ∈ {3, 4, 5}, combining:
 

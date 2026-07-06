@@ -54,11 +54,8 @@ The conjecture extrapolates to the five $H_4(q)$ irreps:
 | $(2,1,1)$ | $8$ | $3$ | $12$ | $q^4 - q^2 + 1$ |
 | $(1,1,1,1)$ | $24$ | $1$ | $4$ | $q^2 + 1$ |
 
-Testing this is the next concrete R&D step: extend
-`probe_per_wedderburn_block_ck.py` from n=3 to n=4 with the
-canonical typed-B_4 braid recipe.
 
-## Why this matters
+## Significance
 
 If the conjecture holds at all $n$, it provides a **structural
 prediction** for the per-irrep contribution to $\tau_M$ as a function
@@ -89,3 +86,5 @@ parameter-cyclotomic structure.
 | `instance phiDConj_V3, phiDConj_V21, phiDConj_V111` | n=3 discharges |
 
 All sorry-free, closed by `ring` after unfolding.
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

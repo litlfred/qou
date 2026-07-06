@@ -14,12 +14,12 @@
 -/
 
 import Mathlib.Algebra.Group.Basic
-import Mathlib.Algebra.GroupPower.Basic
-import Mathlib.Data.Int.Defs
+import Mathlib.Algebra.Group.Basic
+import Mathlib.Data.Int.Init
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.Omega
+import Mathlib.Tactic
 import Mathlib.Tactic.NormNum
 
 namespace QOU.ChiSymAlt
@@ -149,7 +149,7 @@ theorem n_ud_atom_braid (Z N : ℕ) :
     Python function in Lean.  The physical content (word length
     parity sign = -1 for all concrete atoms D, T, ³He, ⁴He) is
     verified numerically in
-    `folio-assistant/computations/derivation_checks.py`; see
+    `computations/derivation_checks.py`; see
     docs/chi-sym-alt-theorem.md Verification table. -/
 theorem chi_sym_alt_closed_form (Z N : ℕ) (H_A : ℝ) :
     ∃ (w : AtomBraidWord), nUd w = 2 * (Z + N) + 1 ∧

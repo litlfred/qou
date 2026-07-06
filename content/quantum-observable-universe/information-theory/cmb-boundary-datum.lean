@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.List.Basic
+
 /-!
 # QOU.CMBBoundaryDatum — CMB as boundary datum of a big bang state
 
@@ -13,10 +16,42 @@ Source declaration: `QOU.CMBBoundaryDatum` in jet-horizon.lean
 - [manuscript] §9/cmb-boundary-datum
 -/
 
--- Prerequisite types from jet-horizon.lean
--- (not independently compilable; see jet-horizon.lean for full context)
+-- Prerequisite types mirrored from jet-horizon.lean (`QOU.JetHorizon` library
+-- module) so this co-location extract compiles standalone. The canonical
+-- definitions live in `QOU/JetHorizon.lean`; these copies keep the file
+-- independently checkable without depending on the (uncached) library olean.
 
 namespace QOU
+
+/-- A graded jet algebra: type family indexed by degree k ∈ ℕ, with sections
+    at each degree. (Mirror of `QOU.GradedJetAlgebra`.) -/
+structure GradedJetAlgebra where
+  /-- The type of sections at degree k. -/
+  sections : ℕ → Type*
+  /-- The zero section at each degree. -/
+  zero : ∀ k, sections k
+  /-- Inclusion A_k ↪ A_{k+1}. -/
+  inclusion : ∀ k, sections k → sections (k + 1)
+
+/-- A jet horizon: a locus where the degree-0 algebra vanishes.
+    (Mirror of `QOU.JetHorizon`.) -/
+structure JetHorizon where
+  /-- The graded jet algebra over the chart. -/
+  algebra : GradedJetAlgebra
+  /-- At the horizon, every degree-0 section equals zero. -/
+  degree_zero_vanishes : ∀ (s : algebra.sections 0), s = algebra.zero 0
+  /-- There exists a non-trivial degree-1 section at the horizon. -/
+  degree_one_leaks : ∃ (s : algebra.sections 1), s ≠ algebra.zero 1
+  /-- There exists a non-trivial degree-2 section at the horizon. -/
+  degree_two_leaks : ∃ (s : algebra.sections 2), s ≠ algebra.zero 2
+
+/-- A big bang state: a bundle initial condition where A_0 = 0.
+    (Mirror of `QOU.BigBangState`.) -/
+structure BigBangState extends JetHorizon where
+  /-- Number of base points in the initial configuration. -/
+  numBasePoints : ℕ
+  /-- At least one base point. -/
+  nonempty : numBasePoints ≥ 1
 
 /-- The CMB (cosmic microwave background) of a big bang state:
     the degree ≥ 1 jet data that survives the degree-0 vanishing. -/

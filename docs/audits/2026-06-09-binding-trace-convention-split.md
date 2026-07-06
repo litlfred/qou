@@ -47,7 +47,7 @@ cross-check `tr_M(deuteron,q₀)=1.33178` exact) and **rejected**: deuteron
 `tr_M(q₀⁻¹)=0.00029` (tiny, q<1) → required Δ' = 11245 (underbinds). The
 `q→q⁻¹` bar is not the binding realization at any level (extends #1742's
 per-block bar negative to the trace). See
-[`atom_vhyp_bar_trace_test.py`](../../folio-assistant/computations/atom_vhyp_bar_trace_test.py).
+[`atom_vhyp_bar_trace_test.py`](../../computations/atom_vhyp_bar_trace_test.py).
 
 ## Reusable byproduct
 
@@ -62,7 +62,7 @@ reconciliation lands on.
 Corpus-grep settles it — the reconciliation is **already done in-repo**, and
 this session's binding objects were all **off-convention**:
 
-- **Canonical trace = C**: `folio-assistant/computations/markov/markov_trace_canonical.py::tr_M_element`
+- **Canonical trace = C**: `computations/markov/markov_trace_canonical.py::tr_M_element`
   (the deprecation pointer was right — it's in `markov/`). Confirmed by the
   canonical content block
   [`markov-axioms-primitive.md`](../../content/quantum-observable-universe/braids-and-knots/markov-axioms-primitive.md)
@@ -109,3 +109,75 @@ useful byproduct.
    [`docs/coordination/atom-vhyp-delta-lambda.md`](../coordination/atom-vhyp-delta-lambda.md).
 4. **Do not run more abs-sums until C is pinned** — otherwise it's a fourth
    number on an unreconciled pile.
+
+## ADDENDUM (2026-07-02 / recorded 2026-07-03) — convention D registered: the Borromean single pipeline is the SU(2)/Temperley–Lieb (Jones) decomposition
+
+PROBE 4 of the step-9b probe sweep
+([`2026-07-02-9b-probes-alphak-perlambda-tower.md`](2026-07-02-9b-probes-alphak-perlambda-tower.md),
+`probe_9b_perlambda_brane_tower.py`, PR #3200) **derived exactly** (identity
+to 9.1e-72 at 50 dps) that the Borromean single-pipeline trace — the
+`borromean_binding_recompute.py` τ, whose closed form is the Lean-proved
+`BorromeanMarkovTrace` value `τ = (4+h²−3h⁴−h⁶)/(h²+4) ≈ 0.9985622` — is the
+**SU(2)/Temperley–Lieb (Jones) Markov decomposition**:
+
+    τ = ([4]/[2]³)·χ^(3) + (1/[2]²)·χ^(2,1),   y_(1³) = 0,
+    χ^(2,1)(β_Bor) = 2 − 3h⁴ − h⁶            (Hoefsmit cross-checked, exact)
+
+Register this as **convention D** alongside A/B/C above:
+
+| # | convention | where it lives | τ(β_Bor) at q₀ |
+|---|------------|----------------|----------------|
+| **D** | SU(2)/Temperley–Lieb (Jones) weights, `y_(1³) = 0` | Borromean single pipeline (`borromean_binding_recompute.py`; Lean `BorromeanMarkovTrace`; Phase-5q closed form) | ≈ 0.9985622 |
+| (contrast) | Wenzl-bridge z-trace weights `y_λ^W` (step-5 compute, `y_lambda_wenzl_bridge.py`) | Wedderburn/step-5 infra | ≈ 0.9983666 |
+
+**Gap: 1.955e-4** at β_Bor. Irrelevant at the current 2.3× normalization
+scale; **material for any future sub-0.1 % binding claim**.
+
+**Naming tension (flagged, not adjudicated).** This audit's RESOLUTION crowns
+C (`markov_trace_canonical.tr_M_element`, Jones–Markov) canonical; the PROBE-4
+audit calls the *Wenzl z-trace* "corpus-canonical". Both usages are live in
+the corpus. The registry rule that resolves the practical ambiguity without
+an owner ruling:
+
+> **Rule.** Any binding number claimed below 0.1 % precision — and any
+> cross-method comparison of τ/tr_M values — must state which trace
+> convention (A/B/C/D or Wenzl-bridge z-trace) produced it, with the script
+> or Lean decl cited. Convention-silent τ values are not comparable.
+
+**D ≟ C: ANSWERED (2026-07-03) — D ≠ C, exactly.**
+[`probes/probe_convention_d_vs_c_borromean.py`](../../computations/probes/probe_convention_d_vs_c_borromean.py)
+(witness `probe-convention-d-vs-c-borromean.witness.json`, 3/3 assertions)
+evaluates the canonical M1–M3 trace C on β_Bor by two independent routes
+(`tr_M_word` with the Hecke σ⁻¹ = σ − h expansion; `markov_trace_recursive`
+on the signed word) — they agree on the **same rational function** in
+t = √q, and:
+
+- **C(β_Bor) = the Wenzl-bridge trace, EXACTLY** — probe route 3
+  computes Σ_λ y_λ^W·χ^λ(β_Bor) symbolically (Wenzl-bridge `y_λ` ×
+  Hoefsmit `χ^λ`) and the difference to C cancels to 0 as a rational
+  function (upgraded 2026-07-03 from the earlier 7-digit numeric
+  match; numerically ≈ 0.9983666218 at q₀). So the naming tension
+  above resolves factually: **C and the Wenzl-bridge z-trace are the
+  SAME convention** — there is no C-vs-Wenzl split, only C/W vs D.
+- **D − C is a nonzero rational function** (exact, not numerical), value
+  **1.9554e-4 at q₀**. The Lean `BorromeanMarkovTrace` closed form
+  `(4+h²−3h⁴−h⁶)/(h²+4)` is a **convention-D (TL/Jones) object**: any
+  consumer assuming it equals the canonical `tr_M(β_Bor)` inherits the
+  1.9554e-4 discrepancy — immaterial at the current 2.3× binding scale,
+  material below 0.1 %.
+
+**Lean-proved (2026-07-03, sorry-free, `lean`-direct exit 0):**
+
+- `QOU/BraidsAndKnots/BorromeanTraceConventionSplit.lean` — both
+  conventions as explicit rational functions in `t = √q`; the D t-form
+  tied to the corpus `trM_borromean`; **`conventionD_ne_conventionC`**
+  (they differ at `t = 2`, hence as functions).
+- `QOU/BraidsAndKnots/BorromeanCanonicalTraceDerivation.lean` — the
+  canonical C value **derived**: explicit rational seminormal (2,1)
+  representation (braid + Hecke relations proved), χ^(2,1)(β_Bor) =
+  2−3h⁴−h⁶ machine-checked via the Cayley–Hamilton cube identity, the
+  Markov-forced weights (unique — system determinant nonzero) proved to
+  satisfy tr(1)=1, tr(σ)=z, tr(σ₀σ₁)=z², and
+  **`trC_borromean_derived`**: their β_Bor evaluation equals the C
+  closed form. Cited (not re-proved): Wedderburn trace decomposition
+  (Mathas §3.43) + M1–M3 uniqueness ([jones1987]).

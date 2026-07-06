@@ -16,7 +16,7 @@ Then: compute molecular binding using the ILP-derived electron operators,
 and verify the inverse trefoil bond on the resulting atoms.
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 electron-shell-ilp.py
 """
 

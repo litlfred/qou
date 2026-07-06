@@ -162,7 +162,24 @@ def flavor_split_leading(q: mpf, q_inv: mpf | None = None) -> mpf:
 
 
 def flavor_split_subleading(q: mpf, q_inv: mpf | None = None) -> mpf:
-    """Δm / M_N with (1+ℏ_q³) 3-loop substrate-Planck correction."""
+    """Δm / M_N with the (1+ℏ_q³) "3-loop substrate-Planck" correction.
+
+    ⚠ POSITED — NOT DERIVED (audit 2026-06-29). The `(1+ℏ_q³)` multiplier
+    has no derivation (no content block, Lean, or witness derives it — only
+    this docstring label). It is also INSUFFICIENT: the correction CODATA
+    demands is C_true = (Δm/M_N)_CODATA / leading = 1.0012784, whereas
+    (1+ℏ_q³) = 1.0009727 — it supplies only 76% of the gap
+    ((C_true−1)/ℏ_q³ = 1.314). So it is a partial shape-fix, not the closure,
+    and must NOT be cited as backed by `prop:flavor-split-substrate` (which
+    proves ONLY the leading `flavor_split_leading`).
+
+    The genuine subleading correction should be DERIVED from the 3-strand /
+    3-quark (spectator) categorical structure (open Archimedean-mass-functor
+    R&D), not as an ℏ_q-power fit. See
+    docs/audits/2026-06-29-color-weighting-coverage-and-flavor-split-closed-form.md.
+
+    Until that derivation lands, treat this as `posited`, not `canonical`.
+    """
     qi = mpf(1) / q if q_inv is None else q_inv
     leading = flavor_split_leading(q, qi)
     hbar = (q - 1) / q
@@ -359,7 +376,21 @@ def vol_density_borromean(q: mpf, q_inv: mpf | None = None) -> mpf:
       module is the narrative/parity layer that re-exports it.
 
     Returns VolDensity = Vol(𝓑₃)/ℏ_q² × linking_weight(q).
+
+    ⚠ DEPRECATED FOR ABSOLUTE NUCLEON/ATOM MASS (owner ruling 2026-06-24):
+    this is the λ_A fit (→ m_p ≈ 966, +2.96%). Route absolute mass through the
+    `canonical_mass` facade (muon-anchored Hecke energy → 938.27). See
+    docs/canonical-mass-formula-guardrail.md.
     """
+    import warnings as _warnings
+    _warnings.warn(
+        "vol_density_borromean is the λ_A fit (Vol(𝓑₃)·ρ_global/ℏ_q² → 966 MeV) "
+        "— NOT the canonical absolute nucleon mass. Use the canonical_mass "
+        "facade (muon-anchored Hecke energy). See "
+        "docs/canonical-mass-formula-guardrail.md.",
+        DeprecationWarning,
+        stacklevel=2,
+    )
     qi = mpf(1) / q if q_inv is None else q_inv
     hbar_q = 1 - qi  # ℏ_q = (q - 1)/q = 1 - q⁻¹; reuse qi (Gemini PR #1089)
     vol_b3 = 8 * mp.catalan  # Adams 1985 (NOT Lean-formalized — see docstring)
@@ -423,7 +454,7 @@ def vol_density_per_block(
               via `canonical_tr_m_via_chi_cache.canonical_tr_m`.
     q, q_inv: substrate parameter and its inverse.
 
-    Per CLAUDE.md production-vs-exploratory discipline: this is a
+    Per AGENTS.md production-vs-exploratory discipline: this is a
     DERIVATION (restores the paper's formula), not a fit.  NO fudge
     factor is applied; if the resulting m(K) disagrees with the
     legacy shortcut, that discrepancy is REPORTED, never tuned away.

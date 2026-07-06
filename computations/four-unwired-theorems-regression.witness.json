@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-02T16:58:54.342442+00:00",
-  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
+  "computedAt": "2026-06-22T13:19:04.184960+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "skein_bar_antisymmetry_bar_h_eq_neg_h",
@@ -62,11 +62,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 10,
   "computation": "four-unwired-theorems-regression",
   "scriptFile": "four_unwired_theorems_regression.py",
   "scriptHash": "8a712057444c",
-  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -74,9 +74,8 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
@@ -85,7 +84,7 @@
   "auditOnly": "docs/audits/2026-05-25-option-e-crystal-weight-delta-lambda.md",
   "parameters": {
     "precision_dps": 50,
-    "q_0": "1.1099785827513808075916690956107688798744991218736"
+    "q_0": "1.1099785955573347198997632204832250266562084087802"
   },
   "caveats": [
     "These probes verify the algebraic identities at the canonical substrate q_0 to 50-dps precision. The full Lean theorems are CATEGORICAL (proved over generic [Field R] or [CommRing R]); this witness only verifies the canonical specialisation as a regression guard. Lean ↔ compute drift in either layer will now trip an assertion failure."

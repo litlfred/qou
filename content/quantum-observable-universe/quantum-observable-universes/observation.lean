@@ -1,5 +1,7 @@
 import QOU.Basic
 import QOU.Glossary
+import QOU.QuantumObservableUniverse.CategoricalFoundations
+import QOU.QuantumObservableUniverse.CRRealisation
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.NatTrans
@@ -27,14 +29,17 @@ open scoped CategoryTheory CategoryTheory.MonoidalCategory
 
 namespace QOU
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 universe u v
+
+attribute [local instance] QuantumUniverse.catInst QuantumUniverse.monInst
 
 /-- **Observation** as a categorical endomorphism `O : A → A` in `C`.
 
@@ -45,15 +50,15 @@ universe u v
 structure Observation {k : Type*} [Field k]
     (qou : QuantumObservableUniverse.{u, v} k) where
   /-- The observation morphism `O : A → A` in `C`. -/
-  morphism : @CategoryTheory.Hom _ qou.catInst qou.frobHopf.obj qou.frobHopf.obj
+  morphism : qou.frobHopf.obj ⟶ qou.frobHopf.obj
   /-- **Frobenius compatibility**: `λ ∘ O = λ` — the observation preserves
       the Frobenius form. -/
-  frobenius_compat : morphism ≫ qou.frobHopf.frobeniusForm =
-    qou.frobHopf.frobeniusForm
+  frobenius_compat :
+    morphism ≫ qou.frobHopf.frobeniusForm = qou.frobHopf.frobeniusForm
   /-- **Substrate perturbation**: the induced shift `δq` is determined by
       the Hopf coaction.  Encoded as a morphism `𝟙 → 𝟙`. -/
   substrate_shift :
-    @CategoryTheory.Hom _ qou.catInst (𝟙_ qou.C) (𝟙_ qou.C)
+    (𝟙_ qou.C) ⟶ (𝟙_ qou.C)
 
 /-- **Archimedean observation**: concrete realisation of `Observation` on a
     CR manifold as a gauge-equivariant endomorphism of the state bundle.
@@ -71,5 +76,7 @@ structure ArchimedeanObservation (cqou : CQuantumObservableUniverse) where
   /-- **Well-definedness from observability**: the adjoint vanishing
       `H⁰(M, Ad(P)) = 0` ensures all sections are gauge-equivalent. -/
   obs_well_defined : ∀ s₁ s₂, gaugeEquiv s₁ s₂
+
+end
 
 end QOU

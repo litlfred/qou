@@ -84,7 +84,7 @@ The verifications above instantiate the structural prediction:
 The **bar-eigenspace** structure of partitions ([`rem:chirality-period-pairing`](#rem:chirality-period-pairing))
 is the structural reason for the bridge map.
 
-### What this proves
+### Result
 
 **The two-filtration bridge map is verified at $n \leq 4$**. The
 verification proceeds by case analysis on partition bar-class
@@ -95,7 +95,7 @@ This **partially discharges** the two-filtration bridge conjecture
 ([`conj:two-filtration-bridge`](#conj:two-filtration-bridge)) at
 small $n$. The general statement at $n \geq 5$ is open.
 
-### What's still open
+### Open questions
 
 - **General $n$**: the bridge map for arbitrary partitions of
   $n \geq 5$ requires extending the Vol/CS dictionary to larger

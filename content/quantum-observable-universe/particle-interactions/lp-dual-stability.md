@@ -1,14 +1,7 @@
 An element $x \in H_3(q)$ with NF decomposition
-$x = \sum_{i=1}^{6} x_i b_i$ is classified by two LP criteria.
-
-**Definition (LP-stable).**
-$x$ is *LP-stable* if $Gx \geq 0$ (component-wise), where $G$ is
-the Gram matrix $G_{ij} = \mathrm{tr}_M(b_i \cdot b_j)$.
-
-**Definition (LP-confined).**
-$x$ is *LP-confined* if $x$ is LP-stable and no proper sub-braid
-(obtained by removing one or more generators from the braid word)
-is LP-stable.
+$x = \sum_{i=1}^{6} x_i b_i$ is classified by the
+[LP-stable](#def:lp-stable) and [LP-confined](#def:lp-confined)
+criteria.
 
 **Proposition (LP dual stability of confined hadrons).**
 *Let $x^*$ be a confined hadron (proton or neutron, built via
@@ -22,7 +15,7 @@ $B_3 \cdot \Phi_{\mathrm{quarks}}$). Then:*
 
 3. *The $B_3$ sub-braid $\sigma_0\sigma_1^{-1}$ is LP-unstable:
    $G\vec{x}$ has a negative $\sigma_0$ component $\approx -0.106$.
-   This means partial confinement (1 of 3 $B_3$ units) is not
+   Hence partial confinement (1 of 3 $B_3$ units) is not
    sufficient --- all three units are required.*
 
 4. *Strong duality holds: $\mathrm{tr}_M(x^*) = y_0^* \cdot
@@ -37,7 +30,7 @@ sub-unit is not.**  This is the precise algebraic statement of
 confinement: the gluon field ($B_3 = (\sigma_0\sigma_1^{-1})^3$)
 contains an LP-unstable intermediate ($\sigma_0\sigma_1^{-1}$),
 but the full 3-fold Borromean product restores stability.
-Physically: the confinement mechanism is not that quarks are
+The confinement mechanism is not that quarks are
 unstable, but that the **binding operator** requires a
 topologically complete (Borromean) structure to be stable.
 

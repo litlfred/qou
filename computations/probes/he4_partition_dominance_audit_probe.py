@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+# ANCHOR NOTE (2026-06-22): q0 = 1.10997858275… occurrences below are the
+# RETIRED pre-2026-05-28 proton anchor (old re-pin #1422), kept as this
+# probe's historical / cross-anchor / pinned comparison value. The CURRENT
+# canonical proton q0 is q_at() ≈ 1.1099785955573347…; the muon anchor is
+# q_muon_at() ≈ 1.10997859555418…. This probe is preserved as-is by design.
 """he4_partition_dominance_audit_probe.py — empirical (λ ⊢ 12)
 contribution accounting for ⁴He's tr_M, with (4,4,4) check.
 
@@ -31,7 +36,7 @@ VERDICT shape (pre-stated):
 DISCIPLINE. This is a pure empirical accounting probe; it makes
 no new numerical claims about ρ_F. The verdict re-frames the open
 research direction for ⁴He WITHOUT proposing a new substrate
-constant or operator (per CLAUDE.md anti-pattern guards on PR #1662).
+constant or operator (per AGENTS.md anti-pattern guards on PR #1662).
 """
 from __future__ import annotations
 
@@ -197,8 +202,10 @@ def main() -> int:
 
     builder.add_data("cache_anchor_q_0", cache["q_0_50dps"])
     builder.add_data("cache_anchor_note", (
-        "Cache was generated at pre-2026-05-28 muon anchor q_0=1.10997859555…; "
-        "current production anchor is q_proton=1.10997858275… (Δq ≈ 1.28e-8). "
+        "Cache was generated at q_0=1.10997859555…, which is within ~3e-12 of "
+        "the CURRENT canonical proton re-pin q_at()≈1.1099785955573… (2026-05-28) "
+        "and of the muon anchor q_muon_at()≈1.10997859555418…. The retired "
+        "pre-re-pin proton anchor was 1.10997858275… (Δq ≈ 1.28e-8 from current). "
         "Cross-anchor q-stability of the contribution table is plausible at "
         "this scale but not formally verified by this probe."
     ))

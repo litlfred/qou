@@ -1,7 +1,7 @@
 import Mathlib.Algebra.Ring.Defs
 
 /-!
-# QOU.BraidKnot.geom_yekutieli_alignment — placeholder stub
+# QOU.BraidKnot.geom_yekutieli_alignment
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.ts`](quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.ts).
@@ -91,15 +91,16 @@ class GeomYekutieliAlignmentContext (R : Type*) [CommRing R] where
     Together these encode the paper's per-block formula
     `m(K) = m_e · Geom(K) · Σ_λ w_λ χ_λ(β_K)/dim λ`.  The proof is
     purely from the class fields — the conjectural content is the
-    instance (the holonomy↔trM identification), per CLAUDE.md §3b. -/
+    instance (the holonomy↔trM identification), per AGENTS.md §3b. -/
 -- Ref: [yekutieli2015] https://doi.org/10.1142/9537
 -- Ref: [manuscript] §5.14, prop:hoefsmit-scattering-pipeline (Stage 3–4)
 theorem geom_yekutieli_per_block_alignment {R : Type*} [CommRing R]
     [ctx : GeomYekutieliAlignmentContext R] :
     ctx.boundaryHolonomy = ctx.trM ∧
-      ctx.massFactor = ctx.Geom * ctx.trM :=
-  ⟨ctx.claim_iv_holonomy_equals_trM,
-   by rw [ctx.mass_factor_def, ctx.claim_iv_holonomy_equals_trM]⟩
+      ctx.massFactor = ctx.Geom * ctx.trM := by
+  constructor
+  · exact ctx.claim_iv_holonomy_equals_trM
+  · rw [ctx.mass_factor_def, ctx.claim_iv_holonomy_equals_trM]
 
 /-- **Manuscript statement** (full body):
 
@@ -180,11 +181,9 @@ theorem geom_yekutieli_alignment {R : Type*} [CommRing R] [ctx : GeomYekutieliAl
     (ctx.is_trivial → ctx.Geom = 0) := by
   refine ⟨?hyperbolic, ?torus, ?trivial⟩
   · intro h
-    rw [ctx.geom_identity, ctx.hyperbolic_implies_cs_zero h, mul_zero, add_zero]
+    rw [ctx.geom_identity, ctx.hyperbolic_implies_cs_zero h, zero_mul, add_zero]
   · intro h
     rw [ctx.geom_identity, ctx.torus_implies_vol_zero h, zero_mul, zero_add]
   · intro h
     have h_both := ctx.trivial_implies_both_zero h
-    rw [ctx.geom_identity, h_both.left, h_both.right, zero_mul, mul_zero, add_zero]
-
-end QOU.BraidKnot
+    rw [ctx.geom_identity, h_both.1, h_both.2, zero_mul, zero_mul, add_zero]

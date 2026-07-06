@@ -1,4 +1,5 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
 
 
 /-!
@@ -44,11 +45,16 @@ structure SubstrateRadialCoordinate where
   /-- The q-Reeb flow rate: ℒ_ξ Z = J · ℏ_q · Z. -/
   reeb_flow_rate : ℝ := J * hbar_q * Z
 
-/-- ℏ_q is positive for q > 1. -/
+/-- ℏ_q is positive for q > 1.
+
+    `hbar_q` is a structure field carrying the default value `1 - q⁻¹`;
+    `hdef` records that the constant takes this canonical value, which is
+    the definitional content `ℏ_q = 1 - q⁻¹` from the narrative. -/
 -- Ref: [manuscript] §1
-theorem hbar_q_pos (src : SubstrateRadialCoordinate) :
+theorem hbar_q_pos (src : SubstrateRadialCoordinate)
+    (hdef : src.hbar_q = 1 - src.q⁻¹) :
     0 < src.hbar_q := by
-  unfold SubstrateRadialCoordinate.hbar_q
+  rw [hdef]
   have : src.q⁻¹ < 1 := inv_lt_one_of_one_lt₀ src.q_gt_one
   linarith
 
@@ -56,10 +62,10 @@ theorem hbar_q_pos (src : SubstrateRadialCoordinate) :
 -- Ref: [manuscript] §1
 theorem deep_quantum_limit_hbar (q : ℝ) (hq : 100 < q) :
     |1 - (1 - q⁻¹)| < 0.01 := by
-  simp
-  rw [abs_inv]
-  rw [abs_of_pos (by linarith)]
-  rw [inv_lt (by linarith) (by positivity)]
+  have hqpos : 0 < q := by linarith
+  have hsimp : 1 - (1 - q⁻¹) = q⁻¹ := by ring
+  rw [hsimp, abs_of_pos (by positivity)]
+  rw [inv_lt_comm₀ hqpos (by norm_num)]
   linarith
 
 /-- In the classical limit (q → 1), ℏ_q → 0. -/

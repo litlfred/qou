@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """I14 audit — witness provenance completeness.
 
-Every `folio-assistant/computations/*.witness.json` MUST declare:
+Every `computations/*.witness.json` MUST declare:
 
   - `engine` (e.g. "mpmath", "python+snappy", "rust+mpmath",
     "markov_peel+mpmath") — what produced the value.
@@ -129,7 +129,10 @@ def main(argv: list[str] | None = None) -> int:
         "PROV_OK": [], "PROV_MISSING": [],
         "PROV_AUDIT_EXEMPT": [], "PROV_PARSE_ERROR": [],
     }
-    for wp in sorted(HERE.glob("*.witness.json")):
+    # Scan the whole compute tree's witnesses (reorg scan-root fix).
+    for wp in sorted((HERE.parent).rglob("*.witness.json")):
+        if "_deprecated" in wp.parts:
+            continue
         if wp.name in legacy_removed:
             continue
         verdict, missing = classify(wp)

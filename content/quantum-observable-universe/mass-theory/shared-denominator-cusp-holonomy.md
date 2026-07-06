@@ -111,7 +111,7 @@ universal $z_q$. The Newton step also avoids local-minimum traps,
 because the algebraic poles are **isolated** in the cusp variety.
 
 The witness
-[q-pochhammer-seed.witness.json](../../../folio-assistant/computations/q-pochhammer-seed.witness.json)
+[q-pochhammer-seed.witness.json](../../../computations/q-pochhammer-seed.witness.json)
 drives Newton–Raphson on the color-tube discriminant $\Delta(z) = 0$
 from each algebraic seed (perturbed by $0.1i$ to enter $\mathbb{C}$).
 At depths $n = 1, 2, 3$, all seeds converge to a complex critical
@@ -148,19 +148,19 @@ class instance, not a closed theorem.
 Two computational witnesses bracket the conjecture's strong form:
 
 - **Color-tube cubic** (succeeds):
-  [q-pochhammer-seed.witness.json](../../../folio-assistant/computations/q-pochhammer-seed.witness.json)
+  [q-pochhammer-seed.witness.json](../../../computations/q-pochhammer-seed.witness.json)
   drives Newton–Raphson on $\Delta(z) = 0$ from the algebraic seeds
   $q_0^{-k} + 0.1i$. At depths $n \leq 3$, Newton converges to
   machine-precision residual ($\lesssim 10^{-13}$) in 9–11 iterations,
   empirically supporting the $O(1)$-steps-per-cusp prediction.
 
 - **SnapPy Thurston gluing system** (bounds the strong form):
-  [snappy-cusp-seeding.witness.json](../../../folio-assistant/computations/snappy-cusp-seeding.witness.json)
+  [snappy-cusp-seeding.witness.json](../../../computations/snappy-cusp-seeding.witness.json)
   measures the distance between the bare algebraic seeds and SnapPy's
   tetrahedral shape parameters for $\mathtt{m004}$, $\mathtt{m003}$,
   and the Borromean rings $\mathtt{L6a4}$. The bare seeds sit at
   distance $\sim 0.4$–$0.9$ from SnapPy's $z_k$, so the pole-to-cusp
-  bijection cannot be a literal numerical identity
+  bijection cannot be a literal canonical identity
   $q_0^{-k} = z_k$. The conjecture must be interpreted as a bijection
   of **labels** (algebraic-pole index $\leftrightarrow$ cusp index)
   with the actual shape parameter being a non-trivial function
@@ -168,5 +168,5 @@ Two computational witnesses bracket the conjecture's strong form:
   of that function is the subject of further work.
 
 The two witnesses together support the conjecture's *structural*
-content (algebraic poles label cusps) while bounding its *numerical*
+content (algebraic poles label cusps) while bounding its *canonical*
 form (the bare $q_0^{-k}$ are not literally the cusp shapes).

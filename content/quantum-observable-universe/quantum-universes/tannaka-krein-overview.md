@@ -1,5 +1,8 @@
-The fibre functor $\tau$ of a quantum universe encodes an extraordinary
-amount of structure. Tannaka--Krein duality \cite{deligne1990} says:
+From the fibre functor $\tau$ of a quantum universe alone — with no
+group posited in advance — one recovers $\mathrm{SU}_q(2)$, with the
+deformation parameter $q$ fixed categorically. This concrete payoff is
+an instance of the structure encoded by $\tau$: Tannaka--Krein duality
+\cite{deligne1990} generalises it into four statements:
 
 1. **Reconstruction.** The group $G$ can be recovered from
    $\tau$ alone:
@@ -30,7 +33,7 @@ over any field and reconstructs an affine group scheme. For quantum
 groups ($q \neq 1$), the appropriate extension is due to
 Woronowicz \cite{woronowicz1988}.
 
-**Where $q$ comes from.**  The deformation parameter $q$ is not
+**Origin of $q$.**  The deformation parameter $q$ is not
 imposed from outside. When the braiding $c_{V,V}$ on the
 fundamental object $V$ is non-symmetric ($c_{V,V}^2 \neq \mathrm{id}$),
 $q$ is the eigenvalue of $c_{V,V}$ on the symmetric summand

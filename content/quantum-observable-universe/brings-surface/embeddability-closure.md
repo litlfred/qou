@@ -1,12 +1,3 @@
-Every knot type produced by the three generation operations
-([knot-particle generation](#def:knot-particle-generation)) applied
-to the generator set $\mathcal{G}$
-([finiteness of generators](#prop:torus-knot-generators)) remains
-embeddable in the genus-$4$ fiber of the Bring's surface, and hence
-admits a localized knot structure
-([localized knot](#def:localized-knot)) that descends to the base
-manifold via the fibre functor $\tau$.
-
 **Theorem.**
 Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with
 $\chi(A) = -6$ and fiber genus $g(\Sigma_4) = 4$.  Let $K$ be any
@@ -27,7 +18,7 @@ $\mathcal{G}$.  Then:
 In particular, no generated knot is "dark" — the generation scheme
 is closed under observability.
 
-**Why each operation preserves embeddability.**
+**Preservation of embeddability under each operation.**
 
 *Hopf linking $\ell_H$.*
 The Hopf link $\mathcal{L}_{\mathrm{Hopf}}$ on the exceptional
@@ -40,7 +31,7 @@ $g(K_2) \leq 4$, then both components of
 $K_1 \cup_{\mathrm{Hopf}} K_2$ remain embeddable.
 
 *Color-tube threading $\ell_c$.*
-Threading three knots through the coral tubes $(r, g, b)$ similarly
+Threading three knots through the color tubes $(r, g, b)$ similarly
 preserves each component's knot type.  The three-component link
 $K_1 \cup_r K_2 \cup_g K_3$ has each $K_i$ sitting in its own
 color fiber; the Seifert genus of each component is unchanged.
@@ -85,15 +76,3 @@ Every knot in the dictionary has $g(K) \leq 4$.  The Skein
 descendants ($4_1$, $5_2$) have *lower* genus than their parent
 generators — crossing changes that produce hyperbolic knots from
 torus knots typically decrease the genus.
-
-**Physical consequence.**
-The closure of embeddability under generation is the topological
-reason that *all* fundamental particles interact: they all descend
-to the same base manifold $\mathbb{P}(V)$ and hence participate in
-the categorical braiding.  A hypothetical particle corresponding to
-a genus-$5$ knot would be unobservable — it could not be localized
-in the Bring's surface fiber, could not descend to the base, and would
-have zero coupling to all other particles.  The $\chi = -6$
-constraint of the Descartes universe therefore guarantees a
-self-consistent, fully interacting particle spectrum with no dark
-sectors arising from the generation scheme.

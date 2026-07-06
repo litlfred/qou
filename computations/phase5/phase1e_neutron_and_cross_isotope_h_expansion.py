@@ -85,12 +85,12 @@ def main():
     order = 8
     import mpmath as mp
     mp.mp.dps = 50
+    from codata_constants import (  # registry (no inline CODATA literals)
+        M_E_MEV as m_e, M_MU_MEV_VALIDATION as m_mu,
+        M_P_MEV_VALIDATION as m_p_codata, M_N_MEV_VALIDATION as m_n_codata,
+    )
     q0 = mp.mpf(Q_50_DIGIT_STR)
     h0 = q0 - 1/q0
-    m_mu = mp.mpf("105.6583755")
-    m_e = mp.mpf("0.51099895")
-    m_p_codata = mp.mpf("938.27208816")
-    m_n_codata = mp.mpf("939.56542052")
 
     # ── 1. Flavor-split X ──────────────────────────────────────
     print("  1. Flavor-split X = (q−1)²(1−q⁻⁴)/3")

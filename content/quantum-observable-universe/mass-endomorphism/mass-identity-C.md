@@ -1,4 +1,3 @@
-
 In the archimedean quantum observable universe $(\mathbf{C}, \varTheta, G, \mathcal{S})$
 ([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)) with instanton
 connection $A$, Levi form $L$, and self-dual curvature $F^+$, the

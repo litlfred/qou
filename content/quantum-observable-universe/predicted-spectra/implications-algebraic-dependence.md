@@ -31,7 +31,7 @@ $P(\mathrm{Vol}(4_1), \mathrm{Vol}(5_2),
 
 **QOU-specific consequences.**
 
-1. **Yekutieli brane tower collapses at finite height.** By the
+1. **Brane tower collapses at finite height.** By the
    contrapositive of [the bridge
    theorem](#rem:yekutieli-transcendence-shadow), some obstruction
    class $\kappa_n$ vanishes: the cosimplicial filtration terminates

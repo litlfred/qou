@@ -19,7 +19,7 @@ the A-dependence, and the density model looks at deviations from the
 expected growth rate.
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 isotope-abundance.py
 """
 

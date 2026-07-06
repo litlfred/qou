@@ -198,10 +198,10 @@ should that resolution be reconsidered.
 | Reference | What it gives you |
 |---|---|
 | [PR #639 → `q-beta-spectral-bridge.md`](https://github.com/litlfred/qou/blob/claude/q-beta-spectral-bridge-content/content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.md) | Bridge identity proof + numerical witness |
-| [PR #639 → `c-k-beta-decay-bound.witness.json`](https://github.com/litlfred/qou/blob/claude/q-beta-spectral-bridge-content/folio-assistant/computations/c-k-beta-decay-bound.witness.json) | $c(K), C(K)$ + bound table for $N \in \{0, ..., 4\}$ |
+| [PR #639 → `c-k-beta-decay-bound.witness.json`](https://github.com/litlfred/qou/blob/claude/q-beta-spectral-bridge-content/computations/c-k-beta-decay-bound.witness.json) | $c(K), C(K)$ + bound table for $N \in \{0, ..., 4\}$ |
 | [PR #639 → `per-partition-k-lambda-rule.md`](https://github.com/litlfred/qou/blob/claude/q-beta-spectral-bridge-content/content/quantum-observable-universe/braids-and-knots/per-partition-k-lambda-rule.md) | Structural reformulation of $n_\star$; sharpened open question |
-| [PR #638 → `probe-phiq-operator-valued.witness.json`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe-phiq-operator-valued.witness.json) | Per-eigenvalue $\Phi_q$ spectra at $k \in \{1, \ldots, 10\}$ |
-| [PR #640 → `neutron-mass-codata-50dps.witness.json`](https://github.com/litlfred/qou/blob/claude/neutron-mass-50dps-chain/folio-assistant/computations/neutron-mass-codata-50dps.witness.json) | Substrate-only $m_n$ at 999 ppb residual |
+| [PR #638 → `probe-phiq-operator-valued.witness.json`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/computations/probe-phiq-operator-valued.witness.json) | Per-eigenvalue $\Phi_q$ spectra at $k \in \{1, \ldots, 10\}$ |
+| [PR #640 → `neutron-mass-codata-50dps.witness.json`](https://github.com/litlfred/qou/blob/claude/neutron-mass-50dps-chain/computations/neutron-mass-codata-50dps.witness.json) | Substrate-only $m_n$ at 999 ppb residual |
 | [`docs/coordination/1ppb.md`](../coordination/1ppb.md) | The 1 ppb ledger (this audit appends a row) |
 | [`docs/handoffs/2026-05-11-q-beta-spectral-bridge-handoff.md`](../handoffs/2026-05-11-q-beta-spectral-bridge-handoff.md) | Original cycle-7 handoff (now subsumed by PR #639) |
 

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T16:04:01.365845+00:00",
-  "commitSha": "dc84fed64012cf8c0c0daf4c5483b9e172635ebe",
+  "computedAt": "2026-06-22T13:20:26.026728+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "multicell_scan_completed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 15,
   "computation": "alpha-em-multicell-yekutieli-probe",
   "scriptFile": "alpha_em_multicell_yekutieli_probe.py",
   "scriptHash": "e480684dd61b",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,14 +28,12 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
   },
   "description": "Item 1 of PR #1708: tests the SUMMED non-abelian Stokes form over the 𝓑_3 octahedron tessellation for the α_em 2/(3π) shift. Prior probes used individual torus knots / cells (refuted); this tests the explicit cell SUM. Honest derive-or-refute.",
   "parameters": {
-    "q_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "q_50dps": "1.1099785955573347198997632204832250266562084087802",
     "mp_dps_runtime": "50"
   },
   "data": {

@@ -8,8 +8,8 @@
 #   4. lake build (compile QOU project)
 #   5. On failure: retry with exponential backoff (10s, 30s, 90s, 270s)
 #
-# Writes status to /tmp/qou-lean-build-status.json for session-status.sh
-# and the editor skill to consume. Status values:
+# Writes status to /tmp/qou-lean-build-status.json for the editor skill +
+# lean-environment-setup to consume. Status values:
 #   unavailable  — lean not installed or content/quantum-observable-universe/lean/ missing
 #   updating     — running lake update
 #   caching      — running lake exe cache get
@@ -149,8 +149,24 @@ fi
 # resume. Probe once and bail out cleanly instead of looping.
 elan_toolchain_dir="${ELAN_HOME:-$HOME/.elan}/toolchains"
 if [ ! -d "$elan_toolchain_dir" ] || [ -z "$(ls -A "$elan_toolchain_dir" 2>/dev/null)" ]; then
-    if ! curl -sfI --max-time 5 https://release.lean-lang.org > /dev/null 2>&1; then
+    if has curl && ! curl -sfI --max-time 5 https://release.lean-lang.org > /dev/null 2>&1; then
         write_status "unavailable" "No Lean toolchain installed and release.lean-lang.org unreachable (sandbox egress?)" "check" 0
+        exit 0
+    fi
+fi
+
+# Functional probe: a toolchain dir can be non-empty yet the `lean` shim
+# still unusable (broken/partial install). Run `lean --version` once; if it
+# fails AND release.lean-lang.org is unreachable, bail cleanly instead of
+# letting lake update / cache get / build each retry against the firewalled
+# release server. `timeout` is guarded behind `has timeout` so systems
+# without it (macOS, minimal containers) fall back to a bare `lean --version`
+# rather than mis-reading exit 127 as a broken toolchain.
+lean_probe=(lean --version)
+has timeout && lean_probe=(timeout 15 "${lean_probe[@]}")
+if ! "${lean_probe[@]}" >/dev/null 2>&1; then
+    if has curl && ! curl -sfI --max-time 5 https://release.lean-lang.org > /dev/null 2>&1; then
+        write_status "unavailable" "Lean toolchain present but unusable and release.lean-lang.org unreachable (sandbox egress?)" "check" 0
         exit 0
     fi
 fi
@@ -191,7 +207,7 @@ while [ $ATTEMPT -le $MAX_RETRIES ]; do
     BUILD_START=$(date +%s)
     export BUILD_START
 
-    if lake build 2>&1 | tee "$LOG_DIR/qou-lake-build.log"; then
+    if lake build > "$LOG_DIR/qou-lake-build.log" 2>&1; then
         print_timing_report "$LOG_DIR/qou-lake-build.log"
         write_status "ready" "Lean MCP ready (build succeeded)" "done" $ATTEMPT
         exit 0

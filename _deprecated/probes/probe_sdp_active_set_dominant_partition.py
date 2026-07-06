@@ -31,7 +31,7 @@ isMaxEigSpectrum — or refutes the SDP hypothesis too, in which
 case the selector requires structure beyond what the operator-
 selection LP captures.
 
-Per CLAUDE.md "LP/SDP duals — first-class infra": this probe
+Per AGENTS.md "LP/SDP duals — first-class infra": this probe
 emits the full required dual fields (y0_star, y_star, active_set,
 primal_obj, dual_obj, duality_gap).
 
@@ -260,7 +260,7 @@ def main() -> int:
         "argmax y_λ^* and compares to PR #639's empirical dominant "
         "partition. Tests whether the SDP active-set argmax is the "
         "substrate-derivable identification of isMaxEigSpectrum. Per "
-        "CLAUDE.md 'LP/SDP duals — first-class infra'; emits full "
+        "AGENTS.md 'LP/SDP duals — first-class infra'; emits full "
         "primal-dual pair via lp_dual_solver.solve_operator_selection_lp. "
         "Class C (diagnostic)."
     )
@@ -275,7 +275,7 @@ def main() -> int:
         "NEGATIVE"
     )
 
-    # Per the CLAUDE.md "LP/SDP duals" contract, the witness must
+    # Per the AGENTS.md "LP/SDP duals" contract, the witness must
     # carry primal+dual fields. Surface them at top-level too.
     # Pick the per-atom records explicitly:
     for atom_record in all_findings:

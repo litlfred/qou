@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/qbeta/__init__.py",
+  "script_path": "computations/qbeta/__init__.py",
   "language": "python",
   "source_hash": "ec8fec854c88",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -89,7 +89,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/qbeta/__init__.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
+        "evidence": "computations/qbeta/__init__.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
       }
     ],
     "connected_to_ci_pipeline": [

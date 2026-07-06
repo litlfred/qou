@@ -1,0 +1,552 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prf:sl2-period-conserved-quantity",
+  "kind": "proof",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity-proof.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity-proof.md"
+  },
+  "source_hashes": {
+    "md": "2fd0776485b2",
+    "ts": "7cedcf251bc8"
+  },
+  "criteria": {
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
+      }
+    ],
+    "voice-title-scholarly": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
+      }
+    ],
+    "voice-status-section": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof block (kind=proof) of prop:sl2-period-conserved-quantity, co-located in mass-theory with its proposition; correctly a proof block carrying the derivation of the depth-2 first integral, not a misfiled new claim."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.645Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No false claims identified in 'Proof of the depth-2 conserved first integral': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity-proof.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.650Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The block 'Proof of the depth-2 conserved first integral' presents substantial mathematical content: $H_n = a_{n+1}^2 - \\tau\\,a_{n+1}a_n + a_n^2$. For the single step, substitute th...",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.656Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Proof of the depth-2 conserved first integral'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity-proof.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.663Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No overclaims: the scope of 'Proof of the depth-2 conserved first integral' is appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.669Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Proof of the depth-2 conserved first integral'.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity-proof.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.675Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The argument flow in 'Proof of the depth-2 conserved first integral' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity-proof.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.680Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.686Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No citations are present in 'Proof of the depth-2 conserved first integral', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity-proof.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.693Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in 'Proof of the depth-2 conserved first integral' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity-proof.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.698Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The algebraic and logical relations in 'Proof of the depth-2 conserved first integral' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity-proof.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.704Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Proof of the depth-2 conserved first integral' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity-proof.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.710Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The derivation steps and formal definitions in 'Proof of the depth-2 conserved first integral' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/sl2-period-conserved-quantity-proof.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:56.716Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Proof of the depth-2 conserved first integral' are consistent."
+      }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "2fd0776485b2",
+          "ts": "7cedcf251bc8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.534Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-07-03T00:52:56.534Z"
+}

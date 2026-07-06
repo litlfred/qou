@@ -107,3 +107,5 @@ $$
 | $Q$-value | $E_\times \cdot \mu_0$ | $\frac{1}{2}(q-q^{-1}) \cdot \frac{m_e}{3(q-q^{-1})/2}$ |
 
 *All energy scales are derived from $q_0$ and $m_e$ alone.*
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

@@ -175,7 +175,7 @@ adjustable parameter.
 recomputing the H7a prediction at every anchor and comparing to the
 extracted $\Delta_{\mathrm{coupling}}(Z, N)$ values. The cross-anchor
 witness is
-[`a-minus-2-q-substrate-probe.witness.json`](../../folio-assistant/computations/a-minus-2-q-substrate-probe.witness.json).
+[`a-minus-2-q-substrate-probe.witness.json`](../../computations/a-minus-2-q-substrate-probe.witness.json).
 
 **Definition of $\Delta_{\mathrm{coupling}}$ at single-magic anchors**
 follows the same shell-decomposition as the doubly-magic case but
@@ -190,9 +190,9 @@ within a few %.
 
 ### Cross-anchor probe result (2026-05-15)
 
-[`probe_a_minus_2_q_substrate.py`](../../folio-assistant/computations/probe_a_minus_2_q_substrate.py)
+[`probe_a_minus_2_q_substrate.py`](../../computations/probe_a_minus_2_q_substrate.py)
 emits
-[`a-minus-2-q-substrate-probe.witness.json`](../../folio-assistant/computations/a-minus-2-q-substrate-probe.witness.json):
+[`a-minus-2-q-substrate-probe.witness.json`](../../computations/a-minus-2-q-substrate-probe.witness.json):
 
 | atom | $(Z, N)$ | $A - 2$ | $[A-2]_q$ | anchor (MeV) | H7a pred (MeV) | **gap** |
 |---|---|---:|---:|---:|---:|---:|
@@ -223,9 +223,9 @@ Two substantive findings:
 
 ### v3 follow-up: λ_⋆ shape + Z↔N asymmetry = `h · E_0`
 
-[`probe_a_minus_2_q_substrate_v3.py`](../../folio-assistant/computations/probe_a_minus_2_q_substrate_v3.py)
+[`probe_a_minus_2_q_substrate_v3.py`](../../computations/probe_a_minus_2_q_substrate_v3.py)
 loads the dominant partition shape from
-[`per-irrep-pole-atom-crystal.witness.json`](../../folio-assistant/computations/per-irrep-pole-atom-crystal.witness.json)
+[`per-irrep-pole-atom-crystal.witness.json`](../../computations/per-irrep-pole-atom-crystal.witness.json)
 and tests 16 q-invariants of $\lambda_\star$. Two structural
 findings emerge:
 
@@ -315,9 +315,9 @@ sharper and more tractable substrate problem.
 
 ### v4 — Hook vs SDP active-set: three distinct "dominant" partitions
 
-[`probe_hook_vs_sdp_active_set.py`](../../folio-assistant/computations/probe_hook_vs_sdp_active_set.py)
+[`probe_hook_vs_sdp_active_set.py`](../../computations/probe_hook_vs_sdp_active_set.py)
 + witness
-[`hook-vs-sdp-active-set-probe.witness.json`](../../folio-assistant/computations/hook-vs-sdp-active-set-probe.witness.json)
+[`hook-vs-sdp-active-set-probe.witness.json`](../../computations/hook-vs-sdp-active-set-probe.witness.json)
 cross-references the Path A hook with two other notions of
 "dominant partition" in the codebase:
 
@@ -382,7 +382,7 @@ class HasHookMaximizer (Z N : ℕ) : Prop where
 
 Five trivial-model instances are provided for the empirically
 verified atoms `{p, D, T, ³He, ⁴He}` per
-[`per-irrep-pole-atom-crystal.witness.json`](../../folio-assistant/computations/per-irrep-pole-atom-crystal.witness.json).
+[`per-irrep-pole-atom-crystal.witness.json`](../../computations/per-irrep-pole-atom-crystal.witness.json).
 The Lean theorem `width_minus_depth_substrate` discharges to the
 class fields directly: `w − d = N − Z + 1`. No new `sorry` is
 introduced.
@@ -398,9 +398,9 @@ hook formula lands.
 
 ### v6 — Interface-type decomposition + ³He proton-heavy anomaly localized
 
-[`probe_interface_type_resolved_coupling.py`](../../folio-assistant/computations/probe_interface_type_resolved_coupling.py)
+[`probe_interface_type_resolved_coupling.py`](../../computations/probe_interface_type_resolved_coupling.py)
 + witness
-[`interface-type-resolved-coupling-probe.witness.json`](../../folio-assistant/computations/interface-type-resolved-coupling-probe.witness.json)
+[`interface-type-resolved-coupling-probe.witness.json`](../../computations/interface-type-resolved-coupling-probe.witness.json)
 decomposes the inter-nucleon interfaces of the canonical braid
 $\beta(Z, N)$ at H_{3A} by pair type:
 
@@ -468,9 +468,9 @@ crossings + crystal-bases Path A pole order) already handles
 $A \in \{5, 6\}$; only the AME calibration anchor extension is
 new compute.
 
-[`probe_a_minus_2_q_substrate_v2.py`](../../folio-assistant/computations/probe_a_minus_2_q_substrate_v2.py)
+[`probe_a_minus_2_q_substrate_v2.py`](../../computations/probe_a_minus_2_q_substrate_v2.py)
 (witness:
-[`a-minus-2-q-substrate-probe-v2.witness.json`](../../folio-assistant/computations/a-minus-2-q-substrate-probe-v2.witness.json))
+[`a-minus-2-q-substrate-probe-v2.witness.json`](../../computations/a-minus-2-q-substrate-probe-v2.witness.json))
 tests four additional Z/N-dependent structural candidates at the
 three non-trivial anchors:
 

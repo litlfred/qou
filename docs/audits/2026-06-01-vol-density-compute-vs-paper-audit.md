@@ -5,8 +5,8 @@
 **Scope:** AUDIT ONLY. Does production `VolDensity(𝓑₃,q₀)` match the paper's
 forced per-block form? No fitting, no tuning to m_p/B_AME. Every number below
 is a RAW computed value, reported whether it matches or not.
-**Compute:** [`vol_density_compute_vs_paper_audit.py`](../../folio-assistant/computations/audits/vol_density_compute_vs_paper_audit.py),
-witness [`vol-density-compute-vs-paper-audit.witness.json`](../../folio-assistant/computations/audits/vol-density-compute-vs-paper-audit.witness.json).
+**Compute:** [`vol_density_compute_vs_paper_audit.py`](../../computations/audits/vol_density_compute_vs_paper_audit.py),
+witness [`vol-density-compute-vs-paper-audit.witness.json`](../../computations/audits/vol-density-compute-vs-paper-audit.witness.json).
 Cross-checked against the Rust-computed 50-dps witness
 `borromean-markov-trace-h-expansion-50dps.witness.json`.
 
@@ -18,7 +18,7 @@ production's `linking_weight`, the mass-bridge propagation of both, and the
 quantified answer to "how much of the +2.89% does restoring the per-block sum
 recover?".
 
-**Prior art consulted (corpus-grep checklist, CLAUDE.md):** the H₄ index choice
+**Prior art consulted (corpus-grep checklist, AGENTS.md):** the H₄ index choice
 is already documented — `lambda-scale-substrate-form.md` records
 `λ_A = (1/4)Σ_{λ⊢4} dim_q V_λ` as a **"PSLQ-style empirical fit (no categorical
 derivation)" / acknowledged-CAL-4**, falsified as a categorical derivation by

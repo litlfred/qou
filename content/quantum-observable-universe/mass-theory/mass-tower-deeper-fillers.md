@@ -6,7 +6,7 @@ Bundles five small but focused Lean fillers into
 | Section | Content | Status |
 |---|---|---|
 | (A) Height-6 partition enumeration | `HeightSixPartition n` structure with `parts : List ℕ`, `parts.length = 6` | unconditional finite-type carrier |
-| (B) Demazure sub-crystal predicate | `IsDemazureSubCrystal S` typeclass | ansatz; CLAUDE.md §7b item 3 hook |
+| (B) Demazure sub-crystal predicate | `IsDemazureSubCrystal S` typeclass | ansatz; AGENTS.md §7b item 3 hook |
 | (C) Kazhdan-Lusztig classical-limit functor | `KLClassicalLimit f := f 1` | unconditional ansatz |
 | (D) Minimal `BlochGroup F` carrier | `HasBlochGroupQuotient F` typeclass with two boolean fields (quotient existence + Borel regulator iso) | typeclass hypothesis |
 | (E) Pentagon-identity surrogate for `Cl_2` | `Cl_2_PentagonIdentity` typeclass | typeclass hypothesis |
@@ -18,7 +18,7 @@ The five pieces deepen the mass-tower scaffolding:
   carrier downstream callers can iterate over (once the GS
   spectral-sequence weight is wired in).
 - (B) adds the Demazure sub-crystal hook for resonances
-  (CLAUDE.md §7b item 3 — "incomplete topological states lowering
+  (AGENTS.md §7b item 3 — "incomplete topological states lowering
   the energy budget"), giving the structural sign argument for
   $\alpha_5 < 0$ a Lean-level handle.
 - (C) provides the KL classical-limit functor as a ansatz;
@@ -54,14 +54,14 @@ trivial sanity-check theorem.
   PDFs lack OCR-extracted text or the keywords are absent. A
   proper intake via `local/document-intake` skill would surface
   any relevant content; out of scope for this filler push.
-- **Wiring follow-up:** `crt_markov.py` currently has no
+- **Wiring follow-up:** the formal derivation currently has no
   `solve_y_lambda` reference — the user is preparing the
   modification. Recommendation per the prior turn stands: add
   `solve_y_lambda_numerical(n, q_value)` as a *separate* function
-  in `markov_weights_symbolic.py`, leave the symbolic version
-  intact for `y_lambda_equivalence_proof.py:60` to consume.
+  in the formal derivation, leave the symbolic version
+  intact for `the formal derivation:60` to consume.
 
-## What's left after this push
+## Remaining work after this push
 
 The §3b-cond scaffolding is now substantially complete: every
 mass-tower / α_EM open problem has a Lean class hook, an

@@ -76,7 +76,7 @@ merge commit; needs cherry-pick not rebase).
 | F1 | ~~Merge #2054~~ **DONE this sweep** (code-quality-gates on main) | #2054 | ✅ |
 | F2 | Python ruff cleanup (un-ratchet): `universal-ilp.py`, substrate facade re-exports → `__all__`/`# noqa: F403` | #2054 | small |
 | F3 | Rust clippy wildcard cleanup (~27–58 hits, mostly `use super::*` in tests) — ratchet new | #2054 | ongoing |
-| F4 | Sidecar staleness sweep (≤10/commit per CLAUDE.md idle rule) | #2034 §3; week-review | ½ session idle |
+| F4 | Sidecar staleness sweep (≤10/commit per AGENTS.md idle rule) | #2034 §3; week-review | ½ session idle |
 | F5 | STATUS.md housekeeping: bump "Last updated"→2026-06-09; clear stale Active-sessions rows | week-review | trivial |
 | F6 | Stale-branch cleanup on origin (merged `claude/*` whose follow-up landed) | week-review | trivial |
 

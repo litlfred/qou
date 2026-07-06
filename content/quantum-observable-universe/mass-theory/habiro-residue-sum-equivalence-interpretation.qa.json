@@ -1,0 +1,299 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:habiro-residue-sum-equivalence-interpretation",
+  "kind": "remark",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/mass-theory/habiro-residue-sum-equivalence-interpretation.ts",
+    "md": "../qou/content/quantum-observable-universe/mass-theory/habiro-residue-sum-equivalence-interpretation.md"
+  },
+  "source_hashes": {
+    "md": "09cee1e23478",
+    "ts": "3427c01d9995"
+  },
+  "criteria": {
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "09cee1e23478",
+          "ts": "3427c01d9995"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:53.041Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No false claims identified in 'Constructive vs analytic handles on the same Habiro object'; the algebraic relation involving $a_m(u)$ is mathematically consistent.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/habiro-residue-sum-equivalence-interpretation.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "09cee1e23478",
+          "ts": "3427c01d9995"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:53.047Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The block 'Constructive vs analytic handles on the same Habiro object' presents substantial mathematical content, establishing relation $a_m(u)$.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "09cee1e23478",
+          "ts": "3427c01d9995"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:53.053Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Constructive vs analytic handles on the same Habiro object'. The construction is derived from prop:habiro-residue-sum-equivalence, cor:habiro-expansion-atomic.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/habiro-residue-sum-equivalence-interpretation.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "09cee1e23478",
+          "ts": "3427c01d9995"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:53.059Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No overclaims: the scope of 'Constructive vs analytic handles on the same Habiro object' is appropriately qualified and constrained.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "09cee1e23478",
+          "ts": "3427c01d9995"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:53.065Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Constructive vs analytic handles on the same Habiro object'. All constants are canonically derived.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/habiro-residue-sum-equivalence-interpretation.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "09cee1e23478",
+          "ts": "3427c01d9995"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:53.071Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The argument flow in 'Constructive vs analytic handles on the same Habiro object' is logically sound, mapping onto the cited dependencies: prop:habiro-residue-sum-equivalence, cor:habiro-expansion-atomic.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/habiro-residue-sum-equivalence-interpretation.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "09cee1e23478",
+          "ts": "3427c01d9995"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:53.076Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "09cee1e23478",
+          "ts": "3427c01d9995"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:53.082Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No citations are present in 'Constructive vs analytic handles on the same Habiro object', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/habiro-residue-sum-equivalence-interpretation.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "09cee1e23478",
+          "ts": "3427c01d9995"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:53.088Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols (including $a_m(u)$) in 'Constructive vs analytic handles on the same Habiro object' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/habiro-residue-sum-equivalence-interpretation.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "09cee1e23478",
+          "ts": "3427c01d9995"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:53.094Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The algebraic and logical relations in 'Constructive vs analytic handles on the same Habiro object' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/habiro-residue-sum-equivalence-interpretation.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "09cee1e23478",
+          "ts": "3427c01d9995"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:53.100Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Constructive vs analytic handles on the same Habiro object' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/habiro-residue-sum-equivalence-interpretation.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "09cee1e23478",
+          "ts": "3427c01d9995"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:53.106Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The derivation steps and formal definitions in 'Constructive vs analytic handles on the same Habiro object' are reproducible.",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/habiro-residue-sum-equivalence-interpretation.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "09cee1e23478",
+          "ts": "3427c01d9995"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:53.112Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Constructive vs analytic handles on the same Habiro object' are consistent."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "09cee1e23478",
+          "ts": "3427c01d9995"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Block placement and kind 'remark' match validated structurally for 'Constructive vs analytic handles on the same Habiro object' within chapter 'mass-theory'.",
+        "severity": "minor"
+      }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "09cee1e23478",
+          "ts": "3427c01d9995"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.534Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-07-03T00:52:56.534Z"
+}

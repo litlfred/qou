@@ -1,4 +1,4 @@
-import Mathlib.Data.Nat.Basic
+import Mathlib.Algebra.Polynomial.Laurent
 
 
 /-!
@@ -26,9 +26,10 @@ numerical evaluation.
 
 namespace QOU.Examples
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -66,5 +67,7 @@ theorem su2_torus_rank : su2MaximalTorus.rank = 1 := rfl
 
 /-- V_{1/2} has 2 weight spaces. -/
 theorem su2_weight_count : su2MaximalTorus.numWeightSpaces = 2 := rfl
+
+end
 
 end QOU.Examples

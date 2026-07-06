@@ -2,7 +2,7 @@
 
 **Date:** 2026-06-13
 **Branch / PR:** `claude/qbeta-heat-fmap-symbolic-explore-2026-06-13` (#2240)
-**Probe:** [`folio-assistant/computations/qbeta/qbeta_root_of_unity_residue_program.py`](https://github.com/litlfred/qou/blob/claude/qbeta-heat-fmap-symbolic-explore-2026-06-13/folio-assistant/computations/qbeta/qbeta_root_of_unity_residue_program.py)
+**Probe:** [`computations/qbeta/qbeta_root_of_unity_residue_program.py`](https://github.com/litlfred/qou/blob/claude/qbeta-heat-fmap-symbolic-explore-2026-06-13/computations/qbeta/qbeta_root_of_unity_residue_program.py)
 **Discipline:** STRUCTURAL only. No `c_3` value is claimed or wired. The
 four-session flip-flop guard
 ([`docs/coordination/ck-dk-canonical-registry.md`](https://github.com/litlfred/qou/blob/main/docs/coordination/ck-dk-canonical-registry.md))
@@ -112,7 +112,7 @@ This **narrows** the heat-route keystone rather than closing it. Concretely:
 The mode-sum program above left ζ₄ as the one unsupplied constraint and named
 two falsifiable next steps. Both were run.
 
-### Option 1 — per-cell ζ₄ ([`qbeta_per_cell_zeta4_subprobe.py`](https://github.com/litlfred/qou/blob/claude/qbeta-heat-fmap-symbolic-explore-2026-06-13/folio-assistant/computations/qbeta/qbeta_per_cell_zeta4_subprobe.py))
+### Option 1 — per-cell ζ₄ ([`qbeta_per_cell_zeta4_subprobe.py`](https://github.com/litlfred/qou/blob/claude/qbeta-heat-fmap-symbolic-explore-2026-06-13/computations/qbeta/qbeta_per_cell_zeta4_subprobe.py))
 
 Drops to the **un-summed** per-cell `[c]_q[c+1]_q` and asks whether ζ₄ survives
 with a bar-odd-compatible parity.
@@ -130,7 +130,7 @@ carries only ζ₂.** Bar-odd ∧ ζ₄ is therefore incompatible at the cell le
 — not just after the mode-sum. Even abandoning the `Z_q` partition-function form
 for per-cell data does not rescue a bar-odd ζ₄ from the content-Casimir.
 
-### Option 2 — framing factor `cos α_eff` ([`qbeta_framing_zeta4_subprobe.py`](https://github.com/litlfred/qou/blob/claude/qbeta-heat-fmap-symbolic-explore-2026-06-13/folio-assistant/computations/qbeta/qbeta_framing_zeta4_subprobe.py))
+### Option 2 — framing factor `cos α_eff` ([`qbeta_framing_zeta4_subprobe.py`](https://github.com/litlfred/qou/blob/claude/qbeta-heat-fmap-symbolic-explore-2026-06-13/computations/qbeta/qbeta_framing_zeta4_subprobe.py))
 
 Tests the other named source: the framing factor of `F = Q_β/(Q_A·cos α_eff)`,
 with the on-main closed form `α_eff = (z−1)·h/2`, `z = √q/(q+1)`, `h = q−1/q`.
@@ -184,7 +184,7 @@ to the fibre at all.
 The mode-sum verdict above worried that, since the bar-odd modes and the
 ζ₆-carriers are disjoint *as full `κ_λ`*, a cross-mode cancellation would be
 needed to get a bar-odd object carrying ζ₆. The period-3/ζ₆ probe
-([`qbeta_period3_zeta6_cancellation_probe.py`](https://github.com/litlfred/qou/blob/claude/qbeta-heat-fmap-symbolic-explore-2026-06-13/folio-assistant/computations/qbeta/qbeta_period3_zeta6_cancellation_probe.py))
+([`qbeta_period3_zeta6_cancellation_probe.py`](https://github.com/litlfred/qou/blob/claude/qbeta-heat-fmap-symbolic-explore-2026-06-13/computations/qbeta/qbeta_period3_zeta6_cancellation_probe.py))
 shows that worry is unfounded.
 
 **Lemma (cyclotomic bar-stability).** For `d > 1`, `Φ_d(q)` is self-reciprocal:
@@ -219,7 +219,7 @@ keystone's remaining open piece is the single archimedean scalar `S = Q_β/E₀`
 ## Higher coefficients `a_2, a_3` — the parity-alternation theorem
 
 Extending the fibre map beyond the leading coefficient
-([`qbeta_higher_aj_carrier_probe.py`](https://github.com/litlfred/qou/blob/claude/qbeta-heat-fmap-symbolic-explore-2026-06-13/folio-assistant/computations/qbeta/qbeta_higher_aj_carrier_probe.py)).
+([`qbeta_higher_aj_carrier_probe.py`](https://github.com/litlfred/qou/blob/claude/qbeta-heat-fmap-symbolic-explore-2026-06-13/computations/qbeta/qbeta_higher_aj_carrier_probe.py)).
 The depth-`d` recursion `c_{k+1} = Σ_j a_j c_{k+1-j}` has, in the heat-route
 product picture, coefficients `a_j = e_j({r_λ})` — the elementary symmetric
 polynomials of the per-mode **rates** `r_λ = (q−1)·μ_λ = κ_λ` (the q-difference

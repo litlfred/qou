@@ -2,7 +2,7 @@
   "name": "binding-bring-enhancement-compare",
   "description": "Re-runs the T vs ³He f-factor comparison with pn_convention='bring_color_weighted' to test whether the substrate-pure δ = Δm/M_N at q_0 closes the 15% single-magic A=3 p/n asymmetry. Per the audit docs/audits/2026-05-31-binding-magic-A-wireup.md.",
   "computation": "closed_form_ratio(Z, N, q_0, pn_convention) compared across 'strict_averaged' and 'bring_color_weighted'; f required to close B_endo to B_AME under each.",
-  "generator": "folio-assistant/computations/binding_bring_enhancement_compare.py",
+  "generator": "computations/binding_bring_enhancement_compare.py",
   "timestamp_utc": "2026-05-31T13:39:50.555513+00:00",
   "inputs": {
     "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",

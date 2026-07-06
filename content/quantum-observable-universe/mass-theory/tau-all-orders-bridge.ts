@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:tau-all-orders-bridge",
   title:
-    "Status of the fibre functor $\\tau$ at all orders of the $h$-expansion: order-mixing map or distinct invariants?",
+    "Order-mixing map versus distinct invariants for the fibre functor $\\tau$ across the $h$-expansion",
   lean: {
     ref: "qou:QOU.MassTheory.tau_all_orders_bridge",
     validation: "not_checked",

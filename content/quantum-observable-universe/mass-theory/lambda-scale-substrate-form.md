@@ -1,18 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
-**Status — what is canonical here.** This block records the **proved Family A
-closed form** for the half-symmetric Wedderburn sum at $H_4(q)$, which is the
-current production value of `linking_weight(𝓑_3, q)` inside `VolDensity(𝓑_3, q)`.
-The earlier $\lambda_{\mathrm{scale}}$ conjecture ($5/2 - h^2 G$) was
-**structurally falsified** and the CAL-4 framing **purged**;
-$\lambda_{\mathrm{scale}}$ is no longer a separate object — it was
-**absorbed into `VolDensity`**. The full falsification history (eight independent
-structural searches, the Yekutieli/Bring–Bloch dead-ends) is kept in the audit
-trail, **not in the paper**:
-[`docs/audits/2026-05-18-lambda-scale-derivation-search.md`](../../../docs/audits/2026-05-18-lambda-scale-derivation-search.md)
-and the deprecation note on this block. **Do not revive** the
-$5/2 - h^2 G$ form, the Yekutieli per-cell ADD form, or the Bring–Bloch identity.
-
 ## Family A theorem (the proved, canonical content)
 
 *Let $q_0 \in \mathbb{R}$ be the substrate parameter
@@ -32,13 +17,6 @@ $$
 
 *with no $h^4, h^6, \ldots$ corrections; all odd-$h$ coefficients vanish by
 $q \leftrightarrow q^{-1}$ symmetry.*
-
-**Proof.** *Direct computation. The quantum dimensions at $H_4$ are
-$\dim_q V_{(4)} = 1$, $\dim_q V_{(3,1)} = [3]_q$, $\dim_q V_{(2,2)} = [4]_q/[2]_q$,
-$\dim_q V_{(2,1,1)} = [3]_q$, $\dim_q V_{(1,1,1,1)} = 1$; their sum is
-$3q^2 + 4 + 3q^{-2}$ (verified symbolically). Division by 4 and substitution
-$h = q - q^{-1}$ yields the form via `field_simp; ring`.* $\square$
-
 ## Structural interpretation of the leading term
 
 At $H_4(q)$ the partition spectrum is $p(4) = 5$; the half-symmetric count over
@@ -52,5 +30,5 @@ $\lambda_{\mathrm{scale}}$-from-substrate derivation).
 
 ## Witness
 
-- [`lambda_scale_all_c_i_family_a.py`](../../folio-assistant/computations/lambda_scale_all_c_i_family_a.py) — the proved Family A closed form.
+- the canonical formalism — the proved Family A closed form.
 - [`docs/audits/2026-05-18-lambda-scale-derivation-search.md`](../../../docs/audits/2026-05-18-lambda-scale-derivation-search.md) — the falsified-form audit trail (moved out of the paper).

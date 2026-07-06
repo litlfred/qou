@@ -11,11 +11,11 @@
 $\{0, \ldots, n-2\}$. Let $H_n(R, q)$ be the Iwahori-Hecke algebra
 with Markov trace $\mathrm{tr}_M$ and let $J^\bullet$ be the
 Gröbner-Shirshov filtration on $H_n(R, q)$
-([graded Markov trace](#prop\:graded-markov-trace-from-gs-filtration)).
+([graded Markov trace](#prop:graded-markov-trace-from-gs-filtration)).
 For each subset $S \subseteq \{0, \ldots, n-2\}$, let
 $\beta_S \in B_n$ be the braid obtained from $\beta$ by smoothing
 every crossing $i \notin S$ to the identity strand
-([Φ$_q$-piece definition](#def\:phi-q-piece)). The Φ$_q$-tower
+([Φ$_q$-piece definition](#def:phi-q-piece)). The Φ$_q$-tower
 admits a purely algebraic stratification by $|S|$:*
 
 $$
@@ -35,12 +35,12 @@ $\mathbb{Z}[q^{\pm 1/2}]$ computed entirely within the Hecke
 algebra. The stratification is
 indexed by Hecke-tower :refterm[descent]{#descent} levels — singletons (level 1),
 adjacent and non-adjacent pairs (level 2) — not by 3-manifold pieces.
-Pentagon ascension ([mass endomorphism jet tower](#rem\:mass-endomorphism-jet-tower))
+Pentagon ascension ([mass endomorphism jet tower](#rem:mass-endomorphism-jet-tower))
 guarantees that order-$\geq 3$ defects ascend to level-$(n+1)$
 singletons or pairs in the jet tower; no triple or higher term
 appears at any fixed level.*
 
-## What this block delivers
+## Content of this block
 
 This is the **algebraic-side reformulation** that the audit's
 GAP 8a calls for: every object on the right-hand side lives in
@@ -56,14 +56,14 @@ Three-manifold language ($S^3$, knot complement, hyperbolic volume,
 JSJ decomposition) does **not** appear on the algebraic side; it
 enters only as the τ-image of the algebraic structure under
 $\tau_{\mathrm{arch}}$
-([Φ$_q$-tower JSJ archimedean bridge](#conj\:phi-q-tower-jsj-bridge)).
+(Φ$_q$-tower JSJ archimedean bridge).
 
 ## The four levels of the algebraic stratification
 
 |    Level | Index                    | Algebraic content                                                                          | $\mathbb{Z}[q^{\pm 1}]$-class                                                               |
 | -------: | ------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- |
 |        0 | $S = \emptyset$          | $\beta_\emptyset$ = trivial $n$-strand identity; $\rho(\beta_\emptyset) = 1 \in H_n(R, q)$ | $\mathrm{tr}_M(1) = 1$                                                                      |
-|        1 | $\lvert S \rvert = 1$    | $\beta_{\{i\}} = \sigma_i$; $\rho(\beta_{\{i\}}) \in H_n(R, q)$                            | $\hat V_i = z \cdot a_i + b_i$ ([algebraic quantum volume](#def\:algebraic-quantum-volume)) |
+|        1 | $\lvert S \rvert = 1$    | $\beta_{\{i\}} = \sigma_i$; $\rho(\beta_{\{i\}}) \in H_n(R, q)$                            | $\hat V_i = z \cdot a_i + b_i$ ([algebraic quantum volume](#def:algebraic-quantum-volume)) |
 |        2 | $\lvert S \rvert = 2$    | $\beta_{\{i, j\}} = \sigma_i \sigma_j$; $\rho(\beta_{\{i, j\}}) \in H_n(R, q)$             | $\hat V_i \hat V_j$ (commutative scalars in $\mathbb{Z}[q^{\pm 1}]$)                        |
 | $\geq 3$ | $\lvert S \rvert \geq 3$ | absorbed into level $(n+1)$ via pentagon ascension                                         | n/a (does not appear at level $n$)                                                          |
 
@@ -73,10 +73,10 @@ at GS-degree 2, and so on. The descended (level-0) carrier is the
 identity component, GS-degree 0. The truncation $\lvert S \rvert
 \leq 2$ at any fixed jet level is the **categorical content** of
 the mass-endomorphism formula
-([mass endomorphism tower](#prop\:mass-endomorphism-tower)), not a
+([mass endomorphism tower](#prop:mass-endomorphism-tower)), not a
 3-manifold property.
 
-## Why this matters
+## Significance
 
 * **Discharges audit GAP 8a (wall risk).** The audit's worry was
   that the Φ$_q$-tower reformulation read as 3-manifold/topological.
@@ -88,7 +88,7 @@ the mass-endomorphism formula
   The mass formula computes via algebraic stratification
   (Φ$_q(|\hat V_S|)$ as a Laurent polynomial); the JSJ
   identification of the τ-image is a separate conjecture
-  ([Φ$_q$-tower JSJ bridge](#conj\:phi-q-tower-jsj-bridge))
+  (Φ$_q$-tower JSJ bridge)
   that *interprets* this algebraic structure on the geometric
   side. If the JSJ conjecture remains open, the algebraic mass
   formula is unaffected.
@@ -98,60 +98,3 @@ the mass-endomorphism formula
   `JSJ piece $P$` with `algebraic stratum $S \subseteq \{0, \ldots, n-2\}$`
   in the algebraic-side narrative; reserve the JSJ language for
   the τ-image discussion.
-
-## Proof
-
-1. **Algebraic stratification exists.** For each $S$, $\beta_S$ is
-   a well-defined element of the braid group $B_n$ (skein-smoothing
-   commutes with the braid-group structure). The image
-   $\rho(\beta_S)$ in $H_n(R, q)$ is an explicit Laurent polynomial
-   in the Hecke generators. *Direct from the definition of
-   skein smoothing.*
-
-2. **The mass formula sums over levels.** Per the
-   [mass endomorphism tower](#prop\:mass-endomorphism-tower)
-   formula, the categorical mass equals
-   \$\bigl\lvert\prod\_i \hat V\_i\bigr\rvert + \sum\_{i} \Phi\_q(|\hat V\_i|)
-   * z^2 \sum\_{(i,j)} \Phi\_q(|\hat V\_i \hat V\_j|)$.
-     The first term corresponds to $\beta\_\emptyset$(level 0); the
-     singleton sum to$\beta\_{{i}}$(level 1); the pair sum to$\beta\_{{i,j}}\$ (level 2). Identification term-by-term. *Direct.*
-
-3. **No level $\geq 3$ contribution at fixed jet level $n$.** Per
-   pentagon ascension
-   ([jet-tower remark](#rem\:mass-endomorphism-jet-tower) §"Pentagon
-   ascension"), any would-be order-3 contribution
-   $\Phi_q(|\hat V_i \hat V_j \hat V_k|)$ rewrites via the pentagon
-   identity as a product of order-$\leq 2$ factors at level $n$
-   plus a residual that ascends to level $(n+1)$ as a new singleton
-   or pair. Iteration covers all higher orders.
-
-4. **Each summand is in $\mathbb{Z}[q^{\pm 1/2}]$.** $\hat V_S$ is a
-   Laurent polynomial in $q^{1/2}$ with integer coefficients
-   ([algebraic quantum volume](#def\:algebraic-quantum-volume)); the
-   quantum dilogarithm $\Phi_q$ is given as a formal product
-   $\prod_{n \geq 0} (1 - q^n \cdot x)$ in $\mathbb{Z}[q]\![[x]\!]$
-   and reduces to a polynomial when truncated at the GB-filtration
-   level appropriate for the partition data. **No convergence
-   condition on $|q|$ is required for the algebraic-side statement.**
-
-$\square$
-
-## Relation to the JSJ archimedean bridge
-
-The conjecture
-[Φ$_q$-tower JSJ archimedean bridge](#conj\:phi-q-tower-jsj-bridge)
-states that under $\tau_{\mathrm{arch}}$ each algebraic stratum $S$
-maps to a JSJ piece of $\widehat\beta$, with the algebraic value
-$\Phi_q(|\hat V_S|)$ τ-realising to $\rho_q \cdot \mathrm{Vol}_{\mathrm{hyp}}(S^3 \setminus K_S)$.
-That conjecture **interprets** the algebraic stratification on the
-3-manifold side; the algebraic stratification itself is unconditional.
-
-In the language of the audit's strict-Archimedean-wall directive:
-
-* The **statement** of the mass formula uses the algebraic
-  stratification (this proposition); 3-manifold language does not
-  appear.
-* The **interpretation** as a JSJ-piecewise sum is a τ-image
-  conjecture, on the right side of τ.
-* No **proof** anywhere in the algebraic engine invokes JSJ /
-  hyperbolic-volume / Mostow / Thurston as a derivation input.

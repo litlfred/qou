@@ -1,0 +1,504 @@
+import QOU.Mathlib.SYTHookGNWWiring
+
+/-!
+# QOU.Mathlib.SYTHookGNWRatio — the per-corner hook ratio (toward `gnwHookIdentity`)
+
+`SYTHookGNWWiring` proved the Vandermonde/factorial casts of `betaProdGap`/`betaFactProd`.  This file
+builds the **per-corner hook ratio** `prodHooks(l)/prodHooks(l∖c) = β_c·∏_{j≠c}(β_c−1−β_j)/(β_c−β_j)`
+that, summed over corners (non-corners vanish) against `betaLagrange`, closes `gnwHookIdentity`.
+
+First piece: the **factorial side**.  For a non-row-drop corner `removeCorner l c = l.set c (l[c]−1)`
+(no length change); `betaFactProd` factors depend only on `l[i]` and the drop length, so only factor `c`
+changes (`β_c!/(β_c−1)! = β_c`).
+
+Pure `ℕ`/`ℚ` combinatorics; nothing archimedean; no fit.
+-/
+
+namespace QOU.Mathlib.SYTBetaLagrange
+
+open Finset
+open QOU.BraidKnot.IdentityI (prodHooks colLen sz)
+open QOU.Mathlib.SYTVandermonde (vWeight)
+
+/-- `betaNatVal (l.set c v)` agrees with `l` off index `c`. -/
+theorem betaNatVal_set_ne (l : List ℕ) (c v : ℕ) {i : ℕ} (hi : i ≠ c) :
+    betaNatVal (l.set c v) i = betaNatVal l i := by
+  unfold betaNatVal
+  rw [List.length_set]
+  congr 1
+  rw [List.getD_eq_getElem?_getD, List.getD_eq_getElem?_getD, List.getElem?_set_ne (Ne.symm hi)]
+
+/-- `betaNatVal (l.set c (l[c]−1))` at `c` is `betaNatVal l c − 1` (needs the row positive). -/
+theorem betaNatVal_set_self (l : List ℕ) (c : ℕ) (hc : c < l.length) (hpos : 1 ≤ l.getD c 0) :
+    betaNatVal (l.set c (l.getD c 0 - 1)) c = betaNatVal l c - 1 := by
+  unfold betaNatVal
+  rw [List.length_set]
+  have hg : (l.set c (l.getD c 0 - 1)).getD c 0 = l.getD c 0 - 1 := by
+    rw [List.getD_eq_getElem?_getD, List.getElem?_set_self hc, Option.getD_some]
+  rw [hg]; omega
+
+/-- **Factorial side of the per-corner ratio (non-row-drop).** `betaFactProd l = β_c · betaFactProd(l∖c)`
+with `l∖c = l.set c (l[c]−1)`: only factor `c` changes, contributing `β_c!/(β_c−1)! = β_c`. -/
+theorem betaFactProd_ratio (l : List ℕ) (c : ℕ) (hc : c < l.length) (hpos : 1 ≤ l.getD c 0) :
+    (QOU.Mathlib.SYTEnum.betaFactProd l : ℚ)
+      = (betaNatVal l c : ℚ) * (QOU.Mathlib.SYTEnum.betaFactProd (l.set c (l.getD c 0 - 1)) : ℚ) := by
+  have hb1 : 1 ≤ betaNatVal l c := by unfold betaNatVal; omega
+  rw [betaFactProd_cast, betaFactProd_cast, List.length_set,
+      ← Finset.mul_prod_erase (Finset.range l.length)
+        (fun i => ((betaNatVal l i).factorial : ℚ)) (Finset.mem_range.mpr hc),
+      ← Finset.mul_prod_erase (Finset.range l.length)
+        (fun i => ((betaNatVal (l.set c (l.getD c 0 - 1)) i).factorial : ℚ))
+        (Finset.mem_range.mpr hc),
+      betaNatVal_set_self l c hc hpos, ← mul_assoc]
+  congr 1
+  · rw [← Nat.cast_mul]
+    congr 1
+    obtain ⟨m, hm⟩ : ∃ m, betaNatVal l c = m + 1 := ⟨betaNatVal l c - 1, by omega⟩
+    rw [hm, Nat.add_sub_cancel, Nat.factorial_succ]
+  · apply Finset.prod_congr rfl
+    intro i hi
+    rw [Finset.mem_erase] at hi
+    rw [betaNatVal_set_ne l c _ hi.1]
+
+/-! ## Vandermonde side: the pairs form of `betaProdGap` (enabler for the gap ratio) -/
+
+/-- The row-`i` gap factor as a product over the actual upper indices `j ∈ (i, k)`, dropping the
+`m ↦ i+1+m` reindex (`Finset.prod_Ico_eq_prod_range`). -/
+theorem row_range_eq_Ioo (l : List ℕ) (i : ℕ) :
+    ∏ m ∈ Finset.range (l.length - 1 - i), (betaNat l i - betaNat l (i + 1 + m))
+      = ∏ j ∈ Finset.Ioo i l.length, (betaNat l i - betaNat l j) := by
+  rw [← Nat.Ico_succ_left, Finset.prod_Ico_eq_prod_range,
+      show l.length - 1 - i = l.length - (i + 1) from by omega]
+
+/-- **`betaProdGap` as a pairs product** `∏_{i<j}(βᵢ−βⱼ)` organised by lower index `i` over `j ∈ (i,k)`.
+This form isolates the index-`c` factors needed for the per-corner gap ratio. -/
+theorem betaProdGap_cast_pairs (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) :
+    ((QOU.Mathlib.SYTEnum.betaProdGap l : ℕ) : ℚ)
+      = ∏ i ∈ Finset.range l.length, ∏ j ∈ Finset.Ioo i l.length,
+          (betaNat l i - betaNat l j) := by
+  rw [betaProdGap_cast l hl]
+  exact Finset.prod_congr rfl (fun i _ => row_range_eq_Ioo l i)
+
+/-- `betaNat = betaNatVal` as a `ℚ` cast. -/
+theorem betaNat_eq (l : List ℕ) (i : ℕ) : betaNat l i = (betaNatVal l i : ℚ) := by
+  unfold betaNat betaNatVal; push_cast; ring
+
+/-- `betaNat (l.set c v)` agrees with `l` off `c` (cast of `betaNatVal_set_ne`). -/
+theorem betaNat_set_ne (l : List ℕ) (c v : ℕ) {i : ℕ} (hi : i ≠ c) :
+    betaNat (l.set c v) i = betaNat l i := by
+  rw [betaNat_eq, betaNat_eq, betaNatVal_set_ne l c v hi]
+
+/-- `betaNat (l.set c (l[c]−1))` at `c` is `betaNat l c − 1`. -/
+theorem betaNat_set_self (l : List ℕ) (c : ℕ) (hc : c < l.length) (hpos : 1 ≤ l.getD c 0) :
+    betaNat (l.set c (l.getD c 0 - 1)) c = betaNat l c - 1 := by
+  have h1 : 1 ≤ betaNatVal l c := by unfold betaNatVal; omega
+  rw [betaNat_eq, betaNatVal_set_self l c hc hpos, Nat.cast_sub h1, betaNat_eq]
+  norm_num
+
+/-- `betaProdGap` as a single product over the pairs `(i, j)` with `i < j < k`. -/
+theorem betaProdGap_cast_sigma (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) :
+    ((QOU.Mathlib.SYTEnum.betaProdGap l : ℕ) : ℚ)
+      = ∏ p ∈ (Finset.range l.length).sigma (fun i => Finset.Ioo i l.length),
+          (betaNat l p.1 - betaNat l p.2) := by
+  rw [betaProdGap_cast_pairs l hl, Finset.prod_sigma']
+
+/-- `betaNat` is strictly antitone on indices `< length`: `i < j < k ⟹ βⱼ < βᵢ`. -/
+theorem betaNat_lt (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) {i j : ℕ}
+    (hij : i < j) (hj : j < l.length) : betaNat l j < betaNat l i := by
+  rw [betaNat_eq, betaNat_eq]
+  have hlen : l.getD j 0 ≤ l.getD i 0 := QOU.BraidKnot.IdentityI.getD_antitone l hl (le_of_lt hij)
+  unfold betaNatVal
+  have hsh : l.length - 1 - j < l.length - 1 - i := by omega
+  have h2 : ((l.length - 1 - j : ℕ) : ℚ) < ((l.length - 1 - i : ℕ) : ℚ) := by exact_mod_cast hsh
+  have h1 : ((l.getD j 0 : ℕ) : ℚ) ≤ ((l.getD i 0 : ℕ) : ℚ) := by exact_mod_cast hlen
+  push_cast at h1 h2 ⊢
+  linarith
+
+/-- The gap factor `βᵢ − βⱼ` is nonzero for `i < j < k` (strict antitonicity). -/
+theorem betaNat_ne (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) {i j : ℕ}
+    (hij : i < j) (hj : j < l.length) : betaNat l i - betaNat l j ≠ 0 := by
+  have := betaNat_lt l hl hij hj; intro h; linarith [sub_eq_zero.mp h]
+
+/-- **The gap-ratio crux (R1 core).** The product of per-term ratios `(β'ᵢ−β'ⱼ)/(βᵢ−βⱼ)` over all
+pairs `i<j<k` equals the GAP product `∏_{j≠c}(β_c−1−β_j)/(β_c−β_j)`.  Inner ratios are `1` off the
+index-`c` factors (`hr1`); `i>c` columns vanish to `1`, `i<c` columns collapse to the single `j=c`
+factor (sign-flipped to GAP shape), and the `i=c` column is GAP's `Ioo c k` part. -/
+theorem gap_ratio_prod (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (c : ℕ)
+    (hc : c < l.length) (hpos : 1 ≤ l.getD c 0) :
+    (∏ i ∈ Finset.range l.length, ∏ j ∈ Finset.Ioo i l.length,
+        (betaNat (l.set c (l.getD c 0 - 1)) i - betaNat (l.set c (l.getD c 0 - 1)) j)
+          / (betaNat l i - betaNat l j))
+      = ∏ j ∈ (Finset.range l.length).erase c,
+          (betaNat l c - 1 - betaNat l j) / (betaNat l c - betaNat l j) := by
+  set k := l.length with hk
+  set lc := l.set c (l.getD c 0 - 1) with hlc
+  -- the per-term ratio value
+  have hne : ∀ i j, i < j → j < k → betaNat l i - betaNat l j ≠ 0 :=
+    fun i j hij hj => betaNat_ne l hl hij hj
+  -- ratio(i,j) = 1 when i ≠ c and j ≠ c
+  have hr1 : ∀ i j, i ≠ c → j ≠ c → i < j → j < k →
+      (betaNat lc i - betaNat lc j) / (betaNat l i - betaNat l j) = 1 := by
+    intro i j hi hj hij hjk
+    rw [betaNat_set_ne l c _ hi, betaNat_set_ne l c _ hj, div_self (hne i j hij hjk)]
+  -- inner_i = 1 for i > c
+  have hgt : ∀ i ∈ Finset.range k, c < i →
+      (∏ j ∈ Finset.Ioo i k, (betaNat lc i - betaNat lc j) / (betaNat l i - betaNat l j)) = 1 := by
+    intro i _ hci
+    apply Finset.prod_eq_one
+    intro j hj
+    rw [Finset.mem_Ioo] at hj
+    exact hr1 i j (by omega) (by omega) hj.1 hj.2
+  -- inner_i = ratio(i,c) for i < c
+  have hlt : ∀ i ∈ Finset.range k, i < c →
+      (∏ j ∈ Finset.Ioo i k, (betaNat lc i - betaNat lc j) / (betaNat l i - betaNat l j))
+        = (betaNat l c - 1 - betaNat l i) / (betaNat l c - betaNat l i) := by
+    intro i _ hic
+    rw [Finset.prod_eq_single c]
+    · rw [betaNat_set_ne l c _ (by omega : i ≠ c), betaNat_set_self l c hc hpos]
+      have h1 := hne i c hic hc
+      have h2 : betaNat l c - betaNat l i ≠ 0 := by
+        rw [sub_ne_zero] at h1 ⊢; exact h1.symm
+      rw [div_eq_div_iff h1 h2]; ring
+    · intro j hj hjc
+      rw [Finset.mem_Ioo] at hj
+      exact hr1 i j (by omega) hjc hj.1 hj.2
+    · intro h; rw [Finset.mem_Ioo] at h; omega
+  -- inner_c
+  have heqc :
+      (∏ j ∈ Finset.Ioo c k, (betaNat lc c - betaNat lc j) / (betaNat l c - betaNat l j))
+        = ∏ j ∈ Finset.Ioo c k, (betaNat l c - 1 - betaNat l j) / (betaNat l c - betaNat l j) := by
+    apply Finset.prod_congr rfl
+    intro j hj
+    rw [Finset.mem_Ioo] at hj
+    rw [betaNat_set_self l c hc hpos, betaNat_set_ne l c _ (by omega : j ≠ c)]
+  -- assemble: pull out i=c, restrict rest to range c, split erase c
+  rw [← Finset.mul_prod_erase (Finset.range k) _ (Finset.mem_range.mpr hc), heqc]
+  have hrest :
+      (∏ i ∈ (Finset.range k).erase c, ∏ j ∈ Finset.Ioo i k,
+          (betaNat lc i - betaNat lc j) / (betaNat l i - betaNat l j))
+        = ∏ i ∈ Finset.range c, (betaNat l c - 1 - betaNat l i) / (betaNat l c - betaNat l i) := by
+    rw [← Finset.prod_subset (s₁ := Finset.range c) (s₂ := (Finset.range k).erase c)]
+    · apply Finset.prod_congr rfl
+      intro i hi
+      rw [Finset.mem_range] at hi
+      exact hlt i (Finset.mem_range.mpr (by omega)) hi
+    · intro i hi
+      rw [Finset.mem_range] at hi
+      rw [Finset.mem_erase, Finset.mem_range]; omega
+    · intro i hi hni
+      rw [Finset.mem_erase, Finset.mem_range] at hi
+      rw [Finset.mem_range] at hni
+      exact hgt i (Finset.mem_range.mpr hi.2) (by omega)
+  rw [hrest]
+  -- GAP over erase c = range c ∪ Ioo c k
+  have hsplit : (Finset.range k).erase c = Finset.range c ∪ Finset.Ioo c k := by
+    ext x; rw [Finset.mem_erase, Finset.mem_range, Finset.mem_union, Finset.mem_range, Finset.mem_Ioo]
+    omega
+  rw [hsplit, Finset.prod_union (by
+    rw [Finset.disjoint_left]; intro a ha hb
+    rw [Finset.mem_range] at ha; rw [Finset.mem_Ioo] at hb; omega)]
+  ring
+
+/-- **(R1) The per-corner gap ratio (non-row-drop), sorry-free.** For a corner `c`,
+`betaProdGap (l.set c (l[c]−1)) = betaProdGap l · ∏_{j≠c}(β_c−1−β_j)/(β_c−β_j)`.  Factor each pairs
+term `β'ᵢ−β'ⱼ = (βᵢ−βⱼ)·rᵢⱼ` (`mul_div_cancel₀`, gaps nonzero) and evaluate `∏ᵢ∏ⱼ rᵢⱼ` via
+`gap_ratio_prod`. -/
+theorem betaProdGap_ratio (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (c : ℕ)
+    (hcorner : QOU.Mathlib.SYTEnum.IsCorner l c) :
+    (QOU.Mathlib.SYTEnum.betaProdGap (l.set c (l.getD c 0 - 1)) : ℚ)
+      = (QOU.Mathlib.SYTEnum.betaProdGap l : ℚ)
+        * ∏ j ∈ (Finset.range l.length).erase c,
+            (betaNat l c - 1 - betaNat l j) / (betaNat l c - betaNat l j) := by
+  have hc : c < l.length := hcorner.1
+  have hpos : 1 ≤ l.getD c 0 := by have := hcorner.2; omega
+  have hl' : List.Sorted (· ≥ ·) (l.set c (l.getD c 0 - 1)) :=
+    QOU.Mathlib.SYTEnum.sorted_set_corner l c hl hcorner
+  rw [← gap_ratio_prod l hl c hc hpos,
+      betaProdGap_cast_pairs (l.set c (l.getD c 0 - 1)) hl', betaProdGap_cast_pairs l hl]
+  simp only [List.length_set]
+  rw [← Finset.prod_mul_distrib]
+  apply Finset.prod_congr rfl
+  intro i hi
+  rw [← Finset.prod_mul_distrib]
+  apply Finset.prod_congr rfl
+  intro j hj
+  rw [Finset.mem_range] at hi; rw [Finset.mem_Ioo] at hj
+  have hne := betaNat_ne l hl hj.1 hj.2
+  field_simp
+
+/-- `betaFactProd` is a positive natural number (product of factorials). -/
+theorem betaFactProd_pos (l : List ℕ) : 0 < QOU.Mathlib.SYTEnum.betaFactProd l := by
+  unfold QOU.Mathlib.SYTEnum.betaFactProd
+  apply QOU.Mathlib.SYTEnum.list_prod_pos
+  intro x hx
+  rw [List.mem_map] at hx
+  obtain ⟨i, _, rfl⟩ := hx
+  exact Nat.factorial_pos _
+
+/-- **(R2) The per-corner hook ratio (non-row-drop), sorry-free.** Combining the factorial side
+`betaFactProd_ratio` (= β_c) with the gap side `betaProdGap_ratio` through identity (i)
+`prodHooks·betaProdGap = betaFactProd` (`prodHooks_mul_betaProdGap`):
+`prodHooks(l)/prodHooks(l∖c) = β_c·∏_{j≠c}(β_c−1−β_j)/(β_c−β_j)`. -/
+theorem prodHooks_ratio (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (c : ℕ)
+    (hcorner : QOU.Mathlib.SYTEnum.IsCorner l c) :
+    (prodHooks l : ℚ) / (prodHooks (l.set c (l.getD c 0 - 1)) : ℚ)
+      = betaNat l c * ∏ j ∈ (Finset.range l.length).erase c,
+          (betaNat l c - 1 - betaNat l j) / (betaNat l c - betaNat l j) := by
+  have hc : c < l.length := hcorner.1
+  have hpos : 1 ≤ l.getD c 0 := by have := hcorner.2; omega
+  have hl' : List.Sorted (· ≥ ·) (l.set c (l.getD c 0 - 1)) :=
+    QOU.Mathlib.SYTEnum.sorted_set_corner l c hl hcorner
+  have hbg : (QOU.Mathlib.SYTEnum.betaProdGap l : ℚ) ≠ 0 :=
+    Nat.cast_ne_zero.mpr (QOU.Mathlib.SYTEnum.betaProdGap_pos l hl).ne'
+  have hbf' : (QOU.Mathlib.SYTEnum.betaFactProd (l.set c (l.getD c 0 - 1)) : ℚ) ≠ 0 :=
+    Nat.cast_ne_zero.mpr (betaFactProd_pos _).ne'
+  have hil : (prodHooks l : ℚ) * (QOU.Mathlib.SYTEnum.betaProdGap l : ℚ)
+      = (QOU.Mathlib.SYTEnum.betaFactProd l : ℚ) := by
+    exact_mod_cast QOU.Mathlib.SYTEnum.prodHooks_mul_betaProdGap l hl
+  have hil' : (prodHooks (l.set c (l.getD c 0 - 1)) : ℚ)
+      * (QOU.Mathlib.SYTEnum.betaProdGap (l.set c (l.getD c 0 - 1)) : ℚ)
+      = (QOU.Mathlib.SYTEnum.betaFactProd (l.set c (l.getD c 0 - 1)) : ℚ) := by
+    exact_mod_cast QOU.Mathlib.SYTEnum.prodHooks_mul_betaProdGap _ hl'
+  have hph' : (prodHooks (l.set c (l.getD c 0 - 1)) : ℚ) ≠ 0 := by
+    intro h; rw [h, zero_mul] at hil'; exact hbf' hil'.symm
+  rw [betaFactProd_ratio l c hc hpos] at hil
+  rw [betaProdGap_ratio l hl c hcorner] at hil'
+  rw [div_eq_iff hph']
+  apply mul_right_cancel₀ hbg
+  rw [hil, ← hil', ← betaNat_eq l c]
+  ring
+
+/-! ## (R3) Row-drop corner: `removeCorner` agrees with the `set`-decrement under `prodHooks` -/
+
+/-- `colLen` ignores a trailing zero row (`0` is never `> j`). -/
+theorem colLen_append_zero (m : List ℕ) (j : ℕ) :
+    colLen (m ++ [0]) j = colLen m j := by
+  unfold colLen
+  rw [List.filter_append]
+  simp
+
+/-- Appending a zero-length row leaves `prodHooks` unchanged: the new last row has empty inner
+product (factor `1`) and contributes to no other cell's leg (`colLen` unchanged). -/
+theorem prodHooks_append_zero (m : List ℕ) :
+    prodHooks (m ++ [0]) = prodHooks m := by
+  unfold prodHooks
+  rw [List.length_append, List.length_singleton, List.range_succ, List.map_append,
+      List.prod_append]
+  have h0 : (m ++ [0]).getD m.length 0 = 0 := by
+    rw [List.getD_eq_getElem?_getD, List.getElem?_append_right (Nat.le_refl _)]
+    simp
+  have hlast : ((List.range ((m ++ [0]).getD m.length 0)).map fun j =>
+      ((m ++ [0]).getD m.length 0 - j) + (colLen (m ++ [0]) j - m.length) - 1).prod = 1 := by
+    rw [h0]; simp
+  simp only [List.map_singleton, List.prod_singleton, hlast, mul_one]
+  congr 1
+  apply List.map_congr_left
+  intro i hi
+  rw [List.mem_range] at hi
+  have hrow : (m ++ [0]).getD i 0 = m.getD i 0 := by
+    rw [List.getD_eq_getElem?_getD, List.getD_eq_getElem?_getD, List.getElem?_append_left hi]
+  rw [hrow]
+  congr 1
+  apply List.map_congr_left
+  intro j _
+  rw [colLen_append_zero]
+
+/-- Filtering zeros out of a weakly-decreasing list leaves `prodHooks` unchanged: the zeros form a
+tail suffix, each removable by `prodHooks_append_zero`. -/
+theorem prodHooks_filter_zero_sorted :
+    ∀ (xs : List ℕ), List.Sorted (· ≥ ·) xs →
+      prodHooks (xs.filter (· != 0)) = prodHooks xs := by
+  intro xs
+  induction xs using List.reverseRecOn with
+  | nil => intro _; rfl
+  | append_singleton ys a ih =>
+    intro hxs
+    have hys : List.Sorted (· ≥ ·) ys := hxs.sublist (List.sublist_append_left _ _)
+    by_cases ha : a = 0
+    · subst ha
+      have hz : ([0] : List ℕ).filter (· != 0) = [] := by decide
+      rw [List.filter_append, hz, List.append_nil, ih hys, prodHooks_append_zero]
+    · -- a > 0 ⇒ every element is ≥ a > 0, so the whole list is positive and `filter` is the identity
+      have hpos : ∀ x ∈ ys ++ [a], x ≠ 0 := by
+        have hxs' : List.Pairwise (· ≥ ·) (ys ++ [a]) := hxs
+        rw [List.pairwise_append] at hxs'
+        obtain ⟨_, _, hcross⟩ := hxs'
+        intro x hx
+        rw [List.mem_append] at hx
+        rcases hx with hx | hx
+        · have := hcross x hx a (List.mem_singleton_self a); omega
+        · rw [List.mem_singleton] at hx; omega
+      rw [List.filter_eq_self.mpr]
+      intro x hx
+      simpa using hpos x hx
+
+/-- **(R3) `removeCorner` vs the `set`-decrement agree under `prodHooks`.** The only difference is the
+trailing zero row dropped by the row-drop corner (`l[c]=1`); for a sorted shape that zero is a tail
+suffix, invisible to `prodHooks`. -/
+theorem prodHooks_removeCorner (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (c : ℕ)
+    (hcorner : QOU.Mathlib.SYTEnum.IsCorner l c) :
+    prodHooks (QOU.Mathlib.SYTEnum.removeCorner l c)
+      = prodHooks (l.set c (l.getD c 0 - 1)) := by
+  rw [QOU.Mathlib.SYTEnum.removeCorner]
+  exact prodHooks_filter_zero_sorted _ (QOU.Mathlib.SYTEnum.sorted_set_corner l c hl hcorner)
+
+/-! ## (R4) Assembly: sum over corners ⇒ β-Lagrange ⇒ `sz l`, closing `gnwHookIdentity` -/
+
+/-- Reindex a product over `univ.erase i` (Fin) as a product over `(range k).erase i.val` (ℕ),
+through `Fin.val`. -/
+theorem prod_betaNat_erase (l : List ℕ) (i : Fin l.length) (h : ℚ → ℚ) :
+    ∏ j ∈ univ.erase i, h (betaVec l j)
+      = ∏ j ∈ (Finset.range l.length).erase (i : ℕ), h (betaNat l j) := by
+  refine Finset.prod_bij' (fun (a : Fin l.length) _ => (a : ℕ))
+    (fun (b : ℕ) (hb : b ∈ (Finset.range l.length).erase (i : ℕ)) =>
+      (⟨b, Finset.mem_range.mp (Finset.mem_of_mem_erase hb)⟩ : Fin l.length))
+    ?_ ?_ ?_ ?_ ?_
+  · intro a ha
+    rw [Finset.mem_erase] at ha ⊢
+    exact ⟨fun hc => ha.1 (Fin.val_injective hc), Finset.mem_range.mpr a.2⟩
+  · intro b hb
+    rw [Finset.mem_erase] at hb ⊢
+    refine ⟨?_, Finset.mem_univ _⟩
+    intro hc; exact hb.1 (by rw [← hc])
+  · intro a _; rfl
+  · intro b _; rfl
+  · intro a _; rfl
+
+/-- **β-Lagrange in `range`/`betaNat` form, evaluating to `sz l`.** The `Fin`-indexed `betaLagrange`
+identity reindexed to a `range` sum over the ℕ-valued `betaNat`, with the ratio split as
+(numerator product)/(denominator product = `vWeight`). -/
+theorem betaLagrange_range (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (hk : 0 < l.length) :
+    ∑ c ∈ range l.length,
+        betaNat l c * (∏ j ∈ (range l.length).erase c, (betaNat l c - 1 - betaNat l j))
+          / (∏ j ∈ (range l.length).erase c, (betaNat l c - betaNat l j))
+      = (sz l : ℚ) := by
+  have hbl2 : (∑ i, betaVec l i * (∏ j ∈ univ.erase i, (betaVec l i - 1 - betaVec l j))
+      / vWeight (betaVec l) i) = (sz l : ℚ) := by
+    rw [betaLagrange (betaVec l) (betaVec_injective l hl) hk, sum_betaVec_sub]
+  rw [← hbl2, ← Fin.sum_univ_eq_sum_range
+    (fun c => betaNat l c * (∏ j ∈ (range l.length).erase c, (betaNat l c - 1 - betaNat l j))
+      / (∏ j ∈ (range l.length).erase c, (betaNat l c - betaNat l j))) l.length]
+  apply Finset.sum_congr rfl
+  intro i _
+  unfold vWeight
+  rw [prod_betaNat_erase l i (fun x => betaVec l i - 1 - x),
+      prod_betaNat_erase l i (fun x => betaVec l i - x)]
+  rfl
+
+/-- `((List.range k).map g).sum = ∑ c ∈ Finset.range k, g c`. -/
+theorem list_range_sum (k : ℕ) (g : ℕ → ℚ) :
+    ((List.range k).map g).sum = ∑ c ∈ Finset.range k, g c := by
+  induction k with
+  | zero => simp
+  | succ n ih =>
+    rw [List.range_succ, List.map_append, List.sum_append, Finset.sum_range_succ, ih]
+    simp
+
+/-- List filter→map→sum equals the `if`-guarded map→sum over the whole list. -/
+theorem filter_map_sum (L : List ℕ) (p : ℕ → Prop) [DecidablePred p] (f : ℕ → ℚ) :
+    ((L.filter (fun x => decide (p x))).map f).sum
+      = (L.map (fun x => if p x then f x else 0)).sum := by
+  induction L with
+  | nil => rfl
+  | cons a t ih =>
+    rw [List.map_cons, List.sum_cons]
+    by_cases h : p a
+    · rw [List.filter_cons_of_pos (by simpa using h), List.map_cons, List.sum_cons, ih, if_pos h]
+    · rw [List.filter_cons_of_neg (by simpa using h), ih, if_neg h, zero_add]
+
+/-- **(R4) The per-corner term in `range`/`betaNat` form.** For a corner `c`, the hook ratio equals the
+β-Lagrange summand (R3 to drop the filter, R2 for the ratio, `prod_div_distrib` to split). -/
+theorem gnw_corner_term (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (c : ℕ)
+    (hcorner : QOU.Mathlib.SYTEnum.IsCorner l c) :
+    (prodHooks l : ℚ) / (prodHooks (QOU.Mathlib.SYTEnum.removeCorner l c) : ℚ)
+      = betaNat l c * (∏ j ∈ (range l.length).erase c, (betaNat l c - 1 - betaNat l j))
+          / (∏ j ∈ (range l.length).erase c, (betaNat l c - betaNat l j)) := by
+  rw [prodHooks_removeCorner l hl c hcorner, prodHooks_ratio l hl c hcorner,
+      Finset.prod_div_distrib]
+  ring
+
+/-- **(R4) Non-corner rows vanish.** For `c < k` that is *not* a corner, the consecutive rows are equal
+(`l[c]=l[c+1]`), so `β_c − 1 = β_{c+1}` and the `j = c+1` numerator factor is `0`. -/
+theorem gnw_noncorner_vanish (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (hpos : ∀ a ∈ l, 0 < a)
+    (c : ℕ) (hc : c < l.length) (hnc : ¬ QOU.Mathlib.SYTEnum.IsCorner l c) :
+    betaNat l c * (∏ j ∈ (range l.length).erase c, (betaNat l c - 1 - betaNat l j))
+      / (∏ j ∈ (range l.length).erase c, (betaNat l c - betaNat l j)) = 0 := by
+  have hnlt : ¬ (l.getD (c + 1) 0 < l.getD c 0) := fun h => hnc ⟨hc, h⟩
+  have hge : l.getD c 0 ≤ l.getD (c + 1) 0 := le_of_not_lt hnlt
+  have hle : l.getD (c + 1) 0 ≤ l.getD c 0 :=
+    QOU.BraidKnot.IdentityI.getD_antitone l hl (Nat.le_succ c)
+  have heq : l.getD (c + 1) 0 = l.getD c 0 := le_antisymm hle hge
+  have hcpos : 0 < l.getD c 0 := by
+    rw [QOU.Mathlib.SYTEnum.getD_eq_getElem' l c hc]
+    exact hpos _ (List.getElem_mem hc)
+  have hclast : c + 1 < l.length := by
+    rcases Nat.lt_or_ge (c + 1) l.length with h | h
+    · exact h
+    · exfalso
+      have h0 : l.getD (c + 1) 0 = 0 := by
+        rw [List.getD_eq_getElem?_getD, List.getElem?_eq_none h]; rfl
+      omega
+  have hbv : betaNatVal l c = betaNatVal l (c + 1) + 1 := by
+    unfold betaNatVal; omega
+  have hfac : betaNat l c - 1 - betaNat l (c + 1) = 0 := by
+    rw [betaNat_eq l c, betaNat_eq l (c + 1), hbv]; push_cast; ring
+  have hmem : (c + 1) ∈ (range l.length).erase c :=
+    Finset.mem_erase.mpr ⟨Nat.succ_ne_self c, Finset.mem_range.mpr hclast⟩
+  rw [Finset.prod_eq_zero hmem hfac, mul_zero, zero_div]
+
+/-- **(R4 / `gnwHookIdentity`) The GNW hook-summation identity, sorry-free.** Bridges the corner
+list-sum to a `range` Finset sum (`filter_map_sum` + `list_range_sum`), replaces each term by the
+β-Lagrange summand (corner: `gnw_corner_term`; non-corner: vanishes via `gnw_noncorner_vanish`), and
+evaluates via `betaLagrange_range = sz l`. -/
+theorem gnwHookIdentity_proof (l : List ℕ) (hl : List.Sorted (· ≥ ·) l) (hpos : ∀ a ∈ l, 0 < a)
+    (hne : l ≠ []) :
+    ((QOU.Mathlib.SYTEnum.corners l).map
+        (fun c => (prodHooks l : ℚ) / (prodHooks (QOU.Mathlib.SYTEnum.removeCorner l c) : ℚ))).sum
+      = (sz l : ℚ) := by
+  have hk : 0 < l.length := by
+    cases l with
+    | nil => exact absurd rfl hne
+    | cons _ _ => simp
+  rw [show QOU.Mathlib.SYTEnum.corners l
+        = (List.range l.length).filter (fun i => decide (QOU.Mathlib.SYTEnum.IsCorner l i)) from rfl,
+      filter_map_sum, list_range_sum, ← betaLagrange_range l hl hk]
+  apply Finset.sum_congr rfl
+  intro c hc
+  rw [Finset.mem_range] at hc
+  by_cases hcorner : QOU.Mathlib.SYTEnum.IsCorner l c
+  · rw [if_pos hcorner]; exact gnw_corner_term l hl c hcorner
+  · rw [if_neg hcorner]; exact (gnw_noncorner_vanish l hl hpos c hc hcorner).symm
+
+/-!
+## Remaining design — the gap ratio, row-drop, and assembly (DONE)
+
+All scaffolding above is sorry-free.  The remaining route to `gnwHookIdentity`:
+
+**(R1) Gap ratio (non-row-drop)** — DONE (`betaProdGap_ratio`). `betaProdGap (l.set c (l[c]−1)) = betaProdGap l ·
+∏_{j∈(range k).erase c} (β_c−1−β_j)/(β_c−β_j)`.  Via the pairs form: factor each term
+`β'ᵢ−β'ⱼ = (βᵢ−βⱼ)·rᵢⱼ` (`mul_div_cancel₀`, gaps nonzero by `betaNat_ne`), so
+`betaProdGap(l∖c) = betaProdGap(l)·∏ᵢ∏ⱼ rᵢⱼ` (`prod_mul_distrib`).  Evaluate the inner
+ratio product: `inner_i = 1` for `i>c`; `inner_c = ∏_{j∈Ioo c k}(β_c−1−β_j)/(β_c−β_j)`;
+`inner_i = r_{i,c} = (βᵢ−β_c+1)/(βᵢ−β_c)` for `i<c` (`prod_eq_single c`, others `=1`).
+Pull out `i=c` (`mul_prod_erase`), restrict the rest to `range c` (`prod_subset`, `i>c`
+terms `=1`), and use the sign flip `(βᵢ−β_c+1)/(βᵢ−β_c) = (β_c−1−βᵢ)/(β_c−βᵢ)` (`ring`).
+Split `erase c = range c ∪ Ioo c k`.
+
+**(R2) Factorial × gap ⇒ per-corner ratio** — DONE (`prodHooks_ratio`). Combines
+`betaFactProd_ratio` (= β_c) with (R1) through identity (i)
+`prodHooks·betaProdGap = betaFactProd` (`prodHooks_mul_betaProdGap`, `betaProdGap_pos`):
+`prodHooks(l)/prodHooks(l∖c) = β_c·∏_{j≠c}(β_c−1−β_j)/(β_c−β_j)`.
+
+**(R3) Row-drop corner** (`l[c]=1`, last row, `k→k−1`) — DONE (`prodHooks_removeCorner`).
+`removeCorner l c = (l.set c (l[c]−1)).filter (·≠0)`; the filtered list is sorted
+(`sorted_set_corner`), and filtering zeros from a sorted list is `prodHooks`-invariant
+(`prodHooks_filter_zero_sorted`, via the trailing-zero lemma `prodHooks_append_zero`), so
+`prodHooks(removeCorner l c) = prodHooks(l.set c (l[c]−1))` and (R2) applies directly.
+
+**(R4) Assembly** — DONE (`gnwHookIdentity_proof`). Sum over `corners l`; non-corner rows vanish
+(`β_c−1 = β_{c+1}`, `gnw_noncorner_vanish`); bridge the corner list-sum to a `range` Finset sum
+(`filter_map_sum` + `list_range_sum` + `prod_betaNat_erase`) and apply `betaLagrange (betaVec l)` +
+`sum_betaVec_sub` (`= sz l`) via `betaLagrange_range`. This discharges `SYTHookGNW.gnwHookIdentity`.
+-/
+
+end QOU.Mathlib.SYTBetaLagrange

@@ -17,7 +17,7 @@ The per-generator crossing list is built from:
   Gen 1: all σ₁ crossings from both atoms + bond operator
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 hh-vertex-volume.py
 """
 

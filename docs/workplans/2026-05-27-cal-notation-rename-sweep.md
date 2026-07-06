@@ -9,7 +9,7 @@
 - Content .md files: 113
 - Content .ts files: 13
 - Compute .py files: 373
-- CLAUDE.md: 4 (already updated in #1354)
+- AGENTS.md: 4 (already updated in #1354)
 - Docs: 386
 
 ## Old → New mapping
@@ -25,7 +25,7 @@ CAL-1 = m_e is unchanged.
 ## Already done (PR #1354)
 
 - codata_constants.py CAL table header
-- CLAUDE.md precision-goals preamble
+- AGENTS.md precision-goals preamble
 - meson-scale-independence.md calibration table
 - unified_meson_mass_formula.py m_π import
 

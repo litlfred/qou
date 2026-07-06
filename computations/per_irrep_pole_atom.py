@@ -44,7 +44,7 @@ sequential atom schedule is no slower than a concurrent one.
 
 Audit doc: docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md
 
-@module folio-assistant/computations/per_irrep_pole_atom
+@module computations/per_irrep_pole_atom
 """
 from __future__ import annotations
 
@@ -427,7 +427,7 @@ def run_atom(Z: int, N: int, *, workers: int | None = None) -> int:
             "aggregated per generator index.  Provides structural "
             "baseline for GAP-C-1 (q-integer counting per generator) "
             "in derivation-audit-report.md.  KLR-canonical-class "
-            "enrichment per CLAUDE.md §7b (and PR #608 KLR cemetery "
+            "enrichment per AGENTS.md §7b (and PR #608 KLR cemetery "
             "infra): each per-generator sub-word σ_g^k (pure power) "
             "is a cemetery class trivially; the full atom's "
             "canonical class is the per-partition χ-fingerprint at "

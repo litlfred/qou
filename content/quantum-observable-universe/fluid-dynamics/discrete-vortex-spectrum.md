@@ -3,8 +3,6 @@ brane fluid with [substrate parameter](#def:substrate-parameter)
 $q > 1$, and let $\Delta_q$ be the $q$-Laplacian acting on
 sections of the normal bundle $N_\varrho$.
 
-**Mathematical Novelty.** While the spectral theory of rigid rotors and Kelvin waves is standard, the mathematical novelty is formally unifying these classical phenomena as evaluations of representations of the quantum group $\mathrm{SU}_q(2)$ over the $q$-Laplacian. This specific reframing rigorously anchors vortex intensity levels and selection rules to the discrete topology of the $q$-integer spectrum, replacing heuristic classical angular momentum derivations with exact categorical constraints.
-
 Then:
 
 1. The eigenvalues of $\Delta_q$ restricted to $\varrho$ form a
@@ -48,3 +46,5 @@ Then:
      the rigid-rotor spectrum of angular momentum theory.
    - The selection rule $\Delta j = \pm 1$ reduces to the
      standard dipole selection rule.
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

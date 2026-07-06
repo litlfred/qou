@@ -1,4 +1,4 @@
-import QOU.Basic
+import QOU.QuantumObservableUniverse.Instanton
 
 
 /-!
@@ -16,25 +16,32 @@ LaTeX: `\label{prop:categorical-q-ext-deriv-exists}`
 - [majid2002] A Quantum Groups Primer (Cambridge UP), §5
 -/
 
+universe u v
+
 namespace QOU
 
-/-- **Existence of the categorical q-exterior derivative.**
+/-- **External axiom (§3b-cond pattern): existence of the categorical
+    q-exterior derivative.**
 
     For every category `C` with monoidal structure, a
     `CategoricalQExtDeriv C` term exists via the formula
-    `d_q = q⁻¹ d + (1 - q⁻¹) π_V ∘ d`. -/
--- Ref: [majid2002]
-/-- **External axiom (§3b-cond pattern): CategoricalQExtDeriv.exists.**
+    `d_q = q⁻¹ d + (1 - q⁻¹) π_V ∘ d`.
 
-    Auto-extracted from the single-sorry theorem body in this file.
-    Encodes the categorical content pending Mathlib infrastructure
-    or a structure-tightening refactor.
-
-    See the theorem docstring below for the cited reference. -/
+    The substantive structure `CategoricalQExtDeriv` (Frobenius–Hopf
+    data, the classical differential `d`, the vertical projection
+    `proj_V` with idempotency, and the non-zero deformation parameter
+    `q`) is defined in `QOU.QuantumObservableUniverse.Instanton`;
+    its `dq` morphism and `dq_classical` reduction are proved there.
+    Constructing such data for an *arbitrary* monoidal `C` requires
+    Mathlib infrastructure not yet present, so existence is asserted
+    as a named axiom pending that infrastructure. -/
+-- Ref: [majid2002] A Quantum Groups Primer (Cambridge UP), §5
 axiom CategoricalQExtDeriv.exists_axiom (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] :
     Nonempty (CategoricalQExtDeriv C)
 
+/-- **Existence of the categorical q-exterior derivative** (conditional on
+    `CategoricalQExtDeriv.exists_axiom`). -/
 theorem CategoricalQExtDeriv.exists
     (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] :

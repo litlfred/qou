@@ -34,8 +34,8 @@ namespace QOU.BraidKnot.H4SignBlock
 noncomputable def q_int_poly (n : ℕ) (q : ℝ) : ℝ :=
   if n = 1 then 1
   else if n = 2 then q + q⁻¹
-  else if n = 3 then q^2 + 1 + q⁻²
-  else if n = 4 then q^3 + q + q⁻¹ + q⁻³
+  else if n = 3 then q^2 + 1 + (q⁻¹)^2
+  else if n = 4 then q^3 + q + q⁻¹ + (q⁻¹)^3
   else 0
 
 /-- The Wenzl weight for the (1,1,1,1) sign block of H_4(q).

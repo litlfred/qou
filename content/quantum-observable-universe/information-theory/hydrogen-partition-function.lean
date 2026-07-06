@@ -43,18 +43,18 @@ noncomputable def qDegeneracy (q : ℝ) (j : ℕ) : ℝ :=
     Proof: [1]_q = (q - q⁻¹)/(q - q⁻¹) = 1. -/
 theorem qDegeneracy_zero (q : ℝ) (hq : q ≠ 0) (hqn : q ^ 2 ≠ 1) :
     qDegeneracy q 0 = 1 := by
-  unfold qDegeneracy
-  simp
   -- Need to show (q - q⁻¹) / (q - q⁻¹) = 1, i.e. q - q⁻¹ ≠ 0
   have hden : q - q⁻¹ ≠ 0 := by
     intro h
     -- If q = q⁻¹ then q² = 1, contradiction
     have heq : q = q⁻¹ := by linarith
-    have : q * q = q * q⁻¹ := by rw [heq]
-    rw [mul_inv_cancel₀ hq] at this
-    -- q² = 1
-    have : q ^ 2 = 1 := by nlinarith
+    have hmul : q * q⁻¹ = 1 := mul_inv_cancel₀ hq
+    rw [← heq] at hmul
+    -- hmul : q * q = 1
+    have : q ^ 2 = 1 := by nlinarith [hmul]
     exact hqn this
+  unfold qDegeneracy
+  simp only [Nat.mul_zero, Nat.zero_add, pow_one]
   exact div_self hden
 
 /-- When q > 1, we have q² ≠ 1 (needed for qDegeneracy lemmas). -/
@@ -95,9 +95,11 @@ theorem hydrogen_partition_ground_pos {M : Type*}
     (sp : SubstrateParameter M) (p : M) (hq : sp.field p > 1) :
     rotationalPartitionFunction sp p 0 > 0 := by
   unfold rotationalPartitionFunction
-  simp [Finset.sum_range_succ, Finset.sum_range_zero]
-  rw [ground_state_contribution (sp.field p) hq]
-  norm_num
+  simp only [zero_add, Finset.sum_range_one]
+  have hdeg : qDegeneracy (sp.field p) 0 = 1 :=
+    qDegeneracy_zero (sp.field p) (by linarith) (sq_ne_one_of_gt_one (sp.field p) hq)
+  rw [hdeg, one_mul]
+  exact Real.exp_pos _
 
 /-- The partition function is monotone in j_max: adding more angular
     momentum modes can only increase Z (all Boltzmann factors are positive). -/
@@ -108,23 +110,25 @@ theorem partition_monotone {M : Type*}
     rotationalPartitionFunction sp p (j + 1) := by
   unfold rotationalPartitionFunction
   simp only [Finset.sum_range_succ]
-  linarith [mul_nonneg
-    (by -- [2j+3]_q ≥ 0 when q > 1: numerator and denominator have same sign
-      unfold qDegeneracy
-      apply div_nonneg
-      · have hq_pos : (0 : ℝ) < sp.field p := by linarith
-        have hinv_pos : (0 : ℝ) < (sp.field p)⁻¹ := inv_pos.mpr hq_pos
-        have hinv_lt : (sp.field p)⁻¹ < sp.field p := by
-          rw [inv_lt_comm₀ hq_pos hq_pos]; exact hq
-        have : (sp.field p)⁻¹ ^ (2 * (j + 1) + 1) ≤
+  have hq_pos : (0 : ℝ) < sp.field p := by linarith
+  have hinv_pos : (0 : ℝ) < (sp.field p)⁻¹ := inv_pos.mpr hq_pos
+  have hmul : sp.field p * (sp.field p)⁻¹ = 1 := mul_inv_cancel₀ (ne_of_gt hq_pos)
+  have hinv_lt : (sp.field p)⁻¹ < sp.field p := by nlinarith [hmul, hq, hinv_pos]
+  -- [2j+3]_q ≥ 0 when q > 1: numerator and denominator have same sign
+  have hdeg : (0 : ℝ) ≤ qDegeneracy (sp.field p) (j + 1) := by
+    unfold qDegeneracy
+    apply div_nonneg
+    · have hpow : (sp.field p)⁻¹ ^ (2 * (j + 1) + 1) ≤
                sp.field p ^ (2 * (j + 1) + 1) := by
-          apply pow_le_pow_left (le_of_lt hinv_pos) (le_of_lt hinv_lt)
-        linarith
-      · have hq_pos : (0 : ℝ) < sp.field p := by linarith
-        have hinv_lt : (sp.field p)⁻¹ < sp.field p := by
-          rw [inv_lt_comm₀ hq_pos hq_pos]; exact hq
-        linarith :
-      ℝ)
-    (Real.exp_nonneg _)]
+        gcongr
+      linarith
+    · linarith
+  have hexp : (0 : ℝ) ≤ Real.exp
+      (-(sp.field p / (sp.field p - 1)) * qAngularMomentum (sp.field p) (j + 1)
+        * quantumPlanckConstant sp p) := Real.exp_nonneg _
+  have hterm : (0 : ℝ) ≤ qDegeneracy (sp.field p) (j + 1) *
+      Real.exp (-(sp.field p / (sp.field p - 1)) * qAngularMomentum (sp.field p) (j + 1)
+        * quantumPlanckConstant sp p) := mul_nonneg hdeg hexp
+  linarith [hterm]
 
 end QOU.Information

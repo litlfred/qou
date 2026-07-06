@@ -1,4 +1,5 @@
 import QOU.Basic
+import QOU.QuantumObservableUniverse.CategoricalFoundations
 import Mathlib.CategoryTheory.Monoidal.Category
 
 
@@ -66,7 +67,8 @@ structure JetPreservesQU (C : Type u) [Category.{v} C]
       Expressed as: jetEval composed with the jet multiplication
       equals the original multiplication composed with jetEval on each factor. -/
   -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
-  eval_preserves_mul : jet.mul ≫ jetEval = (jetEval ▷ original.obj) ≫ original.mul
+  eval_preserves_mul :
+    jet.mul ≫ jetEval = MonoidalCategory.tensorHom jetEval jetEval ≫ original.mul
   /-- The unit section embeds A into J¹(A) as a subalgebra. -/
   unitSection : original.obj ⟶ jet.obj
   /-- The unit section is a monomorphism. -/

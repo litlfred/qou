@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-04T02:56:27.143923+00:00",
-  "commitSha": "c9ad9d5969ac0a741f2227281000147522769135",
+  "computedAt": "2026-06-22T13:27:40.366300+00:00",
+  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
   "assertions": [
     {
       "name": "div25_q_deformation_test_decisive",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 44,
+  "durationMs": 43,
   "computation": "qbeta-rung1-div25-framing-squared-test",
   "scriptFile": "qbeta_rung1_div25_framing_squared_test.py",
-  "scriptHash": "6f2f05c1372c",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "957753961205",
+  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -27,6 +27,7 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
@@ -35,7 +36,7 @@
   "data": {
     "setup": {
       "c_3_target_cal_anchored": "-2.069342577",
-      "q_0": "1.1099785827513808075916690956107688798744991218736"
+      "q_0": "1.1099785955573347198997632204832250266562084087802"
     },
     "candidate_categorical_25_at_q_1": {
       "5_squared": "5^2 = 25 (trivial)",
@@ -45,12 +46,12 @@
       "note": "All four reduce to 25 at q=1; they DIFFER away from q=1."
     },
     "numerical_at_q0": {
-      "[5]_q": "5.220441275326898244960433",
-      "[5]_q_squared": "27.25300710913673180653988",
-      "c_3_main_with_div_25": "-2.069348062472493332671029",
-      "c_3_qdef_with_div_[5]_q_sq": "-2.067309974912808129258518",
-      "eps_main_ppm": 2.6508286033940096,
-      "eps_qdef_ppm": -982.2453323019172
+      "[5]_q": "5.220441324676728546019237",
+      "[5]_q_squared": "27.25300762439251630999648",
+      "c_3_main_with_div_25": "-2.069348075269290713323227",
+      "c_3_qdef_with_div_[5]_q_sq": "-2.067309987052062690639603",
+      "eps_main_ppm": 2.657012595123018,
+      "eps_qdef_ppm": -982.2394660646415
     },
     "verdict": {
       "main_undeformed_better": true,

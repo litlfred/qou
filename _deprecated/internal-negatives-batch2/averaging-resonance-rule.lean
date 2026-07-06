@@ -193,7 +193,7 @@ theorem empirical_sector_classification (k : ℕ) (hk : 3 ≤ k ∧ k ≤ 10) :
     but does not prove it.
 
     Axiomatised as a Lean class so downstream theorems can be stated
-    conditionally on `[HalfFillRungIsOutlier]` per CLAUDE.md §3b-cond
+    conditionally on `[HalfFillRungIsOutlier]` per AGENTS.md §3b-cond
     (conditional-class exception). Any future categorical proof
     instantiates the class; until then, the class is a single named
     `sorry` and downstream consumers carry the explicit hypothesis.
@@ -226,7 +226,7 @@ class HalfFillRungIsOutlier (d : TypedBnDistribution) where
     rung is k = 5.
 
     Status: rigorous-conditional — fully verified by Lean modulo the
-    `HalfFillRungIsOutlier` class instance. See CLAUDE.md §3b-cond
+    `HalfFillRungIsOutlier` class instance. See AGENTS.md §3b-cond
     for the conditional-class discipline. -/
 theorem proton_outlier_eq_five
     [h : HalfFillRungIsOutlier protonDistribution] :

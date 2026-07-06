@@ -58,7 +58,7 @@ by pentagon coherence applied to the $\ell = 2$ data.
 
 - **Jet grade**: 0 (atomic constant)
 - **h-content**: $h(q_0) = q_0 - q_0^{-1} \approx 0.209$, fixed
-- **Source**: [`q_parameter.py`](../../folio-assistant/computations/substrate/q_parameter.py) (50 dps locked: 1.10970000000)
+- **Source**: [`q_parameter.py`](../../computations/substrate/q_parameter.py) (50 dps locked: 1.10970000000)
 - **What's determined**: every downstream $h$-coefficient evaluates
   *at* this $q_0$; nothing constrains $q_0$ itself within the
   derivation (substrate-derivation declined 2026-05-08)
@@ -100,7 +100,7 @@ by pentagon coherence applied to the $\ell = 2$ data.
 - **Jet grade**: 1 (Hecke quadratic lives at $\ell=1$)
 - **h-content**: $\sigma_i^2 = h\sigma_i + 1$ is the defining
   quadratic — this is the BASE jet of all later h-expansions
-- **Source**: [`def:hecke-algebra`](../../content/quantum-observable-universe/braids-and-knots/hecke-algebra.md), CLAUDE.md §7a
+- **Source**: [`def:hecke-algebra`](../../content/quantum-observable-universe/braids-and-knots/hecke-algebra.md), AGENTS.md §7a
 - **GB smoothing**: the Hecke relation expresses any $\sigma_i^k$
   as a degree-1 polynomial in $\sigma_i$ — collapsing infinite-jet
   data to jet grade 1.
@@ -154,13 +154,13 @@ by pentagon coherence applied to the $\ell = 2$ data.
 - **h-content**: selects active operators (`active_set`); doesn't
   introduce new $h$-orders
 - **Source**: [`prop:operator-selection-lp`](../../content/quantum-observable-universe/braids-and-knots/operator-selection-lp.md)
-  + CLAUDE.md §LP/SDP duals
+  + AGENTS.md §LP/SDP duals
 
 ### Step 9. **Geom functor ($\mathrm{VolDensity}(K, q_0)$)**
 
 - **Jet grade**: aggregates all earlier jets
 - **h-content**: $\mathrm{VolDensity}(K, q) = \mathrm{Vol}(K)/\hbar_q^2 \cdot \mathrm{linking\_weight}(q)$ — by current production
-- **Source**: [`prop:geom-universality`](../../content/quantum-observable-universe/braids-and-knots/geom-universality.md), [`_li_2_q_util.py:201-236`](../../folio-assistant/computations/_li_2_q_util.py)
+- **Source**: [`prop:geom-universality`](../../content/quantum-observable-universe/braids-and-knots/geom-universality.md), [`_li_2_q_util.py:201-236`](../../computations/_li_2_q_util.py)
 - **What linking_weight should equal**: the production uses
   `linking_weight = 5/2 + (3/4)·h²` (Family A's H_4 half-symmetric
   Wedderburn sum). The exact Markov-trace finding (step 6) shows
@@ -298,4 +298,4 @@ Combining the per-step analysis with the empirical h⁴ probe results
 - [`content/quantum-observable-universe/braids-and-knots/borromean-markov-trace-closed-form.md`](../../content/quantum-observable-universe/braids-and-knots/borromean-markov-trace-closed-form.md) — exact $\mathrm{tr}_M$, h² = 0, h⁴ = -3/4
 - [`content/quantum-observable-universe/braids-and-knots/gb-spectral-sequence.md`](../../content/quantum-observable-universe/braids-and-knots/gb-spectral-sequence.md) — spectral sequence
 - [`content/quantum-observable-universe/braids-and-knots/spectral-sequence-collapse.md`](../../content/quantum-observable-universe/braids-and-knots/spectral-sequence-collapse.md) — collapse at $E_2$
-- [`folio-assistant/computations/probes/vol_density_borromean_h4_probe.py`](../../folio-assistant/computations/probes/vol_density_borromean_h4_probe.py) — empirical h⁴ probe (commit `2184c84d3`)
+- [`computations/probes/vol_density_borromean_h4_probe.py`](../../computations/probes/vol_density_borromean_h4_probe.py) — empirical h⁴ probe (commit `2184c84d3`)

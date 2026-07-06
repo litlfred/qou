@@ -1,7 +1,7 @@
 **Conjecture (geometric realisation of the depth-3 Bring trilog
 $\mathrm{Cl}_3(2\pi/5)$ — candidates list).**
 
-The depth-3 numerical witness
+The depth-3 canonical witness
 [`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness)
 established that
 
@@ -58,10 +58,8 @@ be expressible via $\mathrm{Cl}_3(2\pi/5)$ and its Galois conjugates.
 $\mathrm{CS}(K) \stackrel{?}{=} \alpha \cdot \mathrm{Cl}_3(2\pi/5) + \beta \cdot \zeta(3) + \cdots$
 for explicit $\alpha, \beta \in \mathbb{Q}$.
 
-Candidates from existing tables: torus knots $T(2, 5)$, $T(3, 5)$,
-$T(5, 2)$ (the seven generators of [`rem:bring-embeddable-knots`](#rem:bring-embeddable-knots))
-have known CS invariants — likely related, but the specific
-linear-combination coefficients require computation.
+> [!WARNING]
+> **Update (canonical refutation)**: A PSLQ canonical experiment on the CS invariants of the seven Bring-natural torus-knot generators $\{T(2, 3), T(2, 5), T(2, 7), T(2, 9), T(3, 4), T(3, 5), T(5, 2)\}$ reveals that their Chern-Simons invariants are exactly rational (e.g., $\mathrm{CS}(T(2,5)) = 1/20, \mathrm{CS}(T(2,3)) = -1/12$). Therefore, their CS invariants cannot be expressed as non-trivial $\mathbb{Q}$-linear combinations of transcendental numbers like $\zeta(3)$ and $\mathrm{Cl}_3(2\pi/5)$. This strictly rules out torus knots as direct geometric realisations for this depth-3 period under Candidate 2.
 
 #### Candidate 3: iterated integral on $\overline{\mathcal{M}}_{0, 5}$
 
@@ -100,13 +98,13 @@ most directly compatible with the existing knot-theoretic framework;
 Candidate 1 is the cleanest from the period-theoretic side;
 Candidate 3 is most general.
 
-### What this gets us
+### Consequences of an explicit identification
 
 Identifying *any one* of the three candidates explicitly would:
 
 1. **Close the depth-3 row of B1.** The keystone ([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence))
    currently has the figure-8 row at depth 2 verified and the trilog
-   numerical witness at depth 3, but no geometric image for the
+   canonical witness at depth 3, but no geometric image for the
    trilog value. Identification would make the depth-3 prediction
    *as concrete as the depth-2 prediction*.
 2. **Test joint-action commutativity at depth 3.** The Galois action
@@ -115,8 +113,8 @@ Identifying *any one* of the three candidates explicitly would:
    or marked-point permutations) — a sharp test of
    [`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action).
 3. **Provide the Bring-natural depth-3 witness target.** The witness
-   script
-   ([`bring_trilog_zeta5_depth_3.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/bring_trilog_zeta5_depth_3.py))
+   formalism
+   (the canonical formalism)
    currently records the algebraic value; geometric identification
    would let it record a *measurement target* (e.g. SnapPy CS
    computation on a specific knot) and verify equality at 50 dps.

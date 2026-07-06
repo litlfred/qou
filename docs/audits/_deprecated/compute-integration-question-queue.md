@@ -46,7 +46,7 @@ order by the skill when the foreground task is idle.
 - **context**: u, d get explicit derivation from
   `prop:flavor-split-substrate`.  s, c, b, t need EITHER (i)
   `conj:` blocks with class-axiomatized placeholders per
-  CLAUDE.md §3b, (ii) `def:`-only entries with no derived value,
+  AGENTS.md §3b, (ii) `def:`-only entries with no derived value,
   or (iii) be excluded from D3 and added in a follow-up.
 - **options**:
   - (a) all 6 flavors with `conj:` placeholders for s/c/b/t

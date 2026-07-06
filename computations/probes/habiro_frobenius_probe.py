@@ -46,7 +46,7 @@ Cross-references:
   - audit GAP 5b in `family-4-motivic-path.md`
 
 Usage:
-    python3 folio-assistant/computations/habiro_frobenius_probe.py
+    python3 computations/habiro_frobenius_probe.py
 
 Output: `habiro-frobenius-probe.witness.json`
 """

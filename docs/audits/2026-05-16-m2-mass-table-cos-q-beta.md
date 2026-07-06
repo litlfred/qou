@@ -38,7 +38,7 @@ The per-derivation pathway differences from the substrate sweep:
 
 The per-derivation path is the correct calibration discipline —
 respects the three-anchor ({m_e, q_0, Q_β}) constraint per
-CLAUDE.md / `prop:three-calibration-inputs` without the proton-fit
+AGENTS.md / `prop:three-calibration-inputs` without the proton-fit
 calibration leak.
 
 ## 2  cos((z−1)·h/2) Q_β tightening — per-atom shift
@@ -108,7 +108,7 @@ specifically:
 
 ## 5  Witness
 
-[`folio-assistant/computations/m2-codata-vs-cos-q-beta.witness.json`](../../folio-assistant/computations/m2-codata-vs-cos-q-beta.witness.json)
+[`computations/m2-codata-vs-cos-q-beta.witness.json`](../../computations/m2-codata-vs-cos-q-beta.witness.json)
 records all 6 atoms × both Q_β modes with full per-term breakdown
 (binding T1, T2T3, T4, T5, T6 contributions; predicted vs CODATA;
 chirality factor a_K).

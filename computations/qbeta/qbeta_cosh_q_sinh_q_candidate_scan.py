@@ -7,7 +7,7 @@ missing cosh_q / sinh_q?' Tests 16 specific candidates with explicit
 verdicts; expected outcome ALL REFUTED based on initial numerical
 scan (closest matches ~0.7-0.9% off).
 
-DISCIPLINE (CLAUDE.md no-7th-ansatz). This is a DIAGNOSTIC scan, not
+DISCIPLINE (AGENTS.md no-7th-ansatz). This is a DIAGNOSTIC scan, not
 a candidate-fishing run. The 16 candidates are pre-enumerated; the
 goal is exhaustive documentation of cosh_q/sinh_q candidates so
 future sessions can cite the audit instead of re-running.
@@ -146,7 +146,7 @@ def main() -> int:
     builder.add_data("anti_pattern_guard", (
         "DO NOT wire any of these candidates. The 0.7-0.9% best matches "
         "are 'interesting' but well within the 8th-ansatz fit-trap zone. "
-        "Per CLAUDE.md no-7th-ansatz discipline."
+        "Per AGENTS.md no-7th-ansatz discipline."
     ))
 
     builder.add_assertion(

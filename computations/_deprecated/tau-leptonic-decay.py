@@ -28,7 +28,7 @@ Theory:
   The neutrinos carry the identity (ν = 𝟙 in H_n(q)).
 
 Usage:
-    cd folio-assistant/computations && python3 tau-leptonic-decay.py
+    cd computations && python3 tau-leptonic-decay.py
 
 Output:
     tau-leptonic-decay.witness.json

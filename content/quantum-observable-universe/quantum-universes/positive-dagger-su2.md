@@ -36,19 +36,19 @@ $$
 for all $v \in V$. Hence $f^\dagger f$ has real non-negative eigenvalues,
 and $\langle f^\dagger f  v, v \rangle = 0$ only when $f v = 0$.
 
-**Explicit computation.** Write $f$ as a $2 \times 2$ matrix. By
-Schur's lemma, $f = \lambda  \mathrm{id}$ for some
-$\lambda \in \mathbb{C}$ (since the fundamental representation is
-irreducible). Then:
+**Concretely, Schur's lemma pins $f$ down.** Writing $f$ as a
+$2 \times 2$ matrix, irreducibility of the fundamental representation
+forces $f = \lambda  \mathrm{id}$ for some $\lambda \in \mathbb{C}$,
+so that:
 
 $$
 f^\dagger f = \bar{\lambda} \lambda  \mathrm{id}
 = |\lambda|^2  \mathrm{id},
 $$
 
-which is manifestly non-negative. For reducible representations
-$V = V_1 \oplus V_2$, the argument applies block-diagonally:
-The morphism $f^\dagger f$ is non-negative on each irreducible summand.
+which is manifestly non-negative — and for a reducible
+$V = V_1 \oplus V_2$ the same bound applies block-diagonally on each
+irreducible summand.
 
 **Interpretation.** Positive-definiteness of the dagger means
 $\mathbf{Rep}(\mathrm{SU}(2))$ is a $C^*$-tensor category: every

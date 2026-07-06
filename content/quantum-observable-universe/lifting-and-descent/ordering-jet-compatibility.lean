@@ -34,26 +34,23 @@ def degLex : MonomialBasis → MonomialBasis → Prop :=
     w.length < w'.length ∨
     (w.length = w'.length ∧ w < w')
 
-/-- The degree-lexicographic ordering is well-founded.
+/- The degree-lexicographic ordering is well-founded.
 
-    Proof sketch: degree is bounded below by 0, and at each
-    fixed degree there are finitely many words over a finite
-    alphabet, so every non-empty subset has a minimum. -/
+   Proof sketch: degree is bounded below by 0, and within each fixed
+   degree the words form the finite-tuple lexicographic order on `ℕ`,
+   which is well-founded.  Concretely it embeds into the lexicographic
+   product `(length, word)`; the length component is `Nat.lt` (well-
+   founded), and within equal length the second component is the
+   finite-tuple lex order (well-founded).  The full Lex order on
+   `List ℕ` is *not* well-founded (e.g. `[1] > [0,n]` for every `n`),
+   so the embedding must respect the equal-length restriction — the
+   detailed construction is deferred. -/
 -- Ref: [manuscript] §2/quantum-observable-universe (axiom 5)
--- Ref: [manuscript] §3/ordering-jet-compatibility
-/-- degLex on List ℕ is well-founded: it embeds into the
-    lexicographic product (ℕ, List ℕ) via w ↦ (w.length, w),
-    and both ℕ with < and List ℕ with < are well-founded. -/
 -- Ref: [manuscript] §3/ordering-jet-compatibility
 private theorem degLex_wf_unrestricted :
     WellFounded (fun (w w' : MonomialBasis) => degLex w w') := by
-  unfold degLex
-  -- Map into the lex product (length, word).
-  -- InvImage.wf f hwf shows: if hwf is well-founded on the
-  -- codomain, then the pullback along f is well-founded.
-  -- Prod.Lex (· < ·) (· < ·) on (ℕ × List ℕ) is well-founded.
-  exact InvImage.wf (fun w => (w.length, w))
-    (Prod.lex_wf Nat.lt_wfRel.wf wellFoundedRelation.wf)
+  -- Ref: [manuscript] §3/ordering-jet-compatibility
+  sorry
 
 theorem degLex_wellFounded (n : ℕ) (hn : 0 < n) :
     WellFounded (fun (w w' : MonomialBasis) =>
@@ -61,9 +58,7 @@ theorem degLex_wellFounded (n : ℕ) (hn : 0 < n) :
   -- Our relation R w w' := degLex w w' ∧ (∀ g ∈ w, g < n)
   -- is a sub-relation of degLex (drop the second conjunct).
   -- A sub-relation of a well-founded relation is well-founded.
-  apply Subrelation.wf (r₂ := fun w w' => degLex w w')
-  · intro _ _ ⟨h, _⟩; exact h
-  · exact degLex_wf_unrestricted
+  exact Subrelation.wf (fun ⟨h, _⟩ => h) degLex_wf_unrestricted
 
 /-- At brane level k, the jet prolongation introduces new generators
     (Ω¹ directions) ordered after all level-k generators. The

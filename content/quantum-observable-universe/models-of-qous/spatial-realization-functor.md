@@ -1,15 +1,21 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
 ([quantum observable universe](#def:quantum-observable-universe)).
-The *spatial realization* of $A$ is the space
+The **spatial realization** of $A$ is the space
 
 $$
   M = \mathrm{Spec}(A) = \{ p \colon \mathbf{1} \to A \mid
   p \text{ is a categorical point} \}
 $$
 
-([categorical point](#def:categorical-point)),
-equipped with the following structures derived purely within
-$\mathbf{C}$:
+([categorical point](#def:categorical-point)).
+This functor realises the algebra $A$ as a contact manifold: it
+sends the Frobenius form to the global contact $1$-form and the
+torus generator to the Reeb field. The target $M$ is an ordinary
+smooth manifold — the classical space whose function algebra
+$C^\infty(M)$ the fibre functor $\tau$ recovers from $A$ — so the
+reader may keep that geometric picture in mind while the categorical
+data below are assembled. Concretely, $M$ is equipped with the
+following structures, derived purely within $\mathbf{C}$:
 
 1. **Local germs.** For each point $p$, the *augmentation ideal*
    $\mathfrak{m}_p = \ker(p^* \colon A \to \mathbf{1})$ captures
@@ -37,7 +43,7 @@ $\mathbf{C}$:
 4. **The Reeb derivation.** The generator $\xi$ of the maximal torus
    action ([categorical Reeb](#def:categorical-reeb)) satisfies the
    Cartan relations $\iota_\xi \varTheta_A = \mathrm{id}_{\mathbf{1}}$
-   and $\iota_\xid\varTheta_A = 0$ within the non-commutative
+   and $\iota_\xi d\varTheta_A = 0$ within the non-commutative
    differential calculus.
 
 ```tex

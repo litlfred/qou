@@ -5,6 +5,9 @@ import { definition } from "../../schema/builders";
  * Two protons + two electrons in H₄(q).
  */
 export default definition({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+  ],
   label: "def:h2-molecular-braid",
   title: "Hydrogen molecule $H_2$ as a braid in $H_4(q)$",
   lean: { ref: "qou:QOU.Molecular.H2Braid",
@@ -20,10 +23,10 @@ export default definition({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/hh-vertex-volume.py",
+    script: "computations/hh-vertex-volume.py",
     witness: [
-      "folio-assistant/computations/hh-trefoil-corrected.witness.json",
-      "folio-assistant/computations/hh-vertex-volume.witness.json",
+      "computations/hh-trefoil-corrected.witness.json",
+      "computations/hh-vertex-volume.witness.json",
     ],
     status: "experimental",
   },

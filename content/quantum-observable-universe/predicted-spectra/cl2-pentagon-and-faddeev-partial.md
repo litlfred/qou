@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition (partial closures of substantive Mathlib gaps 2+3,
 sorry-free).**
 *The boundary cases of the $\mathrm{Cl}_2$ pentagon identity and
@@ -20,7 +18,7 @@ All proofs are by direct rewriting + `simp` / `ring` / `linarith`
 on the unconditional building blocks `Cl_2_zero` and
 `faddeev_limit_at_zero`.
 
-## What this closes
+## Content of this closure
 
 **Items (2) and (3) — boundary portions, unconditional.** The
 boundary-case identities are now Lean theorems that any future
@@ -29,7 +27,7 @@ This formally discharges the consistency requirements for the
 two Mathlib-pending classes `Cl_2_PentagonHolds` and
 `FaddeevKashaevQuasiClassicalLimit`.
 
-## What remains
+## Remaining content
 
 **The general (non-boundary) cases.** These are the substantive
 mathematical content:
@@ -54,6 +52,3 @@ See [Table 3](#tbl:cl2-pentagon-and-faddeev-partial-table3-data).
 This represents the maximum advance achievable without upstream
 Mathlib contributions or ~hundreds of lines of additional Lean
 analysis infrastructure.
-
-
-**Remark on Mathematical Novelty:** Resolving the boundary scaffolding for the Faddeev-Kashaev relation anchors the broader pentagon formulation in a strictly formalized setting. It establishes novel consistency boundaries essential for extending these relations over non-standard algebraic domains.

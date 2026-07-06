@@ -1,5 +1,7 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Nat.Choose.Basic
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.NormNum
 
 
 /-!
@@ -79,7 +81,6 @@ theorem free_proton_exact
   rw [h1, h2, h3]
   -- A = 1, so the conditions A ≥ 2 fail, gates return 0.
   simp [Nat.choose, show (1 + 0 : ℕ) = 1 by rfl]
-  ring
 
 /-- For the free neutron (Z=0, N=1, A=1), the formula returns
     m_n exactly when Φ = 0. -/
@@ -91,7 +92,6 @@ theorem free_neutron_exact
   obtain ⟨h1, h2, h3⟩ := hΦ
   rw [h1, h2, h3]
   simp [Nat.choose, show (0 + 1 : ℕ) = 1 by rfl]
-  ring
 
 /-- The proton-neutron mass splitting (bare) equals the CODATA
     constituent difference exactly under inter-gen direct convention. -/

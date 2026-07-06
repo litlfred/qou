@@ -8,7 +8,7 @@ This audit responds to the user's suggestion that `ε_n` might relate to jet ord
 
 ## The structural argument
 
-QOU stratifies observables by **GB curvature rank** (see [`prop:curvature-rank-gb-stratification`](#prop:curvature-rank-gb-stratification) and the jet-order scaffold in CLAUDE.md):
+QOU stratifies observables by **GB curvature rank** (see [`prop:curvature-rank-gb-stratification`](#prop:curvature-rank-gb-stratification) and the jet-order scaffold in AGENTS.md):
 
 | Rank | Jet order | Content |
 |---|---|---|
@@ -93,7 +93,7 @@ $$
 
 ## Verification probe
 
-[`casimir_jet_order_derivation.py`](../../folio-assistant/computations/casimir_jet_order_derivation.py)
+[`casimir_jet_order_derivation.py`](../../computations/casimir_jet_order_derivation.py)
 evaluates the derived prefactor at `q ∈ {1.05, 1.110, 1.5}` and
 confirms:
 - All three give exactly `π²/720` (q-independence ✓)

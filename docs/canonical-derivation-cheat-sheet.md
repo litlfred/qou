@@ -2,9 +2,9 @@
 
 **Audience**: math/phys starting grad — a one-page-up map of "where every QOU formula comes from" and "which script computes it". Treats the chain as a cookbook so you don't have to dig through 700+ scripts to find what's canonical.
 
-**Paper-side companion**: [`prop:pre-archimedean-derivation-chain`](../content/quantum-observable-universe/braids-and-knots/pre-archimedean-derivation-chain.md) (the rendered version that appears in the paper). This doc adds the **compute-pipeline mapping**, **Phase 5 findings**, and the **migration backlog** that don't belong in the paper but are essential for code review.
+**Paper-side companion**: [`prose:pre-archimedean-derivation-chain`](../content/quantum-observable-universe/mass-theory/pre-archimedean-derivation-chain.md) (the rendered version that appears in the paper, in the Mass Analysis chapter's "Pre-Archimedean Derivation Chain and Audit" section). This doc adds the **compute-pipeline mapping**, **Phase 5 findings**, and the **migration backlog** that don't belong in the paper but are essential for code review.
 
-**Highlight to Claude** — referenced from CLAUDE.md so any agent picking up final-stage QOU work has the full canonical chain visible.
+**Highlight to Claude** — referenced from AGENTS.md so any agent picking up final-stage QOU work has the full canonical chain visible.
 
 ---
 
@@ -37,34 +37,62 @@ doc.
 |---|---|---|---|
 | 1. Cat action | `ρ_n: B_n → Aut_C(V^⊗n)` | ✅ proved | — (settled) |
 | 2. Stokes → Hecke | `σ_i²=(q−q⁻¹)σ_i+1` | ✅ proved | — (settled) |
-| 3. Alexander+Markov | unique `tr_M` | 🟢 derived (Lean `sorry=1`) | proof-watcher: discharge `markov_trace` sorry |
+| 3. Alexander+Markov | unique `tr_M` | 🟢 derived (Lean: **0 sorries**; 2 cited external-proof **axioms** — `markov_trace_unique_axiom` in `QOU/Hecke/MarkovTrace.lean`, `jones_markov_trace_exists` in `jones-markov-trace.lean`, both `-- Ref: [jones1987]`; verified 2026-07-02) | discharge needs a cross-level M3 class field + a reduced-words basis lemma for `H_n(q)` (research-grade — uniqueness is not provable from the current generator-level class) |
 | 4. Bring χ=−6 | 6 ↔ torus knots | 🟢 derived | — (settled) |
 | 5. Wedderburn / partitions | `H_n(q)≅⊕_λ M_{d_λ}`, `tr_M=Σ y_λ χ^λ` | 🟢 derived (Wenzl) | — (the per-block frame; everything downstream rides on it) |
 | 6. Frobenius pairing + self-duality | `⟨a,b⟩_F`, `Ψ=S²=id` | ✅ proved (D3/D23) | partition-respecting audit (§9 below) |
 | 7. GB filtration | `ℓ(w)`-graded, `E_2` collapse | 🟢 derived | — |
-| 8. Jet order | jet-prefix → `q→1` limit | 🟡 partial (Lean `sorry=4`) | proof-watcher: `SkewSYT` jet sorries |
-| 9a. Mass identity `m_p` | `m_e·VolDensity(K, q₀)` (knot-dependent) | 🟡 +2.89–3.73% gap (production uses uniform `Vol(𝓑₃)` for ALL atoms — the **lack of per-knot `VolDensity(K)` wire-up** is the bug: 64 of 65 atom-touching scripts use only `vol_density_borromean(q)`, so 63 of 65 isotopes (all A ≥ 2) get the wrong Vol(K); see [`vol-usage-audit`](audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md)) | **per-knot `VolDensity(K)` wire-up** (NOT λ_scale); #1698 (m_avg combiner), `vol_density_per_block_wiring.py` testbed |
-| 9b. Per-isotope binding `B(K)` | **canonical default**: depth-stratified `Σ_k α_k Φ_k(K)` via `binding_depth_stratified_rust.py` — α_k structural (Markov z² at k=2, m_e·8G at k≥4); per-depth ASSIGNMENT empirical. **Trace-canonical baseline** (2026-06-09 reconciliation): `binding_canonical.py` = `E_0·(tr_M(W_free)−tr_M(W_atom))` on the Jones–Markov trace (`markov/markov_trace_canonical`, per `prop:categorical-mass-markov`); other session objects (abs-sum, bar product, matrix-M signed tr_M) are off-convention ([convention-split audit](audits/2026-06-09-binding-trace-convention-split.md), PR #2082) | 🟡 canonical-with-empirical-assignment ([audit](audits/2026-06-09-binding-canonical-default-depth-stratified.md)); D/T/³He undershoots 67-73%, ⁴He -50% (Rust ≡ LR post-regen 2026-06-09); flat magic-A `2·m_e·4·8G` BEATS tower on ⁴He (+5.87%). **Trace-canonical residual is structured**: `Δ_λ(K)=B_AME/B_pred ≈ q₀^(10A−5)` — D exact to 0.01 q₀-units, T −0.07, ⁴He +0.27; ³He −1.40 (Z-dep) — near-match tier, NOT wired ([residual audit](audits/2026-06-09-delta-lambda-canonical-residual.md)) | **derive-or-refute `10A−5`** from W_free vs W_atom crossing/jet bookkeeping (formalize-first); substrate-derive per-depth α_k; reconcile tower ↔ q₀^(10A−5) residual ↔ magic-A flat |
+| 8. Jet order | jet-prefix → `q→1` limit | 🟡 partial (Lean: **0 sorries**; `SkewSYT.lean` C1 + C2 **PROVED 2026-07-02** — C2's over-quantified `removeCorner` spec re-scoped to the witnessed row and proved, C1 `skewCorners_nonempty` proved via lex-max cell; all three `PartitionHelpers` fields now theorems ⇒ default instance **unconditional**, `Fact` crutches dropped) | residual: q-Plancherel `ConvergenceBound` (research-grade), commented-out `saturatedChainsCount` section, and the `conj:` classical-limit statement itself |
+| 9a. Mass identity `m_p` | **absolute**: muon-anchored Hecke energy `m_p = 2·(m_μ·F_Bor − 6·m_e)` via the [`canonical_mass.py`](../computations/canonical_mass.py) facade (owner ruling 2026-06-24; [guardrail](canonical-mass-formula-guardrail.md)); per-knot `VolDensity(K, q₀)` retained for **binding ratios** only | 🟢 absolute nucleon mass settled ($m_p \approx 938.27$ MeV, $m_n \approx 939.56$ MeV — CODATA). 🟡 per-knot density wire-up still open on the **binding side**: 64 of 65 atom-touching scripts use uniform `vol_density_borromean(q)` ([`vol-usage-audit`](audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md)). The old +2.89–3.86% "absolute-mass gap" was the **λ_A fit artifact** ([refutation audit](audits/2026-06-24-lambda-a-refutation-artifact-audit.md)) | per-knot density wire-up (binding side; same object as the 9b ρ/Δ_λ leg per the [flip decision](audits/2026-06-13-step9a-flip-decision-package.md)); #1698 (m_avg combiner), `vol_density_per_block_wiring.py` testbed |
+| 9b. Per-isotope binding `B(K)` | **canonical default**: depth-stratified `Σ_k α_k Φ_k(K)` via `binding_depth_stratified_rust.py` — α_k structural (Markov z² at k=2, m_e·8G at k≥4); per-depth ASSIGNMENT empirical. **Trace-canonical baseline** (2026-06-09 reconciliation): `binding_canonical.py` = `E_0·(tr_M(W_free)−tr_M(W_atom))` on the Jones–Markov trace (`markov/markov_trace_canonical`, per `prop:categorical-mass-markov`); other session objects (abs-sum, bar product, matrix-M signed tr_M) are off-convention ([convention-split audit](audits/2026-06-09-binding-trace-convention-split.md), PR #2082) | 🟡 canonical-with-empirical-assignment ([audit](audits/2026-06-09-binding-canonical-default-depth-stratified.md)); D/T/³He undershoots 67-73%, ⁴He -50% (Rust ≡ LR post-regen 2026-06-09); flat magic-A `2·m_e·4·8G` BEATS tower on ⁴He (+5.87%). **Trace-canonical residual is structured**: `Δ_λ(K)=B_AME/B_pred ≈ q₀^(10A−5)` — D exact to 0.01 q₀-units, T −0.07, ⁴He +0.27; ³He −1.40 (Z-dep) — near-match tier, NOT wired ([residual audit](audits/2026-06-09-delta-lambda-canonical-residual.md)). **`10A−5` RESOLVED 2026-06-29**: refuted-as-global at A≥5 (⁶Li measures 36.1 vs predicted 55 — B_pred saturates while B_AME grows) yet derived-as-bookkeeping `10A−5 = 5·(2A−1)` over chain units (A nucleons + A−1 bonds), Lean sorry-free (`QOU/Mass/BindingResidualExponent.lean`, `QOU/BraidKnot/DeltaLambdaExponentKeystone.lean`; [synthesis](audits/2026-06-29-delta-lambda-residual-synthesis.md)); the per-site "5" is a B_pred-linearization artifact (collapses to ≈0–1 vs the exact Kashaev B_sym). Surviving open legs: bar-odd Z-correction coefficient κ = b/4 ≈ −0.437 (b(A) constant −1.747 ± 0.03 across A=6–12) and the IMME same-T `c ≈ −0.1` constancy / `Δ³=0` prediction checks. **Derived-α_k probe negative (2026-07-02)**: swapping the tower's empirical α_1=α_3=1 for the framework-derived H_3 values (α_1=0, α_3=h·z²+z per `prop:alpha-k-derivation-procedure`) degrades all 4 atoms (max/min 1.82→3.29; `probes/binding_depth_stratified_derived_alpha_probe.py`) — scope (a), consistent with the no-A-slot diagnosis that no additive assignment closes. **2026-07-02 probe sweep (PR #3200, 4 probes, all (a)-scoped):** Laurent-degree route to `10A−5` refuted (trace side *shrinks* with A) + observation `h(q₀) = q₀^(−15.0002)` ⇒ `Δ_λ(D) ≈ 1/h`; per-λ **collapse-last re-decomposition reproduces the scalar tower to ≤6.6e-7** ⇒ the frontier per-λ weight must carry NEW per-block content — consistent with the FR-projector candidate; raw per-block tower EXCLUDED by the proved Li₂^q radius; `z^k` break at k=3 DERIVED exact (`χ^{(2,1)}(Δ)=0`). Details §9.3/§9.5.1 + [probes audit 1](audits/2026-07-02-9b-probes-laurent-degree-manybody.md), [audit 2](audits/2026-07-02-9b-probes-alphak-perlambda-tower.md) | **per-λ weight on the Borromean single pipeline** — the Δ_λ frontier; structural candidate: FR-restricted projector `χ^λ·χ^λ(e_{K*})` per [brane-tower plan §7](audits/2026-06-28-brane-tower-formalize-first-plan.md); plus κ from the canonical-trace writhe, the IMME `Δ³=0` check, and bean `ovud` (wire the Li₂^q tower into production F_Bor) |
 | 10. Confinement SDP | canonical `T_w` | 🟢 derived | LP/SDP duals infra (`lp_dual_solver.py`) |
 | 11. β-decay `Q_β` | `\|Δ(net)\|·𝔈₀` | 🟢 derived; `c_k` truncation | `ck-dk-canonical-registry.md` (rung tiers) + `1ppq-qbeta.md` ledger |
 
-**The frontier is step 9** (everything else is settled or proof-cleanup). Two
-gaps: **9a** = per-knot `VolDensity(K, q₀)` wire-up (production uses uniform
-`Vol(𝓑₃)` for all atoms — +2.89% at p,n grows to +3.73% at ¹²C; root cause
-is the Vol-uniform bug per [`vol-usage-audit`](audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md)); **9b** = the **Δ_λ**
-per-block density (the Track-A blocker). See §9 for the mass=density×volume
-framing that unifies them. **9b status sharpened (2026-06-09):** on the
-trace-canonical path the whole gap collapses to a near-integer q₀-power,
-`Δ_λ(K) ≈ q₀^(10A−5)` (D exact to 0.01) — the open item is now
-**derive-or-refute `10A−5`** from the canonical chain's crossing/jet
-bookkeeping, not a search over closure ansätze
-([residual audit](audits/2026-06-09-delta-lambda-canonical-residual.md)).
-**9a flip decision settled (owner, 2026-06-13):** production stays on the
-uniform shortcut until the per-A normalisation `R(K)` — the same object as
-the 9b ρ/Δ_λ leg — is derived; the flip is a *derivation milestone*, not a
-wiring choice, and flip+re-pin is **refuted** (`R(K)` runs 2.3→63× with A;
-[decision package](audits/2026-06-13-step9a-flip-decision-package.md)).
-Do not re-litigate per-knot production flips against this gate.
+**The frontier is step 9** (everything else is settled or proof-cleanup).
+**Absolute nucleon mass is SETTLED (owner ruling 2026-06-24)** via the
+muon-anchored [`canonical_mass.py`](../computations/canonical_mass.py) facade
+($m_p \approx 938.27$ MeV, CODATA;
+[guardrail](canonical-mass-formula-guardrail.md)); the old vol-density
+absolute-mass gap (+2.89–3.86%) was the λ_A fit artifact
+([audit](audits/2026-06-24-lambda-a-refutation-artifact-audit.md)). Two gaps
+remain, both **binding-side**: **9a** = per-knot `VolDensity(K, q₀)` wire-up
+(valid where the scale cancels; 64 of 65 atom-touching scripts still uniform
+per [`vol-usage-audit`](audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md));
+**9b** = the **Δ_λ** per-block density (the Track-A blocker).
+
+> **📌 Single narrative source for the step-9 frontier: §9.** Full detail —
+> the 9b `q₀^(10A−5)` residual (derive-or-refute), the 2026-06-13 9a flip
+> gate (`R(K)` 2.3→63×; do not re-litigate), the intensive-vs-extensive
+> reframing, and the many-body series — lives in **§9 only**. Update §9 and
+> keep this paragraph + §5 item 1 as pointers. (Restructure 2026-07-02,
+> PR #3200: three drifting copies of this narrative caused the staleness
+> that PR fixed.)
+
+> **Brane-tower convergence law + Borromean single pipeline (2026-06-28, PR
+> #3016 / bean `km42`).** The per-braid brane tower (`prop:per-braid-mass-tower`,
+> Li₂^q form) **converges iff the nucleon trace `< 1`**. The colour-weighted
+> **atom-word** proton has `tr_p = 1.0653 > 1`, so the free pp pair `tr_p² =
+> 1.135 > q₀` exceeds the Li₂^q radius and the tower **diverges for Z ≥ 2** (the
+> same divergence class as the superseded per-generator form — formalize-first
+> *refuted* the standing `|tr_M(ξ)| < q` premise, counterexample exact at ⁴He
+> H₁₂). The **Borromean** nucleon `τ = |tr_M(β_Bor)| = (4+h²−3h⁴−h⁶)/(h²+4) =
+> 0.9986 < 1` (Lean `BorromeanMarkovTrace`) makes every free pair `< q₀` ⇒
+> **converges ∀Z**. This is the *single pipeline* (no special-casing): nucleon
+> mass (`F_Bor`, bean `ovud`) and per-isotope binding both flow from the one `τ`
+> ([`borromean_binding_recompute.py`](../computations/borromean_binding_recompute.py)).
+> **It is the per-knot answer to "why Bor"**: `β_Bor` is the *nucleon's own knot*
+> (a baryon **is** `𝓑₃(3 colour tubes)`; Borromean = confinement), the A=1
+> instance of the per-knot rule — *not* a global assumption (that bug is the 9a
+> uniform-`Vol(𝓑₃)`). **Result:** converges ∀Z, right *shape* (binding grows with
+> pair count: ¹⁶O err 31×→2.3×), **wrong normalization** (under-binds mid-mass,
+> over-binds ⁵⁶Fe) — i.e. the missing **Δ_λ** per-partition weight (the tower
+> applies a uniform `E₀` where `B = m_e·Σ_λ y_λ χ^λ Δ_λ` carries a per-λ weight).
+> Conventions derived from the categorical action (`g(x)=−Li₂^q(−x)` bar-even
+> channel; A=2 pair included). Full record:
+> [`formalize-first plan`](audits/2026-06-28-brane-tower-formalize-first-plan.md),
+> [`higher-order finding`](audits/2026-06-28-brane-tower-higher-order-deuteron.md).
+> Cross-link #2985 (binding correction tower is not a single low-order
+> q-hypergeometric element — consistent; no single-element closure).
 
 > ## ⚠ Critical framing — do NOT treat `λ_scale` as a separate object
 >
@@ -82,18 +110,30 @@ Do not re-litigate per-knot production flips against this gate.
 >
 > Agents recurrently rediscover and re-frame "λ_scale closure" as if it were the open problem — it is not. The problem is per-knot `VolDensity` refinement.
 
+> ## 🛑 CORRECTION (owner ruling 2026-06-24) — the block above is SUPERSEDED for ABSOLUTE mass
+>
+> Read with `K = 𝓑₃`, `m(K) = m_e × VolDensity(K, q₀)` is the **wrong absolute-mass form**: it applies `1/ℏ_q²` to the Borromean volume and yields $m_p \approx 966$ MeV (+2.96%; the λ_A linking weight is a CODATA-implied **fit**) or $\approx 406$ MeV (−57%, naive tr_M). *(Figure note: 966.05 MeV / +2.96% is the exact flip-decision-witness value; older passages in this doc quote the rounded 965 MeV / +2.89% — same λ_A artifact, trust the witness figure.)* The canonical absolute nucleon mass is the **muon-anchored Hecke energy**
+>
+> ```
+> m_p = 2·(m_μ·F_Bor − 6·m_e),   m_μ = m_e·Vol(4₁)/ℏ_q²,   F_Bor = |tr_M(β_Bor)|·[3]_q!/q³
+>     → m_p ≈ 938.27 MeV, m_n ≈ 939.56 MeV  (CODATA)
+> ```
+>
+> — the `c_q² = 1/ℏ_q²` belongs in the **muon** anchor `Vol(4₁)`, then dressed by the *dimensionless* `F_Bor`. Route every absolute nucleon/atom mass through the [`canonical_mass.py`](../computations/canonical_mass.py) facade. `vol_density_borromean` / `mass_vol_density` / `linking_weight_family_a` (λ_A) are **deprecated for absolute mass** (emit `DeprecationWarning`); `vol_density_per_block` stays valid for **binding ratios only** (the scale cancels). The per-knot `VolDensity(K)` framing above survives as the **binding-side** per-knot density question (the 9b ρ/Δ_λ leg). Read first: [`canonical-mass-formula-guardrail.md`](canonical-mass-formula-guardrail.md); λ_A excision: [`coordination/2026-06-24-lambda-a-fit-excised-per-knot-density.md`](coordination/2026-06-24-lambda-a-fit-excised-per-knot-density.md).
+
 ---
 
 ## 1. The chain in one diagram
 
 ```
-            ┌─────────────────────────────────────────┐
-            │  3 calibration inputs (only)            │
-            │   m_e ─── leptonic scale (CAL-1)        │
-            │   m_μ/m_e ─── fixes q_0 (CAL-2)        │
-            │   m_π ─── chiral/Goldstone scale (CAL-3)│
-            │   [Q_β derived from CAL-1+CAL-2]       │
-            └─────────────────────────────────────────┘
+            ┌──────────────────────────────────────────────┐
+            │  3 weak-sector calibration inputs (only)     │
+            │   m_e ──── leptonic mass scale (CAL-1, h⁰)   │
+            │   𝔇_β ──── neutron β-decay width (CAL-2, h²)  │
+            │   𝔇_π ──── pion decay width (CAL-3, h³)       │
+            │   proxies: m_e, m_μ/m_e (Q_β=ℏ/𝔇_β), m_π     │
+            └──────────────────────────────────────────────┘
+            (phys-obs precision anchor: q_0 on m_p/m_e, re-pin 2026-05-28)
                             │
    step 1. Cat action  ↓  ρ_n : B_n → Aut_𝐂(V^⊗n) via R-matrix
                             │
@@ -143,16 +183,16 @@ Every arrow lives in $\mathbb{Q}(q)$ until the Archimedean functor in step 9. No
 
 | Step | Math | Key prop / paper ref | Canonical compute script | Witness |
 |---|---|---|---|---|
-| **1. Cat action** | $\rho_n: B_n \to \mathrm{Aut}_\mathbf{C}(V^{\otimes n})$ via R-matrix | `prop:braid-action-tensor` | `hecke_core.py` (σ_i seminormal matrices) | — |
-| **2. Non-abelian Stokes** | Hecke quadratic $\sigma_i^2 = (q-q^{-1})\sigma_i + 1$ as curvature 2-form | `prop:hecke-spectral-sequence`, [yekutieli2015] | `hecke_core.py`, `hecke_character_symbolic.py` (Hoefsmit + Hecke) | — |
-| **3. Alexander+Markov** | Unique trace $\mathrm{tr}_M$ invariant under braid + stabilization moves; $J_K(q) = \mathrm{tr}_M(\beta)$ | `thm:jones-markov-trace`, [jones1987] | `hecke_characters.chi_lambda_braid`; `pyhecke_native` (Rust) | per-witness. $\mathrm{tr}_M(\beta_{\mathrm{Bor}})$ closed form **Lean-proved** (`BorromeanMarkovTrace.lean`, modulo cited $V$). **Cross-method checkpoint:** the *narrative-only* per-rep $\chi^\lambda(\beta_{\mathrm{Bor}})$ ($\chi^{(3)}{=}\chi^{(1^3)}{=}1$, $\chi^{(2,1)}{=}2{-}3h^4{-}h^6$) confirmed numerically to $\le 4\mathrm{e}{-}50$ by the skein-validated seminormal engine (`borromean-chi-independent-crosscheck`; proof-status audit [`2026-06-07`](audits/2026-06-07-borromean-chi-crossmethod-proof-status.md)) |
+| **1. Cat action** | $\rho_n: B_n \to \mathrm{Aut}_\mathbf{C}(V^{\otimes n})$ via R-matrix | `prop:braid-action-tensor` | `substrate/hecke_core.py` (σ_i seminormal matrices) | — |
+| **2. Non-abelian Stokes** | Hecke quadratic $\sigma_i^2 = (q-q^{-1})\sigma_i + 1$ as curvature 2-form | `prop:hecke-spectral-sequence`, [yekutieli2015] | `substrate/hecke_core.py`, `hecke/hecke_character_symbolic.py` (Hoefsmit + Hecke) | — |
+| **3. Alexander+Markov** | Unique trace $\mathrm{tr}_M$ invariant under braid + stabilization moves; $J_K(q) = \mathrm{tr}_M(\beta)$ | `thm:jones-markov-trace`, [jones1987] | `hecke/hecke_characters.chi_lambda_braid`; `pyhecke_native` (Rust) | per-witness. $\mathrm{tr}_M(\beta_{\mathrm{Bor}})$ closed form **Lean-proved** (`BorromeanMarkovTrace.lean`, modulo cited $V$). **Cross-method checkpoint:** the *narrative-only* per-rep $\chi^\lambda(\beta_{\mathrm{Bor}})$ ($\chi^{(3)}{=}\chi^{(1^3)}{=}1$, $\chi^{(2,1)}{=}2{-}3h^4{-}h^6$) confirmed numerically to $\le 4\mathrm{e}{-}50$ by the skein-validated seminormal engine (`borromean-chi-independent-crosscheck`; proof-status audit [`2026-06-07`](audits/2026-06-07-borromean-chi-crossmethod-proof-status.md)) |
 | **4. Bring χ=−6** | $\dim H_3(q) = 6 = $ # embeddable torus knots in $\Sigma_4$; particle content fixed | `prop:x5-bring-weight-identification`, `prop:spectral-sequence-h3-explicit` | `hecke_core._PROTON_G0/G1`, `_NEUTRON_G0/G1` (canonical H_3 chains) | — |
-| **5. Wedderburn + partitions** | $H_n(q) \cong \bigoplus_{\lambda \vdash n} M_{d_\lambda}(\mathbb{Q}(q))$; $\mathrm{tr}_M = \sum y_\lambda \chi^\lambda$ | `prop:alpha-k-derivation-procedure`, [wenzl1988] §1 | `y_lambda_wenzl_bridge.py` (numeric + symbolic); **3-axis (K, λ, A) derived-χ catalogue** [`derived_chi_catalogue_sweep.py`](../folio-assistant/computations/derived_chi_catalogue_sweep.py) (PR #1952) — pre-emits $\chi^\lambda(\beta_K)(q)$ as exact q-Laurent for every production atom × every partition; backed by `pyhecke_native.chi_q_via_gp` (Rust Geck-Pfeiffer, GIL-released v0.9.0) | `y-lambda-at-q0.witness.json`; `derived-chi-catalogue.witness.json` |
+| **5. Wedderburn + partitions** | $H_n(q) \cong \bigoplus_{\lambda \vdash n} M_{d_\lambda}(\mathbb{Q}(q))$; $\mathrm{tr}_M = \sum y_\lambda \chi^\lambda$ | `prop:alpha-k-derivation-procedure`, [wenzl1988] §1 | `y_lambda_wenzl_bridge.py` (numeric + symbolic); **3-axis (K, λ, A) derived-χ catalogue** [`derived_chi_catalogue_sweep.py`](../computations/derived_chi_catalogue_sweep.py) (PR #1952) — pre-emits $\chi^\lambda(\beta_K)(q)$ as exact q-Laurent for every production atom × every partition; backed by `pyhecke_native.chi_q_via_gp` (Rust Geck-Pfeiffer, GIL-released v0.9.0) | `y-lambda-at-q0.witness.json`; `derived-chi-catalogue.witness.json` |
 | **6. Frobenius pairing** | $\langle a, b \rangle_F = \int_A(a \cdot b)$; $\Psi = S^2 = \mathrm{id}_A$ (symmetric); chirality $a_K = 1 + w(K)·h + O(h^2)$ | `def:frobenius-hopf-substrate`, `prop:chirality-writhe-ribbon-derivation` | `chi_lambda_braid` + `tau_M_*` family | various |
 | **7. GB filtration** | Filtration by Coxeter length $\ell(w)$; spectral sequence collapses at $E_2$ | `prop:gb-spectral-sequence`, `prop:spectral-sequence-collapse` | `derivation_chain.py` (GB-NF tracker) | per-chain |
-| **8. Jet order** | Slice-traversal order = jet-prefix partial order; jet tower → classical limit at $q \to 1$ | `prop:jet-convergence-classical-limit` | `derivation_chain.py` (jet-order log) | — |
-| **9. Mass identity** | $\mathfrak{E}_0 = m_e/(q_0(q_0-1)) = m_e c_q^2 \hbar_q$ (lept); $\mathfrak{E}_0 = Q_\beta/|h(h-2)/2|$ (had). $B(K) = m_e ρ \cdot [|\mathrm{tr}_M| + \text{tower} + \mathrm{tr}_M(C_{\dim_q})]$ | `prop:atom-knot-mass-derivation` | `mass_table_ppb.py`, `m_p_borromean_verification_50dps.py`, `mass_formula_6term_mpfr_50dps.py` | `mass-table-ppb.witness.json` |
-| **10. Confinement SDP** | $T_w$ canonical from joint mass-tower SDP; $\min \|\mathrm{tr}_M(T_w) \mathfrak{E}_0 - B_\mathrm{tgt}\|$ over GB-NF | `prop:confinement-sdp`, `conj:canonical-knot-id-sdp` | `lp_dual_solver.py`, `knot_operator_lp_selection.py` | `operator-selection-lp.witness.json` |
+| **8. Jet order** | Slice-traversal order = jet-prefix partial order; jet tower → classical limit at $q \to 1$ | `conj:jet-convergence-classical-limit` (conjecture, not prop — corpus kind) | `derivation_chain.py` (jet-order log) | — |
+| **9. Mass identity** | $\mathfrak{E}_0 = m_e/(q_0(q_0-1)) = m_e c_q^2 \hbar_q$ (lept); $\mathfrak{E}_0 = Q_\beta/|h(h-2)/2|$ (had). $B(K) = m_e ρ \cdot [|\mathrm{tr}_M| + \text{tower} + \mathrm{tr}_M(C_{\dim_q})]$ | `prop:atom-knot-mass-derivation` | **absolute mass**: [`canonical_mass.py`](../computations/canonical_mass.py) facade (muon-anchored, owner ruling 2026-06-24; producer `m_p_substrate_identity_50dps.py`). Legacy vol-density scripts (`mass_table_ppb.py`, `m_p_borromean_verification_50dps.py`, `mass_formula_6term_mpfr_50dps.py`) **deprecated for absolute mass** ([guardrail](canonical-mass-formula-guardrail.md)) | `m-p-substrate-identity-50dps.witness.json`; legacy `mass-table-ppb.witness.json` |
+| **10. Confinement SDP** | $T_w$ canonical from joint mass-tower SDP; $\min \|\mathrm{tr}_M(T_w) \mathfrak{E}_0 - B_\mathrm{tgt}\|$ over GB-NF | `prop:confinement-sdp`, `conj:canonical-knot-id-sdp` | `lp_dual_solver.py` (`solve_operator_selection_lp`) | `operator-selection-lp.witness.json` |
 | **11. β-decay Q** | $Q_{\beta^-} = [\mathrm{net}(T_w^H) - \mathrm{net}(T_w^{H'})] · \mathfrak{E}_0$; free neutron: $\Delta(\mathrm{net}) = h(h-2)/2 \approx -0.1883$ | `prop:neutron-qvalue-symbolic` | `free-neutron-decay.py`, `qbeta_*.py` | `q-beta-*.witness.json` |
 
 ---
@@ -182,11 +222,11 @@ $$\frac{\mathrm{tr}_M(\mathcal{B}_K^{Z+1, N})}{\mathrm{tr}_M(\mathcal{B}_K^{Z, N
 
 $$\mathrm{tr}_M(\mathcal{B}_K) \;=\; \mathrm{tr}_M^3(\mathcal{B}_p, q)^Z \cdot \mathrm{tr}_M^3(\mathcal{B}_n, q)^N \cdot \prod_{i \in \bowtie_K} f_i(q),$$
 
-with per-interface factors $f_i \in \{z, \, z - h\}$ for positive ($\sigma$, both p-p and **p-n**) and negative ($\sigma^{-1}$, n-n) interfaces. **Convention finding (Phase 5q v2).** The production marshalling for `chi_lambda_braid` — implemented in [`canonical_braid_marshalling.marshal_to_chi_lambda_braid`](../folio-assistant/computations/canonical_braid_marshalling.py) — silently maps the canonical averaged p-n form `(c=1, d=-h/2, gen)` to `(sign=+1, gen)` (the explicit `# averaged → σ convention` line), so `chi_lambda_braid` itself never sees the averaging coefficient. The closed form for production-matching purposes uses $f_{pn} = z$, NOT $z - h/2$. The strict averaged convention (math-correct $z - h/2$) is available as an opt-in via `pn_convention="strict_averaged"` for audit-trail probes; the default in [`closed_form_tau_M.py`](../folio-assistant/computations/closed_form_tau_M.py) matches the production marshalling. Verification witness: `closed-form-tau-M-verification-phase5q.witness.json`.
+with per-interface factors $f_i \in \{z, \, z - h\}$ for positive ($\sigma$, both p-p and **p-n**) and negative ($\sigma^{-1}$, n-n) interfaces. **Convention finding (Phase 5q v2).** The production marshalling for `chi_lambda_braid` — implemented in [`canonical_braid_marshalling.marshal_to_chi_lambda_braid`](../computations/canonical_braid_marshalling.py) — silently maps the canonical averaged p-n form `(c=1, d=-h/2, gen)` to `(sign=+1, gen)` (the explicit `# averaged → σ convention` line), so `chi_lambda_braid` itself never sees the averaging coefficient. The closed form for production-matching purposes uses $f_{pn} = z$, NOT $z - h/2$. The strict averaged convention (math-correct $z - h/2$) is available as an opt-in via `pn_convention="strict_averaged"` for audit-trail probes. (**Currency note 2026-07-02:** the [`closed_form_tau_M.py`](../computations/closed_form_tau_M.py) default switched on 2026-06-01 to `pn_convention="bring_color_weighted"` per the owner directive "when canonical / derived, bring should be default"; `"chi_lambda_braid"` remains the opt-in that matches the production marshalling.) Verification witness: `closed-form-tau-M-verification-phase5q.witness.json`.
 
 **Geom ↔ tr_M unification (Phase 5p, queued).** The downstream `ω` stage of `prop:hoefsmit-scattering-pipeline` (`braid β → tr_M → J_K(q) → ω → Geom(K) → × m_e → 𝔪`) consumes $J_K = \mathrm{tr}_M(\mathcal{B}_K)$. The Phase 5q closed form gives the input to ω in closed form; verifying that the propagation through ω → Geom(K) matches the canonical mass-table chain is the Phase 5p task (queued, depends on Phase 5q verification landing).
 
-**Bring color-tube weighted averaging — open audit finding (Phase 5q).** The p-n interface "averaging" in the canonical atomic braid is currently the **uniform bar-invariant projection** $\sigma_{\mathrm{avg}} = (\sigma + \sigma^{-1})/2 = \sigma - h/2$ (per [`prop:averaging-resonance-rule`](#prop:averaging-resonance-rule)). However, the owner's intuition — recorded in [`probe_pn_flavor_asymmetry.py`](../folio-assistant/computations/probe_pn_flavor_asymmetry.py) and [`probe_per_sheet_flavor_nonin.py`](../folio-assistant/computations/probe_per_sheet_flavor_nonin.py) — is that the canonical form should be **Bring color-tube weighted**: each nucleon carries 3 quark color sheets (proton uud → $(\mu_u, \mu_u, \mu_d)$; neutron udd → $(\mu_u, \mu_d, \mu_d)$), and the p-n boundary should average over the 9 color-pair assignments weighted by quark content. Empirically (Scheme 4, per-sheet PL integration on Bring's surface) this reproduces $\Delta m_{n-p}$ to ~0.14% of CODATA. **Status**: this is a research-level open item; substrate H_{3A} compute (where [`closed_form_tau_M.py`](../folio-assistant/computations/closed_form_tau_M.py) operates) doesn't carry quark-mass inputs, so the weighted averaging is a downstream/mass-level operation. The module exposes `pn_convention="bring_color_weighted"` as a placeholder that raises `NotImplementedError` with the queue context. Implementing it requires (a) extending the closed form to accept quark-mass inputs, (b) defining the canonical color-sheet ↔ quark-flavor mapping (open per `probe_pn_flavor_asymmetry.py` conclusion: "research-level color-sheet ↔ quark-flavor mapping not explicitly stated in the paper").
+**Bring color-tube weighted averaging — open audit finding (Phase 5q).** The p-n interface "averaging" in the canonical atomic braid is currently the **uniform bar-invariant projection** $\sigma_{\mathrm{avg}} = (\sigma + \sigma^{-1})/2 = \sigma - h/2$ (per [`prop:averaging-resonance-rule`](#prop:averaging-resonance-rule)). However, the owner's intuition — recorded in [`probe_pn_flavor_asymmetry.py`](../computations/probe_pn_flavor_asymmetry.py) and [`probe_per_sheet_flavor_nonin.py`](../computations/probe_per_sheet_flavor_nonin.py) — is that the canonical form should be **Bring color-tube weighted**: each nucleon carries 3 quark color sheets (proton uud → $(\mu_u, \mu_u, \mu_d)$; neutron udd → $(\mu_u, \mu_d, \mu_d)$), and the p-n boundary should average over the 9 color-pair assignments weighted by quark content. Empirically (Scheme 4, per-sheet PL integration on Bring's surface) this reproduces $\Delta m_{n-p}$ to ~0.14% of CODATA. **Status (updated 2026-07-02 — the paragraph below was stale)**: `pn_convention="bring_color_weighted"` is **IMPLEMENTED and the canonical default since 2026-06-01** in [`closed_form_tau_M.py`](../computations/closed_form_tau_M.py) — net interface factor $f_{pn} = z - h\,(1/2 - \delta/4)$ with the substrate-derived flavor split $\delta = (m_n - m_p)/M_N$ from `flavor_split_subleading(q)` (PR #690, `prop:flavor-split-substrate`; substrate-pure, **no fitted quark masses**). The earlier text describing it as a `NotImplementedError` placeholder requiring quark-mass inputs is obsolete. What **remains open** is the paper-side item flagged by `probe_pn_flavor_asymmetry.py`: the canonical color-sheet ↔ quark-flavor mapping is not yet explicitly stated in the paper (the compute uses the substrate δ, sidestepping quark masses; the downstream Scheme-4 per-sheet PL integration reproducing $\Delta m_{n-p}$ to ~0.14% is a separate mass-level probe, not the substrate convention).
 
 **A≥3 binding campaign — summary (PR #1417, 2026-05-29).** Full record:
 [`docs/audits/2026-05-28-binding-endomorphism-analogy.md`](audits/2026-05-28-binding-endomorphism-analogy.md) §"A≥3 derivation campaign". Key chain (all derive-or-refute, no AME fit):
@@ -239,7 +279,10 @@ Pick the right avatar by context — same content, different "lens" on the subst
 Per the deep review of last 10 days of math improvements (2026-05-20 audit), the following **pipeline-discipline migrations** are queued. The MATH is correct; the COMPUTE has not migrated to the new canonical sources yet.
 
 **Status legend.** ✅ closed · 🟡 in-flight · ⏸️ gated · ⬜ not started.
-Tracker last updated: **2026-05-23 (ALL 5 ITEMS CLOSED)**.
+Tracker last updated: **2026-07-02** — items 2–5 closed (2026-05-23); item 1
+was **re-opened as 🟡 PARTIAL** by the 2026-06-03 reconciliation (closed for
+the proton only; the per-knot wire-up for A ≥ 2 is the live 9b binding-side
+item). An earlier header here claimed "ALL 5 ITEMS CLOSED" — stale.
 
 | # | Status | Action | Where | Closure / PR |
 |---|---|---|---|---|
@@ -257,13 +300,23 @@ Tracker last updated: **2026-05-23 (ALL 5 ITEMS CLOSED)**.
 >
 > **Per-isotope error budget under the current `VolDensity`:** m_p ≈ +2.89%, m_n ≈ +2.89%, Δ_pn ≈ +2.86%, ⁴He ≈ +3.65%, ⁵⁶Fe ≈ +3.86% — see `mass-table-comprehensive.witness.json` (65 isotopes). This is a **single** error, not a "λ_scale closure gap" — it is the gap between the framework's current `VolDensity` evaluation and the categorically-exact one. Refinements queued below address different routes to that refinement.
 
+> **🛑 Superseded for absolute mass (owner ruling 2026-06-24).** The framing-correction above and item 1 below predate the muon-anchor ruling: `m(K) = m_e·VolDensity(K, q₀)` is **not** the canonical absolute mass — absolute nucleon/atom masses route through [`canonical_mass.py`](../computations/canonical_mass.py) ($m_p \approx 938.27$ MeV, CODATA), and the Family-A λ_A leg was excised as a CODATA-implied fit ([refutation audit](audits/2026-06-24-lambda-a-refutation-artifact-audit.md)). The per-knot `VolDensity(K)` wire-up below remains live as the **binding-side** per-knot density (scale-cancelling uses only). Read first: [`canonical-mass-formula-guardrail.md`](canonical-mass-formula-guardrail.md).
+
 The forward work has shifted from §5 mechanics to scientific closure:
 
-1. **Per-knot `VolDensity(K, q₀)` wire-up (canonical formula `m(K) = m_e · VolDensity(K, q₀)`, knot-dependent — NOT a single-knot refinement)**. **2026-06-03 reconciliation**: the prior framing "`VolDensity(𝓑₃, q₀)` refinement" collapsed the canonical knot-dependent formula to its single-knot Borromean instance, mirroring the production-compute bug. Reality (per [`vol-usage-audit 2026-06-02`](audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md)): 87 of 89 production scripts use `vol_density_borromean(q)` (uniform `Vol(𝓑₃)`) for ALL atoms; only 2 use per-knot `vol_density_per_block(vol_K, tr_M_K, q)`. 64 atom-touching scripts have the uniform-Vol bug. Error budget mirrors it: +2.89% at p,n grows to +3.73% at ¹²C — this is **the same per-knot wire-up gap, not a single research refinement target**. The PROVED categorical at the **proton** is `VolDensity(𝓑₃, q₀) = (Vol(𝓑₃)/ℏ_q²) · λ_A` (Family-A linking_weight 2.532780, gives 965 MeV); analogous per-knot evaluations for atoms A ≥ 2 use `atom_braid_word_3A(Z, N)` and need their own `Vol(K)` + `tr_M(K)` inputs. Research-grade refinement routes (Yekutieli per-cell curvature, Bring color-tube weighted averaging, Reading-A geometrised form, q-dilog tower) sit ABOVE the per-knot wire-up — refining the proton's `VolDensity(𝓑₃)` while the rest of the table still uses `vol_density_borromean(q)` uniformly is a category error. Any refinement must round-trip the muon (4₁) anchor exactly; the production code uses Family A as the current best PROVED categorical input for the **proton specifically**.
-2. **Q_β refinement (research-grade, open).** **2026-06-03 reconciliation**: the prior bullet "the 2026-05-24 dashboard shows it now passes 100×" + "c_3 = -2 = J_Hopf(q=1) categorical-closure-friendly" is **STALE**. Live state per `per-observable-100x-status.witness.json` (2026-06-03): Q_β err = 1279 ppb, **miss = 164×**, `beats_100x = False`. The 2026-05-28 q₀ re-pin (per `docs/audits/2026-05-30-q0-repin-stale-witness-audit.md`) reverted the temporary 2026-05-24 pass. The `c_3 = -2 = J_Hopf(q=1)` framing is itself **flip-flop entry #4** in [`docs/coordination/1ppq-qbeta.md`](coordination/1ppq-qbeta.md) — settled as NEAR-MATCH not Taylor-exact (PR #1593 order audit: the per-block Δtr_M is O(√u) ε¹, ladder c_3 is at u³ ε⁶ — accidental 5-ε-order coincidence). Current keystone: **Q_β Habiro element identification** (the scaling map `f: Δtr_M(√u) ↦ Q_β(c_3 at u³)`). **Currency update (2026-06-10):** per-rung tiers live in [`coordination/ck-dk-canonical-registry.md`](coordination/ck-dk-canonical-registry.md); eliminated methods in the [refuted-class map](audits/2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md) (C1–C12 + 1309-candidate real-q saturation + 4 KLR composite preflights refuted at u², PRs #1914/#1924); the extraction precision floor `σ(c_k) = σ_R/u^k` (PR #1844) proves only c_2, c_3 are data-determined ⇒ c_k≥4 is framework-derivation-only. Open axis: fibre-level kernel `R(q,ξ)`/`Φ₂` (constraints: bar-odd `a_1 = √2·Φ₂`, depth ≥ 3 or non-constant, ζ₄ residue, simple pole at u_substrate). Full state of play: [2026-06-10 synthesis](audits/2026-06-10-qbeta-ck-state-of-play-synthesis.md).
+1. **Per-knot `VolDensity(K, q₀)` wire-up — binding-side only (post
+   2026-06-24 ruling; see the 🛑 note above).** 64 of 65 atom-touching
+   scripts still use uniform `vol_density_borromean(q)`
+   ([`vol-usage-audit`](audits/2026-06-02-vol-usage-audit-uniform-vs-per-knot.md));
+   consumer-lane migration is running on PR #3199 (bean `4f2d`).
+   **Single narrative source: §9** (frontier detail, flip gate,
+   many-body series) — the long per-knot narrative that lived here
+   drifted against §0/§9 and was consolidated 2026-07-02 (PR #3200);
+   pre-ruling history is preserved in the item-1 row of the table above.
+2. **Q_β refinement (research-grade, open).** **2026-06-03 reconciliation**: the prior bullet "the 2026-05-24 dashboard shows it now passes 100×" + "c_3 = -2 = J_Hopf(q=1) categorical-closure-friendly" is **STALE**. Live state per `per-observable-100x-status.witness.json` (2026-06-03): Q_β err = 1279 ppb, **miss = 164×**, `beats_100x = False`. The 2026-05-28 q₀ re-pin (per `docs/audits/2026-05-30-q0-repin-stale-witness-audit.md`) reverted the temporary 2026-05-24 pass. The `c_3 = -2 = J_Hopf(q=1)` framing is itself **flip-flop entry #4** in [`docs/coordination/1ppq-qbeta.md`](coordination/1ppq-qbeta.md) — settled as NEAR-MATCH not Taylor-exact (PR #1593 order audit: the per-block Δtr_M is O(√u) ε¹, ladder c_3 is at u³ ε⁶ — accidental 5-ε-order coincidence). Current keystone: **Q_β Habiro element identification** (the scaling map `f: Δtr_M(√u) ↦ Q_β(c_3 at u³)`). **Currency update (2026-06-10):** per-rung tiers live in [`coordination/ck-dk-canonical-registry.md`](coordination/ck-dk-canonical-registry.md); eliminated methods in the [refuted-class map](audits/2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md) (C1–C12 + 1309-candidate real-q saturation + 4 KLR composite preflights refuted at u², PRs #1914/#1924); the extraction precision floor `σ(c_k) = σ_R/u^k` (PR #1844) proves only c_2, c_3 are data-determined ⇒ c_k≥4 is framework-derivation-only. Open axis: fibre-level kernel `R(q,ξ)`/`Φ₂` (constraints: bar-odd `a_1 = √2·Φ₂`, depth ≥ 3 or non-constant, ζ₄ residue, simple pole at u_substrate). Full state of play: [2026-06-10 synthesis](audits/2026-06-10-qbeta-ck-state-of-play-synthesis.md). **Currency update (2026-07-02, per the [`1ppq-qbeta.md`](coordination/1ppq-qbeta.md) ledger tail):** discrete braid-tower probes are exhausted (single-content mode residual 480/606/186/240 %, PR #2502); the live lead is the **continuous E_q(2) contraction** (Hahn–Exton q-Bessel). The content/twist eigenbasis reframing ([2026-06-19 audit](audits/2026-06-19-content-twist-eigenbasis-reframing.md)) makes three verified facts promotable to exact-symbolic lemmas (L1 order-parity = word-length parity; L2 `χ_λ(1/q) = (−1)^L·χ_{λ'}(q)`; L3 the framing 3-pole GF) — Lean follow-up queued; does NOT close the Δ_λ gate.
 3. **Phase-1b BlochWigner Lake-wiring** (PR #956's roadmap) — Lake-wire `QOU.Archimedean.BlochWigner_unit_circle` into the module tree, then strengthen `BringZeroModeBlochClass` field from `∃ z : ℝ, z = bringZeroModeValue` to `∃ θ : ℝ, BlochWigner_unit_circle θ = bringZeroModeValue`. Closes the literal-rfl loophole. Auxiliary to the `VolDensity` refinement.
-4. **L2 100× Subgoal-1 close-out**. **2026-06-03 reconciliation**: live witness shows **3 of 7** observables pass 100× (m_p, m_e, m_K/m_π — the prior "3 of 6" predates the m_K/m_π closure landing). The remaining gaps are **(m_μ, Q_β, m_n, Δ_pn)** — the prior "(m_p, m_n, Δ_pn)" listing is wrong: m_p PASSES (substrate anchor; 0.0004 ppb), and m_μ is a separate gap (209.8 ppb, 963.6× miss — independent μ–p floor, see `docs/audits/2026-06-02-m-mu-pr1556-superseded-by-witness.md`). The (Q_β, m_n, Δ_pn) trio shares a single root cause documented in `docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`.
-5. **Electroweak triplet (H/W/Z) torus-knot mass route — RT-chain only.** Higgs = T(2,8), Z = T(2,6), W± = T(2,4) per [`electroweak-higgs-torus-link-triplet.md`](../content/quantum-observable-universe/archimedean-universe/electroweak-higgs-torus-link-triplet.md). T(2, k) is Seifert-fibered with Vol = 0, so the canonical `VolDensity` chain in #1 above does **not** apply directly. Recent results:
+4. **L2 100× Subgoal-1 close-out**. **Currency update (2026-07-05)**: the committed `per-observable-100x-status.witness.json` now carries `beats_100x_count = 2` — **2 of 7** observables pass 100× (**m_e, m_K/m_π only**). **m_p was DROPPED 2026-07-04**: its "pass" (substrate anchor, 0.0004 ppb) held only because a fitted Habiro tower `(1+46u⁴)(1+4u⁵)(1−29u⁶)` — a muon-era fit left applied to the proton-pinned q₀, a live +242 ppb regression — landed it on CODATA; that tower was removed, and the honest documented-pin round-trip is +1.35 ppb, a ~437× miss (full analysis: [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)). So the remaining gaps are the **five** (m_p, m_μ, Q_β, m_n, Δ_pn). m_μ is a separate gap (209.8 ppb, 963.6× miss — independent μ–p floor, see `docs/audits/2026-06-02-m-mu-pr1556-superseded-by-witness.md`). The (Q_β, m_n, Δ_pn) trio shares a single root cause documented in `docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`. (Supersedes the prior "3 of 7 … m_p PASSES" reconciliation, which predated the 2026-07-04 de-fit.)
+5. **Electroweak triplet (H/W/Z) torus-knot mass route — RT-chain only.** Higgs = T(2,8), Z = T(2,6), W± = T(2,4) per the SM-particle RT-route map [`2026-05-24-sm-particle-categorical-map-rt-route.md`](audits/2026-05-24-sm-particle-categorical-map-rt-route.md) + [`2026-05-24-pr1122-retraction-and-existing-canonical-adaptation.md`](audits/2026-05-24-pr1122-retraction-and-existing-canonical-adaptation.md). (Currency 2026-07-05: the standalone content block was dropped from `archimedean-universe/` in the 2026-05-25 chapter restructure and **re-homed** to [`particle-interactions/electroweak-higgs-torus-link-triplet.md`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md) — the live block for the T(2,k) triplet identification. The structural embedding half is split into [`prop:electroweak-triplet-bring-embedding`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/particle-interactions/electroweak-triplet-bring-embedding.md); the physical identification stays a conjecture. Related EW-cell content also lives in `mass-theory/{hoefsmit-ew-cell-content,weak-symmetric-normalization,weak-spectral-completeness}.md`, and the audit docs above document the RT-route.) T(2, k) is Seifert-fibered with Vol = 0, so the canonical `VolDensity` chain in #1 above does **not** apply directly. Recent results:
    * **Unified binomial pattern (PR #1125 — `torus-knot-h-expansion-pattern.md`):** Every even-h coefficient of `tr_M(σ_1^{2m})` collapses to `c_{2j}(T(2, 2m)) = C(m+j, 2j) / 2`, verified symbolically across 54 cells. This is the lower-level validator for any candidate RT specialization.
    * **Closed cosh form for the trace polynomial — connects to Phase 5b `cos_q ↔ cosh` synthesis (§4 above).** The trace polynomial `P_m(h) = Σ_{j=0}^{m} C(m+j, 2j)/2 · h^{2j}` reduces (sympy-exact across `m = 1..6`) to a single bar-symmetric ratio:
      $$P_m(h) \;=\; \frac{q^{2m+1} + q^{-(2m+1)}}{2\,[2]_q}, \qquad h = q - q^{-1}.$$
@@ -284,8 +337,8 @@ The forward work has shifted from §5 mechanics to scientific closure:
      | `v_framework / v_SM = log(6)` | `log(6) = 1.7918` vs measured `443/246 = 1.8008` | **−0.50%** | 6 = `gsNFBasisCardinalityB3` = `|S_3|` = `dim_ℂ H_3(q)` (PROVED) — order of the 6 GS-NF knot operators (γ, σ_0, σ_1, L_+, L_-, e^-); Chern-Simons-style `log |G|` |
      | `scalar_mass_factor / gauge_mass_factor = 6/5` | `6/5 = 1.200` vs measured 1.196 | **+0.35%** | 6 = `|S_3|` (knot-operator basis); 5 = `partitionsOfFour` = Wedderburn-block count at H_4 ((4), (3,1), (2,2), (2,1,1), (1,1,1,1)) — both PROVED |
 
-     Each hypothesis is encoded in `SubstrateEWHypotheses.lean` as a `class`-conditional `theorem` with a `sorry` marker for the empirical-match step; the structural anchors (`gsNFBasisCardinalityB3 := 6`, `partitionsOfFour := 5`) are PROVED unconditionally. **Epistemic discipline (per `production-vs-exploratory-discipline`):** these are *structurally suggestive empirical matches*, not theorems. The conversion to rigorous identities requires: (a) connection 1-form integration over the substrate loop to derive `π · h_0`, (b) knot-operator partition-function evaluation to derive `log |S_3|`, (c) cross-Wedderburn-block normalization ratio to derive `|S_3| / |Part(4)|`. Research-grade, 1-2 weeks each.
-   * Open: prove the 3 structural→empirical hypotheses above (close the `sorry` markers in `SubstrateEWHypotheses.lean`) to upgrade them from "match within < 1%" to "categorical theorem".
+     **(Currency 2026-07-02 — the Lean side is already in the honest §3b shape, 0 sorries.)** The three hypotheses live in `SubstrateEWHypotheses.lean` as a **content-bearing conjecture class `SubstrateEWDerivations`** (fields `claim_g_eq_pi_h`, `claim_v_ratio`, `claim_scalar_gauge`; `-- Ref:` cited; **no instance provided** — the open state), with honest conditional `def` accessors projecting the fields; the structural anchors (`gsNFBasisCardinalityB3 := 6`, `partitionsOfFour := 5`) are PROVED unconditionally by `rfl`/`norm_num`. Earlier text here describing "class-conditional `theorem`s with `sorry` markers" is obsolete. **Epistemic discipline (per `production-vs-exploratory-discipline`):** these are *structurally suggestive empirical matches*, not theorems. The conversion to rigorous identities requires: (a) connection 1-form integration over the substrate loop to derive `π · h_0`, (b) knot-operator partition-function evaluation to derive `log |S_3|`, (c) cross-Wedderburn-block normalization ratio to derive `|S_3| / |Part(4)|`. Research-grade, 1-2 weeks each.
+   * Open: **derive** the 3 structural→empirical hypotheses above — i.e. supply the `SubstrateEWDerivations` instance via (a) connection 1-form integration (`g = π·h₀`), (b) knot-operator partition function (`log|S_3|`), (c) cross-block normalization (`6/5`) — upgrading them from "match within < 1%" to "categorical theorem". Research-grade, 1–2 weeks each; there are **no sorries to close** (the class deliberately has no instance).
 
 ### Adjacent open work (not in §5 but cited by the cluster)
 
@@ -320,39 +373,39 @@ The forward work has shifted from §5 mechanics to scientific closure:
 
 | Need | Look at |
 |---|---|
-| The full chain rendered in the paper | [`pre-archimedean-derivation-chain.md`](../content/quantum-observable-universe/braids-and-knots/pre-archimedean-derivation-chain.md) |
-| 7 first-principles entry points + trust basis hierarchy | `folio-assistant/computations/DERIVATION-CHAIN-METHODOLOGY.md` |
-| Canonical-derivation discipline (production scripts) | `folio-assistant/computations/derivation_chain.py` |
-| q_0 50-dps canonical pin | `folio-assistant/computations/q_parameter.Q_50_DIGIT_STR` |
-| Wenzl y_λ (numeric + symbolic) | `folio-assistant/computations/y_lambda_wenzl_bridge.py` |
-| Hecke characters at varying q | `folio-assistant/computations/hecke_characters.chi_lambda_braid` (Python + Rust kernel) |
-| **3-axis (knot, partition, atom) derived-χ catalogue** | [`folio-assistant/computations/derived_chi_catalogue.py`](../folio-assistant/computations/derived_chi_catalogue.py) (schema), [`derived_chi_catalogue_sweep.py`](../folio-assistant/computations/derived_chi_catalogue_sweep.py) (production sweep), `derived-chi-catalogue.witness.json` (cell witness) — PR #1952 |
-| Catalogue parallel backend (auto-detects GIL release) | [`derived_chi_catalogue_parallel.py`](../folio-assistant/computations/derived_chi_catalogue_parallel.py) — `ThreadPoolExecutor` when `pyhecke_native >= 0.9.0`, else `ProcessPoolExecutor` fallback |
-| Catalogue Tier 2/3/4 optimisations | Tier 4 in-memory memoize: [`derived_chi_catalogue_memoize.py`](../folio-assistant/computations/derived_chi_catalogue_memoize.py); Tier 3 bar-symmetry: [`derived_chi_catalogue_bar_symmetry_audit.py`](../folio-assistant/computations/derived_chi_catalogue_bar_symmetry_audit.py) (1.9× sweep speedup); Tier 2 M_n disk cache: [`derived_chi_catalogue_mn_disk_cache.py`](../folio-assistant/computations/derived_chi_catalogue_mn_disk_cache.py) |
-| Catalogue Tier 1 LR factorisation (math + scaffold) | Audit: [`docs/audits/2026-06-07-derived-chi-catalogue-tier-1-lr-factorisation.md`](audits/2026-06-07-derived-chi-catalogue-tier-1-lr-factorisation.md); Scaffold: [`derived_chi_catalogue_lr_scaffold.py`](../folio-assistant/computations/derived_chi_catalogue_lr_scaffold.py) |
-| Catalogue Phase 3 production wire demo (1189× lookup speedup) | [`derived_chi_catalogue_production_wire_demo.py`](../folio-assistant/computations/derived_chi_catalogue_production_wire_demo.py) |
+| The full chain rendered in the paper | [`pre-archimedean-derivation-chain.md`](../content/quantum-observable-universe/mass-theory/pre-archimedean-derivation-chain.md) |
+| 7 first-principles entry points + trust basis hierarchy | `computations/DERIVATION-CHAIN-METHODOLOGY.md` |
+| Canonical-derivation discipline (production scripts) | `computations/derivation_chain.py` |
+| q_0 50-dps canonical pin | `computations/q_parameter.Q_50_DIGIT_STR` |
+| Wenzl y_λ (numeric + symbolic) | `computations/y_lambda_wenzl_bridge.py` |
+| Hecke characters at varying q | `computations/hecke/hecke_characters.chi_lambda_braid` (Python + Rust kernel) |
+| **3-axis (knot, partition, atom) derived-χ catalogue** | [`computations/derived_chi_catalogue.py`](../computations/derived_chi_catalogue.py) (schema), [`derived_chi_catalogue_sweep.py`](../computations/derived_chi_catalogue_sweep.py) (production sweep), `derived-chi-catalogue.witness.json` (cell witness) — PR #1952 |
+| Catalogue parallel backend (auto-detects GIL release) | [`derived_chi_catalogue_parallel.py`](../computations/derived_chi_catalogue_parallel.py) — `ThreadPoolExecutor` when `pyhecke_native >= 0.9.0`, else `ProcessPoolExecutor` fallback |
+| Catalogue Tier 2/3/4 optimisations | Tier 4 in-memory memoize: [`derived_chi_catalogue_memoize.py`](../computations/derived_chi_catalogue_memoize.py); Tier 3 bar-symmetry: [`derived_chi_catalogue_bar_symmetry_audit.py`](../computations/derived_chi_catalogue_bar_symmetry_audit.py) (1.9× sweep speedup); Tier 2 M_n disk cache: [`derived_chi_catalogue_mn_disk_cache.py`](../computations/derived_chi_catalogue_mn_disk_cache.py) |
+| Catalogue Tier 1 LR factorisation (math + scaffold) | Audit: [`docs/audits/2026-06-07-derived-chi-catalogue-tier-1-lr-factorisation.md`](audits/2026-06-07-derived-chi-catalogue-tier-1-lr-factorisation.md); Scaffold: [`derived_chi_catalogue_lr_scaffold.py`](../computations/derived_chi_catalogue_lr_scaffold.py) |
+| Catalogue Phase 3 production wire demo (1189× lookup speedup) | [`derived_chi_catalogue_production_wire_demo.py`](../computations/derived_chi_catalogue_production_wire_demo.py) |
 | Catalogue Lean scaffold | [`content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean`](../content/quantum-observable-universe/lean/QOU/Machinery/DerivedCharacterCatalogue.lean) |
 | pyhecke_native GIL release + batched-GP roadmap | [`docs/audits/2026-06-07-pyhecke-native-gil-release-patch.md`](audits/2026-06-07-pyhecke-native-gil-release-patch.md) — Patch 1 (GIL) LANDED in v0.9.0; Patch 2 (batched chi_lambdas_via_gp + Rayon) LANDED but **NOT routed by default** — empirical perf showed threads + Tier 3 outperform batched-Rayon at medium n |
-| Hoefsmit symbolic matrices | `folio-assistant/computations/hecke_character_symbolic.hoefsmit_matrices_symbolic` |
-| Canonical atomic braid construction | `folio-assistant/computations/mass_at_3A_proper.atom_braid_word_3A` |
-| LP duality (operator selection) | `folio-assistant/computations/lp_dual_solver.py` (`solve_operator_selection_lp`) |
+| Hoefsmit symbolic matrices | `computations/hecke/hecke_character_symbolic.hoefsmit_matrices_symbolic` |
+| Canonical atomic braid construction | `computations/mass_at_3A_proper.atom_braid_word_3A` |
+| LP duality (operator selection) | `computations/lp_dual_solver.py` (`solve_operator_selection_lp`) |
 | Notation register (post-Phase 5n) | [`content/quantum-observable-universe/notation/notation-register.md`](../content/quantum-observable-universe/notation/notation-register.md) |
 | 1ppb coordination ledger | [`docs/coordination/1ppb-categorical-chain.md`](coordination/1ppb-categorical-chain.md) |
-| Precision dashboards | `folio-assistant/computations/onepb-status-dashboard.witness.json` (L1) + `per-observable-100x-status.witness.json` (L2) |
+| Precision dashboards | `computations/onepb-status-dashboard.witness.json` (L1) + `per-observable-100x-status.witness.json` (L2) |
 
 ---
 
 ## 8. The "everything is derivation, not fit" discipline (CLAUDE-facing)
 
-**The 3-calibration rule** is strict: only $m_e$, $m_\mu/m_e$, $m_\pi$ may be calibrated against experiment. $Q_\beta$ is **derived** from CAL-1 + CAL-2 via $Q_\beta = m_e |q_0^2 - 2q_0 - 1|(q_0+1)/(2q_0^3)$ (0.17% miss). Everything else MUST derive from these three via the chain above.
+**The 3-calibration rule** is strict: the canonical mathematical calibration triple is the **decay-width triple** $(m_e, \mathfrak{D}_\beta, \mathfrak{D}_\pi)$ — a leptonic mass scale and two decay widths, entering at orders $h^0$, $h^2$, $h^3$ (owner ruling 2026-06-26; the masses are the numerical *proxies*, not the canonical inputs). CAL-2 is the neutron $\beta$-decay width $\mathfrak{D}_\beta$; it fixes $q_0$ through its most precise proxy, the lepton ratio $m_\mu/m_e$ (which dimensionalises to $\mathrm{Vol}(4_1)$). In the **Physical-Observations** layer one may anchor $q_0$ on a derived quantity of smaller experimental error — the proton ratio $m_p/m_e$ (0.06 ppb vs the muon ratio's 22 ppb; re-pin 2026-05-28, live solver `constants.py::q_at`), making $m_\mu/m_e$ a $9.5\sigma$ cross-check prediction (the μ–p tension — see `docs/audits/2026-05-28-mu-p-tension-substrate-floor.md`); this is a precision substitution, not a fourth calibration. $Q_\beta = \hbar/\mathfrak{D}_\beta$ is the **CAL-2 proxy** — not a fourth input and not "derived from CAL-1+CAL-2": the symbolic form $Q_\beta = m_e |q_0^2 - 2q_0 - 1|(q_0+1)/(2q_0^3)$ reproduces it from $q_0$ to 0.17% as a cross-check, the bar-odd $\sinh$ partner of the bar-even $\cosh$ meson scale $m_\pi$. Everything else MUST derive from these three via the chain above.
 
 **Common pitfalls** (look for these in code review):
 - Hardcoded literal values where a categorical derivation exists → **discipline violation**. Example: `LAMBDA_PROTON_DOC = 2.4599527869` should derive from `prop:lambda-scale-bring-bloch-identity`.
 - Φ_q in a binding-context script → **bar-symmetry violation**. The binding context wants Li_2^q.
-- Calibration parameters not in the 3-input set → **4th-calibration violation**. The CLAUDE.md `Δ_λ gate` (Track A blocker) explicitly forbids a 7th closure ansatz.
+- Calibration parameters not in the 3-input set → **4th-calibration violation**. The AGENTS.md `Δ_λ gate` (Track A blocker) explicitly forbids a 7th closure ansatz.
 - Substrate-side compute using $q$ as $\mathbb{R}$ before the Archimedean functor → **§7c base-ring violation**. Everything categorical should be generic over `[Field R]` until step 9.
 
-**Final-stage discipline**: every script in `folio-assistant/computations/` (non-deprecated) should either (a) be backed by a `derivation_chain.py`-tracked DerivationChain, or (b) be marked `SCRIPT_CITED` against a canonical script that IS so backed.
+**Final-stage discipline**: every script in `computations/` (non-deprecated) should either (a) be backed by a `derivation_chain.py`-tracked DerivationChain, or (b) be marked `SCRIPT_CITED` against a canonical script that IS so backed.
 
 ---
 
@@ -389,8 +442,12 @@ track in the proof-watcher queue):
 1. **`y_λ` uniqueness rests on Schur character-orthogonality**, which is **not yet
    in Mathlib** (`wedderburn-as-noncomm-fourier.lean`); the cross-validation
    `Σ_λ y_λ χ^λ = z^{ℓ(w)}` passes numerically (n=3,4,5) but is unproved in Lean.
-   Same for `π_λ` orthogonality and the per-λ Frobenius block-orthogonality
-   `⟨a,b⟩_F = ⊕_λ ⟨a,b⟩_F^λ` (implied by §step 5+6, not formalized).
+   Same for `π_λ` orthogonality. The per-λ Frobenius block-orthogonality
+   `⟨a,b⟩_F = ⊕_λ ⟨a,b⟩_F^λ` is now **formalized** (2026-07-03,
+   `QOU.Hecke.WedderburnDecomp.frobPairing_block_decomp` /
+   `frobPairing_block_orthogonal`, sorry-free) — conditional on the
+   `WedderburnDecomp` class axioms, whose discharge is the L-1/L-2 debt
+   (§9.4).
 2. **The per-block q-Reeb phase `θ_λ` is DERIVED at step 2 (Yekutieli boundary
    holonomy) but COLLAPSED by the scalar trace** `tr_M = Σ_λ y_λ χ^λ`. This is an
    *information loss*: the framework computes the per-λ phase, then sums it away.
@@ -416,7 +473,7 @@ compute has already established:
   sign-flipped). See §9.3 and [`2026-05-31-isospin-mirror-v9-discipline-assessment.md`](audits/2026-05-31-isospin-mirror-v9-discipline-assessment.md).
 - **Volumes** enter as the knot volumes of the canonical braid — `Vol(𝓑₃)` (proton,
   step 9a), `Vol(6₂)`, Borromean `8G` — through the q-hyperbolic infra
-  (`knot_volumes.py`, `Li_2^q` / Faddeev `Φ_q`, §4 context-sorting).
+  (`knot-volumes.py`, `Li_2^q` / Faddeev `Φ_q`, §4 context-sorting).
 
 So: **`Δ_λ = (q-Reeb phase density)_λ`, evaluated through the q-hyperbolic
 infrastructure, summed over the partition** — exactly the `density × volume`
@@ -434,7 +491,7 @@ shape, with the volume entering as `exp`-linearized angle, not raw `Vol`.
 > fibre-vs-observable cut as the `Im(q)` discipline and the "delta is
 > pre-archimedean" result (`prop:delta-pre-archimedean`): **stay in the fibre as
 > long as possible, observe last.** The per-λ vector is now emitted by
-> [`binding_reeb_phase_decomposition.py`](../folio-assistant/computations/binding_reeb_phase_decomposition.py)
+> [`binding_reeb_phase_decomposition.py`](../computations/binding_reeb_phase_decomposition.py)
 > (`results[atom].by_partition`: `θ_free`, `θ_atom`, `Δθ_λ`, channel) — the
 > un-collapsed carrier ready for downstream observation.
 
@@ -445,6 +502,47 @@ shape, with the volume entering as `exp`-linearized angle, not raw `Vol`.
 | Mirror-pair **differences** (³H/³He, A=3) | 🟡 **partial — signed structure real, magnitude not derived.** The bar-symmetric `(χ^λ + χ^{λᵀ})/2` isospin-mirror combination IS the signed per-block object the volume side proved necessary (#1709 T/³He obstruction), but its best *structural* result is ≈ 2.52 %. The widely-cited **0.11 % is a fitted `(1+q)/2` (CAL-4) near-match**, and is **stale** (canonical q₀ → +0.12 %). Not a derived closure. ([discipline assessment](audits/2026-05-31-isospin-mirror-v9-discipline-assessment.md)) |
 | Deuteron **absolute** binding | 🟢 derived twice: `m_e·Vol(𝓑₃)·Δtr` (+0.19 %) and `μ₀·ℏ_q·J_q²(j=1)` (−9 %), `μ₀` derived |
 | **A≥3 absolute** binding | 🔴 **the open gate** — the per-rep highest-weight `j=n/2` collapse of `θ_λ` saturates; needs the full per-rep `θ_λ` magnitude (not the linear truncation) |
+
+**Trace-canonical residual (2026-06-09).** On the trace-canonical path the
+whole 9b gap collapses to a near-integer q₀-power, `Δ_λ(K) ≈ q₀^(10A−5)`
+(D exact to 0.01 q₀-units, T −0.07, ⁴He +0.27; ³He −1.40, Z-dependent) —
+near-match tier, NOT wired
+([residual audit](audits/2026-06-09-delta-lambda-canonical-residual.md)).
+**RESOLVED 2026-06-29** (landed on main while PR #3200 was in flight):
+refuted-as-global at A≥5 (⁶Li measures 36.1 vs predicted 55) yet
+derived-as-bookkeeping `10A−5 = 5·(2A−1)` over chain units, Lean sorry-free
+(`QOU/Mass/BindingResidualExponent.lean`,
+`QOU/BraidKnot/DeltaLambdaExponentKeystone.lean`;
+[synthesis](audits/2026-06-29-delta-lambda-residual-synthesis.md)); the
+per-site "5" is a B_pred-linearization artifact. Surviving open legs: the
+bar-odd Z-correction κ = b/4 ≈ −0.437 and the IMME `Δ³=0` checks — see the
+§0 9b row. PROBE 1 below (run independently the same week) confirms the
+linearization-artifact reading from the exact-degree side.
+
+> **PROBE 1 verdict (2026-07-02) — bookkeeping route REFUTED, scope-(a).**
+> The `10A−5 = 5·[A nucleons + (A−1) interfaces]` factorization does NOT
+> come from closed-form Laurent-degree bookkeeping: exact degrees and
+> writhe differences are nowhere of that form, and the closed form's
+> trace-side contribution *shrinks* with A (4.97 → 0.88 in log-q₀ units,
+> D → ⁴He) while the law grows +10/nucleon. Constrains this route only —
+> no ingredient excluded. **Observation tier (near-match, unwired):**
+> `h(q₀) = q₀^(−15.0002)` — the deuteron exponent is `−log_q₀ h` to
+> 2e-4 relative, i.e. `Δ_λ(D) ≈ 1/h(q₀)`; and the ³He −1.40 outlier
+> decomposes as p/n-trace asymmetry +1.372 (dominant) + interface-sign
+> swap −0.938 + AME mirror +0.904. Hardening byproduct: the Phase-5q
+> closed form is now verified as an **exact ℚ identity** (symbolic
+> H₆/H₉, 11/11 assertions).
+> [Probe audit](audits/2026-07-02-9b-probes-laurent-degree-manybody.md),
+> `probe_9b_laurent_degree_10a5.py`.
+
+**9a flip gate (owner ruling, 2026-06-13).** Production stays on the
+uniform shortcut until the per-A normalisation `R(K)` — the same object as
+the 9b ρ/Δ_λ leg — is derived; the flip is a *derivation milestone*, not a
+wiring choice, and flip+re-pin is **refuted** (`R(K)` runs 2.3→63× with A;
+[decision package](audits/2026-06-13-step9a-flip-decision-package.md)).
+Do not re-litigate per-knot production flips against this gate. (Post
+2026-06-24 this gate governs the **binding-side** wire-up; absolute mass
+routes through `canonical_mass.py` regardless.)
 
 **The narrowed compute item (REFRAMED 2026-06-02 — intensive vs extensive).**
 A zero-fit derivation ([`2026-06-02-binding-intensive-vs-extensive-derivation.md`](audits/2026-06-02-binding-intensive-vs-extensive-derivation.md))
@@ -490,6 +588,39 @@ branch `he4-jsj-binding-link`). So the binding is a **many-body series**:
 | **3-body** | A=3 residual (the ~40 % pairwise gap) | T, ³He | **open** (whole-A link-volume — §below) |
 | **4-body** | whole-α volume `2·m_e·A·8G` (magic-A) | ⁴He | **+5.87 %, no fit** |
 
+> **PROBE 4 verdict (2026-07-02) — per-λ collapse-last tower REFUTED,
+> scope-(a); one invariant-backed exclusion; one convention finding.**
+> Normalized collapse-last per-λ towers (Jones, Wenzl, ambient-H₆ per-ν
+> via exact MN/LR branching) all converge ∀Z, preserve the shape, and
+> **reproduce the scalar tower to ≤ 6.6e-7** (¹⁶O err 2.2752 → 2.2752;
+> Jensen gap over the block spread is O(10⁻⁶)) — the missing Δ_λ weight
+> **cannot be a pure re-decomposition of the same Borromean trace**; it
+> must carry new per-block content (volume enrichment / knot-ideal
+> projector — GAP-A-3/A-4). Raw (unnormalized) per-block tower is
+> **EXCLUDED (invariant-backed)**: `χ^{(2,1)}² ≈ 3.977 > q₀` exceeds the
+> proved Li₂^q radius. **Convention finding (DERIVED, 9e-72):** the
+> pipeline's τ closed form is the **SU(2)/Temperley–Lieb (Jones)** Markov
+> decomposition (`y₃ = [4]/[2]³, y₂₁ = 1/[2]², y_{(1³)} = 0`), NOT the
+> corpus-canonical Wenzl z-trace (τ_W ≈ 0.9983666, gap 1.955e-4) —
+> **registered as convention D** in the trace-convention registry
+> ([convention-split audit, 2026-07-02 addendum](audits/2026-06-09-binding-trace-convention-split.md)):
+> sub-0.1 % binding claims must state their trace convention.
+> [Probe audit](audits/2026-07-02-9b-probes-alphak-perlambda-tower.md),
+> `probe_9b_perlambda_brane_tower.py`.
+
+> **PROBE 3 verdict (2026-07-02) — "4-body cross-term ≈ magic-A" REFUTED,
+> scope-(a).** The exact finite inclusion–exclusion expansion of the
+> Phase-5q product form (`B = Q_β·tr_free·[Σg_i − Σg_ig_j + …]`, sums to
+> B_pred at 1e-40) is **alternating and non-perturbative** (g ≈ 0.50–0.71;
+> ⁴He order-1 = +192.6% of B_pred, order-2 = −115.4%, order-3 = +22.8%),
+> and the **connected 4-body cross-term at ⁴He is 0.16 MeV (Q_β scale) /
+> 0.87 MeV (E₀ scale) — 34–184× below the magic-A 29.96 MeV**. The probe
+> measures the size of the missing higher term; no factor is excluded.
+> Consistency hook: order-1 at E₀ scale = **25.98% of B_AME**, exactly
+> reproducing the many-body-ceiling audit's 26% pairwise figure.
+> [Probe audit](audits/2026-07-02-9b-probes-laurent-degree-manybody.md),
+> `probe_9b_manybody_expansion.py`.
+
 **Common shape, per-isotope scale/assignment.** The deuteron (`m_e·Vol(6₂)`,
 +1.1 %), the deprecated census A=3 (`2·m_e·Vol`, knot 8₁₁/Borromean), and magic-A
 ⁴He (`2·m_e·A·8G`, +5.87 %) all share the **shape** `(scale)·m_e·Vol(link)` —
@@ -515,12 +646,12 @@ verification-debt for the proof-watcher / a Lean session (lake required).
 | # | Statement to formalize | Target Lean | Classical ref | Status |
 |---|---|---|---|---|
 | **L-1** | Schur character-orthogonality on `H_n(q)` ⇒ `y_λ` uniqueness (`Σ_λ y_λ χ^λ = z^{ℓ(w)}` invertible at generic q) | `QOU.Hecke.Wedderburn` / `wedderburn-as-noncomm-fourier.lean` | Mathas (1999) §3.43; not in Mathlib | 🔴 debt |
-| **L-2** | Central-idempotent orthogonality `π_λ π_μ = δ_{λμ} π_λ` (currently a class axiom) | `QOU.Hecke.Wedderburn` (`WedderburnDecomp`) | Mathas (1999) §3.43 | 🔴 debt |
-| **L-3** | Per-λ Frobenius block-orthogonality `⟨a,b⟩_F = ⊕_λ ⟨a,b⟩_F^λ` (implied by §5+§6, not formalized) | `QOU.…FrobeniusHopfSubstrate` | follows from L-2 + `def:frobenius-hopf-substrate` | 🔴 debt |
+| **L-2** | Central-idempotent orthogonality `π_λ π_μ = δ_{λμ} π_λ` (currently a class axiom) | `QOU.Hecke.Wedderburn` (`WedderburnDecomp`) | Mathas (1999) §3.43 | 🔴 debt — **n=3 groundwork landed 2026-07-03**: explicit π_λ coefficients on the 6-word basis, exact in ℚ(q), all four class axioms + tr_C values verified (`probes/probe_h3_central_idempotents_exact.py`, 4/4); ready for Lean transcription into a concrete n=3 `WedderburnDecomp` instance |
+| **L-3** | Per-λ Frobenius block-orthogonality `⟨a,b⟩_F = ⊕_λ ⟨a,b⟩_F^λ` | module `QOU.Hecke.Wedderburn`, decls `QOU.Hecke.WedderburnDecomp.frobPairing_block_decomp` + `.frobPairing_block_orthogonal` | follows from L-2 + `def:frobenius-hopf-substrate` | 🟡 **formalized 2026-07-03** (sorry-free, `lean`-direct exit 0), conditional on the `WedderburnDecomp` class — the docstring-promised centrality of `π_λ` is now an encoded `central` field, and both L-3 statements are *derived* from `complete` + `central` + `idempotent`/`orthogonal`. Residual debt = discharging those class axioms from the Hecke structure, i.e. exactly L-1/L-2 (Mathas §3.43) |
 
 These three close the "ASSUMED" entries in the §9.1 table. They are the
 canonical chain's standing Lean backlog; pick them up in a lake-enabled session
-(per CLAUDE.md §1, every resulting `sorry` carries a `-- Ref:` citation until
+(per AGENTS.md §1, every resulting `sorry` carries a `-- Ref:` citation until
 discharged). Proof-watcher: route under the proof-integration-watcher queue.
 
 ### 9.5 The 6-knot multiplicative closure (tower interpretation)
@@ -562,16 +693,33 @@ generating set at depth ≤ 3.
 
 The default binding-energy compute IS the depth-stratified tower sum:
 
-- **Production**: [`binding_depth_stratified_rust.py`](../folio-assistant/computations/binding_depth_stratified_rust.py)
+- **Production**: [`binding_depth_stratified_rust.py`](../computations/binding_depth_stratified_rust.py)
   (full H_{3A} via Geck-Pfeiffer + Hoefsmit Rust kernel, n ≥ 9)
 - **LR variant** (per-nucleon H_3 → H_{3A} combiner for A ≥ 4):
-  [`binding_depth_stratified_lr.py`](../folio-assistant/computations/binding_depth_stratified_lr.py)
-- **Python fallback**: [`binding_depth_stratified.py`](../folio-assistant/computations/binding_depth_stratified.py)
+  [`binding_depth_stratified_lr.py`](../computations/binding_depth_stratified_lr.py)
+- **Python fallback**: [`binding_depth_stratified.py`](../computations/binding_depth_stratified.py)
 
 α_k coefficients (NOT empirical fits):
 - α_0 = α_1 = α_3 = 1 (trivial layers)
 - α_2 = z² = (1/(√q+1/√q))² ≈ 0.2493 (Markov braid-trace marker²)
 - α_{k≥4} = m_e · 8G ≈ 3.7445 (Vol(L6a4) Borromean plateau)
+
+> **PROBE 2 verdicts (2026-07-02) — assignment-rule structure checks**
+> ([probe audit](audits/2026-07-02-9b-probes-alphak-perlambda-tower.md),
+> `probe_9b_alphak_structure.py`):
+> - **DERIVED (exact):** the Markov-marker series `z^k` **breaks at k=3
+>   structurally** — `χ^{(2,1)}(σ₁σ₂σ₁) = 0` exactly (Δ² is the central
+>   full-twist scalar and `det ρ_{(2,1)}(Δ) = −1 < 0` forces
+>   tracelessness), so `tr_M(T_Δ) = z + h·z² = z·(1 + q^{1/2} − q^{−1/2})
+>   ≈ 0.5514 ≠ z³`. The break is forced, not assigned.
+> - **REFUTED-(a):** "because Δ is central" as literally stated (Δ is not
+>   central in H₃; Δ² is). **NEAR-MATCH (10.4%):** the value α₃ = 1 itself
+>   — the collapsed weight is `1 + q^{1/2} − q^{−1/2} ≈ 1.1044` at q₀,
+>   exactly 1 only as q → 1.
+> - **REFUTED-(a):** the plateau resummation `Σ_{k≥4} z^k·N_k = m_e·8G` —
+>   fails under all 4 layer-count readings × 4 atoms; sharpener: the tail
+>   is strongly **A-dependent** while the plateau is A-independent, which
+>   kills the whole per-atom layer-count family.
 
 Current state (per witnesses 2026-06-09 — full audit at
 [`docs/audits/2026-06-09-binding-canonical-default-depth-stratified.md`](audits/2026-06-09-binding-canonical-default-depth-stratified.md)):
@@ -618,12 +766,12 @@ choice.
 
 ## See also
 
-- [`pre-archimedean-derivation-chain.md`](../content/quantum-observable-universe/braids-and-knots/pre-archimedean-derivation-chain.md) — paper-side rendering of this chain
-- [`DERIVATION-CHAIN-METHODOLOGY.md`](../folio-assistant/computations/DERIVATION-CHAIN-METHODOLOGY.md) — compute-side discipline
+- [`pre-archimedean-derivation-chain.md`](../content/quantum-observable-universe/mass-theory/pre-archimedean-derivation-chain.md) — paper-side rendering of this chain
+- [`DERIVATION-CHAIN-METHODOLOGY.md`](../computations/DERIVATION-CHAIN-METHODOLOGY.md) — compute-side discipline
 - [`docs/precision-goals.md`](precision-goals.md) — L1 vs L2 precision targets
 - [`docs/duality-tracker.md`](duality-tracker.md) — coordinate-side classifier of every duality the framework uses or could use (D1-D24); status flags + closure paths; sibling-coordination index
 - [`docs/audits/2026-06-09-binding-canonical-default-depth-stratified.md`](audits/2026-06-09-binding-canonical-default-depth-stratified.md) — depth-stratified `Σ_k α_k Φ_k` is the canonical binding default; α_k structural (z² Markov + m_e·8G Borromean), per-depth assignment rule is the unclosed gap
 - [`docs/audits/2026-05-24-magic-shell-gs-filtration-exploitation.md`](audits/2026-05-24-magic-shell-gs-filtration-exploitation.md) — magic-shell + GS-NF wiring gap (L3 closure path)
 - [`docs/audits/2026-05-24-isospin-categorical-source.md`](audits/2026-05-24-isospin-categorical-source.md) — D9 isospin closure path (operator-valued bowtie extension)
 - [`.claude/skills/local/canonical-watcher.md`](../.claude/skills/local/canonical-watcher.md) §Slot J — probe follow-up discipline (GB filtration + jet order + bar-symmetry triple-check)
-- [`CLAUDE.md`](../CLAUDE.md) — repo-wide agent discipline (§3b-cond, §7c, §7aa)
+- [`AGENTS.md`](../AGENTS.md) — repo-wide agent discipline (§3b-cond, §7c, §7aa)

@@ -14,7 +14,7 @@ text grep is too loose (catches comments) and too narrow (misses
 aliases, attribute access, `def`s, etc.).
 
 **The pattern.** A small Python audit script under
-`folio-assistant/computations/audits/` that:
+`computations/audits/` that:
 
 1. **Maintains a provenance-backed registry** of banned symbols /
    modules / prefixes — each entry carries `reason`, `purged_by` (PR
@@ -64,7 +64,7 @@ aliases, attribute access, `def`s, etc.).
    under the `validate` job, alongside the existing
    `fitted_labelled_canonical_audit`.
 
-**Canonical implementation:** [`folio-assistant/computations/audits/noncanonical_reentry_audit.py`](../../folio-assistant/computations/audits/noncanonical_reentry_audit.py),
+**Canonical implementation:** [`computations/audits/noncanonical_reentry_audit.py`](../../computations/audits/noncanonical_reentry_audit.py),
 landed in PR #1819 + hardened in #1819's review rounds.
 
 **Verification recipe.** Run a negative test BEFORE pushing: inject a
@@ -82,7 +82,7 @@ behind at the pre-reorg flat path**, becoming orphaned: their stored
 the staleness checker flags them as perpetually-stale noise.
 
 The 2026-06-02 reorg orphaned **333 script-qa sidecars** at
-`folio-assistant/computations/script-qa/` (PR #1845), plus **150
+`computations/script-qa/` (PR #1845), plus **150
 moved-subdir scripts** that needed correct-path aggregate regeneration
 (PR #1862).
 
@@ -138,7 +138,7 @@ sweep), #1862 (350+ subdir regen).
 
 ## When neither pattern applies
 
-The orphan-witness audit (`folio-assistant/computations/*.witness.json`)
+The orphan-witness audit (`computations/*.witness.json`)
 returned **0 real orphans / 6 documented legacy items** when applied to
 witness JSONs. That null result is itself useful: the pattern is not
 universal — it specifically afflicts sidecars/aggregates whose source

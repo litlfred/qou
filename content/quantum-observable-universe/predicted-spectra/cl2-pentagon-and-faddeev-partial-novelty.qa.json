@@ -1,0 +1,298 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:cl2-pentagon-and-faddeev-partial-novelty",
+  "kind": "remark",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial-novelty.ts",
+    "md": "../qou/content/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial-novelty.md"
+  },
+  "source_hashes": {
+    "md": "1fdfd43e7c08",
+    "ts": "5fd0858008eb"
+  },
+  "criteria": {
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "1fdfd43e7c08",
+          "ts": "5fd0858008eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Block placement and kind 'remark' match validated structurally.",
+        "severity": "minor"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "1fdfd43e7c08",
+          "ts": "5fd0858008eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Mathematical novelty of the Cl_2 pentagon / Faddeev-Kashaev boundary closures': mathematical reasoning is consistent in prose.",
+        "severity": "minor",
+        "evidence": "cl2-pentagon-and-faddeev-partial-novelty.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "1fdfd43e7c08",
+          "ts": "5fd0858008eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Mathematical novelty of the Cl_2 pentagon / Faddeev-Kashaev boundary closures' presents substantial mathematical content: 'Remark. Resolving the boundary scaffolding for the Faddeev-Kashaev relation a...'.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "1fdfd43e7c08",
+          "ts": "5fd0858008eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Mathematical novelty of the Cl_2 pentagon / Faddeev-Kashaev boundary closures'.",
+        "severity": "minor",
+        "evidence": "cl2-pentagon-and-faddeev-partial-novelty.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "1fdfd43e7c08",
+          "ts": "5fd0858008eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in 'Mathematical novelty of the Cl_2 pentagon / Faddeev-Kashaev boundary closures' are appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "1fdfd43e7c08",
+          "ts": "5fd0858008eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Mathematical novelty of the Cl_2 pentagon / Faddeev-Kashaev boundary closures'.",
+        "severity": "minor",
+        "evidence": "cl2-pentagon-and-faddeev-partial-novelty.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "1fdfd43e7c08",
+          "ts": "5fd0858008eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose arguments in 'Mathematical novelty of the Cl_2 pentagon / Faddeev-Kashaev boundary closures' proceed logically through the stated steps.",
+        "severity": "minor",
+        "evidence": "cl2-pentagon-and-faddeev-partial-novelty.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "1fdfd43e7c08",
+          "ts": "5fd0858008eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No Lean sibling required; narrative matches the expected configuration.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "1fdfd43e7c08",
+          "ts": "5fd0858008eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Mathematical novelty of the Cl_2 pentagon / Faddeev-Kashaev boundary closures', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "cl2-pentagon-and-faddeev-partial-novelty.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "1fdfd43e7c08",
+          "ts": "5fd0858008eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Mathematical novelty of the Cl_2 pentagon / Faddeev-Kashaev boundary closures' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "cl2-pentagon-and-faddeev-partial-novelty.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "1fdfd43e7c08",
+          "ts": "5fd0858008eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Mathematical novelty of the Cl_2 pentagon / Faddeev-Kashaev boundary closures' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "cl2-pentagon-and-faddeev-partial-novelty.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "1fdfd43e7c08",
+          "ts": "5fd0858008eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Mathematical novelty of the Cl_2 pentagon / Faddeev-Kashaev boundary closures' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "cl2-pentagon-and-faddeev-partial-novelty.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "1fdfd43e7c08",
+          "ts": "5fd0858008eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Mathematical novelty of the Cl_2 pentagon / Faddeev-Kashaev boundary closures' are reproducible.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "1fdfd43e7c08",
+          "ts": "5fd0858008eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Mathematical novelty of the Cl_2 pentagon / Faddeev-Kashaev boundary closures' are consistent."
+      }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "1fdfd43e7c08",
+          "ts": "5fd0858008eb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:57.812Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-07-03T00:52:57.812Z"
+}

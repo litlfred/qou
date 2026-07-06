@@ -1,8 +1,10 @@
 The Q-value of a $\beta^-$ decay $(Z, N) \to (Z+1, N-1)$ is
 predicted from the substrate parameter $q$ alone, with zero fitting
-parameters.  The formula uses the $2 \times 2$ standard representation
-of $H_3(q)$, which generates the full $6 \times 6$ regular
-representation via the tensor identity $2 \times 2 = 6 \times 6$.
+parameters.  The formula works inside the $2 \times 2$ standard
+representation of $H_3(q)$ — the two-dimensional irreducible
+representation of the algebra.  Since $\dim H_3(q) = 3! = 6$, the
+regular representation of $H_3(q)$ is $6 \times 6$; the traced-volume
+computation below stays within the $2 \times 2$ standard block.
 **MAE $\approx 4.4\%$ across six NNDC benchmarks, zero fitting.**
 
 The derivation chain is:

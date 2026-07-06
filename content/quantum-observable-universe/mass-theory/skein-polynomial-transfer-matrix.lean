@@ -66,6 +66,7 @@ noncomputable def crossingMatrix (q c d : ℝ) : TransferMatrix where
     for link invariants by Jones's theorem). -/
 -- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
 noncomputable def tracedVolumeFromMatrix (q : ℝ) (M : TransferMatrix) : ℝ :=
+  let q_half := Real.sqrt q
   let z := 1 / (q_half + 1 / q_half)
   z * M.a₁₁ + M.a₂₁
 
@@ -87,7 +88,13 @@ noncomputable def skeinPolynomial (q : ℝ) (tracedVolumes : List ℝ) : ℝ :=
 -- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
 theorem skein_polynomial_degree_bound (A : ℕ) (hA : 2 ≤ A) :
     2 * Nat.choose A 2 + (A - 1) = A ^ 2 - 1 := by
-  omega
+  have h2 : 2 * Nat.choose A 2 = A * (A - 1) := by
+    rw [Nat.choose_two_right, Nat.mul_div_cancel']
+    exact (Nat.even_mul_pred_self A).two_dvd
+  rw [h2]
+  rcases A with _ | n
+  · omega
+  · simp only [Nat.succ_sub_one]; ring_nf; omega
 
 -- ═══════════════════════════════════════════════════════════════════
 -- Number of transfer matrix steps = C(A,2) nucleon pairs
@@ -145,11 +152,21 @@ structure SubstrateTripleIdentity where
   /-- Physical role: the Descartes substrate parameter. -/
   descartes_q : ℝ := q
 
-/-- All three roles use the same numerical value. -/
+/-- The canonical triple-identity bundle built from a single `q > 1`,
+    taking every role from its structural default. -/
 -- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
-theorem triple_identity (s : SubstrateTripleIdentity) :
-    s.descartes_q = s.q ∧
-    s.hecke_coeff = s.q - 1/s.q := by
+noncomputable def SubstrateTripleIdentity.ofQ (q : ℝ) (hq : 1 < q) : SubstrateTripleIdentity where
+  q := q
+  q_gt_one := hq
+
+/-- All three roles of the canonical bundle use the same numerical
+    value: the Descartes substrate parameter equals `q` and the Hecke
+    deformation coefficient equals `q − 1/q`. -/
+-- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
+theorem triple_identity (q : ℝ) (hq : 1 < q) :
+    (SubstrateTripleIdentity.ofQ q hq).descartes_q = (SubstrateTripleIdentity.ofQ q hq).q ∧
+    (SubstrateTripleIdentity.ofQ q hq).hecke_coeff
+      = (SubstrateTripleIdentity.ofQ q hq).q - 1/(SubstrateTripleIdentity.ofQ q hq).q := by
   exact ⟨rfl, rfl⟩
 
 -- ═══════════════════════════════════════════════════════════════════

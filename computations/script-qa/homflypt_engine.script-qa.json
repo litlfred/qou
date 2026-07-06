@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/homflypt_engine.py",
+  "script_path": "computations/homflypt_engine.py",
   "language": "python",
   "source_hash": "ef6a6a6e3aad",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -21,7 +21,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "major",
-        "evidence": "folio-assistant/computations/homflypt_engine.py:420: bare `float(q)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/homflypt_engine.py:436: bare `float(result.real)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/homflypt_engine.py:436: bare `float(result)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/homflypt_engine.py:945: bare float literal `1.11` — wrap in `mpmath.mpf(\"1.11\")` / `Decimal(\"1.11\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/homflypt_engine.py:420: bare `float(q)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/homflypt_engine.py:436: bare `float(result.real)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/homflypt_engine.py:436: bare `float(result)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/homflypt_engine.py:945: bare float literal `1.11` — wrap in `mpmath.mpf(\"1.11\")` / `Decimal(\"1.11\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       }
     ],
     "respects_archimedean_wall": [
@@ -74,7 +74,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/homflypt_engine.py:60: `def __init__(…)` has 2 parameters without type annotation: int], int]] — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/homflypt_engine.py:124: `def evaluate(…)` has 2 parameters without type annotation: v_val, z_val — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/homflypt_engine.py:162: `def _gen(…)` has 3 parameters without type annotation: remaining, max_part, current — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/homflypt_engine.py:170: `def _hook_length(…)` has 1 parameter without type annotation: ...] — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/homflypt_engine.py:182: `def _cells(…)` has 1 parameter without type annotation: ...] — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/homflypt_engine.py:60: `def __init__(…)` has 2 parameters without type annotation: int], int]] — add `: type` (or `: Any` if the type genuinely is untyped) | computations/homflypt_engine.py:124: `def evaluate(…)` has 2 parameters without type annotation: v_val, z_val — add `: type` (or `: Any` if the type genuinely is untyped) | computations/homflypt_engine.py:162: `def _gen(…)` has 3 parameters without type annotation: remaining, max_part, current — add `: type` (or `: Any` if the type genuinely is untyped) | computations/homflypt_engine.py:170: `def _hook_length(…)` has 1 parameter without type annotation: ...] — add `: type` (or `: Any` if the type genuinely is untyped) | computations/homflypt_engine.py:182: `def _cells(…)` has 1 parameter without type annotation: ...] — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -93,7 +93,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/homflypt_engine.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/homflypt_engine.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       }
     ],
     "connected_to_ci_pipeline": [

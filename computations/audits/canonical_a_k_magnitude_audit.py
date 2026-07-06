@@ -78,7 +78,7 @@ TR_M_AT_Q0 = {
     # For T, ³He, ⁴He we'd need their separate closed-form chains; those
     # don't exist yet in the canonical witness set, so we report the structural
     # ansatz comparisons and flag what's missing.
-    "D":   mp.mpf("0.3882864240747888"),
+    "D":   mp.mpf("0.3882864715477132"),
 }
 
 

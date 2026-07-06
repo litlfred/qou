@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/markov/markov_trace_recursive.py",
+  "script_path": "computations/markov/markov_trace_recursive.py",
   "language": "python",
   "source_hash": "67d4cad46573",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -21,7 +21,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "major",
-        "evidence": "folio-assistant/computations/markov/markov_trace_recursive.py:180: bare `float(Q_MP)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/markov/markov_trace_recursive.py:186: bare `float(sp.lambdify(q, tr_M_sym, modules=[\"mpmat…)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/markov/markov_trace_recursive.py:160: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/markov/markov_trace_recursive.py:165: bare float literal `1.6332` — wrap in `mpmath.mpf(\"1.6332\")` / `Decimal(\"1.6332\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/markov/markov_trace_recursive.py:190: bare float literal `1e-3` — wrap in `mpmath.mpf(\"1e-3\")` / `Decimal(\"1e-3\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/markov/markov_trace_recursive.py:180: bare `float(Q_MP)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/markov/markov_trace_recursive.py:186: bare `float(sp.lambdify(q, tr_M_sym, modules=[\"mpmat…)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/markov/markov_trace_recursive.py:160: bare float literal `1.0` — wrap in `mpmath.mpf(\"1.0\")` / `Decimal(\"1.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/markov/markov_trace_recursive.py:165: bare float literal `1.6332` — wrap in `mpmath.mpf(\"1.6332\")` / `Decimal(\"1.6332\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/markov/markov_trace_recursive.py:190: bare float literal `1e-3` — wrap in `mpmath.mpf(\"1e-3\")` / `Decimal(\"1e-3\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       }
     ],
     "respects_archimedean_wall": [
@@ -91,7 +91,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/markov/markov_trace_recursive.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
+        "evidence": "computations/markov/markov_trace_recursive.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
       }
     ],
     "connected_to_ci_pipeline": [

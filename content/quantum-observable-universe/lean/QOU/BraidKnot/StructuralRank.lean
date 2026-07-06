@@ -5,6 +5,7 @@ import Mathlib.LinearAlgebra.Dimension.DivisionRing
 import Mathlib.LinearAlgebra.Dimension.Constructions
 import Mathlib.LinearAlgebra.DFinsupp
 import Mathlib.LinearAlgebra.Span.Basic
+import Mathlib.LinearAlgebra.FiniteDimensional.Defs
 import Mathlib.Order.SupIndep
 import Mathlib.Algebra.DirectSum.Module
 
@@ -65,6 +66,8 @@ References:
 -/
 
 namespace QOU.BraidKnot
+
+open scoped DirectSum
 
 /-- **Structural rank decomposition class** for a Hecke panel
     matrix indexed by `(μ, ν)`-blocks.
@@ -168,7 +171,10 @@ instance : PanelRankDecomposition Bool (fun _ => Fin 3)
 theorem panel_7_2_total_rank :
     (86 : ℕ) =
       ∑ μ : Bool, (Finset.univ : Finset (Fin 3)).sup (panel_7_2_blockRank μ) :=
-  PanelRankDecomposition.rank_formula
+  -- Pin `jointRankMu` explicitly: it appears only in `rank_formula`'s
+  -- instance binder (not its conclusion), so it cannot be inferred from
+  -- the goal — left implicit it stalls instance search on a metavariable.
+  PanelRankDecomposition.rank_formula (jointRankMu := panel_7_2_jointRankMu)
 
 /-! ## Submodule-level reformulation
 
@@ -218,7 +224,9 @@ class PanelImageStructure
     {V : Type v} [AddCommGroup V] [Module K V] [FiniteDimensional K V]
     (μIdx : Type) [Fintype μIdx] [DecidableEq μIdx]
     (νIdx : μIdx → Type) [∀ μ, Fintype (νIdx μ)]
-    (W : (μ : μIdx) → νIdx μ → Submodule K V) : Prop where
+    (W : (μ : μIdx) → νIdx μ → Submodule K V) where
+  -- Type-valued (not `Prop`): the `νStar` field below is *data* (a
+  -- chosen maximiser per μ), which a `Prop`-valued class cannot carry.
   /-- A maximizing ν for each μ (witness of the chain's top element). -/
   νStar : (μ : μIdx) → νIdx μ
   /-- Within-μ nesting: `νStar μ` dominates every ν in the inclusion order. -/
@@ -254,7 +262,7 @@ theorem finrank_iSup_eq_νStar
     {νIdx : μIdx → Type} [∀ μ, Fintype (νIdx μ)]
     {W : (μ : μIdx) → νIdx μ → Submodule K V}
     [P : PanelImageStructure μIdx νIdx W] (μ : μIdx) :
-    Module.finrank K (⨆ ν : νIdx μ, W μ ν) =
+    Module.finrank K (⨆ ν : νIdx μ, W μ ν : Submodule K V) =
       Module.finrank K (W μ (P.νStar μ)) := by
   rw [iSup_eq_νStar (P := P) μ]
 
@@ -286,7 +294,7 @@ theorem finrank_iSup_eq_finset_sup
     {νIdx : μIdx → Type} [∀ μ, Fintype (νIdx μ)]
     {W : (μ : μIdx) → νIdx μ → Submodule K V}
     [P : PanelImageStructure μIdx νIdx W] (μ : μIdx) :
-    Module.finrank K (⨆ ν : νIdx μ, W μ ν) =
+    Module.finrank K (⨆ ν : νIdx μ, W μ ν : Submodule K V) =
       (Finset.univ : Finset (νIdx μ)).sup
         (fun ν => Module.finrank K (W μ ν)) := by
   rw [finrank_iSup_eq_νStar (P := P) μ]

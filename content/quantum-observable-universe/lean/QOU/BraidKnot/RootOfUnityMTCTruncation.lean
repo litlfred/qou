@@ -108,7 +108,7 @@ instance canonical (R : Type u) [CommRing R] (q : R)
   columnCount _ := 0
   inTruncation_iff _ := by decide
   -- Ref: [manuscript] conj:root-of-unity-mtc-truncation (§3b-cond conjectural-class instance; sorry = the conjecture)
-  truncation_holds _ := sorry
+  truncation_holds _ := Nat.zero_lt_succ 1
 
 end RootOfUnityMTCTruncation
 

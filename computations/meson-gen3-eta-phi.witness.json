@@ -1,0 +1,79 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-02T14:19:04.878224+00:00",
+  "commitSha": "a4010ee1282ee6ba19113bd652b1acb6078f9510",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "meson-gen3-eta-phi",
+  "scriptFile": "meson_gen3_eta_phi.py",
+  "scriptHash": "6b4bf9dc7c7b",
+  "scriptCommitSha": "a4010ee1282ee6ba19113bd652b1acb6078f9510",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Gen-3 meson (T(2,7)) mass ratio via Hecke χ^(2,1)·Seifert², parallel to the proved kaon; honest comparison to all light gen-3 mesons",
+  "audit_only": true,
+  "precision_dps": 50,
+  "context": {
+    "extends": "meson-kaon-pion-hecke-seifert-proof.md (proved kaon, 290 ppm)",
+    "formula": "m_X/m_pi = (q^n - q^-n) * (3(n-2)/n)^2, n=7",
+    "n_q": 2
+  },
+  "constants": {
+    "q_0": "1.1099785955573347",
+    "m_pi_MeV": "139.570390000000003283275873400270938873291015625",
+    "seifert_ratio_T27_T23": "15/7"
+  },
+  "kaon_crosscheck": {
+    "pred": "3.5360943475191056785831986888198624923880204984437",
+    "pdg": "3.5371184389468282585227605140603175394167472572877",
+    "ppm": 289.5270388592081
+  },
+  "gen3_prediction_ratio": "7.3201063373883568510957471708436086315383363261436",
+  "comparisons": {
+    "K±": {
+      "pdg_ratio": 3.537118438946828,
+      "residual": 1.0695112317380888
+    },
+    "η": {
+      "pdg_ratio": 3.92534548337939,
+      "residual": 0.8648311004427477
+    },
+    "ρ": {
+      "pdg_ratio": 5.554616563011682,
+      "residual": 0.3178418805958834
+    },
+    "ω": {
+      "pdg_ratio": 5.6076364048277,
+      "residual": 0.30538177030992336
+    },
+    "K*": {
+      "pdg_ratio": 6.388675993525561,
+      "residual": 0.14579395555616384
+    },
+    "η'": {
+      "pdg_ratio": 6.862343796560287,
+      "residual": 0.06670644234663974
+    },
+    "φ": {
+      "pdg_ratio": 7.304278507783779,
+      "residual": 0.0021669258076224187
+    }
+  },
+  "closest_match": {
+    "meson": "φ",
+    "residual": 0.0021669258076224187
+  },
+  "timestamp": "2026-07-02T14:19:04+00:00"
+}

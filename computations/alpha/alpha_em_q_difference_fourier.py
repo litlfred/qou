@@ -14,7 +14,7 @@ whose Taylor coefficients in h = q−q⁻¹ are exact rationals linear in α
 TAYLOR analysis only — it never applied the q-difference / Fourier /
 root-of-unity machinery that PRs #1593/#1602/#1622 developed for Q_β.
 
-LEVEL DISCIPLINE (CLAUDE.md "Im(q) at fibre vs observable level"): the
+LEVEL DISCIPLINE (AGENTS.md "Im(q) at fibre vs observable level"): the
 Habiro element H(q,α) lives at the FIBRE / categorical level (pre-τ,
 formal q), where Im is UNCONSTRAINED and the operative symmetry is the
 bar INVOLUTION q↦q⁻¹ — NOT a reality assumption. q and α are kept formal
@@ -47,7 +47,7 @@ WHAT THIS PROBE COMPUTES (exact symbolic; α FORMAL; no fitting):
   4. The bar-INVOLUTION check: H is exactly a bar fixed point (witness
      assertion), over the formal fibre variable (no reality assumed).
 
-DISCIPLINE (CLAUDE.md §7b, ck-tiered-not-binary): exact symbolic; no
+DISCIPLINE (AGENTS.md §7b, ck-tiered-not-binary): exact symbolic; no
 fit; characterization of the α_EM Habiro element's q-difference
 structure. The α_EM next-order DERIVED FORM is still open (per the
 alpha-em ledger); this probe sharpens its modular target, it does not
@@ -121,7 +121,7 @@ def main() -> int:
     print("=" * 78)
     print()
 
-    # FIBRE-LEVEL symbols: NO reality assumption. Per CLAUDE.md "Im(q) at
+    # FIBRE-LEVEL symbols: NO reality assumption. Per AGENTS.md "Im(q) at
     # fibre vs observable level", the Habiro element H(q,α) lives at the
     # fibre/categorical level (pre-τ, formal q), where Im is UNCONSTRAINED
     # and the relevant structure is the bar INVOLUTION q↦q⁻¹ — not a
@@ -233,7 +233,7 @@ def main() -> int:
     nodes of the same q-difference machinery. The α-coefficients are
     cyclotomic elements (e.g. ζ_8 carries √2, ζ_5 carries √5).
 
-  • LEVEL DISCIPLINE (per CLAUDE.md Im(q) fibre-vs-observable): the
+  • LEVEL DISCIPLINE (per AGENTS.md Im(q) fibre-vs-observable): the
     spectrum lives at the FIBRE level (q,α formal, Im unconstrained;
     the involution q↦q⁻¹ is the operative symmetry). The observable
     component is real ONLY at the archimedean q₀ evaluation — where the
@@ -254,7 +254,7 @@ def main() -> int:
         "level_note": ("fibre-level: q,α formal (Im unconstrained), bar "
                        "involution q↦q⁻¹ is the structural object; reality "
                        "of observable component imposed ONLY at archimedean "
-                       "q₀ evaluation. Per CLAUDE.md Im(q) fibre-vs-observable."),
+                       "q₀ evaluation. Per AGENTS.md Im(q) fibre-vs-observable."),
     })
     builder.add_data("root_of_unity_spectrum", spectrum)
     builder.add_data("special_values", {

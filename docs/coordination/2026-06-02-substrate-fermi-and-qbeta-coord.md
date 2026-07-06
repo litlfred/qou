@@ -62,7 +62,7 @@ substrate-level QCD color-singlet implementation. Includes:
     (matches `ProtonMassEMSignBlock.plancherelSignH3`)
   - `class FermiColorSinglet` placeholder for the substrate
     categorification (NO INSTANCE — the class IS the conjecture per
-    CLAUDE.md §3b-cond)
+    AGENTS.md §3b-cond)
   - `fermi_implies_signWeight_eq_one_sixth` conditional theorem
   - Open work documented in module docstring for future agents:
     (1) representation-theoretic 1-dim sign rep via Mathlib

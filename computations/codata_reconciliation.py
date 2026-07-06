@@ -32,7 +32,7 @@ precision.
 References
 ----------
 - CODATA 2022: https://physics.nist.gov/cuu/Constants/
-- folio-assistant/computations/experimental_constants.py
+- computations/experimental_constants.py
 - prop:macdonald-hook-telescope (now licenses closed-form y_λ at
   any n, eliminating Hoefsmit-matrix rounding from the chain)
 """

@@ -30,7 +30,7 @@ $$
 $\mathbb{Q}(\zeta_3, \zeta_5)$, has Bloch-Wigner image
 $D([Z]_{\mathrm{Bring}}) = 2/(3\pi)$.*
 
-## Why this conjecture is the right framing
+## Motivation for the framing
 
 The mass / hyperbolic sector of the QOU framework
 ([figure-8 archimedean illustration](#rem:figure-8-archimedean-illustration))
@@ -143,7 +143,7 @@ NF-basis triple products $b_i \cdot \beta(T_{m,n}) \cdot b_j$
 across all relevant $H_n(q)$ — see
 [`knot-operator-lp-selection`](../braids-and-knots/knot-operator-lp-selection.md)
 and the witness
-[`knot-operator-table.witness.json`](../../../folio-assistant/computations/knot-operator-table.witness.json).
+[`knot-operator-table.witness.json`](../../../computations/knot-operator-table.witness.json).
 For $H_3(q)$ alone the NF basis
 $\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$ is six-dimensional;
 products with the torus operators $T_{1,0}, T_{2,1}, T_{2,2},
@@ -269,39 +269,6 @@ knot $K$ might require a $\sigma$-word that is NOT in the
 GS-shortlex normal form of $H_n(q)$, in which case the BW value
 $D[Z_K]$ is reached only after Hecke-trace identification with an
 NF-basis triple-product image.
-
-**Status of the NF-probe (May 2026 audit).** A repository scan
-identifies the present coverage gap concretely:
-
-| Atlas hyperbolic object | Explicit $\sigma$-word in $H_n(q)$? | Methodology tag |
-|---|---|---|
-| Figure-8 $4_1$ | ✗ (mentioned as Higgs/mass mechanism only) | not principled-derivation |
-| Borromean $\mathcal{B}_3$ | ✓ $(\sigma_1\sigma_2^{-1})^3 \in H_3$ | `principled-derivation` |
-| Deuterium $6_2$ | ✗ | `manual-historical-volume-match` |
-| Tritium $8_{11}$ | ✗ | `manual-historical-volume-match` |
-| Helium-3 $L_{6a4}$ | ✗ | `manual-historical-volume-match` |
-
-So **only 1 of 5 atlas hyperbolic objects has a principled-derivation
-$\sigma$-word**; the other four lack explicit Hecke representatives.
-The existing
-[`gb_filtration_jet_tracker.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/gb_filtration_jet_tracker.py)
-has tested $\sigma_1^3$ (electron, trefoil — torus, no BW) and
-$(\sigma_1\sigma_2^{-1})^3$ (Borromean, hyperbolic) but has NOT
-been extended to $H_{18}$ / $H_{21}$ / etc. for the four
-unrepresented hyperbolic objects.
-
-**Smallest concrete sub-question:** compute the canonical Hecke NF
-form of each of $\{4_1, 6_2, 8_{11}, L_{6a4}\}$ in the appropriate
-$H_n(q_0)$ for $n \leq 8$, either by (a) extending
-`gb_filtration_jet_tracker.py` to handle these knots, or (b)
-running the joint-tower SDP referenced as `"next_step"` in the
-existing
-[`gb-filtration-jet-order.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/gb-filtration-jet-order.witness.json).
-Once obtained, verify closure-identity against SnapPy volumes. This
-is the irreducible computational gate to inhabiting
-`BringHyperbolicDecomposition` from the atlas side — the question
-is no longer "does it exist?" but "perform the GS reduction for
-the 4 unrepresented objects."
 
 Concretely:
 
@@ -443,7 +410,7 @@ to $\mathbb{Q}(\zeta_3, \sqrt{-15})$ to higher cubic fields) need
 to be checked for $S_5$-compatible embeddability and trace-field
 inclusion in $\mathbb{Q}(\zeta_{15})$.
 
-## What's proved (Lean handle)
+## Established results (Lean handle)
 
 The Lean file [`bring-hyperbolic-knot-bloch-decomposition.lean`](bring-hyperbolic-knot-bloch-decomposition.lean)
 establishes the unconditional algebraic skeleton plus one

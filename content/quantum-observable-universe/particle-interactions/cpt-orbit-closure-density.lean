@@ -12,7 +12,7 @@
   ρ_F ∈ {m_e, 2m_e} is no longer a Boolean asserted per atomic
   link — it is derived from the orbit structure of the populated
   Wedderburn-block set Λ(K) under the Type-B fold.  This is the
-  symmetric-crystal shortcut #1 (CLAUDE.md §7b) applied at the
+  symmetric-crystal shortcut #1 (AGENTS.md §7b) applied at the
   density-rule level.
 
   Refs: prop:cpt-orbit-closure-density (this block),
@@ -39,22 +39,31 @@ We work with an abstract `Partition n` carrier (matching the stub
 in `y-lambda-closed-form-wenzl-bridge.lean`). The fold involution
 `σ` is the partition transpose. -/
 
-/-- Abstract partition carrier (full structure in
-    `Mathlib.Combinatorics.Young.YoungDiagram`). -/
-constant Partition (n : ℕ) : Type
+/-- Abstract partition carrier (a lightweight stand-in for the full
+    `Mathlib.Combinatorics.Young.YoungDiagram` structure: a partition
+    of `n` is modelled here as its list of parts). -/
+abbrev Partition (_n : ℕ) : Type := List ℕ
 
-/-- Decidable equality on partitions of `n` (full proof reduces to
-    `YoungDiagram` decidability in Mathlib). -/
-instance partitionDecEq (n : ℕ) : DecidableEq (Partition n) := by
-  intro a b
-  -- See Mathlib module Mathlib.Combinatorics.Young.YoungDiagram decEq instance
-  -- on YoungDiagram is a derived `DecidableEq`; the wrapper here
-  -- inherits it once the constant `Partition n` is unfolded.
-  exact Classical.decEq _ a b
+/-- Decidable equality on partitions of `n` (inherited from the
+    `List ℕ` carrier; the full structure reduces to `YoungDiagram`
+    decidability in Mathlib). -/
+instance partitionDecEq (n : ℕ) : DecidableEq (Partition n) :=
+  inferInstanceAs (DecidableEq (List ℕ))
 
-/-- The Type-B fold involution: partition transpose
-    `σ(λ) = λ^T`.  Identifies (k) ↔ (1^k) and is an involution. -/
-constant partitionTranspose {n : ℕ} : Partition n → Partition n
+/-- The Type-B fold involution: partition transpose `σ(λ) = λ^T`,
+    the Young-diagram conjugate.  Modelled here on the `List ℕ`
+    carrier as the column-length sequence
+    `λ^T_j = #{ i : λ_i ≥ j }`; on a genuine (weakly-decreasing)
+    partition it is the standard conjugate, identifying `(k) ↔ (1^k)`
+    and acting as an involution (`partitionTranspose_involutive`).
+    The canonical construction is `YoungDiagram.transpose` in
+    Mathlib. -/
+def partitionTranspose {n : ℕ} (lam : Partition n) : Partition n :=
+  match lam with
+  | [] => []
+  | parts =>
+      let maxPart := parts.foldr max 0
+      (List.range maxPart).map (fun j => (parts.filter (fun p => decide (j + 1 ≤ p))).length)
 
 /-- `partitionTranspose` is involutive. -/
 -- Ref: [fulton1997] https://doi.org/10.1017/CBO9780511626241 §1 (conjugate/transpose partition is an involution λ^{TT}=λ)
@@ -142,7 +151,7 @@ contributes by itself in either case.
 The proposition above discharges the dichotomy
 `ρ_F ∈ {m_e, 2 m_e}` cleanly via this orbit count, with no per-
 link manual flag.  Empirical verification: see
-`folio-assistant/computations/det_pair_law.py`, which checks
+`computations/det_pair_law.py`, which checks
 `det ρ_λ(w) · det ρ_{λ^T}(w) = ±1` over generators —
 the bar-involution acting at the determinant level, and the
 strongest currently available shadow of the underlying
@@ -163,15 +172,35 @@ the conditional-on-class structure of the main theorem above. -/
 namespace QOU.ParticleInteractions.CPTOrbit.ConditionalAudit
 
 /-- Local stub of the conjecture's axiomatised class.  See the lake-
-    package sibling for the canonical declaration. -/
+    package sibling `QOU.BraidKnot.SymmetricCrystalPairProduction`
+    for the canonical declaration.
+
+    Encodes the conjecture's content (Type-B fold-orbit closure):
+    the populated Wedderburn-block list of every baryon is closed
+    under the Type-B fold involution `σ = partitionTranspose`, so
+    chiral excitations occur only as bar-conjugate pairs.  `sorry` in
+    any concrete instance is understood as conjecture per §3b. -/
 class SymmetricCrystalPairProduction : Prop where
-  /-- Conjecture content is the class instance (sorry = conjecture
-      per CLAUDE.md §3b). -/
-  holds : True
+  /-- **The conjecture itself**: at every Hecke level `n`, every
+      populated Wedderburn-block list that is bar-invariant under the
+      Type-B fold (i.e. contains a partition iff it contains its
+      transpose) is CPT-saturated — chiral excitations occur only as
+      bar-conjugate `σ`-pairs.  Stated in the shape of the claim
+      (a fold-closure property), not as a bare `True`.  `sorry` in any
+      concrete instance is understood as conjecture per §3b. -/
+  pair_production :
+    ∀ (n : ℕ) (Λ : List (QOU.ParticleInteractions.Partition n)),
+      (∀ lam ∈ Λ, QOU.ParticleInteractions.partitionTranspose lam ∈ Λ) →
+      QOU.ParticleInteractions.isCPTSaturated Λ
 
 /-- Witness theorem demonstrating the main proposition is conditional
-    on `[SymmetricCrystalPairProduction]` per CLAUDE.md §3b-cond. -/
+    on `[SymmetricCrystalPairProduction]` per CLAUDE.md §3b-cond:
+    the orbit-closure property is recovered directly from the class. -/
 theorem conditional_on_SymmetricCrystalPairProduction
-    [_inst : SymmetricCrystalPairProduction] : True := trivial
+    [inst : SymmetricCrystalPairProduction]
+    (n : ℕ) (Λ : List (QOU.ParticleInteractions.Partition n))
+    (h : ∀ lam ∈ Λ, QOU.ParticleInteractions.partitionTranspose lam ∈ Λ) :
+    QOU.ParticleInteractions.isCPTSaturated Λ :=
+  inst.pair_production n Λ h
 
 end QOU.ParticleInteractions.CPTOrbit.ConditionalAudit

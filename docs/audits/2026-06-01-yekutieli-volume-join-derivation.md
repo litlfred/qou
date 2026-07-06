@@ -9,8 +9,8 @@ no tuning to m_p / B_AME. Builds on the four sibling audits of 2026-06-01:
 - `2026-06-01-qhyperbolic-nonabelian-stokes-wiring.md` (PR #1611, Stokes wiring)
 - `2026-06-01-vol-density-derivation-trace.md` (PR #1608, derivation trace)
 
-**Compute:** [`yekutieli_volume_join.py`](../../folio-assistant/computations/yekutieli_volume_join.py),
-witness [`yekutieli-volume-join.witness.json`](../../folio-assistant/computations/yekutieli-volume-join.witness.json).
+**Compute:** [`yekutieli_volume_join.py`](../../computations/yekutieli_volume_join.py),
+witness [`yekutieli-volume-join.witness.json`](../../computations/yekutieli-volume-join.witness.json).
 Every number below is RAW; the chi-caches (`chi-{proton,neutron}-h3*.witness.json`)
 and the documented `markov_trace_for_knot` closed form are the only inputs.
 

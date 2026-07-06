@@ -1,0 +1,64 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-29T16:48:30.424584+00:00",
+  "commitSha": "15ba450bd8ae93a785a7f9d73ba6c0ea7615be09",
+  "assertions": [
+    {
+      "name": "Q_A_witness_matches_live_single_wrap",
+      "computed": 1.1065452700764615e-42,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1.0,
+      "source": "single-wrap closed form recomputed at canonical q₀"
+    },
+    {
+      "name": "sigma_theory_dominates_sigma_CAL",
+      "computed": 0.29363616296692,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1248.212283155282,
+      "source": "σ_CAL << σ_theory (residual is framework's, not propagated)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "qbeta-habiro-residual",
+  "scriptFile": "qbeta_habiro_residual_probe.py",
+  "scriptHash": "1776f99be1b3",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "σ_theory vs σ_CAL decomposition of the production Q_β residual at the canonical (proton-pinned) q₀. Recomputed LIVE — settles the q0-repin staleness question: the ~1248 ppb is the genuine Q_N2 truncation residual, NOT a stale-witness artifact. Anti-flip-flop per ck-dk-canonical-registry.md §8: proposes NO new c_k wiring.",
+  "contentBlock": "rem:beta-decay-energy-scale",
+  "data": {
+    "q0_anchor": "m_p/m_e",
+    "q0_50dps": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+    "qA_witness_vs_live_consistency_ppb": 1.1065452700764615e-42,
+    "residual_N0_ppb": 1677537.8381469732,
+    "residual_N1_ppb": 73796.88063318116,
+    "residual_N2_ppb_PRODUCTION": 1248.212283155282,
+    "dlnQ_beta_dlnq": "-2.596755095615304458530070730593813110509751672185074812194932794750295",
+    "sigma_theory_ppb": 1248.212283155282,
+    "sigma_CAL_me_ppb": 0.2935426771375079,
+    "sigma_CAL_q0_ppb": 0.00740897434739738,
+    "sigma_CAL_total_ppb": 0.29363616296692,
+    "sigma_exp_target_ppb": 779.7187135341695,
+    "target_100x_ppb": 7.797187135341695,
+    "anchor_stability_q0_worstcase_shift_ppb": 29.862683599576002,
+    "c3_cross_anchor_swing_pct": 2.98,
+    "c3_dcdq": 4600000.0,
+    "verdict": "The 1248 ppb is σ_theory (formula truncation), NOT σ_CAL (σ_CAL ≈ 0.29 ppb, m_e-dominated; q₀ contributes 0.007 ppb). It is theory-improvable IN PRINCIPLE, but the ONLY known route below it is the fitted/near-match c_3 ladder, which FAILS the cross-anchor test (2.98 % swing) and is registry-REFUTED as a real-q derivation. No PROVED higher-order Habiro term exists. Closing 1248 → 7.8 ppb (the L2 100× target, itself BELOW the 779.7 ppb σ_exp floor) is Subgoal-2 / owner-gated q₀ work. NOT improvable by derivation today."
+  }
+}

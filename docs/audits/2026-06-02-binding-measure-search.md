@@ -1,7 +1,7 @@
 # The binding measure w_λ^bind — content-weight carries the A-extensive scaling
 
 **Date:** 2026-06-02
-**Probe:** [`probe_binding_measure_search.py`](../../folio-assistant/computations/probe_binding_measure_search.py)
+**Probe:** [`probe_binding_measure_search.py`](../../computations/probe_binding_measure_search.py)
 → `probe-binding-measure-search.witness.json`
 **Status:** EXPLORATORY; asserts the refutation. A≥3-absolute binding still open,
 but the search returns a **strong structural lead**.

@@ -46,7 +46,7 @@ $$
 where $\mathrm{st}$ is the standard-part map applied to a finite
 surreal.
 
-## What this trades
+## The trade-off
 
 The reformulation **does not solve** the volume conjecture. It
 trades:
@@ -66,7 +66,7 @@ question reduces to whether the **standard-part** matches. The
 asymptotic-limit content of Kashaev becomes the standard-part
 content of the surreal version.
 
-## Where the algebra-vs-analysis split lives
+## Location of the algebra-vs-analysis split
 
 The reformulation makes the algebraic and analytic content of
 Kashaev separable:
@@ -87,7 +87,7 @@ for surreal": Kashaev becomes one transseries reduction
 plus one $\mathrm{Vol}$-identity, instead of an analytic
 limit plus a $\mathrm{Vol}$-identity.
 
-## Why this might (or might not) help
+## Potential utility and its limits
 
 **Might help:** the algebraic side $J_K(\zeta_\omega, \omega)$
 is exactly computable for any specific knot (it is a rational

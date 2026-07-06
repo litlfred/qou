@@ -7,7 +7,7 @@ export default proposition({
     validation: "not_checked",
   },
   title:
-    "$Q_\\beta$ categorical-derivation precision ladder: $Q_\\beta^A \\cdot \\cos(\\alpha - b\\hbar_q^2/2) \\cdot (1 - b^2 \\hbar_q^4) \\cdot (1 - 2 b^3 \\hbar_q^6) \\cdot (1 + (b^2 + 1/2) b^4 \\hbar_q^8)$ from Kashiwara crystal + Hopf-Jones at q=1, $-0.0066$ ppm against CODATA at $N=3$",
+    "$\\mathfrak{Q}_\\beta$ categorical-derivation precision ladder: $\\mathfrak{Q}_\\beta^A \\cdot \\cos(\\alpha - b\\hbar_q^2/2) \\cdot (1 - b^2 \\hbar_q^4) \\cdot (1 - 2 b^3 \\hbar_q^6) \\cdot (1 + (b^2 + 1/2) b^4 \\hbar_q^8)$ from Kashiwara crystal + Hopf-Jones at q=1, $-0.0066$ ppm against CODATA at $N=3$",
   uses: ["prop:tau-M-asymptotic-rep-theory"],
   cites: [
     "jones1985",
@@ -28,10 +28,10 @@ export default proposition({
   ],
   computation: {
     engine: "python+mpmath",
-    script: "folio-assistant/computations/probe_q_beta_operator_valued_N3.py",
+    script: "computations/probe_q_beta_operator_valued_N3.py",
     witness: [
-      "folio-assistant/computations/q-beta-operator-valued-N3.witness.json",
-      "folio-assistant/computations/delta-S-chain-audit.witness.json"
+      "computations/q-beta-operator-valued-N3.witness.json",
+      "computations/delta-S-chain-audit.witness.json"
     ],
     status: "experimental",
   },

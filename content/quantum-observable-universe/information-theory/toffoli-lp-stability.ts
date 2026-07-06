@@ -1,6 +1,9 @@
 import { proposition } from "../../schema/builders";
 
 export default proposition({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+  ],
   label: "prop:toffoli-lp-stability",
   title:
     "LP-dual stability of the $q$-Toffoli braid and the golden-ratio threshold",
@@ -23,8 +26,8 @@ export default proposition({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/toffoli-lp-stability.py",
-    witness: "folio-assistant/computations/toffoli-lp-stability.witness.json",
+    script: "computations/toffoli-lp-stability.py",
+    witness: "computations/toffoli-lp-stability.witness.json",
     status: "verified",
   },
 });

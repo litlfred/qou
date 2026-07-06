@@ -26,7 +26,7 @@ structure BlockBindingFraction (A : ℕ) where
   /-- Map λ ⊢ 3A to the per-block correction Δ_λ ∈ ℝ. -/
   delta : (List ℕ) → Float
   /-- The leading-order ansatz corresponds to Δ ≡ 0. -/
-  leading_order : Prop := ∀ λ, delta λ = 0
+  leading_order : Prop := ∀ lam, delta lam = 0
 
 /-- **Per-atom Wedderburn data.**
 

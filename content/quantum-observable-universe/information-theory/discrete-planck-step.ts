@@ -17,7 +17,6 @@ export default remark({
     "algebraic-dynamics",
   ],
   uses: [
-    "rem:golden-ratio-transport",
     "rem:julia-set-reeb",
     "def:bundle-initial-conditions",
     "prop:substrate-radial-coordinate",

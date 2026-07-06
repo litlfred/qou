@@ -162,10 +162,10 @@ that lands, the closure derivation becomes a Lean computation.
   reconciliation candidates.
 - [`li2q-phiq-bar-symmetrization.md`](../../content/quantum-observable-universe/braids-and-knots/li2q-phiq-bar-symmetrization.md)
   — `prop:li2q-phiq-bar-symmetrization`, the bar-pair identity.
-- [`_phi_q_util.py`](../../folio-assistant/computations/_phi_q_util.py)
+- [`_phi_q_util.py`](../../computations/_phi_q_util.py)
   — existing Φ_q implementation, with explicit `mp.inf` return on
   boundary violation (the divergence this audit identifies).
-- [`_li_2_q_util.py`](../../folio-assistant/computations/_li_2_q_util.py)
+- [`_li_2_q_util.py`](../../computations/_li_2_q_util.py)
   — existing Li_2^q implementation (the bar-symmetric pre-Archimedean
   form).
 - `cross-isotope-rho-k-consistency.md` (this PR) — the universal

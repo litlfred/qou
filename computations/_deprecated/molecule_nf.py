@@ -27,7 +27,7 @@ Usage:
     E = h2o.binding_energy(k=7)
     stable = h2o.is_lp_confined(k=5)
 
-@module folio-assistant/computations/molecule_nf
+@module computations/molecule_nf
 """
 
 import json

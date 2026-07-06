@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-01T01:17:59.938971+00:00",
-  "commitSha": "aabe5dad71dcdb6dcf905791912aa3e5cd30aff0",
+  "computedAt": "2026-06-22T13:19:46.380774+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "candidate_search_completed",
@@ -17,107 +17,49 @@
   "durationMs": 10,
   "computation": "meson-habiro-c3-categorical-search",
   "scriptFile": "meson_habiro_c3_categorical_search.py",
-  "scriptHash": "221621b240ba",
-  "scriptCommitSha": "aabe5dad71dcdb6dcf905791912aa3e5cd30aff0",
+  "scriptHash": "7da1457a6cc3",
+  "scriptCommitSha": "8b865dcadef3965e265e0b60f1a144359008e252",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
   },
   "description": "Categorical-identification candidate scan for the meson Habiro c_3 = −0.7156 (from the REOPENED 2026-06-01 closed-route audit). Tests 30+ natural Hecke / Bring / Catalan-G / J-Hopf / b-power candidates at q_0. Records best-match candidates within 0.05% / 0.5% / 5% bands.",
   "parameters": {
-    "q_50dps": "1.1099785827513808075916690956107688798744991218736"
+    "q_50dps": "1.1099785955573347198997632204832250266562084087802"
   },
   "data": {
-    "c_3_target": "-0.7150196297869717581779597",
-    "best_candidates_within_05pct": [
-      [
-        "−5/7",
-        "-0.714285714285714",
-        "-0.10264271"
-      ],
-      [
-        "−10/14 = −5/7",
-        "-0.714285714285714",
-        "-0.10264271"
-      ],
-      [
-        "−15/21 = −5/7",
-        "-0.714285714285714",
-        "-0.10264271"
-      ]
-    ],
+    "c_3_target": "-0.9101781754469770368132734",
+    "best_candidates_within_05pct": [],
     "best_candidates_within_5pct": [
       [
-        "−5/7",
-        "-0.714285714285714",
-        "-0.10264271"
+        "−G",
+        "-0.915965594177219",
+        "0.63585558"
       ],
       [
-        "−10/14 = −5/7",
-        "-0.714285714285714",
-        "-0.10264271"
+        "−b",
+        "-0.867584067307142",
+        "-4.6797549"
       ],
       [
-        "−15/21 = −5/7",
-        "-0.714285714285714",
-        "-0.10264271"
+        "J·b/2 = −b",
+        "-0.867584067307142",
+        "-4.6797549"
       ],
       [
-        "−(1−h²)·b²",
-        "-0.719804357727305",
-        "0.66917435"
-      ],
-      [
-        "−12/17",
-        "-0.705882352941176",
-        "-1.2779057"
-      ],
-      [
-        "−16/22 = −8/11",
-        "-0.727272727272727",
-        "1.7136729"
-      ],
-      [
-        "−7/10",
-        "-0.7",
-        "-2.1005899"
-      ],
-      [
-        "−11/15",
-        "-0.733333333333333",
-        "2.5612868"
-      ],
-      [
-        "−G·b²",
-        "-0.689449238403285",
-        "-3.5761803"
-      ],
-      [
-        "−[3]_q/[4]_q",
-        "-0.740618350515776",
-        "3.5801424"
-      ],
-      [
-        "−[5]_q/[7]_q",
-        "-0.684617326003915",
-        "-4.2519537"
-      ],
-      [
-        "−3/4",
-        "-0.75",
-        "4.8922252"
+        "J·b/2·(1+ℏ_q)",
+        "-0.953545794526261",
+        "4.7647395"
       ]
     ],
-    "verdict": "WEAK CANDIDATES (3 within 0.5%): ['−5/7', '−10/14 = −5/7', '−15/21 = −5/7']. Worth investigating but not yet a clean identification."
+    "verdict": "NULL — none of the 43 natural candidates lands within 0.5% of c_3 = -0.91017818. The categorical identity (if it exists) requires a wider search beyond the natural q-arithmetic / G / b-power / J-Hopf basis."
   }
 }

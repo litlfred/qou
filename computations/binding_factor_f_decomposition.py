@@ -23,7 +23,7 @@ then tests the pairwise-bond hypothesis f = A(A−1)/2 − κ·Z(Z−1)/2 with
 f(⁴He)=8.29 vs predicted 5.63 (+47%). Doubly-magic ⁴He binds
 collectively, not pairwise — so f is a magic-SHELL-closure quantity
 (exactly #1417's "per-magic-closure f"), to be derived from the
-Demazure crystal closure level (CLAUDE.md §7b), NOT inter-nucleon bonds.
+Demazure crystal closure level (AGENTS.md §7b), NOT inter-nucleon bonds.
 
 STATUS: f is EXTRACTED from AME (not derived). The findings here are
 (i) the *factorisation* Vol(K_bind)=8G·f·Δtr — the census-free derived

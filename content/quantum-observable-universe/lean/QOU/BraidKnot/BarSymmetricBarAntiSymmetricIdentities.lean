@@ -1,4 +1,3 @@
-import Mathlib.Analysis.SpecialFunctions.Hyperbolic.Basic
 import Mathlib.Analysis.SpecialFunctions.Exp
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
@@ -109,7 +108,7 @@ theorem P_plus_Q (m : ℕ) (η : ℝ) :
 theorem P_minus_Q (m : ℕ) (η : ℝ) :
     P_m m η - Q_m m η = Real.exp (-((2 * m + 1) * η)) / (2 * Real.cosh η) := by
   unfold P_m Q_m
-  rw [div_sub_div_eq_sub_div, ← Real.cosh_sub_sinh]
+  rw [div_sub_div_same, ← Real.cosh_sub_sinh]
 
 /-! ## Per-particle tanh ladder (PR #1153 finding)
 
@@ -139,13 +138,20 @@ noncomputable def η_substrate : ℝ := Real.log 1.10997859555418057528159407960
 noncomputable def EM_channel_ratio (m : ℕ) : ℝ :=
   Real.tanh ((2 * m + 1) * η_substrate)
 
+/-- `sinh` is positive on positive reals (derived from `sinh x = (eˣ - e⁻ˣ)/2`
+    and strict monotonicity of `exp`). -/
+private theorem sinh_pos_of_pos {x : ℝ} (hx : 0 < x) : 0 < Real.sinh x := by
+  rw [Real.sinh_eq]
+  have h : Real.exp (-x) < Real.exp x := Real.exp_lt_exp.mpr (by linarith)
+  exact div_pos (by linarith) (by norm_num)
+
 /-- The per-particle EM-channel ratio is positive at substrate
     (since η_substrate > 0 and tanh is positive for positive input). -/
 theorem EM_channel_ratio_pos (m : ℕ) (h_eta : 0 < η_substrate) :
     0 < EM_channel_ratio m := by
   unfold EM_channel_ratio
-  apply Real.tanh_pos.mpr
-  positivity
+  rw [Real.tanh_eq_sinh_div_cosh]
+  exact div_pos (sinh_pos_of_pos (by positivity)) (Real.cosh_pos _)
 
 /-- The EM-channel ratios are monotonically increasing in m
     (since tanh is monotone increasing and (2m+1)·η_0 grows with m). -/
@@ -153,11 +159,18 @@ theorem EM_channel_ratio_monotone (m m' : ℕ) (h_lt : m < m')
     (h_eta_pos : 0 < η_substrate) :
     EM_channel_ratio m < EM_channel_ratio m' := by
   unfold EM_channel_ratio
-  apply Real.tanh_lt_tanh
-  have : (2 * m + 1 : ℝ) < 2 * m' + 1 := by
-    have : (m : ℝ) < m' := Nat.cast_lt.mpr h_lt
-    linarith
-  nlinarith [h_eta_pos]
+  rw [Real.tanh_eq_sinh_div_cosh, Real.tanh_eq_sinh_div_cosh,
+    div_lt_div_iff₀ (Real.cosh_pos _) (Real.cosh_pos _)]
+  have hAB : (2 * (m : ℝ) + 1) * η_substrate < (2 * (m' : ℝ) + 1) * η_substrate := by
+    have hmm : (m : ℝ) < m' := Nat.cast_lt.mpr h_lt
+    nlinarith [h_eta_pos]
+  have key : Real.sinh ((2 * (m' : ℝ) + 1) * η_substrate) * Real.cosh ((2 * (m : ℝ) + 1) * η_substrate)
+           - Real.sinh ((2 * (m : ℝ) + 1) * η_substrate) * Real.cosh ((2 * (m' : ℝ) + 1) * η_substrate)
+           = Real.sinh ((2 * (m' : ℝ) + 1) * η_substrate - (2 * (m : ℝ) + 1) * η_substrate) := by
+    rw [Real.sinh_sub]; ring
+  have hp : 0 < Real.sinh ((2 * (m' : ℝ) + 1) * η_substrate - (2 * (m : ℝ) + 1) * η_substrate) :=
+    sinh_pos_of_pos (sub_pos.mpr hAB)
+  linarith [key, hp]
 
 /-! ## Cross-reference: Borromean (NOT torus) Q = 0
 
@@ -212,11 +225,16 @@ theorem Q_borromean_real_eq_zero (h : ℝ) : Q_borromean_real h = 0 := by
   unfold Q_borromean_real trM_borromean_real
   ring
 
-/-- Compatibility shim: keeps the original `Q_borromean_eq_zero : True`
-    name visible for downstream consumers that imported the placeholder
-    by name.  Future code should import `Q_borromean_real_eq_zero` (this
-    file) or `QOU.BraidsAndKnots.Q_borromean_eq_zero` (over `ℚ`)
-    directly. -/
-theorem Q_borromean_eq_zero : True := trivial
+/-- The Borromean Markov trace has zero bar-anti-symmetric companion over `ℝ`
+    (named alias of `Q_borromean_real_eq_zero`, kept resolvable for downstream
+    consumers that referred to `Q_borromean_eq_zero` by name; see also the `ℚ`
+    version `QOU.BraidsAndKnots.Q_borromean_eq_zero` in
+    `BorromeanMarkovTrace.lean`).
+
+    Previously a `def Q_borromean_eq_zero : True := trivial` placeholder shim;
+    de-vacuified to carry the real statement now that `Q_borromean_real_eq_zero`
+    proves it (AGENTS.md §1a — no `: True` dodges). -/
+theorem Q_borromean_eq_zero (h : ℝ) : Q_borromean_real h = 0 :=
+  Q_borromean_real_eq_zero h
 
 end QOU.BraidKnot

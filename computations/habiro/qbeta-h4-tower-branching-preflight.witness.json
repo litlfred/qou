@@ -1,0 +1,157 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-18T03:34:03.258281+00:00",
+  "commitSha": "9506223ee62ff1bdf609840940f3aaead262019e",
+  "assertions": [
+    {
+      "name": "h4_seminormal_relations_hold",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "H₄ Hoefsmit seminormal reps (all λ⊢4) satisfy the Hecke + braid + far-commutation relations to 1e-40 — the Stage-C foundation."
+    },
+    {
+      "name": "h3_h4_branching_holds",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "χ^μ(w)=Σ_(λ↗μ)χ^λ(w) for all 6 σ₃-free decay words, all μ⊢4 (max rel err < 1e-40) — the H₃⊂H₄ structural map; σ₃-free elements add no new DOF, so c_4 is σ₃-gated (open Stage C)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 25,
+  "computation": "qbeta-h4-tower-branching-preflight",
+  "scriptFile": "qbeta_h4_tower_branching_preflight.py",
+  "scriptHash": "6dd96a0a7332",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Formalize-first preflight for the Q_β c_4 H₄-tower (Stage C): validates the H₄ Hoefsmit seminormal reps (Hecke+braid relations) and the H₃⊂H₄ branching map χ^μ(w)=Σ_{λ↗μ}χ^λ(w) on the σ₃-free decay words, demonstrating that the tower adds a new DOF only along σ₃ (level-4). Localizes the c_4 content to the OPEN σ₃-lift; no c_4 fabricated, no fit.",
+  "contentBlock": "prop:q-beta-categorical-precision-ladder",
+  "data": {
+    "h4_seminormal_validation": {
+      "partitions_of_4": [
+        [
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "dims": {
+        "(4,)": 1,
+        "(3, 1)": 3,
+        "(2, 2)": 2,
+        "(2, 1, 1)": 3,
+        "(1, 1, 1, 1)": 1
+      },
+      "hecke_relation_ok": true,
+      "braid_and_far_commutation_ok": true,
+      "tolerance": "1e-40"
+    },
+    "h3_h4_branching": {
+      "map": {
+        "(4,)": [
+          [
+            3
+          ]
+        ],
+        "(3, 1)": [
+          [
+            2,
+            1
+          ],
+          [
+            3
+          ]
+        ],
+        "(2, 2)": [
+          [
+            2,
+            1
+          ]
+        ],
+        "(2, 1, 1)": [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "(1, 1, 1, 1)": [
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      },
+      "verified_on_words": [
+        [],
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "max_rel_error": "5.62287e-52",
+      "branching_holds": true,
+      "identity": "chi^mu_{H4}(w) = sum_{lambda -> mu} chi^lambda_{H3}(w)"
+    },
+    "sigma3_gating": {
+      "h3_max_word_length": 3,
+      "conclusion": "sigma_3-free elements carry no new H4 content (branching); c_4 is gated on the OPEN length-4 sigma_3 lift (Stage C).",
+      "no_sigma3_lift_proposed": true,
+      "consistent_with": [
+        "C12 (trace stabilisation z·tr)",
+        "C13 (Delta_trM-seeded bridge refuted, PR #2465)"
+      ]
+    }
+  }
+}

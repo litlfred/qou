@@ -64,7 +64,7 @@
         "The formula m_p/m_e = 2*(Vol/hbar^2)*F_Bor - 12 itself",
         "Gap dP/P = 2.41e-7 is the formula's empirical residual"
       ],
-      "research_target": "Derive the N>=1 brane-tower correction to the mass formula. Same structural layer as Q_beta N=3 (b^3*hbar^6 order). A candidate (2/5)*J_{3_1}*b^3*hbar^6 matches to 0.02% but is NOT DERIVED — flagged as numerical fit per CLAUDE.md anti-pattern (no fit-based ansatz)."
+      "research_target": "Derive the N>=1 brane-tower correction to the mass formula. Same structural layer as Q_beta N=3 (b^3*hbar^6 order). A candidate (2/5)*J_{3_1}*b^3*hbar^6 matches to 0.02% but is NOT DERIVED — flagged as numerical fit per AGENTS.md anti-pattern (no fit-based ansatz)."
     },
     "candidate_correction_NOT_PROVED": {
       "form": "dP/P = (2/5) * J_{3_1}(q_0) * b^3 * hbar^6",

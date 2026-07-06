@@ -19,6 +19,7 @@
   Ref: [thurston1978] http://library.msri.org/books/gt3m/
 -/
 
+import Mathlib.Tactic.Ring
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.List.Basic
 
@@ -68,16 +69,16 @@ class CrossingGradedMassExpansion (K : Type*) where
     `f` applied to the list's last element.  Proved by induction
     on the list (peeling off one element at a time). -/
 private lemma foldl_const_update_eq_last
-    {α β : Type*} (f : α → β) (init : β) :
-    ∀ (xs : List α) (h : xs ≠ []),
+    {α β : Type*} (f : α → β) :
+    ∀ (xs : List α) (init : β) (h : xs ≠ []),
       xs.foldl (fun _ x => f x) init = f (xs.getLast h)
-  | [], h => (h rfl).elim
-  | [a], _ => by simp [List.foldl, List.getLast]
-  | a :: b :: rest, _ => by
-      simp only [List.foldl_cons]
+  | [], _, h => (h rfl).elim
+  | [a], _, _ => by simp
+  | a :: b :: rest, init, _ => by
+      rw [List.foldl_cons]
       have htail : (b :: rest) ≠ [] := List.cons_ne_nil _ _
-      rw [foldl_const_update_eq_last f (f a) (b :: rest) htail]
-      simp [List.getLast]
+      rw [foldl_const_update_eq_last f (b :: rest) (f a) htail]
+      rw [List.getLast_cons htail]
 
 /-- The reversed range `(List.range (c+1)).reverse = [c, c-1, …, 0]`
     is non-empty and ends at `0`. -/
@@ -86,25 +87,14 @@ private lemma reverse_range_succ_getLast (c : ℕ) :
       (by
         intro hcontra
         have : List.range (c + 1) = [] := List.reverse_eq_nil_iff.mp hcontra
-        simpa using this)
+        simp at this)
       = 0 := by
-  -- (range (c+1)).reverse = (c) :: (range c).reverse, and the
-  -- last element is the last of the original range, namely 0.
-  induction c with
-  | zero => decide
-  | succ n ih =>
-    -- (range (n+2)).reverse = (n+1) :: (range (n+1)).reverse
-    have step : List.range (n + 2) = List.range (n + 1) ++ [n + 1] := by
-      simp [List.range_succ]
-    rw [step, List.reverse_append, List.reverse_singleton, List.singleton_append]
-    -- LHS is now ((n+1) :: (range (n+1)).reverse).getLast _
-    -- which equals (range (n+1)).reverse.getLast (since tail ≠ []).
-    have htail : (List.range (n + 1)).reverse ≠ [] := by
-      intro hcontra
-      have : List.range (n + 1) = [] := List.reverse_eq_nil_iff.mp hcontra
-      simpa using this
-    rw [List.getLast_cons htail]
-    exact ih
+  -- The last element of `(range (c+1)).reverse` is the head of
+  -- `range (c+1)`, which is `0`.  Phrasing the goal through
+  -- `getLast?`/`head?` avoids a dependent-proof `rw` motive issue.
+  rw [List.getLast_eq_iff_getLast?_eq_some, List.getLast?_reverse,
+      List.head?_range]
+  simp
 
 /-- Classical-limit recovery: at zero depth, the total mass equals
     the Gröbner-Shirshov mass.  This is the substantive recovery
@@ -128,32 +118,26 @@ theorem mass_at_zero_depth
   --         (fun acc n => acc * 0 + gbCoeff k n) 0
   --       = groebnerMass k
   -- Step 1: rewrite the lambda to drop the accumulator.
-  have rewrite_lambda : ∀ (acc : ℝ) (n : ℕ),
-      acc * 0 + CrossingGradedMassExpansion.gbCoeff k n =
-        CrossingGradedMassExpansion.gbCoeff k n := by
-    intro acc n
+  -- Step 1: the Horner update collapses to a constant update
+  -- (`acc * 0 + gbCoeff k n = gbCoeff k n`), so replace the update
+  -- function with the accumulator-ignoring one.
+  have rewrite_lambda :
+      (fun (acc : ℝ) (n : ℕ) =>
+          acc * 0 + CrossingGradedMassExpansion.gbCoeff k n)
+        = (fun (_ : ℝ) (n : ℕ) => CrossingGradedMassExpansion.gbCoeff k n) := by
+    funext acc n
     ring
-  -- Step 2: foldl with constant updater = update applied to last.
+  rw [rewrite_lambda]
+  -- Step 2: foldl with the constant updater = update applied to last.
   have nonempty :
       (List.range (CrossingGradedMassExpansion.crossingCount k + 1)).reverse
         ≠ [] := by
     intro hcontra
     have : List.range (CrossingGradedMassExpansion.crossingCount k + 1) = [] :=
       List.reverse_eq_nil_iff.mp hcontra
-    simpa using this
-  -- Apply the helpers.
-  have eq_const : ∀ (init : ℝ),
-      (List.range (CrossingGradedMassExpansion.crossingCount k + 1)).reverse.foldl
-        (fun acc n => acc * 0 + CrossingGradedMassExpansion.gbCoeff k n) init
-      = (List.range (CrossingGradedMassExpansion.crossingCount k + 1)).reverse.foldl
-        (fun _ n => CrossingGradedMassExpansion.gbCoeff k n) init := by
-    intro init
-    apply List.foldl_congr
-    intro acc n _
-    exact rewrite_lambda acc n
-  rw [eq_const]
-  rw [foldl_const_update_eq_last (CrossingGradedMassExpansion.gbCoeff k) 0
-      _ nonempty]
+    simp at this
+  rw [foldl_const_update_eq_last (CrossingGradedMassExpansion.gbCoeff k)
+      _ 0 nonempty]
   rw [reverse_range_succ_getLast]
   exact CrossingGradedMassExpansion.gbCoeffZero_eq_groebner k
 

@@ -1,31 +1,48 @@
 /-
-  Δ_λ Binding Formula: structural proofs
+  Δ_λ Binding Formula: structural proofs (honest, compiling form)
 
   Three layers of the per-partition binding weight Δ_λ:
   1. Sign rule:   (-1)^{n(λ)} = sgn(w_0^{S_{λ'}})     [Macdonald I.1.5]
-  2. Dim weight:  f^λ = dim(V_λ) via hook-length         [Burnside]
+  2. Dim weight:  f^λ = dim(V_λ) via hook-length         [Burnside / Sagan]
   3. Habiro norm: a₀(A) = 2 × 8^A                        [confinement SDP]
 
   Combined: the binding formula
     B(K) = m_e × |Σ_λ y_λ · χ^λ(β_K) · sgn(w_0^{S_{λ'}}) · f^λ|
-  has the categorical factors (sgn × f^λ) proved, with the geometric
-  factors (y_λ, χ^λ) computed from Hecke algebra data.
+  has the categorical factors (sgn × f^λ) as its structural core.
+
+  History: this file was authored with the reserved token `λ` used as an
+  ordinary identifier (so it never compiled) and with several "theorems" stated
+  as `: trivial := by trivial` (the real claims living only in comments — a
+  vacuity dodge, AGENTS.md §1a). This rewrite (1) renames the partition variable
+  `λ → Λ`, (2) imports `ℝ`/`Real.arccos`, (3) gives each former vacuity stub an
+  honest disposition: faithfully-stated claims carry `sorry` + `-- Ref:` as
+  formalisation targets, the one with a concrete scalar core is proved outright,
+  and the character/Habiro identities that cannot be *stated* without the
+  Hecke/Hoefsmit representation infrastructure are documented (not faked) with a
+  pointer to where they are computed. Namespaced `QOU.BraidKnot.DeltaLambdaSignRule`
+  (sibling convention) to avoid the `QOU.BraidKnot.Partition` collision with
+  GramSeminormalBlock / PerPartitionKLambda when wired into the umbrella.
 
   -- Ref: [macdonald1995] https://doi.org/10.1093/oso/9780198534891.001.0001
+  -- Ref: [sagan2001] Sagan, The Symmetric Group (hook-length / Burnside)
   -- Ref: [habiro2000] https://doi.org/10.1007/s002220000013
 -/
 
 import Mathlib.Data.Nat.Choose.Basic
 import Mathlib.Data.List.Basic
+import Mathlib.Data.List.Range
 import Mathlib.Data.Int.Lemmas
+import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse
+import Mathlib.Tactic
 
-namespace QOU.BraidKnot
+namespace QOU.BraidKnot.DeltaLambdaSignRule
 
 -- ═══════════════════════════════════════════════════════════════
 --  PARTITION INFRASTRUCTURE
 -- ═══════════════════════════════════════════════════════════════
 
-/-- A partition of n as a weakly decreasing list of positive naturals. -/
+/-- A partition of `n` as a weakly decreasing list of positive naturals. -/
 structure Partition (n : ℕ) where
   parts : List ℕ
   pos : ∀ p ∈ parts, 0 < p
@@ -40,29 +57,30 @@ def Partition.empty : Partition 0 where
   sorted := List.Pairwise.nil
 
 /-- Number of parts (length of the partition). -/
-def Partition.length {n : ℕ} (λ : Partition n) : ℕ := λ.parts.length
+def Partition.length {n : ℕ} (Λ : Partition n) : ℕ := Λ.parts.length
 
-/-- n(λ) = Σ_i i × λ_i — the weighted sum of parts (0-indexed).
-    Also equal to the sum of row indices of all cells in the Young diagram. -/
-def Partition.nStat {n : ℕ} (λ : Partition n) : ℕ :=
-  (λ.parts.enum.map fun ⟨i, p⟩ => i * p).sum
+/-- `n(λ) = Σ_i i × λ_i` — the weighted sum of parts (0-indexed); equivalently the
+sum of row indices of all cells in the Young diagram. -/
+def Partition.nStat {n : ℕ} (Λ : Partition n) : ℕ :=
+  -- `List.zipIdx` yields `(element, index)` pairs (the successor of the removed
+  -- `List.enum`, which yielded `(index, element)`), hence the `⟨p, i⟩` order.
+  (Λ.parts.zipIdx.map fun ⟨p, i⟩ => i * p).sum
 
-/-- Conjugate partition λ' — the j-th part counts cells in column j. -/
-def Partition.conjugate {n : ℕ} (λ : Partition n) : List ℕ :=
-  match λ.parts with
+/-- Conjugate partition `λ'` — the `j`-th part counts cells in column `j`. -/
+def Partition.conjugate {n : ℕ} (Λ : Partition n) : List ℕ :=
+  match Λ.parts with
   | [] => []
-  | (p :: _) => List.range p |>.map fun j => (λ.parts.filter (· > j)).length
+  | (p :: _) => List.range p |>.map fun j => (Λ.parts.filter (· > j)).length
 
-/-- C(k, 2) = k × (k-1) / 2 — length of the longest element of S_k. -/
+/-- `C(k, 2) = k(k-1)/2` — the length of the longest element of `S_k`. -/
 def choose2 (k : ℕ) : ℕ := k * (k - 1) / 2
 
-/-- choose2 unfolds correctly for small values. -/
-@[simp] theorem choose2_zero : choose2 0 = 0 := by simp [choose2]
-@[simp] theorem choose2_one : choose2 1 = 0 := by simp [choose2]
-@[simp] theorem choose2_two : choose2 2 = 1 := by simp [choose2]
-@[simp] theorem choose2_three : choose2 3 = 3 := by simp [choose2]
+@[simp] theorem choose2_zero : choose2 0 = 0 := by decide
+@[simp] theorem choose2_one : choose2 1 = 0 := by decide
+@[simp] theorem choose2_two : choose2 2 = 1 := by decide
+@[simp] theorem choose2_three : choose2 3 = 3 := by decide
 
-/-- The sign of the longest element of S_k is (-1)^{k(k-1)/2}. -/
+/-- The sign of the longest element of `S_k` is `(-1)^{k(k-1)/2}`. -/
 def sgnLongest (k : ℕ) : ℤ := (-1) ^ choose2 k
 
 @[simp] theorem sgnLongest_zero : sgnLongest 0 = 1 := by simp [sgnLongest]
@@ -72,238 +90,304 @@ def sgnLongest (k : ℕ) : ℤ := (-1) ^ choose2 k
 --  HOOK-LENGTH FORMULA
 -- ═══════════════════════════════════════════════════════════════
 
-/-- Arm length at cell (i,j) in partition λ: number of cells to the right. -/
-def Partition.armLength {n : ℕ} (λ : Partition n) (i j : ℕ) : ℕ :=
-  match λ.parts.get? i with
+/-- Arm length at cell `(i,j)`: number of cells to the right in row `i`. -/
+def Partition.armLength {n : ℕ} (Λ : Partition n) (i j : ℕ) : ℕ :=
+  match Λ.parts[i]? with
   | some p => if j < p then p - j - 1 else 0
   | none => 0
 
-/-- Leg length at cell (i,j): number of cells below. -/
-def Partition.legLength {n : ℕ} (λ : Partition n) (i j : ℕ) : ℕ :=
-  (λ.parts.drop (i + 1)).filter (· > j) |>.length
+/-- Leg length at cell `(i,j)`: number of cells below in column `j`. -/
+def Partition.legLength {n : ℕ} (Λ : Partition n) (i j : ℕ) : ℕ :=
+  (Λ.parts.drop (i + 1)).filter (· > j) |>.length
 
-/-- Hook length at cell (i,j) = arm + leg + 1. -/
-def Partition.hookLength {n : ℕ} (λ : Partition n) (i j : ℕ) : ℕ :=
-  λ.armLength i j + λ.legLength i j + 1
+/-- Hook length at cell `(i,j)` = arm + leg + 1. -/
+def Partition.hookLength {n : ℕ} (Λ : Partition n) (i j : ℕ) : ℕ :=
+  Λ.armLength i j + Λ.legLength i j + 1
 
 /-- Product of all hook lengths in a partition. -/
-def Partition.hookProduct {n : ℕ} (λ : Partition n) : ℕ :=
-  λ.parts.enum.foldl (fun acc ⟨i, p⟩ =>
-    (List.range p).foldl (fun a j => a * λ.hookLength i j) acc) 1
+def Partition.hookProduct {n : ℕ} (Λ : Partition n) : ℕ :=
+  -- `zipIdx` pairs are `(element, index)`; `p` = part, `i` = row index.
+  Λ.parts.zipIdx.foldl (fun acc ⟨p, i⟩ =>
+    (List.range p).foldl (fun a j => a * Λ.hookLength i j) acc) 1
 
-/-- f^λ = n! / (hook product) — the number of standard Young tableaux.
-    This is the dimension of the irreducible S_n representation V_λ.
-    By the Peter-Weyl theorem, f^λ is also the multiplicity of V_λ
-    in the regular representation ℂ[S_n]. -/
-def Partition.dimIrrep {n : ℕ} (λ : Partition n) : ℕ :=
-  Nat.factorial n / λ.hookProduct
+/-- `f^λ = n! / (hook product)` — the number of standard Young tableaux, i.e. the
+dimension of the irreducible `S_n`-representation `V_λ` (and its multiplicity in
+the regular representation). -/
+def Partition.dimIrrep {n : ℕ} (Λ : Partition n) : ℕ :=
+  Nat.factorial n / Λ.hookProduct
+
+-- ═══════════════════════════════════════════════════════════════
+--  ROW/COLUMN STATISTICS — raw-list scaffolding for the Macdonald identity
+-- ═══════════════════════════════════════════════════════════════
+
+section MacdonaldScaffold
+open List
+
+/-- Row statistic on a raw list: `Σ_i i·L[i]` via `zipIdx`; `Λ.nStat = rowStat Λ.parts`. -/
+def rowStat (L : List ℕ) : ℕ := (L.zipIdx.map fun x => x.2 * x.1).sum
+
+/-- Column statistic with explicit column bound `M`: `Σ_{j<M} C(#{x∈L : x>j}, 2)`. For
+`M = λ_1` (the largest part) this is `(conjugate.map choose2).sum`. -/
+def colStat (L : List ℕ) (M : ℕ) : ℕ :=
+  ((List.range M).map fun j => choose2 (L.filter (· > j)).length).sum
+
+/-- Pascal step for `choose2`: `C(c+1, 2) = C(c, 2) + c`. -/
+theorem choose2_succ (c : ℕ) : choose2 (c + 1) = choose2 c + c := by
+  have h2 : ∀ k, choose2 k = k.choose 2 := fun k => (Nat.choose_two_right k).symm
+  rw [h2, h2, Nat.choose_succ_succ']
+  simp [Nat.choose_one_right, Nat.add_comm]
+
+/-- Indicator count: `Σ_{j<M} [j<b] = min b M`. -/
+theorem indicator_lt_sum (b : ℕ) :
+    ∀ M, ((range M).map (fun j => if j < b then (1 : ℕ) else 0)).sum = min b M := by
+  intro M
+  induction M with
+  | zero => simp
+  | succ M ih =>
+    rw [List.sum_range_succ, ih]
+    by_cases h : M < b <;> simp [h] <;> omega
+
+/-- `rowStat` peels the index-0 (largest) row: `rowStat (a :: l) = rowStat l + l.sum`. The
+remaining rows drop their index by one, reducing `n(λ)` by `Σ l = l.sum`. -/
+theorem rowStat_cons (a : ℕ) (l : List ℕ) : rowStat (a :: l) = rowStat l + l.sum := by
+  unfold rowStat
+  rw [zipIdx_cons]
+  simp only [List.map_cons, List.sum_cons, Nat.zero_mul, Nat.zero_add]
+  rw [zipIdx_succ, List.map_map]
+  have hcomp : ((fun x : ℕ × ℕ => x.2 * x.1) ∘
+      (fun z : ℕ × ℕ => match z with | (a, i) => (a, i + 1)))
+      = (fun x : ℕ × ℕ => x.2 * x.1 + x.1) := by
+    funext x; obtain ⟨p, i⟩ := x; simp [Function.comp]; ring
+  rw [hcomp, sum_map_add]
+  congr 1
+  rw [List.zipIdx_map_fst]
+
+/-- `colStat` peels column-0, leaving an explicit double-count remainder (no sortedness). -/
+theorem colStat_cons (a : ℕ) (l : List ℕ) (M : ℕ) :
+    colStat (a :: l) M
+      = colStat l M
+        + ((range M).map (fun j => if j < a then (l.filter (· > j)).length else 0)).sum := by
+  have pt : ∀ j ∈ range M,
+      choose2 ((a :: l).filter (· > j)).length
+        = choose2 (l.filter (· > j)).length + (if j < a then (l.filter (· > j)).length else 0) := by
+    intro j _
+    have hfc : ((a :: l).filter (· > j)).length
+        = (if j < a then 1 else 0) + (l.filter (· > j)).length := by
+      rw [List.filter_cons]; split <;> simp_all [List.length_cons, Nat.add_comm]
+    rw [hfc]
+    by_cases h : j < a
+    · rw [if_pos h, if_pos h, Nat.add_comm 1, choose2_succ]
+    · rw [if_neg h, if_neg h, Nat.zero_add, Nat.add_zero]
+  unfold colStat
+  rw [map_congr_left pt, sum_map_add]
+
+/-- The double-count remainder equals `l.sum` when `a` dominates `l` and `a ≤ M`:
+`Σ_{j<M} (if j<a then #{x∈l : x>j} else 0) = Σ_{x∈l} x`. -/
+theorem Ssum_eq (a : ℕ) :
+    ∀ (l : List ℕ) (M : ℕ), (∀ x ∈ l, x ≤ a) → a ≤ M →
+      ((range M).map (fun j => if j < a then (l.filter (· > j)).length else 0)).sum = l.sum := by
+  intro l
+  induction l with
+  | nil => intro M _ _; simp
+  | cons b t ih =>
+    intro M hmax haM
+    have hb : b ≤ a := hmax b (by simp)
+    have htmax : ∀ x ∈ t, x ≤ a := fun x hx => hmax x (List.mem_cons_of_mem _ hx)
+    have step : ∀ j ∈ range M,
+        (if j < a then ((b :: t).filter (· > j)).length else 0)
+          = (if j < b then 1 else 0) + (if j < a then (t.filter (· > j)).length else 0) := by
+      intro j _
+      have hfc : ((b :: t).filter (· > j)).length
+          = (if j < b then 1 else 0) + (t.filter (· > j)).length := by
+        rw [List.filter_cons]; split <;> simp_all [List.length_cons, Nat.add_comm]
+      rw [hfc]
+      by_cases h : j < a
+      · rw [if_pos h, if_pos h]
+      · rw [if_neg h, if_neg h, Nat.add_zero, if_neg (by omega : ¬ j < b)]
+    rw [map_congr_left step, sum_map_add, ih M htmax haM,
+        indicator_lt_sum b M, Nat.min_eq_left (le_trans hb haM), List.sum_cons]
+
+/-- For a weakly-decreasing list bounded by `M`, the row statistic equals the column
+statistic: `rowStat L = colStat L M`. The Fubini swap over Young-diagram cells, proved by
+peeling the largest row (`rowStat_cons`) against the column peel (`colStat_cons`). -/
+theorem rowStat_eq_colStat : ∀ (L : List ℕ), L.Pairwise (· ≥ ·) →
+    ∀ (M : ℕ), (∀ x ∈ L, x ≤ M) → rowStat L = colStat L M := by
+  intro L
+  induction L with
+  | nil => intro _ M _; simp [rowStat, colStat, choose2]
+  | cons a l ih =>
+    intro hsorted M hbound
+    have hal : ∀ x ∈ l, a ≥ x := (List.pairwise_cons.mp hsorted).1
+    have hlsorted : l.Pairwise (· ≥ ·) := (List.pairwise_cons.mp hsorted).2
+    have haM : a ≤ M := hbound a (by simp)
+    have hlbound : ∀ x ∈ l, x ≤ M := fun x hx => hbound x (List.mem_cons_of_mem _ hx)
+    rw [rowStat_cons, colStat_cons, Ssum_eq a l M hal haM, ih hlsorted M hlbound]
+
+end MacdonaldScaffold
 
 -- ═══════════════════════════════════════════════════════════════
 --  SIGN RULE (Macdonald I.1.5)
 -- ═══════════════════════════════════════════════════════════════
 
-/-- The Macdonald identity: n(λ) = Σ_j C(λ'_j, 2).
-    Proof: n(λ) = Σ_i i·λ_i counts each cell (i,j) by its row index i.
-    Grouping by column j instead: column j contains λ'_j cells in rows
-    0, 1, ..., λ'_j - 1, contributing Σ_{i=0}^{λ'_j-1} i = C(λ'_j, 2). -/
--- Ref: [macdonald1995] https://doi.org/10.1093/oso/9780198534891.001.0001
-theorem nStat_eq_sum_choose2_conjugate {n : ℕ} (λ : Partition n) :
-    λ.nStat = (λ.conjugate.map choose2).sum := by
-  trivial
+/-- The Macdonald identity `n(λ) = Σ_j C(λ'_j, 2)`: `n(λ) = Σ_i i·λ_i` counts each
+cell `(i,j)` by its row index `i`; grouping by column `j`, column `j` has `λ'_j`
+cells in rows `0,…,λ'_j-1`, contributing `Σ_{i<λ'_j} i = C(λ'_j, 2)`.
+Proved sorry-free via the row/column peel `rowStat_eq_colStat` (the Fubini swap over
+diagram cells; both sides satisfy the same column-peeling recursion). -/
+theorem nStat_eq_sum_choose2_conjugate {n : ℕ} (Λ : Partition n) :
+    Λ.nStat = (Λ.conjugate.map choose2).sum := by
+  -- Ref: [macdonald1995] Macdonald §I.1, eq. (1.5).
+  -- `n(λ) = rowStat λ = colStat λ λ₁ = Σ_j C(λ'_j, 2)` (Fubini over the diagram, via the
+  -- shared row/column peel — see `rowStat_eq_colStat`).
+  have hnst : Λ.nStat = rowStat Λ.parts := rfl
+  rw [hnst]
+  unfold Partition.conjugate
+  cases hp : Λ.parts with
+  | nil => simp [rowStat]
+  | cons p rest =>
+    have hsorted : (p :: rest).Pairwise (· ≥ ·) := hp ▸ Λ.sorted
+    have hbound : ∀ x ∈ (p :: rest), x ≤ p := by
+      intro x hx
+      rcases List.mem_cons.mp hx with rfl | hmem
+      · exact le_refl _
+      · exact (List.pairwise_cons.mp hsorted).1 x hmem
+    have hmain := rowStat_eq_colStat (p :: rest) hsorted p hbound
+    unfold colStat at hmain
+    rw [hmain, List.map_map]
+    rfl
 
-/-- Corollary: (-1)^{n(λ)} = Π_j (-1)^{C(λ'_j, 2)} = Π_j sgn(w_0^{S_{λ'_j}}).
-    This is the sign of the longest element of the conjugate parabolic
-    subgroup S_{λ'} = S_{λ'_1} × S_{λ'_2} × ... ⊂ S_n. -/
-theorem sign_rule_conjugate_parabolic {n : ℕ} (λ : Partition n) :
-    (-1 : ℤ) ^ λ.nStat = (λ.conjugate.map fun p => (-1 : ℤ) ^ choose2 p).prod := by
-  rw [nStat_eq_sum_choose2_conjugate]
-  trivial
+/-- `(-1)^(Σ m) = Π_j (-1)^{mⱼ}` over a list of naturals — the sign is multiplicative
+over a sum. -/
+private theorem neg_one_pow_list_sum (m : List ℕ) :
+    (-1 : ℤ) ^ m.sum = (m.map fun a => (-1 : ℤ) ^ a).prod := by
+  induction m with
+  | nil => simp
+  | cons a t ih => simp [List.sum_cons, List.map_cons, List.prod_cons, pow_add, ih]
+
+/-- Corollary `(-1)^{n(λ)} = Π_j (-1)^{C(λ'_j,2)} = Π_j sgn(w_0^{S_{λ'_j}})` — the
+sign of the longest element of the conjugate parabolic `S_{λ'} ⊂ S_n`. The sign-
+multiplicativity step (`neg_one_pow_list_sum`) and the Macdonald identity
+`nStat_eq_sum_choose2_conjugate` it rests on are now both proved, so this corollary is
+fully sorry-free. -/
+theorem sign_rule_conjugate_parabolic {n : ℕ} (Λ : Partition n) :
+    (-1 : ℤ) ^ Λ.nStat = (Λ.conjugate.map fun p => (-1 : ℤ) ^ choose2 p).prod := by
+  rw [nStat_eq_sum_choose2_conjugate, neg_one_pow_list_sum, List.map_map]
+  rfl
 
 -- ═══════════════════════════════════════════════════════════════
 --  BURNSIDE (regular representation decomposition)
 -- ═══════════════════════════════════════════════════════════════
 
-/-- Burnside's theorem: Σ_λ (f^λ)² = n!
-    The sum of squared dimensions of all irreducible S_n representations
-    equals the order of the group. Equivalently: the regular representation
-    decomposes as ⊕_λ f^λ · V_λ, and dim(reg) = Σ f^λ · dim(V_λ) = Σ (f^λ)² = n!.
-
-    This is WHY f^λ is the natural weight in the Δ_λ formula: the regular
-    representation is the confinement-saturating state (it contains every
-    irrep with its natural multiplicity). -/
--- Ref: [macdonald1995] https://doi.org/10.1093/oso/9780198534891.001.0001
+/-- Burnside / RSK: `Σ_λ (f^λ)² = n!` over the *complete, deduplicated* set of
+partitions of `n`. The regular representation decomposes as `⊕_λ f^λ · V_λ`, so
+`dim(reg) = Σ (f^λ)² = n!`. This is exactly axiom (i) of the Identity-I program;
+faithfully stated with completeness + no-duplication hypotheses on `partitions`
+(via `Partition.parts`, which carries `DecidableEq`). Formalisation target. -/
 theorem burnside (n : ℕ) (partitions : List (Partition n))
-    (hcomplete : trivial /- partitions is the complete list of λ ⊢ n -/) :
-    (partitions.map fun λ => λ.dimIrrep * λ.dimIrrep).sum = Nat.factorial n := by
-  trivial
+    (hcomplete : ∀ μ : Partition n, μ.parts ∈ partitions.map Partition.parts)
+    (hnodup : (partitions.map Partition.parts).Nodup) :
+    (partitions.map fun Λ => Λ.dimIrrep ^ 2).sum = Nat.factorial n := by
+  -- Ref: [sagan2001] Sagan, The Symmetric Group, §1.10–§3.10; Identity-I program
+  -- axiom (i), docs/scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md.
+  sorry
+
+-- ═══════════════════════════════════════════════════════════════
+--  PER-PARTITION BINDING WEIGHT Δ_λ
+-- ═══════════════════════════════════════════════════════════════
+
+/-- The per-partition binding weight `Δ_λ = sgn(w_0^{S_{λ'}}) × f^λ` — the
+conjugate-parabolic sign times the regular-representation multiplicity. Both
+factors are categorical (independent of the deformation parameter `q`). -/
+def deltaLambda {n : ℕ} (Λ : Partition n) : ℤ :=
+  ((-1 : ℤ) ^ Λ.nStat) * (Λ.dimIrrep : ℤ)
+
+/-- `Δ_λ` expressed via the conjugate-parabolic sign × dimension (proved modulo the
+sign-rule formalisation target `sign_rule_conjugate_parabolic`). -/
+theorem deltaLambda_eq {n : ℕ} (Λ : Partition n) :
+    deltaLambda Λ
+      = (Λ.conjugate.map fun p => (-1 : ℤ) ^ choose2 p).prod * (Λ.dimIrrep : ℤ) := by
+  unfold deltaLambda
+  rw [sign_rule_conjugate_parabolic]
 
 -- ═══════════════════════════════════════════════════════════════
 --  HABIRO LEADING COEFFICIENT
 -- ═══════════════════════════════════════════════════════════════
 
-/-- The number of ideal octahedra in the Borromean complement.
-    Vol(B₃) = 8G where G is Catalan's constant. -/
+/-- The number of ideal octahedra in the Borromean complement
+(`Vol(𝓑₃) = 8G`, `G` = Catalan's constant). -/
 def borromeanOctahedra : ℕ := 8
 
-/-- The leading Habiro coefficient a₀(A) = 2 × 8^A.
-    - 8 = borromeanOctahedra (each nucleon contributes 8 octahedra)
-    - 2 = dim(V_{(2,1)}) (the standard representation, forced by the
-      confinement SDP interface block)
-
-    Verified exactly for A=2 (128), A=3 (1024), A=4 (8192),
-    A=5 (65536), A=6 (524288). -/
--- Ref: [habiro2000] https://doi.org/10.1007/s002220000013
+/-- The leading Habiro coefficient `a₀(A) = 2 × 8^A`. The `8` is the per-nucleon
+octahedron count `borromeanOctahedra`; the `2` is `dim(V_{(2,1)})`, forced by the
+confinement-SDP interface block (the unique Wedderburn block carrying both
+eigenvalues `+q` and `-q⁻¹`). -/
 def habiroLeadingCoeff (A : ℕ) : ℕ := 2 * borromeanOctahedra ^ A
 
 theorem habiroLeadingCoeff_eq (A : ℕ) : habiroLeadingCoeff A = 2 * 8 ^ A := by
   simp [habiroLeadingCoeff, borromeanOctahedra]
 
-/-- Concrete verifications. -/
-example : habiroLeadingCoeff 2 = 128 := by native_decide
-example : habiroLeadingCoeff 3 = 1024 := by native_decide
-example : habiroLeadingCoeff 4 = 8192 := by native_decide
-example : habiroLeadingCoeff 5 = 65536 := by native_decide
-example : habiroLeadingCoeff 6 = 524288 := by native_decide
-
-/-- The dim(V_{(2,1)}) = 2 factor in the leading coefficient
-    comes from the confinement SDP: the interface between nucleon
-    H_3 subspaces must live in the standard (2,1) Wedderburn block,
-    which is the unique block carrying BOTH eigenvalues +q and -q⁻¹.
-    This forces the interface multiplicity to be dim(V_{(2,1)}) = 2. -/
--- Ref: [habiro2000] https://doi.org/10.1007/s002220000013
-theorem habiro_interface_factor :
-    trivial /- The confinement SDP forces the interface to the (2,1) block,
-             giving multiplicity dim(V_{(2,1)}) = 2 -/ := by
-  trivial
+/-- Concrete verifications (`norm_num`, not `native_decide` — §1a). -/
+example : habiroLeadingCoeff 2 = 128 := by norm_num [habiroLeadingCoeff, borromeanOctahedra]
+example : habiroLeadingCoeff 3 = 1024 := by norm_num [habiroLeadingCoeff, borromeanOctahedra]
+example : habiroLeadingCoeff 4 = 8192 := by norm_num [habiroLeadingCoeff, borromeanOctahedra]
+example : habiroLeadingCoeff 5 = 65536 := by norm_num [habiroLeadingCoeff, borromeanOctahedra]
+example : habiroLeadingCoeff 6 = 524288 := by norm_num [habiroLeadingCoeff, borromeanOctahedra]
 
 -- ═══════════════════════════════════════════════════════════════
---  COMBINED BINDING FORMULA
+--  STANDARD-REP HECKE CHARACTERS — scalar core + documented identities
 -- ═══════════════════════════════════════════════════════════════
 
-/-- The per-partition binding weight Δ_λ.
-    Δ_λ = sgn(w_0^{S_{λ'}}) × f^λ
-    = (conjugate parabolic sign) × (regular-rep multiplicity)
-
-    The sign comes from Macdonald I.1.5 (the conjugate partition's
-    parabolic structure). The weight comes from Burnside (the regular
-    representation decomposition). Both are categorical — independent
-    of the deformation parameter q. -/
-def deltaLambda {n : ℕ} (λ : Partition n) : ℤ :=
-  ((-1 : ℤ) ^ λ.nStat) * (λ.dimIrrep : ℤ)
-
-/-- Δ_λ expressed via conjugate parabolic sign × dimension. -/
-theorem deltaLambda_eq {n : ℕ} (λ : Partition n) :
-    deltaLambda λ = (λ.conjugate.map fun p => (-1 : ℤ) ^ choose2 p).prod * (λ.dimIrrep : ℤ) := by
-  unfold deltaLambda
-  rw [sign_rule_conjugate_parabolic]
-
--- ═══════════════════════════════════════════════════════════════
---  SPECTRAL CORRECTION (proton mass)
--- ═══════════════════════════════════════════════════════════════
-
-/-- The Borromean character on V_{(2,1)} is a polynomial in h = q − q⁻¹.
-    χ^{(2,1)}(B₃) = 2 − 3h⁴ − h⁶
-
-    This is the EXACT rational character of the Borromean braid
-    (σ₁σ₂⁻¹)³ on the standard representation, computed via
-    Hoefsmit seminormal form.
-
-    From this: θ = arccos(χ/2) = arccos(1 − 3h⁴/2 − h⁶/2)
-    is the spectral phase of the B₃ knot operator on V_{(2,1)}.
-    The operator is unitary (det = 1 exactly). -/
+/-- Scalar core of the standard-rep Hecke character at odd powers. On the Hoefsmit
+diagonal basis `σ₁ = diag(q, −q⁻¹)`, `tr(σ₁ⁿ) = qⁿ + (−q⁻¹)ⁿ`, which for odd `n`
+collapses to `qⁿ − q⁻ⁿ = h·[n]_q`. This proves the arithmetic core of
+`χ_{(2,1)}(σ₁ⁿ)` that does not require the representation itself. -/
 -- Ref: [ram1997] https://doi.org/10.1007/BF02677006
-theorem borromean_std_character (q : ℝ) (hq : 0 < q) :
-    trivial /- χ^(2,1)((σ₁σ₂⁻¹)³) = 2 - 3(q-q⁻¹)⁴ - (q-q⁻¹)⁶ -/ := by
-  trivial
+theorem hecke_character_diag_odd (q : ℝ) (n : ℕ) (hn : Odd n) :
+    q ^ n + (-(1 / q)) ^ n = q ^ n - (1 / q) ^ n := by
+  rw [hn.neg_pow]; ring
 
-/-- The spectral correction factor for the proton mass.
-    correction(q) = arccos(1 − 3h⁴/2 − h⁶/2) / (8ℏ²)
-    where h = q − q⁻¹ and ℏ = (q−1)/q.
+/-! ### Standard-rep character identities — formalised in the Hecke compute
 
-    This factor closes the proton mass gap from 2.89% to 0.013%.
-    It admits a convergent h-series with rational coefficients:
-      correction = (q+1)²√(3+h²)/8 × (1 + h⁴(3+h²)/24 + ...)
+The following exact characters on the 2-dimensional standard block `V_{(2,1)}`
+require the Hecke/Hoefsmit representation as Lean infrastructure to state
+*faithfully*, which this file does not build:
 
-    The identity h = (q+1)·ℏ (exact) connects h and ℏ. -/
+  • `χ^{(2,1)}((σ₁σ₂⁻¹)³) = 2 − 3h⁴ − h⁶`     (Borromean; `h = q − q⁻¹`)
+  • `χ^{(2,1)}(σ₀σ₁) = −1`                      (Hopf link)
+  • `χ^{(2,1)}(σ₀σ₁σ₀) = 0`                     (trefoil element)
+  • `tr_M(atom_braid A, q) = p_A(u)/d_A(u)`, `p_A, d_A ∈ ℤ[u]`  (Habiro rational)
+  • interface multiplicity `= dim(V_{(2,1)}) = 2`  (confinement SDP)
+
+They are computed in `computations/` via the Hoefsmit seminormal form and are
+**not** restated here as Lean theorems: a `: True := trivial` stub asserting them
+would be a vacuity dodge (AGENTS.md §1a). The scalar arithmetic that does *not*
+need the representation is captured by `hecke_character_diag_odd` above.
+-- Ref: [ram1997] https://doi.org/10.1007/BF02677006
+-/
+
+-- ═══════════════════════════════════════════════════════════════
+--  SPECTRAL CORRECTION + MESON RATIO (definitions over ℝ)
+-- ═══════════════════════════════════════════════════════════════
+
+/-- The spectral correction factor for the proton mass,
+`arccos(1 − 3h⁴/2 − h⁶/2) / (8ℏ²)` with `h = q − q⁻¹`, `ℏ = (q−1)/q`. -/
 -- Ref: [macdonald1995] https://doi.org/10.1093/oso/9780198534891.001.0001
-noncomputable def spectralCorrection (q : ℝ) (hq : 1 < q) : ℝ :=
-  let h := q - 1/q
+noncomputable def spectralCorrection (q : ℝ) : ℝ :=
+  let h := q - 1 / q
   let hbar_sq := ((q - 1) / q) ^ 2
   Real.arccos (1 - 3 * h ^ 4 / 2 - h ^ 6 / 2) / (8 * hbar_sq)
 
-/-- h = (q+1)·ℏ — the exact relation between h and ℏ. -/
+/-- `h = (q+1)·ℏ` — the exact relation between `h = q − q⁻¹` and `ℏ = (q−1)/q`. -/
 theorem h_eq_qplus1_hbar (q : ℝ) (hq : q ≠ 0) :
-    q - 1/q = (q + 1) * ((q - 1) / q) := by
+    q - 1 / q = (q + 1) * ((q - 1) / q) := by
   field_simp
   ring
 
--- ═══════════════════════════════════════════════════════════════
---  MESON BASIS CHARACTERS (exact on V_{(2,1)})
--- ═══════════════════════════════════════════════════════════════
-
-/-- The Hopf link L± has character −1 on V_{(2,1)}.
-    χ^{(2,1)}(σ₀σ₁) = χ^{(2,1)}(σ₁σ₀) = −1
-
-    This is exact (from the Hoefsmit seminormal form):
-    the product of the two generators on the 2-dim standard
-    representation has trace −1 regardless of q. -/
--- Ref: [ram1997] https://doi.org/10.1007/BF02677006
-theorem hopf_link_std_character (q : ℝ) (hq : 0 < q) :
-    trivial /- χ^(2,1)(σ₀σ₁) = -1 -/ := by
-  trivial
-
-/-- The trefoil element e⁻ = σ₀σ₁σ₀ vanishes on V_{(2,1)}.
-    χ^{(2,1)}(σ₀σ₁σ₀) = 0
-
-    The trefoil (braid closure of σ₁³ in H₂) has zero trace
-    on the standard H₃ representation. -/
--- Ref: [ram1997] https://doi.org/10.1007/BF02677006
-theorem trefoil_element_std_vanishes (q : ℝ) (hq : 0 < q) :
-    trivial /- χ^(2,1)(σ₀σ₁σ₀) = 0 -/ := by
-  trivial
-
--- ═══════════════════════════════════════════════════════════════
---  MESON MASS RATIO (from PR #1344)
--- ═══════════════════════════════════════════════════════════════
-
-/-- The kaon-pion mass ratio from Hecke characters and Seifert volumes.
-    m_K/m_π = (q⁵ − q⁻⁵) × (9/5)²
-
-    Components:
-    - (q⁵ − q⁻⁵) = h · [5]_q: the Hecke character χ_{(2,1)}(σ₁⁵)
-      evaluated on the strange quark's 5-crossing torus knot T(2,5).
-    - (9/5)²: squared Seifert volume ratio.
-    - Power = 2 = number of quarks in a meson (qq̄).
-
-    Precision: 290 ppm (0.029%). Derived, not fit.
-    m_K = m_π × (q⁵−q⁻⁵) × 81/25 = 493.53 MeV (PDG 493.68). -/
+/-- The kaon–pion mass ratio `m_K/m_π = (q⁵ − q⁻⁵) · (9/5)²` from Hecke characters
+and Seifert volumes (`(q⁵−q⁻⁵) = χ_{(2,1)}(σ₁⁵)` on `T(2,5)`; `(9/5)²` the squared
+Seifert-volume ratio; power 2 = the two quarks of a meson). -/
 -- Ref: [jones1985] https://doi.org/10.1090/S0273-0979-1985-15304-2
-noncomputable def mesonMassRatio (q : ℝ) (hq : 1 < q) : ℝ :=
-  (q ^ 5 - (1/q) ^ 5) * (9/5) ^ 2
+noncomputable def mesonMassRatio (q : ℝ) : ℝ :=
+  (q ^ 5 - (1 / q) ^ 5) * (9 / 5) ^ 2
 
-/-- The Hecke character of σ₁^n on V_{(2,1)}.
-    χ_{(2,1)}(σ₁ⁿ) = h · [n]_q where h = q − q⁻¹ and
-    [n]_q = (qⁿ − q⁻ⁿ)/(q − q⁻¹) is the quantum n-integer.
-
-    On the diagonal Hoefsmit basis: σ₁ = diag(q, −q⁻¹), so
-    σ₁ⁿ = diag(qⁿ, (−q⁻¹)ⁿ) and tr(σ₁ⁿ) = qⁿ + (−1)ⁿ q⁻ⁿ.
-    For odd n: tr = qⁿ − q⁻ⁿ = h · [n]_q. -/
-theorem hecke_character_sigma_power_odd (q : ℝ) (hq : 0 < q) (n : ℕ) (hn : Odd n) :
-    trivial /- χ_{(2,1)}(σ₁ⁿ) = (q − q⁻¹) · (qⁿ − q⁻ⁿ)/(q − q⁻¹) = qⁿ − q⁻ⁿ -/ := by
-  trivial
-
-/-- The Habiro rational function is a FINITE rational expression
-    p(u)/d(u) with integer polynomial coefficients (u = q^{1/2}).
-    For the proton: degree 40 numerator, degree 21 denominator.
-    Evaluating at u₀ = q₀^{1/2} gives the EXACT Markov trace.
-
-    The "precision ladder coefficients d_k" are just the Taylor
-    expansion of this rational function in u = b·ℏ² — they are
-    NOT independent parameters but derived quantities. -/
--- Ref: [habiro2000] https://doi.org/10.1007/s002220000013
-theorem habiro_rational_finite (A : ℕ) (hA : 0 < A) :
-    trivial /- tr_M(atom_braid A, q) = p_A(q^{1/2}) / d_A(q^{1/2})
-             where p_A, d_A ∈ ℤ[u] with deg(p_A) ≤ 40·A, deg(d_A) ≤ 21·A -/ := by
-  trivial
-
-end QOU.BraidKnot
+end QOU.BraidKnot.DeltaLambdaSignRule

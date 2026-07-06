@@ -2,7 +2,7 @@
 
 **Branch:** `claude/optical-fibre-1d-qou-2026-06-08`
 **Started:** 2026-06-08
-**Status:** WIP — workplan stub (PR opened first per CLAUDE.md branch+PR policy)
+**Status:** WIP — workplan stub (PR opened first per AGENTS.md branch+PR policy)
 
 ## Owner request (verbatim intent)
 
@@ -55,7 +55,7 @@ Core questions to answer in QOU terms:
 6. Connect to the **q-regime** picture (PR #1999 sibling): linear/
    optical-fibre systems as a limiting regime of the q phase diagram.
 
-## Discipline notes (CLAUDE.md)
+## Discipline notes (AGENTS.md)
 
 - Distinguish **physical fibre** from **fibre functor τ** explicitly in
   prose (collision risk).

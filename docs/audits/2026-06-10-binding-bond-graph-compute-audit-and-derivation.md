@@ -6,9 +6,9 @@ compute audit"*; *"derive it [f], no |·|"*; *"do everything pre-archimedean
 where you can"*; *"use tr_M·\check{tr}_M if needed"*.
 
 Probes (PR #2089):
-[`derived_bond_graph_binding.py`](../../folio-assistant/computations/derived_bond_graph_binding.py),
-[`prearchimedean_bond_factor.py`](../../folio-assistant/computations/prearchimedean_bond_factor.py),
-[`gs_filtration_binding_components.py`](../../folio-assistant/computations/gs_filtration_binding_components.py).
+[`derived_bond_graph_binding.py`](../../computations/derived_bond_graph_binding.py),
+[`prearchimedean_bond_factor.py`](../../computations/prearchimedean_bond_factor.py),
+[`gs_filtration_binding_components.py`](../../computations/gs_filtration_binding_components.py).
 
 ## 1. Compute audit — how the braid wires bonds
 
@@ -128,7 +128,7 @@ pre-archimedean home of the binding; the Lean module
 
 ## 6. Update (same day) — edge-set selection REFUTED by exact enumeration
 
-[`bond_edge_set_selection_probe.py`](../../folio-assistant/computations/bond_edge_set_selection_probe.py)
+[`bond_edge_set_selection_probe.py`](../../computations/bond_edge_set_selection_probe.py)
 enumerates **every** static integer edge multiset per nucleus (the full class
 `0 ≤ n_pp ≤ C(Z,2)`, `0 ≤ n_pn ≤ Z·N`, `0 ≤ n_nn ≤ C(N,2)`) against the
 derived per-bond energies. **No static bond graph closes D/T/³He/⁴He
@@ -155,6 +155,6 @@ not re-chased.
 and `trace_bond_pair_factorizes` (`tr_M((c₁σ_i+d₁)(c₂σ_j+d₂)) =
 (c₁z+d₁)(c₂z+d₂)`, i<j — the two-bond factorization), both proved from the
 existing `MarkovTrace` class fields (generic `CommRing R`, no archimedean
-structure — per CLAUDE.md §7c). The general A-bond product needs the
+structure — per AGENTS.md §7c). The general A-bond product needs the
 cross-level Markov axiom the class does not yet carry (same gap as
 `markov_trace_unique`); the compute witness covers it numerically to 1.1e-15.

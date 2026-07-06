@@ -29,6 +29,7 @@ export default chapter({
         "jet-prolongation-proof",
         "prolongation-categorical",
         "recursive-brane-tower",
+        "brane-tower-terminology",
         "recursive-brane-tower-su2",
         "brane-tower-levels",
         "arc-space",
@@ -92,9 +93,14 @@ export default chapter({
       blocks: [
         "yekutieli-lifting-kummer-motivic-intro",
         "p3-blowup-yekutieli",
+        "blowup-cohomological-address",
+        "blowup-regularity-as-lifting",
+        "blowup-local-cohomology-origin",
+        "blowup-topological-selection",
         "fermionic-twisted-sectors",
         "kummer-filtration-obstruction",
         "kummer-tower",
+        "kummer-tower-motivic-galois",
         "hochschild-kummer-connection",
         // def:motivic-substrate — substrate of the classical-limit
         // functor; lives here alongside motivic-galois-character +
@@ -123,6 +129,7 @@ export default chapter({
         "global-gluing",
         "global-gluing-proof",
         "ordering-jet-compatibility",
+        "ordering-jet-compatibility-proof",
       ],
     }),
 
@@ -151,6 +158,7 @@ export default chapter({
         "q-harmonic-basis-brane",
         "weight-space-decomposition-brane",
         "algebraic-filter-classification",
+        "algebraic-filter-physical",
         "algebraic-filter",
         "distributional-connection",
       ],
@@ -186,7 +194,6 @@ export default chapter({
         "yekutieli-triple",
         "cosimplicial-crossed-groupoid",
         "ccg-cosimplicial-identities",
-        "ccg-cosimplicial-identities-proof",
         "ccg-crossed-module-structure",
         "ccg-crossed-module-structure-proof",
         "cosimplicial-crossed-groupoid-proof",

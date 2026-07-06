@@ -47,7 +47,7 @@ or build Mathlib from source first.
 - **I6 schema-drift ×2** (`per-pair-wedderburn`, `topic2-mirror-pair`) — fix the
   *producer* to emit dict-shaped `data` (not a list). **Overlaps PR #1878** — coordinate.
 - **I2 mass-table + KLR ×5** — open Δ_λ / Rule-14 research (Track-A gate; do NOT
-  fit a 7th ansatz per CLAUDE.md).
+  fit a 7th ansatz per AGENTS.md).
 - **AGGREGATE cal-overcount / witness-provenance-i14** — real but scope-stale; re-run
   the full-corpus dashboards for current numbers.
 

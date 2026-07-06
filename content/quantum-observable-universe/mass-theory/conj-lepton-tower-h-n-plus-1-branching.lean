@@ -99,6 +99,7 @@ theorem lepton_xi_muon_eq_closed_form
     lepton_xi q LeptonIndex.muon
       = (3 + (heckeH q)^2) / (2 + (heckeH q)^2) := by
   unfold lepton_xi heckeH br2 br3 br4 at *
+  rw [div_eq_div_iff hbr4 h2plus]
   field_simp
   ring
 
@@ -122,6 +123,7 @@ theorem lepton_xi_tau_eq_reduced_form
     lepton_xi q LeptonIndex.tau
       = br5 q / (br2 q * (1 + (heckeH q)^2)) := by
   unfold lepton_xi heckeH br2 br3 br5 br6 at *
+  rw [div_eq_div_iff hbr6 (by rw [mul_ne_zero_iff]; exact ⟨hbr2, h1plus⟩)]
   field_simp
   ring
 

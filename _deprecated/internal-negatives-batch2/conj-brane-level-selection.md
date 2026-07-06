@@ -69,9 +69,9 @@ $k \in \{1,2,3,4,5,6,8,10\}$.  Key observations:
 **The specific formula $n_\star = \ell \cdot n_0 + k$ is empirically
 falsified at the predicted values $(n_\star^D, n_\star^T, n_\star^{{}^3\mathrm{He}}) = (14, 27, 20)$.**
 The probe
-[`probe_phiq_n_star_rule.py`](../../../folio-assistant/computations/probe_phiq_n_star_rule.py)
+[`probe_phiq_n_star_rule.py`](../../../computations/probe_phiq_n_star_rule.py)
 (witness
-[`probe-phiq-n-star-rule.witness.json`](../../../folio-assistant/computations/probe-phiq-n-star-rule.witness.json))
+[`probe-phiq-n-star-rule.witness.json`](../../../computations/probe-phiq-n-star-rule.witness.json))
 substitutes these depths into the truncated quantum dilogarithm
 $\Phi_q^{[\leq n_\star]}$ and finds that the brane-tower contribution
 diverges by $\sim 10^5$–$10^7$%:

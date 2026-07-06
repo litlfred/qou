@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.knot_operator_transition — knot-type hierarchy of nucleon additions
 

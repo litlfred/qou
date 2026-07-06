@@ -1,0 +1,414 @@
+# Interface operator — per-bond factor derivation + 4-body ⁴He assembly
+
+**Date:** 2026-06-23
+**Branch:** `claude/pauli-young-delta-test-hgp6jc` (PR #2630)
+**Follow-up to:** [`2026-06-22-pauli-young-spin-isospin-delta-lambda-test.md`](2026-06-22-pauli-young-spin-isospin-delta-lambda-test.md)
+(the parameter-free Δ_λ test that pointed binding away from partition weights
+and toward the dynamics-side interface operator)
+
+Two tasks on the interface-product binding
+`B(K) = E₀·(tr_M(W_free) − tr_M(W_atom)) = E₀·τ_vac·(1 − ∏ᵢ fᵢ)`,
+`E₀ = m_e/(q₀(q₀−1)) ≈ 4.186 MeV`, `τ_vac = τ_p^Z τ_n^N`.
+
+---
+
+## Task 1 — the per-interface factor is categorically DERIVED (✓)
+
+`closed_form_tau_M.py` assigns each nucleon–nucleon bond a Markov factor:
+positive σ → `z`, negative σ⁻¹ → `z−h`, averaged → `z−h/2`
+(`z = 1/(√q+1/√q)`, `h = q−1/q`). These are **not three independent
+heuristics**: they follow by **trace-linearity from a single categorical input**.
+
+- **(H1) Hecke skein** `(σ−q)(σ+1/q)=0 ⟹ σ⁻¹ = σ − h·I` — verified exact (sympy).
+- **(H2) Bar-invariant (charge-symmetric) crossing** `½(σ+σ⁻¹) = σ − (h/2)·I` — verified exact.
+- **(H3) Markov move** (the one input): `tr(x·σ_g) = z·tr(x)`. Then by linearity
+  - `tr(x·σ⁻¹) = tr(x·σ) − h·tr(x) = (z−h)·tr(x)` — **negative factor forced**;
+  - `tr(x·½(σ+σ⁻¹)) = (z−h/2)·tr(x)` — **averaged (pn) factor forced**.
+
+Checked numerically on explicit Hoefsmit seminormal matrices in the (2,1) block of
+H₃ (so `x` ranges over a genuine non-trivial lower algebra H₂, not just identity):
+residuals `~1e-52`; the module's `interface_factor()` equals the derived `z`, `z−h`,
+`z−h/2` exactly. `z` itself is the Jones-normalized Markov parameter (the trace
+normalization `tr(1)=1` + the Markov move); the bar-averaged pn factor encodes the
+pn bond's no-preferred-chirality (charge) symmetry. **Zero free parameters.**
+
+→ `interface_factor_categorical_derivation_probe.py` · `interface-factor-categorical-derivation.witness.json`
+
+**Reading:** the per-bond factor is solid. Whatever is wrong with binding is *not*
+the value of an individual interface factor.
+
+---
+
+## Task 2 — 4-body assembly: topology is NOT the missing scale (clean negative)
+
+The canonical closed form models an atom `p^Z n^N` as a **linear chain** (A−1
+bonds). Physically ³He/³H is a triangle and ⁴He a **tetrahedron** (6 bonds). We
+replaced the chain by the genuine many-body **complete graph K_A** (all C(A,2)
+pairs) and recomputed binding.
+
+Validated building blocks: `τ_p = 1.2203628890867` (cached, phase5l); `τ_n =
+1.1948624254` solved from the canonical `tr_M(D)=τ_p τ_n z`. Reconstructing all
+four canonical atom traces from `(τ_p,τ_n)` × chain product matches to `~1e-8`
+(the residual is the bring-color δ flavor-split of the pn bond, ≈7e-5/bond).
+
+| atom | #chain bonds | #K_A bonds | B_chain | B_K_A | AME |
+|------|----:|----:|--------:|------:|-----:|
+| ²H | 1 | 1 | 3.056 (+37%) | 3.056 (+37%) | 2.225 |
+| ³H | 2 | 3 | 6.236 (−26%) | 6.765 (−20%) | 8.482 |
+| ³He | 2 | 3 | 5.592 (−28%) | 6.522 (−16%) | 7.718 |
+| ⁴He | 3 | 6 | 8.256 (−71%) | 8.820 (−69%) | 28.296 |
+
+**The decisive, convention-robust observable — the A-scaling B(⁴He)/B(D):**
+
+| | B(⁴He)/B(D) |
+|---|---|
+| linear chain | 2.70 |
+| complete graph (tetrahedron) | 2.89 |
+| **AME** | **12.72** |
+
+The genuine 4-body topology moves the ratio only **2.70 → 2.89**, still **4.4× short**
+of AME. Since the chain (A−1 bonds) and the complete graph (C(A,2) bonds) **bracket**
+every intermediate bond-counting topology, none of them supplies the ⁴He
+tight-binding spike.
+
+**Why bond-counting can't fix it.** `B = E₀·τ_vac·(1 − ∏f)`. Each factor `f < 1`,
+so `∏f → 0` quickly as bonds accumulate and the deficit `(1 − ∏f)` **saturates to 1**
+— extra bonds barely change `B`. The only residual A-growth is `τ_vac = τ_p^Z τ_n^N`,
+geometric and too weak (gives ratio ≈2.9, not 12.7). The strong A-scaling of binding
+(≈ B/A saturation, and the ⁴He spike) is therefore **not** an interface-counting
+effect in this multiplicative-deficit form.
+
+→ `interface_4body_assembly_probe.py` · `interface-4body-assembly.witness.json`
+
+---
+
+## Combined conclusion + where the frontier actually is
+
+- **Task 1**: the interface operator's per-bond factor is categorically forced
+  (one Markov move + the skein) — no fit, no slack there.
+- **Task 2**: the *topology* of the bond graph (chain vs tetrahedron) is **not**
+  the missing physics; the multiplicative deficit `(1−∏f)` saturates, so binding's
+  A-scaling cannot come from counting bonds.
+
+So the real lever is **not** more/better bonds but the **assembly form itself**: the
+multiplicative interface deficit on top of a geometric `τ_p^Z τ_n^N` is structurally
+incapable of the observed A-scaling. Candidates the evidence now points at:
+1. an **additive / log (linked-cluster)** interface term `∑ᵢ log fᵢ` rather than the
+   multiplicative `1−∏f` (an additive form grows ∝ #bonds, which *could* track A);
+2. an **A-dependent E₀ scale** (the energy normalization is currently A-flat);
+3. genuinely off-the-trace binding (the ⁴He spike as a shell/supermultiplet closure,
+   not a pairwise sum at all).
+
+This complements the 2026-06-22 result: spin-isospin Δ_λ (A-flat) can't carry
+binding, and now bond-counting topology (A-bracketed, saturating) can't either —
+narrowing the search to the assembly *functional form* and the energy scale.
+
+## Artifacts
+- [`computations/probes/interface_factor_categorical_derivation_probe.py`](../../computations/probes/interface_factor_categorical_derivation_probe.py)
+- [`computations/interface-factor-categorical-derivation.witness.json`](../../computations/interface-factor-categorical-derivation.witness.json)
+- [`computations/probes/interface_4body_assembly_probe.py`](../../computations/probes/interface_4body_assembly_probe.py)
+- [`computations/interface-4body-assembly.witness.json`](../../computations/interface-4body-assembly.witness.json)
+
+## Cross-refs
+- [`computations/closed_form_tau_M.py`](../../computations/closed_form_tau_M.py) — the interface product
+- [`computations/binding_canonical.py`](../../computations/binding_canonical.py) — `B = E₀(tr_M_free − tr_M_atom)`
+- [`docs/coordination/option-e.md`](../coordination/option-e.md) — Δ_λ / binding ledger (PROBE 2 = A=4 interface)
+
+---
+
+## Follow-up — candidate #1: additive / log linked-cluster interface form
+
+Task 2 showed the *multiplicative* deficit `B = E₀·τ_vac·(1−∏f)` saturates
+(`(1−∏f)→1`), capping the `B(⁴He)/B(D)` ratio at ~2.7–2.9 vs AME 12.72. The
+natural fix: an **additive / linked-cluster** interface term, where per-bond
+contributions **sum** (grow ∝ #bonds) instead of multiplying (saturate).
+`log[τ_M(atom)/τ_M(vac)] = ∑ᵢ log fᵢ`, so the per-bond binding strength carried
+additively is `∑ᵢ(−log fᵢ) > 0`. Scanned forms (all with the *same* single scale
+E₀, **zero** tuned parameters) × chain/complete topology
+(`binding_additive_linked_cluster_probe.py`):
+
+| form | B(⁴He)/B(D) | RMS\|err\| | note |
+|------|----:|----:|------|
+| M (multiplicative deficit) | 2.70 / 2.89 | 44 / 41% | baseline; saturates |
+| L  `E₀·∑(−log f)` (complete) | 6.78 | **27%** | best RMS; ⁴He −30% |
+| LV `E₀·τ_vac·∑(−log f)` (complete) | **9.89** | 96% | closest scaling; overshoots light |
+| DV `E₀·τ_vac·∑(1−f)` (complete) | 9.36 | 38% | **⁴He = 28.60 MeV, +1.07%** |
+
+**Reading — direction CONFIRMED, not a closure.** Every additive form out-scales
+the multiplicative baseline (2.7 → 6.8–9.9), so summing over bonds is the right
+A-scaling mechanism. Two notable parameter-free near-hits: `DV/complete`
+reproduces **⁴He to +1.07%** (28.60 vs 28.296), and `L/complete` gives the lowest
+overall RMS (27%). But none closes: the additive×τ_vac forms overshoot the light
+atoms (D +37%, T +47%) because τ_vac multiplies a bond-sum that already grows,
+and the pure-additive `L` then undershoots ⁴He (−30%). The residual is a
+**saturation curve** (the empirical B/A ≈ const that peaks at ⁴He): the per-bond
+`−log f` weights are A-flat, so they can't bend B/A. Closing it needs either an
+A-dependent E₀ or a bond weight beyond the bare Markov factor — i.e. a genuine
+additional input, not a re-parameterization of the existing factors.
+
+So candidate #1 moves binding from "wrong A-scaling" (multiplicative, 4.4× short)
+to "right A-scaling, wrong curvature" (additive, ⁴He to ~1% but light-atom
+overshoot) — a real step, and it localizes the remaining gap to the
+saturation/curvature term rather than the interface factor or topology.
+
+→ `binding_additive_linked_cluster_probe.py` · `binding-additive-linked-cluster-scan.witness.json`
+
+## Mayer linked-cluster decomposition — measures the cooperativity (does NOT rule out the interface)
+
+For A≤4 the nucleons form a simplex, so the exact energy decomposition is
+`B(A) = C(A,2)·b₂ + C(A,3)·b₃ + C(A,4)·b₄`, with `b₂` identified from the
+deuteron (the unique 2-body nucleus). Result: per-bond energy is non-constant
+(2.22 → 2.83 → 4.72 MeV/bond), and the irreducible terms are large —
+`b₃/b₂ = 0.64`, **`b₄/b₂ = 4.16`**. The ⁴He spike is the dominant 4-body
+α-cluster term, coincident with the closed `[1⁴]` SU(4) supermultiplet
+(`e_A[h₃]` vanishes for A>4).
+
+→ `binding_mayer_linked_cluster_probe.py` · `binding-mayer-linked-cluster-decomposition.witness.json`
+
+## Calibration note (2026-06-23) — scope of these negative results (owner correction)
+
+An earlier draft over-stated these probes as "ruling out" whole classes. That is
+wrong, on two counts the owner flagged:
+
+1. **The framework's binding is the trace object `B = E₀·τ_vac·(1−∏f)`, which is
+   already many-body.** Expanding `1−∏f = ∑ᵢ(1−fᵢ) − ∑_{i<j}(1−fᵢ)(1−fⱼ) + …`
+   generates cross-bond (3-, 4-body) cooperative terms. A large irreducible
+   `b₃/b₄` therefore says how *big* the cross terms must be — it does **not** prove
+   the product form is structurally incapable.
+2. **A Lean-proved piece is a permanent, correct contribution even while the total
+   is inaccurate.** The per-bond factors z, z−h, z−h/2 are proved exact for the
+   trace ratio; the missing cluster operator **adds to / re-weights** them, it does
+   not invalidate them. "Inaccurate now" ≠ "ruled out."
+
+Read every negative in this doc and the 2026-06-22 Δ_λ doc with that scope: each
+shows a *specific parameter-free construction, tested alone as the sole mechanism,
+does not reproduce the numbers as-is*. None excludes the ingredient as a
+**contributor** to a multi-term closure. Accurate verdicts:
+
+- **Spin-isospin Δ_λ = ⟨s_λ, e_A[h₃]⟩**: as the *sole* per-block weight it underbinds
+  badly; but the plethysm multiplicities are exact SU(4) content and could enter a
+  combined assembly. ("This construction alone fails," not "spin-isospin refuted.")
+- **Bond-counting topology**: within the *multiplicative-deficit* form chain≈complete
+  both under-scale; the *additive* form with the same counts scaled far better — so
+  counting does contribute, it was the deficit *saturation* that capped it.
+- **Mayer cooperativity**: measures the 4-body target (≈4×b₂); does not reject any
+  interface factor.
+
+The genuinely robust, parameter-free finding across all of them: binding is strongly
+cooperative and its A-scaling lives on the dynamics/interface side, with the proved
+per-bond factors as the foundation a 3-/4-body cluster operator (PROBE 2) builds on.
+
+## Cluster operator — the framework already realises it (connected joint-trace term)
+
+The irreducible 3-body cluster operator is **not** a new object to invent: it is the
+**connected (Ursell/Mayer) part of the joint Markov trace** over the A=3 interfaces,
+computed at H₉ with zero fit (`three_body_joint_trace_a3.py`):
+`c₃ = joint − pair-sum = E₀·(gₐ + g_b − g∅ − g_ab)`. The Brunnian/Borromean property
+(`b3_brunnian_selection_scope.py`) is its **topological selection criterion** (3-body
+confinement = no separable sub-link). The algebraic connected-cluster identity
+`cluster2 = joint − pair_sum` and its vanishing criterion are now Lean-proved
+(`QOU.BraidKnot.Cluster`, sorry-free).
+
+Comparing the framework's `c₃` to the empirical Mayer `b₃ = B(A=3) − 3·b₂`
+(`binding_cluster_operator_vs_mayer_probe.py`):
+
+| atom | framework c₃ (MeV) | empirical b₃ (MeV) | \|c₃\|/\|b₃\| | sign |
+|------|----:|----:|----:|------|
+| ³H  | −1.769 | +1.808 | **0.98** | opposed |
+| ³He | −1.405 | +1.044 | 1.35 | opposed |
+
+**Scope-disciplined reading** (AGENTS.md §"Before declaring refuted"):
+- **(+) Scale matches** — the connected joint-trace cluster lands at \|c₃\| ≈ 1.4–1.8 MeV,
+  the *same* O(1.5 MeV) as the empirical 3-body term (³H to 2 %). This is a positive,
+  parameter-free signal that the joint-trace Ursell cluster **is the right object and
+  scale** for the 3-body force.
+- **(−) Sign opposed, scope-limited** — this realisation gives `c₃ < 0` (the joint
+  saturates below the pair-sum) where the empirical 3N force is attractive (`b₃ > 0`).
+  This is **not** a refutation of the cluster operator. The negative sign is specific to
+  the *2-adjacent-chain-bond, |χ|-combiner* realisation; untested candidates to flip it:
+  the missing long-range (1–3) triangle bond, the Borromean-selected interface vs the
+  bare σ_g, and the joint combiner's |χ| vs signed convention.
+
+So the cluster operator is located and at the right magnitude; the **sign** is the
+precise open question, not the existence or scale.
+
+→ `binding_cluster_operator_vs_mayer_probe.py` · `cluster-operator-vs-mayer-b3.witness.json` ·
+`QOU.BraidKnot.Cluster` (Lean, sorry-free)
+
+### Sign NOT resolved by the triangle — RETRACTION (owner caught the error)
+
+A draft of this section claimed "closing the triangle flips the 3-body cluster to
+attractive, matching `b₃` to +4.9 %". **That was wrong and is retracted.** It
+cherry-picked the single *top* (3-bond) Ursell cluster term `+c·∏(1−f)` and compared
+it to the empirical `b₃`, ignoring the (negative) 2-bond clusters that are part of the
+*same* physical 3-body content.
+
+The honest decomposition of `B = E₀·τ_vac·(1−∏f)` over the triangle bonds is
+`B = (+c·∑x) + (−c·∑xᵢxⱼ) + (+c·x_a x_b x_c)` with `x = 1−f`. The **physical
+beyond-pairwise 3-body content** is the *sum* of the higher clusters, and it is
+strongly **negative** at every atom and convention:
+
+| atom (bar-avg pn) | 1-bond | 2-bond | 3-bond | **beyond-pair (3-body)** | empirical `b₃` |
+|------|----:|----:|----:|----:|----:|
+| ³H  | +14.00 | −8.94 | +1.90 | **−7.04** | +1.81 |
+| ³He | +12.75 | −7.24 | +1.37 | **−5.88** | +1.04 |
+
+So the multiplicative 3-body content is **destructive** (`< 0`), the *same* sign as
+the framework's joint-trace `c₃ < 0`, and **opposite** the attractive empirical
+`b₃ > 0` (and ~4× too big). Closing the triangle does **not** flip the physical sign.
+The individual cluster signs *do* alternate by parity (Lean `ursell2_nonpos` /
+`ursell3_nonneg` — correct algebra), but a **saturating product is destructive at
+every many-body order** (`deficit_marginal_le`); no bond topology repairs that.
+
+**The obstruction is structural — and now proved.** It is *not* merely a
+`|χ|`-vs-signed-trace convention (an earlier draft of this line said so — also
+imprecise: the *signed* closed-form trace `τ_M = τ_vac·∏f` factorises and saturates
+just as hard). The real statement is a theorem: for the multiplicative model
+`B(S) = c·(1−∏_{i∈S} fᵢ)` with `c ≥ 0`, `fᵢ ∈ [0,1]`, the beyond-pairwise 3-body
+content `c·(f_a+f_b+f_c − f_a f_b f_c − 2)` is **non-positive** —
+`QOU.BraidKnot.Cluster.productModel_3body_nonpos` (Lean, sorry-free). So **no**
+saturating interface product, signed or `|χ|`, can yield an attractive 3-body force.
+
+An attractive (`> 0`) many-body term therefore requires a genuinely
+**non-multiplicative / cooperative** combiner: either an *enhancing* interface
+`fᵢ > 1` (a crossing that raises rather than suppresses the trace), or a true 3-body
+operator that is **not** a product of pairwise factors (e.g. the H₃⁴→H₁₂ interface
+operator, or a chirality-weighted `Σ_λ y_λ sgn(w₀) χ_λ` that breaks the product
+structure). That is the open lever — not the bond count, and not a sign convention on
+a product. (Constructing it needs the per-partition data at H₉/H₁₂, i.e. the Rust
+kernel; deferred.)
+
+The Lean theorems `ursell2_eq`/`ursell3_eq`/`ursell2_nonpos`/`ursell3_nonneg` stand as
+correct per-cluster algebra (only the *physical* "attractive 3-body" reading was wrong,
+corrected in their docstrings); `productModel_3body_nonpos` is the correctly-scoped
+positive result that replaces the retracted claim.
+
+**The enhancing escape is foreclosed (proved).** `productModel_3body_nonpos` needs
+`fᵢ ∈ [0,1]`; the only *pairwise* escape is an enhancing factor `fᵢ > 1`. But every
+canonical interface factor at q₀ is in (0,1) (z=0.499, z−h=0.290, averaged=0.395), and
+structurally the positive factor `z = 1/(√q + 1/√q) ≤ 1/2 < 1` for **all** `q > 0`
+(AM-GM) — Lean `QOU.BraidKnot.Cluster.markovParam_le_half` (+ `two_le_add_inv`),
+sorry-free. So no pairwise interface can enhance the trace, and the obstruction has no
+pairwise-factor escape: an attractive 3-body force can come **only** from a genuine
+non-product operator (the H₃⁴→H₁₂ 3-body interface, or a chirality-weighted combiner
+that breaks the product structure).
+→ `interface_factor_enhancing_check_probe.py` · `interface-factor-enhancing-check.witness.json`
+
+## Non-product 3-body frontier — landscape (what's left, and what's blocked)
+
+With the obstruction + enhancing-escape both proved, the search for an *attractive*
+3-body operator reduces to a small, sharply-bounded set. Three sign-flip candidates
+were floated for the joint-trace cluster `c₃`; the obstruction now decides two of them:
+
+| candidate operator | status | sign |
+|---|---|---|
+| **plain signed trace** `∑ y_λ χ_λ` | factorises (`τ_vac·∏f`) → **proved** `productModel_3body_nonpos` | `< 0` (dead) |
+| **`|χ|` joint trace** (production) | measured `three_body_joint_trace_a3` | `c₃ = −1.77` (dead as-is) |
+| **chirality-weighted** `∑ y_λ sgn(w₀^{S_{λ'}}) χ_λ` | **COMPUTED** — `chirality_weighted_3body_cluster_probe` (Rust kernel) | **`c₃ > 0` (attractive!)** |
+
+**Result (2026-06-24): the chirality involution flips the sign.** Built
+`pyhecke_native` locally and ran all three combiners on the H₉ joint trace (zero
+fit; the `abs` baseline reproduces the cached `c₃ = −1.769 / −1.405` *exactly*,
+validating the kernel + probe):
+
+| atom | abs `|χ|` | signed | **chiral** `sgn(w₀)·χ` | empirical b₃ |
+|------|----:|----:|----:|----:|
+| ³H  | −1.769 | −1.633 | **+0.076** | +1.808 |
+| ³He | −1.405 | −1.329 | **+0.120** | +1.044 |
+
+The chirality-weighted combiner is the **first attractive (`c₃ > 0`) 3-body result**
+in the investigation. It escapes `productModel_3body_nonpos` exactly as predicted
+(the `sgn(w₀^{S_{λ'}})` weight is mixed-sign — `(-1)^{n(λ)}`, the Δ_λ sign — so the
+cluster is no longer a positive product). So **the chirality involution is the sign
+mechanism for the 3-body force** — a genuine, parameter-free advance.
+
+**Honest scope (not a closure — and chirality is not a binding combiner).** The
+chiral `c₃` has the right *sign* but its *magnitude* (+0.08 / +0.12 MeV) is ~10–24×
+below the empirical b₃ (+1.8 / +1.0 MeV). Worse, as a **binding combiner** chirality
+fails outright: the chiral *total* 2-bond binding is `joint = E₀(g_free − g_atom)` =
+**+0.18 MeV (³H), +0.22 (³He) — a 98 % underbind**, far worse than `|χ|`'s 62 %.
+The mixed-sign `sgn(w₀)` weight heavily cancels the whole trace, so both the leading
+(pairwise) binding and the 3-body cluster shrink to a small residual. So:
+
+- **What chirality IS:** the *sign carrier* of the 3-body correlation — the attractive
+  `(-1)^{n(λ)}` sign lives on the connected cluster, removing the sign obstruction.
+- **What chirality is NOT:** a viable binding combiner — globally reweighting by
+  `sgn(w₀)` destroys the leading magnitude (98 % underbind).
+
+So the genuine object would need to keep `|χ|`'s magnitude on the leading part **and**
+apply the chirality sign to the 3-body correlation — a *structured* combiner, not a
+global chiral reweight. This is plausibly where the q-Reeb `|Δθ_λ|` work (sibling
+#2612, which closes A=3 to ~2 %) supplies the magnitude that pure chirality cancels
+away. The open question is now precise: a combiner carrying `|χ|`-magnitude + chirality
+sign on the correlation. Two further caveats stand: this is the 2-adjacent-bond cluster
+only (no long-range 1–3 bond), and the 2-bond cluster ≠ the full physical 3-body force.
+
+→ `chirality_weighted_3body_cluster_probe.py` · `chirality-weighted-3body-cluster.witness.json`
+(`pyhecke_native` build note: the `clarabel` git dep is proxy-blocked; build with a
+local empty `clarabel` stub crate — features `mpfr/sdp-netlib/bigrational/serde`
+declared empty — repointed via the two `[patch.crates-io]` blocks; `clarabel` is
+optional and never compiled in the default wheel.)
+
+**Other non-product routes (all gated or sibling-owned):**
+- **H₃⁴→H₁₂ A=4 interface operator** — topological support correct (LR fusion recovers
+  the dominant 2-row partitions), but the scalar `ρ_F` extraction is open and Rust-gated
+  (`2026-06-01-he4-multi-nucleon-interface-research-state.md`).
+- **Operator-cumulant cooperative binding** (`2026-06-17` workplan) — gated: realizing
+  `Δ_coop` needs Borromean LP-selection, which `2026-06-17-...two-remaining-directions-closed.md`
+  proved no continuous variational principle achieves without a fit.
+- **q-Reeb phase `|Δθ_λ|`** (sibling #2612) — a non-product, non-collapsed per-λ object
+  that reportedly closes A=3 to ~2%; diagnostic infrastructure exists but binding-wiring
+  is open. Worth checking whether `|Δθ_λ|` is the cooperative object (and whether it is
+  attractive) — but it is sibling-owned.
+
+## Two follow-ups: structured combiner + long-range triangle bond (✓ run, 0 fit)
+
+With `pyhecke_native` built, both natural next experiments ran over the H₉ joint trace
+(`structured_combiner_and_triangle_probe.py` · `structured-combiner-and-triangle.witness.json`):
+
+**(A) Structured combiner** — keep `|χ|` magnitude on the pairwise (leading) part, apply
+the chirality sign only to the 3-body correlation: `B_struct = pair_sum^{abs} + c₃^{chiral}`.
+This is the **best of the three combiners**, and it relocates the gap:
+
+| atom | abs joint | chiral joint | **B_struct** | AME | B_struct err |
+|---|---:|---:|---:|---:|---:|
+| ³H | +3.25 (−62%) | +0.18 (−98%) | **+5.10** | 8.48 | **−40%** |
+| ³He | +3.47 (−55%) | +0.22 (−97%) | **+4.99** | 7.72 | **−35%** |
+
+The structured combiner recovers the `|χ|` pairwise magnitude (`pair^abs` ≈ 5.0 MeV) *and*
+keeps the 3-body attractive (`c₃^chiral` ≈ +0.08/+0.12). **Diagnostic payoff:** the residual
+−40% is now a **pairwise-binding-magnitude** deficit (`pair^abs` ≈ 5.0 vs the ≈ 6.7 MeV the
+pairwise part would need), **not** a 3-body-sign problem. The 3-body sign is solved by
+chirality; the leftover gap lives in the leading (pairwise) trace — consistent with the
+CAL-2 floor / missing operator-valued branching combiner.
+
+**(B) Long-range 1–3 bond** — the joint trace of a braid with a *non-adjacent* crossing does
+not factor over bonds, so it **escapes `productModel_3body_nonpos`**. Adding the band
+generator `b₂,₆ = σ₅σ₄σ₃·σ₂·σ₃⁻¹σ₄⁻¹σ₅⁻¹` (one long-range crossing, block 0 ↔ block 2) on top
+of the two adjacent interfaces:
+
+| atom | combiner | joint (2-bond) | joint (triangle) | **Δ_LR** |
+|---|---|---:|---:|---:|
+| ³H | abs | +3.25 | +3.51 | **+0.26** |
+| ³He | abs | +3.47 | +3.85 | **+0.38** |
+| ³H | chiral | +0.18 | +0.09 | −0.09 |
+
+In the production `|χ|` combiner the long-range bond contributes **genuine attractive
+binding** (Δ_LR > 0 — the escape from the destructive theorem is real), confirming the
+triangle topology adds binding. But the magnitude is modest (~0.3 MeV, ~5% of the gap), so
+it does not close A=3 on its own.
+
+**Joint conclusion of (A)+(B):** sign solved (chirality), triangle topology helps (+0.3 MeV,
+non-product escape confirmed), and the **dominant residual is pairwise-trace magnitude** —
+the structured-combiner decomposition isolates exactly where the missing ~40% lives.
+
+→ `structured_combiner_and_triangle_probe.py` · `structured-combiner-and-triangle.witness.json`
+
+**Net frontier statement.** The binding scale is matched (~1.5 MeV); the 3-body **sign** is
+solved by the chirality involution (non-product, escapes the obstruction), and the long-range
+band confirms the non-adjacent trace adds attractive binding. The structured combiner relocates
+the remaining gap to **pairwise-trace magnitude** (≈ 40% short, at the CAL-2 floor), not to the
+3-body sector. The productive directions are now the leading-trace / operator-valued branching
+combiner and the sibling q-Reeb `|Δθ_λ|` magnitude (#2612), not a further 3-body sign mechanism.
+
+→ `binding_triangle_3body_cluster_probe.py` (corrected) · `binding-triangle-3body-cluster.witness.json`

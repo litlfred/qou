@@ -86,23 +86,23 @@ $$
   \pmod{\Phi_{n_\ell}(q)}.
 $$
 
-## Why this replaces the Lean `opaque`
+## Replacement of the class field representation
 
-The Lean declaration
+The Lean formulation in
+[`gb-residue-spectral-sum.lean`](gb-residue-spectral-sum.lean)
+treats the residue as an abstract class field:
 
 ```lean
-noncomputable opaque residueAtRoot (ℓ : ℕ) (ζ : RootOfUnity) (q : ℝ) : ℝ
+residue : Fin levelBound → ℝ
 ```
 
-in [`gb-residue-spectral-sum.lean`](gb-residue-spectral-sum.lean)
-treats the residue as an unspecified function of three variables
-($\ell$, $\zeta$, $q$) returning a real number — which forces the
-formalisation to live over $\mathbb{R}$ and to invoke complex
-analysis informally to compute residues at unit-circle roots.
+This effectively treats the residue as an unspecified function returning a real number — which forces the formalisation to live over $\mathbb{R}$ and implicitly relies on complex analysis to compute residues at unit-circle roots.
 
 The proposition above replaces this by a constructive algebraic
 definition entirely inside $\widehat{\mathbb{Z}[q]}$: cyclotomic
-projection plus the Habiro-ring isomorphism. Three things become
+projection plus the Habiro-ring isomorphism. (A full Lean 
+formalisation of this constructive approach is a deferred 
+multi-week effort for the `QOU.AlgebraicSubstrate` layer.) Three things become
 immediate:
 
 1. **No analytic continuation.** The residue is a quotient by a
@@ -118,35 +118,3 @@ immediate:
    [`prop:gb-spectral-sequence`](#prop:gb-spectral-sequence) is
    automatic — the $E_\infty$ page reads off the cyclotomic
    projections of the graded trace.
-
-## Proof sketch
-
-The graded Markov trace
-$\mathrm{tr}_{M, \ell}(T_w) \in \mathbb{Q}(q)$ has, by
-construction
-([`prop:graded-markov-trace-from-gs-filtration`](#prop:graded-markov-trace-from-gs-filtration)),
-$q$-degree $= \ell$ in the GS-filtration grading. Multiplied by
-$\Phi_q$, the product is an element of the Habiro ring:
-
-$$
-  \Phi_q \cdot \mathrm{tr}_{M, \ell}(T_w)
-  \;\in\;
-  \widehat{\mathbb{Z}[q]}.
-$$
-
-The Habiro ring's cyclotomic projection
-$\pi_n : \widehat{\mathbb{Z}[q]} \to \mathbb{Z}[q] / \Phi_n(q)$
-is a $\mathbb{Z}$-algebra map for each $n$ \cite{habiro2002}.
-Applying $\pi_{n_\ell}$ (the cyclotomic projection at the
-distinguished order for stratum $\ell$) and identifying
-$\mathbb{Z}[q] / \Phi_{n_\ell}(q)$ with $\mathbb{Z}[\zeta_\ell]$
-gives an element of the cyclotomic ring — the residue.
-
-Equivalence with the analytic definition (when both apply) is the
-content of the Habiro-completion theorem
-\cite{habiro2002}: the cyclotomic projections agree with the
-analytic residue at $\zeta_\ell$ for any element of
-$\widehat{\mathbb{Z}[q]}$ that converges as a complex function on
-$|q| > 1$. The algebraic projection, however, is well-defined
-*regardless* of analytic convergence — which is the point: the
-algebraic-side derivation does not need analytic continuation.

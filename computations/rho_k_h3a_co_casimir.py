@@ -110,6 +110,7 @@ from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
 
 from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV, M_D_MEV  # noqa: E402
+from experimental_constants import m_n_derived_3input  # noqa: E402
 from murnaghan_nakayama import partitions_of, hook_lengths  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
@@ -394,7 +395,7 @@ def main() -> int:
             "M_codata_MeV": str(M_D_MEV),
             "m_e_MeV": str(M_E_MEV),
             "m_p_MeV": str(M_P_MEV),
-            "m_n_MeV": str(M_N_MEV),
+            "m_n_MeV": str(m_n_derived_3input),
             "occam_witness_loaded": "rho-k-h3a-refinement.witness.json",
             "occam_schur_weyl_match_1e_40": bool(sw_match),
         },

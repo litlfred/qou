@@ -168,4 +168,62 @@ theorem HasCorrectedMassEndomorphismTower.ne_phi_q_at_zero
 -- Ref: [manuscript] disambiguation marker for content-block resolution
 structure QuantumDilogarithm where
 
+/-! ## z-Habiro Rogers saddle identity (conjecture — formalize-first)
+
+The Faddeev face `phi_q` (root-of-unity quantum dilogarithm; the archimedean
+realisation of the merged `QOU.MassEndomorphism.ZHabiroCauchy` eulerCoeff
+limit) and the Rogers face `towerTerm = -li2_q(-|·|)` are, per
+`prop:phi-q-aj-machinery-identification`, two archimedean saddles of ONE
+algebraic object (the AJ quantum A-polynomial `Â_K`): `phi_q` at
+`q = e^{2πi/N}` (root of unity, unbounded), the Rogers form at real `q`
+(bounded). The QOU substrate evaluates masses at REAL `q₀` (`Im q₀ = 0` at the
+observable level), so the production tower's use of `towerTerm` rather than
+`phi_q` is exactly the claim that the correct real-`q` archimedean saddle of the
+Faddeev face IS the Rogers form.
+
+This identity is OPEN for `𝓑₃` (the AJ-saddle identification is unproven there
+— see `phi-q-aj-machinery-identification.md`). We therefore axiomatise it as a
+conjecture class — the `saddle_phi_q_eq_towerTerm` field IS the conjectural
+input (AGENTS.md §3b "Lean formalization of conjectures") — and prove
+NON-VACUOUS downstream corollaries that *compose* the conjecture with the proven
+`towerTerm_at_zero` / `phi_q_at_zero` lemmas to derive new facts (they do not
+project the conclusion; AGENTS.md §3b-cond rule 5).
+
+Ref: docs/audits/2026-06-22-zhabiro-bounded-rogers-continuation-direction.md §4
+-/
+
+/-- **Conjecture (z-Habiro Rogers saddle identity).** There is a real-`q`
+    archimedean saddle map `realQSaddle` under which the Faddeev face `phi_q`
+    becomes the bounded Rogers production tower term `towerTerm = -li2_q(-|·|)`.
+    The `saddle_phi_q_eq_towerTerm` field is the conjectural input — open for
+    `𝓑₃`; every result below is conditional on this class. -/
+class ZHabiroRogersSaddle where
+  /-- the real-`q` archimedean saddle, acting on a dilogarithm face. -/
+  realQSaddle : (ℝ → ℝ → ℝ) → (ℝ → ℝ → ℝ)
+  /-- CONJECTURE: the real-`q` saddle of the Faddeev face is the Rogers
+      production tower term. Open for `𝓑₃` (AJ-saddle identification). -/
+  saddle_phi_q_eq_towerTerm : realQSaddle phi_q = towerTerm
+
+/-- **Conditional corollary (non-vacuous).** Under the saddle conjecture, the
+    real-`q` saddle of the Faddeev face vanishes at zero amplitude — derived by
+    rewriting along the conjecture and then applying the *proven*
+    `towerTerm_at_zero`. Composes the hypothesis with an established lemma; does
+    not assume the conclusion. -/
+theorem ZHabiroRogersSaddle.realQSaddle_phi_q_at_zero
+    [s : ZHabiroRogersSaddle] (q : ℝ) :
+    s.realQSaddle phi_q q 0 = 0 := by
+  rw [s.saddle_phi_q_eq_towerTerm]
+  exact towerTerm_at_zero q
+
+/-- **Conditional corollary.** Under the saddle conjecture, the real-`q` saddle
+    of the Faddeev face disagrees with `phi_q` itself at zero amplitude (the
+    Rogers face is `0` there, the Faddeev face is `1`): the saddle genuinely
+    moves `phi_q` off its own value, witnessing that the real-`q` continuation is
+    the bounded Rogers form, not the Faddeev product. -/
+theorem ZHabiroRogersSaddle.realQSaddle_phi_q_ne_phi_q_at_zero
+    [s : ZHabiroRogersSaddle] (q : ℝ) :
+    s.realQSaddle phi_q q 0 ≠ phi_q q 0 := by
+  rw [s.saddle_phi_q_eq_towerTerm, phi_q_at_zero, towerTerm_at_zero]
+  norm_num
+
 end QOU.BraidKnot

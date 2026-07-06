@@ -16,7 +16,7 @@ gap from "interesting near-miss" to "categorical derivation toward
 ## 0. TL;DR
 
 Two structural laws are proved at q = q₀ (50-digit) by
-`folio-assistant/computations/beta_ew_delta_I_conjugate_pairing.py`,
+`computations/beta_ew_delta_I_conjugate_pairing.py`,
 which writes `beta-ew-delta-I-conjugate-pairing.witness.json` with
 11 assertions all passing:
 
@@ -301,8 +301,8 @@ partition-structure exploit catalogue.
 
 ## 6. Provenance
 
-- **Probe:** `folio-assistant/computations/beta_ew_delta_I_conjugate_pairing.py`
-- **Witness:** `folio-assistant/computations/beta-ew-delta-I-conjugate-pairing.witness.json`
+- **Probe:** `computations/beta_ew_delta_I_conjugate_pairing.py`
+- **Witness:** `computations/beta-ew-delta-I-conjugate-pairing.witness.json`
 - **Predecessor:** commit `2d19e475` (β_EW(Δ_I) deep-dive (b)+(c) on (3,2,1))
 - **Categorical input:** commit `40eefd6d` (Tier-A1 Property 5: bar-involution compatibility)
 - **Conventions:** symmetric Hecke, eigenvalues (q, −q⁻¹); Hoefsmit

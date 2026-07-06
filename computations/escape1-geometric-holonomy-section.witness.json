@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T05:22:22.393369+00:00",
-  "commitSha": "13e9814eeff1edec31691425d9447202fa7b1976",
+  "computedAt": "2026-06-22T13:19:03.375342+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "S3_order",
@@ -96,11 +96,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 9,
   "computation": "escape1-geometric-holonomy-section",
   "scriptFile": "escape1_geometric_holonomy_section.py",
-  "scriptHash": "3f478e854290",
-  "scriptCommitSha": "13e9814eeff1edec31691425d9447202fa7b1976",
+  "scriptHash": "a0432a919af0",
+  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -110,15 +110,13 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "description": "Escape 1 (geometric/icosahedral-holonomy section) of the Young-lattice synthesis keystone: does the icosahedral A5 / Bring cross-ratio GEOMETRY FORCE a canonical section (1-dim line) of the mult-2 Hom-space V = Hom_{S3}((2,1), Res^{A5}_{S3}(H)) ~= C^2, or does selecting a line still require a free parameter (fit)? Tests, RAW: (1) realize the dim-5 ell=2 irrep H of A5 explicitly (pair-perm rep, H-isotypic projector), restrict to the color-sheet S3<A5, project onto the (2,1)-isotypic, pin dim V=2; (2) compute the centralizer C_{A5}(S3) and normalizer N_{A5}(S3) -- the ONLY sources of a FORCED (basis-independent) operator on V; (3) THE TEST: simple spectrum / unique invariant line vs free selection; (4) icosahedral special cross-ratios (golden-ratio rigidity) -- forced selector or free modulus; (5) h^4=-3/4 falsification reference only. NO fit, NO tuning. Environment: exact permutation-group combinatorics (Python stdlib), numpy for the explicit C^2 rep matrices, mpmath @ compute_dps for RAW substrate/cross-ratio values; engine=python+mpmath.",
   "auditOnly": "docs/audits/2026-06-02-escape1-geometric-holonomy-section.md",
   "parameters": {
-    "q0_falsification_ref": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+    "q0_falsification_ref": "1.10997859555733471989976322048322502665620840878015405145269053872699",
     "q0_source": "q_parameter.Q_MP (proton-pinned)",
     "dps": 70,
     "h4_borromean_falsification_ref": "-3/4",

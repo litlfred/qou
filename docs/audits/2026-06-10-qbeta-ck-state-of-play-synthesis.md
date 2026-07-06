@@ -158,7 +158,7 @@ staleness items found:
    "live work in PR #1739" — superseded by the June-4–6 arc (refuted-class
    map; precision floor; 4 KLR preflight refutations; kernel constraints).
    Currency note + registry pointer added.
-3. **Flagged, not changed:** `CLAUDE.md` "2026-05-31 c_3 SETTLED" note — the
+3. **Flagged, not changed:** `AGENTS.md` "2026-05-31 c_3 SETTLED" note — the
    registry §7 already lists it as drifted (the settle was re-litigated
    2026-06-03/04 and re-closed harder). Owner-visible file; left to owner.
 4. **Flagged, not changed:** legacy witness
@@ -197,7 +197,7 @@ The search space is now so pruned that the options enumerate cleanly:
    narrowings). Q_β stays c_2-only in production; m_n and Δ_pn inherit the
    acceptance; the only remaining theoretical escapes are exotic-signed
    Lusztig / Demazure-Lusztig variants (research-grade, preflight-gated).
-4. **Doc hygiene** — items §5.3 / §5.4 (CLAUDE.md note; legacy witness
+4. **Doc hygiene** — items §5.3 / §5.4 (AGENTS.md note; legacy witness
    stamp), owner discretion.
 
 Options 1 and 2 are complementary (1 feeds 2); option 3 is the default if
@@ -214,3 +214,24 @@ per registry §8.
   Operator-route recipe: [1ppQ keystone recipe](2026-06-04-qbeta-1ppq-keystone-exact-construction-recipe.md)
 - Recursion status: [pre-archimedean recursion](2026-06-02-qbeta-prearchimedean-recursion-status.md) ·
   Ledger: [`1ppq-qbeta.md`](../coordination/1ppq-qbeta.md) (sessions cont. 1–18)
+
+## 8. Update (2026-06-16) — the two keystones are one complex volume `𝔙`
+
+The §2 open objects — kernel `R(q,ξ)` (Q_β brane-tower) and element `F(q)/Φ(u)`
+— are **Re/Im of a single complex-volume observable**
+`𝔙 = E₀·tr_M((Π_free−1)∘𝓜)` (`conj:binding-qbeta-complex-volume`): `Re 𝔙` is
+binding (bar-even/cosh), `Im 𝔙` is `𝔔_β` (bar-odd/sinh), the QOU analogue of
+Neumann–Zagier `Vol + i·CS`. Consequences for this synthesis:
+
+- The two parallel searches collapse to **one**: find a complex `𝔙` matching
+  the binding channel (`Re`) and the `𝔔_β` channel (`Im`) at one normalisation.
+  The shared constraints (ζ₄ residue, bar-odd `a₁`, simple pole at `u_substrate`)
+  are constraints on `𝔙`'s two parts simultaneously.
+- The Hoefsmit Stage-B "two `c₂`" (net-route `≈−8` vs brane-tower `−1`) is the
+  expected `Re`/`Im` split, **not** route-dependence
+  ([Stage B verdict §reframe](2026-06-16-hoefsmit-stage-b-attempt-verdict.md)).
+- **Still open** (the §4 precision-floor question): are the per-channel `c_k`
+  constants or fibre q-functions? Candidate resolution (owner, 2026-06-16): the
+  `c_k(q)` are fibre q-functions **evaluated** by the non-degeneracy of the
+  Markov pairing at `Vol = 1` — i.e. `R(q,ξ)` is a q-function and the
+  unit-normalised pairing is the evaluation map to the observed rungs.

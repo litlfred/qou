@@ -150,7 +150,7 @@ Rules:
 - Categorical theorems/lemmas use `snake_case` (e.g., `categorical_self_duality`)
 - Top-level categorical stubs live directly in the `QOU` namespace (not a chapter submodule)
 
-## Base ring convention (STRICT — CLAUDE.md §7c)
+## Base ring convention (STRICT — AGENTS.md §7c)
 
 When generating Lean stubs, **always start over a generic type variable
 `{R : Type*}`** with the weakest typeclass that admits the construction.
@@ -178,7 +178,7 @@ back** because downstream consumers accrete archimedean assumptions
 silently. When in doubt, stay generic.
 
 Concrete cheat-sheet — see `formalizer.md §Base ring convention` and
-`CLAUDE.md §7c` for the full table.
+`AGENTS.md §7c` for the full table.
 
 ## Lean Project Structure
 
@@ -289,7 +289,7 @@ Instead of extracting from LaTeX, read the `.ts` manifest:
 3. **Read the `.md` file**: extract the mathematical statement
 4. **Generate the `.lean` sibling** alongside the `.ts` and `.md` files
 5. **Update the `.ts` manifest**: set `lean.ref` to the package-qualified
-   URI `"<pkg>:<Decl.Path>"` (per CLAUDE.md §0a). The legacy
+   URI `"<pkg>:<Decl.Path>"` (per AGENTS.md §0a). The legacy
    `lean.decl` / `lean.file` shape is removed from the schema.
 
 ### The `uses[]` dependency graph
@@ -332,7 +332,7 @@ Parse with `parseLeanRef()` from
 
 ## Trivial-model consistency witness (Pattern 3.3 companion)
 
-Whenever a conjecture is axiomatised as a `class` (per CLAUDE.md
+Whenever a conjecture is axiomatised as a `class` (per AGENTS.md
 §3b, the conditional-class exception), generate a paired
 `def trivialModel … : TheClass … where …` populated with
 `PUnit`/`0`/`fun _ => True` so that **every** class field reduces
@@ -372,7 +372,7 @@ in the same file:
    each class field discharges by `rfl`.
 
 The trivial model unblocks downstream `[ClassName]`-conditional
-theorems (CLAUDE.md §3b-cond) by guaranteeing the conditional
+theorems (AGENTS.md §3b-cond) by guaranteeing the conditional
 hypothesis is satisfiable, hence the conditional results are not
 vacuously true.
 

@@ -36,10 +36,11 @@ $\lambda \vdash n$:
 | Pairing ($\pm \lambda_P / \sqrt{A}$) | $k = 3$       | $[n-1,1]$ (standard)            | $A^{-1/2}$ |
 | Wigner ($\lambda_W \cdot T(T+1)/A$)  | $k = 5$       | $[n-2,2] + [n-2,1^2]$           | $T(T+1)/A$ |
 
-Their coefficients are quantum factorials $[n]_q!$ by the
-[Wedderburn trace identity](#prop\:wedderburn-trace-identity):
-the sum $\sum_\lambda \dim_q(\lambda)^2 = [n]_q!$ partitions the
-total Markov weight among the irreducible representations.
+Their coefficients are the Hecke-level quantum factorials $[n]_q!$
+(evaluated directly as the $q$-factorial product); the
+[Markov-trace normalization](#prop:wedderburn-trace-identity)
+$\sum_\lambda d_\lambda\, y_\lambda(q) = 1$ partitions the total
+Markov weight among the irreducible representations.
 
 **Transient (exceptional divisor) terms.**
 
@@ -66,7 +67,7 @@ the angular momentum projection.
 
 The same :refterm[descent]{#descent} structure applies to the electromagnetic coupling
 endomorphism $\Phi = P_{\mathrm{anti}}$
-([CS-corrected coupling](#prop\:em-coupling-projection)):
+([CS-corrected coupling](#prop:em-coupling-projection)):
 
 | Component              | Mass (BW)                            | Coupling ($1/\alpha$)                                            |
 | ---------------------- | ------------------------------------ | ---------------------------------------------------------------- |
@@ -79,15 +80,3 @@ The universality of the :refterm[descent]{#descent} decomposition — base holon
 exceptional divisor corrections — reflects the categorical origin
 of both mass and coupling as endomorphisms in $\mathbf{C}$,
 decomposed by the same involution $\hat{\tau}$.
-
-*Proof sketch.*
-The Wedderburn-Artin decomposition
-$H_n(R, q) \cong \bigoplus_{\lambda \vdash n} M_{d_\lambda}(R)$
-identifies $Z(H_n(q))$ with the diagonal scalars in each block.
-The mass endomorphism $\mathfrak{m} = \sum_i \ln |M_i|$ decomposes
-under restriction to each block.  The descended component collects
-terms that factor through the block's Casimir eigenvalue; the
-transient component collects terms that depend on the specific
-embedding of generators (i.e., the choice of crossing sites), which
-is the data localised at exceptional divisors.
-$\square$

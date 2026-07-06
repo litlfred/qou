@@ -17,6 +17,8 @@ LaTeX label: `thm:topological-charge-quantization`
 
 set_option autoImplicit false
 
+open CategoryTheory CategoryTheory.MonoidalCategory
+
 namespace QOU.AlgebraicSubstrate
 
 universe u v
@@ -24,7 +26,7 @@ universe u v
 variable {C : Type u} [CategoryTheory.Category.{v} C]
   [CategoryTheory.MonoidalCategory C]
 
-/-- The topological charge of the unit particle is quantized.
+/- The topological charge of the unit particle is quantized.
 
     Given the Frobenius–Hopf substrate A with observer trace Φ and
     canonical differential form ω, the algebraic residue at z = 1

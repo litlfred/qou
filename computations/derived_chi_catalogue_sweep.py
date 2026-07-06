@@ -25,7 +25,7 @@ all emitted cells carry `q_convention = "kauffman"`.
 
 ## Scope control
 
-Per CLAUDE.md long-compute discipline, atom sweeps are gated by
+Per AGENTS.md long-compute discipline, atom sweeps are gated by
 `--max-A` (default 4 — covers p, n, D, T, ³He, ⁴He in ~2 seconds).
 Heavier atoms (`A ∈ {5..9}`) take minutes to hours; trigger them via:
 
@@ -228,7 +228,7 @@ def main() -> int:
         "--max-A", type=int, default=4,
         help="Sweep isotopes with mass number A ≤ this (default 4 — light "
              "atoms only, finishes in seconds). A=9 takes hours; run via "
-             "`tee /tmp/sweep.log` per CLAUDE.md long-compute discipline.",
+             "`tee /tmp/sweep.log` per AGENTS.md long-compute discipline.",
     )
     parser.add_argument(
         "--max-partitions-per-atom", type=int, default=0,
@@ -290,7 +290,7 @@ def main() -> int:
 
     derivation_ref = (
         "pyhecke_native.chi_q_via_gp (Geck-Pfeiffer + Hecke characters) on "
-        "atom_braid_word_3A from folio-assistant/computations/mass_at_3A_proper.py"
+        "atom_braid_word_3A from computations/mass_at_3A_proper.py"
     )
 
     total_cells_emitted = 0

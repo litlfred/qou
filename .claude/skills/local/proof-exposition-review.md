@@ -84,7 +84,7 @@ Build the candidate set:
    ```
 3. **Propositions that interpret or generalize what the proof does**
    (same keywords in title; same labels in other blocks' `uses[]`)
-4. **Computational witnesses** under `folio-assistant/computations/`
+4. **Computational witnesses** under `computations/`
    matching the proof's topic
 
 ### Phase 3 — Check each candidate
@@ -96,7 +96,7 @@ For each candidate block `B` in the integrable set, ask:
 | Does `B` state a lemma the proof currently re-derives inline? | Add `B.label` to `uses[]`, replace the inline derivation with a one-line citation |
 | Does `B` provide a shorter construction of the same object? | Restate the proof using `B`'s construction; drop the old one |
 | Does `B` tighten a hypothesis (proof works more generally than stated)? | Weaken the statement to match `B`'s level of generality |
-| Does `B` have computational witnesses relevant to a numerical claim? | Cite the witness (`folio-assistant/computations/*.witness.json`) in the prose |
+| Does `B` have computational witnesses relevant to a numerical claim? | Cite the witness (`computations/*.witness.json`) in the prose |
 | Does `B` supersede the proof entirely (a later theorem implies the earlier one trivially)? | Consider demoting the proof to a corollary of `B`, or merging |
 | Does `B` add notation/conventions that would make the proof clearer? | Adopt the new notation in the proof `.md` |
 
@@ -135,7 +135,7 @@ One consolidated report per target block. Do not edit files.
 |------------------------|-----------|----------------------|
 | `prop:foo` (YYYY-MM-DD) | states `lem:inline-step` already | add to uses[]; replace lines X-Y with citation |
 | `rem:baz` | cleaner notation | adopt $\varrho$ instead of $\gamma$ in lines A-B |
-| `folio-assistant/computations/bar.witness.json` | numerical backing | add sentence "computationally verified at q_0" |
+| `computations/bar.witness.json` | numerical backing | add sentence "computationally verified at q_0" |
 
 ### Repeated-invocation (§J)
 

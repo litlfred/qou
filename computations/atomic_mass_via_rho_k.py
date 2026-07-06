@@ -189,7 +189,7 @@ _USE_LEGACY = _os.environ.get(
     "LEGACY_CODATA_NUCLEON_ANCHORS", ""
 ).strip().lower() in ("1", "true", "yes", "on")
 if _USE_LEGACY:
-    # CODATA tautology mode (back-compat).  M_P_MEV / M_N_MEV remain
+    # CODATA tautology mode (back-compat).  M_P_MEV / m_n_derived_3input remain
     # the codata_constants values imported above.
     _NUCLEON_ANCHOR_SOURCE = (
         "CODATA (LEGACY CAL anchors via Q_β = m_n - m_p - m_e; "
@@ -204,7 +204,7 @@ else:
     # _li_2_q_util — single source of truth (gemini #690 review).
     _m_n_substrate = _m_p_substrate * (1 + _flavor_split(_Q, _QI))
     M_P_MEV = _m_p_substrate
-    M_N_MEV = _m_n_substrate
+    m_n_derived_3input = _m_n_substrate
     _NUCLEON_ANCHOR_SOURCE = (
         "substrate-pure (C2 inflection + prop:flavor-split-substrate "
         "with (1+ℏ_q³) sub-leading correction; no CODATA m_p / m_n input)"
@@ -361,7 +361,7 @@ def load_atomic_tr_m() -> dict[str, mp.mpf]:
 
 def rho_K_leading_order(Z: int, N: int, abs_tr_M: mp.mpf) -> mp.mpf:
     """ρ_K^{LO}(Z, N) = (Z·m_p + N·m_n) / (m_e·|tr_M(K)|)."""
-    return (Z * M_P_MEV + N * M_N_MEV) / (M_E_MEV * abs_tr_M)
+    return (Z * M_P_MEV + N * m_n_derived_3input) / (M_E_MEV * abs_tr_M)
 
 
 def predict_mass(Z: int, N: int, abs_tr_M: mp.mpf) -> tuple[mp.mpf, mp.mpf]:
@@ -393,7 +393,7 @@ def main() -> int:
     print(f"    m_e = {mp.nstr(M_E_MEV, 8)} MeV (CODATA, CAL-1 always)")
     print(f"    nucleon anchor source: {_NUCLEON_ANCHOR_SOURCE}")
     print(f"    m_p = {mp.nstr(M_P_MEV, 8)} MeV")
-    print(f"    m_n = {mp.nstr(M_N_MEV, 8)} MeV")
+    print(f"    m_n = {mp.nstr(m_n_derived_3input, 8)} MeV")
 
     print(f"\n  {'atom':<5}{'Z':>2}{'N':>2}  "
           f"{'|tr_M|':>14}  {'ρ_K^LO':>14}  "
@@ -506,7 +506,7 @@ def main() -> int:
             "q0": Q_50_DIGIT_STR,
             "m_e_MeV": fmt(M_E_MEV),
             "m_p_MeV": fmt(M_P_MEV),
-            "m_n_MeV": fmt(M_N_MEV),
+            "m_n_MeV": fmt(m_n_derived_3input),
             "mpmath_dps": 50,
         },
         "data": {

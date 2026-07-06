@@ -7,8 +7,7 @@
 > Full purge tracking: [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md).
 
 The molecular-binding framework uses the Hartree energy
-$E_h = m_e c_q^{2}\,\alpha_{EM}^{2}$ as a conversion scale (for example in
-[`hecke_core.py:198`](folio-assistant/computations/substrate/hecke_core.py)).
+$E_h = m_e c_q^{2}\,\alpha_{EM}^{2}$ as a conversion scale.
 This block asks whether the $\alpha_{EM}^{2}$ factor arises from QOU/Hecke
 structure rather than as an empirical input. The answer reached is a
 **clean conditional theorem**, not a closed one.
@@ -43,7 +42,7 @@ $\rho_{(2,2)}$ up to the CAL-1 energy unit $m_e c^{2}$.*
 > above is the live statement; the $y_{\mathrm{cov}}$ form is retained
 > only in the investigation log.
 
-## Standing — a conditional theorem
+## Status: a conditional theorem
 
 Every *mechanism* question is resolved: the coupling-parity routes are
 refuted (below), the $\alpha_{EM}^{2}$ scaling is exact in $R$, the
@@ -68,7 +67,7 @@ residual is exactly **three named items**, none a hidden gap:
    complexity (the honest successor to the refuted quadratic-form
    Mechanism B below).
 
-## What is rigorous
+## Rigorous results
 
 1. **The bare LP/SDP framework.** The $H_2$ molecular braid and its
    primal/dual program are set up rigorously in
@@ -188,12 +187,12 @@ $\lambda_{\mathrm{bound}}^{-1}(q_0) = \alpha_{EM}(q_0)\,c_1$ for some
 $c_1 \in R$ of order unity — a direct symbolic computation
 (See [Table 11](#tbl:e-hartree-categorical-derivation-table11-data)). The
 $H_2$ witness
-([`h2-molecular-binding.witness.json`](folio-assistant/computations/h2-molecular-binding.witness.json))
+([`h2-molecular-binding.witness.json`](computations/h2-molecular-binding.witness.json))
 gives the dimensionless ratio $E_{\mathrm{bind}}/E_{\mathrm{Hartree}} \approx 0.170$,
 of order unity (matching the standard-physics $H_2$ ratio $\approx 1/6$),
 consistent with Mechanism D without any $J^{1}$-vanishing miracle.
 
-## No coupling-level involution flips $\alpha_{EM}$
+## Absence of a coupling-level involution flipping $\alpha_{EM}$
 
 A natural follow-up to Mechanism C asks whether some involution $\iota$ of
 $R$ other than $q \leftrightarrow q^{-1}$ flips the sign of $\alpha_{EM}$.
@@ -234,7 +233,7 @@ that linear-Stark vanishing — see
 [antiparticle crossing reversal](#prop:antiparticle-crossing-reversal) for
 the QOU analogue of charge-conjugation parity.
 
-## What is still missing for closure
+## Items still missing for closure
 
 A genuinely categorical derivation of the $\alpha_{EM}^{2}$ scaling
 requires three concrete, tractable items, all beyond the present block's
@@ -255,7 +254,7 @@ scope:
    statement about $\rho_\infty$ verifiable without experimental Hartree
    values.
 
-## What this block does not claim
+## Non-claims of this block
 
 - It does **not** claim a proof of $E_h \propto \alpha_{EM}^{2}$ from QOU
   principles; it claims only that this scaling is the expected leading
@@ -264,9 +263,7 @@ scope:
   constants — the coefficient $c_2$ is conjecturally in
   $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$.
 - It does **not** override the existing usage of
-  $E_{\mathrm{Hartree}} = m_e c^{2}\,\alpha_{EM}^{2}$ in
-  [`hecke_core.py:198`](folio-assistant/computations/substrate/hecke_core.py)
-  as a numerical input — that usage remains an empirical scale pending
+  $E_{\mathrm{Hartree}} = m_e c^{2}\,\alpha_{EM}^{2}$ as a numerical scale pending
   closure of this conjecture.
 
 ## Honest reporting

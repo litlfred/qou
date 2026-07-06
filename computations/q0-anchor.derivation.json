@@ -30,7 +30,7 @@
       "jet_order": 0,
       "spectral_stratum": "archimedean (q_0 ∈ ℝ_{>1})",
       "citation": "manuscript:§Substrate-anchors",
-      "notes": "script: folio-assistant/computations/substrate/q_parameter.py.  This SCRIPT_CITED step is the open frontier of the chain — the candidate derivations on the horizon are (A) closure of the α-FSC ↔ q_0 algebraic relation via `alpha_em_pslq_uniqueness.py` at higher precision, (B) inversion of the m_p/m_e mass-endomorphism tower, (C) a brane-tower topological invariant (e.g. a canonical-knot hyperbolic volume).  None has produced a closed form to date; this anchor remains the source of truth and every prediction inherits its precision."
+      "notes": "script: computations/substrate/q_parameter.py.  This SCRIPT_CITED step is the open frontier of the chain — the candidate derivations on the horizon are (A) closure of the α-FSC ↔ q_0 algebraic relation via `alpha_em_pslq_uniqueness.py` at higher precision, (B) inversion of the m_p/m_e mass-endomorphism tower, (C) a brane-tower topological invariant (e.g. a canonical-knot hyperbolic volume).  None has produced a closed form to date; this anchor remains the source of truth and every prediction inherits its precision."
     },
     {
       "name": "q_0 leaf evaluation",

@@ -21,4 +21,4 @@ structure BenzeneBraid where
   piElectrons : Nat := 6
 
 /-- Benzene strand count: 6 × carbon(18) + 6 × hydrogen(2). -/
-theorem benzene_strands : 6 * 18 + 6 * 2 = 120 := by norm_num
+theorem benzene_strands : 6 * 18 + 6 * 2 = 120 := by decide

@@ -1,0 +1,65 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-20T23:33:39.496819+00:00",
+  "commitSha": "6588c648659d161d8f8a77a7955aa92f5411a8cc",
+  "assertions": [
+    {
+      "name": "b_is_bar_even",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "source": "b²=(q⁴+q²+1)/(q²+1)²: function of h² (h bar-odd) ⇒ bar-even"
+    },
+    {
+      "name": "no_documented_ck_satisfies_bar_even_law",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "source": "c₂=-1, c₃=-2-ℏ², c₃=J_Hopf all violate the (unsigned) law"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 18,
+  "computation": "qbeta-barparity-kernel-criterion-prune",
+  "scriptFile": "qbeta_barparity_kernel_criterion_prune.py",
+  "scriptHash": "84461734d620",
+  "scriptCommitSha": "f246fae223f63ab72ddb5f589eeea3ad81a00bf9",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Prunes open-axis criterion 2(b) for the Q_β fibre kernel. The canonical Hoefsmit base b(q)=√((h²+3)/(h²+4)) (h=q-q⁻¹) is bar-EVEN, so u=b·ℏ_q² is bar-EVEN-covariant (u→+q²u). The documented c₂=-1 and both c₃ candidates (-2-ℏ², J_Hopf) all VIOLATE the bar-even-kernel law c_k(q⁻¹)=q^(-2k)c_k(q). So criterion 2(b) cannot be imposed on the c_k ladder in u. CORRECTION of an earlier version that used a non-canonical bar-ODD b=(q-q⁻¹)/(q+q⁻¹) (wrong u≈0.00102): the verdict is unchanged but there is no parity-split (u carries no per-rung sign). Constraint/pruning, not a value-hunt; nothing wired. See docs/audits/2026-06-20-hoefsmit-b-bar-parity-correction.md.",
+  "data": {
+    "b_bar_parity": "even",
+    "u_is_bar_even_covariant_plus_q2": true,
+    "J_hopf_bar_parity": "even",
+    "bar_even_F_law": "c_k(q^-1) = q^(-2k) c_k(q)",
+    "candidates": {
+      "c2 = -1 (proved-exact)": {
+        "k": 2,
+        "residual": "-1 + q**(-4)",
+        "satisfies": false
+      },
+      "c3 = -2 - ℏ_q² (near-match)": {
+        "k": 3,
+        "residual": "-(q - 1)**2 - 2 + 2/q**6 + (q - 1)**2/q**8",
+        "satisfies": false
+      },
+      "c3 = J_Hopf(q) (near-match)": {
+        "k": 3,
+        "residual": "(-q**10 - q**6 + q**4 + 1)/q**8",
+        "satisfies": false
+      }
+    },
+    "any_candidate_satisfies": false
+  }
+}

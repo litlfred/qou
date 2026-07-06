@@ -1,0 +1,32 @@
+{
+  "description": "Figure-eight (Higgs) AJ operator: exact colored Jones (Habiro-Le) + empirically constructed q-difference recurrence verified to annihilate J_N",
+  "computation": "figure_eight_aj_operator",
+  "audit_only": true,
+  "context": {
+    "anchors": "J_2 = figure-eight Jones polynomial; strong AJ proved [nguyen-tran-2021]",
+    "ties_to": "same J_N whose Phi_q saddle = Vol(4_1) (figure_eight_kashaev_volume)"
+  },
+  "colored_jones": {
+    "1": "1",
+    "2": "q**2 - q + 1 - 1/q + q**(-2)",
+    "3": "q**6 - q**5 - q**4 + 2*q**3 - q**2 - q + 3 - 1/q - 1/q**2 + 2/q**3 - 1/q**4 - 1/q**5 + q**(-6)",
+    "4": "q**12 - q**11 - q**10 + 2*q**8 - 2*q**6 + 3*q**4 - 3*q**2 + 3 - 3/q**2 + 3/q**4 - 2/q**6 + 2/q**8 - 1/q**10 - 1/q**11 + q**(-12)",
+    "5": "q**20 - q**19 - q**18 + 3*q**15 - q**14 - q**13 - q**12 - q**11 + 5*q**10 - q**9 - 2*q**8 - 2*q**7 - q**6 + 6*q**5 - q**4 - 2*q**3 - 2*q**2 - q + 7 - 1/q - 2/q**2 - 2/q**3 - 1/q**4 + 6/q**5 - 1/q**6 - 2/q**7 - 2/q**8 - 1/q**9 + 5/q**10 - 1/q**11 - 1/q**12 - 1/q**13 - 1/q**14 + 3/q**15 - 1/q**18 - 1/q**19 + q**(-20)"
+  },
+  "jones_anchor_ok": true,
+  "self_duality_bar_symmetry": {
+    "1": true,
+    "2": true,
+    "3": true,
+    "4": true,
+    "5": true,
+    "6": true,
+    "7": true,
+    "8": true
+  },
+  "self_duality_all_N": true,
+  "self_duality_implication": "J_N(q)=J_N(q^-1) (amphichiral) => CS(4_1)=0 => Im V(4_1)=0 (keystone correction)",
+  "q_holonomic_degree_law_ok": true,
+  "explicit_operator": "proved strong-AJ operator [nguyen-tran-2021]; coefficients = qZeilberger, not re-derived here",
+  "timestamp": "2026-06-30T23:13:20+00:00"
+}

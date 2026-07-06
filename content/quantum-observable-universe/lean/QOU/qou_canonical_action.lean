@@ -1,5 +1,8 @@
+import Mathlib.Tactic
+import Mathlib.Data.Real.Basic
+
 /-!
-# QOU.qou_canonical_action — placeholder stub
+# QOU.qou_canonical_action
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/quantum-observable-universes/qou-canonical-action.ts`](quantum-observable-universe/quantum-observable-universes/qou-canonical-action.ts).
@@ -12,8 +15,12 @@ Lake package.
 namespace QOU
 
 
-/-- Abstract context for the `qou_canonical_action` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- Abstract context for the `qou_canonical_action` claim — the
+    manuscript-themed typed fields the claim ranges over.  The
+    residual `Prop` (the boxed three-term decomposition) is *named*
+    by `qou_canonical_action` below (§3b: naming a conditional
+    conjecture is not a logical claim), not faked by projecting a
+    `claim_*` field. -/
 class QouCanonicalActionContext where
   /-- Substrate parameter `q : ℝ`. -/
   q : ℝ
@@ -25,9 +32,6 @@ class QouCanonicalActionContext where
   S_gauge : ℝ
   /-- Matter term `∫ (ψ* · D_∇ ψ)`. -/
   S_matter : ℝ
-  /-- Manuscript identity (boxed decomposition):
-      `𝒮_q = 𝒮_grav + 𝒮_gauge + 𝒮_matter`. -/
-  claim_qou_canonical_action : S_q = S_grav + S_gauge + S_matter
 
 /-- **Manuscript statement** (full body):
 
@@ -95,12 +99,14 @@ determined up to unique isomorphism by
 
 […truncated; see manuscript for remainder…]
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.claim_qou_canonical_action := by sorry`
-    placeholder; the `ctx.claim_qou_canonical_action : Prop` field carries the residual claim,
-    awaiting per-block type-level translation. -/
+    The Lean encoding below *names* the residual proposition as a
+    `def … : Prop` over the manuscript context — the boxed
+    decomposition `𝒮_q = 𝒮_grav + 𝒮_gauge + 𝒮_matter`.  Naming the
+    conditional conjecture is honest per §3b; an instance discharging
+    it (none here) would be the conjecture, the open state being the
+    absence of one. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-canonical-action.ts
-theorem qou_canonical_action [ctx : QouCanonicalActionContext] :
-    ctx.S_q = ctx.S_grav + ctx.S_gauge + ctx.S_matter :=
-  ctx.claim_qou_canonical_action
+def qou_canonical_action (ctx : QouCanonicalActionContext) : Prop :=
+    ctx.S_q = ctx.S_grav + ctx.S_gauge + ctx.S_matter
 
 end QOU

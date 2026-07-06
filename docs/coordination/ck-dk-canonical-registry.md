@@ -74,7 +74,7 @@ cross-referenced so they are never conflated again.
   the **proton anchor only** and are **rigid** (swing 4.7M× less than empirical
   c_3) → **falsified** as universal real-q fibre elements. A genuine c_3 Habiro
   element, if it exists, must be **complex-analytic / root-of-unity** (fibre
-  level), not a real-q formula (CLAUDE.md §"Im(q) at fibre vs observable level").
+  level), not a real-q formula (AGENTS.md §"Im(q) at fibre vs observable level").
 - **c_8 / c_9 / c_10** are PROVED rational identities at the silver ratio
   (`norm_num`-trivial in `qbeta-c8-c10-silver-rationals.lean`), but per §8 a
   silver-anchored exact rational is **not canonical** without a passing
@@ -82,6 +82,28 @@ cross-referenced so they are never conflated again.
   upstream SDP-extraction docstring already records q₀ leverage as
   noise-dominated for k ≥ 8 (ratios 10³–10⁷×). The closed forms are the
   STRUCTURAL signal at the silver ratio, not a q₀ precision claim.
+- **(2026-06-17) The silver anchor is now Lean-grounded**
+  (`QOU.QBeta.SilverAnchorGrounding`, sorry-free, PR #2445): `b² = 7/8` is
+  *derived* from the silver relation `q² − 2q − 1 = 0` (it was a **premise** in
+  `Cn_at_silver`), via `8(q⁴+q²+1) = 7(q²+1)²` with cofactor `(q²+2q−1)`; and the
+  same locus is proved to be the **`Q_A` decay-prefactor zero** (`2q+1−q² =
+  −(q²−2q−1)`).
+- **(2026-06-17, correction — PR #2445 dominance claim) the silver/`Q_A` pole
+  is GENUINE but SUBDOMINANT.** PR #2445 originally called it "the F-pole fixing
+  the *dominant* `1/u_substrate ≈ 117.4` root." Re-checked: the *true*
+  `Q_β = |Δ(net)|·E₀` uses the GB-reduced trefoil coefficient, and
+  `Δ(net)(1+√2) = 82216 + 58136√2 ≠ 0` while `Q_A(1+√2) = 0`, so `F` has a
+  **genuine** pole at silver (an earlier check that used the cheat-sheet
+  closed-form `Q_β ≈ Q_A` was *circular* — it gave `F = 1/cos`, trivially
+  regular). **But** `u_silver = u(1+√2) ≈ 0.321 → char root ≈ 3.12`, which is
+  **subdominant**: the dominant tail root `117.4 = 1/u_substrate`
+  (`u_substrate ≈ 0.0085 < u_silver`; `prop:q-beta-radius-of-convergence-gate`,
+  PR #1727) comes from a **non-`Q_A`** source. So the silver/`Q_A` zero pins one
+  *subdominant* root of the kernel's minimal denominator and prunes the dominant
+  root search (it is not the `Q_A` zero). Evidence:
+  `computations/qbeta/qbeta-silver-pole-subdominant.witness.json`. This grounds
+  the "categorical derivation of `Q_A·cos α_eff`'s zero" direction
+  (`RationalCoeffRecurrence`); it does **not** change any rung's empirical tier.
 - c_4 in the 1ppQ-achieved witness is a **CODATA-residual fit**, and separately
   flagged as a **normalisation artifact**.
 - The `[3]_q/25` building block is **shared** with the m_μ V9 closure (a real,
@@ -160,7 +182,7 @@ registry is authoritative. Each should carry a one-line banner → this file.
 - [`2026-06-03-l2-closure-habiro-3-q-25-universal-template.md`](../audits/2026-06-03-l2-closure-habiro-3-q-25-universal-template.md)
 - [`2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md`](../audits/2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md)
 - the flip-flop history table in [`1ppq-qbeta.md`](1ppq-qbeta.md)
-- `CLAUDE.md` "c_3 SETTLED" note (the settle drifted again 2026-06-03/04)
+- `AGENTS.md` "c_3 SETTLED" note (the settle drifted again 2026-06-03/04)
 
 ---
 

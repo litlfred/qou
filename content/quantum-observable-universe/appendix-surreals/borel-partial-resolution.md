@@ -46,7 +46,7 @@ than $\mathbb{Q}(\zeta_5)$; Borel ranks differ since the signature
 differs. The two fields together generate the full $S_5$-Galois
 data of Bring's quintic.)
 
-### What this gives concretely
+### Concrete consequences
 
 #### Figure-8 row (depth 2)
 

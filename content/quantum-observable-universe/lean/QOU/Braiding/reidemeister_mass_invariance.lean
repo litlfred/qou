@@ -1,13 +1,12 @@
-/-!
-# QOU.Braiding.reidemeister_mass_invariance — placeholder stub
+import Mathlib.Tactic
 
-**Placeholder canonical** for content block referenced by
+/-!
+# QOU.Braiding.reidemeister_mass_invariance
+
+**Canonical declaration** for content block referenced by
 `qou:QOU.Braiding.reidemeister_mass_invariance`.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI resolves to a real declaration in the `qou` Lake
-package. The body is `sorry` carrying the manuscript citation per
-CLAUDE.md §1.
+This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
 -/
 
 namespace QOU.Braiding
@@ -21,7 +20,9 @@ class ReidemeisterMassInvarianceContext where
   /-- Knot mass `𝔪(K)`. -/
   mass : CategoricalObj → ℝ
   /-- The three Reidemeister moves R-I, R-II, R-III applied to a knot. -/
-  R_I R_II R_III : CategoricalObj → CategoricalObj
+  R_I : CategoricalObj → CategoricalObj
+  R_II : CategoricalObj → CategoricalObj
+  R_III : CategoricalObj → CategoricalObj
   /-- Manuscript identity: mass is invariant under all three
       Reidemeister moves. -/
   claim_reidemeister_mass_invariance : ∀ K : CategoricalObj,
@@ -38,12 +39,9 @@ class ReidemeisterMassInvarianceContext where
 - **R-III** (slide): move a strand past a crossing (crossing
   number unchanged).
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/reidemeister-mass-invariance.ts
-theorem reidemeister_mass_invariance [ctx : ReidemeisterMassInvarianceContext] :
+def reidemeister_mass_invariance [ctx : ReidemeisterMassInvarianceContext] :
     ∀ K : ctx.CategoricalObj,
       ctx.mass (ctx.R_I K) = ctx.mass K ∧
       ctx.mass (ctx.R_II K) = ctx.mass K ∧

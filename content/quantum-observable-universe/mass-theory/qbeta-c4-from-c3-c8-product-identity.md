@@ -1,6 +1,6 @@
 **Proposition (c_4 derived from c_3 and c_8 via product identity).**
 
-*The Q_β precision-ladder coefficients $c_3$, $c_4$, $c_8$ satisfy the
+*The $\mathfrak{Q}_\beta$ precision-ladder coefficients $c_3$, $c_4$, $c_8$ satisfy the
 structural product identity*
 
 $$
@@ -18,7 +18,7 @@ $$
 $c_3$ (= $J_{\mathrm{Hopf}}$ at $q=1$) and $c_8$ (= $c_3^2 \cdot b^4$,
 the second rung of the $\sigma$-action tower) — not stipulated.*
 
-## Why this matters
+## Significance
 
 The closed-form Pell-Lucas $\sigma$-action recursion $c_{k+2} = b^2
 \cdot c_k$ holds for $k \geq 6$ but does not extend below $k = 6$:
@@ -52,7 +52,7 @@ Symbolically $(-2) \cdot (4b^2) = -8b^2$; at silver $(-2) \cdot
 
 These two identities are the **only** product hits in the closed-
 form set (verified by symbolic enumeration in
-[`probes/qbeta_c4_structural_product_identities.py`](../../folio-assistant/computations/probes/qbeta_c4_structural_product_identities.py)).
+the canonical formalism).
 The c_5 averaging-resonance outlier and the c_2, c_7 seed values
 do not participate in the product algebra.
 

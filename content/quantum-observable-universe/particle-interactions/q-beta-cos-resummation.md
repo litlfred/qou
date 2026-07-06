@@ -1,25 +1,22 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
-**Q_β cos-resummation theorem (conditional on [`prop:beta-decay-transfer-matrix`](#prop:beta-decay-transfer-matrix)).**
-*The single-wrap Form A closed-form prediction* $Q_\beta^A$
+**$\mathfrak{Q}_\beta$ cos-resummation theorem (conditional on [`prop:beta-decay-transfer-matrix`](#prop:beta-decay-transfer-matrix)).**
+*The single-wrap Form A closed-form prediction* $\mathfrak{Q}_\beta^A$
 *admits a tighter symbolic refinement obtained by replacing the
 linear bridge correction* $(z-1)h/2$ *from*
 [`prop:q-beta-spectral-bridge`](#prop:q-beta-spectral-bridge)
 *with the classical cosine of half-argument:*
 
 $$
-  Q_\beta^{A,\mathrm{cos}}
+  \mathfrak{Q}_\beta^{A,\mathrm{cos}}
   \;:=\;
-  Q_\beta^A \cdot \cos\!\bigl(\tfrac{(z-1)\,h}{2}\bigr),
+  \mathfrak{Q}_\beta^A \cdot \cos\!\bigl(\tfrac{(z-1)\,h}{2}\bigr),
   \qquad
   z = \tfrac{1}{\sqrt q + 1/\sqrt q},
   \quad
   h = q - q^{-1}.
 $$
 
-*This refinement tightens the CODATA residual from* $+1677.5$ *ppm
-(Form A bare) to* $+305.7$ *ppm — a* $5.49\times$ *improvement —
-via* [`probe_q_beta_tightening_landscape.py`](../../folio-assistant/computations/probe_q_beta_tightening_landscape.py) *at*
+*This refinement analytically tightens the CODATA residual from* $+1677.5$ *ppm
+(Form A bare) to* $+305.7$ *ppm — a* $5.49\times$ *improvement at*
 $q_0 \approx 1.110$.
 
 ## Structural origin
@@ -55,7 +52,7 @@ Two structural constraints force this form:
 
 2. **Classical decategorification.**
    The mass observable lives in the **classical** limit (Pauli /
-   Bose–Einstein statistics, per CLAUDE.md §7b's
+   Bose–Einstein statistics, per AGENTS.md §7b's
    Kazhdan–Lusztig decategorification principle), not in the
    q-deformed quantum group.  Empirical comparison confirms:
 

@@ -97,7 +97,7 @@ from CAL-1 + CAL-2 + $\mathrm{Vol}(\mathcal{B}_3)$ alone (no fit to
 proton or neutron individually) is the first non-trivial substrate
 test of the common-scale hypothesis.
 
-## Why this is a conjecture, not a fit
+## Conjectural status versus a fit
 
 The formula is testable without ever solving for
 $\lambda_{\mathrm{scale}}$ from $m_p$ or $m_n$: under the common-scale
@@ -112,10 +112,10 @@ $$
 $$
 
 is independent of $\lambda_{\mathrm{scale}}$. Substituting the CODATA
-identity $m_n - m_p = Q_\beta + m_e$ and the CAL-2 normalisation
+identity $m_n - m_p = \mathfrak{Q}_\beta + m_e$ and the CAL-2 normalisation
 $\mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2$ gives a closed-form
 prediction for $\Delta S(n - p)$ that is verifiable against the
 direct Kauffman-bracket evaluation
 ([rem:delta-skein-substrate-identity](#rem:delta-skein-substrate-identity)).
-The 1 015 ppm agreement matches the $Q_\beta$ residual exactly; it
+The 1 015 ppm agreement matches the $\mathfrak{Q}_\beta$ residual exactly; it
 is not a free parameter.

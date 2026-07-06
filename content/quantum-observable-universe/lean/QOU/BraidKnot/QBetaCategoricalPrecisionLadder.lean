@@ -26,7 +26,7 @@ N≥3 rungs (c_3 = J_Hopf, c_4, c_5, …) are STRUCTURAL NEAR-MATCHES at
 canonical q₀ (c_3 = J_Hopf is 3.35% off the empirical Taylor coefficient
 -2.0693), NOT Taylor-exact derivations — see
 `docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md` and
-`folio-assistant/computations/qbeta/qbeta-delta-tr-vs-formA.witness.json`.
+`computations/qbeta/qbeta-delta-tr-vs-formA.witness.json`.
 The c_3 identification is locked behind the conditional
 `QbetaC3StructuralFormClass` (§3b-cond) at the foot of this file;
 production wires nothing beyond c_2.
@@ -138,22 +138,25 @@ classical-limit decategorification principle. -/
 -- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
 -- Ref: [jones1985] doi:10.2307/1971403
 -- Ref: [wenzl1988] doi:10.1007/BF01239526
-/-- **External axiom (§3b-cond pattern): hoefsmitB_bar_invariant.**
+/-- **b is bar-symmetric**: `hoefsmitB q⁻¹ = hoefsmitB q` for `q > 0`.
 
-    `b² = (q⁴ + q² + 1) / (q² + 1)²` is manifestly invariant under
-    q ↔ q⁻¹ after dividing by `q²` (the algebraic identity is
-    straightforward; the Lean proof requires manipulating `Real.sqrt`
-    quotients, pending a `sqrt_div_eq` lemma in Mathlib that we have
-    not built up yet). -/
-axiom hoefsmitB_bar_invariant_axiom (q : ℝ) (hq : 0 < q) :
-    hoefsmitB q⁻¹ = hoefsmitB q
-
-/-- **b is bar-symmetric**: `hoefsmitB q⁻¹ = hoefsmitB q`.
-    Reason: `b² = (q⁴ + q² + 1) / (q² + 1)² = (q² + 1 + q⁻²) / (q + q⁻¹)²`
-    after dividing by q², which is manifestly invariant under q ↔ q⁻¹. -/
+    `hoefsmitB q = √(q⁴+q²+1)/(q²+1)`.  Dividing radicand and
+    denominator by `q²`: `q⁻⁴+q⁻²+1 = (q⁴+q²+1)/(q²)²` and
+    `q⁻²+1 = (q²+1)/q²`, so `√(·)/(·)` telescopes to the `q`-form
+    (`Real.sqrt_div` splits the quotient, `Real.sqrt_sq` evaluates
+    `√(q²)² = q²`).  Previously an `axiom` "pending a `sqrt_div_eq`
+    lemma in Mathlib"; the existing `Real.sqrt_div` + `Real.sqrt_sq`
+    API discharges it directly. -/
+-- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
 theorem hoefsmitB_bar_invariant (q : ℝ) (hq : 0 < q) :
-    hoefsmitB q⁻¹ = hoefsmitB q :=
-  hoefsmitB_bar_invariant_axiom q hq
+    hoefsmitB q⁻¹ = hoefsmitB q := by
+  have hq' : q ≠ 0 := ne_of_gt hq
+  unfold hoefsmitB
+  have e1 : q⁻¹ ^ 4 + q⁻¹ ^ 2 + 1 = (q ^ 4 + q ^ 2 + 1) / (q ^ 2) ^ 2 := by
+    field_simp; ring
+  have e2 : q⁻¹ ^ 2 + 1 = (q ^ 2 + 1) / q ^ 2 := by field_simp; ring
+  rw [e1, e2, Real.sqrt_div (by positivity), Real.sqrt_sq (sq_nonneg q)]
+  field_simp
 
 /-! ## Q_β categorical-derivation expansion -/
 
@@ -346,20 +349,26 @@ under the stated `(1 + c_4·b⁴·ℏ_q^8)` factor convention; see the audit
 status. The sign-flipped form `c_4 = -(b² + 1/2)` satisfies (2) with
 residual -0.57 ppb but lacks a derived categorical source.
 -/
-/-- **Theorem** (was previously `qbeta_inductive_categorical_closure_conjecture`
-    axiom). The signature `(inst : …) → True` is trivially
-    discharge-able since the conclusion is `True`.
+/-- **Inductive categorical closure of `c_k`** (named conditional conjecture, §3b).
 
-    Discharged 2026-06-08 (PR #1981): as an existential-shaped
-    statement, the `True` conclusion captures no categorical
-    content — the "inductive categorical closure" claim above is
-    fully carried by the doc and the §3b-cond conditional-class
-    scaffold below (`QbetaC3StructuralFormClass` and friends), NOT
-    by this signature. Preserved as a named theorem to maintain
-    audit visibility of the citation point. -/
-theorem qbeta_inductive_categorical_closure_conjecture
-    (_inst : QBetaPrecisionLadderCoefficients) :
-    True := trivial
+    The conjecture (property (1) above): for every rung `k ≥ 4`, the categorical
+    coefficient `c_k(q)` is **bar-symmetric** under `q ↔ q⁻¹`,
+
+      `∀ k ≥ 4, ∀ q > 0, c_k(q⁻¹) = c_k(q)`,
+
+    consistent with `hoefsmitB_bar_invariant`.  This is the genuine,
+    checkable content of the closure claim (the residual-ceiling property (2)
+    and the no-fit categorical-source property (3) are tracked in the doc).
+
+    Honest disposition: the property is *named* as a `Prop` over the coefficient
+    class — it is **not** asserted (no instance proof is produced; the open
+    state is the absence of a proof term).  This replaces the previous
+    `(inst : …) → True := trivial`, which captured no categorical content. -/
+-- Ref: [manuscript] prop:q-beta-categorical-precision-ladder §"Open conjecture (N≥4)"
+def qbeta_inductive_categorical_closure_conjecture
+    (inst : QBetaPrecisionLadderCoefficients) : Prop :=
+  ∀ k : ℕ, 4 ≤ k → ∀ q : ℝ, 0 < q →
+    inst.c_k_at_q k q⁻¹ = inst.c_k_at_q k q
 
 /-! ## §3b-cond N=3 structural-form class (mirrors PR #1508)
 
@@ -371,7 +380,7 @@ structure at its N=3 rung: the c_3 coefficient is the framework's
 structural prediction `J_Hopf(q=1) = -2`, the Q_β analog of `[Z₂]`.
 
 **DISCIPLINE (item-1 finding, 2026-05-30,
-`folio-assistant/computations/qbeta/qbeta-delta-tr-vs-formA.witness.json`).**
+`computations/qbeta/qbeta-delta-tr-vs-formA.witness.json`).**
 The c_3 = J_Hopf identification is a STRUCTURAL NEAR-MATCH, NOT a
 Taylor-exact derivation:
 

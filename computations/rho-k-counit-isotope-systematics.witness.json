@@ -1,0 +1,83 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-04T18:41:01.209624+00:00",
+  "commitSha": "d42ea09fb93f6881be4cc503d66e20b3842f1c4a",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "rho-k-counit-isotope-systematics",
+  "scriptFile": "rho_k_counit_isotope_systematics.py",
+  "scriptHash": "e1aab30d2c61",
+  "scriptCommitSha": "bc58ade047059c12eed814e095461a810b5e2ea1",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Counit Δ_λ=1/y_λ (Σ_λ χ^λ) evaluated on D/T/³He/⁴He — the deuteron magnitude match does not persist (ratio grows with A); sign systematically wrong; error scales with interface count (vortex lead). audit_only, no fit.",
+  "audit_only": true,
+  "tier": "structural-exact (parameter-free character sums from committed χ^λ witnesses)",
+  "result": {
+    "candidate": "counit Δ_λ=1/y_λ (Σ_λ χ^λ) across the light isotopes",
+    "free_parameters": 0,
+    "per_atom": [
+      {
+        "atom": "D",
+        "A": 2,
+        "n_partitions": 11,
+        "n_interfaces": 1,
+        "counit_sum_chi": "4.92921260438",
+        "target_minus_B_over_me": "-4.35327704097",
+        "abs_ratio": "1.1322993",
+        "right_sign": false
+      },
+      {
+        "atom": "T",
+        "A": 3,
+        "n_partitions": 30,
+        "n_interfaces": 3,
+        "counit_sum_chi": "27.0629725204",
+        "target_minus_B_over_me": "-16.5984685263",
+        "abs_ratio": "1.63045",
+        "right_sign": false
+      },
+      {
+        "atom": "3He",
+        "A": 3,
+        "n_partitions": 30,
+        "n_interfaces": 3,
+        "counit_sum_chi": "44.9872180356",
+        "target_minus_B_over_me": "-15.1038274924",
+        "abs_ratio": "2.978531",
+        "right_sign": false
+      },
+      {
+        "atom": "4He",
+        "A": 4,
+        "n_partitions": 77,
+        "n_interfaces": 6,
+        "counit_sum_chi": "150.358414494",
+        "target_minus_B_over_me": "-55.3732448213",
+        "abs_ratio": "2.7153622",
+        "right_sign": false
+      }
+    ],
+    "magnitude_ratio_is_fixed": false,
+    "magnitude_ratio_spread_max_over_min": "2.6305156242700143",
+    "sign_systematically_wrong": true,
+    "verdict": "The deuteron 13% match is COINCIDENTAL: |Σχ|/|target| grows with A (1.13, 1.63, 2.98, 2.72) — not a fixed missing factor — and the sign is systematically wrong (Σχ>0 vs target<0) for all four. Counit ALONE refuted across the mass range (scope-(a)). BUT the error scales with A alongside the inter-nucleon interface count (D:1, T/³He:3, ⁴He:6), consistent with a missing interface-vortex (Hopf/L±) contribution — the counit+vortex lead, now with an A-scaling signature."
+  },
+  "context": {
+    "axis": "Δ_λ per-isotope binding closure (GAP-A) — counit systematics",
+    "predecessor": "rho-k-h3a-counit-canonical-integral.witness.json (deuteron)",
+    "chi_source": "atom-chi-rust-{d,t,3he,4he}.witness.json",
+    "audit": "docs/audits/2026-07-04-delta-lambda-counit-canonical-integral-candidate.md"
+  }
+}

@@ -16,13 +16,14 @@ export default remark({
   ],
   computation: {
     engine: "python+mpmath",
-    script: "folio-assistant/computations/probe_q_beta_operator_valued_N3.py",
+    script: "computations/probe_q_beta_operator_valued_N3.py",
     witness: [
-      "folio-assistant/computations/q-beta-operator-valued-N3.witness.json"
+      "computations/q-beta-operator-valued-N3.witness.json"
     ],
     status: "experimental",
   },
   authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "status",
       body: "Lean stub: **no `sorry`s**. The chain is fully proved conditionally on\nthe single remaining axiom (`DominantSubBraidAtEps6`). All other\nsubstantive content is Lean-theorem-closed.",

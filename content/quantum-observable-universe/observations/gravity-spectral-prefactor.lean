@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
+
 /-!
 # QOU.Observations.gravity_spectral_prefactor
 
@@ -34,7 +38,6 @@ noncomputable def newtonG (U : UniversalResidue) : ℝ :=
 theorem gravity_spectral_prefactor (U : UniversalResidue) :
     U.α = U.m_e * 8 * newtonG U := by
   unfold newtonG
-  field_simp
-  ring
+  field_simp [ne_of_gt U.m_e_pos]
 
 end QOU.Observations

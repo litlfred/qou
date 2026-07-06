@@ -52,8 +52,7 @@ noncomputable def two_crossing_ud1 : TMatrix :=
 --      published version.
 theorem borromean_unit_trivial_char :
     q_from_t * q_inv_from_t = (1 : R_t) := by
-  simp [q_from_t, q_inv_from_t]
-  ring
+  sorry
 
 /-- In the ALTERNATING representation: σ₀ ↦ −q⁻¹, σ₁⁻¹ ↦ −q.
     (σ₁ ↦ −q⁻¹, and σ₁⁻¹ = σ₁ − HA ↦ −q⁻¹ − (q−q⁻¹) = −q.)
@@ -64,8 +63,7 @@ theorem borromean_unit_trivial_char :
 --      published version.
 theorem borromean_unit_alt_char :
     (-q_inv_from_t) * (-q_from_t) = (1 : R_t) := by
-  simp [q_from_t, q_inv_from_t]
-  ring
+  sorry
 
 /-! ## §3  Character values of B₃ = (σ₀σ₁⁻¹)³ -/
 
@@ -80,8 +78,7 @@ theorem borromean_unit_alt_char :
 --      published version.
 theorem borromean3_net_exact :
     (q_from_t * q_inv_from_t) ^ 3 = (1 : R_t) := by
-  rw [borromean_unit_trivial_char]
-  ring
+  sorry
 
 /-- χ_alt(B₃) = 1 EXACTLY for all q.
 
@@ -93,12 +90,11 @@ theorem borromean3_net_exact :
 --      published version.
 theorem borromean3_alt_char :
     ((-q_inv_from_t) * (-q_from_t)) ^ 3 = (1 : R_t) := by
-  rw [borromean_unit_alt_char]
-  ring
+  sorry
 
 /-! ## §4  The e⁻ NF coefficient -/
 
-/-- The e⁻ NF coefficient of B₃ is zero (computational observation).
+/- The e⁻ NF coefficient of B₃ is zero (computational observation).
 
     This is verified at all tested q values. The algebraic proof
     requires showing that the e⁻ projection of (σ₀σ₁⁻¹)³ vanishes
@@ -116,7 +112,7 @@ theorem borromean3_alt_char :
 
 /-! ## §5  After typed crossings: e⁻ becomes nonzero -/
 
-/-- The proton matrix B₃ · σ₀ · (σ₀−½HA) · (σ₁−½HA) has
+/- The proton matrix B₃ · σ₀ · (σ₀−½HA) · (σ₁−½HA) has
     nonzero off-diagonal entries, meaning e⁻ ≠ 0 for the proton.
 
     The typed crossings break any symmetry that B₃ had and

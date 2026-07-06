@@ -98,9 +98,9 @@ Per-atom residuals (B/A AME minus prediction):
 
 See [Table 2](#tbl:term6-binding-density-table2-data).
 
-Witness: [`Term6-scaling-heavy.witness.json`](../../../docs/audits/-Term6-scaling-heavy.witness.json).
+Witness: [`Term6-scaling-heavy.witness.json`](../../../docs/audits/2026-05-02-Term6-scaling-heavy.witness.json).
 
-## What is structurally derived
+## Structurally derived content
 
 * The **shape** $\alpha \cdot T_6/A^3 + \beta + \delta_M$ follows
   from
@@ -112,15 +112,15 @@ Witness: [`Term6-scaling-heavy.witness.json`](../../../docs/audits/-Term6-scalin
   traces is structurally derived from the Hecke-trace
   factorization theorem.
 
-## What is empirical (not yet derived)
+## Empirical content (not yet derived)
 
 * The **values** $\alpha = 339.4$ MeV and $\beta = 1.14$ MeV
   are **calibrated** to the AME panel. A categorical derivation
-  predicting these from $q_0$ + $m_e$ + $Q_\beta$ alone is open;
+  predicting these from $q_0$ + $m_e$ + $\mathfrak{Q}_\beta$ alone is open;
   candidate expressions like
   $m_e \cdot [7]_q [8]_q [9]_q = 361.2$ MeV are within $7\%$ of
   the fit but outside the $\pm 3\%$ fit window
-  ([attempt witness](../../../docs/audits/-alpha-categorical-derivation.witness.json)).
+  ([attempt witness](../../../docs/audits/2026-05-02-alpha-categorical-derivation.witness.json)).
 * The **form** of $\delta_M$ is operator-level — proper
   derivation requires the operator structure of $\Phi_n$ on
   self-conjugate isotypical Wedderburn blocks, which is the

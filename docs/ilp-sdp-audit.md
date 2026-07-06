@@ -1,7 +1,7 @@
 # ILP / SDP Audit
 
 Snapshot of every LP / ILP / SDP / MISDP optimisation in the
-`folio-assistant/computations/` engine, together with the paper
+`computations/` engine, together with the paper
 blocks that reference these computations.  Goal: identify LPs whose
 feasibility predicate is already PSD (hence "SDP in disguise") and
 should be lifted to a true SDP, per the 1-ppm workplan

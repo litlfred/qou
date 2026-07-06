@@ -1,3 +1,6 @@
+import Mathlib.CategoryTheory.Monoidal.Category
+import Mathlib.CategoryTheory.Category.Basic
+
 /-!
 # QOU.AlgebraicSubstrate.FrobeniusHopfSubstrate
 
@@ -9,8 +12,6 @@ LaTeX label: `def:frobenius-hopf-substrate`
 
 set_option autoImplicit false
 
-import Mathlib.CategoryTheory.Monoidal.Category
-import Mathlib.CategoryTheory.Category.Basic
 
 open CategoryTheory MonoidalCategory
 
@@ -49,11 +50,12 @@ structure FrobeniusHopfSubstrate (C : Type u) [Category.{v} C]
   mul_assoc :
     (α_ obj obj obj).hom ≫ (obj ◁ mul) ≫ mul =
     (mul ▷ obj) ≫ mul
-  /-- Frobenius relation: `μ ∘ Δ = (Δ ⊗ id) ∘ α ∘ (id ⊗ μ)`. -/
+  /-- Frobenius relation: `Δ ∘ μ = (μ ⊗ id) ∘ α⁻¹ ∘ (id ⊗ Δ)` as a
+      morphism `A ⊗ A → A ⊗ A`. -/
   -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443
   frobenius_relation :
-    comul ≫ mul =
-    (obj ◁ mul) ≫ (α_ obj obj obj).inv ≫ (comul ▷ obj)
+    mul ≫ comul =
+    (obj ◁ comul) ≫ (α_ obj obj obj).inv ≫ (mul ▷ obj)
   /-- Snake identity (left): non-degeneracy of the Frobenius pairing. -/
   snake_left :
     (ρ_ obj).inv ≫ (obj ◁ coevaluation) ≫

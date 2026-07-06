@@ -36,7 +36,7 @@ trace, distinguishing braids whose underlying permutation cycle
 types coincide.
 
 **Effort**: 2–4 weeks. New module
-`folio-assistant/computations/hecke_character_q_deformed.py`. The
+`computations/hecke_character_q_deformed.py`. The
 existing `mn_character` function provides the q=1 base case for
 testing.
 
@@ -66,7 +66,7 @@ verify the count without enumeration, then sample-check $\kappa = 0$
 on a random subset.
 
 **Effort**: 1 day for the cron / CI setup; the script already exists
-(`folio-assistant/computations/magic-numbers-numerical-witness.py`).
+(`computations/magic-numbers-numerical-witness.py`).
 
 **Unblocks.** Final closure of MAG-1 numerical verification across
 all seven magic numbers.
@@ -153,7 +153,7 @@ the Habiro cyclotomic expansion at $u = \zeta_{2p}$. Witness:
 `instance qouMotivicGaloisChar` discharges the
 `MotivicGaloisCharacter` axiom-class for the QOU substrate. The
 `almost_everywhere_nontrivial` field carries `sorry` as a
-substrate axiom (CLAUDE.md §3b) backed by the numerical witness.
+substrate axiom (AGENTS.md §3b) backed by the numerical witness.
 
 **Missing piece.** The explicit map
 

@@ -13,6 +13,11 @@ theorem symmetric_point_channel_collapse {R : Type*} [Field R]
     (s : R) (hs : s ^ 2 = 1) (h2 : (2 : R) ≠ 0) :
     s⁻¹ = s ∧ (s + s⁻¹) / 2 = s := by
   -- Ref: [manuscript] models-of-qous/symmetric-point-channel-collapse.md
-  sorry
+  -- s² = 1 ⇒ s·s = 1 ⇒ s⁻¹ = s; then (s+s)/2 = s since 2 ≠ 0.
+  have hss : s * s = 1 := by rw [← sq]; exact hs
+  have hinv : s⁻¹ = s := inv_eq_of_mul_eq_one_right hss
+  refine ⟨hinv, ?_⟩
+  rw [hinv, div_eq_iff h2]
+  ring
 
 end QOU

@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 The **spectator normalization** captures the contribution of
 unchanged nucleons to the Q-value character sum.  In a beta
 decay ${}^A_Z X \to {}^A_{Z+1} Y + e^- + \bar\nu$, only one

@@ -1321,7 +1321,6 @@ open QOU.Mathlib.RSKBridge
     `d = 1`, sum of squares = 2 = 2!. -/
 def n2_rsk_witness : CohortRSKWitness 2 where
   syt_counts := n2_cohort.map (·.syt_count)
-  matches_partition_count := by simp
   burnside_holds := by
     show (n2_cohort.map (·.syt_count) |>.map (· ^ 2)).sum = 2
     show (n2_cohort.map (fun p => p.syt_count ^ 2)).sum = 2
@@ -1331,7 +1330,6 @@ def n2_rsk_witness : CohortRSKWitness 2 where
     squares = 6 = 3!. -/
 def n3_rsk_witness : CohortRSKWitness 3 where
   syt_counts := n3_cohort.map (·.syt_count)
-  matches_partition_count := by simp
   burnside_holds := by
     show (n3_cohort.map (fun p => p.syt_count ^ 2)).sum = 6
     exact n3_squares_sum_eq
@@ -1340,7 +1338,6 @@ def n3_rsk_witness : CohortRSKWitness 3 where
     squares = 24 = 4!. -/
 def n4_rsk_witness : CohortRSKWitness 4 where
   syt_counts := n4_cohort.map (·.syt_count)
-  matches_partition_count := by simp
   burnside_holds := by
     show (n4_cohort.map (fun p => p.syt_count ^ 2)).sum = 24
     exact n4_squares_sum_eq
@@ -1349,7 +1346,6 @@ def n4_rsk_witness : CohortRSKWitness 4 where
     squares = 120 = 5!. -/
 def n5_rsk_witness : CohortRSKWitness 5 where
   syt_counts := n5_cohort.map (·.syt_count)
-  matches_partition_count := by simp
   burnside_holds := by
     show (n5_cohort.map (fun p => p.syt_count ^ 2)).sum = 120
     exact n5_squares_sum_eq
@@ -1358,7 +1354,6 @@ def n5_rsk_witness : CohortRSKWitness 5 where
     squares = 720 = 6!. -/
 def n6_rsk_witness : CohortRSKWitness 6 where
   syt_counts := n6_cohort.map (·.syt_count)
-  matches_partition_count := by simp
   burnside_holds := by
     show (n6_cohort.map (fun p => p.syt_count ^ 2)).sum = 720
     exact n6_squares_sum_eq
@@ -1367,7 +1362,6 @@ def n6_rsk_witness : CohortRSKWitness 6 where
     squares = 5040 = 7!. -/
 def n7_rsk_witness : CohortRSKWitness 7 where
   syt_counts := n7_cohort.map (·.syt_count)
-  matches_partition_count := by simp
   burnside_holds := by
     show (n7_cohort.map (fun p => p.syt_count ^ 2)).sum = 5040
     exact n7_squares_sum_eq
@@ -1376,7 +1370,6 @@ def n7_rsk_witness : CohortRSKWitness 7 where
     squares = 40320 = 8!. -/
 def n8_rsk_witness : CohortRSKWitness 8 where
   syt_counts := n8_cohort.map (·.syt_count)
-  matches_partition_count := by simp
   burnside_holds := by
     show (n8_cohort.map (fun p => p.syt_count ^ 2)).sum = 40320
     exact n8_squares_sum_eq

@@ -1,4 +1,5 @@
-import Mathlib.Algebra.Algebra.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Ring
 
 /-!
 # Frobenius antipode S:σ↔σ⁻¹ on H_n(q)
@@ -35,7 +36,6 @@ structure HeckeAlgebra (_n : ℕ) (_q : ℝ) where
   /-- Coefficient of the element under the Markov pairing —
       `markovTrace` returns this directly. -/
   coeff : ℝ
-  deriving Repr
 
 /-- The Frobenius antipode S: H_n(q) → H_n(q).  On the scalar-
     coefficient model the antipode is the identity (the trace
@@ -118,10 +118,12 @@ noncomputable def antipodeSymmetrize {n : ℕ} {q : ℝ}
 
 theorem symmetrize_invariant {n : ℕ} {q : ℝ} (x : HeckeAlgebra n q) :
     antipodeSymmetrize (antipodeSymmetrize x) = antipodeSymmetrize x := by
-  -- Follows from antipode_involution and linearity.
-  -- Placeholder proof.
+  -- Follows from antipode_involution applied to both nested applications:
+  -- the outer involution collapses `S(S x)` on the LHS, and the inner one
+  -- identifies the resulting `x` with `S x` on the RHS.
   unfold antipodeSymmetrize
   rw [antipode_involution]
+  exact (antipode_involution n q x).symm
 
 /-- **Chirality factor via antipode (Term 5).**
 

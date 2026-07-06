@@ -18,7 +18,7 @@ $$
   \;=\; \{\text{hyperbolic 3-manifold volumes}\}.
 $$
 
-### Why this is the right reading
+### Justification of the reading
 
 The Volume Conjecture asserts that the asymptotic growth of the
 coloured Jones polynomial $J_K^{(N)}(q)$ at $q = e^{2\pi i / N}$ as
@@ -48,7 +48,7 @@ Bloch–Wigner regulator lives. Predicted at every depth $n$ is an
 analogous statement: *colored quantum invariants built from
 $\mathrm{Li}_n^q$ asymptote to weight-$n$ Goncharov periods.*
 
-### What changes if we accept the keystone
+### Implications of accepting the keystone
 
 The keystone correspondence does **not** prove the Volume Conjecture.
 What it does is reduce the conjecture to two structurally smaller
@@ -73,8 +73,8 @@ Garoufalidis–Lê for torus knots; many others).
 
 ### Cross-reference
 
-For an explicit depth-2 numerical witness on the figure-8 knot
+For an explicit depth-2 canonical witness on the figure-8 knot
 embedded in Bring's genus-4 surface, see
 [`conj:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eight-depth-2-witness).
-The 50-digit value $2\,\mathrm{Cl}_2(\pi/3) \approx :val[vol_4_1_decimal_50]{precision=6, witness=folio-assistant/computations/hyperbolic-volumes.witness.json}\ldots$
+The 50-digit value $2\,\mathrm{Cl}_2(\pi/3) \approx :val[vol_4_1_decimal_50]{precision=6, witness=computations/hyperbolic-volumes.witness.json}\ldots$
 is the Bloch regulator class incarnated as a hyperbolic volume.

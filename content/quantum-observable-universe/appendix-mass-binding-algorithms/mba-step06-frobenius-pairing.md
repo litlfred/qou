@@ -50,14 +50,14 @@ ok = check_frobenius(x)
 ```
 
 *The canonical audit script is
-[`folio-assistant/computations/audit_frobenius_pairing.py`](../../../folio-assistant/computations/audit_frobenius_pairing.py);
+[`computations/audit_frobenius_pairing.py`](../../../computations/audit_frobenius_pairing.py);
 the Gram matrix `G` and the Markov-trace vector `TR_M` are
 exposed as constants by `pyhecke`.*
 
 ### Witness contract
 
 *No standalone numerical witness file. Structural checks live in
-`folio-assistant/computations/audit_frobenius_pairing.py`; the
+`computations/audit_frobenius_pairing.py`; the
 $S^2 = \mathrm{id}$ assertion is part of the Hecke-core
 regression suite.*
 

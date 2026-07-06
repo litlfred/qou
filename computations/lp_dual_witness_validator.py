@@ -2,7 +2,7 @@
 """
 LP-dual witness validator — first-class enforcement.
 
-Walks every JSON witness under folio-assistant/computations/ and
+Walks every JSON witness under computations/ and
 flags operator-selection / LP / SDP witnesses that lack required
 LP-dual fields (per prop:operator-selection-lp § dual program).
 
@@ -21,7 +21,7 @@ that solve the primal LP but never extract / report the dual,
 losing the principled binding-energy interpretation.
 
 Usage (CI):
-    python3 folio-assistant/computations/lp_dual_witness_validator.py
+    python3 computations/lp_dual_witness_validator.py
     → exit 0 if all flagged witnesses include duals; exit 1 otherwise.
 """
 from __future__ import annotations
@@ -123,6 +123,10 @@ def is_lp_sdp_witness(path: Path) -> tuple[bool, str]:
         try:
             data = json.loads(path.read_text())
         except (json.JSONDecodeError, OSError):
+            return False, ""
+        # A witness whose top-level JSON is a list (or scalar) has no hint
+        # fields and is not an LP/SDP witness — skip without crashing.
+        if not isinstance(data, dict):
             return False, ""
         for field in ("description", "computation", "audit", "name"):
             v = data.get(field)
@@ -235,7 +239,7 @@ def main(argv: list[str]) -> int:
         print(f"  ... ({len(failures) - 10} more)")
     print()
     print("To fix: route the LP/SDP solve through")
-    print("  folio-assistant/computations/lp_dual_solver.py")
+    print("  computations/lp_dual_solver.py")
     print("which returns BOTH primal and dual via")
     print("  solve_operator_selection_lp() or solve_psd_operator_selection_sdp().")
     print("The result's .to_dict() contains all required fields.")

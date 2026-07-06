@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.NS.CriticalExponent — `conj:critical-exponent` axiomatised
 
@@ -14,7 +16,7 @@ Conjectural critical exponent: the enstrophy ‖∇u‖_{L²}² diverges as (1 -
 
 ## Status
 
-Class-axiomatised per CLAUDE.md §3b-cond. The conjecture sits in
+Class-axiomatised per AGENTS.md §3b-cond. The conjecture sits in
 the residual §3b-violator cone identified in
 [`AUDIT-DEEP-2026-05.md`](../../../../AUDIT-DEEP-2026-05.md) §1A
 (P1.b sweep). Class declaration here lets downstream
@@ -57,12 +59,5 @@ class CriticalExponent where
   -- Ref: [manuscript] fluid-dynamics/p2-critical-exponent
   enstrophy_diverges :
     ∀ M : ℝ, ∃ q : ℝ, q ≠ 1 ∧ M < enstrophy q
-
-    Ref: [manuscript] §Critical exponent of the enstrophy divergence at q = 1, `conj:critical-exponent` -/
-class CriticalExponent : Prop where
-  /-- A critical Sobolev exponent  exists such that the
-      q-deformed Navier-Stokes regularity gap holds at exactly
-      that exponent. -/
-  critical_exponent_exists : ∃ s_c : ℝ, s_c > 0
 
 end QOU.FluidDynamics

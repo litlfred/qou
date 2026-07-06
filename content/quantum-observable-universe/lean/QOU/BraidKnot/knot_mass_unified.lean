@@ -1,5 +1,7 @@
+import Mathlib.Tactic
+
 /-!
-# QOU.BraidKnot.knot_mass_unified — placeholder stub
+# QOU.BraidKnot.knot_mass_unified
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/knot-mass-formula-unified.ts`](quantum-observable-universe/braids-and-knots/knot-mass-formula-unified.ts).
@@ -84,7 +86,7 @@ $[n]_q = (q^n - q^{-n})/(q - q^{-1})$.  Per
     sub-claim fields; concretisation requires per-block manuscript
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/knot-mass-formula-unified.ts
-theorem knot_mass_unified [ctx : KnotMassUnifiedContext] :
+def knot_mass_unified [ctx : KnotMassUnifiedContext] :
     ctx.mass = ctx.descended - ctx.brane_tower + ctx.frobenius_co_casimir :=
   ctx.claim_boxed_six_term_expansion
 

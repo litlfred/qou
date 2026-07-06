@@ -1,5 +1,6 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Nat.Basic
+import Mathlib.Tactic.Ring
 
 
 /-!
@@ -105,6 +106,7 @@ theorem tower_terminates_at_degree_2 (r s : ℕ)
   -- Genus ≥ 13 > 4 = genus of Σ₄, so not embeddable.
   intro hemb
   unfold embeddableOnSurface at hemb
+  simp only at hemb
   omega
 
 /-- Self-duality: τ(r,s) ↔ τ(s,r) provides the inner product for

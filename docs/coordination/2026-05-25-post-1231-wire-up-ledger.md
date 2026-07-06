@@ -35,8 +35,8 @@
 ### PR [#1238](https://github.com/litlfred/qou/pull/1238) — merged 2026-05-25
 
 **Code:**
-- [`folio-assistant/computations/alpha/alpha_k_jones_markov_h4.py`](../../folio-assistant/computations/alpha/alpha_k_jones_markov_h4.py) — production H_4 Wedderburn atlas
-- [`folio-assistant/computations/alpha-k-jones-markov-h4.witness.json`](../../folio-assistant/computations/alpha-k-jones-markov-h4.witness.json) — y_λ at H_4 substrate
+- [`computations/alpha/alpha_k_jones_markov_h4.py`](../../computations/alpha/alpha_k_jones_markov_h4.py) — production H_4 Wedderburn atlas
+- [`computations/alpha-k-jones-markov-h4.witness.json`](../../computations/alpha-k-jones-markov-h4.witness.json) — y_λ at H_4 substrate
 
 **Audits:**
 - [`docs/audits/2026-05-25-h3-vs-h3a-legacy-bug-audit.md`](../audits/2026-05-25-h3-vs-h3a-legacy-bug-audit.md) — Q2
@@ -66,7 +66,7 @@
 
 **Bug:** `tools/pyhecke/python/pyhecke/atom.py:555-569` hardcodes H_3 Wedderburn weights for ALL atoms. Affects 15+ production scripts.
 
-**Canonical replacement:** `folio-assistant/computations/mass_at_3A_proper.py::per_generator_V_hat_3A` — sums over all partitions of 3A with proper Plancherel/Jones-Wenzl weights. Returns DIFFERENT shape: `{"full": V̂_i}` (1 channel) vs the buggy `{"std", "sym", "alt", "full"}` (4 channels).
+**Canonical replacement:** `computations/mass_at_3A_proper.py::per_generator_V_hat_3A` — sums over all partitions of 3A with proper Plancherel/Jones-Wenzl weights. Returns DIFFERENT shape: `{"full": V̂_i}` (1 channel) vs the buggy `{"std", "sym", "alt", "full"}` (4 channels).
 
 **Why this session does NOT do the full migration:**
 1. 15+ callers all use the 4-channel return shape

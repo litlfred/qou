@@ -28,7 +28,7 @@ to six significant figures with $q = q_0$.
 
 The proton and neutron rows currently come from the **LO ρ_K
 assembly** which consumes $m_p$ and $m_n$ as CODATA inputs (per
-[`atomic-mass-via-rho-k.witness.json`](../../../folio-assistant/computations/atomic-mass-via-rho-k.witness.json)).
+[`atomic-mass-via-rho-k.witness.json`](../../../computations/atomic-mass-via-rho-k.witness.json)).
 Per owner directive ("do not use LO — use full"), this
 is tautological by construction (the $|\mathrm{tr}_M|$ factor
 cancels in $\rho_K^{\mathrm{LO}} \cdot m_e \cdot |\mathrm{tr}_M|$,
@@ -39,8 +39,8 @@ $M(\mathfrak{H}) = \rho \cdot [|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w) + \mat
 which is **not yet wired** at the nucleon scale (Workplan 0b
 Phase 0b.4 + Workplan 2 + open Δ_λ derivation; see
 [handoff](../../../docs/audits/-workplan-0b-script-rewire-handoff.md)).
-The $n$–$p$ splitting is a *consequence* of the FULL Q_β chain
-($Q_\beta + m_e \approx 1.293$ MeV) — see the framework prediction
+The $n$–$p$ splitting is a *consequence* of the FULL $\mathfrak{Q}_\beta$ chain
+($\mathfrak{Q}_\beta + m_e \approx 1.293$ MeV) — see the framework prediction
 panel after this table.
 
 See [Table 2](#tbl:mass-comparison-table-table2-data).
@@ -50,7 +50,7 @@ $n$-$p$ split rows read back the CODATA inputs because the LO
 formula collapses to $Z m_p + N m_n$ identically (no binding
 correction). FULL framework prediction below.
 
-#### FULL Q_β prediction (framework, no CODATA mass injection)
+#### FULL $\mathfrak{Q}_\beta$ prediction (framework, no CODATA mass injection)
 
 Per [`prop:neutron-qvalue-symbolic`](../../particle-interactions/neutron-qvalue-symbolic.md)
 the framework predicts the β-decay Q-value from CAL-1 ($m_e$) and
@@ -58,7 +58,7 @@ CAL-2 ($q_0$) only via the closed form:
 
 $$
 \boxed{
-Q_\beta^{\text{pred}} = \frac{m_e \cdot |q_0^2 - 2q_0 - 1| \cdot (q_0 + 1)}{2 q_0^3} \approx 0.7836 \text{ MeV}
+\mathfrak{Q}_\beta^{\text{pred}} = \frac{m_e \cdot |q_0^2 - 2q_0 - 1| \cdot (q_0 + 1)}{2 q_0^3} \approx 0.7836 \text{ MeV}
 }
 $$
 
@@ -68,7 +68,7 @@ between proton and neutron, so $\Delta(\mathrm{net}) = h(h-2)/2$
 with $h = q_0 - q_0^{-1}$, and the entire $Q$-value lives in the
 $\gamma + \sigma_0 + \sigma_1$ channels.
 
-The $n$-$p$ mass split follows: $\mathfrak{m}_n - \mathfrak{m}_p = Q_\beta + m_e \approx 1.295$ MeV
+The $n$-$p$ mass split follows: $\mathfrak{m}_n - \mathfrak{m}_p = \mathfrak{Q}_\beta + m_e \approx 1.295$ MeV
 (vs CODATA $1.293$, same $0.17\%$ framework error, no CODATA $m_n - m_p$
 input).
 
@@ -78,7 +78,7 @@ exact tower-summed $E_0$ closes it (Workplan 2 Phase 2). The
 typed-crossings 6-term form gives a looser +0.747% prediction
 (0.7882 MeV) — kept in the witness only for cross-check, not used
 for production. Witness:
-[`q-beta-predicted.witness.json`](../../../folio-assistant/computations/q-beta-predicted.witness.json).
+[`q-beta-predicted.witness.json`](../../../computations/q-beta-predicted.witness.json).
 
 *Light nuclei (from multi-body Skein).* All rows below come from
 the **LO ρ_K assembly** with CODATA $m_p$, $m_n$ inputs — same
@@ -86,7 +86,7 @@ discipline caveat as the proton/neutron rows above. The $\Delta$
 column equals the CODATA binding energy by construction, not a
 genuine framework prediction. The FULL multi-body unified knot
 mass formula at $H_{3A}$ is not yet tractable beyond $A = 1$
-(the $n$-$p$ split through Q_β is the only mass-domain framework
+(the $n$-$p$ split through $\mathfrak{Q}_\beta$ is the only mass-domain framework
 prediction wired today; binding-energy predictions await closure
 of the open Δ_λ research question per
 [recomputed-low-isotope-mass-table.md:99](../braids-and-knots/recomputed-low-isotope-mass-table.md)).
@@ -95,7 +95,7 @@ See [Table 3](#tbl:mass-comparison-table-table3-data).
 
 † **LO output is constituent sum only.** Genuine FULL prediction
 not yet wired (see Workplan 0b §FULL chain status). Witness:
-[`atomic-mass-via-rho-k.witness.json`](../../../folio-assistant/computations/atomic-mass-via-rho-k.witness.json).
+[`atomic-mass-via-rho-k.witness.json`](../../../computations/atomic-mass-via-rho-k.witness.json).
 
 **Notes.**  The substrate parameter $q$ is fixed by the
 muon--electron mass ratio (one free input).  Hadronic masses follow
@@ -115,7 +115,7 @@ predictions from $q$.  The genuine $q$-predictions are mass *ratios*
 ($m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$), $Q$-values
 ($\Delta\mathrm{net} \times E_0$), and half-life ratios via
 $\log_q(ft)$ spectroscopy.  The one external scaling ruler is
-$m_e = :val[m_e_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json}$ MeV (CODATA 2022 experimental input, not a
+$m_e = :val[m_e_MeV]{precision=6, witness=computations/codata-masses.witness.json}$ MeV (CODATA 2022 experimental input, not a
 QOU-derived value), which converts dimensionless $q$-ratios to
 physical MeV.  All "Source" column
 entries (CODATA, PDG, AME2020) refer to these external standards.

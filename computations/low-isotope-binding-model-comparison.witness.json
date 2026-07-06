@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-15T02:09:31.749690+00:00",
-  "commitSha": "7d24dd86ca3e223f4407ad9a84f2c13d97e41481",
+  "computedAt": "2026-07-05T11:20:23.945606+00:00",
+  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
   "assertions": [
     {
       "name": "B_depth_beats_B_lin_on_DT3He",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 57,
   "computation": "low-isotope-binding-model-comparison",
   "scriptFile": "low_isotope_binding_model_comparison.py",
-  "scriptHash": "17c8670216a0",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "52d13592a0da",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,12 +27,13 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
   "description": "Fresh side-by-side of the best low-isotope binding models vs AME 2020. B_lin (linear-truncation) undershoots -79..-97.5% (it is the linearization of B_sym; deficit = Δ_λ ≈ q₀^(10A−5)). B_depth (tower) undershoots -66..-73% (⁴He deferred, H_12 RAM). B_magic best on ⁴He (+5.9%). B_lin·q₀^(10A−5) is the Δ_λ-law near-match (q₀^5/site; exponent not yet derived — open keystone). No fit; NOT wired.",
   "parameters": {
-    "q0": "1.10997859556"
+    "q0": "1.10997858275"
   },
   "data": {
     "rows": [
@@ -49,7 +50,7 @@
         "B_magic_MeV": "—",
         "err_magic_pct": "  —",
         "B_lin_x_q0_10A5_MeV": "2.22716",
-        "err_dlaw_pct": "0.11626"
+        "err_dlaw_pct": "0.11624"
       },
       {
         "atom": "T",
@@ -63,8 +64,8 @@
         "err_depth_pct": "-66.9",
         "B_magic_MeV": "—",
         "err_magic_pct": "  —",
-        "B_lin_x_q0_10A5_MeV": "8.5406",
-        "err_dlaw_pct": "0.69319"
+        "B_lin_x_q0_10A5_MeV": "8.54059",
+        "err_dlaw_pct": "0.69316"
       },
       {
         "atom": "3He",
@@ -94,7 +95,7 @@
         "B_magic_MeV": "29.9557",
         "err_magic_pct": "+5.87",
         "B_lin_x_q0_10A5_MeV": "27.503",
-        "err_dlaw_pct": "-2.8012"
+        "err_dlaw_pct": "-2.8013"
       }
     ],
     "summary": {

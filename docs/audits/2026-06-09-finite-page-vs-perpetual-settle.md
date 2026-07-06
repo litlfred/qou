@@ -52,7 +52,7 @@ packages the conjectural content as the `MotivicGaloisCharacter` **class**
 (`almost_everywhere_nontrivial` field); `theorem motivic_perpetual_obstruction`
 is **conditional on a `[MotivicGaloisCharacter …]` instance** and contains no
 literal `sorry` — a concrete instance is where the substrate axiom (or `sorry`)
-would live (CLAUDE.md §3b conditional-class pattern).
+would live (AGENTS.md §3b conditional-class pattern).
 
 The tower is **Mostow-convergent**: the perpetual obstruction sum converges to
 the (rigid) hyperbolic datum, so the `ε`-adic line `ℝ(ε)` suffices to *track* it

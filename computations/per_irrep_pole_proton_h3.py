@@ -26,7 +26,7 @@ per-irrep $q$-pole order.  See audit doc for the reading correction.
 Witness: per-irrep-pole-proton-h3.witness.json (CI-integrated)
 Audit doc: docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md
 
-@module folio-assistant/computations/per_irrep_pole_proton_h3
+@module computations/per_irrep_pole_proton_h3
 """
 from __future__ import annotations
 

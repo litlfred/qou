@@ -37,14 +37,13 @@ $$
 *where $t_i = \mathrm{tr}_M(b_i)$ are the Markov traces of the
 basis elements, $G_{ij}$ is the Gram matrix
 ([Frobenius Gram matrix](#prop:frobenius-gram-matrix)),
-$n_{\mathrm{target}} \approx 1.000$ for the proton and
-$\approx 0.811$ for the neutron, and $M$ is a large constant.*
+$n_{\mathrm{target}}$ is the invariant net demand of the state,
+and $M$ is a large constant.*
 
 The objective $\sum t_i x_i = \mathrm{tr}_M(\Phi)$ is the
 categorical action.  The Frobenius positivity constraint
 $Gx \geq 0$ ensures that $\Phi$ pairs non-negatively with all
-basis elements — physically, the confined state does not create
-unbounded demand in any channel.
+basis elements.
 
 ## Dual program (demand satisfaction)
 
@@ -76,26 +75,19 @@ values) holds because the feasible set is non-empty
 
 ## $\mathcal{B}_3$ as the LP solution
 
-At $q_0 \approx 1.1100$, the LP has a unique optimal vertex
-at $x^* = \mathrm{NF}(\mathcal{B}_3)$:
+At specific topological evaluations (see [numeric probes](#audit:confinement-lp-numeric)), the LP has an optimal vertex
+at $x^* = \mathrm{NF}(\mathcal{B}_3)$.
 
-$$
-  x^*
-  =
-  (+0.998, -0.010, +0.009, +0.046, -0.044, 0)
-$$
-
-with $\mathrm{tr}_M(x^*) \approx 0.999$ and
-$\mathrm{net}(x^*) \approx 1.000$.  The Frobenius positivity
+The Frobenius positivity
 constraints are **tight** at two indices ($\sigma_0$ and $L_-$),
 giving the two active demand channels that correspond to the
-proton's residual demand.
+residual demand.
 
 ## Caveat: $\mathcal{B}_3$ is a local minimum
 
 With the corrected Markov trace $\mathrm{tr}_M(e^-) = z^3$
 ([corrected trace](#prop:corrected-markov-trace)),
-the Gram matrix acquires a negative eigenvalue ($\approx -0.956$).
+the Gram matrix acquires a negative eigenvalue.
 The LP has a global minimum at $\mathrm{tr}_M = 0$ (massless
 confined state).  The Borromean solution $\mathcal{B}_3$ is a
 **local minimum** — the LP vertex with minimum $|\lambda|$

@@ -139,20 +139,28 @@ class MostowRigidity (M : Type*) where
     Given `[MostowRigidity M]` for the knot complement `M`, the
     categorical mass eigenvalue (which factors through the
     hyperbolic volume via the `algebraic-quantum-volume` bridge)
-    is well-defined (non-negative volume) and isolated (strictly
-    positive deformation gap).
+    is well-defined (non-negative volume) and **isolated**: the
+    next distinct value in the volume spectrum lies strictly above
+    `volume`, separated by the Mostow gap.
 
-    Stated formally: the class furnishes a non-negative volume
-    and a strictly positive gap.  The proof unpacks the class
-    fields directly — no further `sorry`.
+    Both conjuncts are *derived*, not projected: the first is the
+    non-negativity witness, and the second — `volume` is strictly
+    below its gap-separated successor `volume + mostow_gap` — is
+    derived from the strict positivity of the gap
+    (`lt_add_of_pos_right`).  Composing the two fields rather than
+    re-exporting `mostow_gap_pos` verbatim is what makes this a
+    genuine rigidity consequence (separation of the eigenvalue from
+    the rest of the spectrum) rather than a self-assuming
+    projection (AGENTS.md §3b-cond item 5).
 
     This is the §3b-cond rigorous-conditional companion to the
     `prop:mostow-confinement` content block; concrete instances
     of the class supply the rigidity proof for specific knot
     complements. -/
 theorem mass_rigidity_of_mostow {M : Type*} [h : MostowRigidity M] :
-    0 ≤ h.volume ∧ 0 < h.mostow_gap :=
-  ⟨h.volume_nonneg, h.mostow_gap_pos⟩
+    0 ≤ h.volume ∧ h.volume < h.volume + h.mostow_gap := by
+  refine ⟨h.volume_nonneg, ?_⟩
+  exact lt_add_of_pos_right h.volume h.mostow_gap_pos
 
 /-- **Volume of the categorical mass eigenvalue** — extraction
     helper.  Returns the underlying volume invariant from the

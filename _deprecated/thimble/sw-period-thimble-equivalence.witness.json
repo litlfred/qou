@@ -43,7 +43,7 @@
   "scriptFile": "sw_period_thimble_equivalence.py",
   "scriptHash": "e770fb2b60a3",
   "scriptCommitSha": "0093f06021ac3d14750159144fa9da757890d69a",
-  "description": "Cross-validation of SW thimble periods Π^(k) (PLT path) against GB/jet real-axis closed-form integrands for k ∈ {0,1,2,3}.  Empirical certificate of A2.1+A2.2+A2.3+A2.5 of prop:sw-period-thimble-equivalence; A2.4 (real-axis = thimble sum at k = 1) is verified EMPIRICALLY only — per CLAUDE.md §3b the downstream proton-mass result remains a conjecture.",
+  "description": "Cross-validation of SW thimble periods Π^(k) (PLT path) against GB/jet real-axis closed-form integrands for k ∈ {0,1,2,3}.  Empirical certificate of A2.1+A2.2+A2.3+A2.5 of prop:sw-period-thimble-equivalence; A2.4 (real-axis = thimble sum at k = 1) is verified EMPIRICALLY only — per AGENTS.md §3b the downstream proton-mass result remains a conjecture.",
   "contentBlock": "prop:sw-period-thimble-equivalence",
   "parameters": {
     "q0": 1.1099785955541805,
@@ -87,7 +87,7 @@
     ]
   },
   "caveats": [
-    "A2.4 (real-axis ≡ thimble sum for the proton word) is verified empirically only.  Per CLAUDE.md §3b, every block whose `uses[]` transitively cites prop:sw-period-thimble-equivalence and is downstream of A2.4 must remain a `conjecture` (e.g. conj:baryon-period-ratio).",
+    "A2.4 (real-axis ≡ thimble sum for the proton word) is verified empirically only.  Per AGENTS.md §3b, every block whose `uses[]` transitively cites prop:sw-period-thimble-equivalence and is downstream of A2.4 must remain a `conjecture` (e.g. conj:baryon-period-ratio).",
     "PLT thimble integration uses the Hessian-phase normalisation from picard_lefschetz_thimble.py; only |Π^(k)|/|GB^(k)| is compared (not the absolute phase).  The global phase factor is recorded as `global_hessian_norm_factor` for downstream consumers."
   ]
 }

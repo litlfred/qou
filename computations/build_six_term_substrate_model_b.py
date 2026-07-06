@@ -109,14 +109,18 @@ def _load_model_b_t1() -> dict[str, mp.mpf]:
     return out
 
 
-# CODATA masses (MeV) for the comparison column.
+# CODATA masses (MeV) for the comparison column — registry (no inline literals).
+from codata_constants import (  # noqa: E402
+    M_P_MEV_VALIDATION, M_N_MEV_VALIDATION, M_D_MEV_VALIDATION,
+    M_T_MEV_VALIDATION, M_HE3_MEV_VALIDATION, M_HE4_MEV_VALIDATION,
+)
 _CODATA = {
-    (1, 0):   mp.mpf("938.27208816"),    # proton
-    (0, 1):   mp.mpf("939.56542052"),    # neutron
-    (1, 1):   mp.mpf("1875.61294257"),   # deuteron
-    (1, 2):   mp.mpf("2808.92113298"),   # tritium
-    (2, 1):   mp.mpf("2808.39160743"),   # he3
-    (2, 2):   mp.mpf("3727.37941"),      # he4
+    (1, 0):   M_P_MEV_VALIDATION,    # proton
+    (0, 1):   M_N_MEV_VALIDATION,    # neutron
+    (1, 1):   M_D_MEV_VALIDATION,    # deuteron
+    (1, 2):   M_T_MEV_VALIDATION,    # tritium
+    (2, 1):   M_HE3_MEV_VALIDATION,  # he3
+    (2, 2):   M_HE4_MEV_VALIDATION,  # he4
 }
 _LABEL = {
     (1, 0): "p", (0, 1): "n",

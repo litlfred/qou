@@ -1,0 +1,73 @@
+{
+  "description": "Schur-Weyl / q-Plancherel structural refinement of the lambda-coloured WRT handoff (#2603). Shows (A) W_lambda is the conjugation-symmetric q-Plancherel measure with only 4 distinct values on lambda|-5, so the right count comparison is 4 WRT components <-> 4 distinct W_lambda (a MATCH, refining #2603's '4!=7,4!=3'); (B) the ordered 4<->4 identification is NOT a numerical identity (no fit); (C) the #2364 SU(2) Schur-Weyl row-bound annihilates the (3,1,1) peak block. No fit; nothing wired.",
+  "computation": "docs/audits/scripts/keystone_wrt_schurweyl_plancherel_4count_probe.py",
+  "q0": "1.1099785955541805",
+  "convention": "balanced q-integers [k]=(q^k-q^-k)/(q-q^-1); W_lambda=d_q(lambda)^2/[5]_q!",
+  "W_lambda": {
+    "(5,)": 0.007615387159641052,
+    "(4, 1)": 0.12862000316020217,
+    "(3, 2)": 0.20754220432343184,
+    "(3, 1, 1)": 0.29466895514609304,
+    "(2, 2, 1)": 0.20754220432343184,
+    "(2, 1, 1, 1)": 0.12862000316020217,
+    "(1, 1, 1, 1, 1)": 0.007615387159641052
+  },
+  "W_lambda_cross_check_max_abs_err_vs_canonical": 4.61284035894842e-06,
+  "plancherel_total_Z": 0.9822241444326432,
+  "conjugation_symmetry_holds": true,
+  "distinct_W_lambda_values": [
+    0.294668955,
+    0.207542204,
+    0.128620003,
+    0.007615387
+  ],
+  "n_distinct_W_lambda": 4,
+  "wrt_colour_components": {
+    "1": 0.98999965222313,
+    "11": 0.78861465023608,
+    "19": 0.50299993214087,
+    "29": 0.04796281223285
+  },
+  "n_wrt_components": 4,
+  "count_match_4_to_4": true,
+  "ordered_identification_normalized": {
+    "wrt_norm": [
+      0.4249696972113624,
+      0.33852267359356286,
+      0.21591899388977093,
+      0.020588635305303873
+    ],
+    "W_norm": [
+      0.4615405243579757,
+      0.3250737345594142,
+      0.2014577464651626,
+      0.011927994617447608
+    ],
+    "rel_residuals": [
+      -0.07923643800830929,
+      0.04137196458636247,
+      0.07178302983305268,
+      0.7260768440646311
+    ],
+    "max_abs_rel_residual": 0.7260768440646311
+  },
+  "numerical_identity": false,
+  "schur_weyl_2364_obstruction": {
+    "rule": "(C^d)^{x5} hosts H5(q)-block lambda iff rows(lambda)<=d",
+    "su2_fundamental_hosts": [
+      "(5)",
+      "(4,1)",
+      "(3,2)"
+    ],
+    "su2_fundamental_annihilates": [
+      "(3,1,1)",
+      "(2,2,1)",
+      "(2,1,1,1)",
+      "(1^5)"
+    ],
+    "W_lambda_peak_block": "(3,1,1)",
+    "peak_is_annihilated_by_su2": true
+  },
+  "verdict": "The #2603 counting obstruction is refined: via Plancherel conjugation symmetry the count comparison is 4<->4 (a match), so a value-level correspondence is NOT counting-forbidden. BUT the ordered identification is not a numerical identity (max rel residual reported; forcing it would be numerology), AND the #2364 SU(2) Schur-Weyl row-bound provably annihilates the (3,1,1) peak block. So the WRT->W_lambda route via fundamental SU(2) Schur-Weyl is OBSTRUCTED; the genuine open object is the derived higher-Wilson-line / colour-C^3 Schur-Weyl weighting (or the route is underdetermined).",
+  "discipline": "No fit; no component=W_lambda match asserted; c_k/Delta_lambda cal-anchored. Owner closes (bean s5bb section 4a)."
+}

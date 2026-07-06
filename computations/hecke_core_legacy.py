@@ -1,10 +1,10 @@
 # DEPRECATION-CANDIDATE: Phase-5 exploratory surface, kept in place
-# because 9 live importers (5 in folio-assistant/computations/ + 4 in
+# because 9 live importers (5 in computations/ + 4 in
 # tools/pyhecke/python/pyhecke/) still depend on its symbols. Revisit
 # when the live importers are themselves retired or rewired to the
 # canonical surface. Previously lived at _deprecated/hecke_core_legacy.py;
 # moved out 2026-06-01 to match the existing 23-candidate convention
-# (DEPRECATION-CANDIDATE banner in folio-assistant/computations/,
+# (DEPRECATION-CANDIDATE banner in computations/,
 # not under _deprecated/).
 """hecke_core_legacy — Phase-5 EXPLORATORY surface of hecke_core.py.
 
@@ -16,7 +16,7 @@ Symbols here are NOT on the canonical derivation chain
 reproducibility of historical Phase-5 results and for the
 in-repo consumers that still import them.
 
-**Direct importers** (folio-assistant/computations/):
+**Direct importers** (computations/):
 
   - sdp_cross_channel.py                  (_PARTITION_TABLE, _build_ysn_matrices,
                                             _content_at, _crossing_in_partition,
@@ -82,6 +82,7 @@ from pyhecke.gram import (  # noqa: E402
     _Q_FRAC, _QI_FRAC,
 )
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
+from experimental_constants import m_n_derived_3input  # noqa: E402
 
 # Module-level cache for `_partition_table` — was at hecke_core.py
 # line 560 in the original; the carve-out missed it because the
@@ -2304,7 +2305,7 @@ def atom_mass(Z, N):
 
     Returns (M_MeV, phi1).
     """
-    M_const = Z * M_P_MEV + N * M_N_MEV + Z * M_E_MEV
+    M_const = Z * M_P_MEV + N * m_n_derived_3input + Z * M_E_MEV
     phi = compute_phi1_full(Z, N)
     return M_const + KAPPA * phi, phi
 

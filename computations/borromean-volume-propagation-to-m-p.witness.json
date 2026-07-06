@@ -1,30 +1,36 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-29T14:42:14.371596+00:00",
-  "commitSha": "4f207588745f901d68703c022c9e38a1d134bb5f",
+  "computedAt": "2026-06-22T13:18:24.641910+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "m_p residual via exact 8·G Vol(𝓑₃) drops below 2 ppb",
-      "computed": 210.78696910395044,
+      "computed": 0.9803282506139529,
       "expected": 0.0,
-      "passed": false,
+      "passed": true,
       "tolerance": 2.0,
       "unit": "ppb",
       "source": "Replace stale Vol with 8·G; hardcoded 11-digit λ unchanged. Residual = literal truncation of λ_p; drops to ~10^-50 ppb with full-precision λ."
     }
   ],
-  "allPassed": false,
-  "durationMs": 12,
+  "allPassed": true,
+  "durationMs": 33,
   "computation": "borromean-volume-propagation-to-m-p",
   "scriptFile": "borromean_volume_propagation_to_m_p.py",
-  "scriptHash": "8d32cbd849aa",
-  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+  "scriptHash": "3342404701a6",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "Tests whether replacing the stale Vol(𝓑₃) = 7.32772290 (SnapPy default-precision literature value, used in m_p_borromean_verification_50dps.py:68) with the exact 8·G = 7.32772475 closes the 250 ppb m_p residual. Hypothesis: the hardcoded λ_p_scale = 2.4599527869 was calibrated against CODATA m_p using the CORRECT 8·G value, so the stale Vol in the production formula introduces a compensating ~0.25 ppm error.",
   "auditOnly": "docs/audits/2026-05-18-lambda-scale-derivation-search.md",
@@ -33,9 +39,9 @@
   },
   "data": {
     "substrate": {
-      "Q_50dps": "1.1099785827513808075916690956107688798744991218736",
-      "ℏ_q": "0.0990817160442585078391771175189",
-      "ℏ_q²": "0.00981718645427507381056905717956",
+      "Q_50dps": "1.1099785955573347198997632204832250266562084087802",
+      "ℏ_q": "0.0990817264382589590820994159827",
+      "ℏ_q²": "0.00981718851398598439370648689405",
       "m_e_codata_MeV": "0.51099895069",
       "m_p_codata_MeV": "938.27208816",
       "source": "codata_constants.M_E_MEV (CAL-1) + M_P_MEV_VALIDATION (reference)"
@@ -49,25 +55,31 @@
     "m_p_prediction_with_hardcoded_lambda": {
       "hardcoded_λ_p_scale": "2.4599527869",
       "via_stale_Vol(𝓑₃)": {
-        "m_p_pred_MeV": "938.272049444",
-        "delta_vs_CODATA_MeV": "-3.871596519e-5",
-        "delta_ppm": "-0.041263"
+        "m_p_pred_MeV": "938.271852588",
+        "delta_vs_CODATA_MeV": "-0.0002355716306",
+        "delta_ppm": "-0.25107"
       },
       "via_exact_8G_Vol(𝓑₃)": {
-        "m_p_pred_MeV": "938.272285936",
-        "delta_vs_CODATA_MeV": "0.0001977755297",
-        "delta_ppm": "0.210787"
+        "m_p_pred_MeV": "938.27208908",
+        "delta_vs_CODATA_MeV": "9.198146348e-7",
+        "delta_ppm": "0.000980328"
       },
-      "improvement": "0.195757"
+      "improvement": "256.108"
     },
     "lambda_p_implied_from_CODATA": {
       "definition": "λ implied = m_p_CODATA / (m_e · Vol/ℏ_q²)",
-      "via_stale_Vol(𝓑₃)": "2.459952888405151427",
-      "via_exact_8G_Vol(𝓑₃)": "2.459952268374117209",
+      "via_stale_Vol(𝓑₃)": "2.4599534045196030948",
+      "via_exact_8G_Vol(𝓑₃)": "2.4599527844884387902",
       "hardcoded_lambda_in_script": "2.4599527869",
-      "diff_implied_stale_vs_hardcoded": "1.01505151427e-7",
-      "diff_implied_8G_vs_hardcoded": "-5.18525882791e-7",
+      "diff_implied_stale_vs_hardcoded": "6.17619603095e-7",
+      "diff_implied_8G_vs_hardcoded": "-2.41156120981e-9",
       "interpretation": "If the hardcoded value matches the implied-via-8G λ to high precision, the hardcoded λ was originally fitted using the CORRECT Vol(𝓑₃) = 8·G, not the stale literature value. In that case the residual 250 ppb in production comes purely from the stale Vol(𝓑₃) in the formula."
+    },
+    "lean_uniqueness_ref": {
+      "nucleus": "proton",
+      "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     }
   }
 }

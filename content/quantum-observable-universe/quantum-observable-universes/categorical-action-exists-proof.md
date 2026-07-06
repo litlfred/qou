@@ -3,7 +3,7 @@ The proof strategy directly leverages the dualizability inherent in the rigid mo
 The rigid structure of $\mathbf{C}$ supplies the evaluation and
 coevaluation morphisms $\mathrm{ev}_A \colon A^\vee \otimes A \to \mathbf{1}$
 and $\mathrm{coev}_A \colon \mathbf{1} \to A \otimes A^\vee$
-([rigid :refterm[monoidal category]{#monoidal-category}](#def\:rigid-monoidal-category)).  The
+([rigid :refterm[monoidal category]{#monoidal-category}](#def:rigid-monoidal-category)).  The
 tensor $\mathrm{id}_{A^\vee} \otimes \Phi$ is a morphism by
 functoriality.  The three-fold composition
 

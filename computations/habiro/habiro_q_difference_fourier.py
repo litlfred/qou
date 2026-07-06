@@ -23,7 +23,7 @@ VANISH when u is a primitive d-th root of unity with d ≤ m (the factor
 (1 − u^d) = 0). So evaluating tr_M at a root of unity ζ_d TRUNCATES the
 infinite/long Habiro sum to the m < d terms. This is exactly the
 WRT / modular-tensor-category truncation (bar_involution.root_of_unity_
-truncate, CLAUDE.md §7b item 2): the Fourier transform over the cyclic
+truncate, AGENTS.md §7b item 2): the Fourier transform over the cyclic
 group ⟨ζ⟩ diagonalises the shift σ_q, turning the q-difference equation
 into per-mode algebraic relations.
 
@@ -48,7 +48,7 @@ WHAT THIS PROBE COMPUTES (no fitting; exact symbolic where possible):
      finding (f must CANCEL an odd-order term) predicts the physical
      content is the BAR-EVEN sector — located here.
 
-DISCIPLINE (CLAUDE.md §7b, canonical-derivation, ck-tiered-not-binary):
+DISCIPLINE (AGENTS.md §7b, canonical-derivation, ck-tiered-not-binary):
 no fitting. Every quantity is an exact function of the witness-cited
 integer a_m, or an exact root-of-unity evaluation. The outcome is a
 spectral CHARACTERIZATION of the q-difference structure — it does NOT

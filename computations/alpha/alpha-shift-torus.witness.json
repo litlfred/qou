@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-01T13:21:49.375766+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-07-05T11:20:31.932731+00:00",
+  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
   "assertions": [
     {
       "name": "alpha_shift[T_2_3]_equals_k_p_minus_1",
@@ -90,11 +90,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1439,
+  "durationMs": 1837,
   "computation": "alpha-shift-torus",
   "scriptFile": "alpha_shift_torus.py",
-  "scriptHash": "16a2861d98d9",
-  "scriptCommitSha": "2c03810cdff85622ee6c1e7dfaee21813d29e504",
+  "scriptHash": "9064e188ab0c",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -102,7 +102,7 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",

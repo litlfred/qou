@@ -599,7 +599,7 @@ fn apply_factor_left(v: &mut [f64], blocks: &[Block], c: f64, d: f64) {
 /// # Numerical
 ///
 /// f64 throughout. For arbitrary precision use the `_mpfr` variant
-/// (TODO).
+/// [`crate::seminormal_mpfr::chi_q_atomic_mpfr`].
 /// **Batch `chi_q_atomic` over all partitions of `n_strands`** —
 /// returns `Vec<(partition, chi_value)>` for every λ ⊢ n_strands,
 /// computed in parallel via rayon.
@@ -612,8 +612,7 @@ fn apply_factor_left(v: &mut [f64], blocks: &[Block], c: f64, d: f64) {
 ///
 /// Same f64 numerical contract as [`chi_q_atomic`].  For MPFR
 /// precision, see [`crate::seminormal_mpfr::chi_q_atomic_all_partitions_mpfr`]
-/// (currently not implemented; the F-B fix landed only on the f64
-/// side per the existing `compute_atom_chi_rust.py` caller).
+/// (string-in/string-out arbitrary-precision sibling).
 pub fn chi_q_atomic_all_partitions(
     n_strands: usize,
     factors: &[(f64, f64, u32)],

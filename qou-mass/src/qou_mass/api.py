@@ -1,13 +1,16 @@
 """Public API for qou_mass — thin orchestration over the
 canonical-derivation pipeline.
 
-P2 (this revision): the predict() / predict_nucleon() / compute_tr_M()
-functions are now LIVE. They read from vendored per-Z shards
+P2 (Lookup): The predict() and predict_nucleon() functions are currently
+data-facades. They read from vendored per-Z shards
 (canonical-isotope-witness-Z<NN>.witness.json) shipped with the
 package — so external researchers can `pip install qou-mass` and
 immediately query the canonical pipeline's outputs for any AME 2020
-nuclide. `compute_tr_M()` calls the vendored `markov_peel` chain for
-on-demand recomputation.
+nuclide.
+
+P3 (Live Compute): The compute_tr_M() function performs live computation
+by calling the vendored `markov_peel` chain for on-demand recomputation.
+Future revisions will migrate the full `predict()` stack to live compute.
 
 For a given atom request:
   - "binding_energy" — return B_pred from L1/L2/L3 cascade (per-Z
@@ -98,7 +101,7 @@ def _load_shard(Z: int) -> dict:
         data = resources.files("qou_mass.data.isotopes").joinpath(filename).read_text()
     except (FileNotFoundError, ModuleNotFoundError):
         raise ValueError(f"no vendored shard for Z={Z}")
-    shard = json.loads(data)
+    shard = json.loads(data, parse_float=Decimal)
     _SHARD_CACHE[Z] = shard
     return shard
 
@@ -179,6 +182,7 @@ def predict(
             units="MeV",
             ppm_vs_codata=(Decimal(str(ppm)) if ppm is not None else None),
             method=row.get("layer", "?"),
+            method_status="experimental" if row.get("layer") == "experimental" else None,
             precision_dps=precision_dps,
         )
     if observable == "binding_energy":
@@ -207,6 +211,7 @@ def predict(
                 if err_pct is not None else None
             ),
             method=row.get("layer", "?"),
+            method_status="experimental" if row.get("layer") == "experimental" else None,
             precision_dps=precision_dps,
         )
     if observable == "mass_excess":
@@ -220,6 +225,7 @@ def predict(
             value=Decimal(str(m_pred_pred)) - Decimal(A) * Decimal("931.49410242"),
             units="MeV",
             method=row.get("layer", "?"),
+            method_status="experimental" if row.get("layer") == "experimental" else None,
             precision_dps=precision_dps,
         )
     raise ValueError(f"unknown observable: {observable!r}")
@@ -239,7 +245,7 @@ def predict_nucleon(
         from importlib.resources import files
         b = json.loads(files("qou_mass.data").joinpath(
             "m-p-borromean-verification-50dps.witness.json"
-        ).read_text())
+        ).read_text(), parse_float=Decimal)
         d = b.get("data", b).get("muon_check", {})
         return Prediction(
             atom="mu",
@@ -288,7 +294,8 @@ def compute_tr_M(
     cmte = json.loads(
         resources.files("qou_mass.data").joinpath(
             "canonical-mass-table-extended.witness.json"
-        ).read_text()
+        ).read_text(),
+        parse_float=Decimal
     )
     for r in cmte.get("data", {}).get("rows", []):
         if r.get("Z") == Z and r.get("N") == N:
@@ -317,7 +324,8 @@ def canonical_braid(Z: int, N: int) -> BraidWord:
         cmte = json.loads(
             resources.files("qou_mass.data").joinpath(
                 "canonical-mass-table-extended.witness.json"
-            ).read_text()
+            ).read_text(),
+            parse_float=Decimal
         )
         for r in cmte.get("data", {}).get("rows", []):
             if r.get("Z") == Z and r.get("N") == N:

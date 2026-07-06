@@ -9,23 +9,6 @@ $$
 identity $\mathrm{spin}\text{-}1 \otimes \mathrm{spin}\text{-}\tfrac{3}{2}
 = \mathrm{spin}\text{-}\tfrac{1}{2} \oplus \mathrm{spin}\text{-}\tfrac{3}{2}
 \oplus \mathrm{spin}\text{-}\tfrac{5}{2}$ (dimensions $3 \cdot 4 = 2 + 4 + 6$).*
-
-## Proof
-
-Using $[n]_q = (q^n - q^{-n})/(q - q^{-1})$, multiply both sides by
-$(q - q^{-1})^2$ to clear denominators. The identity becomes the
-ring identity
-
-$$
-  (q^3 - q^{-3})(q^4 - q^{-4})
-  \;=\;
-  (q - q^{-1}) \cdot
-  \bigl((q^2 - q^{-2}) + (q^4 - q^{-4}) + (q^6 - q^{-6})\bigr),
-$$
-
-which holds in any field with $q \ne 0$ by direct expansion (`ring`
-in the Lean formalisation). $\square$
-
 ## Significance
 
 This identity is the *categorical* content behind the meson mass-squared

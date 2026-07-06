@@ -8,8 +8,8 @@ description: >
   Canonical-derivation-discipline integration watcher — watches
   origin/main + open active PRs + newly-opened PRs for
   non-canonical empirical/fitting/calibration inputs beyond the
-  three categorically allowed (CAL-1 m_e, CAL-2 m_μ/m_e→q_0,
-  CAL-3 Q_β), numerology, or justification/rationalization in
+  three categorically allowed (CAL-1 m_e, CAL-2 m_μ→q_0,
+  CAL-3 m_π; Q_β is derived), numerology, or justification/rationalization in
   place of derivation. Inherits shared mechanics (Monitor,
   subscriptions, queue, ledger, idle sweep, author-ask,
   watch-prepared-PRs, witness-drift recovery, billing-quick-fail
@@ -27,8 +27,8 @@ nine domain-specific slots A-I.
 
 **Setup:** use `NAME=canonical-watcher` everywhere the parent's
 §1 references `${NAME}`. Files at
-`todos/canonical-watcher-queue.json` and
-`todos/canonical-watcher-ledger.md`.
+`.beans/canonical-watcher-queue.json` and
+`.beans/canonical-watcher-ledger.md`.
 
 **Authoritative reference:** the three-calibration discipline is
 fixed by:
@@ -67,14 +67,26 @@ defines the rule it enforces.
 
 ### Three categorically allowed calibrations
 
-| ID | Quantity | (Co)homology | Wedderburn block | What it fixes |
-|----|----------|--------------|------------------|---------------|
-| **CAL-1** | $m_e$ (CODATA) | $H^0$ | std (2,1) | leptonic mass scale |
-| **CAL-2** | $m_\mu/m_e \approx 206.768$ (CODATA) | $H^1$ | alt (1³) | substrate $q_0$ |
-| **CAL-3** | $Q_\beta(n) \approx 0.78233$ MeV (PDG) | $H^2$ | sym (3) | hadronic scale $\mathbf{E}_0$ |
+| ID | Quantity | DOF of $H^1 = 2W$ | Wedderburn block | What it fixes |
+|----|----------|-------------------|------------------|---------------|
+| **CAL-1** | $m_e$ (CODATA) | $W$-plane scale | std (2,1) | leptonic mass scale |
+| **CAL-2** | $m_\mu$ (CODATA) | $W$-plane modulus | alt (1³) | substrate $q_0$ (via $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$) |
+| **CAL-3** | $m_{\pi^\pm} \approx 139.57$ MeV (PDG) | orthogonal class | sym (3) | meson / chiral scale ($\mathrm{Vol}(\mathrm{Hopf})=0$) |
+
+All three are the three real DOF of the single $H^1 = 2W$ (2 W-plane invariants + 1 orthogonal class), not three distinct degrees.
 
 These are **exhaustive**. A fourth dimensional input anywhere is
 a hard audit failure.
+
+**$Q_\beta$ is derived, not a calibration.** $Q_\beta = m_e\,|q_0^2-2q_0-1|(q_0+1)/(2q_0^3)$
+is a function of CAL-1 + CAL-2 (the bar-odd $\sinh$ partner of the
+bar-even $\cosh$ meson scale $m_\pi$); the neutron $\beta$-decay width
+$\mathfrak{D}_\beta/\tau_n$ is its experimental face, **not** a third
+calibration. **Physical-Observations anchor note:** the canonical CAL-2
+is $m_\mu/m_e$, but $q_0$ may be *numerically* anchored on the
+more-precise proton ratio $m_p/m_e$ (re-pin 2026-05-28) — this is a
+precision substitution within the same $H^1$ datum and is **not** a
+`second-q0-pin` violation.
 
 ## Slot B — §3 trigger filter
 
@@ -84,8 +96,8 @@ changed=$(git diff-tree --no-commit-id --name-only -r "$SHA")
 
 is_canonical_event=false
 
-# (i) Any change in folio-assistant/computations/
-echo "$changed" | grep -qE '^folio-assistant/computations/.*\.(py|json)$' && is_canonical_event=true
+# (i) Any change in computations/
+echo "$changed" | grep -qE '^computations/.*\.(py|json)$' && is_canonical_event=true
 
 # (ii) Content block .md/.ts of provable / definitional / remark kind
 echo "$changed" | grep -qE 'content/.*\.(md|ts)$' && {
@@ -117,20 +129,20 @@ number`, `rationalization`, `CODATA`, `tautolog`, `back-fit`,
 | `scientific-accuracy` | Any changed proposition/theorem block with numerical claims | Claim is derived, not justified; no rationalization |
 | `one-voice-audit` | Any changed block | Status leaks, work-tracker words that should be properly handled |
 | `ontologist` | Any new symbol introduced | Notation register compliance |
-| `compute_audit_scan` (full) | Session start + every 24h idle | Baseline scan over `folio-assistant/computations/` |
+| `compute_audit_scan` (full) | Session start + every 24h idle | Baseline scan over `computations/` |
 
 ## Slot D — §4c finding taxonomy
 
 | Violation | Severity | Definition | Auto-fix possible? |
 |-----------|----------|------------|--------------------|
-| `fourth-calibration` | critical | Script/block introduces an external input beyond {m_e, m_μ/m_e, Q_β(n)} | No — author ask |
+| `fourth-calibration` | critical | Script/block introduces an external input beyond the three masses {m_e, m_μ, m_π} (Q_β is derived, not an input) | No — author ask |
 | `coefficient-fit` | critical | Bethe-Weizsäcker / mass-formula coefficient labelled "ad hoc", "approx", "tuned to AME/CODATA" | Author ask; sometimes "demote to remark" |
 | `numerology` | critical | Magic number ({2,8,20,28,50,82,126}, "0.7823...", any literal) asserted without derivation chain | Author ask |
 | `hidden-codata-literal` (P31) | major | Free-floating CODATA string in production script outside the registry | Yes — `codata_constants` migration |
 | `tautology` | major | "Derivation" that uses the result as input (LO tautology pattern, e.g. $\rho_K^{LO}$ via $m_p, m_n$ CODATA) | Yes — apply tautology banner + flag in `.md` |
 | `archimedean-leak` | critical | Algebraic-side derivation consumes $\mathrm{Vol}(K)$, hyperbolic structure, Mostow constant, etc. | Author ask |
 | `second-q0-pin` | critical | A second independent fit to $q_0$ beyond CAL-2 | Author ask |
-| `second-hadronic-scale` | critical | $E_0$ pinned by something other than CAL-3 | Author ask |
+| `second-meson-scale` | critical | A second meson/hadronic scale introduced beyond CAL-3 = $m_\pi$ (recall $E_0$ and $Q_\beta$ are *derived* from CAL-1+CAL-2, not pinned by CAL-3) | Author ask |
 | `three-route-convergence` | major | "Three routes agree at q_0" claim where routes compute different categorical objects | Author ask; demote to remark |
 | `universal-extrapolation` | major | Single-atom result extrapolated to "universal" | Author ask; demote |
 | `rationalization` | major | Prose in a proposition body arguing *why* a value is right rather than *deriving* it | `scientific-accuracy` rewrite or author ask |
@@ -139,6 +151,7 @@ number`, `rationalization`, `CODATA`, `tautolog`, `back-fit`,
 | `unverified-rho-K` | major | $\rho_K$ used without a derivation-chain witness | Author ask; sometimes Class-B |
 | `ck-binary-negative-result` | major | Precision-ladder block (Q_β $c_k$, α_EM Habiro factor, any convergent truncation-order series) frames a coefficient as a binary negative result (`un-wire`, `drop c_k`, `just a fit`, `fails to beat`, `should be reverted`, `negative result`) without the tiered (proved / near-match / fitted) framing or a citation to `2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`. The four-session wire/un-wire flip-flop signature. | Add tiered framing or cite the canonical doc; author-assist |
 | `negative-result-in-paper` | major | Paper block whose primary content is a negative empirical finding (tag `negative-result` / `falsified` / `superseded` / `scaffolding`, or `.md` opens with `## Status: ... falsified` / `## Status: open R&D — no known` / `**Hypothesis falsified**` / `Errata banner — ... superseded`). Detected by `canonical-no-negative-result-in-paper` checker. `kind: conjecture` blocks are exempt. | Author ask; the fix is to move the content to a dated `docs/audits/` doc and replace the paper block with a one-line forward reference. Established by `docs/audits/2026-05-31-ck-exploratory-probes-removed.md`. |
+| `refutation-scope-unmarked` | major | Durable artifact (audit doc, content block, coordination ledger, witness `verdict` field, PR description) declares an item `REFUTED` / `ruled out` / `dead end` / `cannot` / `impossible` / `excluded` for a hypothesis that was tested **alone as the sole mechanism**, *without* either (a) scope-limited phrasing ("this construction alone does not reproduce the numbers as-is") or (b) a cited proved invariant (parity / sign / dimension / orbit-count / KL-positivity / Lean-proved bound). Over-narrows the empirical search; see AGENTS.md §"Before declaring 'refuted' / 'ruled out'". Calibration audit 2026-06-23 found 6 live (c_k class map, Bratteli/Markov-trace H₃→H₄, signed-crossing, q-Bessel smoothness). | Re-scope (b)→(a): keep the numerical result, fix only the scope claim; cite the proved invariant if a genuine (b). Do NOT delete the finding. |
 
 Automated by the `canonical-ck-tiered-not-binary` qa-criterion
 (`content/pipeline/qa-criteria-registry.ts` →
@@ -163,7 +176,7 @@ Per `docs/audits/2026-05-11-three-calibration-discipline-violations.md`:
 | Class | What it is | How to mark |
 |-------|------------|-------------|
 | **Class-A** | Acknowledged stub with explicit "calibrated" / "tautology" banner — block/script openly states it is currently empirical and lists what would derive it | Banner in docstring (Python) or front-matter callout (`.md`); commit message cites `Class-A` |
-| **Class-B** | Baseline-extraction script that *produces* the calibration input (e.g. computes $m_\mu/m_e$ → $q_0$, or extracts $Q_\beta$) — by definition it consumes CODATA | Filename or top-level docstring labels purpose; review confirms no algebraic-side claim is drawn from it |
+| **Class-B** | Baseline-extraction script that *produces* the calibration input (e.g. computes $m_\mu/m_e$ → $q_0$, or extracts $m_\pi$) — by definition it consumes CODATA/PDG | Filename or top-level docstring labels purpose; review confirms no algebraic-side claim is drawn from it |
 | **Class-C** | Diagnostic probe / cross-check — read-only, never feeds a downstream witness, purpose is to *compare* an algebraic-side prediction against CODATA | Docstring `# Class: C — diagnostic probe` + no `*.witness.json` consumer |
 
 When the watcher classifies a finding as `wontfix-allowed`, it
@@ -202,8 +215,8 @@ Per-violation template:
 **Compute side:**
 
 ```bash
-python3 folio-assistant/computations/canonical_derivation_pipeline_compliance.py
-jq '.recommended_next[]' folio-assistant/computations/canonical-derivation-pipeline-compliance.witness.json
+python3 computations/canonical_derivation_pipeline_compliance.py
+jq '.recommended_next[]' computations/canonical-derivation-pipeline-compliance.witness.json
 ```
 
 **Content side:**
@@ -225,7 +238,7 @@ find content -type f -name '*.ts' -print0 \
 
 | Invariant | Check |
 |-----------|-------|
-| No new free-floating CODATA literal | `python3 folio-assistant/computations/compute_audit_scan.py` reports no new P31 hits vs `origin/main` |
+| No new free-floating CODATA literal | `python3 computations/compute_audit_scan.py` reports no new P31 hits vs `origin/main` |
 | No new tautology without banner | New scripts/blocks that consume their own result either carry the LO tautology banner or are flagged in queue |
 | No new fourth-calibration script | `canonical_script_input_audit.py` over-count delta vs `origin/main` is ≤ 0 |
 | No new naked numerology | Any new numerical literal in proposition/theorem bodies uses `:val[…]` directive |
@@ -271,7 +284,7 @@ straight is to label them at authoring time.
 
 ### When to apply
 
-- **Probes**: every script under `folio-assistant/computations/`
+- **Probes**: every script under `computations/`
   that emits a witness with a structural claim (not just numerical
   data) must include these in the witness `description` or a new
   `probe_diagnostics` field.

@@ -25,7 +25,7 @@ no shortcuts (per user direction).
 
 | Sibling | Overlap with mine | Dependency | Cherry-pick candidate? |
 |---|---|---|---|
-| #616 ↔ #617 | low (different files; both touch `folio-assistant/computations/*.py`) | none | no |
+| #616 ↔ #617 | low (different files; both touch `computations/*.py`) | none | no |
 | #616 ↔ #618 | low (both touch `derivation-chain-audit.witness.json` only) | none | no |
 | #617 ↔ #618 | medium (both add LP/SDP dual witnesses; both extend `lp_dual_witness_validator` flagged set) | none direct (no `uses[]` chain) | no |
 | #617 ← #607 | resolved by base ref (already on `48732e1d`) | n/a (already absorbed) | n/a |
@@ -100,14 +100,14 @@ installation.
 updated with the merge SHA when the follow-up PR lands).
 
 **Files**:
-- [`folio-assistant/computations/wedderburn_lp_ew_wiring.py`](../../folio-assistant/computations/wedderburn_lp_ew_wiring.py)
+- [`computations/wedderburn_lp_ew_wiring.py`](../../computations/wedderburn_lp_ew_wiring.py)
   — added `_klr_positive_supply_vector(...)`, switched LP calls
   to `M_bound=0.0`, kept legacy matrix-entry sum under
   `t_legacy_matrix_entries_*` for comparison.
 - [`docs/audits/2026-05-09-wedderburn-lp-ew-wiring.md`](../audits/2026-05-09-wedderburn-lp-ew-wiring.md)
   — appended §0 KLR-positivity correction with post-fix table
   (gap = 0 for every atom).
-- [`folio-assistant/computations/wedderburn-lp-ew-wiring.witness.json`](../../folio-assistant/computations/wedderburn-lp-ew-wiring.witness.json)
+- [`computations/wedderburn-lp-ew-wiring.witness.json`](../../computations/wedderburn-lp-ew-wiring.witness.json)
   — regenerated; assertions
   `lp_strong_duality_all_klr_atoms` (4/4),
   `klr_positivity_supply_vector_all_atoms` (4/4),

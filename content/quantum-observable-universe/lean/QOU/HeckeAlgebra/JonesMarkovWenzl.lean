@@ -51,7 +51,7 @@ type-level interface; concrete computation is deferred.
   Neumann algebras*, Bull. AMS 12 (1985).
 - [stanley1999] Stanley, *Enumerative Combinatorics II*, §7.21
   (RSK and the hook-length formula).
-- `folio-assistant/computations/wedderburn_jones_markov.py` —
+- `computations/wedderburn_jones_markov.py` —
   Python implementation of the Wenzl closed form.
 -/
 

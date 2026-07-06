@@ -1,11 +1,9 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Proposition (Wenzl-bridge + q-MN synergy for $\mathrm{tr}_M$).**
 *The Wenzl-bridge ([y-lambda-closed-form](#prop:y-lambda-closed-form-wenzl-bridge))
 gives $y_\lambda(q)$ as a closed q-rational expression in $\sqrt q$
 in $O(p(n) \cdot \max\text{hooks})$ time, while q-Murnaghan-Nakayama
 ([Halverson-Ram 1995, Wenzl q-MN, originally in
-`folio-assistant/computations/_deprecated/q_mn_canonical.py`,
+the formal derivation,
 now consolidated into the unified Hoefsmit path
 `hecke_characters.chi_lambda_braid`]) gives
 $\chi_\lambda(T_w; q)$ for canonical permutation braids $T_w$ in
@@ -21,7 +19,7 @@ $$
 time — far faster than the Hoefsmit-seminormal path
 ($O(p(n) \cdot \dim_\lambda^2 \cdot \ell(w))$).*
 
-## Why this is significant
+## Significance
 
 Three orthogonal speedups combine:
 
@@ -61,7 +59,7 @@ $n$ and every reduced word $w$.
    $y_\lambda(q)$ values without resorting to MPFR or sympy
    linear-system solve.
 2. **Mass-formula compute speedup**: the depth-resolved Φ_k pipeline
-   in `depth_resolved_phi_k_hoefsmit.py` can replace its Hoefsmit
+   in the formal derivation can replace its Hoefsmit
    character calls with q-MN where applicable (canonical braid
    words), for $\sim 100 \times$ speedup at high $n$.
 3. **Atom-knot identification path** for ${}^{6}$Li, ${}^{7}$Li:
@@ -75,20 +73,20 @@ $n$ and every reduced word $w$.
 ## Code
 
 The original q-Murnaghan-Nakayama implementation
-[`folio-assistant/computations/_deprecated/q_mn_canonical.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/_deprecated/q_mn_canonical.py)
+the canonical formalism
 exposed `chi_q_canonical_T_w(λ, µ, q)` for canonical permutation
 braids $T_w$.  Active code now uses the unified Hoefsmit path
-[`hecke_characters.chi_lambda_braid`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/hecke/hecke_characters.py),
+the canonical formalism,
 which handles both canonical $T_w$ and arbitrary braid words
 (positive and inverse generators) through the same API.  The
 q-MN speedup quoted above applies in the canonical-$T_w$ regime
 where the q-character is a class function of cycle type.
 
-[`folio-assistant/computations/y_lambda_wenzl_bridge_extended.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/y_lambda_wenzl_bridge_extended.py)
+the canonical formalism
 implements the Wenzl-bridge giving $y_\lambda(q)$ symbolic for
 $n = 2, \ldots, 12$.
 
-[`folio-assistant/computations/wenzl_qmn_trace_cross_check.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/wenzl_qmn_trace_cross_check.py)
+the canonical formalism
 verifies the cross-validation identity on canonical
 permutation braids at $n = 3, 4, 5$.
 

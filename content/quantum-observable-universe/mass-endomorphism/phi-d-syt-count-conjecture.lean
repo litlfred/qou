@@ -108,11 +108,11 @@ hypothesis. Per-(n, λ) instances discharge it concretely. -/
 
 /-- **Per-irrep cyclotomic-factor conjecture** axiomatised for
     arbitrary $\lambda \vdash n$. -/
-class PhiD4FConjecture (n : ℕ) (λ_syt_count : ℕ) (q : ℝ) : Type where
+class PhiD4FConjecture (n : ℕ) (lam_syt_count : ℕ) (q : ℝ) : Type where
   /-- The cyclotomic order index `d_λ = 4 · f_λ`. -/
   d_lambda : ℕ
   /-- The hypothesis `d_λ = 4 · f_λ`. -/
-  d_lambda_eq_four_f : d_lambda = 4 * λ_syt_count
+  d_lambda_eq_four_f : d_lambda = 4 * lam_syt_count
   /-- Residual scalar capturing the conjecture's predictive accuracy
       at substrate q. -/
   conjecture_residual : ℝ
@@ -161,9 +161,9 @@ to any `λ` with `f_λ = 1`. -/
 
 /-- For any 1-d irrep (where $f_λ = 1$), the conjecture predicts
     `d_λ = 4`. -/
-theorem phi_d_at_one_dim_irrep (λ_syt_count : ℕ)
-    (h : λ_syt_count = 1) :
-    4 * λ_syt_count = 4 := by
+theorem phi_d_at_one_dim_irrep (lam_syt_count : ℕ)
+    (h : lam_syt_count = 1) :
+    4 * lam_syt_count = 4 := by
   rw [h]
 
 /-! ## Additional structural results

@@ -1,0 +1,829 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:gamma-gamma-generates-particles",
+  "kind": "proposition",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/predicted-spectra/gamma-gamma-generates-particles.ts",
+    "md": "../qou/content/quantum-observable-universe/predicted-spectra/gamma-gamma-generates-particles.md",
+    "lean": "../qou/content/quantum-observable-universe/predicted-spectra/gamma-gamma-generates-particles.lean"
+  },
+  "source_hashes": {
+    "md": "bd10a5e883f2",
+    "ts": "f46e23f5fa14",
+    "lean": "34cd5987c2f7"
+  },
+  "criteria": {
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
+      }
+    ],
+    "voice-title-scholarly": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
+      }
+    ],
+    "voice-author-notes-pollution": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
+      }
+    ],
+    "voice-status-section": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "d735760f2b64",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "3d013432534476e0631face07ace0a9965f94c53"
+        },
+        "reviewed_at": "2026-06-26T15:20:59.452Z",
+        "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a"
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:09.443Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4"
+      },
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "In sec:pair-production-knot-operators of Ch13; γγ pair-production generating the operator basis squarely fits the section scope."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Generic-ring algebraic statement (Hecke H₃(q) coefficient identity); no archimedean construct, no numeric q₀, no order hypothesis."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proof is pure algebraic normal-form reduction; Lean uses simp over generic CommRing. No linarith/IVT/Real.* machinery."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "major",
+        "evidence": "gamma-gamma-generates-particles.md:1-6 claims '…reach every operator of the six-element basis'; .lean:42-45 lean.ref gamma_gamma_chirality_surjective proves only joint surjectivity of the (L₊,L₋) chiral pair.",
+        "notes": "Lean faithfully encodes the explicitly-scoped 'generative core' (chirality surjectivity + L₋ reachability via gamma_gamma_reaches_Lminus); the full 'every basis operator' claim and the e⁻ opening are deferred to the upstream breit-wheeler block per the .md 'Lean structure' section. Reconcilable; the Lean is a faithful encoding of the sub-claims it states it covers, not a divergent or stub proof."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.9: plan stated up front — expand γ₁·γ₂, reduce by the Hecke relation, read off the five/six basis coefficients, then the cross-color L₊/L₋ surjectivity."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=1.0: Lean is sorry-free (simp / explicit witness)."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "score=0.7: standard Hecke normal-form computation, but the cross-color independent-chirality framing is non-duplicated in the section."
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Provable-kind signatures unchanged; proofs are explicit witnesses / simp, no sorryAx or injected axioms."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Proofs construct explicit witnesses (⟨a,b,1,1,…⟩, ⟨0,1,1,0,…⟩) and compute; no field whose type is the conclusion handed back."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Goals are genuine ∃-statements about coeff equalities / inequality (coeffLminus ≠ 0); not True / x=x."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Only hypothesis is [Nontrivial R] on the second theorem; no False / contradictory premise."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "[Nontrivial R] is used via one_ne_zero in gamma_gamma_reaches_Lminus; first theorem has no hypotheses."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "No decide/trivial; proofs are simp + explicit term construction."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in '$\\\\gamma\\\\gamma$ production generates the operator basis': the formalization compiles successfully without errors.",
+        "severity": "minor",
+        "evidence": "gamma-gamma-generates-particles.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block '$\\\\gamma\\\\gamma$ production generates the operator basis' presents substantial mathematical content: '$\\gamma\\gamma$'.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in '$\\\\gamma\\\\gamma$ production generates the operator basis'.",
+        "severity": "minor",
+        "evidence": "gamma-gamma-generates-particles.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in '$\\\\gamma\\\\gamma$ production generates the operator basis' are appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in '$\\\\gamma\\\\gamma$ production generates the operator basis'.",
+        "severity": "minor",
+        "evidence": "gamma-gamma-generates-particles.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose arguments in '$\\\\gamma\\\\gamma$ production generates the operator basis' proceed logically through the stated steps.",
+        "severity": "minor",
+        "evidence": "gamma-gamma-generates-particles.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Lean sibling corresponds directly to the narrative claim in '$\\\\gamma\\\\gamma$ production generates the operator basis'.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in '$\\\\gamma\\\\gamma$ production generates the operator basis', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "gamma-gamma-generates-particles.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in '$\\\\gamma\\\\gamma$ production generates the operator basis' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "gamma-gamma-generates-particles.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in '$\\\\gamma\\\\gamma$ production generates the operator basis' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "gamma-gamma-generates-particles.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in '$\\\\gamma\\\\gamma$ production generates the operator basis' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "gamma-gamma-generates-particles.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Lean file compiles successfully, confirming reproducibility.",
+        "severity": "minor"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in '$\\\\gamma\\\\gamma$ production generates the operator basis' are consistent."
+      }
+    ],
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "bd10a5e883f2",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:57.812Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ]
+  },
+  "updated_at": "2026-07-03T00:52:57.812Z"
+}

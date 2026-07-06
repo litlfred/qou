@@ -58,28 +58,11 @@ $$
 Markov trace) and **non-degenerate** ($\det G \neq 0$ for $q \neq 0, 1$),
 but **not positive definite** — it has indefinite signature.*
 
-## Frobenius dual
-
-**Definition.**
-*For a state $K = \sum_i c_i b_i$ in NF, the **Frobenius dual**
-is the unique element $K^\vee \in H_3(q)$ satisfying
-$\langle K^\vee, b_j \rangle_F = c_j$ for all $j$.
-Explicitly:*
-
-$$
-  K^\vee = \sum_{i,j} c_i (G^{-1})_{ij} b_j
-$$
-
-*The dual exists and is unique by non-degeneracy of $G$.*
-
-**Verification.**
-The pairing $\langle K^\vee, b_j \rangle_F = \sum_{i,k} c_i (G^{-1})_{ik} G_{kj} = \sum_i c_i \delta_{ij} = c_j$
-by the defining property $G^{-1} G = I$.
-
 ## Operator identification via the dual
 
-The Frobenius dual exactly identifies each basis element with
-its corresponding knot operator.
+The Frobenius dual
+([def:frobenius-dual-h3](#def:frobenius-dual-h3)) exactly
+identifies each basis element with its corresponding knot operator.
 
 **Proposition (operator identification).**
 *For each NF basis element $b_k$, the pairing of $b_k^\vee$
@@ -97,18 +80,3 @@ operator for the electron.*
 
 **Proposition.**
 *$e^- \cdot e^+ = \gamma$ (the photon / identity), for all $q$.*
-
-*Proof.* The braid word $\sigma_0\sigma_1\sigma_0 \cdot
-\sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1} = \mathbf{1}$ by the
-group law in $B_3$.  No Hecke reduction is needed — the
-cancellation is exact in the braid group, hence exact in
-$H_3(q)$ for all $q$.
-
-Equivalently, this is the Hopf relation
-([vertex algebra relations](#prop:vertex-algebra-relations),
-QU-2d): $\mu(S \otimes \mathrm{id})\Delta = \eta\varepsilon$,
-where $S(\sigma_i) = \sigma_i^{-1}$ is the antipode.  The identity
-$e^- \cdot e^+ = \gamma$ is the Hopf relation evaluated on
-the trefoil.
-
-**Witness**: `gram-matrix-dual.witness.json`.

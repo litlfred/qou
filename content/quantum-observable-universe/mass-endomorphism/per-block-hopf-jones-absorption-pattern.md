@@ -72,7 +72,7 @@ a probability measure). The Markov-trace direct compute at $q_0$ gives
 $\tau_M(\mathcal{B}_n - \mathcal{B}_p) \approx -0.142$ (consistent with the
 $y_\lambda(q_0) \cdot \chi_\lambda(q_0)$ sum).
 
-## Why this matters
+## Significance
 
 The per-block Hopf-Jones absorption pattern is the **structural
 foundation** for extending [Fact 3](#prop:q-beta-c3-hopf-three-fold-markov)
@@ -80,9 +80,5 @@ beyond $c_3$. Higher precision-ladder coefficients $c_k$ for $k \geq 4$
 come from **products** of the per-block linear-in-$\hbar_q$ factors,
 giving $\hbar_q^k$ at order $k$. Each block's contribution carries the
 LO Hopf-Jones absorption ($-2$ or $-1$), modulated by the block's
-specific cyclotomic-factor structure (\Phi_4^2$ for 1D; $\Phi_8$ for 2D).
+specific cyclotomic-factor structure ($\Phi_4^2$ for 1D; $\Phi_8$ for 2D).
 
-Verified at $q_0$ via
-[`folio-assistant/computations/qbeta/qbeta_per_block_paper_closed_forms.py`](../../folio-assistant/computations/qbeta/qbeta_per_block_paper_closed_forms.py)
-+
-[`qbeta-per-block-paper-closed-forms.witness.json`](../../folio-assistant/computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json).

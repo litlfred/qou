@@ -60,6 +60,56 @@ chapter):
 3. Formal definition or theorem
 4. Consequence or example (SU(2) running example)
 
+## The Milnor exposition standard (STRICT)
+
+The author voice above **is** the Milnor voice: the gold standard for
+clarity in this paper is John Milnor's expository writing (*Morse
+Theory*; *Characteristic Classes*; *Topology from the Differentiable
+Viewpoint*; *Lectures on the h-Cobordism Theorem*). Every narrative
+block should read as Milnor would write it. Concretely, eight
+hallmarks — each a positive authoring target, and each a scored
+dimension of the `expo-milnor-clarity` QA param (below):
+
+1. **Economy.** No wasted words. Short declarative sentences; every
+   sentence load-bearing. (Mirrors *Economical* above.)
+2. **Concrete before abstract.** A guiding example, picture, or special
+   case appears before or alongside the general statement — never
+   abstraction dumped without an anchor. (Mirrors *Pacing* step 1/4.)
+3. **The "Why" precedes the "What".** The reader is told the *purpose*
+   before the machinery; motivation is stated up front, not back-filled.
+4. **Uncluttered notation.** Notation is lightweight — the reader
+   wrestles only with concepts, never with symbols. Each symbol is
+   introduced at first use; no glyph is hoarded ahead of need or reused
+   for two meanings. (Reinforces the notation register, §7aa of AGENTS.)
+5. **Linear argument.** Each step visibly follows the previous; no
+   forward references to un-introduced ideas, no "as we will see"
+   leaning on later material.
+6. **Prose carries the argument.** Sentences explain; formulas
+   punctuate. A displayed equation never *replaces* the explanation of
+   why it holds.
+7. **Surgical cleanliness / right-tool framing.** Strip every
+   unnecessary technicality. When a heavy result is invoked (a big
+   theorem, a hard lemma — Sard, Tannaka–Krein, Wedderburn), frame it so
+   its *necessity is obvious*: the reader sees *why it is the exact tool*
+   for the problem at hand, not a fact dropped in unmotivated. No
+   "for completeness" technicality pileups.
+8. **Respect for the reader's time and intelligence.** Trust the
+   reader — no belaboring the trivial, no condescension, no ceremony;
+   and equally no *disrespectful gaps* (nothing load-bearing hand-waved
+   as "clearly"). Over-explaining the obvious and hand-waving the hard
+   part are the same defect: both waste the reader's attention.
+
+These are enforced two ways: (a) as **author guidance** here in the
+one-voice profile — write to them from the first draft; and (b) as an
+explicit **agentic-QA sidecar param**, `expo-milnor-clarity`, an
+agent rater that scores each block 0–2 on H1–H8 and records the
+score + weakest dimensions in the block's `.qa.json`. Per owner ruling
+(2026-07-04) the rater is a **strict gate**: `pass` only on a perfect
+16/16 (every hallmark a 2), `warn` for 12–15, `fail` for ≤ 11. The
+Milnor standard is *perfection* — a single non-perfect dimension drops
+the block out of `pass`. Full spec (rubric, prompt, scoring, fixtures):
+[`docs/requirements/2026-07-04-folio-assistant-proof-narrative-checkers.md` §5A](../../../docs/requirements/2026-07-04-folio-assistant-proof-narrative-checkers.md).
+
 ## Paper-Level Voice Rules
 
 | Rule | Standard | Violation example |
@@ -254,7 +304,7 @@ models ($p$-adic, finite-field) demonstrate universality.
 **Intent (Part B — Descartes)**: Study Bring's surface — the
 universal genus-4 curve with automorphism group $S_5$ — as a
 concrete model for QOU. Develop coordinate systems for the red,
-green, and blue coral tubes (the exceptional divisors where all
+green, and blue color tubes (the exceptional divisors where all
 particle interactions occur). Identify specific torus knots with
 specific particles. Derive the Descartes theorem: Bring's surface is
 the terminal object in the category of QOUs with $\chi(A) = -6$.
@@ -264,12 +314,12 @@ specialises to familiar geometric objects.
 
 **Voice (Part B)**: The most "hands-on" chapter. Coordinate-heavy,
 with explicit equations for Bring's surface ($\sum x_j = \sum x_j^2
-= \sum x_j^3 = 0$), color tube coordinates, coral elliptic curves,
+= \sum x_j^3 = 0$), color tube coordinates, color elliptic curves,
 and particle assignments. The reader should feel they are working
 inside the surface.
 
-**What a writer should know**: "Coral tubes" are the geometric
-objects (twisted, fractal, reef-like); "color tube coordinates" are
+**What a writer should know**: "Color tubes" are the geometric
+objects (twisted, fractal, knotted); "color tube coordinates" are
 the coordinate system. Particles are fraktur ($\mathfrak{u}$,
 $\mathfrak{d}$, $\mathfrak{e}$). The Descartes theorem is a
 categorical statement about terminal objects — prove it categorically,
@@ -362,9 +412,9 @@ field pointing to the earlier example block.
 
 | Term | Correct | Incorrect |
 |------|---------|-----------|
-| Geometric tubes on Bring's surface | coral tubes | color tubes, chiral tubes |
-| Coordinate system for r,g,b | color tube coordinates | coral tube coordinates |
-| Physical chirality (experiments) | chiral | coral |
+| Geometric tubes on Bring's surface | color tubes | color tubes, chiral tubes |
+| Coordinate system for r,g,b | color tube coordinates | color tube coordinates |
+| Physical chirality (experiments) | chiral | color |
 | Hadron variable | $\mathfrak{H}$ | $H$ (plain italic) |
 | Hadron mass | $\mathfrak{m}_{\mathfrak{H}}$ | $\mathfrak{m}_H$, $m_H$ |
 | Category | $\mathbf{C}$ (bold) | $\mathcal{C}$ (calligraphic) |
@@ -397,12 +447,19 @@ Before committing any .md content, verify:
 3. [ ] **Tense**: Present tense for definitions and theorems
 4. [ ] **Tone**: No editorializing phrases (check blacklist above)
 5. [ ] **Notation**: All symbols match the notation register (§7aa)
-6. [ ] **Coral/color**: Geometric tubes = "coral"; coordinates = "color"
+6. [ ] **Color/color**: Geometric tubes = "color"; coordinates = "color"
 7. [ ] **Hadron fraktur**: $\mathfrak{H}$ for hadrons, not $H$
 8. [ ] **Example thread**: SU(2) examples use consistent notation
 9. [ ] **Cross-chapter**: Terms introduced in earlier chapters are
        referenced, not re-defined
 10. [ ] **Chapter voice**: Content matches the chapter context snippet
+11. [ ] **Render-QA (math-bearing `.md`)**: Ran `local/markdown-render-check`
+        — delimiter balance, no `\operatorname`, no `+`/`-`/`*` line-starts in
+        `$$`, align-family fenced as ` ```tex `, **and** the expository pass
+        (every symbol glossed before use; no notation collisions). MANDATORY
+        before commit per AGENTS.md §"Render-QA gate for math-bearing `.md`";
+        if the pipeline render can't run, state the change was not
+        machine-validated.
 
 ## Procedure
 

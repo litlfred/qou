@@ -1,24 +1,19 @@
-_[draft]_ The Lagrangian $\mathcal{L}_q$ is an endomorphism
+The Lagrangian $\mathcal{L}_q$ is an endomorphism
 of $A$; we now trace it to a morphism $\mathbf{1} \to
 \mathbf{1}$ and read off the gravity, gauge, and matter terms
 that the QOU axioms force into the result. The trace is supplied
 by the rigid duality: no spacetime measure is invoked.
 
-**Categorical action** (def) defines $\mathfrak{S} = \mathrm{tr}
+Definition: Categorical action defines $\mathfrak{S} = \mathrm{tr}
 (\Phi) = \mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes \Phi)
 \circ \mathrm{coev}_A$ for a physics endomorphism $\Phi \in
-\mathrm{End}_{\mathbf{C}}(A)$. **Existence of the categorical
-action** (prop) — with its proof — verifies the construction,
-and **uniqueness of the categorical action (given $\Phi$)**
-(prop) — with its proof — fixes $\mathfrak{S}$ up to the identity
-$\mathfrak{S} = \mathrm{tr}(\Phi)$. **Categorical action
-notation** (rem) and **Categorical action notation on
-$\mathrm{SU}(2)$** (rem) collect the trace, partial trace,
+\mathrm{End}_{\mathbf{C}}(A)$. Proposition: Existence of the categorical action — with its proof — verifies the construction,
+and Proposition: uniqueness of the categorical action (given $\Phi$) — with its proof — fixes $\mathfrak{S}$ up to the identity
+$\mathfrak{S} = \mathrm{tr}(\Phi)$. Remark: Categorical action notation and Remark: Categorical action notation on $\mathrm{SU}(2)$ collect the trace, partial trace,
 adjoint section, and Frobenius--Ricci shorthand used throughout
 the rest of the chapter.
 
-The closing block is **Canonical action of a quantum observable
-universe** (prop): the choice $\Phi_q = \mathcal{L}_q$ delivers
+The closing block is Proposition: Canonical action of a quantum observable universe: the choice $\Phi_q = \mathcal{L}_q$ delivers
 $\mathfrak{S}_q = \mathrm{tr}(\mathcal{L}_q)$, which expands —
 via the Frobenius--Hopf decomposition of $\mathcal{D}_\nabla^2$
 — into three terms (gravity $\mathrm{tr}(q R_{\int})$, gauge

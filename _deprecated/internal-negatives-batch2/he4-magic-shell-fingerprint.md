@@ -85,6 +85,6 @@ should make the bridge between them explicit.
 
 This remark interprets the two propositions in physical and
 structural terms. It does not introduce a new theorem; per the
-remark-authoring convention (CLAUDE.md §3a) it sets
+remark-authoring convention (AGENTS.md §3a) it sets
 `interprets: "prop:he4-two-row-dominance"` and cites the channel
 proposition by name in the body.

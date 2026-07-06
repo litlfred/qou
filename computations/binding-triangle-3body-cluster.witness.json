@@ -1,0 +1,57 @@
+{
+ "computation": "binding-triangle-3body-cluster",
+ "description": "CORRECTED: product-model 3-body content. The full beyond-pairwise (2-bond + 3-bond) clusters sum to -4.7..-7.0 MeV (destructive), opposite empirical b3 > 0. Closing the triangle does NOT flip the sign; the prior '+u3 matches b3' claim cherry-picked the top cluster term and is retracted. The sign candidate is the chirality involution (|chi| vs signed trace).",
+ "scriptFile": "computations/probes/binding_triangle_3body_cluster_probe.py",
+ "parameters": {
+  "q_0": "1.109978582751380807591669095610768879874",
+  "E0_MeV": "4.185981363294475896945062158759008410144",
+  "tau_p": "1.22036288908669305595736107223",
+  "tau_n": "1.194862425413377106533238569760592864699",
+  "free_parameters": 0
+ },
+ "data": {
+  "rows": [
+   {
+    "atom": "T",
+    "pn_convention": "chi (pn=z)",
+    "one_bond_MeV": "12.4795034",
+    "two_bond_MeV": "-7.011636154",
+    "three_bond_MeV": "1.297601262",
+    "beyond_pairwise_MeV": "-5.714034892",
+    "empirical_b3_MeV": "1.8081",
+    "same_sign_as_b3": false
+   },
+   {
+    "atom": "3He",
+    "pn_convention": "chi (pn=z)",
+    "one_bond_MeV": "11.18856496",
+    "two_bond_MeV": "-5.601886967",
+    "three_bond_MeV": "0.9349169648",
+    "beyond_pairwise_MeV": "-4.666970002",
+    "empirical_b3_MeV": "1.044345",
+    "same_sign_as_b3": false
+   },
+   {
+    "atom": "T",
+    "pn_convention": "bar-averaged (pn=z-h/2)",
+    "one_bond_MeV": "14.00423591",
+    "two_bond_MeV": "-8.936892563",
+    "three_bond_MeV": "1.895977928",
+    "beyond_pairwise_MeV": "-7.040914635",
+    "empirical_b3_MeV": "1.8081",
+    "same_sign_as_b3": false
+   },
+   {
+    "atom": "3He",
+    "pn_convention": "bar-averaged (pn=z-h/2)",
+    "one_bond_MeV": "12.74583794",
+    "two_bond_MeV": "-7.242667778",
+    "three_bond_MeV": "1.366045165",
+    "beyond_pairwise_MeV": "-5.876622612",
+    "empirical_b3_MeV": "1.044345",
+    "same_sign_as_b3": false
+   }
+  ],
+  "verdict": "multiplicative_3body_is_destructive_sign_not_fixed_by_triangle"
+ }
+}

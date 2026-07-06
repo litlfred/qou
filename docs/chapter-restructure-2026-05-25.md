@@ -283,7 +283,7 @@ Example archimedean-universe orphans to reconnect:
 This is a big restructure. Active sibling branches to coordinate with:
 - (none currently identified — will check `gh pr list` before each phase)
 
-Per CLAUDE.md sibling-coordination rule: post intent comments on overlapping PRs
+Per AGENTS.md sibling-coordination rule: post intent comments on overlapping PRs
 once Phase 1 lands.
 
 ## Authors

@@ -5,8 +5,8 @@
 > would flip Q_β + m_n + Δ_pn green simultaneously on L2.
 >
 > Sibling: PR #1579 (`claude/brave-mendel-FPxFl`).
-> Probe script: `folio-assistant/computations/probes/qbeta_habiro_element_probe.py`.
-> Witness: `folio-assistant/computations/probes/qbeta-habiro-element-probe.witness.json`.
+> Probe script: `computations/probes/qbeta_habiro_element_probe.py`.
+> Witness: `computations/probes/qbeta-habiro-element-probe.witness.json`.
 
 ## TL;DR
 
@@ -179,8 +179,8 @@ with `Δa_m` decomposing into a low-degree polynomial generator.
 
 ## Files touched
 
-- **NEW:** `folio-assistant/computations/probes/qbeta_habiro_element_probe.py`
-- **NEW:** `folio-assistant/computations/probes/qbeta-habiro-element-probe.witness.json`
+- **NEW:** `computations/probes/qbeta_habiro_element_probe.py`
+- **NEW:** `computations/probes/qbeta-habiro-element-probe.witness.json`
 - **NEW:** `docs/audits/2026-05-31-qbeta-habiro-element-probe.md` (this file)
 
 ## Cross-refs
@@ -189,4 +189,4 @@ with `Δa_m` decomposing into a low-degree polynomial generator.
 - Gap plan: [`docs/audits/2026-05-30-qbeta-habiro-derivation-gap-plan.md`](2026-05-30-qbeta-habiro-derivation-gap-plan.md)
 - Recursive pair-rules + PDE: [`docs/audits/2026-05-30-qbeta-recursive-pair-rules-and-habiro-pde.md`](2026-05-30-qbeta-recursive-pair-rules-and-habiro-pde.md)
 - c_3 SETTLED verdict: [`docs/audits/2026-05-31-qbeta-c3-q0-stability-verdict.md`](2026-05-31-qbeta-c3-q0-stability-verdict.md)
-- α_EM template (parallel that worked): `folio-assistant/computations/alpha/alpha_em_habiro_taylor_investigation.py`
+- α_EM template (parallel that worked): `computations/alpha/alpha_em_habiro_taylor_investigation.py`

@@ -7,8 +7,8 @@
 or characterize the gap. No fit, no tuning to m_p / B_AME. The cached
 production volumes are the FALSIFICATION TEST, not a fit target.
 
-**Compute:** [`vhat_per_crossing_chain.py`](../../folio-assistant/computations/vhat_per_crossing_chain.py),
-witness [`vhat-per-crossing-chain.witness.json`](../../folio-assistant/computations/vhat-per-crossing-chain.witness.json).
+**Compute:** [`vhat_per_crossing_chain.py`](../../computations/vhat_per_crossing_chain.py),
+witness [`vhat-per-crossing-chain.witness.json`](../../computations/vhat-per-crossing-chain.witness.json).
 Every number is RAW; the canonical proton/neutron generator chains
 (`pyhecke/atom.py`) and the H₃ seminormal matrices (`mass_at_3A_proper`)
 are the only inputs.
@@ -142,7 +142,7 @@ q₀ = 1.10997858…, h = 0.20906…, z = 0.49932…. RAW (witness `per_crossing
 ## 4. The RED finding — production consumes the wrong per-crossing object
 
 Tracing the production consumer
-[`terms_2_3_atom_per_gen_mpfr_50dps.atom_per_generator_volumes_mpfr`](../../folio-assistant/computations/terms_2_3_atom_per_gen_mpfr_50dps.py)
+[`terms_2_3_atom_per_gen_mpfr_50dps.atom_per_generator_volumes_mpfr`](../../computations/terms_2_3_atom_per_gen_mpfr_50dps.py)
 (lines 244–253) and `pyhecke/atom.py::vertex_volume`:
 
 ```python

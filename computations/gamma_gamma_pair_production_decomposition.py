@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 """
+CLASS-A acknowledged-anchor (Workplan-0b): M_P_MEV_VALIDATION here is the
+inverse TARGET — `linking_weight_exact_via_anchor` solves backward for the
+linking weight that would make m_p hit CODATA ("what to hit"); no CODATA
+value flows into a prediction. Verified 2026-06-17 (I11 adjudication).
+
 gamma_gamma_pair_production_decomposition.py — γγ̄ pair-production
 decomposition of the Borromean braid β_Bor at each Gröbner-Shirshov
 filtration order, localising where the 2.89% VolDensity residual enters.
@@ -90,9 +95,9 @@ to it.  No CODATA literal flows into a prediction.
 ## See also
 
 - [`docs/lambda-scale-absorbed-into-vol-density.md`](../../docs/lambda-scale-absorbed-into-vol-density.md)
-- [`folio-assistant/computations/_li_2_q_util.py`](_li_2_q_util.py)
+- [`computations/_li_2_q_util.py`](_li_2_q_util.py)
   (`vol_density_borromean`, `linking_weight_family_a`, `borromean_markov_trace_h2`)
-- [`folio-assistant/computations/knot-operator-table.py`](knot-operator-table.py)
+- [`computations/knot-operator-table.py`](knot-operator-table.py)
   (γγ pair-production identification in NF basis)
 - [`docs/audits/2026-05-23-yekutieli-bijection-natural-reading-negative.md`](../../docs/audits/2026-05-23-yekutieli-bijection-natural-reading-negative.md)
   (Reading-A vs Reading-B framing)

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-03T19:13:50.647809+00:00",
-  "commitSha": "d342f282d83743da0654be41bef96067a78f4dca",
+  "computedAt": "2026-06-22T13:18:25.104011+00:00",
+  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
   "assertions": [
     {
       "name": "c_3_taylor_exact_promotion",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 12,
   "computation": "c-3-categorical-derivation-attempt",
   "scriptFile": "c_3_categorical_derivation_attempt.py",
-  "scriptHash": "c2350db48a10",
-  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "scriptHash": "3ca6c7011bf1",
+  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,10 +28,8 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.4.0"
+    "mpmath": "1.3.0"
   },
   "description": "Hard structural attempt to promote Q_β precision-ladder coefficient c_3 from q₀-dependent near-match to Taylor-exact. Evaluates SIX structural candidates (bar-symmetrization, J_Hopf at q₀, linking-number weighted, Wedderburn-block weighted, 3-strand Markov braids, Habiro binomial) at BOTH muon-pin and m_p-pin q₀ anchors and checks for ≤ 10 ppm match with the empirically extracted c_3(q₀). Negative result is informative: it confirms c_3 is intrinsically scale-dependent (the ladder is a running coupling, not a Taylor expansion at c_3 level).",
   "contentBlock": "prop:q-beta-categorical-precision-ladder",

@@ -130,11 +130,11 @@ The second equality uses depth orthogonality (Step 1); the third uses
 Step 3's identification of the partial product with the
 $\bigoplus_{j \leq k_\star(T_w)} Z^{(j)}$-content. $\square$
 
-**Open: numerical bound.**
-The proof above is a Frobenius-paired *equality*, not a numerical
+**Open: canonical bound.**
+The proof above is a Frobenius-paired *equality*, not a canonical
 identity. It says the Frobenius-pairing of $\Phi_q(z_i)$ with $T_w$
 equals the Frobenius-pairing of $\Phi_q^{[\leq k_\star(T_w)]}(z_i)$
-with $T_w$. To conclude that the *numerical* mass formula evaluated
+with $T_w$. To conclude that the *canonical* mass formula evaluated
 with $\Phi_q$ replaced by $\Phi_q^{[\leq k_\star(T_w)]}$ gives the same
 answer, one needs the projections $\mathrm{proj}_{Z^{(k)}}(\Phi_q(z_i))$
 to be uniformly bounded as $|z_i| \to q$ — equivalently, no spurious

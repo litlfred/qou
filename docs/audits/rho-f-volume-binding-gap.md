@@ -3,9 +3,9 @@
 **Status.** Interpretive audit (Layer 4 of
 [`onepb-status-dashboard.md`](onepb-status-dashboard.md)).
 **Witness:**
-[`rho-f-volume-binding-gap.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/rho-f-volume-binding-gap.witness.json).
+[`rho-f-volume-binding-gap.witness.json`](https://github.com/litlfred/qou/blob/main/computations/rho-f-volume-binding-gap.witness.json).
 
-**Script.** [`rho_f_volume_binding_gap.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/rho_f_volume_binding_gap.py).
+**Script.** [`rho_f_volume_binding_gap.py`](https://github.com/litlfred/qou/blob/main/computations/rho_f_volume_binding_gap.py).
 
 ## Position in the audit stack
 
@@ -115,7 +115,7 @@ answered.  Until then, it is informational only.
 ## How to update
 
 ```bash
-cd folio-assistant/computations
+cd computations
 python3 atom_mass_additive_baseline.py    # refresh Δ_binding column
 python3 rho_f_volume_binding_gap.py        # invert ρ_F · V_hyp
 ```

@@ -1,11 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
-The Gröbner--Shirshov normal form $\mathcal{N}(p, n)$ of a nucleus
-built by sequential Hopf linking
-([nuclear Gröbner--Shirshov reduction](#prop:nuclear-groebner-reduction))
-exhibits a **shell closure signature** when $(p, n)$ is a
-doubly-magic configuration.
-
 ## Construction
 
 Build the nucleus one nucleon at a time by alternating
@@ -123,93 +115,8 @@ next step ($0.095 \to 1.409$: the new nucleon must start a fresh
 shell). The ratio $1.409 / 0.095 = 14.8$ is the **shell gap**
 in Hecke energy units.
 
-## Optimal normal form (quotient ideals I$_{8}$ + I$_{9}$)
-
-The raw normal form has up to $A!$ terms. Quotient ideals reduce
-this to exactly $A$ terms — the **optimal Gröbner--Shirshov basis** — for
-nuclei in the valley of stability ($N \geq Z - 1$).
-
-**Definition (quotient ideals).**
-
-- **I$_{8}$ (adjacency correlation):** A reduced word
- $\sigma_i \sigma_{i+1}$ of length 2 is *absorbed* into $\sigma_{i+1}$
- when $\sigma_{i+1}$ is present in the normal form. The coefficient of
- $\sigma_i \sigma_{i+1}$ is determined by the off-diagonal entry of the
- transfer matrix product $M_i$ — it is structural, not independent.
-
-- **I$_{9}$ (closed shell chain collapse):** A reduced word $w \cdot \sigma_j$
- is *absorbed* when its prefix $w$ is present in the normal form. This
- implements the per-generator transfer matrix factorization: the product
- of $\hat{V}_i$ volumes replaces the expanded Hecke element.
-
-**Theorem (Optimal Normal Form).**
-*For any nucleus $N(Z, N)$ with $N \geq Z - 1$ (valley of stability),
-the Gröbner--Shirshov normal form after quotient ideals I$_{8}$ + I$_{9}$ has exactly
-$A = Z + N$ terms:*
-
-$$
-  \mathcal{N}_{\mathrm{opt}}(Z, N)
-  = 
-  c_0 \cdot \mathbf{1}
-  + c_1 \cdot \sigma_0
-  + c_2 \cdot \sigma_1
-  + \cdots
-  + c_{A-1} \cdot \sigma_{A-2}
-$$
-
-*where each coefficient $c_i = \hat{V}_i(q)$ is the Markov-traced volume
-from the transfer matrix chain at generator $\sigma_i$.*
-
-**Proof sketch.**
-By induction on $A$. Adding strand $A$ creates cross-terms
-$\sigma_i \cdot \sigma_{A-1}$ for all $i < A - 1$. These are absorbed:
-
-- If $|i - (A-1)| \geq 2$: far-commutativity reduces to
- $\sigma_{A-1} \cdot \sigma_i$, then I$_{9}$ absorbs (prefix $\sigma_i$
- present).
-- If $|i - (A-1)| = 1$: adjacency pair, I$_{8}$ absorbs (prefix
- $\sigma_{A-1}$ present).
-- If $i = A - 1$: Hecke relation $\sigma_{A-1}^2 = (q - q^{-1})\sigma_{A-1}
-  + \mathbf{1}$, both terms already in basis.
-
-The identity term $\mathbf{1}$ survives because $d \neq 0$ for nn and pn
-crossings. The condition $N \geq Z - 1$ ensures at least one nn or pn
-crossing at every generator. $\square$
-
-Verified computationally for all $A \leq 8$ (14,256 terms $\to$ 8 for
-${}^8\mathrm{Be}$). Formally proved in Lean (OptimalNF.lean).
-
-**Valley of stability boundary.**
-The optimality fails for $N < Z - 1$ (proton-heavy nuclei). When all
-crossings are pp type ($d = 0$), the identity term vanishes: multiplying
-by $(c \cdot \sigma_k + 0)$ does not preserve the identity. Without
-$\mathbf{1}$ in the support, I$_{9}$ chain-stripping has no root.
-
-See [Table 4](#tbl:shell-closure-normal-form-table4-data).
-
-The boundary $N \geq Z - 1$ matches the nuclear valley of stability.
-
-The Poincaré palindrome at $(p, p)$ nuclei means the Gröbner--Shirshov
-normal form fills the **entire Bruhat lattice of $S_{2p}$
-symmetrically**. Every reduced word of length $\ell$ is paired
-with a reduced word of length $L - \ell$ with matching
-coefficient magnitude. This is the algebraic signature of
-**complete shell filling**: all available crossing configurations
-within the shell are occupied, and the structure is invariant
-under the Bruhat duality $w \mapsto w_0 w$ (where $w_0$ is the
-longest element of $S_{2p}$).
-
-The Borromean closure — the 3-body linking that creates the
-shell — is encoded in the dominant word. At each shell closure,
-the dominant word jumps to a significantly **longer** reduced
-word (from length 1 at $A = 3$ to length 4 at $A = 4$; from
-length 9 at $A = 7$ to length 16 at $A = 8$), reflecting the
-intertwining of all nucleons within the closed shell.
-
-The dominant words at shell closures are:
-
-See [Table 5](#tbl:shell-closure-normal-form-table5-data).
-
-These are specific reduced words in $S_{2p}$ — the
-**shell closure permutations** that maximally intertwine the
-$p$ protons and $p$ neutrons within the shell.
+The optimal $A$-term refinement of this raw normal form — obtained
+by quotienting by the adjacency / chain-collapse ideals
+([quotient ideals $I_8$, $I_9$](#def:gs-quotient-ideals-I8-I9)) — is
+stated separately
+([optimal normal form](#thm:optimal-normal-form-valley)).

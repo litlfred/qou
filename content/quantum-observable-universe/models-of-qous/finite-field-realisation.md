@@ -1,3 +1,7 @@
+This example exhibits a substrate parameter over a finite field, showing
+that the Frobenius non-degeneracy and observability conditions are met with
+no appeal to characteristic zero or archimedean structure.
+
 Let $k = \mathbb{F}_\pp$ and let $\mathbf{C} = \mathrm{Rep}_{\mathbb{F}_\pp}(\mathrm{SU}_q(2))$, the category of
 finite-dimensional representations of the quantum group
 $\mathrm{SU}_q(2)$ over $\mathbb{F}_\pp$, where $q \in \mathbb{F}_\pp^{\times}$.  More generally, when $q$ is a primitive

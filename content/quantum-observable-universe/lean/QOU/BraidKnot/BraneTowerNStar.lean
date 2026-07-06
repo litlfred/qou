@@ -15,7 +15,7 @@ hypothesis without encoding the conjectural recovery content.
 This file builds a **substantive** recovery predicate plus a
 β-decay-sector instance with substrate-derived `n_⋆ = 2`.
 
-## Conjectural status (per CLAUDE.md §3b)
+## Conjectural status (per AGENTS.md §3b)
 
 The level-selection rule `n_⋆` is the OPEN PART of
 `conj:brane-tower-z-habiro`. This file does NOT close the
@@ -192,16 +192,20 @@ theorem betaDecayRecovery_at_N0_within_0_2_percent :
     rw [abs_of_nonneg h_diff_nn, abs_of_nonneg h_target_nn]
     norm_num
 
-/-- The 1 ppb target itself is **conjectural** — no proof is
-    produced here. Any future closure must (i) compute a specific
-    `Phi_proj` from the cyclotomic projection at `n_⋆ = 2`,
-    (ii) show `|Phi_proj - 0.78233341| ≤ 10⁻⁹ · 0.78233341`. The
-    structural lift formula is the open R&D part per
-    `conj:brane-tower-z-habiro §"Status of n_⋆"`. -/
+/-- The 1 ppb target itself is **conjectural** — *named*, not asserted (§3b).
+    The conjecture is that the cyclotomic projection at `n_⋆ = 2` produces some
+    concrete `Phi_proj` meeting the 1 ppb recovery target, i.e.
+    `∃ phiProj, betaDecayRecoveryTarget phiProj`.  Any future closure must
+    (i) compute a specific `Phi_proj` from the projection at `n_⋆ = 2`,
+    (ii) show `|Phi_proj - 0.78233341| ≤ 10⁻⁹ · 0.78233341`.  The structural
+    lift formula is the open R&D part per `conj:brane-tower-z-habiro`.
+
+    This is the honest replacement for the previous `: True := trivial`
+    (vacuous) marker: the `Prop` carries the real existential content; the
+    *absence of any proof term* is the honest open state. -/
 -- Ref: [manuscript] conj:brane-tower-z-habiro §"Status of n_⋆"
-theorem betaDecayRecoveryTarget_1ppb_remains_conjectural :
-    True := by
-  trivial
+def betaDecayRecoveryTarget_1ppb_remains_conjectural : Prop :=
+  ∃ phiProj : ℝ, betaDecayRecoveryTarget phiProj
 
 /-! ## Gap 5 closure status
 

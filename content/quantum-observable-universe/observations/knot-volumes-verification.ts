@@ -20,8 +20,8 @@ export default proof({
   ],
   computation: {
     engine: "snappea",
-    script: "folio-assistant/computations/knot-volumes.py",
-    witness: "folio-assistant/computations/substrate/knot-volumes.witness.json",
+    script: "computations/knot-volumes.py",
+    witness: "computations/substrate/knot-volumes.witness.json",
     status: "verified",
     requires: ["snappy>=3.3"],
   },

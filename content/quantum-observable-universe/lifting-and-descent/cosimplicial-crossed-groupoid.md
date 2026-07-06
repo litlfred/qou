@@ -1,8 +1,8 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe and let
 $\{A_n\}_{n \geq 0}$ be its
-([recursive brane tower](#def\:recursive-brane-tower)); let $q$ denote the substrate parameter.  Equipped with the Yekutieli
+([recursive brane tower](#def:recursive-brane-tower)); let $q$ denote the substrate parameter.  Equipped with the Yekutieli
 triples $(x^{(n)}, g^{(n)}, a^{(n)})$ of
-[Yekutieli triple](#def\:yekutieli-triple).  Then the assignment
+[Yekutieli triple](#def:yekutieli-triple).  Then the assignment
 
 $$
   [n]  \longmapsto  \mathfrak{G}_n

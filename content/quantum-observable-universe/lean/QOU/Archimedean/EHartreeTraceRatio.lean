@@ -15,7 +15,7 @@ scalar `(2,2)`-block character at K-shell dressing `m = 5`:
 `C(q) = h·([4]_q/[2]_q)² = h·(q² + q⁻²)²` an `O(1)` element of `R` and
 `α_EM = 1/(q·[9]_q·[10]_q)`.
 
-This file proves, **sorry-free over `ℝ`** (archimedean, `0 < q`; CLAUDE.md §7c),
+This file proves, **sorry-free over `ℝ`** (archimedean, `0 < q`; AGENTS.md §7c),
 the two purely-algebraic facts underpinning round 20:
 
 * `qbracket_four_div_two` — the bracket reduction `[4]_q / [2]_q = q² + q⁻²`

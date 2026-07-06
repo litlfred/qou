@@ -15,6 +15,11 @@ export default conjecture({
     "bar-involution",
     "open-problem",
   ],
+  uses: [
+    "def:frobenius-hopf-substrate",
+    "conj:gb-depth-period-correspondence",
+    "prop:hecke-baer-star-generic",
+  ],
   authorNotes: [
     {
       kind: "status",

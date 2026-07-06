@@ -1,0 +1,154 @@
+{
+  "computation": "he-nu-sdp-selfconjugate-candidate",
+  "kind": "exploratory-probe",
+  "description": "Tests ν_SDP = #{self-conjugate λ⊢3A} (= distinct-odd-parts count, the kashaev driver-x MacMahon identity). Matches D/T/³He = 1,2,2 and the deuteron bar-fold SDP support (3,2,1), but the conjugate-cancellation mechanism is REFUTED on the H_6 Gram and the candidate predicts ⁴He=3, conflicting with the magic-A ρ_F=2. Not a derivation. No fit.",
+  "candidate": "nu_SDP = #self-conjugate(3A) = #partitions(3A into distinct odd parts)",
+  "rows": [
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "n": 6,
+      "self_conj_count": 1,
+      "nu_confirmed": 1,
+      "match": true
+    },
+    {
+      "atom": "T",
+      "Z": 1,
+      "N": 2,
+      "n": 9,
+      "self_conj_count": 2,
+      "nu_confirmed": 2,
+      "match": true
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "n": 9,
+      "self_conj_count": 2,
+      "nu_confirmed": 2,
+      "match": true
+    },
+    {
+      "atom": "4He",
+      "Z": 2,
+      "N": 2,
+      "n": 12,
+      "self_conj_count": 3,
+      "nu_confirmed": null,
+      "match": true
+    },
+    {
+      "atom": "6Li",
+      "Z": 3,
+      "N": 3,
+      "n": 18,
+      "self_conj_count": 5,
+      "nu_confirmed": null,
+      "match": true
+    },
+    {
+      "atom": "7Li",
+      "Z": 3,
+      "N": 4,
+      "n": 21,
+      "self_conj_count": 8,
+      "nu_confirmed": null,
+      "match": true
+    }
+  ],
+  "all_confirmed_match": true,
+  "h6_cancellation_test": {
+    "all_pairs_cancel": false,
+    "pairs": [
+      [
+        [
+          6
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        0.059175283100147996
+      ],
+      [
+        [
+          5,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        0.29529659574884254
+      ],
+      [
+        [
+          4,
+          2
+        ],
+        [
+          2,
+          2,
+          1,
+          1
+        ],
+        0.3594810246640515
+      ],
+      [
+        [
+          4,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1,
+          1
+        ],
+        0.09448153512348614
+      ],
+      [
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          2
+        ],
+        0.07447030446211708
+      ]
+    ],
+    "self_conjugate": [
+      [
+        [
+          3,
+          2,
+          1
+        ],
+        0.11709525690135474
+      ]
+    ]
+  },
+  "mechanism_verdict": "REFUTED (conjugate pairs do not cancel in the Gram)",
+  "binding_tension": "candidate ⁴He=3 conflicts with magic-A ρ_F=2 (ρ_F=3 → +59% vs AME)",
+  "verdict": "NOT a derivation: count matches 3 confirmed atoms + deuteron bar-fold support, but no proven mechanism and ⁴He binding conflict. Decisive test pending: T/³He bar-fold support vs their 2 self-conj blocks.",
+  "refs": [
+    "PR #2552 (ν_SDP not computable)",
+    "content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.md (driver-x def)",
+    "computations/deuteron_real_sdp.py (bar-fold encoding 1)"
+  ],
+  "discipline": "EXPLORATORY — derive-or-refute, no fit, no forced ⁴He number."
+}

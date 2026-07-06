@@ -1,0 +1,120 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-16T17:44:46.156620+00:00",
+  "commitSha": "7dd28a8dc3bd742c37906e9780af14866da224ce",
+  "assertions": [
+    {
+      "name": "dimension_identity_holds",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "restriction d_λ = Σ c^λ_ξν d_ξ d_ν"
+    },
+    {
+      "name": "chi_identity_reduction_f64",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "χ^λ(disjoint) = Σ c^λ_ξν χ^ξ χ^ν vs chi_lambda_fast_mp (f64-limited ~1e-14)"
+    },
+    {
+      "name": "chi_identity_reduction_exact_1e-25",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "χ^λ(disjoint) = Σ c^λ_ξν χ^ξ χ^ν via pyhecke_native MPFR seminormal characters at 50 dps (tol 1e-25)"
+    },
+    {
+      "name": "operator_interface_decomposition_exact_1e-25",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "χ^λ(W·I_pn·β) = Σ_ξν Tr[ρ_λ(W)·Π_ξν ρ_λ(I) Π_ξν·ρ_λ(β)] via exact MPFR seminormal matrices + class-sum projectors (tol 1e-25) — proves A^λ_ξν(I)=Π_ξν ρ_λ(I) Π_ξν"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 24,
+  "computation": "a-operator-categorical-preflight",
+  "scriptFile": "a_operator_categorical.py",
+  "scriptHash": "aa0db682111e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Closure-b preflight for the categorical interface operator A^λ_{ξν}(I): the I=identity reduction A^λ_{ξν}(1)=c^λ_{ξν}·1 (Wenzl LR-scalar limit) cross-checked at 50 dps against the seminormal ground truth, plus the restriction-dimension identity. Steps 2-3 (bridge deformation, H_9 universality) are scaffolded TODO(closure-b).",
+  "auditOnly": "docs/audits/2026-06-16-categorical-interface-operator-closure-b-design.md",
+  "parameters": {
+    "n_inner": 3,
+    "n_block": 3,
+    "dps": 50
+  },
+  "data": {
+    "dimension_identity": {
+      "n_inner": 3,
+      "n_block": 3,
+      "n": 6,
+      "n_partitions": 11,
+      "all_passed": true,
+      "failures": []
+    },
+    "chi_disjoint_reduction_f64": {
+      "n_inner": 3,
+      "n_block": 3,
+      "n": 6,
+      "dps": 50,
+      "precision_note": "LOSSY f64 (~1e-14) — chi_lambda_fast_mp is f64-limited at the seminormal source",
+      "n_checks": 891,
+      "n_fail": 0,
+      "max_absolute_residual": "2.8565748e-15",
+      "max_relative_residual_wellcond": "9.9418644e-15",
+      "tolerance_abs": "1.0e-11",
+      "tolerance_rel": "1.0e-11",
+      "all_passed": true,
+      "worst_failure": null
+    },
+    "chi_disjoint_reduction_exact": {
+      "n_inner": 3,
+      "n_block": 3,
+      "n": 6,
+      "dps": 50,
+      "engine": "pyhecke_native MPFR (exact)",
+      "n_checks": 891,
+      "n_fail": 0,
+      "max_absolute_residual": "1.5599085e-49",
+      "max_relative_residual_wellcond": "1.0066976e-48",
+      "tolerance": "1.0e-25",
+      "all_passed": true,
+      "worst_failure": null
+    },
+    "operator_decomposition_exact": {
+      "n": 6,
+      "dps": 50,
+      "interface": "pn",
+      "construction": "A^λ_ξν(I) = Π_ξν ρ_λ(I) Π_ξν (class-sum projectors)",
+      "h3_classsum_min_eigen_gap": "2.74213",
+      "partition_of_unity_ok": true,
+      "n_checks": 891,
+      "n_fail": 0,
+      "max_absolute_residual": "1.5083873e-49",
+      "max_relative_residual_wellcond": "1.5468294e-47",
+      "tolerance": "1.0e-25",
+      "all_passed": true,
+      "worst_failure": null
+    }
+  }
+}

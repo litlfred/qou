@@ -24,7 +24,7 @@ requires running the full operator-selection LP with scipy linprog,
 deferred to B.1a-full. This script gives a witness-emitter scaffold
 that reads off the structural identification.)
 
-## Wiring contract (per `CLAUDE.md §LP / SDP duals first-class infra`)
+## Wiring contract (per `AGENTS.md §LP / SDP duals first-class infra`)
 
 The emitted witness has the LP-dual required fields per
 `prop:operator-selection-lp` even though the "primal" is a
@@ -257,7 +257,7 @@ def main() -> int:
 
     w.add_data("rows", rows)
 
-    # LP-dual required fields per CLAUDE.md (treating D-chi as the
+    # LP-dual required fields per AGENTS.md (treating D-chi as the
     # primary "primal", duals = chirality-active block contributions).
     # These are bookkeeping for the validator; the actual structural
     # identification lives in `rows[*].dual_breakdown`.

@@ -18,7 +18,7 @@ This probe enumerates:
 
 and correlates with the observed mult(Φ_8) for each mirror pair.
 
-CORPUS CITATIONS (per CLAUDE.md §"Before declaring 'open'"):
+CORPUS CITATIONS (per AGENTS.md §"Before declaring 'open'"):
   prop:categorical-neutrality-saturated-shells —
     full-twist Δ²_n acts as identity on Φ_n iff n ∈ {2,8,20,28,50,82,126}
     ⇒ Φ_n supported on self-conjugate partitions at magic n
@@ -39,7 +39,7 @@ reducing the active partitions in the pair-difference and hence
 the Wenzl-annihilator linear-relation count.
 
 This probe is empirical only — it does NOT propose a new closed
-form, per CLAUDE.md's "no 7th ansatz" Track A discipline.
+form, per AGENTS.md's "no 7th ansatz" Track A discipline.
 """
 
 from __future__ import annotations
@@ -211,7 +211,7 @@ def main() -> int:
             "(≤ 3 rows) and self-conjugate-in-3×3-box partitions at "
             "level n = 3A for each mirror pair, correlate with "
             "observed mult(Φ_8). Empirical step — NOT a new closed "
-            "form (per CLAUDE.md Track A discipline). Connects "
+            "form (per AGENTS.md Track A discipline). Connects "
             "PR #1649 observations to "
             "prop:categorical-neutrality-saturated-shells + "
             "conj:diagrammatic-double-magic-lr-fusion + "

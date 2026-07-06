@@ -36,7 +36,7 @@ physically deepest entries are:
   crossing signs, and $S$ is the map between them. The
   $\tau$-image of $S$ is the real-valued gap
   $\operatorname{tr}_M(\beta_n) - \operatorname{tr}_M(\beta_p)$,
-  which (after calibration) gives $Q_\beta$.
+  which (after calibration) gives $\mathfrak{Q}_\beta$.
 
 - **Row 5 (HOMFLYPT mirror).** The mirror $P(\bar K) = P(K; a^{-1}, z)$
   simultaneously encodes chirality for *every* SU($N$) channel. This

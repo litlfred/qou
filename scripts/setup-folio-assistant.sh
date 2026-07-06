@@ -166,6 +166,20 @@ case "${OSTYPE:-}" in
     ;;
 esac
 
+# --- bridge: expose the repo's bibliography to platform checkers ----------
+# qa-checkers-extended.ts resolves references.ts relative to the PLATFORM
+# clone (CONTENT_DIR = <clone>/content), but the bibliography source of
+# truth lives in THIS repo at content/schema/references.ts. Without this
+# bridge every \cite{} fails bib-cite-resolves with "does not resolve in
+# references.ts" (the 2026-06-21 233-block false-fail batch).
+if [ ! -e "$CLONE_ABS/content/schema/references.ts" ]; then
+  mkdir -p "$CLONE_ABS/content/schema"
+  ln -s "$ROOT/content/schema/references.ts" \
+    "$CLONE_ABS/content/schema/references.ts" \
+    && info "bridged content/schema/references.ts into platform clone" \
+    || info "could not bridge references.ts — bib-cite-resolves will false-fail"
+fi
+
 # --- best-effort: install the platform's own deps ------------------------
 if [ "${FOLIO_SKIP_INSTALL:-0}" != "1" ] && [ -f "$CLONE_ABS/package.json" ]; then
   if command -v bun >/dev/null 2>&1; then

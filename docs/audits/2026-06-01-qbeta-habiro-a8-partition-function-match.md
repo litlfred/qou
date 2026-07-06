@@ -1,8 +1,8 @@
 # a_8 partition-function match (2026-06-01)
 
 > **POSITIVE structural finding** surfaced by the Option D recursion
-> probe ([`qbeta_habiro_recursion_probe.py`](../../folio-assistant/computations/probes/qbeta_habiro_recursion_probe.py),
-> witness [`qbeta-habiro-recursion.witness.json`](../../folio-assistant/computations/probes/qbeta-habiro-recursion.witness.json)):
+> probe ([`qbeta_habiro_recursion_probe.py`](../../computations/probes/qbeta_habiro_recursion_probe.py),
+> witness [`qbeta-habiro-recursion.witness.json`](../../computations/probes/qbeta-habiro-recursion.witness.json)):
 >
 > The top-shared Habiro coefficient `a_8(u)` of the proton and neutron
 > (where `a_7 = a_8 = a_m(p) = a_m(n)` for m ∈ {7, 8} — both atoms
@@ -95,8 +95,8 @@ in [`content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doub
 
 ## Cross-references
 
-- Parent recursion probe (this audit's source): [`qbeta_habiro_recursion_probe.py`](../../folio-assistant/computations/probes/qbeta_habiro_recursion_probe.py)
-- Witness: [`qbeta-habiro-recursion.witness.json`](../../folio-assistant/computations/probes/qbeta-habiro-recursion.witness.json)
+- Parent recursion probe (this audit's source): [`qbeta_habiro_recursion_probe.py`](../../computations/probes/qbeta_habiro_recursion_probe.py)
+- Witness: [`qbeta-habiro-recursion.witness.json`](../../computations/probes/qbeta-habiro-recursion.witness.json)
 - Δa_m factorization parent: [`2026-05-31-qbeta-habiro-delta-am-factorization.md`](2026-05-31-qbeta-habiro-delta-am-factorization.md)
 - Cyclotomic strand-doubling (the other categorical identification): [`2026-06-01-qbeta-habiro-phi8-interpretation.md`](2026-06-01-qbeta-habiro-phi8-interpretation.md)
 - Master ledger: [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md)

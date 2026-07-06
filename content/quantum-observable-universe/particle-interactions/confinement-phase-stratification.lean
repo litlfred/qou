@@ -14,12 +14,16 @@ theorem (level-sufficiency, shell-closure-stability, etc.) is
 implicitly scoped to a single phase; boundary crossings are
 deconfinement or regime switches.
 
-**Implementation.**  Replaces the previous `opaque` declarations
-with concrete `def`s on the unit-particle model: every particle is
-confined at every `q`, so the confinement locus is the universal
-set (open) and `mu` / `sigmaF` are constant on it.  Under this
-concrete model the openness and local-constancy theorems close
-unconditionally.
+**Implementation.**  The confinement predicate `confined` and the
+per-phase invariants `mu` / `sigmaF` are `opaque` (their closed form
+is the numerical SDP solution at each `q`, not available in Lean).
+The two stratification claims — openness of the locus and local
+constancy of `mu` on connected components — are therefore stated as
+honest `sorry` theorems (disposition B): establishing them requires
+the Slater-strict SDP feasibility topology and continuity of the
+constraint matrices in `q`, neither formalised here.  The headline
+theorem derives from the two sub-theorems, so its content is exactly
+their two open obligations.
 
 LaTeX: `\label{prop:confinement-phase-stratification}`
 -/
@@ -35,17 +39,17 @@ structure ConfinedParticleTy where
   deriving Repr
 
 /-- Confinement predicate: Slater-strict feasibility of the confinement SDP. -/
-constant confined : ConfinedParticleTy → ℝ → Prop
+opaque confined : ConfinedParticleTy → ℝ → Prop
 
 /-- The confinement locus `Ω(P) ⊆ ℝ` of a particle. -/
 def confinementLocus (P : ConfinedParticleTy) : Set ℝ :=
   { q : ℝ | confined P q }
 
 /-- Binding multiplicity. -/
-constant mu : ConfinedParticleTy → ℝ → ℕ
+opaque mu : ConfinedParticleTy → ℝ → ℕ
 
 /-- Frobenius stability index. -/
-constant sigmaF : ConfinedParticleTy → ℝ → ℝ
+opaque sigmaF : ConfinedParticleTy → ℝ → ℝ
 
 /-- **Phase stratification, claim (1) — openness.**
     `Ω(P)` is open in ℝ. -/
@@ -62,6 +66,7 @@ theorem ConfinementPhaseStratification_mu_constant
     (h_comp : IsConnected C) (h_sub : C ⊆ confinementLocus P)
     (q₁ q₂ : ℝ) (h₁ : q₁ ∈ C) (h₂ : q₂ ∈ C) :
     mu P q₁ = mu P q₂ := by
+  -- Ref: [manuscript] prop:confinement-phase-stratification
   sorry
 
 /-- **Phase stratification (headline).** -/

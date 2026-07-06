@@ -32,13 +32,6 @@ $\sigma_{k+1}$).*
 \sigma_{i_m}^{\varepsilon_m}$ with $\varepsilon_j \in \{\pm 1\}$ and
 $1 \leq i_j \leq n - 1$.
 
-**Step 1 (Hecke-basis expansion).** Apply iterated Hecke quadratic
-to expand
-$\beta = \sum_{w \in S_n} c_w(q) \, T_w$
-in the canonical basis. The
-[`HeckeElement`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/gb_filtration_jet_tracker.py)
-class implements this symbolically over $\mathbb{Q}(q)$ via the
-ascending/descending case split on Coxeter length.
 
 **Step 2 (recursive basis-element trace).** For each $w \in S_n$
 appearing with non-zero coefficient, compute
@@ -119,8 +112,6 @@ its own algebra $H_{n-k-1}$.
 
 ## Empirical verification
 
-Numerical evaluation at $q_0$ for the canonical atomic-braid
-words ([`markov_trace_axiomatic_multi_atom.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/markov/markov_trace_axiomatic_multi_atom.py)):
 
 | atom              | braid word                              | $H_n$ | $\operatorname{tr}_M(q_0)$ |
 |-------------------|----------------------------------------|------|----------------------------|
@@ -128,47 +119,9 @@ words ([`markov_trace_axiomatic_multi_atom.py`](https://github.com/litlfred/qou/
 | neutron           | $\sigma_1^6 \sigma_2^4 \sigma_1^{-1}$  | $H_3$ | $1.248248\ldots$           |
 | deuteron disjoint | $\sigma_1^7\sigma_2^4 \oplus \sigma_4^6\sigma_5^4\sigma_4^{-1}$ | $H_6$ | $\operatorname{tr}_M(p)\cdot\operatorname{tr}_M(n)$ |
 
-The deuteron's value matches $\operatorname{tr}_M(\text{proton})
-\cdot \operatorname{tr}_M(\text{neutron})$ to mpmath-exact (50 dps)
-precision, confirming the disjoint-product property.
 
-The proton value matches the prior Hecke-power expansion in
-[`markov_trace_atomic_proton_full.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/markov/markov_trace_atomic_proton_full.py)
-([`prop:markov-trace-axiomatic-closed-form`](#prop:markov-trace-axiomatic-closed-form))
-at 50-dps (mpmath) precision, providing an independent cross-check
-via two different reduction strategies. (Earlier float64 evaluations
-of the same identity are recorded in the witness as probes; the
-matching claim is at 50 dps.)
 
-## Optimisation: memoisation on basis elements
 
-Each $S_n$ has $n!$ basis elements; the recursive `tr_M` is
-memoised on $(w, n)$ via `functools.lru_cache`. For repeated atom
-evaluations within a single Python process (e.g. in the multi-atom
-witness pipeline), basis-element traces are computed once and
-re-used, giving an asymptotic speed-up proportional to the
-duplication factor across atoms. Empirically, on the
-proton+neutron+deuteron sweep the cache hit rate exceeds 50%.
-
-## Categorical interpretation
-
-The recursive reducer is the algorithmic content of the
-**Markov-trace existence theorem** for the Iwahori-Hecke algebra:
-the trace is uniquely determined by the axioms, and the algorithm
-*constructs* the unique value for any input word. This contrasts
-with the seminormal/Hoefsmit ascent
-, which
-realises the trace via the explicit Wedderburn decomposition
-$H_n(q) \cong \bigoplus_\lambda M_{f^\lambda}$. Both routes
-agree on values; the axiomatic route avoids any reliance on the
-Hoefsmit matrix elements (which had a known
-[`IndexError`](https://github.com/litlfred/qou/pull/546) bug on
-$\sigma_2$ acting on shape $(3)$).
-
-## Witness scripts
-
-- [`folio-assistant/computations/markov/markov_trace_recursive.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/markov/markov_trace_recursive.py) — algorithm + H_3..H_6 unit tests.
-- [`folio-assistant/computations/markov/markov_trace_axiomatic_multi_atom.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/markov/markov_trace_axiomatic_multi_atom.py) — proton/neutron/deuteron anchor + disjoint-product check.
 
 ## References
 

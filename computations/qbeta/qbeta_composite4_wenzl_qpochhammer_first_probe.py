@@ -167,7 +167,7 @@ def main() -> int:
         print("  Cumulative single+composite NEGATIVE bracket: 34 (prior) + 8 = 42.")
         print("  The q-Pochhammer tower (truncated, archimedean q₀) does NOT")
         print("  supply the residue A correction. The real Composite 4 needs the")
-        print("  FIBRE-level Habiro element (formal q, pre-τ) per CLAUDE.md")
+        print("  FIBRE-level Habiro element (formal q, pre-τ) per AGENTS.md")
         print("  'Im(q) at fibre vs observable' — i.e. the q-Pochhammer evaluated")
         print("  as a Habiro-ring element at roots of unity, then τ-functored,")
         print("  NOT a real archimedean truncation. That needs the pyhecke")

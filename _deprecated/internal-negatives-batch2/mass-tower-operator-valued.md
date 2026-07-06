@@ -251,6 +251,6 @@ The Lean file
 [`qou:QOU.BraidKnot.MassTowerOperatorValued`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/mass-tower-operator-valued.lean)
 axiomatises the operator $A^\lambda_{\vec\mu}(I)$ as a class with the
 Wenzl-branching field and the LR-collapse field. The boxed identity
-is a conditional theorem (CLAUDE.md §3b-cond pattern) taking the class
+is a conditional theorem (AGENTS.md §3b-cond pattern) taking the class
 as an explicit `[Instance]` hypothesis; the conditional statement is
 fully verified by Lean modulo the class instance.

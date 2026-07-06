@@ -1,0 +1,107 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-29T16:21:10.032059+00:00",
+  "commitSha": "a0a62222bab7a9cd3aaa206992ccf5518de9718f",
+  "assertions": [
+    {
+      "name": "geometric_self_energy_alpha_is_one_and_q_softening_too_small",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "geometric self-energy α≈1; q-deformation moves α by < 1e-3 (too small for the 7.8% gap to experimental 0.929)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "flavor-split-alpha-dilog-expansion",
+  "scriptFile": "flavor_split_alpha_dilog_expansion_probe.py",
+  "scriptHash": "fed23a5ba66d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "α (second-order flavor-split coefficient) via archimedean Li_2^q convergent expansions, both anchors. Geometric/q-dilog self-energy gives α=1 (0.0097%, parameter-free, convergent); the q-deformation at the small argument leading≈0.00138 is ~0.1% and CANNOT soften α=1 to the experimental α_true=0.929 (needs 7.8%). α=1 is the derivable prediction; the residual is a separate O(1) ingredient, NOT fitted.",
+  "data": {
+    "codata_dmn_over_mn": "0.0013774699387394029668339406551297433261342328109031",
+    "proton_anchor": {
+      "anchor": "proton_q0",
+      "q0": "1.1099785955573347198997632204832250266562084087802",
+      "leading": "0.0013757112499766120135287432436351703219021757083132",
+      "C_true": "1.001278385099213844590282213013884525362579275699",
+      "alpha_true": "0.92925393990605075655018287293454515835292690106954",
+      "candidates": {
+        "geometric_1_over_1_minus_lead": {
+          "alpha": "1.0013776064386523062065748231354511170217942920758",
+          "alpha_rel_err_vs_true_pct": "7.7614593207851647063164378333336114593113733461036",
+          "full_split_rel_err_vs_codata_pct": "0.0099094658303874255973200122898273599958817573053111"
+        },
+        "q_geom_sum_lead_n_over_qint_n": {
+          "alpha": "1.0006847506331167777627348274519737021333377999859",
+          "alpha_rel_err_vs_true_pct": "7.6868988830209107919308411492109544726358993506574",
+          "full_split_rel_err_vs_codata_pct": "0.0098142705739560798453685045567776760099191043783798"
+        },
+        "li2q_lead_over_lead": {
+          "alpha": "0.24879604958577309984680110602584936387188086458465",
+          "alpha_rel_err_vs_true_pct": "-73.226258302340173277612281347014411787336307246656",
+          "full_split_rel_err_vs_codata_pct": "-0.09349183891113365917267059542484871335353974487312"
+        },
+        "neg_log_1_minus_lead_over_lead": {
+          "alpha": "0.50045904408334649754937071197156496109088997205241",
+          "alpha_rel_err_vs_true_pct": "-46.14399545791069700829433546445702918491445121182",
+          "full_split_rel_err_vs_codata_pct": "-0.058914480817179758041891350729016282787676835876141"
+        },
+        "exp_lead": {
+          "alpha": "1.0006881711637439463859546220869373853116999459558",
+          "alpha_rel_err_vs_true_pct": "7.6872669773038916577438865248763492107132319573048",
+          "full_split_rel_err_vs_codata_pct": "0.0098147405394057204226486797939072861593334581979998"
+        }
+      }
+    },
+    "muon_anchor": {
+      "anchor": "muon_q0",
+      "q0": "1.1099785955541805752815940796095093779932822799587",
+      "leading": "0.001375711249867512216725087899537173398853688341329",
+      "C_true": "1.0012783851786195108365505894776275368395828979867",
+      "alpha_true": "0.92925399769946319680466495075424995516267060921356",
+      "candidates": {
+        "geometric_1_over_1_minus_lead": {
+          "alpha": "1.0013776064385429056095565751915454339990051585049",
+          "alpha_rel_err_vs_true_pct": "7.7614526187280100770400346970933722145075941366163",
+          "full_split_rel_err_vs_codata_pct": "0.0099094578882469881539932541047821503411823999458986"
+        },
+        "q_geom_sum_lead_n_over_qint_n": {
+          "alpha": "1.0006847506330626272896436764593471007938283503221",
+          "alpha_rel_err_vs_true_pct": "7.6868921856068646717486188931446243932026079272167",
+          "full_split_rel_err_vs_codata_pct": "0.0098142626318383323028334093949818964257049772112761"
+        },
+        "li2q_lead_over_lead": {
+          "alpha": "0.24879604958583470816195910033860367475585755662088",
+          "alpha_rel_err_vs_true_pct": "-73.226259967482039226962977422225598951704001801138",
+          "full_split_rel_err_vs_codata_pct": "-0.093491846836850267720186412598579122511313601840904"
+        },
+        "neg_log_1_minus_lead_over_lead": {
+          "alpha": "0.50045904408331005578144944515814631266279024471093",
+          "alpha_rel_err_vs_true_pct": "-46.143998807399571705202145240488168582313497964371",
+          "full_split_rel_err_vs_codata_pct": "-0.058914488748394103536966396682459606790078968576611"
+        },
+        "exp_lead": {
+          "alpha": "1.0006881711636893464317940161000428164196364055064",
+          "alpha_rel_err_vs_true_pct": "7.6872602798669041535343305993746340486986539854699",
+          "full_split_rel_err_vs_codata_pct": "0.0098147325972878365828982595044587501069960312569887"
+        }
+      }
+    },
+    "alpha_true_anchor_drift": "0.000000057793412440254482077819704796809743708144020490164"
+  }
+}

@@ -32,11 +32,11 @@ the Hartree energy.*
 > derivation.
 >
 > The numerical match $0.687 \times 6.750 = 4.638$ eV with the
-> H_2 binding witness ([`folio-assistant/computations/h2-molecular-binding.witness.json`](folio-assistant/computations/h2-molecular-binding.witness.json))
+> H_2 binding witness ([`computations/h2-molecular-binding.witness.json`](computations/h2-molecular-binding.witness.json))
 > is **internal-consistency arithmetic**, not a verification: the
 > LP outputs the dimensionless 0.687, the Python multiplies by a
 > hardcoded conversion factor involving $\alpha^2$
-> ([`hecke_core.py:198`](folio-assistant/computations/hecke_core.py)),
+> ([`hecke_core.py:198`](computations/hecke_core.py)),
 > and the arithmetic produces 4.638 eV. *Any* framework using
 > $E_h \sim m_e c^{2}\,\alpha^{2}$ as the unit would match
 > within $\sim 10\%$ of the experimental 4.476 eV — that's just
@@ -88,7 +88,7 @@ not independent verification of it.
 - The "uniqueness" of $\rho_{\infty}$ — argued at the level of
   matching the standard QED limit at $q \to 1$.
 - The hardcoded `E_HARTREE_EV = 511000 * alpha_em**2` in
-  [`hecke_core.py:198`](folio-assistant/computations/hecke_core.py)
+  [`hecke_core.py:198`](computations/hecke_core.py)
   as the implementation of $\rho_{\infty}$.
 
 ### Five candidate routes for genuine categorical closure

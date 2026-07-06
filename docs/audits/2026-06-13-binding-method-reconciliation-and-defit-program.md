@@ -14,7 +14,7 @@ listed in §6.
 ## 0. TL;DR
 
 - There is **one canonical production method**:
-  [`binding_canonical.py`](../../folio-assistant/computations/binding_canonical.py)
+  [`binding_canonical.py`](../../computations/binding_canonical.py)
   (Jones–Markov trace difference `B = E·(tr_M(W_free) − tr_M(W_atom))`,
   signed, zero-fit). ⁴He is closed separately by the **magic-A** formula
   `2·m_e·A·Vol(L6a4)` (+5.87%, zero-fit,
@@ -73,7 +73,7 @@ with no method. Quarantine + label now; demote after §4 lands.
 ## 3. Why A ≥ 3 is open (so the weight is the right lever, not a new ansatz)
 
 The many-body ceiling is proved zero-fit: ⁴He is 74% irreducible
-4-body. **A 7th multiplicative Δ_λ ansatz is forbidden** (CLAUDE.md
+4-body. **A 7th multiplicative Δ_λ ansatz is forbidden** (AGENTS.md
 §Precision-goals Δ_λ gate; six ansätze already failed on the deuteron).
 The productive lever is therefore **not** a new closed form but the
 **weight on the existing decomposition** — and it must be *derived*,
@@ -82,12 +82,12 @@ which is exactly what the heat-kernel program supplies.
 ## 4. The derived-weight program (heat kernel + active set)
 
 Three λ-indexed weight families exist, **all derived** (do not conflate
-— CLAUDE.md notation register):
+— AGENTS.md notation register):
 
 | weight | formula | role |
 |---|---|---|
 | **q-heat-kernel** μ_λ(q) | `ℏ_q² Σ_□ [c]_q[c+1]_q` | q-Laplacian eigenvalue / heat-flow decay rate |
-| Plancherel w_λ(q) | `[n]_q!/H_q(λ)²` → d_λ²/n! | spectral measure ([`prop:plancherel-weight-boundedness`](../../folio-assistant/computations/probes/plancherel_weight_boundedness_probe.py)) |
+| Plancherel w_λ(q) | `[n]_q!/H_q(λ)²` → d_λ²/n! | spectral measure ([`prop:plancherel-weight-boundedness`](../../computations/probes/plancherel_weight_boundedness_probe.py)) |
 | Wenzl/Markov y_λ(q) | H_3: `[4]_q/[2]_q³, 1/[2]_q², 0` | Markov-trace weighting (now exact closed-form, `prop:h3-markov-wenzl-weights`) |
 
 **Hypothesis (derived, testable, zero-fit):** the per-depth α_k
@@ -120,7 +120,7 @@ still a result and prunes the class).
 
 ## 4a. Probe result (this PR) — derived heat-kernel weight REFUTED (zero-fit)
 
-[`binding_heat_kernel_weight_probe.py`](../../folio-assistant/computations/binding_heat_kernel_weight_probe.py)
+[`binding_heat_kernel_weight_probe.py`](../../computations/binding_heat_kernel_weight_probe.py)
 → `binding-heat-kernel-weight-probe.witness.json`. Tests the derived
 μ_λ eigenvalue weight `C_λ(q)=Σ_□[c]_q[c+1]_q` in `B=E·Σ_λ w_λ|Δθ_λ|`
 at one global scale over D/T/³He/⁴He (full p(3A) sum, no truncation):

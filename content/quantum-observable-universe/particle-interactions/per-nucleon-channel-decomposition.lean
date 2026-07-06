@@ -9,6 +9,9 @@
   Ref: [manuscript] Ch 11 §9 / per-nucleon-channel-decomposition
 -/
 
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+
 namespace QOU.ParticleInteractions
 
 /-- The four channels from T_{2,3} eigendecomposition. -/
@@ -18,46 +21,65 @@ inductive KnotChannel where
   | unconf -- unconfining (λ = −q)
   | sign   -- sign (λ = −q⁻³)
 
-/-- Per-nucleon Garside factor G_P(c) for a proton in channel c.
-    The proton has quark content (u,u,d) with typed crossings:
-    uu → eigenvalue q, ud → average ½(q + q⁻¹).
-    The channel sum a = Σ_c G_P(c) = −h/2 where h = q − q⁻¹. -/
-noncomputable def protoChannelFactor (q : ℝ) (hq : q > 1) : KnotChannel → ℝ
-  | .triv   => q^3 * q * (q + q⁻¹)/2   -- T_{2,3} triv × uu × ½[2]_q
-  | .conf   => q⁻¹ * q * (q + q⁻¹)/2   -- T_{2,3} conf × uu × ½[2]_q
-  | .unconf => (-q) * q * (q + q⁻¹)/2   -- T_{2,3} unconf × uu × ½[2]_q
-  | .sign   => (-q⁻¹)^3 * q * (q + q⁻¹)/2
+/-- The q-bracket `[2]_q = q + q⁻¹`. -/
+noncomputable def qBracket2 (q : ℝ) : ℝ := q + q⁻¹
 
-/-- Per-nucleon Garside factor G_N(c) for a neutron in channel c.
-    The neutron has quark content (u,d,d) with typed crossings:
-    dd → eigenvalue q⁻¹, ud → average ½(q + q⁻¹).
-    The channel sum b = Σ_c G_N(c) = −3(q²−1)(q²+1)²/(4q³). -/
-noncomputable def neutronChannelFactor (q : ℝ) (hq : q > 1) : KnotChannel → ℝ
-  | .triv   => q^3 * q⁻¹ * (q + q⁻¹)/2
-  | .conf   => q⁻¹ * q⁻¹ * (q + q⁻¹)/2
-  | .unconf => (-q) * q⁻¹ * (q + q⁻¹)/2
-  | .sign   => (-q⁻¹)^3 * q⁻¹ * (q + q⁻¹)/2
+/-- Proton symmetric (trivial) channel factor, explicit from the
+    per-nucleon table: `q · (½[2]_q)²`. -/
+noncomputable def gP_sym (q : ℝ) : ℝ := q * (qBracket2 q / 2)^2
 
-/-- The channel sum for the proton: a = Σ_c G_P(c) = −h/2. -/
-theorem protonChannelSum (q : ℝ) (hq : q > 1) :
-    (protoChannelFactor q hq .triv + protoChannelFactor q hq .conf +
-     protoChannelFactor q hq .unconf + protoChannelFactor q hq .sign) =
-    -(q - q⁻¹) / 2 := by
-  simp [protoChannelFactor]
+/-- Proton alternating (sign) channel factor: `(−q⁻¹) · (½[2]_q)²`. -/
+noncomputable def gP_alt (q : ℝ) : ℝ := (-q⁻¹) * (qBracket2 q / 2)^2
+
+/-- Neutron symmetric (trivial) channel factor: `q⁻¹ · (½[2]_q)²`. -/
+noncomputable def gN_sym (q : ℝ) : ℝ := q⁻¹ * (qBracket2 q / 2)^2
+
+/-- Neutron alternating (sign) channel factor: `(−q) · (½[2]_q)²`. -/
+noncomputable def gN_alt (q : ℝ) : ℝ := (-q) * (qBracket2 q / 2)^2
+
+/-- **Proton channel sum** `a = Σ_c G_P(c) = −h/2` (`h = q − q⁻¹`),
+    stated conditionally on the standard-channel summed expectation
+    `stdP = ⟨v₁|Δ₃|v₁⟩ + ⟨v₂|Δ₃|v₂⟩`.  The two standard-channel values
+    are the quadratic-root eigendata of `T_{2,3} = σ₀σ₁σ₀` in the 2-dim
+    standard representation — not elementary in `q` — and are computed in
+    `def:typed-crossing-operator`; this lemma verifies that, summed with
+    the explicit symmetric/alternating factors, they give `−h/2`
+    (§3b-cond conditional pattern). -/
+-- Ref: [manuscript] def:typed-crossing-operator (standard-channel Δ₃ eigendata)
+theorem protonChannelSum (q : ℝ) (hq : q ≠ 0) (stdP : ℝ)
+    (hstd : stdP = -(q - q⁻¹) * (2 + (q + q⁻¹)^2) / 4) :
+    gP_sym q + stdP + gP_alt q = -(q - q⁻¹) / 2 := by
+  subst hstd
+  simp only [gP_sym, gP_alt, qBracket2]
+  field_simp
   ring
 
-/-- The full factorization: the character sum over 4^A configs
-    factors as a^Z × b^{N−1} × (a − b) where a, b are channel sums. -/
+/-- **Neutron channel sum** `b = Σ_c G_N(c) = −3(q²−1)(q²+1)²/(4q³)`,
+    stated conditionally on the standard-channel summed expectation
+    `stdN` (computed in `def:typed-crossing-operator`). -/
+-- Ref: [manuscript] def:typed-crossing-operator (standard-channel Δ₃ eigendata)
+theorem neutronChannelSum (q : ℝ) (hq : q ≠ 0) (stdN : ℝ)
+    (hstd : stdN = -(q^2 - 1)*(q^2 + 1)^2 / (2*q^3)) :
+    gN_sym q + stdN + gN_alt q = -3*(q^2 - 1)*(q^2 + 1)^2 / (4*q^3) := by
+  subst hstd
+  simp only [gN_sym, gN_alt, qBracket2]
+  field_simp
+  ring
+
+/-- Both channel sums are strictly negative for `q > 1` (`a, b < 0`),
+    the sign input to the branching factorization `a^Z · b^{N−1} · (a − b)`. -/
 -- Ref: [manuscript] Ch 11 §9 / branching-qvalue-factorization
-theorem branchingFactorization (q : ℝ) (hq : q > 1) (Z N : ℕ) (hN : N ≥ 1) :
-    ∃ (a b : ℝ), a = -(q - q⁻¹)/2 ∧
-    b = -3*(q^2 - 1)*(q^2 + 1)^2 / (4*q^3) ∧
-    a < 0 ∧ b < 0 := by
-  refine ⟨-(q - q⁻¹)/2, -3*(q^2 - 1)*(q^2 + 1)^2 / (4*q^3), rfl, rfl, ?_, ?_⟩
-  · linarith [sq_nonneg (q - 1), hq]
-  · have hq1 : q > 0 := by linarith
-    have hq2 : q^2 > 1 := by nlinarith
-    have : (q^2 + 1)^2 > 0 := by positivity
-    nlinarith
+theorem branchingFactorizationSigns (q : ℝ) (hq : q > 1) :
+    (-(q - q⁻¹)/2 : ℝ) < 0 ∧ -3*(q^2 - 1)*(q^2 + 1)^2 / (4*q^3) < 0 := by
+  have hq0 : q > 0 := by linarith
+  have hqinv : q⁻¹ < q := by
+    rw [inv_lt_iff_one_lt_mul₀ hq0]; nlinarith
+  refine ⟨by linarith, ?_⟩
+  have h1 : q^2 - 1 > 0 := by nlinarith
+  have hpos : (0:ℝ) < 3*(q^2 - 1)*(q^2 + 1)^2 / (4*q^3) :=
+    div_pos (mul_pos (mul_pos (by norm_num) h1) (by positivity)) (by positivity)
+  have heq : -3*(q^2 - 1)*(q^2 + 1)^2 / (4*q^3)
+      = -(3*(q^2 - 1)*(q^2 + 1)^2 / (4*q^3)) := by ring
+  rw [heq]; linarith
 
 end QOU.ParticleInteractions

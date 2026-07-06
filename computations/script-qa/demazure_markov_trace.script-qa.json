@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/demazure_markov_trace.py",
+  "script_path": "computations/demazure_markov_trace.py",
   "language": "python",
   "source_hash": "359ae8082a0f",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -21,7 +21,7 @@
         "reviewed_at": "2026-05-22T18:27:38.070Z",
         "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
         "severity": "major",
-        "evidence": "folio-assistant/computations/demazure_markov_trace.py:368: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/demazure_markov_trace.py:368: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       },
       {
         "field_hash": {
@@ -38,7 +38,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/demazure_markov_trace.py:368: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/demazure_markov_trace.py:368: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       },
       {
         "field_hash": {
@@ -55,7 +55,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "major",
-        "evidence": "folio-assistant/computations/demazure_markov_trace.py:368: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/demazure_markov_trace.py:368: bare float literal `0.0` — wrap in `mpmath.mpf(\"0.0\")` / `Decimal(\"0.0\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       }
     ],
     "respects_archimedean_wall": [
@@ -106,7 +106,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/demazure_markov_trace.py:1: script lacks both a module docstring and ≥10% comment density (got 21/307 = 6.8%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
+        "evidence": "computations/demazure_markov_trace.py:1: script lacks both a module docstring and ≥10% comment density (got 21/307 = 6.8%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
       },
       {
         "field_hash": {
@@ -123,7 +123,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/demazure_markov_trace.py:1: script lacks both a module docstring and ≥10% comment density (got 21/307 = 6.8%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
+        "evidence": "computations/demazure_markov_trace.py:1: script lacks both a module docstring and ≥10% comment density (got 21/307 = 6.8%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
       }
     ],
     "variables_typed": [
@@ -142,7 +142,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/demazure_markov_trace.py:62: `def demazure_operator(…)` has 3 parameters without type annotation: f, x, i — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/demazure_markov_trace.py:79: `def demazure_character(…)` has 3 parameters without type annotation: weight, word, x — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/demazure_markov_trace.py:91: `def perm_to_reduced_word(…)` has 1 parameter without type annotation: perm — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/demazure_markov_trace.py:111: `def all_permutations(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/demazure_markov_trace.py:121: `def w0_word(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/demazure_markov_trace.py:62: `def demazure_operator(…)` has 3 parameters without type annotation: f, x, i — add `: type` (or `: Any` if the type genuinely is untyped) | computations/demazure_markov_trace.py:79: `def demazure_character(…)` has 3 parameters without type annotation: weight, word, x — add `: type` (or `: Any` if the type genuinely is untyped) | computations/demazure_markov_trace.py:91: `def perm_to_reduced_word(…)` has 1 parameter without type annotation: perm — add `: type` (or `: Any` if the type genuinely is untyped) | computations/demazure_markov_trace.py:111: `def all_permutations(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped) | computations/demazure_markov_trace.py:121: `def w0_word(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped)"
       },
       {
         "field_hash": {
@@ -159,7 +159,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/demazure_markov_trace.py:62: `def demazure_operator(…)` has 3 parameters without type annotation: f, x, i — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/demazure_markov_trace.py:79: `def demazure_character(…)` has 3 parameters without type annotation: weight, word, x — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/demazure_markov_trace.py:91: `def perm_to_reduced_word(…)` has 1 parameter without type annotation: perm — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/demazure_markov_trace.py:111: `def all_permutations(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped) | folio-assistant/computations/demazure_markov_trace.py:121: `def w0_word(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped)"
+        "evidence": "computations/demazure_markov_trace.py:62: `def demazure_operator(…)` has 3 parameters without type annotation: f, x, i — add `: type` (or `: Any` if the type genuinely is untyped) | computations/demazure_markov_trace.py:79: `def demazure_character(…)` has 3 parameters without type annotation: weight, word, x — add `: type` (or `: Any` if the type genuinely is untyped) | computations/demazure_markov_trace.py:91: `def perm_to_reduced_word(…)` has 1 parameter without type annotation: perm — add `: type` (or `: Any` if the type genuinely is untyped) | computations/demazure_markov_trace.py:111: `def all_permutations(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped) | computations/demazure_markov_trace.py:121: `def w0_word(…)` has 1 parameter without type annotation: n — add `: type` (or `: Any` if the type genuinely is untyped)"
       }
     ],
     "has_references_to_paper": [
@@ -178,7 +178,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/demazure_markov_trace.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/demazure_markov_trace.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       },
       {
         "field_hash": {
@@ -195,7 +195,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/demazure_markov_trace.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/demazure_markov_trace.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       }
     ],
     "connected_to_ci_pipeline": [

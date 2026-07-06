@@ -1,6 +1,6 @@
 **Proposition (brane-tower convergence via q-Laplacian decay).**
 *Dropping the locality assumption for composite physical observables
-requires summing over the Yekutieli brane tower — an infinite jet
+requires summing over the brane tower — an infinite jet
 prolongation*
 $$
   T(\rho) \;=\; \sum_{n \geq 1} \hbar_q^{2n} \, \Delta^{(n)}(\rho),
@@ -58,16 +58,3 @@ $$
 which is a convergent geometric series in $q^{-2}\hbar_q^2 < 1$
 for the substrate range $q > 1.05$ (covering the QOU calibration
 window).
-
-**Physical reading.** Dropping locality requires summing over all
-causally connected knots, which is infinite. The q-Laplacian
-exponential mode-damping ensures only the lowest few jet levels
-contribute appreciably; the rest are suppressed geometrically. The
-non-local integration is therefore finite, *dominated by local
-contributions*, and computable to arbitrary precision by truncating
-the tower at any fixed level.
-
-This is the convergence statement underlying the QOU treatment of
-composite operators: in the Gröbner–Shirshov tower expansion of a
-hadron's mass, the leading term is the local single-jet contribution,
-and the corrections form a geometric series in $\hbar_q^2 \cdot q^{-2}$.

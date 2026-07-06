@@ -5,7 +5,7 @@ prediction in **non-calibrated mode** (CAL-1 $m_e$ + CAL-2 $q_0$
 only, no CAL-3 $Q_\beta$ input). Per owner directive 2026-05-10:
 "we are NOT TO USE calibration except three allowed".
 
-## Three allowed calibrations (CLAUDE.md three-calibration-discipline)
+## Three allowed calibrations (AGENTS.md three-calibration-discipline)
 
 | Cal | Source | Value |
 |---|---|---|

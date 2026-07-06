@@ -2,7 +2,7 @@
 
 Date: 2026-05-07
 
-Restored `/home/runner/work/qou/qou/folio-assistant/computations/borromean-axial-coupling.py` from `_deprecated/` and fixed the core bug.
+Restored `/home/runner/work/qou/qou/computations/borromean-axial-coupling.py` from `_deprecated/` and fixed the core bug.
 
 ## Bug
 

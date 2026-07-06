@@ -17,7 +17,7 @@ For each regime, the LP selects the optimal operator among:
   - Borromean B₃ (from quark level, shouldn't appear at nuclear level)
 
 Usage:
-    cd folio-assistant/computations && python3 nuclear-binding-lp.py
+    cd computations && python3 nuclear-binding-lp.py
 """
 import json
 import numpy as np

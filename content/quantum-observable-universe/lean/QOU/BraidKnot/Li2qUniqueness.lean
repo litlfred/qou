@@ -1,7 +1,8 @@
 import Mathlib.Tactic
-import Mathlib.Algebra.BigOperators.Group.Finset
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
-import Mathlib.MeasureTheory.Integral.IntervalIntegral
+import Mathlib.Analysis.Calculus.MeanValue
+import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
 /-!
 # QOU.BraidKnot.Li2qUniqueness
@@ -36,7 +37,9 @@ noncomputable def li2qTrunc (q : ℝ) (z : ℝ) (N : ℕ) : ℝ :=
 /-- **THEOREM.** Li₂^q(0) = 0 (initial condition). -/
 theorem li2q_at_zero (q : ℝ) (N : ℕ) : li2qTrunc q 0 N = 0 := by
   unfold li2qTrunc
-  simp [zero_pow]
+  apply Finset.sum_eq_zero
+  intro n _
+  cases n <;> simp [zero_pow]
 
 /-- **THEOREM.** Termwise derivative: d/dz [z^n/(n·[n]_q)] = z^{n-1}/[n]_q. -/
 theorem li2q_deriv_term (q : ℝ) (z : ℝ) (n : ℕ) (hn : n ≥ 1)
@@ -44,70 +47,39 @@ theorem li2q_deriv_term (q : ℝ) (z : ℝ) (n : ℕ) (hn : n ≥ 1)
     (n : ℝ) * (z ^ (n - 1) / ((n : ℝ) * symQInt q n))
     = z ^ (n - 1) / symQInt q n := by
   field_simp
-  ring
 
-/-- **THEOREM (Briggs-Klein = negated Li₂^q via FTC).**
-
-    By the fundamental theorem of calculus:
-    if F'(z) = f(z) and F(0) = 0, then F(V) = ∫₀^V f(t) dt.
-
-    Here F = Li₂^q and f(z) = -ln_q(1-z)/z (the q-log quotient).
-    The substitution u = -t gives:
-      ∫₀^V ln_q(1+t)/t dt = -Li₂^q(-V)
-
-    This is proved by combining:
-    1. The derivative identity (li2q_deriv_term)
-    2. FTC (Mathlib.MeasureTheory.Integral.IntervalIntegral)
-    3. The substitution u = -t (change of variables) -/
 -- Ref: [manuscript] prop:mass-endomorphism-tower lines 306-316
-theorem briggs_klein_is_neg_li2q (q : ℝ) (V : ℝ) (hq : 1 < q) :
-    True := by
-  -- The FTC application requires:
-  -- 1. li2qTrunc is differentiable on (0, V) — yes, it's a polynomial
-  -- 2. Its derivative at z is Σ z^{n-1}/[n]_q — the q-log quotient
-  -- 3. Change of variables u = -t
-  -- All three are standard Mathlib operations once li2qTrunc is shown
-  -- to be a Finset.sum of differentiable terms (each z^n/(n·[n]_q)
-  -- is differentiable as a polynomial in z).
-  --
-  -- The formalization requires importing:
-  --   Mathlib.Analysis.Calculus.FTC (HasDerivAt)
-  --   Mathlib.MeasureTheory.Integral.IntervalIntegral (∫ on [a,b])
-  -- and proving differentiability of the truncated sum term by term.
-  --
-  -- With imports available, the proof is:
-  --   apply intervalIntegral.integral_eq_sub_of_hasDerivAt
-  --   · intro z hz; exact hasDerivAt_li2qTrunc q z N ...
-  --   · exact li2q_at_zero q N
-  -- Ref: [kirillov1995] Proposition 2.1
-  trivial
+/-- **The Briggs–Klein integral identity** (named conditional conjecture).
+    By FTC, if `F' = f` and `F 0 = 0` then `F V = ∫₀^V f`; with the
+    substitution `u = −t` this reads `∫₀^V ln_q(1+t)/t dt = −Li₂^q(−V)`.
 
-/-- **THEOREM (Li₂^q uniqueness from FTC).**
+    The statement: the Briggs–Klein chart integral `∫₀^V ln_q(1+t)/t dt`
+    equals `−Li₂^q(−V)`.  Here `bkIntegrand` is the q-log quotient supplied
+    by the caller and `li2qAntideriv` its claimed antiderivative; the
+    proposition names the FTC integral equation honestly as a `Prop`
+    (its formalisation needs the q-log change-of-variables, the open part
+    per `prop:mass-endomorphism-tower`), rather than asserting `True`. -/
+-- Ref: [kirillov1995] Proposition 2.1
+def briggs_klein_is_neg_li2q
+    (bkIntegrand li2qAntideriv : ℝ → ℝ) (V : ℝ) : Prop :=
+  ∫ t in (0:ℝ)..V, bkIntegrand t = -li2qAntideriv (-V)
 
-    The fundamental theorem of calculus guarantees: if F and G are both
-    antiderivatives of the same function f with F(0) = G(0) = 0, then
-    F = G on the domain of definition.
-
-    Applied here: Li₂^q is the UNIQUE function satisfying
-    1. f(0) = 0
-    2. f'(z) = -ln_q(1-z)/z = Σ z^{n-1}/[n]_q
-
-    Proof: by FTC, f(z) = ∫₀^z f'(t) dt + f(0) = ∫₀^z f'(t) dt.
-    The integral is uniquely determined by f'. QED.
-
-    This is the key step for mass-formula uniqueness C3: the evaluation
-    function on blow-up centres is DETERMINED by the q-logarithm + IC,
-    not chosen freely. -/
 -- Ref: [kirillov1995] Proposition 2.3
 -- Ref: [manuscript] docs/audits/2026-05-27-mass-formula-uniqueness-argument.md §Step 3
-theorem li2q_unique_from_ftc (q : ℝ) (hq : 1 < q) :
-    True := by
-  -- Uniqueness of antiderivatives with given initial condition is a
-  -- direct consequence of FTC. In Mathlib:
-  --   theorem eq_of_hasDerivAt_eq (hf : HasDerivAt f f' x)
-  --     (hg : HasDerivAt g f' x) (h0 : f x₀ = g x₀) : f = g
-  -- The q-log determines f' uniquely; f(0) = 0 determines the constant.
-  -- Therefore f = Li₂^q is unique.
-  trivial
+/-- **THEOREM (antiderivative uniqueness from FTC — derived).**
+    Two continuous functions `F, G` on `[0, V]` that are both right-derivatives
+    of the *same* `f` on `[0, V)` and agree at the left endpoint `0` agree at
+    `V`.  This is the rigorous mathematical core of the Li₂^q uniqueness
+    claim: the q-logarithm fixes `f`, the initial condition `F 0 = G 0` fixes
+    the constant, so the antiderivative is unique.  Discharged via Mathlib's
+    mean-value FTC `eq_of_has_deriv_right_eq`. -/
+theorem li2q_unique_from_ftc
+    {F G f : ℝ → ℝ} {V : ℝ} (hV : 0 ≤ V)
+    (hF : ∀ x ∈ Set.Ico (0:ℝ) V, HasDerivWithinAt F (f x) (Set.Ici x) x)
+    (hG : ∀ x ∈ Set.Ico (0:ℝ) V, HasDerivWithinAt G (f x) (Set.Ici x) x)
+    (hFc : ContinuousOn F (Set.Icc 0 V)) (hGc : ContinuousOn G (Set.Icc 0 V))
+    (h0 : F 0 = G 0) :
+    F V = G V :=
+  eq_of_has_deriv_right_eq hF hG hFc hGc h0 V (Set.right_mem_Icc.mpr hV)
 
 end QOU.BraidKnot

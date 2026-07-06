@@ -26,6 +26,7 @@
 -/
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.Field.Basic
+import Mathlib.Tactic.Ring
 
 namespace QOU.BraidKnot
 
@@ -103,7 +104,7 @@ theorem tau_M_satisfies_non_degeneracy {R : Type u} [Field R]
     H_n(R, q) at generic q is uniquely determined by the Markov-peel +
     cyclic axioms; in particular, it equals τ_M block-wise.
 
-    Axiomatised here as a `class` (CLAUDE.md §3b-cond pattern) because
+    Axiomatised here as a `class` (AGENTS.md §3b-cond pattern) because
     the proof relies on Wenzl's classical uniqueness theorem, which is
     external to this Lean formalisation but standard literature.
     Downstream results are then sorry-free **conditional on the class

@@ -180,7 +180,7 @@ Current M3b++ solvers are first-cut heuristics:
 
 ## Gotchas
 
-- **`pyhecke.py` shim** at `folio-assistant/computations/pyhecke.py` was
+- **`pyhecke.py` shim** at `computations/pyhecke.py` was
   deleted in M2b (circular import with the real `pyhecke` package).
   Don't restore it. Scripts that need `pyhecke` should do
   `sys.path.insert(0, tools/pyhecke/python)` or install the wheel.
@@ -276,7 +276,7 @@ Not migrated in B2+++ — each requires hands-on:
   (Hecke + Gram + Tower infrastructure, aligned with
   INFRASTRUCTURE-AUDIT.md).
 - Migration list: `tools/pyhecke/MIGRATION.md`.
-- Audit: `folio-assistant/computations/INFRASTRUCTURE-AUDIT.md`.
+- Audit: `computations/INFRASTRUCTURE-AUDIT.md`.
 - Tests: `cd tools/pyhecke && pytest -q` (needs `tools/pyhecke/python`
   on sys.path; pyproject.toml sets `pythonpath = ["python"]`).
 - Wheel build: `cd tools/pyhecke-native && maturin build --release`.

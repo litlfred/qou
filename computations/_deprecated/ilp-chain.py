@@ -14,7 +14,7 @@ At each step:
 Same protocol at every level — no assumptions about which operator.
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 ilp-chain.py
 """
 

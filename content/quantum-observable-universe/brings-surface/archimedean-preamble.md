@@ -3,7 +3,7 @@ to any observer:
 
 1. **Three colors.** The strong interaction is mediated by exactly
    three color charges — red, green, blue — corresponding to
-   the three coral tubes of Bring's surface
+   the three color tubes of Bring's surface
    ([color tube coordinates](#def:color-tube-coordinates)).
 
 2. **A sense of time passing.** Time pushes us forward just as

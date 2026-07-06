@@ -1,5 +1,5 @@
 Let $A$ be the Frobenius--Hopf substrate algebra and let $D(A)$ denote
-its derived category of bimodules. A *rigid dualizing complex* for $A$
+its derived category of bimodules. A **rigid dualizing complex** for $A$
 is a complex $\omega_A^\bullet$ of $A$-bimodules satisfying the
 following conditions.
 

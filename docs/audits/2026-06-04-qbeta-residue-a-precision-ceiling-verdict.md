@@ -13,7 +13,7 @@ PSLQ period probe?
 ## Answer: NO — A is reliable to ≈ 4 significant figures only
 
 Script:
-[`qbeta_residue_a_precision_ceiling.py`](../../folio-assistant/computations/qbeta/qbeta_residue_a_precision_ceiling.py)
+[`qbeta_residue_a_precision_ceiling.py`](../../computations/qbeta/qbeta_residue_a_precision_ceiling.py)
 · witness `qbeta-residue-a-precision-ceiling.witness.json`.
 
 Notation: `x_k := c_k·u_subst^k`; `L := lim_k x_k ≈ 2.118e-13` (tail
@@ -68,7 +68,7 @@ To raise A's precision one must **extend the asymptote with more rungs**:
 a higher-order **canonical** extraction of c_11…c_15 — proved / near-match
 closed forms per rung, extending the existing c_2…c_10 ladder. This is a
 **separate research program**, NOT an ansatz fit (which the Step-1 method
-note and CLAUDE.md forbid). With ~6 more rungs the asymptote tightens
+note and AGENTS.md forbid). With ~6 more rungs the asymptote tightens
 geometrically and Aitken/Richardson could then reach period-search grade.
 
 This reframes the standing recommendation: the residue-A structural

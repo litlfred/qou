@@ -3,8 +3,8 @@
 **Date:** 2026-05-05
 **Branch:** `claude/categorical-mass-divergence-audit` (PR #534)
 **Refs:**
-- [`folio-assistant/computations/piece1_three_routes_gb_filtration_probe.py`](../../folio-assistant/computations/piece1_three_routes_gb_filtration_probe.py)
-- [`folio-assistant/computations/gb_filtration_jet_tracker.py`](../../folio-assistant/computations/gb_filtration_jet_tracker.py)
+- [`computations/piece1_three_routes_gb_filtration_probe.py`](../../computations/piece1_three_routes_gb_filtration_probe.py)
+- [`computations/gb_filtration_jet_tracker.py`](../../computations/gb_filtration_jet_tracker.py)
 - [`prop:gb-spectral-sequence`](../../content/quantum-observable-universe/braids-and-knots/gb-spectral-sequence.md)
 - [`prop:graded-markov-trace-from-gs-filtration`](../../content/quantum-observable-universe/braids-and-knots/graded-markov-trace-from-gs-filtration.md)
 - Sibling [PR #546](https://github.com/litlfred/qou/pull/546) — closed-form $\mathrm{tr}_M(p)$ with leading coefficient $-1/12$

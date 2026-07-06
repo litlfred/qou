@@ -5,7 +5,7 @@ is retained as the analogous tail bound on the $\Phi_q$ side and
 remains mathematically correct.
 
 The jet-tower tail bound
-([jet-tower convergence](#prop\:jet-tower-convergence))
+([jet-tower convergence](#prop:jet-tower-convergence))
 is *conditional* on a uniform bound
 $|\Delta^{(n)}(\varrho)| \leq \Delta_{\max}(\varrho)$ across
 jet levels $n \ge 1$.  This proposition supplies an explicit
@@ -53,17 +53,17 @@ $$
 
 by Cauchy--Schwarz on the Hilbert--Schmidt norm and the
 positivity of the Markov trace at real $q > 0$
-([Markov trace factorization](#thm\:markov-trace-factorization),
+([Markov trace factorization](#thm:markov-trace-factorization),
 appendix).
 
 *Step 2 — Jet-level transient lives on a bounded module.*
 The :refterm[descent]{#descent} splitting
 $\mathrm{End}(A_{n+1}) =
  \mathcal{A}_{n+1}^{\mathrm{desc}} \oplus \mathcal{A}_{n+1}^{\mathrm{trans}}$
-([:refterm[descent]{#descent} eigenspaces](#prop\:descent-eigenspaces)) places every
+([:refterm[descent]{#descent} eigenspaces](#prop:descent-eigenspaces)) places every
 transient endomorphism at level $n+1$ in $\ker\hat\tau_n$.  By
 the recursive brane tower
-([recursive brane tower](#def\:recursive-brane-tower)),
+([recursive brane tower](#def:recursive-brane-tower)),
 $A_{n+1} = A_n \otimes \Omega^1(A_n)$, so a transient mode at
 level $n+1$ is a section of the Kähler cotangent bundle
 $\Omega^1(A_n)$ paired with its Frobenius dual.  On the
@@ -120,7 +120,7 @@ $$
 The right-hand side is independent of $n$; set
 $\Delta_{\max}(\varrho)$ equal to it.  $\square$
 
-## Numerical scale
+## canonical scale
 
 For the deuteron representative
 $\beta_{\mathrm{D}} = \sigma_0 \in B_2$:
@@ -143,10 +143,10 @@ is bounded by $\approx 1.07 \times 10^{-6}$ in categorical
 units, i.e. **sub-ppm binding precision** when calibrated by
 $E_0 \approx m_e \cdot 8G \approx 3.744$ MeV.
 
-## Consequence for the binding energy
+## Corollary for the binding energy
 
 Combining with the jet-tower tail bound
-([jet-tower convergence](#prop\:jet-tower-convergence)), the
+([jet-tower convergence](#prop:jet-tower-convergence)), the
 $N$-term truncation error for any vortex is
 
 $$
@@ -157,18 +157,18 @@ $$
   \cdot \frac{\hbar_q^{2(N+1)}}{1 - \hbar_q^{2}}.
 $$
 
-For light atoms ($A \le 16$) at $q_0$, numerical evaluation
+For light atoms ($A \le 16$) at $q_0$, canonical evaluation
 shows $N = 3$ is sufficient for sub-ppm precision on binding
 energies; the bound is saturated within a factor of 2 on the
 deuteron, tritium, and ${}^3\mathrm{He}$
-(cf. `folio-assistant/computations/unified_lift.py` with
+(cf. the formal derivation with
 `JET_TARGET_PPM`).
 
-## What remains open
+## Remaining open items
 
 This proposition closes the **archimedean / rank-1 SDP**
 regime of the convergence conjecture
-([jet-tower remark](#rem\:mass-endomorphism-jet-tower),
+([jet-tower remark](#rem:mass-endomorphism-jet-tower),
 subconjecture 1).  The two remaining pieces are:
 
 1. **Multi-rank confinement SDP.**  At higher SDP ranks the
@@ -176,7 +176,7 @@ subconjecture 1).  The two remaining pieces are:
    the operator-norm control in Step 2 must be replaced by a
    sum over rank-1 summands with weights from the SDP
    eigenvalues.  The qualitative bound survives (operator norms
-   are subadditive), but the numerical prefactor degrades.
+   are subadditive), but the canonical prefactor degrades.
 2. **Sharp constant.**  The factor $2\,L(\beta)\,\|\rho\|^2$
    is a worst-case bound; for stable atoms the effective
    $\Delta_{\max}$ is empirically within a factor of 2 of the

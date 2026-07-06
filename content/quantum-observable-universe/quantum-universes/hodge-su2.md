@@ -1,6 +1,8 @@
 Continuing [higher forms on SU(2)](#ex:higher-forms-su2), the Hodge star on
-$A = \mathcal{O}(\mathrm{SU}(2))$ acts on the $3D$-calculus
-$\Omega^{\bullet}(A)$ as follows. The volume form is
+$A = \mathcal{O}(\mathrm{SU}(2))$ identifies $\Omega^k(A)$ with
+$\Omega^{n-k}(A)$ using the Frobenius form as the inner product — the
+categorical version of "rotating a form into its complement". On the
+$3D$-calculus $\Omega^{\bullet}(A)$ it acts as follows. The volume form is
 $\mathrm{vol} = \omega_1 \wedge \omega_2 \wedge \omega_3$
 (normalised by $\int_A(\mathrm{vol}) = 1$). Then:
 
@@ -11,9 +13,7 @@ $\mathrm{vol} = \omega_1 \wedge \omega_2 \wedge \omega_3$
 - On $2$-forms: $\star(\omega_i \wedge \omega_j) = \epsilon_{ijk}\omega_k$ (each basis $2$-form maps to its
   complementary $1$-form).
 
-The Hodge star is the categorical version of "rotating a form into
-its complement": it identifies $\Omega^k(A)$ with $\Omega^{n-k}(A)$
-using the Frobenius form as the inner product. The self-dual
+The self-dual
 $2$-forms $\Omega^+(A)$ are the $+1$-eigenspace of $\star$; in
 $3$ dimensions, $\star$ on $\Omega^2(A)$ maps to $\Omega^1(A)$, so
 the self-dual/anti-self-dual decomposition is trivial. The

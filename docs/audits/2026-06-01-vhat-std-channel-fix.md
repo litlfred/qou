@@ -11,11 +11,11 @@ Switch the consumer to the derived `"std"` channel and report the RAW
 resulting m_p / m_n. No fit, no tuning, no hard-coded correction.
 
 **Compute:**
-[`vhat_std_vs_full_tower_compare.py`](../../folio-assistant/computations/vhat_std_vs_full_tower_compare.py),
+[`vhat_std_vs_full_tower_compare.py`](../../computations/vhat_std_vs_full_tower_compare.py),
 witness
-[`vhat-std-vs-full-tower-compare.witness.json`](../../folio-assistant/computations/vhat-std-vs-full-tower-compare.witness.json).
+[`vhat-std-vs-full-tower-compare.witness.json`](../../computations/vhat-std-vs-full-tower-compare.witness.json).
 Channel selection added (owner-gated, default `"full"`) to
-[`derive_m_p_hecke_full_tower_50dps.py`](../../folio-assistant/computations/derive_m_p_hecke_full_tower_50dps.py).
+[`derive_m_p_hecke_full_tower_50dps.py`](../../computations/derive_m_p_hecke_full_tower_50dps.py).
 
 ---
 
@@ -39,7 +39,7 @@ separate issue from the channel mis-wiring. Production default is
 ## 1. What "std" and "full" are (from the item-2 audit)
 
 The upstream producer
-[`terms_2_3_atom_per_gen_mpfr_50dps.atom_per_generator_volumes_mpfr`](../../folio-assistant/computations/terms_2_3_atom_per_gen_mpfr_50dps.py)
+[`terms_2_3_atom_per_gen_mpfr_50dps.atom_per_generator_volumes_mpfr`](../../computations/terms_2_3_atom_per_gen_mpfr_50dps.py)
 emits, per generator, a dict `{std, sym, alt, full}`:
 
 - **`"std"`** = `z·a_i + b_i` — the Markov trace of the per-generator
@@ -80,7 +80,7 @@ CAL-2 (q₀) consumed. The neutron with the std channel is finite
 The single-tower term is `T2 = Σ_i Li_2^q(|V̂_i|)` where `Li_2^q(z) =
 Σ_{n≥1} z^n / (n·[n]_q)`. Per its docstring + a direct ratio test, the
 **radius of convergence is |z| < q₀ ≈ 1.10998**;
-[`_li_2_q_util.li_2_q`](../../folio-assistant/computations/_li_2_q_util.py)
+[`_li_2_q_util.li_2_q`](../../computations/_li_2_q_util.py)
 returns `+inf` for `|z| ≥ q₀`.
 
 Per-generator magnitudes (RAW, from the per-gen witness):

@@ -104,7 +104,7 @@ the precision-upgrade infrastructure described above.
 
 Witness: `staircase-ew-k4-pairwise-readings.witness.json`
 
-@module folio-assistant/computations/probe_staircase_ew_k4_pairwise_readings
+@module computations/probe_staircase_ew_k4_pairwise_readings
 """
 from __future__ import annotations
 

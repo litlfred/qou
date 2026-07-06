@@ -1,3 +1,6 @@
+import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
+import Mathlib.Topology.Algebra.InfiniteSum.Basic
+
 /-!
 # QOU.AlgebraicSubstrate.macroscopic_stability_equivalence
 
@@ -17,8 +20,6 @@ numerical evaluation.
 
 set_option autoImplicit false
 
-import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
-import Mathlib.Topology.Algebra.InfiniteSum.Basic
 
 open Complex Filter
 

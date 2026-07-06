@@ -116,7 +116,7 @@ from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 from q_parameter import Q as q0  # noqa: E402
-from codata_constants import M_E_MEV, M_P_MEV_VALIDATION  # noqa: E402
+from codata_constants import M_E_MEV, M_P_MEV_VALIDATION, M_MU_MEV_VALIDATION  # noqa: E402
 
 
 def q_int(q, n):
@@ -134,7 +134,7 @@ def main():
     q = q0
     m_e_mp = mpf(M_E_MEV)
     m_p_codata = mpf(M_P_MEV_VALIDATION)
-    m_mu_codata = mpf("105.6583755")  # CODATA 2022
+    m_mu_codata = mpf(M_MU_MEV_VALIDATION)  # CODATA 2022 (codata_constants registry)
     m_mu_over_m_e = m_mu_codata / m_e_mp
 
     h = q - 1 / q

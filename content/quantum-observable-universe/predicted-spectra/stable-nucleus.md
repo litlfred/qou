@@ -58,3 +58,5 @@ Skein binding Lagrangian.  The parameter $q$ determines both the
 strong binding (via $(q + q^{-1})/2$) and the Coulomb repulsion
 (via $(q - q^{-1})/2$), and their balance selects the unique
 stable $(Z, N)$ for each mass number $A$.
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

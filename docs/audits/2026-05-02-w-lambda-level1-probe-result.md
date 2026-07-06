@@ -1,6 +1,6 @@
 # Volume + Shell w_λ^(1) probe — simple Plancherel ansatz fails
 
-**Pair:** [`volume_shell_w_lambda_level1_probe.py`](../../folio-assistant/computations/volume_shell_w_lambda_level1_probe.py)
+**Pair:** [`volume_shell_w_lambda_level1_probe.py`](../../computations/volume_shell_w_lambda_level1_probe.py)
 + witness [`2026-05-02-w-lambda-level1-probe.witness.json`](2026-05-02-w-lambda-level1-probe.witness.json).
 
 ## Tested ansatz

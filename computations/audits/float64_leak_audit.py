@@ -37,7 +37,7 @@ Limitations:
 Emits `float64-leak-audit.witness.json`.
 
 Usage:
-    python3 folio-assistant/computations/float64_leak_audit.py [--strict]
+    python3 computations/float64_leak_audit.py [--strict]
 """
 
 
@@ -101,6 +101,11 @@ DISPLAY_CONTEXT_RX = re.compile(r"\b(print|mp\.nstr|logger|warnings\.warn|sys\.s
 COMPARISON_CONTEXT_RX = re.compile(
     r"(?:(?:<|>|<=|>=|==|!=)\s*\d|key\s*=\s*lambda|\bassert\b|\bppm\b|_pct\b|\bgap_[a-z]\b|reverse=True)"
 )
+# Dict-value serialization — `"key": float(x)` writes the value into a
+# (string-keyed) dict, almost always for witness/JSON output, not a compute
+# input (refinement, 2026-06-16: this was the dominant remaining I8 FP class —
+# `"B_arch_MeV": float(B_arch)` etc.).
+DICT_VALUE_RX = re.compile(r"""["'][^"']*["']\s*:\s*[^,]*\bfloat\s*\(""")
 # `# noqa: I8 — <reason>` explicit triage marker.
 NOQA_I8_RX = re.compile(r"#\s*noqa:\s*I8\b", re.IGNORECASE)
 # Mp re-wrap on next line: `mp.mpf(str(...))` indicates the float
@@ -126,6 +131,8 @@ def _classify_line_context(lines: list[str], idx: int) -> str:
         return "ok_display"
     if COMPARISON_CONTEXT_RX.search(lines[idx]):
         return "ok_comparison"
+    if DICT_VALUE_RX.search(lines[idx]):
+        return "ok_witness_emit"  # `"key": float(x)` — serialization, not input
     # Multi-line context window — catches f-strings split across
     # print(\n  f"..."\n) and similar.
     start = max(0, idx - 3)
@@ -138,6 +145,47 @@ def _classify_line_context(lines: list[str], idx: int) -> str:
     if MP_REWRAP_RX.search(window):
         return "false_positive_candidate"
     return "violation"
+
+
+def _blank_triple_quoted(text: str) -> str:
+    """Return `text` with triple-quoted-string and comment CONTENT replaced
+    by spaces, preserving newlines/columns (line numbers unchanged). Single-
+    and double-quoted strings (incl. f-strings) are LEFT INTACT so the
+    f-string precision patterns still match.
+
+    Uses Python's tokenizer so it is robust to every edge case the simpler
+    regex/toggle approaches missed — single-line `\"\"\"...\"\"\"`, an
+    unbalanced `\"\"\"` inside a comment, etc. (Gemini #2379). Falls back to
+    a regex blank only if the source does not tokenize."""
+    import io
+    import tokenize as _tok
+
+    def _is_triple(s: str) -> bool:
+        body = s.lstrip("rbfRBFuU")
+        return body.startswith('"""') or body.startswith("'''")
+
+    try:
+        toks = list(_tok.generate_tokens(io.StringIO(text).readline))
+    except (_tok.TokenError, IndentationError, SyntaxError, ValueError):
+        return re.sub(r'"""[\s\S]*?"""|\'\'\'[\s\S]*?\'\'\'',
+                      lambda m: re.sub(r"[^\n]", " ", m.group(0)), text)
+
+    grid = [list(line) for line in text.splitlines(keepends=True)]
+    for tok in toks:
+        if tok.type == _tok.COMMENT or (
+            tok.type == _tok.STRING and _is_triple(tok.string)
+        ):
+            (sr, sc), (er, ec) = tok.start, tok.end
+            for r in range(sr, er + 1):
+                ri = r - 1
+                if ri >= len(grid):
+                    continue
+                c0 = sc if r == sr else 0
+                c1 = ec if r == er else len(grid[ri])
+                for c in range(c0, min(c1, len(grid[ri]))):
+                    if grid[ri][c] != "\n":
+                        grid[ri][c] = " "
+    return "".join("".join(r) for r in grid)
 
 
 def _classify_script(path: Path) -> dict[str, Any] | None:
@@ -165,20 +213,26 @@ def _classify_script(path: Path) -> dict[str, Any] | None:
     }
 
     lines = text.splitlines()
+    # Scan a copy with triple-quoted-string CONTENT blanked, so a `float(`
+    # inside a docstring (the dominant I8 false-positive class) is not
+    # matched — covers both multi-line and single-line `"""..."""` strings.
+    # f-strings (single/double quoted) are preserved so their precision
+    # patterns still match. Snippets/context use the ORIGINAL lines.
+    scan_lines = _blank_triple_quoted(text).splitlines()
     hits: list[dict[str, Any]] = []
 
     for i, line in enumerate(lines):
-        # Strip comments first
-        code_part = re.sub(r"#.*$", "", line)
+        # Strip comments first (use the docstring-blanked variant for matching).
+        scan_part = re.sub(r"#.*$", "", scan_lines[i]) if i < len(scan_lines) else ""
         for label, rx in ANTIPATTERN_RX:
-            if rx.search(code_part):
+            if rx.search(scan_part):
                 # Classify in context.
                 ctx = _classify_line_context(lines, i)
                 hits.append({
                     "line_number": i + 1,
                     "pattern": label,
                     "context": ctx,
-                    "code_snippet": code_part.strip()[:120],
+                    "code_snippet": re.sub(r"#.*$", "", line).strip()[:120],
                 })
 
     row["hit_count"] = len(hits)
@@ -210,7 +264,14 @@ def main() -> int:
 
     rows: list[dict[str, Any]] = []
     total_substrate_scripts = 0
-    for py in sorted(HERE.glob("*.py")):
+    # Scan the whole compute tree (HERE.parent = computations/), not just
+    # this audit's own dir. Pre-reorg this script lived in the compute dir
+    # and scanned its siblings via HERE.glob; after the move to
+    # computations/audits/ that glob saw only 2 files (a vacuous green).
+    # Walk computations/ recursively, skipping _deprecated.
+    for py in sorted((HERE.parent).rglob("*.py")):
+        if "_deprecated" in py.parts:
+            continue
         if py.name.startswith("_"):
             continue
         if py.name == "float64_leak_audit.py":

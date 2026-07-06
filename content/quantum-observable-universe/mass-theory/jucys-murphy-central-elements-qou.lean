@@ -1,3 +1,5 @@
+import QOU.Basic
+
 /-!
 # Jucys–Murphy central elements at the QOU substrate
 
@@ -40,8 +42,15 @@ structure HeckeJMSpectrum (R : Type*) [CommRing R] (q : R) (n : ℕ) where
   /-- The algebra (placeholder; full Hecke algebra is on
       qou:QOU.BraidKnot.HeckeAlgebra). -/
   algebra : Type*
+  /-- The algebra carries a ring structure (the Iwahori–Hecke algebra
+      `H_n(q)`); needed for the multiplicative statements below. -/
+  [ring : Ring algebra]
   /-- Jucys–Murphy elements J_1, …, J_n. -/
   jm : Fin n → algebra
+  /-- The elementary symmetric polynomial `e_ℓ(J_1,…,J_n)` evaluated in
+      the algebra — an abstract element whose centrality is asserted in
+      `jm_esymm_central` below (full Hecke construction pending). -/
+  esymmJM : ℕ → algebra
   /-- The q-content multiset of a partition λ. -/
   qContent : List ℕ → List R
   /-- Abstract `e_k` over a List R — the elementary symmetric
@@ -61,24 +70,31 @@ structure HeckeJMSpectrum (R : Type*) [CommRing R] (q : R) (n : ℕ) where
     ∀ ℓ : ℕ, ∀ lambda : List ℕ,
       centralScalar ℓ lambda = esymm ℓ (qContent lambda)
 
+attribute [instance] HeckeJMSpectrum.ring
+
 /-- Cell content c(□) = j − i for cell (i, j). -/
 def cellContent (i j : ℤ) : ℤ := j - i
 
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/jucys-murphy-central-elements-qou.ts
 /-- Step 1: The Jucys-Murphy elements pairwise commute. -/
 theorem jm_elements_commute
     {R : Type*} [CommRing R] (q : R) (n : ℕ)
     (sp : HeckeJMSpectrum R q n) (k l : Fin n) :
-    sp.jm k * sp.jm l = sp.jm l * sp.jm k := sorry
+    sp.jm k * sp.jm l = sp.jm l * sp.jm k :=
+  -- Ref: [jucys1974] Reports Math. Phys. 5 (1974); [murphy1992] J. Algebra
+  --   152 (1992) — the Jucys–Murphy elements pairwise commute. The proof
+  --   needs the full Hecke multiplication on `sp.algebra` (pending).
+  sorry
 
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/jucys-murphy-central-elements-qou.ts
 /-- Step 2: The symmetric polynomials in J_k are central. -/
-opaque jm_esymm_eval {R : Type*} [CommRing R] (q : R) (n : ℕ) (sp : HeckeJMSpectrum R q n) (ℓ : ℕ) : sp.algebra
-
 theorem jm_esymm_central
     {R : Type*} [CommRing R] (q : R) (n : ℕ)
     (sp : HeckeJMSpectrum R q n) (ℓ : ℕ) (x : sp.algebra) :
-    jm_esymm_eval q n sp ℓ * x = x * jm_esymm_eval q n sp ℓ := sorry
+    sp.esymmJM ℓ * x = x * sp.esymmJM ℓ :=
+  -- Ref: [murphy1992] J. Algebra 152 (1992) §2; [jucys1974] Reports Math.
+  --   Phys. 5 (1974) — the symmetric polynomials in the Jucys–Murphy
+  --   elements are central in H_n(q). `esymmJM` is an abstract structure
+  --   field; centrality needs the full Hecke multiplication (pending).
+  sorry
 
 /-- Murphy 1992: spectrum equation for e_ℓ(J_1,…,J_n) on V_λ.
 

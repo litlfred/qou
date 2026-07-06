@@ -47,7 +47,7 @@ For B1 to be *falsifiable* at the Vol-injectivity layer, we need
 | Anstee–Przytycki–Rolfsen pairs | non-mutant Jones-coincident knot pairs exist; volumes computed in some cases — Vol(K_1) = Vol(K_2) confirmed for known cases | Anstee–Przytycki–Rolfsen 1989 |
 | Jones-coincident pairs in Bring-embeddable class ($g \leq 4$) | open whether any exist | follows from Jones-faithfulness on $g \leq 4$, which is open per [`rem:knot-exhaustiveness`](#rem:knot-exhaustiveness) Q3 |
 
-### Why the CKT case is still informative for B1
+### Relevance of the CKT case to B1
 
 Even though the equality is forced by Ruberman (not by B1), the
 *mechanism* through which equality arises differs across frameworks:

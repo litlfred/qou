@@ -9,7 +9,7 @@ follow-up investigation (move state into Rust process memory).
 
 ## Methodology
 
-`folio-assistant/computations/markov_peel_rust_bridge.tr_M_atomic_rust_full`
+`computations/markov_peel_rust_bridge.tr_M_atomic_rust_full`
 called twice per atom in canonical sweep order:
 
 - **wall_cache** — with `use_prefix_cache=True`.  First atom is cold;

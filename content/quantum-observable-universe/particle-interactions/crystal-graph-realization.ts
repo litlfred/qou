@@ -13,7 +13,7 @@ export default conjecture({
     "kashiwara1991",
     "lecouvey2007",
     "khovanovlauda2009",
-    "carter-leal-saliola-2000",
+    "marsh2000",
   ],
   tags: [
     "tier:S",

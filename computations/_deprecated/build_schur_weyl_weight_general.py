@@ -156,7 +156,7 @@ def build_for_partition(parts: tuple[int, ...]) -> DerivationChain:
             "Mathlib's `Mathlib.Combinatorics.Young.YoungDiagram` "
             "exposes `hookLength`; the value is read off the Young "
             "diagram combinatorially.  Source on the Python side: "
-            "`folio-assistant/computations/schur_weyl_symbolic.hook_lengths`."
+            "`computations/schur_weyl_symbolic.hook_lengths`."
         ),
     ))
 

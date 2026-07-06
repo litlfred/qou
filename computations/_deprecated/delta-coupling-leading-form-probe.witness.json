@@ -133,7 +133,7 @@
     }
   },
   "caveats": [
-    "DIAGNOSTIC PROBE ONLY — does not fit Δ_coupling to AME. The (A−2)·E_0·log(1/h(q_0)) form is suggested by the data but would need to be derived from substrate primitives (KLR / Markov-trace structure) for inclusion in the §3b-cond canonical instance MagicShellCrossCoupling.canonicalCrossCoupling. A numerical near-fit is NOT acceptable as a Pattern-A/B Lean instance per CLAUDE.md §3b-cond + the trivial-skeleton workplan.",
+    "DIAGNOSTIC PROBE ONLY — does not fit Δ_coupling to AME. The (A−2)·E_0·log(1/h(q_0)) form is suggested by the data but would need to be derived from substrate primitives (KLR / Markov-trace structure) for inclusion in the §3b-cond canonical instance MagicShellCrossCoupling.canonicalCrossCoupling. A numerical near-fit is NOT acceptable as a Pattern-A/B Lean instance per AGENTS.md §3b-cond + the trivial-skeleton workplan.",
     "The 0.71% gap at the (2,2) doubly-magic anchor exceeds the 780 ppb hard floor by ~10000× — closing it requires either a structurally-derived correction term OR demonstrating that the residual lies within the topology-class assumption error of the magic-shell ansatz itself.",
     "(Z−N) chirality residual hypothesis (H2) is DEFERRED — needs Δ_cat for proton and neutron from PR #644's magic-shell-empirical-instantiation witness extension. The float64 prior run in PR #644 reports res(2,1) + res(1,2) = −0.257 MeV which would FALSIFY a pure (Z−N) ansatz; this probe should be re-run at 50 dps post-#644 merge to confirm."
   ]

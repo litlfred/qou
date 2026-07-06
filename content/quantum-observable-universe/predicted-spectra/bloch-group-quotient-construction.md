@@ -20,7 +20,7 @@ universal property.*
 
 See [Table](#tbl:bloch-group-quotient-construction-table-data).
 
-## What this closes
+## Gap closed
 
 **Item (1) of the three substantive Mathlib gaps.** The carrier
 types and class hooks from
@@ -30,7 +30,7 @@ genuine `AddCommGroup` (not a typeclass ansatz), with a
 canonical projection and universal property. The `HasBlochGroup ℝ`
 instance is concretely inhabited.
 
-## What's still open
+## Remaining open work
 
 **Constrain `PentagonShape F` to Rogers-form 5-tuples.** The
 current `PentagonShape F` accepts arbitrary 5-tuples of
@@ -80,3 +80,5 @@ unconditional `BlochSuslinUniqueness` is:
 (2) is partially closed at the boundary in
 [`cl2-pentagon-and-faddeev-partial.lean`](cl2-pentagon-and-faddeev-partial.lean).
 (3) and (4) remain Mathlib-pending substantive work.
+
+**Archimedean specialisation (§7c).** The pentagon / Bloch-group relation is instantiated at $\mathbb{R}$ (the Rogers-dilogarithm archimedean realisation) alongside the generic $\mathrm{BlochGroup}[\mathrm{Field}\ F]$ construction; the real instance is the archimedean specialisation, acknowledged here.

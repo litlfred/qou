@@ -35,12 +35,12 @@ cross from the left column to the right. Specifically:
  $\tau_{\mathrm{arch}}$ is applied. After $\tau_{\mathrm{arch}}$
  one has only the realised real numbers.
 
-* When a numerical equality bridges the two sides — e.g. the
+* When a canonical equality bridges the two sides — e.g. the
  mass formula
  $\tau_{\mathrm{arch}}(\mathfrak{m}^{\mathrm{trans}}(\varrho_K))
   = \rho_q \cdot \mathrm{Vol}_{\mathrm{hyp}}(U \setminus K)$ — it
  is a statement *about the functor*, not a derivation step on
- either side alone. Numerical comparisons of such bridges with
+ either side alone. canonical comparisons of such bridges with
  experimental data must use $\approx$ unless an explicit error
  term is present.
 

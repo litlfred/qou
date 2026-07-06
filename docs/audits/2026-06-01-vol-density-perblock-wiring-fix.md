@@ -8,7 +8,7 @@ function and exposes — does not hide — the resulting discrepancy.
 
 ## The bug
 
-Production `vol_density_borromean` (`folio-assistant/computations/_li_2_q_util.py`)
+Production `vol_density_borromean` (`computations/_li_2_q_util.py`)
 computes the baryon mass geometric factor as
 
 ```
@@ -42,7 +42,7 @@ This corroborates PR #1608's finding independently.
 
 ## Discipline gate — RED (raw, zero fudge)
 
-`folio-assistant/computations/vol_density_per_block_wiring.py` computes
+`computations/vol_density_per_block_wiring.py` computes
 both readings at `q_0`. Verdict: the per-block sum does **NOT**
 reproduce production at any order with zero fudge.
 

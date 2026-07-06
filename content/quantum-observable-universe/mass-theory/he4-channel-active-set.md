@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 ## Setup
 
 The $^4\mathrm{He}$ bound state admits three primary compositional
@@ -18,7 +16,7 @@ $$
 — the binding that the magic-shell coupling
 must explain *beyond* the free-constituent sum. Empirical anchors
 loaded from
-[`magic-shell-empirical-instantiation.witness.json`](folio-assistant/computations/magic-shell-empirical-instantiation.witness.json).
+[`magic-shell-empirical-instantiation.witness.json`](computations/magic-shell-empirical-instantiation.witness.json).
 
 ## LP formulation
 
@@ -55,7 +53,7 @@ $$
 ## Proposition
 
 **(Conditional on
-[`he4-sdp-compositional-probe.witness.json`](folio-assistant/computations/he4-sdp-compositional-probe.witness.json).)**
+[`he4-sdp-compositional-canonical evaluation.witness.json`](computations/he4-sdp-compositional-canonical evaluation.witness.json).)**
 For the $^4\mathrm{He}$ operator-selection LP defined above:
 
 1. **Unique primal optimum** at the $\mathrm{T} \oplus p$ channel:

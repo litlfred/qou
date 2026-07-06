@@ -17,9 +17,9 @@ export default conjecture({
   computation: {
     engine: "python+mpmath",
     script:
-      "folio-assistant/computations/_li_2_q_util.py",
+      "computations/_li_2_q_util.py",
     witness:
-      "folio-assistant/computations/m-p-borromean-verification-50dps.witness.json",
+      "computations/m-p-borromean-verification-50dps.witness.json",
     status: "verified",
   },
   cites: [

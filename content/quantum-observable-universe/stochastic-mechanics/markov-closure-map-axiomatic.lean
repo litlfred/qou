@@ -1,4 +1,5 @@
 import Mathlib.Tactic
+import QOU.BraidKnot.BraidLinkTypes
 
 /-!
 # QOU.BraidKnot.markov_closure_map_axiomatic
@@ -23,7 +24,6 @@ LaTeX label: `rem:markov-closure-map-axiomatic` (Track C Step B).
 -- Sibling-chapter dependency: `Link` inductive (with `hopfLink`
 -- constructor) defined in `braid-link-types.lean`.
 -- Ref: [manuscript] rem:braid-link-types
-import QOU.BraidKnot.BraidLinkTypes
 
 namespace QOU.BraidKnot
 
@@ -87,8 +87,8 @@ class TrackCReducedAxiom (q : ℝ) [MarkovClosureMap2Strand] : Prop where
     Hopf-Jones identification c_3 = -2 follows immediately. -/
 theorem track_C_c_3_eq_neg_two (q : ℝ) [MarkovClosureMap2Strand]
     [TrackCReducedAxiom q] :
-    MarkovClosureMap2Strand.jones_at_one 2 = -2 := by
-  exact TrackCReducedAxiom.c_3_eq_jones_hopf_at_one
+    MarkovClosureMap2Strand.jones_at_one 2 = -2 :=
+  TrackCReducedAxiom.c_3_eq_jones_hopf_at_one q
 
 /-! ## Status
 

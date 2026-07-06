@@ -22,13 +22,13 @@ PSLQ tolerance dps = 80, coefficient ≤ 10³⁰ (matching
 
 ## Method
 
-Script: [`q_dilog_vhat_spike_lambda_scale.py`](../../folio-assistant/computations/q_dilog_vhat_spike_lambda_scale.py).
+Script: [`q_dilog_vhat_spike_lambda_scale.py`](../../computations/q_dilog_vhat_spike_lambda_scale.py).
 
 ### Path (a) — operator-valued $\hat V_S$ (signed)
 
 For the canonical proton braid in $H_3$ (Z=1, N=0, A=1), extract
 $\hat V_i^\lambda$ values via
-[`canonical_tower.per_irrep_V_hat`](../../folio-assistant/computations/canonical_tower.py).
+[`canonical_tower.per_irrep_V_hat`](../../computations/canonical_tower.py).
 Per partition $\lambda \vdash 3$ and generator $i \in \{0, 1\}$
 (values are signed):
 
@@ -143,7 +143,7 @@ non-tested basis element would not be caught).
 ## Recommendation
 
 Track as a third consistent-negative tier. The remaining productive
-research directions per CLAUDE.md cheat-sheet Migration Backlog #1
+research directions per AGENTS.md cheat-sheet Migration Backlog #1
 are:
 
 1. **Extend $|\hat V_S|$ to higher Hecke levels** — the
@@ -165,4 +165,4 @@ explicit acknowledged-CAL-4 anchor.
 
 ## Witness
 
-[`folio-assistant/computations/q-dilog-vhat-spike-lambda-scale.witness.json`](../../folio-assistant/computations/q-dilog-vhat-spike-lambda-scale.witness.json)
+[`computations/q-dilog-vhat-spike-lambda-scale.witness.json`](../../computations/q-dilog-vhat-spike-lambda-scale.witness.json)

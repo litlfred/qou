@@ -1,0 +1,105 @@
+{
+ "computation": "pauli-young-spin-isospin-delta-lambda",
+ "description": "Parameter-free Pauli-Young/Wigner-SU(4) spin-isospin Delta_lambda test: Delta_lambda(A)=<s_lambda,e_A[h_3]> plethysm multiplicities fed into the canonical Path-D binding B=m_e|sum y_lambda chi^lambda Delta_lambda|.",
+ "scriptFile": "computations/probes/pauli_young_spin_isospin_delta_lambda_probe.py",
+ "parameters": {
+  "q_0": "1.10997858275138080759166909561076887987449912187357763605672",
+  "m_e_MeV": "0.51099895069",
+  "free_parameters": 0
+ },
+ "data": {
+  "atoms": [
+   {
+    "atom": "deuteron",
+    "Z": 1,
+    "N": 1,
+    "A": 2,
+    "n_strands": 6,
+    "delta_lambda": {
+     "5,1": 1,
+     "3,3": 1
+    },
+    "sum_delta_lambda": 2,
+    "nonzero_blocks": 2,
+    "signed_sum": "0.249641569690492312921448943942",
+    "B_pred_MeV": "0.127566580160446079972371538749",
+    "B_AME_MeV": "2.224566",
+    "rel_error_pct": "-94.2655520151",
+    "factor": "0.0573444798493"
+   },
+   {
+    "atom": "tritium",
+    "Z": 1,
+    "N": 2,
+    "A": 3,
+    "n_strands": 9,
+    "delta_lambda": {
+     "7,1,1": 1,
+     "6,3": 1,
+     "5,3,1": 1,
+     "3,3,3": 1
+    },
+    "sum_delta_lambda": 4,
+    "nonzero_blocks": 4,
+    "signed_sum": "0.0470559206034522239033962175206",
+    "B_pred_MeV": "0.0240455260521160380061824030803",
+    "B_AME_MeV": "8.481798",
+    "rel_error_pct": "-99.7165043773",
+    "factor": "0.00283495622651"
+   },
+   {
+    "atom": "helium-3",
+    "Z": 2,
+    "N": 1,
+    "A": 3,
+    "n_strands": 9,
+    "delta_lambda": {
+     "7,1,1": 1,
+     "6,3": 1,
+     "5,3,1": 1,
+     "3,3,3": 1
+    },
+    "sum_delta_lambda": 4,
+    "nonzero_blocks": 4,
+    "signed_sum": "0.08194926960829636909834517946",
+    "B_pred_MeV": "0.0418759907796513519277913281195",
+    "B_AME_MeV": "7.718043",
+    "rel_error_pct": "-99.4574273455",
+    "factor": "0.00542572654488"
+   },
+   {
+    "atom": "helium-4",
+    "Z": 2,
+    "N": 2,
+    "A": 4,
+    "n_strands": 12,
+    "delta_lambda": {
+     "9,1,1,1": 1,
+     "8,3,1": 1,
+     "7,4,1": 1,
+     "7,3,1,1": 1,
+     "6,6": 1,
+     "6,4,2": 1,
+     "6,3,3": 1,
+     "5,5,1,1": 1,
+     "5,3,3,1": 1,
+     "3,3,3,3": 1
+    },
+    "sum_delta_lambda": 10,
+    "nonzero_blocks": 10,
+    "signed_sum": "0.00581644483725759748892416596943",
+    "B_pred_MeV": "0.00297219720858490013407062770736",
+    "B_AME_MeV": "28.295673",
+    "rel_error_pct": "-99.9894959303",
+    "factor": "0.000105040696808"
+   }
+  ],
+  "deuteron_pn_weight": {
+   "E0_MeV": "4.18598136329447589694506215876",
+   "pn_weight_from_AME": "0.571913220007870854255074200871",
+   "pn_weight_from_pred": "0.0327960661202917297997171713156",
+   "target": "0.572"
+  },
+  "verdict_deuteron": "FAIL_CLEAN"
+ }
+}

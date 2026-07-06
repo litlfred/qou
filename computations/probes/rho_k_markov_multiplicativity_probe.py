@@ -60,6 +60,7 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
+from mpmath import mpf
 from char_fast import chi_lambda_fast  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
@@ -69,6 +70,10 @@ from sublemma_2_1_deuteron_branching import (  # noqa: E402
     partitions_of,
 )
 from witness_base import WitnessBuilder  # noqa: E402
+
+# Near-zero tolerance for direct character values; module-level to avoid
+# re-parsing the literal into an mpf on every loop iteration.
+EPS = mpf("1e-12")
 
 
 def main() -> int:
@@ -89,7 +94,7 @@ def main() -> int:
     )
     w.set_content_block("prop:rho-k-graded-expansion")
 
-    q_val = float(Q0)
+    q_val = Q0
 
     # Per-nucleon H_3 words (no interface).
     beta_p = atom_braid_word_3A(1, 0, include_inter=False)
@@ -121,10 +126,12 @@ def main() -> int:
                     continue
                 s += c * chi_p[mu] * chi_n[nu]
         direct = chi_disjoint[lam]
-        if abs(direct) < 1e-12:
-            rel = abs(direct - s)
+        abs_direct = abs(direct)
+        abs_diff = abs(direct - s)
+        if abs_direct < EPS:
+            rel = abs_diff
         else:
-            rel = abs(direct - s) / abs(direct)
+            rel = abs_diff / abs_direct
         rel_diffs.append(rel)
         per_lambda.append({
             "lambda": list(lam),
@@ -165,8 +172,8 @@ def main() -> int:
     w.add_assertion(
         name="wenzl_branching_identity_machine_precision",
         computed=max_rel,
-        expected=0.0,
-        tolerance=1e-12,
+        expected=mpf("0.0"),
+        tolerance=mpf("1e-12"),
         source=(
             "prop:rho-k-graded-expansion cites the Wenzl 1988 branching "
             "identity χ^λ(β_p ⊗ β_n) = Σ c^λ_{μν} χ^μ χ^ν verified to "
@@ -176,7 +183,7 @@ def main() -> int:
     )
     w.add_assertion(
         name="branching_verified_all_lambda_6",
-        computed=1 if max_rel < 1e-6 else 0,
+        computed=1 if max_rel < mpf("1e-6") else 0,
         expected=1,
         tolerance=0,
         source="branching identity holds for all 11 partitions λ ⊢ 6",

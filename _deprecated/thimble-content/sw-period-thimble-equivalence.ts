@@ -35,9 +35,9 @@ export default proposition({
   },
   computation: {
     engine: "scipy",
-    script: "folio-assistant/computations/sw_period_thimble_equivalence.py",
+    script: "computations/sw_period_thimble_equivalence.py",
     witness:
-      "folio-assistant/computations/sw-period-thimble-equivalence.witness.json",
+      "computations/sw-period-thimble-equivalence.witness.json",
     status: "not_run",
     requires: ["numpy", "scipy"],
   },

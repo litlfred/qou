@@ -21,7 +21,7 @@ $$
 *with kernel coefficients $\{a_j\}$ extracted from $R(q_0, \xi)$ via the
 $(u;u)_m \to u^k$ change-of-basis of the Habiro ring (Habiro 2004).*
 
-## Why this is the right structure
+## Structural justification
 
 The shape-collapse audit (PR [#1750](https://github.com/litlfred/qou/pull/1750))
 established the operator content: $T_\beta = S \cdot \mathbf{1}$, with
@@ -30,12 +30,12 @@ $S$ pinned by the SDP constraint. The SDP strict-complementarity audit
 *direction* of the selector is $S$-independent and $q$-rational. The
 diagnostic
 [`prop:q-beta-over-e0-classical-vanishing`](q-beta-over-e0-classical-vanishing.md)
-showed the SDP-constraint scalar $S = Q_\beta/E_0$ is *not* the ladder
-normalization. Together these pin $F(q) = Q_\beta(q)/[Q_A(q) \cdot \cos(\alpha_{\mathrm{eff}}(q))]$
+showed the SDP-constraint scalar $S = \mathfrak{Q}_\beta/E_0$ is *not* the ladder
+normalization. Together these pin $F(q) = \mathfrak{Q}_\beta(q)/[Q_A(q) \cdot \cos(\alpha_{\mathrm{eff}}(q))]$
 as a single fibre-level Habiro object whose $q$-difference structure
 determines the $c_k$.
 
-## What the recursion buys
+## Consequences of the recursion
 
 Once a *single* $F$ is identified, the seven scalar coefficients
 $c_2, \ldots, c_8$ (required for the $1\,\mathrm{ppQ}$ truncation
@@ -51,26 +51,26 @@ Compare to the brute force: each $c_k$ ($k \ge 3$) currently requires
 its own derivation (see the four-session $c_3$ flip-flop in
 [`docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md))
 or is extracted from the CODATA residual (the caveat of
-[`qbeta-1ppq-achieved.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/qbeta/qbeta-1ppq-achieved.witness.json)
+[`qbeta-1ppq-achieved.witness.json`](https://github.com/litlfred/qou/blob/main/computations/qbeta/qbeta-1ppq-achieved.witness.json)
 where $c_4 = -0.97157$ was a fit).
 
-## The kernel — what's known, what's open
+## The kernel — known and open components
 
 | Slot | Status | Source |
 |---|---|---|
 | Seed $c_2 = -1$ | **proved** | PR [#1602](https://github.com/litlfred/qou/pull/1602), bar-even constraint |
 | $c_3 \approx -2$ | near-match (3 % cross-anchor swing) | empirical, four sessions of analysis |
-| $c_4$ at $1\,\mathrm{ppQ}$ | fit (CODATA residual), value $-0.97157$ | [`qbeta_1ppq_achieved.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/qbeta/qbeta_1ppq_achieved.py) |
+| $c_4$ at $1\,\mathrm{ppQ}$ | fit (CODATA residual), value $-0.97157$ | the canonical formalism |
 | $c_5, \ldots, c_8$ | not derived | open |
-| Kernel $R(q,\xi)$ | structurally constrained: bar-ODD leading $a_1=-c_3$ (carrier $\kappa_{(2,1)}=(q-1)^3(q+1)/q^2$), period-3/$\zeta_6$ resonance, $\sqrt{u}$-to-$u^2$ lift. The $\zeta_4$ residue is **relaxed** — the root-of-unity residue program shows neither the content-Casimir $\mu_\lambda$ nor the framing $\cos\alpha_{\mathrm{eff}}$ supplies a bar-odd-compatible genuine $\zeta_4(q)$; it is a $\sqrt{q}$ double-cover reading of $\zeta_2$ (bar-fixed $q=-1$) or a post-$\cos$-wrap archimedean feature, **not** a fibre constraint. | [`habiro_ladder_bridge.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/habiro/habiro_ladder_bridge.py), [root-of-unity program audit](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-13-qbeta-root-of-unity-residue-program.md) |
-| Habiro element $F(q)$ | **identified (structural analog)** | mirroring α_EM `[2]_q(1-h²α)` per PR #1911 |
+| Kernel $R(q,\xi)$ | structurally constrained: bar-ODD leading $a_1=-c_3$ (carrier $\kappa_{(2,1)}=(q-1)^3(q+1)/q^2$), period-3/$\zeta_6$ resonance, $\sqrt{u}$-to-$u^2$ lift. The $\zeta_4$ residue is **relaxed** — the root-of-unity residue program shows neither the content-Casimir $\mu_\lambda$ nor the framing $\cos\alpha_{\mathrm{eff}}$ supplies a bar-odd-compatible genuine $\zeta_4(q)$; it is a $\sqrt{q}$ double-cover reading of $\zeta_2$ (bar-fixed $q=-1$) or a post-$\cos$-wrap archimedean feature, **not** a fibre constraint. | the canonical formalism, [root-of-unity program audit](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-13-qbeta-root-of-unity-residue-program.md) |
+| Habiro element $F(q)$ | **identified (structural analog)** | mirroring $\alpha_{EM}$ $[2]_q(1-h^2\alpha)$ |
 
-## What this content block provides
+## Contents of this content block
 
 - A formal Lean structure
   `CKRecursion R` capturing the depth $d$ + kernel $\{a_j\}$ data
   ([`q-beta-c-k-recursion-from-habiro-q-difference.lean`](q-beta-c-k-recursion-from-habiro-q-difference.lean)).
-- A method `applyRecursion : (Fin depth → R) → R` that performs one
+- A method `applyRecursion : (Fin depth -> R) -> R` that performs one
   step of the recursion given the last $d$ values of the $c_k$
   sequence.
 - The **parity-alternation theorem** `esymm_bar_parity` (sorry-free):
@@ -104,18 +104,18 @@ where $c_4 = -0.97157$ was a fit).
   integral domain) $\Phi_n$ is self-reciprocal —
   $\operatorname{reverse}(\Phi_n) = \Phi_n$, equivalently
   $\Phi_n(1/q)\,q^{\varphi(n)} = \Phi_n(q)$ — subsuming **all** the explicit and
-  prime cases above, including every composite $d$ (4, 8, 9, …). Mathlib carries
+  prime cases above, including every composite $d$ (4, 8, 9, $\ldots$). Mathlib carries
   no cyclotomic palindrome lemma; this is proved here by strong induction on the
   divisor product $\prod_{d \mid n}\Phi_d = X^n - 1$ (peeling $d=1$ for the
   anti-palindrome sign, the inductive hypothesis on $1 < d < n$, then cancelling
-  the nonzero proper-divisor product), with the eval form following via
-  `eval₂_reverse_mul_pow`.
+  the nonzero proper-divisor product), with the evaluation form following
+  from the corresponding polynomial `reverse` lemma.
 - A companion compute scaffold
-  ([`qbeta_c_k_recursion_scaffold.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/qbeta/qbeta_c_k_recursion_scaffold.py))
+  (the canonical formalism)
   demonstrating the recursion machinery on toy depth-1 and depth-2
   kernels, with the seed $c_2 = -1$.
 
-## Closing the open piece — the q-heat kernel derivation
+## Closure of the open piece — the q-heat kernel derivation
 
 The Habiro element $F(q)$ is identified as the **partition function** (the trace of the $q$-heat kernel) over the relevant Hecke modules:
 
@@ -123,7 +123,7 @@ $$Z_q(t) = \sum_{\lambda \in \Lambda} d_\lambda(q) \cdot \exp_q(-\mu_\lambda(q) 
 
 where $\Lambda$ is the set of active Hecke blocks, $d_\lambda(q)$ are the Steinberg $q$-hook dimensions, and $\mu_\lambda(q)$ are the content-Casimir eigenvalues ([Peter--Weyl $q$-heat kernel](#prop:q-heat-kernel-peter-weyl)).
 
-The $q$-difference equation for $F(q)$ is then derived from the depth-1 Jackson equations of each mode $\exp_q(-\mu_\lambda t)$ ([per-mode $q$-difference](#thm:heat-mode-depth-one-kernel)):
+The $q$-difference equation for $F(q)$ is then derived from the depth-1 Jackson equations of each mode $\exp_q(-\mu_\lambda t)$ (per-mode $q$-difference):
 
 1. **Per-mode kernel**: Each mode satisfies $f_\lambda(qt) = (1 - (q-1)\mu_\lambda t) f_\lambda(t)$.
 2. **Composition**: The net partition function $Z_q$ satisfies a $q$-difference equation of depth $|\Lambda|$, with coefficients determined by the elementary symmetric polynomials of the per-mode kernels.
@@ -136,11 +136,11 @@ predictor.
 
 ### The q-Bessel identification of $F$ (fibre-level)
 
-The partition function $Z_q$ above **is**, at the fibre level, a **Hahn–Exton
+The partition function $Z_q$ above **is**, at the fibre level, a **Hahn--Exton
 q-Bessel function** — the matrix coefficient of the quantum motion group
 $E_q(2)$, i.e. the $\mathrm{SU}_q(2)\to E_q(2)$ contraction limit of the
 substrate (PR [#2279](https://github.com/litlfred/qou/pull/2279);
-Vaksman–Korogodsky 1989, Koelink 1994 \cite{koelink1994}). Concretely, the
+Vaksman--Korogodsky 1989, Koelink 1994 \cite{koelink1994}). Concretely, the
 ladder coefficients $c_k$ are its q-Bessel power-series coefficients, obeying
 the first-order q-recurrence $c_k(1-q^k)(1-q^{\nu+k}) = -q^{k-1}c_{k-1}$ —
 equivalently the **second-order q-difference equation** (the q-Bessel
@@ -169,7 +169,7 @@ wired to production; $c_k$ stays cal-anchored.
 
 ## Literature — AJ-recurrence parent + a quantum-modularity remark
 
-This depth-$d$ recurrence is the $Q_\beta$-specialised image of the
+This depth-$d$ recurrence is the $\mathfrak{Q}_\beta$-specialised image of the
 **q-holonomic (AJ) recurrence** for quantum knot invariants \cite{garoufalidis2004}:
 the colored Jones $J_N(K;q)$ satisfies $\hat{A}(\hat{M},\hat{L};q)\,J_N = 0$ in
 the colour $N$ (with $\hat{M}J_N = q^N J_N$, $\hat{L}J_N = J_{N+1}$,
@@ -178,17 +178,3 @@ $A$-polynomial as $q\to 1$. Habiro's cyclotomic re-basing $(u;u)_m \to u^k$ —
 the **same** change-of-basis the $c_k$ use — pushes that recurrence onto the
 cyclotomic coefficients. Ours differs only in the index (truncation order $k$,
 not colour $N$) and in modelling $F$ by the $q$-heat partition function.
-
-**Remark (quantum-modularity of the bar-involution; conjectural, not proven).**
-The bar-involution $q\mapsto q^{-1}$ that fixes the leading coefficient
-$a_1 = -c_3$ as **bar-odd** is conjecturally the fibre-level avatar of the
-**quantum-modular $S$-transform** $q\mapsto\tilde q$ \cite{zagier2010}: the
-Kashaev / colored-Jones asymptotics near roots of unity are quantum modular,
-with a $\sqrt{2\pi/\hbar}$ radial prefactor (the framework's $\sqrt{u}$) and an
-$\hbar$-series of Ohtsuki periods. Under this reading the bar-odd requirement on
-$a_1$ is the *odd part under the $S$-transform*, the $\sqrt{u}$ prefactor is the
-radial asymptotic, and the failure of the naive $q$-dilogarithm route is the
-vanishing of the modular cocycle's Bloch–Wigner (volume) term on the
-**non-hyperbolic** Hopf link. This is a motivated analogy, **not a theorem** —
-establishing it would require exhibiting $F(q)$ as a quantum modular form.
-Full discussion: [`docs/audits/2026-06-13-qbeta-heat-fmap-symbolic-and-literature.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-13-qbeta-heat-fmap-symbolic-and-literature.md).

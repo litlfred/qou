@@ -37,8 +37,15 @@ import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
 # ── Fundamental constants (CODATA 2022) ─────────────────────────
-
-M_E_MEV     = 0.51099895000   # ± 0.00000000015 MeV
+# Single source of truth: codata_2022_source.M_E_MEV = 0.51099895069(15)
+# MeV (full 11-sig-fig CODATA-2022; same module codata_constants.py
+# imports from). float()-cast on import so the ~266 importers' float
+# arithmetic / json.dumps stay intact (an mpf would break json.dumps);
+# the cast value is bit-identical to the prior literal. The old literal
+# 0.51099895000 was truncated by 3 figs. The computations/ dir is on
+# sys.path via the path bridge above, so this resolves cleanly.
+from codata_2022_source import M_E_MEV as _M_E_MEV  # noqa: E402
+M_E_MEV     = float(_M_E_MEV)   # ± 0.00000000015 MeV
 M_E_MEV_ERR = 0.00000000015
 
 # Energy scale for Q-values: κ = m_e / 3
@@ -71,6 +78,14 @@ M_N_MINUS_P_MEV_ERR = 0.0000005    # https://physics.nist.gov/cgi-bin/cuu/Value?
 import math as _math
 Q_NEUTRON_MEV     = M_N_MEV - M_P_MEV - M_E_MEV            # 0.78233341 MeV
 Q_NEUTRON_MEV_ERR = _math.sqrt(M_N_MEV_ERR**2 + M_P_MEV_ERR**2 + M_E_MEV_ERR**2)
+
+# m_n via the 3-input scheme (m_n = m_p + Q_β + m_e) — the canonical anchor
+# list pins m_p, m_e and the β-decay sector, deriving m_n rather than using
+# it as a 4th input. Numerically identical to M_N_MEV by construction
+# (Q_NEUTRON_MEV = M_N_MEV − M_P_MEV − M_E_MEV), so this is the same CODATA
+# value, named for the 3-input consumers. Restores the missing export that
+# delta_lambda_empirical_tabulation.py imports (bean t2vq).
+m_n_derived_3input = M_P_MEV + Q_NEUTRON_MEV + M_E_MEV     # = M_N_MEV
 
 G_F_MEV     = 1.1663788e-11   # ± 0.0000006e-11 MeV⁻²
 G_F_MEV_ERR = 0.0000006e-11

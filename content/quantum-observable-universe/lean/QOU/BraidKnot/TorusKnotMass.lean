@@ -1,9 +1,11 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.TorusKnotMass — torus-knot mass class extending VolumeConjecture
 
 **Refinement scaffolding** for the RT-route SM mass derivation, per
 [`docs/audits/2026-05-24-pr1122-retraction-and-existing-canonical-adaptation.md`](../../../../../docs/audits/2026-05-24-pr1122-retraction-and-existing-canonical-adaptation.md)
-§3.B + [`docs/audits/2026-05-24-rt-binomial-cherry-pick-trace-evaluation`](../../../../../folio-assistant/computations/rt-binomial-trace-evaluation-probe.witness.json).
+§3.B + [`docs/audits/2026-05-24-rt-binomial-cherry-pick-trace-evaluation`](../../../../../computations/rt-binomial-trace-evaluation-probe.witness.json).
 
 The hyperbolic-knot mass-derivation chain uses
 [`QOU.Kashaev.VolumeConjecture`](../Kashaev.lean) to identify
@@ -26,7 +28,7 @@ scaffolds the class structure: `TorusKnotMass` extends
 Downstream theorems take `[TorusKnotMass q_0]` as instance hypothesis.
 
 Empirical input (from probes, NOT proved):
-- From [`rt_binomial_trace_evaluation_probe.py`](../../../../../folio-assistant/computations/probes/rt_binomial_trace_evaluation_probe.py):
+- From [`rt_binomial_trace_evaluation_probe.py`](../../../../../computations/probes/rt_binomial_trace_evaluation_probe.py):
   - mass / P_m(h_0) ≈ 143 for gauge bosons (W, Z)
   - mass / P_m(h_0) ≈ 171 for Higgs scalar (H)
   - W/Z ratio matches SM cos θ_W within 1% from binomial pattern alone
@@ -48,7 +50,7 @@ namespace QOU.BraidKnot
     PR #1128) is captured here as a TARGET that a complete instance
     would establish.
 
-    Per CLAUDE.md §3b-cond: the class fields encode the conjectural
+    Per AGENTS.md §3b-cond: the class fields encode the conjectural
     content; the `noncomputable instance` is the open structural
     statement. -/
 class TorusKnotMass where
@@ -118,7 +120,5 @@ end TorusKnotMass
 -- A complete instance would supply these specific values + their derivation
 -- from the gauge-coupling chain (g, g', λ).
 -- Ref: [manuscript] docs/audits/2026-05-24-pr1122-retraction-and-existing-canonical-adaptation.md §3.B
-noncomputable instance : TorusKnotMass := by
-  trivial
-
+noncomputable instance : TorusKnotMass := sorry
 end QOU.BraidKnot

@@ -1,0 +1,19 @@
+{
+  "description": "A(D) follow-up to the GAP-A-3 §4 flat-baseline probe: the Phase-4-derived A(D) vs the flat baseline. Quantifies how far the binding P_lambda must deviate from flat (P_lambda=1) for the deuteron. No fit; no P_lambda proposed.",
+  "computation": "computations/gap_a3_deuteron_A_D_overshoot.py",
+  "q0": "1.1099785955541805",
+  "dps": 30,
+  "inputs": {
+    "Vol_hyp_D": "12.776 (PR #787 Phase-3, Z=1 cluster)",
+    "tr_M_beta_D": "0.38835725751524 (canonical, #2626)",
+    "target_minus_B_D_over_me": "4.353",
+    "A_formula": "Vol_hyp(K)/[8]_q · [3]_q^{2(Z-1)} · (q^{1/2}+q^{-1/2})^{4N}; D: Z=1,N=1"
+  },
+  "A_D_derived": "22.97545113",
+  "flat_baseline_A_D_times_trM": "8.922683193",
+  "overshoot_factor": "2.0497779",
+  "overshoot_band_A_pm_2.5pct": "[1.9985, 2.101]",
+  "required_suppression_ratio": "0.48785773",
+  "verdict": "Phase-4 A(D)=22.98 (not the 11.21 a flat P_lambda would need); the flat baseline overshoots the deuteron binding by ~2.05x, so the bar-even P_lambda must suppress the effective trace to ~48.8% of flat. With #2626 (flat trace is bar-mixed), the deuteron P_lambda must bar-symmetrise AND ~halve the trace. The ~2.05 overshoot is consistent with exactly 2 within A(D)'s <=2.5% band but NOT pinned; a clean factor-1/2 (or any specific P_lambda) would be a fit and is NOT asserted.",
+  "discipline": "No fit; no 7th ansatz; no P_lambda proposed; nothing wired; c_k/Delta_lambda cal-anchored."
+}

@@ -26,9 +26,9 @@ export default theorem({
   ],
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/mass_formula_6term_mpfr_50dps.py",
+    script: "computations/mass_formula_6term_mpfr_50dps.py",
     witness: [
-      "folio-assistant/computations/mass-formula-6term-mpfr-50dps.witness.json",
+      "computations/mass-formula-6term-mpfr-50dps.witness.json",
     ],
     status: "experimental",
   },

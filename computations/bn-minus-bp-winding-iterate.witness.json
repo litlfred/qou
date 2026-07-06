@@ -1,0 +1,201 @@
+{
+  "name": "bn-minus-bp-winding-iterate",
+  "description": "The single-nucleon winding iterate β^k on 3 strands as the §4a brane-tower candidate (parity-preserving alternative to the A-nucleon strand tower). Root cause: bar-odd order-parity = (word length=11k) mod 2, so parity alternates with k exactly as the strand tower alternates with A. The odd-k subtower preserves odd parity but its §4a single-x over-determination residual does NOT shrink (6.84% at k=1 → no-solution k=3 → ~95-100% k=5 → erratic k=7) — REFUTED. Both natural embeddings (strand + winding) fail the §4a q-Bessel keystone. TIERED; nothing wired.",
+  "auditOnly": true,
+  "probe": true,
+  "substrate": {
+    "q0_proton": 1.1099785955573347,
+    "q0_pin": "proton (canonical)"
+  },
+  "candidate": {
+    "name": "single-nucleon winding iterate β^k (H_3, λ⊢3)",
+    "beta_p_k": "atom_canonical_crossings(1,0,include_inter=False) * k",
+    "beta_n_k": "atom_canonical_crossings(0,1,include_inter=False) * k",
+    "committed_a_priori": true
+  },
+  "root_cause": {
+    "statement": "bar-odd order-parity = (Hecke word length) mod 2 (Hoefsmit factors are degree ±1 in q); nucleon word length = 11 (odd), so β^k parity = k mod 2",
+    "parity_by_k": [
+      {
+        "k": 1,
+        "word_length": 11,
+        "orders": [
+          1,
+          3,
+          5
+        ],
+        "parity": "odd",
+        "expected_from_length": "odd"
+      },
+      {
+        "k": 2,
+        "word_length": 22,
+        "orders": [
+          2,
+          6,
+          8,
+          10
+        ],
+        "parity": "even",
+        "expected_from_length": "even"
+      },
+      {
+        "k": 3,
+        "word_length": 33,
+        "orders": [
+          1,
+          3,
+          5,
+          7,
+          9,
+          11,
+          13,
+          15,
+          17,
+          21,
+          23,
+          25
+        ],
+        "parity": "odd",
+        "expected_from_length": "odd"
+      }
+    ]
+  },
+  "winding_subtower_test": [
+    {
+      "k": 1,
+      "word_length": 11,
+      "odd_orders": [
+        1,
+        3,
+        5
+      ],
+      "single_x": "4.52488546341",
+      "res_W5": "0.0683508",
+      "res_max": "0.0683508"
+    },
+    {
+      "k": 3,
+      "word_length": 33,
+      "odd_orders": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        21,
+        23,
+        25
+      ],
+      "single_x": null,
+      "res_W5": null,
+      "res_max": null,
+      "note": "no single-x solution"
+    },
+    {
+      "k": 5,
+      "word_length": 55,
+      "odd_orders": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23,
+        25,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37,
+        39,
+        41,
+        43,
+        45,
+        47
+      ],
+      "single_x": "2.89151597102",
+      "res_W5": "0.95118",
+      "res_max": "1.00001"
+    },
+    {
+      "k": 7,
+      "word_length": 77,
+      "odd_orders": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23,
+        25,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37,
+        39,
+        41,
+        43,
+        45,
+        47,
+        49,
+        51,
+        53,
+        55,
+        57,
+        59,
+        61,
+        63,
+        65,
+        67,
+        69
+      ],
+      "single_x": "4.16743713722",
+      "res_W5": "0.134882",
+      "res_max": "34.2638"
+    }
+  ],
+  "verdict": {
+    "converges_to_q_bessel": false,
+    "reading": "REFUTED — odd-k winding residual does not shrink toward 0; not the Hahn-Exton q-Bessel tower object",
+    "combined": "both natural embeddings refuted: A-nucleon strand tower (parity obstruction at even levels) + winding iterate (non-convergent odd-k subtower)"
+  },
+  "assertions": [
+    {
+      "name": "order_parity_equals_crossing_count_parity",
+      "computed": true,
+      "expected": true,
+      "ok": true
+    },
+    {
+      "name": "winding_subtower_residual_does_not_converge",
+      "computed": true,
+      "expected": true,
+      "ok": true
+    }
+  ],
+  "witness": {
+    "scriptCommitSha": "",
+    "scriptHash": "c37557cb9012",
+    "producer": "computations/probes/bn_minus_bp_winding_iterate_probe.py"
+  }
+}

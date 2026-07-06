@@ -167,7 +167,7 @@ Key axiom-heavy files:
 
 ### 1.5 Bare Sorry Violations (no `-- Ref:` citation)
 
-Per CLAUDE.md §1, every `sorry` requires a bibliographic citation. **60 out of 70 sorrys lack a `-- Ref:` comment.** Only these have citations:
+Per AGENTS.md §1, every `sorry` requires a bibliographic citation. **60 out of 70 sorrys lack a `-- Ref:` comment.** Only these have citations:
 - `vertex-algebra-relations.lean` — 3 sorrys with Ref: [jones1987], [kassel1995]
 - `shell-closure-normal-form.lean` — 1 sorry with Ref: [kazhdan-lusztig1979]
 - `skein-finiteness-bound.lean` — 3 sorrys with Ref: [manuscript]
@@ -206,7 +206,7 @@ Per CLAUDE.md §1, every `sorry` requires a bibliographic citation. **60 out of 
 | Literal escape sequences (`\n`, `\t`) | All .md + .tex | **0** |
 | Empty `\begin{}`/`\end{}` | All .tex | **0** |
 | Quadruple dollar signs `$$$$` | All .tex | **0** |
-| Multi-line inline math | Valid per CLAUDE.md §2 | N/A |
+| Multi-line inline math | Valid per AGENTS.md §2 | N/A |
 
 ### 2.4 Reference Validation
 

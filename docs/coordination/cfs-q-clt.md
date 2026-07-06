@@ -75,7 +75,7 @@ post unless there's a real coordination need).
 - Two new propositions provable from existing infrastructure
   (locality reconciliation, brane-tower decay).
 - One new conditional conjecture (q-CLT) — class-encoded per
-  CLAUDE.md §3b-cond, with concrete hypothesis fields (not vacuous
+  AGENTS.md §3b-cond, with concrete hypothesis fields (not vacuous
   Prop).
 - One new interpretive remark (non-comm probability dictionary).
 - Useful QOU-side properties stated independently of any CFS match

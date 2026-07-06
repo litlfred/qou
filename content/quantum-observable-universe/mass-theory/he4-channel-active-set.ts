@@ -51,7 +51,7 @@ import { proposition } from "../../schema/builders";
  * (Δ_cat values from magic-shell-empirical-instantiation.witness.json)
  * and the LP solution from he4-sdp-compositional-probe.witness.json.
  *
- * Per CLAUDE.md §3b-cond the Lean version is axiomatised as a
+ * Per AGENTS.md §3b-cond the Lean version is axiomatised as a
  * class `HasHe4ChannelActiveSet` whose instance encodes the
  * witness-verified ordering.
  *
@@ -61,9 +61,9 @@ import { proposition } from "../../schema/builders";
  *     shell.
  *
  * Witness:
- *   folio-assistant/computations/he4-sdp-compositional-probe.witness.json
+ *   computations/he4-sdp-compositional-probe.witness.json
  * Probe:
- *   folio-assistant/computations/probe_he4_sdp_compositional.py
+ *   computations/probe_he4_sdp_compositional.py
  * Audit:
  *   docs/audits/2026-05-15-three-pr-integration.md §F1 ⁴He
  */
@@ -76,8 +76,8 @@ export default proposition({
   ],
   computation: {
     engine: "scipy",
-    script: "folio-assistant/computations/probe_he4_sdp_compositional.py",
-    witness: "folio-assistant/computations/he4-sdp-compositional-probe.witness.json",
+    script: "computations/probe_he4_sdp_compositional.py",
+    witness: "computations/he4-sdp-compositional-probe.witness.json",
     status: "verified",
     requires: ["numpy", "scipy"],
   },
@@ -94,9 +94,10 @@ export default proposition({
     "verified-empirically",
   ],
   authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "status",
-      body: "Per the conditional-class pattern (CLAUDE.md §3b-cond) the Lean\nversion is a class `HasHe4ChannelActiveSet` whose instance\nencodes the witness-verified ordering; the empirical\n$\\Delta_\\mathrm{cat}$ anchors and the LP solution are the sole\n`sorry` inputs.",
+      body: "Per the conditional-class pattern (AGENTS.md §3b-cond) the Lean\nversion is a class `HasHe4ChannelActiveSet` whose instance\nencodes the witness-verified ordering; the empirical\n$\\Delta_\\mathrm{cat}$ anchors and the LP solution are the sole\n`sorry` inputs.",
     },
   ],
 });

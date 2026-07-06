@@ -44,19 +44,19 @@ the canonical compute pipeline; reported in observable dashboards;
 referenced as "the framework predicts X".
 
 Concrete locations:
-- `folio-assistant/computations/m_p_borromean_verification_50dps.py`
+- `computations/m_p_borromean_verification_50dps.py`
   (m_p chain)
-- `folio-assistant/computations/mass_table_ppb.py` and the
+- `computations/mass_table_ppb.py` and the
   `*_50dps.py` family
-- `folio-assistant/computations/canonical_*` family
+- `computations/canonical_*` family
 - Named constants: `LAMBDA_PROTON_*`, `LAMBDA_NEUTRON_*`,
   `ALPHA_*`, `Q_*`, anything in `codata_constants.py`
 - Witnesses with naming `*-50dps.witness.json`, `*-canonical.witness.json`
 - `docs/canonical-derivation-cheat-sheet.md` §5 Migration
   Backlog "closed" status
-- `folio-assistant/computations/per-observable-100x-status.witness.json`
+- `computations/per-observable-100x-status.witness.json`
   (the 100× dashboard)
-- `folio-assistant/computations/onepb-status-dashboard.witness.json`
+- `computations/onepb-status-dashboard.witness.json`
 
 **Discipline.** Production accepts ONLY:
 1. **Proved theorems.** Algebraic identities or Lean-proved
@@ -68,10 +68,13 @@ Concrete locations:
    to CODATA — owner authorized this swap because the form is
    substrate-derived (no CAL-4) even though not yet proved to
    match CODATA at ppb.
-3. **Standard-physics imports.** CAL-1 m_e from CODATA;
-   CAL-2 from CODATA m_μ/m_e; CAL-3 from CODATA Q_β. These are
-   the three calibration anchors per CLAUDE.md §"three-calibration
-   discipline".
+3. **Standard-physics imports.** Three measured masses: CAL-1 m_e,
+   CAL-2 m_μ, CAL-3 m_π. m_e from CODATA (the unit); m_μ from CODATA
+   fixes q_0 via m_μ/m_e (phys-obs may anchor q_0 on the more-precise
+   proton ratio m_p/m_e); m_π from PDG (the orthogonal meson scale).
+   These are the three calibration anchors per AGENTS.md
+   §"three-calibration discipline". Q_β is **derived** from
+   CAL-1+CAL-2, not a calibration.
 
 **Disallowed in production.** Any of:
 - Empirical fits against CODATA values (e.g.
@@ -94,11 +97,11 @@ shape is this?" computations. Lives in `probe_*` scripts and
 `*_alt_*` / `*_refinement_*` family.
 
 Concrete locations:
-- `folio-assistant/computations/probe_*.py`
-- `folio-assistant/computations/lambda_scale_alt_*.py`
-- `folio-assistant/computations/lambda_scale_refinement_*.py`
-- `folio-assistant/computations/strategy_d_*.py`
-- `folio-assistant/computations/spike_*.py`
+- `computations/probe_*.py`
+- `computations/lambda_scale_alt_*.py`
+- `computations/lambda_scale_refinement_*.py`
+- `computations/strategy_d_*.py`
+- `computations/spike_*.py`
 - `docs/audits/2026-??-??-*-spike-*.md` (audit docs)
 
 **Discipline.** Exploratory probes:
@@ -390,7 +393,7 @@ Why it's wrong: both readings give different production
 predictions. Punting forces the next agent to make the same
 choice.
 
-Fix: per CLAUDE.md §"Agent work-plan policy" rule 5 (escalate
+Fix: per AGENTS.md §"Agent work-plan policy" rule 5 (escalate
 inconsistencies), AskUserQuestion to decide. The
 canonical-unification audit (PR #916) explicitly distinguishes
 exploratory comparison from production claim — use that pattern.
@@ -436,7 +439,7 @@ shape-probe` and commit without further gate.
 
 Sweep `q ∈ [q_0 − 0.05, q_0 + 0.05]` and compute the residual
 slope. Reference implementation in
-[`q_dilog_tower_q_locality_spike.py`](../../folio-assistant/computations/q_dilog_tower_q_locality_spike.py)
+[`q_dilog_tower_q_locality_spike.py`](../../computations/q_dilog_tower_q_locality_spike.py)
 (or the equivalent on `claude/iw-explore-q10-2026-05-23`).
 
 | slope range | classification | action |
@@ -578,18 +581,18 @@ Grep / file-pattern heuristics for retrospective audit:
 
 ```bash
 # Production scripts — strict no-fits required
-grep -rln '_50dps\b' folio-assistant/computations/*.py | wc -l
-grep -rln 'def main' folio-assistant/computations/canonical_*.py | wc -l
-grep -rln '^LAMBDA_\|^ALPHA_\|^Q_50_DIGIT_STR\b' folio-assistant/computations/*.py | wc -l
+grep -rln '_50dps\b' computations/*.py | wc -l
+grep -rln 'def main' computations/canonical_*.py | wc -l
+grep -rln '^LAMBDA_\|^ALPHA_\|^Q_50_DIGIT_STR\b' computations/*.py | wc -l
 
 # Exploratory scripts — empirical fits OK
-ls folio-assistant/computations/probe_*.py 2>/dev/null | wc -l
-ls folio-assistant/computations/*_alt_*.py 2>/dev/null | wc -l
-ls folio-assistant/computations/*_refinement_*.py 2>/dev/null | wc -l
-ls folio-assistant/computations/*_spike_*.py 2>/dev/null | wc -l
+ls computations/probe_*.py 2>/dev/null | wc -l
+ls computations/*_alt_*.py 2>/dev/null | wc -l
+ls computations/*_refinement_*.py 2>/dev/null | wc -l
+ls computations/*_spike_*.py 2>/dev/null | wc -l
 
 # Numerology / coincidence-basin documented in audits
-grep -rln 'PSLQ coincidence\|substrate-q_0 coincidence\|coincidence basin\|FITTED_FROM_CODATA' folio-assistant/computations/ docs/audits/ 2>/dev/null
+grep -rln 'PSLQ coincidence\|substrate-q_0 coincidence\|coincidence basin\|FITTED_FROM_CODATA' computations/ docs/audits/ 2>/dev/null
 ```
 
 The naming convention is the first-line signal. A file named
@@ -609,7 +612,7 @@ confirmation. Mismatched name vs banner is a review red flag.
   empirical-fit candidates that ended up in production.
 - **`canonical-watcher.md`** — the integration watcher that
   catches CAL-4 promotions; this skill is the rule it enforces.
-- **`Δ_λ gate`** (CLAUDE.md, top-of-repo) — the standing
+- **`Δ_λ gate`** (AGENTS.md, top-of-repo) — the standing
   "no 7th ansatz" rule; this skill's Rule 14 is the same
   discipline at the coefficient level.
 - **`prepare-merge.md`** §1.a witness drift — the standardized

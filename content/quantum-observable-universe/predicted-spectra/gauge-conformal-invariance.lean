@@ -24,10 +24,10 @@ poles is preserved under continuous deformations of the substrate q → q',
 up to a global conformal scaling factor α.
 -/
 theorem gauge_conformal_invariance (q_local : ℝ) (q_baseline : ℝ) (n m : ℕ) (α : ℝ) (hα : α > 0) :
-    let λ_loc := eigenvalue_plus q_local
-    (α * λ_loc^n) / (α * λ_loc^m) = λ_loc^n / λ_loc^m := by
-  intro λ_loc
+    let lam_loc := eigenvalue_plus q_local
+    (α * lam_loc^n) / (α * lam_loc^m) = lam_loc^n / lam_loc^m := by
+  intro lam_loc
   have hα_ne_zero : α ≠ 0 := by linarith
-  exact mul_div_mul_left (λ_loc^n) (λ_loc^m) hα_ne_zero
+  exact mul_div_mul_left (lam_loc^n) (lam_loc^m) hα_ne_zero
 
 end QOU.Archimedean

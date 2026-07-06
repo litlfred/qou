@@ -11,9 +11,9 @@ export default conjecture({
   computation: {
     engine: "mpmath",
     script:
-      "folio-assistant/computations/derive_m_baryon_volume_form.py",
+      "computations/derive_m_baryon_volume_form.py",
     witness:
-      "folio-assistant/computations/m-baryon-volume-form.witness.json",
+      "computations/m-baryon-volume-form.witness.json",
     status: "verified",
   },
   uses: [

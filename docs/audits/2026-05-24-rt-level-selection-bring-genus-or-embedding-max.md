@@ -82,7 +82,7 @@ for $k \in \{4, 9\}$ and various $N$. Compare to the SM ratios
 $m_W : m_Z : m_H = 0.882 : 1 : 0.729$. The $k$ that matches best is
 the substrate-natural level.
 
-The Q2 + the cross-particle ratio probe ([`rt_route_cross_particle_ratio_quantum_dim.py`](../../folio-assistant/computations/rt_route_cross_particle_ratio_quantum_dim.py))
+The Q2 + the cross-particle ratio probe ([`rt_route_cross_particle_ratio_quantum_dim.py`](../../computations/rt_route_cross_particle_ratio_quantum_dim.py))
 in this PR-batch used real $q_0$, NOT root-of-unity $q$. Re-running
 those probes at $q = \exp(\pi i / 6)$ ($k=4$) and $q = \exp(\pi i / 11)$
 ($k=9$) is the missing experimental piece.
@@ -114,7 +114,7 @@ The two-chain framework would then be one chain with two views.
 ## §5. Recommendation
 
 **Most actionable next step**: re-run the cross-particle ratio probe
-([`rt_route_cross_particle_ratio_quantum_dim.py`](../../folio-assistant/computations/rt_route_cross_particle_ratio_quantum_dim.py))
+([`rt_route_cross_particle_ratio_quantum_dim.py`](../../computations/rt_route_cross_particle_ratio_quantum_dim.py))
 at $q = \exp(\pi i/(k+2))$ for $k \in \{4, 9, 12, 16\}$. ~50 lines added
 to the existing script; immediate empirical signal on level selection.
 
@@ -129,5 +129,5 @@ two-chain structure into one.
 - [`docs/audits/2026-05-24-pentagon-identity-broad-context.md`](2026-05-24-pentagon-identity-broad-context.md) — §3.3 Habiro ring reference
 - [`content/quantum-observable-universe/archimedean-universe/cohomological-embedding.md`](../../content/quantum-observable-universe/archimedean-universe/cohomological-embedding.md) — §(iv) genus 4 FORCED by torus embedding
 - [`content/quantum-observable-universe/lean/QOU/BringsSurface.lean`](../../content/quantum-observable-universe/lean/QOU/BringsSurface.lean) — `genus = 4` definition
-- [`folio-assistant/computations/rt_route_cross_particle_ratio_quantum_dim.py`](../../folio-assistant/computations/rt_route_cross_particle_ratio_quantum_dim.py) — sibling probe (this PR)
-- [`folio-assistant/computations/probes/pentagon_rt_torus_knot_higgs_probe.py`](../../folio-assistant/computations/probes/pentagon_rt_torus_knot_higgs_probe.py) — Q2 (PR #1116) — used real $q_0$, not root-of-unity
+- [`computations/rt_route_cross_particle_ratio_quantum_dim.py`](../../computations/rt_route_cross_particle_ratio_quantum_dim.py) — sibling probe (this PR)
+- [`computations/probes/pentagon_rt_torus_knot_higgs_probe.py`](../../computations/probes/pentagon_rt_torus_knot_higgs_probe.py) — Q2 (PR #1116) — used real $q_0$, not root-of-unity

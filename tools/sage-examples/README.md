@@ -1,6 +1,6 @@
 # sage-examples — SageMath integration for QOU's hecke-engine
 
-> *Part of the [QOU library stack](../../docs/ARCHITECTURE.md#two-axes-of-organisation-domain-vs-workflow). See the two-axis explanation for how this package fits relative to the in-repo `folio-assistant/computations/` clusters.*
+> *Part of the [QOU library stack](../../docs/ARCHITECTURE.md#two-axes-of-organisation-domain-vs-workflow). See the two-axis explanation for how this package fits relative to the in-repo `computations/` clusters.*
 
 [SageMath](https://www.sagemath.org/) ships with a CPython interpreter,
 so the existing `pyhecke` package installs and runs natively:

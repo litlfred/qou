@@ -88,7 +88,6 @@ theorem leading_order_ratio_identity
     (h - h^2 / 2) / ((z * h - (z * h)^2 / 2) / z)
     = (1 - h / 2) / (1 - z * h / 2) := by
   field_simp
-  ring
 
 -- Ref: [manuscript] prop:q-beta-spectral-bridge §"Ratio"
 /-- **Bridge first-order expansion.** Direct algebra shows
@@ -103,7 +102,7 @@ theorem bridge_first_order_remainder
     (h z : ℝ) (hzh : 1 - z * h / 2 ≠ 0) :
     (1 - h / 2) / (1 - z * h / 2) - (1 + (z - 1) * h / 2)
     = (z * (z - 1) / 4) * h^2 / (1 - z * h / 2) := by
-  field_simp
+  rw [eq_div_iff hzh, sub_mul, div_mul_cancel₀ _ hzh]
   ring
 
 /-! ## Analytic part — structured open lemma
@@ -121,7 +120,7 @@ of `log` on `[0, x]`. This is a standard analysis step.
 
 For the manuscript's purposes (the bridge identity is verified
 *numerically* at 50 dps in
-`folio-assistant/computations/q_beta_spectral_bridge_witness.py`),
+`computations/q_beta_spectral_bridge_witness.py`),
 the algebraic content is closed by the three theorems above; the
 Mathlib Taylor-bound chain is left as a structured open lemma.
 -/
@@ -135,15 +134,16 @@ Mathlib Taylor-bound chain is left as a structured open lemma.
       `log(1+x) - (x - x²/2) ≤ x²/2`. -/
 theorem log_one_add_upper_taylor_bound (x : ℝ) (hx : 0 ≤ x) :
     Real.log (1 + x) - (x - x^2 / 2) ≤ x^2 / 2 := by
-  -- Real.log_one_add_le_self : 0 ≤ x → Real.log (1 + x) ≤ x
-  have hlog : Real.log (1 + x) ≤ x := Real.log_one_add_le_self hx
+  -- Real.log_le_sub_one_of_pos : 0 < y → log y ≤ y - 1, with y = 1 + x.
+  have hpos : (0 : ℝ) < 1 + x := by linarith
+  have hlog : Real.log (1 + x) ≤ x := by
+    have := Real.log_le_sub_one_of_pos hpos; linarith
   linarith
 
-/-- **Half-bound (lower side, structured sorry).** For `0 ≤ x`,
-    the inequality `x - x²/2 ≤ log(1 + x)` holds: the omitted
-    alternating-series tail `x³/3 - x⁴/4 + ...` is non-negative
-    for `0 ≤ x < 1` (a Leibniz alternating series with strictly
-    decreasing |terms|).
+/- **Half-bound (lower side).** For `0 ≤ x`, the inequality
+    `x - x²/2 ≤ log(1 + x)` holds: the omitted alternating-series
+    tail `x³/3 - x⁴/4 + ...` is non-negative for `0 ≤ x < 1`
+    (a Leibniz alternating series with strictly decreasing |terms|).
 
     Mathlib chain (likely names, to verify locally):
       `Real.log_one_add_pow_sub_le_pow_lt` — Taylor / monotonicity
@@ -183,11 +183,11 @@ theorem log_one_add_taylor_bound_quadratic (x : ℝ) (hx : 0 ≤ x) :
   rw [abs_sub_le_iff]
   refine ⟨log_one_add_upper_taylor_bound x hx, ?_⟩
   have hlo := log_one_add_lower_taylor_bound x hx
-  linarith
+  nlinarith [sq_nonneg x]
 
 -- Ref: [manuscript] prop:q-beta-spectral-bridge §"Form B side"
 -- Ref: [jones1985] doi:10.2307/1971403   (Markov-trace bridge)
-/-- **Sharp form (literature `x³` bound, Mathlib gap).** The
+/- **Sharp form (literature `x³` bound, Mathlib gap).** The
     tighter alternating-series bound
 
       `|log(1+x) - (x - x²/2)| ≤ x³/3 ≤ x³`
@@ -251,12 +251,29 @@ end QOU.Interactions
 
 namespace QOU.ParticleInteractions.QBetaSpectral.ConditionalAudit
 
-class BorromeanQuark : Prop where
-  holds : True
+/-- §3b-cond conjecture class for `conj:borromean-quark` as used by the
+    Q_β spectral bridge.  Carries the conjectural categorical *inputs*
+    (the two presentations of the free-neutron Q-value and the bridge
+    identity relating them) as hypotheses — NOT the conclusion, which is
+    derived below per AGENTS.md §3b-cond item 5.  `sorry` in any concrete
+    instance is understood as conjecture per §3b. -/
+class BorromeanQuark where
+  /-- Form A of the Q-value (NF-counit basis), `prop:neutron-qvalue-symbolic`. -/
+  Q_beta_A : ℝ
+  /-- Form B of the Q-value (transfer-matrix eigenfunction basis),
+      `prop:beta-decay-transfer-matrix`. -/
+  Q_beta_B : ℝ
+  /-- **The conjecture itself** (spectral bridge): the two presentations
+      of the free-neutron Q-value coincide — Form A equals Form B. -/
+  forms_agree : Q_beta_A = Q_beta_B
 
 -- Ref: [manuscript] prop:q-beta-spectral-bridge
-theorem q_beta_spectral_conditional [_inst : BorromeanQuark]
-    (Q_beta_A Q_beta_B : ℝ) : Q_beta_A = Q_beta_B := by
-  sorry
+/-- **Conditional theorem (AGENTS.md §3b-cond).**  Conditional on
+    `[BorromeanQuark]`, the two presentations of the free-neutron
+    Q-value agree.  Derived from the class field `forms_agree` — not a
+    `sorry`-projection of an unrelated conclusion. -/
+theorem q_beta_spectral_conditional [inst : BorromeanQuark] :
+    inst.Q_beta_A = inst.Q_beta_B :=
+  inst.forms_agree
 
 end QOU.ParticleInteractions.QBetaSpectral.ConditionalAudit

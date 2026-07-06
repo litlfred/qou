@@ -21,7 +21,7 @@ while you work.
    (even stub) commit, push, open the PR — *before* further work. The PR
    is the durable, visible artifact; the chat session is ephemeral. Never
    accumulate work on a local branch with no PR. (Operationalises
-   CLAUDE.md "Branch + PR workflow" rule 2.)
+   AGENTS.md "Branch + PR workflow" rule 2.)
 
 2. **Commit + push small, coherent increments — continuously.** Each
    logically distinct change is its own commit (a single fix, a single
@@ -74,7 +74,7 @@ while you work.
 - [`/coordinate`](coordinate.md) — cross-PR triage (scope map, sibling
   intent, cherry-picks, ledger). `continual-progress` keeps *your* PR
   legible so `/coordinate` (yours or a sibling's) has something to triage.
-- **CLAUDE.md "Branch + PR workflow"** — this skill operationalises rules
+- **AGENTS.md "Branch + PR workflow"** — this skill operationalises rules
   2–6 (always-PR, microcommit, push-often) as a runnable checklist.
 - [`/todo-manager`](todo-manager.md) — the session work-plan; the
   PR-body status checklist (invariant 3) is its externally-visible

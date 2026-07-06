@@ -37,6 +37,7 @@ sys.path.insert(0, str(HERE))
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
 
 
 def main():
@@ -64,7 +65,7 @@ def main():
         print(f"  Interface flip: {sum_with / sum_no:.4f}×")
         print()
 
-        B_D_AME = mp.mpf("2.224566")  # AME 2020 deuteron binding (MeV)
+        B_D_AME = AME_B_DEUTERON_MEV_VALIDATION  # AME 2020 deuteron binding (MeV)
         B_D_pred = m_e * abs(mp.mpf(str(sum_with)))
         err_pct = float((B_D_pred - B_D_AME) / B_D_AME * 100)
 

@@ -23,7 +23,7 @@ is governed in the asymptotic by the geometric component of the classical A-poly
 
 The two regimes are related by the modular S-transform $q \leftrightarrow \tilde{q} = e^{2\pi i / \tau}$ ([`conj:modular-s-transform-q-q-tilde`](modular-s-transform-q-q-tilde.md), D14 in the duality tracker).
 
-## Why this matters
+## Significance
 
 The framework's [`canonical-derivation-cheat-sheet.md`](../../../docs/canonical-derivation-cheat-sheet.md) currently distinguishes $\Phi_q$ vs $\mathrm{Li}_2^q$ contexts pragmatically — using one or the other depending on which gives the cleaner expression for a given derivation. Per the AJ identification, both are the **same algebraic object** ($\hat{A}_K$) viewed through different archimedean lenses. Wiring this explicitly:
 
@@ -33,15 +33,27 @@ The framework's [`canonical-derivation-cheat-sheet.md`](../../../docs/canonical-
 
 ## Lean structure
 
-[`phi-q-aj-machinery-identification.lean`](phi-q-aj-machinery-identification.lean) encodes this as a **conditional proposition** under §3b-cond:
+[`phi-q-aj-machinery-identification.lean`](phi-q-aj-machinery-identification.lean) encodes this as a **conditional proposition** under §3b-cond, split explicitly into a provable backbone and conjectural class inputs.
 
-- Class `QuantumAPolynomial K` axiomatizes the AJ conjecture (existence of $\hat{A}_K$)
-- Class `PhiQRegulator K` axiomatizes the Faddeev dilog regime
-- Class `Li2QRegulator K` axiomatizes the Rogers dilog regime
-- Theorem `phi_q_eq_aj_saddle_root_of_unity`: given `[QuantumAPolynomial K] [PhiQRegulator K]`, $\Phi_q$ equals the AJ saddle at $q = e^{2\pi i / N}$
-- Theorem `li2_q_eq_aj_saddle_real`: given `[QuantumAPolynomial K] [Li2QRegulator K]`, $\mathrm{Li}_2^q$ equals the AJ saddle at real $q$
+**Proved unconditionally (sorry-free):**
 
-Both theorems are **fully verified by Lean** modulo the three class instances. The classes encode literature statements (AJ conjecture, dilog identities); the framework's contribution is the IDENTIFICATION at the algebraic-over-$\mathbb{Z}[q^{\pm 1}]$ level.
+- `qWeyl_commutation` — the q-Weyl relation $\hat{L}\hat{M} = q\hat{M}\hat{L}$ on the function model $\hat{M}f(m) = m \cdot f(m)$, $\hat{L}f(m) = f(qm)$.
+- `Annihilates.add_smul` — the solution space of a homogeneous q-difference operator is closed under linear combinations (superposition).
+- `saddle_regimes_disjoint` — the two archimedean regimes are genuinely distinct: a real $q \in (0,1)$ satisfies $q^N \neq 1$, so no parameter lies in both regimes.
+
+**Conjectural class inputs (no instances fabricated):**
+
+- Class `QuantumAPolynomial F K` carries the AJ conjecture's content: the operator $\hat{A}_K$ (order, coefficients, homogeneity), the colored Jones tower, the annihilation $\hat{A}_K \cdot J_N = 0$, and non-triviality.
+- Class `PhiQRegulator F K` carries the Faddeev identification: the $\Phi_q$-generated saddle tower is annihilated by the same $\hat{A}_K$ in the root-of-unity regime ($q^N = 1$, $q \neq 1$).
+- Class `Li2QRegulator K` carries the Rogers identification: the $\mathrm{Li}_2^q$-generated saddle tower is annihilated by the same $\hat{A}_K$ in the real regime $q \in (0,1)$ (stated over $\mathbb{R}$, the archimedean side of the wall).
+
+**Derived conditional theorems** (they compose class fields through the proved superposition lemma — they do not project a conclusion-typed field):
+
+- `phi_q_eq_aj_saddle_root_of_unity`: at every root-of-unity parameter, the Jones tower and the $\Phi_q$ saddle tower lie in the *same* solution space of $\hat{A}_K$ — every linear combination is annihilated.
+- `li2_q_eq_aj_saddle_real`: the same at real $q \in (0,1)$ for $\mathrm{Li}_2^q$.
+- `phi_q_li2_q_unified_via_aj`: the two lenses on the one algebraic object $\hat{A}_K$ are genuinely different — the regimes are disjoint (unconditional).
+
+The classes encode literature statements (AJ conjecture, dilog-saddle identifications); the framework's contribution is the IDENTIFICATION at the algebraic-over-$\mathbb{Z}[q^{\pm 1}]$ level. The analytic half of the saddle-point statement (asymptotic growth extraction) remains part of the open class inputs.
 
 ## Conditional dependencies
 
@@ -50,6 +62,8 @@ Both theorems are **fully verified by Lean** modulo the three class instances. T
 1. AJ conjecture proved for $K$ (proved for many: 2-bridge knots, twist knots, most Rolfsen-table knots; status for 𝓑_3 specifically needs literature check — Hikami / Habiro)
 2. The Faddeev / Rogers identifications used in the framework match the literature's exactly (not just up to convention)
 
-For 𝓑_3 specifically, the algebraic side is in literature (Champanerkar-Kofman-Mullen 2008 for classical A-polynomial; Hikami for related quantum work). What's open: explicit verification that the framework's $\Phi_q$ / $\mathrm{Li}_2^q$ choices align with the AJ machinery's saddles.
+For 𝓑_3 specifically, the algebraic side is in literature (Champanerkar 2003 for classical A-polynomials and Bloch invariants of hyperbolic 3-manifolds; Hikami for related quantum work). What's open: explicit verification that the framework's $\Phi_q$ / $\mathrm{Li}_2^q$ choices align with the AJ machinery's saddles.
 
 **Cross-reference:** [`docs/audits/-q0-into-character-variety-minimal-archimedean.md`](../../../docs/audits/-q0-into-character-variety-minimal-archimedean.md) §9 (AJ conjecture crosses archimedean wall) for full background.
+
+**Archimedean specialisation (§7c).** The $\Phi_q$ / $A_J$ regulator identities are stated over real $q$ with the archimedean ordering $0 < q < 1$; this real-analytic regime is the archimedean side of the substrate wall for the generic quantum-$A$-polynomial machinery, acknowledged here.

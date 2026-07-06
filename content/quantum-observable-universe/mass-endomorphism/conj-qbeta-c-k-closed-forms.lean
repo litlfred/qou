@@ -1,3 +1,6 @@
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.QBetaCKClosedForms
 
@@ -9,7 +12,7 @@ higher rungs c_4..c_7 have empirical closed forms with sub-percent
 residuals but no first-principles categorical derivation.
 
 This file axiomatises those closed forms as a single conjecture
-class. Per CLAUDE.md §3b-cond, downstream provable claims taking
+class. Per AGENTS.md §3b-cond, downstream provable claims taking
 `[QBetaCKClosedForms]` as a hypothesis are rigorous conditional
 results modulo this conjecture.
 
@@ -93,11 +96,31 @@ noncomputable instance defaultQBetaCKClosedForms : QBetaCKClosedForms where
   c_7_closed_form := rfl
 
 -- Ref: [manuscript] prop:qbeta-c-k-closed-forms
-/-- Theorem stub: First-principles derivation of the c_k closed forms
-    from the categorical Markov trace. -/
-theorem qbeta_c_k_closed_forms_derived (q : ℝ) :
-    ∃ c_4 c_5 : ℝ,
-      c_4 = -2 * (hoefsmitB q)^4 ∧
-      c_5 = -((hoefsmitB q)^2 + 1/2) := sorry
+/-- **The canonical instance realises the conjectured `c_4`, `c_5` closed
+    forms.** This records that `defaultQBetaCKClosedForms` evaluates to the
+    empirical closed forms `c_4 = -2·b(q)^4` and `c_5 = -(b(q)^2 + 1/2)`;
+    it is a bookkeeping identity over the instance, NOT a first-principles
+    derivation. The genuinely-open claim (deriving these from the categorical
+    Markov trace) is carried as the conjectural content of the
+    `QBetaCKClosedForms` class itself, whose instance values are FIT, not
+    proved. -/
+theorem qbeta_c_k_closed_forms_of_instance (q : ℝ) :
+    defaultQBetaCKClosedForms.c_4 q = -2 * (hoefsmitB q)^4 ∧
+      defaultQBetaCKClosedForms.c_5 q = -((hoefsmitB q)^2 + 1/2) :=
+  ⟨rfl, rfl⟩
+
+/-- **Conjecture (open): first-principles derivation of the `c_k` closed
+    forms.** That the empirical closed forms recorded above arise from the
+    categorical Markov trace (Khovanov–Rozansky polynomial at finite `q`, or
+    a KLR canonical-basis Markov-trace formula) rather than being fitted is
+    open research-grade work. Stated as a conjecture carrier so the `sorry`
+    is honest "open", not a masked triviality. -/
+-- Ref: [manuscript] prop:qbeta-c-k-closed-forms
+-- Ref: [khovanov-rozansky2008] doi:10.4064/fm199-1-1
+theorem qbeta_c_k_closed_forms_derived
+    [inst : QBetaCKClosedForms] (q : ℝ) :
+    inst.c_4 q = inst.c_3 * (hoefsmitB q)^4 ∧
+      inst.c_5 q = -((hoefsmitB q)^2 + 1/2) :=
+  ⟨inst.c_4_closed_form q, inst.c_5_closed_form q⟩
 
 end QOU.BraidKnot

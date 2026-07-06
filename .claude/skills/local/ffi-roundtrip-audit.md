@@ -84,7 +84,7 @@ becomes the wall.
 ## Workflow
 
 1. **Survey** — run the scanner (below) to enumerate Python files
-   under `folio-assistant/computations/` containing `pyhecke_native.`
+   under `computations/` containing `pyhecke_native.`
    or `subprocess.run([..., bin_path, ...])` calls inside a loop.
 
 2. **Classify** each finding into one of the patterns:
@@ -134,17 +134,17 @@ Run from repo root:
 
 ```bash
 # P-F1 candidates: pyhecke_native call inside a `for` block
-grep -rnB4 "pyhecke_native\." folio-assistant/computations/*.py 2>/dev/null \
+grep -rnB4 "pyhecke_native\." computations/*.py 2>/dev/null \
   | grep -B0 "for " \
   | sort -u
 
 # P-F2 candidates: per-iteration call + mpmath/sympy accumulator
-grep -rnA5 "pyhecke_native\." folio-assistant/computations/*.py 2>/dev/null \
+grep -rnA5 "pyhecke_native\." computations/*.py 2>/dev/null \
   | grep -B1 "mp\.mpf\|sp\.Float\|total +=" \
   | sort -u
 
 # P-F4 candidates: subprocess.run([rust_bin, ...]) in a loop
-grep -rnB4 "subprocess\.run(" folio-assistant/computations/*.py 2>/dev/null \
+grep -rnB4 "subprocess\.run(" computations/*.py 2>/dev/null \
   | grep -B0 "for "
 ```
 
@@ -160,14 +160,14 @@ column.
 
 | File:line | Pattern | Rust API called | N (typical) | Fix |
 |-----------|--------:|----------------:|------------:|-----|
-| [`compute_atom_chi_rust.py:73`](../../folio-assistant/computations/compute_atom_chi_rust.py) | P-F1 | `chi_q_atomic(shape, factors, q)` | ~77 (H_12) | **F-B**: add `chi_q_atomic_all_partitions(factors, q)` (rayon-parallel) — no batch exists today |
-| [`delta_lambda_fr_identity_phase5c.py:110`](../../folio-assistant/computations/delta_lambda_fr_identity_phase5c.py) | P-F2 | `chi_lambda_braid(lam, word, q)` | ~77 (H_12) | **F-A**: switch to `chi_lambdas_braid(shapes, word, q)` (already in `pyhecke-native`); for the mpmath combine consider F-C |
-| [`chirality_avg_content_chiral.py:174`](../../folio-assistant/computations/chirality_avg_content_chiral.py) | P-F1/P-F2 | `chi_lambda_braid(shape, word, q)` | ~77 | **F-A** |
-| [`chirality_braid_average.py:136`](../../folio-assistant/computations/chirality_braid_average.py) | P-F1 | `chi_lambda_braid_word(shape, word, q)` | ~50 | **F-A** |
-| [`constit_factor_varying_q_phase5k2.py:76`](../../folio-assistant/computations/constit_factor_varying_q_phase5k2.py) | P-F2 | `chi_lambda_braid(lam, word_m, q_str, dps)` | ~77 | **F-A** (use `chi_lambdas_braid_mpfr`) |
-| [`chirality_avg_content_atomic.py:192`](../../folio-assistant/computations/chirality_avg_content_atomic.py) | P-F1 | `chi_lambda_braid(shape, word, q)` | ~77 | **F-A** |
-| [`closed_form_tau_M_verification_phase5q.py:72`](../../folio-assistant/computations/closed_form_tau_M_verification_phase5q.py) | P-F2 | `chi_lambda_braid` (via wrapper) | ~3 (H_3) | **F-D**: N is small, leave as-is |
-| [`markov_peel_rust_bridge.py:tr_M_atomic_rust_recursive`](../../folio-assistant/computations/markov_peel_rust_bridge.py) | P-F2/P-F3 | `tr_m_word_lq(word, n)` per reduced word | ~4000 | **F-C**: superseded on PR #886 by `tr_M_atomic_rust_full` → `tr_m_atomic_mpfr` — keep both during migration, deprecate `_recursive` after sweep |
+| [`compute_atom_chi_rust.py:73`](../../computations/compute_atom_chi_rust.py) | P-F1 | `chi_q_atomic(shape, factors, q)` | ~77 (H_12) | **F-B**: add `chi_q_atomic_all_partitions(factors, q)` (rayon-parallel) — no batch exists today |
+| [`delta_lambda_fr_identity_phase5c.py:110`](../../computations/delta_lambda_fr_identity_phase5c.py) | P-F2 | `chi_lambda_braid(lam, word, q)` | ~77 (H_12) | **F-A**: switch to `chi_lambdas_braid(shapes, word, q)` (already in `pyhecke-native`); for the mpmath combine consider F-C |
+| [`chirality_avg_content_chiral.py:174`](../../computations/chirality_avg_content_chiral.py) | P-F1/P-F2 | `chi_lambda_braid(shape, word, q)` | ~77 | **F-A** |
+| [`chirality_braid_average.py:136`](../../computations/chirality_braid_average.py) | P-F1 | `chi_lambda_braid_word(shape, word, q)` | ~50 | **F-A** |
+| [`constit_factor_varying_q_phase5k2.py:76`](../../computations/constit_factor_varying_q_phase5k2.py) | P-F2 | `chi_lambda_braid(lam, word_m, q_str, dps)` | ~77 | **F-A** (use `chi_lambdas_braid_mpfr`) |
+| [`chirality_avg_content_atomic.py:192`](../../computations/chirality_avg_content_atomic.py) | P-F1 | `chi_lambda_braid(shape, word, q)` | ~77 | **F-A** |
+| [`closed_form_tau_M_verification_phase5q.py:72`](../../computations/closed_form_tau_M_verification_phase5q.py) | P-F2 | `chi_lambda_braid` (via wrapper) | ~3 (H_3) | **F-D**: N is small, leave as-is |
+| [`markov_peel_rust_bridge.py:tr_M_atomic_rust_recursive`](../../computations/markov_peel_rust_bridge.py) | P-F2/P-F3 | `tr_m_word_lq(word, n)` per reduced word | ~4000 | **F-C**: superseded on PR #886 by `tr_M_atomic_rust_full` → `tr_m_atomic_mpfr` — keep both during migration, deprecate `_recursive` after sweep |
 
 ### Status update (2026-05-29) — catalogue RESOLVED
 
@@ -188,7 +188,7 @@ offenders are discharged:**
 
 No open per-item-FFI-in-loop offenders remain on the mass/binding
 critical path. A fresh `awk`-window scan of
-`folio-assistant/computations/*.py` (2026-05-29) finds only batch-API
+`computations/*.py` (2026-05-29) finds only batch-API
 calls, docstrings/comments, and the F-D-exempt N=3 loop. See
 [`docs/audits/2026-05-29-mass-binding-compute-ffi-rounding-audit.md`](../../../docs/audits/2026-05-29-mass-binding-compute-ffi-rounding-audit.md).
 
@@ -230,7 +230,7 @@ Pattern for adding `chi_X_all_partitions(...)`:
    `Vec<(Vec<usize>, String)>` (MPFR decimal-string variant).
 3. **`tools/pyhecke-native/Cargo.toml` + `pyproject.toml`**: bump
    the version (minor bump for new public API).
-4. **`folio-assistant/computations/<caller>.py`**: replace the
+4. **`computations/<caller>.py`**: replace the
    Python loop with the batch call.
 5. **Cross-check** at q₀ on a representative atom — 1e-25 rel.diff
    gate.

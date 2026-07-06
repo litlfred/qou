@@ -1,10 +1,10 @@
 // Compute Gröbner-reduced Hecke element and Markov trace for N(p,n).
 //
 // Usage:
-//   Singular -c "int PP=6; int NN=8;" folio-assistant/computations/singular-hecke-trace.sing
+//   Singular -c "int PP=6; int NN=8;" computations/singular-hecke-trace.sing
 //
 // Or edit PP and NN below, then:
-//   Singular folio-assistant/computations/singular-hecke-trace.sing
+//   Singular computations/singular-hecke-trace.sing
 //
 // Input: PP = number of protons, NN = number of neutrons
 // Output: Gröbner-reduced normal form, Markov trace, Q-value

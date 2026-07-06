@@ -24,7 +24,7 @@ the QOU framework:
 
 ## References
 
-- [pawlowski-leitner-rep] (see content/schema/references.ts — TODO bib lookup)
+- [leitnerpawloski2004] arXiv:math/0409565 — "Unital Gröbner Bases over Arbitrary Commutative Ground Rings" (Leitner & Pawloski); the single Pawloski–Leitner paper
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
 - [manuscript] §1, Vectors, hadrons, and the Pawlowski–Leitner basis
 -/
@@ -179,7 +179,7 @@ def killingFormRatio : ℤ := -2
     when `n ≡ 2j (mod 2)` and `n ≥ 2j`, and zero otherwise.
 
     LaTeX: `\label{prop:pawlowski-leitner-basis}`
-    Ref: [pawlowski-leitner-rep] PL inner product / intertwiner basis -/
+    Ref: [leitnerpawloski2004] PL inner product / intertwiner basis (arXiv:math/0409565) -/
 noncomputable def pawLeiDim (twice_j : ℕ) (n : ℕ) : ℕ :=
   if n % 2 ≠ twice_j % 2 then 0
   else if n < twice_j then 0
@@ -189,7 +189,7 @@ noncomputable def pawLeiDim (twice_j : ℕ) (n : ℕ) : ℕ :=
 
 /-- When `n = 2j` (the minimal tensor power), the intertwiner space
     is one-dimensional — there is a unique embedding up to scalar. -/
--- Ref: [leitnerpawloski2004] Leitner & Pawloski, "On the morphisms of non-commutative formal groups," arXiv:math/0409565 — DIFFERENT from the "Unital Gröbner Bases" paper (see bib-verifications)
+-- Ref: [leitnerpawloski2004] Leitner & Pawloski, "Unital Gröbner Bases over Arbitrary Commutative Ground Rings," arXiv:math/0409565
 -- Auxiliary: n / 2 + (n + 1) / 2 = n for all n : ℕ.
 private lemma half_sum (n : ℕ) : n / 2 + (n + 1) / 2 = n := by omega
 
@@ -211,7 +211,7 @@ theorem pawLei_minimal_dim (twice_j : ℕ) :
     tableaux of shape `λ ⊢ n` with at most 2 rows and
     `λ₁ - λ₂ = 2j`.
 
-    Ref: [pawlowski-leitner-rep] PL inner product / intertwiner basis -/
+    Ref: [leitnerpawloski2004] PL inner product / intertwiner basis (arXiv:math/0409565) -/
 structure PawLeiBasis where
   /-- The spin label (as twice_j). -/
   twice_j : ℕ
@@ -235,20 +235,20 @@ structure PawLeiBasis where
     this pairing: `⟨T_λ, T_μ⟩_PL = δ_{λμ} ‖T_λ‖²`.
 
     LaTeX: `\label{prop:pawlowski-leitner-inner-product}`
-    Ref: [pawlowski-leitner-rep] PL inner product / intertwiner basis -/
+    Ref: [leitnerpawloski2004] PL inner product / intertwiner basis (arXiv:math/0409565) -/
 structure PawLeiInnerProduct where
   /-- The underlying basis data. -/
   basis : PawLeiBasis
   /-- The norm-squared of each basis vector (positive rational). -/
   normSq : Fin basis.num_basis → ℝ
   /-- All norms are positive. -/
-  -- Ref: [pawlowski-leitner-rep] PL inner product / SU(2) intertwiner basis — TODO bib lookup
+  -- Ref: [leitnerpawloski2004] PL inner product / SU(2) intertwiner basis (arXiv:math/0409565)
   normSq_pos : ∀ i, normSq i > 0
 
 /-- The **orthogonal inner product** induced by the PL basis.
     The adjoint trace defines a bilinear form on intertwiner spaces that
     is diagonal in the PL basis: `⟨T_λ, T_μ⟩_PL = δ_{λμ} ‖T_λ‖²`. -/
--- Ref: [leitnerpawloski2004] Leitner & Pawloski, "On the morphisms of non-commutative formal groups," arXiv:math/0409565 — DIFFERENT from the "Unital Gröbner Bases" paper (see bib-verifications)
+-- Ref: [leitnerpawloski2004] Leitner & Pawloski, "Unital Gröbner Bases over Arbitrary Commutative Ground Rings," arXiv:math/0409565
 structure PawLeiOrthogonalIP extends PawLeiInnerProduct where
   /-- The inner product function. -/
   innerProduct : Fin toPawLeiInnerProduct.basis.num_basis →
@@ -259,7 +259,7 @@ structure PawLeiOrthogonalIP extends PawLeiInnerProduct where
   orthogonal : ∀ i j, i ≠ j → innerProduct i j = 0
 
 /-- Orthogonality: the PL inner product of distinct basis vectors vanishes. -/
--- Ref: [leitnerpawloski2004] Leitner & Pawloski, "On the morphisms of non-commutative formal groups," arXiv:math/0409565 — DIFFERENT from the "Unital Gröbner Bases" paper (see bib-verifications)
+-- Ref: [leitnerpawloski2004] Leitner & Pawloski, "Unital Gröbner Bases over Arbitrary Commutative Ground Rings," arXiv:math/0409565
 theorem pawLei_orthogonal
     (oip : PawLeiOrthogonalIP)
     (i j : Fin oip.toPawLeiInnerProduct.basis.num_basis) (h : i ≠ j) :

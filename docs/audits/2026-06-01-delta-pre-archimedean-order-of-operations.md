@@ -68,7 +68,7 @@ discipline thus unifies this session's results.
 
 ## Connection to the fibre-vs-observable convention
 
-This is the same `Im(q)` fibre-vs-observable cut (CLAUDE.md): folds and
+This is the same `Im(q)` fibre-vs-observable cut (AGENTS.md): folds and
 the delta live in the **fibre** (formal `q`, automorphism-friendly);
 reality / nonlinearity enter only at the **archimedean** `τ`. The order
 "delta first, then `τ`" is exactly "stay in the fibre as long as

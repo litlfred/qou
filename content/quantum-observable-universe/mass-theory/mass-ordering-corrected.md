@@ -19,7 +19,7 @@ $$
 $$
 
 This matches the experimental ordering
-$m_n \approx :val[m_n_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json}$ MeV $> m_p \approx :val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json}$ MeV.
+$m_n \approx :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json}$ MeV $> m_p \approx :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json}$ MeV.
 
 The **negative signs** of both traces reflect the
 fermionic (antisymmetric) character of the nucleon — the

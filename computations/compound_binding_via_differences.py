@@ -70,20 +70,24 @@ set_compute_dps()
 from witness_base import WitnessBuilder
 from q_parameter import Q_MP
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
+from codata_constants import (  # noqa: E402 — CODATA-2022 validation masses (registry; no literals)
+    M_P_MEV_VALIDATION, M_N_MEV_VALIDATION, M_D_MEV_VALIDATION,
+    M_T_MEV_VALIDATION, M_HE3_MEV_VALIDATION, M_HE4_MEV_VALIDATION,
+)
 
 
 # Calibration constants (per audit 2026-05-05)
 E_0_BETA = mp.mpf("0.7823")          # MeV (free-neutron β-decay Q)
 ALPHA_BORROMEAN = mp.mpf("3.7445")   # MeV (m_e · 8G, where G ≈ 7.327 ≈ Borromean vol)
 
-# CODATA atomic masses (MeV)
+# CODATA atomic masses (MeV) — codata_constants registry (no inline literals)
 M_CODATA = {
-    "p":   mp.mpf("938.27208816"),
-    "n":   mp.mpf("939.56542052"),
-    "D":   mp.mpf("1875.61294257"),    # m_p + m_n − B(D)_AME
-    "T":   mp.mpf("2808.92113298"),
-    "3He": mp.mpf("2808.39160743"),
-    "4He": mp.mpf("3727.379378"),
+    "p":   M_P_MEV_VALIDATION,
+    "n":   M_N_MEV_VALIDATION,
+    "D":   M_D_MEV_VALIDATION,    # m_p + m_n − B(D)_AME
+    "T":   M_T_MEV_VALIDATION,
+    "3He": M_HE3_MEV_VALIDATION,
+    "4He": M_HE4_MEV_VALIDATION,
 }
 
 # AME 2020 binding energies (MeV) — values where M_atom = Σ Z·m_p + N·m_n − B

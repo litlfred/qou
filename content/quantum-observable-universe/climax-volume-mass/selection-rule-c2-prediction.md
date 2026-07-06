@@ -14,7 +14,7 @@ e.g. the Hopf link).  The closed form is a finite Laurent rational over
 $\mathbb{Z}[q, q^{-1}]$ — like the c=1 and c=3 anchors, derivation-tight
 (no fit, zero free parameters).*
 
-## Why this matters
+## Significance
 
 The per-component rule is
 $\mathrm{lw}(c) = (1/(c+1)) \sum_{\lambda \vdash (c+1)} \dim_q V_\lambda$,
@@ -55,7 +55,7 @@ Stated over real $q > 0$ (substrate-anchor regime).  The closed form
 $(q+1)^2/(3q)$ is a Laurent rational in $\mathbb{Z}[q, q^{-1}]$ — fibre-level
 construction.  At $q = q_0$ it evaluates to $\approx 1.337$.  No $|q|=1$
 step; both $q$ and $q^{-1}$ are real positive at any real $q > 0$.
-CLAUDE.md §7c-compliant.
+AGENTS.md §7c-compliant.
 
 ## Cross-references
 

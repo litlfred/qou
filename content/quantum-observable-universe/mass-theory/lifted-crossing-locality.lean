@@ -22,6 +22,7 @@
 
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.List.Basic
+import Mathlib.Algebra.BigOperators.Group.List.Basic
 
 namespace QOU.ParticleInteractions
 
@@ -48,10 +49,10 @@ class LiftedCrossingLocality
     locality: if the locality factor η(c) is homogeneous (η ≡ 1),
     the expansion collapses to (1 + ξ)^c. -/
 noncomputable def productFormCollapse
-    {K C : Type*} [LiftedCrossingLocality K C]
+    {K C : Type*} [inst : LiftedCrossingLocality K C]
     (k : K) (xi : ℝ) : ℝ :=
-  let c := (LiftedCrossingLocality.crossings k).length
-  LiftedCrossingLocality.massGB k * (1 + xi) ^ c
+  let c := (inst.crossings k).length
+  inst.massGB k * (1 + xi) ^ c
 
 /-- **Trivial-link skeleton instance.**  Models every link
     configuration as having no crossings (`crossings k := []`),

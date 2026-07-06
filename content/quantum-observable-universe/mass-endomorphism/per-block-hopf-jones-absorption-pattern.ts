@@ -24,9 +24,9 @@ export default remark({
   ],
   computation: {
     engine: "sympy",
-    script: "folio-assistant/computations/qbeta/qbeta_per_block_paper_closed_forms.py",
+    script: "computations/qbeta/qbeta_per_block_paper_closed_forms.py",
     witness: [
-      "folio-assistant/computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json",
+      "computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json",
     ],
     status: "experimental",
   },

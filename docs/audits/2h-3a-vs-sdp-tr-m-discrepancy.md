@@ -11,7 +11,7 @@ conventions:
 
 ## 3A-strand convention
 
-Defined in `folio-assistant/computations/mass_at_3A_proper.py`
+Defined in `computations/mass_at_3A_proper.py`
 (`atom_braid_word_3A`). Lives in H_{3A}(q) — for ²H that's H_6.
 
 For each nucleon k of the atom, three strands per nucleon:
@@ -34,7 +34,7 @@ data. Its tr_M(q_0) is `0.388286471547...`.
 ## SDP-witness convention
 
 Recorded in
-[`joint-tower-sdp-rust.witness.json`](../../folio-assistant/computations/joint-tower-sdp-rust.witness.json)
+[`joint-tower-sdp-rust.witness.json`](../../computations/joint-tower-sdp-rust.witness.json)
 under `per_atom_certificates[name="deuteron-2H"]`. Lives in
 H_{n_0}(q) at native strand count `n_0 = 3` for ²H. The braid word
 

@@ -19,11 +19,13 @@ export default chapter({
       blocks: [
         "observations-intro",
         "substrate-consistency-window",
+        "substrate-consistency-window-interpretation",
         "substrate-consistency-window-table4-data",
         "substrate-consistency-window-table3-data",
         "substrate-consistency-window-table2-data",
         "substrate-consistency-window-table1-data",
         "three-calibration-discipline",
+        "three-calibration-discipline-proof",
       ],
     }),
 
@@ -37,6 +39,7 @@ export default chapter({
         "borromean-quark-table-data",
         "higgs-t28",
         "s5-equivariant-torus-knots",
+        "s5-equivariant-torus-knots-proof",
         "s5-equivariant-torus-knots-table-data",
         "symmetry-preserving-leptons",
       ],
@@ -92,6 +95,7 @@ export default chapter({
         "stability-cubic-plot",
         "stability-cubic-plot-table-data",
         "neutron-prediction-comparison",
+        "neutron-prediction-comparison-interpretation",
         "neutron-prediction-comparison-table-data",
         "q-stability-ranges",
         "q-stability-ranges-table-data",
@@ -115,6 +119,7 @@ export default chapter({
         "feynman-qou-comparison-table2-data",
         "feynman-qou-comparison-table1-data",
         "neutron-proton-mass-splitting",
+        "neutron-proton-mass-splitting-proof",
         "photon-channel-wedderburn-chain",
         "mass-formula-validation",
 
@@ -140,9 +145,8 @@ export default chapter({
         "pair-skein-mass-formula-proof",
         "flavor-split-substrate",
         "flavor-split-substrate-proof",
+        "flavor-split-substrate-interpretation",
         "dressed-quark-numerology-at-q0",
-        "deuteron-binding-energy",
-        "deuteron-binding-energy-proof",
         // Phase 7 orphan reconnection (2026-05-25):
         "m-tau-knot-prediction",
       ],
@@ -173,7 +177,8 @@ export default chapter({
     // example) and the magic-shell consequences (trace ratio,
     // double-magic LR-fusion, magic-numbers-from-q, Strutinsky).
     section({
-      title: "Beta decay: mechanism, half-life, and tritium",
+      title:
+        "Beta decay as $\\operatorname{Im}\\mathfrak{V}$: $Q$-values, half-life, and tritium",
       label: "sec:beta-decay-mechanism",
       blocks: [
         "beta-decay-observations-intro",
@@ -208,12 +213,14 @@ export default chapter({
       ],
     }),
     section({
-      title: "Beta decay: magic-shell consequences",
+      title:
+        "Beta decay: magic-shell structure and complex-volume consequences",
       label: "sec:beta-decay-magic-shells",
       blocks: [
         "beta-decay-magic-shells-intro",
         "nitrogen-14-threading",
         "trace-ratio-observable",
+        "trace-ratio-observable-proof",
         "trace-ratio-interpretation",
         // Detangler R3 (2026-05-23): 6-row verification-nuclei
         // trace-ratio table extracted from
@@ -234,6 +241,7 @@ export default chapter({
         "double-magic-delta-i-bound-table1-data",
         "magic-numbers-from-q",
         "k12-barrier-bypass",
+        "q-deformed-nuclear-models-comparison",
         "non-magic-Li6-diagram",
         "shell-threading-conjecture",
         "single-magic-O18-diagram",
@@ -255,6 +263,8 @@ export default chapter({
         "cmb-torsion-data",
         "gravity-emergent",
         "gravity-spectral-prefactor",
+        "gravity-spectral-prefactor-proof",
+        "gravity-spectral-prefactor-interpretation",
         "g-q-closed-form",
         "gravity-emergent-data",
         "topological-defects",
@@ -280,6 +290,7 @@ export default chapter({
         "hydrogen-knot-structure-table2-data",
         "hydrogen-knot-structure-table3-data",
         "sdp-regime-switch",
+        "sdp-regime-switch-interpretation",
         "sdp-regime-switch-table-data",
       ],
     }),
@@ -295,21 +306,25 @@ export default chapter({
 
         // — Why strange matter binds harder (and why it's not the ground state)
         "strangelet-crossing-energy",
+        "strangelet-crossing-energy-proof",
         "strangelet-witten-stability",
 
         // — Phase diagram: deconfinement, CFL, equation of state
         "deconfinement-golden-threshold",
         "hopf-diquark",
         "borromean-hopf-energy-crossover",
+        "borromean-hopf-energy-crossover-proof",
         "borromean-hopf-energy-crossover-factor-250",
         "color-superconductivity-borromean",
         "eos-borromean-cfl",
+        "eos-borromean-cfl-proof",
         "eos-borromean-cfl-table-data",
 
         // — Observable signatures
         "cfl-neutron-star-observables",
         "strangelet-merger-signature",
         "strangelet-double-beta",
+        "strangelet-double-beta-interpretation",
       ],
     }),
 
@@ -412,15 +427,18 @@ export default chapter({
         "non-comm-probability-intro",
         "algebraic-gns-embedding",
         "algebraic-gns-embedding-proof",
+        "algebraic-gns-embedding-interpretation",
         "algebraic-gns-embedding-cfs-consequence",
         "non-commutative-probability-dictionary",
         "non-commutative-probability-dictionary-table-data",
         "q-plancherel-asymptotic-skeleton",
         "centered-hecke-variance-positive",
+        "centered-hecke-variance-positive-interpretation",
         "centered-hecke-variance-positive-table-data",
         "centered-hecke-variance-positive-proof",
         "archimedean-macroscopic-washout",
         "brane-tower-q-laplacian-decay",
+        "brane-tower-q-laplacian-decay-interpretation",
         "brane-tower-q-laplacian-decay-proof",
         "cfs-comparison-summary",
       ],

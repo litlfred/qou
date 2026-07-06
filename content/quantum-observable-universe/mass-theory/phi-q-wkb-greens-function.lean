@@ -1,6 +1,7 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Tactic
+import QOU.Archimedean.DilogarithmArchimedeanLimit
 
 /-!
 # Next Faddeev-WKB order: S₁ = -½ log det 𝔇_∇ as the Green's function
@@ -83,7 +84,7 @@ class WKBGreensFunction (x : ℝ) extends ArchimedeanLimit x : Prop where
   -- Ref: [kashaev1997] https://doi.org/10.1023/A:1007364912784
   one_loop_determinant :
     ∀ ε > (0 : ℝ),
-      ∃ δ > (0 : ℝ), ∀ q n,
+      ∃ δ > (0 : ℝ), ∀ (q : ℝ) (n : ℕ),
         (1 - δ < q) ∧ (q < 1) ∧ (n : ℝ) * (1 - q) > δ⁻¹ →
           ‖nextOrderCorrection q x n - diracLogDet x‖ < ε
 
@@ -92,7 +93,7 @@ class WKBGreensFunction (x : ℝ) extends ArchimedeanLimit x : Prop where
 -- Ref: [manuscript] conj:phi-q-wkb-greens-function
 theorem nextOrderCorrection_to_diracLogDet (x : ℝ)
     [h : WKBGreensFunction x] (ε : ℝ) (hε : 0 < ε) :
-    ∃ δ > (0 : ℝ), ∀ q n,
+    ∃ δ > (0 : ℝ), ∀ (q : ℝ) (n : ℕ),
       (1 - δ < q) ∧ (q < 1) ∧ (n : ℝ) * (1 - q) > δ⁻¹ →
         ‖nextOrderCorrection q x n - diracLogDet x‖ < ε :=
   h.one_loop_determinant ε hε

@@ -69,7 +69,7 @@ When authoring the `.ts` manifest for a new block, set
 `lean: { ref: "<pkg>:<Decl>" }` (never the legacy `decl:` / `file:`
 shape).  Use `<pkg>` from `LEAN_PACKAGES` in
 `folio-assistant/schemas/lean-packages.ts` (`qou`, `ugb`, `fred2005`,
-…).  See CLAUDE.md §0a for the URI grammar and §0b for the rebase
+…).  See AGENTS.md §0a for the URI grammar and §0b for the rebase
 workflow.
 
 ## When to Use This Skill
@@ -199,7 +199,7 @@ published reference exists, use `[manuscript]` and cite the chapter/section.
 This is enforced by the axiom report's Theoretical Gap Report (§8).
 
 **§3b-cond carve-out.** Class-body sorries are NOT missing proofs — they
-are conjectural inputs per CLAUDE.md §3b-cond, permanent by design.
+are conjectural inputs per AGENTS.md §3b-cond, permanent by design.
 The catalogue
 [`docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md`](../../../docs/audits/2026-06-03-lean-3b-cond-class-sorries-catalog.md)
 lists **194 classes / 219 class-body sorries** as of 2026-06-04
@@ -212,7 +212,7 @@ Only `theorem | lemma | def | instance` body sorries need `-- Ref:`.
 
 ## Base ring convention — generic `R` vs archimedean `ℝ` (STRICT)
 
-Per **CLAUDE.md §7c**: every Lean declaration that holds in a generic
+Per **AGENTS.md §7c**: every Lean declaration that holds in a generic
 commutative ring must be stated over a **type variable**, never silently
 specialised to `ℝ`. The archimedean wall is the structural cut:
 
@@ -231,6 +231,54 @@ specialised to `ℝ`. The archimedean wall is the structural cut:
 specialisation is cheap (drop the parameter); `ℝ` → generic refactor
 is much harder once downstream code accretes archimedean assumptions
 silently. When in doubt, start generic.
+
+### Pre-commit base-ring GATE (STRICT — "it compiles" is NOT the gate)
+
+`lake build` / `lean`-direct passing says **nothing** about §7c — a
+gratuitous `(q : ℝ)` compiles fine.
+
+> **Quickest path — run [`scripts/check-sidecars.sh`](../../../scripts/check-sidecars.sh)
+> on your changed files.** It maps each changed file to the QA sidecar
+> criteria that apply (`q-usage-*`, `wall-side-correct`, one-voice, …)
+> and runs the §7c base-ring check on standalone library Lean that has
+> no sidecar. **This is an agent-owned MANUAL pre-commit gate; CI is a
+> *backup*, not the primary check** (owner directive 2026-06-25 — agents
+> run the relevant checks for their own PRs by hand; CI catches only what
+> the agent missed).
+
+**Before committing any new or edited `.lean`, run the base-ring pass:**
+
+1. **Per-declaration triage (always, by hand).** For EACH declaration
+   ask: *does the **statement** (not the proof) use an archimedean
+   construct* — `Real.*`, an ordering (`0 < q`, `<`),
+   `linarith`/`positivity`/`nlinarith`/`norm_num`, or a numeric/CODATA
+   literal? **No → it MUST be over generic `{R} [CommRing R]` /
+   `[Field R]`, not `ℝ`.** A `det = 1`, a ring/field identity, a
+   bar-symmetry `q ↦ q⁻¹` are all generic; only the
+   ordering/`Real.*`/numeric piece is `ℝ`. **The classic miss:** stating
+   an algebraic `q`-identity over `ℝ` because it will *later* be
+   evaluated at `q₀ ∈ ℝ` — the fibre-level statement is generic
+   (`ℚ(q)` / `ℤ[q,q⁻¹]`); only the evaluation is archimedean. Do not
+   conflate the two (cf. the fibre-vs-observable banner in AGENTS.md).
+2. **Run the mechanical checker** on touched **content-block** Lean:
+   `bun run content/pipeline/q-usage-audit.ts --no-write` (q-regime +
+   `q-usage-archimedean-in-categorical-chapter`) and the
+   `wall-side-correct` checker (`checkWallSide` flags `: ℝ`, `(ℝ)`,
+   `linarith`, `positivity`, `norm_num`, `LinearOrderedField`).
+3. **Library files are NOT auto-swept — step 1 is the only gate they
+   get.** The q-usage / wall-side checkers run per content-block
+   (`<block>.qa.json`). A standalone library file under `…/lean/QOU/**`
+   with no `.ts`/`.md` sibling has no sidecar and escapes the sweep, so
+   you MUST run the per-declaration triage by hand for those.
+
+Skipping this gate is how a gratuitous `(q : ℝ)` / `SL₂(ℝ)` lands on a
+purely-algebraic statement. **Recorded 2026-06-25:** the τ-kernel
+quantum-integer / bar-even lemmas and the `SL₂` `det = 1` were authored
+over `ℝ` in the standalone library file `QOU/Mass/TauQuantumIntegerForm.lean`
+(no sidecar ⇒ unswept); `det = 1` is `CommRing`-universal and the
+bar-even `[2]_q` identity holds over any field (`ℚ(q)`) — only `τ > 2`
+is genuinely `ℝ`. The owner caught it by eye; the gate above is the
+fix so the next one is caught at authoring time.
 
 Concrete cheat-sheet:
 
@@ -626,7 +674,7 @@ content/<paper>/<chapter>/
    formalized first (dependency DAG ordering)
 3. **Write/update the sibling `.lean` file** in `content/<paper>/<chapter>/`
 4. **Update the `.ts` manifest**: set `lean.ref` to the package-qualified
-   URI `"<pkg>:<Decl.Path>"` (per CLAUDE.md §0a; legacy `lean.decl` /
+   URI `"<pkg>:<Decl.Path>"` (per AGENTS.md §0a; legacy `lean.decl` /
    `lean.file` shape is removed)
 5. **Run validation**: `bun run content/pipeline/validate.ts` to check
    cross-references and constraint rules

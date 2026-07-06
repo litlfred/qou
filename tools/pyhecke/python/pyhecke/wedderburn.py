@@ -15,7 +15,7 @@ Symbols owned by this module:
 For the `partition_jet_depth` (jet-prefix combinatorial depth) symbol
 — EXPLORATORY per the canonical/exploratory audit
 (docs/audits/2026-05-24-hecke-core-canonical-audit.md) — see
-`folio-assistant/computations/_deprecated/hecke_core_legacy.py`. It
+`computations/_deprecated/hecke_core_legacy.py`. It
 is re-exported here for back-compat but lives in the legacy file.
 
 See `partition.py` for Young-tableau specific helpers (SYT
@@ -26,18 +26,19 @@ primitives.
 from __future__ import annotations
 
 import math
+import mpmath as mp
 
 # Substrate q from q_parameter (no hecke_core dependency — this module
 # is a SOURCE, not a re-exporter). q_parameter is part of the
 # substrate trio that's been promoted to `qou-substrate` (PR #1068);
-# the back-compat shim in folio-assistant/computations/q_parameter.py
+# the back-compat shim in computations/q_parameter.py
 # re-exports from qou_substrate, so either import path works at
 # runtime.
 try:
     from q_parameter import q_int  # type: ignore[import-not-found]
 except ImportError:
     # Fallback for installations where qou-substrate is the only
-    # provider (no folio-assistant/computations/ on sys.path).
+    # provider (no computations/ on sys.path).
     from qou_substrate.constants import q_int  # type: ignore[import-not-found]
 
 
@@ -53,10 +54,10 @@ def q_hook_product(partition):
     """
     lam = list(partition)
     if not lam:
-        return 1.0
+        return mp.mpf("1.0")
     width = lam[0]
     conj = [sum(1 for p in lam if p > j) for j in range(width)]
-    H = 1.0
+    H = mp.mpf("1.0")
     for i, li in enumerate(lam):
         for j in range(li):
             arm = li - j - 1
@@ -67,7 +68,7 @@ def q_hook_product(partition):
 
 def q_factorial(n):
     """[n]_q! = [1]_q · [2]_q · ... · [n]_q (symbolic in q)."""
-    f = 1.0
+    f = mp.mpf("1.0")
     for i in range(1, n + 1):
         f *= q_int(i)
     return f
@@ -128,7 +129,7 @@ def q_dimension(partition):
     """Quantum dimension d_q(λ) = [n]_q! / H_q(λ) (symbolic in q)."""
     n = sum(partition)
     if n == 0:
-        return 1.0
+        return mp.mpf("1.0")
     return q_factorial(n) / q_hook_product(partition)
 
 
@@ -136,7 +137,7 @@ def wedderburn_weight(partition):
     """Wedderburn-Artin weight w_λ = d_q(λ)² / [n]_q! (symbolic in q)."""
     n = sum(partition)
     if n == 0:
-        return 1.0
+        return mp.mpf("1.0")
     return q_dimension(partition)**2 / q_factorial(n)
 
 

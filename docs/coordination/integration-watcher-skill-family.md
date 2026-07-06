@@ -22,9 +22,9 @@ consistent conventions across children:
 | **#722** | `claude/iw-meta-branch-naming` | parent §5j step 2 | open, Copilot+Gemini reviewed, fixes pushed | me (this session) |
 | **#726** | `claude/iw-meta-rebase-spawned-prs` | parent §4g + §5g step 7 | open, Copilot+Gemini reviewed, 6-bug fix pushed `d0ca5d46e` | me (this session) |
 | **#724** | `claude/integration-watcher-on-derivation` | parent §3a + §3b | open | sibling agent |
-| **#706** | `claude/detangler-integration-watcher-afdFI` | new `local/detangler-integration-watcher.md` + CLAUDE.md routing | open | sibling agent |
+| **#706** | `claude/detangler-integration-watcher-afdFI` | new `local/detangler-integration-watcher.md` + AGENTS.md routing | open | sibling agent |
 | **#694** | `claude/canonical-watcher-skill-UaWnQ` | `scientific-accuracy.md` §4b + baseline audit doc | open (less overlap) | sibling agent |
-| **#703** | (merged) | parent skill refactor + 3 children + CLAUDE.md routing | landed `260522a6` | sibling agent |
+| **#703** | (merged) | parent skill refactor + 3 children + AGENTS.md routing | landed `260522a6` | sibling agent |
 
 ## Classification (skill §2)
 

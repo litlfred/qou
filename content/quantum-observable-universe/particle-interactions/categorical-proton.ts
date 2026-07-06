@@ -1,6 +1,9 @@
 import { definition } from "../../schema/builders";
 
 export default definition({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+  ],
   label: "def:categorical-proton",
   title: "Proton (categorical)",
   tags: ["proton", "hadron", "baryon", "color-tube", "knot", "categorical"],
@@ -11,8 +14,8 @@ export default definition({
   cites: ["manuscript"],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/codata_masses.py",
-    witness: "folio-assistant/computations/codata-masses.witness.json",
+    script: "computations/codata_masses.py",
+    witness: "computations/codata-masses.witness.json",
     status: "verified",
   },
 });

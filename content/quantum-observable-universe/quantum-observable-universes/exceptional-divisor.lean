@@ -65,6 +65,5 @@ theorem ExceptionalDivisor.south_pole_independent
     (E : ExceptionalDivisor) (ψ₁ ψ₂ : ℝ) (i : Fin 3) :
     E.fibrePoint 0 ψ₁ i = E.fibrePoint 0 ψ₂ i := by
   simp [ExceptionalDivisor.fibrePoint, Real.sin_zero, Real.cos_zero]
-  ring
 
 end QOU

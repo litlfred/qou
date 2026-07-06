@@ -1,5 +1,6 @@
 import Mathlib.Algebra.Module.Basic
 import Mathlib.LinearAlgebra.Projection
+import Mathlib.Tactic.Abel
 
 
 /-!
@@ -46,15 +47,16 @@ theorem idempotent_direct_sum_decomposition
   rw [Submodule.mem_sup]
   refine ⟨τ.toFun x, LinearMap.mem_range_self τ.toFun x,
          x - τ.toFun x, ?_, by abel⟩
-  simp [LinearMap.mem_ker, map_sub, show τ.toFun (τ.toFun x) = τ.toFun x from
-    congr_fun (congr_arg DFunLike.coe τ.idem) x]
+  show τ.toFun (x - τ.toFun x) = 0
+  rw [map_sub, show τ.toFun (τ.toFun x) = τ.toFun x from
+    congr_fun (congr_arg DFunLike.coe τ.idem) x, sub_self]
 
 /-- The descended and transient submodules intersect trivially. -/
 -- Ref: [manuscript] §3, Proposition: Eigenspaces of the descent involution
 theorem idempotent_direct_sum_disjoint
     (τ : IdempotentEndomorphism (R := R) M) :
     Disjoint τ.descended τ.transient := by
-  rw [disjoint_def]
+  rw [Submodule.disjoint_def]
   intro x hx_desc hx_trans
   simp only [IdempotentEndomorphism.transient, LinearMap.mem_ker] at hx_trans
   simp only [IdempotentEndomorphism.descended, LinearMap.mem_range] at hx_desc

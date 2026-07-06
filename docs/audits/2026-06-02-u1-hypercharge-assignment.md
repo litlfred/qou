@@ -12,9 +12,9 @@ but left `writhe → hypercharge Y` UNDEFINED: with `c=1` the pp/nn framing
 difference (0.420) missed PDG `(m_n−m_p)/m_p` (0.00138) by ~305×, and the
 author flagged that tuning `c` to match would be a FIT.
 **Compute:**
-[`u1_hypercharge_assignment.py`](../../folio-assistant/computations/u1_hypercharge_assignment.py),
+[`u1_hypercharge_assignment.py`](../../computations/u1_hypercharge_assignment.py),
 witness
-[`u1-hypercharge-assignment.witness.json`](../../folio-assistant/computations/u1-hypercharge-assignment.witness.json)
+[`u1-hypercharge-assignment.witness.json`](../../computations/u1-hypercharge-assignment.witness.json)
 (audit-only, RAW @ canonical COMPUTE_DPS + symbolic-in-q, 10 assertions pass;
 q0 is the proton-pinned `q_parameter.Q_MP`). **No tuning to
 m_n−m_p, any charge, hypercharge, or any h^k.**

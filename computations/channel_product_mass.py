@@ -32,7 +32,7 @@ Content block: rem:q-integer-mass-table
 Witness: channel-product-mass.witness.json
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 channel_product_mass.py
 """
 
@@ -45,6 +45,7 @@ from mpmath import mp
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q, Q_INV, HA, q_int, HBAR_Q, Q_ERR
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
+from experimental_constants import m_n_derived_3input  # noqa: E402
 from witness_base import WitnessBuilder
 
 # ══════════════════════════════════════════════════════════════
@@ -101,7 +102,7 @@ def channel_product_mass(Z, N):
     if A < 1:
         return 0.0
 
-    M_free = Z * M_P_MEV + N * M_N_MEV + Z * me
+    M_free = Z * M_P_MEV + N * m_n_derived_3input + Z * me
 
     if A == 1:
         if Z == 1:  # hydrogen: single proton
@@ -120,7 +121,7 @@ def channel_product_mass(Z, N):
 
 def observed_mass(Z, N, B_per_A):
     """Observed atomic mass from AME2020 B/A."""
-    M_free = Z * M_P_MEV + N * M_N_MEV + Z * me
+    M_free = Z * M_P_MEV + N * m_n_derived_3input + Z * me
     return M_free - (Z + N) * B_per_A
 
 
@@ -180,7 +181,7 @@ stats_errors = []
 for name, Z, N, A, BperA in ATOMS:
     M_pred = channel_product_mass(Z, N)
     M_obs = observed_mass(Z, N, BperA)
-    M_free = Z * M_P_MEV + N * M_N_MEV + Z * me
+    M_free = Z * M_P_MEV + N * m_n_derived_3input + Z * me
     B_pred = M_free - M_pred
     B_obs = A * BperA
 

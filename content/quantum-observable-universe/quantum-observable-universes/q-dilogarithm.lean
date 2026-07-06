@@ -29,7 +29,7 @@ abbrev R_q := LaurentPolynomial ℤ
 /-- **q-Dilogarithm data**: a level-2 iterated primitive of H_q
     characterised by the pentagon identity.  `Li2_q ∈ H ⊗ H`.  -/
 -- Ref: [manuscript] §2
-structure QDilogarithm (H : Type*) where
+structure QDilogarithm (H : Type*) [Add H] where
   /-- The level-2 primitive Li₂_q ∈ H ⊗ H. -/
   Li2 : H × H
   /-- The level-1 primitive log_q ∈ H (needed for pentagon). -/
@@ -51,19 +51,16 @@ structure QDilogarithm (H : Type*) where
       Li2_eval (div (mul x (compl y)) (compl (mul x y))) +
       Li2_eval (div (mul y (compl x)) (compl (mul x y)))
 
-/-- **Uniqueness**: any two level-2 primitives satisfying the pentagon
-    coincide up to a level-1 shift (the universal property of the
-    q-dilogarithm as generator of the centre of H_q^{⊗2} modulo
-    shuffle-products). -/
--- Ref: [manuscript] §2
-/-- **External axiom (§3b-cond pattern): QDilogarithm.unique_up_to_shift.**
+/-- **Uniqueness** (external axiom, §3b-cond pattern):
+    any two level-2 primitives satisfying the pentagon coincide up to a
+    level-1 shift (the universal property of the q-dilogarithm as
+    generator of the centre of H_q^{⊗2} modulo shuffle-products).
 
-    Auto-extracted from the single-sorry theorem body in this file.
     Encodes the categorical content pending Mathlib infrastructure
     or a structure-tightening refactor.
 
-    See the theorem docstring below for the cited reference. -/
-axiom QDilogarithm.unique_up_to_shift_axiom {H : Type*} (L₁ L₂ : QDilogarithm H)
+    Ref: [manuscript] §2-quantum-observable-universes/q-dilogarithm. -/
+axiom QDilogarithm.unique_up_to_shift_axiom {H : Type*} [Add H] (L₁ L₂ : QDilogarithm H)
     (h_log : L₁.log_q = L₂.log_q)
     (h_mul : L₁.mul = L₂.mul)
     (h_compl : L₁.compl = L₂.compl)
@@ -71,12 +68,14 @@ axiom QDilogarithm.unique_up_to_shift_axiom {H : Type*} (L₁ L₂ : QDilogarith
     L₁.Li2.1 = L₂.Li2.1
 
 theorem QDilogarithm.unique_up_to_shift
-    {H : Type*} (L₁ L₂ : QDilogarithm H)
+    {H : Type*} [Add H] (L₁ L₂ : QDilogarithm H)
     (h_log : L₁.log_q = L₂.log_q)
     (h_mul : L₁.mul = L₂.mul)
     (h_compl : L₁.compl = L₂.compl)
     (h_div : L₁.div = L₂.div) :
     L₁.Li2.1 = L₂.Li2.1 :=
   QDilogarithm.unique_up_to_shift_axiom L₁ L₂ h_log h_mul h_compl h_div
+
+end
 
 end QOU

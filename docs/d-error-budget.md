@@ -162,7 +162,7 @@ pick among these. Writing this doc captures where the leverage is.
 ## Pointers
 
 - Formula source: `content/quantum-observable-universe/braids-and-knots/algebraic-quantum-volume-specialization.md`
-- Knot assignment: `folio-assistant/computations/jsj_verification.py`
-- Zero-parameter table: `folio-assistant/computations/mass_table_ppb.py`
+- Knot assignment: `computations/jsj_verification.py`
+- Zero-parameter table: `computations/mass_table_ppb.py`
 - Session hints: `docs/path-to-1ppb-05-hints.md`
 - Pentagon defect plan: `docs/path-to-1ppb-04-plan.md` § Phase 2

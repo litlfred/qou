@@ -49,6 +49,8 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 sys.path.insert(0, str(Path(__file__).parent))
+import _path_bridge  # noqa: F401, E402 — substrate path bridge (codata_constants)
+from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 — full-precision m_p for E_0 anchor
 from mass_endomorphism import q0, Phi_q, z_mark
 from pyhecke.gram import atom_per_generator_volumes
 
@@ -119,7 +121,7 @@ def get_ilp_ground(Z, N):
 # E_0_BETA_DECAY_MEV = 0.78233341 MeV used by the canonical Markov-trace
 # path — which path applies depends on which tower is being summed.
 _M_PROTON_TOWER_CAT = 1178995.5254  # from mass_endomorphism.py witness
-E_0_PROTON_TOWER_MEV = 938.272 / _M_PROTON_TOWER_CAT
+E_0_PROTON_TOWER_MEV = float(M_P_MEV_VALIDATION) / _M_PROTON_TOWER_CAT
 
 
 def binding_flat_all_pairs(Z, N, E_0=E_0_PROTON_TOWER_MEV):
@@ -171,7 +173,7 @@ if __name__ == "__main__":
     for name, Z, N, B_AME in ATOMS:
         A = Z + N
         B = binding_flat_all_pairs(Z, N)
-        dm = abs(B - B_AME) / (A * 938.272) * 100
+        dm = abs(B - B_AME) / (A * float(M_P_MEV_VALIDATION)) * 100
         print(f"  {name:>6} {A:>3} {B_AME:>8.3f} {B:>10.3f} {dm:>9.4f}%")
         results.append({
             "atom": name, "Z": Z, "N": N, "A": A,

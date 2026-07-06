@@ -80,7 +80,7 @@ theorem gramWeight_nonneg {n N : ℕ}
     0 ≤ gramWeight G deltas k := by
   -- Ref: [manuscript] Proposition prop:gram-weighted-qvalue
   -- frobeniusNorm = √|·| ≥ 0; sum of nonneg ≥ 0; ratio of nonneg ≥ 0.
-  unfold gramWeight
+  simp only [gramWeight]
   split_ifs with h
   · positivity
   · apply div_nonneg
@@ -100,7 +100,7 @@ theorem gramWeight_uniform_when_equal {n N : ℕ} (hN : 0 < N)
     ∀ k, gramWeight G deltas k = 1 / N := by
   -- Ref: [manuscript] Proposition prop:gram-weighted-qvalue
   intro k
-  unfold gramWeight
+  simp only [gramWeight]
   -- Every j-th norm equals the k-th norm.
   have h_const : (fun j : Fin N => frobeniusNorm G (deltas j)) =
       fun _ => frobeniusNorm G (deltas k) := funext (fun j => h_equal j k)

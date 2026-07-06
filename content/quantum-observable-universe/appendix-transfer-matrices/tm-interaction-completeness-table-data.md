@@ -1,3 +1,5 @@
+Completeness here means that the seven rows below exhaust the single-crossing interaction catalogue acting on the transfer matrix: every admissible process is either the identity, one of the two $\beta$ decays, a photon append or remove, or a pair creation or annihilation. Each row is a distinct process, and the final column links back to the operator that defines it in [tm-interactions](#tm-interactions).
+
 | # | Process | Operator | Catalogue entry |
 |---|---|---|---|
 | 1 | Identity (no interaction) | $\mathbb{I}$ | trivial pair $T_{1,0} \cdot T_{1,0}$ |

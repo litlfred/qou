@@ -109,7 +109,7 @@ theorem id_comp {P Q : ConfinedParticle} (f : ConfMorphism P Q) :
     comp (id Q) f = f := by
   induction f with
   | nil _ => rfl
-  | cons a f' ih => simp [comp_cons, ih]
+  | cons a f' ih => rw [comp_cons, ih]
 
 /-- **Associativity** — `h ∘ (g ∘ f) = (h ∘ g) ∘ f`. By induction
     on the leftmost (source-side) factor `f`. -/

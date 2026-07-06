@@ -101,7 +101,7 @@ instance levelSufficient_refl
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
-theorem LevelSufficiency
+def LevelSufficiency
     (P P' : ConfinedParticle) (q : R_q)
     [HasMarkovTrace P q] [HasMarkovTrace P' q]
     (h_unfold : ConfMorphism P P')

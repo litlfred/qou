@@ -1,6 +1,7 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Int.Basic
 import Mathlib.Data.Nat.Basic
+import Mathlib.Data.Nat.Factorial.Basic
 
 
 /-!
@@ -56,11 +57,11 @@ theorem dic3_order : 4 * 3 = (12 : ℕ) := by norm_num
     3 × 6 = 18 elements (as subgroups, they are not disjoint as sets,
     but the corollary states they correspond to the three colour sectors). -/
 -- Ref: [manuscript] Chapter 6, §Braid structure
-theorem s3_order : Nat.factorial 3 = 6 := by norm_num
+theorem s3_order : Nat.factorial 3 = 6 := by decide
 
 /-- S₅ has order 120. -/
 -- Ref: [manuscript] Chapter 6, §Braid structure
-theorem s5_order : Nat.factorial 5 = 120 := by norm_num
+theorem s5_order : Nat.factorial 5 = 120 := by decide
 
 /-- The number of copies of S₃ inside S₅ corresponding to colour sectors
     is 3 (one per colour: red, green, blue). -/

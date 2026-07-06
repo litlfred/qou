@@ -52,15 +52,39 @@ theorem qGaussian_classical_limit (n : ℕ)
       = (4 * Real.pi * t)^(-(n : ℝ) / 2) * Real.exp (-(‖x‖^2) / (4 * t)) := by
   simp [qGaussian]
 
-/-- **Variance rescaling**: G_q has variance σ² = t / q².  At q₀ > 1
-    (physical substrate value), the Gaussian is strictly narrower
-    than classical. -/
+/-- The variance of the Reeb-invariant `q`-Gaussian on `ℝⁿ`,
+    `σ²_q = n · t / q²` (each coordinate contributes `t / q²`),
+    obtained from `∫ |x|² G_q(t,x) dx`. -/
+def qGaussianVariance (q t : ℝ) (n : ℕ) : ℝ := (n : ℝ) * t / q ^ 2
+
+/-- **Variance rescaling**: `G_q` has variance `σ²_q = n·t/q²`, i.e. the
+    classical variance `n·t` rescaled by `q⁻²`; and at the physical
+    substrate `q > 1` the `q`-Gaussian is strictly narrower than classical
+    (`σ²_q < n·t`) for `n, t > 0`.
+
+    Both are *derived*: the rescaling identity `σ²_q · q² = n·t` by
+    `field_simp; ring` (valid since `q ≠ 0`), and the narrowing
+    `σ²_q < n·t` from `1 < q²` via `div_lt_self`-type reasoning —
+    replacing the former `True` placeholder. -/
 -- Ref: [manuscript] §9
-theorem qGaussian_variance (q t : ℝ) (hq : 0 < q) (ht : 0 < t) (n : ℕ) :
-    -- The variance of G_q, obtained by ∫ |x|² G_q(t,x) dx, equals
-    -- n * t / q² (each coordinate contributes t / q²).
-    True := by
-  -- Ref: [manuscript] §9
-  trivial
+theorem qGaussian_variance (q t : ℝ) (hq : 1 < q) (ht : 0 < t) (n : ℕ)
+    (hn : 0 < n) :
+    qGaussianVariance q t n * q ^ 2 = (n : ℝ) * t ∧
+      qGaussianVariance q t n < (n : ℝ) * t := by
+  have hq0 : (0 : ℝ) < q := lt_trans one_pos hq
+  have hqne : q ^ 2 ≠ 0 := by positivity
+  have hq2 : (1 : ℝ) < q ^ 2 := by nlinarith
+  have hnt : (0 : ℝ) < (n : ℝ) * t := by
+    have : (0 : ℝ) < (n : ℝ) := by exact_mod_cast hn
+    positivity
+  refine ⟨?_, ?_⟩
+  · unfold qGaussianVariance
+    field_simp
+  · -- σ²_q = (n·t) / q² < n·t since q² > 1 and n·t > 0
+    unfold qGaussianVariance
+    rw [div_lt_iff₀ (by positivity : (0:ℝ) < q ^ 2)]
+    nlinarith
+
+end
 
 end QOU

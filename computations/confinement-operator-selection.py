@@ -12,7 +12,7 @@ Phase 0c: Full G⁻¹ action on demand profile
 Phase 1:  Verify selected operator reproduces known proton/neutron NFs
 
 Usage:
-    cd folio-assistant/computations && python3 confinement-operator-selection.py
+    cd computations && python3 confinement-operator-selection.py
 """
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
@@ -28,6 +28,7 @@ from q_parameter import Q as q0, HA as HA_val, E_CROSS
 import sys as _sys, pathlib as _pl
 _sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[2] / "tools" / "pyhecke" / "python"))
 from pyhecke.gram import z as _PG_Z, NF_BASIS as _PG_NF_BASIS, TR_M as _PG_TR_M  # noqa: E402
+from derived_masses import TARGET_NET_PROTON, TARGET_NET_NEUTRON  # noqa: E402
 
 
 try:
@@ -362,7 +363,7 @@ for nucleon_name, quark_types in [("PROTON (u,u,d)", ['u', 'u', 'd']),
         print_nf(f"    {r['name'][:25]}", r['nf'])
 
     # ── Ranking by multiple criteria ──────────────────────────────
-    target_net = 0.999 if 'u' == quark_types[0] and quark_types.count('u') == 2 else 0.811
+    target_net = TARGET_NET_PROTON if 'u' == quark_types[0] and quark_types.count('u') == 2 else TARGET_NET_NEUTRON
 
     print(f"\n  RANKING 1 — Naive (fewer demand channels, lower E_×):")
     ranked1 = sorted(results_table, key=lambda r: (r['n_demand'], r['E_x']))

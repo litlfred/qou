@@ -16,8 +16,8 @@ import { definition } from "../../schema/builders";
  * (transpose pair), corresponding to T_{3,5} and T_{2,9} intertwining
  * the 4-strand bound state — see prop:force-carrier-intertwining-correspondence.
  *
- * Computational implementation: folio-assistant/computations/delta_q_decoration.py
- * Cached witness: folio-assistant/computations/delta-q-decoration.witness.json
+ * Computational implementation: computations/delta_q_decoration.py
+ * Cached witness: computations/delta-q-decoration.witness.json
  */
 export default definition({
   label: "def:delta-q-decoration",
@@ -27,8 +27,8 @@ export default definition({
   defines: ["delta-q-decoration", "q-dimension-layer"],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/delta_q_decoration.py",
-    witness: "folio-assistant/computations/delta-q-decoration.witness.json",
+    script: "computations/delta_q_decoration.py",
+    witness: "computations/delta-q-decoration.witness.json",
     status: "verified",
   },
   lean: { ref: "qou:QOU.BraidKnot.delta_q" },

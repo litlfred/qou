@@ -69,7 +69,7 @@ to:
 
 ### Script
 
-**[`atomic_mass_via_rho_k.py:188`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/atomic_mass_via_rho_k.py)**
+**[`atomic_mass_via_rho_k.py:188`](https://github.com/litlfred/qou/blob/main/computations/atomic_mass_via_rho_k.py)**
 
 ```python
 def rho_K_leading_order(Z: int, N: int, abs_tr_M: mp.mpf) -> mp.mpf:
@@ -98,13 +98,13 @@ empirical binding energies from CODATA atomic masses (working
 
 | Script | Pattern | Status |
 |--------|---------|--------|
-| [`atom_mass_additive_baseline.py:76`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/atom_mass_additive_baseline.py) | $M_\text{free} = Z m_p + N m_n + Z m_e$ → $\Delta_\text{binding} = M_\text{free} - M_\text{AME}$ | OK (baseline extraction) |
-| [`isotope-mass-table.py:261`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/isotope-mass-table.py) | Same pattern, comparison table | OK |
-| [`channel_product_mass.py:102,121`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/channel_product_mass.py) | Same pattern | OK |
-| [`unified-mass-molecular.py:227,351`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/unified-mass-molecular.py) | Same pattern | OK |
-| [`categorical_q_decay_ba_low_isotopes.py:351`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/categorical_q_decay_ba_low_isotopes.py) | Constituent mass for $\beta$-decay $Q$-value extraction | OK |
-| [`path_b_defect_binding_probe.py:80`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probes/path_b_defect_binding_probe.py) | Baseline | OK (probe) |
-| [`delta_lambda_empirical_tabulation.py:395`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/delta_lambda_empirical_tabulation.py) | `# = ρ_K^LO · m_e · |tr_M|` — comment explicitly identifies the additive baseline with the ρ_K LO prediction | **Caveat: documents the tautology directly; safe under Class B framing** |
+| [`atom_mass_additive_baseline.py:76`](https://github.com/litlfred/qou/blob/main/computations/atom_mass_additive_baseline.py) | $M_\text{free} = Z m_p + N m_n + Z m_e$ → $\Delta_\text{binding} = M_\text{free} - M_\text{AME}$ | OK (baseline extraction) |
+| [`isotope-mass-table.py:261`](https://github.com/litlfred/qou/blob/main/computations/isotope-mass-table.py) | Same pattern, comparison table | OK |
+| [`channel_product_mass.py:102,121`](https://github.com/litlfred/qou/blob/main/computations/channel_product_mass.py) | Same pattern | OK |
+| [`unified-mass-molecular.py:227,351`](https://github.com/litlfred/qou/blob/main/computations/unified-mass-molecular.py) | Same pattern | OK |
+| [`categorical_q_decay_ba_low_isotopes.py:351`](https://github.com/litlfred/qou/blob/main/computations/categorical_q_decay_ba_low_isotopes.py) | Constituent mass for $\beta$-decay $Q$-value extraction | OK |
+| [`path_b_defect_binding_probe.py:80`](https://github.com/litlfred/qou/blob/main/computations/probes/path_b_defect_binding_probe.py) | Baseline | OK (probe) |
+| [`delta_lambda_empirical_tabulation.py:395`](https://github.com/litlfred/qou/blob/main/computations/delta_lambda_empirical_tabulation.py) | `# = ρ_K^LO · m_e · |tr_M|` — comment explicitly identifies the additive baseline with the ρ_K LO prediction | **Caveat: documents the tautology directly; safe under Class B framing** |
 
 ## Diagnostic / probe (Class C) — no fix required
 
@@ -117,9 +117,9 @@ predictions. OK.
 
 ## Registry / CODATA re-export (Class D) — no fix required
 
-[`codata_masses.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/codata_masses.py),
-[`codata_constants.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/substrate/codata_constants.py),
-[`experimental_constants.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/substrate/experimental_constants.py)
+[`codata_masses.py`](https://github.com/litlfred/qou/blob/main/computations/codata_masses.py),
+[`codata_constants.py`](https://github.com/litlfred/qou/blob/main/computations/substrate/codata_constants.py),
+[`experimental_constants.py`](https://github.com/litlfred/qou/blob/main/computations/substrate/experimental_constants.py)
 re-export CODATA values. Their downstream consumers tag their own
 status. OK.
 

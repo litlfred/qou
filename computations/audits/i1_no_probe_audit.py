@@ -11,7 +11,7 @@ The I1 antipattern in `local/compute-integration-watcher`:
 
   A block has `kind ∈ {theorem, proposition, lemma, corollary}`
   AND a sibling `.lean` AND that `.lean` has 0 sorrys, BUT no
-  `folio-assistant/computations/*.witness.json` has the block's
+  `computations/*.witness.json` has the block's
   label in its `contentBlock` field.
 
 This audit walks every provable content block and classifies:
@@ -34,7 +34,7 @@ This audit walks every provable content block and classifies:
 Emits `i1-no-probe-audit.witness.json`.
 
 Usage:
-    python3 folio-assistant/computations/i1_no_probe_audit.py [--strict]
+    python3 computations/i1_no_probe_audit.py [--strict]
 """
 
 

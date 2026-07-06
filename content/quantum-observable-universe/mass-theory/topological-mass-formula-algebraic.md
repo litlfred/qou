@@ -64,7 +64,7 @@ sum is the level-$0$ singleton contribution; the pair sum is the
 level-$0$ pair contribution. Every $\hat V_i(q)$ is an element of
 $\mathbb{Z}[q^{1/2}, q^{-1/2}]$.*
 
-## Why this is the algebraic-side statement
+## Algebraic-side character of the statement
 
 The archimedean version
 [`prop:topological-mass-formula`](#prop:topological-mass-formula)
@@ -80,7 +80,7 @@ $\mathrm{Vol}_q(\beta)$, which is *defined* as a finite product in
 $\mathbb{Z}[q^{1/2}, q^{-1/2}]$
 ([`def:algebraic-quantum-volume`](#def:algebraic-quantum-volume)).
 The $\tau_{\mathrm{arch}}$ specialisation $q \mapsto q_0$ then
-recovers the numerical Archimedean value $\Phi_1(\beta)$, but
+recovers the canonical Archimedean value $\Phi_1(\beta)$, but
 **every step of the derivation up to the specialisation is in
 $\mathbb{Q}(q)$**. There is no analytic continuation, no roots-of-
 unity limit, no asymptotic, and no volume-conjecture borrowing.
@@ -105,38 +105,4 @@ identification (not as a derivation step).  Equivalently, the
 Archimedean prop is **post-$\tau$**; the algebraic prop is
 **pre-$\tau$**. Callers that need a $\mathbb{Q}(q)$-side mass
 identity must cite this proposition; callers that need an
-Archimedean numerical value of $\mathrm{Vol}(K)$ may cite either.
-
-## Proof
-
-The pre-$\tau$ identity follows directly from the unified knot
-mass formula
-([`thm:knot-mass-formula-unified`](#thm:knot-mass-formula-unified))
-with three observations:
-
-1. **Descended piece.** The level-$0$ Markov trace
-   $|\mathrm{tr}_M(\rho(\beta))|$ is the Jones polynomial
-   $J_K(q) \in \mathbb{Z}[q^{\pm 1/2}]$
-   ([`thm:jones-markov-trace`](#thm:jones-markov-trace)), an
-   element of $\mathbb{Q}(q)$.
-2. **Singleton tower.** Each $\Phi_q(|\hat V_i|)$ is a quantum
-   dilogarithm of an element of $\mathbb{Z}[q^{1/2}, q^{-1/2}]$;
-   formally well-defined in the Habiro completion
-   $\widehat{\mathbb{Z}[q]}$
-   ([`def:habiro-ring`](#def:habiro-ring)) without analytic
-   continuation.
-3. **Pair tower.** Each pair contribution
-   $\Phi_q(|\hat V_i \hat V_j|)$ is similarly in
-   $\widehat{\mathbb{Z}[q]}$, with the $z^2$ prefactor
-   established by
-   [`lem:tower-pair-equality-fixed-level`](#lem:tower-pair-equality-fixed-level)
-   as an exact equality.
-
-The full sum is therefore an element of
-$\widehat{\mathbb{Z}[q]} \subset \mathbb{Q}(q)$ at every step. The
-$\tau_{\mathrm{arch}}$ specialisation at $q = q_0$ then produces
-the numerical mass; multiplication by $\hbar_q^{-2}$ and
-identification with $\mathrm{Vol}(K) / \hbar_{q_0}^{2}$ via the
-volume conjecture is the τ-image step recorded by
-[`prop:topological-mass-formula`](#prop:topological-mass-formula).
-$\square$
+Archimedean exact algebraic values of $\mathrm{Vol}(K)$ may cite either.

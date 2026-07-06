@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **V_(2,1) Hoefsmit 2$\times$2 matrix derivation — partial closure (item 1 of ).**
 
 V_(2,1) is the **2-dimensional Hoefsmit irrep** of $H_3(q)$. Unlike
@@ -14,16 +12,12 @@ $$
 
 with $d_1 = q^3/(q^2+1)$, $d_2 = -q^{-1}/(q^2+1)$, $b^2 = d_1 d_2 + 1$.
 
-The character on the canonical 11-crossing typed-$\mathbf{B}_3$ braids
-is `tr` of the matrix product. The probe `probe_per_wedderburn_block_ck.py`
-symbolically computes (via `q_character_on_braid_word` + `sympy.cancel`):
-
 $$
   \chi_{(2,1)}(\mathcal{B}_n) - \chi_{(2,1)}(\mathcal{B}_p)
    = -\frac{(q^4 + 1)(q^2 - 1)}{4 q^3}.
 $$
 
-## What this module proves
+## Content of this module
 
 | theorem | content | proof |
 |---|---|---|
@@ -35,16 +29,7 @@ $$
 
 All theorems sorry-free.
 
-## Laurent decomposition explains the ε^k growth
-
-The probe data shows V_(2,1) ε^k coefficients grow polynomially
-(`0, -1, 0.5, -2.5, 3.5, -5, 6.75, ...`). This follows from the
-Laurent decomposition: at $q = 1 + \varepsilon$,
-- $-q^3/4$ contributes a degree-3 polynomial in $\varepsilon$ (zero beyond $k=3$)
-- $q/4$ contributes a linear polynomial (zero beyond $k=1$)
-- $-q^{-1}/4$ and $q^{-3}/4$ contribute geometric series, growing
-  polynomially in $k$ via $\binom{k+m-1}{m-1}$ binomial coefficients
-  (where $m$ is the negative power)
+## Laurent decomposition and the ε^k growth
 
 Unlike V_(3) where the inverse-Laurent has only one term ($q^{-1}/4$,
 giving bounded oscillation), V_(2,1) has two inverse terms ($q^{-1}/4$
@@ -52,7 +37,7 @@ and $q^{-3}/4$), and the $q^{-3}/4$ term has $\binom{k+2}{2}$ growth
 $\sim k^2/2$. This matches the observed asymptotic $\sim k(k+3)/2$
 for the V_(2,1) coefficients (proved earlier in the conversation).
 
-## What's deferred to follow-up PR
+## Deferred to follow-up PR
 
 The **full Lean matrix-product trace derivation** (computing
 $\mathrm{tr}\bigl(\prod_{c \in \beta} M_c\bigr)$ from the 2$\times$2
@@ -67,11 +52,6 @@ matrices) requires:
    under the swap.)
 3. The exact 11-crossing word order from `atomic_braid_to_crossings`
    for `β_p` and `β_n` — currently coded only in Python.
-
-The scalar / rational-identity level closure here, combined with
-sympy's symbolic verification in the probe, **establishes the
-closed form empirically + structurally**; the missing piece is a
-Lean-level proof tying the matrix-product to the rational form.
 
 ## Full matrix-product trace theorem (statement)
 
@@ -91,13 +71,6 @@ def beta_p_word_v21, beta_n_word_v21 : TypedB3Word
 
 noncomputable def chi_v21_on_word (q : ℝ) (w : TypedB3Word) : ℝ :=
   Matrix.trace (w.foldl ... fun acc c => acc * crossing_to_matrix q c)
-
-theorem chi_v21_matrix_trace_identity (q : ℝ) (hq : q ≠ 0) :
-    chi_v21_on_word q beta_n_word_v21
-      - chi_v21_on_word q beta_p_word_v21
-      = chi_V21_difference_factored q := by
-  sorry  -- empirically verified via sympy in the probe
-```
 
 The theorem statement is now **explicit at the matrix-product
 level**. The proof is the only remaining `sorry` in this

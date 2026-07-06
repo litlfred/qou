@@ -47,28 +47,6 @@ $$
                                 {E_0 \,\Delta_{\max}(\varrho)} \bigr)}
                  {\log(\hbar_q^{2})} \right\rceil.
 $$
-
-*Proof.*  The geometric series $\sum_{k \geq 0} \hbar_q^{2k}$
-converges with sum $(1 - \hbar_q^{2})^{-1}$ because
-$\hbar_q^2 \in (0, 1)$ (indeed $\hbar_q^2 \approx 0.00982$ at
-$q_0 \approx 1.11$).  Absolute convergence follows from the
-comparison
-$\sum_{n \geq 1} \hbar_q^{2n} |\Delta^{(n)}|
-\leq \Delta_{\max} \sum_{n \geq 1} \hbar_q^{2n}
-= \Delta_{\max} \cdot \hbar_q^2 / (1 - \hbar_q^2)$.  The tail
-bound factors the first skipped term:
-
-$$
-  \bigl\lvert \sum_{n > N} \hbar_q^{2n}\,\Delta^{(n)} \bigr\rvert
-  \leq \Delta_{\max} \cdot \hbar_q^{2(N+1)}
-   \sum_{k \geq 0} \hbar_q^{2k}
-  = \Delta_{\max} \cdot \frac{\hbar_q^{2(N+1)}}{1 - \hbar_q^{2}}.
-$$
-
-Multiplying by $E_0$ and solving $E_0 \cdot \Delta_{\max} \cdot
-\hbar_q^{2(N+1)} / (1 - \hbar_q^2) \leq \varepsilon_B$ for $N$
-gives the stated count.  $\square$
-
 ## Remark on the hypothesis
 
 The hypothesis $|\Delta^{(n)}(\varrho)| \leq \Delta_{\max}(\varrho)$
@@ -82,13 +60,13 @@ or with growth slower than $\hbar_q^{-2n}$), the tail decays as a
 geometric series.
 
 Empirically (see
-[`folio-assistant/computations/jet_tower_delta_max.py`](../../../folio-assistant/computations/jet_tower_delta_max.py)
-and `unified_lift.py`) the per-level terms for $\mathrm{D}$,
+the canonical formalism
+and the formal derivation) the per-level terms for $\mathrm{D}$,
 $\mathrm{T}$, $\mathrm{^{3}He}$ satisfy
 $|\hbar_q^{2n} \Delta^{(n)}| \leq |\hbar_q^{2(n-1)} \Delta^{(n-1)}|
 \cdot \hbar_q^2$ to three significant figures, and the
 `uniform_bound_pass` flag in
-[`jet-tower-delta-max.witness.json`](../../../folio-assistant/computations/jet-tower-delta-max.witness.json)
+[`jet-tower-delta-max.witness.json`](../../../computations/jet-tower-delta-max.witness.json)
 is **true** for D, T, ${}^{3}$He across $n = 1, \dots, 7$ — consistent
 with $\Delta^{(n)}$ being bounded (in fact roughly constant).
 Promoting that observation to a theorem closes the open

@@ -115,7 +115,7 @@
   they merge.
 - The `wall-side-correct` mixed-signal cases (12 after the
   `qa-checkers.ts` import-strip fix on PR #823) need structural
-  Lean file splits per CLAUDE.md §7c — PR #837 / future-round
+  Lean file splits per AGENTS.md §7c — PR #837 / future-round
   scope.
 - Regenerate with `qa-staleness.ts` + the script that produced
   this file.

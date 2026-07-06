@@ -32,13 +32,13 @@ Why it matters
 Usage
 -----
 
-    python folio-assistant/computations/witness_reproducibility_check.py
+    python computations/witness_reproducibility_check.py
 
     # Strict mode: exit non-zero if any builder fails (for CI)
-    python folio-assistant/computations/witness_reproducibility_check.py --strict
+    python computations/witness_reproducibility_check.py --strict
 
     # Limit to one builder for fast local dev
-    python folio-assistant/computations/witness_reproducibility_check.py \\
+    python computations/witness_reproducibility_check.py \\
         --only build_q0_anchor_chain.py
 
 Design — explicit registry, not auto-discovery

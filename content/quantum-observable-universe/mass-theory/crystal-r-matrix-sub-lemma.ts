@@ -17,7 +17,7 @@ import { proposition } from "../../schema/builders";
  * Verified numerically by `crystal_pole_order.py` (21/21 assertions,
  * including AXKIA chain T_{2,9}=9 and T_{3,5}=10).
  *
- * Conditional-class status (CLAUDE.md §3b-cond): the upstream
+ * Conditional-class status (AGENTS.md §3b-cond): the upstream
  * `conj:crystal-graph-realization` is class-axiomatised as
  * `QOU.BraidKnot.CrystalGraphRealization`.  This block declares a
  * downstream class `CrystalRMatrixSubLemma` taking the upstream as
@@ -45,9 +45,9 @@ export default proposition({
   },
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/crystal_pole_order.py",
+    script: "computations/crystal_pole_order.py",
     witness: [
-      "folio-assistant/computations/crystal-pole-order.witness.json",
+      "computations/crystal-pole-order.witness.json",
     ],
     status: "verified",
     requires: [],

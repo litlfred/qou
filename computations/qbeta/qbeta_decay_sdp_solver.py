@@ -24,7 +24,7 @@ braid structure rather than from a min-norm SDP — that would give
 T_β as a first-principles object rather than an empirical fit.
 
 Run:
-    python3 folio-assistant/computations/qbeta_decay_sdp_solver.py
+    python3 computations/qbeta_decay_sdp_solver.py
 """
 from __future__ import annotations
 

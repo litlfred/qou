@@ -49,7 +49,7 @@ Operator-selection LP (per-atom, post-search):
 
   This is canonically `solve_operator_selection_lp` from
   `lp_dual_solver.py`; the witness is auto-validated by
-  `lp_dual_witness_validator.py` against the CLAUDE.md
+  `lp_dual_witness_validator.py` against the AGENTS.md
   "LP/SDP duals — first-class infra" rule.
 
 Cross-paper references:
@@ -338,7 +338,7 @@ def markov_trace_h3(eval_result: dict, wenzl_weights: dict) -> float:
 #       is the canonical-basis-class deduplication.
 #
 # This gives ~3-4× speedup AND prevents the search winner from being
-# a lucky-coincidence cemetery braid.  Per CLAUDE.md §7b "Symmetric-
+# a lucky-coincidence cemetery braid.  Per AGENTS.md §7b "Symmetric-
 # crystal techniques (KLR / Kashiwara) — authoring guidance", this
 # is the symmetric-crystal shortcut for filtering trivial classes.
 # ───────────────────────────────────────────────────────────────────
@@ -460,6 +460,7 @@ def cost_for_candidate(
     *,
     w_resid: float = 0.25,
     w_alpha: float = 1.0,
+    multi_term_offset_mev: float = 0.0,
 ) -> dict:
     """Score a candidate (b, rho) by joint PSD-gap + binding residual.
 
@@ -467,7 +468,7 @@ def cost_for_candidate(
 
       - alpha_gap (PRIMARY): max Wedderburn-block PSD violation across
         partitions of n_0.  Zero iff every block is PSD at q_0.
-        Per CLAUDE.md / prop:joint-tower-sdp-confinement, this is the
+        Per AGENTS.md / prop:joint-tower-sdp-confinement, this is the
         structural feasibility certificate of the SDP.
 
       - relative binding residual (SECONDARY): the single-term flagship
@@ -486,7 +487,7 @@ def cost_for_candidate(
     abs_M = abs(markov)
     best = None
     for rho in rho_candidates:
-        B_pred = rho * M_E_MEV * abs_M
+        B_pred = rho * M_E_MEV * abs_M + multi_term_offset_mev
         rel_resid = abs(B_pred - B_AME) / max(B_AME, 1e-9)
         cost = w_alpha * eval_res["alpha_gap"] + w_resid * rel_resid
         if best is None or cost < best["cost"]:
@@ -558,7 +559,35 @@ def solve_atom_b3(
             continue
         seen_fingerprints.add(fp)
         markov = markov_trace_h3(ev, wenzl)
-        score = cost_for_candidate(ev, markov, B_AME)
+        
+        # Wire multi-term mass formula (T2-T6 of thm:knot-mass-formula-unified)
+        # For the SDP solver, we add the T4 Frobenius offset and the T2+T3
+        # brane-tower difference (if convergent).
+        try:
+            import sys, os
+            from pathlib import Path
+            _HERE = Path(__file__).resolve().parent
+            if str(_HERE) not in sys.path:
+                sys.path.insert(0, str(_HERE))
+            from mass_formula_6term import term_23_brane_tower, term_4_frobenius
+            
+            t23_f = term_23_brane_tower(atom["Z"], atom["N"], include_inter=False)
+            t23_a = term_23_brane_tower(atom["Z"], atom["N"], include_inter=True)
+            if t23_f.get("status") == "ok" and t23_a.get("status") == "ok":
+                b23 = M_E_MEV * ( (t23_f["T2"] + t23_f["T3"]) - (t23_a["T2"] + t23_a["T3"]) )
+            else:
+                b23 = 0.0
+                
+            A = atom["Z"] + atom["N"]
+            t4_pv, t4_pa, t4_p3a = term_4_frobenius(A)
+            # Use p3A if available, otherwise pv
+            t4 = t4_p3a if t4_p3a is not None else t4_pv
+            
+            multi_term_offset = b23 + t4
+        except Exception as e:
+            multi_term_offset = 0.0
+
+        score = cost_for_candidate(ev, markov, B_AME, multi_term_offset_mev=multi_term_offset)
         candidates.append({
             "braid_word": list(word),
             "L": len(word),
@@ -671,7 +700,7 @@ def solve_atom_b3(
             "ranking_metric": "rel_residual (single-term formula)",
             "top_k": psd_top,
         },
-        # ── LP/SDP dual fields per CLAUDE.md "first-class infra". ───
+        # ── LP/SDP dual fields per AGENTS.md "first-class infra". ───
         "lp_dual": {
             **lp_res.to_dict(),
             "channel_labels": [
@@ -843,7 +872,7 @@ def main(L_max: int = 8, top_k: int = 8):
             "PSD-trivial near-pure-power braids whose |tr_M| "
             "coincidentally matches B_AME/(m_e·ρ).",
             "Port klr_canonical_basis_filter to other braid-enumerators "
-            "in folio-assistant/computations/ (universal-ilp.py, "
+            "in computations/ (universal-ilp.py, "
             "ch-bond-writhe-lp.py, h2-integer-lp.py per the cemetery-"
             "applicability survey).  These use an OPS-tuple abstraction "
             "(named operators with state-update fns) rather than raw "

@@ -11,5 +11,5 @@ The next chapter (observations) carries these substrate-level
 predictions to the archimedean side: $q_0 \approx 1.1097$ is
 plugged in, the predictions are compared against CODATA / PDG /
 SnapPy data, and the per-observable 100× accuracy target from
-CLAUDE.md §Precision goals fixes the empirical band against
+AGENTS.md §Precision goals fixes the empirical band against
 which the substrate-level predictions are tested.

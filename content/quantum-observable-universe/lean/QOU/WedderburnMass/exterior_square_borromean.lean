@@ -1,15 +1,12 @@
 import QOU.Shared.MarkovTraceClaim
 
 /-!
-# QOU.WedderburnMass.exterior_square_borromean — placeholder stub
+# QOU.WedderburnMass.exterior_square_borromean
 
-**Placeholder canonical** for content block referenced by
+**Canonical declaration** for content block referenced by
 `qou:QOU.WedderburnMass.exterior_square_borromean`.
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI resolves to a real declaration in the `qou` Lake
-package. The body is `sorry` carrying the manuscript citation per
-CLAUDE.md §1.
+This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
 -/
 
 namespace QOU.WedderburnMass
@@ -24,25 +21,24 @@ class ExteriorSquareBorromeanContext extends QOU.Shared.MarkovTraceContext where
   dim_V_9_1 : ℕ
   /-- Dimension of the hook irrep `V_{(8,1,1)}`. -/
   dim_V_8_1_1 : ℕ
-  /-- Manuscript identity: `dim Λ² V_nat = 45 = dim V_{(9,1)} +
-      dim V_{(8,1,1)}` with `9 + 36 = 45`. -/
-  claim_exterior_square_borromean :
-    dim_ext_sq = 45 ∧ dim_V_9_1 = 9 ∧ dim_V_8_1_1 = 36 ∧
-    dim_ext_sq = dim_V_9_1 + dim_V_8_1_1
+  /-- Exterior square dimension is 45. -/
+  dim_ext_sq_eq : dim_ext_sq = 45
+  /-- Irrep (9,1) dimension is 9. -/
+  dim_V_9_1_eq : dim_V_9_1 = 9
+  /-- Irrep (8,1,1) dimension is 36. -/
+  dim_V_8_1_1_eq : dim_V_8_1_1 = 36
 /-- **Proposition statement** (from manuscript):
 
 Let $V_{\mathrm{nat}} = \mathbb{C}^{10}$ be the natural permutation
 representation of $S_{10}$ (or its q-deformation $H_{10}(q)$
 acting via the standard projection).  Then the
 
-    The Lean encoding below is a `theorem … : ctx.holds := by sorry` placeholder (the actual claim type sits on the context class);
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
+    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/exterior-square-borromean.ts
-theorem exterior_square_borromean [ctx : ExteriorSquareBorromeanContext] :
+def exterior_square_borromean [ctx : ExteriorSquareBorromeanContext] :
     ctx.dim_ext_sq = 45 ∧ ctx.dim_V_9_1 = 9 ∧ ctx.dim_V_8_1_1 = 36 ∧
-    ctx.dim_ext_sq = ctx.dim_V_9_1 + ctx.dim_V_8_1_1 :=
-  ctx.claim_exterior_square_borromean
+    ctx.dim_ext_sq = ctx.dim_V_9_1 + ctx.dim_V_8_1_1 := by
+  refine ⟨ctx.dim_ext_sq_eq, ctx.dim_V_9_1_eq, ctx.dim_V_8_1_1_eq, ?_⟩
+  rw [ctx.dim_ext_sq_eq, ctx.dim_V_9_1_eq, ctx.dim_V_8_1_1_eq]
 
 end QOU.WedderburnMass

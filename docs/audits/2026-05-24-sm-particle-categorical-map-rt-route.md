@@ -90,7 +90,7 @@ T(p, q) → SU_q(2) at level k → J_N(T(p,q), q) → mass scale
   - $k = $ genus of Bring = 4 → $q = e^{2\pi i/4}$
   - $k = $ first integer such that all SM torus knots embed = 9
   - $k = $ some genus-dependent level matching specific particle
-- **Which formula** converts $J_N$ to a mass? Per the [Q2 probe](../../folio-assistant/computations/probes/pentagon_rt_torus_knot_higgs_probe.py):
+- **Which formula** converts $J_N$ to a mass? Per the [Q2 probe](../../computations/probes/pentagon_rt_torus_knot_higgs_probe.py):
   $|J_N| \cdot m_e$, $|J_N|^2 \cdot m_e$, $|J_N| \cdot N \cdot m_e$, ...
   none gives Higgs mass to within a small structural factor.
 
@@ -111,7 +111,7 @@ offset is unexplained; candidate explanations:
 
 ## §4. Q3 finding: torus-knot Markov trace structure differs from hyperbolic
 
-Per the Q3 probe ([`torus_knot_markov_trace_closed_form.py`](../../folio-assistant/computations/torus_knot_markov_trace_closed_form.py)),
+Per the Q3 probe ([`torus_knot_markov_trace_closed_form.py`](../../computations/torus_knot_markov_trace_closed_form.py)),
 the H_2(q) Markov trace of $\sigma_1^k$ at substrate $q_0$ has
 h-expansion:
 
@@ -205,8 +205,8 @@ non-trivial.
 - [`content/quantum-observable-universe/braids-and-knots/topological-mass-trefoil.md`](../../content/quantum-observable-universe/braids-and-knots/topological-mass-trefoil.md) — lepton mass via Vol(K)/ℏ_q²
 - [`content/quantum-observable-universe/braids-and-knots/knot-operator-bring-action.md`](../../content/quantum-observable-universe/braids-and-knots/knot-operator-bring-action.md) — S_3 ⊂ SO(3); 6 GS-NF operators
 - [`content/quantum-observable-universe/braids-and-knots/operator-selection-lp.md`](../../content/quantum-observable-universe/braids-and-knots/operator-selection-lp.md) — LP-dual operator selection
-- [`folio-assistant/computations/torus_knot_markov_trace_closed_form.py`](../../folio-assistant/computations/torus_knot_markov_trace_closed_form.py) — Q3 probe (this session)
-- [`folio-assistant/computations/probes/pentagon_rt_torus_knot_higgs_probe.py`](../../folio-assistant/computations/probes/pentagon_rt_torus_knot_higgs_probe.py) — Q2 probe (this session)
+- [`computations/torus_knot_markov_trace_closed_form.py`](../../computations/torus_knot_markov_trace_closed_form.py) — Q3 probe (this session)
+- [`computations/probes/pentagon_rt_torus_knot_higgs_probe.py`](../../computations/probes/pentagon_rt_torus_knot_higgs_probe.py) — Q2 probe (this session)
 
 ## §8. Summary table — what this session established about the SM map
 

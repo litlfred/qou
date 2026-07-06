@@ -50,16 +50,16 @@ theorem hookLength_21_10 : Partition.hookLength [2, 1] 1 0 = 1 := by decide
 /-! ## Computable classical dimension via hook-length formula -/
 
 /-- Product of all hook lengths in a partition λ. -/
-def hookProduct (λ : Partition) : ℕ :=
-  (List.range λ.length).foldl
+def hookProduct (lam : Partition) : ℕ :=
+  (List.range lam.length).foldl
     (fun acc i =>
-      acc * (List.range ((λ.get? i).getD 0)).foldl
-        (fun a j => a * Partition.hookLength λ i j) 1) 1
+      acc * (List.range ((lam.get? i).getD 0)).foldl
+        (fun a j => a * Partition.hookLength lam i j) 1) 1
 
 /-- Classical dimension of the irrep V_λ of S_n:
     `dim V_λ = n! / ∏_{cells} hook(cell)`. -/
-def classicalDim (λ : Partition) : ℕ :=
-  Nat.factorial (Partition.size λ) / hookProduct λ
+def classicalDim (lam : Partition) : ℕ :=
+  Nat.factorial (Partition.size lam) / hookProduct lam
 
 /-- The hook product of partition (2,1) is 3. -/
 theorem hookProduct_21 : hookProduct [2, 1] = 3 := by decide

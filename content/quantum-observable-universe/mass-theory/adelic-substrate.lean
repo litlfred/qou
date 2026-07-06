@@ -5,6 +5,8 @@
 -- Canonical declaration lives in: lean/QOU/AlgebraicSubstrate.lean
 -- This sibling is a documentation-mirror of the QOU library declaration.
 
+import Mathlib.Data.Real.Basic
+
 namespace QOU.AlgebraicSubstrate
 
 /-- The **adelic substrate** of the QOU framework.

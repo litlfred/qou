@@ -14,7 +14,7 @@ closes ratios to 7% (STRONG)" claimed:
 - The √[2]_q is "the quantum spinor norm — categorically derived"
 
 **These claims are overstated.** The jet-order validation probe
-[`rt_w_sqrt2_jet_order_validation.py`](../../folio-assistant/computations/rt_w_sqrt2_jet_order_validation.py)
+[`rt_w_sqrt2_jet_order_validation.py`](../../computations/rt_w_sqrt2_jet_order_validation.py)
 (this session, post-challenge) shows:
 
 ### What the jet-order check reveals
@@ -224,7 +224,7 @@ the next concrete Lean work.
 ## §6. Cross-references
 
 - [PR #1122](https://github.com/litlfred/qou/pull/1122) — overclaimed "STRONG" finding being retracted here
-- [`folio-assistant/computations/rt_w_sqrt2_jet_order_validation.py`](../../folio-assistant/computations/rt_w_sqrt2_jet_order_validation.py) — jet-order check (this session)
+- [`computations/rt_w_sqrt2_jet_order_validation.py`](../../computations/rt_w_sqrt2_jet_order_validation.py) — jet-order check (this session)
 - [`content/quantum-observable-universe/lean/QOU/Kashaev.lean`](../../content/quantum-observable-universe/lean/QOU/Kashaev.lean) — existing VolumeConjecture class
 - [`content/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/CategoricalHiggsIdempotent.lean`](../../content/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/CategoricalHiggsIdempotent.lean) — existing Higgs-VEV class (placeholder)
 - [`docs/audits/2026-05-24-sm-particle-categorical-map-rt-route.md`](2026-05-24-sm-particle-categorical-map-rt-route.md) — RT-chain framing (still valid; PR #1116)

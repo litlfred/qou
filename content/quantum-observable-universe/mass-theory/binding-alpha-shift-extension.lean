@@ -45,8 +45,8 @@
        [manuscript] prop:alpha-shift-torus-knot
        [audit] docs/audits/2026-05-28-binding-endomorphism-analogy.md
        [audit] docs/audits/2026-05-30-alpha-shift-universal-derivation-chain.md
-       [probe] folio-assistant/computations/binding_rotation_phase_lead.py
-       [probe] folio-assistant/computations/binding_qhamiltonian_rotational_scale.py
+       [probe] computations/binding_rotation_phase_lead.py
+       [probe] computations/binding_qhamiltonian_rotational_scale.py
 -/
 import Mathlib.Algebra.Field.Basic
 import Mathlib.Data.Real.Basic
@@ -60,10 +60,10 @@ universe u
     Pole order of σ on the column-rich irrep of T(p, k). -/
 def bindingAlphaShift (p k : ℕ) : ℕ := k * (p - 1)
 
-/-- The α_shift specialisations relevant to A ≥ 3 binding (open math
-    per Phase 3 of this extension): the substrate-specific force-
-    carrier torus knot for each light nucleus is yet to be identified.
-    Candidate forms per the agent-survey hypothesis: -/
+/- The α_shift specialisations relevant to A ≥ 3 binding (open math
+   per Phase 3 of this extension): the substrate-specific force-
+   carrier torus knot for each light nucleus is yet to be identified.
+   Candidate forms per the agent-survey hypothesis. -/
 section CandidateForceCarrierKnots
 /-- Hypothesis (Phase 3 open): T(2, 5) for tritium / ³He at A = 3.
     α_shift = 5. -/
@@ -81,11 +81,11 @@ end CandidateForceCarrierKnots
     Reeb coupling pinned by the deuteron (≈ 14.7 MeV/rad per
     `binding_rotation_phase_lead.py`).
 
-    Per CLAUDE.md §3b-cond: the binding closure is gated on the
+    Per AGENTS.md §3b-cond: the binding closure is gated on the
     **per-rep Reeb phase axiom** (substrate identity) and the
     **force-carrier knot identification** (Phase 3 open math).  -/
 class BindingPerRepReebPhase {R : Type u} [Field R]
-    (B : ℕ → R) (m_e ρ_0 : R) : Prop where
+    (B : ℕ → R) (m_e ρ_0 : R) where
   /-- B(A) factors through α_shift at the binding-specific torus
       knot.  The function `αShiftAt` records, per nucleus index A,
       the proved α_shift value `k_A · (p_A − 1)` of the substrate-
@@ -114,7 +114,7 @@ class BindingForceCarrierKnot
     two binding evaluators sharing the same substrate parameters
     (m_e, ρ_0, knot identification) agree pointwise.
 
-    Per CLAUDE.md §3b-cond: sorry-free conditional on the two
+    Per AGENTS.md §3b-cond: sorry-free conditional on the two
     classes.  Phase 3 (the actual `(p_A, k_A)` identification) is
     research-grade and deferred.
 
@@ -150,6 +150,7 @@ theorem binding_subsingleton
   refine ⟨fun ⟨B, hB, hFC⟩ ⟨B', hB', hFC'⟩ => ?_⟩
   apply Subtype.ext
   funext A
+  show B A = B' A
   rw [hB.factors A, hB'.factors A,
       hFC.matches_alpha_shift A, hFC'.matches_alpha_shift A]
 

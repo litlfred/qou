@@ -1,6 +1,7 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.LinearCombination
 
 
 /-!

@@ -1,4 +1,4 @@
-**913** indexed entries across 7 categories.
+**908** indexed entries across 7 categories.
 
 ## Definitions
 
@@ -81,7 +81,7 @@
 | [def:confined-particle](#def:confined-particle) | Confined particle | Ch 8 | `qou:QOU.BraidKnot.ConfinedParticle` |
 | [def:confinement-level](#def:confinement-level) | Confinement level via shadow-price filtration | Ch 8 | `qou:QOU.BraidKnot.ConfinementLevel` |
 | [def:contact-affine-chart](#def:contact-affine-chart) | Contact affine chart on $\mathbb{P}(V)$ | Ch 2 | `qou:QOU.ContactAffineChart` |
-| [def:coral-sector-coords](#def:coral-sector-coords) | Coral sector coordinates $\mathfrak{r},\mathfrak{g},\mathfrak{b}$ | Ch 6 | `qou:QOU.CoralSectorCoords` |
+| [def:color-sector-coords](#def:color-sector-coords) | Color sector coordinates $\mathfrak{r},\mathfrak{g},\mathfrak{b}$ | Ch 6 | `qou:QOU.ColorSectorCoords` |
 | [def:coulomb-charge](#def:coulomb-charge) | Coulomb charge of a knot composite | Ch 9 | `qou:QOU.Braiding.CoulombCharge` |
 | [def:covalent-bond-types](#def:covalent-bond-types) | Covalent bond (shared Hopf links) | Ch 15 | `qou:QOU.Organic.CovalentBond` |
 | [def:covalent-bond-shared-trefoil](#def:covalent-bond-shared-trefoil) | Covalent bond as shared electron trefoil | Ch 14 | `qou:QOU.Molecular.CovalentBond` |
@@ -185,7 +185,7 @@
 | [def:surreal-blowup-calculus](#def:surreal-blowup-calculus) | Surreal blow-up calculus: named infinite surreals for renormalisation | Ch 22 | `qou:QOU.AppendixSurreals.BlowupCalculus` |
 | [def:q-casimir](#def:q-casimir) | The $q$-Casimir element of $\mathcal{U}_q(\mathfrak{su}(2))$ | Ch 5 | `qou:QOU.QCasimir` |
 | [def:q-chebyshev-function](#def:q-chebyshev-function) | The $q$-Chebyshev function | Ch 20 | `qou:QOU.AlgebraicSubstrate.QChebyshevFunction` |
-| [def:q-reeb-flow-on-coral-coords](#def:q-reeb-flow-on-coral-coords) | The $q$-Reeb flow in coral-sector coordinates | Ch 10 | `qou:QOU.CategoricalReeb.QReebFlowOnCoralCoords` |
+| [def:q-reeb-flow-on-color-coords](#def:q-reeb-flow-on-color-coords) | The $q$-Reeb flow in color-sector coordinates | Ch 10 | `qou:QOU.CategoricalReeb.QReebFlowOnColorCoords` |
 | [def:q-von-mangoldt-function](#def:q-von-mangoldt-function) | The $q$-von Mangoldt function | Ch 20 | `qou:QOU.AlgebraicSubstrate.QVonMangoldtFunction` |
 | [def:classical-limit-functor](#def:classical-limit-functor) | The classical limit functor $q \to 1$ | Ch 17 | `qou:QOU.AlgebraicSubstrate.ClassicalLimitFunctor` |
 | [def:classical-limit-obstruction](#def:classical-limit-obstruction) | The classical limit obstruction of a quantum universe | Ch 17 | `qou:QOU.AlgebraicSubstrate.ClassicalLimitObstruction` |
@@ -267,7 +267,7 @@
 | [prop:dq-squared](#prop:dq-squared) | $d_q^2$ does not vanish | Ch 2 | `qou:QOU.dq_squared` |
 | [prop:e-infinity-page-identifications](#prop:e-infinity-page-identifications) | $E_\infty$-page identifications with the six mass-formula terms | Ch 10 | `qou:QOU.BraidKnot.e_infinity_identifications` |
 | [prop:rho-k-h3a-refinement](#prop:rho-k-h3a-refinement) | $H_{3A}$ Wedderburn refinement of the categorical density $\rho_K$ beyond leading-order | Ch 10 | `qou:QOU.BraidKnot.rho_k_h3a_refinement` |
-| [prop:q-beta-spectral-bridge](#prop:q-beta-spectral-bridge) | $Q_\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases | Ch 8 | `qou:QOU.Interactions.q_beta_spectral_bridge` |
+| [prop:q-beta-spectral-bridge](#prop:q-beta-spectral-bridge) | $\mathfrak{Q}_\beta$ spectral bridge: Form A (NF counit) and Form B (transfer-matrix log-ratio) are the same observable in different bases | Ch 8 | `qou:QOU.Interactions.q_beta_spectral_bridge` |
 | [prop:q-turbulence-spectrum](#prop:q-turbulence-spectrum) | $q$-deformed energy cascade and modified Kolmogorov spectrum | Ch 16 | `qou:QOU.FluidDynamics.q_turbulence_spectrum` |
 | [prop:heisenberg-commutator](#prop:heisenberg-commutator) | $q$-deformed Heisenberg commutator from the Reeb fibre | Ch 2 | `qou:QOU.ArchimedeanUniverse.heisenberg_commutator` |
 | [prop:q-hecke-eigenvalue](#prop:q-hecke-eigenvalue) | $q$-Hecke eigenvalues from the fibre functor | Ch 20 | `qou:QOU.q_hecke_eigenvalue` |
@@ -325,7 +325,7 @@
 | [prop:feynman-classical-limit](#prop:feynman-classical-limit) | Classical limit: recovery of the symmetric path integral | Ch 10 | `qou:QOU.FeynmanPathIntegrals.ClassicalLimitDegeneration` |
 | [prop:y-lambda-closed-form-wenzl-bridge](#prop:y-lambda-closed-form-wenzl-bridge) | Closed form for Jones-Markov $y_\lambda$ via Wenzl Schur-element bridge ($Q = q^2$, $z_{\mathrm{GL}} = q z$) | Ch 10 | `qou:QOU.BraidsAndKnots.y_lambda_closed_form_wenzl_bridge` |
 | [prop:q-codifferential-formula](#prop:q-codifferential-formula) | Closed formula for the $q$-codifferential $\delta_q$ | Ch 2 | `qou:QOU.QuantumGeometry.q_codifferential_formula` |
-| [prop:qbeta-c-k-closed-forms](#prop:qbeta-c-k-closed-forms) | Closed-form conjectures for $c_4, c_5, c_6, c_7$ in the $Q_\beta$ precision ladder: empirical pattern-matches to sub-percent residual; first-principles derivation open (Khovanov-Rozansky at finite $q$ or KLR canonical-basis trace) | Ch 7 | `qou:QOU.BraidKnot.QBetaCKClosedForms` |
+| [prop:qbeta-c-k-closed-forms](#prop:qbeta-c-k-closed-forms) | Closed-form conjectures for $c_4, c_5, c_6, c_7$ in the $\mathfrak{Q}_\beta$ precision ladder: empirical pattern-matches to sub-percent residual; first-principles derivation open (Khovanov-Rozansky at finite $q$ or KLR canonical-basis trace) | Ch 7 | `qou:QOU.BraidKnot.QBetaCKClosedForms` |
 | [prop:hadron-operations-closure](#prop:hadron-operations-closure) | Closure of hadron operations under braiding, Hopf linking, skein action, and fusion | Ch 8 | `qou:QOU.Hadron.hadron_operations_closure` |
 | [prop:cohomological-embedding](#prop:cohomological-embedding) | Cohomological embedding: torus knot representations exhaust $H^1(\Sigma_g)$ | Ch 6 | `qou:QOU.Archimedean.cohomological_embedding` |
 | [prop:neutron-prediction-comparison](#prop:neutron-prediction-comparison) | Comparison of predicted and observed stable neutron numbers for $p \leq 103$ | Ch 13 | `qou:QOU.Archimedean.stable_neutron_max_error` |
@@ -342,8 +342,8 @@
 | [prop:content-scaling-correspondence](#prop:content-scaling-correspondence) | Content $c = m_j$ by Schur--Weyl: box content determines BW scaling | Ch 10 | `qou:QOU.BraidKnot.boxContent` |
 | [prop:lepton-continuant-recurrence](#prop:lepton-continuant-recurrence) | Continuant recurrence for the lepton tower $T_{2,n}$ | Ch 12 | `qou:QOU.Archimedean.lepton_continuant_recurrence` |
 | [prop:rigid-monoidal-structural-gap-invariance](#prop:rigid-monoidal-structural-gap-invariance) | Convention-independence of the structural gap: the brane-tower factors through the rigid monoidal Markov trace on the Type-B-folded Hecke category | Ch 10 | `qou:QOU.BraidKnot.RigidMonoidalStructuralGapInvariance` |
-| [prop:categorical-chain-convergence-mechanisms](#prop:categorical-chain-convergence-mechanisms) | Convergence of $Q_\beta^{\text{cat}}$'s infinite product: per-knot c(K) brane-tower bound + inter-knot linking-number locality (Habiro-ring interpretation) | Ch 7 | `qou:QOU.BraidKnot.categorical_chain_convergence_mechanisms` |
-| [prop:coral-elliptic](#prop:coral-elliptic) | Coral fibre as an elliptic curve | Ch 6 | `qou:QOU.Brings.coral_elliptic` |
+| [prop:categorical-chain-convergence-mechanisms](#prop:categorical-chain-convergence-mechanisms) | Convergence of $\mathfrak{Q}_\beta^{\text{cat}}$'s infinite product: per-knot c(K) brane-tower bound + inter-knot linking-number locality (Habiro-ring interpretation) | Ch 7 | `qou:QOU.BraidKnot.categorical_chain_convergence_mechanisms` |
+| [prop:color-elliptic](#prop:color-elliptic) | Color fibre as an elliptic curve | Ch 6 | `qou:QOU.Brings.color_elliptic` |
 | [prop:core-levi-form](#prop:core-levi-form) | Core aspect ratio equals Levi form condition number on the normal plane | Ch 16 | `qou:QOU.FluidDynamics.core_levi_form` |
 | [prop:cosimplicial-crossed-groupoid](#prop:cosimplicial-crossed-groupoid) | Cosimplicial crossed groupoid | Ch 4 | `qou:QOU.LiftingDescent.cosimplicial_crossed_groupoid_exists` |
 | [prop:skein-coulomb-enhancement](#prop:skein-coulomb-enhancement) | Coulomb enhancement from electron-proton Skein crossings | Ch 12 | `qou:QOU.Archimedean.skein_coulomb_enhancement` |
@@ -365,8 +365,6 @@
 | [prop:derived-mass-formula-light-isotopes](#prop:derived-mass-formula-light-isotopes) | Derived-only mass formula reproduces light atomic masses to sub-percent | Ch 10 | `qou:QOU.WedderburnMass.derivedLightIsotopeFormula` |
 | [prop:descended-level-zero](#prop:descended-level-zero) | Descended mass contribution lives at level 0 only | Ch 10 | `qou:QOU.Descent.descended_level_zero` |
 | [prop:descent-condition](#prop:descent-condition) | Descent condition --- twisted $2$-cocycle | Ch 4 | `qou:QOU.Torsion.descent_condition` |
-| [prop:deuterium-derived-binding](#prop:deuterium-derived-binding) | Deuterium binding energy from the Markov trace volume integral | Ch 10 | `qou:QOU.ParticleInteractions.deuterium_derived_binding` |
-| [prop:deuteron-binding-frobenius-codim](#prop:deuteron-binding-frobenius-codim) | Deuteron binding from atomic Frobenius co-Casimir trace | Ch 10 | `qou:QOU.WedderburnMass.deuteronBindingFrobeniusCodim` |
 | [prop:delta-pre-archimedean](#prop:delta-pre-archimedean) | Difference observables are formed pre-archimedean: fold commutes with the delta, the archimedean functor does not | Ch 8 | `qou:QOU.ParticleInteractions.fold_commutes_sub` |
 | [prop:moduli-symmetry-d4](#prop:moduli-symmetry-d4) | Dihedral $D_4$-action on the moduli line $\mathbb{C}^\times$ generated by $\sigma\colon q \mapsto iq$ and $\tau\colon q \mapsto q^{-1}$; golden octet as $D_4$-orbit | Ch 12 | `qou:QOU.Archimedean.ModuliSymmetryD4.moduli_symmetry_d4` |
 | [prop:markov-trace-axiomatic-closed-form](#prop:markov-trace-axiomatic-closed-form) | Direct axiomatic closed form of the Markov trace for atomic-braid words in $H_n(q)$ | Ch 7 | `qou:QOU.BraidKnot.markovTraceAxiomaticClosedForm` |
@@ -382,7 +380,7 @@
 | [prop:borromean-hopf-energy-crossover](#prop:borromean-hopf-energy-crossover) | Energy crossover between Borromean and Hopf-diquark phases | Ch 13 | `qou:QOU.Archimedean.borromean_hopf_energy_crossover` |
 | [prop:eos-borromean-cfl](#prop:eos-borromean-cfl) | Equation of state: Borromean hadronic matter vs CFL quark matter | Ch 13 | `qou:QOU.Archimedean.eos_borromean_cfl` |
 | [prop:branching-qvalue-factorization](#prop:branching-qvalue-factorization) | Exact factorization of the branching Q-value | Ch 8 | `qou:QOU.ParticleInteractions.branching_qvalue_factorization` |
-| [prop:three-calibration-inputs](#prop:three-calibration-inputs) | Exactly three calibration inputs ($m_e$, $m_\mu/m_e$, $Q_\beta(n)$), aligned to the three Wedderburn channels of $H_3(R, q)$ | Ch 10 | `qou:QOU.BraidKnot.three_calibration_inputs` |
+| [prop:three-calibration-inputs](#prop:three-calibration-inputs) | Exactly three calibration inputs ($m_e$, $m_\mu/m_e$, $\mathfrak{Q}_\beta(n)$), aligned to the three Wedderburn channels of $H_3(R, q)$ | Ch 10 | `qou:QOU.BraidKnot.three_calibration_inputs` |
 | [prop:q-heat-equation-exists](#prop:q-heat-equation-exists) | Existence and uniqueness for the $q$-heat equation | Ch 2 | `qou:QOU.QHeatEquation.exists_solution` |
 | [prop:vacuum-state](#prop:vacuum-state) | Existence and Uniqueness of the Vacuum State | Ch 4 | `qou:QOU.Torsion.invariant_functional_unique` |
 | [prop:markov-trace-recursive-reducer](#prop:markov-trace-recursive-reducer) | Existence of a recursive symbolic Markov-trace reducer for $H_n(q)$ with disjoint-product property | Ch 7 | `qou:QOU.BraidKnot.markovTraceRecursiveReducer` |
@@ -616,7 +614,7 @@
 | [prop:benzene-threading-emergence](#prop:benzene-threading-emergence) | Threading link $T(2,6)$ emerges as the LP-optimal $\pi$ configuration | Ch 14 | `qou:QOU.Molecular.benzene_threading_emergence` |
 | [prop:three-parameters-wedderburn](#prop:three-parameters-wedderburn) | Three calibration parameters from Wedderburn-Artin decomposition of $H_3(q)$ | Ch 10 | `qou:QOU.BraidKnot.three_parameters_wedderburn` |
 | [prop:nuclear-operator-regimes](#prop:nuclear-operator-regimes) | Three operator regimes for nuclear binding | Ch 8 | `qou:QOU.Interactions.nuclearOperatorRegimes` |
-| [prop:three-calibration-discipline](#prop:three-calibration-discipline) | Three-calibration discipline ($m_\mu/m_e$, $m_e$, $Q_\beta$) aligned to (co)homological degrees | Ch 13 | `qou:QOU.Observations.threeCalibrationDiscipline` |
+| [prop:three-calibration-discipline](#prop:three-calibration-discipline) | Three-calibration discipline ($m_\mu/m_e$, $m_e$, $\mathfrak{Q}_\beta$) aligned to (co)homological degrees | Ch 13 | `qou:QOU.Observations.threeCalibrationDiscipline` |
 | [prop:thurston-volume-additivity](#prop:thurston-volume-additivity) | Thurston additivity of hyperbolic volume over ideal tetrahedra | Ch 10 | `qou:QOU.ParticleInteractions.thurstonVolumeAdditivity` |
 | [prop:topological-mass-formula-algebraic](#prop:topological-mass-formula-algebraic) | Topological mass formula (algebraic, $\mathbb{Q}(q)$-side) | Ch 10 | `qou:QOU.Torsion.AlgebraicMassFormula` |
 | [prop:topological-mass-formula](#prop:topological-mass-formula) | Topological mass formula (Archimedean) | Ch 10 | `qou:QOU.Torsion.ArchimedeanMassFormula` |
@@ -692,13 +690,11 @@
 | [lem:mobius-energy-frobenius-kernel](#lem:mobius-energy-frobenius-kernel) | Classical limit of the Frobenius--Hopf kernel is the repulsive $1/r^2$ | Ch 9 | `qou:QOU.BraidsKnots.mobius_frobenius_kernel` |
 | [lem:descent-cocycle-deviation](#lem:descent-cocycle-deviation) | Cocycle deviation at level $n+1$ as a twisted Cech 2-cocycle | Ch 4 | `qou:QOU.LiftingDescent.descent_cocycle_deviation` |
 | [lem:tmli-constituent-composite-agreement](#lem:tmli-constituent-composite-agreement) | Constituent and composite Markov-trace evaluations agree exactly | Ch 10 | `qou:QOU.BraidsKnots.tmli_constituent_composite_agreement` |
-| [lem:ccg-cosimplicial-identities](#lem:ccg-cosimplicial-identities) | Cosimplicial identities for the jet/descent face and degeneracy maps | Ch 4 | `qou:QOU.LiftingDescent.ccg_cosimplicial_identities` |
+| lem:ccg-cosimplicial-identities | Cosimplicial identities for the jet/descent face and degeneracy maps | Ch 4 | `qou:QOU.LiftingDescent.ccg_cosimplicial_identities` |
 | [lem:ccg-crossed-module-structure](#lem:ccg-crossed-module-structure) | Crossed-module structure on $(\mathrm{SU}_{q_n}(2), \mathcal{O}_M^{\times})$ | Ch 4 | `qou:QOU.LiftingDescent.ccg_crossed_module_structure` |
-| [lem:crystal-demazure-w0-refuted-deuteron](#lem:crystal-demazure-w0-refuted-deuteron) | Crystal/Demazure-$w_0$ principal-specialisation $\Delta_\lambda$ refuted at the deuteron | Ch 10 | `qou:QOU.WedderburnMass.crystal_demazure_refuted_deuteron` |
 | [lem:degree-one-braid-trivial-volume](#lem:degree-one-braid-trivial-volume) | Degree-one Hecke elements have vanishing archimedean volume: $\mathrm{Vol}\bigl(\overline{1 + \sum_i \phi_i \sigma_i}\bigr) = 0$ | Ch 10 | `qou:QOU.Photon.geom_degree_one_zero` |
 | [lem:topological-mass-cat-descended](#lem:topological-mass-cat-descended) | Descended term equals the base-level mass | Ch 7 | `qou:QOU.TopologicalMass.cat_descended_is_base_mass` |
 | [lem:descent](#lem:descent) | Descent preserves the quantum observable universe | Ch 4 | `qou:QOU.DescentLemma` |
-| [lem:deuteron-binding-energy](#lem:deuteron-binding-energy) | Deuteron binding energy from Skein-polynomial smoothing | Ch 13 | `qou:QOU.HadronicMass.deuteron_binding_energy` |
 | [lem:feynman-eigenbasis-decomposition](#lem:feynman-eigenbasis-decomposition) | Eigenbasis decomposition for the Feynman amplitude | Ch 10 | `qou:QOU.FeynmanPathIntegrals.eigenbasis_decomposition` |
 | [lem:topological-mass-cat-eigenspace](#lem:topological-mass-cat-eigenspace) | Eigenspace decomposition of the categorical mass integrand | Ch 7 | `qou:QOU.TopologicalMass.cat_eigenspace_decomposition` |
 | [lem:genus-from-hecke-completeness](#lem:genus-from-hecke-completeness) | Genus from Hecke completeness for torus knots | Ch 6 | `qou:QOU.Archimedean.genus_from_hecke_completeness` |
@@ -765,7 +761,7 @@
 | [conj:bring-trilog-depth-3-witness](#conj:bring-trilog-depth-3-witness) | Bring trilog at $\zeta_5$ as depth-3 grouplike value (50-digit functional-equation cross-validated witness) | Ch 10 | `qou:QOU.BraidKnot.BringTrilogDepth3Witness` |
 | [conj:brunnian-property-of-borromean](#conj:brunnian-property-of-borromean) | Brunnian property of $\mathcal{B}_3$: every two-component sub-link is the unlink | Ch 8 | `qou:QOU.KnotTheory.Brunnian.borromean_brunnian` |
 | [conj:isospin-from-canonical-bowtie](#conj:isospin-from-canonical-bowtie) | Canonical $\mathrm{SU}(2)_I$ isospin from the operator-valued $\bowtie_K$ interface (regularised crystal extension) | Ch 10 | `qou:QOU.BraidsAndKnots.IsospinFromCanonicalBowtie` |
-| [conj:qbeta-ck-truncation-canonical](#conj:qbeta-ck-truncation-canonical) | Canonical closed form for the $Q_\beta$ truncation coefficients $c_k$ ($k\geq 3$): only $c_2=-1$ is proved; $c_3=-2=J_{\mathrm{Hopf}}(q{=}1)$ is a near-match; $c_{k\geq 3}$ are cal-anchored (open) | Ch 21 | `qou:QOU.BraidKnot.QbetaCkTruncationCanonicalClass` |
+| [conj:qbeta-ck-truncation-canonical](#conj:qbeta-ck-truncation-canonical) | Canonical closed form for the $\mathfrak{Q}_\beta$ truncation coefficients $c_k$ ($k\geq 3$): only $c_2=-1$ is proved; $c_3=-2=J_{\mathrm{Hopf}}(q{=}1)$ is a near-match; $c_{k\geq 3}$ are cal-anchored (open) | Ch 21 | `qou:QOU.BraidKnot.QbetaCkTruncationCanonicalClass` |
 | [conj:canonical-knot-id-sdp](#conj:canonical-knot-id-sdp) | Canonical knot identification for ${}^2$H, ${}^3$H, ${}^3$He from the confinement SDP | Ch 10 | `qou:QOU.BraidKnot.helium3_uniqueness_closed` |
 | [conj:casimir-epsilon-vacuum](#conj:casimir-epsilon-vacuum) | Casimir force as $\mathrm{st}$-image of $\varepsilon$-vacuum density gradient | Ch 22 | `qou:QOU.AppendixSurreals.CasimirEpsilonVacuum` |
 | [conj:categorical-higgs-mechanism](#conj:categorical-higgs-mechanism) | Categorical Higgs mechanism: Goldstone-eating as topological linking | Ch 10 | `qou:QOU.BraidsAndKnots.CategoricalHiggsMechanism` |
@@ -811,10 +807,10 @@
 | [conj:kashaev-surreal](#conj:kashaev-surreal) | Kashaev volume conjecture as a surreal standard-part identity | Ch 22 | `qou:QOU.AppendixSurreals.KashaevSurreal` |
 | [conj:knot-factor-frobenius-pairing](#conj:knot-factor-frobenius-pairing) | Knot factor as Frobenius self-pairing ratio | Ch 10 | `qou:QOU.BraidKnot.KnotFactorFrobeniusPairing` |
 | [conj:q-gl-kummer-filtration](#conj:q-gl-kummer-filtration) | Kummer filtration on $q$-local systems | Ch 20 | `qou:QOU.QGeometricLanglands.q_gl_kummer_filtration` |
-| [conj:n-v-leading-order-derivation](#conj:n-v-leading-order-derivation) | Leading-order N_v = |S_5| · q_0^90 (= 120 · q_0^90) | Ch 13 | `qou:QOU.Observations.n_v_leading_order` |
+| [conj:n-v-leading-order-derivation](#conj:n-v-leading-order-derivation) | Leading-order $N_v = |S_5| \cdot q_0^{90}$ (= $120 \cdot q_0^{90}$) | Ch 13 | `qou:QOU.Observations.n_v_leading_order` |
 | [conj:levi-degeneracy](#conj:levi-degeneracy) | Levi degeneracy conjecture: contact non-degeneracy at vortex collision determines NS regularity | Ch 16 | `qou:QOU.FluidDynamics.LeviDegeneracy` |
 | [conj:lifted-crossing-locality](#conj:lifted-crossing-locality) | Locality of lifted-crossing contributions in the mass expansion | Ch 10 | `qou:QOU.ParticleInteractions.LiftedCrossingLocality` |
-| [conj:lusztig-canonical-basis-q-eq-1](#conj:lusztig-canonical-basis-q-eq-1) | Lusztig canonical basis at $q = 1$ — decategorification of Kashiwara crystal via Kazhdan–Lusztig polynomials | Ch 17 | `qou:QOU.BraidsAndKnots.LusztigCanonicalBasisQEqOne` |
+| [conj:lusztig-canonical-basis-q-eq-1](#conj:lusztig-canonical-basis-q-eq-1) | Lusztig canonical basis at $q = 1$ — decategorification of Kashiwara crystal via Kazhdan–Lusztig polynomials | Ch 17 | `qou:QOU.BraidsAndKnots.LusztigCanonicalBasisQEq1` |
 | [conj:magic-numbers-bring](#conj:magic-numbers-bring) | Magic numbers $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$ as ranks of $S_5$-stable Bring period sub-lattices | Ch 2 | `qou:QOU.AlgebraicSubstrate.MagicNumbersBring` |
 | [conj:mass-volume-factorization](#conj:mass-volume-factorization) | Mass-volume factorization of the categorical mass endomorphism | Ch 10 | `qou:QOU.ParticleInteractions.MassVolumeFactorization` |
 | [conj:modular-s-transform-q-q-tilde](#conj:modular-s-transform-q-q-tilde) | Modular $S$-transform $q \leftrightarrow \tilde q = \exp(2\pi i / \tau)$ for Hecke parameter analytic continuation | Ch 20 | `qou:QOU.BraidsAndKnots.ModularSTransformQQTilde` |
@@ -907,7 +903,6 @@
 | [ex:descent-eigenspaces-su2](#ex:descent-eigenspaces-su2) | Descent eigenspaces for $\mathrm{SU}(2)$ | Ch 4 | — |
 | [ex:descent-involution-su2](#ex:descent-involution-su2) | Descent involution for $\mathrm{SU}(2)$ | Ch 4 | — |
 | [ex:descent-lemma-su2](#ex:descent-lemma-su2) | Descent lemma for $\mathrm{SU}(2)$ | Ch 4 | — |
-| [ex:deuterium-derived-nf](#ex:deuterium-derived-nf) | Deuterium: proton--neutron binding normal form | Ch 8 | — |
 | [ex:direct-limit-algebra-su2](#ex:direct-limit-algebra-su2) | Direct limit algebra for $\mathrm{SU}(2)$ | Ch 4 | — |
 | [ex:double-magic-Ca40-diagram](#ex:double-magic-Ca40-diagram) | Double-magic illustration: $^{40}\mathrm{Ca}$ at $Z = N = 20$ (LR fusion rigid) | Ch 13 | — |
 | [ex:fiber-adjoint-su2](#ex:fiber-adjoint-su2) | Fiber--adjoint-fiber involution for $\mathrm{SU}(2)$ | Ch 2 | `qou:QOU.Examples.su2FiberAdjoint` |

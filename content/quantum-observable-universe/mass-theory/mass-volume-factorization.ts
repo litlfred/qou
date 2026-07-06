@@ -23,8 +23,8 @@ export default conjecture({
   cites: ["thurston1978", "murakami-murakami2001"],
   computation: {
     engine: "closed-form",
-    script: "folio-assistant/computations/d_density_derivation.py",
-    witness: "folio-assistant/computations/d-density-derivation.witness.json",
+    script: "computations/d_density_derivation.py",
+    witness: "computations/d-density-derivation.witness.json",
     status: "verified",
   },
 });

@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/branch_phase_fit_to_mass_tower.py",
+  "script_path": "computations/branch_phase_fit_to_mass_tower.py",
   "language": "python",
   "source_hash": "02de048d2a87",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -21,7 +21,7 @@
         "reviewed_at": "2026-05-22T18:27:38.070Z",
         "reviewed_sha": "6676f9a425e86a927e132676ba2ac916063ef4c2",
         "severity": "major",
-        "evidence": "folio-assistant/computations/branch_phase_fit_to_mass_tower.py:125: bare `float(fit[\"predicted\"])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/branch_phase_fit_to_mass_tower.py:126: bare `float(fit[\"observed\"])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/branch_phase_fit_to_mass_tower.py:42: bare float literal `3.052012052160693` — wrap in `mpmath.mpf(\"3.052012052160693\")` / `Decimal(\"3.052012052160693\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/branch_phase_fit_to_mass_tower.py:43: bare float literal `3.4763537648638594` — wrap in `mpmath.mpf(\"3.4763537648638594\")` / `Decimal(\"3.4763537648638594\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/branch_phase_fit_to_mass_tower.py:44: bare float literal `3.819245328124024` — wrap in `mpmath.mpf(\"3.819245328124024\")` / `Decimal(\"3.819245328124024\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/branch_phase_fit_to_mass_tower.py:125: bare `float(fit[\"predicted\"])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/branch_phase_fit_to_mass_tower.py:126: bare `float(fit[\"observed\"])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/branch_phase_fit_to_mass_tower.py:42: bare float literal `3.052012052160693` — wrap in `mpmath.mpf(\"3.052012052160693\")` / `Decimal(\"3.052012052160693\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/branch_phase_fit_to_mass_tower.py:43: bare float literal `3.4763537648638594` — wrap in `mpmath.mpf(\"3.4763537648638594\")` / `Decimal(\"3.4763537648638594\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/branch_phase_fit_to_mass_tower.py:44: bare float literal `3.819245328124024` — wrap in `mpmath.mpf(\"3.819245328124024\")` / `Decimal(\"3.819245328124024\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       },
       {
         "field_hash": {
@@ -38,7 +38,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/branch_phase_fit_to_mass_tower.py:125: bare `float(fit[\"predicted\"])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/branch_phase_fit_to_mass_tower.py:126: bare `float(fit[\"observed\"])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/branch_phase_fit_to_mass_tower.py:42: bare float literal `3.052012052160693` — wrap in `mpmath.mpf(\"3.052012052160693\")` / `Decimal(\"3.052012052160693\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/branch_phase_fit_to_mass_tower.py:43: bare float literal `3.4763537648638594` — wrap in `mpmath.mpf(\"3.4763537648638594\")` / `Decimal(\"3.4763537648638594\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/branch_phase_fit_to_mass_tower.py:44: bare float literal `3.819245328124024` — wrap in `mpmath.mpf(\"3.819245328124024\")` / `Decimal(\"3.819245328124024\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/branch_phase_fit_to_mass_tower.py:125: bare `float(fit[\"predicted\"])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/branch_phase_fit_to_mass_tower.py:126: bare `float(fit[\"observed\"])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/branch_phase_fit_to_mass_tower.py:42: bare float literal `3.052012052160693` — wrap in `mpmath.mpf(\"3.052012052160693\")` / `Decimal(\"3.052012052160693\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/branch_phase_fit_to_mass_tower.py:43: bare float literal `3.4763537648638594` — wrap in `mpmath.mpf(\"3.4763537648638594\")` / `Decimal(\"3.4763537648638594\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/branch_phase_fit_to_mass_tower.py:44: bare float literal `3.819245328124024` — wrap in `mpmath.mpf(\"3.819245328124024\")` / `Decimal(\"3.819245328124024\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       },
       {
         "field_hash": {
@@ -55,7 +55,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "major",
-        "evidence": "folio-assistant/computations/branch_phase_fit_to_mass_tower.py:125: bare `float(fit[\"predicted\"])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/branch_phase_fit_to_mass_tower.py:126: bare `float(fit[\"observed\"])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/branch_phase_fit_to_mass_tower.py:42: bare float literal `3.052012052160693` — wrap in `mpmath.mpf(\"3.052012052160693\")` / `Decimal(\"3.052012052160693\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/branch_phase_fit_to_mass_tower.py:43: bare float literal `3.4763537648638594` — wrap in `mpmath.mpf(\"3.4763537648638594\")` / `Decimal(\"3.4763537648638594\")` to preserve substrate precision, or move to a string constant if it's an input parameter | folio-assistant/computations/branch_phase_fit_to_mass_tower.py:44: bare float literal `3.819245328124024` — wrap in `mpmath.mpf(\"3.819245328124024\")` / `Decimal(\"3.819245328124024\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
+        "evidence": "computations/branch_phase_fit_to_mass_tower.py:125: bare `float(fit[\"predicted\"])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/branch_phase_fit_to_mass_tower.py:126: bare `float(fit[\"observed\"])` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/branch_phase_fit_to_mass_tower.py:42: bare float literal `3.052012052160693` — wrap in `mpmath.mpf(\"3.052012052160693\")` / `Decimal(\"3.052012052160693\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/branch_phase_fit_to_mass_tower.py:43: bare float literal `3.4763537648638594` — wrap in `mpmath.mpf(\"3.4763537648638594\")` / `Decimal(\"3.4763537648638594\")` to preserve substrate precision, or move to a string constant if it's an input parameter | computations/branch_phase_fit_to_mass_tower.py:44: bare float literal `3.819245328124024` — wrap in `mpmath.mpf(\"3.819245328124024\")` / `Decimal(\"3.819245328124024\")` to preserve substrate precision, or move to a string constant if it's an input parameter"
       }
     ],
     "respects_archimedean_wall": [
@@ -74,7 +74,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "major",
-        "evidence": "folio-assistant/computations/branch_phase_fit_to_mass_tower.py:34: archimedean call `math.sin` — use the mpmath equivalent (`mp.sin`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | folio-assistant/computations/branch_phase_fit_to_mass_tower.py:37: archimedean call `math.sin` — use the mpmath equivalent (`mp.sin`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | folio-assistant/computations/branch_phase_fit_to_mass_tower.py:38: archimedean call `math.sin` — use the mpmath equivalent (`mp.sin`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | folio-assistant/computations/branch_phase_fit_to_mass_tower.py:55: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | folio-assistant/computations/branch_phase_fit_to_mass_tower.py:104: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/`"
+        "evidence": "computations/branch_phase_fit_to_mass_tower.py:34: archimedean call `math.sin` — use the mpmath equivalent (`mp.sin`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | computations/branch_phase_fit_to_mass_tower.py:37: archimedean call `math.sin` — use the mpmath equivalent (`mp.sin`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | computations/branch_phase_fit_to_mass_tower.py:38: archimedean call `math.sin` — use the mpmath equivalent (`mp.sin`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | computations/branch_phase_fit_to_mass_tower.py:55: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/` | computations/branch_phase_fit_to_mass_tower.py:104: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `descartes-universe/` / `observations/`"
       },
       {
         "field_hash": {
@@ -91,7 +91,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "major",
-        "evidence": "folio-assistant/computations/branch_phase_fit_to_mass_tower.py:34: archimedean call `math.sin` — use the mpmath equivalent (`mp.sin`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/` | folio-assistant/computations/branch_phase_fit_to_mass_tower.py:37: archimedean call `math.sin` — use the mpmath equivalent (`mp.sin`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/` | folio-assistant/computations/branch_phase_fit_to_mass_tower.py:38: archimedean call `math.sin` — use the mpmath equivalent (`mp.sin`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/` | folio-assistant/computations/branch_phase_fit_to_mass_tower.py:55: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/` | folio-assistant/computations/branch_phase_fit_to_mass_tower.py:104: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/`"
+        "evidence": "computations/branch_phase_fit_to_mass_tower.py:34: archimedean call `math.sin` — use the mpmath equivalent (`mp.sin`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/` | computations/branch_phase_fit_to_mass_tower.py:37: archimedean call `math.sin` — use the mpmath equivalent (`mp.sin`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/` | computations/branch_phase_fit_to_mass_tower.py:38: archimedean call `math.sin` — use the mpmath equivalent (`mp.sin`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/` | computations/branch_phase_fit_to_mass_tower.py:55: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/` | computations/branch_phase_fit_to_mass_tower.py:104: archimedean call `math.sqrt` — use the mpmath equivalent (`mp.sqrt`) for substrate-precision values, or move this code to an archimedean-realization module under `archimedean-universe/` / `observations/`"
       }
     ],
     "code_is_commented": [
@@ -110,7 +110,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/branch_phase_fit_to_mass_tower.py:1: script lacks both a module docstring and ≥10% comment density (got 8/122 = 6.6%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
+        "evidence": "computations/branch_phase_fit_to_mass_tower.py:1: script lacks both a module docstring and ≥10% comment density (got 8/122 = 6.6%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
       },
       {
         "field_hash": {
@@ -127,7 +127,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/branch_phase_fit_to_mass_tower.py:1: script lacks both a module docstring and ≥10% comment density (got 8/122 = 6.6%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
+        "evidence": "computations/branch_phase_fit_to_mass_tower.py:1: script lacks both a module docstring and ≥10% comment density (got 8/122 = 6.6%) — add a top-of-file `\"\"\"…\"\"\"` docstring describing purpose and inputs / outputs, or increase inline commentary"
       }
     ],
     "variables_typed": [
@@ -178,7 +178,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/branch_phase_fit_to_mass_tower.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/branch_phase_fit_to_mass_tower.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       },
       {
         "field_hash": {
@@ -195,7 +195,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/branch_phase_fit_to_mass_tower.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
+        "evidence": "computations/branch_phase_fit_to_mass_tower.py:1: script contains no `# Ref: [key] …` citation. Add a bibliographic citation pointing to the proposition / theorem / paper section this script computes (matching the entries in `content/schema/references.ts`), or override with a `human` reviewer `result: \"n/a\"` entry if the script is pure infrastructure"
       }
     ],
     "connected_to_ci_pipeline": [
@@ -214,7 +214,7 @@
         "reviewed_at": "2026-05-22T19:00:32.111Z",
         "reviewed_sha": "91f748fd343a76d0444e2f81c87d9a056a1909ab",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/branch_phase_fit_to_mass_tower.py:1: script `branch_phase_fit_to_mass_tower.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+        "evidence": "computations/branch_phase_fit_to_mass_tower.py:1: script `branch_phase_fit_to_mass_tower.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
       },
       {
         "field_hash": {
@@ -231,7 +231,7 @@
         "reviewed_at": "2026-05-24T05:15:37.031Z",
         "reviewed_sha": "b918c27dba807cf5d0bb65ef8b3e49d37d4ca55a",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/branch_phase_fit_to_mass_tower.py:1: script `branch_phase_fit_to_mass_tower.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+        "evidence": "computations/branch_phase_fit_to_mass_tower.py:1: script `branch_phase_fit_to_mass_tower.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
       }
     ],
     "deprecated": [

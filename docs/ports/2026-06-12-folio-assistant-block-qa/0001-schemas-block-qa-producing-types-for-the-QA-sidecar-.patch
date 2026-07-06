@@ -77,7 +77,7 @@ index 0000000..4b50d8b
 +   * mismatch ⇒ entry is stale (the checker logic has changed).
 +   *
 +   * Mirrors the `scriptHash` convention used by
-+   * `folio-assistant/computations/witness_base.py`.
++   * `computations/witness_base.py`.
 +   */
 +  script_hash?: string;
 +  /**
@@ -112,7 +112,7 @@ index 0000000..4b50d8b
 + *
 + * Each entry is a 12-char prefix of the SHA-256 of the file's
 + * UTF-8 bytes — same convention as
-+ * `folio-assistant/computations/witness_staleness_tracker.py`.
++ * `computations/witness_staleness_tracker.py`.
 + *
 + * Absent fields mean the criterion's audit did not depend on that
 + * file (or the file did not exist at audit time).
@@ -271,7 +271,7 @@ index 0000000..4b50d8b
 +/**
 + * Per-script audit sidecar — mirrors the Python-pipeline
 + * `*.witness.json` convention from
-+ * `folio-assistant/computations/witness_base.py`.
++ * `computations/witness_base.py`.
 + *
 + * One sidecar per automated criterion, recording the canonical
 + * `(script_hash, script_commit_sha, deps_hash)` triple captured at

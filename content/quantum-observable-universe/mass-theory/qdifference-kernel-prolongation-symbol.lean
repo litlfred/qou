@@ -8,7 +8,7 @@ q-difference kernel `R` of the binding generating function
 (`prop:binding-genfun-qdifference`) is the **symbol of the jet-prolongation
 operator** of the Seiberg–Witten connection (`prop:mi-sw-abelianisation`).
 
-Per CLAUDE.md §3b the conjecture is axiomatised as a `class`: an instance
+Per AGENTS.md §3b the conjecture is axiomatised as a `class`: an instance
 asserts the kernel coincides with the prolongation symbol. This is the
 single open input (E) of the step-9b binding closure — (C), (D) and the
 recurrence (L3) are proved; only this identification remains, and it is to

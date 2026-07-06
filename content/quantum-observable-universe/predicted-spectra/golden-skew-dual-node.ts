@@ -1,6 +1,9 @@
 import { proposition } from "../../schema/builders";
 
 export default proposition({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+  ],
   label: "prop:golden-skew-dual-node",
   title:
     "Skew-dual golden node at $q = \\varphi^2$ under the bar involution $q \\leftrightarrow q^{-1}$",

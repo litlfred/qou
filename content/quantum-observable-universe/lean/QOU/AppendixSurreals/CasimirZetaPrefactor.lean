@@ -35,7 +35,7 @@ This file formalises the **number-theoretic core** of that prefactor:
 ζ-regularisation step itself (the identification of the divergent
 cubic mode-sum `Σ n³` with `ζ(−3)`); the regulator-independence of that
 identification is checked numerically in
-`folio-assistant/computations/casimir_n_unknot_construction.py` (the
+`computations/casimir_n_unknot_construction.py` (the
 exponential-cutoff route gives the same `1/120` via the same
 `B₄ = −1/30`). And the categorical mode-count object `N_⊙(A, d)` — the
 genuine blocker of the conjecture (Stage C) — is not constructed here.

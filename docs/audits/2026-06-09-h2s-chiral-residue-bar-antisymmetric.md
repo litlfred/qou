@@ -2,7 +2,7 @@
 
 **Date:** 2026-06-09. **Status:** identification clean; exact magnitude open
 (S³ curvature integral). **Compute:**
-[`h2s_chiral_residue_bar_antisymmetric.py`](../../folio-assistant/computations/h2s_chiral_residue_bar_antisymmetric.py).
+[`h2s_chiral_residue_bar_antisymmetric.py`](../../computations/h2s_chiral_residue_bar_antisymmetric.py).
 
 ## The question
 
@@ -85,4 +85,4 @@ the obstruction divisor.
 Therefore the H₂S +2.1° **is** the S³ braid-holonomy of the chiral p-lone on the
 `c_λ=0` (2,1) cell. The exact angle is the **monodromy phase around `ζ_ℓ`** — the
 one remaining compute. Channel and mechanism are now exactly identified;
-compute: [`h2s_chirality_residue_s3_holonomy.py`](../../folio-assistant/computations/h2s_chirality_residue_s3_holonomy.py).
+compute: [`h2s_chirality_residue_s3_holonomy.py`](../../computations/h2s_chirality_residue_s3_holonomy.py).

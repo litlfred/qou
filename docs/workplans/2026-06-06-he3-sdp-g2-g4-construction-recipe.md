@@ -44,7 +44,7 @@ actual confinement data (`n₀ = 3·A = 9`, `A = 3`):
 - **cost** — the binding-residual quadratic of the multi-term mass formula
   `ρ·[tr_M(T_w) + tower(T_w) + tr_M(C_{dimq})]·𝔈₀ − B_AME(³He)`², with `ρ = 2`,
   `B_AME = 7.7181 MeV`. Pull the numeric coefficients from
-  [`r5-full-canonical-knot-solver.witness.json`](../../folio-assistant/computations/r5-full-canonical-knot-solver.witness.json)
+  [`r5-full-canonical-knot-solver.witness.json`](../../computations/r5-full-canonical-knot-solver.witness.json)
   (the `³He` row: PSD-feasible, α⋆ = 0, recovered word `(σ₁σ₂⁻¹)³` in the `(2,1)`
   Wedderburn block).
 - **constraints `ι`** — encode the `Δ_max` Frobenius ball
@@ -79,7 +79,7 @@ prove `S(y⋆)` PosDef. Two routes:
    bound emitted as a witness field). This **avoids G3's B–V axiom**. Requires the
    witness to record `dualSlack` (or its eigenvalues) — **add this to
    `r5_full_canonical_knot_solver.py`'s emitted witness** (LP/SDP dual discipline,
-   CLAUDE.md §"LP / SDP duals").
+   AGENTS.md §"LP / SDP duals").
 2. **Boundary route (fallback).** If `S(y⋆)` is only PSD (not PosDef — boundary
    optimum), invoke `strict_complementarity_unique_axiom` (gate **G3**, currently an
    axiom). Then the result is conditional on that axiom.

@@ -1,0 +1,185 @@
+**Conjecture (complex-volume unification of mass-binding and decay).**
+*Binding and the $\beta$-decay $Q$-value are not two stories. They are
+the real and imaginary parts of a single complex fibre observable — the
+complexified mass-endomorphism convolution-defect*
+
+$$
+  \mathfrak{V}(K)\;=\;E_0\,\mathrm{tr}_M\big((\Pi_{\text{free}} - \mathbf{1})\circ\mathcal{M}\big)
+  \;\in\;\mathbb{C},
+  \qquad
+  \mathfrak{E}_{\mathrm{bind}}(K) = \mathrm{Re}\mathfrak{V}(K),
+  \quad
+  \mathfrak{Q}_\beta(K) = \mathrm{Im}\mathfrak{V}(K),
+$$
+
+*the QOU analogue of the Neumann–Zagier complex volume
+$\mathbb{V}(K) = \mathrm{Vol}(K) + i\,\mathrm{CS}(K)$.*
+
+## The one object
+
+Categorically — **no braid words**. For a confined knot $K$:
+
+- $\mathcal{M} = \mathcal{M}(K) \in \mathrm{End}_{\mathbf{C}}(X_K)$
+  is the **mass endomorphism** of the object $X_K$ representing $K$ in
+  the rigid monoidal category $\mathbf{C}$;
+- $\mathrm{tr}_M : \mathrm{End}_{\mathbf{C}}(X_K) \to k$ is the
+  categorical **Markov trace** (the closed/categorical trace; AGENTS.md
+  §7a — the fibre functor $\tau$ is a *different* object, never
+  $\tau_M$);
+- $\Pi_{\text{free}} \in \mathrm{End}_{\mathbf{C}}(X_K)$ is the
+  **idempotent projector** ($\Pi_{\text{free}}^2 = \Pi_{\text{free}}$)
+  onto the **factorized sub-object**
+  $X_K \twoheadrightarrow X_1 \otimes \cdots \otimes X_c$ — the
+  constituents un-linked (the categorical projection onto the split
+  tensor: the *same* R-matrix braiding with the inter-constituent
+  confining crossings dropped).
+
+The **convolution-defect** is the categorical trace of the part of
+$\mathcal{M}$ that does *not* survive $\Pi_{\text{free}}$ — a
+**projection defect** (no words, no overloaded $\Delta$, no new
+trace-like symbol):
+
+$$
+  \mathrm{tr}_M\big((\Pi_{\text{free}}-\mathbf{1})\circ\mathcal{M}\big)
+  \;=\;
+  \mathrm{tr}_M(\Pi_{\text{free}}\circ\mathcal{M}) - \mathrm{tr}_M(\mathcal{M})
+  \;=\;
+  \sum_\lambda y_\lambda\,\big(\chi^\lambda(\Pi_{\text{free}}\mathcal{M}) - \chi^\lambda(\mathcal{M})\big),
+$$
+
+the per-partition object of the canonical binding
+([`prop:categorical-mass-markov`](#prop:categorical-mass-markov),
+`binding_canonical`). This is a statement on **any confined knot $K$**;
+the nuclear binding case — a nucleus is a confined nucleon knot,
+factorized sub-object $\mathfrak{p}^{Z}\otimes\mathfrak{n}^{N}$ — is the
+physical instance $\mathrm{tr}_M(\mathcal{M}) = \mathrm{tr}_M(W_{\text{atom}})$
+of `binding_canonical`. Read over $\mathbb{C}$ the defect carries **one
+bit more information than either observable alone**: its two
+bar-parities.
+
+## Forcing of Re/Im — the bar-parity = the complexification
+
+Write $q = e^{\lambda}$, $\lambda = \log q$. The two crossing
+eigenvalues $q, -q^{-1}$ split as
+
+$$
+  \underbrace{\tfrac{q+q^{-1}}{2}=\cosh\lambda}_{\textbf{bar-even}},
+  \qquad
+  \underbrace{\tfrac{q-q^{-1}}{2}=\sinh\lambda}_{\textbf{bar-odd}},
+$$
+
+so $\cosh\lambda \pm \sinh\lambda = e^{\pm\lambda}$ — the bar-even and
+bar-odd parts are **one element $e^{\lambda}$ read on its two
+parities**. Continue $\lambda \mapsto i\theta$ (the substrate $q$ rotated
+onto the unit circle / a root of unity) and $\cosh\to\cos$,
+$\sinh\to i\sin$: the **bar-even/bar-odd split becomes a Re/Im split**.
+That is exactly the structure of the complex volume:
+
+| | real part (bar-even, $\cosh$, real $q$) | imaginary part (bar-odd, $\sinh$, root-of-unity $q$) |
+|---|---|---|
+| **Neumann–Zagier** | $\mathrm{Vol}(K)$ (hyperbolic) | $\mathrm{CS}(K)$ (Chern–Simons) |
+| **QOU** | $\mathfrak{E}_{\mathrm{bind}}(K)$ — **binding / mass** | $\mathfrak{Q}_\beta(K)$ — **$\beta$-decay** |
+
+The mass/binding channel is the **volume** (real, $\cosh$) part; the
+decay channel is the **Chern–Simons** (imaginary, $\sinh$) part of the
+*same* $\mathfrak{V}$.
+
+## Established results, and the fibre-level caveat
+
+- **Proved (algebra).** The bar-parity decomposition
+  $\tfrac{q+q^{-1}}{2}\pm\tfrac{q-q^{-1}}{2} = q^{\pm1}$ holds over any
+  field; the complex reconstruction $\mathfrak{E}_{\mathrm{bind}}+i\,\mathfrak{Q}_\beta
+  = \mathfrak{V}$ follows from the two projection
+  hypotheses ([Lean](#conj:binding-qbeta-complex-volume),
+  `QOU.MassEndomorphism.ComplexVolumeUnification`, 0 sorries).
+- **Proved (classical limit).** The free/factorized projection
+  $\chi^\lambda_{\text{free}}$ is the disjoint-product factorization,
+  proven at $q=1$ via Plancherel duality
+  ([`rem:block-multiplicativity-v-free`](../mass-theory/block-multiplicativity-v-free.md));
+  the $q$-deformed case is class-axiomatized (conjectural).
+- **Conjectural (the unification itself).** That the *physical* binding
+  and $\mathfrak{Q}_\beta$ are the Re/Im of the **same** $\mathfrak{V}$
+  at a single normalization.
+- **Fibre-level caveat (STRICT).** At the **archimedean / observable**
+  level $\mathrm{Im}(q_0)=0$
+  (`lusztig_q_0_imaginary_part_zero`): binding and $\mathfrak{Q}_\beta$ are both
+  *real* measured numbers. The complex structure is therefore
+  **fibre-level** (pre-$\tau$): $\mathfrak{V}(q)$ is a complex object in
+  the fibre, and $\mathfrak{E}_{\mathrm{bind}}$, $\mathfrak{Q}_\beta$ are its Re/Im
+  **shadows under different archimedean evaluations** (real-$q$ vs
+  root-of-unity). There is no "complex mass" — there is one complex
+  *fibre* object with two real observable shadows, exactly as
+  $\mathrm{Vol}$ and $\mathrm{CS}$ are separately real.
+
+## Computational corroboration (this PR)
+
+The two channels really are distinct real components of one object: the
+$E_0\cdot|\Delta(\mathrm{net})|$ **net-route** (the bar-even, binding-like
+$E_0\cdot\Delta(\mathrm{tr})$) gives a precision-ladder $c_2 \approx -8.0$,
+whereas the canonical $c_2 = -1$ lives in the bar-odd $\mathrm{tr}_M$
+**brane-tower** ladder
+([`docs/audits/2026-06-16-hoefsmit-stage-b-attempt-verdict.md`](../../../docs/audits/2026-06-16-hoefsmit-stage-b-attempt-verdict.md),
+witness `qbeta-ck-sseries-operator-match`). Two different real $c_2$'s for
+the two parities are exactly what Re/Im components of one complex
+$c_2$ predict.
+
+## Corollary — one story, and one proof
+
+Conditional on the unification, the framework's mass/binding chapter and
+its $\beta$-decay chapter are **one derivation**: compute the complex
+defect $\mathfrak{V}(K)$ once; its real part is every binding energy, its
+imaginary part is every $Q$-value. The "$0.17\%$ $\mathfrak{Q}_\beta$
+residual" and the binding $\Delta_\lambda$ gap become the *same* unclosed
+object — the imaginary and real parts of one defect — rather than two
+independent open problems.
+
+**Proof economy.** A relation proved for $\mathfrak{V}$ over a commutative
+ring $R$ with the **bar-involution** $\sigma$ (the structural setting —
+*not* $\mathbb{C}$, per AGENTS.md §7c) descends to **both** the bar-even
+(binding) and bar-odd ($\mathfrak{Q}_\beta$) parts from a *single* proof,
+because the projections $x \mapsto x\pm\sigma x$ are additive. Formalised
+sorry-free in [`QOU.MassEndomorphism`](binding-qbeta-complex-volume.lean):
+`invol_descent` (one ring identity $\Rightarrow$ both parity identities)
+and `recurrence_invol_descent` (a three-term $\mathfrak{V}$-recurrence with
+a bar-even multiplier $c$, $\sigma c = c$, yields the binding and
+$\mathfrak{Q}_\beta$ recurrences at once — the `c_k`-ladder mechanism). The
+$\mathbb{C}$/Re–Im picture is the archimedean instance ($\sigma=$ complex
+conjugation).
+
+## Channel recurrences over categorical $R$, and the rotation between them
+
+The two channels carry explicit three-term recurrences, stated in the same
+generic setting (commutative ring $R$ with bar involution $\sigma$, never
+$\mathbb{R}$ or $\mathbb{C}$; division-free via $\sigma q \cdot q = 1$):
+
+- **even channel** (compact / binding / continuous $q$-Hermite):
+  $H_{n+2} = 2x\,H_{n+1} - (1 - q^{n+1})\,H_n$ (`evenStep`);
+- **odd channel** (non-compact / $\mathfrak{Q}_\beta$ / $q^{-1}$-Hermite),
+  multiplied through by $q^{n+1}$:
+  $q^{n+1}\,h_{n+2} = 2x\,q^{n+1}\,h_{n+1} + (q^{n+1} - 1)\,h_n$ (`oddStep`).
+
+The **channel rotation** is proved sorry-free (`rotation_step`): with a
+*formal* rotation element $\iota \in R$, $\iota^2 = -1$ (the fibre-level
+stand-in for $i$; `Complex.I` is only the archimedean instance downstream
+of $\tau$), a sequence satisfies the odd step at $(q, x)$ **iff** its
+$\iota$-rotation $n \mapsto \iota^n h_n$ satisfies the even step at the
+bar-conjugated data $(\sigma q, \iota x)$ — the categorical form of the
+Askey/Ismail–Masson identity $h_n(x \mid q) = i^{-n} H_n(ix \mid q^{-1})$
+\cite{askey1989qhermite,ismail-masson1994}. Same eigenfunctions, rotated;
+one recurrence, two channels.
+
+The operator ("rotation matrix") statement is split by provability:
+`eigencolumn_eq_overlap` proves generically that any eigencolumn of the
+channel tridiagonal operator has orthogonal-polynomial entries, while the
+Leonard self-duality that would force those entries into the Askey–Wilson
+family \cite{zhedanov1991,terwilliger2001} is carried as the conjecture
+class `ChannelLeonardDuality`, and the bound $\leftrightarrow$ free
+deformation-path reading (endpoints of one Askey–Wilson family, with the
+$\mathfrak{V}$-ladder riding one bar-even three-term multiplier) as the
+conjecture class `AWDeformationPath`, whose two-channel descent
+`channel_ladders` is *derived* from `recurrence_invol_descent`. See the
+companion remarks
+[`rem:channel-rotation-askey-lit`](#rem:channel-rotation-askey-lit) and
+[`rem:complex-volume-character-variety-path`](#rem:complex-volume-character-variety-path).
+
+**Archimedean specialisation (§7c).** The measured binding and $Q_\beta$ are the real and imaginary parts $\mathrm{Re}, \mathrm{Im}$ of the complex Bring-surface volume, valued in $\mathbb{R}$ (with $E_0 : \mathbb{R}$); this is the archimedean readout of the generic complex-volume construction, acknowledged here.

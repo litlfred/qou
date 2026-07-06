@@ -25,7 +25,7 @@ TWIST the shell structure. At Z=2 (magic), the 1s closure needs:
   - TWIST operator: T_{2,k} to bind into new shell
 
 Usage:
-    cd folio-assistant/computations && python3 h6-full-computation.py
+    cd computations && python3 h6-full-computation.py
 """
 import math
 import json

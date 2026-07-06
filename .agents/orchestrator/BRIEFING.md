@@ -1,22 +1,21 @@
-# BRIEFING — 2026-06-14T21:35:00Z
+# BRIEFING — 2026-06-22T02:39:32Z
 
 ## Mission
-Fix Lean formalization failures and warnings in the mass-theory chapter (content/quantum-observable-universe/mass-theory) and verify via the QA pipeline.
+Resolve the 103 placeholders, TODOs, and unreferenced sorries in the qou/mass-theory chapter.
 
 ## 🔒 My Identity
 - Archetype: teamwork_preview_orchestrator
 - Roles: orchestrator, user_liaison, human_reporter, successor
-- Working directory: /home/litlfred/space_cats/qou/.agents/orchestrator
+- Working directory: /Users/litlfred/space_cats/qou/.agents/orchestrator
 - Original parent: parent
-- Original parent conversation ID: cb719b55-d540-4694-8dd6-85ee15145891
+- Original parent conversation ID: 6150bae3-6aa4-4622-9c22-fdb2e1696e25
 
 ## 🔒 My Workflow
 - **Pattern**: Project
-- **Scope document**: /home/litlfred/space_cats/qou/.agents/orchestrator/plan.md
-1. **Decompose**: The task is decomposed into: Scanning QA failures (Explorer), repairing stubs (Worker), proof validation (Auditor), running QA sweep (Worker/Orchestrator).
+- **Scope document**: /Users/litlfred/space_cats/qou/.agents/orchestrator/plan.md
+1. **Decompose**: Decomposed into (1) scan and triage via Explorer, (2) implementation via Worker, (3) review via Reviewer, (4) verification via Challenger/Auditor, and (5) merge via prepare-merge-auto.
 2. **Dispatch & Execute**:
-   - Delegate (sub-orchestrator): none.
-   - Direct (iteration loop): Explorer -> Worker -> Auditor.
+   - **Direct (iteration loop)**: Explorer -> Worker -> Reviewer -> Challenger -> Auditor -> prepare-merge-auto.
 3. **On failure** (in this order):
    - Retry: nudge stuck agent or re-send task
    - Replace: spawn fresh agent with partial progress
@@ -24,55 +23,48 @@ Fix Lean formalization failures and warnings in the mass-theory chapter (content
    - Redistribute: split stuck agent's remaining work
    - Redesign: re-partition decomposition
    - Escalate: report to parent (sub-orchestrators only, last resort)
-4. **Succession**: Succession at 16 spawns.
+4. **Succession**: Self-succeed at 16 spawns.
 - **Work items**:
-  1. Scan QA failures [done]
-  2. Implement repairs [done]
-  3. Forensic Audit [in-progress]
-  4. QA Sweeps [done]
-  5. Verification & Report [pending]
-- **Current phase**: 3
-- **Current focus**: Forensic Audit verification
+  1. Scan and triage [pending]
+  2. Implement resolutions [pending]
+  3. Review compilation and correctness [pending]
+  4. Perform forensic audit [pending]
+  5. Merge branch [pending]
+- **Current phase**: 1
+- **Current focus**: Scan and triage placeholders and TODOs
 
 ## 🔒 Key Constraints
-- Focus only on content/quantum-observable-universe/mass-theory/ and its referenced Lean files.
-- Ensure the Forensic Auditor returns a CLEAN verdict.
-- Never reuse a subagent after it has delivered its handoff — always spawn fresh.
+- Resolve all inline TODO, FIXME, and PLACEHOLDER strings in `qou/mass-theory`.
+- Replace sorries in Lean files with valid, compiling proofs (except those representing literature references).
+- Batched integration workflow: open PR, run `/prepare-merge-auto`, and merge.
 
 ## Current Parent
-- Conversation ID: cb719b55-d540-4694-8dd6-85ee15145891
-- Updated: not yet
+- Conversation ID: 6150bae3-6aa4-4622-9c22-fdb2e1696e25
+- Updated: 2026-06-22T02:39:32Z
 
 ## Key Decisions Made
-- Chose to fix 8 blocks instead of the minimum 6 to establish a solid baseline for the whole chapter.
-- Decided to create new docstubs for `pentagon-uv-commutation.lean` and `residue-at-root.lean` to follow path schemas and satisfy validation.
+- Starting with a fresh Explorer to catalog the 103 items and existing branch diffs.
 
 ## Team Roster
 | Agent | Type | Work Item | Status | Conv ID |
 |-------|------|-----------|--------|---------|
-| Explorer | teamwork_preview_explorer | Scan QA files and propose fixes | completed | 646b46de-cbfb-4627-8d95-87b07356b296 |
-| Worker | teamwork_preview_worker | Implement fixes & update QA | completed | 195b0564-459c-449c-8720-222cbb699cf6 |
-| Auditor | teamwork_preview_auditor | Verify proof integrity & axioms | stuck/replaced | 11254f8c-23dd-49ba-909b-f9cba0fa6544 |
-| Verification Worker | teamwork_preview_worker | Verify Lean compilation/goals (Predecessor) | stuck/replaced | a1418523-8136-4f8e-9114-4dab3fd1dbcb |
-| Verification Worker (Rep) | teamwork_preview_worker | Verify Lean compilation/goals | stuck/replaced | 46ac9a49-3fa5-484c-b44a-04a9ceb96685 |
-| Auditor (Rep) | teamwork_preview_auditor | Verify proof integrity & axioms | stuck/replaced | abe33f86-4919-4667-897e-430336e463a3 |
-| Reviewer (Fresh) | teamwork_preview_reviewer | Verify Lean compilation/goals | in-progress | 643f91aa-c512-41da-888e-d19f3865b00b |
-| Auditor (Fresh) | teamwork_preview_auditor | Verify proof integrity & axioms | in-progress | 16f985ac-cd8e-4a79-82c9-2105ad1e2958 |
+| Explorer | teamwork_preview_explorer | Scan and catalog placeholders | completed | 82bcaac2-4e58-4c7d-8a2d-23433677ebc8 |
+| Worker | teamwork_preview_worker | Implement remediation | in-progress | 32509425-172e-474e-9fc4-bc7a24417b29 |
 
 ## Succession Status
 - Succession required: no
-- Spawn count: 7 / 16
-- Pending subagents: 643f91aa-c512-41da-888e-d19f3865b00b, 16f985ac-cd8e-4a79-82c9-2105ad1e2958
-- Predecessor: unresponsive_predecessor
+- Spawn count: 2 / 16
+- Pending subagents: 32509425-172e-474e-9fc4-bc7a24417b29
+- Predecessor: none
 - Successor: not yet spawned
 
 ## Active Timers
-- Heartbeat cron: task-113
+- Heartbeat cron: task-119
 - Safety timer: none
 - On succession: kill all timers before spawning successor
 - On context truncation: run `manage_task(Action="list")` — re-create if missing
 
 ## Artifact Index
-- /home/litlfred/space_cats/qou/.agents/orchestrator/plan.md — Project plan
-- /home/litlfred/space_cats/qou/.agents/orchestrator/progress.md — Liveness and status heartbeat
-- /home/litlfred/space_cats/qou/.agents/orchestrator/ORIGINAL_REQUEST.md — Verbatim user request
+- /Users/litlfred/space_cats/qou/.agents/orchestrator/plan.md — Project plan
+- /Users/litlfred/space_cats/qou/.agents/orchestrator/progress.md — Liveness and status heartbeat
+- /Users/litlfred/space_cats/qou/.agents/ORIGINAL_REQUEST.md — Verbatim user request

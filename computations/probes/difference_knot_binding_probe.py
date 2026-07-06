@@ -50,8 +50,8 @@ derived) per the Δ_λ-gate discipline.
 
 Ref: docs/audits/2026-06-13-9b-h1-exponent-location-refuted.md  (why the
      algebraic trace route is exhausted — motivates the geometric attack)
-Ref: folio-assistant/computations/binding_volume_difference_probe.py
-Ref: folio-assistant/computations/binding_link_volumes.py
+Ref: computations/binding_volume_difference_probe.py
+Ref: computations/binding_link_volumes.py
 Ref: content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.md
 """
 from __future__ import annotations
@@ -82,7 +82,7 @@ CASES = [("D", 1, 1), ("T", 1, 2), ("3He", 2, 1), ("4He", 2, 2)]
 CENSUS_BINDING_VOL = {"D": 0.0, "T": 8.2863168, "3He": 7.3277248}
 
 # Substrate h = q − q⁻¹ at q₀; the crossing-sign classifier thresholds.
-_Q0 = mp.mpf("1.1099785827513808")
+_Q0 = mp.mpf("1.1099785955573347")
 _H = float(_Q0 - 1 / _Q0)            # ≈ 0.2091
 
 

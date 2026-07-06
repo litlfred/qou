@@ -90,4 +90,16 @@ noncomputable def two_E_cross : R_q := HA
 /-- `2 · E_cross = q − q⁻¹ = HA`. -/
 theorem two_E_cross_eq_HA : two_E_cross = HA := rfl
 
+/-- Build a Laurent polynomial from a list of `(exponent, coefficient)`
+    pairs: `Σᵢ cᵢ · T^{kᵢ}`.  Folding over a flat `List (ℤ × ℤ)` lets Lean
+    elaborate the `•`/`+` operations **once** (in the fold body) instead of
+    building a deep `HAdd`/`HSMul` expression tree per definition — the latter
+    does not finish elaborating within practical time/heartbeat budgets for
+    these hecke-engine witness polynomials.
+
+    Shared helper for the `QOU.Archimedean.PauliWitness` modules; centralised
+    here from the previously per-file `private` copies. -/
+noncomputable def ofPairs (l : List (ℤ × ℤ)) : LaurentPolynomial ℤ :=
+  l.foldl (fun acc p => acc + p.2 • LaurentPolynomial.T p.1) 0
+
 end QOU.Archimedean

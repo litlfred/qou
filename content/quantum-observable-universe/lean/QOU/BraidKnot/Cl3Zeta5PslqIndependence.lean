@@ -34,7 +34,7 @@ class Cl3Zeta5PslqIndependenceContext where
 
 /-- **Proposition (`prop:cl3-zeta5-pslq-independence`).** -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/cl3-zeta5-pslq-independence.md
-theorem pslq_independence [ctx : Cl3Zeta5PslqIndependenceContext] :
+def pslq_independence [ctx : Cl3Zeta5PslqIndependenceContext] :
     1000 ≤ ctx.pslq_precision_dps ∧
     10 ^ 10 ≤ ctx.pslq_norm_bound ∧
     ctx.no_integer_relation_found :=

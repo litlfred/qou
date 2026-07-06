@@ -3,7 +3,7 @@ Let $(\mathbf{C}, A, \tau)$ be a
 categorical Dirac operator $\mathcal{D}_\nabla$
 ([categorical Dirac operator](#def:categorical-dirac-operator))
 and a state $\psi \colon \mathbf{1} \to A$.
-The *categorical Lagrangian* is the endomorphism
+The **categorical Lagrangian** is the endomorphism
 
 $$
   \mathcal{L}_q(\nabla, \psi)

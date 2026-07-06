@@ -1,8 +1,8 @@
 {
   "engine": "python+rust",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-11T01:21:33.551357+00:00",
-  "commitSha": "3942932732c327a09242987ea440bf12b20541c8",
+  "computedAt": "2026-06-22T14:26:20.228718+00:00",
+  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
   "assertions": [
     {
       "name": "block_swap_braids_realize_block_perms",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 37071,
+  "durationMs": 37731,
   "computation": "block-swap-binding",
   "scriptFile": "block_swap_binding.py",
-  "scriptHash": "c653368f0445",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "7879fd10f28b",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,31 +28,30 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
   },
   "description": "Exact block-swapped bound symmetrization S_atom for ⁴He (task-1, #2103 follow-up). tr_atom_sym = ¼Σ_{σ∈S₂×S₂} tr_M(W_atom·β_σ) with β_σ the positive block-swap braid (NOT the orbit identity's relabeling — that is conjugation; the Young symmetrizer composes the braid). Sign-only (chi_q_via_gp). The binding signal of identical-nucleon exchange is the residual log(S_free/S_atom): if the bonds break block symmetry, S_atom ≠ S_free and the symmetrization does NOT cancel in the log-ratio binding.",
   "parameters": {
-    "q0": "1.1099785827513808075916690956107688798744991218736"
+    "q0": "1.1099785955573347198997632204832250266562084087802"
   },
   "data": {
     "atom_traces": {
-      "id": 0.8856164015064684,
-      "swap_p": 0.4011810456780114,
-      "swap_n": 0.41936454518113636,
-      "swap_pn": 0.18997063115573198
+      "id": 0.885616920128525,
+      "swap_p": 0.40118130111657285,
+      "swap_n": 0.41936481611540927,
+      "swap_pn": 0.18997076290556805
     },
     "free_traces": {
-      "id": 7.113902252176148,
-      "swap_p": 1.590520114104584,
-      "swap_n": 1.590520114104584,
-      "swap_pn": 0.35373470887268543
+      "id": 7.1139059565854135,
+      "swap_p": 1.5905209877117872,
+      "swap_n": 1.5905209877117872,
+      "swap_pn": 0.3537349130066542
     },
-    "S_atom": 0.5352578780993531,
-    "S_free": 0.37422067424389205,
-    "binding_signal_log_Sfree_over_Satom": -0.35790298440722756,
+    "S_atom": 0.5352578968316513,
+    "S_free": 0.37422067813386156,
+    "binding_signal_log_Sfree_over_Satom": -0.35790300900914485,
     "convention": "sign-only (chi_q_via_gp); averaged-binding is the slow refinement"
   }
 }

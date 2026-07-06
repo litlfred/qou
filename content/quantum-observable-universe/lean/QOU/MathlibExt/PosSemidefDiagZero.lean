@@ -96,69 +96,61 @@ private theorem quadratic_nonneg_implies_linear_zero
     have h_a2_eq : a ^ 2 = 0 := le_antisymm h_a2_le (sq_nonneg a)
     exact (pow_eq_zero_iff two_ne_zero).mp h_a2_eq
 
-/-- **External lemma (Horn–Johnson 2013 §7.7): 2-index quadratic
-    form expansion.**
+/-- **2-index quadratic form expansion (Horn–Johnson 2013 §7.7).**
 
     For a Hermitian matrix `C` and a two-support test vector
-    `α · e_i + β · e_j` (with `i ≠ j`), the quadratic form expands
-    to `α² C_ii + 2αβ C_ij + β² C_jj`.
+    `α · e_i + β · e_j`, the quadratic form expands to
+    `α² C_ii + 2αβ C_ij + β² C_jj`.
 
-    Proof: expand `dotProduct` as a `Finset.sum`, collapse the four
-    cross-terms via `Finset.sum_ite_eq'`, use Hermitian symmetry to
-    identify `C j i = C i j`.  The mechanical unfolding involves
-    Mathlib API names that have shifted between versions
-    (`Matrix.dotProduct` → top-level `dotProduct`, `Pi.single`
-    elaboration changes); recorded as an axiom pending the next
-    Mathlib API stabilisation. -/
+    Proved directly: distribute `mulVec`/`dotProduct` over the two
+    `Pi.single` summands (`mulVec_add`, `add_dotProduct`,
+    `dotProduct_add`), collapse each `single` term (`mulVec_single`,
+    `single_dotProduct`, `col_apply`, `op_smul_eq_mul`), identify
+    `C j i = C i j` by Hermitian symmetry, and close with `ring`.
+    (The identity in fact holds for all `i, j`; the `i ≠ j`
+    hypothesis is retained for the call sites and is unused in the
+    proof.)  Previously an `axiom` "pending Mathlib API
+    stabilisation"; now discharged with the current API. -/
 -- Ref: [horn-johnson-2013] *Matrix Analysis*, §7.7
-axiom quadratic_form_two_index_axiom :
-    ∀ {n : ℕ} {C : Matrix (Fin n) (Fin n) ℝ} (_hH : C.IsHermitian)
-      (α β : ℝ) {i j : Fin n} (_hij : i ≠ j),
-        dotProduct (star (Pi.single i α + Pi.single j β))
-          (C.mulVec (Pi.single i α + Pi.single j β)) =
-        α ^ 2 * C i i + 2 * α * β * C i j + β ^ 2 * C j j
-
 private theorem quadratic_form_two_index
     {C : Matrix (Fin n) (Fin n) ℝ} (hH : C.IsHermitian)
-    (α β : ℝ) {i j : Fin n} (hij : i ≠ j) :
+    (α β : ℝ) {i j : Fin n} (_hij : i ≠ j) :
     dotProduct (star (Pi.single i α + Pi.single j β))
       (C.mulVec (Pi.single i α + Pi.single j β)) =
-    α ^ 2 * C i i + 2 * α * β * C i j + β ^ 2 * C j j :=
-  quadratic_form_two_index_axiom hH α β hij
+    α ^ 2 * C i i + 2 * α * β * C i j + β ^ 2 * C j j := by
+  have hsymm : C j i = C i j := by simpa using hH.apply i j
+  simp only [star_trivial, mulVec_add, dotProduct_add, add_dotProduct,
+             mulVec_single, single_dotProduct, Pi.smul_apply, col_apply,
+             op_smul_eq_mul]
+  rw [hsymm]
+  ring
 
-/-- **External axiom (Horn–Johnson 2013 §7.7; Boyd–Vandenberghe
-    2004 §A.5.3): Cauchy–Schwarz inequality for PSD entries.**
+/-- **Cauchy–Schwarz inequality for PSD entries** (Horn–Johnson 2013
+    §7.7): for any real PSD matrix `C` and indices `i, j`,
+    `(C_ij)² ≤ C_ii · C_jj`.
 
-    For any real PSD matrix `C` and indices `i, j`, the entry-wise
-    Cauchy–Schwarz bound holds: `(C_ij)² ≤ C_ii · C_jj`.
-
-    Proof: 2x2 principal submatrix of PSD is PSD; PSD ⟹ det ≥ 0;
-    det of the 2x2 submatrix is `C_ii · C_jj − C_ij²` (using
-    `C_ji = C_ij` from Hermitian symmetry).  Axiomatised here
-    pending the Mathlib API for principal-submatrix-PSD; the test-
-    vector proof (`quadratic_form_two_index`) gives an alternative
-    route. -/
--- Ref: [horn-johnson-2013] *Matrix Analysis*, §7.7 (Schur complements
---      + PSD det inequalities — primary authority for the
---      principal-submatrix lemma used here)
--- Ref: [boyd-vandenberghe-2004] §A.5.5 (Schur complement; PSD block
---      structure). Note: §A.5.3 (which was previously cited here) is
---      "Generalized eigenvalue decomposition" — irrelevant to this
---      diagonal-zero PSD lemma. Fixed during local-PDF verification.
-axiom entry_sq_le_diag_mul_axiom :
-    ∀ {n : ℕ} {C : Matrix (Fin n) (Fin n) ℝ} (_hC : C.PosSemidef)
-      (i j : Fin n),
-        (C i j) ^ 2 ≤ C i i * C j j
-
-/-- **Cauchy-Schwarz inequality for PSD entries**: for any PSD
-    matrix `C : Matrix (Fin n) (Fin n) ℝ` and indices `i, j`,
-    `(C i j)² ≤ C i i · C j j`.  Discharged via the cited external
-    axiom. -/
+    Proved directly from the test-vector quadratic form: for `i ≠ j`,
+    `v = x·e_i + e_j` gives `0 ≤ C_ii x² + 2 C_ij x + C_jj` for all
+    `x` (PSD positivity + `quadratic_form_two_index`); a nonnegative
+    real quadratic has nonpositive discriminant (`discrim_le_zero`),
+    i.e. `(2 C_ij)² − 4 C_ii C_jj ≤ 0`, whence the bound.  The
+    `i = j` case is `C_ii² ≤ C_ii²`.  Previously an `axiom` pending
+    the Mathlib principal-submatrix-PSD API; now discharged. -/
+-- Ref: [horn-johnson-2013] *Matrix Analysis*, §7.7
 theorem Matrix.PosSemidef.entry_sq_le_diag_mul
     {C : Matrix (Fin n) (Fin n) ℝ} (hC : C.PosSemidef)
     (i j : Fin n) :
-    (C i j) ^ 2 ≤ C i i * C j j :=
-  entry_sq_le_diag_mul_axiom hC i j
+    (C i j) ^ 2 ≤ C i i * C j j := by
+  rcases eq_or_ne i j with rfl | hij
+  · nlinarith [sq_nonneg (C i i)]
+  · have key : ∀ x : ℝ, 0 ≤ C i i * (x * x) + 2 * C i j * x + C j j := by
+      intro x
+      have h := hC.2 (Pi.single i x + Pi.single j 1)
+      rw [quadratic_form_two_index hC.1 x 1 hij] at h
+      nlinarith [h]
+    have hd : discrim (C i i) (2 * C i j) (C j j) ≤ 0 := discrim_le_zero key
+    simp only [discrim] at hd
+    nlinarith [hd]
 
 /-- **PSD off-diagonal-zero from diagonal-zero**.
 

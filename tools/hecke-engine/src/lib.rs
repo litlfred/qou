@@ -58,6 +58,7 @@ pub mod gb_nf_reducer;
 pub mod geck_pfeiffer;
 pub mod gram;
 pub mod joint_tower_sdp_certificate;
+pub mod kazhdan_lusztig;
 #[cfg(feature = "mpfr")]
 pub mod laurent_hecke_element;
 #[cfg(feature = "mpfr")]

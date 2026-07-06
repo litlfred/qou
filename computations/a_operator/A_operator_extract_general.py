@@ -29,7 +29,7 @@ Output: `A-operator-extract-general.witness.json` with per-(A, atom)
 results.
 
 Usage:
-    python3 folio-assistant/computations/A_operator_extract_general.py [A=2]
+    python3 computations/A_operator_extract_general.py [A=2]
 """
 from __future__ import annotations
 

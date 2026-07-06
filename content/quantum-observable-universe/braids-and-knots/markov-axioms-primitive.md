@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Primitive Markov-trace axioms** (helper for the categorical chain).
 
 This remark records the four Markov-trace axioms (Jones 1985, Wenzl 1988) as

@@ -1,7 +1,7 @@
 # Li_2^q imaginary part is quantized (π·Res) — the PR #1657 reality gate resolves
 
 **Date:** 2026-06-01
-**Probe:** [`qbeta_li2q_imaginary_quantization.py`](../../folio-assistant/computations/qbeta/qbeta_li2q_imaginary_quantization.py)
+**Probe:** [`qbeta_li2q_imaginary_quantization.py`](../../computations/qbeta/qbeta_li2q_imaginary_quantization.py)
 → `qbeta-li2q-imaginary-quantization.witness.json`
 **Builds on:** PR #1657 (`2026-06-01-convergence-safe-vhat-tower.md`) —
 reuses its `li_2_q_continued` continuation, does not duplicate it.
@@ -51,7 +51,7 @@ value as `eps→0`).
   **cancels in the difference** and **factors through the ratio**,
   leaving a **real** observable.
 - The `Im` is therefore a **fibre-level branch-cut artifact** (per the
-  CLAUDE.md Im(q) fibre-vs-observable distinction), not an imaginary
+  AGENTS.md Im(q) fibre-vs-observable distinction), not an imaginary
   mass. **The reality gate is resolved structurally** — no `Σ Im`
   miracle cancellation is needed; the cancellation is guaranteed by
   `z`-independence regardless of `N_cross`.

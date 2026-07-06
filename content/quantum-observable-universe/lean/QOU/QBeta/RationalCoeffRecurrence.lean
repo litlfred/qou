@@ -16,7 +16,7 @@ the reciprocals of the characteristic roots.
 
 This grounds the search "find the kernel `R`" ≡ "find the minimal denominator
 `Q`". Its **contrapositive** is the pruning used by
-`folio-assistant/computations/qbeta/qbeta_ck_recurrence_first_cut.py`: the
+`computations/qbeta/qbeta_ck_recurrence_first_cut.py`: the
 canonical `c_2..c_10` admit no constant-coefficient recurrence of order ≤ 4, so
 `F` is **not** a low-degree rational function — the kernel is genuinely
 higher-order, and the productive direction is the canonical `c_11+` extraction

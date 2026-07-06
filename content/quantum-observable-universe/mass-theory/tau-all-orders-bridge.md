@@ -37,12 +37,12 @@ above is the residual content: the disproof rules out $T$ being a
 *constant*, but leaves open whether $T$ is a *non-constant* (i.e.
 genuinely order-mixing) linear map, or whether no map exists at all.
 
-## Why a dichotomy
+## Rationale for the dichotomy
 
 Both hypotheses are categorically meaningful and observationally
 testable, and at present neither is settled.
 
-**Why (1) is plausible.**
+**Plausibility of (1).**
 Yekutieli's non-abelian Stokes theorem
 \cite{yekutieli2015} guarantees that the algebraic multiplicative
 integral and a $\tau$-image geometric integral *are* connected by a
@@ -54,7 +54,7 @@ disagrees with the natural $h$-grading on the Markov-trace side
 crossings, the Markov side counts Vassiliev order, and these differ
 at $h^4$).
 
-**Why (2) is plausible.**
+**Plausibility of (2).**
 The algebraic trace counts the crossed-module Euler characteristic
 $\dim(V)\cdot\chi(\Sigma_4) = -12$, an integer invariant of the
 finite group $Q_8$ acting on Bring's surface. The Markov trace
@@ -85,7 +85,7 @@ lower-triangular real solution $T$?
 
 **Result (computed; refines the test).**  The $h^6,\,h^8$ extension was
 run in
-[`tau_all_orders_h6_empirical.py`](../../../folio-assistant/computations/probes/tau_all_orders_h6_empirical.py)
+the canonical formalism
 (witness `tau-all-orders-empirical-bridge.witness.json`). Two facts
 emerged that **sharpen the conjecture and correct the naive test**:
 
@@ -105,14 +105,14 @@ emerged that **sharpen the conjecture and correct the naive test**:
    coefficients are pure numbers).  The diagonal fit
    $T_{k,k} = \kappa_{2k}/\alpha_{2k}$ fails at $k = 3$ (since
    $\alpha_6 = 0$), but a **non-diagonal** lower-triangular fit still
-   trivially exists — row $k$ reads
+   exists — row $k$ reads
    $\kappa_{2k} = T_{k,1}\alpha_2 + T_{k,2}\alpha_4$ (one equation, two
    free unknowns, since the higher $\alpha$ vanish), always solvable.
    Hence hypothesis (1) "$\exists$ lower-triangular $T$" is *trivially*
    inhabited at the number level, and the naive fit cannot distinguish
    (1) from (2).
 
-**Consequence for the formalisation.**  The genuine open content is
+**Corollary for the formalisation.**  The genuine open content is
 therefore **not** "does a lower-triangular $T$ exist" (it does,
 vacuously).  Note that even a *single* $T$ holding at all orders
 simultaneously — which is what the Lean
@@ -137,7 +137,7 @@ disproof shows the band-width-0 (constant) kernel already fails at
 $h^4$ — so the open question is whether a *wider* finite band closes
 the bridge.
 
-## What does *not* settle the conjecture
+## Considerations that do not settle the conjecture
 
 - **The proved $-12 = \dim(V)\cdot\chi(\Sigma_4)$ identity** of
   [`prop:crossed-module-euler-characteristic`](#prop:crossed-module-euler-characteristic).
@@ -167,3 +167,5 @@ A separate class `TauDistinctInvariants` records hypothesis (2);
 the disjunction `TauOrderMixingMap ∨ TauDistinctInvariants` is the
 conjecture proper. Neither class has an instance — that is the
 honest reflection of the open status.
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

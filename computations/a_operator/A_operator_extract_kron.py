@@ -38,7 +38,7 @@ needed at A=3, A=4 — that's items 4 (symmetry) + 1 (panel size)
 which interact with this factorization.
 
 Usage:
-    python3 folio-assistant/computations/A_operator_extract_kron.py [--A 2|3|4]
+    python3 computations/A_operator_extract_kron.py [--A 2|3|4]
 """
 from __future__ import annotations
 

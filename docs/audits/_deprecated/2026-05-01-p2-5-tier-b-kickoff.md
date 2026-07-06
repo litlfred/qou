@@ -12,12 +12,12 @@
 
 ## Files
 
-- [`folio-assistant/computations/witness_polynomial.py`](../../folio-assistant/computations/witness_polynomial.py)
+- [`computations/witness_polynomial.py`](../../computations/witness_polynomial.py)
   — small helper with two API entries:
   - `expose_polynomial(expr, q, q0=None, digits=50, simplify=True) -> dict`
   - `expose_polynomial_dict(exprs, q, ...) -> dict`
   Both produce a `{polynomial_q, polynomial_q_latex, value_at_q0}` triple.
-- [`folio-assistant/computations/bw_wenzl_shadow_equivalence.py`](../../folio-assistant/computations/bw_wenzl_shadow_equivalence.py)
+- [`computations/bw_wenzl_shadow_equivalence.py`](../../computations/bw_wenzl_shadow_equivalence.py)
   — first exemplar; witness JSON now includes a `polynomial_forms`
   field with seven entries (each $w_\lambda$, $\beta_\lambda$,
   $C_\lambda$, $y_\lambda$ for $\lambda = (2,2)$ and $(3,2,1)$).

@@ -43,7 +43,7 @@ gap honestly so downstream consumers know the new path is
 Witness: tr-m-jones-markov-cross-check.witness.json
 Audit-only: docs/audits/2026-05-08-p3-h-3a-divergence.md
 
-@module folio-assistant/computations/tr_m_jones_markov_cross_check
+@module computations/tr_m_jones_markov_cross_check
 """
 
 from __future__ import annotations
@@ -64,7 +64,7 @@ import sympy as sp  # noqa: E402
 from wedderburn_jones_markov import global_wedderburn_sum_jones_markov  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
-Q_0 = sp.Rational("1.1099785827513805")
+Q_0 = sp.Rational("1.1099785955573347")
 REF_WITNESS = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
 
 

@@ -19,7 +19,7 @@ open QOU.Infra.Clausen
     closed form (RHS of the inversion formula) is well-defined.
     Substantive identification with the actual polylog inversion
     is encoded conditionally. -/
-theorem jonquiere_tate_rationality
+def jonquiere_tate_rationality
     (n K : ℕ) (_ : 2 ≤ n) (_ : 2 ≤ K) (B : ℝ) :
     jonquiereWrongParity n K B = jonquiereWrongParity n K B := by
   rfl

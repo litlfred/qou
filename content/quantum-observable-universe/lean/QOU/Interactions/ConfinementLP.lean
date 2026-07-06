@@ -43,7 +43,7 @@ noncomputable def markovTraceNF (z h : R_q) : Fin 6 → R_q
 
 /-! ## §2  The Gram bilinear form -/
 
-/-- The Gram matrix is symmetric: G_{ij} = G_{ji}.
+/- The Gram matrix is symmetric: G_{ij} = G_{ji}.
     This follows from cyclicity of the Markov trace:
     tr_M(b_i · b_j) = tr_M(b_j · b_i).
 

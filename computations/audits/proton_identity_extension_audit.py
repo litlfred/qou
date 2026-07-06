@@ -65,6 +65,8 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_P_MEV_VALIDATION,
     M_N_MEV_VALIDATION,
+    M_E_MEV,
+    M_MU_MEV_VALIDATION,
 )
 
 
@@ -76,8 +78,8 @@ def main():
     set_compute_dps()
     q = mpf(Q_50_DIGIT_STR)
     h = q - 1 / q
-    m_e = mpf("0.51099895069")
-    m_mu = mpf("105.6583755")
+    m_e = mpf(M_E_MEV)  # registry (no inline literal)
+    m_mu = mpf(M_MU_MEV_VALIDATION)  # registry (no inline literal)
     m_p = mpf(M_P_MEV_VALIDATION)
     m_n = mpf(M_N_MEV_VALIDATION)
 

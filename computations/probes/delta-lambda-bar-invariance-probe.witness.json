@@ -1,30 +1,37 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-26T21:44:03.639506+00:00",
-  "commitSha": "75440968e201077a10c3c14d3e9809845b1081fc",
+  "computedAt": "2026-07-05T11:18:36.057747+00:00",
+  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
   "assertions": [
     {
       "name": "min-norm LP solution satisfies target equation to mp 50-dps reduction precision",
-      "computed": "1.5092594754258011409464840684e-30",
+      "computed": "1.49703701052559559158283766196e-30",
       "expected": "0",
       "passed": true,
       "tolerance": 1e-25
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 11,
   "computation": "delta-lambda-bar-invariance-probe",
   "scriptFile": "delta_lambda_bar_invariance_probe.py",
-  "scriptHash": "a534aa4f7838",
-  "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
+  "scriptHash": "2e67342188c2",
+  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
   },
-  "description": "Probe-1 from docs/audits/2026-05-24-delta-lambda-closure-synthesis-next-step.md. Imposes structural constraint Δ_λ = Δ_{λ^T} (bar-involution / Type-B fold per CLAUDE.md §7b) on the deuteron Δ_λ system; reports the min-||ν||_2 LP solution from the 5-dim affine subspace. NOT a 7th-ansatz fit — bar-invariance is derivable from canonical framework primitives. Diagnostic only.",
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Probe-1 from docs/audits/2026-05-24-delta-lambda-closure-synthesis-next-step.md. Imposes structural constraint Δ_λ = Δ_{λ^T} (bar-involution / Type-B fold per AGENTS.md §7b) on the deuteron Δ_λ system; reports the min-||ν||_2 LP solution from the 5-dim affine subspace. NOT a 7th-ansatz fit — bar-invariance is derivable from canonical framework primitives. Diagnostic only.",
   "parameters": {
     "atom": "D",
     "n": 6,
@@ -33,7 +40,7 @@
     "n_self_conjugate": 1,
     "n_effective_unknowns": 6,
     "free_dimensions_after_constraint": 5,
-    "target_signed_str": "-4.353367281870148656861232298031140768489"
+    "target_signed_str": "-4.3533672818701486568612322980311407684888589301407"
   },
   "data": {
     "pair_structure": [
@@ -49,7 +56,7 @@
           1,
           1
         ],
-        "c_sum_str": "0.092326978336256334176742431880137185003265793354871"
+        "c_sum_str": "0.092333586114245624000826221481021109105333674563622"
       },
       {
         "lambda": [
@@ -63,7 +70,7 @@
           1,
           1
         ],
-        "c_sum_str": "0.18982375095580888839461551283540326944370689588252"
+        "c_sum_str": "0.18984888671074504193390426654541733814716916568783"
       },
       {
         "lambda": [
@@ -76,7 +83,7 @@
           1,
           1
         ],
-        "c_sum_str": "0.067706302434817664398331574147376075270261049412215"
+        "c_sum_str": "0.067732369048613744895306396464546109861005650976628"
       },
       {
         "lambda": [
@@ -90,7 +97,7 @@
           1,
           1
         ],
-        "c_sum_str": "-0.0044288749719436040382867188151985508684714899755298"
+        "c_sum_str": "-0.0044248702296176329607092454789028201637030185252466"
       },
       {
         "lambda": [
@@ -102,7 +109,7 @@
           2,
           2
         ],
-        "c_sum_str": "0.057296315629752056206285157517703640840528573288798"
+        "c_sum_str": "0.057301222331069504621874317568805707093044318155819"
       },
       {
         "lambda": [
@@ -111,34 +118,34 @@
           1
         ],
         "lambda_T": null,
-        "c_sum_str": "-0.014438000836978449315397045892477051969644015699612"
+        "c_sum_str": "-0.014433986615834845852373786899355146094639850203969"
       }
     ],
     "nu_solution": {
-      "pair::(6,)<->(1, 1, 1, 1, 1, 1)": "-7.63371043844759767099711807672",
-      "pair::(5, 1)<->(2, 1, 1, 1, 1)": "-15.6948659562878508277635252285",
-      "pair::(4, 2)<->(2, 2, 1, 1)": "-5.59804205616889683372273614298",
-      "pair::(4, 1, 1)<->(3, 1, 1, 1)": "0.366184940882319310453027360752",
-      "pair::(3, 3)<->(2, 2, 2)": "-4.73733128267740834485629971602",
-      "self::(3, 2, 1)": "1.19375202877484909509987940875"
+      "pair::(6,)<->(1, 1, 1, 1, 1, 1)": "-7.63212525506269592381470838578",
+      "pair::(5, 1)<->(2, 1, 1, 1, 1)": "-15.6925615465406854196196570262",
+      "pair::(4, 2)<->(2, 2, 1, 1)": "-5.59863367335838587532374403519",
+      "pair::(4, 1, 1)<->(3, 1, 1, 1)": "0.365751675539324102913296607829",
+      "pair::(3, 3)<->(2, 2, 2)": "-4.73641417498724134365287944727",
+      "self::(3, 2, 1)": "1.19308691905072442989455243859"
     },
     "delta_by_lambda": {
-      "[6]": "-7.63371043844759767099711807672",
-      "[1, 1, 1, 1, 1, 1]": "-7.63371043844759767099711807672",
-      "[5, 1]": "-15.6948659562878508277635252285",
-      "[2, 1, 1, 1, 1]": "-15.6948659562878508277635252285",
-      "[4, 2]": "-5.59804205616889683372273614298",
-      "[2, 2, 1, 1]": "-5.59804205616889683372273614298",
-      "[4, 1, 1]": "0.366184940882319310453027360752",
-      "[3, 1, 1, 1]": "0.366184940882319310453027360752",
-      "[3, 3]": "-4.73733128267740834485629971602",
-      "[2, 2, 2]": "-4.73733128267740834485629971602",
-      "[3, 2, 1]": "1.19375202877484909509987940875"
+      "[6]": "-7.63212525506269592381470838578",
+      "[1, 1, 1, 1, 1, 1]": "-7.63212525506269592381470838578",
+      "[5, 1]": "-15.6925615465406854196196570262",
+      "[2, 1, 1, 1, 1]": "-15.6925615465406854196196570262",
+      "[4, 2]": "-5.59863367335838587532374403519",
+      "[2, 2, 1, 1]": "-5.59863367335838587532374403519",
+      "[4, 1, 1]": "0.365751675539324102913296607829",
+      "[3, 1, 1, 1]": "0.365751675539324102913296607829",
+      "[3, 3]": "-4.73641417498724134365287944727",
+      "[2, 2, 2]": "-4.73641417498724134365287944727",
+      "[3, 2, 1]": "1.19308691905072442989455243859"
     },
-    "L2_cost_str": "18.972134047215402627460053833132886389557381060193",
-    "max_abs_delta_str": "15.6948659562878508277635252285",
+    "L2_cost_str": "18.969485304851722998175159658773163709951063073899",
+    "max_abs_delta_str": "15.6925615465406854196196570262",
     "scale_comparison_summary": {
-      "bar_invariance_min_norm_max_abs": "15.6948659563",
+      "bar_invariance_min_norm_max_abs": "15.6925615465",
       "a_single_block_max_abs": "22.959",
       "b_padded_staircase_max_abs": "301.521",
       "c_content_monotonic_norm_2": "31.968",

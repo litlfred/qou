@@ -3,7 +3,7 @@
 **Date.** 2026-06-01
 **Block.** [`conj:casimir-epsilon-vacuum`](../../content/quantum-observable-universe/appendix-surreals/casimir-epsilon-vacuum.md)
 **Builds on.** [`2026-06-01-casimir-free-field-disjoint-grounding.md`](2026-06-01-casimir-free-field-disjoint-grounding.md)
-**Witness.** [`casimir-d6-qcorrection-structure.witness.json`](../../folio-assistant/computations/casimir-d6-qcorrection-structure.witness.json)
+**Witness.** [`casimir-d6-qcorrection-structure.witness.json`](../../computations/casimir-d6-qcorrection-structure.witness.json)
 **Result.** The leading 1/d⁴ Casimir term is q-free; the **first** q-correction
 requires a hyperbolic (interacting) braided mode. The minimal such mode is the
 figure-eight knot **4_1** — which is *also the knot that defines the substrate

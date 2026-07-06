@@ -11,11 +11,11 @@ export default conjecture({
     engine: "python",
     status: "verified",
     script:
-      "folio-assistant/computations/h2s_chirality_residue_s3_holonomy.py",
+      "computations/h2s_chirality_residue_s3_holonomy.py",
     witness: [
-      "folio-assistant/computations/h2s-chirality-residue-s3-holonomy.witness.json",
-      "folio-assistant/computations/h2s-chiral-residue-bar-antisymmetric.witness.json",
-      "folio-assistant/computations/h2s-bring-residual-mixing.witness.json",
+      "computations/h2s-chirality-residue-s3-holonomy.witness.json",
+      "computations/h2s-chiral-residue-bar-antisymmetric.witness.json",
+      "computations/h2s-bring-residual-mixing.witness.json",
     ],
   },
   uses: [

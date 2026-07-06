@@ -13,7 +13,7 @@ The ONLY inputs are:
   μ₀ = m_e / (3 E_×)                (unit choice)
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 t35-exact-halflife.py
 """
 

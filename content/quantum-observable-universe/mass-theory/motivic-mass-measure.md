@@ -53,7 +53,7 @@ $$
 *where $[E_i^{\circ}]$ is the class of the smooth open part of the
 $i$-th exceptional divisor.*
 
-**Why motivic.** The mass endomorphism
+**Motivic rationale.** The mass endomorphism
 ([proton--electron mass ratio](#prop:mass-endomorphism-tower))
 needs to assign a finite, $q$-discrete weight to a Gröbner-Shirshov
 reduction whose intermediate states are singular: there is no smooth

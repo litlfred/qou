@@ -29,7 +29,7 @@
   "scriptFile": "probe_braid_word_basis_gram.py",
   "scriptHash": "a581cdcd2d0f",
   "scriptCommitSha": "f882575823dc21a8c718f9bbfb64ec61a4e46133",
-  "description": "Braid-word basis Gram-matrix probe at H_3(q_0). Computes G_wv = tr_M(σ_w · σ_v) for the 6-element reduced-word basis {e, σ_0, σ_1, σ_0σ_1, σ_1σ_0, σ_0σ_1σ_0} via the Wenzl bridge Σ_λ y_λ · tr_{V_λ}(ρ_λ(...)) and Hoefsmit seminormal matrices. Demonstrates that the paper-canonical σ_w basis (CLAUDE.md §7a) has GENUINE off-diagonal Gram entries — the structural property the per-partition basis lacks by Wedderburn orthogonality. The SDP shadow-price hypothesis is testable non-degenerately in this basis. Class C (diagnostic / structural). Substrate-only (CAL-2 q_0); no CAL-3 input.",
+  "description": "Braid-word basis Gram-matrix probe at H_3(q_0). Computes G_wv = tr_M(σ_w · σ_v) for the 6-element reduced-word basis {e, σ_0, σ_1, σ_0σ_1, σ_1σ_0, σ_0σ_1σ_0} via the Wenzl bridge Σ_λ y_λ · tr_{V_λ}(ρ_λ(...)) and Hoefsmit seminormal matrices. Demonstrates that the paper-canonical σ_w basis (AGENTS.md §7a) has GENUINE off-diagonal Gram entries — the structural property the per-partition basis lacks by Wedderburn orthogonality. The SDP shadow-price hypothesis is testable non-degenerately in this basis. Class C (diagnostic / structural). Substrate-only (CAL-2 q_0); no CAL-3 input.",
   "contentBlock": "rem:per-partition-k-lambda-rule",
   "parameters": {
     "q_0": 1.1099785955541805,

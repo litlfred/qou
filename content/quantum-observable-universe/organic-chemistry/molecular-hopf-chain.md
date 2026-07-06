@@ -1,6 +1,8 @@
 A **molecular Hopf chain** is a linear sequence of atoms bonded
 by covalent Hopf links ([covalent bond](#def:covalent-bond-types)),
-where the first and last atoms retain unused linking sites.
+where the first and last atoms retain unused linking sites — the
+unclosed "missing link" that distinguishes an open chain from a
+closed ring.
 
 **Definition.**
 Let $\mathcal{A}_1, \ldots, \mathcal{A}_N$ be atoms with residual
@@ -19,8 +21,10 @@ $$
   \mathcal{A}_N
 $$
 
-where $B_k(R_i, R_{i+1})$ is a covalent bond of order $k$ between
-adjacent atoms.  The **linking matrix** of the chain is the
+where the operator $\underset{B_k}{\oplus}$ joins two adjacent atoms
+by an order-$k$ covalent bond, and $B_k(R_i, R_{i+1})$ is that bond —
+formed between the residual sub-links $R_i$ and $R_{i+1}$ of the atoms
+it connects.  The **linking matrix** of the chain is the
 $N \times N$ matrix
 
 $$

@@ -16,7 +16,7 @@ Zero-calibration formula:
   M = Z*m_p + N*m_n + Z*m_e + Phi_Gram * alpha_EM * m_p
 
 Usage:
-    python3 folio-assistant/computations/atom_mass_gram_full.py
+    python3 computations/atom_mass_gram_full.py
 """
 
 import json, math, sys, glob

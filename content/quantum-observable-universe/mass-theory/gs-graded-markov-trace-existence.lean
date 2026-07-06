@@ -7,7 +7,7 @@
 The §3b-cond class axiomatisation lives at
 [`../lean/QOU/BraidKnot/GradedMarkovTraceFromGSFiltration.lean`](../lean/QOU/BraidKnot/GradedMarkovTraceFromGSFiltration.lean) under the `qou` Lake package.  The
 class instance is the **conjectural witness** (sorry = conjecture
-per CLAUDE.md §3b), not a missing proof; downstream theorems take
+per AGENTS.md §3b), not a missing proof; downstream theorems take
 `[GradedMarkovTraceFromGSFiltration]` as an explicit `[Instance]` hypothesis.
 
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/gs-graded-markov-trace-existence.ts

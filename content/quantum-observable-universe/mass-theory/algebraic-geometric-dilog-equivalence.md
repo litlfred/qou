@@ -59,7 +59,7 @@ $$
    energy pipeline (cf.
    [Φ$_q$-tower JSJ bridge](#rem:phi-q-tower-jsj-bridge)).*
 
-## Why this is the structural form of Kashaev
+## Relation to the structural form of Kashaev
 
 The conjecture is the **QOU-native, partial-product** form of the
 Kashaev–Murakami–Murakami theorem
@@ -81,7 +81,7 @@ volume are not two competing engines: they are the same regulator
 $\Phi_n(x; q_0) \mapsto D(z(x))$ evaluated through two convergence
 schemes.
 
-## Conjectural standing (CLAUDE.md §3b)
+## Conjectural standing (AGENTS.md §3b)
 
 This block is downstream of
 ([Kashaev volume conjecture](#conj:kashaev-volume-conjecture)) and
@@ -100,7 +100,7 @@ class instances. This matches the conjectural-class pattern used for
 
 The algebraic-geometric matching of poles to cusps for the simplest
 non-trivial case (the trefoil, $n = 3$) is recorded in
-[q-pochhammer-seed.witness.json](../../../folio-assistant/computations/q-pochhammer-seed.witness.json).
+[q-pochhammer-seed.witness.json](../../../computations/q-pochhammer-seed.witness.json).
 The witness reports the algebraic denominator zeros, the SnapPy-
 solved cusp shape parameters obtained by feeding those zeros as
 Newton–Raphson seeds, and the residual after one Newton step.

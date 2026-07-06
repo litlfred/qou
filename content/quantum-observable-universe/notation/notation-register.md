@@ -1,7 +1,7 @@
 Every mathematical symbol used in this paper belongs to exactly one
 register. The tables below group symbols by the chapter where each is
 first introduced; within a chapter, entries are sorted alphabetically
-by concept name. This block is authoritative — `CLAUDE.md` §7aa
+by concept name. This block is authoritative — `AGENTS.md` §7aa
 refers to it.
 
 ### Quantum universes (Chapter 1)
@@ -39,6 +39,6 @@ See [Table 8](#tbl:notation-register-table8-data).
 ### Lean source convention (cross-chapter)
 
 Applies to every `.lean` file in the paper. Mirrors
-[`CLAUDE.md` §7c](https://github.com/litlfred/qou/blob/main/CLAUDE.md#7c-base-ring-convention-generic-r-vs-archimedean-r-strict).
+[`AGENTS.md` §7c](https://github.com/litlfred/qou/blob/main/AGENTS.md#7c-base-ring-convention-generic-r-vs-archimedean-r-strict).
 
 See [Table 9](#tbl:notation-register-table9-data).

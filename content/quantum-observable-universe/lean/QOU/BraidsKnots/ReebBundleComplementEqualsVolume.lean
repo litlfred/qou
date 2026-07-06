@@ -4,7 +4,7 @@ import Mathlib.Data.Real.Basic
 # QOU.BraidsKnots.ReebBundleComplementEqualsVolume
 
 Compiled formalisation of `prop:reeb-bundle-complement-equals-volume`,
-**conditional on** `conj:mass-volume-factorization` (CLAUDE.md §3b-cond).
+**conditional on** `conj:mass-volume-factorization` (AGENTS.md §3b-cond).
 
 Conditional on the mass-volume factorisation conjecture, the
 categorical Markov-trace observable computed by
@@ -25,7 +25,7 @@ conditional-class hypothesis whose instance encodes the conjecture.
 namespace QOU.BraidsKnots
 
 /-- The conjectural-class axiomatisation of the
-    `conj:mass-volume-factorization` hypothesis. Per CLAUDE.md §3b-cond,
+    `conj:mass-volume-factorization` hypothesis. Per AGENTS.md §3b-cond,
     a downstream theorem may keep its provable kind by carrying this
     class as an explicit `[Instance]` hypothesis. -/
 class MassVolumeFactorization where

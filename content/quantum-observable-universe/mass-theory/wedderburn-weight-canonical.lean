@@ -1,4 +1,5 @@
 import Mathlib.Algebra.Field.Basic
+import Mathlib.Tactic
 
 /-!
 # QOU.BraidKnot.wedderburnWeightCanonical
@@ -20,12 +21,12 @@ closed form [wenzl1988]; on the self-conjugate stratum
 
 Off the self-conjugate stratum, `y_λ` and `tilde w_λ` are genuinely
 distinct weight families — the in-repo witness
-`folio-assistant/computations/probe-wedderburn-weight-scheme.witness.json`
+`computations/probe-wedderburn-weight-scheme.witness.json`
 records `|y_λ / tilde w_λ|` ratios from ≈0.14 to ≈2.54 at q₀ for
 n ∈ {2, 3}.
 
 The BW/LP scaling ratios — verified symbolically in
-`folio-assistant/computations/_deprecated/bw_wenzl_shadow_equivalence.py`
+`computations/_deprecated/bw_wenzl_shadow_equivalence.py`
 for `λ = (2,2)` and `λ = (3,2,1)` (both self-conjugate) — are:
 
   β / C = -1/h        (all λ)
@@ -85,35 +86,37 @@ class WedderburnWeightCanonical (R : Type u) [Field R] where
       here, supplied per instance). -/
   y : Partition → R
   /-- BW scaling identity (all λ). -/
-  beta_eq : ∀ λ, beta λ = -(1 / 2 : R) * w λ
+  beta_eq : ∀ lam, beta lam = -(1 / 2 : R) * w lam
   /-- LP shadow-price scaling identity (all λ). -/
-  C_eq : ∀ λ, C λ = w λ * (h / 2)
+  C_eq : ∀ lam, C lam = w lam * (h / 2)
   /-- **Wenzl-bridge identity, restricted to self-conjugate λ.**
       Whenever `κ_λ = 0`, the Markov coefficient agrees with the
       Wedderburn-block weight: `y_λ = tilde w_λ`. -/
-  y_eq_self_conjugate : ∀ λ, kappa λ = 0 → y λ = w λ
+  y_eq_self_conjugate : ∀ lam, kappa lam = 0 → y lam = w lam
 
 /-- For self-conjugate partitions (κ = 0), the Markov coefficient
     coincides with the Wedderburn-block weight. -/
 theorem WedderburnWeightCanonical.y_self_conjugate
     {R : Type u} [Field R] [c : WedderburnWeightCanonical R]
-    (λ : Partition) (h_self : c.kappa λ = 0) :
-    c.y λ = c.w λ :=
-  c.y_eq_self_conjugate λ h_self
+    (lam : Partition) (h_self : c.kappa lam = 0) :
+    c.y lam = c.w lam :=
+  c.y_eq_self_conjugate lam h_self
 
 /-- Cross-ratio: `β / C = -1/h` (when `C ≠ 0`). -/
 theorem WedderburnWeightCanonical.beta_over_C
-    {R : Type u} [Field R] [c : WedderburnWeightCanonical R]
-    (λ : Partition) (hC : c.C λ ≠ 0) (hh : c.h ≠ 0) :
-    c.beta λ / c.C λ = -(1 / c.h) := by
+    {R : Type u} [Field R] [CharZero R] [c : WedderburnWeightCanonical R]
+    (lam : Partition) (hC : c.C lam ≠ 0) (hh : c.h ≠ 0) :
+    c.beta lam / c.C lam = -(1 / c.h) := by
   rw [c.beta_eq, c.C_eq]
   -- β/C = (-½ w) / (w · h/2) = -1/h, provided w ≠ 0 (which
-  -- follows from C ≠ 0 since C = w · h/2 and h ≠ 0).
-  have hw : c.w λ ≠ 0 := by
+  -- follows from C ≠ 0 since C = w · h/2 and h ≠ 0).  The `1/2`
+  -- factor forces `(2 : R) ≠ 0`, supplied by `[CharZero R]`
+  -- (the canonical coefficient ring is `ℚ(q)`, characteristic 0).
+  have hw : c.w lam ≠ 0 := by
     intro h_w
     apply hC
     rw [c.C_eq, h_w, zero_mul]
+  have h2 : (2 : R) ≠ 0 := two_ne_zero
   field_simp
-  ring
 
 end QOU.BraidKnot

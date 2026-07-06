@@ -35,18 +35,18 @@ $$
 $$
 
 is **infeasible** at $n = 4, 5, 6$ — empirically verified via
-[`y_lambda_sdp.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/y_lambda_sdp.py).
+the canonical formalism.
 The full sign pattern at $n \in \{2, \ldots, 6\}$ — including the
 sign-changing entries $y_{(1^4)} \approx -8.4 \times 10^{-4}$ at
 $n = 4$ and $y_{(2, 1^3)} \approx -9.3 \times 10^{-4}$ at $n = 5$
 — is recorded in
-[`y-lambda-jones-markov-witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/y-lambda-jones-markov-witness.json).
+[`y-lambda-jones-markov-witness.json`](https://github.com/litlfred/qou/blob/main/computations/y-lambda-jones-markov-witness.json).
 
 The negative components are small in absolute value but
 non-negligible — they enter every $\alpha_k$ derivation and the
 unified mass formula at the right depths.
 
-**Why this is not a contradiction.**
+**Consistency with trace positivity.**
 The Markov trace is positive on positive elements: for any
 $a \in H_n(R, q)$, $\mathrm{tr}_M(a^\ast a) \geq 0$.  In the
 central decomposition $\mathrm{tr}_M = \sum_\lambda y_\lambda
@@ -99,7 +99,7 @@ At $n \in \{2, \ldots, 6\}$, the unconstrained LS solve (cvxpy /
 CLARABEL) reproduces the linear-solve $y_\lambda$ to $\sim 10^{-15}$
 ([`y-lambda-sdp-witness.json`](#)).  Symbolic linear-solve via
 sympy
-([`y_lambda_symbolic.py`](#)) gives exact $q$-rational forms,
-matching the numerical values to machine precision at $q_0$.  All
+([the formal derivation](#)) gives exact $q$-rational forms,
+matching the exact algebraic values to machine precision at $q_0$.  All
 three pathways agree; the negative components are real, not
 artifacts.

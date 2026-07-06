@@ -2,8 +2,8 @@
 
 **Scope.** All 137 `kind: "conjecture"` content blocks in
 `content/quantum-observable-universe/`. Each was triaged against the
-CLAUDE.md *"Before declaring open"* corpus-grep checklist — searching
-`docs/audits/`, `content/`, `folio-assistant/computations/`, and
+AGENTS.md *"Before declaring open"* corpus-grep checklist — searching
+`docs/audits/`, `content/`, `computations/`, and
 `docs/coordination/` for an owner-authorised resolution, a witness
 that already realises the claim, or a coordination ledger that closed
 it — and against the §3b conjectural-propagation rule to separate root
@@ -354,3 +354,233 @@ intersecting provable-kind blocks with conjecture `uses[]`, then calibrated
 against each block's `.md` banner + `.lean` class — 16 of 31 were already honest
 (same "already-caveated" pattern as §E). Two read-only sub-agents did the
 file-level per-block investigation of the 15 silent candidates.
+
+---
+
+## 2026-06-25 refresh — fresh inventory + new Lean-internal axis
+
+Same-discipline re-run on the current tree (**147 live `conjecture()`
+blocks**, up from the 136–137 of the 2026-06-07/08 sweeps). Two parts:
+(J) a mechanical Lean-status inventory that **re-confirms** the §A–§I
+qualitative findings, and (K) **one axis the prior sweeps did not run** —
+the *Lean-internal* integrity of each conjecture's `.lean` (the earlier
+sweeps triaged block **kind**, not the sibling Lean body).
+
+### J. Lean-status inventory (re-confirmation)
+
+Per-block resolution of every `conjecture()` sibling/ref Lean source
+(`scripts/`-style grep classification):
+
+| Lean-status bucket | Count (of 147) |
+|---|---|
+| carries `sorry` (open formalisation) | 119 |
+| class-axiomatised (`class … : Prop where …`, §3b) | 142 |
+| `axiom` keyword | 6 |
+| contains a `: True := trivial` line | 9 |
+| `native_decide` | 1 |
+
+The 9 `: True := trivial` matches were each opened: **all are the
+sanctioned patterns**, not vacuity dodges — §3b-cond witness defs
+(`def X_conditional_on_Y [_inst : Y] : True := trivial`), class
+placeholder fields (`holds : True`), `example : True := trivial` compile
+markers, or already-fixed historical comments (the fluid-dynamics files
+that document *"the earlier version stated only `theorem … : True`"*).
+This **confirms the headline conclusion**: the mechanically-closeable
+conjecture set is ≈ empty; the 147 are genuine q-deformed open roots,
+correctly classified. The corpus-grep / §3b discipline is holding.
+
+### K. New axis — Lean-internal vacuity / compile audit of conjecture siblings
+
+The §A/§B/§E/§H sweeps checked *block kind* and *narrative banners*; they
+did **not** typecheck or vacuity-scan the conjecture `.lean` bodies. A
+lean-direct pass (toolchain v4.24.0, oleans restored from
+`lake-cache/qou-v4-24-0`) over the suspicious siblings found **one**
+genuine defect:
+
+| Block | Lean-internal defect | Disposition |
+|-------|----------------------|-------------|
+| [`conj-rho-k-pair-gen-canonical-form`](../../content/quantum-observable-universe/mass-endomorphism/conj-rho-k-pair-gen-canonical-form.md) | (1) `def pair_gen_functional … : R := trivial` — a **type error** (`trivial : True`, expected `R`); the file did not compile. (2) `theorem pair_gen_kashaev_limit : ∃ f, ∀ args, pair_gen_functional = f args := ⟨pair_gen_functional, rfl⟩` — a **vacuous self-projection** (true for *any* function) whose docstring claimed it proved the Kashaev limit (AGENTS.md §1a violation). The sibling `.md`'s own "Lean formalization" block already documented the honest `:= sorry` form — the committed `.lean` had drifted from its own spec. | Fixed to the §3b sanctioned form: `pair_gen_functional := sorry` (cited placeholder, disposition 2) + the conjecture axiomatised as `class PairGenCanonical : Prop where holds : True` (disposition 3), replacing the vacuous theorem. `.ts` `lean.ref` repointed to the class; `.md` snippet synced. **lean-direct exit 0** (only the expected `uses 'sorry'` warning). Block stays a correctly-classified Tier-S open conjecture (per §F line "mass-endomorphism: `conj-rho-k-pair-gen-canonical-form`"). |
+| [`conj-staircase-ew-residual`](../../content/quantum-observable-universe/mass-theory/staircase-ew-residual.md) | The block's `lean.ref` (`QOU.StaircaseCornerHook.StaircaseEWResidual`) resolved (§0a candidate-2 path) to a **degenerate duplicate** `StaircaseCornerHook/StaircaseEWResidual.lean`: `class StaircaseEWResidual where residual : ℝ; residual_eq_zero : residual = 0` + `noncomputable instance := sorry`. That class is **trivially inhabited** (`⟨0, rfl⟩`), so the `sorry` axiomatises nothing — a §3b-cond rule-5 / §1a vacuous-placeholder anti-pattern. A **faithful** same-named class (rich `Prop`, references the real Hoefsmit eigenvalue spectrum `HasEigenvalueRatio (wordImage (betaEWWord …))`, correct hypothesis-only §3b-cond) already existed in `QOU/StaircaseCornerHook.lean`, unreferenced. No module imported the degenerate file (no live build collision). | Deleted the degenerate `StaircaseCornerHook/StaircaseEWResidual.lean`; the `lean.ref` now resolves (§0a grep-fallback) to the faithful class; `.md` "Lean status" updated to the hypothesis-only encoding (no instance/sorry). Not lean-direct-verifiable in-sandbox (faithful file imports a mathlib module absent from the partial olean cache; pipeline ref-resolution out of scope → CI-verified); the deletion is build-safe (no importers, not in the `QOU.lean` aggregator). Block stays a correctly-classified Tier-E open conjecture. |
+| [`conj-kashaev-volume-conjecture`](../../content/quantum-observable-universe/mass-theory/kashaev-volume-conjecture.md) | Surfaced by the full 147-sibling sweep (below). **Two** structural defects: (1) `noncomputable def pieceVolume … : ℝ := trivial` — a **type error** (`trivial : True`, expected `ℝ`); the in-code comment even said "we leave the value as `sorry`". (2) the `/-! -/` module docstring **preceded** `import QOU.PhiQPiece` → illegal import order in Lean 4 (the file never compiled). Latent because the file is a content-block sibling *outside* the CI `lean/QOU/**` target. | `trivial → sorry`; moved the import above the docstring. `lean`-direct confirms the import-order error is gone (then stops at the sibling `QOU.PhiQPiece` olean, absent in-sandbox → body CI-gated). `VolumeConjecture` itself is a faithful §3b class (real fields `hypVolume`/`kashaevLimit`/`kvc_holds`), unchanged. Block stays a correctly-classified imported-famous open conjecture. |
+
+### Full Lean-internal sweep of all 147 conjecture siblings (2026-06-25)
+
+A static analyzer (comments/docstrings stripped **before** matching — to avoid
+the comment-false-positives that fooled earlier ad-hoc greps), cross-checked by
+targeted reads + `lean`-direct, classified every `conjecture()` sibling.
+Result: **37 flagged, 110 clean**, of which exactly **3 genuine defects** (all
+now fixed) — rho-k, staircase, kashaev above. The other 34 flags are
+**sanctioned / known patterns**:
+
+- **34 `class … where residual : ℝ; residual_eq_zero` + global
+  `instance := sorry`** — degenerate auto-generated §3b stubs (identical
+  boilerplate). These are *known placeholder backlog* (cf. the
+  `zslh`/`b3pe`/`mlt7` "resolve N placeholders" beans); maturing them to real
+  §3b content is per-conjecture math, **not** a mechanical sweep — left to the
+  backlog/owner.
+- **5 duplicate FQNs** — all the intentional local-copy pattern (`…Local`
+  suffix; the two `HyperbolicVolumeIndependence` copies are commented "package
+  sibling for the canonical declaration", the real one in
+  `QOU/Archimedean/HyperbolicVolumeTranscendence.lean`). Never co-imported →
+  benign latent smells, not active collisions.
+- **`native_decide` (many)** — all legitimate finite enumerate-then-assert
+  checks (magic-number lists, dimension sums, Seifert genus, crossing-
+  minimality), **not** the §1a kernel-masking dodge.
+
+**Systemic insight.** All three genuine defects live in **content-block `.lean`
+siblings** (`mass-theory/…`, `mass-endomorphism/…`) that sit *outside* the
+CI-built `lean/QOU/**` library target — so they are never compile-checked and
+accumulate latent type-errors / import-order breakage that both block-kind
+triage and library CI miss. The library tree itself is clean. Closing this gap
+(compile-checking content-block siblings) would catch the next such drift
+automatically.
+
+Net 2026-06-25: **no kind-flips**; **3** Lean-internal integrity fixes across
+the session (rho-k, staircase, kashaev). The conjecture corpus is otherwise
+sound; the closeable set remains ≈ empty — the 147 are genuine open problems.
+
+### Compile-validity CI gate + the import-order backlog (2026-06-25 follow-up)
+
+Acting on the systemic insight, the `lean-vacuity-axiom-audit.ts` scanner was
+extended with two **compile-validity** categories (guaranteed Lean errors, not
+heuristics) that the vacuity detectors miss:
+
+- `proof-no-trivial-type-mismatch` — a term-mode `trivial` body under a
+  non-`True`-typed `def`/`abbrev` (caught rho-k + kashaev). Tree-wide count
+  after the fixes: **0**.
+- `lean-import-after-content` — an `import` after a `/-!` module docstring or
+  any command (illegal Lean-4 order; caught kashaev). Tree-wide count:
+  **40 files** — a real, mechanical, latent-broken **backlog** (5 are under the
+  CI-built `lean/QOU/**` tree and contribute to the already-red
+  `lake build QOU`; 35 are content-block siblings outside it). Representative:
+  `lean/QOU/Braiding/skein_crossing_asymmetry.lean:15` (`import …` after the
+  module docstring). Fixing them is a uniform codemod (move the post-docstring
+  imports above the docstring). **Drained 2026-06-25 in
+  [PR #2770](https://github.com/litlfred/qou/pull/2770)** — a block-comment-aware
+  codemod relocated the imports in all 44 (the count grew 40 → 44 as `main`
+  advanced; **pure relocation**, the import set byte-identical per file). The
+  gate's `lean-import-after-content` count is now **0**; full per-file compile
+  remains CI-gated.
+
+A new `--fail-on <categories>` flag drives a **diff-scoped** CI gate
+([`.github/workflows/lean-content-siblings.yml`](../../.github/workflows/lean-content-siblings.yml)):
+on each PR it runs the scanner over **only the changed `.lean` files** and
+fails on the two compile-validity classes. Diff-scoping is deliberate — a
+whole-tree gate would be red on the 40 pre-existing import-order defects and
+block every PR; this blocks *new* drift instead (validated: green on this PR's
+changed files, red on the skein control). This is the root-cause closure for
+the class of latent breakage that produced the rho-k / kashaev defects.
+
+### §3b stub-maturation backlog (2026-06-25)
+
+Of the 34 degenerate `class … residual : ℝ; residual_eq_zero` + global
+`instance := sorry` stubs, **`classical-riemann-hypothesis` was matured** in
+[PR #2753](https://github.com/litlfred/qou/pull/2753) to the faithful statement
+over Mathlib's `riemannZeta` — it is the one imported-famous stub cleanly
+statable with a standard Mathlib definition. The remaining 33 **need infra
+Mathlib lacks or per-conjecture formalization** and are **not** a mechanical
+batch:
+
+- **Imported-famous** (`qou-p-neq-np`, `yang-mills-mass-gap`,
+  `q-birch-swinnerton-dyer`, `qou-infra-discharges-goncharov-zeta5`, the
+  `single-volume-irrationality` / `hyperbolic-volume-transcendence` /
+  `borel-zagier-qou-volumes` set) — require complexity-theory / QFT /
+  elliptic-`L`-function / transcendence infrastructure **not in Mathlib**.
+- **q-deformed / framework-specific** (`q-collatz`'s `C_q` map over
+  `ℤ[q^±1]` with q-parity + positivity, the q-GL `q_oper_hecke` / `q_gl_*`
+  family, the GS-spectral chain, the surreal-appendix set) — substantial
+  **per-conjecture formalization**, often unverifiable in a partial-olean-cache
+  sandbox.
+
+These remain tracked under the existing `zslh` / `b3pe` / `mlt7` / `doth`
+"resolve N placeholders" beans; maturation is research-formalization, best
+done with a full Lean build (not a one-shot sandbox sweep).
+
+### Spurious shadowing-duplicate stubs removed (2026-06-25)
+
+A follow-up sweep split the degenerate `residual : ℝ := 0` + `instance :=
+sorry` stubs into **spurious duplicates** vs **genuine** stubs. A stub is
+*spurious* when the conjecture's `lean.ref` resolves (§0a candidate-2) to it
+while its **exact** class FQN is *already declared faithfully* in another,
+**in-build** file that the stub shadows (the staircase / double-magic pattern).
+**None are false** — the real formalisation already exists.
+
+**Deleted (9)** — each an orphan (imported nowhere) degenerate duplicate of an
+in-build faithful class; deletion repoints the `lean.ref` (grep-fallback) to
+the faithful declaration:
+
+| Deleted stub | Faithful in-build twin |
+|---|---|
+| `DoubleMagicDeltaI/DeltaIBoundConjecture.lean` | `QOU/Interactions/DoubleMagicDeltaI.lean` (`DoubleMagicIsotope` data + `empirical_deltaI_le_one` proved + rich `DeltaIBoundConjecture` class + compute theorems) |
+| `AppendixSurreals/{InfinitesimalFrobenius,InfinitesimalObservability,JonesBirthday,KashaevSurreal,OnPModularHecke,HahnSubstrate}.lean` (6) | `QOU/AppendixSurreals/Conjectures.lean` (Gemini-audited classes + `instProvable` + conditional theorems) |
+| `Torsion/YangMillsMassGap.lean` | `QOU/Torsion/MassGap.lean` |
+| `Observations/QCltNonCommutative/QCltNonCommutative.lean` | parent `QOU/Observations/QCltNonCommutative.lean` |
+
+`VacuumEpsilon` was **excluded**: its stub class `VacuumEpsilon` ≠ the faithful
+`VacuumEpsilon'` in `Conjectures.lean` (a rename), so it is a genuine stub, not
+an exact duplicate — deleting it would dangle the ref.
+
+**Net stub triage:** ~9 spurious shadowing-duplicates (deleted), 1 matured (RH,
+#2753), and ~37 genuine open conjectures needing the per-conjecture
+infrastructure above — not a mechanical batch.
+
+### QOU categorical-keystone + mass-endo triage (2026-06-25, owner-directed)
+
+Owner directed the triage to the **QOU-native categorical keystones**
+(drop the imported-famous problems) and the **mass-endomorphism scaffolds**.
+Each named item classified into *genuine-conjecture* / *infra-scaffold* /
+*spurious-duplicate* / *false*.
+
+**Keystones — 14 genuine, 1 spurious, 0 false.** All carry a proper
+`conjecture()` content block with a `lean.ref` resolving (§0a candidate-2)
+to a degenerate `residual : ℝ` + `residual_eq_zero := 0` + `instance :=
+sorry` placeholder class; all are orphans (imported-by = 0); none shadow a
+faithful twin (each class declared in exactly one file) — **except** NSym:
+
+| Keystone class | `.ts` block | verdict |
+|---|---|---|
+| `q_oper_hecke`, `q_gl_fiber_functor`, `q_gl_kummer_filtration`, `q_gl_classical_limit` | ✓ conjecture | genuine (fundamental) |
+| `GBResidueSpectralSum.{residue,spectral_decomposition}`, `spectral_sum_finite` | ✓ | genuine |
+| `TwoFiltrationBridge`, `JointGaloisBraidAction` | ✓ | genuine — docstring **truncation** repaired (see below) |
+| `GradedBaerStarHq`, `Cl3Zeta5GeometricRealization`, `jet_convergence_classical_limit`, `jet_filtered_knot_factor` | ✓ | genuine |
+| `AlphaKCategoricalClosure` | ✓ conjecture | genuine — most mature (3 named residuals + status §) |
+| **`NSymSymmetricChannelNormalization`** | **✗ 0 refs, label undefined** | **spurious — deleted** |
+
+**Deleted (1):** `BraidKnot/NSymSymmetricChannelNormalization.lean`. The
+conjecture `conj:n-sym-symmetric-channel-normalization` no longer exists as
+a content block — it was upgraded into **`prop:weak-symmetric-normalization`**
+(a *proposition*), which carries its own **faithful, sorry-free** sibling
+`mass-theory/weak-symmetric-normalization.lean` (real `IsRootOfUnity` /
+`EWSpectralCompletenessHolds` defs + `class WeakSymmetricNormalization` +
+two proved theorems, 0 sorry, 0 residual-marker) at FQN
+`QOU.BraidsAndKnots.weak_symmetric_normalization`. The stub (0 `.ts` refs,
+0 imports) is the leftover degenerate placeholder — same shadowing-duplicate
+pattern as the AppendixSurreals deletions.
+
+**Docstring-truncation repair (2):** the §3b stub auto-generator truncated
+the manuscript `**Conjecture statement**` mid-sentence (cut at the first
+list item, `- *the`) in `TwoFiltrationBridge` and `JointGaloisBraidAction`
+— the only two stubs carrying a partial statement docstring. Restored
+complete faithful paraphrases from the `.md` (comment-only; the Lean
+encoding stays a §3b placeholder).
+
+**Mass-endomorphism "scaffolds" — all infra, not conjectures (owner
+hypothesis confirmed).** Every named item is `kind = remark`, **no sorry**,
+titled "forward-reference to WIP-scaffolding" / "type scaffold":
+`hecke-algebra-type-scaffold` (HeckeRelations), `markov-trace-operator-construction`
+(HnHilbertRep), `phi-d-syt-count-conjecture` (PhiD4F),
+`ck-extraction-from-algebraic-rules` (YangBaxterRule),
+`typed-b3-sub-braid-extraction`, `markov-trace-inductive-limit`. Correctly
+classified already — interpretive remarks with explicit-residual scaffolds,
+no logical claim, no action needed.
+
+### Method note (2026-06-25)
+
+Inventory = a grep classifier over all `conjecture()` `.ts` blocks
+resolving each `lean.ref` (sibling → lake-path → grep fallback) and
+scanning the body for `sorry`/`class`/`axiom`/`: True := trivial`/
+`native_decide`. The one defect was confirmed by `lean <file>` with
+`LEAN_PATH` set to the restored oleans (full content-pipeline validation
+could not run in-sandbox: the `litlfred/folio-assistant` platform repo is
+out of session scope, proxy 403 — Lean compilation is the authoritative
+check used instead).

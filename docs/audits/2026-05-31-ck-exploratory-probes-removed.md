@@ -26,7 +26,7 @@
 
 | # | label | kind | siblings | core finding (preserved below) |
 |---|-------|------|----------|-------------------------------|
-| 1 | `prop:hopf-jones-c3-categorical` | proposition | .ts .md .lean .qa.json | `c_3 = J_Hopf(q=1) = -2`: 3.35% near-match at canonical (m_p-pin) q₀, NOT Taylor-exact — refuted by [`item-1 Δtr_M vs Form A test`](../../folio-assistant/computations/qbeta/qbeta-delta-tr-vs-formA.witness.json). Locked behind §3b-cond `QbetaC3StructuralFormClass` in `q-beta-categorical-precision-ladder.lean`. |
+| 1 | `prop:hopf-jones-c3-categorical` | proposition | .ts .md .lean .qa.json | `c_3 = J_Hopf(q=1) = -2`: 3.35% near-match at canonical (m_p-pin) q₀, NOT Taylor-exact — refuted by [`item-1 Δtr_M vs Form A test`](../../computations/qbeta/qbeta-delta-tr-vs-formA.witness.json). Locked behind §3b-cond `QbetaC3StructuralFormClass` in `q-beta-categorical-precision-ladder.lean`. |
 | 2 | `prop:kashiwara-jones-c4-categorical` | proposition | .ts .md .lean .qa.json | `c_4 = b² + ½`: own errata banner already superseded it (9.5% off, sign-flipped). The Jones × Kashiwara mixing pattern (`c_4 = c_3·b⁴`) is itself a q₀-dependent near-match. |
 | 3 | `rem:per-wedderburn-block-c5-c6` | remark | .ts .md .lean .qa.json | dim_q² and y_λ per-block decompositions both FALSIFIED at c_3 (dim_q² gives −8 not −2; `Σ y_λ(q₀) = 0.719 ≠ 1`). No known non-trivial uniform per-block rule. Cross-confirmed by `qbeta_per_block_uniform_rule_verify.py`. |
 | 4 | `rem:alpha-5-jm-central-empirical-findings` | remark | .ts .md .qa.json | Tagged `"negative-result"`. α_5 J-M centrality was investigated as a shell-correction route; finding was negative (atom-dependent, no clean structural form). |

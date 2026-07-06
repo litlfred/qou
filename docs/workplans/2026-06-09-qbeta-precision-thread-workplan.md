@@ -46,7 +46,7 @@ when this thread resumes. Companion to the broad
    The c_k tier vocab (`derived`/`cal-anchored`) and the truncation-order
    reporting vocab (`proved`/`near-match`/`fitted`,
    [`2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](2026-05-31-qbeta-ck-truncation-order-canonical-framing.md))
-   are reconciled and now canonical (CLAUDE.md red-banner).
+   are reconciled and now canonical (AGENTS.md red-banner).
 
 4. **m_μ is at 210 ppb (≈9.5σ tension), not ~0.** This is the honest
    post-canonical-pin state (confirmed: borromean witness at m_p-pin q₀

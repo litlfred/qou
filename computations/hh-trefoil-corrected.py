@@ -10,7 +10,7 @@ Corrections from claude/docs-handover-knot-operator-k3XxB:
   5. 3-channel vertex volumes: w_sym·λ_sym + w_std·V̂_std + w_alt·λ_alt
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 hh-trefoil-corrected.py
 """
 

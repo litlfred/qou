@@ -32,7 +32,7 @@ The transfer matrix computes the SAME quantity as the Gröbner--Shirshov
 reduction but via matrix products instead of word reduction.
 
 Usage:
-    cd folio-assistant/computations
+    cd computations
     python3 transfer_matrix_symbolic.py
 
     # As a library:

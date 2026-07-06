@@ -10,11 +10,11 @@ For each nucleus N(p,n), computes:
   5. Daughter trace and signed difference
   6. e(I)/e(R) at converting generator
 
-Stores results in folio-assistant/computations/braid-registry/
+Stores results in computations/braid-registry/
 as individual JSON witness files per nucleus.
 
 Usage:
-    python3 folio-assistant/computations/braid-registry.py
+    python3 computations/braid-registry.py
 
 For A ≤ 14: exhaustive ground-state search over C(A,p) orderings.
 For A > 14: Yang-Baxter optimization from alternating seed.

@@ -1,12 +1,12 @@
 # ²H markov_trace = 0 audit — RESOLVED: stale witness
 
 **TL;DR (2026-04-27 update).** The `markov_trace = "0"` claim in
-[`atom-nf-symbolic-D.witness.json`](../../folio-assistant/computations/atom-nf-symbolic-D.witness.json)
+[`atom-nf-symbolic-D.witness.json`](../../computations/atom-nf-symbolic-D.witness.json)
 (timestamp 2026-04-24) is **stale**. A fresh re-run of
 `atom_nf_symbolic_D.build_atom_nf_symbolic(1, 1)` followed by
 `tr_M_element` on 2026-04-27 gives `tr_M(²H, q_0) ≈ 0.388286471547`,
 matching the `tr_M_atom = 0.388286471547` value in the older
-[`canonical-mass-table.witness.json`](../../folio-assistant/computations/canonical-mass-table.witness.json)
+[`canonical-mass-table.witness.json`](../../computations/canonical-mass-table.witness.json)
 (2026-04-18). So ²H's tr_M is NOT zero — the witness predates a
 fix in the code path. **The historical 6_2 ID is not refuted by
 this trace value (though it remains under suspicion via α\* = 0.546).**
@@ -21,7 +21,7 @@ Fresh values via 3A-strand convention at q_0 = 1.1099786:
 
 # Original audit (preserved for posterity)
 
-**Source.** [`folio-assistant/computations/atom-nf-symbolic-D.witness.json`](../../folio-assistant/computations/atom-nf-symbolic-D.witness.json)
+**Source.** [`computations/atom-nf-symbolic-D.witness.json`](../../computations/atom-nf-symbolic-D.witness.json)
 (D = deuteron = ²H), witness from `atom_nf_symbolic_D.py`.
 
 ## What the witness reports
@@ -89,7 +89,7 @@ H_2.
 This is a different representation from the simple Borromean
 braid σ_1 σ_2^{-1} σ_1 σ_2^{-1} on B_3 used elsewhere. Habiro
 expansion in
-[`habiro-coefficients-atomic.witness.json`](../../folio-assistant/computations/habiro/habiro-coefficients-atomic.witness.json)
+[`habiro-coefficients-atomic.witness.json`](../../computations/habiro/habiro-coefficients-atomic.witness.json)
 reports proton's tr_M as a non-zero degree-48 polynomial in u
 = q^{1/2}; deuteron isn't included in that witness.
 
@@ -132,7 +132,7 @@ the same underlying cause:
   consistency check against the categorical pipeline's actual atom
   braid.
 - The volume search is now flagged `deprecated-volume-match` in
-  [`methodology-deprecation.witness.json`](../../folio-assistant/computations/methodology-deprecation.witness.json),
+  [`methodology-deprecation.witness.json`](../../computations/methodology-deprecation.witness.json),
   but the historical entries persist in the witnesses until R5-full
   (SDP-as-solver) produces canonical T_w from the categorical
   pipeline directly.

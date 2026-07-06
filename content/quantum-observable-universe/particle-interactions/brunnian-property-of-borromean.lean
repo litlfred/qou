@@ -8,7 +8,7 @@ The substantive declarations (component-deletion, isUnlink, and the
 main theorem) live under the `qou` Lake package at
 [`../lean/QOU/KnotTheory/Brunnian.lean`](../lean/QOU/KnotTheory/Brunnian.lean).
 The single `sorry` in `borromean_brunnian` is the **conjectural
-witness** (sorry = conjecture per CLAUDE.md §3b), not a missing
+witness** (sorry = conjecture per AGENTS.md §3b), not a missing
 arithmetic fact; the gap is the absence of Mathlib primitives for
 braid-word Reidemeister-move equivalence.
 

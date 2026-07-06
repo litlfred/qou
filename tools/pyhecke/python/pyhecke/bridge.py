@@ -1,7 +1,7 @@
 """Subprocess dispatch to the Rust tools/hecke-engine/ binaries.
 
 Keeps backward-compatible with the existing hecke_rust_bridge.py helper
-in folio-assistant/computations/.
+in computations/.
 """
 
 from __future__ import annotations

@@ -1,5 +1,7 @@
+import Mathlib.Tactic
+
 /-!
-# QOU.BraidKnot.mass_formula_regime_switching — placeholder stub
+# QOU.BraidKnot.mass_formula_regime_switching
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts`](quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts).
@@ -94,7 +96,7 @@ from the Hecke algebra $H_3(R, q)$:*
     sub-claim fields; concretisation requires per-block manuscript
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts
-theorem mass_formula_regime_switching [ctx : MassFormulaRegimeSwitchingContext] :
+def mass_formula_regime_switching [ctx : MassFormulaRegimeSwitchingContext] :
     (ctx.Z + ctx.N = 2 → ctx.B = ctx.B_SW + ctx.frobenius_co_casimir) ∧
     (3 ≤ ctx.Z + ctx.N → ctx.Z + ctx.N ≤ 4 → ctx.B = ctx.B_BW_chirality) ∧
     (5 ≤ ctx.Z + ctx.N → ctx.B = ctx.B_BW_plus_shell) :=

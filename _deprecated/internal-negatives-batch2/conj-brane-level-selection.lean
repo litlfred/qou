@@ -2,7 +2,7 @@
 # Brane-tower level-selection rule: n★(ℌ) = ℓ · n₀ + k
 
 This file axiomatizes the level-selection conjecture as a `class`
-(following the §3b pattern from CLAUDE.md) and proves four downstream
+(following the §3b pattern from AGENTS.md) and proves four downstream
 structural results **unconditionally** from the class axioms.
 
 The conjecture (`conj:brane-level-selection`) asserts:

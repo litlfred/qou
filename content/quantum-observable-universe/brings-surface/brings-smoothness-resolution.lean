@@ -6,7 +6,7 @@ import Mathlib.Data.Complex.Basic
 
 The three power-sum constraints defining the Bring surface are transverse
 in ℙ⁴, so the intersection is smooth.  Projection singularities are
-resolved intrinsically by the coral coordinates.
+resolved intrinsically by the color coordinates.
 -/
 namespace QOU.BringsSurface
 
@@ -17,7 +17,7 @@ namespace QOU.BringsSurface
 structure BringSurfaceSmoothness where
   /-- The three power-sum constraints are transverse (Jacobian has full rank). -/
   transverse : Prop
-  /-- At each branch point z_c, the local coral coordinate δ = x_i - x_j
+  /-- At each branch point z_c, the local color coordinate δ = x_i - x_j
       satisfies z - z_c ~ δ², so the blow-up is intrinsic. -/
   intrinsic_resolution : Prop
   /-- The radial parameter r = |w_1|² is regular and C_5 orbits foliate

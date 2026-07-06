@@ -1,6 +1,4 @@
-import Mathlib.Algebra.Field.Defs
-import Mathlib.Algebra.Ring.Basic
-import Mathlib.Tactic.Ring
+import Mathlib.Tactic
 
 
 /-!
@@ -29,7 +27,7 @@ Conjectural content (with sorry):
 Ref: [manuscript] conj:lepton-mass-tower-canonical
 Ref: [manuscript] docs/audits/2026-05-24-m-mu-over-m-e-operator-rederivation.md
 
-Generic over `[CommRing R]` per CLAUDE.md §7c base-ring discipline.
+Generic over `[CommRing R]` per AGENTS.md §7c base-ring discipline.
 NOT YET LAKE-VERIFIED — defer to follow-up branch with lake toolchain.
 -/
 
@@ -107,9 +105,15 @@ theorem torus_knot_odd_reduction_exists
     --             = (h² P_k + P_k + h Q_k) σ + (h P_k + Q_k)
     refine ⟨h^2 * P_k + P_k + h * Q_k, h * P_k + Q_k, ?_⟩
     have h_step : σ^(2*(k+1) + 1) = σ^(2*k + 1) * σ^2 := by
-      rw [← pow_add]; congr 1; ring
-    rw [h_step, hk, hh]
-    ring
+      rw [← pow_add]; congr 1
+    rw [h_step, hk]
+    -- (P_k σ + Q_k) σ² = P_k σ³ + Q_k σ²; reduce σ² and σ³ via the Hecke relation.
+    have hσ3 : σ^3 = (h^2 + 1) * σ + h := by
+      have e1 : σ^3 = σ * σ^2 := by ring
+      rw [e1, hh]
+      have e2 : σ * (h * σ + 1) = h * σ^2 + σ := by ring
+      rw [e2, hh]; ring
+    linear_combination P_k * hσ3 + Q_k * hh
 
 /-- Figure-eight (σ_1 σ_2⁻¹)² reduction in H_3(q).
     Requires:
@@ -148,7 +152,7 @@ theorem figure_eight_reduction
 /-- **CONJECTURE (Im(q) invariance at LO).** The lepton mass ratio
     via modulus projection is invariant under q ↦ q̄ at leading order.
     Statement-only; full proof requires complex extension + explicit F_ℓ. -/
-theorem lepton_mass_ratio_im_q_invariance_at_LO
+def lepton_mass_ratio_im_q_invariance_at_LO
     (ℓ : LeptonType) :
     True := by
   trivial
@@ -171,8 +175,6 @@ theorem lepton_tower_index_injective : Function.Injective lepton_tower_index := 
   intro x y h
   cases x <;> cases y <;> simp [lepton_tower_index] at h <;> rfl
 
-end QOU.BraidKnot.LeptonMassTowerCanonical
-
 /-! ## Conditional theorems (downstream of the lepton tower conjecture)
 
 These use the conjectural `lepton_mass_ratio` function. -/
@@ -188,4 +190,6 @@ theorem muon_electron_ratio_from_tower {R : Type*} [CommRing R] (q : R) :
     leptons have distinct torus-knot indices. Already proved sorry-free. -/
 theorem lepton_indices_distinct : Function.Injective lepton_tower_index :=
   lepton_tower_index_injective
+
+end QOU.BraidKnot.LeptonMassTowerCanonical
 

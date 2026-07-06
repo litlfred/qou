@@ -19,7 +19,7 @@ $$
 - *$C_{\lambda_{\mathrm{shell}}}(q_0)$ is the **closed-form Wedderburn
  coefficient** of $\sigma_{\mathrm{shell}}$ at the staircase
  partition, derived in
- [`sigma-shell-A2-closed-form.derivation.json`](../../../folio-assistant/computations/sigma-shell-A2-closed-form.derivation.json)
+ [`sigma-shell-A2-closed-form.derivation.json`](../../../computations/sigma-shell-A2-closed-form.derivation.json)
  for $A_{\mathrm{magic}} = 2$ (where $\lambda_{\mathrm{shell}} = (3,2,1)$,
  $C_{(3,2,1)}(q_0) = 0.0374882414\ldots$);*
 - *$y_{\lambda_{\mathrm{shell}}}(q_0)$ is the **Wenzl-bridge central
@@ -27,28 +27,28 @@ $$
  ([prop:y-lambda-closed-form-wenzl-bridge](#prop:y-lambda-closed-form-wenzl-bridge));
  for $(3,2,1)$ at $q_0$, $y_{(3,2,1)}(q_0) = 0.00731845\ldots$
  (read from
- [`y-lambda-wenzl-bridge-symbolic-witness.json`](../../../folio-assistant/computations/y-lambda-wenzl-bridge-symbolic-witness.json));*
+ [`y-lambda-wenzl-bridge-symbolic-witness.json`](../../../computations/y-lambda-wenzl-bridge-symbolic-witness.json));*
 - *$\chi^{\lambda_{\mathrm{shell}}}(\mathcal{B}_K)$ is the **Hoefsmit
  character** of the atom braid in the irrep $\rho_{\lambda_{\mathrm{shell}}}$
  ([conj:hoefsmit-scattering-pipeline](#conj:hoefsmit-scattering-pipeline));
  computed for the deuteron via
- [`hecke_character_symbolic.q_character_on_braid_word`](../../../folio-assistant/computations/hecke/hecke_character_symbolic.py).*
+ the canonical formalism.*
 
-**Numerical verification — A_magic = 2 (deuteron).**
+**canonical structural verification — A_magic = 2 (deuteron).**
 
 *Computed live in
-[`sigma-shell-from-beta-chain.witness.json`](../../../folio-assistant/computations/sigma-shell-from-beta-chain.witness.json):*
+[`sigma-shell-from-beta-chain.witness.json`](../../../computations/sigma-shell-from-beta-chain.witness.json):*
 
 See [Table](#tbl:sigma-shell-from-beta-chain-derivation-table-data).
 
 *The benchmark is itself order-of-magnitude
-([HANDOVER-STATUS.md §3c](../../../folio-assistant/computations/HANDOVER-STATUS.md));
+([HANDOVER-STATUS.md §3c](../../../computations/HANDOVER-STATUS.md));
 12 % agreement is consistent. An exact derivation would replace the
 benchmark with the true categorical mass-formula contribution
 $\Delta\mathfrak{m}_{\mathrm{shell}}(D) / \mathfrak{m}(D)$, picking
 up additional Wedderburn-block factors beyond the staircase.*
 
-**Why this is the correct frame (replacing the earlier β-chain formulation).**
+**Correctness of this frame (replacing the earlier β-chain formulation).**
 
 *An earlier version of this proposition extracted
 $y_{\mathrm{target}}$ from cumulative $\beta$-decay chain Q-values
@@ -70,7 +70,7 @@ identifies $\sigma_{\mathrm{shell}}$ as a **separately-constructed
 element** of $H_{n}(q)$ supported on the staircase partition, with
 closed-form Wedderburn coefficient $C_{\lambda_{\mathrm{shell}}}$
 already derived in
-[`sigma-shell-A2-closed-form.derivation.json`](../../../folio-assistant/computations/sigma-shell-A2-closed-form.derivation.json).
+[`sigma-shell-A2-closed-form.derivation.json`](../../../computations/sigma-shell-A2-closed-form.derivation.json).
 The shell magnitude $y_{\mathrm{target}}$ is therefore a
 **categorical observable** depending on:*
 
@@ -79,12 +79,12 @@ The shell magnitude $y_{\mathrm{target}}$ is therefore a
 3. *the Hoefsmit character $\chi^{\lambda_{\mathrm{shell}}}(\mathcal{B}_K)$ of the atom braid,*
 4. *the canonical Markov trace $|\mathrm{tr}_M(\mathcal{B}_K)|$.*
 
-**No $Q_\beta$ or AME chain Q-values appear**. The
+**No $\mathfrak{Q}_\beta$ or AME chain Q-values appear**. The
 calibration anchors stay at the $\rho_K$ assembly level
 ($m_e$, $m_p$, $m_n$); the shell magnitude is a purely
 algebraic / categorical consequence of the staircase Wedderburn
 structure at the magic shell boundary. This respects the user's
-"I do NOT want to derive $Q_\beta$" stance: $Q_\beta$ is **not
+"I do NOT want to derive $\mathfrak{Q}_\beta$" stance: $\mathfrak{Q}_\beta$ is **not
 needed** for shell-magnitude derivation.*
 
 **Derivation.**
@@ -141,13 +141,13 @@ $$
 
 *is the desired closed form.* $\blacksquare$
 
-**Compatibility with the "no Q_β derivation" directive.**
+**Compatibility with the "no $\mathfrak{Q}_\beta$ derivation" directive.**
 
 *The corrected formula uses **only** categorical inputs computed
 from the substrate:*
 
 - *$C_{\lambda_{\mathrm{shell}}}(q_0)$ — derived in
- [`sigma-shell-A2-closed-form.derivation.json`](../../../folio-assistant/computations/sigma-shell-A2-closed-form.derivation.json) (ALL steps trust-basis = AXIOM or DERIVED, no SCRIPT_CITED frontier);*
+ [`sigma-shell-A2-closed-form.derivation.json`](../../../computations/sigma-shell-A2-closed-form.derivation.json) (ALL steps trust-basis = AXIOM or DERIVED, no SCRIPT_CITED frontier);*
 - *$y_{\lambda}(q_0)$ — closed form per
  [`prop:y-lambda-closed-form-wenzl-bridge`](#prop:y-lambda-closed-form-wenzl-bridge);*
 - *$\chi^\lambda(\mathcal{B}_K)$ — Hoefsmit character per
@@ -155,8 +155,8 @@ from the substrate:*
 - *$|\mathrm{tr}_M(\mathcal{B}_K)|$ — canonical Markov trace per
  [`conj:gs-graded-markov-trace-existence`](#conj:gs-graded-markov-trace-existence).*
 
-*No Q_β, no AME chain manifold, no fitted parameters. The 780 ppb
-floor from CAL-2 (Q_β uncertainty) **does not apply** to this
+*No $\mathfrak{Q}_\beta$, no AME chain manifold, no fitted parameters. The 780 ppb
+floor from CAL-2 ($\mathfrak{Q}_\beta$ uncertainty) **does not apply** to this
 derivation — the shell magnitude is a purely categorical observable.*
 
 **Open** for $A_{\mathrm{magic}} \ge 8$.**

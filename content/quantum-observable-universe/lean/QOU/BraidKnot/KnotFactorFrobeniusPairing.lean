@@ -9,7 +9,7 @@ identification: the Markov trace of a closed braid factors through
 the Frobenius pairing on the Hecke algebra of the relevant level,
 giving a structural decomposition of mass and binding energy.
 
-The conjecture itself is encoded as a `class` (CLAUDE.md §3b-cond);
+The conjecture itself is encoded as a `class` (AGENTS.md §3b-cond);
 `sorry` in any concrete instance is understood as **conjecture**, not
 missing proof.  Downstream conditional results take
 `[KnotFactorFrobeniusPairing]` as a hypothesis and remain
@@ -31,6 +31,11 @@ namespace QOU.BraidKnot
     σ_i, negative for σ_i⁻¹). -/
 structure ClosedBraid (n : ℕ) where
   word : List ℤ
+
+/-- The empty-word closed braid is the default at every strand count
+    (the identity braid). Provides `default` for the skeleton instance
+    below. -/
+instance (n : ℕ) : Inhabited (ClosedBraid n) := ⟨⟨[]⟩⟩
 
 /-- **Conjecture class.**  An instance asserts the existence of:
     * a Markov-trace functional `markov_trace_q` for any closed
@@ -61,7 +66,7 @@ class KnotFactorFrobeniusPairing where
     ∀ (q : ℝ) {n : ℕ} (b : ClosedBraid n),
       markov_trace_q q b = frobenius_pairing_q q b knot_factor
 
-/-- **Downstream conditional theorem (CLAUDE.md §3b-cond).**
+/-- **Downstream conditional theorem (AGENTS.md §3b-cond).**
     Conditional on `[KnotFactorFrobeniusPairing]`, the Markov trace
     of any closed braid factors through the Frobenius pairing with
     the knot factor.  Fully verified by Lean once an instance is
@@ -80,9 +85,10 @@ theorem markov_trace_factors [inst : KnotFactorFrobeniusPairing]
     discharge the §3b-cond hypothesis for downstream blocks. -/
 -- Ref: [manuscript] conj:knot-factor-frobenius-pairing §"Skeleton"
 instance canonical : KnotFactorFrobeniusPairing where
-  markov_trace_q := fun _ _ => 0
-  frobenius_pairing_q := fun _ _ _ => 0
+  markov_trace_q := fun (_ : ℝ) {_n : ℕ} (_ : ClosedBraid _n) => (0 : ℝ)
+  frobenius_pairing_q :=
+    fun (_ : ℝ) {_n : ℕ} (_ _ : ClosedBraid _n) => (0 : ℝ)
   knot_factor := default
-  factorisation_holds := fun _ _ => rfl
+  factorisation_holds := fun (_ : ℝ) {_n : ℕ} (_ : ClosedBraid _n) => rfl
 
 end QOU.BraidKnot

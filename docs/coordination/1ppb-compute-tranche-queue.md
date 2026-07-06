@@ -45,7 +45,7 @@
 
 1. Do not introduce a 7th-ansatz fit for `λ_scale` against m_p — that's the CAL-4 violation we're trying to close, not perpetuate (per `lambda-scale-qdilog-tower-direct.md` brief §Anti-patterns).
 2. Do not introduce any new calibration constants. CAL-1 (m_e), CAL-2 (q_0 via m_μ/m_e), CAL-3 (𝔇_π) are the only allowed inputs.
-3. Do not use float64 in production paths — MPFR ≥ 50 dps per CLAUDE.md `compute-author`.
+3. Do not use float64 in production paths — MPFR ≥ 50 dps per AGENTS.md `compute-author`.
 4. Do not silently squash on merge — `merge_method: "merge"` (merge-commit) is the standing default per #881.
 5. Do not duplicate work that sibling PRs are doing. Coordinate first.
 6. **Do not assume Δ_λ is atom-independent / global / shared across atoms.** The canonical framework formula in [`prop:rho-k-h3a-refinement`](../../content/quantum-observable-universe/braids-and-knots/rho-k-h3a-refinement.md) has Δ_λ(K) **K-dependent by construction**. Probe-2 (PR #1229, [reframing audit](../audits/2026-05-25-delta-lambda-K-dependence-reframing.md)) empirically falsified the global hypothesis at max |Δ_λ| = 431.7 (vs 15.7 D-only) on the joint D+T+³He LP — confirming the framework's existing K-dependence. The closure problem is the **categorical determination of Δ_λ(K)** (Option E, PR #1252), not a global ansatz across atoms. Any future probe / ansatz that imposes Δ_λ^{global} = Δ_λ across atoms is a regression and will be rejected on review.

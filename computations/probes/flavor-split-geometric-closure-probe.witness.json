@@ -1,0 +1,52 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-29T15:09:29.400120+00:00",
+  "commitSha": "67a00dfddc6be02bcc7972a8c552d04b43b13e25",
+  "assertions": [
+    {
+      "name": "geometric_closed_form_differs_only_at_hbar6",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "(1+ℏ³) and 1/(1−ℏ³) agree to O(ℏ⁶); the inversion is a sub-ppm refinement, not the missing Δm_pn physics"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "flavor-split-geometric-closure-probe",
+  "scriptFile": "flavor_split_geometric_closure_probe.py",
+  "scriptHash": "fd61295b97ed",
+  "scriptCommitSha": "a4b525f912bc4b79ae12621b18af096f71c37cae",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Scope-(a) measurement: the flavor-split subleading (1+ℏ_q³) vs the geometric closed form 1/(1−ℏ_q³). They differ at O(ℏ_q⁶) ~ 9.5e-7; neither closes the Δm_pn/M_N gap to CODATA (leading already −0.5%). The closed form is a hypothesis, not a derived identity — NOT wired to production δ (calibration-sensitive; needs an independent derivation that the correction is geometric).",
+  "parameters": {
+    "q0": "1.1099785955573347198997632204832250266562084087802"
+  },
+  "data": {
+    "hbar_q": "0.099081726438258959082099415982742323605414892867363",
+    "leading": "0.0013757112499766120135287432436351703219021757083132",
+    "subleading_1_plus_hbar3": "0.0013770494097940612483979963266208764111825025514274",
+    "geometric_closed_1_over_1_minus_hbar3": "0.0013770507126947873011732949067422153430606878299781",
+    "rel_closed_vs_trunc": "0.00000094615394101771922622342669122077379559699082780303",
+    "err_trunc_vs_codata": "0.00030529083322614441558122159307414736967750970861496",
+    "err_closed_vs_codata": "0.00030434496813725170985479854157002521335685599045272",
+    "codata_dmn_over_mn": "0.0013774699387394029668339406551297433261342328109031",
+    "geometric_closes_gap": false,
+    "C_true_codata_over_leading": "1.001278385099213844590282213013884525362579275699",
+    "ratio_Ctrue_minus_1_over_hbar3": "1.3142591339675104554307857080537549505473377122033",
+    "fraction_of_correction_supplied_by_1plus_hbar3": "0.76088495347274550926415498518238231572354207297714"
+  }
+}

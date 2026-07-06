@@ -15,7 +15,7 @@ Formula
     B(A) = m_e · ρ_0 · α_shift(T(p_A, k_A))
 
 where:
-  m_e        = 0.5109989461 MeV  (CODATA 2018)
+  m_e        = 0.51099895069 MeV (CODATA 2022)
   ρ_0        = B(D) / (m_e · α_shift(T(2,3)))   (dimensionless, deuteron-pinned)
   α_shift(T(p, k)) = k · (p - 1)                 (Lean: `bindingAlphaShift`)
 
@@ -41,8 +41,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
-# CODATA 2018
-M_E_MEV = 0.5109989461
+# CODATA 2022 — single source of truth is codata_2022_source.M_E_MEV
+# (= 0.51099895069). float()-cast on import: m_e cancels in the
+# deuteron-pinned B_pred, and the witness is json.dumps'd downstream
+# (an mpf would not serialize). codata_2022_source lives alongside this
+# script in computations/ (on sys.path[0]); it is pure literals — no
+# witness-file loading — so the import is cheap and dependency-free.
+from codata_2022_source import M_E_MEV as _M_E_MEV  # noqa: E402
+M_E_MEV = float(_M_E_MEV)
 
 # Experimental binding energies, AME 2020 / NIST (MeV)
 B_EXP_MEV: dict[str, float] = {
@@ -175,11 +181,11 @@ def build_witness() -> dict:
             "theorems (Phase 3 open math)."
         ),
         "computation": "B(A) = m_e · ρ_0 · α_shift(T(p_A, k_A))",
-        "generator": "folio-assistant/computations/binding_alpha_shift_witness.py",
+        "generator": "computations/binding_alpha_shift_witness.py",
         "timestamp_utc": datetime.now(timezone.utc).isoformat(),
         "inputs": {
             "m_e_MeV": M_E_MEV,
-            "m_e_source": "CODATA 2018",
+            "m_e_source": "CODATA 2022",
             "B_experimental_source": "AME 2020 / NIST",
             "alpha_shift_inputs": {
                 "rho_0_dimensionless": round(rho_0, 6),
@@ -252,7 +258,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument(
         "--out",
-        default="folio-assistant/computations/binding-alpha-shift-witness.witness.json",
+        default="computations/binding-alpha-shift-witness.witness.json",
         help="Witness output path (default: alongside the script).",
     )
     ap.add_argument(

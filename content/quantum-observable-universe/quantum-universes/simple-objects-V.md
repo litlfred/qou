@@ -1,8 +1,9 @@
-In any rigid :refterm[monoidal category]{#monoidal-category} $\mathbf{C}$ with a fibre functor
-$\tau \colon \mathbf{C} \to R\text{-}\mathrm{Mod}$, an object $X$ is
-*simple* if every monomorphism into $X$ is either zero or an isomorphism.
-The simple objects are the irreducible building blocks: every object of
+The simple objects are the irreducible building blocks of a rigid
+:refterm[monoidal category]{#monoidal-category} $\mathbf{C}$ with a fibre functor
+$\tau \colon \mathbf{C} \to R\text{-}\mathrm{Mod}$: every object of
 $\mathbf{C}$ admits a filtration whose successive quotients are simple.
+Concretely, an object $X$ is
+*simple* if every monomorphism into $X$ is either zero or an isomorphism.
 
 Because $\tau$ is faithful and exact, it reflects simplicity: $X$ is
 simple in $\mathbf{C}$ if and only if $\tau(X)$ is a simple module.
@@ -10,7 +11,7 @@ When $R$ is a field, the simple modules are precisely the irreducible
 representations of the emergent gauge group
 $G = \mathrm{Aut}^{\otimes}(\tau)$.
 
-The [fundamental object](#rem\:fundamental-object-explication) $V$ is
+The fundamental object $V$ is
 distinguished among the simples by two properties:
 
 1. **Categorical dimension $2$**: $\tau(V)$ is a rank-$2$ free

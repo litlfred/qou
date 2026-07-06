@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.AppendixSurreals.DiophantineBirthday — conjectural class (placeholder)
 
@@ -6,7 +8,7 @@
 
 This is a **conjecture**: the class `DiophantineBirthday` carries a placeholder
 field; the `noncomputable instance` is the conjectural witness whose
-`sorry` represents the open conjecture itself (per CLAUDE.md §3b),
+`sorry` represents the open conjecture itself (per AGENTS.md §3b),
 NOT a missing proof.  Downstream theorems may take
 `[DiophantineBirthday]` as an explicit `[Instance]` hypothesis to derive
 unconditional Lean theorems modulo this single conjectural input
@@ -32,7 +34,7 @@ $q$ (Liouville), and Roth improves the exponent to $2 + \delta$ for
 any $\delta > 0$.  We use $\delta$ rather than $\varepsilon$ here
 to avoid collision with the surreal infinitesimal $\varepsilon =
 1/\omega$ used elsewhere
-  -- Witness: folio-assistant/computations/none in this appendix.
+  -- Witness: computations/none in this appendix.
 
       Field schema below is a structural placeholder; refine per §3b
       to match the conjecture's actual content. The single sorry on
@@ -45,7 +47,5 @@ to avoid collision with the surreal infinitesimal $\varepsilon =
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/diophantine-birthday.ts
-noncomputable instance : DiophantineBirthday := by
-  trivial
-
+noncomputable instance : DiophantineBirthday := sorry
 end QOU.AppendixSurreals

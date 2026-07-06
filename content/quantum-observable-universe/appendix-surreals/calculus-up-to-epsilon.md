@@ -133,7 +133,7 @@ calculation is unclear.
 
 See [Table](#tbl:calculus-up-to-epsilon-table-data).
 
-**Upshot.** For the substrate-parameter $q \to 1$ limit
+**Conclusion.** For the substrate-parameter $q \to 1$ limit
 specifically — the paper's most-used analytic operation — the
 surreal framework is not a weakening but a *sharpening*: it
 names the infinitesimal regime explicitly. The absence of a

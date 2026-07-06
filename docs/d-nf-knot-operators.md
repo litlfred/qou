@@ -5,7 +5,7 @@ Dictionary-model deuterium, symbolic in q.*
 
 ## Existing pipeline
 
-`folio-assistant/computations/deuterium-optimal-nf.py` already
+`computations/deuterium-optimal-nf.py` already
 computes D's atom Hecke NF in the dictionary model (trefoil quarks
 per Remark 4.25.4 Table 4):
 
@@ -18,7 +18,7 @@ per Remark 4.25.4 Table 4):
 
 ## Existing stored witness
 
-`folio-assistant/computations/deuterium-optimal-nf.witness.json`
+`computations/deuterium-optimal-nf.witness.json`
 carries the layered decomposition by ℵ₁-count (protium
 completeness):
 
@@ -128,13 +128,13 @@ All symbolic, no SnapPy, no knot-matching needed. This is the
 
 ## Pointers
 
-- `folio-assistant/computations/deuterium-optimal-nf.py`
-- `folio-assistant/computations/deuterium-optimal-nf.witness.json`
-- `folio-assistant/computations/trefoil-quark-nucleon-nf.py`
+- `computations/deuterium-optimal-nf.py`
+- `computations/deuterium-optimal-nf.witness.json`
+- `computations/trefoil-quark-nucleon-nf.py`
   (dictionary-model quark + nucleon NFs)
-- `folio-assistant/computations/knot-operator-table.py`
+- `computations/knot-operator-table.py`
   (H₃ NF basis = named knot operators)
-- `folio-assistant/computations/basis_knot_tables.py`
+- `computations/basis_knot_tables.py`
   (H₃ 6-basis multiplication tables)
 - `content/quantum-observable-universe/braids-and-knots/algebraic-quantum-volume.md`
 - `content/quantum-observable-universe/braids-and-knots/algebraic-quantum-volume-specialization.md`

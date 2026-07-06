@@ -22,7 +22,7 @@ export default chapter({
       title: "Introduction",
       label: "sec:path-integrals-intro",
       blocks: [
-        "intro",
+        "braids-and-knots-intro",
       ],
     }),
 
@@ -47,6 +47,7 @@ export default chapter({
       label: "sec:categorical-braiding-hecke-eigenbasis",
       blocks: [
         "categorical-braiding-hecke-eigenbasis-intro",
+        "eigenbasis-structural-lemmas",
       ],
       // Over-weight split (P4): 27-block section broken into 3
       // reading-order sub-arcs (Hecke quotient / Markov trace + normal
@@ -60,11 +61,18 @@ export default chapter({
             "skein-resolution-obstruction",
             "hecke-satisfies-blitvic-hypothesis",
             "hecke-satisfies-blitvic-hypothesis-proof",
+            "hecke-satisfies-blitvic-hypothesis-interpretation",
             "trace-locality-meets-gs-nonlocality",
             "trace-locality-meets-gs-nonlocality-proof",
+            "trace-locality-nc-probability-reading",
             "jones-markov-trace",
+            "jones-markov-trace-formalization-note",
             "markov-disambiguation",
             "bar-involution",
+            "bar-involution-properties",
+            "bar-involution-c5-algebraic-identities",
+            "bar-involution-geometric-kac-sunada",
+            "bar-involution-grading-lean-proofs",
             "braid-group-n-strand",
             "h3-hecke-idempotents",
             "braid-link-types",
@@ -77,6 +85,7 @@ export default chapter({
             "markov-axioms-primitive",
             "markov-trace-inductive-limit",
             "trm-hopf-sigma1-sq-closed-form",
+            "trm-hopf-sigma1-sq-closed-form-proof",
             "trm-hopf-sigma1-sq-closed-form-table2-data",
             "trm-hopf-sigma1-sq-closed-form-table1-data",
             "hecke-log-decomposition-table-data",
@@ -85,6 +94,7 @@ export default chapter({
             "hecke-normal-form",
             "dark-vision-strand-bandwidth",
             "markov-moves-brane-tower",
+            "markov-trace-ambient-s3",
           ],
         }),
         section({
@@ -110,6 +120,7 @@ export default chapter({
         "knot-notation-convention",
         "knot-notation-convention-table2-data",
         "knot-notation-convention-table1-data",
+        "fundamental-knots-operator-basis",
       ],
     }),
 
@@ -172,6 +183,7 @@ export default chapter({
         "enveloping-algebra",
         "quantum-su2",
         "q-casimir",
+        "q-casimir-classical-limit",
         "q-casimir-exists",
         "q-casimir-exists-proof",
         "q-casimir-unique",
@@ -179,6 +191,7 @@ export default chapter({
         "r-matrix-braiding-structure",
         "r-matrix-braiding",
         "pontryagin-dual-coxeter-character",
+        "pontryagin-dual-coxeter-character-proof",
       ],
     }),
 
@@ -189,11 +202,25 @@ export default chapter({
       blocks: [
         "lepton-meson-parallel-intro",
         "frobenius-lepton-meson-bridge",
+        "frobenius-lepton-meson-bridge-proof",
+        "frobenius-lepton-meson-bridge-interpretation",
         "hoefsmit-binding-amplitude",
+        "hoefsmit-binding-amplitude-proof",
+        // Keystone: 4₁ (Higgs) amphichiral ⇒ CS=0 ⇒ real complex volume;
+        // the bare Higgs gives only the mass face, Q_β is the binding defect.
+        "self-dual-higgs-real-volume",
+        "meson-em-sinh-closed-form",
+        "meson-em-sinh-closed-form-proof",
+        "meson-qcg-fusion-identity",
+        "meson-qcg-fusion-identity-proof",
         "q-difference-viewpoint-method",
         "alpha-em-habiro-bar-involution",
         "figure-eight-reeb-rotation",
+        "figure-eight-reeb-rotation-proof",
+        "figure-eight-reeb-novelty-note",
         "pion-half-figure-eight",
+        "pion-half-figure-eight-proof",
+        "pion-half-figure-eight-formalization-note",
         "outro-braids-and-knots",
       ],
     }),

@@ -49,7 +49,7 @@ weights $w(2), w(3), \dots$ is exactly the per-interface
 exhibits the per-isotope binding tower as a telescoping accumulation
 rather than an independent high-strand computation.
 
-## Conditional-class hypothesis (CLAUDE.md §3b-cond)
+## Conditional-class hypothesis (AGENTS.md §3b-cond)
 
 The compiled Lean home is
 [`QOU.BraidKnot.OperatorValuedCombiner`](../../../content/quantum-observable-universe/lean/QOU/BraidKnot/OperatorValuedCombiner.lean),
@@ -74,10 +74,10 @@ the dependency cone reaches
 ## Production wiring and verification
 
 The recursion is realised in
-[`canonical_tr_m_via_branching.py`](../../../folio-assistant/computations/canonical_tr_m_via_branching.py)
+the canonical formalism
 (`compute_tr_m_via_branching`), wired into the canonical mass table via
 `--method branching` in
-[`canonical_mass_table_extended.py`](../../../folio-assistant/computations/canonical_mass_table_extended.py):
+the canonical formalism:
 
 - **$A = 2$ (deuteron)** runs the operator-valued branching end-to-end,
   agreeing with `markov_peel.tr_M_atomic` at $0.72$ ppb (Phase A

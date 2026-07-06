@@ -1,0 +1,264 @@
+{
+  "description": "Keystone Step-1 gate: WRT(S3/2I) SU(2)-side [2j+1]_q vs the S_n-side W_lambda numerator d_q(lambda), n=3,4,5 at q_0. Tests coverage (>=3-row blocks outside the GL_2 Schur-Weyl image) and value (d_q vs [2j+1]_q). No fit.",
+  "q0": "1.1099785900594",
+  "dps": 50,
+  "by_n": {
+    "3": {
+      "num_blocks": 3,
+      "Z_n": "0.98744022820633394388030814733194222418236712063498",
+      "defect_1_minus_Z": "0.012559771793666056119691852668057775817632879365022",
+      "coverage_gap_blocks": 1,
+      "le2_row_blocks": 2,
+      "value_matches": 1,
+      "blocks": [
+        {
+          "lambda": [
+            3
+          ],
+          "rows": 1,
+          "in_su2_image": true,
+          "d_q_Sn": "1.0",
+          "su2_dim_q": "4.1096824251527980038568200898633963920857662780237",
+          "d_q_eq_su2": false,
+          "W_lambda_nfac": "0.16338322764726953349562383254416824119725473652729",
+          "W_lambda_D2": "0.16546138488205205408444473168980393954484104799154"
+        },
+        {
+          "lambda": [
+            2,
+            1
+          ],
+          "rows": 2,
+          "in_su2_image": true,
+          "d_q_Sn": "2.0108968680835603167186899318363517426484061341099",
+          "su2_dim_q": "2.0108968680835603167186899318363517426484061341099",
+          "d_q_eq_su2": true,
+          "W_lambda_nfac": "0.66067377291179487688906048224360574178785764758041",
+          "W_lambda_D2": "0.66907723023589589183111053662039212091031790401692"
+        },
+        {
+          "lambda": [
+            1,
+            1,
+            1
+          ],
+          "rows": 3,
+          "in_su2_image": false,
+          "d_q_Sn": "1.0",
+          "su2_dim_q": null,
+          "d_q_eq_su2": null,
+          "W_lambda_nfac": "0.16338322764726953349562383254416824119725473652729",
+          "W_lambda_D2": "0.16546138488205205408444473168980393954484104799154"
+        }
+      ]
+    },
+    "4": {
+      "num_blocks": 5,
+      "Z_n": "0.98216532162331008656327613100998930706014569553918",
+      "defect_1_minus_Z": "0.01783467837668991343672386899001069293985430446082",
+      "coverage_gap_blocks": 2,
+      "le2_row_blocks": 3,
+      "value_matches": 1,
+      "blocks": [
+        {
+          "lambda": [
+            4
+          ],
+          "rows": 1,
+          "in_su2_image": true,
+          "d_q_Sn": "1.0",
+          "su2_dim_q": "5.2204413034895405100869474021185103901956803974139",
+          "d_q_eq_su2": false,
+          "W_lambda_nfac": "0.039755682007763639946673264135204531494527653458109",
+          "W_lambda_D2": "0.040477586748894743196035897191076693534041416600449"
+        },
+        {
+          "lambda": [
+            3,
+            1
+          ],
+          "rows": 2,
+          "in_su2_image": true,
+          "d_q_Sn": "3.0437062140682717823643855685158341878130870824759",
+          "su2_dim_q": "3.0437062140682717823643855685158341878130870824759",
+          "d_q_eq_su2": true,
+          "W_lambda_nfac": "0.36830250278104130785357198020151511197636475944348",
+          "W_lambda_D2": "0.374990334796504233131207275846000660435485684915"
+        },
+        {
+          "lambda": [
+            2,
+            2
+          ],
+          "rows": 2,
+          "in_su2_image": true,
+          "d_q_Sn": "2.0437062140682717823643855685158341878130870824759",
+          "su2_dim_q": "1.0",
+          "d_q_eq_su2": false,
+          "W_lambda_nfac": "0.166048952045700190962785642336550020118360869736",
+          "W_lambda_D2": "0.1690641569092020473455136539258452920609457969691"
+        },
+        {
+          "lambda": [
+            2,
+            1,
+            1
+          ],
+          "rows": 3,
+          "in_su2_image": false,
+          "d_q_Sn": "3.0437062140682717823643855685158341878130870824759",
+          "su2_dim_q": null,
+          "d_q_eq_su2": null,
+          "W_lambda_nfac": "0.36830250278104130785357198020151511197636475944348",
+          "W_lambda_D2": "0.374990334796504233131207275846000660435485684915"
+        },
+        {
+          "lambda": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "rows": 4,
+          "in_su2_image": false,
+          "d_q_Sn": "1.0",
+          "su2_dim_q": null,
+          "d_q_eq_su2": null,
+          "W_lambda_nfac": "0.039755682007763639946673264135204531494527653458109",
+          "W_lambda_D2": "0.040477586748894743196035897191076693534041416600449"
+        }
+      ]
+    },
+    "5": {
+      "num_blocks": 7,
+      "Z_n": "0.98222414608527089121481438002961084851974035173633",
+      "defect_1_minus_Z": "0.017775853914729108785185619970389151480259648263672",
+      "coverage_gap_blocks": 4,
+      "le2_row_blocks": 3,
+      "value_matches": 1,
+      "blocks": [
+        {
+          "lambda": [
+            5
+          ],
+          "rows": 1,
+          "in_su2_image": true,
+          "d_q_Sn": "1.0",
+          "su2_dim_q": "6.3880866420483782073670613610156923387638742186823",
+          "d_q_eq_su2": false,
+          "W_lambda_nfac": "0.0076153872242925972039003009120709711522878996893574",
+          "W_lambda_D2": "0.007753207101092253462701106321047725249263846632306"
+        },
+        {
+          "lambda": [
+            4,
+            1
+          ],
+          "rows": 2,
+          "in_su2_image": true,
+          "d_q_Sn": "4.1096824251527980038568200898633963920857662780237",
+          "su2_dim_q": "4.1096824251527980038568200898633963920857662780237",
+          "d_q_eq_su2": true,
+          "W_lambda_nfac": "0.12862000359584497562263010191215578282855367127215",
+          "W_lambda_D2": "0.13094771097663378721816986094090154150488372445795"
+        },
+        {
+          "lambda": [
+            3,
+            2
+          ],
+          "rows": 2,
+          "in_su2_image": true,
+          "d_q_Sn": "5.2204413034895405100869474021185103901956803974139",
+          "su2_dim_q": "2.0108968680835603167186899318363517426484061341099",
+          "d_q_eq_su2": false,
+          "W_lambda_nfac": "0.20754220440172528948816891506622576880557133440258",
+          "W_lambda_D2": "0.21129821052445161815911360644175214902004793000601"
+        },
+        {
+          "lambda": [
+            3,
+            1,
+            1
+          ],
+          "rows": 3,
+          "in_su2_image": false,
+          "d_q_Sn": "6.2204413034895405100869474021185103901956803974139",
+          "su2_dim_q": null,
+          "d_q_eq_su2": null,
+          "W_lambda_nfac": "0.29466895564154516658541574424870580294691454100815",
+          "W_lambda_D2": "0.30000174279564468232003085259259716845160899780746"
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            1
+          ],
+          "rows": 3,
+          "in_su2_image": false,
+          "d_q_Sn": "5.2204413034895405100869474021185103901956803974139",
+          "su2_dim_q": null,
+          "d_q_eq_su2": null,
+          "W_lambda_nfac": "0.20754220440172528948816891506622576880557133440258",
+          "W_lambda_D2": "0.21129821052445161815911360644175214902004793000601"
+        },
+        {
+          "lambda": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "rows": 4,
+          "in_su2_image": false,
+          "d_q_Sn": "4.1096824251527980038568200898633963920857662780237",
+          "su2_dim_q": null,
+          "d_q_eq_su2": null,
+          "W_lambda_nfac": "0.12862000359584497562263010191215578282855367127215",
+          "W_lambda_D2": "0.13094771097663378721816986094090154150488372445795"
+        },
+        {
+          "lambda": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "rows": 5,
+          "in_su2_image": false,
+          "d_q_Sn": "1.0",
+          "su2_dim_q": null,
+          "d_q_eq_su2": null,
+          "W_lambda_nfac": "0.0076153872242925972039003009120709711522878996893574",
+          "W_lambda_D2": "0.007753207101092253462701106321047725249263846632306"
+        }
+      ]
+    }
+  },
+  "verdict": "REFUTE the naive SU(2)/WRT(S3/2I) route as a reproduction of the full W_lambda family. COVERAGE: 7 blocks across n=3,4,5 have >=3 rows and lie OUTSIDE the GL_2 (spinor C^2) Schur-Weyl image -- the SU(2) side assigns them no weight (incl. the electron (3,1,1) at n=5). VALUE: of 8 <=2-row blocks, only 3 have d_q(lambda) == [2j+1]_q exactly ([{'n': 3, 'lambda': [2, 1]}, {'n': 4, 'lambda': [3, 1]}, {'n': 5, 'lambda': [4, 1]}]); the rest differ (e.g. muon (3,2): d_q=[5]_q vs [2]_q). Consistent with #2608's Schur-Weyl duality (WRT SU(2)-side != W_lambda S_n-side, coincide only at (4,1)-type) and #2406's 'no finite colour-SU(N) arena'. The geometric W_lambda index MUST live on the full-Hecke (infinite-dim) side, not the SU(2)/WRT(S3/2I) modular data. NORMALIZATION: per-block ratios within fixed n are identical in the [n]_q! and D^2 conventions (global factor cancels); only the total Z(n) -- the defect 1-Z(n) -- is normalization-sensitive, so the defect (not the absolute per-block value) is the fixed falsifiable content.",
+  "coincidences_d_q_eq_su2": [
+    {
+      "n": 3,
+      "lambda": [
+        2,
+        1
+      ]
+    },
+    {
+      "n": 4,
+      "lambda": [
+        3,
+        1
+      ]
+    },
+    {
+      "n": 5,
+      "lambda": [
+        4,
+        1
+      ]
+    }
+  ]
+}

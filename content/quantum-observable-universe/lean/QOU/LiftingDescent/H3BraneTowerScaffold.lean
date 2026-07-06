@@ -1,6 +1,7 @@
 import Mathlib.Algebra.Module.Basic
-import Mathlib.LinearAlgebra.Basic
-import Mathlib.LinearAlgebra.FiniteDimensional
+import Mathlib.Algebra.Module.LinearMap.Basic
+import Mathlib.LinearAlgebra.FiniteDimensional.Basic
+import Mathlib.LinearAlgebra.Dimension.Constructions
 import Mathlib.Data.Real.Basic
 
 /-!
@@ -9,17 +10,22 @@ import Mathlib.Data.Real.Basic
 Scaffold for a concrete `RecursiveBraneTower` instance at the
 `H_3(q_0)` (proton-scale) Hecke algebra.  The numerical realisation
 is in
-`folio-assistant/computations/tau_hat_n_proton_realisation.py` (PR
+`computations/tau_hat_n_proton_realisation.py` (PR
 #533): a 6-dim `level 0 = H_3(q_0)`, 30-dim `Ω¹(H_3(q_0))`, 180-dim
 `level 1 = H_3(q_0) ⊗ Ω¹(H_3(q_0))`, and a 180×180 idempotent
 `τ̂_0 = ℓ_0 ∘ 𝔡_1` with rank 6 (descended) and nullity 174 in End(A_0)
 sense (rank 36 / nullity 32 364 in End(A_1) sense).
 
-This Lean file declares the **shape** of the instance.  Concrete
+This Lean file declares the **shape** of the instance, sorry-free: the
+level modules `A_0`/`Ω¹`/`A_1`, their dimensions, and the ascent/descent
+maps `ℓ_0`/`𝔡_1` as concrete *placeholder* linear maps (embed / project the
+first 6 of 180 coordinates) satisfying the retraction identity
+`descent_ascent_id` and the idempotence `tau_hat_0_idem`.  The **physical**
 matrix entries (the explicit `H_3(q_0)` regular representation, the
-Kähler-differential basis, the ascent/descent matrices) are deferred
-via `sorry` placeholders; closing them is a routine but multi-day
-linear-algebra discharge using `Mathlib.LinearAlgebra` and the
+Kähler-differential basis, the 180×6 ascent/descent matrices of PR #533)
+are not yet bound — a future refactor rebinds the `def`s to the Python
+realisation without changing any type or consumer-side proof, a routine but
+multi-day linear-algebra discharge using `Mathlib.LinearAlgebra` and the
 existing `QOU.FrobeniusHopfData` infra.
 
 This scaffold is **not** required by the abstract τ̂_n stack
@@ -45,7 +51,7 @@ open scoped LinearMap
 
 /-- Substrate parameter `q_0`.  Bound here to the canonical 50-dps
     literal from
-    `folio-assistant/computations/full-twist-delta-n2-verification.witness.json`
+    `computations/full-twist-delta-n2-verification.witness.json`
     (`q_0` field), produced by the proton-anchor re-pin of 2026-05-28
     (`tools/qou-substrate/python/qou_substrate/constants.py::Q_50_DIGIT_STR`).
 
@@ -123,14 +129,10 @@ noncomputable def ell_0 : A0 →ₗ[ℝ] A1 where
   toFun x := fun i => if h : i.val < 6 then x ⟨i.val, h⟩ else 0
   map_add' x y := by
     funext i
-    by_cases h : i.val < 6
-    · simp [h, A0]; rfl
-    · simp [h]
+    by_cases h : i.val < 6 <;> simp [Pi.add_apply, h, A0, A1]
   map_smul' c x := by
     funext i
-    by_cases h : i.val < 6
-    · simp [h, A0]
-    · simp [h]
+    by_cases h : i.val < 6 <;> simp [Pi.smul_apply, h, A0, A1, smul_eq_mul]
 
 /-- The descent retraction `𝔡_1 : A_1 → A_0`, the splitting of `ℓ_0`
     in the universal connection.  Concrete 6×180 matrix in the Python
@@ -156,7 +158,8 @@ noncomputable def descent_1 : A1 →ₗ[ℝ] A0 where
     `i.val < 6`, the `if` branch fires and returns `x i`). -/
 -- Ref: [manuscript] §3, lem:descent (splitting condition)
 theorem descent_ascent_id : descent_1 ∘ₗ ell_0 = LinearMap.id := by
-  ext x i
+  refine LinearMap.ext fun x => ?_
+  funext i
   simp only [LinearMap.comp_apply, LinearMap.id_apply, descent_1, ell_0,
              LinearMap.coe_mk, AddHom.coe_mk]
   have h : i.val < 6 := i.isLt
@@ -172,14 +175,13 @@ theorem descent_ascent_id : descent_1 ∘ₗ ell_0 = LinearMap.id := by
     structure. -/
 noncomputable def tau_hat_0 : A1 →ₗ[ℝ] A1 := ell_0 ∘ₗ descent_1
 
-/-- Idempotence of `τ̂_0`.  Once `descent_ascent_id` is discharged,
-    this proof is the abstract calculation in `descent-involution.lean`:
+/-- Idempotence of `τ̂_0`, the abstract calculation in
+    `descent-involution.lean`:
 
       `τ̂_0² = ℓ_0 ∘ 𝔡_1 ∘ ℓ_0 ∘ 𝔡_1 = ℓ_0 ∘ id ∘ 𝔡_1 = τ̂_0`.
 
-    Marked `sorry` here because the discharge depends on
-    `descent_ascent_id` (itself a downstream sorry).  Inherited from
-    `DescentInvolution.tau_idem` in `descent-involution.lean`. -/
+    Proved sorry-free from the retraction identity `descent_ascent_id`.
+    Mirrors `DescentInvolution.tau_idem` in `descent-involution.lean`. -/
 -- Ref: [manuscript] §3, def:descent-involution
 theorem tau_hat_0_idem : tau_hat_0 ∘ₗ tau_hat_0 = tau_hat_0 := by
   -- Idempotence follows from the splitting identity descent_ascent_id.
@@ -195,22 +197,20 @@ theorem tau_hat_0_idem : tau_hat_0 ∘ₗ tau_hat_0 = tau_hat_0 := by
 
 /-- `dim A_0 = 6` per the Python realisation in PR #533.
 
-    Syntactic consequence of `A_0 = Fin 6 → ℝ`; the discharge uses
-    `Module.finrank_pi` once the right `Fintype` instance unfolding is
-    set up.  Deferred along with the rest of the linear-algebra
-    discharge. -/
+    Syntactic consequence of `A_0 = Fin 6 → ℝ`; proved sorry-free by
+    unfolding `A_0` (`simp` computes the `finrank` of the finite Pi type). -/
 -- Ref: [manuscript] §3, prop:jet-prolongation (proton-scale realisation, PR #533)
 theorem dim_A0_eq_6 : Module.finrank ℝ A0 = 6 := by
-  simp [A0, Module.finrank_pi, Module.finrank_self]
+  simp [A0]
 
 /-- `dim Ω¹(A_0) = 30` per the Python realisation in PR #533. -/
 -- Ref: [manuscript] §3, prop:jet-prolongation (proton-scale realisation, PR #533)
 theorem dim_Omega1_eq_30 : Module.finrank ℝ Omega1 = 30 := by
-  simp [Omega1, Module.finrank_pi, Module.finrank_self]
+  simp [Omega1]
 
 /-- `dim A_1 = 180` per the Python realisation in PR #533. -/
 -- Ref: [manuscript] §3, prop:jet-prolongation (proton-scale realisation, PR #533)
 theorem dim_A1_eq_180 : Module.finrank ℝ A1 = 180 := by
-  simp [A1, Module.finrank_pi, Module.finrank_self]
+  simp [A1]
 
 end QOU.LiftingDescent.H3BraneTowerScaffold

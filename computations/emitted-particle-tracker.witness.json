@@ -1,0 +1,111 @@
+{
+  "engine": "emitted_particle_tracker.py",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-06-29T17:11:19.890852+00:00",
+  "commitSha": "5b33e2073fca0d47e96b2c7a52fc5dc647f07c79",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "emitted-particle-tracker",
+  "scriptFile": "emitted_particle_tracker.py",
+  "scriptHash": "44c4b7caccdc",
+  "scriptCommitSha": "e4bc522ce86b2886977509df649613bacb0de950",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Per-step emitted-particle ledger for the iterative knot build: γγ̄ vertices + retained (bar-even) / emitted (bar-odd) trace energy in MeV, via the q-parameterised core tr_M(q⁻¹). Emitted = E₀·|bar-odd|, the Chern–Simons/decay channel that radiates as each nucleon links in. Exploratory.",
+  "parameters": {
+    "E0_MeV": 4.185980827582892,
+    "q_0": 1.1099785955573347
+  },
+  "data": {
+    "step_p": {
+      "name": "p",
+      "Z": 1,
+      "N": 0,
+      "A": 1,
+      "gamma_vertices": 5,
+      "tr_q0": 1.065306228613167,
+      "tr_qinv": 0.06824145930949503,
+      "retained_MeV": 2.372504444397589,
+      "emitted_MeV": 2.086847004081765,
+      "emitted_multilink_MeV": 0.0,
+      "delta_emitted_MeV": 2.086847004081765
+    },
+    "step_D": {
+      "name": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "gamma_vertices": 12,
+      "tr_q0": 0.3883571887237809,
+      "tr_qinv": 0.00776840803542845,
+      "retained_MeV": 0.829087076674441,
+      "emitted_MeV": 0.7965686695772967,
+      "emitted_multilink_MeV": 1.2350202744983327,
+      "delta_emitted_MeV": -1.2902783345044682
+    },
+    "step_3He": {
+      "name": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "gamma_vertices": 17,
+      "tr_q0": 0.2065784750874029,
+      "tr_qinv": 0.0002647034408044219,
+      "retained_MeV": 0.43292078981769055,
+      "emitted_MeV": 0.431812746289488,
+      "emitted_multilink_MeV": 1.7592945142210397,
+      "delta_emitted_MeV": -0.3647559232878086
+    },
+    "step_4He": {
+      "name": "4He",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "gamma_vertices": 24,
+      "tr_q0": 0.05535842626678308,
+      "tr_qinv": 3.534409525586224e-05,
+      "retained_MeV": 0.11593863035151221,
+      "emitted_MeV": 0.11579068064640291,
+      "emitted_multilink_MeV": 1.9084623623263057,
+      "delta_emitted_MeV": -0.3160220656430851
+    },
+    "step_6Li": {
+      "name": "6Li",
+      "Z": 3,
+      "N": 3,
+      "A": 6,
+      "gamma_vertices": 36,
+      "tr_q0": 0.00789107411351287,
+      "tr_qinv": 1.608058000762014e-07,
+      "retained_MeV": 0.01651627903909831,
+      "emitted_MeV": 0.016515605909102227,
+      "emitted_multilink_MeV": 1.9747263956756975,
+      "delta_emitted_MeV": -0.09927507473730068
+    },
+    "step_7Li": {
+      "name": "7Li",
+      "Z": 3,
+      "N": 4,
+      "A": 7,
+      "gamma_vertices": 43,
+      "tr_q0": 0.0021146319542430445,
+      "tr_qinv": 2.1471332213576033e-08,
+      "retained_MeV": 0.0044259493482202575,
+      "emitted_MeV": 0.004425859469635269,
+      "emitted_multilink_MeV": 1.8339583319453299,
+      "delta_emitted_MeV": -0.012089746439466958
+    }
+  }
+}

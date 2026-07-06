@@ -1,3 +1,7 @@
+import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
+import Mathlib.NumberTheory.ArithmeticFunction
+import Mathlib.Topology.Algebra.InfiniteSum.Basic
+
 /-!
 # QOU.AlgebraicSubstrate.ClassicalRiemannZeta
 
@@ -9,9 +13,6 @@ LaTeX label: `def:classical-riemann-zeta`
 
 set_option autoImplicit false
 
-import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
-import Mathlib.NumberTheory.ArithmeticFunction
-import Mathlib.Topology.Algebra.InfiniteSum.Basic
 
 open Complex Filter
 

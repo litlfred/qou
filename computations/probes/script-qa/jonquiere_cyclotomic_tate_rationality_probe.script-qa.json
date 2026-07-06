@@ -1,6 +1,6 @@
 {
   "$schema": "script-qa/v1",
-  "script_path": "folio-assistant/computations/probes/jonquiere_cyclotomic_tate_rationality_probe.py",
+  "script_path": "computations/probes/jonquiere_cyclotomic_tate_rationality_probe.py",
   "language": "python",
   "source_hash": "ce030fe9c125",
   "updated_at": "2026-06-09T03:47:37.719Z",
@@ -21,7 +21,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "major",
-        "evidence": "folio-assistant/computations/probes/jonquiere_cyclotomic_tate_rationality_probe.py:96: bare `float(mpc(lhs).real)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/probes/jonquiere_cyclotomic_tate_rationality_probe.py:97: bare `float(mpc(lhs).imag)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/probes/jonquiere_cyclotomic_tate_rationality_probe.py:98: bare `float(mpc(rhs).real)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/probes/jonquiere_cyclotomic_tate_rationality_probe.py:99: bare `float(mpc(rhs).imag)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | folio-assistant/computations/probes/jonquiere_cyclotomic_tate_rationality_probe.py:100: bare `float(residue)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
+        "evidence": "computations/probes/jonquiere_cyclotomic_tate_rationality_probe.py:96: bare `float(mpc(lhs).real)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/probes/jonquiere_cyclotomic_tate_rationality_probe.py:97: bare `float(mpc(lhs).imag)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/probes/jonquiere_cyclotomic_tate_rationality_probe.py:98: bare `float(mpc(rhs).real)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/probes/jonquiere_cyclotomic_tate_rationality_probe.py:99: bare `float(mpc(rhs).imag)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision | computations/probes/jonquiere_cyclotomic_tate_rationality_probe.py:100: bare `float(residue)` cast — use `mpmath.mpf(\"...\")` / `Decimal(\"...\")` to preserve substrate precision"
       }
     ],
     "respects_archimedean_wall": [
@@ -91,7 +91,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/probes/jonquiere_cyclotomic_tate_rationality_probe.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
+        "evidence": "computations/probes/jonquiere_cyclotomic_tate_rationality_probe.py:1: script's sidecar has no `references` field — the criterion reads metadata only and does not grep source for citations. Add an explicit `references: [...]` entry to the script's `.script-qa.json` (content-block labels like `prop:foo`, bibliography keys like `wenzl1988`), or set `references: []` if the script is pure infrastructure with no paper backing"
       }
     ],
     "connected_to_ci_pipeline": [
@@ -110,7 +110,7 @@
         "reviewed_at": "2026-06-04T18:24:03.689Z",
         "reviewed_sha": "afce870d3c949d2018a034615c153abcca9000e6",
         "severity": "minor",
-        "evidence": "folio-assistant/computations/probes/jonquiere_cyclotomic_tate_rationality_probe.py:1: script `jonquiere_cyclotomic_tate_rationality_probe.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
+        "evidence": "computations/probes/jonquiere_cyclotomic_tate_rationality_probe.py:1: script `jonquiere_cyclotomic_tate_rationality_probe.py` is not referenced from any `.github/workflows/*.yml` and is not imported by any sibling script — likely never exercised in CI. Either add a workflow invocation, mark as a library by adding `from <this-module> import` somewhere, or move to `_deprecated/`"
       }
     ],
     "deprecated": [

@@ -28,9 +28,9 @@ numerical evaluation.
 
 namespace QOU
 
+noncomputable section
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
@@ -49,8 +49,12 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
 structure MainCommutativeDiagram where
   /-- The substrate parameter q. -/
   q : R_q
-  /-- q > 1 (quantum regime). -/
-  -- q_gt_one : 1 < q  -- (archimedean; not meaningful over R_q)
+  /-- The inverse indeterminate `q⁻¹`. Over `R_q = ℤ[q, q⁻¹]` the
+      indeterminate is invertible; `qInv` names that inverse explicitly,
+      since `R_q` is a `CommRing` without a global `Inv` instance. -/
+  qInv : R_q
+  /-- Defining relation `q · q⁻¹ = 1`. -/
+  q_qInv : q * qInv = 1
   /-- Top-left corner: jet data (connection strength). -/
   jetValue : R_q
   /-- Top-right corner: Einstein tensor value. -/
@@ -64,16 +68,16 @@ structure MainCommutativeDiagram where
   /-- Bottom arrow: parallel transport maps sections to Schrödinger. -/
   parallel_transport : sectionValue = schrodingerValue
   /-- Left arrow: q-linearisation of jet data gives sections. -/
-  q_linearisation : sectionValue = (1 - q⁻¹) * jetValue
-  /-- The right arrow: classical limit q → 1 recovers Einstein. -/
+  q_linearisation : sectionValue = (1 - qInv) * jetValue
   /-- The diagram commutes: all four paths give the same result. -/
   commutativity :
-    (1 - q⁻¹) * einsteinValue = schrodingerValue
+    (1 - qInv) * einsteinValue = schrodingerValue
 
 /-- The diagram commutes by combining the four arrow equations. -/
 -- Ref: [manuscript] §1
 theorem diagram_commutes (d : MainCommutativeDiagram) :
-    (1 - d.q⁻¹) * d.einsteinValue = d.schrodingerValue := by
+    (1 - d.qInv) * d.einsteinValue = d.schrodingerValue := by
   exact d.commutativity
 
+end
 end QOU

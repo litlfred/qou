@@ -13,7 +13,7 @@ hierarchy on Bring's surface), so encoding it in the ordering
 search is purely mathematical — not a parameter.
 
 Usage:
-    python3 folio-assistant/computations/atom_mass_pure.py
+    python3 computations/atom_mass_pure.py
 """
 
 import math, sys, time

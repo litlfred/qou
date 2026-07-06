@@ -43,7 +43,7 @@ export default definition({
     "prop:y-lambda-closed-form-wenzl-bridge",
   ],
   cites: [
-    "chlouveraki2016hdr",
+    "chlouveraki2016-hdr",
     "wenzl1988c",
   ],
   tags: [

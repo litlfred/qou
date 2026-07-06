@@ -4,7 +4,7 @@
 # Expected runtime: ~1-10 min per atom, ~hours total
 #
 # Usage:
-#   cd folio-assistant/computations
+#   cd computations
 #   nohup bash run-k8-overnight.sh > k8-overnight.log 2>&1 &
 #   tail -f k8-overnight.log
 

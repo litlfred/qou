@@ -5,8 +5,8 @@
 **Scope:** CONFIRM-OR-REFUTE. No fit, no tuning to m_p / CODATA. Every number
 is RAW. Independent reproduction of two merged sibling audits.
 
-**Compute:** [`linking_weight_canonical_object_lwfix.py`](../../folio-assistant/computations/linking_weight_canonical_object_lwfix.py),
-witness [`linking-weight-canonical-object-lwfix.witness.json`](../../folio-assistant/computations/linking-weight-canonical-object-lwfix.witness.json).
+**Compute:** [`linking_weight_canonical_object_lwfix.py`](../../computations/linking_weight_canonical_object_lwfix.py),
+witness [`linking-weight-canonical-object-lwfix.witness.json`](../../computations/linking-weight-canonical-object-lwfix.witness.json).
 
 ---
 

@@ -1,9 +1,18 @@
-Let $R$ be a commutative ring. A *quantum universe over $R$* is a
+A quantum universe is the categorical substrate from which the
+framework's physical observables are later read off: its fibre functor
+$\tau$ and Frobenius object $A$ are what subsequently carry the
+observable and mass data. The archetypal instance is the category
+$\mathbf{Rep}(\mathrm{SU}_q(2))$ of representations of the quantum
+group; its classical symmetric ($q \to 1$) limit $\mathrm{SU}(2)$ is the
+concrete picture worked in [Example](#ex:quantum-universe-su2). Keep
+that example in mind behind the abstract triple.
+
+Let $R$ be a commutative ring. A **quantum universe over $R$** is a
 triple $(\mathbf{C}, A, \tau)$ where:
 
 1. $(\mathbf{C}, \otimes, \mathbf{1})$ is an $R$-linear rigid
    :refterm[braided monoidal category]{#braided-monoidal-category}
-   ([rigid :refterm[monoidal category]{#monoidal-category}](#def\:rigid-monoidal-category)) with
+   ([rigid :refterm[monoidal category]{#monoidal-category}](#def:rigid-monoidal-category)) with
    braiding $c_{X,Y} \colon X \otimes Y \xrightarrow{\sim} Y \otimes X$ — the braiding is required for
    exterior powers $\Lambda^k V$ and need not be symmetric
    ($c^2 \neq \mathrm{id}$ in general);
@@ -39,7 +48,7 @@ triple $(\mathbf{C}, A, \tau)$ where:
    **(H)** $(A, \mu, \eta, \Delta, \varepsilon, S)$ is
    a Hopf algebra object in $\mathbf{C}$;
 
-   **(F)** the [Frobenius pairing](#def\:frobenius-pairing)
+   **(F)** the [Frobenius pairing](#def:frobenius-pairing)
    $\int_A \circ \mu \colon A \otimes A \to \mathbf{1}$ is
    non-degenerate, inducing an isomorphism
    $A \xrightarrow{ \sim } A^{\vee}$;
@@ -49,4 +58,4 @@ triple $(\mathbf{C}, A, \tau)$ where:
    functor;
 
 4. $A$ admits a *differential calculus*: the module of
-   K"ahler differentials $\Omega^1(A)$ exists in $\mathbf{C}$.
+   Kähler differentials $\Omega^1(A)$ exists in $\mathbf{C}$.

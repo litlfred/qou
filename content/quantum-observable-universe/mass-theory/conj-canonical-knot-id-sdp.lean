@@ -9,7 +9,7 @@ import QOU.BraidKnot.CanonicalKnotIdSDPUniqueness
 # Canonical knot identification for ²H, ³H, ³He from the confinement SDP
 
 This file axiomatizes `conj:canonical-knot-id-sdp` as a Lean `class`
-following the §3b conditional-class pattern from CLAUDE.md.
+following the §3b conditional-class pattern from AGENTS.md.
 
 **Conjecture (informal):** The joint mass-tower confinement SDP uniquely
 selects the canonical Hecke elements for ²H (6₂), ³H (8₁₁), and ³He
@@ -36,7 +36,7 @@ checks at H_3.  Numerical evidence for (b) requires Hoefsmit at H_{3·A}
 (deferred); the framework for it is the R5-full prototype with the
 binding-K decomposition — see deliverable 4 witness for the structural
 finding driving this refinement
-(`folio-assistant/computations/rho-prefactor-structural-verifier.witness.json`).
+(`computations/rho-prefactor-structural-verifier.witness.json`).
 
 The class packages the uniqueness assertion; downstream conditional
 theorems may take it as an `[instance]` hypothesis and remain fully
@@ -252,8 +252,8 @@ theorem structurallyValidBinding_strand_count_lower_bound
 /-! ### Per-nucleus instances (issue #604, deliverables 3 + 4)
 
 Numerical evidence is recorded in
-`folio-assistant/computations/binding-k-solver.witness.json` AND
-`folio-assistant/computations/binding-k-enumerator.witness.json`.
+`computations/binding-k-solver.witness.json` AND
+`computations/binding-k-enumerator.witness.json`.
 
 Each instance below populates `bindingKWord` with the empirically-
 verified explicit braid word from the inter-nucleon enumerator search
@@ -420,7 +420,7 @@ theorem bindingKWord_nonempty (n : LightNucleus) [h : CanonicalKnotIdSDP n] :
 /-- **R5FullWitness** — the numerical certificate produced by
     PR #608's `r5_full_canonical_knot_solver.py`.
 
-    Records the LP/SDP primal–dual data per CLAUDE.md "LP / SDP
+    Records the LP/SDP primal–dual data per AGENTS.md "LP / SDP
     duals — first-class infra" and the per-Wedderburn-block
     PSD-feasibility check.  An instance asserts that for nucleus
     `n`, the prototype produced a feasible candidate `T_w` in the

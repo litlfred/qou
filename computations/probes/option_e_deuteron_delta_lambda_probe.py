@@ -14,7 +14,7 @@ from AME measurements). The probe reports which (if any) closes
 deuteron AME within 10%.
 
 Inputs:
-- folio-assistant/computations/chi-deuteron-h6-at-q0-50dps.witness.json
+- computations/chi-deuteron-h6-at-q0-50dps.witness.json
   (y_λ, χ^λ(β_D) for each of the 11 partitions of 6)
 - AME binding energy B_D = 2.224566 MeV
 - m_e = 0.51099895069 MeV
@@ -23,7 +23,7 @@ Path-D prediction:
   B_pred / m_e = Σ_λ y_λ · χ^λ(β_D) · Δ_λ
 
 Output:
-- folio-assistant/computations/option-e-deuteron-delta-lambda-probe.witness.json
+- computations/option-e-deuteron-delta-lambda-probe.witness.json
 """
 
 
@@ -49,9 +49,11 @@ def main() -> int:
     mp.dps = 50
 
     repo_root = Path(__file__).resolve().parent.parent.parent
+    # Witness lives under computations/ (moved out of folio-assistant/
+    # in the 2026-06-02 cluster reorg; the old folio-assistant path is
+    # stale).
     chi_path = (
         repo_root
-        / "folio-assistant"
         / "computations"
         / "chi-deuteron-h6-at-q0-50dps.witness.json"
     )
@@ -62,15 +64,50 @@ def main() -> int:
     partitions_data = chi_data["by_partition"]
     assert len(partitions_data) == 11
 
-    # Parse y_λ and χ^λ
+    # The chi witness now carries only {partition, chi_lambda}
+    # (schema slimmed in the native-Rust χ^λ refactor). Load y_λ(q_0)
+    # from the canonical cache `y-lambda-at-q0.witness.json`
+    # (producer: y_lambda_at_q0_cache.py) and compute the rep
+    # dimension via the hook-length formula. contribution = y_λ·χ^λ.
+    y_path = repo_root / "computations" / "y-lambda-at-q0.witness.json"
+    with y_path.open() as f:
+        y_data = json.load(f)
+    y_by_n = y_data.get("by_n") or y_data["data"]["by_n"]
+    y_lookup = {
+        tuple(e["partition"]): mpf(e["y_at_q0_50dps"])
+        for e in y_by_n["6"]
+    }
+
+    def _hook_length_dim(part):
+        """dim of the irrep S^λ of S_n via the hook-length formula."""
+        import math
+        n = sum(part)
+        # cell (i, j) hook = arm + leg + 1
+        cols = part
+        # conjugate partition for leg lengths
+        conj = [sum(1 for r in cols if r > j) for j in range(max(cols))]
+        prod = 1
+        for i, row_len in enumerate(cols):
+            for j in range(row_len):
+                arm = row_len - j - 1
+                leg = conj[j] - i - 1
+                prod *= (arm + leg + 1)
+        return math.factorial(n) // prod
+
+    # Parse χ^λ; join y_λ from cache; derive dim and contribution.
     rows = []
     for entry in partitions_data:
+        part = (entry["partition"] if isinstance(entry["partition"], list)
+                else json.loads(entry["partition"]))
+        part_t = tuple(part)
+        chi = mpf(entry["chi_lambda"])
+        y_lam = y_lookup[part_t]
         rows.append({
-            "partition": entry["partition"] if isinstance(entry["partition"], list) else eval(entry["partition"]),
-            "dim": int(entry["dim"]),
-            "y_lambda": mpf(entry["y_lambda"]),
-            "chi_lambda": mpf(entry["chi_lambda"]),
-            "contribution": mpf(entry["contribution"]),  # y_λ * χ^λ
+            "partition": list(part),
+            "dim": _hook_length_dim(part),
+            "y_lambda": y_lam,
+            "chi_lambda": chi,
+            "contribution": y_lam * chi,  # y_λ · χ^λ
         })
 
     # AME data
@@ -209,7 +246,6 @@ def main() -> int:
 
     out_path = (
         repo_root
-        / "folio-assistant"
         / "computations"
         / "option-e-deuteron-delta-lambda-probe.witness.json"
     )

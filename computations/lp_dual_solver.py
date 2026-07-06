@@ -3,7 +3,7 @@
 The canonical implementation moved to pyhecke.lp_dual_solver per workplan
 v2 item 2c (PR #1136 / 2c). This file is a thin shim that keeps
 from lp_dual_solver import X working unchanged for the existing
-external importers in folio-assistant/computations/.
+external importers in computations/.
 
 For new code, import directly from pyhecke:
 

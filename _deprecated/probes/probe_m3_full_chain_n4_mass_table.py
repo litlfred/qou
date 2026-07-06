@@ -13,7 +13,7 @@ should treat the M_*_MEV_VALIDATION usage as CAL-3-ish anchor,
 NOT as an independent calibration input.
 """
 
-import sys; sys.path.insert(0, '/home/user/qou/folio-assistant/computations')
+import sys; sys.path.insert(0, '/home/user/qou/computations')
 import json
 from paper_six_term_isotope_sweep import assemble_per_derivation_weights, q_beta_for_source
 from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION, M_D_MEV_VALIDATION, M_T_MEV_VALIDATION, M_HE3_MEV_VALIDATION, M_HE4_MEV_VALIDATION
@@ -51,7 +51,7 @@ print()
 print(f'MAE (full_chain_n4): {mae_pct:.4f}%   ({mae_pct*1e4:.1f} ppm)')
 
 # Save witness
-with open('/home/user/qou/folio-assistant/computations/m3-full-chain-n4-mass-table.witness.json', 'w') as f:
+with open('/home/user/qou/computations/m3-full-chain-n4-mass-table.witness.json', 'w') as f:
     json.dump({
         "computation": "m3-full-chain-n4-mass-table",
         "description": "Per-derivation mass table with full N=4 categorical Q_β chain (c_2 = b², c_3 = -2, c_4 = b²+1/2).",

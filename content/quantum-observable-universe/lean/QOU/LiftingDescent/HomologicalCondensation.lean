@@ -13,7 +13,7 @@ that the spectral sequence collapses with `E_∞^{p, >0}(n) = 0`
 
   `n ∈ {2, 8, 20, 28, 50, 82, 126}`.
 
-Conjectural-propagation (CLAUDE.md §3b): downstream of
+Conjectural-propagation (AGENTS.md §3b): downstream of
 `SaturatedShellConjecture`, so the condensation claim itself is also
 axiomatised here.
 

@@ -5,7 +5,7 @@
 items blocked by the same-day platform refactor — the exact root cause and the
 environment needed to finish them. Investigated from a **qou-only** sandbox
 *after* the ~42-commit refactor that moved the platform code + QA pipeline out
-of `qou` (`folio-assistant/computations/` → top-level `computations/`;
+of `qou` (`computations/` → top-level `computations/`;
 `folio-assistant/` platform + `content/pipeline/` checkers migrated to the
 standalone folio-assistant repo).
 

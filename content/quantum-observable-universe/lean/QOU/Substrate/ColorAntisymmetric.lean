@@ -1,4 +1,5 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.GroupTheory.Perm.Sign
 import Mathlib.Tactic
 
 /-!
@@ -61,7 +62,7 @@ theorem signPlancherelWeight_3 : signPlancherelWeight 3 = 1 / 6 := by
 
 /-- **Conjectural placeholder class**: substrate-level QCD color singlet.
 
-    Per CLAUDE.md §3b-cond: this class axiomatizes the conjecture that
+    Per AGENTS.md §3b-cond: this class axiomatizes the conjecture that
     the proton (uud baryon) wave function on 3 color strands is fully
     antisymmetric (Fermi statistics), making the COLOR action lie in
     the sign rep V_(1,1,1) of S_3.
@@ -76,12 +77,22 @@ theorem signPlancherelWeight_3 : signPlancherelWeight 3 = 1 / 6 := by
       3. Prove the proton's substrate representation is in this class
 
     None of these are formalized yet. -/
-class FermiColorSinglet (Baryon : Type*) : Prop where
-  /-- Conjectural witness: the baryon's color action lives in the
-      sign rep V_(1,1,1) of S_3. The categorical content is
-      placeholder; the actual implementation requires substrate
-      machinery beyond what Mathlib + this scaffold provides. -/
-  color_in_sign_rep : True   -- placeholder — actual content TBD
+class FermiColorSinglet (Baryon : Type*) where
+  /-- The baryon's color action: a permutation of the three color
+      labels acts on the (one-dimensional) color amplitude. -/
+  colorAction : Equiv.Perm (Fin 3) → Baryon → Baryon
+  /-- The color amplitude that the action scales. -/
+  amplitude : Baryon → ℚ
+  /-- **Conjectural content (V_(1,1,1) sign rep).** The color action is
+      antisymmetric — every transposition `Equiv.swap i j` (`i ≠ j`)
+      negates the color amplitude, i.e. the action carries the sign
+      character of `S_3`, placing the color state in the sign rep
+      `V_(1,1,1)`. This is the substrate analogue of QCD color
+      antisymmetry (Fermi statistics); the full categorical derivation
+      is multi-session open work, so no instance is provided here. -/
+  color_in_sign_rep :
+    ∀ (b : Baryon) (i j : Fin 3), i ≠ j →
+      amplitude (colorAction (Equiv.swap i j) b) = - amplitude b
 
 /-- **Conditional theorem**: if a baryon admits a Fermi color singlet
     structure, then its sign-block Plancherel weight at H_3 = 1/6.
@@ -94,7 +105,7 @@ theorem fermi_implies_signWeight_eq_one_sixth
     signPlancherelWeight 3 = 1 / 6 :=
   signPlancherelWeight_3
 
-/-- **Open work** documented here for future agents:
+/-! **Open work** documented here for future agents:
 
     (1) The sign rep is 1-dim — formalize this in Mathlib if not
         already present (currently scaffolded via the
@@ -109,10 +120,29 @@ theorem fermi_implies_signWeight_eq_one_sixth
         projection of the EM coupling onto the sign block —
         currently no Lean infrastructure exists for this.
 
-    Each of (1), (2), (3) is multi-session open work.
+    Item (2) is now formalized below (`sign_transposition_eq_neg_one`);
+    (1) and (3) remain multi-session open work.
 -/
 section OpenWork
--- Intentionally empty — see docstring above for what's needed.
+
+/-- **Open-work item (2), formalized.** Every transposition of three
+    color labels acts on the sign representation of `S_3` as
+    multiplication by `-1`: the sign of `Equiv.swap i j` (for `i ≠ j`,
+    `i j : Fin 3`) is `-1`. This is the representation-theoretic
+    generator of the color antisymmetry posited by the
+    `FermiColorSinglet` conjecture — proved directly from Mathlib's
+    sign homomorphism, sorry-free. -/
+theorem sign_transposition_eq_neg_one {i j : Fin 3} (h : i ≠ j) :
+    Equiv.Perm.sign (Equiv.swap i j) = -1 :=
+  Equiv.Perm.sign_swap h
+
+/-- Corollary: a transposition is an odd permutation — it is not in the
+    kernel of the sign homomorphism, so the sign-rep action is genuinely
+    nontrivial (the antisymmetry is not vacuous). -/
+theorem transposition_not_in_sign_kernel {i j : Fin 3} (h : i ≠ j) :
+    Equiv.Perm.sign (Equiv.swap i j) ≠ 1 := by
+  rw [sign_transposition_eq_neg_one h]; decide
+
 end OpenWork
 
 end ColorAntisymmetric

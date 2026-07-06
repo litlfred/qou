@@ -92,11 +92,14 @@ from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
-from codata_constants import M_MU_MEV_VALIDATION as M_MU_MEV  # noqa: E402
+from codata_constants import (  # noqa: E402
+    M_MU_MEV_VALIDATION as M_MU_MEV,
+    M_PI_PM_MEV_VALIDATION,
+)
 
 
 # ── PDG 2024 reference for charged pion ─────────────────────────
-M_PI_PDG_MEV = mpf("139.57039")             # PDG 2024 average
+M_PI_PDG_MEV = M_PI_PM_MEV_VALIDATION       # PDG 2024 (codata_constants registry)
 M_PI_PDG_ERR_MEV = mpf("0.00018")           # ±0.00018 MeV (1.3 ppb)
 
 

@@ -1,5 +1,7 @@
+import Mathlib.Tactic
+
 /-!
-# QOU.BraidKnot.wigner2_coefficient — placeholder stub
+# QOU.BraidKnot.wigner2_coefficient
 
 **Placeholder canonical** for content block at
 [`quantum-observable-universe/braids-and-knots/wigner-2-coefficient.ts`](quantum-observable-universe/braids-and-knots/wigner-2-coefficient.ts).
@@ -15,30 +17,37 @@ namespace QOU.BraidKnot
 /-- Abstract context for the `wigner2_coefficient` claim — manuscript-themed
     typed fields below; sub-claims encode (i) the per-generator-trace
     identity, (ii) the BW coefficient closed form, and (iii) the explicit
-    `λ = [3,2,1]` evaluation. -/
-class Wigner2CoefficientContext where
-  /-- Substrate parameter `q : ℝ`. -/
-  q : ℝ
+    `λ = [3,2,1]` evaluation.
+
+    **Base ring (§7c).** The substrate parameter `q`, the Hecke parameter
+    `h = q - q⁻¹`, the per-generator trace, the BW coefficient `C_λ`, and
+    the Plancherel weight `w_λ` are rational functions of `q`; the two
+    sub-claims (`per_gen_trace = h/2`, `C_λ = w_λ·h/2`) are field identities
+    (`q⁻¹`, `/2`, `±`, `·`; no `Real.*`, no ordering). The context is
+    therefore stated over a generic field `(R : Type*) [Field R]`. -/
+class Wigner2CoefficientContext (R : Type*) [Field R] where
+  /-- Substrate parameter `q : R`. -/
+  q : R
   /-- Hecke parameter `h = q - q⁻¹`. -/
-  h : ℝ
+  h : R
   h_eq : h = q - q⁻¹
   /-- Partition / Young-diagram indexing. -/
   PartitionIdx : Type
   /-- For each self-conjugate partition `λ`, the per-generator average trace
       `⟨tr σ_g⟩_λ = tr(σ_g^{(λ)}) / dim(λ)`. -/
-  per_gen_trace : PartitionIdx → ℝ
+  per_gen_trace : PartitionIdx → R
   /-- The BW coefficient indexed by partition. -/
-  C_λ : PartitionIdx → ℝ
-  /-- The classical Plancherel weight `w_λ = (dim V_λ)² / n!`. -/
-  w_λ : PartitionIdx → ℝ
+  C_lam : PartitionIdx → R
+  /-- The classical Plancherel weight `w_lam = (dim V_λ)² / n!`. -/
+  w_lam : PartitionIdx → R
   /-- Manuscript sub-claim (i): for every self-conjugate `λ` and every
       generator `g`, the per-generator trace equals `h / 2`. -/
   claim_i_per_generator_trace :
-    ∀ λ : PartitionIdx, per_gen_trace λ = h / 2
+    ∀ lam : PartitionIdx, per_gen_trace lam = h / 2
   /-- Manuscript sub-claim (ii): BW coefficient closed form
-      `C_λ = w_λ · h / 2` for every self-conjugate `λ`. -/
+      `C_lam = w_lam · h / 2` for every self-conjugate `λ`. -/
   claim_ii_BW_closed_form :
-    ∀ λ : PartitionIdx, C_λ λ = w_λ λ * h / 2
+    ∀ lam : PartitionIdx, C_lam lam = w_lam lam * h / 2
 
 /-- **Manuscript statement** (full body):
 
@@ -112,9 +121,9 @@ of shape $\lambda$.  Under this involution:
     sub-claim fields; concretisation requires per-block manuscript
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wigner-2-coefficient.ts
-theorem wigner2_coefficient [ctx : Wigner2CoefficientContext] :
-    (∀ λ : ctx.PartitionIdx, ctx.per_gen_trace λ = ctx.h / 2) ∧
-    (∀ λ : ctx.PartitionIdx, ctx.C_λ λ = ctx.w_λ λ * ctx.h / 2) :=
+def wigner2_coefficient {R : Type*} [Field R] [ctx : Wigner2CoefficientContext R] :
+    (∀ lam : ctx.PartitionIdx, ctx.per_gen_trace lam = ctx.h / 2) ∧
+    (∀ lam : ctx.PartitionIdx, ctx.C_lam lam = ctx.w_lam lam * ctx.h / 2) :=
   ⟨ctx.claim_i_per_generator_trace, ctx.claim_ii_BW_closed_form⟩
 
 end QOU.BraidKnot

@@ -24,7 +24,7 @@ suggestive but carry residuals at the few-percent level — consistent
 with further-stratum corrections or q-deformation away from q=1.
 
 Run:
-    python3 folio-assistant/computations/khovanov_klr_rank_cohomology_probe.py
+    python3 computations/khovanov_klr_rank_cohomology_probe.py
 """
 from __future__ import annotations
 

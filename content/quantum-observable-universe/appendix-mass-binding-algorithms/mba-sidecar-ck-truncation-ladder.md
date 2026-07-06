@@ -1,6 +1,6 @@
 **Algorithm ($c_k$ truncation ladder).**
-*Compute the coefficients of the convergent $Q_\beta$ series
-$Q_\beta = Q_{\mathrm{base}} \cdot \prod_{k = 2}^{N} (1 + c_k\, u^k)$
+*Compute the coefficients of the convergent $\mathfrak{Q}_\beta$ series
+$\mathfrak{Q}_\beta = Q_{\mathrm{base}} \cdot \prod_{k = 2}^{N} (1 + c_k\, u^k)$
 and report each $c_k$ with its **tiered classification**.*
 
 ### Input
@@ -23,7 +23,7 @@ and report each $c_k$ with its **tiered classification**.*
 | $\geq 4$ | $q_0$-dependent | **near-match** | N=4→N=5 non-monotonicity is the experimental signature |
 | any | empirical fit | **fitted** | flagged as discipline violation |
 
-*Per CLAUDE.md "Q_β c_k is a TRUNCATION ORDER, not a wire/un-wire
+*Per AGENTS.md "$\mathfrak{Q}_\beta$ c_k is a TRUNCATION ORDER, not a wire/un-wire
 gate", **never** report tiers as binary wired / dropped — always
 tiered.*
 
@@ -48,23 +48,23 @@ inequality, and the Taylor-exactness of $c_2$.*
 ### Python API entry point
 
 *Canonical compute is the script
-[`folio-assistant/computations/q_beta_predicted.py`](../../../folio-assistant/computations/q_beta_predicted.py),
+[`computations/q_beta_predicted.py`](../../../computations/q_beta_predicted.py),
 which records each $c_k$ with its tier in the witness JSON.
 Higher-precision regenerations use
-[`build_cal_3_q_beta_witness.py`](../../../folio-assistant/computations/build_cal_3_q_beta_witness.py).*
+[`build_cal_3_q_beta_witness.py`](../../../computations/build_cal_3_q_beta_witness.py).*
 
 ### Witness contract
 
 *Canonical witness:
-[`q-beta-predicted.witness.json`](../../../folio-assistant/computations/q-beta-predicted.witness.json).
-**Must** record each $c_k$ alongside its tier. The Q_β subdir
+[`q-beta-predicted.witness.json`](../../../computations/q-beta-predicted.witness.json).
+**Must** record each $c_k$ alongside its tier. The $\mathfrak{Q}_\beta$ subdir
 ledger ([`docs/coordination/1ppq-qbeta.md`](../../../docs/coordination/1ppq-qbeta.md))
 maintains the flip-flop history table; any wire/un-wire decision
 must update both.*
 
 ### Notes
 
-*Permanent fix path is the Q_β Habiro element parallel to
+*Permanent fix path is the $\mathfrak{Q}_\beta$ Habiro element parallel to
 $\alpha_{\mathrm{EM}}$'s $[2]_q \cdot (1 - h^2 \alpha)$
 (PR #1511). The $c_3$ flip-flop history (six entries as of
 2026-05-31) is the canonical example of why tiered classification

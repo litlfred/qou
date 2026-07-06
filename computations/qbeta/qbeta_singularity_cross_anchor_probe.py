@@ -10,7 +10,7 @@ q_muon anchor (the alternative substrate q value, superseded
 Step 1 (PR #1727) at q_proton found `c_k · u_subst^k → 2.118e-13` at
 k=8,9,10 (simple-pole signature, residue A = 1.804e-15 ≈ 1 ppQ).
 
-Per CLAUDE.md §"Im(q) fibre vs observable" (2026-06-01):
+Per AGENTS.md §"Im(q) fibre vs observable" (2026-06-01):
 
 > The c_k Taylor coefficients live in the FIBRE (formal q-deformation,
 > potentially complex). Each q_0 anchor is a different archimedean

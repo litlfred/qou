@@ -14,8 +14,8 @@ Hecke element $T_w \in H_{n_0}(q_0)$ in Gröbner–Shirshov normal form.
 The GB-NF carries a length filtration $\ell$ and a jet-order grading
 ($\ell$ from Coxeter length on $S_{n_0}$; jet-order from the temporal
 sequence of reductions; both certificate components verified for
-small cases by [`gb_filtration_jet_tracker.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb_filtration_jet_tracker.py)
-and locked in [`gb-filtration-jet-order.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/gb-filtration-jet-order.witness.json)).
+small cases by the canonical formalism
+and locked in [`gb-filtration-jet-order.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/gb-filtration-jet-order.witness.json)).
 
 **Yekutieli at finite slice** (multiplicative integration on surfaces,
 restricted to finite slicing depth = filtration grade $\leq k$):
@@ -116,11 +116,12 @@ place (step 1 of the algorithm). Within the present implementation:
  replace this substitution with a principled derivation.
 - For `recursive-on-⁴He` (${}^{8}$Be–${}^{40}$Ca) the recursion factors through
  the ${}^{4}$He magic-A formula and inherits its methodology.
-- For ${}^{6}$Li, ${}^{7}$Li the deprecated volume-match search runs *backwards*
- from step 6 to a candidate knot, bypassing step 1 entirely.
- Quarantined by [prop:recursive-atom-knot-atlas](#prop:recursive-atom-knot-atlas)
- §"Provisional / deprecated methodology". The principled atlas
- excludes them.
+- A volume-match search that runs *backwards* from step 6 to a
+ candidate knot, bypassing step 1 entirely, is excluded: it
+ reverse-engineers the knot from the AME target rather than deriving
+ it from the categorical pipeline. The principled atlas
+ ([prop:recursive-atom-knot-atlas](#prop:recursive-atom-knot-atlas))
+ admits no such entry.
 
 The collapsing-spectral-sequence framing
 ([prop:gb-spectral-sequence](#prop:gb-spectral-sequence),

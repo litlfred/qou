@@ -15,7 +15,7 @@ ALL k, not just c_3. If broken at some k: the rule is special to c_3
 and the higher rungs have richer per-block structure.
 
 Run:
-    python3 folio-assistant/computations/qbeta_per_block_uniform_rule_verify.py
+    python3 computations/qbeta_per_block_uniform_rule_verify.py
 """
 from __future__ import annotations
 

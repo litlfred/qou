@@ -361,7 +361,7 @@ def main():
             "z": "4993/10000",
             "results": [asdict(r) for r in results],
         }
-        out = Path("folio-assistant/computations/hecke-engine.witness.json")
+        out = Path("computations/hecke-engine.witness.json")
         with open(out, "w") as f:
             json.dump(witness, f, indent=2)
         print(f"\nWitness: {out}")

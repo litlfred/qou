@@ -13,7 +13,7 @@ Phase 4: Hydrogen = proton ⊠ electron via Frobenius dual Hopf link
 Phase 5: Deuterium, He-3, He-4
 
 Usage:
-    cd folio-assistant/computations && python3 four-term-photon-to-atoms.py
+    cd computations && python3 four-term-photon-to-atoms.py
 """
 import json
 import numpy as np

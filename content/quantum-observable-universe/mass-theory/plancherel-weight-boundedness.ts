@@ -19,8 +19,8 @@ export default proposition({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/probes/plancherel_weight_boundedness_probe.py",
-    witness: "folio-assistant/computations/probes/plancherel-weight-boundedness-probe.witness.json",
+    script: "computations/probes/plancherel_weight_boundedness_probe.py",
+    witness: "computations/probes/plancherel-weight-boundedness-probe.witness.json",
     status: "verified",
   },
 });

@@ -1,3 +1,9 @@
+Quarks are reassigned from individual knot types to Borromean-linked
+unknots for the sake of the mass budget: with this identification a
+baryon's mass arises almost entirely from the Borromean linking volume,
+matching the QCD result that ${\sim}99\%$ of proton mass is binding
+energy.  That payoff motivates the revised dictionary below.
+
 The original dictionary assigned individual knot types to quarks
 (three-twist $5_2$ for strange, torus $7_1$ for charm, etc.).  The
 revised picture ([Conjecture](#conj:borromean-quark)) identifies quarks
@@ -14,8 +20,7 @@ link $\mathcal{L}_H$ ([Definition](#def:borromean-baryon)):
 Up/down flavour arises from the **crossing orientation** of each unknot
 within $\mathcal{B}_3$, not from distinct knot types.  The baryon mass
 comes almost entirely from the Borromean linking volume
-$\mathrm{Vol}(S^3 \setminus \mathcal{B}_3) = 7.328\ldots$, matching
-the QCD result that ${\sim}99\%$ of proton mass is binding energy.
+$\mathrm{Vol}(S^3 \setminus \mathcal{B}_3) = 7.328\ldots$.
 
 The mass of each hadron is determined by the terminal resolution
 ([terminal resolution](#prop:terminal-resolution)) and matches CODATA values to

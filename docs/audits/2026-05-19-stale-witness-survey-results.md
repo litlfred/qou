@@ -6,7 +6,7 @@
 
 ## Survey methodology
 
-For each `*.witness.json` under `folio-assistant/computations/` (596 live witnesses post-PR #663 orphan cleanup):
+For each `*.witness.json` under `computations/` (596 live witnesses post-PR #663 orphan cleanup):
 
 1. Read `scriptFile` and `computedAt` from the witness.
 2. Find the last commit timestamp of the script (`git log -1 --follow --format=%cI -- <path>`).

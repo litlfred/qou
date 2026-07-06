@@ -9,7 +9,7 @@ $$
 
 be a central extension of gerbes on a site $\mathcal{S}$, banded by an
 abelian sheaf $\mathcal{B}$.  We say that $\mathbf{C}$ satisfies the
-*Yekutieli Lifting Condition* with respect to
+**Yekutieli Lifting Condition** with respect to
 $(\mathfrak{G}', \mathfrak{G}, \mathcal{B})$ if, for every object
 $x \in \mathrm{Ob}(\mathfrak{G})$, the obstruction to lifting $x$ to an
 object $x' \in \mathrm{Ob}(\mathfrak{G}')$ is classified by a single

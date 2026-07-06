@@ -1,4 +1,4 @@
-# Proposal — subdirectory refactor of `folio-assistant/computations/`
+# Proposal — subdirectory refactor of `computations/`
 
 **Status:** ACCEPTED 2026-06-02 (see "Owner decisions" at bottom).
 **Branch:** `claude/computations-subdirectory-refactor-2026-06-02`
@@ -6,7 +6,7 @@
 
 ## Problem
 
-`folio-assistant/computations/` ships **794 `.py` files at a single
+`computations/` ships **794 `.py` files at a single
 flat level** (post the 2026-05-30 purge; was 901 before). Browsing
 the directory in a file picker or `ls` is unworkable; the audit
 docs / handover notes (`AUDIT-*.md`, `DERIVATION-*.md`,
@@ -48,7 +48,7 @@ Three constraints make a naïve `git mv` dangerous:
 
 2. **CI workflows hardcode script paths** —
    `.github/workflows/witness-pipeline.yml` has 15+ explicit
-   `folio-assistant/computations/<script>.py` references in its
+   `computations/<script>.py` references in its
    `paths:` filter and per-step `run:` lines.
 
 3. **287 distinct scripts are referenced from `content/`** — content
@@ -62,7 +62,7 @@ wrong**. This proposal is the safe ramp.
 ## Proposed scheme
 
 ```
-folio-assistant/computations/
+computations/
   __init__.py                    # makes the dir a package
   _path_bridge.py                # adds parent dir to sys.path on import
                                  #   (preserves `from X import Y`
@@ -139,7 +139,7 @@ follows the same recipe:
 2. Add `__init__.py` to the new subdir (re-exports nothing —
    modules stay importable by bare name via the path bridge).
 3. Drop a `_path_bridge.py` into `computations/` (one-time, in
-   Phase 0) that inserts `folio-assistant/computations/` into
+   Phase 0) that inserts `computations/` into
    `sys.path` if it isn't already, so flat-namespace
    `from X import Y` continues to work from any subdir.
 4. Add `from . import _path_bridge  # noqa: F401` as the FIRST
@@ -150,7 +150,7 @@ follows the same recipe:
    `.github/workflows/witness-pipeline.yml`,
    `.github/workflows/publish.yml`, `.github/workflows/blueprint.yml`.
    The `paths:` filter is glob-friendly:
-   `folio-assistant/computations/**/*.py` covers all sub-dirs.
+   `computations/**/*.py` covers all sub-dirs.
 6. Update `content/` references via a single codemod script (see
    `scripts/migrate-computation-paths.ts` — to be added in Phase 0).
 7. Re-run `bun run validate quantum-observable-universe/` and the
@@ -160,10 +160,10 @@ follows the same recipe:
 
 Lay the substrate that makes subsequent moves zero-risk:
 
-- Add `folio-assistant/computations/__init__.py` (empty).
-- Add `folio-assistant/computations/_path_bridge.py`:
+- Add `computations/__init__.py` (empty).
+- Add `computations/_path_bridge.py`:
   ```python
-  """Ensures `folio-assistant/computations/` is on sys.path,
+  """Ensures `computations/` is on sys.path,
   preserving flat-namespace imports after the subdirectory
   refactor (see docs/proposals/computations-subdirectory-refactor.md)."""
   import sys
@@ -256,7 +256,7 @@ Comfortably within a single working tranche if PR doesn't churn.
 
 2. **`content/` reference migration — codemod vs hand-edit?**
    The 287 references are mechanical
-   (`folio-assistant/computations/X.py` → `folio-assistant/computations/probes/X.py`).
+   (`computations/X.py` → `computations/probes/X.py`).
    A TypeScript codemod with the move table is < 50 LOC.
    Recommended.
 
@@ -277,7 +277,7 @@ Comfortably within a single working tranche if PR doesn't churn.
    `probes/A_operator_per_interface_probe.witness.json` side by
    side. **Pro:** keeps the producer + sidecar coherent. **Con:**
    doubles the move count and complicates the audit-wiring scan,
-   which currently globs `folio-assistant/computations/*.witness.json`.
+   which currently globs `computations/*.witness.json`.
    Recommend deferring — script moves first, witness moves only if
    the audit script gets a corresponding glob upgrade.
 
@@ -317,8 +317,8 @@ new path; the same maps with `.py` → `.witness.json` are added).
 
 **Required upgrades** (additional Phase 0 tasks):
 
-- `scripts/audit-wiring.ts` — change `glob("folio-assistant/computations/*.witness.json")` to recursive `glob("folio-assistant/computations/**/*.witness.json")`.
-- `.github/workflows/witness-pipeline.yml` — change `paths:` patterns from `folio-assistant/computations/*.witness.json` to `folio-assistant/computations/**/*.witness.json` (same for `*.derivation.json`).
+- `scripts/audit-wiring.ts` — change `glob("computations/*.witness.json")` to recursive `glob("computations/**/*.witness.json")`.
+- `.github/workflows/witness-pipeline.yml` — change `paths:` patterns from `computations/*.witness.json` to `computations/**/*.witness.json` (same for `*.derivation.json`).
 - Any other tool that scans witnesses (run-pipeline.py, etc.) gets a corresponding `**` upgrade.
 
 ## Next step

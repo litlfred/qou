@@ -1,6 +1,7 @@
 import Mathlib.Algebra.Algebra.Basic
 import Mathlib.RingTheory.Ideal.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Tactic.NoncommRing
 
 
 /-!
@@ -52,8 +53,11 @@ structure Derivation (R : Type u) [CommRing R]
 def innerDerivation {R : Type u} [CommRing R]
     {A : Type u} [Ring A] [Algebra R A] (x : A) : A →ₗ[R] A where
   toFun  := fun a => x * a - a * x
-  map_add' := by intros; simp [mul_add, add_mul]; ring
-  map_smul' := by intros; simp [Algebra.smul_def]; ring
+  map_add' := by intros; noncomm_ring
+  map_smul' := by
+    intros r a
+    simp only [RingHom.id_apply, Algebra.smul_def, mul_sub, ← mul_assoc,
+      Algebra.commutes r x]
 
 /-- **Whitehead lemma (semisimple HH¹ vanishing, axiom form).**
 

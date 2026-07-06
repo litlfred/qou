@@ -2,7 +2,7 @@
 
 # A.3 v2 result — shell-aware level-1 (Manhattan distance to magic) FAILED to close spread
 
-**Pair:** [`per_braid_tower_shell_aware.py`](../../folio-assistant/computations/per_braid_tower_shell_aware.py)
+**Pair:** [`per_braid_tower_shell_aware.py`](../../computations/per_braid_tower_shell_aware.py)
 + witness [`2026-05-02-shell-aware-level-1.witness.json`](2026-05-02-shell-aware-level-1.witness.json).
 
 The cal/m_e structure audit

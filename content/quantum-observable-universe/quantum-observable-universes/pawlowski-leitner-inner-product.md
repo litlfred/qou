@@ -43,7 +43,7 @@ This orthogonality has two consequences for the QOU framework:
 1. **Decomposition of hadron states.** A
    [categorical hadron](#def:hadron) of valence $n$ can be
    uniquely expanded in the PawLei basis, with
-   coefficients that are physically interpretable as partial-wave
+   coefficients that are the partial-wave
    amplitudes.
 2. **Compatibility with the Frobenius form.** The inner product
    $\langle{-},{-}\rangle_{\mathrm{PL}}$ agrees with the restriction
@@ -54,3 +54,5 @@ This orthogonality has two consequences for the QOU framework:
 The algebraic foundations (PBW bases over commutative rings) are
 established in \cite{leitnerpawloski2004}; norm formulas follow from
 the Temperley--Lieb calculus and $6j$-symbols.
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

@@ -46,11 +46,11 @@ $T_{2,3}$ within $\mathcal{G}$. The knot group relation
 $x^2 = y^9 = (y^3)^3$ reflects this factorisation: the longitudinal
 generator $y$ completes three full $T_{2,3}$ periods before closing.
 
-This three-fold structure resonates with the three coral tubes
+This three-fold structure resonates with the three color tubes
 ([color tube interpretation](#rem:color-tube-interpretation)). Each
 color fiber carries one copy of the trefoil pattern; $T_{2,9}$
 interpolates all three simultaneously, wrapping once through each
-coral tube per longitudinal period.
+color tube per longitudinal period.
 
 **Force interpretation.**
 The matter/force distinction in the Standard Model aligns with a
@@ -75,7 +75,7 @@ $$
 $$
 
 The $9$ crossings of $T_{2,9}$ — all of the same sign, as for any
-torus knot — provide exactly three crossing triples, one per coral
+torus knot — provide exactly three crossing triples, one per color
 tube. In the Borromean baryon
 ([categorical proton](#def:categorical-proton)), the three quark
 components (each $T_{2,3}$) are threaded through the color fibers;

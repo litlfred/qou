@@ -4,7 +4,7 @@ $$
   B(\mathfrak{H}) \;=\; m_e \cdot \rho \cdot M(\mathfrak{H})\big|_{q = q_0}
 $$
 
-is currently determined case-by-case as a numerical by-product of
+is currently determined case-by-case as a canonical by-product of
 the Wedderburn SDP search. This conjecture proposes a structural rule
 for $\rho$ in terms of the categorical data of $\mathfrak{H}$.
 
@@ -38,7 +38,7 @@ following heuristic table. **Caveat (issue #604, deliverable 4):** the
 "Dominant $\lambda^*$" entries here are *conjectural* and were
 populated before the $H_{3 \cdot A}$ binding-K analysis below; they are kept
 for historical reference and reconciliation with the older narrative.
-The numerically verified rule (see "Critical structural finding" below)
+The canonical verified rule (see "Critical structural finding" below)
 must be evaluated at the atomic strand count $n_0 = 3 \cdot A$:
 
 | Particle | Knot | $n_0 = 3\cdot A$ | Conjectural dominant $\lambda^*$ | $\dim_q(\lambda^*)$ at $q_0$ | Obs.\ $\rho$ |
@@ -53,7 +53,7 @@ $n_0 = 6$ for ${}^{3}$H/${}^{3}$He, which conflicted with the joint-tower SDP
 convention $n_0 = 3 \cdot A$ used in
 [`prop:joint-tower-sdp-confinement`](#prop:joint-tower-sdp-confinement)
 and in
-[`joint-tower-sdp-h6-h9.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/joint-tower-sdp-h6-h9.witness.json)
+[`joint-tower-sdp-h6-h9.witness.json`](https://github.com/litlfred/qou/blob/main/computations/joint-tower-sdp-h6-h9.witness.json)
 (`atomic_n_0 = 9` for ${}^{3}$H, ${}^{3}$He). This table is now reconciled to
 $n_0 = 3 \cdot A$. The conjectural $\lambda^* \vdash 9$ entries
 remain to be verified once Hoefsmit at $H_9$ is implemented (deferred
@@ -109,9 +109,9 @@ and $\rho = 2$ for double-cover nuclei.
 
 ## Critical structural finding (issue #604, deliverable 4)
 
-The B_3-level numerical evaluation
-([`folio-assistant/computations/rho_prefactor_structural_verifier.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/rho_prefactor_structural_verifier.py),
-witness [`rho-prefactor-structural-verifier.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/rho-prefactor-structural-verifier.witness.json))
+The B_3-level canonical evaluation
+(the canonical formalism,
+witness [`rho-prefactor-structural-verifier.witness.json`](https://github.com/litlfred/qou/blob/main/computations/rho-prefactor-structural-verifier.witness.json))
 **falsifies** the simple form of the rule "$\rho = \mathrm{round}[\dim_q(\lambda^*)]$" when
 $\lambda^*$ is computed from the *braid strand count* alone:
 
@@ -199,3 +199,5 @@ of obligation 3.
 
 This conjecture directly addresses GAP-A-4 of the
 [derivation audit report](#prose:derivation-audit-report).
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

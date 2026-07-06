@@ -96,9 +96,22 @@ import os
 import re
 import sys
 
-BASE = os.path.join(os.path.dirname(__file__), "..", "..",
-                    "content", "quantum-observable-universe")
-BASE = os.path.normpath(BASE)
+def _find_base():
+    # `computations/` is one level below the repo root, so walk up from this
+    # file until we find `content/quantum-observable-universe` rather than
+    # hard-coding a `..` count (the previous two-`..` overshot the repo root,
+    # e.g. to /home/user/ instead of /home/user/qou/, and the tool crashed).
+    d = os.path.dirname(os.path.abspath(__file__))
+    for _ in range(8):
+        cand = os.path.join(d, "content", "quantum-observable-universe")
+        if os.path.isdir(cand):
+            return cand
+        d = os.path.dirname(d)
+    return os.path.normpath(os.path.join(
+        os.path.dirname(__file__), "..", "content", "quantum-observable-universe"))
+
+
+BASE = _find_base()
 
 # Foundational objects intentionally developed in a late chapter but
 # referenced early. A proof-dep edge whose TARGET is on this list is
@@ -145,6 +158,16 @@ SUBJECT_MATCHED_DEFS = {
     "mass-endomorphism::def:mass-identity",           # mass identity
     "measurement-observation::def:bundle-isotopy-equivalence",
     "particle-interactions::def:knot-particle-generation",
+    # q-flat-connection — subject is the flat connection / local system, the
+    # core object of geometric Langlands, so it genuinely belongs in its
+    # q-geometric-langlands home chapter.  The two early edges
+    # (Ch3 conj:q-harmonic-flow, prop:germ-commutator-q-curvature) are
+    # deliberate narrative couplings: germ-commutator-q-curvature's authorNote
+    # records that its identity [δq₁,δq₂]=F_q is verified *independently* over an
+    # abstract ring and that the F_q ↔ q-flat-connection identification is
+    # "narrative" (the def-cone is conjecture-free, def↔def with q-local-system).
+    # Subject-matched waive, not a mis-home (2026-06-29 detangler triage, e5tn).
+    "q-geometric-langlands::def:q-flat-connection",
     # classical-limit functor 𝓛:𝐂_q→𝐂_1 — subject is the classical limit
     # (7 consumers across stochastic-mechanics + appendix-surreals); the
     # adelic-substrate forward reference is the archimedean-projection

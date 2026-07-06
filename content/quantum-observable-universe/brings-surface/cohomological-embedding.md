@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 The torus knots embeddable on the moduli surface $\Sigma_g$
 of a QOU form a **complete set of representations** — they
 exhaust the available cohomology and span the space of
@@ -155,7 +153,7 @@ a function of the irrep characters, which are spanned by the
 $6$ torus knots.  No knot on $\Sigma_4$ can have an invariant
 independent of $\{T_{2,3}, T_{2,5}, T_{2,7}, T_{2,9}, T_{3,4}, T_{3,5}\}$.
 
-## Consequences
+## Corollaries
 
 1. **Particle finiteness**: the $6$ torus knots are the complete
    knot-particle content.  Every observable hadron is a composite

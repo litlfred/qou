@@ -86,7 +86,6 @@ theorem exchange_coulomb_relation (q m_e : ℝ) (hq : q_int q 2 ≠ 0) :
     lambda_C q m_e * q_int q 3 := by
   unfold lambda_ex lambda_C
   field_simp
-  ring
 
 -- ── Seven-term binding energy ──────────────────────────────────
 
@@ -113,9 +112,11 @@ noncomputable def binding_energy_bw (q m_e : ℝ) (Z N : ℕ)
   -- Term 7: shell correction (increases binding at magic numbers)
   + delta_S q m_e * (f_Z + f_N) / A ^ (2/3 : ℝ)
 
--- ── Conjecture class (CLAUDE.md §3b-cond axiomatisation) ───────
+-- ── Conjecture class (AGENTS.md §3b-cond axiomatisation) ───────
 
-/-- **Conjecture class.** An instance asserts the existence of:
+/- **Conjecture class** (plain comment: the doc-comment below documents
+   `IsAMEValue`; this block documents `class QIntegerMassFormula`).
+   An instance asserts the existence of:
     (i) the magic-proximity function `f_magic : ℕ → ℝ` peaking at
         {2, 8, 20, 28, 50, 82, 126},
     (ii) a CODATA-accuracy bound: for every (Z, N) with binding
@@ -129,11 +130,21 @@ noncomputable def binding_energy_bw (q m_e : ℝ) (Z N : ℕ)
     `sorry` in any concrete instance is understood as **conjecture**,
     not missing proof. Downstream blocks may take
     `[QIntegerMassFormula]` as an explicit hypothesis to remain
-    `theorem`/`proposition` per CLAUDE.md §3b-cond.
+    `theorem`/`proposition` per AGENTS.md §3b-cond.
 
     Ref: [manuscript] Ch 11 §8, conj:q-integer-mass-formula -/
-/-- **Predicate:** Identifies experimental binding energies from the Atomic Mass Evaluation (AME) database. -/
-class IsAMEValue (Z N : ℕ) (B_AME : ℝ) : Prop
+/-- **Predicate:** `B_AME` is the experimental binding energy of the
+    nuclide `(Z, N)` in the Atomic Mass Evaluation (AME) database.
+    Not every `(Z, N, B_AME)` triple is a database entry — the fields
+    record the two physical invariants every real entry satisfies, so
+    `[IsAMEValue Z N B_AME]` is a genuine restriction (e.g. the
+    null nuclide `Z = N = 0` and negative binding energies are
+    excluded). -/
+class IsAMEValue (Z N : ℕ) (B_AME : ℝ) : Prop where
+  /-- A real nuclide has at least one nucleon. -/
+  has_nucleon : 1 ≤ Z + N
+  /-- Measured binding energies are non-negative. -/
+  binding_nonneg : 0 ≤ B_AME
 
 class QIntegerMassFormula where
   /-- Magic-proximity function. Peaks at the nuclear magic numbers
@@ -154,7 +165,7 @@ class QIntegerMassFormula where
       ∃ δ : ℝ, |δ| ≤ tolerance ∧
         B_AME = (1 + δ) * binding_energy_bw q m_e Z N (f_magic Z) (f_magic N)
 
-/-- **Downstream conditional theorem (CLAUDE.md §3b-cond).**
+/-- **Downstream conditional theorem (AGENTS.md §3b-cond).**
     Conditional on `[QIntegerMassFormula]`, every (Z, N) admits a
     relative residual `δ` with `|δ| ≤ tolerance` between the AME
     binding energy and the seven-term prediction. Fully verified
@@ -169,10 +180,13 @@ theorem fits_AME_conditional [inst : QIntegerMassFormula]
 
 
 /-- **Faithful instance.** Carries the conjecture as an explicit sorry. -/
-instance canonical : QIntegerMassFormula where
+noncomputable instance canonical : QIntegerMassFormula where
   f_magic := fun _ => 0
   tolerance := 1 / 100
   tolerance_bound := ⟨by norm_num, by norm_num⟩
+  -- Ref: [manuscript] conj:q-integer-mass-formula (§3b-cond conjectural field):
+  --      the AME-accuracy assertion is the conjecture proper; per AGENTS.md
+  --      §3b the `sorry` denotes "conjectured", not "missing proof".
   fits_AME := sorry
 
 end QOU.Interactions

@@ -26,6 +26,8 @@ Hoefsmit-H5).
 
 namespace QOU.BraidKnot
 
+noncomputable section
+
 /-- **³H empty-constraint SDP** at `heckeDim 9 = 362880`. -/
 abbrev tritium_emptySDP := nucleusEmptySDP 9
 
@@ -54,4 +56,5 @@ abbrev tritium_optimum_is_zero := nucleus_optimum_is_zero 9
 /-- ³H objective at optimum equals 0. -/
 abbrev tritium_objAt_optimum_eq_zero := nucleus_objAt_optimum_eq_zero 9
 
+end  -- noncomputable section
 end QOU.BraidKnot

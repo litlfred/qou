@@ -26,7 +26,7 @@ REFERENCES:
   - docs/coordination/1ppq-qbeta.md session log 2026-06-03.
 
 Usage:
-  python3 folio-assistant/computations/qbeta/qbeta_markov_trace_compute_accuracy_diagnostic.py
+  python3 computations/qbeta/qbeta_markov_trace_compute_accuracy_diagnostic.py
 
 Emits: qbeta-markov-trace-compute-accuracy-diagnostic.witness.json
        (>= 4 assertions: zero deltas for the invariant observables).

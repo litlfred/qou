@@ -50,8 +50,6 @@ basis-preserving deformation.
 
 ## Diagnostics
 
-Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/canonical-watcher.md) §Slot J:
-
 - **GB filtration**: KL polynomials are filtered by length $\ell(w)$
   — the same filtration as the Hecke algebra.
 - **Jet order**: $q = 1$ specialisation; KL polynomials evaluated

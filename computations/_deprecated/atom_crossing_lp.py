@@ -16,7 +16,7 @@ Uses the Python transfer matrix (2×2 traced volume) for speed.
 No NF expansion — just the scalar Markov trace.
 
 Usage:
-    python3 folio-assistant/computations/atom_crossing_lp.py
+    python3 computations/atom_crossing_lp.py
 """
 
 import math, sys

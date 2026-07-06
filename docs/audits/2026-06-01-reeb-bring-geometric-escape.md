@@ -3,8 +3,8 @@
 **Status:** COMPLETE — negative result for the Reeb-rotation channel
 (branch `claude/reeb-bring-geometric-escape-2026-06-01`).
 **Date:** 2026-06-01.
-**Probe:** [`folio-assistant/computations/reeb_rotation_pn_test.py`](../../folio-assistant/computations/reeb_rotation_pn_test.py)
-**Witness:** `folio-assistant/computations/reeb-rotation-pn-test-reeb.witness.json`
+**Probe:** [`computations/reeb_rotation_pn_test.py`](../../computations/reeb_rotation_pn_test.py)
+**Witness:** `computations/reeb-rotation-pn-test-reeb.witness.json`
 
 ## The hypothesis under test
 
@@ -150,7 +150,7 @@ it independently. None exists for the splitting.
 The Reeb bundle lives over the Bring curve `M_Bring` (the substrate's
 Riemann surface). Per
 [`figure-eight-reeb-rotation.md`](../../content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation.md)
-the q-Reeb flow advances the **coral-sector angular coordinate** by `q·t`
+the q-Reeb flow advances the **color-sector angular coordinate** by `q·t`
 per crossing, mixing the two lepton channels `V_{(2)} ↔ V_{(1,1)}` inside
 `V_{(2,1)}`. A knot operator acts on the **same** seminormal blocks
 (`V_{(3)}, V_{(2,1)}, V_{(1,1,1)}`) — proton and neutron do **not** act on

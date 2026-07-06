@@ -12,57 +12,13 @@ $$
 $$
 
 *with $\| T_\beta \|^2_\tau = S^2$.*
-
-## Proof — Lagrangian / completing-the-square argument
-
-Let $X \in H$ satisfy the constraint $\tau_M(X) = S$.  Write the
-decomposition $X = (X - S \cdot 1) + S \cdot 1$ and expand the
-Frobenius norm-squared:
-
-$$
-\| X \|^2_\tau = \tau_M(X \cdot X)
-              = \tau_M\big((X - S \cdot 1)(X - S \cdot 1)\big)
-                + 2 S \, \tau_M(X) - S^2 \, \tau_M(1).
-$$
-
-(This is the algebraic identity $X X = (X - S)(X - S) + 2 S X - S^2$
-inside any commutative ring, lifted to $H$ via the linearity of
-$\tau_M$.  See [`completing_the_square_substrate`](markov-trace-frobenius-selection.lean#L139)
-for the substrate-model statement.)
-
-Substituting the Markov normalisation $\tau_M(1) = 1$ and the
-constraint $\tau_M(X) = S$:
-
-$$
-\| X \|^2_\tau = \| X - S \cdot 1 \|^2_\tau + 2 S^2 - S^2
-             = \| X - S \cdot 1 \|^2_\tau + S^2.
-$$
-
-The Jones–Markov trace $\tau_M$ is **positive-semi-definite on
-squares** (a standard property of the unique normalised trace on
-the symmetric semisimple Iwahori–Hecke algebra at generic $q$),
-so $\| X - S \cdot 1 \|^2_\tau \ge 0$.  Therefore
-
-$$
-\| X \|^2_\tau \;\ge\; S^2,
-$$
-
-with equality iff $\| X - S \cdot 1 \|^2_\tau = 0$.  By the
-[non-degeneracy](#prop:markov-trace-frobenius-selection) of
-$\tau_M$ (Wenzl 1988, Jones 1987), the only $Y \in H$ with
-$\tau_M(Y \cdot Y) = 0$ is $Y = 0$; hence $X - S \cdot 1 = 0$, i.e.
-$X = S \cdot 1$.
-
-Therefore the minimum-Frobenius-norm primal-feasible element is
-$T_\beta = S \cdot 1$, with $\| T_\beta \|^2_\tau = S^2$. $\quad\blacksquare$
-
 ## Corollary — observable c_k invariance
 
-The Q_β production rule extracts the c_k Taylor coefficients from
+The $\mathfrak{Q}_\beta$ production rule extracts the c_k Taylor coefficients from
 $\tau_M(T_\beta)(q)$.  Under either norm choice — Euclidean L2 on
 coordinate-vector space $R^6$ (the SHAPE $\times$ S decomposition)
 or the canonical Markov–Frobenius norm above — the SDP **constraint**
-$\tau_M(T_\beta) = S = Q_\beta / E_0$ is satisfied identically.
+$\tau_M(T_\beta) = S = \mathfrak{Q}_\beta / E_0$ is satisfied identically.
 Therefore $\tau_M(T_\beta)(q) \equiv S(q)$ in both cases, and the
 c_k are **L2/Markov-invariant**:
 
@@ -78,7 +34,7 @@ but they agree on every **observable** because observables are
 extracted from the constraint, not from the operator's coordinate
 expansion.  The cross-anchor c_3 swing recorded in the
 [canonical-framing audit](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md)
-is therefore a property of $S(q) = Q_\beta(q) / E_0(q)$ itself —
+is therefore a property of $S(q) = \mathfrak{Q}_\beta(q) / E_0(q)$ itself —
 upstream of the SDP norm choice.
 
 ## Categorical reading
@@ -114,7 +70,7 @@ the general lift is mechanical typeclass scaffolding.
 ## References
 
 - [`docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md`](https://github.com/litlfred/qou/blob/claude/qbeta-markov-trace-2026-06-03/docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md)
-  — structural finding + numerical verification at $q_0$.
+  — structural finding + canonical structural verification at $q_0$.
 - [`docs/coordination/1ppq-qbeta.md`](https://github.com/litlfred/qou/blob/claude/qbeta-markov-trace-2026-06-03/docs/coordination/1ppq-qbeta.md)
   — 1ppQ master ledger.
 - Jones 1987 — Hecke algebra Markov trace existence + uniqueness.

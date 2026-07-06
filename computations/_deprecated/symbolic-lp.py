@@ -17,7 +17,7 @@ For the LP:
 The weights y_K and predictions Q are functions of q only.
 
 Usage:
-    cd folio-assistant/computations && python3 symbolic-lp.py
+    cd computations && python3 symbolic-lp.py
 """
 
 import sympy as sp

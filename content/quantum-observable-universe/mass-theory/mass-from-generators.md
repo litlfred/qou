@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 The knot-particle generation framework
 ([knot-particle generation](#def:knot-particle-generation)) reduces
 the entire mass spectrum to a computation on the seven $T_{m,n}$
@@ -81,7 +79,7 @@ the tau ($T_{2,7}$) acquires mass through the same Higgs
 mechanism at Reeb degree $3$.
 
 **Step 4: Color-tube linking generates hadronic mass.**
-Baryons require three generators threaded through the coral tubes
+Baryons require three generators threaded through the color tubes
 $(r, g, b)$
 ([color tube coordinates](#def:color-tube-coordinates)).  The proton
 is:
@@ -93,7 +91,7 @@ $$
 $$
 
 where $\ell_c$ threads two trefoils (up quarks) and one Skein
-descendant $T_{2,3}^{\sigma}$ (down quark) through the coral tubes and
+descendant $T_{2,3}^{\sigma}$ (down quark) through the color tubes and
 $\mathcal{L}_{\mathrm{Hopf}}$ binds them.  The mass is:
 
 $$
@@ -106,7 +104,7 @@ of the three-component color-linked configuration, and
 $\Delta\mathcal{M}_{\mathrm{color}}$ encodes the cubic constraint
 from the color-tube fiber geometry.  The terminal resolution
 ([terminal resolution](#prop:terminal-resolution)) evaluates this
-to $:val[m_p_MeV]{precision=6, witness=folio-assistant/computations/codata-masses.witness.json} \mathrm{MeV}$.
+to $:val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json} \mathrm{MeV}$.
 
 **Step 5: The generative atomic chart.**
 Organizing by linking type and generator content, the mass spectrum

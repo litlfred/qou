@@ -1,4 +1,4 @@
-import QOU.Basic
+import Mathlib.Algebra.Polynomial.Laurent
 
 
 /-!
@@ -19,6 +19,27 @@ LaTeX: `\label{prop:q-exponential-unique}`
 namespace QOU
 
 noncomputable section
+
+abbrev R_q := LaurentPolynomial ℤ
+
+/-- **q-Exponential data** (mirrors the sibling `def:q-exponential`):
+    an abstract grouplike of the q-shuffle Hopf algebra, characterised
+    by the flow equation `D_q g = g`. -/
+structure QExponential (H : Type*) where
+  /-- The grouplike element e_q ∈ H. -/
+  e_q : H
+  /-- Prescribed coproduct `coprod : H → H × H`. -/
+  coprod : H → H × H
+  /-- Counit on e_q. -/
+  counit : H → R_q
+  /-- q-Jackson derivative on H. -/
+  D_q : H → H
+  /-- Grouplike axiom: Δ_q(e_q) = (e_q, e_q). -/
+  grouplike : coprod e_q = (e_q, e_q)
+  /-- Counit: ε(e_q) = 1. -/
+  counit_eq_one : counit e_q = 1
+  /-- Flow equation: D_q e_q = e_q. -/
+  flow_invariant : D_q e_q = e_q
 
 /-- **External axiom (Kassel 1995 §III.3, Milnor–Moore):
     q-exponential grouplike uniqueness.** -/

@@ -5,6 +5,8 @@
   period of one full Reeb circuit.
 -/
 import Mathlib.Algebra.Field.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
 
 namespace QOU
 

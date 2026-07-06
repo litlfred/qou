@@ -37,6 +37,7 @@ import sys as _sys
 from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: F401
+from codata_constants import M_D_MEV_VALIDATION, M_N_MEV_VALIDATION, M_P_MEV_VALIDATION, M_T_MEV_VALIDATION  # noqa: E402 (codata sweep)
 del _sys, _Path, _bridge
 
 from pathlib import Path
@@ -47,19 +48,24 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
+from closed_form_tau_M import compute_tau_M_nucleon_H3, closed_form_tau_M  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
-Q_0_50DPS = "1.1099785827513808075916690956107688798744991218736"
+Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
 
-M_E_MEV = mp.mpf("0.51099895069")
-M_P_MEV = mp.mpf("938.27208816")
-M_N_MEV = mp.mpf("939.56542052")
-M_D_MEV = mp.mpf("1875.61294257")
-M_T_MEV = mp.mpf("2808.92113298")
-M_HE3_MEV = mp.mpf("2808.39160743")
-M_HE4_MEV = mp.mpf("3727.37941")
+# CODATA-2022 / AME-2020 masses (MeV) routed through the canonical
+# registry (I9 — no hardcoded literals). See codata_constants.py.
+from codata_constants import (  # noqa: E402
+    M_E_MEV,
+    M_P_MEV_VALIDATION as M_P_MEV,
+    M_N_MEV_VALIDATION as m_n_derived_3input,
+    M_D_MEV_VALIDATION as M_D_MEV,
+    M_T_MEV_VALIDATION as M_T_MEV,
+    M_HE3_MEV_VALIDATION as M_HE3_MEV,
+    M_HE4_MEV_VALIDATION as M_HE4_MEV,
+)
 
 # Small-knot volumes (50-dps from `substrate/knot_volumes.py`):
 VOL_BORROMEAN_8G = mp.mpf("7.32772475341775212043682811945907288619319499425")
@@ -91,7 +97,7 @@ LIGHT_SERIES = [
         "B_model_b_small_knot": VOL_BORROMEAN_8G,  # Borromean
         "C_uniform_borromean": VOL_BORROMEAN_8G,
     }),
-    ("n", 0, 1, M_N_MEV, {
+    ("n", 0, 1, m_n_derived_3input, {
         "A_phase4_jsj": VOL_BORROMEAN_8G,
         "B_model_b_small_knot": VOL_BORROMEAN_8G,
         "C_uniform_borromean": VOL_BORROMEAN_8G,
@@ -144,18 +150,16 @@ def main() -> int:
     )
 
     q_0 = mp.mpf(Q_0_50DPS)
-    # `linking_weight_family_a(q) = (3q²+4+3q⁻²)/4` is a trivial algebraic
-    # expression — compute it directly in mpmath at the live working
-    # precision rather than going through sympy substitution + string
-    # round-trip (Copilot + Gemini reviews on PR #1891).
-    lw_q0 = (3 * q_0 ** 2 + 4 + 3 * q_0 ** (-2)) / 4
+    hbar2 = hbar_q_sq(q_0)
+    
+    tau_p_H3 = compute_tau_M_nucleon_H3("p", q_0)
+    tau_n_H3 = compute_tau_M_nucleon_H3("n", q_0)
 
     print("=" * 78)
     print("GAP-A-4 T2 — per-knot Vol(K) convention probe")
     print("=" * 78)
     print(f"  q₀                = {Q_0_50DPS[:18]}...")
-    print(f"  λ_uniform (lw)    = {float(lw_q0):.6f}")
-    print(f"  ℏ_q²              = {float(hbar_q_sq(q_0)):.10f}")
+    print(f"  ℏ_q²              = {float(hbar2):.10f}")
 
     conventions = ["A_phase4_jsj", "B_model_b_small_knot", "C_uniform_borromean"]
 
@@ -172,18 +176,21 @@ def main() -> int:
     for label, Z, N, m_K, conv_vols in LIGHT_SERIES:
         per_atom = {"label": label, "Z": Z, "N": N, "m_K_MeV": str(m_K)}
         print(f"  {label:<4} {Z:>2} {N:>2} ", end="")
+        tr_M_K = closed_form_tau_M(Z, N, q_0, tau_p_H3, tau_n_H3)
         for c in conventions:
             vol = conv_vols[c]
             lam = lambda_empirical(m_K, vol, q_0)
-            lambdas_by_convention[c].append(lam)
+            # The test is whether λ_emp matches tr_M_K, so we track the ratio.
+            ratio = lam / tr_M_K
+            lambdas_by_convention[c].append(ratio)
             per_atom[f"vol_{c}"] = str(vol)
             per_atom[f"lambda_emp_{c}"] = str(lam)
-            print(f"{float(vol):>14.4f} {float(lam):>14.6f} ", end="")
+            per_atom[f"ratio_to_tr_M_{c}"] = str(ratio)
+            print(f"{float(vol):>14.4f} {float(ratio):>14.6f} ", end="")
         print()
         rows.append(per_atom)
 
     w.add_parameter("q_0_50dps", Q_0_50DPS)
-    w.add_parameter("lambda_uniform_at_q0", str(lw_q0))
     w.add_data("discipline", "EXPLORATORY")
     w.add_data("production_wired", False)
     w.add_data("per_atom_per_convention", rows)
@@ -191,7 +198,7 @@ def main() -> int:
     # Per-convention swing (max/min − 1) — the verdict metric
     print()
     print("-" * 78)
-    print(f"  {'convention':<26s} {'min(λ)':>10s} {'max(λ)':>10s} "
+    print(f"  {'convention':<26s} {'min(ratio)':>10s} {'max(ratio)':>10s} "
           f"{'max/min−1':>12s} {'verdict':>20s}")
     print("-" * 78)
 

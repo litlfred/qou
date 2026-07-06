@@ -322,7 +322,7 @@ Full sweep results — 558 blocks, sorted by verdict (WIRED → PROBE-ONLY → N
 | `prop:confinement-topological` | proposition | NOT-WIRED | I1 | Write probe_*.py exercising prop:confinement-topological at q0; emit witness with contentBlock="prop:confinement-topological". |
 | `prop:confinement-universality` | proposition | NOT-WIRED | I1 | Write probe_*.py exercising prop:confinement-universality at q0; emit witness with contentBlock="prop:confinement-universality". |
 | `prop:content-scaling-correspondence` | proposition | NOT-WIRED | I1 | Write probe_*.py exercising prop:content-scaling-correspondence at q0; emit witness with contentBlock="prop:content-scaling-correspondence". |
-| `prop:coral-elliptic` | proposition | NOT-WIRED | I1 | Write probe_*.py exercising prop:coral-elliptic at q0; emit witness with contentBlock="prop:coral-elliptic". |
+| `prop:color-elliptic` | proposition | NOT-WIRED | I1 | Write probe_*.py exercising prop:color-elliptic at q0; emit witness with contentBlock="prop:color-elliptic". |
 | `prop:core-levi-form` | proposition | NOT-WIRED | I1-stated | Lean stated with 1 sorrys; once proved, author probe per I1. |
 | `prop:corrected-markov-trace` | proposition | NOT-WIRED | I1 | Write probe_*.py exercising prop:corrected-markov-trace at q0; emit witness with contentBlock="prop:corrected-markov-trace". |
 | `prop:cosimplicial-crossed-groupoid` | proposition | NOT-WIRED | I1 | Write probe_*.py exercising prop:cosimplicial-crossed-groupoid at q0; emit witness with contentBlock="prop:cosimplicial-crossed-groupoid". |
@@ -720,8 +720,8 @@ Per skill §C, append to `docs/audits/compute-integration-question-queue.md` (gi
 ## 5. Methodology notes
 
 - **Provable-block enumeration:** every `.ts` file in `content/quantum-observable-universe/**` whose `import` line is `proposition`, `theorem`, `lemma`, or `corollary` (558 hits).
-- **Lean status:** sibling-`.lean` file scan; sorry-count via regex `\bsorry\b`. Conjecture-class detection (CLAUDE.md §3b-cond) via `^class\s+`.
-- **Witness coverage:** every `folio-assistant/computations/*.witness.json` (481 files) parsed for a `contentBlock: "<label>"` field. 319 entries across 132 unique labels.
+- **Lean status:** sibling-`.lean` file scan; sorry-count via regex `\bsorry\b`. Conjecture-class detection (AGENTS.md §3b-cond) via `^class\s+`.
+- **Witness coverage:** every `computations/*.witness.json` (481 files) parsed for a `contentBlock: "<label>"` field. 319 entries across 132 unique labels.
 - **Production consumption:** grep of the 7 production-consumer scripts for either the block's label or one of its witness filenames. Producer relationship (a script writing the witness) also counts as consumption.
 - **I5 / I12:** extra cross-witness scan, distinct from the per-block sweep.
 - **I7 staleness:** witness `computedAt` (or file mtime) compared with sibling-`.md` mtime; >7 days = stale.

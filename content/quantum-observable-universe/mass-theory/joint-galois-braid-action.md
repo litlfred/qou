@@ -34,7 +34,7 @@ group action when restricted to the bi-filtration, and the joint
 group $G_{\mathrm{mot}} \times B_{n_K}$ stabilises each
 $\mathcal{H}_q^{(n, K)}$ stratum.*
 
-### Why this is the right structural prediction
+### Structural motivation for the prediction
 
 Three motivations:
 
@@ -80,7 +80,7 @@ For the Bring depth-3 bi-filtration cell
  $\mathbb{Q}(\zeta_5)$.
 
 **The conjecture predicts**: these two permutation actions
-**commute**. Numerical evidence: the orbit-sum
+**commute**. canonical evidence: the orbit-sum
 $\sum_{k=1}^4 \mathrm{Li}_3(\zeta_5^k) = -\frac{24}{25}\zeta(3)$
 is *both* Galois-invariant (= cyclotomic Galois-trace) *and*
 $S_5$-invariant (= regular-representation trace), so the joint-

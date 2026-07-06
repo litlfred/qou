@@ -57,6 +57,7 @@ export default chapter({
           blocks: [
             "topological-mass",
             "topological-mass-conjecture",
+            "topological-mass-conjecture-proof",
             "topological-mass-eigenspace-decomp",
             "topological-mass-eigenspace-decomp-proof",
             "topological-mass-holonomy",
@@ -75,10 +76,30 @@ export default chapter({
             "topological-mass-su2",
             "gb-spectral-sequence",
             "gb-spectral-sequence-table-data",
+            "gb-spectral-sequence-interpretation",
             "homological-shell-condensation",
+            "homological-shell-condensation-interpretation",
             "qou-motivic-galois-instance",
           ],
         }),
+      ],
+    }),
+
+    // ═══ THE COMPLEX VOLUME 𝔙 ═══════════════════════════════════
+    // Binding (Re 𝔙) and β-decay Q-value (Im 𝔙) are two real
+    // shadows of one complex fibre observable. Frames the rest of
+    // the mass + β-decay narrative as one derivation.
+    section({
+      title:
+        "The complex volume $\\mathfrak{V}$: binding and decay as $\\operatorname{Re}$/$\\operatorname{Im}$",
+      label: "sec:complex-volume",
+      blocks: [
+        "complex-volume-intro",
+        "binding-qbeta-complex-volume",
+        "channel-rotation-askey-lit",
+        "complex-volume-character-variety-path",
+        "color-spacetime-s5-factorization",
+        "mass-modulus-em-phase-color-grading",
       ],
     }),
 
@@ -96,12 +117,16 @@ export default chapter({
         "topological-mass-cat-transient-proof",
         "topological-mass-categorical-proof",
         "categorical-mass-markov",
+        "categorical-mass-markov-proof",
+        "markov-trace-gibbs-free-energy",
         "atomic-mass-gb-nf",
+        "atomic-mass-gb-nf-interpretation",
         "rho-k-graded-expansion",
         "rho-k-graded-expansion-table2-data",
         "rho-k-graded-expansion-table1-data",
         "conj-rho-k-pair-gen-canonical-form",
         "hecke-branching-trace-decomposition",
+        "hecke-branching-trace-decomposition-proof",
         "operator-valued-magnitude-budget",
         "q-hecke-seminormal-character-closure",
       ],
@@ -117,12 +142,17 @@ export default chapter({
         "recomputed-low-isotope-mass-table-table2-data",
         "recomputed-low-isotope-mass-table-table1-data",
         "markov-trace-antipode-polynomial-symmetry",
+        "markov-trace-antipode-polynomial-symmetry-proof",
         "markov-trace-axiomatic-closed-form",
+        "markov-trace-axiomatic-closed-form-proof",
         "markov-trace-axiomatic-closed-form-table1-data",
         "markov-trace-axiomatic-closed-form-table2-data",
+        "markov-trace-axiomatic-closed-form-interpretation",
         "markov-trace-recursive-reducer",
+        "markov-trace-recursive-reducer-interpretation",
         "markov-z-reconciliation",
         "categorical-neutrality-saturated-shells",
+        "categorical-neutrality-saturated-shells-interpretation",
         "phi-n-global-section",
       ],
     }),
@@ -156,6 +186,23 @@ export default chapter({
         "categorical-chain-convergence-mechanisms",
         "categorical-chain-convergence-mechanisms-table-data",
         "tau-M-asymptotic-rep-theory",
+        "tau-M-asymptotic-rep-theory-proof",
+        "tau-M-asymptotic-rep-theory-interpretation",
+      ],
+    }),
+    section({
+      title:
+        "Per-block $\\chi$ closed forms, $\\Delta\\tau_M$ machinery, and canonical Markov weights",
+      label: "sec:hecke-chi-per-block-delta-tau-canonical-weights",
+      blocks: [
+        "qbeta-per-block-delta-tau-intro",
+        "qbeta-per-block-chi-closed-forms",
+        "qbeta-per-block-chi-closed-forms-proof",
+        "qbeta-delta-tau-canonical-conditional-q2-minus-1-factor",
+        "qbeta-delta-tau-canonical-conditional-q2-minus-1-factor-proof",
+        "qbeta-delta-tau-surrogate-taylor-coefficients",
+        "qbeta-canonical-markov-weights-explicit-instance",
+        "qbeta-canonical-markov-weights-explicit-instance-proof",
       ],
     }),
     section({
@@ -164,6 +211,8 @@ export default chapter({
       blocks: [
         "intro-hecke-baer-star-chirality",
         "hecke-baer-star-generic",
+        "hecke-baer-star-generic-proof",
+        "hecke-baer-star-generic-interpretation",
         "explicit-central-idempotent",
         "chirality-period-pairing",
         "bring-embeddable-knots",

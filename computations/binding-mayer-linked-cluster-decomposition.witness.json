@@ -1,0 +1,58 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-29T12:19:30.221556+00:00",
+  "commitSha": "69b202fad95c914eb001a99844b55174623126bc",
+  "assertions": [
+    {
+      "name": "verdict == strongly_cooperative_measures_4body_target",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "binding-mayer-linked-cluster-decomposition",
+  "scriptFile": "computations/probes/binding_mayer_linked_cluster_probe.py",
+  "scriptHash": "04da460d40bc",
+  "scriptCommitSha": "c2e96b0af9ac61f7457508f8ef75b0e29c3e60d5",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Mayer linked-cluster decomposition of light-nuclei binding. b2 identified from the deuteron (unique 2-body nucleus); residual b3, b4 forced by A=3,4 data. Large b3/b2=0.64, b4/b2=4.16 => binding is irreducibly cooperative; no pairwise interface factor can close it.",
+  "parameters": {
+    "free_parameters": 0,
+    "b2_source": "deuteron (unique 2-body nucleus)"
+  },
+  "data": {
+    "per_bond_MeV": {
+      "D": "2.224566",
+      "T": "2.827266",
+      "3He": "2.572681",
+      "4He": "4.7159455"
+    },
+    "b2_MeV": "2.224566",
+    "b3_T_MeV": "1.8081",
+    "b3_3He_MeV": "1.044345",
+    "b4_4He_MeV": "9.243387",
+    "b3_over_b2": "0.64112393",
+    "b4_over_b2": "4.1551417",
+    "pairwise_only_pred_MeV": {
+      "T": "6.673698",
+      "3He": "6.673698",
+      "4He": "13.347396"
+    },
+    "verdict": "strongly_cooperative_measures_4body_target",
+    "scope_note": "does NOT rule out the interface program: the trace product 1-PROD f already carries cross-bond cooperative terms, and the per-bond factors are Lean-proved exact (a permanent correct contribution). Measures the size of the missing cluster operator."
+  }
+}

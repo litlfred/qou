@@ -1,46 +1,28 @@
-The $+1$ additive term in the Q-value formula is **not** a
-fitting constant — it is the positron mass $m_{e^+}/m_e = 1$,
-recovered from the $\gamma\gamma \to e^- e^+$ pair production
-vertex ([Breit–Wheeler](#def:breit-wheeler-pair-production)).
+The $+1$ additive term in the Q-value formula is a parity-dependent offset $\delta_A$, required to match the evaluated character sum to the observed kinematics.
 
 ## Statement
 
 **Proposition.**
-*The character sum $\Sigma_\lambda \chi_\lambda(\Delta)$
-subtracts the categorical action of* both *fermions produced
-in pair creation (2 units of $m_e$), but the Q-value subtracts
-only the emitted electron (1 unit).  The difference is the
-positron action:*
+*The evaluated Q-value functional includes a formal parity-dependent trace offset:*
 
 $$
-  Q = \Sigma_{\mathrm{char}} \times m_e + 1 \times m_e
+  Q = (\Sigma_{\mathrm{char}} + \delta_A) \times m_e
 $$
 
-*where the $+1$ is $m_{e^+}/m_e$.*
+*where the offset $\delta_A$ depends on the parity regime.*
 
-## When the correction applies
+## Applicability of the correction
 
-The positron correction is needed in two regimes
+The offset $\delta_A$ is applied differently across two regimes
 ([parity regime selection](#thm:parity-regime-selection)):
 
-1. **$A = 1$** (neutron decay): no spectators absorb the
-   positron action.  The correction is added explicitly:
-   $Q = (S\Delta + 1) \times m_e$.
+1. **$A = 1$** (neutron decay) and **Even $A$**:
+   The correction is added explicitly, $\delta_A = 1$.
+   $Q = (S\Delta + 1) \times m_e$ (for $A=1$).
+   $Q = (\Sigma_{\mathrm{FP}} + 1) \times m_e$ (for even $A$).
 
-2. **Even $A$**: the spectator factorization gives a negative
-   raw sum.  After Frobenius filtering, the positron correction
-   restores the physical Q-value:
-   $Q = (\Sigma_{\mathrm{FP}} + 1) \times m_e$.
+2. **Odd $A \geq 3$**:
+   No explicit correction is applied, $\delta_A = 0$.
+   $Q = |S\Delta| \times m_e$.
 
-For **odd $A \geq 3$**: the spectator product absorbs the
-positron action automatically through the sign structure,
-and no explicit correction is needed:
-$Q = |S\Delta| \times m_e$.
-
-## Physical interpretation
-
-In the pair production vertex $\gamma\gamma \to e^- e^+$,
-the photon energy creates both an electron and a positron.
-The character sum counts the total fermionic action change
-(both particles), while the Q-value is defined as the kinetic
-energy available to the emitted electron alone.
+> **Open Issue:** The current formulation relies on this parity-dependent $\delta_A$ as an unmotivated degree of freedom to align the categorical evaluation with the kinematic Q-value. A formal justification for why $\delta_A$ is absorbed for odd $A$ but required for even $A$ remains unresolved.

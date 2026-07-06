@@ -1,3 +1,7 @@
+import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Analysis.SpecialFunctions.Complex.LogDeriv
+
 /-!
 # QOU.AlgebraicSubstrate.spectral_half_line
 
@@ -27,9 +31,6 @@ See `GroundRingAnnotations.lean`.
 
 set_option autoImplicit false
 
-import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Analysis.SpecialFunctions.Complex.LogDeriv
 
 open Complex Real
 

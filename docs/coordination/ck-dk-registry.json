@@ -56,7 +56,7 @@
         "residual_proton": "0 by construction (fit)",
         "anchor_stable": false,
         "wired": false,
-        "producer": "folio-assistant/computations/qbeta/qbeta_1ppq_achieved.py",
+        "producer": "computations/qbeta/qbeta_1ppq_achieved.py",
         "note": "CODATA-residual fit; separately flagged as a normalisation artifact (2026-06-04)."
       },
       {
@@ -66,7 +66,7 @@
         "residual_proton": null,
         "anchor_stable": false,
         "wired": false,
-        "producer": "folio-assistant/computations/qbeta/qbeta_decay_sdp_extended_ck.py",
+        "producer": "computations/qbeta/qbeta_decay_sdp_extended_ck.py",
         "note": "Structural outlier with the averaging-resonance 1/2 fingerprint (Pell-Lucas NON-clean per the §averaging-resonance-rule)."
       },
       {
@@ -77,7 +77,7 @@
         "anchor_stable": false,
         "cross_anchor_tested": "2026-06-04",
         "wired": false,
-        "producer": "folio-assistant/computations/qbeta/qbeta_decay_sdp_extended_ck.py; probe folio-assistant/computations/qbeta/qbeta_c6_c10_crossanchor_falsification.py (PR #1842)",
+        "producer": "computations/qbeta/qbeta_decay_sdp_extended_ck.py; probe computations/qbeta/qbeta_c6_c10_crossanchor_falsification.py (PR #1842)",
         "note": "Pell-Lucas-clean closed forms. CAUTION: c_6/c_7 are IMPOSED in the extraction (applied to advance R), so the PR #1824 bias-corrected extraction recovering them (0.005%/0.26%) is SELF-CONSISTENCY of the bias-correction method, NOT independent validation. Silver-anchored exact at q=1+sqrt(2)."
       },
       {
@@ -88,7 +88,7 @@
         "anchor_stable": false,
         "cross_anchor_tested": "2026-06-04",
         "wired": false,
-        "producer": "content/quantum-observable-universe/mass-theory/qbeta-c8-c10-silver-rationals.{ts,md,lean} (PR #1793) + Lake mirror lean/QOU/BraidKnot/QBetaCnAtSilver.lean; probe folio-assistant/computations/qbeta/qbeta_c6_c10_crossanchor_falsification.py (PR #1842)",
+        "producer": "content/quantum-observable-universe/mass-theory/qbeta-c8-c10-silver-rationals.{ts,md,lean} (PR #1793) + Lake mirror lean/QOU/BraidKnot/QBetaCnAtSilver.lean; probe computations/qbeta/qbeta_c6_c10_crossanchor_falsification.py (PR #1842)",
         "note": "PROVED rational identities at the silver ratio q = 1+sqrt(2) (Lean norm_num-trivial). Cross-anchor tested 2026-06-04 (PR #1842) vs PR #1824 BIAS-CORRECTED extraction (supersedes the raw values cited earlier): c_8 is the FIRST FREE rung (no form imposed) and the Pell-Lucas pattern BREAKS there (closed +2.27 vs corrected -0.215, wrong sign). Forms are anchor-STABLE (swing 2.4e-7% < 1%) and EXACT only at the silver structural anchor (b^2=7/8), but do NOT continue into the free rungs. Stays empirical, no production wire. §8 flip-flop guard applies."
       }
     ],
@@ -142,7 +142,7 @@
     "mp_note": "bare; ~2.89% categorical VolDensity gap.",
     "dashboard_beats_100x": 3,
     "dashboard_total": 7,
-    "dashboard_source": "folio-assistant/computations/per-observable-100x-status.witness.json"
+    "dashboard_source": "computations/per-observable-100x-status.witness.json"
   },
   "flip_flop_guard": [
     "Do not re-wire any c_k>=3 or d_k>=4 without owner approval AND a passing cross-anchor test (proton+muon swing < 1%).",

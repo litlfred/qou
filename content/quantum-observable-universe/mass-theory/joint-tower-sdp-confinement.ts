@@ -21,8 +21,8 @@ export default proposition({
   ],
   computation: {
     engine: "mpmath",
-    script: "folio-assistant/computations/d_from_scratch.py",
-    witness: "folio-assistant/computations/d-from-scratch.witness.json",
+    script: "computations/d_from_scratch.py",
+    witness: "computations/d-from-scratch.witness.json",
     status: "verified",
   },
   authorNotes: [

@@ -395,7 +395,7 @@ theorem real_strict_complementarity_unique_of_active_empty_and_cost_posDef
 The general kernel-uniqueness step (Boyd-Vandenberghe §5.5.4) —
 that under Slater + strict complementarity the SDP optimum is
 unique — is genuinely multi-week Mathlib SDP-rank-deficiency
-work.  Per CLAUDE.md §3b conditional-class pattern, we
+work.  Per AGENTS.md §3b conditional-class pattern, we
 **axiomatise** the categorical content as a typeclass and let
 downstream theorems consume it as a class hypothesis.  This
 keeps the categorical content in scope without a free-floating

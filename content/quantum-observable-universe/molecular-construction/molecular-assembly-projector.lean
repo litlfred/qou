@@ -40,7 +40,8 @@ def isDelocalized (e : AssemblyProjector) : Prop := e.block = [e.parts.sum]
 def benzene : AssemblyProjector := ⟨[2, 2, 2], [6], by decide⟩
 
 /-- The benzene projector is delocalised onto the symmetric block. -/
-theorem benzene_isDelocalized : benzene.isDelocalized := by decide
+theorem benzene_isDelocalized : benzene.isDelocalized := by
+  unfold isDelocalized benzene; decide
 
 end AssemblyProjector
 end QOU.Molecular

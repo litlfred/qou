@@ -17,8 +17,8 @@ where Φ_q^{Garside} integrates the Chebyshev shell corrections
 directly into the transfer matrix chain.
 
 Usage:
-    python3 folio-assistant/computations/atom_mass_exact.py
-    python3 folio-assistant/computations/atom_mass_exact.py --timeout 600
+    python3 computations/atom_mass_exact.py
+    python3 computations/atom_mass_exact.py --timeout 600
 """
 
 import math, sys, time, argparse

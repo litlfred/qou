@@ -1,3 +1,7 @@
+This example realises the QOU structure on classical hyper-Kähler
+geometry, exhibiting standard instanton moduli problems as special
+cases of the categorical framework.
+
 Let $X$ be a Calabi--Yau $2$-fold (K3 surface) with holonomy
 $\mathrm{SU}(2)$, and let $M \subset X$ be a smooth, strictly convex real
 hypersurface.  Then $M$ is a $3$-dimensional strictly pseudoconvex CR

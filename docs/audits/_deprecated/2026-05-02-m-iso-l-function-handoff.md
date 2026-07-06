@@ -98,10 +98,10 @@ With recursive ascent, more atomic-braid Frobenius traces become available — p
 
 ## References
 
-- `folio-assistant/computations/probes/habiro_frobenius_probe.py` — Frobenius probe (exact algebraic arithmetic in `Z[ζ_{2p}]`)
-- `folio-assistant/computations/habiro_motivic_orbit_analysis.py` — relation tests, p-adic divisibility, Frobenius-trace extraction, multiplicativity test
-- `folio-assistant/computations/probes/habiro-frobenius-probe.witness.json` — full Frobenius eigenvalue table
-- `folio-assistant/computations/habiro-motivic-orbit-relations.witness.json` — full relation/L-function table
+- `computations/probes/habiro_frobenius_probe.py` — Frobenius probe (exact algebraic arithmetic in `Z[ζ_{2p}]`)
+- `computations/habiro_motivic_orbit_analysis.py` — relation tests, p-adic divisibility, Frobenius-trace extraction, multiplicativity test
+- `computations/probes/habiro-frobenius-probe.witness.json` — full Frobenius eigenvalue table
+- `computations/habiro-motivic-orbit-relations.witness.json` — full relation/L-function table
 
 ## Status
 

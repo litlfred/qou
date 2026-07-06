@@ -1,3 +1,19 @@
+import QOU.BraidKnot.BsymLinearChain
+import QOU.BraidKnot.ChiralityTopologySelection
+import QOU.BraidKnot.WLambdaDefectClosedForm
+import QOU.BraidKnot.WLambdaDefectSubleadingD
+import QOU.BraidKnot.WLambdaDefectLadderE
+import QOU.BraidKnot.IdentityIContentDecomposition
+import QOU.BraidKnot.IdentityIPlancherelInstances
+import QOU.BraidKnot.InterfaceOperatorBlockDiagonal
+import QOU.BraidKnot.KeystoneC2ContentTranspose
+import QOU.BraidKnot.KeystoneC2DimTranspose
+import QOU.BraidKnot.KeystoneC2QDimTranspose
+import QOU.BraidKnot.KeystoneG2Gate
+import QOU.BraidKnot.KeystoneG2LadderGate
+import QOU.BraidKnot.KeystoneFpnBracket
+import QOU.BraidKnot.BringWPlaneMonodromy
+import QOU.BraidKnot.BringWPlaneMonodromyTower
 import QOU.BraidKnot.CyclotomicLValueDecomposition
 import QOU.BraidKnot.CyclotomicTrilogImaginary
 import QOU.BraidKnot.CyclotomicCl3OrbitSum
@@ -8,6 +24,13 @@ import QOU.BraidKnot.CyclotomicDimensionSynthesisAllDepths
 import QOU.BraidKnot.QHeckeSeminormalCharacterClosure
 import QOU.BraidKnot.BringTrilogImaginaryTateRational
 import QOU.BraidKnot.Cl3Zeta5OrbitSum
+import QOU.BraidKnot.BringTrilogDepth3Witness
+import QOU.BraidKnot.Cl3Zeta5GeometricRealization
+import QOU.BraidKnot.BWVacuumRowIsHecke
+import QOU.BraidKnot.KeystoneSelfDualSpectralNarrowing
+import QOU.BraidKnot.KeystonePerronFrobeniusGroundState
+import QOU.BraidKnot.KeystonePFTwoBlockWitness
+import QOU.BraidKnot.KeystoneValueMapSynthesis
 import QOU.BraidKnot.Cl3Zeta5PslqIndependence
 import QOU.BraidKnot.KnotIndexedConvolutionGrid
 import QOU.BraidKnot.ConfinedParticle
@@ -22,6 +45,7 @@ import QOU.BraidKnot.ConfinementPhaseStratification
 import QOU.BraidKnot.ThreeCalibrationInputs
 import QOU.BraidKnot.ConfinementLevel
 import QOU.BraidKnot.ChiralityWritheRibbon
+import QOU.BraidKnot.EigenbasisStructuralLemmas
 import QOU.BraidKnot.GradedMarkovTraceFromGSFiltration
 import QOU.BraidKnot.ResidueAtRoot
 import QOU.BraidKnot.GBSpectralSequence
@@ -35,6 +59,13 @@ import QOU.BraidKnot.HopfBindingK
 import QOU.BraidKnot.LightNucleus
 import QOU.BraidKnot.WitnessR5Full
 import QOU.BraidKnot.Helium3Witness
+import QOU.BraidKnot.HabiroNewtonLadder
+import QOU.BraidKnot.AJFigureEight
+import QOU.BraidKnot.AJFigureEightCertificate
+import QOU.BraidKnot.AJFigureEightTelescope
+import QOU.BraidKnot.AJFigureEightAnnihilation
+import QOU.BraidKnot.AJTrefoil
+import QOU.BraidKnot.AJTrefoilAnnihilation
 import QOU.BraidKnot.DeuteronWitness
 import QOU.BraidKnot.TritiumWitness
 import QOU.BraidKnot.MassFormulaCategorical
@@ -82,6 +113,44 @@ import QOU.BraidKnot.MassGapKeystone
 import QOU.BraidKnot.MassGapObstruction
 import QOU.BraidKnot.CrossingGradedModel
 import QOU.BraidKnot.MassGapFrontier
+-- Identity-(B) ℂ-free cluster (keystone-carried RT input): the Jucys–Murphy
+-- identity coefficient and the regular-representation trace bridge. Wiring these
+-- into the umbrella also pulls JucysMurphyCoeff (merged orphaned in #2713) into
+-- the CI build.
+import QOU.BraidKnot.JucysMurphyCoeff
+import QOU.BraidKnot.RegularRepTrace
+import QOU.BraidKnot.RegularRepBlockTrace
+-- Δ_λ closure-refutation cluster (sorry-free, previously orphaned). These
+-- modules formalize the per-partition binding weight Δ_λ and the failure of the
+-- co-Casimir / crystal-graph closure ansätze; they were merged but never imported
+-- by this umbrella, so CI never built them and their sorry-free status went
+-- unenforced (cf. JucysMurphyCoeff, wired in above after #2713). Wiring them in
+-- puts the refutations under the CI build (bean 48yu, #2676).
+-- DeltaLambdaSignRule was repaired in this PR: reserved `λ`→`Λ`, added ℝ/`arccos`
+-- imports, gave each vacuity-dodge `: trivial` "theorem" an honest disposition
+-- (§1a: faithful `sorry`+`-- Ref:` targets, one proved scalar lemma, the character
+-- identities documented rather than faked), and isolated it under namespace
+-- `QOU.BraidKnot.DeltaLambdaSignRule` to avoid the `Partition` collision with
+-- GramSeminormalBlock / PerPartitionKLambda. It now compiles (lean-direct EXIT=0;
+-- 3 honest sorry+Ref targets: nStat / sign-rule / Burnside).
+import QOU.BraidKnot.DeltaLambdaRefutation
+import QOU.BraidKnot.DeltaLambdaExponentKeystone
+import QOU.BraidKnot.DeltaLambdaSignRule
+-- Tier-3 (bean 60iz): Jones value of the Hopf link via the Markov trace +
+-- proved stabilisation-invariance (the q-deformed H_n(q) side of the knot
+-- invariant; complementary to the q=1 k[S_n] Wedderburn build).
+import QOU.BraidKnot.JonesViaMarkovTrace
+-- Tier-3 (bean 60iz) general-H_n(q) completion: the arbitrary-braid-word Jones
+-- value + Markov move II (conjugation invariance), on the sibling-landed
+-- IwahoriHeckeAPI element algebra. Move I = IwahoriHeckeAPI.markovTrace_stab_comm;
+-- the two moves together make tr_M a link invariant. (Also pulls IwahoriHeckeAPI
+-- into the in-build set.)
+import QOU.BraidKnot.MarkovTraceLinkInvariance
+import QOU.BraidsAndKnots.YLambdaQSchur
+-- Maschke (RepresentationTheory) ⇒ k[S_n] semisimple: the *existence* half of side-2's
+-- block decomposition. First QOU import of Mathlib.RepresentationTheory.* — CI must build it.
+import QOU.BraidKnot.MaschkeSnSemisimple
+import QOU.BraidKnot.WedderburnSn
 
 /-!
 # BraidKnot — Module Index
@@ -103,4 +172,6 @@ and phase stratification.
 - MathlibBridge: fromMathlib bridge to Mathlib.Combinatorics.Young.YoungDiagram
 - ConfinementPhaseStratification: Ω(P) open, local μ constancy
 - ChiralityWritheRibbon: a_K = 1 + w·h + O(h²) from ribbon-twist framing
+- EigenbasisStructuralLemmas: content/twist eigenbasis L1 (q↦−q parity),
+  L2 (bar↔conjugate duality), L3 (framing GF = single-pole rational)
 -/

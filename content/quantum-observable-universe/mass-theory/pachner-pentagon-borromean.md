@@ -82,7 +82,7 @@ trace cyclicity and 10 sum to $-3/4$.  (The "10" matches the
 [`docs/canonical-derivation-cheat-sheet.md §"Bring color-tube weighted averaging"`](../../docs/canonical-derivation-cheat-sheet.md)
 — possibly the same categorical structure viewed from two angles.)
 
-## Why this is a high-value $h^{4}$ cross-validation route
+## High-value $h^{4}$ cross-validation route
 
 Per
 [`docs/audits/-pentagon-identity-broad-context.md`](../../docs/audits/-pentagon-identity-broad-context.md)
@@ -137,7 +137,7 @@ class PachnerPentagonBorromean
 
 ## Open R&D
 
-1. **Compute prototype**: extend a Pachner-state-sum probe for
+1. **Compute prototype**: extend a Pachner-state-sum canonical evaluation for
    $\mathcal{B}_3$ at $q = q_0$; cross-check $h^4$ coefficient via
    the Lobachevsky decomposition $8G = \sum \Lambda(\theta_i)$.
 2. **D15 to closed** requires the Lean class + the

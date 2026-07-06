@@ -29,7 +29,7 @@ import pathlib
 import sys
 
 HERE = pathlib.Path(__file__).resolve()
-COMP = HERE.parent.parent          # folio-assistant/computations
+COMP = HERE.parent.parent          # computations
 sys.path.insert(0, str(COMP))
 
 try:

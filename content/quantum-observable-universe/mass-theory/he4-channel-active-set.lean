@@ -2,8 +2,8 @@
 He-4 operator-selection LP active set.
 
 LaTeX label:        prop:he4-channel-active-set
-Computational ref:  folio-assistant/computations/probe_he4_sdp_compositional.py
-Witness:            folio-assistant/computations/he4-sdp-compositional-probe.witness.json
+Computational ref:  computations/probe_he4_sdp_compositional.py
+Witness:            computations/he4-sdp-compositional-probe.witness.json
 Audit:              docs/audits/2026-05-15-three-pr-integration.md §F1 ⁴He
 
 For the ⁴He = (Z=2, N=2) bound state, the operator-selection LP
@@ -18,14 +18,14 @@ solves uniquely (strong duality holds, gap = 0):
   dual y*   = (3.778, 0, 0.796)           ⇒ DD highest receptivity
   active_set = {DD, ³He+n}
 
-Following CLAUDE.md §3b-cond, the proposition is axiomatised as a
+Following AGENTS.md §3b-cond, the proposition is axiomatised as a
 class `HasHe4ChannelActiveSet` whose instance encodes the
 witness-verified primal+dual+active-set triple.
 
 Ref: [manuscript] §F1 ⁴He compositional probe (audit doc)
 -/
 
-import Mathlib.Data.Rat.Basic
+import Mathlib.Data.Rat.Defs
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Linarith
 
@@ -69,7 +69,7 @@ end Channel
     axioms. The class IS categorical; the instance below is one
     witness, the witness JSON is the authoritative source.
 
-    Per CLAUDE.md §3b-cond, this class is the sole `sorry`-equivalent
+    Per AGENTS.md §3b-cond, this class is the sole `sorry`-equivalent
     input for downstream propositions; the empirical numerics are
     LIVE in the witness JSON, with the class providing the structural
     interface. -/
@@ -305,7 +305,7 @@ theorem he4_lp_solution_exists :
     an `IsHe4LPFeasibleSolution` witness for its tuple. Confirms the
     class IS a categorical encoding of the abstract feasibility
     predicate. -/
-theorem he4_class_is_feasible_solution [h : HasHe4ChannelActiveSet] :
+def he4_class_is_feasible_solution [h : HasHe4ChannelActiveSet] :
     IsHe4LPFeasibleSolution h.tDD h.tTp h.tHe3n h.n_target
                             h.xDD h.xTp h.xHe3n
                             h.y0_star h.yDD h.yTp h.yHe3n :=

@@ -2,7 +2,7 @@
 """
 Definitive finding: the m_p 242 ppb residual is entirely a q₀ shift.
 
-At q_exact = 1.10997858275140..., the substrate identity
+At q_exact = 1.10997859555733..., the substrate identity
   m_p/m_e = 2·Vol(4₁)·|tr_M(q)|·[3]_q!/(q) / (q-1)² − 12
 matches CODATA m_p/m_e to 10⁻⁴⁸ at 50 dps.
 

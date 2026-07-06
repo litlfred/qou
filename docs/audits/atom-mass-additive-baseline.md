@@ -3,9 +3,9 @@
 **Status.** Layer-4 informational audit (see
 [`onepb-status-dashboard.md`](onepb-status-dashboard.md)).
 **Witness:**
-[`atom-mass-additive-baseline.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/atom-mass-additive-baseline.witness.json).
+[`atom-mass-additive-baseline.witness.json`](https://github.com/litlfred/qou/blob/main/computations/atom-mass-additive-baseline.witness.json).
 
-**Script.** [`atom_mass_additive_baseline.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/atom_mass_additive_baseline.py).
+**Script.** [`atom_mass_additive_baseline.py`](https://github.com/litlfred/qou/blob/main/computations/atom_mass_additive_baseline.py).
 
 ## Position in the audit stack
 
@@ -92,12 +92,12 @@ $A = 1$ is the 13.6 eV hydrogen ground-state binding,
 ## How to update
 
 ```bash
-cd folio-assistant/computations
+cd computations
 python3 atom_mass_additive_baseline.py
 ```
 
 The witness pipeline runs this script on every PR that modifies
-any compute file in `folio-assistant/computations/`. The bound
+any compute file in `computations/`. The bound
 $\sum_A \Delta_{\text{binding}}(A, Z)$ is the single number
 to reduce when wiring the QOU binding-energy law into the
 reconciliation table.

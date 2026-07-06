@@ -32,7 +32,7 @@ arithmetic changes.
 ## NO f64 in compute path
 
 `mpmath.mpf` is arbitrary-precision binary floating point — the
-"controlled precision" the CLAUDE.md precision discipline
+"controlled precision" the AGENTS.md precision discipline
 explicitly approves. NOT f64. The mpmath backend defaults to
 `mp.dps = 50` (matches Q_50_DIGIT_STR); higher precision (e.g.
 `dps = 65`) is a config parameter.

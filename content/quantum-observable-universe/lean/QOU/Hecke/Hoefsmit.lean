@@ -1,6 +1,5 @@
 import QOU.Hecke.Algebra
 import QOU.Hecke.Wedderburn
-import Mathlib.LinearAlgebra.Matrix.Basic
 import Mathlib.LinearAlgebra.Matrix.Charpoly.Basic
 
 /-!
@@ -37,7 +36,7 @@ type at H_{3A}.
 
 This file lays out the structural framework. The Python-side
 implementation is
-[`folio-assistant/computations/hecke_seminormal.py`](../../folio-assistant/computations/hecke_seminormal.py)
+[`computations/hecke_seminormal.py`](../../computations/hecke_seminormal.py)
 (landed in PR #502, R1.b commits) which carries the full
 arithmetic at q-rational precision.
 
@@ -58,13 +57,13 @@ universe u
 filling `cells : Fin n → ℕ × ℕ` mapping integers `1 ≤ k ≤ n` to
 `(row, column)` cell coordinates; standard-ness is the increasing
 property along rows and down columns. -/
-structure StandardYoungTableau {n : ℕ} (λ : Partition n) where
+structure StandardYoungTableau {n : ℕ} (lam : Partition n) where
   /-- Filling: which cell each integer 1..n occupies. -/
   cells : Fin n → ℕ × ℕ
-  /-- The cell at position `k` lies in the diagram of `λ`. -/
+  /-- The cell at position `k` lies in the diagram of `lam` (= `λ`). -/
   in_diagram : ∀ k : Fin n,
-    (cells k).1 < λ.parts.length ∧
-    (cells k).2 < (λ.parts.get? (cells k).1).getD 0
+    (cells k).1 < lam.parts.length ∧
+    (cells k).2 < (lam.parts[(cells k).1]?).getD 0
   /-- Cells are pairwise distinct (every position filled exactly once). -/
   distinct : ∀ k k' : Fin n, k ≠ k' → cells k ≠ cells k'
   /-- Rows increase: in the same row, cells with larger column have
@@ -83,8 +82,8 @@ def content (i j : ℕ) : ℤ := (j : ℤ) - (i : ℤ)
 /-- Axial distance between integers `k` and `k+1` in a tableau:
 `d := c(cell of k+1) − c(cell of k)`. The Hoefsmit matrix entries
 for `ρ_λ(σ_k)` are rational functions of this scalar. -/
-def axialDistance {n : ℕ} {λ : Partition n}
-    (T : StandardYoungTableau λ) (k : Fin n) : ℤ :=
+def axialDistance {n : ℕ} {lam : Partition n}
+    (T : StandardYoungTableau lam) (k : Fin n) : ℤ :=
   if h : k.val + 1 < n then
     let kSucc : Fin n := ⟨k.val + 1, h⟩
     let (i₁, j₁) := T.cells k
@@ -108,13 +107,13 @@ indexed by partition `λ`. An instance asserts:
 The `.lean` file lays out the structural typeclass; substantive
 construction of the matrix entries lives downstream and is a
 research-grade follow-up. The Python-side implementation in
-`folio-assistant/computations/hecke_seminormal.py` carries the
+`computations/hecke_seminormal.py` carries the
 arithmetic.
 -/
 class HoefsmitRepresentation
     {R : Type u} (n : ℕ) (q : R) (A : Type u)
     [CommRing R] [Inv R] [Ring A] [Algebra R A]
-    [HeckeAlgebra R n q A] (λ : Partition n) where
+    [HeckeAlgebra R n q A] (lam : Partition n) where
   /-- Specht-module dimension `f^λ`. Stored as a field rather than
   computed because Mathlib's hook-length API is heavy and not
   always available. -/
@@ -123,7 +122,7 @@ class HoefsmitRepresentation
   least the trivial SYT). -/
   dim_pos : 0 < dim
   /-- Standard Young tableau enumeration. Size equal to `dim`. -/
-  syt_basis : Fin dim → StandardYoungTableau λ
+  syt_basis : Fin dim → StandardYoungTableau lam
   /-- Hoefsmit matrix for generator `σ_i`. -/
   seminormal_matrix : Generator n → Matrix (Fin dim) (Fin dim) R
   /-- Hoefsmit matrices satisfy the Hecke quadratic relation. -/
@@ -153,8 +152,8 @@ Hoefsmit-matrix homomorphism, producing the matrix product
 
 The empty word evaluates to the identity matrix (the unit of the
 Hoefsmit-matrix monoid). -/
-def wordImage {λ : Partition n}
-    [HR : HoefsmitRepresentation n q A λ] :
+def wordImage {lam : Partition n}
+    [HR : HoefsmitRepresentation n q A lam] :
     List (Generator n) → Matrix (Fin HR.dim) (Fin HR.dim) R
   | []      => 1
   | g :: gs => HR.seminormal_matrix g * wordImage gs
@@ -196,30 +195,31 @@ agree: in the q=1 limit (MN) they are equal, but at finite q the
 axial-distance dependence of the Hoefsmit matrices produces
 different traces.
 
-The two `(sorry : Partition n)` instance arguments are structural
-placeholders for the unspecified atomic-braid partitions of the
-two atoms; the body returns `trivial` because the substantive
-non-equality of their Hoefsmit-matrix traces is an open
-research-grade Lean construction (see source comment in proof
-body). -/
--- Ref: [manuscript] prop:atom-knot-mass-derivation §"Word sensitivity"
--- Ref: [hoefsmit1974] https://search.proquest.com/docview/302700007 (PhD thesis)
--- Ref: [mathas1999] https://doi.org/10.1090/ulect/015 §3.31
-/-- **External axiom**: Hoefsmit-matrix word-sensitivity separates
-    mirror nuclei (e.g. ³He vs ³H) even when their atomic-braid
-    permutations share a cycle type.  Statement requires a concrete
-    `HoefsmitRepresentation` instance for the specific atomic braid
-    words; that construction lives in the Python implementation
-    (`hecke_seminormal.py`) and a Lean-side instance is research-grade
-    follow-up.  The placeholder partition arguments (originally
-    `(sorry : Partition n)`) are replaced by explicit partition
-    arguments at the call site. -/
-theorem hoefsmit_distinguishes_word_sensitivity
+**Word-sensitivity, named as a `Prop`.** The substantive content —
+that the Hoefsmit forms separate mirror nuclei (e.g. ³He vs ³H) even
+when their atomic-braid permutations share a cycle type — is that
+*there is an atomic braid word `w` whose Hoefsmit-matrix trace at the
+two partitions differs*:
+`trace (wordImage w at λ_{Z1N2}) ≠ trace (wordImage w at λ_{Z2N1})`.
+A constructive witness requires the explicit `HoefsmitRepresentation`
+matrix entries (which live in the Python implementation
+`hecke_seminormal.py`); a Lean-side instance is a research-grade
+follow-up.  Per pattern C of the vacuity-fix playbook we therefore
+**name** the conditional conjecture as a `def : Prop` rather than
+asserting a vacuous `True`.  The open state is honestly represented by
+the absence of a proof — there is no self-assuming projection and no
+`: True := trivial`.
+
+- Ref: [manuscript] prop:atom-knot-mass-derivation §"Word sensitivity"
+- Ref: [hoefsmit1974] https://search.proquest.com/docview/302700007 (PhD thesis)
+- Ref: [mathas1999] https://doi.org/10.1090/ulect/015 §3.31 -/
+def HoefsmitDistinguishesWordSensitivity
     (lamZ1N2 lamZ2N1 : Partition n)
-    [_HR_Z1N2 : HoefsmitRepresentation n q A lamZ1N2]
-    [_HR_Z2N1 : HoefsmitRepresentation n q A lamZ2N1] :
-    True :=
-  trivial
+    [HR_Z1N2 : HoefsmitRepresentation n q A lamZ1N2]
+    [HR_Z2N1 : HoefsmitRepresentation n q A lamZ2N1] : Prop :=
+  ∃ w : List (Generator n),
+    Matrix.trace (wordImage (lam := lamZ1N2) (HR := HR_Z1N2) w) ≠
+      Matrix.trace (wordImage (lam := lamZ2N1) (HR := HR_Z2N1) w)
 
 end HoefsmitRepresentation
 

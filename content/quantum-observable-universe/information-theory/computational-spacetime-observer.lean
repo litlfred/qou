@@ -36,8 +36,7 @@ theorem computational_distance_symm (o1 o2 : BringsObserver) :
 theorem computational_distance_involution_invariant (o1 o2 : BringsObserver) :
     computationalDistance (bringsInvolution o1) (bringsInvolution o2) = computationalDistance o1 o2 := by
   dsimp [computationalDistance, bringsInvolution]
-  have h : -o1.comp_time - -o2.comp_time = -(o1.comp_time - o2.comp_time) := by ring
-  rw [h]
-  exact abs_neg (o1.comp_time - o2.comp_time)
+  rw [neg_sub_neg]
+  exact abs_sub_comm o2.comp_time o1.comp_time
 
 end QOU

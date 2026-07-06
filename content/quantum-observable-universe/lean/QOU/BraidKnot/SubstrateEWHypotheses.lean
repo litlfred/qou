@@ -16,7 +16,7 @@ empirical probe `ew_couplings_substrate_derivation_probe.py`
   2. v_ratio = log(6)     (v_framework / v_SM = log|S_3|;  -0.50%)
   3. 171/143 = 6/5        (scalar/gauge factor ratio = |knot-op basis|/|H_4 blocks|; +0.35%)
 
-Per CLAUDE.md §3b-cond, these are class-conditional theorems:
+Per AGENTS.md §3b-cond, these are class-conditional theorems:
 downstream consumers take `[TorusKnotMass]` and
 `[CategoricalHiggsIdempotent]` as instance hypotheses.
 
@@ -42,7 +42,7 @@ meanings in the existing framework:
 
   - 5 = |partitions of 4| = 5 Wedderburn blocks at H_4
         ((4), (3,1), (2,2), (2,1,1), (1,1,1,1))
-        per CLAUDE.md §7a (Hecke convention)
+        per AGENTS.md §7a (Hecke convention)
 
 These are concrete cardinalities the Lean scaffolds can reference.
 -/
@@ -116,7 +116,7 @@ class SubstrateEWDerivations where
     The `sorry` is the open structural derivation, NOT a missing
     Lean tactic. Status (§3b-cond): conjectural class hypothesis. -/
 -- Ref: [manuscript] docs/audits/2026-05-24-ew-couplings-substrate-empirical-matches.md §2.a
-theorem g_eq_pi_h_substrate_hypothesis [ctx : SubstrateEWDerivations] :
+def g_eq_pi_h_substrate_hypothesis [ctx : SubstrateEWDerivations] :
     gauge_coupling_g = Real.pi * h_substrate_value :=
   -- Ref: [manuscript] docs/audits/2026-05-24-ew-couplings-substrate-empirical-matches.md §2.a
   ctx.claim_g_eq_pi_h
@@ -136,7 +136,7 @@ theorem g_eq_pi_h_substrate_hypothesis [ctx : SubstrateEWDerivations] :
 
     Status (§3b-cond): conjectural class hypothesis. -/
 -- Ref: [manuscript] docs/audits/2026-05-24-ew-couplings-substrate-empirical-matches.md §2.b
-theorem v_ratio_eq_log_S3_hypothesis [ctx : SubstrateEWDerivations] :
+def v_ratio_eq_log_S3_hypothesis [ctx : SubstrateEWDerivations] :
     ∃ v_framework_GeV : ℝ, v_framework_GeV / vev_v_GeV =
       Real.log (cardS3 : ℝ) :=
   -- Ref: [manuscript] docs/audits/2026-05-24-ew-couplings-substrate-empirical-matches.md §2.b
@@ -157,7 +157,7 @@ theorem v_ratio_eq_log_S3_hypothesis [ctx : SubstrateEWDerivations] :
 
     Status (§3b-cond): conjectural class hypothesis. -/
 -- Ref: [manuscript] docs/audits/2026-05-24-ew-couplings-substrate-empirical-matches.md §2.c
-theorem scalar_gauge_ratio_eq_six_fifths_hypothesis [ctx : SubstrateEWDerivations] :
+def scalar_gauge_ratio_eq_six_fifths_hypothesis [ctx : SubstrateEWDerivations] :
     scalar_mass_factor / gauge_mass_factor =
       (gsNFBasisCardinalityB3 : ℝ) / (partitionsOfFour : ℝ) :=
   -- Ref: [manuscript] docs/audits/2026-05-24-ew-couplings-substrate-empirical-matches.md §2.c

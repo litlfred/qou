@@ -20,7 +20,7 @@ refutation is structurally weaker (both data and candidate share the
 extraction-noise-floor behavior). If the candidate swing differs
 significantly, the refutation is structurally strong.
 
-DISCIPLINE (CLAUDE.md no-7th-ansatz). This probe COMPLETES PR #1609's
+DISCIPLINE (AGENTS.md no-7th-ansatz). This probe COMPLETES PR #1609's
 deferred test, NOT a new candidate. The candidate refuted at q_proton
 remains refuted. The new finding is the cross-anchor behavior.
 

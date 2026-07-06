@@ -1,37 +1,37 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T13:44:33.969036+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-06-22T13:00:12.391399+00:00",
+  "commitSha": "8013e77237e09ab3d980ed3fef1c74676b2e9944",
   "assertions": [
     {
       "name": "cumulative_at_max_grade_matches_target[proton]",
-      "computed": 1.06530614425445,
-      "expected": 1.0653061442544498,
-      "passed": true,
+      "computed": 1.065411955157403,
+      "expected": 1.065306228613167,
+      "passed": false,
       "tolerance": 1e-10
     },
     {
       "name": "cumulative_at_max_grade_matches_target[neutron]",
-      "computed": 0.9232332299116371,
-      "expected": 0.9232332299116371,
-      "passed": true,
+      "computed": 0.9234134546830464,
+      "expected": 0.9232332971861535,
+      "passed": false,
       "tolerance": 1e-10
     },
     {
       "name": "cumulative_at_max_grade_matches_target[deuteron]",
-      "computed": 0.38828642407478886,
-      "expected": 0.3882864240747888,
-      "passed": true,
+      "computed": 0.3884715907200511,
+      "expected": 0.3882864715477132,
+      "passed": false,
       "tolerance": 1e-10
     }
   ],
-  "allPassed": true,
-  "durationMs": 653,
+  "allPassed": false,
+  "durationMs": 546,
   "computation": "graded-hecke-energy-probe",
   "scriptFile": "graded_hecke_energy_probe.py",
-  "scriptHash": "b60821952ecc",
-  "scriptCommitSha": "bc60c4d79ae695d3022cb53914e2693e7ddcf29b",
+  "scriptHash": "e8fca88a83fa",
+  "scriptCommitSha": "7b12822eab9b4f49a89db02c7a90d75d1f7d61b5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,9 +39,8 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
@@ -49,7 +48,7 @@
   "contentBlock": "prop:graded-hecke-energy-truncation-bound",
   "auditOnly": "docs/audits/2026-05-10-1ppb-workplan-update.md",
   "parameters": {
-    "q_0": 1.1099785827513808,
+    "q_0": 1.1099785955573347,
     "dps": 50
   },
   "data": {
@@ -58,11 +57,11 @@
         "Z": 1,
         "N": 0,
         "include_inter": false,
-        "target_tr_M": "1.0653061442544499",
+        "target_tr_M": "1.065306228613167",
         "num_partitions": 3,
         "num_grades": 3,
         "max_grade": 3,
-        "effective_confinement_level_tight": 3,
+        "effective_confinement_level_tight": -1,
         "effective_confinement_level_loose_1e_minus_3": 3,
         "per_grade_cumulative": [
           {
@@ -73,9 +72,9 @@
                 3
               ]
             ],
-            "grade_sum_real": "0.57428238720261054033236897553318244772431421230472",
+            "grade_sum_real": "0.57436461501274593364138854928156911519270166991876",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.57428238720261054033236897553318244772431421230472"
+            "cumulative_abs": "0.57436461501274593364138854928156911519270166991876"
           },
           {
             "grade": 1,
@@ -86,9 +85,9 @@
                 1
               ]
             ],
-            "grade_sum_real": "1.0821197419235823865738610846660743300476451235318",
+            "grade_sum_real": "1.0822231475958206369488678557751872467782699959986",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "1.0821197419235823865738610846660743300476451235318"
+            "cumulative_abs": "1.0822231475958206369488678557751872467782699959986"
           },
           {
             "grade": 3,
@@ -100,9 +99,9 @@
                 1
               ]
             ],
-            "grade_sum_real": "1.0653061442544499256568140200099026017043545646009",
+            "grade_sum_real": "1.065411955157403126002791505831901116407703605237",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "1.0653061442544499256568140200099026017043545646009"
+            "cumulative_abs": "1.065411955157403126002791505831901116407703605237"
           }
         ]
       },
@@ -110,11 +109,11 @@
         "Z": 0,
         "N": 1,
         "include_inter": false,
-        "target_tr_M": "0.9232332299116371",
+        "target_tr_M": "0.9232332971861535",
         "num_partitions": 3,
         "num_grades": 3,
         "max_grade": 3,
-        "effective_confinement_level_tight": 3,
+        "effective_confinement_level_tight": -1,
         "effective_confinement_level_loose_1e_minus_3": 3,
         "per_grade_cumulative": [
           {
@@ -125,9 +124,9 @@
                 3
               ]
             ],
-            "grade_sum_real": "0.46611845563912882079950485894516163183926396750922",
+            "grade_sum_real": "0.46618518539307142680451821073341164380965045966713",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.46611845563912882079950485894516163183926396750922"
+            "cumulative_abs": "0.46618518539307142680451821073341164380965045966713"
           },
           {
             "grade": 1,
@@ -138,9 +137,9 @@
                 1
               ]
             ],
-            "grade_sum_real": "0.94394846418326436797500206741308498323492132438442",
+            "grade_sum_real": "0.94412572606218820192547461988943318816910656732476",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.94394846418326436797500206741308498323492132438442"
+            "cumulative_abs": "0.94412572606218820192547461988943318816910656732476"
           },
           {
             "grade": 3,
@@ -152,9 +151,9 @@
                 1
               ]
             ],
-            "grade_sum_real": "0.92323322991163713808836438133247418402289693724971",
+            "grade_sum_real": "0.92341345468304633330583491473385717245412991635307",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.92323322991163713808836438133247418402289693724971"
+            "cumulative_abs": "0.92341345468304633330583491473385717245412991635307"
           }
         ]
       },
@@ -162,11 +161,11 @@
         "Z": 1,
         "N": 1,
         "include_inter": true,
-        "target_tr_M": "0.3882864240747888",
+        "target_tr_M": "0.3882864715477132",
         "num_partitions": 11,
         "num_grades": 9,
         "max_grade": 15,
-        "effective_confinement_level_tight": 15,
+        "effective_confinement_level_tight": -1,
         "effective_confinement_level_loose_1e_minus_3": 6,
         "per_grade_cumulative": [
           {
@@ -177,9 +176,9 @@
                 6
               ]
             ],
-            "grade_sum_real": "0.092318560426082795155564353618748099266498073557903",
+            "grade_sum_real": "0.092351605027785627065899611429643898474155026357529",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.092318560426082795155564353618748099266498073557903"
+            "cumulative_abs": "0.092351605027785627065899611429643898474155026357529"
           },
           {
             "grade": 1,
@@ -190,9 +189,9 @@
                 1
               ]
             ],
-            "grade_sum_real": "0.28192968483000016855666595459069438464048719266675",
+            "grade_sum_real": "0.28204986820255679180683475187535684816043641797908",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.28192968483000016855666595459069438464048719266675"
+            "cumulative_abs": "0.28204986820255679180683475187535684816043641797908"
           },
           {
             "grade": 2,
@@ -203,9 +202,9 @@
                 2
               ]
             ],
-            "grade_sum_real": "0.3493555873209456034545353538753279960643836816196",
+            "grade_sum_real": "0.34951699865109854606791562437094572897118094337448",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.3493555873209456034545353538753279960643836816196"
+            "cumulative_abs": "0.34951699865109854606791562437094572897118094337448"
           },
           {
             "grade": 3,
@@ -221,9 +220,9 @@
                 1
               ]
             ],
-            "grade_sum_real": "0.4045914920640778498365519315987435572961925165154",
+            "grade_sum_real": "0.40477392077385043349859089503967558221973938329941",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.4045914920640778498365519315987435572961925165154"
+            "cumulative_abs": "0.40477392077385043349859089503967558221973938329941"
           },
           {
             "grade": 4,
@@ -235,9 +234,9 @@
                 1
               ]
             ],
-            "grade_sum_real": "0.39015349511789433605196054743095851539880559273766",
+            "grade_sum_real": "0.39033838617572338897818798765725574395770391542042",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.39015349511789433605196054743095851539880559273766"
+            "cumulative_abs": "0.39033838617572338897818798765725574395770391542042"
           },
           {
             "grade": 6,
@@ -255,9 +254,9 @@
                 1
               ]
             ],
-            "grade_sum_real": "0.38778501851983189306402718503466274116586851952692",
+            "grade_sum_real": "0.38797014989876803297451831410846674527284898792043",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.38778501851983189306402718503466274116586851952692"
+            "cumulative_abs": "0.38797014989876803297451831410846674527284898792043"
           },
           {
             "grade": 7,
@@ -270,9 +269,9 @@
                 1
               ]
             ],
-            "grade_sum_real": "0.38806540375602256817394964511988525882059069606586",
+            "grade_sum_real": "0.3882505976400564141381516208237283998070578781559",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.38806540375602256817394964511988525882059069606586"
+            "cumulative_abs": "0.3882505976400564141381516208237283998070578781559"
           },
           {
             "grade": 10,
@@ -286,9 +285,9 @@
                 1
               ]
             ],
-            "grade_sum_real": "0.38827800448626315186238656421263393856540312061191",
+            "grade_sum_real": "0.38846317414792186162955270382443535037279329178296",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.38827800448626315186238656421263393856540312061191"
+            "cumulative_abs": "0.38846317414792186162955270382443535037279329178296"
           },
           {
             "grade": 15,
@@ -303,9 +302,9 @@
                 1
               ]
             ],
-            "grade_sum_real": "0.38828642407478884856154551860407205806218976744356",
+            "grade_sum_real": "0.38847159072005109371417411242568168404891294547135",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.38828642407478884856154551860407205806218976744356"
+            "cumulative_abs": "0.38847159072005109371417411242568168404891294547135"
           }
         ]
       }

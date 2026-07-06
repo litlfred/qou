@@ -1,7 +1,3 @@
-**Caveat: this conjecture is more speculative than the others.**
-It sketches a use of surreals as endpoints of cosmological time
-that the rest of the paper does not depend on.
-
 The QOU framework is parameter-time-symmetric: the substrate
 $q \in \mathbb{R}_{>0}$ controls all dimensionful constants (speed
 of light $c_q = 1/(q-1)$, Planck constant $\hbar_q = (q-1)/q$,
@@ -76,7 +72,7 @@ conjecture is:
    $\varepsilon$ is a quantitative deviation from the singular
    $\mathbf{BigBang}$ functor.
 
-## What this would buy
+## Consequences of the conjecture
 
 If the conjecture holds, the cosmological endpoints become
 *objects* in the category of archimedean QOUs rather than

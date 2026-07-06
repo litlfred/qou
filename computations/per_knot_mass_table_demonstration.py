@@ -29,7 +29,7 @@ RED verdict for the proton: per-block `tr_M(p) ≈ 1.065` and production
 ~2.4×), so this wire-up makes the proton prediction go from
 +2.89% to **−56.7%**, not the other way.
 
-Per CLAUDE.md production-vs-exploratory discipline, this script
+Per AGENTS.md production-vs-exploratory discipline, this script
 DOES NOT propose the per-block reading as a closure. It MAKES the
 discrepancy visible across the 6 atoms with data, so the structural
 question — "what is the per-knot generalization of H_4 Family-A
@@ -79,7 +79,11 @@ from _li_2_q_util import (  # noqa: E402
     geom_leading,
 )
 from q_parameter import Q as q_0  # noqa: E402
-from codata_constants import M_E_MEV  # noqa: E402
+from codata_constants import (  # noqa: E402 — registry (no inline CODATA literals)
+    M_E_MEV,
+    M_P_MEV_VALIDATION, M_N_MEV_VALIDATION, M_D_MEV_VALIDATION,
+    M_T_MEV_VALIDATION, M_HE3_MEV_VALIDATION, M_HE4_MEV_VALIDATION,
+)
 from closed_form_tau_M import (  # noqa: E402
     compute_tau_M_nucleon_H3,
     closed_form_tau_M,
@@ -87,14 +91,14 @@ from closed_form_tau_M import (  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
-# CODATA / AME observed masses
+# CODATA / AME observed masses — codata_constants registry (no inline literals)
 CODATA = {
-    "p":    mp.mpf("938.272088160"),
-    "n":    mp.mpf("939.565420520"),
-    "D":    mp.mpf("1875.61294257"),    # AME 2020
-    "T":    mp.mpf("2808.92113298"),
-    "3He":  mp.mpf("2808.39155747"),
-    "4He":  mp.mpf("3727.37941020"),
+    "p":    M_P_MEV_VALIDATION,
+    "n":    M_N_MEV_VALIDATION,
+    "D":    M_D_MEV_VALIDATION,     # AME 2020
+    "T":    M_T_MEV_VALIDATION,
+    "3He":  M_HE3_MEV_VALIDATION,
+    "4He":  M_HE4_MEV_VALIDATION,
 }
 
 

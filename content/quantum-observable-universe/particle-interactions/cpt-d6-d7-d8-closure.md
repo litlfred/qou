@@ -44,7 +44,9 @@ symmetry channel; the parent block records the unified statement.
 
 ## Lean
 
-Class-axiomatised per CLAUDE.md §3b-cond. Downstream blocks that
+Class-axiomatised per AGENTS.md §3b-cond. Downstream blocks that
 need CPT-closure as an explicit hypothesis take
 `[CPTD6D7D8Closure]` as a class hypothesis; the three
 component-instances live in their respective `.lean` files.
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

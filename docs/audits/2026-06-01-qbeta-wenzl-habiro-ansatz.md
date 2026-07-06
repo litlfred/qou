@@ -2,8 +2,8 @@
 
 **Date:** 2026-06-01
 **Branch:** `claude/qbeta-wenzl-habiro-keystone-2026-06-01`
-**Probe script:** [`folio-assistant/computations/probes/qbeta_wenzl_habiro_ansatz_probe.py`](../../folio-assistant/computations/probes/qbeta_wenzl_habiro_ansatz_probe.py)
-**Witness:** [`folio-assistant/computations/probes/qbeta-wenzl-habiro-ansatz-probe.witness.json`](../../folio-assistant/computations/probes/qbeta-wenzl-habiro-ansatz-probe.witness.json)
+**Probe script:** [`computations/probes/qbeta_wenzl_habiro_ansatz_probe.py`](../../computations/probes/qbeta_wenzl_habiro_ansatz_probe.py)
+**Witness:** [`computations/probes/qbeta-wenzl-habiro-ansatz-probe.witness.json`](../../computations/probes/qbeta-wenzl-habiro-ansatz-probe.witness.json)
 **Master ledger:** [`docs/coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md)
 **Status:** **NEGATIVE** — no cyclotomic Wenzl factor `W(u)` × pair-specific `D(u)` ansatz reproduces both `c_2 = −1` (Taylor-exact, PROVED) AND `c_3 = −2.0693…` (cal-anchored) as a clean structural identity.
 
@@ -157,7 +157,7 @@ next:
    "1ppQ Q_β" goal as currently framed is a category mistake —
    CAL anchors are *inputs*, not predictions. The current 3-CAL
    discipline (m_e, Q_β, m_π) has Q_β as CAL-2, NOT a prediction.
-   Per CLAUDE.md `## Precision goals`, Q_β's L2 target (≤ 7.8 ppb)
+   Per AGENTS.md `## Precision goals`, Q_β's L2 target (≤ 7.8 ppb)
    currently misses by 1279 ppb (164× miss), and **the cleanest
    path is to declare Q_β not a prediction at all but a
    calibration constant** — at which point N=7 / 1ppQ becomes a

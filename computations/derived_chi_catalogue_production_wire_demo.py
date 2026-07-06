@@ -40,7 +40,7 @@ Phase 3: "Replace the relevant extracted `χ^λ` reads in
 
 The failing-loud guard `cat.lookup_derived(K, λ, A)` raises if the cell has
 `tier != "derived"`. Production sites can therefore claim derived provenance
-on their L2 dashboards (per CLAUDE.md Precision goals); any cal-anchored
+on their L2 dashboards (per AGENTS.md Precision goals); any cal-anchored
 fallback surfaces as a raise rather than a silent circular value.
 
 ## What this demo asserts

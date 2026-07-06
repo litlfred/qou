@@ -23,7 +23,7 @@ formal q-rational power-series in
 $\mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}][\![z]\!]$; numerical
 verification to $\sim 10^{-55}$ relative precision at $q_0$ across
 seven test points is recorded in
-[`li2q-phiq-bar-symmetry.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/li2q-phiq-bar-symmetry.witness.json).*
+[`li2q-phiq-bar-symmetry.witness.json`](https://github.com/litlfred/qou/blob/main/computations/li2q-phiq-bar-symmetry.witness.json).*
 
 > **Historical note (superseded 2026-05-20).** *An earlier version
 > of this proposition stated the identity as the bar-**symmetri-
@@ -106,7 +106,7 @@ ARE precisely the singular-braid mass scale that gives $m_p / m_e \approx 1869$.
 
 ### Empirical witness: the m_p / m_e split
 
-Per [`m_p_m_e_li2q.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/m_p_m_e_li2q.py),
+Per [`m_p_m_e_li2q.py`](https://github.com/litlfred/qou/blob/main/computations/m_p_m_e_li2q.py),
 computing the mass-tower formula
 
 $$
@@ -184,7 +184,7 @@ witness. Lean skeleton in place.
 ### Compute-side caller registry (2026-05-20 audit)
 
 Per this proposition, every q-dilogarithm caller in
-`folio-assistant/computations/` is classified by context:
+`computations/` is classified by context:
 
 **MASS callers — use Φ_q (`_phi_q_util.py`)**:
 `build_proton_mass_50dps_chain`, `canonical_plus_multibrane`,
@@ -226,7 +226,7 @@ not a mass or binding claim):
 ### The binding compute pipeline is already Φ_q-free
 
 Independently verified 2026-05-20 by surveying all `binding_*.py` and
-`fr_*.py` files in `folio-assistant/computations/` (the actual binding
+`fr_*.py` files in `computations/` (the actual binding
 computation pipeline downstream of `prop:atomic-mass-gb-nf` /
 [`prop:depth-stratified-frobenius-reciprocity`](depth-stratified-frobenius-reciprocity.md)):
 
@@ -258,7 +258,7 @@ of the brane-tower formulation, consistent with this proposition's
 binding-context recommendation.
 
 **Migration status: COMPLETE on the compute side.** The 42 Φ_q callers
-in `folio-assistant/computations/` are all mass-anchor or probe-context
+in `computations/` are all mass-anchor or probe-context
 (per the registry above); they correctly retain Φ_q per the
 bar-symmetrization context-split. No further code migrations needed.
 

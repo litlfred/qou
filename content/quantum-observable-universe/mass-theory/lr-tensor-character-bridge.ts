@@ -16,4 +16,10 @@ export default corollary({
     "def:canonical-braid-interface-composition",
   ],
   cites: ["wenzl1988", "macdonald1995", "geck-pfeiffer2000", "ram1991"],
+  authorNotes: [
+    {
+      kind: "status",
+      body: "The companion Lean `lr_tensor_character_bridge` currently records a placeholder conclusion (`1 = 1`) rather than the full Littlewood--Richardson character-bridge identity; the content above is the intended statement, deferred via `sorry` (`-- Ref: [manuscript]`).",
+    },
+  ],
 });

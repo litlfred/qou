@@ -2,8 +2,8 @@
 
 **Date**: 2026-06-03
 **Branch / PR**: `claude/qbeta-sdp-strict-complementarity-2026-06-03` / PR #1752
-**Script**: [`folio-assistant/computations/qbeta/qbeta_symbolic_sdp_strict_complementarity.py`](../../folio-assistant/computations/qbeta/qbeta_symbolic_sdp_strict_complementarity.py)
-**Witness**: `folio-assistant/computations/qbeta/qbeta-symbolic-sdp-strict-complementarity.witness.json`
+**Script**: [`computations/qbeta/qbeta_symbolic_sdp_strict_complementarity.py`](../../computations/qbeta/qbeta_symbolic_sdp_strict_complementarity.py)
+**Witness**: `computations/qbeta/qbeta-symbolic-sdp-strict-complementarity.witness.json`
 **Sibling**: PR #1739 (`qbeta_symbolic_tbeta_min_l2.py` — the symbolic T_β shape this reuses)
 
 ## Goal

@@ -51,6 +51,7 @@ import sys as _sys
 from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: F401
+from codata_constants import M_D_MEV_VALIDATION, M_N_MEV_VALIDATION, M_P_MEV_VALIDATION, M_T_MEV_VALIDATION  # noqa: E402 (codata sweep)
 del _sys, _Path, _bridge
 
 from pathlib import Path
@@ -65,15 +66,19 @@ from witness_base import WitnessBuilder  # noqa: E402
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
-Q_0_50DPS = "1.1099785827513808075916690956107688798744991218736"
+Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
 
-M_E_MEV = mp.mpf("0.51099895069")
-M_P_MEV = mp.mpf("938.27208816")
-M_N_MEV = mp.mpf("939.56542052")
-M_D_MEV = mp.mpf("1875.61294257")
-M_T_MEV = mp.mpf("2808.92113298")
-M_HE3_MEV = mp.mpf("2808.39160743")
-M_HE4_MEV = mp.mpf("3727.37941")
+# CODATA-2022 / AME-2020 masses (MeV) routed through the canonical
+# registry (I9 — no hardcoded literals). See codata_constants.py.
+from codata_constants import (  # noqa: E402
+    M_E_MEV,
+    M_P_MEV_VALIDATION as M_P_MEV,
+    M_N_MEV_VALIDATION as m_n_derived_3input,
+    M_D_MEV_VALIDATION as M_D_MEV,
+    M_T_MEV_VALIDATION as M_T_MEV,
+    M_HE3_MEV_VALIDATION as M_HE3_MEV,
+    M_HE4_MEV_VALIDATION as M_HE4_MEV,
+)
 
 # Per-knot Vol(K) per Phase-4 SnapPy JSJ convention (T2-recommended;
 # least-bad of the three at +132 % swing).
@@ -85,7 +90,7 @@ VOL_PHASE4_Z2 = mp.mpf("12.554")
 LIGHT_SERIES = [
     # (label, Z, N, m_K, vol_K)
     ("p",   1, 0, M_P_MEV,    VOL_BORROMEAN_8G),
-    ("n",   0, 1, M_N_MEV,    VOL_BORROMEAN_8G),
+    ("n",   0, 1, m_n_derived_3input,    VOL_BORROMEAN_8G),
     ("D",   1, 1, M_D_MEV,    VOL_PHASE4_Z1),
     ("T",   1, 2, M_T_MEV,    VOL_PHASE4_Z1),
     ("3He", 2, 1, M_HE3_MEV,  VOL_PHASE4_Z2),

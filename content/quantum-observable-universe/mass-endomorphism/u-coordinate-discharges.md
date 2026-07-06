@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Macdonald coordinate $u = q^2$ substantive discharges for the
 $H_3 / V_{(2,1)}$ scalar invariants.**
 
@@ -18,7 +16,7 @@ See [Table](#tbl:u-coordinate-discharges-table-data).
 Each scalar identity above is exported as a Lean theorem closed by
 `field_simp + ring` (no sqrt, no opaque axioms).
 
-## Why this matters
+## Significance
 
 Before this block, the explicit-residual discharges at the class
 level (`⟨0, rfl⟩`) appeared **abstractly trivial** — the residual is

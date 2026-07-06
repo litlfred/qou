@@ -108,7 +108,7 @@ proof IS Story B's c_2 step.
 
 - **Lean formalisation** of `c_3 = -2` and `c_4 = b² + 1/2` propositions
   in PR #664/665 — bundles into the conditional-class chain per
-  CLAUDE.md §3b-cond, with the V_(2,2,2) channel selection as the
+  AGENTS.md §3b-cond, with the V_(2,2,2) channel selection as the
   axiomatic input.
 
 ## Cross-references

@@ -1,5 +1,5 @@
 Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be a QOU with Frobenius--Hopf
-object $A$.  The QOU is *strictly commutative* when the multiplication
+object $A$.  The QOU is **strictly commutative** when the multiplication
 $\mu \colon A \otimes A \to A$ satisfies
 $\mu \circ c_{A,A} = \mu$ and, dually, the comultiplication
 $\Delta$ is cocommutative, $c_{A,A} \circ \Delta = \Delta$.

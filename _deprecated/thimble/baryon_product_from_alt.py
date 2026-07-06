@@ -41,7 +41,7 @@ numpy/scipy roots  ──→  pointwise ratio Λ / (Δ_root / J)  ──→  thi
 
 Usage
 -----
-    python3 folio-assistant/computations/baryon_product_from_alt.py
+    python3 computations/baryon_product_from_alt.py
 """
 
 from __future__ import annotations

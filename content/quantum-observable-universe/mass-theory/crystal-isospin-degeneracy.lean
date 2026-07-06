@@ -14,7 +14,7 @@ This file axiomatises the **per-SYT-eigenline content** of
 `QOU.BraidKnot.CrystalGraphRealization`) into a smaller class
 `CrystalEigenlineSignBlind R` that captures only the single fact
 this proposition needs — that on every SYT eigenline, the q=0
-actions of σ_i and σ_i⁻¹ agree.  Per CLAUDE.md §3b-cond, this
+actions of σ_i and σ_i⁻¹ agree.  Per AGENTS.md §3b-cond, this
 `theorem` lives downstream of a conjecture but preserves its
 provable kind by carrying `[CrystalEigenlineSignBlind R]` as an
 explicit class hypothesis.  The implication
@@ -146,25 +146,25 @@ namespace CrystalEigenlineSignBlind
 variable {R : Type u} [Ring R] [C : CrystalEigenlineSignBlind R]
 
 /-- A flipped letter has the same crystal character as the
-    original.  Direct consequence of `charLetter_sign_blind`. -/
+    original.  Direct consequence of `eigLetter_sign_blind`. -/
 -- Ref: [manuscript] braids-and-knots/crystal-isospin-degeneracy
-theorem charLetter_invert (ℓ : SignedLetter) :
-    C.charLetter ℓ.invert = C.charLetter ℓ := by
+theorem eigLetter_invert (ℓ : SignedLetter) :
+    C.eigLetter ℓ.invert = C.eigLetter ℓ := by
   cases ℓ with
   | pos i =>
     simp only [SignedLetter.invert]
-    exact (C.charLetter_sign_blind i).symm
+    exact (C.eigLetter_sign_blind i).symm
   | neg i =>
     simp only [SignedLetter.invert]
-    exact C.charLetter_sign_blind i
+    exact C.eigLetter_sign_blind i
 
 /-- A flipped letter under any predicate has the same crystal
     character as the original. -/
 -- Ref: [manuscript] braids-and-knots/crystal-isospin-degeneracy
-theorem charLetter_flipAt (flip : Bool) (ℓ : SignedLetter) :
-    C.charLetter (if flip then ℓ.invert else ℓ) = C.charLetter ℓ := by
+theorem eigLetter_flipAt (flip : Bool) (ℓ : SignedLetter) :
+    C.eigLetter (if flip then ℓ.invert else ℓ) = C.eigLetter ℓ := by
   cases flip with
-  | true => simpa using charLetter_invert ℓ
+  | true => simpa using eigLetter_invert ℓ
   | false => rfl
 
 end CrystalEigenlineSignBlind
@@ -174,31 +174,31 @@ end CrystalEigenlineSignBlind
     Conditional on `[CrystalEigenlineSignBlind R]`, the crystal character of
     `flipAux flip offset w` equals the crystal character of `w` for
     every offset `offset : ℕ`.  Proof: induction on `w`, using
-    `charLetter_flipAt` on the head and `charWord_cons` to factor
+    `eigLetter_flipAt` on the head and `eigWord_cons` to factor
     the per-letter contribution. -/
 -- Ref: [manuscript] braids-and-knots/crystal-isospin-degeneracy
 theorem crystal_isospin_degeneracy_aux
     {R : Type u} [Ring R] [C : CrystalEigenlineSignBlind R]
     (flip : ℕ → Bool) (offset : ℕ) (w : SignedBraidWord) :
-    C.charWord (SignedBraidWord.flipAux flip offset w) = C.charWord w := by
+    C.eigWord (SignedBraidWord.flipAux flip offset w) = C.eigWord w := by
   induction w generalizing offset with
   | nil => rfl
   | cons ℓ tail ih =>
-    -- LHS = charWord ((if flip offset then ℓ.invert else ℓ) :: flipAux flip (offset+1) tail)
-    --     = charLetter (if … then ℓ.invert else ℓ) * charWord (flipAux flip (offset+1) tail)
-    --     = charLetter ℓ * charWord tail   (by charLetter_flipAt and ih)
-    --     = charWord (ℓ :: tail)           (by charWord_cons)
-    simp only [SignedBraidWord.flipAux, C.charWord_cons,
-               CrystalEigenlineSignBlind.charLetter_flipAt, ih]
+    -- LHS = eigWord ((if flip offset then ℓ.invert else ℓ) :: flipAux flip (offset+1) tail)
+    --     = eigLetter (if … then ℓ.invert else ℓ) * eigWord (flipAux flip (offset+1) tail)
+    --     = eigLetter ℓ * eigWord tail   (by eigLetter_flipAt and ih)
+    --     = eigWord (ℓ :: tail)           (by eigWord_cons)
+    simp only [SignedBraidWord.flipAux, C.eigWord_cons,
+               CrystalEigenlineSignBlind.eigLetter_flipAt, ih]
 
 /-- **Theorem (crystal isospin degeneracy).**
 
     Conditional on `[CrystalEigenlineSignBlind R]`, the crystal character
-    `charWord` is invariant under sign-inversion of any subset of
+    `eigWord` is invariant under sign-inversion of any subset of
     the letters of the word.  Concretely, for any predicate
     `flip : ℕ → Bool`,
 
-      `charWord (flipAt flip w) = charWord w`.
+      `eigWord (flipAt flip w) = eigWord w`.
 
     Proof: instance of `crystal_isospin_degeneracy_aux` at
     `offset = 0`. -/
@@ -207,9 +207,9 @@ theorem crystal_isospin_degeneracy_aux
 theorem crystal_isospin_degeneracy
     {R : Type u} [Ring R] [_C : CrystalEigenlineSignBlind R]
     (flip : ℕ → Bool) (w : SignedBraidWord) :
-    CrystalEigenlineSignBlind.charWord (R := R)
+    CrystalEigenlineSignBlind.eigWord (R := R)
         (SignedBraidWord.flipAt flip w)
-      = CrystalEigenlineSignBlind.charWord (R := R) w := by
+      = CrystalEigenlineSignBlind.eigWord (R := R) w := by
   unfold SignedBraidWord.flipAt
   exact crystal_isospin_degeneracy_aux flip 0 w
 
@@ -228,7 +228,7 @@ theorem crystal_isospin_degeneracy
     Therefore `S_crystal(T) = S_crystal(³He)`.
 
     Witness:
-    `folio-assistant/computations/term7-alpha5-crystal-derivation.witness.json`
+    `computations/term7-alpha5-crystal-derivation.witness.json`
     records both at 50 dps as `0.0020612874779541296`. -/
 -- Ref: [manuscript] braids-and-knots/crystal-isospin-degeneracy
 theorem crystal_T_helium3_degeneracy
@@ -236,8 +236,8 @@ theorem crystal_T_helium3_degeneracy
     (w_T w_He3 : SignedBraidWord)
     (h_diff : w_He3 = SignedBraidWord.flipAt
                           (fun k => decide (k = 4 ∨ k = 5)) w_T) :
-    CrystalEigenlineSignBlind.charWord (R := R) w_He3
-      = CrystalEigenlineSignBlind.charWord (R := R) w_T := by
+    CrystalEigenlineSignBlind.eigWord (R := R) w_He3
+      = CrystalEigenlineSignBlind.eigWord (R := R) w_T := by
   rw [h_diff]
   exact crystal_isospin_degeneracy _ _
 

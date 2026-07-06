@@ -1,0 +1,54 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-29T00:11:19.503773+00:00",
+  "commitSha": "95a4b605560ee7e3c784b2d15212a5d3c2d2bdd5",
+  "assertions": [
+    {
+      "name": "mass_alg - phi1/hbar_sq == 0 given phi1 = mass_alg*hbar_sq (symbolic)",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "source": "sympy.simplify (AlgebraicMassFormula, exact in Q(q))"
+    },
+    {
+      "name": "mass_alg == phi1/hbar_sq at q0 (phi1 = Vol(4_1))",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-25,
+      "source": "algebraic-side numerical check"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "probe-topological-mass-formula-algebraic",
+  "scriptFile": "probe_topological_mass_formula.py",
+  "scriptHash": "40b71481b09f",
+  "scriptCommitSha": "703c9f90a01cf1e5fd178a9561310fb57ef75dd9",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Algebraic-side topological mass identity mass_alg = Phi_1/hbar_sq (prop:topological-mass-formula-algebraic, Lean AlgebraicMassFormula): exact in Q(q) given the AlgebraicMassFormula hypothesis phi1 = mass_alg*hbar_sq, plus a 50-dps numerical recovery at q0 with phi1 = Vol(4_1). Companion to probe-topological-mass-formula.",
+  "contentBlock": "prop:topological-mass-formula-algebraic",
+  "parameters": {
+    "q0": "1.1099785955573347198997632204832250266562084087802",
+    "hbar_q_def": "1 - 1/q0"
+  },
+  "data": {
+    "symbolic_algebraic_exact": true,
+    "hbar_q_sq_at_q0": "0.00981718851398598439370648689404948144509964058461485611470713"
+  },
+  "caveats": [
+    "Verifies only the algebraic combine mass_alg = phi1/hbar_sq the proposition proves; the geometric inputs (Vol_q, tau_arch) are imported hypotheses, not derived. Not the canonical absolute nucleon mass (that is the muon-anchored Hecke energy via canonical_mass.py)."
+  ]
+}

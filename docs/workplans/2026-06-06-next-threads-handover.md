@@ -4,7 +4,7 @@ Owner picked **2 → 1 → 3 → 4** as the queue after the Q_β `c_3` thread cl
 (collapse-cancellation **refuted**, PR #1905; residue-A narrowed to the f-map /
 anchor-dependent brane-tower level). Each thread below has a **de-risked entry
 point** so a *fresh focused session* starts cold and runs fast (one tranche per
-session — long mega-sessions are the observed failure mode, CLAUDE.md).
+session — long mega-sessions are the observed failure mode, AGENTS.md).
 
 ---
 
@@ -33,7 +33,7 @@ per-block sum"). Sole consumer: `vol_density_per_block_wiring.py` (testbed).
 `vol_density_borromean` — and show the error drops from +2.86 % toward the AME value.
 Then migrate the *mechanical* path (`vol_density_borromean` → `vol_density_per_block`)
 for p/n/D only; A≥3 waits on Thread 4. (Machinery is fragile under ad-hoc
-`PYTHONPATH` — run from `folio-assistant/computations/`.)
+`PYTHONPATH` — run from `computations/`.)
 
 ---
 

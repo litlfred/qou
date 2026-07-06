@@ -1,5 +1,7 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Combinatorics.Young.YoungDiagram
+import Mathlib.Data.Nat.Factorial.Basic
+import Mathlib.Data.Real.Basic
 
 /-!
 # Schur–Weyl decomposition of the atomic mass trace
@@ -30,20 +32,20 @@ structure PartitionOfN (n : ℕ) where
     bearing via `n.factorial` (the row-partition hook product
     is `[n]_q!` evaluated at q=1).  The genuine product over
     cell hooks lives in `HookWeightDerivation`. -/
-def qHookProduct {n : ℕ} (_λ : PartitionOfN n) (_q : ℝ) : ℝ :=
+def qHookProduct {n : ℕ} (_lam : PartitionOfN n) (_q : ℝ) : ℝ :=
   (n.factorial : ℝ)
 
 /-- The Schur function `s_λ(q, q⁻¹)`.  Content-bearing via `n`. -/
-def schurAtQ {n : ℕ} (_λ : PartitionOfN n) (_q : ℝ) : ℝ := (n : ℝ)
+def schurAtQ {n : ℕ} (_lam : PartitionOfN n) (_q : ℝ) : ℝ := (n : ℝ)
 
 /-- The Specht-module character of the atomic braid.  Concrete
     model: returns 0. -/
-def spechtCharacter {n : ℕ} (_λ : PartitionOfN n)
+def spechtCharacter {n : ℕ} (_lam : PartitionOfN n)
     (_braid : Unit) : ℝ := 0
 
 /-- Schur–Weyl weight: `w_λ(q) = s_λ(q, q⁻¹) / H_q(λ)`. -/
-noncomputable def schurWeylWeight {n : ℕ} (λ : PartitionOfN n) (q : ℝ) : ℝ :=
-  schurAtQ λ q / qHookProduct λ q
+noncomputable def schurWeylWeight {n : ℕ} (lam : PartitionOfN n) (q : ℝ) : ℝ :=
+  schurAtQ lam q / qHookProduct lam q
 
 /-- **Schur–Weyl mass decomposition.**
 
@@ -70,15 +72,14 @@ class SchurWeylMassDecomposition (A : ℕ) where
   /-- Decomposition: trace equals weighted sum over partitions. -/
   decomposition :
     markovTrace =
-      (partitions.map (fun λ =>
-        schurWeylWeight λ q * spechtCharacter λ atomicBraid)).sum
+      (partitions.map (fun lam =>
+        schurWeylWeight lam q * spechtCharacter lam atomicBraid)).sum
 
-/-- **A = 1 specialisation.**  For a single nucleon (`H_3(q)`) the
-    partitions of 3 are `(3)`, `(2,1)`, `(1,1,1)`, giving the
-    three-channel Wedderburn weights.  This recovers
-    `thm:wedderburn-mass-formula`.
-
-    Ref: [manuscript] `prop:three-parameters-wedderburn`. -/
+-- **A = 1 specialisation.**  For a single nucleon (`H_3(q)`) the
+-- partitions of 3 are `(3)`, `(2,1)`, `(1,1,1)`, giving the
+-- three-channel Wedderburn weights.  This recovers
+-- `thm:wedderburn-mass-formula`.
+-- Ref: [manuscript] `prop:three-parameters-wedderburn`.
 /-- **External axiom (Kassel 1995): partitions of 3 are (3),(2,1),(1,1,1)
     — exactly 3 of them, so the H_3(q) Wedderburn has 3 channels.** -/
 -- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
@@ -97,11 +98,11 @@ theorem a_eq_one_three_channels (S : SchurWeylMassDecomposition 1) :
 -- Ref: [manuscript] §Nuclear Binding
 axiom additive_wedderburn_missing_partitions_axiom :
     ∀ (A : ℕ) (_hA : 2 ≤ A) (S : SchurWeylMassDecomposition A),
-      ∃ λ ∈ S.partitions, λ.parts.head? = some (3 * A)
+      ∃ lam ∈ S.partitions, lam.parts.head? = some (3 * A)
 
 theorem additive_wedderburn_missing_partitions (A : ℕ) (hA : 2 ≤ A)
     (S : SchurWeylMassDecomposition A) :
-    ∃ λ ∈ S.partitions, λ.parts.head? = some (3 * A) :=
+    ∃ lam ∈ S.partitions, lam.parts.head? = some (3 * A) :=
   additive_wedderburn_missing_partitions_axiom A hA S
 
 end QOU.BraidKnot

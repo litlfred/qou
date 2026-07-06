@@ -1,3 +1,10 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.Topology.Algebra.InfiniteSum.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
+
 /-
   Nuclear binding energy from the 3-channel brane tower.
 
@@ -31,7 +38,7 @@ theorem wedderburnWeightsSum (q : ℝ) (hq : q > 1) :
   ring
 
 /-- w_sym = w_alt (the symmetric and alternating weights are equal). -/
-theorem wedderburnSymEqAlt (q : ℝ) (hq : q > 1) :
+noncomputable def wedderburnSymEqAlt (q : ℝ) (hq : q > 1) :
     wedderburnSym q hq = wedderburnSym q hq := rfl
 
 /-- The quantum dilogarithm Φ_q(x) = Π_{k≥1} |1 - q⁻ᵏx|⁻¹,
@@ -56,8 +63,8 @@ noncomputable def bindingCoeff (q m_e : ℝ) (hq : q > 1) (channel : Fin 3) : �
 -- Ref: [manuscript] Ch 11 §8 / tower-binding-energy
 noncomputable def towerBinding (q m_e : ℝ) (hq : q > 1)
     (n_gen : ℕ) (V : Fin 3 → Fin n_gen → ℝ) : ℝ :=
-  ∑ λ : Fin 3, bindingCoeff q m_e hq λ *
-    ∑ i : Fin n_gen, Real.log (quantumDilog q (|V λ i|))
+  ∑ lam : Fin 3, bindingCoeff q m_e hq lam *
+    ∑ i : Fin n_gen, Real.log (quantumDilog q (|V lam i|))
 
 /-- The atomic mass from the 3-channel tower.
     M(Z,N) = Z m_p + N m_n + Z m_e − B(Z,N). -/

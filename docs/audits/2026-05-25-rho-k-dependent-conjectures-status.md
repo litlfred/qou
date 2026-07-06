@@ -144,7 +144,7 @@ Both conjectures correctly:
 - Cite `prop:rho-k-graded-expansion` as parent
 - Acknowledge the SUPERSEDED ρ_q purge context
 - Identify the OPEN derivation path
-- Provide Lean stubs with `sorry` per CLAUDE.md §3b
+- Provide Lean stubs with `sorry` per AGENTS.md §3b
 - Cross-reference each other where dependencies exist
 
 ## Cross-references

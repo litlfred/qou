@@ -2,14 +2,14 @@ import { algorithm } from "../../schema/builders";
 
 export default algorithm({
   label: "alg:q-beta-truncation",
-  title: "$\\beta$-decay $Q_\\beta = Q_{\\mathrm{base}} \\cdot \\prod_k (1 + c_k\\, u^k)$",
+  title: "$\\beta$-decay $\\mathfrak{Q}_\\beta = Q_{\\mathrm{base}} \\cdot \\prod_k (1 + c_k\\, u^k)$",
   uses: [
     "prop:q-beta-categorical-precision-ladder",
   ],
   computation: {
     engine: "python+mpmath",
-    script: "folio-assistant/computations/q_beta_predicted.py",
-    witness: "folio-assistant/computations/cal-3-q-beta.witness.json",
+    script: "computations/q_beta_predicted.py",
+    witness: "computations/cal-3-q-beta.witness.json",
     status: "verified",
   },
   tags: [
@@ -17,6 +17,7 @@ export default algorithm({
     "step-11",
     "q-beta",
     "ck-truncation",
+    "kashiwara-b2",
     "beta-decay",
     "canonical-chain",
   ],

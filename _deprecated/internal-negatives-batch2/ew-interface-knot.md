@@ -75,9 +75,9 @@ Three reasons:
 2. **Resolves the simple-multiplicity Weinberg-angle failure.**
    The simple-uniform-multiplicity reading of $\cot\theta_W$
    gave $q_0^{-4} \approx 0.66$ vs CODATA $1.823$ (64% off,
-   [`weinberg-angle-simple-falsified.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/weinberg-angle-simple-falsified.witness.json));
+   [`weinberg-angle-simple-falsified.witness.json`](https://github.com/litlfred/qou/blob/main/computations/weinberg-angle-simple-falsified.witness.json));
    the corrected non-uniform reading gave $1.669$ (8.4% off,
-   [`weinberg-angle-corrected-probe.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/weinberg-angle-corrected-probe.witness.json)).
+   [`weinberg-angle-corrected-probe.witness.json`](https://github.com/litlfred/qou/blob/main/computations/weinberg-angle-corrected-probe.witness.json)).
    Both readings are computed for $\bowtie_K = \mathbf{1}$ (no
    Higgs-vev coupling). The remaining 8.4% gap is plausibly
    exactly what the non-trivial $\bowtie_K$ supplies.
@@ -91,7 +91,7 @@ Three reasons:
    crossings introduce orientation-dependent contributions,
    breaking term-by-term bar-self-duality. The constrained-PSLQ
    null result
-   ([`nv-pslq-tr-pure-basis.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/nv-pslq-tr-pure-basis.witness.json))
+   ([`nv-pslq-tr-pure-basis.witness.json`](https://github.com/litlfred/qou/blob/main/computations/nv-pslq-tr-pure-basis.witness.json))
    on the bar-self-dual basis is **expected** — the actual
    structural form has $\bowtie_K$-induced asymmetry.
 

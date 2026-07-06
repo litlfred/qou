@@ -4,11 +4,11 @@ Algebraic identity:
 
 LaTeX label: `prop:alpha-em-categorical-trace-ratio`
 Computational verification (10⁻¹² precision at q_0):
-  folio-assistant/computations/delta-q-decoration.witness.json
+  computations/delta-q-decoration.witness.json
 -/
 
 import Mathlib.RingTheory.Polynomial.Basic
-import Mathlib.Algebra.GroupPower.Basic
+import Mathlib.Algebra.Group.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 

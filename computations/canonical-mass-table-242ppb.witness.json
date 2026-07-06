@@ -1,6 +1,13 @@
 {
   "computation": "canonical-mass-table-242ppb",
-  "description": "Full mass table using 242-ppb canonical nucleon masses. Binding: D +23%, T +6%, 3He +13%, 4He +3.6%, 6Li +4.8%, 7Li +3.9%, 9Be +3.5%, 10B +3.9%, 12C +3.3%. Massive improvement over Family A (79-99% off). Error dominated by nucleon systematic \u00d7 M/B amplification.",
+  "description": "Per-isotope binding table at the 242-ppb nucleon level. Binding: D +23%, T +6%, 3He +13%, 4He +3.6%, 6Li +4.8%, 7Li +3.9%, 9Be +3.5%, 10B +3.9%, 12C +3.3%. Residuals are dominated by the open Delta_lambda gate (per-isotope binding density) and by the nucleon systematic x M/B amplification; they are not a derived Delta_lambda result.",
+  "auditOnly": true,
+  "provenance": "Hand-authored summary witness: no producer script was run to generate this file, so it carries none of the standard provenance fields (scriptFile, scriptHash, scriptCommitSha, computedAt). The per-isotope B(K) values are carried from a prior-session mass-table sweep and have NOT been regenerated in this environment. Treat as provisional pending a producer-backed regeneration once the Delta_lambda closure (Track-A gate) lands.",
+  "open_gate": "delta_lambda",
+  "delta_lambda": {
+    "status": "open",
+    "note": "Delta_lambda closure is the open Track-A blocker for per-isotope binding (see docs/audits/2026-05-18-delta-lambda-gating-context.md). The B(K) above are NOT a derived Delta_lambda result; this witness flags the gate rather than resolving it."
+  },
   "data": {
     "nucleon_source": "substrate identity + Path C (242 ppb)",
     "binding": {

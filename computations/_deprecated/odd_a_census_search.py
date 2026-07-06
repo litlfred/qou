@@ -14,7 +14,7 @@ For each atom:
 Output: odd-a-census-search.witness.json
 
 Usage:
-    python3 folio-assistant/computations/odd_a_census_search.py
+    python3 computations/odd_a_census_search.py
 """
 from __future__ import annotations
 

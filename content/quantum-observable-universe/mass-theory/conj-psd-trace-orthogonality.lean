@@ -32,16 +32,16 @@ For the canonical atom-braid `T_w(Z, N) ∈ B_{3A}` and its image in
 
 ## Status
 
-Per CLAUDE.md §3b-cond, axiomatised as a Lean `class`
+Per AGENTS.md §3b-cond, axiomatised as a Lean `class`
 `PSDTraceOrthogonalDecomp` with fields encoding the disjointness
 claim. The empirical witnesses (A=4, A=6) provide concrete
 instance data but not Lean instances — those would require
 formalising the Hecke representation theory at q ≠ 1.
 
 Ref: [manuscript] conj:psd-trace-orthogonality
-Ref: [manuscript] folio-assistant/computations/probe_1_project_4he_on_dominant.py
-Ref: [manuscript] folio-assistant/computations/probe_1b_li6_orthogonality.py
-Ref: [manuscript] folio-assistant/computations/probe_4_li6_rectangular_python.py
+Ref: [manuscript] computations/probe_1_project_4he_on_dominant.py
+Ref: [manuscript] computations/probe_1b_li6_orthogonality.py
+Ref: [manuscript] computations/probe_4_li6_rectangular_python.py
 -/
 
 namespace QOU.BraidKnot.PSDTraceOrthogonality

@@ -3,7 +3,7 @@ observable universe.  Let $A$ denote the Frobenius--Hopf object
 representing the gauge-bundle data of $(\mathbf{C}, \varTheta, G, \mathcal{S})$.
 
 By
-([categorical jet object inherits Frobenius--Hopf structure](#lem\:jet-prolongation-categorical-jet)),
+([categorical jet object inherits Frobenius--Hopf structure](#lem:jet-prolongation-categorical-jet)),
 $J^1(A) := A \otimes \Omega^1(A)$ is an object of the ambient category
 and inherits the Frobenius--Hopf data $(\Delta', \varepsilon', S')$
 from $A$.

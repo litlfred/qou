@@ -1,6 +1,7 @@
 import UGB.GrobnerShirshov.HeckeGS
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Positivity
+import Mathlib.Tactic.Linarith
 
 
 /-!
@@ -21,20 +22,14 @@ LaTeX label: `prop:vertex-algebra-jet-relations`
 - [jones1987] https://doi.org/10.2307/1971403
 - [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
 
-**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-Part of the formal proof chain. The parameter `q` is the canonical
-indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
-numerical evaluation.
+**Ground ring**: this Lean sibling is the **archimedean specialisation
+over `ℝ`** (AGENTS.md §7c), matching the `HeckeGS` library, whose
+`RewritingSystem (HeckeGen n)` and `HeckeParams.q` are over `ℝ`. The
+underlying combinatorial content stays generic to any commutative ring
+with the same `q`-data; `q ↦ q₀ ∈ ℝ` is the numerical evaluation.
 -/
 
 namespace QOU.VertexAlgebra.JetRelations
-
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
-abbrev R_q := LaurentPolynomial ℤ
-def q_param : R_q := LaurentPolynomial.T 1
-def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 open UGB.GrobnerShirshov
 open UGB.GrobnerShirshov.Hecke
@@ -49,8 +44,8 @@ open UGB.GrobnerShirshov.Hecke
 -- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
 --      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
 --      DOI: 10.1007/978-1-4612-0783-2
-def levelHecke (hp : HeckeParams) (strands : ℕ) (level : ℕ) :
-    RewritingSystem (HeckeGen strands) R_q :=
+noncomputable def levelHecke (hp : HeckeParams) (strands : ℕ) (_level : ℕ) :
+    RewritingSystem (HeckeGen strands) ℝ :=
   heckeRewritingSystem strands hp
 
 -- ═══════════════════════════════════════════════════════════════════
@@ -65,7 +60,8 @@ def levelHecke (hp : HeckeParams) (strands : ℕ) (level : ℕ) :
 theorem hecke_level_independent (hp : HeckeParams) (strands : ℕ)
     (n m : ℕ) :
     levelHecke hp strands n = levelHecke hp strands m := by
-  unfold levelHecke
+  -- both sides reduce to `heckeRewritingSystem strands hp` (q is level-independent)
+  rfl
 
 -- ═══════════════════════════════════════════════════════════════════
 -- J-3c: Inter-level Markov trace compatibility
@@ -80,7 +76,7 @@ theorem hecke_level_independent (hp : HeckeParams) (strands : ℕ)
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
 axiom markov_level_compatible {n : ℕ} (hp : HeckeParams)
-    (w : AlgElement (HeckeGen n) R_q) :
+    (w : AlgElement (HeckeGen n) ℝ) :
     -- tr_M at level n+1 of the jet-embedded element equals
     -- tr_M at level n of the original element.
     -- Requires the Markov trace and jet embedding formalizations.
@@ -95,7 +91,7 @@ axiom markov_level_compatible {n : ℕ} (hp : HeckeParams)
 /-- JC-3: χ(A_n) = χ(A_0) = -6 for all brane levels n.
     The rigidity trace of the identity is level-invariant. -/
 -- Ref: [manuscript] §4/vertex-algebra-jet-relations
-theorem euler_level_stable (n : ℕ) : (2 : ℤ) - 2 * 4 = -6 := by norm_num
+theorem euler_level_stable (_n : ℕ) : (2 : ℤ) - 2 * 4 = -6 := by norm_num
 
 -- ═══════════════════════════════════════════════════════════════════
 -- JC-4: Yekutieli obstruction as transient R-matrix
@@ -113,12 +109,13 @@ axiom yekutieli_perpetual (hp : HeckeParams) (n : ℕ) :
     -- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
     hp.q > 1 → hp.q⁻¹ * (1 - hp.q⁻¹) ≠ 0
 
-/-- The obstruction coefficient is nonzero (proved). -/
+/-- The obstruction coefficient q⁻¹(1-q⁻¹) is nonzero for q > 1 (proved). -/
 -- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
--- theorem yekutieli_coeff_nonzero (q : R_q) (hq : q > 1) :  -- (archimedean; not meaningful over R_q)
+theorem yekutieli_coeff_nonzero (q : ℝ) (hq : q > 1) :
     q⁻¹ * (1 - q⁻¹) ≠ 0 := by
+  have hqpos : q > 0 := by linarith
   have hqi : q⁻¹ > 0 := by positivity
-  have hqi1 : q⁻¹ < 1 := by rw [inv_lt_one_iff_of_pos (by linarith)]; linarith
+  have hqi1 : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
   exact ne_of_gt (mul_pos hqi (by linarith))
 
 -- ═══════════════════════════════════════════════════════════════════
@@ -132,9 +129,9 @@ axiom yekutieli_perpetual (hp : HeckeParams) (n : ℕ) :
 -- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 structure DescentOperator (n : ℕ) (hp : HeckeParams) where
   /-- The jet prolongation ℓ_n : H^{(n)} → H^{(n+1)}. -/
-  jet_embed : RewritingSystem (HeckeGen n) R_q → RewritingSystem (HeckeGen n) R_q
+  jet_embed : RewritingSystem (HeckeGen n) ℝ → RewritingSystem (HeckeGen n) ℝ
   /-- The descent homomorphism 𝔡_{n+1} : H^{(n+1)} → H^{(n)}. -/
-  descent : RewritingSystem (HeckeGen n) R_q → RewritingSystem (HeckeGen n) R_q
+  descent : RewritingSystem (HeckeGen n) ℝ → RewritingSystem (HeckeGen n) ℝ
   /-- The key identity: 𝔡 ∘ ℓ = id. -/
   descent_left_inv : ∀ w, descent (jet_embed w) = w
 
@@ -147,7 +144,7 @@ structure DescentOperator (n : ℕ) (hp : HeckeParams) where
 -- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 theorem descent_idempotent {n : ℕ} {hp : HeckeParams}
     (op : DescentOperator n hp)
-    (w : RewritingSystem (HeckeGen n) R_q) :
+    (w : RewritingSystem (HeckeGen n) ℝ) :
     let τ := fun x => op.jet_embed (op.descent x)
     τ (τ w) = τ w := by
   simp only

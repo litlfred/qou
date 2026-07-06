@@ -56,7 +56,7 @@ standard-real drift is prohibited by the squeeze above.  Therefore
 $\mathrm{st}(\delta) = 0$ for every admissible surreal drift, which
 is the surreal translation of "all orbits terminate at $1$".
 
-**Why this does not trivialise Collatz.** The remark does *not*
+**Non-trivialisation of Collatz.** The remark does *not*
 prove Collatz in classical arithmetic: it shows that the $q$-Collatz
 statement, once accepted, upgrades to a surreal inequality that rules
 out all standard-real drifts.  The classical conjecture is recovered

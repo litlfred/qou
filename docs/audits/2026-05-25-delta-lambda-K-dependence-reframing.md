@@ -64,13 +64,13 @@ Per atom K, the framework formula gives **1 equation in p(3A) unknowns** for Δ_
 
 **Closure requires a structural constraint** on Δ_λ(K). The viable directions:
 
-1. **Per-atom bar-invariance** (probe-1 form) — Δ_λ(K) = Δ_{λ^T}(K). Reduces unknowns by ~½. ✓ canonical (Type-B fold, CLAUDE.md §7b).
+1. **Per-atom bar-invariance** (probe-1 form) — Δ_λ(K) = Δ_{λ^T}(K). Reduces unknowns by ~½. ✓ canonical (Type-B fold, AGENTS.md §7b).
 
 2. **Per-atom dominant pin from GAP-A-4** — Δ_{λ*}(K) = round(dim_q(λ*)) for the dominant partition. ✗ falsified for D (probe-3).
 
 3. **Crystal-weight assignment (Option E)** — Δ_λ(K) = Σ_w n^w_λ · ρ_w(K) where ρ_w is the canonical-basis trace and n^w_λ are Kazhdan–Lusztig multiplicities. Open conjecture (`conj:crystal-graph-realization`, `conj:kazhdan-lusztig-classical-limit`).
 
-4. **Per-atom polynomial in (Z, N, |β_K|, dim_q(λ))** — fit-style. ✗ excluded per CLAUDE.md anti-pattern.
+4. **Per-atom polynomial in (Z, N, |β_K|, dim_q(λ))** — fit-style. ✗ excluded per AGENTS.md anti-pattern.
 
 ## Probe-4 (this branch) — per-atom Δ_λ(K) sweep
 
@@ -88,7 +88,7 @@ Open scope per user direction 2026-05-25. New branch `claude/kashiwara-crystal-o
 
 1. **Lean scaffolding** for crystal-graph weight assignment at H_6 (deuteron).
    - Build on existing [`lusztig-canonical-basis-q-eq-1.lean`](../../content/quantum-observable-universe/braids-and-knots/lusztig-canonical-basis-q-eq-1.lean), [`kashiwara-jones-c4-categorical.lean`](../../content/quantum-observable-universe/braids-and-knots/kashiwara-jones-c4-categorical.lean).
-   - Replace `gram_matrix q = 0` stub in [`universal-ilp-algorithm.lean`](../../content/quantum-observable-universe/particle-interactions/universal-ilp-algorithm.lean) with the computed 6×6 Frobenius matrix from [`gram-matrix-dual.py`](../../folio-assistant/computations/gram-matrix-dual.py).
+   - Replace `gram_matrix q = 0` stub in [`universal-ilp-algorithm.lean`](../../content/quantum-observable-universe/particle-interactions/universal-ilp-algorithm.lean) with the computed 6×6 Frobenius matrix from [`gram-matrix-dual.py`](../../computations/gram-matrix-dual.py).
    - First crystal vertices computed for sl₃ level 6 (deuteron weight).
 
 2. **Audit doc**: `docs/audits/2026-05-25-option-e-crystal-weight-delta-lambda.md` — frames the conjecture Δ_λ(K) = canonical-basis-trace sum precisely; identifies the categorical theorem needed.

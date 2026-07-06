@@ -1,7 +1,7 @@
 # 9b step 1 result — H1 refuted at its proposed location: 10A−5 is not trace-side bookkeeping
 
 **Date:** 2026-06-13 · **Branch:** `claude/9b-derive-10a-minus-5-2026-06-13` (PR #2217)
-**Probe:** [`probes/h1_exponent_location_probe.py`](../../folio-assistant/computations/probes/h1_exponent_location_probe.py)
+**Probe:** [`probes/h1_exponent_location_probe.py`](../../computations/probes/h1_exponent_location_probe.py)
 (witness `h1-exponent-location.witness.json`, 8/8). All inputs read from
 the source witness `delta-lambda-canonical-residual.witness.json`; no new
 physics computation, no fit.

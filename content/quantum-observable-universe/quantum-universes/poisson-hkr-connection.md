@@ -1,5 +1,12 @@
 The [internal Poisson object](#def:poisson-object) makes explicit a
 structure that is already implicit in the paper's deformation theory.
+Concretely, over $\mathbf{C} = \mathrm{Mod}(\mathbb{F}_p)$ with
+$A = \mathcal{O}(H)$ that object is the $p$-truncated skew-Poisson
+biderivation $\pi_<$ of
+[skew-Poisson integration](#prop:skew-poisson-integration) — the image
+under the fibre functor $\tau$ of the bivector $\pi$ constructed below.
+The remainder of this block builds that bivector from the Hochschild
+picture and recovers $\pi_<$ as its shadow.
 
 **From Hochschild to bivectors.**
 The first-order deformation $\phi_1 \in HH^2(\mathcal{U}_q, \mathrm{Ad})$
@@ -27,7 +34,8 @@ $[\phi_1, \phi_1] = 0$ in the Hochschild complex.
 The classical approach defines the Poisson bracket on $A$ by
 passing through $\tau$ to the vector-space level and invoking HKR
 there.  The internal definition avoids this detour: the bivector
-$\pi \colon \mathbf{1} \to \Pi$ and the contraction
+$\pi \colon \mathbf{1} \to \Pi$ into the bivector object $\Pi$ and the
+contraction
 $\langle \pi, {-} \rangle$ live entirely inside $\mathbf{C}$, using
 only the Frobenius self-duality $A \cong A^{\vee}$ and the
 differential calculus $\Omega^{\bullet}(A)$.

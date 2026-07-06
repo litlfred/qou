@@ -34,10 +34,10 @@ $$
 $$
 
 *where $z_{\mathrm{mkv}} = (q^{1/2} + q^{-1/2})^{-1}$.  The
-numerical evaluation at $q = q_0$ and the matching CODATA residual
+canonical evaluation at $q = q_0$ and the matching CODATA residual
 are tabulated in
 [`rem:dressed-quark-numerology-at-q0`](../observations/dressed-quark-numerology-at-q0.md)
-(Observations chapter; per the manuscript convention numerical
+(Observations chapter; per the manuscript convention canonical
 substrate values stay out of geometry / braids chapters and are
 collected with the other Physical-Observations numerology there).*
 
@@ -82,8 +82,8 @@ The calibration boundary for this proposition is $\{m_e, q_0,
 M_N\}$.
 
 The remaining calibration inputs at the production-formula boundary
-are $m_e$ and $q_0$ (with $Q_\beta$ as the third input until the
-$Q_\beta$ substrate derivation lands; see
+are $m_e$ and $q_0$ (with $\mathfrak{Q}_\beta$ as the third input until the
+$\mathfrak{Q}_\beta$ substrate derivation lands; see
 [`docs/audits/-1ppb-workplan-v4.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-1ppb-workplan-v4.md) for the open status).
 
 ## Individual values

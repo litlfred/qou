@@ -1,5 +1,3 @@
-*Lean sibling: archimedean specialisation over $\mathbb{R}$ (CLAUDE.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*
-
 **Definition.**
 *The **hydrogen molecule** $H_2$ is the molecular braid of two
 hydrogen atoms sharing one electron pair.  The construction
@@ -61,27 +59,3 @@ $$
 
 - *$T_{\mathfrak{p}e}^{\mathrm{dressed}}$: eigenvalues $q^5 \approx 1.680$ and $-q^{-5} \approx -0.595$*
 - *$T_{e_1\mathfrak{p}_2}$ (covalent): eigenvalues $q \approx 1.110$ and $-q^{-1} \approx -0.901$*
-
-*The covalent crossing eigenvalue ratio
-$q/q^{-1} = q^2 \approx 1.231$ is much closer to 1 than the
-dressed atomic ratio $q^5/q^{-5} = q^{10} \approx 2.826$.  This
-means the covalent channel has less destructive interference than
-the intra-atomic channels — the shared electron reduces $\Phi_1$
-relative to two isolated atoms.*
-
-### Strand orderings
-
-*The LP dual optimises over all $4! = 24$ permutations of
-$[\mathfrak{p}_1, e_1, \mathfrak{p}_2, e_2]$.  By the symmetry
-$(\mathfrak{p}_1, e_1) \leftrightarrow (\mathfrak{p}_2, e_2)$,
-there are 12 distinct orderings.  The optimal ordering places
-the two electron-proton pairs **interleaved**:*
-
-$$
-  [\mathfrak{p}_1, e_2, \mathfrak{p}_2, e_1]
-$$
-
-*i.e., each electron is adjacent to the **other** atom's proton
-(the covalent partner).  This maximises the number of
-$\sigma^{-1}$ (attractive) crossings in adjacent positions,
-minimising $\Phi_1$.*

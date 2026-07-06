@@ -8,6 +8,7 @@
   -- Ref: [wenzl1988c] https://doi.org/10.1007/BF01388470
 -/
 
+import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FieldSimp
 
@@ -26,16 +27,18 @@ noncomputable def qInt3 := q^2 + 1 + q⁻¹^2
 
 /-- Key identity: [2]_q² = h² + 4.
   Proof: (q+q⁻¹)² = q² + 2 + q⁻² = (q-q⁻¹)² + 4 = h² + 4. -/
-theorem qInt2_sq_eq_h_sq_plus_4 :
+theorem qInt2_sq_eq_h_sq_plus_4 (hq : q ≠ 0) :
     (qInt2 q)^2 = (hecke_h q)^2 + 4 := by
   unfold qInt2 hecke_h
+  field_simp
   ring
 
 /-- Key identity: [3]_q = [2]_q² - 1.
   Proof: q² + 1 + q⁻² = (q+q⁻¹)² - 1. -/
-theorem qInt3_eq_qInt2_sq_minus_one :
+theorem qInt3_eq_qInt2_sq_minus_one (hq : q ≠ 0) :
     qInt3 q = (qInt2 q)^2 - 1 := by
   unfold qInt3 qInt2
+  field_simp
   ring
 
 /-- The Hoefsmit binding amplitude identity:
@@ -43,16 +46,15 @@ theorem qInt3_eq_qInt2_sq_minus_one :
 
   This is the central structural identity connecting the meson
   binding topology to the q-integer tower. -/
-theorem hoefsmit_b_sq_eq_q3_over_q2sq (hq2 : qInt2 q ≠ 0) :
+theorem hoefsmit_b_sq_eq_q3_over_q2sq (hq : q ≠ 0) (hq2 : qInt2 q ≠ 0) :
     qInt3 q / (qInt2 q)^2 = 1 - 1 / (qInt2 q)^2 := by
-  rw [qInt3_eq_qInt2_sq_minus_one]
+  rw [qInt3_eq_qInt2_sq_minus_one q hq]
   field_simp
-  ring
 
 /-- The de-entanglement fraction: 1 - b² = 1/[2]_q². -/
-theorem de_entanglement_fraction (hq2 : qInt2 q ≠ 0) :
+theorem de_entanglement_fraction (hq : q ≠ 0) (hq2 : qInt2 q ≠ 0) :
     1 - qInt3 q / (qInt2 q)^2 = 1 / (qInt2 q)^2 := by
-  rw [qInt3_eq_qInt2_sq_minus_one]
+  rw [qInt3_eq_qInt2_sq_minus_one q hq]
   field_simp
   ring
 

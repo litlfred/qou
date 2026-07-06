@@ -44,20 +44,27 @@ MASS_RATIO_MU_E_ERR  = 0.0000046
 # substrate identity below; the arbitrary-precision derivation is
 # q_at() (mpmath findroot). m_μ-anchor cross-check: q_muon_at().
 def _solve_q_proton_f64(mp_me, vol, iters=80):
-    """f64 Newton solve of  m_p/m_e = (2·(vol/ℏ_q²)·F_Bor(q) − 12) * habiro_ratio
+    """f64 Newton solve of the RAW proton substrate identity
+        m_p/m_e = 2·(vol/ℏ_q²)·F_Bor(q) − 12
     for q, with |tr_M(β_Bor)| = (4+h²−3h⁴−h⁶)/(h²+4). Self-contained
-    (closed-form tr_M ⇒ no Hecke machinery)."""
+    (closed-form tr_M ⇒ no Hecke machinery).
+
+    NO fitted dressing: the multiplicative `habiro_ratio` tower
+    (1+46u⁴)(1+4u⁵)(1−29u⁶) briefly lived here (introduced 592eade9,
+    PR #3235) and was STRIPPED per the owner ruling of 2026-07-03 —
+    it is the rounded-integer fit the 2026-05-28 floor audit rejects
+    (true c₄ = 46.0319±0.011, see mp_habiro_c4_keystone_probe; the
+    derivation target is the s5-so3 keystone). With the raw identity
+    this pin sits ~11.5 ppb from the muon pin — the μ–p tension,
+    deliberately left visible. See
+    docs/audits/2026-07-03-trace-convention-decision-package.md §Add.3."""
     def _mp_of_q(q):
         h = q - 1.0 / q
         hbar_q = 1.0 - 1.0 / q
         hbar2 = hbar_q ** 2
         trM = abs((4 + h**2 - 3 * h**4 - h**6) / (h**2 + 4))
         qf3 = (q**2 + 1 + q**-2) * (q + 1.0 / q)
-        base = 2 * vol / hbar2 * (trM * qf3 / q**3) - 12
-        b_val = ((q ** 4 + q ** 2 + 1) / (q ** 2 + 1) ** 2) ** 0.5
-        u_val = b_val * hbar2
-        habiro_ratio = (1 + 46 * u_val ** 4) * (1 + 4 * u_val ** 5) * (1 - 29 * u_val ** 6)
-        return base * habiro_ratio
+        return 2 * vol / hbar2 * (trM * qf3 / q**3) - 12
     q = 1.11
     # f64 central difference: dq = q·1e-10 is the right scale for f64
     # (machine ε ≈ 2.2e-16); a dps-scaled dq would underflow here. The
@@ -203,7 +210,12 @@ try:
             |tr_M(β_Bor)| = (4+h²−3h⁴−h⁶)/(h²+4)   (closed form).
         The closed-form tr_M needs no Hecke machinery, so this Newton
         solve is self-contained and exact at any dps. Caller should set
-        ``mpmath.mp.dps`` ≥ ``dps`` before further mpmath arithmetic."""
+        ``mpmath.mp.dps`` ≥ ``dps`` before further mpmath arithmetic.
+
+        RAW identity (owner ruling 2026-07-03): the fitted habiro_ratio
+        tower that briefly dressed this solve (592eade9) is stripped —
+        this pin sits ~11.5 ppb from q_muon_at() (the μ–p tension) and
+        m_μ is a genuine ~210 ppb prediction at this q₀."""
         prev = _mp.mp.dps
         try:
             _mp.mp.dps = max(prev, dps + 15)
@@ -215,11 +227,7 @@ try:
                 hbar_sq = (1 - 1 / q) ** 2
                 trM = _mp.fabs((4 + h**2 - 3 * h**4 - h**6) / (h**2 + 4))
                 qf3 = (q**2 + 1 + q**(-2)) * (q + q**(-1))
-                base = 2 * vol / hbar_sq * (trM * qf3 / q**3) - 12
-                b_val = ((q ** 4 + q ** 2 + 1) / (q ** 2 + 1) ** 2) ** _mp.mpf("0.5")
-                u_val = b_val * hbar_sq
-                habiro_ratio = (1 + 46 * u_val ** 4) * (1 + 4 * u_val ** 5) * (1 - 29 * u_val ** 6)
-                return base * habiro_ratio - mp_me
+                return 2 * vol / hbar_sq * (trM * qf3 / q**3) - 12 - mp_me
 
             q = _mp.findroot(_resid, _mp.mpf("1.10997858"))
             _mp.mp.dps = max(prev, dps)
@@ -275,12 +283,12 @@ except ImportError:
     Q_50_DIGIT_STR = repr(Q)
 
 # ── Experimental observable anchors (CODATA 2022) ─────────────
-# Mirrored from `folio-assistant/computations/substrate/experimental_constants.py`
+# Mirrored from `computations/substrate/experimental_constants.py`
 # so consumers running outside the repo (Pyodide, Sage, PyPI installs)
 # can reach the same MeV anchors without depending on the flat-name
 # `experimental_constants` shim that only `_legacy` puts on sys.path.
 # Authoritative source is the substrate cluster file; values match.
-M_E_MEV     = 0.51099895000   # ± 0.00000000015 MeV (CODATA 2022)
+M_E_MEV     = 0.51099895069   # ± 0.00000000015 MeV (CODATA 2022, full 11 sig figs)
 M_E_MEV_ERR = 0.00000000015
 M_P_MEV     = 938.27208816    # ± 0.00000029   MeV (CODATA 2022)
 M_P_MEV_ERR = 0.00000029

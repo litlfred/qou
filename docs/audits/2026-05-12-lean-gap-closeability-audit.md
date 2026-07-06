@@ -14,7 +14,7 @@ classifies each by **closeability in the current sandbox**.
 The blunt finding: **no further honestly-closeable gap was found in
 this sandbox**. Every remaining `sorry` falls into one of six
 categories (§§1–6 below), each of which is either
-- explicitly out-of-bounds per CLAUDE.md §3b-cond (trivial-skeleton
+- explicitly out-of-bounds per AGENTS.md §3b-cond (trivial-skeleton
   rejected),
 - structurally unprovable as written (would require restating the
   manuscript claim, which is an author decision, not an agent edit),
@@ -33,7 +33,7 @@ access** to prioritise without re-walking the same ground.
 
 ## §1. §3b-cond canonical-instance conjectural inputs
 
-Per **CLAUDE.md §3b-cond**:
+Per **AGENTS.md §3b-cond**:
 
 > The class instance is the only `sorry` in the entire downstream
 > chain.
@@ -204,7 +204,7 @@ validate, the risk of subtle errors is high.
 4. **§5 and §6** are the **honestly-closeable backlog** for an agent
    with Lean toolchain access. Start with §6 (mechanical polynomial
    identities — lowest infrastructure cost). For §5, prefer the
-   `lean_multi_attempt` / `lean_goal` MCP tools per CLAUDE.md
+   `lean_multi_attempt` / `lean_goal` MCP tools per AGENTS.md
    "Use MCP tools, not shell commands".
 
 ## Appendix — sandbox capability note
@@ -218,5 +218,5 @@ where trivial-skeleton discharges were committed and then reverted).
 
 The right next step is to **rerun this gap-closure pass on a
 toolchain-enabled environment** (e.g. via the `lean_setup` MCP tool
-described in CLAUDE.md "Lean MCP server" section), starting with the
+described in AGENTS.md "Lean MCP server" section), starting with the
 §6 polynomial identities.

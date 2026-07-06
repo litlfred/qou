@@ -1,0 +1,106 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-29T00:11:19.448565+00:00",
+  "commitSha": "95a4b605560ee7e3c784b2d15212a5d3c2d2bdd5",
+  "assertions": [
+    {
+      "name": "Vol + Vol*(1/hbar^2 - 1) - Vol/hbar^2 == 0 in Q(q) (symbolic)",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "source": "sympy.simplify (exact, all q)"
+    },
+    {
+      "name": "Vol + Vol*(1/hbar^2 - 1) == Vol/hbar^2 at q0 (all sample knots, <=1e-25)",
+      "computed": "8.23609e-84",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-25,
+      "source": "4 sample hyperbolic-knot volumes"
+    },
+    {
+      "name": "mass_alg - phi1/hbar_sq == 0 given phi1 = mass_alg*hbar_sq (symbolic)",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "source": "sympy.simplify (AlgebraicMassFormula, exact)"
+    },
+    {
+      "name": "mass_alg == phi1/hbar_sq at q0 (phi1 = Vol(4_1))",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-25,
+      "source": "algebraic-side numerical check"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 188,
+  "computation": "probe-topological-mass-formula",
+  "scriptFile": "probe_topological_mass_formula.py",
+  "scriptHash": "40b71481b09f",
+  "scriptCommitSha": "703c9f90a01cf1e5fd178a9561310fb57ef75dd9",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Symbolic + 50-dps numerical cross-check of the topological mass formula combine Vol + Vol*(1/hbar^2 - 1) = Vol/hbar^2 (prop:topological-mass-formula, Lean ArchimedeanMassFormula) and the algebraic-side mass_alg = phi1/hbar_sq (prop:topological-mass-formula-algebraic, Lean AlgebraicMassFormula). hbar_q = 1-1/q0.",
+  "contentBlock": "prop:topological-mass-formula",
+  "parameters": {
+    "q0": "1.1099785955573347198997632204832250266562084087802",
+    "hbar_q_def": "1 - 1/q0",
+    "compute_dps": 85,
+    "tolerance": "1e-25"
+  },
+  "data": {
+    "also_verifies_block": "prop:topological-mass-formula-algebraic",
+    "hbar_q_at_q0": "0.0990817264382589590820994159827423236054148928673637306194052",
+    "hbar_q_sq_at_q0": "0.00981718851398598439370648689404948144509964058461485611470713",
+    "inv_hbar_sq_at_q0": "101.862157233240194850758574607395979589584021576109833558659",
+    "combine_rows": [
+      {
+        "knot": "4_1 (figure-eight, substrate)",
+        "vol": "2.029883212819307",
+        "baseline_plus_exceptional": "206.768282989315018347458000383193045491053033310394447374295",
+        "vol_over_hbar_sq": "206.768282989315018347458000383193045491053033310394447374295",
+        "residual": "0.0"
+      },
+      {
+        "knot": "5_2",
+        "vol": "2.82812208833078468",
+        "baseline_plus_exceptional": "288.078616836350003951361231619418320898463350893091875311415",
+        "vol_over_hbar_sq": "288.078616836350003951361231619418320898463350893091875311415",
+        "residual": "0.0"
+      },
+      {
+        "knot": "6_1",
+        "vol": "3.16396322888",
+        "baseline_plus_exceptional": "322.288119900364894164606449432162961910990838122004055655776",
+        "vol_over_hbar_sq": "322.288119900364894164606449432162961910990838122004055655776",
+        "residual": "0.0"
+      },
+      {
+        "knot": "Borromean 6^3_2",
+        "vol": "7.32772475342",
+        "baseline_plus_exceptional": "746.417850994774276240407629814931377846383927304171389876465",
+        "vol_over_hbar_sq": "746.417850994774276240407629814931377846383927304171389876465",
+        "residual": "8.23609e-84"
+      }
+    ],
+    "symbolic_combine_exact": true,
+    "symbolic_algebraic_exact": true,
+    "max_numerical_residual": "8.23609e-84"
+  },
+  "caveats": [
+    "Verifies the ALGEBRAIC combine the propositions prove (Vol + Vol*(1/hbar^2-1) = Vol/hbar^2 and mass_alg = phi1/hbar_sq). It does NOT verify the geometric inputs (Chern-Simons/volume correspondence, Kashaev dilog evaluation), which the proposition imports as hypotheses (exceptional_sum_eq). Vol(K) values are inputs to the identity, not derived here. This block is the BARE topological core m(K)=Vol(K)/hbar^2; the canonical absolute nucleon mass is the muon-anchored Hecke energy via canonical_mass.py, NOT this expression. Numerical-exact evidence at q0, not a proof."
+  ]
+}

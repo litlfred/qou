@@ -1,6 +1,9 @@
 import { proposition } from "../../schema/builders";
 
 export default proposition({
+  authorNotes: [
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+  ],
   label: "prop:bar-self-dual-confinement-band",
   title:
     "The open interval $(1/\\varphi^2,\\,\\varphi^2)$ is the maximal bar-self-dual confinement band",

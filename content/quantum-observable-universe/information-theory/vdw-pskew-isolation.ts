@@ -11,9 +11,9 @@ export default proposition({
   computation: {
     engine: "python",
     status: "verified",
-    script: "folio-assistant/computations/vdw_pskew_sinh_probe.py",
+    script: "computations/vdw_pskew_sinh_probe.py",
     witness: [
-      "folio-assistant/computations/vdw-pskew-sinh-probe.witness.json",
+      "computations/vdw-pskew-sinh-probe.witness.json",
     ],
   },
   uses: [

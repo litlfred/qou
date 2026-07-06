@@ -49,8 +49,9 @@ theorem discriminant_pos (q : ℝ) : 0 < hecke q ^ 2 + 4 := by
 -- Ref: [manuscript] §6/shell-structure-eigenvalues
 theorem eigenvalue_product (q : ℝ) :
     eigenvalue_plus q * eigenvalue_minus q = -1 := by
-  unfold eigenvalue_plus eigenvalue_minus hecke
+  unfold eigenvalue_plus eigenvalue_minus
   have h := Real.sq_sqrt (le_of_lt (discriminant_pos q))
+  unfold hecke at h ⊢
   nlinarith [h]
 
 /-- λ₊ + λ₋ = tr(T_{γe}) = q - q⁻¹. -/
@@ -65,11 +66,12 @@ theorem eigenvalue_sum (q : ℝ) :
 theorem eigenvalue_plus_gt_one {q : ℝ} (hq : 1 < q) :
     1 < eigenvalue_plus q := by
   unfold eigenvalue_plus hecke
-  rw [lt_div_iff (two_pos)]
+  rw [lt_div_iff₀ (two_pos)]
   -- Need: 2 < (q - 1/q) + sqrt((q - 1/q)^2 + 4)
   -- Equivalently: sqrt((q-1/q)^2 + 4) > 2 - (q - 1/q)
   have hq0 : (0 : ℝ) < q := by linarith
-  have hh : 0 < q - 1 / q := by rw [sub_pos, div_lt_one hq0]; nlinarith
+  have hh : 0 < q - 1 / q := by
+    rw [sub_pos, div_lt_iff₀ hq0]; nlinarith
   -- Since h > 0, it suffices to show sqrt(h^2+4) > 2 - h.
   -- Case: if h ≥ 2, then 2 - h ≤ 0 < sqrt(...), and h + sqrt(...) > 2.
   -- Case: if h < 2, then square both sides.
@@ -129,13 +131,52 @@ theorem hecke_classical : hecke 1 = 0 := by
 end QOU.Archimedean
 
 
-/-! ## §3b-cond conditional-class hypothesis (audit-visibility stub) -/
+/-! ## §3b-cond conditional-class hypothesis
+
+The shell-structure proposition is conditional on
+[`conj:borromean-quark`](../observations/borromean-quark.md): the
+ground-state energy scale `E₀` is supplied by the electron-proton
+crossing energy at the substrate parameter, which is the Borromean-quark
+mass calibration. We axiomatise that single conjectural input as a
+content-bearing class (per AGENTS.md §3b-tax — fields carry the
+conjecture's content, not a bare `True`), then **derive** the genuine
+shell-energy law from it: the shell energies `Eₙ = E₀ · V̂(n)` inherit
+the Chebyshev three-term recurrence proved unconditionally above. -/
 
 namespace QOU.Archimedean.ShellEigenvalues.ConditionalAudit
 
-class BorromeanQuark : Prop where
-  holds : True
+open QOU.Archimedean
 
-theorem shell_eigenvalues_conditional [_inst : BorromeanQuark] : True := trivial
+/-- **Borromean-quark shell-energy class** (conditional input for
+    `prop:shell-structure-eigenvalues`). The conjectural content is the
+    ground-state energy scale `E₀ q` and the shell-energy law
+    `Eₙ(q) = E₀(q) · V̂(n, q)` at every `q`, where `V̂` is the
+    Markov-traced shell volume `shellVolume`. -/
+-- Ref: [manuscript] Ch. 6 §3, conj:borromean-quark
+class BorromeanQuark where
+  /-- The ground-state energy scale, a function of `q`. -/
+  E0 : ℝ → ℝ
+  /-- The shell-energy functional, `Eₙ(q)`. -/
+  shellEnergy : ℝ → ℕ → ℝ
+  /-- The shell energy is the ground-state scale times the traced
+      shell volume at every `q` and shell index `n`. -/
+  energy_law : ∀ (q : ℝ) (n : ℕ), shellEnergy q n = E0 q * shellVolume q n
+
+/-- **Shell-energy Chebyshev recurrence (conditional on
+    `BorromeanQuark`).** Given the Borromean-quark shell-energy
+    calibration, the shell energies satisfy the same three-term
+    recurrence as the traced volumes:
+    `Eₙ₊₂ = (q − q⁻¹)·Eₙ₊₁ + Eₙ`.
+
+    Derived from `energy_law` (the class field) and the unconditional
+    `chebyshev_recurrence` — a real equation, not `True`. -/
+-- Ref: [manuscript] §6/shell-structure-eigenvalues, conj:borromean-quark
+theorem shell_eigenvalues_conditional [inst : BorromeanQuark]
+    (q : ℝ) (n : ℕ) :
+    inst.shellEnergy q (n + 2) =
+      hecke q * inst.shellEnergy q (n + 1) + inst.shellEnergy q n := by
+  rw [inst.energy_law, inst.energy_law, inst.energy_law,
+    chebyshev_recurrence]
+  ring
 
 end QOU.Archimedean.ShellEigenvalues.ConditionalAudit

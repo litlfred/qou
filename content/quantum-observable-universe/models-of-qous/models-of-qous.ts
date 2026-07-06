@@ -86,7 +86,9 @@ export default chapter({
       blocks: [
         "symmetric-point-intro",
         "symmetric-point-channel-collapse",
+        "symmetric-point-channel-collapse-proof",
         "physical-units-gap-linear",
+        "physical-units-gap-linear-proof",
         "symmetric-point-resolution-loss",
         "unit-circle-photonic-sector",
       ],

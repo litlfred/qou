@@ -9,8 +9,8 @@ export default algorithm({
   ],
   computation: {
     engine: "python+mpmath",
-    script: "folio-assistant/computations/gb_filtration_jet_order_reader.py",
-    witness: "folio-assistant/computations/gb-filtration-jet-order-reader.witness.json",
+    script: "computations/gb_filtration_jet_order_reader.py",
+    witness: "computations/gb-filtration-jet-order-reader.witness.json",
     status: "verified",
   },
   tags: [

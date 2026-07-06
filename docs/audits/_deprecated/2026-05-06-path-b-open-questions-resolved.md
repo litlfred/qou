@@ -3,8 +3,8 @@
 # Resolving the Three Open Questions from Path B
 
 **Date**: 2026-05-06  
-**Script**: `folio-assistant/computations/path_b_open_questions.py`  
-**Witness**: `folio-assistant/computations/path-b-open-questions.witness.json`  
+**Script**: `computations/path_b_open_questions.py`  
+**Witness**: `computations/path-b-open-questions.witness.json`  
 **Status**: ✓ All 7 assertions pass
 
 Closes the open questions from

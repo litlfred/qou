@@ -1,6 +1,10 @@
-The existing atomic mass appendix
-([atomic mass calculations](#sec:amc-calculations)) uses the 2$\times$2
-**standard** irrep of $H_3(q)$ for the transfer matrix chain.
+The simple CODATA-recombination mass formula
+$M_q = Z\mathfrak{m}_{\mathfrak{p}} + N\mathfrak{m}_{\mathfrak{n}} + Z\mathfrak{m}_e - (Z+N)\,B/A$
+(with per-atom knot identifications and predictions collected in the
+recursive knot$\to$particle dictionary,
+[recursive-atom-knot-atlas](#prop:recursive-atom-knot-atlas))
+uses only the 2$\times$2 **standard** irrep of $H_3(q)$ for the
+transfer matrix chain.
 This projects the Hecke element onto the $(2,1)$-seminormal representation
 and discards the symmetric (trivial) and alternating (sign)
 channels.  For multi-nucleon systems, this projection throws
@@ -17,16 +21,36 @@ with all three irreducible channels tracked independently.
 
 See [Table: Three-channel $H_3(q)$ decomposition](#tbl:atom-mass-full-hecke-table-data).
 
-The full Markov trace on the regular representation is
+The full Markov trace decomposes over the three Wedderburn blocks of
+$H_3(q)$ as
 
 $$
   \mathrm{tr}_M^{\mathrm{full}}
-  = w_{\mathrm{sym}}\,\mathrm{tr}_{\mathrm{sym}}
-  + w_{\mathrm{std}}\,\mathrm{tr}_{\mathrm{std}}
-  + w_{\mathrm{alt}}\,\mathrm{tr}_{\mathrm{alt}}
+  = \hat y_{\mathrm{sym}}\,\mathrm{tr}_{\mathrm{sym}}
+  + \hat y_{\mathrm{std}}\,\mathrm{tr}_{\mathrm{std}}
+  + \hat y_{\mathrm{alt}}\,\mathrm{tr}_{\mathrm{alt}},
 $$
 
-with Wedderburn-Artin weights $w_\lambda = d_\lambda^2 / |S_3|$.
+where $\hat y_\lambda = y_\lambda(q)\,d_\lambda$ are the **$q$-deformed
+Jones--Markov weights** — the Wenzl Schur principal specialisation of the
+canonical $y_\lambda$
+([Wenzl-bridge closed form](#prop:y-lambda-closed-form-wenzl-bridge))
+— normalised by $\sum_\lambda \hat y_\lambda = 1$. These are the weights
+the production Markov-trace compute uses throughout. The **classical**
+Wedderburn--Artin values $d_\lambda^2 / |S_3| = \{\tfrac16, \tfrac23,
+\tfrac16\}$ are only their $q \to 1$ limit; at the substrate scale the
+deformation is large rather than a small correction. From the cached
+weights, $\hat y_{\mathrm{sym}} \approx 0.42$, $\hat y_{\mathrm{std}}
+\approx 0.56$, $\hat y_{\mathrm{alt}} \approx 0.02$ — the symmetric weight
+rises by about $2.5\times$ and the alternating weight falls by about
+$7\times$ relative to the classical equal-weighting of the symmetric and
+alternating channels.
+
+For a single nucleon ($A = 1$) this three-channel sum is the full $H_3(q)$
+Markov trace. For $A > 1$ it is a **three-channel $H_3$ projection** of the
+multi-nucleon state, not the full $H_{3A}(q)$ Markov trace; the two coincide
+only at $A = 1$. The columns below should therefore be read as this projection
+model rather than the canonical $H_{3A}$ trace.
 
 ## Mass decomposition (fibre / horizontal / mixed)
 
@@ -48,12 +72,27 @@ the charge--mass duality
 
 ## Results for $Z = 1$--$10$
 
-All traces computed at $q = 111/100$ (exact rational arithmetic).
-Binding energy from the Skein binding Lagrangian
+The per-channel traces $\mathrm{tr}_{\mathrm{sym}},
+\mathrm{tr}_{\mathrm{std}}, \mathrm{tr}_{\mathrm{alt}}$ below are
+evaluated at $q = 111/100$ (a convenient rational near the substrate
+$q_0 \approx 1.10998$; exact rational arithmetic). Binding energy is from
+the Skein binding Lagrangian
 ([Skein binding Lagrangian](#def:skein-binding-lagrangian))
 with $q$-derived Bethe--Weizsäcker coefficients.
 
 See [Table](#tbl:atom-mass-full-hecke-table-data).
+
+**Note (weighting convention).** The $\mathrm{tr}_{\mathrm{full}}$ column
+of the table uses the canonical $q$-deformed weights $\hat y_\lambda$ above
+(witness `atom-mass-full-hecke.witness.json`); the $q \to 1$ classical
+weighting would give materially different values (for ${}^4\mathrm{He}$,
+$\mathrm{tr}_{\mathrm{full}} = 0.516$ q-deformed vs $0.422$ classical). The
+$B/A$ and $\Delta$ columns are independent of this weighting — they come
+from the Skein binding Lagrangian (Bethe--Weizsäcker form), not from
+$\mathrm{tr}_{\mathrm{full}}$. The per-channel traces are inherited from
+the published table; an independent witness for the high-$A$ $\chi^\lambda$
+(the Gröbner--Shirshov reducer is infeasible past the light nuclei) remains
+a separate open item.
 
 ## Key observations
 
@@ -66,13 +105,17 @@ See [Table](#tbl:atom-mass-full-hecke-table-data).
    symmetric and alternating channels remain $O(1)$, and the full
    Wedderburn trace recovers the physically correct mass scale.
 
-2. **Alternating channel sign flips.**  The alternating trace
-   changes sign according to the parity of the total crossing
-   count (the exponent of $(-q^{-1})$ in the alternating
-   eigenvalue product), which depends on the ground-state
-   ordering rather than directly on even/odd $A$.  This
-   produces the sign variation in $\mathrm{tr}_{\mathrm{full}}$
-   visible across the table.
+2. **Alternating channel sign flips — but do not dominate.**  The
+   alternating trace changes sign according to the parity of the total
+   crossing count (the exponent of $(-q^{-1})$ in the alternating
+   eigenvalue product), which depends on the ground-state ordering rather
+   than directly on even/odd $A$.  Under the **classical** equal weighting
+   this sign variation propagated to $\mathrm{tr}_{\mathrm{full}}$ (negative
+   entries at ${}^7\mathrm{Li}$, ${}^{11}\mathrm{B}$, ${}^{19}\mathrm{F}$);
+   under the canonical $q$-deformed weights the alternating block is
+   suppressed $\sim 7\times$, so $\mathrm{tr}_{\mathrm{full}}$ stays
+   positive and $O(0.2$--$1)$ across the table — the apparent sign
+   variation was a classical-weighting artifact.
 
 3. **${}^{14}\mathrm{N}$ cancellation.**  For the symmetric
    nucleus $Z = N = 7$, the symmetric and alternating traces
@@ -81,7 +124,13 @@ See [Table](#tbl:atom-mass-full-hecke-table-data).
    giving $\mathrm{tr}_{\mathrm{full}} \approx 0$.  This is
    a $Z = N$ symmetry artifact — the equal proton--neutron
    composition produces equal-and-opposite contributions in
-   the trivial and sign representations.
+   the trivial and sign representations.  The near-cancellation,
+   however, depends on the equal *classical* weighting
+   $\hat y_{\mathrm{sym}} = \hat y_{\mathrm{alt}}$: under the canonical
+   $q$-deformed weights the symmetric block outweighs the alternating one
+   by $\sim 18\times$, so $\mathrm{tr}_{\mathrm{full}} = 0.512$ (not $\approx
+   0$) at ${}^{14}\mathrm{N}$ — the near-cancellation was a
+   classical-weighting artifact.
 
 4. **Binding energy deviations.**  The Skein Lagrangian with
    $q$-derived Bethe--Weizsäcker coefficients reproduces
@@ -90,5 +139,10 @@ See [Table](#tbl:atom-mass-full-hecke-table-data).
    MeV/$A$) where the semi-empirical formula is known to
    undercount the doubly-magic shell closure.
 
-**Witness**: `atom-mass-full-hecke.witness.json`
-(exact rationals, three-channel traces, Skein binding decomposition).
+**Witness**: `atom-mass-full-hecke.witness.json` (producer
+`computations/atom_mass_full_hecke_qdeformed.py`) — the canonical
+$q$-deformed weights $\hat y_\lambda$ (from
+[Wenzl-bridge closed form](#prop:y-lambda-closed-form-wenzl-bridge),
+`y-lambda-at-q0.witness.json`) applied to the inherited per-atom channel
+traces. The high-$A$ $\chi^\lambda$ are not yet independently witnessed
+(GS reducer infeasible past the light nuclei).

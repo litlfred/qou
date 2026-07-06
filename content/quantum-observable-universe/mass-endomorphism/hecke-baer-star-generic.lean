@@ -1,7 +1,6 @@
 import Mathlib.Algebra.Star.Basic
 import Mathlib.Algebra.Module.Basic
 import Mathlib.LinearAlgebra.Matrix.ToLin
-import Mathlib.RingTheory.SimpleModule
 
 
 /-!
@@ -45,7 +44,7 @@ class BaerStarRing (A : Type*) [Ring A] [StarRing A] : Prop where
 
 variable {K : Type*} [Field K]
 
-/-- The right annihilators in a matrix algebra `Matrix (Fin n) (Fin n) K`
+/- The right annihilators in a matrix algebra `Matrix (Fin n) (Fin n) K`
     are principal right ideals.  This is the linear-algebra core of
     the proof: any subspace `V ⊆ Matrix n n K` (treated as a set of
     rows or columns) has a complementary projection `p` such that
@@ -63,36 +62,47 @@ axiom matrix_algebra_baer_right_axiom :
       ∃ p : Matrix (Fin n) (Fin n) K,
         IsIdempotentElem p ∧
           (∀ x : Matrix (Fin n) (Fin n) K,
-            (∀ s ∈ S, x * s = 0) ↔ ∃ y, x = y * p)
+            (∀ s ∈ S, x * s = 0) ↔ ∃ y : Matrix (Fin n) (Fin n) K, x = y * p)
 
 theorem matrix_algebra_baer_right
     (n : ℕ) (S : Set (Matrix (Fin n) (Fin n) K)) :
     ∃ p : Matrix (Fin n) (Fin n) K,
       IsIdempotentElem p ∧
         (∀ x : Matrix (Fin n) (Fin n) K,
-          (∀ s ∈ S, x * s = 0) ↔ ∃ y, x = y * p) :=
+          (∀ s ∈ S, x * s = 0) ↔ ∃ y : Matrix (Fin n) (Fin n) K, x = y * p) :=
   matrix_algebra_baer_right_axiom n S
 
 /-! ## Step 2: Bar involution acts on idempotents by partition transpose -/
 
-/-- Under the bar involution `* : q ↦ q⁻¹`, the central primitive
-    idempotent `e_λ ∈ Z(H_n(q))` is sent to `e_{λ'}` where `λ'` is
-    the transpose partition.  Self-conjugate `λ = λ'` gives a
-    bar-fixed projection.  The construction wires through Hoefsmit
-    seminormal form (`prop:hoefsmit-seminormal-form`) and the
-    explicit Lagrange formula (`prop:explicit-central-idempotent`).
-    -/
-theorem bar_idempotent_transposition_partition
-    {R : Type*} [CommRing R] [StarRing R]
-    (n : ℕ) (lam : List ℕ) :
-    True := by
-  -- Ref: [manuscript] §prop:explicit-central-idempotent
-  -- "Cross-checks" §3-4 — bar acts on e_λ by partition transpose.
-  -- Ref: [murphy1981] — Murphy elements and centre structure of
-  -- symmetric-group / Hecke algebras.
-  -- Ref: [manuscript] §rem:chirality-period-pairing — categorical
-  -- meaning of self-conjugate vs chiral pair under bar.
-  trivial
+/-- **Bar-involution transpose property of the central idempotents**
+    (`prop:explicit-central-idempotent` Step 1), named as a `Prop`.
+
+    Given a star-ring `A` (the bar involution `* : q ↦ q⁻¹` on `H_n(q)`),
+    a family of central primitive idempotents `e : List ℕ → A` indexed by
+    partitions, and the partition-transpose map `transpose`, the property
+    holds when the bar involution sends each idempotent to the one for the
+    transposed partition:
+
+      `star (e λ) = e (transpose λ)`.
+
+    Self-conjugate `λ = transpose λ` then gives a bar-fixed projection
+    (`star (e λ) = e λ`); chiral pairs `(λ, transpose λ)` are bar-swapped.
+
+    Mathlib carries neither the Hecke central idempotents nor the bar
+    involution on `H_n(q)`, so this **names** the proposition (per
+    AGENTS.md §3b — "naming is not a logical claim") rather than asserting
+    a vacuous `True`.  A witness is the conjugate-pairing claim of
+    `prop:explicit-central-idempotent`; instantiating `e`/`transpose` from
+    the Hoefsmit seminormal construction and discharging it is the open
+    Mathlib-formalisation step.
+
+    Ref: [manuscript] §prop:explicit-central-idempotent "Cross-checks" §3-4;
+    [murphy1981] Murphy elements and centre structure of symmetric-group /
+    Hecke algebras; [manuscript] §rem:chirality-period-pairing. -/
+def bar_idempotent_transposition_partition
+    {A : Type*} [Ring A] [StarRing A]
+    (e : List ℕ → A) (transpose : List ℕ → List ℕ) : Prop :=
+  ∀ lam : List ℕ, star (e lam) = e (transpose lam)
 
 /-! ## Step 3: Failure locus at roots of unity -/
 
@@ -107,14 +117,14 @@ theorem bar_idempotent_transposition_partition
 def failure_locus (n : ℕ) (R : Type*) [Field R] : Set R :=
   { q : R | ∃ k : ℕ, 2 ≤ k ∧ k ≤ n ∧ q ^ (2 * k) = 1 }
 
-/-- The Volume Conjecture asymptotic regime is contained in the
+/- The Volume Conjecture asymptotic regime is contained in the
     failure locus: `q = e^{2πi/N}` for `N → ∞` eventually enters
     `failure_locus n` for any fixed `n`, since `N | 2k` for some
     `k ≤ n` whenever `N ≤ 2n`.  This co-location is the structural
     content of `rem:vc-as-depth-2-instance` and
     `prop:hecke-baer-star-generic` Step "Failure locus".
-    -/
-example {n : ℕ} : True := trivial
+    (Narrative note only; a former vacuous `example : True := trivial`
+    that carried this comment was removed per AGENTS.md §1a.) -/
 
 /-! ## Main theorem (sketch) -/
 

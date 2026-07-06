@@ -11,7 +11,7 @@ BOTH:
 
   - tr_q_plancherel_symbolic — historical output, Σ dim_q²/[n]_q!·χ^λ/f^λ
   - tr_Markov_symbolic — canonical Wenzl-Ocneanu y_λ·χ^λ trace
-    (matches `thm:jones-markov-trace` in CLAUDE.md §7a)
+    (matches `thm:jones-markov-trace` in AGENTS.md §7a)
 
 The witness JSON now reports both for downstream comparison.
 
@@ -46,7 +46,7 @@ naive "universal −1/(2 n!)" conjecture from the round-1 audit.  The
 leading coefficient is still a power of 2 (1/2^7 here, 1/2^3 there),
 suggesting a refined conjecture in terms of $\\dim_q$ specializations.
 
-Run:  python3 folio-assistant/computations/deuteron_tr_M_symbolic.py
+Run:  python3 computations/deuteron_tr_M_symbolic.py
 """
 from __future__ import annotations
 
@@ -199,7 +199,7 @@ def main() -> int:
         "description": (
             "Closed-form symbolic Markov trace of the internal A=2 "
             "(deuteron) braid in H_6(q), via the canonical Wenzl-"
-            "Ocneanu y_λ·χ^λ formula (matches CLAUDE.md §7a "
+            "Ocneanu y_λ·χ^λ formula (matches AGENTS.md §7a "
             "`thm:jones-markov-trace`). Migrated from the historical "
             "Plancherel-trace formula on 2026-05-17 per audit doc "
             "2026-05-17-dual-tr-m-discrepancy.md — no fallback."

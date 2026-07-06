@@ -1,10 +1,19 @@
+The significance of this square is that it exhibits the Einstein-type
+field equation (the top row's target) and the Schrödinger evolution
+(the bottom row's target) as two faces of a single commuting diagram,
+so that the substrate coupling $q$ — the right column — ties
+gravitational and quantum dynamics together.
+
 Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be an archimedean quantum observable universe
 with instanton connection $A$ ([instanton](#ex:instanton)) and substrate
 parameter $q$ ([substrate parameter](#def:substrate-parameter)).  Let
 $\mathfrak{E}$ denote the Euler--Lagrange operator of the
 $q$-weighted Yang--Mills--Levi functional $\mathfrak{S}_q$
 ([$q$-Yang--Mills--Levi functional](#def:q-yang-mills-levi)), and let $\nabla^A$ denote
-parallel transport along $A$.  The following diagram commutes:
+parallel transport along $A$.  The upper-left object $J^1\mathcal{S}$
+is the space of $1$-jets of sections of the state bundle $\mathcal{S}$
+(the state and its first-order derivatives).
+The following diagram commutes:
 
 ```tex
 \[

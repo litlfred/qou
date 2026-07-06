@@ -14,7 +14,7 @@ The conjecture has three claims:
 
 Theorems T1 and T3 follow from standard LP theory (complementary
 slackness + finite-dim strong duality), here axiomatised as the
-`HasFiniteLPDuality` class hypothesis (CLAUDE.md §3b-cond
+`HasFiniteLPDuality` class hypothesis (AGENTS.md §3b-cond
 conditional-class exception) — Mathlib does not yet ship an
 LP-duality library; when it does, populate the class instance and
 the rest of the file is unchanged.  Theorem T2 reduces to
@@ -30,6 +30,7 @@ consequence of definitions or a class-conditional invocation.
 
 import Mathlib.Data.Real.Basic
 import Mathlib.Order.Bounds.Basic
+import Mathlib.Data.Finite.Defs
 
 namespace QOU.BraidKnot.ConfinementNFPartial
 
@@ -42,6 +43,10 @@ structure OperatorSelectionLP where
   Λ : Type
   /-- Finite-dim hypothesis. -/
   finite : Finite Λ
+  /-- Non-emptiness: the partition lattice of `n ≥ 1` always
+  contains at least the trivial partition, so the LP has a feasible
+  primal point and a well-defined `max_pole`. -/
+  nonempty : Nonempty Λ
   /-- LP is bounded above (Wedderburn dimension is finite, so all
   primal variables `t_λ ∈ [0, 1]` after normalisation; objective
   achieves its max on a compact polytope). -/
@@ -68,8 +73,12 @@ def duality_gap (lp : OperatorSelectionLP) : ℝ :=
 /-- Active set of dual variables: λ with `y_λ* > 0`. -/
 opaque active_set (lp : OperatorSelectionLP) : Set lp.Λ
 
-/-- Wedderburn-pole maximizer (= primal-optimal point). -/
-opaque max_pole (lp : OperatorSelectionLP) : lp.Λ
+/-- Wedderburn-pole maximizer (= primal-optimal point).  Existence
+follows from `lp.nonempty` (the partition lattice is inhabited) plus
+finiteness (the objective attains its max on a finite set); we expose
+a representative via the non-emptiness witness. -/
+noncomputable def max_pole (lp : OperatorSelectionLP) : lp.Λ :=
+  lp.nonempty.some
 
 /-- Predicate: the primal constraint at λ is **tight** at the
 optimum (= the constraint binds the optimum, equivalently
@@ -77,7 +86,7 @@ optimum (= the constraint binds the optimum, equivalently
 inner constraint matrix; here we expose it as an abstract Prop
 indexed by λ so theorems can be stated against it without unfolding
 the LP details. -/
-opaque tight (lp : OperatorSelectionLP) (λ : lp.Λ) : Prop
+opaque tight (lp : OperatorSelectionLP) (lam : lp.Λ) : Prop
 
 end OperatorSelectionLP
 
@@ -86,7 +95,7 @@ QOU operator-selection LP needs from standard LP theory.  These are
 *not* QOU-specific — they hold for any bounded + feasible finite-dim
 LP.  Mathlib does not (as of writing) ship an LP-duality library;
 this class axiomatises the two facts so the downstream theorems can
-take them as explicit `[Instance]` hypotheses (CLAUDE.md §3b-cond
+take them as explicit `[Instance]` hypotheses (AGENTS.md §3b-cond
 pattern), making `theorem_1_…` and `theorem_3_…` rigorous-conditional
 results awaiting a Mathlib LP-duality port.
 
@@ -106,7 +115,7 @@ class HasFiniteLPDuality (lp : OperatorSelectionLP) : Type where
 
 /-- Strong duality theorem (now a class-conditional invocation).
 Conditional on `[HasFiniteLPDuality lp]` per CLAUDE.md §3b-cond. -/
-theorem strong_duality (lp : OperatorSelectionLP)
+def strong_duality (lp : OperatorSelectionLP)
     [lpd : HasFiniteLPDuality lp] :
     lp.duality_gap = 0 :=
   lpd.strong_duality_holds
@@ -119,11 +128,11 @@ theorem theorem_3_strong_duality (lp : OperatorSelectionLP)
   strong_duality lp
 
 /-- Complementary slackness theorem (class-conditional invocation).
-Conditional on `[HasFiniteLPDuality lp]` per CLAUDE.md §3b-cond. -/
+Conditional on `[HasFiniteLPDuality lp]` per AGENTS.md §3b-cond. -/
 theorem complementary_slackness (lp : OperatorSelectionLP)
-    [lpd : HasFiniteLPDuality lp] (λ : lp.Λ) :
-    (λ ∈ lp.active_set) ↔ lp.tight λ :=
-  lpd.complementary_slackness_holds λ
+    [lpd : HasFiniteLPDuality lp] (lam : lp.Λ) :
+    (lam ∈ lp.active_set) ↔ lp.tight lam :=
+  lpd.complementary_slackness_holds lam
 
 /-- Theorem 1 of the partial proof: the Wedderburn maximizer lies in
 the LP active set.  Conditional on `[HasFiniteLPDuality lp]`. -/
@@ -137,7 +146,7 @@ theorem theorem_1_maximizer_in_active_set (lp : OperatorSelectionLP)
 interface generator's seminormal action.  The mathematical content
 is in docs/audits/2026-05-04-sub-lemma-2-1-categorical-proof.md;
 here it is encoded as a class so Theorem 2 can take it as a
-hypothesis (CLAUDE.md §3b-cond pattern). -/
+hypothesis (AGENTS.md §3b-cond pattern). -/
 class HasBranchingBlockLemma (lp : OperatorSelectionLP) : Type where
   /-- The pole-order bound that Sub-lemma 2.1 establishes:
   for any `λ`, the q=0 pole order of `χ^λ(β)` is bounded by the

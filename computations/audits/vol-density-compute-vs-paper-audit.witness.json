@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T04:34:32.241119+00:00",
-  "commitSha": "8732e45f2f59efb37bc0301e658aacc48250fd6a",
+  "computedAt": "2026-06-22T13:13:43.816507+00:00",
+  "commitSha": "cae0becd630ab3343b30c5ed3b32e038ed03e82e",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 10,
   "computation": "vol-density-compute-vs-paper-audit",
   "scriptFile": "vol_density_compute_vs_paper_audit.py",
-  "scriptHash": "abbfbbdcabab",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "193c14c06b10",
+  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,14 +19,12 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "description": "AUDIT (no fit): order-by-order comparison of the paper's per-block factor J_{B3}(q)=Sum_{lam|-3} w_lam chi_lam(beta)/dim lam (markov_trace_for_knot Borromean wenzl, H_3 index set) against production linking_weight=(3q^2+4+3q^-2)/4 (H_4 dim_q average). Reports h-coefficients, the factor-of-4 / h0-mismatch, and the RAW m_avg each factor yields with the raw gap vs CODATA and the fraction of production's +2.89% recovered by restoring the per-block sum.",
   "data": {
-    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "q0": "1.1099785955573347198997632204832250266562084087802",
     "h_expansion_paper_J_wenzl_H3": {
       "h0": "0.999999999985874855056127182793",
       "h2": "0.00000000459322970485806719723767889083",
@@ -101,17 +99,17 @@
       "note": "h0 ratio = 5/2, h2 ratio = 4 -> factor-of-N is coefficient-specific, not a single renormalization; h4+ diverges (prod terminates at h2). In the wenzl convention used by markov_trace_for_knot, J has a0=1, a2~0 -> even the leading agreement is convention-dependent."
     },
     "mass_bridge": {
-      "vol_b3_over_hbarq2": "746.418007597967138987935109265",
-      "production_lw_q0": "2.53277965639939149205151450176",
-      "paper_J_B3_q0": "0.998562163836787265951213135147",
-      "ratio_lw_over_J": "2.53642662232230202524964399443",
+      "vol_b3_over_hbarq2": "746.417850994545302378902428434",
+      "production_lw_q0": "2.53277966367467598266368381416",
+      "paper_J_B3_q0": "0.99856216319741255575768689907",
+      "ratio_lw_over_J": "2.536426631232124422984260525",
       "m_e_MeV": "0.51099895",
       "m_avg_codata_MeV": "938.91875434",
-      "m_avg_production_MeV": "966.04982316214401774",
-      "m_avg_paper_perblock_MeV": "380.87040037359642424",
-      "gap_production_pct": "2.8896077213",
-      "gap_paper_perblock_pct": "-59.4352121935",
-      "fraction_of_prod_gap_recovered_pct": "-1956.86092806"
+      "m_avg_production_MeV": "966.04962325344827606",
+      "m_avg_paper_perblock_MeV": "380.87032022060447005",
+      "gap_production_pct": "2.88958642993",
+      "gap_paper_perblock_pct": "-59.4352207302",
+      "fraction_of_prod_gap_recovered_pct": "-1956.87637908"
     }
   }
 }

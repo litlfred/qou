@@ -28,7 +28,7 @@ Both stages use the SAME typed crossing operator:
   where d(u,u) = 0, d(d,d) = -(q-q⁻¹), d(u,d) = d(d,u) = -½(q-q⁻¹)
 
 Usage:
-    cd folio-assistant/computations && python3 markov-free-energy-qvalues.py
+    cd computations && python3 markov-free-energy-qvalues.py
 """
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir

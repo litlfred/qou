@@ -1,5 +1,6 @@
 import QOU.Hecke.Algebra
 import Mathlib.Algebra.BigOperators.Group.Finset.Defs
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.Algebra.Hom
 
 /-!
@@ -47,7 +48,7 @@ namespace QOU.Hecke
 universe u
 
 variable {R : Type u} {n : ℕ} {q : R} {A : Type u}
-  [CommRing R] [Inv R] [Ring A] [Algebra R A]
+  [CommRing R] [Inv R] [CommRing A] [Algebra R A]
   [HeckeAlgebra R n q A]
 
 /-- A one-dimensional character on `H_n(q)` is an `R`-algebra
@@ -59,14 +60,23 @@ character `φ_sym(σ_i) = q` (corresponding to the trivial irrep
 of `S_n`, partition `(n)`) and the alternating character
 `φ_alt(σ_i) = -q⁻¹` (corresponding to the sign irrep, partition
 `(1^n)`).  Higher-dim irreps do NOT factor through 1-dim
-characters in this way. -/
-abbrev OneDimChar (R : Type u) (A : Type u) [CommRing R] [Ring A] [Algebra R A] :=
+characters in this way.
+
+The per-generator factorisation below is stated for the
+*commutative* (abelianised) algebra `A`: a 1-dim character lands in
+the commutative ring `R` and factors through the abelianisation of
+`H_n(q)`, so the `Finset`-indexed (order-free) product over the word
+factors is well-defined exactly in this regime.  This is the
+algebraic content of "individual scalar factors commute and can be
+regrouped" — the multi-dim sector (non-commutative `A`) requires the
+operator-valued interface coefficient instead. -/
+abbrev OneDimChar (R : Type u) (A : Type u) [CommRing R] [CommRing A] [Algebra R A] :=
   A →ₐ[R] R
 
 namespace OneDimChar
 
 variable {R : Type u} {n : ℕ} {q : R} {A : Type u}
-  [CommRing R] [Inv R] [Ring A] [Algebra R A]
+  [CommRing R] [Inv R] [CommRing A] [Algebra R A]
   [HA : HeckeAlgebra R n q A]
 
 /-- **Multiplicativity.**  Any 1-dim character `φ` is multiplicative:
@@ -85,7 +95,7 @@ product of the individual character values.  Direct consequence of
 theorem map_prod_one_dim (φ : OneDimChar R A) {ι : Type*}
     (s : Finset ι) (f : ι → A) :
     φ (∏ k ∈ s, f k) = ∏ k ∈ s, φ (f k) := by
-  exact φ.toRingHom.map_prod f s
+  exact map_prod φ f s
 
 /-- **The 1-dim per-generator factorisation theorem.**
 Let `β = ∏_{k ∈ s} f k` be a braid word written as a finite
@@ -128,40 +138,20 @@ theorem one_dim_factors_per_generator
     φ (∏ k ∈ s, f k) =
     ∏ i ∈ s.image i_idx,
       ∏ k ∈ s.filter (fun k => i_idx k = i),
-        ((cd k).1 * φ (HA.embed i) + (cd k).2) :=
-  -- Discharged via the cited external axiom; the mechanical
-  -- Finset.prod_fiberwise + prod_congr regrouping is straightforward
-  -- in principle but its exact form depends on Mathlib API stability
-  -- (Finset.prod_fiberwise name + argument order has shifted across
-  -- Mathlib versions).  Full inline proof: `docs/audits/2026-05-09-
-  -- kite-tail-reconciliation.md` § "Proof".
-  -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  one_dim_factors_per_generator_axiom φ s f i_idx cd h_form
-
-/-- **External axiom (Ocneanu 1985; Jones 1987; Wenzl 1988): 1-dim
-    character factorisation.**  Any 1-dim character on `H_n(q)`
-    factors per generator via Finset.prod_fiberwise regrouping.  The
-    proof is mechanical (multiplicativity + per-term linear-form
-    evaluation + regrouping by `i_idx`) but the regrouping step's
-    exact form depends on the Mathlib API at the call site. -/
--- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
---      — Jones, "Hecke algebra representations of braid groups and link
---      polynomials," Ann. Math. 126 (1987). Verified against the
---      published version.
--- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see content/bib-qa-verifications.json
-axiom one_dim_factors_per_generator_axiom :
-    ∀ {R : Type u} {n : ℕ} {q : R} {A : Type u}
-      [CommRing R] [Inv R] [Ring A] [Algebra R A]
-      [HA : HeckeAlgebra R n q A]
-      (φ : OneDimChar R A) {ι : Type*} [DecidableEq ι]
-      [DecidableEq (Generator n)]
-      (s : Finset ι)
-      (f : ι → A) (i_idx : ι → Generator n) (cd : ι → R × R)
-      (_h_form : ∀ k ∈ s, f k = (cd k).1 • HA.embed (i_idx k) + (cd k).2 • 1),
-        φ (∏ k ∈ s, f k) =
-        ∏ i ∈ s.image i_idx,
-          ∏ k ∈ s.filter (fun k => i_idx k = i),
-            ((cd k).1 * φ (HA.embed i) + (cd k).2)
+        ((cd k).1 * φ (HA.embed i) + (cd k).2) := by
+  -- 1. φ is multiplicative (algebra hom over the commutative algebra A),
+  --    so the character of the product is the product of characters.
+  rw [map_prod]
+  -- 2. Regroup the product over the word by generator index
+  --    (`Finset.prod_fiberwise_of_maps_to`).
+  rw [← Finset.prod_fiberwise_of_maps_to (g := i_idx)
+        (fun k hk => Finset.mem_image_of_mem i_idx hk)]
+  -- 3. Each factor has the linear form `c • σ + d • 1`, so its φ-image
+  --    is `c · φ(σ) + d`; rewrite `i_idx k = i` inside each fibre.
+  refine Finset.prod_congr rfl (fun i _ => Finset.prod_congr rfl (fun k hk => ?_))
+  rw [Finset.mem_filter] at hk
+  rw [h_form k hk.1, map_add, map_smul, map_smul, map_one, smul_eq_mul,
+    smul_eq_mul, mul_one, hk.2]
 
 end OneDimChar
 

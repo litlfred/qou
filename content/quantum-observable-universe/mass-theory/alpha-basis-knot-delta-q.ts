@@ -10,9 +10,9 @@ export default proposition({
   computation: {
     engine: "python",
     status: "verified",
-    script: "folio-assistant/computations/delta_q_h_bracket_identity.py",
+    script: "computations/delta_q_h_bracket_identity.py",
     witness: [
-      "folio-assistant/computations/delta-q-h-bracket-identity.witness.json",
+      "computations/delta-q-h-bracket-identity.witness.json",
     ],
   },
   uses: [

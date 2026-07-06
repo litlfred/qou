@@ -39,7 +39,7 @@ References:
   conj:crystal-graph-realization                   (Brundan–Kleshchev iso)
   def:delta-q-decoration                           (q-character convention)
 
-@module folio-assistant/computations/crystal_pole_order
+@module computations/crystal_pole_order
 """
 
 from __future__ import annotations

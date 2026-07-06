@@ -5,7 +5,7 @@ Copyright (c) 2026 litlfred. All rights reserved.
 
 This file scaffolds the q-dilogarithm infrastructure needed for the
 Faddeev / Bloch-Wigner family of categorical attacks on Q_β residue A
-(see CLAUDE.md §"Critical framing — Q_β c_3 truncation order").
+(see AGENTS.md §"Critical framing — Q_β c_3 truncation order").
 
 ## Definitions provided
 
@@ -16,7 +16,7 @@ Faddeev / Bloch-Wigner family of categorical attacks on Q_β residue A
 
 ## Why this matters
 
-The CLAUDE.md "Critical framing" note states: the Q_β c_3 problem is a
+The AGENTS.md "Critical framing" note states: the Q_β c_3 problem is a
 **fibre-level Habiro element** whose archimedean evaluation at q_0 is
 sought. Faddeev / Li_2^q vs. Φ_q context-sorting determines the
 expansion. This file provides the symbolic primitives.
@@ -31,7 +31,7 @@ expansion. This file provides the symbolic primitives.
 
 - `QBetaCategoricalPrecisionLadder.lean` (the c_3 ladder Faddeev family attaches to)
 - Audit: [`docs/coordination/2026-06-03-qbeta-habiro-chain-1-scope.md`](../../../../../docs/coordination/2026-06-03-qbeta-habiro-chain-1-scope.md)
-- CLAUDE.md §"Critical framing — Q_β c_3 truncation order"
+- AGENTS.md §"Critical framing — Q_β c_3 truncation order"
 -/
 
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic

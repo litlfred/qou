@@ -26,7 +26,7 @@ Investigate the queue configuration, pipeline scripts, block relationships, and 
   - `folio-assistant/src/qa-agent-write.ts`
   - `content/pipeline/qa-criteria-registry.ts`
   - `content/pipeline/qa-checkers-extended.ts`
-  - `CLAUDE.md`
+  - `AGENTS.md`
   - `docs/audits/2026-06-07-google-paper-qa-rubrics-and-tooling.md`
 - **Key findings**:
   - Located the queue file, analyzed how the batches are structured.

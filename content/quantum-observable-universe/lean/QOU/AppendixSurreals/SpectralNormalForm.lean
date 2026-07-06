@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.AppendixSurreals.SpectralNormalForm — conjectural class (placeholder)
 
@@ -6,7 +8,7 @@
 
 This is a **conjecture**: the class `SpectralNormalForm` carries a placeholder
 field; the `noncomputable instance` is the conjectural witness whose
-`sorry` represents the open conjecture itself (per CLAUDE.md §3b),
+`sorry` represents the open conjecture itself (per AGENTS.md §3b),
 NOT a missing proof.  Downstream theorems may take
 `[SpectralNormalForm]` as an explicit `[Instance]` hypothesis to derive
 unconditional Lean theorems modulo this single conjectural input
@@ -23,7 +25,7 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:spectral-normal-form`](../../../quantum-observable-universe/appendix-surreals/spectral-normal-form.md). -/
 class SpectralNormalForm where
-  -- Witness: folio-assistant/computations/none
+  -- Witness: computations/none
   /-- **Content statement** (from manuscript):
 
       Under the surreal lift $q = 1 + \varepsilon$
@@ -44,7 +46,5 @@ of the valuation ring $\mathcal{O}$.
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/spectral-normal-form.ts
-noncomputable instance : SpectralNormalForm := by
-  trivial
-
+noncomputable instance : SpectralNormalForm := sorry
 end QOU.AppendixSurreals

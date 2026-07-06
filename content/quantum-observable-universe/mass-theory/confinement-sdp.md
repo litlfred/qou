@@ -2,8 +2,8 @@ The scalar [confinement LP](#prop:confinement-lp) is the
 diagonal projection of a richer **semidefinite program** over
 matrix-valued operators.  The SDP is the actual selection
 principle computed by the multi-level pipeline
-(`folio-assistant/computations/multi_level_sdp.py`,
-`sdp_cross_channel.py`, `misdp_cross_channel.py`); the LP
+(the formal derivation,
+the formal derivation, the formal derivation); the LP
 obtains only when every Wedderburn block decouples.
 
 ## Primal SDP (matrix operator selection)
@@ -108,3 +108,5 @@ The geometric face of this proposition — SDP optimality as
 Picard--Lefschetz steepest descent, dual variables as thimble
 depths — is developed in
 the SDP-as-thimble-flow remark below.
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

@@ -1,0 +1,36 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:quantum-dilogarithm-volume-motivation",
+  "kind": "remark",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/predicted-spectra/quantum-dilogarithm-volume-motivation.ts",
+    "md": "../qou/content/quantum-observable-universe/predicted-spectra/quantum-dilogarithm-volume-motivation.md"
+  },
+  "source_hashes": {
+    "md": "f676c5a85e70",
+    "ts": "0d300f04077d"
+  },
+  "criteria": {
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "f676c5a85e70",
+          "ts": "0d300f04077d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:57.812Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
+        "notes": "block has no .lean sibling"
+      }
+    ]
+  },
+  "updated_at": "2026-07-03T00:52:57.812Z"
+}

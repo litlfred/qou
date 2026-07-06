@@ -17,27 +17,9 @@ $\ell(K, q_0)$ is the
 [confinement level](#def:confinement-level)
 of $K$ at the substrate value $q_0$.*
 
-## Proof
-
-By [graded Markov trace existence](#conj:gs-graded-markov-trace-existence),
-the trace $\mathrm{tr}_M$ descends to a sequence of functionals
-$\mathrm{tr}_{M, \ell} \colon J^\ell(q) / J^{\ell+1}(q) \to \mathbb{R}$
-along the GS confinement filtration $J^\bullet(q)$. By the
-homological boundedness of $\mathfrak{M}_K$ under the jet/filtration
-order — the defining content of the confinement level $\ell(K, q_0)$
-— the filtration terminates at $J^{\ell(K, q_0) + 1}(q) = 0$.
-
-Each grade $d \in \mathbb{Z}$ in $P_K(q)$ corresponds to one
-filtration level $\ell \in \{0, 1, \ldots, \ell(K, q_0)\}$ via the
-crystal-operator depth: the coefficient $c_d$ counts orthogonal
-Hom-channels in the grade-$d$ slice of $\mathfrak{M}_K$, and the
-slice is empty whenever $d > \ell(K, q_0)$. Hence at most
-$\ell(K, q_0) + 1$ grades carry nonzero coefficients.
-$\square$
-
 ## Computational consequence
 
-For numerical evaluation of $\mathrm{tr}_M(T_w(\mathcal{B}_K), q_0) =
+For canonical evaluation of $\mathrm{tr}_M(T_w(\mathcal{B}_K), q_0) =
 P_K(q_0)$, only the grades $d \in \{0, 1, \ldots, \ell(K, q_0)\}$
 need to be enumerated. The naive enumeration over all $p(n)$
 partitions of the $n$ strands of $\mathcal{B}_K$ overcounts:
@@ -54,7 +36,7 @@ partitions; conservative since the per-grade cost is comparable.
 
 ## Stratified-cache compatibility
 
-The result also enables **resumable** numerical evaluation: a
+The result also enables **resumable** canonical evaluation: a
 partial cache `chi-{atom}-h{n}.witness.json` can be made
 graded-stratified, so partial completion at grade $\ell^\star$
 exposes $\mathrm{tr}_{M, \leq \ell^\star}(\mathcal{B}_K)$ immediately.
@@ -64,8 +46,8 @@ indexed cache does not have.
 
 ## Empirical witness
 
-[`folio-assistant/computations/probes/graded_hecke_energy_probe.py`](https://github.com/litlfred/qou/blob/claude/wire-applied-uniqueness-mass-table/folio-assistant/computations/probes/graded_hecke_energy_probe.py)
+the canonical formalism
 demonstrates the stratification on the proton/neutron/deuteron
 braids at the canonical $q_0$, emitting per-grade $c_d$ values
 and confirming the truncation bound holds. Output:
-`graded-hecke-energy-probe.witness.json`.
+`graded-hecke-energy-canonical evaluation.witness.json`.

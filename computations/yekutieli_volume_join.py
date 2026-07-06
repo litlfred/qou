@@ -453,7 +453,7 @@ def main():
     # q-volume route would supply Vol(K) via the archimedean τ_arch of
     # Vol_q(β)=tr_M. We report what production gives and what the literal
     # per-block / q-volume readings give, raw, no fit.
-    m_e = mp.mpf("0.51099895069")  # CODATA electron mass MeV (CAL-1)
+    from substrate.codata_constants import M_E_MEV as m_e  # CAL-1 anchor (registry; bit-identical at 50 dps — bean 46ke)
     m_avg_codata = mp.mpf("938.91875")  # (m_p+m_n)/2 CODATA MeV
     readings = {
         "production (8G/ℏ²·linking_weight)": geom_leading * lw_q0 * m_e,
