@@ -1,2 +1,1 @@
-This section develops mutant jones falsifiability and bloch group closure. The blocks below trace the construction from `s existing knot-indexed convolutions in
-        ` onward.
+We develop mutant Jones falsifiability and Bloch group closure. The blocks below trace the construction from the existing knot-indexed convolutions onward.
