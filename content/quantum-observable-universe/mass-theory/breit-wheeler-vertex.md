@@ -91,9 +91,9 @@ for the pair class and $\langle \cdot, \cdot \rangle_F$ for the
 Frobenius pairing on $H_n(R, q)$:
 
 $$
-  \langle v_{e^-e^+},\; \sigma_i\sigma_i \rangle_F =  0,
+  \langle v_{e^-e^+}, \sigma_i\sigma_i \rangle_F =  0,
   \qquad
-  \langle v_{e^-e^+},\; \sigma_0\sigma_1 \rangle_F  \neq  0.
+  \langle v_{e^-e^+}, \sigma_0\sigma_1 \rangle_F  \neq  0.
 $$
 
 This is the topological origin of the Breit--Wheeler polarisation
