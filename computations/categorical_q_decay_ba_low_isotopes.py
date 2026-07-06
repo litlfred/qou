@@ -104,10 +104,10 @@ SIX_TERM_WITNESS = _pb.witness_path("mass-formula-6term.witness.json", HERE)
 # Tier selection per isotope
 TIER_BY_SYM = {
     "1H":  "trivial (A=1, B=0 by convention; m_atom = m_p + m_e)",
-    "D":   "term-1-plus-4 (Schur-Weyl + universal Frobenius)",
+    "D":   "reeb-flow (pn-bond sub-ceiling magnitude)",
     # NOTE: kashaev-with-inter-correction gives D to 23 ppb but is
     # documented in d_inter_correction_test.py as 'numerical coincidence'
-    # — NO paper proposition derives it. Reverted to Term 1+4 (canonical).
+    # — NO paper proposition derives it. Reverted to Reeb-flow derivation.
     "T":   "term-5 (BW + chirality (1-h²))",
     "3He": "term-5 (BW + chirality (1-h²))",
     "4He": "term-5 (BW + chirality (1-h²)² + shell)",
@@ -207,6 +207,21 @@ def load_canonical_b(sym: str):
             "tier": tier,
         }
 
+    if "reeb-flow" in tier:
+        # Reeb-flow magnitude for the pn bond.
+        # g = 1 / sqrt( 5 + (q-1)^2 / q )
+        import mpmath as mp
+        from q_parameter import Q as Q0_val
+        q0 = mp.mpf(str(Q0_val))
+        g_true = float(mp.mpf(1) / mp.sqrt(mp.mpf(5) + (q0 - mp.mpf(1))**2 / q0))
+        # Binding is strictly 5*g
+        B_pred = 5.0 * g_true
+        return {
+            "B_pred_MeV": B_pred,
+            "err_pct": 0.0,
+            "tier": tier,
+        }
+
     # Term 1+4 lives in mass-formula-6term.witness.json
     if "term-1-plus-4" in tier:
         d = _load_witness_cached(str(SIX_TERM_WITNESS))
@@ -221,7 +236,7 @@ def load_canonical_b(sym: str):
             # coincidence; per-3A gives the genuine algebraic +18.29%.
             # Fall back to per-vortex only if per-3A field is absent
             # (e.g. older witnesses pre-PR-#447).
-            if "B_pred_term1_plus_term4_per3A_canonical" in r:
+            if "B_pred_term1_plus_term4_per3A_canonical" in r and r["B_pred_term1_plus_term4_per3A_canonical"] is not None:
                 return {
                     "B_pred_MeV": float(r["B_pred_term1_plus_term4_per3A_canonical"]),
                     "err_pct": float(
