@@ -1,11 +1,11 @@
 ---
 # gwy3
 title: 'Consume #3407 Lk_R⁽ᵏ⁾: b₄ pn sign + sub-1/√5 per-pair magnitude (spec posted on #3407)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-07-06T17:12:45Z
-updated_at: 2026-07-06T17:32:03Z
+updated_at: 2026-07-06T22:11:58Z
 parent: il97
 ---
 
@@ -45,3 +45,12 @@ Reconciliation: det form needs g_eff=0.642>ceiling for ²H ⇒ linear 5g
 law is a separate assertion; q→1 limit B(²H)=√5 MeV — unit implicit.
 Remaining: sine-normalization derivation; Lean I1/I2; ²H unit anchor;
 pn sign.
+2026-07-06 (tranche 3, PR #3443): ALL THREE remaining opens dispositioned.
+(1) tangent identification DERIVED from the TL Markov property
+(tr(x·eₙ)=δ⁻¹tr(x) ⇒ channel direction (1,z), tanθ=z) — §2d; one residual
+postulate remains (linking = CWF functional on channel direction).
+(2) ²H 5g law: flagged NEAR-MATCH, owner ruling requested (§3f) — keep
+with label vs re-tier; tier untouched.
+(3) pn sign: trace-blindness theorem (pn_sign_trace_blind, sorry-free,
+lean-direct exit 0) — sign invisible to ALL grading-commuting observables;
+re-classified as weak-sector observable (§3g). Binding-sector: closed.
