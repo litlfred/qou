@@ -1335,6 +1335,24 @@ theorem garnirHSub_le (t : Specht.Tableau μ) (i j : ℕ) :
     garnirHSub t i j ≤ garnirGSub t i j := inf_le_left
 
 omit [CharZero k] in
+/-- The subgroup `garnirGSub`'s carrier equals the `Finset` `garnirG` as sets. -/
+theorem garnirGSub_coe (t : Specht.Tableau μ) (i j : ℕ) :
+    (garnirGSub t i j : Set (Equiv.Perm (Fin (Specht.nOf μ)))) = ↑(garnirG t i j) := by
+  ext σ
+  rw [SetLike.mem_coe, mem_garnirGSub, Finset.mem_coe, garnirG, Finset.mem_filter]
+  exact ⟨fun h => ⟨Finset.mem_univ _, h⟩, fun h => h.2⟩
+
+omit [CharZero k] in
+/-- The subgroup `garnirHSub`'s carrier equals the `Finset` `garnirH` as sets. -/
+theorem garnirHSub_coe (t : Specht.Tableau μ) (i j : ℕ) :
+    (garnirHSub t i j : Set (Equiv.Perm (Fin (Specht.nOf μ)))) = ↑(garnirH t i j) := by
+  ext σ
+  rw [SetLike.mem_coe, garnirHSub, Subgroup.mem_inf, Finset.mem_coe, garnirH, Finset.mem_inter,
+    garnirG, Finset.mem_filter, Finset.mem_filter, ← mem_garnirGSub]
+  exact ⟨fun h => ⟨⟨Finset.mem_univ _, h.1⟩, ⟨Finset.mem_univ _, h.2⟩⟩,
+    fun h => ⟨h.1.2, h.2.2⟩⟩
+
+omit [CharZero k] in
 /-- **Coset reindexing (sorry-free) — Garnir bridge, reindex step.** For any transversal
 `T` whose product family `{π·ρ : π ∈ T, ρ ∈ H}` covers `garnirG` bijectively (encoded by
 the two inclusions + the cardinality match), a sum over `garnirG` reindexes as the double
