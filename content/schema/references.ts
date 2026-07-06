@@ -1492,6 +1492,97 @@ export const references: CSLData[] = [
     DOI: "10.1016/j.difgeo.2004.10.005",
   }),
 
+  // ── Tetraplectic / quaternionic-EW references (added 2026-07-06) ──
+  // Origin of the "tetraplectic structure" (closed non-degenerate 4-form).
+  ref({
+    id: "foth2002",
+    type: "article-journal",
+    title:
+      "Tetraplectic structures, tri-momentum maps, and quaternionic flag manifolds",
+    author: [
+      { family: "Foth", given: "Philip" },
+    ],
+    "container-title": "Journal of Geometry and Physics",
+    issued: { "date-parts": [[2002]] },
+    volume: "41",
+    issue: "4",
+    page: "330-343",
+    DOI: "10.1016/S0393-0440(01)00068-7",
+    URL: "https://arxiv.org/abs/math/0103042",
+  }),
+
+  // Foth–Leitner: four-vector fields on quaternionic flag manifolds
+  // (the Reeb-triad / quaternionic-twist source for bring_tetraplectic.md §4).
+  ref({
+    id: "fothleitner2003",
+    type: "article-journal",
+    title: "Geometry of Four-Vector Fields on Quaternionic Flag Manifolds",
+    author: [
+      { family: "Foth", given: "Philip" },
+      { family: "Leitner", given: "Frederick" },
+    ],
+    "container-title": "Communications in Mathematical Physics",
+    issued: { "date-parts": [[2003]] },
+    volume: "238",
+    issue: "1",
+    page: "119-140",
+    DOI: "10.1007/s00220-003-0821-9",
+    URL: "https://arxiv.org/abs/math/0104104",
+  }),
+
+  // Morita: the left–right symmetric SU(2)_L × SU(2)_R × U(1) quaternionic
+  // reformulation of Weinberg–Salam theory.
+  ref({
+    id: "morita1981",
+    type: "article-journal",
+    title: "Gauge Theories over Quaternions and Weinberg-Salam Theory",
+    author: [
+      { family: "Morita", given: "Katsusada" },
+    ],
+    "container-title": "Progress of Theoretical Physics",
+    issued: { "date-parts": [[1981]] },
+    volume: "65",
+    issue: "6",
+    page: "2071-2074",
+    DOI: "10.1143/PTP.65.2071",
+    URL: "https://academic.oup.com/ptp/article/65/6/2071/1909100",
+  }),
+
+  // Morita: the full quaternionic Weinberg–Salam theory (owner-supplied PDF
+  // 67-6-1860.pdf).
+  ref({
+    id: "morita1982",
+    type: "article-journal",
+    title: "Quaternionic Weinberg-Salam Theory",
+    author: [
+      { family: "Morita", given: "Katsusada" },
+    ],
+    "container-title": "Progress of Theoretical Physics",
+    issued: { "date-parts": [[1982]] },
+    volume: "67",
+    issue: "6",
+    page: "1860-1876",
+    DOI: "10.1143/PTP.67.1860",
+    URL: "https://academic.oup.com/ptp/article/67/6/1860/1887264",
+  }),
+
+  // Cederwall–Preitschopf: quaternionic (N=4) superconformal field theory.
+  // DOI omitted (older CMP volume, not URL-verified); arXiv id is the locator.
+  ref({
+    id: "cederwallpreitschopf1995",
+    type: "article-journal",
+    title: "Quaternionic Superconformal Field Theory",
+    author: [
+      { family: "Cederwall", given: "Martin" },
+      { family: "Preitschopf", given: "Christian" },
+    ],
+    "container-title": "Communications in Mathematical Physics",
+    issued: { "date-parts": [[1995]] },
+    volume: "167",
+    page: "373-394",
+    URL: "https://arxiv.org/abs/hep-th/9209107",
+  }),
+
   ref({
     id: "majid2002",
     type: "book",

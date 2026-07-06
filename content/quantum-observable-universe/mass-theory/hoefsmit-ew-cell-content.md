@@ -269,13 +269,13 @@ pure-eigenspace counts and 8-pattern multiplicities.
 
 The disjoint-strand-pair identification of $W^\pm, Z, H$ above sits
 alongside a much older algebraic observation: Morita's quaternionic
-formulation of the electroweak sector (early 1980s), in which writing
+formulation of the electroweak sector \cite{morita1981, morita1982}, in which writing
 fermion and Higgs multiplets over the quaternion field $\mathbb{H}$
 rather than $\mathbb{C}$ makes the left–right symmetric gauge structure
 $\mathrm{SU}(2)_L \times \mathrm{SU}(2)_R \times \mathrm{U}(1)$ appear
 algebraically, with quarks and leptons organised into flavor doublets
 (compare also the quaternionic/superconformal constructions of
-Cederwall and Preitschopf).
+Cederwall and Preitschopf \cite{cederwallpreitschopf1995}).
 
 The QOU tetraplectic boundary supplies a geometric home for the same
 $\mathrm{SU}(2)$: the Reeb triad on the Bring-cone link (the quaternionic
@@ -288,6 +288,4 @@ where they are proved to be **norm-preserving** (a genuine unitary gauge
 action) and to **commute** as two factors. What is established is exactly
 this group-action content; the identification of these algebraic actions
 with the physical $W^\pm, Z, H$ carriers is an interpretive alignment
-(Morita; Cederwall–Preitschopf), **not** a derivation. Formal
-bibliography entries for these historical references are a follow-up
-(pending verified metadata).
+\cite{morita1981, cederwallpreitschopf1995}, **not** a derivation.
