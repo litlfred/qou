@@ -129,8 +129,8 @@ def additive_ceiling_ratio(Z, N, z, h, fpn):
     reproducing the committed ceiling witness (add_complete is the max model)."""
     def logsum(Z, N):
         order = nodes(Z, N)
-        return sum(-log(bond_factor(order[i], order[j], z, h, fpn))
-                   for (i, j) in combinations(range(len(order)), 2))
+        return mp.fsum(-log(bond_factor(order[i], order[j], z, h, fpn))
+                       for (i, j) in combinations(range(len(order)), 2))
     return logsum(Z, N) / logsum(1, 1)
 
 
