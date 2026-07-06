@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-05T11:19:13.648060+00:00",
-  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-07-06T18:15:21.392131+00:00",
+  "commitSha": "e86879306f9a7c09d5f1e6d921384addb4544cef",
   "assertions": [
     {
       "name": "deuteron_residual_is_order_one_after_energy_scale",
@@ -14,7 +14,7 @@
     },
     {
       "name": "Delta_tr_is_intensive_saturating",
-      "computed": 0.06301080027088722,
+      "computed": 0.06301080027088728,
       "expected": 0.0,
       "passed": true,
       "tolerance": 0.3,
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": -1783248759954,
+  "durationMs": -1783086856035,
   "computation": "delta-lambda-energy-scale-extensivity",
   "scriptFile": "delta_lambda_energy_scale_extensivity_probe.py",
   "scriptHash": "bb835dc9e493",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,11 +34,12 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Δ_λ(K) attack: splits the canonical binding residual into Δ_λ = (E_0/Q_β)·r(K). Finding 1 — the DEUTERON gap is the energy scale (E_0/Q_β=5.35 ≈ Δ_λ(D)=4.78 → r(D)≈0.89≈1; use E_0 not Q_β). Finding 2 — the residual r(K) is MISSING EXTENSIVITY: Δtr saturates (intensive, →1) while B_AME is extensive (∝ bonds C(A,2)); r(K) tracks the bond count (rough O(1)·bonds, not a clean law). Active set (few-row, 90% of tr_M) tracked across the nucleon-by-nucleon knot construction from the LOSSLESS matrix-M caches (#2089 cap fix). EXPLORATORY — no production rewire; points at the per-bond operator combiner (#2080) / per-nucleus volume (#2078) as the extensive fix.",
   "parameters": {

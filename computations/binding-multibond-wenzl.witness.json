@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-29T05:18:24.370342+00:00",
-  "commitSha": "fd075f40dce135705b3673692738580cb49c9265",
+  "computedAt": "2026-07-06T18:15:18.627196+00:00",
+  "commitSha": "e86879306f9a7c09d5f1e6d921384addb4544cef",
   "assertions": [
     {
       "name": "deuteron_single_bond_holds",
-      "computed": 0.19262559435342802,
+      "computed": 0.19259964869543642,
       "expected": 0,
       "passed": true,
       "tolerance": 1,
@@ -14,16 +14,24 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 166403,
+  "durationMs": 1563,
   "computation": "binding-multibond-wenzl",
   "scriptFile": "binding_multibond_wenzl.py",
-  "scriptHash": "461080dbeb1b",
-  "scriptCommitSha": "fd075f40dce135705b3673692738580cb49c9265",
+  "scriptHash": "7ce68c29ed54",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Multi-bond binding test in canonical Wenzl JM. Per-bond Δtr (each chain bond from vacuum) and the additive sum B = m_e·Vol(𝓑₃)·Σ Δtr_bond vs AME, alongside the combined single-link value. No scale fit (deuteron-fixed m_e·Vol(𝓑₃)).",
   "data": {
@@ -31,44 +39,49 @@
       "2H": {
         "n_bonds": 1,
         "per_bond_dtr": [
-          "0.595239710371"
+          "0.595239609744"
         ],
-        "sum_per_bond": "0.595239710371",
-        "dtr_combined": "0.595239710371",
-        "B_sum_MeV": "2.228851083",
-        "B_combined_MeV": "2.228851083",
-        "B_AME_MeV": "2.224566",
-        "err_sum_pct": 0.19262559435342802,
-        "err_combined_pct": 0.19262559435342802
+        "sum_per_bond": "0.595239609744",
+        "dtr_combined": "0.595239609744",
+        "B_sum_MeV": "2.228850707",
+        "B_combined_MeV": "2.228850707",
+        "B_AME_MeV": "2.2245662",
+        "err_sum_pct": 0.19259964869543642,
+        "err_combined_pct": 0.19259964869543642
       },
       "3H": {
         "n_bonds": 2,
         "per_bond_dtr": [
-          "0.549545120412",
-          "0.64446102784"
+          "0.549544982735",
+          "0.644460855966"
         ],
-        "sum_per_bond": "1.19400614825",
-        "dtr_combined": "0.80397200111",
-        "B_sum_MeV": "4.470907856",
-        "B_combined_MeV": "3.010440726",
-        "B_AME_MeV": "8.481798",
-        "err_sum_pct": -47.28820639381238,
-        "err_combined_pct": -64.50704525292494
+        "sum_per_bond": "1.1940058387",
+        "dtr_combined": "0.803971795447",
+        "B_sum_MeV": "4.470906697",
+        "B_combined_MeV": "3.010439956",
+        "B_AME_MeV": "8.4817962",
+        "err_sum_pct": -47.28820887313426,
+        "err_combined_pct": -64.50704680001832
       },
       "3He": {
         "n_bonds": 2,
         "per_bond_dtr": [
-          "0.524590408271",
-          "0.634112570964"
+          "0.524590285615",
+          "0.634112407931"
         ],
-        "sum_per_bond": "1.15870297923",
-        "dtr_combined": "0.841215709019",
-        "B_sum_MeV": "4.338716564",
-        "B_combined_MeV": "3.149898288",
-        "B_AME_MeV": "7.718043",
-        "err_sum_pct": -43.784757825293866,
-        "err_combined_pct": -59.187862937117856
+        "sum_per_bond": "1.15870269355",
+        "dtr_combined": "0.841215497455",
+        "B_sum_MeV": "4.338715494",
+        "B_combined_MeV": "3.149897496",
+        "B_AME_MeV": "7.71804132",
+        "err_sum_pct": -43.784759449178104,
+        "err_combined_pct": -59.18786431763767
       }
+    },
+    "lean_uniqueness_ref": {
+      "generic": "qou:QOU.BraidKnot.@nucleus_uniqueness_closed (3*A)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     }
   }
 }
