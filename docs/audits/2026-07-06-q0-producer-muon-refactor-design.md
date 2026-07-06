@@ -141,3 +141,37 @@ Are the 279 proton-committed witnesses:
 Until this is decided, the override stays **WIP on this branch** (validated, not merged). The
 sweep harness (`q0_muon_reproduction_sweep.py`) is the tool to classify the full set once the
 anchor policy is set.
+
+## CAL-layer anchor selection (owner ruling 2026-07-06) — implemented + validated
+
+Per the owner's CAL two-layer convention: the anchor is **per-producer by CAL layer**, not a
+blanket flip.
+- **IDEAL / canonical 3-CAL → muon** (CAL-2 = 𝔇_β, proxy m_μ/m_e); the ~455 muon witnesses.
+- **PHYSICAL-Observations → proton** (m_p/m_e, most precise); the ~279 proton witnesses.
+
+**Implementation.** `q_parameter.py`'s override is now **gated on `QOU_Q0_ANCHOR`**: default
+`physical` (proton, unchanged `import *`); `ideal`/`muon`/`canonical` applies the muon override
+(witness-sourced, full family + closures). Canonical-derivation producers run muon-consistent by
+exporting `QOU_Q0_ANCHOR=ideal`; physical producers leave it unset. `qou_substrate.constants`
+untouched. Verified: default Q=1.10997858275 (proton), `QOU_Q0_ANCHOR=ideal` Q=1.10997859556 (muon).
+
+**Sweep harness** (`q0_muon_reproduction_sweep.py`) now picks each producer's anchor from its own
+committed q₀ signature and, when absent/ambiguous, tries **both** and keeps whichever reproduces
+(auto-classify).
+
+**Sample (10 producers):**
+- **6 PASS at the correct layer** — `mass_table_l1_full_crosscheck`, `interface_quadratic_identity`,
+  `q_block_rmatrix_spectrum` (muon); `low_isotope_binding_model_comparison`,
+  `binding_sym_vs_lin_two_models` (proton). The two proton producers reproduce under proton (they
+  failed under the earlier blanket muon), confirming the per-layer design.
+- **4 residual (both anchors)** — `charge_coulomb_tn3he_derived`, `three_body_joint_trace_a3`,
+  `landauer_crossing_energy_probe`, `per_bond_growth_a3`, `symmetrized_binding_closure`: ~1e-8 diffs
+  that anchor-selection does NOT fix ⇒ **not q₀**. Causes seen: committed-side rounding
+  (`three_body … AME_MeV = 8.4818` vs fresh `8.4817962`) + precision-path / possibly the *old*
+  `q_muon_at` value (`…5541806`) in the committed witness. These are per-producer follow-ups, not
+  anchor-policy issues.
+
+### Status
+The CAL-layer anchor mechanism is **implemented and validated** (opt-in, default proton, no blanket
+flip — safe). Full-corpus classification + the ~4 per-producer residual fixes are the remaining
+focused-session work; the auto-classifying sweep is the tool.

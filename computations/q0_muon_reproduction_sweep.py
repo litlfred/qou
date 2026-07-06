@@ -28,9 +28,14 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
+
+# Canonical q₀ decimal signatures (CAL two-layer convention, AGENTS.md).
+_MUON_SIG  = "1.109978595557"   # ideal / canonical 3-CAL (CAL-2 = 𝔇_β)
+_PROTON_SIG = "1.10997858275"   # physical-observations (m_p/m_e)
 
 HERE = Path(__file__).resolve().parent
 
@@ -97,19 +102,33 @@ def run_one(producer: Path, rel_tol: float) -> tuple[str, list]:
     committed_txt = _committed(rel)
     if not committed_txt:
         return ("NO_COMMITTED", [])
-    r = subprocess.run([sys.executable, "-u", producer.name], cwd=HERE,
-                       capture_output=True, text=True, timeout=1800)
-    if r.returncode != 0:
-        return (f"RUN_FAILED (exit {r.returncode}): {r.stderr.strip()[-200:]}", [])
-    try:
-        fresh = json.loads(wit.read_text())
-        committed = json.loads(committed_txt)
-    finally:
-        subprocess.run(["git", "checkout", "--", rel], cwd=HERE.parent,
-                       capture_output=True)
-    diffs: list = []
-    _walk(committed, fresh, producer.stem, rel_tol, diffs)
-    return ("PASS" if not diffs else f"SUBSTANTIVE ({len(diffs)})", diffs)
+    committed = json.loads(committed_txt)
+
+    # Order the CAL-layer anchors to try by the committed witness's own q₀
+    # signature (muon ⇒ ideal, proton ⇒ physical); when absent/ambiguous, try
+    # both and keep whichever REPRODUCES — this auto-classifies every producer.
+    order = [("muon", "ideal"), ("proton", "physical")]
+    if _PROTON_SIG in committed_txt and _MUON_SIG not in committed_txt:
+        order = [("proton", "physical"), ("muon", "ideal")]
+
+    best = None  # (n_diffs, anchor, diffs)
+    for anchor, envval in order:
+        env = dict(os.environ); env["QOU_Q0_ANCHOR"] = envval
+        r = subprocess.run([sys.executable, "-u", producer.name], cwd=HERE,
+                           capture_output=True, text=True, timeout=1800, env=env)
+        try:
+            if r.returncode != 0:
+                return (f"RUN_FAILED (exit {r.returncode}): {r.stderr.strip()[-160:]}", [])
+            fresh = json.loads(wit.read_text())
+        finally:
+            subprocess.run(["git", "checkout", "--", rel], cwd=HERE.parent, capture_output=True)
+        diffs: list = []
+        _walk(committed, fresh, producer.stem, rel_tol, diffs)
+        if not diffs:
+            return (f"PASS [{anchor}]", [])
+        if best is None or len(diffs) < best[0]:
+            best = (len(diffs), anchor, diffs)
+    return (f"SUBSTANTIVE [{best[1]} best] ({best[0]})", best[2])
 
 
 def main() -> int:
@@ -125,11 +144,11 @@ def main() -> int:
             status, diffs = run_one(prod, args.rel_tol)
         except subprocess.TimeoutExpired:
             status, diffs = ("TIMEOUT (>1800s)", [])
-        mark = "✓" if status == "PASS" else ("–" if status in ("NO_WITNESS", "NO_COMMITTED") else "✗")
+        mark = "✓" if status.startswith("PASS") else ("–" if status in ("NO_WITNESS", "NO_COMMITTED") else "✗")
         print(f"{mark} {prod.name}: {status}")
         for path, a, b in diffs[:6]:
             print(f"      {path}: committed={str(a)[:32]} fresh={str(b)[:32]}")
-        if status not in ("PASS", "NO_WITNESS", "NO_COMMITTED"):
+        if not (status.startswith("PASS") or status in ("NO_WITNESS", "NO_COMMITTED")):
             overall_ok = False
     return 0 if overall_ok else 1
 

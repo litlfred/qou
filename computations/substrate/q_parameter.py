@@ -58,19 +58,33 @@ from qou_substrate.constants import *  # noqa: F401,F403,E402
 
 
 # ─────────────────────────────────────────────────────────────────────
-# CANONICAL MUON-q₀ OVERRIDE (computations/ layer) — bean `yfvb`, 2026-07-06.
+# CAL-LAYER q₀ ANCHOR SELECTION (computations/ layer) — bean `yfvb`, 2026-07-06.
 #
-# The ~840 committed `computations/*.witness.json` are the muon-q₀ canonical
-# derivation, but since the 2026-05-28 re-pin the `import *` above brings in the
-# PROTON q₀ (`q_at()`).  Re-running any producer would drift its witness
-# proton-ward by ~11.5 ppb (the `tnjb` bug).  The single faithful source of the
-# canonical value is `q-pinning-50-digit.witness.json` — it matches NEITHER
-# `q_at()` (proton) NOR `q_muon_at()` (a different muon closed form).  So here we
-# re-derive the ENTIRE q-family (f64 + _MP + Q_50_DIGIT_STR) and re-define the
-# q-closure functions from that witness, leaving the package layer
-# (`qou_substrate.constants`) untouched (proton, for precision/prediction).
-# Design + validation gate: docs/audits/2026-07-06-q0-producer-muon-refactor-design.md
-try:
+# Per the two-layer calibration convention (AGENTS.md §"q₀ anchor convention"):
+#   • IDEAL / canonical 3-CAL  → q₀ is MUON-anchored (CAL-2 = 𝔇_β, proxy m_μ/m_e);
+#     the canonical-derivation producers (~455 muon witnesses).
+#   • PHYSICAL-Observations     → q₀ is PROTON-anchored (m_p/m_e, most precise);
+#     the precision/prediction producers (~279 proton witnesses).
+#
+# The corpus is genuinely MIXED (sweep 2026-07-06: 279 proton + 455 muon), so a
+# blanket flip is WRONG. This block therefore applies the muon (ideal) anchor ONLY
+# when the caller opts in via the `QOU_Q0_ANCHOR` env var; the DEFAULT is the
+# physical/proton anchor (the `import *` above, unchanged).  A canonical-derivation
+# producer runs muon-consistent by exporting `QOU_Q0_ANCHOR=ideal`; a physical
+# producer leaves it unset (proton).
+#
+#   QOU_Q0_ANCHOR ∈ {ideal, muon, canonical}  → muon override (below)
+#   QOU_Q0_ANCHOR unset / {physical, proton, experimental} → proton (no override)
+#
+# When muon is selected, we re-derive the ENTIRE q-family (f64 + _MP +
+# Q_50_DIGIT_STR) and re-define the q-closures from `q-pinning-50-digit.witness.json`
+# (the ONLY faithful muon source — matches NEITHER `q_at()` proton NOR the
+# `q_muon_at()` closed form), leaving `qou_substrate.constants` untouched.
+# Design + sweep + validation gate: docs/audits/2026-07-06-q0-producer-muon-refactor-design.md
+import os as _os
+
+if _os.environ.get("QOU_Q0_ANCHOR", "physical").strip().lower() in ("ideal", "muon", "canonical"):
+  try:
     import json as _json
     import math as _math
     from pathlib import Path as _P
@@ -129,6 +143,6 @@ try:
         _mp.mp.dps = _prev
     except ImportError:
         pass
-except Exception as _exc:  # leave proton values if witness unreadable
+  except Exception as _exc:  # leave proton values if witness unreadable
     import sys as _sys
     print(f"[q_parameter] muon override skipped: {_exc}", file=_sys.stderr)
