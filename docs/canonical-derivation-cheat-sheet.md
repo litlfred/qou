@@ -551,6 +551,12 @@ linearization-artifact reading from the exact-degree side.
 > — factor algebra, bar-involution behaviour, δ cubic factorization,
 > assembly product, Markov trace bridge); the cross-level `H_{3A}`
 > bond-word induction remains sympy-verified only (the honest boundary).
+> *Complement note (2026-07-06):* the **abstract fold** form was already
+> formalized in `interface-knot-markov-z.lean` (bean-`s1ik` subsumption,
+> PR #3329, + the Phase-5l constituent multiplicativity proved
+> separately); the explicit module above adds the named factors with
+> δ(q), per-factor bar behaviour, and the `MarkovBondFactor` bridge —
+> cross-cited both ways, no duplication.
 
 **9a flip gate (owner ruling, 2026-06-13).** Production stays on the
 uniform shortcut until the per-A normalisation `R(K)` — the same object as
