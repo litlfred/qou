@@ -32,11 +32,12 @@ parameterized by `w` with `q = w⁴`:
 Machine-checked sorry-free: the operator transcription, the `q = 1`
 specialization to the classical trefoil A-polynomial `1 + L·M⁶`,
 nontriviality (char 0, single witness — no case split needed), unit
-nondegeneracy, and the `N = 1` annihilation instance.  The ONE `sorry`
-(cited) is the general-`N` annihilation — literature theorem, verified
-symbolically `N = 1..10` in the witness.  Unlike `4₁` there is **no**
-bar-transport theorem: the trefoil is chiral, its tower is not
-bar-symmetric — the operator-level face of chirality.
+nondegeneracy, and — since the root-of-unity evaluation cores were
+discharged in `QOU.BraidKnot.AJTrefoilRootEval` — the **general-`N`
+annihilation** assembled in `QOU.BraidKnot.AJTrefoilAnnihilation`.
+No `sorry` remains anywhere in the trefoil strong-AJ chain.  Unlike
+`4₁` there is **no** bar-transport theorem: the trefoil is chiral, its
+tower is not bar-symmetric — the operator-level face of chirality.
 
 ## Base ring (§7c)
 
@@ -158,9 +159,9 @@ theorem trefoilOperator_nontrivial [CharZero K] {q : K} (hq : q ≠ 0) :
 The instance `StrongAJTrefoil K` lives in
 `QOU.BraidKnot.AJTrefoilAnnihilation`, where the general-`N` annihilation
 is **assembled** (`trefoilOperator_annihilates`: P-form + case split; the
-only unproved inputs are two narrowly-scoped root-of-unity evaluation
-cores).  A broad cited-`sorry` instance formerly lived here; it is
-superseded.
+root-of-unity evaluation cores are proved in
+`QOU.BraidKnot.AJTrefoilRootEval`, so the chain is sorry-free).  A broad
+cited-`sorry` instance formerly lived here; it is superseded.
 -/
 
 /-- **Derived (conditional on the literature class): the trefoil tower is
