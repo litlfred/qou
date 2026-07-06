@@ -1,20 +1,16 @@
-Let $\mathcal{R}^{\circ}(L, q)$ be the polynomial observable
-subcategory of the resolution tree
-([polynomial observable subcategory](#def:polynomial-observable-subcategory)).
+Let $\mathcal{R}^{\circ}(L, q)$ be the polynomial observable subcategory of the resolution tree ([polynomial observable subcategory](#def:polynomial-observable-subcategory)).
 
-**Definition.**
-The **computational boundary** is the frontier
+**Definition.** We define the **computational boundary** as the frontier:
 
 $$
   \mathcal{H}_c(L, q)
   = 
   \overline{\mathcal{R}^{\circ}}
   \setminus
-  \mathcal{R}^{\circ},
+  \mathcal{R}^{\circ}.
 $$
 
-equivalently the vanishing locus of the computational
-horizon ideal:
+Equivalently, it is the vanishing locus of the computational horizon ideal:
 
 $$
   \mathcal{H}_c(L, q)
@@ -30,10 +26,4 @@ $$
   \bigr\}.
 $$
 
-This is the locus in the resolution tree where every
-polynomial-time degree-$0$ section vanishes — the exact
-analog of the jet horizon
-$\mathcal{H} = V(\mathfrak{h})$
-([jet horizon](#def:jet-horizon)), with the brane tower
-replaced by the resolution tower and the Frobenius algebra
-replaced by the Iwahori--Hecke algebra.
+This frontier is the locus in the resolution tree where every polynomial-time degree-$0$ section vanishes. It mirrors the jet horizon $\mathcal{H} = V(\mathfrak{h})$ ([jet horizon](#def:jet-horizon)). We simply replace the brane tower with the resolution tower, and the Frobenius algebra with the Iwahori--Hecke algebra.
