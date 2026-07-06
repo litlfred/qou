@@ -1,19 +1,10 @@
-In the archimedean realisation
-([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)),
-the substrate parameter is a smooth function
-$q \colon M \to \mathbb{C}^{\times}$.  At a point $p \in M$ where the
-substrate is locally constant, the fibre algebra is
-$\mathcal{O}_{q(p)}(\mathrm{SU}(2)) \otimes_{\mathbb{Z}[q,q^{-1}]} \mathbb{C}$, and the quantum Planck constant
-([quantum Planck constant](#def:quantum-planck-constant)) evaluates to
+The archimedean realization ([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)) assigns mass values to knot configurations. The substrate parameter is a smooth function $q \colon M \to \mathbb{C}^{\times}$. At a point $p \in M$ where the substrate is locally constant, the fibre algebra is $\mathcal{O}_{q(p)}(\mathrm{SU}(2)) \otimes_{\mathbb{Z}[q,q^{-1}]} \mathbb{C}$. The quantum Planck constant ([quantum Planck constant](#def:quantum-planck-constant)) evaluates to
 
 $$
   \hbar_q(p) = 1 - q(p)^{-1}.
 $$
 
-Specialising the topological mass formula
-([topological mass formula](#prop:topological-mass-formula)) to
-$q_0$ (derived from $m_\mu / m_e$,
-[skein mass relation](#rem:skein-mass-relation)):
+We specialize the topological mass formula ([topological mass formula](#prop:topological-mass-formula)) to $q_0$ (derived from $m_\mu / m_e$, [skein mass relation](#rem:skein-mass-relation)):
 
 $$
   \hbar_{q_0} = 1 - q_0^{-1} \approx 0.09889,
@@ -21,8 +12,7 @@ $$
   \hbar_{q_0}^{-2} \approx 102.25.
 $$
 
-The mass predictions then evaluate as follows over $\mathbb{C}[z]$
-at $z = q_0$:
+Evaluating over $\mathbb{C}[z]$ at $z = q_0$ yields the mass predictions:
 
 | **Particle** | $\mathrm{Vol}(K)$ | $\mathfrak{m}(K) = \mathrm{Vol}(K) / \hbar_{q_0}^2$ | **CODATA** |
 |---|---|---|---|
@@ -31,11 +21,4 @@ at $z = q_0$:
 | Proton | $Q(q_0) \mathrm{Vol}(\mathcal{L}_{\mathrm{Hopf}})_{uud}$ | 938.272 MeV | 938.272 MeV |
 | Neutron | $Q(q_0) \mathrm{Vol}(\mathcal{L}_{\mathrm{Hopf}})_{udd}$ | 939.565 MeV | 939.565 MeV |
 
-The passage from the categorical formula to these numbers requires
-exactly the archimedean bridge: the fibre functor $\tau$ maps the
-categorical Frobenius form $\int_A$ to the Webster inner product
-on $M$, and the categorical substrate parameter to the smooth
-function $q(p)$.  The polynomial ring $\mathbb{C}[z]$ serves as
-the universal coefficient ring: specialising $z \mapsto q_0$
-recovers the numerical predictions, while keeping $z$ formal
-retains the full $q$-deformed algebraic structure.
+Passing from the categorical formula to numerical values requires the archimedean bridge. The fibre functor $\tau$ maps the categorical Frobenius form $\int_A$ to the Webster inner product on $M$. It maps the categorical substrate parameter to the smooth function $q(p)$. The polynomial ring $\mathbb{C}[z]$ serves as the universal coefficient ring. Specializing $z \mapsto q_0$ recovers the numerical predictions. Keeping $z$ formal retains the $q$-deformed algebraic structure.
