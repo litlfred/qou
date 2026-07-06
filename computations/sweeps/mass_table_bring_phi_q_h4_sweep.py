@@ -3,7 +3,7 @@
 across the full 65-isotope mass table.
 
 Per the user-picked next step (audit `2026-05-25-m-p-m-n-full-chain-audit.md`
-+ `m_p_bring_plus_faddeev_h4_probe.py`'s +108 ppm m_p result): test
++ `m_p_bring_plus_phi_q_h4_probe.py`'s +108 ppm m_p result): test
 whether the candidate
   linking_weight(q) = 1/(1 − h·q^{10}) + 1/(1 − h⁴) − 1
 preserves the +0.03% Δm/M_N flavor-split match AND closes the +2.89%
@@ -20,7 +20,7 @@ The mass shift propagates linearly per nucleon:
   Δm_n ≈ −27.0 MeV per neutron
   Δm_atom ≈ Z·Δm_p + N·Δm_n  (linear, since B is unchanged)
 
-Output: `mass-table-bring-faddeev-h4-sweep.witness.json` — per-isotope
+Output: `mass-table-bring-phi-q-h4-sweep.witness.json` — per-isotope
 column of m_pred (Family A) vs m_pred (Bring + compact-q-dilog h⁴) + delta + rel
 err vs CODATA.
 
@@ -62,7 +62,7 @@ from _li_2_q_util import (  # noqa: E402
 mp.mp.dps = 80
 
 
-def linking_weight_bring_plus_faddeev_h4(q: mp.mpf, q_inv: mp.mpf | None = None) -> mp.mpf:
+def linking_weight_bring_plus_phi_q_h4(q: mp.mpf, q_inv: mp.mpf | None = None) -> mp.mpf:
     """Candidate: Bring color-tube + compact-q-dilog h⁴ additive composition.
 
       linking_weight(q) = 1/(1 − h_q · q^{10}) + 1/(1 − h_q⁴) − 1
@@ -90,7 +90,7 @@ def main() -> int:
 
     # ── Both candidates' m_p, m_n ────────────────────────────────
     lam_A = linking_weight_family_a(Q0, Q_INV)
-    lam_BF = linking_weight_bring_plus_faddeev_h4(Q0, Q_INV)
+    lam_BF = linking_weight_bring_plus_phi_q_h4(Q0, Q_INV)
     dm_over_Mn = flavor_split_subleading(Q0, Q_INV)
 
     m_avg_A = scale_const * lam_A
@@ -177,10 +177,10 @@ def main() -> int:
         out_rows.append({
             "atom": atom, "Z": Z, "N": N, "A": A,
             "m_FamilyA_MeV": mp.nstr(m_pred_A_mp, 18),
-            "m_Bring_Faddeev_h4_MeV": mp.nstr(m_pred_BF_mp, 18),
+            "m_Bring_compact q-dilog_h4_MeV": mp.nstr(m_pred_BF_mp, 18),
             "m_codata_MeV": mp.nstr(m_codata_mp, 12),
             "err_FamilyA_pct": mp.nstr(err_A * 100, 10),
-            "err_Bring_Faddeev_h4_pct": mp.nstr(err_BF * 100, 10),
+            "err_Bring_compact q-dilog_h4_pct": mp.nstr(err_BF * 100, 10),
             "improvement_factor": str(improve_factor),
         })
 
@@ -195,7 +195,7 @@ def main() -> int:
             if r["improvement_factor"] not in ("inf", "nan")
         )
         max_err_BF = max(
-            abs(float(r["err_Bring_Faddeev_h4_pct"])) for r in out_rows
+            abs(float(r["err_Bring_compact q-dilog_h4_pct"])) for r in out_rows
         )
         max_err_A = max(
             abs(float(r["err_FamilyA_pct"])) for r in out_rows
@@ -210,7 +210,7 @@ def main() -> int:
         print("=" * 80)
 
     # ── Witness ──────────────────────────────────────────────────
-    w = WitnessBuilder("mass-table-bring-faddeev-h4-sweep", engine="mpmath")
+    w = WitnessBuilder("mass-table-bring-phi-q-h4-sweep", engine="mpmath")
     w.set_description(
         "Sweep of the Bring color-tube + compact-q-dilog h⁴ candidate "
         "linking_weight `1/(1 − h·q^{10}) + 1/(1 − h⁴) − 1` against "
@@ -227,17 +227,17 @@ def main() -> int:
     w.set_content_block("conj:borromean-baryon-mass-formula")
     w.add_parameter("dps", 80)
     w.add_parameter("linking_weight_FamilyA", mp.nstr(lam_A, 25))
-    w.add_parameter("linking_weight_Bring_Faddeev_h4", mp.nstr(lam_BF, 25))
+    w.add_parameter("linking_weight_Bring_compact q-dilog_h4", mp.nstr(lam_BF, 25))
     w.add_parameter("m_p_FamilyA_MeV", mp.nstr(m_p_A, 15))
-    w.add_parameter("m_p_Bring_Faddeev_h4_MeV", mp.nstr(m_p_BF, 15))
+    w.add_parameter("m_p_Bring_compact q-dilog_h4_MeV", mp.nstr(m_p_BF, 15))
     w.add_parameter("m_n_FamilyA_MeV", mp.nstr(m_n_A, 15))
-    w.add_parameter("m_n_Bring_Faddeev_h4_MeV", mp.nstr(m_n_BF, 15))
+    w.add_parameter("m_n_Bring_compact q-dilog_h4_MeV", mp.nstr(m_n_BF, 15))
     w.add_data("isotope_rows", out_rows)
     if out_rows:
         w.add_data("summary", {
             "n_isotopes": len(out_rows),
             "max_err_FamilyA_pct": f"{max_err_A:.10f}",
-            "max_err_Bring_Faddeev_h4_pct": f"{max_err_BF:.10f}",
+            "max_err_Bring_compact q-dilog_h4_pct": f"{max_err_BF:.10f}",
             "avg_improvement_factor": f"{avg_improve:.4f}",
             "max_improvement_factor": f"{max_improve:.4f}",
         })

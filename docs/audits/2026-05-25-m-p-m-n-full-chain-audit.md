@@ -304,7 +304,7 @@ the empirical α — both KLR positivity (smallest positive integer) and
 Faddeev iteration (1/(1−h⁴) ≈ 1 + h⁴ at leading order) agree.
 
 ### Probe 3: combined m_p, m_n prediction
-[`m_p_bring_plus_faddeev_h4_probe.py`](../../computations/probes/m_p_bring_plus_faddeev_h4_probe.py)
+[`m_p_bring_plus_phi_q_h4_probe.py`](../../computations/probes/m_p_bring_plus_phi_q_h4_probe.py)
 — tests the combined form
 `linking_weight(q) = 1/(1 − h·q^{10}) + 1/(1 − h⁴) − 1` at q₀:
 
