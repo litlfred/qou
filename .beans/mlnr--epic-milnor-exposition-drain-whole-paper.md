@@ -5,7 +5,7 @@ status: in-progress
 type: epic
 priority: high
 created_at: 2026-07-06T11:10:00Z
-updated_at: 2026-07-06T11:10:00Z
+updated_at: 2026-07-06T16:55:26Z
 ---
 
 Owner directive: "do all chapters" — bring every narrative `.md` block up to
@@ -39,7 +39,7 @@ appendix-knot-operations #3373 · appendix-surreals-archimedean #3382 ·
 appendix-knot-periodic-table #3406 · appendix-transfer-matrices #3416+#3421.
 
 ## In progress
-models-of-qous b1 (22/51).
+models-of-qous b1 (22/51) — committed, awaiting PR and merge.
 
 ## Remaining queue (≤22-block batches)
 models-of-qous(51/3) · q-geometric-langlands(50/3) · climax-volume-mass(62/3)

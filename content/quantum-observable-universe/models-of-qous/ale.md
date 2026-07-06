@@ -1,30 +1,7 @@
-This example exhibits a discrete, ADE-indexed family of quantum
-observable universes carried by the links of ALE spaces; the
-construction follows.
+The links of ALE spaces provide a discrete, ADE-indexed family of archimedean quantum observable universes.
 
-Let $\Gamma \subset \mathrm{SU}(2)$ be a finite subgroup and let $X$ be the
-minimal resolution of $\mathbb{C}^2 / \Gamma$.  The link
-$M = S^3 / \Gamma$ is a compact $3$-dimensional strictly pseudoconvex
-CR manifold.  Equipped with the induced principal
-$\mathrm{SU}(2)$-bundle $P \to M$ and state bundle
-$\mathcal{S} = P \times_G \mathbb{P}^1(\mathbb{C})$, the tuple
-$(\mathbf{C}, \varTheta, G, \mathcal{S})$ provides an archimedean quantum observable universe
-([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)).
+Let $\Gamma \subset \mathrm{SU}(2)$ be a finite subgroup. Let $X$ be the minimal resolution of $\mathbb{C}^2 / \Gamma$. The link $M = S^3 / \Gamma$ is a compact 3-dimensional strictly pseudoconvex CR manifold. We equip $M$ with the induced principal $\mathrm{SU}(2)$-bundle $P \to M$ and the state bundle $\mathcal{S} = P \times_{\mathrm{SU}(2)} \mathbb{P}^1(\mathbb{C})$. This data specifies an archimedean quantum observable universe ([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)).
 
-The McKay correspondence classifies finite subgroups $\Gamma$ by ADE
-Dynkin diagrams.  In each case the exceptional divisors of the resolution
-$X \to \mathbb{C}^2/\Gamma$ are $\mathbb{CP}^1$'s arranged in the
-corresponding Dynkin pattern.  The substrate parameter $q$
-([substrate parameter](#def:substrate-parameter)) is constant on
-$M = S^3/\Gamma$ (the link has a single connected component), and the
-weight decomposition
-([weight decomposition](#def:weight-decomposition)) inherits the
-$\Gamma$-equivariant splitting of forms on $S^3$.  The Reeb decomposition
-([Reeb decomposition](#ex:reeb-decomposition)) specialises to the
-Hopf fibration $S^3/\Gamma \to S^2$, with the Reeb vector $\xi$
-generating the $\mathrm{U}(1)$ fibre rotation.
+The McKay correspondence classifies the subgroups $\Gamma$ by ADE Dynkin diagrams. The exceptional divisors of $X \to \mathbb{C}^2/\Gamma$ are copies of $\mathbb{CP}^1$ intersecting in the corresponding Dynkin pattern. Because $S^3/\Gamma$ is connected, the substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)) is constant. The weight decomposition ([weight decomposition](#def:weight-decomposition)) inherits the $\Gamma$-equivariant splitting of forms on $S^3$. The Reeb decomposition ([Reeb decomposition](#ex:reeb-decomposition)) reduces to the Hopf fibration $S^3/\Gamma \to S^2$, with the Reeb vector field $\xi$ generating the $\mathrm{U}(1)$ fibre rotation.
 
-The ADE classification thus provides a discrete family of quantum
-observable universes, one for each Dynkin type ($A_n$, $D_n$, $E_6$,
-$E_7$, $E_8$), with the instanton moduli space on $X$ furnishing the
-connection data.
+This classification yields one quantum observable universe for each Dynkin type ($A_n$, $D_n$, $E_6$, $E_7$, $E_8$). The connection data derives from the instanton moduli space on $X$.
