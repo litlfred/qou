@@ -481,7 +481,39 @@ winding-graded ladder data as the Whipple degree–order exchange
 instance, no conjectural hypothesis; a provable `grading_square` sanity
 theorem keeps the fields non-vacuous).
 
-## 11. Corpus-grep record
+## 11. Tranche 4 (three strands + rule institutionalized)
+
+**T2b — three strands add one rigid color winding (8/8).**
+[`toroidal_level_selection_three_strand_probe.py`](../../computations/substrate/toroidal_level_selection_three_strand_probe.py).
+On the $(2,1)$ Hoefsmit block, $\rho(\sigma_1\sigma_2)$ has trace $-1$,
+det $1$, and $(\sigma_1\sigma_2)^3 = \mathrm{Id}$ **exactly and
+$q$-independently** — its eigenvalues are the primitive cube roots of
+unity. So the $(3,k)$ torus-link tower (three strands = the
+Borromean/nucleon carrier arity) is
+
+$$
+x_k = W_+\, q^{2k} + W_-\, q^{-2k} + W_0 \cdot 2\cos\!\bigl(\tfrac{2\pi k}{3}\bigr),
+$$
+
+annihilated by the factored order-4 operator
+$(E^2 + E + 1)(E^2 - (q^2 + q^{-2})E + 1)$: the T2 hyperbolic winding pair
+(carrying the substrate modulus, $\eta = 2\ln q$) **plus one compact
+$\zeta_3$ winding of period 3 that does not flow with $q$** — a
+topological color/triality phase. The compact channel rides the *same*
+forced $\mu = \tfrac12$ elementary family on the compact locus
+($P^{\pm 1/2}_{\nu-1/2}(\cos\theta) \propto \cos/\sin(\nu\theta)/\sqrt{\sin\theta}$,
+verified with constants at 50 dps) — one family, the two locus rows of the
+§2 channel-rotation table. **Level-selection reading:** the three-strand
+level lattice is the winding pair $(k,\, k \bmod 3)$ — hyperbolic
+(modulus-carrying) $\times$ compact color (rigid). Structural only.
+
+**Rule institutionalized.** The T1 bar-parity selection rule now lives in
+the gating doc every future ansatz must read:
+[`2026-05-18-delta-lambda-gating-context.md` §Bar-parity selection rule](2026-05-18-delta-lambda-gating-context.md)
+— candidates must pass the parity screen *before* any numerical run, and
+the Recommendation section points at it.
+
+## 12. Corpus-grep record
 
 - `parabolic cylinder|Weber equation|Hermite`: hits are the Askey/channel
   cluster cited above + bibliography; no prior parabolic-cylinder treatment.
