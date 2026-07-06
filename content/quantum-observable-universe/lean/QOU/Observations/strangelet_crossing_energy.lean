@@ -8,20 +8,16 @@ import QOU.Shared.MarkovTraceClaim
 **Canonical declaration** for content block
 [`prop:strangelet-crossing-energy`](../../../quantum-observable-universe/observations/strangelet-crossing-energy.md): *QOU.Observations.strangelet_crossing_energy*.
 
-This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
+This module states the manuscript claim conditional on the §3b hypothesis class.
 -/
 
 namespace QOU.Observations
 
-
 /-- Abstract context for the `strangelet_crossing_energy` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+    typed fields below. -/
 class StrangeletCrossingEnergyContext extends QOU.Shared.MarkovTraceContext where
   /-- Coulomb charge `Q(𝓑₃(u, d, s)) = +2/3 − 1/3 − 1/3 = 0`. -/
   Q_uds : ℝ
-  /-- Manuscript sub-claim (i) — Electromagnetic neutrality:
-      `Q(𝓑₃(u, d, s)) = 0`. -/
-  claim_i_electromagnetic_neutrality : Q_uds = 0
   /-- Baryon count `N` of the strangelet composite `𝓢_N`. -/
   N_baryon : ℕ
   /-- Positive crossing count per baryon. -/
@@ -30,24 +26,28 @@ class StrangeletCrossingEnergyContext extends QOU.Shared.MarkovTraceContext wher
   n_minus : ℕ
   /-- Crossing energy `E_cross(𝓢_N)`. -/
   E_cross : ℝ
-  /-- Substrate parameter `q` specialised to `ℝ` for the energy
-      formula. -/
+  /-- Substrate parameter `q` specialised to `ℝ` for the energy formula. -/
   q_real : ℝ
-  /-- Manuscript sub-claim (ii) — Purely strong crossing energy:
-      `E_cross = N · ½(n₊ + n₋)·(q + q⁻¹)`. -/
-  claim_ii_purely_strong_crossing :
-    E_cross = (N_baryon : ℝ) * ((n_plus + n_minus : ℕ) : ℝ) / 2 *
-      (q_real + q_real⁻¹)
   /-- Binding energy per baryon for `uds` (strange matter). -/
   E_bind_uds : ℝ
   /-- Binding energy per baryon for `udd` (neutron matter). -/
   E_bind_udd : ℝ
+
+/-- The physical hypotheses carried by the Strangelet Crossing Energy Conjecture. -/
+class StrangeletCrossingEnergyConjecture (ctx : StrangeletCrossingEnergyContext) : Prop where
+  /-- Manuscript sub-claim (i) — Electromagnetic neutrality:
+      `Q(𝓑₃(u, d, s)) = 0`. -/
+  claim_i_electromagnetic_neutrality : ctx.Q_uds = 0
+  /-- Manuscript sub-claim (ii) — Purely strong crossing energy:
+      `E_cross = N · ½(n₊ + n₋)·(q + q⁻¹)`. -/
+  claim_ii_purely_strong_crossing :
+    ctx.E_cross = (ctx.N_baryon : ℝ) * ((ctx.n_plus + ctx.n_minus : ℕ) : ℝ) / 2 *
+      (ctx.q_real + ctx.q_real⁻¹)
   /-- Formula for binding energy of uds. -/
-  uds_binding : 0 < q_real → E_bind_uds = 8 * q_real⁻¹
+  uds_binding : 0 < ctx.q_real → ctx.E_bind_uds = 8 * ctx.q_real⁻¹
   /-- Formula for binding energy of udd. -/
-  udd_binding : 0 < q_real → E_bind_udd = 6 * q_real⁻¹
-  /-- If q is strictly positive, its inverse is strictly positive. -/
-  q_real_inv_pos : 0 < q_real → 0 < q_real⁻¹
+  udd_binding : 0 < ctx.q_real → ctx.E_bind_udd = 6 * ctx.q_real⁻¹
+
 /-- **Content statement** (from manuscript):
 
 **Proposition.**
@@ -57,9 +57,10 @@ strange quark in a Borromean triple
 $\mathcal{B}_3(\mathfrak{u}, \mathfrak{d}, \mathfrak{s})$ linked
 by the Hopf link $\mathcal{L}_H$.  Then:
 
-    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
+The Lean encoding below derives the equalities and inequalities from the hypothesis class. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/strangelet-crossing-energy.ts
-theorem strangelet_crossing_energy [ctx : StrangeletCrossingEnergyContext] :
+theorem strangelet_crossing_energy (ctx : StrangeletCrossingEnergyContext)
+    [hc : StrangeletCrossingEnergyConjecture ctx] :
     ctx.Q_uds = 0 ∧
     ctx.E_cross =
       (ctx.N_baryon : ℝ) * ((ctx.n_plus + ctx.n_minus : ℕ) : ℝ) / 2 *
@@ -68,13 +69,13 @@ theorem strangelet_crossing_energy [ctx : StrangeletCrossingEnergyContext] :
       ctx.E_bind_uds = 8 * ctx.q_real⁻¹ ∧
       ctx.E_bind_udd = 6 * ctx.q_real⁻¹ ∧
       ctx.E_bind_udd < ctx.E_bind_uds) := by
-  refine ⟨ctx.claim_i_electromagnetic_neutrality, ctx.claim_ii_purely_strong_crossing, ?_⟩
+  refine ⟨hc.claim_i_electromagnetic_neutrality, hc.claim_ii_purely_strong_crossing, ?_⟩
   intro hq
-  have huds := ctx.uds_binding hq
-  have hudd := ctx.udd_binding hq
+  have huds := hc.uds_binding hq
+  have hudd := hc.udd_binding hq
   refine ⟨huds, hudd, ?_⟩
   rw [hudd, huds]
-  have h_inv_pos := ctx.q_real_inv_pos hq
+  have h_inv_pos : 0 < ctx.q_real⁻¹ := inv_pos.mpr hq
   linarith
 
 end QOU.Observations

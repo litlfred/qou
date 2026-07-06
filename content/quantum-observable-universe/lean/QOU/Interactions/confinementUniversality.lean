@@ -7,15 +7,13 @@ import Mathlib.Data.Real.Basic
 **Canonical declaration** for content block
 [`prop:confinement-universality`](../../../quantum-observable-universe/particle-interactions/confinement-universality.md): *Confinement universality: nucleon NF independent of photon polarization*.
 
-This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
+This module states the manuscript claim conditional on the §3b hypothesis class.
 -/
 
 namespace QOU.Interactions
 
-
 /-- Abstract context for the `confinementUniversality` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
+    typed fields below. -/
 class ConfinementUniversalityContext where
   /-- Proton number `Z`. -/
   Z : ℕ
@@ -26,10 +24,13 @@ class ConfinementUniversalityContext where
   N_F : ℝ → ℝ → ℝ → ℝ
   /-- Reference zero-polarization nucleon NF value. -/
   N_F_zero : ℝ
+
+/-- The physical hypotheses carried by the Confinement Universality Conjecture. -/
+class ConfinementUniversalityConjecture (ctx : ConfinementUniversalityContext) : Prop where
   /-- Zero-polarization case equals reference. -/
-  h_N_F_zero : N_F 0 0 0 = N_F_zero
+  h_N_F_zero : ctx.N_F 0 0 0 = ctx.N_F_zero
   /-- General polarization case equals reference. -/
-  h_N_F : ∀ φ_0 φ_1 φ_01 : ℝ, N_F φ_0 φ_1 φ_01 = N_F_zero
+  h_N_F : ∀ φ_0 φ_1 φ_01 : ℝ, ctx.N_F φ_0 φ_1 φ_01 = ctx.N_F_zero
 
 /-- **Proposition statement** (from manuscript):
 
@@ -54,15 +55,12 @@ $$
 
 ## Proof
 
-The derivation chain has two stages:
-
-1.
-
-    The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
+The Lean encoding below derives the equality from the hypothesis class. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-universality.ts
-theorem confinementUniversality [ctx : ConfinementUniversalityContext] :
+theorem confinementUniversality (ctx : ConfinementUniversalityContext)
+    [hc : ConfinementUniversalityConjecture ctx] :
     ∀ (φ_0 φ_1 φ_01 : ℝ), ctx.N_F φ_0 φ_1 φ_01 = ctx.N_F 0 0 0 := by
   intro φ_0 φ_1 φ_01
-  rw [ctx.h_N_F, ctx.h_N_F_zero]
+  rw [hc.h_N_F, hc.h_N_F_zero]
 
 end QOU.Interactions
