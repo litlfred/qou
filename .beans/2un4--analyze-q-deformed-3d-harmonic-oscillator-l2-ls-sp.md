@@ -1,11 +1,11 @@
 ---
 # 2un4
 title: 'Analyze: q-deformed 3D harmonic oscillator -> l^2 + l.s (spin-orbit) -> heavy magic 28,50,82,126'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-07-06T04:46:39Z
-updated_at: 2026-07-06T10:58:48Z
+updated_at: 2026-07-06T11:00:19Z
 parent: 4lss
 ---
 
