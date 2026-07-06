@@ -1,6 +1,7 @@
 import QOU.MassEndomorphism.DeltaMaxUniformBound
 import QOU.MassEndomorphism.MassEndomorphismConjecture
 import QOU.MassEndomorphism.PhiQConvergence
+import QOU.MassEndomorphism.VolumeBridge
 import QOU.MassEndomorphism.ZHabiroCauchy
 -- `MassEndomorphismTrivial` deliberately NOT aggregated here:
 -- the zero-data `MassEndomorphism ℤ β` instance would otherwise
@@ -27,6 +28,12 @@ Aggregator for the mass-endomorphism tower modules:
   inverse-limit thread (all sorry-free; the brane-tower-specific
   increment input + the completion-ring packaging remain open — see
   the module header).
+- `VolumeBridge` — the **non-degenerate** §3b-cond conditional carrier
+  (bean `2g2u` companion): axiomatises *only* the open Volume-Conjecture
+  bridge (Step 3 of `conj:mass-endomorphism`) as an instance-free class,
+  and derives the manuscript's transient identity + full-mass = volume
+  from it. Instance-free by design (honest open primary, §3b-tax); the
+  alternative to the trivially-inhabited `MassEndomorphism` class.
 
 The pre-Arch tier of the mass-endomorphism tower lives in
 co-located stubs at

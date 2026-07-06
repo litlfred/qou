@@ -80,9 +80,46 @@ Each Tier-2 row is tracked as a bean (see the `stub-deaxiom` epic `6awe`).
 
 ## De-axiomatisation results — FINAL (2026-07-06)
 
-**9 / 10 Tier-2 carriers de-axiomatised.** Beyond the first 5, four more were
-completed — including the flagship `BlowupField`, which required cloning
-Mathlib @f897ebcf and building the `Hyperreal` olean cone from source:
+**10 / 10 Tier-2 carriers de-axiomatised.** The last wall,
+`CategoricalMassMarkov` (bean `2g2u`), was closed by **cross-wire** — the
+carrier's two free fields are now *derived* from the real `HeckeMassElement`:
+
+| Carrier | Bean | How |
+|---------|------|-----|
+| `CategoricalMassMarkov` | `2g2u` | `ofHecke`: `Φ := (Φ_mass · —)` is genuine left multiplication (`AddMonoidHom`, additivity = `mul_add`, not a posited field); `φ_n := Φ^[n](Φ_mass)` is the Φ-orbit of the mass element (`φ_0 = Φ_mass`, `φ_{n+1} = Φ(φ_n)` proved). Honest cross-wire to `QOU.Torsion.HeckeMassElement`, **not** illustrative inhabitation (a dummy `Φ := id`, `φ := 0` would compile but carry no content). lean-direct exit 0, sorry-free. |
+
+Distinction: bean `2g2u` was the Lean *carrier* (which merely **named** `Φ`/`φ`
+as free fields). The framework's open *research* item — the **closed form** of
+`Φ_mass(β) ∈ H_n(R,q)` and its Volume-Conjecture bridge — is `conj:mass-
+endomorphism`, addressed separately by the new **`VolumeBridge`** companion
+below (§3b-cond conditional carrier), not by this cross-wire.
+
+### `VolumeBridge` — non-degenerate §3b-cond carrier for `conj:mass-endomorphism`
+
+New module `QOU/MassEndomorphism/VolumeBridge.lean` (aggregated). It reduces the
+conjecture's open surface to exactly its one open ingredient — the
+**Volume-Conjecture bridge** (Step 3: `J(K;q) ≠ Vol(K)`, bridged only by
+Kashaev/Murakami–Murakami) — axiomatised as an **instance-free** class carrying
+that bridge as its *hypothesis* field, and **derives** the manuscript's
+transient identity (`transient = volTerm − descTrace`) and full-mass = volume.
+Non-degenerate per §3b-cond item 5 (field = input, theorem = derived output);
+instance-free per §3b-tax (honest open primary — the conditional results are
+genuinely *modulo the Volume Conjecture*). lean-direct exit 0, sorry-free.
+
+> **Follow-up flagged (not actioned):** the sibling `MassEndomorphism` class
+> (`MassEndomorphismConjecture.lean`) ships a global all-zeros `instance
+> canonical`, and `MassEndomorphismTrivial.lean` ships `trivial_int_zero`;
+> both make `[MassEndomorphism R β]` trivially synthesizable, so conditionality
+> against *that* class is vacuous. Those are GAP-18a-audit-governed
+> (`docs/audits/2026-05-04-gap-6a-18a-scoping.md`) and out of scope for bean
+> `2g2u`; demoting them to non-instance `def`s is tracked separately.
+> `VolumeBridge` is the instance-free alternative used going forward.
+
+### Earlier de-axiomatisations (first 9, unchanged)
+
+**9 / 10 Tier-2 carriers de-axiomatised (prior passes).** Beyond the first 5,
+four more were completed — including the flagship `BlowupField`, which required
+cloning Mathlib @f897ebcf and building the `Hyperreal` olean cone from source:
 
 | Carrier | Bean | How |
 |---------|------|-----|
@@ -91,11 +128,13 @@ Mathlib @f897ebcf and building the `Hyperreal` olean cone from source:
 | `CMBFunctor` | `gob0` | `ofJet`: genuine finite direct-sum colimit `∑_{c∈S} jet c`; `CMB = colimit ∘ ∂` by `rfl` |
 | `CompoundBetaShellCalibration` | `lqft` | `ofCalibration`: `E₀ := 𝔔_β` structurally (`E0_eq` is `rfl`) — "no new calibration" is definitional |
 
-**1 / 10 remains — the sole genuine open-research wall:**
-
-| Carrier | Bean | Wall |
-|---------|------|------|
-| `CategoricalMassMarkov` | `2g2u` | the Markov-trace **mass endomorphism** is the framework's open research arc (mass-endomorphism conjecture). Any concrete `Φ` would be illustrative inhabitation, not the real endomorphism — deliberately left open. |
+**0 / 10 remain (as of the 2026-07-06 cross-wire pass).** The last carrier
+`CategoricalMassMarkov` (bean `2g2u`) is now de-axiomatised by cross-wire (see
+the FINAL section at the top). The *research* conjecture behind it
+(`conj:mass-endomorphism`, closed-form `Φ_mass`) stays open — that is a
+statement about the framework's mathematics, not a Lean carrier axiom, and is
+now carried honestly by the instance-free `VolumeBridge` §3b-cond class. The
+earlier "deliberately left open" note below reflected the pre-cross-wire state:
 
 ### First 5 (recorded above, unchanged)
 
