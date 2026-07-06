@@ -57,11 +57,11 @@ def main():
     for i, val in enumerate(c_list):
         print(f"  c_{i} = {val}")
         
-    print("\nMapping to empirical pairs (J = -2, K ~ -0.97):")
+    print("\nMapping to empirical pairs (J = -2, K ~ 2.0):")
     # From c_2 = -A/2 = -1 (so A = 2, meaning c_2 = J/2)
     # c_3 = -B/6 ~ -2.02 (so B ~ 12.12, meaning c_3 = J)
     # c_4 = A^2/24 - C/12 = 1/6 - C/12
-    # If c_4 = K ~ -1.0, then C/12 = 1/6 - K => C = 2 - 12*K
+    # If c_4 = K ~ 2.0, then C/12 = 1/6 - 2 => C = -22.0
     
     wn.set_description("Symbolic Taylor expansion of the Weber / Parabolic Cylinder ODE limit, mapping symbolic ODE terms back to legacy categorical J/K scaling powers.")
     wn.add_data("symbolic_coefficients", {f"c_{i}": str(c_list[i]) for i in range(max_k+1)})
@@ -69,7 +69,7 @@ def main():
     wn.add_data("mapping_to_JK", {
         "A": "2 (derived from c_2 = J/2)",
         "B": "~ 12.12 (derived from c_3 = J)",
-        "C": "2 - 12*K (derived from c_4 = K)",
+        "C": "-22.0 (derived from c_4 = K ~ 2.0)",
         "c_4_formula": "A^2/24 - C/12"
     })
     

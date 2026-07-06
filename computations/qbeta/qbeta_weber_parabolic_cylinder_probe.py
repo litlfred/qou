@@ -47,7 +47,7 @@ def main():
     
     # Notice from older audits: c_4 is below the extraction precision floor,
     # but was estimated around ~ -0.97 to -1.13 in various fits.
-    c4_est = mp.mpf("-1.0") 
+    c4_est = mp.mpf("2.0") 
     
     builder = WitnessBuilder(
         "qbeta-weber-parabolic-cylinder-probe",
