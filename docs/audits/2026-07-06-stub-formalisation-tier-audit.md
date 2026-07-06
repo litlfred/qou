@@ -78,7 +78,26 @@ statement upgrade, not a `sorry` to close.)
 
 Each Tier-2 row is tracked as a bean (see the `stub-deaxiom` epic `6awe`).
 
-## De-axiomatisation results (2026-07-06)
+## De-axiomatisation results — FINAL (2026-07-06)
+
+**9 / 10 Tier-2 carriers de-axiomatised.** Beyond the first 5, four more were
+completed — including the flagship `BlowupField`, which required cloning
+Mathlib @f897ebcf and building the `Hyperreal` olean cone from source:
+
+| Carrier | Bean | How |
+|---------|------|-----|
+| `BlowupCalculus` | `zkst` | **hyperreals `ℝ*` are a genuine `BlowupField`** (`instBlowupFieldHyperreal`), every axiom a Mathlib theorem. Also corrected a latent over-idealisation — the unconditional `st_add` (false in every real model) is now conditioned on `IsFinite`, matching `Hyperreal.st_add`. |
+| `HorizonFunctor` | `bqfr` | `ofSpace`: topological model, `boundary = frontier(region) ∩ {A₀=0}`; `frontier` is the genuine limits operator, so `boundary_nonobservable` is a theorem |
+| `CMBFunctor` | `gob0` | `ofJet`: genuine finite direct-sum colimit `∑_{c∈S} jet c`; `CMB = colimit ∘ ∂` by `rfl` |
+| `CompoundBetaShellCalibration` | `lqft` | `ofCalibration`: `E₀ := 𝔔_β` structurally (`E0_eq` is `rfl`) — "no new calibration" is definitional |
+
+**1 / 10 remains — the sole genuine open-research wall:**
+
+| Carrier | Bean | Wall |
+|---------|------|------|
+| `CategoricalMassMarkov` | `2g2u` | the Markov-trace **mass endomorphism** is the framework's open research arc (mass-endomorphism conjecture). Any concrete `Φ` would be illustrative inhabitation, not the real endomorphism — deliberately left open. |
+
+### First 5 (recorded above, unchanged)
 
 **5 / 10 Tier-2 carriers de-axiomatised** — their axiom fields are now
 *theorems* obtained from a concrete construction or a cross-wire (each
