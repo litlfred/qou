@@ -1436,7 +1436,8 @@ theorem sum_over_garnirG_reindex {M : Type*} [AddCommMonoid M] (t : Specht.Table
 
 /-! #### The single residual straightening core + the induction skeleton -/
 
-/-- **The residual straightening core, SHARPENED to the column-maximal case
+omit [CharZero k] in
+/-- **STUB — the residual straightening core, SHARPENED to the column-maximal case
 (Sagan §2.6 Garnir relations).**
 A polytabloid `e_t` that is *not itself* a standard polytabloid **and** whose tableau
 `t` is already **column-(dominance-)maximal** — no column permutation `σ ∈ C_t`
@@ -1501,44 +1502,9 @@ theorem straightening_step_colMax (t : Specht.Tableau μ)
   --    up (the multi-swap generalization of `domWeight_swap_lt`).
   -- Combine: `garnir_assembly t T h1 hdom (transversal_sum_eq_zero t T H hH hpos
   --   (sum_sign_rep_polytabloid_eq_zero_of_family t (S_{A∪B}) hfam |> reindexed))`.
-  classical
-  obtain ⟨i, j, hij, hij1, _hdesc⟩ := exists_row_descent_of_colMax (k := k) t h hmax
-  obtain ⟨T, hcover, hclosed, hcard⟩ := garnir_transversal_exists t i j
-  -- Reindex the full-set annihilation into the transversal double sum.
-  have hann_double : ∑ π ∈ T, ∑ ρ ∈ garnirH t i j,
-      (Equiv.Perm.sign (π * ρ) : ℤ) •
-        Specht.Mtab.rep μ (π * ρ) (Specht.polytabloid (k := k) t) = 0 := by
-    rw [← sum_over_garnirG_reindex t i j T hcover hclosed hcard
-      (fun σ => (Equiv.Perm.sign σ : ℤ) • Specht.Mtab.rep μ σ (Specht.polytabloid (k := k) t))]
-    exact garnir_full_annihilation t hij hij1
-  -- Collapse the `H`-factor: the transversal signed sum vanishes.
-  have hann : ∑ π ∈ T, (Equiv.Perm.sign π : ℤ) •
-      Specht.Mtab.rep μ π (Specht.polytabloid (k := k) t) = 0 :=
-    transversal_sum_eq_zero t T (garnirH t i j) (garnirH_subset_colStab t i j)
-      (garnirH_card_pos t i j) hann_double
-  -- The `H`-coset representative `π₀ ∈ T` (from `1 ∈ garnirG ⊆ image`).
-  have h1G : (1 : Equiv.Perm (Fin (Specht.nOf μ))) ∈ garnirG t i j := by
-    rw [garnirG, Finset.mem_filter]; exact ⟨Finset.mem_univ _, fun l _ => rfl⟩
-  obtain ⟨⟨π₀, ρ₀⟩, hmem, h1eq⟩ := Finset.mem_image.mp (hcover h1G)
-  rw [Finset.mem_product] at hmem
-  have hHmem : ∀ σ, σ ∈ garnirH t i j ↔ σ ∈ garnirHSub t i j := by
-    intro σ; rw [← SetLike.mem_coe, garnirHSub_coe, Finset.mem_coe]
-  have hπ₀H : π₀ ∈ garnirH t i j := by
-    have hπ₀eq : π₀ = ρ₀⁻¹ := by rw [eq_inv_iff_mul_eq_one]; exact h1eq
-    rw [hπ₀eq, hHmem]; exact Subgroup.inv_mem _ ((hHmem ρ₀).mp hmem.2)
-  have hfix : Specht.Mtab.rep μ π₀ (Specht.polytabloid (k := k) t)
-      = (Equiv.Perm.sign π₀ : ℤ) • Specht.polytabloid (k := k) t :=
-    rep_polytabloid_of_mem_colStab t (garnirH_subset_colStab t i j π₀ hπ₀H)
-  -- **The single remaining gap — the Garnir dominance.**
-  have hdom : ∀ π ∈ T, π ≠ π₀ →
-      domWeight t < domWeight ((π : Equiv.Perm (Fin (Specht.nOf μ))) • t) := by
-    -- Ref: [sagan2001] §2.6 — a non-identity Garnir coset representative moves a
-    -- column-`j` label at row ≥ i and a column-`(j+1)` label at row ≤ i across the
-    -- descent, a row-raising exchange that strictly increases `domWeight` (the
-    -- multi-swap generalization of `domWeight_swap_lt`). This is the last residual.
-    sorry
-  exact garnir_assembly t T π₀ hmem.1 hfix hdom hann
+  sorry
 
+omit [CharZero k] in
 /-- **Straightening step (Sagan §2.6) — reduced sorry-free to the column-maximal core.**
 A polytabloid `e_t` that is *not itself* a standard polytabloid is a `k`-linear
 combination of polytabloids of **strictly dominance-greater** tabloids (encoded by the
@@ -1584,6 +1550,7 @@ theorem straightening_step (t : Specht.Tableau μ)
     push_neg at hraise
     exact straightening_step_colMax (k := k) t h hraise
 
+omit [CharZero k] in
 /-- **Spanning half — now proved sorry-free MODULO the single core
 `straightening_step`.** Every polytabloid `e_t` (arbitrary tableau `t`) lies in the
 span of the *standard* polytabloids, by well-founded (strong) induction on the
@@ -1610,6 +1577,7 @@ theorem standardPolytabloid_straightening :
       have hb : domWeight t' ≤ domBound μ := domWeight_le t'
       exact IH (domBound μ - domWeight t') (by omega) t' rfl
 
+omit [CharZero k] in
 /-- **M^μ-level span identity.** The standard polytabloids span exactly `S^μ`
 inside `M^μ`. (≤): each standard polytabloid is a polytabloid (`standardPolytabloid_mem`);
 (≥): the straightening core. Sorry-free modulo `standardPolytabloid_straightening`. -/
@@ -1623,6 +1591,7 @@ theorem standardPolytabloid_span_eq_specht :
   · rw [Specht.SpechtSubmodule, Submodule.span_le, Set.range_subset_iff]
     exact standardPolytabloid_straightening (k := k) (μ := μ)
 
+omit [CharZero k] in
 /-- **Content obligation 2/2 — spanning**, now derived **sorry-free modulo the single
 core** `standardPolytabloid_straightening` (the M^μ span identity + the corestriction
 to `⊤` in `S^μ` are discharged here). Keeps the original name/signature for `Basis.mk`. -/
