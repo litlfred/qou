@@ -456,5 +456,3 @@ principle the Wenzl `y_λ` demonstrably does not supply.
 - [`docs/audits/2026-06-29-delta-lambda-imme-askey.md`](2026-06-29-delta-lambda-imme-askey.md) — IMME degree-2 residual + Δ³=0
 - cheat-sheet §9.3 [`docs/canonical-derivation-cheat-sheet.md`](../canonical-derivation-cheat-sheet.md) — the intensive-vs-extensive reframing
 - Lean: `QOU/BraidKnot/DeltaLambdaRefutation.lean`, `QOU/BraidsAndKnots/DeltaLambdaL1Ceiling.lean`, `QOU/BraidsAndKnots/S5SO3FiberAction.lean`, `QOU/BraidKnot/DeltaLambdaIMME.lean`, `QOU/MassTheory/SU4SupermultipletGate.lean`, `QOU/.../KeystoneG2{,Ladder}Gate.lean`, `QOU/.../KeystoneFpnBracket.lean`
-</content>
-</invoke>
