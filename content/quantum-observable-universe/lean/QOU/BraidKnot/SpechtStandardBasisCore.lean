@@ -1276,6 +1276,32 @@ theorem garnir_full_annihilation (t : Specht.Tableau μ) {i j : ℕ}
         (fun h => hl (by rw [h]; exact hbU))]
     exact hσ l hl
 
+/-- The Garnir subgroup `H = S_A × S_B`: the elements of `S_{A∪B}` that additionally
+preserve every column of `t` (so they permute within `A` and within `B` separately).
+Realised as `garnirG ∩ C_t`. -/
+def garnirH (t : Specht.Tableau μ) (i j : ℕ) : Finset (Equiv.Perm (Fin (Specht.nOf μ))) :=
+  garnirG t i j ∩ Finset.univ.filter (· ∈ Specht.colStab t)
+
+omit [CharZero k] in
+/-- `H ⊆ C_t` — every Garnir-subgroup element preserves columns. -/
+theorem garnirH_subset_colStab (t : Specht.Tableau μ) (i j : ℕ) :
+    ∀ ρ ∈ garnirH t i j, ρ ∈ Specht.colStab t := by
+  intro ρ hρ
+  rw [garnirH, Finset.mem_inter, Finset.mem_filter] at hρ
+  exact hρ.2.2
+
+omit [CharZero k] in
+/-- `0 < |H|` — the identity lies in the Garnir subgroup. -/
+theorem garnirH_card_pos (t : Specht.Tableau μ) (i j : ℕ) : 0 < (garnirH t i j).card := by
+  rw [Finset.card_pos]
+  refine ⟨1, ?_⟩
+  rw [garnirH, Finset.mem_inter]
+  refine ⟨?_, ?_⟩
+  · simp only [garnirG, Finset.mem_filter, Finset.mem_univ, true_and]
+    intro l _; rfl
+  · rw [Finset.mem_filter]
+    exact ⟨Finset.mem_univ _, Subgroup.one_mem _⟩
+
 /-! #### The single residual straightening core + the induction skeleton -/
 
 omit [CharZero k] in
