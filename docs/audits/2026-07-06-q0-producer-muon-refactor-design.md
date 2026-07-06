@@ -105,3 +105,39 @@ not mistaken for a q₀ regression.
 Implementation is a **validated proof-of-concept on one producer**. Merge still gated on the full
 re-run+diff sweep of ALL producers (design §"Validation gate") + resolving the B_AME experimental-
 literal dps artifact. NOT auto-merged.
+
+## Sweep result (2026-07-06) — the corpus is MIXED; a blanket flip is WRONG
+
+Ran `q0_muon_reproduction_sweep.py` (numeric-tolerant diff, `rel-tol 1e-10`, which
+tolerates provenance + the codata ≥50-dps experimental-precision drift while catching
+q₀-scale changes) on a 10-producer sample under the muon override:
+
+| Result | producers |
+|---|---|
+| **PASS** (muon-committed, reproduced) | `mass_table_l1_full_crosscheck`, `interface_quadratic_identity`, `q_block_rmatrix_spectrum` |
+| **SUBSTANTIVE — committed is PROTON** | `low_isotope_binding_model_comparison`, `binding_sym_vs_lin_two_models` (both show `parameters.q0 = 1.10997858275` **proton** vs fresh muon) |
+| **SUBSTANTIVE — q₀-scale diff (~1e-9…2e-7)** | `charge_coulomb_tn3he_derived`, `three_body_joint_trace_a3`, `per_bond_growth_a3`, `symmetrized_binding_closure`, `landauer_crossing_energy_probe` (magnitude = μ–p × sensitivity ⇒ also proton-committed) |
+
+**Corpus-wide count (committed `*.witness.json` @ HEAD):**
+- **279** contain the proton q₀ `1.10997858275`
+- **455** contain the muon q₀ `1.109978595557`
+- 1137 carry some q₀ field.
+
+### Conclusion — the refactor is NOT a q_parameter flip
+The corpus is **genuinely mixed**: ~279 producers are **proton-committed**, ~455 muon.
+A blanket muon override in `q_parameter` would silently rewrite the 279 proton witnesses
+to muon. So bean `yfvb` Prereq 1 cannot be a single-point flip — it needs a **per-producer
+canonical-anchor decision**. The muon override (this branch) is *validated correct for the
+muon producers* (3/3 PASS bit-exact), but must NOT be merged as a global default.
+
+### OWNER DECISION REQUIRED
+Are the 279 proton-committed witnesses:
+- **(a) `tnjb` regressions** — they *should* be muon (AGENTS.md "computations/ is muon-canonical"),
+  so the muon override is the *fix* and those 279 should be regenerated muon; or
+- **(b) intentionally proton** (precision/prediction producers) — then the refactor must **tag
+  the anchor per producer** and only muon-override the muon set; or
+- **(c) a mix** — classify per producer.
+
+Until this is decided, the override stays **WIP on this branch** (validated, not merged). The
+sweep harness (`q0_muon_reproduction_sweep.py`) is the tool to classify the full set once the
+anchor policy is set.

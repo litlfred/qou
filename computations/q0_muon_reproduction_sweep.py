@@ -1,0 +1,138 @@
+#!/usr/bin/env python3
+"""q0_muon_reproduction_sweep.py — validate the muon-q₀ override (bean yfvb).
+
+Re-runs each listed producer under the patched `q_parameter` (muon override) and
+compares the freshly-emitted witness to its committed version **numerically**,
+NOT byte-wise.  Rationale: two kinds of benign difference must be tolerated —
+
+  1. provenance drift  (computedAt / commitSha / scriptHash / durationMs / …), and
+  2. experimental-input precision drift — codata_constants now forces ≥50 dps
+     (`_ame_binding_mev` → `mp.workdps(≥50)`), but the committed witnesses predate
+     that upgrade, so their AME/CODATA inputs are stale f64.  Physically these agree
+     to their ~8 experimental sig figs; only the serialized tail differs.
+
+A field is a **substantive** difference (a real q₀ regression) iff its parsed
+numeric value differs by more than `--rel-tol` (default 1e-10) relative — well
+below the q₀ μ–p tension (~1.1e-8) it is meant to catch, well above experimental
+tail noise.  Non-numeric string differences outside the provenance set are also
+flagged.
+
+Usage:
+    python3 q0_muon_reproduction_sweep.py [--rel-tol 1e-10] <producer.py> [more.py …]
+
+Each producer is run with the canonical muon override active (via the patched
+q_parameter it imports); its witness is diffed against the committed HEAD version
+and then restored with `git checkout --`.  Exit 0 iff every producer PASSes.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import subprocess
+import sys
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+
+_PROVENANCE = {
+    "computedAt", "commitSha", "scriptCommitSha", "scriptHash", "durationMs",
+    "engineVersion", "engine", "engine_version", "generatedAt", "timestamp",
+    "scipy", "numpy", "mpmath", "python", "hostname", "wall_seconds",
+}
+
+
+def _num(x):
+    try:
+        return float(x)
+    except (TypeError, ValueError):
+        return None
+
+
+def _walk(a, b, path, rel_tol, out):
+    """Collect substantive (path, a, b) differences between committed `a` and fresh `b`."""
+    if isinstance(a, dict) and isinstance(b, dict):
+        for k in set(a) | set(b):
+            if k in _PROVENANCE:
+                continue
+            if k not in a or k not in b:
+                out.append((f"{path}.{k}", a.get(k, "<missing>"), b.get(k, "<missing>")))
+            else:
+                _walk(a[k], b[k], f"{path}.{k}", rel_tol, out)
+    elif isinstance(a, list) and isinstance(b, list):
+        if len(a) != len(b):
+            out.append((f"{path}[len]", len(a), len(b)))
+        for i, (x, y) in enumerate(zip(a, b)):
+            _walk(x, y, f"{path}[{i}]", rel_tol, out)
+    else:
+        na, nb = _num(a), _num(b)
+        if na is not None and nb is not None:
+            denom = max(abs(na), abs(nb), 1e-300)
+            if abs(na - nb) / denom > rel_tol:
+                out.append((path, a, b))
+        elif a != b:
+            out.append((path, a, b))
+
+
+def _committed(rel_path: str) -> str:
+    return subprocess.run(
+        ["git", "show", f"HEAD:{rel_path}"], cwd=HERE.parent,
+        capture_output=True, text=True,
+    ).stdout
+
+
+def _witness_for(producer: Path) -> Path | None:
+    """Best-effort: the producer's witness shares its stem with '-'/'_' swapped."""
+    stem = producer.stem
+    for cand in (stem.replace("_", "-"), stem):
+        for w in HERE.glob(f"{cand}.witness.json"):
+            return w
+    return None
+
+
+def run_one(producer: Path, rel_tol: float) -> tuple[str, list]:
+    wit = _witness_for(producer)
+    if wit is None:
+        return ("NO_WITNESS", [])
+    rel = str(wit.relative_to(HERE.parent))
+    committed_txt = _committed(rel)
+    if not committed_txt:
+        return ("NO_COMMITTED", [])
+    r = subprocess.run([sys.executable, "-u", producer.name], cwd=HERE,
+                       capture_output=True, text=True, timeout=1800)
+    if r.returncode != 0:
+        return (f"RUN_FAILED (exit {r.returncode}): {r.stderr.strip()[-200:]}", [])
+    try:
+        fresh = json.loads(wit.read_text())
+        committed = json.loads(committed_txt)
+    finally:
+        subprocess.run(["git", "checkout", "--", rel], cwd=HERE.parent,
+                       capture_output=True)
+    diffs: list = []
+    _walk(committed, fresh, producer.stem, rel_tol, diffs)
+    return ("PASS" if not diffs else f"SUBSTANTIVE ({len(diffs)})", diffs)
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--rel-tol", type=float, default=1e-10)
+    ap.add_argument("producers", nargs="+")
+    args = ap.parse_args()
+
+    overall_ok = True
+    for p in args.producers:
+        prod = (HERE / p) if not Path(p).is_absolute() else Path(p)
+        try:
+            status, diffs = run_one(prod, args.rel_tol)
+        except subprocess.TimeoutExpired:
+            status, diffs = ("TIMEOUT (>1800s)", [])
+        mark = "✓" if status == "PASS" else ("–" if status in ("NO_WITNESS", "NO_COMMITTED") else "✗")
+        print(f"{mark} {prod.name}: {status}")
+        for path, a, b in diffs[:6]:
+            print(f"      {path}: committed={str(a)[:32]} fresh={str(b)[:32]}")
+        if status not in ("PASS", "NO_WITNESS", "NO_COMMITTED"):
+            overall_ok = False
+    return 0 if overall_ok else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
