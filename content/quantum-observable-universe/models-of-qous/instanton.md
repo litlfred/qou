@@ -1,4 +1,6 @@
-In the archimedean quantum universe
+To see that the categorical notion recovers the classical
+gauge-theoretic object, specialise it to the archimedean setting. In
+the archimedean quantum universe
 ([$\mathbb{C}$-quantum universe](#ex:c-quantum-universe)), a
 ([categorical instanton](#def:categorical-instanton)) specialises to an
 *instanton connection* on $P$: a connection $A$ whose

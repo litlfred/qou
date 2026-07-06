@@ -1,1 +1,1 @@
-This section develops headline conjectures. The blocks below trace the construction from `yang-mills-mass-gap` onward.
+These are the framework's headline conjectures because they recast the Yang--Mills millennium problem --- existence of the theory together with a strictly positive mass gap --- inside the categorical substrate. The blocks from `yang-mills-mass-gap` onward derive the mass gap $\Delta_q > 0$, and hence confinement, from the Frobenius--Hopf structure rather than from analysis on $\mathbb{R}^4$.
