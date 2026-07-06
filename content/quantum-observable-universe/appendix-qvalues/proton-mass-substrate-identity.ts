@@ -39,6 +39,12 @@ export default proposition({
     "wenzl1988c",
     "chlouveraki2016hdr",
   ],
+  computation: {
+    engine: "python",
+    script: "computations/m_p_substrate_identity_50dps.py",
+    witness: "computations/m-p-substrate-identity-50dps.witness.json",
+    status: "verified",
+  },
   // lean ref deferred: this block's uses[] cone transitively touches
   // conjectural categorical derivations (the "2" structural integer,
   // the "12" via Ocneanu, F_Bor categoricity). Per AGENTS.md §3b-cond,
