@@ -45,20 +45,25 @@ from __future__ import annotations
 
 import os
 import sys
+import time
 from pathlib import Path
 
 import mpmath as mp
 
-# 70-dps floor matches the WitnessBuilder precisionMetadata (compute_dps=70);
-# fully preserves the 50-digit q from load_q_50dps() (Gemini #3426 review).
-mp.mp.dps = 70
 _HERE = Path(__file__).resolve().parent
 _COMP = _HERE.parent
 _p = str(_COMP)
 if _p not in sys.path:
     sys.path.insert(0, _p)
 from _li_2_q_util import load_q_50dps  # noqa: E402
+from substrate._precision import set_compute_dps  # noqa: E402
+from substrate.experimental_constants import M_E_MEV  # noqa: E402
 from substrate.witness_base import WitnessBuilder  # noqa: E402
+
+# Canonical compute-precision floor (compute_dps=70) — matches the
+# WitnessBuilder precisionMetadata and preserves the 50-digit q from
+# load_q_50dps() (Gemini + Copilot #3426 review).
+set_compute_dps()
 
 COMP = str(_COMP)
 
@@ -100,10 +105,11 @@ def neg_log_det_I_plus_G(w_pn: int, z):
 
 
 def main() -> int:
+    t0 = time.monotonic()
     q, qi, z = load_q_50dps()
     # E₀ = m_e / (q(q−1)) — the same substrate energy unit used across the
-    # value-leg probes (b4_antisym_hecke_exchange_derivation.py).
-    m_e = mp.mpf("0.51099895069")
+    # value-leg probes.  m_e from the single-source CODATA anchor (Copilot #3426).
+    m_e = mp.mpf(str(M_E_MEV))
     E0 = m_e / (q * (q - 1))
     b4_target = mp.mpf("9.243")
 
@@ -212,6 +218,7 @@ def main() -> int:
     wb = WitnessBuilder.wrap_legacy(
         "b4-1four-complete-graph-writhe-signs", payload,
         script_path=__file__, engine="python+mpmath", output_dir=os.path.join(COMP, "probes"),
+        start_time=t0,
     )
     # Derived-sign assertions (not fits): pp positive, nn negative.
     wb.add_assertion("pp_sign_positive_from_convention",
