@@ -25,7 +25,7 @@ formula, and the proved volume conjecture.
 ### 1. q-holonomicity for links — THEOREM
 
 Garoufalidis–Lê, *The colored Jones function is q-holonomic*, Geom.
-Topol. 9 (2005) 1253–1293 (`garoufalidis-le-2005-qholonomic`, added).
+Topol. 9 (2005) 1253–1293 (`garoufalidis-le-2005`, added).
 Covers the multi-variable colored Jones of links. This is the existence
 half of the AJ machinery and needs no framework input — consistent with
 the dialog-assessment's §2 (the pasted dialog's "derivation" of
@@ -36,15 +36,15 @@ and unnecessary).
 
 | Scope | Status | Citation |
 |---|---|---|
-| 2-bridge knots (incl. twist knots) | **proved** | Lê 2006, Adv. Math. 207, 782–804 (`le2006-aj`, added) |
+| 2-bridge knots (incl. twist knots) | **proved** | Lê 2006, Adv. Math. 207, 782–804 (`le2006`, added) |
 | Figure-eight, strong AJ | **proved** | Nguyen–Tran 2021 (`nguyen-tran-2021`, already in corpus) |
-| Links, formulation | **formulated only** (2024); Hopf + Whitehead annihilators computed | Sawabe, arXiv:2409.03802 (`sawabe2024-link-aj`, added) |
+| Links, formulation | **formulated only** (2024); Hopf + Whitehead annihilators computed | Sawabe, arXiv:2409.03802 (`sawabe2024`, added) |
 | Borromean rings 𝓑₃ | **OPEN** — no formulated-and-proved AJ statement, no published recurrence ideal | — |
 
 One search summary claimed Sawabe treats the Borromean rings; this
 contradicts the quoted abstract (Hopf + Whitehead) and is treated as
 **unresolved** until the paper body is read (blocked in-sandbox — see
-§Verification limits). Do not cite `sawabe2024-link-aj` as a Borromean
+§Verification limits). Do not cite `sawabe2024` as a Borromean
 result.
 
 ### 3. What IS available for 𝓑₃
@@ -58,10 +58,10 @@ result.
    bean `n920` (do **not** transcribe from memory).
 2. **Volume conjecture for 𝓑₃ — proved** — Garoufalidis–Lê,
    *Asymptotics of the colored Jones function of a knot*, Geom. Topol.
-   15 (2011) 2135–2180, appendix (`garoufalidis-le-2011-asymptotics`,
+   15 (2011) 2135–2180, appendix (`garoufalidis-le-2011`,
    added), using exactly Habiro's expansion.
 3. **Twist-knot companion** — Masbaum, Algebr. Geom. Topol. 3 (2003)
-   537–556 (`masbaum2003-habiro`, added): the published skein
+   537–556 (`masbaum2003`, added): the published skein
    derivation of Habiro's formulas for twist knots (4₁ = K₋₁, trefoil
    = K₁) — the source behind the corpus's Masbaum cross-check (bean
    `xcyc`, completed 2026-07-04). Twist knots only; not Borromean.
@@ -74,9 +74,9 @@ result.
   Casson Fest) in `content/schema/references.ts` and in the two
   `-- Ref:` comments in
   `stochastic-mechanics/phi-q-aj-machinery-identification.lean`.
-- Five verified reference entries added (`garoufalidis-le-2005-qholonomic`,
-  `le2006-aj`, `garoufalidis-le-2011-asymptotics`, `sawabe2024-link-aj`,
-  `masbaum2003-habiro`); `habiro2000` confirmed.
+- Five verified reference entries added (`garoufalidis-le-2005`,
+  `le2006`, `garoufalidis-le-2011`, `sawabe2024`,
+  `masbaum2003`); `habiro2000` confirmed.
 
 ## Verification limits (honesty banner)
 
