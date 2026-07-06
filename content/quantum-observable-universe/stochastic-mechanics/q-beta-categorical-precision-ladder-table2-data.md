@@ -1,4 +1,4 @@
-| level | factor | residual vs CODATA $\mathfrak{Q}_\beta$ |
+| Level | Factor | Residual vs CODATA $\mathfrak{Q}_\beta$ |
 |:---:|:---|---:|
 | $N=0$ (Form A bare) | $\mathfrak{Q}_\beta^A$ | $+1677.5$ ppm |
 | $N=1$ (Kashiwara $b$) | $\cos(\alpha - b\hbar_q^2/2)$ | $+73.79$ ppm |

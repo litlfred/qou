@@ -1,1 +1,1 @@
-Continuation of the preceding sub-section.
+We continue the preceding section.

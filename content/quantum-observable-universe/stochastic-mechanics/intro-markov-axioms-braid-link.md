@@ -1,23 +1,5 @@
-Markov's theorem (1936) states that two braid words have
-isotopic closures iff they differ by a finite sequence of
-conjugation and stabilisation moves.  This section promotes
-Markov's theorem to a categorical setting, fixes the precision
-ladder that controls the substrate-level Markov trace, and
-enumerates the braid-link bijection that drives the chapter's
-counting arguments.
+Markov's theorem (1936) states that two braid words have isotopic closures if and only if they differ by a finite sequence of conjugation and stabilisation moves. This section promotes Markov's theorem to a categorical setting. It fixes the precision ladder controlling the substrate-level Markov trace. It also enumerates the braid-link bijection driving the counting arguments.
 
-The arc proceeds in three layers.  The first blocks establish
-the $q$-deformed categorical precision ladder and prove its
-compatibility with the Markov axioms; the middle blocks
-enumerate the closure types (knot, link, mutually disjoint) and
-record the substrate-level character of each; the closing blocks
-specialise to the small-$n$ cases that drive the chapter's
-explicit binding-energy formulas, including the cases where the
-Markov-trace ambiguity propagates and must be resolved by the
-parity-classification section downstream.
+The exposition proceeds in three layers. The first layer establishes the $q$-deformed categorical precision ladder and proves its compatibility with the Markov axioms. The second layer enumerates the closure types (knot, link, mutually disjoint) and records the substrate-level character of each. The third layer isolates the small-$n$ cases driving the explicit binding-energy formulas. This includes cases where Markov-trace ambiguities propagate, requiring resolution via the downstream parity classification.
 
-The output is the categorical braid-link enumeration with
-explicit substrate-trace evaluations.  This is the chapter's
-combinatorial engine — every closed-form prediction further
-down relies on knowing both the count and the trace value for
-each braid-link equivalence class.
+This produces the categorical braid-link enumeration equipped with explicit substrate-trace evaluations. This structure serves as the combinatorial engine. Every subsequent closed-form prediction demands both the count and the trace value for each braid-link equivalence class.

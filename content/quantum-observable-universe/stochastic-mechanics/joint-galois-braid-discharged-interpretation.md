@@ -2,20 +2,11 @@
 
 ### Open in form, not in content
 
-The conjecture was *structurally automatic*: bar, cyclotomic Galois,
-and the rest of $G_{\mathrm{mot}}$ act on the *coefficient ring + shape
-parameter* (algebraic-number side); the braid group acts on the
-*Hecke cell* (representation-theoretic side). By design these two
-structures are **separate factors** of $\mathcal{H}_q^{(n, K)}$, so
-disjoint actions commute.
+The conjecture was *structurally automatic*: bar, cyclotomic Galois, and the rest of $G_{\mathrm{mot}}$ act on the *coefficient ring + shape parameter* (algebraic-number side). The braid group acts on the *Hecke cell* (representation-theoretic side). By design, these two structures form **separate factors** of $\mathcal{H}_q^{(n, K)}$. Disjoint actions commute.
 
-The proof took two ingredients already in the paper:
-1. **Centrality** of $e_{\lambda_K}$
-   ([`prop:hecke-baer-star-generic`](#prop:hecke-baer-star-generic)
-   Step 1).
-2. **Bar-transposition** of partitions
-   ([`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent)
-   Cross-check 3).
+The proof required two existing ingredients:
+1. **Centrality** of $e_{\lambda_K}$ ([`prop:hecke-baer-star-generic`](#prop:hecke-baer-star-generic) Step 1).
+2. **Bar-transposition** of partitions ([`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent) Cross-check 3).
 
 ### Content discharged
 
@@ -27,12 +18,7 @@ The proof took two ingredients already in the paper:
 
 ### Significance: a further conjecture promoted to theorem
 
-The joint-action conjecture is now fully discharged. Combined with
-the small-cases bridge verification
-([`prop:two-filtration-bridge-small-cases`](#prop:two-filtration-bridge-small-cases))
-and the depth-2 / torus-knot / hyperbolic-row B1 discharges, the
-**graded-Mikusiński bi-filtration framework's structural theorems
-are complete**:
+The joint-action conjecture is now fully discharged. Combined with the small-cases bridge verification ([`prop:two-filtration-bridge-small-cases`](#prop:two-filtration-bridge-small-cases)) and the depth-2 / torus-knot / hyperbolic-row B1 discharges, the **graded-Mikusiński bi-filtration framework's structural theorems are complete**:
 
 | Bi-filtration claim | Status |
 |---|---|
@@ -41,6 +27,4 @@ are complete**:
 | Joint Galois $\times$ braid action commutes (any cell) | **theorem (this prop.)** |
 | B1 row at figure-8 / torus knots / Borromean / Whitehead | theorem |
 
-**Open remaining**: depth-3 strong sharpness over $\mathbb{Q}(\zeta_5)$
-(Beilinson + Goncharov), per-knot VC discharges for chiral
-hyperbolic knots, geometric realisation of $\mathrm{Cl}_3(2\pi/5)$.
+**Open remaining:** depth-3 strong sharpness over $\mathbb{Q}(\zeta_5)$ (Beilinson + Goncharov), per-knot VC discharges for chiral hyperbolic knots, geometric realisation of $\mathrm{Cl}_3(2\pi/5)$.

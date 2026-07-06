@@ -8,5 +8,5 @@
 | `barPoly_one` | $\overline 1 = 1$ |
 | `barPoly_zero` | $\overline 0 = 0$ |
 | `barPoly_involutive` | $\overline{\overline p} = p$ |
-| `barPoly_X_pow_two` | $\overline{X^2} = X^2$ (concrete bar-symmetry) |
+| `barPoly_X_pow_two` | $\overline{X^2} = X^2$ |
 | `barPoly_X_pow n` | $\overline{X^n} = (-1)^n \cdot X^n$ |

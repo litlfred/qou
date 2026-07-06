@@ -5,4 +5,4 @@
 | $HH^2(\mathrm{Ad})$ | $\dim \geq 1$ (multiple obstructions) | $= 1$ (single scalar) |
 | $HH^3(\mathrm{Ad})$ | $\dim \geq 0$ (secondary obstructions) | $= 0$ |
 | Obstruction | multi-dimensional | single integer $\chi(A)$ |
-| Classical limit | may fail in independent ways | controlled by Kummer divisibility |
+| Classical limit | fails in independent ways | controlled by Kummer divisibility |
