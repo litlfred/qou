@@ -1,16 +1,8 @@
-The tau lepton decays leptonically via the $T_{3,5}$ weak
-vertex ([beta decay](#def:beta-decay-skein)).  The **factorized
-model** — in which the squared matrix element is
-$|\mathcal{M}|^2 = |\mathrm{tr}_{\mathrm{Markov}}(T_{3,5})|^2$,
-independent of the daughter lepton — **predicts lepton
-universality** directly from the Iwahori--Hecke algebra structure.
+The tau lepton decays leptonically via the $T_{3,5}$ weak vertex ([beta decay](#def:beta-decay-skein)). The **factorized model** sets the squared matrix element to $|\mathcal{M}|^2 = |\mathrm{tr}_{\mathrm{Markov}}(T_{3,5})|^2$. This amplitude is independent of the daughter lepton. It **predicts lepton universality** directly from the underlying Iwahori--Hecke algebra structure.
 
 ## Statement
 
-Let $T_{3,5} = (\sigma_0 \sigma_1)^5$ be the weak vertex in
-$H_3(q)$, and let $f(x)$ denote the phase-space factor for
-$\tau \to \ell  \bar\nu_\ell  \nu_\tau$ with
-$x = (m_\ell / m_\tau)^2$:
+Let $T_{3,5} = (\sigma_0 \sigma_1)^5$ be the weak vertex in $H_3(q)$. Let $f(x)$ denote the phase-space factor for $\tau \to \ell \bar\nu_\ell \nu_\tau$, where $x = (m_\ell / m_\tau)^2$:
 
 $$
   f(x)
@@ -27,34 +19,24 @@ $$
        {|\mathcal{M}_\mu|^2 \cdot f(m_\mu^2/m_\tau^2)}.
 $$
 
-In the **factorized model**, the Markov trace of the weak vertex
-is the universal matrix element:
+In the **factorized model**, the Markov trace of the weak vertex provides the universal matrix element:
 
 $$
   |\mathcal{M}_e|^2
   = 
   |\mathcal{M}_\mu|^2
   = 
-  \bigl|\mathrm{tr}_{\mathrm{Markov}}(T_{3,5})\bigr|^2,
+  \bigl|\mathrm{tr}_{\mathrm{Markov}}(T_{3,5})\bigr|^2.
 $$
 
-The matrix-element ratio is exactly $1$, and the branching
-ratio reduces to the **pure phase-space ratio**:
+The matrix-element ratio evaluates exactly to $1$. The branching ratio reduces to the **pure phase-space ratio**:
 
 $$
   \frac{\mathrm{BR}(\tau \to e)}{\mathrm{BR}(\tau \to \mu)}
   = 
   \frac{f(m_e^2 / m_\tau^2)}{f(m_\mu^2 / m_\tau^2)}.
 $$
+
 ## Physical significance
 
-Lepton universality — the statement that the weak interaction
-couples equally to all lepton generations — is here a
-**consequence** of the $T_{3,5}$ braid being the unique
-cross-family mediator on the Bring surface
-([fivefold symmetry](#rem:fivefold-symmetry)).  Its Markov trace
-$\mathcal{W}(q) = \mathrm{tr}_{\mathrm{Markov}}((\sigma_0
-\sigma_1)^5)$ is a property of the weak vertex alone, not of
-the daughter channel.  Universality is broken only by kinematics
-(the daughter mass entering through the phase-space integral),
-not by the vertex.
+Lepton universality—the statement that the weak interaction couples equally to all lepton generations—emerges here as a **consequence** of the $T_{3,5}$ braid serving as the unique cross-family mediator on the Bring surface ([fivefold symmetry](#rem:fivefold-symmetry)). Its Markov trace $\mathcal{W}(q) = \mathrm{tr}_{\mathrm{Markov}}((\sigma_0 \sigma_1)^5)$ is a property of the weak vertex alone, not the daughter channel. Universality is broken exclusively by kinematics (the daughter mass entering through the phase-space integral), not by the vertex operator.

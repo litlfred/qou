@@ -1,12 +1,8 @@
-Evaluating both the
-factorized and the product models at $q_0 \approx 1.1100$ allows
-comparison with the PDG experimental branching ratio.
+Evaluating both the factorized and the product models at $q_0 \approx 1.1100$ allows comparison with the PDG experimental branching ratio.
 
 ## Weak vertex data
 
-The $T_{3,5} = (\sigma_0 \sigma_1)^5$ weak vertex in $H_3(q)$
-reduces (38 Hecke + 18 Yang–Baxter steps) to **6 NF terms**
-in the standard basis $\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$:
+The $T_{3,5} = (\sigma_0 \sigma_1)^5$ weak vertex in $H_3(q)$ reduces (38 Hecke and 18 Yang–Baxter steps) to **6 normal form (NF) terms** in the standard basis $\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$:
 
 See [Table 1](#tbl:tau-branching-ratio-witness-table1-data).
 
@@ -43,8 +39,7 @@ $$
   \approx 0.690.
 $$
 
-This gives $\mathrm{BR\text{-}ratio} \approx 0.709$ — inconsistent
-with experiment.
+This gives a branching ratio of $\approx 0.709$. This is inconsistent with experiment.
 
 **PDG 2024 experimental values:**
 
@@ -63,20 +58,10 @@ $$
 
 See [Table 2](#tbl:tau-branching-ratio-witness-table2-data).
 
-The factorized model, in which the Markov trace of $T_{3,5}$
-is the universal matrix element, reproduces the PDG ratio to
-$0.34\%$.  The product model is excluded by data.
+The factorized model treats the Markov trace of $T_{3,5}$ as the universal matrix element. It reproduces the PDG ratio to $0.34\%$. The product model is excluded by data.
 
 ## Decay channel NF structure
 
-Both decay channels $\tau \to e$ and $\tau \to \mu$ reduce to
-**6 NF terms** in $H_3(q)$.  The dominant term in both channels
-is $L_+ = \sigma_0\sigma_1$ (Hopf link), contributing $\sim 30\%$
-of the total weight.  The $L_-$ (anti-Hopf) contribution is
-larger in $\tau \to \mu$ ($15.6\%$) than in $\tau \to e$
-($13.9\%$), consistent with the heavier daughter lepton
-requiring more re-crossing energy.
+Both decay channels $\tau \to e$ and $\tau \to \mu$ reduce to **6 NF terms** in $H_3(q)$. The dominant term in both channels is $L_+ = \sigma_0\sigma_1$ (the Hopf link), contributing $\sim 30\%$ of the total weight. The $L_-$ (anti-Hopf) contribution is larger in $\tau \to \mu$ ($15.6\%$) than in $\tau \to e$ ($13.9\%$). This is consistent with the heavier daughter lepton requiring more re-crossing energy.
 
-The full witness data (all NF coefficients, Markov traces,
-phase-space factors, and reverse-order checks) is recorded in
-`tau-leptonic-decay.witness.json`.
+The full witness data (including all NF coefficients, Markov traces, phase-space factors, and reverse-order checks) is recorded in `tau-leptonic-decay.witness.json`.
