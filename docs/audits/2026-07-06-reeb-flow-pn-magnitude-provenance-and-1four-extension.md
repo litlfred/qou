@@ -74,7 +74,38 @@ unsubstantiated #3407 "routes". A Lean lemma for I1 (pure `ring`) + I2
 
 **Scope note.** Nothing here refutes the landed value — the derivation above
 *supports* its structure. What still cannot be claimed as derived: the choice
-of the sine normalization itself, and the linear $B = 5g$ law (§3, next).
+of the sine normalization itself (narrowed in §2c below), and the linear
+$B = 5g$ law (§3, §3d).
+
+## 2c. The sine normalization from the CWF unit-tangent structure (tranche 2)
+
+The residual identification of §2b — *why sine rather than tangent* — reduces
+to the structure of the Gauss/Călugăreanu–White–Fuller linking integrand
+itself, which is the #3407 doc's (unsubstantiated) "Route C" made concrete:
+
+1. The CWF decomposition $Lk = Wr + Tw$ writes linking through the **Gauss
+   integral**, whose integrand is built from **unit tangent vectors**
+   integrated **per unit arc length**:
+   $Wr = \frac{1}{4\pi}\oint\oint \frac{(T(s)\times T(s'))\cdot(r-r')}{|r-r'|^3}\,ds\,ds'$.
+   The arc-length/unit-tangent normalization is *forced by the definition of
+   linking*, not chosen.
+2. A pn strand whose categorical crossing density is $z$ **per unit Reeb
+   parameter** (the Markov-peel factor: one inter-block crossing per unit
+   base time) has tangent vector $\xi + z\,e_\perp$ in Reeb-adapted
+   coordinates, hence **unit** tangent transverse component
+   $z/\sqrt{1+z^2} = \sin\theta$.
+3. Therefore any linking-derived magnitude — anything of CWF/Gauss type —
+   sees the strand at amplitude $\sin\theta$, not $\tan\theta = z$. The
+   "naive $z$ overbinds by ~12 %" of #3426 is exactly the tangent/sine
+   discrepancy at $z \approx 0.499$.
+
+**What this upgrades:** the sine normalization is now *derived from the CWF
+integrand's unit-tangent structure*, conditional on **one geometric
+identification**: *the categorical bond factor $z$ is the per-unit-Reeb-time
+crossing density (the tangent) of the bond's inclination*. That
+identification is natural (it is what the Markov-peel factor counts) but is
+the honest remaining assumption. The three vague #3407 "routes" have
+collapsed to this single named premise.
 
 ## 3. [1⁴] extension at the landed magnitude (new probe)
 
@@ -146,19 +177,50 @@ and unit anchor); (ii) the det form's per-pair truncation is not the physical
 pair binding (its $b_2 = 0.93$ is the *exchange* pair term only). Neither is
 claimed.
 
+## 3d. Unit-anchor bounded scan for the $5g$ law (tranche 2 — negative)
+
+[`reeb_5g_unit_anchor_scan.py`](../../computations/probes/reeb_5g_unit_anchor_scan.py)
+(preregistered 10-candidate list of canonical framework energies; no
+open-ended search per Rule-14): the law would need
+$E_{\text{unit}} = B_{\text{AME}}/5g = 0.99594$ MeV; **no listed candidate is
+within 1 %** (nearest: $2m_e = 1.0220$ MeV, giving +2.6 % on $B$; then
+$m_e[2]_v = 1.0234$). Scope-(a) negative over the list only. The linear law
+stays classified **asserted** with its unit anchor open.
+
+## 3e. pn sign closed for determinant-class observables (tranche 2)
+
+`diag(1,1,-1,-1)` conjugation flips every pn entry of the uniform-magnitude
+[1⁴] exchange matrix while fixing pp/nn, and has determinant 1 — so
+$\det(I + S(a, w)) = \det(I + S(a, -w))$ **identically over any commutative
+ring**. Formalized sorry-free in
+[`QOU/MassTheory/ReebPnMagnitude.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/ReebPnMagnitude.lean)
+(`pn_sign_conjugation`, `pn_sign_det_invariant`), alongside I1
+(`deformation_eq_ceiling`) and I2 in Cayley–Hamilton form (`ss_matrix_sq`).
+**Consequence:** the "open pn sign" of #3426 is *unobservable* in any
+$-\ln\det(I+G)$-class binding form at uniform per-pair magnitude — for this
+observable class it is a non-question. Scope: uniform magnitude, complete
+graph; a framing assigning per-pair non-uniform magnitudes (or entering
+through sign-sensitive, non-conjugation-invariant observables) can still make
+the sign physical.
+
 ## 4. Open objects (sharpened)
 
-1. ~~Substantiate the deformation~~ — **done at the structure level (§2b)**;
-   remaining: the single sine-normalization/criticality identification, plus a
-   Lean lemma for I1/I2 (queued; `ring` + 2×2 eigenvalue).
+1. ~~Substantiate the deformation~~ — **done at the structure level (§2b)**,
+   **Lean-formalized (§3e)**; the sine normalization is now **derived from
+   the CWF unit-tangent integrand (§2c)** modulo one geometric
+   identification: *$z$ = per-unit-Reeb-time crossing density (tangent) of
+   the bond inclination*.
 2. ~~Reconcile linear vs det~~ — **resolved as irreconcilable at uniform $g$
-   (§3c)**; remaining: derive the ²H linear law (with unit anchor) or re-tier
-   ²H out of the exchange sector.
+   (§3c)**; the unit-anchor scan is a bounded **negative (§3d)** — the ²H
+   linear law still needs a derivation or a re-tier of ²H out of the
+   exchange sector.
 3. **Convention pinned** (Q3): $b_4 = 9.2431$ is the connected Ursell
    cumulant; the det form at $g_{\text{reeb}}$ overshoots it (1.63×) while its
    $b_3$ matches (1.04×) and $b_2$ under-binds (0.42×) — any further magnitude
    work should target the full cumulant *profile*, not the aggregate.
-4. The pn **sign** (unchanged from #3426).
+4. ~~The pn sign~~ — **closed for determinant-class observables (§3e,
+   Lean-proved)**; remains open only for sign-sensitive observables or
+   non-uniform per-pair framings.
 
 ## 5. Cross-references
 
