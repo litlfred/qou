@@ -47,6 +47,26 @@ theorem E0_mem_calibrations : C.E0 ∈ ({C.H0, C.H1, C.H2} : Set ℝ) := by
 
 end CompoundBetaShellCalibration
 
+/-- **De-axiomatisation (bean `lqft`).** `E₀ = 𝔔_β` is not a free assumption:
+    the shell scale is *defined* to be the `H²` calibration input `𝔔_β` (the
+    manuscript's "shell sector introduces no new calibration"). `ofCalibration`
+    builds the record from the three calibration values with `E0 := H2`, so
+    `E0_eq` is `rfl` — the "no fourth calibration" property is structural, not
+    posited. (The numerical value of `𝔔_β` itself is fixed by the β-decay
+    Q-value compute; that is a producer-side fact, orthogonal to this identity.) -/
+def CompoundBetaShellCalibration.ofCalibration (m_e muRatio Qbeta : ℝ) :
+    CompoundBetaShellCalibration where
+  H0 := m_e
+  H1 := muRatio
+  H2 := Qbeta
+  E0 := Qbeta
+  E0_eq := rfl
+
+/-- In a `ofCalibration` record the shell scale is definitionally the H² input. -/
+theorem CompoundBetaShellCalibration.ofCalibration_E0
+    (m_e muRatio Qbeta : ℝ) :
+    (CompoundBetaShellCalibration.ofCalibration m_e muRatio Qbeta).E0 = Qbeta := rfl
+
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/compound-beta-shell-calibration-interpretation.ts
 
 end QOU.BraidKnot
