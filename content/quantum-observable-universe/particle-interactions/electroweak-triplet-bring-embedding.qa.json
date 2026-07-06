@@ -1,0 +1,36 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:electroweak-triplet-bring-embedding",
+  "kind": "proposition",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/particle-interactions/electroweak-triplet-bring-embedding.ts",
+    "md": "../qou/content/quantum-observable-universe/particle-interactions/electroweak-triplet-bring-embedding.md",
+    "lean": "../qou/content/quantum-observable-universe/particle-interactions/electroweak-triplet-bring-embedding.lean"
+  },
+  "source_hashes": {
+    "md": "6cc7299dcddb",
+    "ts": "bdc8bf2ace5b",
+    "lean": "3706ae5cc3a7"
+  },
+  "criteria": {
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "6cc7299dcddb",
+          "ts": "bdc8bf2ace5b",
+          "lean": "3706ae5cc3a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:electroweak-triplet-bring-embedding' aligns with Lean declaration. Sorry-free."
+      }
+    ]
+  },
+  "updated_at": "2026-07-06T04:41:29.802Z"
+}

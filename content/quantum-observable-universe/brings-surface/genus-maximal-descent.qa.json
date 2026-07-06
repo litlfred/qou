@@ -1047,7 +1047,25 @@
         "reviewed_at": "2026-07-05T11:55:26.473Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "a00cd7c8b77c",
+          "ts": "843795500e26",
+          "lean": "a76b739d90fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:30.202Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:genus-maximal-descent' → expected 'genus_maximal_descent'; Lean declares: GenusMaximalDescent, genus_eq_four, hurwitz_bound_genus_four, s5_within_hurwitz, genus_unique. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-06T04:41:30.202Z"
 }

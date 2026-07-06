@@ -1152,7 +1152,25 @@
         "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/levi-form-defect.lean:39:22: error: expected token",
         "severity": "critical"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "a3e17a51fd4e",
+          "ts": "0a4eafba0d9b",
+          "lean": "a471d2c92201"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:30.202Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'def:levi-form-defect' → expected 'levi_form_defect'; Lean declares: LeviFormDefect, matter_locus_nonempty. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-06T04:41:30.202Z"
 }

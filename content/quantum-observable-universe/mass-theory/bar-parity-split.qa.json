@@ -1156,6 +1156,22 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean declaration matches narrative claim.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "18fee40142f3",
+          "ts": "0c50feb9849d",
+          "lean": "6b80e94f4159"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:bar-parity-split' → expected 'bar_parity_split'; Lean declares: evenPart, oddPart, evenPart_add_oddPart, evenPart_fixed, oddPart_anti. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1586,5 +1602,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

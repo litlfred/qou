@@ -32,7 +32,25 @@
         "reviewed_at": "2026-07-03T00:52:56.534Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "6bac28311b55",
+          "ts": "85e191c82519",
+          "lean": "1930db6426e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:demazure-fiber-markov-trace' → expected 'demazure_fiber_markov_trace'; Lean declares: ReducedWord, DemazureModel, demazureRatio, demazureFiberMarkovTrace, demazure_at_w0_equals_y_lambda.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

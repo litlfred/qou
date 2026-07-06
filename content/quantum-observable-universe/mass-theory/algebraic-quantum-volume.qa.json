@@ -1175,7 +1175,25 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/algebraic-quantum-volume.lean:25:57: error: unexpected token 'end'; expected '#guard_msgs', 'abbrev', 'add_decl_doc', 'axiom', 'binder_predicate', 'builtin_dsimproc', 'builtin_dsimproc_decl', 'builtin_grind_propagator', 'builtin_initialize', 'builtin_simproc', 'builtin_simproc_decl', 'class', 'declare_simp_like_tactic', 'declare_syntax_cat', 'def', 'dsimproc', 'dsimproc_decl', 'elab', 'elab_rules', 'example', 'grind_propagator', 'inductive', 'infix', 'infixl', 'infixr', 'initialize', 'instance', 'macro', 'macro_rules', 'notation', 'opaque', 'postfix', 'prefix', 'recommended_spelling', 'register_error_explanation', 'register_tactic_tag', 'simproc', 'simproc_decl', 'structure', 'syntax', 'tactic_extension', 'theorem' or 'unif_hint'"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "15c3a7fcac1a",
+          "ts": "d2d945ba5971",
+          "lean": "9ea3e1dc2c37"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'def:algebraic-quantum-volume' → expected 'algebraic_quantum_volume'; Lean declares: AlgebraicQuantumVolume. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

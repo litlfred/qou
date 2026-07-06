@@ -1046,7 +1046,25 @@
         "reviewed_at": "2026-07-05T22:47:37.289Z",
         "reviewed_sha": "8b512d9992f85cd9282b5a659919a0f9e2e7afdc"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "b26df86b8947",
+          "ts": "7955d967219f",
+          "lean": "6ec884256fac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.710Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:quantum-universe-exists' → expected 'quantum_universe_exists'; Lean declares: QuantumUniverse.exists_instance_axiom, QuantumUniverse.exists_instance. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-05T22:47:37.289Z"
+  "updated_at": "2026-07-06T04:41:29.710Z"
 }

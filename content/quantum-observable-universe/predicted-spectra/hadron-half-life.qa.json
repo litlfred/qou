@@ -1140,6 +1140,22 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean proof is incomplete and fails to compile, so equivalence cannot be verified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "1224028fa448",
+          "ts": "5ced91f158a8",
+          "lean": "6015600812a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:30.359Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:hadron-half-life' aligns with Lean declaration. Sorry-free."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1573,5 +1589,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T04:39:43.766Z"
+  "updated_at": "2026-07-06T04:41:30.359Z"
 }

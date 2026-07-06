@@ -32,7 +32,25 @@
         "reviewed_at": "2026-07-03T00:52:56.534Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "78b505d4b35d",
+          "ts": "1b6be3943196",
+          "lean": "287e1cd92362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'rem:mass-tower-deeper-fillers' → expected 'mass_tower_deeper_fillers'; Lean declares: HeightSixPartition, heightSixPartition_finite_existence, IsDemazureSubCrystal, KLClassicalLimit, HasBlochGroupQuotient.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-04T00:30:14.885Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

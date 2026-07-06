@@ -1856,7 +1856,25 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/isotope-knot.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "8b7efea7f6e4",
+          "ts": "ea199463e079",
+          "lean": "c85b40fddff3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'def:isotope-knot' → expected 'isotope_knot'; Lean declares: AtomKnot.isIsotope. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-06T04:41:29.802Z"
 }

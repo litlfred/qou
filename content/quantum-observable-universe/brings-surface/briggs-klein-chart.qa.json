@@ -1156,7 +1156,25 @@
         "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/brings-surface/briggs-klein-chart.lean:25:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "critical"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "641810c662e2",
+          "ts": "02beb8736a46",
+          "lean": "52ebc6b0bd82"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:30.202Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'def:briggs-klein-chart' → expected 'briggs_klein_chart'; Lean declares: R_q, q_param, q_inv_param, BriggsKleinChart, c5_order.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-06T04:41:30.202Z"
 }

@@ -32,7 +32,25 @@
         "reviewed_at": "2026-07-03T00:52:56.534Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "a962bd584770",
+          "ts": "d8485bfecadc",
+          "lean": "35abc954af6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:mass-formula-regime-switching' → expected 'mass_formula_regime_switching'; Lean declares: bindingSW, bindingBW, bindingBWShell, regimeSwitchedBinding, regime_switched_binding_defined.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

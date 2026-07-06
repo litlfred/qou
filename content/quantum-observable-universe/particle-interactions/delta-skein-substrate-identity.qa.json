@@ -2162,7 +2162,25 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Substrate identity for the proton–neutron Skein difference $\\\\Delta S(n-p)$' are consistent."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "6aa49f1a45f0",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'rem:delta-skein-substrate-identity' → expected 'delta_skein_substrate_identity'; Lean declares: volBorromean, hbarQ, hbarQSq, deltaMassOverMe, delta_skein_eq_mass_splitting.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-06T04:41:29.802Z"
 }

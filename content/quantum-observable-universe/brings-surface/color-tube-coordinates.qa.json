@@ -1149,7 +1149,25 @@
         "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/color-tube-coordinates.lean:72:2: error: ring_nf made no progress on goal",
         "severity": "critical"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "571700487f78",
+          "ts": "9f4f555a9126",
+          "lean": "5f2767bab109"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:30.202Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'def:color-tube-coordinates' → expected 'color_tube_coordinates'; Lean declares: ColorTubeCoordinates, ColorTubeCoordinates.colorVector, color_recovers_resolvent, shifted_sum, ColorTubeCoordinates.p1.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-06T04:41:30.202Z"
 }

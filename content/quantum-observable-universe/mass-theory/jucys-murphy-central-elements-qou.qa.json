@@ -1250,6 +1250,22 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      },
+      {
+        "field_hash": {
+          "md": "8eea34eb7bc0",
+          "ts": "66d0930b6fde",
+          "lean": "046d46ce88f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:jucys-murphy-central-elements-qou' → expected 'jucys_murphy_central_elements_qou'; Lean declares: HeckeJMSpectrum, cellContent, jm_elements_commute, jm_esymm_central, jm_central_scalar_eq_esymm_qcontent.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2042,5 +2058,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

@@ -1400,7 +1400,25 @@
         "reviewed_at": "2026-06-28T22:42:31.989Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "e4e4e48b1ab3",
+          "ts": "ba0a5deea3ca",
+          "lean": "4f887a10f20b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'def:flavor-dressing-functor' → expected 'flavor_dressing_functor'; Lean declares: Flavor, FlavorDressingFunctor. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

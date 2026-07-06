@@ -1251,6 +1251,22 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Narrative explicitly flags open/conjectural; Lean carries sorry (honest deferral) -- narrative<->Lean consistent, not a drift."
+      },
+      {
+        "field_hash": {
+          "md": "d157baffc37d",
+          "ts": "797e41f50237",
+          "lean": "ec39d21dbb57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:cyclotomic-strand-doubling' → expected 'cyclotomic_strand_doubling'; Lean declares: cyclotomic_4, cyclotomic_8, cyclotomic_8_eq_cyclotomic_4_comp_X_sq, cyclotomic_pow_two_strand_doubling, cyclotomic_1.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1919,5 +1935,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

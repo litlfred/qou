@@ -1198,6 +1198,22 @@
         "reviewed_at": "2026-06-28T22:44:56.705Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
+      },
+      {
+        "field_hash": {
+          "md": "1741eb414cb2",
+          "ts": "80f3789fda7f",
+          "lean": "fb9cc7294f2b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:pieri-photon-shift' → expected 'pieri_photon_shift'; Lean declares: PieriInterface, IsPieriShift, pieri_one_box_shift, pieri_self_in_shift. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1990,5 +2006,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

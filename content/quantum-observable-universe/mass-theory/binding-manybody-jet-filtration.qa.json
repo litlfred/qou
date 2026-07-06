@@ -1252,7 +1252,25 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/binding-manybody-jet-filtration.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "8b3a4ebc399e",
+          "ts": "dea66f6a2fe5",
+          "lean": "2b4e78679688"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Conjecture with class/axiom axiomatisation — structural match."
+      }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

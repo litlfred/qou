@@ -1247,6 +1247,22 @@
         "severity": "minor",
         "evidence": "torus-knot-generators.md:23-27 'admits exactly six coprime pairs ... |G|=7' vs torus-knot-generators.lean:24-28 'theorem torus_knot_generators_finite (g:ℕ)(hg:g=4): ∃ S:Finset(ℕ×ℕ), ∀ m n, m≥2 → n>m → Coprime m n → seifertGenus m n ≤ g → (m,n)∈S'",
         "notes": "Lean encodes the FINITENESS half (∃ finite S containing every qualifying pair) — matching the block title 'Finiteness of the T_{m,n} generator set' — but not the narrative's stronger 'exactly six pairs / |G|=7' enumeration. Quantifiers and hypotheses (m≥2, n>m, coprime, genus≤g) align; only the strength of the conclusion is weaker (containment, not exact cardinality). Reconcilable for a reader who reads the decl as the finiteness lemma; not a theorem-changing contradiction, hence warn not fail."
+      },
+      {
+        "field_hash": {
+          "md": "146ee47c0e79",
+          "ts": "befda4d6e2a6",
+          "lean": "af0608b25387"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:30.202Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:torus-knot-generators' → expected 'torus_knot_generators'; Lean declares: seifertGenus, torus_knot_generators_finite. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1844,5 +1860,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-06T04:41:30.202Z"
 }

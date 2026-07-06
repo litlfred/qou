@@ -1172,7 +1172,25 @@
         "reviewed_at": "2026-07-05T11:55:26.473Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "58e4831542c6",
+          "ts": "c848c199c1dd",
+          "lean": "910a10f03d8f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'def:adelic-substrate' → expected 'adelic_substrate'; Lean declares: AdelicSubstrate. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

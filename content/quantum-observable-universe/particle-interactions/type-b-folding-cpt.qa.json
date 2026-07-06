@@ -1867,7 +1867,25 @@
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured relations in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points' remain unproven and are represented only by sorry stubs in the formalization content/quantum-observable-universe/particle-interactions/type-b-folding-cpt.lean."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "4314d0c417c4",
+          "ts": "4ce9fb43020a",
+          "lean": "7e70e0b36557"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Conjecture with class/axiom axiomatisation — structural match."
+      }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-06T04:41:29.802Z"
 }

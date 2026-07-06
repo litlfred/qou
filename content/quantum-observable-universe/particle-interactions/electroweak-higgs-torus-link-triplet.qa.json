@@ -7,6 +7,30 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md",
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.lean"
   },
-  "criteria": {},
-  "updated_at": "2026-05-25T17:11:23.179Z"
+  "criteria": {
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "622a17a2b915",
+          "ts": "981f91775759",
+          "lean": "4adb224d5564"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'conj:electroweak-higgs-torus-link-triplet' → expected 'electroweak_higgs_torus_link_triplet'; Lean declares: EWSelectionPrinciple, EWSectorEnumeration, EWSectorAssignment, EWHiggsTorusLinkTriplet. Structural match via content."
+      }
+    ]
+  },
+  "updated_at": "2026-07-06T04:41:29.802Z",
+  "source_hashes": {
+    "md": "622a17a2b915",
+    "ts": "981f91775759",
+    "lean": "4adb224d5564"
+  }
 }

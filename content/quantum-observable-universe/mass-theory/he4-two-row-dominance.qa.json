@@ -1048,7 +1048,25 @@
         "reviewed_at": "2026-07-05T04:39:43.766Z",
         "reviewed_sha": "7415132ccce30885dcfd323600b8bcf311c431e4"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "f14d72087fe3",
+          "ts": "8339b32a657d",
+          "lean": "2a804f266520"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:he4-two-row-dominance' → expected 'he4_two_row_dominance'; Lean declares: HasHe4TwoRowDominance, HasHe4DominantBlock, he4_complement_at_most_20_percent, dominant_in_two_row_stratum, dominant_eq_nine_three_in_stratum.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-05T04:39:43.766Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

@@ -1172,6 +1172,22 @@
         "notes": "The Lean proof is a structural stub, which does not fully capture the narrative proof.",
         "evidence": "content/quantum-observable-universe/mass-theory/bond-order-eq-jet-degree.lean:1 — sorry present",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "e10884ca6b06",
+          "ts": "c75199ce08f1",
+          "lean": "e45f31393b92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'lem:bond-order-eq-jet-degree' → expected 'bond_order_eq_jet_degree'; Lean declares: BodyOrderJetGrading, bodyorder_eq_jet_total. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1732,5 +1748,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

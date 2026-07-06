@@ -1172,7 +1172,25 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.lean for 'Fibre-compatible hadron embedding' fails compilation with error: content/quantum-observable-universe/particle-interactions/hadron-fibre-embedding.lean:26:13: error: unexpected token 'section'; expected 'lemma'. This invalidates the claim of formal verification."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "1d5ab2030e62",
+          "ts": "c95e35a30deb",
+          "lean": "2d8575417b08"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'def:hadron-fibre-embedding' → expected 'hadron_fibre_embedding'; Lean declares: R_q, q_param, q_inv_param, HadronFibreEmbedding. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-06T04:41:29.802Z"
 }

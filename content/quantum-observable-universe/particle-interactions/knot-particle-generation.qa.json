@@ -1171,7 +1171,25 @@
         "reviewed_at": "2026-07-05T11:55:26.473Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "e3e8e3e40077",
+          "ts": "5426800774ca",
+          "lean": "01f1534083b2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'def:knot-particle-generation' → expected 'knot_particle_generation'; Lean declares: q_substrate, hbar_q, TorusKnot, seifertGenus, hyperbolicVolume.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-06T04:41:29.802Z"
 }

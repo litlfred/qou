@@ -1456,7 +1456,25 @@
         "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "afc4acf17179",
+          "ts": "b4e0e947c6e1",
+          "lean": "2076e5129450"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'def:algebraic-primality' → expected 'algebraic_primality'; Lean declares: NontrivialDecomp, IsAlgebraicallyPrime, one_isAlgebraicallyPrime. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-06T04:41:29.802Z"
 }

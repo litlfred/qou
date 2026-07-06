@@ -1127,6 +1127,22 @@
         "reviewed_at": "2026-06-22T02:56:21.764Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "field_hash": {
+          "md": "957f4a4ec93c",
+          "ts": "00ad79c428b7",
+          "lean": "d3f87cee121c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:30.202Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'cor:descartes-braid-structure' → expected 'descartes_braid_structure'; Lean declares: DescartesBraidStructure, dic3_order, s3_order, s5_order, colour_sector_count.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1580,5 +1596,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T04:39:43.766Z"
+  "updated_at": "2026-07-06T04:41:30.202Z"
 }

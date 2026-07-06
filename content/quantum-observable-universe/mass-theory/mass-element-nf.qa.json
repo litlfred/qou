@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "48ea14ffc31f",
-    "ts": "70a0b10d7b4e",
+    "ts": "891d3571133b",
     "lean": "cb61832c9ddf"
   },
   "criteria": {
@@ -1046,7 +1046,25 @@
         "reviewed_at": "2026-07-05T04:39:43.766Z",
         "reviewed_sha": "7415132ccce30885dcfd323600b8bcf311c431e4"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "48ea14ffc31f",
+          "ts": "891d3571133b",
+          "lean": "cb61832c9ddf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:mass-element-nf' → expected 'mass_element_nf'; Lean declares: MassNFBasis, HeckeMassNF, canonical. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-05T04:39:43.766Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

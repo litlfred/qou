@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.lean"
   },
   "source_hashes": {
-    "md": "4900352eb665",
+    "md": "b28f153b8fd0",
     "ts": "0ebb385897de",
     "lean": "60b2b55d3797"
   },
@@ -1140,6 +1140,23 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "b28f153b8fd0",
+          "ts": "0ebb385897de",
+          "lean": "60b2b55d3797"
+        },
+        "result": "warn",
+        "evidence": "Block kind is 'proposition' but Lean has only def/noncomputable def, no theorem/lemma. Decls: NonDegenerateFrobeniusPairing, FrobeniusHopfData.nonDegeneratePairing, FrobeniusHopfData.frobeniusForm_exists",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.710Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Kind-declaration mismatch: .ts says provable but .lean has only definitions."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1863,5 +1880,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-06T04:41:29.710Z"
 }

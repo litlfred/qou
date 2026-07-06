@@ -1143,6 +1143,22 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/brings-surface/bring-trefoil-cinquefoil-channel.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "field_hash": {
+          "md": "faee64a6ed5c",
+          "ts": "e6fec89087e6",
+          "lean": "286f106d6c96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:30.202Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:bring-trefoil-cinquefoil-channel' aligns with Lean declaration. Sorry-free."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1843,5 +1859,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.404Z"
+  "updated_at": "2026-07-06T04:41:30.202Z"
 }

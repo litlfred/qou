@@ -2273,7 +2273,25 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean for conjecture 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' fails to compile: content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean:46:2: error(lean.unknownIdentifier): Unknown identifier `FarCommutes`"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "c1279456f803",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'conj:weinberg-angle-categorical' → expected 'weinberg_angle_categorical'; Lean declares: LkDischarged, HoefsmitDischarged, HiggsVEVAutomorphism, WeinbergAngleNumerical, WeinbergAngleCategorical.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-06T04:41:29.802Z"
 }

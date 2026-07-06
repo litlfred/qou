@@ -32,7 +32,25 @@
         "reviewed_at": "2026-07-03T00:52:56.534Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "b1d2eac42ee0",
+          "ts": "e29a35a1d0bb",
+          "lean": "634b1f7d0ce4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'prop:gen3-meson-phi-hecke-seifert' → expected 'gen3_meson_phi_hecke_seifert'; Lean declares: seifertEuler, seifert_ratio_T27_T23, chi_21, chi_21_odd, phiMassRatio. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }

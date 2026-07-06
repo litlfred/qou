@@ -1855,7 +1855,25 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/atomic-braid.lean for 'Atomic braid $H_{A+Z}(q)$' fails compilation with error: content/quantum-observable-universe/particle-interactions/atomic-braid.lean:34:2: error: `simp` made no progress. This invalidates the claim of formal verification."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "f651c8e23f1c",
+          "ts": "5b1b09b715c2",
+          "lean": "87923411f987"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'def:atomic-braid' → expected 'atomic_braid'; Lean declares: PairType, NeutralAtom, atomic_braid_crossing_count. Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-06T04:41:29.802Z"
 }

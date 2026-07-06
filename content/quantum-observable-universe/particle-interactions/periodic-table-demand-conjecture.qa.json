@@ -1132,7 +1132,25 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.lean for 'The valley of stability is the demand-minimizing locus in $(Z, N)$-space' fails compilation with error: content/quantum-observable-universe/particle-interactions/periodic-table-demand-conjecture.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist. This invalidates the claim of formal verification."
       }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "field_hash": {
+          "md": "5363a001f5b4",
+          "ts": "889074e6b2fe",
+          "lean": "eb75f9770417"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Label 'rem:periodic-table-demand' → expected 'periodic_table_demand'; Lean declares: PeriodicTableDemand, periodic_table_demand_conjecture, he4_doubly_magic, o16_doubly_magic, pb208_doubly_magic.... Structural match via content."
+      }
     ]
   },
-  "updated_at": "2026-07-05T05:15:12.693Z"
+  "updated_at": "2026-07-06T04:41:29.802Z"
 }

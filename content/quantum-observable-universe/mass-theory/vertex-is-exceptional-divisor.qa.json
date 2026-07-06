@@ -1120,6 +1120,23 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean proof is incomplete and fails to compile, so equivalence cannot be verified.",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0bb6d1422082",
+          "ts": "b5e8f28052e5",
+          "lean": "ea1bea9325f7"
+        },
+        "result": "warn",
+        "evidence": "Block kind is 'proposition' but Lean has only def/noncomputable def, no theorem/lemma. Decls: R_q, q_param, q_inv_param, DivisorSupport, VertexAction, vertex_is_exceptional_divisor, skein_confined_to_reeb_bundle, vertex_completeness",
+        "reviewer": {
+          "kind": "agent",
+          "id": "proof-narrative-lean-equiv-sweep/v1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
+        "notes": "Kind-declaration mismatch: .ts says provable but .lean has only definitions."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1586,5 +1603,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-06T04:41:29.430Z"
 }
