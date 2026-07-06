@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "2fb3ae07086e",
     "ts": "fb95cb4abb1e",
-    "lean": "0a017dc43692"
+    "lean": "c5cd66668910"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -764,20 +764,18 @@
         "field_hash": {
           "md": "2fb3ae07086e",
           "ts": "fb95cb4abb1e",
-          "lean": "0a017dc43692"
+          "lean": "c5cd66668910"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+          "script_hash": "f2c5b0fad923",
+          "script_commit_sha": "46abda6ccc4d85fee80816601e57552c732d3c5d"
         },
-        "reviewed_at": "2026-07-05T23:02:33.767Z",
-        "reviewed_sha": "42dcd1acfed46390fdf27036b71b70b126b39a96",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/q-momentum-properties.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "reviewed_at": "2026-07-06T11:04:54.098Z",
+        "reviewed_sha": "bf05a670126b621bc222cc016ec27a92f3dd3128"
       }
     ],
     "compute-prop-has-consumer": [
@@ -785,20 +783,18 @@
         "field_hash": {
           "md": "2fb3ae07086e",
           "ts": "fb95cb4abb1e",
-          "lean": "0a017dc43692"
+          "lean": "c5cd66668910"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "6a0f3410ed24",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+          "script_hash": "f2c5b0fad923",
+          "script_commit_sha": "46abda6ccc4d85fee80816601e57552c732d3c5d"
         },
-        "reviewed_at": "2026-07-05T23:02:33.767Z",
-        "reviewed_sha": "42dcd1acfed46390fdf27036b71b70b126b39a96",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/climax-volume-mass/q-momentum-properties.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "reviewed_at": "2026-07-06T11:04:54.098Z",
+        "reviewed_sha": "bf05a670126b621bc222cc016ec27a92f3dd3128"
       }
     ],
     "compute-witness-exists": [
@@ -1052,5 +1048,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T23:02:33.767Z"
+  "updated_at": "2026-07-06T11:04:54.098Z"
 }
