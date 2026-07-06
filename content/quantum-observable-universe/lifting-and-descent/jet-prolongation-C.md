@@ -1,8 +1,1 @@
-Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be an archimedean quantum observable universe
-([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)) with instanton connection
-$A$ on the principal bundle $P$ and metric $g$ on $\mathcal{S}$.  Write $\widetilde{M} = \mathcal{S}$ for the total
-space of $\mathcal{S}$, define $P'$ as the frame bundle and $\mathcal{S}'$ as the bundle of
-orthonormal frames of the first jet bundle $J^1 \mathcal{S}$.  Then $A$ and $g$
-uniquely determine a connection $A'$ on $P'$ such that
-$(\mathbf{C}, \tilde\varTheta, G, \mathcal{S}')$ is an archimedean quantum observable universe.
-
+Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be an archimedean quantum observable universe ([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)) with instanton connection $A$ on the principal bundle $P$ and metric $g$ on $\mathcal{S}$. Write $\widetilde{M} = \mathcal{S}$ for the total space of $\mathcal{S}$. Define $P'$ as the frame bundle and $\mathcal{S}'$ as the bundle of orthonormal frames of the first jet bundle $J^1 \mathcal{S}$. Then $A$ and $g$ uniquely determine a connection $A'$ on $P'$ such that $(\mathbf{C}, \tilde\varTheta, G, \mathcal{S}')$ is an archimedean quantum observable universe.
