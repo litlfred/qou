@@ -1,39 +1,14 @@
-The black hole information paradox \cite{hawking1975} asks
-whether information that falls past the event horizon is
-destroyed, preserved but inaccessible, or slowly radiated back
-in Hawking quanta.  The incompleteness--horizon identification
-([incompleteness as opacity](#rem:incompleteness-horizon))
-reframes this as a question about arithmetic, not gravity.
+We reframe the black hole information paradox \cite{hawking1975} as a question of arithmetic rather than gravity. The incompleteness--horizon identification ([incompleteness as opacity](#rem:incompleteness-horizon)) provides the bridge.
 
-**Picture.**  Think of the horizon as a **syntax boundary**.
-Beyond it lie sections that **exist** as semantic objects in the
-model — well-defined elements of the full algebra
-$\Gamma(\mathcal{S}, A_0)$ — but **no finite braid computation**
-from outside can derive them.  They are syntactically
-unprovable.  This is the categorical reading of Gödel:
-existence without provability is the rule at the boundary, and
-the Bekenstein–Hawking entropy counts only what leaks across
-(degree-$1$ witnesses), never what remains hidden (degree-$0$
-truth).
+**The horizon as syntax boundary.**
+We treat the horizon as a syntax boundary. Behind it lie sections that exist as well-defined semantic elements of the full algebra $\Gamma(\mathcal{S}, A_0)$. However, no finite braid computation from outside can derive them. They are syntactically unprovable. This instantiates the categorical reading of Gödel: existence without provability characterises the boundary. The Bekenstein–Hawking entropy counts only the degree-$1$ witnesses that leak across, not the hidden degree-$0$ truth.
 
-**The paradox, restated.**
+**The paradox.**
+A black hole interior is a region where $A_0 = 0$ ([jet horizon](#def:jet-horizon)). The degree-$0$ sections describing particle identities, crossing structures, and fibre values inside the horizon exist in $\Gamma(\mathcal{S}, A_0)$. But they do not belong to $\Gamma_{\mathrm{fin}}(\mathcal{S}, A_0)$: no finite braid computation from outside the horizon produces them.
 
-A black hole interior is a region where $A_0 = 0$
-([jet horizon](#def:jet-horizon)).  The degree-$0$ sections
-that describe particle identities, crossing structures, and
-fibre values inside the horizon are **well-defined elements**
-of $\Gamma(\mathcal{S}, A_0)$ --- they exist in the full
-algebra.  But they are not elements of
-$\Gamma_{\mathrm{fin}}(\mathcal{S}, A_0)$: no finite
-braid computation from outside the horizon can produce them.
+This mirrors a G\"{o}del sentence, which is true in the model but unprovable from the accessible axioms.
 
-This is the structure of a G\"{o}del sentence: a statement
-that is **true** in the model (the section exists) but
-**unprovable** from the accessible axioms (no finite
-derivation from outside can reach it).
-
-The three standard positions on the paradox map to three
-positions on incompleteness:
+We map the three standard positions on the information paradox to positions on incompleteness:
 
 | Position | Information paradox | Incompleteness analog |
 |----------|-------------------|---------------------|
@@ -41,28 +16,12 @@ positions on incompleteness:
 | Information is preserved but inaccessible | Sections exist but cannot be computed from outside | G\"{o}del sentences are true but unprovable (the standard reading) |
 | Information escapes via Hawking radiation | Degree $\geq 1$ data gradually reconstructs degree-$0$ truth | Partial witnesses accumulate toward a proof that never terminates |
 
-The QOU framework selects the second option: the sections
-exist (the algebra $A$ is well-defined everywhere, including
-behind the horizon), but no finite sequence of Planck steps
-from outside the horizon reaches them.
+We adopt the second position. The algebra $A$ is well-defined everywhere, including behind the horizon, but no finite sequence of Planck steps from the outside can reach it.
 
 **The Bekenstein--Hawking entropy as a G\"{o}del count.**
+The Bekenstein--Hawking entropy $S = A / (4\ell_P^2)$ \cite{bekenstein1973} counts the dimension of $\Gamma(\mathcal{H}, A_1/A_0)$, the independent degree-$1$ sections on the horizon surface ([Hawking radiation](#rem:hawking-radiation)). These are the verifiable partial evidence, thermal leakage, and NP witnesses accessible from the outside.
 
-The Bekenstein--Hawking entropy $S = A / (4\ell_P^2)$
-\cite{bekenstein1973} counts the dimension of
-$\Gamma(\mathcal{H}, A_1/A_0)$ --- the independent
-degree-$1$ sections on the horizon surface
-([Hawking radiation](#rem:hawking-radiation)).  These are
-the statements that **can** be witnessed from outside:
-the verifiable partial evidence, the thermal leakage, the
-NP witnesses.
-
-The degree-$0$ sections behind the horizon --- the
-G\"{o}delian core --- are not counted by the
-Bekenstein--Hawking entropy.  They are the **uncountably
-many** true statements that the horizon conceals.  The
-entropy counts only what leaks: the proof fragments, not
-the theorems.
+The degree-$0$ sections behind the horizon remain uncounted by the Bekenstein--Hawking entropy. The entropy counts proof fragments, not theorems.
 
 $$
   S_{\mathrm{BH}}
@@ -75,38 +34,11 @@ $$
   \;=\; 0.
 $$
 
-The entropy is large (proportional to area) because the
-degree-$1$ space is rich --- many witnesses, many thermal
-modes, many partial truths.  The degree-$0$ space is empty
---- no complete truths cross the boundary.  This asymmetry
-is not a feature of gravity.  It is a feature of any
-formal system powerful enough to encode self-referential
-computation.
+The entropy scales with area because the degree-$1$ space is rich. The degree-$0$ space is empty because no complete truths cross the boundary. This asymmetry characterises any formal system powerful enough to encode self-referential computation.
 
 **Aeon boundaries as G\"{o}del boundaries.**
+This identification extends to cosmological horizons. An aeon boundary ([aeon](#def:aeon)) is a locus where $A_0 = 0$. Degree-$0$ sections vanish, and the observable subcategory $\mathrm{Bun}^{\circ}$ terminates. The Big Bang state ([Big Bang](#def:big-bang-state)) is one such boundary: the universe begins with no degree-$0$ data and accumulates it through Planck-step computation.
 
-The identification extends to cosmological horizons.  An
-aeon boundary ([aeon](#def:aeon)) is a locus where
-$A_0 = 0$ --- degree-$0$ sections vanish, and the
-observable subcategory $\mathrm{Bun}^{\circ}$ terminates.
-The Big Bang state ([Big Bang](#def:big-bang-state)) is
-such a boundary: the universe begins with no degree-$0$
-data and accumulates it through Planck-step computation.
+Each aeon acts as a consistent theory: a connected component of $\mathrm{Bun}^{\circ}$ where degree-$0$ sections are non-trivial and the Frobenius pairing is non-degenerate. The aeon boundary is the expressive limit where G\"{o}delian sentences reside. Crossing an aeon boundary ([aeon recycling](#rem:aeon-boundary-generates-chart)) transitions to a stronger theory. The degree $\geq 1$ data from the dying aeon seeds the axioms of the next.
 
-From the incompleteness perspective, each aeon is a
-**consistent theory**: a connected component of
-$\mathrm{Bun}^{\circ}$ where degree-$0$ sections are
-non-trivial and the Frobenius pairing is non-degenerate.
-The aeon boundary is where the theory reaches its
-expressive limit --- where the G\"{o}delian sentences
-live.  Crossing an aeon boundary
-([aeon recycling](#rem:aeon-boundary-generates-chart))
-is passing to a **stronger theory**: the degree $\geq 1$
-data from the dying aeon seeds the axioms of the next,
-just as adding a G\"{o}del sentence to a theory produces
-a strictly stronger (but still incomplete) theory.
-
-The universe does not resolve its own incompleteness.  It
-iterates past it --- aeon by aeon, each one a consistent
-fragment, each boundary a reminder that degree-$0$ truth
-outruns finite derivation.
+The universe does not resolve its own incompleteness. It iterates past it. Each aeon is a consistent fragment bounded by the limit of finite derivation.
