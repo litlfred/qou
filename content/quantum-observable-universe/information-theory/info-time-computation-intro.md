@@ -1,1 +1,1 @@
-This section develops time and computation. The blocks below trace the construction from `time-info` onward.
+This section establishes the framework for time and computation. The following blocks trace the construction from `time-info` onward.
