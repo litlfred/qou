@@ -566,3 +566,183 @@ could not be numerically discriminated. The precise remaining step, sharpened:
 - Read: `content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.md`,
   `docs/coordination/2026-06-13-alpha-em-phase5-rt-ledger.md`,
   `content/quantum-observable-universe/predicted-spectra/photon-ir-zero-mode-bring.md`
+
+---
+
+## Session-2: mapping-torus + residue
+
+**Date:** 2026-07-06 (RESEARCH bean `9un2`)
+**Scope:** push past the weight-2 wall on the two Session-2 leads — (A) a genuine
+`B₃`/trilogarithm class from the **mapping torus** of a substrate automorphism
+(does a canonical pseudo-Anosov / infinite-order map exist?), and (B) direct
+evaluation of the residue `∮λ_SW^{(2)}` to **decide the fork** (clean trilog/ζ(3)
+Bloch world vs a genuine 2-loop QFT effect with no clean closed form).
+Companion compute:
+[`computations/bring_mapping_torus_residue_weight_probe.py`](../../computations/bring_mapping_torus_residue_weight_probe.py)
+(standalone mpmath, 50 dps; emits no witness — records an open structural finding).
+
+**Headline.** Both leads are worked to an honest verdict, and the session's new
+value-add is a corpus cross-reference the parent §C **missed**: the substrate
+*does* carry a canonical **hyperbolic** element (the lever-1 binding monodromy
+`B`, `tr B = 2.6424 > 2`) — §C only considered the finite-order `S₅` surface
+maps. Running that hyperbolic element through the mapping-torus construction
+still fails, for a **new** reason (Sol geometry), and the fork **resolves toward
+the 2-loop-QFT side**.
+
+- **LEAD A — STRUCTURALLY-CLOSED** (three converging cited invariants).
+- **LEAD B — fork RESOLVED (2-loop side); coefficient OPEN.** The classical
+  `∮λ_SW^{(2)}` is weight-1 (q-algebraic) and *cannot* be the weight-3 target;
+  so it does not decide the coefficient by evaluation — the coefficient is
+  intrinsically a weight-3 = 2-loop object with **no classical closed form**, and
+  the additive `~4 ppm`-level prediction is the honest ceiling.
+
+### S2.1 LEAD A — the mapping torus of a substrate automorphism
+
+The parent §C rejected mapping tori because the genus-4 Bring **surface**
+automorphisms are the conformal group `S₅`, **all finite order** (Hurwitz:
+conformal automorphisms of a compact Riemann surface form a finite group), so
+their mapping tori are Seifert-fibered (vol 0). That is correct but **incomplete**:
+it never asked whether the substrate carries *any* canonically-hyperbolic map.
+It does. The **lever-1 binding monodromy**
+([`2026-06-24-lever1-binding-monodromy-hyperbolicity.md`](2026-06-24-lever1-binding-monodromy-hyperbolicity.md),
+[`…-lever1-lambda-sw-no-shortcut.md`](2026-06-24-lever1-lambda-sw-no-shortcut.md))
+is the abelianised `λ_SW` / Gauss–Manin monodromy `B` on the rank-2 Hodge factor
+(`= H¹` of the color elliptic curve `E_q`,
+[`brings-surface/color-elliptic.md`](../../content/quantum-observable-universe/brings-surface/color-elliptic.md)):
+
+$$
+\operatorname{tr}B \;=\; \frac{a_D^{(2)}+a_D^{(4)}}{a_D^{(3)}}
+\;=\; \frac{3\,(3q^4+8q^2+3)}{4\,q\,(q+1)^2}
+\;=\; 2.6423863\ldots > 2,\qquad \det B = 1\ \text{(proved)}.
+$$
+
+Both forms agree to `|diff| = 0` at `q₀` (probe). `|tr B| > 2 ⇒ B` is
+**hyperbolic in `SL₂(ℝ)`**, rapidity `θ_binding = arccosh(tr B/2) = 0.78145`,
+`λ = e^{θ} = 2.18465`. So the substrate really does offer a hyperbolic object —
+exactly what a pseudo-Anosov mapping-torus lead wants. It still does not build a
+hyperbolic 3-manifold, on **three independent cited invariants**:
+
+1. **(A1) Sol, not hyperbolic.** `B` is a rank-2 `SL₂` monodromy of an
+   **elliptic (genus-1)** factor. Suspended as an automorphism of the elliptic
+   fibre `T²`, a `|tr| > 2` (Anosov) element gives a **Sol-geometry** torus
+   bundle. **Torus bundles are never hyperbolic** (geometrization): every
+   `T²`-bundle has Gromov/simplicial volume `0` — Euclidean if `|tr| < 2`, Nil if
+   `|tr| = 2`, Sol if `|tr| > 2`. No ideal tetrahedra, no `B₂`/`B₃` scissors
+   content. *Cited invariant: the Thurston geometry / Gromov-norm-vanishing
+   classification of `T²`-bundles.*
+2. **(A2) `B` is not a mapping class at all.** `tr B = 2.6424 ∉ ℤ`
+   ([integrality audit](2026-06-24-lever1-color-eq-monodromy-integrality.md)) so
+   `B ∉ SL₂(ℤ)` — it is not even a genuine `T²` automorphism; it is a **real
+   connection holonomy**, which suspends to no canonical 3-manifold. The only
+   genuine surface diffeomorphisms are the finite-order `S₅` ones → Seifert →
+   vol 0 (parent §C). The "bar-involution ∘ Dehn-twist" and "Reeb/geodesic return
+   map" candidates named in the lead are either finite-order (bar-involution is an
+   order-2 involution) or have Seifert suspension (the geodesic-flow suspension of
+   `M_Bring` *is* the Seifert unit-tangent bundle `UT(M_Bring)`, parent §C.1); a
+   genuine pseudo-Anosov would require an **ad-hoc choice of filling curve** to
+   twist along — precisely the "fit-flavoured, not canonical" move the parent §C
+   flagged. **No canonical pseudo-Anosov exists.**
+3. **(A3) A hyperbolic 3-manifold would be weight-2 anyway** (parent §C.3,
+   re-confirmed: `Li₂(1/φ²) = π²/15 − ln²φ` exactly ⇒ `K₃(ℚ(√5))⊗ℚ = 0`, while
+   `𝓛₃(1/φ²) = (4/5)ζ(3)` genuine ⇒ `K₅` rank 2). The lead's premise —
+   *"its ideal-tetrahedron scissors class IS the genuine `B₃` object"* — is
+   **false**: an `ℍ³` ideal-tetrahedron scissors class is `B₂` (weight-2
+   dilogarithm; Neumann–Zagier), **not** `B₃`.
+
+**LEAD A verdict: STRUCTURALLY-CLOSED.** No substrate automorphism builds a
+hyperbolic 3-manifold: the finite-order `S₅` maps give Seifert; the one
+canonically-**hyperbolic** object `B` is not a mapping class and, generously
+suspended, gives **Sol** (vol 0); and any hyperbolic 3-manifold is weight-2
+regardless. *(b)-exclusion of the mapping-torus **realization method**, cited
+invariants (A1) Thurston/Gromov `T²`-bundle classification, (A2)
+`SL₂(ℤ)`-integrality failure, (A3) Neumann–Zagier weight-2 + Borel
+`rank K₃(ℚ(√5)) = 0`. Scope-(a) on the ingredient: the weight-3
+`K₅(ℚ(√5))` class still exists — it simply is not a 3-manifold period.)*
+
+### S2.2 LEAD B — evaluate `∮λ_SW^{(2)}` (the fork-decider)
+
+The corpus fixes `λ_SW = x\,dz` on `E_q`, and by `prop:sw-period-residue-sum` the
+prolonged periods `a_D^{(n)} = ∮λ_SW^{(n)}` are an **algebraic residue sum** —
+q-rational. The three **production-wired** anchors are exact q-rationals (probe,
+verified at `q₀`):
+
+| anchor | closed form | value at `q₀` |
+|---|---|---:|
+| `a_D^{(2)}` | `1` | `1.000000000` |
+| `a_D^{(3)}` | `(q+1)²/(3q)` | `1.336965623` |
+| `a_D^{(4)}` | `(3q²+4+3q⁻²)/4` (Family-A) | `2.532779664` |
+
+So the classical `λ_SW` residue tower lives at **weight ≤ 1**: a residue of a
+meromorphic 1-form / an abelian-integral period is algebraic, and the wired
+anchors *are* q-rational. It reproduces the **tree / bare** content
+`q[9]_q[10]_q` and the multiplicative q-rational family — exactly the family the
+100-dps 54-element PSLQ already `(b)`-excluded from closing the α gap.
+
+The data-demanded next term is **weight 3**, one-to-two rungs higher:
+
+- `T_data = CODATA − bare − 2/(3π) = 5.72836×10⁻⁴`, `C_data = T_data/α = 0.0784992`
+  (`= 0.986·(1/4π)`).
+- Its arithmetic home is the weight-3 `K₅(ℚ(√5))` lattice `{ζ(3), L(3,χ₅)}` with
+  the exact generator `𝓛₃(1/φ²) = (4/5)ζ(3)` (§B.1). `C_data/[(4/5)ζ(3)] = 0.0816`,
+  `C_data/ζ(3) = 0.0653` — not clean; bounded PSLQ over both `{1, q, q⁻¹}`
+  (weight-1 algebraic) and `{ζ(3), L(3,χ₅)}` (weight-3 Borel) returns **no
+  relation** (honest null, not a wide scan).
+
+**A weight-1 object cannot equal a weight-3 object** (transcendence-weight
+grading) unless its coefficient is zero. Therefore `∮λ_SW^{(2)}`, evaluated
+**classically**, is q-algebraic and **does not decide the coefficient** — it
+yields the tree periods, not the correction. This is the same weight-jump that
+killed the real-`q` `c_3` family (parent framing / PR #1821, `dc₃/dq ≈ 4.6×10⁶`
+impossible for smooth real `f`): the correction is not a smooth q-algebraic
+function.
+
+**Fork resolution.** The fork was: clean trilog/ζ(3) ⇒ Bloch world; non-polylog ⇒
+genuine 2-loop QFT with no clean closed form. The weight analysis shows the two
+horns **merge at weight 3 = two loops**: the target's home *is* ζ(3) (the exact
+`(4/5)ζ(3)` Bloch value exists), **and** ζ(3) is precisely the object that first
+enters QED at **two loops**. What is decisively excluded is the *third*,
+tacitly-hoped-for possibility — that `∮λ_SW^{(2)}` is a directly-evaluable
+**classical** residue delivering the coefficient the way `2/(3π)` came from the
+`n=1` Hodge zero-mode. It is not: that residue is weight-1 algebraic, two weights
+below the target. The exact `(4/5)ζ(3)` is real but is **not** a classical-residue
+output; its normalization into `δ(1/α)` is a genuine **2-loop** (Goncharov
+weight-3 configuration regulator, or RT/CS 2-loop perturbative invariant)
+computation, not a scissors-congruence evaluation.
+
+**LEAD B verdict: fork RESOLVED toward the 2-loop-QFT side; the coefficient
+remains OPEN as a 2-loop object.** There is **no classical closed-form residue**
+for it; the honest current ceiling is the additive prediction at the
+`~4 ppm`/`~57 ppb`-residual level. *Refutation scope (STRICT): `(b)`-excluded (cited
+invariant = transcendence-weight grading) is only "the **classical** `λ_SW`
+residue equals the coefficient". Whether a genuine 2-loop weight-3 computation
+yields a clean closed form is `(a)`-OPEN — not claimed refuted.*
+
+### S2.3 What is now sharp (net of the session)
+
+- The parent §C's "mapping tori are Seifert because `S₅` is finite" is **upgraded**:
+  the substrate's *one* canonical hyperbolic map (`B`, `tr = 2.6424`) also fails,
+  via **Sol** geometry — so the closure holds even against the hyperbolic element
+  the earlier sections did not consider.
+- The three weight rungs are now explicit end-to-end: **`n=1` surface** →
+  weight-1 (`π`, area; `2/(3π)`, DERIVED); **`n=2` classical 3-manifold /
+  `λ_SW` residue** → weight-2 dilog / weight-1 algebraic (both **below** target);
+  **target O(α²)** → weight-3 ζ(3) = **2-loop**. The gap the framework must cross
+  is a genuine **loop** rung, not a scissors evaluation.
+- The precise remaining step is unchanged in kind but now **doubly** motivated:
+  evaluate `a_D^{(2)}` **as a weight-3 2-loop regulator** (Goncharov config
+  polylog on the five golden points, or the RT/CS 2-loop invariant of
+  `UT(M_Bring)`) landing on `{ζ(3), L(3,χ₅)}` — and pin `q₀` two-to-three orders
+  tighter so the `~0.5%`-determined target can discriminate a candidate. Until
+  then the coefficient is **OPEN**. No content block is changed; the session
+  records the hyperbolic-`B` → Sol closure, the residue weight-1 finding, and the
+  fork resolution, and rules out a fabricated closure.
+
+### S2.4 Files added / read (Session-2)
+- **Added:** [`computations/bring_mapping_torus_residue_weight_probe.py`](../../computations/bring_mapping_torus_residue_weight_probe.py)
+- Read: `docs/audits/2026-06-24-lever1-binding-monodromy-hyperbolicity.md`,
+  `docs/audits/2026-06-24-lever1-lambda-sw-no-shortcut.md`,
+  `docs/audits/2026-06-24-lever1-trB-geometric-target.md`,
+  `content/quantum-observable-universe/mass-theory/prolonged-periods-fixed-depth.md`,
+  `content/quantum-observable-universe/mass-theory/cl3-zeta5-geometric-realization.md`,
+  `content/quantum-observable-universe/brings-surface/color-elliptic.md`,
+  `content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.md`
