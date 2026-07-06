@@ -1,11 +1,6 @@
 ## Statement
 
-**Proposition (graded ρ_K expansion).**
-*Multiplying the GB-NF identity
-([atomic mass via GB-NF](#prop:atomic-mass-gb-nf))
-$\mathcal{M}(K) = m_e \cdot \rho_K \cdot |\!\mathrm{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K))|$
-through by $m_e \cdot |\!\mathrm{tr}_M\!|$ exposes the graded
-expansion of the categorical density $\rho_K$:*
+**Proposition (graded $\rho_K$ expansion).** We expose the graded expansion of the categorical density $\rho_K$ by multiplying the GB-NF identity ([atomic mass via GB-NF](#prop:atomic-mass-gb-nf)) $\mathcal{M}(K) = m_e \cdot \rho_K \cdot |\!\mathrm{tr}_M(\mathrm{NF}_{\mathrm{GS}}(\mathcal{B}_K))|$ through by $m_e \cdot |\!\mathrm{tr}_M(\mathcal{B}_K)|$:
 
 $$
   \boxed{
@@ -18,27 +13,20 @@ $$
   }
 $$
 
-*where $\alpha = m_e \cdot 8G$ ([binding scale](#prop:binding-scale-catalan))
-and $z = 1/(q^{1/2} + q^{-1/2})$ is the Markov parameter, and the
-graded expansion truncates at the single-gen level for the
-empirical $0.18\%$ accuracy reported in
-[atomic-braid-mass](#thm:wedderburn-mass-formula).*
+where $\alpha = m_e \cdot 8G$ ([binding scale](#prop:binding-scale-catalan)) and $z = 1/(q^{1/2} + q^{-1/2})$ is the Markov parameter. The graded expansion truncates at the single-generator level to achieve the empirical $0.18\%$ accuracy reported in [atomic braid mass](#thm:wedderburn-mass-formula).
 
 ## The three pieces
 
-### LO piece (proved)
+### Leading-order piece (proved)
 
-By [Wenzl 1988] Theorem 5 (Markov multiplicativity), for disjoint
-braids $\beta_1 \in H_{n_1}(q)$ and $\beta_2 \in H_{n_2}(q)$ with
-images $\beta_1 \otimes \beta_2 \in H_{n_1 + n_2}(q)$:
+By [Wenzl 1988] Theorem 5 (Markov multiplicativity), disjoint braids $\beta_1 \in H_{n_1}(q)$ and $\beta_2 \in H_{n_2}(q)$ with image $\beta_1 \otimes \beta_2 \in H_{n_1 + n_2}(q)$ satisfy:
 
 $$
   \mathrm{tr}_M(\beta_1 \otimes \beta_2)
   \;=\; \mathrm{tr}_M(\beta_1) \cdot \mathrm{tr}_M(\beta_2).
 $$
 
-Combined with mass additivity for free constituents, this proves
-the LO piece **categorically**:
+Combined with mass additivity for free constituents, this categorically determines the leading-order piece:
 
 $$
   \rho_K^{\mathrm{LO}}
@@ -46,36 +34,21 @@ $$
   \frac{Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e}{m_e \cdot |\!\mathrm{tr}_M(\mathcal{B}_K)|}.
 $$
 
-Numerical verification: `rho-k-markov-multiplicativity.witness.json`
-verifies the [Wenzl 1988] branching identity
-$\chi^\lambda(\mathcal{B}_p \otimes \mathcal{B}_n) = \sum c^\lambda_{\mu, \nu} \chi^\mu(\mathcal{B}_p) \chi^\nu(\mathcal{B}_n)$
-to $3.2 \times 10^{-14}$ (machine precision) for all $\lambda \vdash 6$
-in the deuteron case.
+The script `rho-k-markov-multiplicativity.witness.json` numerically verifies the [Wenzl 1988] branching identity $\chi^\lambda(\mathcal{B}_p \otimes \mathcal{B}_n) = \sum c^\lambda_{\mu, \nu} \chi^\mu(\mathcal{B}_p) \chi^\nu(\mathcal{B}_n)$ to machine precision ($3.2 \times 10^{-14}$) for all $\lambda \vdash 6$ in the deuteron case.
 
-### Single-gen piece (proved)
+### Single-generator piece (proved)
 
-Per [atomic braid mass](#thm:wedderburn-mass-formula), the per-generator
-log-volume sum
+Per [atomic braid mass](#thm:wedderburn-mass-formula), the per-generator log-volume sum is:
 
 $$
   \tfrac{\alpha}{2} \sum_i \ln\bigl(\hat V_i^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}}}\bigr)
 $$
 
-(where $\overline{\,\cdot\,}$ denotes the Hecke bar-involution
-$q \leftrightarrow q^{-1}$; at real $q_0$ and real $\hat V_i$ this
-reduces to the archimedean form $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$).
+The overline denotes the Hecke bar-involution $q \leftrightarrow q^{-1}$. At real $q_0$ and real $\hat V_i$, this reduces to the archimedean form $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$. Using $\alpha = m_e \cdot 8G \approx 3.7445$ MeV (the Borromean binding scale, [Catalan binding](#prop:binding-scale-catalan)), this captures the leading binding correction. The mean error is $0.18\%$, with a $0.35\%$ maximum across $Z = 1..20$ (see `atomic-braid-mass-paper-formula.witness.json` and the `rho-k-pair-gen-extension.witness.json` table).
 
-with $\alpha = m_e \cdot 8G \approx 3.7445$ MeV (the Borromean
-binding scale, [Catalan binding](#prop:binding-scale-catalan))
-captures the leading binding correction. Empirical accuracy:
-$0.18\%$ mean error, $0.35\%$ max across $Z = 1..20$
-(`atomic-braid-mass-paper-formula.witness.json`,
-`rho-k-pair-gen-extension.witness.json` table).
+### Pair-generator piece (open)
 
-### Pair-gen piece (open)
-
-The pair-generator term, log-volume analog of $T_3 = -z^2 \sum_{i<j} \mathrm{Li}_2^q(-|\hat V_i \hat V_j|)$
-from [knot mass formula unified](#thm:knot-mass-formula-unified), is
+The pair-generator term is the log-volume analogue of $T_3 = -z^2 \sum_{i<j} \mathrm{Li}_2^q(-|\hat V_i \hat V_j|)$ from the [unified knot mass formula](#thm:knot-mass-formula-unified):
 
 $$
   \alpha \cdot z^2 \cdot \sum_{i<j} \ln\bigl|\hat V_i^{\mathrm{full}} \hat V_j^{\mathrm{full}}\bigr|_{\mathrm{Wedderburn}}.
@@ -87,79 +60,36 @@ $$
   \;=\;
   w_{\mathrm{sym}}\, \lambda_i^{\mathrm{sym}} \lambda_j^{\mathrm{sym}}
   + w_{\mathrm{std}}\, \bigl[\,z\,(M_i M_j)_{1,2} + (M_i M_j)_{2,2}\bigr]
-  + w_{\mathrm{alt}}\, \lambda_i^{\mathrm{alt}} \lambda_j^{\mathrm{alt}},
+  + w_{\mathrm{alt}}\, \lambda_i^{\mathrm{alt}} \lambda_j^{\mathrm{alt}}
 $$
 
-where $M_i$ is the per-generator $2 \times 2$ standard-rep transfer
-matrix and $w_\bullet$ are the Wedderburn-Markov weights from
-[Wedderburn mass](#thm:wedderburn-mass-formula). The std-channel
-pair coupling uses the Markov-traced $2 \times 2$ matrix product
-$M_i M_j$ — genuinely capturing braid non-commutativity — rather
-than the naive $V_i^{\mathrm{std}} \cdot V_j^{\mathrm{std}}$.
-
+Here, $M_i$ is the per-generator $2 \times 2$ standard-representation transfer matrix, and $w_\bullet$ are the Wedderburn-Markov weights from [Wedderburn mass](#thm:wedderburn-mass-formula). The standard-channel pair coupling uses the Markov-traced $2 \times 2$ matrix product $M_i M_j$ to capture braid non-commutativity, avoiding the naive product $V_i^{\mathrm{std}} \cdot V_j^{\mathrm{std}}$.
 
 See [Table 1](#tbl:rho-k-graded-expansion-table1-data).
 
-Both pair extensions **degrade accuracy** under the simple $\alpha z^2$
-log-formula — even with the correct Wedderburn coupling. The
-remaining gap is the **functional form**: $T_3$ in the six-term
-theorem is $-z^2 \sum \mathrm{Li}_2^q(-|V_i V_j|)$, not
-$\alpha z^2 \sum \ln |V_i V_j|$. The Kashaev-limit derivation that
-gave $\alpha \sum \ln|V_i|$ for the single-gen piece (matching
-$T_2$) needs a parallel derivation for the pair piece that
-produces the correct functional form and prefactor — open work.
+Both pair extensions degrade accuracy under the simple $\alpha z^2$ log-formula, even with the correct Wedderburn coupling. The gap lies in the functional form: $T_3$ in the six-term theorem requires $-z^2 \sum \mathrm{Li}_2^q(-|V_i V_j|)$, not $\alpha z^2 \sum \ln |V_i V_j|$. The single-generator Kashaev-limit derivation that yields $\alpha \sum \ln|V_i|$ (matching $T_2$) requires a parallel derivation for the pair piece to produce the correct functional form and prefactor. This remains open work.
 
 ## Identification with the six-term theorem
 
-Each piece of the graded expansion corresponds to a term of
-[knot mass formula unified](#thm:knot-mass-formula-unified) (six-term
-theorem) in its Kashaev limit:
+Each piece of the graded expansion corresponds to a term in the Kashaev limit of the [unified knot mass formula](#thm:knot-mass-formula-unified) (six-term theorem):
 
 See [Table 2](#tbl:rho-k-graded-expansion-table2-data).
 
-The graded ρ_K expansion is therefore the **Kashaev specialisation
-of the six-term theorem** (`thm:knot-mass-formula-unified`)
-expressed at the GB-NF level, with the constituent-mass piece
-explicitly factored out via the Markov-multiplicativity rewriting.
+The graded $\rho_K$ expansion is the Kashaev specialisation of the six-term theorem (`thm:knot-mass-formula-unified`) expressed at the GB-NF level. The constituent-mass piece is explicitly factored out via the Markov-multiplicativity rewriting.
 
 ## Significance
 
-The graded expansion **replaces the empirical LO ansatz** of
-[atomic mass via GB-NF](#prop:atomic-mass-gb-nf) with a categorical
-derivation:
+The graded expansion replaces the empirical leading-order ansatz of [atomic mass via GB-NF](#prop:atomic-mass-gb-nf) with a categorical derivation:
 
-- The LO piece is no longer an "ansatz" — it is a **theorem**
-  (Markov multiplicativity + free-constituent additivity).
-- The single-gen piece is the **proved** binding correction at
-  $0.18\%$ empirical accuracy.
-- The pair-gen and higher pieces are open work — the precise
-  Wedderburn-coupling structure that closes the six-term theorem's
-  Kashaev limit at sub-percent accuracy.
+- The leading-order piece is a theorem derived from Markov multiplicativity and free-constituent additivity.
+- The single-generator piece is the proved binding correction, achieving $0.18\%$ empirical accuracy.
+- The pair-generator and higher pieces are open work. Finding the precise Wedderburn-coupling structure closes the six-term theorem's Kashaev limit at sub-percent accuracy.
 
-Combined with hecke branching trace decomp
-(refined Sub-lemma 2.1, operator-valued $A^\lambda_{\mu, \nu}(I)$
-interface), the bound atomic case is fully covered: the LO and
-single-gen pieces give $\rho_K$ to $0.18\%$; the higher pieces and
-the interface contribution close the residual.
+Combined with the Hecke branching trace decomposition (refined Sub-lemma 2.1, operator-valued $A^\lambda_{\mu, \nu}(I)$ interface), the bound atomic case is fully covered. The leading-order and single-generator pieces give $\rho_K$ to $0.18\%$; the higher pieces and the interface contribution close the residual.
 
 ## Production wiring
 
-The graded expansion is realised end-to-end by
-`computations/rho_k_graded_atomic_mass.py`
-(witness `rho-k-graded-atomic-mass.witness.json`): the LO constituents
-$Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e$ are taken from the
-canonical muon-anchored mass facade (`computations/canonical_mass.py` —
-no CODATA nucleon masses enter), the single-gen correction
-$\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$ is evaluated at $50$
-dps ($0.19\%$ mean, $0.30\%$ max across the published $Z = 1..10$
-table), and the pair-gen tier is **reported as the open residual only —
-never added to the mass** (its naive log-additive form degrades
-accuracy; see Table 1). Per-generator volumes carry the known
-$H_3$-weight convention of the published table; the dynamic $H_{3A}$
-re-weighting is a separate tracked fix
-(`docs/audits/2026-05-25-h3-vs-h3a-legacy-bug-audit.md` §7 Tier 2).
-
-
+The graded expansion is realised end-to-end by `computations/rho_k_graded_atomic_mass.py` (witness `rho-k-graded-atomic-mass.witness.json`). The leading-order constituents $Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e$ are drawn from the canonical muon-anchored mass facade (`computations/canonical_mass.py`); no CODATA nucleon masses enter. The single-generator correction $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$ is evaluated at 50 decimal places of precision, yielding $0.19\%$ mean error and $0.30\%$ maximum error across the published $Z = 1..10$ table. The pair-generator tier is reported as the open residual only. It is never added to the mass, as its naive log-additive form degrades accuracy (see Table 1). Per-generator volumes carry the known $H_3$-weight convention of the published table. The dynamic $H_{3A}$ re-weighting is a separate tracked fix (`docs/audits/2026-05-25-h3-vs-h3a-legacy-bug-audit.md` §7 Tier 2).
 
 ## References
 
