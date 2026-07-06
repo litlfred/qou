@@ -1,13 +1,13 @@
-The [categorical neutron](#def:categorical-neutron) $\mathfrak{n}$ is
-uniquely determined up to braid isotopy by the triple
-$(\mathfrak{u}, \mathfrak{d}, \mathfrak{d})$ and the Borromean
-braiding pattern.  Its Hecke normal form in $H_3(q)$ is unique, and
-the $S_3$-symmetry on colour tubes ensures independence from the
-assignment of positions to $(\mathfrak{u}, \mathfrak{d}, \mathfrak{d})$.
+**Proposition (Categorical neutron uniqueness).**
 
+The [categorical neutron](#def:categorical-neutron) $\mathfrak{n}$ is uniquely determined up to braid isotopy by the triple $(\mathfrak{u}, \mathfrak{d}, \mathfrak{d})$ and the Borromean braiding pattern. Its Hecke normal form in $H_3(q)$ is unique. The $S_3$-symmetry on color tubes ensures independence from the assignment of positions to $(\mathfrak{u}, \mathfrak{d}, \mathfrak{d})$.
 
-**Strategy.** The proof rests on two pillars: the uniqueness of the Hecke algebra normal form in $H_3(q)$, and the $S_3$-symmetry which equates the three possible valence assignments via inner automorphisms. The specific stabilizer selection is uniquely fixed by minimizing the Markov trace absolute value $|\mathrm{tr}_M|$.
+#### Strategy
 
-While the proof of uniqueness up to isotopy employs standard Hecke normal form and $S_3$-symmetry arguments from conventional knot representation theory, establishing this specific structural uniqueness constraint for the categorical neutron is a mathematically novel formalization essential to the stability predictions of the Quantum Observable Universe.
+The proof rests on the uniqueness of the Hecke algebra normal form in $H_3(q)$ and the $S_3$-symmetry, which equates the three possible valence assignments via inner automorphisms. Minimizing the Markov trace absolute value $|\mathrm{tr}_M|$ uniquely fixes the specific stabilizer selection.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+#### Formalization
+
+Establishing this structural uniqueness constraint relies on standard Hecke normal form and $S_3$-symmetry arguments from knot representation theory. Its formalization is essential to validate the stability predictions of the categorical neutron within the Quantum Observable Universe.
+
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs—real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. The underlying categorical identities hold over an abstract coefficient ring; only their archimedean realisation is specialised here.

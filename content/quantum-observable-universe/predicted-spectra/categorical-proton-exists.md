@@ -1,17 +1,13 @@
-The [categorical proton](#def:categorical-proton)
-$\mathfrak{p} = \mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$
-exists as a well-defined element of the Hecke algebra $H_3(q)$,
-satisfying Frobenius stability
-$G x[\gamma] \ge 0$ at every step of the LP reduction.
+**Proposition (Categorical proton existence).**
 
-Uniqueness up to braid isotopy is
-([uniqueness of the categorical proton](#prop:categorical-proton-unique)).
+The [categorical proton](#def:categorical-proton) $\mathfrak{p} = \mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$ exists as a well-defined element of the Hecke algebra $H_3(q)$. It satisfies Frobenius stability $G x[\gamma] \ge 0$ at every step of the LP reduction. Uniqueness up to braid isotopy is treated in [uniqueness of the categorical proton](#prop:categorical-proton-unique).
 
+#### Strategy
 
-**Strategy.** We construct the composite Hecke algebra element from the $(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$ Borromean braid and the Hopf-link stabilizer. Through Gröbner--Shirshov reduction in $H_3(q)$, we trace the evaluation to a canonical normal form, explicitly maintaining linear-programming stability ($G x[\gamma] \ge 0$) throughout.
+We construct the composite Hecke algebra element from the $(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$ Borromean braid and the Hopf-link stabilizer. Gröbner--Shirshov reduction in $H_3(q)$ reduces the evaluation to a canonical normal form. This procedure explicitly maintains linear-programming stability ($G x[\gamma] \ge 0$) throughout.
 
-**Formalization Goal Plausibility.** The current Lean formalization relies on a `sorry`-free weak proxy theorem (`CategoricalProton.exists`), which instantiates a structure with unconstrained real fields instead of rigorous LP-stability bounds. Expanding this proxy into a complete proof of the stated Frobenius-stability is a highly plausible formalization goal. The obstacle is solely computational—implementing the Hecke normal form (NF) and linear-programming dual verification within the proof assistant. The underlying mathematics guarantees the stability of the $(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$ Borromean configuration, so this is a technical formalization gap rather than a conceptual one.
+#### Formalization
 
-Although the proof relies on a standard Nonempty-witness argument, demonstrating that this specific topological configuration successfully instantiates the witness formally validates the novel structural existence of the categorical-proton model in the Quantum Observable Universe.
+The Lean formalization provides a `sorry`-free weak proxy proof (`CategoricalProton.exists`) by instantiating a structure without rigorous LP-stability bounds (using unconstrained real fields). Expanding this proxy into a complete proof of Frobenius-stability requires implementing the Hecke normal form and linear-programming dual verification. The underlying mathematics guarantees the stability of the $(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$ Borromean configuration. The explicit instantiation formally validates the structural existence of the categorical-proton model.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs—real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. The underlying categorical identities hold over an abstract coefficient ring; only their archimedean realisation is specialised here.

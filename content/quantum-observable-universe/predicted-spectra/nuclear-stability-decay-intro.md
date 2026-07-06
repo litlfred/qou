@@ -1,25 +1,5 @@
-The valley of stability handed over by the previous section
-is a Diophantine locus; the present section asks which transitions
-across that valley the categorical Skein relation actually permits.
-Definition: Beta decay as a Skein crossing change on the Gröbner normal form realises beta decay as a single Skein crossing change applied
-to the relevant Gröbner–Shirshov normal form, and Definition: Categorical Lepton Number records the conserved categorical quantum
-number this operation preserves.
+The valley of stability identified previously forms a Diophantine locus. We now determine which transitions across this valley the categorical Skein relation permits. We define beta decay as a single Skein crossing change applied to the Gröbner–Shirshov normal form. We then identify the categorical lepton number as the conserved quantity preserved by this operation.
 
-The lepton tower comes next. Proposition: Lepton continuant recurrence
-gives the recurrence on lepton masses, Remark: Lepton tower witness
-records the numerical witness, and Proposition: Tau leptonic universality together with Remark: Tau branching ratio witness extract
-the universality of the leptonic tau decays. Proposition: Parity non-conservation from the Skein relation at $q \neq 1$ is the structural fact
-parity violation is automatic at $q \neq 1$, not an additional input,
-and Proposition: Nuclear spin and parity from braid eigenvalues ties
-nuclear spin-parity assignments to the eigenvalues of the braid
-operator.
+Next, we construct the lepton tower. A continuant recurrence governs lepton masses, verified by a numerical witness. This yields the universality of leptonic tau decays. Crucially, parity non-conservation follows directly from the Skein relation at $q \neq 1$; it is an automatic structural consequence, not an external postulate. We then tie nuclear spin-parity assignments to the eigenvalues of the braid operator.
 
-The closing blocks compute. Proposition: Hadron half-life from the $q$-deformed transition amplitude, Proposition: Hadron $q$-self-correction,
-and Proposition: Skein–Coulomb enhancement of nuclear matrix elements
-give the half-life formulae and their corrections; Remark: Gröbner–Shirshov normal form computation with quotient ideals,
-Remark: Computational strategy for the Gröbner–Shirshov normal form, and Remark: Shell closure as $\mu_n$ torsion in the Kummer tower supply the algebraic machinery the next section will reuse.
-Conjecture: Shell corrections from Skein polynomial factorization of the multi-nucleon link is the bridge: it conjectures the shell
-correction in Skein-polynomial form, and atomic shells and the
-periodic table takes this conjecture as its starting point.
-
-_(draft.)_
+Finally, we compute transition rates. The $q$-deformed transition amplitude, combined with the hadron $q$-self-correction and the Skein–Coulomb enhancement, yields the half-life formulae. We develop the algebraic machinery—Gröbner–Shirshov computations with quotient ideals and shell closure via $\mu_n$ torsion in the Kummer tower—that underpins the subsequent analysis. We conclude by conjecturing the shell correction in Skein-polynomial form, bridging this section to the derivation of atomic shells and the periodic table.

@@ -1,15 +1,3 @@
-This closes the predicted-spectra chapter.  The substrate-level
-mass and coupling predictions — categorical proton uniqueness,
-neutron parity-lift, $\alpha_{\mathrm{EM}}$ from the Hartree-
-categorical fixed point, hadron half-lives, atomic-shell
-binding energies, the topological mass formula's transcendence
-content, and the PL / Seiberg–Witten duality on the topological
-mass formula — have been assembled into the chapter's
-prediction surface.
+This concludes the predicted-spectra chapter. We have assembled the substrate-level predictions into a unified surface: categorical proton uniqueness, the neutron parity-lift, $\alpha_{\mathrm{EM}}$ from the Hartree-categorical fixed point, hadron half-lives, atomic-shell binding energies, the transcendence content of the topological mass formula, and its PL/Seiberg–Witten duality.
 
-The next chapter (observations) carries these substrate-level
-predictions to the archimedean side: $q_0 \approx 1.1097$ is
-plugged in, the predictions are compared against CODATA / PDG /
-SnapPy data, and the per-observable 100× accuracy target from
-AGENTS.md §Precision goals fixes the empirical band against
-which the substrate-level predictions are tested.
+The next chapter carries these substrate-level predictions to the Archimedean side. We plug in $q_0 \approx 1.1097$ and compare the predictions against CODATA, PDG, and SnapPy data. The per-observable 100× accuracy target defines the empirical band against which we test these substrate-level predictions.
