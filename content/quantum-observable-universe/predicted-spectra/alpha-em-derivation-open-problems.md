@@ -139,26 +139,33 @@ Bloch group $B_n(\mathbb{C})$.
 
 ## Implications
 
-Either:
+**The correction is a genuine two-loop effect.**
+The additive photon zero-mode $2/(3\pi)$ — arithmetic weight $1$, derived
+from $b_1/\mathrm{Area}$ — brings the bare $-0.155\%$ residual to
+$-4.2\;\mathrm{ppm}$. The remaining $O(\alpha^2)$ correction has arithmetic
+weight $3$: its home is $\zeta(3)$, with $\mathcal{L}_3(1/\varphi^2) =
+\tfrac{4}{5}\zeta(3)$ on the golden-unit axis, which is precisely the rung at
+which quantum electrodynamics first requires a two-loop diagram. Every route
+that stays at the classical categorical, tree, or scissors-congruence level
+is of weight $\le 2$ — a Bloch $B_3$ class on Bring's two-real-dimensional
+surface (which carries only weight-$2$ dilogarithm data), a mapping-torus
+scissors class (the substrate's one hyperbolic monodromy suspends to a
+zero-volume $T^2$-bundle), the classical residue $\oint\lambda_{SW}^{(2)}$
+(exact $q$-rationals, weight $\le 1$), and the $O(\alpha^2)$ term of the
+Habiro self-coupling (weight $1$) — so by transcendence-weight grading none
+of them can supply a weight-$3$ coefficient.
 
-1. The bare formula $1/\alpha_{\text{bare}} = q[9]_q[10]_q$ is itself
- slightly wrong — perhaps the singlet-trace identification
- $|\mathrm{tr}_\tau(e_-)|^2 = q^{-1}$ in
- [prop:em-coupling-projection](#prop:em-coupling-projection) needs
- refinement.
-2. The correction is genuinely complex (high-degree polynomial in
- many $q$-integers, or involves $q$-dilogarithms / theta-function
- special values not in the standard basis).
-3. The correction reflects genuine quantum-loop corrections that
- are not expressible at the categorical / tree level — i.e., the
- bare formula is exact only in the classical / one-particle
- limit, and the missing $1.55 \times 10^{-3}$ is a vacuum
- polarisation / RG running effect that requires path-integral
- quantisation.
-
-Until one of these is resolved, the canonical statement remains the
-bare formula with the $-0.155\%$ residual documented as an open
-problem.
+The parameter-free prediction is therefore complete to
+$\approx 4\;\mathrm{ppm}$; the finer $O(\alpha^2)$ correction is a genuine
+two-loop object whose closed form, if one exists, must come from a two-loop
+weight-$3$ computation. The identified candidate is the perturbative
+Chern–Simons invariant of the unit tangent bundle $UT(M_{\text{Bring}})$,
+whose two-loop term carries $\zeta(3)$ even though the manifold has zero
+hyperbolic volume. This settles the earlier trichotomy — that the residual
+might reflect (1) an inexact bare formula, (2) a high-degree $q$-rational, or
+(3) a genuine quantum-loop correction — in favour of (3): the missing
+$1.55\times 10^{-3}$ is a two-loop vacuum-polarisation effect, not a
+categorical-level closed form.
 
 ## Promising lead: additive QED-style correction
 
