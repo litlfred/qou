@@ -104,7 +104,8 @@ mp.dps = 60
 
 # muon-anchored canonical q0 (computations/ layer, q-pinning-50-digit)
 Q0_STR = "1.1099785955573347198997632204832250266562084087801536866079"
-ALPHA = mpf(1) / mpf("137.035999084")
+with mp.workdps(60):
+    ALPHA = +(mpf(1) / mpf("137.035999084"))
 
 
 def L3(z):
@@ -168,8 +169,8 @@ def main() -> int:
     assert all_rational, "even-zeta rationality check failed"
     # sanity: the even-zeta series reproduces log(2 sinh(y/2)/y) at y=0.5
     y_t = mpf("0.5")
-    series_val = sum(((-1) ** (m - 1)) / mpf(m) * zeta(2 * m) / (4 * pi ** 2) ** m
-                     * y_t ** (2 * m) for m in range(1, 40))
+    series_val = mp.fsum(((-1) ** (m - 1)) / mpf(m) * zeta(2 * m) / (4 * pi ** 2) ** m
+                         * y_t ** (2 * m) for m in range(1, 40))
     direct_val = log(2 * sinh(y_t / 2)) - log(y_t)
     err_series = fabs(series_val - direct_val)
     print(f"  series vs log(2 sinh(y/2)/y) at y=0.5: |diff| = {nstr(err_series,4)} (OK)")
