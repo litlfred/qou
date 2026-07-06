@@ -1,10 +1,12 @@
 
-The fibre functor $\tau$ maps:
+We compute the image of the categorical differential $d_q$ under the
+fibre functor $\tau$, showing that $\tau(d_q)$ equals the archimedean
+$q$-exterior derivative. The functor $\tau$ maps:
 
 - the Frobenius form $\int_A$ to the contact integral
   $\int_M \alpha \wedge (d\varTheta)^n$,
 - the maximal torus generator $\xi$ to the Reeb vector field
-  satisfying $\iota_\xi\varTheta = 1$ and $\iota_\xid\varTheta = 0$,
+  satisfying $\iota_\xi\varTheta = 1$ and $\iota_\xi d\varTheta = 0$,
 - the weight decomposition $\pi_H, \pi_V$ to the splitting
   $\Omega^k(M) = \Omega^k_H(M) \oplus \varTheta \wedge \Omega^{k-1}_H(M)$ induced by the Reeb direction.
 

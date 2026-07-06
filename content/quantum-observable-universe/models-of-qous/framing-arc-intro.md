@@ -1,5 +1,10 @@
-Every quantum observable universe is realised through five structural
-steps, each developed in dedicated chapters of this paper:
+The arc below is the reader's map of the paper: each subsequent
+chapter sits at exactly one step. It may also be read bottom-up, from
+the concrete endpoint: the final step is a physical prediction
+(spectra and observations), and everything above it is the machinery
+that reaches that endpoint. Every quantum observable universe is
+realised through five structural steps, each developed in dedicated
+chapters of this paper:
 
 1. **Categorical step.** A rigid braided monoidal category with a
    Frobenius--Hopf object, parametrised by the substrate $q$.
@@ -14,5 +19,4 @@ steps, each developed in dedicated chapters of this paper:
 This chapter sketches each step in turn, fixes the common language used
 throughout the paper, and then catalogues alternative models
 (Calabi--Yau, ALE, $p$-adic, characteristic-$p$) that realise the same
-axioms in different arithmetic settings. The arc is the reader's map of
-the paper: each subsequent chapter sits at exactly one step.
+axioms in different arithmetic settings.

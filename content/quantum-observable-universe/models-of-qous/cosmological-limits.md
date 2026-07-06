@@ -1,4 +1,9 @@
 **Conjectural interpretation.**
+This example reads the parameter range of the
+[quantum observable universe](#def:quantum-observable-universe) as a
+cosmological trajectory: the two endpoints of the substrate field $q$
+play the roles of a big-bang and a heat-death limit, which motivates
+examining both $q$-limits below.
 Consider $M = S^3$ with the standard contact form $\varTheta$ and the
 standard instanton on the Hopf bundle.  As the instanton curvature
 concentrates near a point $p_0 \in S^3$, the substrate field $q$
@@ -6,9 +11,9 @@ is expected to exhibit two simultaneous regimes:
 
 - *Near $p_0$* ($q(p) \to \infty$, $\hbar_q \to 1$):
   maximal uncertainty $[\hat{X},\hat{P}]_q \to J$.
-  All observables become maximally non-commutative; the
-  Frobenius form degenerates as
-  $\int_A(f^* f) \sim q^{-1} \to 0$.
+  All observables become maximally non-commutative (the accompanying
+  loss of non-degeneracy of the Frobenius form is recorded in the
+  degeneration case below).
   This is the *"big bang" regime*: the quantum observable
   universe becomes fully quantum-mechanical, with no classical
   shadow.
