@@ -1,0 +1,36 @@
+{
+  "computation": "bar_parity_delta_lambda_prune_probe",
+  "description": "T1 audit-only sweep: grounds the bar-parity selection rule (ladder bar-even + twisted character parity + content antisymmetry) and classifies the recorded Delta_lambda ansatz families by mixing-kernel bar-parity.",
+  "discipline": "no fit; sympy symbolic exact; audit-only classification; (a)-scoped; no new ansatz.",
+  "auditOnly": "docs/audits/2026-07-06-parabolic-cylinder-toroidal-channel-interpolation.md",
+  "results": {
+    "classification": {
+      "A_occam_single_support": "inapplicable — support selector, no mixing kernel",
+      "B_frobenius_co_casimir": "bar-EVEN (dim_q hook product) — parity passes; failure was numerical (wrong sign), not parity",
+      "C_demazure_fibre": "NOT GUARANTEED — Demazure/non-symmetric objects not bar-covariant in general; flagged, witness-case check queued",
+      "D_lp_plancherel_and_d_isotypic": "bar-EVEN (dim_q^2 weights) — parity passes; killed by underdetermination",
+      "D_lp_frobenius_costs": "CONSTRAINED — twisted parity chi_l(q^-1)=(-1)^l(w) chi_l'(q) demands lambda<->lambda'-symmetric costs; recorded singleton picks are asymmetric -> pruned as binding kernels",
+      "c_content_monotonic_pr619": "bar-ODD (content-sum antisymmetry) -> PRUNED as a binding-sector kernel",
+      "E_crystal_kl_probe4": "already pruned (KL positivity); parity-consistent: the chirality sign is the bar-odd weak-sector datum",
+      "F_augmented_markov": "constraint on any concrete instantiation (kernel unspecified)"
+    }
+  },
+  "assertions": {
+    "dimq_bar_even_n2_n3": true,
+    "hoefsmit_block_eigen_trace_det": true,
+    "hoefsmit_braid_relation": true,
+    "twisted_parity_H3_all_irreps_words_len_le3": true,
+    "twisted_parity_H2": true,
+    "content_sum_antisymmetric_under_conjugation": true
+  },
+  "allPassed": true,
+  "verdict": "BAR-PARITY SELECTION RULE GROUNDED AND APPLIED (audit-only): the binding/mixing ladder is bar-even, q-dimensions are bar-even, Hecke characters obey the TWISTED parity chi_lambda(w;q^-1) = (-1)^l(w) chi_lambda'(w;q) (verified via explicit Hoefsmit reps for all H_2/H_3 irreps, words to length 3), and content sums are conjugation-odd. Consequences: content-linear kernels are bar-odd -> pruned; lambda<->lambda'-asymmetric Frobenius-cost kernels are pruned unless the asymmetry routes to the weak sector; dim_q-built kernels pass parity (their failures were numerical, unchanged). SCOPE (a): this prunes KERNEL PARITY CLASSES for future candidates; it does not re-litigate any recorded numerical refutation and proposes no new ansatz (Delta_lambda gate respected).",
+  "scriptHash": "5ad6298e2a65",
+  "scriptCommitSha": "unknown",
+  "commitSha": "f0e63af38f8f343b03c9a5de17fb0fc93b3ea8cb",
+  "engine": "sympy",
+  "computedAt": "2026-07-06T23:01:29.498820+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "bar_parity_delta_lambda_prune_probe.py"
+}
