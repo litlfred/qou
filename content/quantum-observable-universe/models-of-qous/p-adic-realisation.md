@@ -1,3 +1,6 @@
+To show that the substrate parameter and the surrounding categorical
+apparatus are not tied to an archimedean base field, we realise the
+archimedean tuple over a $\pp$-adic base.
 Let $k = \mathbb{Q}_\pp$ and let $\mathbf{C}$ be the category of
 $F$-isocrystals over $\mathbb{Q}_\pp$ (modules over the Dieudonne ring
 $\mathbb{Q}_\pp\langle F, V \rangle / (FV - \pp)$ that are finite-dimensional

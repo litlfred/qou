@@ -1,8 +1,11 @@
 In the archimedean realisation
 ([$\mathbb{C}$-quantum universe](#ex:c-quantum-universe)), the categorical weight
 decomposition ([weight decomposition](#def:weight-decomposition)) specialises
-to the *Reeb decomposition*.  Let $\xi$ denote the *Reeb
-vector field*, characterised by $\iota_\xid\varTheta = 0$ and
+to the *Reeb decomposition*: the contact form $\varTheta$ canonically
+separates the $\mathrm{U}(1)$-fibre direction from the base, so the
+weight grading becomes a split of forms into vertical and horizontal
+parts.  Let $\xi$ denote the *Reeb
+vector field*, characterised by $\iota_\xi d\varTheta = 0$ and
 $\varTheta(\xi) = 1$.  Every differential $k$-form $\alpha$ ($k \geq 1$)
 on $M$ decomposes uniquely as
 

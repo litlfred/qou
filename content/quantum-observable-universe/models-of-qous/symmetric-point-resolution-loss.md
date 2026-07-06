@@ -3,7 +3,8 @@ weight spectrum of $\mathrm{End}_{\mathbf{C}}(A_n)$ remains semisimple,
 with every Plancherel weight
 $w_\lambda(q) = [n]_q! \,/\, H_q(\lambda)^2$ strictly positive at
 $q = 1$ (the classical measure $d_\lambda^2/n!$).  What the symmetric
-point loses is *resolution*, in three graded ways.
+point loses is *resolution*, in two graded ways, collected into a
+stratification.
 
 **Channel identity.**  By
 [channel collapse](#prop:symmetric-point-channel-collapse), the three

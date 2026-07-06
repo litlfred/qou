@@ -5,7 +5,7 @@ Particles chapter develops the particle-generation mechanism (LP/SDP
 confinement, operator-valued folding/unfolding); the Statistics &
 Symmetrisation chapter derives Pauli exclusion and the fermion/boson
 split from the rigid-braided structure. The Predicted Spectra chapter
-catalogues the predicted spectra (leptons, quarks, baryons, nuclei,
+catalogues these (leptons, quarks, baryons, nuclei,
 $\mathfrak{Q}_\beta$, magnetic moments) and compares them to CODATA in the
 Observations chapter. Subsequent chapters extend the framework to
 atomic, molecular, and organic chemistry.
