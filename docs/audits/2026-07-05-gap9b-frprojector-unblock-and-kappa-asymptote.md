@@ -8,7 +8,7 @@ legs.
 ## 1. FR-projector compute: UNBLOCKED
 
 The step-9b workplan
-([`2026-07-02-step9b-gap-approaches.md` round-3 leg 2](workplans/2026-07-02-step9b-gap-approaches.md))
+([`2026-07-02-step9b-gap-approaches.md` round-3 leg 2](../workplans/2026-07-02-step9b-gap-approaches.md))
 recorded the H_{3A} per-partition FR test as **BLOCKED**: `pyhecke_native` unreachable and the
 local `cargo` build 403'd on the litlfred Clarabel fork
 (`github.com/litlfred/Clarabel.rs`, outside session scope) — the `[patch.crates-io]` git source
@@ -35,10 +35,10 @@ run. **The compute is enabled; the actual FR run is the next step.**
 ## 2. κ leg: the isovector-slope asymptote is the trace ratio (Lean, sorry-free)
 
 The Phase-5q closed form
-([`b_pred_mirror_slope_closed_form.py`](../computations/probes/b_pred_mirror_slope_closed_form.py))
+([`b_pred_mirror_slope_closed_form.py`](../../computations/probes/b_pred_mirror_slope_closed_form.py))
 gives `b_pred(A) = log_{q₀}(τ_p/τ_n) + log[(1−ε(N,Z))/(1−ε(Z,N))]/((N−Z)·ln q₀)`, with
 `ε(Z,N) = z^{Z−1}(z−h/2)(z−h)^{N−1}` and measured `z ≈ 0.4994`, `z−h ≈ 0.2903` (both `< 1`).
-[`QOU/Mass/KappaWritheAsymptote.lean`](../content/quantum-observable-universe/lean/QOU/Mass/KappaWritheAsymptote.lean)
+[`QOU/Mass/KappaWritheAsymptote.lean`](../../content/quantum-observable-universe/lean/QOU/Mass/KappaWritheAsymptote.lean)
 formalizes the derived mechanism:
 
 - `epsilon_tendsto_zero` — `|z| < 1 ⇒ ε(z,h;a,b) → 0` as `a → ∞` (geometric vanishing).
