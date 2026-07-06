@@ -1,3 +1,5 @@
+Crossing data for one of the [worked examples](#tm-worked-examples): each listed $\mathfrak{p}$-$\mathfrak{n}$ crossing contributes the mixing transfer matrix $T_{\mathrm{mix}}$.
+
 | Crossing | Pair | Type | Matrix |
 |----------|------|------|--------|
 | $(1, 2)$ | $\mathfrak{p}$-$\mathfrak{n}$ | mix | $T_{\mathrm{mix}}$ |

@@ -1,27 +1,34 @@
-This appendix is **self-contained**.  Every transfer matrix in the
-paper is listed here in explicit closed form, with all notation
-defined locally.  No prior reading is required.
+This appendix is **self-contained**: every transfer matrix in the
+paper appears here in explicit closed form, with all notation
+defined locally.
 
 ## Symbols
 
-See [Table 1](#tbl:tm-notation-table1-data).
+The symbols used throughout this appendix, with their meanings, are
+collected in [Table 1](#tbl:tm-notation-table1-data).
 
 ## Knot dictionary
 
 Every transfer matrix is labelled by a **pair of knots** $(K_1, K_2)$
-meeting at a crossing.  The knots relevant to this paper are:
-
-See [Table 2](#tbl:tm-notation-table2-data).
+meeting at a crossing.  The knots relevant to this paper, and the
+labels by which they are referenced below, are listed in
+[Table 2](#tbl:tm-notation-table2-data).
 
 ## Particle assignments
 
-See [Table 3](#tbl:tm-notation-table3-data).
+The particle carried by each knot type is recorded in
+[Table 3](#tbl:tm-notation-table3-data).
 
 ## Nucleons
 
-See [Table 4](#tbl:tm-notation-table4-data).
+The knot assignments for the proton and neutron are given in
+[Table 4](#tbl:tm-notation-table4-data).
 
 ## Mechanism of transfer-matrix use
+
+The per-crossing transfer matrices are composed across an entire
+nucleus to produce a single scalar, its **nuclear Skein polynomial**
+$P_{\mathcal{N}}(q)$; the recipe below spells out that composition.
 
 Given a nucleus with $A = Z + N$ nucleons, the braid word has
 $A - 1$ generators $\sigma_0, \ldots, \sigma_{A-2}$.  At each
