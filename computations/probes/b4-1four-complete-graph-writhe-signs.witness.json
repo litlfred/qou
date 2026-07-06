@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-06T11:46:49.754311+00:00",
-  "commitSha": "a4fd8cf3705e420d75a6141e4384503f9d1e5b18",
+  "computedAt": "2026-07-06T11:52:51.476985+00:00",
+  "commitSha": "549a7a0ae26415bd31650db872dac246c7fdb871",
   "assertions": [
     {
       "name": "pp_sign_positive_from_convention",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 0,
+  "durationMs": 5,
   "computation": "b4-1four-complete-graph-writhe-signs",
   "scriptFile": "b4_1four_complete_graph_writhe_signs.py",
-  "scriptHash": "0b8384caa3a6",
-  "scriptCommitSha": "a4fd8cf3705e420d75a6141e4384503f9d1e5b18",
+  "scriptHash": "e82388c70cc3",
+  "scriptCommitSha": "549a7a0ae26415bd31650db872dac246c7fdb871",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
