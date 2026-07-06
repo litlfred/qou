@@ -46,3 +46,22 @@ cross-checks).
 - κ-leg asymptote formalized sorry-free (`QOU/Mass/KappaWritheAsymptote.lean`, PR #3404).
 
 **Order:** do Prereq 1 (owner sign-off) → Prereq 2 driver → run A≤4 → commit muon witness.
+
+## Investigation findings (2026-07-06) — de-risking Prereq 1
+
+Design doc: `docs/audits/2026-07-06-q0-producer-muon-refactor-design.md`. Key traps found:
+
+- **The canonical q₀ matches NEITHER current code path.** Committed witnesses use
+  `q-pinning-50-digit.witness.json` q = 1.10997859555733471…; `q_at()` is proton
+  (…8275138), `q_muon_at()` is a *different* muon closed form (…5541806, differs at
+  digit ~11). **The witness is the only faithful source — do NOT recompute via q_muon_at.**
+- **Closure trap:** `q_int`/`log_q`/`q_int_err` close over `qou_substrate.constants`'
+  proton globals; a `q_parameter.Q` override does NOT fix them (13 scripts use `q_int`).
+  The override must re-define these too.
+- **≥22-constant family** (f64 + `_MP` + `Q_50_DIGIT_STR`) must be re-derived consistently;
+  a partial patch gave an 88× B_MeV error.
+- **`mass_at_3A_proper`** is a second choke point (re-exports Q).
+
+**Merge gate:** requires a full re-run+diff sweep of ALL producers vs committed witnesses
+(provenance-drift-filtered) — NOT sample-validatable; a missed constant silently corrupts
+the canonical layer. Focused-session task with the harness in the design doc.

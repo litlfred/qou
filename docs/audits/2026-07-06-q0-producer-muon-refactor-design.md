@@ -1,0 +1,79 @@
+# q₀ producer→witness refactor: mechanism, traps, and safe implementation plan
+
+**Date:** 2026-07-06
+**Branch:** `claude/q0-producer-muon-source-2026-07-06`
+**Bean:** [`yfvb`](../../.beans/yfvb--gap-9b-fr-frontier-producerwitness-q-refactor-prer.md) (Prereq 1)
+
+## Problem
+
+The ~840 committed `computations/*.witness.json` are the **muon-q₀ canonical** derivation
+(AGENTS.md §"q₀ anchor convention"), but re-running any producer in a sandbox drifts its witness
+**proton-ward by ~11.5 ppb** — the recurring `tnjb` bug. Root cause: `computations/substrate/q_parameter.py`
+is a shim that does `from qou_substrate.constants import *`, and since the 2026-05-28 re-pin
+`qou_substrate.constants.Q` is the **proton** value (`q_at()`), while the committed witnesses are muon.
+
+## Findings (this investigation)
+
+### F1 — the canonical value matches NEITHER current code path
+| Source | q₀ (f64) |
+|---|---|
+| committed witnesses (e.g. `fr-pullback-k3-test`) | `1.1099785955573347` |
+| `q-pinning-50-digit.witness.json` `derived_50_digit.q` | `1.10997859555733471989…` ✅ matches |
+| `qou_substrate.constants.q_at()` (proton, current default) | `1.10997858275138…` ✗ |
+| `qou_substrate.constants.q_muon_at()` (muon *closed form*) | `1.10997859555418…` ✗ (differs at digit ~11!) |
+
+**So the ONLY faithful source is `q-pinning-50-digit.witness.json`.** Do **not** recompute q via
+`q_muon_at()` — it gives a *different* muon value (`…5541806` vs the canonical `…5573347`). The witness
+`derived_50_digit` already carries canonical strings for `q, q_inv, hbar_q, hbar_q_sq, H_A, two_q,
+s_skein, z_markov`.
+
+### F2 — closure trap: functions capture the PACKAGE globals, not q_parameter's
+`q_int`, `log_q`, `q_int_err` are *defined inside* `qou_substrate.constants` and reference **that
+module's** `Q`/`Q_INV`/`HA`/`LN_Q` (proton). `from q_parameter import q_int` imports the *same function
+object* — still closing over proton globals. So overriding `q_parameter.Q` does **not** change what
+`q_int(n)` computes. `q_int` is imported by 13 scripts. A correct single-point override **must also
+re-define** `q_int`/`log_q`/`q_int_err` to close over the muon globals.
+
+### F3 — the full family (≥22 names) must be re-derived consistently
+f64: `Q, HBAR_Q, HBAR_Q_SQ, Q_INV, HA, E_CROSS, S_SKEIN, TWO_Q, TANH_LN_Q, LN_Q` (+ `_ERR` variants);
+mpf `_MP` mirrors of each; `Q_50_DIGIT_STR`. A *partial* override (only Q/Q_INV/HA — what a naïve
+wrapper does) leaves `HBAR_Q`, `TWO_Q`, `_MP`, etc. at proton and produces **grossly wrong** results
+(an 88× B_MeV error was observed with the partial-patch wrapper).
+
+### F4 — second choke point: `mass_at_3A_proper`
+`mass_at_3A_proper.py` does `from q_parameter import Q as Q0, Q_INV as QI, HA as HA_VAL` and is imported
+by many producers. It captures q_parameter's values at *its* import time, so it inherits whatever
+q_parameter exports (fixed once q_parameter is corrected — no separate change needed, but it is a
+second reader to include in validation).
+
+## Recommended implementation (safe, single-point, validated)
+
+Append to `computations/substrate/q_parameter.py`, **after** the `import *` (line 57):
+
+1. Read `q-pinning-50-digit.witness.json` `derived_50_digit` (path: `../q-pinning-50-digit.witness.json`
+   relative to `substrate/`). Take `q, q_inv, hbar_q, hbar_q_sq, H_A, two_q, s_skein` as canonical
+   strings.
+2. Rebind the **f64** family: `Q=float(q)`, and the rest from the witness strings where present, else
+   the source formula (`E_CROSS=0.5*HA`, `TANH_LN_Q=HA/TWO_Q`, `LN_Q=math.log(Q)`).
+3. Rebind the **`_MP`** family from `Q_MP=mpmath.mpf(q)` (set dps ≥ 55 first), mirroring
+   `constants.py` lines 249–266 exactly.
+4. Set `Q_50_DIGIT_STR = q` (the witness string).
+5. **Re-define `q_int`, `log_q`, `q_int_err`** in q_parameter to close over the *new* muon globals
+   (copy the bodies from `constants.py`).
+6. Leave the package layer (`qou_substrate.constants`) untouched — precision/prediction scripts that
+   need proton import it directly (AGENTS.md).
+
+## Validation gate (REQUIRED before merge — the blast radius is ~840 witnesses)
+
+- **Harness:** re-run every producer under the patched q_parameter and diff each emitted witness
+  against its committed version with the provenance-drift filter
+  (`computedAt|commitSha|scriptCommitSha|scriptHash|durationMs|engineVersion`). PASS = **substantive
+  diff empty** for all.
+- **Spot F2:** explicitly re-run a `q_int`-using producer (13 candidates) — these are the ones the
+  closure trap would silently break.
+- **Spot F4:** re-run a `mass_at_3A_proper`-consuming producer.
+- Any producer whose committed witness is *intentionally* proton (precision dashboards importing
+  `qou_substrate` directly) must be enumerated and **excluded** from the muon expectation.
+
+**Do not merge on a sample.** A missed constant/closure corrupts the canonical layer silently; only a
+full re-run+diff sweep proves correctness. This is a focused-session task with the harness above.
