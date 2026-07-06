@@ -2,13 +2,12 @@
 -- had no imports, so ℕ/ℤ/ℝ were unresolved.  Surfaced when
 -- QOU.BraidKnot.MassGapObstruction became its first importer.
 import Mathlib.Data.Real.Basic
-import Mathlib.Tactic.NormNum
 
 /-!
 # QOU.AlgebraicSubstrate.qou_obstruction_reduction
 
 **Canonical declaration** for content block
-[`thm:qou-obstruction-reduction`](../../../quantum-observable-universe/stochastic-mechanics/qou-obstruction-reduction.md).
+[`thm:qou-obstruction-reduction`](../../../stochastic-mechanics/qou-obstruction-reduction.md).
 
 The `lean.ref` URI `qou:QOU.AlgebraicSubstrate.qou_obstruction_reduction`
 resolves to this declaration in the `qou` Lake package.
@@ -108,11 +107,8 @@ theorem qou_obstruction_reduction [ctx : QouObstructionReductionContext] :
     ∀ n : ℕ, 1 ≤ n → (ctx.kappa_vanishes n ↔ (n : ℤ) ∣ ctx.chi_A) := by
   -- (a) DERIVED: dim HH²(U_q,Ad) = dim HH_{3-2}(U_q,Ad) = dim HH_1 = 1.
   --     Van den Bergh CY-3 duality composed with Drinfeld rigidity.
-  have ha : ctx.hhCohDim 2 = 1 := by
-    have h : ctx.hhCohDim 2 = ctx.hhHomDim (3 - 2) := ctx.vdb_duality 2 (by norm_num)
-    have e : (3 - 2 : ℕ) = 1 := by norm_num
-    rw [e] at h
-    exact h.trans ctx.drinfeld_rigidity
+  have ha : ctx.hhCohDim 2 = 1 :=
+    (ctx.vdb_duality 2 (by decide)).trans ctx.drinfeld_rigidity
   -- (b),(c) reduce to the residual trace gap κ₀ = χ(A).
   obtain ⟨_, hphi⟩ := obstruction_trace_gap
   exact ⟨ha, hphi, fun n _ => kappa_vanishes_iff_chi n⟩
