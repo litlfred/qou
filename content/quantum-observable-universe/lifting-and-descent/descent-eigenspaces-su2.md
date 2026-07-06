@@ -1,37 +1,16 @@
-Continuing the [:refterm[descent]{#descent} involution for SU(2)](#ex:descent-involution-su2),
-we compute the [:refterm[descent]{#descent} eigenspaces](#prop:descent-eigenspaces) of $\hat{\tau}$
-on $\mathrm{End}(J^1\mathcal{O}(\mathrm{SU}(2)))$.
+Continuing the [:refterm[descent]{#descent} involution for SU(2)](#ex:descent-involution-su2), we compute the [:refterm[descent]{#descent} eigenspaces](#prop:descent-eigenspaces) of $\hat{\tau}$ on $\mathrm{End}(J^1\mathcal{O}(\mathrm{SU}(2)))$.
 
-**The splitting.** The idempotent $\hat{\tau}$ splits the $6$-dimensional
-endomorphism algebra into two complementary subspaces:
+**The splitting.** The idempotent $\hat{\tau}$ splits the $6$-dimensional endomorphism algebra into two complementary subspaces:
 
 $$
   \mathrm{End}(J^1\mathcal{O}(\mathrm{SU}(2)))
   =  \mathfrak{A}^{\mathrm{desc}}  \oplus  \mathfrak{A}^{\mathrm{trans}},
 $$
 
-where $\mathfrak{A}^{\mathrm{desc}} = \mathrm{im}(\hat{\tau})$ is the
-descended (persistent) eigenspace and
-$\mathfrak{A}^{\mathrm{trans}} = \ker(\hat{\tau})$ is the transient eigenspace.
+where $\mathfrak{A}^{\mathrm{desc}} = \mathrm{im}(\hat{\tau})$ is the descended (persistent) eigenspace and $\mathfrak{A}^{\mathrm{trans}} = \ker(\hat{\tau})$ is the transient eigenspace.
 
-**Descended eigenspace.** $\mathfrak{A}^{\mathrm{desc}}$ is
-$3$-dimensional, isomorphic to
-$\mathrm{End}(\mathcal{O}(\mathrm{SU}(2))) \cong \mathfrak{su}(2)$
-via the adjoint representation. These are the endomorphisms that
-commute with the $\mathrm{U}(1)$-averaging: they act purely on the
-base algebra and are insensitive to cotangent fluctuations.
+**Descended eigenspace.** $\mathfrak{A}^{\mathrm{desc}}$ is $3$-dimensional, isomorphic to $\mathrm{End}(\mathcal{O}(\mathrm{SU}(2))) \cong \mathfrak{su}(2)$ via the adjoint representation. These endomorphisms commute with $\mathrm{U}(1)$-averaging: they act exclusively on the base algebra, remaining insensitive to cotangent fluctuations.
 
-**Transient eigenspace.** $\mathfrak{A}^{\mathrm{trans}}$ is
-$3$-dimensional, isomorphic to the cotangent complement
-$\Omega^1(\mathrm{SU}(2)/\mathrm{U}(1)) \cong \Omega^1(\mathbb{CP}^1) \oplus \mathbb{C}$.
-Explicitly, $\mathfrak{A}^{\mathrm{trans}}$ is spanned by
-endomorphisms that act non-by definition on the fibre directions
-$\omega_1, \omega_2, \omega_3$ but are killed by
-$\mathrm{U}(1)$-averaging.
+**Transient eigenspace.** $\mathfrak{A}^{\mathrm{trans}}$ is $3$-dimensional, isomorphic to the cotangent complement $\Omega^1(\mathrm{SU}(2)/\mathrm{U}(1)) \cong \Omega^1(\mathbb{CP}^1) \oplus \mathbb{C}$. Explicitly, $\mathfrak{A}^{\mathrm{trans}}$ is spanned by endomorphisms that act non-trivially on the fibre directions $\omega_1, \omega_2, \omega_3$ but vanish under $\mathrm{U}(1)$-averaging.
 
-**Representation-theoretic identification.** Under the adjoint action of
-$\mathrm{SU}(2)$, the descended eigenspace transforms as $V_1$ (the
-spin-$1$ representation), while the transient eigenspace also transforms
-as $V_1$. The two copies of $V_1$ are distinguished by their
-$\mathrm{U}(1)$-weights: $\mathfrak{A}^{\mathrm{desc}}$ carries weight
-$0$ and $\mathfrak{A}^{\mathrm{trans}}$ carries weights $\pm 1$.
+**Representation-theoretic identification.** Under the adjoint action of $\mathrm{SU}(2)$, the descended eigenspace transforms as $V_1$ (the spin-$1$ representation), matching the transient eigenspace which also transforms as $V_1$. These two copies of $V_1$ are separated by their $\mathrm{U}(1)$-weights: $\mathfrak{A}^{\mathrm{desc}}$ carries weight $0$ while $\mathfrak{A}^{\mathrm{trans}}$ carries weights $\pm 1$.

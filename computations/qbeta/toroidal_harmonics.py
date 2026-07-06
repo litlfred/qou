@@ -110,27 +110,60 @@ def evaluate_c_lambda():
     c_lambda_exp = b_ame / e_gate
     print(f"Experimental c_lambda (Shell-filling fraction): {c_lambda_exp:.6f}")
     
-    # We hypothesize that c_lambda is given by a ratio of Toroidal Harmonics
-    # evaluated at the topological boundary (q0).
-    # Since q0 ~ 0.5 (or cosh(eta) ~ 1.25), let's evaluate P_{1/2}^0.
+    print("\n1. Testing known topological anchors:")
+    # Anchor A: Galois root q0 = exp(2pi i / 5). cosh(eta) = cos(2pi/5) = (sqrt(5)-1)/4
+    cosh_galois = (np.sqrt(5) - 1) / 4
+    p0_g = toroidal_harmonic_P(0, 0, cosh_galois)
+    p1_g = toroidal_harmonic_P(1, 0, cosh_galois)
+    ratio_g = p0_g / p1_g if p1_g != 0 else float('inf')
+    print(f"  [Galois q0 = e^(2pi i/5)] cosh(eta) = {cosh_galois:.4f} -> Ratio = {ratio_g:.6f}")
     
-    # This is a placeholder for the exact topological evaluation, demonstrating
-    # how the continuous basis anchors the discrete mass gap.
-    q0 = 0.5 # Example fixed point
-    eta0 = -np.log(q0)
-    cosh_eta0 = np.cosh(eta0)
+    # Anchor B: Silver ratio associated with Pell-Lucas sequences
+    # q0 = sqrt(2) - 1. cosh(eta) = sqrt(2)
+    cosh_silver = np.sqrt(2)
+    p0_s = toroidal_harmonic_P(0, 0, cosh_silver)
+    p1_s = toroidal_harmonic_P(1, 0, cosh_silver)
+    ratio_s = p0_s / p1_s
+    print(f"  [Silver Ratio]           cosh(eta) = {cosh_silver:.4f} -> Ratio = {ratio_s:.6f}")
+
+    # Anchor C: Golden Ratio (Fibonacci anyons, Jones at q=e^{2pi i/5})
+    # q0 = 1/phi = (sqrt(5)-1)/2. cosh(eta) = sqrt(5)/2
+    cosh_golden = np.sqrt(5) / 2
+    p0_phi = toroidal_harmonic_P(0, 0, cosh_golden)
+    p1_phi = toroidal_harmonic_P(1, 0, cosh_golden)
+    ratio_phi = p0_phi / p1_phi
+    print(f"  [Golden Ratio (1/phi)]   cosh(eta) = {cosh_golden:.4f} -> Ratio = {ratio_phi:.6f}")
+    print(f"    -> Difference from c_lambda_exp = {abs(ratio_phi - c_lambda_exp):.6f}")
+
+    print("\n2. Inverting the Toroidal Ratio to extract exact geometry:")
     
-    p0 = toroidal_harmonic_P(0, 0, cosh_eta0)
-    p1 = toroidal_harmonic_P(1, 0, cosh_eta0)
+    from scipy.optimize import root_scalar
     
-    print(f"Topological anchor cosh(eta0) = {cosh_eta0:.4f}")
-    print(f"P_(-1/2)^0 (n=0): {p0:.6f}")
-    print(f"P_(1/2)^0  (n=1): {p1:.6f}")
+    def objective(x):
+        # We look for x > 1 such that P_{-1/2}(x) / P_{1/2}(x) - c_lambda_exp = 0
+        p0 = toroidal_harmonic_P(0, 0, x)
+        p1 = toroidal_harmonic_P(1, 0, x)
+        return p0 / p1 - c_lambda_exp
     
-    ratio = p0 / p1
-    print(f"Ratio P_(-1/2) / P_(1/2): {ratio:.6f}")
-    print(f"Difference from experimental c_lambda: {abs(c_lambda_exp - ratio):.6f}")
-    print("\nNext step is to derive the exact boundary value for eta0 from the B_sym intercept.")
+    # Bracket the root between 1.01 and 10.0
+    res = root_scalar(objective, bracket=[1.01, 10.0])
+    
+    if res.converged:
+        exact_cosh = res.root
+        print(f"  Target Geometry Found!")
+        print(f"  Exact cosh(eta_0) required : {exact_cosh:.6f}")
+        
+        # Calculate the corresponding w and q
+        # cosh(eta) = 1/(2w) - 1  => w = 1 / (2*(cosh(eta) + 1))
+        exact_w = 1 / (2 * (exact_cosh + 1))
+        print(f"  Corresponding w = z^2      : {exact_w:.6f}")
+        
+        # q from cosh(eta): cosh(eta) = (q + 1/q)/2 => q^2 - 2cosh*q + 1 = 0
+        # q = cosh - sqrt(cosh^2 - 1) (since q < 1)
+        exact_q = exact_cosh - np.sqrt(exact_cosh**2 - 1)
+        print(f"  Corresponding q_0          : {exact_q:.6f}")
+    else:
+        print("  Root finding failed.")
 
 if __name__ == "__main__":
     derive_bridge()
