@@ -128,10 +128,40 @@ Outcome semantics: PASS = I-A's shadow is *not excluded* (scope-(a) positive;
 no c_k value, nothing wired); any KILL → record scope-(a) refutation row and
 fall back to I-B / Z3 carriers.
 
+### Outcome (2026-07-06, run after pre-statement commit `c9b873b6`)
+
+**I-A KILLED on K2 (scope-(a)); K1a/K1b structure SURVIVES and transfers.**
+Probe [`qbeta_c4qz_fourone_operator_q1_shadow_probe.py`](../../computations/qbeta/qbeta_c4qz_fourone_operator_q1_shadow_probe.py)
+→ [witness](../../computations/qbeta/qbeta-c4qz-fourone-operator-q1-shadow.witness.json)
+(sympy exact; exit 1 = candidate-excluded convention):
+
+- **K1a PASS — identically:** `α₂(q=1, x) ≡ −1` for ALL `x` — the 4₁
+  operator's trailing slot reproduces the proved `a₂ = c₂ = −1` constraint
+  with no tuning. (Equivalent to P-C15's `R(q→1) = 1`.)
+- **K1b PASS — golden bar-pair locus:** `α₁(q=1, x) = x² − 3x + 3 = 2` exactly
+  on `x² − 3x + 1 = 0`, i.e. `x* = (3±√5)/2 = φ^{±2}` — a **bar-conjugate
+  pair** (`x*·x*′ = 1`, `x + x⁻¹ = 3` — classical `M + M⁻¹ = 3` locus).
+  Recorded as structure, not wired.
+- **K2 FAIL — the kill:** `bar(α₁)/α₁` is **not** a Laurent monomial: it
+  carries the factor `P₊/(q²x²·P₋)` with
+  `P₋ = q²x²−q²x+q²−qx²−qx+q+x²−x+1` (the operator's middle quintic factor)
+  and `P₊ ≠ ±P₋` (`P₊ − P₋ = 2q(x²−1)`). Cross-checked against the committed
+  P-C15 witness `coeff_bar_ratios.a1` — identical; P-C15's asserted
+  monomiality was only ever for the `a₀/a₂` Casoratian ratio.
+
+**Scope-(a) statement:** the *raw pointwise* slot identification — `a₁-slot :=
+−a₁/a₂` evaluated at a fixed `x` — cannot supply the required bar-ODD kernel
+coefficient. NOT excluded: (i) evaluation symmetrized over the bar-pair locus
+`{x*, 1/x*}` (where bar-transport permutes the pair — exactly the K1b golden
+pair); (ii) the I-B cyclotomic re-basing; (iii) Z3 factorizations where a
+bar-odd carrier absorbs the non-monomial factor. The K1a identity + K1b
+bar-pair locus transfer to any refined identification.
+
 ## 5. Session log
 
 | date | event |
 |---|---|
 | 2026-07-06 | Tranche opened; beans `uz9i`/`3iwu`/`ea56`/`c4qz`/`iw8o`; this ledger landed as first commit. PR [#3449](https://github.com/litlfred/qou/pull/3449). |
 | 2026-07-06 | Intent posted on overlapping siblings [#3429](https://github.com/litlfred/qou/pull/3429) (f-map power-class pincer — same axis; C15 row/probe-id collision flagged) and [#3447](https://github.com/litlfred/qou/pull/3447) (c₃-not-exact verdict — framing here confirmed consistent). Gemini reviewer at daily quota; Copilot reviewer check failed (bot-side) — docs-only PR, no code CI. |
+| 2026-07-06 | **Bean `c4qz` DONE — I-A raw-slot identification KILLED on slot bar-parity (scope-(a)); `α₂ ≡ −1` identity + golden bar-pair locus `x* = φ^{±2}` survive** (§4-bis outcome). Next open moves: bar-pair-symmetrized evaluation, I-B re-basing, Z3 carrier factorization. |
 | 2026-07-06 | **Bean `ea56` DONE — the z-alone exclusion (scope-(a)).** `z(q)=√q/(1+q)` proved **exactly bar-EVEN** (twist 1) and `κ_{(2,1)}` exactly bar-ODD, sorry-free Lean [`QOU/QBeta/ZBarParity.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/ZBarParity.lean) (`lean`-direct exit 0) + sympy-exact 7/7 witness. Since the bar-fixed locus is a subring and `a₁ = −c₃` is bar-ODD nonzero, **no scalar rational function of z alone can source `a₁`** — class Z2 excluded; survivors are Z3 (bar-even z-functional × bar-odd carrier) and Z4 (operator-level / P-C15). Hypothesis-class lattice: [`docs/scope/2026-07-06-z-ck-fmap-hypothesis-class.md`](../scope/2026-07-06-z-ck-fmap-hypothesis-class.md). Bean `c4qz` unblocked. |
