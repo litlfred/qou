@@ -1,5 +1,10 @@
-These examples show the complete transfer matrix computation
-for small nuclei from scratch.  Every step is shown.
+These examples work the complete transfer matrix computation
+for small nuclei by hand, from scratch, with every step shown.
+The point of doing so is twofold: the light nuclei are small
+enough that the abstract construction can be verified by eye,
+and walking through them makes the $\binom{A}{2}$ cost of the
+method concrete — one transfer-matrix multiplication per
+nucleon pair.
 
 Recall: $z = 1/(q^{1/2} + q^{-1/2})$.
 
@@ -7,8 +12,9 @@ Recall: $z = 1/(q^{1/2} + q^{-1/2})$.
 
 ## Example 1: Hydrogen ($A = 1$, $Z = 1$)
 
-One proton, no nucleon pairs.  There are **zero** generators
-and **zero** transfer matrix multiplications.
+Hydrogen is included to fix the empty-product convention: with
+one proton there are no nucleon pairs, hence zero generators and
+zero transfer matrix multiplications.
 
 $$
   P_{{}^1\mathrm{H}}(q) =  1 \quad\text{(empty product)}
@@ -22,16 +28,12 @@ rings) and the electron shell.
 
 ## Example 2: Deuterium ($A = 2$, $Z = 1$, $N = 1$)
 
-One proton $\mathfrak{p}$, one neutron $\mathfrak{n}$.
-
-**Nucleon ordering:** $[\mathfrak{p}, \mathfrak{n}]$.
-
-**Generators:** one generator $\sigma_0$.
-
-**Crossings at $\sigma_0$:** one crossing, type
-$\mathfrak{p}$-$\mathfrak{n}$ = mixed.
-
-**Transfer matrix product:**
+Deuterium is the first case with any braiding at all: one proton
+$\mathfrak{p}$ and one neutron $\mathfrak{n}$, ordered as
+$[\mathfrak{p}, \mathfrak{n}]$.  This single pair gives one
+generator $\sigma_0$, at which there is one crossing, of the
+mixed $\mathfrak{p}$-$\mathfrak{n}$ type.  The transfer matrix at
+$\sigma_0$ is therefore the single mixed factor:
 
 $$
   M_0(q) =  T_{\mathrm{mix}}(q)
@@ -43,7 +45,8 @@ $$
   \end{pmatrix}
 $$
 
-**Markov-traced volume:**
+Taking the Markov trace of $M_0$ against the weight $z$ gives
+the traced volume:
 
 $$
   \hat{V}_0(q)
@@ -55,27 +58,24 @@ $$
   1
 $$
 
-**Nuclear Skein polynomial:**
+Since there is only the one generator, the nuclear Skein
+polynomial is this single factor:
 
 $$
   P_{{}^2\mathrm{H}}(q) =  \hat{V}_0(q)
 $$
 
-This is a single factor — no product needed.  The polynomial
-has degree $\leq 3$ in $q^{1/2}$.
-
-**Computation count:** $\binom{2}{2} = 1$ transfer matrix
-multiplication.
+The polynomial has degree $\leq 3$ in $q^{1/2}$, and the whole
+computation is the single multiplication $\binom{2}{2} = 1$.
 
 ---
 
 ## Example 3: Helium-3 ($A = 3$, $Z = 2$, $N = 1$)
 
-Two protons, one neutron.
-
-**Nucleon ordering:** $[\mathfrak{p}_0, \mathfrak{p}_1, \mathfrak{n}_2]$.
-
-**Generators:** $\sigma_0$ and $\sigma_1$.
+Helium-3 is the first case with a genuine product of transfer
+matrices.  Its two protons and one neutron are ordered as
+$[\mathfrak{p}_0, \mathfrak{p}_1, \mathfrak{n}_2]$, giving two
+generators, $\sigma_0$ and $\sigma_1$.
 
 ### Generator $\sigma_0$
 
@@ -164,11 +164,11 @@ multiplications (2 at $\sigma_0$, 1 at $\sigma_1$).
 
 ## Example 4: Helium-4 ($A = 4$, $Z = 2$, $N = 2$)
 
-Two protons, two neutrons.
-
-**Nucleon ordering:** $[\mathfrak{p}_0, \mathfrak{p}_1, \mathfrak{n}_2, \mathfrak{n}_3]$.
-
-**Generators:** $\sigma_0$, $\sigma_1$, $\sigma_2$.
+Helium-4 shows the full triangular pattern.  Its two protons and
+two neutrons, ordered as
+$[\mathfrak{p}_0, \mathfrak{p}_1, \mathfrak{n}_2, \mathfrak{n}_3]$,
+give three generators $\sigma_0$, $\sigma_1$, $\sigma_2$, carrying
+three, two and one crossings respectively.
 
 ### Generator $\sigma_0$ (3 crossings)
 
@@ -273,5 +273,3 @@ the universal $\Delta_\beta$.
 ## Quick-reference: computation count
 
 See [Table 10](#tbl:tm-worked-examples-table10-data).
-
-All computable in milliseconds on modern hardware.

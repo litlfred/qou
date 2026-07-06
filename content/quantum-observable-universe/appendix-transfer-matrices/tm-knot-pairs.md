@@ -1,8 +1,13 @@
-This section lists **every** transfer matrix for each knot pair,
-including trivial and degenerate cases.  All matrices are
-$2 \times 2$ over $\mathbb{Z}[q^{\pm 1/2}]$.
+A transfer matrix records how a single crossing between two knotted
+strands acts on the Hecke chain; each knot pair contributes a
+$2 \times 2$ block determined by its crossing coefficients $c$ and
+$d$.  The catalogue matters because every nuclear and electromagnetic
+crossing in the paper reduces to one of just three classes
+(Section 5), so the long list below — trivial and degenerate cases
+included — is exhaustive rather than diverse.
 
-Write $H_A = q - q^{-1}$ for the Hecke amplitude.
+This section lists **every** transfer matrix for each knot pair.  All
+matrices are $2 \times 2$ over $\mathbb{Z}[q^{\pm 1/2}]$.
 
 ---
 
