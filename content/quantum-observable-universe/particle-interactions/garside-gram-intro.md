@@ -1,3 +1,5 @@
-The derived-atom examples of §5 produced specific normal forms but kept the Frobenius Gram weighting implicit. Definition: Typed Garside element of the nuclear braid names the staircase form that organises the typed crossings of the nuclear braid; Proposition: Gram-weighted $\mathcal{Q}_q$-value from Frobenius norm of conversion channels defines the $\mathcal{Q}_q$-value as the $G^{-1}$-weighted Frobenius norm over conversion channels and exhibits it as the right input for the transfer-matrix calculations of §7. Remark: Eigenstructure of the Gram weight and the adjoint character records that the Gram eigenstructure is the adjoint character on Wedderburn blocks, anchoring the $\mathcal{Q}_q$-value in the Jucys--Murphy spectral data.
+The derived-atom examples in §5 produce specific normal forms but leave the Frobenius Gram weighting implicit.
 
-_(draft.)_
+We define the typed Garside element of the nuclear braid to organize the typed crossings in staircase form. We establish the $\mathcal{Q}_q$-value as the $G^{-1}$-weighted Frobenius norm over conversion channels. This norm supplies the input for the transfer-matrix calculations in §7. We then show that the Gram eigenstructure is the adjoint character on Wedderburn blocks. This anchors the $\mathcal{Q}_q$-value in the Jucys--Murphy spectral data.
+
+*(draft)*
