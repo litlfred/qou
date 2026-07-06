@@ -1224,6 +1224,58 @@ theorem garnir_row_collision (t : Specht.Tableau μ) {i j : ℕ}
     · rw [hB, Finset.mem_filter] at hxB hyB
       exact absurd (hinj x y (hxB.2.1.trans hyB.2.1.symm) hfxy) hxy
 
+/-- The Garnir label-set `A`: labels in column `j` of `t` at rows `≥ i`. -/
+def garnirA (t : Specht.Tableau μ) (i j : ℕ) : Finset (Fin (Specht.nOf μ)) :=
+  Finset.univ.filter (fun l => Specht.colPattern t l = j ∧ i ≤ Specht.rowPattern t l)
+
+/-- The Garnir label-set `B`: labels in column `j+1` of `t` at rows `≤ i`. -/
+def garnirB (t : Specht.Tableau μ) (i j : ℕ) : Finset (Fin (Specht.nOf μ)) :=
+  Finset.univ.filter (fun l => Specht.colPattern t l = j + 1 ∧ Specht.rowPattern t l ≤ i)
+
+/-- The Garnir permutation set `S_{A∪B}`: permutations fixing every label outside
+`A ∪ B`.  A subgroup (as a `Finset`) closed under right-multiplication by any
+transposition of two labels of `A ∪ B`. -/
+def garnirG (t : Specht.Tableau μ) (i j : ℕ) : Finset (Equiv.Perm (Fin (Specht.nOf μ))) :=
+  Finset.univ.filter (fun σ => ∀ l, l ∉ garnirA t i j ∪ garnirB t i j → σ l = l)
+
+omit [CharZero k] in
+/-- **Garnir full-set annihilation (sorry-free).** The rep-level signed sum over
+`S_{A∪B}` annihilates `e_t`.  For every `ρ ∈ C_t` the pigeonhole
+(`garnir_row_collision`) supplies a same-row transposition `τ_ρ = swap a b` of
+`A ∪ B` labels; `mtab_sum_sign_smul_of_eq_zero` then kills the tabloid family, and
+`sum_sign_rep_polytabloid_eq_zero_of_family` lifts it to the polytabloid. -/
+theorem garnir_full_annihilation (t : Specht.Tableau μ) {i j : ℕ}
+    (hij : (i, j) ∈ μ) (hij1 : (i, j + 1) ∈ μ) :
+    ∑ σ ∈ garnirG t i j, (Equiv.Perm.sign σ : ℤ) •
+        Specht.Mtab.rep μ σ (Specht.polytabloid (k := k) t) = 0 := by
+  classical
+  refine sum_sign_rep_polytabloid_eq_zero_of_family t (garnirG t i j) (fun ρ => ?_)
+  obtain ⟨a, b, hab, haA, hbB, hcollide⟩ :=
+    garnir_row_collision t hij hij1 (ρ : Equiv.Perm (Fin (Specht.nOf μ))) ρ.2
+  have haU : a ∈ garnirA t i j ∪ garnirB t i j :=
+    Finset.mem_union_left _ (by rw [garnirA, Finset.mem_filter]; exact ⟨Finset.mem_univ _, haA⟩)
+  have hbU : b ∈ garnirA t i j ∪ garnirB t i j :=
+    Finset.mem_union_right _ (by rw [garnirB, Finset.mem_filter]; exact ⟨Finset.mem_univ _, hbB⟩)
+  refine mtab_sum_sign_smul_of_eq_zero ((ρ : Equiv.Perm (Fin (Specht.nOf μ))) • t)
+    (garnirG t i j) (Equiv.swap a b) (Equiv.swap_mul_self a b) (Equiv.Perm.sign_swap hab) ?_ ?_
+  · -- `swap a b` fixes the row pattern of `ρ • t` (it swaps two same-row labels)
+    rw [Specht.mem_rowStab]
+    funext l
+    rw [Specht.arrow_smul_apply, Equiv.symm_swap]
+    rcases eq_or_ne l a with rfl | hla
+    · rw [Equiv.swap_apply_left]; exact hcollide.symm
+    rcases eq_or_ne l b with rfl | hlb
+    · rw [Equiv.swap_apply_right]; exact hcollide
+    · rw [Equiv.swap_apply_of_ne_of_ne hla hlb]
+  · -- `garnirG` is closed under right-multiplication by `swap a b`
+    intro σ hσ
+    simp only [garnirG, Finset.mem_filter, Finset.mem_univ, true_and] at hσ ⊢
+    intro l hl
+    rw [Equiv.Perm.mul_apply,
+      Equiv.swap_apply_of_ne_of_ne (fun h => hl (by rw [h]; exact haU))
+        (fun h => hl (by rw [h]; exact hbU))]
+    exact hσ l hl
+
 /-! #### The single residual straightening core + the induction skeleton -/
 
 omit [CharZero k] in
