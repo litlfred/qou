@@ -210,13 +210,25 @@ def _constants():
 
 
 def _bond_type_L():
-    """Per-bond-type 2-nucleon sub-braid log-suppression: p-p (2,0), p-n (1,1),
-    n-n (0,2). The V_i of the factorized q-CLT, computed once."""
+    """Per-bond-type 2-nucleon sub-braid log-suppression: p-p (2,0),
+    p-n (1,1) (overridden by exact Reeb-flow bound), n-n (0,2).
+    The V_i of the factorized q-CLT, computed once."""
     from tr_m_atom_via_transfer import tr_m_atom_zn
+    import mpmath as mp
+    from q_parameter import Q as Q0_val
+    import codata_constants as _codata
+    
+    q0 = mp.mpf(str(Q0_val))
+    g_true = float(mp.mpf(1) / mp.sqrt(mp.mpf(5) + (q0 - mp.mpf(1))**2 / q0))
+    _, _, alpha = _constants()
+
     out = {}
     for key, (Z, N) in (("pp", (2, 0)), ("pn", (1, 1)), ("nn", (0, 2))):
-        ta, tf, _, _ = tr_m_atom_zn(Z, N, dps=50)
-        out[key] = math.log(float(tf) / float(ta))
+        if key == "pn":
+            out[key] = (5.0 * g_true) / alpha
+        else:
+            ta, tf, _, _ = tr_m_atom_zn(Z, N, dps=50)
+            out[key] = math.log(float(tf) / float(ta))
     return out
 
 
