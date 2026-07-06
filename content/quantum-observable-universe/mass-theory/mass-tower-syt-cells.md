@@ -18,11 +18,11 @@ $$
 
 with $L_1 = 1$. They commute pairwise ($[L_i, L_j] = 0$) and
 act diagonally on the Young basis: for a SYT $T$ of shape
-$\lambda$ and basis vector $|T\rangle$,
+$\lambda$ and basis vector $v_T$,
 
 $$
-  L_k \, |T\rangle
-  = q^{2 c_T(k)} \, |T\rangle,
+  L_k \, v_T
+  = q^{2 c_T(k)} \, v_T,
 $$
 
 where $c_T(k) = j - i$ is the content of the cell of $T$
@@ -47,11 +47,11 @@ in any SYT shape $\lambda \vdash n$. Under this reindexing:
  $k$ range over cells, not over generator positions, so there is
  no "adjacent vs far-commuting" distinction.
 
-* **Eigenvalue product** is diagonal: on $|T\rangle$,
+* **Eigenvalue product** is diagonal: on $v_T$,
 
  $$
-    L_{k_1} L_{k_2} \, |T\rangle
-    = q^{2(c_T(k_1) + c_T(k_2))} \, |T\rangle.
+    L_{k_1} L_{k_2} \, v_T
+    = q^{2(c_T(k_1) + c_T(k_2))} \, v_T.
   $$
 
 * **All pairs are on equal footing**: $[L_i, L_j] = 0$ by
