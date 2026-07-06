@@ -7,13 +7,13 @@ The simulator renders the four $\beta$-branches of the spectral resolvent in $\o
 - $\beta_3 = (3\pi + \alpha)/3$ (green)
 - $\beta_4 = (5\pi + \alpha)/3$ (orange-yellow)
 
-**Default view**: Standard resolvent with $N = 18$ $q$-series terms, moderate grid density, and $\omega$-coordinate projection.  Auto-rotation enabled for an overview of the surface topology.
+**Default view**: Standard resolvent with $N = 18$ $q$-series terms, moderate grid density, and $\omega$-coordinate projection. Auto-rotation enabled for an overview of the surface topology.
 
 **Parameters**:
 
-- $r_{\min}$, $r_{\max}$ — radial range for the resolvent
-- $\delta r$, $\delta\zeta$ — grid density (radial and angular)
-- $N$ — $q$-series truncation precision (number of terms)
-- Projection mode: $\omega$-coords, $+\mathrm{Sp}(1)$ rotation, or raw $x_j$
+- $r_{\min}$, $r_{\max}$ — radial range for the resolvent.
+- $\delta r$, $\delta\zeta$ — grid density (radial and angular).
+- $N$ — $q$-series truncation precision (number of terms).
+- Projection mode: $\omega$-coords, $+\mathrm{Sp}(1)$ rotation, or raw $x_j$.
 
-Growth factor profiles and Weierstrass curve data are displayed in auxiliary panels.
+Growth factor profiles and Weierstrass curve data appear in auxiliary panels.
