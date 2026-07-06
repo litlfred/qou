@@ -7,7 +7,8 @@ Column legend: **Magic feature** is how the transition acts on the
 closed-shell counts $\mathcal{M} = \{0, 2, 8, 20, 28, 50, 82, 126\}$ —
 creating, breaking, or leaving intact a closure. **Residual** is the
 shell-correction contribution: the fractional discrepancy between the
-leading-order transfer-matrix prediction and the observed rate.
+leading-order transfer-matrix Q-value prediction and the observed
+(AME 2020) Q-value.
 
 | Nucleus | $A$ | Transition type | Magic feature | Residual |
 |---------|:---:|----------------|---------------|:--------:|
