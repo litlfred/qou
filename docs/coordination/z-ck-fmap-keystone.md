@@ -95,6 +95,39 @@ change any registry tier.
 3. **Coordinate (bean `iw8o`).** Intent on overlapping Q_β siblings
    (the #3273 / #3294 lineage; any active `qbeta-*` branches).
 
+## 4-bis. Bean `c4qz` — pre-statement (identifications + kill criteria, BEFORE any run)
+
+The 4₁ order-2 qZeilberger operator (P-C15 survivor) is a recurrence in the
+color `N` with coefficients rational in `x = q^N`; the c_k ladder is indexed by
+the rung `k`. Candidate identifications:
+
+- **I-A (color↔rung, direct):** slot the operator's normalized homogeneous
+  coefficients `α₁ = −a₁/a₂`, `α₂ = −a₀/a₂` into the depth-2 kernel slots of
+  `QBetaCKRecursionKernelConstraints` (`α₂ ↔ c₂ = −1`, `α₁ ↔ −c₃`), with `x`
+  a free evaluation point (the classical `M = q^N` held fixed as `q → 1`).
+- **I-B (cyclotomic re-basing):** push the `N`-recurrence through the Habiro
+  `(q;q)_n` expansion to an induced recurrence on the cyclotomic coefficients,
+  then the `(u;u)_m → u^k` basis change (the 2026-06-13 audit §2-bis bridge).
+  Genuinely hard; NOT attempted in this probe.
+- Caveat recorded up front: the 4₁ operator is **inhomogeneous** (`… = b`);
+  the `CKRecursion` engine is homogeneous. I-A tests the homogeneous part
+  only.
+
+**Kill criteria for I-A's q=1 shadow (decidable, no anchors, no fit):**
+
+1. **K1a:** `α₂(q=1, x) ≡ −1` identically in `x` (the `a₂ = c₂ = −1`
+   constraint). If not identically `−1` → I-A killed.
+2. **K1b:** `α₁(q=1, x) = 2` (the `a₁ = −c₃ → 2` shadow, `c₃ → −2 = J_Hopf(1)`)
+   must have a solution `x* ∈ ℝ_{>0}`. Two constraints, one unknown `x` —
+   overdetermined unless K1a is identical; no solution → I-A killed.
+3. **K2:** the `α₁` slot must be bar-ODD (up to monomial twist) and `α₂`
+   bar-EVEN under `q ↦ 1/q, x ↦ 1/x` — slot-parity match with
+   `ck_a1_bar_odd` + the ea56 exclusion. Wrong parity → I-A killed.
+
+Outcome semantics: PASS = I-A's shadow is *not excluded* (scope-(a) positive;
+no c_k value, nothing wired); any KILL → record scope-(a) refutation row and
+fall back to I-B / Z3 carriers.
+
 ## 5. Session log
 
 | date | event |
