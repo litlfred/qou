@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-06T18:23:24.444171+00:00",
-  "commitSha": "669627c7c74cf89aca40a4652d1897f1040b609d",
+  "computedAt": "2026-07-06T18:36:56.751729+00:00",
+  "commitSha": "ac13ae95e8faa2fcc85e3bb1be4ff1f53592d49b",
   "assertions": [
     {
       "name": "I1_polynomial_identity",
@@ -33,8 +33,8 @@
   "durationMs": 1,
   "computation": "reeb-g-structural-identity",
   "scriptFile": "reeb_g_structural_identity_probe.py",
-  "scriptHash": "0651dc2d51dc",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "4a9a108a853c",
+  "scriptCommitSha": "dbf1bf8744ef43d14acc0a279496992f9a62e5f2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

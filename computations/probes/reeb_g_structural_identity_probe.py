@@ -96,7 +96,7 @@ def main() -> int:
     defo = (v - 1 / v) ** 2
 
     # Reconciliation: det-form effective magnitude the deuteron would need
-    g_eff = mp.sqrt(1 - mp.e ** (-AME_B_2H / E0))
+    g_eff = mp.sqrt(1 - mp.exp(-AME_B_2H / E0))
     ceiling_cl = 1 / mp.sqrt(5)
 
     result = {
