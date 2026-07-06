@@ -3,12 +3,12 @@
 The Hoefsmit seminormal basis is built by inductively decomposing
 $V^{\otimes n}$ via the chain
 $H_1(q) \subset H_2(q) \subset \cdots \subset H_n(q)$. At each step
-$k$, every existing eigenvector $|t\rangle$ for $H_k(q)$ splits
+$k$, every existing eigenvector $v_t$ for $H_k(q)$ splits
 under $\sigma_k$ into:
 
-- $a^+_t \cdot |t \cup \square_{k+1}^{\to}\rangle$ (extend tableau
+- $a^+_t \cdot v_{t \cup \square_{k+1}^{\to}}$ (extend tableau
   rightward; $q$-eigenvalue);
-- $a^-_t \cdot |t \cup \square_{k+1}^{\downarrow}\rangle$ (extend
+- $a^-_t \cdot v_{t \cup \square_{k+1}^{\downarrow}}$ (extend
   tableau downward; $-q^{-1}$-eigenvalue).
 
 Conway's surreal construction at stage $k$ takes each existing
