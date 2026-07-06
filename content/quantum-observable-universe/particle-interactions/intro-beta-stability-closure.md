@@ -1,14 +1,3 @@
-Beta stability — the condition that an isotope does not decay via
-$\beta^-$ or $\beta^+$ emission — is the categorical closure
-condition that survives the substrate flow.  This section uses
-the deuteron as a first-principles anchor (the simplest stable
-non-trivial isotope) and assembles the closure rule that
-identifies the substrate-level beta-stable subset.
+Beta stability—the condition that an isotope avoids $\beta^-$ and $\beta^+$ emission—is the categorical closure condition preserved by the substrate flow. This section identifies the substrate-level beta-stable subset. We use the deuteron as a first-principles anchor.
 
-The arc starts with the deuteron-first-principles calculation,
-extends to the symbolic and operator-valued mass towers, and
-records the closure properties under the substrate flow.  The
-closing blocks tie the closure rule to the Mark-up rule from
-the previous section and supply the categorical version of the
-empirical valley of stability that the next section refines into
-a Diophantine valley.
+We begin with the deuteron calculation. We then extend to the symbolic and operator-valued mass towers, recording closure properties under the substrate flow. We link the closure rule to the Mark-up rule. Finally, we supply the categorical version of the empirical valley of stability, which the next section refines into a Diophantine valley.

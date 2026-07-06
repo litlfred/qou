@@ -1,10 +1,3 @@
-The integer-linear-program (ILP) selection on stable nuclei picks
-out the categorical *magic shells* — the closed nucleon
-configurations whose categorical-energy minimum is bounded below
-by the coupling constant $\kappa$.  This section unwraps the
-ILP solution count, extracts the $\kappa$ coupling that controls
-the shell-closure pattern, and connects the shell-closure
-spectrum to the empirical magic-number sequence ($2, 8, 20,
-28, 50, 82, 126$).
+The integer-linear-program (ILP) selection on stable nuclei identifies the categorical magic shells. These are closed nucleon configurations whose categorical-energy minimum is bounded below by the coupling constant $\kappa$. This section unwraps the ILP solution count. We extract the $\kappa$ coupling that controls the shell-closure pattern. We then connect the shell-closure spectrum to the empirical magic-number sequence ($2, 8, 20, 28, 50, 82, 126$).
 
-The arc proceeds in two layers.  The first half exhibits the ILP unwrap, the shell Schur-Weyl self-duality, and the compound-$\beta$ shell calibration with tables; the second half pins the $\kappa$ coupling constant from the substrate parameter and closes the section with the quantum-dilogarithm disambiguation that the next sub-section relies on.
+The development proceeds in two layers. The first layer exhibits the ILP unwrap, the shell Schur-Weyl self-duality, and the compound-$\beta$ shell calibration. The second layer pins the $\kappa$ coupling constant from the substrate parameter. We conclude with a quantum-dilogarithm disambiguation required for the next section.
