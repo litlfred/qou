@@ -746,3 +746,196 @@ yields a clean closed form is `(a)`-OPEN — not claimed refuted.*
   `content/quantum-observable-universe/mass-theory/cl3-zeta5-geometric-realization.md`,
   `content/quantum-observable-universe/brings-surface/color-elliptic.md`,
   `content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.md`
+
+---
+
+## Session-3: 2-loop weight-3 attempt
+
+**Date:** 2026-07-06 (RESEARCH bean `9un2`, continuation)
+**Scope:** Session-2 *proved* the O(α²) coefficient is a genuine weight-3 = 2-loop
+object (arithmetic home `{ζ(3), L(3,χ₅)}`, exact generator `𝓛₃(1/φ²) = (4/5)ζ(3)`)
+and that the classical `λ_SW` residue — being weight-1 — cannot be it. Session-3
+attempts the **actual 2-loop step**: does the *categorical 2-loop* — the `O(α²)`
+term of the Habiro/Schwinger self-coupling `H(q) = [2]_q(1 − h²α)` — produce a
+`ζ(3)·(rational in q)` with the data-demanded normalization
+`C_data ≈ 0.98645·(1/4π)`, using the derived weight-3 home? Companion compute:
+[`computations/bring_2loop_weight3_coefficient_probe.py`](../../computations/bring_2loop_weight3_coefficient_probe.py)
+(standalone mpmath, 60 dps; emits no witness — records an open structural finding).
+
+**Verdict: OPEN — the categorical 2-loop does NOT yield the ζ(3) coefficient.**
+The self-coupling's *own* second-order term is structurally the **wrong weight**
+(it is weight-1, a fibre-level q-deformation, not weight-3 ζ(3)); no
+parameter-free weight-3 normalization built from the structurally-available
+rationals hits `C_data`; and the deficit below `1/(4π)` is only `~2.8σ` over the
+q₀ floor, so no clean weight-3 refinement is even numerically resolvable. The
+exact missing ingredient is now pinned. No fit, no fabricated closure.
+
+### S3.1 The self-coupling's own `O(α²)` term is weight-1 — and ~40× too small
+
+Expanding the fixed-point self-coupling,
+`δ(1/α) = α·H·(1 − h²α) = α·H − α²·(H·h²)`, with `H = [2]_q/(8π)`. The
+**coefficient of `α²`** is `−H·h² = −[2]_q h²/(8π)` — a **q-rational over `π`**,
+i.e. **weight 1** (`h = q − q⁻¹`, `[2]_q = q + q⁻¹` are weight-0 algebraic;
+dividing by `π` is weight-1, the same rung as the `n=1` term `2/(3π)`). It is
+**not** `ζ(3)` (weight 3). Numerically (probe, 60 dps, muon-`q₀`):
+
+| quantity | value |
+|---|---:|
+| `O(α)` piece `α·H` | `5.8387×10⁻⁴` |
+| `O(α²)` coefficient `−H·h²` (**weight 1**) | `−3.4970×10⁻³` |
+| `O(α²)` piece `−H·h²·α²` | `−1.8622×10⁻⁷` |
+| fractional 2nd-order shift `−h²` | `−0.0319 %` |
+| **data-demanded deficit** below `1/(4π)` | `−1.3551 %` (**42.5× larger**) |
+
+So the Habiro factor's second-order term is **both the wrong transcendence weight
+and ~40× too small** to be the sought 2-loop `ζ(3)` object. This is the
+**fibre-vs-observable wall** (AGENTS.md §"Im(q) at fibre vs observable level"):
+`[2]_q(1 − h²α)` is a *fibre-level* q-deformation whose Taylor coefficients are
+weight-≤1 q-rationals — exactly what one expects of a formal `q`-series — **not**
+an archimedean 2-loop regulator. The parent §1 already noted the `(1 − h²α)`
+correction is `−0.032 %` "two orders too small"; §S3.1 sharpens *why*: it is not
+merely small, it is the wrong arithmetic weight, so no re-tuning of the Habiro
+element (higher `h²ᵏαᵏ` terms, all weight-1) can ever supply the weight-3 target.
+
+### S3.2 No parameter-free weight-3 normalization hits `C_data`
+
+The genuine QED 2-loop object that carries `ζ(3)` with a **clean rational** is the
+Petermann–Sommerfield electron `g−2` coefficient
+`a^{(4)} = 197/144 + π²/12 − (π²/2)ln2 + (3/4)ζ(3)` — the `ζ(3)` enters at
+**two loops** with rational **`3/4`**. (This is the concrete basis for
+Session-2's "ζ(3) first enters QED at two loops.") Testing whether `C_data`
+matches a **parameter-free** weight-3 normalization built only from the
+structurally-available rationals — `3/4` (`g−2` two-loop), `4/5` (the Bloch
+generator `𝓛₃(1/φ²) = (4/5)ζ(3)`), `1` — over the **derived** denominators
+`{4π, 8π = π·b₁ (b₁=8), π², π³}` (probe, ratios to `C_data = 0.0784992`):
+
+| candidate | value | ratio to `C_data` |
+|---|---:|---:|
+| `(3/4)ζ(3)/(4π)` | `0.0717425` | `0.9139` |
+| `(4/5)ζ(3)/(4π)` | `0.0765253` | `0.9749` |
+| `ζ(3)/(4π)` | `0.0956566` | `1.2186` |
+| `(3/4)ζ(3)/π³` | `0.0290761` | `0.3704` |
+| `(4/5)ζ(3)/π³` | `0.0310145` | `0.3951` |
+| `ζ(3)/π³` | `0.0387682` | `0.4939` |
+| `(3/4)ζ(3)/(π·b₁)` | `0.0358712` | `0.4570` |
+| `ζ(3)/π²` | `0.1217938` | `1.5515` |
+
+The nearest, `(4/5)ζ(3)/(4π)` (Bloch generator over the round QED denominator),
+is **2.5 % low** — five times the `~0.49 %` noise floor (§S3.3), so **not** a
+match. A **bounded** PSLQ over the canonical weight-3 Borel generators only —
+`{ζ(3)/π³, L(3,χ₅)/π³}`, `{ζ(3), L(3,χ₅), 1/(4π)}`, and
+`{δ, ζ(3), L(3,χ₅), α/π}` for the deficit `δ` — returns **no integer relation**
+in every case (tol `10⁻²⁴`, maxcoeff `10⁶`). *(This is not the forbidden wide
+scan: it tests only the three canonical Borel/regulator combinations the geometry
+supplies, and reports the null honestly.)* **No parameter-free weight-3 form is
+forced.**
+
+### S3.3 The deficit below `1/(4π)` is not a resolvable higher-loop correction
+
+Write `C_data = (1/4π)(1 − δ)`, `δ = 0.013551` (`1.355 %`). Two independent
+reasons this cannot currently be a *clean* weight-3 refinement of `1/(4π)`:
+
+1. **Magnitude.** A genuine 2-loop correction to a 1-loop coefficient is
+   `O(α/π) ≈ 0.23 %`. The deficit is `δ = 5.83×(α/π)` — **~6× too large** to be
+   a natural next-loop QED correction to a `1/(4π)` leading term. (Since the
+   framework already reads the *whole* `α·C` term as `O(α²)`-fractional = 2-loop,
+   a `1.355 %` shift *inside* it would have to be a 3-loop `O(α/π)` effect, which
+   is `~0.23 %` — off by `5.8×`.)
+2. **Resolution.** Propagating the physical `~3 ppb` muon-`q₀` uncertainty
+   (q₀ sensitivity `d ln(bare)/d ln q = 6.84`, entering the `~137` bare term)
+   gives `σ(C_data)/C_data ≈ 0.49 %` (probe: direct `q₀ → q₀(1+3\text{ppb})`
+   re-evaluation). So `δ = 1.355 %` is only **`~2.8σ`** over the q₀ band, and the
+   inter-candidate spread (`1/4π` vs `[2]_q/8π` vs `(4/5)ζ(3)/4π`) sits below it.
+   A `~0.5 %`-uncertain, `2.8σ` deficit **cannot discriminate or validate** any
+   clean weight-3 expression.
+
+This confirms and sharpens the parent §B.3.3 / Session-2 floor: the coefficient
+is under-determined at the **percent** level once q₀ propagation is included, so
+even a *correct* weight-3 closed form could not be numerically confirmed here
+without a two-to-three-order tightening of q₀.
+
+### S3.4 The exact missing ingredient
+
+The categorical 2-loop, **as instantiated by the Habiro self-coupling
+`[2]_q(1 − h²α)`, is the wrong object**: its `O(α²)` term is a weight-1 q-rational
+(§S3.1), not the weight-3 `ζ(3)` the target requires. The self-coupling supplies
+only the **1-loop dressing** (the `α·H` term recovering the round `1/(4π)` in the
+classical limit). The genuine 2-loop `ζ(3)` must come from a **separate,
+weight-3 categorical diagram** with no realization inside the fibre-level
+q-deformation:
+
+> **Missing ingredient (sharpened).** Evaluate the **2-loop categorical
+> self-energy / vacuum-polarization coefficient** — the categorical analog of the
+> QED `g−2` two-loop `(3/4)ζ(3)` — as a genuine **weight-3 regulator**: the
+> Reshetikhin–Turaev / Chern–Simons **2-loop perturbative invariant** of the
+> Seifert manifold `UT(M_Bring)` (perturbative CS carries `ζ(3)` at two loops even
+> when the classical volume vanishes), **or** the Goncharov weight-3 configuration
+> polylog on the five golden `S₅` points, landing on the `K₅(ℚ(√5))` lattice
+> `{ζ(3), L(3,χ₅)}` with `ζ(3)`-axis fixed by `𝓛₃(1/φ²) = (4/5)ζ(3)`. That
+> computation — **not** any term of `[2]_q(1 − h²α)` — is what would fix the
+> normalization from first principles. Until it exists (and until q₀ is pinned
+> two-to-three orders tighter so the `~0.5 %`-determined target can discriminate a
+> candidate), the coefficient is **OPEN**.
+
+This is the same "RT/CS 2-loop track" already named in
+[`prop:photon-ir-zero-mode-bring`](../../content/quantum-observable-universe/predicted-spectra/photon-ir-zero-mode-bring.md)
+and parent §C.4; Session-3's contribution is to **exclude the last remaining
+"cheap" route** — that the answer falls out of the second-order term of the
+existing self-coupling ansatz — and to identify *why* (weight mismatch), so no
+future session re-attempts the Habiro-`O(α²)` closure.
+
+### S3.5 Refutation-scope discipline (AGENTS.md §"Before declaring refuted")
+
+- **(b) Structural exclusion — one, with cited invariant.** *The `O(α²)` term of
+  the Habiro self-coupling `[2]_q(1 − h²α)` cannot be the target 2-loop
+  coefficient.* Cited invariant: the **transcendence-weight grading** — its `α²`
+  coefficient `−[2]_q h²/(8π)` is weight-1 (a q-rational over `π`), while the
+  target is weight-3 (`ζ(3)`); a weight-1 object equals a weight-3 object only if
+  its coefficient is zero. This excludes the **Habiro-`O(α²)` realization
+  method**, and by extension every higher `h²ᵏαᵏ` term of the same ansatz (all
+  weight-1). It does **not** exclude the weight-3 *ingredient*: the
+  `K₅(ℚ(√5))` class `{ζ(3), L(3,χ₅)}` exists (§B.1) and may enter via the RT/CS
+  2-loop or Goncharov route (§S3.4).
+- **(a) Scope-limited negatives.** (i) No parameter-free weight-3 normalization
+  from `{3/4, 4/5, 1} × {4π, 8π, π², π³}` reproduces `C_data` (nearest is `2.5 %`
+  off, `5×` the floor); (ii) bounded PSLQ over the canonical Borel generators
+  forces no relation. Both constrain *these combinations at this precision*, not
+  the ingredient.
+- **No wide scan / no single-point fit was run.** §S3.2 tests only the finitely
+  many structurally-motivated candidates and the three canonical Borel PSLQ
+  bases, and reports the nulls. The `(4/5)ζ(3)·a_D^{(4)}/π³` type of triple-factor
+  coincidence (numerically within `0.07 %` of `C_data`) was **deliberately not**
+  promoted: it is a post-hoc single-point match with no structural motivation for
+  the `a_D^{(4)}/π³` normalization, and it fails the discrimination floor — exactly
+  the numerology trap the task and AGENTS.md forbid.
+
+### S3.6 Net of the session
+
+- The **last "cheap" route is closed:** the O(α²) coefficient does **not** fall
+  out of the second-order term of the existing self-coupling `[2]_q(1 − h²α)` —
+  that term is weight-1 and `~40×` too small. The self-coupling is a 1-loop
+  dressing only.
+- The **weight ladder is now complete and diagnostic:** `n=1` surface →
+  **weight 1** (`2/(3π)`, DERIVED); the Habiro self-coupling's own `O(α²)` term →
+  **weight 1** (q-rational/`π`, this session); classical `λ_SW` residue →
+  **weight 1** (Session-2); a 3-manifold period → **weight 2** (§C); the
+  **target** → **weight 3 = 2-loop** `ζ(3)`. Every "classical" or "fibre-level"
+  object the framework offers sits at weight ≤ 2; the target is one genuine
+  **loop rung** above all of them.
+- The precise remaining step is **unchanged in kind** but now with the last
+  alternative eliminated: the coefficient must be the genuine **2-loop weight-3**
+  RT/CS or Goncharov regulator on `{ζ(3), L(3,χ₅)}` (§S3.4), and q₀ must be pinned
+  `~10²–10³×` tighter before any candidate is numerically discriminable
+  (`~0.49 %` floor, `2.8σ` deficit). Until then the coefficient is **OPEN**.
+
+No content block is changed by this attempt; the session records the
+Habiro-`O(α²)` weight-1 closure, the parameter-free weight-3 nulls, the
+`2.8σ` resolution floor, and the sharpened missing ingredient, and rules out a
+fabricated closure.
+
+### S3.7 Files added / read (Session-3)
+- **Added:** [`computations/bring_2loop_weight3_coefficient_probe.py`](../../computations/bring_2loop_weight3_coefficient_probe.py)
+- Read: `content/quantum-observable-universe/predicted-spectra/alpha-em-derivation-open-problems.md`,
+  `content/quantum-observable-universe/braids-and-knots/alpha-em-habiro-bar-involution.md`,
+  `computations/alpha_em_4pi_fixed_point_solve.py`,
+  `computations/bring_mapping_torus_residue_weight_probe.py`
