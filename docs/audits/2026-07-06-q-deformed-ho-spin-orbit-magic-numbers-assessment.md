@@ -9,18 +9,22 @@ heavy nuclear magic numbers {50, 82, 126} that sidesteps the K = 12
 matrix barrier of the current Hoefsmit/Hecke programme
 ([`observations/k12-barrier-bypass.md`](../../content/quantum-observable-universe/observations/k12-barrier-bypass.md))?
 
-> **Verification caveat (STRICT).** The primary PDFs
-> (nucl-th/9709034 — Raychev–Roussev–Lo Iudice–Terziev nuclear
-> application; the Bonatsos cluster paper Chem. Phys. Lett. /
-> quant-ph/9909002; and the owner-uploaded `uploads/9605013v1.pdf`)
-> are **firewalled in this sandbox** (arXiv returns proxy 403 on both
-> `WebFetch` and `curl`; the paper-search MCP reader returned empty for
-> the old-style IDs). This assessment is built from the search
-> abstracts + the established Bonatsos–Raychev construction, **not** a
-> machine-read of the eigenvalue formula. The exact q-HO eigenvalue
-> expression and the τ-value used should be **confirmed against the
-> uploaded PDF** (bean `e7yw`) before any of this is promoted to a
-> content block.
+> **Verification caveat (STRICT) + paper-identity correction
+> (2026-07-06).** The owner-uploaded `uploads/9605013v1.pdf` was
+> **read locally** (extracted from commit `1804cf09`; the Read tool
+> handles the local PDF — arXiv itself is firewalled, proxy 403). It is
+> **NOT** a q-HO / spin-orbit / magic-number paper. It is **Minkov,
+> Drenska, Raychev, Roussev, Bonatsos, "Nuclear β- and γ- collective
+> bands in the SUₚ(2) rotator model", nucl-th/9605013 (1996)** — the
+> **q-rotor** paper, i.e. the topic of bean **`alyr`**, not this bean.
+> An earlier draft of this caveat guessed it was "an earlier related
+> q-HO paper"; that was **wrong** and is retracted. The genuine q-HO
+> nuclear-shell paper is a *different* one (nucl-th/9709034,
+> Raychev–Roussev–Lo Iudice–Terziev), which remains **firewalled and
+> unread**. So §1–§2 below (the l² vs l·s structural analysis) rest on
+> the *established construction + web abstracts*, **not** a machine-read
+> eigenvalue formula, and must be confirmed against nucl-th/9709034
+> before any content promotion.
 
 ## 1. What the literature route actually does
 
