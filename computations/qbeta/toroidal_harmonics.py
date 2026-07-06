@@ -5,7 +5,20 @@ Derives the exact mapping between the Toroidal Harmonic differential equation
 and the pre-archimedean Markov parameter z-recursion.
 """
 
+import numpy as np
 import sympy as sp
+from scipy.special import lpmv
+
+def toroidal_harmonic_P(n, m, cosh_eta):
+    """
+    Computes the Toroidal Harmonic (half-integer Legendre function of the first kind):
+    P_{n - 1/2}^m (cosh eta)
+    
+    Using scipy's associated Legendre function: lpmv(m, v, x).
+    v = n - 0.5.
+    """
+    v = n - 0.5
+    return lpmv(m, v, cosh_eta)
 
 def derive_bridge():
     print("--- Deriving the Toroidal Harmonics Bridge ---\n")
@@ -87,5 +100,38 @@ def derive_bridge():
     print("\nThis canonical hypergeometric differential equation maps directly")
     print("to the Markov parameter z-recursion (with w = z^2).")
 
+def evaluate_c_lambda():
+    print("\n--- Evaluating the Delta_lambda Mass Gap (A=4) ---")
+    
+    # Experimental values for 4He
+    b_ame = 28.29566 # AME2020 binding energy in MeV
+    e_gate = 29.99   # SU(4) Plancherel occupancy from B_gate
+    
+    c_lambda_exp = b_ame / e_gate
+    print(f"Experimental c_lambda (Shell-filling fraction): {c_lambda_exp:.6f}")
+    
+    # We hypothesize that c_lambda is given by a ratio of Toroidal Harmonics
+    # evaluated at the topological boundary (q0).
+    # Since q0 ~ 0.5 (or cosh(eta) ~ 1.25), let's evaluate P_{1/2}^0.
+    
+    # This is a placeholder for the exact topological evaluation, demonstrating
+    # how the continuous basis anchors the discrete mass gap.
+    q0 = 0.5 # Example fixed point
+    eta0 = -np.log(q0)
+    cosh_eta0 = np.cosh(eta0)
+    
+    p0 = toroidal_harmonic_P(0, 0, cosh_eta0)
+    p1 = toroidal_harmonic_P(1, 0, cosh_eta0)
+    
+    print(f"Topological anchor cosh(eta0) = {cosh_eta0:.4f}")
+    print(f"P_(-1/2)^0 (n=0): {p0:.6f}")
+    print(f"P_(1/2)^0  (n=1): {p1:.6f}")
+    
+    ratio = p0 / p1
+    print(f"Ratio P_(-1/2) / P_(1/2): {ratio:.6f}")
+    print(f"Difference from experimental c_lambda: {abs(c_lambda_exp - ratio):.6f}")
+    print("\nNext step is to derive the exact boundary value for eta0 from the B_sym intercept.")
+
 if __name__ == "__main__":
     derive_bridge()
+    evaluate_c_lambda()
