@@ -1800,6 +1800,56 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1955]] },
   }),
 
+  ref({
+    id: "elliott1958",
+    type: "article-journal",
+    title:
+      "Collective motion in the nuclear shell model. I. Classification schemes for states of mixed configurations",
+    author: [{ family: "Elliott", given: "J. P." }],
+    "container-title": "Proceedings of the Royal Society of London A",
+    issued: { "date-parts": [[1958]] },
+    volume: "245",
+    issue: "1240",
+    page: "128-145",
+    DOI: "10.1098/rspa.1958.0072",
+  }),
+
+  ref({
+    id: "minkov1996",
+    type: "article-journal",
+    title:
+      "Nuclear beta- and gamma- collective bands in the SU_q(2) rotator model",
+    author: [
+      { family: "Minkov", given: "N." },
+      { family: "Drenska", given: "S. B." },
+      { family: "Raychev", given: "P. P." },
+      { family: "Roussev", given: "R. P." },
+      { family: "Bonatsos", given: "D." },
+    ],
+    "container-title": "arXiv preprint nucl-th/9605013",
+    issued: { "date-parts": [[1996]] },
+    URL: "https://arxiv.org/abs/nucl-th/9605013",
+  }),
+
+  ref({
+    id: "raychev1998",
+    type: "article-journal",
+    title:
+      "An application of the three-dimensional q-deformed harmonic oscillator to the nuclear shell model",
+    author: [
+      { family: "Raychev", given: "P. P." },
+      { family: "Roussev", given: "R. P." },
+      { family: "Lo Iudice", given: "N." },
+      { family: "Terziev", given: "P. A." },
+    ],
+    "container-title": "Journal of Physics G: Nuclear and Particle Physics",
+    issued: { "date-parts": [[1998]] },
+    volume: "24",
+    issue: "10",
+    page: "1931-1943",
+    URL: "https://arxiv.org/abs/nucl-th/9709034",
+  }),
+
   // ── BEC vortex experiments ──────────────────────────────────────
 
   ref({
