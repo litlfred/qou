@@ -1,0 +1,66 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-06T10:53:05.283706+00:00",
+  "commitSha": "4830911342e1f55ea39a82aecb975c4736eac356",
+  "assertions": [
+    {
+      "name": "candidate1_antisym_hecke_gives_negative_det",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "candidate2_bar_odd_far_below_target",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "b4-antisym-hecke-exchange-derivation",
+  "scriptFile": "b4_antisym_hecke_exchange_derivation.py",
+  "scriptHash": "6fb8652c628e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Principled antisymmetric-Hecke exchange derivation for the [1^4] value: g=λ_−·z gives det<0 (unphysical); g=−h/2 gives ~0.33 MeV (28× low). Neither naive exchange reproduces b₄=9.243; the correct entries need the 4-nucleon writhe structure. No fit. audit-only.",
+  "tier": "structural (one-shot −ln det for two principled exchange factors; no tuning)",
+  "result": {
+    "building_blocks": {
+      "z_sym": "0.49932",
+      "lambda_minus": "-0.949167",
+      "minus_h_over_2": "-0.10453"
+    },
+    "candidate_1_antisym_hecke": {
+      "g": "-0.473938",
+      "det_I_plus_G": "-1.3507",
+      "status": "UNPHYSICAL (det < 0 ⇒ −ln det complex)"
+    },
+    "candidate_2_bar_odd": {
+      "g": "-0.10453",
+      "neg_log_det": "0.0780207",
+      "rough_MeV": "0.326593",
+      "status": "~28× BELOW target b₄=9.243"
+    },
+    "verdict": "Both naive principled antisymmetric exchanges fail: g=λ_−·z (−0.474) gives a NEGATIVE determinant (unphysical), g=−h/2 (−0.105) gives ~0.33 MeV (~28× too small). The correct exchange entries are neither — they need the proper 4-nucleon [1^4] braid writhe structure (per-pair signs+magnitudes), genuine derivation. Searching for the g that yields 9.243 would be a fit (Rule-14) and is REFUSED. Scope-(a); this records the principled attempts and their honest failure."
+  },
+  "context": {
+    "axis": "GAP-A-4 class-D — [1^4] value leg, antisymmetric-Hecke exchange derivation",
+    "spec": "docs/design/2026-07-06-gap-a4-b4-branching-projector-construction-spec.md",
+    "status": "naive principled exchanges fail; correct entries = open derivation (writhe structure)"
+  },
+  "auditOnly": true
+}
