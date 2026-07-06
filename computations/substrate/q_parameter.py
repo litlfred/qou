@@ -55,3 +55,131 @@ except ImportError:
         sys.path.insert(0, str(_QOU_SUBSTRATE_PYTHON))
 
 from qou_substrate.constants import *  # noqa: F401,F403,E402
+
+
+# ─────────────────────────────────────────────────────────────────────
+# CAL-LAYER q₀ ANCHOR SELECTION (computations/ layer) — bean `yfvb`, 2026-07-06.
+#
+# Per the two-layer calibration convention (AGENTS.md §"q₀ anchor convention"):
+#   • IDEAL / canonical 3-CAL  → q₀ is MUON-anchored (CAL-2 = 𝔇_β, proxy m_μ/m_e);
+#     the canonical-derivation producers (~455 muon witnesses).
+#   • PHYSICAL-Observations     → q₀ is PROTON-anchored (m_p/m_e, most precise);
+#     the precision/prediction producers (~279 proton witnesses).
+#
+# The corpus is genuinely MIXED (sweep 2026-07-06: 279 proton + 455 muon), so a
+# blanket flip is WRONG. This block therefore applies the muon (ideal) anchor ONLY
+# when the caller opts in via the `QOU_Q0_ANCHOR` env var; the DEFAULT is the
+# physical/proton anchor (the `import *` above, unchanged).  A canonical-derivation
+# producer runs muon-consistent by exporting `QOU_Q0_ANCHOR=ideal`; a physical
+# producer leaves it unset (proton).
+#
+#   QOU_Q0_ANCHOR ∈ {ideal, muon, canonical}  → muon override (below)
+#   QOU_Q0_ANCHOR unset / {physical, proton, experimental} → proton (no override)
+#
+# When muon is selected, we re-derive the ENTIRE q-family (f64 + _MP +
+# Q_50_DIGIT_STR) and re-define the q-closures from `q-pinning-50-digit.witness.json`
+# (the ONLY faithful muon source — matches NEITHER `q_at()` proton NOR the
+# `q_muon_at()` closed form), leaving `qou_substrate.constants` untouched.
+# Design + sweep + validation gate: docs/audits/2026-07-06-q0-producer-muon-refactor-design.md
+import os as _os
+import sys as _sys
+
+# Resolve the anchor: explicit env var wins; else auto-select from the manifest
+# by the running producer's stem (ideal_muon ⇒ muon; anything else ⇒ proton).
+_anchor = _os.environ.get("QOU_Q0_ANCHOR", "").strip().lower()
+if not _anchor:
+    try:
+        import json as _mj
+        from pathlib import Path as _MP
+        _man = _mj.loads((_MP(__file__).resolve().parent.parent
+                          / "q0_anchor_manifest.json").read_text())
+        _stem = _MP(_sys.argv[0]).stem if (_sys.argv and _sys.argv[0]) else ""
+        if _stem in _man.get("ideal_muon", []):
+            _anchor = "ideal"
+    except Exception:
+        pass
+
+if _anchor in ("ideal", "muon", "canonical"):
+  try:
+    import json as _json
+    import math as _math
+    from pathlib import Path as _P
+
+    _QPIN = _P(__file__).resolve().parent.parent / "q-pinning-50-digit.witness.json"
+    _d = _json.loads(_QPIN.read_text())["derived_50_digit"]
+    if not _d["q"].startswith("1.109978595557"):
+        raise ValueError(f"q-pinning witness q={_d['q'][:16]} not canonical muon")
+
+    # ── f64 family ──
+    # Take ONLY q from the witness (its f64 IS bit-identical to the committed
+    # q0_f64), then derive every dependent with the SAME f64 ops as
+    # constants.py lines 84-103 — NOT from the witness's q_inv/hbar_q strings,
+    # which round ~1 ULP differently and would perturb dim_q at the ~15th digit.
+    Q         = float(_d["q"])
+    HBAR_Q    = 1.0 - 1.0 / Q
+    HBAR_Q_SQ = HBAR_Q * HBAR_Q
+    Q_INV     = 1.0 / Q
+    HA        = Q - Q_INV
+    E_CROSS   = 0.5 * HA
+    S_SKEIN   = _math.sqrt(Q) - 1.0 / _math.sqrt(Q)
+    TWO_Q     = Q + Q_INV
+    TANH_LN_Q = HA / TWO_Q
+    LN_Q      = _math.log(Q)
+    Q_50_DIGIT_STR = _d["q"]
+
+    # ── q-closure functions re-defined over the muon globals ──
+    # (the imported `q_int`/`log_q` close over qou_substrate's PROTON globals;
+    #  redefine here so `from q_parameter import q_int` gets the muon value.)
+    def log_q(x, _LN_Q=LN_Q):
+        return _math.log(x) / _LN_Q
+
+    def q_int(n, _Q=Q, _QI=Q_INV, _HA=HA):
+        return (_Q**n - _QI**n) / _HA
+
+    def q_int_err(n, _Q=Q, _QI=Q_INV, _HA=HA, _QE=Q_ERR):
+        num_deriv = n * (_Q**(n - 1) + _QI**(n + 1))
+        denom_corr = (_Q**n - _QI**n) * (1 + _QI**2) / _HA
+        return abs(num_deriv / _HA - denom_corr / _HA) * _QE
+
+    # ── derived uncertainty family, recomputed over the muon Q ──
+    # The `import *` above brought PROTON-era Q_INV_ERR/HA_ERR/… (constants.py
+    # lines 116-121); leaving them bound to the proton Q while Q itself is now
+    # muon makes uncertainty propagation inconsistent for the ~6 downstream
+    # importers (e.g. mass-from-q-symbolic.py imports HA_ERR/S_SKEIN_ERR/…).
+    # Q_ERR stays the anchor's absolute q-uncertainty (~3.2e-12); only the
+    # Q-dependent derivatives are re-evaluated at the muon point.
+    Q_INV_ERR     = Q_ERR / Q**2
+    HA_ERR        = Q_ERR * (1 + Q_INV**2)
+    E_CROSS_ERR   = 0.5 * HA_ERR
+    S_SKEIN_ERR   = Q_ERR * 0.5 * (Q**(-0.5) + Q**(-1.5))
+    TWO_Q_ERR     = Q_ERR * abs(1 - Q_INV**2)
+    TANH_LN_Q_ERR = Q_ERR * 2.0 / TWO_Q**2
+
+    # ── mpmath _MP family (mirror constants.py lines 249-266, muon base) ──
+    try:
+        import mpmath as _mp
+        # Owner directive 2026-07-06: "global dps 50 for compute accuracy".
+        # The muon-anchored compute runs at a standing global precision of
+        # 50 dps — this is the intended compute floor, NOT a temporary bump,
+        # so it is set globally (superseding the workdps-restore of Copilot
+        # #3419: 50 dps is where compute should stay). 50 dps ≫ the 1e-10
+        # observable reproduction tolerance and the 1e-15 (1 ppQ) L1 target,
+        # so it does not regress either precision leg; the q-pinning witness's
+        # 70-digit q is read in full and only the compute working precision is
+        # pinned at 50. Producers that need more raise it via set_compute_dps().
+        _mp.mp.dps = max(_mp.mp.dps, 50)
+        Q_MP         = _mp.mpf(_d["q"])
+        Q_INV_MP     = _mp.mpf(1) / Q_MP
+        HBAR_Q_MP    = _mp.mpf(1) - Q_INV_MP
+        HBAR_Q_SQ_MP = HBAR_Q_MP ** 2
+        HA_MP        = Q_MP - Q_INV_MP
+        E_CROSS_MP   = HA_MP / 2
+        S_SKEIN_MP   = _mp.sqrt(Q_MP) - _mp.mpf(1) / _mp.sqrt(Q_MP)
+        TWO_Q_MP     = Q_MP + Q_INV_MP
+        TANH_LN_Q_MP = HA_MP / TWO_Q_MP
+        LN_Q_MP      = _mp.log(Q_MP)
+    except ImportError:
+        pass
+  except Exception as _exc:  # leave proton values if witness unreadable
+    import sys as _sys
+    print(f"[q_parameter] muon override skipped: {_exc}", file=_sys.stderr)
