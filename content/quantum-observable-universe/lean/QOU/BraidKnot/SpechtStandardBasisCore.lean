@@ -1112,6 +1112,118 @@ theorem card_col_labels_row_lt_of_le (t : Specht.Tableau μ) (c m : ℕ)
     · show ((t (t.symm ⟨(r, c), _⟩) : ℕ × ℕ)).1 = r
       rw [Equiv.apply_symm_apply]
 
+omit [CharZero k] in
+/-- **Garnir pigeonhole (sorry-free) — the row collision for `hfam`.**
+At a row descent `(i,j),(i,j+1) ∈ μ`, for *every* column permutation `ρ ∈ C_t` there
+are two distinct labels — one in `A` (column `j`, row `≥ i`) and one in `B`
+(column `j+1`, row `≤ i`) — that land in the **same row** of `ρ • t`.
+
+Proof: `|A| = colLen j − i`, `|B| = i+1`, so `|A ∪ B| = colLen j + 1`; the map
+`l ↦ rowPattern (ρ•t) l = rowPattern t (ρ⁻¹ l)` sends `A ∪ B` into
+`{0, …, colLen j − 1}` (`ρ ∈ C_t` keeps `ρ⁻¹ l` in its column; `colLen (j+1) ≤ colLen j`),
+a set of size `colLen j`, so two elements collide. Column-injectivity of the map rules
+out both being in `A` or both in `B`, so the colliding pair straddles `A` and `B`. This
+is exactly the same-row transposition `τ_ρ ∈ rowStab (ρ•t) ∩ S_{A∪B}` that
+`mtab_sum_sign_smul_of_eq_zero` consumes to discharge `hfam ρ`. -/
+theorem garnir_row_collision (t : Specht.Tableau μ) {i j : ℕ}
+    (hij : (i, j) ∈ μ) (hij1 : (i, j + 1) ∈ μ)
+    (ρ : Equiv.Perm (Fin (Specht.nOf μ))) (hρ : ρ ∈ Specht.colStab t) :
+    ∃ a b, a ≠ b ∧
+      (Specht.colPattern t a = j ∧ i ≤ Specht.rowPattern t a) ∧
+      (Specht.colPattern t b = j + 1 ∧ Specht.rowPattern t b ≤ i) ∧
+      Specht.rowPattern (ρ • t) a = Specht.rowPattern (ρ • t) b := by
+  classical
+  set A := Finset.univ.filter
+    (fun l => Specht.colPattern t l = j ∧ i ≤ Specht.rowPattern t l) with hA
+  set B := Finset.univ.filter
+    (fun l => Specht.colPattern t l = j + 1 ∧ Specht.rowPattern t l ≤ i) with hB
+  have hi_lt : i < μ.colLen j := YoungDiagram.mem_iff_lt_colLen.mp hij
+  have hi1_lt : i < μ.colLen (j + 1) := YoungDiagram.mem_iff_lt_colLen.mp hij1
+  -- Helper facts about `ρ ∈ C_t` and the equivariance of the patterns.
+  have hcol : ∀ l, Specht.colPattern t (ρ.symm l) = Specht.colPattern t l := by
+    intro l
+    calc Specht.colPattern t (ρ.symm l)
+        = (ρ • Specht.colPattern t) l := (Specht.arrow_smul_apply _ _ _ _).symm
+      _ = Specht.colPattern t l := by rw [Specht.mem_colStab.mp hρ]
+  have hrow_eq : ∀ l, Specht.rowPattern (ρ • t) l = Specht.rowPattern t (ρ.symm l) := by
+    intro l; rw [Specht.rowPattern_smul, Specht.arrow_smul_apply]
+  have hcellmem : ∀ u, (Specht.rowPattern t u, Specht.colPattern t u) ∈ μ :=
+    fun u => (YoungDiagram.mem_cells _).1 (t u).2
+  have hcell_inj : ∀ u v, Specht.rowPattern t u = Specht.rowPattern t v →
+      Specht.colPattern t u = Specht.colPattern t v → u = v :=
+    fun u v hr hc => t.injective (Subtype.ext (Prod.ext hr hc))
+  -- Cardinalities.
+  have hcardA : A.card = μ.colLen j - i := by
+    have hsub : Finset.univ.filter
+        (fun l => Specht.colPattern t l = j ∧ Specht.rowPattern t l < i)
+        ⊆ Finset.univ.filter (fun l => Specht.colPattern t l = j) := by
+      intro l hl; rw [Finset.mem_filter] at hl ⊢; exact ⟨hl.1, hl.2.1⟩
+    have hAeq : A = (Finset.univ.filter (fun l => Specht.colPattern t l = j)) \
+        (Finset.univ.filter (fun l => Specht.colPattern t l = j ∧ Specht.rowPattern t l < i)) := by
+      ext l
+      simp only [hA, Finset.mem_filter, Finset.mem_sdiff, Finset.mem_univ, true_and, not_and,
+        not_lt]
+      constructor
+      · rintro ⟨hc, hge⟩; exact ⟨hc, fun _ => hge⟩
+      · rintro ⟨hc, hge⟩; exact ⟨hc, hge hc⟩
+    rw [hAeq, Finset.card_sdiff, card_col_labels, Finset.inter_eq_left.mpr hsub,
+      card_col_labels_row_lt_of_le t j i (le_of_lt hi_lt)]
+  have hcardB : B.card = i + 1 := by
+    have hBeq : B = Finset.univ.filter
+        (fun l => Specht.colPattern t l = j + 1 ∧ Specht.rowPattern t l < i + 1) := by
+      ext l; simp only [hB, Finset.mem_filter, Nat.lt_succ_iff]
+    rw [hBeq, card_col_labels_row_lt_of_le t (j + 1) (i + 1) (by omega)]
+  have hdisj : Disjoint A B := by
+    rw [Finset.disjoint_left]
+    intro l hlA hlB
+    rw [hA, Finset.mem_filter] at hlA
+    rw [hB, Finset.mem_filter] at hlB
+    omega
+  have hcardU : (A ∪ B).card = μ.colLen j + 1 := by
+    rw [Finset.card_union_of_disjoint hdisj, hcardA, hcardB]; omega
+  -- The row map lands in `range (colLen j)`.
+  have hmaps : ∀ l ∈ A ∪ B, Specht.rowPattern (ρ • t) l ∈ Finset.range (μ.colLen j) := by
+    intro l hl
+    rw [Finset.mem_range, hrow_eq]
+    rw [Finset.mem_union, hA, hB, Finset.mem_filter, Finset.mem_filter] at hl
+    have hc : Specht.colPattern t (ρ.symm l) = j ∨ Specht.colPattern t (ρ.symm l) = j + 1 := by
+      rw [hcol]; rcases hl with h | h
+      · exact Or.inl h.2.1
+      · exact Or.inr h.2.1
+    rcases hc with h | h
+    · have hmem : (Specht.rowPattern t (ρ.symm l), j) ∈ μ := by rw [← h]; exact hcellmem _
+      exact YoungDiagram.mem_iff_lt_colLen.mp hmem
+    · have hmem : (Specht.rowPattern t (ρ.symm l), j + 1) ∈ μ := by rw [← h]; exact hcellmem _
+      exact lt_of_lt_of_le (YoungDiagram.mem_iff_lt_colLen.mp hmem)
+        (μ.colLen_anti j (j + 1) (by omega))
+  -- Pigeonhole.
+  obtain ⟨x, hx, y, hy, hxy, hfxy⟩ :=
+    Finset.exists_ne_map_eq_of_card_lt_of_maps_to
+      (by rw [Finset.card_range, hcardU]; omega) hmaps
+  -- Column-injectivity of the row map.
+  have hinj : ∀ u v, Specht.colPattern t u = Specht.colPattern t v →
+      Specht.rowPattern (ρ • t) u = Specht.rowPattern (ρ • t) v → u = v := by
+    intro u v hc hr
+    rw [hrow_eq, hrow_eq] at hr
+    have hcuv : Specht.colPattern t (ρ.symm u) = Specht.colPattern t (ρ.symm v) := by
+      rw [hcol, hcol, hc]
+    exact ρ.symm.injective (hcell_inj _ _ hr hcuv)
+  -- The colliding pair straddles `A` and `B`.
+  rw [Finset.mem_union] at hx hy
+  rcases hx with hxA | hxB
+  · rcases hy with hyA | hyB
+    · rw [hA, Finset.mem_filter] at hxA hyA
+      exact absurd (hinj x y (hxA.2.1.trans hyA.2.1.symm) hfxy) hxy
+    · rw [hA, Finset.mem_filter] at hxA
+      rw [hB, Finset.mem_filter] at hyB
+      exact ⟨x, y, hxy, hxA.2, hyB.2, hfxy⟩
+  · rcases hy with hyA | hyB
+    · rw [hB, Finset.mem_filter] at hxB
+      rw [hA, Finset.mem_filter] at hyA
+      exact ⟨y, x, hxy.symm, hyA.2, hxB.2, hfxy.symm⟩
+    · rw [hB, Finset.mem_filter] at hxB hyB
+      exact absurd (hinj x y (hxB.2.1.trans hyB.2.1.symm) hfxy) hxy
+
 /-! #### The single residual straightening core + the induction skeleton -/
 
 omit [CharZero k] in
