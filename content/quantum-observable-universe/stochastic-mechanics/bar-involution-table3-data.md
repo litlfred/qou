@@ -4,7 +4,7 @@
 | $h_{1/2} = q^{1/2} - q^{-1/2}$ | half-step Hecke skein | quantum group $\mathrm{SU}_q(2)$ |
 | $\sigma - \sigma^{-1}$ | anti-symmetric crossing pair | skein difference |
 | $q^n - q^{-n}$ | anti-symmetric q-monomial | $[n]_q$'s anti-sym numerator |
-| $\Phi_q(z)$ alone (Faddeev) | Faddeev q-dilog | $-737$ MeV mirror-nucleus pathology if used alone |
+| $\Phi_q(z)$ alone (Faddeev) | compact q-dilog | $-737$ MeV mirror-nucleus pathology if used alone |
 | $\sin(\alpha)$ alone | phase odd-component | discarded at $N{=}1$ |
 | $\sinh(h)$ | hyperbolic-sine of skein | discarded at per-Z gain |
 | Writhe $w(K) = \sum_c \mathrm{sign}(c)$ | signed crossing sum | chirality / orientation |

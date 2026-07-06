@@ -217,7 +217,7 @@ def li2q_symmetric(z, q, terms: int | None = None):
     With symmetric q-integer [n]_q = (q^n − q^{-n})/(q − q^{-1}).
     Per [`prop:mass-endomorphism-tower`](../../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md)
     lines 162–183 (the bounded Kashaev specialisation, distinct from
-    the divergent Faddeev Φ_q). Series converges for |z| < 1.
+    the divergent compact q-dilog Φ_q). Series converges for |z| < 1.
 
     When `terms` is None (default), the count is **dynamically scaled
     to `mp.mp.dps`** so the truncation error stays below the current

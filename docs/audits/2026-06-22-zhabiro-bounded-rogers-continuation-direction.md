@@ -7,7 +7,7 @@
 **Thesis (one line):** the bounded z-Habiro continuation is **not a new fitted
 object** — it is the **Rogers `−Li₂^q` (real-q) archimedean saddle** of the
 *same* quantum-dilogarithm whose root-of-unity saddle is the (unbounded)
-Faddeev `Φ_q`. The open problem is therefore a **Faddeev → Rogers
+compact-q-dilog `Φ_q`. The open problem is therefore a **compact-q-dilog → Rogers
 saddle-identity at the brane-tower level**, to be *proved* (formalize-first),
 not searched.
 
@@ -45,7 +45,7 @@ The corpus already contains the structural key, in
 [`phi-q-aj-machinery-identification.md`](../../content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.md)
 (conditional proposition, §3b-cond):
 
-> `Φ_q` (Faddeev) and `Li₂^q` (Rogers) are the **same algebraic object** — the
+> `Φ_q` (compact-q-dilog) and `Li₂^q` (Rogers) are the **same algebraic object** — the
 > AJ quantum A-polynomial `Â_K` (`[garoufalidis2004]`) — viewed through
 > **different archimedean saddles**:
 > - `Φ_q` = saddle at `q = e^{2πi/N}` (**root-of-unity** asymptotic, `[faddeev1994]`, `[kashaev1997]`);
@@ -130,7 +130,7 @@ is the production `li2q` tower term.*
 > `saddle_phi_q_eq_towerTerm : realQSaddle phi_q = towerTerm` field is the open
 > conjectural input, with two non-vacuous conditional corollaries
 > (`realQSaddle_phi_q_at_zero`, `…_ne_phi_q_at_zero`). It reuses the file's
-> existing `phi_q` (Faddeev) and `towerTerm = -li2_q(-|·|)` (Rogers) so no new
+> existing `phi_q` (compact-q-dilog) and `towerTerm = -li2_q(-|·|)` (Rogers) so no new
 > dilog objects were introduced. A full proof of the field remains research-grade
 > (saddle-point / Stokes); the scaffold lets downstream depend on it conditionally.
 

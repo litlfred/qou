@@ -90,7 +90,7 @@ is missing a per-arc structural detail — exactly what the color-pair
 weight $W_{c_1 c_2}$ would encode.
 
 The empirical match between the (now-purged) $\lambda_{\mathrm{scale}}$
-literal $2.4599527869$ and the color-tube Faddeev resummation
+literal $2.4599527869$ and the color-tube compact-q-dilog resummation
 $1/(1 - h_q \cdot q_0^{10}) \approx 2.450$ (per
 [`docs/audits/-lambda-scale-canonical-unification.md`](../../docs/audits/-lambda-scale-canonical-unification.md)
 §"How canonical includes Yekutieli + Bring together") is independent

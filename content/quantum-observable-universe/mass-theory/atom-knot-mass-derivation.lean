@@ -193,7 +193,7 @@ def MassIdentity (cert : MassDerivationCertificate) : Prop :=
 -- `M(𝔥) = ν_SDP · (|tr_M(T_w)| + Σ Li_2^q(-|V̂_i|) + z²·Σ Li_2^q(-|V̂_iV̂_j|)
 --           + Σ_{λ⊢n_0} 1/dim_q(λ))`
 -- (symmetric Li_2^q per 2026-05-03 paper canon, replacing the
--- retired Faddeev Φ_q form).
+-- retired compact q-dilog Φ_q form).
 --
 -- Ref: [manuscript] prop:atom-knot-mass-derivation §"Mass identity";
 -- prop:archimedean-realization-functor;

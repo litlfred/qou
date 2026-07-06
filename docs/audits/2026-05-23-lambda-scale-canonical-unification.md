@@ -43,7 +43,7 @@ So all three mechanisms below live on the SAME categorical object:
    averages over 9 color-pair assignments + diagonal direction = 10
    (per cheat-sheet §"Bring color-tube weighted averaging" — Phase
    5q open audit finding). The form `1/(1 − h_q · q_0^{10})`
-   (commit `d348ad8c`) is the Faddeev Φ_q-pentagon resummation
+   (commit `d348ad8c`) is the compact q-dilog Φ_q-pentagon resummation
    with this 10-fold color-tube structure embedded as `q^{10}`.
 
 ## Unifying picture: Φ_q-resummed Yekutieli on Bring's surface
@@ -92,11 +92,11 @@ This is the load-bearing question. Two structurally-distinct answers:
 
 The user asks: "some ODE/PDE on Φ_q or Dilog?" — **yes, exactly**.
 
-The Faddeev quantum dilogarithm Φ_q satisfies the FUNCTIONAL
+The compact quantum dilogarithm phi_q satisfies the FUNCTIONAL
 DIFFERENCE EQUATION:
 
 ```
-Φ_q(q · z)  =  (1 / (1 − z)) · Φ_q(z)            (Faddeev recursion)
+Φ_q(q · z)  =  (1 / (1 − z)) · Φ_q(z)            (compact-q-dilog recursion)
 ```
 
 This is a **first-order multiplicative recursion** under q-scaling
@@ -110,7 +110,7 @@ finite-difference at the n=10 power:
 **Higher-order h^k corrections** come from THREE distinct sources,
 all categorical:
 
-### (i) Higher iterations of the Faddeev recursion
+### (i) Higher iterations of the compact-q-dilog recursion
 
 Applying the functional equation k times:
 
@@ -120,7 +120,7 @@ Applying the functional equation k times:
 
 At k=10 (the Bring color-tube count): a product of 10 finite-difference
 factors. The h^4 coefficient of this product is **algebraically
-derivable** from the Faddeev recursion without empirical fitting.
+derivable** from the compact-q-dilog recursion without empirical fitting.
 
 ### (ii) Φ_q power-series expansion
 
@@ -150,7 +150,7 @@ Li_2^q(x) + Li_2^q(y)  =  Li_2^q(x + y − x·y) + Li_2^q(x · (1 − y)/(1 − 
 ```
 
 This 5-term consistency constrains the higher-order corrections to
-λ_scale beyond what the Faddeev recursion (i) gives. If Yekutieli
+λ_scale beyond what the compact-q-dilog recursion (i) gives. If Yekutieli
 categorical Stokes can be re-expressed via Li_2^q (rather than Φ_q),
 the pentagon gives ADDITIONAL constraints that pin h^4 corrections.
 
@@ -381,12 +381,12 @@ coefficient has no canonical derivation.
    canonical+Yekutieli `+3/4 − G`.** Concrete numerical check at
    q_0 ± ε; canonical (no fitting).
 2. **Derive the h^4 coefficient of `1/(1 − h_q · q_0^{10})`
-   structurally** via the Faddeev recursion / Φ_q power series. If
+   structurally** via the compact-q-dilog recursion / Φ_q power series. If
    it matches a partition-algebra contribution at H_4 (audit Step 4),
    the second-order Yekutieli per-cell is closed canonically.
 3. **Verify the Φ_q ↔ Li_2^q bar-symmetrization** at h^4 order on
    Bring's surface — does the Rogers pentagon give the same h^4
-   coefficient as the Faddeev recursion?
+   coefficient as the compact-q-dilog recursion?
 4. **Categorical bijection step** (audit Step 3 R&D item 1): the
    cell-↔-half-sym-projection at H_4. With this proof, the h²
    coefficient `−G` from Yekutieli is canonical (not just

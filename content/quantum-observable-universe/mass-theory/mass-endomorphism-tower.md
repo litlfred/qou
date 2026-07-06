@@ -222,7 +222,7 @@ $[n]_q = (q^n - q^{-n})/(q - q^{-1})$.*
 
 **Note.**
 *The previous version of this proposition wrote
-$\Phi_q(\lvert\hat V_i\rvert)$ (Faddeev quantum dilogarithm) where this
+$\Phi_q(\lvert\hat V_i\rvert)$ (compact quantum dilogarithm) where this
 revision uses $-\mathrm{Li}_2^q(-\lvert\hat V_i\rvert)$ (symmetric
 q-dilogarithm).  Both are q-deformations of the classical dilogarithm
 but use different q-integer conventions

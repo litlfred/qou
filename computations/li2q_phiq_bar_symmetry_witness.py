@@ -3,7 +3,7 @@
 # symmetrization identity Li_2^q(z) = ½(log Φ_q(z) + log Φ_{q⁻¹}(z))
 # + O((q-1)³ z).
 """Numerical witness for the bar-(anti-)symmetrization identity
-between Li_2^q and Faddeev's Φ_q.
+between Li_2^q and compact-q-dilog Φ_q.
 
 The boxed identity in `prop:li2q-phiq-bar-symmetrization` (content/
 quantum-observable-universe/braids-and-knots/li2q-phiq-bar-
@@ -11,7 +11,7 @@ symmetrization.md) — bar-**symmetrization** (SUM) form
 
     Li_2^q(z) =? ½(log Φ_q(z) + log Φ_{q⁻¹}(z))  +  O((q-1)³ z)
 
-is **FALSIFIED** here.  For Faddeev's Φ_q(z) = ∏(1 - q^{2k+1}z)⁻¹,
+is **FALSIFIED** here.  For compact-q-dilog Φ_q(z) = ∏(1 - q^{2k+1}z)⁻¹,
 each series coefficient sign-flips under q ↔ q⁻¹, so
 log Φ_{q⁻¹}(z) = -log Φ_q(z) identically and the SUM is zero.
 
@@ -65,7 +65,7 @@ def log_phi_q_series(z: mp.mpf, q: mp.mpf, max_n: int = 2000,
                      eps: mp.mpf | None = None) -> mp.mpf:
     """log Φ_q(z) = Σ_{n≥1} z^n/n · q^n/(1 − q^{2n})
 
-    Faddeev's Volume-conjecture form Φ_q(z) = ∏_{k≥0}(1 − q^{2k+1} z)^{-1}.
+    compact-q-dilog Volume-conjecture form Φ_q(z) = ∏_{k≥0}(1 − q^{2k+1} z)^{-1}.
     The series follows from the geometric expansion of each log(1 − q^{2k+1} z)
     term and resumming over k:
 
@@ -114,7 +114,7 @@ def main() -> int:
         "the substrate parameter q_0 ≈ 1.110. Tests the boxed "
         "identity Li_2^q(z) = ½(log Φ_q(z) + log Φ_{q⁻¹}(z)) + "
         "O((q-1)³ z) on a panel of z ∈ {-1, -1/2, 1/4, 1/2, q_0/4, "
-        "q_0/2, 3·q_0/4} test points. Faddeev's Φ_q is evaluated "
+        "q_0/2, 3·q_0/4} test points. compact-q-dilog Φ_q is evaluated "
         "via the formal-series log expansion (Σ z^n/n · q^n/(1-q^{2n}))."
     )
     w.add_parameter("compute_dps", "60")
@@ -198,7 +198,7 @@ def main() -> int:
         ),
         "paper_claim_status": "FALSIFIED — numerical SUM is identically 0",
         "algebraic_reason": (
-            "For Faddeev's Φ_q(z) = ∏_{k≥0}(1-q^{2k+1}z)^{-1}, the "
+            "For compact-q-dilog Φ_q(z) = ∏_{k≥0}(1-q^{2k+1}z)^{-1}, the "
             "series log Φ_q(z) = Σ z^n/n · q^n/(1-q^{2n}). Setting "
             "q → q⁻¹ flips sign of EACH term: q^-n/(1-q^-{2n}) = "
             "-q^n/(1-q^{2n}). Therefore log Φ_{q⁻¹}(z) = -log Φ_q(z), "
@@ -246,7 +246,7 @@ def main() -> int:
         unit="absolute",
         source=(
             "Algebraic identity log Φ_{q⁻¹}(z) = -log Φ_q(z) for "
-            "Faddeev's Φ_q(z) = ∏(1-q^{2k+1}z)^{-1}; falsifies the "
+            "compact-q-dilog Φ_q(z) = ∏(1-q^{2k+1}z)^{-1}; falsifies the "
             "boxed identity in prop:li2q-phiq-bar-symmetrization."
         ),
     )

@@ -79,4 +79,4 @@ The remaining open question: what is the categorical relationship between this N
 
 The conjecture's empirical filtration-shape finding is correct and substantive. The inferred LP/SDP implication was a category error — I assumed the NF-basis filtration could be re-indexed by Wedderburn partitions, which is false in general.
 
-Sibling-PR coord posts on #1272, #1276, #1273 that referenced the LP/SDP reduction prediction should be acknowledged as referencing a falsified claim; the **filtration-shape correlation** with their h² / Bring + Faddeev findings still holds, just not through the LP/SDP path I described.
+Sibling-PR coord posts on #1272, #1276, #1273 that referenced the LP/SDP reduction prediction should be acknowledged as referencing a falsified claim; the **filtration-shape correlation** with their h² / Bring + compact-q-dilog findings still holds, just not through the LP/SDP path I described.

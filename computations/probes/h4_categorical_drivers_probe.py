@@ -19,7 +19,7 @@ DISTINCT (h² coefficient 6 vs 3/4 − G). So the +1·h⁴ correction is
 Yekutieli per-cell). This narrows the candidate categorical drivers.
 
 Candidates tested (motivated by the 13-driver menu):
-  - Faddeev iterated recursion at z = h^4
+  - iterated compact-q-dilog recursion at z = h^4
   - Φ_q power series h^4 coefficient
   - Rogers pentagon at h^4 order (Li_2^q(h^4))
   - Partition-algebra (MacMahon) h^4 at H_4 explicit sum
@@ -84,18 +84,18 @@ def main() -> int:
 
     candidates = []
 
-    # ── Driver (i) — Faddeev iterated Φ_q(q^k z)/Φ_q(z) at z = h⁴ ─
+    # ── Driver (i) — iterated compact-q-dilog Φ_q(q^k z)/Φ_q(z) at z = h⁴ ─
     # Φ_q recursion gives 1/(1-z) at single application; at z = h⁴
     # this is 1/(1-h⁴). Expansion: 1 + h⁴ + h⁸ + ... — coefficient
     # of h⁴ in linking_weight(q) - 1 ≈ 1 exactly.
     faddeev_at_h4 = 1 / (1 - h4)
     candidates.append({
-        "driver": "(i) Faddeev iterated at z = h⁴",
+        "driver": "(i) iterated compact-q-dilog at z = h⁴",
         "form": "1/(1 − h⁴) − 1 (as h⁴ correction)",
         "value": faddeev_at_h4 - 1,
         "alpha_proxy": (faddeev_at_h4 - 1) / h4,
         "alpha_proxy_name": "(1/(1-h⁴) - 1) / h⁴",
-        "categorical": "Faddeev functional equation Φ_q(qz)/Φ_q(z) = 1/(1-z) at substrate-natural z = h⁴",
+        "categorical": "compact-q-dilog functional equation Φ_q(qz)/Φ_q(z) = 1/(1-z) at substrate-natural z = h⁴",
     })
 
     # ── Driver (ii) — Φ_q power series at z = h ────────────────────
@@ -108,7 +108,7 @@ def main() -> int:
         "value": phi_q_log_n4,
         "alpha_proxy": phi_q_log_n4 / h4,
         "alpha_proxy_name": "value / h⁴",
-        "categorical": "Faddeev explicit formula log Φ_q(z) = Σ z^n / (n·(1−q^{2n}))",
+        "categorical": "compact-q-dilog explicit formula log Φ_q(z) = Σ z^n / (n·(1−q^{2n}))",
     })
 
     # ── Driver (iii) — Rogers Li_2^q pentagon at h⁴ argument ──────
@@ -288,7 +288,7 @@ def main() -> int:
         "concrete test established that Bring color-tube and canonical+"
         "Yekutieli are categorically distinct (h² coefficients 6 vs 3/4 "
         "− G), so the +α·h⁴ correction is additive to the Bring base. "
-        "This probe tests 7 candidate drivers (Faddeev iterated, Φ_q "
+        "This probe tests 7 candidate drivers (iterated compact-q-dilog, Φ_q "
         "power series, Rogers Li_2^q, 6j Biedenharn-Elliott, MacMahon "
         "partition algebra, Lobachevsky-Catalan G², KLR crystal-graph "
         "positivity) without empirical fitting."

@@ -85,7 +85,7 @@ The mass-endomorphism tower
 ([`prop:mass-endomorphism-tower`](#prop:mass-endomorphism-tower)
 lines 162–183) **proves** that the brane-tower integral evaluates
 to $-\mathrm{Li}_2^q(-V)$ (symmetric q-dilogarithm), not
-$\Phi_q(V)$ (Faddeev quantum dilogarithm — empirically off by
+$\Phi_q(V)$ (compact quantum dilogarithm — empirically off by
 $10^6$ per
 [`kashaev-integration-identity.witness.json`](https://github.com/litlfred/qou/blob/main/computations/kashaev-integration-identity.witness.json)).
 At the substrate level (single Planck-tick variable $x = \hbar_q^2$)

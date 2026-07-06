@@ -25,7 +25,7 @@
 | **3** | W3 | Strategy A — Rogers `Li_2^q` PSLQ at ℚ(q_0) algebraic locus (λ_scale closure candidate, parallel to #909's Strategy D) | hours | queued |
 | **4** | W4 | Strategy C — cosh / cos_q ladder higher-order PSLQ (λ_scale; cheapest forward path) | hours | queued |
 | **5** | W5 | Reeb-flow / Garside closed-form compute verification (Migration Backlog #5) | hours | queued |
-| **6** | W6 | Strategy B — Faddeev `Φ_q` PSLQ (mass-side, parallel to W3) | hours | queued |
+| **6** | W6 | Strategy B — compact-q-dilog `Φ_q` PSLQ (mass-side, parallel to W3) | hours | queued |
 | **7** | W7 | H_12 Phase-2 (≥3500 test words, multi-nucleon canonical braids) — gated on D4 completion + rank-deficiency mitigation | 2-3 days compute | **gated on D4** |
 | **8** | W8 | Migrate remaining 20 SUPERSEDED-importer scripts off `mass_endomorphism.py` — gated on W7 | hours per script | gated on W7 |
 | **9** | W9 | Strategy E — universe-level closure cross-check (verification leg for any A/B/C/D candidate) | hours | gated on a candidate from W3/W4/W6/#909 |

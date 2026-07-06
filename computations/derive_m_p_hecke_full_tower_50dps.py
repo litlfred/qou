@@ -97,7 +97,7 @@ Per AGENTS.md three-cal discipline (CAL-1 m_e, CAL-2 q₀):
 - NO Q_β (CAL-3) anchor consumed in the m_p prediction.
 
 Result history:
-  - 2026-05-16 (Faddeev Φ_q tower): m_p_pred = 955.49 MeV vs CODATA
+  - 2026-05-16 (compact q-dilog Φ_q tower): m_p_pred = 955.49 MeV vs CODATA
                                     938.27 MeV; residual +1.835 %
                                     (+18,353 ppm).  ≈ 54,000× tighter
                                     than the previous Path A value
@@ -330,7 +330,7 @@ def derive_full_tower(
         "tower_convention": (
             "Paper canon: m(β) = |Π V̂_i| − Σ Li_2^q(−|V̂_i|) "
             "− Σ_{i<j} z² Li_2^q(−|V̂_i V̂_j|) + T4 + T5 + T6 + …. "
-            "T2/T3 via symmetric q-dilogarithm (NOT Faddeev Φ_q). "
+            "T2/T3 via symmetric q-dilogarithm (NOT compact q-dilog Φ_q). "
             "T5 categorical via A_max_grade. T6 from Habiro "
             "residue bridge.  T7+ pending (σ-shell α_5 for A=1 atoms "
             "is research-scope)."

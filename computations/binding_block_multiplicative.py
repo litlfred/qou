@@ -42,7 +42,7 @@ PRECISION DISCIPLINE (per `_precision.py`):
 
   Compute at COMPUTE_DPS (default 50), serialize at OUTPUT_DPS (40),
   guard margin 10 digits. All Li_2^q evaluations use the symmetric
-  q-dilog (NOT Faddeev Φ_q). Block factors v_p, v_n are read from
+  q-dilog (NOT compact q-dilog Φ_q). Block factors v_p, v_n are read from
   the H_3-equivalent character table; this script does NOT recompute
   H_{3A} characters, so the precision is bounded by the H_3-level
   input.

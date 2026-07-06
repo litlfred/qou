@@ -1,12 +1,27 @@
 """
-Shared utility: Faddeev quantum dilogarithm Φ_q at MPFR precision.
+Shared utility: COMPACT quantum dilogarithm at MPFR precision.
 
-**Context (per prop:li2q-phiq-bar-symmetrization).** Φ_q is the
-**archimedean / post-τ** form of the q-dilogarithm — bar-asymmetric,
-lives on ℝ via the Faddeev state integral / Andersen–Kashaev framework.
-It is **canonical for MASS context** (m_p, m_n, m_e, m_atom absolutes
-and m_p/m_e ratio): the bar-asymmetric component carries the dimensional
-mass scale.
+**Terminology (corrected 2026-07-06).** The function below is the
+**compact quantum dilogarithm** — a reciprocal q-Pochhammer / q-exponential
+
+    phi_q(z) = ∏_{k≥1} (1 − q^{-k}·z)^{-1} = (q^{-1}z ; q^{-1})_∞^{-1}.
+
+It is **NOT** the Faddeev *non-compact* quantum dilogarithm `Φ_b`, which is
+the **modular-double** object (ratio of two products over `b` and `b^{-1}`;
+kernel `sinh(zb)sinh(zb^{-1})`; poles at `c_b + ibℕ + ib^{-1}ℕ`;
+`Φ_b = Φ_{b^{-1}}`). The legacy name `phi_q` and the historic "Faddeev Φ_q"
+framing are **misleading** — retained here only for import stability
+(production mass consumers import this symbol). Do not read this as `Φ_b`.
+See [`docs/audits/2026-07-06-qbeta-faddeev-phi-b-modular-double-accuracy.md`].
+
+**Which face this is correct for.** Evaluated at the *real* substrate
+`q₀ > 1`, this compact form is the **real-q / Rogers-adjacent** object and
+is the right one for the **MASS / bar-even / volume face** (m_p, m_n, m_e,
+m_atom absolutes and m_p/m_e). It is bar-asymmetric under `q ↔ q^{-1}`, but
+that asymmetry is **not** the full Chern–Simons/decay structure — that
+requires the missing `b^{-1}` modular-dual factor (the `Φ_b` decay face,
+open f-map). So this utility is correct where it is used (mass), but must
+**not** be substituted for `Φ_b` on the Q_β/decay (bar-odd) face.
 
 For BINDING context (B(K) = m_atom − Z·m_p − N·m_n, Δm_pn, isospin
 differences) use `_li_2_q_util.py` instead — Li_2^q is the bar-symmetric

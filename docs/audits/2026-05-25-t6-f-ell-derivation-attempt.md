@@ -40,7 +40,7 @@ This number cannot come from the **Li_2^q**-corrected formula with the published
 
 ### Possibility (a) — Paper computation used Φ_q (pre-correction)
 
-The Faddeev quantum dilogarithm Φ_q grows extremely fast near |z| = q (has poles); at z = 0.989 with q_0 ≈ 1.110, the first factor in Φ_q(z) = Π(1 - q^(-k) z)^(-1) is:
+The compact quantum dilogarithm phi_q grows extremely fast near |z| = q (has poles); at z = 0.989 with q_0 ≈ 1.110, the first factor in Φ_q(z) = Π(1 - q^(-k) z)^(-1) is:
 
 $$\frac{1}{1 - q^{-1} \cdot 0.989} = \frac{1}{1 - 0.989/1.110} = \frac{1}{0.109} \approx 9.17$$
 

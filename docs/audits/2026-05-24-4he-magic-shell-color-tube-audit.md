@@ -57,7 +57,7 @@ Per the cheat-sheet's full color-tube weighting structure, the form
 1 / (1 − h_q · q_0^{10})
 ```
 
-is the Faddeev `Φ_q`-resummed correction for 10-fold color-tube averaging (`9 + 1 = 10`). The numerical value at `q_0 ≈ 1.110` is:
+is the compact-q-dilog `Φ_q`-resummed correction for 10-fold color-tube averaging (`9 + 1 = 10`). The numerical value at `q_0 ≈ 1.110` is:
 
 ```
 h_q · q_0^{10} ≈ 0.20906 · 2.831 ≈ 0.5919

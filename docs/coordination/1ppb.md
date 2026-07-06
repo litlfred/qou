@@ -517,7 +517,7 @@ entirely from [3]_q!/q³, not the trace. F_Bor = 6 − 9h + 19/2·h² − 57/8·
 with all rational coefficients derived from Lean-proved forms.
 
 **Sibling classification:**
-- #1276 (Bring+Faddeev): additive, independent — h²=0 finding posted
+- #1276 (Bring + compact-q-dilog): additive, independent — h²=0 finding posted
 - #1259 (q-Schur convention): no overlap, downstream consumer
 - #1224 (Δ_λ closure): no overlap, parallel axis
 - #1249 (substrate q₀): no overlap, independent
@@ -543,5 +543,5 @@ with all rational coefficients derived from Lean-proved forms.
   matched to 0.024%.
 
 **Sibling classification:**
-- #1276 (Bring+Faddeev): additive — ℏ⁴ coefficient 5 may relate to
-  their Faddeev h⁴ coefficient; different h-variables (ℏ_q vs h)
+- #1276 (Bring + compact-q-dilog): additive — ℏ⁴ coefficient 5 may relate to
+  their compact-q-dilog h⁴ coefficient; different h-variables (ℏ_q vs h)

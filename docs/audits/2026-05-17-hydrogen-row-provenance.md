@@ -173,13 +173,13 @@ In MeV units; division by m_e gives cat-units. Per `_t5_cat_units_for(A, Z, N)` 
 **The 932 MeV shortfall** is NOT explained by any of:
 1. T7 = 0 (would need T7 ~ 932 MeV; estimated max ≲ 10 MeV from A=2 scaling, ruled out)
 2. additive vs `*_q` compound convention (5.92 → 6.30 MeV, ~0.4 MeV improvement, ruled out)
-3. Faddeev Φ_q pole artifact (now resolved by Li_2^q switch; revealed the structural gap that the pole was masking)
+3. compact q-dilog Φ_q pole artifact (now resolved by Li_2^q switch; revealed the structural gap that the pole was masking)
 4. T6 A-key convention (A_nucleon vs A_categorical: ~80-200 MeV swing, but still off by >700 MeV either way)
 
 **Open hypotheses for the 932 MeV gap** (per owner hint: "hidden weighting/scaling factor, maybe q or h"):
 
 - **T8+ tail not implemented** — paper truncated at T6 pre-2026-05; magnitude unknown but presumably bounded since the brane-tower is meant to converge.
-- **V̂_i re-derivation under Li_2^q** — the current chain-walk in `additive_wedderburn_volumes` was matched to the retired Faddeev Φ_q form. The V̂ values themselves may need rederivation.
+- **V̂_i re-derivation under Li_2^q** — the current chain-walk in `additive_wedderburn_volumes` was matched to the retired compact q-dilog Φ_q form. The V̂ values themselves may need rederivation.
 - **Hidden scaling factor** — candidates include:
   - **c_q²** (= 1/(q−1)² ≈ 82.7 at q_0) — squared speed of light scaling; cat → MeV conversion might be missing a `· c_q²` factor
   - **q^k** for k unphysical (q^49 ≈ 173.5 ≈ needed factor; unlikely without derivation)

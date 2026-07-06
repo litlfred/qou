@@ -186,7 +186,7 @@ Stage 3 for a hyperbolic link) and multiplies by `linking_weight`. The
 
 ---
 
-## 4. Φ_q (Faddeev) vs Li_2^q (Rogers)
+## 4. Φ_q (compact q-dilog) vs Li_2^q (Rogers)
 
 - **Production baryon `VolDensity` uses neither.** `vol_density_borromean` and
   `linking_weight_family_a` are pure rational functions of `q`
@@ -195,7 +195,7 @@ Stage 3 for a hyperbolic link) and multiplies by `linking_weight`. The
   for the **brane-tower / binding** context (`compute_t2_t3_from_vols`, line 128;
   module docstring lines 4-16). This is consistent with the cheat-sheet §4 claim
   that the binding channel uses the bar-symmetric `Li_2^q`.
-- **Φ_q (Faddeev)** lives in `_phi_q_util.py` (mass-anchor / bar-asymmetric),
+- **Φ_q (compact q-dilog)** lives in `_phi_q_util.py` (mass-anchor / bar-asymmetric),
   per the same module docstring (lines 13-15). It is bar-asymmetric and carries
   the dimensional scale.
 - **Verdict on the cheat-sheet claim:** correct **for the binding/brane-tower

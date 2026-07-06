@@ -128,7 +128,7 @@ Coordinated with [PR #801](https://github.com/litlfred/qou/pull/801) (interface-
 
 | Layer | Bar-symmetric form (works) | Bar-anti-symmetric form (fails) | Location |
 |---|---|---|---|
-| **Series** | Symmetric Li_2^q(z) = Σ z^n/(n·[n]_q) — used in T2, T3 tower | Faddeev Φ_q(z) = ∏(1−q^n z)⁻¹ — gives −737 MeV mirror-nucleus pathology (PR #801) | PR #801 T2, T3 |
+| **Series** | Symmetric Li_2^q(z) = Σ z^n/(n·[n]_q) — used in T2, T3 tower | compact q-dilog Φ_q(z) = ∏(1−q^n z)⁻¹ — gives −737 MeV mirror-nucleus pathology (PR #801) | PR #801 T2, T3 |
 | **Phase** (N=1 single-strand) | cos(α − b·ℏ_q²/2) (master Q_β formula); arg is bar-anti-sym, cos is even ⇒ bar-sym | sin or e^{iφ} alone | [`c-k-comprehensive-reference.md`](./2026-05-19-c-k-comprehensive-reference.md) |
 | **Gain** (per-Z step) | $\alpha = [3]_q^2 \cdot \cosh(h)$ — Phase 5b finding above (0.022% match) | $[3]_q^2$ alone leaves a 2.17% bar-anti-sym residual | this doc |
 
@@ -138,7 +138,7 @@ Coordinated with [PR #801](https://github.com/litlfred/qou/pull/801) (interface-
 - Phase: $\cos(x) = \tfrac{1}{2}(e^{ix} + e^{-ix})$ — bar-symmetrize the exponential of an imaginary bar-anti-sym argument.
 - Gain: $\cosh(h) = \tfrac{1}{2}(e^h + e^{-h})$ — bar-symmetrize the exponential of a real bar-anti-sym argument.
 
-All three are the **even part** of an exponential of a bar-anti-symmetric Hecke operator. The bar-anti-symmetric channels (Faddeev Φ_q, sin/odd-phase, sinh(h)) are exactly the ones that break mirror-nucleus symmetry, isospin parity, and orientation reversal — the "wrong" projections empirically.
+All three are the **even part** of an exponential of a bar-anti-symmetric Hecke operator. The bar-anti-symmetric channels (compact q-dilog Φ_q, sin/odd-phase, sinh(h)) are exactly the ones that break mirror-nucleus symmetry, isospin parity, and orientation reversal — the "wrong" projections empirically.
 
 ### Integration along boundary + non-abelian Stokes
 

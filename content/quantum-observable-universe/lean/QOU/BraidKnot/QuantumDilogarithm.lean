@@ -170,7 +170,7 @@ structure QuantumDilogarithm where
 
 /-! ## z-Habiro Rogers saddle identity (conjecture — formalize-first)
 
-The Faddeev face `phi_q` (root-of-unity quantum dilogarithm; the archimedean
+The compact-q-dilog face `phi_q` (root-of-unity quantum dilogarithm; the archimedean
 realisation of the merged `QOU.MassEndomorphism.ZHabiroCauchy` eulerCoeff
 limit) and the Rogers face `towerTerm = -li2_q(-|·|)` are, per
 `prop:phi-q-aj-machinery-identification`, two archimedean saddles of ONE
@@ -193,7 +193,7 @@ Ref: docs/audits/2026-06-22-zhabiro-bounded-rogers-continuation-direction.md §4
 -/
 
 /-- **Conjecture (z-Habiro Rogers saddle identity).** There is a real-`q`
-    archimedean saddle map `realQSaddle` under which the Faddeev face `phi_q`
+    archimedean saddle map `realQSaddle` under which the compact-q-dilog face `phi_q`
     becomes the bounded Rogers production tower term `towerTerm = -li2_q(-|·|)`.
     The `saddle_phi_q_eq_towerTerm` field is the conjectural input — open for
     `𝓑₃`; every result below is conditional on this class. -/
@@ -216,7 +216,7 @@ theorem ZHabiroRogersSaddle.realQSaddle_phi_q_at_zero
   exact towerTerm_at_zero q
 
 /-- **Conditional corollary.** Under the saddle conjecture, the real-`q` saddle
-    of the Faddeev face disagrees with `phi_q` itself at zero amplitude (the
+    of the compact-q-dilog face disagrees with `phi_q` itself at zero amplitude (the
     Rogers face is `0` there, the Faddeev face is `1`): the saddle genuinely
     moves `phi_q` off its own value, witnessing that the real-`q` continuation is
     the bounded Rogers form, not the Faddeev product. -/

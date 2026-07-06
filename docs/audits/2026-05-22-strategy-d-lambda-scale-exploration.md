@@ -152,7 +152,7 @@ candidates tested. Possibilities for the structural decomposition:
 - `ε = −h^6 / 6 + h^8 · c` for some small c — gives a relative
   contribution of `(h^8 · c) / (h^6/6) = 6 · h² · c`, requiring
   `c ≈ -0.0067/(6·h²) ≈ -0.026`; not obviously clean either.
-- The residual is a Faddeev Φ_q / Rogers Li_2^q expression at a
+- The residual is a compact q-dilog Φ_q / Rogers Li_2^q expression at a
   natural argument — needs PSLQ against a q-dilog basis. This is
   the entry point to Strategy A / B of the brief.
 

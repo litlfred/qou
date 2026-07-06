@@ -77,7 +77,7 @@ uses appear only inside comparison testbeds or the already-migrated
 | `subgoal_1_per_knot_mass_table_probe.py` | AUDIT-KEEP | uniform-λ_A vs per-knot comparison probe | prints | |
 | `substrate/lever1_lambda_sw_no_shortcut.py` | AUDIT-KEEP | tests/refutes integer-τ recurrence vs wired Family-A | yes | |
 | `substrate/sw_period_residue.py` | AUDIT-KEEP | SW-period residue ≟ λ_A identification check | yes | |
-| `sweeps/mass_table_bring_faddeev_h4_sweep.py` | AUDIT-KEEP | λ_A candidate column (Family-A vs Bring+Faddeev H₄) | yes | ⚠ borderline: witness carries live λ_A-path MeV values; moves to migrate if policy hardens to "no fresh 966-path MeV in any committed witness" |
+| `sweeps/mass_table_bring_faddeev_h4_sweep.py` | AUDIT-KEEP | λ_A candidate column (Family-A vs Bring + compact-q-dilog H₄) | yes | ⚠ borderline: witness carries live λ_A-path MeV values; moves to migrate if policy hardens to "no fresh 966-path MeV in any committed witness" |
 | `vol_density_per_block_wiring.py` | AUDIT-KEEP | global-vs-per-block wiring testbed (RED twin) | yes | |
 | `volume_def_reconcile.py` | AUDIT-KEEP | production reading, one of three compared | yes | |
 | `probes/gap_a4_He3_residual_probe.py` | GATED | local sympy λ_A reimpl. | yes | GAP-A-4 — untouched |
