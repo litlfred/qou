@@ -494,6 +494,7 @@ export default chapter({
         "type-b-folding-cpt",
         "weinberg-angle-categorical",
         "wigner-su4-from-spin-isospin",
+        "alpha-wigner-supermultiplet-context",
         "categorical-proton",
         "categorical-proton-properties",
         "categorical-neutron",
