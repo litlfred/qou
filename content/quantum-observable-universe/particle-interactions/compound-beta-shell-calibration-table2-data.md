@@ -1,4 +1,4 @@
-| $A_{\mathrm{magic}}$ | representative β-decay | Q (MeV) | Shell crossed |
+| $A_{\mathrm{magic}}$ | Representative $\beta$-decay | $Q$ (MeV) | Shell crossed |
 |:---:|:---:|:---:|:---:|
 | 2 | $^{3}\mathrm{H} \to {}^{3}\mathrm{He}$ | 0.01859 | N=2 |
 | 8 | $^{14}\mathrm{C} \to {}^{14}\mathrm{N}$ | 0.15648 | N=8 |

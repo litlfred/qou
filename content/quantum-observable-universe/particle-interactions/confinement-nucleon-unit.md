@@ -1,47 +1,10 @@
-The confinement LP proof
-([confinement as LP](#prop:confinement-lp)) and the Gram
-indefiniteness theorem
-([topological confinement](#prop:confinement-topological))
-together justify treating **nucleons as atomic units** in the
-transfer matrix chain.  The proof is **purely algebraic** ---
-it uses LP duality, Gram matrix eigenstructure, and braid group
-realizability.  No physics assumptions enter; the physical
-interpretation (confinement, gluon, mass) is downstream.
+The confinement LP proof ([confinement as LP](#prop:confinement-lp)) and the Gram indefiniteness theorem ([topological confinement](#prop:confinement-topological)) jointly justify treating **nucleons as atomic units** in the transfer matrix chain. The proof is purely algebraic: we use LP duality, Gram matrix eigenstructure, and braid group realizability. No physics assumptions enter; we interpret the physics (confinement, gluon, mass) strictly downstream.
 
-**Statement.**  The inter-nucleon transfer matrix
-([transfer matrix](#def:transfer-matrix-operator)) uses nucleon
-strand types $p, n$ with crossing coefficients
-$pp: (1,0)$, $nn: (1,-\mathrm{HA})$, $pn: (1,-\mathrm{HA}/2)$,
-without resolving the internal quark structure.  This is exact
-(not an approximation) because:
+**Statement.** The inter-nucleon transfer matrix ([transfer matrix](#def:transfer-matrix-operator)) uses nucleon strand types $p, n$ with crossing coefficients $pp: (1,0)$, $nn: (1,-\mathrm{HA})$, $pn: (1,-\mathrm{HA}/2)$, without resolving the internal quark structure. This is exact (not an approximation) because:
 
-1. **LP confinement** proves that the quark NF coefficients
-   are trapped in the Frobenius cone $G\vec{x} \geq 0$ by the
-   Borromean operator $B_3 = (\sigma_0\sigma_1^{-1})^3$.
-   No quark subset can unbind: disconnected quark states are
-   LP-infeasible.
+1. **LP confinement** proves that the Borromean operator $B_3 = (\sigma_0\sigma_1^{-1})^3$ traps the quark NF coefficients in the Frobenius cone $G\vec{x} \geq 0$. No quark subset can unbind: disconnected quark states are LP-infeasible.
+2. **Gram indefiniteness** ($\det G < 0$, eigenvalue $\approx -0.741$) shows that energy minimization has a global minimum at $\mathrm{tr}_M = 0$ (massless). The confinement at $\mathrm{tr}_M \approx 1$ is therefore **topological**, not energetic. It requires the braid group realizability constraint, which forces $B_3$.
+3. **Consequence for the transfer matrix:** Since quarks cannot unbind, the nucleon's internal braid structure (B$_3$ + quark crossings) acts as a rigid unit. The inter-nucleon crossing between nucleon $i$ and nucleon $j$ depends only on the nucleon types ($p$ or $n$), not on the quark arrangement within each nucleon. The transfer matrix Skein polynomial $P = \prod_i \hat{V}_i$ captures the full inter-nucleon physics at the nucleon level.
+4. **Error bound:** The nucleon-as-unit approach introduces no error for the transfer matrix (it is exact at the inter-nucleon crossing level). Quark-level effects manifest only through the nucleon NF coefficients (proton NF, neutron NF), which we precompute once via `build_nucleon_nf`.
 
-2. **Gram indefiniteness** ($\det G < 0$, eigenvalue $\approx -0.741$)
-   shows that energy minimization has a global minimum at
-   $\mathrm{tr}_M = 0$ (massless).  The confinement at
-   $\mathrm{tr}_M \approx 1$ is therefore **topological**, not
-   energetic --- it requires the braid group realizability
-   constraint, which forces $B_3$.
-
-3. **Consequence for the transfer matrix:** since quarks cannot
-   unbind, the nucleon's internal braid structure (B$_3$ +
-   quark crossings) acts as a unit.  The inter-nucleon crossing
-   between nucleon $i$ and nucleon $j$ depends only on the
-   nucleon types ($p$ or $n$), not on the quark arrangement
-   within each nucleon.  The transfer matrix Skein polynomial
-   $P = \prod_i \hat{V}_i$ captures the full inter-nucleon
-   physics at the nucleon level.
-
-4. **Error bound:** the nucleon-as-unit approximation introduces
-   no error for the transfer matrix (it is exact at the
-   inter-nucleon crossing level).  Quark-level effects manifest
-   only through the nucleon NF coefficients (proton NF, neutron
-   NF), which are precomputed once via `build_nucleon_nf`.
-
-**Witness:** `confinement-lp.witness.json`,
-`confinement-operator-selection.witness.json`.
+**Witness:** `confinement-lp.witness.json`, `confinement-operator-selection.witness.json`.
