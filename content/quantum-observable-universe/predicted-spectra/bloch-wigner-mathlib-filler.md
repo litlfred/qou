@@ -1,10 +1,6 @@
 **Remark (Bloch-Wigner dilogarithm $D$ on the unit circle).**
 
-Building on
-[`rem:clausen-function-mathlib-filler`](#rem:clausen-function-mathlib-filler),
-the Lean file [`bloch-wigner-mathlib-filler.lean`](bloch-wigner-mathlib-filler.lean)
-defines the Bloch-Wigner dilogarithm restricted to unit-circle
-shape parameters $z = e^{i\theta}$:
+Building on [`rem:clausen-function-mathlib-filler`](#rem:clausen-function-mathlib-filler), the Lean file [`bloch-wigner-mathlib-filler.lean`](bloch-wigner-mathlib-filler.lean) defines the Bloch-Wigner dilogarithm restricted to unit-circle shape parameters $z = e^{i\theta}$:
 
 $$
   D(z) \;:=\; \mathrm{Im}(\mathrm{Li}_2(z))\;+\; \log|z| \cdot \arg(1 - z),
@@ -12,34 +8,15 @@ $$
   D(e^{i\theta}) \;=\; \mathrm{Cl}_2(\theta) \quad (\text{since } |z|=1, \log|z|=0).
 $$
 
-This is the case relevant to QOU's hyperbolic-knot contributions,
-where shape parameters are unit-circle roots:
+This is the case relevant to QOU's hyperbolic-knot contributions, where shape parameters are unit-circle roots. See [Table 1](#tbl:bloch-wigner-mathlib-filler-table1-data).
 
-See [Table 1](#tbl:bloch-wigner-mathlib-filler-table1-data).
+See [Table 2](#tbl:bloch-wigner-mathlib-filler-table2-data) for added Lean carriers.
 
-## Lean carriers added
+The unit-circle restriction of $D$ is sufficient for the hyperbolic-knot/Bloch-Wigner chain in the framework. Every hyperbolic knot embeddable in Bring's surface has shape parameters on the unit circle. The general $D : \mathbb{C} \setminus \{0,1\} \to \mathbb{R}$ remains an open Mathlib gap but does not block the chain.
 
-See [Table 2](#tbl:bloch-wigner-mathlib-filler-table2-data).
+See [Table 3](#tbl:bloch-wigner-mathlib-filler-table3-data) for remaining blocked components.
 
-## Mathlib gaps remaining
-
-The unit-circle restriction of $D$ is **all that's needed for the
-hyperbolic-knot $\leftrightarrow$ Bloch-Wigner chain in the QOU framework**: every
-hyperbolic knot embeddable in Bring's surface has shape parameters
-on the unit circle (since the corresponding Kleinian groups are
-arithmetic). The general $D : \mathbb{C} \setminus \{0,1\} \to \mathbb{R}$
-with the boundary correction $\log|z| \arg(1-z)$ is a Mathlib gap
-remaining open, but it is **not blocking** the QOU chain.
-
-What is still blocked:
-
-See [Table 3](#tbl:bloch-wigner-mathlib-filler-table3-data).
-
-## Significance
-
-With this filler added, **every BW value referenced in the α_EM
-chain is now a Lean carrier with explicit definition**, not an
-opaque or cited reference. The combination
+With this filler, every Bloch-Wigner value referenced in the $\alpha_{\text{EM}}$ chain is a Lean carrier with an explicit definition. The combination 
 
 $$
   \mathrm{Cl}_2 \;\hookrightarrow\;
@@ -47,7 +24,4 @@ $$
   \text{hyperbolic-knot volumes}
 $$
 
-is fully populated at the carrier level. The substantive
-mathematical content (pentagon identity, BlochGroup, Suslin
-uniqueness) remains as documented Mathlib gaps — but the
-*infrastructure for stating those gaps* is now in place.
+is fully populated at the carrier level. The substantive mathematical content remains as documented Mathlib gaps, but the infrastructure for stating those gaps is in place.
