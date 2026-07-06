@@ -4,7 +4,9 @@
 note for the one open object in the ⁴He magnitude arc: the **writhe structure that
 fixes the sign-carrying exchange matrix `G`** in the pinned value form
 `b₄ = −ln det(I + G)` (Perron–Frobenius forced `G` sign-carrying; the two naive
-principled exchanges failed, `b4_antisym_hecke_exchange_derivation`).
+principled exchanges failed,
+[`computations/probes/b4_antisym_hecke_exchange_derivation.py`](../../computations/probes/b4_antisym_hecke_exchange_derivation.py)
++ [`.witness.json`](../../computations/probes/b4-antisym-hecke-exchange-derivation.witness.json)).
 
 ## 1. Literature anchor — the α binding IS the Wigner SU(4) supermultiplet energy
 
@@ -18,7 +20,8 @@ The whole [1⁴] approach is **externally validated** by established nuclear phy
 - Standard mass models carry a phenomenological **Wigner term**
   `E_W = W(A)·|N−Z|/A` (coefficient `a_W ≈ 47 MeV` traditional; origin
   [nucl-th/9702054](https://arxiv.org/abs/nucl-th/9702054); physical origin,
-  ScienceDirect S0370269398004584). **Key point:** the `|N−Z|` term *vanishes at
+  [ScienceDirect S0370269398004584](https://www.sciencedirect.com/science/article/abs/pii/S0370269398004584)).
+  **Key point:** the `|N−Z|` term *vanishes at
   N=Z*, so the α's extra binding is the **SU(4) closed-shell exchange energy the
   models add by hand** — exactly the connected `b₄ = 9.243 MeV` the framework aims
   to derive.
@@ -53,7 +56,8 @@ where `w_{ij}` is the **writhe** (signed crossing number) of exchanging blocks
 Hecke eigenvalue (the derived sign source). The connected `b₄ = −ln det(I+G)` is
 then the Wigner supermultiplet exchange energy of §1.
 
-**What the naive attempts taught us** (`b4_antisym_hecke_exchange_derivation`):
+**What the naive attempts taught us**
+([`b4_antisym_hecke_exchange_derivation.py`](../../computations/probes/b4_antisym_hecke_exchange_derivation.py)):
 - uniform `w=1` (`G_{ij}=λ_−·z=−0.474`) → det<0, unphysical (over-rotates);
 - `G_{ij}=−h/2` → 28× too small.
 So the **per-pair writhe `w_{ij}` is non-trivial and non-uniform** — the like-pair
@@ -100,6 +104,6 @@ the diagram, never chosen to hit 9.243.
 - [arXiv:2106.04834](https://arxiv.org/pdf/2106.04834) — Wigner SU(4), clustering, ¹²C.
 - [arXiv:2511.00216](https://arxiv.org/html/2511.00216v1) — SU(4) spin-isospin branching rules.
 - [nucl-th/9702054](https://arxiv.org/abs/nucl-th/9702054) — origin of the Wigner energy.
-- ScienceDirect S0370269398004584 — physical origin of the Wigner term.
+- [ScienceDirect S0370269398004584](https://www.sciencedirect.com/science/article/abs/pii/S0370269398004584) — physical origin of the Wigner term.
 - [arXiv:math/0405508](https://arxiv.org/pdf/math/0405508) — Markov traces / Hecke type B.
 - [arXiv:1908.04152](https://arxiv.org/pdf/1908.04152) — Hecke trace algorithm, weaving knots.
