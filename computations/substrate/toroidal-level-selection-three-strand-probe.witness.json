@@ -1,0 +1,35 @@
+{
+  "computation": "toroidal_level_selection_three_strand_probe",
+  "description": "T2b/GAP-A-3: the (3,k) torus-link tower adds exactly one q-rigid compact zeta_3 (color) winding to the T2 hyperbolic pair; both ride the forced mu = 1/2 elementary Legendre family, on the non-compact (cosh eta) and compact (cos theta) loci respectively.",
+  "discipline": "no fit; sympy exact + mpmath 50 dps; (a)-scoped; no observable touched.",
+  "auditOnly": "docs/audits/2026-07-06-parabolic-cylinder-toroidal-channel-interpolation.md",
+  "results": {
+    "block21_sigma1sigma2": "trace -1, det 1, cube = Id (q-independent) -> eigenvalues omega, omega^-1",
+    "tower_form": "x_k = W+ q^{2k} + W- q^{-2k} + W0 * 2 cos(2 pi k/3)",
+    "winding_lattice": "(k, k mod 3): hyperbolic (modulus-carrying) x compact zeta_3 (q-rigid, color/triality)",
+    "torus_link_family": "(3,k): k=1 trefoil-family ground level; three-strand = Borromean/nucleon carrier arity",
+    "related": [
+      "toroidal-level-selection-hopf-probe.witness.json (two-strand T2)",
+      "prop:hoefsmit-toroidal-ladder-locus (forced mu = 1/2)"
+    ]
+  },
+  "assertions": {
+    "block21_trace_minus_one": true,
+    "block21_det_one": true,
+    "block21_cube_identity_q_independent": true,
+    "one_dim_channels_q2_qm2": true,
+    "tower_annihilated_by_factored_order4": true,
+    "compact_factor_is_theta_2pi3_flow": true,
+    "compact_locus_elementary_plus_half": true,
+    "compact_locus_elementary_minus_half": true
+  },
+  "allPassed": true,
+  "verdict": "THREE STRANDS ADD ONE RIGID COMPACT (COLOR) WINDING, SAME FORCED FAMILY: on the (2,1) Hoefsmit block rho(sigma_1 sigma_2) has trace -1, det 1 and cubes to the identity EXACTLY AND q-INDEPENDENTLY, so the (3,k) torus-link tower is x_k = W+ q^{2k} + W- q^{-2k} + W0 2cos(2pi k/3): the T2 hyperbolic winding pair (substrate modulus, eta = 2 ln q) plus a topological zeta_3 winding of period 3 that does not flow with q. The tower is annihilated by the factored order-4 operator (E^2+E+1)(E^2-(q^2+q^-2)E+1), and the compact channel rides the SAME forced mu = 1/2 elementary Legendre family on the compact locus cos theta (verified with constants at 50 dps) — one family, two locus rows of the channel-rotation table. LEVEL SELECTION (GAP-A-3 candidate, (a)-scoped): three-strand (Borromean/nucleon) levels are indexed by the winding pair (k, k mod 3) — hyperbolic + color/triality. Structural only; no binding number; nothing wired.",
+  "scriptHash": "1a7adda1286d",
+  "scriptCommitSha": "unknown",
+  "commitSha": "5c019a5cc40293efc0e7467e5233ae6f8d4d71bd",
+  "engine": "sympy+mpmath",
+  "computedAt": "2026-07-06T23:17:09.514995+00:00",
+  "durationMs": 0,
+  "scriptFile": "toroidal_level_selection_three_strand_probe.py"
+}
