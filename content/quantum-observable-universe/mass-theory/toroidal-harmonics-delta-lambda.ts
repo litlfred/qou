@@ -1,19 +1,16 @@
-import { block } from "../../../scripts/lib/html_nodes.ts";
-import { parseMarkdown } from "../../../scripts/lib/markdown.ts";
+import { proposition } from "../../schema/builders";
 
-export const toroidalHarmonicsDeltaLambda = block(
-  "toroidal-harmonics-delta-lambda",
-  {
-    title: "Toroidal Harmonics and the Δ_λ Mass Gap",
-    authors: ["Claude"],
-    is_mathematics: true,
-    dependencies: [
-      "he4-two-row-dominance",
-      "interface-knot-markov-z"
-    ],
-    witnesses: [
-      "computations/qbeta/toroidal_harmonics.py"
-    ]
+export default proposition({
+  label: "prop:toroidal-harmonics-delta-lambda",
+  title: "Toroidal Harmonics and the Δ_λ Mass Gap",
+  is_mathematics: true,
+  computation: {
+    engine: "sympy",
+    script: "computations/qbeta/toroidal_harmonics.py",
+    status: "verified"
   },
-  parseMarkdown(__dirname, "toroidal-harmonics-delta-lambda.md")
-);
+  uses: [
+    "prop:he4-two-row-dominance",
+    "lem:interface-knot-markov-z"
+  ]
+});

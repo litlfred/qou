@@ -328,6 +328,7 @@ export default chapter({
       label: "sec:mass-algebraic-qbeta-formalize-first-gates",
       blocks: [
         "qbeta-formalize-first-gates-intro",
+        "toroidal-harmonics-delta-lambda",
         "q-beta-over-e0-classical-vanishing",
         "q-beta-over-e0-classical-vanishing-proof",
         "qbeta-c8-c10-silver-rationals",

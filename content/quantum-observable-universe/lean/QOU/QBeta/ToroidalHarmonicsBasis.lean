@@ -22,25 +22,27 @@ knot complement.
 namespace QOU.QBeta
 
 /-- The toroidal coordinate `η`. -/
-def ToroidalHarmonicEta (q : ℝ) : ℝ :=
+noncomputable def ToroidalHarmonicEta (q : ℝ) : ℝ :=
   Real.log q -- placeholder for proper geometry
 
+noncomputable def x_of_w (w : ℝ) : ℝ :=
+  -1 + 1 / (2 * w)
+
 /-- The differential operator for the Toroidal Harmonic (Legendre equation). -/
-def ToroidalOperator (n : ℕ) (y : ℝ → ℝ) (x : ℝ) : ℝ :=
-  (1 - x^2) * (deriv (deriv y) x) - 2 * x * (deriv y x) + (n^2 - (1/4 : ℝ)) * y x
+noncomputable def ToroidalOperator (n : ℝ) (y : ℝ → ℝ) (x : ℝ) : ℝ :=
+  (1 - x^2) * deriv (deriv y) x - 2 * x * deriv y x + (n^2 - 1/4) * y x
 
 /-- The differential operator for the Markov parameter z-recursion generating function. -/
-def MarkovZOperator (n : ℕ) (f : ℝ → ℝ) (w : ℝ) : ℝ :=
-  4 * w^2 * (4 * w - 1) * (deriv (deriv f) w) + 16 * w^2 * (deriv f w) + (4 * n^2 - 1) * f w
+noncomputable def MarkovZOperator (n : ℝ) (f : ℝ → ℝ) (w : ℝ) : ℝ :=
+  4 * w^2 * (4*w - 1) * deriv (deriv f) w + 16 * w^2 * deriv f w + (4*n^2 - 1) * f w
 
 /-- 
-The fundamental bridge theorem connecting the JSJ Toroidal space to the pre-archimedean 
-Z-recursion. 
-Substituting x = 1/(2w) - 1 maps the Toroidal Operator exactly to the Markov Operator.
+  The mapping x(w) = -1 + 1/(2w) intertwines the Toroidal Legendre Operator 
+  and the Markov parameter z-recursion (with w = z^2). 
 -/
-theorem toroidal_ode_to_markov_z (n : ℕ) (y : ℝ → ℝ) (w : ℝ) (hw : w > 0) :
-  let x := 1 / (2 * w) - 1
-  let f := fun w => y (1 / (2 * w) - 1)
+theorem toroidal_ode_to_markov_z (n : ℝ) (f : ℝ → ℝ) (w : ℝ) (hw : w > 0) :
+  let y := fun x => f (1 / (2 * (x + 1)))
+  let x := x_of_w w
   ToroidalOperator n y x = 0 ↔ MarkovZOperator n f w = 0 := by
   sorry -- Proof follows by explicit chain-rule derivation as verified in SymPy.
 
