@@ -189,6 +189,31 @@ canonical candidates for clean parity. Decidable checks (exact, radicals):
   constraint set must mean odd-PART dominance of the anchor swing, or a₁
   singular at q=1. To be verified symbolically and flagged, not resolved.
 
+### 4-ter outcomes (2026-07-06, runs after pre-statement commit `44b0b82c`)
+
+- **T1 (`7vfu`) KILLED (scope-(a)).** Neither `D(q)` nor `S(q)` on the golden
+  pair has clean bar-parity — the twist ratios remain non-monomial
+  ([probe](../../computations/qbeta/qbeta_t1_barpair_symmetrization_probe.py) →
+  [witness](../../computations/qbeta/qbeta-t1-barpair-symmetrization.witness.json),
+  exit 1 = candidate-excluded). Reading: the middle coefficient's non-monomial
+  bar-covariance is **intrinsic** — no evaluation choice (pointwise or
+  pair-symmetrized) repairs it; the defect must be addressed in the function
+  space (I-B) or absorbed by a carrier with matching covariance.
+- **T3 (`pxvo`) 7/7 EXACT** ([probe](../../computations/qbeta/qbeta_t3_carrier_q1_order_preflight_probe.py) →
+  [witness](../../computations/qbeta/qbeta-t3-carrier-q1-order-preflight.witness.json)):
+  `κ_{(2,1)}` q=1-order exactly 3 (leading coeff 2); `z − 1/2` order exactly
+  2 (leading `−1/16`; z critical at q=1) ⇒ z-functionals realize even orders
+  only ⇒ **`f(z)·κ_{(2,1)}` excluded as the sole `a₁` source** (odd total
+  order vs finite nonzero shadow). **T3-2 tension CONFIRMED, 🟡 owner:**
+  "a₁ exactly bar-odd" + "a₁ q=1-regular with shadow 2" jointly impossible —
+  ruling needed (odd-part/swing reading of #1887 vs q=1-singular a₁);
+  affects every parity gate in the program.
+- **T2 (`ciei`) scoped, not started:**
+  [`docs/scope/2026-07-06-z-ck-fmap-ib-rebasing-scope.md`](../scope/2026-07-06-z-ck-fmap-ib-rebasing-scope.md)
+  — I-B is now the load-bearing route (B1 induced recurrence → B2 re-based
+  parity → B3 shadow + basis composition); 4₁ is the cleanest test knot
+  (`C_n ≡ 1`); reuses the n920 Habiro machinery landed on main.
+
 ## 5. Session log
 
 | date | event |
