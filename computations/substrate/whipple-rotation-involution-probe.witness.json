@@ -1,0 +1,41 @@
+{
+  "computation": "whipple_rotation_involution_probe",
+  "description": "Option-2 eigenfunction-level probe: bar-evenness of the interpolating ladder, exactness of the Whipple argument involution and the zeta_4 quarter-period channel shift, plus 50-dps verification that the toroidal Legendre pair exchanges degree and order with a sqrt(sinh)-Jacobian (Whipple).",
+  "discipline": "no fit; sympy exact + mpmath 50 dps; discovery outputs labeled; (a)-scoped.",
+  "auditOnly": "docs/audits/2026-07-06-parabolic-cylinder-toroidal-channel-interpolation.md",
+  "results": {
+    "alpha_spread_point1": "4.0927e-50",
+    "alpha_spread_point2": "2.1349e-50",
+    "whipple_constant_point1": "(0.141118040809449224776624820197 - 0.194232320022439164733620026448j)",
+    "gamma_ratio_mu": {
+      "value": "(0.285714285714285714285714285714 - 4.09296839846344016707478820425e-52j)",
+      "matched_law": "1/(nu+mu+1/2)",
+      "rel_err": 1.432538939462204e-51
+    },
+    "gamma_ratio_nu": {
+      "value": "(-0.285714285714285714285714285714 - 2.30572610968818220934042061586e-52j)",
+      "matched_law": "-1/(nu+mu+1/2)",
+      "rel_err": 2.4739904887540602e-51
+    },
+    "lean_cert_quarter_period": "QOU/Mass/ComplexVolumeZeta4Partner (corpus, sorry-free)",
+    "lean_cert_ladder_locus": "QOU.BraidsAndKnots.toroidal_locus_forced (this PR, sorry-free)"
+  },
+  "assertions": {
+    "bar_even_bracket_[d]_qinv_eq_[d]_q": true,
+    "whipple_argument_involution_coth_acosh_coth": true,
+    "quarter_period_cosh_shift_eq_i_sinh": true,
+    "whipple_alpha_independence_point1": true,
+    "whipple_alpha_independence_point2": true,
+    "gamma_ratio_mu_law_found": true,
+    "gamma_ratio_nu_law_found": true
+  },
+  "allPassed": true,
+  "verdict": "EIGENFUNCTION-LEVEL STRUCTURE CONSISTENT, IDENTIFICATION STAYS A LEAD: the interpolating ladder is bar-EVEN ([d] invariant under q -> q^{-1}); the Whipple cosh<->coth argument exchange is an exact involution (the geometric winding exchange); the zeta_4 quarter-period shift maps the cosh channel to i*sinh (corpus Lean-certified); and numerically at 50 dps the toroidal pair P^{-mu}_{nu-1/2}(coth a) / Q^nu_{mu-1/2}(cosh a) (pairing discovered by a 48-combo scan; DLMF 14.9.16 convention) is sqrt(sinh a)-proportional with an a-independent constant (degree<->order exchange verified at two generic (nu, mu) points), whose Gamma-shift laws r_mu = +1/(nu+mu+1/2) and r_nu = -1/(nu+mu+1/2) are recorded as discovery output — one Gamma(nu+mu+1/2) with an alternating nu-sign. SCOPE (a): these are the necessary structural facts for 'rotation_step archimedean shadow = Whipple involution'; the identification itself remains an open lead (audit S9) and nothing here touches production or observables.",
+  "scriptHash": "8482629d585e",
+  "scriptCommitSha": "unknown",
+  "commitSha": "971463a192c142173bb34f7e7b980c8c7f4ba3e3",
+  "engine": "sympy+mpmath",
+  "computedAt": "2026-07-06T22:45:47.092797+00:00",
+  "durationMs": 0,
+  "scriptFile": "whipple_rotation_involution_probe.py"
+}
