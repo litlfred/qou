@@ -1,10 +1,9 @@
 **Audit (compound β-decay empirical probe).**
 
-*To extract $y_{\mathrm{target}}(A_{\mathrm{magic}})$, a chain
-of β-decays along the β-stability valley was historically proposed to sum Q-values:*
+*To extract $y_{\mathrm{target}}(A_{\mathrm{magic}})$, we historically proposed summing Q-values for a chain of β-decays along the stability valley:*
 
 $$
-  \sum_{\text{decay chain}\;\text{to } A_{\mathrm{magic}}}
+  \sum_{\text{chain to } A_{\mathrm{magic}}}
     \mathfrak{Q}_\beta
   \;=\;
   E_0 \cdot
@@ -12,21 +11,17 @@ $$
           - \text{leptonic mass}\bigr).
 $$
 
-*Rearranging, the magic-shell binding contribution was extracted from
-the **total chain Q-value** minus the non-magic contributions:*
+*We rearranged this to extract the magic-shell binding contribution. We subtracted the non-magic contributions from the total chain Q-value:*
 
 $$
   \Delta \mathfrak{m}_{\mathrm{shell}}(A_{\mathrm{magic}})
   \;=\;
   \sum_{\text{chain}} \mathfrak{Q}_\beta
   \;-\;
-  \sum_{\text{non-magic β-decays}} \mathfrak{Q}_\beta^{(3)},
+  \sum_{\text{non-magic β-decays}} \mathfrak{Q}_\beta^{(3)}.
 $$
 
-*where $\mathfrak{Q}_\beta^{(3)}$ are the level-3 (non-magic) Q-values
-predictable from the pair-coupling shadow price at each intermediate
-step.  The **residual** was identified as $\Delta\mathfrak{m}_{\mathrm{shell}}$, the
-pure shell contribution.*
+*Here, $\mathfrak{Q}_\beta^{(3)}$ denotes the level-3 (non-magic) Q-values. We predict these from the pair-coupling shadow price at each intermediate step. We identified the residual as $\Delta\mathfrak{m}_{\mathrm{shell}}$, the pure shell contribution.*
 
 **Numerical β-decay table (reference data, AME 2020):**
 

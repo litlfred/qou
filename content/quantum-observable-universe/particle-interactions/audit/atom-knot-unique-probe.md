@@ -2,10 +2,8 @@
 
 **Target:** `prf:atom-knot-unique`
 
-The model previously claimed that different realisations of the proton-quark block $w_{q^Z}$—such as interchanging two protons via a non-trivial permutation on the graph—yield different isotopy classes that correspond to distinct physical isomers.
+Permuting identical fermions induces a phase shift in the wavefunction; it does not generate distinct physical states. Graph-theoretical distinctions that are not invariant under the permutation of identical fermions map to the same physical state in the observable trace.
 
-**Divergence:**
-This claim directly violates standard quantum mechanics. Under quantum statistics, permuting identical fermions (such as protons) does not generate distinct "physical isomers" or distinct physical states. Instead, such a permutation can only induce a phase shift in the multi-fermion wavefunction. Graph-theoretical distinctions that are not invariant under the permutation of identical fermions must map to the same physical state in the observable trace.
+We previously claimed that distinct realisations of the proton-quark block $w_{q^Z}$—such as interchanging two protons—yield distinct isotopy classes corresponding to distinct physical isomers. This contradicts quantum statistics. 
 
-**Action Taken:**
-This speculative correspondence has been removed from the core derivation `prf:atom-knot-unique` to maintain rigorous mathematical and categorical formalism. The text now restricts itself to stating that distinct $w_{q^Z}$ realisations yield distinct categorical isotopy classes without making unproven claims about distinct physical isomers.
+We remove this physical interpretation from `prf:atom-knot-unique`. The text now states only that distinct $w_{q^Z}$ realisations yield distinct categorical isotopy classes.

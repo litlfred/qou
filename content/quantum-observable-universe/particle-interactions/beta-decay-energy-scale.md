@@ -1,6 +1,4 @@
-The Gröbner--Shirshov normal form coefficients are dimensionless Laurent
-polynomials in $q$.  To connect them to observed energies we need
-an **energy scale** $\mathfrak{E}_0$ (in MeV) such that
+The Gröbner--Shirshov normal form coefficients are dimensionless Laurent polynomials in $q$. To connect them to observed energies, we need an energy scale $\mathfrak{E}_0$ (in MeV) such that:
 
 $$
   |\Delta(\mathrm{net})| \times \mathfrak{E}_0
@@ -11,23 +9,11 @@ $$
    \approx  0.7823 \text{MeV}.
 $$
 
-The framework gives $\mathfrak{E}_0$ in two forms — a **single-Planck-tick**
-($N=0$) value and a **tower-summed** ($N \to \infty$) geometric form —
-that differ by the brane-tower correction $1/(1-\hbar_q^2) \approx 1.0099$
-at $q_0 \approx 1.110$.  Both are derivable from CAL-1 ($m_e$) and CAL-2
-($q_0$) alone; CAL-3 ($\mathfrak{Q}_\beta(n)$) is the cross-check.  See the
-[notation register](../notation/notation-register.md) for the
-$\mathfrak{E}_0^{(N=0)}$ / $\mathfrak{E}_0^{\text{full}}$ symbol convention
-and the [collisions note](../notation/notation-collisions.md) for why
-$\mathfrak{E}_0$ is **not** $\mathfrak{Q}_\beta(n)$.
+The framework provides $\mathfrak{E}_0$ in two forms. The first is a single-Planck-tick ($N=0$) value. The second is a tower-summed ($N \to \infty$) geometric form. These differ by the brane-tower correction $1/(1-\hbar_q^2) \approx 1.0099$ at $q_0 \approx 1.110$. Both derive from CAL-1 ($m_e$) and CAL-2 ($q_0$) alone; CAL-3 ($\mathfrak{Q}_\beta(n)$) provides the cross-check. See the [notation register](../notation/notation-register.md) for the $\mathfrak{E}_0^{(N=0)}$ / $\mathfrak{E}_0^{\text{full}}$ symbol convention and the [collisions note](../notation/notation-collisions.md) for why $\mathfrak{E}_0$ is not $\mathfrak{Q}_\beta(n)$.
 
 ## Linearity
 
-The transition $\Delta = \mathrm{NF}(\mathfrak{n}) -
-\mathrm{NF}(\mathfrak{p})$ equals $\mathrm{NF}(\mathfrak{n} -
-\mathfrak{p})$ because $\mathrm{NF}$ is coordinate extraction in
-the Gröbner--Shirshov basis — a linear map on the 6-dimensional
-vector space $H_3(q)$.
+The transition $\Delta = \mathrm{NF}(\mathfrak{n}) - \mathrm{NF}(\mathfrak{p})$ equals $\mathrm{NF}(\mathfrak{n} - \mathfrak{p})$ because $\mathrm{NF}$ is coordinate extraction in the Gröbner--Shirshov basis. This extraction acts as a linear map on the 6-dimensional vector space $H_3(q)$.
 
 ## Derivation (typed crossings)
 
@@ -43,10 +29,7 @@ From CODATA 2022:
 - $Q_{\beta} \approx 0.78233\;\text{MeV}$
 
 **Derived energy scale — single-tick (Planck-tick) form, $\mathfrak{E}_0^{(N=0)}$.**
-The leading-order energy scale is derivable from the categorical
-three-calibration inputs $m_e$ ($H^0$) and $q_0$ ($H^1$) alone —
-$\mathfrak{Q}_\beta(n)$ ($H^2$) is the datum the framework predicts, not consumed
-here ([three-calibration discipline](#prop:three-calibration-discipline)):
+The leading-order energy scale derives from the categorical three-calibration inputs $m_e$ ($H^0$) and $q_0$ ($H^1$) alone. The target $\mathfrak{Q}_\beta(n)$ ($H^2$) is the datum the framework predicts, not consumed here ([three-calibration discipline](#prop:three-calibration-discipline)):
 
 $$
   \mathfrak{E}_0^{(N=0)}
@@ -57,12 +40,10 @@ $$
   \approx  4.186 \text{MeV}.
 $$
 
-This is the electron rest energy per Planck time
-([energy scale and Planck time](#rem:energy-scale-planck)).
+This is the electron rest energy per Planck time ([energy scale and Planck time](#rem:energy-scale-planck)).
 
 **Derived energy scale — tower-summed form, $\mathfrak{E}_0^{\text{full}}$.**
-The full brane-tower geometric series ([symbolic derivation](https://github.com/litlfred/qou/blob/main/computations/q_beta_form_a_n1_extension.py#L32))
-is
+The full brane-tower geometric series ([symbolic derivation](https://github.com/litlfred/qou/blob/main/computations/q_beta_form_a_n1_extension.py#L32)) is:
 
 $$
   \mathfrak{E}_0^{\text{full}}
@@ -73,13 +54,10 @@ $$
   \approx  4.228 \text{MeV}
 $$
 
-at $q_0 \approx 1.110$, $\approx$ +0.99% over the single-tick value. Truncations
-$\mathfrak{E}_0^{(N)} = \mathfrak{E}_0^{(N=0)} \cdot (1 - \hbar_q^{2(N+1)})/(1 - \hbar_q^2)$
-recover the tower at finite depth.
+at $q_0 \approx 1.110$, which is $\approx +0.99\%$ over the single-tick value. Truncations $\mathfrak{E}_0^{(N)} = \mathfrak{E}_0^{(N=0)} \cdot (1 - \hbar_q^{2(N+1)})/(1 - \hbar_q^2)$ recover the tower at finite depth.
 
 **Calibration cross-check, $\mathfrak{E}_0^{(\text{cal})}$.**
-The same scale can be extracted from CODATA by dividing the
-free neutron $Q$-value by the Hecke NF difference:
+We extract the same scale from CODATA by dividing the free neutron $Q$-value by the Hecke NF difference:
 
 $$
   \mathfrak{E}_0^{(\text{cal})}
@@ -91,8 +69,7 @@ $$
    \approx  8.131 \times \mathfrak{m}_{e}.
 $$
 
-The values, computed from the witness
-[`q-beta-form-a-n1-extension.witness.json`](https://github.com/litlfred/qou/blob/main/computations/q-beta-form-a-n1-extension.witness.json):
+The computed values from the witness [`q-beta-form-a-n1-extension.witness.json`](https://github.com/litlfred/qou/blob/main/computations/q-beta-form-a-n1-extension.witness.json):
 
 | Quantity | Value (MeV) | vs $\mathfrak{E}_0^{(\text{cal,symb})}$ |
 |----------|------------:|------------------------------:|
@@ -102,34 +79,13 @@ The values, computed from the witness
 | $\mathfrak{E}_0^{(\text{cal,symb})}$ (CODATA / $h(h-2)/2$) | $:val[E_0_calibrated_MeV]{precision=4}$ | reference (symbolic) |
 | $\mathfrak{E}_0^{(\text{cal,typed})}$ (CODATA / $\lvert\Delta(\text{net,typed})\rvert$) | $4.155$ | typed-crossings value (finite-size noise, 0.6% below symbolic) |
 
-**Open finding.** Both the geometric tower form
-$1/(1-\hbar_q^2)$ and the bounded symmetric $\mathrm{Li}_2^q$
-candidate move the framework prediction *further from* the
-calibrated values at the substrate level (only $\approx$ 0.01% apart
-at $q_0$). The direction-of-residual puzzle is recorded in
-[`docs/audits/-tower-mev-calibration-finding.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-tower-mev-calibration-finding.md)
-(the audit independently confirms $-\mathrm{Li}_2^q(-V)$ is the
-correct Kashaev specialisation, while the asserted $\Phi_q(V)$
-form is off by $10^{6}$), and the open closure question is now formally
-posed as the conjecture
-[`conj:alpha-k-categorical-closure`](../braids-and-knots/alpha-k-categorical-closure.md)
-(existence, family selection, CAL-3 direction). The H_3 explicit
-$\alpha_k$ values from
-[`prop:alpha-k-derivation-procedure`](../braids-and-knots/alpha-k-derivation-procedure.md)
-do **not** satisfy the naive recursion $\alpha_k = \hbar_q^{2(k-1)}\alpha_{k-1}$
-($\alpha_1 = 0$, not $\hbar_q^0 \alpha_0 = 1$), so neither the
-geometric nor the Li_2^q closure is a trivial substitution — the
-correct closure is a non-obvious resummation identity that the
-conjecture seeks.
+**Open finding.** Both the geometric tower form $1/(1-\hbar_q^2)$ and the bounded symmetric $\mathrm{Li}_2^q$ candidate move the framework prediction further from the calibrated values at the substrate level (only $\approx 0.01\%$ apart at $q_0$). We record this direction-of-residual puzzle in [`docs/audits/-tower-mev-calibration-finding.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-tower-mev-calibration-finding.md). The audit independently confirms $-\mathrm{Li}_2^q(-V)$ is the correct Kashaev specialisation, while the asserted $\Phi_q(V)$ form is off by $10^{6}$. We formally pose the open closure question as the conjecture [`conj:alpha-k-categorical-closure`](../braids-and-knots/alpha-k-categorical-closure.md) (existence, family selection, CAL-3 direction). The explicit $H_3$ $\alpha_k$ values from [`prop:alpha-k-derivation-procedure`](../braids-and-knots/alpha-k-derivation-procedure.md) do not satisfy the naive recursion $\alpha_k = \hbar_q^{2(k-1)}\alpha_{k-1}$ ($\alpha_1 = 0$, not $\hbar_q^0 \alpha_0 = 1$). Thus neither the geometric nor the $\mathrm{Li}_2^q$ closure is a trivial substitution. The correct closure is a non-obvious resummation identity that the conjecture seeks.
 
-Note: $\Delta(\mathrm{net}) < 0$ (net$(\mathfrak{n}) <$
-net$(\mathfrak{p})$ with typed crossings), so we use $|\Delta|$ to
-keep $\mathfrak{E}_0 > 0$.
+Note: $\Delta(\mathrm{net}) < 0$ (net$(\mathfrak{n}) <$ net$(\mathfrak{p})$ with typed crossings), so we use $|\Delta|$ to keep $\mathfrak{E}_0 > 0$.
 
 ## NF$_+$ / NF$_-$ decomposition
 
-Each nucleon's NF splits into positive and negative coefficient
-sums:
+Each nucleon's NF splits into positive and negative coefficient sums:
 
 | | NF$_+$ | NF$_-$ | Net |
 |:---:|---:|---:|---:|
@@ -137,17 +93,11 @@ sums:
 | **Proton** | $+1.1420$ ($\sigma_0, \sigma_1, L_+, L_-$) | $-0.1429$ ($\gamma, e^-$) | $+0.9991$ |
 | **$\Delta$** | $-0.0756$ | $-0.1127$ | $-0.1883$ |
 
-The neutron has **three** negative terms ($\gamma, L_+, e^-$) while
-the proton has only **two** ($\gamma, e^-$).  The $L_+$ sign flip is
-the typed-crossing effect: the $d$-$d$ crossing in neutron
-$[\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]$ shifts the Hopf link
-coefficient below zero.
+The neutron has three negative terms ($\gamma, L_+, e^-$) while the proton has only two ($\gamma, e^-$). The $L_+$ sign flip is the typed-crossing effect: the $d$-$d$ crossing in neutron $[\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]$ shifts the Hopf link coefficient below zero.
 
 ## Observable vs virtual: $Q_{\geq 2}$
 
-Terms of word length $\ell \geq 2$ (Hopf links $L_\pm$ and trefoil
-$e^-$) are topologically non-trivial and therefore **observable**.
-Terms $\ell < 2$ ($\gamma, \sigma_0, \sigma_1$) are virtual.
+Terms of word length $\ell \geq 2$ (Hopf links $L_\pm$ and trefoil $e^-$) are topologically non-trivial and therefore observable. Terms $\ell < 2$ ($\gamma, \sigma_0, \sigma_1$) are virtual.
 
 | | Observable ($\ell \geq 2$) | Virtual ($\ell < 2$) |
 |:---:|---:|---:|
@@ -161,7 +111,7 @@ $$
   Q_{\geq 2} = |\Delta(\ell \geq 2)| \times \mathfrak{E}_0
   = 0.11007 \times 4.155
   \approx 0.4573 \text{MeV}
-  =  58.5\% \text{of}\mathfrak{Q}_\beta.
+  =  58.5\% \text{ of } \mathfrak{Q}_\beta.
 $$
 
 ## Energy scale scenarios
@@ -175,9 +125,7 @@ $$
 
 ## Full energy budget
 
-Each of the six NF terms contributes
-$\Delta_i \times \mathfrak{E}_0$ to the total decay energy.
-The budget is:
+Each of the six NF terms contributes $\Delta_i \times \mathfrak{E}_0$ to the total decay energy. The budget is:
 
 | Term | Word | Knot/Link | $\ell$ | $\Delta_i$ | $\Delta_i \times \mathfrak{E}_0$ (MeV) |
 |:---:|:---:|:---:|:---:|---:|---:|
@@ -189,22 +137,13 @@ The budget is:
 | $e^-$ | $\sigma_0\sigma_1\sigma_0$ | trefoil ($3_1$) | $3$ | $-0.00098$ | $+0.0041$ |
 |  |  |  |  | **Sum** | **$+0.782$ MeV** |
 
-(Signs: $\Delta(\mathrm{net}) < 0$ with typed crossings, so the
-$\mathfrak{E}_0$ budget uses the sign convention
-$\Delta_i \times \mathfrak{E}_0 \times (-\mathrm{sgn}\Delta_{\mathrm{net}})$
-to give $Q > 0$.)
+(Signs: $\Delta(\mathrm{net}) < 0$ with typed crossings, so the $\mathfrak{E}_0$ budget uses the sign convention $\Delta_i \times \mathfrak{E}_0 \times (-\mathrm{sgn}\Delta_{\mathrm{net}})$ to give $Q > 0$.)
 
 ## The $L_+$ dominance (typed crossings)
 
-With typed crossings, the single largest contributor is
-$\Delta(L_+) = -0.1090$, giving $+0.453 \text{MeV}$ — larger
-than the $\gamma$ debt ($+0.424 \text{MeV}$).  This replaces the
-$\sigma_1$ dominance of the untyped computation.
+With typed crossings, the single largest contributor is $\Delta(L_+) = -0.1090$, giving $+0.453 \text{MeV}$. This is larger than the $\gamma$ debt ($+0.424 \text{MeV}$) and replaces the $\sigma_1 dominance$ of the untyped computation.
 
-The $\gamma$ debt ($+0.424 \text{MeV}$) and $L_+$ shift
-($+0.453 \text{MeV}$) together account for
-$0.877 \text{MeV}$ — more than $\mathfrak{Q}_\beta$.  The small
-virtual terms ($\sigma_0, \sigma_1$) absorb the excess:
+The $\gamma$ debt ($+0.424 \text{MeV}$) and $L_+$ shift ($+0.453 \text{MeV}$) together account for $0.877 \text{MeV}$, which exceeds $\mathfrak{Q}_\beta$. The small virtual terms ($\sigma_0, \sigma_1$) absorb the excess:
 
 $$
   \underbrace{+0.453}_{L_+}
@@ -218,22 +157,11 @@ $$
 
 ## Physical interpretation
 
-Beta decay pays down the neutron's leptonic debt.  With typed
-crossings, the process
-$\mathfrak{n} \to \mathfrak{p} + e^- + \bar\nu_e$
-releases $\mathfrak{Q}_\beta = 0.782 \text{MeV}$ because:
+Beta decay pays down the neutron's leptonic debt. With typed crossings, the process $\mathfrak{n} \to \mathfrak{p} + e^- + \bar\nu_e$ releases $\mathfrak{Q}_\beta = 0.782 \text{MeV}$ because:
 
-1. The neutron's $L_+$ (Hopf link) coefficient is **negative**
-   ($-0.010$) while the proton's is positive ($+0.099$).  This
-   $\Delta L_+ = -0.109$ is the dominant energy source.
-
-2. The neutron carries a larger $\gamma$ debt than the proton
-   ($\Delta\gamma = -0.102$), contributing $+0.424 \text{MeV}$.
-
-3. The virtual terms ($\sigma_0, \sigma_1$) contribute small negative
-   corrections ($-0.099 \text{MeV}$ total).
-
-4. The $e^-$ channel contributes only $+0.004 \text{MeV}$ —
-   the electron debt difference is nearly zero.
+1. The neutron's $L_+$ (Hopf link) coefficient is negative ($-0.010$) while the proton's is positive ($+0.099$). This $\Delta L_+ = -0.109$ is the dominant energy source.
+2. The neutron carries a larger $\gamma$ debt than the proton ($\Delta\gamma = -0.102$), contributing $+0.424 \text{MeV}$.
+3. The virtual terms ($\sigma_0, \sigma_1$) contribute small negative corrections ($-0.099 \text{MeV}$ total).
+4. The $e^-$ channel contributes only $+0.004 \text{MeV}$ — the electron debt difference is nearly zero.
 
 Witness: `beta-decay-energy-scale.witness.json`.

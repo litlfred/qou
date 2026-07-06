@@ -12,16 +12,11 @@
 | ${}^{60}\mathrm{Co}$ | 60 | 1770 | $38{,}863$ | $35{,}813$ | $-3{,}050$ |
 | ${}^{210}\mathrm{Bi}$ | 210 | 21945 | $8.25 \times 10^{13}$ | $7.62 \times 10^{13}$ | $-6.24 \times 10^{12}$ |
 
-All $\Delta E$ are negative — the daughter has lower energy.
-The computation requires exactly $\binom{A}{2}$ transfer matrix
-multiplications (including ${}^{210}\mathrm{Bi}$: 21,945 steps,
-instant).
+Every $\Delta E$ is negative; the daughter nucleus always occupies a lower energy state. The computation requires exactly $\binom{A}{2}$ transfer matrix multiplications. This completes instantly even for ${}^{210}\mathrm{Bi}$ (21,945 steps).
 
 ## Generator volume profile: ${}^{14}\mathrm{C}$ vs ${}^{14}\mathrm{N}$
 
-Generators $\sigma_7$ through $\sigma_{12}$ have **identical
-volumes** in both nuclei — only generators $\sigma_0$ through
-$\sigma_6$ differ (the 1-jet support of the single beta decay).
+Generators $\sigma_7$ through $\sigma_{12}$ share identical volumes in both nuclei. Only generators $\sigma_0$ through $\sigma_6$ differ. This localises the 1-jet support of the single beta decay.
 
 | Generator | $k_i$ | $V_i({}^{14}\mathrm{C})$ | $V_i({}^{14}\mathrm{N})$ | $\Delta V_i$ |
 |:---------:|:---:|:-----------------------:|:-----------------------:|:------------:|
@@ -34,9 +29,4 @@ $\sigma_6$ differ (the 1-jet support of the single beta decay).
 | $\sigma_6$ | 7 | $4.603$ | $2.943$ | $-\mathbf{1.660}$ |
 | $\sigma_7$--$\sigma_{12}$ | 6--1 | identical | identical | $0$ |
 
-Generator $\sigma_6$ — the converting neutron's own generator —
-has the **largest volume change** ($-1.660$, nearly half the total
-$\Delta E$).  Its color degree is $k_6 = 7$: it sees 7 crossings
-with downstream nucleons, ALL of which change type when the
-neutron converts to a proton.  This is the highest color degree
-at the converting position.
+Generator $\sigma_6$ corresponds to the converting neutron. It records the largest volume change ($-1.660$), accounting for nearly half the total $\Delta E$. Its color degree is $k_6 = 7$. It sees 7 crossings with downstream nucleons, all of which change type upon conversion. This is the highest color degree at the converting position.
