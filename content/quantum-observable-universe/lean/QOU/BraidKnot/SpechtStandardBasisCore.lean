@@ -770,7 +770,7 @@ theorem domWeight_swap_lt (t : Specht.Tableau μ) {a b : Fin (Specht.nOf μ)}
     (hrow : Specht.rowPattern t b < Specht.rowPattern t a) :
     domWeight t < domWeight (Equiv.swap a b • t) := by
   classical
-  set f := Specht.rowPattern t with hf
+  set f := Specht.rowPattern t
   have hne : a ≠ b := fun h => (Nat.ne_of_lt hab) (by rw [h])
   have hrp : Specht.rowPattern (Equiv.swap a b • t)
       = fun l => f (Equiv.swap a b l) := by
