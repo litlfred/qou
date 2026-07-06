@@ -3,8 +3,9 @@
 **Bean:** `2un4` (parent `4lss`).
 **Date:** 2026-07-06.
 **Scope:** Does the Bonatsos–Raychev q-deformed 3-D harmonic-oscillator
-route (uₚ(3) ⊃ soₚ(3), energy in q-numbers → orbit-orbit / spin-orbit
-correction terms) give QOU an **analytic, parameter-free** route to the
+route (`u_q(3) ⊃ so_q(3)`, energy in q-numbers → orbit-orbit correction
+terms — and spin-orbit *only* once an external spin coupling is added,
+per §2) give QOU an **analytic, parameter-free** route to the
 heavy nuclear magic numbers {50, 82, 126} that sidesteps the K = 12
 matrix barrier of the current Hoefsmit/Hecke programme
 ([`observations/k12-barrier-bypass.md`](../../content/quantum-observable-universe/observations/k12-barrier-bypass.md))?
@@ -15,7 +16,7 @@ matrix barrier of the current Hoefsmit/Hecke programme
 > handles the local PDF — arXiv itself is firewalled, proxy 403). It is
 > **NOT** a q-HO / spin-orbit / magic-number paper. It is **Minkov,
 > Drenska, Raychev, Roussev, Bonatsos, "Nuclear β- and γ- collective
-> bands in the SUₚ(2) rotator model", nucl-th/9605013 (1996)** — the
+> bands in the SU_q(2) rotator model", nucl-th/9605013 (1996)** — the
 > **q-rotor** paper, i.e. the topic of bean **`alyr`**, not this bean.
 > An earlier draft of this caveat guessed it was "an earlier related
 > q-HO paper"; that was **wrong** and is retracted. The genuine q-HO
@@ -28,7 +29,7 @@ matrix barrier of the current Hoefsmit/Hecke programme
 
 ## 1. What the literature route actually does
 
-The 3-D q-deformed HO with uₚ(3) ⊃ soₚ(3) symmetry (Bonatsos et al.)
+The 3-D q-deformed HO with u_q(3) ⊃ so_q(3) symmetry (Bonatsos et al.)
 has single-particle energies expressed in q-numbers. Expanding in the
 deformation τ = ln q about τ = 0, the leading correction to the
 degenerate oscillator shell is a term **∝ l(l+1)** — the *orbit-orbit*
