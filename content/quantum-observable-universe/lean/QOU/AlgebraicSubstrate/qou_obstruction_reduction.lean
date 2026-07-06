@@ -2,67 +2,119 @@
 -- had no imports, so ℕ/ℤ/ℝ were unresolved.  Surfaced when
 -- QOU.BraidKnot.MassGapObstruction became its first importer.
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.NormNum
 
 /-!
 # QOU.AlgebraicSubstrate.qou_obstruction_reduction
 
 **Canonical declaration** for content block
-[`thm:qou-obstruction-reduction`](../../../quantum-observable-universe/braids-and-knots/qou-obstruction-reduction.md): *QOU.AlgebraicSubstrate.qou_obstruction_reduction*.
+[`thm:qou-obstruction-reduction`](../../../quantum-observable-universe/stochastic-mechanics/qou-obstruction-reduction.md).
 
 The `lean.ref` URI `qou:QOU.AlgebraicSubstrate.qou_obstruction_reduction`
-resolves to this declaration in the `qou` Lake package.  The claim is
-formalised below (§3b-conditional, fully proved): the three sub-claims are
-derived from the context class's structural link fields.
+resolves to this declaration in the `qou` Lake package.
+
+**§3b-cond conditional class (honest).**  The class
+`QouObstructionReductionContext` carries the two *genuine mathematical
+inputs* of the obstruction reduction as hypothesis fields —
+
+* `vdb_duality` : **Van den Bergh / Calabi–Yau duality** of dimension 3
+  for `U_q(su₂)`, `HH^i(U_q,Ad) ≅ HH_{3-i}(U_q,Ad)` (equal dimensions);
+* `drinfeld_rigidity` : **Drinfeld rigidity** of the quasi-triangular
+  deformation, `dim HH_1(U_q,Ad) = 1`;
+
+— together with the raw dimension data, `χ(A)`, the primitive Kummer
+obstruction integer `κ₀`, and the *definitional* Kummer-vanishing field.
+Conclusion (a), `dim HH²(U_q,Ad) = 1`, is **derived** below by composing
+the two inputs (`HH² ≅ HH_{3-2} = HH_1 = 1`); it is NOT a class field.
+The `χ(A)`-identification of the generator (conclusions (b),(c)) rests on
+the single honest domain gap `obstruction_trace_gap` (the explicit
+Euler/trace pairing), left as `sorry`.
 -/
 
 namespace QOU.AlgebraicSubstrate
 
+/-- **§3b-cond context** for `thm:qou-obstruction-reduction`.
 
-/-- Abstract context for the `qou_obstruction_reduction` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+Fields are the genuine *hypotheses / data* of the reduction — the
+downstream conclusion `dim HH² = 1` is derived from them, never carried
+as a field. -/
 class QouObstructionReductionContext where
-  /-- The categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- Dimension of the obstruction space `dim Obs(C, q → 1)`. -/
-  obs_dim : ℕ
+  /-- `dim_k HH^i(U_q, Ad)`, the Hochschild cohomology dimensions. -/
+  hhCohDim : ℕ → ℕ
+  /-- `dim_k HH_i(U_q, Ad)`, the Hochschild homology dimensions. -/
+  hhHomDim : ℕ → ℕ
+  /-- INPUT — **Van den Bergh / Calabi–Yau duality of dimension 3** for
+      `U_q(su₂)`: `HH^i(U_q,Ad) ≅ HH_{3-i}(U_q,Ad)`, hence equal
+      dimension.  (A literature theorem; the class instance is the
+      §3b-cond conditional hypothesis.) -/
+  vdb_duality : ∀ i : ℕ, i ≤ 3 → hhCohDim i = hhHomDim (3 - i)
+  /-- INPUT — **Drinfeld rigidity** of the quasi-triangular deformation:
+      the degree-1 Hochschild homology (the deformation module) is
+      one-dimensional. -/
+  drinfeld_rigidity : hhHomDim 1 = 1
   /-- Euler characteristic `χ(A)`. -/
   chi_A : ℤ
-  /-- Image of the obstruction class under the trace map. -/
+  /-- Trace image of the `HH²` generator (observation-frame value). -/
   phi_1_image : ℝ
-  /-- Predicate: Kummer-level obstruction vanishes. -/
+  /-- The primitive Kummer obstruction integer `κ₀` (distinct datum;
+      its equality with `χ(A)` is the residual gap, not assumed here). -/
+  kappa0 : ℤ
+  /-- Kummer level-`n` vanishing predicate `κ₀ ≡ 0 (mod n)`. -/
   kappa_vanishes : ℕ → Prop
-  /-- The obstruction class in the trace space. -/
-  obstruction_class : ℤ
-  /-- Euler characteristic determines the obstruction class. -/
-  obstruction_class_eq : obstruction_class = chi_A
-  /-- Kummer vanishing corresponds to divisibility of the obstruction class. -/
-  kappa_vanishes_iff : ∀ n : ℕ, kappa_vanishes n ↔ (n : ℤ) ∣ obstruction_class
-  /-- Obstruction dimension is 1. -/
-  obs_dim_eq : obs_dim = 1
-  /-- The trace image of the obstruction is its integer value in the reals. -/
-  phi_1_image_eq : phi_1_image = (obstruction_class : ℝ)
+  /-- DEFINITIONAL — Kummer level-`n` vanishing *is* `n ∣ κ₀`
+      (definition of the predicate, in terms of `κ₀`, NOT `χ(A)`). -/
+  kappa_vanishes_def : ∀ n : ℕ, kappa_vanishes n ↔ (n : ℤ) ∣ kappa0
 
-/-- **Content statement** (from manuscript):
+/-- **Residual cohomology gap.**  The Euler/trace pairing on the
+    generator of the one-dimensional `HH²(U_q, Ad)` evaluates to `χ(A)`,
+    so `κ₀ = χ(A)` and the trace image is `χ(A)`.  This is the explicit
+    Connes / Hattori–Stallings pairing computation — the disjoint tensor
+    decomposition of the adjoint bimodule together with the commutation
+    of the Markov trace with the coproduct — which is NOT derivable from
+    the two structural inputs (`vdb_duality`, `drinfeld_rigidity`) and is
+    left as the honest domain gap. -/
+-- Ref: [yekutieli2010] Van den Bergh duality for Hochschild (co)homology; Euler/trace class computation
+-- Ref: [manuscript] quantum-observable-universe/stochastic-mechanics/qou-obstruction-reduction.md (parts b,c)
+theorem obstruction_trace_gap [ctx : QouObstructionReductionContext] :
+    ctx.kappa0 = ctx.chi_A ∧ ctx.phi_1_image = (ctx.chi_A : ℝ) := by
+  sorry
 
-**Theorem.**
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
-with gauge group $G = \mathrm{Aut}^{\otimes}(\tau)$ of dimension
-$d = \dim G$.  Then:
+/-- **Derived (conclusion (c)).**  Kummer level-`n` vanishing ⟺ `n ∣ χ(A)`.
+    Composes the *definitional* `kappa_vanishes_def` (over `κ₀`) with the
+    residual identification `κ₀ = χ(A)` (`obstruction_trace_gap`); it
+    therefore inherits that lemma's single honest `sorry`.  This is **not**
+    a class field — the χ(A)-form of vanishing is *derived*, never assumed
+    (that assumption was the self-projection this file removed). -/
+theorem kappa_vanishes_iff_chi [ctx : QouObstructionReductionContext] (n : ℕ) :
+    ctx.kappa_vanishes n ↔ (n : ℤ) ∣ ctx.chi_A := by
+  rw [ctx.kappa_vanishes_def, obstruction_trace_gap.1]
 
-    The Lean encoding below states the claim over the context class and
-    derives it from the class's structural link fields (§3b-conditional;
-    fully proved). -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/qou-obstruction-reduction.ts
+/-- **Content statement** (from manuscript), §3b-conditional on
+`QouObstructionReductionContext`:
+
+**Theorem.** Let `(𝐂, A, τ)` be a quantum observable universe.  Then
+(a) the classical-limit obstruction is one-dimensional
+`dim HH²(U_q,Ad) = 1`; (b) its unique class is the trace image of the
+Euler characteristic; (c) the level-`n` obstruction vanishes iff
+`n ∣ χ(A)`.
+
+Part (a) is **derived** from the two inputs (Van den Bergh CY-3 duality
+composed with Drinfeld rigidity).  Parts (b),(c) reduce to the single
+honest trace gap `obstruction_trace_gap`. -/
+-- Ref: [manuscript] quantum-observable-universe/stochastic-mechanics/qou-obstruction-reduction.md
 theorem qou_obstruction_reduction [ctx : QouObstructionReductionContext] :
-    ctx.obs_dim = 1 ∧
+    ctx.hhCohDim 2 = 1 ∧
     ctx.phi_1_image = (ctx.chi_A : ℝ) ∧
-    ∀ n : ℕ, 1 ≤ n → (ctx.kappa_vanishes n ↔ (n : ℤ) ∣ ctx.chi_A) :=
-  by
-    have h_phi : ctx.phi_1_image = (ctx.chi_A : ℝ) := by
-      rw [ctx.phi_1_image_eq, ctx.obstruction_class_eq]
-    have h_kappa : ∀ n : ℕ, 1 ≤ n → (ctx.kappa_vanishes n ↔ (n : ℤ) ∣ ctx.chi_A) := by
-      intro n _
-      rw [ctx.kappa_vanishes_iff, ctx.obstruction_class_eq]
-    exact ⟨ctx.obs_dim_eq, h_phi, h_kappa⟩
+    ∀ n : ℕ, 1 ≤ n → (ctx.kappa_vanishes n ↔ (n : ℤ) ∣ ctx.chi_A) := by
+  -- (a) DERIVED: dim HH²(U_q,Ad) = dim HH_{3-2}(U_q,Ad) = dim HH_1 = 1.
+  --     Van den Bergh CY-3 duality composed with Drinfeld rigidity.
+  have ha : ctx.hhCohDim 2 = 1 := by
+    have h : ctx.hhCohDim 2 = ctx.hhHomDim (3 - 2) := ctx.vdb_duality 2 (by norm_num)
+    have e : (3 - 2 : ℕ) = 1 := by norm_num
+    rw [e] at h
+    exact h.trans ctx.drinfeld_rigidity
+  -- (b),(c) reduce to the residual trace gap κ₀ = χ(A).
+  obtain ⟨_, hphi⟩ := obstruction_trace_gap
+  exact ⟨ha, hphi, fun n _ => kappa_vanishes_iff_chi n⟩
 
 end QOU.AlgebraicSubstrate
