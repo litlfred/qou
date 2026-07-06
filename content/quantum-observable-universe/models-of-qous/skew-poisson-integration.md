@@ -6,11 +6,14 @@ $\pi_<$ a skewed-Poisson structure on $H$.  Then there exists a
    (reduction modulo $\pp$ recovers $H$);
 
 2. $\mathrm{Dist}(G)$ is a deformation of
-   $\mathrm{Dist}(H)$ computed via a
+   $\mathrm{Dist}(H)$ (the distribution algebra of $G$ deforms
+   that of $H$, degenerating back to it under reduction modulo
+   $\pp$), computed via a
    Grobner--Shirshov basis for the relations of the enveloping
    algebra;
 
 3. the comultiplication on $\mathrm{Dist}(G)$ satisfies the
    *strong multiplicativity* condition: the Frobenius relation
-   $(\mathrm{Id}\otimes m)\circ(\Delta\otimes\mathrm{Id}) = \Delta\circ m$ is preserved under the deformation.
+   $(\mathrm{Id}\otimes m)\circ(\Delta\otimes\mathrm{Id}) = \Delta\circ m$ (the comultiplication $\Delta$ intertwines
+   with the multiplication $m$) is preserved under the deformation.
 
