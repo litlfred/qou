@@ -17,3 +17,11 @@ and the linear B = 5g form against the #3407 Lk_R⁽ᵏ⁾ spec (sign leg still
 implicit); (2) the hardcoded err_pct: 0.0 in
 categorical_q_decay_ba_low_isotopes.py:206 mis-reports the actual +0.41%;
 (3) extend to the A=4 [1⁴] exchange matrix.
+2026-07-06 (later): provenance + extension done on PR #3436 —
+docs/audits/2026-07-06-reeb-flow-pn-magnitude-provenance-and-1four-extension.md
++ computations/probes/b4_1four_reeb_flow_magnitude.py (3/3 assertions).
+Findings: 5 = |μ_min|² DERIVED; (q₀−1)²/q₀ term + linear B=5g ASSERTED
+(no corpus derivation); det-form fails deuteron (−58%) ⇒ forms distinct;
+[1⁴] mixed-sign at g_reeb = 26.596 MeV = 0.940× full B(⁴He) (2.877× b₄).
+Remaining: derive g_reeb from Lk_R⁽ᵏ⁾ (#3407); reconcile linear-vs-det;
+pin b₄ convention (connected excess vs full); pn sign.
