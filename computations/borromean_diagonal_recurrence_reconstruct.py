@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """Phase 2: symbolic reconstruction of the Borromean diagonal recurrence.
 
-Input: the (r, W) = (5, 13) existence certificate from
-borromean_diagonal_recurrence_hunt.py (nullity 2, 9/9 mod-p samples).
+Input: the existence certificates from borromean_diagonal_recurrence_hunt
+((5,13), nullity 2) and the follow-up higher-order scan: the UNIQUE
+(nullity-1) window (r, W) = (6, 11) — 184 unknowns, canonical operator
+up to scale — is the reconstruction target.
 
 Output sought: an explicit operator
 
-    sum_{i=0}^{5} a_i(q, m) J_{B,n+i} = b(q, m),   m = q^n,
+    sum_{i=0}^{6} a_i(q, m) J_{B,n+i} = b(q, m),   m = q^n,
 
 with a_i, b in Q(q)[m^{±1}] reconstructed as exact symbolic objects,
 then VERIFIED by exact symbolic annihilation against the sympy Habiro
@@ -48,15 +50,15 @@ from fractions import Fraction
 from math import isqrt
 from pathlib import Path
 
-R_ORD = 5
-W_WIN = 13
+R_ORD = 6
+W_WIN = 11
 NCOLS = (R_ORD + 2) * (2 * W_WIN + 1)   # 189: blocks a_0..a_5 then b
 P0 = (1 << 61) - 1
 P1 = 4611686018427387847
 P2 = 9223372036854775783
-NSAMP = 230          # base points at p0
+NSAMP = 262          # base points at p0
 NHOLD = 12           # held-out validation samples per entry fit
-DEG_MAX = 75         # max numerator/denominator degree tried in q
+DEG_MAX = 118         # max numerator/denominator degree tried in q
 NVER = 16            # symbolic verification range n = 1..NVER
 
 
@@ -217,7 +219,7 @@ def main() -> int:
             continue
         rows = build_rows(J, P0, sv, 1, R_FIT)
         basis, piv, free = rref_nullspace(rows, P0)
-        if len(basis) != 2:
+        if len(basis) != 1:
             continue
         raw.append((sv, piv, free, basis))
         pivot_count[piv] = pivot_count.get(piv, 0) + 1
@@ -376,7 +378,7 @@ def main() -> int:
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "description": (
             "Phase-2 symbolic reconstruction of the Borromean diagonal "
-            "colored-Jones recurrence (r=5, W=13): RREF-canonical null "
+            "colored-Jones recurrence (r=6, W=11, nullity 1): RREF-canonical null "
             "vector sampled mod 2^61-1, per-entry rational-function fit, "
             "Wang lift to Q(q), exact symbolic annihilation check, q->1 "
             "specialization"
