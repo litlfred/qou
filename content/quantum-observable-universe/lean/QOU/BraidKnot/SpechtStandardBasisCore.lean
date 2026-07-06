@@ -1053,6 +1053,35 @@ theorem garnir_assembly (t : Specht.Tableau μ)
     refine Finset.sum_congr rfl (fun π hπ => ?_)
     rw [(Finset.mem_filter.mp hπ).2]
 
+/-! #### Garnir set — column label counts (sorry-free)
+
+Foundational cardinalities for the Garnir pigeonhole: the labels sitting in a fixed
+column `c` of `t` biject (via `t`) with the cells `μ.col c`, so there are exactly
+`μ.colLen c` of them. -/
+
+omit [CharZero k] in
+/-- The labels in column `c` of `t` number exactly `μ.colLen c` (they biject with the
+cells of `μ.col c` under the tableau equivalence `t`). -/
+theorem card_col_labels (t : Specht.Tableau μ) (c : ℕ) :
+    (Finset.univ.filter (fun l => Specht.colPattern t l = c)).card = μ.colLen c := by
+  classical
+  rw [YoungDiagram.colLen_eq_card]
+  refine (Finset.card_image_of_injOn (fun a _ b _ h => t.injective (Subtype.ext h))).symm.trans
+    (congrArg Finset.card ?_)
+  ext p
+  simp only [Finset.mem_image, Finset.mem_filter, Finset.mem_univ, true_and,
+    YoungDiagram.mem_col_iff]
+  constructor
+  · rintro ⟨l, hl, rfl⟩
+    exact ⟨(YoungDiagram.mem_cells _).mp (t l).2, hl⟩
+  · rintro ⟨hp, hpc⟩
+    refine ⟨t.symm ⟨p, (YoungDiagram.mem_cells _).mpr hp⟩, ?_, ?_⟩
+    · show Specht.colPattern t _ = c
+      show ((t (t.symm ⟨p, _⟩) : ℕ × ℕ)).2 = c
+      rw [Equiv.apply_symm_apply]; exact hpc
+    · show ((t (t.symm ⟨p, _⟩) : ℕ × ℕ)) = p
+      rw [Equiv.apply_symm_apply]
+
 /-! #### The single residual straightening core + the induction skeleton -/
 
 omit [CharZero k] in
