@@ -1497,11 +1497,23 @@ theorem straightening_step_colMax (t : Specht.Tableau μ)
   --    rowPattern (ρ•t) a = rowPattern (ρ•t) b (`rowPattern_smul`), so
   --    τ_ρ := Equiv.swap a b ∈ rowStab (ρ•t) ∩ S_{A∪B}; feed `mtab_sum_sign_smul_of_eq_zero`
   --    at the tableau ρ•t (G = S_{A∪B} right-τ_ρ-closed) to get hfam ρ.
-  -- 5. hdom: each non-identity transversal rep interleaves an A-label (col j, row ≥ i)
-  --    with a B-label (col j+1, row ≤ i), a row-raising exchange → `domWeight` strictly
-  --    up (the multi-swap generalization of `domWeight_swap_lt`).
-  -- Combine: `garnir_assembly t T h1 hdom (transversal_sum_eq_zero t T H hH hpos
-  --   (sum_sign_rep_polytabloid_eq_zero_of_family t (S_{A∪B}) hfam |> reindexed))`.
+  -- 5. dominance — the residual, and NOT the naive strict-`domWeight` claim.
+  --    CAUTION (verified counterexample, 2026-07-06): "every non-identity coset rep
+  --    strictly raises `domWeight`" is FALSE.  The Garnir set's row-`i` overlap is
+  --    essential (it makes `|A|+|B| = colLen j + 1 > colLen j`), but it puts
+  --    `a := labelAt (i,j)` and `b := labelAt (i,j+1)` both in row `i`; then
+  --    `π := Equiv.swap a b ∈ garnirG \ colStab` is a non-identity coset element with
+  --    `rowPattern (π•t) = rowPattern t`, so `domWeight (π•t) = domWeight t` (NOT `>`),
+  --    and `{π•t} = {t}` — no representative of that coset strictly dominates.  So the
+  --    same-tabloid cosets contribute to the coefficient of `e_t` itself; the correct
+  --    straightening solves `(1 + …)·e_t = (strictly-dominant terms)` via the partial
+  --    dominance order + sign cancellation, not a strict linear measure.
+  --    `garnir_assembly` (strict `domWeight` per rep) is the wrong final shape here.
+  -- STATUS: steps 1–4 (the coset-sum machinery) are proved sorry-free
+  --   (`garnir_full_annihilation`, `sum_over_garnirG_reindex`, `transversal_sum_eq_zero`,
+  --   `garnir_transversal_exists`, `sum_sign_rep_polytabloid_eq_zero_of_family`).  Only
+  --   this dominance-bookkeeping step remains; it needs the partial-order argument.
+  -- Ref: [sagan2001] §2.6; [james1984representation] §8.
   sorry
 
 omit [CharZero k] in
