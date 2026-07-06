@@ -1,8 +1,25 @@
 #!/usr/bin/env python3
 """
 Toroidal Harmonics Derivation Script
-Derives the exact mapping between the Toroidal Harmonic differential equation
-and the pre-archimedean Markov parameter z-recursion.
+
+`derive_bridge()`  — VERIFIED. The exact symbolic change of variables
+    `x = 1/(2w) - 1` mapping the toroidal Legendre operator
+    `(1 - x^2) y'' - 2x y' + (n^2 - 1/4) y` to the `w`-operator
+    `(16 w^3 - 4 w^2) f'' + 16 w^2 f' + (4 n^2 - 1) f`. Genuine identity
+    (SymPy `simplify` -> 0).
+
+    SCOPE: this proves toroidal-Legendre <-> a second-order ODE in `w = z^2`.
+    It does NOT verify that this `w`-ODE is the generating function of the
+    proved Markov-parameter z-recursion (4(n+1)a_{n+1}+6n a_n+(2n-1)a_{n-1}=0),
+    whose variable is `w = q - 1` (a DIFFERENT `w`). That identification — and
+    the z -> c_k f-map — remain open. Nothing here makes any c_k exact.
+
+`evaluate_c_lambda()` — NEGATIVE / numerical-coincidence audit, NOT a
+    derivation and NOT paper content. The golden-ratio anchor is a ~0.12%
+    coincidence, cherry-picked among three "pretty" constants; the value that
+    actually reproduces the (circularly-defined, B_AME/E_gate) c_lambda is
+    q0 ~ 0.615 — neither the golden ratio NOR the substrate q0 ~ 1.10998.
+    See docs/audits/2026-07-06-c3-not-exact-cross-anchor-verdict.md.
 """
 
 import numpy as np
@@ -97,20 +114,37 @@ def derive_bridge():
     print(f"  w * df/dw       : {sp.factor(c_df) / w} * w")
     print(f"  f               : {sp.factor(c_f)}")
     
-    print("\nThis canonical hypergeometric differential equation maps directly")
-    print("to the Markov parameter z-recursion (with w = z^2).")
+    print("\nVERIFIED: toroidal Legendre ODE <-> this w-ODE (w = z^2).")
+    print("OPEN (asserted, not checked here): that this w-ODE is the generating")
+    print("function of the proved Markov z-recursion, whose variable is w = q-1")
+    print("(a DIFFERENT w). The z -> c_k f-map is unaffected; no c_k is made exact.")
 
 def evaluate_c_lambda():
-    print("\n--- Evaluating the Delta_lambda Mass Gap (A=4) ---")
-    
-    # Experimental values for 4He
+    """NEGATIVE / coincidence audit — NOT a derivation, NOT paper content.
+
+    Scans three "pretty" toroidal anchors against the 4He shell-filling
+    fraction and reports why none is a parameter-free result:
+      * c_lambda_exp is CIRCULAR — defined as B_AME/E_gate (contains the
+        experimental binding), so matching it is not a prediction;
+      * the best anchor (golden ratio) is ~0.12% OFF, cherry-picked among
+        three constants;
+      * the value that actually reproduces c_lambda_exp is q0 ~ 0.615, which
+        is NEITHER the golden ratio NOR the substrate q0 ~ 1.10998 — so it
+        fails the 3-CAL discipline and the Delta_lambda gate.
+    """
+    print("\n--- Delta_lambda anchor scan (A=4) — NEGATIVE / coincidence audit ---")
+    print("    (not a derivation; see docstring + the c3 cross-anchor verdict)")
+
+    # NOTE the circularity: c_lambda_exp is DEFINED via the experimental
+    # binding B_AME, so any 'match' below is a fit to an experimental input,
+    # not a parameter-free prediction.
     b_ame = 28.29566 # AME2020 binding energy in MeV
     e_gate = 29.99   # SU(4) Plancherel occupancy from B_gate
-    
+
     c_lambda_exp = b_ame / e_gate
-    print(f"Experimental c_lambda (Shell-filling fraction): {c_lambda_exp:.6f}")
-    
-    print("\n1. Testing known topological anchors:")
+    print(f"c_lambda_exp = B_AME/E_gate = {c_lambda_exp:.6f}  (CIRCULAR — contains B_AME)")
+
+    print("\n1. Three candidate anchors (cherry-picking among 'pretty' constants):")
     # Anchor A: Galois root q0 = exp(2pi i / 5). cosh(eta) = cos(2pi/5) = (sqrt(5)-1)/4
     cosh_galois = (np.sqrt(5) - 1) / 4
     p0_g = toroidal_harmonic_P(0, 0, cosh_galois)
@@ -133,9 +167,9 @@ def evaluate_c_lambda():
     p1_phi = toroidal_harmonic_P(1, 0, cosh_golden)
     ratio_phi = p0_phi / p1_phi
     print(f"  [Golden Ratio (1/phi)]   cosh(eta) = {cosh_golden:.4f} -> Ratio = {ratio_phi:.6f}")
-    print(f"    -> Difference from c_lambda_exp = {abs(ratio_phi - c_lambda_exp):.6f}")
+    print(f"    -> {abs(ratio_phi - c_lambda_exp)/c_lambda_exp*100:.2f}% OFF (a coincidence, not a match)")
 
-    print("\n2. Inverting the Toroidal Ratio to extract exact geometry:")
+    print("\n2. Inverting to the geometry that ACTUALLY reproduces c_lambda_exp:")
     
     from scipy.optimize import root_scalar
     
@@ -150,18 +184,15 @@ def evaluate_c_lambda():
     
     if res.converged:
         exact_cosh = res.root
-        print(f"  Target Geometry Found!")
-        print(f"  Exact cosh(eta_0) required : {exact_cosh:.6f}")
-        
-        # Calculate the corresponding w and q
-        # cosh(eta) = 1/(2w) - 1  => w = 1 / (2*(cosh(eta) + 1))
         exact_w = 1 / (2 * (exact_cosh + 1))
-        print(f"  Corresponding w = z^2      : {exact_w:.6f}")
-        
-        # q from cosh(eta): cosh(eta) = (q + 1/q)/2 => q^2 - 2cosh*q + 1 = 0
-        # q = cosh - sqrt(cosh^2 - 1) (since q < 1)
         exact_q = exact_cosh - np.sqrt(exact_cosh**2 - 1)
-        print(f"  Corresponding q_0          : {exact_q:.6f}")
+        print(f"  cosh(eta_0) required : {exact_cosh:.6f}  (NOT sqrt(5)/2 = {np.sqrt(5)/2:.6f})")
+        print(f"  w = z^2              : {exact_w:.6f}")
+        print(f"  q_0                  : {exact_q:.6f}  (NOT golden 1/phi = 0.618034;")
+        print(f"                          NOT substrate q_0 ~ 1.10998)")
+        print("\nVERDICT: no parameter-free topological anchor. The golden ratio is a")
+        print("~0.12% coincidence; the true required q_0 ~ 0.615 matches no framework")
+        print("constant and is <1 (substrate q_0 > 1). Fails 3-CAL + Delta_lambda gate.")
     else:
         print("  Root finding failed.")
 
