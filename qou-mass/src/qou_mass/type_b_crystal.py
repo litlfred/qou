@@ -1,0 +1,172 @@
+class Weight:
+    """Represents a weight in the weight lattice."""
+    def __init__(self, coords):
+        # coords is a tuple of coefficients for epsilon_1 ... epsilon_n
+        self.coords = tuple(coords)
+
+    def __add__(self, other):
+        return Weight(tuple(a + b for a, b in zip(self.coords, other.coords)))
+
+    def __eq__(self, other):
+        return self.coords == other.coords
+
+    def __hash__(self):
+        return hash(self.coords)
+
+    def __repr__(self):
+        return f"Weight{self.coords}"
+
+class CrystalNode:
+    """Abstract base class for a node in a Kashiwara crystal graph."""
+    def e(self, i): raise NotImplementedError
+    def f(self, i): raise NotImplementedError
+    def eps(self, i): raise NotImplementedError
+    def phi(self, i): raise NotImplementedError
+    def wt(self): raise NotImplementedError
+
+class BnVectorNode(CrystalNode):
+    """
+    The vector representation B(omega_1) of Type B_n.
+    Alphabet: 1, 2, ..., n, 0, -n, ..., -1.
+    For simplicity, -k represents \bar{k}.
+    """
+    def __init__(self, n, val):
+        self.n = n
+        self.val = val
+
+    def __eq__(self, other):
+        return isinstance(other, BnVectorNode) and self.n == other.n and self.val == other.val
+
+    def __hash__(self):
+        return hash((self.n, self.val))
+
+    def __repr__(self):
+        return str(self.val) if self.val >= 0 else f"{-self.val}bar"
+
+    def e(self, i):
+        if i < self.n:
+            if self.val == i + 1: return BnVectorNode(self.n, i)
+            if self.val == -i: return BnVectorNode(self.n, -(i + 1))
+        elif i == self.n:
+            if self.val == 0: return BnVectorNode(self.n, self.n)
+            if self.val == -self.n: return BnVectorNode(self.n, 0)
+        return None
+
+    def f(self, i):
+        if i < self.n:
+            if self.val == i: return BnVectorNode(self.n, i + 1)
+            if self.val == -(i + 1): return BnVectorNode(self.n, -i)
+        elif i == self.n:
+            if self.val == self.n: return BnVectorNode(self.n, 0)
+            if self.val == 0: return BnVectorNode(self.n, -self.n)
+        return None
+
+    def eps(self, i):
+        curr = self
+        count = 0
+        while curr.e(i) is not None:
+            curr = curr.e(i)
+            count += 1
+        return count
+
+    def phi(self, i):
+        curr = self
+        count = 0
+        while curr.f(i) is not None:
+            curr = curr.f(i)
+            count += 1
+        return count
+
+    def wt(self):
+        coords = [0] * self.n
+        if self.val > 0:
+            coords[self.val - 1] = 1
+        elif self.val < 0:
+            coords[-self.val - 1] = -1
+        # if val == 0, weight is 0
+        return Weight(coords)
+
+class TensorNode(CrystalNode):
+    """
+    Tensor product of two crystal nodes x (x) y.
+    Convention used here: Kashiwara's standard tensor product rule.
+    """
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __eq__(self, other):
+        return isinstance(other, TensorNode) and self.x == other.x and self.y == other.y
+
+    def __hash__(self):
+        return hash((self.x, self.y))
+
+    def __repr__(self):
+        return f"({self.x} (x) {self.y})"
+
+    def e(self, i):
+        phi_x = self.x.phi(i)
+        eps_y = self.y.eps(i)
+        if phi_x >= eps_y:
+            ex = self.x.e(i)
+            return TensorNode(ex, self.y) if ex else None
+        else:
+            ey = self.y.e(i)
+            return TensorNode(self.x, ey) if ey else None
+
+    def f(self, i):
+        phi_x = self.x.phi(i)
+        eps_y = self.y.eps(i)
+        if phi_x > eps_y:
+            fx = self.x.f(i)
+            return TensorNode(fx, self.y) if fx else None
+        else:
+            fy = self.y.f(i)
+            return TensorNode(self.x, fy) if fy else None
+
+    def eps(self, i):
+        return max(self.x.eps(i), self.y.eps(i) - self.x.phi(i) + self.x.eps(i))
+
+    def phi(self, i):
+        return max(self.y.phi(i), self.x.phi(i) - self.y.eps(i) + self.y.phi(i))
+
+    def wt(self):
+        return self.x.wt() + self.y.wt()
+
+def get_highest_weight_nodes(n, num_factors):
+    """
+    Builds the tensor product of `num_factors` vector representations B(omega_1)
+    and returns a list of all highest weight nodes (nodes killed by all e_i).
+    """
+    alphabet = list(range(1, n + 1)) + [0] + [-i for i in reversed(range(1, n + 1))]
+    base_nodes = [BnVectorNode(n, v) for v in alphabet]
+    
+    current_layer = base_nodes
+    for _ in range(num_factors - 1):
+        next_layer = []
+        for x in current_layer:
+            for y in base_nodes:
+                next_layer.append(TensorNode(x, y))
+        current_layer = next_layer
+        
+    hws = []
+    for node in current_layer:
+        if all(node.e(i) is None for i in range(1, n + 1)):
+            hws.append(node)
+    return hws
+
+def build_connected_component(hw_node, n):
+    """
+    Generates the entire crystal component generated by a highest weight node.
+    Returns a set of all nodes in the component.
+    """
+    visited = set([hw_node])
+    queue = [hw_node]
+    while queue:
+        curr = queue.pop(0)
+        for i in range(1, n + 1):
+            f_node = curr.f(i)
+            if f_node is not None and f_node not in visited:
+                visited.add(f_node)
+                queue.append(f_node)
+    return visited

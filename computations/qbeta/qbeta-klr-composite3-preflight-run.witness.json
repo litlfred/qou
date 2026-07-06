@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-06T20:13:00.020045+00:00",
-  "commitSha": "71e9df4112cf9cb7f9e320b51131acc50cda33d2",
+  "engineVersion": "mpmath 1.2.1",
+  "computedAt": "2026-07-06T11:24:09.692605+00:00",
+  "commitSha": "7d4f95136e655fb6a0be0aa978dd07a8c55a42aa",
   "assertions": [
     {
       "name": "typeb_folded_crystal_sign_refuted_at_u2_both_anchors",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 50,
   "computation": "qbeta-klr-composite3-preflight-run",
   "scriptFile": "qbeta_klr_composite3_preflight_run.py",
   "scriptHash": "d8bbbaa137f1",
-  "scriptCommitSha": "2412f22b5e739789680fc0ef9037871e59319e3d",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,11 +30,13 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
+    "python": "3.11.2",
+    "numpy": "1.26.4",
     "scipy": "1.17.1",
-    "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "sympy": "1.11.1",
+    "mpmath": "0.0.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "KLR tranche 2 — Composite-3 (Type-B folded crystal) preflight RUN, third in the cont. 9 menu preflight series after Composite-4 (magnitude refutation) and Composite-1 standard (sign refutation). Tests [u²]F for the cont. 9 Option D ansatz F(u) = Σ_T q^{c(T)}·u^{|T|} at sl_4 → C_2 folding, ω_2. σ-fixed 2-subsets at |T|=2 are {1,4} and {2,3} (the only fixed pairs under σ = 1↔4, 2↔3). [u²]F = q^3 + q^3 = 2q^3 > 0 at q > 0, sign-incompatible with c_2 = -1 < 0. cont. 9 Option D (12-17 sessions) NOT authorised. CLAUDE.md §7b bar-invariance of folded crystals does NOT rescue (bar-invariance and sign-negativity are orthogonal).",
   "contentBlock": "conj:qbeta-precision-ladder",
@@ -42,9 +44,9 @@
     "anchors": [
       {
         "anchor": "proton",
-        "q": "1.10997858275138080759166909561076887987449912187357873607281",
-        "q_cubed": "1.36755183695138518796672402990936100071109752077276787660591",
-        "u2_coefficient_2q_cubed": "2.73510367390277037593344805981872200142219504154553575321181",
+        "q": "1.10997859555733471989976322048322502665620840878015368660798",
+        "q_cubed": "1.36755188428420657086804465632413106596397609339967247362827",
+        "u2_coefficient_2q_cubed": "2.73510376856841314173608931264826213192795218679934494725655",
         "sign": 1,
         "c2_target": "-1.00000000000000000000000000000000000000000000000000000000000",
         "sign_mismatches_c2": true
