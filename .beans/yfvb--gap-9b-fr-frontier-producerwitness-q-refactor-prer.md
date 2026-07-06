@@ -1,10 +1,11 @@
 ---
 # yfvb
 title: 'gap-9b FR frontier: producer→witness q₀ refactor (prereq) + H_{3A} Borromean FR driver'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-07-06T04:25:00Z
-updated_at: 2026-07-06T04:25:00Z
+updated_at: 2026-07-06T17:30:48Z
 ---
 
 ## Context (2026-07-06)
