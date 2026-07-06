@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-06T17:54:47.494396+00:00",
-  "commitSha": "d6ceff304415f180dc08c3cb405d51cd202257bd",
+  "computedAt": "2026-07-06T18:14:46.518049+00:00",
+  "commitSha": "6d40dc7d16c2afb0ea062e2b8879a32a79737ffc",
   "assertions": [
     {
       "name": "g_reeb_below_ceiling",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "b4-1four-reeb-flow-magnitude",
   "scriptFile": "b4_1four_reeb_flow_magnitude.py",
-  "scriptHash": "d9ebb7925239",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0215f3305d74",
+  "scriptCommitSha": "cf8e36a4f1ba64d881a3f60d909738779eae99ff",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -85,6 +85,17 @@
         "ratio_to_full_B4He_28.29566": "0.939918"
       }
     ],
+    "q3_ursell_cumulants_of_det_form": {
+      "b2_det_MeV": "0.9317995",
+      "b2_AME": "2.224566",
+      "B3_ppn_MeV": "2.2830547",
+      "B3_pnn_MeV": "6.2813661",
+      "b3_det_MeV": "1.4868119",
+      "b3_AME": "1.4264",
+      "b4_det_MeV": "15.057563",
+      "b4_AME": "9.2431",
+      "finding": "Body-order profile of the det form at g_reeb vs the AME Ursell cumulants — shows whether the det form's binding sits at the right body orders even where totals differ. Scope-(a)."
+    },
     "verdict": "At the landed sub-ceiling magnitude g_reeb the mixed-sign pn=±1 [1⁴] patterns become PHYSICAL (det>0; they were det<0 at the naive z). Values are reported per w_pn option with NO selection. Scope-(a) throughout: numbers constrain the (form, magnitude) combination at g_reeb, not the ingredients."
   },
   "context": {

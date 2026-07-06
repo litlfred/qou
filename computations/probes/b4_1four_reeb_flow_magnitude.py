@@ -118,6 +118,40 @@ def main() -> int:
             "ratio_to_full_B4He_28.29566": mp.nstr(mev / AME_B_4HE, 6),
         })
 
+    # ── Q3: body-order (Ursell) cumulants of the det form at g_reeb ──
+    # The corpus target b₄ = 9.2431 is the CONNECTED cumulant of AME
+    # (b4_value_cumulant_target_probe.py): B(A) = C(A,2)b₂ + C(A,3)b₃ + C(A,4)b₄.
+    # Decompose the det form the same way to see WHERE its binding sits.
+    def det3(signs):
+        S = mp.zeros(3, 3)
+        (s01, s02, s12) = signs
+        S[0, 1] = S[1, 0] = s01 * g
+        S[0, 2] = S[2, 0] = s02 * g
+        S[1, 2] = S[2, 1] = s12 * g
+        return mp.det(mp.eye(3) + S)
+
+    b2_det = E0 * (-mp.log(det2))
+    # A=3 shells at w_pn=+1 (isospectral to −1 by the same diag conjugation):
+    # ppn: pairs (pp,+1), (pn,w), (pn,w); pnn: (nn,−1), (pn,w), (pn,w)
+    B3_ppn = E0 * (-mp.log(det3((+1, +1, +1))))
+    B3_pnn = E0 * (-mp.log(det3((-1, +1, +1))))
+    B3_bar = (B3_ppn + B3_pnn) / 2
+    b3_det = B3_bar - 3 * b2_det
+    _, nld4 = neg_log_det_I_plus_G(+1, g)
+    B4_det = E0 * nld4
+    b4_det = B4_det - 6 * b2_det - 4 * b3_det
+    q3 = {
+        "b2_det_MeV": mp.nstr(b2_det, 8), "b2_AME": "2.224566",
+        "B3_ppn_MeV": mp.nstr(B3_ppn, 8), "B3_pnn_MeV": mp.nstr(B3_pnn, 8),
+        "b3_det_MeV": mp.nstr(b3_det, 8), "b3_AME": "1.4264",
+        "b4_det_MeV": mp.nstr(b4_det, 8), "b4_AME": "9.2431",
+        "finding": (
+            "Body-order profile of the det form at g_reeb vs the AME Ursell "
+            "cumulants — shows whether the det form's binding sits at the "
+            "right body orders even where totals differ. Scope-(a)."
+        ),
+    }
+
     result = {
         "constants": {
             "q0": mp.nstr(q, 12),
@@ -128,6 +162,7 @@ def main() -> int:
         },
         "q1_deuteron_reconciliation": q1,
         "q2_1four_enumeration_at_g_reeb": rows,
+        "q3_ursell_cumulants_of_det_form": q3,
         "verdict": (
             "At the landed sub-ceiling magnitude g_reeb the mixed-sign pn=±1 "
             "[1⁴] patterns become PHYSICAL (det>0; they were det<0 at the naive "

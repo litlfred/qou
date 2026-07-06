@@ -30,16 +30,22 @@ committed witness rows were unaffected).
 | Piece | Status | Evidence |
 |---|---|---|
 | the **5** under the radical | **DERIVED** | it is $\lvert\mu_{\min}\rvert^2$ of the read-off [1⁴] sign pattern (pp = +1, nn = −1, pn = ±1): $\mu_{\min} = -\sqrt5$, physicality ceiling $g < 1/\sqrt5$ — [`b4_1four_complete_graph_writhe_signs.py`](../../computations/probes/b4_1four_complete_graph_writhe_signs.py) (PR #3426) |
-| the deformation term $(q_0-1)^2/q_0$ | **ASSERTED** | appears nowhere else in the corpus (grep over `computations/`, `docs/`, `content/`); no derivation doc, no witness derivation field, no `-- Ref:` |
-| the **linear law** $B = 5g$ | **ASSERTED** | code comment "Binding is strictly 5*g" only; not the $A{=}2$ case of the pinned $b_4 = -\ln\det(I+G)$ form (§3, Q1) |
-| the pn **sign** | **still open** | the landing supplies magnitude only; the sign enters squared at $A{=}2$ and is unresolved for [1⁴] |
-| Reeb-flow origin ($Lk_R^{(k)}$, #3407) | **not yet connected** | #3407 was a stub at the time of the #3426 spec comment; no corpus artifact ties $g_{\text{reeb}}$ to a computed Reeb linking bound |
+| the deformation term $(q_0-1)^2/q_0$ | **CLAIMED-DERIVED, derivation not shown** | source is merged **PR #3407**: [`2026-07-05-reeb-linking-operation-attack.md`](2026-07-05-reeb-linking-operation-attack.md) claims "three derivation routes (A: Reeb-phase derivative / B: Borromean direct Θ volume / C: CWF $Wr_q+Tw_q$ matching) converge uniquely" — but its witness probe [`categorical_linking_reeb_flow_probe.py`](../../computations/probes/categorical_linking_reeb_flow_probe.py) contains **no route computation**: it restates the formula in one line (its own comment: *"Or simply g = 1 / sqrt( 5 + (q-1)^2 / q )"*). The witness records only the formula's evaluation. Route A/B/C artifacts do not exist in the corpus. |
+| the **linear law** $B = 5g$ | **ASSERTED** | code comment "Binding is strictly 5*g" only; not in the #3407 doc; dimensionally implicit ($5g$ is dimensionless, used as MeV); not the $A{=}2$ case of the pinned $b_4 = -\ln\det(I+G)$ form (§3, Q1) |
+| the pn **sign** | **still open** | #3407 landed magnitude only; the sign enters squared at $A{=}2$ and is unresolved for [1⁴] |
+
+*(Correction, same day: an earlier revision of this table said the deformation
+term "appears nowhere else in the corpus" — a too-narrow grep pattern missed
+the LaTeX `\frac` form in the #3407 audit doc. The corrected finding is
+sharper, not weaker: a claimed derivation exists but its supporting probe is a
+restatement.)*
 
 **Scope note.** Nothing here refutes the landed value — at the ceiling itself
 $B = 5g$ gives $\sqrt5 \approx 2.23607$ (+0.52 %), and the deformation term
 moves it the right direction (+0.41 %). The finding is a **provenance gap**:
-two of the three ingredients are currently asserted, not derived, and the tier
-note should not be read as "derivation complete".
+the deformation term's claimed three-route cross-validation is not backed by
+computation, and the linear law is underived. The tier note should not be read
+as "derivation complete".
 
 ## 3. [1⁴] extension at the landed magnitude (new probe)
 
@@ -75,16 +81,36 @@ is meant to produce the *connected excess*, the landed magnitude overshoots by
 match is claimed; the numbers constrain the (form, magnitude, convention)
 combination, not the ingredients.
 
+**Q3 — Ursell (body-order) cumulants of the det form at $g_{\text{reeb}}$.**
+The corpus target $b_4 = 9.2431$ is the *connected 4-body cumulant* of AME
+([`b4_value_cumulant_target_probe.py`](../../computations/probes/b4_value_cumulant_target_probe.py):
+$B(A) = \binom{A}{2}b_2 + \binom{A}{3}b_3 + \binom{A}{4}b_4$). Decomposing the
+det form the same way (A=3 shells sign-independent by the diag conjugation):
+
+| cumulant | det form at $g_{\text{reeb}}$ | AME | ratio |
+|--:|--:|--:|--:|
+| $b_2$ | 0.9318 | 2.2246 | 0.419× |
+| $b_3$ | 1.4868 | 1.4264 | **1.042×** |
+| $b_4$ | 15.058 | 9.2431 | 1.629× |
+
+The det form's connected **3-body cumulant lands within 4.2 % of AME** while
+its 2-body is 0.42× and 4-body 1.63×, with the total at 0.940× — a specific
+body-order profile (pair-weak, triple-right, quad-heavy), recorded as an
+observation only. No claim that the 4.2 % is structural rather than
+coincidental.
+
 ## 4. Open objects (sharpened)
 
-1. **Derive** $g_{\text{reeb}}$ — i.e. the $(q_0-1)^2/q_0$ deformation of the
-   $\sqrt5$ ceiling — from the Reeb $Lk_R^{(k)}$ bound (#3407) or another
-   framework invariant, with a `-- Ref:`-able artifact.
+1. **Substantiate** the $(q_0-1)^2/q_0$ deformation: produce the actual Route
+   A/B/C computations the #3407 audit doc claims (its current probe restates
+   the formula; see §2) — or re-scope the doc's "converge uniquely" claim.
 2. **Reconcile** the linear $B = 5g$ law with $b_4 = -\ln\det(I+G)$ (Q1 above):
-   one of the two is not fundamental at both $A{=}2$ and $A{=}4$.
-3. **Pin the $b_4$ convention** the determinant form targets (connected excess
-   vs full binding) before any further magnitude work — the 0.940×-full result
-   makes the convention choice load-bearing.
+   one of the two is not fundamental at both $A{=}2$ and $A{=}4$; the linear
+   law is also dimensionally implicit.
+3. **Convention now pinned** (Q3): $b_4 = 9.2431$ is the connected Ursell
+   cumulant; the det form at $g_{\text{reeb}}$ overshoots it (1.63×) while its
+   $b_3$ matches (1.04×) and $b_2$ under-binds (0.42×) — any further magnitude
+   work should target the full cumulant *profile*, not the aggregate.
 4. The pn **sign** (unchanged from #3426).
 
 ## 5. Cross-references

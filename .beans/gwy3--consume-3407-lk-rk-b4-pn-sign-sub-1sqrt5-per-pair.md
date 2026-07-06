@@ -25,3 +25,12 @@ Findings: 5 = |μ_min|² DERIVED; (q₀−1)²/q₀ term + linear B=5g ASSERTED
 [1⁴] mixed-sign at g_reeb = 26.596 MeV = 0.940× full B(⁴He) (2.877× b₄).
 Remaining: derive g_reeb from Lk_R⁽ᵏ⁾ (#3407); reconcile linear-vs-det;
 pin b₄ convention (connected excess vs full); pn sign.
+2026-07-06 (round 3): #3407 turned out MERGED — its audit doc
+(2026-07-05-reeb-linking-operation-attack.md) claims 3-route derivation of
+g, but categorical_linking_reeb_flow_probe.py restates the formula in one
+line (no Route A/B/C computation exists). Provenance table corrected in
+2026-07-06-reeb-flow audit. Q3 added to b4_1four_reeb_flow_magnitude.py:
+Ursell cumulants of the det form at g_reeb — b₂ 0.42×, b₃ 1.042× (4.2%!),
+b₄ 1.63× vs AME. Convention pinned: 9.2431 = connected cumulant.
+Remaining: substantiate Route A/B/C (or re-scope #3407 doc claim);
+reconcile linear 5g law; pn sign.
