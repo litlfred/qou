@@ -219,7 +219,14 @@ def _bond_type_L():
     import codata_constants as _codata
     
     q0 = mp.mpf(str(Q0_val))
-    g_true = float(mp.mpf(1) / mp.sqrt(mp.mpf(5) + (q0 - mp.mpf(1))**2 / q0))
+    # g = z/sqrt(1+z²) = 1/sqrt(1+[2]_v²): the Markov-peel bond factor z
+    # arc-length-normalized ≡ the q-deformed [1⁴] ss-ceiling (2 → [2]_v).
+    # Identity 5+(q−1)²/q = 1+[2]_v² is exact; see
+    # docs/audits/2026-07-06-reeb-flow-pn-magnitude-provenance-and-1four-extension.md §2b
+    # + probes/reeb_g_structural_identity_probe.py (4/4 assertions).
+    v = mp.sqrt(q0)
+    z_bond = mp.mpf(1) / (v + 1 / v)
+    g_true = float(z_bond / mp.sqrt(1 + z_bond ** 2))
     _, _, alpha = _constants()
 
     out = {}
