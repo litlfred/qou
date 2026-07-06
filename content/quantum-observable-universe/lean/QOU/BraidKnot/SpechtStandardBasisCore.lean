@@ -514,6 +514,45 @@ theorem sum_sign_rep_polytabloid (t : Specht.Tableau μ)
     rw [hs2, one_smul]
   rw [Finset.sum_congr rfl hterm, Finset.sum_const]
 
+omit [CharZero k] in
+/-- **Polytabloid-level Garnir annihilation (sorry-free).** The `rep`-level analog
+of `mtab_sum_sign_smul_of_eq_zero`: if a `sign(-1)` involution `τ` *fixes the
+polytabloid* (`τ · e_t = e_t`) and `G` is right-`τ`-closed, the signed group-action
+sum vanishes, `∑_{g∈G} sgn(g) · (g · e_t) = 0`. Same sign-reversing-involution
+pairing `g ↔ gτ`: `rep(gτ)(e_t) = rep(g)(rep(τ)(e_t)) = rep(g)(e_t)` while
+`sgn(gτ) = -sgn(g)`. Once a row descent supplies such a `τ` (fixing `e_t` because
+it lies in a row after the Garnir swap), this is the Garnir relation
+`g_{A,B} · e_t = 0` at the polytabloid level. -/
+theorem sum_sign_rep_eq_zero_of_fixed (t : Specht.Tableau μ)
+    (G : Finset (Equiv.Perm (Fin (Specht.nOf μ))))
+    (τ : Equiv.Perm (Fin (Specht.nOf μ)))
+    (hτ2 : τ * τ = 1) (hτsign : Equiv.Perm.sign τ = -1)
+    (hτfix : Specht.Mtab.rep μ τ (Specht.polytabloid (k := k) t)
+      = Specht.polytabloid (k := k) t)
+    (hGclosed : ∀ g ∈ G, g * τ ∈ G) :
+    ∑ g ∈ G, (Equiv.Perm.sign g : ℤ) •
+        Specht.Mtab.rep μ g (Specht.polytabloid (k := k) t) = 0 := by
+  classical
+  have hfix : ∀ g : Equiv.Perm (Fin (Specht.nOf μ)),
+      Specht.Mtab.rep μ (g * τ) (Specht.polytabloid (k := k) t)
+        = Specht.Mtab.rep μ g (Specht.polytabloid (k := k) t) := by
+    intro g
+    rw [map_mul]
+    exact congrArg (Specht.Mtab.rep μ g) hτfix
+  have hs : ∀ g : Equiv.Perm (Fin (Specht.nOf μ)),
+      (Equiv.Perm.sign (g * τ) : ℤ) = -(Equiv.Perm.sign g : ℤ) := by
+    intro g; rw [map_mul, hτsign]; simp
+  refine Finset.sum_involution (fun g _ => g * τ) ?_ ?_ ?_ ?_
+  · intro g _
+    rw [hfix g, hs g, neg_smul]; abel
+  · intro g _ _ hgg
+    have hτ1 : τ = 1 := by
+      have hg1 : g * τ = g * 1 := by rw [mul_one]; exact hgg
+      exact mul_left_cancel hg1
+    rw [hτ1, map_one] at hτsign; exact absurd hτsign (by decide)
+  · intro g hg; exact hGclosed g hg
+  · intro g _; show (g * τ) * τ = g; rw [mul_assoc, hτ2, mul_one]
+
 /-! #### The self-contained dominance weight (sorry-free)
 
 The straightening induction needs a well-founded measure that strictly increases
