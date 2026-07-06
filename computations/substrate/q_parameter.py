@@ -82,8 +82,24 @@ from qou_substrate.constants import *  # noqa: F401,F403,E402
 # `q_muon_at()` closed form), leaving `qou_substrate.constants` untouched.
 # Design + sweep + validation gate: docs/audits/2026-07-06-q0-producer-muon-refactor-design.md
 import os as _os
+import sys as _sys
 
-if _os.environ.get("QOU_Q0_ANCHOR", "physical").strip().lower() in ("ideal", "muon", "canonical"):
+# Resolve the anchor: explicit env var wins; else auto-select from the manifest
+# by the running producer's stem (ideal_muon ⇒ muon; anything else ⇒ proton).
+_anchor = _os.environ.get("QOU_Q0_ANCHOR", "").strip().lower()
+if not _anchor:
+    try:
+        import json as _mj
+        from pathlib import Path as _MP
+        _man = _mj.loads((_MP(__file__).resolve().parent.parent
+                          / "q0_anchor_manifest.json").read_text())
+        _stem = _MP(_sys.argv[0]).stem if (_sys.argv and _sys.argv[0]) else ""
+        if _stem in _man.get("ideal_muon", []):
+            _anchor = "ideal"
+    except Exception:
+        pass
+
+if _anchor in ("ideal", "muon", "canonical"):
   try:
     import json as _json
     import math as _math
