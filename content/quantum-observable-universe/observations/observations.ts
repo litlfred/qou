@@ -241,6 +241,7 @@ export default chapter({
         "double-magic-delta-i-bound-table1-data",
         "magic-numbers-from-q",
         "k12-barrier-bypass",
+        "q-deformed-nuclear-models-comparison",
         "non-magic-Li6-diagram",
         "shell-threading-conjecture",
         "single-magic-O18-diagram",
