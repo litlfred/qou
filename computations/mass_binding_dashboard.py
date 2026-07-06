@@ -96,7 +96,7 @@ def _nucleon_msym(alpha):
     return -alpha * math.log(tp), -alpha * math.log(tn)
 
 
-def _row(name, Z, N, alpha, me, g8, Lbond, nucleon_msym, ame, max_strands):
+def _row(name, Z, N, alpha, me, g8, Lbond, nucleon_msym, ame, max_strands, q0):
     A = Z + N
     n = 3 * A
     bame = ame.get((Z, A))
@@ -120,7 +120,7 @@ def _row(name, Z, N, alpha, me, g8, Lbond, nucleon_msym, ame, max_strands):
     m_sym_free = Z * msp + N * msn
     # ---- forms that DO need the bound-knot trace tr_M(W_atom) ---------------
     #   (the p(3A) partition sum explodes → capped at n ≤ max_strands)
-    B_lin = B_sym = m_sym_atom = None
+    B_lin = B_sym = m_sym_atom = B_tetra = m_tetra = None
     if n <= max_strands:
         from tr_m_atom_via_transfer import tr_m_atom_zn
         ta, tf, _, _ = tr_m_atom_zn(Z, N, dps=50)
@@ -128,12 +128,20 @@ def _row(name, Z, N, alpha, me, g8, Lbond, nucleon_msym, ame, max_strands):
         B_lin = alpha * (1.0 - ta / tf)
         B_sym = alpha * math.log(tf / ta)
         m_sym_atom = -alpha * math.log(ta)           # B_sym = m_sym_atom − m_sym_free
+        
+        # Explicit h^4 = (q_0 - q_0^{-1})^4 modification applied to the raw trace B_lin 
+        # scaled by the topological exponent (10A-5), to observe jet-order scaling.
+        h4 = (q0 - 1.0/q0)**4
+        B_tetra = B_lin * (q0 ** (10*A - 5)) * h4
+        m_tetra = m_sym_free - B_tetra
+
     return {"name": name, "Z": Z, "N": N, "A": A, "n": n, "B_AME": bame,
             "n_pp": n_pp, "n_pn": n_pn, "n_nn": n_nn,
-            "B_lin": B_lin, "B_sym": B_sym, "B_qCLT": B_qCLT,
+            "B_lin": B_lin, "B_sym": B_sym, "B_tetra": B_tetra, "B_qCLT": B_qCLT,
             "B_qCLT_fac": B_fac, "B_base": B_base, "B_chir": B_chir,
             "B_magic": B_magic,
-            "m_sym_atom": m_sym_atom, "m_sym_free": m_sym_free}
+            "m_sym_atom": m_sym_atom, "m_sym_free": m_sym_free,
+            "m_tetra": m_tetra}
 
 
 def _fmt(v, w=8, p=2):
@@ -175,7 +183,7 @@ def main(argv=None) -> int:
     Lbond = _bond_type_L()
     nucleon_msym = _nucleon_msym(E0)         # per-nucleon free Kashaev mass (cheap)
     ame = _ame_table()                       # parse AME2020 once, not per row
-    rows = [_row(nm, Z, N, E0, me, g8, Lbond, nucleon_msym, ame, args.max_strands)
+    rows = [_row(nm, Z, N, E0, me, g8, Lbond, nucleon_msym, ame, args.max_strands, q0)
             for (nm, Z, N) in sel]
 
     title = (args.group or ("custom" if args.isotopes else "low")).upper()
@@ -188,11 +196,11 @@ def main(argv=None) -> int:
 
     # 1. BINDING
     print("### Binding  B (MeV)")
-    print("| iso | A | B_AME | B_lin | B_sym | B_qCLT | B_qCLT_fac | B_magic |")
+    print("| iso | A | B_AME | B_lin | B_sym | B_tetra | B_qCLT_fac | B_magic |")
     print("|---|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         print(f"| {r['name']} | {r['A']} | {_fmt(r['B_AME'])} | {_fmt(r['B_lin'])} "
-              f"| {_fmt(r['B_sym'])} | {_fmt(r['B_qCLT'])} | {_fmt(r['B_qCLT_fac'])} "
+              f"| {_fmt(r['B_sym'])} | {_fmt(r['B_tetra'])} | {_fmt(r['B_qCLT_fac'])} "
               f"| {_fmt(r['B_magic'])} |")
 
     # 2. ERROR  B_AME / B
@@ -210,16 +218,17 @@ def main(argv=None) -> int:
     from codata_constants import M_P_MEV_VALIDATION as mp_, M_N_MEV_VALIDATION as mn_
     mp_, mn_ = float(mp_), float(mn_)
     print("\n### Mass  M = Z·m_p + N·m_n − B (MeV)")
-    print("| iso | A | m_unbound | M_AME | m_sym | m_qCLT | m_qCLT_fac |")
-    print("|---|--:|--:|--:|--:|--:|--:|")
+    print("| iso | A | m_unbound | M_AME | m_sym | m_tetra | m_qCLT | m_qCLT_fac |")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         mu = r["Z"] * mp_ + r["N"] * mn_
         mame = (mu - r["B_AME"]) if r["B_AME"] is not None else None
         msym = (mu - r["B_sym"]) if r["B_sym"] is not None else None
+        mtetra = (mu - r["B_tetra"]) if r["B_tetra"] is not None else None
         mqclt = mu - r["B_qCLT"]
         mfac = mu - r["B_qCLT_fac"]
         print(f"| {r['name']} | {r['A']} | {mu:>9.1f} | {_fmt(mame,9,1)} "
-              f"| {_fmt(msym,9,1)} | {mqclt:>9.1f} | {mfac:>9.1f} |")
+              f"| {_fmt(msym,9,1)} | {_fmt(mtetra,9,1)} | {mqclt:>9.1f} | {mfac:>9.1f} |")
 
     # 4. COLOUR-WEIGHTING decomposition (B_qCLT_fac = baseline + p↔n chirality)
     print("\n### Colour-weighting  (B_qCLT_fac = isospin-symmetric baseline + p↔n chirality)")
