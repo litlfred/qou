@@ -7,7 +7,7 @@ functionals on the categorical action
 |-------------------|----------------------|---------|
 | **Mass** | Markov trace (absolute value) | $\mathfrak{m} = |\mathrm{tr}_M(\Phi)|$ |
 | **Q-value** | Character sum | $Q = \sum_\lambda \chi_\lambda(\Delta) \times m_e$ |
-| **Decay rate** | Frobenius matrix element | $\mathfrak{D} \propto |\langle v,\, \Phi\, v \rangle_F|^2$ |
+| **Decay rate** | Frobenius matrix element | $\mathfrak{D} \propto |\langle v, \Phi v \rangle_F|^2$ |
 | **Density** | Partial trace (crossing count) | $\rho = \mathrm{tr}_A(\varrho)$ |
 
 Each functional extracts different information from the
