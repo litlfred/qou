@@ -1,9 +1,1 @@
-Observing the universe changes it: because the substrate parameter $q(p)$
-([substrate parameter](#def:substrate-parameter)) is perturbed by
-condition (2), every observation shifts the non-commutative geometry.
-Concretely, in the archimedean realisation
-([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)), an
-([observation](#def:observation)) is realised as a continuous open map
-from the spacetime base $M$ to the bundle of endomorphisms
-$\mathrm{End}(\mathcal{S}) \to M$, encoding the coordinate change in torsion
-energy of the bundle $\mathcal{S}$.
+Because an observation perturbs the substrate parameter $q(p)$ ([substrate parameter](#def:substrate-parameter)) via condition (2), it shifts the non-commutative geometry. In the archimedean realisation ([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)), we realise an ([observation](#def:observation)) as a continuous open map from the spacetime base $M$ to the endomorphism bundle $\mathrm{End}(\mathcal{S}) \to M$. This map encodes the coordinate change in the torsion energy of the bundle $\mathcal{S}$.

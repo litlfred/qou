@@ -1,36 +1,9 @@
-To show that the substrate parameter and the surrounding categorical
-apparatus are not tied to an archimedean base field, we realise the
-archimedean tuple over a $\pp$-adic base.
-Let $k = \mathbb{Q}_\pp$ and let $\mathbf{C}$ be the category of
-$F$-isocrystals over $\mathbb{Q}_\pp$ (modules over the Dieudonne ring
-$\mathbb{Q}_\pp\langle F, V \rangle / (FV - \pp)$ that are finite-dimensional
-over $\mathbb{Q}_\pp$).
-This is a $\mathbb{Q}_\pp$-linear rigid :refterm[monoidal category]{#monoidal-category}.
-The quantum group $\mathcal{O}_q(\mathrm{SU}(2))$ base-changed
-to $\mathbb{Q}_\pp$ provides a Frobenius--Hopf object $A$, where the
-Frobenius form $\int_A$ arises from the $\pp$-adic Haar measure.
-The Frobenius endomorphism $\varphi$ on $\mathbf{C}$ plays the
-role of the Levi-form contraction: the categorical substrate parameter
-([substrate parameter](#def:substrate-parameter)) specialises to
-$q = \pp^{-v_\pp(\det\varphi)} \in \mathrm{End}(\mathbf{1}) \cong \mathbb{Q}_\pp$.  The fibre functor $\tau$
-is the forgetful functor to $\mathrm{Vect}_{\mathbb{Q}_\pp}$.
-The observability condition
-$\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ amounts to the
-irreducibility of the associated $F$-crystal, generalising
-irreducible connection to the $\pp$-adic setting.
+To demonstrate that the substrate parameter and categorical apparatus do not require an archimedean field, we realise the archimedean tuple over a $\pp$-adic base. Let $k = \mathbb{Q}_\pp$. Let $\mathbf{C}$ be the category of $F$-isocrystals over $\mathbb{Q}_\pp$. These are modules over the Dieudonne ring $\mathbb{Q}_\pp\langle F, V \rangle / (FV - \pp)$ that are finite-dimensional over $\mathbb{Q}_\pp$. This forms a $\mathbb{Q}_\pp$-linear rigid :refterm[monoidal category]{#monoidal-category}.
+
+We base-change the quantum group $\mathcal{O}_q(\mathrm{SU}(2))$ to $\mathbb{Q}_\pp$ to obtain a Frobenius--Hopf object $A$. The Frobenius form $\int_A$ arises from the $\pp$-adic Haar measure. The Frobenius endomorphism $\varphi$ on $\mathbf{C}$ acts as the Levi-form contraction. The categorical substrate parameter ([substrate parameter](#def:substrate-parameter)) specialises to $q = \pp^{-v_\pp(\det\varphi)} \in \mathrm{End}(\mathbf{1}) \cong \mathbb{Q}_\pp$. We specify the fibre functor $\tau$ as the forgetful functor to $\mathrm{Vect}_{\mathbb{Q}_\pp}$. The observability condition $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ corresponds to the irreducibility of the associated $F$-crystal, generalising the notion of an irreducible connection to the $\pp$-adic setting.
 
 *Key structures.*
 
-* The classical Frobenius integrability theorem constrains
-  $q$-torsion leaves to be Legendrian
-  ([$q$-torsion existence](#rem:q-torsion-existence)).  Over $\mathbb{Q}_\pp$,
-  this is replaced by compatibility of the connection with the
-  Frobenius lift: a $\pp$-adic instanton connection is
-  "integrable" if and only if the associated $F$-crystal is
-  unit-root.
-* Crystal cohomology (de Rham--Witt complex) plays the role of
-  de Rham cohomology.
-* The base-field-independent
-  [quantum universe](#def:quantum-universe)
-  and [quantum observable universe](#def:quantum-observable-universe) provide the categorical
-  framework via Tannakian reconstruction.
+* The classical Frobenius integrability theorem restricts $q$-torsion leaves to be Legendrian ([$q$-torsion existence](#rem:q-torsion-existence)). Over $\mathbb{Q}_\pp$, we replace this with the compatibility of the connection with the Frobenius lift. A $\pp$-adic instanton connection is integrable if and only if the associated $F$-crystal is unit-root.
+* Crystal cohomology, via the de Rham--Witt complex, replaces de Rham cohomology.
+* The base-field-independent [quantum universe](#def:quantum-universe) and [quantum observable universe](#def:quantum-observable-universe) provide the categorical framework via Tannakian reconstruction.
