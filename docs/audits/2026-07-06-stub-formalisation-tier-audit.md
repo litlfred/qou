@@ -76,4 +76,34 @@ statement upgrade, not a `sorry` to close.)
    non-archimedean field) — these overlap the framework's open research program
    and the Subgoal-2 / keystone epic (`08a2`); do not attempt as quick wins.
 
-Each Tier-2 row is tracked as a bean (see the `stub-deaxiom` epic).
+Each Tier-2 row is tracked as a bean (see the `stub-deaxiom` epic `6awe`).
+
+## De-axiomatisation results (2026-07-06)
+
+**5 / 10 Tier-2 carriers de-axiomatised** — their axiom fields are now
+*theorems* obtained from a concrete construction or a cross-wire (each
+sorry-free, lean-direct exit 0):
+
+| Carrier | Bean | How it was de-axiomatised |
+|---------|------|---------------------------|
+| `SkeinResolutionObstruction` | `7kzn` | cross-wired `χ` to `qou_obstruction_reduction`'s `obstruction_class`; consistency derived through the shared `kappa_vanishes_iff` |
+| `FrobeniusSelfDualityForcesLPDualExtraction` | `cy3v` | concrete `matrixModel`: `Matrix.trace` proves cyclicity (`trace_mul_comm`), additivity, non-degeneracy (matrix-unit pairing) |
+| `SpinInvolutionLPDualInvariance` | `ovh1` | concrete `matrixModel`: `σ = transpose` proves anti-mult, involutive, trace-invariance, cyclic, `σ`-fixed identity |
+| `ObservableSubcategory` | `tps9` | `ofSection`: the observability predicate is *derived* as `A₀ ≠ 0`, so `observable_iff` is `Iff.rfl` |
+| `BreitWheelerPairProduction` | `h2yz` | `ofHecke`: NF coefficients derived from `TransferMatrixOperator`'s proved `σ²` Hecke reduction (cross-file cross-wire) |
+
+**5 / 10 remain — honest compute / infra walls** (NOT quick wins; each is a
+genuine external dependency, tracked as an open bean):
+
+| Carrier | Bean | Wall |
+|---------|------|------|
+| `CompoundBetaShellCalibration` | `lqft` | `E₀ = 𝔔_β` is a **numerical calibration fact** — de-axiom is compute-side (β-decay Q-value chain), not pure Lean |
+| `HorizonFunctor` | `bqfr` | needs an actual directed-limit / boundary construction (category-theory infra) |
+| `CMBFunctor` | `gob0` | needs an actual jet-quotient colimit in `Mod_R` (colimit infra) |
+| `BlowupCalculus` | `zkst` | needs a `BlowupField` model (ordered non-archimedean field — Mathlib `Surreal`/hyperreal cone absent from cache) |
+| `CategoricalMassMarkov` | `2g2u` | the Markov-trace mass endomorphism **is** the framework's open research arc (mass-endomorphism conjecture) |
+
+Trivial *inhabitation* of the LOW four (a dummy instance proving the carrier is
+non-contradictory) is possible but does **not** de-axiomatise the substantive
+content, so it is deliberately not done — the beans stay open as honest walls,
+overlapping the keystone epic `08a2` and the Subgoal-2 q₀ decline.
