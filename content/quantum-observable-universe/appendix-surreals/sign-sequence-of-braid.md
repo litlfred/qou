@@ -29,13 +29,13 @@ $\sigma_i^{\pm 1}$ to $\sigma_i^{\pm 1}$.
 Choose a **standard tableau** $t$ of shape $\lambda \vdash n$ with
 $\ell(\lambda) \leq 2$ (the partitions appearing in the
 $q$-Schur--Weyl decomposition). The Hoefsmit seminormal vector
-$|t\rangle \in S_\lambda$ at $t$ is an eigenvector of every
-Young--Jucys--Murphy element. The braid $\beta$ acts on $|t\rangle$
+$v_t \in S_\lambda$ at $t$ is an eigenvector of every
+Young--Jucys--Murphy element. The braid $\beta$ acts on $v_t$
 by:
 
-1. successively decomposing $\rho(\sigma_{i_j}^{\epsilon_j}) |t_j\rangle$
-   as $a_j \cdot q^{\epsilon_j} |t_j^+\rangle + b_j \cdot
-   (-q^{-\epsilon_j}) |t_j^-\rangle$ (sum of the two eigencomponents
+1. successively decomposing $\rho(\sigma_{i_j}^{\epsilon_j})\, v_{t_j}$
+   as $a_j \cdot q^{\epsilon_j}\, v_{t_j^+} + b_j \cdot
+   (-q^{-\epsilon_j})\, v_{t_j^-}$ (sum of the two eigencomponents
    in the relevant pair of standard tableaux);
 2. recording $s_j = +$ if the symmetric ($q$-eigen) component is
    chosen, $s_j = -$ if the antisymmetric ($-q^{-1}$-eigen)

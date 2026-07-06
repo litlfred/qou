@@ -35,11 +35,11 @@ argument applied at the level of multi-index summations.
 Hence $P_\ell \in Z(H_n(q))$ for all $1 \leq \ell \leq n$.
 
 **Step 3: Spectrum on Wedderburn blocks.** The seminormal
-basis $\{|T\rangle\}_T$ (T = standard Young tableau of shape
+basis $\{v_T\}_T$ (T = standard Young tableau of shape
 $\lambda$) diagonalises every $J_k$:
 
 $$
-  J_k |T\rangle = q^{2 c(\square_k(T))}\, |T\rangle
+  J_k v_T = q^{2 c(\square_k(T))}\, v_T
 $$
 
 where $\square_k(T)$ is the cell of $T$ containing $k$ and
@@ -54,12 +54,12 @@ $\{c(\square) : \square \in \lambda\}$, *independent* of the
 particular tableau $T$. Hence
 
 $$
-  P_\ell |T\rangle =
+  P_\ell v_T =
   e_\ell\!\left(\{q^{2c(\square)} : \square \in \lambda\}\right)
-  |T\rangle
+  v_T
 $$
 
-acts as the same scalar $c_\ell(\lambda)$ on every $|T\rangle$
+acts as the same scalar $c_\ell(\lambda)$ on every $v_T$
 of shape $\lambda$.
 
 By Schur's lemma (each $V_\lambda$ is irreducible), this is
