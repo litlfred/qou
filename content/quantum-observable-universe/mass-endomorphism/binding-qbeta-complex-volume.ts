@@ -7,7 +7,8 @@ export default conjecture({
   lean: {
     ref: [
       "qou:QOU.MassEndomorphism.ComplexVolumeMatch",
-      "qou:QOU.Mass.ComplexVolumeZeta4Partner.SingleFrakVAssembly"
+      "qou:QOU.Mass.ComplexVolumeZeta4Partner.SingleFrakVAssembly",
+      "qou:QOU.QBeta.StageC.StageCSigma3Lift"
     ],
     validation: "not_checked",
   },
@@ -39,6 +40,11 @@ export default conjecture({
     "fibre-level",
   ],
   authorNotes: [
+    {
+      kind: "refined-framing",
+      date: "2026-07-06",
+      body: "**Stage-C Casoratian kill-test.** The single-recurrence holomorphic tie hypothesis (that one Askey-Wilson recurrence carries both the even and odd ladders) forces a constant sign on the rung Casoratian. A categorical $\sigma_3$-lift must provide genuine level-4 rungs that respect this sign constraint, as codified by `QOU.QBeta.StageC.StageCSigma3Lift` (which refutes any lift yielding an incompatible Casoratian $W_3$).",
+    },
     {
       kind: "refined-framing",
       date: "2026-07-06",

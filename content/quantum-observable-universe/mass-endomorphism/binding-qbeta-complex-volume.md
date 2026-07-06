@@ -1,4 +1,4 @@
-**Conjecture (complex-volume unification of mass-binding and decay).** [§3b class: `ComplexVolumeMatch` / `SingleFrakVAssembly`]
+**Conjecture (complex-volume unification of mass-binding and decay).** [§3b class: `ComplexVolumeMatch` / `SingleFrakVAssembly` / `StageCSigma3Lift`]
 *Binding and the $\beta$-decay $Q$-value are not two stories. They form
 the real and imaginary parts of a single complex fibre observable — the
 complexified mass-endomorphism convolution-defect*
@@ -117,6 +117,13 @@ same $\mathfrak{V}$.
 The complex-volume model $V_0(z) = \cosh z + i\sinh z$ satisfies the **ζ₄-partner relation**: $V_0(z + i\pi/2) = -\cosh z + i\sinh z$, exactly negating the bar-even (binding) channel while keeping the bar-odd ($Q_eta$) channel. The full ζ₄-orbit decomposes the model into exactly the two **faithful** eigencomponents (trivial and sign isotypes vanish).
 
 **Constraint on the open assembly (the 5nx8 gap):** Any candidate physical assembly $\mathfrak{V}$ must be **ζ₄-faithful** (supported entirely on the $\pm i$ characters of $\mathbb{Z}_4$). A candidate with a nonzero orbit sum or sign isotype is falsified (`QOU.Mass.ComplexVolumeZeta4Partner.SingleFrakVAssembly`). This structural consequence forces $\zeta_4^2 = -1$ on the assembly, providing non-degenerate conditional content for the conjecture class.
+
+
+## The open Stage-C $\sigma_3$-lift obligation
+
+The holomorphic tie hypothesis demands that a **single** Askey-Wilson three-term recurrence carries both the binding (bar-even) and $Q_\beta$ (bar-odd) ladders. This implies the Casoratian $W_k$ of the two ladders maintains a constant sign pattern forced by the recurrence parameters.
+
+**Constraint on the lift (the 1jrh gap):** The categorical $\sigma_3$-lift $\Lambda \in H_4(q)$ of the decay operator must supply genuine $c_4$ rungs that satisfy this sign constraint (`QOU.QBeta.StageC.StageCSigma3Lift`). Any valid lift that leads to a sign-incompatible Casoratian $W_3 \le 0$ (given $W_2 > 0$) refutes the one-recurrence identification, serving as a parameter-free kill-test on candidate objects.
 
 ## Computational corroboration (this PR)
 
