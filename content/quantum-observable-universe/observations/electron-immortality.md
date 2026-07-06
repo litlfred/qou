@@ -1,20 +1,8 @@
-Beta decay converts a neutron to a proton (or vice versa) by
-changing the crossing orientation partition of the
-[Borromean baryon](#def:borromean-baryon): $[u,d,d] \to [u,u,d]$.
-This is possible because baryons are **composite** — they have
-internal degrees of freedom (the quark flavour assignments) that
-can rearrange via R-I embedding moves while preserving the
-Borromean link type.
+Beta decay converts a neutron to a proton (or vice versa) by changing the crossing orientation partition of the [Borromean baryon](#def:borromean-baryon): $[u,d,d] \to [u,u,d]$. This relies on baryons being composite. They possess internal degrees of freedom (the quark flavour assignments) that rearrange via R-I embedding moves while preserving the Borromean link type.
 
-**Stability of the electron against beta decay.**
+## Stability of the electron against beta decay
 
-No — and the reason is topological, not energetic.  The electron
-is the trefoil $T_{2,3}$: an **elementary** knot with no internal
-constituents.  There is no crossing orientation partition to
-rearrange, no substructure to reorganise, no embedding move that
-changes the particle's identity.  The electron has exactly one
-degree of freedom — its knot type — and that is a topological
-invariant.
+The electron does not beta decay. The reason is topological, not energetic. The electron is the trefoil $T_{2,3}$, an elementary knot with no internal constituents. It lacks a crossing orientation partition to rearrange or substructure to reorganise. No embedding move changes its identity. The electron possesses exactly one degree of freedom—its knot type—which is a topological invariant.
 
 | Particle | Structure | Internal d.o.f. | Beta decay? |
 |----------|-----------|----------------|-------------|
@@ -23,66 +11,22 @@ invariant.
 | Electron | $T_{2,3}$ | None | **No** |
 | Neutrino | $T_{1,0}$ (unknot) | None | **No** |
 
-The electron cannot decay into anything lighter while conserving
-lepton number and charge.  There is no lighter charged lepton, and
-the neutrino (unknot $T_{1,0}$) has zero crossing energy and zero
-mass — it cannot absorb the electron's topological charge.
+The electron cannot decay into anything lighter while conserving lepton number and charge. There is no lighter charged lepton. The neutrino (unknot $T_{1,0}$) has zero crossing energy and zero mass, thus it cannot absorb the electron's topological charge.
 
-**Electron survival to heat death.**
+## Electron survival to heat death
 
-In the observable era ($1 < q < \infty$), the
-[time reversal barrier](#rem:time-reversal-energy-barrier)
-prevents chirality reversal, and the absence of beta decay
-prevents flavour change.  The electron is therefore
-**immortal** in the observable sector: it persists from the
-moment of its creation (pair production at the exceptional
-divisor) until the cosmological boundary.
+In the observable era ($1 < q < \infty$), the [time reversal barrier](#rem:time-reversal-energy-barrier) prevents chirality reversal. The absence of beta decay prevents flavour change. The electron is therefore immortal in the observable sector. It persists from the moment of its creation (pair production at the exceptional divisor) until the cosmological boundary.
 
 As the universe evolves toward heat death ($q \to 1$):
 
-1. **Bound electrons** are liberated.  Atoms ionise as the
-   ambient energy drops below binding thresholds — but the
-   *electron itself* is unchanged.  Its bare mass (a knot
-   invariant) is eternal; only its binding energy (an
-   embedding property) dissipates.
+1. **Bound electrons are liberated**: Atoms ionise as the ambient energy drops below binding thresholds. The electron itself remains unchanged. Its bare mass (a knot invariant) is eternal. Only its binding energy (an embedding property) dissipates.
+2. **Free electrons become radiation**: In the $q \to 1$ limit, the crossing energy asymmetry $q - q^{-1} \to 0$ erases the Coulomb distinction. The electron's electromagnetic charge effectively vanishes. What remains is a massless topological excitation, indistinguishable from a photon in the frozen geometry.
+3. **Radiation becomes CMB**: The thermal photon bath (including the absorbed electron contribution) redshifts to the cosmic microwave background. The [CMB torsion signature](#rem:cmb-q-torsion) carries the imprint of the $q$-deformed Reeb flow—a fossil record of the substrate parameter's value during earlier epochs.
 
-2. **Free electrons become radiation.**  In the
-   $q \to 1$ limit, the crossing energy asymmetry
-   $q - q^{-1} \to 0$ erases the Coulomb distinction.
-   The electron's electromagnetic charge effectively
-   vanishes.  What remains is a massless topological
-   excitation — indistinguishable from a photon in the
-   frozen geometry.
+## Into the next aeon
 
-3. **Radiation becomes CMB.**  The thermal photon bath
-   (including the absorbed electron contribution) redshifts
-   to the cosmic microwave background.  The
-   [CMB torsion signature](#rem:cmb-q-torsion) carries the
-   imprint of the $q$-deformed Reeb flow — a fossil
-   record of the substrate parameter's value during
-   earlier epochs.
+If the [cosmological chirality flip](#rem:cosmological-chirality-flip) holds, the heat-death boundary marks where chirality distinction collapses ($q \to 1$) and the next aeon's big bang marks where it re-emerges ($q \to \infty$). The CMB radiation from one aeon becomes the initial condition for the next. It carries topological information (knot type) through the boundary, even as metric information (mass, charge) is erased.
 
-**Into the next aeon.**
+In the language of Penrose's Conformal Cyclic Cosmology, the massless, chargeless radiation at heat death is conformally equivalent to the initial singularity of the next aeon. In the QOU framework, this equivalence represents Frobenius degeneration rather than conformal rescaling. The same mathematical structure (the Frobenius form becoming trivial or singular) governs both endpoints, and the exceptional divisors at the boundary reset the topology.
 
-If the [cosmological chirality flip](#rem:cosmological-chirality-flip)
-is correct, the heat-death boundary is where chirality
-distinction collapses ($q \to 1$) and the next aeon's big bang
-is where it re-emerges ($q \to \infty$ in the new cycle).
-The CMB radiation from one aeon becomes the initial condition
-for the next — carrying topological information (knot type)
-through the boundary even as metric information (mass, charge)
-is erased.
-
-In the language of Penrose's Conformal Cyclic Cosmology: the
-massless, chargeless radiation at heat death is conformally
-equivalent to the initial singularity of the next aeon.  In
-the QOU framework, this equivalence is not conformal rescaling
-but **Frobenius degeneration**: the same mathematical structure
-(the Frobenius form becoming trivial or singular) governs both
-endpoints, and the exceptional divisors at the boundary are
-where the topology resets.
-
-The electron, as a trefoil, is (k)not subject to beta decay.
-It lives forever — or rather, it lives until the concept of
-"living" loses meaning at $q = 1$, where all distinctions
-dissolve into the frozen geometry of the classical limit.
+The electron, as a trefoil, is not subject to beta decay. It persists until the concept of existence dissolves into the frozen geometry of the classical limit at $q = 1$.
