@@ -13,16 +13,15 @@ $$
 
 ## Applicability of the correction
 
-The offset $\delta_A$ is applied differently across two regimes
-([parity regime selection](#thm:parity-regime-selection)):
+We apply the offset $\delta_A$ differently across two regimes ([parity regime selection](#thm:parity-regime-selection)):
 
 1. **$A = 1$** (neutron decay) and **Even $A$**:
-   The correction is added explicitly, $\delta_A = 1$.
+   We add the correction explicitly, setting $\delta_A = 1$.
    $Q = (S\Delta + 1) \times m_e$ (for $A=1$).
    $Q = (\Sigma_{\mathrm{FP}} + 1) \times m_e$ (for even $A$).
 
 2. **Odd $A \geq 3$**:
-   No explicit correction is applied, $\delta_A = 0$.
+   We apply no explicit correction, setting $\delta_A = 0$.
    $Q = |S\Delta| \times m_e$.
 
-> **Open Issue:** The current formulation relies on this parity-dependent $\delta_A$ as an unmotivated degree of freedom to align the categorical evaluation with the kinematic Q-value. A formal justification for why $\delta_A$ is absorbed for odd $A$ but required for even $A$ remains unresolved.
+> **Open Issue:** We currently rely on this parity-dependent $\delta_A$ to align the categorical evaluation with the kinematic Q-value. We lack a formal justification for why $\delta_A$ is absorbed for odd $A$ but required for even $A$.

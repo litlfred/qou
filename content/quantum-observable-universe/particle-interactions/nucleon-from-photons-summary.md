@@ -1,5 +1,4 @@
-The complete derivation chain from photons to atoms, with
-conservation laws verified at each step.
+This is the complete derivation chain from photons to atoms, verifying conservation laws at each step.
 
 ## Chain
 
@@ -22,27 +21,13 @@ $$
 | $\mathcal{B}_3$ confinement | 3 quarks | nucleon ($\mathfrak{p}$ or $\mathfrak{n}$) | $+1$ | $0$ | $0,+1$ |
 | Hopf link $\oplus e^-$ | nucleon + electron | atom | $+1$ | $+1$ | $0$ |
 
-Baryon number ($B$), lepton number ($L$), and electric charge ($Q$)
-are conserved at every step.  The antiquarks either annihilate back
-to photons or form an antinucleon.
+Baryon number ($B$), lepton number ($L$), and electric charge ($Q$) remain conserved at every step. The antiquarks either annihilate back to photons or form an antinucleon.
 
 ## Key results
 
-1. **Confinement is derived**: $\mathcal{B}_3$ is selected by
-   minimum action among operators matching the physical nucleon
-   net ([confinement selection](#prop:confinement-operator-selection)).
+1. **Confinement is derived**: Minimum action selects $\mathcal{B}_3$ among operators matching the physical nucleon net ([confinement selection](#prop:confinement-operator-selection)).
+2. **Beta decay channel**: The $e^- < 0$ coefficient in the confined nucleon normal form defines the categorical beta decay channel. This emerges directly from $\mathcal{B}_3$ confinement rather than being imposed.
+3. **Confinement universality**: The nucleon normal form depends solely on $q_0$ and quark flavors, independent of photon polarization. The strong force erases electromagnetic initial conditions.
+4. **Shell closure**: Hydrogen carries $\sigma_1 < 0$ demand (open shell). ${}^{3}\mathrm{He}$ achieves zero demand (closed shell). ${}^{4}\mathrm{He}$ yields a lower Markov trace, indicating tighter binding (doubly magic).
 
-2. **Beta decay channel**: the $e^- < 0$ coefficient in the
-   confined nucleon NF is the categorical beta decay channel.
-   It is not imposed — it emerges from $\mathcal{B}_3$ confinement.
-
-3. **Confinement universality**: the nucleon NF depends only on
-   $q_0$ and quark flavors, not on photon polarization.  The
-   strong force washes out electromagnetic initial conditions.
-
-4. **Shell closure**: hydrogen has $\sigma_1 < 0$ demand (open
-   shell).  He-3 achieves zero demand (closed shell).  He-4
-   has lower Markov trace (tighter binding, doubly magic).
-
-**Witness**: `confinement-operator-selection.witness.json`,
-`four-term-photon-to-atoms.witness.json`.
+**Witness**: `confinement-operator-selection.witness.json`, `four-term-photon-to-atoms.witness.json`.

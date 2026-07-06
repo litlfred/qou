@@ -1,9 +1,5 @@
 **$\mathfrak{Q}_\beta$ cos-resummation theorem (conditional on [`prop:beta-decay-transfer-matrix`](#prop:beta-decay-transfer-matrix)).**
-*The single-wrap Form A closed-form prediction* $\mathfrak{Q}_\beta^A$
-*admits a tighter symbolic refinement obtained by replacing the
-linear bridge correction* $(z-1)h/2$ *from*
-[`prop:q-beta-spectral-bridge`](#prop:q-beta-spectral-bridge)
-*with the classical cosine of half-argument:*
+*The single-wrap Form A closed-form prediction $\mathfrak{Q}_\beta^A$ admits a tighter symbolic refinement. We obtain this refinement by replacing the linear bridge correction $(z-1)h/2$ from [`prop:q-beta-spectral-bridge`](#prop:q-beta-spectral-bridge) with the classical cosine of half-argument:*
 
 $$
   \mathfrak{Q}_\beta^{A,\mathrm{cos}}
@@ -15,18 +11,11 @@ $$
   h = q - q^{-1}.
 $$
 
-*This refinement analytically tightens the CODATA residual from* $+1677.5$ *ppm
-(Form A bare) to* $+305.7$ *ppm — a* $5.49\times$ *improvement at*
-$q_0 \approx 1.110$.
+*This refinement tightens the CODATA residual from $+1677.5$ ppm (Form A bare) to $+305.7$ ppm, improving accuracy by a factor of $5.49$ at $q_0 \approx 1.110$.*
 
 ## Structural origin
 
-The transfer-matrix $M_\beta$ from
-[`prop:beta-decay-transfer-matrix`](#prop:beta-decay-transfer-matrix)
-has spectrum $\{e^{+i\alpha},\, e^{-i\alpha}\}$ on the
-$2$-dimensional irrep $V_{(2,1)}$ of $H_3(q)$, with eigenphase
-$\alpha = (z-1) h / 2$ at the single-wrap order.  The Markov
-trace $\tau_M$ symmetrizes the two eigenphases:
+The transfer-matrix $M_\beta$ from [`prop:beta-decay-transfer-matrix`](#prop:beta-decay-transfer-matrix) has spectrum $\{e^{+i\alpha},\, e^{-i\alpha}\}$ on the $2$-dimensional irrep $V_{(2,1)}$ of $H_3(q)$, with eigenphase $\alpha = (z-1) h / 2$ at the single-wrap order. The Markov trace $\tau_M$ symmetrizes the two eigenphases:
 
 $$
   \tau_M(M_\beta)
@@ -38,31 +27,17 @@ $$
   \cos\!\bigl(\tfrac{(z-1)\,h}{2}\bigr).
 $$
 
-Two structural constraints force this form:
+Two structural constraints enforce this form:
 
-1. **Markov cyclicity.**
-   The trace is cyclic, $\tau_M(xy) = \tau_M(yx)$, hence invariant
-   under the bar involution $q \mapsto q^{-1}$ which sends
-   $\sigma_i \leftrightarrow \sigma_i^{-1}$ and consequently
-   $\alpha \mapsto -\alpha$.  The resummation must therefore be
-   **even in $\alpha$**: only $\alpha^{2k}$ powers survive.  The
-   minimal even-power resummation matching the linear bridge at
-   the perturbative level is the cosine,
-   $\cos\alpha = 1 - \alpha^2/2! + \alpha^4/4! - \cdots$.
-
-2. **Classical decategorification.**
-   The mass observable lives in the **classical** limit (Pauli /
-   Bose–Einstein statistics, per AGENTS.md §7b's
-   Kazhdan–Lusztig decategorification principle), not in the
-   q-deformed quantum group.  Empirical comparison confirms:
+1. **Markov cyclicity.** The trace is cyclic, $\tau_M(xy) = \tau_M(yx)$. It is therefore invariant under the bar involution $q \mapsto q^{-1}$, which maps $\sigma_i \mapsto \sigma_i^{-1}$ and consequently $\alpha \mapsto -\alpha$. The resummation must be even in $\alpha$; only $\alpha^{2k}$ powers survive. The minimal even-power resummation that matches the linear bridge at the perturbative level is the cosine, $\cos\alpha = 1 - \alpha^2/2! + \alpha^4/4! - \cdots$.
+2. **Classical decategorification.** The mass observable lives in the classical limit (Pauli/Bose–Einstein statistics), not in the q-deformed quantum group. Empirical comparison confirms this classical nature:
 
    | resummation | residual at $q_0$ |
    |---|---:|
    | $\cos((z-1)h/2)$ (classical) | $+305.7$ ppm |
    | $\cos_q((z-1)h/2)$ (q-deformed) | $+313.4$ ppm |
 
-   The classical cosine wins by $\approx 7$ ppm, consistent with the
-   mass observable's classical-limit residence.
+   The classical cosine is more accurate by $\approx 7$ ppm, consistent with the classical limit of the mass observable.
 
 ## Numerical reduction
 
