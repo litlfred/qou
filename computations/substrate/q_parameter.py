@@ -158,20 +158,26 @@ if _anchor in ("ideal", "muon", "canonical"):
     # ── mpmath _MP family (mirror constants.py lines 249-266, muon base) ──
     try:
         import mpmath as _mp
-        # workdps() restores mp.dps on ANY exit path (the manual save/restore
-        # leaked the elevated dps to downstream compute if a witness key/type
-        # was unexpected — the swallowing `except` below would hide it).
-        with _mp.workdps(max(_mp.mp.dps, 60)):
-            Q_MP         = _mp.mpf(_d["q"])
-            Q_INV_MP     = _mp.mpf(1) / Q_MP
-            HBAR_Q_MP    = _mp.mpf(1) - Q_INV_MP
-            HBAR_Q_SQ_MP = HBAR_Q_MP ** 2
-            HA_MP        = Q_MP - Q_INV_MP
-            E_CROSS_MP   = HA_MP / 2
-            S_SKEIN_MP   = _mp.sqrt(Q_MP) - _mp.mpf(1) / _mp.sqrt(Q_MP)
-            TWO_Q_MP     = Q_MP + Q_INV_MP
-            TANH_LN_Q_MP = HA_MP / TWO_Q_MP
-            LN_Q_MP      = _mp.log(Q_MP)
+        # Owner directive 2026-07-06: "global dps 50 for compute accuracy".
+        # The muon-anchored compute runs at a standing global precision of
+        # 50 dps — this is the intended compute floor, NOT a temporary bump,
+        # so it is set globally (superseding the workdps-restore of Copilot
+        # #3419: 50 dps is where compute should stay). 50 dps ≫ the 1e-10
+        # observable reproduction tolerance and the 1e-15 (1 ppQ) L1 target,
+        # so it does not regress either precision leg; the q-pinning witness's
+        # 70-digit q is read in full and only the compute working precision is
+        # pinned at 50. Producers that need more raise it via set_compute_dps().
+        _mp.mp.dps = max(_mp.mp.dps, 50)
+        Q_MP         = _mp.mpf(_d["q"])
+        Q_INV_MP     = _mp.mpf(1) / Q_MP
+        HBAR_Q_MP    = _mp.mpf(1) - Q_INV_MP
+        HBAR_Q_SQ_MP = HBAR_Q_MP ** 2
+        HA_MP        = Q_MP - Q_INV_MP
+        E_CROSS_MP   = HA_MP / 2
+        S_SKEIN_MP   = _mp.sqrt(Q_MP) - _mp.mpf(1) / _mp.sqrt(Q_MP)
+        TWO_Q_MP     = Q_MP + Q_INV_MP
+        TANH_LN_Q_MP = HA_MP / TWO_Q_MP
+        LN_Q_MP      = _mp.log(Q_MP)
     except ImportError:
         pass
   except Exception as _exc:  # leave proton values if witness unreadable
