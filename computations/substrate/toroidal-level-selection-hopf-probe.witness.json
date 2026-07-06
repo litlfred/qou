@@ -1,0 +1,34 @@
+{
+  "computation": "toroidal_level_selection_hopf_probe",
+  "description": "T2/GAP-A-3 probe: the (2,2k) torus-link Markov-trace tower is exactly the mu=1/2 half-integer-degree toroidal Legendre family at eta = 2 ln q, with integer winding k as the level label and bar-even/bar-odd channels on P^{+1/2}/P^{-1/2}.",
+  "discipline": "no fit; sympy exact + mpmath 50 dps; generic q = 1.11 scale (explicitly NOT the q_0 pin) and generic weights; (a)-scoped.",
+  "auditOnly": "docs/audits/2026-07-06-parabolic-cylinder-toroidal-channel-interpolation.md",
+  "results": {
+    "A_solved": "1.0",
+    "B_solved": "0.4",
+    "expected_A_Wp_plus_Wm": "1.0",
+    "expected_B_Wp_minus_Wm": "0.4",
+    "torus_link_family": "(2, 2k): k=1 Hopf (meson/2H anchor), k>=2 higher windings",
+    "related": [
+      "prop:hoefsmit-toroidal-ladder-locus (forced mu = 1/2, degree - 1/2)",
+      "content/quantum-observable-universe/braids-and-knots/trm-hopf-sigma1-sq-closed-form.md (k=1 closed form)"
+    ]
+  },
+  "assertions": {
+    "toroidal_elementary_plus_half": true,
+    "toroidal_elementary_minus_half": true,
+    "tower_recurrence_2cosh_eta": true,
+    "eta_eq_2_ln_q_identity": true,
+    "tower_eq_toroidal_representation_k3_k5": true,
+    "A_B_identify_barEven_barOdd_weights": true
+  },
+  "allPassed": true,
+  "verdict": "TORUS-LINK TOWER IS THE FORCED TOROIDAL FAMILY: the (2,2k) torus-link (Hopf-power) two-channel trace tower x_k = W+ q^{2k} + W- q^{-2k} satisfies the 2 cosh(eta) degree recurrence at eta = 2 ln q and equals sqrt(pi sinh eta / 2) [ (W+ + W-) P^{1/2}_{k-1/2} + (W+ - W-) k P^{-1/2}_{k-1/2} ](cosh eta) exactly (coefficients k-independent, verified to ~1e-42 at k=3..5 after solving at k=1,2): the bar-even channel rides P^{+1/2} (cosh) and the bar-odd channel P^{-1/2} (sinh), at exactly the P1-forced order mu = 1/2 and half-integer degree k - 1/2. LEVEL-SELECTION READING (GAP-A-3 candidate, (a)-scoped): allowed levels = integer windings k, Hopf/2H at k = 1, zero-point = the forced -1/2. Structural only: selects levels, produces no binding number, nothing wired (Delta_lambda gate respected).",
+  "scriptHash": "401da715c238",
+  "scriptCommitSha": "unknown",
+  "commitSha": "f0e63af38f8f343b03c9a5de17fb0fc93b3ea8cb",
+  "engine": "sympy+mpmath",
+  "computedAt": "2026-07-06T23:03:07.536621+00:00",
+  "durationMs": 0,
+  "scriptFile": "toroidal_level_selection_hopf_probe.py"
+}
