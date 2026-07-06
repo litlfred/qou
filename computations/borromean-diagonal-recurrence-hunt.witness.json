@@ -1,0 +1,241 @@
+{
+  "engine": "python 3.11.15 (int mod-p, no floats)",
+  "scriptFile": "computations/borromean_diagonal_recurrence_hunt.py",
+  "commitSha": "56bdcf44c7cc44cde4a79b8d691cfbc1a7f92cf6",
+  "scriptHash": "b26cd1581092",
+  "computedAt": "2026-07-06T21:57:31.785850+00:00",
+  "description": "Existence hunt for the first Borromean diagonal colored-Jones q-difference recurrence, over the verified Habiro tower (habiro_borromean_colored_jones.py); mod-p nullspace with beyond-fit-range check rows",
+  "computation": "borromean-diagonal-recurrence-hunt",
+  "audit_only": true,
+  "search_grid": {
+    "r": "2..6",
+    "W": "2..14",
+    "primes": [
+      "2305843009213693951",
+      "4611686018427387847",
+      "9223372036854775783"
+    ],
+    "s_points": [
+      3,
+      5,
+      7
+    ],
+    "check_rows": 30
+  },
+  "grid_results": {
+    "r=2,W=2": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=2,W=3": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=2,W=4": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=2,W=5": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=2,W=6": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=2,W=7": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=2,W=8": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=2,W=9": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=2,W=10": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=2,W=11": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=2,W=12": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=2,W=13": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=2,W=14": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=3,W=2": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=3,W=3": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=3,W=4": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=3,W=5": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=3,W=6": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=3,W=7": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=3,W=8": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=3,W=9": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=3,W=10": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=3,W=11": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=3,W=12": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=3,W=13": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=3,W=14": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=4,W=2": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=4,W=3": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=4,W=4": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=4,W=5": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=4,W=6": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=4,W=7": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=4,W=8": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=4,W=9": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=4,W=10": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=4,W=11": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=4,W=12": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=4,W=13": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=4,W=14": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=5,W=2": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=5,W=3": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=5,W=4": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=5,W=5": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=5,W=6": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=5,W=7": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=5,W=8": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=5,W=9": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=5,W=10": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=5,W=11": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=5,W=12": {
+      "nullity_ge_1_all_samples": false,
+      "nullity": 0
+    },
+    "r=5,W=13": {
+      "nullity_ge_1_all_samples": true,
+      "nullity": 2
+    }
+  },
+  "verdict": {
+    "found": true,
+    "order": 5,
+    "m_window": 13,
+    "nullity_at_found_window": 2,
+    "confirmations": "9/9",
+    "certificate": "mod-p nullspace on 209 fit rows survives 30 check rows beyond the fit range at every sampled (p, s); accidental-survival probability ~ p^-30 per sample",
+    "scope": "EXISTENCE certificate only \u2014 the symbolic operator over Z[q^{\u00b11}] and its exact symbolic annihilation are phase 2"
+  },
+  "wall_seconds": 43.3
+}
