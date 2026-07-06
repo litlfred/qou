@@ -99,6 +99,35 @@ I-par) is what can put `G`'s dominant eigenvalue in `(−1,0)`. Fixing those sig
 from the explicit [1⁴] framing is the remaining derivation — and must be read off
 the diagram, never chosen to hit 9.243.
 
+### 4b. Sharpened result — two of the three signs are DERIVED; the open is sign **+** magnitude
+
+Follow-up probe
+[`computations/probes/b4_1four_complete_graph_writhe_signs.py`](../../computations/probes/b4_1four_complete_graph_writhe_signs.py)
+reads two of the three pair-signs directly off the framework's **own** crossing
+convention (`atom_braid_word_3A`), leaving only the pn sign open:
+
+- **pp → σ (writhe +1)** and **nn → σ⁻¹ (writhe −1)** — DERIVED, not open. `nn`
+  is the bar-mirror (`q↦q⁻¹`, `σ↦σ⁻¹`) of `pp`; this σ-vs-σ⁻¹ mirror **is** the
+  p↔n bar-odd asymmetry of I-par.
+- **pn sign `w_pn`** — the one open discrete choice. The committed **chain**
+  convention *averages* it to writhe 0, but pn=0 makes `G` **block-diagonal**
+  (pp ⊕ nn), decoupling the pn pairs — physically excluded for the pn-dominated
+  shell (the deuteron binds pn). Enumerating `w_pn ∈ {−1, 0, +1}` at the derived
+  bond-factor magnitude `z ≈ 0.499`: **pn=±1 give det<0 (unphysical)**, **pn=0
+  gives 2.40 MeV (0.26×) and decouples** — no discrete choice closes at `z`.
+
+**The decisive structural finding (a bound, not a fit):** the read-off sign
+pattern's most-negative eigenvalue is **exactly −√5**, so the physical per-pair
+magnitude is capped at **`g < 1/√5 ≈ 0.447`**; the naive bond factor
+`z ≈ 0.499` **exceeds** it by ~12% — the exact reason the mixed-sign determinant
+went negative. Because `−ln det → +∞` as `g → (1/√5)⁻`, the value **form**
+`b₄ = −ln det(I+G)` is **not refuted (scope-(a))** — a sub-ceiling magnitude
+*does* reach `b₄`. What fails is the *naive uniform magnitude z*. So the open
+object is sharpened: the [1⁴] framing must supply **both** the pn sign **and** a
+per-pair magnitude ~12% below the naive bond factor (or a non-uniform magnitude).
+Solving for that magnitude would be a fit (Rule-14) and is refused; only the
+exact ceiling `1/√5` is reported.
+
 ## 5. Sources
 
 - [arXiv:2106.04834](https://arxiv.org/pdf/2106.04834) — Wigner SU(4), clustering, ¹²C.

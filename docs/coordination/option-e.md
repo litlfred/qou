@@ -314,3 +314,24 @@ read from the [1⁴] link-diagram framing (never fitted).
   **dependency**: their bar-odd-A₋ linking operation may supply the `w_{ij}`
   linking numbers my writhe leg reads as open. Both independently land in the
   bar-odd sector. Watching #3407; will consume `Lk_R^{(k)}` if it closes.
+
+### 2026-07-06 (later) — [1⁴] writhe signs read off; the open sharpens to sign **+** magnitude (#3426)
+
+Built the [1⁴] complete-graph exchange matrix explicitly
+([`b4_1four_complete_graph_writhe_signs.py`](../../computations/probes/b4_1four_complete_graph_writhe_signs.py),
+PR #3426). **Two of the three pair-signs are DERIVED** off the framework's own
+crossing convention (`atom_braid_word_3A`): **pp → σ = +1**, **nn → σ⁻¹ = −1**
+(nn = bar-mirror of pp — the p↔n bar-odd asymmetry). Only the **pn** sign is
+open. Enumerating `w_pn ∈ {−1,0,+1}` at the derived bond-factor magnitude
+`z ≈ 0.499`: pn=±1 give det<0 (unphysical), pn=0 gives 2.40 MeV (0.26×) **and**
+block-diagonally decouples the pn-dominated shell (excluded). **Decisive bound
+(not a fit):** the read-off sign pattern's most-negative eigenvalue is exactly
+**−√5**, capping the physical per-pair magnitude at `g < 1/√5 ≈ 0.447`; the naive
+`z ≈ 0.499` exceeds it by ~12% (why the mixed-sign det went negative). Since
+`−ln det → +∞` at the ceiling, the value **form** `b₄ = −ln det(I+G)` is **not
+refuted (scope-(a))** — the failure is the *naive uniform magnitude z*, not the
+form. **Open object sharpened:** the [1⁴] framing must supply the pn sign **and**
+a sub-`1/√5` per-pair magnitude. Posted the exact spec on **#3407**
+([comment](https://github.com/litlfred/qou/pull/3407#issuecomment-4892386760)):
+their `Lk_R^{(k)}` must land the pn linking amplitude below `1/√5`, mixed-sign,
+in the bar-odd A₋ sector — supplying both open inputs at once.
