@@ -1,16 +1,12 @@
 ## Statement
 
-**Proposition (axiomatic Markov-trace closed form).** *Let $H_n(q)$
-denote the Iwahori-Hecke algebra of type $A_{n-1}$ with Hecke
-quadratic relation*
+**Proposition (axiomatic Markov-trace closed form).** *Let $H_n(q)$ denote the Iwahori-Hecke algebra of type $A_{n-1}$ with Hecke quadratic relation:*
 
 $$
-  \sigma_i^2 \;=\; h\,\sigma_i + 1, \qquad h \;=\; q - q^{-1},
+  \sigma_i^2 \;=\; h\,\sigma_i + 1, \qquad h \;=\; q - q^{-1}.
 $$
 
-*and let $\operatorname{tr}_M : \bigsqcup_n H_n(q) \to \mathbb{Q}(q)$
-be the Markov trace ([`prop:categorical-mass-markov`](#prop:categorical-mass-markov)),
-uniquely determined by*
+*Let $\operatorname{tr}_M : \bigsqcup_n H_n(q) \to \mathbb{Q}(q)$ be the Markov trace ([`prop:categorical-mass-markov`](#prop:categorical-mass-markov)). It is uniquely determined by:*
 
 $$
   \operatorname{tr}_M(1) = 1, \qquad
@@ -18,29 +14,22 @@ $$
   \operatorname{tr}_M(\alpha\beta) = \operatorname{tr}_M(\beta\alpha),
 $$
 
-*with $z = 1/(q^{1/2} + q^{-1/2})$. Then for the proton's
-atomic-braid word $\sigma_1^7 \sigma_2^4 \in H_3(q)$, the Markov
-trace admits the closed-form expression*
+*with $z = 1/(q^{1/2} + q^{-1/2})$. Then for the proton's atomic-braid word $\sigma_1^7 \sigma_2^4 \in H_3(q)$, the Markov trace admits the closed-form expression:*
 
 $$
   \operatorname{tr}_M(\sigma_1^7 \sigma_2^4)(q)
    \;=\; a_7 a_4 \, z^2 \;+\; (a_7 b_4 + b_7 a_4)\, z \;+\; b_7 b_4,
 $$
 
-*where $(a_k, b_k)$ are the polynomials in $h$ defined by the
-Hecke-power recurrence $a_{k+1} = h\,a_k + b_k$, $b_{k+1} = a_k$,
-$a_0 = 0$, $b_0 = 1$. After substituting $h = q - q^{-1}$ and
-$z = 1/(q^{1/2}+q^{-1/2})$ and rationalising, the denominator
-factors as $q^{10}(q+1)^3$.*
+*where $(a_k, b_k)$ are the polynomials in $h$ defined by the Hecke-power recurrence $a_{k+1} = h\,a_k + b_k$, $b_{k+1} = a_k$, $a_0 = 0$, $b_0 = 1$. After substituting $h = q - q^{-1}$ and $z = 1/(q^{1/2}+q^{-1/2})$ and rationalising, the denominator factors as $q^{10}(q+1)^3$.*
 
-*Numerical evaluation at the substrate parameter $q_0$ yields*
+*Numerical evaluation at the substrate parameter $q_0$ yields:*
 
 $$
-  \operatorname{tr}_M(\sigma_1^7 \sigma_2^4)(q_0) \;\approx\; 1.63315,
+  \operatorname{tr}_M(\sigma_1^7 \sigma_2^4)(q_0) \;\approx\; 1.63315.
 $$
 
-*matching the seminormal-derived `char_fast` Markov trace to better
-than $0.1\%$, and giving the categorical-mass anchor*
+*This matches the seminormal-derived `char_fast` Markov trace to better than $0.1\%$. It provides the categorical-mass anchor:*
 
 $$
   \rho_p^{\mathrm{CODATA}}

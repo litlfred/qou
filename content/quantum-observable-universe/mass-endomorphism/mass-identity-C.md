@@ -1,5 +1,1 @@
-In the archimedean quantum observable universe $(\mathbf{C}, \varTheta, G, \mathcal{S})$
-([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)) with instanton
-connection $A$, Levi form $L$, and self-dual curvature $F^+$, the
-categorical mass ([mass identity](#def:mass-identity)) is realised as
-Yekutieli's nonabelian multiplicative integral [yekutieli2015].
+Consider the archimedean quantum observable universe $(\mathbf{C}, \varTheta, G, \mathcal{S})$ ([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)) with instanton connection $A$, Levi form $L$, and self-dual curvature $F^+$. We realise the categorical mass ([mass identity](#def:mass-identity)) as Yekutieli's nonabelian multiplicative integral [yekutieli2015].
