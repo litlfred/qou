@@ -37,6 +37,17 @@ Method:
 Honesty: stages A-C are reconstruction heuristics; stage D alone is
 the claim-bearing step.  If D fails the run reports the failure — no
 partial claim.  Audit-only; no wiring.
+
+RUN RECORD (2026-07-06/07, PR #3443): Stage B fails at DEG_MAX = 118 on
+both (5,13) and (6,11) — and a bisected degree probe (1260 samples,
+column 6 of the (6,11) window) measured the canonical entry's rational
+degree at ~218 (fits at 219±6, excluded at ≤150).  Full reconstruction
+therefore needs ~460+ samples/prime with degree-470 eliminations across
+184 columns AND multi-prime CRT for the integer lift (single 61-bit
+Wang is insufficient at this scale) — recorded in bean n920 as the
+phase-2 compute project (Python-mp overnight / Rust tranche /
+qZeilberger).  This scaffold is committed as the reproducible method +
+run record; the existence certificate (hunt witness) is unaffected.
 """
 from __future__ import annotations
 
