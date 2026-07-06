@@ -198,4 +198,6 @@ resolves the apparent contradiction — and surfaces a discipline item:
   regeneration (witnesses migrate progressively; producers reading the
   muon-layer `q-pinning-50-digit.witness.json` directly are
   unaffected). The m_μ ≈ 210 ppb tension is now uniformly visible —
-  matching the canonical L2 dashboard stance (3/7, m_μ FAIL).
+  matching the canonical L2 dashboard stance (3/7, m_μ FAIL — the count
+  is 2/7 since the 2026-07-04 m_p de-fit, per
+  [`2026-07-04-c4-mu-p-tension-pin-dependence.md`](2026-07-04-c4-mu-p-tension-pin-dependence.md)).

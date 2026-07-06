@@ -1,5 +1,17 @@
 # L2 100× dashboard — current status (2026-06-26) + the `tnjb` m_μ convention caveat
 
+> **🛑 Superseded on the headline count (2026-07-04).** This doc's
+> "canonical count: 3/7" (m_p, m_e, m_K/m_π) is stale: **m_p was dropped
+> 2026-07-04** when the fitted Habiro tower `(1+46u⁴)(1+4u⁵)(1−29u⁶)` —
+> which alone landed it on CODATA at 0.0004 ppb — was removed from
+> production (PR #3280). The de-fitted round-trip is +1.35 ppb (~437×
+> miss); the authoritative count is **2/7** (m_e, m_K/m_π), per
+> `per-observable-100x-status.witness.json` (`beats_100x_count=2`). See
+> [`2026-07-04-c4-mu-p-tension-pin-dependence.md`](2026-07-04-c4-mu-p-tension-pin-dependence.md).
+> The **`tnjb` m_μ convention caveat below still stands** — any fresh run
+> showing m_μ MET remains the muon-q₀ tautology bug; a "3/7" (or 4/7)
+> headline from a fresh run is now doubly wrong.
+
 **Date:** 2026-06-26
 **Scope:** reporting only — **no canonical witness regenerated.** This documents the
 live `computations/per_observable_100x_status.py` output on current main and flags the known
