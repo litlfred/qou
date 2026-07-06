@@ -1,4 +1,5 @@
 import Mathlib.Tactic
+import Mathlib.LinearAlgebra.Matrix.Trace
 
 /-!
 # QOU.BraidKnot.SpinInvolutionLPDualInvariance
@@ -60,6 +61,25 @@ theorem cost_invariant (x : A) : S.τ (S.c * S.σ x) = S.τ (S.c * x) := by
     _ = S.τ (S.σ x * S.σ (S.c)) := by rw [S.sigma_c]
     _ = S.τ (S.σ (S.c * x)) := by rw [S.sigma_antimul]
     _ = S.τ (S.c * x) := S.trace_sigma _
+
+/-- **De-axiomatisation (concrete model, bean `ovh1`).** The `n×n` real matrix
+    algebra with the **transpose** `σ = (·)ᵀ` and the matrix trace `τ` is a
+    genuine instance — every carrier axiom is a theorem, not an assumption:
+    anti-multiplicativity is `Matrix.transpose_mul`, involutivity is
+    `Matrix.transpose_transpose`, trace-invariance is `Matrix.trace_transpose`,
+    the Markov/cyclic law is `Matrix.trace_mul_comm`, and the identity matrix
+    is `σ`-fixed (`Matrix.transpose_one`). So the spin-involution apparatus —
+    hence the LP-dual invariance results proved over it — is realisable. -/
+noncomputable def matrixModel (n : ℕ) :
+    SpinInvolutionLPDualInvariance (Matrix (Fin n) (Fin n) ℝ) where
+  τ := Matrix.trace
+  σ := Matrix.transpose
+  sigma_antimul a b := (Matrix.transpose_mul b a).symm
+  sigma_involutive a := Matrix.transpose_transpose a
+  trace_sigma a := Matrix.trace_transpose a
+  tau_cyclic a b := Matrix.trace_mul_comm a b
+  c := 1
+  sigma_c := Matrix.transpose_one
 
 end SpinInvolutionLPDualInvariance
 
