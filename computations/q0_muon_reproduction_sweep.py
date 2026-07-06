@@ -94,7 +94,7 @@ def _witness_for(producer: Path) -> Path | None:
     return None
 
 
-def run_one(producer: Path, rel_tol: float) -> tuple[str, list]:
+def run_one(producer: Path, rel_tol: float, timeout: int = 1800) -> tuple[str, list]:
     wit = _witness_for(producer)
     if wit is None:
         return ("NO_WITNESS", [])
@@ -112,10 +112,16 @@ def run_one(producer: Path, rel_tol: float) -> tuple[str, list]:
         order = [("proton", "physical"), ("muon", "ideal")]
 
     best = None  # (n_diffs, anchor, diffs)
+    # Defensive PYTHONPATH: most producers self-bootstrap substrate/ onto
+    # sys.path, but a handful `from _precision import …` without it and fail
+    # standalone. Inject computations/ + computations/substrate/ so every
+    # producer resolves its bare-name substrate imports.
+    _pp = f"{HERE}{os.pathsep}{HERE / 'substrate'}"
     for anchor, envval in order:
         env = dict(os.environ); env["QOU_Q0_ANCHOR"] = envval
+        env["PYTHONPATH"] = _pp + ((os.pathsep + env["PYTHONPATH"]) if env.get("PYTHONPATH") else "")
         r = subprocess.run([sys.executable, "-u", producer.name], cwd=HERE,
-                           capture_output=True, text=True, timeout=1800, env=env)
+                           capture_output=True, text=True, timeout=timeout, env=env)
         try:
             if r.returncode != 0:
                 return (f"RUN_FAILED (exit {r.returncode}): {r.stderr.strip()[-160:]}", [])
@@ -134,22 +140,35 @@ def run_one(producer: Path, rel_tol: float) -> tuple[str, list]:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--rel-tol", type=float, default=1e-10)
-    ap.add_argument("producers", nargs="+")
+    ap.add_argument("--timeout", type=int, default=1800)
+    ap.add_argument("--all-manifest", action="store_true")
+    ap.add_argument("producers", nargs="*")
     args = ap.parse_args()
 
+    producers = list(args.producers)
+    if args.all_manifest:
+        man = json.loads((HERE / "q0_anchor_manifest.json").read_text())
+        producers = [f"{st}.py" for st in man["ideal_muon"] + man["physical_proton"]]
+
     overall_ok = True
-    for p in args.producers:
+    npass = nsub = nother = 0
+    for p in producers:
         prod = (HERE / p) if not Path(p).is_absolute() else Path(p)
         try:
-            status, diffs = run_one(prod, args.rel_tol)
+            status, diffs = run_one(prod, args.rel_tol, args.timeout)
         except subprocess.TimeoutExpired:
             status, diffs = ("TIMEOUT (>1800s)", [])
         mark = "✓" if status.startswith("PASS") else ("–" if status in ("NO_WITNESS", "NO_COMMITTED") else "✗")
         print(f"{mark} {prod.name}: {status}")
         for path, a, b in diffs[:6]:
             print(f"      {path}: committed={str(a)[:32]} fresh={str(b)[:32]}")
-        if not (status.startswith("PASS") or status in ("NO_WITNESS", "NO_COMMITTED")):
-            overall_ok = False
+        if status.startswith("PASS"):
+            npass += 1
+        elif status in ("NO_WITNESS", "NO_COMMITTED"):
+            pass
+        else:
+            nother += 1; overall_ok = False
+    print(f"\n=== {npass} PASS, {nother} SUBSTANTIVE/FAILED of {len(producers)} ===")
     return 0 if overall_ok else 1
 
 
