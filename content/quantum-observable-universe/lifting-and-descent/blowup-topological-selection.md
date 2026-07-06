@@ -6,19 +6,10 @@ $$
   \cdot (a_{jk}^{(n)})^{-1}
 $$
 
-fails at the singular set $\Sigma$ because the transition
-functions $g_{ij}^{(n)}$ develop discontinuities there.  In the
-fluid picture, these discontinuities correspond to
-[vortex reconnection](#rem:vortex-reconnection) events where the
-divisor topology changes.  The obstruction class $\kappa_{n^*}$
-measures the total topological change at $\Sigma$: it is the
-net "reconnection charge" — the signed count of reconnection
-events weighted by their fusion-rule multiplicities.
+fails at the singular set $\Sigma$ because the transition functions $g_{ij}^{(n)}$ develop discontinuities there. In the fluid picture, these discontinuities correspond to [vortex reconnection](#rem:vortex-reconnection) events where the divisor topology changes. The obstruction class $\kappa_{n^*}$ measures the total topological change at $\Sigma$, acting as the net "reconnection charge": the signed count of reconnection events weighted by their fusion-rule multiplicities.
 
 **Constraint from Berry phase.**
-The obstruction class must be consistent with the
-$\mathrm{SU}_q(2)$ representation theory.  Specifically,
-$\kappa_{n^*}$ must lie in the image of the character map
+The obstruction class must be consistent with $\mathrm{SU}_q(2)$ representation theory. Specifically, $\kappa_{n^*}$ must lie in the image of the character map
 
 $$
   \chi \colon
@@ -27,8 +18,4 @@ $$
   H^2(\Sigma, \mathcal{B}),
 $$
 
-which restricts the possible values of $\kappa_{n^*}$ to a
-discrete lattice.  This is a **topological selection rule** on
-the blowup: not all vorticity concentrations are allowed, only
-those whose cohomological charge is compatible with the
-categorical structure.
+restricting the possible values of $\kappa_{n^*}$ to a discrete lattice. This forms a **topological selection rule** on the blowup: only vorticity concentrations with cohomological charges compatible with the categorical structure are permitted.
