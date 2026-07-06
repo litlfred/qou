@@ -146,12 +146,50 @@ functor. Three candidate research directions:
    Markov trace (binding-energy normalisation); this is a *physics input*
    that fixes Δ_λ but does not derive it.
 
+## Bar-parity selection rule for candidate kernels (added 2026-07-06, PR #3445)
+
+Any future Δ_λ / binding-closure candidate must pass a **structural
+parity screen before any numerical run** (formalize-first). Grounding
+facts, all machine-verified in
+[`computations/substrate/bar-parity-delta-lambda-prune-probe.witness.json`](../../computations/substrate/bar-parity-delta-lambda-prune-probe.witness.json):
+
+1. The channel-mixing ladder is **bar-even**: $[d]_{q^{-1}} = [d]_q$, and
+   the Hoefsmit binding amplitude is built from it
+   ($b^2 = [d-1][d+1]/[d]^2$).
+2. Hecke characters obey the **twisted** parity
+   $\chi_\lambda(w; q^{-1}) = (-1)^{\ell(w)}\, \chi_{\lambda'}(w; q)$
+   (verified via explicit Hoefsmit representations, all $H_2$/$H_3$
+   irreps, words to length 3). Bar does not fix a partition — it
+   conjugates it with a sign.
+3. Content sums are **conjugation-odd**: $\sum c(\lambda') = -\sum c(\lambda)$.
+
+**The screen.** A candidate per-partition kernel $k(\lambda)$ intended as
+a *binding-sector* (bar-even) mixing object is admissible only if it is
+$\lambda \leftrightarrow \lambda'$-symmetric under the twisted parity
+(equivalently: built from bar-even data such as $\dim_q$, hook brackets,
+$|{\cdot}|$-symmetric combinations). Consequences for the recorded
+families: content-linear kernels are bar-odd → **pruned**;
+$\lambda \leftrightarrow \lambda'$-asymmetric LP-cost kernels are
+**pruned** unless the asymmetry is explicitly routed to the weak sector;
+$\dim_q$-built kernels (co-Casimir, Plancherel) pass the screen — their
+recorded numerical failures stand and are not re-opened by it. A
+bar-*odd* kernel is not "wrong" per se — it is a **weak-sector** object
+(the $\mathfrak{Q}_\beta$/chirality side, cf. the PROBE-4 KL prune where
+the missing datum is exactly the sign) and cannot serve as the bar-even
+binding closure.
+
+This rule prunes *kernel parity classes*; it neither re-litigates any
+numerical refutation above nor licenses a new ansatz. Context and the
+derivation chain: [`2026-07-06-parabolic-cylinder-toroidal-channel-interpolation.md`](2026-07-06-parabolic-cylinder-toroidal-channel-interpolation.md)
+§10.
+
 ## Recommendation
 
 Do **not** attempt a 7th Δ_λ ansatz on this branch without first reviewing
 the failure mode of Options A–F. Each ansatz that "closes numerically against
 AME" is by construction a fit, not a derivation, and gets caught by the
-three-calibration discipline review.
+three-calibration discipline review. Any candidate that *is* proposed must
+first pass the bar-parity selection rule above.
 
 The productive path on this branch is **Track B (recursive ρ_ξ)**, which
 unblocks fast canonical compute for A≥3 atoms and so makes future Δ_λ
