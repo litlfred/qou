@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean"
   },
   "source_hashes": {
-    "md": "a35d093445cf",
+    "md": "2543341e5816",
     "ts": "09b4aaa9737a",
     "lean": "cafb08578088"
   },
@@ -244,20 +244,20 @@
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "a35d093445cf",
+          "md": "2543341e5816",
           "ts": "09b4aaa9737a",
-          "lean": "b71ee2b59807"
+          "lean": "cafb08578088"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "d735760f2b64",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+          "script_hash": "fd89dc9369e1",
+          "script_commit_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-06T04:11:11.478Z",
+        "reviewed_sha": "1804cf0916c26ee8a2f3d969adf8d59726f6c07c"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1256,5 +1256,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-04T00:30:14.885Z"
+  "updated_at": "2026-07-06T04:11:11.478Z"
 }

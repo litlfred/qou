@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/universal-braid-branching.lean"
   },
   "source_hashes": {
-    "md": "a0463f1d2dfb",
+    "md": "56422db38b61",
     "ts": "4ed1b5b75b2a",
-    "lean": "da11208f5d7b"
+    "lean": "2d35407ae9ce"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -264,22 +264,20 @@
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "a0463f1d2dfb",
+          "md": "56422db38b61",
           "ts": "4ed1b5b75b2a",
-          "lean": "da11208f5d7b"
+          "lean": "2d35407ae9ce"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "badc8fb0888e",
-          "script_commit_sha": "e28e45e2256ea73187107f230cc7beeb37a6c301"
+          "script_hash": "fd89dc9369e1",
+          "script_commit_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
         },
-        "reviewed_at": "2026-07-05T04:39:43.766Z",
-        "reviewed_sha": "7415132ccce30885dcfd323600b8bcf311c431e4",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/mass-theory/universal-braid-branching.lean:1: Lean file contains both archimedean (ℝ / Real.* / linarith) AND generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c."
+        "reviewed_at": "2026-07-06T04:11:11.478Z",
+        "reviewed_sha": "1804cf0916c26ee8a2f3d969adf8d59726f6c07c"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1054,5 +1052,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T04:39:43.766Z"
+  "updated_at": "2026-07-06T04:11:11.478Z"
 }

@@ -59,3 +59,5 @@ For the archimedean realisation---where the descended trace becomes the
 holonomy $\mathrm{Hol}_{\nabla_A}$ and each transient trace evaluates to
 the quantum dilogarithm $\Phi_q(z_i)$---see
 [archimedean proof](#prf:topological-mass).
+
+**Archimedean specialisation (§7c).** The categorical mass $\mathrm{categoricalMass} : R \to \mathbb{R}$ is the post-$\tau$ archimedean realisation of the generic mass decomposition over a normed ground ring — an $R\to\mathbb{R}$ norm evaluation at $q_0$, intrinsically wall-crossing, acknowledged here.

@@ -41,8 +41,9 @@ with $[n]_q = (q^n - q^{-n})/(q - q^{-1})$ the symmetric $q$-number.
 This scalar is the **$q$-Casimir eigenvalue**; the downstream block
 [def:q-angular-momentum](#def:q-angular-momentum) specialises it to
 $J_q^2(K) = [j]_q\,[j+1]_q$, the $q$-angular momentum of a knot.
-In the classical limit $q \to 1$ the eigenvalue becomes $j(j+1)$,
-the eigenvalue of the usual Casimir $C = FE + \tfrac12 H(\tfrac12 H + 1)$.
+The archimedean $q \to 1$ classical limit (over $\mathbb{R}$), where the
+eigenvalue recovers $j(j+1)$, is the sibling block
+[prop:q-casimir-classical-limit](#prop:q-casimir-classical-limit).
 
 **Role in the categorical framework.**
 Centrality of $C_q$ realises it as an endomorphism of the identity

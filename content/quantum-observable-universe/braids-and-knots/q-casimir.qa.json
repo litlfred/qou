@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/braids-and-knots/q-casimir.lean"
   },
   "source_hashes": {
-    "md": "39026f2b2a8f",
+    "md": "c90a84fcd81c",
     "ts": "7e71ae2f47e6",
-    "lean": "f96cfaab2a34"
+    "lean": "2aed565b7317"
   },
   "criteria": {
     "voice-status-leak": [
@@ -244,20 +244,20 @@
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "39026f2b2a8f",
+          "md": "c90a84fcd81c",
           "ts": "7e71ae2f47e6",
-          "lean": "b100fd02b9b2"
+          "lean": "2aed565b7317"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "d735760f2b64",
-          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec"
+          "script_hash": "fd89dc9369e1",
+          "script_commit_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
         },
-        "reviewed_at": "2026-06-21T19:13:04.696Z",
-        "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93"
+        "reviewed_at": "2026-07-06T04:11:09.291Z",
+        "reviewed_sha": "1804cf0916c26ee8a2f3d969adf8d59726f6c07c"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1160,5 +1160,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.297Z"
+  "updated_at": "2026-07-06T04:11:09.291Z"
 }
