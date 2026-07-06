@@ -9,7 +9,7 @@ the two lemmas that discharge the cited evaluation cores
 `QOU.BraidKnot.AJTrefoilAnnihilation`:
 
 * `trP_sum_at_root_self` — under `(w⁴)^M = 1`,
-  `∑_{j≤M} (−1)^j w^{6j(j+1)} [2j+1]_{w²} = (−1)^M w^{6M(M+2)} [M+1]_{w²}`;
+  `Σ_{j≤M} (−1)^j w^{6j(j+1)} [2j+1]_{w²} = (−1)^M w^{6M(M+2)} [M+1]_{w²}`;
 * `trP_sum_at_root_offset` — under `(w⁴)^{n+2} = 1`, the same closed form
   holds for the sum truncated at `n`.
 
@@ -22,7 +22,7 @@ Then three lemmas close the evaluation:
 
 1. **Shift** (`s1_eq_shift`, exact): re-indexing `j ↦ j+1` maps the `S₁`
    summand onto the negated summand of the Gauss-type sum
-   `G(m) = ∑_{j≤m} (−1)^j w^{6j²−2j}`, so `S₁(m) = 1 − G(m+1)`.
+   `G(m) = Σ_{j≤m} (−1)^j w^{6j²−2j}`, so `S₁(m) = 1 − G(m+1)`.
 2. **Reflection** (`s2_eq_reflect`, uses the root): `j ↦ m−j` maps the
    `S₂` summand onto the `G` summand times `w^{12mj}`, and
    `w^{12mj} = ((w⁴)^m)^{3j} = 1`, so `S₂(m) = (−1)^m w^{6m²+2m} G(m)`.
@@ -74,7 +74,7 @@ private def rg (w : K) (j : ℕ) : K :=
 
 private def rS1 (w : K) (m : ℕ) : K := ∑ j ∈ range (m + 1), rf1 w j
 private def rS2 (w : K) (m : ℕ) : K := ∑ j ∈ range (m + 1), rf2 w j
-/-- `G(m) = ∑_{j≤m} (−1)^j w^{6j²−2j}` — the Gauss-type sum of the module
+/-- `G(m) = Σ_{j≤m} (−1)^j w^{6j²−2j}` — the Gauss-type sum of the module
     docstring. -/
 private def rgS (w : K) (m : ℕ) : K := ∑ j ∈ range (m + 1), rg w j
 
@@ -149,7 +149,7 @@ private theorem sum_range_mul_eq_zero {f : ℕ → K} {p : ℕ} (t : ℕ)
       exact hp (p * t)
 
 /-- **The residual Gauss-sum collapse**: for `v² ≠ 1`, `N` even and
-    `v^N = 1`, the sum `∑_{j≤N} (−1)^j v^{3j²−j}` collapses to its last
+    `v^N = 1`, the sum `Σ_{j≤N} (−1)^j v^{3j²−j}` collapses to its last
     term, which is `1`.  (Blocks of length `orderOf v` — antiperiodic for
     odd order, pairwise-cancelling for even order — annihilate the first
     `N` terms.) -/
