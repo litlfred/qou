@@ -12,7 +12,7 @@ data it reproduces.
 
 ## $\mathrm{SU}_q(2)$ rotor bands
 
-The $\mathrm{SU}_q(2)$ rotator model \cite{minkov1997} describes the
+The $\mathrm{SU}_q(2)$ rotator model \cite{minkov1996} describes the
 rotational bands of deformed rare-earth and actinide nuclei by a
 Hamiltonian proportional to the second Casimir of $\mathrm{SU}_q(2)$,
 with spectrum

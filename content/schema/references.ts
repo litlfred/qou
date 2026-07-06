@@ -1815,7 +1815,7 @@ export const references: CSLData[] = [
   }),
 
   ref({
-    id: "minkov1997",
+    id: "minkov1996",
     type: "article-journal",
     title:
       "Nuclear beta- and gamma- collective bands in the SU_q(2) rotator model",
