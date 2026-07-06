@@ -32,9 +32,8 @@ import mpmath as mp
 
 _HERE = Path(__file__).resolve().parent
 _COMP = _HERE.parent
-for _p in (str(_COMP), str(_HERE)):
-    if _p not in sys.path:
-        sys.path.insert(0, _p)
+if str(_COMP) not in sys.path:
+    sys.path.insert(0, str(_COMP))
 from _li_2_q_util import load_q_50dps  # noqa: E402
 from substrate._precision import set_compute_dps  # noqa: E402
 from substrate.experimental_constants import M_E_MEV, Q_NEUTRON_MEV  # noqa: E402
