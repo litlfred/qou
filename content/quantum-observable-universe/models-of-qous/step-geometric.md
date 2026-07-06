@@ -3,7 +3,7 @@ step realises the mass of every knot on one fixed surface, so we fix
 that surface before running the flow argument. The canonical geometric
 realisation is **Bring's surface** $\Sigma_4$, the genus-4 smooth
 projective curve with Euler characteristic $\chi = -6$ whose
-automorphism group $\mathrm{Aut}(\Sigma_4) \cong S_5$ (order 120)
+automorphism group $\mathrm{Aut}(\Sigma_4) \cong S_5$
 exchanges the five quark--lepton families. It is the vanishing locus
 on $\mathbb{P}^4$ of the first three power sums:
 
