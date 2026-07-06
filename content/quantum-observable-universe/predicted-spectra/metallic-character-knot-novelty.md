@@ -1,1 +1,1 @@
-**Remark.** Replacing qualitative atomic structure models with a rigid residual-linking-number $\lambda(R)$ classification introduces a highly novel knot-theoretic metric for metallic versus noble traits, formalizing Reidemeister-transport conductivity as a core algebraic topological property.
+**Remark.** The residual linking number $\lambda(R)$ provides a knot-theoretic metric for metallic character. This formalizes conductivity via Reidemeister transport as a topological property, replacing qualitative models with rigid classification.
