@@ -4,6 +4,7 @@ import Mathlib.LinearAlgebra.Finsupp.VectorSpace
 import Mathlib.Data.Fintype.EquivFin
 import Mathlib.Data.Fintype.OfMap
 import Mathlib.Data.Finset.Max
+import Mathlib.GroupTheory.GroupAction.FixingSubgroup
 import QOU.BraidKnot.StandardYoungTableau
 import QOU.BraidKnot.Specht
 import Mathlib.Tactic.Group
@@ -1301,6 +1302,36 @@ theorem garnirH_card_pos (t : Specht.Tableau μ) (i j : ℕ) : 0 < (garnirH t i 
     intro l _; rfl
   · rw [Finset.mem_filter]
     exact ⟨Finset.mem_univ _, Subgroup.one_mem _⟩
+
+/-- `S_{A∪B}` as a genuine `Subgroup` (via `fixingSubgroup` of the complement of
+`A ∪ B`), for the coset-transversal reindexing that connects `garnir_full_annihilation`
+to `garnir_assembly`. -/
+def garnirGSub (t : Specht.Tableau μ) (i j : ℕ) : Subgroup (Equiv.Perm (Fin (Specht.nOf μ))) :=
+  fixingSubgroup (Equiv.Perm (Fin (Specht.nOf μ)))
+    ((↑(garnirA t i j ∪ garnirB t i j) : Set (Fin (Specht.nOf μ)))ᶜ)
+
+omit [CharZero k] in
+theorem mem_garnirGSub (t : Specht.Tableau μ) (i j : ℕ)
+    (σ : Equiv.Perm (Fin (Specht.nOf μ))) :
+    σ ∈ garnirGSub t i j ↔ ∀ l ∉ garnirA t i j ∪ garnirB t i j, σ l = l := by
+  rw [garnirGSub, mem_fixingSubgroup_iff]
+  constructor
+  · intro h l hl
+    have := h l (by rw [Set.mem_compl_iff, Finset.mem_coe]; exact hl)
+    rwa [Equiv.Perm.smul_def] at this
+  · intro h y hy
+    rw [Set.mem_compl_iff, Finset.mem_coe] at hy
+    rw [Equiv.Perm.smul_def]; exact h y hy
+
+/-- `H = S_A × S_B` as a `Subgroup`: the elements of `garnirGSub` preserving columns. -/
+def garnirHSub (t : Specht.Tableau μ) (i j : ℕ) : Subgroup (Equiv.Perm (Fin (Specht.nOf μ))) :=
+  garnirGSub t i j ⊓ Specht.colStab t
+
+omit [CharZero k] in
+/-- `H ≤ G` at the subgroup level — the input to `exists_left_transversal_of_le`
+for the (future) coset-transversal reindexing. -/
+theorem garnirHSub_le (t : Specht.Tableau μ) (i j : ℕ) :
+    garnirHSub t i j ≤ garnirGSub t i j := inf_le_left
 
 /-! #### The single residual straightening core + the induction skeleton -/
 
