@@ -1,5 +1,9 @@
-Every transfer matrix has the same $2 \times 2$ structure,
-parameterized by two **crossing coefficients** $(c, d)$.
+The point of a general form is to collapse every crossing type
+into a single two-parameter family, so that the three nuclear
+crossings and the connected-sum case become special points of one
+matrix rather than separate constructions.  Concretely, every
+transfer matrix has the same $2 \times 2$ structure, parameterized
+by two **crossing coefficients** $(c, d)$.
 
 ## General form
 
@@ -47,14 +51,21 @@ $$
 
 ## Properties of $T(c, d)$
 
-**Determinant:**
+Three properties fix how the crossing acts: its determinant
+controls invertibility, its eigenvalues control the spectral
+behavior under iteration, and its degenerate limits recover the
+matrices already met above.
+
+**Determinant.** The determinant governs whether the crossing
+action is invertible:
 
 $$
   \det T(c, d) =  d\bigl[c(q - q^{-1}) + d\bigr] - c^2
   =  cd(q - q^{-1}) + d^2 - c^2
 $$
 
-**Eigenvalues** (when $c \neq 0$):
+**Eigenvalues** (when $c \neq 0$).  The eigenvalues give the
+spectral behavior of the crossing under repeated application:
 
 $$
   \lambda_{\pm}
@@ -66,7 +77,10 @@ $$
   \Bigr]
 $$
 
-**Special cases:**
+**Special cases.** The two degenerations of interest recover the
+matrices met earlier: $c = 0$ collapses $T$ to the scalar matrix,
+while $c = 1, d = 0$ gives the connected-sum (fundamental) matrix.
+
 - $c = 0$: $T(0, d) = d \cdot \mathbb{I}$ (scalar matrix)
 - $d = 0$: $T(c, 0) = c \cdot \begin{pmatrix} q - q^{-1} & 1 \\ 1 & 0 \end{pmatrix}$
 - $c = 1, d = 0$: The fundamental matrix $T_{pp}$ (see below)
