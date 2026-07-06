@@ -158,14 +158,23 @@ of them can supply a weight-$3$ coefficient.
 The parameter-free prediction is therefore complete to
 $\approx 4\;\mathrm{ppm}$; the finer $O(\alpha^2)$ correction is a genuine
 two-loop object whose closed form, if one exists, must come from a two-loop
-weight-$3$ computation. The identified candidate is the perturbative
-Chern–Simons invariant of the unit tangent bundle $UT(M_{\text{Bring}})$,
-whose two-loop term carries $\zeta(3)$ even though the manifold has zero
-hyperbolic volume. This settles the earlier trichotomy — that the residual
-might reflect (1) an inexact bare formula, (2) a high-degree $q$-rational, or
-(3) a genuine quantum-loop correction — in favour of (3): the missing
-$1.55\times 10^{-3}$ is a two-loop vacuum-polarisation effect, not a
-categorical-level closed form.
+weight-$3$ computation. The perturbative Chern–Simons invariant of the unit
+tangent bundle $UT(M_{\text{Bring}})$ is *not* an admissible home: $UT$ has
+first Betti number $b_1 = 2g = 8 \neq 0$, so it is not a rational homology
+sphere, the trivial connection is non-isolated, and the standard
+perturbative two-loop (LMO–Ohtsuki) invariant is undefined; the Seifert
+fibre-sum contributes only even zeta values $\zeta(2m)/\pi^{2m}\in\mathbb{Q}$
+(weight $\le 2$, no $\zeta(3)$), and the genuine two-loop Chern–Simons
+invariant is the $\theta$-graph $=$ rational $\cdot$ Casson term. The
+weight-$3$ $\zeta(3)$ ingredient survives only in objects outside standard
+perturbative Seifert–Chern–Simons theory — a Goncharov weight-$3$
+configuration polylogarithm on the five golden $S_5$ points, or an
+equivariant/family invariant of the non-isolated $b_1 = 8$ moduli. This
+settles the earlier trichotomy — that the residual might reflect (1) an
+inexact bare formula, (2) a high-degree $q$-rational, or (3) a genuine
+quantum-loop correction — in favour of (3): the missing $1.55\times 10^{-3}$
+is a two-loop vacuum-polarisation effect, not a categorical-level closed
+form.
 
 ## Promising lead: additive QED-style correction
 
