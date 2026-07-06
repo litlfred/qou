@@ -1,4 +1,5 @@
 import Mathlib.Tactic
+import Mathlib.Topology.Basic
 
 /-!
 # QOU.HorizonFunctor
@@ -52,6 +53,21 @@ theorem boundary_disjoint_observable (𝒜 : H.Aeon) :
   exact H.boundary_nonobservable 𝒜 c hb ho
 
 end HorizonFunctor
+
+/-- **De-axiomatisation (bean `bqfr`): a genuine topological horizon.** Over
+    any topological space of configurations with a real degree-0 section `A₀`,
+    an aeon is a region and its horizon is the topological **frontier** of the
+    region intersected with the `A₀ = 0` locus. `frontier` is Mathlib's real
+    closure-minus-interior — the genuine "limits of diagrams in the aeon"
+    operator — so `boundary_nonobservable` is a *theorem* (the boundary lies
+    in `{A₀ = 0}` by construction), not an assumption. -/
+def HorizonFunctor.ofSpace {X : Type} [TopologicalSpace X] {ι : Type}
+    (A0 : X → ℝ) (region : ι → Set X) : HorizonFunctor where
+  Config := X
+  Aeon := ι
+  observable c := A0 c ≠ 0
+  boundary a := frontier (region a) ∩ {c | A0 c = 0}
+  boundary_nonobservable _ _ hc hobs := hobs hc.2
 
 -- Ref: [manuscript] quantum-observable-universe/information-theory/horizon-functor.ts
 
