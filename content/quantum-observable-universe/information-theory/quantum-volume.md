@@ -1,29 +1,21 @@
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
-and $\mathcal{S} \to M$ the state bundle with Reeb bundle
-$S^3 \to \mathcal{S}_p$ at each brane point $p$
-([Reeb bundle](#def:reeb-bundle)).  The **quantum volume**
-of a region $U \subset M$ is
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe. Let $\mathcal{S} \to M$ be the state bundle with Reeb bundle $S^3 \to \mathcal{S}_p$ at each brane point $p$ ([Reeb bundle](#def:reeb-bundle)). The **quantum volume** of a region $U \subset M$ is defined as
 
 $$
   V_q(U) \;:=\;
   \int_U \mathrm{Vol}_{S^3}(\mathcal{S}_p)\;
-  \epsilon_q(p),
+  \epsilon_q(p).
 $$
 
-where $\epsilon_q$ is the categorical volume form on
-$\Lambda^2 V$ preserved by the rigid duality of
-$(\mathbf{C}, A, \tau)$
-([quantum observable universe](#def:quantum-observable-universe)).
+Here $\epsilon_q$ is the categorical volume form on $\Lambda^2 V$, uniquely preserved by the rigid duality of $(\mathbf{C}, A, \tau)$ ([quantum observable universe](#def:quantum-observable-universe)).
 
-For a homogeneous gas (uniform $q$ throughout $U$), all
-fibres are isometric and
+For a homogeneous gas exhibiting uniform $q$ throughout $U$, all fibres are isometric. This yields
 
 $$
   V_q(U) \;=\;
   |U| \cdot \mathrm{Vol}(S^3_q),
 $$
 
-where $|U|$ is the number of brane points in $U$ and
+where $|U|$ is the number of brane points in $U$. The term
 
 $$
   \mathrm{Vol}(S^3_q)
@@ -31,6 +23,4 @@ $$
   \;=\; \pi^2(q + q^{-1})
 $$
 
-is the volume of $S^3$ in the $q$-deformed metric.
-At $q = 1$ this recovers
-$\mathrm{Vol}(S^3) = 2\pi^2$.
+is the volume of $S^3$ measured in the $q$-deformed metric. At $q = 1$, this trivially recovers the classical volume $\mathrm{Vol}(S^3) = 2\pi^2$.

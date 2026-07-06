@@ -6,22 +6,15 @@
 > graded expansion [`prop:rho-k-graded-expansion`](../braids-and-knots/rho-k-graded-expansion.md).
 > Full purge tracking: [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md).
 
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
-substrate parameter $q$ and Planck time
-$t_P(q) = q/(q-1) = 1/\hbar_q$
-([Planck time](#def:planck-time)).  The **quantum temperature**
-of a region $U \subset M$ is
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with substrate parameter $q$ and Planck time $t_P(q) = q/(q-1) = 1/\hbar_q$ ([Planck time](#def:planck-time)). The **quantum temperature** of a region $U \subset M$ is defined as
 
 $$
-  T_q(U) \;:=\; \hbar_q \;=\; \frac{q - 1}{q},
+  T_q(U) \;:=\; \hbar_q \;=\; \frac{q - 1}{q}.
 $$
 
-with inverse temperature $\beta_q := 1/T_q = t_P(q)$.
+The inverse temperature is $\beta_q := 1/T_q = t_P(q)$.
 
-In terms of the substrate density $\rho_q = 1/\hbar_q^{2}$
-introduced by the Kashaev volume--density reading
-([Kashaev volume--density](#rem:kashaev-volume-density)), the
-temperature and its inverse square are
+The Kashaev volume--density reading ([Kashaev volume--density](#rem:kashaev-volume-density)) introduces the substrate density $\rho_q = 1/\hbar_q^{2}$. In these terms, the temperature and its inverse square are
 
 $$
   T_q \;=\; \rho_q^{-1/2},
@@ -29,15 +22,9 @@ $$
   \beta_q^{2} \;=\; \rho_q.
 $$
 
-Temperature and substrate density are thus **conjugate square roots**:
-a state at high drag density (small $\hbar_q$) is at low temperature,
-and the inverse-temperature squared is the density itself.  This
-absorbs several dimensional-analysis identities that otherwise require
-separate derivation.
+Temperature and substrate density are conjugate square roots. A state at high drag density (small $\hbar_q$) rests at low temperature, while the inverse-temperature squared matches the density itself. This relationship absorbs several dimensional-analysis identities that would otherwise demand independent derivations.
 
-The quantum temperature is the thermodynamic conjugate of the
-quantum entropy $S_q(U)$
-([quantum entropy](#def:quantum-entropy)):
+The quantum temperature is the thermodynamic conjugate of the quantum entropy $S_q(U)$ ([quantum entropy](#def:quantum-entropy)):
 
 $$
   \frac{1}{T_q}

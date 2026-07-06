@@ -1,6 +1,5 @@
 *Proof.*
-The single-particle partition function in a single $S^3$
-fibre is
+The single-particle partition function in a single $S^3$ fibre is
 
 $$
   z_q
@@ -9,18 +8,15 @@ $$
   e^{-\beta_q \, \mathfrak{S}_q(K)}.
 $$
 
-For $N$ non-interacting knots across $|U|$ brane points:
+For $N$ non-interacting knots across $|U|$ brane points, the total partition function is
 
 $$
   Z_q
   \;=\; \frac{1}{N!}
-  \left( |U| \cdot z_q \right)^N,
+  \left( |U| \cdot z_q \right)^N.
 $$
 
-where $1/N!$ arises from the braid group action on
-$\mathrm{Conf}(U)$ (isotopy-indistinguishability).
-The free energy $F_q = -T_q \ln Z_q$ gives, via Stirling
-and $V_q = |U| \cdot \pi^2 [2]_q$:
+The factor of $1/N!$ accounts for isotopy indistinguishability under the braid group action on $\mathrm{Conf}(U)$. Applying Stirling's approximation and substituting $V_q = |U| \cdot \pi^2 [2]_q$, the free energy $F_q = -T_q \ln Z_q$ yields
 
 $$
   P_q \, V_q
@@ -28,7 +24,4 @@ $$
   \;=\; N \, T_q
 $$
 
-at leading order.  The $q$-anomaly correction from
-$d_q^2 \neq 0$ at $\partial U$ shifts the single-fibre
-partition function by $\delta \ln z_q = \hbar_q^2 \langle \mathfrak{S}_q \rangle / [2]_q$, producing the full
-equation of state.  $\square$
+at leading order. The $q$-anomaly from $d_q^2 \neq 0$ at $\partial U$ corrects the single-fibre partition function by $\delta \ln z_q = \hbar_q^2 \langle \mathfrak{S}_q \rangle / [2]_q$. This shift produces the full equation of state. $\square$
