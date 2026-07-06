@@ -677,6 +677,43 @@ theorem sum_sign_rep_coset_collapse (t : Specht.Tableau μ)
   -- Inner sum collapses: `∑_{ρ∈H} sgn ρ • rep ρ e_t = |H| • e_t`.
   rw [sum_sign_rep_polytabloid t H hH, map_nsmul]
 
+/-- **Transversal annihilation (sorry-free) — Garnir piece 2, bridge step 2.**
+Given a set `H ⊆ C_t` with `0 < |H|` (the `S_A × S_B` factor) and a transversal `T`
+(coset representatives), *if* the signed group-action sum over the full product family
+`{π·ρ : π ∈ T, ρ ∈ H}` vanishes (hypothesis `hann` — supplied by the tabloid-level
+Garnir annihilation `mtab_sum_sign_smul_of_eq_zero` / `sum_sign_rep_eq_zero_of_fixed`
+once the Garnir set is built), then the *transversal* signed sum vanishes:
+`∑_{π ∈ T} sgn(π)·(π·e_t) = 0`.
+
+The `|H|` factor produced by collapsing each coset (`sum_sign_rep_coset_collapse`)
+is cancelled using `CharZero` — this is where dividing by `|S_A × S_B|` enters. The
+final Garnir relation `e_t = −∑_{π ≠ 1} sgn(π)·e_{π·t}` then follows by isolating the
+identity coset representative. -/
+theorem transversal_sum_eq_zero (t : Specht.Tableau μ)
+    (T H : Finset (Equiv.Perm (Fin (Specht.nOf μ))))
+    (hH : ∀ ρ ∈ H, ρ ∈ Specht.colStab t) (hpos : 0 < H.card)
+    (hann : ∑ π ∈ T, ∑ ρ ∈ H, (Equiv.Perm.sign (π * ρ) : ℤ) •
+        Specht.Mtab.rep μ (π * ρ) (Specht.polytabloid (k := k) t) = 0) :
+    ∑ π ∈ T, (Equiv.Perm.sign π : ℤ) •
+        Specht.Mtab.rep μ π (Specht.polytabloid (k := k) t) = 0 := by
+  classical
+  set S := ∑ π ∈ T, (Equiv.Perm.sign π : ℤ) •
+      Specht.Mtab.rep μ π (Specht.polytabloid (k := k) t) with hS
+  -- Collapse each coset's inner sum, then pull the `|H|` factor out front.
+  have h2 : ∀ π ∈ T, ∑ ρ ∈ H, (Equiv.Perm.sign (π * ρ) : ℤ) •
+      Specht.Mtab.rep μ (π * ρ) (Specht.polytabloid (k := k) t)
+      = H.card • ((Equiv.Perm.sign π : ℤ) •
+          Specht.Mtab.rep μ π (Specht.polytabloid (k := k) t)) := by
+    intro π _
+    rw [sum_sign_rep_coset_collapse t H π hH, smul_comm]
+  rw [Finset.sum_congr rfl h2, ← Finset.smul_sum, ← hS] at hann
+  -- `|H| • S = 0` with `|H| ≠ 0` in a char-0 field module ⇒ `S = 0`.
+  have hne : (H.card : k) ≠ 0 := Nat.cast_ne_zero.mpr hpos.ne'
+  calc S = (H.card : k)⁻¹ • (H.card : k) • S := by rw [inv_smul_smul₀ hne]
+    _ = (H.card : k)⁻¹ • (H.card • S) := by rw [Nat.cast_smul_eq_nsmul]
+    _ = (H.card : k)⁻¹ • (0 : Specht.Mtab (k := k) μ) := by rw [hann]
+    _ = 0 := smul_zero _
+
 /-! #### The self-contained dominance weight (sorry-free)
 
 The straightening induction needs a well-founded measure that strictly increases
