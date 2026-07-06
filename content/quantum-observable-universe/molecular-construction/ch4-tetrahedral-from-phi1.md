@@ -1,22 +1,12 @@
 ### Tetrahedral symmetry
 
-*The LP dual selects a strand ordering with $S_4$ symmetry
-(permuting the four hydrogens). In the optimal ordering, the
-four H atoms are distributed **symmetrically** around carbon's
-strands, maximising the inter-hydrogen distance (number of
-intervening strands). This is the braid-theoretic origin of
-the tetrahedral geometry of methane.*
+*The LP dual selects a strand ordering that exhibits $S_4$ symmetry, permuting the four hydrogens. The optimal ordering distributes the four hydrogen atoms symmetrically among the carbon's strands, maximising the inter-hydrogen distance (the number of intervening strands). This supplies the braid-theoretic origin of methane's tetrahedral geometry.*
 
-*The $H$-$H$ interactions are:*
-- *$\mathfrak{p}_{H_i}\mathfrak{p}_{H_j}$: EM repulsion ($\sigma$)*
-- *$e_{H_i} e_{H_j}$: EM repulsion ($\sigma$)*
-- *$\mathfrak{p}_{H_i} e_{H_j}$: EM attraction ($\sigma^{-1}$) —
- but this is a **non-bonding** attraction (no shared pair)*
+*The $\mathrm{H\!-\!H}$ interactions comprise:*
+- *$\mathfrak{p}_{\mathrm{H}_i}\mathfrak{p}_{\mathrm{H}_j}$: Electromagnetic repulsion ($\sigma$).*
+- *$e_{\mathrm{H}_i} e_{\mathrm{H}_j}$: Electromagnetic repulsion ($\sigma$).*
+- *$\mathfrak{p}_{\mathrm{H}_i} e_{\mathrm{H}_j}$: Electromagnetic attraction ($\sigma^{-1}$). This constitutes a non-bonding attraction, as no pair is shared.*
 
-*Minimising $\Phi_1$ over strand orderings accordingly distributes
-the 4 H atoms to maximise separation of repulsive crossings,
-producing the $S_4$-symmetric (tetrahedral) arrangement.*
+*Minimising $\Phi_1$ over all strand orderings distributes the four hydrogen atoms to maximise the separation of repulsive crossings. This yields the $S_4$-symmetric tetrahedral arrangement.*
 
-*The observed C--H bond dissociation energy is
-$D_0 \approx 4.48 \;\mathrm{eV}$ per bond (total
-atomisation energy $\approx 17.9 \;\mathrm{eV}$).*
+*The observed $\mathrm{C\!-\!H}$ bond dissociation energy is $D_0 \approx 4.48 \;\mathrm{eV}$ per bond. The total atomisation energy is $\approx 17.9 \;\mathrm{eV}$.*

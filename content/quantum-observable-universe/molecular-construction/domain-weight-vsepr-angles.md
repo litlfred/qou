@@ -1,13 +1,6 @@
-## Molecular consequence — one rule, $\mathrm{weight} = q^{\ell}$
+## Molecular consequence: $\mathrm{weight} = q^{\ell}$
 
-Every electron domain is a braid word weighted $q^{\ell}$ on the symmetric
-block: a single bond $\sigma$ ($\ell{=}1$) weighs $q$, a **double** bond
-$\sigma^2$ ($\ell{=}2$) weighs $q^2$, a lone pair
-$e^- = \sigma_0\sigma_1\sigma_0$ ($\ell{=}3$) weighs $q^3$ — one $q$ per bond
-order, and the lone/bond ratio $q^3/q = q^2$. The angle then needs only (i) the
-$AX_nE_m$ domain counts and (ii) the **hybridisation base** $\theta_0$ — set by
-whether the central atom's self-dual $s$-channel is in the bonding active set,
-which the atom's size (its $s$–$p$ promotion gap) controls. No angle is fitted.
+Every electron domain corresponds to a braid word weighted $q^{\ell}$ on the symmetric block. A single bond $\sigma$ ($\ell{=}1$) weighs $q$. A double bond $\sigma^2$ ($\ell{=}2$) weighs $q^2$. A lone pair $e^- = \sigma_0\sigma_1\sigma_0$ ($\ell{=}3$) weighs $q^3$. The lone-to-bond ratio is $q^3/q = q^2$. The molecular angle computation requires only the $AX_nE_m$ domain counts and the hybridisation base $\theta_0$. The base $\theta_0$ is determined by whether the central atom's self-dual $s$-channel is active, which depends on the $s$–$p$ promotion gap. No angle is fitted.
 
 | Molecule | Atom $(n)$ | $AX_nE_m$ | Bonds | Lones | Base $\theta_0$ | Predicted | Observed |
 |---|---|---|---|---|---|---|---|
@@ -18,25 +11,6 @@ which the atom's size (its $s$–$p$ promotion gap) controls. No angle is fitted
 | $\mathrm{CO_2}$ | C $(2)$ | $AX_2$ | $2\,\sigma^2\,(q^2)$ | — | sp $180^\circ$ | $:val[predicted_co2_deg]{precision=5, witness=computations/molecular-angle-master-table.witness.json}^\circ$ | $180.0^\circ$ |
 | $\mathrm{H_2S}$ | S $(3)$ | $AX_2E_2$ | $2\,\sigma\,(q)$ | $2\,e^-\,(q^3)$ | pure-$p$ $90^\circ$ | $:val[predicted_h2s_deg]{precision=5, witness=computations/molecular-angle-master-table.witness.json}^\circ$ | $92.1^\circ$ |
 
-The second-row atoms (C, N, O — small $s$–$p$ gap) hybridise, so the
-$s$-channel is active and the domains take the **sp/sp$^2$/sp$^3$ base** by steric
-number ($180/120/109.47^\circ$); the $q^3$ lone (or $q^2$ double-bond) weight
-then shifts it. This reproduces $\mathrm{CH_4}/\mathrm{NH_3}/\mathrm{H_2O}/
-\mathrm{C_2H_4}/\mathrm{CO_2}$ within $0.6^\circ$ and specialises
-[`prop:h2o-bond-angle-shift`](#prop:h2o-bond-angle-shift).
+Second-row atoms (C, N, O) have a small $s$–$p$ gap, making the $s$-channel active. The domains assume the sp/sp$^2$/sp$^3$ base according to their steric number ($180^\circ/120^\circ/109.47^\circ$). The $q^3$ lone-pair weight (or $q^2$ double-bond weight) shifts this base. This procedure reproduces the angles for $\mathrm{CH_4}$, $\mathrm{NH_3}$, $\mathrm{H_2O}$, $\mathrm{C_2H_4}$, and $\mathrm{CO_2}$ within $0.6^\circ$.
 
-Third-row sulfur (large $s$–$p$ gap) does **not** hybridise — the $s$-channel
-drops from the active set — so the two bonds use the orthogonal **pure-$p$**
-orbitals, base $\theta_0 = 90^\circ$. The residual $+2.1^\circ$
-($\mathrm{H_2S} \approx 92^\circ$) is a **lone-pair braid asymmetry** that
-$\mathrm{H_2O}$ lacks: with the $s$-channel inert the two lone pairs are
-*inequivalent* — the self-dual $3s^2$ (the $e^-$ palindrome, defect $0$,
-$\ell{=}0$) and the chiral $3p_z$ (non-palindromic, defect $2\ell{=}2$) — and
-the chiral pair's directional bias opens the orbital-locked $90^\circ$.
-$\mathrm{H_2O}$'s two lone pairs are *equal* self-dual $e^-$ (defects $0,0$), so
-it has no such tilt. The sp$^3 \leftrightarrow$ pure-$p$ flip itself is derived
-from the shell braid — the self-dual-$s$ / chiral-$p$ split plus the $ns$
-penetration of the $(n{-}1)$ inner shells, $\Delta(n)\propto(n{-}1)=$
-central-atom size, a *discrete* flip at $n{=}2{\to}3$ (group-16
-$\mathrm{O}\,104.5^\circ \to \mathrm{S/Se/Te}\sim 90^\circ$ confirms the
-saturation), with no fit.
+Third-row sulfur has a large $s$–$p$ gap and does not hybridise. The $s$-channel drops from the active set, forcing the two bonds to use orthogonal pure-$p$ orbitals with a base $\theta_0 = 90^\circ$. The residual $+2.1^\circ$ observed in $\mathrm{H_2S}$ ($\approx 92^\circ$) stems from a lone-pair braid asymmetry absent in $\mathrm{H_2O}$. With the $s$-channel inert, the two lone pairs are inequivalent: one is the self-dual $3s^2$ (palindrome, defect $0$, $\ell{=}0$) and the other is the chiral $3p_z$ (non-palindromic, defect $2\ell{=}2$). The chiral pair's directional bias opens the orbital-locked $90^\circ$. In $\mathrm{H_2O}$, the two lone pairs are equal self-dual $e^-$ (defects $0,0$), generating no such tilt. The discrete flip from sp$^3$ to pure-$p$ between $n{=}2$ and $n{=}3$ derives from the shell braid. It originates from the self-dual-$s$/chiral-$p$ split combined with the $ns$ penetration of the $(n{-}1)$ inner shells, where $\Delta(n)\propto(n{-}1)$. The group-16 progression from $\mathrm{O}$ ($104.5^\circ$) to $\mathrm{S/Se/Te}$ ($\sim 90^\circ$) confirms this discrete saturation.

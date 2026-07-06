@@ -1,57 +1,11 @@
 **Definition.**
-**Carbon monoxide** *$CO$ is the molecular braid of a carbon atom
-$C(6, 6)$ and an oxygen atom $O(8, 8)$ sharing three electron
-pairs (triple bond).*
+*The **carbon monoxide** braid $CO$ joins a carbon atom $C(6, 6)$ and an oxygen atom $O(8, 8)$, sharing three electron pairs.*
 
-### Stage 1: Build the constituent atoms
+We construct the atoms prior to bonding. The carbon atomic braid $\mathcal{A}_C \in H_{18}(q)$ has 18 strands (12 nucleons and 6 electrons), with four valence electrons in the $n = 2$ shell. The oxygen atomic braid $\mathcal{A}_O \in H_{24}(q)$ has 24 strands (16 nucleons and 8 electrons), leaving two open valence sites and two lone pairs.
 
-*Carbon: $Z = 6$, $N = 6$, $A = 12$.  The
-[atomic braid](#def:atomic-braid) $\mathcal{A}_C \in H_{18}(q)$
-has 18 strands (12 nucleons + 6 electrons).  Electron
-configuration $1s^2 2s^2 2p^2$: four valence electrons in the
-$n = 2$ shell.*
+The molecular braid embeds in $H_{42}(q)$. The triple bond assigns 6 electrons to covalent channels: one shared $\sigma$ pair along the C--O axis and two shared $\pi$ pairs perpendicular to the axis. In the braid framework, the $\sigma$ bond places one electron from C and one from O in adjacent strand positions, each with two $\sigma^{-1}$ crossings targeting the nuclei. The $\pi$ bonds place two additional shared pairs between the $2p$ shells. After assembly, both carbon and oxygen retain two core electrons and one lone pair, leaving 6 electrons shared in covalent channels.
 
-*Oxygen: $Z = 8$, $N = 8$, $A = 16$.  The atomic braid
-$\mathcal{A}_O \in H_{24}(q)$ has 24 strands (16 nucleons +
-8 electrons).  Configuration $1s^2 2s^2 2p^4$: two open valence
-sites, two lone pairs.*
+We build the molecular braid iteratively. We embed the normal-form $\mathcal{A}_C$ and $\mathcal{A}_O$ into the extended algebra. We apply the inter-atomic nucleon crossings, isolating the 48 generator pairs of $\mathfrak{p}_C$--$\mathfrak{p}_O$ repulsion. We apply the covalent bond operators to generate 6 attractive $\sigma^{-1}$ crossings. We apply Gröbner--Shirshov reduction to normal form at each step.
 
-### Stage 2: Molecular assembly in $H_{42}(q)$
+The LP dual optimises the electron-bond assignments by minimising $\Phi_1$ over the available valence electrons.
 
-*The molecular braid lives in $H_{42}(q)$ ($18 + 24 = 42$ strands).
-The triple bond involves 3 shared electron pairs — 6 electrons
-total participating in covalent bonding:*
-
-- *1 $\sigma$ bond: one shared pair along the C--O axis*
-- *2 $\pi$ bonds: two shared pairs perpendicular to the axis*
-
-*In the braid framework:*
-- *$\sigma$ bond: one electron from C and one from O occupy
-  adjacent strand positions, each with two $\sigma^{-1}$
-  crossings (one to each nucleus)*
-- *$\pi$ bonds: two additional shared pairs, each mediating
-  between carbon's $2p$ shell and oxygen's $2p$ shell*
-
-*After assembly:*
-- *Carbon retains: 2 core electrons ($1s^2$) + 1 lone pair = 4
-  non-bonding electrons*
-- *Oxygen retains: 2 core electrons ($1s^2$) + 1 lone pair = 4
-  non-bonding electrons*
-- *Shared: 6 electrons (3 pairs) in covalent channels*
-
-### Stage 3: Iterative construction
-
-*The iterative constructor builds the molecular braid in steps:*
-
-1. *Start with $\mathcal{A}_C$ (pre-computed, already in NF)*
-2. *Embed $\mathcal{A}_O$ into the extended algebra*
-3. *Apply inter-atomic nucleon crossings (all identity except
-   $\mathfrak{p}_C$--$\mathfrak{p}_O$ repulsion: 48 generator pairs)*
-4. *Apply covalent bond operators: 3 shared pairs $\times$ 2
-   crossings each = 6 attractive $\sigma^{-1}$ crossings*
-5. *Gröbner--Shirshov reduce to normal form at each step*
-
-*The LP dual optimises the assignment of which 3 of carbon's
-4 valence electrons are shared (and which 2 of oxygen's valence
-electrons are shared) by minimising $\Phi_1$ over all possible
-electron-bond assignments.*

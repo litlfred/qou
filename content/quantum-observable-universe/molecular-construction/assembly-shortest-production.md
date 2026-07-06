@@ -1,13 +1,3 @@
-*Retrosynthesis — asking which reactions produce a target — is famously
-non-unique. The forward categorical assembly is not. The
-[$\gamma\gamma$-spine](#rem:benzene-assembly-spine) has a **canonical**
-shortest path: the [Hecke normal form](#def:hecke-normal-form) of the
-assembly braid word — the shortest representative modulo the braid
-relations — selected by the [confinement min-action program](#prop:confinement-lp).*
+*Retrosynthesis paths are generally non-unique. The forward categorical assembly path is canonical. The [$\gamma\gamma$-spine](#rem:benzene-assembly-spine) admits a canonical shortest path defined by the [Hecke normal form](#def:hecke-normal-form) of the assembly braid word. This is the shortest representative modulo the braid relations. The [confinement min-action program](#prop:confinement-lp) selects this path.*
 
-*The path is unique only up to the molecular symmetry group. Benzene's
-$D_6$ permutes the six equivalent acetylene insertions, so the canonical
-word is a single orbit representative, not a single word. This is the
-assembly form of the Gröbner–Shirshov picture: many syntactic derivations
-collapse onto one normal form, and the min-action confinement program picks
-it — the categorical replacement for "the" synthetic route.*
+*The path is unique only up to the molecular symmetry group. Benzene's $D_6$ symmetry permutes the six equivalent acetylene insertions. The canonical word is therefore a single orbit representative, not a single word. This constitutes the assembly form of the Gröbner–Shirshov picture: multiple syntactic derivations collapse onto one normal form, selected by the min-action confinement program. This replaces the concept of a single synthetic route.*

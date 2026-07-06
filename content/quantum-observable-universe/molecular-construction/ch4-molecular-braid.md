@@ -1,32 +1,21 @@
 **Definition.**
-**Methane** *$CH_4$ is the molecular braid of one carbon atom
-$C(6, 6)$ and four hydrogen atoms $H_1, H_2, H_3, H_4$,
-each sharing one electron pair (four single bonds).*
+*Methane ($\mathrm{CH_4}$) is the molecular braid of one carbon atom $\mathrm{C}(6, 6)$ and four hydrogen atoms $\mathrm{H}_1, \mathrm{H}_2, \mathrm{H}_3, \mathrm{H}_4$. Each hydrogen shares one electron pair with the carbon, forming four single bonds.*
 
 ### Stage 1: Constituent atoms
 
-- *Carbon: $\mathcal{A}_C \in H_{18}(q)$, valence 4*
-- *Hydrogen $H_k$: $\mathcal{A}_{H_k} \in H_2(q)$, valence 1,
- for $k = 1, 2, 3, 4$*
+- *Carbon: $\mathcal{A}_{\mathrm{C}} \in H_{18}(q)$, possessing valence 4.*
+- *Hydrogen $\mathrm{H}_k$: $\mathcal{A}_{\mathrm{H}_k} \in H_2(q)$, possessing valence 1, for $k = 1, 2, 3, 4$.*
 
 ### Stage 2: Molecular assembly in $H_{26}(q)$
 
-*Total strands: $18 + 4 \times 2 = 26$. Each of carbon's
-4 valence electrons is shared with one hydrogen, forming 4
-single C--H bonds. Each bond contributes 2 attractive
-$\sigma^{-1}$ crossings.*
+*The total strand count is $18 + 4 \times 2 = 26$. Carbon shares each of its four valence electrons with one hydrogen, yielding four single $\mathrm{C\!-\!H}$ bonds. Each bond supplies two attractive $\sigma^{-1}$ crossings.*
 
 ### Stage 3: Iterative construction
 
-1. *Start with $\mathcal{A}_C$ in NF*
-2. *Assemble $H_1$: embed in $H_{20}(q)$, apply inter-atomic
- crossings, apply 1 covalent bond operator (2 attractive
- crossings), reduce to NF*
-3. *Assemble $H_2$: embed in $H_{22}(q)$, reduce to NF*
-4. *Assemble $H_3$: embed in $H_{24}(q)$, reduce to NF*
-5. *Assemble $H_4$: embed in $H_{26}(q)$, reduce to NF*
+1. *Begin with $\mathcal{A}_{\mathrm{C}}$ in normal form (NF).*
+2. *Assemble $\mathrm{H}_1$. Embed the state in $H_{20}(q)$, apply inter-atomic crossings, insert one covalent bond operator (two attractive crossings), and reduce to NF.*
+3. *Assemble $\mathrm{H}_2$. Embed in $H_{22}(q)$ and reduce to NF.*
+4. *Assemble $\mathrm{H}_3$. Embed in $H_{24}(q)$ and reduce to NF.*
+5. *Assemble $\mathrm{H}_4$. Embed in $H_{26}(q)$ and reduce to NF.*
 
-*The construction order ($H_1$ first, then $H_2$, etc.) should
-not affect the final NF (confluence), but affects intermediate
-complexity. The LP dual optimises the assembly ordering to
-minimise intermediate word count.*
+*Confluence guarantees that the assembly order ($\mathrm{H}_1$, then $\mathrm{H}_2$, etc.) does not alter the final NF. However, it affects intermediate complexity. The LP dual optimises the assembly sequence to minimise intermediate word count.*

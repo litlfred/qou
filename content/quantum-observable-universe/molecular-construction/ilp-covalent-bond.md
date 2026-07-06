@@ -1,7 +1,5 @@
 **Proposition.**
-*The covalent bond operator is selected by the
-[universal ILP](#def:universal-ilp-algorithm) — the same LP
-that derives confinement ($\mathcal{B}_3$) and the gluon ($2\sigma_0$).*
+The universal ILP selects the covalent bond operator. This is the same LP that derives confinement ($\mathcal{B}_3$) and the gluon ($2\sigma_0$).
 
 $$
   \min_{K} \; \mathrm{cr}(K) \quad
@@ -10,53 +8,35 @@ $$
   \mathrm{tr}_M(x \cdot K) \leq \mathrm{tr}_M(x)
 $$
 
-*For the hydrogen atom ($x = \mathrm{NF}(H)$, Frobenius-stable),
-the unknot gives equality ($\mathrm{tr}_M$ unchanged).  The LP
-selects the minimum-crossing knot that strictly decreases the
-trace:*
+For the hydrogen atom ($x = \mathrm{NF}(H)$, Frobenius-stable), the unknot gives equality ($\mathrm{tr}_M$ unchanged). The LP selects the minimum-crossing knot that strictly decreases the trace:
 
 | Knot | Crossings | $\mathrm{tr}_M(H \cdot K \cdot H)$ | $\mathfrak{E}_{\mathrm{bind}}$ |
 |:-----|:----------|:----------------------------------|:-------------------|
 | Unknot | 0 | $0.182$ | $0$ eV |
-| **Inverse trefoil** $T_{2,3}^{-1}$ | **3** | **$0.062$** | **$4.48$ eV** |
+| Inverse trefoil $T_{2,3}^{-1}$ | 3 | $0.062$ | $4.48$ eV |
 | Trefoil $T_{2,3}$ | 3 | $0.442$ | $4.71$ eV |
 | Figure-eight $4_1$ | 4 | repulsive | — |
 
-*The inverse trefoil $T_{2,3}^{-1} = \sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$
-is the unique LP solution: the minimum-crossing knot satisfying
-both Frobenius positivity and non-increasing trace.*
+The inverse trefoil $T_{2,3}^{-1} = \sigma_0^{-1}\sigma_1^{-1}\sigma_0^{-1}$ is the unique LP solution. It is the minimum-crossing knot satisfying both Frobenius positivity and non-increasing trace.
 
 ### Knots, not links
 
-*The dual space of the LP is the **knot operator space** — single-component
-braid closures.  Links (multi-component closures such as the Hopf link
-$(σ_1^{-1})^2$) are excluded because:*
+The dual space of the LP is the knot operator space (single-component braid closures). Links (multi-component closures such as the Hopf link $(σ_1^{-1})^2$) are excluded:
 
-1. *The covalent bond is a single topological structure mediating
-   the interaction — not two separate loops.*
-2. *The Hopf link gives repulsive or weak binding on the vertex
-   volume model ($-0.82$ eV for $H_2$).*
-3. *The knot constraint is the molecular analogue of the Borromean
-   constraint for quarks: inseparability of the bonded system.*
+1. The covalent bond is a single topological structure mediating the interaction, not two separate loops.
+2. The Hopf link yields repulsive or weak binding on the vertex volume model ($-0.82$ eV for $H_2$).
+3. The knot constraint constitutes the molecular analogue of the Borromean constraint for quarks, ensuring inseparability of the bonded system.
 
 ### Consistency across levels
 
-*The LP that selects the inverse trefoil for molecular binding is
-identical to the LP that selects $\mathcal{B}_3$ for quark confinement.
-Both solve the same program with the same Gram matrix $G$, the same
-Frobenius constraint, and the same trace objective.  The only input
-that changes is the state $x$:*
+The LP that selects the inverse trefoil for molecular binding is identical to the LP that selects $\mathcal{B}_3$ for quark confinement. Both solve the same program with the same Gram matrix $G$, the same Frobenius constraint, and the same trace objective. The only input that changes is the state $x$:
 
-- *Quarks (unstable): $x = \mathrm{NF}(\text{uud})$, $Gx[\gamma] < 0$
-  $\Rightarrow$ LP forces non-trivial knot $\Rightarrow$ $\mathcal{B}_3$.*
-- *H atom (stable): $x = \mathrm{NF}(H)$, $Gx \geq 0$
-  $\Rightarrow$ unknot is feasible but gives zero binding
-  $\Rightarrow$ LP selects inverse trefoil.*
+- Quarks (unstable): $x = \mathrm{NF}(\text{uud})$, $Gx[\gamma] < 0 \implies$ LP forces a non-trivial knot $\implies \mathcal{B}_3$.
+- H atom (stable): $x = \mathrm{NF}(H)$, $Gx \geq 0 \implies$ unknot is feasible but yields zero binding $\implies$ LP selects the inverse trefoil.
 
 ### Binding energy
 
-*On the 2-generator vertex volume model with 3-channel Wedderburn
-weights $(w_s, w_d, w_a) = (q^2, (q^2+1)^2, q^2)/(q^4+4q^2+1)$:*
+On the 2-generator vertex volume model with 3-channel Wedderburn weights $(w_s, w_d, w_a) = (q^2, (q^2+1)^2, q^2)/(q^4+4q^2+1)$:
 
 $$
   D_0(H_2) = 4.4834 \;\text{eV}
@@ -64,7 +44,7 @@ $$
   {+}0.1\%)
 $$
 
-*On the NF multiplication method:*
+On the NF multiplication method:
 
 $$
   D_0(C\text{-}C) = 3.21 \;\text{eV}
@@ -72,6 +52,4 @@ $$
   {-}10.9\%)
 $$
 
-*Zero fitted parameters.  The binding energy scale
-$E_{\mathrm{mol}} = E_{\mathrm{hartree}}/[2]_q^2 = m_e \alpha_{\mathrm{EM}}^2/(q+q^{-1})^2$
-is derived from $q_0$ alone.*
+The framework uses zero fitted parameters. The binding energy scale $E_{\mathrm{mol}} = E_{\mathrm{hartree}}/[2]_q^2 = m_e \alpha_{\mathrm{EM}}^2/(q+q^{-1})^2$ derives from $q_0$ alone.

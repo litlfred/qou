@@ -1,5 +1,4 @@
-*The key distinction from a lone electron (bound to a single
-nucleus):*
+A shared electron differs structurally from a lone electron bound to a single nucleus:
 
 | | Lone electron | Shared electron (covalent) |
 |:---|:---|:---|
@@ -7,11 +6,9 @@ nucleus):*
 | Transfer matrix | $T_{\mathfrak{p}e}$ (single) | $T_{\mathfrak{p}_ie} \cdot T_{\mathfrak{p}_je}$ (product) |
 | $\Phi_1$ contribution | $\ln\lvert V_e\rvert$ | $\ln\lvert V_{e,i}\rvert + \ln\lvert V_{e,j}\rvert$ |
 
-*A bond of order $k$ contributes $2k$ attractive crossings.  The
-LP dual finds the optimal assignment of electrons to bonding
-positions by minimizing the total $\Phi_1$.*
+A bond of order $k$ contributes $2k$ attractive crossings. The LP dual minimises the total $\Phi_1$ to find the optimal assignment of electrons to bonding positions.
 
-*Bond orders:*
-- *$k = 1$: single bond (H--H, C--H, C--C) — 1 shared pair*
-- *$k = 2$: double bond (C=O, C=C) — 2 shared pairs*
-- *$k = 3$: triple bond (C$\equiv$O, N$\equiv$N) — 3 shared pairs*
+Bond orders correspond directly to the number of shared pairs:
+- $k = 1$: single bond (e.g., $H$–$H$, $C$–$H$, $C$–$C$) uses 1 shared pair.
+- $k = 2$: double bond (e.g., $C{=}O$, $C{=}C$) uses 2 shared pairs.
+- $k = 3$: triple bond (e.g., $C{\equiv}O$, $N{\equiv}N$) uses 3 shared pairs.

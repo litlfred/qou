@@ -1,36 +1,21 @@
-*The [atomic crossing table](#def:atomic-braid) governs
-intra-atomic interactions (strong + EM).  For inter-atomic
-crossings, only electromagnetic interactions remain — the strong
-force is confined within each nucleus.  The inter-atomic crossing
-coefficients are:*
+The [atomic crossing table](#def:atomic-braid) governs intra-atomic interactions. Inter-atomic crossings isolate electromagnetic interactions. The strong force remains confined to individual nuclei. 
 
-See [Table](#tbl:molecular-crossing-table-table-data).
+See [Table](#tbl:molecular-crossing-table-table-data) for the inter-atomic crossing coefficients.
 
-*where subscripts $i, j$ denote atoms, not strands.  Key
-differences from the intra-atomic table:*
+Subscripts $i, j$ denote distinct atoms. We observe three differences from the intra-atomic table:
 
-- *$\mathfrak{p}_i\mathfrak{p}_j$ is purely electromagnetic
-  ($\sigma$, repulsive) — the strong $\mathfrak{p}\mathfrak{p}$
-  crossing only operates within the same nucleus.*
-- *$\mathfrak{n}_i\mathfrak{n}_j$ and $\mathfrak{p}_i\mathfrak{n}_j$
-  are identity — neutrons from different atoms do not interact
-  electromagnetically.*
-- *$\mathfrak{p}_ie_j$ retains the EM attraction — this is the
-  **covalent bond channel**.  An electron from atom $j$ attracted
-  to proton $i$ creates the shared-electron Hopf link.*
+- **Purely electromagnetic proton-proton repulsion.** The crossing $\mathfrak{p}_i\mathfrak{p}_j$ yields $\sigma$. The strong force coupling vanishes across atoms.
+- **Neutral decoupling.** The crossings $\mathfrak{n}_i\mathfrak{n}_j$ and $\mathfrak{p}_i\mathfrak{n}_j$ yield the identity. Neutrons between distinct atoms do not interact.
+- **Covalent attraction.** The crossing $\mathfrak{p}_ie_j$ retains EM attraction. An electron from atom $j$ interacting with proton $i$ forms a shared-electron Hopf link.
 
-*The transfer matrix for inter-atomic crossing
-$\sigma_g$ between strands $s$ (atom $i$) and $t$ (atom $j$) is:*
+The transfer matrix for an inter-atomic crossing $\sigma_g$ between strands $s$ (atom $i$) and $t$ (atom $j$) evaluates to:
 
 $$
   T_{st}^{\mathrm{inter}} =
   \begin{pmatrix}
     c_{st} q + d_{st} & c_{st}(q - q^{-1}) \\
     c_{st} & c_{st} q^{-1} + d_{st}
-  \end{pmatrix}
+  \end{pmatrix}.
 $$
 
-*using the $(c, d)$ coefficients from the table above.  For
-identity crossings ($c = 0$, $d = 1$), $T_{st}^{\mathrm{inter}}$
-reduces to the $2 \times 2$ identity matrix — the strand passes
-through without generating a Hecke generator.*
+For identity crossings ($c = 0, d = 1$), $T_{st}^{\mathrm{inter}}$ reduces to the identity matrix. The strand passes through without introducing a Hecke generator.

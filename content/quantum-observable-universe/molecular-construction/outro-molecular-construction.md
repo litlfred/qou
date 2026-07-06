@@ -1,15 +1,3 @@
-This closes the molecular-construction chapter: covalent bonds
-have been lifted from the chemical literature into categorical
-morphisms in $\mathbf{C}$, the diatomic $\mathrm{H}_2$ case has been
-worked through in detail, and the benzene-ring example exhibits
-the ring-closure pattern that the next chapter generalises to
-arbitrary carbon backbones.
+This closes the molecular-construction chapter. We have lifted covalent bonds from chemical heuristics into categorical morphisms within $\mathbf{C}$. We worked through the diatomic $\mathrm{H}_2$ case explicitly. The benzene-ring example establishes the ring-closure pattern, which subsequent work generalises to arbitrary carbon backbones.
 
-The next chapter (organic chemistry) extends the construction to
-the full Hopf-chain taxonomy of organic molecules: aliphatic
-chains, aromatic rings, and the comparative energetics that
-distinguish linear from cyclic isomers.  The categorical
-machinery developed here — bond morphisms, ring-closure
-cocycles, threading transitions — carries over without
-modification; the next chapter is a survey of its applications
-rather than a new construction.
+The next chapter on organic chemistry extends this construction to the complete Hopf-chain taxonomy of organic molecules. It examines aliphatic chains, aromatic rings, and the comparative energetics distinguishing linear from cyclic isomers. The categorical machinery—bond morphisms, ring-closure cocycles, threading transitions—carries over unmodified. The next chapter surveys applications rather than introducing new constructions.
