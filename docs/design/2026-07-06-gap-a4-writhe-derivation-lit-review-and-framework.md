@@ -75,6 +75,26 @@ Prereqs / reuse: the framework's link-closure + writhe tooling (`_li_2_q_util`,
 the framing convention (`snappy_*` cusp seeding). This is a dedicated derivation
 unit, not a session-tail probe.
 
+### 4a. Structural finding — the committed word is a CHAIN, not the [1⁴] complete graph
+
+Inspection of `mass_at_3A_proper.atom_braid_word_3A(2,2)` (its own docstring):
+the ⁴He word is an **intra pass** per nucleon (the 3-quark block) plus a single
+**inter pass at generator `3k+2`** between *adjacent* nucleons — a **linear
+chain** with only **3 inter-crossings** (nucleon 1–2, 2–3, 3–4), NOT the
+`C(4,2)=6`-pair **[1⁴] complete graph** the closed shell requires. This is
+precisely why `B_sym`, built on this chain word, under-binds ⁴He (11.97 vs 28.30):
+it carries no antisymmetric [1⁴] closure and half the pair-crossings.
+
+**Consequence for the derivation.** The [1⁴] exchange matrix `G` is a genuinely
+NEW link diagram — the antisymmetric complete-graph closure of the 4 nucleon
+blocks — not extractable from the committed chain word. The open piece is the
+**per-pair writhe SIGN** `sgn(w_{ij})` (over/under of each of the 6 block
+crossings), set by the [1⁴] framing/orientation. Uniform same-sign `w=1` failed
+(det<0); a **mixed-sign** pattern (pp/nn vs pn — the p↔n bar-odd structure of
+I-par) is what can put `G`'s dominant eigenvalue in `(−1,0)`. Fixing those signs
+from the explicit [1⁴] framing is the remaining derivation — and must be read off
+the diagram, never chosen to hit 9.243.
+
 ## 5. Sources
 
 - [arXiv:2106.04834](https://arxiv.org/pdf/2106.04834) — Wigner SU(4), clustering, ¹²C.
