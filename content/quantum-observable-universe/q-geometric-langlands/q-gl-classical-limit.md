@@ -1,6 +1,10 @@
-As $q \to 1$ in the $\mathbb{G}_m$-family, the $q$-Geometric
-Langlands correspondence recovers the classical Geometric Langlands
-equivalence:
+Any $q$-deformation of Geometric Langlands must reduce to the
+classical Beilinson–Drinfeld equivalence $\mathbb{L}_{\mathrm{BD}}$ at
+$q = 1$; this consistency check the $q$-correspondence passes, and it
+does so through three compatible limits of its defining data
+(differential, Hecke, and dual-group).  Accordingly, as $q \to 1$ in
+the $\mathbb{G}_m$-family, the $q$-Geometric Langlands correspondence
+recovers the classical Geometric Langlands equivalence:
 
 $$
   \lim_{q \to 1} \mathbb{L}_q =  \mathbb{L}_{\mathrm{BD}}

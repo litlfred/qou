@@ -1,4 +1,12 @@
-The proof proceeds in three steps.
+The equivalence is pinned by the Tannakian rigidity of the fibre
+functor $\tau$: once $\tau$ is fixed, reconstructing the dual group,
+transporting the Hecke datum, and closing uniqueness admit no
+freedom.  The proof realises this in three steps.
+
+Concretely, the archetype to keep in mind is a rank-one $q$-local
+system $\mathcal{L}_q$ together with the single $q$-Hecke eigensheaf
+it governs; the general statement replaces this pair by the full
+tensor categories on either side.
 
 **Step 1: Tannakian reconstruction of $\check{G}_q$.**
 By [fibre-functor rigidity](#rem:fibre-functor-rigidity), the

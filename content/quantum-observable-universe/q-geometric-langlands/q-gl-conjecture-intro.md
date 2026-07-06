@@ -1,24 +1,30 @@
-We now state the central conjecture of the chapter and the
-structural results that surround it. The section opens with the
-Definition: $q$-Langlands dual group $\check{G}_q$, the deformation of
-the classical dual that absorbs the substrate parameter into the
-spectral side, and proceeds to the Conjecture: $q$-Geometric Langlands correspondence — the equivalence between $q$-$\mathcal{D}$-
-modules on $\mathrm{Bun}_{G_q}$ and quasi-coherent sheaves on
-$\mathrm{LocSys}_{\check{G}_q}$, well-defined on the non-torsion
-locus $\mathbb{G}_m^{\mathrm{nt}}$. The conjecture is calibrated by
-the Proposition: Obstruction to $q$-flatness, together with its proof,
-which compute the Yekutieli obstruction classes $\kappa_n \in
-H^2(\mathcal{S}, \mathbb{G}_m)$ and exhibit them as the precise
-substrate-theoretic measure of failure of $d_q^2 = 0$.
+The quantum differential does not square to zero, and this single
+defect organises the entire section. The obstruction it measures is
+what confines the $q$-Geometric Langlands correspondence to the
+non-torsion locus: the correspondence is well-defined only where that
+obstruction is controlled, and each result below either quantifies the
+obstruction or works within that locus. The construction is abstract,
+but the next section makes it concrete by instantiating the
+correspondence as $q$-opers.
+
+We open with the Definition: $q$-Langlands dual group, the deformation
+of the classical dual that carries the substrate parameter on the
+spectral side. The Conjecture: $q$-Geometric Langlands correspondence
+then states the equivalence itself — between $q$-$\mathcal{D}$-modules
+on $\mathrm{Bun}_{G_q}$ and quasi-coherent sheaves on
+$\mathrm{LocSys}_{\check{G}_q}$, well-defined on the non-torsion locus.
+The Proposition: Obstruction to $q$-flatness and its proof calibrate
+the conjecture: they compute the Yekutieli obstruction classes and
+exhibit them as the precise substrate-theoretic measure of the failure
+of $d_q^2 = 0$.
 
 The section closes with two structural conjectures organised by this
 obstruction. The Conjecture: Kummer filtration on $q$-local systems
-reads the Kummer reduction $\kappa_0 \bmod n$ as the level-$n$ lifting
-obstruction of $q$-local systems through the brane tower, pinning the
-correspondence to the arithmetic locus where $[n]_q \neq 0$. The
-Conjecture: Fibre-functor mediation of the $q$-Langlands correspondence
-asserts that the rigid fibre functor $\tau$ implements the equivalence
-via Tannaka–Krein reconstruction, with the Remark: Proof sketch for fibre-functor mediation outlining the reconstruction argument
-the next section instantiates concretely for $q$-opers.
-
-_(draft.)_
+reads the Kummer reduction as the level-$n$ lifting obstruction of
+$q$-local systems through the brane tower, pinning the correspondence
+to the arithmetic locus where the quantum integer $[n]_q$ is nonzero.
+The Conjecture: Fibre-functor mediation of the $q$-Langlands
+correspondence asserts that the rigid fibre functor implements the
+equivalence by Tannaka–Krein reconstruction, with the Remark: Proof
+sketch for fibre-functor mediation outlining the argument the next
+section instantiates concretely for $q$-opers.

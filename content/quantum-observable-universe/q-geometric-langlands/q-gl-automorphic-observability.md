@@ -2,6 +2,9 @@ The [fibre-functor mediation conjecture](#conj:q-gl-fiber-functor)
 connects the $q$-Geometric Langlands correspondence to the
 observability axiom of the QOU
 ([quantum observable universe](#def:quantum-observable-universe)).
+Concretely, the correspondence is a dictionary between gauge
+configurations and matter content, and the burden of this section
+is that observability forces that dictionary to be unique.
 
 **Observability determines duality.**
 The observability condition
@@ -31,6 +34,8 @@ is controlled by $(q-1)$, which plays the role of $\hbar_q$
 $q$-Geometric Langlands correspondence is the fully
 quantum-corrected gauge/matter duality, with the classical
 Langlands programme recovered in the semiclassical limit
-$\hbar_q \to 0$.  The perpetual obstruction ensures that
-this quantum correction cannot be trivialised at cofinitely
-many Kummer levels.
+$\hbar_q \to 0$.
+
+**Takeaway.** Observability is exactly what makes the
+$q$-Langlands equivalence unique — there is one dual pairing
+between gauge and matter, and it is forced, not chosen.

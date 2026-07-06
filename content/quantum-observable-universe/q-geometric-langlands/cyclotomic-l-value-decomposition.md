@@ -96,15 +96,14 @@ The graded-Mikusiński framework's depth-$n$ cyclotomic content
 $\mathbb{Q}(\zeta_K)$-linear combinations.  Three consequences follow:
 
 1. **Classical L-value identities are theorems of our framework**:
-   $\beta(3) = \pi^3/32$, $\beta(5) = 5\pi^5/1536$, $L(\chi_3, 3) = ?$,
+   $\beta(3) = \pi^3/32$, $\beta(5) = 5\pi^5/1536$,
    etc., all follow from Theorem A as instances.
 2. **Conversely**: any new theorem we prove about cyclotomic depth-$n$
    structure (e.g., Theorem D dimension) gives a corresponding
    statement about Dirichlet L-values.
 3. **Beilinson's conjecture at $\mathbb{Q}(\zeta_K)$ depth $n$** is
    the Beilinson conjecture on $L$-values of Dirichlet characters —
-   a classical open problem now reframed as part of B1's discharge
-   surface.
+   a classical open problem now reframed within this framework.
 
 ### Catalan's constant ($n = 2$ instance)
 

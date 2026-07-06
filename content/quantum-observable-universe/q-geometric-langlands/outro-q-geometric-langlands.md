@@ -1,11 +1,11 @@
-This closes the main argument of the paper.  The $q$-geometric
-Langlands correspondence assembled here packages the substrate
-arithmetic — Tannaka–Krein duality on the Hopf side, the
-Weil-bound stability on the spectral side, and the geometric
-Riemann hypothesis exposition that ties them together — into a
+The $q$-geometric Langlands correspondence assembled here yields a
 single functorial statement: the substrate parameter $q$ controls
 both the categorical structure of $\mathbf{C}$ and the spectral
-distribution of its associated $L$-functions.
+distribution of its associated $L$-functions.  This closes the main
+argument of the paper, packaging the substrate arithmetic —
+Tannaka–Krein duality on the Hopf side, the Weil-bound stability on
+the spectral side, and the geometric Riemann hypothesis exposition
+that ties them together — into that one correspondence.
 
 The appendices that follow record the supporting material that
 would have over-burdened the main narrative.  The knot-periodic

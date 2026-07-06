@@ -13,7 +13,12 @@ $h^4 = -3/4$.*
 ## Significance
 
 The 3d–3d correspondence gives the framework a **gauge-theory
-realisation** of every hyperbolic-3-manifold mass formula:
+realisation** of every hyperbolic-3-manifold mass formula.
+Concretely, the Borromean coefficient $h^4 = -3/4$ is expected to
+reappear as the four-loop perturbative contribution to
+$Z_{T[\mathcal{B}_3]}$, and the proton mass
+$m_p = m_e \cdot \mathrm{VolDensity}(\mathcal{B}_3, q_0)$ as the value
+of that partition function at $q_0$:
 
 | Framework side | 3d gauge theory side |
 |----------------|----------------------|
@@ -22,8 +27,8 @@ realisation** of every hyperbolic-3-manifold mass formula:
 | $h^4 = -3/4$ Markov-trace coefficient | 4-loop perturbative contribution to $Z_{T[\mathcal{B}_3]}$ |
 
 This is **mirror symmetry** in the sense that the framework's mass
-formula corresponds to a quantum-field-theory partition function on
-a curved spacetime; both sides compute the same hyperbolic invariant.
+formula and a quantum-field-theory partition function on a curved
+spacetime are two computations of the same hyperbolic invariant.
 
 ## Diagnostics
 
@@ -45,8 +50,8 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
    explicitly (Dimofte–Gaiotto–Gukov 2014 provides the construction).
 2. Cross-check the $h^4 = -3/4$ coefficient as a 4-loop contribution
    in $T[\mathcal{B}_3]$ partition function.
-3. D18 to closed is a very long horizon — requires significant
-   QFT-side Lean infrastructure (none exists in Mathlib).
+3. D18 to closed is a very long horizon — the QFT-side
+   formalisation it would require has not yet been developed.
 
 ## Cross-references
 

@@ -1,3 +1,7 @@
+The framework's $H_n(q)$ Hecke algebra carries a small-$q$
+$\leftrightarrow$ root-of-unity duality, and the conjecture below
+supplies its modular mechanism.
+
 **Conjecture (D14 modular $S$-transform closure).**
 *Writing the Hecke parameter as $q = e^{2\pi i \tau}$ for a complex
 parameter $\tau \in \mathbb{H}$ in the upper half-plane, the modular
@@ -52,15 +56,13 @@ modular image of the substrate: writing the bar image
 $q_0^{-1} = e^{2\pi i \tau_0}$ with $\tau_0 \approx +0.0166\,i$ (small
 positive imaginary, near the cusp $\tau \to 0$), the $S$-transform sends
 $\tau_0 \mapsto -1/\tau_0 \approx +60.2\,i$ — large positive imaginary
-part, i.e. nome $\tilde q \to 0$, the root-of-unity / TQFT limit. (Taking
-$q_0$ directly instead of $q_0^{-1}$ would place $\tau_0$ in the lower
-half-plane, where the modular continuation does not converge — see the
-bar-image remark in the conjecture statement above and the witness
+part, i.e. nome $\tilde q \to 0$, the root-of-unity / TQFT limit. (The
+choice of $q_0^{-1}$ over $q_0$ is the bar-image point of the conjecture
+statement above; witness
 [`computations/probes/d14-theta-bar-side.witness.json`](../../../computations/probes/d14-theta-bar-side.witness.json).)
 
 This gives the framework an **explicit categorical handle** on the
-small-$q_0$ $\leftrightarrow$ root-of-unity duality flagged in the 13-driver menu
-under driver (viii) Modular $S$-transform.
+small-$q_0$ $\leftrightarrow$ root-of-unity duality.
 
 ## Relationship to 's complex-q lift
 
@@ -76,6 +78,9 @@ The modular $S$-transform of this conjecture is the natural
 - Modular $S$ (this conjecture, D14) extends the duality structure
   to the **modular upper half-plane** by treating $q = e^{2\pi i
   \tau}$ as the natural parameterisation.
+
+(The labels D1, D2, D14 — and D16 below — index entries in the
+duality tracker listed under Cross-references.)
 
 Together, D1 + D2 + D14 give the framework three distinct $\mathbb{Z}/2$
 involutions on the Hecke parameter, each acting on a different
@@ -109,20 +114,19 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
    branch), compute the $S$-transform $\tilde q_0$ and verify the Volume
    Conjecture asymptotic on $\tilde q_0$ matches the framework's bare-volume
    evaluation.
-5. **Do not conflate with the named elliptic curves.** The modular
+3. **Do not conflate with the named elliptic curves.** The modular
    $\tau$ here is **not** the period $\tau$ of the Descartes/color curve
    $\mathcal{E}_q$ ([`prop:descartes-elliptic-curve`](../predicted-spectra/elliptic-stability-locus.md)):
    the modular nome is $q_0^{-1} \approx 0.90$ (near the cusp) while
    $\mathcal{E}_q$'s period nome is $\approx 0.0029$ (deep in the
    fundamental domain) — a $\sim\!312\times$ mismatch. See
    [`docs/audits/2026-06-17-d14-theta-bar-side-and-nome-conflation.md`](../../../docs/audits/2026-06-17-d14-theta-bar-side-and-nome-conflation.md).
-3. **Connect to D16 Bloch-group**: the modular $S$-transform on the
+4. **Connect to D16 Bloch-group**: the modular $S$-transform on the
    $K_3(\mathbb{C})$ regulator gives a natural framework-side
    handle on the analytic structure of the Bloch-Wigner
    dilogarithm.
-4. **D14 to closed** requires Lean class `ModularSTransformQQTilde`
-   inhabited + numerical witness verifying the volume-conjecture
-   asymptotic on $\tilde q_0$.
+5. **D14 to closed** requires a numerical witness verifying the
+   volume-conjecture asymptotic on $\tilde q_0$.
 
 ## Cross-references
 
@@ -135,4 +139,4 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
 - D16 Bloch group: [`conj:borromean-bloch-group-element`](borromean-bloch-group-element.md)
 - 13-driver menu driver (viii): [`docs/audits/-lambda-scale-canonical-unification.md`](../../docs/audits/-lambda-scale-canonical-unification.md)
 
-**Archimedean specialisation (§7c).** Modular convergence is an archimedean statement: the estimates use $\mathrm{Im}\,\tau$ and $\exp$ over $\mathbb{R}$, so the companion Lean lives on the archimedean side of the substrate wall.
+**Archimedean specialisation (§7c).** Modular convergence is an archimedean statement: the estimates use $\mathrm{Im}\,\tau$ and $\exp$ over $\mathbb{R}$, so it sits on the archimedean side of the substrate wall.

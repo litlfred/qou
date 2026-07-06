@@ -1,4 +1,9 @@
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe and let
+A $q$-flat connection is the object that carries the *minimal
+possible curvature* compatible with the $q$-deformation — curvature
+that is not chosen but forced, arising solely from the perpetual
+$d_q^2$ obstruction rather than from any connection form.  To make
+this precise, let $(\mathbf{C}, A, \tau)$ be a quantum observable
+universe and let
 $\mathcal{V}$ be a $G_q$-equivariant object in $\mathbf{C}$ over the
 brane curve $X$.  A **$q$-flat connection** on $\mathcal{V}$ is a
 $q$-connection
@@ -24,6 +29,12 @@ $$
    \in 
   HH^2(\mathcal{U}_q, \mathrm{Ad}).
 $$
+
+Concretely, in the classical limit $q \to 1$ the prefactor $(q - 1)$
+vanishes, so the intrinsic term drops out and $q$-flatness reduces to
+ordinary flatness ($\nabla_q^2 = 0$); it is precisely the
+$q$-deformation ($q \neq 1$) that forces the residual, unavoidable
+curvature.
 
 In general, a $q$-connection has total curvature
 
