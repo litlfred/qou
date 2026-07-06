@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-06T18:14:46.518049+00:00",
-  "commitSha": "6d40dc7d16c2afb0ea062e2b8879a32a79737ffc",
+  "computedAt": "2026-07-06T18:40:11.733768+00:00",
+  "commitSha": "c510e2d95436e0328b1b21c3b2ef59dbdebf8ffd",
   "assertions": [
     {
       "name": "g_reeb_below_ceiling",
@@ -27,8 +27,8 @@
   "durationMs": 3,
   "computation": "b4-1four-reeb-flow-magnitude",
   "scriptFile": "b4_1four_reeb_flow_magnitude.py",
-  "scriptHash": "0215f3305d74",
-  "scriptCommitSha": "cf8e36a4f1ba64d881a3f60d909738779eae99ff",
+  "scriptHash": "f5054f1face8",
+  "scriptCommitSha": "c510e2d95436e0328b1b21c3b2ef59dbdebf8ffd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -65,7 +65,7 @@
         "det_I_plus_G": "0.0017406534",
         "neg_log_det": "6.3534947",
         "MeV": "26.595607",
-        "ratio_to_b4_9.243": "2.87738",
+        "ratio_to_b4_9.2431": "2.87735",
         "ratio_to_full_B4He_28.29566": "0.939918"
       },
       {
@@ -73,7 +73,7 @@
         "det_I_plus_G": "0.64069607",
         "neg_log_det": "0.44520008",
         "MeV": "1.863599",
-        "ratio_to_b4_9.243": "0.201623",
+        "ratio_to_b4_9.2431": "0.201621",
         "ratio_to_full_B4He_28.29566": "0.0658617"
       },
       {
@@ -81,7 +81,7 @@
         "det_I_plus_G": "0.0017406534",
         "neg_log_det": "6.3534947",
         "MeV": "26.595607",
-        "ratio_to_b4_9.243": "2.87738",
+        "ratio_to_b4_9.2431": "2.87735",
         "ratio_to_full_B4He_28.29566": "0.939918"
       }
     ],
