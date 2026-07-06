@@ -1,0 +1,64 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-06T04:35:37.917237+00:00",
+  "commitSha": "3e132018943855d9ce0868d45260d3a102d4b6c6",
+  "assertions": [
+    {
+      "name": "all_positive_branch_is_unique",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "functional_is_minus_logdet_attractive",
+      "computed": "s=-1,lambda<0",
+      "expected": "s=-1,lambda<0",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "b4-slater-dictionary-functional-form",
+  "scriptFile": "b4_slater_dictionary_functional_form.py",
+  "scriptHash": "6b602e71f842",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Sign-determined functional form of the [1^4] connected binding: B=−ln det(I+G) with net-attractive exchange is the UNIQUE determinant branch giving all-positive AME cumulants; rules out the product and the positive-g det. audit-only, sign-exact, no fit.",
+  "tier": "structural (sign-pattern uniqueness over determinant linked-cluster branches)",
+  "result": {
+    "ame_cumulant_signs": "(+,+,+)",
+    "determinant_branches": {
+      "s=+1,lambda>0": "-+-",
+      "s=+1,lambda<0": "---",
+      "s=-1,lambda>0": "+-+",
+      "s=-1,lambda<0": "+++"
+    },
+    "unique_all_positive_branch": "s=-1,lambda<0",
+    "is_unique": true,
+    "functional_form": "B = − ln det(I + G_exchange), dominant-NEGATIVE-eigenvalue (attractive) G",
+    "rules_out": [
+      "multiplicative product 1−∏f (b3 wrong-signed)",
+      "naive positive-g Slater det +ln det (gives (−,+,−))"
+    ],
+    "verdict": "The sign pattern UNIQUELY fixes the [1^4] connected binding functional as B = −ln det(I + G_exchange) with a net-attractive (dominant-negative-eigenvalue) exchange matrix — the only one of four determinant branches giving all-positive connected cumulants (matching AME). Physical: the antisymmetric [1^4] channel is the bound α. Rules out the product and positive-g det. Scope-(b) (sign-exact), no fit. NEXT: build G from the nucleon-flavor pair factors, check λ<0, read b₄ from −ln det."
+  },
+  "context": {
+    "axis": "GAP-A-4 class-D — [1^4] value leg, Slater↔trace dictionary functional form",
+    "spec": "docs/design/2026-07-06-gap-a4-b4-branching-projector-construction-spec.md",
+    "next_unit": "build G_exchange (nucleon-flavor pair factors), verify λ<0, read b₄ magnitude"
+  },
+  "auditOnly": true
+}
