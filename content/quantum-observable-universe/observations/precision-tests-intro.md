@@ -1,5 +1,11 @@
-Strangelets test the framework at extreme density; the present section tests it at ordinary density but extreme precision. The photonic and electromagnetic precision data come first. Remark: Photonic quantum Hall effect and $q$-deformed braiding with **Photonic Hall data** matches the measured Hall conductance plateaux against $q$-deformed braiding amplitudes, and Remark: Fine structure constant: CODATA comparison with **Fine structure data** compares the predicted $\alpha$ to the CODATA value.
+Strangelets test the framework at extreme density. This section tests it at ordinary density but extreme precision. We first examine photonic and electromagnetic precision data.
+- Photonic quantum Hall effect and $q$-deformed braiding matches the measured Hall conductance plateaux against $q$-deformed braiding amplitudes.
+- Fine structure constant: CODATA comparison compares the predicted $\alpha$ to the CODATA value.
 
-The confinement sector follows. Remark: Color confinement as $q$-chromaticity: the Feynman negativity constraint reads confinement as a positivity constraint on Feynman amplitudes, Remark: Curvature-rank as confinement layer (categorical reading of confinement) supplies the categorical reformulation in terms of curvature rank, and Remark: Physics names $\leftrightarrow$ categorical knot operations (table; depends on $q_0$) tabulates the dictionary between physics names and categorical knot operations at $q_0$. The section closes with the lepton anomalies that drive the next section: Remark: Electron--muon discrepancies and **Lepton anomalies data** record the electron–muon discrepancies that the proton-radius and gravity-test section will read as a single-substrate observable.
+The confinement sector follows.
+- Color confinement as $q$-chromaticity reads confinement as a positivity constraint on Feynman amplitudes.
+- Curvature-rank as confinement layer supplies the categorical reformulation in terms of curvature rank.
+- Physics names $\leftrightarrow$ categorical knot operations tabulates the dictionary between physics names and categorical knot operations at $q_0$.
 
-_(draft.)_
+The section closes with lepton anomalies.
+- Electron--muon discrepancies and Lepton anomalies data record the electron--muon discrepancies that the subsequent proton-radius and gravity-test section will read as a single-substrate observable.
