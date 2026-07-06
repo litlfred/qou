@@ -1,3 +1,14 @@
+Shell-structure corrections across the heavy-atom examples. For each
+verified $\beta$-decay the table records the transition type, the
+magic-number feature the transition creates or breaks, and the
+resulting residual. Rows are ordered by mass number $A$.
+
+Column legend: **Magic feature** is how the transition acts on the
+closed-shell counts $\mathcal{M} = \{0, 2, 8, 20, 28, 50, 82, 126\}$ —
+creating, breaking, or leaving intact a closure. **Residual** is the
+shell-correction contribution: the fractional discrepancy between the
+leading-order transfer-matrix prediction and the observed rate.
+
 | Nucleus | $A$ | Transition type | Magic feature | Residual |
 |---------|:---:|----------------|---------------|:--------:|
 | ${}^{3}\mathrm{H}$ | $3$ | Mirror (superallowed) | No sub-links | **1%** |
