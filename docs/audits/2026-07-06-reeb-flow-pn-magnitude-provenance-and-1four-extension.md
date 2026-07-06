@@ -94,7 +94,7 @@ physicality for the mixed-sign patterns (they were $\det<0$ at the naive bond
 factor $z\approx0.499$), with headroom $1-\sqrt5\,g_{\text{reeb}} \approx
 1.09\times10^{-3}$:
 
-| $w_{pn}$ | $\det(I+G)$ | $E_0\cdot(-\ln\det)$ | vs $b_4=9.243$ | vs full $B(^4\mathrm{He})=28.296$ |
+| $w_{pn}$ | $\det(I+G)$ | $E_0\cdot(-\ln\det)$ | vs $b_4=9.2431$ | vs full $B(^4\mathrm{He})=28.296$ |
 |--:|--:|--:|--:|--:|
 | ±1 | 0.0017407 | 26.596 MeV | 2.877× | **0.940×** |
 | 0 | 0.64070 | 1.864 MeV | 0.202× | 0.066× |
@@ -104,7 +104,7 @@ $\mathrm{diag}(1,1,-1,-1)$ — asserted in the witness.)
 
 **Reading (scope-(a) throughout).** At the landed magnitude the mixed-sign
 [1⁴] determinant lands at **0.940× of the full ⁴He binding** (−6.0 %) — not at
-the connected-excess convention $b_4 = 9.243$ (2.877×). If the determinant form
+the connected-excess convention $b_4 = 9.2431$ (2.877×). If the determinant form
 is meant to produce the *connected excess*, the landed magnitude overshoots by
 ~2.9×; if it is meant to produce the *full* binding, it is 6 % low. Neither
 match is claimed; the numbers constrain the (form, magnitude, convention)

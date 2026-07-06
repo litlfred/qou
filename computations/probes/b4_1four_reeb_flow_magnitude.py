@@ -25,7 +25,7 @@ landing left open:
   Q2 (A=4 extension): with the sub-ceiling magnitude, the mixed-sign
       pn=±1 patterns become PHYSICAL (det > 0).  What does
       E₀·(−ln det(I+G)) give at g_reeb for each w_pn ∈ {−1, 0, +1}, vs
-      the connected excess b₄ = 9.243 MeV AND vs the full B(⁴He) =
+      the connected excess b₄ = 9.2431 MeV AND vs the full B(⁴He) =
       28.29566 MeV?
 
 No w_pn is selected and no magnitude is solved-for (Rule-14); the deliverable
@@ -66,7 +66,7 @@ COMP = str(_COMP)
 
 AME_B_2H = mp.mpf("2.224566")
 AME_B_4HE = mp.mpf("28.29566")
-B4_TARGET = mp.mpf("9.243")
+B4_TARGET = mp.mpf("9.2431")   # connected 4-body cumulant (b4_value_cumulant_target_probe.py)
 
 
 def main() -> int:
@@ -114,7 +114,7 @@ def main() -> int:
             "det_I_plus_G": mp.nstr(d, 8),
             "neg_log_det": mp.nstr(nld, 8),
             "MeV": mp.nstr(mev, 8),
-            "ratio_to_b4_9.243": mp.nstr(mev / B4_TARGET, 6),
+            "ratio_to_b4_9.2431": mp.nstr(mev / B4_TARGET, 6),
             "ratio_to_full_B4He_28.29566": mp.nstr(mev / AME_B_4HE, 6),
         })
 
@@ -210,7 +210,7 @@ def main() -> int:
     for r in rows:
         extra = ("" if "MeV" not in r else
                  f"  ->  {float(mp.mpf(r['MeV'])):.3f} MeV"
-                 f"  ({float(mp.mpf(r['ratio_to_b4_9.243'])):.3f}x b4,"
+                 f"  ({float(mp.mpf(r['ratio_to_b4_9.2431'])):.3f}x b4,"
                  f" {float(mp.mpf(r['ratio_to_full_B4He_28.29566'])):.3f}x full B(4He))")
         print(f"  w_pn={r['w_pn']:+d}  det={r['det_I_plus_G']}{extra}")
     return 0
