@@ -1,32 +1,20 @@
 ## Universality
 
-The universality $\Delta_\beta^{nn \to \mathrm{mix}} = \Delta_\beta^{\mathrm{mix} \to pp}$ means that **the matrix
-perturbation produced by converting one nucleon from
-$\mathfrak{n}$ to $\mathfrak{p}$ is the same regardless of
-whether the partner nucleon is a proton or a neutron.**
+The universality $\Delta_\beta^{nn \to \mathrm{mix}} = \Delta_\beta^{\mathrm{mix} \to pp}$ means the matrix perturbation produced by converting one nucleon from $\mathfrak{n}$ to $\mathfrak{p}$ is the same regardless of whether the partner nucleon is a proton or a neutron.
 
-This is a consequence of the crossing coefficients being
-**equally spaced**:
+This is a consequence of the crossing coefficients being equally spaced:
 
 $$
   T_{\mathrm{mix}} = \tfrac{1}{2}(T_{pp} + T_{nn})
 $$
 
-The mixed matrix is exactly the midpoint.  Therefore the step
-$T_{nn} \to T_{\mathrm{mix}}$ and $T_{\mathrm{mix}} \to T_{pp}$
-are the same displacement $\Delta_\beta$.
+The mixed matrix is exactly the midpoint. Therefore the steps $T_{nn} \to T_{\mathrm{mix}}$ and $T_{\mathrm{mix}} \to T_{pp}$ are the same displacement $\Delta_\beta$.
 
-**Physical interpretation**: beta decay shifts each crossing
-at the converting nucleon by the **same universal amount**
-$\Delta_\beta(q)$, independent of the partner.  The effect
-on the Skein polynomial depends only on the **number** of
-crossings affected and their positions in the transfer
-matrix chain.
+**Physical interpretation**: Beta decay shifts each crossing at the converting nucleon by the same universal amount $\Delta_\beta(q)$, independent of the partner. The effect on the Skein polynomial depends only on the number of crossings affected and their positions in the transfer matrix chain.
 
 ## Worked example: tritium
 
-${}^3\mathrm{H}(p, n, n) \to {}^3\mathrm{He}(p, p, n)$.
-Converting nucleon: position 1 (first neutron to proton).
+Consider ${}^3\mathrm{H}(p, n, n) \to {}^3\mathrm{He}(p, p, n)$. The converting nucleon is at position 1 (first neutron to proton).
 
 **Generator $\sigma_0$** (2 crossings: with nucleons 1 and 2):
 
@@ -86,15 +74,11 @@ Per-generator contribution:
 | $\sigma_0$ | $-0.0229$ | $22\%$ |
 | $\sigma_1$ | $-0.0792$ | $78\%$ |
 
-Generator $\sigma_1$ (the converting nucleon's own generator)
-contributes $78\%$ of the total --- consistent with the generator
-volume profile for heavier nuclei.
+Generator $\sigma_1$ (the converting nucleon's own generator) contributes $78\%$ of the total. This matches the generator volume profile for heavier nuclei.
 
 ## Double beta decay
 
-For $2\beta$ decay, two nucleons convert.  At each affected
-generator, the transfer matrix perturbation is a **product** of
-two $\Delta_\beta$ matrices (with intervening unchanged matrices):
+For $2\beta$ decay, two nucleons convert. At each affected generator, the transfer matrix perturbation is a product of two $\Delta_\beta$ matrices (with intervening unchanged matrices):
 
 $$
   \Delta M_i^{(2\beta)}
@@ -104,13 +88,6 @@ $$
   (\text{linear terms})
 $$
 
-where $C_i$ is the product of unchanged matrices between the
-two converting positions.  The quadratic term
-$\Delta_\beta \cdot C_i \cdot \Delta_\beta$ is the **2-jet
-cross-term** --- the nuclear matrix element of double beta decay
-([jet expansion](#prop:generator-volume-decomposition)).
+Here $C_i$ is the product of unchanged matrices between the two converting positions. The quadratic term $\Delta_\beta \cdot C_i \cdot \Delta_\beta$ is the 2-jet cross-term, which forms the nuclear matrix element of double beta decay ([jet expansion](#prop:generator-volume-decomposition)).
 
-Since $\Delta_\beta$ is universal, the double beta matrix element
-depends only on $C_i$ --- the unchanged matrices between the two
-converting nucleons.  This is computable from the nucleon types
-in that region.
+Since $\Delta_\beta$ is universal, the double beta matrix element depends only on $C_i$ — the unchanged matrices between the two converting nucleons. We compute this from the nucleon types in that region.

@@ -1,7 +1,4 @@
-The four principal physical quantities — mass, Q-value,
-decay rate, and density — correspond to four distinct
-functionals on the categorical action
-([categorical action](#def:categorical-action)):
+The four principal physical observables---mass, $\mathcal{Q}_q$-value, decay rate, and density---correspond rigidly to four distinct functionals acting on the [categorical action](#def:categorical-action):
 
 | Physical quantity | Categorical functional | Formula |
 |-------------------|----------------------|---------|
@@ -10,16 +7,9 @@ functionals on the categorical action
 | **Decay rate** | Frobenius matrix element | $\mathfrak{D} \propto |\langle v, \Phi v \rangle_F|^2$ |
 | **Density** | Partial trace (crossing count) | $\rho = \mathrm{tr}_A(\varrho)$ |
 
-Each functional extracts different information from the
-same underlying Hecke algebra element:
+Each functional isolates an orthogonal dimension of the underlying Hecke algebra element:
 
-- The **Markov trace** is a single number — the action
-  at rest.  It determines the mass.
-- The **character sum** decomposes the action difference
-  across irreducible representations.  It determines
-  the transition energy.
-- The **Frobenius norm** measures the overlap between
-  initial and final states.  It determines the
-  transition rate.
-- The **partial trace** counts crossings per strand.
-  It determines the spatial density.
+- The **Markov trace** isolates a scalar value representing the action at rest. This dictates the mass.
+- The **character sum** isolates the action difference across irreducible representations. This dictates the transition energy.
+- The **Frobenius norm** measures the geometric overlap between initial and final states. This dictates the transition rate.
+- The **partial trace** counts discrete crossings per strand. This dictates the spatial density.

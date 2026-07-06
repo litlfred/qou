@@ -1,6 +1,4 @@
-The character sum over all $4^A$ channel configurations
-admits an **exact closed-form factorization** in terms of
-the spectator normalization and the channel-sum difference.
+We compute the branching $\mathcal{Q}_q$-value by summing over all $4^A$ channel configurations. This character sum factors exactly into a spectator contribution and an active-channel difference.
 
 ## Statement
 
@@ -13,6 +11,4 @@ $$
   = a^Z \cdot b^{N-1} \cdot (a - b)
 $$
 
-*where $a = \sum_c G_P(c)$ and $b = \sum_c G_N(c)$ are the
-per-nucleon channel sums
-([spectator normalization](#def:spectator-normalization)).*
+*where $a = \sum_c G_P(c)$ and $b = \sum_c G_N(c)$ are the per-nucleon channel sums ([spectator normalization](#def:spectator-normalization)).*
