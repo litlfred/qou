@@ -196,7 +196,7 @@ $1$-form sector $b_1(M_g) = 2g$ over the Gauss–Bonnet area $4\pi(g-1)$,
 
 $$
   \frac{2}{3\pi}
-  \;=\; \frac{b_1(M_g)}{\operatorname{Area}(M_g)}
+  \;=\; \frac{b_1(M_g)}{\mathrm{Area}(M_g)}
   \;=\; \frac{2g}{4\pi(g-1)}\Big|_{g=4}
   \;=\; \frac{8}{12\pi}.
 $$
