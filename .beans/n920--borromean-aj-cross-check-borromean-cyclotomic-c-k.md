@@ -4,7 +4,7 @@ title: 'Borromean AJ: cross-check Borromean cyclotomic c_k against Habiro [H1] (
 status: in-progress
 type: task
 created_at: 2026-07-04T10:42:30Z
-updated_at: 2026-07-06T21:58:19Z
+updated_at: 2026-07-06T22:54:25Z
 ---
 
 UNBLOCKED 2026-07-06: owner uploaded uploads/0508100v6.pdf (GL2011).
@@ -21,3 +21,12 @@ surviving 30 beyond-fit-range check rows; orders <=4 excluded for
 W<=14). Phase 2 = symbolic reconstruction over Z[q^{±1}] + exact
 symbolic annihilation + q->1 specialization (candidate Borromean
 A-ideal generator, diagonal restriction).
+PHASE-2 SCOPING RESULT 2026-07-07: the (6,11) canonical coefficient
+entries are rational functions of q-degree ~218 (measured by bisected
+modular fit on 1260 samples, column 6; degrees <=150 excluded, fits at
+219+/-6). Full symbolic reconstruction is therefore a compute project:
+~460+ samples x 184 columns of deg-470 eliminations + multi-prime CRT
+(single 61-bit Wang lift insufficient for deg-218 integer coefficients).
+Options: (a) Python+multiprocessing overnight run, (b) Rust-side
+(hecke-engine) modular interpolation tranche, (c) proper qZeilberger.
+Existence certificate (r<=4 excluded, three verified windows) stands.
