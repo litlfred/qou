@@ -21,15 +21,16 @@ $$\{1, \sigma_0, \sigma_1, \sigma_0\sigma_1, \sigma_1\sigma_0, \sigma_0\sigma_1\
 1. *$G(q)$ is symmetric: $G[i,j] = G[j,i]$ for all $i, j$.*
 2. *$G[0,0] = 1$.*
 3. *$\det G(q) \neq 0$ for $q > 0,\ q \neq 1$.*
+
 ## Numerical evaluation at the substrate
 
-Sympy-computed symbolic entries match `computations/gram-matrix-dual.witness.json` at $q_0 \approx 1.110$ to max absolute difference $\approx 2.1 \times 10^{-16}$ across all 36 entries (see `gram-h3-symbolic-regression.witness.json` for the live value). The determinant at $u_0 = \sqrt{q_0}$ is $\det G(u_0) \approx -0.189205253071$ (one negative eigenvalue $\approx -0.855$ — Frobenius positivity is a genuine constraint, not an automatic property).
+Sympy-computed symbolic entries match `computations/gram-matrix-dual.witness.json` at $q_0 \approx 1.110$ to a maximum absolute difference $\approx 2.1 \times 10^{-16}$ across all 36 entries (see `gram-h3-symbolic-regression.witness.json` for the live value). The determinant at $u_0 = \sqrt{q_0}$ is $\det G(u_0) \approx -0.189205253071$. This includes one negative eigenvalue $\approx -0.855$, which shows that Frobenius positivity applies a non-trivial constraint.
 
 ## Role in the framework
 
-This proposition delivers the **Phase 1b** instance of [`def:universal-ilp-algorithm`](universal-ilp-algorithm.md)'s [`HasH3GramMatrix`](universal-ilp-algorithm.lean) typeclass — replacing the Phase 1a stub (`gram_matrix ≡ 0`) with categorical closed-form entries. Downstream consumers (operator-selection LP, Frobenius-positivity ILP, crystal-weight $\Delta_\lambda(K)$ derivation) can now consume the typeclass axioms with the structural properties **proved**, not just empirically observed at $q_0$.
+This proposition delivers the Phase 1b instance of [`def:universal-ilp-algorithm`](universal-ilp-algorithm.md)'s [`HasH3GramMatrix`](universal-ilp-algorithm.lean) typeclass. It replaces the Phase 1a stub (`gram_matrix ≡ 0`) with categorical closed-form entries. Downstream consumers (operator-selection LP, Frobenius-positivity ILP, crystal-weight $\Delta_\lambda(K)$ derivation) can now rely on proven structural properties rather than empirical observation at $q_0$.
 
-The remaining $\det \neq 0$ proof (Phase 1b-2) reduces the entire Option E **Phase 1** workstream to a single, routine symbolic-determinant computation.
+The remaining $\det \neq 0$ proof (Phase 1b-2) reduces the Option E Phase 1 workstream to a symbolic-determinant computation.
 
 ## Cross-references
 
