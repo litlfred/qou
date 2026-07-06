@@ -49,12 +49,14 @@ from pathlib import Path
 
 import mpmath as mp
 
-mp.mp.dps = 40
+# 70-dps floor matches the WitnessBuilder precisionMetadata (compute_dps=70);
+# fully preserves the 50-digit q from load_q_50dps() (Gemini #3426 review).
+mp.mp.dps = 70
 _HERE = Path(__file__).resolve().parent
 _COMP = _HERE.parent
-for _p in (str(_COMP), str(_COMP / "substrate")):
-    if _p not in sys.path:
-        sys.path.insert(0, _p)
+_p = str(_COMP)
+if _p not in sys.path:
+    sys.path.insert(0, _p)
 from _li_2_q_util import load_q_50dps  # noqa: E402
 from substrate.witness_base import WitnessBuilder  # noqa: E402
 
