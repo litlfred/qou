@@ -7,21 +7,23 @@
 //!
 //! coefficients supported on m^k, |k| <= 11.  Column layout matches the
 //! Python scaffold `computations/borromean_diagonal_recurrence_reconstruct.py`:
-//! blocks a_0..a_6 (27... 23 entries each: k = -11..11), then the
+//! 7 blocks a_0..a_6 of 23 entries each (k = -11..11), then the
 //! inhomogeneous block b (23 entries) — NCOLS = 8*23 = 184.
 //!
 //! Per prime p (CLI arg), this binary:
 //!   1. samples base points s = 3, 4, ...: evaluates the Habiro tower
 //!      J_{B,n} mod p (n <= 210), builds the 204-row fit system, and
-//!      takes the RREF nullspace (requires nullity 1 + the majority
-//!      pivot structure) — the canonical vector v(q) at q = s^2;
+//!      takes the RREF nullspace (requires nullity 1 + pivot columns
+//!      EXACTLY matching the first accepted sample's; mismatches are
+//!      rejected) — the canonical vector v(q) at q = s^2;
 //!   2. per column c: fits v[c](q) = P_c(q)/Q_c(q) at the MINIMAL
 //!      degree (bisected once per column; reusable via --degrees),
 //!      validated on held-out samples, normalized canonically by
 //!      making Q's leading (highest-degree) coefficient 1 — the same
 //!      rational function's residues are then CRT-compatible across
 //!      primes;
-//!   3. prints JSON: {prime, pivots_hash, columns: [{col, P, Q}]}.
+//!   3. prints JSON: {prime, r, W, samples, degrees, columns:
+//!      [{col, P, Q}]}.
 //!
 //! The Python driver (computations/borromean_recurrence_crt_driver.py)
 //! CRTs the residues across primes, Wang-lifts to Q, and runs the
@@ -56,6 +58,7 @@ fn powmod(mut b: u64, mut e: u64, p: u64) -> u64 {
 }
 
 fn inv(a: u64, p: u64) -> u64 {
+    assert!(a % p != 0, "modular inverse of 0 (invalid base point)");
     powmod(a, p - 2, p)
 }
 
@@ -177,6 +180,13 @@ fn rref_nullspace(mut m: Vec<Vec<u64>>, p: u64) -> (Vec<Vec<u64>>, Vec<usize>) {
 
 /// Try to fit y(q) = P/Q with deg P, deg Q <= d.  Returns normalized
 /// (P, Q) with Q's leading nonzero coefficient == 1, or None.
+/// `require_unique`: in pinned-degree mode the fit nullspace must be
+/// 1-dimensional (the minimal-degree representation is unique up to
+/// scale) so that the monic-Q normalization is canonical across primes.
+/// During bisection nullity > 1 at above-minimal degree is expected and
+/// harmless — every null vector is (P·f, Q·f) for the SAME rational
+/// function, the holdout validation rejects anything else, and the
+/// bisection converges to the minimal degree anyway.
 fn try_fit(
     qs: &[u64],
     ys: &[u64],
@@ -184,6 +194,7 @@ fn try_fit(
     hold_y: &[u64],
     d: usize,
     p: u64,
+    require_unique: bool,
 ) -> Option<(Vec<u64>, Vec<u64>)> {
     let need = 2 * d + 3;
     if need > qs.len() {
@@ -205,7 +216,7 @@ fn try_fit(
         rows.push(row);
     }
     let (basis, _) = rref_nullspace(rows, p);
-    if basis.is_empty() {
+    if basis.is_empty() || (require_unique && basis.len() != 1) {
         return None;
     }
     let v = &basis[0];
@@ -259,12 +270,15 @@ fn main() {
                 i += 2;
             }
             "--degrees" => {
-                degrees = Some(
-                    args[i + 1]
-                        .split(',')
-                        .map(|x| x.parse().unwrap())
-                        .collect(),
-                );
+                let dv: Vec<usize> = args[i + 1]
+                    .split(',')
+                    .map(|x| x.parse().unwrap())
+                    .collect();
+                if dv.len() != NCOLS {
+                    eprintln!("--degrees needs {} entries, got {}", NCOLS, dv.len());
+                    std::process::exit(2);
+                }
+                degrees = Some(dv);
                 i += 2;
             }
             _ => {
@@ -323,11 +337,11 @@ fn main() {
             continue;
         }
         let fit = match &degrees {
-            Some(dv) => try_fit(fit_q, fit_y, hold_q, hold_y, dv[c], p),
+            Some(dv) => try_fit(fit_q, fit_y, hold_q, hold_y, dv[c], p, true),
             None => {
                 // bisect the minimal fitting degree in [0, degmax]
                 let (mut lo, mut hi, mut found) = (0usize, degmax, None);
-                if let Some(f) = try_fit(fit_q, fit_y, hold_q, hold_y, hi, p) {
+                if let Some(f) = try_fit(fit_q, fit_y, hold_q, hold_y, hi, p, false) {
                     found = Some((hi, f));
                 } else {
                     eprintln!("[stage2] col {}: NO FIT at degmax {}", c, degmax);
@@ -335,7 +349,7 @@ fn main() {
                 }
                 while hi - lo > 1 {
                     let mid = (lo + hi) / 2;
-                    match try_fit(fit_q, fit_y, hold_q, hold_y, mid, p) {
+                    match try_fit(fit_q, fit_y, hold_q, hold_y, mid, p, false) {
                         Some(f) => {
                             hi = mid;
                             found = Some((mid, f));

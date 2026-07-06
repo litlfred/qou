@@ -60,7 +60,13 @@ def run_prime(p: int, degrees: list[int] | None, log) -> dict:
     if degrees is not None:
         cmd += ["--degrees", ",".join(map(str, degrees))]
     t = time.time()
-    r = subprocess.run(cmd, capture_output=True, text=True)
+    try:
+        r = subprocess.run(cmd, capture_output=True, text=True)
+    except FileNotFoundError:
+        raise RuntimeError(
+            f"Rust sampler not built at {BIN} — run: "
+            "cargo build --release --manifest-path "
+            "tools/borromean-recurrence-crt/Cargo.toml")
     if r.returncode != 0:
         raise RuntimeError(f"sampler failed at p={p}: {r.stderr[-500:]}")
     print(f"  [prime] p={p} done in {time.time()-t:.0f}s", flush=True)
@@ -229,7 +235,7 @@ def main() -> int:
         "scriptFile": f"computations/{script_path.name}",
         "commitSha": subprocess.run(
             ["git", "rev-parse", "HEAD"], capture_output=True, text=True,
-            cwd=script_path.parent).stdout.strip(),
+            cwd=script_path.parent).stdout.strip() or "unknown",
         "scriptHash": hashlib.sha256(script_path.read_bytes()).hexdigest()[:12],
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "description": (
