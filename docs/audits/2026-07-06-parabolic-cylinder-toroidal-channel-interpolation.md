@@ -364,7 +364,76 @@ transformation — degree/order exchange at hyperbolic argument, the
 structural home of $P^\mu_{\nu-1/2}(\cosh\eta)$) and **`lebedev1965`**
 (standard toroidal-coordinates reference).
 
-## 8. Corpus-grep record
+## 8. Follow-on tranche (owner picked options 1 + 2)
+
+**Option 1 — P1 promoted to a content block (sorry-free Lean).**
+[`prop:hoefsmit-toroidal-ladder-locus`](../../content/quantum-observable-universe/braids-and-knots/hoefsmit-toroidal-ladder-locus.md)
+(+ proof block, registered in `sec:lepton-meson-parallel`): the forcing
+theorem is now `QOU.BraidsAndKnots.toroidal_locus_forced`, proved over a
+generic characteristic-zero field via `linear_combination` (no ℝ, no
+ordering — §7c clean), with the validity direction `toroidal_locus_valid`.
+Verified `lean`-direct exit 0 against the restored olean cache.
+
+**Option 2 — eigenfunction-level probe (7/7 PASS).**
+[`computations/substrate/whipple_rotation_involution_probe.py`](../../computations/substrate/whipple_rotation_involution_probe.py):
+
+- **Bar-evenness of the ladder** (exact): $[d]_{q^{-1}} = [d]_q$ — the
+  interpolating/mixing ladder lives entirely in the bar-even sector.
+- **Whipple argument involution** (exact): $\coth(\mathrm{arccosh}(\coth a)) = \cosh a$
+  — the $\cosh \leftrightarrow \coth$ exchange is an involution, the
+  geometric seat of the $(\mu, \nu)$ winding exchange. *(Rendered here in
+  prose; the probe verifies the radical-free squared form.)*
+- **Quarter-period channel shift** (exact, corpus Lean-certified):
+  $\cosh(t + i\pi/2) = i \sinh t$.
+- **Whipple pairing discovered by scan** (50 dps, two generic $(\nu,\mu)$
+  points): of 48 candidate pairings, exactly the DLMF 14.9.16 family is
+  $a$-independent:
+  $P^{-\mu}_{\nu-1/2}(\coth a) = C(\nu,\mu)\,\sqrt{\sinh a}\;Q^{\nu}_{\mu-1/2}(\cosh a)$,
+  with Γ-shift laws $C(\nu,\mu+1)/C(\nu,\mu) = +1/(\nu+\mu+\tfrac12)$ and
+  $C(\nu+1,\mu)/C(\nu,\mu) = -1/(\nu+\mu+\tfrac12)$ — a single
+  $\Gamma(\nu+\mu+\tfrac12)$ with an alternating $\nu$-sign. Degree and
+  order — the two windings — exchange exactly.
+- The identification *"`rotation_step` archimedean shadow = Whipple
+  involution"* remains a **lead** (necessary structural facts all verified;
+  the intertwining statement itself is not yet formulated as a theorem).
+
+## 9. Use toward the mass / binding computation (owner question, 2026-07-06)
+
+Honest scoping first: nothing in this tranche moves an L2 dashboard number
+today — no production script was touched, so both dashboards are unchanged
+by construction. The value is *structural*, in four concrete directions,
+ordered by nearness:
+
+1. **A bar-parity selection rule for the Δ_λ search (usable now, prunes
+   before any scan).** The mixing/interpolation ladder is bar-even (probe-
+   exact: $[d]_{q^{-1}} = [d]_q$), and the binding amplitude is built from
+   it ($b^2 = [d-1][d+1]/[d]^2$). So any candidate binding/Δ_λ closure whose
+   mixing kernel is bar-odd is structurally wrong — bar-odd data enters only
+   through the channel loci (the weak/$\mathfrak{Q}_\beta$ sector), matching
+   the corpus's routing of the pn sign to the weak sector (PR #3448 line).
+   This is a formalize-first pruning invariant in the sense of the
+   compute-author discipline: apply it to the GAP-A-3/A-4 candidate lists
+   before running anything.
+2. **Level selection (GAP-A-3) lead.** Toroidal quantization — integer
+   winding pair $(\mu, \nu)$ on the shared torus plus the *forced*
+   half-integer degree — is a derived candidate for the brane-tower level
+   selection rule: allowed tower levels = allowed windings. If a Hopf/²H
+   structural test survives, this replaces a fitted level choice with a
+   derived one. (Next formalizable step; no fit involved.)
+3. **A derived zero-point offset.** The forced $-\tfrac12$ degree shift is
+   the ladder's zero-point. Constant $\tfrac12$-type offsets currently
+   floating in binding-tower bookkeeping are candidates for *derivation*
+   from this shift — checkable against existing witnesses with no new
+   parameters.
+4. **A parameter-free small parameter for binding corrections.** The
+   soliton criterion (§5) gives $b/[2]_q = \sqrt{[d-1][d+1]}/([d]\,[2]_q)$
+   as a derived expansion parameter for channel-mixing corrections — a
+   structured organizing principle for the higher-order terms in exactly
+   the sector where the Q_β/m_n/Δ_pn trio share their root cause. Any
+   numerical exploitation must go through the Δ_λ gate (formalize-first,
+   no seventh ansatz): the path is P1-style forcing lemmas, not fits.
+
+## 10. Corpus-grep record
 
 - `parabolic cylinder|Weber equation|Hermite`: hits are the Askey/channel
   cluster cited above + bibliography; no prior parabolic-cylinder treatment.
