@@ -30,7 +30,7 @@ committed witness rows were unaffected).
 | Piece | Status | Evidence |
 |---|---|---|
 | the **5** under the radical | **DERIVED** | it is $\lvert\mu_{\min}\rvert^2$ of the read-off [1⁴] sign pattern (pp = +1, nn = −1, pn = ±1): $\mu_{\min} = -\sqrt5$, physicality ceiling $g < 1/\sqrt5$ — [`b4_1four_complete_graph_writhe_signs.py`](../../computations/probes/b4_1four_complete_graph_writhe_signs.py) (PR #3426) |
-| the deformation term $(q_0-1)^2/q_0$ | **CLAIMED-DERIVED, derivation not shown** | source is merged **PR #3407**: [`2026-07-05-reeb-linking-operation-attack.md`](2026-07-05-reeb-linking-operation-attack.md) claims "three derivation routes (A: Reeb-phase derivative / B: Borromean direct Θ volume / C: CWF $Wr_q+Tw_q$ matching) converge uniquely" — but its witness probe [`categorical_linking_reeb_flow_probe.py`](../../computations/probes/categorical_linking_reeb_flow_probe.py) contains **no route computation**: it restates the formula in one line (its own comment: *"Or simply g = 1 / sqrt( 5 + (q-1)^2 / q )"*). The witness records only the formula's evaluation. Route A/B/C artifacts do not exist in the corpus. |
+| the deformation term $(q_0-1)^2/q_0$ | **structure DERIVED (§2b, this branch); one physical identification remains** | the #3407 audit doc's "three routes converge uniquely" claim was *not* backed by computation — its probe [`categorical_linking_reeb_flow_probe.py`](../../computations/probes/categorical_linking_reeb_flow_probe.py) restates the formula in one line (*"Or simply g = 1 / sqrt( 5 + (q-1)^2 / q )"*), and no Route A/B/C artifact exists. §2b now supplies the actual structure: three exact identities reduce the formula to derived constants, leaving **one** named physical identification. Probe: [`reeb_g_structural_identity_probe.py`](../../computations/probes/reeb_g_structural_identity_probe.py) (4/4 assertions). |
 | the **linear law** $B = 5g$ | **ASSERTED** | code comment "Binding is strictly 5*g" only; not in the #3407 doc; dimensionally implicit ($5g$ is dimensionless, used as MeV); not the $A{=}2$ case of the pinned $b_4 = -\ln\det(I+G)$ form (§3, Q1) |
 | the pn **sign** | **still open** | #3407 landed magnitude only; the sign enters squared at $A{=}2$ and is unresolved for [1⁴] |
 
@@ -40,12 +40,41 @@ the LaTeX `\frac` form in the #3407 audit doc. The corrected finding is
 sharper, not weaker: a claimed derivation exists but its supporting probe is a
 restatement.)*
 
-**Scope note.** Nothing here refutes the landed value — at the ceiling itself
-$B = 5g$ gives $\sqrt5 \approx 2.23607$ (+0.52 %), and the deformation term
-moves it the right direction (+0.41 %). The finding is a **provenance gap**:
-the deformation term's claimed three-route cross-validation is not backed by
-computation, and the linear law is underived. The tier note should not be read
-as "derivation complete".
+## 2b. Derivation of the formula's structure (this branch)
+
+With $v = \sqrt{q}$, $[2]_v = v + v^{-1}$ (balanced quantum integer), and
+$z = 1/[2]_v$ the **derived** Markov-peel bond factor, three exact identities
+(verified to 50 dps, [`reeb_g_structural_identity_probe.py`](../../computations/probes/reeb_g_structural_identity_probe.py), 4/4 assertions):
+
+- **I1 (polynomial, ring-provable).**
+  $5 + (v-v^{-1})^2 = 1 + (v+v^{-1})^2$ — it is $(a+b)^2-(a-b)^2 = 4ab$ with
+  $ab = 1$; both sides equal $(v^4+3v^2+1)/v^2$. So the "mystery" deformation
+  term is nothing but the ceiling identity rewritten.
+- **I2 (deformed criticality).** The classical [1⁴] ceiling $\sqrt5$ is the
+  ss-sector eigenvalue of $\begin{pmatrix}1&2\\2&-1\end{pmatrix}$
+  ($\sqrt{1^2+2^2}$: pp−nn asymmetry 1, pn-degree 2). Quantum-deforming the
+  integer pn-degree $2 \to [2]_v$ gives
+  $\begin{pmatrix}1&[2]_v\\ [2]_v&-1\end{pmatrix}$ with eigenvalues
+  $\pm\sqrt{1+[2]_v^2}$, and **$g = 1/\sqrt{1+[2]_v^2}$ exactly** — the landed
+  magnitude sits **at criticality of the q-deformed ss-sector exchange**, not
+  merely "below the classical ceiling". The classical-$S$ headroom is the
+  substrate deformation: $1-\sqrt5\,g \approx (v-v^{-1})^2/10$
+  ($1.088\times10^{-3}$ vs $1.090\times10^{-3}$).
+- **I3 (projection).** $g = z/\sqrt{1+z^2} = \sin(\arctan z)$: $z$ is the
+  *tangent* of the linking inclination (crossing density per unit base
+  parameter), $g$ its *sine* (per unit arc length) — unit-vector
+  normalization, which automatically enforces $g < 1$ and $g <$ ceiling.
+  Consequently the $A{=}2$ det factor is $1-g^2 = \cos^2\theta$.
+
+**What remains assumed** (the honest residue): the single physical
+identification *magnitude = arc-length-normalized transverse component* (I3)
+$\equiv$ *deformed-criticality value* (I2). One assumption replaces the three
+unsubstantiated #3407 "routes". A Lean lemma for I1 (pure `ring`) + I2
+(2×2 eigenvalue) is queued.
+
+**Scope note.** Nothing here refutes the landed value — the derivation above
+*supports* its structure. What still cannot be claimed as derived: the choice
+of the sine normalization itself, and the linear $B = 5g$ law (§3, next).
 
 ## 3. [1⁴] extension at the landed magnitude (new probe)
 
@@ -99,15 +128,33 @@ body-order profile (pair-weak, triple-right, quad-heavy), recorded as an
 observation only. No claim that the 4.2 % is structural rather than
 coincidental.
 
+## 3c. Reconciliation verdict: linear $5g$ law vs det form (decisive, scope-(a))
+
+Under $B = E_0\cdot(-\ln\det(I+G))$ the deuteron would need an effective
+magnitude $g_{\text{eff}}$ with $1-g_{\text{eff}}^2 = e^{-B_{\text{AME}}/E_0}$,
+i.e. $g_{\text{eff}} \approx 0.642$ — **above the classical ceiling 0.447**.
+So *no uniform per-pair magnitude makes the det form fit both $A{=}2$ and
+$A{=}4$*; the linear $B(^2\mathrm{H}) = 5g$ law is structurally a **separate
+assertion**, not the $A{=}2$ case of the det form. Its own fingerprint:
+$5g = \mu_{\text{cl}}^2\,g = \mu_{\text{cl}}^2/\mu_q$, whose $q\to1$ limit is
+$B(^2\mathrm{H}) = \sqrt5$ **MeV** exactly — the MeV unit is implicit
+(dimensionally unanchored; the dashboard divides by $\alpha$ treating $5g$ as
+already-MeV). Two consistent readings remain open: (i) the deuteron is not a
+[1⁴]-shell object and its binding lives in a different sector (then no
+reconciliation is *required*, but the ²H tier's $5g$ needs its own derivation
+and unit anchor); (ii) the det form's per-pair truncation is not the physical
+pair binding (its $b_2 = 0.93$ is the *exchange* pair term only). Neither is
+claimed.
+
 ## 4. Open objects (sharpened)
 
-1. **Substantiate** the $(q_0-1)^2/q_0$ deformation: produce the actual Route
-   A/B/C computations the #3407 audit doc claims (its current probe restates
-   the formula; see §2) — or re-scope the doc's "converge uniquely" claim.
-2. **Reconcile** the linear $B = 5g$ law with $b_4 = -\ln\det(I+G)$ (Q1 above):
-   one of the two is not fundamental at both $A{=}2$ and $A{=}4$; the linear
-   law is also dimensionally implicit.
-3. **Convention now pinned** (Q3): $b_4 = 9.2431$ is the connected Ursell
+1. ~~Substantiate the deformation~~ — **done at the structure level (§2b)**;
+   remaining: the single sine-normalization/criticality identification, plus a
+   Lean lemma for I1/I2 (queued; `ring` + 2×2 eigenvalue).
+2. ~~Reconcile linear vs det~~ — **resolved as irreconcilable at uniform $g$
+   (§3c)**; remaining: derive the ²H linear law (with unit anchor) or re-tier
+   ²H out of the exchange sector.
+3. **Convention pinned** (Q3): $b_4 = 9.2431$ is the connected Ursell
    cumulant; the det form at $g_{\text{reeb}}$ overshoots it (1.63×) while its
    $b_3$ matches (1.04×) and $b_2$ under-binds (0.42×) — any further magnitude
    work should target the full cumulant *profile*, not the aggregate.

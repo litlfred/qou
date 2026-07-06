@@ -34,3 +34,14 @@ Ursell cumulants of the det form at g_reeb — b₂ 0.42×, b₃ 1.042× (4.2%!)
 b₄ 1.63× vs AME. Convention pinned: 9.2431 = connected cumulant.
 Remaining: substantiate Route A/B/C (or re-scope #3407 doc claim);
 reconcile linear 5g law; pn sign.
+2026-07-06 (round 4): g DERIVED at structure level + reconciliation
+RESOLVED (reeb_g_structural_identity_probe.py, 4/4):
+I1: 5+(v−v⁻¹)² = 1+[2]_v² (ring identity, (a+b)²−(a−b)²=4ab, ab=1);
+I2: g = 1/√(1+[2]_v²) — q-deformed ss-ceiling (2 → [2]_v), g sits AT
+deformed criticality; headroom = (v−v⁻¹)²/10;
+I3: g = z/√(1+z²) = sin(arctan z) — arc-length normalization of the
+derived bond factor z. ONE identification remains (sine normalization).
+Reconciliation: det form needs g_eff=0.642>ceiling for ²H ⇒ linear 5g
+law is a separate assertion; q→1 limit B(²H)=√5 MeV — unit implicit.
+Remaining: sine-normalization derivation; Lean I1/I2; ²H unit anchor;
+pn sign.
