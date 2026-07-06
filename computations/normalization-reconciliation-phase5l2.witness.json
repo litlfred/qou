@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-20T18:59:07.658057+00:00",
-  "commitSha": "8786d45872315d24ac7bdbc598e8f3ab0125a8c9",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-06-30T14:19:22.698875+00:00",
+  "commitSha": "6e5668759c22ef4d33ac015810b17a2c9f3c2f0c",
   "assertions": [
     {
       "name": "phase_5l_2_simple_reconciliation_refuted",
@@ -15,11 +15,25 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 82,
+  "durationMs": 55,
   "computation": "normalization-reconciliation-phase5l2",
   "scriptFile": "normalization_reconciliation_phase5l2.py",
-  "scriptHash": "12b42c56abf0",
-  "scriptCommitSha": "420e77be1898a681114ab2801cb91b58a276a102",
+  "scriptHash": "5a01e0153069",
+  "scriptCommitSha": "bd1bdfe0583787dcbaaaa0a6d7b40a50159cdfb6",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
   "description": "Phase 5l.2: normalization reconciliation between the Phase 5l.1 structural T(B_p, q) (Wenzl-bridge symbolic) and the canonical Phase 5l tr_M^3(𝓑_p, q) (mpfr-50-dps numeric).  Tests two hypotheses: (A) the ratio tr_M^3(𝓑_p, q) / T(B_p, q) is q-independent (simple multiplicative constant); (B) the symbolic T uses Q = q^2 convention, so tr_M^3(𝓑_p, q) / T(B_p, q^2) is q-independent.  If either holds, gives the closed-form normalization for promoting Phase 5l.1's symbolic T to canonical tr_M^3.",
   "auditOnly": "docs/audits/2026-05-20-constit-factor-closure-chain.md",
   "data": {

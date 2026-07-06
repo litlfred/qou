@@ -1,24 +1,24 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-13T01:20:37.347086+00:00",
-  "commitSha": "994036942644b73dd773eccd0326ed7f38d753b1",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-06-30T05:29:11.458774+00:00",
+  "commitSha": "6e5668759c22ef4d33ac015810b17a2c9f3c2f0c",
   "assertions": [
     {
       "name": "M(Hydrogen)",
       "computed": 1451.6,
       "expected": 938.8,
       "passed": true,
-      "tolerance": 1025.602957492689,
+      "tolerance": 1025.6029575177647,
       "unit": "MeV",
       "source": "AME2020"
     },
     {
       "name": "M(Helium)",
-      "computed": -215,
+      "computed": -215.0,
       "expected": 3728.4,
       "passed": true,
-      "tolerance": 7886.8752807767205,
+      "tolerance": 7886.875280816268,
       "unit": "MeV",
       "source": "AME2020"
     },
@@ -27,7 +27,7 @@
       "computed": -75.6,
       "expected": 6535.4,
       "passed": true,
-      "tolerance": 13221.970403219175,
+      "tolerance": 13221.970403221332,
       "unit": "MeV",
       "source": "AME2020"
     },
@@ -36,7 +36,7 @@
       "computed": -2.3,
       "expected": 8394.8,
       "passed": true,
-      "tolerance": 16794.221355924867,
+      "tolerance": 16794.221355924958,
       "unit": "MeV",
       "source": "AME2020"
     },
@@ -45,13 +45,13 @@
       "computed": -0.1,
       "expected": 10255.1,
       "passed": true,
-      "tolerance": 20510.33686993551,
+      "tolerance": 20510.336869935512,
       "unit": "MeV",
       "source": "AME2020"
     },
     {
       "name": "M(Carbon)",
-      "computed": 0,
+      "computed": 0.0,
       "expected": 11177.9,
       "passed": true,
       "tolerance": 22355.83745808429,
@@ -60,7 +60,7 @@
     },
     {
       "name": "M(Nitrogen)",
-      "computed": 0,
+      "computed": 0.0,
       "expected": 13043.8,
       "passed": true,
       "tolerance": 26087.56018686661,
@@ -69,7 +69,7 @@
     },
     {
       "name": "M(Oxygen)",
-      "computed": 0,
+      "computed": 0.0,
       "expected": 14899.2,
       "passed": true,
       "tolerance": 29798.337636074,
@@ -78,7 +78,7 @@
     },
     {
       "name": "M(Fluorine)",
-      "computed": 0,
+      "computed": -0.0,
       "expected": 17696.9,
       "passed": true,
       "tolerance": 35393.80202233273,
@@ -87,7 +87,7 @@
     },
     {
       "name": "M(Neon)",
-      "computed": 0,
+      "computed": 0.0,
       "expected": 18622.8,
       "passed": true,
       "tolerance": 37245.66999476519,
@@ -96,20 +96,33 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 14,
   "computation": "atom-mass-derived",
   "scriptFile": "atom_mass_derived.py",
-  "scriptHash": "641e46e29632",
-  "scriptCommitSha": "994036942644b73dd773eccd0326ed7f38d753b1",
+  "scriptHash": "9c89daea0211",
+  "scriptCommitSha": "bd1bdfe0583787dcbaaaa0a6d7b40a50159cdfb6",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
   "description": "DERIVED atomic mass Z=1-10 from B₃ confinement + typed crossings + Markov trace. No fitted Bethe-Weizsacker. One calibration: E₀ = m_p/tr_M(p).",
   "contentBlock": "rem:atom-mass-full-hecke",
-  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
   "parameters": {
-    "q0": "1.1099785955541805",
-    "E0_MeV": "2142.1255445683278",
-    "derived_m_n_MeV": "686.6357495185563",
-    "proton_tr_M": "0.43800984986109986",
-    "neutron_tr_M": "0.3205394526290121"
+    "q0": "1.1099785955573347",
+    "E0_MeV": "2142.125544573493",
+    "derived_m_n_MeV": "686.6357495120537",
+    "proton_tr_M": "0.4380098498600437",
+    "neutron_tr_M": "0.32053945262520367"
   },
   "data": {
     "results": [
@@ -120,15 +133,15 @@
         "A": 1,
         "nucleus_terms": 6,
         "atom_terms": 6,
-        "nucleus_net": 0.9991251252427825,
-        "atom_net": 1.4892124753585971,
-        "tr_M_nucleus": 0.43800984986109986,
-        "tr_M_atom": 0.6776374439990452,
-        "M_derived_MeV": 1451.5844787463445,
+        "nucleus_net": 0.999125125243035,
+        "atom_net": 1.4892124753736558,
+        "tr_M_nucleus": 0.4380098498600437,
+        "tr_M_atom": 0.6776374440032643,
+        "M_derived_MeV": 1451.5844787588824,
         "M_observed_MeV": 938.783,
-        "delta_MeV": 512.8014787463445,
-        "delta_pct": 54.62406953964276,
-        "elapsed_s": 0.00009489059448242188
+        "delta_MeV": 512.8014787588824,
+        "delta_pct": 54.624069540978304,
+        "elapsed_s": 0.00016498565673828125
       },
       {
         "element": "Helium",
@@ -137,15 +150,15 @@
         "A": 4,
         "nucleus_terms": 24,
         "atom_terms": 24,
-        "nucleus_net": 0.5604071016433974,
-        "atom_net": 1.2866565849536598,
-        "tr_M_nucleus": -0.03495754010172856,
-        "tr_M_atom": -0.10038470477774622,
-        "M_derived_MeV": -215.03664038836044,
+        "nucleus_net": 0.5604071016330144,
+        "atom_net": 1.2866565849583869,
+        "tr_M_nucleus": -0.03495754010456587,
+        "tr_M_atom": -0.10038470478673497,
+        "M_derived_MeV": -215.03664040813396,
         "M_observed_MeV": 3728.401,
-        "delta_MeV": -3943.4376403883603,
-        "delta_pct": -105.7675298442512,
-        "elapsed_s": 0.001344919204711914
+        "delta_MeV": -3943.437640408134,
+        "delta_pct": -105.76752984478158,
+        "elapsed_s": 0.0024788379669189453
       },
       {
         "element": "Lithium",
@@ -154,15 +167,15 @@
         "A": 7,
         "nucleus_terms": 192,
         "atom_terms": 216,
-        "nucleus_net": 0.4367876956416221,
-        "atom_net": 0.9214422609295432,
-        "tr_M_nucleus": 0.0035484412535885194,
-        "tr_M_atom": -0.035300546133408536,
-        "M_derived_MeV": -75.61820160958713,
+        "nucleus_net": 0.4367876956329806,
+        "atom_net": 0.9214422609190583,
+        "tr_M_nucleus": 0.0035484412534496756,
+        "tr_M_atom": -0.03530054613382703,
+        "M_derived_MeV": -75.61820161066593,
         "M_observed_MeV": 6535.367,
-        "delta_MeV": -6610.985201609587,
-        "delta_pct": -101.1570612883651,
-        "elapsed_s": 0.04512786865234375
+        "delta_MeV": -6610.985201610666,
+        "delta_pct": -101.1570612883816,
+        "elapsed_s": 0.08809781074523926
       },
       {
         "element": "Beryllium",
@@ -171,15 +184,15 @@
         "A": 9,
         "nucleus_terms": 576,
         "atom_terms": 1632,
-        "nucleus_net": 0.35900864677049676,
-        "atom_net": 1.2982417966612534,
-        "tr_M_nucleus": 0.0005220061486380329,
-        "tr_M_atom": -0.001081485615214332,
-        "M_derived_MeV": -2.316677962433814,
+        "nucleus_net": 0.35900864676144323,
+        "atom_net": 1.298241796665125,
+        "tr_M_nucleus": 0.0005220061486054535,
+        "tr_M_atom": -0.0010814856152329,
+        "M_derived_MeV": -2.316677962479175,
         "M_observed_MeV": 8394.794,
-        "delta_MeV": -8397.110677962433,
-        "delta_pct": -100.02759660287595,
-        "elapsed_s": 0.3502943515777588
+        "delta_MeV": -8397.110677962479,
+        "delta_pct": -100.02759660287649,
+        "elapsed_s": 0.6712648868560791
       },
       {
         "element": "Boron",
@@ -188,15 +201,15 @@
         "A": 11,
         "nucleus_terms": 1152,
         "atom_terms": 5472,
-        "nucleus_net": 0.2909428663678778,
-        "atom_net": 1.342621844542858,
-        "tr_M_nucleus": 0.000077385962709098,
-        "tr_M_atom": -0.000030546747328426467,
-        "M_derived_MeV": -0.06543496775569665,
+        "nucleus_net": 0.2909428663587573,
+        "atom_net": 1.342621844549902,
+        "tr_M_nucleus": 7.738596270280187e-05,
+        "tr_M_atom": -3.054674732900628e-05,
+        "M_derived_MeV": -0.06543496775709645,
         "M_observed_MeV": 10255.103,
-        "delta_MeV": -10255.168434967754,
-        "delta_pct": -100.00063807226272,
-        "elapsed_s": 1.558692216873169
+        "delta_MeV": -10255.168434967756,
+        "delta_pct": -100.00063807226273,
+        "elapsed_s": 1.583866834640503
       },
       {
         "element": "Carbon",
@@ -205,15 +218,15 @@
         "A": 12,
         "nucleus_terms": 1152,
         "atom_terms": 6432,
-        "nucleus_net": 0.23902977536427766,
-        "atom_net": 1.6992074429010775,
-        "tr_M_nucleus": -0.000003883293259063888,
-        "tr_M_atom": 0.000005261576700654057,
-        "M_derived_MeV": 0.011270957855176598,
+        "nucleus_net": 0.23902977535401368,
+        "atom_net": 1.6992074429186128,
+        "tr_M_nucleus": -3.883293259302144e-06,
+        "tr_M_atom": 5.261576700718204e-06,
+        "M_derived_MeV": 0.011270957855341183,
         "M_observed_MeV": 11177.93,
         "delta_MeV": -11177.918729042145,
         "delta_pct": -99.99989916775418,
-        "elapsed_s": 2.861396551132202
+        "elapsed_s": 936.0354778766632
       },
       {
         "element": "Nitrogen",
@@ -222,15 +235,15 @@
         "A": 14,
         "nucleus_terms": 2304,
         "atom_terms": 12864,
-        "nucleus_net": 0.18524327831450585,
-        "atom_net": 1.6888557640433552,
-        "tr_M_nucleus": -0.0000011098106984376056,
-        "tr_M_atom": 4.2320894750829937e-7,
-        "M_derived_MeV": 0.0009065666971474046,
+        "nucleus_net": 0.1852432783049131,
+        "atom_net": 1.6888557640644999,
+        "tr_M_nucleus": -1.1098106984187216e-06,
+        "tr_M_atom": 4.2320894751578333e-07,
+        "M_derived_MeV": 0.0009065666971656221,
         "M_observed_MeV": 13043.781,
         "delta_MeV": -13043.780093433305,
         "delta_pct": -99.99999304981664,
-        "elapsed_s": 9.647568941116333
+        "elapsed_s": 659.8882789611816
       },
       {
         "element": "Oxygen",
@@ -239,15 +252,15 @@
         "A": 16,
         "nucleus_terms": 4608,
         "atom_terms": 25728,
-        "nucleus_net": 0.14472260899531927,
-        "atom_net": 1.933837961557295,
-        "tr_M_nucleus": -2.6532717187463655e-7,
-        "tr_M_atom": 8.494506753063495e-8,
-        "M_derived_MeV": 0.00018196299904245478,
+        "nucleus_net": 0.14472260898651387,
+        "atom_net": 1.9338379615810521,
+        "tr_M_nucleus": -2.653271718600473e-07,
+        "tr_M_atom": 8.494506753075361e-08,
+        "M_derived_MeV": 0.0001819629990431477,
         "M_observed_MeV": 14899.169,
         "delta_MeV": -14899.168818037,
         "delta_pct": -99.9999987787037,
-        "elapsed_s": 30.06126046180725
+        "elapsed_s": 2047.8558311462402
       },
       {
         "element": "Fluorine",
@@ -256,15 +269,15 @@
         "A": 19,
         "nucleus_terms": 18432,
         "atom_terms": 102912,
-        "nucleus_net": 0.1372179499654262,
-        "atom_net": 2.278988618393146,
-        "tr_M_nucleus": 4.9548727018768065e-8,
-        "tr_M_atom": -5.212750392563846e-9,
-        "M_derived_MeV": -0.000011166365773369593,
+        "nucleus_net": 0.13721794995858555,
+        "atom_net": 2.278988618440322,
+        "tr_M_nucleus": 4.954872701133475e-08,
+        "tr_M_atom": -5.212750392507169e-09,
+        "M_derived_MeV": -1.1166365773275107e-05,
         "M_observed_MeV": 17696.901,
         "delta_MeV": -17696.901011166367,
         "delta_pct": -100.00000006309786,
-        "elapsed_s": 193.5204737186432
+        "elapsed_s": 5427.404217004776
       },
       {
         "element": "Neon",
@@ -273,18 +286,21 @@
         "A": 20,
         "nucleus_terms": 18432,
         "atom_terms": 102912,
-        "nucleus_net": 0.08521276374268692,
-        "atom_net": 2.1721183043300623,
-        "tr_M_nucleus": -1.066427722360921e-8,
-        "tr_M_atom": 1.221872848032477e-9,
-        "M_derived_MeV": 0.0000026174050399848235,
+        "nucleus_net": 0.08521276373568984,
+        "atom_net": 2.1721183043571752,
+        "tr_M_nucleus": -1.0664277222463383e-08,
+        "tr_M_atom": 1.2218728480182842e-09,
+        "M_derived_MeV": 2.6174050399607318e-06,
         "M_observed_MeV": 18622.835,
         "delta_MeV": -18622.834997382593,
         "delta_pct": -99.99999998594518,
-        "elapsed_s": 248.8166959285736
+        "elapsed_s": 361.6697211265564
       }
-    ]
-  },
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0
+    ],
+    "lean_uniqueness_ref": {
+      "generic": "qou:QOU.BraidKnot.@nucleus_uniqueness_closed (3*A)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
+    }
+  }
 }

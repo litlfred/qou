@@ -1,23 +1,23 @@
 {
   "engine": "numpy",
-  "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-06-09T21:36:47.600989+00:00",
-  "commitSha": "9c327c7d33b7f6f76961d727df2ff18f63f96136",
+  "engineVersion": "numpy 2.5.0",
+  "computedAt": "2026-06-30T05:53:57.139826+00:00",
+  "commitSha": "6e5668759c22ef4d33ac015810b17a2c9f3c2f0c",
   "assertions": [
     {
       "name": "overdetermined_path_a_eq_path_b_machine_eps",
-      "computed": 30,
-      "expected": 30,
+      "computed": 2,
+      "expected": 2,
       "passed": true,
       "source": "iterated Sub-lemma 2.1 at H_9 ↓ H_6 × H_3"
     }
   ],
   "allPassed": true,
-  "durationMs": 30,
+  "durationMs": 45,
   "computation": "sublemma-2-1-h9-tritium-verify",
   "scriptFile": "sublemma_2_1_h9_tritium_verify.py",
-  "scriptHash": "4ad6ca2b6bfa",
-  "scriptCommitSha": "9c327c7d33b7f6f76961d727df2ff18f63f96136",
+  "scriptHash": "41f771e387bb",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,267 +25,277 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
   },
-  "description": "Sub-lemma 2.1 multi-interface verification at H_9 for tritium: compares Path A (direct χ^λ via Hoefsmit) against Path B (iterated 2-interface formula with A^λ_{ξν}(I_2) extracted from sublemma-2-1-A-operator-extract-h9-nn.witness.json). All 30/30 λ ⊢ 9 are over-determined and verified at machine ε — the consumed extract uses the full S_6×S_3 permutation basis (see the 2026-06-09 binding audit).",
+  "description": "Sub-lemma 2.1 multi-interface verification at H_9 for tritium: compares Path A (direct χ^λ via Hoefsmit) against Path B (iterated 2-interface formula with A^λ_{ξν}(I_2) extracted from sublemma-2-1-A-operator-extract-h9-nn.witness.json). 2 of 30 λ ⊢ 9 are fully determined and verified at machine ε; 28 remain under-determined because the consumed extract used a degenerate test-word set — regenerate it with `--full-basis --native` to close them.",
   "auditOnly": "docs/audits/2026-05-15-sublemma-2-1-h9-multi-interface-extension.md",
   "data": {
     "atom": "tritium",
+    "lean_uniqueness_ref": {
+      "nucleus": "tritium",
+      "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
+    },
     "interface_outer": "nn",
     "interface_inner": "pn",
     "n_generators_h9_braid": 35,
     "chi_path_a": {
       "(9,)": [
-        1.5768014423962364,
+        1.5768015284019765,
         0.0
       ],
       "(8, 1)": [
-        -1.0523568585833203,
+        -1.052357014944207,
         0.0
       ],
       "(7, 2)": [
-        0.2650111759230016,
+        0.26501126133680664,
         0.0
       ],
       "(7, 1, 1)": [
-        -0.7776543187931079,
+        -0.7776542809167224,
         0.0
       ],
       "(6, 3)": [
-        1.8167572879747989,
+        1.8167572536095262,
         0.0
       ],
       "(6, 2, 1)": [
-        -0.7580589693058166,
+        -0.7580589795699366,
         0.0
       ],
       "(6, 1, 1, 1)": [
-        2.8115824474681164,
+        2.8115825857067387,
         0.0
       ],
       "(5, 4)": [
-        -1.4086634646970004,
+        -1.4086634812722827,
         0.0
       ],
       "(5, 3, 1)": [
-        0.08555964014821615,
+        0.08555966600930709,
         0.0
       ],
       "(5, 2, 2)": [
-        -1.0612967013193804,
+        -1.0612967259439121,
         0.0
       ],
       "(5, 2, 1, 1)": [
-        -0.46415148449337545,
+        -0.46415157135149504,
         0.0
       ],
       "(5, 1, 1, 1, 1)": [
-        -1.4995799872784599,
+        -1.4995801565109308,
         0.0
       ],
       "(4, 4, 1)": [
-        -1.2024699333393452,
+        -1.202470002640919,
         0.0
       ],
       "(4, 3, 2)": [
-        2.3843748008761687,
+        2.384374874784445,
         0.0
       ],
       "(4, 3, 1, 1)": [
-        0.3565833069530607,
+        0.3565833749516495,
         0.0
       ],
       "(4, 2, 2, 1)": [
-        -0.07737320387658586,
+        -0.07737323253181894,
         0.0
       ],
       "(4, 2, 1, 1, 1)": [
-        0.27185693924595894,
+        0.2718570120641334,
         0.0
       ],
       "(4, 1, 1, 1, 1, 1)": [
-        -1.6824046957049106,
+        -1.6824046881164871,
         0.0
       ],
       "(3, 3, 3)": [
-        -1.1608057861787415,
+        -1.160805884286381,
         0.0
       ],
       "(3, 3, 2, 1)": [
-        -2.155907813099062,
+        -2.1559078553944238,
         0.0
       ],
       "(3, 3, 1, 1, 1)": [
-        1.0263623230367829,
+        1.0263622872679097,
         0.0
       ],
       "(3, 2, 2, 2)": [
-        1.2851409804739091,
+        1.285141023242621,
         0.0
       ],
       "(3, 2, 2, 1, 1)": [
-        0.06930952578513727,
+        0.06930955524652355,
         0.0
       ],
       "(3, 2, 1, 1, 1, 1)": [
-        1.3976915604292084,
+        1.3976915926104436,
         0.0
       ],
       "(3, 1, 1, 1, 1, 1, 1)": [
-        1.120139807729655,
+        1.1201398341077005,
         0.0
       ],
       "(2, 2, 2, 2, 1)": [
-        0.44397005744011997,
+        0.4439699967206069,
         0.0
       ],
       "(2, 2, 2, 1, 1, 1)": [
-        -2.3090334859070496,
+        -2.309033520393549,
         0.0
       ],
       "(2, 2, 1, 1, 1, 1, 1)": [
-        -0.2810198383347874,
+        -0.2810198790105459,
         0.0
       ],
       "(2, 1, 1, 1, 1, 1, 1, 1)": [
-        -0.4569648927226192,
+        -0.45696491131198286,
         0.0
       ],
       "(1, 1, 1, 1, 1, 1, 1, 1, 1)": [
-        -0.6843215490046088,
+        -0.6843215231698281,
         0.0
       ]
     },
     "chi_path_b": {
       "(9,)": [
-        1.5768014423962609,
+        1.5768015284019767,
         0.0
       ],
       "(8, 1)": [
-        -1.0523568585833392,
+        -0.7481368368899907,
         0.0
       ],
       "(7, 2)": [
-        0.26501117592300727,
+        0.7981370170219889,
         0.0
       ],
       "(7, 1, 1)": [
-        -0.7776543187931066,
+        -1.0581980239707698,
         0.0
       ],
       "(6, 3)": [
-        1.816757287974803,
+        0.7656922806383171,
         0.0
       ],
       "(6, 2, 1)": [
-        -0.7580589693058204,
+        0.47095831098768415,
         0.0
       ],
       "(6, 1, 1, 1)": [
-        2.8115824474681217,
+        2.1681877292431775,
         0.0
       ],
       "(5, 4)": [
-        -1.40866346469702,
+        -1.4061184403508489,
         0.0
       ],
       "(5, 3, 1)": [
-        0.08555964014822656,
+        -0.07624945892983548,
         0.0
       ],
       "(5, 2, 2)": [
-        -1.0612967013193857,
+        -0.37978390336424245,
         0.0
       ],
       "(5, 2, 1, 1)": [
-        -0.46415148449336685,
+        -0.02884434751982845,
         0.0
       ],
       "(5, 1, 1, 1, 1)": [
-        -1.4995799872784672,
+        -1.0133614408535305,
         0.0
       ],
       "(4, 4, 1)": [
-        -1.2024699333393591,
+        -1.810128208383877,
         0.0
       ],
       "(4, 3, 2)": [
-        2.3843748008761803,
+        -0.45378315261334445,
         0.0
       ],
       "(4, 3, 1, 1)": [
-        0.3565833069530621,
+        0.015327956036164964,
         0.0
       ],
       "(4, 2, 2, 1)": [
-        -0.07737320387658675,
+        -0.1471821412811169,
         0.0
       ],
       "(4, 2, 1, 1, 1)": [
-        0.271856939245973,
+        -0.49375489503337716,
         0.0
       ],
       "(4, 1, 1, 1, 1, 1)": [
-        -1.6824046957049328,
+        -1.217402457081527,
         0.0
       ],
       "(3, 3, 3)": [
-        -1.1608057861787509,
+        -0.018062360045264014,
         0.0
       ],
       "(3, 3, 2, 1)": [
-        -2.1559078130990597,
+        -0.2396819954088357,
         0.0
       ],
       "(3, 3, 1, 1, 1)": [
-        1.0263623230367807,
+        -0.6294558144848343,
         0.0
       ],
       "(3, 2, 2, 2)": [
-        1.2851409804739085,
+        1.5705097382191473,
         0.0
       ],
       "(3, 2, 2, 1, 1)": [
-        0.06930952578513802,
+        0.13158774918495394,
         0.0
       ],
       "(3, 2, 1, 1, 1, 1)": [
-        1.3976915604292122,
+        0.4437753517876821,
         0.0
       ],
       "(3, 1, 1, 1, 1, 1, 1)": [
-        1.1201398077296574,
+        0.9143474095580014,
         0.0
       ],
       "(2, 2, 2, 2, 1)": [
-        0.44397005744011414,
+        -0.1819611854688791,
         0.0
       ],
       "(2, 2, 2, 1, 1, 1)": [
-        -2.30903348590705,
+        -1.2876301503787513,
         0.0
       ],
       "(2, 2, 1, 1, 1, 1, 1)": [
-        -0.2810198383347836,
+        -0.6425576741594284,
         0.0
       ],
       "(2, 1, 1, 1, 1, 1, 1, 1)": [
-        -0.45696489272261875,
+        -0.5848569298042572,
         0.0
       ],
       "(1, 1, 1, 1, 1, 1, 1, 1, 1)": [
-        -0.6843215490046077,
+        -0.6843215231698285,
         0.0
       ]
     },
-    "n_overdetermined_verified": 30,
-    "n_overdetermined_total": 30,
-    "n_underdetermined": 0,
-    "max_relative_residual_overdetermined": 1.2165012426221438e-13,
-    "max_relative_residual_all": 1.2165012426221438e-13
-  }
+    "n_overdetermined_verified": 2,
+    "n_overdetermined_total": 2,
+    "n_underdetermined": 28,
+    "max_relative_residual_overdetermined": 6.489481841708097e-16,
+    "max_relative_residual_all": 2.8162301251103874
+  },
+  "caveats": [
+    "28 of 30 λ ⊢ 9 are under-determined in the consumed extract: their least-squares A's satisfy the test grid but do not generalize to the full tritium braid β_T. The test-word family spans only a sub-space of End(V_ξ); regenerate the H_9 extract with `--full-basis --native` (full S_6×S_3 permutation basis) to make every λ over-determined and full-rank."
+  ]
 }

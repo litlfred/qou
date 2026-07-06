@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T13:24:46.612179+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-06-30T11:05:56.031053+00:00",
+  "commitSha": "6e5668759c22ef4d33ac015810b17a2c9f3c2f0c",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 9,
   "computation": "habiro-exact-mass-endomorphism",
   "scriptFile": "habiro_exact_mass_endomorphism.py",
-  "scriptHash": "8cb75c2d7f9e",
-  "scriptCommitSha": "c30da51bea8725add6b37e84c3e6d14cc94ce01e",
+  "scriptHash": "54c5b62e725e",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,17 +17,18 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Habiro-everywhere mass-endomorphism: mpmath at 50 dps throughout (q_0, V̂_i Hecke recursion, Φ_q infinite product, Wedderburn weights). Eliminates f64 numerical noise from the baseline f64 pipeline. Quantifies how much of the +1.84% m_p/m_e residual is f64 vs structural.",
   "contentBlock": "prop:mass-endomorphism-tower",
   "parameters": {
     "q_0_mpf50": "1.1099785955541805677630215523262746828651420435574",
-    "m_e_MeV": 0.51099895,
+    "m_e_MeV": 0.51099895069,
     "mpmath_dps": 70
   },
   "data": {

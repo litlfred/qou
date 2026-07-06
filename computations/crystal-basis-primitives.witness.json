@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T05:35:18.469466+00:00",
-  "commitSha": "229063add4c04b5aafbcde5ebf7b7f6f1b76e032",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-06-30T11:06:02.222148+00:00",
+  "commitSha": "6e5668759c22ef4d33ac015810b17a2c9f3c2f0c",
   "assertions": [
     {
       "name": "weyl_dim_lambda=(1,)_n=2",
@@ -94,11 +94,25 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "crystal-basis-primitives",
   "scriptFile": "crystal_basis.py",
-  "scriptHash": "93542dce7262",
-  "scriptCommitSha": "229063add4c04b5aafbcde5ebf7b7f6f1b76e032",
+  "scriptHash": "72a8d50049b5",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
   "description": "Phase 0 of the S-poly → crystal-basis migration: validates Kashiwara f_i / e_i operators (signature rule), B(λ) BFS, and Demazure sub-crystal enumeration against the Weyl dimension formula s_λ(1,…,1) = #SSYT(λ,n).",
   "data": {
     "validation_cases": [

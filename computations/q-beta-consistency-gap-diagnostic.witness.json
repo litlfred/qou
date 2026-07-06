@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-05-26T15:13:55.919586+00:00",
-  "commitSha": "250e3c071f1d673d1bbf1abf044c8c7fe467a35d",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-06-30T11:05:20.835810+00:00",
+  "commitSha": "6e5668759c22ef4d33ac015810b17a2c9f3c2f0c",
   "assertions": [
     {
       "name": "gap_exists",
-      "computed": 2112.5524767362513,
+      "computed": 2112.5450178764527,
       "expected": 2113,
       "passed": true,
       "tolerance": 100,
@@ -14,7 +14,7 @@
     },
     {
       "name": "pathC_improves_m_n",
-      "computed": 0.24184695678221693,
+      "computed": 0.24051041801436657,
       "expected": 0.24,
       "passed": true,
       "tolerance": 0.5,
@@ -22,42 +22,50 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 11,
   "computation": "q-beta-consistency-gap-diagnostic",
   "scriptFile": "q_beta_consistency_gap_diagnostic.py",
-  "scriptHash": "9cebd0007426",
-  "scriptCommitSha": "8d538dae49d593171c81fce55ec83864f2a6527b",
+  "scriptHash": "15e38433105f",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Decompose the gap between mass-derived Q_beta (Path A: flavor-split) and N=3 categorical Q_beta (Path B: precision ladder). Test Path C: m_n via categorical Q_beta.",
   "data": {
     "path_A_mass_derived": {
-      "m_p_pred_MeV": "938.27186092496234943409067909601627229232354607326",
-      "m_n_pred_MeV": "939.56354056857942041680555652675397700458827491508",
-      "Q_beta_MeV": "0.78068069361707103089393817168705791544218092921784",
-      "Q_beta_ppm_vs_codata": "-2112.5473638266543970581820126517070282144962400957",
-      "flavor_split_X": "0.001375711249867512216725087899537173398853688341329",
-      "flavor_split_X_codata": "0.0013774699397810305325677301562633093883972785231479",
-      "flavor_split_X_residual_pct": "-0.12767537517355085"
+      "m_p_pred_MeV": "938.2718621847279588817812631719604842594229327005874083308260580574596",
+      "m_n_pred_MeV": "939.5635418301818027506753838217740493635959786167331206122639204705466",
+      "Q_beta_MeV": "0.7806806947638438599823254013905605812533910699543060314378624130870152",
+      "Q_beta_ppm_vs_codata": "-2112.545017876441180034306924268423179720347738831464123953281609831725",
+      "flavor_split_X": "0.001375711249976612013528743243635170321902175708313205828401425077989392",
+      "flavor_split_X_codata": "0.001377469939781030532567730156263309388397278523147870679655128295250126",
+      "flavor_split_X_residual_pct": "-0.12767536725324757"
     },
     "path_B_categorical": {
-      "Q_beta_MeV": "0.78233341400000004817906074094935320317745208740256",
-      "Q_beta_ppb_vs_codata": "5.112909596945373"
+      "Q_beta_MeV": "0.7823334093100000000000000000000000000000000000000326173041633116137717",
+      "Q_beta_ppb_vs_codata": "1.1391300872965406e-08"
     },
     "path_C_m_n_via_categorical_Q_beta": {
-      "m_n_pred_MeV": "939.56519328896234943409067909601627229232354607326",
-      "m_n_ppm_vs_codata": "-0.24184695678221693",
-      "improvement_over_pathA": "8.27330385856248"
+      "m_n_pred_MeV": "939.5651945447279588906930584203834887823425875467788471981302213690734",
+      "m_n_ppm_vs_codata": "-0.24051041801436657",
+      "improvement_over_pathA": "8.313696455493055"
     },
     "gap_decomposition": {
-      "total_gap_keV": "-1.6527203829290174",
-      "total_gap_ppm": "-2112.5524767362513",
-      "m_p_residual_contribution_keV": "-0.00031322516275170196",
-      "flavor_split_contribution_keV": "-1.6524071577662656",
+      "total_gap_keV": "-1.65271454615614",
+      "total_gap_ppm": "-2112.5450178764527",
+      "m_p_residual_contribution_keV": "-0.0003114886775154109",
+      "flavor_split_contribution_keV": "-1.6524030574786246",
       "dominant_source": "flavor-split X"
     }
   }

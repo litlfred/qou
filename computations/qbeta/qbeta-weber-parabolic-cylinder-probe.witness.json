@@ -1,15 +1,15 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.13.12",
-  "computedAt": "2026-07-06T14:40:15.376624+00:00",
-  "commitSha": "6e59299514710a53e655c78e975d3c6613d2edaf",
+  "computedAt": "2026-07-06T14:50:18.043432+00:00",
+  "commitSha": "cf500209230b44f51d05b583f74e9d83e8041930",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 13,
   "computation": "qbeta-weber-parabolic-cylinder-probe",
   "scriptFile": "qbeta_weber_parabolic_cylinder_probe.py",
-  "scriptHash": "de2292679374",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0378c051cecc",
+  "scriptCommitSha": "465d16841dcf1ac37404cc4a84f65d0c7242afdf",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -31,6 +31,6 @@
     "empirical_c3": "-2.0216155312562872929",
     "fitted_A": "2.0",
     "fitted_B": "12.1296931875377237574",
-    "implied_C_if_c4_is_minus1": "14.0"
+    "implied_C_if_c4_is_minus1": "-22.0"
   }
 }

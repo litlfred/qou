@@ -1,15 +1,29 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-17T20:01:42.138009+00:00",
-  "commitSha": "5c68c679d5fd8653ff2aec06ccace28823a22840",
+  "computedAt": "2026-06-30T05:53:57.658556+00:00",
+  "commitSha": "6e5668759c22ef4d33ac015810b17a2c9f3c2f0c",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "cross-check-trM-wenzl-lr-1ppb",
   "scriptFile": "cross_check_trM_wenzl_lr_1ppb.py",
-  "scriptHash": "2e9b3105d425",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0de786215538",
+  "scriptCommitSha": "bd1bdfe0583787dcbaaaa0a6d7b40a50159cdfb6",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
   "description": "Cross-check |tr_M(canonical β_atom)| across the three independent compute paths at q_0 (Hoefsmit / markov_peel / Wenzl LR). 1 ppb compute-precision target. Distinct from the ~780 ppb CODATA mass-prediction floor.",
   "tolerance_rel": "1e-9",
   "dps": 50,
@@ -21,7 +35,7 @@
     {
       "atom": "deuteron",
       "pair": "hoefsmit_vs_wenzl_lr",
-      "value_a": "0.38828647154771327851",
+      "value_a": "0.38828647155940888267",
       "value_b": "0.079382781122797445755",
       "rel_diff": "0.795556",
       "within_1ppb": false
@@ -29,7 +43,7 @@
     {
       "atom": "helium-3",
       "pair": "hoefsmit_vs_wenzl_lr",
-      "value_a": "0.20654085856226262949",
+      "value_a": "0.20654085857249695218",
       "value_b": "0.025725653247346927288",
       "rel_diff": "0.875445",
       "within_1ppb": false
@@ -37,7 +51,7 @@
     {
       "atom": "tritium",
       "pair": "hoefsmit_vs_wenzl_lr",
-      "value_a": "0.1040521186755256549",
+      "value_a": "0.10405211867846562931",
       "value_b": "0.019445204668407913239",
       "rel_diff": "0.813121",
       "within_1ppb": false

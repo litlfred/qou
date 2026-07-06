@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-16T22:18:05.517809+00:00",
-  "commitSha": "a149666149610ae6084463a6b0694af939d6e1a6",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-06-30T05:54:41.066211+00:00",
+  "commitSha": "6e5668759c22ef4d33ac015810b17a2c9f3c2f0c",
   "assertions": [
     {
       "name": "crystal_pole_counter_well_defined",
@@ -20,11 +20,25 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 12,
   "computation": "crystal-shift-nf-atomic",
   "scriptFile": "crystal_shift_nf_atomic.py",
-  "scriptHash": "1783e474d2f9",
-  "scriptCommitSha": "12347a6a6be58cae35edb8e2c598e64ee2da7bf9",
+  "scriptHash": "66c9678b3a1d",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
   "description": "Crystal-bases shift_NF for canonical atomic braids β(Z, N) at H_{3A}, computed via combinatorial pole counting on SYT(λ) per docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md Step 2.  Replaces the abandoned symbolic-q path (build_atom_nf_sym, which timed out for A=2 due to exponential monomial fan-out).  Compares against the closed form 18Z + 21N + 1 (per prop:per-nucleon-shift-additive-linearity).",
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "data": {
@@ -44,7 +58,7 @@
           4,
           2
         ],
-        "compute_time_seconds": 0.0008415249994868645,
+        "compute_time_seconds": 0.0012439580168575048,
         "syt_enumeration_method": "full"
       },
       {
@@ -62,7 +76,7 @@
           6,
           3
         ],
-        "compute_time_seconds": 0.028366759999698843,
+        "compute_time_seconds": 0.055156667018309236,
         "syt_enumeration_method": "full"
       },
       {
@@ -80,7 +94,7 @@
           6,
           3
         ],
-        "compute_time_seconds": 0.028388876000462915,
+        "compute_time_seconds": 0.06318712499341927,
         "syt_enumeration_method": "full"
       },
       {
@@ -98,7 +112,7 @@
           8,
           4
         ],
-        "compute_time_seconds": 1.9466687240001193,
+        "compute_time_seconds": 4.091194832988549,
         "syt_enumeration_method": "full"
       },
       {

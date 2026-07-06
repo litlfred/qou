@@ -1,6 +1,6 @@
 {
   "engine": "python+sympy",
-  "computedAt": "2026-06-01T03:37:36+00:00",
+  "computedAt": "2026-06-30T14:18:51+00:00",
   "computation": "qbeta-habiro-a7-partition",
   "scriptFile": "qbeta_habiro_a7_partition_check.py",
   "scriptHash": "auto",
@@ -12,7 +12,7 @@
     "truncation_bound": "1e-50"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.13.12",
     "sympy": "1.14.0"
   },
   "description": "Categorical identification attempt for a_7. Tests 2-colored partitions p_b=2(n), Pad\u00e9 approximation, and convolution forms.",
@@ -80,5 +80,5 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 331
+  "durationMs": 150
 }

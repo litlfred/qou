@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-05T19:14:03.500092+00:00",
-  "commitSha": "732844af7efdd7b31b77bef0b8dcfdf340559e0a",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-06-30T05:40:15.937640+00:00",
+  "commitSha": "6e5668759c22ef4d33ac015810b17a2c9f3c2f0c",
   "assertions": [
     {
       "name": "mixed_plethystic_m_half_fourth_power_refuted_as_expected",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 320,
+  "durationMs": 335,
   "computation": "gap-a3-deuteron-mixed-plethystic-probe",
   "scriptFile": "gap_a3_deuteron_mixed_plethystic_probe.py",
-  "scriptHash": "9a8c8a6b823f",
-  "scriptCommitSha": "732844af7efdd7b31b77bef0b8dcfdf340559e0a",
+  "scriptHash": "621a7802b18e",
+  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,19 +26,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Refined GAP-A-3 deuteron sub-case: tests P_λ_mixed(D) = m_{1/2}(λ)^4 (PR #1870's C1 raised to 4th power via the Phase-4 (q^{1/2}+q^{-1/2})^{4N} exponent) against the closure target −B(D)/m_e. Per docs/audits/2026-06-05-gap-a3-refined-mixed-plethystic-scope.md.",
   "contentBlock": "def:delta-lambda",
   "data": {
-    "A_D": "23.3528697671839858189466440359889738864013887122817513383720723106129",
+    "A_D": "23.35286931499673533364990657212503227181900473833268860458380281472081",
     "target": "-4.353237901949242454715460190762295046543669840974952707294765736733141",
-    "closure_with_A": "13976.24830970193371447533901894913494091341470824809580389576169027748",
-    "rel_err": "3211.540894960923477078369207716350632182499467772348592484300399132431",
+    "closure_with_A": "13980.68765909120155903288784329351857834458986397864613212888823957958",
+    "rel_err": "3212.560675981225639773925726735646278809667780504157339664953466514474",
     "per_lambda": [
       {
         "partition": [
@@ -46,7 +47,7 @@
         ],
         "m_half_su2": 1,
         "P_lambda_mixed": 1,
-        "term": "0.09231856042608279416236327918789714098694034347893368924111420760229833"
+        "term": "0.09232516705998965826418174342764049806372102019081994450671106487342189"
       },
       {
         "partition": [
@@ -55,7 +56,7 @@
         ],
         "m_half_su2": 5,
         "P_lambda_mixed": 625,
-        "term": "118.5069527524483679574095206587545197212361899639550729224660988692996"
+        "term": "118.5226995819673834728131281560388709992046494855338479530186922446869"
       },
       {
         "partition": [
@@ -64,7 +65,7 @@
         ],
         "m_half_su2": 9,
         "P_lambda_mixed": 6561,
-        "term": "442.3813462430930553585373917612093711542247550450939817797764179054168"
+        "term": "442.5527575338282077350469196110302695478068767112655732326937230718081"
       },
       {
         "partition": [
@@ -83,7 +84,7 @@
         ],
         "m_half_su2": 5,
         "P_lambda_mixed": 625,
-        "term": "37.50035925921149757417957985582774244438611461154488585696666872125053"
+        "term": "37.50330479050416744905320646672148529538083511813943420547387068805696"
       },
       {
         "partition": [

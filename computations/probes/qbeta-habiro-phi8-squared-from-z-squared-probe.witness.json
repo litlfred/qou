@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-02T06:45:33.359397+00:00",
-  "commitSha": "c4dffb015789e9617ce335c4b7a6c0b865bc7517",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-06-30T05:30:50.862213+00:00",
+  "commitSha": "6e5668759c22ef4d33ac015810b17a2c9f3c2f0c",
   "assertions": [
     {
       "name": "phi8_squared_mechanism_identified",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 33364,
+  "durationMs": 90902,
   "computation": "qbeta-habiro-phi8-squared-from-z-squared-probe",
   "scriptFile": "qbeta_habiro_phi8_squared_from_z_squared_probe.py",
-  "scriptHash": "ab70e58c4381",
-  "scriptCommitSha": "db07b6119661ca02e865b41d0156f759b0038235",
+  "scriptHash": "e0c03f9b11ab",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,40 +26,41 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Algebraic verification: tests whether the universal Φ_8² factor observed in atomic-step Δa_m Habiro factorizations arises mechanically from z(q)^k interface factors in Phase 5q closed forms, or from a different mechanism (e.g., the (u;u)_m=8 Pochhammer boundary). Computes Habiro decompositions of z(q)^k alone for k=1,2,3; analyses Φ_8 emergence in (u;u)_m factors; cross-checks against actual Δa_m factorizations and pins the first m for which Φ_8 enters.",
   "contentBlock": "prop:neutron-qvalue-symbolic",
   "data": {
     "z_pow_k_habiro_results": {
       "1": {
-        "p_in_u_factored": "check_q",
+        "p_in_u_factored": "u",
         "shift": 0,
-        "denom_in_u": "check_q**2 + 1",
+        "denom_in_u": "u**2 + 1",
         "num_coeffs": 2,
-        "habiro_sum_factored": "check_q",
+        "habiro_sum_factored": "u",
         "cyclotomic_counts": {},
         "phi8_power": 0
       },
       "2": {
-        "p_in_u_factored": "check_q**2",
+        "p_in_u_factored": "u**2",
         "shift": 0,
-        "denom_in_u": "check_q**4 + 2*check_q**2 + 1",
+        "denom_in_u": "u**4 + 2*u**2 + 1",
         "num_coeffs": 2,
-        "habiro_sum_factored": "check_q**2",
+        "habiro_sum_factored": "u**2",
         "cyclotomic_counts": {},
         "phi8_power": 0
       },
       "3": {
-        "p_in_u_factored": "check_q**3",
+        "p_in_u_factored": "u**3",
         "shift": 0,
-        "denom_in_u": "check_q**6 + 3*check_q**4 + 3*check_q**2 + 1",
+        "denom_in_u": "u**6 + 3*u**4 + 3*u**2 + 1",
         "num_coeffs": 3,
-        "habiro_sum_factored": "check_q**3",
+        "habiro_sum_factored": "u**3",
         "cyclotomic_counts": {},
         "phi8_power": 0
       }
@@ -402,8 +403,8 @@
       }
     ],
     "z_diff_habiro_result": {
-      "diff_p_in_u": "-u*(check_q**2 - check_q + 1)",
-      "habiro_sum_factored": "-u*(check_q**2 - check_q + 1)",
+      "diff_p_in_u": "-u*(u**2 - u + 1)",
+      "habiro_sum_factored": "-u*(u**2 - u + 1)",
       "cyclotomic_counts": {
         "6": 1
       },
@@ -418,38 +419,34 @@
         "phi8_power": 2,
         "first_phi8_m": 7,
         "first_phi8_sq_m": 12,
-        "factored_excerpt": "-u*(check_q**4 + 1)**2*(check_q**16 - check_q**13 - check_q**12 + check_q**11 + check_q**8 - check_q**5 - check_q**4 + check_q**3 + 1)*(check_q**16 + check_q**15 + check_q**13 - check_q**12 - check_q**11 - check_q**9 + check_q**8 + check_q**7 + check_q**5 - check_q**4 - check_q**3 - check_q + 1)*(check_q**45 + check_q**44 + check_q**43 - check_q**42 - 4*check_q**41 - 2*check_q**39 + check_q**38 - check_q**37 - check_q**36 + 3*check_q**35 - 2*check_q**33 + 2*check_q**31 + check_q**30 + check_q**28 + 2*check_q**27 - 3*check_q**26 - 4*check_q**25 - check_q**24 - 4*check_q**23 - 4*check_q**22 + 4*check_q**21 - check_q**20 + 4*check_q**19 - 3*check_q**18 - 2*check_q**17 + "
+        "factored_excerpt": "-u*(u**4 + 1)**2*(u**16 - u**13 - u**12 + u**11 + u**8 - u**5 - u**4 + u**3 + 1)*(u**16 + u**15 + u**13 - u**12 - u**11 - u**9 + u**8 + u**7 + u**5 - u**4 - u**3 - u + 1)*(u**45 + u**44 + u**43 - u**42 - 4*u**41 - 2*u**39 + u**38 - u**37 - u**36 + 3*u**35 - 2*u**33 + 2*u**31 + u**30 + u**28 + 2*u**27 - 3*u**26 - 4*u**25 - u**24 - 4*u**23 - 4*u**22 + 4*u**21 - u**20 + 4*u**19 - 3*u**18 - 2*u**17 + "
       },
       {
         "pair": "(³He − D)",
-        "cyclotomic_counts": {
-          "8": 2
-        },
-        "phi8_power": 2,
-        "first_phi8_m": 7,
-        "first_phi8_sq_m": 15,
-        "factored_excerpt": "check_q*(check_q**4 + 1)**2*(check_q**24 + check_q**23 + check_q**21 - check_q**3 - check_q + 1)*(check_q**16 - check_q**13 + check_q**11 - check_q**9 + check_q**7 - check_q**5 + check_q**3 + 1)*(check_q**16 - check_q**13 - check_q**12 + check_q**11 + check_q**8 - check_q**5 - check_q**4 + check_q**3 + 1)*(check_q**16 + check_q**15 + check_q**13 - check_q**12 - check_q**11 - check_q**9 + check_q**8 + check_q**7 + check_q**5 - check_q**4 - check_q**3 - check_q + 1)*(check_q**39 + check_q**38 - check_q**35 + check_q**34 - check_q**32 + check_q**30 - check_q**28 + check_q**26 + 2*check_q**23 + check_q**22 + check_q**20 - check_q**18 - check_q**16 + 2*check_q**15 - check_q**12 + check_q**10 - check_q*"
+        "cyclotomic_counts": {},
+        "phi8_power": 0,
+        "first_phi8_m": null,
+        "first_phi8_sq_m": null,
+        "factored_excerpt": "u**120 - u**119 - u**118 + u**115 + u**113 - u**108 + 4*u**14*u**105 + 8*u**13*u**105 + 13*u**12*u**105 + 18*u**11*u**105 + 27*u**10*u**105 + 44*u**9*u**105 + 62*u**8*u**105 + 86*u**7*u**105 + 119*u**6*u**105 + 168*u**5*u**105 + 234*u**4*u**105 + 307*u**3*u**105 + 406*u**2*u**105 + 546*u*u**105 + 726*u**105 - 4*u**14*u**104 - 8*u**13*u**104 - 13*u**12*u**104 - 18*u**11*u**104 - 27*u**10*u**104 - 4"
       },
       {
         "pair": "(⁴He − ³He)",
-        "cyclotomic_counts": {
-          "8": 2
-        },
-        "phi8_power": 2,
-        "first_phi8_m": 7,
-        "first_phi8_sq_m": 15,
-        "factored_excerpt": "-u*(check_q**4 + 1)**2*(check_q**24 + check_q**23 + check_q**21 - check_q**3 - check_q + 1)**2*(check_q**16 - check_q**13 + check_q**11 - check_q**9 + check_q**7 - check_q**5 + check_q**3 + 1)**2*(check_q**16 - check_q**13 - check_q**12 + check_q**11 + check_q**8 - check_q**5 - check_q**4 + check_q**3 + 1)*(check_q**16 + check_q**15 + check_q**13 - check_q**12 - check_q**11 - check_q**9 + check_q**8 + check_q**7 + check_q**5 - check_q**4 - check_q**3 - check_q + 1)*(check_q**45 + check_q**44 + check_q**43 - 3*check_q**41 - 2*check_q**39 - check_q**36 + 2*check_q**35 - check_q**33 + check_q**31 - check_q**29 - check_q**28 + check_q**27 - check_q**26 + 4*check_q**25 + check_q**24 +"
+        "cyclotomic_counts": {},
+        "phi8_power": 0,
+        "first_phi8_m": null,
+        "first_phi8_sq_m": null,
+        "factored_excerpt": "-u**13*u**153 - 5*u**12*u**153 - 13*u**11*u**153 - 25*u**10*u**153 - 36*u**9*u**153 - 46*u**8*u**153 - 63*u**7*u**153 - 86*u**6*u**153 - 122*u**5*u**153 - 159*u**4*u**153 - 203*u**3*u**153 - 281*u**2*u**153 - 365*u*u**153 - 470*u**153 + u**13*u**152 + 5*u**12*u**152 + 13*u**11*u**152 + 25*u**10*u**152 + 36*u**9*u**152 + 46*u**8*u**152 + 63*u**7*u**152 + 86*u**6*u**152 + 122*u**5*u**152 + 159*u**4*"
       }
     ],
     "verdict_short": "FROM_POCHHAMMER_BOUNDARY",
     "verdict": "FROM-POCHHAMMER-BOUNDARY: z(q)^k ALONE carries NO cyclotomic content in its Habiro sum (Σ a_m·(u;u)_m = u^k, a monomial — the entire cyclotomic structure of z(q)^k is in the DENOMINATOR Φ_4(u)^k, which is cleared by to_u_polynomial). Φ_8 enters the Habiro sum mechanically only via (u;u)_m for m ≥ 8 (where 1−u^8 = Φ_1·Φ_2·Φ_4·Φ_8). The OBSERVED Φ_8² in Δa_m factorizations comes from the interaction of the actual tr_M(X)−tr_M(Y) Habiro coefficients with (u;u)_m factors at m ≥ 8, NOT from z(q)² itself.",
     "numerical_q0": {
-      "q_0": 1.1099785827513808,
-      "u_0": 1.0535552110598574,
-      "z_at_q0": 0.4993203341836944,
-      "z_sq_at_q0": 0.24932079612931632,
-      "phi8_at_u0": 2.232052454166764
+      "q_0": 1.1099785955573347,
+      "u_0": 1.0535552171373528,
+      "z_at_q0": 0.4993203340335613,
+      "z_sq_at_q0": 0.2493207959793872,
+      "phi8_at_u0": 2.2320524825954333
     },
-    "elapsed_seconds": 33.36431336402893
+    "elapsed_seconds": 90.90184593200684
   }
 }

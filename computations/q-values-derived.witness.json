@@ -1,21 +1,35 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T05:03:42.814978+00:00",
-  "commitSha": "d3c673521389bcc71f798b3517bbd1f8bc8e630a",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-06-30T05:37:01.616466+00:00",
+  "commitSha": "6e5668759c22ef4d33ac015810b17a2c9f3c2f0c",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 22,
   "computation": "q-values-derived",
   "scriptFile": "derive_q_values.py",
-  "scriptHash": "c82a9b8d18e5",
-  "scriptCommitSha": "9884a1b297d80fa57787e44ceea22f5fdf659d9d",
+  "scriptHash": "b0759f0ed53a",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
   "description": "L5 β-decay Q-value derivations across the recursive atom-knot atlas. For every (Z, A) with a daughter (Z+1, A) in AME 2020, computes Q_β⁻(A, Z) = M_atom(A, Z) − M_atom(A, Z+1). Both framework prediction (via composite mass M_pred = N·m_n + Z·m_p − B from canonical-isotope-witness shards) and AME reference (via M_AME = atomic_mass_u · 931.494 MeV/u) are emitted; residual in keV / ppm. The AME Q_β value from beta_decay_energy_keV is also included for triangulation.",
   "parameters": {
-    "m_e_MeV": 0.51099895,
+    "m_e_MeV": 0.51099895069,
     "n_rows_total": 3558,
-    "n_ok": 1,
-    "n_partial": 3262,
+    "n_ok": 0,
+    "n_partial": 3263,
     "n_no_daughter": 295
   },
   "data": {
@@ -50,12 +64,9 @@
         "parent_A": 3,
         "daughter_Z": 2,
         "daughter_N": 1,
-        "Q_pred_MeV": -0.19734599588794188,
         "Q_AME_MeV": 0.018592016812817747,
         "Q_AME_book_keV": 18.59202,
-        "err_keV": -215.93801270075963,
-        "err_ppm": -11614555.584517717,
-        "status": "ok"
+        "status": "partial"
       },
       {
         "decay": "β⁻",

@@ -1,15 +1,15 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.13.12",
-  "computedAt": "2026-07-06T14:43:09.712810+00:00",
-  "commitSha": "465d16841dcf1ac37404cc4a84f65d0c7242afdf",
+  "computedAt": "2026-07-06T14:50:18.778969+00:00",
+  "commitSha": "cf500209230b44f51d05b583f74e9d83e8041930",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 100,
+  "durationMs": 113,
   "computation": "qbeta-parabolic-cylinder-sympy-expansion-probe",
   "scriptFile": "qbeta_parabolic_cylinder_sympy_expansion_probe.py",
-  "scriptHash": "7f10a2fa5de5",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "73beb7bfd95b",
+  "scriptCommitSha": "cf500209230b44f51d05b583f74e9d83e8041930",
   "precisionMetadata": {
     "compute_dps": 65,
     "output_dps": 50,
@@ -38,7 +38,7 @@
     "mapping_to_JK": {
       "A": "2 (derived from c_2 = J/2)",
       "B": "~ 12.12 (derived from c_3 = J)",
-      "C": "2 - 12*K (derived from c_4 = K)",
+      "C": "-22.0 (derived from c_4 = K ~ 2.0)",
       "c_4_formula": "A^2/24 - C/12"
     }
   }

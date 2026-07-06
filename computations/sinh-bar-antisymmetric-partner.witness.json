@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T21:28:52.448996+00:00",
-  "commitSha": "45d888906451874da0889a3b84c941f0b248263e",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-06-30T02:51:53.799042+00:00",
+  "commitSha": "6e5668759c22ef4d33ac015810b17a2c9f3c2f0c",
   "assertions": [
     {
       "name": "sinh_bar_antisymmetric_partner_verified",
@@ -15,22 +15,30 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1611,
+  "durationMs": 2040,
   "computation": "sinh-bar-antisymmetric-partner",
   "scriptFile": "sinh_bar_antisymmetric_partner.py",
-  "scriptHash": "4860161db4ed",
-  "scriptCommitSha": "45d888906451874da0889a3b84c941f0b248263e",
+  "scriptHash": "c4d9184712be",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Bar-ANTI-symmetric partner Q_m(h) = (q^{2m+1} - q^{-(2m+1)}) / (2 [2]_q) of the bar-symmetric P_m from PR #1125/#1129.  At substrate Q_m(h_0) = sinh((2m+1) η_0) / (2 cosh η_0).  Verified symbolically (sympy-exact across m=1..9) that P_m is bar-symmetric, Q_m is bar-anti-symmetric, and P_m ± Q_m = q^{±(2m+1)}/[2]_q.  Verified numerically (50-dps mpmath) that the sinh form matches the direct evaluation at substrate.  Documents the role of Q as the Coulomb / EM / charge-distinguishing channel that the canonical P_avg projection discards (per bar-involution.md + crossing-energy-interpretation.md).  EXPLORATORY: structural characterization, NOT a derivation of Δm_{n-p}.",
   "auditOnly": "docs/audits/2026-05-24-sinh-bar-antisymmetric-partner-probe.md",
   "parameters": {
-    "dps": 50,
-    "q_0_50dps": "1.10997859555418057528159407960950937799328227995870",
+    "dps": 70,
+    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
     "q_0_source": "qou_substrate.constants.Q_50_DIGIT_STR",
     "m_range_sympy": [
       1,
@@ -233,65 +241,65 @@
       {
         "m": 0,
         "k_torus": 0,
-        "Q_m_at_q0_sinh_form": 0.05198186073100939,
-        "Q_m_at_q0_direct": 0.05198186073100939,
-        "agreement_delta": 1.6704779438076223e-52,
+        "Q_m_at_q0_sinh_form": 0.05198186073241485,
+        "Q_m_at_q0_direct": 0.05198186073241485,
+        "agreement_delta": 5.659799424266695e-73,
         "P_m_at_q0_for_comparison": 0.5,
-        "Q_over_P_ratio": 0.10396372146201878
+        "Q_over_P_ratio": 0.1039637214648297
       },
       {
         "m": 1,
         "k_torus": 2,
-        "Q_m_at_q0_sinh_form": 0.15821751274216575,
-        "Q_m_at_q0_direct": 0.15821751274216575,
+        "Q_m_at_q0_sinh_form": 0.15821751274656776,
+        "Q_m_at_q0_direct": 0.15821751274656776,
         "agreement_delta": 0.0,
-        "P_m_at_q0_for_comparison": 0.5218531091152561,
-        "Q_over_P_ratio": 0.3031839994407736
+        "P_m_at_q0_for_comparison": 0.5218531091164507,
+        "Q_over_P_ratio": 0.3031839994485149
       },
       {
         "m": 2,
         "k_torus": 4,
-        "Q_m_at_q0_sinh_form": 0.27136825389312,
-        "Q_m_at_q0_direct": 0.27136825389312,
-        "agreement_delta": 6.681911775230489e-52,
-        "P_m_at_q0_for_comparison": 0.5665144441017747,
-        "Q_over_P_ratio": 0.4790138304829674
+        "Q_m_at_q0_sinh_form": 0.271368253901089,
+        "Q_m_at_q0_direct": 0.271368253901089,
+        "agreement_delta": 4.527839539413356e-72,
+        "P_m_at_q0_for_comparison": 0.5665144441054629,
+        "Q_over_P_ratio": 0.47901383049391544
       },
       {
         "m": 3,
         "k_torus": 6,
-        "Q_m_at_q0_sinh_form": 0.39637947516956,
-        "Q_m_at_q0_direct": 0.39637947516956,
-        "agreement_delta": 1.3363823550460978e-51,
-        "P_m_at_q0_for_comparison": 0.6359359830129427,
-        "Q_over_P_ratio": 0.623300907257347
+        "Q_m_at_q0_sinh_form": 0.3963794751820926,
+        "Q_m_at_q0_direct": 0.3963794751820926,
+        "agreement_delta": 0.0,
+        "P_m_at_q0_for_comparison": 0.6359359830206394,
+        "Q_over_P_ratio": 0.6233009072695105
       },
       {
         "m": 4,
         "k_torus": 8,
-        "Q_m_at_q0_sinh_form": 0.5387149442898567,
-        "Q_m_at_q0_direct": 0.5387149442898567,
-        "agreement_delta": 0.0,
-        "P_m_at_q0_for_comparison": 0.7331518787783097,
-        "Q_over_P_ratio": 0.7347931034256453
+        "Q_m_at_q0_sinh_form": 0.5387149443084476,
+        "Q_m_at_q0_direct": 0.5387149443084476,
+        "agreement_delta": 9.055679078826712e-72,
+        "P_m_at_q0_for_comparison": 0.7331518787918705,
+        "Q_over_P_ratio": 0.7347931034374117
       },
       {
         "m": 5,
         "k_torus": 10,
-        "Q_m_at_q0_sinh_form": 0.7045956063293239,
-        "Q_m_at_q0_direct": 0.7045956063293239,
-        "agreement_delta": 1.3363823550460978e-51,
-        "P_m_at_q0_for_comparison": 0.8624110705536714,
-        "Q_over_P_ratio": 0.8170066809056274
+        "Q_m_at_q0_sinh_form": 0.7045956063560729,
+        "Q_m_at_q0_direct": 0.7045956063560729,
+        "agreement_delta": 9.055679078826712e-72,
+        "P_m_at_q0_for_comparison": 0.8624110705754408,
+        "Q_over_P_ratio": 0.8170066809160207
       },
       {
         "m": 6,
         "k_torus": 12,
-        "Q_m_at_q0_sinh_form": 0.9012714777032805,
-        "Q_m_at_q0_direct": 0.9012714777032805,
+        "Q_m_at_q0_sinh_form": 0.9012714777410402,
+        "Q_m_at_q0_direct": 0.9012714777410402,
         "agreement_delta": 0.0,
-        "P_m_at_q0_for_comparison": 1.0293629887830613,
-        "Q_over_P_ratio": 0.8755623502344748
+        "P_m_at_q0_for_comparison": 1.0293629888160514,
+        "Q_over_P_ratio": 0.8755623502430966
       }
     ],
     "ew_triplet_Q_values": [
@@ -299,35 +307,35 @@
         "particle": "W± (T(2,4))",
         "m": 2,
         "two_m_plus_1": 5,
-        "P_m_at_q0": 0.5665144441017747,
-        "Q_m_at_q0": 0.27136825389312,
-        "tanh_argument_2mp1_eta_0": 0.5217036592689792,
-        "Q_over_P_tanh_form": 0.4790138304829674
+        "P_m_at_q0": 0.5665144441054629,
+        "Q_m_at_q0": 0.271368253901089,
+        "tanh_argument_2mp1_eta_0": 0.5217036592831873,
+        "Q_over_P_tanh_form": 0.47901383049391544
       },
       {
         "particle": "Z (T(2,6))",
         "m": 3,
         "two_m_plus_1": 7,
-        "P_m_at_q0": 0.6359359830129427,
-        "Q_m_at_q0": 0.39637947516956,
-        "tanh_argument_2mp1_eta_0": 0.7303851229765709,
-        "Q_over_P_tanh_form": 0.623300907257347
+        "P_m_at_q0": 0.6359359830206394,
+        "Q_m_at_q0": 0.3963794751820926,
+        "tanh_argument_2mp1_eta_0": 0.7303851229964623,
+        "Q_over_P_tanh_form": 0.6233009072695105
       },
       {
         "particle": "H (T(2,8))",
         "m": 4,
         "two_m_plus_1": 9,
-        "P_m_at_q0": 0.7331518787783097,
-        "Q_m_at_q0": 0.5387149442898567,
-        "tanh_argument_2mp1_eta_0": 0.9390665866841625,
-        "Q_over_P_tanh_form": 0.7347931034256453
+        "P_m_at_q0": 0.7331518787918705,
+        "Q_m_at_q0": 0.5387149443084476,
+        "tanh_argument_2mp1_eta_0": 0.9390665867097372,
+        "Q_over_P_tanh_form": 0.7347931034374117
       }
     ],
     "Q_ratios_vs_cosh_ratios": {
-      "Q_W_over_Q_Z": 0.6846173197465291,
-      "Q_Z_over_Q_H": 0.7357870416831934,
-      "Q_W_over_Q_H": 0.5037325523813755,
-      "comparison_P_W_over_P_Z": 0.8908356489245,
+      "Q_W_over_Q_Z": 0.6846173197449874,
+      "Q_Z_over_Q_H": 0.7357870416810655,
+      "Q_W_over_Q_H": 0.5037325523787844,
+      "comparison_P_W_over_P_Z": 0.8908356489195182,
       "comparison_SM_cos_theta_W": 0.8814646664034742
     },
     "verdict": "Q-as-sinh-partner-verified"

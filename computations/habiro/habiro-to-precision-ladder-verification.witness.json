@@ -1,33 +1,41 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-27T00:45:26.517110+00:00",
-  "commitSha": "aeb3b26142a6800e5d29e0e11ec3fe218d06f0de",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-06-30T05:40:14.010919+00:00",
+  "commitSha": "6e5668759c22ef4d33ac015810b17a2c9f3c2f0c",
   "assertions": [
     {
       "name": "habiro_sum_nonzero",
-      "computed": 136.07120636348176,
+      "computed": 136.07120637670164,
       "expected": 2.0,
       "passed": false,
       "tolerance": 1.0
     }
   ],
   "allPassed": false,
-  "durationMs": 10,
+  "durationMs": 22,
   "computation": "habiro-to-precision-ladder-verification",
   "scriptFile": "habiro_to_precision_ladder_verification.py",
-  "scriptHash": "edab12a35349",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "9a1d3817d6a2",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "data": {
-    "q_0": "1.10997859555418057528159407960950937799328227995870",
-    "u_0": "1.053555217135855948337607273654076908933",
-    "habiro_sum_proton": "136.0712063634817616514048508169837773395",
+    "q_0": "1.1099785955573347198997632204832250266562084087802",
+    "u_0": "1.053555217137352853562347940089743407080",
+    "habiro_sum_proton": "136.0712063767016426764749610182001748603",
     "M_proton": 8,
     "all_integral": true,
     "conclusion": "The Habiro expansion terminates at M=8 for the proton. All coefficients are integer polynomials in u. The precision-ladder c_k are the Taylor expansion of this FINITE, EXACT, INTEGER sum — no truncation error exists."

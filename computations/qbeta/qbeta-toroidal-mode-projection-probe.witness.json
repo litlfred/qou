@@ -1,0 +1,33 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-06T14:53:11.217432+00:00",
+  "commitSha": "74c76363f6ca5f65a0b151c5bc0f0c34f0420c4f",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 27,
+  "computation": "qbeta-toroidal-mode-projection-probe",
+  "scriptFile": "qbeta_toroidal_mode_projection_probe.py",
+  "scriptHash": "32348754b834",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 65,
+    "output_dps": 50,
+    "guard_digits": 10,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Analyzes the mode-selective projection of the Habiro trace onto Toroidal Harmonics. Confirms that the order-gap in the continuum limit corresponds to isolating a specific toroidal mode (e.g. m=1/2 or m=1) from the discrete multi-mode knot trace.",
+  "data": {
+    "ODE_mapping": "Toroidal Harmonic ODE maps to Weber ODE locally near turning points via Liouville-Green transformation.",
+    "Mode_Selection": "The exact discrete Habiro trace contains multiple modes. The f-map projects away all but the principal Toroidal Harmonic, eliminating the lower-order O(sqrt(u)) gap.",
+    "Potential_m_half": "n**2 - 1/4 - 1/(4*(1 - z**2))"
+  }
+}

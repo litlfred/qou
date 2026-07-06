@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-27T13:10:33.548583+00:00",
-  "commitSha": "8daa9c55417924b0f5f744f63be0170e68ebc41d",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-06-30T02:51:33.428241+00:00",
+  "commitSha": "6e5668759c22ef4d33ac015810b17a2c9f3c2f0c",
   "assertions": [
     {
       "name": "kaon_predicted",
@@ -14,26 +14,34 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 86,
+  "durationMs": 24,
   "computation": "meson-spectrum-predictions",
   "scriptFile": "meson_spectrum_predictions.py",
-  "scriptHash": "8b64f64444e7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "df7f1acff935",
+  "scriptCommitSha": "b1fa2eb2f056053770ac21bacc666b846f837ecc",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Meson spectrum predictions from CAL-3 (m_π) + derived Hecke character ratios. Uses the trace ratio tr_M(n)/tr_M(π) with increasing crossing count.",
-  "contentBlock": "prop:lepton-meson-torus-knot-dictionary",
+  "auditOnly": "docs/audits/2026-05-27-meson-spectrum-predictions.md",
   "data": {
     "results": [
       {
         "name": "π (base)",
         "crossings": 6,
         "n_extra": 0,
-        "tr_M": 0.4958262116526499,
+        "tr_M": 0.49582621166051094,
         "ratio_to_pion": 1.0,
         "m_pred_MeV": 139.57039,
         "m_PDG_MeV": 139.57039
@@ -42,36 +50,36 @@
         "name": "K (ūs)",
         "crossings": 8,
         "n_extra": 2,
-        "tr_M": 0.6860891338809054,
-        "ratio_to_pion": 1.383729052149312,
-        "m_pred_MeV": 193.12760346280982,
+        "tr_M": 0.6860891338969225,
+        "ratio_to_pion": 1.3837290521596777,
+        "m_pred_MeV": 193.12760346425657,
         "m_PDG_MeV": 493.677
       },
       {
         "name": "η-like (s̄s-ūu)",
         "crossings": 10,
         "n_extra": 4,
-        "tr_M": 0.9063384175201429,
-        "ratio_to_pion": 1.8279356682237617,
-        "m_pred_MeV": 255.12569410890103,
+        "tr_M": 0.9063384175466553,
+        "ratio_to_pion": 1.8279356682482522,
+        "m_pred_MeV": 255.12569411231917,
         "m_PDG_MeV": 547.862
       },
       {
         "name": "10+2 crossings",
         "crossings": 12,
         "n_extra": 6,
-        "tr_M": 1.1662003258262135,
-        "ratio_to_pion": 2.3520344395249375,
-        "m_pred_MeV": 328.2743640179269,
+        "tr_M": 1.1662003258665448,
+        "ratio_to_pion": 2.352034439568989,
+        "m_pred_MeV": 328.2743640240752,
         "m_PDG_MeV": null
       },
       {
         "name": "14 crossings",
         "crossings": 14,
         "n_extra": 8,
-        "tr_M": 1.4770324400733392,
-        "ratio_to_pion": 2.9789317413256713,
-        "m_pred_MeV": 415.77066492020305,
+        "tr_M": 1.4770324401320387,
+        "ratio_to_pion": 2.9789317413968295,
+        "m_pred_MeV": 415.77066493013467,
         "m_PDG_MeV": 1869.66
       }
     ]

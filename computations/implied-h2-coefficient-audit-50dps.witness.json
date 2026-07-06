@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T22:26:43.385948+00:00",
-  "commitSha": "c63457c87d10ed654324d82166e8e6f079e2ba3e",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-06-30T05:42:17.676972+00:00",
+  "commitSha": "6e5668759c22ef4d33ac015810b17a2c9f3c2f0c",
   "assertions": [
     {
       "name": "reading_a_is_near_miss_not_exact",
@@ -14,61 +14,69 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 19,
   "computation": "implied-h2-coefficient-audit-50dps",
   "scriptFile": "implied_h2_coefficient_audit_50dps.py",
-  "scriptHash": "b15f563753ad",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "8cd616451888",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "mp.mpf 50-dps audit of the ACTUAL implied h² coefficient of linking_weight at q_0 (assuming h²-only truncation). Finds c_implied ≈ −0.91628, distinct from Reading-A's −G (off by 3.2e-4) and −11/12 (off by 3.8e-4). The Reading-A 5.6 ppm m_p match is a near-miss, not a structural identity.",
   "auditOnly": "docs/audits/2026-05-25-path-c-categorical-principle-hunt.md",
   "parameters": {
-    "q_0_50dps": "1.10997859555418057528159407960950937799328227995870",
+    "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
     "m_e_MeV": "0.51099895069",
     "m_p_codata_MeV": "938.27208816"
   },
   "data": {
-    "h2_at_q0": "0.04370621823051207775827989",
-    "target_lw_at_q0": "2.459952784361318289248246",
-    "implied_c2": "-0.9162818761272748805078787",
+    "h2_at_q0": "0.04370621823290131021824509",
+    "target_lw_at_q0": "2.459952784488438790189527",
+    "implied_c2": "-0.9162818731686635759759344",
     "candidate_h2_coefficients": {
       "-G (Catalan)": {
         "value": "-0.9159655941772190150546035",
-        "deviation": "0.0003162819500558654532752115"
+        "deviation": "0.0003162789914445609213308986"
       },
       "-11/12": {
         "value": "-0.9166666666666666666666667",
-        "deviation": "-0.0003847905393917861587879402"
+        "deviation": "-0.0003847934980030906907322532"
       },
       "-G - 1/3500": {
         "value": "-0.9162513084629333007688892",
-        "deviation": "0.00003056766434157973898949726"
+        "deviation": "0.00003056470573027520704518429"
       },
       "-G·(1+1/3500)": {
         "value": "-0.9162272986326982204874763",
-        "deviation": "0.00005457749457666002040246769"
+        "deviation": "0.00005457453596535548845815472"
       },
       "-π/(4·G·3)": {
         "value": "-0.2858179275110382202195461",
-        "deviation": "0.6304639486162366602883326"
+        "deviation": "0.6304639456576253557563883"
       },
       "-2G + π/4": {
         "value": "-1.046533024956989720493546",
-        "deviation": "-0.1302511488297148399856675"
+        "deviation": "-0.1302511517883261445176118"
       },
       "-(G + h²·0.005/h²)": {
         "value": "-0.9209655941772190150546035",
-        "deviation": "-0.004683718049944134546724788"
+        "deviation": "-0.004683721008555439078669101"
       }
     },
     "if_c2_is_minus_G": {
-      "h4_plus_residual": "-0.00001382348793151357714433326",
-      "c4_if_h4_only": "-0.007236543513963042331491294",
+      "h4_plus_residual": "-0.00001382335862255790604391247",
+      "c4_if_h4_only": "-0.007236475820423909050916282",
       "interpretation": "If Reading-A's c₂ = -G is exact, then h⁴+ corrections must total ≈ -1.38e-5 at q_0. PR #1272's via_jones h⁴+ tower at q_0 totals ≈ -5.86e-3 (OPPOSITE SIGN, 420× larger) — different normalization, NOT a candidate for the actual h⁴+ correction."
     },
     "conclusion": "Reading-A (h²-only with c₂ = -G) is a NEAR-MISS to target_lw at 50 dps. The implied actual h² coefficient is -0.91628, differing from -G by 3.2e-4 and from -11/12 by 3.8e-4. Neither is the exact structural constant. Path C work needs to identify either (a) the new constant -0.91628..., (b) the h⁴+ tower that closes the residual to zero exactly, or (c) a correction to Vol(𝓑₃) beyond 8·G (literature says 8·G exact, so this is unlikely)."

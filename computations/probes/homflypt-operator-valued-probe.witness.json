@@ -1,12 +1,12 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-01T13:44:34.837572+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-06-30T11:05:54.691122+00:00",
+  "commitSha": "6e5668759c22ef4d33ac015810b17a2c9f3c2f0c",
   "assertions": [
     {
       "name": "proton_neq_neutron",
-      "computed": 0.10585426622735972,
+      "computed": 0.10585427826631622,
       "expected": 0.1,
       "passed": true,
       "tolerance": 0.5,
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 150,
+  "durationMs": 133,
   "computation": "homflypt-operator-valued-probe",
   "scriptFile": "homflypt_operator_valued_probe.py",
-  "scriptHash": "e66a77c888ac",
-  "scriptCommitSha": "b7a0dd8057011ed510405e467f77ac14e2c6f560",
+  "scriptHash": "daa19d86b840",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,20 +26,21 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "First operator-valued HOMFLYPT probe: per-partition Markov trace of the canonical pipeline proton/neutron braids (WITH averaged crossings I = σ − (h/2)·1). These break the amphicheirality found in the pure-braid HOMFLYPT (PR #1043) and give P(proton) ≠ P(neutron). Records per-partition character traces, Markov-trace split, and implied E₀ calibration.",
   "contentBlock": "rem:operator-valued-magnitude-budget",
   "data": {
-    "tr_M_proton": 0.7022506773529952,
-    "tr_M_neutron": 0.5963964111256355,
-    "delta_tr_M": -0.10585426622735972,
-    "ratio_p_over_n": 1.177489777357263,
-    "E0_implied_MeV": 7.390664900738934,
+    "tr_M_proton": 0.702250772648002,
+    "tr_M_neutron": 0.5963964943816857,
+    "delta_tr_M": -0.10585427826631622,
+    "ratio_p_over_n": 1.1774897727661204,
+    "E0_implied_MeV": 7.390664053669786,
     "per_partition_precision": null,
     "per_partition_note": "averaged crossings are not representable in chi_lambda_braid word form; per-partition character traces are omitted",
     "per_partition_proton": {},

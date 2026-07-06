@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-29T22:42:27.425703+00:00",
-  "commitSha": "5f5e7107d54440ae8bd5d2de9571831ac92a3508",
+  "computedAt": "2026-06-30T11:05:55.141894+00:00",
+  "commitSha": "6e5668759c22ef4d33ac015810b17a2c9f3c2f0c",
   "assertions": [
     {
       "name": "deuteron_endomorphism_exact",
-      "computed": 0.9980774487325678,
+      "computed": 0.9980775196002202,
       "expected": 1.0,
       "passed": true,
       "tolerance": 0.01,
@@ -22,54 +22,62 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 36,
+  "durationMs": 26,
   "computation": "binding-shell-enhancement-derivation",
   "scriptFile": "binding_shell_enhancement_derivation.py",
-  "scriptHash": "36a44288c58e",
-  "scriptCommitSha": "d3cd0095ee4773db33caa838e200cf37958c6c27",
+  "scriptHash": "106ee841f89d",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Derive-or-refute: does a DERIVED per-magic-closure enhancement f^{n_close} close A≥3 binding on top of the scalar endomorphism B_endo = m_e·Vol(𝓑₃)·Δtr? No AME fitting. Findings: B_endo exact for D (resid 0.998); A≥3 needs f≈2.45–2.88/closure; the torus-knot gap q^{2n_s} is refuted (q⁴=1.52 too small, q¹²=3.50 too big); [3]_q=3.04 is closest but misses ³He by +24%; and T (n-shell, f=2.82) ≠ ³He (p-shell, f=2.45) is a p/n asymmetry no scalar q-factor can produce. Deuteron derived; A≥3 open.",
   "data": {
     "endomorphism": {
       "D": {
-        "dtr": "0.5952397104",
-        "B_endo_MeV": "2.22885108",
-        "B_AME_MeV": 2.224566,
-        "resid": "0.99807745",
+        "dtr": "0.5952397208",
+        "B_endo_MeV": "2.228851123",
+        "B_AME_MeV": 2.2245662000000004,
+        "resid": "0.99807752",
         "n_close": 0,
         "f_per_closure": "1.0"
       },
       "T": {
-        "dtr": "0.8039720011",
-        "B_endo_MeV": "3.010440722",
-        "B_AME_MeV": 8.481798,
-        "resid": "2.8174606",
+        "dtr": "0.8039720222",
+        "B_endo_MeV": "3.010440805",
+        "B_AME_MeV": 8.481796200000002,
+        "resid": "2.8174599",
         "n_close": 1,
-        "f_per_closure": "2.8174606"
+        "f_per_closure": "2.8174599"
       },
       "3He": {
-        "dtr": "0.841215709",
-        "B_endo_MeV": "3.149898283",
-        "B_AME_MeV": 7.718043,
-        "resid": "2.4502515",
+        "dtr": "0.8412157313",
+        "B_endo_MeV": "3.149898371",
+        "B_AME_MeV": 7.71804132,
+        "resid": "2.4502509",
         "n_close": 1,
-        "f_per_closure": "2.4502515"
+        "f_per_closure": "2.4502509"
       },
       "4He": {
-        "dtr": "0.9119754046",
-        "B_endo_MeV": "3.414855109",
-        "B_AME_MeV": 28.295673,
-        "resid": "8.2860538",
+        "dtr": "0.9119754366",
+        "B_endo_MeV": "3.414855233",
+        "B_AME_MeV": 28.2956624,
+        "resid": "8.2860503",
         "n_close": 2,
-        "f_per_closure": "2.8785506"
+        "f_per_closure": "2.87855"
       }
     },
-    "f_per_closure_spread_pct": 17.479802880165995,
+    "f_per_closure_spread_pct": 17.479807572570504,
     "pn_asymmetry": {
       "T_neutron_shell": "2.81746",
       "3He_proton_shell": "2.45025",
@@ -80,81 +88,86 @@
       "q^2": {
         "value": "1.2320525",
         "err_pct": {
-          "D": 0.1926254590636893,
-          "T": -56.27081704851469,
-          "3He": -49.717305279833276,
-          "4He": -81.68062427983578
+          "D": 0.19261834497082625,
+          "T": -56.2708065636365,
+          "3He": -49.71729293655446,
+          "4He": -81.68061674927311
         },
-        "max_abs_err_A3": 81.68062427983578
+        "max_abs_err_A3": 81.68061674927311
       },
       "q^4 (torus-knot gap n_s=2)": {
         "value": "1.5179533",
         "err_pct": {
-          "D": 0.1926254590636893,
-          "T": -46.12335158305881,
-          "3He": -38.049081138782384,
-          "4He": -72.1920428079548
+          "D": 0.19261834497082625,
+          "T": -46.12333866483242,
+          "3He": -38.04906593086299,
+          "4He": -72.19203137659612
         },
-        "max_abs_err_A3": 72.1920428079548
+        "max_abs_err_A3": 72.19203137659612
       },
       "q^6": {
         "value": "1.8701982",
         "err_pct": {
-          "D": 0.1926254590636893,
-          "T": -33.62114156436354,
-          "3He": -23.673216618402375,
-          "4He": -57.788819062023904
+          "D": 0.19261834497082625,
+          "T": -33.62112564805339,
+          "3He": -23.673197881013742,
+          "4He": -57.78880170927523
         },
-        "max_abs_err_A3": 57.788819062023904
+        "max_abs_err_A3": 57.78880170927523
       },
       "q^12 (n_s=6 strands)": {
         "value": "3.4976411",
         "err_pct": {
-          "D": 0.1926254590636893,
-          "T": 24.14161865548779,
-          "3He": 42.74620954721551,
-          "4He": 47.63956315887268
+          "D": 0.19261834497082625,
+          "T": 24.14164842425827,
+          "3He": 42.74624459227896,
+          "4He": 47.639623857594835
         },
-        "max_abs_err_A3": 47.63956315887268
+        "max_abs_err_A3": 47.639623857594835
       },
       "[2]_q": {
         "value": "2.0108969",
         "err_pct": {
-          "D": 0.1926254590636893,
-          "T": -28.627328519717064,
-          "3He": -17.93100146903343,
-          "4He": -51.19864850591305
+          "D": 0.19261834497082625,
+          "T": -28.627311407187168,
+          "3He": -17.930981323368936,
+          "4He": -51.19862844562234
         },
-        "max_abs_err_A3": 51.19864850591305
+        "max_abs_err_A3": 51.19862844562234
       },
       "[3]_q": {
         "value": "3.0437062",
         "err_pct": {
-          "D": 0.1926254590636893,
-          "T": 8.030126921173851,
-          "3He": 24.22015518983629,
-          "4He": 11.80409657251041
+          "D": 0.19261834497082625,
+          "T": 8.03015282286021,
+          "3He": 24.220185682502287,
+          "4He": 11.804142530828225
         },
-        "max_abs_err_A3": 24.22015518983629
+        "max_abs_err_A3": 24.220185682502287
       },
       "Vol(B3)/[3]_q": {
         "value": "2.4075007",
         "err_pct": {
-          "D": 0.1926254590636893,
-          "T": -14.550687854463504,
-          "3He": -1.7447528935295125,
-          "4He": -30.05042403594234
+          "D": 0.19261834497082625,
+          "T": -14.550667366967529,
+          "3He": -1.7447287746957696,
+          "4He": -30.050395282610523
         },
-        "max_abs_err_A3": 30.05042403594234
+        "max_abs_err_A3": 30.050395282610523
       }
     },
     "conclusion": {
       "deuteron": "derived (B_endo exact, resid 0.998, 0 closures)",
       "torus_knot_q2ns": "REFUTED (q^4=1.52 too small; q^12=3.50 too big)",
       "best_candidate": "[3]_q",
-      "best_max_abs_err_A3_pct": 24.22015518983629,
+      "best_max_abs_err_A3_pct": 24.220185682502287,
       "structural_blocker": "p/n asymmetry T≠³He rules out any scalar f",
       "status": "A≥3 open — needs p/n-asymmetric per-closure enhancement, no fitting"
+    },
+    "lean_uniqueness_ref": {
+      "generic": "qou:QOU.BraidKnot.@nucleus_uniqueness_closed (3*A)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     }
   }
 }

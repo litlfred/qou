@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-02T18:38:47.955204+00:00",
-  "commitSha": "da278e6294f9c7abf06f1737dd81e1ac7f905990",
+  "computedAt": "2026-06-30T05:36:57.571688+00:00",
+  "commitSha": "6e5668759c22ef4d33ac015810b17a2c9f3c2f0c",
   "assertions": [
     {
       "name": "at_least_one_categorical_weight_passes_1ppm",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 21,
   "computation": "m-p-linking-weight-operator-valued-probe",
   "scriptFile": "m_p_linking_weight_operator_valued_probe.py",
-  "scriptHash": "e36021f79dd3",
-  "scriptCommitSha": "da278e6294f9c7abf06f1737dd81e1ac7f905990",
+  "scriptHash": "3a7b0c339fb6",
+  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,36 +26,41 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0"
   },
   "description": "Topic 2 of PR #1712: tests operator-valued linking_weight at H_3/H_4/H_5 against the CODATA-implied target 2.461648. Weights tested are pre-existing canonical categorical objects (uniform, dim_q, dim_q², 1/dim_q, q-hook density, Wenzl y_λ, abs_content); no fits. Reports tiered (PROVED <1ppm / NEAR-MATCH <1000ppm / WEAK / REFUTED). Also runs a mixed-H_n sweep (6 categorically-motivated α values for α·Family_A(H_3) + (1−α)·Family_A(H_4)).",
   "data": {
-    "L_n3_uniform": "1.33696562223570743277420986861",
-    "L_n3_dim_q": "1.50682164348302013905470802242",
-    "L_n3_dim_q_sq": "1.67636807532413443402082426314",
-    "L_n3_recip_dim_q": "1.20130194913836658244877825924",
-    "L_n3_hook_q_inv": "1.39361763839830364514752613283",
-    "L_n3_y_lambda": "1.67636807532413443402082426314",
-    "L_n3_abs_content": "1.25272421667678057458065740146",
-    "L_n4_uniform": "2.53277965639939148773855585547",
-    "L_n4_dim_q": "2.43852934187275243020457103597",
-    "L_n4_dim_q_sq": "2.70919346062999730486155718491",
-    "L_n4_recip_dim_q": "1.58911733636997032433645558467",
-    "L_n4_hook_q_inv": "2.1410071638381192315276373028",
-    "L_n4_y_lambda": "2.70919346062999730486155718491",
-    "L_n4_abs_content": "1.83804827660569181075063991241",
-    "L_n5_uniform": "5.37613772967931538833260584567",
-    "L_n5_dim_q": "4.79819861042664795602604838706",
-    "L_n5_dim_q_sq": "5.16409644493214142070206875501",
-    "L_n5_recip_dim_q": "2.30983058764163092346352539345",
-    "L_n5_hook_q_inv": "4.08368369623022616994236471641",
-    "L_n5_y_lambda": "5.16409644493214142070206875501",
-    "L_n5_abs_content": "3.26295274190599481420225623529"
+    "L_n3_uniform": "1.33696562303969191902320591341",
+    "L_n3_dim_q": "1.50682164499539899962400728044",
+    "L_n3_dim_q_sq": "1.67636807747484906125403836092",
+    "L_n3_recip_dim_q": "1.20130194942529425588582469765",
+    "L_n3_hook_q_inv": "1.39361763944573449353353896223",
+    "L_n3_y_lambda": "1.67636807747484906125403836092",
+    "L_n3_abs_content": "1.25272421727976893926740443506",
+    "L_n4_uniform": "2.5327796636746759713582826702",
+    "L_n4_dim_q": "2.43852935043902179247407927414",
+    "L_n4_dim_q_sq": "2.70919347007614227634101355131",
+    "L_n4_recip_dim_q": "1.58911733860064087172779044884",
+    "L_n4_hook_q_inv": "2.14100717047703807101185924782",
+    "L_n4_y_lambda": "2.70919347007614227634101355131",
+    "L_n4_abs_content": "1.83804828101495513415653495164",
+    "L_n5_uniform": "5.37613776906352819854168767474",
+    "L_n5_dim_q": "4.7981986513963542938092431955",
+    "L_n5_dim_q_sq": "5.1640964891864941317255337103",
+    "L_n5_recip_dim_q": "2.3098305935795385559300326429",
+    "L_n5_hook_q_inv": "4.08368372762898208643748688268",
+    "L_n5_y_lambda": "5.1640964891864941317255337103",
+    "L_n5_abs_content": "3.26295276342679974299236044906",
+    "lean_uniqueness_ref": {
+      "nucleus": "proton",
+      "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
+    }
   }
 }

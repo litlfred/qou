@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-02T17:03:41.417298+00:00",
-  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
+  "computedAt": "2026-06-30T11:05:50.250667+00:00",
+  "commitSha": "6e5668759c22ef4d33ac015810b17a2c9f3c2f0c",
   "assertions": [
     {
       "name": "q_integer_truncates_at_root_of_unity",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1385,
+  "durationMs": 906,
   "computation": "q-spectral-truncation-tower",
   "scriptFile": "q_spectral_truncation_tower.py",
-  "scriptHash": "4bc97f978f46",
-  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "scriptHash": "c5715b7ee123",
+  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,11 +34,12 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Exact root-of-unity truncation of the q-integer eigenvalue tower [k]_q — the shared spectral engine of the q-Laplacian (q-heat ∂_t=−Δ_q, q-Navier-Stokes Δ_q) and the Wenzl/Gram-matrix block dimensions. At q=e^{iπ/κ} the q-integer [κ]_q vanishes (WRT/Verlinde truncation), making the infinite q-Laplacian spectrum FINITE and exact. Records the surviving quantum dimensions [1]_q..[κ−1]_q (incl. the golden ratio at κ=5 = Fibonacci anyon dim), the q-heat mode-decay rates [k]_q², the involutions (bar q↦q⁻¹ fixes [k]_q; index k↦−k flips it ⇒ [k]_q² index-even = physical), and the Yekutieli obstruction-level cap (κ−1) from the same truncation (4 survey targets: q-heat, q-NS, Gram/Wenzl, Yekutieli). Fibre-level (q formal, Im unconstrained); reality only at q₀. Exact symbolic; characterizes the shared engine, does not solve the q-NS PDE or build the q-heat archimedean realisation.",
   "contentBlock": "prop:q-laplacian-spectral-tower",

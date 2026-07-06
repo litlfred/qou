@@ -1,32 +1,43 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-06T15:57:13.823793+00:00",
-  "commitSha": "adfaff0fcdaa25a041bb14e08eec6121fb04029a",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-06-30T02:51:28.483062+00:00",
+  "commitSha": "6e5668759c22ef4d33ac015810b17a2c9f3c2f0c",
   "assertions": [
     {
       "name": "All targets accounted for (computed or skipped)",
-      "computed": 2,
-      "expected": 2,
+      "computed": 5,
+      "expected": 5,
       "passed": true,
       "tolerance": 0
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 30,
   "computation": "lr-fusion-self-conj-test",
   "scriptFile": "lr_fusion_self_conj_test.py",
-  "scriptHash": "894f5bbd731d",
-  "scriptCommitSha": "f79dccf6a91d3a302c0b3325b296914413ed5bf3",
+  "scriptHash": "a9db5f7a2aa7",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
   "description": "LR-fusion self-conjugacy test for the magic-shell rank-collapse conjecture: at magic n, the dominant ν in V_λ ⊗ V_λ (canonical self-conjugate λ ⊢ n) is itself self-conjugate; predicted to fail at non-magic n.",
   "contentBlock": "conj:diagrammatic-double-magic-lr-fusion",
   "parameters": {
-    "targets": [
-      8,
-      12
-    ],
-    "magic_count": 1,
-    "nonmagic_count": 1
+    "targets": "default",
+    "magic_count": 3,
+    "nonmagic_count": 2
   },
   "data": {
     "per_n": {
@@ -63,13 +74,75 @@
         ],
         "dominant_c": 274,
         "dominant_is_self_conjugate": false
+      },
+      "16": {
+        "magic": false,
+        "canonical": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "dominant_nu": [
+          8,
+          8,
+          4,
+          4,
+          4,
+          4
+        ],
+        "dominant_c": 387,
+        "dominant_is_self_conjugate": false
+      },
+      "20": {
+        "magic": true,
+        "canonical": [
+          5,
+          5,
+          4,
+          4,
+          2
+        ],
+        "dominant_nu": [
+          10,
+          10,
+          5,
+          5,
+          4,
+          4,
+          2
+        ],
+        "dominant_c": 85077,
+        "dominant_is_self_conjugate": false
+      },
+      "28": {
+        "magic": true,
+        "canonical": [
+          6,
+          6,
+          5,
+          5,
+          4,
+          2
+        ],
+        "dominant_nu": [
+          12,
+          12,
+          12,
+          6,
+          5,
+          5,
+          4
+        ],
+        "dominant_c": 38400599,
+        "dominant_is_self_conjugate": false
       }
     },
     "summary": {
       "magic_self_conj_dominant": 0,
-      "magic_total_tested": 1,
+      "magic_total_tested": 3,
       "nonmagic_self_conj_dominant": 0,
-      "nonmagic_total_tested": 1,
+      "nonmagic_total_tested": 2,
       "hypothesis_supported": false
     }
   }
