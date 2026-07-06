@@ -18,16 +18,8 @@ $$
   \lim_{q \to 1} [j]_q\,[j+1]_q  =  j\,(j+1).
 $$
 
-The limits are taken over the punctured neighbourhood $q \to 1$,
-$q \neq 1$, in the order topology of $\mathbb{R}$. The value $j(j+1)$
-is the eigenvalue of the usual Casimir
-$C = FE + \tfrac{1}{2}H(\tfrac{1}{2}H + 1)$ on the spin-$j$
-representation, recovering the classical angular-momentum-squared
-spectrum.
+## Archimedean Limit
 
-**Archimedean specialisation (§7c).** This block sits on the
-archimedean side of the substrate wall: the generic algebraic
-construction of the $q$-Casimir stays coefficient-field-free in
-[def:q-casimir](#def:q-casimir), while the real-analytic $q \to 1$
-limit — a `Tendsto` statement over $\mathbb{R}$ — is separated here and
-consumes that generic eigenvalue at $K := \mathbb{R}$.
+The limits act over the punctured neighbourhood $q \to 1$, $q \neq 1$, in the order topology of $\mathbb{R}$. The value $j(j+1)$ is the eigenvalue of the standard Casimir $C = FE + \tfrac{1}{2}H(\tfrac{1}{2}H + 1)$ on the spin-$j$ representation, recovering the classical angular-momentum-squared spectrum.
+
+**Archimedean specialisation (§7c).** This block separates the generic algebraic construction of the $q$-Casimir ([def:q-casimir](#def:q-casimir)) from its real-analytic $q \to 1$ limit. The generic eigenvalue remains coefficient-field-free, while the `Tendsto` limit over $\mathbb{R}$ evaluates the observable strictly on the archimedean side of the substrate wall.

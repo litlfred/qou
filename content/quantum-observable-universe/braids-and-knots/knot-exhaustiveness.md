@@ -1,53 +1,16 @@
 **Open question.**
-The knot eigenbasis completeness theorem
-([knot eigenbasis completeness](#prop:knot-eigenbasis-complete))
-establishes that every irreducible summand of
-$V^{\otimes n}$ is **detected** by some braid closure via
-the Markov trace
-([Jones–Markov trace](#thm:jones-markov-trace)).  This is
-surjectivity of detection: no summand is invisible.
+The knot eigenbasis completeness theorem ([knot eigenbasis completeness](#prop:knot-eigenbasis-complete)) establishes that every irreducible summand of $V^{\otimes n}$ is detected by some braid closure via the Markov trace ([Jones–Markov trace](#thm:jones-markov-trace)). This guarantees surjectivity of detection: no summand remains invisible.
 
-A stronger question: **do the knot types that appear in the
-Descartes universe exhaust the space of states?**
+A stronger question emerges: do the knot types appearing in the Descartes universe exhaust the space of states?
 
-The generation completeness theorem shows that every knot
-with Seifert genus $g(\mathfrak{K}) \leq 4$ appears in the
-spectrum — the genus bound of Bring's surface captures all
-embeddable knots in that range.  Knots with $g > 4$ are
-excluded by the spectral filter.
+The generation completeness theorem proves that every knot with Seifert genus $g(\mathfrak{K}) \leq 4$ appears in the spectrum. The genus bound of Bring's surface captures all embeddable knots in that range. Knots with $g > 4$ are excluded by the spectral filter.
 
-But this does not address whether the **Jones polynomial
-itself** is a faithful invariant: whether distinct knot
-types always produce distinct polynomials.  The QOU uses
-the Jones polynomial only for detection (non-degeneracy
-on irreducibles), not for classification.  The classical
-open question — does $J_K(q) = 1$ imply $K$ is the
-unknot? — is never needed in our framework, because the
-Markov trace non-degeneracy theorem is sufficient for the
-knot eigenbasis.
+This does not confirm whether the Jones polynomial is a faithful invariant—whether distinct knot types always produce distinct polynomials. We use the Jones polynomial only for detection (non-degeneracy on irreducibles), never for classification. Our framework avoids the classical open question of whether $J_K(q) = 1$ implies $K$ is the unknot. The Markov trace non-degeneracy theorem suffices for the knot eigenbasis.
 
-This leaves three nested questions:
+Three nested questions remain:
 
-1. **(Detection.)** Does every irreducible summand get
-   labelled by a knot?  **Yes** — proven by Alexander
-   surjectivity + Markov non-degeneracy.
+1. **(Detection.)** Does a knot label every irreducible summand? **Yes.** Alexander surjectivity and Markov non-degeneracy prove this.
+2. **(Generation.)** Does every knot with $g \leq 4$ appear? **Yes.** Generation completeness from the seven torus knot generators and Skein crossing changes proves this.
+3. **(Faithfulness.)** Do distinct knots always produce distinct states? **Open.** If two distinct knots $\mathfrak{K} \neq \mathfrak{K}'$ yield the same Jones polynomial $J_{\mathfrak{K}}(q) = J_{\mathfrak{K}'}(q)$, they would be physically indistinguishable in the Descartes universe—representing the same particle. Whether this occurs, and its physical consequence, remains an open question.
 
-2. **(Generation.)** Does every knot with $g \leq 4$
-   appear?  **Yes** — proven by generation completeness
-   from the seven torus knot generators plus Skein
-   crossing changes.
-
-3. **(Faithfulness.)** Do distinct knots always produce
-   distinct states?  **Open.**  If two distinct knots
-   $\mathfrak{K} \neq \mathfrak{K}'$ have the same Jones
-   polynomial $J_{\mathfrak{K}}(q) = J_{\mathfrak{K}'}(q)$,
-   they would be physically indistinguishable in the
-   Descartes universe — they would represent the same
-   particle.  Whether this occurs (and whether it has
-   physical consequences) is an open question.
-
-The first two questions are settled by existing theorems.
-The third depends on progress in classical knot theory
-and may already be answered by the full HOMFLY-PT
-polynomial (which carries strictly more information than
-the Jones specialisation).
+Existing theorems settle the first two questions. The third relies on progress in classical knot theory. The full HOMFLY-PT polynomial (which carries strictly more information than the Jones specialisation) may already provide the answer.

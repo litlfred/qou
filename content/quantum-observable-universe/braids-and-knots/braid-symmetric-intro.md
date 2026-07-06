@@ -1,2 +1,1 @@
-With the categorical origin established, we now give explicit presentations
-and representations of the braid group.
+Having established the categorical origin, we now provide explicit presentations and representations of the braid group.

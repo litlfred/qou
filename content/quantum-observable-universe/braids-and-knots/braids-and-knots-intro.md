@@ -1,25 +1,9 @@
-In the QOU framework, traditional path integrals are replaced by finite sums
-over the discrete fibre structure. Since the base space $B$ and each fibre are
-finite, the continuum measure $\mathcal{D}\phi$ collapses to a combinatorial
-sum, eliminating the need for renormalisation of divergent integrals.
+The QOU framework replaces traditional path integrals with finite sums over a discrete fibre structure. Because both the base space $B$ and each fibre are finite, the continuum measure $\mathcal{D}\phi$ reduces to a combinatorial sum. This eliminates the need to renormalize divergent integrals.
 
-The braid group acts accordingly on the fibre degrees of freedom. What we
-observe as particle interactions corresponds to the action of braid operators
-exchanging strands in the fibre bundle. The algebraic content of these
-interactions is therefore encoded in braid-group representations rather than in
-Feynman vertices.
+The braid group acts on the fibre degrees of freedom. Observable particle interactions correspond to braid operators exchanging strands in the fibre bundle. Consequently, braid-group representations, rather than Feynman vertices, encode the algebraic content of these interactions.
 
-The exchange operations carry a $q$-deformation parameter inherited from the
-quantum group structure of the fibres. Concretely, the $R$-matrix of
-$\mathcal{U}_q(\mathfrak{su}(2))$ furnishes a $q$-deformed braid operator
-whose eigenvalues govern the phase acquired under particle exchange.
+These exchange operations carry a $q$-deformation parameter inherited from the quantum group structure of the fibres. The $R$-matrix of $\mathcal{U}_q(\mathfrak{su}(2))$ provides a $q$-deformed braid operator whose eigenvalues govern the phase acquired under particle exchange.
 
-Under this correspondence, specific knot types map to particle identities. The
-unknot, carrying trivial braiding, is identified with the neutrino; the trefoil
-knot $3_1$ is identified with the electron; and heavier charged leptons
-($\mu$, $\tau$) appear as higher torus knots $T_{2,2k+1}$ through the brane
-tower. Quarks sit inside a Borromean braid configuration of three linked
-unknots on the exceptional divisor.
-The geometry that carries these knots — Bring's surface — is developed in
-[Chapter 9](#chap:brings-surface); the physical predictions it generates
-are collected in [Chapter 11](#chap:observations).
+This correspondence maps specific knot types to particle identities. The unknot, which carries trivial braiding, represents the neutrino. The trefoil knot $3_1$ represents the electron. Heavier charged leptons ($\mu$, $\tau$) appear as higher torus knots $T_{2,2k+1}$ across the brane tower. Quarks reside in a Borromean braid configuration of three linked unknots on the exceptional divisor. 
+
+We develop the geometry carrying these knots, Bring's surface, in [Chapter 9](#chap:brings-surface). The physical predictions it generates appear in [Chapter 11](#chap:observations).

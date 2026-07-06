@@ -2,11 +2,11 @@ Write $\tau_1,\tau_2,\tau_3$ for the Pauli matrices and set
 
 ```tex
 \begin{equation}\label{eq:su2-basis}
-  e_a=-\tfrac{i}{2}\tau_a,\qquad a=1,2,3,
+  e_a=-\tfrac{i}{2}\tau_a,\qquad a=1,2,3.
 \end{equation}
 ```
 
-so that the Lie bracket is
+The Lie bracket then reads
 
 ```tex
 \begin{equation}\label{eq:su2-commutator}

@@ -1,62 +1,30 @@
 **Proposition (locality–non-locality reconciliation).**
-*The two seemingly contradictory operational stances in the QOU
-manuscript — that single Hecke crossings obey a Markov locality
-property (memoryless of upstream history) while composite braid
-evaluation is non-local (Gröbner–Shirshov reduction sweeps the
-whole braid word) — are not contradictory but
-complementary statements about different operations on the same
-object. They are reconciled by Wenzl's product factorisation of
-the Markov trace.*
+*The QOU manuscript presents two seemingly contradictory operational stances: single Hecke crossings obey a Markov locality property (memoryless of upstream history), while composite braid evaluation is non-local (Gröbner–Shirshov reduction sweeps the whole braid word). These are complementary statements about different operations on the same object, reconciled by Wenzl's product factorisation of the Markov trace.*
 
-**Statement.** Let $\beta = \sigma_{i_1} \sigma_{i_2} \cdots \sigma_{i_N}$
-be a braid word in $B_n$, and let $\mathrm{NF}_{\mathrm{GS}}(\beta)
-= e_{j_1} \cdot e_{j_2} \cdots e_{j_M}$ be its Gröbner–Shirshov
-normal form in $H_n(R, q)$. Then:
+**Statement.** Let $\beta = \sigma_{i_1} \sigma_{i_2} \cdots \sigma_{i_N}$ be a braid word in $B_n$, and let $\mathrm{NF}_{\mathrm{GS}}(\beta) = e_{j_1} \cdot e_{j_2} \cdots e_{j_M}$ be its Gröbner–Shirshov normal form in $H_n(R, q)$. Then:
 
-1. *(Markov locality, single-generator step.)* For every $x \in
-   H_n(R, q)$,
+1. *(Markov locality, single-generator step.)* For every $x \in H_n(R, q)$,
    $$
      \mathrm{tr}_{M, n+1}(x \cdot \sigma_n^{\pm 1})
      \;=\;
      z^{\pm 1} \cdot \mathrm{tr}_{M, n}(x),
      \qquad z = 1/(q^{1/2} + q^{-1/2}).
    $$
-   *The contribution of a single newly-added generator $\sigma_n$ is
-   a fixed scalar $z^{\pm 1}$ — independent of $x$. The new crossing
-   "doesn't look back."*
+   *The contribution of a single newly-added generator $\sigma_n$ is a fixed scalar $z^{\pm 1}$, independent of $x$. The new crossing does not depend on the upstream history.*
 
-2. *(GS non-locality, composite braid.)* The normal form
-   $\mathrm{NF}_{\mathrm{GS}}(\beta)$ depends on the full braid
-   word; rewriting rules (Hecke quadratic relation, braid relation,
-   far-commutativity) act non-locally across $\beta$ during reduction.
+2. *(GS non-locality, composite braid.)* The normal form $\mathrm{NF}_{\mathrm{GS}}(\beta)$ depends on the full braid word. Rewriting rules (Hecke quadratic relation, braid relation, far-commutativity) act non-locally across $\beta$ during reduction.
 
-3. *(Product factorisation bridge.)* The Markov trace of the normal
-   form decomposes as a product of local vertex volumes:
+3. *(Product factorisation bridge.)* The Markov trace of the normal form decomposes as a product of local vertex volumes:
    $$
      \mathrm{tr}_M\bigl(\rho_{\mathrm{NF}}(\beta)\bigr)
      \;=\;
      \prod_{i = 1}^{M} \widehat{V}_i(q),
    $$
-   *where the vertex volumes $\widehat{V}_i(q)$ are local in the
-   normal-form word — each depends only on its own normal-form
-   generator $e_{j_i}$ and the modified Markov-parameter
-   coefficients $(a_i, b_i)$ produced by the GS algorithm
-   (Wenzl 1988 [`wenzl1988`]).*
+   *where the vertex volumes $\widehat{V}_i(q)$ are local in the normal-form word. Each depends only on its own normal-form generator $e_{j_i}$ and the modified Markov-parameter coefficients $(a_i, b_i)$ produced by the GS algorithm (Wenzl 1988 [`wenzl1988`]).*
 
-**Reconciliation.** The Gröbner–Shirshov algorithm "digests" the
-global, non-local braid entanglement into modified local coefficients
-at each normal-form generator. After digestion, the Markov trace
-factorises locally over the normal form — recovering
-single-generator locality on the *post-reduction* word. The two
-stances are sequential, not contradictory:
+**Reconciliation.** The Gröbner–Shirshov algorithm digests the global, non-local braid entanglement into modified local coefficients at each normal-form generator. After this reduction, the Markov trace factorises locally over the normal form, recovering single-generator locality on the post-reduction word. The two stances are sequential, not contradictory:
 
-- *Step 1 (non-local):* Apply Gröbner–Shirshov reduction to
-  $\beta$. This sweeps the whole braid word and produces local
-  coefficients that absorb the global entanglement.
-- *Step 2 (local):* Evaluate $\mathrm{tr}_M$ on the normal form.
-  Markov locality applies: the trace factorises over the normal-form
-  generators.
+- *Step 1 (non-local):* Apply Gröbner–Shirshov reduction to $\beta$. This step sweeps the whole braid word and produces local coefficients that absorb the global entanglement.
+- *Step 2 (local):* Evaluate $\mathrm{tr}_M$ on the normal form. Markov locality applies: the trace factorises over the normal-form generators.
 
-The composite operation (input: braid word $\beta$; output:
-$\mathrm{tr}_M(\rho(\beta))$) is therefore *local after
-normalisation*, even though normalisation itself is non-local.
+The composite operation (input: braid word $\beta$; output: $\mathrm{tr}_M(\rho(\beta))$) is therefore local after normalisation, even though normalisation itself is non-local.

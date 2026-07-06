@@ -14,26 +14,12 @@ square of the pion-type rotation.*
 
 ## The half-rotation interpretation
 
-The figure-eight knot $4_1 = (\sigma_1\sigma_2^{-1})^2$ is the
-**composition of two pion-type rotations**.  Each pion rotation
-advances the Reeb phase by $\theta$; two such advances give the
-figure-eight's eigenvalue phase $2\theta \pmod{2\pi}$.
+The figure-eight knot $4_1 = (\sigma_1\sigma_2^{-1})^2$ factors as the composition of two pion-type rotations. Each pion rotation advances the Reeb phase by $\theta$. Two such advances yield the figure-eight's eigenvalue phase $2\theta \pmod{2\pi}$.
 
-The muon-anchor identity
-$m_\mu / m_\mathfrak{e} = \mathrm{Vol}(4_1) / \hbar_q^2$
-uses the volume of the figure-eight — the asymptotic value of
-twice the pion rotation angle.  The pion is the **generator**
-of the Reeb rotation tower; the figure-eight is its square.
+The muon-anchor identity $m_\mu / m_\mathfrak{e} = \mathrm{Vol}(4_1) / \hbar_q^2$ derives from the volume of the figure-eight knot, which corresponds asymptotically to twice the pion rotation angle. The pion generates the Reeb rotation tower; the figure-eight is its square.
 
 ## Connection to pion decay
 
-The pion decay $\pi \to \mu + \nu$
-([`prop:hoefsmit-binding-amplitude`](hoefsmit-binding-amplitude.md))
-de-entangles $V_{(2,1)}$ into $V_{(2)} \oplus V_{(1,1)}$.  This
-is the **inverse** of a half-Reeb-rotation: the pion's eigenvalue
-phase $\theta$ is the energy that was stored in the entanglement,
-and the decay releases it by undoing the rotation.
+The pion decay $\pi \to \mu + \nu$ ([`prop:hoefsmit-binding-amplitude`](hoefsmit-binding-amplitude.md)) de-entangles $V_{(2,1)}$ into $V_{(2)} \oplus V_{(1,1)}$. This topological unwinding acts as the inverse of a half-Reeb-rotation. The pion's eigenvalue phase $\theta$ represents energy stored in the entanglement. Decay releases this energy by undoing the rotation.
 
-Two such decays (two pions) would undo a full figure-eight
-rotation — connecting the meson decay energy to the lepton
-mass ratio through the composition $4_1 = (\text{half-rotation})^2$.
+Two such decays (two pions) undo a full figure-eight rotation. This composition $4_1 = (\text{half-rotation})^2$ explicitly links the meson decay energy to the lepton mass ratio.
