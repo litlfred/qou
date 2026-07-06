@@ -1,23 +1,8 @@
-This remark expresses the Reeb-period complexity argument of
-[P vs NP in the QOU](#conj:p-vs-np-qou) as a literal surreal
-inequality.
+This remark expresses the Reeb-period complexity argument of [P vs NP in the QOU](#conj:p-vs-np-qou) as a literal surreal inequality.
 
-**Setup.** Let $\varepsilon \in \mathrm{Der}(A)$ be the Reeb
-infinitesimal ([Reeb infinitesimal](#def:reeb-epsilon)),
-$q = 1 + \varepsilon$ ([$q$ from $\varepsilon$](#def:q-from-epsilon)).
-A $q$-substrate computation has access to the Reeb-period budget
-$\Omega_q \asymp \varepsilon^{-1}$
-([surreal rate calculus](#prop:surreal-rate-calculus));
-a classical computation has access to the mass-gap budget
-$\Delta_q \asymp \varepsilon^3$ per elementary step.
+**Setup.** Let $\varepsilon \in \mathrm{Der}(A)$ be the Reeb infinitesimal ([Reeb infinitesimal](#def:reeb-epsilon)), and $q = 1 + \varepsilon$ ([$q$ from $\varepsilon$](#def:q-from-epsilon)). A $q$-substrate computation has access to the Reeb-period budget $\Omega_q \asymp \varepsilon^{-1}$ ([surreal rate calculus](#prop:surreal-rate-calculus)). A classical computation has access to the mass-gap budget $\Delta_q \asymp \varepsilon^3$ per elementary step.
 
-**The surreal bound.** For an NP-complete instance of size $n$,
-let $\delta_n > 0$ denote the per-step standard-real efficiency of
-the $q$-algorithm.  A classical simulation of the $q$-algorithm
-requires $2^n \cdot \delta_n^2 \cdot \Omega_q$ elementary steps to
-replicate a full Reeb holonomy, while the mass-gap budget available
-over the same Reeb period is $2^n \cdot \Delta_q$.  By
-[surreal squeeze](#lem:surreal-squeeze),
+**The surreal bound.** For an NP-complete instance of size $n$, let $\delta_n > 0$ denote the per-step standard-real efficiency of the $q$-algorithm. A classical simulation of the $q$-algorithm requires $2^n \cdot \delta_n^2 \cdot \Omega_q$ elementary steps to replicate a full Reeb holonomy. The mass-gap budget available over the same Reeb period is $2^n \cdot \Delta_q$. By [surreal squeeze](#lem:surreal-squeeze),
 
 $$
   \delta_n^2 \cdot \Omega_q
@@ -26,43 +11,12 @@ $$
   \qquad (\text{in } \mathbb{R}(\varepsilon) \subset \mathbf{No}).
 $$
 
-Multiplying through by the standard-real factor $2^n$ preserves the
-inequality.  In $\omega$-adic form
-([Big-O via $\ordw$](#rem:conway-normal-form)),
-$\ordw(2^n \cdot \delta_n^2 \cdot \Omega_q) = 1 > -3 = \ordw(2^n \cdot \Delta_q)$:
-the classical simulation sits at strictly higher $\omega$-order
-than the classical budget.
+Multiplying through by the standard-real factor $2^n$ preserves the inequality. In $\omega$-adic form ([Big-O via $\ordw$](#rem:conway-normal-form)), $\ordw(2^n \cdot \delta_n^2 \cdot \Omega_q) = 1 > -3 = \ordw(2^n \cdot \Delta_q)$. The classical simulation sits at strictly higher $\omega$-order than the classical budget.
 
-**Conclusion.** The classical simulation of any non-trivial
-$q$-algorithm (standard-real efficiency $\delta_n > 0$) exceeds its
-classical budget by a full $\omega$-order.  Taking the standard part
-([calculus up to $\varepsilon$](#rem:calculus-up-to-epsilon))
-collapses the transfinite advantage of the $q$-algorithm: under
-$\mathrm{st}_{\varepsilon \to 0}$, the $2^n$-fold Reeb speed-up is
-lost.  Therefore the classical complexity classes $\mathbf{P}$ and
-$\mathbf{NP}$ cannot be identified via the standard-part functor,
-which is the content of [P vs NP in the QOU](#conj:p-vs-np-qou).
+**Conclusion.** The classical simulation of any non-trivial $q$-algorithm (standard-real efficiency $\delta_n > 0$) exceeds its classical budget by a full $\omega$-order. Taking the standard part ([calculus up to $\varepsilon$](#rem:calculus-up-to-epsilon)) collapses the transfinite advantage of the $q$-algorithm. Under $\mathrm{st}_{\varepsilon \to 0}$, we lose the $2^n$-fold Reeb speed-up. Therefore we cannot identify the classical complexity classes $\mathbf{P}$ and $\mathbf{NP}$ via the standard-part functor. This is the content of [P vs NP in the QOU](#conj:p-vs-np-qou).
 
-**Interpretation.** The remark does not prove $\mathbf{P} \neq \mathbf{NP}$
-classically; it shows that the QOU framework, assuming
-$\mathbf{P} \subsetneq \mathrm{BQP}_q$ at positive $\varepsilon$
-(a widely-believed non-classical separation under the topological
-quantum computation model \cite{freedman2003}), propagates to the
-classical separation under the standard-part functor.
+**Interpretation.** We do not prove $\mathbf{P} \neq \mathbf{NP}$ classically. We show that the QOU framework propagates the separation $\mathbf{P} \subsetneq \mathrm{BQP}_q$ at positive $\varepsilon$ to the classical separation under the standard-part functor.
 
-**Relation to Cook--Levin.**  The classical
-NP-completeness structure \cite{cook1971} is preserved by the standard part, so
-any Cook--Levin reduction on the $q$-substrate descends to a
-Cook--Levin reduction classically.  Combined with the surreal
-squeeze above, the separation $\mathbf{P} \neq \mathbf{NP}$ follows
-from the strict inclusion at positive $\varepsilon$ and the
-non-compressibility witness of
-[P vs NP in the QOU](#conj:p-vs-np-qou).
+**Relation to Cook--Levin.** The classical NP-completeness structure is preserved by the standard part. Any Cook--Levin reduction on the $q$-substrate descends to a Cook--Levin reduction classically. Combined with the surreal squeeze above, the separation $\mathbf{P} \neq \mathbf{NP}$ follows from the strict inclusion at positive $\varepsilon$ and the non-compressibility witness of [P vs NP in the QOU](#conj:p-vs-np-qou).
 
-**Caveat.** Unlike the RH, NS, and Collatz bounds, the P-vs-NP
-squeeze is conditional on an independent conjecture
-(non-compressibility of $\mathrm{BQP}_q \to \mathbf{P}$ as $\varepsilon \to 0$).
-This places P-vs-NP in the *conditional* millennium-problem column
-rather than the *unconditional* one; see
-[millennium unification](#rem:millennium-unification) for the
-side-by-side table.
+**Caveat.** Unlike the RH, NS, and Collatz bounds, the P-vs-NP squeeze is conditional on the non-compressibility of $\mathrm{BQP}_q \to \mathbf{P}$ as $\varepsilon \to 0$. This places P-vs-NP in the conditional millennium-problem column. See [millennium unification](#rem:millennium-unification) for the side-by-side table.

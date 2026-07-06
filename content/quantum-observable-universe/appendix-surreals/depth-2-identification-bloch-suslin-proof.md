@@ -1,6 +1,6 @@
 ### Proof chain
 
-**Step 1 (Bloch group, Bloch 1978).** Define the Bloch group of $F$:
+**Step 1 (Bloch group).** We define the Bloch group of $F$:
 
 $$
   \mathfrak{B}(F)
@@ -8,7 +8,7 @@ $$
   \mathbb{Z}[F^\times \setminus \{1\}] \;/\; \bigl(\text{5-term relations, torsion}\bigr)
 $$
 
-where the 5-term relations are
+The 5-term relations are:
 
 $$
   \{x\}_2 - \{y\}_2 + \left\{\tfrac{y}{x}\right\}_2 - \left\{\tfrac{1 - x^{-1}}{1 - y^{-1}}\right\}_2 + \left\{\tfrac{1 - x}{1 - y}\right\}_2 \;=\; 0
@@ -16,28 +16,21 @@ $$
 
 for all $x, y \in F^\times$ with $x, y, x/y \neq 1$.
 
-The Bloch–Wigner dilogarithm $D \colon F \to \mathbb{R}$ extends
-$\mathbb{Q}$-linearly to a *well-defined* map
+The Bloch–Wigner dilogarithm $D \colon F \to \mathbb{R}$ satisfies the 5-term relation as a function on $F$-points (Wigner 1955; Bloch 1978). It extends $\mathbb{Q}$-linearly to a well-defined map:
 
 $$
-  D \;\colon\; \mathfrak{B}(F) \otimes \mathbb{Q} \;\longrightarrow\; \mathbb{R} \big/ \pi^2 \mathbb{Q}
+  D \;\colon\; \mathfrak{B}(F) \otimes \mathbb{Q} \;\longrightarrow\; \mathbb{R} \big/ \pi^2 \mathbb{Q}.
 $$
 
-because $D$ satisfies the 5-term relation as a function on
-$F$-points (Wigner 1955; Bloch 1978).
-
-**Step 2 (Suslin's isomorphism, Suslin 1986).** *Theorem (Suslin).*
-There is a natural isomorphism of $\mathbb{Q}$-vector spaces
+**Step 2 (Suslin's isomorphism).** Suslin (1986) establishes a natural isomorphism of $\mathbb{Q}$-vector spaces:
 
 $$
   K_3^{\mathrm{ind}}(F) \otimes \mathbb{Q}
   \;\cong\;
-  \mathfrak{B}(F) \otimes \mathbb{Q}
+  \mathfrak{B}(F) \otimes \mathbb{Q}.
 $$
 
-induced by sending the generator $\{x\}_2 \in \mathfrak{B}(F)$ to
-the corresponding class in $K_3^{\mathrm{ind}}$ via the
-Bloch–Wigner / Beilinson regulator. The composed map
+This isomorphism sends the generator $\{x\}_2 \in \mathfrak{B}(F)$ to the corresponding class in $K_3^{\mathrm{ind}}$ via the Bloch–Wigner / Beilinson regulator. The composed map:
 
 $$
   K_3^{\mathrm{ind}}(F) \otimes \mathbb{Q}
@@ -47,12 +40,9 @@ $$
   \mathbb{R} \big/ \pi^2 \mathbb{Q}
 $$
 
-is the **Bloch–Suslin regulator**, and it is *injective after
-tensoring with $\mathbb{R}$* (Borel + Suslin).
+is the **Bloch–Suslin regulator**. It is injective after tensoring with $\mathbb{R}$ (Borel + Suslin).
 
-**Step 3 (archimedean image of $G^{(2)}$, this paper).** The
-substrate convolution algebra $\mathcal{H}_q$'s depth-2 grouplike
-$\mathrm{Li}_2^q(z)$ for $z \in F^\times$ has archimedean image
+**Step 3 (archimedean image of $G^{(2)}$).** The substrate convolution algebra $\mathcal{H}_q$'s depth-2 grouplike $\mathrm{Li}_2^q(z)$ for $z \in F^\times$ has archimedean image:
 
 $$
   \tau_{\mathrm{arch}}\!\bigl(\mathrm{Li}_2^q(z)\bigr)
@@ -60,9 +50,7 @@ $$
   \mathrm{Li}_2(z) \pmod{\mathcal{P}_1}
 $$
 
-by [`prop:categorical-laplace-unique`](#prop:categorical-laplace-unique)
-combined with the analytic continuation of $\mathrm{Li}_2^q$ to
-$\mathrm{Li}_2$ at $q \to 1$. The Bloch–Wigner companion
+by [`prop:categorical-laplace-unique`](#prop:categorical-laplace-unique) combined with the analytic continuation of $\mathrm{Li}_2^q$ to $\mathrm{Li}_2$ at $q \to 1$. The Bloch–Wigner companion:
 
 $$
   D(z)
@@ -70,8 +58,7 @@ $$
   \mathrm{Im}\,\mathrm{Li}_2(z) + \arg(1-z)\log|z|
 $$
 
-is the *single-valued* version of $\mathrm{Li}_2$, well-defined
-modulo $\pi^2 \mathbb{Q}$. Comparing:
+is the single-valued version of $\mathrm{Li}_2$, well-defined modulo $\pi^2 \mathbb{Q}$. Comparing them yields:
 
 $$
   \tau_{\mathrm{arch}}\!\bigl(\mathrm{Li}_2^q(z)\bigr) \pmod{\mathcal{P}_1}
@@ -93,33 +80,18 @@ $$
   \end{array}
 $$
 
-The diagonal arrow $G^{(2)}\big|_F \big/ \mathcal{P}_1 \to K_3^{\mathrm{ind}}(F) \otimes \mathbb{Q}$
-is **bijective after tensoring with $\mathbb{R}$** by the
-combination of Suslin's isomorphism and Borel's regulator
-injectivity. $\square$
+The diagonal arrow $G^{(2)}\big|_F \big/ \mathcal{P}_1 \to K_3^{\mathrm{ind}}(F) \otimes \mathbb{Q}$ is bijective after tensoring with $\mathbb{R}$. This follows from the combination of Suslin's isomorphism and Borel's regulator injectivity. $\square$
 
 ### Scope of the result
 
-**Proved**:
-- $G^{(2)}(\mathcal{H}_q)\big|_F \big/ \mathcal{P}_1$ has dimension
- $\dim K_3^{\mathrm{ind}}(F) \otimes \mathbb{Q} = r_2$ (Borel for
- $n = 2$), where $r_2$ = number of complex places of $F$.
-- Image of $\tau_{\mathrm{arch}}$ on $G^{(2)}|_F$ equals image of
- Bloch–Suslin regulator on $K_3^{\mathrm{ind}}(F)$.
-- For each Bring-natural $F = \mathbb{Q}(z_K)$, the depth-2 row
- of [`rem:transcendental-accounting`](#rem:transcendental-accounting)
- is a *theorem*, not a conjecture.
+**Proved:**
+- The space $G^{(2)}(\mathcal{H}_q)\big|_F \big/ \mathcal{P}_1$ has dimension $\dim K_3^{\mathrm{ind}}(F) \otimes \mathbb{Q} = r_2$, where $r_2$ is the number of complex places of $F$ (Borel for $n = 2$).
+- The image of $\tau_{\mathrm{arch}}$ on $G^{(2)}|_F$ equals the image of the Bloch–Suslin regulator on $K_3^{\mathrm{ind}}(F)$.
+- For each Bring-natural $F = \mathbb{Q}(z_K)$, the depth-2 row of [`rem:transcendental-accounting`](#rem:transcendental-accounting) is a theorem.
 
-**Not proved by this**:
-- Identification of *abstract Hopf algebras*: $G^{(2)}(\mathcal{H}_q)$
- as a Hopf algebra over $F$ vs $K_3^{\mathrm{ind}}(F) \otimes \mathbb{Q}$
- as a $\mathbb{Q}$-vector space. The image-direction match is
- what is proved here; abstract structural equivalence requires
- the motivic interpretation of $\mathcal{H}_q$ (open).
-- Generation of *all* of $\mathcal{P}_2 / \mathcal{P}_1$ across
- *all* number fields by $G^{(2)}(\mathcal{H}_q)$. This is depth-2
- generation, expected but technical (compatibility across
- $F$'s).
+**Not proved:**
+- The identification of abstract Hopf algebras. We identify $G^{(2)}(\mathcal{H}_q)$ as a Hopf algebra over $F$ against $K_3^{\mathrm{ind}}(F) \otimes \mathbb{Q}$ as a $\mathbb{Q}$-vector space. We prove the image-direction match. Abstract structural equivalence requires the motivic interpretation of $\mathcal{H}_q$ (which remains open).
+- The generation of all of $\mathcal{P}_2 / \mathcal{P}_1$ across all number fields by $G^{(2)}(\mathcal{H}_q)$. This requires compatibility across $F$.
 
 ### Generalisations (depth $\geq 3$, conditional)
 
@@ -132,6 +104,4 @@ The same proof chain at depth 3 requires:
 | 3 (single-valued) | Bloch–Wigner $D(z)$ | Goncharov $D_3(z)$ — single-valued trilog | provable |
 | 4 (image direction) | $\tau_{\mathrm{arch}} \mathrm{Li}_2^q = D \pmod{\mathcal{P}_1}$ | $\tau_{\mathrm{arch}} \mathrm{Li}_3^q = D_3 \pmod{\mathcal{P}_2}$ | provable |
 
-Steps 3, 4 generalize. **Step 2 (Goncharov's motivic
-conjecture) is the open piece**. Conditional on Step 2, the
-depth-3 identification follows by the same argument.
+Steps 3 and 4 generalize. Step 2 (Goncharov's motivic conjecture) is the open piece. Conditional on Step 2, the depth-3 identification follows by the same argument.

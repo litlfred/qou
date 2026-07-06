@@ -1,30 +1,12 @@
-**Remark (transcendental-accounting ledger — every period in the
-paper, indexed by Goncharov depth).**
+**Remark (transcendental-accounting ledger — every period in the paper, indexed by Goncharov depth).**
 
-The dual ledger to
-[`rem:algebraic-core-survives`](#rem:algebraic-core-survives): that
-block enumerates *what algebra survives* the archimedean wall; this
-block enumerates *what transcendentals appear on the other side* —
-which periods, where, how related, and whether their post-archimedean
-relations are forced by pre-archimedean $q$-rational structure or
-are archimedean accidents.
+This is the dual ledger to [`rem:algebraic-core-survives`](#rem:algebraic-core-survives). That block enumerates what algebra survives the archimedean wall. This block enumerates what transcendentals appear on the other side: which periods, where, how they relate, and whether their post-archimedean relations are forced by pre-archimedean $q$-rational structure or are archimedean accidents.
 
 ### Significance (the wall-crossing question)
 
-A relation $R(\alpha_1, \ldots, \alpha_m) = 0$ in $\mathbb{Z}[q^{\pm 1}]$
-on the algebraic side **survives** under the archimedean realization
-functor $\tau_{\mathrm{arch}}$ iff it is a $q$-polynomial identity.
-A relation that holds *only* among the archimedean values
-$\tau_{\mathrm{arch}}(\alpha_i) \in \mathbb{R}$ but not among the
-$\alpha_i \in \mathbb{Z}[q^{\pm 1}]$ is an **archimedean accident**
-— typically a transcendence relation among periods (e.g. the 5-term
-Bloch–Wigner relation among hyperbolic volumes).
+A relation $R(\alpha_1, \ldots, \alpha_m) = 0$ in $\mathbb{Z}[q^{\pm 1}]$ on the algebraic side **survives** under the archimedean realization functor $\tau_{\mathrm{arch}}$ if and only if it is a $q$-polynomial identity. A relation that holds only among the archimedean values $\tau_{\mathrm{arch}}(\alpha_i) \in \mathbb{R}$ but not among the $\alpha_i \in \mathbb{Z}[q^{\pm 1}]$ is an **archimedean accident**. This is typically a transcendence relation among periods (e.g., the 5-term Bloch–Wigner relation among hyperbolic volumes).
 
-The graded-Mikusiński keystone
-([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence))
-predicts which side each relation comes from by depth. The table
-below operationalises this for every period that appears in the
-QOU paper.
+The graded-Mikusiński keystone ([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)) predicts which side each relation comes from by depth. The table below operationalises this for every period that appears in the QOU paper.
 
 ### Master table — every transcendental at a glance
 
@@ -34,13 +16,7 @@ See [Table](#tbl:transcendental-accounting-table-data).
 
 #### Fact 1 — depth-2 ceiling for hyperbolic 3-mfd volumes
 
-Every hyperbolic 3-manifold volume in the paper is depth 2 — one
-$\mathrm{Li}_2$ factor. This is **not** a paper-specific claim;
-it is forced by the Bloch–Wigner formula $\mathrm{Vol}(M) =
-\sum_i D(z_i)$ over ideal-tetrahedron triangulation. Escaping
-depth 2 requires a different invariant: $\mathrm{CS}$, hyperbolic
-4-manifolds, or trilog at algebraic points (the `bring-trilog-zeta5`
-route).
+Every hyperbolic 3-manifold volume in the paper is depth 2 (one $\mathrm{Li}_2$ factor). This is forced by the Bloch–Wigner formula $\mathrm{Vol}(M) = \sum_i D(z_i)$ over ideal-tetrahedron triangulations. Escaping depth 2 requires a different invariant: $\mathrm{CS}$, hyperbolic 4-manifolds, or the trilogarithm at algebraic points (the `bring-trilog-zeta5` route).
 
 #### Fact 2 — pre-archimedean $q$-rational relations $\Rightarrow$ post-archimedean equalities
 
@@ -52,15 +28,7 @@ $$
   \mathrm{Vol}(K) = \mathrm{Vol}(K').
 $$
 
-Reason: $\mathrm{Vol}$ is computed from $J_K^{(N)}$ via a limit
-that depends only on the polynomial. Whether the implication is
-*vacuous* (no Jones-coincident pairs among Bring-embeddable knots —
-i.e. Jones-faithfulness on this class) is open
-([`rem:knot-exhaustiveness`](#rem:knot-exhaustiveness) Question 3).
-**A single Jones-coincident pair would yield a non-trivial
-post-archimedean equality forced by $q$-rational structure** —
-exactly the "wall-crossing" prediction the keystone
-framework should make explicit.
+Reason: $\mathrm{Vol}$ is computed from $J_K^{(N)}$ via a limit that depends only on the polynomial. Whether the implication is vacuous (no Jones-coincident pairs among Bring-embeddable knots — i.e., Jones-faithfulness on this class) is open ([`rem:knot-exhaustiveness`](#rem:knot-exhaustiveness) Question 3). **A single Jones-coincident pair would yield a non-trivial post-archimedean equality forced by $q$-rational structure**. This is exactly the "wall-crossing" prediction the keystone framework makes explicit.
 
 ### Non-surviving relations: archimedean accidents
 
@@ -71,52 +39,28 @@ $$
   + D\!\left(\tfrac{1-y}{1-xy}\right) \;=\; 0
 $$
 
-holds among hyperbolic volumes (after $\tau_{\mathrm{arch}}$) but is
-**not** a $\mathbb{Q}(q)$-polynomial identity on the pre-archimedean
-side. It is an archimedean accident at depth 2 — a relation in
-$\mathcal{P}_2 / \mathcal{P}_1$ that has no $q$-polynomial witness.
+holds among hyperbolic volumes (after $\tau_{\mathrm{arch}}$) but is **not** a $\mathbb{Q}(q)$-polynomial identity on the pre-archimedean side. It is an archimedean accident at depth 2 (a relation in $\mathcal{P}_2 / \mathcal{P}_1$ that has no $q$-polynomial witness).
 
 Similar wall-crossing accidents at depth 3:
-- Goncharov's 22-term relation for $\mathrm{Li}_3$ at 5th roots;
-- $\zeta(2,1) = \zeta(3)$ (Euler 1775; an accident from the
-  algebraic side, since the multiple zeta value $\zeta(2,1)$ is
-  a separate iterated integral that just happens to evaluate to
-  the single zeta).
+- Goncharov's 22-term relation for $\mathrm{Li}_3$ at 5th roots.
+- $\zeta(2,1) = \zeta(3)$ (Euler 1775; an accident from the algebraic side, since the multiple zeta value $\zeta(2,1)$ is a separate iterated integral that evaluates to the single zeta).
 
 ### Open question: post-archimedean structure forced by Bring's $S_5$
 
-Because Bring's curve has $S_5$ symmetry, the cyclotomic field
-$\mathbb{Q}(\zeta_5)$ acts on the Bring-natural depth-3 grouplikes.
-Galois action $\sigma_a \colon \zeta_5 \mapsto \zeta_5^a$ for
-$\gcd(a, 5) = 1$ permutes:
+Bring's curve has $S_5$ symmetry. The cyclotomic field $\mathbb{Q}(\zeta_5)$ acts on the Bring-natural depth-3 grouplikes. Galois action $\sigma_a \colon \zeta_5 \mapsto \zeta_5^a$ for $\gcd(a, 5) = 1$ permutes:
 
 $$
   \{\mathrm{Li}_3(\zeta_5),\, \mathrm{Li}_3(\zeta_5^2),\, \mathrm{Li}_3(\zeta_5^3),\, \mathrm{Li}_3(\zeta_5^4)\}.
 $$
 
-The orbit-sum identity proved by the
-[`bring-trilog-zeta5-depth-3.witness.json`](https://github.com/litlfred/qou/blob/main/computations/bring-trilog-zeta5-depth-3.witness.json)
-is the **Galois-invariant trace** of this $S_5$-action. The
-**Galois-non-invariant** components — individual $\mathrm{Li}_3(\zeta_5^k)$
-values — give a 4-dim $\mathbb{Q}$-vector space of depth-3 periods
-on which $S_5$ acts irreducibly. These are *the* depth-3
-Bring-natural transcendentals; their post-archimedean structure
-(linear relations over $\overline{\mathbb{Q}}$) is governed by the
-motivic Galois group, not by the $q$-rational pre-image.
+The orbit-sum identity proved by the [`bring-trilog-zeta5-depth-3.witness.json`](https://github.com/litlfred/qou/blob/main/computations/bring-trilog-zeta5-depth-3.witness.json) is the **Galois-invariant trace** of this $S_5$-action. The **Galois-non-invariant** components (individual $\mathrm{Li}_3(\zeta_5^k)$ values) give a 4-dimensional $\mathbb{Q}$-vector space of depth-3 periods on which $S_5$ acts irreducibly. These are the depth-3 Bring-natural transcendentals. Their post-archimedean structure (linear relations over $\overline{\mathbb{Q}}$) is governed by the motivic Galois group, not by the $q$-rational pre-image.
 
-This is the cleanest concrete instance of "post-archimedean
-structure not visible at the $q$-polynomial level": an
-$S_5$-equivariant 4-dimensional period space sitting at depth 3,
-generated by Bring-natural inputs.
+This is the cleanest concrete instance of "post-archimedean structure not visible at the $q$-polynomial level": an $S_5$-equivariant 4-dimensional period space sitting at depth 3, generated by Bring-natural inputs.
 
 ### Cross-references
 
-- Pre-archimedean side (what survives algebraically):
-  [`rem:algebraic-core-survives`](#rem:algebraic-core-survives)
-- Standard-part wall-crossing: [`conj:archimedean-stpart`](#conj:archimedean-stpart),
-  [`def:standard-part-functor`](#def:standard-part-functor)
-- Per-depth witnesses:
-  [`conj:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eight-depth-2-witness),
-  [`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness)
+- Pre-archimedean side (what survives algebraically): [`rem:algebraic-core-survives`](#rem:algebraic-core-survives)
+- Standard-part wall-crossing: [`conj:archimedean-stpart`](#conj:archimedean-stpart), [`def:standard-part-functor`](#def:standard-part-functor)
+- Per-depth witnesses: [`conj:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eight-depth-2-witness), [`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness)
 - Keystone: [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)
 - Period-class chirality: [`rem:chirality-period-pairing`](#rem:chirality-period-pairing)

@@ -1,22 +1,10 @@
-**Proposition (Borel's theorem partially discharges the keystone's
-sharpness target — explicit dimensions for Bring-natural number
-fields).**
+**Proposition (Borel partially resolves the keystone's sharpness target via explicit dimensions for Bring-natural number fields).**
 
-The keystone conjecture
-([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence))
-asserts both an *inclusion* and a *sharpness* condition. Via the
-K-theory translation
-([`rem:k-theory-period-rosetta`](#rem:k-theory-period-rosetta))
-the sharpness condition factors through Borel's theorem on
-algebraic K-theory of number fields. *This proposition records
-the explicit Borel dimensions for each Bring-natural number
-field, making the partial resolution concrete.*
+The keystone conjecture ([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)) requires both an *inclusion* and a *sharpness* condition. Under the K-theory translation ([`rem:k-theory-period-rosetta`](#rem:k-theory-period-rosetta)), the sharpness condition factors through Borel's theorem on algebraic K-theory. Borel's theorem supplies explicit dimensions for each Bring-natural number field, making the partial resolution concrete.
 
-### Borel's theorem (cited)
+### Borel's Theorem
 
-**Theorem (Borel 1977).** *Let $F$ be a number field with $r_1$
-real embeddings and $r_2$ pairs of complex embeddings. Then for
-$n \geq 2$:*
+**Theorem (Borel 1977).** *Let $F$ be a number field with $r_1$ real embeddings and $r_2$ pairs of complex embeddings. For $n \geq 2$:*
 
 $$
   \dim_{\mathbb{Q}} \bigl( K_{2n-1}(F) \otimes \mathbb{Q} \bigr)
@@ -27,97 +15,46 @@ $$
   \end{cases}
 $$
 
-*Equivalently for the indecomposable part $K_{2n-1}^{\mathrm{ind}}$:
-the same formula holds for $n \geq 2$ (the indecomposable
-quotient agrees with the full group rationally).*
+*This formula also holds for the indecomposable part $K_{2n-1}^{\mathrm{ind}}$, as the indecomposable quotient agrees with the full group rationally.*
 
-### Bring-natural number fields and their Borel ranks
+### Bring-Natural Number Fields
 
-Each Bring-embeddable knot $K$ in
-[`rem:bring-embeddable-knots`](#rem:bring-embeddable-knots) has a
-shape parameter $z_K \in \overline{\mathbb{Q}}^\times$ generating
-a number field $F_K = \mathbb{Q}(z_K)$. The Borel rank gives the
-*minimum* dimension of the Beilinson regulator image at depth $n$.
+Each Bring-embeddable knot $K$ ([`rem:bring-embeddable-knots`](#rem:bring-embeddable-knots)) has a shape parameter $z_K \in \overline{\mathbb{Q}}^\times$ generating a number field $F_K = \mathbb{Q}(z_K)$. The Borel rank provides the minimum dimension of the Beilinson regulator image at depth $n$.
 
 See [Table 1](#tbl:borel-partial-resolution-table1-data).
 
-(The last row uses the *totally real* Bring-radical field rather
-than $\mathbb{Q}(\zeta_5)$; Borel ranks differ since the signature
-differs. The two fields together generate the full $S_5$-Galois
-data of Bring's quintic.)
+The last row uses the totally real Bring-radical field rather than $\mathbb{Q}(\zeta_5)$. Borel ranks differ because the signatures differ. Together, these two fields generate the full $S_5$-Galois data of Bring's quintic.
 
-### Concrete consequences
+### Concrete Consequences
 
-#### Figure-8 row (depth 2)
+#### Figure-8 Row (Depth 2)
 
-Borel's theorem says $\dim_\mathbb{Q} K_3^{\mathrm{ind}}(\mathbb{Q}(\zeta_6))
-\otimes \mathbb{Q} = 1$. The Bloch–Wigner regulator
-([Bloch 2000, Suslin 1991]) maps this rank-1 $\mathbb{Q}$-vector
-space to $\mathcal{P}_2 / \mathcal{P}_1$ injectively after
-rationalisation. **The image is precisely the $\mathbb{Q}$-line
-spanned by $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$.**
+Borel's theorem gives $\dim_\mathbb{Q} K_3^{\mathrm{ind}}(\mathbb{Q}(\zeta_6)) \otimes \mathbb{Q} = 1$. The Bloch–Wigner regulator maps this rank-1 space injectively to $\mathcal{P}_2 / \mathcal{P}_1$ after rationalisation. The image is exactly the $\mathbb{Q}$-line spanned by $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$.
 
-So:
+- Inclusion: Established via Bloch–Suslin.
+- Sharpness at depth 2 over $\mathbb{Q}(\zeta_6)$: Established. Borel and Suslin injectivity guarantee a 1-dimensional image.
 
-- Inclusion: (yes) (theorem-level — Bloch–Suslin).
-- Sharpness at depth 2 over $\mathbb{Q}(\zeta_6)$: (yes) (Borel + Suslin
-  injectivity give a 1-dim image; this matches Bloch–Wigner being
-  injective on $K_3^{\mathrm{ind}}$).
+The depth-2 case is a theorem at the figure-8 row. It requires no Beilinson conjecture.
 
-**The depth-2 case of B1 is a theorem at the figure-8 row** — no
-Beilinson conjecture needed.
+#### Bring Trilog Row (Depth 3)
 
-#### Bring trilog row (depth 3)
+Borel's theorem gives $\dim_\mathbb{Q} K_5^{\mathrm{ind}}(\mathbb{Q}(\zeta_5)) \otimes \mathbb{Q} = 2$. The Goncharov regulator maps this rank-2 space to $\mathcal{P}_3 / \mathcal{P}_2$.
 
-Borel's theorem says $\dim_\mathbb{Q} K_5^{\mathrm{ind}}(\mathbb{Q}(\zeta_5))
-\otimes \mathbb{Q} = 2$. The Goncharov regulator maps this rank-2
-$\mathbb{Q}$-space to $\mathcal{P}_3 / \mathcal{P}_2$.
+The Bring trilog witness ([`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness)) supplies four grouplike values $\{\mathrm{Li}_3(\zeta_5^k) : k = 1,2,3,4\}$. Modulo the orbit-sum relation $\sum_k \mathrm{Li}_3(\zeta_5^k) = -\frac{24}{25}\zeta(3)$, these span a vector space of dimension at most 3. Splitting real and imaginary parts and applying the $\zeta_5 \leftrightarrow \zeta_5^{-1}$ symmetry reduces the $\mathbb{Q}$-rank to exactly 2. This matches Borel's prediction.
 
-The Bring trilog witness
-([`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness))
-provides 4 grouplike values $\{\mathrm{Li}_3(\zeta_5^k) : k = 1,2,3,4\}$.
-Modulo the orbit-sum relation
-$\sum_k \mathrm{Li}_3(\zeta_5^k) = -\frac{24}{25}\zeta(3)$, these
-span a $\mathbb{Q}$-vector space of dimension at most 3 (4 values −
-1 relation). After splitting real/imaginary parts and using the
-$\zeta_5 \leftrightarrow \zeta_5^{-1}$ symmetry, the
-$\mathbb{Q}$-rank is exactly **2** — matching Borel's prediction.
+The depth-3 case at the Bring trilog row has a Borel-bounded image of dimension 2. Whether this generates the entire $\mathcal{P}_3 / \mathcal{P}_2$ over $\mathbb{Q}(\zeta_5)$ remains open as part of Beilinson's conjecture.
 
-**The depth-3 case at the Bring trilog row has Borel-bounded image
-of dimension 2.** Whether the entire $\mathcal{P}_3 / \mathcal{P}_2$
-over $\mathbb{Q}(\zeta_5)$ is generated is **Beilinson's conjecture**
-(open).
-### Honest summary
+### Status of the Keystone
 
-**Borel's theorem partially discharges the keystone**: it gives
-*explicit Borel-rank lower bounds* on the dimension of
-$\tau_\mathrm{arch}(G^{(n)})$ in $\mathcal{P}_n / \mathcal{P}_{n-1}$
-for every Bring-natural number field. **What it does not give**
-is the upper bound — i.e. that $\mathcal{P}_n / \mathcal{P}_{n-1}$
-is *no bigger* than the Borel image.
+Borel's theorem provides explicit Borel-rank lower bounds on the dimension of $\tau_\mathrm{arch}(G^{(n)})$ in $\mathcal{P}_n / \mathcal{P}_{n-1}$ for every Bring-natural number field. It does not provide the upper bound (that $\mathcal{P}_n / \mathcal{P}_{n-1}$ is no larger than the Borel image).
 
-The open piece of B1 sharpness is exactly Beilinson's
-conjecture: *the period filtration $\mathcal{P}_n$ of $\mathbb{R}$
-is generated by Beilinson regulator images of $K_{2n-1}^{\mathrm{ind}}$
-over all number fields*. Borel pins down the *generators* per
-field; Beilinson asserts that nothing else is needed.
+This open upper bound is exactly Beilinson's conjecture: the period filtration $\mathcal{P}_n$ of $\mathbb{R}$ is generated by Beilinson regulator images of $K_{2n-1}^{\mathrm{ind}}$ over all number fields. Borel pins down the generators per field; Beilinson asserts nothing else is needed.
 
-### Significance for B1
+- **Depth 2** is a theorem. The keystone holds for every individual Bring-embeddable knot.
+- **Depth 3** has theorem-level Borel-rank lower bounds. The remaining piece reduces to the standard Beilinson conjecture.
+- **Depth $\geq 4$** relies fully on Beilinson's conjecture.
 
-- **Depth 2** is a theorem (Borel + Bloch–Suslin injectivity).
-  The keystone is *no longer conjectural at depth 2 for every
-  individual Bring-embeddable knot* — only the unification
-  across the family requires a small generation argument.
-- **Depth 3** has Borel-rank lower bounds (theorem-level) plus
-  Beilinson's conjecture as the remaining piece (open, but
-  reduces B1 to a *standard external conjecture* rather than a
-  paper-internal one).
-- **Depth $\geq 4$** is fully Beilinson-conjectural.
-
-This is the precise sense in which "Borel partially resolves the
-keystone": **one direction of sharpness is a theorem; the other
-direction is reduced to a known open conjecture instead of a new
-paper-internal one.**
+Borel partially resolves the keystone by reducing one direction of sharpness to a theorem and the other to a standard external conjecture.
 
 ### Cross-references
 

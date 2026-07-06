@@ -1,1 +1,1 @@
-Surreal-number techniques applied to Millennium Prize problems: each bound is a conditional consequence of the framework's surreal extension, not an unconditional claim.
+We apply surreal-number techniques conditionally to Millennium Prize problems. We derive each bound as a conditional consequence of the framework's surreal extension, not as an unconditional claim.

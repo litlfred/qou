@@ -1,17 +1,8 @@
 **Conjecture ($q$-BSD).**
-Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be a QOU with substrate
-parameter $q$ and Descartes elliptic curve $\mathcal{E}_q$, with
-categorical Mordell--Weil group
-$\mathcal{E}_q(\mathbf{1}) = \mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, E_q)$,
-rank $r_q = \mathrm{rank}\,\mathcal{E}_q(\mathbf{1})$, $q$-deformed
-$L$-function $L(\mathcal{E}_q, s)$, and $q$-Tate--Shafarevich group
-$\mathrm{Sha}_q(\mathcal{E}_q)$
-([categorical Mordell--Weil](#def:categorical-mordell-weil)). The
-conjecture has two parts, mirroring the classical BSD:
+Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be a QOU with substrate parameter $q$ and Descartes elliptic curve $\mathcal{E}_q$. Let it have categorical Mordell--Weil group $\mathcal{E}_q(\mathbf{1}) = \mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, E_q)$, rank $r_q = \mathrm{rank}\,\mathcal{E}_q(\mathbf{1})$, $q$-deformed $L$-function $L(\mathcal{E}_q, s)$, and $q$-Tate--Shafarevich group $\mathrm{Sha}_q(\mathcal{E}_q)$ ([categorical Mordell--Weil](#def:categorical-mordell-weil)). The conjecture has two parts, mirroring the classical BSD:
 
 **(Weak $q$-BSD).**
-The order of vanishing of $L(\mathcal{E}_q, s)$ at $s = 1$ equals
-the categorical rank:
+The order of vanishing of $L(\mathcal{E}_q, s)$ at $s = 1$ equals the categorical rank:
 
 $$
 \mathrm{ord}_{s=1} L(\mathcal{E}_q, s) =  r_q.
@@ -29,15 +20,9 @@ $$
 {|\mathcal{E}_q(\mathbf{1})_{\mathrm{tors}}|^2_q},
 $$
 
-where $[r_q]_q! = [1]_q \cdot [2]_q \cdots [r_q]_q$ is the
-$q$-factorial, $\Omega_q$ is the Reeb period,
-$\mathrm{Reg}_q$ is the $q$-regulator (determinant of the
-$q$-Neron--Tate height pairing), and $c_\mathfrak{m}(q)$ are
-the Tamagawa numbers.
+where $[r_q]_q! = [1]_q \cdot [2]_q \cdots [r_q]_q$ is the $q$-factorial, $\Omega_q$ is the Reeb period, $\mathrm{Reg}_q$ is the $q$-regulator (determinant of the $q$-Neron--Tate height pairing), and $c_\mathfrak{m}(q)$ are the Tamagawa numbers.
 
-When $r_q = 0$ the regulator is $\mathrm{Reg}_q = 1$ (determinant of
-the empty matrix), the torsion subgroup is trivial, and the Full
-$q$-BSD formula collapses to
+When $r_q = 0$ the regulator is $\mathrm{Reg}_q = 1$ (determinant of the empty matrix) and the torsion subgroup is trivial. The Full $q$-BSD formula collapses to
 
 $$
 L(\mathcal{E}_q, 1)

@@ -1,26 +1,8 @@
-Let $\varepsilon \in \mathrm{Der}(A)$ be the Reeb infinitesimal
-([Reeb infinitesimal](#def:reeb-epsilon))
-and let $q = 1 + \varepsilon$
-([$q$ from $\varepsilon$](#def:q-from-epsilon))
-be the associated substrate parameter.  Work inside the ordered field
-$\mathbb{R}(\varepsilon)$ of rational functions of $\varepsilon$, and
-treat $\varepsilon$ as a **strictly positive infinitesimal**: for every
-standard real $\lambda > 0$ and every $n \in \mathbb{N}$,
-$n \cdot \varepsilon < \lambda$.
+Let $\varepsilon \in \mathrm{Der}(A)$ be the Reeb infinitesimal ([Reeb infinitesimal](#def:reeb-epsilon)). Let $q = 1 + \varepsilon$ ([$q$ from $\varepsilon$](#def:q-from-epsilon)) be the associated substrate parameter. We work inside the ordered field $\mathbb{R}(\varepsilon)$ of rational functions of $\varepsilon$. We treat $\varepsilon$ as a **strictly positive infinitesimal**: for every standard real $\lambda > 0$ and every $n \in \mathbb{N}$, $n \cdot \varepsilon < \lambda$.
 
-Equivalently, via the surreal appendix
-([calculus up to $\varepsilon$](#rem:calculus-up-to-epsilon),
-[surreal blow-up calculus](#def:surreal-blowup-calculus)),
-$\varepsilon = 1 / \omega$ inside Conway's surreal field $\mathbf{No}$.
-The asymptotic symbols $\asymp$, $O(\cdot)$, $o(\cdot)$, $\Theta(\cdot)$
-below are the surreal-valuation forms of
-[Big-O surreal](#rem:conway-normal-form) — equality up to a standard-real
-prefactor (for $\asymp$) or leading-exponent comparison (for the others).
+Equivalently, via the surreal appendix ([calculus up to $\varepsilon$](#rem:calculus-up-to-epsilon), [surreal blow-up calculus](#def:surreal-blowup-calculus)), $\varepsilon = 1 / \omega$ inside Conway's surreal field $\mathbf{No}$. The asymptotic symbols $\asymp$, $O(\cdot)$, $o(\cdot)$, and $\Theta(\cdot)$ below are the surreal-valuation forms of [Big-O surreal](#rem:conway-normal-form) — equality up to a standard-real prefactor (for $\asymp$) or leading-exponent comparison.
 
-**Rate table.** Each scaling law of the classical-limit degenerations
-of
-[collapse of the quantum gap](#thm:quantum-gap-collapse)
-has a literal value as an element of $\mathbb{R}(\varepsilon) \subset \mathbf{No}$:
+**Rate table.** Each scaling law of the classical-limit degenerations of [collapse of the quantum gap](#thm:quantum-gap-collapse) has a literal value as an element of $\mathbb{R}(\varepsilon) \subset \mathbf{No}$:
 
 | Classical-limit quantity | Surreal value | Order in $\varepsilon$ |
 |---|---|---|
@@ -29,26 +11,11 @@ has a literal value as an element of $\mathbb{R}(\varepsilon) \subset \mathbf{No
 | Enstrophy ceiling (fluid-dynamics $\S 3$) | $\asymp \varepsilon^{-4/3}$ | $-4/3$ (transfinite) |
 | Rogue-zero energy cost $E(\delta)$ for standard $\delta > 0$ | $\asymp \delta^2 \cdot \varepsilon^{-1}$ | $-1$ (transfinite scaled by $\delta^2$) |
 
-Here $\asymp$ means "equal up to a strictly positive standard-real
-prefactor", so the **order** of each quantity in $\varepsilon$ is an
-invariant of the substrate, independent of normalization conventions.
+Here $\asymp$ means "equal up to a strictly positive standard-real prefactor". The **order** of each quantity in $\varepsilon$ is an invariant of the substrate. It is independent of normalization conventions.
 
-**Proposition (conditional on
-[`conj:q-aubin-lions`](#conj:q-aubin-lions),
-[`conj:ns-counterexample`](#conj:ns-counterexample),
-[`conj:critical-exponent`](#conj:critical-exponent),
-[`prop:blowup-yekutieli`](#prop:blowup-yekutieli),
-and
-[`conj:regularity-breakdown`](#conj:regularity-breakdown);
-"Surreal rate calculus").** *In $\mathbb{R}(\varepsilon)$,
-the following strict inequalities hold:*
+**Proposition (conditional on [`conj:q-aubin-lions`](#conj:q-aubin-lions), [`conj:ns-counterexample`](#conj:ns-counterexample), [`conj:critical-exponent`](#conj:critical-exponent), [`prop:blowup-yekutieli`](#prop:blowup-yekutieli), and [`conj:regularity-breakdown`](#conj:regularity-breakdown); "Surreal rate calculus").** *In $\mathbb{R}(\varepsilon)$, the following strict inequalities hold:*
 
 1. *Positivity:* $\Delta_q > 0$ and $\Omega_q > 0$.
-2. *Infinitesimal gap:* $\Delta_q < \lambda$ for every standard
-   real $\lambda > 0$.
-3. *Transfinite period:* $\Omega_q > \lambda$ for every standard
-   real $\lambda > 0$.
-4. *Squeeze (see
-   [surreal squeeze](#lem:surreal-squeeze)):*
-   *for every standard real $\delta > 0$, $\delta^2 \cdot \Omega_q > \Delta_q$
-   strictly in $\mathbb{R}(\varepsilon)$.*
+2. *Infinitesimal gap:* $\Delta_q < \lambda$ for every standard real $\lambda > 0$.
+3. *Transfinite period:* $\Omega_q > \lambda$ for every standard real $\lambda > 0$.
+4. *Squeeze (see [surreal squeeze](#lem:surreal-squeeze)): for every standard real $\delta > 0$, $\delta^2 \cdot \Omega_q > \Delta_q$ strictly in $\mathbb{R}(\varepsilon)$.*
