@@ -53,8 +53,8 @@ def _from_formula() -> tuple[float, float]:
     hbar_q_sq = ((q - 1) / q) ** 2
     m_mu = m_e * vol_4_1_at(50) / hbar_q_sq           # muon anchor (Vol(4₁))
     m_p = 2 * (m_mu * F_Bor(q) - 6 * m_e)             # dim V_(2,1)=2, |S_3|=6
-    from derived_masses import q_beta_kashiwara_n2_mev
-    m_n = m_p + q_beta_kashiwara_n2_mev() + m_e        # n→p+e+ν̄: Kashiwara b² Q_β (~1 ppb)
+    from derived_masses import q_beta_toroidal_mev
+    m_n = m_p + q_beta_toroidal_mev() + m_e        # n→p+e+ν̄: Toroidal/Weber limit Q_β
     return float(m_p), float(m_n)
 
 
