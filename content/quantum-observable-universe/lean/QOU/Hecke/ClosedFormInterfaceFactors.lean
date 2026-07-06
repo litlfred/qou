@@ -58,6 +58,21 @@ rational `s`-points for D and T, and to 1e-49 at the four anchor atoms, by
 Phase-5q witness `closed-form-tau-M-verification-phase5q.witness.json`.
 This module proves the complete algebraic layer downstream of that step.
 
+## Relation to existing modules (reconciliation 2026-07-06, PR #3247)
+
+The ABSTRACT fold form of the interface product is already formalized in
+`mass-theory/interface-knot-markov-z.lean` (`interfaceTrace` over
+`List Bool` with generic `z`/`z−h`, plus the bar-symmetric averaged
+`2z−h` form) — that module carried the bean-`s1ik` subsumption finding
+(PR #3329), together with the Phase-5l constituent multiplicativity
+proved separately. THIS module is the EXPLICIT-factor complement, not a
+duplicate: it names the three bond kinds with the proven flavor split
+`δ(q)` (so `f_pn = (f_pp+f_nn)/2 + h·δ/4`, absent from the abstract
+fold), proves per-factor bar-involution behaviour and the `δ` cubic
+factorization, assembles the canonical `Z/N` product, and bridges each
+named factor to the `MarkovTrace` class via the `(c, d)` bond data of
+`MarkovBondFactor.lean`.
+
 ## References
 
 - [jones1987] https://doi.org/10.2307/1971403
