@@ -259,6 +259,26 @@ $$\mathrm{Li}_2^q(z) \;=\; \overline{\Phi_q(\bar z)} \quad \text{under bar-invol
 
 The two q-dilogarithms are **bar-conjugates** of each other on the substrate $q$. Using $\Phi_q$ in a binding-context script would import the bar-asymmetric (mass) component into a place that should be bar-symmetric — a discipline violation.
 
+**AJ-saddle unification (conditional — do not treat as established).**
+The corpus records a §3b-cond proposition that the context-sorting table
+above is two archimedean views of ONE algebraic object: the AJ
+annihilator $\hat A_K$ of the colored Jones tower, with $\Phi_q$ = the
+root-of-unity saddle regime and $\mathrm{Li}_2^q$ = the real-$q$ saddle
+regime — see
+[`prop:phi-q-aj-machinery-identification`](../content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.md)
+(conditional on the class-axiomatised `QuantumAPolynomial` +
+regulator-identification inputs; no instances fabricated). Per-knot AJ
+status backing it: strong AJ **proved sorry-free in-repo** for $4_1$
+(`AJFigureEightAnnihilation.lean`) and the trefoil
+(`AJTrefoilAnnihilation.lean` + `AJTrefoilRootEval.lean`, PR #3434);
+for $\mathcal{B}_3$ the question is **verified open** in the literature
+([`2026-07-06-borromean-aj-literature-status.md`](audits/2026-07-06-borromean-aj-literature-status.md)).
+Read-first for any AJ re-pitch:
+[`2026-07-03-aj-conjecture-dialog-assessment.md`](audits/2026-07-03-aj-conjecture-dialog-assessment.md).
+The table's per-context discipline stands unchanged either way — the
+unification, if discharged, would *explain* the split, not license
+mixing the two regulators.
+
 **Phase 5b three-layer synthesis (PR #819 §"synthesize"):**
 
 $$\mathrm{Li}_2^q \;\leftrightarrow\; \cos_q(h) \;\leftrightarrow\; \cosh(h)$$
