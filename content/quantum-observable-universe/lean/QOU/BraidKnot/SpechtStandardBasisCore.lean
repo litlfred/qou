@@ -5,6 +5,7 @@ import Mathlib.Data.Fintype.EquivFin
 import Mathlib.Data.Fintype.OfMap
 import Mathlib.Data.Finset.Max
 import Mathlib.GroupTheory.GroupAction.FixingSubgroup
+import Mathlib.GroupTheory.Complement
 import QOU.BraidKnot.StandardYoungTableau
 import QOU.BraidKnot.Specht
 import Mathlib.Tactic.Group
