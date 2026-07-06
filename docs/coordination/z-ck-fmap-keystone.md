@@ -157,6 +157,38 @@ pair); (ii) the I-B cyclotomic re-basing; (iii) Z3 factorizations where a
 bar-odd carrier absorbs the non-monomial factor. The K1a identity + K1b
 bar-pair locus transfer to any refined identification.
 
+## 4-ter. Beans `7vfu` (T1) + `pxvo` (T3) — pre-statement (BEFORE any run)
+
+**T1 — bar-pair symmetrized evaluation (`7vfu`).** On the golden locus pair
+`{x*, 1/x*}`, `x* = (3+√5)/2`, define `D(q) = α₁(q,x*) − α₁(q,1/x*)` and
+`S(q) = α₁(q,x*) + α₁(q,1/x*)`. Since the full bar involution
+`(q,x) ↦ (1/q,1/x)` permutes the pair, the symmetrized objects are the
+canonical candidates for clean parity. Decidable checks (exact, radicals):
+
+- **T1-K1:** is `D(1/q) = −D(q)` (bar-ODD), exactly or up to Laurent-monomial
+  twist? Note `D(1) = 0` automatically (both evaluations equal 2 at q=1) —
+  consistent with odd.
+- **T1-K2:** is `S(1/q) = +S(q)` (bar-EVEN), exactly or up to monomial twist?
+- Outcome semantics: T1-K1 pass → a canonical bar-odd scalar built from the
+  4₁ operator on its own c₃-shadow locus survives (feeds Z3/Z4); both fail →
+  pair-symmetrization at the raw level killed, escalate to I-B.
+
+**T3 — Z3 carrier preflight (`pxvo`).** Decidable q=1-order bookkeeping:
+
+- **T3-1:** `κ_{(2,1)}` vanishes at q=1 to order exactly **3**; `z − 1/2`
+  vanishes to order exactly **2** (z is critical at q=1). Consequently
+  rational functions of `z` realize only **even** vanishing/pole orders at
+  q=1, so `(rational-in-z) × κ_{(2,1)}` has odd total order and **cannot**
+  equal the finite nonzero shadow `a₁(1) = 2` — killing the naive
+  `f(z)·κ_{(2,1)}` sub-class of Z3 (scope-(a): as the *sole* source, at
+  q=1-regular f).
+- **T3-2 (tension flag, 🟡 owner):** any exactly-bar-odd function regular at
+  q=1 vanishes there (`f(1) = −f(1)`); but `a₁ = −c₃ → 2 ≠ 0` at q=1. So
+  "a₁ exactly bar-odd" (ck_a1_bar_odd's hypothesis, from #1887) and
+  "a₁ q=1-regular with shadow 2" are **jointly impossible** — the corpus
+  constraint set must mean odd-PART dominance of the anchor swing, or a₁
+  singular at q=1. To be verified symbolically and flagged, not resolved.
+
 ## 5. Session log
 
 | date | event |
