@@ -1,5 +1,16 @@
 # m_p term-6 Habiro residue `c_4` — keystone characterization
 
+> **🛑 Re-scoped (2026-07-04).** The c₄ characterized below is
+> **pin-dependent, not a categorical constant**: it runs affinely from
+> **0 at the proton pin to ≈46 at the muon pin** — it *is* the μ–p
+> tension re-expressed at u⁴. The probe's pin-stable ≈46.03 is a
+> *measured-muon diagnostic* (m_μ held at CODATA), not the production
+> object; production (formula-muon, proton pin) needs **c₄ ≈ 0**, and
+> the fitted tower this targeted was dropped 2026-07-04 (m_p now
+> +1.35 ppb; L2 count 2/7). The keystone target is the 11.5 ppb μ–p
+> splitting itself, not "46". See
+> [`2026-07-04-c4-mu-p-tension-pin-dependence.md`](2026-07-04-c4-mu-p-tension-pin-dependence.md).
+
 **Date:** 2026-06-24
 **Beans:** `ovud` → `s5bb`
 **Predecessor:** PR #2691 (proved F_Bor `/q³` exact; located the fit in `habiro_ratio`)
