@@ -1,0 +1,96 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-06T17:54:47.494396+00:00",
+  "commitSha": "d6ceff304415f180dc08c3cb405d51cd202257bd",
+  "assertions": [
+    {
+      "name": "g_reeb_below_ceiling",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "pn+1_physical_at_g_reeb",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "pn_pm1_isospectral_dets_equal",
+      "computed": "0.001740653393",
+      "expected": "0.001740653393",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2,
+  "computation": "b4-1four-reeb-flow-magnitude",
+  "scriptFile": "b4_1four_reeb_flow_magnitude.py",
+  "scriptHash": "d9ebb7925239",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "[1⁴] exchange determinant and deuteron det-vs-linear reconciliation at the landed Reeb-flow magnitude g = 1/sqrt(5+(q0-1)^2/q0) (main commits 8275655551 + 17264f2a9c). Audit-only; no fit; no w_pn selection.",
+  "tier": "exploratory (consumes one landed constant; enumerates discrete signs)",
+  "result": {
+    "constants": {
+      "q0": "1.10997859556",
+      "g_reeb": "0.446727067798",
+      "g_ceiling_1/sqrt5": "0.4472135955",
+      "headroom_1-sqrt5*g": "0.001087909",
+      "E0_MeV_m_e/(q(q-1))": "4.1859808"
+    },
+    "q1_deuteron_reconciliation": {
+      "g_reeb": "0.446727067798",
+      "det_I_plus_G2_(1-g^2)": "0.8004349269",
+      "B_det_form_MeV_E0*(-ln det)": "0.9317995",
+      "B_linear_5g_MeV_(landed law)": "2.2336353",
+      "B_AME_2H_MeV": "2.224566",
+      "err_det_form_pct": "-58.113",
+      "err_linear_5g_pct": "0.40769",
+      "finding": "The determinant form does NOT reproduce the deuteron at g_reeb (≈0.93 MeV, −58 %); the landed 5·g law (+0.41 %) is a DISTINCT linear assertion, not the A=2 case of b₄ = −ln det(I+G). Reconciling the two forms is open."
+    },
+    "q2_1four_enumeration_at_g_reeb": [
+      {
+        "w_pn": -1,
+        "det_I_plus_G": "0.0017406534",
+        "neg_log_det": "6.3534947",
+        "MeV": "26.595607",
+        "ratio_to_b4_9.243": "2.87738",
+        "ratio_to_full_B4He_28.29566": "0.939918"
+      },
+      {
+        "w_pn": 0,
+        "det_I_plus_G": "0.64069607",
+        "neg_log_det": "0.44520008",
+        "MeV": "1.863599",
+        "ratio_to_b4_9.243": "0.201623",
+        "ratio_to_full_B4He_28.29566": "0.0658617"
+      },
+      {
+        "w_pn": 1,
+        "det_I_plus_G": "0.0017406534",
+        "neg_log_det": "6.3534947",
+        "MeV": "26.595607",
+        "ratio_to_b4_9.243": "2.87738",
+        "ratio_to_full_B4He_28.29566": "0.939918"
+      }
+    ],
+    "verdict": "At the landed sub-ceiling magnitude g_reeb the mixed-sign pn=±1 [1⁴] patterns become PHYSICAL (det>0; they were det<0 at the naive z). Values are reported per w_pn option with NO selection. Scope-(a) throughout: numbers constrain the (form, magnitude) combination at g_reeb, not the ingredients."
+  },
+  "context": {
+    "axis": "GAP-A-4 class-D — [1⁴] value leg at the landed pn magnitude",
+    "predecessor": "b4_1four_complete_graph_writhe_signs.py (+ witness)",
+    "landed_source": "categorical_q_decay_ba_low_isotopes.py reeb-flow tier"
+  },
+  "auditOnly": true
+}
