@@ -208,12 +208,18 @@ def load_canonical_b(sym: str):
         }
 
     if "reeb-flow" in tier:
-        # Reeb-flow magnitude for the pn bond.
-        # g = 1 / sqrt( 5 + (q-1)^2 / q )
+        # Reeb-flow magnitude for the pn bond:
+        #   g = z/sqrt(1+z²) = 1/sqrt(1+[2]_v²)  (= 1/sqrt(5+(q−1)²/q), exact identity)
+        # — the Markov-peel bond factor z = 1/(√q+1/√q) arc-length-normalized,
+        # equivalently the q-deformed [1⁴] ss-ceiling with pn-degree 2 → [2]_v.
+        # Derivation + probe: docs/audits/2026-07-06-reeb-flow-pn-magnitude-
+        # provenance-and-1four-extension.md §2b; probes/reeb_g_structural_identity_probe.py.
         import mpmath as mp
         from q_parameter import Q as Q0_val
         q0 = mp.mpf(str(Q0_val))
-        g_true = float(mp.mpf(1) / mp.sqrt(mp.mpf(5) + (q0 - mp.mpf(1))**2 / q0))
+        v = mp.sqrt(q0)
+        z_bond = mp.mpf(1) / (v + 1 / v)
+        g_true = float(z_bond / mp.sqrt(1 + z_bond ** 2))
         # Binding is strictly 5*g
         B_pred = 5.0 * g_true
         # This tier applies only to D; err vs AME(²H) is +0.41 %, not 0
