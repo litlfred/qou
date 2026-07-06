@@ -344,12 +344,112 @@ Wenzl `y_λ`. If that projected trace yields ×2.093 at A=4 and the gate still g
 `alg:`-block per the appendix-sync STRICT rule. **Until then it stays PARTIAL /
 scope-(a) — not wired.**
 
+## PROBE 2b: genuine Schur–Weyl [1⁴] 12-strand Markov trace
+
+**Date:** 2026-07-06 · **Bean:** uer8 (continuation) · **Type:** the pinned
+production step of PROBE 2 — replace the Mayer-cluster stand-in `b_A^c` with the
+**genuine** categorical object. Single canonical operator, **no fit, no scan**.
+Compute: [`computations/probes/su4_1111_markov_trace_probe.py`](../../computations/probes/su4_1111_markov_trace_probe.py);
+witness `su4-1111-markov-trace.witness.json` (mpmath-50dps y_λ / f64 χ / exact
+rational plethysm). **Supersedes** the PROBE 2 stand-in
+`su4-connected-1111-magnitude.witness.json`.
+
+### The genuine object (canonical, zero-fit)
+
+Per the scoping note §3 Lever 1 and the Lean gate
+(`QOU.MassTheory.SU4SupermultipletGate`: `C(4,A)` = # A-subsets of 4 flavours =
+monomials of the outer `e_A` of the plethysm), the [1⁴] supermultiplet operator
+is the **antisymmetric SU(4) plethysm `e_A[h₃]`** — the fully-antisymmetric
+combination of `A` three-quark (`h₃`) nucleons — realised as a **y_λ-normalized
+Markov trace** over the canonical `3A`-strand atom braid:
+
+```
+T_[1^A](K)  =  C(4,A) · Σ_{λ ⊢ 3A}  m_λ · y_λ(q) · χ_λ(β_K) ,
+   m_λ = ⟨ e_A[h₃], s_λ ⟩   (exact: power-sum plethysm p_k↦p_k[h₃] + Murnaghan–Nakayama)
+```
+
+with `y_λ` the Wenzl bridge weight (the *same* weights giving the Markov closure
+`tr_M(β)=Σ_λ y_λ χ_λ`) and `χ_λ` the exact Hoefsmit seminormal character of the
+canonical `atom_braid_word_3A`. This is the categorical supermultiplet operator —
+**not** the pairwise-derived Mayer cluster, and its scale is fixed by the Wenzl
+`y_λ` with **no `Σg` hidden DOF**. The plethysm is verified exactly: `e_4[h₃]` =
+10 partitions of 12 (all mult 1), dim-check `Σ m_λ f^λ = 15400 = 12!/(6⁴·4!)`.
+
+### The numbers (q₀ ≈ 1.10998, canonical muon-q₀ literal)
+
+**Validation (load-bearing).** The direct `H_12` trace
+`Σ_{λ⊢12} y_λ χ_λ(β_⁴He) = 0.0553584` reproduces the closed-form
+`tr_p²·tr_n²·∏f` to **rel 2.3e-16** — the y_λ+χ_λ machinery is correct, so the
+[1⁴] sub-sum is a legitimate projection of the genuine trace.
+
+| object | value | note |
+|---|---|---|
+| full `tr_M(β_⁴He)` (77 partitions) | 0.0553584 | = closed form to 2.3e-16 |
+| **`T_[1⁴](⁴He)`** = C(4,4)·Σ (10 partitions) | **0.00581644** | gate C(4,4)=1 |
+| `T_[1⁴] / full tr_M` | **0.10507** | [1⁴] carries ~10.5% of the trace |
+| deuteron `Σ_[1²]` (raw) / `T_[1²]`=C(4,2)·Σ | 0.249642 / 1.49785 | pairwise unit, gate C(4,2)=6 |
+| **`T_[1⁶](⁶Li)`** = C(4,6)·Σ | **0.0 EXACTLY** | proved gate C(4,6)=0 |
+
+**Enhancement vs the measured super-pairwise ×2.093** (every metric is a
+y_λ-normalized ratio; the question is whether any *canonical, no-free-denominator*
+one equals 2.093):
+
+| metric | value | ratio/2.093 |
+|---|---|---|
+| `m1  |T4|/(6·|T2|)` (connected-4b per pair / connected-2b) | 0.00065 | **0.000** |
+| `m2  |T4|/|T2|` (no pair count) | 0.00388 | **0.002** |
+| `m3  1+|T4|/(3·|T2|)` (PROBE-2-shape lift) | 1.0013 | **0.479** |
+| `m4  frac4/fracD` (channel-fraction ratio) | 0.1635 | **0.078** |
+
+### Verdict — **DOES-NOT close (scope-(a))**
+
+The genuine y_λ-normalized [1⁴]-plethysm-projected trace **does not** supply the
+×2.093 super-pairwise excess at ⁴He under *any* natural normalization — it lands
+at **0.08–0.48× of target**, i.e. **1–3 orders of magnitude short** (the genuine
+connected lift over pairwise is +0.13%, vs the +109% needed). It is nonetheless:
+
+1. **Right-KIND** — the categorical antisymmetric supermultiplet `e_A[h₃]`, the
+   content the pairwise ceiling structurally lacks, **not** a pairwise-derived
+   cluster.
+2. **Right-LOCALITY** — `T_[1⁶](⁶Li) = 0` **exactly** via the *proved* C(4,6)=0
+   gate; the internal plethysm `e_6[h₃]` is itself non-zero (a plethysm of
+   non-zero symmetric functions, non-zero in 4 variables), so — as in PROBE 2 —
+   the A=6 vanishing is the flavour gate's, not the trace's.
+
+**Key finding — the stand-in overstated the channel.** PROBE 2's Mayer proxy gave
+×1.54 (74% of target); the **genuine** Schur–Weyl object gives ~0.1× — the
+stand-in's near-match was an artifact of the O(1) Mayer-cluster scale (`|b₄ᶜ|≈1.96`
+with `g≈0.5`), **not** a property of the categorical supermultiplet operator. The
+Wenzl `y_λ` weights *suppress* the high-symmetry [1⁴] channel (the surviving
+λ⊢12 carry `y_λ ~ 10⁻⁵…10⁻⁹`), so the "canonical `y_λ` normalization fixes the
+scale up to 2.093" hypothesis (the exact remaining step named in PROBE 2) is
+**decisively false** — `y_λ` normalization drives the connected channel *down*,
+not up.
+
+**Scope-(a), not (b):** this **constrains the magnitude** and shows the genuine
+[1⁴] operator (with the categorical `y_λ` normalization) is far too small to close
+A=4 *alone*; it does **not** exclude the [1⁴] ingredient (the channel is a real,
+permanent, non-zero ~10.5%-of-trace contribution — "inaccurate alone" ≠
+"excluded"), and it is **not** a seventh fit-based ansatz (a single canonical
+operator, no free parameter, no scan). **NOT WIRED** (`status` unchanged; a
+within-5% metric would in any case be a units-mismatched near-match — the PROBE 2
+trap — but no metric even reaches right-order). **What this session moved:** the
+magnitude leg's pinned "genuine [1⁴] trace" step is now *executed*, not
+follow-on — with a decisive negative that closes the "y_λ fixes the scale" branch
+and re-scopes PROBE 2's optimistic ×1.54 to a proxy artifact. The open frontier
+is unchanged and now sharper: the missing ⁴He-local ≥4-body magnitude is **not**
+recovered by the antisymmetric-supermultiplet trace under `y_λ` normalization; it
+remains the geometric `W_λ` keystone (a *different* per-block enrichment beyond
+the Jones trace), whose normalization must come from an independent categorical
+principle the Wenzl `y_λ` demonstrably does not supply.
+
 ## 5. Key files
 
 - [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](2026-05-18-delta-lambda-gating-context.md) — the original gate doc (Path A/B/C/D taxonomy)
 - [`docs/coordination/option-e.md`](../coordination/option-e.md) — Δ_λ master ledger (v1..v9, PROBE 1–4, prunes, A=4)
 - [`docs/coordination/s5-so3-keystone.md`](../coordination/s5-so3-keystone.md) — the `W_λ` geometric object + falsifiable gates
 - [`docs/scope/2026-07-05-gap-a4-interface-operator-attack-scoping.md`](../scope/2026-07-05-gap-a4-interface-operator-attack-scoping.md) — the A=4 probe graveyard + the one untried lever
+- [`computations/probes/su4_1111_markov_trace_probe.py`](../../computations/probes/su4_1111_markov_trace_probe.py) + `su4-1111-markov-trace.witness.json` — **PROBE 2b**: the genuine Schur–Weyl `e_A[h₃]` [1⁴]-projected 12-strand Markov trace (DOES-NOT close, scope-(a); supersedes the PROBE 2 Mayer stand-in)
 - [`docs/audits/2026-07-05-brane-tower-per-lambda-weight-delta-lambda-state.md`](2026-07-05-brane-tower-per-lambda-weight-delta-lambda-state.md) / [`…-delta-lambda-ansatz-refutations-anchored.md`](2026-07-05-delta-lambda-ansatz-refutations-anchored.md) — companion state reports
 - [`docs/audits/2026-07-04-delta-lambda-counit-canonical-integral-candidate.md`](2026-07-04-delta-lambda-counit-canonical-integral-candidate.md) — the counit-defect sign win
 - [`docs/audits/2026-07-04-deuteron-dressing-is-proton-net.md`](2026-07-04-deuteron-dressing-is-proton-net.md) — `net(p)=(1−h/2)`, deuteron +0.12% observation-tier
