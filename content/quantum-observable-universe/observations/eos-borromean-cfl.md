@@ -1,13 +1,9 @@
 **Proposition.**
-Let $q > 1$ be the substrate parameter, $\hbar_q = (q-1)/q$,
-and $V_B = 7.32772$ the Borromean volume.  The two topological
-phases of dense quark matter have distinct equations of state:
+Let $q > 1$ be the substrate parameter, $\hbar_q = (q-1)/q$, and $V_B = 7.32772$ the Borromean volume. The two topological phases of dense quark matter have distinct equations of state.
 
-**1. Borromean phase** (confined hadronic matter, $\rho < \rho_c$).
+## 1. Borromean phase
 
-The baryon mass is $M_B = V_B / \hbar_q^2$.  For a cold,
-degenerate Fermi gas of baryons at number density $n_B$, the
-energy density and pressure are
+This is confined hadronic matter ($\rho < \rho_c$). The baryon mass is $M_B = V_B / \hbar_q^2$. For a cold, degenerate Fermi gas of baryons at number density $n_B$, the energy density and pressure are:
 
 $$
   \varepsilon_B(n_B)
@@ -37,17 +33,11 @@ $$
   \frac{E_F}{M_B + E_F}
 $$
 
-where $E_F = \hbar_q^2(3\pi^2 n_B)^{2/3} / (2M_B)$ is the
-Fermi energy.  Since $M_B \gg E_F$ at nuclear densities:
-$c_{s,B}^2 \ll 1$ (non-relativistic regime).
+where $E_F = \hbar_q^2(3\pi^2 n_B)^{2/3} / (2M_B)$ is the Fermi energy. Since $M_B \gg E_F$ at nuclear densities, we have $c_{s,B}^2 \ll 1$ (non-relativistic regime).
 
-**2. CFL phase** (color superconducting, $\rho > \rho_c$).
+## 2. CFL phase
 
-The effective quark mass is $M_D = \frac{1}{3}(q + q^{-1})$
-(crossing energy per quark, no volume contribution since
-$\mathrm{Vol}(\mathcal{L}_H) = 0$).  For a degenerate quark
-Fermi gas at quark number density $n_q = 3 n_B$, the energy
-density includes the CFL gap contribution:
+This is color superconducting matter ($\rho > \rho_c$). The effective quark mass is $M_D = \frac{1}{3}(q + q^{-1})$. This represents crossing energy per quark, with no volume contribution since $\mathrm{Vol}(\mathcal{L}_H) = 0$. For a degenerate quark Fermi gas at quark number density $n_q = 3 n_B$, the energy density includes the CFL gap contribution:
 
 $$
   \varepsilon_D(n_B)
@@ -67,16 +57,14 @@ $$
   \frac{\hbar_q^2(3\pi^2)^{2/3}}{5M_D}
    (3 n_B)^{5/3}
   + 
-  \frac{3\Delta_{\mathrm{CFL}}^2 \mu_q^2}{\pi^2},
+  \frac{3\Delta_{\mathrm{CFL}}^2 \mu_q^2}{\pi^2}.
 $$
 
-where $\mu_q = \hbar_q(3\pi^2 n_q)^{1/3}/(2M_D)^{1/2}$ is
-the quark chemical potential and
-$\Delta_{\mathrm{CFL}} = q + q^{-1}$ is the gap
-([Hopf diquark](#def:hopf-diquark)).
+Here $\mu_q = \hbar_q(3\pi^2 n_q)^{1/3}/(2M_D)^{1/2}$ is the quark chemical potential, and $\Delta_{\mathrm{CFL}} = q + q^{-1}$ is the gap ([Hopf diquark](#def:hopf-diquark)).
 
-**3. Stiffness ratio.**  The ratio of pressures at equal baryon
-density is
+## 3. Stiffness ratio
+
+The ratio of pressures at equal baryon density is:
 
 $$
   \frac{P_D}{P_B}
@@ -86,8 +74,7 @@ $$
   \frac{3\Delta_{\mathrm{CFL}}^2 \mu_q^2}{\pi^2 P_B}.
 $$
 
-The first term gives the dominant contribution.  At
-$q = q_0$:
+The first term gives the dominant contribution. At $q = q_0$:
 
 $$
   \frac{M_B}{M_D}
@@ -98,7 +85,7 @@ $$
    \approx  1118.
 $$
 
-Including the $3^{5/3} \approx 6.24$ factor:
+Including the $3^{5/3} \approx 6.24$ factor gives:
 
 $$
   \frac{P_D}{P_B}
@@ -107,10 +94,9 @@ $$
    \approx  6977.
 $$
 
-The CFL equation of state is **nearly $7000\times$ stiffer** than
-the Borromean EOS at equal baryon density.
+The CFL equation of state is nearly $7000\times$ stiffer than the Borromean EOS at equal baryon density.
 
-**4. Speed of sound and the conformal limit.**
+## 4. Speed of sound and the conformal limit
 
 In the CFL phase at high density, $E_F \gg M_D$ and
 
@@ -121,18 +107,10 @@ $$
   \qquad (\text{as } n_B \to \infty).
 $$
 
-This is the **conformal limit** $c_s^2 = 1/3$ — the maximum
-speed of sound for a conformally symmetric fluid.  The CFL phase
-approaches this limit because its mass contribution is a
-constant ($M_D = (q + q^{-1})/3$, independent of density), so
-at high density the kinetic term dominates and the fluid becomes
-approximately conformal.
+This is the conformal limit $c_s^2 = 1/3$ (the maximum speed of sound for a conformally symmetric fluid). The CFL phase approaches this limit because its mass contribution is constant ($M_D = (q + q^{-1})/3$ is independent of density). At high density, the kinetic term dominates, rendering the fluid approximately conformal.
 
-In contrast, the Borromean phase has $c_{s,B}^2 \to 1/3$ only
-at densities so extreme that $E_F \sim M_B = 749$ Skein units —
-far beyond any physical baryon density.  At nuclear saturation
-density $\rho_0$: $c_{s,B}^2 \sim 0.01$, deeply non-relativistic.
+In contrast, the Borromean phase approaches $c_{s,B}^2 \to 1/3$ only at extreme densities where $E_F \sim M_B = 749$ Skein units. This lies far beyond any physical baryon density. At nuclear saturation density $\rho_0$, $c_{s,B}^2 \sim 0.01$, leaving it deeply non-relativistic.
 
-**Summary.**
+## Summary
 
 See [Table](#tbl:eos-borromean-cfl-table-data).

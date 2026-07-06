@@ -1,5 +1,7 @@
-The proton-radius and gravity blocks fixed a local value of $q$ from existing data; we now turn to experiments designed specifically to probe substrate variation. The lattice-probe blocks come first. Remark: Crystal-lattice probe of $q$ describes how a periodic crystal samples the substrate phase, Remark: Substrate Telescopes extends the same idea to large-aperture detectors, and Remark: Non-monotonic magnetic friction from collective rotor dynamics predicts a non-monotonic magnetic-friction signature that collective rotor dynamics in the lattice would produce.
+The proton-radius and gravity sections extract a local value of $q$ from existing data. This section addresses experiments designed to probe substrate variation directly. 
 
-The experimental blocks follow. **Crystal resonance data** records the measurements already in hand, Remark: Lattice layout and quantum resonance implications and **Crystal resonance planned** lay out the proposed lattice geometries and the planned resonance experiments, **Crystal resonance experiments** documents the experimental protocol, and Remark: Bose--Einstein condensate vortex data and $q$-deformed predictions closes the section with the BEC-vortex predictions that the Breit–Wheeler section will use to anchor its high-energy pair-creation comparison.
+Lattice-probe models appear first. A periodic crystal is modeled sampling the substrate phase. This methodology is extended to large-aperture Substrate Telescopes. Collective rotor dynamics in the lattice predicts a non-monotonic magnetic-friction signature.
+
+The experimental discussion follows. Existing resonance measurements are summarized. Proposed lattice geometries and planned experiments are documented alongside their experimental protocols. The section concludes with Bose-Einstein condensate (BEC) vortex predictions, supplying the baseline for the Breit-Wheeler high-energy pair-creation analysis.
 
 _(draft.)_
