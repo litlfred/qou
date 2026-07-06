@@ -127,11 +127,13 @@ source files** (`.py`/`.md`/`.lean`/`.ts`), rewriting "Faddeev Φ_q",
 Faddeev h⁴", etc. → "compact q-dilog / compact-q-dilog …". Protected
 (unchanged): bibliographic keys (`faddeev-kashaev`, `andersen-kashaev`),
 `Kashaev` volume, genuine `Φ_b` references, and the two hand-corrected
-utilities. **Intentionally not changed** (separate follow-up): file *names*
-containing `faddeev` (`xi_ell_faddeev_phi_q_probe.py`,
-`m_p_bring_plus_faddeev_h4_probe.py`, `mass_table_bring_faddeev_h4_sweep.py`)
-— renaming breaks references; and auto-regenerating `*.witness.json`
-(will pick up the corrected script strings on next run).
+utilities. **File renames** (`git mv`, references updated): the three
+`*faddeev*` scripts → `xi_ell_phi_q_probe.py`,
+`m_p_bring_plus_phi_q_h4_probe.py`, `mass_table_bring_phi_q_h4_sweep.py`
+(+ their `.script-qa.json` sidecars and `.witness.json` outputs + the
+in-script `WitnessBuilder` names + `faddeev_h4` identifiers). No module
+imports referenced them, so no import breakage. Pre-existing stray
+`git_files.txt` (a filename dump) left untouched.
 
 ## 5. Coordination
 

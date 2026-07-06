@@ -221,7 +221,7 @@ def main() -> int:
 
     witness = {
         "description": "ξ_ℓ compact q-dilog Φ_q vs symmetric Li_2^q per-braid tower probe (proper Wedderburn V̂_i)",
-        "computation": "xi_ell_faddeev_phi_q_probe",
+        "computation": "xi_ell_phi_q_probe",
         "audit_only": True,
         "precision_dps": 50,
         "context": {

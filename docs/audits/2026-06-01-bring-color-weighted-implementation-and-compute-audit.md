@@ -95,7 +95,7 @@ Reduces to Family A in the δ→0 substrate-degenerate limit.
 
 - **Bring color-tube probes (production-adjacent)**: `binding_bring_enhancement_compare.py`, `probe_k_ud_bring_color_tube_empirical_baseline.py`, `lambda_scale_refinement_h4_correction_bring.py` (flagged HIGH non-canonical per compute audit; exploratory h⁴ "+1" lacks derivation)
 - **Bring zero-mode**: `bring_zero_mode_bloch_hunt.py`, `ocneanu_12_bring_zero_mode_variants.py`
-- **Bring residue/modular**: `m_p_bring_plus_faddeev_h4_probe.py`, `bring_chiral_fibre_figure.py`
+- **Bring residue/modular**: `m_p_bring_plus_phi_q_h4_probe.py`, `bring_chiral_fibre_figure.py`
 - **`closed_form_tau_M.py`**: default `pn_convention="chi_lambda_braid"` DROPS Bring at interface level; `bring_color_weighted` branch EXISTS but is opt-in
 
 ### Lean formalization gaps

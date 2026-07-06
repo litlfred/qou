@@ -4931,7 +4931,7 @@
       },
       {
         "pattern": "P30",
-        "file": "xi_ell_faddeev_phi_q_probe.py",
+        "file": "xi_ell_phi_q_probe.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
