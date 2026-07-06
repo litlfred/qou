@@ -1,4 +1,4 @@
-| theorem | content |
+| theorem | statement |
 |---|---|
 | `chi_V3_diff_polynomial_form` | $V_{(3)}$ factored $\leftrightarrow$ polynomial form |
 | `chi_V21_diff_polynomial_form` | $V_{(2,1)}$ factored $\leftrightarrow$ polynomial form |

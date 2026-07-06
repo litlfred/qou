@@ -8,26 +8,25 @@ $$
   }
 $$
 
-## Derivation (proven in Lean)
+## Derivation
 
-On $V_{(3)}$ (the symmetric 1-d irrep of $H_3(q)$), each Hecke
-generator acts as the scalar $q$:
+On $V_{(3)}$ (the symmetric 1-dimensional irrep of $H_3(q)$), each Hecke generator acts as the scalar $q$:
 
   - $\sigma_i \mapsto q$
   - $\sigma_i^{-1} = \sigma_i - (q - q^{-1}) \mapsto q^{-1}$
-  - averaged $= \frac{1}{2}(\sigma + \sigma^{-1}) \mapsto (q + q^{-1})/2$
+  - $\text{averaged} = \frac{1}{2}(\sigma + \sigma^{-1}) \mapsto (q + q^{-1})/2$
 
 The canonical typed-$\mathbf{B}_3$ braids carry:
 
-  - $\mathcal{B}_p$ (uud): 6 $\sigma$ + 3 $\sigma^{-1}$ + 2 averaged
-  - $\mathcal{B}_n$ (udd): 5 $\sigma$ + 4 $\sigma^{-1}$ + 2 averaged
+  - $\mathcal{B}_p$ (uud): $6\sigma + 3\sigma^{-1} + 2\text{ averaged}$
+  - $\mathcal{B}_n$ (udd): $5\sigma + 4\sigma^{-1} + 2\text{ averaged}$
 
-The characters multiply as
+The characters multiply as:
 
   - $\chi_{(3)}(\mathcal{B}_p) = q^6 \cdot q^{-3} \cdot \left(\frac{q + q^{-1}}{2}\right)^2 = q^3 \cdot \frac{(q + q^{-1})^2}{4}$
   - $\chi_{(3)}(\mathcal{B}_n) = q^5 \cdot q^{-4} \cdot \left(\frac{q + q^{-1}}{2}\right)^2 = q \cdot \frac{(q + q^{-1})^2}{4}$
 
-and the difference factors as
+The difference factors as:
 
 $$
   \chi_{(3)}(\mathcal{B}_n) - \chi_{(3)}(\mathcal{B}_p)
@@ -36,7 +35,7 @@ $$
   = -\frac{(q^2 + 1)^2 (q^2 - 1)}{4 q}.
 $$
 
-Expanding the rational form:
+Expanding the rational form gives:
 
 $$
   -\frac{(q^2 + 1)^2 (q^2 - 1)}{4 q}
@@ -45,9 +44,9 @@ $$
   = -\frac{q^5 + q^3 - q - q^{-1}}{4}.
 $$
 
-## ε^k pattern at q = 1 + ε
+## Pattern at $q = 1 + \varepsilon$
 
-The closed form splits as
+The closed form splits into polynomial and geometric components:
 
 $$
   -\frac{q^5 + q^3 - q - q^{-1}}{4}
@@ -55,10 +54,10 @@ $$
        \;+\; \underbrace{\frac{q^{-1}}{4}}_{\text{geometric series part}}.
 $$
 
-- The **polynomial part** has degree 5 in $q$, so its $\varepsilon^k$ coefficient at $q = 1 + \varepsilon$ **vanishes for $k \geq 6$**.
-- The **geometric part** $\frac{q^{-1}}{4} = \frac{1}{4(1 + \varepsilon)} = \frac{1}{4} \sum_{k \geq 0} (-1)^k \varepsilon^k$ has $\varepsilon^k$ coefficient $\frac{(-1)^k}{4}$ for every $k$.
+- The polynomial part has degree 5 in $q$. Its $\varepsilon^k$ coefficient at $q = 1 + \varepsilon$ vanishes for $k \geq 6$.
+- The geometric part $\frac{q^{-1}}{4} = \frac{1}{4(1 + \varepsilon)} = \frac{1}{4} \sum_{k \geq 0} (-1)^k \varepsilon^k$ contributes $\frac{(-1)^k}{4}$ at every order $k$.
 
-**Hence for $k \geq 6$**:
+For $k \geq 6$, we therefore have:
 
 $$
   [\varepsilon^k]\;\bigl(\chi_{(3)}(\mathcal{B}_n) - \chi_{(3)}(\mathcal{B}_p)\bigr)\big|_{q = 1 + \varepsilon}
@@ -67,13 +66,4 @@ $$
 
 ## Lean theorems exported
 
-See [Table: Lean theorems for $\chi_{V_3}$](#tbl:chi-v3-closed-form-proof-table-data).
-| `chi_V3_difference_decomposition` | split into polynomial part + geometric part |
-| `chi_V3_polynomial_part_at_one` | polynomial part vanishes at $q = 1$ |
-| `chi_V3_geom_part_at_one` | geometric part equals $1/4$ at $q = 1$ |
-| `chi_V3_difference_at_two` | numerical: $-75/8$ at $q = 2$ |
-| `chi_V3_difference_at_one` | vanishes at $q = 1$ (isospin invariance) |
-| `chi_V3_decomposition_at_two` | decomposition verified at $q = 2$ |
-
-All theorems are **sorry-free**, closed by `field_simp + ring` after
-unfolding.
+See [Table 1](#tbl:chi-v3-closed-form-proof-table-data). All theorems close unconditionally under `field_simp + ring` after unfolding.

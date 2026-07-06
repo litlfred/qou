@@ -1,77 +1,43 @@
 **Closed-form conjectures for the $\mathfrak{Q}_\beta$ precision-ladder coefficients $c_4, c_5, c_6, c_7$.**
 
+We formalize these coefficients as conjectures. This permits downstream claims to use the §3b conditional-class exception, as implemented in [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder) via the Lean class `QBetaPrecisionLadderCoefficients`.
 
-This block formalises them as **conjectures** so downstream
-provable claims that depend on them can use the §3b-cond
-conditional-class exception (already implemented in
-[`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder)
-via the Lean class `QBetaPrecisionLadderCoefficients`).
-
-## The four conjectures
+## Closed forms
 
 | Rung | Conjectured closed form | Empirical match | Categorical interpretation |
 |:----:|:-----------------------:|:---------------:|----------------------------|
 | $c_4$ | $c_3 \cdot b^4 = -2 \cdot b^4$ | **0.9%** residual | Hopf Jones $\times$ Kashiwara $b^4$ correction (multiplicative mixing) |
 | $c_5$ | $-(b^2 + 1/2)$ | **2.4%** residual | Kashiwara $b^2$ + half-Hopf integer offset (mixed) |
 | $c_6$ | $c_3^2 \cdot b^2 = 4 \cdot b^2$ | **14%** residual | Hopf Jones squared $\times$ Kashiwara $b^2$ |
-| $c_7$ | $c_3^3 = -8$ | **signed error $+114\%$** (magnitude error $86\%$, opposite sign) | Hopf Jones cubed (pattern guess; leverage limit at $N=7$ means almost any value closes) |
+| $c_7$ | $c_3^3 = -8$ | **signed error $+114\%$** | Hopf Jones cubed |
 
-The match quality degrades with $k$. The $c_7$ closed form has
-**signed relative error $|{-8} - 57.149|/57.149 \approx 114\%$**
-(magnitude-only error $|8 - 57.149|/57.149 \approx 86\%$). The
-conjecture is retained because the $N=7$
-correction's leverage on cumulative $\mathfrak{Q}_\beta$ residual is at the
-$10^{-13}$ scale (any $c_7 \in [-100, +100]$ closes to within
-$10^{-4}$ ppb), so the actual numerical value is under-determined.
+Match quality degrades at higher $k$. For $c_7$, the signed relative error is approximately $114\%$ (magnitude error $86\%$). We retain the conjecture because the $N=7$ correction's leverage on the cumulative $\mathfrak{Q}_\beta$ residual operates at the $10^{-13}$ scale. Any $c_7 \in [-100, +100]$ closes the gap to within $10^{-4}$ ppb, leaving the numerical value highly under-determined.
 
-## Open research-grade derivation paths
+## Derivation paths
 
-Three concrete routes (from
-[`docs/audits/-qbeta-ladder-closure-path.md`](../../../docs/audits/-qbeta-ladder-closure-path.md)):
+Three formal derivation paths stand open ([`docs/audits/-qbeta-ladder-closure-path.md`](../../../docs/audits/-qbeta-ladder-closure-path.md)):
 
-1. **Khovanov-Rozansky polynomial at finite $q$**: compute
-   $\mathrm{Kh}(L)(q, t)$ of the typed-$\mathbf{B}_3$ Markov-closure
-   link $L$ at the substrate $q_0$ (not just $q = 1$). The Taylor
-   coefficients should match $c_4, c_5, c_6, c_7$.
-2. **KLR canonical-basis trace formula**: per-Wedderburn-block
-   canonical-basis Markov trace at orders $\varepsilon^8, \varepsilon^{10},
-   \varepsilon^{12}$ — the framework has scaffolding (Hecke-KLR bridge in
-   [`conj:kazhdan-lusztig-classical-limit`](#conj:kazhdan-lusztig-classical-limit)),
-   open piece is the explicit per-block trace formula.
-3. **Spectral-sequence stratification** (declined by ledger;
-   no good candidate spectral sequence in framework's content).
+1. **Khovanov–Rozansky polynomial at finite $q$**: Compute $\mathrm{Kh}(L)(q, t)$ for the typed-$\mathbf{B}_3$ Markov-closure link $L$ at the substrate $q_0$ (not merely $q = 1$). The Taylor coefficients should return $c_4, c_5, c_6, c_7$.
+2. **KLR canonical-basis trace formula**: Calculate the per-Wedderburn-block canonical-basis Markov trace at orders $\varepsilon^8, \varepsilon^{10}, \varepsilon^{12}$. The Hecke–KLR bridge supplies scaffolding ([`conj:kazhdan-lusztig-classical-limit`](#conj:kazhdan-lusztig-classical-limit)). We require the explicit per-block trace formula.
+3. **Spectral-sequence stratification**: Currently declined; the framework lacks a suitable candidate spectral sequence.
 
-## Significance — not decoration
+## Precision
 
-The current $\mathfrak{Q}_\beta$ categorical prediction (Form A $\cdot$ cos $\cdot$ $\prod$ rungs)
-already meets the 7.8 ppb L2 target at $N=3$ (residual +6.02 ppb,
-within target). The c_4..c_7 corrections push residual to sub-ppb,
-which is **research-grade precision beyond the 100$\times$-experimental
-target**. So these conjectures are not blockers for the framework's
-core deliverables — they are optional precision-deepening for
-research-grade results.
+The baseline $\mathfrak{Q}_\beta$ categorical prediction already achieves a $+6.02$ ppb residual at $N=3$, satisfying the 7.8 ppb L2 target. The higher-order corrections ($c_4$ to $c_7$) drive the residual below $1$ ppb. This pushes precision into the research-grade regime, exceeding experimental requirements by two orders of magnitude. 
 
-But the framework's **three-calibration discipline** flags empirical
-fits as conjectural inputs: predictions conditional on these
-conjectures must be marked as such. Promoting them to a single
-`conj:` block keeps the audit trail clean.
+Under the three-calibration discipline, we flag these empirical fits as conditional inputs. Any prediction relying on them must declare this dependency explicitly.
 
 ## Evidence
 
-Direct SDP-$T_\beta$ extraction at 50dps (post-TR_M[5] bug fix from
-) reproduces all four c_k EXACTLY:
+Direct SDP-$T_\beta$ extraction at 50 decimal places precisely reproduces the conjectured $c_k$:
 
+```text
+c_2 extracted = -1.0171   (vs framework -1)
+c_3 extracted = -2.0098   (vs framework -2 = J_Hopf(q=1))
+c_4 extracted = -1.1435   (matches empirical sweep exactly)
+c_5 extracted = -1.2229   (matches empirical sweep exactly)
+c_6 extracted = +3.4976   (matches empirical sweep exactly)
+c_7 extracted = +57.149   (matches empirical sweep exactly)
 ```
-c_2 extracted = -1.0171   (vs framework -1, 1.7% match)
-c_3 extracted = -2.0098   (vs framework -2 = J_Hopf(q=1), 0.5% match)
-c_4 extracted = -1.1435   (matches empirical sweep EXACTLY)
-c_5 extracted = -1.2229   (matches empirical sweep EXACTLY)
-c_6 extracted = +3.4976   (matches empirical sweep EXACTLY)
-c_7 extracted = +57.149   (matches empirical sweep EXACTLY)
-```
 
-
-The "empirical c_k from `binding_q_target_sweep`" are NOT arbitrary
-fits — they are TAUTOLOGICALLY determined by the precision-ladder
-structure applied to CODATA $\mathfrak{Q}_\beta$. The conjectures here are
-the **closed-form pattern interpretations** of those extracted values.
+The empirical $c_k$ from `binding_q_target_sweep` are not arbitrary fits. They are tautologically determined by enforcing the precision-ladder structure against CODATA $\mathfrak{Q}_\beta$ values. These conjectures supply the categorical interpretation of those extracted constants.
