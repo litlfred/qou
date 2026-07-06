@@ -39,13 +39,16 @@ Audit-only; no wiring.
 """
 from __future__ import annotations
 
+import hashlib
 import json
+import subprocess
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 import sympy as sp
 
-s = sp.symbols("s")  # s = q^{1/2}
+s = sp.symbols("s", positive=True)  # s = q^{1/2}
 
 
 def brk(j: int):
@@ -75,7 +78,7 @@ def jones_borromean_tl(A=None):
     Braid generator: rho(s_i) = A + A^{-1} e_i (Kauffman).
     Markov closure trace on TL_3 basis elements: tr(x) = d^{c(x)-1}
     where c(x) = number of loops in the closure of the basis diagram:
-    c(1) = 3, c(e1) = c(e2) = c(e1e2) = c(e2e1) = 1... (closure of e_i
+    c(1) = 3, c(e1) = c(e2) = 2, c(e1e2) = c(e2e1) = 1 (closure of e_i
     in TL_3 gives 2 loops, closure of e1e2/e2e1 gives 1 loop).
     Normalized (divide by d^2 -> unknot = 1); Jones via A = q^{-1/4}
     (bar-ambiguity irrelevant here: the Borromean Jones is
@@ -145,26 +148,23 @@ def main() -> int:
     print(f"  [A2] J_B,n(q) = J_B,n(1/q) for n=1..{NMAX} (amphichiral)?  {a2}")
 
     # A4: Laurent polynomiality (division exact)
-    a4 = all(sp.denom(sp.together(J[n])).is_Pow
-             or sp.denom(sp.together(J[n])).is_Symbol
-             or sp.denom(sp.together(J[n])) == 1
+    a4 = all(sp.denom(sp.together(J[n])).as_base_exp()[0] in (s, sp.Integer(1))
              for n in range(1, NMAX + 1))
     print(f"  [A4] every J_B,n is Laurent in s (denominator a power of s)?  {a4}")
 
     # A3: TL_3 cross-check at n = 2 (fully independent computation)
     A = sp.symbols("A")
     V_tl = jones_borromean_tl(A)
-    # Kauffman variable A = q^{-1/4} = s^{-1/2}: compare as functions of s
-    # via t = A^{-2} = q^{1/2} = s  =>  substitute A -> t^{-1/2} and clear.
-    t = sp.symbols("t", positive=True)
-    V_in_s = sp.expand(sp.cancel(sp.together(V_tl.subs(A, t ** sp.Rational(-1, 2)))))
-    diff = sp.simplify(sp.together(J[2].subs(s, t) - V_in_s))
-    a3 = diff == 0
-    # bar-ambiguity fallback: also try the mirror convention A -> t^{1/2}
+    # Kauffman variable A = q^{-1/4} = s^{-1/2} (s is positive, so the
+    # fractional powers of s simplify directly).
+    V_in_s = sp.expand(sp.cancel(sp.together(V_tl.subs(A, s ** sp.Rational(-1, 2)))))
+    diff = sp.cancel(sp.together(J[2] - V_in_s))
+    a3 = diff.equals(0)
+    # bar-ambiguity fallback: also try the mirror convention A -> s^{1/2}
     if not a3:
-        V_in_s_m = sp.expand(sp.cancel(sp.together(V_tl.subs(A, t ** sp.Rational(1, 2)))))
-        diff_m = sp.simplify(sp.together(J[2].subs(s, t) - V_in_s_m))
-        a3 = diff_m == 0
+        V_in_s_m = sp.expand(sp.cancel(sp.together(V_tl.subs(A, s ** sp.Rational(1, 2)))))
+        diff_m = sp.cancel(sp.together(J[2] - V_in_s_m))
+        a3 = diff_m.equals(0)
     print(f"  [A3] J_B,2 == TL_3 Kauffman-bracket Jones of (s1 s2^-1)^3 closure?  {a3}")
     if not a3:
         print(f"       diff (direct convention): {diff}")
@@ -172,7 +172,16 @@ def main() -> int:
     print(f"\n  J_B,2 = {J[2]}")
 
     ok = a1 and a2 and a3 and a4
+    script_path = Path(__file__)
     witness = {
+        "engine": f"python {sys.version.split()[0]} / sympy {sp.__version__}",
+        "scriptFile": f"computations/{script_path.name}",
+        "commitSha": subprocess.run(
+            ["git", "rev-parse", "HEAD"], capture_output=True, text=True,
+            cwd=script_path.parent).stdout.strip(),
+        "scriptHash": hashlib.sha256(
+            script_path.read_bytes()).hexdigest()[:12],
+        "computedAt": datetime.now(timezone.utc).isoformat(),
         "description": (
             "Habiro cyclotomic formula for the Borromean colored Jones "
             "(diagonal colors), transcribed from GL2011 (arXiv:math/0508100 v6) "
@@ -180,7 +189,7 @@ def main() -> int:
             "(amphichirality), Laurent polynomiality, and an independent "
             "TL_3 Kauffman-bracket cross-check at n=2"
         ),
-        "computation": "habiro_borromean_colored_jones",
+        "computation": "habiro-borromean-colored-jones",
         "audit_only": True,
         "source": {
             "pdf": "uploads/0508100v6.pdf",

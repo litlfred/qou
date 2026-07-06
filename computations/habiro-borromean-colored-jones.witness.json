@@ -1,6 +1,11 @@
 {
+  "engine": "python 3.11.15 / sympy 1.14.0",
+  "scriptFile": "computations/habiro_borromean_colored_jones.py",
+  "commitSha": "c5d9e4ab6fbf6448b6267b9375a96668306665c5",
+  "scriptHash": "dc7cd23a769a",
+  "computedAt": "2026-07-06T19:05:17.521024+00:00",
   "description": "Habiro cyclotomic formula for the Borromean colored Jones (diagonal colors), transcribed from GL2011 (arXiv:math/0508100 v6) Appendix A; anchored by exactness at n=1, bar-symmetry n<=6 (amphichirality), Laurent polynomiality, and an independent TL_3 Kauffman-bracket cross-check at n=2",
-  "computation": "habiro_borromean_colored_jones",
+  "computation": "habiro-borromean-colored-jones",
   "audit_only": true,
   "source": {
     "pdf": "uploads/0508100v6.pdf",
