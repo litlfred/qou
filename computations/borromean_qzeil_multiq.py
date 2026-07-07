@@ -36,8 +36,6 @@ import subprocess
 import sys
 import time
 from datetime import datetime, timezone
-from fractions import Fraction
-from math import isqrt
 from pathlib import Path
 
 import numpy as np
@@ -48,7 +46,6 @@ from borromean_qzeil_certificate import build_ratios
 
 q, x, y = sp.symbols("q x y")
 P = (1 << 31) - 1          # 2^31-1 Mersenne prime; products fit int64
-P2 = 2147483629            # prime < 2^31
 
 
 def as_polys(expr):
@@ -173,84 +170,6 @@ def build_rows(r, DX, EY, DQ, s_nd, r1_nd, DEN_p, p, npts, seed=1):
     return rows, a_idx, c_idx, na
 
 
-def jones_tower(p, xroot, nmax):
-    sinv = pow(xroot, p - 2, p)
-    br = [0] * (2 * nmax + 2)
-    sj, sij = 1, 1
-    for j in range(1, 2 * nmax + 2):
-        sj = sj * xroot % p
-        sij = sij * sinv % p
-        br[j] = (sj - sij) % p
-        if br[j] == 0:
-            return None
-    out = []
-    for n in range(1, nmax + 1):
-        tot, prod3 = 0, 1
-        for l in range(n):
-            if l > 0:
-                f = br[n + l] * br[n - l] % p
-                prod3 = prod3 * f % p * f % p * f % p
-            den = 1
-            for j in range(l + 1, 2 * l + 2):
-                den = den * br[j] % p
-            d2i = pow(den * den % p, p - 2, p)
-            term = br[n] * br[n] % p * prod3 % p * d2i % p
-            tot = (tot - term if l & 1 else tot + term) % p
-        out.append(tot)
-    return out
-
-
-def verify_on_tower(opvec, a_idx, c_idx, na, r, q0, DEN_p, p):
-    """Check sum_i a_i(q0,q0^n) J_{n+i} == -Cert(q0,q0^n,1) F(n,0) for all n."""
-    def sqrt_mod(a, p):
-        if pow(a, (p - 1) // 2, p) != 1:
-            return None
-        if p % 4 == 3:
-            return pow(a, (p + 1) // 4, p)
-        qq, ss = p - 1, 0
-        while qq % 2 == 0:
-            qq //= 2; ss += 1
-        z = 2
-        while pow(z, (p - 1) // 2, p) != p - 1:
-            z += 1
-        m_, c_, t_, r_ = ss, pow(z, qq, p), pow(a, qq, p), pow(a, (qq + 1) // 2, p)
-        while t_ != 1:
-            i, tt = 0, t_
-            while tt != 1:
-                tt = tt * tt % p; i += 1
-            b = pow(c_, 1 << (m_ - i - 1), p)
-            m_, c_, t_, r_ = i, b * b % p, t_ * b % p * b % p, r_ * b % p
-        return r_
-    xroot = sqrt_mod(q0 % p, p)
-    if xroot is None:
-        return None
-    NT = r + 45
-    J = jones_tower(p, xroot, NT + r + 2)
-    if J is None:
-        return None
-    a_c = {(i, dq, dx): opvec[j] for j, (i, dq, dx) in enumerate(a_idx)}
-    c_c = {(e, dq, dx): opvec[na + j] for j, (e, dq, dx) in enumerate(c_idx)}
-    one2 = (q0 - 2 + pow(q0, p - 2, p)) % p
-    inv_one2 = pow(one2, p - 2, p)
-    for n in range(1, NT):
-        xn = pow(q0, n, p)
-        lhs = 0
-        for (i, dq, dx), cv in a_c.items():
-            lhs = (lhs + cv * pow(q0, dq, p) % p * xpow(xn, dx, p) % p
-                   * J[n + i - 1]) % p
-        numC = 0
-        for (e, dq, dx), cv in c_c.items():
-            numC = (numC + cv * pow(q0, dq, p) % p * xpow(xn, dx, p)) % p  # y=1
-        denC = pmod(DEN_p, q0, xn, 1, p)
-        if denC % p == 0:
-            return None
-        certx1 = numC * pow(denC, p - 2, p) % p
-        Fn0 = ((xn - 2 + pow(xn, p - 2, p)) % p) * inv_one2 % p
-        if lhs != (-certx1 * Fn0) % p:
-            return False
-    return True
-
-
 def main() -> int:
     t0 = time.time()
     print("\n  Borromean qZeilberger — DECISIVE q-degree scan (multi-q)\n")
@@ -308,12 +227,16 @@ def main() -> int:
     }
 
     script_path = Path(__file__)
+    try:
+        commit_sha = subprocess.run(["git", "rev-parse", "HEAD"],
+                                    capture_output=True, text=True,
+                                    cwd=script_path.parent).stdout.strip() or "unknown"
+    except Exception:  # noqa: BLE001  (git may be absent; fall back gracefully)
+        commit_sha = "unknown"
     witness = {
         "engine": f"python {sys.version.split()[0]} / sympy {sp.__version__} / numpy (multi-q, int64 mod 2^31-1)",
         "scriptFile": f"computations/{script_path.name}",
-        "commitSha": subprocess.run(["git", "rev-parse", "HEAD"],
-                                    capture_output=True, text=True,
-                                    cwd=script_path.parent).stdout.strip() or "unknown",
+        "commitSha": commit_sha,
         "scriptHash": hashlib.sha256(script_path.read_bytes()).hexdigest()[:12],
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "description": ("Decisive q-degree scan proving no low-degree qZeilberger "

@@ -5,19 +5,24 @@ operator — a self-contained, checkpointed, laptop-runnable script.
 
 WHY THIS SCRIPT
 ---------------
-The Borromean diagonal colored Jones J_{B,n} satisfies a unique minimal
-q-difference recurrence (order 5; the corpus certified its EXISTENCE to
-mod-p, PR #3443).  The explicit operator has coefficients of intrinsic
-q-degree ~126 (degree terminus, PR #3469), so reconstructing it is a
-multi-prime CRT interpolation — correct complexity, but it needs an
-UNINTERRUPTED multi-hour run.  A laptop provides exactly that (the CI
-sandbox did not — 5 container reclaims killed it).  This script is the
-laptop deliverable.
+The Borromean diagonal colored Jones J_{B,n} satisfies a q-difference
+recurrence whose MINIMAL order is 5 (the corpus certified its EXISTENCE
+to mod-p, PR #3443: r <= 4 excluded).  This script reconstructs the
+UNIQUE nullity-1 form at the (order, m-window) = (6, 11) parameterization
+(R_ORD=6, W_WIN=11) — one order above minimal, chosen because that window
+is where the fit system has a clean 1-dimensional null space (the minimal
+order-5 operator lives inside this order-6 span as an inhomogeneous
+shift-multiple; see the degree-terminus audit).  The explicit operator
+has coefficients of intrinsic q-degree ~126 (degree terminus, PR #3469),
+so reconstructing it is a multi-prime CRT interpolation — correct
+complexity, but it needs an UNINTERRUPTED multi-hour run.  A laptop
+provides exactly that (the CI sandbox did not — 5 container reclaims
+killed it).  This script is the laptop deliverable.
 
 WHAT YOU GET ON SUCCESS
 -----------------------
-  * the explicit operator  sum_{i=0}^{6} a_i(q,m) J_{B,n+i} = b(q,m),
-    m = q^n, coefficients in Q(q)[m^{+-1}], written to
+  * the explicit order-6 operator  sum_{i=0}^{6} a_i(q,m) J_{B,n+i}
+    = b(q,m), m = q^n, coefficients in Q(q)[m^{+-1}], written to
     borromean-operator-explicit.json;
   * an EXACT symbolic verification that it annihilates the Habiro tower
     (this upgrades the recurrence from mod-p evidence to a proof of the
@@ -71,8 +76,9 @@ from pathlib import Path
 
 try:
     import numpy as np
+    import sympy as sp
 except ImportError:
-    sys.exit("Please `pip install numpy` (and sympy) first.")
+    sys.exit("Please `pip install numpy sympy` first.")
 
 # ----------------------------------------------------------------------
 # Parameters
@@ -82,7 +88,8 @@ W_WIN = 11                   # m-window: a_i supported on m^k, |k| <= W_WIN
 NBLK = 2 * W_WIN + 1         # 23
 NCOLS = (R_ORD + 2) * NBLK   # 184  (blocks a_0..a_6, then b)
 R_FIT = NCOLS + 20           # fit rows per base point group
-DEG_CAP = 300                # per-column rational-fit degree cap
+DEG_CAP = 240                # per-column rational-fit degree cap (covers the
+                             # measured max coeff q-degree ~218 with margin)
 NHOLD = 15                   # holdout samples for fit validation
 CKPT = Path(__file__).with_name("borromean-reconstruct-ckpt.json")
 OUT = Path(__file__).with_name("borromean-operator-explicit.json")
@@ -270,7 +277,9 @@ def sample_prime(p, log):
     raw = []
     pcount = Counter()
     s = 2
-    NEED = 2 * 130 + 40      # base points; grows the fit sample
+    # base points must support a degree-DEG_CAP fit: try_deg(d) needs
+    # 2d+3 fit rows, plus NHOLD holdout rows -> 2*DEG_CAP + NHOLD + margin.
+    NEED = 2 * DEG_CAP + NHOLD + 20
     t0 = time.time()
     while len(raw) < NEED and s < NEED * 6 + 500:
         s += 1
@@ -370,7 +379,11 @@ def load_ckpt():
 
 
 def save_ckpt(state):
-    CKPT.write_text(json.dumps(state))
+    # atomic: write a temp then replace, so a Ctrl-C / power-loss mid-write
+    # cannot corrupt or empty the resumable checkpoint.
+    tmp = CKPT.with_suffix(".tmp")
+    tmp.write_text(json.dumps(state), encoding="utf-8")
+    tmp.replace(CKPT)
 
 
 def main():
@@ -408,15 +421,12 @@ def main():
 
     # assemble + EXACT symbolic verification
     log("\n  lifting complete; assembling + verifying exactly in sympy ...")
-    import sympy as sp
     q = sp.symbols("q")
     s = sp.symbols("s", positive=True)   # s = q^{1/2}
 
     def hb(n):
         def brk(a):
             return s**a - s**(-a)
-        num = brk(n)**2 * sp.prod([brk(n + j) * brk(n - j)
-                                   for j in range(1, 0)]) ** 3
         tot = sp.Integer(0)
         for l in range(n):
             nm = brk(n)**2 * sp.prod([brk(n + j) * brk(n - j)
@@ -447,7 +457,10 @@ def main():
             ai = sum(a_coeff(i, k) * m**k for k in range(-W_WIN, W_WIN + 1))
             lhs += ai * J[n + i]
         rhs = sum(b_coeff(k) * m**k for k in range(-W_WIN, W_WIN + 1))
-        diff = sp.simplify(sp.together((lhs - rhs).subs(q, s**2)))
+        # lhs-rhs is a pure rational function in s after q->s^2; cancel is
+        # sufficient to decide identically-zero and is far faster/robust
+        # than simplify on the high-degree (~deg-1100 in s) expression.
+        diff = sp.cancel(sp.together((lhs - rhs).subs(q, s**2)))
         ok = diff == 0
         log(f"  [verify] n={n}: exact annihilation? {ok}")
         if not ok:
