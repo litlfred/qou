@@ -2,7 +2,7 @@ The bar-even (binding, $\cosh$) and bar-odd ($\mathfrak{Q}_\beta$, $\sinh$) chan
 
 ## Channel recurrences
 
-The continuous $q$-Hermite polynomials $H_n(x \mid q)$ form the proved basis of the binding kernel. Under simultaneous variable rotation $x \mapsto ix$ and bar involution $q \mapsto q^{-1}$, they yield the Ismail–Masson $q^{-1}$-Hermite polynomials:
+The continuous $q$-Hermite polynomials $H_n(x \mid q)$ construct the proved basis of the binding kernel. Under simultaneous variable rotation $x \mapsto ix$ and bar involution $q \mapsto q^{-1}$, they yield the Ismail–Masson $q^{-1}$-Hermite polynomials:
 
 $$
 h_n(x \mid q) \;=\; i^{-n}\, H_n(ix \mid q^{-1}).
@@ -12,7 +12,7 @@ The two channel recurrences are identical up to this rotation. We formalize this
 
 ## Orthogonality measures
 
-The shared recurrence does not imply a shared spectral measure. The asymmetry is structural:
+The shared recurrence does not imply a shared spectral measure. The asymmetry remains structural:
 
 | | even channel (binding) | odd channel ($\mathfrak{Q}_\beta$) |
 |---|---|---|
@@ -21,12 +21,12 @@ The shared recurrence does not imply a shared spectral measure. The asymmetry is
 | measure | $q$-Plancherel weight (determinate) | indeterminate moment problem |
 | at $q_0 > 1$ | does not exist archimedeanly | native regime |
 
-At the substrate anchor $q_0 > 1$, the even-channel measure fails to form a probability law ([`prop:q-gaussian-obstruction-at-q0`](../mass-theory/q-gaussian-obstruction-at-q0.md)). This is the Bożejko–Speicher positivity obstruction. The rotation is therefore irreducibly fibre-level, consistent with observable $\mathrm{Im}(q_0) = 0$. Measure asymmetry explains why parity projection left the binding error unchanged while the recurrence tie holds: a three-term recurrence is measure-independent, whereas a projection is not.
+At the substrate anchor $q_0 > 1$, the even-channel measure fails to form a probability law ([`prop:q-gaussian-obstruction-at-q0`](../mass-theory/q-gaussian-obstruction-at-q0.md)). This presents the Bożejko–Speicher positivity obstruction. The rotation is therefore irreducibly fibre-level, consistent with observable $\mathrm{Im}(q_0) = 0$. Measure asymmetry explains why parity projection left the binding error unchanged while the recurrence tie holds. A three-term recurrence is measure-independent, whereas a projection is not.
 
 ## Literature precedents
 
 1. **Askey and Ismail–Masson**: The $q > 1$ continuation of continuous $q$-Hermite \cite{askey1989qhermite} provides the eigenfunction rotation \cite{ismail-masson1994}.
-2. **The modular double**: The non-compact channel couples $q = e^{i\pi b^2}$ to $\tilde{q} = e^{-i\pi/b^2}$. Ponsot–Teschner Racah–Wigner coefficients for $U_q(\mathfrak{sl}(2,\mathbb{R}))$ \cite{ponsot-teschner2001} sit at the non-compact Askey–Wilson level. The map $b \leftrightarrow 1/b$ drives the 6j-level rotation. This divides $\Phi_q$ (Faddeev, non-compact) from $\mathrm{Li}_2^q$ (Rogers, compact).
+2. **The modular double**: The non-compact channel couples $q = e^{i\pi b^2}$ to $\tilde{q} = e^{-i\pi/b^2}$. Ponsot–Teschner Racah–Wigner coefficients for $U_q(\mathfrak{sl}(2,\mathbb{R}))$ \cite{ponsot-teschner2001} sit at the non-compact Askey–Wilson level. The map $b \leftrightarrow 1/b$ drives the $6j$-level rotation. This divides $\Phi_q$ (Faddeev, non-compact) from $\mathrm{Li}_2^q$ (Rogers, compact).
 3. **Quantum modularity**: The Andersen–Kashaev state integral of a knot factors into a $q$-series and a $\tilde{q}$-series. The leading asymptotics trace $\mathrm{Vol} + i\,\mathrm{CS}$ \cite{garoufalidis-zagier-2024}. One complex object dictates two channel factorizations, mirroring the Neumann–Zagier structure \cite{neumann-zagier1985} that $\mathfrak{V}$ transports to binding and decay.
 
 ## Leonard pairs
@@ -35,4 +35,4 @@ Zhedanov's $AW(3)$ algebra \cite{zhedanov1991} embeds the rotation as an operato
 
 ## Vertex-algebra shadow
 
-Under the bar involution, the character side splits as a $\mathbb{Z}_2$-orbifold $V = V^+ \oplus V^-$. The involved characters are false theta functions, appearing as $(1,p)$ singlet log-VOA characters \cite{creutzig-milas2014}. Their quantum modularity tracks the disk-interior versus root-of-unity rotation, using the Lawrence–Zagier $\Psi$ operation established at the $W_\lambda$ keystone. This structure suggests a path to unify the lepton-tower $\Phi_q$ mechanism with the binding/decay model.
+Under the bar involution, the character side splits as a $\mathbb{Z}_2$-orbifold $V = V^+ \oplus V^-$. The involved characters form false theta functions, appearing as $(1,p)$ singlet log-VOA characters \cite{creutzig-milas2014}. Their quantum modularity tracks the disk-interior versus root-of-unity rotation, using the Lawrence–Zagier $\Psi$ operation established at the $W_\lambda$ keystone. This structure suggests a path to unify the lepton-tower $\Phi_q$ mechanism with the binding/decay model.

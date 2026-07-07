@@ -1,11 +1,6 @@
 **All three $V_\lambda$ per-irrep character-difference closed forms — cyclotomic-factor pattern.**
 
-Per user direction "V_2,1 — write all with 4 in denom — pattern,
-where come from? check lit", "first prove formally V", "V_3 ε^k
-pattern", "add Hoefsmit 2x2 matrix expansion", "can you prove all
-generalizations": this block extends [`rem:chi-v3-closed-form-proof`](#rem:chi-v3-closed-form-proof)
-to all three Wedderburn blocks of $H_3(q)$, exposing the
-**unified cyclotomic-factor pattern**.
+This block extends [`rem:chi-v3-closed-form-proof`](#rem:chi-v3-closed-form-proof) to all three Wedderburn blocks of $H_3(q)$, exposing the unified cyclotomic-factor pattern.
 
 ## Three closed forms
 
@@ -39,9 +34,9 @@ $\Phi_8(q) = q^4+1$.
 
 1. **$V_{(3)}$ and $V_{(1,1,1)}$ share the identical numerator polynomial** — only the denominator differs ($q$ vs $q^5$). The denominator-power gap of $4$ exactly matches the factor by which the closed forms differ:
    $$\chi_{(1,1,1)}\text{-diff}(q) = \frac{\chi_{(3)}\text{-diff}(q)}{q^4}.$$
-   This is the **conjugate-partition symmetry**: $(1,1,1)$ is the conjugate (transpose) of $(3)$, and the corresponding sign-rep $\leftrightarrow$ trivial-rep duality $\sigma_i \mapsto q$ vs $\sigma_i \mapsto -q^{-1}$ produces the $q \leftrightarrow -q^{-1}$ substitution that maps the two characters into each other.
+   This manifests the conjugate-partition symmetry: $(1,1,1)$ forms the conjugate (transpose) of $(3)$. The corresponding sign-rep $\leftrightarrow$ trivial-rep duality ($\sigma_i \mapsto q$ vs $\sigma_i \mapsto -q^{-1}$) produces the $q \leftrightarrow -q^{-1}$ substitution that maps the two characters into each other.
 
-2. **$V_{(2,1)}$ involves 8th roots of unity** ($\Phi_8 = q^4 + 1$, whose roots are the primitive 8th roots), while $V_{(3)}, V_{(1,1,1)}$ involve **4th roots** ($\Phi_4 = q^2 + 1$). This is consistent with the **Clifford depth** of the H_3 representations: V_(2,1) is the 2-d Hoefsmit irrep (Cl(3) depth), while the 1-d irreps V_(3), V_(1,1,1) are Cl(2) depth.
+2. **$V_{(2,1)}$ involves 8th roots of unity** ($\Phi_8 = q^4 + 1$, whose roots form the primitive 8th roots). $V_{(3)}$ and $V_{(1,1,1)}$ involve 4th roots ($\Phi_4 = q^2 + 1$). This structure aligns with the Clifford depth of the $H_3$ representations: $V_{(2,1)}$ forms the 2-d Hoefsmit irrep (Cl(3) depth), while the 1-d irreps $V_{(3)}, V_{(1,1,1)}$ form Cl(2) depth.
 
 3. **Denominator power tracks the content sum**:
    - $c(\lambda) = \sum_{(i,j) \in \lambda} (j - i)$
@@ -49,7 +44,7 @@ $\Phi_8(q) = q^4+1$.
    - $c((2,1)) = 0+1-1 = 0$, denominator $q^3$
    - $c((1,1,1)) = 0-1-2 = -3$, denominator $q^5$
 
-   The denominator exponent is $p = 3 - \frac{2}{3} c(\lambda)$, mapping $c \in \{3, 0, -3\}$ to $p \in \{1, 3, 5\}$ exactly.
+   The denominator exponent obeys $p = 3 - \frac{2}{3} c(\lambda)$, mapping $c \in \{3, 0, -3\}$ to $p \in \{1, 3, 5\}$ exactly.
 
 ## Origin of the V_(2,1) closed form
 
@@ -74,4 +69,3 @@ The canonical values are rigorously evaluated via formal trace definitions.
 All proved by `field_simp + ring` after unfolding (sorry-free):
 
 See [Table 2](#tbl:chi-per-irrep-cyclotomic-closed-forms-table2-data).
-

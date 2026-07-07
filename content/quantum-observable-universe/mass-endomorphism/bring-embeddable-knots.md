@@ -8,11 +8,11 @@ $$
   \bigl\{ K \,:\, g(K) \;\leq\; 4 \bigr\}.
 $$
 
-By the [generation completeness theorem](#prop:knot-eigenbasis-complete), this class is generated from a finite list of **torus-knot generators** combined with skein crossing changes. The recursive atom-knot atlas lists the canonical low-genus representatives.
+By the [generation completeness theorem](#prop:knot-eigenbasis-complete), a finite list of torus-knot generators combined with skein crossing changes generates this class. The recursive atom-knot atlas lists the canonical low-genus representatives.
 
 ### Genus stratification and generators
 
-The full enumeration of Bring-embeddable knots by genus is provided in [Table: Bring-embeddable knot table](#tbl:bring-embeddable-knots-table-data). Every Bring-embeddable knot derives from the seven torus-knot generators:
+The full enumeration of Bring-embeddable knots by genus appears in [Table: Bring-embeddable knot table](#tbl:bring-embeddable-knots-table-data). Every Bring-embeddable knot derives from seven torus-knot generators:
 
 $$
   \{T(2, 3),\; T(2, 5),\; T(2, 7),\; T(2, 9),\; T(3, 4),\; T(3, 5),\; T(5, 2)\}
@@ -36,4 +36,4 @@ $$
   e_{\lambda_K} \cdot \mathrm{Li}_2^q(z_K) \bigr).
 $$
 
-A single counter-example would falsify B1. While the figure-8 row is verified ([`conj:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eight-depth-2-witness)), confirming nodes like $5_2$, $6_2$, and $6_3$ remains necessary. This verification entails identifying $\lambda_K$ and $z_K$, and computing the projection $e_{\lambda_K}$ as the explicit Goncharov-period witness ([`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent)).
+A single counter-example falsifies B1. We verified the figure-$8$ row ([`conj:bring-figure-eight-depth-2-witness`](#conj:bring-figure-eight-depth-2-witness)), but confirming nodes like $5_2$, $6_2$, and $6_3$ remains necessary. This verification entails identifying $\lambda_K$ and $z_K$, and computing the projection $e_{\lambda_K}$ as the explicit Goncharov-period witness ([`prop:explicit-central-idempotent`](#prop:explicit-central-idempotent)).

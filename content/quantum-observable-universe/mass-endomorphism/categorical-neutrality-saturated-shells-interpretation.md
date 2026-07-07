@@ -1,6 +1,6 @@
 ## Structural constraint
 
-The full-twist $\Delta_n^2$ acts on each Wedderburn block $V_\lambda$ of $H_n(q)$ by the central scalar $q^{c(\lambda)}$, where $c(\lambda) = \sum_{x \in \lambda}(j_x - i_x)$ is the content sum of the partition $\lambda \vdash n$ \cite{geckpfeiffer2000, mathas1999}. Trivial action of the full-twist on $\Phi_n$ restricts the partitions in the Wedderburn decomposition of $\Phi_n$ to those with content sum zero. These are the self-conjugate partitions $\lambda = \lambda'$ on Young's lattice. At saturated $n$, $\Phi_n$ is supported strictly on self-conjugate partitions.
+The full-twist $\Delta_n^2$ acts on each Wedderburn block $V_\lambda$ of $H_n(q)$ by the central scalar $q^{c(\lambda)}$, where $c(\lambda) = \sum_{x \in \lambda}(j_x - i_x)$ provides the content sum of the partition $\lambda \vdash n$ \cite{geckpfeiffer2000, mathas1999}. Trivial action of the full-twist on $\Phi_n$ restricts the partitions in the Wedderburn decomposition of $\Phi_n$ to those with content sum zero. These form the self-conjugate partitions $\lambda = \lambda'$ on Young's lattice. At saturated $n$, $\Phi_n$ finds support strictly on self-conjugate partitions.
 
 For $n \notin \mathfrak{M}$, the constraint fails. Non-self-conjugate partitions enter $\Phi_n$, and the full-twist acts by a non-trivial scalar. This transition formalizes shell closure, replacing ad hoc selection rules with categorical constraints.
 
@@ -16,7 +16,7 @@ Earlier models ([atom-knot-mass-derivation](#prop:atom-knot-mass-derivation)) tr
 
 ## Operator-level support
 
-The claim that $\Phi_n$ is supported on self-conjugate partitions applies at the operator level. The categorical mass operator $\Phi_n$ has zero matrix entries on every non-self-conjugate isotypical component in $H_n(q) = \bigoplus_\lambda \mathrm{End}(V_\lambda)$.
+The claim that $\Phi_n$ receives support on self-conjugate partitions applies at the operator level. The categorical mass operator $\Phi_n$ exhibits zero matrix entries on every non-self-conjugate isotypical component in $H_n(q) = \bigoplus_\lambda \mathrm{End}(V_\lambda)$.
 
 This does not imply the Plancherel-weighted character sum:
 
@@ -28,6 +28,6 @@ The character sum vanishes identically at certain atomic-braid cycle types. The 
 
 ## Discussion
 
-**Status: conjectural** under AGENTS.md §3b. Numerical witnesses at $k = 3, \dots, 10$ support the saturation condition. The conjecture extends this to all $n \in \mathfrak{M}$, including the high-mass region $\{50, 82, 126\}$.
+Status: conjectural under AGENTS.md §3b. Numerical witnesses at $k = 3, \dots, 10$ support the saturation condition. The conjecture extends this to all $n \in \mathfrak{M}$, including the high-mass region $\{50, 82, 126\}$.
 
 The downstream cone ([conjecture-cones audit](../../../docs/audits/conjecture-cones.md)) includes [`prop:magic-numbers-from-q`](#prop:magic-numbers-from-q) and the shell-closure portion of the BW formula ([`thm:wedderburn-mass-formula`](#thm:wedderburn-mass-formula)). Proving these requires either a derivation of this conjecture or its retention as a class-axiomatised input.

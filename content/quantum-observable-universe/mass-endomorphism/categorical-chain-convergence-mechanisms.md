@@ -63,7 +63,7 @@ Both limits converge a formally-infinite Habiro-ring element to a finite-precisi
 ## Pre-archimedean home
 
 In the Habiro ring $\widehat{\mathbb{Z}[q]}_{\text{Hab}}$:
-- Each $F_k = 1 + c_k \cdot b^k \cdot \hbar_q^{2k}$ is a Pochhammer-graded element at depth $k$.
+- Each $F_k = 1 + c_k \cdot b^k \cdot \hbar_q^{2k}$ constructs a Pochhammer-graded element at depth $k$.
 - The infinite product $\prod_k F_k$ exists formally within the inverse limit $\varprojlim \mathbb{Z}[q]/((q;q)_n)$.
 - Per-knot evaluation projects to a Habiro residue at the substrate $q_0$, rendered finite by linking-number locality.
 - The archimedean realisation provides the numerical $\mathfrak{Q}_\beta^{\text{cat}}$.
