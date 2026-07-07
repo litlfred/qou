@@ -54,7 +54,7 @@ import sympy as sp
 HERE = Path(__file__).resolve().parent
 # Canonical q₀ from the substrate single-source-of-truth.
 sys.path.insert(0, str(HERE.parent / "tools" / "qou-substrate" / "python"))
-from qou_substrate.constants import q_at  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 
 COMPUTE_DPS = 60
 OUTPUT_DPS = 50
