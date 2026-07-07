@@ -118,3 +118,47 @@ theorem deformation_split (g x : F) (hg : g ≠ 0) (h : g ^ 2 * (5 + x) = 1) :
   rw [inv_pow]
   field_simp
   linear_combination -25 * (g ^ 2 * (5 + x) + 1) * h
+
+/-! ### E_unit parity exclusion (D5)
+
+The bar involution `σ` (the substrate `q ↦ q⁻¹`, an order-2 ring
+endomorphism) splits energies into bar-even (`σ x = x`, the binding / cosh
+channel) and bar-odd (`σ x = -x`, the 𝔔_β / sinh decay channel). The
+deuteron unit `E_unit = B/(5g)` is a quotient of bar-even quantities, hence
+bar-even; the β-decay quantum 𝔔_β is bar-odd; a nonzero bar-even quantity is
+never a bar-odd one. This is the machine-checked form of the D5 exclusion
+of the transition sector as `E_unit`. -/
+
+variable (σ : F →+* F)
+
+/-- Bar-even: fixed by the involution (binding / cosh channel). -/
+def BarEven (x : F) : Prop := σ x = x
+
+/-- Bar-odd: negated by the involution (𝔔_β / sinh decay channel). -/
+def BarOdd (x : F) : Prop := σ x = -x
+
+/-- **A quotient of bar-even quantities is bar-even.** If `E·s = B` with `B`
+    and `s` bar-even and `s ≠ 0`, then `E` is bar-even. Applied to
+    `B = 5g·E_unit`: `B` (binding) and `5g` are bar-even, so `E_unit` is. -/
+theorem barEven_of_mul {B s E : F} (hs : s ≠ 0) (hB : BarEven σ B)
+    (hsdiv : BarEven σ s) (hE : E * s = B) : BarEven σ E := by
+  have hmul : σ E * s = E * s := by
+    have hcong : σ (E * s) = B := by rw [hE]; exact hB
+    rw [map_mul, hsdiv] at hcong
+    rw [hcong, hE]
+  exact mul_right_cancel₀ hs hmul
+
+/-- **A nonzero bar-even quantity is never bar-odd** (char ≠ 2). Hence the
+    bar-even `E_unit` cannot equal the bar-odd `𝔔_β`: the entire bar-odd
+    transition sector is excluded as the deuteron unit. -/
+theorem barEven_ne_barOdd {E Q : F} (hchar : (2 : F) ≠ 0)
+    (hE : BarEven σ E) (hEne : E ≠ 0) (hQ : BarOdd σ Q) : E ≠ Q := by
+  intro h
+  subst h
+  have hEE : E = -E := hE.symm.trans hQ
+  have h2 : (2 : F) * E = 0 := by linear_combination hEE
+  rcases mul_eq_zero.mp h2 with hc | hz
+  · exact hchar hc
+  · exact hEne hz
+
+end QOU.MassTheory.DeuteronFusion
