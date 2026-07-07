@@ -293,6 +293,36 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies expo-milnor-clarity.",
+        "reviewed_at": "2026-07-07T23:31:23Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies milnor-brevity.",
+        "reviewed_at": "2026-07-07T23:31:23Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-03T00:52:56.534Z"
