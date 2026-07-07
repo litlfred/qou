@@ -1,5 +1,5 @@
 **Proposition (closed form of the counit $Q$-value).**
-*Let $\Delta = \mathrm{NF}(n) - \mathrm{NF}(p)$ be the single-wrap normal-form difference of the neutron and proton typed-crossing elements in $H_3(q)$, and write $h = q - q^{-1}$. Let $\varepsilon$ denote the Frobenius counit (the unweighted sum of normal-form coefficients) and $\mathfrak{E}_0 = m_e/(q(q-1))$ the per-Hecke-step energy scale ([energy scale](#rem:energy-scale-planck)). Then:*
+*Let $\Delta = \mathrm{NF}(n) - \mathrm{NF}(p)$ be the single-wrap normal-form difference of the neutron and proton typed-crossing elements in $H_3(q)$, and write $h = q - q^{-1}$. Let $\varepsilon$ denote the Frobenius counit and $\mathfrak{E}_0 = m_e/(q(q-1))$ the per-Hecke-step energy scale. Then:*
 $$
   \varepsilon(\Delta)\cdot\mathfrak{E}_0
   \;=\;
@@ -8,18 +8,14 @@ $$
 
 ## Counit versus Markov trace
 
-The normal-form difference is supported on the identity and the two crossing generators, $\Delta = \bigl[\tfrac{h^2}{2},\,-\tfrac{h}{2},\,-\tfrac{h}{2},\,0,\,0,\,0\bigr]$ in the basis $[\gamma,\sigma_0,\sigma_1,L_+,L_-,e^-]$. The leading $L_+$ content cancels between the two nucleons. Two canonical functionals act on this difference:
+Two canonical functionals act on this difference:
 $$
   \varepsilon(\Delta) = \frac{h^2}{2} - h,
   \qquad
-  \mathrm{tr}_M(\Delta) = \frac{h^2}{2} - h\,z,
-$$
-where $z$ is the Markov–Jones loop parameter and the identity $\gamma = \mathbf{1}$ carries Markov weight $\mathrm{tr}_M(\mathbf{1}) = 1$. The counit is the Markov trace evaluated at the trivial loop value. The two agree precisely when $z = 1$, and otherwise differ by:
-$$
-  \varepsilon(\Delta) - \mathrm{tr}_M(\Delta) = h\,(z - 1).
+  \mathrm{tr}_M(\Delta) = \frac{h^2}{2} - h\,z.
 $$
 
-For $h \neq 0$, equality holds if and only if $z = 1$. Since $z = 1/(\sqrt q + 1/\sqrt q) \le \tfrac12$ for real $q > 0$, the trivial-loop value is never attained on the substrate. The counit and the Markov trace are genuinely distinct functionals on the substrate.
+The counit is the Markov trace evaluated at the trivial loop value. The two agree precisely when $z = 1$. The trivial-loop value is never attained on the substrate. The counit and the Markov trace are genuinely distinct functionals on the substrate.
 
 ## Factorization of the energy scale
 
@@ -27,14 +23,6 @@ The per-Hecke-step energy factors through the information speed $c_q^2 = 1/(q-1)
 $$
   \mathfrak{E}_0
   =
-  m_e\,c_q^2\,\hbar_q^{E}
-  =
-  \frac{m_e}{(q-1)^2}\cdot\frac{q-1}{q}
-  =
   \frac{m_e}{q(q-1)}.
 $$
-The quantity $\hbar_q^{E} = (q-1)/q$ is the energy-scale action quantum, distinct from the Hecke parameter $h = q - q^{-1}$.
-
-## Lean formalization
-
-We verify the algebraic content over an arbitrary field, free of `sorry`. The module `QOU.Interactions.QBetaCounitTrace` contains the functional comparison ($\varepsilon = \mathrm{tr}_M$ at $z = 1$, the gap $h(z-1)$, and the equality criterion). The module `QOU.Interactions.QBetaEnergyScale` contains the energy-scale factorization `E0_eq` and the closed form `Qbeta_closed`.
+The quantity $\hbar_q^{E}$ is the energy-scale action quantum, distinct from the Hecke parameter $h$.

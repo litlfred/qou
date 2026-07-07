@@ -11,7 +11,7 @@ $$
   \Phi_q(z) \;\stackrel{?}{=}\; \int_0^z \frac{\ln_q(1+t)}{t}\,dt
        \;\stackrel{?}{=}\; \prod_{k\geq 1}(1 - q^{-k}z)^{-1}
 $$
-*is **false**. The integral evaluates to the bounded quantity $-\mathrm{Li}_2^q(-z)$, not the unbounded $\Phi_q(z)$. The two sides differ by six orders of magnitude at $z = 0.989$. We documented the resulting $-737$ MeV mirror-nucleus pathology in the [mass-endomorphism-tower audit](#prop:mass-endomorphism-tower).*
+*is **false**. The integral evaluates to the bounded quantity $-\mathrm{Li}_2^q(-z)$, not the unbounded $\Phi_q(z)$. The two sides differ by six orders of magnitude at $z = 0.989$.*
 
 ## Discipline
 
@@ -21,12 +21,4 @@ The $\Phi_q$ product form explains the $\sim 10^5 \times$ amplification at $|V| 
 
 ## Lean anti-regression class
 
-The Lean stub [`QOU.BraidKnot.QuantumDilogarithm`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/lean/QOU/BraidKnot/QuantumDilogarithm.lean) provides:
-
-- `phi_q : ℝ → ℝ → ℝ`: Formal noncomputable definition of the product form.
-- `li2_q : ℝ → ℝ → ℝ`: Formal noncomputable definition of the symmetric q-dilogarithm.
-- `phi_q_ne_li2_q : ¬ (phi_q = fun q z => -li2_q q (-z))`: The two are not equal, breaking the historical identity.
-- `towerTerm q V := -li2_q q (-|V|)`: The **corrected** per-generator tower term.
-- `class HasCorrectedMassEndomorphismTower`: Type-level discipline. Any instance must use `towerTerm`, not `phi_q`, as the archimedean specialisation.
-
-Combined with the production wiring, this class prevents the $\Phi_q$ pathology from re-entering the mass formula.
+The Lean stub `QOU.BraidKnot.QuantumDilogarithm` provides formal noncomputable definitions of both functions and proves they are not equal. It defines `towerTerm q V := -li2_q q (-|V|)` as the corrected per-generator tower term. A type-level class `HasCorrectedMassEndomorphismTower` ensures any instance must use `towerTerm`, not `phi_q`. This prevents the $\Phi_q$ pathology from re-entering the mass formula.
