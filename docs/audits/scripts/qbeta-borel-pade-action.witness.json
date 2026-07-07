@@ -3,12 +3,12 @@
   "description": "Borel\u2013Pad\u00e9 of 4_1 Ohtsuki series: locate the instanton action A (f-map Stokes datum); test complex \ud835\udd19=Vol\u00b1iCS.",
   "audit_only": true,
   "tier": "structural-exact (Vol recovery) + numerical (Borel-Pad\u00e9 pole, order-limited)",
-  "computedAt": "2026-07-07T16:41:36.236455+00:00",
-  "commitSha": "af80b7ac0d27049e1c7818ba4159a7282670f9f2",
+  "computedAt": "2026-07-07T16:49:21.844501+00:00",
+  "commitSha": "782ab94253870a93adaccada6507c290bac9da2d",
   "engine": "mpmath",
   "engineVersion": "1.3.0",
   "scriptFile": "qbeta_borel_pade_action.py",
-  "scriptHash": "724e0801b705",
+  "scriptHash": "5ef3e59d9e17",
   "assertions": [
     {
       "name": "vol41_recovered",
@@ -19,7 +19,7 @@
       "passed": true
     },
     {
-      "name": "kappa_all_positive_real_singularity",
+      "name": "kappa_all_positive",
       "passed": true
     },
     {
@@ -70,7 +70,7 @@
     "closest_candidate": "2/e",
     "closest_rel": "0.057097",
     "corrects_3478": "order-6 'complex |A|\u22480.5' was fit noise; real \u22480.7",
-    "verdict": "CORRECTION of #3478: the 4_1 resurgence action is REAL-POSITIVE, not complex. Clean order-11 \u03ba ladder (dps 220, Vol rec rel 5.97e-29) has \u03ba_k ALL POSITIVE and monotone growing \u21d2 a single real-positive dominant Borel singularity (a complex-conjugate pair would oscillate the \u03ba_k signs). The large-order ratio A_k=k\u00b7\u03ba_{k-1}/\u03ba_k Richardson-extrapolates to A\u22480.693749 (closest framework value 2/e, rel 0.0571). The #3478 order-6 'complex/oscillating |A|\u22480.5' read was low-order fit noise (\u03ba_4,5 imprecise at dps 100). Borel\u2013Pad\u00e9 nearest-pole is Froissart-unstable (jumps 0.71\u21920.049\u21920.049+0.12j across M) \u2014 reported as cross-check, NOT used for A. A is the f-map's Stokes datum. Still order-limited (\u03ba to 11); an exact saddle expansion to ~20 orders would pin the candidate match. No fit to QOU data; no c_k value; no wiring; no tier change."
+    "verdict": "CORRECTION of #3478: the 4_1 resurgence action is REAL-POSITIVE, not complex \u2014 FORCED by amphichirality (4_1 amphichiral \u21d2 CS=0 \u21d2 \ud835\udd19=Vol real). Clean order-11 \u03ba ladder (dps 220, Vol rec rel 5.97e-29) has \u03ba_k all positive + monotone, CONSISTENT WITH (not a proof of) a real-positive dominant singularity (a small-phase complex pair would not yet flip signs by order 11). The large-order ratio A_k=k\u00b7\u03ba_{k-1}/\u03ba_k Richardson-extrapolates to A\u22480.693749 (closest framework value 2/e, rel 0.0571). The #3478 order-6 'complex/oscillating |A|\u22480.5' read was low-order fit noise (\u03ba_4,5 imprecise at dps 100). Borel\u2013Pad\u00e9 nearest-pole is Froissart-unstable (jumps 0.71\u21920.049\u21920.049+0.12j across M) \u2014 reported as cross-check, NOT used for A. A is the f-map's Stokes datum. Still order-limited (\u03ba to 11); an exact saddle expansion to ~20 orders would pin the candidate match. No fit to QOU data; no c_k value; no wiring; no tier change."
   },
   "context": {
     "axis": "z->c_k f-map keystone: Borel-Pad\u00e9 instanton action",

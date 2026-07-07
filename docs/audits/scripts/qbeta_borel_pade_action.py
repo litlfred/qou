@@ -113,19 +113,22 @@ def main():
           abs(kappa[0] - mp.mpf("0.5542")) < mp.mpf("1e-3") and
           abs(kappa[1] - mp.mpf("0.7311")) < mp.mpf("1e-3"))
 
-    # --- 2. REAL vs COMPLEX: sign structure of κ_k -------------------------
-    # A single real-positive Borel singularity ζ=A ⇒ b_k=κ_k/k!~C/A^k, all SAME
-    # sign ⇒ κ_k all same sign, monotone.  A complex-conjugate pair ζ=|A|e^{±iθ}
-    # ⇒ κ_k ~ (k!/|A|^k)·2cos(kθ+φ), which OSCILLATES in sign (for θ not tiny).
-    # Our κ_k are all positive and monotone growing ⇒ dominant singularity is
-    # REAL-POSITIVE.  This CORRECTS the #3478 order-6 "complex/oscillating |A|≈0.5"
-    # read, which was low-order fit noise (the order-6 A_n bounced only because
-    # κ_4,κ_5 were imprecise at dps 100).
+    # --- 2. sign structure of κ_k (EVIDENCE, not proof) --------------------
+    # A single real-positive Borel singularity ζ=A gives b_k=κ_k/k!~C/A^k, all one
+    # sign; a complex-conjugate pair ζ=|A|e^{±iθ} gives κ_k~(k!/|A|^k)·2cos(kθ+φ),
+    # sign-oscillating for θ not tiny.  Our κ_k are all positive + monotone through
+    # order 11 — CONSISTENT WITH a real-positive dominant singularity, but NOT a
+    # proof: a small-phase pair (θ ≲ π/11 ≈ 16°) would not yet have flipped a sign,
+    # nor is a single dominant singularity guaranteed at finite order.  The FORCING
+    # reason to expect reality is amphichirality (CS(4_1)=0 ⇒ 𝔙 real; see below);
+    # the sign structure is corroborating evidence.  Either way this corrects
+    # #3478's order-6 "complex |A|≈0.5" (which was low-order fit noise).
     all_positive = all(k > 0 for k in kappa)
     monotone = all(kappa[i] < kappa[i + 1] for i in range(K - 1))
-    print(f"\n=== 2. sign structure ===  κ all positive: {all_positive}  "
-          f"monotone growing: {monotone}  ⇒ REAL-positive dominant singularity")
-    check("kappa_all_positive_real_singularity", all_positive)
+    print(f"\n=== 2. sign structure (evidence) ===  κ all positive: {all_positive}  "
+          f"monotone: {monotone}  ⇒ consistent with real-positive (NOT a proof; "
+          f"amphichirality is the forcing reason)")
+    check("kappa_all_positive", all_positive)
     check("kappa_monotone_growing", monotone)
 
     # --- 3. Robust action via large-order ratio + Richardson ---------------
@@ -190,10 +193,12 @@ def main():
     all_passed = all(x["passed"] for x in assertions)
     verdict = (
         f"CORRECTION of #3478: the 4_1 resurgence action is REAL-POSITIVE, not "
-        f"complex. Clean order-{K} κ ladder (dps 220, Vol rec rel "
-        f"{mp.nstr(abs(V_rec/Vol_41-1),3)}) has κ_k ALL POSITIVE and monotone "
-        f"growing ⇒ a single real-positive dominant Borel singularity (a "
-        f"complex-conjugate pair would oscillate the κ_k signs). The large-order "
+        f"complex — FORCED by amphichirality (4_1 amphichiral ⇒ CS=0 ⇒ 𝔙=Vol real). "
+        f"Clean order-{K} κ ladder (dps 220, Vol rec rel "
+        f"{mp.nstr(abs(V_rec/Vol_41-1),3)}) has κ_k all positive + monotone, "
+        f"CONSISTENT WITH (not a proof of) a real-positive dominant singularity "
+        f"(a small-phase complex pair would not yet flip signs by order 11). The "
+        f"large-order "
         f"ratio A_k=k·κ_{{k-1}}/κ_k Richardson-extrapolates to A≈{mp.nstr(A_inf,6)} "
         f"(closest framework value {best[0]}, rel {mp.nstr(best[1],3)}). The #3478 "
         f"order-6 'complex/oscillating |A|≈0.5' read was low-order fit noise (κ_4,5 "
