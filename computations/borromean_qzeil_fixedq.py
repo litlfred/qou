@@ -17,7 +17,7 @@ via a mod-p nullspace (linear in all unknowns; seconds).  It is decisive:
     operator of that shape exists at q0;
   * running it at MANY independent q0 (each a bounded-degree rational
     identity in q) is overwhelming evidence the operator exists for
-    general q — the first Borromean recurrence with a certificate
+    general q — would be the first Borromean recurrence with a certificate
     (link-AJ is otherwise formulated-only: Sawabe 2024, Hopf+Whitehead).
 
 Reports the minimal (order r, x-window, cert y-degree) that solves +

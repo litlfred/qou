@@ -7,13 +7,37 @@
 foundation + CRT-route conditioning diagnosis), this branch (route-2
 telescoper diagnosis).
 
+## Epistemic status (STRICT — evidence vs proof, existence vs specific)
+
+Two distinctions must not be blurred:
+
+1. **Existence of *a* recurrence is a THEOREM, not our result.** The
+   colored Jones function of any link is q-holonomic (Garoufalidis–Lê
+   2005); the diagonal specialization `J_{B,n}` inherits holonomicity by
+   closure, so it satisfies *some* q-difference recurrence as a matter of
+   published theory. We did **not** first establish that.
+2. **What is ours is EVIDENCE for the SPECIFIC minimal recurrence** — the
+   explicit order-5, window-13 operator (and the unique order-6, window-11
+   form). That specific operator is unpublished (link-AJ is only
+   *formulated*: Sawabe 2024, Hopf + Whitehead; no explicit Borromean
+   recurrence / A-ideal is in the literature). Our certificate is a
+   **mod-p numerical** certificate (candidate solved on fit rows, then
+   annihilating 30+ rows beyond the fit range at 9 independent
+   (prime, base-point) samples; accidental survival `~p^-30`). Strong
+   evidence — **not** a symbolic proof. The proof of the specific operator
+   is exactly what the q-Gosper route (below) targets.
+
+So "first Borromean recurrence evidence anywhere" means *first explicit
+computation of the specific minimal recurrence*, not "first to show a
+recurrence exists."
+
 ## Standing results (merged, unaffected)
 
-- **Existence certificate** (PR #3443): the Borromean diagonal colored
-  Jones tower `J_{B,n}` satisfies a q-difference recurrence — first such
-  evidence anywhere (link-AJ is formulated-only: Sawabe 2024, Hopf +
-  Whitehead). Minimal raw-recurrence order **5** (`r ≤ 4` excluded), 9/9
-  mod-p confirmations.
+- **Existence certificate** (PR #3443): strong mod-p **evidence** (not
+  proof) for the **specific** minimal q-difference recurrence of the
+  Borromean diagonal colored Jones tower `J_{B,n}` — order **5**
+  (`r ≤ 4` excluded), 9/9 (prime, base-point) confirmations. (Existence of
+  *some* recurrence is the q-holonomicity theorem; see Epistemic status.)
 - **Habiro formula** transcribed + TL₃ cross-verified (PR #3443).
 - **qZeilberger foundation** (PR #3450): the summand shift-ratios
   `s = F(n,l+1)/F(n,l)` and `r1 = F(n+1,l)/F(n,l)` are **exact rational in
