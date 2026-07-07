@@ -134,7 +134,16 @@ def main():
     qs = sp.symbols("qs", positive=True)
     hq = qs - 1 / qs
     us, c2s, c3s = sp.symbols("u c2 c3")
-    w_dep = sp.expand(1 - (hq - 2) / 2 * (c2s * us**2 + c3s * us**3)) - 1
+    # NON-CIRCULAR (Gemini review): do NOT hand-write the inversion. SOLVE the
+    # actual ladder relation L = E(w)/E(1) for the crossing weight w, then
+    # substitute the ladder expansion L = 1 + c2 u^2 + c3 u^3. The departure
+    # w_dep is thus derived from the Moebius relation itself, and the checks
+    # below verify it independently reproduces the theoretical prefactor.
+    Ls, wv = sp.symbols("L wv")
+    E_wv = hq**2 / 2 - hq * wv
+    E_1 = hq**2 / 2 - hq * 1
+    w_solved = sp.solve(Ls - E_wv / E_1, wv)[0]
+    w_dep = sp.expand(w_solved.subs(Ls, 1 + c2s * us**2 + c3s * us**3)) - 1
     # leading [u^2] coefficient (with the derived c2 = -1) is the Q_beta
     # decay-numerator prefactor (q^2-2q-1)/(2q):
     check("D_departure_leading_is_qbeta_numerator_factor",
