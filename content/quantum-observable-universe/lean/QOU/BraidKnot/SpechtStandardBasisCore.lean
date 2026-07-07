@@ -921,6 +921,53 @@ theorem colWordNum_swap_lt (t : Specht.Tableau μ) {a b : Fin (Specht.nOf μ)}
     nlinarith [hab, hwab, Nat.zero_le (w a), Nat.zero_le (w b)]
   omega
 
+/-- **Column stabiliser is invariant under its own action (sorry-free).** If
+`σ ∈ C_s` (preserves `s`'s columns), then `σ • s` has the *same* column pattern as `s`,
+so `C_{σ•s} = C_s`. Used to compose column permutations while sorting. -/
+theorem colStab_smul_eq (s : Specht.Tableau μ)
+    {σ : Equiv.Perm (Fin (Specht.nOf μ))} (hσ : σ ∈ Specht.colStab s) :
+    Specht.colStab (σ • s) = Specht.colStab s := by
+  have h : Specht.colPattern (σ • s) = Specht.colPattern s := by
+    rw [Specht.colPattern_smul]; exact Specht.mem_colStab.mp hσ
+  unfold Specht.colStab; rw [h]
+
+/-- **Existence of a column-word-minimal form (sorry-free) — the `colsort` substitute.**
+Every tableau `s` has a column permutation `ρ ∈ C_s` for which `ρ • s` is
+**column-word-minimal** (no `C_{ρ•s}` element lowers `colWordNum`) and
+`colWordNum (ρ • s) ≤ colWordNum s`. Since `ρ ∈ C_s`, `ρ • s` has the same
+column-membership as `s` and `e_{ρ•s} = ±e_s` (column antisymmetry). This replaces an
+explicit `colsort` **operation**: the sorted form is obtained by well-founded descent —
+if `s` is not already minimal, some `C_s`-element strictly lowers `colWordNum`, and the
+induction hypothesis (strong induction on `colWordNum s`) supplies the minimal form of
+that smaller tableau; column stabilisers compose via `colStab_smul_eq`. -/
+theorem exists_colWordMin_form (s : Specht.Tableau μ) :
+    ∃ ρ : Equiv.Perm (Fin (Specht.nOf μ)), ρ ∈ Specht.colStab s ∧
+      colWordNum (ρ • s) ≤ colWordNum s ∧
+      (∀ σ : Equiv.Perm (Fin (Specht.nOf μ)),
+        σ ∈ Specht.colStab (ρ • s) → colWordNum (ρ • s) ≤ colWordNum (σ • (ρ • s))) := by
+  classical
+  generalize hn : colWordNum s = n
+  induction n using Nat.strong_induction_on generalizing s with
+  | _ n IH =>
+    by_cases hmin : ∀ σ : Equiv.Perm (Fin (Specht.nOf μ)),
+        σ ∈ Specht.colStab s → colWordNum s ≤ colWordNum (σ • s)
+    · refine ⟨1, Subgroup.one_mem _, ?_, ?_⟩
+      · rw [one_smul]; exact hn.le
+      · intro σ hσ
+        simp only [one_smul] at hσ ⊢
+        exact hmin σ hσ
+    · push_neg at hmin
+      obtain ⟨σ, hσmem, hσlt⟩ := hmin
+      obtain ⟨ρ', hρ'mem, hρ'le, hρ'min⟩ := IH (colWordNum (σ • s)) (by omega) (σ • s) rfl
+      have hcs : Specht.colStab (σ • s) = Specht.colStab s := colStab_smul_eq s hσmem
+      refine ⟨ρ' * σ, ?_, ?_, ?_⟩
+      · rw [hcs] at hρ'mem; exact Subgroup.mul_mem _ hρ'mem hσmem
+      · rw [mul_smul]
+        exact le_trans hρ'le (le_of_lt (hn ▸ hσlt))
+      · intro τ hτ
+        rw [mul_smul] at hτ ⊢
+        exact hρ'min τ hτ
+
 /-! #### Column-maximality kills column descents (Garnir steps 3b/3c, sorry-free)
 
 Two sorry-free pieces: (3b) the transposition of two same-column labels lies in the
