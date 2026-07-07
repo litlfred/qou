@@ -87,6 +87,32 @@ theorem ss_det_zero_at_criticality (g b : R) (h : g ^ 2 * (1 + b ^ 2) = 1) :
     (1 + g • ssMatrix b).det = 0 := by
   rw [ss_det_marginal, h, sub_self]
 
+/-- The ss-sector exchange matrix is **traceless**: `tr M(b) = 0`. -/
+theorem ssMatrix_trace_zero (b : R) : (ssMatrix b).trace = 0 := by
+  simp [ssMatrix, Matrix.trace_fin_two]
+
+/-- **Open-bond vs closed-loop dichotomy** — the closed-loop (determinant)
+binding of a single exchange kills the linear term.  For a 2×2 matrix the
+determinant expands as `det(1 + g·M) = 1 + g·tr M + g²·det M`; since the
+ss-sector `M(b)` is traceless (`ssMatrix_trace_zero`), the **linear-in-`g`
+coefficient vanishes** and the loop binding is `O(g²)`:
+`det(1 + g·M(b)) = 1 + g²·det M(b)`.
+
+This is the structural reason the determinant (closed-loop) form
+**under-binds** the deuteron (`−E₀·ln(1−g²) ≈ 0.93` vs AME `2.22`): a single
+*open* pn bond contributes to the binding at first order in the crossing
+amplitude `g`, but the trace-free loop object has no first-order term.  The
+deuteron is one open pn bond, so its binding is the **linear** `O(g)` object
+(the reeb-flow `5g` law), not the quadratic loop determinant — which is why
+the linear form is the physically correct one for the single pair.  (The
+residual open question is the MeV unit of that linear object, not its
+`g`-order: see the audit §2h.) -/
+theorem ss_det_no_linear_term (g b : R) :
+    (1 + g • ssMatrix b).det = 1 + g ^ 2 * (ssMatrix b).det := by
+  rw [ss_det_marginal]
+  simp [ssMatrix, Matrix.det_fin_two]
+  ring
+
 /-- The uniform-magnitude [1⁴] complete-graph exchange matrix on blocks
 `[p, p, n, n]`: pp entry `a`, nn entry `−a`, all four pn entries `w`. -/
 def exchangeMatrix (a w : R) : Matrix (Fin 4) (Fin 4) R :=

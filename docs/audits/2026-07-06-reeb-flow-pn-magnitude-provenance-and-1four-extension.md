@@ -240,6 +240,65 @@ sector — but at the exchange-sector **linear** value $5g = 2.234$
 choice: binding is an exchange-sector object, and the trace suppression
 that a naive Term-1 form would bind on is a decoherence artifact.
 
+## 2h. Crossing the E_unit bridge — the open-bond dichotomy (proved) and the scale-free wall (tranche 6)
+
+Attempt to *derive* the linear law's unit $E_{\text{unit}}$ (§2f open). Two
+halves — a genuine advance and an honest limit.
+
+### 2h.1 Positive: why the linear form is the physically correct one (Lean-proved)
+
+The two candidate exchange-sector forms — the **closed-loop determinant**
+$-E_0\ln(1-g^2) \approx 0.93$ and the **linear** $5g \approx 2.23$ — differ
+by $g$-order, and the deuteron picks the linear one for a structural reason
+now formalized. For a $2\times2$ matrix
+$\det(1+g\,M) = 1 + g\,\mathrm{tr}\,M + g^2\det M$; the ss-sector $M(b)$ is
+**traceless** (`ssMatrix_trace_zero`), so the **linear-in-$g$ term vanishes**
+and the loop binding is $O(g^2)$: $\det(1+g\,M) = 1 + g^2\det M$
+(`ss_det_no_linear_term`, sorry-free). A single *open* pn bond contributes at
+**first order** in the crossing amplitude $g$; the trace-free closed loop has
+no first-order term. **The deuteron is one open pn bond, so its binding is
+the $O(g)$ linear object ($5g$), not the $O(g^2)$ loop determinant** — which
+is precisely why the linear form ($2.23$, matches AME) beats the loop form
+($0.93$, under-binds). This upgrades the linear law from *asserted* (§2-table)
+to *physically motivated*: it is the open-bond first-order amplitude, and the
+loop form's under-binding is explained (traceless $\Rightarrow$ no linear
+term). The $g$-**order** of the law is thereby derived.
+
+### 2h.2 Honest limit: the exchange sector is scale-free — the unit is external
+
+What remains is the **MeV unit** of that linear object, and it does not come
+from within the exchange sector. The exchange amplitude $g$ and the ceiling
+eigenvalue $\sqrt5$ (hence $5g \approx 2.23$) are **dimensionless** — matrix
+data of the Hecke exchange operator, which carries no energy scale (the mass
+scale $m_e$ enters the QOU chain only through the $\tau$-functor archimedean
+evaluation, downstream of and orthogonal to the exchange algebra). So
+$B = 5g\cdot E_{\text{unit}}$ *requires* an external $E_{\text{unit}}$, and
+no canonical QOU energy supplies the needed $0.99594$ MeV to the law's own
+precision:
+
+| candidate | value | miss vs $E_{\text{unit}}$ |
+|---|--:|--:|
+| $2m_e$ | 1.02200 | +2.62 % |
+| $m_e[2]_v$ | 1.02339 | +2.76 % |
+| $E_0/[2]_v^2$ | 1.04365 | +4.79 % |
+| $Q_\beta$ | 0.78233 | −21.45 % |
+
+The nearest structural candidate ($2m_e$) misses by **+2.6 %** — six times
+the law's own +0.41 % residual. (The apparent "+0.41 %" of a bare "1 MeV" is
+not a candidate: 1 MeV is a human unit, not a QOU-derived scale.)
+
+**Conclusion (scope-(a)).** The bridge, *as a derivation of $E_{\text{unit}}$
+from within the exchange sector*, cannot be crossed to AME precision: the
+$g$-order is derived, the numerical coefficient $\sqrt5$ is derived, but the
+energy unit is scale-free and no internal QOU scale matches to better than
+~2.6 %. The linear law is therefore a **physically-motivated near-match with
+an external unit**, not a closed derivation — the §3f NEAR-MATCH label is
+correct and now has a structural cause. This is *not* a global impossibility
+(not a scope-(b)): the two open routes are (i) an external ~1 MeV scale the
+framework does not canonically contain, or (ii) the $A$-flattened counit
+variant left open in §2f. Both remain genuinely open; the exchange sector
+alone is exhausted for the unit.
+
 ## 3. [1⁴] extension at the landed magnitude (new probe)
 
 [`b4_1four_reeb_flow_magnitude.py`](../../computations/probes/b4_1four_reeb_flow_magnitude.py)
