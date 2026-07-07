@@ -72,6 +72,7 @@ export default chapter({
         "binding-scale-catalan-proof",
         "binding-error-amplification",
         "binding-error-amplification-proof",
+        "deuteron-fusion-frame",
         "wedderburn-mass-formula",
         "wedderburn-mass-formula-proof",
         "frobenius-s-classification",

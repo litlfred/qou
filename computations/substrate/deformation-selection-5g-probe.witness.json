@@ -1,0 +1,36 @@
+{
+  "computation": "deformation_selection_5g_probe",
+  "description": "D4: the D1 deformation ambiguity is exactly the 5g-vs-1/g criticality pair, split by 1 + x/5; the SS2e ladder is the exact 5g expansion; rigid-vs-deformed structural argument selects 5g.",
+  "discipline": "sympy exact throughout; selection argument recorded as (a)-scoped structural reasoning, not numerics; no scan; no tier change; nothing wired.",
+  "auditOnly": "docs/audits/2026-07-06-parabolic-cylinder-toroidal-channel-interpolation.md",
+  "results": {
+    "identity_ii": "(1+[2]_v^2) g = 1/g (criticality reciprocal)",
+    "exact_split": "1+[2]_v^2 = 5 + x, ratio (1/g)/(5g) = 1 + x/5, x = (v-v^{-1})^2",
+    "ladder": "5/sqrt(5+x) = sqrt(5)(1 - x/10 + 3x^2/200 - (x^3 term recorded) ...)",
+    "ladder_x3_coeff_over_sqrt5": "-1/400",
+    "selection": "5g (rigid count x deformed rate); E_unit sharpened to B_AME/5g exactly",
+    "related": [
+      "deuteron-tower-fusion-frame-probe.witness.json (D1)",
+      "gauss-linking-channel-slope-probe.witness.json (D3)",
+      "docs/audits/2026-07-06-reeb-flow-pn-magnitude-provenance-and-1four-extension.md SS2e"
+    ]
+  },
+  "assertions": {
+    "deformation_ii_equals_reciprocal_criticality": true,
+    "one_plus_bracket_sq_eq_5_plus_x": true,
+    "gap_exactly_1_plus_x_over_5": true,
+    "ladder_c0_sqrt5": true,
+    "ladder_c1_minus_x_over_10": true,
+    "ladder_c2_3x2_over_200": true
+  },
+  "allPassed": true,
+  "verdict": "DEFORMATION AMBIGUITY STRUCTURALLY RESOLVED IN FAVOUR OF 5g ((a)-scoped argument, exact identities): the two canonical deformations of the classical 5 are exactly the reeb-flow criticality pair 5g vs 1/g (fully-deformed = reciprocal, g^2(1+[2]^2) = 1), split by the exact factor 1 + x/5, and the SS2e provable-target ladder sqrt(5)(1 - x/10 + 3x^2/200 - ...) is term-by-term the expansion of 5g = 5/sqrt(5+x) (next term -1/400*sqrt(5)*x^3). Selection: by D3 g is a linking RATE (metric, deforms) while channel weights are counting data (topological, q-rigid per T2b) — the weight stays classical 5, only the rate deforms. Consequence: the dimensionless law is exact as 5g and the +0.41% residual belongs entirely to E_unit (= B_AME/5g = 0.995940 MeV, now a sharp fundamental-energy target) or beyond-bond physics. Counterpoint recorded: (ii) would give +0.63%; selection is structural, not numerical. No tier changed, nothing wired.",
+  "scriptHash": "fdd970e670c3",
+  "scriptCommitSha": "73c62eb6f8873c3d88ef78dfe729f3eab7e598a3",
+  "commitSha": "73c62eb6f8873c3d88ef78dfe729f3eab7e598a3",
+  "engine": "sympy",
+  "computedAt": "2026-07-07T11:25:38.619413+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "deformation_selection_5g_probe.py"
+}

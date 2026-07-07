@@ -549,7 +549,169 @@ $\theta'(q) = \arccos(\tfrac{1 - q^2 - q^{-2}}{2})$, $\theta'(1) = 2\pi/3$).
 deformed rotation, the same $k$ as their torus-link shadows on the rigid
 direction.
 
-## 13. Corpus-grep record
+## 13. Full-derivation program, tranche 1 (owner directive: "keep exploring until we can fully derive")
+
+Target: the ²H law $B = 5g\,E_{\text{unit}}$ (owner ruled near-match label,
+PR #3451). The §2f constraint ledger requires either a genuinely new derived
+energy or the conclusion that the linear law is not fundamental.
+
+**D1 — the fusion frame (7/7 exact,
+[`deuteron_tower_fusion_frame_probe.py`](../../computations/substrate/deuteron_tower_fusion_frame_probe.py)).**
+The dimensionless content of the $5g$ law is canonical-tower data:
+
+1. **The bond factor is the corpus Markov parameter.** `pyhecke.gram` sets
+   $z = 1/(\sqrt{q_0} + 1/\sqrt{q_0}) = 1/[2]_v$ — the reeb-flow bond
+   factor is *the* Ocneanu–Markov trace parameter of $\mathrm{tr}_M$
+   (checked live against the package value).
+2. **The 5 is forced by the fusion rule.** $[2]_v^2 = [3]_v + 1$
+   (spin $\tfrac12 \otimes \tfrac12 = 1 \oplus 0$ in quantum dimensions), so
+   $1 + [2]_v^2 = 2 + [3]_v \to 5$ at $v = 1$: the integer in $5g$ is the
+   classical total quantum dimension of the two-nucleon channel
+   decomposition, not a free constant.
+3. **Winding bridge.** $1 + [2]_v^2 = 4 - \tau(v)$ exactly, with $\tau$ the
+   §12 alternating winding trace — so $g = 1/\sqrt{4 - \tau(v)}$: the
+   deuteron bond magnitude, the muon anchor ($4_1$, $k{=}2$) and the
+   nucleon carrier ($\mathcal{B}_3$, $k{=}3$) are levels of one tower
+   ($k{=}1$ is the unknot → the bond).
+4. **Criticality = normalized channel projection**:
+   $g^2(1 + [2]_v^2) = 1$ identically — the marginal-stability zero and
+   the landed magnitude are the same statement.
+
+**Sharpened open (honest):** the classical 5 admits at least two canonical
+deformations ($5/\sqrt{2+[3]_v}$ vs $\sqrt{2+[3]_v}$), both ~0.4–0.6 %
+near-matches with a ~1 MeV unit; the frame does not select one, and
+$E_{\text{unit}}$ stays open.
+
+**D2 — zero-point unit family pruned (4/4 negative,
+[`zeropoint_unit_candidate_gate_probe.py`](../../computations/substrate/zeropoint_unit_candidate_gate_probe.py),
+witness
+[`zeropoint-unit-candidate-gate-probe.witness.json`](../../computations/substrate/zeropoint-unit-candidate-gate-probe.witness.json)).**
+Predicted-first: if the unit were the Fock zero-point of the forced
+$-\tfrac12$ (half a winding quantum × canonical anchor), the four licensed
+candidates (hyperbolic/compact × $m_e$/$E_{\text{cross}}$) miss by
+23–99 %. The zero-point family is excluded *as the unit* under these
+anchors; the zero-point reading of the $-\tfrac12$ itself is untouched.
+
+**D3 — the CWF postulate discharged to a units convention (3/3,
+[`gauss_linking_channel_slope_probe.py`](../../computations/substrate/gauss_linking_channel_slope_probe.py)).**
+The reeb-flow chain's one residual postulate (*linking amplitude = CWF
+unit-tangent functional on the channel direction $(1, z)$*) is now plain
+linking geometry. Exactly (symbolic, geometry-independent): on a torus with
+cycle circumferences $(2\pi R, 2\pi r)$, the $(1,n)$ geodesic pair has
+metric slope $z = nr/R$, period length $L = 2\pi R\sqrt{1+z^2}$, and
+$|\mathrm{Lk}| = n$ (Gauss-integral-verified to $10^{-7}$ for $n = 1,2,3$;
+sign = orientation convention), so
+
+$$
+\frac{|\mathrm{Lk}| \cdot 2\pi r}{L} \;=\; \frac{z}{\sqrt{1+z^2}} \;=\; g
+\qquad \text{for every } (R, r).
+$$
+
+**The linking number per unit arc length, in exchange-cycle units, is
+$\sin\theta = g$ — derived, not postulated.** Composed with §2d (tangent =
+Markov weight) and D1 ($z$ = canonical Markov parameter), the ²H magnitude
+chain is now: canonical Markov parameter → channel slope → linking rate.
+The residual assumption shrinks to a **normalization convention** (arc
+length measured in exchange-cycle units). Remaining ²H opens: that
+convention, the D1 deformation choice, and $E_{\text{unit}}$.
+`conj:whipple-rotation-intertwining` is the bar-involution face of the same
+identification.
+
+## 14. Full-derivation program, tranche 2 (deformation selection + formalization)
+
+**D4 — deformation ambiguity resolved in favour of $5g$ (6/6 exact,
+[`deformation_selection_5g_probe.py`](../../computations/substrate/deformation_selection_5g_probe.py)).**
+The two canonical deformations of the classical 5 are *exactly* the
+reeb-flow criticality pair: the fully-deformed candidate
+$(1 + [2]_v^2)\,g$ equals $1/g$ (since $g^2(1+[2]_v^2) = 1$), so the D1
+ambiguity is the audit's §2e "$5g$ vs $1/g = |\mu_q|$" straddle. They split
+by the exact factor $1 + x/5$, $x = (v-v^{-1})^2$ (from
+$1 + [2]_v^2 = 5 + x$), and the §2e provable-target ladder
+$\sqrt5(1 - x/10 + 3x^2/200 - \tfrac{1}{400}x^3 - \cdots)$ is **term-by-term
+the Taylor expansion of $5g = 5/\sqrt{5+x}$** — not a family of unknowns.
+Structural selection (recorded, (a)-scoped, not a proof): by D3 $g$ is a
+metric linking *rate* (deforms) while channel weights are counting data —
+topological integers, $q$-rigid per §11 — so the weight stays the classical
+5 and only the rate deforms, selecting $5g$. Consequence: the dimensionless
+law is exact as $5g$, sharpening $E_{\text{unit}} = B_{\text{AME}}/5g =
+0.995940$ MeV into a genuinely fundamental-energy target (the +0.41 %
+residual belongs entirely to the unit or to beyond-bond physics).
+
+**Formalization.** The exact algebraic backbone is Lean-proved sorry-free
+([`QOU.MassTheory.DeuteronFusion`](../../content/quantum-observable-universe/mass-theory/deuteron-fusion-frame.lean),
+`lean`-direct exit 0): `fusion_identity` ($[2]_v^2 = [3]_v+1$),
+`five_plus_x`, `total_dim_at_one` (= 5), `linking_rate_sq` (the
+geometry-independent D3 core, radicals cleared), `criticality_reciprocal`,
+`deformation_ii_eq_inv` ($s g = 1/g$), all over a generic field (§7c). The
+fusion frame is promoted to
+[`prop:deuteron-fusion-frame`](../../content/quantum-observable-universe/mass-theory/deuteron-fusion-frame.md)
+in `sec:mass-formula-derivation`.
+
+**Program status.** For $B(^2\mathrm{H}) = 5g\,E_{\text{unit}}$: the **5**
+is forced (D1), the deformation is selected as $5g$ (D4), $g$ is derived as
+a linking rate modulo a units convention (D3); the single remaining open is
+$E_{\text{unit}}$ (the zero-point family pruned by D2; single-factor class
+exhausted by the sibling; scans forbidden by the entropy bound). The
+derivation is closed down to one fundamental-energy input.
+
+## 15. Full-derivation program, tranche 3 (E_unit parity wall + closed-form Lean)
+
+**Closed-form `5g` formalized (option 3).** Two theorems added to
+[`QOU.MassTheory.DeuteronFusion`](../../content/quantum-observable-universe/mass-theory/deuteron-fusion-frame.lean)
+(`lean`-direct exit 0, sorry-free): `five_g_closed` — at criticality
+$g^2(5+x) = 1$ gives $(5g)^2(5+x) = 25$, the radical-free form of
+$5g = 5/\sqrt{5+x}$ whose Taylor expansion **is** the §2e correction ladder
+(D4); and `deformation_split` — $25(1/g)^2 = (5+x)^2(5g)^2$, the exact
+$1 + x/5$ split of the two deformations.
+
+**D5 — a *conditional* parity constraint on E_unit
+([`e_unit_parity_constraint_probe.py`](../../computations/substrate/e_unit_parity_constraint_probe.py)).**
+
+> **Superseded / re-scoped (see
+> [`docs/coordination/e-unit-deuteron-scale.md`](../coordination/e-unit-deuteron-scale.md)).**
+> The subsections below were written before the reeb-flow §2h landing
+> (`ss_det_no_linear_term`) and the owner's CAL-4 correction. They are
+> **conditional**, not settled: the "(b) structural exclusion" holds only
+> *if* $B(^2\mathrm{H})$ is bar-even, and that antecedent is now **open**
+> (§2h data weakly favour a bar-*even* unit $2m_e$, but do not settle it).
+> The Lean lemmas `barEven_of_mul` / `barEven_ne_barOdd` are correct
+> *conditionals*; what is open is their antecedent. Read this subsection
+> as "IF $B$ is bar-even THEN …", and see the ledger for the corrected
+> picture (E_unit is a 3-CAL function via $\hbar/\mathfrak{D}$, **not** a
+> new bar-even absolute scale / CAL-4).
+
+Formalize-first attempt (conditional):
+
+- **(b) structural exclusion — CONDITIONAL on $B(^2\mathrm{H})$ bar-even.**
+  $5g$ is bar-even ($z = 1/[2]_v$, $[2]_v$ bar-invariant, $g^2$ bar-even —
+  proved exactly). *If* $B$ is a bar-even binding, then
+  $E_{\text{unit}} = B/(5g)$ is bar-even and the bar-odd $\mathfrak{Q}_\beta$
+  is excluded. The antecedent is the open point: for the β-threshold
+  deuteron $B$ may carry bar-odd (weak-sector) character, in which case
+  $E_{\text{unit}} = \hbar/\mathfrak{D}$ is the bar-odd decay-width energy —
+  the owner's $\mathfrak{D}$ reinterpretation. Which parity holds is
+  empirically open.
+- **(a) bar-even single-factor negative.** Predicted-first, the licensed
+  bar-even candidates ($m_e$, $2m_e$, $E_0$, $m_e[2]_v$) all miss
+  $E_{\text{unit}} = 0.995940$ MeV — closest $2m_e$ at 2.6 %, outside the
+  law's 0.4 % scale. (This stands regardless of parity.)
+- **Anti-laundering guard (recorded).** The within-0.4 % coincidence
+  $E_{\text{unit}}/\mathfrak{Q}_\beta \approx 4/\pi$ (0.2 %) is **not**
+  claimed: $4/\pi$ has no categorical derivation and the entropy bound
+  forbids reading a 0.4 % hit as evidence.
+
+**The wall, localized (corrected framing).** `E_unit` is **not** a fourth
+calibration (that would be CAL-4, a cohomology violation — H¹(Bring) = 2W
+has three DOF): it must be a *function of the three CALs*, with
+$\hbar/\mathfrak{D}$ (a CAL-2 datum) the natural carrier. The landed §2h
+result independently shows the exchange sector is **scale-free** so the unit
+is external; numerically no canonical energy of *either* parity matches to
+better than ~2.6 %. So the program has reduced $B(^2\mathrm{H})$ to a single
+external, parity-open, 3-CAL unit: the **5** is forced (D1), the deformation
+is $5g$ (D4), $g$ is a linking rate (D3); the unit is an honest open, and
+the §3f NEAR-MATCH ruling holds.
+
+## 16. Corpus-grep record
 
 - `parabolic cylinder|Weber equation|Hermite`: hits are the Askey/channel
   cluster cited above + bibliography; no prior parabolic-cylinder treatment.
