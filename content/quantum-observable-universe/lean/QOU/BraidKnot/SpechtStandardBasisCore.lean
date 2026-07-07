@@ -842,6 +842,20 @@ smaller `colWordNum`. -/
 def colWordNum (t : Specht.Tableau μ) : ℕ :=
   ∑ l : Fin (Specht.nOf μ), (l : ℕ) * (Specht.nOf μ + 1) ^ (cmajSig μ ((t l : ℕ × ℕ)))
 
+/-- **`colWordNum` as a sum over cells (sorry-free).** Reindexing the label-indexed
+definition through the tableau bijection `t`: `colWordNum t` is the total of
+`(label at cell c) · (n+1)^{cmajSig c}` over all cells `c`. The cell-indexed form is the
+natural shape for the "most-significant differing cell" comparison. -/
+theorem colWordNum_eq_cellSum (t : Specht.Tableau μ) :
+    colWordNum t = ∑ c : μ.cells, ((t.symm c : Fin (Specht.nOf μ)) : ℕ)
+        * (Specht.nOf μ + 1) ^ cmajSig μ (c : ℕ × ℕ) := by
+  unfold colWordNum
+  rw [← Equiv.sum_comp t (fun c : μ.cells =>
+      ((t.symm c : Fin (Specht.nOf μ)) : ℕ) * (Specht.nOf μ + 1) ^ cmajSig μ (c : ℕ × ℕ))]
+  apply Finset.sum_congr rfl
+  intro l _
+  rw [Equiv.symm_apply_apply]
+
 /-- **`cmajSig` strict monotonicity (sorry-free).** Within one column (equal column
 index), a cell in an EARLIER row is column-major-*before*, hence has strictly larger
 `cmajSig` (more cells come after it). The engine of `colWordNum_swap_lt`. -/
