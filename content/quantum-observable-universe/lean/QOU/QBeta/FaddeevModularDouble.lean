@@ -116,4 +116,44 @@ theorem IsSigmaUnitary.not_bar_even_of_sq_ne_one {R : Type*} [CommRing R]
     σ u ≠ u :=
   fun heven => h (hu.sq_eq_one_of_bar_even heven)
 
+/-! ## Channel separation — cross-anchor variation is pure phase
+
+The fibre-side spec for the `c_k` evaluation map (handed to the z→c_k f-map
+keystone, PR #3458). The observed cross-anchor `c_3` swing
+(`c_3(q_p) = −2.0693` proton vs `−2.0097` muon; `Δq = 1.28×10⁻⁸`) demands a
+slope `dc_3/dq ≈ 4.66×10⁶`, which for a **smooth real function of `q`** requires
+a singularity within `≈ 4.4×10⁻⁷` of `q_0` (the real-`q` impossibility, PR
+#1821 — no categorical object supplies such a pole). The lemmas below record
+the algebraic reason the impossibility is a **magnitude-channel** bound only:
+between two σ-unitaries (the fibre-saddle `|Φ_b| = 1`), the entire connecting
+factor is again σ-unitary — a *pure phase*. The magnitude channel is flat, so
+the swing lives in the phase (bar-odd / `Im 𝔙` / decay) channel, on which the
+smooth-real magnitude bound is silent. -/
+
+/-- The σ-conjugate `σ u` is the two-sided inverse of a σ-unitary `u`
+    (commutative form of `u·ū = 1`). -/
+theorem IsSigmaUnitary.mul_bar_self {R : Type*} [CommRing R] {σ : R →+* R}
+    {u : R} (hu : IsSigmaUnitary σ u) : u * σ u = 1 := by
+  rw [mul_comm]; exact hu
+
+/-- The σ-inverse of a σ-unitary is σ-unitary. -/
+theorem IsSigmaUnitary.inv {R : Type*} [CommRing R] {σ : R →+* R} {u : R}
+    (hu : IsSigmaUnitary σ u) (hσ : Function.Involutive σ) :
+    IsSigmaUnitary σ (σ u) := by
+  unfold IsSigmaUnitary
+  rw [hσ u, mul_comm]; exact hu
+
+/-- **Cross-anchor connecting factor is a pure phase.** For two σ-unitaries
+    `u₁, u₂` (the fibre-saddle `Φ_b` at the proton and muon anchors), the
+    connecting factor `w = σ(u₁)·u₂` is itself σ-unitary and satisfies
+    `u₁·w = u₂`. Hence *all* cross-anchor variation between σ-unitaries is
+    carried by a σ-unitary (pure-phase) factor — the magnitude channel is
+    flat, and the `Δc_3` swing is a phase-channel (bar-odd) quantity. -/
+theorem IsSigmaUnitary.crossFactor {R : Type*} [CommRing R] {σ : R →+* R}
+    {u₁ u₂ : R} (h₁ : IsSigmaUnitary σ u₁) (h₂ : IsSigmaUnitary σ u₂)
+    (hσ : Function.Involutive σ) :
+    IsSigmaUnitary σ (σ u₁ * u₂) ∧ u₁ * (σ u₁ * u₂) = u₂ := by
+  refine ⟨(h₁.inv hσ).mul h₂, ?_⟩
+  rw [← mul_assoc, h₁.mul_bar_self, one_mul]
+
 end QOU.QBeta
