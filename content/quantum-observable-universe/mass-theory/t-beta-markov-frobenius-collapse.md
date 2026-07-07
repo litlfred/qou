@@ -1,4 +1,3 @@
-**Proposition (Min-Frobenius-norm collapse for $T_\beta$).**
 *Let $H = H_n(R, q)$ be the Iwahori–Hecke algebra over a field $R$, equipped with the unique Jones–Markov trace $\tau_M : H \to R$ ([Wenzl–Jones uniqueness theorem](#prop:markov-trace-frobenius-selection)). Equip $H$ with the Frobenius inner product $\langle X, Y \rangle_\tau := \tau_M(X \cdot Y)$. The element of minimum Frobenius norm satisfying the linear constraint $\tau_M(T_\beta) = S$ for a scalar $S \in R$ is:*
 $$
 \boxed{\; T_\beta = S \cdot 1_H \;}

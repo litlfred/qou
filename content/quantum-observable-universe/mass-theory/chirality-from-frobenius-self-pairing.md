@@ -1,4 +1,3 @@
-**Proposition (chirality classification by writhe and topology).**
 *The Frobenius self-pairing chirality factor $a_K(\beta)$ satisfies:*
 
 1. *For a chiral knot $K$ with writhe $w(K) \neq 0$:*

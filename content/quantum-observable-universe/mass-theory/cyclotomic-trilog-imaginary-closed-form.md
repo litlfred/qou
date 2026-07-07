@@ -1,4 +1,3 @@
-**Proposition (general closed form for $\mathrm{Im}\,\mathrm{Li}_3$).**
 *For every $n \geq 1$, the imaginary part of the depth-3 trilogarithm at roots of unity evaluates to:*
 
 $$

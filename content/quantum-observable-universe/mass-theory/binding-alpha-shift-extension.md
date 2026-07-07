@@ -1,4 +1,3 @@
-**Proposition (binding $A\ge3$ via per-rep Reeb phase at a force-carrier torus knot).**
 *The light-atom binding energy* $B(A) = m_e \cdot \rho_0 \cdot \alpha_{\text{shift}}(T(p_A, k_A))$
 *is uniquely determined by* (i) *the substrate-universal per-rep
 Reeb coupling* $\rho_0$ *pinned by the deuteron, and* (ii) *the

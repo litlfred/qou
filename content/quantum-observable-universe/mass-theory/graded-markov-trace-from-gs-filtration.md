@@ -1,4 +1,3 @@
-**Proposition (graded Markov trace from GS filtration).**
 *For each $\ell \in \mathbb{N}$ there is a uniquely determined $\mathbb{Q}(q)$-linear trace*
 
 $$

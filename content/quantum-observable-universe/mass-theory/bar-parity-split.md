@@ -1,5 +1,3 @@
-**Proposition (binding and $\beta$-decay are the two bar-parities of one element).**
-
 The bar-involution $\sigma$ defined by $q \mapsto q^{-1}$ and $\sigma^2 = \mathrm{id}$ ([`def:bar-involution`](#def:bar-involution)) splits any element $x$ into a $\sigma$-fixed even part and a $\sigma$-anti odd part:
 $$
 \mathrm{even}(x) = x + \sigma x, \qquad

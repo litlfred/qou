@@ -1,4 +1,3 @@
-**Proposition (regime-switching binding energy).**
 *The binding energy $B(Z, N)$ switches evaluation regimes by mass number $A$. It tracks AME data to $\leq 5\%$ for $A \leq 4$:*
 
 $$

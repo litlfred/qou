@@ -1,4 +1,3 @@
-**Proposition.**
 *The mass identity decomposes under the descent involution into a descended component and a transient component:*
 
 $$

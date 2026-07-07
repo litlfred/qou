@@ -1,4 +1,3 @@
-**Proposition.**
 *For every partition $\lambda$ of $n \leq 7$, the single-generator
 character $\chi_\lambda(\sigma)$ is a rational function of $q$
 expressible as $c_\lambda \cdot h$ where $h = q - q^{-1}$ and

@@ -1,4 +1,3 @@
-**Proposition (tower binding energy).**
 *The nuclear binding energy evaluates the brane tower partition function over all three Wedderburn channels of $H_3(q)$.*
 
 *The binding energy sum is:*

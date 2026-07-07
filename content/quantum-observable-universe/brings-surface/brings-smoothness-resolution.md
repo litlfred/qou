@@ -1,4 +1,3 @@
-**Proposition.**
 Let $\mathcal{S}$ denote the Bring's surface ([Bring's surface](#def:brings-surface)) and $\pi \colon \mathcal{S} \to \mathbb{P}^1(\mathbb{C})$ the color projection.
 
 1. **Smoothness.** The three power-sum constraints are transverse in $\mathbb{P}^4$. Consequently, $\mathcal{S}$ is a smooth algebraic variety lacking singular points.

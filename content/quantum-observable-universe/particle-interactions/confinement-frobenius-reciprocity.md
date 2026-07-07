@@ -1,4 +1,3 @@
-**Proposition (confinement Frobenius reciprocity).**
 *Let $T \in H_n(q)$ be a confined bound-state operator selected by the operator-selection LP with primal optimum $T = \sum_i x_i^* b_i$ and dual optimum $(y_0^*, y^*)$. Here, $\{b_1, \ldots, b_d\}$ is the normal form basis, $G_{ij} = \mathrm{tr}_M(b_i b_j)$ is the Frobenius Gram matrix, and the LP-active set is:*
 
 $$

@@ -1,4 +1,3 @@
-**Proposition (knot factor as chirality Gram pairing).**
 *Let $\mathcal{K}$ be a knot with braid representative $\beta_\mathcal{K} \in B_n$ and mirror $\beta_\mathcal{K}^*$. We work over $A = H_n(R, q)$. The knot factor $a_\mathcal{K}$ in the unified mass formula is the normalised chirality Gram pairing:*
 
 $$

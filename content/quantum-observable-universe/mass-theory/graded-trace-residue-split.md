@@ -1,4 +1,3 @@
-**Proposition (graded-trace residue split).**
 *The Markov trace decomposes canonically into smooth and oscillating components:*
 
 $$

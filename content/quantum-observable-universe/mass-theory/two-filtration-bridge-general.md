@@ -1,6 +1,3 @@
-**Proposition (two-filtration bridge map in full generality —
-bar-class determines iterated-integral depth).**
-
 [`prop:two-filtration-bridge-small-cases`](#prop:two-filtration-bridge-small-cases)
 verified the bridge map $d_{\mathrm{II}}$ at all partitions of $n \leq 4$.
 *This proposition extends the verification to **all** partitions of

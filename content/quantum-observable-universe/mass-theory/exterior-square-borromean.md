@@ -1,4 +1,3 @@
-**Proposition (Borromean strand-pair representation dimension).**
 *The exterior square $\Lambda^2 V_{\mathrm{nat}}$ of the natural permutation representation $V_{\mathrm{nat}} = \mathbb{C}^{10}$ carries dimension 45. Under $S_{10}$, it decomposes precisely as:*
 
 $$

@@ -1,4 +1,3 @@
-**Proposition (general Jonquière inversion).**
 *For every depth $n \geq 2$, the wrong-parity part of $\mathrm{Li}_n(\zeta_K)$ obeys a uniform Bernoulli-polynomial closed form:*
 
 $$

@@ -1,5 +1,3 @@
-**Proposition (polynomial bar-involution).**
-
 *Let $R$ be a commutative ring and $R[X]$ its polynomial ring in one indeterminate. The map*
 
 $$

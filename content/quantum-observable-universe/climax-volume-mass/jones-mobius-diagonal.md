@@ -1,4 +1,3 @@
-**Lemma (Jones polynomial = Möbius contact term).**
 *Let*
 $$
   K_q(s,t) \;=\; \operatorname{tr}\bigl(\Delta(\varrho(s)) \otimes \Delta(\varrho(t))\bigr)

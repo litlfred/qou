@@ -1,5 +1,3 @@
-**Proposition ($\mathfrak{Q}_\beta$ $c_8$, $c_9$, $c_{10}$ closed-form values at the silver ratio).**
-
 *At the silver ratio $q = 1 + \sqrt{2}$, the Hoefsmit parameter is $b^2 = 7/8$. The closed-form $\mathfrak{Q}_\beta$ precision-ladder coefficients $c_8$, $c_9$, $c_{10}$ extend the Pell-Lucas $\sigma$-action pattern:*
 
 $$

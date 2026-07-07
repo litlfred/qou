@@ -1,4 +1,3 @@
-**Proposition.**
 *The mass of a vortex $\varrho$ with braid representative $\beta \in B_n$ and $n - 1$ generators evaluates as:*
 
 $$

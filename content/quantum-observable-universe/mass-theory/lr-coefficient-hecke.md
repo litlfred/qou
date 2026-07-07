@@ -1,4 +1,3 @@
-**Proposition.**
 *Let $\mu \vdash n_1$, $\nu \vdash n_2$, and $\lambda \vdash n_1 + n_2$ be partitions. The **Littlewood-Richardson coefficient** $c^\lambda_{\mu\nu}$ is the multiplicity of the irreducible Iwahori-Hecke module $V_\lambda$ in the restriction:*
 
 $$

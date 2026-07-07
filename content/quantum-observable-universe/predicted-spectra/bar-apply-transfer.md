@@ -1,4 +1,3 @@
-**Proposition (Bar-transfer principle).**
 Let $P \colon \mathbb{R}_{>0} \to \mathrm{Prop}$ be a bar-invariant property of the substrate parameter:
 
 $$

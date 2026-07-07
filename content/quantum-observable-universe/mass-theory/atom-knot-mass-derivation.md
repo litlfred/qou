@@ -1,4 +1,3 @@
-**Proposition (categorical atom-knot mass derivation).**
 *Let $\mathfrak{H}$ be a confined particle with canonical Hecke element $T_w$ in Gröbner–Shirshov normal form. Its categorical mass invariant is the exact finite sum:*
 
 $$

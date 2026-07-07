@@ -1,4 +1,3 @@
-**Theorem (averaging-resonant rung selection rule).**
 *Let $\sigma_{\mathrm{avg}} = \tfrac{1}{2}(\sigma + \sigma^{-1})$ be the bar-symmetric averaged-crossing operator on $H_{n_{\mathrm{total}}}(R, q)$. Let $P_{\mathrm{avg}} = (1 + \overline{\,\cdot\,})/2$ be the bar-invariant averaging projection. For canonical typed-$\mathbf{B}_3$ braids admitting the half-fill cyclic structure, the unique $\sigma_{\mathrm{avg}}$-resonant rung is:*
 $$
   k_{\mathrm{res}}

@@ -1,5 +1,3 @@
-**Proposition (the three calibrations are the three cohomological data).**
-
 Bring's curve has first cohomology $H^1 = 2W$, consisting of rank $8$ organized as two copies of the irreducible $4$-dimensional $S_5$ representation $W$ ([`prop:prolonged-periods-fixed-depth`](#prop:prolonged-periods-fixed-depth)). Applying the archimedean functor $\tau$ leaves exactly three real degrees of freedom in its polarised Hodge structure:
 
 | cohomological datum | calibration | channel |

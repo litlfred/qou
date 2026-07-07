@@ -1,4 +1,3 @@
-**Proposition.**
 The process $\gamma\gamma \to \nu\nu^{\sigma}$ requires the $T_{3,5}$ torus knot topology. The crossing number $c(T_{3,5}) = 10$ is a topological invariant. Therefore:
 
 1. The process cannot occur before Planck step $10$.

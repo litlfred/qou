@@ -1,4 +1,3 @@
-**Proposition ($a_8$ partition-function identity).**
 *Let $a_8 \in \mathbb{Z}[X]$ denote the top-shared ($m = 8$) integer
 Habiro coefficient of the proton and neutron in the canonical
 Habiro-witness convention (per

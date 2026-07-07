@@ -1,4 +1,3 @@
-**Proposition (closed form for $y_\lambda$ via Wenzl bridge).**
 *Let $\sigma_i$ be the symmetric Hecke generators with eigenvalues $q, -q^{-1}$. The central coefficients $y_\lambda$ in the Jones-Markov trace admit the closed form:*
 
 $$

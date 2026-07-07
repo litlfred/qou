@@ -1,4 +1,3 @@
-**Proposition (Canonical Wedderburn-block weight).**
 *The Bethe-Weizsäcker mass coefficient and the LP shadow-price scale the identical canonical $q$-deformed Wedderburn-block weight:*
 
 $$

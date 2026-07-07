@@ -1,4 +1,3 @@
-**Proposition.**
 Let $\mathbf{C}$ be a rigid braided monoidal category and let $\mathfrak{H} \in \mathrm{Sym}^n(K)$ be a hadron with constituent knots $K_1, \ldots, K_n$.
 
 1. **Braiding closure.** The braiding $\beta_{K_i, K_j}$ descends to an involution on $\mathrm{Sym}^n(K)$. For the antisymmetric product, exchanging identical constituents produces $-1$.

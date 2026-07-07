@@ -1,4 +1,3 @@
-**Proposition (PSLQ certification of independence).**
 *PSLQ searches at 50 decimal places with a coefficient norm bound of $10^8$ certify that the difference*
 
 $$

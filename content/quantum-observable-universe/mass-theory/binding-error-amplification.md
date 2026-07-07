@@ -1,4 +1,3 @@
-**Proposition (Binding-energy error amplification).**
 *Write the binding energy as the mass defect*
 
 $$

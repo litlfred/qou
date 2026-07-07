@@ -1,4 +1,3 @@
-**Proposition.**
 *The proton–neutron mass splitting requires no calibration to the $u$--$d$ mass difference:*
 
 $$

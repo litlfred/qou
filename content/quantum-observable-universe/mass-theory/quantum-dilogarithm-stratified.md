@@ -1,4 +1,3 @@
-**Proposition (partition-depth stratification of $\Phi_q$).**
 *Let $A = H_n(R, q)$ be a semisimple Hecke algebra. Decompose its centre $Z(A)$ by GB-depth of partitions. The analytic quantum dilogarithm admits a centre-stratified expansion:*
 
 $$

@@ -1,4 +1,3 @@
-**Proposition (knot-indexed convolutions).**
 *Each operational non-tensor product linking two morphisms in the QOU occupies a specific $(n, K)$ stratum in the bi-filtration grid $\mathcal{H}_q^{(n, K)}$.*
 
 ### The grid structure

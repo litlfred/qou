@@ -1,4 +1,3 @@
-**Proposition (Type-B folded crystal cancellation).**
 *For every partition $\lambda$ realized as a list of cells with contents $c(r, \mathrm{col}) := \mathrm{col} - r$, the cell-level content cancellation*
 
 $$

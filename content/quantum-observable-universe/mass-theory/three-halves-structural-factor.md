@@ -1,4 +1,4 @@
-**Proposition (lepton-tower closure structural identities).** *Let
+*Let
 $R$ be a field, $q \in R$ with $q \neq 0$, $h = q - q^{-1}$, and
 $[n]_q = q^{n-1} + q^{n-3} + \cdots + q^{-(n-1)}$ the symmetric
 q-integer. The following five algebraic identities hold:*

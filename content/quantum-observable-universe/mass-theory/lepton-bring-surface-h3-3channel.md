@@ -1,4 +1,3 @@
-**Proposition (lepton Bring-surface convention).**
 *For any torus-knot lepton candidate $K_\ell = \sigma_1^{2m+1}$, the additive Wedderburn volume $\hat V_\ell^{\mathrm{full}}$ evaluates via the $H_3$ 3-channel Plancherel-weighted character sum:*
 
 $$

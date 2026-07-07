@@ -1,4 +1,3 @@
-**Proposition (closed form of the counit $Q$-value).**
 *Let $\Delta = \mathrm{NF}(n) - \mathrm{NF}(p)$ be the single-wrap normal-form difference of the neutron and proton typed-crossing elements in $H_3(q)$, and write $h = q - q^{-1}$. Let $\varepsilon$ denote the Frobenius counit and $\mathfrak{E}_0 = m_e/(q(q-1))$ the per-Hecke-step energy scale. Then:*
 $$
   \varepsilon(\Delta)\cdot\mathfrak{E}_0

@@ -1,4 +1,3 @@
-**Proposition.**
 *For any self-conjugate partition $\lambda = \lambda'$ of $k$, the per-generator trace in the Hoefsmit seminormal representation evaluates to:*
 
 $$

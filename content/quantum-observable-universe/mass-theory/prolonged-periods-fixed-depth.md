@@ -1,5 +1,3 @@
-**Proposition (a fixed-depth recurrence for the prolonged periods exists).**
-
 The prolonged Seiberg--Witten periods $a_D^{(n)} = \varphi(M^n v_0)$ are orbits of
 the jet-prolongation operator $M$
 ([`prop:mi-sw-abelianisation`](#prop:mi-sw-abelianisation)) acting on the

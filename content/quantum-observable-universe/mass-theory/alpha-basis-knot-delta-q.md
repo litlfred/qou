@@ -1,4 +1,3 @@
-**Proposition (q-dimension decoration of the basis knots).**
 *For the basis torus knot $T_{2,k}$, the $\delta_q$-decoration evaluates exactly as:*
 
 $$

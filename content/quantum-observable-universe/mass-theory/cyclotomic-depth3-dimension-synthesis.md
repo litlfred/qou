@@ -1,4 +1,3 @@
-**Proposition (cyclotomic depth-3 dimension synthesis).**
 *For prime $K \geq 5$, let $\mathcal{V}_K \subseteq \mathcal{P}_3 / \mathcal{P}_2$ be the $\mathbb{Q}$-vector space spanned by the depth-3 grouplikes at the $\zeta_K$-orbit modulo the $\zeta(3)$-line. The vector space dimension bounds unconditionally as:*
 
 $$

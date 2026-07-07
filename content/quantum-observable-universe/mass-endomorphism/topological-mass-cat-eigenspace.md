@@ -1,4 +1,3 @@
-**Lemma.**
 *Let $\alpha = (\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$
 form the categorical mass integrand of a closed cycle $\varrho$. When
 the [Frobenius pairing](#def:frobenius-pairing) is compatible with the

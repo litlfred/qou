@@ -1,4 +1,3 @@
-**Proposition (atomic Habiro expansion).**
 *The algebraic quantum volume of a confined atom $\mathfrak{H}$ admits a $q$-Habiro expansion:*
 
 $$

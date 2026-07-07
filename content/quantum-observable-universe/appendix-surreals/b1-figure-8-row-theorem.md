@@ -1,5 +1,3 @@
-**Proposition (B1 keystone is theorem-level at the figure-8 row — combining Bloch–Suslin depth-2 identification with Murakami–Murakami's proof of the Volume Conjecture for $4_1$).**
-
 The figure-8 row of [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence) ("B1")—the depth-2 instance over $F = \mathbb{Q}(\zeta_6)$ indexed by the dominant cell $\lambda_K = (2, 2)$ of $4_1$ in $H_4(q)$—is theorem-level, requiring no part of Goncharov's or Beilinson's conjectures.
 
 For the figure-8 knot $4_1$ embedded in Bring's genus-4 surface ([`rem:figure-8-archimedean-illustration`](#rem:figure-8-archimedean-illustration)):

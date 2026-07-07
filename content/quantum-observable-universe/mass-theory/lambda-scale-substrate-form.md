@@ -1,4 +1,3 @@
-**Theorem (Family A closed form).**
 *The half-symmetric Wedderburn-sum projection at $H_4$ has the exact closed form:*
 
 $$

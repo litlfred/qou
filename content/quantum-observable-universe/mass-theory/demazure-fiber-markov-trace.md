@@ -1,4 +1,3 @@
-**Proposition (Demazure-fiber Markov-trace functional).**
 *Let $D_w(\lambda)$ be the Demazure character of the irreducible $S_n$-module $V_\lambda$. We define the Demazure-fiber functional via principal specialisation $x_i \mapsto q^{i-1}$:*
 
 $$

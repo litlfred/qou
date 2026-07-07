@@ -1,4 +1,3 @@
-**Proposition (interface-knot contribution to Markov trace).**
 *Let $\mathcal{B}_K \in H_{3A}(q)$ be the canonical atomic braid for atom $K$. Let $\mathcal{B}_K^{\mathrm{vac}}$ be the disjoint Hecke product of its constituent nucleons. The interface knot $\bowtie_K$ connects the blocks.*
 
 *The Markov trace ratio identically satisfies:*

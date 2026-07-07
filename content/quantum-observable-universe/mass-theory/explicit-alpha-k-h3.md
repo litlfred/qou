@@ -1,4 +1,3 @@
-**Proposition (explicit $\alpha_k$ at $H_3$).**
 *Let $z = 1/(q^{1/2} + q^{-1/2})$ and $h = q - q^{-1}$. The structural prefactors of the unified mass formula at $H_3$ are:*
 
 $$

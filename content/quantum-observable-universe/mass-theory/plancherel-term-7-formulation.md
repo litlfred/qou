@@ -1,4 +1,3 @@
-**Proposition (universal residue at curvature-rank $k \geq 4$).**
 *Define the curvature-rank-$k$ residue functional using the q-deformed Wedderburn weight $\tilde w_\lambda = \dim_q^2 V_\lambda / [n]_q!$:*
 
 $$

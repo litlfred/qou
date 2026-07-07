@@ -1,4 +1,3 @@
-**Proposition (Universality of the critical exponent).**
 The critical exponent $\alpha = 4/3$ governs the rate at which enstrophy diverges as $q \to 1$. We claim $\alpha$ depends only on:
 
 1. The Euler characteristic $\chi(A)$ of the Frobenius--Hopf object.

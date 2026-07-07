@@ -1,5 +1,3 @@
-**Proposition (selection-rule at c=2 — prediction).**
-
 *Let $q \in \mathbb{R}_{>0}$. The per-component selection rule ([`prop:selection-rule-anchors-c1-c3`](#prop:selection-rule-anchors-c1-c3)) applied at $c=2$ yields the closed form:*
 
 $$

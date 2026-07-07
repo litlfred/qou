@@ -1,4 +1,3 @@
-**Proposition.**
 At $q = q_0$, the beta-stability formula ([beta-stability](#prop:beta-stability)) predicts a stable neutron number $n_{\mathrm{pred}}(p)$:
 
 $$

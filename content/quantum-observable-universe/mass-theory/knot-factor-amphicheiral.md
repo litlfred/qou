@@ -1,4 +1,3 @@
-**Corollary (knot factor for Markov-amphicheiral knots).**
 *Let $\mathcal{K}$ be Markov-amphicheiral. Its mirror braid representative $\beta_\mathcal{K}^*$ is conjugate to $\beta_\mathcal{K}$ in $H_n(R, q)$. There exists $w \in H_n(R, q)^{\times}$ such that:*
 
 $$

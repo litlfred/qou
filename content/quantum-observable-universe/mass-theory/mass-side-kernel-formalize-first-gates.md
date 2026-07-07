@@ -1,3 +1,3 @@
-**Proposition (definition + composition theorem).** *The `MassSideKernel` Lean typeclass bundles the mass-theory analogs of the four formalize-first invariants for any candidate `linking_weight` function $w(q)$. Instantiating `MassSideKernel` requires clearing all four mass-side gates simultaneously.*
+*The `MassSideKernel` Lean typeclass bundles the mass-theory analogs of the four formalize-first invariants for any candidate `linking_weight` function $w(q)$. Instantiating `MassSideKernel` requires clearing all four mass-side gates simultaneously.*
 
 The four parametric classes implement the anchor-stable, bar-even, $q=1$ shadow (open categorical gap), and direction-sanity invariants for the mass side. The direction-sanity check uses an additive threshold. The $q=1$ shadow uses an `Option ℝ` parameter to accommodate hypothetical anchors. This infrastructure evaluates future candidates through a unified Lean class-instance attempt.

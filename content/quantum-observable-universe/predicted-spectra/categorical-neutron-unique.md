@@ -1,5 +1,3 @@
-**Proposition (Categorical neutron uniqueness).**
-
 The triple $(\mathfrak{u}, \mathfrak{d}, \mathfrak{d})$ and the Borromean braiding pattern uniquely determine the [categorical neutron](#def:categorical-neutron) $\mathfrak{n}$ up to braid isotopy. Its Hecke normal form in $H_3(q)$ is unique. The $S_3$-symmetry on color tubes ensures independence from position assignments.
 
 #### Strategy

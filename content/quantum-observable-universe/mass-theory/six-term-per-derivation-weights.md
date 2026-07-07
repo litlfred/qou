@@ -1,4 +1,3 @@
-**Proposition (binding energy decomposition).**
 *The atomic binding energy derives directly from the six terms. It requires zero empirical parameter fits:*
 
 $$

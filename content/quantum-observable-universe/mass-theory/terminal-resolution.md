@@ -1,4 +1,3 @@
-**Proposition (terminal resolution).**
 *The hadronic mass collapses into a combination of neutrino vacuum drag and pure strong-force binding energy. Using the derived $q_0$, the predictions match CODATA to sub-keV precision:*
 
 | **Structure** | **Topological Formula** | **QOU Result (MeV)** | **CODATA (MeV)** |

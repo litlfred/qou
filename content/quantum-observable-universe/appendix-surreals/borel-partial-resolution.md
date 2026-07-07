@@ -1,5 +1,3 @@
-**Proposition (Borel's theorem partially discharges the keystone's sharpness target — explicit dimensions for Bring-natural number fields).**
-
 The keystone conjecture ([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)) asserts both an inclusion and a sharpness condition. Via the K-theory translation ([`rem:k-theory-period-rosetta`](#rem:k-theory-period-rosetta)), the sharpness condition factors through Borel's theorem on the algebraic K-theory of number fields. This proposition records the explicit Borel dimensions for each Bring-natural number field.
 
 **Theorem (Borel 1977).** Let $F$ be a number field with $r_1$ real embeddings and $r_2$ pairs of complex embeddings. Then for $n \geq 2$:

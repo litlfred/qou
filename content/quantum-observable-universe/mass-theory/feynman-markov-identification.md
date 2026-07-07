@@ -1,4 +1,3 @@
-**Lemma.**
 *Let $\beta \in B_n$ act on $V^{\otimes n}$ via $\rho_n$. The transition amplitude on the eigenbasis is the Markov-weighted sum of partial traces:*
 
 $$

@@ -1,4 +1,3 @@
-**Proposition (crystal isospin degeneracy).**
 *Let $\beta_A$ be an atomic braid expressed as a finite word of signed generators $\sigma_i^{\pm 1}$. Inverting the sign of any subset of generators leaves the crystal-limit shell-correction sum invariant:*
 
 $$

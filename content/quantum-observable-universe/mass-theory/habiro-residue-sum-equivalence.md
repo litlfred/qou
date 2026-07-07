@@ -1,4 +1,3 @@
-**Proposition (Habiro–residue equivalence).**
 *Let $T_w \in H_n(q)$ be a closed braid word and let
 $\operatorname{tr}_M(T_w, q)$ denote its Markov trace, viewed in the Habiro
 ring $\widehat{\mathbb{Z}[q]}$.  Then the two formulations of $\operatorname{tr}_M$

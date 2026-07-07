@@ -1,4 +1,3 @@
-**Theorem.**
 *Let $\mathcal{N}(Z, N)$ be the Gröbner-Shirshov-reduced nuclear braid word in $H_A(q)$. At each generator $\sigma_i$, let $(a_i, b_i)$ be the transfer-matrix-reduced chain coefficients. Let $z = 1/(q^{1/2} + q^{-1/2})$ be the Markov trace parameter. The Markov trace factors exactly:*
 
 $$

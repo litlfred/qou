@@ -1,5 +1,3 @@
-**Proposition (first integral of the depth-$2$ prolongation recurrence).**
-
 The one-parameter recurrence
 ([`prop:sl2-prolongation-recurrence`](#prop:sl2-prolongation-recurrence))
 

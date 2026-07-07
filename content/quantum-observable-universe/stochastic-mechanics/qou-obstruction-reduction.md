@@ -1,4 +1,4 @@
-**Theorem.** Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with gauge group $G = \mathrm{Aut}^{\otimes}(\tau)$ of dimension $d = \dim G$. Then:
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with gauge group $G = \mathrm{Aut}^{\otimes}(\tau)$ of dimension $d = \dim G$. Then:
 
 **(a)** The classical limit obstruction ([classical limit obstruction](#def:classical-limit-obstruction)) is one-dimensional:
 $$

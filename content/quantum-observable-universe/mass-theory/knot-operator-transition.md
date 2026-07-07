@@ -1,4 +1,3 @@
-**Proposition.**
 *The operator that adds the $(A{+}1)$-th nucleon to a nucleus of mass number $A$ has a definite knot type:*
 
 | Transition | Operator | Dominant NF | Knot type |

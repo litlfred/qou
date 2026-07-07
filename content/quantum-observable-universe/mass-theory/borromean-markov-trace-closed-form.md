@@ -1,4 +1,3 @@
-**Proposition (Borromean Markov trace closed form).**
 *The Markov trace of the Borromean braid
 $\beta_{\mathrm{Bor}} = (\sigma_1^{-1}\sigma_2)^3$ on $H_3(q)$,
 evaluated via the Jones polynomial of the Borromean rings

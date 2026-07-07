@@ -1,4 +1,3 @@
-**Proposition.**
 *For any partition $\lambda \vdash k$ and substrate parameter $q > 1$,
 the Frobenius character of the figure-eight braid
 $4_1 = \sigma_0\sigma_1^{-1}\sigma_0^{-1}\sigma_1$ in the irreducible

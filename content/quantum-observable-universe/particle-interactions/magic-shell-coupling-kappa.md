@@ -1,4 +1,3 @@
-**Proposition (Magic-shell coupling slope — categorical closed form).**
 *The per-unit-excess magic-shell coupling slope $\kappa$, which controls the $(n_{pp} - n_{nn})$ excess contribution to atomic binding at single-magic anchors $(Z, N) = (2, 1)$ and $(1, 2)$, admits the closed categorical form*
 
 $$

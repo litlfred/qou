@@ -1,4 +1,3 @@
-**Proposition (cyclotomic dimension synthesis at every depth $n$).**
 *For every prime $K \geq 3$ and depth $n \geq 2$, the dimension of the $\mathbb{Q}$-vector space $\mathcal{V}_{n, K}$ spanning the genuinely new depth-$n$ grouplikes bounds unconditionally:*
 
 $$

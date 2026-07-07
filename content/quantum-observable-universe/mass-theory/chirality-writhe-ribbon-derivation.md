@@ -1,4 +1,3 @@
-**Proposition (chirality writhe-ribbon linearisation).**
 *For a braid $\beta$ with integer writhe $w(\beta)$, the chirality factor derived from the Kauffman ribbon-twist evaluation limits strictly to:*
 
 $$

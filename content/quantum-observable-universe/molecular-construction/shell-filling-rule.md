@@ -1,4 +1,3 @@
-**Proposition.**
 *The ground-state electron configuration of atom $(Z, N)$ is the assignment of $Z$ electron trefoils to bonding sites that minimises the total $\Phi_1$ of the atomic braid. This reproduces the aufbau principle:*
 
 1. *Inner shells ($n < n_{\mathrm{val}}$) fill completely because each additional electron in a partly filled inner shell reduces $\Phi_1$ more than any valence electron.*

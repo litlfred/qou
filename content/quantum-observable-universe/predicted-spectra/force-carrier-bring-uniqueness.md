@@ -1,2 +1,1 @@
-**Proposition (Bring-supported force-carrier sector is forced).**
 *Bring's surface $\Sigma_4$ has genus $4$. A torus knot $K$ embeds as a saturating generator of the symplectic homology $H_1(\Sigma_4, \mathbb{Z}) \cong \mathbb{Z}^{2 g} = \mathbb{Z}^8$ only if $g(K) = g(\Sigma_4) = 4$. By the genus-$4$ classification, the force-carrier sector of any QOU built on $\Sigma_4$ is exactly $\{T_{2,9}, T_{3,5}\}$.*

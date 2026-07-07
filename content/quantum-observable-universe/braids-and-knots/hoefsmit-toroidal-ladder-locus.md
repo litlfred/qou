@@ -1,4 +1,3 @@
-**Proposition (toroidal locus of the Hoefsmit mixing ladder).**
 *Let $R$ be a field of characteristic zero and let $\alpha, \beta \in R$ be
 constants. If the associated-Legendre order-ladder factor at degree
 $n = d + \alpha$ and order $\mu = \beta$ reproduces the squared Hoefsmit

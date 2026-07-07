@@ -1,4 +1,3 @@
-**Proposition.**
 *In the Iwahori-Hecke algebra $H_n(q)$, the Jucys-Murphy elements*
 
 $$

@@ -1,4 +1,3 @@
-**Proposition.**
 *Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be a QOU. Let $U \subset M_0$ be an affine chart admitting a chain of adjacent aeons $\ldots, \mathcal{A}_{-1}, \mathcal{A}_0, \mathcal{A}_1, \ldots$ . This aeon chain satisfies the three defining properties of a conformal cyclic cosmology \cite{penrose2010}:*
 
 **(CCC-1) Conformal invariance at boundaries.** *At each aeon boundary $\mathcal{S}_b$, the boundary datum $\partial\mathcal{A}|_b = (A_1/A_0, A_2/A_0)|_{\mathcal{S}_b}$ is invariant under rescaling of $A_0$ . The surviving data depends only on the conformal class of the horizon ideal $\mathfrak{h}$. It depends on the vanishing locus, not the specific generator.*

@@ -1,4 +1,3 @@
-**Proposition (Boundary closures).**
 *The boundary cases of the $\mathrm{Cl}_2$ pentagon identity and the Faddeev-Kashaev quasi-classical limit are unconditional Lean theorems:*
 
 - *(2-boundary)* `Cl_2(0) - Cl_2(0) + Cl_2(0) - Cl_2(0) + Cl_2(0) = 0` establishes the all-zero-input pentagon.

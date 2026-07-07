@@ -1,4 +1,3 @@
-**Lemma.**
 *For $q \neq 1$, the categorical mass of a vortex filament $\varrho$ inherits a kernel*
 
 $$

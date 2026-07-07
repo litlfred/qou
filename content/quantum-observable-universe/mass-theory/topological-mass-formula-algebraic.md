@@ -1,4 +1,3 @@
-**Proposition (algebraic topological mass formula).**
 *Let $\beta \in H_n(R, q)$ be the Hecke normal form of a closed braid. The categorical mass admits the closed form:*
 
 $$

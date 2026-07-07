@@ -1,4 +1,3 @@
-**Proposition (per-braid mass tower — full jet-level form).**
 *Let $W \in B_{3A}$ be the atomic braid of a nucleus $(Z, N)$. The mass functional decomposes as*
 
 $$

@@ -1,4 +1,3 @@
-**Proposition.**
 *The derived atom $\mathcal{A}(Z, N)$ is:*
 
 1. ***Beta-stable** if and only if, for all single nucleon exchanges $\mathfrak{p} \leftrightarrow \mathfrak{n}$ at fixed $A = Z + N$:*

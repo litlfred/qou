@@ -1,5 +1,3 @@
-**Proposition (Coulomb/strong ratio as a q-rational).**
-
 *For every real $q > 0$ (the substrate-anchor regime, $\operatorname{Im}(q) = 0$ at the archimedean place), the ratio satisfies:*
 
 $$

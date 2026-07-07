@@ -1,4 +1,3 @@
-**Proposition (categorical $\Phi_q$ truncation depth).**
 *Let $\mathfrak{H}$ be a confined particle with Hecke NF $T_w$. The categorical brane-tower contribution truncates to the finite sum:*
 
 $$

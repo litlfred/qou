@@ -1,4 +1,4 @@
-**Proposition.** Over $\mathbb{R}^n$ with the archimedean realisation of the $q$-Laplacian, the Reeb-invariant $q$-Gaussian
+Over $\mathbb{R}^n$ with the archimedean realisation of the $q$-Laplacian, the Reeb-invariant $q$-Gaussian
 $$
   G_q(t, x) = \bigl(4\pi q^{-2} t\bigr)^{-n/2} \exp\!\left(-\frac{q^2  |x|^2}{4t}\right)
 $$

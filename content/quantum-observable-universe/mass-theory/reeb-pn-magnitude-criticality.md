@@ -1,4 +1,3 @@
-**Proposition (deformed exchange criticality).**
 *Let $R$ be a commutative ring, $v \in R$ invertible, $[2]_v = v + v^{-1}$,
 and let*
 

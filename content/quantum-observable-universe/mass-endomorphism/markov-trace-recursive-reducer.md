@@ -1,6 +1,6 @@
 ## Statement
 
-**Proposition (recursive symbolic Markov-trace reducer).** *Let $\beta \in B_n$ be any braid word. There is a terminating algorithm that returns a closed-form symbolic expression for $\operatorname{tr}_M(\beta) \in \mathbb{Q}(q)$ using only:*
+*Let $\beta \in B_n$ be any braid word. There is a terminating algorithm that returns a closed-form symbolic expression for $\operatorname{tr}_M(\beta) \in \mathbb{Q}(q)$ using only:*
 - *the Hecke quadratic $\sigma_i^2 = h \sigma_i + 1$ (with $h = q - q^{-1}$);*
 - *the Markov axiom $\operatorname{tr}_M(\alpha \sigma_n) = z \operatorname{tr}_M(\alpha)$ for $\alpha \in H_n \subset H_{n+1}$ (with $z = 1/(q^{1/2}+q^{-1/2})$);*
 - *cyclicity $\operatorname{tr}_M(\alpha\beta) = \operatorname{tr}_M(\beta\alpha)$;*

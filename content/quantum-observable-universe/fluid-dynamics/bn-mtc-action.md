@@ -1,4 +1,3 @@
-**Proposition.**
 Let $\mathbf{C}_{\mathrm{any}}(N)$ define the exact observable modular tensor category detailed in [def:observable-mtc](#def:observable-mtc), functioning specifically at level $N \geq 3$. Let $\mathbf{V}$ specify any definitively non-trivial simple object. Evaluating across every $n \geq 2$, the embedded categorical braiding directly generates a functional representation
 
 $$

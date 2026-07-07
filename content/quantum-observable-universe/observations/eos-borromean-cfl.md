@@ -1,4 +1,3 @@
-**Proposition.**
 *Let $q > 1$ be the substrate parameter, $\hbar_q = (q-1)/q$, and $V_B = 7.32772$ the Borromean volume. The two topological phases of dense quark matter have distinct equations of state.*
 
 *1. Borromean phase*

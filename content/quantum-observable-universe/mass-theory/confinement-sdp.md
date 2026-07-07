@@ -1,4 +1,3 @@
-**Proposition (Primal and dual SDP for operator selection).**
 *Let $n$ be the Hecke strand count at confinement level $\ell$. Let $(\pi_\lambda)_{\lambda \vdash k, k \le n}$ be the central idempotents projecting onto the Wedderburn blocks of $H_n(q)$. Let $T$ be the cost operator. The confined operator at $q$ is the solution $\Phi^* \succeq 0$ of the primal matrix program:*
 
 $$

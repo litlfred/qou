@@ -1,4 +1,3 @@
-**Theorem (Frobenius antipode unifies chirality and neutron closure).**
 *$H_n(R, q)$ acts as a self-dual Frobenius algebra equipped with a canonical antipode $S(\sigma_i) = \sigma_i^{-1}$. This antipode unifies two critical derivations:*
 
 1. *The chirality factor $a_K$ directly measures the symmetric-channel antipode asymmetry.*

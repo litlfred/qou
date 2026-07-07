@@ -1,4 +1,4 @@
-**Proposition (Alt-isotype identification of the baryon integrand).** Let $F(z, c) \in R[z, c]$ be the color-tube cubic ([color-tube cubic](#rem:color-tube-cubic)) with roots $c_1(z), c_2(z), c_3(z)$ over the categorical base ring $R$. Let $\mathrm{S}_3$ act on the three color sheets by permutation. The canonical Wedderburn decomposition is
+Let $F(z, c) \in R[z, c]$ be the color-tube cubic ([color-tube cubic](#rem:color-tube-cubic)) with roots $c_1(z), c_2(z), c_3(z)$ over the categorical base ring $R$. Let $\mathrm{S}_3$ act on the three color sheets by permutation. The canonical Wedderburn decomposition is
 
 $$
   R[\mathrm{S}_3]

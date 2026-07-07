@@ -1,4 +1,3 @@
-**Proposition.**
 Let $\mathcal{X}_5 \colon y^2 = x^5 - 1$ be the hyperelliptic quintic of Definition [def:hyperelliptic-quintic](#def:hyperelliptic-quintic). The map
 
 $$

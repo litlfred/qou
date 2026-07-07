@@ -1,4 +1,3 @@
-**Theorem (unified knot mass formula).**
 *The categorical mass of the vortex $\varrho$ is exactly:*
 
 $$

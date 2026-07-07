@@ -1,5 +1,3 @@
-**Proposition (knot-operator LP/SDP selection via Gram-inverse dual basis).**
-
 *Let $R$ be the categorical coefficient ring with $q \in R$ generic. Let $\{b_i\}$ be a Frobenius-non-degenerate basis for the Iwahori-Hecke algebra $H_n(q)$. For any confinement target $T \in H_n(q)$, the selection of a knot operator $\beta(T_{m,m'}) \in H_n(q)$ producing $T$ is determined by the Frobenius-Gram-inverse LP/SDP dual basis:*
 
 $$

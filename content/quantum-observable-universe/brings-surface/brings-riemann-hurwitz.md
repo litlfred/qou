@@ -1,4 +1,3 @@
-**Lemma.**
 *The Reeb quotient $M_S \to \Sigma_4$ collapses $\mathrm{U}(1)$-orbits to the weight-$0$ subalgebra $A_0 = A^{\mathrm{U}(1)}$. The canonical covering $\pi \colon \Sigma_4 \to \mathbb{P}(V)$ has degree $4$ with total ramification*
 
 $$

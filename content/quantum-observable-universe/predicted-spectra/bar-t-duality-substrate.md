@@ -1,4 +1,4 @@
-**Proposition.** The bar involution $\iota \colon q \mapsto q^{-1}$ on the substrate parameter line lifts to a substrate-level T-duality between elliptic curves of the Descartes family ([Descartes elliptic curve](#prop:descartes-elliptic-curve)):
+The bar involution $\iota \colon q \mapsto q^{-1}$ on the substrate parameter line lifts to a substrate-level T-duality between elliptic curves of the Descartes family ([Descartes elliptic curve](#prop:descartes-elliptic-curve)):
 
 $$
   \iota_*\,\mathcal{E}_q  =  \mathcal{E}_{q^{-1}}.

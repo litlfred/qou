@@ -1,4 +1,3 @@
-**Proposition (structural-gap convention-invariance via rigid monoidal Type-B folding).**
 *Let $\mathbf{C} = \mathbf{Rep}(\mathrm{SU}_q(2))$ be the rigid monoidal category. Let $\tau \colon \mathrm{End}_{\mathbf{C}}(A^{\otimes n}) \to \mathbb{C}_q$ be the canonical Markov trace. Define the categorical structural gap for a confined particle $\mathfrak{H}$ as:*
 
 $$

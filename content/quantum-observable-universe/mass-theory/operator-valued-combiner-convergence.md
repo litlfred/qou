@@ -1,4 +1,3 @@
-**Proposition (operator-valued combiner convergence).**
 *Let $\beta_{\mathrm{atom}}$ be the canonical $A$-nucleon atomic braid in $\mathbf{H}_{3A}(q)$, with inter-nucleon interfaces at the peel levels $n_k = 3(A - k + 1)$. Write $\chi^\lambda_A := \chi^\lambda(\beta_{\mathrm{atom}})$ for the level-$A$ character. The iterated application of the operator-valued Sub-lemma 2.1 assembles into a single convergent representation. The value at level $A + 1$ is the LR-weighted value at level $A$:*
 
 $$

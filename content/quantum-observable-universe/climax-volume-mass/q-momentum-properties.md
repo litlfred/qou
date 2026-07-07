@@ -1,4 +1,3 @@
-**Proposition.**
 *The [$q$-momentum](#def:q-momentum) $p_q$ satisfies:*
 
 1. **Additivity under concatenation**: $p_q(\beta_1 \beta_2) = p_q(\beta_1) + p_q(\beta_2)$ (because the trace is linear on the Iwahori--Hecke algebra).

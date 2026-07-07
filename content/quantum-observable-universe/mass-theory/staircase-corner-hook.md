@@ -1,4 +1,3 @@
-**Lemma.**
 *For every $k \geq 1$, the corner hook of the staircase partition $\rho_k$ at cell $(0, 0)$ satisfies*
 
 $$

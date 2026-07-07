@@ -1,4 +1,3 @@
-**Proposition (mirror-pair cancellation of the bar-even baseline).**
 *Let $(Z, N)$ and $(N, Z)$ be a mirror pair at fixed mass number
 $A = Z + N$, with crossing statistics of the atom braid word*
 $$

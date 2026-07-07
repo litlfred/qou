@@ -1,4 +1,3 @@
-**Proposition (character values at the long element).**
 *Let $\mathcal{B}_n$ and $\mathcal{B}_p$ be canonical nucleon braids. The empirical coefficients $c_k^{(\lambda)}$ do not match a uniform Plancherel-weighted sum. Instead, they require weighting by the character values at the longest element $w_0 \in S_3$:*
 
 $$

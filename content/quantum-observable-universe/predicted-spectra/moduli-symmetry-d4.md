@@ -1,4 +1,3 @@
-**Proposition (Dihedral $D_4$-action on the moduli line).**
 The two natural involutions on the substrate moduli line $\mathbb{C}^\times$,
 
 $$

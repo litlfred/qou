@@ -1,5 +1,3 @@
-**Proposition (Explicit formula for the central primitive idempotents $e_\lambda$ via Lagrange interpolation in Murphy elements).**
-
 *Let $H_n(q)$ be the Iwahori–Hecke algebra over $R$ at generic $q$. The Jucys–Murphy elements $\{J_1, \ldots, J_n\} \subset H_n(q)$ ([`prop:jucys-murphy-central-elements-qou`](#prop:jucys-murphy-central-elements-qou)) commute pairwise and act diagonally on the Hoefsmit seminormal basis. For any standard Young tableau $T$ of shape $\lambda \vdash n$, we have $J_k \cdot v_T = c_T(k; q) \cdot v_T$, where*
 
 $$

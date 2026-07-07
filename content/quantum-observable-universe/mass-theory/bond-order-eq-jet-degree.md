@@ -1,5 +1,3 @@
-**Lemma (body order = jet degree).**
-
 Let $\mathcal{B}_K$ be the canonical atomic braid of a nucleus with $A$
 nucleons — each nucleon a $3$-strand block, assembled by
 `atom_braid_word_3A` — and equip $H_{3A}(q)$ with the Gröbner--Shirshov

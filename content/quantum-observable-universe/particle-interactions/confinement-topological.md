@@ -1,4 +1,3 @@
-**Proposition.**
 *Let $G \in \mathbb{R}^{6 \times 6}$ be the Gram matrix of $H_3(q)$ at $q = q_0$. Consider the linear program:*
 
 $$

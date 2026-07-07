@@ -1,4 +1,3 @@
-**Proposition (volume-tower decomposition).**
 *The hyperbolic volume of any knot $K$ decomposes exactly into tower-level Chern-Simons integrals:*
 
 $$

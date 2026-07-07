@@ -1,4 +1,3 @@
-**Proposition (Three-calibration discipline).**
 *The QOU framework admits exactly three external calibration inputs. These are the three real degrees of freedom of the first cohomology of Bring's curve, $H^1 = 2W$:*
 
 | DOF of $H^1(\text{Bring}) = 2W$ | Canonical observable | What it fixes | Numerical proxy (source) |

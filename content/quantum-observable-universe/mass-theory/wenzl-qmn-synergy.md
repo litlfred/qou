@@ -1,4 +1,3 @@
-**Proposition (Wenzl-bridge + q-MN synergy).**
 *Combining the Wenzl-bridge closed form for $y_\lambda(q)$ with the q-Murnaghan-Nakayama rule for $\chi_\lambda(T_w; q)$ evaluates the Markov trace exactly:*
 
 $$

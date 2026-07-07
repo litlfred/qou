@@ -1,4 +1,3 @@
-**Proposition.**
 *The Markov trace of the atomic braid $\mathcal{A} \in H_{3A}(q)$ decomposes over partitions $\lambda \vdash 3A$ as:*
 
 $$

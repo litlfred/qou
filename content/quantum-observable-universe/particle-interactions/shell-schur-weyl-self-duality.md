@@ -1,4 +1,3 @@
-**Proposition (Schur–Weyl justification of shell self-duality).**
 *Let $\mathcal{U}_q(\mathfrak{gl}_k)$ denote the quantum enveloping algebra and $H_n(R, q)$ the Iwahori–Hecke algebra. Under Schur–Weyl duality*
 
 $$

@@ -1,4 +1,3 @@
-**Proposition (single-generator Hecke polynomial reduction).**
 *Let $\sigma_i$ be a Hecke generator, satisfying the quadratic relation
 $\sigma_i^2 = (q - q^{-1})\,\sigma_i + 1$. For any finite list of scalars
 $d_1, \dots, d_r \in R$, the product of single-generator factors collapses

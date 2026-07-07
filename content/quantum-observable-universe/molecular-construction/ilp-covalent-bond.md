@@ -1,4 +1,3 @@
-**Proposition.**
 *The covalent bond operator is selected by the universal ILP—the same LP that derives confinement ($\mathcal{B}_3$) and the gluon ($2\sigma_0$):*
 
 $$

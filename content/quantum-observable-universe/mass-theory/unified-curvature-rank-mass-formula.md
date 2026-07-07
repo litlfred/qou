@@ -1,4 +1,3 @@
-**Proposition (mass as a single sum over curvature-rank strata).**
 *The categorical mass decomposes perfectly over discrete GB-filtration depths $k$:*
 
 $$

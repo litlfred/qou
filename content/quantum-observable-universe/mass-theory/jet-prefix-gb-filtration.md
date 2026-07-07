@@ -1,4 +1,3 @@
-**Proposition (GB-filtration-indexed prefix).**
 *Define the Gröbner-Shirshov-filtered prefix $\beta_k^{\mathrm{GS}}$ of an atomic braid word $T_w \in H_{3A}(q)$ as the projection onto the filtration stratum:*
 
 $$

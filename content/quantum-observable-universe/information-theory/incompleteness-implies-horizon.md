@@ -1,4 +1,3 @@
-**Proposition (incompleteness implies non-empty horizon).**
 *Let $(P, e, \mathrm{eval})$ denote a Turing-complete resolution system:*
 
 - *$P$ forms a set of programs (finite braids).*

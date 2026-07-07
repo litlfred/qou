@@ -1,4 +1,3 @@
-**Proposition (LP dual stability of confined hadrons).**
 *Let $x^*$ be a confined hadron. Then:*
 
 1. *$x^*$ is LP-stable: $Gx^* \geq 0$ in all six channels.*

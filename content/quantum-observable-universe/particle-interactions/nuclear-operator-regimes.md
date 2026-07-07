@@ -1,4 +1,3 @@
-**Proposition.**
 *In the inductive construction of $\mathcal{N}(Z, N)$, the optimal inter-nucleon binding operator $\Phi_k$ at step $k$ belongs to one of three regimes:*
 
 **(Regime I — Shell filling).**

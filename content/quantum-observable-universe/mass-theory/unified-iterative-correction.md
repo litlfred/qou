@@ -1,4 +1,3 @@
-**Proposition.**
 *The unified iterative correction accumulates binding energy sequentially over the Young seminormal trace. The per-partition binding corresponds directly to its Frobenius positivity LP shadow price $u_\lambda$, scaled by its $q$-hook product:*
 
 $$

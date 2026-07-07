@@ -1,4 +1,3 @@
-**Proposition (curvature-rank = GB filtration index).**
 *The curvature-rank strictly stratifies the GB filtration:*
 
 $$

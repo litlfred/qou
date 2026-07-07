@@ -1,4 +1,3 @@
-**Theorem (Hoefsmit cell-content identification of EW triplet).**
 *Let $R$ be the categorical coefficient ring with $q \in R$ generic. The electroweak force-carriers $W^\pm, Z, H$—identified topologically as the 2-component torus links $T(2,4), T(2,6), T(2,8)$ on Bring's surface—are realised inside $\mathrm{End}_R(V^{\otimes 6})$ as the **disjoint-strand-pair** Hoefsmit projectors:*
 
 $$

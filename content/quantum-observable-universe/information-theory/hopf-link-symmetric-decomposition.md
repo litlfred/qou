@@ -1,4 +1,4 @@
-**Proposition (Hopf-link symmetric decomposition).** *The Hopf element $\sigma_1^2$ of $H_2(q)$ formally weights the two blocks by their squared eigenvalues:*
+*The Hopf element $\sigma_1^2$ of $H_2(q)$ formally weights the two blocks by their squared eigenvalues:*
 $$
   \sigma_1^2 = q^2 e_+ + q^{-2} e_-.
 $$

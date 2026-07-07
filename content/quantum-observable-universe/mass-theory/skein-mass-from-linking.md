@@ -1,4 +1,3 @@
-**Lemma.**
 *Evaluating the mass functional $\mathcal{M}$ on the terminal Skein
 resolution of a hadron $H$ gives*
 

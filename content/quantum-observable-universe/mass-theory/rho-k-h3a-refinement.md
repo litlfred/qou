@@ -1,4 +1,3 @@
-**Proposition ($H_{3A}$ Wedderburn refinement of $\rho_K$).**
 *The categorical density $\rho_K$ admits an exact Wedderburn-Schur decomposition:*
 
 $$

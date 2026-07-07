@@ -1,4 +1,3 @@
-**Proposition (Cl_3 orbit-sum identity).**
 *The real-part orbit sum evaluates explicitly:*
 
 $$
