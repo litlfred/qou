@@ -1,8 +1,5 @@
 **Definition.**
-*An **atom of type $(Z, N)$** is a closed braid $K$ whose
-Gröbner–Shirshov normal form
-([Hecke normal form](#def:hecke-normal-form)) in $H_{n(K)}(q)$
-admits a block decomposition:*
+*An **atom of type $(Z, N)$** is a closed braid $K$ whose Gröbner–Shirshov normal form in $H_{n(K)}(q)$ admits a block decomposition:*
 
 $$
   T_w
@@ -15,37 +12,14 @@ $$
 
 *The components are:*
 
-- *$n(K)$ is the braid index of $K$ (the minimum strand count over braid
-  representatives). For a $(Z, N)$ atom built from Borromean
-  baryons on $3$ strands each plus inter-nucleon connectors,
-  $n(K) = 3(Z+N)$.*
-- *$w_{q^Z} \in S_{n(K)}$ is the proton-quark block. It is the product
-  of $Z$ permutations. Each permutation realizes the Borromean baryon normal form for
-  one $\mathfrak{u}\mathfrak{u}\mathfrak{d}$ proton-quark substructure
-  on a disjoint $3$-strand block of $\{1, \ldots, n(K)\}$.*
-- *$w_{\bar q^N}$ is the neutron-quark block. It consists of $N$ disjoint
-  Borromean normal forms for $\mathfrak{u}\mathfrak{d}\mathfrak{d}$
-  neutron-quark substructures.*
-- *$w_{\mathrm{inter}}$ is the inter-nucleon connector. This
-  permutation realizes the pp, nn, and pn crossings between the
-  $Z + N$ disjoint baryon blocks ([atomic
-  braid](#def:atomic-braid)).*
+- *$n(K)$ is the braid index of $K$. For a $(Z, N)$ atom built from Borromean baryons on $3$ strands each plus inter-nucleon connectors, $n(K) = 3(Z+N)$.*
+- *$w_{q^Z} \in S_{n(K)}$ is the proton-quark block. It is the product of $Z$ permutations. Each permutation realizes the Borromean baryon normal form for one $\mathfrak{u}\mathfrak{u}\mathfrak{d}$ proton-quark substructure on a disjoint $3$-strand block.*
+- *$w_{\bar q^N}$ is the neutron-quark block. It consists of $N$ disjoint Borromean normal forms for $\mathfrak{u}\mathfrak{d}\mathfrak{d}$ neutron-quark substructures.*
+- *$w_{\mathrm{inter}}$ is the inter-nucleon connector. This permutation realizes the pp, nn, and pn crossings between the $Z + N$ disjoint baryon blocks.*
 
-*The decomposition is unique up to normal form rewriting (by the Diamond Lemma).
-No positional or temporal ordering is imposed beyond the
-shortlex-canonical normal form.*
+*The decomposition is unique up to normal form rewriting. No positional or temporal ordering is imposed beyond the shortlex-canonical normal form.*
 
 **The atom is a knot.**
-*The atom is the closed braid $\hat K = \hat\beta$ obtained via
-the Markov closure of any braid representative $\beta$ that realizes $T_w$.
-Markov-trace invariance ([Jones–Markov trace](#thm:jones-markov-trace))
-guarantees that $\hat K$ forms a well-defined knot or link in $S^3$,
-independent of the choice of $\beta$. No phase or temperature
-data enters the definition. The atom represents a purely topological object.*
+*The atom is the closed braid $\hat K = \hat\beta$ obtained via the Markov closure of any braid representative $\beta$ that realizes $T_w$. Markov-trace invariance guarantees that $\hat K$ forms a well-defined knot or link in $S^3$. No phase or temperature data enters the definition. The atom represents a purely topological object.*
 
-Phase, dynamics, and evolution represent separate structures defined on
-the space of atom-knots. They do not enter the atom's definition.
-The same atom $K$ may exhibit different confinement
-levels at different $q$
-([confinement level](#def:confinement-level)), but $K$ itself remains
-independent of $q$.
+Phase, dynamics, and evolution represent separate structures defined on the space of atom-knots. The same atom $K$ may exhibit different confinement levels at different $q$, but $K$ itself remains independent of $q$.
