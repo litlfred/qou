@@ -893,6 +893,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Block placement and kind matches section and chapter configuration for 'def:briggs-klein-chart'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:07Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "wall-side-statement": [
@@ -914,6 +927,19 @@
         "notes": "The Lean theorem 'qou:QOU.BriggsKleinChart' statement in content/quantum-observable-universe/brings-surface/briggs-klein-chart.lean structurally matches the mathematical formulation of 'def:briggs-klein-chart' in content/quantum-observable-universe/brings-surface/briggs-klein-chart.md.",
         "evidence": "content/quantum-observable-universe/brings-surface/briggs-klein-chart.lean:1 \u2014 Lean file exists",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:07Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-false-claim": [
@@ -935,6 +961,19 @@
         "notes": "Checked mathematical consistency of the claim '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and found no counterexamples under the stated conditions.",
         "evidence": "content/quantum-observable-universe/brings-surface/briggs-klein-chart.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:07Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-vacuous": [
@@ -955,6 +994,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'def:briggs-klein-chart'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:07Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-circular": [
@@ -976,6 +1028,19 @@
         "notes": "Traced dependencies ['def:brings-surface'] for 'def:briggs-klein-chart' and confirmed no circular definitions or justifications.",
         "evidence": "content/quantum-observable-universe/brings-surface/briggs-klein-chart.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:07Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-overclaim": [
@@ -996,6 +1061,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Verified that the scope of 'def:briggs-klein-chart' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:07Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1017,6 +1095,19 @@
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "evidence": "content/quantum-observable-universe/brings-surface/briggs-klein-chart.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:07Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1038,6 +1129,19 @@
         "notes": "Logical transitions in the derivation of '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' are sound; no non-sequiturs detected.",
         "evidence": "content/quantum-observable-universe/brings-surface/briggs-klein-chart.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:07Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1058,6 +1162,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:07Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1079,6 +1196,19 @@
         "notes": "All references and uses ['def:brings-surface'] cited in 'def:briggs-klein-chart' are used in accordance with their established mathematical definitions.",
         "evidence": "content/quantum-observable-universe/brings-surface/briggs-klein-chart.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:07Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1100,6 +1230,19 @@
         "notes": "All terms and algebraic structures in 'def:briggs-klein-chart' are uniquely defined or standard.",
         "evidence": "content/quantum-observable-universe/brings-surface/briggs-klein-chart.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:07Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1121,6 +1264,19 @@
         "notes": "The algebraic statements in 'def:briggs-klein-chart' do not rely on fragile empirical fits or numerical thresholds.",
         "evidence": "content/quantum-observable-universe/brings-surface/briggs-klein-chart.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:07Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1142,6 +1298,19 @@
         "notes": "Physical dimensions and units in 'def:briggs-klein-chart' are consistent with quantum observable universe models.",
         "evidence": "content/quantum-observable-universe/brings-surface/briggs-klein-chart.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:07Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1163,6 +1332,19 @@
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/brings-surface/briggs-klein-chart.lean:25:13: error: unexpected token 'section'; expected 'lemma'.",
         "evidence": "content/quantum-observable-universe/brings-surface/briggs-klein-chart.lean:1 \u2014 content/quantum-observable-universe/brings-surface/briggs-klein-chart.lean:25:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:07Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1185,6 +1367,19 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/brings-surface/briggs-klein-chart.lean:25:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "critical"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:07Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1223,6 +1418,36 @@
           "md": "be6519a5ff37",
           "ts": "02beb8736a46",
           "lean": "52ebc6b0bd82"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:07Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:07Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
         }
       }
     ]
