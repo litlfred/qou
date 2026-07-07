@@ -3,12 +3,12 @@
   "description": "Resurgence instanton action of 4_1 (f-map Stokes datum, preliminary) + pion=half-figure-eight even-channel knot id.",
   "audit_only": true,
   "tier": "structural-exact (knot id, volumes) + preliminary-numerical (action A)",
-  "computedAt": "2026-07-07T14:57:40.917275+00:00",
-  "commitSha": "e3ff35e4d12410fd8dd49a33c94f74d966c79133",
+  "computedAt": "2026-07-07T15:03:42.255514+00:00",
+  "commitSha": "523c800c06a8ce689d207983a0fdfb73e3c46306",
   "engine": "mpmath",
   "engineVersion": "1.3.0",
   "scriptFile": "qbeta_resurgence_action_halffig8.py",
-  "scriptHash": "0a469f10060d",
+  "scriptHash": "6c268ab9e3ab",
   "assertions": [
     {
       "name": "vol41_recovered_highorder",

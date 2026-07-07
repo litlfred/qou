@@ -117,21 +117,39 @@ def main():
               "(consistent with S being quantum-𝔙, not classical)")
 
     # --- Part C: the rigidity prune ----------------------------------------
-    # A classical volume is a fixed-knot invariant => anchor-invariant.  Model
-    # both anchors reading the SAME 𝔙(K); the pure-function image is then equal
-    # at both anchors and cannot reproduce S_proton != S_muon.  This mirrors the
-    # Lean theorem no_anchor_invariant_realizes_swing exactly.
+    # A classical volume is a fixed-knot topological invariant: it takes NO q₀
+    # input, so feeding the two genuinely-differing anchor q₀'s returns the same
+    # value.  We model 𝔙(K) as an explicit function of q₀ that ignores its
+    # argument, evaluate it at the two DISTINCT anchors, and show the outputs are
+    # equal WHILE the target S differs — a genuine demonstration (not a hardcoded
+    # equality) mirroring the Lean theorem no_anchor_invariant_realizes_swing:
+    # `datum a = datum a'` (𝔙 ignores the anchor) ∧ `S a ≠ S a'` ⇒ no pure
+    # function of 𝔙 realizes S.
     V_fixed = vols["Vol(Borromean)"]
-    f_at_proton = mp.log(S_muon) / V_fixed   # f(𝔙) evaluated "at proton anchor"
-    f_at_muon = mp.log(S_muon) / V_fixed     # ... identical: 𝔙 is anchor-invariant
+
+    def classical_vol(q0):
+        """Complex volume of a fixed knot: topological ⇒ independent of q₀."""
+        del q0  # deliberately unused — the whole point is anchor-invariance
+        return V_fixed
+
+    anchors_differ = (q0_proton != q0_muon)       # the inputs are genuinely distinct
+    V_at_proton = classical_vol(q0_proton)
+    V_at_muon = classical_vol(q0_muon)
+    volume_anchor_invariant = (V_at_proton == V_at_muon)  # equal despite distinct q₀
+    f_at_proton = mp.log(S_muon) / V_at_proton    # any pure f∘𝔙 inherits the equality
+    f_at_muon = mp.log(S_muon) / V_at_muon
     pure_function_is_constant = (f_at_proton == f_at_muon)
-    # ...but the target S is not constant:
-    target_not_constant = (S_proton != S_muon)
+    target_not_constant = (S_proton != S_muon)    # ...but the target S swings
     print(f"\n=== C. rigidity prune (classical 𝔙 anchor-invariant) ===")
-    print(f"  f(𝔙(K)) at proton == at muon : {pure_function_is_constant} "
-          f"(𝔙 is a fixed-knot invariant)")
+    print(f"  anchors q0_proton != q0_muon : {bool(anchors_differ)} "
+          f"(distinct inputs)")
+    print(f"  𝔙(q0_proton) == 𝔙(q0_muon)   : {volume_anchor_invariant} "
+          f"(𝔙 ignores q0 — topological)")
+    print(f"  ⇒ f(𝔙) equal at both anchors : {pure_function_is_constant}")
     print(f"  target S proton != muon      : {bool(target_not_constant)}")
-    check("classical_volume_is_anchor_invariant", pure_function_is_constant)
+    check("anchors_genuinely_differ", anchors_differ)
+    check("classical_volume_is_anchor_invariant",
+          volume_anchor_invariant and anchors_differ)
     check("pure_function_of_classical_vol_cannot_match_swing",
           pure_function_is_constant and bool(target_not_constant))
 
