@@ -295,8 +295,8 @@
         "reviewed_at": "2026-06-27T13:05:09.443Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
         "severity": "minor",
-        "evidence": "Statement [δq1,δq2]=F_q, then two \"structural consequences\" (agreement⟺flatness, antisymmetry — mathematical) plus interpretive prose: \"the local disagreement between two observers is the q-curvature\" and \"the kinematic half of how the substrate parameter q evolves locally\" (.md lines 14-16, 40-43). No companion interprets: remark.",
-        "notes": "Consequences are largely mathematical, but the observer-disagreement/kinematic-evolution framing is physical interpretation held in-block. Borderline → warn."
+        "evidence": "Statement [\u03b4q1,\u03b4q2]=F_q, then two \"structural consequences\" (agreement\u27faflatness, antisymmetry \u2014 mathematical) plus interpretive prose: \"the local disagreement between two observers is the q-curvature\" and \"the kinematic half of how the substrate parameter q evolves locally\" (.md lines 14-16, 40-43). No companion interprets: remark.",
+        "notes": "Consequences are largely mathematical, but the observer-disagreement/kinematic-evolution framing is physical interpretation held in-block. Borderline \u2192 warn."
       },
       {
         "field_hash": {
@@ -315,6 +315,19 @@
         "severity": "minor",
         "evidence": "germ-commutator-q-curvature.md:13-16: \"This is the formal core of the two-observer parallelogram ...: the local disagreement between two observers *is* the q-curvature ... Two structural consequences follow.\"",
         "notes": "Statement (the bare identity $[\\delta q_1,\\delta q_2]=F_q$) is clean, but interpretive prose ('formal core', 'kinematic half') follows in the same block. A companion remark rem:two-observer-parallelogram is cited; consequences 1 and 2 are themselves formalized theorems (agree_iff_flat, curvature_antisymm), so they are additional results rather than pure motivation. Borderline mislocation."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.432560+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.432560+00:00"
+        }
       }
     ],
     "fit-section-chapter": [
@@ -332,6 +345,19 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.446923+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.446923+00:00"
+        }
       }
     ],
     "wall-side-statement": [
@@ -349,6 +375,19 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.463245+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.463245+00:00"
+        }
       }
     ],
     "wall-side-proof": [
@@ -366,6 +405,19 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.492941+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.492941+00:00"
+        }
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -383,6 +435,19 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.509390+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.509390+00:00"
+        }
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -400,7 +465,20 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score 0.9 — the .md 'Lean' section names the three formalized lemmas (commutator_eq_curvature, agree_iff_flat, curvature_antisymm) and states the abstract non-commutative ring setting up front; the plan is fully legible."
+        "notes": "score 0.9 \u2014 the .md 'Lean' section names the three formalized lemmas (commutator_eq_curvature, agree_iff_flat, curvature_antisymm) and states the abstract non-commutative ring setting up front; the plan is fully legible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.524653+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.524653+00:00"
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -418,7 +496,20 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score 1.0 — the resolved decl commutator_eq_curvature is sorry-free; no remaining gap."
+        "notes": "score 1.0 \u2014 the resolved decl commutator_eq_curvature is sorry-free; no remaining gap."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.543760+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.543760+00:00"
+        }
       }
     ],
     "proof-rater-novelty": [
@@ -436,7 +527,20 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score 0.5 — standard commutator/curvature bracket identity over a ring; not duplicated elsewhere in the corpus but a routine algebraic packaging."
+        "notes": "score 0.5 \u2014 standard commutator/curvature bracket identity over a ring; not duplicated elsewhere in the corpus but a routine algebraic packaging."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.560099+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.560099+00:00"
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -454,6 +558,19 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.576836+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.576836+00:00"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -472,8 +589,8 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "critical",
-        "evidence": "germ-commutator-q-curvature.lean:50-59: field `parallelogram : obsCommutator δq₁ δq₂ = Fq` and `theorem commutator_eq_curvature (P : ObservationParallelogram R) : obsCommutator P.δq₁ P.δq₂ = P.Fq := P.parallelogram`",
-        "notes": "The lean.ref resolves to commutator_eq_curvature, whose body is a verbatim projection of the structure field `parallelogram` whose type IS the theorem's own conclusion (P ⊢ P). The data fields δq₁/δq₂/Fq are not derived through any composition — the identity is assumed as a field and handed back. This is the self-assuming-projection anti-pattern. Restructure so the identity is derived (e.g. carry the two perturbations + a curvature DEFINITION and prove the bracket equals it), or treat the structure as a conjecture carrier. Note agree_iff_flat / curvature_antisymm DO compose fields and are legitimate."
+        "evidence": "germ-commutator-q-curvature.lean:50-59: field `parallelogram : obsCommutator \u03b4q\u2081 \u03b4q\u2082 = Fq` and `theorem commutator_eq_curvature (P : ObservationParallelogram R) : obsCommutator P.\u03b4q\u2081 P.\u03b4q\u2082 = P.Fq := P.parallelogram`",
+        "notes": "The lean.ref resolves to commutator_eq_curvature, whose body is a verbatim projection of the structure field `parallelogram` whose type IS the theorem's own conclusion (P \u22a2 P). The data fields \u03b4q\u2081/\u03b4q\u2082/Fq are not derived through any composition \u2014 the identity is assumed as a field and handed back. This is the self-assuming-projection anti-pattern. Restructure so the identity is derived (e.g. carry the two perturbations + a curvature DEFINITION and prove the bracket equals it), or treat the structure as a conjecture carrier. Note agree_iff_flat / curvature_antisymm DO compose fields and are legitimate."
       },
       {
         "field_hash": {
@@ -481,7 +598,7 @@
           "ts": "01d9c8ff0d10"
         },
         "result": "pass",
-        "notes": "Re-encoded on branch claude/lean-qa-backlog-2h3f8d: carrier fields are now genuine sub-hypotheses (never the conclusion) and the theorem DERIVES its conclusion by composing them / applying proved lemmas — no longer projects an assumed field (AGENTS.md §3b-cond item 5). Verified lean-direct exit 0.",
+        "notes": "Re-encoded on branch claude/lean-qa-backlog-2h3f8d: carrier fields are now genuine sub-hypotheses (never the conclusion) and the theorem DERIVES its conclusion by composing them / applying proved lemmas \u2014 no longer projects an assumed field (AGENTS.md \u00a73b-cond item 5). Verified lean-direct exit 0.",
         "reviewed_at": "2026-07-04T10:41:58.000Z",
         "reviewed_sha": "3dd36f14516a6043b87a5a6f8ad6a24bc6b16c13",
         "reviewer": {
@@ -490,6 +607,19 @@
           "agent_skill": "local/lean-proof-vacuity-audit",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-07-04"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.593035+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.593035+00:00"
         }
       }
     ],
@@ -508,6 +638,19 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.608575+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.608575+00:00"
+        }
       }
     ],
     "proof-no-false-premise": [
@@ -525,6 +668,19 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.626741+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.626741+00:00"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -542,6 +698,19 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.643093+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.643093+00:00"
+        }
       }
     ],
     "proof-no-decide-masking": [
@@ -559,6 +728,19 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.658255+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.658255+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -579,6 +761,19 @@
         "severity": "minor",
         "evidence": "germ-commutator-q-curvature.ts:1",
         "notes": "For the proposition 'Germ-commutator of two observations equals the $q$-curvature on the loop' (asserting 'Proposition (Germ-commutator equals the $q$-curvature).'), the mathematical claims are verified as there are no false claims detected, supported by the successful compilation of germ-commutator-q-curvature.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.678342+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.678342+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -599,6 +794,19 @@
         "severity": "minor",
         "evidence": "germ-commutator-q-curvature.ts:1",
         "notes": "The sibling Lean file germ-commutator-q-curvature.lean compiles successfully without any sorry placeholders, verifying that the proof of 'Germ-commutator of two observations equals the $q$-curvature on the loop' is non-vacuous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.694705+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.694705+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -619,6 +827,19 @@
         "severity": "minor",
         "evidence": "germ-commutator-q-curvature.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Germ-commutator of two observations equals the $q$-curvature on the loop' (which asserts 'Proposition (Germ-commutator equals the $q$-curvature).')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.713133+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.713133+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -639,6 +860,19 @@
         "severity": "minor",
         "evidence": "germ-commutator-q-curvature.ts:1",
         "notes": "No overclaims: the scope of 'Germ-commutator of two observations equals the $q$-curvature on the loop' matches the sorry-free formalization in germ-commutator-q-curvature.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.735498+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.735498+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -659,6 +893,19 @@
         "severity": "minor",
         "evidence": "germ-commutator-q-curvature.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Germ-commutator of two observations equals the $q$-curvature on the loop'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.757291+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.757291+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -679,6 +926,19 @@
         "severity": "minor",
         "evidence": "germ-commutator-q-curvature.ts:1",
         "notes": "The logical steps in 'Germ-commutator of two observations equals the $q$-curvature on the loop' are formally sound and verified by the sorry-free compilation of germ-commutator-q-curvature.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.775047+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.775047+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -699,6 +959,19 @@
         "severity": "minor",
         "evidence": "germ-commutator-q-curvature.ts:1",
         "notes": "The Lean signature in germ-commutator-q-curvature.lean corresponds directly to the narrative claim in 'Germ-commutator of two observations equals the $q$-curvature on the loop'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.789888+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.789888+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -719,6 +992,19 @@
         "severity": "minor",
         "evidence": "germ-commutator-q-curvature.ts:1",
         "notes": "No citations are present in 'Germ-commutator of two observations equals the $q$-curvature on the loop', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.805354+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.805354+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -739,6 +1025,19 @@
         "severity": "minor",
         "evidence": "germ-commutator-q-curvature.ts:1",
         "notes": "Key terms and symbols in 'Germ-commutator of two observations equals the $q$-curvature on the loop' (e.g. from 'Proposition (Germ-commutator equals the $q$-curvature).') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.823773+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.823773+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -759,6 +1058,19 @@
         "severity": "minor",
         "evidence": "germ-commutator-q-curvature.ts:1",
         "notes": "The algebraic and logical relations in 'Germ-commutator of two observations equals the $q$-curvature on the loop' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.839676+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.839676+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -779,6 +1091,19 @@
         "severity": "minor",
         "evidence": "germ-commutator-q-curvature.ts:1",
         "notes": "The physical concepts described in 'Germ-commutator of two observations equals the $q$-curvature on the loop' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.856187+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.856187+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -799,6 +1124,19 @@
         "severity": "minor",
         "evidence": "germ-commutator-q-curvature.lean:1",
         "notes": "The formalization is fully reproducible as germ-commutator-q-curvature.lean compiles successfully."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.870518+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.870518+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -820,6 +1158,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Germ-commutator of two observations equals the $q$-curvature on the loop' (concerning 'Proposition (Germ-commutator equals the $q$-curvature).') are consistent and formally verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.888424+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.888424+00:00"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -840,6 +1191,36 @@
         },
         "reviewed_at": "2026-07-03T00:52:58.083Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.905960+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.905960+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:12.921744+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:12.921744+00:00"
+        }
       }
     ]
   },

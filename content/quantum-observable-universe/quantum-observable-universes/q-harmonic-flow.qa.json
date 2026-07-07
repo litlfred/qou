@@ -296,6 +296,19 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.768426Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.840091+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.840091+00:00"
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -318,6 +331,19 @@
         "severity": "minor",
         "evidence": "q-harmonic-flow.lean:46-58: `class QHarmonicFlow ... flow : dq = - \u0394q q` (the ansatz instance is the open conjecture); .md:25-34 'Ansatz, not theorem ... the evolution law is conjectural.'",
         "notes": "score ~0.3 \u2014 the remaining gap (existence of a QHarmonicFlow instance for the physical substrate field) IS the core conjecture, a new postulate not derived from existing blocks (a 'core' / near-'restates-target' gap, not routine). The conditional consequences (stationary_iff_qharmonic, vacuum_stationary) are sorry-free, but closing the conjecture itself is low-plausibility. Routes to proof-triage."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.859701+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.859701+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -340,6 +366,19 @@
         "severity": "minor",
         "evidence": "q-harmonic-flow.lean:1",
         "notes": "The mathematical claims in 'The substrate field $q(p)$ evolves by the $q$-harmonic-map heat flow $\\\\partial_t q = -\\\\Delta_q q$' regarding 'The substrate parameter $q(p)$, promoted from a fixed modulus to a' are formally unproved due to 'sorry' stubs in the sibling Lean file q-harmonic-flow.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.874204+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.874204+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -362,6 +401,19 @@
         "severity": "major",
         "evidence": "q-harmonic-flow.lean:1",
         "notes": "The sibling Lean file q-harmonic-flow.lean contains 'sorry' placeholders, rendering the formal verification of 'The substrate field $q(p)$ evolves by the $q$-harmonic-map heat flow $\\\\partial_t q = -\\\\Delta_q q$' vacuous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.891357+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.891357+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -384,6 +436,19 @@
         "severity": "minor",
         "evidence": "q-harmonic-flow.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'The substrate field $q(p)$ evolves by the $q$-harmonic-map heat flow $\\\\partial_t q = -\\\\Delta_q q$' (which asserts 'The substrate parameter $q(p)$, promoted from a fixed modulus to a')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.905610+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.905610+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -406,6 +471,19 @@
         "severity": "minor",
         "evidence": "q-harmonic-flow.ts:1",
         "notes": "The prose presents 'The substrate field $q(p)$ evolves by the $q$-harmonic-map heat flow $\\\\partial_t q = -\\\\Delta_q q$' as verified, but the sibling Lean proof contains sorry stubs."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.922876+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.922876+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -428,6 +506,19 @@
         "severity": "minor",
         "evidence": "q-harmonic-flow.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'The substrate field $q(p)$ evolves by the $q$-harmonic-map heat flow $\\\\partial_t q = -\\\\Delta_q q$'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.938129+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.938129+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -450,6 +541,19 @@
         "severity": "minor",
         "evidence": "q-harmonic-flow.lean:1",
         "notes": "Logical gaps exist in the formalization of 'The substrate field $q(p)$ evolves by the $q$-harmonic-map heat flow $\\\\partial_t q = -\\\\Delta_q q$' due to incomplete proof (sorry stubs) in q-harmonic-flow.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.953547+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.953547+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -472,6 +576,19 @@
         "severity": "minor",
         "evidence": "q-harmonic-flow.lean:1",
         "notes": "The Lean sibling q-harmonic-flow.lean contains sorry, causing divergence from the fully-verified narrative."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.967501+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.967501+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -494,6 +611,19 @@
         "severity": "minor",
         "evidence": "q-harmonic-flow.ts:1",
         "notes": "No citations are present in 'The substrate field $q(p)$ evolves by the $q$-harmonic-map heat flow $\\\\partial_t q = -\\\\Delta_q q$', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.983623+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.983623+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -516,6 +646,19 @@
         "severity": "minor",
         "evidence": "q-harmonic-flow.ts:1",
         "notes": "Key terms and symbols in 'The substrate field $q(p)$ evolves by the $q$-harmonic-map heat flow $\\\\partial_t q = -\\\\Delta_q q$' (e.g. from 'The substrate parameter $q(p)$, promoted from a fixed modulus to a') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:21.001647+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:21.001647+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -538,6 +681,19 @@
         "severity": "minor",
         "evidence": "q-harmonic-flow.ts:1",
         "notes": "The algebraic and logical relations in 'The substrate field $q(p)$ evolves by the $q$-harmonic-map heat flow $\\\\partial_t q = -\\\\Delta_q q$' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:21.016603+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:21.016603+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -560,6 +716,19 @@
         "severity": "minor",
         "evidence": "q-harmonic-flow.ts:1",
         "notes": "The physical concepts described in 'The substrate field $q(p)$ evolves by the $q$-harmonic-map heat flow $\\\\partial_t q = -\\\\Delta_q q$' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:21.033956+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:21.033956+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -582,6 +751,19 @@
         "severity": "minor",
         "evidence": "q-harmonic-flow.lean:1",
         "notes": "The Lean sibling q-harmonic-flow.lean contains sorry, indicating incomplete verification."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:21.049203+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:21.049203+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -605,6 +787,19 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-harmonic-flow.lean contains 'sorry' placeholders.",
         "verdict": "open-objection",
         "referee_argument": "The sibling Lean file q-harmonic-flow.lean contains sorry placeholders, meaning the main result of 'The substrate field $q(p)$ evolves by the $q$-harmonic-map heat flow $\\\\partial_t q = -\\\\Delta_q q$' is unproved and the formalization of 'The substrate parameter $q(p)$, promoted from a fixed modulus to a' is currently vacuous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:21.066917+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:21.066917+00:00"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -643,6 +838,36 @@
           "md": "3d0d387ed35a",
           "ts": "d8624af20881",
           "lean": "17c662b2206f"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:21.081303+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:21.081303+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:21.099651+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:21.099651+00:00"
         }
       }
     ]

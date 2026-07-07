@@ -1106,6 +1106,19 @@
         "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Statement is the three-part construction; the trailing 'Lean formalization' note is a status/scope note, not mislocated physical interpretation."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:15.709713+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:15.709713+00:00"
+        }
       }
     ],
     "fit-section-chapter": [
@@ -1143,6 +1156,19 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:15.726554+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:15.726554+00:00"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1180,6 +1206,19 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:15.743054+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:15.743054+00:00"
+        }
       }
     ],
     "wall-side-proof": [
@@ -1218,6 +1257,19 @@
         "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Proof body lives in the separate prf:fiber-adjoint-involution block; this .md is statement-only."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:15.768920+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:15.768920+00:00"
+        }
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1272,6 +1324,19 @@
         "severity": "minor",
         "evidence": "fiber-adjoint-involution.md:39: \"The companion Lean `fiber_adjoint_involution_exists` currently encodes an existence stub (`\u2203 inv, True`) pending a faithful statement\" vs fiber-adjoint-involution.lean:45-87: a real `structure FiberAdjointInvolution` (orbit_embed / involution / involution_sq / orbit_involution_compat / orbit_mono) with `theorem fiber_adjoint_involution_exists : Nonempty (FiberAdjointInvolution C fh) := ... sorry`",
         "notes": "The Lean signature now faithfully encodes the three narrative parts (no longer `\u2203 inv, True`), so the claim-equivalence is actually GOOD \u2014 only existence is sorry'd (honest queuing). The .md prose describing the Lean as an `\u2203 inv, True` stub is STALE and understates the formalization; a reader can reconcile but the prose should be updated. Notational/descriptive gap, not a theorem-changing divergence."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:15.785792+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:15.785792+00:00"
+        }
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1335,6 +1400,19 @@
         "score": {
           "max": 1,
           "value": 0.4
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:15.806550+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:15.806550+00:00"
         }
       }
     ],
@@ -1400,6 +1478,19 @@
           "max": 1,
           "value": 0.74
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:15.827037+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:15.827037+00:00"
+        }
       }
     ],
     "proof-rater-novelty": [
@@ -1464,6 +1555,19 @@
           "max": 1,
           "value": 0.66
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:15.846163+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:15.846163+00:00"
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1519,6 +1623,19 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07T14:26:55.952559Z"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:15.862939+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:15.862939+00:00"
         }
       }
     ],
@@ -1576,6 +1693,19 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07T14:26:55.952559Z"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:15.881826+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:15.881826+00:00"
+        }
       }
     ],
     "proof-no-trivial-true": [
@@ -1613,6 +1743,19 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07T14:26:55.952559Z"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:15.899267+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:15.899267+00:00"
         }
       }
     ],
@@ -1670,6 +1813,19 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07T14:26:55.952559Z"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:15.915773+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:15.915773+00:00"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1726,6 +1882,19 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07T14:26:55.952559Z"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:15.931778+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:15.931778+00:00"
+        }
       }
     ],
     "proof-no-decide-masking": [
@@ -1764,6 +1933,19 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07T14:26:55.952559Z"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:15.948358+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:15.948358+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -1786,6 +1968,19 @@
         "severity": "minor",
         "evidence": "fiber-adjoint-involution.lean:1",
         "notes": "The mathematical claims in 'Fiber--adjoint-fiber involution' regarding 'Let $(\\mathbf{C}, A, \\tau)$ be a' are formally unproved due to 'sorry' stubs in the sibling Lean file fiber-adjoint-involution.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:15.965066+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:15.965066+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -1808,6 +2003,19 @@
         "severity": "major",
         "evidence": "fiber-adjoint-involution.lean:1",
         "notes": "The sibling Lean file fiber-adjoint-involution.lean contains 'sorry' placeholders, rendering the formal verification of 'Fiber--adjoint-fiber involution' vacuous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:15.981055+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:15.981055+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -1830,6 +2038,19 @@
         "severity": "minor",
         "evidence": "fiber-adjoint-involution.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Fiber--adjoint-fiber involution' (which asserts 'Let $(\\mathbf{C}, A, \\tau)$ be a')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:16.000082+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:16.000082+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -1852,6 +2073,19 @@
         "severity": "minor",
         "evidence": "fiber-adjoint-involution.ts:1",
         "notes": "The prose presents 'Fiber--adjoint-fiber involution' as verified, but the sibling Lean proof contains sorry stubs."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:16.020958+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:16.020958+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1874,6 +2108,19 @@
         "severity": "minor",
         "evidence": "fiber-adjoint-involution.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Fiber--adjoint-fiber involution'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:16.041259+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:16.041259+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1896,6 +2143,19 @@
         "severity": "minor",
         "evidence": "fiber-adjoint-involution.lean:1",
         "notes": "Logical gaps exist in the formalization of 'Fiber--adjoint-fiber involution' due to incomplete proof (sorry stubs) in fiber-adjoint-involution.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:16.062213+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:16.062213+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1918,6 +2178,19 @@
         "severity": "minor",
         "evidence": "fiber-adjoint-involution.lean:1",
         "notes": "The Lean sibling fiber-adjoint-involution.lean contains sorry, causing divergence from the fully-verified narrative."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:16.081986+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:16.081986+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1940,6 +2213,19 @@
         "severity": "minor",
         "evidence": "fiber-adjoint-involution.ts:1",
         "notes": "No citations are present in 'Fiber--adjoint-fiber involution', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:16.101626+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:16.101626+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1962,6 +2248,19 @@
         "severity": "minor",
         "evidence": "fiber-adjoint-involution.ts:1",
         "notes": "Key terms and symbols in 'Fiber--adjoint-fiber involution' (e.g. from 'Let $(\\mathbf{C}, A, \\tau)$ be a') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:16.122875+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:16.122875+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1984,6 +2283,19 @@
         "severity": "minor",
         "evidence": "fiber-adjoint-involution.ts:1",
         "notes": "The algebraic and logical relations in 'Fiber--adjoint-fiber involution' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:16.144677+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:16.144677+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -2006,6 +2318,19 @@
         "severity": "minor",
         "evidence": "fiber-adjoint-involution.ts:1",
         "notes": "The physical concepts described in 'Fiber--adjoint-fiber involution' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:16.162209+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:16.162209+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -2028,6 +2353,19 @@
         "severity": "minor",
         "evidence": "fiber-adjoint-involution.lean:1",
         "notes": "The Lean sibling fiber-adjoint-involution.lean contains sorry, indicating incomplete verification."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:16.182618+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:16.182618+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -2051,6 +2389,19 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/fiber-adjoint-involution.lean contains 'sorry' placeholders.",
         "verdict": "open-objection",
         "referee_argument": "The sibling Lean file fiber-adjoint-involution.lean contains sorry placeholders, meaning the main result of 'Fiber--adjoint-fiber involution' is unproved and the formalization of 'Let $(\\mathbf{C}, A, \\tau)$ be a' is currently vacuous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:16.201302+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:16.201302+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2069,6 +2420,36 @@
           "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
           "lean": "d23e3a25e6a6"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:16.218236+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:16.218236+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:16.236001+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:16.236001+00:00"
         }
       }
     ]

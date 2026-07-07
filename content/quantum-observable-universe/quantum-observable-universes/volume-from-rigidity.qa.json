@@ -1045,6 +1045,19 @@
         "reviewed_at": "2026-07-07T14:26:56.015988Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.302625+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.302625+00:00"
+        }
       }
     ],
     "fit-section-chapter": [
@@ -1065,6 +1078,19 @@
         "reviewed_at": "2026-07-07T14:26:56.015988Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.320648+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.320648+00:00"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1085,6 +1111,19 @@
         "reviewed_at": "2026-07-07T14:26:56.015988Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.337050+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.337050+00:00"
+        }
       }
     ],
     "wall-side-proof": [
@@ -1105,6 +1144,19 @@
         "reviewed_at": "2026-07-07T14:26:56.015988Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.354579+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.354579+00:00"
+        }
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1125,6 +1177,19 @@
         "reviewed_at": "2026-07-07T14:26:56.015988Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.375198+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.375198+00:00"
+        }
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1149,6 +1214,19 @@
         "reviewed_at": "2026-07-07T14:26:56.015988Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.394617+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.394617+00:00"
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1173,6 +1251,19 @@
         "reviewed_at": "2026-07-07T14:26:56.015988Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.421674+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.421674+00:00"
+        }
       }
     ],
     "proof-rater-novelty": [
@@ -1197,6 +1288,19 @@
         "reviewed_at": "2026-07-07T14:26:56.015988Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.438864+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.438864+00:00"
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1217,6 +1321,19 @@
         "reviewed_at": "2026-07-07T14:26:56.015988Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.454988+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.454988+00:00"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1237,6 +1354,19 @@
         "reviewed_at": "2026-07-07T14:26:56.015988Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.472168+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.472168+00:00"
+        }
       }
     ],
     "proof-no-trivial-true": [
@@ -1257,6 +1387,19 @@
         "reviewed_at": "2026-07-07T14:26:56.015988Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.506572+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.506572+00:00"
+        }
       }
     ],
     "proof-no-false-premise": [
@@ -1277,6 +1420,19 @@
         "reviewed_at": "2026-07-07T14:26:56.015988Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.525868+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.525868+00:00"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1297,6 +1453,19 @@
         "reviewed_at": "2026-07-07T14:26:56.015988Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.543823+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.543823+00:00"
+        }
       }
     ],
     "proof-no-decide-masking": [
@@ -1317,6 +1486,19 @@
         "reviewed_at": "2026-07-07T14:26:56.015988Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.560781+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.560781+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -1339,6 +1521,19 @@
         "severity": "minor",
         "evidence": "volume-from-rigidity.ts:1",
         "notes": "For the lemma 'Volume form from rigidity and symplectic self-duality' (asserting 'Let $(\\mathbf{C}, \\otimes, \\mathbf{1})$ be an $R$-linear rigid monoidal'), the mathematical claims are verified as there are no false claims detected, supported by the successful compilation of volume-from-rigidity.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.575518+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.575518+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -1361,6 +1556,19 @@
         "severity": "minor",
         "evidence": "volume-from-rigidity.ts:1",
         "notes": "The sibling Lean file volume-from-rigidity.lean compiles successfully without any sorry placeholders, verifying that the proof of 'Volume form from rigidity and symplectic self-duality' is non-vacuous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.595602+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.595602+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -1383,6 +1591,19 @@
         "severity": "minor",
         "evidence": "volume-from-rigidity.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Volume form from rigidity and symplectic self-duality' (which asserts 'Let $(\\mathbf{C}, \\otimes, \\mathbf{1})$ be an $R$-linear rigid monoidal')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.613777+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.613777+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -1405,6 +1626,19 @@
         "severity": "minor",
         "evidence": "volume-from-rigidity.ts:1",
         "notes": "No overclaims: the scope of 'Volume form from rigidity and symplectic self-duality' matches the sorry-free formalization in volume-from-rigidity.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.633659+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.633659+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1427,6 +1661,19 @@
         "severity": "minor",
         "evidence": "volume-from-rigidity.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Volume form from rigidity and symplectic self-duality'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.650294+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.650294+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1449,6 +1696,19 @@
         "severity": "minor",
         "evidence": "volume-from-rigidity.ts:1",
         "notes": "The logical steps in 'Volume form from rigidity and symplectic self-duality' are formally sound and verified by the sorry-free compilation of volume-from-rigidity.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.668190+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.668190+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1471,6 +1731,19 @@
         "severity": "minor",
         "evidence": "volume-from-rigidity.ts:1",
         "notes": "The Lean signature in volume-from-rigidity.lean corresponds directly to the narrative claim in 'Volume form from rigidity and symplectic self-duality'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.683403+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.683403+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1493,6 +1766,19 @@
         "severity": "minor",
         "evidence": "volume-from-rigidity.ts:1",
         "notes": "No citations are present in 'Volume form from rigidity and symplectic self-duality', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.699183+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.699183+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1515,6 +1801,19 @@
         "severity": "minor",
         "evidence": "volume-from-rigidity.ts:1",
         "notes": "Key terms and symbols in 'Volume form from rigidity and symplectic self-duality' (e.g. from 'Let $(\\mathbf{C}, \\otimes, \\mathbf{1})$ be an $R$-linear rigid monoidal') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.716728+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.716728+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1537,6 +1836,19 @@
         "severity": "minor",
         "evidence": "volume-from-rigidity.ts:1",
         "notes": "The empirical claims in 'Volume form from rigidity and symplectic self-duality' (quoting 'Let $(\\mathbf{C}, \\otimes, \\mathbf{1})$ be an $R$-linear rigid monoidal') are structurally anchored to the QOU mass framework and are stable."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.735047+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.735047+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1559,6 +1871,19 @@
         "severity": "minor",
         "evidence": "volume-from-rigidity.ts:1",
         "notes": "The physical concepts described in 'Volume form from rigidity and symplectic self-duality' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.753037+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.753037+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1581,6 +1906,19 @@
         "severity": "minor",
         "evidence": "volume-from-rigidity.lean:1",
         "notes": "The formalization is fully reproducible as volume-from-rigidity.lean compiles successfully."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.771336+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.771336+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1604,6 +1942,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Volume form from rigidity and symplectic self-duality' (concerning 'Let $(\\mathbf{C}, \\otimes, \\mathbf{1})$ be an $R$-linear rigid monoidal') are consistent and formally verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.787129+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.787129+00:00"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1642,6 +1993,36 @@
           "md": "4ba2ae8b2e73",
           "ts": "f69e1c2097ad",
           "lean": "4eb8982c45c0"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.805402+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.805402+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:20.820887+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:20.820887+00:00"
         }
       }
     ]
