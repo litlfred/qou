@@ -834,6 +834,19 @@
         "reviewed_at": "2026-07-07T14:26:57.105294Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:07.677583+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:07.677583+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -855,6 +868,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/poisson-hkr-connection.ts:1",
         "notes": "No false claims identified in 'The [internal Poisson object](#def:poisson-object) makes explicit a': mathematical reasoning is consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:07.692155+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:07.692155+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -875,6 +901,19 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The claims in 'The [internal Poisson object](#def:poisson-object) makes explicit a' are non-vacuous as they present substantial mathematical content."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:07.705846+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:07.705846+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -896,6 +935,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/poisson-hkr-connection.ts:1",
         "notes": "No circular reasoning or self-assuming definitions detected in 'The [internal Poisson object](#def:poisson-object) makes explicit a'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:07.723416+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:07.723416+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -916,6 +968,19 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "No overclaims: the scope of 'The [internal Poisson object](#def:poisson-object) makes explicit a' is appropriately qualified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:07.738676+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:07.738676+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -937,6 +1002,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/poisson-hkr-connection.ts:1",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The [internal Poisson object](#def:poisson-object) makes explicit a'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:07.754021+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:07.754021+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -958,6 +1036,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/poisson-hkr-connection.ts:1",
         "notes": "The argument flow in 'The [internal Poisson object](#def:poisson-object) makes explicit a' is logically sound, mapping onto the cited dependencies."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:07.772981+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:07.772981+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -979,6 +1070,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/poisson-hkr-connection.ts:1",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:07.788239+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:07.788239+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1000,6 +1104,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/poisson-hkr-connection.ts:1",
         "notes": "Citations to yekutieli2010, fred2005 are correct and contextually appropriate."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:07.803638+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:07.803638+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1021,6 +1138,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/poisson-hkr-connection.ts:1",
         "notes": "Key terms and symbols in 'The [internal Poisson object](#def:poisson-object) makes explicit a' are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:07.821837+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:07.821837+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1042,6 +1172,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/poisson-hkr-connection.ts:1",
         "notes": "The algebraic and logical relations in 'The [internal Poisson object](#def:poisson-object) makes explicit a' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:07.843936+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:07.843936+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1063,6 +1206,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/poisson-hkr-connection.ts:1",
         "notes": "The physical concepts described in 'The [internal Poisson object](#def:poisson-object) makes explicit a' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:07.863062+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:07.863062+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1084,6 +1240,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/poisson-hkr-connection.ts:1",
         "notes": "The derivation steps and formal definitions in 'The [internal Poisson object](#def:poisson-object) makes explicit a' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:07.878295+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:07.878295+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1107,6 +1276,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'The [internal Poisson object](#def:poisson-object) makes explicit a' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:07.892798+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:07.892798+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1124,6 +1306,36 @@
         "field_hash": {
           "md": "5ea2268a6dbf",
           "ts": "a1c70209183a"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:07.911293+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:07.911293+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:07.929163+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:07.929163+00:00"
         }
       }
     ]

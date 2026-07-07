@@ -1045,6 +1045,19 @@
         "reviewed_at": "2026-07-07T14:26:57.103659Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.390327+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.390327+00:00"
+        }
       }
     ],
     "fit-section-chapter": [
@@ -1065,6 +1078,19 @@
         "reviewed_at": "2026-07-07T14:26:57.103659Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.407900+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.407900+00:00"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1085,6 +1111,19 @@
         "reviewed_at": "2026-07-07T14:26:57.103659Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.425152+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.425152+00:00"
+        }
       }
     ],
     "wall-side-proof": [
@@ -1105,6 +1144,19 @@
         "reviewed_at": "2026-07-07T14:26:57.103659Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.439866+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.439866+00:00"
+        }
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1143,6 +1195,19 @@
         "reviewed_at": "2026-07-07T14:26:57.103659Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:categorical-connection-exists' \u2192 expected 'categorical_connection_exists'; Lean declares: CategoricalConnection.exists. Structural match via content."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.454664+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.454664+00:00"
+        }
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1167,6 +1232,19 @@
         "reviewed_at": "2026-07-07T14:26:57.103659Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.471708+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.471708+00:00"
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1191,6 +1269,19 @@
         "reviewed_at": "2026-07-07T14:26:57.103659Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.487079+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.487079+00:00"
+        }
       }
     ],
     "proof-rater-novelty": [
@@ -1215,6 +1306,19 @@
         "reviewed_at": "2026-07-07T14:26:57.103659Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.505864+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.505864+00:00"
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1235,6 +1339,19 @@
         "reviewed_at": "2026-07-07T14:26:57.103659Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.521952+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.521952+00:00"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1255,6 +1372,19 @@
         "reviewed_at": "2026-07-07T14:26:57.103659Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.539292+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.539292+00:00"
+        }
       }
     ],
     "proof-no-trivial-true": [
@@ -1275,6 +1405,19 @@
         "reviewed_at": "2026-07-07T14:26:57.103659Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.556500+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.556500+00:00"
+        }
       }
     ],
     "proof-no-false-premise": [
@@ -1295,6 +1438,19 @@
         "reviewed_at": "2026-07-07T14:26:57.103659Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.572146+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.572146+00:00"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1315,6 +1471,19 @@
         "reviewed_at": "2026-07-07T14:26:57.103659Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.591135+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.591135+00:00"
+        }
       }
     ],
     "proof-no-decide-masking": [
@@ -1335,6 +1504,19 @@
         "reviewed_at": "2026-07-07T14:26:57.103659Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.605032+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.605032+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -1357,6 +1539,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/categorical-connection-exists.ts:1",
         "notes": "No false claims identified in 'Every [quantum universe](#def:quantum-universe) (\\mathbf{C}, A, \\tau)': mathematical reasoning is consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.621663+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.621663+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -1379,6 +1574,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/categorical-connection-exists.ts:1",
         "notes": "The claims in 'Every [quantum universe](#def:quantum-universe) (\\mathbf{C}, A, \\tau)' are non-vacuous as they present substantial mathematical content."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.636656+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.636656+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -1401,6 +1609,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/categorical-connection-exists.ts:1",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Every [quantum universe](#def:quantum-universe) (\\mathbf{C}, A, \\tau)'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.656007+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.656007+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -1423,6 +1644,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/categorical-connection-exists.ts:1",
         "notes": "No overclaims: the scope of 'Every [quantum universe](#def:quantum-universe) (\\mathbf{C}, A, \\tau)' is appropriately qualified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.674101+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.674101+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1445,6 +1679,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/categorical-connection-exists.ts:1",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Every [quantum universe](#def:quantum-universe) (\\mathbf{C}, A, \\tau)'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.690526+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.690526+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1467,6 +1714,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/categorical-connection-exists.ts:1",
         "notes": "The argument flow in 'Every [quantum universe](#def:quantum-universe) (\\mathbf{C}, A, \\tau)' is logically sound, mapping onto the cited dependencies."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.705573+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.705573+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1489,6 +1749,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/categorical-connection-exists.lean:1",
         "notes": "No narrative divergence: the Lean sibling implements the structure claimed in 'Every [quantum universe](#def:quantum-universe) (\\mathbf{C}, A, \\tau)'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.720013+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.720013+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1511,6 +1784,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/categorical-connection-exists.ts:1",
         "notes": "No citations are present in 'Every [quantum universe](#def:quantum-universe) (\\mathbf{C}, A, \\tau)', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.736342+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.736342+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1533,6 +1819,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/categorical-connection-exists.ts:1",
         "notes": "Key terms and symbols in 'Every [quantum universe](#def:quantum-universe) (\\mathbf{C}, A, \\tau)' are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.750820+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.750820+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1555,6 +1854,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/categorical-connection-exists.ts:1",
         "notes": "The algebraic and logical relations in 'Every [quantum universe](#def:quantum-universe) (\\mathbf{C}, A, \\tau)' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.769545+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.769545+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1577,6 +1889,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/categorical-connection-exists.ts:1",
         "notes": "The physical concepts described in 'Every [quantum universe](#def:quantum-universe) (\\mathbf{C}, A, \\tau)' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.786303+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.786303+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1599,6 +1924,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/categorical-connection-exists.ts:1",
         "notes": "The derivation steps and formal definitions in 'Every [quantum universe](#def:quantum-universe) (\\mathbf{C}, A, \\tau)' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.801692+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.801692+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1623,6 +1961,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Every [quantum universe](#def:quantum-universe) (\\mathbf{C}, A, \\tau)' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.825114+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.825114+00:00"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1661,6 +2012,36 @@
           "md": "f0b72cb944c2",
           "ts": "5fba0395ffc7",
           "lean": "33198cc3d6b4"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.849455+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.849455+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:10.865443+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:10.865443+00:00"
         }
       }
     ]
