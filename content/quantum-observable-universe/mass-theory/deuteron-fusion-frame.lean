@@ -97,4 +97,24 @@ theorem deformation_ii_eq_inv (g s : F) (hg : g ≠ 0) (h : g ^ 2 * s = 1) :
   field_simp
   linear_combination h
 
-end QOU.MassTheory.DeuteronFusion
+/-- **`5g` in closed form (deformation (i)).** At criticality the exchange
+    rate satisfies `g²·(5 + x) = 1` with `x = (v − v⁻¹)²` (compose
+    `criticality_reciprocal` with `five_plus_x`). Then the squared binding
+    magnitude obeys `(5g)²·(5 + x) = 25` — the radical-free form of
+    `5g = 5/√(5 + x)`. The reeb-flow §2e correction ladder
+    `√5·(1 − x/10 + 3x²/200 − x³/400 − ⋯)` is exactly the Taylor expansion
+    of this closed form (coefficients recorded in the D4 witness). -/
+theorem five_g_closed (g x : F) (h : g ^ 2 * (5 + x) = 1) :
+    (5 * g) ^ 2 * (5 + x) = 25 := by
+  linear_combination 25 * h
+
+/-- **The two deformations split by exactly `1 + x/5`.** Cross-multiplied
+    form of `(1/g)² / (5g)² = (5 + x)² / 25`: the fully-deformed `1/g` and
+    the classical-count `5g` coincide at `x = 0` (v = 1) and separate at
+    first order in the deformation parameter `x`. -/
+theorem deformation_split (g x : F) (hg : g ≠ 0) (h : g ^ 2 * (5 + x) = 1) :
+    25 * (g⁻¹) ^ 2 = (5 + x) ^ 2 * (5 * g) ^ 2 := by
+  have hg2 : g ^ 2 ≠ 0 := pow_ne_zero 2 hg
+  rw [inv_pow]
+  field_simp
+  linear_combination -25 * (g ^ 2 * (5 + x) + 1) * h
