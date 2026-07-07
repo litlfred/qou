@@ -155,7 +155,4 @@ VEV, QCD theta angle). The QOU framework replaces all 19 with these
 - mixing angles are Clebsch-Gordan coefficients of the knot eigenbasis
   decomposition.
 
-The 19 $\to$ 3 reduction is the testable framework-level claim: any
-prediction of the paper that *would* require a 4th calibration to
-match data is a falsification of the framework, not a free-parameter
-adjustment.
+The 19 $\to$ 3 reduction forms a testable claim. Any prediction requiring a fourth calibration falsifies the framework.

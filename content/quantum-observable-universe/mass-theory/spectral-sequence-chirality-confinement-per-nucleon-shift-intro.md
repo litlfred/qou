@@ -1,3 +1,1 @@
-Continuation of the preceding sub-section.
-
-This sub-section assembles the per-nucleon shift and the confinement-NF structure-forcing argument.  The arc moves from the additive-linearity proof (with tables) through the confinement-NF structure-forcing block with table data, the LP-duality hypothesis class, and the partial confinement-NF proof that closes the section.
+This sub-section consolidates the per-nucleon shift parameters and strict confinement-NF structural rules. The sequence validates the additive-linearity recurrence for nucleon additions. It empirically verifies the LP-duality hypothesis class on compound braids. Finally, it outlines the exact NF-structure forcing rules required for downstream normal-form evaluations.

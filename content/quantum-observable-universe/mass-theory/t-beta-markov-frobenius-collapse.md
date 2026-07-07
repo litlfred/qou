@@ -1,77 +1,23 @@
 **Proposition (Min-Frobenius-norm collapse for $T_\beta$).**
-*Let $H = H_n(R, q)$ be the Iwahori–Hecke algebra over a field $R$,
-equipped with the Jones–Markov trace $\tau_M : H \to R$ uniquely
-determined by the [Wenzl–Jones uniqueness theorem](#prop:markov-trace-frobenius-selection).
-Equip $H$ with the **Frobenius inner product**
-$\langle X, Y \rangle_\tau := \tau_M(X \cdot Y)$.
-The element of minimum Frobenius norm satisfying the linear
-constraint $\tau_M(T_\beta) = S$ for given $S \in R$ is*
-
+*Let $H = H_n(R, q)$ be the Iwahori–Hecke algebra over a field $R$, equipped with the unique Jones–Markov trace $\tau_M : H \to R$ ([Wenzl–Jones uniqueness theorem](#prop:markov-trace-frobenius-selection)). Equip $H$ with the Frobenius inner product $\langle X, Y \rangle_\tau := \tau_M(X \cdot Y)$. The element of minimum Frobenius norm satisfying the linear constraint $\tau_M(T_\beta) = S$ for a scalar $S \in R$ is:*
 $$
 \boxed{\; T_\beta = S \cdot 1_H \;}
 $$
-
 *with $\| T_\beta \|^2_\tau = S^2$.*
+
 ## Corollary — observable c_k invariance
 
-The $\mathfrak{Q}_\beta$ production rule extracts the c_k Taylor coefficients from
-$\tau_M(T_\beta)(q)$.  Under either norm choice — Euclidean L2 on
-coordinate-vector space $R^6$ (the SHAPE $\times$ S decomposition)
-or the canonical Markov–Frobenius norm above — the SDP **constraint**
-$\tau_M(T_\beta) = S = \mathfrak{Q}_\beta / E_0$ is satisfied identically.
-Therefore $\tau_M(T_\beta)(q) \equiv S(q)$ in both cases, and the
-c_k are **L2/Markov-invariant**:
-
+The $\mathfrak{Q}_\beta$ production rule extracts the Taylor coefficients $c_k$ from $\tau_M(T_\beta)(q)$. The constraint $\tau_M(T_\beta) = S = \mathfrak{Q}_\beta / E_0$ is satisfied identically under both the Euclidean $L^2$ coordinate norm and the canonical Markov–Frobenius norm. We have $\tau_M(T_\beta)(q) \equiv S(q)$. The coefficients $c_k$ are invariant:
 $$
 c_k^{\,L2} = c_k^{\,Markov} = c_k\!\!\left(S(q)\right)
 \quad\text{for all } k.
 $$
-
-The L2 picture and the Markov picture differ in which $T_\beta \in
-H_n(R, q)$ is the *canonical* primal-feasible operator (the SDP
-**objective** picks different points in the constraint level set),
-but they agree on every **observable** because observables are
-extracted from the constraint, not from the operator's coordinate
-expansion.  The cross-anchor c_3 swing recorded in the
-[canonical-framing audit](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md)
-is therefore a property of $S(q) = \mathfrak{Q}_\beta(q) / E_0(q)$ itself —
-upstream of the SDP norm choice.
+The observables are extracted from the constraint, not from the operator expansion. The norms only differ in selecting the primal-feasible operator $T_\beta \in H_n(R, q)$.
 
 ## Categorical reading
 
-Under the Markov–Frobenius norm $T_\beta = S \cdot 1_H$ is a
-**scalar multiple of the identity**.  All q-dependence of the
-canonical primal-feasible operator flows through the single
-q-rational scalar $S(q)$; there is no multi-channel SHAPE
-distributed across the NF basis $\{\gamma, \sigma_0, \sigma_1,
-L_+, L_-, e_-\}$.  The six-channel spread observed
-under the Euclidean coordinate norm is a **basis-dependence**
-of the inner product on $R^6$, not categorical structure of
-$T_\beta$.
-
-This is the natural categorical answer to "what is $T_\beta$ as
-an operator?": the Markov–Frobenius minimum-norm primal-feasible
-solution is the **least-Hecke-Frobenius-norm** operator hitting
-the target trace, which is the canonical choice from the
-Wenzl–Jones standpoint.
+Under the Markov–Frobenius norm, $T_\beta = S \cdot 1_H$ is a scalar multiple of the identity. The $q$-dependence flows entirely through $S(q)$. There is no multi-channel SHAPE distributed across the normal-form basis. The Euclidean norm's six-channel spread is an artifact of the coordinate basis. The Markov–Frobenius minimum-norm solution is the canonical choice.
 
 ## Lean formalisation
 
-The substrate-model proof (where $A = R$ and $\tau = \mathrm{id}$,
-reducing the algebra to its ground field) is sorry-free at
-[`t_beta_markov_min_frobenius_collapse_substrate`](markov-trace-frobenius-selection.lean).
-The full $H_n(R, q)$ proof — requiring the Mathlib `Algebra R A`
-typeclass infrastructure plus the positive-semi-definiteness of
-$\tau_M$ on squares as a class hypothesis — is queued for a
-follow-up Lean PR.  The substrate-model proof captures the
-essential algebraic content (the completing-the-square identity);
-the general lift is mechanical typeclass scaffolding.
-
-## References
-
-- [`docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md`](https://github.com/litlfred/qou/blob/claude/qbeta-markov-trace-2026-06-03/docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md)
-  — structural finding + canonical structural verification at $q_0$.
-- [`docs/coordination/1ppq-qbeta.md`](https://github.com/litlfred/qou/blob/claude/qbeta-markov-trace-2026-06-03/docs/coordination/1ppq-qbeta.md)
-  — 1ppQ master ledger.
-- Jones 1987 — Hecke algebra Markov trace existence + uniqueness.
-- Wenzl 1988 — non-degeneracy of the Markov trace.
+The substrate-model proof ($A = R$, $\tau = \mathrm{id}$) is sorry-free at [`t_beta_markov_min_frobenius_collapse_substrate`](markov-trace-frobenius-selection.lean). The general $H_n(R, q)$ proof lifts this algebraic content via Mathlib `Algebra R A` typeclasses.
