@@ -290,4 +290,40 @@ change. -/
 theorem uPow_bar_twist (t u : R) (k : ℕ) : (t * u) ^ k = t ^ k * u ^ k :=
   mul_pow t u k
 
+/-! ## §9. The genuinely bar-even ladder variable `ũ = q·u` (twist `1`)
+
+§8 shows the corpus ladder variable `u = b·ℏ_q²` is **not** bar-even:
+`bar(u) = q²·u` (twist `q²`, `hbar_sq_bar_even_twist`). So `u` was
+mis-normalized for the bar decomposition — an exact re-expansion in `u`
+scrambles the per-rung parity (the B3-U obstruction, registry KC17).
+
+The fix (measured exactly, ai81/08ds, 2026-07-03,
+[`9fnm` audit](../../../../../docs/audits/2026-07-03-9fnm-c3even-exact-rational-measurement.md)
+§"Follow-up"): the genuinely **bar-EVEN** ladder variable is `ũ = q·u`,
+i.e. `ũ = q·b·ℏ_q²`. In that variable the bar-even part `E` of `log R`
+is an exact over-determined `ũ`-ladder (margin 9 through `s¹⁷`,
+ORD-17 probe `08ds`). This lemma is the Lean certificate of `bar(ũ) = ũ`,
+grounding that corpus-wide re-normalization; it derives **no** `c_k`
+value, changes **no** registry tier, wires **nothing** (flip-flop guard §8).
+
+Encoding: `u = b·(1 − qi)²` (`ℏ_q = 1 − q⁻¹ = 1 − qi`); the bar image
+swaps `qi ↔ q`, so `bar(u) = b·(1 − q)²` and `bar(ũ) = bar(q)·bar(u) =
+qi·b·(1 − q)²`. Bar-evenness `bar(ũ) = ũ` is the cross-multiplied
+identity below; `b` is a bar-fixed (Hoefsmit) constant, carried inert. -/
+
+/-- **`ũ = q·u` is exactly bar-EVEN (twist `1`), division-free over any
+    `CommRing`.** With `u = b·(1 − qi)²`, its bar image is `b·(1 − q)²`, and
+    `bar(ũ) = qi·b·(1 − q)² = q·b·(1 − qi)² = ũ`. Contrast `hbar_sq_bar_even_twist`
+    / §8 (`u` alone carries the degree-`q²` twist): multiplying by the single
+    `q` cancels it exactly. This is the Lean handle for the ai81/08ds
+    even-channel ladder-variable re-normalization. -/
+theorem utilde_bar_even (q qi b : R) (h : q * qi = 1) :
+    qi * (b * (1 - q) ^ 2) = q * (b * (1 - qi) ^ 2) := by
+  have hsq := hbar_sq_bar_even_twist q qi h
+  have hq2 : qi * q ^ 2 = q := by linear_combination q * h
+  calc qi * (b * (1 - q) ^ 2)
+      = qi * (b * (q ^ 2 * (1 - qi) ^ 2)) := by rw [hsq]
+    _ = (qi * q ^ 2) * (b * (1 - qi) ^ 2) := by ring
+    _ = q * (b * (1 - qi) ^ 2) := by rw [hq2]
+
 end QOU.QBeta
