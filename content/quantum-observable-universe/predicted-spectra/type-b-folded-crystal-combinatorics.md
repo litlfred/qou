@@ -26,7 +26,7 @@ $$
        {\sum_\lambda w_\lambda \chi^\lambda(\beta)}.
 $$
 
-Under Type-B folding, the partition summation $\sum_\lambda$ reorganizes into pairs $\{\lambda, \lambda^T\}$. By the cancellation theorem, $c(\lambda) + c(\lambda^T) = 0$ for every pair. Therefore, $\langle c \rangle_\beta$ reduces to the imbalance between $\chi^\lambda(\beta)$ and $\chi^{\lambda^T}(\beta)$ along paired cells:
+Under Type-B folding, the partition summation $\sum_\lambda$ reorganizes into pairs $\{\lambda, \lambda^T\}$. The cancellation theorem forces $c(\lambda) + c(\lambda^T) = 0$ for every pair. The coefficient $\langle c \rangle_\beta$ isolates the character imbalance $\chi^\lambda(\beta) - \chi^{\lambda^T}(\beta)$ between paired cells:
 
 $$
   \langle c \rangle_\beta = \frac{\sum_{\lambda < \lambda^T} w_\lambda c(\lambda)
@@ -34,8 +34,8 @@ $$
        {\sum_\lambda w_\lambda \chi^\lambda(\beta)}.
 $$
 
-Self-dual partitions ($\lambda = \lambda^T$) contribute zero to the numerator; only genuinely chiral pairs contribute. This Type-B folded crystal computation structurally reduces the chirality factor.
+Self-dual partitions satisfy $\lambda = \lambda^T$ and contribute zero to the numerator. Only chiral pairs contribute. Type-B folded crystals structurally reduce the chirality factor.
 
 ## Significance
 
-This proposition closes a structural gap: a sorry-free Lean theorem now demonstrates the cell-level cancellation that drives folded-crystal symmetry. The full chirality computation requires the explicit character imbalance $\chi^\lambda(\beta) - \chi^{\lambda^T}(\beta)$, but the partition-content half is established structural infrastructure.
+This proposition closes a structural gap. A Lean theorem establishes the cell-level cancellation driving folded-crystal symmetry. The full chirality computation requires the character imbalance $\chi^\lambda(\beta) - \chi^{\lambda^T}(\beta)$. The partition-content cancellation provides the necessary structural infrastructure.
