@@ -3,12 +3,12 @@
   "description": "CAL-3 anchoring of c_3: \u03ba_(2,1)\u00b7S factorization (matches CAL3AnchorStructure.lean) + production-wiring audit showing the mass/binding tables are c_3-independent (Q_\u03b2 is c_2/N2-level).",
   "audit_only": true,
   "tier": "structural-exact (factorization + wiring audit; no fit, no c_k value)",
-  "computedAt": "2026-07-07T13:36:09.769917+00:00",
-  "commitSha": "7e150b334ed55e9e55db118e1b8ed179e149131a",
+  "computedAt": "2026-07-07T14:06:01.268591+00:00",
+  "commitSha": "3913dbe5b838b1e5fe36e770e4e252def543c9db",
   "engine": "mpmath",
   "engineVersion": "1.3.0",
   "scriptFile": "qbeta_cal3_anchor_table_impact.py",
-  "scriptHash": "011f847a41a6",
+  "scriptHash": "b338fc679ed3",
   "assertions": [
     {
       "name": "kappa_carrier_anchor_rigid_swing_lt_1e-4",
