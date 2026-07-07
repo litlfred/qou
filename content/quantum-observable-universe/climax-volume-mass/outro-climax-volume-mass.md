@@ -1,14 +1,3 @@
-This closes the climax chapter — the volume / mass duality at the
-substrate level.  The braiding relations and spectral filter
-developed in the closing section pin down which categorical
-vertex-algebra relations survive the substrate-to-archimedean
-specialisation; the skein-archimedean shadow gives the
-hyperbolic-volume side, the vertex-algebra jet relations give the
-mass side, and the $T(2,1,1)$ ideal annihilation closes the
-duality loop.
+This closes the climax chapter — the volume / mass duality operating at the substrate level. The braiding relations and spectral filter detailed in this closing section pinpoint exactly which categorical vertex-algebra relations survive the substrate-to-archimedean specialisation. The skein-archimedean shadow supplies the hyperbolic-volume aspect, the vertex-algebra jet relations provide the mass formulation, and the $T_{2,11}$ ideal annihilation seals the duality loop.
 
-The next chapter (mass theory) consolidates the mass content
-extracted here into the categorical mass formula, the
-Hoefsmit / Wenzl-bridge / Markov-trace stack, and the
-$\alpha_k$-coefficient table that drives every numerical
-prediction in the chapters that follow.
+The subsequent mass theory chapter consolidates this derived mass content into the categorical mass formula, the Hoefsmit / Wenzl-bridge / Markov-trace stack, and the $\alpha_k$-coefficient table that underwrites every numerical prediction in the ensuing chapters.
