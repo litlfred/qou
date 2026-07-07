@@ -8,8 +8,13 @@ NO c_k value, NO tier change.  Preliminary→sharpened; scope-(a) throughout.
 Method:
   1. High-order Ohtsuki ladder κ_1..κ_K of 4_1 from log J_N (dps 220; validate by
      volume-conjecture recovery + low-κ stability vs the merged order-6 values).
-  2. Borel transform of the divergent series (1 + Σ κ_k x^k), x = 2π/N:
+  2. Borel transform of the divergent series (1 + Σ κ_k x^k) in the FORMAL
+     EXPANSION VARIABLE x = 1/N (the κ_k are the coefficients of 1/N^k in the fit
+     log J_N = aN + (3/2)logN + b + Σ κ_k/N^k — NOT (2π/N)^k):
        B(ζ) = 1 + Σ κ_k ζ^k / k!.
+     Hence the extracted action A is in the 1/N normalization; to convert to the
+     2π/N variable, rescale by 2π (A_{2π/N} = A/(2π)). All A-vs-candidate
+     comparisons below are order-limited and flagged as not-identified regardless.
   3. Padé [M/M] of B; its POLES are the Borel singularities = the instanton
      actions ±A.  The nearest pole = A.  If it is a COMPLEX-CONJUGATE PAIR
      (nonzero phase), the action is complex — the direct signature of the ±Vol

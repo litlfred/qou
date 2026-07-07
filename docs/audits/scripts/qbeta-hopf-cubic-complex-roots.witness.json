@@ -3,12 +3,12 @@
   "description": "Hopf-cubic odd carrier: complex roots (chiral realization) + substrate eval; closes the parity\u2194chirality dictionary (even=amphichiral 4_1 real / odd=chiral Hopf complex cubic).",
   "audit_only": true,
   "tier": "structural-exact (identities, discriminants, roots; no QOU fit)",
-  "computedAt": "2026-07-07T16:58:00.620286+00:00",
-  "commitSha": "99908f69baa5b8f81502ed034106059bd1578646",
+  "computedAt": "2026-07-07T17:07:49.057000+00:00",
+  "commitSha": "cbfa13739c99460bbe7a53ea571e6d6842cb8f12",
   "engine": "mpmath",
   "engineVersion": "1.3.0",
   "scriptFile": "qbeta_hopf_cubic_complex_roots.py",
-  "scriptHash": "9aba186dfadc",
+  "scriptHash": "055b6dae8288",
   "assertions": [
     {
       "name": "sector_identity_C_eq_Hopf_plus_unknot",

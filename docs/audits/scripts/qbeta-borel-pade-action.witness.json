@@ -3,12 +3,12 @@
   "description": "Borel\u2013Pad\u00e9 of 4_1 Ohtsuki series: locate the instanton action A (f-map Stokes datum); test complex \ud835\udd19=Vol\u00b1iCS.",
   "audit_only": true,
   "tier": "structural-exact (Vol recovery) + numerical (Borel-Pad\u00e9 pole, order-limited)",
-  "computedAt": "2026-07-07T16:49:21.844501+00:00",
-  "commitSha": "782ab94253870a93adaccada6507c290bac9da2d",
+  "computedAt": "2026-07-07T17:07:54.897063+00:00",
+  "commitSha": "cbfa13739c99460bbe7a53ea571e6d6842cb8f12",
   "engine": "mpmath",
   "engineVersion": "1.3.0",
   "scriptFile": "qbeta_borel_pade_action.py",
-  "scriptHash": "5ef3e59d9e17",
+  "scriptHash": "dee543398e74",
   "assertions": [
     {
       "name": "vol41_recovered",
