@@ -116,18 +116,23 @@ def main() -> int:
             "Wlambda_correction_MeV": mp.nstr(corr, 6),
         })
 
+    # All corrections are the SIGNED AME − det (matches Wlambda_correction_MeV):
+    # positive ⇒ W_λ raises that order, negative ⇒ W_λ lowers it.
+    c2 = float(AME["b2"] - det_cum["b2"])
+    c3 = float(AME["b3"] - det_cum["b3"])
+    c4 = float(AME["b4"] - det_cum["b4"])
     spec = (
-        f"W_λ per-body-order spec (relative to the collective determinant at "
-        f"g={float(g):.4f}): b₂ det/AME={float(det_cum['b2']/AME['b2']):.3f} "
-        f"(W_λ must ADD {float(AME['b2']-det_cum['b2']):+.3f} MeV/pair — the "
-        f"open-bond linear deficit, since det treats the single pair as a loop; "
-        f"the proved 5g={float(five_g):.4f} in-unit already supplies it); "
-        f"b₃ det/AME={float(det_cum['b3']/AME['b3']):.3f} (≈right, small "
-        f"correction); b₄ det/AME={float(det_cum['b4']/AME['b4']):.3f} (W_λ must "
-        f"SUBTRACT {float(det_cum['b4']-AME['b4']):+.3f} MeV — det OVER-supplies "
-        f"the connected 4-body). So W_λ's signature is: raise the 2-body (open "
-        f"bond) and lower the connected 4-body, leaving 3-body ≈ intact. "
-        f"Scope-(a); no fit, no closure."
+        f"W_λ per-body-order spec (signed correction AME − det, relative to the "
+        f"collective determinant at g={float(g):.4f}): b₂ det/AME="
+        f"{float(det_cum['b2']/AME['b2']):.3f}, correction {c2:+.3f} MeV/pair "
+        f"(W_λ RAISES the 2-body — the open-bond linear deficit, since det treats "
+        f"the single pair as a loop; the proved 5g={float(five_g):.4f} in-unit "
+        f"already supplies it); b₃ det/AME={float(det_cum['b3']/AME['b3']):.3f}, "
+        f"correction {c3:+.3f} MeV (≈right, small); b₄ det/AME="
+        f"{float(det_cum['b4']/AME['b4']):.3f}, correction {c4:+.3f} MeV "
+        f"(W_λ LOWERS the connected 4-body — det over-supplies it). So W_λ's "
+        f"signature is signed (+, ≈0, −): raise the 2-body (open bond), leave "
+        f"3-body ≈ intact, lower the connected 4-body. Scope-(a); no fit, no closure."
     )
 
     result = {
