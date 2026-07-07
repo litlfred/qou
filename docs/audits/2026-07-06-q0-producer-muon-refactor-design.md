@@ -259,3 +259,64 @@ still drift proton-ward, 30 because they bypass the override. So PR #3419 **stay
 lands the mechanism, and this full sweep **enumerates the remaining 42-producer wiring** as
 the merge gate's residual work. The 85 precision-path + 11 run-fail + 1 timeout are **not** q₀
 regressions and do not block the mechanism.
+
+## Wiring the 42 bypass producers (2026-07-07) — owner sign-off
+
+Owner authorised the residual wiring. Root cause corrected first: the earlier "30 direct /
+3 via q_parameter / 9 other" split was a categorization-script artifact (a loose `import q_at`
+regex mislabelled q_parameter importers). The accurate split of the 42 and the fix applied:
+
+| group | n | fix |
+|---|---:|---|
+| **Class-A** — `from qou_substrate.constants import q_at` | 18 | swap import → `from q_parameter import q_at` (muon under ideal) |
+| **Class-B** — already `from q_parameter import q_at` | 9 | central fix: bind `q_at`/`q_str` to the muon witness in the ideal block (they came through `import *` as the proton solve) |
+| **`Q_50_DIGIT_STR` bypass** — `from qou_substrate import Q_50_DIGIT_STR` | 4 | swap → `from q_parameter import Q_50_DIGIT_STR` |
+| **cross-anchor probes** — use `q_at()` AS the proton baseline | 3 | re-tag `physical` (muon-ifying would break the comparison); stale muon witnesses owner-gated |
+| **read muon witness directly / physical / structural** | 8 | see residuals below |
+
+**No-silent-fail hardening (owner directive).** The ideal override previously *warned to stderr
+and left the proton `import *` values in place* when the q-pinning witness was unreadable or
+mpmath was missing — i.e. a producer that asked for muon could silently emit **proton** (the exact
+`tnjb` corruption). It now **raises `RuntimeError`** in both paths. Verified: ideal + a hidden
+witness raises instead of falling back.
+
+### Re-sweep result (all 42, after wiring)
+
+| | before | after |
+|---|---:|---:|
+| **PASS** | 0 | **25** |
+| **PRECISION_PATH** (q₀ consistent, ~1e-7 derived drift) | 0 | **11** |
+| **Q0_ANCHOR** (q₀ still flips) | 42 | **6** |
+| RUN_FAILED / TIMEOUT | 0 | 0 |
+
+**36 of 42 have q₀ resolved** (25 PASS + 11 precision-path where q₀ is now consistent). The tree
+stayed byte-clean across every re-sweep.
+
+### The 6 remaining Q0_ANCHOR — none is an unfixed bypass (each verified)
+- **`borromean-axial-coupling`** — q₀ **correct** under muon (verified `q = …595557…` = committed).
+  Its 104 diffs are structural / LP-dual `y_star` (≈±1e-11), a separate precision follow-up, not q₀.
+- **`per_atom_audit_witnesses`**, **`averaged_block_swap_binding`** — correctly `physical_proton`
+  (committed=proton). The "fresh=muon" in the sweep is a harness *best-anchor = fewest-diffs*
+  artifact; under their own (physical) anchor q₀ = proton = committed (verified for per_atom).
+- **`yekutieli_mp_substrate_closure_probe`** — cross-anchor probe, re-tagged `physical`; committed
+  witness is stale-muon (pre-repin). Owner-gated regen.
+- **`mass_sweep_wiring_status`**, **`q_beta_form_a_n1_extension`** — read the canonical **muon**
+  q-pinning witness directly (`mp.mpf(json.load(Q_PIN)["derived_50_digit"]["q"])`; q_beta explicitly
+  "Load CAL-2 q_0"), so they produce muon by construction. Re-tagged `ideal_muon`; their committed
+  **proton** witnesses are stale and need owner-gated regen.
+
+### Residual (all owner-gated per bean `tnjb` — do NOT regenerate witnesses without sign-off)
+1. **4 stale committed witnesses** to regenerate: `yekutieli_mp_substrate_closure_probe`
+   (→ proton), `mass_sweep_wiring_status` + `q_beta_form_a_n1_extension` (→ muon), and re-confirm
+   `averaged_block_swap_binding`/`per_atom_audit_witnesses` under proton.
+2. **`borromean-axial-coupling`** structural/LP-dual residual (non-q₀) — separate follow-up.
+3. **Architectural nicety** (optional): route the two direct-pinning-witness readers through
+   `q_parameter` for anchor-awareness rather than reading the witness file directly.
+
+### Status
+The bypass wiring is **done** for every producer whose residual was a q₀-sourcing bug: 25 PASS +
+11 q₀-consistent = 36/42, with the remaining 6 each verified as *not* an unfixed bypass (correct
+tag / harness artifact / stale witness / structural). The mechanism now covers `q_at`, `q_str`,
+and `Q_50_DIGIT_STR` from `q_parameter`, fails loudly on an unsatisfiable muon request, and the
+manifest tags match each producer's actual q₀ source. What remains is **owner-gated witness
+regeneration**, not code.
