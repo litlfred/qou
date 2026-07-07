@@ -299,6 +299,103 @@ framework does not canonically contain, or (ii) the $A$-flattened counit
 variant left open in §2f. Both remain genuinely open; the exchange sector
 alone is exhausted for the unit.
 
+## 2i. Does the dichotomy decompose the many-body shell? — no; binding is collective (tranche 7)
+
+The §2h dichotomy is a *single-bond* result (open ⇒ linear, loop ⇒
+quadratic). The natural next question: does it **additively decompose** the
+many-body binding — a sum of per-bond open (linear) + loop (quadratic)
+contributions? [`light_series_open_loop_decomposition.py`](../../computations/probes/light_series_open_loop_decomposition.py)
+tests it structurally: model each isotope as the complete graph on its
+nucleons, take a pn-preferring spanning tree (open bonds, linear $5g$) plus
+the cycle-closing loop edges (determinant, quadratic), fix the single unit
+$E_{\text{unit}}$ on ²H, and *predict* ³H/³He/⁴He (one calibration point, no
+tuning of tree/signs/magnitude).
+
+| iso | additive open+loop | err | collective full-det | full-det / AME |
+|---|--:|--:|--:|--:|
+| ²H | 2.225 (cal.) | 0 % | 0.932 | 0.419 |
+| ³H | 5.381 | −36.6 % | 6.281 | 0.741 |
+| ³He | 5.381 | −30.3 % | 2.283 | 0.296 |
+| ⁴He | 10.100 | −64.3 % | 26.596 | 0.940 |
+
+**Finding (measured; scope-(a)).** The additive open/loop split
+**under-predicts badly for $A>2$** (⁴He −64 %) — *worse* than the collective
+full determinant (all edges as loops), which reaches **0.94× on ⁴He**. So
+**many-body binding is collective** (the determinant's cross terms carry the
+bulk), **not a sum of per-bond open + loop contributions**: the proved
+dichotomy governs the *single-bond* g-order (²H) and does **not** additively
+decompose the many-body shell. This closes the "extend the dichotomy
+additively to A≥3" route.
+
+**But the collective determinant is not a predictor either** — it is
+*non-monotone* (³H 0.74×, ³He 0.30×): the A=3 mirror pair splits widely
+(the p↔n asymmetry, $Z>N$ for ³He). So the honest state of the ⁴He /
+GAP-A-4 magnitude leg: the **collective determinant is the right direction**
+(all cross terms, 0.94× on ⁴He) but carries two open residuals — the ⁴He ~6 %
+and the ³He mirror gap — neither of which the additive dichotomy repairs.
+The reeb-flow tier's success is a *single-pair* (²H) phenomenon; the
+many-body extension is a genuinely separate, still-open collective problem.
+
+## 2j. The A-flattened-counit route for E_unit IS the Δ_λ gate (tranche 8 — consolidation)
+
+The §2f ledger left one route for the unit anchor open: an "$A$-flattened
+counit variant" (the tested counit defect supplies the sign but its
+magnitude explodes with $A$, so a different normalization was not excluded).
+Before attempting it, the corpus-grep discipline (and the Anti-Laundering
+rule) forces the identification: **that route is the Δ_λ gate, and is
+therefore already gated by the STRICT "no seventh fit-based ansatz" rule.**
+
+The per-isotope binding is $B(K) = m_e\sum_\lambda y_\lambda\,\chi^\lambda(K)\,\Delta_\lambda$
+(`alg:per-isotope-binding`). The two functionals compared in
+[`rho_k_counit_defect_form.py`](../../computations/rho_k_counit_defect_form.py)
+(bean `p7l6`) are **exactly two choices of $\Delta_\lambda$**:
+
+- **trace** $\mathrm{tr}_M = \sum_\lambda y_\lambda\chi^\lambda$ — the choice
+  $\Delta_\lambda = 1$; its per-interface value **collapses** with $A$
+  ($0.14\to0.017$);
+- **counit** $\varepsilon = \sum_\lambda \chi^\lambda$ — the choice
+  $\Delta_\lambda = 1/y_\lambda$; its per-interface value **explodes** with
+  $A$ ($7\to515$).
+
+An $A$-flat (per-pn-interface constant) binding — precisely what a derivable
+$E_{\text{unit}}$ requires — is therefore produced by some $\Delta_\lambda$
+**strictly bracketed between** $1$ (trace) and $1/y_\lambda$ (counit). But
+"the $\Delta_\lambda$ that makes per-interface binding $A$-flat" **is the
+definition of the Δ_λ closure** — the Track-A blocker on which six
+parameter-free ansätze (Frobenius co-Casimir, Demazure-fibre, LP-Plancherel,
+LP-Frobenius, crystal-graph, augmented Markov) have already failed, and for
+which AGENTS.md forbids a seventh fit-based ansatz.
+
+**Consequence (consolidation).** The "$A$-flattened counit" is **not an
+independent tractable route** to $E_{\text{unit}}$: it is the Δ_λ gate in
+disguise. Proposing an $A$-flattening normalization would *be* a seventh
+fit-based ansatz (Rule-14 / no-7th-ansatz), which is forbidden. So the three
+research opens of this program collapse to **two**:
+
+1. **the unified Δ_λ / E_unit problem** — the single-pair unit anchor
+   (§2h) and the many-body collective magnitude (§2i) are **the same Δ_λ
+   closure**, gated; no fit-based attempt is permitted;
+2. **the weak-sector pn sign** (§3g) — a $p\leftrightarrow n$-mixing
+   (β-sector) observable, not a binding one, and **already corpus-addressed**:
+   the mechanism by which the writhe sign $w(K)$ enters observables is the
+   ribbon twist $\varTheta_\lambda = q^{2c(\lambda)}$, derived in
+   [`prop:chirality-writhe-ribbon-derivation`](../../content/quantum-observable-universe/mass-theory/chirality-writhe-ribbon-derivation.md)
+   (chiral factor $a_K = 1 + w(K)\,h$, a bar-odd object), and the [1⁴] sign
+   block itself is Lean-formalized in the isospin limit
+   (`QOU.BraidKnot.H4SignBlockIsospinLimit`, sign rep $\sigma_i \mapsto -q^{-1}$).
+   So §3g's routing is confirmed: the pn sign is not a binding-sector open —
+   it is the weak-sector chiral factor the framework already carries.
+
+This is the honest terminus: the reeb-flow program has proved everything the
+exchange sector alone yields, has **shown its remaining unit/magnitude open is
+identical to the framework's standing Δ_λ gate** (not a separate door left
+ajar), and has **routed the pn sign to the existing weak-sector chirality-writhe
+machinery**. Net: this program contributes **no new open item** — its two
+apparent opens are (i) the standing Δ_λ gate and (ii) an already-derived
+weak-sector factor. The productive direction for Δ_λ remains the
+owner-sanctioned GAP-A-3/GAP-A-4 categorical routes (brane-tower level
+selection, s5-so3 fibre action), *not* a counit re-normalization.
+
 ## 3. [1⁴] extension at the landed magnitude (new probe)
 
 [`b4_1four_reeb_flow_magnitude.py`](../../computations/probes/b4_1four_reeb_flow_magnitude.py)

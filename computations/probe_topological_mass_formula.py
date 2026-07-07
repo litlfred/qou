@@ -56,7 +56,8 @@ from __future__ import annotations
 import mpmath as mp
 import sympy as sp
 
-from qou_substrate import Q_50_DIGIT_STR, WitnessBuilder
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402 (bean yfvb: muon under ideal anchor)
+from qou_substrate import WitnessBuilder
 from qou_substrate.constants import VOL_FIGURE_EIGHT
 from qou_substrate.precision import COMPUTE_DPS, OUTPUT_DPS
 

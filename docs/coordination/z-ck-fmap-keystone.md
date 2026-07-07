@@ -346,6 +346,44 @@ anchors, no c_k values:
   entry points. **Open:** the u-side transfer (`u = b·ℏ_q²` is a real
   composite, not a q-power) — the remaining f-map identification.
 
+## 4-septies. B3-U outcome (2026-07-07, gates pre-stated in merged scope §3)
+
+**OBSTRUCTION (scope-(a)) — the naive u-side re-expansion is excluded; the
+odd channel enters via the archimedean evaluation, not a fibre basis change.**
+Probe [`qbeta_b3u_uside_transfer_probe.py`](../../computations/qbeta/qbeta_b3u_uside_transfer_probe.py)
+(4/4) + Lean `uPow_bar_twist` (ZBarParity §8, sorry-free):
+
+- **U1:** `bar(u) = q²·u` is a *scaling*, so `(u;u)_m` has no clean monomial
+  bar-twist (unlike KC16's inversion).
+- **U2:** the per-rung twist `q^(−2k)` that overall-`F` bar-evenness would
+  impose is contradicted by the derived `c_2 = −1`.
+- **U3:** `u ~ (q−1)²` is even-order in `(q−1)`; a bar-odd carrier is
+  odd-order ⇒ cannot be a real `u`-power series.
+
+Registry **KC17**. Net: the fibre parity (KC15/KC16) is *input* to the
+archimedean Markov-pairing evaluation (owner 2026-06-16), not a summand of a
+`u`-series. **Next productive B3 direction:** exhibit that evaluation map and
+check it reproduces `c_2 = −1` + the `c_3 → −2` shadow — the cheaper
+basis-re-expansion alternative is now formalize-first excluded. Full finding:
+[`2026-07-07-z-ck-fmap-b3u-uside-transfer-obstruction.md`](../audits/2026-07-07-z-ck-fmap-b3u-uside-transfer-obstruction.md).
+
+## 4-octies. Archimedean evaluation map — bar-decomposition (2026-07-07)
+
+Following the B3-U obstruction (the `c_k` come from the archimedean evaluation,
+not a `u`-re-expansion), the evaluation map is the counit `ε` / Markov trace
+`tr_M` on the nucleon NF diff (`QBetaCounitTrace`, Lean-proved):
+`ε = h²/2 − h`, `tr_M = h²/2 − h·z`. Since `h = q − q⁻¹` is bar-ODD and `z`
+bar-EVEN (KC13), the map splits **exactly**: bar-even identity term `h²/2`
+(shadow/mass) + bar-odd crossing/loop term (`−h` / `−h·z`, the odd channel).
+This **realizes the standing reading on the actual map** — the bar-odd carrier
+`D(q)` (KC15) feeds the observable through the Markov crossing term, not the
+identity term. Registry **KC18**; sorry-free Lean `epsNP_decomp` /
+`epsNP_bar_image` / `trMNP_decomp` / `trMNP_bar_image` (exit 0); probe 8/8.
+**Sharpened keystone:** derive the higher-order crossing weight (beyond leading
+`z`) whose odd part reproduces the `c_3 → −2` odd-channel signature — a bounded
+trace-side target, no longer a `u`-series search. Full finding:
+[`2026-07-07-z-ck-fmap-eval-map-bar-decomposition.md`](../audits/2026-07-07-z-ck-fmap-eval-map-bar-decomposition.md).
+
 ## 5. Session log
 
 | date | event |

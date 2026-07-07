@@ -94,7 +94,7 @@ except Exception:
     HAVE_MP = False
 
 try:
-    from qou_substrate.constants import q_at
+    from q_parameter import q_at
     Q0 = str(q_at())
 except Exception:
     Q0 = "1.1099785955573347198997632204832250266562084087802"

@@ -160,6 +160,24 @@
       "parity": "mixed",
       "q1_shadow": null,
       "source": "PR #3449 (B3 witness qbeta-b3-ladder-basis-parity.witness.json)"
+    },
+    {
+      "id": "KC17",
+      "statement": "u-side transfer OBSTRUCTION: bar(u)=q^2*u (a scaling, not the KC16 inversion), so (i) the (u;u)_m Habiro basis has no clean monomial bar-twist, (ii) the per-rung twist q^{-2k} is contradicted by the derived c_2=-1, and (iii) u ~ (q-1)^2 is even-order in (q-1) while bar-odd carriers are odd-order. Naive re-expansion in u does NOT carry fibre parity (KC15/KC16) to the c_k; the odd channel enters via the ARCHIMEDEAN evaluation map (Markov pairing at Vol=1), not a fibre basis change. Scope-(a): re-expansion route excluded, KC15/KC16 ingredients not excluded.",
+      "tier": "symbolic-exact",
+      "lean": "QOU.QBeta.uPow_bar_twist",
+      "parity": null,
+      "q1_shadow": null,
+      "source": "PR (B3-U); docs/audits/2026-07-07-z-ck-fmap-b3u-uside-transfer-obstruction.md"
+    },
+    {
+      "id": "KC18",
+      "statement": "archimedean evaluation map (counit e / Markov trace tr_M on the N=0 nucleon NF diff) splits EXACTLY into a bar-EVEN identity term h^2/2 (shadow/mass channel) and a bar-ODD crossing/loop term (-h for e, -h*z for tr_M; the odd channel), since h=q-1/q is bar-odd and z is bar-even (KC13). Realizes the standing reading (KC6/KC10) on the actual map: the bar-odd carrier D(q) (KC15) feeds the observable through the Markov crossing term, not the identity term.",
+      "tier": "proved-lean",
+      "lean": "QOU.Interactions.QBetaCounitTrace.epsNP_decomp; QOU.Interactions.QBetaCounitTrace.trMNP_bar_image",
+      "parity": "mixed",
+      "q1_shadow": null,
+      "source": "PR (eval-map); docs/audits/2026-07-07-z-ck-fmap-eval-map-bar-decomposition.md"
     }
   ]
 }

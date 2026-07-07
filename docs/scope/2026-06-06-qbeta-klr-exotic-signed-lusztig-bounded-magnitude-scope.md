@@ -40,6 +40,10 @@ Even an exotic variant must satisfy both:
 
 The fractional cross-anchor swing of `c_2 = -1` is 0 (q-INDEPENDENT proved relation), but `(q;q)_2(q₀_p) ≠ (q;q)_2(q₀_m)` — so the required Σ D_w fractional swing is `-Δ((q;q)_2) / ((q;q)_2)²`. Forcing this swing matches at the parts-per-million level constrains the convention's q-functional form, which is exactly what cont. 11 tested across 1281 atoms.
 
+### N4. The |Σ|~40 target is a (q;q)_2 divisor artifact; escape needs rank ≥ 9 (2026-07-07)
+
+The `|Σ D_w| ~ 39.4` target is an artifact of the Composite-1 ansatz routing `c_2` through the tiny `(q;q)_2 ≈ 0.026` divisor — the u-re-expansion mechanism **KC17** showed is obstructed, and `c_2 = -1` is already proved without it (Kashiwara f̃₁²; eval-map **KC18**). The Demazure-Lusztig operator (eigenvalues `q, -1/q`; eigenvalue-sum `= h`) has length-2 character magnitude `≤ q₀² ≈ 1.23`, so reaching `|Σ| ~ 40` needs `~32` length-2 Weyl elements ⇒ **rank n ≥ 9**, physically absurd for a nucleon (H₃/H₄ Hecke, rank 3-4). Scope-(a): the physically-motivated family does not escape; unphysical-rank conventions are not excluded but are categorically unmotivated and, per KC18, unnecessary. Full finding: [`2026-07-07-qbeta-exotic-lusztig-n4-magnitude-prune.md`](../audits/2026-07-07-qbeta-exotic-lusztig-n4-magnitude-prune.md).
+
 ## Residual genuine-escape (research-grade scope item, not a build tranche)
 
 The only theoretical escape from the combined N1+N2+N3 narrowings is an exotic convention whose Demazure-Lusztig characters are:
@@ -57,8 +61,8 @@ Specifying such a convention IS a research project — Lusztig's positivity theo
 | status | option | reinforced by |
 |---|---|---|
 | ✅ refuted | B / C / C′ / D | 4 preflights (PRs #1914 + #1924) |
-| ⚠️ NARROWED (this scope) | C″ exotic signed Lusztig | bounded magnitude (N1) + cont. 11 saturation (N2) + cross-anchor rigidity (N3) |
-| 🛑 viable (strongly reinforced) | **A** (CAL-3-anchored permanently) | **3 corpus + 4 preflight + 3 structural narrowings** |
+| ⚠️ NARROWED HARD (N1-N4) | C″ exotic signed Lusztig | bounded magnitude (N1) + cont. 11 saturation (N2) + cross-anchor rigidity (N3) + **N4 rank-≥9 magnitude artifact** ([2026-07-07 prune](../audits/2026-07-07-qbeta-exotic-lusztig-n4-magnitude-prune.md)) |
+| 🛑 viable (strongly reinforced) | **A** (CAL-3-anchored permanently) | **3 corpus + 4 preflight + 4 structural narrowings (N1–N4)** |
 
 ## Cross-refs
 

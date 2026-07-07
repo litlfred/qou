@@ -1,0 +1,46 @@
+{
+  "computation": "qbeta-b3u-uside-transfer",
+  "description": "B3-U (bean z61d): u-side transfer gates U1/U2/U3 pre-stated in scope doc \u00a73 (merged PR #3455). Tests whether fibre parity (KC15/KC16) descends to the observable c_k via re-expansion in u = b*hbar_q^2. Exact symbolic; no anchors.",
+  "audit_only": true,
+  "tier": "structural-exact (symbolic; no fit, no anchors)",
+  "computedAt": "2026-07-07T11:57:36.336561+00:00",
+  "commitSha": "f1a5a9096534715af4b141c2dad7be3a61e4792b",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "qbeta_b3u_uside_transfer_probe.py",
+  "scriptHash": "4bc2268b6f7f",
+  "assertions": [
+    {
+      "name": "sanity_bar_u_equals_q2_u",
+      "passed": true
+    },
+    {
+      "name": "B3U1_basis_image_NOT_clean_monomial_twist",
+      "passed": true
+    },
+    {
+      "name": "B3U2_per_rung_twist_FAILS_on_derived_c2",
+      "passed": true
+    },
+    {
+      "name": "B3U3_u_even_order_vs_bar_odd_odd_order_mismatch",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "bar_u": "q^2 * u",
+    "u1_basis_image_monomial": false,
+    "u2_per_rung_twist_holds_on_c2": false,
+    "u_order_at_1": 2,
+    "kappa_order_at_1": 3,
+    "verdict": "OBSTRUCTION (scope-(a)): the fibre parity structure (KC15 D(q), KC16 index-alternating basis) does NOT descend to the observable c_k via a naive re-expansion in u = b*hbar_q^2. (U1) The (u;u)_m Habiro basis carries no clean monomial bar-twist -- failing already at m=1 (ratio (q^2 u-1)/(u-1)), verified m=1..4 -- because bar(u)=q^2 u is a SCALING, not the KC16 inversion. (U2) The per-rung twist q^{-2k} that overall-F bar-evenness would impose is contradicted by the derived c_2 = -1 (a bar-trivial constant). (U3) u vanishes to EVEN order 2 in (q-1) while a bar-odd carrier vanishes to ODD order, so bar-odd fibre content cannot map to real u-power coefficients. Net: the odd channel enters through the ARCHIMEDEAN EVALUATION map (tau-functor / Markov pairing at Vol=1; owner 2026-06-16), NOT a fibre basis change. The naive re-expansion route is excluded as the descent mechanism; KC15/KC16 ingredients are NOT excluded. NO c_k value; nothing wired."
+  },
+  "context": {
+    "axis": "z->c_k f-map keystone, bean z61d (I-B step B3-U)",
+    "scope_prestatement": "docs/scope/2026-07-07-z-ck-fmap-b3-uside-transfer-scope.md \u00a73 (merged PR #3455)",
+    "lean_u_twist": "QOU.QBeta.uPow_bar_twist / hbar_sq_bar_even_twist (ZBarParity)",
+    "archimedean_eval_note": "owner 2026-06-16: c_k(q) fibre functions evaluated by Markov pairing at Vol=1",
+    "registry": "docs/coordination/ck-dk-canonical-registry.md \u00a79"
+  }
+}

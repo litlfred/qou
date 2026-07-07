@@ -69,7 +69,8 @@ def main() -> int:
         "physical_proton": sorted(physical),
         "ambiguous": sorted(ambiguous),
     }
-    (HERE / "q0_anchor_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
+    (HERE / "q0_anchor_manifest.json").write_text(
+        json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     print(f"ideal/muon:      {len(ideal)}")
     print(f"physical/proton: {len(physical)}")
     print(f"ambiguous:       {len(ambiguous)}")

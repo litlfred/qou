@@ -1,0 +1,13 @@
+[package]
+name = "borromean-recurrence-crt"
+version = "0.1.0"
+edition = "2021"
+description = "Phase-2 modular sampler for the Borromean diagonal colored-Jones recurrence: per-prime RREF nullspace sampling + per-column rational-function fits (canonical monic-Q normalization) for the multi-prime CRT lift (bean n920, PR #3443 follow-up)."
+
+[profile.release]
+opt-level = 3
+lto = true
+
+[[bin]]
+name = "borromean-recurrence-crt"
+path = "src/main.rs"
