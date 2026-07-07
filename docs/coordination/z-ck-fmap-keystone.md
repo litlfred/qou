@@ -302,6 +302,29 @@ KC15 added; P-C15 witness re-emitted):
 [`2026-07-07-pc15-a1-transcription-error-correction.md`](../audits/2026-07-07-pc15-a1-transcription-error-correction.md).
 **Open (B3):** the `(u;u)_m → u^k` composition + the z-side convolution.
 
+## 4-sexies. Bean `ciei` step B3 (first slice) — pre-statement (BEFORE any run)
+
+The `(u;u)_m → u^k` composition needs the parity behaviour of the Habiro
+basis itself. Two decidable checks + one consequence, exact symbolic, no
+anchors, no c_k values:
+
+- **B3-K1 (Kashaev shadow):** `ω_k(x=1, q) = (q;q)_k · (q⁻¹;q⁻¹)_k` exactly
+  (the x=1 specialization of the cyclotomic basis is the bar-symmetric
+  Kashaev double; each term manifestly bar-invariant, consistent with B2).
+- **B3-K2 (index-alternating basis parity):**
+  `(q⁻¹;q⁻¹)_k = (−1)^k · q^{−k(k+1)/2} · (q;q)_k` exactly (k = 1..8
+  sympy; factor identity `(1 − q⁻ʲ)·qʲ = −(1 − qʲ)` Lean-certified) — i.e.
+  the one-sided Habiro basis element `(q;q)_k` is bar-EVEN for even `k` and
+  bar-ODD for odd `k`, up to a monomial twist.
+- **Consequence (if K1+K2 hold):** the Habiro/ladder basis **carries parity
+  in its index** — a bar-even element (e.g. the 4₁ cyclotomic skeleton,
+  `C_k ≡ 1`) expanded one-sidedly sources bar-ODD content through odd-`m`
+  basis vectors. The Stage-B "parity re-mix" is supplied by the **basis**,
+  not the coefficients. The u-side transfer (`u = b·ℏ_q²` is a real
+  composite, not a q-power) remains open — this slice is fibre-level only.
+- Kill: either identity failing symbolically → the parity-re-mix-via-basis
+  picture is wrong; record and fall back to carrier-side re-mix.
+
 ## 5. Session log
 
 | date | event |
