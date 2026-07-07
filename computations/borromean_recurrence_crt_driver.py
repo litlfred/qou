@@ -117,16 +117,24 @@ def main() -> int:
     runs = [data0]
 
     def try_lift() -> dict | None:
-        """CRT + Wang across current runs; None if any coefficient fails."""
+        """CRT + Wang across runs, per-column MODAL-degree consensus:
+        only runs whose (len P, len Q) for a column match the modal
+        lengths participate in that column's CRT (a non-generic prime
+        shifts a column's minimal degree and is thereby excluded).
+        None if any coefficient fails to reconstruct."""
+        from collections import Counter
         lifted = {}
         for c in range(NCOLS):
+            shapes = [(len(r["columns"][c]["P"]), len(r["columns"][c]["Q"]))
+                      for r in runs]
+            modal = Counter(shapes).most_common(1)[0][0]
+            use = [r for r, sh in zip(runs, shapes) if sh == modal]
+            npc, nqc = modal
             Pf, Qf = [], []
-            npc = len(runs[0]["columns"][c]["P"])
-            nqc = len(runs[0]["columns"][c]["Q"])
             for kind, ncoef, out in (("P", npc, Pf), ("Q", nqc, Qf)):
                 for i in range(ncoef):
                     a, m = 0, 1
-                    for run in runs:
+                    for run in use:
                         a, m = crt_pair(a, m, run["columns"][c][kind][i],
                                         int(run["prime"])) if m > 1 else (
                             run["columns"][c][kind][i], int(run["prime"]))

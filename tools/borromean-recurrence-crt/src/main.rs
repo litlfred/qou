@@ -336,28 +336,46 @@ fn main() {
             cols_json.push(format!("{{\"col\":{},\"P\":[0],\"Q\":[1]}}", c));
             continue;
         }
-        let fit = match &degrees {
-            Some(dv) => try_fit(fit_q, fit_y, hold_q, hold_y, dv[c], p, true),
-            None => {
-                // bisect the minimal fitting degree in [0, degmax]
-                let (mut lo, mut hi, mut found) = (0usize, degmax, None);
-                if let Some(f) = try_fit(fit_q, fit_y, hold_q, hold_y, hi, p, false) {
-                    found = Some((hi, f));
-                } else {
-                    eprintln!("[stage2] col {}: NO FIT at degmax {}", c, degmax);
+        // --degrees entries are bisection HINTS (upper bounds + slack),
+        // not pinned degrees: each prime must find its own minimal
+        // unique REDUCED form (at the minimal degree the reduced
+        // representation is unique up to scale, so monic-Q is canonical;
+        // a non-generic prime shifts the minimal degree and is detected
+        // by the driver's per-column modal-degree consensus).
+        let cap = match &degrees {
+            Some(dv) => (dv[c] + 8).min(degmax),
+            None => degmax,
+        };
+        let fit = {
+            let (mut lo, mut hi, mut found) = (0usize, cap, None);
+            if let Some(f) = try_fit(fit_q, fit_y, hold_q, hold_y, hi, p, false) {
+                found = Some((hi, f));
+            } else {
+                eprintln!("[stage2] col {}: NO FIT at cap {}", c, cap);
+                std::process::exit(1);
+            }
+            while hi - lo > 1 {
+                let mid = (lo + hi) / 2;
+                match try_fit(fit_q, fit_y, hold_q, hold_y, mid, p, false) {
+                    Some(f) => {
+                        hi = mid;
+                        found = Some((mid, f));
+                    }
+                    None => lo = mid,
+                }
+            }
+            // canonicality gate: at the minimal degree the fit must be
+            // unique (nullity 1) — otherwise samples are insufficient.
+            let dmin = found.as_ref().map(|(d, _)| *d).unwrap();
+            match try_fit(fit_q, fit_y, hold_q, hold_y, dmin, p, true) {
+                Some(f) => Some(f),
+                None => {
+                    eprintln!(
+                        "[stage2] col {}: ambiguous at minimal degree {}",
+                        c, dmin
+                    );
                     std::process::exit(1);
                 }
-                while hi - lo > 1 {
-                    let mid = (lo + hi) / 2;
-                    match try_fit(fit_q, fit_y, hold_q, hold_y, mid, p, false) {
-                        Some(f) => {
-                            hi = mid;
-                            found = Some((mid, f));
-                        }
-                        None => lo = mid,
-                    }
-                }
-                found.map(|(_, f)| f)
             }
         };
         let (pn, qn) = match fit {
