@@ -85,11 +85,19 @@ theorem ck_c4_constant_depth_two_prediction (c₃ c₄ : ℝ)
     (hrec : c₄ = (-c₃) * c₃ + (-1) * (-1)) : c₄ = 1 - c₃ ^ 2 := by
   rw [hrec]; ring
 
-/-- **Kernel leading coefficient is bar-ODD.** Since `a₁ = -c₃` pointwise in the
-substrate angle `η` and `c₃` is bar-antisymmetric (`c₃(-η) = -c₃(η)`, the #1887
-Reeb-sinh parity wall), `a₁` is bar-odd: `a₁(-η) = -a₁(η)`. The kernel
-coefficient producing `c₃` from the bar-even seed `c₂` must be bar-odd
-(sinh-type), pruning the open kernel search. -/
+/-- **Kernel leading coefficient is bar-ODD — CONDITIONAL on the exactly-odd
+hypothesis `hodd`.** Since `a₁ = -c₃` pointwise in the substrate angle `η`,
+*if* `c₃` is bar-antisymmetric (`c₃(-η) = -c₃(η)`) then `a₁` is bar-odd.
+
+Scope clarification (2026-07-07 investigation,
+`docs/audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md`): the
+antecedent `hodd` is a modelling hypothesis from the #1887 swing narrative,
+proved nowhere — #1887's Lean establishes component parity (`sinh` bar-odd,
+and the bar-antisymmetric *part* of a Reeb holonomy is its `sinh` component),
+not pointwise oddness of `c₃`. An *exactly* bar-odd `a₁` would moreover have
+zero q=1 shadow (`QOU.QBeta.fixed_eval_two_mul_kills_bar_odd`), contradicting
+the §4(c) gate `c₃ → -2`. Established reading: `a₁` has a nonzero bar-ODD
+part (the anchor-swing channel); its bar-even part carries the shadow. -/
 theorem ck_a1_bar_odd (c₃ a₁ : ℝ → ℝ)
     (hdef : ∀ η, a₁ η = -c₃ η) (hodd : ∀ η, c₃ (-η) = -c₃ η) (η : ℝ) :
     a₁ (-η) = -a₁ η := by
