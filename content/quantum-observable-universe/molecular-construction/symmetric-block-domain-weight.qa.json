@@ -1396,7 +1396,7 @@
         },
         "reviewed_at": "2026-06-28T11:04:36.634Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The block 'Symmetric-block domain weight: lone/bond $= q^2$' presents substantial mathematical content: monoid — the one-dimensional Wedderburn block that a molecule's $C_{nv}$ assembl...",
+        "notes": "The block 'Symmetric-block domain weight: lone/bond $= q^2$' presents substantial mathematical content: monoid \u2014 the one-dimensional Wedderburn block that a molecule's $C_{nv}$ assembl...",
         "severity": "minor"
       }
     ],
@@ -1595,7 +1595,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean:1 — content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Group/List.olean' of module Mathlib.Algebra.BigOperators.Group.List does not exist"
+        "evidence": "content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean:1 \u2014 content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Group/List.olean' of module Mathlib.Algebra.BigOperators.Group.List does not exist"
       }
     ],
     "da-referee-verdict": [
@@ -1617,6 +1617,18 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean contains compilation errors: content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Group/List.olean' of module Mathlib.Algebra.BigOperators.Group.List does not exist, invalidating the claimed formalization.",
         "severity": "critical"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote molecular-construction_seq7.md. Fixed prose flow across sections, removed excessive emphasis, standardised on 'we', maintained mathematical exactness while smoothing the text.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

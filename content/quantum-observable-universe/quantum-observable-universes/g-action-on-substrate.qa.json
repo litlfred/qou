@@ -940,7 +940,7 @@
           "ts": "957d58494f3d"
         },
         "result": "pass",
-        "notes": "Conjecture: G-action axioms (G1-G4) yield N_sym(q) closed form. §3b-cond class, no global instance/sorry. Well-posed but .md flags -1.81% residual as open.",
+        "notes": "Conjecture: G-action axioms (G1-G4) yield N_sym(q) closed form. \u00a73b-cond class, no global instance/sorry. Well-posed but .md flags -1.81% residual as open.",
         "reviewed_at": "2026-06-25T17:03:15.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -972,7 +972,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "g-action-on-substrate.ts:1",
-        "notes": "No false claims identified in the prose of 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate'; the mathematical reasoning concerning 'Conjecture (categorical $G$-action on the Frobenius–Hopf substrate).' is consistent."
+        "notes": "No false claims identified in the prose of 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius\u2013Hopf substrate'; the mathematical reasoning concerning 'Conjecture (categorical $G$-action on the Frobenius\u2013Hopf substrate).' is consistent."
       }
     ],
     "da-vacuous": [
@@ -991,7 +991,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "g-action-on-substrate.ts:1",
-        "notes": "The block 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate' presents substantial mathematical content: 'Conjecture (categorical $G$-action on the Frobenius–Hopf substrate).'."
+        "notes": "The block 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius\u2013Hopf substrate' presents substantial mathematical content: 'Conjecture (categorical $G$-action on the Frobenius\u2013Hopf substrate).'."
       }
     ],
     "da-circular": [
@@ -1010,7 +1010,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "g-action-on-substrate.ts:1",
-        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate' (which asserts 'Conjecture (categorical $G$-action on the Frobenius–Hopf substrate).')."
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius\u2013Hopf substrate' (which asserts 'Conjecture (categorical $G$-action on the Frobenius\u2013Hopf substrate).')."
       }
     ],
     "da-overclaim": [
@@ -1029,7 +1029,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "g-action-on-substrate.ts:1",
-        "notes": "The remarks and narrative scope in 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate' concerning 'Conjecture (categorical $G$-action on the Frobenius–Hopf substrate).' are appropriately qualified."
+        "notes": "The remarks and narrative scope in 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius\u2013Hopf substrate' concerning 'Conjecture (categorical $G$-action on the Frobenius\u2013Hopf substrate).' are appropriately qualified."
       }
     ],
     "da-hidden-dof": [
@@ -1048,7 +1048,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "g-action-on-substrate.ts:1",
-        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate'."
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius\u2013Hopf substrate'."
       }
     ],
     "da-non-sequitur": [
@@ -1067,7 +1067,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "g-action-on-substrate.ts:1",
-        "notes": "The prose arguments in 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate' proceed logically through the stated steps: 'Conjecture (categorical $G$-action on the Frobenius–Hopf substrate).'."
+        "notes": "The prose arguments in 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius\u2013Hopf substrate' proceed logically through the stated steps: 'Conjecture (categorical $G$-action on the Frobenius\u2013Hopf substrate).'."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1086,7 +1086,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "g-action-on-substrate.ts:1",
-        "notes": "No Lean sibling required; the narrative of 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate' matches the expected configuration."
+        "notes": "No Lean sibling required; the narrative of 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius\u2013Hopf substrate' matches the expected configuration."
       }
     ],
     "da-citation-misuse": [
@@ -1105,7 +1105,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "g-action-on-substrate.ts:1",
-        "notes": "No citations are present in 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate', hence no citation misuse is possible."
+        "notes": "No citations are present in 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius\u2013Hopf substrate', hence no citation misuse is possible."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1124,7 +1124,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "g-action-on-substrate.ts:1",
-        "notes": "Key terms and symbols in 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate' (e.g. from 'Conjecture (categorical $G$-action on the Frobenius–Hopf substrate).') are mathematically defined and unambiguous."
+        "notes": "Key terms and symbols in 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius\u2013Hopf substrate' (e.g. from 'Conjecture (categorical $G$-action on the Frobenius\u2013Hopf substrate).') are mathematically defined and unambiguous."
       }
     ],
     "da-empirical-fragility": [
@@ -1143,7 +1143,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "g-action-on-substrate.ts:1",
-        "notes": "The algebraic and logical relations in 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate' are independent of empirical tuning parameters."
+        "notes": "The algebraic and logical relations in 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius\u2013Hopf substrate' are independent of empirical tuning parameters."
       }
     ],
     "da-physical-implausibility": [
@@ -1162,7 +1162,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "g-action-on-substrate.ts:1",
-        "notes": "The physical concepts described in 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate' are consistent with quantum observable mechanics."
+        "notes": "The physical concepts described in 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius\u2013Hopf substrate' are consistent with quantum observable mechanics."
       }
     ],
     "da-reproducibility": [
@@ -1181,7 +1181,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "g-action-on-substrate.ts:1",
-        "notes": "The derivation steps and formal definitions in 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate' are reproducible."
+        "notes": "The derivation steps and formal definitions in 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius\u2013Hopf substrate' are reproducible."
       }
     ],
     "da-referee-verdict": [
@@ -1201,7 +1201,19 @@
         "severity": "minor",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
-        "referee_argument": "No significant objections; the mathematical claims in 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius–Hopf substrate' (concerning 'Conjecture (categorical $G$-action on the Frobenius–Hopf substrate).') are consistent and formally verified."
+        "referee_argument": "No significant objections; the mathematical claims in 'Categorical $G = \\\\mathrm{SU}(2)_L \\\\times \\\\mathrm{U}(1)_Y$ action on the Frobenius\u2013Hopf substrate' (concerning 'Conjecture (categorical $G$-action on the Frobenius\u2013Hopf substrate).') are consistent and formally verified."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq4. Replaced forward-referencing notes like '[planned, not yet authored]' with structurally honest, self-contained constraints. Changed 'Axiom' to 'Constraint' to better reflect derivation status. Rewrote conversational residual analysis into formal statements of open mathematical questions.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

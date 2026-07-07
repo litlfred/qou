@@ -1118,7 +1118,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/calibration-cohomology-alignment.lean:1 — Lean file exists",
+        "evidence": "content/quantum-observable-universe/mass-theory/calibration-cohomology-alignment.lean:1 \u2014 Lean file exists",
         "severity": "minor"
       }
     ],
@@ -1171,7 +1171,7 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.430Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:calibration-cohomology-alignment' → expected 'calibration_cohomology_alignment'; Lean declares: CalibrationCohomologyAlignment, calibrations_eq_cohomology, cohomology_data_count. Structural match via content."
+        "notes": "Label 'prop:calibration-cohomology-alignment' \u2192 expected 'calibration_cohomology_alignment'; Lean declares: CalibrationCohomologyAlignment, calibrations_eq_cohomology, cohomology_data_count. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1367,7 +1367,7 @@
         "scope": "structural",
         "ruling": "surviving",
         "referee_argument": "calibration-cohomology-alignment.lean:46-50 align1:cal1=hodgeScale ... as struct fields; :53-55 theorem ... := by rw [A.align1,A.align2,A.align3]; cohomology_data_count:2+1=3:=rfl is arithmetic not a Hodge count.",
-        "rebuttal": "none — the Lean proves only a=a given a=b as an axiom; nothing about Bring cohomology is verified. The .ts validation:'validated' + kind proposition over-claim. Honest fix: make the Lean a conjecture/conditional class, or derive the alignment rather than carry it as fields.",
+        "rebuttal": "none \u2014 the Lean proves only a=a given a=b as an axiom; nothing about Bring cohomology is verified. The .ts validation:'validated' + kind proposition over-claim. Honest fix: make the Lean a conjecture/conditional class, or derive the alignment rather than carry it as fields.",
         "evidence": [
           {
             "text": "calibration-cohomology-alignment.lean:46-55"
@@ -1395,8 +1395,8 @@
         "result": "warn",
         "scope": "limited",
         "ruling": "partial",
-        "referee_argument": "proof.md:9-12 'Hopf link carries no hyperbolic-volume invariant, so its mass scale is a third datum independent of (m_e,q_0)' — absence of a geometric scale does not establish exactly one orthogonal real DOF.",
-        "rebuttal": "partial — m_pi's empirical independence (SDP-validated) supports the +1 physically, so the count is not fabricated, but it is not cohomologically derived (asserted).",
+        "referee_argument": "proof.md:9-12 'Hopf link carries no hyperbolic-volume invariant, so its mass scale is a third datum independent of (m_e,q_0)' \u2014 absence of a geometric scale does not establish exactly one orthogonal real DOF.",
+        "rebuttal": "partial \u2014 m_pi's empirical independence (SDP-validated) supports the +1 physically, so the count is not fabricated, but it is not cohomologically derived (asserted).",
         "evidence": [
           {
             "text": "calibration-cohomology-alignment-proof.md:9-12"
@@ -1425,7 +1425,7 @@
         "scope": "structural",
         "ruling": "rebutted",
         "referee_argument": "Is H^1(Bring)=2W rank 8 right?",
-        "rebuttal": "rebutted — Bring curve genus 4 => dim H^1=2g=8; S_5-isotypic 2W (W the 4-dim irrep) is standard. Algebraically clean.",
+        "rebuttal": "rebutted \u2014 Bring curve genus 4 => dim H^1=2g=8; S_5-isotypic 2W (W the 4-dim irrep) is standard. Algebraically clean.",
         "evidence": [
           {
             "text": "prolonged-periods-fixed-depth-proof.md:1 (r<=2g=8)"
@@ -1454,7 +1454,7 @@
         "scope": "limited",
         "ruling": "rebutted",
         "referee_argument": "uses[] resolution + the 2-moduli claim.",
-        "rebuttal": "rebutted — dependencies exist and are cited; the 2 moduli (polarised rank-2 wt-1 Hodge structure) claim is correct.",
+        "rebuttal": "rebutted \u2014 dependencies exist and are cited; the 2 moduli (polarised rank-2 wt-1 Hodge structure) claim is correct.",
         "evidence": [
           {
             "text": "calibration-cohomology-alignment.ts:10-14"
@@ -1480,7 +1480,7 @@
         },
         "result": "fail",
         "verdict": "open-objection",
-        "referee_argument": "The central theorem calibrations_eq_cohomology proves NOTHING about cohomology: the CalibrationCohomologyAlignment structure carries the three equalities cal_i=hodge_i as axiomatic fields (align1/2/3) and the 'theorem' merely rewrites by them (:= by rw [A.align1,A.align2,A.align3]) — a self-assuming projection / def-disguised-True; yet .ts declares validation:'validated', kind proposition.",
+        "referee_argument": "The central theorem calibrations_eq_cohomology proves NOTHING about cohomology: the CalibrationCohomologyAlignment structure carries the three equalities cal_i=hodge_i as axiomatic fields (align1/2/3) and the 'theorem' merely rewrites by them (:= by rw [A.align1,A.align2,A.align3]) \u2014 a self-assuming projection / def-disguised-True; yet .ts declares validation:'validated', kind proposition.",
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
@@ -1641,6 +1641,18 @@
         "notes": "No issues found for da-reproducibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/calibration-cohomology-alignment.ts:1",
         "severity": "minor"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Smoothed transitions, enforced present tense and active voice across blocks. Kept all mathematical definitions intact. Applied Economy and Linear Argument to remove redundancies and non-essential commentary. Replaced passive voice and first-person-singular.",
+        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

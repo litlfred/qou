@@ -571,7 +571,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-theory/skein-mass-from-linking.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/mass-theory/skein-mass-from-linking.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -591,7 +591,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-theory/skein-mass-from-linking.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/mass-theory/skein-mass-from-linking.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1042,7 +1042,7 @@
         },
         "reviewed_at": "2026-07-02T17:07:15.000Z",
         "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
-        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): placeholder-stub marker no longer present — criterion pass. Residual self-assuming-projection / statement-scope issue tracked under proof-statement-integrity and bean qsb2; do not re-fail this criterion for it."
+        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): placeholder-stub marker no longer present \u2014 criterion pass. Residual self-assuming-projection / statement-scope issue tracked under proof-statement-integrity and bean qsb2; do not re-fail this criterion for it."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1375,7 +1375,7 @@
           "ts": "0c025ddcf791"
         },
         "result": "fail",
-        "notes": "def body := ctx.claim_skein_mass_from_linking; class field IS the conclusion (mass = Q·mass_Hopf + Σ Vol/ℏ²). Self-assuming projection placeholder stub.",
+        "notes": "def body := ctx.claim_skein_mass_from_linking; class field IS the conclusion (mass = Q\u00b7mass_Hopf + \u03a3 Vol/\u210f\u00b2). Self-assuming projection placeholder stub.",
         "reviewed_at": "2026-06-25T17:02:41.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1392,7 +1392,7 @@
           "ts": "0c025ddcf791"
         },
         "result": "pass",
-        "notes": "Verified honest on branch claude/lean-qa-backlog-2h3f8d: carrier fields are genuine inputs and the theorem either derives its conclusion by composing them / summing / applying proved lemmas, or states the real .md claim with a cited sorry (§3b-cond item 5 + §1). No field projection remains. lean-direct exit 0. (Prior script fail entry was stale — the anti-pattern was already removed in the current file.)",
+        "notes": "Verified honest on branch claude/lean-qa-backlog-2h3f8d: carrier fields are genuine inputs and the theorem either derives its conclusion by composing them / summing / applying proved lemmas, or states the real .md claim with a cited sorry (\u00a73b-cond item 5 + \u00a71). No field projection remains. lean-direct exit 0. (Prior script fail entry was stale \u2014 the anti-pattern was already removed in the current file.)",
         "reviewed_at": "2026-07-04T10:56:05.000Z",
         "reviewed_sha": "4736a53600d78315c025af9d838303bdcc62bf97",
         "reviewer": {
@@ -1445,7 +1445,7 @@
           "ts": "0c025ddcf791"
         },
         "result": "fail",
-        "notes": "def skein_mass_from_linking := ctx.claim_skein_mass_from_linking — projects the field equal to the conclusion.",
+        "notes": "def skein_mass_from_linking := ctx.claim_skein_mass_from_linking \u2014 projects the field equal to the conclusion.",
         "reviewed_at": "2026-06-25T17:02:41.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1462,7 +1462,7 @@
           "ts": "0c025ddcf791"
         },
         "result": "pass",
-        "notes": "Verified honest on branch claude/lean-qa-backlog-2h3f8d: carrier fields are genuine inputs and the theorem either derives its conclusion by composing them / summing / applying proved lemmas, or states the real .md claim with a cited sorry (§3b-cond item 5 + §1). No field projection remains. lean-direct exit 0. (Prior script fail entry was stale — the anti-pattern was already removed in the current file.)",
+        "notes": "Verified honest on branch claude/lean-qa-backlog-2h3f8d: carrier fields are genuine inputs and the theorem either derives its conclusion by composing them / summing / applying proved lemmas, or states the real .md claim with a cited sorry (\u00a73b-cond item 5 + \u00a71). No field projection remains. lean-direct exit 0. (Prior script fail entry was stale \u2014 the anti-pattern was already removed in the current file.)",
         "reviewed_at": "2026-07-04T10:56:05.000Z",
         "reviewed_sha": "4736a53600d78315c025af9d838303bdcc62bf97",
         "reviewer": {
@@ -1882,6 +1882,18 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No Lean sibling required; narrative matches the expected configuration.",
         "severity": "minor"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote mass-theory_seq4.md for Milnor standards: clean prose, declarative.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

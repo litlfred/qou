@@ -571,7 +571,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-theory/transfer-matrix-identities.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/mass-theory/transfer-matrix-identities.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -591,7 +591,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-theory/transfer-matrix-identities.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/mass-theory/transfer-matrix-identities.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1042,7 +1042,7 @@
         },
         "reviewed_at": "2026-07-02T17:07:15.000Z",
         "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
-        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): placeholder-stub marker no longer present — criterion pass. Residual self-assuming-projection / statement-scope issue tracked under proof-statement-integrity and bean qsb2; do not re-fail this criterion for it."
+        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): placeholder-stub marker no longer present \u2014 criterion pass. Residual self-assuming-projection / statement-scope issue tracked under proof-statement-integrity and bean qsb2; do not re-fail this criterion for it."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1347,7 +1347,7 @@
           "ts": "0c17f4d6e405"
         },
         "result": "pass",
-        "notes": "T_pp·T_nn=I and T_pn²=[2]_q²/4·I are concrete, true 2×2 identities (md verifies by direct multiplication); well-posed and substantive.",
+        "notes": "T_pp\u00b7T_nn=I and T_pn\u00b2=[2]_q\u00b2/4\u00b7I are concrete, true 2\u00d72 identities (md verifies by direct multiplication); well-posed and substantive.",
         "reviewed_at": "2026-06-25T17:07:18.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1423,7 +1423,7 @@
           "ts": "0c17f4d6e405"
         },
         "result": "pass",
-        "notes": "The pp/nn-cancellation ⇒ binding-from-mixed-crossings consequence and scalar [2]_q²/4 pairing are a meaningful physical reading, beyond restatement.",
+        "notes": "The pp/nn-cancellation \u21d2 binding-from-mixed-crossings consequence and scalar [2]_q\u00b2/4 pairing are a meaningful physical reading, beyond restatement.",
         "reviewed_at": "2026-06-25T17:07:18.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1495,7 +1495,7 @@
           "ts": "0c17f4d6e405"
         },
         "result": "fail",
-        "notes": "theorem := ⟨ctx.claim_i_inverse_product, ctx.claim_ii_T_pn_squared⟩; the matrix identities are reduced to entry-equality class fields asserted as hypotheses, not computed. md has a real 2×2 proof; Lean is a placeholder stub.",
+        "notes": "theorem := \u27e8ctx.claim_i_inverse_product, ctx.claim_ii_T_pn_squared\u27e9; the matrix identities are reduced to entry-equality class fields asserted as hypotheses, not computed. md has a real 2\u00d72 proof; Lean is a placeholder stub.",
         "reviewed_at": "2026-06-25T17:07:18.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1563,7 +1563,7 @@
           "ts": "0c17f4d6e405"
         },
         "result": "fail",
-        "notes": "def body projects ctx.claim_i + ctx.claim_ii — the two class fields that ARE the conclusion conjuncts. Self-assuming.",
+        "notes": "def body projects ctx.claim_i + ctx.claim_ii \u2014 the two class fields that ARE the conclusion conjuncts. Self-assuming.",
         "reviewed_at": "2026-06-25T17:07:18.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -2253,6 +2253,18 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote mass-theory_seq4.md for Milnor standards: clean prose, declarative.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

@@ -902,7 +902,7 @@
         },
         "reviewed_at": "2026-06-28T11:04:37.262Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The block 'Witten' presents substantial mathematical content: Witten \\cite{witten1984} conjectured that **strange quark matter** (SQM) — bulk ...",
+        "notes": "The block 'Witten' presents substantial mathematical content: Witten \\cite{witten1984} conjectured that **strange quark matter** (SQM) \u2014 bulk ...",
         "severity": "minor"
       }
     ],
@@ -1112,6 +1112,18 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Witten' are consistent.",
         "severity": "minor"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote observations_seq14.md. Removed narrative framing in favor of tight declarative sentences. Converted lists and propositions to strict formatting.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

@@ -1112,7 +1112,7 @@
         },
         "reviewed_at": "2026-06-28T11:04:36.634Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Block placement and kind 'proposition' match validated structurally for 'Elementary symmetric polynomials in Jucys–Murphy elements are central in $H_n(q)$ with closed-form spectrum on each Wedderburn block' within chapter 'mass-theory'.",
+        "notes": "Block placement and kind 'proposition' match validated structurally for 'Elementary symmetric polynomials in Jucys\u2013Murphy elements are central in $H_n(q)$ with closed-form spectrum on each Wedderburn block' within chapter 'mass-theory'.",
         "severity": "minor"
       },
       {
@@ -1147,7 +1147,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/jucys-murphy-central-elements-qou.lean:1 — Lean file exists",
+        "evidence": "content/quantum-observable-universe/mass-theory/jucys-murphy-central-elements-qou.lean:1 \u2014 Lean file exists",
         "severity": "minor"
       },
       {
@@ -1182,7 +1182,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean proof contains a sorry placeholder, indicating it is incomplete.",
-        "evidence": "content/quantum-observable-universe/mass-theory/jucys-murphy-central-elements-qou.lean:1 — sorry placeholder present",
+        "evidence": "content/quantum-observable-universe/mass-theory/jucys-murphy-central-elements-qou.lean:1 \u2014 sorry placeholder present",
         "severity": "major"
       },
       {
@@ -1233,7 +1233,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean proof in content/quantum-observable-universe/mass-theory/jucys-murphy-central-elements-qou.lean is a structural stub, which does not fully capture the narrative proof.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-theory/jucys-murphy-central-elements-qou.lean:1 — sorry present"
+        "evidence": "content/quantum-observable-universe/mass-theory/jucys-murphy-central-elements-qou.lean:1 \u2014 sorry present"
       },
       {
         "field_hash": {
@@ -1265,7 +1265,7 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.430Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:jucys-murphy-central-elements-qou' → expected 'jucys_murphy_central_elements_qou'; Lean declares: HeckeJMSpectrum, cellContent, jm_elements_commute, jm_esymm_central, jm_central_scalar_eq_esymm_qcontent.... Structural match via content."
+        "notes": "Label 'prop:jucys-murphy-central-elements-qou' \u2192 expected 'jucys_murphy_central_elements_qou'; Lean declares: HeckeJMSpectrum, cellContent, jm_elements_commute, jm_esymm_central, jm_central_scalar_eq_esymm_qcontent.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2055,6 +2055,18 @@
         },
         "reviewed_at": "2026-07-03T00:52:56.534Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
+        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

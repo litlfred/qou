@@ -28,7 +28,13 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.802Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'thm:ew-triplet-charge-spin-from-involution' → expected 'ew_triplet_charge_spin_from_involution'; Lean declares: swap, trSum, skew, plusPart, minusPart.... Structural match via content."
+        "notes": "Label 'thm:ew-triplet-charge-spin-from-involution' \u2192 expected 'ew_triplet_charge_spin_from_involution'; Lean declares: swap, trSum, skew, plusPart, minusPart.... Structural match via content."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq18"
       }
     ]
   },

@@ -1335,7 +1335,7 @@
           "lean": "8bda5288d9d4"
         },
         "result": "warn",
-        "notes": "Lean adds only ⟨qu.frobHopf⟩ projection; the canonical pairing λ∘μ and adjoint-iso live elsewhere / are unstated here.",
+        "notes": "Lean adds only \u27e8qu.frobHopf\u27e9 projection; the canonical pairing \u03bb\u2218\u03bc and adjoint-iso live elsewhere / are unstated here.",
         "reviewed_at": "2026-06-25T17:07:16.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1395,7 +1395,7 @@
           "lean": "8bda5288d9d4"
         },
         "result": "fail",
-        "notes": ".md claims pairing exists AS A MORPHISM + adjoint A→A∨ is iso (non-degeneracy). Lean only proves Nonempty(FrobeniusHopfData) := ⟨qu.frobHopf⟩ — projects an existing field, drops the pairing+adjoint-iso content. Weaker/different claim.",
+        "notes": ".md claims pairing exists AS A MORPHISM + adjoint A\u2192A\u2228 is iso (non-degeneracy). Lean only proves Nonempty(FrobeniusHopfData) := \u27e8qu.frobHopf\u27e9 \u2014 projects an existing field, drops the pairing+adjoint-iso content. Weaker/different claim.",
         "reviewed_at": "2026-06-25T17:07:16.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1853,7 +1853,7 @@
         "reviewed_at": "2026-06-28T11:19:33.342Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md:1 — Let (\\mathbf{C}, A, \\tau) be a",
+        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md:1 \u2014 Let (\\mathbf{C}, A, \\tau) be a",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Let (\\mathbf{C}, A, \\tau) be a' are consistent."
@@ -1877,6 +1877,18 @@
         },
         "reviewed_at": "2026-07-05T11:55:26.473Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote QU intro and axioms for brevity (H1). Brought SU(2) geometric intuition forward (H2, H3). Maintained math exactly. Unified cross-block flow.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

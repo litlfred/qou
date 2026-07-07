@@ -1111,7 +1111,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:1 — Lean file exists",
+        "evidence": "content/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:1 \u2014 Lean file exists",
         "severity": "minor"
       },
       {
@@ -1213,7 +1213,7 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.430Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:pieri-photon-shift' → expected 'pieri_photon_shift'; Lean declares: PieriInterface, IsPieriShift, pieri_one_box_shift, pieri_self_in_shift. Structural match via content."
+        "notes": "Label 'prop:pieri-photon-shift' \u2192 expected 'pieri_photon_shift'; Lean declares: PieriInterface, IsPieriShift, pieri_one_box_shift, pieri_self_in_shift. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1929,7 +1929,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
-        "evidence": "content/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:1 — content/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:43:16: error: unexpected token 'λ'; expected '(', '[', '_', '{', '⦃' or identifier",
+        "evidence": "content/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:1 \u2014 content/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:43:16: error: unexpected token '\u03bb'; expected '(', '[', '_', '{', '\u2983' or identifier",
         "severity": "minor"
       },
       {
@@ -1963,10 +1963,10 @@
         },
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:43:16: error: unexpected token 'λ'; expected '(', '[', '_', '{', '⦃' or identifier",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:43:16: error: unexpected token '\u03bb'; expected '(', '[', '_', '{', '\u2983' or identifier",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:43:16: error: unexpected token 'λ'; expected '(', '[', '_', '{', '⦃' or identifier"
+        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/pieri-photon-shift.lean:43:16: error: unexpected token '\u03bb'; expected '(', '[', '_', '{', '\u2983' or identifier"
       },
       {
         "field_hash": {
@@ -2003,6 +2003,18 @@
         },
         "reviewed_at": "2026-07-03T00:52:56.534Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
+        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

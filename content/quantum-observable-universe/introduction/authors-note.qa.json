@@ -10,6 +10,19 @@
     "ts": "da134280c0f0",
     "md": "2f5188442c5c"
   },
-  "criteria": {},
+  "criteria": {
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote the authors note block into a denser block. Preserved numbers and GitHub link. Preserved the quote block at the end. Checked file markers.",
+        "reviewed_at": "2026-07-06T22:59:07Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
+      }
+    ]
+  },
   "updated_at": "2026-06-01T16:06:38.106Z"
 }

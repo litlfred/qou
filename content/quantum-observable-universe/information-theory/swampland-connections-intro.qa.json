@@ -312,7 +312,7 @@
         },
         "reviewed_at": "2026-06-28T10:51:03.753Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The block 'sec:swampland-connections-intro' presents substantial mathematical content: Specialised to the archimedean ground field — the complex or real continuum ([ar...",
+        "notes": "The block 'sec:swampland-connections-intro' presents substantial mathematical content: Specialised to the archimedean ground field \u2014 the complex or real continuum ([ar...",
         "severity": "minor"
       }
     ],
@@ -531,6 +531,18 @@
         "reviewed_at": "2026-07-03T00:52:56.008Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
         "notes": "block has no .lean sibling"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Smoothed transitions, removed forward references, applied milnor brevity.",
+        "reviewed_at": "2026-07-07T02:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

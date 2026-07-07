@@ -48,7 +48,19 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.430Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:t-beta-markov-frobenius-collapse' → expected 't_beta_markov_frobenius_collapse'; Lean declares: completing_the_square, t_beta_collapse, min_norm_value. Structural match via content."
+        "notes": "Label 'prop:t-beta-markov-frobenius-collapse' \u2192 expected 't_beta_markov_frobenius_collapse'; Lean declares: completing_the_square, t_beta_collapse, min_norm_value. Structural match via content."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote mass-theory_seq11.md to strictly follow H1-H8. Streamlined LP constraints and operator choices. Clarified the categorical reading vs empirical consequences. All formulas and code structures preserved.",
+        "reviewed_at": "2026-07-06T23:10:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

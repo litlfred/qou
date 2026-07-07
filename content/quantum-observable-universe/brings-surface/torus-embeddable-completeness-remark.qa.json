@@ -255,7 +255,7 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
-        "referee_argument": "none — expository prose contains no surviving objections.",
+        "referee_argument": "none \u2014 expository prose contains no surviving objections.",
         "severity": "minor"
       }
     ],
@@ -277,6 +277,18 @@
         "reviewed_at": "2026-07-03T00:52:55.404Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
         "notes": "block has no .lean sibling"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Applied Milnor brevity. Cleaned up excessive bolding and conversational asides. Streamlined derivation chain and modular arithmetic observations.",
+        "reviewed_at": "2026-07-06T22:42:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

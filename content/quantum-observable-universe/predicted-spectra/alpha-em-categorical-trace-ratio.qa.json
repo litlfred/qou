@@ -1239,7 +1239,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Lean alpha_em_bare = alpha_em_via_delta_q matches the .md identity α_EM = h²/(q·δ_q(T_{2,9})·δ_q(T_{3,5})); the four ≠0 hypotheses are well-definedness side conditions consistent with the narrative's ring R = ℤ[q^±1/2,(q-q⁻¹)⁻¹]."
+        "notes": "Lean alpha_em_bare = alpha_em_via_delta_q matches the .md identity \u03b1_EM = h\u00b2/(q\u00b7\u03b4_q(T_{2,9})\u00b7\u03b4_q(T_{3,5})); the four \u22600 hypotheses are well-definedness side conditions consistent with the narrative's ring R = \u2124[q^\u00b11/2,(q-q\u207b\u00b9)\u207b\u00b9]."
       },
       {
         "field_hash": {
@@ -1295,7 +1295,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score 0.9 — derivation states the plan up front (δ_q(T_{2,k})=h·[k]_q, then substitute)."
+        "notes": "score 0.9 \u2014 derivation states the plan up front (\u03b4_q(T_{2,k})=h\u00b7[k]_q, then substitute)."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1335,7 +1335,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score 1.0 — sorry-free Lean proof (field_simp; ring)."
+        "notes": "score 1.0 \u2014 sorry-free Lean proof (field_simp; ring)."
       }
     ],
     "proof-rater-novelty": [
@@ -1375,7 +1375,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score 0.6 — standard q-integer manipulation refactoring α_EM into a trace ratio; useful but not a novel argument."
+        "notes": "score 0.6 \u2014 standard q-integer manipulation refactoring \u03b1_EM into a trace ratio; useful but not a novel argument."
       }
     ],
     "proof-statement-integrity": [
@@ -1553,7 +1553,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "All four ≠0 hypotheses consumed by field_simp to clear denominators."
+        "notes": "All four \u22600 hypotheses consumed by field_simp to clear denominators."
       }
     ],
     "proof-no-decide-masking": [
@@ -1826,7 +1826,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "alpha-em-categorical-trace-ratio.lean:1 — content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean:10:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist"
+        "evidence": "alpha-em-categorical-trace-ratio.lean:1 \u2014 content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean:10:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist"
       }
     ],
     "da-referee-verdict": [
@@ -1848,6 +1848,18 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean contains compilation errors: content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean:10:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist, invalidating the claimed formalization."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

@@ -10,6 +10,19 @@
     "ts": "a92a4230ff12",
     "md": "cea3aa0d76e5"
   },
-  "criteria": {},
+  "criteria": {
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
+      }
+    ]
+  },
   "updated_at": "2026-06-01T16:06:38.106Z"
 }

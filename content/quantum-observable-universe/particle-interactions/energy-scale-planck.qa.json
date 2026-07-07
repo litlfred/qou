@@ -1792,7 +1792,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The block 'Energy scale $E_0$ and the Planck time' presents substantial mathematical content: The energy scale $E_0$ is derived from CAL-1 ($m_e$) and CAL-2 ($q_0$) alone — no β-decay calibration consumed. It ha...",
+        "notes": "The block 'Energy scale $E_0$ and the Planck time' presents substantial mathematical content: The energy scale $E_0$ is derived from CAL-1 ($m_e$) and CAL-2 ($q_0$) alone \u2014 no \u03b2-decay calibration consumed. It ha...",
         "severity": "minor"
       }
     ],
@@ -2002,6 +2002,12 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Energy scale $E_0$ and the Planck time' are consistent."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq22"
       }
     ]
   },

@@ -312,8 +312,8 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "minor",
-        "evidence": "q-harmonic-flow.lean:46-58: `class QHarmonicFlow ... flow : dq = - Δq q` (the ansatz instance is the open conjecture); .md:25-34 'Ansatz, not theorem ... the evolution law is conjectural.'",
-        "notes": "score ~0.3 — the remaining gap (existence of a QHarmonicFlow instance for the physical substrate field) IS the core conjecture, a new postulate not derived from existing blocks (a 'core' / near-'restates-target' gap, not routine). The conditional consequences (stationary_iff_qharmonic, vacuum_stationary) are sorry-free, but closing the conjecture itself is low-plausibility. Routes to proof-triage."
+        "evidence": "q-harmonic-flow.lean:46-58: `class QHarmonicFlow ... flow : dq = - \u0394q q` (the ansatz instance is the open conjecture); .md:25-34 'Ansatz, not theorem ... the evolution law is conjectural.'",
+        "notes": "score ~0.3 \u2014 the remaining gap (existence of a QHarmonicFlow instance for the physical substrate field) IS the core conjecture, a new postulate not derived from existing blocks (a 'core' / near-'restates-target' gap, not routine). The conditional consequences (stationary_iff_qharmonic, vacuum_stationary) are sorry-free, but closing the conjecture itself is low-plausibility. Routes to proof-triage."
       }
     ],
     "da-false-claim": [
@@ -595,6 +595,18 @@
         },
         "reviewed_at": "2026-07-03T00:52:58.083Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Unified definitions and their proofs of existence. Removed Lean diagnostics and internal architectural remarks ('Route 2a'). Stripped non-mathematical commentary.",
+        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

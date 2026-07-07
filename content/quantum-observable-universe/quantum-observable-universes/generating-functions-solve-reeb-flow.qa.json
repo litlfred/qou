@@ -1078,7 +1078,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "generating-functions-solve-reeb-flow.ts:1",
-        "notes": "No false claims identified in the prose of 'Generating functions ($\\\\exp_q$, $\\\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions'; the mathematical reasoning concerning 'The three principal $q$-generating functions of the substrate —' is consistent."
+        "notes": "No false claims identified in the prose of 'Generating functions ($\\\\exp_q$, $\\\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions'; the mathematical reasoning concerning 'The three principal $q$-generating functions of the substrate \u2014' is consistent."
       }
     ],
     "da-vacuous": [
@@ -1097,7 +1097,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "generating-functions-solve-reeb-flow.ts:1",
-        "notes": "The block 'Generating functions ($\\\\exp_q$, $\\\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions' presents substantial mathematical content: 'The three principal $q$-generating functions of the substrate —'."
+        "notes": "The block 'Generating functions ($\\\\exp_q$, $\\\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions' presents substantial mathematical content: 'The three principal $q$-generating functions of the substrate \u2014'."
       }
     ],
     "da-circular": [
@@ -1116,7 +1116,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "generating-functions-solve-reeb-flow.ts:1",
-        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Generating functions ($\\\\exp_q$, $\\\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions' (which asserts 'The three principal $q$-generating functions of the substrate —')."
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Generating functions ($\\\\exp_q$, $\\\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions' (which asserts 'The three principal $q$-generating functions of the substrate \u2014')."
       }
     ],
     "da-overclaim": [
@@ -1135,7 +1135,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "generating-functions-solve-reeb-flow.ts:1",
-        "notes": "The remarks and narrative scope in 'Generating functions ($\\\\exp_q$, $\\\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions' concerning 'The three principal $q$-generating functions of the substrate —' are appropriately qualified."
+        "notes": "The remarks and narrative scope in 'Generating functions ($\\\\exp_q$, $\\\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions' concerning 'The three principal $q$-generating functions of the substrate \u2014' are appropriately qualified."
       }
     ],
     "da-hidden-dof": [
@@ -1173,7 +1173,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "generating-functions-solve-reeb-flow.ts:1",
-        "notes": "The prose arguments in 'Generating functions ($\\\\exp_q$, $\\\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions' proceed logically through the stated steps: 'The three principal $q$-generating functions of the substrate —'."
+        "notes": "The prose arguments in 'Generating functions ($\\\\exp_q$, $\\\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions' proceed logically through the stated steps: 'The three principal $q$-generating functions of the substrate \u2014'."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1230,7 +1230,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "generating-functions-solve-reeb-flow.ts:1",
-        "notes": "Key terms and symbols in 'Generating functions ($\\\\exp_q$, $\\\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions' (e.g. from 'The three principal $q$-generating functions of the substrate —') are mathematically defined and unambiguous."
+        "notes": "Key terms and symbols in 'Generating functions ($\\\\exp_q$, $\\\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions' (e.g. from 'The three principal $q$-generating functions of the substrate \u2014') are mathematically defined and unambiguous."
       }
     ],
     "da-empirical-fragility": [
@@ -1307,7 +1307,19 @@
         "severity": "minor",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
-        "referee_argument": "No significant objections; the mathematical claims in 'Generating functions ($\\\\exp_q$, $\\\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions' (concerning 'The three principal $q$-generating functions of the substrate —') are consistent and formally verified."
+        "referee_argument": "No significant objections; the mathematical claims in 'Generating functions ($\\\\exp_q$, $\\\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions' (concerning 'The three principal $q$-generating functions of the substrate \u2014') are consistent and formally verified."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Removed conversational intros and diagrams. Unified theorems.",
+        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

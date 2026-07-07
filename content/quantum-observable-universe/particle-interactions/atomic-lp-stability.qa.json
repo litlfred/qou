@@ -715,7 +715,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -735,7 +735,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/particle-interactions/atomic-lp-stability.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1723,7 +1723,7 @@
           "ts": "2b29d6d77a77"
         },
         "result": "pass",
-        "notes": "Well-posed: bare H LP-unstable, B₃ dressing stabilises via annihilation-ratio shift 0.537->q⁻¹⁰=0.352; concrete LP mechanism.",
+        "notes": "Well-posed: bare H LP-unstable, B\u2083 dressing stabilises via annihilation-ratio shift 0.537->q\u207b\u00b9\u2070=0.352; concrete LP mechanism.",
         "reviewed_at": "2026-06-25T17:20:00.000Z",
         "reviewed_sha": "aa0d6ab1453bd1edbf74d9ee098450ece6ed76ad",
         "reviewer": {
@@ -1784,7 +1784,7 @@
           "ts": "2b29d6d77a77"
         },
         "result": "pass",
-        "notes": "LP-instability-of-bare-atom resolved by B₃ dressing is a substantive structural claim (ties hydrogen stability to proton internal topology).",
+        "notes": "LP-instability-of-bare-atom resolved by B\u2083 dressing is a substantive structural claim (ties hydrogen stability to proton internal topology).",
         "reviewed_at": "2026-06-25T17:20:31.000Z",
         "reviewed_sha": "aa0d6ab1453bd1edbf74d9ee098450ece6ed76ad",
         "reviewer": {
@@ -1841,7 +1841,7 @@
           "ts": "2b29d6d77a77"
         },
         "result": "fail",
-        "notes": "Main thm projects two opaque Prop fields (bareAnnihilatorExists, ¬dressedAnnihilatorExists); no encoding of annihilator/ratio-shift mechanism (0.537->0.352); degenerate.",
+        "notes": "Main thm projects two opaque Prop fields (bareAnnihilatorExists, \u00acdressedAnnihilatorExists); no encoding of annihilator/ratio-shift mechanism (0.537->0.352); degenerate.",
         "reviewed_at": "2026-06-25T17:19:02.000Z",
         "reviewed_sha": "aa0d6ab1453bd1edbf74d9ee098450ece6ed76ad",
         "reviewer": {
@@ -1894,7 +1894,7 @@
           "ts": "2b29d6d77a77"
         },
         "result": "fail",
-        "notes": "atomic_lp_stability := ⟨ctx.h_bare, ctx.h_dressed⟩ — both conjuncts ARE the class fields stating the conclusion verbatim; pure projection.",
+        "notes": "atomic_lp_stability := \u27e8ctx.h_bare, ctx.h_dressed\u27e9 \u2014 both conjuncts ARE the class fields stating the conclusion verbatim; pure projection.",
         "reviewed_at": "2026-06-25T17:19:18.000Z",
         "reviewed_sha": "aa0d6ab1453bd1edbf74d9ee098450ece6ed76ad",
         "reviewer": {
@@ -1983,7 +1983,7 @@
           "ts": "2b29d6d77a77"
         },
         "result": "pass",
-        "notes": "Fields h_bare:P and h_dressed:¬Q with P,Q distinct opaque Props are jointly satisfiable; not contradictory.",
+        "notes": "Fields h_bare:P and h_dressed:\u00acQ with P,Q distinct opaque Props are jointly satisfiable; not contradictory.",
         "reviewed_at": "2026-06-25T17:19:47.000Z",
         "reviewed_sha": "aa0d6ab1453bd1edbf74d9ee098450ece6ed76ad",
         "reviewer": {
@@ -2327,6 +2327,12 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/atomic-lp-stability.lean is missing entirely, preventing formal verification of the claims in 'LP stability of the atomic braid'."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq9"
       }
     ]
   },

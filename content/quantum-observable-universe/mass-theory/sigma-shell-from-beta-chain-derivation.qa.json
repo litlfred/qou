@@ -48,7 +48,19 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.430Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:sigma-shell-from-beta-chain-derivation' → expected 'sigma_shell_from_beta_chain_derivation'; Lean declares: SigmaShellAtMagic, SigmaShellFromBetaChainDerivation, sigma_shell_from_beta_chain. Structural match via content."
+        "notes": "Label 'prop:sigma-shell-from-beta-chain-derivation' \u2192 expected 'sigma_shell_from_beta_chain_derivation'; Lean declares: SigmaShellAtMagic, SigmaShellFromBetaChainDerivation, sigma_shell_from_beta_chain. Structural match via content."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Condensed derivations to core propositions. Removed verbose implementation details.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

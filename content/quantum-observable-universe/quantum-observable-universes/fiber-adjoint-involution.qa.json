@@ -603,7 +603,7 @@
         "reviewed_at": "2026-07-05T11:55:26.473Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "severity": "major",
-        "evidence": "../qou/content/quantum-observable-universe/quantum-observable-universes/fiber-adjoint-involution.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "../qou/content/quantum-observable-universe/quantum-observable-universes/fiber-adjoint-involution.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -624,7 +624,7 @@
         "reviewed_at": "2026-07-05T11:55:26.473Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "severity": "major",
-        "evidence": "../qou/content/quantum-observable-universe/quantum-observable-universes/fiber-adjoint-involution.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "../qou/content/quantum-observable-universe/quantum-observable-universes/fiber-adjoint-involution.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1260,8 +1260,8 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "minor",
-        "evidence": "fiber-adjoint-involution.md:39: \"The companion Lean `fiber_adjoint_involution_exists` currently encodes an existence stub (`∃ inv, True`) pending a faithful statement\" vs fiber-adjoint-involution.lean:45-87: a real `structure FiberAdjointInvolution` (orbit_embed / involution / involution_sq / orbit_involution_compat / orbit_mono) with `theorem fiber_adjoint_involution_exists : Nonempty (FiberAdjointInvolution C fh) := ... sorry`",
-        "notes": "The Lean signature now faithfully encodes the three narrative parts (no longer `∃ inv, True`), so the claim-equivalence is actually GOOD — only existence is sorry'd (honest queuing). The .md prose describing the Lean as an `∃ inv, True` stub is STALE and understates the formalization; a reader can reconcile but the prose should be updated. Notational/descriptive gap, not a theorem-changing divergence."
+        "evidence": "fiber-adjoint-involution.md:39: \"The companion Lean `fiber_adjoint_involution_exists` currently encodes an existence stub (`\u2203 inv, True`) pending a faithful statement\" vs fiber-adjoint-involution.lean:45-87: a real `structure FiberAdjointInvolution` (orbit_embed / involution / involution_sq / orbit_involution_compat / orbit_mono) with `theorem fiber_adjoint_involution_exists : Nonempty (FiberAdjointInvolution C fh) := ... sorry`",
+        "notes": "The Lean signature now faithfully encodes the three narrative parts (no longer `\u2203 inv, True`), so the claim-equivalence is actually GOOD \u2014 only existence is sorry'd (honest queuing). The .md prose describing the Lean as an `\u2203 inv, True` stub is STALE and understates the formalization; a reader can reconcile but the prose should be updated. Notational/descriptive gap, not a theorem-changing divergence."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2015,6 +2015,18 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/fiber-adjoint-involution.lean contains 'sorry' placeholders.",
         "verdict": "open-objection",
         "referee_argument": "The sibling Lean file fiber-adjoint-involution.lean contains sorry placeholders, meaning the main result of 'Fiber--adjoint-fiber involution' is unproved and the formalization of 'Let $(\\mathbf{C}, A, \\tau)$ be a' is currently vacuous."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq8. Simplified the intro. Removed editorializing about 'arc layers'. Stripped back-references. Clarified the transition functions as gerbe morphisms and the role of the Woronowicz calculus deformation.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

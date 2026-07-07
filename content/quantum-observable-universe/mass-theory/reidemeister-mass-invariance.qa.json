@@ -953,7 +953,7 @@
           "lean": "492b59a00e50"
         },
         "result": "pass",
-        "notes": "Re-audit 2026-06-25: only plain `decide` (kernel-checked decision procedure on a decidable finite/arithmetic goal), no `native_decide`. Accepted corpus-wide (§1a scopes the masking prohibition to `native_decide`; 19 PASS blocks use plain `decide`). 2026-06-22 fail reclassified.",
+        "notes": "Re-audit 2026-06-25: only plain `decide` (kernel-checked decision procedure on a decidable finite/arithmetic goal), no `native_decide`. Accepted corpus-wide (\u00a71a scopes the masking prohibition to `native_decide`; 19 PASS blocks use plain `decide`). 2026-06-22 fail reclassified.",
         "reviewed_at": "2026-06-25T12:27:24.000Z",
         "reviewed_sha": "1debdf1526f15021143bdde1776810ae6c406976",
         "reviewer": {
@@ -1271,7 +1271,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
-        "evidence": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean:1 — content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean:14:0: error: unexpected token '*'; expected command",
+        "evidence": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean:1 \u2014 content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean:14:0: error: unexpected token '*'; expected command",
         "severity": "minor"
       }
     ],
@@ -1310,7 +1310,19 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.430Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'conj:reidemeister-mass-invariance' → expected 'reidemeister_mass_invariance'; Lean declares: R_q, ReidemeisterMove, IsKnotInvariant, IsRegularInvariant, knot_invariant_is_regular.... Structural match via content."
+        "notes": "Label 'conj:reidemeister-mass-invariance' \u2192 expected 'reidemeister_mass_invariance'; Lean declares: R_q, ReidemeisterMove, IsKnotInvariant, IsRegularInvariant, knot_invariant_is_regular.... Structural match via content."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote mass-theory_seq5.md for Milnor standards: stripped unnecessary adjectives, improved flow.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

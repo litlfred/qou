@@ -867,7 +867,7 @@
         },
         "reviewed_at": "2026-06-28T11:04:36.980Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The block 'sec:complexity-interpretation-intro' presents substantial mathematical content: _[draft]_ Breit–Wheeler pair creation forced a categorical reading of the photon...",
+        "notes": "The block 'sec:complexity-interpretation-intro' presents substantial mathematical content: _[draft]_ Breit\u2013Wheeler pair creation forced a categorical reading of the photon...",
         "severity": "minor"
       }
     ],
@@ -1077,6 +1077,18 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'sec:complexity-interpretation-intro' are consistent.",
         "severity": "minor"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

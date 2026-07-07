@@ -889,7 +889,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/staircase-partition.lean:1 — Lean file exists",
+        "evidence": "content/quantum-observable-universe/mass-theory/staircase-partition.lean:1 \u2014 Lean file exists",
         "severity": "minor"
       }
     ],
@@ -1173,7 +1173,19 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.430Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'def:staircase-partition' → expected 'staircase_partition'; Lean declares: staircasePartition. Structural match via content."
+        "notes": "Label 'def:staircase-partition' \u2192 expected 'staircase_partition'; Lean declares: staircasePartition. Structural match via content."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Condensed derivations to core propositions. Removed verbose implementation details.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

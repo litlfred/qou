@@ -920,7 +920,7 @@
           "ts": "057d25308009"
         },
         "result": "pass",
-        "notes": "Conjecture = the Riemann Hypothesis itself, faithfully stated over Mathlib riemannZeta (∀ nontrivial zero, Re s=1/2). §3b class + sorry instance (=open conjecture). Maximally well-posed/substantive.",
+        "notes": "Conjecture = the Riemann Hypothesis itself, faithfully stated over Mathlib riemannZeta (\u2200 nontrivial zero, Re s=1/2). \u00a73b class + sorry instance (=open conjecture). Maximally well-posed/substantive.",
         "reviewed_at": "2026-06-25T17:08:52.000Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
@@ -1178,10 +1178,22 @@
         "reviewed_at": "2026-06-28T11:19:33.342Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-hypothesis.md:1 — Conjecture (Riemann, 1859). All non-trivial zeros of the Riemann",
+        "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-hypothesis.md:1 \u2014 Conjecture (Riemann, 1859). All non-trivial zeros of the Riemann",
         "notes": "Conjecture/Proof is open with sorry placeholders, hence the objection is survivable.",
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured algebraic or physical relations in 'Conjecture (Riemann, 1859). All non-trivial zeros of the Riemann' remain unproven and are represented as sorry stubs in content/quantum-observable-universe/lean/QOU/BraidKnot/ClassicalRiemannHypothesis.lean."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Cleaned up the graded Baer-star and classical limit implications. Reduced clutter around the Riemann hypothesis statement and macroscopic stability.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

@@ -813,7 +813,7 @@
         },
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Checked mathematical consistency of the claim '_[draft]_ The previous section read kinematic data off a single crossing. We now diagonalise the cyclic symmetry that ties crossings together. The relevant cyclic group is $C_5 \\subset S_5$ acting on the five branch points of the base surface, and the diagonalisation is the discrete Fourier transform — the Lagrange resolvents. Once $C_5$ is diagonal, the categorical analogues of momentum, angular momentum and energy fall out as the natural eigencoordinates.' and found no counterexamples under the stated conditions.",
+        "notes": "Checked mathematical consistency of the claim '_[draft]_ The previous section read kinematic data off a single crossing. We now diagonalise the cyclic symmetry that ties crossings together. The relevant cyclic group is $C_5 \\subset S_5$ acting on the five branch points of the base surface, and the diagonalisation is the discrete Fourier transform \u2014 the Lagrange resolvents. Once $C_5$ is diagonal, the categorical analogues of momentum, angular momentum and energy fall out as the natural eigencoordinates.' and found no counterexamples under the stated conditions.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/lagrange-q-kinematics-intro.ts:1",
         "severity": "minor"
       }
@@ -901,7 +901,7 @@
         },
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Logical transitions in the derivation of '_[draft]_ The previous section read kinematic data off a single crossing. We now diagonalise the cyclic symmetry that ties crossings together. The relevant cyclic group is $C_5 \\subset S_5$ acting on the five branch points of the base surface, and the diagonalisation is the discrete Fourier transform — the Lagrange resolvents. Once $C_5$ is diagonal, the categorical analogues of momentum, angular momentum and energy fall out as the natural eigencoordinates.' are sound; no non-sequiturs detected.",
+        "notes": "Logical transitions in the derivation of '_[draft]_ The previous section read kinematic data off a single crossing. We now diagonalise the cyclic symmetry that ties crossings together. The relevant cyclic group is $C_5 \\subset S_5$ acting on the five branch points of the base surface, and the diagonalisation is the discrete Fourier transform \u2014 the Lagrange resolvents. Once $C_5$ is diagonal, the categorical analogues of momentum, angular momentum and energy fall out as the natural eigencoordinates.' are sound; no non-sequiturs detected.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/lagrange-q-kinematics-intro.ts:1",
         "severity": "minor"
       }
@@ -1029,6 +1029,18 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims are consistent.",
         "severity": "minor"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote climax-volume-mass_seq2.md. Enhanced brevity and directness. Enforced linear progression. Strengthened the transition into the Noerther's theorem block.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

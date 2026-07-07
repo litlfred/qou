@@ -1498,7 +1498,7 @@
         },
         "reviewed_at": "2026-06-28T10:51:03.753Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The block 'Photon modes and $q$-deformed dispersion in a 1D channel' presents substantial mathematical content: A photon is the trivial strand $\\gamma$ — knot-trivial under Markov closure — so...",
+        "notes": "The block 'Photon modes and $q$-deformed dispersion in a 1D channel' presents substantial mathematical content: A photon is the trivial strand $\\gamma$ \u2014 knot-trivial under Markov closure \u2014 so...",
         "severity": "minor"
       },
       {
@@ -1868,6 +1868,18 @@
         },
         "reviewed_at": "2026-06-28T17:59:01.740Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote blocks linearly: stripped forward references (e.g. 'The following sections define...', 'We document its relation...'), removed redundancy between intro and definition blocks, unified terminology around one-dimensional channels, and tightened phrasing for brevity and impact. Preserved all math and original file markers.",
+        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

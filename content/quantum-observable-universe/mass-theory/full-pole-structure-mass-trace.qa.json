@@ -1064,7 +1064,19 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.430Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:full-pole-structure-mass-trace' → expected 'full_pole_structure_mass_trace'; Lean declares: qPochhammer, qPochhammerPoly, HabiroCompletion, habiro_truncation_bound, habiro_truncation_bound_supercrit. Structural match via content."
+        "notes": "Label 'prop:full-pole-structure-mass-trace' \u2192 expected 'full_pole_structure_mass_trace'; Lean declares: qPochhammer, qPochhammerPoly, HabiroCompletion, habiro_truncation_bound, habiro_truncation_bound_supercrit. Structural match via content."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
+        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

@@ -1053,7 +1053,7 @@
         "reviewed_at": "2026-06-28T11:19:33.342Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/rigid-monoidal-vect.md:1 — The polynomial ring \\mathbb{C}[z] is the algebra of functions on the",
+        "evidence": "content/quantum-observable-universe/quantum-universes/rigid-monoidal-vect.md:1 \u2014 The polynomial ring \\mathbb{C}[z] is the algebra of functions on the",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'The polynomial ring \\mathbb{C}[z] is the algebra of functions on the' are consistent."
@@ -1094,7 +1094,19 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.710Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'ex:rigid-monoidal-vect' → expected 'rigid_monoidal_vect'; Lean declares: ConcreteRigidData, su2RigidData, su2_fundamental_dim, CoordinateRingData, su2CoordinateRing.... Structural match via content."
+        "notes": "Label 'ex:rigid-monoidal-vect' \u2192 expected 'rigid_monoidal_vect'; Lean declares: ConcreteRigidData, su2RigidData, su2_fundamental_dim, CoordinateRingData, su2CoordinateRing.... Structural match via content."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Smoothed transitions across rigid monoidal category blocks. Replaced passive voice with declarative sentences (H1). Kept examples prominent before abstractions (H2). Eliminated filler words.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

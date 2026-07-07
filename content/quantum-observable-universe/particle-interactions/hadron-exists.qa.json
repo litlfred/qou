@@ -1857,7 +1857,7 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.802Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:hadron-exists' → expected 'hadron_exists'; Lean declares: Hadron.exists. Structural match via content."
+        "notes": "Label 'prop:hadron-exists' \u2192 expected 'hadron_exists'; Lean declares: Hadron.exists. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2286,7 +2286,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/hadron-exists.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-exists.lean:1 — content/quantum-observable-universe/particle-interactions/hadron-exists.lean:36:3: error: invalid {...} notation, expected type is not of the form (C ...)"
+        "evidence": "content/quantum-observable-universe/particle-interactions/hadron-exists.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/hadron-exists.lean:36:3: error: invalid {...} notation, expected type is not of the form (C ...)"
       }
     ],
     "da-referee-verdict": [
@@ -2328,6 +2328,18 @@
         },
         "reviewed_at": "2026-07-03T00:52:57.492Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

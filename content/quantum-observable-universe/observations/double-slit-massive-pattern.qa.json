@@ -1189,7 +1189,7 @@
           "lean": "c9313586cda0"
         },
         "result": "warn",
-        "notes": "q=1 reductions proved by ring; but main inequality is asserted via a bespoke axiom, and compares fringe_spacing(q=1) vs envelope_width(q) — strategy unclear.",
+        "notes": "q=1 reductions proved by ring; but main inequality is asserted via a bespoke axiom, and compares fringe_spacing(q=1) vs envelope_width(q) \u2014 strategy unclear.",
         "reviewed_at": "2026-06-25T17:06:24.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1377,7 +1377,7 @@
           "lean": "c9313586cda0"
         },
         "result": "fail",
-        "notes": "Main thm double_slit_massive_pattern discharged by custom 'axiom double_slit_massive_pattern_axiom' — substantive (envelope>Fraunhofer) claim asserted, not proved.",
+        "notes": "Main thm double_slit_massive_pattern discharged by custom 'axiom double_slit_massive_pattern_axiom' \u2014 substantive (envelope>Fraunhofer) claim asserted, not proved.",
         "reviewed_at": "2026-06-25T17:05:35.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1814,7 +1814,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/double-slit-massive-pattern.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/double-slit-massive-pattern.lean:1 — content/quantum-observable-universe/observations/double-slit-massive-pattern.lean:67:2: error: No goals to be solved"
+        "evidence": "content/quantum-observable-universe/observations/double-slit-massive-pattern.lean:1 \u2014 content/quantum-observable-universe/observations/double-slit-massive-pattern.lean:67:2: error: No goals to be solved"
       }
     ],
     "da-referee-verdict": [
@@ -1856,6 +1856,18 @@
         },
         "reviewed_at": "2026-07-05T04:39:43.766Z",
         "reviewed_sha": "7415132ccce30885dcfd323600b8bcf311c431e4"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

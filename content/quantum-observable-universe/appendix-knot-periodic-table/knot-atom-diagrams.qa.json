@@ -983,9 +983,9 @@
         },
         "reviewed_at": "2026-06-28T07:05:42.356Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "The exact topological definition of the bracket notation $[⋯]^*$ indicating a 'closed sub-Hopf link' is left mathematically ambiguous.",
+        "notes": "The exact topological definition of the bracket notation $[\u22ef]^*$ indicating a 'closed sub-Hopf link' is left mathematically ambiguous.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/appendix-knot-periodic-table/knot-atom-diagrams.md:27 — Brackets $[\\cdots]^*$ denote a **closed sub-Hopf link**"
+        "evidence": "content/quantum-observable-universe/appendix-knot-periodic-table/knot-atom-diagrams.md:27 \u2014 Brackets $[\\cdots]^*$ denote a **closed sub-Hopf link**"
       }
     ],
     "da-empirical-fragility": [
@@ -1055,6 +1055,18 @@
         "severity": "minor",
         "verdict": "survivable-objection",
         "referee_argument": "The exact mathematical definition of the closed sub-Hopf link notation $[\\cdots]^*$ is ambiguous, and explaining chemical reactivity and electron shells purely via topological sub-link closures lacks physical basis."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Tightened explanations of knot atom diagrams. Simplified phrasing, unified terminology, preserved visual conventions and tables.",
+        "reviewed_at": "2026-07-06T22:38:24Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

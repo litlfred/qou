@@ -1402,7 +1402,7 @@
         },
         "reviewed_at": "2026-06-28T07:05:44.350Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Checked mathematical consistency of the claim '**Proposition (locality–non-locality reconciliation).**' and found no counterexamples under the stated conditions.",
+        "notes": "Checked mathematical consistency of the claim '**Proposition (locality\u2013non-locality reconciliation).**' and found no counterexamples under the stated conditions.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
       }
@@ -1495,7 +1495,7 @@
         },
         "reviewed_at": "2026-06-28T07:05:44.350Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Logical transitions in the derivation of '**Proposition (locality–non-locality reconciliation).**' are sound; no non-sequiturs detected.",
+        "notes": "Logical transitions in the derivation of '**Proposition (locality\u2013non-locality reconciliation).**' are sound; no non-sequiturs detected.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/trace-locality-meets-gs-nonlocality.ts:1"
       }
@@ -1631,6 +1631,18 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims are consistent."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Applied Milnor brevity across all blocks in seq3. Removed verbose narrative framing. Clarified structural properties and eliminated speculative forward references.",
+        "reviewed_at": "2026-07-06T22:40:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

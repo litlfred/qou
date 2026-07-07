@@ -571,7 +571,7 @@
         "reviewed_at": "2026-07-05T11:55:26.473Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "severity": "major",
-        "evidence": "../qou/content/quantum-observable-universe/quantum-observable-universes/su2-emergence-volume-determinant.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "../qou/content/quantum-observable-universe/quantum-observable-universes/su2-emergence-volume-determinant.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -591,7 +591,7 @@
         "reviewed_at": "2026-07-05T11:55:26.473Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "severity": "major",
-        "evidence": "../qou/content/quantum-observable-universe/quantum-observable-universes/su2-emergence-volume-determinant.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "../qou/content/quantum-observable-universe/quantum-observable-universes/su2-emergence-volume-determinant.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1225,7 +1225,7 @@
           "ts": "231a79d4d266"
         },
         "result": "pass",
-        "notes": "Substantive: det=1 on every gauge automorphism ⟹ G⊆SL(2) (volume/qdet constraint). Well-posed.",
+        "notes": "Substantive: det=1 on every gauge automorphism \u27f9 G\u2286SL(2) (volume/qdet constraint). Well-posed.",
         "reviewed_at": "2026-06-25T17:06:30.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1286,7 +1286,7 @@
           "ts": "231a79d4d266"
         },
         "result": "warn",
-        "notes": "Implication axiomatised verbatim and re-applied; only the combined corollary adds a trivial ⟨_,_⟩ pairing.",
+        "notes": "Implication axiomatised verbatim and re-applied; only the combined corollary adds a trivial \u27e8_,_\u27e9 pairing.",
         "reviewed_at": "2026-06-25T17:06:30.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1343,7 +1343,7 @@
           "ts": "231a79d4d266"
         },
         "result": "fail",
-        "notes": "Same degenerate pattern as sibling: implication (∀g det=1 ⟹ G⊆SL2) is class field claim_pointwise_det_lifts_to_SL2; theorem applies it. Conclusion carried as a field; lift not derived.",
+        "notes": "Same degenerate pattern as sibling: implication (\u2200g det=1 \u27f9 G\u2286SL2) is class field claim_pointwise_det_lifts_to_SL2; theorem applies it. Conclusion carried as a field; lift not derived.",
         "reviewed_at": "2026-06-25T17:06:30.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1360,7 +1360,7 @@
           "ts": "231a79d4d266"
         },
         "result": "pass",
-        "notes": "Lean statement now faithfully states the .md claim; previously-dropped/weakened clauses restored as real propositions (open parts carry a cited sorry per §1, not omitted). Verified lean-direct exit 0.",
+        "notes": "Lean statement now faithfully states the .md claim; previously-dropped/weakened clauses restored as real propositions (open parts carry a cited sorry per \u00a71, not omitted). Verified lean-direct exit 0.",
         "reviewed_at": "2026-07-04T10:41:58.000Z",
         "reviewed_sha": "3dd36f14516a6043b87a5a6f8ad6a24bc6b16c13",
         "reviewer": {
@@ -1413,7 +1413,7 @@
           "ts": "231a79d4d266"
         },
         "result": "fail",
-        "notes": ":= ctx.claim_pointwise_det_lifts_to_SL2 h_all_det_one — projects a field that IS the lemma's implication. Self-assuming projection.",
+        "notes": ":= ctx.claim_pointwise_det_lifts_to_SL2 h_all_det_one \u2014 projects a field that IS the lemma's implication. Self-assuming projection.",
         "reviewed_at": "2026-06-25T17:06:30.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1430,7 +1430,7 @@
           "ts": "231a79d4d266"
         },
         "result": "pass",
-        "notes": "Re-encoded on branch claude/lean-qa-backlog-2h3f8d: carrier fields are now genuine sub-hypotheses (never the conclusion) and the theorem DERIVES its conclusion by composing them / applying proved lemmas — no longer projects an assumed field (AGENTS.md §3b-cond item 5). Verified lean-direct exit 0.",
+        "notes": "Re-encoded on branch claude/lean-qa-backlog-2h3f8d: carrier fields are now genuine sub-hypotheses (never the conclusion) and the theorem DERIVES its conclusion by composing them / applying proved lemmas \u2014 no longer projects an assumed field (AGENTS.md \u00a73b-cond item 5). Verified lean-direct exit 0.",
         "reviewed_at": "2026-07-04T10:41:58.000Z",
         "reviewed_sha": "3dd36f14516a6043b87a5a6f8ad6a24bc6b16c13",
         "reviewer": {
@@ -1866,6 +1866,18 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Volume constraint forces $\\\\det(g_V) = 1$' (concerning 'every tensor automorphism $g \\in G$ of the fibre functor $\\tau$') are consistent and formally verified."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq2 to enforce Milnor rules. Cleared forward/back references (e.g., 'Continuing QOU on SU(2)'). Streamlined explanation of Frobenius and dagger structures in Rep(SU(2)). Unified the logical flow of SU(2) emergence lemmas without cluttering cross-links.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

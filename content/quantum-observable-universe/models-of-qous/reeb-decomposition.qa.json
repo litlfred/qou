@@ -1051,7 +1051,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/models-of-qous/reeb-decomposition.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/models-of-qous/reeb-decomposition.lean:1 — content/quantum-observable-universe/models-of-qous/reeb-decomposition.lean:32:13: error: unexpected token 'section'; expected 'lemma'"
+        "evidence": "content/quantum-observable-universe/models-of-qous/reeb-decomposition.lean:1 \u2014 content/quantum-observable-universe/models-of-qous/reeb-decomposition.lean:32:13: error: unexpected token 'section'; expected 'lemma'"
       }
     ],
     "da-referee-verdict": [
@@ -1073,6 +1073,18 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/models-of-qous/reeb-decomposition.lean contains compilation errors: content/quantum-observable-universe/models-of-qous/reeb-decomposition.lean:32:13: error: unexpected token 'section'; expected 'lemma', invalidating the claimed formalization."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Removed back-references, used short declarative sentences, tightened explanations of limits, enforced Milnor economy and structural requirements.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

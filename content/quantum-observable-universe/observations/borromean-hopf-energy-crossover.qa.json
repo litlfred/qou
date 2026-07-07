@@ -777,7 +777,7 @@
         "reviewed_at": "2026-07-05T04:39:43.766Z",
         "reviewed_sha": "7415132ccce30885dcfd323600b8bcf311c431e4",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/observations/borromean-hopf-energy-crossover.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "content/quantum-observable-universe/observations/borromean-hopf-energy-crossover.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -798,7 +798,7 @@
         "reviewed_at": "2026-07-05T04:39:43.766Z",
         "reviewed_sha": "7415132ccce30885dcfd323600b8bcf311c431e4",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/observations/borromean-hopf-energy-crossover.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "content/quantum-observable-universe/observations/borromean-hopf-energy-crossover.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1049,6 +1049,18 @@
         },
         "reviewed_at": "2026-07-05T04:39:43.766Z",
         "reviewed_sha": "7415132ccce30885dcfd323600b8bcf311c431e4"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote observations_seq14.md. Removed narrative framing in favor of tight declarative sentences. Converted lists and propositions to strict formatting.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

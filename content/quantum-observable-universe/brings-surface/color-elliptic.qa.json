@@ -1238,7 +1238,7 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "major",
         "evidence": "lean/QOU/Brings/color_elliptic.lean:48-52: `theorem color_elliptic [ctx : ColorEllipticContext] : ctx.X^3 + ... = 0 := ctx.claim_color_elliptic`",
-        "notes": "lean.ref resolves to the library stub QOU.Brings.color_elliptic (candidate 2; the sibling color-elliptic.lean is a different namespace of ring-identity helpers). The resolved theorem encodes only the cubic identity X^3+...=0, and does so by ASSUMING it as a class field — the .md's headline claim ('for generic z this defines an elliptic curve; j-invariant varies rationally') is not derived. Conclusion (cubic equation) does match the displayed .md equation, hence warn not fail, but the elliptic-curve result is unformalised and assumed."
+        "notes": "lean.ref resolves to the library stub QOU.Brings.color_elliptic (candidate 2; the sibling color-elliptic.lean is a different namespace of ring-identity helpers). The resolved theorem encodes only the cubic identity X^3+...=0, and does so by ASSUMING it as a class field \u2014 the .md's headline claim ('for generic z this defines an elliptic curve; j-invariant varies rationally') is not derived. Conclusion (cubic equation) does match the displayed .md equation, hence warn not fail, but the elliptic-curve result is unformalised and assumed."
       },
       {
         "field_hash": {
@@ -1254,7 +1254,7 @@
         },
         "reviewed_at": "2026-07-06T04:41:30.202Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:color-elliptic' → expected 'color_elliptic'; Lean declares: R_q, q_param, q_inv_param, ColorEllipticFibre, colorCubic.... Structural match via content."
+        "notes": "Label 'prop:color-elliptic' \u2192 expected 'color_elliptic'; Lean declares: R_q, q_param, q_inv_param, ColorEllipticFibre, colorCubic.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1296,7 +1296,7 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "minor",
         "evidence": "lean/QOU/Brings/color_elliptic.lean:52: `ctx.claim_color_elliptic`",
-        "notes": "score 0.1 — no strategy; the resolved proof is a one-line projection of a class field. Opaque (placeholder stub)."
+        "notes": "score 0.1 \u2014 no strategy; the resolved proof is a one-line projection of a class field. Opaque (placeholder stub)."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1338,7 +1338,7 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "minor",
         "evidence": "lean/QOU/Brings/color_elliptic.lean:6-12: docstring 'Placeholder canonical ... full Lean statement and proof are pending'",
-        "notes": "score 0.2 — restates-target style: the resolved theorem assumes its own conclusion as a field rather than deriving it; the real elliptic-curve content is unformalised."
+        "notes": "score 0.2 \u2014 restates-target style: the resolved theorem assumes its own conclusion as a field rather than deriving it; the real elliptic-curve content is unformalised."
       }
     ],
     "proof-rater-novelty": [
@@ -1378,7 +1378,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score 0.3 — standard cubic; projection stub adds no novel argument."
+        "notes": "score 0.3 \u2014 standard cubic; projection stub adds no novel argument."
       }
     ],
     "proof-statement-integrity": [
@@ -1452,7 +1452,7 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "critical",
         "evidence": "lean/QOU/Brings/color_elliptic.lean:28-52: `class ColorEllipticContext ... where claim_color_elliptic : X^3 + (z+1)X^2 + ... = 0` then `theorem color_elliptic [ctx : ColorEllipticContext] : <same cubic> = 0 := ctx.claim_color_elliptic`",
-        "notes": "Verbatim self-assuming projection (P ⊢ P): the theorem's conclusion IS the class field `claim_color_elliptic`, handed straight back. The inherited MarkovTraceContext sibling fields are unused. No derivation/composition. This is the §3b-cond anti-pattern and a deletion/replacement target — the real algebraic content lives in the sibling color-elliptic.lean (ring lemmas) but is not what the ref resolves to."
+        "notes": "Verbatim self-assuming projection (P \u22a2 P): the theorem's conclusion IS the class field `claim_color_elliptic`, handed straight back. The inherited MarkovTraceContext sibling fields are unused. No derivation/composition. This is the \u00a73b-cond anti-pattern and a deletion/replacement target \u2014 the real algebraic content lives in the sibling color-elliptic.lean (ring lemmas) but is not what the ref resolves to."
       },
       {
         "field_hash": {
@@ -1460,7 +1460,7 @@
           "ts": "9da0df7b86b8"
         },
         "result": "pass",
-        "notes": "Re-encoded on branch claude/lean-qa-backlog-2h3f8d: carrier fields are now genuine sub-hypotheses (never the conclusion) and the theorem DERIVES its conclusion by composing them / applying proved lemmas — no longer projects an assumed field (AGENTS.md §3b-cond item 5). Verified lean-direct exit 0.",
+        "notes": "Re-encoded on branch claude/lean-qa-backlog-2h3f8d: carrier fields are now genuine sub-hypotheses (never the conclusion) and the theorem DERIVES its conclusion by composing them / applying proved lemmas \u2014 no longer projects an assumed field (AGENTS.md \u00a73b-cond item 5). Verified lean-direct exit 0.",
         "reviewed_at": "2026-07-04T10:41:58.000Z",
         "reviewed_sha": "3dd36f14516a6043b87a5a6f8ad6a24bc6b16c13",
         "reviewer": {
@@ -1854,7 +1854,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/brings-surface/color-elliptic.lean:27:13: error: unexpected token 'section'; expected 'lemma'.",
-        "evidence": "content/quantum-observable-universe/brings-surface/color-elliptic.lean:1 — content/quantum-observable-universe/brings-surface/color-elliptic.lean:27:13: error: unexpected token 'section'; expected 'lemma'",
+        "evidence": "content/quantum-observable-universe/brings-surface/color-elliptic.lean:1 \u2014 content/quantum-observable-universe/brings-surface/color-elliptic.lean:27:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "minor"
       }
     ],
@@ -1876,6 +1876,18 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/brings-surface/color-elliptic.lean:27:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "critical"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote brings-surface_seq5.md applying Milnor standard. Replaced passive voice, eliminated transition words. Assured math preservation.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

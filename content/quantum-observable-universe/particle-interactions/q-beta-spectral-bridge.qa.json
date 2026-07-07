@@ -2552,7 +2552,7 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "minor",
         "evidence": "q-beta-spectral-bridge.md:131 '## Reading' and :141-142 'Form A and Form B are not competing predictions but a single observable expressed in two bases'",
-        "notes": "A '## Reading' interpretation section follows the statement+proof in the same block, with no separate interprets: remark holding the 'same observable, two bases' interpretation. Borderline — the conditional status is correctly in authorNotes, but the Reading section is interpretive prose mislocated in the provable block."
+        "notes": "A '## Reading' interpretation section follows the statement+proof in the same block, with no separate interprets: remark holding the 'same observable, two bases' interpretation. Borderline \u2014 the conditional status is correctly in authorNotes, but the Reading section is interpretive prose mislocated in the provable block."
       }
     ],
     "fit-section-chapter": [
@@ -2623,7 +2623,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Explicitly archimedean block (Q_β, MeV, q_0, Real.log) carrying the §3b-cond conditional banner at md:1; matches its archimedean regime."
+        "notes": "Explicitly archimedean block (Q_\u03b2, MeV, q_0, Real.log) carrying the \u00a73b-cond conditional banner at md:1; matches its archimedean regime."
       }
     ],
     "wall-side-proof": [
@@ -2659,7 +2659,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Taylor expansion + ratio algebra over the archimedean statement — proof method matches the archimedean side."
+        "notes": "Taylor expansion + ratio algebra over the archimedean statement \u2014 proof method matches the archimedean side."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -2710,8 +2710,8 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "major",
-        "evidence": "q-beta-spectral-bridge.lean:228-241 'theorem q_beta_spectral_bridge : (∀ h z, (h(2-h)/2)·z = (1-h/2)(zh)) ∧ ... (two more polynomial identities)' vs md:31-43 full bridge ratio + exp-remainder bound",
-        "notes": "The ref decl q_beta_spectral_bridge faithfully encodes only the three polynomial identities (the algebraic core of the proof), not the full narrative conclusion (the 1+(z-1)h/2+O(h²) bridge ratio with Real.log, plus the conj-conditional exponential remainder). The docstring acknowledges this scope split; the analytic part lives in separate (axiom-backed) lemmas. Reconcilable scope gap rather than a theorem-changing divergence → warn."
+        "evidence": "q-beta-spectral-bridge.lean:228-241 'theorem q_beta_spectral_bridge : (\u2200 h z, (h(2-h)/2)\u00b7z = (1-h/2)(zh)) \u2227 ... (two more polynomial identities)' vs md:31-43 full bridge ratio + exp-remainder bound",
+        "notes": "The ref decl q_beta_spectral_bridge faithfully encodes only the three polynomial identities (the algebraic core of the proof), not the full narrative conclusion (the 1+(z-1)h/2+O(h\u00b2) bridge ratio with Real.log, plus the conj-conditional exponential remainder). The docstring acknowledges this scope split; the analytic part lives in separate (axiom-backed) lemmas. Reconcilable scope gap rather than a theorem-changing divergence \u2192 warn."
       },
       {
         "field_hash": {
@@ -2808,7 +2808,7 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "minor",
-        "notes": "score=0.9. Plan explicit: refine ⟨_,_,_⟩ delegating to three named lemmas (polynomial_bridge_identity / leading_order_ratio_identity / bridge_first_order_remainder), each a one-line ring/field_simp."
+        "notes": "score=0.9. Plan explicit: refine \u27e8_,_,_\u27e9 delegating to three named lemmas (polynomial_bridge_identity / leading_order_ratio_identity / bridge_first_order_remainder), each a one-line ring/field_simp."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -2859,7 +2859,7 @@
           "lean": "704c5929d112"
         },
         "result": "pass",
-        "notes": "Well-posed: Form A (NF-counit) ≡ Form B (transfer-matrix) as one observable in two bases, ratio=1+(z-1)h/2+O(h²); 50-dps witness; resolves an apparent prediction inconsistency.",
+        "notes": "Well-posed: Form A (NF-counit) \u2261 Form B (transfer-matrix) as one observable in two bases, ratio=1+(z-1)h/2+O(h\u00b2); 50-dps witness; resolves an apparent prediction inconsistency.",
         "reviewed_at": "2026-06-25T17:08:58.000Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
@@ -2940,7 +2940,7 @@
           "lean": "704c5929d112"
         },
         "result": "pass",
-        "notes": "Genuine bridge identity unifying two Q_β closed forms via Markov-Jones z-normalization; substantive, with exponential-remainder framing.",
+        "notes": "Genuine bridge identity unifying two Q_\u03b2 closed forms via Markov-Jones z-normalization; substantive, with exponential-remainder framing.",
         "reviewed_at": "2026-06-25T17:08:58.000Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
@@ -3089,7 +3089,7 @@
           "lean": "704c5929d112"
         },
         "result": "pass",
-        "notes": "Not a projection: the three ∀(h z:ℝ) identities are derived via ring/field_simp, no class-field assumption of the conclusion. Honest sorry only in the separate §3b-cond audit stub.",
+        "notes": "Not a projection: the three \u2200(h z:\u211d) identities are derived via ring/field_simp, no class-field assumption of the conclusion. Honest sorry only in the separate \u00a73b-cond audit stub.",
         "reviewed_at": "2026-06-25T17:08:58.000Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
@@ -3197,7 +3197,7 @@
           "lean": "704c5929d112"
         },
         "result": "pass",
-        "notes": "Non-degeneracy hypotheses (h≠0,z≠0,1-zh/2≠0) are satisfiable for real q_0; no contradictory premise.",
+        "notes": "Non-degeneracy hypotheses (h\u22600,z\u22600,1-zh/2\u22600) are satisfiable for real q_0; no contradictory premise.",
         "reviewed_at": "2026-06-25T17:08:58.000Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
@@ -3222,7 +3222,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "No False/contradictory premise; the inner non-degeneracy hypotheses (h≠0, z≠0, 1-zh/2≠0) are satisfiable at the substrate."
+        "notes": "No False/contradictory premise; the inner non-degeneracy hypotheses (h\u22600, z\u22600, 1-zh/2\u22600) are satisfiable at the substrate."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -3294,7 +3294,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Top decl has no hypotheses; the inner ∀-bound non-degeneracy hypotheses are consumed by leading_order_ratio_identity / bridge_first_order_remainder via field_simp."
+        "notes": "Top decl has no hypotheses; the inner \u2200-bound non-degeneracy hypotheses are consumed by leading_order_ratio_identity / bridge_first_order_remainder via field_simp."
       }
     ],
     "proof-no-decide-masking": [
@@ -3586,7 +3586,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:1 — content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:91:2: error: No goals to be solved"
+        "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:91:2: error: No goals to be solved"
       }
     ],
     "da-referee-verdict": [
@@ -3628,6 +3628,12 @@
         },
         "reviewed_at": "2026-07-03T00:52:57.492Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq8"
       }
     ]
   },

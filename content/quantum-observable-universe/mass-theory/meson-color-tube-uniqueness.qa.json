@@ -1118,7 +1118,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:1 — Lean file exists",
+        "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:1 \u2014 Lean file exists",
         "severity": "minor"
       }
     ],
@@ -1137,7 +1137,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean proof contains compilation errors.",
-        "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:1 — content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:143:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
+        "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:1 \u2014 content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:143:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
         "severity": "minor"
       }
     ],
@@ -1186,7 +1186,7 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.430Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:meson-color-tube-uniqueness' → expected 'meson_color_tube_uniqueness'; Lean declares: alphaShift, alphaShift_T_2_3, alphaShift_T_2_4, QChar, MesonGMORFactorization.... Structural match via content."
+        "notes": "Label 'prop:meson-color-tube-uniqueness' \u2192 expected 'meson_color_tube_uniqueness'; Lean declares: alphaShift, alphaShift_T_2_3, alphaShift_T_2_4, QChar, MesonGMORFactorization.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1255,7 +1255,7 @@
           "lean": "bd777034f37c"
         },
         "result": "pass",
-        "notes": "m_K^2/m_pi^2=[3]_q·[4]_q via alpha_shift(T(2,3)),alpha_shift(T(2,4)); dashboard 23.4 ppb. Structural index identification well-posed; q-char eval is the open piece.",
+        "notes": "m_K^2/m_pi^2=[3]_q\u00b7[4]_q via alpha_shift(T(2,3)),alpha_shift(T(2,4)); dashboard 23.4 ppb. Structural index identification well-posed; q-char eval is the open piece.",
         "reviewed_at": "2026-06-25T17:11:01.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -1337,7 +1337,7 @@
           "lean": "bd777034f37c"
         },
         "result": "pass",
-        "notes": "Clean §3b-cond: alphaShift_T_2_3/_2_4 are genuine rfl theorems; meson_ratio_via_alpha_shift DERIVES the alpha_shift-indexed form by rw[proved lemmas]+hF.factors (non-degenerate, item5 ok).",
+        "notes": "Clean \u00a73b-cond: alphaShift_T_2_3/_2_4 are genuine rfl theorems; meson_ratio_via_alpha_shift DERIVES the alpha_shift-indexed form by rw[proved lemmas]+hF.factors (non-degenerate, item5 ok).",
         "reviewed_at": "2026-06-25T17:11:01.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -1505,8 +1505,8 @@
       {
         "scope": "limited",
         "ruling": "surviving",
-        "referee_argument": "meson-color-tube-uniqueness.md:1-5 + lean:108-129 — title/statement claims m_K²/m_π² 'factors UNIQUELY through T(2,3) and T(2,4) … with the q-integer indices FORCED by the proved α_shift formula'. But the Lean meson_ratio_via_alpha_shift (lean:122-129) proves only mK2_over_mpi2 q = qChar q (alphaShift 2 3) * qChar q (alphaShift 2 4) by rewriting 3 = alphaShift 2 3 (=3·(2−1)=3, rfl) into the UNCONSTRAINED class hypothesis MesonGMORFactorization.factors. No minimisation/uniqueness principle is proved; the α_shift 'derivation of the indices' is a numeric tautology, and the abstract qChar imposes no q-integer closed form.",
-        "rebuttal": "surviving — the .md itself (58-63) concedes 'why specifically the smallest non-trivial torus-knot pair carries the meson role … Lean target: a theorem deriving the index pair (3,4) from a minimisation principle' is OPEN. corpus-grep finds NO closure; the block's own meson-3x4-structural-origin.witness.json says 'Spin assignment post-hoc', and the cited audit docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md is titled 'meson m_K/m_π is fitted, not a derived character ratio'.",
+        "referee_argument": "meson-color-tube-uniqueness.md:1-5 + lean:108-129 \u2014 title/statement claims m_K\u00b2/m_\u03c0\u00b2 'factors UNIQUELY through T(2,3) and T(2,4) \u2026 with the q-integer indices FORCED by the proved \u03b1_shift formula'. But the Lean meson_ratio_via_alpha_shift (lean:122-129) proves only mK2_over_mpi2 q = qChar q (alphaShift 2 3) * qChar q (alphaShift 2 4) by rewriting 3 = alphaShift 2 3 (=3\u00b7(2\u22121)=3, rfl) into the UNCONSTRAINED class hypothesis MesonGMORFactorization.factors. No minimisation/uniqueness principle is proved; the \u03b1_shift 'derivation of the indices' is a numeric tautology, and the abstract qChar imposes no q-integer closed form.",
+        "rebuttal": "surviving \u2014 the .md itself (58-63) concedes 'why specifically the smallest non-trivial torus-knot pair carries the meson role \u2026 Lean target: a theorem deriving the index pair (3,4) from a minimisation principle' is OPEN. corpus-grep finds NO closure; the block's own meson-3x4-structural-origin.witness.json says 'Spin assignment post-hoc', and the cited audit docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md is titled 'meson m_K/m_\u03c0 is fitted, not a derived character ratio'.",
         "evidence": [
           {
             "text": "meson-color-tube-uniqueness.md:1-5"
@@ -1543,8 +1543,8 @@
       {
         "scope": "limited",
         "ruling": "partial",
-        "referee_argument": "three mutually inconsistent m_K/m_π numbers: ts:18 authorNotes 'the 1098× m_K/m_π miss'; md:79 'err 23.44 ppb vs target 263.6 ppb'; fresh witness per-observable-100x-status.witness.json obs=m_K/m_pi gives err_ppb=28.01, miss_factor=0.1062, beats_100x=TRUE. None of {1098×, 23.44 ppb, 28.01 ppb} agree.",
-        "rebuttal": "partial — the witness scriptHash 4e679e710146 matches the live producer (FRESH) and reproduces a PASSING result (28.01 ppb < 263.6 ppb). The 1098× authorNotes is a pre-fix stale claim (q0-repin-staleness) contradicted by the now-passing witness; md's 23.44 ppb is simply wrong. Prose stale/wrong but NOT load-bearing for the Lean; the empirical core is sound.",
+        "referee_argument": "three mutually inconsistent m_K/m_\u03c0 numbers: ts:18 authorNotes 'the 1098\u00d7 m_K/m_\u03c0 miss'; md:79 'err 23.44 ppb vs target 263.6 ppb'; fresh witness per-observable-100x-status.witness.json obs=m_K/m_pi gives err_ppb=28.01, miss_factor=0.1062, beats_100x=TRUE. None of {1098\u00d7, 23.44 ppb, 28.01 ppb} agree.",
+        "rebuttal": "partial \u2014 the witness scriptHash 4e679e710146 matches the live producer (FRESH) and reproduces a PASSING result (28.01 ppb < 263.6 ppb). The 1098\u00d7 authorNotes is a pre-fix stale claim (q0-repin-staleness) contradicted by the now-passing witness; md's 23.44 ppb is simply wrong. Prose stale/wrong but NOT load-bearing for the Lean; the empirical core is sound.",
         "evidence": [
           {
             "text": "meson-color-tube-uniqueness.ts:18"
@@ -1578,8 +1578,8 @@
       {
         "scope": "limited",
         "ruling": "partial",
-        "referee_argument": "md:48-52 describes meson_ratio_via_alpha_shift as delivering the uniqueness 'staged via §3b-cond', and the title says 'uniqueness'. The Lean theorem is a pointwise factorisation projection, not a uniqueness statement; the only Subsingleton object (meson_ratio_subsingleton, lean:134-144) proves two evaluators sharing the SAME qChar + SAME class agree — a trivial congruence, not uniqueness of (3,4).",
-        "rebuttal": "partial — not contradictory at the proposition level (the §3b-cond staging is present: MesonGMORFactorization is the named unproved class), but the NAME 'uniqueness' + the subsingleton companion oversell: Subsingleton over {f // ∃ _ : Class f, True} is vacuous-adjacent (any two functions satisfying the same unconstrained axiom are equal by funext), proving nothing about why (3,4). Divergence in emphasis/labelling, not a false Lean statement.",
+        "referee_argument": "md:48-52 describes meson_ratio_via_alpha_shift as delivering the uniqueness 'staged via \u00a73b-cond', and the title says 'uniqueness'. The Lean theorem is a pointwise factorisation projection, not a uniqueness statement; the only Subsingleton object (meson_ratio_subsingleton, lean:134-144) proves two evaluators sharing the SAME qChar + SAME class agree \u2014 a trivial congruence, not uniqueness of (3,4).",
+        "rebuttal": "partial \u2014 not contradictory at the proposition level (the \u00a73b-cond staging is present: MesonGMORFactorization is the named unproved class), but the NAME 'uniqueness' + the subsingleton companion oversell: Subsingleton over {f // \u2203 _ : Class f, True} is vacuous-adjacent (any two functions satisfying the same unconstrained axiom are equal by funext), proving nothing about why (3,4). Divergence in emphasis/labelling, not a false Lean statement.",
         "evidence": [
           {
             "text": "meson-color-tube-uniqueness.lean:134-144"
@@ -1611,7 +1611,7 @@
         "scope": "limited",
         "ruling": "rebutted",
         "referee_argument": "C1 flagged sorry-free+proved+no-fitting+closed-form while Lean 'reportedly contains a sorry'; and upstream alpha-shift-torus-knot.lean proves alphaShift p k = k*(p-1) := by rfl, suggesting the chain rests on a tautology.",
-        "rebuttal": "rebutted — NO sorry anywhere in meson-color-tube-uniqueness.lean (tactic OR comment); the only 'sorry' token is the docstring word 'sorry-free' (lean:18). C1 = 4th-of-4 FALSE POSITIVE. Not a :True/∨True/def-disguised-True shadow-stub: lean.ref resolves SIBLING-FIRST to the real theorem at lean:122. The upstream rfl is honest (formula = its definition). Vacuity does not fire; the genuine defect is overclaim.",
+        "rebuttal": "rebutted \u2014 NO sorry anywhere in meson-color-tube-uniqueness.lean (tactic OR comment); the only 'sorry' token is the docstring word 'sorry-free' (lean:18). C1 = 4th-of-4 FALSE POSITIVE. Not a :True/\u2228True/def-disguised-True shadow-stub: lean.ref resolves SIBLING-FIRST to the real theorem at lean:122. The upstream rfl is honest (formula = its definition). Vacuity does not fire; the genuine defect is overclaim.",
         "evidence": [
           {
             "text": "meson-color-tube-uniqueness.lean:54-144"
@@ -1643,7 +1643,7 @@
         "scope": "limited",
         "ruling": "rebutted",
         "referee_argument": "the no-fitting label is strong; the (3,4) torus-knot index choice could be a hidden discrete DOF tuned to hit GMOR.",
-        "rebuttal": "rebutted — given (3,4), [3]_q·[4]_q is parameter-free (= q-CG fusion [2]_q+[4]_q+[6]_q, sibling meson-qcg-fusion-identity.lean:37-43 real field_simp;ring), and the α_em correction is an explicitly ACKNOWLEDGED CLASS-A anchor, not a hidden continuous DOF. The discrete (3,4) choice is the un-derived part — re-scoped to da-overclaim, not a hidden tuning parameter.",
+        "rebuttal": "rebutted \u2014 given (3,4), [3]_q\u00b7[4]_q is parameter-free (= q-CG fusion [2]_q+[4]_q+[6]_q, sibling meson-qcg-fusion-identity.lean:37-43 real field_simp;ring), and the \u03b1_em correction is an explicitly ACKNOWLEDGED CLASS-A anchor, not a hidden continuous DOF. The discrete (3,4) choice is the un-derived part \u2014 re-scoped to da-overclaim, not a hidden tuning parameter.",
         "evidence": [
           {
             "text": "content/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.lean:37-43"
@@ -1675,7 +1675,7 @@
         "scope": "limited",
         "ruling": "rebutted",
         "referee_argument": "the .md (75-78) cites dashboard Lean refs qou:QOU.BraidKnot.meson_qCG_3x4 + meson_EM_closed_form; could be mis-namespaced/non-existent.",
-        "rebuttal": "rebutted — both exist with the cited namespace QOU.BraidKnot: meson_qCG_3x4 at meson-qcg-fusion-identity.lean:37, meson_EM_closed_form at meson-em-sinh-closed-form.lean:38. jones1987 (references.ts:906), wenzl1988 (:3443) resolve. No misuse.",
+        "rebuttal": "rebutted \u2014 both exist with the cited namespace QOU.BraidKnot: meson_qCG_3x4 at meson-qcg-fusion-identity.lean:37, meson_EM_closed_form at meson-em-sinh-closed-form.lean:38. jones1987 (references.ts:906), wenzl1988 (:3443) resolve. No misuse.",
         "evidence": [
           {
             "text": "content/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.lean:37"
@@ -1705,7 +1705,7 @@
     "da-referee-verdict": [
       {
         "verdict": "open-objection",
-        "referee_argument": "Strip the labels and the proposition titled 'meson color-tube UNIQUENESS' proves no uniqueness. Its load-bearing Lean theorem rewrites the numeric tautology 3 = 3·(2−1) into an unconstrained class hypothesis and hands it back; the abstract qChar imposes no q-integer value; and the actual 'why the indices are (3,4)' minimisation principle is conceded-open in the block's own .md and corpus-empty. Worse, the block's own structural-origin witness admits the spin/index assignment is 'post-hoc', and the audit it cites is literally titled 'meson m_K/m_π is fitted, not a derived character ratio'. The C1 sorry-flag is a clean false positive (no sorry exists, 4th of 4), and the empirical value actually passes — but the title's strongest word, 'uniqueness… forced', is an overclaim its own materials refute.",
+        "referee_argument": "Strip the labels and the proposition titled 'meson color-tube UNIQUENESS' proves no uniqueness. Its load-bearing Lean theorem rewrites the numeric tautology 3 = 3\u00b7(2\u22121) into an unconstrained class hypothesis and hands it back; the abstract qChar imposes no q-integer value; and the actual 'why the indices are (3,4)' minimisation principle is conceded-open in the block's own .md and corpus-empty. Worse, the block's own structural-origin witness admits the spin/index assignment is 'post-hoc', and the audit it cites is literally titled 'meson m_K/m_\u03c0 is fitted, not a derived character ratio'. The C1 sorry-flag is a clean false positive (no sorry exists, 4th of 4), and the empirical value actually passes \u2014 but the title's strongest word, 'uniqueness\u2026 forced', is an overclaim its own materials refute.",
         "result": "fail",
         "field_hash": {
           "md": "7959b6443742",
@@ -1833,8 +1833,20 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
-        "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:1 — content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:143:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
+        "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:1 \u2014 content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:143:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
         "severity": "minor"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote mass-theory_seq11.md to strictly follow H1-H8. Streamlined LP constraints and operator choices. Clarified the categorical reading vs empirical consequences. All formulas and code structures preserved.",
+        "reviewed_at": "2026-07-06T23:10:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

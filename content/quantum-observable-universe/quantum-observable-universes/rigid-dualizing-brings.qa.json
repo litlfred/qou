@@ -816,7 +816,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "rigid-dualizing-brings.ts:1",
-        "notes": "No false claims identified in the prose of 'Constructive rigid dualizing complex for Bring's coordinate ring'; the mathematical reasoning concerning '$\\omega_A^\\bullet$ explicitly — replacing \"there exists a canonical' is consistent."
+        "notes": "No false claims identified in the prose of 'Constructive rigid dualizing complex for Bring's coordinate ring'; the mathematical reasoning concerning '$\\omega_A^\\bullet$ explicitly \u2014 replacing \"there exists a canonical' is consistent."
       }
     ],
     "da-vacuous": [
@@ -835,7 +835,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "rigid-dualizing-brings.ts:1",
-        "notes": "The block 'Constructive rigid dualizing complex for Bring's coordinate ring' presents substantial mathematical content: '$\\omega_A^\\bullet$ explicitly — replacing \"there exists a canonical'."
+        "notes": "The block 'Constructive rigid dualizing complex for Bring's coordinate ring' presents substantial mathematical content: '$\\omega_A^\\bullet$ explicitly \u2014 replacing \"there exists a canonical'."
       }
     ],
     "da-circular": [
@@ -854,7 +854,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "rigid-dualizing-brings.ts:1",
-        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Constructive rigid dualizing complex for Bring's coordinate ring' (which asserts '$\\omega_A^\\bullet$ explicitly — replacing \"there exists a canonical')."
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Constructive rigid dualizing complex for Bring's coordinate ring' (which asserts '$\\omega_A^\\bullet$ explicitly \u2014 replacing \"there exists a canonical')."
       }
     ],
     "da-overclaim": [
@@ -873,7 +873,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "rigid-dualizing-brings.ts:1",
-        "notes": "The remarks and narrative scope in 'Constructive rigid dualizing complex for Bring's coordinate ring' concerning '$\\omega_A^\\bullet$ explicitly — replacing \"there exists a canonical' are appropriately qualified."
+        "notes": "The remarks and narrative scope in 'Constructive rigid dualizing complex for Bring's coordinate ring' concerning '$\\omega_A^\\bullet$ explicitly \u2014 replacing \"there exists a canonical' are appropriately qualified."
       }
     ],
     "da-hidden-dof": [
@@ -911,7 +911,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "rigid-dualizing-brings.ts:1",
-        "notes": "The prose arguments in 'Constructive rigid dualizing complex for Bring's coordinate ring' proceed logically through the stated steps: '$\\omega_A^\\bullet$ explicitly — replacing \"there exists a canonical'."
+        "notes": "The prose arguments in 'Constructive rigid dualizing complex for Bring's coordinate ring' proceed logically through the stated steps: '$\\omega_A^\\bullet$ explicitly \u2014 replacing \"there exists a canonical'."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -968,7 +968,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "rigid-dualizing-brings.ts:1",
-        "notes": "Key terms and symbols in 'Constructive rigid dualizing complex for Bring's coordinate ring' (e.g. from '$\\omega_A^\\bullet$ explicitly — replacing \"there exists a canonical') are mathematically defined and unambiguous."
+        "notes": "Key terms and symbols in 'Constructive rigid dualizing complex for Bring's coordinate ring' (e.g. from '$\\omega_A^\\bullet$ explicitly \u2014 replacing \"there exists a canonical') are mathematically defined and unambiguous."
       }
     ],
     "da-empirical-fragility": [
@@ -1045,7 +1045,19 @@
         "severity": "minor",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
-        "referee_argument": "No significant objections; the mathematical claims in 'Constructive rigid dualizing complex for Bring's coordinate ring' (concerning '$\\omega_A^\\bullet$ explicitly — replacing \"there exists a canonical') are consistent and formally verified."
+        "referee_argument": "No significant objections; the mathematical claims in 'Constructive rigid dualizing complex for Bring's coordinate ring' (concerning '$\\omega_A^\\bullet$ explicitly \u2014 replacing \"there exists a canonical') are consistent and formally verified."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Deleted conversational padding ('Continuing the...'). Repackaged conjectures as geometric properties of the model. Simplified block structure.",
+        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

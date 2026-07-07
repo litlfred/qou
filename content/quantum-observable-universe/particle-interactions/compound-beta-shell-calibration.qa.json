@@ -1536,7 +1536,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -1557,7 +1557,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -3110,7 +3110,7 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.802Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:compound-beta-shell-calibration' → expected 'compound_beta_shell_calibration'; Lean declares: CompoundBetaChain, magic_crossing_Q_value, compound_beta_y_target_extraction, single_calibration_framework. Structural match via content."
+        "notes": "Label 'prop:compound-beta-shell-calibration' \u2192 expected 'compound_beta_shell_calibration'; Lean declares: CompoundBetaChain, magic_crossing_Q_value, compound_beta_y_target_extraction, single_calibration_framework. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -3905,7 +3905,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The mathematical claims in 'Compound β-decay calibration across magic shells' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.lean:52:44: error: Type mismatch.",
+        "notes": "The mathematical claims in 'Compound \u03b2-decay calibration across magic shells' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.lean:52:44: error: Type mismatch.",
         "severity": "minor",
         "evidence": "compound-beta-shell-calibration.lean:1"
       },
@@ -4039,7 +4039,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No circular reasoning or self-assuming definitions detected in 'Compound β-decay calibration across magic shells'.",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Compound \u03b2-decay calibration across magic shells'.",
         "severity": "minor",
         "evidence": "compound-beta-shell-calibration.ts:1"
       },
@@ -4106,7 +4106,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The remarks and narrative scope in 'Compound β-decay calibration across magic shells' are appropriately qualified.",
+        "notes": "The remarks and narrative scope in 'Compound \u03b2-decay calibration across magic shells' are appropriately qualified.",
         "severity": "minor"
       },
       {
@@ -4175,7 +4175,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Compound β-decay calibration across magic shells'.",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Compound \u03b2-decay calibration across magic shells'.",
         "severity": "minor",
         "evidence": "compound-beta-shell-calibration.ts:1"
       },
@@ -4228,7 +4228,7 @@
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "major",
-        "evidence": "The RHS is fully determined by AME β-decay data plus the categorical level-3 shadow prices — no free parameters beyond E_0.",
+        "evidence": "The RHS is fully determined by AME \u03b2-decay data plus the categorical level-3 shadow prices \u2014 no free parameters beyond E_0.",
         "notes": "Claiming 'no free parameters beyond E_0' hides the fact that level-3 shadow prices Q_beta^(3) themselves might carry implicit calibrations or empirical fits. This is a potential hidden degree of freedom."
       }
     ],
@@ -4380,7 +4380,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No citations are present in 'Compound β-decay calibration across magic shells', hence no citation misuse is possible.",
+        "notes": "No citations are present in 'Compound \u03b2-decay calibration across magic shells', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "compound-beta-shell-calibration.ts:1"
       },
@@ -4447,7 +4447,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Key terms and symbols in 'Compound β-decay calibration across magic shells' are mathematically defined and unambiguous.",
+        "notes": "Key terms and symbols in 'Compound \u03b2-decay calibration across magic shells' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "compound-beta-shell-calibration.ts:1"
       },
@@ -4516,7 +4516,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The algebraic and logical relations in 'Compound β-decay calibration across magic shells' are independent of empirical tuning parameters.",
+        "notes": "The algebraic and logical relations in 'Compound \u03b2-decay calibration across magic shells' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "compound-beta-shell-calibration.ts:1"
       },
@@ -4584,7 +4584,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The physical concepts described in 'Compound β-decay calibration across magic shells' are consistent with quantum observable mechanics.",
+        "notes": "The physical concepts described in 'Compound \u03b2-decay calibration across magic shells' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "compound-beta-shell-calibration.ts:1"
       },
@@ -4655,7 +4655,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "compound-beta-shell-calibration.lean:1 — content/quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.lean:52:44: error: Type mismatch"
+        "evidence": "compound-beta-shell-calibration.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/compound-beta-shell-calibration.lean:52:44: error: Type mismatch"
       },
       {
         "field_hash": {
@@ -4771,6 +4771,12 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq21"
       }
     ]
   },

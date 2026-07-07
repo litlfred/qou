@@ -2406,7 +2406,7 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.802Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:box-braid-irreducibility' → expected 'box_braid_irreducibility'; Lean declares: TorusKnot, TorusKnot.crossingNumber, T35, T35_crossing_number, TorusKnot.braidIndex.... Structural match via content."
+        "notes": "Label 'prop:box-braid-irreducibility' \u2192 expected 'box_braid_irreducibility'; Lean declares: TorusKnot, TorusKnot.crossingNumber, T35, T35_crossing_number, TorusKnot.braidIndex.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2556,7 +2556,7 @@
         },
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       },
       {
         "field_hash": {
@@ -2871,7 +2871,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "box-braid-irreducibility.lean:1 — content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean:72:65: error: unsolved goals"
+        "evidence": "box-braid-irreducibility.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean:72:65: error: unsolved goals"
       }
     ],
     "da-referee-verdict": [
@@ -2913,6 +2913,18 @@
         },
         "reviewed_at": "2026-07-03T00:52:57.492Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

@@ -48,7 +48,19 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.430Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:markov-trace-frobenius-selection' → expected 'markov_trace_frobenius_selection'; Lean declares: MarkovTraceData, tau_M_block_value, tau_M_non_degenerate, frobenius_codim_well_defined, tau_M_satisfies_non_degeneracy.... Structural match via content."
+        "notes": "Label 'prop:markov-trace-frobenius-selection' \u2192 expected 'markov_trace_frobenius_selection'; Lean declares: MarkovTraceData, tau_M_block_value, tau_M_non_degenerate, frobenius_codim_well_defined, tau_M_satisfies_non_degeneracy.... Structural match via content."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote mass-theory_seq11.md to strictly follow H1-H8. Streamlined LP constraints and operator choices. Clarified the categorical reading vs empirical consequences. All formulas and code structures preserved.",
+        "reviewed_at": "2026-07-06T23:10:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

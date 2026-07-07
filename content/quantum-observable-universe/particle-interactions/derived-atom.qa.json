@@ -1794,7 +1794,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/derived-atom.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/derived-atom.lean:1 — content/quantum-observable-universe/particle-interactions/derived-atom.lean:24:4: error: `QOU.Interactions.DerivedAtom` has already been declared"
+        "evidence": "content/quantum-observable-universe/particle-interactions/derived-atom.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/derived-atom.lean:24:4: error: `QOU.Interactions.DerivedAtom` has already been declared"
       }
     ],
     "da-referee-verdict": [
@@ -1854,6 +1854,12 @@
         "reviewed_at": "2026-07-06T04:41:29.802Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Lean sibling is a stub/re-exporter; canonical formalisation lives in a Lake package and is audited by lean-compile-audit."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq4"
       }
     ]
   },

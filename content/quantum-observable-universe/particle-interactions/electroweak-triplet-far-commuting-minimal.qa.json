@@ -28,7 +28,13 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.802Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'thm:ew-triplet-far-commuting-minimal' → expected 'ew_triplet_far_commuting_minimal'; Lean declares: strandsFor, far_commuting_top_index_ge, far_commuting_min_strands, far_commuting_min_witness, torusLinkGenus.... Structural match via content."
+        "notes": "Label 'thm:ew-triplet-far-commuting-minimal' \u2192 expected 'ew_triplet_far_commuting_minimal'; Lean declares: strandsFor, far_commuting_top_index_ge, far_commuting_min_strands, far_commuting_min_witness, torusLinkGenus.... Structural match via content."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq18"
       }
     ]
   },

@@ -326,7 +326,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "In sec:pair-production-knot-operators of Ch13; γγ pair-production generating the operator basis squarely fits the section scope."
+        "notes": "In sec:pair-production-knot-operators of Ch13; \u03b3\u03b3 pair-production generating the operator basis squarely fits the section scope."
       }
     ],
     "wall-side-statement": [
@@ -344,7 +344,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Generic-ring algebraic statement (Hecke H₃(q) coefficient identity); no archimedean construct, no numeric q₀, no order hypothesis."
+        "notes": "Generic-ring algebraic statement (Hecke H\u2083(q) coefficient identity); no archimedean construct, no numeric q\u2080, no order hypothesis."
       }
     ],
     "wall-side-proof": [
@@ -381,8 +381,8 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "major",
-        "evidence": "gamma-gamma-generates-particles.md:1-6 claims '…reach every operator of the six-element basis'; .lean:42-45 lean.ref gamma_gamma_chirality_surjective proves only joint surjectivity of the (L₊,L₋) chiral pair.",
-        "notes": "Lean faithfully encodes the explicitly-scoped 'generative core' (chirality surjectivity + L₋ reachability via gamma_gamma_reaches_Lminus); the full 'every basis operator' claim and the e⁻ opening are deferred to the upstream breit-wheeler block per the .md 'Lean structure' section. Reconcilable; the Lean is a faithful encoding of the sub-claims it states it covers, not a divergent or stub proof."
+        "evidence": "gamma-gamma-generates-particles.md:1-6 claims '\u2026reach every operator of the six-element basis'; .lean:42-45 lean.ref gamma_gamma_chirality_surjective proves only joint surjectivity of the (L\u208a,L\u208b) chiral pair.",
+        "notes": "Lean faithfully encodes the explicitly-scoped 'generative core' (chirality surjectivity + L\u208b reachability via gamma_gamma_reaches_Lminus); the full 'every basis operator' claim and the e\u207b opening are deferred to the upstream breit-wheeler block per the .md 'Lean structure' section. Reconcilable; the Lean is a faithful encoding of the sub-claims it states it covers, not a divergent or stub proof."
       },
       {
         "field_hash": {
@@ -398,7 +398,7 @@
         },
         "reviewed_at": "2026-07-06T04:41:30.359Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:gamma-gamma-generates-particles' → expected 'gamma_gamma_generates_particles'; Lean declares: coeffLplus, coeffLminus, gamma_gamma_chirality_surjective, singlePhotonCoeffLminus, gamma_gamma_reaches_Lminus. Structural match via content."
+        "notes": "Label 'prop:gamma-gamma-generates-particles' \u2192 expected 'gamma_gamma_generates_particles'; Lean declares: coeffLplus, coeffLminus, gamma_gamma_chirality_surjective, singlePhotonCoeffLminus, gamma_gamma_reaches_Lminus. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -416,7 +416,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score=0.9: plan stated up front — expand γ₁·γ₂, reduce by the Hecke relation, read off the five/six basis coefficients, then the cross-color L₊/L₋ surjectivity."
+        "notes": "score=0.9: plan stated up front \u2014 expand \u03b3\u2081\u00b7\u03b3\u2082, reduce by the Hecke relation, read off the five/six basis coefficients, then the cross-color L\u208a/L\u208b surjectivity."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -488,7 +488,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Proofs construct explicit witnesses (⟨a,b,1,1,…⟩, ⟨0,1,1,0,…⟩) and compute; no field whose type is the conclusion handed back."
+        "notes": "Proofs construct explicit witnesses (\u27e8a,b,1,1,\u2026\u27e9, \u27e80,1,1,0,\u2026\u27e9) and compute; no field whose type is the conclusion handed back."
       }
     ],
     "proof-no-trivial-true": [
@@ -506,7 +506,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Goals are genuine ∃-statements about coeff equalities / inequality (coeffLminus ≠ 0); not True / x=x."
+        "notes": "Goals are genuine \u2203-statements about coeff equalities / inequality (coeffLminus \u2260 0); not True / x=x."
       }
     ],
     "proof-no-false-premise": [
@@ -838,6 +838,18 @@
         },
         "reviewed_at": "2026-07-03T00:52:57.812Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

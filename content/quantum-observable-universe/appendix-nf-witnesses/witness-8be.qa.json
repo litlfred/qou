@@ -888,7 +888,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/appendix-nf-witnesses/witness-8be.lean:1 — Lean file exists"
+        "evidence": "content/quantum-observable-universe/appendix-nf-witnesses/witness-8be.lean:1 \u2014 Lean file exists"
       }
     ],
     "da-false-claim": [
@@ -1154,6 +1154,18 @@
         },
         "reviewed_at": "2026-07-05T16:25:36.415Z",
         "reviewed_sha": "936880484d8cb12fb4452c68965b7e5d6a4b2700"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote Pauli witness descriptions to be highly declarative. Enforced brevity rules and clear separation of ideas.",
+        "reviewed_at": "2026-07-06T22:43:03Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

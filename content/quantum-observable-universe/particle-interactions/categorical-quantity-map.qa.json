@@ -1367,7 +1367,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The block 'Categorical quantity map: mass, Q-value, decay rate, density' presents substantial mathematical content: The four principal physical quantities — mass, Q-value, decay rate, and density — correspond to four distinct functio...",
+        "notes": "The block 'Categorical quantity map: mass, Q-value, decay rate, density' presents substantial mathematical content: The four principal physical quantities \u2014 mass, Q-value, decay rate, and density \u2014 correspond to four distinct functio...",
         "severity": "minor"
       }
     ],
@@ -1577,6 +1577,18 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Categorical quantity map: mass, Q-value, decay rate, density' are consistent."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

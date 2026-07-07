@@ -259,7 +259,7 @@
         "reviewed_at": "2026-07-05T05:15:13.679Z",
         "reviewed_sha": "e28e45e2256ea73187107f230cc7beeb37a6c301",
         "severity": "critical",
-        "evidence": "../qou/content/quantum-observable-universe/mass-theory/hecke-markov-transition.lean:1: Lean file uses archimedean constructs but neither the .md narrative nor the .ts authorNotes acknowledge archimedean specialisation. Add a §7c-style note (in authorNotes, per §4d) or move the archimedean evaluation to a sibling block."
+        "evidence": "../qou/content/quantum-observable-universe/mass-theory/hecke-markov-transition.lean:1: Lean file uses archimedean constructs but neither the .md narrative nor the .ts authorNotes acknowledge archimedean specialisation. Add a \u00a77c-style note (in authorNotes, per \u00a74d) or move the archimedean evaluation to a sibling block."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1238,7 +1238,7 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.430Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:hecke-markov-transition' → expected 'hecke_markov_transition'; Lean declares: SpectralIdempotentData, SpectralIdempotentData.gap, SpectralIdempotentData.gap_pos, SpectralIdempotentData.gap_ne_zero, SpectralIdempotentData.p_plus.... Structural match via content."
+        "notes": "Label 'prop:hecke-markov-transition' \u2192 expected 'hecke_markov_transition'; Lean declares: SpectralIdempotentData, SpectralIdempotentData.gap, SpectralIdempotentData.gap_pos, SpectralIdempotentData.gap_ne_zero, SpectralIdempotentData.p_plus.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2234,7 +2234,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/hecke-markov-transition.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "hecke-markov-transition.lean:1 — content/quantum-observable-universe/mass-theory/hecke-markov-transition.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Group/Finset.olean' of module Mathlib.Algebra.BigOperators.Group.Finset does not exist"
+        "evidence": "hecke-markov-transition.lean:1 \u2014 content/quantum-observable-universe/mass-theory/hecke-markov-transition.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Group/Finset.olean' of module Mathlib.Algebra.BigOperators.Group.Finset does not exist"
       },
       {
         "field_hash": {
@@ -2308,6 +2308,18 @@
         },
         "reviewed_at": "2026-07-05T05:15:13.679Z",
         "reviewed_sha": "e28e45e2256ea73187107f230cc7beeb37a6c301"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
+        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

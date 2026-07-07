@@ -890,7 +890,19 @@
         },
         "reviewed_at": "2026-07-06T04:41:30.202Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'def:archimedean-condition' → expected 'archimedean_condition'; Lean declares: ArchimedeanCondition, descartes_genus_is_four, totalRamification, branch_points_eq_six. Structural match via content."
+        "notes": "Label 'def:archimedean-condition' \u2192 expected 'archimedean_condition'; Lean declares: ArchimedeanCondition, descartes_genus_is_four, totalRamification, branch_points_eq_six. Structural match via content."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote brings-surface_seq8.md. Clarified reasoning chains. Dropped filler language. Ensured tight transition phrasing. Kept math and references solid.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

@@ -198,7 +198,7 @@
         },
         "reviewed_at": "2026-06-28T16:14:57.000Z",
         "reviewed_sha": "223e2e140539d2820d219061638d69029acfe2bd",
-        "notes": "False positive: the flagged sentence is the introduction's central thesis (the observable universe *is* the mathematical structure its own observations force) — axiomatic framing appropriate to an introduction, not editorializing. Emphasis on *is*/*axiomatized* marks the notions being posited.",
+        "notes": "False positive: the flagged sentence is the introduction's central thesis (the observable universe *is* the mathematical structure its own observations force) \u2014 axiomatic framing appropriate to an introduction, not editorializing. Emphasis on *is*/*axiomatized* marks the notions being posited.",
         "severity": "minor"
       },
       {
@@ -1271,6 +1271,18 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'The starting point is a collection of observations about how we' are consistent."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote introductory prose. Adopted strong active voice. Replaced flowery language with concise declarative statements mapping structure to physics. Formatted topological particle list identically to previous conventions. Preserved file markers.",
+        "reviewed_at": "2026-07-06T22:57:12Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

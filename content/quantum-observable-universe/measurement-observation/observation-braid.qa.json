@@ -1080,6 +1080,18 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Observation as an open map on the braid: intent, crossings, and input' are consistent."
       }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Tightened paragraphs. Removed cross-references to unknown targets. Kept physics/math logic intact.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-05T11:55:26.473Z"

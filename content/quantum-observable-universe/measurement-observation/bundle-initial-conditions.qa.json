@@ -1149,7 +1149,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.lean:1 — content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.lean:31:13: error: unexpected token 'section'; expected 'lemma'"
+        "evidence": "content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.lean:1 \u2014 content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.lean:31:13: error: unexpected token 'section'; expected 'lemma'"
       }
     ],
     "da-referee-verdict": [
@@ -1171,6 +1171,18 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.lean contains compilation errors: content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.lean:31:13: error: unexpected token 'section'; expected 'lemma', invalidating the claimed formalization."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Tightened paragraphs. Removed cross-references to unknown targets. Kept physics/math logic intact.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

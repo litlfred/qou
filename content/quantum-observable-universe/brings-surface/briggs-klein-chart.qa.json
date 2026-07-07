@@ -908,7 +908,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean theorem 'qou:QOU.BriggsKleinChart' statement in content/quantum-observable-universe/brings-surface/briggs-klein-chart.lean structurally matches the mathematical formulation of 'def:briggs-klein-chart' in content/quantum-observable-universe/brings-surface/briggs-klein-chart.md.",
-        "evidence": "content/quantum-observable-universe/brings-surface/briggs-klein-chart.lean:1 — Lean file exists",
+        "evidence": "content/quantum-observable-universe/brings-surface/briggs-klein-chart.lean:1 \u2014 Lean file exists",
         "severity": "minor"
       }
     ],
@@ -926,7 +926,7 @@
         },
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Checked mathematical consistency of the claim '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and found no counterexamples under the stated conditions.",
+        "notes": "Checked mathematical consistency of the claim '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and found no counterexamples under the stated conditions.",
         "evidence": "content/quantum-observable-universe/brings-surface/briggs-klein-chart.ts:1",
         "severity": "minor"
       }
@@ -1019,7 +1019,7 @@
         },
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Logical transitions in the derivation of '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' are sound; no non-sequiturs detected.",
+        "notes": "Logical transitions in the derivation of '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' are sound; no non-sequiturs detected.",
         "evidence": "content/quantum-observable-universe/brings-surface/briggs-klein-chart.ts:1",
         "severity": "minor"
       }
@@ -1133,7 +1133,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/brings-surface/briggs-klein-chart.lean:25:13: error: unexpected token 'section'; expected 'lemma'.",
-        "evidence": "content/quantum-observable-universe/brings-surface/briggs-klein-chart.lean:1 — content/quantum-observable-universe/brings-surface/briggs-klein-chart.lean:25:13: error: unexpected token 'section'; expected 'lemma'",
+        "evidence": "content/quantum-observable-universe/brings-surface/briggs-klein-chart.lean:1 \u2014 content/quantum-observable-universe/brings-surface/briggs-klein-chart.lean:25:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "minor"
       }
     ],
@@ -1172,7 +1172,19 @@
         },
         "reviewed_at": "2026-07-06T04:41:30.202Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'def:briggs-klein-chart' → expected 'briggs_klein_chart'; Lean declares: R_q, q_param, q_inv_param, BriggsKleinChart, c5_order.... Structural match via content."
+        "notes": "Label 'def:briggs-klein-chart' \u2192 expected 'briggs_klein_chart'; Lean declares: R_q, q_param, q_inv_param, BriggsKleinChart, c5_order.... Structural match via content."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote brings-surface_seq6.md applying Milnor standard. Shortened sentences. Improved declarative structures. Eliminated transition filler. Kept math intact.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

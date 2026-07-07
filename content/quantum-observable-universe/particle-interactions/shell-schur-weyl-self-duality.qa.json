@@ -2406,7 +2406,7 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.802Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:shell-schur-weyl-self-duality' → expected 'shell_schur_weyl_self_duality'; Lean declares: ShellCoefficients, conjugatePartition, shell_self_duality. Structural match via content."
+        "notes": "Label 'prop:shell-schur-weyl-self-duality' \u2192 expected 'shell_schur_weyl_self_duality'; Lean declares: ShellCoefficients, conjugatePartition, shell_self_duality. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2616,7 +2616,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The mathematical claims in 'Schur-Weyl justification of shell-operator self-duality' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean:42:24: error: unexpected token 'λ'; expected '_' or identifier.",
+        "notes": "The mathematical claims in 'Schur-Weyl justification of shell-operator self-duality' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean:42:24: error: unexpected token '\u03bb'; expected '_' or identifier.",
         "severity": "minor",
         "evidence": "shell-schur-weyl-self-duality.lean:1"
       }
@@ -2836,7 +2836,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "shell-schur-weyl-self-duality.lean:1 — content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean:42:24: error: unexpected token 'λ'; expected '_' or identifier"
+        "evidence": "shell-schur-weyl-self-duality.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/shell-schur-weyl-self-duality.lean:42:24: error: unexpected token '\u03bb'; expected '_' or identifier"
       }
     ],
     "da-referee-verdict": [
@@ -2878,6 +2878,12 @@
         },
         "reviewed_at": "2026-07-03T00:52:57.492Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq21"
       }
     ]
   },

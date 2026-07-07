@@ -226,7 +226,7 @@
           "ts": "c2b2420744b7"
         },
         "result": "pass",
-        "notes": "Goal well-posed and true: shell capacity 2n² = q=1 value of bar-even self-square 2[n]_q². Periodic-table caps [2,8,18,32] follow.",
+        "notes": "Goal well-posed and true: shell capacity 2n\u00b2 = q=1 value of bar-even self-square 2[n]_q\u00b2. Periodic-table caps [2,8,18,32] follow.",
         "reviewed_at": "2026-06-25T17:10:38.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -287,7 +287,7 @@
           "ts": "c2b2420744b7"
         },
         "result": "pass",
-        "notes": "The q=1 arithmetic is elementary, but framing 2n² as the self-fusion V⊗V of ONE angular object (no second SU(2)) via q-Clebsch-Gordan is a substantive structural claim.",
+        "notes": "The q=1 arithmetic is elementary, but framing 2n\u00b2 as the self-fusion V\u2297V of ONE angular object (no second SU(2)) via q-Clebsch-Gordan is a substantive structural claim.",
         "reviewed_at": "2026-06-25T17:10:38.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -344,7 +344,7 @@
           "ts": "c2b2420744b7"
         },
         "result": "pass",
-        "notes": "Sorry-free: orbital_n_squared ∑_{l<n}(2l+1)=n² and shell_capacity_self_square ∑ 2(2l+1)=2n², both by clean induction. Faithfully encodes the q=1 integer leg the .md explicitly designates as 'the part proved in Lean'.",
+        "notes": "Sorry-free: orbital_n_squared \u2211_{l<n}(2l+1)=n\u00b2 and shell_capacity_self_square \u2211 2(2l+1)=2n\u00b2, both by clean induction. Faithfully encodes the q=1 integer leg the .md explicitly designates as 'the part proved in Lean'.",
         "reviewed_at": "2026-06-25T17:10:38.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -484,7 +484,7 @@
           "ts": "c2b2420744b7"
         },
         "result": "pass",
-        "notes": "No premises beyond n:ℕ; holds for all n (n=0 base case included). No contradiction.",
+        "notes": "No premises beyond n:\u2115; holds for all n (n=0 base case included). No contradiction.",
         "reviewed_at": "2026-06-25T17:10:38.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -537,7 +537,7 @@
           "ts": "c2b2420744b7"
         },
         "result": "pass",
-        "notes": "Each theorem's sole binder (n:ℕ) is the induction variable — used.",
+        "notes": "Each theorem's sole binder (n:\u2115) is the induction variable \u2014 used.",
         "reviewed_at": "2026-06-25T17:10:38.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -692,7 +692,7 @@
         "reviewed_at": "2026-06-26T15:20:59.452Z",
         "reviewed_sha": "d6220ba2f12f441bf906a1ea843a7a703fb7179a",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/shell-capacity-self-square.md:44: clean coproduct step), rather than the count merely *agreeing* with it — is the"
+        "evidence": "content/quantum-observable-universe/molecular-construction/shell-capacity-self-square.md:44: clean coproduct step), rather than the count merely *agreeing* with it \u2014 is the"
       }
     ],
     "voice-scholarly-default": [
@@ -1104,6 +1104,18 @@
         "reviewed_at": "2026-07-03T00:52:57.117Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
         "notes": "block has no .lean sibling"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote molecular-construction_seq2.md. Stripped fluff, enforced 'we' and present tense. Converted definitions and conjectures to follow linear, clear style without editorialising.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

@@ -871,7 +871,19 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.430Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'rem:typed-b3-sub-braid-extraction' → expected 'typed_b3_sub_braid_extraction'; Lean declares: CrossingType3, TypedCrossing, TypedBraidWord3, beta_p_typed, beta_n_typed.... Structural match via content."
+        "notes": "Label 'rem:typed-b3-sub-braid-extraction' \u2192 expected 'typed_b3_sub_braid_extraction'; Lean declares: CrossingType3, TypedCrossing, TypedBraidWord3, beta_p_typed, beta_n_typed.... Structural match via content."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote mass-theory_seq6.md for Milnor standards: clean prose, declarative.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

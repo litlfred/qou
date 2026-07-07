@@ -1274,7 +1274,7 @@
           "lean": "5d2b238993eb"
         },
         "result": "pass",
-        "notes": "Well-posed: closed form for formal adjoint δ_q of d_q via Webster pairing; standard Tanaka-Webster adjoint theory.",
+        "notes": "Well-posed: closed form for formal adjoint \u03b4_q of d_q via Webster pairing; standard Tanaka-Webster adjoint theory.",
         "reviewed_at": "2026-06-25T17:04:34.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1494,7 +1494,7 @@
           "lean": "5d2b238993eb"
         },
         "result": "pass",
-        "notes": "Geometric axioms (websterInner bilinear, adjoint_exists_unique', δ adjoint of d) are standard, realisable over ℝ; no contradictory premise.",
+        "notes": "Geometric axioms (websterInner bilinear, adjoint_exists_unique', \u03b4 adjoint of d) are standard, realisable over \u211d; no contradictory premise.",
         "reviewed_at": "2026-06-25T17:04:34.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1550,7 +1550,7 @@
           "lean": "5d2b238993eb"
         },
         "result": "pass",
-        "notes": "Sole binder (q:Rˣ) used in statement and passed to the axiom. No unused binder.",
+        "notes": "Sole binder (q:R\u02e3) used in statement and passed to the axiom. No unused binder.",
         "reviewed_at": "2026-06-25T17:04:33.000Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
@@ -1834,7 +1834,7 @@
         "reviewed_at": "2026-06-28T11:19:33.145Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "q-codifferential-formula-prop.lean:1 — content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Group/Units.olean' of module Mathlib.Algebra.Group.Units does not exist",
+        "evidence": "q-codifferential-formula-prop.lean:1 \u2014 content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Group/Units.olean' of module Mathlib.Algebra.Group.Units does not exist",
         "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean fails compilation, indicating a reproducibility failure."
       }
     ],
@@ -1857,6 +1857,18 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean contains 'sorry' placeholders.",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Deleted the Lean diagnostics blocks. Shortened pedagogical 'dictionary' translations into clean geometric facts. Unified definitions.",
+        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

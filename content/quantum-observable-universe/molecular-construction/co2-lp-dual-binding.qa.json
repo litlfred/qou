@@ -1042,7 +1042,7 @@
         },
         "reviewed_at": "2026-07-02T17:07:15.000Z",
         "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
-        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest — real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass."
+        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest \u2014 real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1260,7 +1260,7 @@
           "ts": "2b2df246d680"
         },
         "result": "pass",
-        "notes": "Goal meaningful (VSEPR linear CO2 as Φ₁-minimal symmetric (2,2) bonding) but optimality postulated; n_strands=66 is a bookkeeping constant; conditional on a conjecture.",
+        "notes": "Goal meaningful (VSEPR linear CO2 as \u03a6\u2081-minimal symmetric (2,2) bonding) but optimality postulated; n_strands=66 is a bookkeeping constant; conditional on a conjecture.",
         "reviewed_at": "2026-06-25T17:08:35.000Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
@@ -1321,7 +1321,7 @@
           "ts": "2b2df246d680"
         },
         "result": "pass",
-        "notes": "Casting VSEPR electron-pair-repulsion minimisation literally as Φ₁ minimisation over braid strand orderings is a genuinely novel reading.",
+        "notes": "Casting VSEPR electron-pair-repulsion minimisation literally as \u03a6\u2081 minimisation over braid strand orderings is a genuinely novel reading.",
         "reviewed_at": "2026-06-25T17:08:35.000Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
@@ -1378,7 +1378,7 @@
           "ts": "2b2df246d680"
         },
         "result": "fail",
-        "notes": "Placeholder stub: linear O=C=O / (2,2) optimality ASSUMED via opaque ctx.co2_lp_dual_bound; theorem projects k1+k2≤4 ∧ (k1=2∧k2=2) ∧ n_strands=66 via postulated impl_* fields. No LP solve in Lean.",
+        "notes": "Placeholder stub: linear O=C=O / (2,2) optimality ASSUMED via opaque ctx.co2_lp_dual_bound; theorem projects k1+k2\u22644 \u2227 (k1=2\u2227k2=2) \u2227 n_strands=66 via postulated impl_* fields. No LP solve in Lean.",
         "reviewed_at": "2026-06-25T17:08:35.000Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
@@ -1395,7 +1395,7 @@
           "ts": "2b2df246d680"
         },
         "result": "pass",
-        "notes": "Lean statement now faithfully states the .md claim; previously-dropped/weakened clauses restored as real propositions (open parts carry a cited sorry per §1, not omitted). Verified lean-direct exit 0.",
+        "notes": "Lean statement now faithfully states the .md claim; previously-dropped/weakened clauses restored as real propositions (open parts carry a cited sorry per \u00a71, not omitted). Verified lean-direct exit 0.",
         "reviewed_at": "2026-07-04T10:41:58.000Z",
         "reviewed_sha": "3dd36f14516a6043b87a5a6f8ad6a24bc6b16c13",
         "reviewer": {
@@ -1448,7 +1448,7 @@
           "ts": "2b2df246d680"
         },
         "result": "fail",
-        "notes": "Body ⟨ctx.impl_carbon_valence h, ctx.impl_symmetric_double_bond h, ctx.impl_strand_count h⟩: each conjunct is a postulated implication field applied to the hypothesis — projection, no derivation.",
+        "notes": "Body \u27e8ctx.impl_carbon_valence h, ctx.impl_symmetric_double_bond h, ctx.impl_strand_count h\u27e9: each conjunct is a postulated implication field applied to the hypothesis \u2014 projection, no derivation.",
         "reviewed_at": "2026-06-25T17:08:35.000Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
@@ -1465,7 +1465,7 @@
           "ts": "2b2df246d680"
         },
         "result": "pass",
-        "notes": "Re-encoded on branch claude/lean-qa-backlog-2h3f8d: carrier fields are now genuine sub-hypotheses (never the conclusion) and the theorem DERIVES its conclusion by composing them / applying proved lemmas — no longer projects an assumed field (AGENTS.md §3b-cond item 5). Verified lean-direct exit 0.",
+        "notes": "Re-encoded on branch claude/lean-qa-backlog-2h3f8d: carrier fields are now genuine sub-hypotheses (never the conclusion) and the theorem DERIVES its conclusion by composing them / applying proved lemmas \u2014 no longer projects an assumed field (AGENTS.md \u00a73b-cond item 5). Verified lean-direct exit 0.",
         "reviewed_at": "2026-07-04T10:41:58.000Z",
         "reviewed_sha": "3dd36f14516a6043b87a5a6f8ad6a24bc6b16c13",
         "reviewer": {
@@ -1898,6 +1898,18 @@
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/molecular-construction/co2-lp-dual-binding.lean is missing, preventing formal verification of the claims in 'LP dual selects linear $O{=}C{=}O$ geometry'.",
         "severity": "critical"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote molecular-construction_seq5.md. Enforced present tense and 'we', economy of phrasing, stripped non-technical filler.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

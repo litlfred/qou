@@ -1439,7 +1439,7 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "major",
         "evidence": "categorical-laplace-transform-exists.lean:32-37: `axiom CategoricalLaplace.exists_axiom (A : Type*) [Nonempty A] : Nonempty (CategoricalLaplace A)` then `theorem CategoricalLaplace.exists ... := CategoricalLaplace.exists_axiom A`",
-        "notes": "Narrative asserts existence of the monoidal functor 𝓛 under the hypotheses of prop:q-exponential-exists. Lean encodes existence as `Nonempty (CategoricalLaplace A)` requiring only `[Nonempty A]` and discharges it by an injected axiom (exists_axiom). Claim SHAPE (existence) matches, but the hypothesis set is weaker than the narrative and the result is axiom-backed rather than constructed (validation: not_checked in .ts). Reader-reconcilable up to the axiom/encoding gap; flag for lean-proof-review."
+        "notes": "Narrative asserts existence of the monoidal functor \ud835\udcdb under the hypotheses of prop:q-exponential-exists. Lean encodes existence as `Nonempty (CategoricalLaplace A)` requiring only `[Nonempty A]` and discharges it by an injected axiom (exists_axiom). Claim SHAPE (existence) matches, but the hypothesis set is weaker than the narrative and the result is axiom-backed rather than constructed (validation: not_checked in .ts). Reader-reconcilable up to the axiom/encoding gap; flag for lean-proof-review."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1725,7 +1725,7 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "critical",
         "evidence": "categorical-laplace-transform-exists.lean:35-37: `theorem CategoricalLaplace.exists (A) [Nonempty A] : Nonempty (CategoricalLaplace A) := CategoricalLaplace.exists_axiom A`",
-        "notes": "Not a structure/class-field projection, but the spiritual equivalent: the theorem's conclusion is assumed verbatim as `axiom exists_axiom` (identical statement) and handed straight back. The proof composes nothing and derives nothing — it re-exports the axiom that IS its own conclusion. Honest dispositions: construct the witness, or demote to a conjecture carrier. Routes to lean-proof-review."
+        "notes": "Not a structure/class-field projection, but the spiritual equivalent: the theorem's conclusion is assumed verbatim as `axiom exists_axiom` (identical statement) and handed straight back. The proof composes nothing and derives nothing \u2014 it re-exports the axiom that IS its own conclusion. Honest dispositions: construct the witness, or demote to a conjecture carrier. Routes to lean-proof-review."
       }
     ],
     "proof-no-trivial-true": [
@@ -1920,7 +1920,7 @@
           "lean": "91280c112058"
         },
         "result": "pass",
-        "notes": "Re-audit correction 2026-06-25: prior note mis-stated 'no token' (regex stripper edge case, fixed per Gemini review on PR #2775). Resolved Lean uses plain `decide` (`rw [...]; decide` on a sign inequality) — accepted, no `native_decide`; verdict pass stands.",
+        "notes": "Re-audit correction 2026-06-25: prior note mis-stated 'no token' (regex stripper edge case, fixed per Gemini review on PR #2775). Resolved Lean uses plain `decide` (`rw [...]; decide` on a sign inequality) \u2014 accepted, no `native_decide`; verdict pass stands.",
         "reviewed_at": "2026-06-25T15:58:24.000Z",
         "reviewed_sha": "40352568533fa16a68cf40b7fb87a593c6345c49",
         "reviewer": {
@@ -2166,7 +2166,7 @@
         "reviewed_at": "2026-06-28T11:19:33.145Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "categorical-laplace-transform-exists.lean:1 — content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-exists.lean:23:60: error: unexpected token '/--'; expected 'lemma'",
+        "evidence": "categorical-laplace-transform-exists.lean:1 \u2014 content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-exists.lean:23:60: error: unexpected token '/--'; expected 'lemma'",
         "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-exists.lean fails compilation, indicating a reproducibility failure."
       }
     ],
@@ -2209,6 +2209,18 @@
         },
         "reviewed_at": "2026-07-03T00:52:58.083Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Removed strategy blocks and merged redundant properties into declarative sentences. Removed commutative diagrams. Removed conversational padding.",
+        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

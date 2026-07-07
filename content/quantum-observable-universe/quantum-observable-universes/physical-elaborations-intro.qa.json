@@ -1081,6 +1081,18 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Physical Elaborations Intro' (concerning 'the paper will refer back to. $q$-torsion leaves as $q$-curvature') are consistent and formally verified."
       }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Deleted the conversational 'intro' blocks detailing file navigation. Kept factual claims and removed conversational cross-referencing.",
+        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-03T00:52:58.083Z"

@@ -1378,7 +1378,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/quantum-computational-universality.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/quantum-computational-universality.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/quantum-computational-universality.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist"
+        "evidence": "content/quantum-observable-universe/information-theory/quantum-computational-universality.lean:1 \u2014 /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/quantum-computational-universality.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist"
       },
       {
         "field_hash": {
@@ -1449,6 +1449,18 @@
         },
         "reviewed_at": "2026-07-03T00:52:56.008Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote blocks linearly, resolved forward references, cleaned mathematical notation and integrated tables smoothly. Removed index-style bullet points in favor of connected prose. Tightened terminology around Reeb derivation and Toffoli matrix.",
+        "reviewed_at": "2026-07-06T22:48:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

@@ -1118,7 +1118,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/gb-residue-spectral-sum.lean:1 — Lean file exists",
+        "evidence": "content/quantum-observable-universe/mass-theory/gb-residue-spectral-sum.lean:1 \u2014 Lean file exists",
         "severity": "minor"
       }
     ],
@@ -1137,7 +1137,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean proof contains a sorry placeholder, indicating it is incomplete.",
-        "evidence": "content/quantum-observable-universe/mass-theory/gb-residue-spectral-sum.lean:1 — sorry placeholder present",
+        "evidence": "content/quantum-observable-universe/mass-theory/gb-residue-spectral-sum.lean:1 \u2014 sorry placeholder present",
         "severity": "major"
       }
     ],
@@ -1170,7 +1170,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean proof is a structural stub, which does not fully capture the narrative proof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/gb-residue-spectral-sum.lean:1 — sorry present",
+        "evidence": "content/quantum-observable-universe/mass-theory/gb-residue-spectral-sum.lean:1 \u2014 sorry present",
         "severity": "minor"
       },
       {
@@ -1187,7 +1187,7 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.430Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:gb-residue-spectral-sum' → expected 'gb_residue_spectral_sum'; Lean declares: RootOfUnity, GBResidueSpectralSum, residueAt, gradedMarkovTrace, classical_limit_descended.... Structural match via content."
+        "notes": "Label 'prop:gb-residue-spectral-sum' \u2192 expected 'gb_residue_spectral_sum'; Lean declares: RootOfUnity, GBResidueSpectralSum, residueAt, gradedMarkovTrace, classical_limit_descended.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1256,7 +1256,7 @@
           "lean": "89ab3945904a"
         },
         "result": "pass",
-        "notes": "Mass = descended + Σ stratum-residues (E∞ of GS-filtered spectral seq) is well-posed as a SYMBOLIC (not analytic) identity, explicitly flagged. Feeds Habiro coeffs.",
+        "notes": "Mass = descended + \u03a3 stratum-residues (E\u221e of GS-filtered spectral seq) is well-posed as a SYMBOLIC (not analytic) identity, explicitly flagged. Feeds Habiro coeffs.",
         "reviewed_at": "2026-06-25T17:05:22.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1338,7 +1338,7 @@
           "lean": "89ab3945904a"
         },
         "result": "pass",
-        "notes": "Sibling .lean (resolves first): class encodes mass=|descended|+Σresidue; classical_limit_descended + spectral_sum_finite genuinely proved (rw/simp); fromCrystalData forces spectral_decomposition by rfl (not self-assumed). No vacuity/sorry.",
+        "notes": "Sibling .lean (resolves first): class encodes mass=|descended|+\u03a3residue; classical_limit_descended + spectral_sum_finite genuinely proved (rw/simp); fromCrystalData forces spectral_decomposition by rfl (not self-assumed). No vacuity/sorry.",
         "reviewed_at": "2026-06-25T17:05:21.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1745,6 +1745,18 @@
         "severity": "major",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling contains 'sorry' placeholders, rendering the formalization and proof incomplete."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
+        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

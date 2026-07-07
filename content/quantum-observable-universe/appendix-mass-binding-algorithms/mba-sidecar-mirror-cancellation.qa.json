@@ -1005,6 +1005,18 @@
         "reviewed_sha": "7415132ccce30885dcfd323600b8bcf311c431e4",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Streamlined exposition of the sidecar algorithms, specifically Option E and the mirror split observations. Brought narrative chunks into compliance with Milnor brevity and declarative phrasing.",
+        "reviewed_at": "2026-07-06T22:42:45Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-05T23:33:10.454Z"

@@ -949,7 +949,7 @@
         },
         "reviewed_at": "2026-06-28T11:04:37.262Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The block 'Molecular Hopf ring (closed)' presents substantial mathematical content: A **molecular Hopf ring** is not a chain with its ends joined — it is a fundamen...",
+        "notes": "The block 'Molecular Hopf ring (closed)' presents substantial mathematical content: A **molecular Hopf ring** is not a chain with its ends joined \u2014 it is a fundamen...",
         "severity": "minor"
       }
     ],
@@ -1148,7 +1148,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:1 — content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:27:2: error: Invalid field notation: Type of"
+        "evidence": "content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:1 \u2014 content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:27:2: error: Invalid field notation: Type of"
       }
     ],
     "da-referee-verdict": [
@@ -1170,6 +1170,18 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean contains compilation errors: content/quantum-observable-universe/organic-chemistry/molecular-hopf-ring.lean:27:2: error: Invalid field notation: Type of, invalidating the claimed formalization.",
         "severity": "critical"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

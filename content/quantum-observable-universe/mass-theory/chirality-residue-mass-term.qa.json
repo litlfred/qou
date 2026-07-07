@@ -48,7 +48,19 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.430Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:chirality-residue-mass-term' → expected 'chirality_residue_mass_term'; Lean declares: signed_content, is_chirality, mass_tower_split_by_predicate, chirality_residue. Structural match via content."
+        "notes": "Label 'prop:chirality-residue-mass-term' \u2192 expected 'chirality_residue_mass_term'; Lean declares: signed_content, is_chirality, mass_tower_split_by_predicate, chirality_residue. Structural match via content."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
+        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

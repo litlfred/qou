@@ -1613,10 +1613,22 @@
         "reviewed_at": "2026-06-28T11:19:33.342Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-observable-universes/q-jacobiator.md:1 — The archimedean specialisation of the categorical q-Lie bracket",
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/q-jacobiator.md:1 \u2014 The archimedean specialisation of the categorical q-Lie bracket",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'The archimedean specialisation of the categorical q-Lie bracket' are consistent."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Removed conversational intros and diagrams. Made classical recovery succinct.",
+        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

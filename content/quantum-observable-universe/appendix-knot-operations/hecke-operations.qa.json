@@ -985,7 +985,7 @@
         },
         "reviewed_at": "2026-06-28T07:05:42.356Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "The terms B3 (Borromean braid), γ, L+, and L- are introduced and assigned coefficients without being defined in this block.",
+        "notes": "The terms B3 (Borromean braid), \u03b3, L+, and L- are introduced and assigned coefficients without being defined in this block.",
         "severity": "minor"
       }
     ],
@@ -1056,6 +1056,18 @@
         "severity": "minor",
         "verdict": "survivable-objection",
         "referee_argument": "The elements $B_3$, $\\gamma$, $L_+$, and $L_-$ are not mathematically defined, and the physical interpretation of normal-form Hecke algebra coefficients as 'gluon content' is speculative and lacks QFT justification."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Tightened explanations of Hecke relations. Shortened sentences, removed conversational filler. Ensured equations punctuate linear argument.",
+        "reviewed_at": "2026-07-06T22:37:49Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

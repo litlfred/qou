@@ -2376,7 +2376,7 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.802Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:atom-knot-exists' → expected 'atom_knot_exists'; Lean declares: AtomKnot.exists. Structural match via content."
+        "notes": "Label 'prop:atom-knot-exists' \u2192 expected 'atom_knot_exists'; Lean declares: AtomKnot.exists. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2805,7 +2805,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean:1 — content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean:17:66: error: unexpected identifier; expected '}'"
+        "evidence": "content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean:17:66: error: unexpected identifier; expected '}'"
       }
     ],
     "da-referee-verdict": [
@@ -2827,6 +2827,12 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean for 'Existence of the atom-knot for any (Z, N)' fails compilation with error: content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean:17:66: error: unexpected identifier; expected '}'. This invalidates the claim of formal verification."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq20"
       }
     ]
   },

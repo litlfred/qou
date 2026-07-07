@@ -816,7 +816,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "substrate-parameter-brings.ts:1",
-        "notes": "No false claims identified in the prose of 'Constructive extraction of $q$ on Bring's surface'; the mathematical reasoning concerning 'constructively — replacing \"there exists $q$\" with an explicit' is consistent."
+        "notes": "No false claims identified in the prose of 'Constructive extraction of $q$ on Bring's surface'; the mathematical reasoning concerning 'constructively \u2014 replacing \"there exists $q$\" with an explicit' is consistent."
       }
     ],
     "da-vacuous": [
@@ -835,7 +835,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "substrate-parameter-brings.ts:1",
-        "notes": "The block 'Constructive extraction of $q$ on Bring's surface' presents substantial mathematical content: 'constructively — replacing \"there exists $q$\" with an explicit'."
+        "notes": "The block 'Constructive extraction of $q$ on Bring's surface' presents substantial mathematical content: 'constructively \u2014 replacing \"there exists $q$\" with an explicit'."
       }
     ],
     "da-circular": [
@@ -854,7 +854,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "substrate-parameter-brings.ts:1",
-        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Constructive extraction of $q$ on Bring's surface' (which asserts 'constructively — replacing \"there exists $q$\" with an explicit')."
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Constructive extraction of $q$ on Bring's surface' (which asserts 'constructively \u2014 replacing \"there exists $q$\" with an explicit')."
       }
     ],
     "da-overclaim": [
@@ -873,7 +873,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "substrate-parameter-brings.ts:1",
-        "notes": "The remarks and narrative scope in 'Constructive extraction of $q$ on Bring's surface' concerning 'constructively — replacing \"there exists $q$\" with an explicit' are appropriately qualified."
+        "notes": "The remarks and narrative scope in 'Constructive extraction of $q$ on Bring's surface' concerning 'constructively \u2014 replacing \"there exists $q$\" with an explicit' are appropriately qualified."
       }
     ],
     "da-hidden-dof": [
@@ -911,7 +911,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "substrate-parameter-brings.ts:1",
-        "notes": "The prose arguments in 'Constructive extraction of $q$ on Bring's surface' proceed logically through the stated steps: 'constructively — replacing \"there exists $q$\" with an explicit'."
+        "notes": "The prose arguments in 'Constructive extraction of $q$ on Bring's surface' proceed logically through the stated steps: 'constructively \u2014 replacing \"there exists $q$\" with an explicit'."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -968,7 +968,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "substrate-parameter-brings.ts:1",
-        "notes": "Key terms and symbols in 'Constructive extraction of $q$ on Bring's surface' (e.g. from 'constructively — replacing \"there exists $q$\" with an explicit') are mathematically defined and unambiguous."
+        "notes": "Key terms and symbols in 'Constructive extraction of $q$ on Bring's surface' (e.g. from 'constructively \u2014 replacing \"there exists $q$\" with an explicit') are mathematically defined and unambiguous."
       }
     ],
     "da-empirical-fragility": [
@@ -1045,7 +1045,19 @@
         "severity": "minor",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
-        "referee_argument": "No significant objections; the mathematical claims in 'Constructive extraction of $q$ on Bring's surface' (concerning 'constructively — replacing \"there exists $q$\" with an explicit') are consistent and formally verified."
+        "referee_argument": "No significant objections; the mathematical claims in 'Constructive extraction of $q$ on Bring's surface' (concerning 'constructively \u2014 replacing \"there exists $q$\" with an explicit') are consistent and formally verified."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq9 enforcing H1-H8. Stripped the pure-meta novelty block entirely. Streamlined the spectral chart derivation. Condensed the classical vs quantum planck limits into tight declarative statements.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

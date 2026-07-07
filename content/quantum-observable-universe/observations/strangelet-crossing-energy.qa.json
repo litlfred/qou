@@ -764,7 +764,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/observations/strangelet-crossing-energy.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/observations/strangelet-crossing-energy.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -784,7 +784,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/observations/strangelet-crossing-energy.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/observations/strangelet-crossing-energy.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1235,7 +1235,7 @@
         },
         "reviewed_at": "2026-07-02T17:07:15.000Z",
         "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
-        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): placeholder-stub marker no longer present — criterion pass. Residual self-assuming-projection / statement-scope issue tracked under proof-statement-integrity and bean qsb2; do not re-fail this criterion for it."
+        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): placeholder-stub marker no longer present \u2014 criterion pass. Residual self-assuming-projection / statement-scope issue tracked under proof-statement-integrity and bean qsb2; do not re-fail this criterion for it."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1380,7 +1380,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "observations is an explicitly-archimedean chapter; the 0 < q hypothesis and ℝ specialisation are appropriate, and the .lean sibling note declares the §7c archimedean specialisation."
+        "notes": "observations is an explicitly-archimedean chapter; the 0 < q hypothesis and \u211d specialisation are appropriate, and the .lean sibling note declares the \u00a77c archimedean specialisation."
       },
       {
         "field_hash": {
@@ -1429,7 +1429,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "linarith is used to derive part (3)'s strict inequality 8q⁻¹ > 6q⁻¹ from q⁻¹ > 0; the ordering proof matches the archimedean-chapter statement's side."
+        "notes": "linarith is used to derive part (3)'s strict inequality 8q\u207b\u00b9 > 6q\u207b\u00b9 from q\u207b\u00b9 > 0; the ordering proof matches the archimedean-chapter statement's side."
       },
       {
         "field_hash": {
@@ -1492,7 +1492,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Lean theorem encodes the three narrative claims (Q=0; E_cross formula; 0<q → E_bind_uds=8q⁻¹, E_bind_udd=6q⁻¹, E_bind_udd<E_bind_uds) as a faithful conjunction; quantifiers/hypotheses/conclusion match."
+        "notes": "Lean theorem encodes the three narrative claims (Q=0; E_cross formula; 0<q \u2192 E_bind_uds=8q\u207b\u00b9, E_bind_udd=6q\u207b\u00b9, E_bind_udd<E_bind_uds) as a faithful conjunction; quantifiers/hypotheses/conclusion match."
       },
       {
         "field_hash": {
@@ -1779,7 +1779,7 @@
           "ts": "ecf3fab17a11"
         },
         "result": "pass",
-        "notes": "Lean faithfully states all 3 .md parts (Q=0, strong-only formula, 8q⁻¹>6q⁻¹); sorry-free; conjunct iii inequality genuinely derived via linarith.",
+        "notes": "Lean faithfully states all 3 .md parts (Q=0, strong-only formula, 8q\u207b\u00b9>6q\u207b\u00b9); sorry-free; conjunct iii inequality genuinely derived via linarith.",
         "reviewed_at": "2026-06-25T17:14:50.000Z",
         "reviewed_sha": "01ea6d6e464aa77fc2df7fe6050675cff83b68a3",
         "reviewer": {
@@ -1847,7 +1847,7 @@
           "ts": "ecf3fab17a11"
         },
         "result": "fail",
-        "notes": "Conjuncts i (Q=0) and ii (E_cross formula) are := ctx.claim_i / ctx.claim_ii — class fields that ARE those sub-claims; only conjunct iii is derived.",
+        "notes": "Conjuncts i (Q=0) and ii (E_cross formula) are := ctx.claim_i / ctx.claim_ii \u2014 class fields that ARE those sub-claims; only conjunct iii is derived.",
         "reviewed_at": "2026-06-25T17:15:05.000Z",
         "reviewed_sha": "f72ffba437d37db9fd6bcb7ffcfb9e712b9b6ff5",
         "reviewer": {
@@ -1922,7 +1922,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Goal is a substantive conjunction, not True/x=x; the q⁻¹>0 → 8q⁻¹>6q⁻¹ inequality is genuinely derived via linarith. Claims (1)/(2) are conditional-class field projections (legitimate §3b-cond disposition), not vacuous-True masking."
+        "notes": "Goal is a substantive conjunction, not True/x=x; the q\u207b\u00b9>0 \u2192 8q\u207b\u00b9>6q\u207b\u00b9 inequality is genuinely derived via linarith. Claims (1)/(2) are conditional-class field projections (legitimate \u00a73b-cond disposition), not vacuous-True masking."
       },
       {
         "field_hash": {
@@ -1981,7 +1981,7 @@
           "ts": "ecf3fab17a11"
         },
         "result": "pass",
-        "notes": "Fields satisfiable for q>0 (Q=0, n±, binding 8q⁻¹/6q⁻¹, q⁻¹>0); no contradiction; conjunct iii is conditional on 0<q_real.",
+        "notes": "Fields satisfiable for q>0 (Q=0, n\u00b1, binding 8q\u207b\u00b9/6q\u207b\u00b9, q\u207b\u00b9>0); no contradiction; conjunct iii is conditional on 0<q_real.",
         "reviewed_at": "2026-06-25T17:15:36.000Z",
         "reviewed_sha": "f72ffba437d37db9fd6bcb7ffcfb9e712b9b6ff5",
         "reviewer": {
@@ -2049,7 +2049,7 @@
           "ts": "ecf3fab17a11"
         },
         "result": "pass",
-        "notes": "All fields used: claim_i, claim_ii, uds_binding, udd_binding, q_real_inv_pos (in linarith for 6q⁻¹<8q⁻¹); none orphaned.",
+        "notes": "All fields used: claim_i, claim_ii, uds_binding, udd_binding, q_real_inv_pos (in linarith for 6q\u207b\u00b9<8q\u207b\u00b9); none orphaned.",
         "reviewed_at": "2026-06-25T17:15:17.000Z",
         "reviewed_sha": "f72ffba437d37db9fd6bcb7ffcfb9e712b9b6ff5",
         "reviewer": {
@@ -2580,6 +2580,18 @@
         "reviewed_at": "2026-06-28T22:24:11.203Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote observations_seq14.md. Removed narrative framing in favor of tight declarative sentences. Converted lists and propositions to strict formatting.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

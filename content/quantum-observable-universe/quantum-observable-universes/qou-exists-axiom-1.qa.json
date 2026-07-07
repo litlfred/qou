@@ -1336,7 +1336,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "qou-exists-axiom-1.ts:1",
-        "notes": "For the lemma 'Axiom 1 — Haar state gives a non-degenerate Frobenius pairing' (asserting 'The Haar state $h = \\int_{A}$ on $A = \\mathcal{O}_{q}(G)$ is faithful;'), the mathematical claims are verified as there are no false claims detected, supported by the successful compilation of qou-exists-axiom-1.lean."
+        "notes": "For the lemma 'Axiom 1 \u2014 Haar state gives a non-degenerate Frobenius pairing' (asserting 'The Haar state $h = \\int_{A}$ on $A = \\mathcal{O}_{q}(G)$ is faithful;'), the mathematical claims are verified as there are no false claims detected, supported by the successful compilation of qou-exists-axiom-1.lean."
       }
     ],
     "da-vacuous": [
@@ -1356,7 +1356,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "qou-exists-axiom-1.ts:1",
-        "notes": "The sibling Lean file qou-exists-axiom-1.lean compiles successfully without any sorry placeholders, verifying that the proof of 'Axiom 1 — Haar state gives a non-degenerate Frobenius pairing' is non-vacuous."
+        "notes": "The sibling Lean file qou-exists-axiom-1.lean compiles successfully without any sorry placeholders, verifying that the proof of 'Axiom 1 \u2014 Haar state gives a non-degenerate Frobenius pairing' is non-vacuous."
       }
     ],
     "da-circular": [
@@ -1376,7 +1376,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "qou-exists-axiom-1.ts:1",
-        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Axiom 1 — Haar state gives a non-degenerate Frobenius pairing' (which asserts 'The Haar state $h = \\int_{A}$ on $A = \\mathcal{O}_{q}(G)$ is faithful;')."
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Axiom 1 \u2014 Haar state gives a non-degenerate Frobenius pairing' (which asserts 'The Haar state $h = \\int_{A}$ on $A = \\mathcal{O}_{q}(G)$ is faithful;')."
       }
     ],
     "da-overclaim": [
@@ -1396,7 +1396,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "qou-exists-axiom-1.ts:1",
-        "notes": "No overclaims: the scope of 'Axiom 1 — Haar state gives a non-degenerate Frobenius pairing' matches the sorry-free formalization in qou-exists-axiom-1.lean."
+        "notes": "No overclaims: the scope of 'Axiom 1 \u2014 Haar state gives a non-degenerate Frobenius pairing' matches the sorry-free formalization in qou-exists-axiom-1.lean."
       }
     ],
     "da-hidden-dof": [
@@ -1416,7 +1416,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "qou-exists-axiom-1.ts:1",
-        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Axiom 1 — Haar state gives a non-degenerate Frobenius pairing'."
+        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Axiom 1 \u2014 Haar state gives a non-degenerate Frobenius pairing'."
       }
     ],
     "da-non-sequitur": [
@@ -1436,7 +1436,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "qou-exists-axiom-1.ts:1",
-        "notes": "The logical steps in 'Axiom 1 — Haar state gives a non-degenerate Frobenius pairing' are formally sound and verified by the sorry-free compilation of qou-exists-axiom-1.lean."
+        "notes": "The logical steps in 'Axiom 1 \u2014 Haar state gives a non-degenerate Frobenius pairing' are formally sound and verified by the sorry-free compilation of qou-exists-axiom-1.lean."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1456,7 +1456,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "qou-exists-axiom-1.ts:1",
-        "notes": "The Lean signature in qou-exists-axiom-1.lean corresponds directly to the narrative claim in 'Axiom 1 — Haar state gives a non-degenerate Frobenius pairing'."
+        "notes": "The Lean signature in qou-exists-axiom-1.lean corresponds directly to the narrative claim in 'Axiom 1 \u2014 Haar state gives a non-degenerate Frobenius pairing'."
       }
     ],
     "da-citation-misuse": [
@@ -1476,7 +1476,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "qou-exists-axiom-1.ts:1",
-        "notes": "The citations (woronowicz1987) in 'Axiom 1 — Haar state gives a non-degenerate Frobenius pairing' are consistent with the sources referenced in the text."
+        "notes": "The citations (woronowicz1987) in 'Axiom 1 \u2014 Haar state gives a non-degenerate Frobenius pairing' are consistent with the sources referenced in the text."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1496,7 +1496,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "qou-exists-axiom-1.ts:1",
-        "notes": "Key terms and symbols in 'Axiom 1 — Haar state gives a non-degenerate Frobenius pairing' (e.g. from 'The Haar state $h = \\int_{A}$ on $A = \\mathcal{O}_{q}(G)$ is faithful;') are mathematically defined and unambiguous."
+        "notes": "Key terms and symbols in 'Axiom 1 \u2014 Haar state gives a non-degenerate Frobenius pairing' (e.g. from 'The Haar state $h = \\int_{A}$ on $A = \\mathcal{O}_{q}(G)$ is faithful;') are mathematically defined and unambiguous."
       }
     ],
     "da-empirical-fragility": [
@@ -1516,7 +1516,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "qou-exists-axiom-1.ts:1",
-        "notes": "The empirical claims in 'Axiom 1 — Haar state gives a non-degenerate Frobenius pairing' (quoting 'The Haar state $h = \\int_{A}$ on $A = \\mathcal{O}_{q}(G)$ is faithful;') are structurally anchored to the QOU mass framework and are stable."
+        "notes": "The empirical claims in 'Axiom 1 \u2014 Haar state gives a non-degenerate Frobenius pairing' (quoting 'The Haar state $h = \\int_{A}$ on $A = \\mathcal{O}_{q}(G)$ is faithful;') are structurally anchored to the QOU mass framework and are stable."
       }
     ],
     "da-physical-implausibility": [
@@ -1536,7 +1536,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "qou-exists-axiom-1.ts:1",
-        "notes": "The physical concepts described in 'Axiom 1 — Haar state gives a non-degenerate Frobenius pairing' are consistent with quantum observable mechanics."
+        "notes": "The physical concepts described in 'Axiom 1 \u2014 Haar state gives a non-degenerate Frobenius pairing' are consistent with quantum observable mechanics."
       }
     ],
     "da-reproducibility": [
@@ -1577,7 +1577,7 @@
         "severity": "minor",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
-        "referee_argument": "No significant objections; the mathematical claims in 'Axiom 1 — Haar state gives a non-degenerate Frobenius pairing' (concerning 'The Haar state $h = \\int_{A}$ on $A = \\mathcal{O}_{q}(G)$ is faithful;') are consistent and formally verified."
+        "referee_argument": "No significant objections; the mathematical claims in 'Axiom 1 \u2014 Haar state gives a non-degenerate Frobenius pairing' (concerning 'The Haar state $h = \\int_{A}$ on $A = \\mathcal{O}_{q}(G)$ is faithful;') are consistent and formally verified."
       }
     ],
     "bib-cite-resolves": [
@@ -1598,6 +1598,18 @@
         },
         "reviewed_at": "2026-07-03T00:52:58.083Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq0. Fused the repetitive lemma blocks into an integrated existence statement. Compressed the meta-narrative about integration and Stokes theorem into direct physical interpretations. Re-wrote the introduction to immediately present the four axioms and their justification.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

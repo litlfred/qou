@@ -888,7 +888,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean theorem 'qou:QOU.BraidKnot.BarInvolution' statement in content/quantum-observable-universe/braids-and-knots/bar-involution.lean structurally matches the mathematical formulation of 'def:bar-involution' in content/quantum-observable-universe/braids-and-knots/bar-involution.md.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/bar-involution.lean:1 — Lean file exists"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/bar-involution.lean:1 \u2014 Lean file exists"
       }
     ],
     "da-false-claim": [
@@ -1113,7 +1113,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/bar-involution.lean:67:3: error: unknown tactic.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/bar-involution.lean:1 — content/quantum-observable-universe/braids-and-knots/bar-involution.lean:67:3: error: unknown tactic"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/bar-involution.lean:1 \u2014 content/quantum-observable-universe/braids-and-knots/bar-involution.lean:67:3: error: unknown tactic"
       }
     ],
     "da-referee-verdict": [
@@ -1154,6 +1154,18 @@
         },
         "reviewed_at": "2026-07-03T00:52:55.297Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Applied Milnor brevity across all blocks in seq3. Removed verbose narrative framing. Clarified structural properties and eliminated speculative forward references.",
+        "reviewed_at": "2026-07-06T22:40:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

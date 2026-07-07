@@ -809,8 +809,8 @@
         "result": "fail",
         "scope": "limited",
         "ruling": "surviving",
-        "referee_argument": "lean/QOU/Mathlib/NonAbelianStokes.lean:95 stokes_holds:Prop discharged by :=True (punitInstance); L660-666 the Volume-Conjecture theorem 'is reflexive for ANY vol, so the existential is tautological'. cheat-sheet:39 '2. Stokes → Hecke ✅ proved'.",
-        "rebuttal": "partial→survived — honestly self-labelled upstreamable scaffolding / §3b-cond class (authorised disposition) and the finite-slice ordered-product content (braidWordHolonomy, Markov cocycle) IS proved; but '✅ proved' overstates a vacuous carrier — marketing in a coordination doc, not a false theorem.",
+        "referee_argument": "lean/QOU/Mathlib/NonAbelianStokes.lean:95 stokes_holds:Prop discharged by :=True (punitInstance); L660-666 the Volume-Conjecture theorem 'is reflexive for ANY vol, so the existential is tautological'. cheat-sheet:39 '2. Stokes \u2192 Hecke \u2705 proved'.",
+        "rebuttal": "partial\u2192survived \u2014 honestly self-labelled upstreamable scaffolding / \u00a73b-cond class (authorised disposition) and the finite-slice ordered-product content (braidWordHolonomy, Markov cocycle) IS proved; but '\u2705 proved' overstates a vacuous carrier \u2014 marketing in a coordination doc, not a false theorem.",
         "evidence": [
           {
             "text": "lean/QOU/Mathlib/NonAbelianStokes.lean:95,660-666; canonical-derivation-cheat-sheet.md:39"
@@ -838,7 +838,7 @@
         "scope": "limited",
         "ruling": "surviving",
         "referee_argument": "archimedean-yekutieli.md:9-21 'Motivic-Galois reading ... three generations is a Galois-theoretic statement' reads as derived but rides conj:motivic-perpetual-obstruction.",
-        "rebuttal": "partial→survived — block kind is example/interpretive (interprets:thm:qu-to-qou), §3b permits examples to interpret conjectures, q stays symbolic (no q_0 leak); within-policy but the bold framing reads stronger than the conjectural backing.",
+        "rebuttal": "partial\u2192survived \u2014 block kind is example/interpretive (interprets:thm:qu-to-qou), \u00a73b permits examples to interpret conjectures, q stays symbolic (no q_0 leak); within-policy but the bold framing reads stronger than the conjectural backing.",
         "evidence": [
           {
             "text": "archimedean-yekutieli.md:9-21"
@@ -866,7 +866,7 @@
         "scope": "limited",
         "ruling": "rebutted",
         "referee_argument": "yekutieli2015 is 'Nonabelian Multiplicative Integration on Surfaces'; does not contain the Hecke algebra.",
-        "rebuttal": "rebutted — the remark cites it correctly and narrowly (flatness/holonomy); cheat-sheet says 'as curvature 2-form' not 'Yekutieli proves the Hecke relation'. Fair use.",
+        "rebuttal": "rebutted \u2014 the remark cites it correctly and narrowly (flatness/holonomy); cheat-sheet says 'as curvature 2-form' not 'Yekutieli proves the Hecke relation'. Fair use.",
         "evidence": [
           {
             "text": "references.ts:776; yekutieli-stokes-remark.md:3-6"
@@ -891,7 +891,7 @@
         },
         "result": "warn",
         "verdict": "survivable-objection",
-        "referee_argument": "The cheat-sheet markets 'Step 2. Stokes (Yekutieli): curvature 2-form ⇒ Hecke relation' as '✅ proved', but the Yekutieli content is nowhere derived — the Hecke quadratic is the DEFINING relation of H_n(q) (from the R-matrix, step 1), and NonAbelianStokes.lean is a self-confessed vacuous True-shaped skeleton.",
+        "referee_argument": "The cheat-sheet markets 'Step 2. Stokes (Yekutieli): curvature 2-form \u21d2 Hecke relation' as '\u2705 proved', but the Yekutieli content is nowhere derived \u2014 the Hecke quadratic is the DEFINING relation of H_n(q) (from the R-matrix, step 1), and NonAbelianStokes.lean is a self-confessed vacuous True-shaped skeleton.",
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
@@ -1054,6 +1054,18 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The stubs and computations compile and execute successfully.",
         "severity": "minor"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Applied Milnor brevity. Cleaned up excessive internal linking in intro. Simplified phrasing. Kept math and step structure.",
+        "reviewed_at": "2026-07-06T22:42:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

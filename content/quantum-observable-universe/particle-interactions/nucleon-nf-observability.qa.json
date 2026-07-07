@@ -1792,7 +1792,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The block 'Observability structure of the nucleon normal form' presents substantial mathematical content: The Gröbner--Shirshov normal form of each nucleon in $H_3(q)$ has exactly",
+        "notes": "The block 'Observability structure of the nucleon normal form' presents substantial mathematical content: The Gr\u00f6bner--Shirshov normal form of each nucleon in $H_3(q)$ has exactly",
         "severity": "minor"
       }
     ],
@@ -2002,6 +2002,12 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Observability structure of the nucleon normal form' are consistent."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq8"
       }
     ]
   },

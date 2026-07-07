@@ -1171,6 +1171,18 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Isotopy equivalence of bundle initial conditions' are consistent."
       }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Tightened paragraphs. Removed cross-references to unknown targets. Kept physics/math logic intact.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-04T20:31:54.711Z"
