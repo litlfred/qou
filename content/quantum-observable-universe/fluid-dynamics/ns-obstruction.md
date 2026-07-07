@@ -1,22 +1,13 @@
 **Definition.**
-*Let $(A, \varTheta)$ be a quantum universe.  The **NS obstruction
-class** is the element*
+*For a valid quantum universe $(A, \varTheta)$, the **NS obstruction class** is defined precisely as*
 
 $$
-  \mathrm{NS}(A) \;\in\; H^3_{\mathrm{loc}}(A, \varTheta)
+  \mathrm{NS}(A) \;\in\; H^3_{\mathrm{loc}}(A, \varTheta).
 $$
 
-*obtained by evaluating the Yekutieli obstruction tower of the
-$q$-Navier--Stokes system at $q = 1$.  Concretely,
-$\mathrm{NS}(A)$ is the obstruction to lifting the $q$-NS
-solution from brane level $n$ to level $n + 1$ in the limit
-$q \to 1$.*
+*It derives directly from evaluating the continuous Yekutieli obstruction tower driving the $q$-Navier--Stokes system exactly at $q = 1$. Mechanically, $\mathrm{NS}(A)$ acts as the absolute obstruction checking the lift of the $q$-NS solution from brane level $n$ cleanly into level $n + 1$ as $q \to 1$.*
 
-*The NS obstruction depends on the Euler characteristic
-$\chi(A)$:*
+*The NS obstruction binds to the Euler characteristic $\chi(A)$:*
 
-- *$\mathrm{NS}(A) = 0$ if and only if the quantum universe is
-  [NS-regular](#def:ns-regular-qou), i.e.\ the incompressible
-  Navier--Stokes equation has global regularity.*
-- *$\mathrm{NS}(A) \neq 0$ implies finite-time blowup of smooth
-  solutions.*
+- *$\mathrm{NS}(A) = 0$ holds if and only if the quantum universe remains [NS-regular](#def:ns-regular-qou). The incompressible Navier--Stokes equation secures global regularity.*
+- *$\mathrm{NS}(A) \neq 0$ rigidly mandates finite-time blowup of initially smooth solutions.*

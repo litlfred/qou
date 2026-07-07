@@ -7,16 +7,9 @@ and
 [`conj:regularity-breakdown`](#conj:regularity-breakdown);
 "NS obstruction tower").**
 
-Let $(\mathbf{C}, A, \tau)$ be a QOU with Euler characteristic
-$\chi(A)$ and [Yekutieli obstruction
-classes](#def:quantum-characteristic-classes)
-$\kappa_n \in H^2(\mathcal{S}, \mathcal{B})$.  Let
-$\Sigma \subset \mathcal{S}$ be the collision locus of two
-anti-parallel vortex filaments.
+Let $(\mathbf{C}, A, \tau)$ define a QOU carrying Euler characteristic $\chi(A)$ and [Yekutieli obstruction classes](#def:quantum-characteristic-classes) $\kappa_n \in H^2(\mathcal{S}, \mathcal{B})$. Let $\Sigma \subset \mathcal{S}$ denote the precise collision locus of two anti-parallel vortex filaments.
 
-The [boundary observability](#def:ns-regular-qou)
-$\mathrm{Obs}_\partial(A)$ is measured by the restriction of the
-Yekutieli obstruction classes to the collision locus:
+The [boundary observability](#def:ns-regular-qou) $\mathrm{Obs}_\partial(A)$ derives directly from the restriction of the Yekutieli obstruction classes down to the collision locus:
 
 $$
   \mathrm{Obs}_\partial(A)
@@ -30,16 +23,11 @@ $$
   \right).
 $$
 
-The QOU is [NS-singular](#def:ns-regular-qou) (blowup) iff
-$\mathrm{res}_\Sigma(\kappa_n) \neq 0$ for some $n$; NS-regular
-iff $\mathrm{res}_\Sigma(\kappa_n) = 0$ for all $n$.
+The QOU is [NS-singular](#def:ns-regular-qou) (mandating blowup) if and only if $\mathrm{res}_\Sigma(\kappa_n) \neq 0$ for at least one $n$. It is NS-regular if and only if $\mathrm{res}_\Sigma(\kappa_n) = 0$ for all $n$.
 
 **(a) Where the obstruction sits.**
 
-By the [QU-to-QOU theorem](#thm:qu-to-qou), the first obstruction
-is $\kappa_0 = e(\xi)$, the Euler class of the Reeb bundle, with
-$\mathrm{tr}(\kappa_0) = \chi(A)$.  The obstruction at level $n$
-is
+Following the [QU-to-QOU theorem](#thm:qu-to-qou), the base obstruction is exactly $\kappa_0 = e(\xi)$, the Euler class of the Reeb bundle, carrying $\mathrm{tr}(\kappa_0) = \chi(A)$. The obstruction at arbitrary level $n$ takes the form
 
 $$
   \kappa_n
@@ -54,20 +42,11 @@ $$
   \bigr),
 $$
 
-where $\delta_n$ is the jet correction at level $n$.  By the
-perpetual obstruction ([QU-to-QOU](#thm:qu-to-qou) item 3,
-strengthened by [motivic perpetual obstruction](#conj:motivic-perpetual-obstruction)
-to a place-by-place non-vanishing of the substrate's motivic
-Galois character), $\kappa_0$ and $\delta_n$ live in complementary
-subgroups when $\kappa_0$ is non-torsion, so $\kappa_n \neq 0$
-for all $n$.
+where $\delta_n$ applies the explicit jet correction at level $n$. Due to the perpetual obstruction ([QU-to-QOU](#thm:qu-to-qou) item 3, rigidly strengthened by [motivic perpetual obstruction](#conj:motivic-perpetual-obstruction) evaluating the substrate's motivic Galois character place-by-place), $\kappa_0$ and $\delta_n$ strictly occupy complementary subgroups whenever $\kappa_0$ avoids torsion. Consequently, $\kappa_n \neq 0$ unconditionally for all $n$.
 
 **(b) Restriction to the collision locus.**
 
-The collision locus $\Sigma$ is a 1-dimensional submanifold
-(line segment) with $H^2(\Sigma, \mathcal{B}|_\Sigma)$ computed
-by the long exact sequence of the pair
-$(\mathcal{S}, \mathcal{S} \setminus \Sigma)$:
+The collision locus $\Sigma$ forms a strict 1-dimensional submanifold (a line segment). $H^2(\Sigma, \mathcal{B}|_\Sigma)$ derives from the long exact sequence applied to the pair $(\mathcal{S}, \mathcal{S} \setminus \Sigma)$:
 
 $$
   \cdots \to
@@ -81,17 +60,11 @@ $$
   \to \cdots
 $$
 
-The obstruction restricts nontrivially to $\Sigma$ iff
-$\kappa_n$ is **not** in the image of the restriction map from
-$\mathcal{S} \setminus \Sigma$.  Equivalently, the connecting
-homomorphism $\partial$ detects it: $\kappa_n|_\Sigma \neq 0$
-iff $\kappa_n$ has nontrivial **local cohomology** support
-at $\Sigma$.
+The obstruction transfers nontrivially to $\Sigma$ if and only if $\kappa_n$ strictly evades the image of the restriction map descending from $\mathcal{S} \setminus \Sigma$. Equivalently, the connecting homomorphism $\partial$ isolates it: $\kappa_n|_\Sigma \neq 0$ if and only if $\kappa_n$ maintains nontrivial **local cohomology** support anchored precisely at $\Sigma$.
 
 **(c) Local cohomology computation.**
 
-The [local cohomology](#def:local-cohomology-group) at a point
-$p \in \Sigma$ is
+Evaluating the [local cohomology](#def:local-cohomology-group) at any collision point $p \in \Sigma$ gives
 
 $$
   H^1_{\mathfrak{m}_p}(A)
@@ -99,27 +72,19 @@ $$
   R^1\Gamma_{\mathfrak{m}_p}(A).
 $$
 
-For the anti-parallel vortex pair, each filament carries the
-fundamental representation $V_{1/2}$ of
-$\mathrm{SU}_q(2)$.  At the collision point $p$ where
-both filaments meet, the local cohomology receives
-contributions from both:
+For the anti-parallel pair, each vortex filament naturally hosts the fundamental representation $V_{1/2}$ of $\mathrm{SU}_q(2)$. At the intersection point $p$, both filaments stack their contributions onto the local cohomology:
 
 $$
   H^1_{\mathfrak{m}_p}(A)
   = 
-  V_{1/2}^{(1)} \oplus V_{1/2}^{(2)},
+  V_{1/2}^{(1)} \oplus V_{1/2}^{(2)}.
 $$
 
-a 4-dimensional space.  This is **nonzero** iff both filaments
-contribute nontrivial local sections at $p$ — i.e. iff the
-vortex cores have not dissolved.
+This constructs a rigid 4-dimensional space. It remains **nonzero** if and only if both individual filaments successfully provide nontrivial local sections at $p$ — physically, if the discrete vortex cores have not dissolved into a continuous sheet.
 
 **(d) Connection to core aspect ratio.**
 
-By the [core-Levi equivalence](#prop:core-levi-form), the
-local cohomology is nonzero iff the Levi form is non-degenerate
-at $p$.  Explicitly:
+Relying on [core-Levi equivalence](#prop:core-levi-form), the local cohomology holds a nonzero value if and only if the Levi form maintains strict non-degeneracy at $p$. Algebraically:
 
 $$
   H^1_{\mathfrak{m}_p}(A) \neq 0
@@ -131,15 +96,11 @@ $$
   \kappa(p) = a_\perp/a_\parallel \in (0, \infty).
 $$
 
-When the core flattens ($\kappa \to 0$ or $\kappa \to \infty$),
-one Levi eigenvalue vanishes, the local cohomology collapses
-from $V_{1/2}^{\oplus 2}$ to a quotient, and the obstruction
-class $\kappa_n|_\Sigma$ deforms toward zero.
+If the core flattens completely ($\kappa \to 0$ or $\kappa \to \infty$), one Levi eigenvalue collapses. The local cohomology subsequently degenerates from $V_{1/2}^{\oplus 2}$ down to a quotient, forcing the obstruction class $\kappa_n|_\Sigma$ to deform safely toward zero.
 
 **(e) The NS obstruction as an Euler-class residue.**
 
-Combining (a)--(d): the NS obstruction at level $n$ restricted
-to the collision locus is
+Synthesising (a)--(d), the exact NS obstruction at level $n$, forcibly restricted to the collision locus, yields
 
 $$
   \kappa_n\big|_\Sigma
@@ -149,21 +110,8 @@ $$
   +  \delta_n\big|_\Sigma,
 $$
 
-where $\mathrm{lk}(\varrho_1, \varrho_2)$ is the linking number
-of the two filaments and $e(\xi)|_\Sigma$ is the Euler class of
-the Reeb bundle restricted to $\Sigma$.
+where $\mathrm{lk}(\varrho_1, \varrho_2)$ tracks the explicit linking number separating the two filaments, and $e(\xi)|_\Sigma$ evaluates the Euler class of the Reeb bundle precisely on $\Sigma$.
 
-For the Descartes universe ($\chi(A) = -6$, Bring's surface):
-$e(\xi) = -6 \cdot [\Sigma_4]$ in $H^2(\Sigma_4, \mathbb{Z})$.
-The restriction $e(\xi)|_\Sigma$ is nonzero when $\Sigma$ is
-homologically nontrivial in $\Sigma_4$, which holds for the
-anti-parallel pair (linking number 1).
+Mapped onto the Descartes universe ($\chi(A) = -6$, anchored on Bring's surface): $e(\xi) = -6 \cdot [\Sigma_4]$ evaluated inside $H^2(\Sigma_4, \mathbb{Z})$. The local restriction $e(\xi)|_\Sigma$ registers as nonzero strictly when $\Sigma$ behaves homologically nontrivially inside $\Sigma_4$. The anti-parallel pair (carrying linking number 1) satisfies this identically.
 
-**Summary.** The NS obstruction is measured at every level of
-the Yekutieli tower by restricting $\kappa_n$ to the collision
-locus $\Sigma$.  It is nonzero (NS-singular, blowup) iff the
-local cohomology $H^1_{\mathfrak{m}_p}(A)$ is nonzero at
-collision points, which holds iff the Levi form is
-non-degenerate (core aspect ratio bounded).  Computing
-whether $\kappa_n|_\Sigma$ vanishes or persists as $q \to 1$
-is the [Levi degeneracy conjecture](#conj:levi-degeneracy).
+**Summary.** We measure the NS obstruction consistently across every level of the Yekutieli tower by forcibly restricting $\kappa_n$ onto the collision locus $\Sigma$. It remains nonzero (confirming NS-singular blowup) if and only if the local cohomology $H^1_{\mathfrak{m}_p}(A)$ holds a nonzero value at collision points. This matches the exact condition where the Levi form successfully evades degeneracy (maintaining a bounded core aspect ratio). The [Levi degeneracy conjecture](#conj:levi-degeneracy) isolates whether $\kappa_n|_\Sigma$ collapses or survives through the strict $q \to 1$ limit.
